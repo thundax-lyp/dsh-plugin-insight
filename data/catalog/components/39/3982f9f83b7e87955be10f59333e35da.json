@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3982f9f83b7e87955be10f59333e35da",
+    "identity": "github:1347564799:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347564799:root",
+            "repository": "RaberShef/dsh-pin-session",
+            "path": "",
+            "revision": "c10eff74be81bdc2fe67eedc4560db52d1387629",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "551a113d8f202d9646afc669476fd3239bed3ab8601410db4e17b8c58cc7b31c",
+                "code": "c10eff74be81bdc2fe67eedc4560db52d1387629",
+                "maintenance": "7fc7131e77c50e0d20b0f9df80f821e8ff88a9383f68eeec3db6e962c8eacf59"
+            }
+        }
+    }
+}

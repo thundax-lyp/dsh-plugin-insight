@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "db78babd158819289ced0d9ddd307704",
+    "identity": "github:1333715550:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333715550:root",
+            "repository": "Luaphes/dsh-plugins-market",
+            "path": "",
+            "revision": "1e0352b2e382d87653c3753cdc246a9cf43fd4e3",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "c804f7c7525052f33308a3202f0d7b663cece7a910c2e34312afcde8a1b220ab",
+                "code": "1e0352b2e382d87653c3753cdc246a9cf43fd4e3",
+                "maintenance": "98048d12ea968a6f4052a5f29f4c176909c597ce6940b8c95ecf717e8742bb32"
+            }
+        }
+    }
+}

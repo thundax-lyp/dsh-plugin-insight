@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bba5303c00c0ef7a120b2c8c4eb7d325",
+    "identity": "github:1333515140:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333515140:root",
+            "repository": "causebefore/dsh-pomodoro",
+            "path": "",
+            "revision": "33c4491059f929b19006624fa74574a459213579",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "80dd722480fd1b78feaa816aa807288442c04f98e4439bc48820ead6de64d018",
+                "code": "33c4491059f929b19006624fa74574a459213579",
+                "maintenance": "9f2eba111ed2b88758e771500a44d5e8209ff668de2cb917b77c2b41d0fdb2d8"
+            }
+        }
+    }
+}

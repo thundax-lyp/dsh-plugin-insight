@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9d50f9320cf7bee3b4e8a7f909c92f13",
+    "identity": "github:1339530045:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339530045:root",
+            "repository": "Harzva/dsh-obsidian",
+            "path": "",
+            "revision": "c1ecb59f3de64c2fab60a43fc2c792fca17a83f6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "32c7164a4fbaeafd7b91641bfc73aa4907c195c456fded93dbda248c82cc1581",
+                "code": "c1ecb59f3de64c2fab60a43fc2c792fca17a83f6",
+                "maintenance": "e5cd09a6c3f0092b2906b735e212c098eb1f1a4fba37cadbe770e77687f58f82"
+            }
+        }
+    }
+}

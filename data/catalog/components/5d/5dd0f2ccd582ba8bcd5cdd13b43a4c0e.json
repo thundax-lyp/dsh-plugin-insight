@@ -1,0 +1,456 @@
+{
+    "schema_version": 3,
+    "id": "5dd0f2ccd582ba8bcd5cdd13b43a4c0e",
+    "identity": "github:1414936636:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1414936636:root",
+            "repository_id": 1414936636,
+            "component_id": "root",
+            "repository": "439436269-ctrl/dsh-video-pipeline",
+            "path": "",
+            "aliases": [],
+            "name": "短视频 Skill 流水线",
+            "entry_type": "plugin",
+            "technical_category": "agent-workflow",
+            "business_category": "content-creation",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "c7169ab2fb395d70185b5524cd673cdae82e016c09918bb0cbb2786727b3e3a0",
+                "code": "82a85d20b67d1d398d49009462d61a741f5a8d51",
+                "maintenance": "02d415947b1a8afcecd0794bd506803c6c3a132c87a3dd57db1616aaea43205c"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-01-github-1414936636-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T02:11:11.897Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-01-github-1414936636-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/439436269-ctrl/dsh-video-pipeline/blob/82a85d20b67d1d398d49009462d61a741f5a8d51/README.md",
+                    "revision": "82a85d20b67d1d398d49009462d61a741f5a8d51",
+                    "captured_at": "2026-10-21T02:11:11.897Z",
+                    "summary": "将选题、配音、生图、合成、核验和多平台发布 Skill 打包接入 DSH。",
+                    "artifact": "data/runs/2026-10-21-01/snapshots/439436269-ctrl--dsh-video-pipeline/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-01-github-1414936636-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/439436269-ctrl/dsh-video-pipeline/blob/82a85d20b67d1d398d49009462d61a741f5a8d51/lib/index.js",
+                    "revision": "82a85d20b67d1d398d49009462d61a741f5a8d51",
+                    "captured_at": "2026-10-21T02:11:11.897Z",
+                    "summary": "核查 lib/index.js、lib/provider.js、lib/frontmatter.js、lib/placeholders.js、skills/video-pipeline/SKILL.md、skills/media-verify/SKILL.md、skills/quad-platform-publish/SKILL.md、package.json；插件在ctx.skills注册bundled provider，扫描SKILL.md/frontmatter，以rank600和resourceBase提供技能；加载正文替换占位符，enabledSkills限制暴露范围。业务编排通过文字规程指派原子Skill和确认门。",
+                    "artifact": "data/runs/2026-10-21-01/snapshots/439436269-ctrl--dsh-video-pipeline/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "核查provider与三个代表Skill，未完整审计19项生产脚本或执行隐私门；正文含作者特定环境历史指令。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "已有短视频制作与平台账号的创作者，按工序组织一集从选题到发布的素材和结果；交付成片、核验记录及平台链接，不能把Skill注册成功当生产链跑通。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1414936636-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1414936636:root",
+                            "area": "code",
+                            "fingerprint": "82a85d20b67d1d398d49009462d61a741f5a8d51"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:11:11.897Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "插件在ctx.skills注册bundled provider，扫描SKILL.md/frontmatter，以rank600和resourceBase提供技能；加载正文替换占位符，enabledSkills限制暴露范围。业务编排通过文字规程指派原子Skill和确认门。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1414936636-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1414936636:root",
+                            "area": "code",
+                            "fingerprint": "82a85d20b67d1d398d49009462d61a741f5a8d51"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:11:11.897Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "核查provider与三个代表Skill，未完整审计19项生产脚本或执行隐私门；正文含作者特定环境历史指令。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1414936636-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1414936636:root",
+                            "area": "code",
+                            "fingerprint": "82a85d20b67d1d398d49009462d61a741f5a8d51"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:11:11.897Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "无runtime npm依赖只描述provider，不覆盖19项Skill执行依赖；同名本地Skill优先。第三方许可及导入/脱敏报告是作者材料，未执行隐私门。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1414936636-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1414936636:root",
+                            "area": "code",
+                            "fingerprint": "82a85d20b67d1d398d49009462d61a741f5a8d51"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:11:11.897Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "首次迁移账号、路径、工具环境和脚本占位符成本高；持续为模型/API额度、媒体计算、上传失败和人工审片。原始运营数据被剔除，无法复现作者产能或收益倍率。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1414936636-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1414936636:root",
+                            "area": "code",
+                            "fingerprint": "82a85d20b67d1d398d49009462d61a741f5a8d51"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:11:11.897Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "适合已有视频生产工具和账号、愿意逐工序适配的创作者；先落地本地合成与核验，发布步骤单独确认且回读，不能依照总入口一句话跳过配置。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1414936636-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1414936636:root",
+                            "area": "code",
+                            "fingerprint": "82a85d20b67d1d398d49009462d61a741f5a8d51"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:11:11.897Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "可复用的是生产知识、交接产物和失败经验；市场播放/成交收益没有独立验证，打包完整不代表端到端可迁移。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1414936636-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1414936636:root",
+                            "area": "code",
+                            "fingerprint": "82a85d20b67d1d398d49009462d61a741f5a8d51"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:11:11.897Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "provider保留resourceBase并尊重本地Skill优先级，便于版本化分发；frontmatter自写子集需要持续对齐宿主。移植应把原作者历史账号指令改成用户自己的明确配置，不能当普遍规则。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1414936636-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1414936636:root",
+                            "area": "code",
+                            "fingerprint": "82a85d20b67d1d398d49009462d61a741f5a8d51"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:11:11.897Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "相对散落复制Skill，贡献是统一目录、资源基址和环境占位符，使一条制作流程可随包分发。核心生成、剪辑和平台上传依赖现有API/ffmpeg/脚本，第三方小红书代码有独立归属；不是新的媒体生成算法。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1414936636-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1414936636:root",
+                            "area": "code",
+                            "fingerprint": "82a85d20b67d1d398d49009462d61a741f5a8d51"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:11:11.897Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "“核验后才发布”在入口主要是Skill规程，不是工具层强制门禁；另一批量编排路径文档承认没有确认门。包内quad-platform-publish同时留“四平台/三平台”和4个/3个Agent的历史环境指令，移植者可能继承原作者账号风控与时序假设。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1414936636-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1414936636:root",
+                            "area": "code",
+                            "fingerprint": "82a85d20b67d1d398d49009462d61a741f5a8d51"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:11:11.897Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "待验证假设：把成片哈希、核验状态、用户批准平台集合和实际上传结果整理成一份manifest，并令发布适配器校验，可能把文字质量门变成可审计约束。由现有产物流和素材一致性要求推导；各平台脚本必须统一状态所有权，增加迁移成本。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1414936636-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1414936636:root",
+                            "area": "code",
+                            "fingerprint": "82a85d20b67d1d398d49009462d61a741f5a8d51"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:11:11.897Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T02:11:11.897Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "82a85d20b67d1d398d49009462d61a741f5a8d51",
+                "reviewed_at": "2026-10-21T02:11:11.897Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1414936636:root",
+                        "area": "code",
+                        "fingerprint": "82a85d20b67d1d398d49009462d61a741f5a8d51"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty：可分发Skill集是工程集成，媒体算法归已有工具。 mechanism：资源基址和占位符解决迁移接线，发布约束仍为文字。 transferability：多工序产物约定可复用，但账号和脚本环境强依赖。 simplification：一包注册替代手工拷贝，未消除外部配置。",
+                    "basis": "interpretation",
+                    "score": 35,
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1414936636-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 15,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow：显式分工与确认门连接制作到发布，端到端未验。 delivery：从零散素材转为成片/链接/回写的流程交付，非新生成能力。 reach：帮助已有工具的创作者组织流程，新手环境门槛仍高。 economics：并行和素材复用可能节省时间，缺少原始运营数据对照。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1414936636-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "已有视频工具账号者可借鉴工序知识，但发布确认主要靠文字且批量路径无门；先移植环境并建立独立发布验收再整链采用。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "从选题到成片及平台链接交付明确，适用已有创作者。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "统一资源基址与工序交接优于散落Skill，核心能力由外部工具提供。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "bundled注册及占位符可查，平台数量矛盾和规程门禁未落实为强制控制。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "账号路径模型媒体工具迁移重，上传失败和人工审片成本高。"
+                    }
+                },
+                "score": 54,
+                "revision": "82a85d20b67d1d398d49009462d61a741f5a8d51",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-01-github-1414936636-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1414936636:root",
+                        "area": "code",
+                        "fingerprint": "82a85d20b67d1d398d49009462d61a741f5a8d51"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1414936636:root",
+            "repository": "439436269-ctrl/dsh-video-pipeline",
+            "path": "",
+            "revision": "82a85d20b67d1d398d49009462d61a741f5a8d51",
+            "fingerprints": {
+                "directory": "c7169ab2fb395d70185b5524cd673cdae82e016c09918bb0cbb2786727b3e3a0",
+                "code": "82a85d20b67d1d398d49009462d61a741f5a8d51",
+                "maintenance": "02d415947b1a8afcecd0794bd506803c6c3a132c87a3dd57db1616aaea43205c"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T01:54:44Z",
+            "analysis_sha256": "d18bdca4bf23220c74fd25b92ce4a4fd46886ff65cd3087b15cf15c7528f0de9"
+        },
+        "publication.metadata": "data/plugins/439436269-ctrl--dsh-video-pipeline/META.json",
+        "publication.summaries": {
+            "text": "将选题、配音、生图、合成、核验和多平台发布 Skill 打包接入 DSH。",
+            "revision": "82a85d20b67d1d398d49009462d61a741f5a8d51",
+            "source_url": "https://github.com/439436269-ctrl/dsh-video-pipeline/blob/82a85d20b67d1d398d49009462d61a741f5a8d51/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "82a85d20b67d1d398d49009462d61a741f5a8d51",
+            "items": {
+                "Skill": "bundled provider提供包内技能目录，代表入口video-pipeline、media-verify、quad-platform-publish已核查。"
+            }
+        },
+        "publication.advice": {
+            "revision": "82a85d20b67d1d398d49009462d61a741f5a8d51",
+            "text": "适合已有视频生产工具和账号、愿意逐工序适配的创作者；先落地本地合成与核验，发布步骤单独确认且回读，不能依照总入口一句话跳过配置。"
+        },
+        "registry": "data/plugins/439436269-ctrl--dsh-video-pipeline",
+        "reports": "# 短视频 Skill 流水线\n\n> 将选题、配音、生图、合成、核验和多平台发布 Skill 打包接入 DSH。\n\n## 使用建议\n\n适合已有视频生产工具和账号、愿意逐工序适配的创作者；先落地本地合成与核验，发布步骤单独确认且回读，不能依照总入口一句话跳过配置。\n\n核查状态：源码支持本文所述机制与有限集成贡献；效果、宿主兼容和独立采用未验证。未来设计假设仅为推演，未实现、未验证。 只执行研究工程的统计/装配与结构验证，未安装插件、运行目标代码/测试或做真实宿主验收。\n\n- **用途**：已有短视频制作与平台账号的创作者，按工序组织一集从选题到发布的素材和结果；交付成片、核验记录及平台链接，不能把Skill注册成功当生产链跑通。\n- **亮点**：相对散落复制Skill，贡献是统一目录、资源基址和环境占位符，使一条制作流程可随包分发。核心生成、剪辑和平台上传依赖现有API/ffmpeg/脚本，第三方小红书代码有独立归属；不是新的媒体生成算法。\n- **思考**：“核验后才发布”在入口主要是Skill规程，不是工具层强制门禁；另一批量编排路径文档承认没有确认门。包内quad-platform-publish同时留“四平台/三平台”和4个/3个Agent的历史环境指令，移植者可能继承原作者账号风控与时序假设。\n- **建议**：适合已有视频生产工具和账号、愿意逐工序适配的创作者；先落地本地合成与核验，发布步骤单独确认且回读，不能依照总入口一句话跳过配置。\n\n## 能力与限制\n\n参照手工拷贝原子Skill和脚本串联；主张的真实生产链来自作者，当前只静态核查provider与代表Skill，不核实全部账号流程。\n\n插件在ctx.skills注册bundled provider，扫描SKILL.md/frontmatter，以rank600和resourceBase提供技能；加载正文替换占位符，enabledSkills限制暴露范围。业务编排通过文字规程指派原子Skill和确认门。\n\n\n插件入口只有Node内建模块和宿主skills接口；实际生产另需ffmpeg、Python/numpy/Pillow、API key和额度、平台登录/浏览器及飞书权限。正文占位符替换不改脚本文件中的占位符，首轮仍需手工配置。\n\n总入口选择编排→用户确认预算→生成配音/图片/视频→合成→媒体核验→确认平台和文案→分平台执行→回读链接/表格。作者生产记录是单环境报告，迁移时应重验每个外部环节。\n\n首次迁移账号、路径、工具环境和脚本占位符成本高；持续为模型/API额度、媒体计算、上传失败和人工审片。原始运营数据被剔除，无法复现作者产能或收益倍率。\n\n可复用的是生产知识、交接产物和失败经验；市场播放/成交收益没有独立验证，打包完整不代表端到端可迁移。\n\n## 能力清单\n\n- **Skill**：bundled provider提供包内技能目录，代表入口video-pipeline、media-verify、quad-platform-publish已核查。\n\n## 工程分析\n\nprovider保留resourceBase并尊重本地Skill优先级，便于版本化分发；frontmatter自写子集需要持续对齐宿主。移植应把原作者历史账号指令改成用户自己的明确配置，不能当普遍规则。\n\n无runtime npm依赖只描述provider，不覆盖19项Skill执行依赖；同名本地Skill优先。第三方许可及导入/脱敏报告是作者材料，未执行隐私门。\n\n固定源码依据：[lib/provider.js L120–192](https://github.com/439436269-ctrl/dsh-video-pipeline/blob/82a85d20b67d1d398d49009462d61a741f5a8d51/lib/provider.js#L120-L192)；[skills/video-pipeline/SKILL.md L41–60](https://github.com/439436269-ctrl/dsh-video-pipeline/blob/82a85d20b67d1d398d49009462d61a741f5a8d51/skills/video-pipeline/SKILL.md#L41-L60)；[skills/quad-platform-publish/SKILL.md L10–40](https://github.com/439436269-ctrl/dsh-video-pipeline/blob/82a85d20b67d1d398d49009462d61a741f5a8d51/skills/quad-platform-publish/SKILL.md#L10-L40)。上述贡献与关键质疑均限定于这些固定源码，不把测试文件存在当运行通过。\n\n## 未来设计假设（未验证）\n\n待验证假设：把成片哈希、核验状态、用户批准平台集合和实际上传结果整理成一份manifest，并令发布适配器校验，可能把文字质量门变成可审计约束。由现有产物流和素材一致性要求推导；各平台脚本必须统一状态所有权，增加迁移成本。\n\n最小验证与否定条件：在自有素材/测试账号先只生成到本地成片，对照手工Skill复制；要求占位符已落地、每步输入输出可定位、核验失败时所有发布路径停止。随后仅经明确授权测试发布；若替代入口绕过门或上传旧副本，则不成立完整流水线质量保证。\n\n## 核查说明\n\n- 版本依据：仓库：[439436269-ctrl/dsh-video-pipeline](https://github.com/439436269-ctrl/dsh-video-pipeline)；固定提交：[82a85d20](https://github.com/439436269-ctrl/dsh-video-pipeline/tree/82a85d20b67d1d398d49009462d61a741f5a8d51)；版本号：0.1.1；版本日期：2026-10-16（固定提交日期，北京时间，非包发布日期）。\n- 已检查与未覆盖范围：核查provider与三个代表Skill，未完整审计19项生产脚本或执行隐私门；正文含作者特定环境历史指令。\n- 证据限制：作者功能摘要来自固定版本README；未核实独立用户采用、同条件效果或端到端收益。版本、证据原文与inventory绑定保存在本项JSON；GitHub/npm统计仅作背景，不构成采用证明。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；版本号：0.1.1；版本日期：2026-10-16（固定提交日期，北京时间，非包发布日期）；组件：根；内容摘要：0eeb1daf6a693a6e0d0f6fa64d7dcc645cb56635527f92489fe0aac038d2a77f。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 49 | 6103 | — | — | 100616 |\n| .js | source | 5 | 631 | 399 | 192 | — |\n| .mjs | source | 25 | 3975 | 3185 | 561 | — |\n| .mjs | test | 2 | 368 | 290 | 42 | — |\n\n排除 0 项；解析错误 0 项。统计为固定Git范围，源码抽读不冒充全面审计；JS/TS与Markdown分别计量。默认排除为启发式，不能从LOC推算原创量或工时。\n\n",
+        "metadata": {
+            "repository": "439436269-ctrl/dsh-video-pipeline",
+            "repository_id": 1414936636,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 1,
+            "pushed_at": "2026-10-16T00:51:40Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-video-pipeline%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640D:12770C:151C6C:22BA12:6AD84A2D and timestamp 2026-10-21 05:14:21 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-video-pipeline%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6417:33975D:147BC4:2204D6:6AD84A2D and timestamp 2026-10-21 05:14:21 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-video-pipeline%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6418:EFE19:143439:21D7E5:6AD84A2E and timestamp 2026-10-21 05:14:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-video-pipeline%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6419:1D2F69:141D85:21C5F4:6AD84A2E and timestamp 2026-10-21 05:14:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-video-pipeline%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641A:AF775:1448C1:21DB58:6AD84A2E and timestamp 2026-10-21 05:14:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-video-pipeline",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 465,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-video-pipeline",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-10-12T01:12:12.899Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-video-pipeline",
+                    "error": null,
+                    "latest_version": "0.1.1",
+                    "latest_published_at": "2026-10-12T02:13:27.032Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "82a85d20b67d1d398d49009462d61a741f5a8d51",
+                "current_revision": "82a85d20b67d1d398d49009462d61a741f5a8d51",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1414936636:root",
+            "repository": "439436269-ctrl/dsh-video-pipeline",
+            "path": "",
+            "revision": "82a85d20b67d1d398d49009462d61a741f5a8d51",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c7169ab2fb395d70185b5524cd673cdae82e016c09918bb0cbb2786727b3e3a0",
+                "code": "82a85d20b67d1d398d49009462d61a741f5a8d51",
+                "maintenance": "02d415947b1a8afcecd0794bd506803c6c3a132c87a3dd57db1616aaea43205c"
+            }
+        }
+    }
+}

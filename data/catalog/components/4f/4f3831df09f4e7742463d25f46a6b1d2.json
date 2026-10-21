@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4f3831df09f4e7742463d25f46a6b1d2",
+    "identity": "github:1339317973:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339317973:root",
+            "repository": "BakaCirno233/dsh-session-delete",
+            "path": "",
+            "revision": "6f1ca60220783a2130943c9efd6457c907b21297",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "03d4b3bd99177460e2fefc458ae42916f682dc3a02cf76313387df9ac74c5cc8",
+                "code": "6f1ca60220783a2130943c9efd6457c907b21297",
+                "maintenance": "15e7abf8e55e207a7a6c9c63e1d5a5b9de68203ca68c036603c011b758f125e2"
+            }
+        }
+    }
+}

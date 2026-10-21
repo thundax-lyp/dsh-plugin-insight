@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "02dcd72bd88c040aac6e782098f3e8c0",
+    "identity": "github:1418642133:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1418642133:root",
+            "repository": "Arlenman/dsh-backup-sync",
+            "path": "",
+            "revision": "9baff601ee5d086f2ee2e078227bb7617138abfd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6e639c837eadd120559fe90d7e95b975bc83eb44d5f2b164a0204f527f427e6a",
+                "code": "9baff601ee5d086f2ee2e078227bb7617138abfd",
+                "maintenance": "af9972d2543e99d0f8453bc0afb1d4ac8d042ff8560eaa91ab99cb3135d6a27b"
+            }
+        }
+    }
+}

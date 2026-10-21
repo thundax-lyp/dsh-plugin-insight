@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "f47381b722c358c01a03a05d6c123ede",
+    "identity": "github:1333320049:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333320049:root",
+            "repository": "anweat/dsh-web-search-pro",
+            "path": "",
+            "revision": "9e905c212fac5e891cc0f7ea75e1c276c9e5498e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "ff530781764ebf06b0be2285140b3dd90b6c925f94519bb4bb30e9b36247f5be",
+                "code": "9e905c212fac5e891cc0f7ea75e1c276c9e5498e",
+                "maintenance": "eb18e3dc9b007b831a66398656491b4b3ec7d74c39dbc4114fcbfda0578b0016"
+            }
+        }
+    }
+}

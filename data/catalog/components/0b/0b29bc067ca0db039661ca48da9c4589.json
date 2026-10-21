@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0b29bc067ca0db039661ca48da9c4589",
+    "identity": "github:1335994051:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335994051:root",
+            "repository": "Zenjibad/skill-injector-plugin",
+            "path": "",
+            "revision": "31a5d8e0a570a48571f1b74a3b0e379412cfb5e1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "67bc6c9ab87abddb4b058082897bfbd1abf6784dac61534a1fd1c279bc5f9191",
+                "code": "31a5d8e0a570a48571f1b74a3b0e379412cfb5e1",
+                "maintenance": "853430d65dd40ca351450f045a642dbc91d45f1b4eff53bd64d2ea31977dd241"
+            }
+        }
+    }
+}

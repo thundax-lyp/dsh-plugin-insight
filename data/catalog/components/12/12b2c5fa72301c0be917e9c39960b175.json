@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "12b2c5fa72301c0be917e9c39960b175",
+    "identity": "github:1351331964:packages-bundle",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1351331964:packages-bundle",
+            "repository": "zaizaizhao/dsh-branchmark",
+            "path": "packages/bundle",
+            "revision": "1cee35dba4076f57f8586d1e69d7327fc0b86ee0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3b5383b9c9b22598ac6bde912cb41fc59a4d5b4bc9bab54409252128611c3759",
+                "code": "1cee35dba4076f57f8586d1e69d7327fc0b86ee0",
+                "maintenance": "79227503e29b37757e8da8c0bf631a448d7ec2805c32c398df79d090550213df"
+            }
+        }
+    }
+}

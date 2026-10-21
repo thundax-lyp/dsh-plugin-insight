@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d5ad012579fed94ef50cb0a5b30797ae",
+    "identity": "github:1338496073:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338496073:root",
+            "repository": "LouisHaoL/dsh-timer-agent",
+            "path": "",
+            "revision": "5bd2b983ebc651f02544fee8e31f80f920a27e01",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "51d3d2a53bc3b77a531caef1bbe1dcb6380b917a038639301d2bed6155483336",
+                "code": "5bd2b983ebc651f02544fee8e31f80f920a27e01",
+                "maintenance": "e49ad6c7f21c62ac6b556382175289796d6a76d6f3ca8f1ee91ec421c9b88deb"
+            }
+        }
+    }
+}

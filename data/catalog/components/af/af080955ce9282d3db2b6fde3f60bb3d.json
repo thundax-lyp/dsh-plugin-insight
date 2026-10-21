@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "af080955ce9282d3db2b6fde3f60bb3d",
+    "identity": "github:1146519069:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1146519069:root",
+            "repository": "Leslie-SSS/seeWxapkg",
+            "path": "",
+            "revision": "e7d66e0122cd20ef1cb009f0c894b5aa7068613a",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "d085e39e06c18556d505abcec9776f383aa68c53b5e863bb1797da455b0e14dd",
+                "code": "e7d66e0122cd20ef1cb009f0c894b5aa7068613a",
+                "maintenance": "59d76b85161b6ebe812aac8b74dd693fbf400ebe25b3fd73cadd3ea4962f5bfe"
+            }
+        }
+    }
+}

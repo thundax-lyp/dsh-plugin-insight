@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "47ac8ccb38084629a8a13b5330d7a45a",
+    "identity": "github:1312924592:dsh-plugin",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1312924592:dsh-plugin",
+            "repository": "JingxuanC/causal-memory",
+            "path": "dsh-plugin",
+            "revision": "39053ff6fd7a18771d59f0c10240b19c37f412b6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e112e7ffad84162a360b06f4ba32d2d2e0f857e1c7cfa5ac3b6ba675866501a3",
+                "code": "39053ff6fd7a18771d59f0c10240b19c37f412b6",
+                "maintenance": "339b646195fe29c8db380e87a4adf3aed4a89bb4b55758d0397c758054638bdc"
+            }
+        }
+    }
+}

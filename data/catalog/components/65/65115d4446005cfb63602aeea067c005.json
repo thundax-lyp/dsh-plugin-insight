@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "65115d4446005cfb63602aeea067c005",
+    "identity": "github:1333183810:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333183810:root",
+            "repository": "walkinglabs/awesome-deepseek-harness-plugins",
+            "path": "",
+            "revision": "e43cbc6d0d1c35323a8a04be0e5056e95fa1f60f",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "838bddef9eeae48a681747230dfe4df4b3e1603bd71319d6a5ecbac4a55bd389",
+                "code": "e43cbc6d0d1c35323a8a04be0e5056e95fa1f60f",
+                "maintenance": "17e5b105363405ab2f0d1aa97cd92fa72a0bbba60b6ec2bec3a055d8f78ddcbf"
+            }
+        }
+    }
+}

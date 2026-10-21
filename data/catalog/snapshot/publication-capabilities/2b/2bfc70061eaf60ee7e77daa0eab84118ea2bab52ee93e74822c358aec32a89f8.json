@@ -1,7 +1,0 @@
-{
-  "revision": "fd84079f98170d5066547c087c58c824b4e59d07",
-  "items": {
-    "事件监听": "tools pre-execute/execute/result检查、改写和缓存清理。",
-    "后台": "按需解析运行时准备及回收决策。"
-  }
-}

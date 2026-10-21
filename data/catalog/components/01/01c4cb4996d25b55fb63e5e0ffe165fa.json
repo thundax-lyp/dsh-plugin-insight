@@ -1,0 +1,377 @@
+{
+    "schema_version": 3,
+    "id": "01c4cb4996d25b55fb63e5e0ffe165fa",
+    "identity": "github:1333328839:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1333328839:root",
+            "repository_id": 1333328839,
+            "component_id": "root",
+            "repository": "01Virex/dsh-status-rotator",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-status-rotator",
+            "entry_type": "plugin",
+            "technical_category": "interface-input",
+            "business_category": "personal-productivity",
+            "tags": [
+                "source-inspected",
+                "runtime-unverified"
+            ],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "813f8d9859f777bd9f78b4b66ee49a2f4b8a45d867b38acddc9fda6872b2f1a2",
+                "code": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1",
+                "release": "4c656e9b908ee5ac60ad2b0766ef9ec3f1dea81586d1c9d47e6432af9f6dfde2",
+                "maintenance": "d32928f6decdcb30fb2a164494924c56065efeeb803d4f180b1fe781ee2d2cca",
+                "compatibility": "c1c472a7f9e3b078c2b2dc3906c9892ef36f99a074ec2b49e52d255d5cddb340"
+            },
+            "sources": [
+                {
+                    "id": "20261020-research40-github-1333328839-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T03:01:48.610Z",
+                    "membership": "present"
+                },
+                {
+                    "id": "20261020-research40-github-1333328839-root-directory-1",
+                    "url": "https://github.com/0xsline/awesome-deepseek-harness",
+                    "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
+                    "retrieved_at": "2026-10-20T03:01:48.610Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "20261020-research40-github-1333328839-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/01Virex/dsh-status-rotator/blob/bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1/README.md",
+                    "revision": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1",
+                    "captured_at": "2026-10-20T03:01:48.610Z",
+                    "summary": "为 DSH Web 状态区提供阶段化文案、主题词库、动画与可编辑设置。",
+                    "artifact": "data/runs/2026-10-20-02/snapshots/01virex--dsh-status-rotator/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "20261020-research40-github-1333328839-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/01Virex/dsh-status-rotator/blob/bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1/lib/index.js",
+                    "revision": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1",
+                    "captured_at": "2026-10-20T03:01:48.610Z",
+                    "summary": "核查 lib/index.js、lib/client.js；Host 保存并提供配置，客户端按阶段和偏好选择文案，支持持久化覆盖与扩展词库。",
+                    "artifact": "data/runs/2026-10-20-02/snapshots/01virex--dsh-status-rotator/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "lib 客户端很大，仅抽读配置和词库接口；未检查全部动画路径或 UI 性能。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "希望改善等待体验的桌面用户，以更清楚或有趣的状态文案替代默认状态行。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1333328839-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333328839:root",
+                            "area": "code",
+                            "fingerprint": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:01:48.610Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "Host 保存并提供配置，客户端按阶段和偏好选择文案，支持持久化覆盖与扩展词库。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1333328839-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333328839:root",
+                            "area": "code",
+                            "fingerprint": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:01:48.610Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "lib 客户端很大，仅抽读配置和词库接口；未检查全部动画路径或 UI 性能。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1333328839-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333328839:root",
+                            "area": "code",
+                            "fingerprint": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:01:48.610Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "清单版本 0.37.0，Host 和 Web client 共同组成 bundle；未验收宿主兼容。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1333328839-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333328839:root",
+                            "area": "code",
+                            "fingerprint": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:01:48.610Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "主要付出配置、冲突排查和界面维护时间，未证明动画改善任务效率。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1333328839-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333328839:root",
+                            "area": "code",
+                            "fingerprint": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:01:48.610Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先只开静态文案，确认设置能保存且与原生状态共存，再逐步启用弹幕和动画。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1333328839-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333328839:root",
+                            "area": "code",
+                            "fingerprint": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:01:48.610Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "配置持久化使个性化可重复；状态文案不是实际进度，不能拿它判断任务是否完成。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1333328839-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333328839:root",
+                            "area": "code",
+                            "fingerprint": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:01:48.610Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "配置临时文件加 rename、Host 与客户端协议分离可借鉴；大体积手工客户端增加适配负担。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1333328839-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333328839:root",
+                            "area": "code",
+                            "fingerprint": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:01:48.610Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T03:01:48.610Z",
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "偏好个性化等待界面的用户可先试静态文案，检查保存、原生状态共存与禁用恢复。",
+                "criteria": {
+                    "scenario": {
+                        "score": 15,
+                        "rationale": "等待文案个性化需求明确但收益主要是主观体验。"
+                    },
+                    "advantage": {
+                        "score": 6,
+                        "rationale": "阶段词库和持久化提供便利，不增加真实进度信息。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "配置和词库接口已读，动画路径与UI性能未完整检查。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "大体积客户端和动画配置提高宿主升级适配成本。"
+                    }
+                },
+                "score": 44,
+                "revision": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "20261020-research40-github-1333328839-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1333328839:root",
+                        "area": "code",
+                        "fingerprint": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1333328839:root",
+            "repository": "01Virex/dsh-status-rotator",
+            "path": "",
+            "revision": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1",
+            "fingerprints": {
+                "directory": "813f8d9859f777bd9f78b4b66ee49a2f4b8a45d867b38acddc9fda6872b2f1a2",
+                "code": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1",
+                "release": "4c656e9b908ee5ac60ad2b0766ef9ec3f1dea81586d1c9d47e6432af9f6dfde2",
+                "maintenance": "d32928f6decdcb30fb2a164494924c56065efeeb803d4f180b1fe781ee2d2cca",
+                "compatibility": "c1c472a7f9e3b078c2b2dc3906c9892ef36f99a074ec2b49e52d255d5cddb340"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T02:51:30Z",
+            "analysis_sha256": "de075012e81de41cbb2eb2137d786c972724728b188b6cfac19f3ef322b97077"
+        },
+        "publication.metadata": "data/plugins/01virex--dsh-status-rotator/META.json",
+        "publication.summaries": {
+            "text": "为 DSH Web 状态区提供阶段化文案、主题词库、动画与可编辑设置。",
+            "revision": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1",
+            "source_url": "https://github.com/01Virex/dsh-status-rotator/blob/bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1",
+            "items": {
+                "界面": "状态文案、词库与外观设置扩展。"
+            }
+        },
+        "publication.advice": {
+            "revision": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1",
+            "text": "先只开静态文案，确认设置能保存且与原生状态共存，再逐步启用弹幕和动画。"
+        },
+        "registry": "data/plugins/01virex--dsh-status-rotator",
+        "reports": "# dsh-status-rotator\n\n> 为 DSH Web 状态区提供阶段化文案、主题词库、动画与可编辑设置。\n\n## 固定范围与依据\n\n固定提交 [bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1](https://github.com/01Virex/dsh-status-rotator/blob/bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1/lib/index.js)；组件路径：仓库根。核查时间 2026-10-20T03:01:48.610Z；本轮基准 2026-10-20T02:51:30Z。\n源码抽读路径：lib/index.js、lib/client.js。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：希望改善等待体验的桌面用户，以更清楚或有趣的状态文案替代默认状态行。\n- **亮点**：Host 保存并提供配置，客户端按阶段和偏好选择文案，支持持久化覆盖与扩展词库。\n- **思考**：配置持久化使个性化可重复；状态文案不是实际进度，不能拿它判断任务是否完成。\n- **建议**：先只开静态文案，确认设置能保存且与原生状态共存，再逐步启用弹幕和动画。\n\n## 场景与替代办法\n\n希望改善等待体验的桌面用户，以更清楚或有趣的状态文案替代默认状态行。\n\n直接使用宿主状态行维护最低；本轮重新检查配置链路，旧截图不证明当前版本渲染正确。\n\n## 依赖与流程\n\n依赖 DSH Web 插槽、设置与宿主路由能力；浏览器存储和外部配置可影响最终表现。\n\n启用后调整词库和展示项，保存配置；界面异常时关闭可选效果并恢复默认配置。\n\n## 成本与效果\n\n主要付出配置、冲突排查和界面维护时间，未证明动画改善任务效率。\n\n配置持久化使个性化可重复；状态文案不是实际进度，不能拿它判断任务是否完成。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：a5a9d88ef851d869a12c13d723fb4c37fe784fb26c07fc7c74a85e0ef0e78290。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 13 | 4184 | — | — | 70472 |\n| .cjs | source | 25 | 7094 | 5859 | 943 | — |\n| .js | source | 3 | 11855 | 9219 | 2337 | — |\n| .mjs | source | 1 | 111 | 88 | 15 | — |\n\n排除 1 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **界面**：状态文案、词库与外观设置扩展。\n\n## 工程亮点\n\n配置临时文件加 rename、Host 与客户端协议分离可借鉴；大体积手工客户端增加适配负担。\n\n## 分发与兼容\n\n清单版本 0.37.0，Host 和 Web client 共同组成 bundle；未验收宿主兼容。\n\n## 历史对照\n\n前次代码指纹为 bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1；本轮固定为 bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1。直接使用宿主状态行维护最低；本轮重新检查配置链路，旧截图不证明当前版本渲染正确。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：lib 客户端很大，仅抽读配置和词库接口；未检查全部动画路径或 UI 性能。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：比较静态与动画设置下的输入延迟、配置重载、窄屏布局及重启恢复。\n",
+        "metadata": {
+            "repository": "01Virex/dsh-status-rotator",
+            "repository_id": 1333328839,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 190,
+            "pushed_at": "2026-10-19T08:52:36Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A01Virex%2Fdsh-status-rotator%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6407:1CA5E4:14CADF:224F9E:6AD84922 and timestamp 2026-10-21 05:09:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A01Virex%2Fdsh-status-rotator%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6408:24715:14335C:21A146:6AD84922 and timestamp 2026-10-21 05:09:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A01Virex%2Fdsh-status-rotator%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640D:11B6:145E0C:21DCF8:6AD84922 and timestamp 2026-10-21 05:09:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A01Virex%2Fdsh-status-rotator%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640F:12F9BB:13ADC9:2127BA:6AD84923 and timestamp 2026-10-21 05:09:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A01Virex%2Fdsh-status-rotator%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6410:3A339B:137007:20D9B6:6AD84923 and timestamp 2026-10-21 05:09:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-status-rotator",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 11337,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-status-rotator",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-18T08:46:04.501Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-status-rotator",
+                    "error": null,
+                    "latest_version": "0.37.0",
+                    "latest_published_at": "2026-10-17T05:59:34.425Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1",
+                "current_revision": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1333328839:root",
+            "repository": "01Virex/dsh-status-rotator",
+            "path": "",
+            "revision": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "813f8d9859f777bd9f78b4b66ee49a2f4b8a45d867b38acddc9fda6872b2f1a2",
+                "code": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1",
+                "maintenance": "d32928f6decdcb30fb2a164494924c56065efeeb803d4f180b1fe781ee2d2cca"
+            }
+        }
+    }
+}

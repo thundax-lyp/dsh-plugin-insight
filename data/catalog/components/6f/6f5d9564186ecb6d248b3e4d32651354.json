@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6f5d9564186ecb6d248b3e4d32651354",
+    "identity": "github:1409838104:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1409838104:root",
+            "repository": "miiy/dsh-terminal-keybar",
+            "path": "",
+            "revision": "577321bc5646ff76996e57baa64d87c5418c60af",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "476c8b64463fbfa1d4556f817d14e52e72c48b1a2924bee32abebefc26b523b8",
+                "code": "577321bc5646ff76996e57baa64d87c5418c60af",
+                "maintenance": "73733b69693d173bc2b94eb470a2ca2f1c2350210c48f3247ba23c5dc9121fbb"
+            }
+        }
+    }
+}

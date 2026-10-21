@@ -1,0 +1,431 @@
+{
+    "schema_version": 3,
+    "id": "8bc1244a645a7c8e633da4c7c9545a43",
+    "identity": "github:1424063534:plugins-dsh-domain-bridge",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1424063534:plugins-dsh-domain-bridge",
+            "repository_id": 1424063534,
+            "component_id": "plugins-dsh-domain-bridge",
+            "repository": "1Lany2a/dsh-domain-role",
+            "path": "plugins/dsh-domain-bridge",
+            "aliases": [],
+            "name": "dsh-domain-bridge",
+            "entry_type": "plugin",
+            "technical_category": "agent-workflow",
+            "business_category": "software-delivery",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "6ba8337d6e8511604fcdb010861be486c29f966292d8321fb7acc45424f431aa",
+                "code": "8ef0119937f5f9d18a0628a891dd086db6522834",
+                "maintenance": "c242075cc105d25ad2f125912d4df7b9c4cb4b472d2a040ebfc8e8e2a3cc2cd7"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-07-github-1424063534-plugins-dsh-domain-bridge-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T08:02:18.319Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-07-github-1424063534-plugins-dsh-domain-bridge-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/1Lany2a/dsh-domain-role/blob/8ef0119937f5f9d18a0628a891dd086db6522834/plugins/dsh-domain-bridge/README.md",
+                    "revision": "8ef0119937f5f9d18a0628a891dd086db6522834",
+                    "captured_at": "2026-10-21T08:02:18.319Z",
+                    "summary": "为 DSH 顶层会话提供域寻址、职责交接、分级暂停和模型选择。",
+                    "artifact": "data/runs/2026-10-21-07/snapshots/1lany2a--dsh-domain-role--plugins-dsh-domain-bridge/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-07-github-1424063534-plugins-dsh-domain-bridge-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/1Lany2a/dsh-domain-role/blob/8ef0119937f5f9d18a0628a891dd086db6522834/plugins/dsh-domain-bridge/lib/bridge.js",
+                    "revision": "8ef0119937f5f9d18a0628a891dd086db6522834",
+                    "captured_at": "2026-10-21T08:02:18.319Z",
+                    "summary": "核查 plugins/dsh-domain-bridge/lib/bridge.js、plugins/dsh-domain-bridge/lib/core/messaging.js、plugins/dsh-domain-bridge/lib/core/pause.js、plugins/dsh-domain-bridge/lib/core/commands.js、plugins/dsh-domain-bridge/lib/core/registrations.js、plugins/dsh-domain-bridge/package.json；bridge构建11个工具定义并让命令复用；域声明优先寻址，发送/接收端四级暂停OR叠加。拦截消息append至目标JSONL，恢复重评政策再投递并重写状态；七条命令与popup共用注册路径，含/resume。模型操作区分会话选择与全局默认。",
+                    "artifact": "data/runs/2026-10-21-07/snapshots/1lany2a--dsh-domain-role--plugins-dsh-domain-bridge/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "仅plugins/dsh-domain-bridge组件，入口/注册、消息存储、暂停、命令与运行时配置接线；未核外部owner CLI实现。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "多个顶层会话按项目/领域分工，由域声明定位负责人，在暂停期间保留待交接消息；合格交付应含任务接受与完成确认。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1424063534-plugins-dsh-domain-bridge-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1424063534:plugins-dsh-domain-bridge",
+                            "area": "code",
+                            "fingerprint": "8ef0119937f5f9d18a0628a891dd086db6522834"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:02:18.319Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "bridge构建11个工具定义并让命令复用；域声明优先寻址，发送/接收端四级暂停OR叠加。拦截消息append至目标JSONL，恢复重评政策再投递并重写状态；七条命令与popup共用注册路径，含/resume。模型操作区分会话选择与全局默认。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1424063534-plugins-dsh-domain-bridge-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1424063534:plugins-dsh-domain-bridge",
+                            "area": "code",
+                            "fingerprint": "8ef0119937f5f9d18a0628a891dd086db6522834"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:02:18.319Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "仅plugins/dsh-domain-bridge组件，入口/注册、消息存储、暂停、命令与运行时配置接线；未核外部owner CLI实现。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1424063534-plugins-dsh-domain-bridge-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1424063534:plugins-dsh-domain-bridge",
+                            "area": "code",
+                            "fingerprint": "8ef0119937f5f9d18a0628a891dd086db6522834"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:02:18.319Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "组件包以lib/bridge.js加载，runtime home/config/index等为外部配置；不把整仓其他框架脚本计组件原创与LOC，宿主服务缺失回api-unavailable。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1424063534-plugins-dsh-domain-bridge-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1424063534:plugins-dsh-domain-bridge",
+                            "area": "code",
+                            "fingerprint": "8ef0119937f5f9d18a0628a891dd086db6522834"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:02:18.319Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "现金随followup/steer触发模型回合，inject仅上下文不保证立即处理；人工是登记职责、冲突交接、坏文件处理、回执及重复执行核对。需维护home/state及注册表，不具实测单位任务收益。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1424063534-plugins-dsh-domain-bridge-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1424063534:plugins-dsh-domain-bridge",
+                            "area": "code",
+                            "fingerprint": "8ef0119937f5f9d18a0628a891dd086db6522834"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:02:18.319Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "确有顶层会话分工时可评估；先明确谁负责确认任务接受与完成，不能仅凭delivered回执或暂停标记承担业务验收与系统禁用保证。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1424063534-plugins-dsh-domain-bridge-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1424063534:plugins-dsh-domain-bridge",
+                            "area": "code",
+                            "fingerprint": "8ef0119937f5f9d18a0628a891dd086db6522834"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:02:18.319Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "减少人肉转发并把负责人和暂停原因显式化；收益取决于声明及时更新及收件方独立验收。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1424063534-plugins-dsh-domain-bridge-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1424063534:plugins-dsh-domain-bridge",
+                            "area": "code",
+                            "fingerprint": "8ef0119937f5f9d18a0628a891dd086db6522834"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:02:18.319Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "命令/弹窗复用同一工具定义，避免多实现分叉；七命令注入作用域返回disposer减少HMR旧路由；队列冻结原信封和结构化发件人，恢复不重写业务语义。坏状态文件与并发重写仍需明确取舍。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1424063534-plugins-dsh-domain-bridge-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1424063534:plugins-dsh-domain-bridge",
+                            "area": "code",
+                            "fingerprint": "8ef0119937f5f9d18a0628a891dd086db6522834"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:02:18.319Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "相较宿主父子树内通信与人工转发，补充顶层职责声明、受政策约束的交接及可查询回执；把在线事实、暂停政策、生命周期分开，避免暂停等同离线。真正增量是协作寻址与责任入口，非通用可靠队列或系统级暂停。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1424063534-plugins-dsh-domain-bridge-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1424063534:plugins-dsh-domain-bridge",
+                            "area": "code",
+                            "fingerprint": "8ef0119937f5f9d18a0628a891dd086db6522834"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:02:18.319Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "落盘能否保证交接不丢不重？若多个进程共享stateDir，append的追加与updateInboxStatus的整文件.tmp重写之间未见跨进程锁或版本条件，可能覆盖其他写者的新消息；投递后再落delivered也有崩溃窗口。暂停文件坏读降级paused=false虽报告error，仍可能放行。delivered只指消息送入，不是收件方接受任务或完成，GUI/宿主直接恢复又不受此政策控制。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1424063534-plugins-dsh-domain-bridge-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1424063534:plugins-dsh-domain-bridge",
+                            "area": "code",
+                            "fingerprint": "8ef0119937f5f9d18a0628a891dd086db6522834"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:02:18.319Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "将消息业务ID与收件方接受/完成回执绑定，以单写者队列或版本条件提交状态，可能降低恢复重投的重复执行。用投递后进程中断、状态更新同时追加、并发撤回及坏政策文件反例，核对每业务ID最多执行一次且未知状态不自动重发；若只有投递日志而无收件幂等，则不能称办结保证。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1424063534-plugins-dsh-domain-bridge-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1424063534:plugins-dsh-domain-bridge",
+                            "area": "code",
+                            "fingerprint": "8ef0119937f5f9d18a0628a891dd086db6522834"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:02:18.319Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T08:02:18.319Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "8ef0119937f5f9d18a0628a891dd086db6522834",
+                "reviewed_at": "2026-10-21T08:02:18.319Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1424063534:plugins-dsh-domain-bridge",
+                        "area": "code",
+                        "fingerprint": "8ef0119937f5f9d18a0628a891dd086db6522834"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 4
+                    },
+                    "rationale": "新颖性9：域注册/顶层信使为明确宿主适配，未核全局先例不据此给首创；机制15：声明寻址与四级OR改变暂停取舍；迁移性10：政策/事实分离可复用；简化4：命令复用工具减少重复，但注册/队列复杂度未消除。",
+                    "basis": "interpretation",
+                    "score": 38,
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1424063534-plugins-dsh-domain-bridge-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "工作流18：顶层认领/交接/暂停职责有实质改变；交付8：回执到投递尚非任务验收；覆盖5：熟悉多会话与项目体系用户；经济4：省转发但增加模型回合与状态维护，未实测。",
+                    "basis": "interpretation",
+                    "score": 35,
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1424063534-plugins-dsh-domain-bridge-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "顶层领域协作可减少转发，但共享JSONL并发重写与投递后落状态存在丢失或重复窗口；先补持久交接验证再承担任务。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "跨顶层会话按领域交接具体，完成确认仍需另立协议。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "域寻址和多级暂停比人工转发更结构化。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "已查append、整文件状态重写与暂停坏读降级，可靠投递尚无验证。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "模型唤醒、注册表与多进程状态维护复杂，delivered不能代业务验收。"
+                    }
+                },
+                "score": 60,
+                "revision": "8ef0119937f5f9d18a0628a891dd086db6522834",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-07-github-1424063534-plugins-dsh-domain-bridge-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1424063534:plugins-dsh-domain-bridge",
+                        "area": "code",
+                        "fingerprint": "8ef0119937f5f9d18a0628a891dd086db6522834"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1424063534:plugins-dsh-domain-bridge",
+            "repository": "1Lany2a/dsh-domain-role",
+            "path": "plugins/dsh-domain-bridge",
+            "revision": "8ef0119937f5f9d18a0628a891dd086db6522834",
+            "fingerprints": {
+                "directory": "6ba8337d6e8511604fcdb010861be486c29f966292d8321fb7acc45424f431aa",
+                "code": "8ef0119937f5f9d18a0628a891dd086db6522834",
+                "maintenance": "c242075cc105d25ad2f125912d4df7b9c4cb4b472d2a040ebfc8e8e2a3cc2cd7"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T07:52:12Z",
+            "analysis_sha256": "0f58cd7cad87c5fb892d7b5a9ce5293ebbdcbe99fce8bdaa63528cde909df2a3"
+        },
+        "publication.metadata": "data/plugins/1lany2a--dsh-domain-role--plugins-dsh-domain-bridge/META.json",
+        "publication.summaries": {
+            "text": "为 DSH 顶层会话提供域寻址、职责交接、分级暂停和模型选择。",
+            "revision": "8ef0119937f5f9d18a0628a891dd086db6522834",
+            "source_url": "https://github.com/1Lany2a/dsh-domain-role/blob/8ef0119937f5f9d18a0628a891dd086db6522834/plugins/dsh-domain-bridge/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "8ef0119937f5f9d18a0628a891dd086db6522834",
+            "items": {
+                "模型工具": "11项顶层会话/域声明/消息/暂停/模型分派工具。",
+                "用户命令": "register、initialize、handoff、retire、pause、resume、pause-all七命令。",
+                "Host 路由": "popup菜单和命令执行/健康路径。",
+                "界面": "域操作弹窗菜单。",
+                "后台": "暂停消息JSONL存储与恢复投递。"
+            }
+        },
+        "publication.advice": {
+            "revision": "8ef0119937f5f9d18a0628a891dd086db6522834",
+            "text": "确有顶层会话分工时可评估；先明确谁负责确认任务接受与完成，不能仅凭delivered回执或暂停标记承担业务验收与系统禁用保证。"
+        },
+        "registry": "data/plugins/1lany2a--dsh-domain-role--plugins-dsh-domain-bridge",
+        "reports": "# dsh-domain-bridge\n\n> 为 DSH 顶层会话提供域寻址、职责交接、分级暂停和模型选择。\n\n## 使用建议\n\n确有顶层会话分工时可评估；先明确谁负责确认任务接受与完成，不能仅凭delivered回执或暂停标记承担业务验收与系统禁用保证。\n\n核查状态：域寻址、四级政策和队列接线源码支持；并发消息可靠性与任务办结未验证。 本轮只检查源码，未安装、执行目标代码/测试或真实宿主验收。\n\n## 洞察短评\n\n- **用途**：多个顶层会话按项目/领域分工，由域声明定位负责人，在暂停期间保留待交接消息；合格交付应含任务接受与完成确认。\n- **亮点**：相较宿主父子树内通信与人工转发，补充顶层职责声明、受政策约束的交接及可查询回执；把在线事实、暂停政策、生命周期分开，避免暂停等同离线。真正增量是协作寻址与责任入口，非通用可靠队列或系统级暂停。\n- **思考**：落盘能否保证交接不丢不重？若多个进程共享stateDir，append的追加与updateInboxStatus的整文件.tmp重写之间未见跨进程锁或版本条件，可能覆盖其他写者的新消息；投递后再落delivered也有崩溃窗口。暂停文件坏读降级paused=false虽报告error，仍可能放行。delivered只指消息送入，不是收件方接受任务或完成，GUI/宿主直接恢复又不受此政策控制。\n- **建议**：将消息业务ID与收件方接受/完成回执绑定，以单写者队列或版本条件提交状态，可能降低恢复重投的重复执行。用投递后进程中断、状态更新同时追加、并发撤回及坏政策文件反例，核对每业务ID最多执行一次且未知状态不自动重发；若只有投递日志而无收件幂等，则不能称办结保证。\n\n## 场景与替代办法\n\n多个顶层会话按项目/领域分工，由域声明定位负责人，在暂停期间保留待交接消息；合格交付应含任务接受与完成确认。\n\n宿主子树消息、人工复制或成熟任务队列；本项针对顶层域协作，可靠消息和业务完成协议仍需补充。\n\n## 能力清单\n\n- **模型工具**：11项顶层会话/域声明/消息/暂停/模型分派工具。\n- **用户命令**：register、initialize、handoff、retire、pause、resume、pause-all七命令。\n- **Host 路由**：popup菜单和命令执行/健康路径。\n- **界面**：域操作弹窗菜单。\n- **后台**：暂停消息JSONL存储与恢复投递。\n\n## 依赖与流程\n\nbridge构建11个工具定义并让命令复用；域声明优先寻址，发送/接收端四级暂停OR叠加。拦截消息append至目标JSONL，恢复重评政策再投递并重写状态；七条命令与popup共用注册路径，含/resume。模型操作区分会话选择与全局默认。\n\nDSH agents/sessionController、commands/webServer可选、可写home/state、域注册表与owner CLI接线；离线唤醒依赖模型/权限配置，新会话默认workspace-write。\n\n认领域→解析目标→检查双端政策→投递或排队→人工恢复→重评全部作用域→投递并改状态；撤回仅pending，force越过政策时回执留痕，任务执行另行确认。\n\n组件包以lib/bridge.js加载，runtime home/config/index等为外部配置；不把整仓其他框架脚本计组件原创与LOC，宿主服务缺失回api-unavailable。\n\n## 成本与效果\n\n现金随followup/steer触发模型回合，inject仅上下文不保证立即处理；人工是登记职责、冲突交接、坏文件处理、回执及重复执行核对。需维护home/state及注册表，不具实测单位任务收益。\n\n减少人肉转发并把负责人和暂停原因显式化；收益取决于声明及时更新及收件方独立验收。\n\n## 核心贡献\n\n相较宿主父子树内通信与人工转发，补充顶层职责声明、受政策约束的交接及可查询回执；把在线事实、暂停政策、生命周期分开，避免暂停等同离线。真正增量是协作寻址与责任入口，非通用可靠队列或系统级暂停。\n\n## 关键质疑\n\n落盘能否保证交接不丢不重？若多个进程共享stateDir，append的追加与updateInboxStatus的整文件.tmp重写之间未见跨进程锁或版本条件，可能覆盖其他写者的新消息；投递后再落delivered也有崩溃窗口。暂停文件坏读降级paused=false虽报告error，仍可能放行。delivered只指消息送入，不是收件方接受任务或完成，GUI/宿主直接恢复又不受此政策控制。\n\n## 工程亮点\n\n命令/弹窗复用同一工具定义，避免多实现分叉；七命令注入作用域返回disposer减少HMR旧路由；队列冻结原信封和结构化发件人，恢复不重写业务语义。坏状态文件与并发重写仍需明确取舍。\n\n固定源码依据：[plugins/dsh-domain-bridge/lib/bridge.js](https://github.com/1Lany2a/dsh-domain-role/blob/8ef0119937f5f9d18a0628a891dd086db6522834/plugins/dsh-domain-bridge/lib/bridge.js)、[plugins/dsh-domain-bridge/lib/core/messaging.js](https://github.com/1Lany2a/dsh-domain-role/blob/8ef0119937f5f9d18a0628a891dd086db6522834/plugins/dsh-domain-bridge/lib/core/messaging.js)、[plugins/dsh-domain-bridge/lib/core/pause.js](https://github.com/1Lany2a/dsh-domain-role/blob/8ef0119937f5f9d18a0628a891dd086db6522834/plugins/dsh-domain-bridge/lib/core/pause.js)、[plugins/dsh-domain-bridge/lib/core/commands.js](https://github.com/1Lany2a/dsh-domain-role/blob/8ef0119937f5f9d18a0628a891dd086db6522834/plugins/dsh-domain-bridge/lib/core/commands.js)、[plugins/dsh-domain-bridge/lib/core/registrations.js](https://github.com/1Lany2a/dsh-domain-role/blob/8ef0119937f5f9d18a0628a891dd086db6522834/plugins/dsh-domain-bridge/lib/core/registrations.js)、[plugins/dsh-domain-bridge/package.json](https://github.com/1Lany2a/dsh-domain-role/blob/8ef0119937f5f9d18a0628a891dd086db6522834/plugins/dsh-domain-bridge/package.json)。\n\n## 未来设计假设（未验证）\n\n将消息业务ID与收件方接受/完成回执绑定，以单写者队列或版本条件提交状态，可能降低恢复重投的重复执行。用投递后进程中断、状态更新同时追加、并发撤回及坏政策文件反例，核对每业务ID最多执行一次且未知状态不自动重发；若只有投递日志而无收件幂等，则不能称办结保证。\n\n未运行目标。最小验证用双会话、稳定业务ID覆盖暂停/恢复、并发状态更新和未知投递，分别测消息到达、任务接受与实际执行次数。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：plugins/dsh-domain-bridge；内容摘要：5c156c56d39c258d913443ffa9cc2e2ffadb98146eddb1cc6af9e84719946c8a。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 2 | 1039 | — | — | 24042 |\n| .js | source | 12 | 9457 | 7292 | 1720 | — |\n| .mjs | test | 6 | 6637 | 5614 | 547 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n\n## 核查说明\n\n- 版本号：0.8.5；版本日期：2026-10-21（固定提交日期，北京时间，非包发布日期）。\n- 固定提交：[8ef01199](https://github.com/1Lany2a/dsh-domain-role/tree/8ef0119937f5f9d18a0628a891dd086db6522834)；本轮基准：2026-10-21T07:52:12Z。\n- 已检查：上述源码路径、README、包清单及组件inventory。\n- 范围：仅plugins/dsh-domain-bridge组件，入口/注册、消息存储、暂停、命令与运行时配置接线；未核外部owner CLI实现。\n- 未执行：目标安装、代码/测试、真实宿主和第三方服务。作者说明与源码不等于独立效果验证。\n",
+        "metadata": {
+            "repository": "1Lany2a/dsh-domain-role",
+            "repository_id": 1424063534,
+            "captured_at": "2026-10-21T07:58:47.280Z",
+            "window_start": "2026-09-21T07:58:47.280Z",
+            "stars": 8,
+            "pushed_at": "2026-10-21T06:46:45Z",
+            "issues": {
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
+            },
+            "errors": [],
+            "npm": {
+                "package_name": "dsh-domain-bridge",
+                "captured_at": "2026-10-21T07:59:05.253Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 372,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-domain-bridge",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-10-18T14:07:04.100Z",
+                    "captured_at": "2026-10-21T07:59:05.253Z",
+                    "source_url": "https://registry.npmjs.org/dsh-domain-bridge",
+                    "error": null,
+                    "latest_version": "0.6.4",
+                    "latest_published_at": "2026-10-18T14:09:42.822Z",
+                    "latest_error": null
+                }
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1424063534:plugins-dsh-domain-bridge",
+            "repository": "1Lany2a/dsh-domain-role",
+            "path": "plugins/dsh-domain-bridge",
+            "revision": "8ef0119937f5f9d18a0628a891dd086db6522834",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6ba8337d6e8511604fcdb010861be486c29f966292d8321fb7acc45424f431aa",
+                "code": "8ef0119937f5f9d18a0628a891dd086db6522834",
+                "maintenance": "c242075cc105d25ad2f125912d4df7b9c4cb4b472d2a040ebfc8e8e2a3cc2cd7"
+            }
+        }
+    }
+}

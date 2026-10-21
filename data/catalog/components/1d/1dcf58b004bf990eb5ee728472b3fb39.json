@@ -1,0 +1,459 @@
+{
+    "schema_version": 3,
+    "id": "1dcf58b004bf990eb5ee728472b3fb39",
+    "identity": "github:1394489199:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1394489199:root",
+            "repository_id": 1394489199,
+            "component_id": "root",
+            "repository": "6mt/dsh-plugin-loopback-trust",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-plugin-loopback-trust",
+            "entry_type": "plugin",
+            "technical_category": "runtime-deployment",
+            "business_category": "infrastructure",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "e03d38a0e4f277dfd1a3d4eb6fe99be00bd050a4ddacfc235cadac179d05f902",
+                "code": "838ddf0d79fb977be896c6cb5dcd0bba68015832",
+                "maintenance": "c30e4e323dda92d714b4224614962d1e1d4c1df39017e5daad2eb370f85016b8"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-02-github-1394489199-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T03:16:27.653Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-02-github-1394489199-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/6mt/dsh-plugin-loopback-trust/blob/838ddf0d79fb977be896c6cb5dcd0bba68015832/README.md",
+                    "revision": "838ddf0d79fb977be896c6cb5dcd0bba68015832",
+                    "captured_at": "2026-10-21T03:16:27.653Z",
+                    "summary": "为反向代理域名访问的DSH网页恢复宿主设置持久化。",
+                    "artifact": "data/runs/2026-10-21-02/snapshots/6mt--dsh-plugin-loopback-trust/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-02-github-1394489199-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/6mt/dsh-plugin-loopback-trust/blob/838ddf0d79fb977be896c6cb5dcd0bba68015832/client.js",
+                    "revision": "838ddf0d79fb977be896c6cb5dcd0bba68015832",
+                    "captured_at": "2026-10-21T03:16:27.653Z",
+                    "summary": "核查 client.js、index.js、package.json；client.js在启动预取阶段注入ownsHost传输事实，并在apply时修改connection.isLoopback及失效hostFacts缓存；已有桌面传输和真实loopback会被跳过。",
+                    "artifact": "data/runs/2026-10-21-02/snapshots/6mt--dsh-plugin-loopback-trust/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "自管DSH经反向代理域名访问时，管理员需要修改模型与持久设置；合格结果是刷新后保留设置，且访问域仍满足部署方信任条件。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1394489199-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1394489199:root",
+                            "area": "code",
+                            "fingerprint": "838ddf0d79fb977be896c6cb5dcd0bba68015832"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:27.653Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "client.js在启动预取阶段注入ownsHost传输事实，并在apply时修改connection.isLoopback及失效hostFacts缓存；已有桌面传输和真实loopback会被跳过。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1394489199-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1394489199:root",
+                            "area": "code",
+                            "fingerprint": "838ddf0d79fb977be896c6cb5dcd0bba68015832"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:27.653Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1394489199-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1394489199:root",
+                            "area": "code",
+                            "fingerprint": "838ddf0d79fb977be896c6cb5dcd0bba68015832"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:27.653Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "包声明DSH>=0.1.7 <0.3，client立即加载，index为宿主占位，兼容依赖内部连接对象。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1394489199-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1394489199:root",
+                            "area": "code",
+                            "fingerprint": "838ddf0d79fb977be896c6cb5dcd0bba68015832"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:27.653Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "无额外服务订阅；首次成本集中在反代认证与升级兼容检查。运行不增加模型调用，但若错误授权导致设置被改，恢复成本不可从代码估算。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1394489199-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1394489199:root",
+                            "area": "code",
+                            "fingerprint": "838ddf0d79fb977be896c6cb5dcd0bba68015832"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:27.653Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "仅适合已经配置访问控制的自管反代管理员核查后试用。先验证未授权访问被反代阻止，再验证设置保存与卸载恢复；公开匿名实例不宜启用。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1394489199-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1394489199:root",
+                            "area": "code",
+                            "fingerprint": "838ddf0d79fb977be896c6cb5dcd0bba68015832"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:27.653Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "可减少域名访问下设置丢失和人工宿主补丁；没有实际部署验收或节省时间证据。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1394489199-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1394489199:root",
+                            "area": "code",
+                            "fingerprint": "838ddf0d79fb977be896c6cb5dcd0bba68015832"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:27.653Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "早期注入与后期缓存失效构成两层接线，避免覆盖桌面传输；可借鉴最小兼容补丁；移除后仍需整页重载使全局事实恢复，撤销行为待验证。代价是修改全局私有协议与只读属性，启动时序或宿主缓存结构变化会破坏收益。 源码依据：[client.js](https://github.com/6mt/dsh-plugin-loopback-trust/blob/838ddf0d79fb977be896c6cb5dcd0bba68015832/client.js)、[index.js](https://github.com/6mt/dsh-plugin-loopback-trust/blob/838ddf0d79fb977be896c6cb5dcd0bba68015832/index.js)、[package.json](https://github.com/6mt/dsh-plugin-loopback-trust/blob/838ddf0d79fb977be896c6cb5dcd0bba68015832/package.json)。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1394489199-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1394489199:root",
+                            "area": "code",
+                            "fingerprint": "838ddf0d79fb977be896c6cb5dcd0bba68015832"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:27.653Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "相对用户反复改内存设置或直接修补宿主，插件把反代网页的宿主拥有者事实作为独立客户端适配，零额外服务。它修复的是访问分类与持久设置的衔接，不提供新的认证或设置存储。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1394489199-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1394489199:root",
+                            "area": "code",
+                            "fingerprint": "838ddf0d79fb977be896c6cb5dcd0bba68015832"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:27.653Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "恢复持久化所依赖的信任是否与实际来源匹配？client.js对所有非loopback且无已有transport的页面设ownsHost，不按域名白名单判断。它保留服务器Host围栏，但前端能力分类已被放宽；因此有效性依赖反代认证和受信任访问者，不能把设置可写解释为部署安全得到增强。README兼容段残留<0.2表述而package实际<0.3，也需以安装清单核实。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1394489199-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1394489199:root",
+                            "area": "code",
+                            "fingerprint": "838ddf0d79fb977be896c6cb5dcd0bba68015832"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:27.653Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "由全页布尔信任替代细分权限推导，可改为服务端签发、绑定会话与origin的设置能力声明，客户端仅在验证声明后开放持久化。相比伪造loopback可减少代理配置与权限分类不一致，但需要宿主协议改造；未验证。以受信任/未授权origin与过期会话测试，若未授权仍可开放设置则否定方案。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1394489199-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1394489199:root",
+                            "area": "code",
+                            "fingerprint": "838ddf0d79fb977be896c6cb5dcd0bba68015832"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:27.653Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cross_remote_access_identity_boundary",
+                    "topic": "comparison",
+                    "basis": "interpretation",
+                    "text": "围绕反向代理访问自管DSH的同一场景，chicheng-gate在HTTP与WebSocket入口提供密码会话门禁，同时调整宿主信任与官方文件；loopback-trust只在客户端赋予ownsHost事实，不提供认证。两者解决不同接缝，组合后设置可写仍不能证明请求者身份正确或全部入口都被保护。该比较仅来自固定源码，未部署二者组合，也不构成端到端安全验收。维护取舍是独立门禁的部署/补丁负担与客户端私有协议的升级耦合。应在隔离实例以匿名/已认证、HTTP/WS、会话过期及宿主升级构造访问矩阵；若任何未授权请求仍获得设置写入能力，应否定组合满足访问边界的假设。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1394489199-root-source",
+                        "2026-10-21-02-github-1334862230-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1394489199:root",
+                            "area": "code",
+                            "fingerprint": "838ddf0d79fb977be896c6cb5dcd0bba68015832"
+                        },
+                        {
+                            "plugin_id": "github:1334862230:root",
+                            "area": "code",
+                            "fingerprint": "cfee329acf7f886749469779259a6a9147a2b190"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:20:39.249Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T03:20:39.249Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "838ddf0d79fb977be896c6cb5dcd0bba68015832",
+                "reviewed_at": "2026-10-21T03:16:27.653Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1394489199:root",
+                        "area": "code",
+                        "fingerprint": "838ddf0d79fb977be896c6cb5dcd0bba68015832"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty为既有ownsHost路径适配小档；mechanism布尔补丁小档；transferability耦合宿主内部字段小档；simplification避免直接改宿主取半档。",
+                    "basis": "interpretation",
+                    "score": 30,
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1394489199-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow减少设置绕路小档；delivery保持原设置能力小档；reach反代管理员小档；economics无新增服务但无实测取小档。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1394489199-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "反代设置持久化有价值，但所有非本机页面被统一认ownsHost；先证明反代认证隔离和卸载恢复，公开实例不启用。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "自管反代下刷新保留设置是具体问题。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "客户端适配省反复内存配置，但原生trusted-host更适合长期。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "ownsHost和isLoopback修改已查，没有域白名单或新增认证。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "零模型费用但授权信任面放宽，部署认证和版本适配成本高。"
+                    }
+                },
+                "score": 54,
+                "revision": "838ddf0d79fb977be896c6cb5dcd0bba68015832",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-02-github-1394489199-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1394489199:root",
+                        "area": "code",
+                        "fingerprint": "838ddf0d79fb977be896c6cb5dcd0bba68015832"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1394489199:root",
+            "repository": "6mt/dsh-plugin-loopback-trust",
+            "path": "",
+            "revision": "838ddf0d79fb977be896c6cb5dcd0bba68015832",
+            "fingerprints": {
+                "directory": "e03d38a0e4f277dfd1a3d4eb6fe99be00bd050a4ddacfc235cadac179d05f902",
+                "code": "838ddf0d79fb977be896c6cb5dcd0bba68015832",
+                "maintenance": "c30e4e323dda92d714b4224614962d1e1d4c1df39017e5daad2eb370f85016b8"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T03:00:27Z",
+            "analysis_sha256": "a800f76932ee334479db631da91817d4a7c7442465435411fc8fc1e95bd9d193"
+        },
+        "publication.metadata": "data/plugins/6mt--dsh-plugin-loopback-trust/META.json",
+        "publication.summaries": {
+            "text": "为反向代理域名访问的DSH网页恢复宿主设置持久化。",
+            "revision": "838ddf0d79fb977be896c6cb5dcd0bba68015832",
+            "source_url": "https://github.com/6mt/dsh-plugin-loopback-trust/blob/838ddf0d79fb977be896c6cb5dcd0bba68015832/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "838ddf0d79fb977be896c6cb5dcd0bba68015832",
+            "items": {
+                "界面": "启动时修改网页连接信任事实。"
+            }
+        },
+        "publication.advice": {
+            "revision": "838ddf0d79fb977be896c6cb5dcd0bba68015832",
+            "text": "仅适合已经配置访问控制的自管反代管理员核查后试用。先验证未授权访问被反代阻止，再验证设置保存与卸载恢复；公开匿名实例不宜启用。"
+        },
+        "registry": "data/plugins/6mt--dsh-plugin-loopback-trust",
+        "reports": "# dsh-plugin-loopback-trust\n\n> 为反向代理域名访问的DSH网页恢复宿主设置持久化。\n\n## 使用建议\n\n仅适合已经配置访问控制的自管反代管理员核查后试用。先验证未授权访问被反代阻止，再验证设置保存与卸载恢复；公开匿名实例不宜启用。\n\n核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。\n\n源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。\n\n## 洞察短评\n\n- **用途**：自管DSH经反向代理域名访问时，管理员需要修改模型与持久设置；合格结果是刷新后保留设置，且访问域仍满足部署方信任条件。\n- **亮点**：相对用户反复改内存设置或直接修补宿主，插件把反代网页的宿主拥有者事实作为独立客户端适配，零额外服务。它修复的是访问分类与持久设置的衔接，不提供新的认证或设置存储。\n- **思考**：恢复持久化所依赖的信任是否与实际来源匹配？client.js对所有非loopback且无已有transport的页面设ownsHost，不按域名白名单判断。它保留服务器Host围栏，但前端能力分类已被放宽；因此有效性依赖反代认证和受信任访问者，不能把设置可写解释为部署安全得到增强。README兼容段残留<0.2表述而package实际<0.3，也需以安装清单核实。\n- **建议**：由全页布尔信任替代细分权限推导，可改为服务端签发、绑定会话与origin的设置能力声明，客户端仅在验证声明后开放持久化。相比伪造loopback可减少代理配置与权限分类不一致，但需要宿主协议改造；未验证。以受信任/未授权origin与过期会话测试，若未授权仍可开放设置则否定方案。\n\n## 场景与替代办法\n\n自管DSH经反向代理域名访问时，管理员需要修改模型与持久设置；合格结果是刷新后保留设置，且访问域仍满足部署方信任条件。\n\n本机loopback访问无需补丁；宿主原生trusted-host能力若覆盖前端分类更适合长期维护。\n\n## 能力清单\n\n- **界面**：启动时修改网页连接信任事实。\n\n## 依赖与流程\n\n依赖DSH客户端ModuleLoader、__DSH_TRANSPORT__与connection私有字段；反代认证是兑现安全使用的必要条件，不由此插件提供。\n\n安装重启与硬刷新后客户端设置宿主事实，用户修改设置再刷新验收；若启动顺序漂移需重载或移除插件。\n\n## 成本与效果\n\n无额外服务订阅；首次成本集中在反代认证与升级兼容检查。运行不增加模型调用，但若错误授权导致设置被改，恢复成本不可从代码估算。\n\n可减少域名访问下设置丢失和人工宿主补丁；没有实际部署验收或节省时间证据。\n\n## 核心贡献\n\n相对用户反复改内存设置或直接修补宿主，插件把反代网页的宿主拥有者事实作为独立客户端适配，零额外服务。它修复的是访问分类与持久设置的衔接，不提供新的认证或设置存储。\n\n## 关键质疑\n\n恢复持久化所依赖的信任是否与实际来源匹配？client.js对所有非loopback且无已有transport的页面设ownsHost，不按域名白名单判断。它保留服务器Host围栏，但前端能力分类已被放宽；因此有效性依赖反代认证和受信任访问者，不能把设置可写解释为部署安全得到增强。README兼容段残留<0.2表述而package实际<0.3，也需以安装清单核实。\n\n\n## 工程亮点\n\n早期注入与后期缓存失效构成两层接线，避免覆盖桌面传输；可借鉴最小兼容补丁；移除后仍需整页重载使全局事实恢复，撤销行为待验证。代价是修改全局私有协议与只读属性，启动时序或宿主缓存结构变化会破坏收益。 源码依据：[client.js](https://github.com/6mt/dsh-plugin-loopback-trust/blob/838ddf0d79fb977be896c6cb5dcd0bba68015832/client.js)、[index.js](https://github.com/6mt/dsh-plugin-loopback-trust/blob/838ddf0d79fb977be896c6cb5dcd0bba68015832/index.js)、[package.json](https://github.com/6mt/dsh-plugin-loopback-trust/blob/838ddf0d79fb977be896c6cb5dcd0bba68015832/package.json)。\n\n## 远程接入的身份边界比较\n\n围绕反向代理访问自管DSH的同一场景，chicheng-gate在HTTP与WebSocket入口提供密码会话门禁，同时调整宿主信任与官方文件；loopback-trust只在客户端赋予ownsHost事实，不提供认证。两者解决不同接缝，组合后设置可写仍不能证明请求者身份正确或全部入口都被保护。该比较仅来自固定源码，未部署二者组合，也不构成端到端安全验收。维护取舍是独立门禁的部署/补丁负担与客户端私有协议的升级耦合。应在隔离实例以匿名/已认证、HTTP/WS、会话过期及宿主升级构造访问矩阵；若任何未授权请求仍获得设置写入能力，应否定组合满足访问边界的假设。\n\n比较源码：[gate门禁与宿主适配](https://github.com/534119219/chicheng-gate/blob/cfee329acf7f886749469779259a6a9147a2b190/lib/index.js)；[loopback客户端信任适配](https://github.com/6mt/dsh-plugin-loopback-trust/blob/838ddf0d79fb977be896c6cb5dcd0bba68015832/client.js)。\n\n## 未来设计假设（未验证）\n\n由全页布尔信任替代细分权限推导，可改为服务端签发、绑定会话与origin的设置能力声明，客户端仅在验证声明后开放持久化。相比伪造loopback可减少代理配置与权限分类不一致，但需要宿主协议改造；未验证。以受信任/未授权origin与过期会话测试，若未授权仍可开放设置则否定方案。\n\n在隔离反代实例验证匿名/已认证访问、保存刷新、桌面transport不覆盖、插件移除后恢复原分类；不写真实生产凭据。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：2f43d6bdb72cb9430b098a720e02f491d043339135ed3a58ef245224db6b1d62。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 3 | 224 | — | — | 1592 |\n| .js | source | 2 | 74 | 37 | 34 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[6mt/dsh-plugin-loopback-trust](https://github.com/6mt/dsh-plugin-loopback-trust)\n- **版本号**：0.1.1（[固定提交 838ddf0d](https://github.com/6mt/dsh-plugin-loopback-trust/tree/838ddf0d79fb977be896c6cb5dcd0bba68015832)）\n- **版本日期**：2026-10-14（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：作者 README、包清单、源码路径 client.js、index.js、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。\n- 下一步：在隔离反代实例验证匿名/已认证访问、保存刷新、桌面transport不覆盖、插件移除后恢复原分类；不写真实生产凭据。\n",
+        "metadata": {
+            "repository": "6mt/dsh-plugin-loopback-trust",
+            "repository_id": 1394489199,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 0,
+            "pushed_at": "2026-10-14T04:26:19Z",
+            "issues": {
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
+            },
+            "errors": [],
+            "npm": {
+                "package_name": "dsh-plugin-loopback-trust",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-plugin-loopback-trust",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-plugin-loopback-trust",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "838ddf0d79fb977be896c6cb5dcd0bba68015832",
+                "current_revision": "838ddf0d79fb977be896c6cb5dcd0bba68015832",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1394489199:root",
+            "repository": "6mt/dsh-plugin-loopback-trust",
+            "path": "",
+            "revision": "838ddf0d79fb977be896c6cb5dcd0bba68015832",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e03d38a0e4f277dfd1a3d4eb6fe99be00bd050a4ddacfc235cadac179d05f902",
+                "code": "838ddf0d79fb977be896c6cb5dcd0bba68015832",
+                "maintenance": "c30e4e323dda92d714b4224614962d1e1d4c1df39017e5daad2eb370f85016b8"
+            }
+        }
+    }
+}

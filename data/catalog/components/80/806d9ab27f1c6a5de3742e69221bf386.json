@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "806d9ab27f1c6a5de3742e69221bf386",
+    "identity": "github:1402524347:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1402524347:root",
+            "repository": "CLnum42/dsh-DSchat",
+            "path": "",
+            "revision": "e52e44016241bd00a374515006c82f07634efab5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "749e8a2bc7b824ec86e51b72916ffec8f3df019347e778faf1d6c74a0cd616e5",
+                "code": "e52e44016241bd00a374515006c82f07634efab5",
+                "maintenance": "eccdaa60f0272e7786dc2765d1961c274d059e82551c06805296bf109fe39e76"
+            }
+        }
+    }
+}

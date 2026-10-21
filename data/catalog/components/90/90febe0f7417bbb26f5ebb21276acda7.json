@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "90febe0f7417bbb26f5ebb21276acda7",
+    "identity": "github:1412070170:dsh-opencode2api",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1412070170:dsh-opencode2api",
+            "repository": "zhiqiangme/dsh-plugins",
+            "path": "dsh-opencode2api",
+            "revision": "01d0c8b2fdf3cb99ad4b1febfcc6a5b04716bb42",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4e76bb7c0a4e666474676a7c9b517b994e7e5c467481ee84f77b9fbf1dcf7f32",
+                "code": "01d0c8b2fdf3cb99ad4b1febfcc6a5b04716bb42",
+                "maintenance": "e467b2ea7791b7dba75d4ea7d3bd2bd60c372b114f097535b0ca93fa5b2e20f9"
+            }
+        }
+    }
+}

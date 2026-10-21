@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "22cb19737487f95f7cbfb1df7e51b6c7",
+    "identity": "github:1375696663:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1375696663:root",
+            "repository": "jacket-sikaha/dsh-market-gist-autosync",
+            "path": "",
+            "revision": "e721c7cb372dfca4136e2cca043d4edfb2e2b594",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "39037a93b4c90aeb8336ceae78e48e255158dcdd2a9863e8fde97090cddfa88f",
+                "code": "e721c7cb372dfca4136e2cca043d4edfb2e2b594",
+                "maintenance": "3f6a822bafc4c64438521ca9d1f13a1ae0f6fea15b805419ec6f168544d7a292"
+            }
+        }
+    }
+}

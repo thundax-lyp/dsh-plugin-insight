@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "65a9d08b17b80f6cab9cd3b920a2236f",
+    "identity": "github:1338476787:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338476787:root",
+            "repository": "liqiming-whu/dsh-environment-context",
+            "path": "",
+            "revision": "24db9e52ad9c2047e48a78ac1463394baece4f87",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0e09e5559e1763bbada27bfa8c26d61fa1c59f56efbc5f7ab62d6d1725c6aa57",
+                "code": "24db9e52ad9c2047e48a78ac1463394baece4f87",
+                "maintenance": "4f3e343160073acefb136f064109f439486f6710fdec837c6dc4856ea07d3e03"
+            }
+        }
+    }
+}

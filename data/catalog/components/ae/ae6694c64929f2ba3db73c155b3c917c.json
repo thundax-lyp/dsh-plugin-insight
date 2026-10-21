@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ae6694c64929f2ba3db73c155b3c917c",
+    "identity": "github:1232030145:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1232030145:root",
+            "repository": "freestylefly/wesight",
+            "path": "",
+            "revision": "c913cd94f1dc2559b43c55ab7ce378a20b5d96ff",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "d26a012f6ee2510dd73ee063a3738902f11b314a9f5813b111c43dcb7dabf0cc",
+                "code": "c913cd94f1dc2559b43c55ab7ce378a20b5d96ff",
+                "maintenance": "2de8670cfa458536e7ae2289042276557dcc89bfc3b38994a09760311250bdcf"
+            }
+        }
+    }
+}

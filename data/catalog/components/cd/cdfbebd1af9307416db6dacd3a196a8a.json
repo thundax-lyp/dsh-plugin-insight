@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "cdfbebd1af9307416db6dacd3a196a8a",
+    "identity": "github:1352287769:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1352287769:root",
+            "repository": "QinpanWan/dsh-prompt-antivirus",
+            "path": "",
+            "revision": "75373a70a75be355a6d9d8f32eab8fedabf1c2a6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "89e7fafa3728cdb6f8eb30056601c9ad60e580d7d77bfe21d07aea01d2cb6b2f",
+                "code": "75373a70a75be355a6d9d8f32eab8fedabf1c2a6",
+                "maintenance": "650ab511c98ba9279254a468c802153f1d450a2a62e3327c5c16aa6c1f8927f8"
+            }
+        }
+    }
+}

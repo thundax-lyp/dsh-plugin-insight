@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a853c9b8bcf456ef66418e4f50f271af",
+    "identity": "github:1358116339:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1358116339:root",
+            "repository": "MoonlitDropOfBlood/dsh-whale-pet",
+            "path": "",
+            "revision": "aedd643849ab5a59aab33170deaea952a7ba8bdf",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6acdb3ffcbc5085cc8f6efb5eafee60b7189cdc802eb87dfa461d7a4111fa899",
+                "code": "aedd643849ab5a59aab33170deaea952a7ba8bdf",
+                "maintenance": "eb4e4b3336474130e1189e9e506b8f01911a74aae610195f35d5efcf855614ba"
+            }
+        }
+    }
+}

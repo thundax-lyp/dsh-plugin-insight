@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e544119e74fb9037c74ceaa1f1b620ef",
+    "identity": "github:1335678174:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335678174:root",
+            "repository": "zerob13/dsh-better-markdown",
+            "path": "",
+            "revision": "2241facb67ad88632e256ca6341b831c56b9dd30",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "bc034ee0b4b1904759c853968dec1a7eca5bb447e14bf58345ab2be3e3d0e463",
+                "code": "2241facb67ad88632e256ca6341b831c56b9dd30",
+                "maintenance": "11ee7b4e84b1fd4d4f256da10f733c332d2edfea5097c2e50ea22001436c702f"
+            }
+        }
+    }
+}

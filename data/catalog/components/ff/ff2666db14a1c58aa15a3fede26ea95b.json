@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ff2666db14a1c58aa15a3fede26ea95b",
+    "identity": "github:1333993035:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333993035:root",
+            "repository": "truelove-dreamer/dsh-plugin-recall",
+            "path": "",
+            "revision": "f72e1d22122a5f86358dc0a2b6f140877d0a5fad",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3be81294bb7ae42e194545ad4546266bb9aa5fe13c7337b248cde3f1fa85ece2",
+                "code": "f72e1d22122a5f86358dc0a2b6f140877d0a5fad",
+                "maintenance": "62fbde04423122a1376905da5c9a7794aca101288da506995558fefa0a3cc8ed"
+            }
+        }
+    }
+}

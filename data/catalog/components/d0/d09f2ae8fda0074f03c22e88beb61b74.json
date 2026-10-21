@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d09f2ae8fda0074f03c22e88beb61b74",
+    "identity": "github:1356577235:packages-openbkn-business-context",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1356577235:packages-openbkn-business-context",
+            "repository": "openbkn-ai/bkn-dsh",
+            "path": "packages/openbkn-business-context",
+            "revision": "5b885dd7492fd42951b21729984f0d1e99da8b0d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "df2bf659c96511f160552f4421ac55576a8c9a0d407d75e90797bf8b23721148",
+                "code": "5b885dd7492fd42951b21729984f0d1e99da8b0d",
+                "maintenance": "e3400e87566f6c25fb380ad3cfd24b2f0e9f4ca60b2dc4f3766a484beea2c7dc"
+            }
+        }
+    }
+}

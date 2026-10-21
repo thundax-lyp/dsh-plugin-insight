@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5e9e40b920f849c262deb061825bbc4c",
+    "identity": "github:1419093048:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1419093048:root",
+            "repository": "Nigheart/dsh-mcp-relay",
+            "path": "",
+            "revision": "784ef9646346d0cba5791ea5ec239273affcaed0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e5eb00c80f07db6f4f835e9089b5d9212493a7697c0aa7f72c831ddb93264be4",
+                "code": "784ef9646346d0cba5791ea5ec239273affcaed0",
+                "maintenance": "6589f5afb8ccaa742eab10202609aba33bb775044a31878b73642d9a5a387207"
+            }
+        }
+    }
+}

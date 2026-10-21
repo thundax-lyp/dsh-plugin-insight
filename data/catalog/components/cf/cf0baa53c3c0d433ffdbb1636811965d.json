@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "cf0baa53c3c0d433ffdbb1636811965d",
+    "identity": "github:1188590713:plugins-rotifer",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1188590713:plugins-rotifer",
+            "repository": "rotifer-protocol/rotifer-playground",
+            "path": "plugins/rotifer",
+            "revision": "93feb355f5bbc06e3991c82e53ad95b907bead31",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "efdefaabc88c61964b185601dc30138ba9242095e6d1c5a9c07e9fcdb36b24a1",
+                "code": "93feb355f5bbc06e3991c82e53ad95b907bead31",
+                "maintenance": "cabbb0ab0fd94b3427b10f0bc56ff8ad3e6e9f750d7bd736bc162b08f11504bd"
+            }
+        }
+    }
+}

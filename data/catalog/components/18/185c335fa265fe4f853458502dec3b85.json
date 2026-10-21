@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "185c335fa265fe4f853458502dec3b85",
+    "identity": "github:1405078512:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1405078512:root",
+            "repository": "PerseusNana7mi/dsh-model-kit",
+            "path": "",
+            "revision": "235fc33183761bce1f301f9e48d0b560d6fdddf9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "689d96ebbceb6926a32ab90fd211cd9ccf10c21edbf6c478df9cd24c71ea784c",
+                "code": "235fc33183761bce1f301f9e48d0b560d6fdddf9",
+                "maintenance": "0fa3911e50842981937c3fb32b0cf81be155e08de7e09a72c919d23ac71b756e"
+            }
+        }
+    }
+}

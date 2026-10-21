@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0a41c98b7d2bb8471964a559e305b893",
+    "identity": "github:1412615582:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1412615582:root",
+            "repository": "dingchenhui0618-arch/dsh-daily",
+            "path": "",
+            "revision": "b911edf75faed5bb3bc08a4f4641e5e06316c101",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e3a68f4cd5c8ed63e85f611f20c0e7bf7da49d667ead22ab90f4cd6e23f6d87b",
+                "code": "b911edf75faed5bb3bc08a4f4641e5e06316c101",
+                "maintenance": "3809d1a8ccfcff02f0d4a7ac049c17594c0ac0ac71d749db3a5d19598b650ba6"
+            }
+        }
+    }
+}

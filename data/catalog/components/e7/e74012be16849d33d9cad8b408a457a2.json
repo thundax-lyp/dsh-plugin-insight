@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e74012be16849d33d9cad8b408a457a2",
+    "identity": "github:1348421260:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1348421260:root",
+            "repository": "jinwendijv/dsh-applauncher",
+            "path": "",
+            "revision": "28abea4bcb3c117c0fd08d1f643fb4a1584be0fa",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c4cd059ed48ebd462e5d2ca93c4e79993cdd434fb4e1a24e55eff66a0563392f",
+                "code": "28abea4bcb3c117c0fd08d1f643fb4a1584be0fa",
+                "maintenance": "d90796cdb90d5981e73c602016d2aa1e5d66474eeb711a5ac0ddc6d2ede9bf00"
+            }
+        }
+    }
+}

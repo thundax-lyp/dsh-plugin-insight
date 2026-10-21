@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "351f4170076c19ab2ba6a60e65beb5b3",
+    "identity": "github:1375386633:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1375386633:root",
+            "repository": "wuuuuu123-32/dsh-mailbox-notify",
+            "path": "",
+            "revision": "19e6a6cdc593b2f851b1f0db27c998705b342419",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7f08995eb8af197099b504d931b84b24070e46c16f7a62c2704d45fe06a7a1d9",
+                "code": "19e6a6cdc593b2f851b1f0db27c998705b342419",
+                "maintenance": "a22c8371b113099a2774579186a943cff9ce7c644188c55935de001820a42e74"
+            }
+        }
+    }
+}

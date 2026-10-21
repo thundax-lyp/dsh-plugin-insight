@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8a9d34dfcff38c4a7911acd4704072bb",
+    "identity": "github:1405517068:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1405517068:root",
+            "repository": "houdinicc/dsh-todos",
+            "path": "",
+            "revision": "6ffa413e6d3089b65a4ecbae3ad8a495f1f0986f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "945bed71c366f1b292cbdfcbcf8815097e9d9b444474a86db63151dc40c758df",
+                "code": "6ffa413e6d3089b65a4ecbae3ad8a495f1f0986f",
+                "maintenance": "e511f877e629116ce67674c581987d85c88a071510af6dda6e024a74b876cb6c"
+            }
+        }
+    }
+}

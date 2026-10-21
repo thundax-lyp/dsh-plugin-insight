@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "db4ca6addab201ae918c1d0e4ed9480a",
+    "identity": "github:1389463489:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1389463489:root",
+            "repository": "GIN0076/dsh-token-usage",
+            "path": "",
+            "revision": "13eda220223cf2cd7bad086ec689872c7db2a6c0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "786e186336148125d5d06cbb067de4bbc8d96d6f00c6f37eaabf33442fbce24a",
+                "code": "13eda220223cf2cd7bad086ec689872c7db2a6c0",
+                "maintenance": "ec4a5fc5beb7cc3d9a30cd80d6fc83ef3ae74d86404815c7f995c013e6bf459b"
+            }
+        }
+    }
+}

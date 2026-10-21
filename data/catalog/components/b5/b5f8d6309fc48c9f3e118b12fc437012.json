@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b5f8d6309fc48c9f3e118b12fc437012",
+    "identity": "github:1378153916:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1378153916:root",
+            "repository": "Bay-Zeddie/dsh-agent-instructions",
+            "path": "",
+            "revision": "41d51a77c8729ddd7b01205eb0431aa794e17a62",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "028257717321dc477104275dda26ea5bac51fb6ebd8715888771bdcc72334cd5",
+                "code": "41d51a77c8729ddd7b01205eb0431aa794e17a62",
+                "maintenance": "ee1c5792ceba77deef2089061c6059c798c99ef768e9d7981f98baa0f3777706"
+            }
+        }
+    }
+}

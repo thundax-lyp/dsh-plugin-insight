@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9e3a1474a918b36214b0a9b8008df996",
+    "identity": "github:1350613879:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1350613879:root",
+            "repository": "andyfan1094/dsh-devforge",
+            "path": "",
+            "revision": "fd0001a36744ca8b85eb9c6531c0bc36db095718",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "380be085ceec52eb4588a562d4e08df14ed7507ff40e3ac33acfbdbe6f55a9ea",
+                "code": "fd0001a36744ca8b85eb9c6531c0bc36db095718",
+                "maintenance": "c9bcd86ec8a6c28ef346d44822b933d6b69938d8c35b619c9514101418f79280"
+            }
+        }
+    }
+}

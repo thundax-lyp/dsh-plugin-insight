@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c48aa0e73c8394ab707f4b1328d6eb3a",
+    "identity": "github:1348174621:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1348174621:root",
+            "repository": "liuwenji007/dsh-trust-check",
+            "path": "",
+            "revision": "29513af3e520168c8ff5b3ce71b96f7006eae0f0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "88b29d54928047b9ad5e31cfd390114918c57524f1bddb0eb4a38bf6a96a5a5e",
+                "code": "29513af3e520168c8ff5b3ce71b96f7006eae0f0",
+                "maintenance": "3af47c43bf23b0787e4f2c4923233ab4d66e2d033569cd5bf8d91b91ce66fcc8"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8a24912c07c70793ea0a77fa93712c1e",
+    "identity": "github:1340508065:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340508065:root",
+            "repository": "bubbleptr/dsh-holdem",
+            "path": "",
+            "revision": "23c476efb0bd52e0472610942e248b7db12f3372",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ab50550470c871ac05655e7ee247bdeaf00f03243f00527f58f1220465dc85b6",
+                "code": "23c476efb0bd52e0472610942e248b7db12f3372",
+                "maintenance": "fcaa864de6844d1b7d48895e6cf30c1d1b0be0437ac55cc2702eb1f6c9c1b501"
+            }
+        }
+    }
+}

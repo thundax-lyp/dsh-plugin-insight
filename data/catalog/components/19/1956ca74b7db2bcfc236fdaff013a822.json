@@ -1,0 +1,441 @@
+{
+    "schema_version": 3,
+    "id": "1956ca74b7db2bcfc236fdaff013a822",
+    "identity": "github:1347749203:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1347749203:root",
+            "repository_id": 1347749203,
+            "component_id": "root",
+            "repository": "Amengclass/dsh-settings-hub",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-settings-hub",
+            "entry_type": "plugin",
+            "technical_category": "interface-input",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "1e85f6244f75d9cbe58d52724fc8bb9e5a4a2285f2b80a5547dac7d6ef03914d",
+                "code": "2c89559685a14375dcc6cc318ffc1c7c728a14c6",
+                "maintenance": "f2e51703fd946d983b4fa65e67008f4b312ce11e5b43d666f136e0456477e349"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-07-github-1347749203-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T08:03:07.100Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-07-github-1347749203-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/Amengclass/dsh-settings-hub/blob/2c89559685a14375dcc6cc318ffc1c7c728a14c6/README.md",
+                    "revision": "2c89559685a14375dcc6cc318ffc1c7c728a14c6",
+                    "captured_at": "2026-10-21T08:03:07.100Z",
+                    "summary": "把第三方插件设置按依赖归属分组，支持本地拖拽排序。",
+                    "artifact": "data/runs/2026-10-21-07/snapshots/amengclass--dsh-settings-hub/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-07-github-1347749203-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/Amengclass/dsh-settings-hub/blob/2c89559685a14375dcc6cc318ffc1c7c728a14c6/index.js",
+                    "revision": "2c89559685a14375dcc6cc318ffc1c7c728a14c6",
+                    "captured_at": "2026-10-21T08:03:07.100Z",
+                    "summary": "核查 index.js、lib/client.js；主机读profile package/node_modules依赖构建首个父插件映射，GET返回；客户端通过hostFace/entriesOfSlot重建并shadow sidebar.settings，localStorage保存组/项顺序。",
+                    "artifact": "data/runs/2026-10-21-07/snapshots/amengclass--dsh-settings-hub/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "装有许多插件时寻找设置入口，保留原生核心设置。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1347749203-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1347749203:root",
+                            "area": "code",
+                            "fingerprint": "2c89559685a14375dcc6cc318ffc1c7c728a14c6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:03:07.100Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "主机读profile package/node_modules依赖构建首个父插件映射，GET返回；客户端通过hostFace/entriesOfSlot重建并shadow sidebar.settings，localStorage保存组/项顺序。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1347749203-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1347749203:root",
+                            "area": "code",
+                            "fingerprint": "2c89559685a14375dcc6cc318ffc1c7c728a14c6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:03:07.100Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1347749203-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1347749203:root",
+                            "area": "code",
+                            "fingerprint": "2c89559685a14375dcc6cc318ffc1c7c728a14c6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:03:07.100Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "分发以本插件固定package.json、运行依赖与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1347749203-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1347749203:root",
+                            "area": "code",
+                            "fingerprint": "2c89559685a14375dcc6cc318ffc1c7c728a14c6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:03:07.100Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "每请求同步读依赖树、客户端自建渲染器与宿主升级维护；无模型调用，人工可能需纠正误分组。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1347749203-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1347749203:root",
+                            "area": "code",
+                            "fingerprint": "2c89559685a14375dcc6cc318ffc1c7c728a14c6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:03:07.100Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "适合设置项较多的用户；先核当前profile、插件归属和原生设置操作可用。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1347749203-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1347749203:root",
+                            "area": "code",
+                            "fingerprint": "2c89559685a14375dcc6cc318ffc1c7c728a14c6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:03:07.100Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "可减少视觉散乱，无找设置耗时或错误配置率对照。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1347749203-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1347749203:root",
+                            "area": "code",
+                            "fingerprint": "2c89559685a14375dcc6cc318ffc1c7c728a14c6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:03:07.100Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "renderer数据面和子slot能力校验比直接复制DOM更有依据；profile向上最多五级定位后回退web，软链安装需验证。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1347749203-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1347749203:root",
+                            "area": "code",
+                            "fingerprint": "2c89559685a14375dcc6cc318ffc1c7c728a14c6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:03:07.100Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "将安装依赖图用于设置导航归属，并将排序与配置值分离。本项组织入口而非改变业务交付、宿主配置权限或插件依赖解析算法。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1347749203-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1347749203:root",
+                            "area": "code",
+                            "fingerprint": "2c89559685a14375dcc6cc318ffc1c7c728a14c6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:03:07.100Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "共享依赖只归第一个遍历到的父插件，依赖关系不等于产品设置所有权；扫描失败返回空映射，回退web可能对桌面显示错组。路由设置CORS *且无本项来源核查，依赖宿主外层访问控制。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1347749203-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1347749203:root",
+                            "area": "code",
+                            "fingerprint": "2c89559685a14375dcc6cc318ffc1c7c728a14c6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:03:07.100Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "未验证假设：设置注册显式声明owner并把依赖图仅作后备，可减少多父共享依赖误分组。以共享依赖、软链、web/desktop和动态插件样例核归属与查找耗时；若需大量人工纠正则撤回自动归属。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1347749203-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1347749203:root",
+                            "area": "code",
+                            "fingerprint": "2c89559685a14375dcc6cc318ffc1c7c728a14c6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:03:07.100Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T08:03:07.100Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "2c89559685a14375dcc6cc318ffc1c7c728a14c6",
+                "reviewed_at": "2026-10-21T08:03:07.100Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1347749203:root",
+                        "area": "code",
+                        "fingerprint": "2c89559685a14375dcc6cc318ffc1c7c728a14c6"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "rationale": "novelty=9：导航分组已有方法。 mechanism=8：依赖映射和slot接线局部增量。 transferability=5：宿主renderer耦合明显。 simplification=4：集中导航少寻找步骤。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1347749203-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 0,
+                        "reach": 5,
+                        "economics": 0
+                    },
+                    "rationale": "workflow=9：入口组织非任务责任重排。 delivery=0：不改变配置交付物。 reach=5：面向多插件用户。 economics=0：未改变经济结构。",
+                    "basis": "interpretation",
+                    "score": 14,
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1347749203-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "插件设置很多者可试分组排序；先核当前profile及核心设置，首父依赖映射可能错组，回退web不能代表桌面归属。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "集中找到众多插件设置入口是明确需求。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "分组和本地排序减少视觉散乱，归属为启发式。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "已核shadow slot和依赖树，未测查找耗时或真实外层路由授权。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "同步扫描、渲染契约和错组修正需维护，无模型费。"
+                    }
+                },
+                "score": 59,
+                "revision": "2c89559685a14375dcc6cc318ffc1c7c728a14c6",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-07-github-1347749203-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1347749203:root",
+                        "area": "code",
+                        "fingerprint": "2c89559685a14375dcc6cc318ffc1c7c728a14c6"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1347749203:root",
+            "repository": "Amengclass/dsh-settings-hub",
+            "path": "",
+            "revision": "2c89559685a14375dcc6cc318ffc1c7c728a14c6",
+            "fingerprints": {
+                "directory": "1e85f6244f75d9cbe58d52724fc8bb9e5a4a2285f2b80a5547dac7d6ef03914d",
+                "code": "2c89559685a14375dcc6cc318ffc1c7c728a14c6",
+                "maintenance": "f2e51703fd946d983b4fa65e67008f4b312ce11e5b43d666f136e0456477e349"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T07:52:12Z",
+            "analysis_sha256": "a74be0bd188e85c80130f2598bca0c0b2adc6a927190c956fec18f078070a2fc"
+        },
+        "publication.metadata": "data/plugins/amengclass--dsh-settings-hub/META.json",
+        "publication.summaries": {
+            "text": "把第三方插件设置按依赖归属分组，支持本地拖拽排序。",
+            "revision": "2c89559685a14375dcc6cc318ffc1c7c728a14c6",
+            "source_url": "https://github.com/Amengclass/dsh-settings-hub/blob/2c89559685a14375dcc6cc318ffc1c7c728a14c6/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "2c89559685a14375dcc6cc318ffc1c7c728a14c6",
+            "items": {
+                "界面": "统一扩展设置分组及排序",
+                "Host 路由": "/api/dsh-settings-hub/deps依赖映射"
+            }
+        },
+        "publication.advice": {
+            "revision": "2c89559685a14375dcc6cc318ffc1c7c728a14c6",
+            "text": "适合设置项较多的用户；先核当前profile、插件归属和原生设置操作可用。"
+        },
+        "registry": "data/plugins/amengclass--dsh-settings-hub",
+        "reports": "# dsh-settings-hub\n\n> 把第三方插件设置按依赖归属分组，支持本地拖拽排序。\n\n## 使用建议\n\n适合设置项较多的用户；先核当前profile、插件归属和原生设置操作可用。\n\n**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，插件与依赖流程的实际运行尚未验证；未来假设未验证。\n\n## 洞察短评\n\n- **用途**：装有许多插件时寻找设置入口，保留原生核心设置。\n- **亮点**：将安装依赖图用于设置导航归属，并将排序与配置值分离。本项组织入口而非改变业务交付、宿主配置权限或插件依赖解析算法。\n- **思考**：共享依赖只归第一个遍历到的父插件，依赖关系不等于产品设置所有权；扫描失败返回空映射，回退web可能对桌面显示错组。路由设置CORS *且无本项来源核查，依赖宿主外层访问控制。\n- **建议**：未验证假设：设置注册显式声明owner并把依赖图仅作后备，可减少多父共享依赖误分组。以共享依赖、软链、web/desktop和动态插件样例核归属与查找耗时；若需大量人工纠正则撤回自动归属。\n\n## 场景与替代办法\n\n参照原生settings.section散列入口；增量是依赖映射、分组与自定义顺序，不提供插件配置语义校验。\n\n## 能力清单\n\n- **界面**：统一扩展设置分组及排序\n- **Host 路由**：/api/dsh-settings-hub/deps依赖映射\n\n## 依赖与流程\n\n主机读profile package/node_modules依赖构建首个父插件映射，GET返回；客户端通过hostFace/entriesOfSlot重建并shadow sidebar.settings，localStorage保存组/项顺序。\n\n宿主webServer、slots/modules与其renderer数据接口；正确profile定位和已安装依赖树，客户端依赖宿主slot能力约束。\n\n启动扫描profile→获取depMap→枚举settings.section→按父插件分组→拖动排序持久化；设置值仍由各原插件管理。\n\n## 成本与效果\n\n每请求同步读依赖树、客户端自建渲染器与宿主升级维护；无模型调用，人工可能需纠正误分组。\n\n可减少视觉散乱，无找设置耗时或错误配置率对照。\n\n## 核心贡献\n\n将安装依赖图用于设置导航归属，并将排序与配置值分离。本项组织入口而非改变业务交付、宿主配置权限或插件依赖解析算法。\n\n## 关键质疑\n\n共享依赖只归第一个遍历到的父插件，依赖关系不等于产品设置所有权；扫描失败返回空映射，回退web可能对桌面显示错组。路由设置CORS *且无本项来源核查，依赖宿主外层访问控制。\n\n## 工程亮点\n\nrenderer数据面和子slot能力校验比直接复制DOM更有依据；profile向上最多五级定位后回退web，软链安装需验证。\n\n源码依据：[index.js](https://github.com/Amengclass/dsh-settings-hub/blob/2c89559685a14375dcc6cc318ffc1c7c728a14c6/index.js)、[lib/client.js](https://github.com/Amengclass/dsh-settings-hub/blob/2c89559685a14375dcc6cc318ffc1c7c728a14c6/lib/client.js)。\n\n## 未来设计假设（未验证）\n\n未验证假设：设置注册显式声明owner并把依赖图仅作后备，可减少多父共享依赖误分组。以共享依赖、软链、web/desktop和动态插件样例核归属与查找耗时；若需大量人工纠正则撤回自动归属。\n\n未来隔离profile核多父依赖、动态加载、缺目录、slot能力和路由外层授权；本轮未更改设置。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：6eb2c42d002ae3f2e9b9a21b676df96aa474b4313eb0ccfc74d4951e8549a5f5。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 3 | 405 | — | — | 2109 |\n| .js | source | 2 | 1057 | 871 | 144 | — |\n| .cjs | source | 1 | 124 | 88 | 17 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[Amengclass/dsh-settings-hub](https://github.com/Amengclass/dsh-settings-hub)\n- **版本号**：0.1.3（[固定提交 2c895596](https://github.com/Amengclass/dsh-settings-hub/tree/2c89559685a14375dcc6cc318ffc1c7c728a14c6)）\n- **版本日期**：2026-09-30（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：index.js、lib/client.js、作者README、package与固定范围inventory；源码抽读不等于完整审计。\n- 未验证：插件执行、测试、安装、真实宿主与独立采用。\n- 证据限制：固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。\n- 下一步：未来隔离profile核多父依赖、动态加载、缺目录、slot能力和路由外层授权；本轮未更改设置。\n",
+        "metadata": {
+            "repository": "Amengclass/dsh-settings-hub",
+            "repository_id": 1347749203,
+            "captured_at": "2026-10-21T08:01:40.671Z",
+            "window_start": "2026-09-21T08:01:40.671Z",
+            "stars": 0,
+            "pushed_at": "2026-09-30T09:02:55Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": 0,
+                "updated_30d": 0
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAmengclass%2Fdsh-settings-hub%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 927C:273235:671E2B:6F0D14:6AD87169 and timestamp 2026-10-21 08:01:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAmengclass%2Fdsh-settings-hub%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 964A:5146D:7080B5:787464:6AD8716C and timestamp 2026-10-21 08:01:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAmengclass%2Fdsh-settings-hub%20is%3Aissue%20created%3A2026-09-21T08%3A01%3A40.671Z..2026-10-21T08%3A01%3A40.671Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9A9A:51118:6707C4:6EFBC6:6AD87170 and timestamp 2026-10-21 08:01:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-settings-hub",
+                "captured_at": "2026-10-21T08:01:58.898Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 952,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-settings-hub",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-29T01:57:04.572Z",
+                    "captured_at": "2026-10-21T08:01:58.898Z",
+                    "source_url": "https://registry.npmjs.org/dsh-settings-hub",
+                    "error": null,
+                    "latest_version": "0.1.2",
+                    "latest_published_at": "2026-08-29T06:25:57.670Z",
+                    "latest_error": null
+                }
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1347749203:root",
+            "repository": "Amengclass/dsh-settings-hub",
+            "path": "",
+            "revision": "2c89559685a14375dcc6cc318ffc1c7c728a14c6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1e85f6244f75d9cbe58d52724fc8bb9e5a4a2285f2b80a5547dac7d6ef03914d",
+                "code": "2c89559685a14375dcc6cc318ffc1c7c728a14c6",
+                "maintenance": "f2e51703fd946d983b4fa65e67008f4b312ce11e5b43d666f136e0456477e349"
+            }
+        }
+    }
+}

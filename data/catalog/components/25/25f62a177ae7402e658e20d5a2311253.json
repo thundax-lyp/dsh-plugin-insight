@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "25f62a177ae7402e658e20d5a2311253",
+    "identity": "github:1333921957:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333921957:root",
+            "repository": "Optim-Agent/dsh-plans",
+            "path": "",
+            "revision": "f7cec536a49f548aa96503011b98f76faaf95c35",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "5aa150f65198e876dc3b8e0db14382eb4f2ebf526fe82cbcaef6d61e5fd608a8",
+                "code": "f7cec536a49f548aa96503011b98f76faaf95c35",
+                "maintenance": "71103e0b45b8ba424c439524528c03cb3cfe8a5175be6013ae3e3cea5e4fa0ae"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2e0e4d46c6df95a252fbce5509e3d9d9",
+    "identity": "github:1354693914:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1354693914:root",
+            "repository": "Lzz2133/dsh-manutd-fixtures",
+            "path": "",
+            "revision": "49b6e222e9fcdca04f2ac3c0fe48ddbcd2e9f5d0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "37be1d2b253bcb9305149c8c1f055c7910c1645f2d45a6e91f5aee977e210d1e",
+                "code": "49b6e222e9fcdca04f2ac3c0fe48ddbcd2e9f5d0",
+                "maintenance": "d851d50c1174fb4c0b1d95d02224a16058c04a0702324c1e932fe9fd51932d26"
+            }
+        }
+    }
+}

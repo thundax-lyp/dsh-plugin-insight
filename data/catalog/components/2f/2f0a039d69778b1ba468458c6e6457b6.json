@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "2f0a039d69778b1ba468458c6e6457b6",
+    "identity": "github:1333128726:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333128726:root",
+            "repository": "omdsh-dev/dsh-genui",
+            "path": "",
+            "revision": "19037ad45f327f537ade9f2323a54d2939c54bda",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "9c5e527a4d20fcf6bf9b46d4ae429f1455154cdc0a693acdcb675c5173097ef6",
+                "code": "19037ad45f327f537ade9f2323a54d2939c54bda",
+                "maintenance": "cd933a7fc82ffead38c15745bb2908689ef4805bc22c8b0256e1a2c99a0b8475"
+            }
+        }
+    }
+}

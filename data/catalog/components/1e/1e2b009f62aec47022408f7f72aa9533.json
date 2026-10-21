@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1e2b009f62aec47022408f7f72aa9533",
+    "identity": "github:1334629085:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334629085:root",
+            "repository": "CraZY222123/dsh-ocr-plugin",
+            "path": "",
+            "revision": "cc740b3e7e3aaa43e346a0beea0fa355fdd62a8c",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "a6c8833816b6380a267c7e9cde89f3e1c3f1cd2d02effda99b644e809c727daa",
+                "code": "cc740b3e7e3aaa43e346a0beea0fa355fdd62a8c",
+                "maintenance": "d65ae367692f645ba49b555e51c44d3a79b5b3333d623bb54a2c44bd714338f6"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6b041c27bc71856c06a5a80588e79333",
+    "identity": "github:1334867421:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334867421:root",
+            "repository": "Sanqi-normal/dsh-model-picker",
+            "path": "",
+            "revision": "0c02710f9fd704ce5fba9cc65082330876d1f83f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e404457b306a539fadd797e39dde1fa5e08ffe1ffd410b21510061f3bcce2476",
+                "code": "0c02710f9fd704ce5fba9cc65082330876d1f83f",
+                "maintenance": "365d02f76c7a6587abca057b290bf7ca451589a3885e38ae170010c81599b437"
+            }
+        }
+    }
+}

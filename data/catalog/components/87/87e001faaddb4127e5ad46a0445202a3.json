@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "87e001faaddb4127e5ad46a0445202a3",
+    "identity": "github:1333756617:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333756617:root",
+            "repository": "SailingLoong/loongport-dsh",
+            "path": "",
+            "revision": "a5c1c2e8a4f08c72c304078b5cbc5636a641bee9",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "b67b215c0636abdade43b9f29732ce7f9255bed90717d6bd4481926eb757524a",
+                "code": "a5c1c2e8a4f08c72c304078b5cbc5636a641bee9",
+                "maintenance": "174e2594677bc754fa46f9a5edcced9c26f0e2c8f1d95b4168d50867a1c60613"
+            }
+        }
+    }
+}

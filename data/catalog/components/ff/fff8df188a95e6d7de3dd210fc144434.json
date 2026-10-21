@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "fff8df188a95e6d7de3dd210fc144434",
+    "identity": "github:1355068616:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1355068616:root",
+            "repository": "xgone/dsh-netshell",
+            "path": "",
+            "revision": "a2c3439d98b4148f091c7904b68a889e1dad2dd1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "fa9fe48738c07335823735798edbc96b3009e9a2595815561073bb88a449193d",
+                "code": "a2c3439d98b4148f091c7904b68a889e1dad2dd1",
+                "maintenance": "5a920ea8128c479a3e9f8c9d54ede5c279fe93912ee6c8a8eef26894b9ed82e6"
+            }
+        }
+    }
+}

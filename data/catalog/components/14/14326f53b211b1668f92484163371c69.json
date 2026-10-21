@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "14326f53b211b1668f92484163371c69",
+    "identity": "github:1390240807:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1390240807:root",
+            "repository": "hbgdjb/dsh-session-shield",
+            "path": "",
+            "revision": "62773898d5bcdf1c2417705fb363f9f01cd30b7f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "981a16f1e73837d3e7160ea6929b054f29ea891f45a7d9cc9fc6bb7e62c6c684",
+                "code": "62773898d5bcdf1c2417705fb363f9f01cd30b7f",
+                "maintenance": "b2d0ed8bac7cd4bc5a6890f4b0db311f708183e0dd2399de8399af71d9005a26"
+            }
+        }
+    }
+}

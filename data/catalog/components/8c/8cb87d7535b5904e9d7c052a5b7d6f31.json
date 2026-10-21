@@ -1,0 +1,451 @@
+{
+    "schema_version": 3,
+    "id": "8cb87d7535b5904e9d7c052a5b7d6f31",
+    "identity": "github:1425044910:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1425044910:root",
+            "repository_id": 1425044910,
+            "component_id": "root",
+            "repository": "AdenXie/dsh-vercel",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-vercel",
+            "entry_type": "plugin",
+            "technical_category": "tools-integration",
+            "business_category": "software-delivery",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "c980fe99ceecd31a43de570a76e4adf948122038597e7eb87912a157e3d17919",
+                "code": "21b3c7372284ab53d10e61f2c717d44f752d9567",
+                "maintenance": "38fbc99f61eb05c7f9ae6a91c0c772b76e2545078fb809ad0bf7b888a0b1efd6"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-06-github-1425044910-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T05:35:17.096Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-06-github-1425044910-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/AdenXie/dsh-vercel/blob/21b3c7372284ab53d10e61f2c717d44f752d9567/README.md",
+                    "revision": "21b3c7372284ab53d10e61f2c717d44f752d9567",
+                    "captured_at": "2026-10-21T05:35:17.096Z",
+                    "summary": "将Vercel官方MCP接入DSH，提供OAuth、按Agent限额加载工具及结果检索与管理界面。",
+                    "artifact": "data/runs/2026-10-21-06/snapshots/adenxie--dsh-vercel/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-06-github-1425044910-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/AdenXie/dsh-vercel/blob/21b3c7372284ab53d10e61f2c717d44f752d9567/src/index.ts",
+                    "revision": "21b3c7372284ab53d10e61f2c717d44f752d9567",
+                    "captured_at": "2026-10-21T05:35:17.096Z",
+                    "summary": "核查 src/index.ts、src/mcp.ts、src/oauth.ts、src/store.ts、src/scope.ts、src/routes.ts；OAuth state/PKCE与本地凭据，supervisor发现远程目录后按Agent加载最多6工具和32000 schema字符；mcp_call先resolveLoadedTool再ctx.tools.execute，scope仅对特定list_projects读错验证accountId后回退。",
+                    "artifact": "data/runs/2026-10-21-06/snapshots/adenxie--dsh-vercel/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "抽读src/index.ts、src/mcp.ts、src/oauth.ts、src/store.ts、src/scope.ts、src/routes.ts；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "Agent执行Vercel项目查询与部署协作，大工具目录需控制提示开销且保持账号/项目范围。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1425044910-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1425044910:root",
+                            "area": "code",
+                            "fingerprint": "21b3c7372284ab53d10e61f2c717d44f752d9567"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:35:17.096Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "OAuth state/PKCE与本地凭据，supervisor发现远程目录后按Agent加载最多6工具和32000 schema字符；mcp_call先resolveLoadedTool再ctx.tools.execute，scope仅对特定list_projects读错验证accountId后回退。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1425044910-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1425044910:root",
+                            "area": "code",
+                            "fingerprint": "21b3c7372284ab53d10e61f2c717d44f752d9567"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:35:17.096Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "抽读src/index.ts、src/mcp.ts、src/oauth.ts、src/store.ts、src/scope.ts、src/routes.ts；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1425044910-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1425044910:root",
+                            "area": "code",
+                            "fingerprint": "21b3c7372284ab53d10e61f2c717d44f752d9567"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:35:17.096Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "MIT插件代码与Apache-2.0上游skills分别归属；官方MCP与账号许可独立，Node及DSH版本有要求。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1425044910-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1425044910:root",
+                            "area": "code",
+                            "fingerprint": "21b3c7372284ab53d10e61f2c717d44f752d9567"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:35:17.096Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "OAuth和账号权限首次成本，持续Vercel服务/模型工具回合费用；字符节省不能直接承诺现金下降。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1425044910-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1425044910:root",
+                            "area": "code",
+                            "fingerprint": "21b3c7372284ab53d10e61f2c717d44f752d9567"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:35:17.096Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "适合已有Vercel账户者从只读项目查询核查。先验证账号范围、断开清理及真实审批，再进入会改变部署的工具。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1425044910-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1425044910:root",
+                            "area": "code",
+                            "fingerprint": "21b3c7372284ab53d10e61f2c717d44f752d9567"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:35:17.096Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "潜在减少全目录上下文压力，但外部任务完成率与账单收益未核实。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1425044910-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1425044910:root",
+                            "area": "code",
+                            "fingerprint": "21b3c7372284ab53d10e61f2c717d44f752d9567"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:35:17.096Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "原子0600凭据写、state一次性结算、受限scope回退和嵌套dispatch可借鉴；依赖远端schema与宿主Agent生命周期。 源码依据：[src/index.ts](https://github.com/AdenXie/dsh-vercel/blob/21b3c7372284ab53d10e61f2c717d44f752d9567/src/index.ts)、[src/mcp.ts](https://github.com/AdenXie/dsh-vercel/blob/21b3c7372284ab53d10e61f2c717d44f752d9567/src/mcp.ts)、[src/oauth.ts](https://github.com/AdenXie/dsh-vercel/blob/21b3c7372284ab53d10e61f2c717d44f752d9567/src/oauth.ts)、[src/store.ts](https://github.com/AdenXie/dsh-vercel/blob/21b3c7372284ab53d10e61f2c717d44f752d9567/src/store.ts)、[src/scope.ts](https://github.com/AdenXie/dsh-vercel/blob/21b3c7372284ab53d10e61f2c717d44f752d9567/src/scope.ts)、[src/routes.ts](https://github.com/AdenXie/dsh-vercel/blob/21b3c7372284ab53d10e61f2c717d44f752d9567/src/routes.ts)。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1425044910-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1425044910:root",
+                            "area": "code",
+                            "fingerprint": "21b3c7372284ab53d10e61f2c717d44f752d9567"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:35:17.096Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "相对全量MCP注入，主要增量是目录搜索/加载预算、子Agent继承限制及保留宿主调用链；平台能力归Vercel，附带官方skills不计插件原创。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1425044910-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1425044910:root",
+                            "area": "code",
+                            "fingerprint": "21b3c7372284ab53d10e61f2c717d44f752d9567"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:35:17.096Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "字符压缩能否保持成功率和授权语义？精简schema及按需加载会增搜索回合；实测字符数不等于token/总费用节省。嵌套工具沿宿主执行接口，但本轮未验证宿主审批与策略实际拦截。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1425044910-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1425044910:root",
+                            "area": "code",
+                            "fingerprint": "21b3c7372284ab53d10e61f2c717d44f752d9567"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:35:17.096Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "由预算与已加载集合推导，可按任务阶段/失败信号自适应装载，并显示最终项目归属与调用预算收据。未验证；同任务比全量目录总token、成功率、越scope拒绝和额外回合，若成本转移抵消收益则否定。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1425044910-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1425044910:root",
+                            "area": "code",
+                            "fingerprint": "21b3c7372284ab53d10e61f2c717d44f752d9567"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:35:17.096Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T05:35:17.096Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "21b3c7372284ab53d10e61f2c717d44f752d9567",
+                "reviewed_at": "2026-10-21T05:35:17.096Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1425044910:root",
+                        "area": "code",
+                        "fingerprint": "21b3c7372284ab53d10e61f2c717d44f752d9567"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 15,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty既有MCP按需加载适配小档；mechanism预算/继承/dispatch组合半档；transferability目录治理模式较强四分之三档；simplification接入与目录控制半档。",
+                    "basis": "interpretation",
+                    "score": 47,
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1425044910-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 15,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow搜索加载调用改变工具供给半档；delivery开发平台接线半档；reach限Vercel账号小档；economics有字符预算机制但总费用未验证小档。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1425044910-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "已有Vercel账户者可先试只读项目查询；核账号范围、断开清理和真实审批后才用部署写工具，比较总回合而非schema字符。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "项目查询与部署协作用户明确。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "按Agent限制加载工具减少全目录上下文压力。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "OAuth及按需调用已核，未验嵌套审批或任务成功率。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "账号配置和模型/平台费用仍在，只读起步可限制副作用。"
+                    }
+                },
+                "score": 65,
+                "revision": "21b3c7372284ab53d10e61f2c717d44f752d9567",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-06-github-1425044910-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1425044910:root",
+                        "area": "code",
+                        "fingerprint": "21b3c7372284ab53d10e61f2c717d44f752d9567"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1425044910:root",
+            "repository": "AdenXie/dsh-vercel",
+            "path": "",
+            "revision": "21b3c7372284ab53d10e61f2c717d44f752d9567",
+            "fingerprints": {
+                "directory": "c980fe99ceecd31a43de570a76e4adf948122038597e7eb87912a157e3d17919",
+                "code": "21b3c7372284ab53d10e61f2c717d44f752d9567",
+                "maintenance": "38fbc99f61eb05c7f9ae6a91c0c772b76e2545078fb809ad0bf7b888a0b1efd6"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T05:26:52Z",
+            "analysis_sha256": "729c03ba673bb5f23c4daf2208403be79d5af7811afea69dc20e7ff3d9a1dc0a"
+        },
+        "publication.metadata": "data/plugins/adenxie--dsh-vercel/META.json",
+        "publication.summaries": {
+            "text": "将Vercel官方MCP接入DSH，提供OAuth、按Agent限额加载工具及结果检索与管理界面。",
+            "revision": "21b3c7372284ab53d10e61f2c717d44f752d9567",
+            "source_url": "https://github.com/AdenXie/dsh-vercel/blob/21b3c7372284ab53d10e61f2c717d44f752d9567/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "21b3c7372284ab53d10e61f2c717d44f752d9567",
+            "items": {
+                "模型工具": "账号管理、目录搜索加载、已加载远程工具调用与结果控制。",
+                "Host 路由": "OAuth与连接状态管理。",
+                "界面": "Vercel连接管理页。",
+                "Skill": "随包上游Vercel开发技能，具体归属与许可独立。"
+            }
+        },
+        "publication.advice": {
+            "revision": "21b3c7372284ab53d10e61f2c717d44f752d9567",
+            "text": "适合已有Vercel账户者从只读项目查询核查。先验证账号范围、断开清理及真实审批，再进入会改变部署的工具。"
+        },
+        "registry": "data/plugins/adenxie--dsh-vercel",
+        "reports": "# dsh-vercel\n\n> 将Vercel官方MCP接入DSH，提供OAuth、按Agent限额加载工具及结果检索与管理界面。\n\n## 使用建议\n\n适合已有Vercel账户者从只读项目查询核查。先验证账号范围、断开清理及真实审批，再进入会改变部署的工具。\n\n核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。\n\n源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。\n\n## 洞察短评\n\n- **用途**：Agent执行Vercel项目查询与部署协作，大工具目录需控制提示开销且保持账号/项目范围。\n- **亮点**：相对全量MCP注入，主要增量是目录搜索/加载预算、子Agent继承限制及保留宿主调用链；平台能力归Vercel，附带官方skills不计插件原创。\n- **思考**：字符压缩能否保持成功率和授权语义？精简schema及按需加载会增搜索回合；实测字符数不等于token/总费用节省。嵌套工具沿宿主执行接口，但本轮未验证宿主审批与策略实际拦截。\n- **建议**：由预算与已加载集合推导，可按任务阶段/失败信号自适应装载，并显示最终项目归属与调用预算收据。未验证；同任务比全量目录总token、成功率、越scope拒绝和额外回合，若成本转移抵消收益则否定。\n\n## 场景与替代办法\n\nAgent执行Vercel项目查询与部署协作，大工具目录需控制提示开销且保持账号/项目范围。\n\n全量MCP工具省加载步骤但占上下文；原生Vercel界面可完成任务，插件让Agent接入并增加治理成本。\n\n## 能力清单\n\n- **模型工具**：账号管理、目录搜索加载、已加载远程工具调用与结果控制。\n- **Host 路由**：OAuth与连接状态管理。\n- **界面**：Vercel连接管理页。\n- **Skill**：随包上游Vercel开发技能，具体归属与许可独立。\n\n## 依赖与流程\n\nVercel MCP/OAuth、DSH tools/agents/webServer、Node文件系统；官方skills另有执行前提。\n\n授权并持久凭据，连接发现目录，搜索→加载→调用；结果进入受控缓存，断开清空目录及Agent限制。\n\n## 成本与效果\n\nOAuth和账号权限首次成本，持续Vercel服务/模型工具回合费用；字符节省不能直接承诺现金下降。\n\n潜在减少全目录上下文压力，但外部任务完成率与账单收益未核实。\n\n## 核心贡献\n\n相对全量MCP注入，主要增量是目录搜索/加载预算、子Agent继承限制及保留宿主调用链；平台能力归Vercel，附带官方skills不计插件原创。\n\n## 关键质疑\n\n字符压缩能否保持成功率和授权语义？精简schema及按需加载会增搜索回合；实测字符数不等于token/总费用节省。嵌套工具沿宿主执行接口，但本轮未验证宿主审批与策略实际拦截。\n\n\n## 工程亮点\n\n原子0600凭据写、state一次性结算、受限scope回退和嵌套dispatch可借鉴；依赖远端schema与宿主Agent生命周期。 源码依据：[src/index.ts](https://github.com/AdenXie/dsh-vercel/blob/21b3c7372284ab53d10e61f2c717d44f752d9567/src/index.ts)、[src/mcp.ts](https://github.com/AdenXie/dsh-vercel/blob/21b3c7372284ab53d10e61f2c717d44f752d9567/src/mcp.ts)、[src/oauth.ts](https://github.com/AdenXie/dsh-vercel/blob/21b3c7372284ab53d10e61f2c717d44f752d9567/src/oauth.ts)、[src/store.ts](https://github.com/AdenXie/dsh-vercel/blob/21b3c7372284ab53d10e61f2c717d44f752d9567/src/store.ts)、[src/scope.ts](https://github.com/AdenXie/dsh-vercel/blob/21b3c7372284ab53d10e61f2c717d44f752d9567/src/scope.ts)、[src/routes.ts](https://github.com/AdenXie/dsh-vercel/blob/21b3c7372284ab53d10e61f2c717d44f752d9567/src/routes.ts)。\n\n## 未来设计假设（未验证）\n\n由预算与已加载集合推导，可按任务阶段/失败信号自适应装载，并显示最终项目归属与调用预算收据。未验证；同任务比全量目录总token、成功率、越scope拒绝和额外回合，若成本转移抵消收益则否定。\n\n构造只读、复杂schema、父子Agent、token刷新失败与撤权任务；总回合计费并核验宿主审批和最终项目ID。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：cb4b97d7d4a6886e316b138b68527b20c159aab1862a7e5d38d4284435107eff。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 163 | 22022 | — | — | 130212 |\n| .js | source | 2 | 3078 | 2873 | 250 | — |\n| .ts | source | 13 | 3281 | 2608 | 448 | — |\n| .tsx | source | 1 | 196 | 164 | 12 | — |\n| .mjs | test | 7 | 1218 | 1137 | 56 | — |\n\n排除 11 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[AdenXie/dsh-vercel](https://github.com/AdenXie/dsh-vercel)\n- **版本号**：0.4.0（[固定提交 21b3c737](https://github.com/AdenXie/dsh-vercel/tree/21b3c7372284ab53d10e61f2c717d44f752d9567)）\n- **版本日期**：2026-10-19（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：作者 README、包清单、源码路径 src/index.ts、src/mcp.ts、src/oauth.ts、src/store.ts、src/scope.ts、src/routes.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读src/index.ts、src/mcp.ts、src/oauth.ts、src/store.ts、src/scope.ts、src/routes.ts；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。\n- 下一步：构造只读、复杂schema、父子Agent、token刷新失败与撤权任务；总回合计费并核验宿主审批和最终项目ID。\n",
+        "metadata": {
+            "repository": "AdenXie/dsh-vercel",
+            "repository_id": 1425044910,
+            "captured_at": "2026-10-21T05:34:38.247Z",
+            "window_start": "2026-09-21T05:34:38.247Z",
+            "stars": 0,
+            "pushed_at": "2026-10-19T13:04:19Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAdenXie%2Fdsh-vercel%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9574:3BA9DC:AA5BD5:F46CE1:6AD84EEF and timestamp 2026-10-21 05:34:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAdenXie%2Fdsh-vercel%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 967C:1B0790:ABDAA2:F7DD8C:6AD84EF1 and timestamp 2026-10-21 05:34:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAdenXie%2Fdsh-vercel%20is%3Aissue%20created%3A2026-09-21T05%3A34%3A38.247Z..2026-10-21T05%3A34%3A38.247Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 97E0:1ADA16:AA1C3F:F48C90:6AD84EF2 and timestamp 2026-10-21 05:34:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAdenXie%2Fdsh-vercel%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A34%3A38.247Z..2026-10-21T05%3A34%3A38.247Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9904:25685:AF54C3:FB43B2:6AD84EF2 and timestamp 2026-10-21 05:34:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAdenXie%2Fdsh-vercel%20is%3Aissue%20updated%3A2026-09-21T05%3A34%3A38.247Z..2026-10-21T05%3A34%3A38.247Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9A00:1F14A0:AE4660:FAA3C6:6AD84EF3 and timestamp 2026-10-21 05:34:44 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "@adenxie/dsh-vercel",
+                "captured_at": "2026-10-21T05:34:44.157Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40adenxie%2Fdsh-vercel",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": "2026-10-19T05:07:49.032Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/%40adenxie%2Fdsh-vercel",
+                    "error": null,
+                    "latest_version": "0.4.0",
+                    "latest_published_at": "2026-10-19T13:09:08.221Z",
+                    "latest_error": null
+                }
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1425044910:root",
+            "repository": "AdenXie/dsh-vercel",
+            "path": "",
+            "revision": "21b3c7372284ab53d10e61f2c717d44f752d9567",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c980fe99ceecd31a43de570a76e4adf948122038597e7eb87912a157e3d17919",
+                "code": "21b3c7372284ab53d10e61f2c717d44f752d9567",
+                "maintenance": "38fbc99f61eb05c7f9ae6a91c0c772b76e2545078fb809ad0bf7b888a0b1efd6"
+            }
+        }
+    }
+}

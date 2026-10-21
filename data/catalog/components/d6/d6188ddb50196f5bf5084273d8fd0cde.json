@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d6188ddb50196f5bf5084273d8fd0cde",
+    "identity": "github:1347273865:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347273865:root",
+            "repository": "niushuanan/dsh-pure-chat",
+            "path": "",
+            "revision": "226f3688fa71f96e8b33be83070e6d227f933665",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "c4b8553a1e574c14ce4b084bbaea12063bbfb3493f141d71021b96d832ebebe4",
+                "code": "226f3688fa71f96e8b33be83070e6d227f933665",
+                "maintenance": "12985da87cdc89c45938a3ec8b787a7ad86748f2d5dfe28b05484ee98a78a47c"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "24a1cb711f913ea0877fc56c9c183bea",
+    "identity": "github:1335135768:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335135768:root",
+            "repository": "scd13150/dsh-cognition",
+            "path": "",
+            "revision": "500caf22b68023b3bd7d83bafa3f8e5bdb85e4af",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b3b4d66dd42b4cbe56b243c273847b932a01969a5781e38765581aa1dae94308",
+                "code": "500caf22b68023b3bd7d83bafa3f8e5bdb85e4af",
+                "maintenance": "5d98c15787bc99b72a4285cfa139dc83c860bfc344f2ae61f14321e007c062cb"
+            }
+        }
+    }
+}

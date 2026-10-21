@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "baa8bc7cdbad545ee7acb5a70936cb93",
+    "identity": "github:1339154797:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339154797:root",
+            "repository": "NelsonLongxiang/dsh-prompt-templates",
+            "path": "",
+            "revision": "f8afa7c2863533cabaa13733c3ed8f58fea6dcd3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "242e5eaec52ec419f2994f132c255ca56ecff08db0c45c98b9ba24f08973fb02",
+                "code": "f8afa7c2863533cabaa13733c3ed8f58fea6dcd3",
+                "maintenance": "a6c6a94bd38b4a0c0ca3febbbe4022e4b7f6036ae5671d3d69d84238ae69c511"
+            }
+        }
+    }
+}

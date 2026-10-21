@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "41ef4334613f7b7e2b907d14eb9eb2d1",
+    "identity": "github:1343806258:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343806258:root",
+            "repository": "eomis/packhub-workbench-assistant",
+            "path": "",
+            "revision": "3aaf326df60ae733a23578d6edd5d490eca1a9ee",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "53d178fad535c90b75aa251bb957b6472068be597675cb46115848c5bee73cbd",
+                "code": "3aaf326df60ae733a23578d6edd5d490eca1a9ee",
+                "maintenance": "278e658323d504d11f37c4d53dad59e114b166c2b5058843eefa3321a8c6abfd"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f72af19ca6b49e55e498b8f33e071293",
+    "identity": "github:1340794741:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340794741:root",
+            "repository": "wyzh0117/dsh-skill-select",
+            "path": "",
+            "revision": "42ab1c3014d9c00bb0235075d0304670f3c51e1d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "046931cad4cb53c355144ac627869458604516c2768f0010af5d25fd6507ced9",
+                "code": "42ab1c3014d9c00bb0235075d0304670f3c51e1d",
+                "maintenance": "c3de166ea9fac85c1eba3170dc335270a3eea0b3acf5d3fd959a7a45b70a5e96"
+            }
+        }
+    }
+}

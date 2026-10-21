@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "af1ecea0d5ee907179772e1f649e62a1",
+    "identity": "github:1397538855:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1397538855:root",
+            "repository": "Tangcuyu4/dsh-zakou-pack",
+            "path": "",
+            "revision": "790d3e5a7104b7c3084212c0c0780e419ea038eb",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5e33ee14c1c5507978cb95bb6923c2ecbecf2126b07f0014c739c02e2c64b2c0",
+                "code": "790d3e5a7104b7c3084212c0c0780e419ea038eb",
+                "maintenance": "7d3c9fe353572c7d5fec94db84d1634d0ce2f4686ec1e4f4b0d2ef4eb73bb45f"
+            }
+        }
+    }
+}

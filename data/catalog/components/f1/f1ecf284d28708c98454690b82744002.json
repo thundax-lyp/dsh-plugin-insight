@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f1ecf284d28708c98454690b82744002",
+    "identity": "github:1410063097:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1410063097:root",
+            "repository": "JeffTsuiCUG/dsh-connect-minimaxcode",
+            "path": "",
+            "revision": "1b2c3277eb6e082f56d11206cbee0e639674942f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7f8b49d835e7d21b09b286f16b761da62b3e8516d8b34b9ecb87de44726cad57",
+                "code": "1b2c3277eb6e082f56d11206cbee0e639674942f",
+                "maintenance": "9de087004ab911f2abc24c7385eb2c0f67d145c83387adf5e691d4b1098deb6c"
+            }
+        }
+    }
+}

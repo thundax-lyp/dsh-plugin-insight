@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5d340b63940121d0892208eee3cdf9c9",
+    "identity": "github:1420206886:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1420206886:root",
+            "repository": "gongstudent/dsh-quote-to-agent",
+            "path": "",
+            "revision": "af39203c9c98625180d621cbe1a4b1d0ddd99707",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "17f8ef70f142e149ee9f8a48bdf73f4cad403bd4ec6b5e3173f9d2e2b5153dc9",
+                "code": "af39203c9c98625180d621cbe1a4b1d0ddd99707",
+                "maintenance": "4d5f66cc3a9ddcfb4b3fe9d31bfe9b9eb3cc0203aaa6bc33d8f43b1b438dc502"
+            }
+        }
+    }
+}

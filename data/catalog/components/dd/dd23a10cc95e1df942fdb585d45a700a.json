@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "dd23a10cc95e1df942fdb585d45a700a",
+    "identity": "github:1349858286:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1349858286:root",
+            "repository": "Wisdoverse/dsh-skills-manager-plugin",
+            "path": "",
+            "revision": "1705ce13f385aa99d22ff47723001c37cdc96b49",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4525a215a5b489d079d243ce51519acf68d87c1dce10229cf718cf93611f4e05",
+                "code": "1705ce13f385aa99d22ff47723001c37cdc96b49",
+                "maintenance": "e1a77a465de973db230f1a752adb7b7a133fb28e771b5fcc2ded8d50310db800"
+            }
+        }
+    }
+}

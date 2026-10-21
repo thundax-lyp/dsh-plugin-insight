@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f29d3bee4317942937be9af250e0f755",
+    "identity": "github:1333123589:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333123589:root",
+            "repository": "Small-tailqwq/dsh-deepcel",
+            "path": "",
+            "revision": "17a93e3c1248f1c11951fc73daa0e2a51059fbb3",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "d96f6dea4f75001d210fae3b44c62d8fafe54bbc35ad1bc28a22c301a03e96a2",
+                "code": "17a93e3c1248f1c11951fc73daa0e2a51059fbb3",
+                "maintenance": "7f28e2e34847a56f392230e6dfd5e90fda15200c68e62042ff001c789c9432ae"
+            }
+        }
+    }
+}

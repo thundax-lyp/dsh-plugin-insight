@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f0d3a7ee1da6cfa4e97f4851ff08eb72",
+    "identity": "github:1335241305:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335241305:root",
+            "repository": "miaomiao636/dsh-message-navigator",
+            "path": "",
+            "revision": "ac80f894dcf6d97b86e35c509193b361dda01b8d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "963e0f72824343f2bc3e2e50f3101822ca8308b1cb90ec4529c6c2a7560d9baf",
+                "code": "ac80f894dcf6d97b86e35c509193b361dda01b8d",
+                "maintenance": "dab11699b2e3407787ce7dc8a35eb1781fcf0e4f79ee7329362b631198116312"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "de19d3b86230ad969aec437bfcae30d8",
+    "identity": "github:1421556691:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1421556691:root",
+            "repository": "loshanvren/dsh-codex-reset-tracker",
+            "path": "",
+            "revision": "44f098ac1611f654abd2f1190f4c21d99cd1f02f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e0bcfefc9a49affb10e9dfc5fd7462bdbc6c3b1a11b0d082501590047cb238ef",
+                "code": "44f098ac1611f654abd2f1190f4c21d99cd1f02f",
+                "maintenance": "920ae4d3671d5b896795700d1c6b9c32081a281f39b4c0312a38cc63d7c4db14"
+            }
+        }
+    }
+}

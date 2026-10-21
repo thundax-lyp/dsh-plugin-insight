@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "353ddfa3cc9fdc789b1175d54b6c08c0",
+    "identity": "github:1384928325:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1384928325:root",
+            "repository": "sujalmandal/dsh-tab-plan-toggle",
+            "path": "",
+            "revision": "a646c687707a816548f15566f18d5eb73b4334ae",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8f1aa077c60db30cb2276f516a48142f63f1e868cbb589026b0861d800c3cc2c",
+                "code": "a646c687707a816548f15566f18d5eb73b4334ae",
+                "maintenance": "ba8308a8215651576f0c4dd857ebfa02dc50e9c5f522bd674dbc2ee1bd8a422e"
+            }
+        }
+    }
+}

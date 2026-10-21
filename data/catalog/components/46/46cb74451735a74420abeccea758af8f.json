@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "46cb74451735a74420abeccea758af8f",
+    "identity": "github:1333584907:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333584907:root",
+            "repository": "yj060464-commits/dsh-chat-tools",
+            "path": "",
+            "revision": "c6cf74e2a3a0e4a98cb6aafb210b7819c71d1ddf",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "66364767636d9b73923a63074f07d45589a960badf5852e8f4b9476f3376bbbf",
+                "code": "c6cf74e2a3a0e4a98cb6aafb210b7819c71d1ddf",
+                "maintenance": "f27f4c5df5a4b84a2acbef17b6a9b470fc6d46dc4acdb67c7e12623c1a11fff9"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4e85f11911e22e7df2bc90b10ebc390d",
+    "identity": "github:1338301489:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338301489:root",
+            "repository": "nicecx/dsh-relay",
+            "path": "",
+            "revision": "ce84a474965c6a0a3003f0b272597fbf216ecac8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "94eacfaf388cc7d1ceef5ebec2f5a319392651f53a81d59244e927620df2f6e3",
+                "code": "ce84a474965c6a0a3003f0b272597fbf216ecac8",
+                "maintenance": "9cc04ae2c9b6c0bed8a83f147e18d067897fe7f27fdca68d0511a5350a2f2c70"
+            }
+        }
+    }
+}

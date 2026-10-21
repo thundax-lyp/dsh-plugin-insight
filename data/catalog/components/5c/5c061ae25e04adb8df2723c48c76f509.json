@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "5c061ae25e04adb8df2723c48c76f509",
+    "identity": "github:1339185691:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339185691:root",
+            "repository": "PKUfudawei/dsh-capability-menu",
+            "path": "",
+            "revision": "f7febe88d529a7e12efc06159a392887ef634552",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "46a073210b5810722d778d4b9ba511542cad2f737d096908eafe1f907986db05",
+                "code": "f7febe88d529a7e12efc06159a392887ef634552",
+                "maintenance": "e7e8d9f404f7c3966b8cba73083af6a3f0e7b4d56b28186fccc7c9415581cffa"
+            }
+        }
+    }
+}

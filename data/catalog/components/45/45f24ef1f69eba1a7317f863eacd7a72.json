@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "45f24ef1f69eba1a7317f863eacd7a72",
+    "identity": "github:1348357631:packages-dsh-daruma",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1348357631:packages-dsh-daruma",
+            "repository": "SISCHOI/daruma",
+            "path": "packages/dsh-daruma",
+            "revision": "beb55359f1f0e9db3fc196a6106d0b6c14e0a507",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "897f48f418b0e9bd2b3e948ae035e9a23e6a9d7880c0082ac8ee7595e947881d",
+                "code": "beb55359f1f0e9db3fc196a6106d0b6c14e0a507",
+                "maintenance": "2742e605833ccfbcc7165eecb44d6e4165f169545b2204a3094193e5c3242b29"
+            }
+        }
+    }
+}

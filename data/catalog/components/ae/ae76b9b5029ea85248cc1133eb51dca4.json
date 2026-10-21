@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ae76b9b5029ea85248cc1133eb51dca4",
+    "identity": "github:1339765268:packages-blueprint",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339765268:packages-blueprint",
+            "repository": "taltara/mddl-harness",
+            "path": "packages/blueprint",
+            "revision": "039de9ccec3b70ac1efa1cd8f23cb7c265c8a7d9",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "9e197a4e32481b0b4d52e2a6db0c097b29e891cf69dd0b145187ad8821d06781",
+                "code": "039de9ccec3b70ac1efa1cd8f23cb7c265c8a7d9",
+                "maintenance": "2259c53280b4d6ecd289629264a3a3e35ef7e91870dc04b905ad206ba446f23a"
+            }
+        }
+    }
+}

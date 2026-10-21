@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e6e7a71e0d12069e7200d64b4886adf2",
+    "identity": "github:1337201432:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337201432:root",
+            "repository": "xiaxingtianxia2-glitch/dsh-auto-exit",
+            "path": "",
+            "revision": "7eebd9b2806b28c5a3bc9bff7f8c5d4a88dabc50",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "138030708cfbbfb7f5f7137ec71cb7ef597b8538a26a05942fe11dd1afc2e52e",
+                "code": "7eebd9b2806b28c5a3bc9bff7f8c5d4a88dabc50",
+                "maintenance": "f8811e454d38f203e42b01ed61480f23afe668b1801a68f22598f065d85f025e"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5ff1194960905e8456b0ba5086c45aeb",
+    "identity": "github:1345180015:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345180015:root",
+            "repository": "Emilia-awa/hermes-dsh-bridge",
+            "path": "",
+            "revision": "5b8c9ef3310a1900faf8bbba3b11c9a44fe7e05f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4dd0b1d873b60b10b48335c91ec540771c00a0d1c84dd8acab17c3493f9031d9",
+                "code": "5b8c9ef3310a1900faf8bbba3b11c9a44fe7e05f",
+                "maintenance": "9fb14a3394ed53dc288b73b2f38aa0be09f6b910970730d7404cd8c72e5bf00e"
+            }
+        }
+    }
+}

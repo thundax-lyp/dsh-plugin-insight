@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "0f649396f62e9f53fef7aa48a5095d47",
+    "identity": "github:1346222428:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346222428:root",
+            "repository": "k-ying/dsh-vsceditor",
+            "path": "",
+            "revision": "2ba8ab854a33fa5b3cb6e376d5f391e98a1ef041",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "e923675f113f29e6803ff1d91607b014c419677093c76bc10ad4cbe185d74ca7",
+                "code": "2ba8ab854a33fa5b3cb6e376d5f391e98a1ef041",
+                "maintenance": "4fb1a3e5db2e042ddff77890c60a5ea0bbe960cd6495bfa81c6430f3d405ca05"
+            }
+        }
+    }
+}

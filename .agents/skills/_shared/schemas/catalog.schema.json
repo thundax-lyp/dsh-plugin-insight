@@ -381,6 +381,9 @@
         },
         "innovation_scores": {
           "$ref": "#/$defs/innovation_scores"
+        },
+        "recommendation": {
+          "$ref": "#/$defs/recommendation"
         }
       }
     },
@@ -657,6 +660,181 @@
                 "$ref": "#/$defs/text"
               }
             }
+          }
+        }
+      }
+    },
+    "recommendation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rubric",
+        "decision",
+        "score",
+        "criteria",
+        "reason",
+        "revision",
+        "reviewed_at",
+        "status",
+        "evaluator",
+        "evidence_ids",
+        "dependencies"
+      ],
+      "properties": {
+        "rubric": {
+          "const": "adoption-v1"
+        },
+        "decision": {
+          "enum": [
+            "unassessed",
+            "not_recommended",
+            "observe",
+            "trial",
+            "install"
+          ]
+        },
+        "score": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "criteria": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": false,
+          "required": [
+            "scenario",
+            "advantage",
+            "evidence",
+            "cost"
+          ],
+          "properties": {
+            "scenario": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "score",
+                "rationale"
+              ],
+              "properties": {
+                "score": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 30
+                },
+                "rationale": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            "advantage": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "score",
+                "rationale"
+              ],
+              "properties": {
+                "score": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 25
+                },
+                "rationale": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            "evidence": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "score",
+                "rationale"
+              ],
+              "properties": {
+                "score": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 25
+                },
+                "rationale": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            "cost": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "score",
+                "rationale"
+              ],
+              "properties": {
+                "score": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 20
+                },
+                "rationale": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          }
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[^\\r\\n]+$"
+        },
+        "revision": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "reviewed_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "status": {
+          "enum": [
+            "current",
+            "needs_review"
+          ]
+        },
+        "evaluator": {
+          "enum": [
+            "ai",
+            "human",
+            null
+          ]
+        },
+        "evidence_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/text"
+          }
+        },
+        "dependencies": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/dependency"
           }
         }
       }

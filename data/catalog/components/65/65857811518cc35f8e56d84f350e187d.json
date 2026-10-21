@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "65857811518cc35f8e56d84f350e187d",
+    "identity": "github:1402592704:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1402592704:root",
+            "repository": "qiweiii/dsh-brand-studio",
+            "path": "",
+            "revision": "407890fc09556f591b0c5d279a236f871e1b8abd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "97dee697f4f92b24dcc058c3f00c1a82d0e8ed1808adbf186d0a6c82e4f8f3ab",
+                "code": "407890fc09556f591b0c5d279a236f871e1b8abd",
+                "maintenance": "79e7edb6fc17209398aba5f40dfcdf4356c407399465f6d27cacd4a00450994b"
+            }
+        }
+    }
+}

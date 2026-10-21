@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "94f850e83fdcab75548e72fd7eac76da",
+    "identity": "github:1334022793:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334022793:root",
+            "repository": "lbwnb666-ai/DeepSeekHarnessRemoteGateway",
+            "path": "",
+            "revision": "d20d22e07d2afe907d8bde03ed98dfa0b7411d98",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "64242f1d92522125d6860b53142a1ed3986769a8fe50b17128ac8ef5297ca3c1",
+                "code": "d20d22e07d2afe907d8bde03ed98dfa0b7411d98",
+                "maintenance": "f1c502cab16a230c0730d787090f38fab08d290e524e40de6a0c586ae46442f0"
+            }
+        }
+    }
+}

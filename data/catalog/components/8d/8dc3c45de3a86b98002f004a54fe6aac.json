@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8dc3c45de3a86b98002f004a54fe6aac",
+    "identity": "github:1408574806:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1408574806:root",
+            "repository": "zzy-fxxxexxxyxxx/dsh-openclaw-memory",
+            "path": "",
+            "revision": "05dff42d9268ad98447673cb28e9276f5ae623cd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c8f3b41bfd3180c12e31c036f41c3a86b9a1ad6280acfa4fe86b9b95b625266d",
+                "code": "05dff42d9268ad98447673cb28e9276f5ae623cd",
+                "maintenance": "c65b03d44fb74f22c5cfd35b2fef9fbcc64889be15b17e78aa0b80e15ea52070"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a0df5955aaa9f8904a407f8cc3123790",
+    "identity": "github:1349641014:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1349641014:root",
+            "repository": "dingminhua/dsh-connect-workbuddy",
+            "path": "",
+            "revision": "2ce4f5e1ec890d98ea56b388a1de98993cd9c507",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d674030853becd4ba45ad3eed4cef7f83ac6630ae98d99f573c79172125486e5",
+                "code": "2ce4f5e1ec890d98ea56b388a1de98993cd9c507",
+                "maintenance": "387eb57dfbad2f14c751e194bfa1a7db9732dae6d2d367913f6700aeca27467e"
+            }
+        }
+    }
+}

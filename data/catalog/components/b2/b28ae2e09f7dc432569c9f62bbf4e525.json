@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b28ae2e09f7dc432569c9f62bbf4e525",
+    "identity": "github:1362076526:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1362076526:root",
+            "repository": "idoall/dsh-quick-replies",
+            "path": "",
+            "revision": "8f7c52173014e7c52c5a16844ef907231601f088",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fa52de81f8c5e8950b06b165728458718f296acf03571d4a1479db801b98dab8",
+                "code": "8f7c52173014e7c52c5a16844ef907231601f088",
+                "maintenance": "25bd2e141121d46ea74f8ac9f64126d8161572e8a9706d4030f764bd8d129778"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f7995d96b66c60cca46286acff58b4dc",
+    "identity": "github:1417490817:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1417490817:root",
+            "repository": "ccccwwwxx/dsh-bifenggang",
+            "path": "",
+            "revision": "d758f90ee4cb96360f978128b859fab697dd7475",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7a550048fc919a7173ee5b9eaff4364df08ae1b04ee16165ffef91e084a8be1e",
+                "code": "d758f90ee4cb96360f978128b859fab697dd7475",
+                "maintenance": "a9ce6257e7fc5e66b451f3c382124988275c26d564b0baa10779dbd1cc95c729"
+            }
+        }
+    }
+}

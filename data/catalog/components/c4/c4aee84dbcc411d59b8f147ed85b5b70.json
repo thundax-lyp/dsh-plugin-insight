@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "c4aee84dbcc411d59b8f147ed85b5b70",
+    "identity": "github:1304163962:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1304163962:root",
+            "repository": "leechen298/Code2Skill",
+            "path": "",
+            "revision": "afd25120129e4cfb69fb57d0c9dfea490e8a3c60",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "bf8999af821e9452cbb13bfdeba2b0d07e4c07b21514d8b1f6cd2a3fa7c92c65",
+                "code": "afd25120129e4cfb69fb57d0c9dfea490e8a3c60",
+                "maintenance": "0ce9d154864ade8293cbe9e9e07fa0e87aff124bfdf3b14563314e7d6c1306ac"
+            }
+        }
+    }
+}

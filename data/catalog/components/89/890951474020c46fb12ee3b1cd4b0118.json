@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "890951474020c46fb12ee3b1cd4b0118",
+    "identity": "github:1333152408:packages-create-dsh-plugin",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333152408:packages-create-dsh-plugin",
+            "repository": "whyihaveyou/dsh-suite",
+            "path": "packages/create-dsh-plugin",
+            "revision": "a30b1e7a53970f0b49f2f6206c9d500c47b8327b",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "e39a1678aba9d9add7df2a5931ab1cd1c67d33345c4b6467080cb48895c7f70b",
+                "code": "a30b1e7a53970f0b49f2f6206c9d500c47b8327b",
+                "maintenance": "d4bcf5f9d35d47202967b72996e6cbc14ee9bcf02421620f54a6798eb4d89795"
+            }
+        }
+    }
+}

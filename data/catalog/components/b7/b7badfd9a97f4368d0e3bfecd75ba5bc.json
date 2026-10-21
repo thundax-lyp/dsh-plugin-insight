@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b7badfd9a97f4368d0e3bfecd75ba5bc",
+    "identity": "github:1336044501:packages-dsh-lan-proxy",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336044501:packages-dsh-lan-proxy",
+            "repository": "wingsky-1/dsh-plugin-hub",
+            "path": "packages/dsh-lan-proxy",
+            "revision": "887d3b3ab83a8104fb9bb147bc6e4d9af2718d29",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9d5fe91c967d844b9629453ed855da8f09b1afa932adb52a36ff18664276623a",
+                "code": "887d3b3ab83a8104fb9bb147bc6e4d9af2718d29",
+                "maintenance": "244b6709d224f2f41c21823880dfe4fcde29ad5089d98328b2a3cabd1c16a29c"
+            }
+        }
+    }
+}

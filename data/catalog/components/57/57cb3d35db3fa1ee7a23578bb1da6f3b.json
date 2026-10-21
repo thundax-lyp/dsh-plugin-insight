@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "57cb3d35db3fa1ee7a23578bb1da6f3b",
+    "identity": "github:1361450452:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1361450452:root",
+            "repository": "chengzhicao/llm-capture",
+            "path": "",
+            "revision": "ec48e5137c702979c2e4d25e4b03e53bcde5a267",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "478a9b6d28729778202e06b725b82e3ab9e50598ac88b08a2ccb61c87544f336",
+                "code": "ec48e5137c702979c2e4d25e4b03e53bcde5a267",
+                "maintenance": "8d14d225361f40a1d28474985f034b0c0810e35512b7c2002d25b7e91e0a3f14"
+            }
+        }
+    }
+}

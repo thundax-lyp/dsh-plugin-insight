@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "699e0fe3a941c0380b13664aaca293b6",
+    "identity": "github:1359062149:packages-dsh-form-fill-agent",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1359062149:packages-dsh-form-fill-agent",
+            "repository": "duhu2000/dsh-form-fill-agent",
+            "path": "packages/dsh-form-fill-agent",
+            "revision": "56ed11fa800321c668b4a72d19200579818f6807",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c4043b4634b7ce29e9bdd75d6b7749fd398bf283f7f39b8e63199c24440bbb9f",
+                "code": "56ed11fa800321c668b4a72d19200579818f6807",
+                "maintenance": "ef0f9a880d40af1b70636f098cddf50353ab46cfd5f3619a3e1332a737c57d66"
+            }
+        }
+    }
+}

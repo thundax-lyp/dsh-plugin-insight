@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d23a3661566f2d263c40d34717030e99",
+    "identity": "github:1350368388:packages-plugin",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1350368388:packages-plugin",
+            "repository": "FishBottle7/opencode2dsh",
+            "path": "packages/plugin",
+            "revision": "89f7c420c9132efdfc6657c2bcea5dc4c6b69ad5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "dc64b0b734c1aa2fe59b5dfc8a92ba9be22df1b22471e5a8ec3d698b766c2093",
+                "code": "89f7c420c9132efdfc6657c2bcea5dc4c6b69ad5",
+                "maintenance": "da049132804b79cbdbec55ae07d3ef9be1f6dd33816a6fedb7fe792c622b50fe"
+            }
+        }
+    }
+}

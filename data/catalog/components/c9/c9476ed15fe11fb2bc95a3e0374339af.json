@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c9476ed15fe11fb2bc95a3e0374339af",
+    "identity": "github:1397410504:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1397410504:root",
+            "repository": "swiftlc/dsh-annotation",
+            "path": "",
+            "revision": "e7dbc0a3b0fc4b83af831a925edb1fa3c0cab0c4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0f5e8fe26b14360aad354ec8640ccc851f8475a65bedb8b9dffd3513051bb9d2",
+                "code": "e7dbc0a3b0fc4b83af831a925edb1fa3c0cab0c4",
+                "maintenance": "0114962ffbffff16d6ef4a2d2e4c72a6c3aee8df27a06349a2c4eb63553b60ec"
+            }
+        }
+    }
+}

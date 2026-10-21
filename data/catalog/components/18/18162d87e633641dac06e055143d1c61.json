@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "18162d87e633641dac06e055143d1c61",
+    "identity": "github:1348122473:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1348122473:root",
+            "repository": "UnforgetMemory/um-dsh-websearch",
+            "path": "",
+            "revision": "2581dc793422faa44324694e2e6e1f5796b426c6",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "b022f8e2e3b5a655a8a04a8abdb5e1a5149784eaa39b327e72755a9fd220c86c",
+                "code": "2581dc793422faa44324694e2e6e1f5796b426c6",
+                "maintenance": "904e16ad55a146de7bbd79a00fde3cd01036d64d1e9c527f4ec5a3f26f18da32"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "98d134b88ffeb5d88762f67f59da2bb0",
+    "identity": "github:1396998865:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1396998865:root",
+            "repository": "lengmodkx/dsh-mimo-tts",
+            "path": "",
+            "revision": "0a1e91b81a1d64ff5a6782d5ef1655f2d69ab3cd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2accd0381603bd3029fc645e446cf0c15d88d15d64a96369208f2675263ba944",
+                "code": "0a1e91b81a1d64ff5a6782d5ef1655f2d69ab3cd",
+                "maintenance": "3453f6ed09a84e5259cc029dc52964a67b8d8bcf603864f16c3b63e3a64265f0"
+            }
+        }
+    }
+}

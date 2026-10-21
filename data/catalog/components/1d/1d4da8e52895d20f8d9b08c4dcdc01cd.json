@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1d4da8e52895d20f8d9b08c4dcdc01cd",
+    "identity": "github:1340333312:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340333312:root",
+            "repository": "Zhucy123/source-code-mgmt",
+            "path": "",
+            "revision": "da82455818aaf5bf59b5a70b535fd1afb2264d85",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a890e49bde7490593b7391b68357e16093847d0af35eab6b5b0b4e6decde903a",
+                "code": "da82455818aaf5bf59b5a70b535fd1afb2264d85",
+                "maintenance": "870a25e51d254dbe96119eeaa31029db99c3a7a8d108ff09700d97f759b096d7"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "efcbbe6792a19dc1ebfd868419138787",
+    "identity": "github:1341817562:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1341817562:root",
+            "repository": "Vladimir-Kryshchenko/dsh-route-fence-linter",
+            "path": "",
+            "revision": "904339d50031181390bdb22ddd970c15876e5870",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3ed2b4bf767b255254a02ed1cbe2a8feded7be1a2cfab7f57f9514766e26c278",
+                "code": "904339d50031181390bdb22ddd970c15876e5870",
+                "maintenance": "28c52df3894556dd1fbce1e9756a32a1393f066672ab60e7728906814df7e8a0"
+            }
+        }
+    }
+}

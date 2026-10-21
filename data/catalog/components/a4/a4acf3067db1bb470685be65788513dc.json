@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a4acf3067db1bb470685be65788513dc",
+    "identity": "github:1340726238:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340726238:root",
+            "repository": "zhuifengqug/dsh-adaptive-reasoning",
+            "path": "",
+            "revision": "3d87a31a0162bf06a4ba05058432708bba116809",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b59254eff85775774dd2cf982566b79370cdd95a7a438007e872c8079dc61acf",
+                "code": "3d87a31a0162bf06a4ba05058432708bba116809",
+                "maintenance": "1e9e38123fdcb39b19d10671d67f021b601eef541b922cdb6a6d572d2f07ff5c"
+            }
+        }
+    }
+}

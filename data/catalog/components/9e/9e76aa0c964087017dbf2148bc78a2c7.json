@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9e76aa0c964087017dbf2148bc78a2c7",
+    "identity": "github:1423971407:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1423971407:root",
+            "repository": "qiyuexue-xiyu/dsh-tool-cost-hint",
+            "path": "",
+            "revision": "3fc67cbc66260801136ea38bc10be36072dc1c6e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8408f1e24d529e26a689c46bc03b3780799eb4cb00f27eea0ef1939ee02cdae7",
+                "code": "3fc67cbc66260801136ea38bc10be36072dc1c6e",
+                "maintenance": "89041d5a56f91dc7d05e9798a1b9e0cd51214d8a9b4974fbe680946ad44b8542"
+            }
+        }
+    }
+}

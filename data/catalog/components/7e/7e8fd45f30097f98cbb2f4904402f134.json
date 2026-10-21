@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7e8fd45f30097f98cbb2f4904402f134",
+    "identity": "github:1425756303:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425756303:root",
+            "repository": "lj100886/dsh-framework-doctor",
+            "path": "",
+            "revision": "da76ea6d8f774f31823904a8668e56fdc9c24832",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a6fdea2bb9d685337b23da173935ccb4704a4ba966d20968423307817a8b2f45",
+                "code": "da76ea6d8f774f31823904a8668e56fdc9c24832",
+                "maintenance": "80861cce709a383ef5150e347a4db0706eb5cf560627fe372527f446ba13b028"
+            }
+        }
+    }
+}

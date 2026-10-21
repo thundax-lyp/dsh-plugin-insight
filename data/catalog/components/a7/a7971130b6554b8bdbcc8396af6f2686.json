@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a7971130b6554b8bdbcc8396af6f2686",
+    "identity": "github:1346853510:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346853510:root",
+            "repository": "dongsheng123132/dsh-build-hermeticity-proof",
+            "path": "",
+            "revision": "7d8b48830d029d933458a47ceeb4248924fed83e",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "fdd3024f69c7bff75ee38f1c056cbdb481425deb03e7c7dbf8e05ee19023f57b",
+                "code": "7d8b48830d029d933458a47ceeb4248924fed83e",
+                "maintenance": "3f8438fbb5c79d6246072efe944238e6590a465e06ff4de8a256cd3286c9ea6a"
+            }
+        }
+    }
+}

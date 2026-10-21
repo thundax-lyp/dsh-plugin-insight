@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7e728d6441303f5aeb99a6804af5cf90",
+    "identity": "github:1406521075:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1406521075:root",
+            "repository": "mostkia/dsh-htmlui",
+            "path": "",
+            "revision": "83c6ba8f779bb3a041a6585b7dc7a54356fd1797",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c1e2b86247c743e39a21ba0a8215b70f0e888fd8fac89f366ee9770850a0d11f",
+                "code": "83c6ba8f779bb3a041a6585b7dc7a54356fd1797",
+                "maintenance": "e5b0b43d4bb8bc08bd03551cd97fa616532578b05ead3272f9f8e1ea2b64724d"
+            }
+        }
+    }
+}

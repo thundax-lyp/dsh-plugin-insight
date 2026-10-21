@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1f98256b226b5e28624fa11dc0dbd311",
+    "identity": "github:1346135988:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346135988:root",
+            "repository": "ArmyWas/dsh-codex-compat-canary",
+            "path": "",
+            "revision": "9e144f0b35309bc8f202a570ec7c953b8beb5cca",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "db5a30aa41dde2f805d49d12d00bd7081ae970ac8384b6def673adf883e8d256",
+                "code": "9e144f0b35309bc8f202a570ec7c953b8beb5cca",
+                "maintenance": "796727b7a086258a6b54f78637a0864ab7be5d2fcf8930f73e8c4504e17c84d5"
+            }
+        }
+    }
+}

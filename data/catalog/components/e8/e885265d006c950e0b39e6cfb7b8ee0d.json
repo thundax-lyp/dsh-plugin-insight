@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "e885265d006c950e0b39e6cfb7b8ee0d",
+    "identity": "github:1395221881:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1395221881:root",
+            "repository": "kyle123740/dsh-zcode-cli-proxy",
+            "path": "",
+            "revision": "826a3c85921b84fa205805eccd46f85537eec295",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "5db4e7bffb5153062c97a22189e9a4467fba9a7df6c9cd2a7ec53279e20db816",
+                "code": "826a3c85921b84fa205805eccd46f85537eec295",
+                "maintenance": "17a8caf00eaab7d4b3ed24c0b37970505f58727a56d95e158c3acc33ac7fbfc0"
+            }
+        }
+    }
+}

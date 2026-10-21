@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a51286b1853ec1f203019fd0cac8d9e7",
+    "identity": "github:1348665045:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1348665045:root",
+            "repository": "CodermanYHZ/dsh-node-flow",
+            "path": "",
+            "revision": "21cf06fa80b042db16b41cb6908c919042a5bfcc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b81f9864645e0f9dd23149e39231afbd99584afb230be8b29887298f9ca3d1c3",
+                "code": "21cf06fa80b042db16b41cb6908c919042a5bfcc",
+                "maintenance": "0629f9cdd03f1ed361afff1429e2515647f163f391e4effb4849704ba7284a6e"
+            }
+        }
+    }
+}

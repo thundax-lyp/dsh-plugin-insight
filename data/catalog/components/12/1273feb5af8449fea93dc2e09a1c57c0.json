@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1273feb5af8449fea93dc2e09a1c57c0",
+    "identity": "github:1336839960:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336839960:root",
+            "repository": "anyuer678/dsh-logtimeline",
+            "path": "",
+            "revision": "00a6d95fb5616ca91da598be51290c4d20ec71ce",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a11017d897cffe74f8722d7438c5babda8aba1184f394eed98582147c703ecf9",
+                "code": "00a6d95fb5616ca91da598be51290c4d20ec71ce",
+                "maintenance": "0128b88f657837f12b8bb37d7b9cc52dd6431db6fc39284fed87e26fc60d6a0a"
+            }
+        }
+    }
+}

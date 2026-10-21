@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a96b661c9790177f43fc84240d15505f",
+    "identity": "github:1424427444:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424427444:root",
+            "repository": "HildebrandYu/dsh-session-chains",
+            "path": "",
+            "revision": "d17a610efb38ae322349f5645f15f9f940aad9de",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b82ccbdd0b280995f218c58f242fc115170a50a0ca4d7e0b5c43cfd29d307c13",
+                "code": "d17a610efb38ae322349f5645f15f9f940aad9de",
+                "maintenance": "91a0ae038dd755c82b9282ae178a918e7f67177dcd61a5e7260ec9d610338f7e"
+            }
+        }
+    }
+}

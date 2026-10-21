@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0f09178c6e4b73a6575aa925ad40b55e",
+    "identity": "github:1422175070:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1422175070:root",
+            "repository": "Aurum807/dsh-bilibili-video-summary",
+            "path": "",
+            "revision": "fed29d8e07b541aafa61199f9824d995b7dcf400",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d4528861dd1fec4548a2eaca08a308576ce14da1c9444428ae23aa16880f9e97",
+                "code": "fed29d8e07b541aafa61199f9824d995b7dcf400",
+                "maintenance": "f6d72eff394e0991868e4ae767bbb92f31818c70fa7ad059cb9f6fcbd724b15f"
+            }
+        }
+    }
+}

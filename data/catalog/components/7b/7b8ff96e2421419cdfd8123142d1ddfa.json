@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7b8ff96e2421419cdfd8123142d1ddfa",
+    "identity": "github:1334651538:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334651538:root",
+            "repository": "jeremy9682/dsh-skill-pack",
+            "path": "",
+            "revision": "6e0bed1aa846ef00ee6fdd3d8bf9c63b46b014e2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "952944fc32e19542b063fd2585d5b464480fcf95d5e774b89fd47b2389a9d0c5",
+                "code": "6e0bed1aa846ef00ee6fdd3d8bf9c63b46b014e2",
+                "maintenance": "1105e7642eb7730bf095bb423e3daea54f5c02dc89a83e53960dc4d3828b0d5d"
+            }
+        }
+    }
+}

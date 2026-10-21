@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "41cfa08767e3a856cf7a3d094323ca5c",
+    "identity": "github:1379467359:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1379467359:root",
+            "repository": "perdakovich/dsh-prompt-edit",
+            "path": "",
+            "revision": "4135c1d95192aa08f926f1662e81b002079b1da7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8be9d4dfd4068d3982e561cd6ef2161b079d834bf3042c7456b51998a275f9af",
+                "code": "4135c1d95192aa08f926f1662e81b002079b1da7",
+                "maintenance": "c475645a366cc47f4b9d69aa0ba585d1f7f91bd3ac3cba83e5ddcdf1d5de7309"
+            }
+        }
+    }
+}

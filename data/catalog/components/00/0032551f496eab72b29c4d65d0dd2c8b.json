@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "0032551f496eab72b29c4d65d0dd2c8b",
+    "identity": "github:1334921369:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334921369:root",
+            "repository": "HongMing-Huang/dsh-file-upload",
+            "path": "",
+            "revision": "008b98ff1d53737f631d2d1b769cd7f9ef038db5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "a372a9fff059de622c59d7cb895dda83e565faae6f6bd3d51505c7cf965bc2f5",
+                "code": "008b98ff1d53737f631d2d1b769cd7f9ef038db5",
+                "maintenance": "7b7c120e57c3ee9206710e4e4b2405b3cce73e0128ca96043b89bb31272a951f"
+            }
+        }
+    }
+}

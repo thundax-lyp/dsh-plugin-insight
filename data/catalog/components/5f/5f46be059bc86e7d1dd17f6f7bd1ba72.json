@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5f46be059bc86e7d1dd17f6f7bd1ba72",
+    "identity": "github:1392619960:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1392619960:root",
+            "repository": "zhang66633/dsh-memvault",
+            "path": "",
+            "revision": "8d41114b137f14fe97fae095c40280761d72cc05",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "aa859db3d1a6d4fc8c40d619543ff0aa8f71ecccc23c9dac4d78ba42e17f62ed",
+                "code": "8d41114b137f14fe97fae095c40280761d72cc05",
+                "maintenance": "1a3ce6d7ba3ccbc3effd379e8b582584ab699a32f5b28a556077eb2c5c860373"
+            }
+        }
+    }
+}

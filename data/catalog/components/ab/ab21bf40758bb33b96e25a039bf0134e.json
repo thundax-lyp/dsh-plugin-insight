@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ab21bf40758bb33b96e25a039bf0134e",
+    "identity": "github:1343365154:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343365154:root",
+            "repository": "chensl139-ok/dsh-archived-panel",
+            "path": "",
+            "revision": "a4032949f40b24fe560780f2280e857b347b33cb",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "d2bf88264271bdf6f07fa07ba7ee000cc2652eb426604ab61145c2b7cd74b984",
+                "code": "a4032949f40b24fe560780f2280e857b347b33cb",
+                "maintenance": "996b46f13e983d09ac6f48c563b31bc619089c7002db3f3de80a613a0d3a1310"
+            }
+        }
+    }
+}

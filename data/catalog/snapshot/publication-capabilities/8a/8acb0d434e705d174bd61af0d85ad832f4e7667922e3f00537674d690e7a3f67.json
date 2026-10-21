@@ -1,7 +1,0 @@
-{
-  "revision": "7502c9bce1a65597188c12d4ab1e33e9365e3a22",
-  "items": {
-    "界面": "@Skill候选补全",
-    "事件监听": "agent/pre-step确定性Skill加载"
-  }
-}

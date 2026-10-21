@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "409f61c3377f375976d0cd80176c5da4",
+    "identity": "github:1335783785:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335783785:root",
+            "repository": "jiekesu967/dsh-plugin-opencode-usage",
+            "path": "",
+            "revision": "b959f0872a7f65ac8c3b567e24ba38ac98fe17a8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9d8ada43f8c69e84f643334f5dc352207aabb992953e1a8f6b135f01075b9f1e",
+                "code": "b959f0872a7f65ac8c3b567e24ba38ac98fe17a8",
+                "maintenance": "bcffe116e4526dc9483c8f3a26d5fab2041860e403db25fef98e392798f883d9"
+            }
+        }
+    }
+}

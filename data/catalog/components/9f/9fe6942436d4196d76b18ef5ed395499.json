@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9fe6942436d4196d76b18ef5ed395499",
+    "identity": "github:1415182257:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1415182257:root",
+            "repository": "sxwer001/dsh-context-control",
+            "path": "",
+            "revision": "e1936d62dffaf2472320707b152c1b0dc1d2c0a6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3c9875d21349bbd9076caa9ace54b8d5b4f5bc3ef10f8a34a380ecbb7bd7f79f",
+                "code": "e1936d62dffaf2472320707b152c1b0dc1d2c0a6",
+                "maintenance": "49190f5a81c9b453b680a078ab6b496724ac8a7619f9bea7d38f384e0f41d9ce"
+            }
+        }
+    }
+}

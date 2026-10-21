@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d4845a1f51f1aef0065e290960e41263",
+    "identity": "github:1363841503:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1363841503:root",
+            "repository": "Edisonzszs/web-clone",
+            "path": "",
+            "revision": "1be49bb2d2bf6bfb944b83f998fe076832020ee9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "856a8ad839db618940d966d707c079e5b14dc4fac1a94346d7b258d7b677b290",
+                "code": "1be49bb2d2bf6bfb944b83f998fe076832020ee9",
+                "maintenance": "1d7117410d49ee52b2f483ab56410d59e3ccf1727c3cbaf37bf7609f7a8b62d7"
+            }
+        }
+    }
+}

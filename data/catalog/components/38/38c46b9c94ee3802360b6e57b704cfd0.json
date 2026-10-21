@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "38c46b9c94ee3802360b6e57b704cfd0",
+    "identity": "github:1420698939:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1420698939:root",
+            "repository": "hermes-ai-2026/dsh-browser-agent",
+            "path": "",
+            "revision": "a69f2ca50e21793a7335e5c93be70695f2d4d685",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a26ff41199a9eb61b5daa076bd8ffcf3020aedbeee299c264e587d723809569c",
+                "code": "a69f2ca50e21793a7335e5c93be70695f2d4d685",
+                "maintenance": "9a08cd6567fab26d262a8a3860bb55232d46ceb2e9398540aecdef0162673bf4"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "dbe808e6ced284a50b25bf3d7ea83b82",
+    "identity": "github:1377974528:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1377974528:root",
+            "repository": "LoveIrishCoffee/dsh-effort-ultra",
+            "path": "",
+            "revision": "c15df65c508f4fdc7d609b28dd2f9448da37b8cb",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b57d2f032c832fe6ef5dc284a5b45308ed1a81d74a6c008a307db36da85c8f0d",
+                "code": "c15df65c508f4fdc7d609b28dd2f9448da37b8cb",
+                "maintenance": "f49c9eacc58bc83881d1c70fd3316887c5014bbe26ea9d7b9de2c71463443bca"
+            }
+        }
+    }
+}

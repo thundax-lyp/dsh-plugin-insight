@@ -16,9 +16,9 @@ const walk = (path) =>
           )
         : [];
 try {
-    if (existsSync(resolve(ROOT, 'data/catalog/SNAPSHOT.json'))) {
+    if (existsSync(resolve(ROOT, 'data/catalog/index.jsonl'))) {
         const { validateSnapshot, renderSnapshot, validateWork } = await import('./snapshot-data.mjs');
-        validateSnapshot(readSnapshotStorage(resolve(ROOT, 'data/catalog/SNAPSHOT.json')));
+        validateSnapshot(readSnapshotStorage(resolve(ROOT, 'data/catalog/index.jsonl')));
         renderSnapshot(ROOT, true);
         for (const path of walk(resolve(ROOT, 'data/runs')).filter(
             (path) => path.endsWith('/WORK.json') && !path.includes('/migration-originals/')

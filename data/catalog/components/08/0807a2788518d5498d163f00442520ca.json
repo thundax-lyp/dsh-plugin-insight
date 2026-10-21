@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0807a2788518d5498d163f00442520ca",
+    "identity": "github:1416341258:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1416341258:root",
+            "repository": "sxwer001/dsh-collab-dev",
+            "path": "",
+            "revision": "1ef2c437545881ea598a0f5bf9413d3ddf05196c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fbc4dcd9ed507deb2e74388e396565419e0eececa8f074caffc96ad7967a9bb8",
+                "code": "1ef2c437545881ea598a0f5bf9413d3ddf05196c",
+                "maintenance": "520c5bd08012f156e94b67ea1ccfa94c63c040853cf11b549b1c8c0feace0621"
+            }
+        }
+    }
+}

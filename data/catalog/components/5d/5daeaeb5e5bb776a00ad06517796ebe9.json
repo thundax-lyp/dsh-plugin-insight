@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5daeaeb5e5bb776a00ad06517796ebe9",
+    "identity": "github:1339536017:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339536017:root",
+            "repository": "MarchLiu/dsh-rich-editor",
+            "path": "",
+            "revision": "92d9ba3ed51b683324ce613f4808f46bf8f9d4a8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "cdd73dda03cf121ff4ec19a8958d27b411fbfe710e4cce13a8c1ad4d700f33f1",
+                "code": "92d9ba3ed51b683324ce613f4808f46bf8f9d4a8",
+                "maintenance": "c49615701e079316bd2544e25e86d7705568dc4b713207235ab069e7f5104e58"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "de3552e4d2c1a9edd196dab553d3ba93",
+    "identity": "github:1411741651:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1411741651:root",
+            "repository": "JochenYang/dsh-rewind-plugin",
+            "path": "",
+            "revision": "34df58b4155fa8367eb4597bf6f475159e44cb99",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5da3838915d367197cf1ffeee3251d0d30d7d5b93a991b7f971ff5b8d23e07ca",
+                "code": "34df58b4155fa8367eb4597bf6f475159e44cb99",
+                "maintenance": "d1d609239fb26b5c4a1575b0e268a76f13e12a9400a1f1859e88f88471c86934"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1f6bdf866f31756fbb459fd85a100496",
+    "identity": "github:1337335939:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337335939:root",
+            "repository": "hanshenmesen/dsh-turn-delete",
+            "path": "",
+            "revision": "4716bcbdee27b110ceea9df21f027c6dfe5888b8",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "b0b4e68938404c0421fe5424952beb12ff6352d0f92eea1a9dbfad9ee7b7a7c5",
+                "code": "4716bcbdee27b110ceea9df21f027c6dfe5888b8",
+                "maintenance": "9b155ec158edfb63adc5792338fb8d298972852d70c37bd7da018029b3173b3a"
+            }
+        }
+    }
+}

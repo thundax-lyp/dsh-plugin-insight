@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "393a3f817437bf03fdeee59c2cd1016b",
+    "identity": "github:1369286754:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1369286754:root",
+            "repository": "hatsuyuki0103/dsh-fight-scene-director",
+            "path": "",
+            "revision": "30725949859e227eea1e2b91baaf1e9efb4d113c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9722e8302190a497f84866f1720031f775d2dbbaa42cb64a50921d93c15549ee",
+                "code": "30725949859e227eea1e2b91baaf1e9efb4d113c",
+                "maintenance": "f9f39473a2bf6837187f39046fbc4b7e863fc14b64045e5836fa0bb5af1df795"
+            }
+        }
+    }
+}

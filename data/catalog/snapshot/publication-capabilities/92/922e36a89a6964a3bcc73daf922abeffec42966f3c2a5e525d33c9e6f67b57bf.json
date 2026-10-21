@@ -1,7 +1,0 @@
-{
-  "revision": "29e7e487235bdbcba13768f1a009ecd2089d6faa",
-  "items": {
-    "界面": "shell.overlay问题圆点导航、悬停卡与设置tab。",
-    "事件监听": "questionIndex会话投影折叠用户事件，client订阅projection/live内容更新。"
-  }
-}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a9a9c6f26aae000517c36089dda474d7",
+    "identity": "github:1354757986:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1354757986:root",
+            "repository": "luxi233/dsh-settings-nav-scroll",
+            "path": "",
+            "revision": "39316def6f943c2a2091a3ed4908f7918ecf155e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1dbcd10ee468ef119600ea76e2370339304796b21658f0679c9c3f4dfcf66458",
+                "code": "39316def6f943c2a2091a3ed4908f7918ecf155e",
+                "maintenance": "2974e473e9ddd6903a4c91ee171459539299670ba2626939abe66b62001ede44"
+            }
+        }
+    }
+}

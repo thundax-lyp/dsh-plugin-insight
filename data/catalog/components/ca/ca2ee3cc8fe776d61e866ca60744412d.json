@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ca2ee3cc8fe776d61e866ca60744412d",
+    "identity": "github:1390142713:integrations-dsh",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1390142713:integrations-dsh",
+            "repository": "TwinsEarth/NewAgentUniverseByDeepSeek",
+            "path": "integrations/dsh",
+            "revision": "f3db295404439392bf76075da0454c04db431a27",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c4714ca0ade097ea13f0c450074f4e77cc18648d716e660564dcbc1d306eee05",
+                "code": "f3db295404439392bf76075da0454c04db431a27",
+                "maintenance": "652eb746264614bf55d2b3406c4a5406925a3cc47d168f6bb8fd731fef7868a9"
+            }
+        }
+    }
+}

@@ -1,8 +1,0 @@
-{
-  "revision": "84f1be429c04c5d426e54d02b993d8972d4d841d",
-  "items": {
-    "界面": "侧栏行情卡片",
-    "Host 路由": "/api/crypto.ticker",
-    "后台": "多来源报价与趋势缓存"
-  }
-}

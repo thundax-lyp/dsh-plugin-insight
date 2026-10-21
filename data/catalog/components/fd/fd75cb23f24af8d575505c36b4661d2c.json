@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fd75cb23f24af8d575505c36b4661d2c",
+    "identity": "github:1334303719:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334303719:root",
+            "repository": "cheshireez/dsh-skill-hub",
+            "path": "",
+            "revision": "634b52689d1a54f3259da6b8fc361883a2f5c9ca",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9a93d42a864a3af334d616e5ccbe971616729cf76bb0e36c01dcb585307a26a1",
+                "code": "634b52689d1a54f3259da6b8fc361883a2f5c9ca",
+                "maintenance": "a357b4b20e309c414055e37dfb935923ddff4a263b63ac38970322b5334637cc"
+            }
+        }
+    }
+}

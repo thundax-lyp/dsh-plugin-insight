@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4bb098b5f57ce3f04b3372da88872ad2",
+    "identity": "github:1425210765:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425210765:root",
+            "repository": "wilsonchengassistant/dsh-mobile-sidebar",
+            "path": "",
+            "revision": "3589834000cc51903306d0587dda97bd67a577db",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ecb4ba781a31ca1b3ffff93693834779f8e7ca077e9162b67763ac466730edbc",
+                "code": "3589834000cc51903306d0587dda97bd67a577db",
+                "maintenance": "298b8e3353ac0ddc797e5890a5ba57f49003e6931a31e9686f59ff90df6259e9"
+            }
+        }
+    }
+}

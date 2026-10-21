@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "85b617654f094cdf798313af75855e0d",
+    "identity": "github:1348062426:packages-dsh-cad-studio",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1348062426:packages-dsh-cad-studio",
+            "repository": "liwuzhan/cad-tool",
+            "path": "packages/dsh-cad-studio",
+            "revision": "33b10e06d8017906d5f846cae014be16268ec676",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1d76dd2429d11c5ab86bf2916dae06ec6be9bf4fc0527d59a88066fe2efbb356",
+                "code": "33b10e06d8017906d5f846cae014be16268ec676",
+                "maintenance": "f9e8829e072395b2fb9f22bd7bb176886525a77f019d0ba945ae34825d242c5f"
+            }
+        }
+    }
+}

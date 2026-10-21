@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "95170978fc46966c9de477f22b428cf7",
+    "identity": "github:1399944530:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1399944530:root",
+            "repository": "zyd232/dsh-compaction-policy",
+            "path": "",
+            "revision": "e95017980c28989bb4c594562bb6c4f7005c8683",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "58d45d0849130c091c0d1aa99ff05c305e88d01c590b85121f3fa780a33ca4a0",
+                "code": "e95017980c28989bb4c594562bb6c4f7005c8683",
+                "maintenance": "576223e571ea0182c4a8f160b28c603a95068f5289e922f3f9c61b8a3bdecc78"
+            }
+        }
+    }
+}

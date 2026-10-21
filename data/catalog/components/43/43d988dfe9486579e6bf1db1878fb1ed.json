@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "43d988dfe9486579e6bf1db1878fb1ed",
+    "identity": "github:1334046114:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334046114:root",
+            "repository": "bwndlct/dsh-session-export",
+            "path": "",
+            "revision": "eb18389192e36934718877fd7c6eb397f5cf1cd4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "911a14185a752797d18933f845e46ea4b08928e80423d6952c01c678587337df",
+                "code": "eb18389192e36934718877fd7c6eb397f5cf1cd4",
+                "maintenance": "8b1156366950970bdc04691d106b44424b075771852d48499a0061a5fc57eb84"
+            }
+        }
+    }
+}

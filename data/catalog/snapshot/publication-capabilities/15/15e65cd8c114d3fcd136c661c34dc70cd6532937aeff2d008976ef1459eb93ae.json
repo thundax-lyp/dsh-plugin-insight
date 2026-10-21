@@ -1,9 +1,0 @@
-{
-  "revision": "531f16a8f0a4f0ed9d9868ab0b0f8960b0322781",
-  "items": {
-    "模型工具": "sticker_catalog素材目录与sticker_pick选图",
-    "Host 路由": "/sticker-pack素材、设置和图片路由",
-    "界面": "表情概率与等待上限设置",
-    "事件监听": "按会话回合维护贴图决策"
-  }
-}

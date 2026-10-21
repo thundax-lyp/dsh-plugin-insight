@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "753c7076f7e536083c6e71bb36fb5800",
+    "identity": "github:1363551236:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1363551236:root",
+            "repository": "sojo-negai/dsh-prompt-refine",
+            "path": "",
+            "revision": "614aef0bdab20ac5229fedcf3fdc0a9e674ff461",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "06f7b6305dc8786f17ff57eb8988d8711cef48a1378d197be0900b44c096b981",
+                "code": "614aef0bdab20ac5229fedcf3fdc0a9e674ff461",
+                "maintenance": "752eb4bf0718bbd5ff36395b1b0c20e25abec36ddc8a79d26dbe10a8afd80242"
+            }
+        }
+    }
+}

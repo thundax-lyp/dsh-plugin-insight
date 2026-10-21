@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "a68df37d98c67c2fadfab05e724c811b",
+    "identity": "github:1324673997:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1324673997:root",
+            "repository": "william-jin-cmu/dsh-evolve",
+            "path": "",
+            "revision": "37462647f89612ab89b18fadb88299e550748200",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "669277463d8bef7f0122cedec3f0a2387bd6de5b094df8b18b7a606f3aac0a17",
+                "code": "37462647f89612ab89b18fadb88299e550748200",
+                "maintenance": "57268399f3bb043740a33798c5f2a638bf4c5331c9cd9f469bc50b6155ad9af5"
+            }
+        }
+    }
+}

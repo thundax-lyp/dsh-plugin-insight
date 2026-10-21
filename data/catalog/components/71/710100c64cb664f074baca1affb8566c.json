@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "710100c64cb664f074baca1affb8566c",
+    "identity": "github:1387959232:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1387959232:root",
+            "repository": "Iambatman1928/dsh-lawkb-ui",
+            "path": "",
+            "revision": "56c8a0c59125d836971e8dd78c2877044b74efba",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a3f6851a4ed7465fe7671482dd59d5044686079ccec510b96345818b2ebb4634",
+                "code": "56c8a0c59125d836971e8dd78c2877044b74efba",
+                "maintenance": "4e11334b6d05c97661336bfe109dc974ce22e43c40f5766ed4275ab4e37bb518"
+            }
+        }
+    }
+}

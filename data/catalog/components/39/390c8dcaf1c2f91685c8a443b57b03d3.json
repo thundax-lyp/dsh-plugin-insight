@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "390c8dcaf1c2f91685c8a443b57b03d3",
+    "identity": "github:1347939096:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347939096:root",
+            "repository": "upJiang/dsh-cron-job",
+            "path": "",
+            "revision": "2d9dab4c263967ba32de428d925120c640cb1b07",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "236c6a438a0838fbf51ee047a5ac0faeab51fac7dd9151096f44a1a933697087",
+                "code": "2d9dab4c263967ba32de428d925120c640cb1b07",
+                "maintenance": "1cc3f2301632d6d69fdd1b6d3656728b67af84bc89a2b76f3181a1cce44953f0"
+            }
+        }
+    }
+}

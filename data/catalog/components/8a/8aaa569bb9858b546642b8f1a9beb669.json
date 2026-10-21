@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8aaa569bb9858b546642b8f1a9beb669",
+    "identity": "github:1378541671:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1378541671:root",
+            "repository": "gorban/dsh-job-stop",
+            "path": "",
+            "revision": "28c394148cc675cabdd9e173db7f83e49243dcc0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d7fcec0fb2612d5cf6631adcaa5d8a9227f62382ffec6afd66da3c09e46d83ba",
+                "code": "28c394148cc675cabdd9e173db7f83e49243dcc0",
+                "maintenance": "6132c950f3831aa8693374affb16531fc706415adfcef033dbc9913d6411dd36"
+            }
+        }
+    }
+}

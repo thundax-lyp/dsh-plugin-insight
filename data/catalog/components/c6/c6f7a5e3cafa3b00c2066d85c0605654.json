@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c6f7a5e3cafa3b00c2066d85c0605654",
+    "identity": "github:1334438398:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334438398:root",
+            "repository": "KanoNoUta/dsh-captain",
+            "path": "",
+            "revision": "dac7c1cffa8e55494b5b87bdb603702adb7e3aba",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ca05c4d97f18421d84ad38431b98db9f9721f9c7195102934c9dcccd043a5e14",
+                "code": "dac7c1cffa8e55494b5b87bdb603702adb7e3aba",
+                "maintenance": "3a42441d063a3fcc9898d729eb309b6fbd015dab98dcb226e82b4f3ea4794324"
+            }
+        }
+    }
+}

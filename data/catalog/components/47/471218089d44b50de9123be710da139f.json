@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "471218089d44b50de9123be710da139f",
+    "identity": "github:1334679778:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334679778:root",
+            "repository": "kinoward/dsh-plugin-subhub",
+            "path": "",
+            "revision": "ede192750485d893086492c289396fbfd44ee0aa",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "86db8b575c8d8383c7038662800a5d6802534b08b93376c73899a6100efe4ce9",
+                "code": "ede192750485d893086492c289396fbfd44ee0aa",
+                "maintenance": "1a3e0b1a8bf422ddf80cc366cc8eed9afa51523d47a53af26601b27b50fafd60"
+            }
+        }
+    }
+}

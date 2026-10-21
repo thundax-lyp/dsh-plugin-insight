@@ -1,0 +1,456 @@
+{
+    "schema_version": 3,
+    "id": "21a8b361eca5a40fe172dbd6c5b29e1b",
+    "identity": "github:1336571882:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1336571882:root",
+            "repository_id": 1336571882,
+            "component_id": "root",
+            "repository": "863683348/dsh-need-finder",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-need-finder",
+            "entry_type": "plugin",
+            "technical_category": "context-search",
+            "business_category": "infrastructure",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "5aad501696728b683815c5b212baff4e06336a631849c986764a0a2843fe0e2b",
+                "code": "b0f559c2b69b34a640e0d477d8ff0210f3840414",
+                "maintenance": "c4168b21f1f78754452701d2a3b0d6623402a23cb897a0a0d5d898343a6f7b97"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-03-github-1336571882-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T03:48:41.632Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-03-github-1336571882-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/863683348/dsh-need-finder/blob/b0f559c2b69b34a640e0d477d8ff0210f3840414/README.md",
+                    "revision": "b0f559c2b69b34a640e0d477d8ff0210f3840414",
+                    "captured_at": "2026-10-21T03:48:41.632Z",
+                    "summary": "按中英文需求匹配精选插件，并生成预设环境配方的有序安装计划。",
+                    "artifact": "data/runs/2026-10-21-03/snapshots/863683348--dsh-need-finder/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-03-github-1336571882-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/863683348/dsh-need-finder/blob/b0f559c2b69b34a640e0d477d8ff0210f3840414/lib/index.js",
+                    "revision": "b0f559c2b69b34a640e0d477d8ff0210f3840414",
+                    "captured_at": "2026-10-21T03:48:41.632Z",
+                    "summary": "核查 lib/index.js、lib/match.js、lib/recipe.js；lib/match.js用英文词、中文二元组和名称/标签/描述权重本地排序，可按类别多样化；recipe.js读取JSON配方，按order生成命令，index注册plugin_guide与recipe。",
+                    "artifact": "data/runs/2026-10-21-03/snapshots/863683348--dsh-need-finder/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定提交内列明源码和作者材料的有界抽读，静态inventory为组件范围；没有安装、执行目标代码或测试、发起插件服务请求、真实宿主验收或独立采用核实。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "适合不会记插件名、想先找少量候选的用户；安装计划仍需人工逐项确认。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336571882-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336571882:root",
+                            "area": "code",
+                            "fingerprint": "b0f559c2b69b34a640e0d477d8ff0210f3840414"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:48:41.632Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "lib/match.js用英文词、中文二元组和名称/标签/描述权重本地排序，可按类别多样化；recipe.js读取JSON配方，按order生成命令，index注册plugin_guide与recipe。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336571882-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336571882:root",
+                            "area": "code",
+                            "fingerprint": "b0f559c2b69b34a640e0d477d8ff0210f3840414"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:48:41.632Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定提交内列明源码和作者材料的有界抽读，静态inventory为组件范围；没有安装、执行目标代码或测试、发起插件服务请求、真实宿主验收或独立采用核实。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336571882-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336571882:root",
+                            "area": "code",
+                            "fingerprint": "b0f559c2b69b34a640e0d477d8ff0210f3840414"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:48:41.632Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "分发与依赖限定固定package.json、README及本轮META；仓库热度、包存在或结构校验不能证明运行可用。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336571882-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336571882:root",
+                            "area": "code",
+                            "fingerprint": "b0f559c2b69b34a640e0d477d8ff0210f3840414"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:48:41.632Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "首次无需远端服务，需宿主peer依赖；持续成本是精选描述和配方维护、候选验证与安装命令复核。现金主要是宿主模型token，离线搜索不代表人工选型免费。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336571882-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336571882:root",
+                            "area": "code",
+                            "fingerprint": "b0f559c2b69b34a640e0d477d8ff0210f3840414"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:48:41.632Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "适合找候选和列清单。先读命中理由与配方互斥说明，核对当前版本、依赖和宿主；apply输出命令不表示环境已经安装。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336571882-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336571882:root",
+                            "area": "code",
+                            "fingerprint": "b0f559c2b69b34a640e0d477d8ff0210f3840414"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:48:41.632Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "减少记名称和抄命令步骤，但没有需求匹配标注集或真实选型成功率。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336571882-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336571882:root",
+                            "area": "code",
+                            "fingerprint": "b0f559c2b69b34a640e0d477d8ff0210f3840414"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:48:41.632Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "match与recipe纯逻辑拆分，命中details可解释、多样化有明确每类上限；可借鉴透明排序，需补上语言兜底与依赖计划端到端验证。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336571882-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336571882:root",
+                            "area": "code",
+                            "fingerprint": "b0f559c2b69b34a640e0d477d8ff0210f3840414"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:48:41.632Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "作者称需求语义导购；可确认增量是把可解释词面匹配和配方清单接进模型工具，避免模型自行猜名称。相对浏览目录，返回命中理由与命令更直接；这里语义是词典/子串规则，没有向量或模型语义推理。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336571882-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336571882:root",
+                            "area": "code",
+                            "fingerprint": "b0f559c2b69b34a640e0d477d8ff0210f3840414"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:48:41.632Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "84项精选属于有意子集，词面相关不能证明实际能力和兼容。中文category兜底的实际代码仅拿en词集合匹配，中文词典项不会凭空增加中文分类召回。recipe apply只返回计划，dependsOn校验存在性但installPlan按order排序，不做真实依赖求解或执行。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336571882-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336571882:root",
+                            "area": "code",
+                            "fingerprint": "b0f559c2b69b34a640e0d477d8ff0210f3840414"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:48:41.632Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "待验证假设：在匹配结果中加入经过验证的场景条件与未满足条件，比单纯提高词权重更能缩短选型。对同义但无词面重合、中文分类和互斥配方需求比较人工合适率与误装率；没有宿主证据的条件保持未知。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336571882-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336571882:root",
+                            "area": "code",
+                            "fingerprint": "b0f559c2b69b34a640e0d477d8ff0210f3840414"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:48:41.632Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T03:48:41.632Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "b0f559c2b69b34a640e0d477d8ff0210f3840414",
+                "reviewed_at": "2026-10-21T03:48:41.632Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1336571882:root",
+                        "area": "code",
+                        "fingerprint": "b0f559c2b69b34a640e0d477d8ff0210f3840414"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty=9：关键词导购与清单配方是已有方案。 mechanism=8：确定排序可解释，非语义模型或依赖求解。 transferability=10：纯查询易迁移，精选数据需维护。 simplification=8：减少名称查找与命令整理。",
+                    "basis": "interpretation",
+                    "score": 35,
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336571882-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 8,
+                        "reach": 10,
+                        "economics": 4
+                    },
+                    "rationale": "workflow=18：需求到候选计划的流程清晰。 delivery=8：返回命令可交付但未验证安装。 reach=10：中英词面覆盖有限精选用户。 economics=4：无选型工时或误装对照。",
+                    "basis": "interpretation",
+                    "score": 40,
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336571882-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "不记插件名者可试离线候选与配方计划；核命中理由、互斥和真实版本，apply只列命令不解依赖或安装。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "按需求找少量候选是清楚的重复任务。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "词面命中解释及配方省抄命令，但仅84项有意子集。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "英文词和中文bigram源码可查，中文分类兜底和依赖求解有限。"
+                    },
+                    "cost": {
+                        "score": 15,
+                        "rationale": "无新增远端服务，精选描述与配方、安装命令仍需维护复核。"
+                    }
+                },
+                "score": 64,
+                "revision": "b0f559c2b69b34a640e0d477d8ff0210f3840414",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-03-github-1336571882-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1336571882:root",
+                        "area": "code",
+                        "fingerprint": "b0f559c2b69b34a640e0d477d8ff0210f3840414"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1336571882:root",
+            "repository": "863683348/dsh-need-finder",
+            "path": "",
+            "revision": "b0f559c2b69b34a640e0d477d8ff0210f3840414",
+            "fingerprints": {
+                "directory": "5aad501696728b683815c5b212baff4e06336a631849c986764a0a2843fe0e2b",
+                "code": "b0f559c2b69b34a640e0d477d8ff0210f3840414",
+                "maintenance": "c4168b21f1f78754452701d2a3b0d6623402a23cb897a0a0d5d898343a6f7b97"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T03:36:14Z",
+            "analysis_sha256": "993d81a958bb5fb02d41014ce78ca23837bbe596fcf1685825801cdb6e2a8072"
+        },
+        "publication.metadata": "data/plugins/863683348--dsh-need-finder/META.json",
+        "publication.summaries": {
+            "text": "按中英文需求匹配精选插件，并生成预设环境配方的有序安装计划。",
+            "revision": "b0f559c2b69b34a640e0d477d8ff0210f3840414",
+            "source_url": "https://github.com/863683348/dsh-need-finder/blob/b0f559c2b69b34a640e0d477d8ff0210f3840414/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "b0f559c2b69b34a640e0d477d8ff0210f3840414",
+            "items": {
+                "模型工具": "plugin_guide需求匹配、recipe配方查询与计划"
+            }
+        },
+        "publication.advice": {
+            "revision": "b0f559c2b69b34a640e0d477d8ff0210f3840414",
+            "text": "适合找候选和列清单。先读命中理由与配方互斥说明，核对当前版本、依赖和宿主；apply输出命令不表示环境已经安装。"
+        },
+        "registry": "data/plugins/863683348--dsh-need-finder",
+        "reports": "# dsh-need-finder\n\n> 按中英文需求匹配精选插件，并生成预设环境配方的有序安装计划。\n\n## 使用建议\n\n适合找候选和列清单。先读命中理由与配方互斥说明，核对当前版本、依赖和宿主；apply输出命令不表示环境已经安装。\n\n**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。已有贡献由固定版本源码支持，实际运行与宿主效果未验证；未来设计假设均未验证。\n\n## 洞察短评\n\n- **用途**：适合不会记插件名、想先找少量候选的用户；安装计划仍需人工逐项确认。\n- **亮点**：作者称需求语义导购；可确认增量是把可解释词面匹配和配方清单接进模型工具，避免模型自行猜名称。相对浏览目录，返回命中理由与命令更直接；这里语义是词典/子串规则，没有向量或模型语义推理。\n- **思考**：84项精选属于有意子集，词面相关不能证明实际能力和兼容。中文category兜底的实际代码仅拿en词集合匹配，中文词典项不会凭空增加中文分类召回。recipe apply只返回计划，dependsOn校验存在性但installPlan按order排序，不做真实依赖求解或执行。\n- **建议**：待验证假设：在匹配结果中加入经过验证的场景条件与未满足条件，比单纯提高词权重更能缩短选型。对同义但无词面重合、中文分类和互斥配方需求比较人工合适率与误装率；没有宿主证据的条件保持未知。\n\n## 当前插件分析\n\n### 场景与替代办法\n\n替代为目录分类浏览或模型猜测插件；本项目把候选匹配变确定规则，覆盖仍限精选快照。\n\n### 能力、依赖与流程\n\nlib/match.js用英文词、中文二元组和名称/标签/描述权重本地排序，可按类别多样化；recipe.js读取JSON配方，按order生成命令，index注册plugin_guide与recipe。\n\n- **模型工具**：plugin_guide需求匹配、recipe配方查询与计划\n\n宿主tools/systemPrompt和Schemastery；包内guide-data.json/recipes.json为静态输入，不在运行时自行核实插件。\n\n用户描述需求→词面评分并过滤→展示候选理由→搜索或选择配方→输出有序命令→用户另行验收安装。\n\n### 成本与效果\n\n首次无需远端服务，需宿主peer依赖；持续成本是精选描述和配方维护、候选验证与安装命令复核。现金主要是宿主模型token，离线搜索不代表人工选型免费。\n\n减少记名称和抄命令步骤，但没有需求匹配标注集或真实选型成功率。\n\n### 工程亮点\n\nmatch与recipe纯逻辑拆分，命中details可解释、多样化有明确每类上限；可借鉴透明排序，需补上语言兜底与依赖计划端到端验证。\n\n源码依据：[lib/index.js](https://github.com/863683348/dsh-need-finder/blob/b0f559c2b69b34a640e0d477d8ff0210f3840414/lib/index.js)、[lib/match.js](https://github.com/863683348/dsh-need-finder/blob/b0f559c2b69b34a640e0d477d8ff0210f3840414/lib/match.js)、[lib/recipe.js](https://github.com/863683348/dsh-need-finder/blob/b0f559c2b69b34a640e0d477d8ff0210f3840414/lib/recipe.js)。\n\n## 未来设计假设（未验证）\n\n待验证假设：在匹配结果中加入经过验证的场景条件与未满足条件，比单纯提高词权重更能缩短选型。对同义但无词面重合、中文分类和互斥配方需求比较人工合适率与误装率；没有宿主证据的条件保持未知。\n\n用中文分类词、同义需求、互斥配方、dependsOn循环与版本不兼容样本核对召回和计划；本轮未运行目标代码。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：891d02789a855743f04b1b7f7bb71ac398e79d378447e2624b4a7f2b6babdb86。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 7 | 250 | — | — | 2317 |\n| .js | source | 3 | 566 | 463 | 78 | — |\n| .mjs | source | 1 | 20 | 15 | 4 | — |\n| .mjs | test | 2 | 171 | 144 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[863683348/dsh-need-finder](https://github.com/863683348/dsh-need-finder)\n- **版本号**：0.3.2（[固定提交 b0f559c2](https://github.com/863683348/dsh-need-finder/tree/b0f559c2b69b34a640e0d477d8ff0210f3840414)）\n- **版本日期**：2026-09-11（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：lib/index.js、lib/match.js、lib/recipe.js、作者README、package与固定范围inventory；源码抽读不等于完整审计。\n- 未验证：插件执行、测试、安装、真实宿主与独立采用。\n- 证据限制：固定提交内列明源码和作者材料的有界抽读，静态inventory为组件范围；没有安装、执行目标代码或测试、发起插件服务请求、真实宿主验收或独立采用核实。\n- 下一步：用中文分类词、同义需求、互斥配方、dependsOn循环与版本不兼容样本核对召回和计划；本轮未运行目标代码。\n",
+        "metadata": {
+            "repository": "863683348/dsh-need-finder",
+            "repository_id": 1336571882,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 2,
+            "pushed_at": "2026-09-11T03:26:14Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-need-finder%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C2:2F411E:14EBEF:22A928:6AD84AB6 and timestamp 2026-10-21 05:16:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-need-finder%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641D:1F2B1B:14CCEC:22776D:6AD84AB6 and timestamp 2026-10-21 05:16:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-need-finder%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640B:13810:14C05C:227B23:6AD84AB6 and timestamp 2026-10-21 05:16:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-need-finder%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6416:D5CAC:14BBF5:225B23:6AD84AB6 and timestamp 2026-10-21 05:16:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-need-finder%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C3:223B46:15E525:239F02:6AD84AB6 and timestamp 2026-10-21 05:16:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-need-finder",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 850,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-need-finder",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-17T02:27:43.573Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-need-finder",
+                    "error": null,
+                    "latest_version": "0.3.1",
+                    "latest_published_at": "2026-09-11T02:35:11.637Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "b0f559c2b69b34a640e0d477d8ff0210f3840414",
+                "current_revision": "b0f559c2b69b34a640e0d477d8ff0210f3840414",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1336571882:root",
+            "repository": "863683348/dsh-need-finder",
+            "path": "",
+            "revision": "b0f559c2b69b34a640e0d477d8ff0210f3840414",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5aad501696728b683815c5b212baff4e06336a631849c986764a0a2843fe0e2b",
+                "code": "b0f559c2b69b34a640e0d477d8ff0210f3840414",
+                "maintenance": "c4168b21f1f78754452701d2a3b0d6623402a23cb897a0a0d5d898343a6f7b97"
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "8cab4c3a7cb2371a259fd19027aeeb19",
+    "identity": "github:1334042515:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334042515:root",
+            "repository": "cyanfish-x/dsh-live2d-pets",
+            "path": "",
+            "revision": "6af6f021354afbf30394e363f23caafc800f2b28",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "f95e1462a9e946302848d5e52b649607f9193b7b442ce701d4d44a7ec24e7fe7",
+                "code": "6af6f021354afbf30394e363f23caafc800f2b28",
+                "maintenance": "c742f5bae2a458423a62ee0c60b1b698d778ec211006a967182c6f0805a5565f"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9b2766538e0332104a3d5f2828542817",
+    "identity": "github:1354857499:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1354857499:root",
+            "repository": "linkbag/dsh-swarm-orchestrator",
+            "path": "",
+            "revision": "b19b9c696da223fbbc49a8a0a444d87e2af07eae",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4be8833194261bdb982318585253486920b579aaf488f8e7a9f2b324a2cb09f1",
+                "code": "b19b9c696da223fbbc49a8a0a444d87e2af07eae",
+                "maintenance": "8b34fde5ca350edb2f452332640a1787dbf5fe9c773ddfe3d98539bf6df111ed"
+            }
+        }
+    }
+}

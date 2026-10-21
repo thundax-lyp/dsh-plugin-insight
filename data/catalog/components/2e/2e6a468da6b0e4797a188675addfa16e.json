@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2e6a468da6b0e4797a188675addfa16e",
+    "identity": "github:1333146829:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333146829:root",
+            "repository": "Ruler4396/dsh-launcher",
+            "path": "",
+            "revision": "e2a9f633e36a56efd1444142fb8042b40afcef91",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "aea8bf8965398c6743ccb4f796c943269e016eba3e8e6b7827ee146d84965b67",
+                "code": "e2a9f633e36a56efd1444142fb8042b40afcef91",
+                "maintenance": "2fdd04560d99ab5ddd2e7b092e910a776d625b34f956bc07cf3122327c7667f1"
+            }
+        }
+    }
+}

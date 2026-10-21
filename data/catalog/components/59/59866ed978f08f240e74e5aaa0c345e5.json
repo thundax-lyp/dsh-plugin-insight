@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "59866ed978f08f240e74e5aaa0c345e5",
+    "identity": "github:1333254657:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333254657:root",
+            "repository": "slow-stack/mneme",
+            "path": "",
+            "revision": "d9ada6f3b4b9e9255d3a0d39332cd800b74a686b",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "a5b8ff4b7bdbc7b0a24f1913c9c39f1d17b49897ba3f201141121cf6cf47fd34",
+                "code": "d9ada6f3b4b9e9255d3a0d39332cd800b74a686b",
+                "maintenance": "69bddc9c5b7bd1e363cbff4482a264311b1a52031c2faf5b2206deb3870293e6"
+            }
+        }
+    }
+}

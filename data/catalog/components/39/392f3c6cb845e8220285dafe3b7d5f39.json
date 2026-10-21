@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "392f3c6cb845e8220285dafe3b7d5f39",
+    "identity": "github:1336131772:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336131772:root",
+            "repository": "JimChen-g/dsh-frontier-repro",
+            "path": "",
+            "revision": "95ef63bef431ece1092201d6eae91ff3bf674e9d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6d116404c6d265f6117de120f98379aace469061a9a73691bd7de1a9d15f2d20",
+                "code": "95ef63bef431ece1092201d6eae91ff3bf674e9d",
+                "maintenance": "f5de3542ded1928e4b1c4d6995eba56a9c1405f00a6764a20debded3877da1ed"
+            }
+        }
+    }
+}

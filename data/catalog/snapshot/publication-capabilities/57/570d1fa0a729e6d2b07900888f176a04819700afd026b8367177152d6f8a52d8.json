@@ -1,7 +1,0 @@
-{
-  "revision": "b04fadfeaf88f8f98ba09ab57e9379eb36f05ea0",
-  "items": {
-    "Skill": "dsh-math-olympiad竞赛数学求解与验证流程",
-    "后台": "mathOlympiadSkills路径服务及独立技能provider配置"
-  }
-}

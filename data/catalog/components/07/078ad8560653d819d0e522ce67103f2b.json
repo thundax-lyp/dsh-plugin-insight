@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "078ad8560653d819d0e522ce67103f2b",
+    "identity": "github:1334963239:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334963239:root",
+            "repository": "yoli-mi/dsh-client-ui-custom",
+            "path": "",
+            "revision": "edf1ef701e360577ddde1a5c6d79fdce17a1744e",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "f88bafcbd1db17052634669de7c96528140f2243d1b42cabb61fe87098cbe35d",
+                "code": "edf1ef701e360577ddde1a5c6d79fdce17a1744e",
+                "maintenance": "835d3f652f0bc9c6857a8c513640e387f14fd8a317c7b95480f5e4dc203b8b05"
+            }
+        }
+    }
+}

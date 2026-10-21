@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e6ee23496faa04c1350a801d0eed943b",
+    "identity": "github:1304997851:packages-dsh-plugin",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1304997851:packages-dsh-plugin",
+            "repository": "taxueseek/argo",
+            "path": "packages/dsh-plugin",
+            "revision": "32428bc90aae9fe111dceec3d5ab2e89a2bad070",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a0eff7b5c97d7bfdb9599d053d8f759cc84004455c8da8ea189418e7036efb88",
+                "code": "32428bc90aae9fe111dceec3d5ab2e89a2bad070",
+                "maintenance": "b5d4525dd61d6b0da724767310392afa31b29085a3360909185567a0a51ea69a"
+            }
+        }
+    }
+}

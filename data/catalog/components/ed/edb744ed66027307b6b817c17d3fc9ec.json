@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "edb744ed66027307b6b817c17d3fc9ec",
+    "identity": "github:1415678068:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1415678068:root",
+            "repository": "MoonlitDropOfBlood/dsh-deveco",
+            "path": "",
+            "revision": "456d421d2669ed51eb002e7fa97754f03a0cdc8f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "958bbf694272cefb10da7b880aa68cb52239fbb89035202be253389351be7ffb",
+                "code": "456d421d2669ed51eb002e7fa97754f03a0cdc8f",
+                "maintenance": "5b6a3b61d45ffd30529d9b1cc757b454517c0d05784b37ddf3df18d2608ef85e"
+            }
+        }
+    }
+}

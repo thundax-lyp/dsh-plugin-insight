@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0c8fc27fae1d223e1880d6f3d26cdb7a",
+    "identity": "github:1333951462:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333951462:root",
+            "repository": "asukasec/dsh-message-preview",
+            "path": "",
+            "revision": "dfdb543e3982ed5d3f5612b3b0b2e2f6be0f0ed7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4ba622163f5381c7a272bf8b5b9182ab17d228b8c1d0fc7b46e05f8563de6b41",
+                "code": "dfdb543e3982ed5d3f5612b3b0b2e2f6be0f0ed7",
+                "maintenance": "4da08b4777fd4656050aa7b9de01fa0d1b55c30befcfac3e502d629e9a3f3d69"
+            }
+        }
+    }
+}

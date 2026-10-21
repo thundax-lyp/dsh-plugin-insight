@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f4ea2b86e934048233f5e862e7fdf79e",
+    "identity": "github:1346403257:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346403257:root",
+            "repository": "lisongxuan/ds-hentai",
+            "path": "",
+            "revision": "20ad36877f5862630857584cfb59158c699a94d8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d06e649582ac91f9e89020a7784e7d0b1f94287eff05d5fc11ac512eec143858",
+                "code": "20ad36877f5862630857584cfb59158c699a94d8",
+                "maintenance": "88468cda2f43b3faf2e839f470136c75c52c0328fd12bf68f999957a64eaafa0"
+            }
+        }
+    }
+}

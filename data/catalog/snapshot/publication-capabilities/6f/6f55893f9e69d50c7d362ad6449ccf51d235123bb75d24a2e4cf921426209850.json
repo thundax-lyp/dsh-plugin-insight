@@ -1,7 +1,0 @@
-{
-  "revision": "0e92c135644be8d84601ea846098f2799ef4dcf7",
-  "items": {
-    "界面": "五种Markdown提示卡片与主题样式。",
-    "事件监听": "MutationObserver处理流式DOM变化，Host注入输出格式section。"
-  }
-}

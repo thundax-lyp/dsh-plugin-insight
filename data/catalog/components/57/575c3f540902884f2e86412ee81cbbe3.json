@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "575c3f540902884f2e86412ee81cbbe3",
+    "identity": "github:1408438901:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1408438901:root",
+            "repository": "Feizhaiqianqian/dsh-email-board",
+            "path": "",
+            "revision": "b6fbeb114edf78d58c73af90d32e3ee343fc55af",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d53ece55a72c1aa5c94d4d1726f85a07449e32ec8999ac7f17010da604b8e792",
+                "code": "b6fbeb114edf78d58c73af90d32e3ee343fc55af",
+                "maintenance": "3a519f502e85237441639e784bcf0751d0ba66f5f4a6caa2bd0d381a2c2ca4eb"
+            }
+        }
+    }
+}

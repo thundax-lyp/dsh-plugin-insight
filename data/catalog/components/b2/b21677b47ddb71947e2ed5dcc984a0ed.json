@@ -1,0 +1,429 @@
+{
+    "schema_version": 3,
+    "id": "b21677b47ddb71947e2ed5dcc984a0ed",
+    "identity": "github:1366370702:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1366370702:root",
+            "repository_id": 1366370702,
+            "component_id": "root",
+            "repository": "AlienGene/dsh-llm-balance-siderbar",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-llm-balance-siderbar",
+            "entry_type": "plugin",
+            "technical_category": "observability-cost",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "ad28f9ebd94789ab2feea223a1d912d2f2c176a5d5c34f660efb3e17860748da",
+                "code": "b35aa1e8501051ab3541cea2f43f0609b214f9a1",
+                "maintenance": "279ee6ead00bc770641b74e31d328dc745c3894e8ad7165eabebe4641efd52c9"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-07-github-1366370702-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T08:06:02.286Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-07-github-1366370702-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/AlienGene/dsh-llm-balance-siderbar/blob/b35aa1e8501051ab3541cea2f43f0609b214f9a1/README.md",
+                    "revision": "b35aa1e8501051ab3541cea2f43f0609b214f9a1",
+                    "captured_at": "2026-10-21T08:06:02.286Z",
+                    "summary": "按已挂载模型路由查询余额或套餐额度，并在侧栏保留独立错误和陈旧状态。",
+                    "artifact": "data/runs/2026-10-21-07/snapshots/aliengene--dsh-llm-balance-siderbar/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-07-github-1366370702-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/AlienGene/dsh-llm-balance-siderbar/blob/b35aa1e8501051ab3541cea2f43f0609b214f9a1/src/index.ts",
+                    "revision": "b35aa1e8501051ab3541cea2f43f0609b214f9a1",
+                    "captured_at": "2026-10-21T08:06:02.286Z",
+                    "summary": "核查 src/index.ts、src/state.ts、src/route.ts、src/providers/deepseek.ts；自动仅探测已注册route匹配的provider；每source独立cache/inFlight/error，失败保留最后成功值并stale；GET/HEAD状态路由触发到期探测，客户端轮询展示。",
+                    "artifact": "data/runs/2026-10-21-07/snapshots/aliengene--dsh-llm-balance-siderbar/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "多供应商用户判断当前模型路由的余额/额度状态，不能据此核算账单。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1366370702-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1366370702:root",
+                            "area": "code",
+                            "fingerprint": "b35aa1e8501051ab3541cea2f43f0609b214f9a1"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:06:02.286Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "自动仅探测已注册route匹配的provider；每source独立cache/inFlight/error，失败保留最后成功值并stale；GET/HEAD状态路由触发到期探测，客户端轮询展示。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1366370702-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1366370702:root",
+                            "area": "code",
+                            "fingerprint": "b35aa1e8501051ab3541cea2f43f0609b214f9a1"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:06:02.286Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1366370702-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1366370702:root",
+                            "area": "code",
+                            "fingerprint": "b35aa1e8501051ab3541cea2f43f0609b214f9a1"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:06:02.286Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "分发以本插件固定package.json、运行依赖与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1366370702-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1366370702:root",
+                            "area": "code",
+                            "fingerprint": "b35aa1e8501051ab3541cea2f43f0609b214f9a1"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:06:02.286Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "各供应商网络与账号权限、轮询延迟和接口维护；无模型生成调用，人工仍分清货币余额与周期quota。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1366370702-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1366370702:root",
+                            "area": "code",
+                            "fingerprint": "b35aa1e8501051ab3541cea2f43f0609b214f9a1"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:06:02.286Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "适合路由较多且有额度查询接口者；先核账户匹配、来源新鲜度和外层路由授权。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1366370702-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1366370702:root",
+                            "area": "code",
+                            "fingerprint": "b35aa1e8501051ab3541cea2f43f0609b214f9a1"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:06:02.286Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "异构数据的可见性和失败隔离明确，无实际预算改善或账单一致性验证。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1366370702-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1366370702:root",
+                            "area": "code",
+                            "fingerprint": "b35aa1e8501051ab3541cea2f43f0609b214f9a1"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:06:02.286Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "每源缓存/单飞、缺凭据与失败分开、unsupported占位避免静默消失；route仅限制方法，无本包请求授权，需宿主确认。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1366370702-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1366370702:root",
+                            "area": "code",
+                            "fingerprint": "b35aa1e8501051ab3541cea2f43f0609b214f9a1"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:06:02.286Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "把异构余额/额度统一成可解释状态，并按宿主实际路由而非所有机器凭据探测，减少无关查询。不是通用计费或消费限制器。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1366370702-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1366370702:root",
+                            "area": "code",
+                            "fingerprint": "b35aa1e8501051ab3541cea2f43f0609b214f9a1"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:06:02.286Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "cache按probe.id而非route/credential身份，hostFor只选首个匹配route；多个相同provider不同key可能被同一快照标成都覆盖。凭据或route改动后TTL内还可显示旧账户值，影响“当前账户”判断。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1366370702-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1366370702:root",
+                            "area": "code",
+                            "fingerprint": "b35aa1e8501051ab3541cea2f43f0609b214f9a1"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:06:02.286Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "未验证假设：缓存键绑定route与非秘密账户指纹，凭据变更使快照失效，可避免多账户误归属。以两条同厂商不同key、换key、失败重试核每行来源与新鲜度；无法区分时明确单账户合并。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1366370702-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1366370702:root",
+                            "area": "code",
+                            "fingerprint": "b35aa1e8501051ab3541cea2f43f0609b214f9a1"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:06:02.286Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T08:06:02.286Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "b35aa1e8501051ab3541cea2f43f0609b214f9a1",
+                "reviewed_at": "2026-10-21T08:06:02.286Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1366370702:root",
+                        "area": "code",
+                        "fingerprint": "b35aa1e8501051ab3541cea2f43f0609b214f9a1"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 4
+                    },
+                    "rationale": "novelty=9：多源聚合常见但路由关联有增量。 mechanism=15：状态隔离和来源门具体。 transferability=10：可迁移probe但厂商协议需维护。 simplification=4：集中观察，凭据匹配仍复杂。",
+                    "basis": "interpretation",
+                    "score": 38,
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1366370702-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 10,
+                        "economics": 0
+                    },
+                    "rationale": "workflow=9：观察入口无新任务分工。 delivery=8：提供解释状态，非财务交付。 reach=10：明确多provider用户。 economics=0：不直接改变消费结构。",
+                    "basis": "interpretation",
+                    "score": 27,
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1366370702-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "多provider用户可在每类仅一个账户路由时试额度面板；同provider多key会共用首路由缓存，不能当当前各账户余额。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "异构供应商余额quota可见性任务明确。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "独立错误和stale缓存比单来源面板更可解释。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "已核probe.id缓存与首route选择，账户覆盖误标限制明确。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "无模型生成费但供应商接口、凭据更新和账户新鲜度需人工核。"
+                    }
+                },
+                "score": 65,
+                "revision": "b35aa1e8501051ab3541cea2f43f0609b214f9a1",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-07-github-1366370702-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1366370702:root",
+                        "area": "code",
+                        "fingerprint": "b35aa1e8501051ab3541cea2f43f0609b214f9a1"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1366370702:root",
+            "repository": "AlienGene/dsh-llm-balance-siderbar",
+            "path": "",
+            "revision": "b35aa1e8501051ab3541cea2f43f0609b214f9a1",
+            "fingerprints": {
+                "directory": "ad28f9ebd94789ab2feea223a1d912d2f2c176a5d5c34f660efb3e17860748da",
+                "code": "b35aa1e8501051ab3541cea2f43f0609b214f9a1",
+                "maintenance": "279ee6ead00bc770641b74e31d328dc745c3894e8ad7165eabebe4641efd52c9"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T07:52:12Z",
+            "analysis_sha256": "c3536fd03a95e8e93f2920378767a9fa640fe9a2f2de7b8620fac90054ea5fa8"
+        },
+        "publication.metadata": "data/plugins/aliengene--dsh-llm-balance-siderbar/META.json",
+        "publication.summaries": {
+            "text": "按已挂载模型路由查询余额或套餐额度，并在侧栏保留独立错误和陈旧状态。",
+            "revision": "b35aa1e8501051ab3541cea2f43f0609b214f9a1",
+            "source_url": "https://github.com/AlienGene/dsh-llm-balance-siderbar/blob/b35aa1e8501051ab3541cea2f43f0609b214f9a1/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "b35aa1e8501051ab3541cea2f43f0609b214f9a1",
+            "items": {
+                "后台": "多来源余额/额度缓存探测",
+                "Host 路由": "/dsh-llm-balance/state",
+                "界面": "路由相关余额和额度侧栏"
+            }
+        },
+        "publication.advice": {
+            "revision": "b35aa1e8501051ab3541cea2f43f0609b214f9a1",
+            "text": "适合路由较多且有额度查询接口者；先核账户匹配、来源新鲜度和外层路由授权。"
+        },
+        "registry": "data/plugins/aliengene--dsh-llm-balance-siderbar",
+        "reports": "# dsh-llm-balance-siderbar\n\n> 按已挂载模型路由查询余额或套餐额度，并在侧栏保留独立错误和陈旧状态。\n\n## 使用建议\n\n适合路由较多且有额度查询接口者；先核账户匹配、来源新鲜度和外层路由授权。\n\n**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，插件与依赖流程的实际运行尚未验证；未来假设未验证。\n\n## 洞察短评\n\n- **用途**：多供应商用户判断当前模型路由的余额/额度状态，不能据此核算账单。\n- **亮点**：把异构余额/额度统一成可解释状态，并按宿主实际路由而非所有机器凭据探测，减少无关查询。不是通用计费或消费限制器。\n- **思考**：cache按probe.id而非route/credential身份，hostFor只选首个匹配route；多个相同provider不同key可能被同一快照标成都覆盖。凭据或route改动后TTL内还可显示旧账户值，影响“当前账户”判断。\n- **建议**：未验证假设：缓存键绑定route与非秘密账户指纹，凭据变更使快照失效，可避免多账户误归属。以两条同厂商不同key、换key、失败重试核每行来源与新鲜度；无法区分时明确单账户合并。\n\n## 场景与替代办法\n\n参照供应商控制台与单账户余额卡；增量是路由发现、分源缓存和明确unsupported占位。\n\n## 能力清单\n\n- **后台**：多来源余额/额度缓存探测\n- **Host 路由**：/dsh-llm-balance/state\n- **界面**：路由相关余额和额度侧栏\n\n## 依赖与流程\n\n自动仅探测已注册route匹配的provider；每source独立cache/inFlight/error，失败保留最后成功值并stale；GET/HEAD状态路由触发到期探测，客户端轮询展示。\n\nwebServer、llm路由/settings/credentials及DeepSeek/Moonshot/Kimi/OpenCode各查询协议；可显式sources绕过自动门。\n\n枚举路由→匹配source/凭据→并行探测→成功缓存/失败标记→侧栏按当前选择展示→到期重试；无接口者不伪造0。\n\n## 成本与效果\n\n各供应商网络与账号权限、轮询延迟和接口维护；无模型生成调用，人工仍分清货币余额与周期quota。\n\n异构数据的可见性和失败隔离明确，无实际预算改善或账单一致性验证。\n\n## 核心贡献\n\n把异构余额/额度统一成可解释状态，并按宿主实际路由而非所有机器凭据探测，减少无关查询。不是通用计费或消费限制器。\n\n## 关键质疑\n\ncache按probe.id而非route/credential身份，hostFor只选首个匹配route；多个相同provider不同key可能被同一快照标成都覆盖。凭据或route改动后TTL内还可显示旧账户值，影响“当前账户”判断。\n\n## 工程亮点\n\n每源缓存/单飞、缺凭据与失败分开、unsupported占位避免静默消失；route仅限制方法，无本包请求授权，需宿主确认。\n\n源码依据：[src/index.ts](https://github.com/AlienGene/dsh-llm-balance-siderbar/blob/b35aa1e8501051ab3541cea2f43f0609b214f9a1/src/index.ts)、[src/state.ts](https://github.com/AlienGene/dsh-llm-balance-siderbar/blob/b35aa1e8501051ab3541cea2f43f0609b214f9a1/src/state.ts)、[src/route.ts](https://github.com/AlienGene/dsh-llm-balance-siderbar/blob/b35aa1e8501051ab3541cea2f43f0609b214f9a1/src/route.ts)、[src/providers/deepseek.ts](https://github.com/AlienGene/dsh-llm-balance-siderbar/blob/b35aa1e8501051ab3541cea2f43f0609b214f9a1/src/providers/deepseek.ts)。\n\n## 未来设计假设（未验证）\n\n未验证假设：缓存键绑定route与非秘密账户指纹，凭据变更使快照失效，可避免多账户误归属。以两条同厂商不同key、换key、失败重试核每行来源与新鲜度；无法区分时明确单账户合并。\n\n未来mock供应商核多路由凭据、stale/skip与超时，另核宿主信任栅栏；本轮未查真实余额。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：7f58de24f5df20171a706553cfdbe730f2b52f1a33048c49a6dc7604c38f17b8。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 10 | 3532 | 2908 | 668 | — |\n| .md | source | 3 | 194 | — | — | 2188 |\n| .mjs | source | 2 | 230 | 189 | 24 | — |\n| .ts | source | 18 | 3033 | 2089 | 712 | — |\n| .tsx | source | 2 | 835 | 714 | 62 | — |\n| .mjs | test | 7 | 1624 | 1417 | 92 | — |\n\n排除 10 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[AlienGene/dsh-llm-balance-siderbar](https://github.com/AlienGene/dsh-llm-balance-siderbar)\n- **版本号**：0.7.1（[固定提交 b35aa1e8](https://github.com/AlienGene/dsh-llm-balance-siderbar/tree/b35aa1e8501051ab3541cea2f43f0609b214f9a1)）\n- **版本日期**：2026-09-12（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：src/index.ts、src/state.ts、src/route.ts、src/providers/deepseek.ts、作者README、package与固定范围inventory；源码抽读不等于完整审计。\n- 未验证：插件执行、测试、安装、真实宿主与独立采用。\n- 证据限制：固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。\n- 下一步：未来mock供应商核多路由凭据、stale/skip与超时，另核宿主信任栅栏；本轮未查真实余额。\n",
+        "metadata": {
+            "repository": "AlienGene/dsh-llm-balance-siderbar",
+            "repository_id": 1366370702,
+            "captured_at": "2026-10-21T08:00:19.627Z",
+            "window_start": "2026-09-21T08:00:19.627Z",
+            "stars": 0,
+            "pushed_at": "2026-09-12T03:45:41Z",
+            "issues": {
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
+            },
+            "errors": [],
+            "npm": {
+                "package_name": "dsh-llm-balance",
+                "captured_at": "2026-10-21T08:00:38.037Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 859,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-llm-balance",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-09-12T02:49:00.785Z",
+                    "captured_at": "2026-10-21T08:00:38.037Z",
+                    "source_url": "https://registry.npmjs.org/dsh-llm-balance",
+                    "error": null,
+                    "latest_version": "0.7.1",
+                    "latest_published_at": "2026-09-12T02:49:00.975Z",
+                    "latest_error": null
+                }
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1366370702:root",
+            "repository": "AlienGene/dsh-llm-balance-siderbar",
+            "path": "",
+            "revision": "b35aa1e8501051ab3541cea2f43f0609b214f9a1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ad28f9ebd94789ab2feea223a1d912d2f2c176a5d5c34f660efb3e17860748da",
+                "code": "b35aa1e8501051ab3541cea2f43f0609b214f9a1",
+                "maintenance": "279ee6ead00bc770641b74e31d328dc745c3894e8ad7165eabebe4641efd52c9"
+            }
+        }
+    }
+}

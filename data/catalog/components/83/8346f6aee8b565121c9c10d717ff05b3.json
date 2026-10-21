@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8346f6aee8b565121c9c10d717ff05b3",
+    "identity": "github:1378056182:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1378056182:root",
+            "repository": "Astervolans/dsh-opencode-go-usage",
+            "path": "",
+            "revision": "1f5b7eb6b7b866116b106cfe70d97dff7dffb934",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d9eab90be444a534491aec80dca8d3233ad1464244fdf833cdc28ea46d9fc847",
+                "code": "1f5b7eb6b7b866116b106cfe70d97dff7dffb934",
+                "maintenance": "52c95ae349356a513edefc780b3a55da76ee261e1cd8b60a59d825097795e33f"
+            }
+        }
+    }
+}

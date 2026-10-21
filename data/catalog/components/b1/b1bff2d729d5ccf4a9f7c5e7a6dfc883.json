@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b1bff2d729d5ccf4a9f7c5e7a6dfc883",
+    "identity": "github:1419230245:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1419230245:root",
+            "repository": "TreeCodeTyper/dsh-blender-mc",
+            "path": "",
+            "revision": "529618f93ebeeed8b0300b66eed7701e0d7894e6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "974359c855f54e25039faa3607a486ee00dd45c0ca359776fa20baa53f599b3c",
+                "code": "529618f93ebeeed8b0300b66eed7701e0d7894e6",
+                "maintenance": "a21846a9119ac3919afa16dd7e99ff8d32b9b9289f5d7c5648dbfdffd15347b1"
+            }
+        }
+    }
+}

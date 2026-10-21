@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "35a4c305485d13a388b4f78ff89012a7",
+    "identity": "github:1416551977:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1416551977:root",
+            "repository": "guojinpeng/dsh-cost-meter",
+            "path": "",
+            "revision": "2006924b161a27d40a7c0d76db75d894eacc899b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8a3bd648b4384b7829a61e6a7e4761fd0fae5bf78a5dedb7665c744c1901bf32",
+                "code": "2006924b161a27d40a7c0d76db75d894eacc899b",
+                "maintenance": "d60ebb87e9dc425ef026218bec87fe7ef73a09da73a40b1afc75b0267f24a70f"
+            }
+        }
+    }
+}

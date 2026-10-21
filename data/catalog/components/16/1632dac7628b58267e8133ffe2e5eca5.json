@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1632dac7628b58267e8133ffe2e5eca5",
+    "identity": "github:1413339347:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1413339347:root",
+            "repository": "erlingmijiang/dsh-lorebooklike-prompt-tool",
+            "path": "",
+            "revision": "2d5a1d320a205a4f4b0b32b039d1c80831c68956",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c8849154751e1d684aa50a737e40e7cd53391e8a8db4de0494f7bfb47111fdb6",
+                "code": "2d5a1d320a205a4f4b0b32b039d1c80831c68956",
+                "maintenance": "6b27e8caab483799174133d4c11d5a3d0db64f66fc19500aab027a0ce9cd0ec9"
+            }
+        }
+    }
+}

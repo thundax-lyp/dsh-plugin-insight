@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "b22b74f446a45bed287597155ba9dde1",
+    "identity": "github:1334766747:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334766747:root",
+            "repository": "toolclub/dsh-agent-team-gui",
+            "path": "",
+            "revision": "9e952e0681d528975444568b70f3c554ac2984be",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "aa22ca10a391ae03b5d23d38c6395018b8e55291717d943fd1b053a494c46ac3",
+                "code": "9e952e0681d528975444568b70f3c554ac2984be",
+                "maintenance": "182cb8b0fb20fa7e36f82e7ed85a97e6fa9945641e211460d52e30c8e8948b2e"
+            }
+        }
+    }
+}

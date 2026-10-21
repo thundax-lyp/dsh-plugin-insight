@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c4df5b6452c46cf6f31a63145fb5de1e",
+    "identity": "github:1392277339:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1392277339:root",
+            "repository": "XIAOZHAOXSXH/dsh-moyu-reader",
+            "path": "",
+            "revision": "c4997266a5b48bea14885896147e1cfb5af05943",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ca2541b0ed715ffd07230f228aef01527dcf034bfc3955f26421500aac557cf9",
+                "code": "c4997266a5b48bea14885896147e1cfb5af05943",
+                "maintenance": "1d4e49501f39005006a3ac5aba1c577e6ee49835cbd085f0d535b086fc3e1935"
+            }
+        }
+    }
+}

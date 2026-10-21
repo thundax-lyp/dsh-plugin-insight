@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c64eac665d31c3f078468561f1f79baf",
+    "identity": "github:1342087639:dsh-graph-host",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342087639:dsh-graph-host",
+            "repository": "miuzel/dsh-graph",
+            "path": "dsh-graph-host",
+            "revision": "472943db11115e289c3db896891658bd22ac74ce",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0939618952aebe2b3cca069e8827c4f8dea27f5922b5c396c7f4b912819aa81a",
+                "code": "472943db11115e289c3db896891658bd22ac74ce",
+                "maintenance": "c8ad238d5c94c5778c7c2db135d60abe532552dee567d6a851abb2e4f4bb11d7"
+            }
+        }
+    }
+}

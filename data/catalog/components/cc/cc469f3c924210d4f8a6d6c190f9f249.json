@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "cc469f3c924210d4f8a6d6c190f9f249",
+    "identity": "github:1367123987:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1367123987:root",
+            "repository": "Zhuang-A/dsh-go-sensei",
+            "path": "",
+            "revision": "b206647cbf634d7142fad9c767e6d65e9b1442bf",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1076f0ebb38dab9ac2f6f53d8bd4301c55a130dc381dd08c568a6ab0c525455a",
+                "code": "b206647cbf634d7142fad9c767e6d65e9b1442bf",
+                "maintenance": "f3ab9cd20d16b8154c998c04a8727b3cdd6ef239e084f9c31917379717fa9446"
+            }
+        }
+    }
+}

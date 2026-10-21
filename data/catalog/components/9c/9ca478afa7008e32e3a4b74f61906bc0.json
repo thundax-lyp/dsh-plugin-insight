@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9ca478afa7008e32e3a4b74f61906bc0",
+    "identity": "github:1350538438:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1350538438:root",
+            "repository": "Rycbartbad/dsh-key-manager",
+            "path": "",
+            "revision": "2f5ae2ad40dc24b033bd798a391a0f76edc784e5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6cef58ff0139c8e250550353b3669e246faab58ee129d890170366c921478229",
+                "code": "2f5ae2ad40dc24b033bd798a391a0f76edc784e5",
+                "maintenance": "b33bfb32939cb08bf63601fe0ad36573e206f3bfcb829a2285251c6d06a42c23"
+            }
+        }
+    }
+}

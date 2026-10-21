@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f3777be47152cb8921c0e6f28341d190",
+    "identity": "github:1415775548:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1415775548:root",
+            "repository": "zhengqiuyang/dsh-mcp-test",
+            "path": "",
+            "revision": "e5eb0f067368953627a9830e729902842173a098",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "bf7c34f619f393e5f3cc4c240181a559732930a1f5c5cac56eff8580c022b5b2",
+                "code": "e5eb0f067368953627a9830e729902842173a098",
+                "maintenance": "ec7cde3de8f4ebbbdf762d1da937dde23ca512a35cca5f12ffcfa9cd513b98e3"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0b9a03387e4c835b2e53a457cd0fb4d8",
+    "identity": "github:1399542574:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1399542574:root",
+            "repository": "xiex16070-jpg/dsh-learn",
+            "path": "",
+            "revision": "6a13e316e21b28b4bd00edb23c7b5982e568f71b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5e9aa629c4d42347eefc7c7319b477a5bf51ea5485cb50d1f0a7dbe2e6429169",
+                "code": "6a13e316e21b28b4bd00edb23c7b5982e568f71b",
+                "maintenance": "462e081f2f443aed8494a5ae0adc4deb5236f53923414ce915379ce279d9118d"
+            }
+        }
+    }
+}

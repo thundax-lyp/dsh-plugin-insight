@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8b83dc397cc21c71b73da58ddcada888",
+    "identity": "github:1336179025:packages-gateway-core",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336179025:packages-gateway-core",
+            "repository": "temotee2103/dsh-overdrive",
+            "path": "packages/gateway-core",
+            "revision": "b551e3d1f91230108901aa644ae1960156a9712f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "097320359fb5081c94939e7c5b2977ece85bf3b2025d2953d5a9af993bb1392d",
+                "code": "b551e3d1f91230108901aa644ae1960156a9712f",
+                "maintenance": "df01082d2d1cf4f5f3e0f322ceb987a7c273a1eacaa605e316383503f9931b0f"
+            }
+        }
+    }
+}

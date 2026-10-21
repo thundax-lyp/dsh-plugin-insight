@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ccc084fe7525cdc3f031418a42bdb9af",
+    "identity": "github:1343950549:packages-omd-dsh",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343950549:packages-omd-dsh",
+            "repository": "jiazz197-cmyk/omd-dsh",
+            "path": "packages/omd-dsh",
+            "revision": "b86879f80d07b1d966f56b4c41904433b45f713a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3923efbdcce205d47303cbf165a62914a5e0da5e2695ec4b95a10c3c6a79499e",
+                "code": "b86879f80d07b1d966f56b4c41904433b45f713a",
+                "maintenance": "c15be3f3aaf6a1296bde5b1cdf9c9bd522dcc73340b335f35f2e128dbd4dc4a4"
+            }
+        }
+    }
+}

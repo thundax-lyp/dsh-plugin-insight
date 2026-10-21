@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1a89d9f3135e339a9c6065474436c56a",
+    "identity": "github:1411949527:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1411949527:root",
+            "repository": "ruiyukirin/dsh-prompt-optimization-master",
+            "path": "",
+            "revision": "67478ed7cb6f83ed32ccbbdaed8e05bfbbf65abc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2cbf5a9ac0a5360c6160aaeedfc3aba9552c13fefb89fba7f6e772d97550a3c4",
+                "code": "67478ed7cb6f83ed32ccbbdaed8e05bfbbf65abc",
+                "maintenance": "c48b6c45211bf77248c0cc8e659dee78ae60b327cc5c7c7c8e220cca6b86d175"
+            }
+        }
+    }
+}

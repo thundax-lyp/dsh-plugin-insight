@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bdf2aea1bd3a91e2d359f0c4be2e4cab",
+    "identity": "github:1335597114:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335597114:root",
+            "repository": "dk33333333/dsh-deepseek-quota-left",
+            "path": "",
+            "revision": "a486b75b6ff025b4d1738d6f866071893775fc18",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "38138fc32144a7a0a5f0f4458d23a85187459d69c660d95533b53d5842df926d",
+                "code": "a486b75b6ff025b4d1738d6f866071893775fc18",
+                "maintenance": "8cb5adac314acb3210a24046c03062a2a99e2c99c672cff8058097203c56d399"
+            }
+        }
+    }
+}

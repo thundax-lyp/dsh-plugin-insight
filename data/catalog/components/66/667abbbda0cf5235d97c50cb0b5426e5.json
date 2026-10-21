@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "667abbbda0cf5235d97c50cb0b5426e5",
+    "identity": "github:1350666558:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1350666558:root",
+            "repository": "svgop/dsh-rich-indexing",
+            "path": "",
+            "revision": "bc093e62f084f82374093532499226f06367bb3d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a102487b2245ce1291193687413399095307b1c369090972fc33d5fe1d767a8f",
+                "code": "bc093e62f084f82374093532499226f06367bb3d",
+                "maintenance": "1f2ae8285e6b935240697a91962704af28aa9403d4b6d9f8babd1a6e8d2f3055"
+            }
+        }
+    }
+}

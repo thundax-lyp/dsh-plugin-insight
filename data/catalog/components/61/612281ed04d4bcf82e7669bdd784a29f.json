@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "612281ed04d4bcf82e7669bdd784a29f",
+    "identity": "github:1333702222:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333702222:root",
+            "repository": "xsoc1/math-research-dsh",
+            "path": "",
+            "revision": "2ddaa456f8b801efa321deb474abcbcda4a88a69",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1de26e7bd956ed16a73bbe46ccbd535d28e48cbec0ea802f32788f813989731a",
+                "code": "2ddaa456f8b801efa321deb474abcbcda4a88a69",
+                "maintenance": "606682c03e7242924972c69cbeb42945d69af9f99721f4a9f6be4998d3e926f5"
+            }
+        }
+    }
+}

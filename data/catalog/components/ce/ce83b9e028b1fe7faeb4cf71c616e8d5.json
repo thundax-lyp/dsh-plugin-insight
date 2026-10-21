@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ce83b9e028b1fe7faeb4cf71c616e8d5",
+    "identity": "github:1418856689:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1418856689:root",
+            "repository": "NeoHotaru/dsh-read-animation",
+            "path": "",
+            "revision": "b1568eeca468bfbab9b75b40ac6bef49b97ac22f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f8c9b36cc7372cd1aee3d5a88f485a2b2b64f9c5099561e8919185334c324ab4",
+                "code": "b1568eeca468bfbab9b75b40ac6bef49b97ac22f",
+                "maintenance": "7cd74d7207f0b2c4e655fe88d6ade7a45b8f7f1391974303c0320ac91eab0646"
+            }
+        }
+    }
+}

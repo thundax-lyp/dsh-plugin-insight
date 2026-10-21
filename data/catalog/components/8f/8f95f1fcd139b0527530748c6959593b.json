@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "8f95f1fcd139b0527530748c6959593b",
+    "identity": "github:1335152476:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335152476:root",
+            "repository": "swaylq/dsh-wildmon",
+            "path": "",
+            "revision": "a2c7df00b27c2de9f2b0915d3bd5f1acc4d02c68",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "04197820a6da6e5f440761dc4b9e133a0e465947eeccfbc414752686c26c0a32",
+                "code": "a2c7df00b27c2de9f2b0915d3bd5f1acc4d02c68",
+                "maintenance": "a22e64857f836ee2972e0fcfd7f99e2c647e53253cb9e65c62f60ea9edf445fd"
+            }
+        }
+    }
+}

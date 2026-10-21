@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "398f7d18deeeafa4c89141b1efd99d4c",
+    "identity": "github:1353990339:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1353990339:root",
+            "repository": "better-er/dsh-write-create-only",
+            "path": "",
+            "revision": "f671085dbb2e7c5956d1fde6620a0cb9b0618917",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "53ba51f0ef663e8d7e11c75d4076a25d2e234576cce13d6f738d04525e3d0392",
+                "code": "f671085dbb2e7c5956d1fde6620a0cb9b0618917",
+                "maintenance": "6403ecbdf5282a94e90dba9c9eeded2e95a854988b7909b0484165b8ae785fd9"
+            }
+        }
+    }
+}

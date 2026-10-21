@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "190d81563453ff39dd285e7a35a223d8",
+    "identity": "github:1381796831:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1381796831:root",
+            "repository": "xingzhen199186/dsh-mini-remote",
+            "path": "",
+            "revision": "68b45d86fa379134115bc49b6a359c334adf1bb2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "91f49673ae24b4a04f2589afb8870f4f68e4cdbeab4708781a3718f952e12ca7",
+                "code": "68b45d86fa379134115bc49b6a359c334adf1bb2",
+                "maintenance": "9925c93d4df84de4acceeb2b5808b26a784ecb8b997d17968c84f2b1191bed8d"
+            }
+        }
+    }
+}

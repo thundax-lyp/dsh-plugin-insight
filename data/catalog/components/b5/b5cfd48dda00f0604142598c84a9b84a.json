@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b5cfd48dda00f0604142598c84a9b84a",
+    "identity": "github:1423878880:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1423878880:root",
+            "repository": "jerry9692/dsh-workbuddy2api-panel",
+            "path": "",
+            "revision": "b2d669f5a4937873147cdab4bc57068c10687448",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "092ba68925a8c28e5bfa2c8c8b15923ee30b0d1f9fa36623e74a810966541b3d",
+                "code": "b2d669f5a4937873147cdab4bc57068c10687448",
+                "maintenance": "271582724b652a7a810644f38440a896e951b651615d01f12ae44bec6364c307"
+            }
+        }
+    }
+}

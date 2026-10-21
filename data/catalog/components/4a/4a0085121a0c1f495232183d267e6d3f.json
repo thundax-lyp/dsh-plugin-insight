@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4a0085121a0c1f495232183d267e6d3f",
+    "identity": "github:1403306437:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1403306437:root",
+            "repository": "caishzh/dsh-hot-search",
+            "path": "",
+            "revision": "5538f15f8e3f68df0b1845040b196fb68626ffd8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1a45de41f016f49f862751fd403fda4c5a89d07c39b4057b244dc27acf1cd1f9",
+                "code": "5538f15f8e3f68df0b1845040b196fb68626ffd8",
+                "maintenance": "1574022ba8694faeadd70e4739c397250607020fffb584361c6b9dc80dd27cde"
+            }
+        }
+    }
+}

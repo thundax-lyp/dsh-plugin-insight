@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a9e034a9ff1de1942211438aed4ba334",
+    "identity": "github:1389062566:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1389062566:root",
+            "repository": "ZhaoZeW/dsh-rollback",
+            "path": "",
+            "revision": "dbab8d42a64c9e0d0ab13540a5c9e0ac7dfeffa8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "383c0f68907b9435ddc06190baf40a35ed24c94de0466ae48fe776bee4de1f61",
+                "code": "dbab8d42a64c9e0d0ab13540a5c9e0ac7dfeffa8",
+                "maintenance": "123ac58493ba137d0425a0423b98cba4dd273b8084f2c58b7589b0cea2b3240d"
+            }
+        }
+    }
+}

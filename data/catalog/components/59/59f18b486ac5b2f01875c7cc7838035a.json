@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "59f18b486ac5b2f01875c7cc7838035a",
+    "identity": "github:1338409555:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338409555:root",
+            "repository": "LiZhenNet/dsh-antigravity",
+            "path": "",
+            "revision": "94957767c5e247d86cec8833fb1b67f659078af6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "4912d1ac7a607991681ddfb8a6e5e0ab89eea7a3e6b758c13839e68a491d2081",
+                "code": "94957767c5e247d86cec8833fb1b67f659078af6",
+                "maintenance": "132c99a7f1c94594e21177879544c47572d528e5277d41b155ecfcbbd49ca275"
+            }
+        }
+    }
+}

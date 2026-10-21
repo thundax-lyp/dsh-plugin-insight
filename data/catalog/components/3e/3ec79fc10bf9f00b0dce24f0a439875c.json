@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3ec79fc10bf9f00b0dce24f0a439875c",
+    "identity": "github:1334171801:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334171801:root",
+            "repository": "nevertoday/dsh-theme-plugin",
+            "path": "",
+            "revision": "de545f9d305dacc64de172b9fd13ae28d87a7409",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "38dc2e4c9b6f5da3a301bcb89375719c08a4b3be19eba94f9a2735d737978661",
+                "code": "de545f9d305dacc64de172b9fd13ae28d87a7409",
+                "maintenance": "d38d6c1df1081901efb5feaeef9441d158c98166a79518f9ca75bc0b6800e8c0"
+            }
+        }
+    }
+}

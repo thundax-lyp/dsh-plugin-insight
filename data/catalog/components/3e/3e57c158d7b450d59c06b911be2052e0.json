@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3e57c158d7b450d59c06b911be2052e0",
+    "identity": "github:1333945648:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333945648:root",
+            "repository": "disyli/dsh-tool-call-stats",
+            "path": "",
+            "revision": "cbc875358d0cb2ad6f9ed951d063ebf2ec95bd35",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8a9484e7ddc509045715bc61db8428b490239e81ac4b44be79011b52519f2240",
+                "code": "cbc875358d0cb2ad6f9ed951d063ebf2ec95bd35",
+                "maintenance": "01cecee79b45ec361b3a430b72c34d38da9c433cbaecc428d5924fb2481a8a54"
+            }
+        }
+    }
+}

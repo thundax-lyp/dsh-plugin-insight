@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f467ac4118a0d8449eeb2964195d8f32",
+    "identity": "github:1421706166:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1421706166:root",
+            "repository": "joyboy-yy/dsh-archive-purge",
+            "path": "",
+            "revision": "f287d488f6d4ebb8b6c3d3ae46a18dc726ff7cee",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c62a74dd8e43c19ae493061d016b71591045c8483eaf0a4f1dc29e6be0324a04",
+                "code": "f287d488f6d4ebb8b6c3d3ae46a18dc726ff7cee",
+                "maintenance": "c76a8c42ceace339b29b8c47845e24edbb9ac7d017786e051c622b7141eeaf58"
+            }
+        }
+    }
+}

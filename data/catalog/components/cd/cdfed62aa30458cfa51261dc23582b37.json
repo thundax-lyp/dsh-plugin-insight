@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "cdfed62aa30458cfa51261dc23582b37",
+    "identity": "github:1416525949:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1416525949:root",
+            "repository": "runcat-tommy/dsh-mcp-mini-manager",
+            "path": "",
+            "revision": "58285366ed9d5dbcdf26faa9732dca0c4bb21454",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "9d25c030de82f988958a34def2986f2504a208110a1018530443ad28be224da2",
+                "code": "58285366ed9d5dbcdf26faa9732dca0c4bb21454",
+                "maintenance": "41b6ef8b914fa3999dd08454b96ccac1367cb6818357581f8e4b53f94d4cb5da"
+            }
+        }
+    }
+}

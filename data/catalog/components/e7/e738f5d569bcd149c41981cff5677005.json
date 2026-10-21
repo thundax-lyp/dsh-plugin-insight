@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e738f5d569bcd149c41981cff5677005",
+    "identity": "github:1337885451:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337885451:root",
+            "repository": "clarknu/dsh-gateway",
+            "path": "",
+            "revision": "84bc39a23e15a2a2b65a1f3cb022727590cc5427",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f057e83edd31198dd13a3073a8e0d1db180035572bf67a359e7284c6902cc8b8",
+                "code": "84bc39a23e15a2a2b65a1f3cb022727590cc5427",
+                "maintenance": "23b54d435cb35a672632bc4347681019b7b1ffbc9a7e70909b6f4e44a579bec3"
+            }
+        }
+    }
+}

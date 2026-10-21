@@ -1,0 +1,403 @@
+{
+    "schema_version": 3,
+    "id": "75397a927eedf20b9e70c615255849d0",
+    "identity": "github:1343622602:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1343622602:root",
+            "repository_id": 1343622602,
+            "component_id": "root",
+            "repository": "1byteone/dsh-plugin-nlbi",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-plugin-nlbi",
+            "entry_type": "plugin",
+            "technical_category": "tools-integration",
+            "business_category": "office-operations",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "2749fc39564b3b9ded3ebc277cf5a77bdd6489ca87bf28b06eeb9ff0aa547c38",
+                "code": "232f9243029add39dd18a368de45d8326aca178f",
+                "maintenance": "235f4f5860cf738321cf768f13b9760b9bc429a4f2cae2c058589e89a9233baf"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-20-08-github-1343622602-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T10:48:33.463Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-20-08-github-1343622602-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/1byteone/dsh-plugin-nlbi/blob/232f9243029add39dd18a368de45d8326aca178f/README.md",
+                    "revision": "232f9243029add39dd18a368de45d8326aca178f",
+                    "captured_at": "2026-10-20T10:48:33.463Z",
+                    "summary": "在 DSH 中用自然语言查询 MySQL，生成表格、图表与可保存报表。",
+                    "artifact": "data/runs/2026-10-20-08/snapshots/1byteone--dsh-plugin-nlbi/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-20-08-github-1343622602-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/1byteone/dsh-plugin-nlbi/blob/232f9243029add39dd18a368de45d8326aca178f/lib/sqlsafe.js",
+                    "revision": "232f9243029add39dd18a368de45d8326aca178f",
+                    "captured_at": "2026-10-20T10:48:33.463Z",
+                    "summary": "核查 lib/sqlsafe.js、lib/text2sql.js、lib/index.js；读取白名单Schema，模型生成SQL，AST判只读/表允许集、加行数限制后执行，返回SQL/表格/图表，另有报表保存与重跑。",
+                    "artifact": "data/runs/2026-10-20-08/snapshots/1byteone--dsh-plugin-nlbi/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "核查固定提交的所列核心实现与作者材料；未运行插件、安装、测试或真实宿主验收，未确认独立用户效果。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "业务分析人员想把问题转为 MySQL 查询和可重跑报表；合格交付是业务口径正确、权限允许且可复核的SQL结果。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1343622602-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1343622602:root",
+                            "area": "code",
+                            "fingerprint": "232f9243029add39dd18a368de45d8326aca178f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:48:33.463Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "读取白名单Schema，模型生成SQL，AST判只读/表允许集、加行数限制后执行，返回SQL/表格/图表，另有报表保存与重跑。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1343622602-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1343622602:root",
+                            "area": "code",
+                            "fingerprint": "232f9243029add39dd18a368de45d8326aca178f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:48:33.463Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "核查固定提交的所列核心实现与作者材料；未运行插件、安装、测试或真实宿主验收，未确认独立用户效果。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1343622602-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1343622602:root",
+                            "area": "code",
+                            "fingerprint": "232f9243029add39dd18a368de45d8326aca178f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:48:33.463Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "包清单与组件入口按固定提交核查；发布与宿主适配声明属于作者材料，不作为本次实际安装结果。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1343622602-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1343622602:root",
+                            "area": "code",
+                            "fingerprint": "232f9243029add39dd18a368de45d8326aca178f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:48:33.463Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "模型调用、数据库负载和报表保存为现金/资源成本；人工包括账户权限配置、指标定义、SQL与图表核验。只读和2000行上限并不保证查询低成本。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1343622602-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1343622602:root",
+                            "area": "code",
+                            "fingerprint": "232f9243029add39dd18a368de45d8326aca178f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:48:33.463Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "适合有可复核SQL和只读数据环境的分析任务；先定义关键指标标准答案，核对生成SQL再复用报表。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1343622602-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1343622602:root",
+                            "area": "code",
+                            "fingerprint": "232f9243029add39dd18a368de45d8326aca178f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:48:33.463Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "把答案、SQL和图表一起交付有利于复核；没有同条件证明降低分析工时，更不能替代指标负责人。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1343622602-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1343622602:root",
+                            "area": "code",
+                            "fingerprint": "232f9243029add39dd18a368de45d8326aca178f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:48:33.463Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "lib/sqlsafe.js 用AST处理语句和表引用、解析失败拒绝白名单校验，优于只用正则；lib/text2sql.js 将模型失败与校验失败分开返回，方便纠错。安全校验与语义验收应保持分层，复用成本包括方言及复杂查询覆盖。 源码：[lib/sqlsafe.js](https://github.com/1byteone/dsh-plugin-nlbi/blob/232f9243029add39dd18a368de45d8326aca178f/lib/sqlsafe.js)、[lib/text2sql.js](https://github.com/1byteone/dsh-plugin-nlbi/blob/232f9243029add39dd18a368de45d8326aca178f/lib/text2sql.js)、[lib/index.js](https://github.com/1byteone/dsh-plugin-nlbi/blob/232f9243029add39dd18a368de45d8326aca178f/lib/index.js)。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1343622602-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1343622602:root",
+                            "area": "code",
+                            "fingerprint": "232f9243029add39dd18a368de45d8326aca178f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:48:33.463Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T10:48:33.463Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "232f9243029add39dd18a368de45d8326aca178f",
+                "reviewed_at": "2026-10-20T10:48:33.463Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1343622602:root",
+                        "area": "code",
+                        "fingerprint": "232f9243029add39dd18a368de45d8326aca178f"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty：继承连接层后增加BI组合，非SQL原创；mechanism：AST约束有可核查增量；transferability：查询护栏可复用；simplification：闭环但指标仍人工。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1343622602-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 15,
+                        "reach": 10,
+                        "economics": 4
+                    },
+                    "rationale": "workflow：自然语言到报表合并交接；delivery：SQL表格图表与重跑交付；reach：降低SQL入门门槛但需专家验收；economics：潜在省时无实测。",
+                    "basis": "interpretation",
+                    "score": 47,
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1343622602-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "有只读MySQL环境的分析者可用标准答案试SQL报表，先核业务口径与数据权限，重跑仍验Schema。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "自然语言到可复核SQL和可重跑报表的任务明确。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "AST拒绝失败和SQL表格图表同交付比正则过滤更可审。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "只读表集与失败分流可查，复杂方言和业务语义未验证。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "模型费数据库负载与指标负责人审核不可省，行上限非低成本保证。"
+                    }
+                },
+                "score": 65,
+                "revision": "232f9243029add39dd18a368de45d8326aca178f",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-20-08-github-1343622602-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1343622602:root",
+                        "area": "code",
+                        "fingerprint": "232f9243029add39dd18a368de45d8326aca178f"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1343622602:root",
+            "repository": "1byteone/dsh-plugin-nlbi",
+            "path": "",
+            "revision": "232f9243029add39dd18a368de45d8326aca178f",
+            "fingerprints": {
+                "directory": "2749fc39564b3b9ded3ebc277cf5a77bdd6489ca87bf28b06eeb9ff0aa547c38",
+                "code": "232f9243029add39dd18a368de45d8326aca178f",
+                "maintenance": "235f4f5860cf738321cf768f13b9760b9bc429a4f2cae2c058589e89a9233baf"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T10:40:14Z",
+            "analysis_sha256": "f655d64e43d5100980b5cf7065023a9a3f33403926bbc4f27c6a232d422c3d9f"
+        },
+        "publication.metadata": "data/plugins/1byteone--dsh-plugin-nlbi/META.json",
+        "publication.summaries": {
+            "text": "在 DSH 中用自然语言查询 MySQL，生成表格、图表与可保存报表。",
+            "revision": "232f9243029add39dd18a368de45d8326aca178f",
+            "source_url": "https://github.com/1byteone/dsh-plugin-nlbi/blob/232f9243029add39dd18a368de45d8326aca178f/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "232f9243029add39dd18a368de45d8326aca178f",
+            "items": {
+                "模型工具": "nl_query、sql_to_chart（源码注册）",
+                "界面": "数据浏览器与报表展示"
+            }
+        },
+        "publication.advice": {
+            "revision": "232f9243029add39dd18a368de45d8326aca178f",
+            "text": "适合有可复核SQL和只读数据环境的分析任务；先定义关键指标标准答案，核对生成SQL再复用报表。"
+        },
+        "registry": "data/plugins/1byteone--dsh-plugin-nlbi",
+        "reports": "# dsh-plugin-nlbi\n\n> 在 DSH 中用自然语言查询 MySQL，生成表格、图表与可保存报表。\n\n## 研究范围\n\n- **仓库**：[1byteone/dsh-plugin-nlbi](https://github.com/1byteone/dsh-plugin-nlbi)\n- **版本号**：0.2.1（[固定提交 232f924](https://github.com/1byteone/dsh-plugin-nlbi/tree/232f9243029add39dd18a368de45d8326aca178f)）\n- **版本日期**：2026-08-25（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n贡献机制有固定源码支持；效果与采用收益为条件性解释，后续设计假设尚未验证。\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：业务分析人员想把问题转为 MySQL 查询和可重跑报表；合格交付是业务口径正确、权限允许且可复核的SQL结果。\n- **亮点**：作者明确继承 dsh-mysql v0.1.4，数据库连接和原有 mysql 工具不算本插件原创；新增贡献是 Text2SQL、AST护栏、BI与报表复用串联，相对裸SQL对话提高可检查性。\n- **思考**：最影响贡献成立的是语法安全与指标正确的区别：text2sql.js 校验后直接 pool.query，AST能限制语句和表，却不能验证“活跃用户”时间窗、重复JOIN和统计口径。空allowlist意味着不限制，不能把默认配置理解为最小授权。\n- **建议**：适合有可复核SQL和只读数据环境的分析任务；先定义关键指标标准答案，核对生成SQL再复用报表。\n\n采用建议：适合有可复核SQL和只读数据环境的分析任务；先定义关键指标标准答案，核对生成SQL再复用报表。\n\n## 核心贡献\n\n作者明确继承 dsh-mysql v0.1.4，数据库连接和原有 mysql 工具不算本插件原创；新增贡献是 Text2SQL、AST护栏、BI与报表复用串联，相对裸SQL对话提高可检查性。\n\n## 关键质疑\n\n最影响贡献成立的是语法安全与指标正确的区别：text2sql.js 校验后直接 pool.query，AST能限制语句和表，却不能验证“活跃用户”时间窗、重复JOIN和统计口径。空allowlist意味着不限制，不能把默认配置理解为最小授权。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n待验证假设：把已批准指标口径与SQL结构绑定成可复用语义模板，能降低报表重跑中的口径漂移；来自自然语言问题到AST安全检查之间的语义缺口。需要指标负责人维护模板，不能由模型自审当真值。\n\n用带标准SQL和人工业务口径的一组问题，比较直接Text2SQL与指标模板约束；加入多表重复计数、日期边界和空白名单，测数值正确率、拒绝率与人工审核时间。若维护成本高于修SQL则保留专家人工流程。\n\n## 场景与替代办法\n\n业务分析人员想把问题转为 MySQL 查询和可重跑报表；合格交付是业务口径正确、权限允许且可复核的SQL结果。\n\n参照继承的dsh-mysql、人工SQL与普通数据库客户端；未核验独立业务用户成效。\n\n## 依赖与流程\n\n需要MySQL只读账号、DSH模型路由与node-sql-parser；可写能力还取决于连接allowWrite。表结构/样例数据可能进入模型提示，需按数据权限配置。\n\n建连接与权限，选择会话连接，提问后读取Schema并生成/校验SQL，执行并渲染；保存报表后重跑仍须核对当前Schema和业务口径；错误返回SQL与解释供修订。\n\n## 成本与效果\n\n模型调用、数据库负载和报表保存为现金/资源成本；人工包括账户权限配置、指标定义、SQL与图表核验。只读和2000行上限并不保证查询低成本。\n\n把答案、SQL和图表一起交付有利于复核；没有同条件证明降低分析工时，更不能替代指标负责人。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：7b3d02c2214a7223d4b816c5cb719f19fc3e6de8b61af3f172a7f37d23671f87。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 1169 | — | — | 8784 |\n| .cjs | source | 2 | 110 | 83 | 12 | — |\n| .js | source | 10 | 7602 | 6033 | 1033 | — |\n| .mjs | source | 1 | 61 | 41 | 12 | — |\n| .mjs | test | 12 | 2447 | 1886 | 219 | — |\n| .md | example | 1 | 134 | — | — | 766 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **模型工具**：nl_query、sql_to_chart（源码注册）\n- **界面**：数据浏览器与报表展示\n\n## 工程亮点\n\nlib/sqlsafe.js 用AST处理语句和表引用、解析失败拒绝白名单校验，优于只用正则；lib/text2sql.js 将模型失败与校验失败分开返回，方便纠错。安全校验与语义验收应保持分层，复用成本包括方言及复杂查询覆盖。 源码：[lib/sqlsafe.js](https://github.com/1byteone/dsh-plugin-nlbi/blob/232f9243029add39dd18a368de45d8326aca178f/lib/sqlsafe.js)、[lib/text2sql.js](https://github.com/1byteone/dsh-plugin-nlbi/blob/232f9243029add39dd18a368de45d8326aca178f/lib/text2sql.js)、[lib/index.js](https://github.com/1byteone/dsh-plugin-nlbi/blob/232f9243029add39dd18a368de45d8326aca178f/lib/index.js)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 lib/sqlsafe.js、lib/text2sql.js、lib/index.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：核查固定提交的所列核心实现与作者材料；未运行插件、安装、测试或真实宿主验收，未确认独立用户效果。\n- 下一步：用带标准SQL和人工业务口径的一组问题，比较直接Text2SQL与指标模板约束；加入多表重复计数、日期边界和空白名单，测数值正确率、拒绝率与人工审核时间。若维护成本高于修SQL则保留专家人工流程。\n",
+        "metadata": {
+            "repository": "1byteone/dsh-plugin-nlbi",
+            "repository_id": 1343622602,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 2,
+            "pushed_at": "2026-08-25T12:23:45Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1byteone%2Fdsh-plugin-nlbi%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6411:90BBC:14AC2C:223E06:6AD849DA and timestamp 2026-10-21 05:12:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1byteone%2Fdsh-plugin-nlbi%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6415:136889:15685B:22FACA:6AD849DA and timestamp 2026-10-21 05:12:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1byteone%2Fdsh-plugin-nlbi%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641F:287071:13A828:213757:6AD849DB and timestamp 2026-10-21 05:12:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1byteone%2Fdsh-plugin-nlbi%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6401:64792:144FFD:21F0A5:6AD849DB and timestamp 2026-10-21 05:12:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1byteone%2Fdsh-plugin-nlbi%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6412:15F2FE:148995:22113D:6AD849DB and timestamp 2026-10-21 05:12:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-plugin-nlbi",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 906,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-plugin-nlbi",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-23T12:02:06.678Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-plugin-nlbi",
+                    "error": null,
+                    "latest_version": "0.2.1",
+                    "latest_published_at": "2026-08-25T06:22:06.628Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "232f9243029add39dd18a368de45d8326aca178f",
+                "current_revision": "232f9243029add39dd18a368de45d8326aca178f",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1343622602:root",
+            "repository": "1byteone/dsh-plugin-nlbi",
+            "path": "",
+            "revision": "232f9243029add39dd18a368de45d8326aca178f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2749fc39564b3b9ded3ebc277cf5a77bdd6489ca87bf28b06eeb9ff0aa547c38",
+                "code": "232f9243029add39dd18a368de45d8326aca178f",
+                "maintenance": "235f4f5860cf738321cf768f13b9760b9bc429a4f2cae2c058589e89a9233baf"
+            }
+        }
+    }
+}

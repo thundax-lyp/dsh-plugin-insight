@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "a462d96974bd1311dcc0a5fdeeadbb67",
+    "identity": "github:1333979188:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333979188:root",
+            "repository": "Nanki-nn/dsh-answer-pet",
+            "path": "",
+            "revision": "a0827d41c3f8f9177622c460a99f1aeeb8034b8d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "c6ea75024d6ce52cc963e8543007de1b71cd1b9f095c771d2105d6749a51cd98",
+                "code": "a0827d41c3f8f9177622c460a99f1aeeb8034b8d",
+                "maintenance": "c8e34726f1c02d19b7d9bcd73932a0bed9731fc831b061057ffeb5a1cdf1d138"
+            }
+        }
+    }
+}

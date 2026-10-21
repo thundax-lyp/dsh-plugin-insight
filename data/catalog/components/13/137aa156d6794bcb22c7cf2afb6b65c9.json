@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "137aa156d6794bcb22c7cf2afb6b65c9",
+    "identity": "github:1356868140:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1356868140:root",
+            "repository": "mokuyoaxis/dsh-iris",
+            "path": "",
+            "revision": "41bb40b63442a59a1e3493d1ddcb398cd9b27a23",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "02640a810fb7ba040ab1ccc1b2d459e6a676ee1459b22ab7f14e8e2232be343d",
+                "code": "41bb40b63442a59a1e3493d1ddcb398cd9b27a23",
+                "maintenance": "f0b1f861b4dffc402951772bd54a93c3657da7b7cace1684ba6480fa5ab27eca"
+            }
+        }
+    }
+}

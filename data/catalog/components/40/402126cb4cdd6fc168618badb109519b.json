@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "402126cb4cdd6fc168618badb109519b",
+    "identity": "github:1333774701:packages-dsh-web-search-metaso",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333774701:packages-dsh-web-search-metaso",
+            "repository": "TZHR-invest/dsh-plugins",
+            "path": "packages/dsh-web-search-metaso",
+            "revision": "0785cde8eef20aabd7f7528513cbdab1856fb315",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0b455712db0710faa0277888ee3941c7c8a008bb8b0845722bb2afe5e2ae54e3",
+                "code": "0785cde8eef20aabd7f7528513cbdab1856fb315",
+                "maintenance": "73ee2d83f9590118e3b9a810ad0d764a220e2200160dcdcdbc627b109e1d6cbe"
+            }
+        }
+    }
+}

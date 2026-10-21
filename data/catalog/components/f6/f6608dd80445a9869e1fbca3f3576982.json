@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f6608dd80445a9869e1fbca3f3576982",
+    "identity": "github:1408834273:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1408834273:root",
+            "repository": "PerryLink/dsh-nurse-record-check",
+            "path": "",
+            "revision": "7e253240f7c83f4a09c244c76e5cf11054fa773e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7475667916223658d7835d30e1a0411f241d3652dda7157689f195ec809440f9",
+                "code": "7e253240f7c83f4a09c244c76e5cf11054fa773e",
+                "maintenance": "0d8a3515117f181a00c841142a3a9557ce9bfbcd4499acfaccf6b0da40ffdb6f"
+            }
+        }
+    }
+}

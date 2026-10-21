@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fc7bd99760427f566ed974b4eed28b8b",
+    "identity": "github:1334304098:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334304098:root",
+            "repository": "ADWMC/helm-d",
+            "path": "",
+            "revision": "3c82d9d7c9fedab4575061bfcf9ea6d8ded8dd39",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "825fd4d37f1a1de568a1ede191597389bc0e918d181c29c1419e6d8f64711952",
+                "code": "3c82d9d7c9fedab4575061bfcf9ea6d8ded8dd39",
+                "maintenance": "249d154a5af6e7b8705c53a1999cb1224e9b9d632216697ac80e04c78cb64ad7"
+            }
+        }
+    }
+}

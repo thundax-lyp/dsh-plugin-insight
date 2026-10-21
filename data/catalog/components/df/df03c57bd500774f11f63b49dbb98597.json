@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "df03c57bd500774f11f63b49dbb98597",
+    "identity": "github:1414996333:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1414996333:root",
+            "repository": "dingchenhui0618-arch/dsh-delivery-receipt",
+            "path": "",
+            "revision": "2864842de23382230200b57328a6b5538ead1998",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "04a88c358f4980435d9abb510bbaeb92e6ee9328ae09c9315b989cc49ec4ba5a",
+                "code": "2864842de23382230200b57328a6b5538ead1998",
+                "maintenance": "db922a0f8df43a57c6906ec985672d8735a2cd85f03d70704a94c8555050f2a2"
+            }
+        }
+    }
+}

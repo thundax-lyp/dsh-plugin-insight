@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e77673422a1b385b627e70e2c633dab0",
+    "identity": "github:1337780031:integrations-deepseek-harness-dsh-plugin-mission-control",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337780031:integrations-deepseek-harness-dsh-plugin-mission-control",
+            "repository": "Asif2BD/JARVIS-Mission-Control-DeepSeek",
+            "path": "integrations/deepseek-harness/dsh-plugin-mission-control",
+            "revision": "e1098371bee137a5676ddd8e7b82b9b222a55bb8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fe92e54a7d6530779b541f52fc3ae60abaa27c63d83b903475691af82a6557d6",
+                "code": "e1098371bee137a5676ddd8e7b82b9b222a55bb8",
+                "maintenance": "88521e06f31053d65c0d6074a3cbe5ccd573a9f9fd39b28c470eb2f13b6d233e"
+            }
+        }
+    }
+}

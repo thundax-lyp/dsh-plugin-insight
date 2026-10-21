@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4dbcc887fef5c815b5f8aa3a6548e467",
+    "identity": "github:1343518181:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343518181:root",
+            "repository": "Hanmiao33/dsh-bubble-explain",
+            "path": "",
+            "revision": "88665e0f3bd90c151b5f800a2b1f8f4f392c77bb",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e64a973b9acaef710632fc74e3afad96ea1bff99e75ed39a1a6ed4117c059b38",
+                "code": "88665e0f3bd90c151b5f800a2b1f8f4f392c77bb",
+                "maintenance": "f88ca3f7946b380d20c949bddd2626a893f161902d72b8a17f345a9442285f54"
+            }
+        }
+    }
+}

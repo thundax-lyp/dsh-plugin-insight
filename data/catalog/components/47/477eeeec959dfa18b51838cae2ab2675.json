@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "477eeeec959dfa18b51838cae2ab2675",
+    "identity": "github:1333638979:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333638979:root",
+            "repository": "TsFreddie/dsh-compaction-instant",
+            "path": "",
+            "revision": "f688029b39aa64e3faa116948105ff51b4be829a",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "10cdff5b298ef7bf5edf558fad75f330c12f46f74004c78ddc7a48f0caf774d1",
+                "code": "f688029b39aa64e3faa116948105ff51b4be829a",
+                "maintenance": "ecfb71a081aad8015baffe550b69e786bf27c2fbfeddc3228ff9fcc1863433ac"
+            }
+        }
+    }
+}

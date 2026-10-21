@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c4b5bfc6514fdd1118a3411598c49b3d",
+    "identity": "github:1341456932:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1341456932:root",
+            "repository": "Heeweelee/dsh-session-plugin",
+            "path": "",
+            "revision": "f9b3905dcc60c8b148c1bfdc79a920df723f809d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "92ffd0ac81b58b458e5a83057feab61cf0d51688c6f4a5d3165976e1f250fbc0",
+                "code": "f9b3905dcc60c8b148c1bfdc79a920df723f809d",
+                "maintenance": "d6825313e27077e528a3e16f339023e05288199304ba8fd052af5c1edf367457"
+            }
+        }
+    }
+}

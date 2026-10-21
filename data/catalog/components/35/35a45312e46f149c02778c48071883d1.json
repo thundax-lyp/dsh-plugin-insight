@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "35a45312e46f149c02778c48071883d1",
+    "identity": "github:1334862524:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334862524:root",
+            "repository": "ZhijiangTang/dsh-url-tools",
+            "path": "",
+            "revision": "92eb350ec6f078d0676e5b4abd40d18fe407d14d",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "ee67957439c0d651d4579d01cf535c25f759ebbc5026846695119dc5b0eb595f",
+                "code": "92eb350ec6f078d0676e5b4abd40d18fe407d14d",
+                "maintenance": "e73df035ed19dc49be73c0d4df09ef458125f084d8c1a0454dfec839e2df0fac"
+            }
+        }
+    }
+}

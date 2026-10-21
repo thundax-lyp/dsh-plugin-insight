@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1a3b0a2f5b81b3b9ad4b9a11269d5b10",
+    "identity": "github:1348302471:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1348302471:root",
+            "repository": "andrepontesmelo/moving-target",
+            "path": "",
+            "revision": "0585fa25ac7004f0a96afaebb1527b5f05d10102",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "7b06b210a38b880deef789184df9cecb11fc1c406d5b927a0513635573a1c720",
+                "code": "0585fa25ac7004f0a96afaebb1527b5f05d10102",
+                "maintenance": "5654af40bccd672993869ec84a3b8a37a711d90ae041beb8f48024426f865f52"
+            }
+        }
+    }
+}

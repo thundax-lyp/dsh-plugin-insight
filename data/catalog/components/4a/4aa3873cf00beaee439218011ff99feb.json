@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4aa3873cf00beaee439218011ff99feb",
+    "identity": "github:1334110740:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334110740:root",
+            "repository": "LeslieWylie/dsh-task-relay",
+            "path": "",
+            "revision": "de69deeee9071dd8fe7eb9e24deffe8adf668b20",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "aec7d3ef58f0252b96288683b51b781cdc5eb0e276a3bec4145dad5eb951d2c8",
+                "code": "de69deeee9071dd8fe7eb9e24deffe8adf668b20",
+                "maintenance": "4677ab523bb4e68c4a6801816dc418f76c9e9a8a2a1e88ae4fbc622aaf06a458"
+            }
+        }
+    }
+}

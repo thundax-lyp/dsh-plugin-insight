@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "50062061b47f172a3eff4aabbf2166cd",
+    "identity": "github:1335284677:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335284677:root",
+            "repository": "xsoc1/dsh-image-vision",
+            "path": "",
+            "revision": "dbe64b429289ab8da1ed6940fefd8395bdc167f0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "939ee7879e35e0d83ca16b23d855690c27f1db0c966655560496b401e483dafb",
+                "code": "dbe64b429289ab8da1ed6940fefd8395bdc167f0",
+                "maintenance": "f63a359b661fe61fd529c412a9b3a050586693ea93236b1cb1f25c603b8718af"
+            }
+        }
+    }
+}

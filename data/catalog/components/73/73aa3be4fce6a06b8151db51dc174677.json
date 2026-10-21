@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "73aa3be4fce6a06b8151db51dc174677",
+    "identity": "github:1347538083:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347538083:root",
+            "repository": "PianoPrince/dsh-workspace-mover",
+            "path": "",
+            "revision": "6623639581c943d2f3e295e0c5d8ee383c33436c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "8c45ba64ee30e380d55090e29f87edffcd61986545ad86226c25d17b13579b0b",
+                "code": "6623639581c943d2f3e295e0c5d8ee383c33436c",
+                "maintenance": "5670ea8b26c078dc6178b04668d38030b94b22aecdd837dfa433e5744091b2a1"
+            }
+        }
+    }
+}

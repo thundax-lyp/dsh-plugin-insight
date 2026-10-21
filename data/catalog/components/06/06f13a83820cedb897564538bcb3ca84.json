@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "06f13a83820cedb897564538bcb3ca84",
+    "identity": "github:1366238130:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1366238130:root",
+            "repository": "WYR-233/dsh-memory-lite",
+            "path": "",
+            "revision": "250a6073cfa257bcf0566085349489fb7e03488b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8d9d41aabac8ba98ef013865b76bd1024390ed6636ecc5599d6df419dbd9d391",
+                "code": "250a6073cfa257bcf0566085349489fb7e03488b",
+                "maintenance": "4a900e7edbb0352915dfbd899a52e48044460d8ae8ae9f5bcb96749947c7658c"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5da2687f7f268aee8342730a95705224",
+    "identity": "github:1339646392:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339646392:root",
+            "repository": "Vergil-long/dsh-custom-font",
+            "path": "",
+            "revision": "373fd28a3618129d72a23e81bfec1ff31e044db4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4736eaea891f6dddda737d22009a030e2e8cbcba4938c90206f013a0ae1b901e",
+                "code": "373fd28a3618129d72a23e81bfec1ff31e044db4",
+                "maintenance": "869be6daa19dac7f6a389c5b977dda76d988785e02d1bfbc469c45b138974e7f"
+            }
+        }
+    }
+}

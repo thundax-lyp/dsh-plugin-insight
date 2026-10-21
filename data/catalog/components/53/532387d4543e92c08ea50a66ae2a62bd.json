@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "532387d4543e92c08ea50a66ae2a62bd",
+    "identity": "github:1342994670:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342994670:root",
+            "repository": "Jimmyzwang-cloud/dsh-inkscreen-theme",
+            "path": "",
+            "revision": "12f1320b1fe0d7d88d10e4b9bec195397024168f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "44e3d3f9e2552cf2f174c5a7fb33120351b6c3c0d4680e7852e91a009282c655",
+                "code": "12f1320b1fe0d7d88d10e4b9bec195397024168f",
+                "maintenance": "7d550a88e7560b80a5b30c2318417271c8ce1a60e9d35e159f8005d3cef9bbd7"
+            }
+        }
+    }
+}

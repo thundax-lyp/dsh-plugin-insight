@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3222a0a75b8965ee8685cc661a9db0aa",
+    "identity": "github:1346291412:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346291412:root",
+            "repository": "aorucshiea/dsh-easy-start",
+            "path": "",
+            "revision": "6d23502391f75f815bcae57b1c3e3bafcd1ec81a",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "5ae6e0c9ac398e48b3013a65579fc3dbcdb8dad62349f116617e04cbbbe4870c",
+                "code": "6d23502391f75f815bcae57b1c3e3bafcd1ec81a",
+                "maintenance": "123de71706752ffa1e60c5b6ca48249c99176c69d41a26f04044f9b765a9d9f0"
+            }
+        }
+    }
+}

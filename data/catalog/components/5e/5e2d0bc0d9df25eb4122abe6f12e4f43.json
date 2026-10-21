@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5e2d0bc0d9df25eb4122abe6f12e4f43",
+    "identity": "github:1335590058:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335590058:root",
+            "repository": "Lixxx1/dsh-vscode",
+            "path": "",
+            "revision": "2ced480c71ff6441a19aea05796026b9d6682af6",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "618911a249e3fd32aa4626bd8649a27b39824c22c19358e12d8379566a3be7cc",
+                "code": "2ced480c71ff6441a19aea05796026b9d6682af6",
+                "maintenance": "f26877d51432f5b72571e07413999d46392798fa9df0f0389bc3600bdff2a247"
+            }
+        }
+    }
+}

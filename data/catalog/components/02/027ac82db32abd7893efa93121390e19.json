@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "027ac82db32abd7893efa93121390e19",
+    "identity": "github:1414149535:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1414149535:root",
+            "repository": "SHAN5246992ZHUI/dsh-select-translate",
+            "path": "",
+            "revision": "aa063aba6a0f9577075282a4568b67adff57b2c6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1a2c42c21a553be6f9ca87a0e7e8b014ea3ca7ba629aa1d87315ecd8ad4e8b15",
+                "code": "aa063aba6a0f9577075282a4568b67adff57b2c6",
+                "maintenance": "208df90820d6869977cb257ac63317ece2b427af8a8e0735c3a3db0b6aedd680"
+            }
+        }
+    }
+}

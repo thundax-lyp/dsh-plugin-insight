@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d0502d9677b72690d57ea20c80e99bbd",
+    "identity": "github:1334217935:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334217935:root",
+            "repository": "xiehuan123/coding-coach",
+            "path": "",
+            "revision": "e433380878dcd44ad3b3ff83a24beebe1e008124",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "71406d0a5005adcdb728df29566d69c21d67c5b92a9d856e67e3ad04bf504c08",
+                "code": "e433380878dcd44ad3b3ff83a24beebe1e008124",
+                "maintenance": "b32bd19f76ca9195b1ba208c3ebd71f1b2db65771b9eec8ae6e364d4476ae5b2"
+            }
+        }
+    }
+}

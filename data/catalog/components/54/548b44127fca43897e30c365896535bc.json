@@ -1,0 +1,403 @@
+{
+    "schema_version": 3,
+    "id": "548b44127fca43897e30c365896535bc",
+    "identity": "github:1386463441:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1386463441:root",
+            "repository_id": 1386463441,
+            "component_id": "root",
+            "repository": "3289192-bot/dsh-cache-bricks",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-cache-bricks",
+            "entry_type": "plugin",
+            "technical_category": "observability-cost",
+            "business_category": "software-delivery",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "be1a2e59fc4adbcc800e7fc396a0f892bbf820aabff67eba0deb472e35d5db4e",
+                "code": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b",
+                "maintenance": "0d2c323e386b7e48f778a657f003b339cd4c6b8c105c67d047a0cef7cd6573a4"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-01-github-1386463441-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T02:09:36.436Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-01-github-1386463441-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/3289192-bot/dsh-cache-bricks/blob/2e52b914eaea5a02e5937c323160cf2fd2b8de1b/README.md",
+                    "revision": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b",
+                    "captured_at": "2026-10-21T02:09:36.436Z",
+                    "summary": "可视化 DSH 模型请求、缓存命中率、活动与历史请求对比。",
+                    "artifact": "data/runs/2026-10-21-01/snapshots/3289192-bot--dsh-cache-bricks/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-01-github-1386463441-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/3289192-bot/dsh-cache-bricks/blob/2e52b914eaea5a02e5937c323160cf2fd2b8de1b/src/core/observe.ts",
+                    "revision": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b",
+                    "captured_at": "2026-10-21T02:09:36.436Z",
+                    "summary": "核查 src/core/observe.ts、src/shared/metrics.ts、src/host/routes.ts；observe.ts将宿主事件归一为ledger观察，按工具名去重并去掉deferLoading元标志；metrics.ts从未缓存、缓存读写三个桶计算比例，缺缓存桶保持未知。",
+                    "artifact": "data/runs/2026-10-21-01/snapshots/3289192-bot--dsh-cache-bricks/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "抽读指定核心源码与作者说明；未执行目标插件或测试、未安装或做真实宿主验收，未核实独立用户收益。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "调试长会话上下文与缓存波动的本机DSH Web用户，需要把某次真实请求与对话位置对应。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1386463441-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1386463441:root",
+                            "area": "code",
+                            "fingerprint": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:09:36.436Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "observe.ts将宿主事件归一为ledger观察，按工具名去重并去掉deferLoading元标志；metrics.ts从未缓存、缓存读写三个桶计算比例，缺缓存桶保持未知。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1386463441-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1386463441:root",
+                            "area": "code",
+                            "fingerprint": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:09:36.436Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "抽读指定核心源码与作者说明；未执行目标插件或测试、未安装或做真实宿主验收，未核实独立用户收益。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1386463441-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1386463441:root",
+                            "area": "code",
+                            "fingerprint": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:09:36.436Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "固定源码及包清单界定本次组件与分发；作者兼容和效果说明不等于本轮实际执行证据。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1386463441-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1386463441:root",
+                            "area": "code",
+                            "fingerprint": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:09:36.436Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "首次安装并匹配宿主请求事件；持续有内容内存、历史扫描和排查人力成本，无额外模型调用；采集内容可能含对话与工具参数。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1386463441-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1386463441:root",
+                            "area": "code",
+                            "fingerprint": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:09:36.436Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "适合有明确缓存排查问题的用户试用，先核对provider usage口径与采集完整度，不据颜色直接删工具或归责某个提示改动。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1386463441-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1386463441:root",
+                            "area": "code",
+                            "fingerprint": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:09:36.436Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "可把排查从总体猜测缩到具体attempt；是否缩短诊断时间及降低账单仍需对照。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1386463441-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1386463441:root",
+                            "area": "code",
+                            "fingerprint": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:09:36.436Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "effectiveToolsOf按名去重避免宿主toolHistory重复计数；指标分开缺失和零，并从dispatch起算首token时间，避免把step启动时间混入。 [固定源码](https://github.com/3289192-bot/dsh-cache-bricks/blob/2e52b914eaea5a02e5937c323160cf2fd2b8de1b/src/core/observe.ts#L1)。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1386463441-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1386463441:root",
+                            "area": "code",
+                            "fingerprint": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:09:36.436Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T02:09:36.436Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b",
+                "reviewed_at": "2026-10-21T02:09:36.436Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1386463441:root",
+                        "area": "code",
+                        "fingerprint": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty：请求砖视觉适配小幅；mechanism：attempt归一和口径共享实质；transferability：纯数据计算实质可复用；simplification：统一诊断视图实质。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1386463441-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow：从总量到请求定位实质；delivery：仍是遥测记录小幅；reach：可视化降低查日志门槛小幅；economics：诊断节省有机制但未测，小幅。",
+                    "basis": "interpretation",
+                    "score": 35,
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1386463441-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "有缓存波动排查问题者可试用请求砖图；先核对三桶usage与采集范围，颜色变化只作定位线索。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "将真实请求与对话位置关联是具体诊断任务。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "attempt对照和未知桶显示比总量数字更便于排查。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "事件归一与metrics公式已查，不支持因果归责或节费证明。"
+                    },
+                    "cost": {
+                        "score": 15,
+                        "rationale": "无额外模型调用，但采集对话工具参数与历史扫描需管控。"
+                    }
+                },
+                "score": 70,
+                "revision": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-01-github-1386463441-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1386463441:root",
+                        "area": "code",
+                        "fingerprint": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1386463441:root",
+            "repository": "3289192-bot/dsh-cache-bricks",
+            "path": "",
+            "revision": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b",
+            "fingerprints": {
+                "directory": "be1a2e59fc4adbcc800e7fc396a0f892bbf820aabff67eba0deb472e35d5db4e",
+                "code": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b",
+                "maintenance": "0d2c323e386b7e48f778a657f003b339cd4c6b8c105c67d047a0cef7cd6573a4"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T01:54:44Z",
+            "analysis_sha256": "f399ff7593e448917b1a8a303b37a6643739daf3d67d8fe7e6232b5fc1e5b0ca"
+        },
+        "publication.metadata": "data/plugins/3289192-bot--dsh-cache-bricks/META.json",
+        "publication.summaries": {
+            "text": "可视化 DSH 模型请求、缓存命中率、活动与历史请求对比。",
+            "revision": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b",
+            "source_url": "https://github.com/3289192-bot/dsh-cache-bricks/blob/2e52b914eaea5a02e5937c323160cf2fd2b8de1b/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b",
+            "items": {
+                "后台": "请求事件归一与usage指标计算",
+                "界面": "缓存砖、请求详情、比较与会话定位"
+            }
+        },
+        "publication.advice": {
+            "revision": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b",
+            "text": "适合有明确缓存排查问题的用户试用，先核对provider usage口径与采集完整度，不据颜色直接删工具或归责某个提示改动。"
+        },
+        "registry": "data/plugins/3289192-bot--dsh-cache-bricks",
+        "reports": "# dsh-cache-bricks\n\n> 可视化 DSH 模型请求、缓存命中率、活动与历史请求对比。\n\n## 研究范围\n\n- **仓库**：[3289192-bot/dsh-cache-bricks](https://github.com/3289192-bot/dsh-cache-bricks)\n- **版本号**：0.1.5（[固定提交 2e52b914](https://github.com/3289192-bot/dsh-cache-bricks/tree/2e52b914eaea5a02e5937c323160cf2fd2b8de1b)）\n- **版本日期**：2026-09-28（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已实现机制由固定源码支持；效果未独立实测，未来假设未验证。\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：调试长会话上下文与缓存波动的本机DSH Web用户，需要把某次真实请求与对话位置对应。\n- **亮点**：相对只看总token数字，attempt粒度观测、请求对比及会话定位把排查对象具体化；独立纯数据指标模块让视图共享同一口径。缓存本身由provider提供，插件不产生缓存优化。\n- **思考**：红色砖是否能定位缓存下降原因？比例来源于宿主报告且默认三桶互斥，不同provider口径错误会传播；缺字段用未知是强支持，但比较两次请求不能建立改动导致命中率下降的因果。历史日志也未必恢复内存中全部细节。\n- **建议**：适合有明确缓存排查问题的用户试用，先核对provider usage口径与采集完整度，不据颜色直接删工具或归责某个提示改动。\n\n采用建议：适合有明确缓存排查问题的用户试用，先核对provider usage口径与采集完整度，不据颜色直接删工具或归责某个提示改动。\n\n## 核心贡献\n\n相对只看总token数字，attempt粒度观测、请求对比及会话定位把排查对象具体化；独立纯数据指标模块让视图共享同一口径。缓存本身由provider提供，插件不产生缓存优化。\n\n## 关键质疑\n\n[核查分支](https://github.com/3289192-bot/dsh-cache-bricks/blob/2e52b914eaea5a02e5937c323160cf2fd2b8de1b/src/shared/metrics.ts#L49)。\n\n红色砖是否能定位缓存下降原因？比例来源于宿主报告且默认三桶互斥，不同provider口径错误会传播；缺字段用未知是强支持，但比较两次请求不能建立改动导致命中率下降的因果。历史日志也未必恢复内存中全部细节。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n待验证假设：在请求对比中显示字段来源、采集完整度和唯一变化集，可帮助排除口径变化造成的假异常；新增负担是provider归一映射与完整度传播。\n\n注入缺失缓存字段、重复工具声明和同内容不同元标志三类观察，并以固定provider原始usage对账；若仍把未知转零或相同工具哈希变化则否定假设。\n\n## 场景与替代办法\n\n调试长会话上下文与缓存波动的本机DSH Web用户，需要把某次真实请求与对话位置对应。\n\n参照宿主token汇总与人工读日志；此工具提供诊断可见性，不改写请求。\n\n## 依赖与流程\n\n依赖DSH请求观测事件、会话日志与匹配Web接口；作者公开基线0.1.7-rc.2，其他版本未由本轮验证。\n\n请求事件→观察归一→ledger结算→指标展示→定位与比较；重启清空内存，历史字段按宿主实际日志恢复。\n\n## 成本与效果\n\n首次安装并匹配宿主请求事件；持续有内容内存、历史扫描和排查人力成本，无额外模型调用；采集内容可能含对话与工具参数。\n\n可把排查从总体猜测缩到具体attempt；是否缩短诊断时间及降低账单仍需对照。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：4afb06c080945b46ac7a6f42216d807bd1bcef7d184c0554fce333ac9d4d22f4。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 9 | 2180 | — | — | 25526 |\n| .js | source | 3 | 2095 | 1607 | 503 | — |\n| .mjs | source | 9 | 4051 | 3233 | 632 | — |\n| .ts | source | 25 | 12674 | 7403 | 4595 | — |\n| .tsx | source | 2 | 1636 | 1225 | 336 | — |\n| .ts | test | 26 | 7581 | 6110 | 855 | — |\n| .js | test | 1 | 52 | 51 | 1 | — |\n\n排除 25 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **后台**：请求事件归一与usage指标计算\n- **界面**：缓存砖、请求详情、比较与会话定位\n\n## 工程亮点\n\neffectiveToolsOf按名去重避免宿主toolHistory重复计数；指标分开缺失和零，并从dispatch起算首token时间，避免把step启动时间混入。 [固定源码](https://github.com/3289192-bot/dsh-cache-bricks/blob/2e52b914eaea5a02e5937c323160cf2fd2b8de1b/src/core/observe.ts#L1)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 src/core/observe.ts、src/shared/metrics.ts、src/host/routes.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读指定核心源码与作者说明；未执行目标插件或测试、未安装或做真实宿主验收，未核实独立用户收益。\n- 下一步：注入缺失缓存字段、重复工具声明和同内容不同元标志三类观察，并以固定provider原始usage对账；若仍把未知转零或相同工具哈希变化则否定假设。\n",
+        "metadata": {
+            "repository": "3289192-bot/dsh-cache-bricks",
+            "repository_id": 1386463441,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 0,
+            "pushed_at": "2026-09-27T19:42:21Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A3289192-bot%2Fdsh-cache-bricks%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6404:0BD8:1D95:365A:6AD84A10 and timestamp 2026-10-21 05:13:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A3289192-bot%2Fdsh-cache-bricks%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641E:37D83B:14748E:2206CC:6AD84A10 and timestamp 2026-10-21 05:13:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A3289192-bot%2Fdsh-cache-bricks%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640C:17E195:13FBEF:219E55:6AD84A10 and timestamp 2026-10-21 05:13:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A3289192-bot%2Fdsh-cache-bricks%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6418:EFE19:142DC7:21CD47:6AD84A10 and timestamp 2026-10-21 05:13:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A3289192-bot%2Fdsh-cache-bricks%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641F:287071:13B4E9:214BB6:6AD84A10 and timestamp 2026-10-21 05:13:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-cache-bricks",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-cache-bricks",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-cache-bricks",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b",
+                "current_revision": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1386463441:root",
+            "repository": "3289192-bot/dsh-cache-bricks",
+            "path": "",
+            "revision": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "be1a2e59fc4adbcc800e7fc396a0f892bbf820aabff67eba0deb472e35d5db4e",
+                "code": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b",
+                "maintenance": "0d2c323e386b7e48f778a657f003b339cd4c6b8c105c67d047a0cef7cd6573a4"
+            }
+        }
+    }
+}

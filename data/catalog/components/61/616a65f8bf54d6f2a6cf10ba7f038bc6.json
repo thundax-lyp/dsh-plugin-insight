@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "616a65f8bf54d6f2a6cf10ba7f038bc6",
+    "identity": "github:1269708442:plugins-dsh-compressor",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1269708442:plugins-dsh-compressor",
+            "repository": "lifeodyssey/dsh-compressor",
+            "path": "plugins/dsh-compressor",
+            "revision": "76b39ab7ff2f5c4c847ef93f793e3d2e7bb0a3ce",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4a8eab1d12a4b2f56dfb597c29466a10cceeddbb93ef2852c4715fc4fa5fc815",
+                "code": "76b39ab7ff2f5c4c847ef93f793e3d2e7bb0a3ce",
+                "maintenance": "d39eaa351085bcff1d857365db06688d62956d74d64517bf685295ba0da00fb2"
+            }
+        }
+    }
+}

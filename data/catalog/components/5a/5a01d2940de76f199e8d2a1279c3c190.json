@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5a01d2940de76f199e8d2a1279c3c190",
+    "identity": "github:1362151550:packages-telemetry-dsh-telemetry",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1362151550:packages-telemetry-dsh-telemetry",
+            "repository": "zhangj1164/dsh-mega-plugins",
+            "path": "packages/telemetry/dsh-telemetry",
+            "revision": "76ef8c9216c1ae42579915eed0e310600e8c2f7f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "65370e8605d0b6416ccd20512e527c7c20fc9db5cdd8747cdff2eceb9f8ae7ba",
+                "code": "76ef8c9216c1ae42579915eed0e310600e8c2f7f",
+                "maintenance": "9ea72a2176062ee89775bbff1e26d12f18488a364559ecfdae551af0626f5eed"
+            }
+        }
+    }
+}

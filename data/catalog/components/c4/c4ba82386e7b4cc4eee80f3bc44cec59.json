@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c4ba82386e7b4cc4eee80f3bc44cec59",
+    "identity": "github:1405336468:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1405336468:root",
+            "repository": "lov0vo/dsh-composer-autopair",
+            "path": "",
+            "revision": "a6b6744458ed5c26f4a8066479ad3ed478f5b8ec",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d652e44bf03c466ecd71bea71d2c2fe5208189c837892b87ee3d38e7ed1876c2",
+                "code": "a6b6744458ed5c26f4a8066479ad3ed478f5b8ec",
+                "maintenance": "6bf021ecdb39b93c5113ccca06a9bcf9e458d1b9ebfa8e556af7d0546b0d8532"
+            }
+        }
+    }
+}

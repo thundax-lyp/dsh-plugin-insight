@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a5c89415be5f616f3c515f368130221c",
+    "identity": "github:1392305590:plugin",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1392305590:plugin",
+            "repository": "BarneyZhaoooo/dsh-theme-native",
+            "path": "plugin",
+            "revision": "faaf3a8edb9b5625ac46ea11df081600ff6d036a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "319b09b7b30873c2dae48aadf37b25bcb17803eefd0ea57b70880678e8e66a22",
+                "code": "faaf3a8edb9b5625ac46ea11df081600ff6d036a",
+                "maintenance": "422fb981823eb06091e64f00c728c4ea9f735aea5dcf3a3f56eafcd778479078"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "702a90868e67c1f3206b0344146fa5f3",
+    "identity": "github:1358913395:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1358913395:root",
+            "repository": "wangtie-010101/wangtie-os",
+            "path": "",
+            "revision": "cc859864095d2c0895f52853044766a7efc70b59",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b1b3147b7d5d0163789e6e8d3521f603fd5df56f1f3d0adae44e68b5f535f30f",
+                "code": "cc859864095d2c0895f52853044766a7efc70b59",
+                "maintenance": "41a05ac135e98fc81f37c117d63799e800e79b04ce5524f5f6d4bdac6c3404a0"
+            }
+        }
+    }
+}

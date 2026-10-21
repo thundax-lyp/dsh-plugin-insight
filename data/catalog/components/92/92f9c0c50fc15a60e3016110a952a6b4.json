@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "92f9c0c50fc15a60e3016110a952a6b4",
+    "identity": "github:1334988594:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334988594:root",
+            "repository": "Max-Null/dsh-chinese-thinking",
+            "path": "",
+            "revision": "f1b93eb5526627c461e42f7f25fea5c4600e2f00",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "667787c8a6a74dc80f219f393aa055c8c3c5f9c1e3bb2bb18487965802af8035",
+                "code": "f1b93eb5526627c461e42f7f25fea5c4600e2f00",
+                "maintenance": "28e5a3b7e601681029385266fc2cee51f4c2c3b5aeb5f948fcbbd1d9a31ac527"
+            }
+        }
+    }
+}

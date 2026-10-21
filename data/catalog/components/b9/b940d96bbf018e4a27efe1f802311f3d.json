@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b940d96bbf018e4a27efe1f802311f3d",
+    "identity": "github:1425518646:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425518646:root",
+            "repository": "liushuchang-2012/dsh-boot-splash",
+            "path": "",
+            "revision": "3078632eef268bd466686f803ffd65d5f4ede9c3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "821b31f952f05ac9373076e312802502d2d0006d2d81c4f34a654d48a84c97c9",
+                "code": "3078632eef268bd466686f803ffd65d5f4ede9c3",
+                "maintenance": "20cecd4de9fb570a78f183e00fb2cc991128be118f4a907f9459251b958cc70c"
+            }
+        }
+    }
+}

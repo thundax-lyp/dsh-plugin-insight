@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3ab0f91ce0deae574be4c0a82f2f65bd",
+    "identity": "github:1335642329:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335642329:root",
+            "repository": "orangeshinee/dsh-mem0",
+            "path": "",
+            "revision": "2d3cea31e82200fc80ca881190877c49d5478a21",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ffb656e8a22b5de175e86376987937c7839753001a94dc25f0e3328d5a4f993b",
+                "code": "2d3cea31e82200fc80ca881190877c49d5478a21",
+                "maintenance": "7a09d02338abf679f5204c2d36551888b5c1afa48e3b128dd78ae29b911e0545"
+            }
+        }
+    }
+}

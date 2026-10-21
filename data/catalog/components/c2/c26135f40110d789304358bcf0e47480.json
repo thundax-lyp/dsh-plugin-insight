@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c26135f40110d789304358bcf0e47480",
+    "identity": "github:1338622432:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338622432:root",
+            "repository": "ZelinW1/dsh-cosplay",
+            "path": "",
+            "revision": "11a7245e801d5f5b4b5b0d7fbfff3c29fcccf2bd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "89334ab3b504fc8be88f9aa0f3f93a88c80ef196b38d771f9b5df98128352111",
+                "code": "11a7245e801d5f5b4b5b0d7fbfff3c29fcccf2bd",
+                "maintenance": "eb892511c7a55faa4302b34b8047ab320c2469f5f6bcaee56944524e80bc1f0d"
+            }
+        }
+    }
+}

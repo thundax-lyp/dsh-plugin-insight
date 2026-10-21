@@ -1,0 +1,348 @@
+{
+    "schema_version": 3,
+    "id": "09a92aaa4705f75a5e2bb4b915510f24",
+    "identity": "github:1418691015:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1418691015:root",
+            "repository_id": 1418691015,
+            "component_id": "root",
+            "repository": "1015677515/dsh-prompt-ErrorNotes-desk",
+            "path": "",
+            "aliases": [],
+            "name": "Prompt Desk",
+            "entry_type": "plugin",
+            "technical_category": "memory-knowledge",
+            "business_category": "personal-productivity",
+            "tags": [
+                "提示词",
+                "错误经验",
+                "人工确认"
+            ],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "8aa2354cf0818d08dac347c0cae59740434388b1d7eb250811169eb9953afdfe",
+                "code": "fab9373ac396e430316b09693b654051583e9713",
+                "maintenance": "18693c0a4260106167f9efcfc588642d7ac0094afbb0f2c719d4e349d3d6ab04"
+            },
+            "sources": [
+                {
+                    "id": "20261020-incremental40-r2-github-1418691015-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T04:29:58.046Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "20261020-incremental40-r2-github-1418691015-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/1015677515/dsh-prompt-ErrorNotes-desk/blob/fab9373ac396e430316b09693b654051583e9713/README.md",
+                    "revision": "fab9373ac396e430316b09693b654051583e9713",
+                    "captured_at": "2026-10-20T04:29:58.046Z",
+                    "summary": "在对话标题栏编辑全局与会话提示词，并把模型自报错误收为待确认经验草稿。",
+                    "artifact": "data/runs/2026-10-20-04/snapshots/1015677515--dsh-prompt-errornotes-desk/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "20261020-incremental40-r2-github-1418691015-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/1015677515/dsh-prompt-ErrorNotes-desk/blob/fab9373ac396e430316b09693b654051583e9713/index.js",
+                    "revision": "fab9373ac396e430316b09693b654051583e9713",
+                    "captured_at": "2026-10-20T04:29:58.046Z",
+                    "summary": "核查 index.js、client.js、CHANGELOG.md；index.js 逐个尝试认错标记，跳过不合法的首次出现，要求同一行按错误经过、教训顺序解析；结果先入待确认队列，采纳后才注入。",
+                    "artifact": "data/runs/2026-10-20-04/snapshots/1015677515--dsh-prompt-errornotes-desk/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "格式匹配不能判定错误是否真实或教训是否可迁移；未执行流式事件、并发面板编辑和宿主验证。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "经常纠正同类行为的用户需要维护少量可复用教训，合格结果是正确经验被下轮读取且可撤回。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1418691015-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1418691015:root",
+                            "area": "code",
+                            "fingerprint": "fab9373ac396e430316b09693b654051583e9713"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:29:58.046Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "index.js 逐个尝试认错标记，跳过不合法的首次出现，要求同一行按错误经过、教训顺序解析；结果先入待确认队列，采纳后才注入。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1418691015-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1418691015:root",
+                            "area": "code",
+                            "fingerprint": "fab9373ac396e430316b09693b654051583e9713"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:29:58.046Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "跳过无效早期标记能修正漏采路径，但采集更多草稿未必改善后续任务；经验质量仍依赖人工取舍。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1418691015-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1418691015:root",
+                            "area": "code",
+                            "fingerprint": "fab9373ac396e430316b09693b654051583e9713"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:29:58.046Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "模型每轮接收近期经验会增加输入量；人工确认、归类和消除冲突是持续成本。没有实测费用或重复错误下降比例。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1418691015-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1418691015:root",
+                            "area": "code",
+                            "fingerprint": "fab9373ac396e430316b09693b654051583e9713"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:29:58.046Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "parseConfession 与 parseConfessionAt 分离定位与校验，队列按内容去重并限长；Host 写入与 Client 展示分开，原子文件替换不等于并发编辑无冲突。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1418691015-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1418691015:root",
+                            "area": "code",
+                            "fingerprint": "fab9373ac396e430316b09693b654051583e9713"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:29:58.046Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "已有用户应重点检查先引用标记再真正认错的消息，先只保留少量能复现的教训，并确认禁用或删除后的注入变化。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1418691015-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1418691015:root",
+                            "area": "code",
+                            "fingerprint": "fab9373ac396e430316b09693b654051583e9713"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:29:58.046Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "格式匹配不能判定错误是否真实或教训是否可迁移；未执行流式事件、并发面板编辑和宿主验证。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1418691015-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1418691015:root",
+                            "area": "code",
+                            "fingerprint": "fab9373ac396e430316b09693b654051583e9713"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:29:58.046Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "包版本仍为1.2.1，GitHub-only 分发；新提交不能由版本号未变推断无变化。Host 路由和浏览器端均须加载。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1418691015-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1418691015:root",
+                            "area": "code",
+                            "fingerprint": "fab9373ac396e430316b09693b654051583e9713"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:29:58.046Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T04:29:58.046Z",
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "反复纠正同类行为者可少量采纳候选教训，先检查合法后续标记与删除禁用后的注入。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "把可复现教训跨轮复用的任务明确。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "待确认队列省整理步骤，直接维护AGENTS.md更简单。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "逐标记解析与队列去重可查，不证明教训真实可迁移。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "每轮经验增加输入量，确认归类和冲突清理持续耗时。"
+                    }
+                },
+                "score": 59,
+                "revision": "fab9373ac396e430316b09693b654051583e9713",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "20261020-incremental40-r2-github-1418691015-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1418691015:root",
+                        "area": "code",
+                        "fingerprint": "fab9373ac396e430316b09693b654051583e9713"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1418691015:root",
+            "repository": "1015677515/dsh-prompt-ErrorNotes-desk",
+            "path": "",
+            "revision": "fab9373ac396e430316b09693b654051583e9713",
+            "fingerprints": {
+                "directory": "8aa2354cf0818d08dac347c0cae59740434388b1d7eb250811169eb9953afdfe",
+                "code": "fab9373ac396e430316b09693b654051583e9713",
+                "maintenance": "18693c0a4260106167f9efcfc588642d7ac0094afbb0f2c719d4e349d3d6ab04"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T04:25:27.514Z",
+            "analysis_sha256": "e1b0cad79bd1b660e149e2588dd516047f874f4355e074458cf753d60d47a8e5"
+        },
+        "publication.metadata": "data/plugins/1015677515--dsh-prompt-errornotes-desk/META.json",
+        "publication.summaries": {
+            "text": "在对话标题栏编辑全局与会话提示词，并把模型自报错误收为待确认经验草稿。",
+            "revision": "fab9373ac396e430316b09693b654051583e9713",
+            "source_url": "https://github.com/1015677515/dsh-prompt-ErrorNotes-desk/blob/fab9373ac396e430316b09693b654051583e9713/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "fab9373ac396e430316b09693b654051583e9713",
+            "items": {
+                "界面": "提示词与错误经验编辑、候选采纳。",
+                "后台": "有界近期经验与会话提示进入系统提示。"
+            }
+        },
+        "publication.advice": {
+            "revision": "fab9373ac396e430316b09693b654051583e9713",
+            "text": "已有用户应重点检查先引用标记再真正认错的消息，先只保留少量能复现的教训，并确认禁用或删除后的注入变化。"
+        },
+        "registry": "data/plugins/1015677515--dsh-prompt-errornotes-desk",
+        "reports": "# Prompt Desk\n\n> 在对话标题栏编辑全局与会话提示词，并把模型自报错误收为待确认经验草稿。\n\n## 固定范围与依据\n\n固定提交 [fab9373ac396e430316b09693b654051583e9713](https://github.com/1015677515/dsh-prompt-ErrorNotes-desk/blob/fab9373ac396e430316b09693b654051583e9713/index.js)；组件路径：仓库根。核查时间 2026-10-20T04:29:58.046Z；本轮基准 2026-10-20T04:25:27.514Z。\n源码抽读路径：index.js、client.js、CHANGELOG.md。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：经常纠正同类行为的用户需要维护少量可复用教训，合格结果是正确经验被下轮读取且可撤回。\n- **亮点**：index.js 逐个尝试认错标记，跳过不合法的首次出现，要求同一行按错误经过、教训顺序解析；结果先入待确认队列，采纳后才注入。\n- **思考**：跳过无效早期标记能修正漏采路径，但采集更多草稿未必改善后续任务；经验质量仍依赖人工取舍。\n- **建议**：已有用户应重点检查先引用标记再真正认错的消息，先只保留少量能复现的教训，并确认禁用或删除后的注入变化。\n\n## 场景与替代办法\n\n经常纠正同类行为的用户需要维护少量可复用教训，合格结果是正确经验被下轮读取且可撤回。\n\n相比前次 c76ffa0 提交，本轮确认解析器会继续扫描后续标记；维持人工确认建议。普通 AGENTS.md 编辑更简单，候选队列主要减少整理步骤。\n\n## 依赖与流程\n\n需要 systemPrompt 与 webServer 服务、浏览器 UI 及可写 DSH_HOME；全局提示保存会影响其他会话，效果依赖模型遵循经过确认的经验。\n\n面板编辑提示，模型输出产生候选，用户修改并采纳，下轮函数式构建注入；漏采时先检查同一行双标签，不反复重写全局文件。\n\n## 成本与效果\n\n模型每轮接收近期经验会增加输入量；人工确认、归类和消除冲突是持续成本。没有实测费用或重复错误下降比例。\n\n跳过无效早期标记能修正漏采路径，但采集更多草稿未必改善后续任务；经验质量仍依赖人工取舍。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：5784bef0f6cb171d03a92c120bd1610ea179201a2bec66990f9f93e40cbd71da。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 4 | 1046 | — | — | 14231 |\n| .js | source | 2 | 2703 | 1347 | 1167 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **界面**：提示词与错误经验编辑、候选采纳。\n- **后台**：有界近期经验与会话提示进入系统提示。\n\n## 工程亮点\n\nparseConfession 与 parseConfessionAt 分离定位与校验，队列按内容去重并限长；Host 写入与 Client 展示分开，原子文件替换不等于并发编辑无冲突。\n\n## 分发与兼容\n\n包版本仍为1.2.1，GitHub-only 分发；新提交不能由版本号未变推断无变化。Host 路由和浏览器端均须加载。\n\n## 历史对照\n\n前次代码指纹为 c76ffa0cb3f4f8de4b914ab64f3580f7aefab78f；本轮固定为 fab9373ac396e430316b09693b654051583e9713。相比前次 c76ffa0 提交，本轮确认解析器会继续扫描后续标记；维持人工确认建议。普通 AGENTS.md 编辑更简单，候选队列主要减少整理步骤。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：格式匹配不能判定错误是否真实或教训是否可迁移；未执行流式事件、并发面板编辑和宿主验证。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：以句中引用、合法第二标记、换行教训、模板回显与重复消息组成样本，统计候选准确率，并比较开启前后的真实重复错误。\n",
+        "metadata": {
+            "repository": "1015677515/dsh-prompt-ErrorNotes-desk",
+            "repository_id": 1418691015,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 4,
+            "pushed_at": "2026-10-20T03:39:08Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1015677515%2Fdsh-prompt-ErrorNotes-desk%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640F:12F9BB:13A762:211C7D:6AD84900 and timestamp 2026-10-21 05:09:20 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1015677515%2Fdsh-prompt-ErrorNotes-desk%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6413:B65AE:13626B:20CAF6:6AD84900 and timestamp 2026-10-21 05:09:20 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1015677515%2Fdsh-prompt-ErrorNotes-desk%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6414:265AC:14603F:21B8FB:6AD84901 and timestamp 2026-10-21 05:09:21 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1015677515%2Fdsh-prompt-ErrorNotes-desk%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6419:D1FDD:146E49:21F40D:6AD84901 and timestamp 2026-10-21 05:09:21 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1015677515%2Fdsh-prompt-ErrorNotes-desk%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640C:C23BB:141D21:219A0F:6AD84901 and timestamp 2026-10-21 05:09:21 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "fab9373ac396e430316b09693b654051583e9713",
+                "current_revision": "fab9373ac396e430316b09693b654051583e9713",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1418691015:root",
+            "repository": "1015677515/dsh-prompt-ErrorNotes-desk",
+            "path": "",
+            "revision": "fab9373ac396e430316b09693b654051583e9713",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8aa2354cf0818d08dac347c0cae59740434388b1d7eb250811169eb9953afdfe",
+                "code": "fab9373ac396e430316b09693b654051583e9713",
+                "maintenance": "18693c0a4260106167f9efcfc588642d7ac0094afbb0f2c719d4e349d3d6ab04"
+            }
+        }
+    }
+}

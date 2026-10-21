@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3779d08a69f0649577a032973bedcaed",
+    "identity": "github:1355524476:plugins-dsh-plugin-ai-switch",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1355524476:plugins-dsh-plugin-ai-switch",
+            "repository": "ijry/DeepSeek-Harness-Desktop-Ultra",
+            "path": "plugins/dsh-plugin-ai-switch",
+            "revision": "748806201eabfa13ef3ed9168e0f845410eeade5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4f5084c92183b0309c386de699c0666f02ed4e13a2a1f6042951372687e65bb5",
+                "code": "748806201eabfa13ef3ed9168e0f845410eeade5",
+                "maintenance": "9dc9c3fc32b33e2cca457220f6e1a4445cad1b1d9377d5a06647602cc39a85f6"
+            }
+        }
+    }
+}

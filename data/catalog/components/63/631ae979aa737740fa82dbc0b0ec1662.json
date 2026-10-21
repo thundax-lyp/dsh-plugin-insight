@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "631ae979aa737740fa82dbc0b0ec1662",
+    "identity": "github:1354281309:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1354281309:root",
+            "repository": "MannixHu/dsh-statusbar-config",
+            "path": "",
+            "revision": "fb2ba208ff39874f0ec72bd0c5a7a146707661c9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "984fd1f166491dcda8cc9d5c74ce78ecea9ff941a17de76f89e7d8f41907d1b0",
+                "code": "fb2ba208ff39874f0ec72bd0c5a7a146707661c9",
+                "maintenance": "4306c9db8ebb9f1237495b2a3cd6fd8ff515fce980bf522e096d3ba6ab7962eb"
+            }
+        }
+    }
+}

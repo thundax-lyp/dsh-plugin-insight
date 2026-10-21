@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a76d1658f890992b404d30eb8c00b66f",
+    "identity": "github:1411961200:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1411961200:root",
+            "repository": "xfy2412/dsh-time-reminder",
+            "path": "",
+            "revision": "c22fe2cf6c778de99794c07e468ebcf2f3f5ac3d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "24ade7fb0238852394077dbc6a38dd0a48fa8785cea0cc2ecd231f257c963dcd",
+                "code": "c22fe2cf6c778de99794c07e468ebcf2f3f5ac3d",
+                "maintenance": "4a25b7602e49a6a33e543e528d0390b1dc76cd16a332e89797c884b2728768f5"
+            }
+        }
+    }
+}

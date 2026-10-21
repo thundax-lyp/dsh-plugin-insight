@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2ad9cf94a328d5562c2763ed3aaefb7f",
+    "identity": "github:1334810697:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334810697:root",
+            "repository": "littleboylittlegirl/dsh-community-hot",
+            "path": "",
+            "revision": "412027f49c570c284d45e3a88a06e43977ac15a9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4ab43ca7f0887d1faf9db2584251bd3ea7e71f50c1cf8a80711e37137675904e",
+                "code": "412027f49c570c284d45e3a88a06e43977ac15a9",
+                "maintenance": "91bf9da37f9ea8fba1bad2c2a2cec2961561161556ad4dafbf07a66f59a84581"
+            }
+        }
+    }
+}

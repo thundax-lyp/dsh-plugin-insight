@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7d251ebaaef48d6024d9f6c757995fce",
+    "identity": "github:1423447579:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1423447579:root",
+            "repository": "zoe1nan/dsh-startup-intro",
+            "path": "",
+            "revision": "e6d5ad10a4f86588168fd4808ba38c6dc962f5e2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c2239a64213ecad313e74833515be26498d51268c3b41e9df28ba2b8fc6f11d5",
+                "code": "e6d5ad10a4f86588168fd4808ba38c6dc962f5e2",
+                "maintenance": "94f7816827e3d5178f195326d8746c3501b60c843168ce61f137aaf96ecd0930"
+            }
+        }
+    }
+}

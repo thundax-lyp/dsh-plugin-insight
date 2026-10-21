@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9a4cdb00d386a076a5e25bfcb2520628",
+    "identity": "github:1333719936:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333719936:root",
+            "repository": "railgun0325/dsh-phone",
+            "path": "",
+            "revision": "421af416c92094026e9016717bbf0d178c4765f0",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "157f602e237b39a3843f3d04c860a16a8974e2f9a460825de9015fa52c2bc74a",
+                "code": "421af416c92094026e9016717bbf0d178c4765f0",
+                "maintenance": "585f7db2e509218d0c5d73e35d68b8137de690f5301b471b5c1ea366528fa25e"
+            }
+        }
+    }
+}

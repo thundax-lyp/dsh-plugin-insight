@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1dcfc2312721af11fe1b79691dbc0ebc",
+    "identity": "github:1391096404:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1391096404:root",
+            "repository": "Missher12/Missher-DSH-Output-Renderer",
+            "path": "",
+            "revision": "ff979cfb33081183915bb285e4095a52542d0d5c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a4a194ac0ec168263f679e729b1e15deee8ffd8041b9f62857452fce2a2a57c9",
+                "code": "ff979cfb33081183915bb285e4095a52542d0d5c",
+                "maintenance": "2497d6a7cdad4ccb69e38fc29ec992b5441e133a3799848cf77fe96bff0e386e"
+            }
+        }
+    }
+}

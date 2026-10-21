@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5b27d97c628ff5231e9dbce9e00a3e54",
+    "identity": "github:1370777887:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1370777887:root",
+            "repository": "sujingkpo/dsh-auto-pass",
+            "path": "",
+            "revision": "0573925ecbb5caa58a141ccecece25dca83c29df",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "778d10e13b49bdedc5d72f05500243908567b68189b1bfb37019f0b11b48737f",
+                "code": "0573925ecbb5caa58a141ccecece25dca83c29df",
+                "maintenance": "9227d19d20ff1b998920ffe974358a5581e2a25ec05613670710cdcfbfe27c7f"
+            }
+        }
+    }
+}

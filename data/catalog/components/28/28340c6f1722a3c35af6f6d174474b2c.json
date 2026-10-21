@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "28340c6f1722a3c35af6f6d174474b2c",
+    "identity": "github:1340300117:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340300117:root",
+            "repository": "Whatsmore-nf/dsh-pdf-edit",
+            "path": "",
+            "revision": "e670ea7a93b566467e02d36f78df57642858196e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fcf8d31c33b44d8d108c46b125297ac9c38e92223c6008e028dbcd9f7d9d52ee",
+                "code": "e670ea7a93b566467e02d36f78df57642858196e",
+                "maintenance": "5a0744ee14270e6174a89b41832a9093c8eb01ae76d9fcefc086371e99ae500a"
+            }
+        }
+    }
+}

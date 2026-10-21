@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4a00dbb372613f4007a737f64c0d64f1",
+    "identity": "github:1337214828:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337214828:root",
+            "repository": "loadingvx/deepseeh-harness-ultra-slash",
+            "path": "",
+            "revision": "4df40ca0fbae69217314e74481f24d0f7cc1ee68",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1b014a02b4745e80eda446efa511d043a6944e1fd5293770957e2b8673b96715",
+                "code": "4df40ca0fbae69217314e74481f24d0f7cc1ee68",
+                "maintenance": "67a7de487ff235d85fdee95cc50b7f750b7651a84482083991fe0162eb5c9f3b"
+            }
+        }
+    }
+}

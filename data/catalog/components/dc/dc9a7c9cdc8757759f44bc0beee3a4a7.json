@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "dc9a7c9cdc8757759f44bc0beee3a4a7",
+    "identity": "github:1358076039:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1358076039:root",
+            "repository": "lubenweimeiyoukaig/dsh-file-upload-local",
+            "path": "",
+            "revision": "e2cebc254dfb1237ed593f5b05808d79f163aa07",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "070286342346ef932afc0f169f3288b0ca635f0d04ef29b0b6b87a0af3a50200",
+                "code": "e2cebc254dfb1237ed593f5b05808d79f163aa07",
+                "maintenance": "dfe03408ddda0b26a47b62ca903a3c22e333c8ea35cb9a0a8d0e90683720acea"
+            }
+        }
+    }
+}

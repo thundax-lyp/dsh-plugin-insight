@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "02ed3fbd328d1e1131aeafb99203b867",
+    "identity": "github:1415893284:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1415893284:root",
+            "repository": "zhengqiuyang/dsh-freeze",
+            "path": "",
+            "revision": "e6de675498da8707ff4a8d3a3cee863c898a6a98",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "dca814efeb6b183911f7423a78f5d849ade804d7da61b131b6687dfa784e713e",
+                "code": "e6de675498da8707ff4a8d3a3cee863c898a6a98",
+                "maintenance": "c267f6b2df7d525ff4268034e6f23433e2786f337764ec00f9805ba514fc6ba2"
+            }
+        }
+    }
+}

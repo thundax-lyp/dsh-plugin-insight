@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "da9aee4c51909a3b80360afaa3e967ec",
+    "identity": "github:1350983335:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1350983335:root",
+            "repository": "d3vmeh/dsh-context-budget",
+            "path": "",
+            "revision": "296176e9cad45d35bd1d9769388bfa36b513c4ba",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "ce00e4f0078af61bd449214ed9a4d3cee3fc82df554ce8553b1ed75102d0e831",
+                "code": "296176e9cad45d35bd1d9769388bfa36b513c4ba",
+                "maintenance": "967ce0fd5be23e34070d9aad8750c1d892ae659166e5360f9dedebb205fdf1da"
+            }
+        }
+    }
+}

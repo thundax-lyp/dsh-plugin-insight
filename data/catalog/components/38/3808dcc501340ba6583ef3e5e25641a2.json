@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3808dcc501340ba6583ef3e5e25641a2",
+    "identity": "github:1347077871:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347077871:root",
+            "repository": "DeepseekHarnessPlugins/Notification",
+            "path": "",
+            "revision": "5da12d12d31e260e22210efa2779b44d71db8891",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fdced75fac9ec3a1f2ff4f34017f5fce0d7c705c2204777a40200609a1563cc0",
+                "code": "5da12d12d31e260e22210efa2779b44d71db8891",
+                "maintenance": "d8e32ce8d2778b6432d9b1106c068fefc55571d4f64c7e2b916c5e39642da04d"
+            }
+        }
+    }
+}

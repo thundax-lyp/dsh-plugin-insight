@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b504ea7a05016ba960b457acfe1b4671",
+    "identity": "github:1337578367:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337578367:root",
+            "repository": "Yu-tao-Li/dsh-read-image-view",
+            "path": "",
+            "revision": "1d96eee4232153de73d22d007498f46d8ac3adae",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "eec3b1ba5f9281ce52c7c424eb96786a975325af98ca3fea7524ec05f1b1b7fb",
+                "code": "1d96eee4232153de73d22d007498f46d8ac3adae",
+                "maintenance": "b94c1c9797b5e1c59a03008b0ee9cea4d73bc2b69a18c40a7d33a36eee9d4a91"
+            }
+        }
+    }
+}

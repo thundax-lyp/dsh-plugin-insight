@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bf56c1e6acaba30229cb8feea290d6fb",
+    "identity": "github:1336720682:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336720682:root",
+            "repository": "FleetingEcho/dsh-powerdesk",
+            "path": "",
+            "revision": "d109642ef84ed0e9801ec8a2b74041350fcc75aa",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2194a080a2843044769ca36bac4ac59989260ae2f3b5ed02dcbc8d2c5f685188",
+                "code": "d109642ef84ed0e9801ec8a2b74041350fcc75aa",
+                "maintenance": "ed2e9f210bec6d7185471230fcbaf72850f097279e9f9082b12a98eec5ecace0"
+            }
+        }
+    }
+}

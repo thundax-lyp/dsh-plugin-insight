@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3e271bff377a026936f0f9e418aef49c",
+    "identity": "github:1336785020:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336785020:root",
+            "repository": "lcthe/dsh-timeline-rail",
+            "path": "",
+            "revision": "22fb5ee012af254f79fa52f98f68f6ab799ca8ee",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "16e23b27ee2df9d8d7811fb0eba38de3d30a3157f46cc7ac89c184e7d6784b8d",
+                "code": "22fb5ee012af254f79fa52f98f68f6ab799ca8ee",
+                "maintenance": "aab4b1b1d0c25c92c56f11ac47e8d6725491b472be47debbfc992f482d41fc0c"
+            }
+        }
+    }
+}

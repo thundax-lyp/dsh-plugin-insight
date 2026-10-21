@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0499353ea9fb5781b653d129cdcf31de",
+    "identity": "github:1333745568:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333745568:root",
+            "repository": "reshuibuduo/tmcra-plugin-deepseek-harness",
+            "path": "",
+            "revision": "9f77e6f71ac7a894896155695e0f48f85c158230",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8a89748efc9cda362d7902b4eb11c0107f224db7788b7928b1b9e3506fb9a687",
+                "code": "9f77e6f71ac7a894896155695e0f48f85c158230",
+                "maintenance": "340e86611698e341f6bbf08e9ec5dc6d0ef0475f650233d0bb5318d28b1dbef7"
+            }
+        }
+    }
+}

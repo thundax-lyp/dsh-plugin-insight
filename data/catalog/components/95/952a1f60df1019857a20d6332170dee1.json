@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "952a1f60df1019857a20d6332170dee1",
+    "identity": "github:1345561822:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345561822:root",
+            "repository": "striveh/dsh-capability-resolver",
+            "path": "",
+            "revision": "241a5fed44aec39113ee395c3be4d9f17047440d",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "0f4ddeeeeec52ac43ffe41be5a80e6ebfb6eb657536eedb47d8e7eb80f067e44",
+                "code": "241a5fed44aec39113ee395c3be4d9f17047440d",
+                "maintenance": "34c4bd76ea3d46d398a236470f8d87644ca5c690bc051809d74c8c91efd69602"
+            }
+        }
+    }
+}

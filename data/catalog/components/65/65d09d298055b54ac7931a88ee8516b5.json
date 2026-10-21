@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "65d09d298055b54ac7931a88ee8516b5",
+    "identity": "github:1362101058:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1362101058:root",
+            "repository": "OTTTTTO/dsh-scheduled-send",
+            "path": "",
+            "revision": "470de60ed3b4d99be2cb640ee9ac13d7938cef64",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3ce222bcf42e670c66e6aea01ab1dcc5aa6efacff62763c6ba6ab2ece8ca4f77",
+                "code": "470de60ed3b4d99be2cb640ee9ac13d7938cef64",
+                "maintenance": "1dccb31ddc327fe642aa4b9b6ffd90c5d7de8ea1bf3f36cec58a63d9f90c0a31"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d891dcfa4d41c52aa844167046ef3b81",
+    "identity": "github:1375456478:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1375456478:root",
+            "repository": "let-mi-think/agent-manager",
+            "path": "",
+            "revision": "4a692cbd1f97c5885b989967497f13842b294e60",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a0ba46ab9ec92911c9451a41fde17ea04315e9dc360763ec54c0f0dfc4ea7cea",
+                "code": "4a692cbd1f97c5885b989967497f13842b294e60",
+                "maintenance": "a80e414aa5445eccba0715947bf263eee2a4de8d9afa89fd6b1c700452add0aa"
+            }
+        }
+    }
+}

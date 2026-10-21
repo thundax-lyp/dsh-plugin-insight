@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f37da80a1daf73ea0127d02e4e377855",
+    "identity": "github:1408657362:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1408657362:root",
+            "repository": "Senguk520/dsh-multitask",
+            "path": "",
+            "revision": "2c352738e346941eea7dfd951cdff4ee6683c903",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ef979b8527959ed5f2c5e8a3496c515906ab001010875de181f17327cbc30f09",
+                "code": "2c352738e346941eea7dfd951cdff4ee6683c903",
+                "maintenance": "75556653ead4ce97af6c51272861d5c72fc693c2e4baf49806706a4e398f4539"
+            }
+        }
+    }
+}

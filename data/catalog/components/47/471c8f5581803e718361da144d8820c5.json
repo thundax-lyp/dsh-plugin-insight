@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "471c8f5581803e718361da144d8820c5",
+    "identity": "github:1424284772:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424284772:root",
+            "repository": "ChenJun25/dsh-console-plugin",
+            "path": "",
+            "revision": "7f3bc236ce7c9908bee9c01544144682bf53c717",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b110dbca6145f0aad8a1638078a63dd4a339a31eb84345b42b6cb2a2364c3c35",
+                "code": "7f3bc236ce7c9908bee9c01544144682bf53c717",
+                "maintenance": "eda0d33089dede263d75adba1a3d2c9ed43999db3f2a5dd021f52c3f06bda0c7"
+            }
+        }
+    }
+}

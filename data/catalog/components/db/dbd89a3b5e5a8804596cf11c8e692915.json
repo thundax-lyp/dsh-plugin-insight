@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "dbd89a3b5e5a8804596cf11c8e692915",
+    "identity": "github:1355524476:plugins-dsh-plugin-mobile-bridge",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1355524476:plugins-dsh-plugin-mobile-bridge",
+            "repository": "ijry/DeepSeek-Harness-Desktop-Ultra",
+            "path": "plugins/dsh-plugin-mobile-bridge",
+            "revision": "748806201eabfa13ef3ed9168e0f845410eeade5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b5f0c56fc6187a1047d03fa29b6f698a7ad61a5bc571adb34c647da516cbec22",
+                "code": "748806201eabfa13ef3ed9168e0f845410eeade5",
+                "maintenance": "9dc9c3fc32b33e2cca457220f6e1a4445cad1b1d9377d5a06647602cc39a85f6"
+            }
+        }
+    }
+}

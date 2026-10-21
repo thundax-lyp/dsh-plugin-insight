@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "57a5e2e39689da3ed6e0daead7577b47",
+    "identity": "github:1366386406:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1366386406:root",
+            "repository": "dxxCaO/dsh-self-improvement",
+            "path": "",
+            "revision": "b80ccc67640caacb3c5504b9b04ffe69eb4a6e0e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f976316fc8b5f579768006d44b7d224e8ca4896f299a57bf0b646da7687b092e",
+                "code": "b80ccc67640caacb3c5504b9b04ffe69eb4a6e0e",
+                "maintenance": "6fa5562554d3247b47ff765d3ec8b2eb6b8e0266f0dc9794852ec84bbbc0865b"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "dbcf16ab72ca309336340c5af1a25403",
+    "identity": "github:1376310589:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1376310589:root",
+            "repository": "borgez/dsh-project-mcp",
+            "path": "",
+            "revision": "9caa56162de09589fd12b6a259105f8abd44e78f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "20d7d5e0910e265881bcfb852d4d709ed3284c6d3ba48e351198884325aa6eb3",
+                "code": "9caa56162de09589fd12b6a259105f8abd44e78f",
+                "maintenance": "3969de3bbec0e91f519d94292ff970d355be77107671753fedd28cf6f6f25e25"
+            }
+        }
+    }
+}

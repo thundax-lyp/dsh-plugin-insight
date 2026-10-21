@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "18e99ca8ec022f5cbfd041fb337c62b0",
+    "identity": "github:1352673711:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1352673711:root",
+            "repository": "zhang-bin-98/sci-fork",
+            "path": "",
+            "revision": "40ad38bcd806fff85887bfa33825606c1cf29740",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ea3469b895bfe1c8a739e16038600985192bbcea1dac699ba5216a54385f527e",
+                "code": "40ad38bcd806fff85887bfa33825606c1cf29740",
+                "maintenance": "50b5f3b8ac1621608a16d8621f9c4cc03624e7df344dd8f4cc31a1e6d2253582"
+            }
+        }
+    }
+}

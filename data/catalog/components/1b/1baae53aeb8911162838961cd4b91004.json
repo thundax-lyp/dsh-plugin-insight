@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1baae53aeb8911162838961cd4b91004",
+    "identity": "github:1424492885:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424492885:root",
+            "repository": "wilsonchengassistant/dsh-session-clean-delete",
+            "path": "",
+            "revision": "b8f884dc24547a3fae15c38b3d3a713004a1911c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a5ebd75a7944ffb45ba7ba8c3e2ff4bdbb99929bbac4a37faf6b84c1ee801807",
+                "code": "b8f884dc24547a3fae15c38b3d3a713004a1911c",
+                "maintenance": "bc92565fa46ab0dd73eb6bd8eb21d8b18c0bbcaf5a4235037e9144c4e4519e69"
+            }
+        }
+    }
+}

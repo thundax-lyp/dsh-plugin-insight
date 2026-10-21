@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "736707f9e7466f68c0b859872589d0d6",
+    "identity": "github:1335630127:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335630127:root",
+            "repository": "stuarthu/dsh-update-notifier",
+            "path": "",
+            "revision": "cf32806aa995ea694f535348478f16fb87220276",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "03fd33d538b6ebda6e37ea4fed03c6ad9b68c8f8a0f4f6b8920633517a31ce92",
+                "code": "cf32806aa995ea694f535348478f16fb87220276",
+                "maintenance": "2b81ce49feabb5a821418e5305d423b6c9b24d0ca623761b532a5390f6a67731"
+            }
+        }
+    }
+}

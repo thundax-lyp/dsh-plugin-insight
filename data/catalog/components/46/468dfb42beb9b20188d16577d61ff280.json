@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "468dfb42beb9b20188d16577d61ff280",
+    "identity": "github:1354241970:packages-dsh-cron-board",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1354241970:packages-dsh-cron-board",
+            "repository": "mzzsfy/dsh-plugin",
+            "path": "packages/dsh-cron-board",
+            "revision": "ef78178469af825c662b6850afc3cbcde593d3b3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "19ceaceeb949d450da652625fe9ba9a8ad82a60eb44435f68640c7c7103ab464",
+                "code": "ef78178469af825c662b6850afc3cbcde593d3b3",
+                "maintenance": "1cffc0df00eb6f1f17f82160122dc9baba104fe94755a94c38be062ac0f6cb72"
+            }
+        }
+    }
+}

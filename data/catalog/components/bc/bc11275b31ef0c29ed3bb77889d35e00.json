@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bc11275b31ef0c29ed3bb77889d35e00",
+    "identity": "github:1335391417:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335391417:root",
+            "repository": "baobaolaodie/dsh-tui-vscode",
+            "path": "",
+            "revision": "25fa39901d1d6eb71666dab17e7af00499e12683",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "88d01e80e003dec0ee6468f1c5ce3bea9897db9dac75988cd77233abc1c0cf53",
+                "code": "25fa39901d1d6eb71666dab17e7af00499e12683",
+                "maintenance": "9ebbf3531c12bfa2a027dd0a2b002460ae248b7bdf1d60473aa44cc658e3f3fd"
+            }
+        }
+    }
+}

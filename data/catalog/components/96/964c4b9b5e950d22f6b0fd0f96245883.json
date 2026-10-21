@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "964c4b9b5e950d22f6b0fd0f96245883",
+    "identity": "github:1342777533:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342777533:root",
+            "repository": "rebron1900/dsh-mnemosyne",
+            "path": "",
+            "revision": "65f36a6ab57cdf4a7dec93d046a0c1e24006f00c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "804bbde8dbb5f1de5ae95ffa881e2c937600624121eaa8c57f69c5e820518c52",
+                "code": "65f36a6ab57cdf4a7dec93d046a0c1e24006f00c",
+                "maintenance": "ef7c36ae831b8f7fdec79019303c93b1f82c72b4b8088b136071ccbbbdb64f2d"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bf59eb743d0bccf5c85effc2ac273ed8",
+    "identity": "github:1333773635:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333773635:root",
+            "repository": "ljsysfurryACE/dsh-memory-director",
+            "path": "",
+            "revision": "b5950d82b7dac6f3aac36ef573eeeacafe2f94f0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b9032507e6cf2762f6b26332a0902af8ea8a2fbd2023295711a21a737f3acbf6",
+                "code": "b5950d82b7dac6f3aac36ef573eeeacafe2f94f0",
+                "maintenance": "54055da31fa287f4269ac5844f4bde7cc85d1678b983307552272f4e9bc8e2b6"
+            }
+        }
+    }
+}

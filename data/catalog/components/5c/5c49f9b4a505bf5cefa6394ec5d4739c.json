@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5c49f9b4a505bf5cefa6394ec5d4739c",
+    "identity": "github:1324754350:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1324754350:root",
+            "repository": "seed-forge/harness-ai-kit",
+            "path": "",
+            "revision": "43d6a659cb0d1b3409f8b0a98166f964bc067e7a",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "7171c13a1db0dd94ddb3b72d8f42d602aa0c9a216ac0729c33055ad66326c078",
+                "code": "43d6a659cb0d1b3409f8b0a98166f964bc067e7a",
+                "maintenance": "a070f044ba2fb1778de6c2e84c4cefe8fc0044fa1ffe4a2e3dbefead0de00821"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "841101f73b58465dc1305e90b9cb337b",
+    "identity": "github:1346049159:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346049159:root",
+            "repository": "entireyu/dsh-webui-plus",
+            "path": "",
+            "revision": "a7f549a72e50722c5626d038b9015b8910db73a2",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "00b1fd0667c5cfa54c52db47f23914b5468dbb9224a7708607ee2b4ac1b8286f",
+                "code": "a7f549a72e50722c5626d038b9015b8910db73a2",
+                "maintenance": "9261db1707b4e65bcbd71b9468a2c678bc3ef36e3f88b36a496fc8ab02ec8faa"
+            }
+        }
+    }
+}

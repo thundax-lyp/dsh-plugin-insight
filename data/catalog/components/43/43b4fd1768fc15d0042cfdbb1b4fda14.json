@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "43b4fd1768fc15d0042cfdbb1b4fda14",
+    "identity": "github:1393509951:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1393509951:root",
+            "repository": "BeyondandSharp/dsh-plugin-scaling",
+            "path": "",
+            "revision": "ca886d1bf47f7a80d8da015922bdb967a1e23262",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1b82f9dc768bf20ea15bb6401f91d721affe46ed5287fe0a8e4e514f4949fa53",
+                "code": "ca886d1bf47f7a80d8da015922bdb967a1e23262",
+                "maintenance": "66b9d345795121374dae6ae45c8eccfb3aab33a900eb8eb3fcfc1be079bfd144"
+            }
+        }
+    }
+}

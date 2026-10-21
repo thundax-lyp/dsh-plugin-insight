@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "84bd73d2a8d62be1e2ab8f998186e6c0",
+    "identity": "github:1424508490:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424508490:root",
+            "repository": "xt765/dsh-message-edit",
+            "path": "",
+            "revision": "e8608661f06a051f4e291aefc7a0025dcdda8e07",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3a387f6a37e9e9e02835ad92f3e66f168679a1fea2f19f2e0dd46504d2f414fb",
+                "code": "e8608661f06a051f4e291aefc7a0025dcdda8e07",
+                "maintenance": "e04ca63f625e623efadb6a2d69ee08e8dc90596f1aa103e007264369df662327"
+            }
+        }
+    }
+}

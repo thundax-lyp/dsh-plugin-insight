@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5d7ed62a2b798c8f239a5cf3a662f209",
+    "identity": "github:1343877504:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343877504:root",
+            "repository": "honlnk/dsh-input-assist",
+            "path": "",
+            "revision": "11e78ed37ddef944b364916bba0730df29f6815d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d9b4d3639b6bbbf0731bc1884b02cc877561836e859ef6cfedc809c9f63d88fb",
+                "code": "11e78ed37ddef944b364916bba0730df29f6815d",
+                "maintenance": "3194c12181588b8b8666e17d278825e27bae366507c017aeacaab38f9d4a9260"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ed11658c7e910dc08857ecf9310e0934",
+    "identity": "github:1334305310:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334305310:root",
+            "repository": "chokwinlee/deepseek-harness-desktop",
+            "path": "",
+            "revision": "1b17b8d82cd2b7d4b03fad3eade1de6bbc4acbce",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "ea74200a15fffcd426e09e47ccc8463f1a72740e96883c1956457a238c0dbb40",
+                "code": "1b17b8d82cd2b7d4b03fad3eade1de6bbc4acbce",
+                "maintenance": "5f544ca3487190d73b486f5fd4d9c612176bc213d77c0f3412b5ffb3cd0c7d2a"
+            }
+        }
+    }
+}

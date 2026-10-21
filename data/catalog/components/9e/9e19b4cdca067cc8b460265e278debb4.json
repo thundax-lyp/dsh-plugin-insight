@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9e19b4cdca067cc8b460265e278debb4",
+    "identity": "github:1334868465:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334868465:root",
+            "repository": "p2coder/dsh-task-control",
+            "path": "",
+            "revision": "f1da5babc880c95bdf17688942eea4a96dd4424a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "11b24d42f55565d02d38097554ef7f80d7db053d3a790644d3d212d3093d55c4",
+                "code": "f1da5babc880c95bdf17688942eea4a96dd4424a",
+                "maintenance": "09d46f26edc538696868934eb95fe001c49ff8ea828fdb58f0de93513448ee6c"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "947f8fec489e2a057a03a793f1a684a5",
+    "identity": "github:1399662836:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1399662836:root",
+            "repository": "Cci-65/deepseek-harness-plugin",
+            "path": "",
+            "revision": "1bb4a8ed15dd28050cc6a5708b78b901533bbbd8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9855cf51daaf0022322a1586cdc6a0add37204c48b528f4d5c6d131f30341acc",
+                "code": "1bb4a8ed15dd28050cc6a5708b78b901533bbbd8",
+                "maintenance": "a9fb173cb2995553540ec2a3e08eace1769e541393fe2480d4b3d6fa86d43f7c"
+            }
+        }
+    }
+}

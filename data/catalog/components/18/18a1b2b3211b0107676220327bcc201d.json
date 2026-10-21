@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "18a1b2b3211b0107676220327bcc201d",
+    "identity": "github:1344703660:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1344703660:root",
+            "repository": "alex-dsh-plugin/open-in-vscode",
+            "path": "",
+            "revision": "6bb966797736742d7f181dbbb019520989b8f7af",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "d707f7edb28e72bd1dd01eae31a3c6ec7b61ea6bf479e153e196d4440dfe38d5",
+                "code": "6bb966797736742d7f181dbbb019520989b8f7af",
+                "maintenance": "59c3105c1e39127df97978b7e455ebd0021825b30c234fdbe458a4e122005ab1"
+            }
+        }
+    }
+}

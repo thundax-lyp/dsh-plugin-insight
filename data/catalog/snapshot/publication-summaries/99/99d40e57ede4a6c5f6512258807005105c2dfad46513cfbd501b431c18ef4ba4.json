@@ -1,5 +1,0 @@
-{
-  "text": "为会话与模型设置自动压缩阈值，保留近期上下文并调用宿主压缩后端。",
-  "revision": "c80abc7c4904fee9206f8649214a211ef84961ff",
-  "source_url": "https://github.com/5aaee9/pi-agent-extensions/blob/c80abc7c4904fee9206f8649214a211ef84961ff/dsh-autocompact/README.md"
-}

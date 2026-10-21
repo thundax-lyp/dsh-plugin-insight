@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "48db5cf88b5660964ae80a484495a844",
+    "identity": "github:1342491575:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342491575:root",
+            "repository": "SeerableOfficial/dsh-web-search-toggle",
+            "path": "",
+            "revision": "aff08de33f44ca2816ac7983aaa755c6723829e7",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "cdd92d27c64da9dba4d99367ea1e0fff14787768ca72bfb44721cf4961b15c43",
+                "code": "aff08de33f44ca2816ac7983aaa755c6723829e7",
+                "maintenance": "0a0b093a54c6628fc6e3dec45c5b709a8834172ee8dd3b0508bc20d744c92b1d"
+            }
+        }
+    }
+}

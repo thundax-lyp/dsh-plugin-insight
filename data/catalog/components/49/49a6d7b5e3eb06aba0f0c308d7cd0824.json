@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "49a6d7b5e3eb06aba0f0c308d7cd0824",
+    "identity": "github:1413012630:plugin",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1413012630:plugin",
+            "repository": "OrderG-X/dsh-mac-computer-use",
+            "path": "plugin",
+            "revision": "27ad23d96a7a4ecfc93555ea8e4b87d58c48f3d5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "29a4e575c213aa1c52e86b11613d5568ad617517ab5d96b0a25671dff8e970f6",
+                "code": "27ad23d96a7a4ecfc93555ea8e4b87d58c48f3d5",
+                "maintenance": "452a141945e7c80de3ac14b8a6dca4b83218030c315e3aa0a4ec959817d9a528"
+            }
+        }
+    }
+}

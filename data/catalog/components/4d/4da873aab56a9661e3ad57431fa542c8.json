@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4da873aab56a9661e3ad57431fa542c8",
+    "identity": "github:1337961395:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337961395:root",
+            "repository": "jiel521125/dsh-anlayzer",
+            "path": "",
+            "revision": "776e740e352b4159666d3302bd98c654a3117b13",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "17af1cc191f39e780198d866d69cc279c2e79230423cca37316bee878957dfae",
+                "code": "776e740e352b4159666d3302bd98c654a3117b13",
+                "maintenance": "77f273068eb54233b6186f693d78f4d1037f3d1b3ac2bf468cf3ada6ea5792b3"
+            }
+        }
+    }
+}

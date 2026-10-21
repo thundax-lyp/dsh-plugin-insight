@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "478a7e9108ddf49cdda19f59d42ac069",
+    "identity": "github:1336890640:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336890640:root",
+            "repository": "gdy01/dsh-token-cost",
+            "path": "",
+            "revision": "637ea42376fe29c309d7484c2edaf65420f9aa13",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d6c9994762107a74e61677a01619fafc599b437de776e34bfe6bedeb1cb3212b",
+                "code": "637ea42376fe29c309d7484c2edaf65420f9aa13",
+                "maintenance": "960d75db36e4d000841f65dd8dc324ff7bcd4a4ec087af0b65a7f60e9b8cdc6b"
+            }
+        }
+    }
+}

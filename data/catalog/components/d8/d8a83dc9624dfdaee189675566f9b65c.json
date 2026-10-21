@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d8a83dc9624dfdaee189675566f9b65c",
+    "identity": "github:1333917329:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333917329:root",
+            "repository": "sereinmono/dsh-desktop-pet",
+            "path": "",
+            "revision": "955cbcebbdb280c20f76d267b12fc0fbf28b13ea",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5bcf8b8893a05fb57c87610782f970bbc915f00dc03125e935f4a25aa926ba33",
+                "code": "955cbcebbdb280c20f76d267b12fc0fbf28b13ea",
+                "maintenance": "f21cf312735fcd14bfb8726beccddd29cdfc9b5646a1c44ba1ea69c2d5ad3fa0"
+            }
+        }
+    }
+}

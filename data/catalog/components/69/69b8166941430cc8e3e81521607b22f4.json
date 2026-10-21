@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "69b8166941430cc8e3e81521607b22f4",
+    "identity": "github:1424358723:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424358723:root",
+            "repository": "bestGi/dsh-rf-toolkit",
+            "path": "",
+            "revision": "547d24c01b78508e30a74c1ab516ac17dd6ff068",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5243824e98df4ab913353909bd556d3c589391ed3178a0af97f2e72f387660db",
+                "code": "547d24c01b78508e30a74c1ab516ac17dd6ff068",
+                "maintenance": "50e425af255085e8755e0541aab54142c57557fdebd9bdaab295d808518dda15"
+            }
+        }
+    }
+}

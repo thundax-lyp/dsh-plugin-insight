@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "be4255e0514c61fcea162589435f1a3d",
+    "identity": "github:1334718358:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334718358:root",
+            "repository": "dhicoc/dsh-wuyun-liuqi",
+            "path": "",
+            "revision": "e4277a2455f4898dd51c4d39962f48b87b9fb00d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "cbdf58afb0602b847f4e67f98f2172dafbe8487fd67f6964733d92af84140873",
+                "code": "e4277a2455f4898dd51c4d39962f48b87b9fb00d",
+                "maintenance": "dc521690f481d24b375d6b3d57be359b1e984fa37df8722b445191365aef087b"
+            }
+        }
+    }
+}

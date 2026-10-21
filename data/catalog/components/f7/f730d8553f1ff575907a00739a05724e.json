@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f730d8553f1ff575907a00739a05724e",
+    "identity": "github:1418817912:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1418817912:root",
+            "repository": "yffo/dsh-engramory-recall",
+            "path": "",
+            "revision": "4ff0a4df187c5f4b9532b79c70084e9c56b786ad",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0bc8e7de829b029f1baaa791f1d22ff9f4f4c9a3266205e9070eae03ff847496",
+                "code": "4ff0a4df187c5f4b9532b79c70084e9c56b786ad",
+                "maintenance": "06cb28be6cff117faafa4f5844a3867f9441a199c9d2386a12f43ed568933eed"
+            }
+        }
+    }
+}

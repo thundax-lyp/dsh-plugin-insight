@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "0e30503eafc532f130c02f916f657af1",
+    "identity": "github:1345008989:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345008989:root",
+            "repository": "mienfong/dsh-session-mgr",
+            "path": "",
+            "revision": "4cb9ce95e9cf6361f0d3d0d959ef1affda43d4bd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "d5e8c5bc2cccfc1907c4eae1afc15885cd67ea96a0386f62d40d0aac044677ef",
+                "code": "4cb9ce95e9cf6361f0d3d0d959ef1affda43d4bd",
+                "maintenance": "84682a5ea96f8383f6bb94ac5959304fd086d539148bd594a3c37eb4ccf3165a"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e4f3e639703e70c922bf8526aef9bc78",
+    "identity": "github:1346872592:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346872592:root",
+            "repository": "AFAP/dsh-trajectory-traceview",
+            "path": "",
+            "revision": "2d1d07d000c0ee778d91138d9054cfda2d7462c1",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "38ad6d857b71d6fd07fceec8a129f5309d5d994774db70b24107e9e7a1e81bf7",
+                "code": "2d1d07d000c0ee778d91138d9054cfda2d7462c1",
+                "maintenance": "8793c4ee1c68cd92d374ac9565255061faf808a9a6b629bb84aa0b02aeab35e6"
+            }
+        }
+    }
+}

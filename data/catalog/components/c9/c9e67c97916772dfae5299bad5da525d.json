@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c9e67c97916772dfae5299bad5da525d",
+    "identity": "github:1222262862:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1222262862:root",
+            "repository": "phoenixlucky/zerotoken-skill",
+            "path": "",
+            "revision": "cc26fda4ee949e29bfdc11ee43123292025cde3f",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "150b9ca2abdac758a55ca9dcf3656a22379dc21408a9099c535611f6f5da2d2b",
+                "code": "cc26fda4ee949e29bfdc11ee43123292025cde3f",
+                "maintenance": "d1426ca534d63b895cb435ca3e495fb709a23eb10230e894752a30b8c751203c"
+            }
+        }
+    }
+}

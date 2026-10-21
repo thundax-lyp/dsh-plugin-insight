@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8280218470806834b6bbce9e66fc0f15",
+    "identity": "github:1299508956:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1299508956:root",
+            "repository": "Xiamu-ssr/dsh-wind-aifin",
+            "path": "",
+            "revision": "0a05c84b8d631d3672e1857dd807691eee0150d0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5d62ef04d782462e8b8a0948d7b175f9336888c850b9fac8448a02854c4040fa",
+                "code": "0a05c84b8d631d3672e1857dd807691eee0150d0",
+                "maintenance": "1f59e460e3771d4cd00becb3e1bacf27b89ad95e109df5c68ff9155d6e3a7b76"
+            }
+        }
+    }
+}

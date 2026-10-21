@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "79ea0d83a433b90d5091efba000a7bee",
+    "identity": "github:1339844498:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339844498:root",
+            "repository": "PolinniZhong/dsh-personal-center",
+            "path": "",
+            "revision": "731a2593c2e32012781effd276a082b95d9b63fc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "d8a40c8c559bbae77c9f2912008f4236b72c31c38f9770c3239470aba1dece33",
+                "code": "731a2593c2e32012781effd276a082b95d9b63fc",
+                "maintenance": "4d8f4bb9716299da516b2f0f7e7c99c06cdc44165a5a94d3908bac9fcca01138"
+            }
+        }
+    }
+}

@@ -1,7 +1,0 @@
-{
-  "revision": "9808ab77392c7cd285f87de094daff1fcd322109",
-  "items": {
-    "模型工具": "memory_save与memory_forget。",
-    "后台": "持久记忆域与分类系统提示注入。"
-  }
-}

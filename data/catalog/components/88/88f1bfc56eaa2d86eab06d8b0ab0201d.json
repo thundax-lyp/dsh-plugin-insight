@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "88f1bfc56eaa2d86eab06d8b0ab0201d",
+    "identity": "github:1335140426:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335140426:root",
+            "repository": "guo-ziao/dsh-interrupt-button",
+            "path": "",
+            "revision": "f91c86b720075238b9420b10b2f19b833ebae0fd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "64a765601fd6c12fb1ba17f35bce93d8372509cc5850d9160be9f6bb97074dd7",
+                "code": "f91c86b720075238b9420b10b2f19b833ebae0fd",
+                "maintenance": "d76f8b8623a1dd1c3d56d9f9f6728da7367d8e7677aa8ce3ffe014e2ab5cb088"
+            }
+        }
+    }
+}

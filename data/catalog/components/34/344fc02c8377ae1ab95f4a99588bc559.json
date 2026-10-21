@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "344fc02c8377ae1ab95f4a99588bc559",
+    "identity": "github:1397999044:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1397999044:root",
+            "repository": "Hu9956/DSH-model-controls",
+            "path": "",
+            "revision": "5e0add4e4a235c3f94cd05ad43122f85d35924cd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9948ec95e7806bae08cb219894f4e1e39d99daaa1b00a586e7afc9fd9702ede4",
+                "code": "5e0add4e4a235c3f94cd05ad43122f85d35924cd",
+                "maintenance": "88abd72fbff0a5e6a9c4fdc93d3504227421c9dc36a72dcc09cfda4905a097d6"
+            }
+        }
+    }
+}

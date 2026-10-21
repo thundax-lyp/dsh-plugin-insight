@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "82e4bfb6d5b70ac1e3e04fcc89563d65",
+    "identity": "github:1404199242:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1404199242:root",
+            "repository": "AzureSkyHuHu/dsh-chinese-mode-modern",
+            "path": "",
+            "revision": "a3def70c2bdf52b15233103bbe9718b5e2537bf5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "913ef74434eea294c01eebe0b65c4b7752eb5f7f70341319436e9cbc4636dadb",
+                "code": "a3def70c2bdf52b15233103bbe9718b5e2537bf5",
+                "maintenance": "1a56b31f3c05e8401ea4a3d0f6092b540468a321b0823954e258ed2a644ba868"
+            }
+        }
+    }
+}

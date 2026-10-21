@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7c99bd7a9f2b75abce2137c1d22e15b3",
+    "identity": "github:1334751719:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334751719:root",
+            "repository": "a792883583/dsh-chat-toc",
+            "path": "",
+            "revision": "f6d43a9b381bcd08171cbc6f073d26561b9d9317",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f9b4fc81aba5cd2aa51f19adc14ac9873375d76d9347109cbfe1c64cc28dd1c5",
+                "code": "f6d43a9b381bcd08171cbc6f073d26561b9d9317",
+                "maintenance": "27b66a09fa7c1f44133761c0d7a476e3ab142c036da8dc822f96c5fd06072b65"
+            }
+        }
+    }
+}

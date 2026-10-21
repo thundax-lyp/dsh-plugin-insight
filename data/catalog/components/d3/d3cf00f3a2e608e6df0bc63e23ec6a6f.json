@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d3cf00f3a2e608e6df0bc63e23ec6a6f",
+    "identity": "github:1368449528:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1368449528:root",
+            "repository": "fyisgod/dsh-selection-tools",
+            "path": "",
+            "revision": "3f292d92c5686c2650cc22b6936cba18bb96d425",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "bfe1b63f76834d570ec4d7e7c5ed2428c0f1f107e0498ae82baa74a143ea530e",
+                "code": "3f292d92c5686c2650cc22b6936cba18bb96d425",
+                "maintenance": "61fe843ad0e1eddeacde4d2730fa24e09d92b598e01befbb18a989171af69f2a"
+            }
+        }
+    }
+}

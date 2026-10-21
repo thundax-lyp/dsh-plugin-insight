@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6a6e39663750431ab679d7f34dfb404c",
+    "identity": "github:1334845104:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334845104:root",
+            "repository": "Nothree-code/voco-input-sh",
+            "path": "",
+            "revision": "bc001510fd944f94e7824bfff866b79e674fc928",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "aa3a549cf535b8618c55b24ffb47903e711d66cd02087a653c188f690f7e2d49",
+                "code": "bc001510fd944f94e7824bfff866b79e674fc928",
+                "maintenance": "1b9380818e23ea5b258975353335e9903a8dd5fdb34878458c04e35f97a37e6d"
+            }
+        }
+    }
+}

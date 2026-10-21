@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "799bb1646d1fba23b7b5fb8bbc628a2e",
+    "identity": "github:1388366177:packages-dsh-ask-highlight",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1388366177:packages-dsh-ask-highlight",
+            "repository": "feng-yifan/dsh-plugins",
+            "path": "packages/dsh-ask-highlight",
+            "revision": "9e104268f3e2185425c761a89e2039bb4e8a06fc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "54eaf1d2b9b923bd7a4fc76faae34946ce85133e6f95f27f98384657db74336f",
+                "code": "9e104268f3e2185425c761a89e2039bb4e8a06fc",
+                "maintenance": "819b6aa6c794da92b03320014249899e92aafd2eee0158f57ef9c9aa19818f05"
+            }
+        }
+    }
+}

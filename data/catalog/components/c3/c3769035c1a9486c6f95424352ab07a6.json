@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c3769035c1a9486c6f95424352ab07a6",
+    "identity": "github:1334345001:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334345001:root",
+            "repository": "jitengfei/dsh-whale-arcade",
+            "path": "",
+            "revision": "45318471464e403805328fbacc797fee6d9e87af",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "469ade6d775e6452c3c12c59c411201dc8a22ed0af8f30e3e870bd0db95f4520",
+                "code": "45318471464e403805328fbacc797fee6d9e87af",
+                "maintenance": "c1765a260512a5fda2ef550b149137572f67466d5312c2e73362daf1b8137646"
+            }
+        }
+    }
+}

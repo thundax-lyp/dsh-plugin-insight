@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6a1bb16b6ace0106807215a7782633bb",
+    "identity": "github:1375466400:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1375466400:root",
+            "repository": "fu827707013/dsh-model-health-probe",
+            "path": "",
+            "revision": "260f57c5ac1d6255f24d8f7ee01b7ddd55d5650d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6d603861a5829eabc001ee705d120b8bc97ec5a7a770261bb78725d0412dcd57",
+                "code": "260f57c5ac1d6255f24d8f7ee01b7ddd55d5650d",
+                "maintenance": "75d83ea3efc46b379fe5d83c1bcd1a1c8163dbd1ab7133727b6b306813872219"
+            }
+        }
+    }
+}

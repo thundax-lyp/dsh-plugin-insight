@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "84487871879e5948e9a51a15bfdf5b20",
+    "identity": "github:1351222826:dsh-git-badge",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1351222826:dsh-git-badge",
+            "repository": "Kevin-McIsaac/dsh-workspace-git-badge",
+            "path": "dsh-git-badge",
+            "revision": "ebdaab4f9a8bdf7ae0ef2a08716cb71cb0b2ece3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3cd5ff954b846a67c57a4c33bfc1d1ff5b6928c759ced77c108dff7fb247b012",
+                "code": "ebdaab4f9a8bdf7ae0ef2a08716cb71cb0b2ece3",
+                "maintenance": "2006164b18fa56f2419eb93cb4016cfde2897dedf240003d20b969c3217a6d30"
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "76a03e91be2c3da69126ed124acb3a5d",
+    "identity": "github:1325458176:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1325458176:root",
+            "repository": "lzszq/dsh-scholar",
+            "path": "",
+            "revision": "086b19a2fbd7824dd71dde7ea2043f22888606e0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "3ad6a0a1649611ee7e49feb67b7959e2aa80fdb98b65063fe3ded4a5bee316f0",
+                "code": "086b19a2fbd7824dd71dde7ea2043f22888606e0",
+                "maintenance": "42ab9dcf3359f65c2369ae1a9f8abc2bb4c1ca16b48f3def40e3835e91996070"
+            }
+        }
+    }
+}

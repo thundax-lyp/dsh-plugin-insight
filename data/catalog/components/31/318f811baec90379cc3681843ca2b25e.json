@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "318f811baec90379cc3681843ca2b25e",
+    "identity": "github:1374637933:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1374637933:root",
+            "repository": "john-walks-slow/dsh-clear-mind",
+            "path": "",
+            "revision": "0e8fc34de5111e1f99db067a2c5ee0c3fd315a63",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "edcf79586c1b13af5b1198630fa43819513f1b09b56039c0374fb7f0284258d2",
+                "code": "0e8fc34de5111e1f99db067a2c5ee0c3fd315a63",
+                "maintenance": "d00fc55c095d8db13f00d4faa6bb64cc809d343e2696bd84bb084c54a7944ebf"
+            }
+        }
+    }
+}

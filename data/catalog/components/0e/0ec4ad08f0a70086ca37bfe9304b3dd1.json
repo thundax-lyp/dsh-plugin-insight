@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0ec4ad08f0a70086ca37bfe9304b3dd1",
+    "identity": "github:1425185112:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425185112:root",
+            "repository": "architect-xyz/liquid-dsh-plugin",
+            "path": "",
+            "revision": "e41ae33db25c0c9db8342f0618b58713c6d1bfc2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "918810bf3a9700f34a789f06e640a72414666c8c8f60ed28f21331de12da363a",
+                "code": "e41ae33db25c0c9db8342f0618b58713c6d1bfc2",
+                "maintenance": "58d723f928f409073f850b4ab8481623be3828b5553d27550cef5d273e55057c"
+            }
+        }
+    }
+}

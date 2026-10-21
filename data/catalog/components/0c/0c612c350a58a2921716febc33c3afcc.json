@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0c612c350a58a2921716febc33c3afcc",
+    "identity": "github:1355933265:plugin-dsh-opencode-free-models",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1355933265:plugin-dsh-opencode-free-models",
+            "repository": "yu-wenchao/dsh-opencode-free-models",
+            "path": "plugin/dsh-opencode-free-models",
+            "revision": "8adb3ae3d4dcfd9399eb4f720e1261ca85bdf0e9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d270434021d88172bac288b8a92187971daaed213e870d08661e97356ed3e121",
+                "code": "8adb3ae3d4dcfd9399eb4f720e1261ca85bdf0e9",
+                "maintenance": "c285bed5b766326e078600e8854acd7f8100ae3149b1569e915136762385e9d2"
+            }
+        }
+    }
+}

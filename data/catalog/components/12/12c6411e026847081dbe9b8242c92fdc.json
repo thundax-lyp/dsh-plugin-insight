@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "12c6411e026847081dbe9b8242c92fdc",
+    "identity": "github:1323599380:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1323599380:root",
+            "repository": "bill9109/dsh-web-ui-notify",
+            "path": "",
+            "revision": "9130800a2553e3a64937e426ea4a5346d3f99a88",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "56838c459a3924e3c7294bb932dcb0ad82e6411f7a85a5622fe302fbaa0c348d",
+                "code": "9130800a2553e3a64937e426ea4a5346d3f99a88",
+                "maintenance": "ca968a2a9b06dffd0d537c3654b08dcbef13a8deb231f99c0c4562b573eda666"
+            }
+        }
+    }
+}

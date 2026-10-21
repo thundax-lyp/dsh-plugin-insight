@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d91f4d9fa63eb3169c9bdd9b23e65abc",
+    "identity": "github:1410172787:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1410172787:root",
+            "repository": "llafztq/dsh-video-tool",
+            "path": "",
+            "revision": "9be77de28cb57034217615dfd40143800bdd3841",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4a25745842c1b4568a202083a07c6ff01848e68187fc86493cddc7b41831c62f",
+                "code": "9be77de28cb57034217615dfd40143800bdd3841",
+                "maintenance": "e94b9eec8f5843175824be5aad8dfc43af69ef2f1b6bd82c274fa08d9baebcf3"
+            }
+        }
+    }
+}

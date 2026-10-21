@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "abda5ed64d79684981e1ddcadd8bb026",
+    "identity": "github:1335146824:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335146824:root",
+            "repository": "pany0593/dsh-ui-notifications",
+            "path": "",
+            "revision": "5c59129423fa101e712724796f7619c1f9f30be5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fdf47a3b946efc5c764d58575223bae46d542ffb14ae251ad693b27ef5fb3db4",
+                "code": "5c59129423fa101e712724796f7619c1f9f30be5",
+                "maintenance": "154a230b19afd414d2e81d4454ec97b565b409159f95d9885ada214b1d92fc5d"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "542ad78fda3172c32ba7f7b25cde7bc1",
+    "identity": "github:1333922780:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333922780:root",
+            "repository": "rirko/dsh-melody-launcher",
+            "path": "",
+            "revision": "a499e4ec5e0bad694373841b271e1fd9e0343d9e",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "a70021a318901d2c44076f6ebbf60ba9ca13df68d5ea594716cc74792f3054cf",
+                "code": "a499e4ec5e0bad694373841b271e1fd9e0343d9e",
+                "maintenance": "63da392178f60b0d05d45faab3f14b6436da1e4e487aa12553043b899b900daa"
+            }
+        }
+    }
+}

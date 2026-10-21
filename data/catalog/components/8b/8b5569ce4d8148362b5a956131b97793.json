@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "8b5569ce4d8148362b5a956131b97793",
+    "identity": "github:1335275762:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335275762:root",
+            "repository": "springbrand-lab/dsh-plugin-market",
+            "path": "",
+            "revision": "183527a7c700ed2fb2f2698197756fec9227a6d4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "b92383fa0e2c170376b4615787c5d6b6232b9bdff4bed5f0fae9adc68c9cd79e",
+                "code": "183527a7c700ed2fb2f2698197756fec9227a6d4",
+                "maintenance": "7736eaaa8f5fa4f69ec0e4e985a3661539f04c39f7826d4ba2ec7fded4228fd4"
+            }
+        }
+    }
+}

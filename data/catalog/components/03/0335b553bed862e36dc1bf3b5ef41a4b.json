@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "0335b553bed862e36dc1bf3b5ef41a4b",
+    "identity": "github:1335840221:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335840221:root",
+            "repository": "JohnXu22786/browser-automation",
+            "path": "",
+            "revision": "5c62af54f82c75bb841ae44036532e83fbe4cd1c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "5ce85339e5e1d735f4f004b29768dd59119455282c51777d65adaa6c1b6f727d",
+                "code": "5c62af54f82c75bb841ae44036532e83fbe4cd1c",
+                "maintenance": "e8ea4ee89ca29c34c90af4e51dfccafc4f69bc36e9225f4df59cb489289ab548"
+            }
+        }
+    }
+}

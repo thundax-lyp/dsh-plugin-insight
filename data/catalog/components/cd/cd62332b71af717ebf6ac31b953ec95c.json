@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "cd62332b71af717ebf6ac31b953ec95c",
+    "identity": "github:1297278222:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1297278222:root",
+            "repository": "sandbaseai/sandbase-harness",
+            "path": "",
+            "revision": "427b52a96a5309ca23268407f85c237468ab6a4e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "8f6e990e88e4fe07a760f1b25d1ea26f1126e0560d91168cb8625033a5243d54",
+                "code": "427b52a96a5309ca23268407f85c237468ab6a4e",
+                "maintenance": "83c8ab1f4cf0cb3589dba921db3974ee23ff71ddfd111619f3eca069cf5de54e"
+            }
+        }
+    }
+}

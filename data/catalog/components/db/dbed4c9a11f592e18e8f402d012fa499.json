@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "dbed4c9a11f592e18e8f402d012fa499",
+    "identity": "github:1402607261:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1402607261:root",
+            "repository": "xfpuls/dsh-usage-suite",
+            "path": "",
+            "revision": "3b52b51c39d13a7eb616b9360c92e2d2c795a0bd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "75333c9a6c8f0e4594b7977cc560530a807712cf5de760f58990cfaf4cf42251",
+                "code": "3b52b51c39d13a7eb616b9360c92e2d2c795a0bd",
+                "maintenance": "a465e2a2c76a65e403937bb5847b29247755c96c56a6fa6af408616a1d604762"
+            }
+        }
+    }
+}

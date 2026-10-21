@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2cc292a45f110ba2ee640f6c18d73f93",
+    "identity": "github:1352031965:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1352031965:root",
+            "repository": "better-er/dsh-peak-block",
+            "path": "",
+            "revision": "eb9a4081e37bfd52366a7cbe564f37ad1ef048d6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fce38332d8ea3a3c92cf8cf46c5d9d6f31b001376540bc114e05442a0a9c38d6",
+                "code": "eb9a4081e37bfd52366a7cbe564f37ad1ef048d6",
+                "maintenance": "1f3aa1a75bff25b010b6c433cad6262600a00ff0435712516e21286d8ce47d9c"
+            }
+        }
+    }
+}

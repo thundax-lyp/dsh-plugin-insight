@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "7840196794a8ee2d5f7d93d52af22716",
+    "identity": "github:1334674836:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334674836:root",
+            "repository": "mexiaosqwq/dsh-web-mobile",
+            "path": "",
+            "revision": "10e58ce0c4ed424c7fbd9c91d48db06c6061b4e4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "faeda596866e67cdae61f1fc417a953feaca8cb1162254ddae88ffde39f2317a",
+                "code": "10e58ce0c4ed424c7fbd9c91d48db06c6061b4e4",
+                "maintenance": "cbf441171119d93b6c9cf39ce50e30c982e731ba5547a0801ac4cfb7e485b97f"
+            }
+        }
+    }
+}

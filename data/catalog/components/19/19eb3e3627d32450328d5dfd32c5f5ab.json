@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "19eb3e3627d32450328d5dfd32c5f5ab",
+    "identity": "github:1338192107:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338192107:root",
+            "repository": "zhouchengke2046/dsh-sidebar-balance",
+            "path": "",
+            "revision": "a446c30f183ec274232d70d831e12a504e6a03a9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "34c8dfdd7414b1fd2627fd3afbc276b5708c037a153e109785fdf25e92bdfb4b",
+                "code": "a446c30f183ec274232d70d831e12a504e6a03a9",
+                "maintenance": "24d09f93e452a74e600d2e22eb9f35a43191037598f239d68883787ca2fde69a"
+            }
+        }
+    }
+}

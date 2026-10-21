@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2cd634c76ed6d8fe1d7fd3bee561cd1d",
+    "identity": "github:1321865940:dsh-service-control",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1321865940:dsh-service-control",
+            "repository": "lxp731/agents-plugins",
+            "path": "dsh-service-control",
+            "revision": "ad955d486a421ec0c58d25270d5350199dd97069",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "47503ee22d67d4b10413aca66eac3962a769ccac0561089138eb477211e7f924",
+                "code": "ad955d486a421ec0c58d25270d5350199dd97069",
+                "maintenance": "2e801da8b0e402932e1387cc86f23a4c95fe3265e15329a775b323a8d8f707e1"
+            }
+        }
+    }
+}

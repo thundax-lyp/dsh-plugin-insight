@@ -1,4 +1,0 @@
-{
-  "revision": "7608cb9b7b61447a3aff14491537ba7ee8caad6b",
-  "text": "适合先生成本地草稿。明确base和输出路径，逐段核业务动机、breaking与已跑测试；只有确实要创建PR时才用openPr。"
-}

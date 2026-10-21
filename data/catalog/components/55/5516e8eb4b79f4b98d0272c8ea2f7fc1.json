@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5516e8eb4b79f4b98d0272c8ea2f7fc1",
+    "identity": "github:1335155950:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335155950:root",
+            "repository": "Hongcheng-LI/dsh-zotero",
+            "path": "",
+            "revision": "e4042d5139aa81d810b95928d63632f80a32a7ac",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4275bde69bb409da664d890a36a1b0b8c645bc04360b69c37b7dbf9a5d3b7db7",
+                "code": "e4042d5139aa81d810b95928d63632f80a32a7ac",
+                "maintenance": "828d38e8c7daa95f1c0123753878215f7677337e2119531f8cb00f111c042eb6"
+            }
+        }
+    }
+}

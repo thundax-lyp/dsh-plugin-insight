@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8b5a17de4e9aaf9d236a272c8246f14d",
+    "identity": "github:1346928657:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346928657:root",
+            "repository": "AnakinCao/dsh-md-export",
+            "path": "",
+            "revision": "5619392300540e9e2dc59c5ed3ed87091d09225d",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "a2b79998cb570a427af31328339afd9dd4583e3a9d4bd4ddd0e45e6a638ae6f9",
+                "code": "5619392300540e9e2dc59c5ed3ed87091d09225d",
+                "maintenance": "5a74e028f29711cf5698d756cfa6a81f6d2dc10a1209fe9ed57138cfb5feedf3"
+            }
+        }
+    }
+}

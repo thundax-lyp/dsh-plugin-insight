@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5106fae68604b1afa957a849e9c87eb8",
+    "identity": "github:1347137664:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347137664:root",
+            "repository": "SuperstructureJH/dsh-workbuddy-ppt",
+            "path": "",
+            "revision": "08105627aac203c2884b674eed19349952a914fb",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b6e36f60024240670238148a939e38e5d40afd0e8c1b49820b7c8307bee8973a",
+                "code": "08105627aac203c2884b674eed19349952a914fb",
+                "maintenance": "02c687b2450354e0ee9d8093ece03dd7cf2856f53280f1a2deb8c4dedb187692"
+            }
+        }
+    }
+}

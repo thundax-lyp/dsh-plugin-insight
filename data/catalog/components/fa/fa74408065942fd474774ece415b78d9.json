@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fa74408065942fd474774ece415b78d9",
+    "identity": "github:1341409935:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1341409935:root",
+            "repository": "andyfan1094/dsh-codebase-memory",
+            "path": "",
+            "revision": "c6c64183b6c9c16b2247364ee213c7dad6402ac5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e0b4ae37f58a141e1b379870215acb1d188c10dd6fbd5d4a8d304586ae03b5cf",
+                "code": "c6c64183b6c9c16b2247364ee213c7dad6402ac5",
+                "maintenance": "ea5343d1e38a15ef1af3ae877742ab747bb5f2c175838500ba2f7fbbccdcbfb2"
+            }
+        }
+    }
+}

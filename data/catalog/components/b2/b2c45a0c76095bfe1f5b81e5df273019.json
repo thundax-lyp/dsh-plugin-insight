@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b2c45a0c76095bfe1f5b81e5df273019",
+    "identity": "github:1344830900:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1344830900:root",
+            "repository": "nicecx/dsh-matrix-skin",
+            "path": "",
+            "revision": "f54546d77de9a1674ba66361622f61e0fa285656",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "73147759e9c5bbb34cf484cd92bc0daed9daa3dc9be9384e1a5fd21fb3982f4c",
+                "code": "f54546d77de9a1674ba66361622f61e0fa285656",
+                "maintenance": "1f1e19957be2ec82bdb2e6f36e970faef78baf84f5677d51c4163d8df6ada16e"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f4159114f450b474740c78edcd4cac3c",
+    "identity": "github:1389378097:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1389378097:root",
+            "repository": "LR611415/visionforge",
+            "path": "",
+            "revision": "c5bd55bb403439c4673aeac0d19fedc4034f982b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "07126e597b51959e7d349fd9fbaccd4b5d4508ca1e6f581136788ff2aa6e8a4e",
+                "code": "c5bd55bb403439c4673aeac0d19fedc4034f982b",
+                "maintenance": "fb59fcf0c8185b5765b867c6753b475d1010fa3f5a9f11cb976da82bda867553"
+            }
+        }
+    }
+}

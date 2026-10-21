@@ -1,0 +1,465 @@
+{
+    "schema_version": 3,
+    "id": "ebf110d6be47dd83ca3adf44515d1e19",
+    "identity": "github:1336021761:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1336021761:root",
+            "repository_id": 1336021761,
+            "component_id": "root",
+            "repository": "7dgroup-ai/dsh-skill-7d-code-reviewer",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-skill-7d-code-reviewer",
+            "entry_type": "plugin",
+            "technical_category": "agent-workflow",
+            "business_category": "software-delivery",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "4ab76fec60622833708db703973f61065a23bb8410698535992bdfb771611e67",
+                "code": "bd0069f4feabbcb6ede8b0ba2da6a59f4d477057",
+                "maintenance": "3920c414991cdab36a45ac061ddfc9c0ee4c7eb920dbe2800374db1212a92a54"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-02-github-1336021761-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T03:16:33.382Z",
+                    "membership": "present"
+                },
+                {
+                    "id": "2026-10-21-02-github-1336021761-root-directory-1",
+                    "url": "https://github.com/0xsline/awesome-deepseek-harness",
+                    "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
+                    "retrieved_at": "2026-10-21T03:16:33.382Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-02-github-1336021761-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/7dgroup-ai/dsh-skill-7d-code-reviewer/blob/bd0069f4feabbcb6ede8b0ba2da6a59f4d477057/README.md",
+                    "revision": "bd0069f4feabbcb6ede8b0ba2da6a59f4d477057",
+                    "captured_at": "2026-10-21T03:16:33.382Z",
+                    "summary": "为DSH提供模板驱动的代码审查Skill，输出分级问题、文本摘要和HTML报告。",
+                    "artifact": "data/runs/2026-10-21-02/snapshots/7dgroup-ai--dsh-skill-7d-code-reviewer/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-02-github-1336021761-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/7dgroup-ai/dsh-skill-7d-code-reviewer/blob/bd0069f4feabbcb6ede8b0ba2da6a59f4d477057/src/index.ts",
+                    "revision": "bd0069f4feabbcb6ede8b0ba2da6a59f4d477057",
+                    "captured_at": "2026-10-21T03:16:33.382Z",
+                    "summary": "核查 src/index.ts、src/invariant.ts、assets/7d-code-reviewer/SKILL.md、assets/7d-code-reviewer/scripts/html-report-generation.md；src/index.ts注册一个bundled SkillProvider并读取固定Skill资源；Skill引导五步审查、按需加载检查表，再由模型填HTML占位符。",
+                    "artifact": "data/runs/2026-10-21-02/snapshots/7dgroup-ai--dsh-skill-7d-code-reviewer/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "需要一致格式代码审查记录的开发团队，输入代码或文件路径，期望交付可定位且经人工复核的问题清单与可归档报告。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1336021761-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336021761:root",
+                            "area": "code",
+                            "fingerprint": "bd0069f4feabbcb6ede8b0ba2da6a59f4d477057"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:33.382Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "src/index.ts注册一个bundled SkillProvider并读取固定Skill资源；Skill引导五步审查、按需加载检查表，再由模型填HTML占位符。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1336021761-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336021761:root",
+                            "area": "code",
+                            "fingerprint": "bd0069f4feabbcb6ede8b0ba2da6a59f4d477057"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:33.382Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1336021761-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336021761:root",
+                            "area": "code",
+                            "fingerprint": "bd0069f4feabbcb6ede8b0ba2da6a59f4d477057"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:33.382Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "Node与pnpm/宿主Skill服务依赖，Git安装可能运行prepare构建，预制包另有发布路径；未安装。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1336021761-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336021761:root",
+                            "area": "code",
+                            "fingerprint": "bd0069f4feabbcb6ede8b0ba2da6a59f4d477057"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:33.382Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "首次维护团队审查规范和模板；日常模型token、逐条复核与误报修正是成本，报告篇幅也增加阅读负担。无现金与检出率对照。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1336021761-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336021761:root",
+                            "area": "code",
+                            "fingerprint": "bd0069f4feabbcb6ede8b0ba2da6a59f4d477057"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:33.382Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "适合已有人工审查负责人、希望统一报告格式的团队先用已知缺陷样例试用。每个严重问题核对路径、条件与反例，HTML对外分享前检查转义和残留占位符。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1336021761-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336021761:root",
+                            "area": "code",
+                            "fingerprint": "bd0069f4feabbcb6ede8b0ba2da6a59f4d477057"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:33.382Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "可能降低重复组织报告时间，但不能替代测试、安全扫描或人工放行。未核实独立团队采用。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1336021761-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336021761:root",
+                            "area": "code",
+                            "fingerprint": "bd0069f4feabbcb6ede8b0ba2da6a59f4d477057"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:33.382Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "Provider职责单纯、资源路径明确、参考资料按需加载值得借鉴。可执行代码很薄，主要维护成本在规范适配和模型执行一致性；复用模板应增加确定性转义与校验，不能把启动注册测试当审查效果测试。 源码依据：[src/index.ts](https://github.com/7dgroup-ai/dsh-skill-7d-code-reviewer/blob/bd0069f4feabbcb6ede8b0ba2da6a59f4d477057/src/index.ts)、[src/invariant.ts](https://github.com/7dgroup-ai/dsh-skill-7d-code-reviewer/blob/bd0069f4feabbcb6ede8b0ba2da6a59f4d477057/src/invariant.ts)、[assets/7d-code-reviewer/SKILL.md](https://github.com/7dgroup-ai/dsh-skill-7d-code-reviewer/blob/bd0069f4feabbcb6ede8b0ba2da6a59f4d477057/assets/7d-code-reviewer/SKILL.md)、[assets/7d-code-reviewer/scripts/html-report-generation.md](https://github.com/7dgroup-ai/dsh-skill-7d-code-reviewer/blob/bd0069f4feabbcb6ede8b0ba2da6a59f4d477057/assets/7d-code-reviewer/scripts/html-report-generation.md)。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1336021761-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336021761:root",
+                            "area": "code",
+                            "fingerprint": "bd0069f4feabbcb6ede8b0ba2da6a59f4d477057"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:33.382Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "相对每次手写审查提示，增量是将检查表、严重性语言、报告模板与宿主资源定位打包为可分发流程。核心贡献是审查知识和报告组织，不是静态分析器，也没有证据证明模板能提高漏洞检出率。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1336021761-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336021761:root",
+                            "area": "code",
+                            "fingerprint": "bd0069f4feabbcb6ede8b0ba2da6a59f4d477057"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:33.382Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "结构一致能否转化为有效审查？入口仅分发Markdown，HTML生成说明要求模型自行转义和填占位符，README明确没有结果验证器。模型可能输出漂亮但错误的问题或未转义片段，启动invariant只保证Skill存在，并不检查审查结论。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1336021761-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336021761:root",
+                            "area": "code",
+                            "fingerprint": "bd0069f4feabbcb6ede8b0ba2da6a59f4d477057"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:33.382Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "由模板与语义检查分离推导，可先要求模型生成有路径、行号、可复现条件的结构化finding，再用确定性渲染器生成HTML；每条严重问题附最小反例。未验证假设是降低虚报与格式错误，而非仅美化。对已知缺陷/无缺陷代码盲评，若误报率与证据可复现性不改善则否定。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1336021761-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336021761:root",
+                            "area": "code",
+                            "fingerprint": "bd0069f4feabbcb6ede8b0ba2da6a59f4d477057"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:33.382Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T03:16:33.382Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "bd0069f4feabbcb6ede8b0ba2da6a59f4d477057",
+                "reviewed_at": "2026-10-21T03:16:33.382Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1336021761:root",
+                        "area": "code",
+                        "fingerprint": "bd0069f4feabbcb6ede8b0ba2da6a59f4d477057"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 0,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "rationale": "novelty是模板封装小档；mechanism未新增审查算法取0；transferability提示模板可迁移小档；simplification固定资源小档。",
+                    "basis": "interpretation",
+                    "score": 18,
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1336021761-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 0
+                    },
+                    "rationale": "workflow审查组织小档；delivery双格式报告小档；reach便于团队复用小档；economics未证明成本结构变化取0。",
+                    "basis": "interpretation",
+                    "score": 22,
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1336021761-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "有人工审查负责人的团队可用已知缺陷试统一报告；逐条核路径反例，分享HTML前查转义及占位符，不能当自动门禁。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "代码审查可定位问题清单和归档报告需求清楚。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "打包检查表和模板省组织格式，未证明提高漏洞检出。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "入口分发Skill及模板已查，没有报告结果验证器。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "模型token与误报核验占人工，HTML格式与团队规范持续维护。"
+                    }
+                },
+                "score": 59,
+                "revision": "bd0069f4feabbcb6ede8b0ba2da6a59f4d477057",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-02-github-1336021761-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1336021761:root",
+                        "area": "code",
+                        "fingerprint": "bd0069f4feabbcb6ede8b0ba2da6a59f4d477057"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1336021761:root",
+            "repository": "7dgroup-ai/dsh-skill-7d-code-reviewer",
+            "path": "",
+            "revision": "bd0069f4feabbcb6ede8b0ba2da6a59f4d477057",
+            "fingerprints": {
+                "directory": "4ab76fec60622833708db703973f61065a23bb8410698535992bdfb771611e67",
+                "code": "bd0069f4feabbcb6ede8b0ba2da6a59f4d477057",
+                "maintenance": "3920c414991cdab36a45ac061ddfc9c0ee4c7eb920dbe2800374db1212a92a54"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T03:00:27Z",
+            "analysis_sha256": "c1197a1d1ec26ccfbf865c6c66f91414b8b721bc2e0547f6522d0219c303fe7a"
+        },
+        "publication.metadata": "data/plugins/7dgroup-ai--dsh-skill-7d-code-reviewer/META.json",
+        "publication.summaries": {
+            "text": "为DSH提供模板驱动的代码审查Skill，输出分级问题、文本摘要和HTML报告。",
+            "revision": "bd0069f4feabbcb6ede8b0ba2da6a59f4d477057",
+            "source_url": "https://github.com/7dgroup-ai/dsh-skill-7d-code-reviewer/blob/bd0069f4feabbcb6ede8b0ba2da6a59f4d477057/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "bd0069f4feabbcb6ede8b0ba2da6a59f4d477057",
+            "items": {
+                "Skill": "注册7d-code-reviewer，提供五步审查、参考检查表和HTML报告模板。"
+            }
+        },
+        "publication.advice": {
+            "revision": "bd0069f4feabbcb6ede8b0ba2da6a59f4d477057",
+            "text": "适合已有人工审查负责人、希望统一报告格式的团队先用已知缺陷样例试用。每个严重问题核对路径、条件与反例，HTML对外分享前检查转义和残留占位符。"
+        },
+        "registry": "data/plugins/7dgroup-ai--dsh-skill-7d-code-reviewer",
+        "reports": "# dsh-skill-7d-code-reviewer\n\n> 为DSH提供模板驱动的代码审查Skill，输出分级问题、文本摘要和HTML报告。\n\n## 使用建议\n\n适合已有人工审查负责人、希望统一报告格式的团队先用已知缺陷样例试用。每个严重问题核对路径、条件与反例，HTML对外分享前检查转义和残留占位符。\n\n核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。\n\n源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。\n\n## 洞察短评\n\n- **用途**：需要一致格式代码审查记录的开发团队，输入代码或文件路径，期望交付可定位且经人工复核的问题清单与可归档报告。\n- **亮点**：相对每次手写审查提示，增量是将检查表、严重性语言、报告模板与宿主资源定位打包为可分发流程。核心贡献是审查知识和报告组织，不是静态分析器，也没有证据证明模板能提高漏洞检出率。\n- **思考**：结构一致能否转化为有效审查？入口仅分发Markdown，HTML生成说明要求模型自行转义和填占位符，README明确没有结果验证器。模型可能输出漂亮但错误的问题或未转义片段，启动invariant只保证Skill存在，并不检查审查结论。\n- **建议**：由模板与语义检查分离推导，可先要求模型生成有路径、行号、可复现条件的结构化finding，再用确定性渲染器生成HTML；每条严重问题附最小反例。未验证假设是降低虚报与格式错误，而非仅美化。对已知缺陷/无缺陷代码盲评，若误报率与证据可复现性不改善则否定。\n\n## 场景与替代办法\n\n需要一致格式代码审查记录的开发团队，输入代码或文件路径，期望交付可定位且经人工复核的问题清单与可归档报告。\n\n普通审查提示与静态扫描可直接使用；本插件提供可重用模板与组织一致性，未比较同模型下检出质量。\n\n## 能力清单\n\n- **Skill**：注册7d-code-reviewer，提供五步审查、参考检查表和HTML报告模板。\n\n## 依赖与流程\n\n必要为ctx.skills、模型阅读与文件访问能力；HTML输出依赖模型遵循模板规则，语言/业务知识取决于参考资料。\n\n用户提交范围，模型识别业务与改动，加载检查表逐行审查，分级并填报告，人工验证问题后采用；没有自动门禁或修复事务。\n\n## 成本与效果\n\n首次维护团队审查规范和模板；日常模型token、逐条复核与误报修正是成本，报告篇幅也增加阅读负担。无现金与检出率对照。\n\n可能降低重复组织报告时间，但不能替代测试、安全扫描或人工放行。未核实独立团队采用。\n\n## 核心贡献\n\n相对每次手写审查提示，增量是将检查表、严重性语言、报告模板与宿主资源定位打包为可分发流程。核心贡献是审查知识和报告组织，不是静态分析器，也没有证据证明模板能提高漏洞检出率。\n\n## 关键质疑\n\n结构一致能否转化为有效审查？入口仅分发Markdown，HTML生成说明要求模型自行转义和填占位符，README明确没有结果验证器。模型可能输出漂亮但错误的问题或未转义片段，启动invariant只保证Skill存在，并不检查审查结论。\n\n\n## 工程亮点\n\nProvider职责单纯、资源路径明确、参考资料按需加载值得借鉴。可执行代码很薄，主要维护成本在规范适配和模型执行一致性；复用模板应增加确定性转义与校验，不能把启动注册测试当审查效果测试。 源码依据：[src/index.ts](https://github.com/7dgroup-ai/dsh-skill-7d-code-reviewer/blob/bd0069f4feabbcb6ede8b0ba2da6a59f4d477057/src/index.ts)、[src/invariant.ts](https://github.com/7dgroup-ai/dsh-skill-7d-code-reviewer/blob/bd0069f4feabbcb6ede8b0ba2da6a59f4d477057/src/invariant.ts)、[assets/7d-code-reviewer/SKILL.md](https://github.com/7dgroup-ai/dsh-skill-7d-code-reviewer/blob/bd0069f4feabbcb6ede8b0ba2da6a59f4d477057/assets/7d-code-reviewer/SKILL.md)、[assets/7d-code-reviewer/scripts/html-report-generation.md](https://github.com/7dgroup-ai/dsh-skill-7d-code-reviewer/blob/bd0069f4feabbcb6ede8b0ba2da6a59f4d477057/assets/7d-code-reviewer/scripts/html-report-generation.md)。\n\n## 未来设计假设（未验证）\n\n由模板与语义检查分离推导，可先要求模型生成有路径、行号、可复现条件的结构化finding，再用确定性渲染器生成HTML；每条严重问题附最小反例。未验证假设是降低虚报与格式错误，而非仅美化。对已知缺陷/无缺陷代码盲评，若误报率与证据可复现性不改善则否定。\n\n相同模型审查带已知缺陷和干净对照的代码，统计可复现问题、误报、人工复核时间及HTML转义/占位符完整性。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：fb7af17cae7f29bcee62237fb232f6eb0f085d2d98d6e2f067c699ef39c59e8a。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 8 | 1810 | — | — | 12210 |\n| .ts | source | 3 | 111 | 66 | 33 | — |\n| .ts | test | 1 | 46 | 42 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[7dgroup-ai/dsh-skill-7d-code-reviewer](https://github.com/7dgroup-ai/dsh-skill-7d-code-reviewer)\n- **版本号**：0.1.0（[固定提交 bd0069f4](https://github.com/7dgroup-ai/dsh-skill-7d-code-reviewer/tree/bd0069f4feabbcb6ede8b0ba2da6a59f4d477057)）\n- **版本日期**：2026-10-02（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：作者 README、包清单、源码路径 src/index.ts、src/invariant.ts、assets/7d-code-reviewer/SKILL.md、assets/7d-code-reviewer/scripts/html-report-generation.md 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。\n- 下一步：相同模型审查带已知缺陷和干净对照的代码，统计可复现问题、误报、人工复核时间及HTML转义/占位符完整性。\n",
+        "metadata": {
+            "repository": "7dgroup-ai/dsh-skill-7d-code-reviewer",
+            "repository_id": 1336021761,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 11,
+            "pushed_at": "2026-10-02T08:09:00Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A7dgroup-ai%2Fdsh-skill-7d-code-reviewer%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6406:3FE178:A94436:F2A73C:6AD84A73 and timestamp 2026-10-21 05:15:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A7dgroup-ai%2Fdsh-skill-7d-code-reviewer%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640E:1B0790:A59A0C:EEA9DC:6AD84A73 and timestamp 2026-10-21 05:15:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A7dgroup-ai%2Fdsh-skill-7d-code-reviewer%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640F:3FE178:A944C6:F2A81E:6AD84A73 and timestamp 2026-10-21 05:15:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A7dgroup-ai%2Fdsh-skill-7d-code-reviewer%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6411:F5216:A69680:EF6FCC:6AD84A74 and timestamp 2026-10-21 05:15:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A7dgroup-ai%2Fdsh-skill-7d-code-reviewer%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6413:38A53A:A861E4:F1CF6D:6AD84A74 and timestamp 2026-10-21 05:15:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "@7dgroup/dsh-skill-7d-code-reviewer",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%407dgroup%2Fdsh-skill-7d-code-reviewer",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/%407dgroup%2Fdsh-skill-7d-code-reviewer",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "bd0069f4feabbcb6ede8b0ba2da6a59f4d477057",
+                "current_revision": "bd0069f4feabbcb6ede8b0ba2da6a59f4d477057",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1336021761:root",
+            "repository": "7dgroup-ai/dsh-skill-7d-code-reviewer",
+            "path": "",
+            "revision": "bd0069f4feabbcb6ede8b0ba2da6a59f4d477057",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "4ab76fec60622833708db703973f61065a23bb8410698535992bdfb771611e67",
+                "code": "bd0069f4feabbcb6ede8b0ba2da6a59f4d477057",
+                "maintenance": "3920c414991cdab36a45ac061ddfc9c0ee4c7eb920dbe2800374db1212a92a54"
+            }
+        }
+    }
+}

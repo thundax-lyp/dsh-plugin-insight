@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "cad75140432625b1c77c8c8e8945e410",
+    "identity": "github:1394660757:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1394660757:root",
+            "repository": "xmwengxing/dsh-client-ui-sidebar-perfmon",
+            "path": "",
+            "revision": "4e79398f8bd95e150246f91b1c6315d75f30fdbb",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "64ce8a5be388e5d58995619448e58665dc6c6f6e725784f7c2b784be2fd3723e",
+                "code": "4e79398f8bd95e150246f91b1c6315d75f30fdbb",
+                "maintenance": "7dab8332333a4ab294cd156e7cc686bdab8c720b4491aac93079c1ae94b7e0a5"
+            }
+        }
+    }
+}

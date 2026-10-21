@@ -1,0 +1,448 @@
+{
+    "schema_version": 3,
+    "id": "148420a9c3c5fc6fcbdd6c6d4300ff2d",
+    "identity": "github:1340906871:dsh",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1340906871:dsh",
+            "repository_id": 1340906871,
+            "component_id": "dsh",
+            "repository": "Akimiya-z/codex-guard",
+            "path": "dsh",
+            "aliases": [],
+            "name": "dsh-codex-guard",
+            "entry_type": "plugin",
+            "technical_category": "tools-integration",
+            "business_category": "software-delivery",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "85b83f7ce26e363c4f4b2849ba15edc9734a1c3c43f22c2fdaea8d8c135f48f2",
+                "code": "87e138cdcca2e2929073bb913212dc06769087fc",
+                "maintenance": "7202b661eed029af699546116db2d42ce82dec5601fb2f4c26ff65191c52ba77"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-07-github-1340906871-dsh-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T08:01:26.025Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-07-github-1340906871-dsh-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/Akimiya-z/codex-guard/blob/87e138cdcca2e2929073bb913212dc06769087fc/README.md",
+                    "revision": "87e138cdcca2e2929073bb913212dc06769087fc",
+                    "captured_at": "2026-10-21T08:01:26.025Z",
+                    "summary": "在DSH中调用codex-guard CLI，返回提交前卫生检查报告。",
+                    "artifact": "data/runs/2026-10-21-07/snapshots/akimiya-z--codex-guard--dsh/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-07-github-1340906871-dsh-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/Akimiya-z/codex-guard/blob/87e138cdcca2e2929073bb913212dc06769087fc/dsh/index.js",
+                    "revision": "87e138cdcca2e2929073bb913212dc06769087fc",
+                    "captured_at": "2026-10-21T08:01:26.025Z",
+                    "summary": "核查 dsh/index.js、dsh/cordis.patch.yml；dsh/index.js注册codex_guard，spawnSync npx --yes codex-guard，ref以argv传入；Windows寻找npx-cli.js由Node执行，避免cmd解释。",
+                    "artifact": "data/runs/2026-10-21-07/snapshots/akimiya-z--codex-guard--dsh/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "开发者让Agent检查当前仓库的TODO、秘密及提交主题，报告仍需人工判断。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1340906871-dsh-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340906871:dsh",
+                            "area": "code",
+                            "fingerprint": "87e138cdcca2e2929073bb913212dc06769087fc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:01:26.025Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "dsh/index.js注册codex_guard，spawnSync npx --yes codex-guard，ref以argv传入；Windows寻找npx-cli.js由Node执行，避免cmd解释。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1340906871-dsh-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340906871:dsh",
+                            "area": "code",
+                            "fingerprint": "87e138cdcca2e2929073bb913212dc06769087fc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:01:26.025Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1340906871-dsh-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340906871:dsh",
+                            "area": "code",
+                            "fingerprint": "87e138cdcca2e2929073bb913212dc06769087fc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:01:26.025Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "分发以本插件固定package.json、运行依赖与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1340906871-dsh-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340906871:dsh",
+                            "area": "code",
+                            "fingerprint": "87e138cdcca2e2929073bb913212dc06769087fc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:01:26.025Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "首次下载和后续CLI变化有网络/供应链维护成本，spawnSync阻塞宿主线程且无显式timeout；模型阅读报告另有token和人工复核，未测单位成本。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1340906871-dsh-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340906871:dsh",
+                            "area": "code",
+                            "fingerprint": "87e138cdcca2e2929073bb913212dc06769087fc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:01:26.025Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先在隔离仓库核对实际扫描目录与CLI版本；报告入口不能替代提交前硬性检查。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1340906871-dsh-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340906871:dsh",
+                            "area": "code",
+                            "fingerprint": "87e138cdcca2e2929073bb913212dc06769087fc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:01:26.025Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "省去手工调用步骤，无误报率、漏报率或交付收益证据。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1340906871-dsh-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340906871:dsh",
+                            "area": "code",
+                            "fingerprint": "87e138cdcca2e2929073bb913212dc06769087fc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:01:26.025Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "ref不经shell、Windows原生Node调用npx脚本是具体接线；同步子进程与退出码文本化是关键复用代价。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1340906871-dsh-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340906871:dsh",
+                            "area": "code",
+                            "fingerprint": "87e138cdcca2e2929073bb913212dc06769087fc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:01:26.025Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "本组件的增量是可被模型发现的CLI适配和跨平台argv安全调用。未在此组件实现检测算法，不能将整仓规则、Action流程或CLI迭代计为本组件技术贡献。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1340906871-dsh-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340906871:dsh",
+                            "area": "code",
+                            "fingerprint": "87e138cdcca2e2929073bb913212dc06769087fc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:01:26.025Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "工作目录固定process.cwd而不是工具会话工作区，可能检查另一个仓库；npx未锁版本，固定dsh提交并不能固定检测语义。退出码1被普通字符串返回，是否允许提交仍由外部流程决定。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1340906871-dsh-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340906871:dsh",
+                            "area": "code",
+                            "fingerprint": "87e138cdcca2e2929073bb913212dc06769087fc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:01:26.025Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "未验证假设：显式绑定会话仓库和CLI摘要、以结构化findings/exitStatus返回并由独立策略决定提交放行，可减少检查错目标与报告被忽略。用两个cwd仓库、阻断/干净/CLI崩溃样例核目标和状态；若不能稳定区分，不接硬闸门。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1340906871-dsh-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340906871:dsh",
+                            "area": "code",
+                            "fingerprint": "87e138cdcca2e2929073bb913212dc06769087fc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:01:26.025Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T08:01:26.025Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "87e138cdcca2e2929073bb913212dc06769087fc",
+                "reviewed_at": "2026-10-21T08:01:26.025Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1340906871:dsh",
+                        "area": "code",
+                        "fingerprint": "87e138cdcca2e2929073bb913212dc06769087fc"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 0,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "rationale": "novelty=0：外部CLI已有检查，本项常规适配。 mechanism=8：argv跨平台接线有限增量，非新扫描机制。 transferability=5：适配可移植但包语义未锁。 simplification=4：省手动入口，阻塞负担仍在。",
+                    "basis": "interpretation",
+                    "score": 17,
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1340906871-dsh-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 0,
+                        "reach": 5,
+                        "economics": 0
+                    },
+                    "rationale": "workflow=9：增加工具入口未改变责任分工。 delivery=0：报告仍属原CLI产物。 reach=5：已有DSH开发者有限便利。 economics=0：无成本结构变化证据。",
+                    "basis": "interpretation",
+                    "score": 14,
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1340906871-dsh-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "开发者应先固定CLI版本并改为工具会话目录；当前process.cwd与npx未锁版可能查错仓库，修复后再当辅助报告入口。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "提交前TODO、秘密与主题检查是明确任务。"
+                    },
+                    "advantage": {
+                        "score": 6,
+                        "rationale": "包装CLI省手动调用，但不提供提交门禁。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "已核argv及退出码行为，cwd与版本漂移缺口直接影响检查对象。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "npx联网供应链与spawnSync无timeout阻塞增加维护，当前扫描归属不可靠。"
+                    }
+                },
+                "score": 47,
+                "revision": "87e138cdcca2e2929073bb913212dc06769087fc",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-07-github-1340906871-dsh-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1340906871:dsh",
+                        "area": "code",
+                        "fingerprint": "87e138cdcca2e2929073bb913212dc06769087fc"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1340906871:dsh",
+            "repository": "Akimiya-z/codex-guard",
+            "path": "dsh",
+            "revision": "87e138cdcca2e2929073bb913212dc06769087fc",
+            "fingerprints": {
+                "directory": "85b83f7ce26e363c4f4b2849ba15edc9734a1c3c43f22c2fdaea8d8c135f48f2",
+                "code": "87e138cdcca2e2929073bb913212dc06769087fc",
+                "maintenance": "7202b661eed029af699546116db2d42ce82dec5601fb2f4c26ff65191c52ba77"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T07:52:12Z",
+            "analysis_sha256": "f391917f7075ddf9a411a1fd8f81ca5d281d73c78615ba0614d7636f0a10d29f"
+        },
+        "publication.metadata": "data/plugins/akimiya-z--codex-guard--dsh/META.json",
+        "publication.summaries": {
+            "text": "在DSH中调用codex-guard CLI，返回提交前卫生检查报告。",
+            "revision": "87e138cdcca2e2929073bb913212dc06769087fc",
+            "source_url": "https://github.com/Akimiya-z/codex-guard/blob/87e138cdcca2e2929073bb913212dc06769087fc/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "87e138cdcca2e2929073bb913212dc06769087fc",
+            "items": {
+                "模型工具": "codex_guard提交卫生检查CLI适配"
+            }
+        },
+        "publication.advice": {
+            "revision": "87e138cdcca2e2929073bb913212dc06769087fc",
+            "text": "先在隔离仓库核对实际扫描目录与CLI版本；报告入口不能替代提交前硬性检查。"
+        },
+        "registry": "data/plugins/akimiya-z--codex-guard--dsh",
+        "reports": "# dsh-codex-guard\n\n> 在DSH中调用codex-guard CLI，返回提交前卫生检查报告。\n\n## 使用建议\n\n先在隔离仓库核对实际扫描目录与CLI版本；报告入口不能替代提交前硬性检查。\n\n**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，插件与依赖流程的实际运行尚未验证；未来假设未验证。\n\n## 洞察短评\n\n- **用途**：开发者让Agent检查当前仓库的TODO、秘密及提交主题，报告仍需人工判断。\n- **亮点**：本组件的增量是可被模型发现的CLI适配和跨平台argv安全调用。未在此组件实现检测算法，不能将整仓规则、Action流程或CLI迭代计为本组件技术贡献。\n- **思考**：工作目录固定process.cwd而不是工具会话工作区，可能检查另一个仓库；npx未锁版本，固定dsh提交并不能固定检测语义。退出码1被普通字符串返回，是否允许提交仍由外部流程决定。\n- **建议**：未验证假设：显式绑定会话仓库和CLI摘要、以结构化findings/exitStatus返回并由独立策略决定提交放行，可减少检查错目标与报告被忽略。用两个cwd仓库、阻断/干净/CLI崩溃样例核目标和状态；若不能稳定区分，不接硬闸门。\n\n## 场景与替代办法\n\n参照直接运行codex-guard CLI/GitHub Action；本组件只提供DSH模型工具入口，扫描规则属于外部CLI而非dsh目录原创。\n\n## 能力清单\n\n- **模型工具**：codex_guard提交卫生检查CLI适配\n\n## 依赖与流程\n\ndsh/index.js注册codex_guard，spawnSync npx --yes codex-guard，ref以argv传入；Windows寻找npx-cli.js由Node执行，避免cmd解释。\n\n宿主tools、Node/npm/npx、首次可用网络与外部codex-guard包；CLI未固定版本且不随此组件源码验证。\n\n模型调用ref/json→同步执行CLI→返回stdout或stderr；非零可表示发现阻断项，本适配不抛出该状态，也不拦截提交。\n\n## 成本与效果\n\n首次下载和后续CLI变化有网络/供应链维护成本，spawnSync阻塞宿主线程且无显式timeout；模型阅读报告另有token和人工复核，未测单位成本。\n\n省去手工调用步骤，无误报率、漏报率或交付收益证据。\n\n## 核心贡献\n\n本组件的增量是可被模型发现的CLI适配和跨平台argv安全调用。未在此组件实现检测算法，不能将整仓规则、Action流程或CLI迭代计为本组件技术贡献。\n\n## 关键质疑\n\n工作目录固定process.cwd而不是工具会话工作区，可能检查另一个仓库；npx未锁版本，固定dsh提交并不能固定检测语义。退出码1被普通字符串返回，是否允许提交仍由外部流程决定。\n\n## 工程亮点\n\nref不经shell、Windows原生Node调用npx脚本是具体接线；同步子进程与退出码文本化是关键复用代价。\n\n源码依据：[dsh/index.js](https://github.com/Akimiya-z/codex-guard/blob/87e138cdcca2e2929073bb913212dc06769087fc/dsh/index.js)、[dsh/cordis.patch.yml](https://github.com/Akimiya-z/codex-guard/blob/87e138cdcca2e2929073bb913212dc06769087fc/dsh/cordis.patch.yml)。\n\n## 未来设计假设（未验证）\n\n未验证假设：显式绑定会话仓库和CLI摘要、以结构化findings/exitStatus返回并由独立策略决定提交放行，可减少检查错目标与报告被忽略。用两个cwd仓库、阻断/干净/CLI崩溃样例核目标和状态；若不能稳定区分，不接硬闸门。\n\n只在隔离仓库未来验证会话目标、固定CLI、超时和状态语义；本轮未下载/运行CLI。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：dsh；内容摘要：6bb00abcd95ec095ea9ad7ad23ea6692191cd55dad05a8b8b9d1959d7006fe0e。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 1 | 96 | 75 | 17 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[Akimiya-z/codex-guard](https://github.com/Akimiya-z/codex-guard)\n- **版本号**：适配组件未单独声明；仓库根CLI包为1.9.0（不代表本组件独立版本）（[固定提交 87e138cd](https://github.com/Akimiya-z/codex-guard/tree/87e138cdcca2e2929073bb913212dc06769087fc)）\n- **版本日期**：2026-09-01（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：dsh/index.js、dsh/cordis.patch.yml、作者README、package与固定范围inventory；源码抽读不等于完整审计。\n- 未验证：插件执行、测试、安装、真实宿主与独立采用。\n- 证据限制：固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。\n- 下一步：只在隔离仓库未来验证会话目标、固定CLI、超时和状态语义；本轮未下载/运行CLI。\n",
+        "metadata": {
+            "repository": "Akimiya-z/codex-guard",
+            "repository_id": 1340906871,
+            "captured_at": "2026-10-21T07:59:36.171Z",
+            "window_start": "2026-09-21T07:59:36.171Z",
+            "stars": 136,
+            "pushed_at": "2026-10-15T20:24:45Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAkimiya-z%2Fcodex-guard%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E28E:273FF5:6AB7AA:72A0AD:6AD870EB and timestamp 2026-10-21 07:59:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAkimiya-z%2Fcodex-guard%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E43E:50F71:698C3E:7174C6:6AD870EC and timestamp 2026-10-21 07:59:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAkimiya-z%2Fcodex-guard%20is%3Aissue%20created%3A2026-09-21T07%3A59%3A36.171Z..2026-10-21T07%3A59%3A36.171Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E85C:272681:67BA5A:6FA4CE:6AD870EF and timestamp 2026-10-21 07:59:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAkimiya-z%2Fcodex-guard%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T07%3A59%3A36.171Z..2026-10-21T07%3A59%3A36.171Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID EC1A:4DAEE:67ED5A:6FDA45:6AD870F2 and timestamp 2026-10-21 07:59:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAkimiya-z%2Fcodex-guard%20is%3Aissue%20updated%3A2026-09-21T07%3A59%3A36.171Z..2026-10-21T07%3A59%3A36.171Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID EDC6:1FE8E6:73291D:7B15DE:6AD870F3 and timestamp 2026-10-21 07:59:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-codex-guard",
+                "captured_at": "2026-10-21T07:59:47.899Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-codex-guard",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:59:47.899Z",
+                    "source_url": "https://registry.npmjs.org/dsh-codex-guard",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1340906871:dsh",
+            "repository": "Akimiya-z/codex-guard",
+            "path": "dsh",
+            "revision": "87e138cdcca2e2929073bb913212dc06769087fc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "85b83f7ce26e363c4f4b2849ba15edc9734a1c3c43f22c2fdaea8d8c135f48f2",
+                "code": "87e138cdcca2e2929073bb913212dc06769087fc",
+                "maintenance": "7202b661eed029af699546116db2d42ce82dec5601fb2f4c26ff65191c52ba77"
+            }
+        }
+    }
+}

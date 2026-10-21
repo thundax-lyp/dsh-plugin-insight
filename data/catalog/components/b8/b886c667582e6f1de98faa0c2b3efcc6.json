@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b886c667582e6f1de98faa0c2b3efcc6",
+    "identity": "github:1341523790:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1341523790:root",
+            "repository": "lengzhanbao/dsh-taffy-theme",
+            "path": "",
+            "revision": "23cf1fe22e06d6e0f3455d007481499c34a08c6c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a466805b768c203193f58ee8a2f1ccbe6196d2a676de83f5266287f0a19249b1",
+                "code": "23cf1fe22e06d6e0f3455d007481499c34a08c6c",
+                "maintenance": "e95b2f9e726bbc1ca8ff5608c7f56731b3d9d405c397093ec5466e76e360f025"
+            }
+        }
+    }
+}

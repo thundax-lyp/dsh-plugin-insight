@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "46cb04344cea9c4ab9e305ed262ec44d",
+    "identity": "github:1412612045:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1412612045:root",
+            "repository": "blackstar-baba/dsh-bird-bike",
+            "path": "",
+            "revision": "c6467d5f36ad62a1ab1f415bc5b3dc4c1e080e0c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a3aebd375ca2742843d40d3ed6ce3af9c065d9426e887618553e987ce71da554",
+                "code": "c6467d5f36ad62a1ab1f415bc5b3dc4c1e080e0c",
+                "maintenance": "4b99fb57919df74c2a0e0843f17fc4c481accb0d0716db805822267542242641"
+            }
+        }
+    }
+}

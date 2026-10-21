@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "40227d38740a901f4c1d879c9030d353",
+    "identity": "github:1340381523:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340381523:root",
+            "repository": "NIU-001-LIU/dsh-win-minimal",
+            "path": "",
+            "revision": "6ebcaaf472c9036b7eaee1dd1ed1db813adfb12d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "19a6512b4aeb50ad891a76e443ac1c4e4ef96f7b8660d8bbbd4b3d4d7ce67340",
+                "code": "6ebcaaf472c9036b7eaee1dd1ed1db813adfb12d",
+                "maintenance": "7cb1faaf1e629bacdf64257a1f983e528fe8f154800aeeb731c6c4a01dbdb5cb"
+            }
+        }
+    }
+}

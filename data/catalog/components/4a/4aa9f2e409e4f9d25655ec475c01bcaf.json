@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "4aa9f2e409e4f9d25655ec475c01bcaf",
+    "identity": "github:1333482618:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333482618:root",
+            "repository": "PerryLink/dsh-auto-review",
+            "path": "",
+            "revision": "af42ac66e705b4d08eca5bcf938b970e5d87cf83",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "bd2a49b1d0c395daf5b6e449aca8ab9d24d7a8895fe1b58844b9edbe3086d5ad",
+                "code": "af42ac66e705b4d08eca5bcf938b970e5d87cf83",
+                "maintenance": "af9c1b8d704268a98d86d85f1342ca20d0e1194352930f92b0415a181d0d2485"
+            }
+        }
+    }
+}

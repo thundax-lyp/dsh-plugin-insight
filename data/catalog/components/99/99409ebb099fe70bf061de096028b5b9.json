@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "99409ebb099fe70bf061de096028b5b9",
+    "identity": "github:1338615988:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338615988:root",
+            "repository": "Sivan757/dsh-agent-plugins-market",
+            "path": "",
+            "revision": "52119265196484c435750c3cb222d26269d0b04b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2fccb9179fc0410e484770f3d5bc79ed8a075d6c0c56736b846c4a0fd7dfdc14",
+                "code": "52119265196484c435750c3cb222d26269d0b04b",
+                "maintenance": "64bf38564a6860b7931041a2ec266f3c9c4c789ce641132a02745fdfd1619121"
+            }
+        }
+    }
+}

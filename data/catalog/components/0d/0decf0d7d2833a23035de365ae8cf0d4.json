@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "0decf0d7d2833a23035de365ae8cf0d4",
+    "identity": "github:1335840975:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335840975:root",
+            "repository": "JohnXu22786/file-planning",
+            "path": "",
+            "revision": "50cf9109eac515b79c5e5661ffcb7f146f017ed4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "7a89e493e0e5abc003b2606890b90904fb2aaa526f8782621289148433f64113",
+                "code": "50cf9109eac515b79c5e5661ffcb7f146f017ed4",
+                "maintenance": "ae1fdebeb6a14c7eb2120b5cd33a937fc91d5226c2c4e84502aef174baabf200"
+            }
+        }
+    }
+}

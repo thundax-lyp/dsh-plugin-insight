@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b3e0311e7cab5e9d8e6e5e0031af5e05",
+    "identity": "github:1365699891:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1365699891:root",
+            "repository": "online111111/whalechan-dsh-theme",
+            "path": "",
+            "revision": "8d0f80915d334188627df12022f6f3ef25d07f7c",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "005cb83cd551b9a515ce623640703efc733ba9e2dc48095a923cce863d6cf26a",
+                "code": "8d0f80915d334188627df12022f6f3ef25d07f7c",
+                "maintenance": "f7ed0f8916682df8b180161bb29be13c78e5002f0f5d6d445b56f5e03b6862d6"
+            }
+        }
+    }
+}

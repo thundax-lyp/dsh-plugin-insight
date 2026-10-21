@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "4a615298569da4eb6e67a3c191bc227b",
+    "identity": "github:1346968220:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346968220:root",
+            "repository": "yu-wenchao/dsh-free-models-hub",
+            "path": "",
+            "revision": "3c98fc5dfba7d69a2b96713739b5bdea99c9b5f4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "f6613de357b46dfc044b1eeee3bbf4485deee7da8a1342aeaf36e2fa972713ac",
+                "code": "3c98fc5dfba7d69a2b96713739b5bdea99c9b5f4",
+                "maintenance": "c585eb146c9492ec6e437560165242e3f0f8fb4945abdb622b518ff8254d54d6"
+            }
+        }
+    }
+}

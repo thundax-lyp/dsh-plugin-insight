@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b7539548b705286b2affd6ebdc107d04",
+    "identity": "github:1407678626:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1407678626:root",
+            "repository": "SOH4C4759/dsh-ui-sound",
+            "path": "",
+            "revision": "a54bc32d8e4810c8ae5d68b47086b535d8438dea",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4bb478357f29160ee5683997f2c9138ccde373a00dac25c9651ef5fc513b5c75",
+                "code": "a54bc32d8e4810c8ae5d68b47086b535d8438dea",
+                "maintenance": "d41c44e731015be18136fb52362f4fb3195448ed9cf767fe9affd236c40798e3"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "220433d2429e72a93bf7091f1d768f6a",
+    "identity": "github:1335578860:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335578860:root",
+            "repository": "daetz-coder/dsh-multi-chat",
+            "path": "",
+            "revision": "84db110f6f70cf3309a4e2d683f00f767084d4ae",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0472a85847b49da19aae5acf7a067cbc3865233aabb1ff8d98fcd4f2aff1afa1",
+                "code": "84db110f6f70cf3309a4e2d683f00f767084d4ae",
+                "maintenance": "f35d5091155d7f64bcacde7ce050949177a4abdb087480523913b1b60ebd9888"
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "f0f343a37124041c91b0458d818d0918",
+    "identity": "github:1335287012:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335287012:root",
+            "repository": "dickpy/dsh-imagegen",
+            "path": "",
+            "revision": "c8a94f5e3a905ec4811234316a3025082aa876d7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "79417bea62076a74da5998501f373517061f74e2e83a55863fd898692cff6d35",
+                "code": "c8a94f5e3a905ec4811234316a3025082aa876d7",
+                "maintenance": "abf2a3f3a15af326f6fdf487bcfb0de4fc68322136c4034fe609b67f17b0fc4d"
+            }
+        }
+    }
+}

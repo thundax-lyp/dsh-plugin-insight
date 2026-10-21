@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4e9639a201761f810511f8550102d47c",
+    "identity": "github:1335141851:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335141851:root",
+            "repository": "Kaiji-Z/dsh-plugin-lookatstudy",
+            "path": "",
+            "revision": "d7d86c48c1af8f402fe6bdf3a935bc8ed1076f74",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8391bad1c09db279ad583037ce31c7615ac3ecac802cd09531ab5c61ba355280",
+                "code": "d7d86c48c1af8f402fe6bdf3a935bc8ed1076f74",
+                "maintenance": "56d79b5aad45b7d3a734827ca110f6abf9778017ff16298f5d48d6e2b3162499"
+            }
+        }
+    }
+}

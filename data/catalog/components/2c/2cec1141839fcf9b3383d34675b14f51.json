@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2cec1141839fcf9b3383d34675b14f51",
+    "identity": "github:1333840459:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333840459:root",
+            "repository": "ICCuse/dsh-premise-guard",
+            "path": "",
+            "revision": "2161842c336d4d580ffcf928fad44cf307082084",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f3850ea588448ca954c5d42ef8b4197d3428291bae19afcca30551903824818e",
+                "code": "2161842c336d4d580ffcf928fad44cf307082084",
+                "maintenance": "90d78ea0a6914447ea701a7882bd30165500c5435396b83ffb6eb6adc912b7b2"
+            }
+        }
+    }
+}

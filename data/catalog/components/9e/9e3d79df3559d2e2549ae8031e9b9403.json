@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9e3d79df3559d2e2549ae8031e9b9403",
+    "identity": "github:1420747575:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1420747575:root",
+            "repository": "q253595422/dsh-imagegen-video",
+            "path": "",
+            "revision": "1e8575212480fc120ab9ceae7eed126c1d92bfb7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9f1aa6e0bf2ee7c7cef0dc9a4bacbd12c3109576ca416fbd39077901bcfb79db",
+                "code": "1e8575212480fc120ab9ceae7eed126c1d92bfb7",
+                "maintenance": "bb65264c4ce029f3982c229e8783441ac9325f4be8ccd47d4c60891f2c90bbfe"
+            }
+        }
+    }
+}

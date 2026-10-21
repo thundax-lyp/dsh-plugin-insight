@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b15cb74fef554204b120740d249f44c2",
+    "identity": "github:1366751787:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1366751787:root",
+            "repository": "drscrewdriver/dsh-bash-terminal-ts",
+            "path": "",
+            "revision": "b1e4494de47c293a7a6497164b269dc93138bedf",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "bb11dbad935ef212462f7e458fb306ed80129804f4dfed4bb12412993d1cd9f9",
+                "code": "b1e4494de47c293a7a6497164b269dc93138bedf",
+                "maintenance": "b80956163472eb4d9dc0ea3c3ceafeb719cf9a5f5ecfec48866a59ecd5349c34"
+            }
+        }
+    }
+}

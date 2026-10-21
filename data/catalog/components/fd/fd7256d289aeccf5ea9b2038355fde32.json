@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fd7256d289aeccf5ea9b2038355fde32",
+    "identity": "github:1374524293:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1374524293:root",
+            "repository": "SAXEM1997/specpowers",
+            "path": "",
+            "revision": "43fc9e621671755269de94c63bb493408d6c25f2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c90b7fbaba3b06e7c5fa4b720962d6e3d02a1e1807a4501f04e29ebf2d653f5f",
+                "code": "43fc9e621671755269de94c63bb493408d6c25f2",
+                "maintenance": "ac5ca6c04218a721a0060e1f38489300558da724fae0fd035ceedbf53882727e"
+            }
+        }
+    }
+}

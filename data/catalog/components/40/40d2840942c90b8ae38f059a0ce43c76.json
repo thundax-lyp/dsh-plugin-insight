@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "40d2840942c90b8ae38f059a0ce43c76",
+    "identity": "github:1371916286:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1371916286:root",
+            "repository": "antonio-mastropaolo/dsh-anthropic-membership",
+            "path": "",
+            "revision": "f41f6c6df3b78121106578f3f6d29ae83e8469ca",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6cc30146a60ff02cdb790e2baa83229a8d06282b9a3d6fc21853728f88be5cdd",
+                "code": "f41f6c6df3b78121106578f3f6d29ae83e8469ca",
+                "maintenance": "0b52e312955662a117d5eaae511bfa030359e200688f6b19bc58798ee26f3422"
+            }
+        }
+    }
+}

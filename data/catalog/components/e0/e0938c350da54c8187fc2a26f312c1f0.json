@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e0938c350da54c8187fc2a26f312c1f0",
+    "identity": "github:1333781342:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333781342:root",
+            "repository": "peiyuwang54/deepseek-harness-cli",
+            "path": "",
+            "revision": "379e71cee1ad99762a88b5249e96a3a0d311be50",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "8d1c65095378f1b8e347ea992d0624dbe7e5800a58cb2a6f62f4baa44c7201b9",
+                "code": "379e71cee1ad99762a88b5249e96a3a0d311be50",
+                "maintenance": "9894188d87e7af893f2974da06dbdde222c454f259827bb24613f6f479d0cf4b"
+            }
+        }
+    }
+}

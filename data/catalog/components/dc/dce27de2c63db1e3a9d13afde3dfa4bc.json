@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "dce27de2c63db1e3a9d13afde3dfa4bc",
+    "identity": "github:1425029658:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425029658:root",
+            "repository": "simmon-clap/dsh-intelligent-ui",
+            "path": "",
+            "revision": "60f22c7967879cb82b436092037760ec249f312a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e23863ff8fd77b41611aeef994e1025d08c0f8b22fdb0f841d610d9dd54f47d3",
+                "code": "60f22c7967879cb82b436092037760ec249f312a",
+                "maintenance": "891fb2d2e14e0b60ef148145bae5d68b5a5e0b26fa0e1c17d7e2c2858dd40873"
+            }
+        }
+    }
+}

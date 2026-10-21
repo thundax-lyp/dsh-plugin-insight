@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "97861e6f262fb16f13f7ca53683459ed",
+    "identity": "github:1375693266:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1375693266:root",
+            "repository": "KitanWang/dsh-figma-plugin",
+            "path": "",
+            "revision": "1b11bee2145924f7b128746a3614b0f6265c8fbc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d094d0e65f51bf20d18fba72628f969c78a0c23c94516bdab05d0641836aa82b",
+                "code": "1b11bee2145924f7b128746a3614b0f6265c8fbc",
+                "maintenance": "2c33bb94bee23c846f9cafeb97ca1ebce3ea240f1a1ed4ba6906ce531981c733"
+            }
+        }
+    }
+}

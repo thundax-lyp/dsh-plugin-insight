@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "85eca6c455fb7200a8da8c81ddb4a200",
+    "identity": "github:1408435437:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1408435437:root",
+            "repository": "zhang-tod/dsh-win-notify",
+            "path": "",
+            "revision": "43945dd83d9b7ef7fe4d0e75ed0c32e58cf1e137",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "eec6ad54c4b2da5ca2f5e90b0c20abbe93dfc48e7f7669480fca22f946980da7",
+                "code": "43945dd83d9b7ef7fe4d0e75ed0c32e58cf1e137",
+                "maintenance": "cb6623b8793ed10d2b5ed13278b1b670024da46bf25121c4f387ca98de556d81"
+            }
+        }
+    }
+}

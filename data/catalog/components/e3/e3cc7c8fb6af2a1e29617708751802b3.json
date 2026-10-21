@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e3cc7c8fb6af2a1e29617708751802b3",
+    "identity": "github:1337901500:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337901500:root",
+            "repository": "tuogusa/dsh-word-complete",
+            "path": "",
+            "revision": "ee8ff1a9df708f8ff64193429ce281324f097ca7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "779500f5a6a6649c5fe52bd18cee24f034341f2407f37311a3c4ea3bc7d97b9e",
+                "code": "ee8ff1a9df708f8ff64193429ce281324f097ca7",
+                "maintenance": "3db5a3e8913a04b6f9bb270fb9ce7f2d8a172267030590ad6d9219d0a8015f32"
+            }
+        }
+    }
+}

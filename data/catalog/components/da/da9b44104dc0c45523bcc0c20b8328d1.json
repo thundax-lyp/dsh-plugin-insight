@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "da9b44104dc0c45523bcc0c20b8328d1",
+    "identity": "github:1347140396:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347140396:root",
+            "repository": "meyaomiao/dsh-server-deck",
+            "path": "",
+            "revision": "6a91a781cca1e69484d7901bb725b350429e2750",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d974ff8e14056b616b565c7f0123544febea1a661f15fffffdfbd5e45580bcb9",
+                "code": "6a91a781cca1e69484d7901bb725b350429e2750",
+                "maintenance": "b64b6557359a48b8e1c74dfe58c43e91d0d8e924f07891d6503409bdcbf0da7b"
+            }
+        }
+    }
+}

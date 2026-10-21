@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "490cb80db14888ea98ba15a3a1966446",
+    "identity": "github:1388279455:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1388279455:root",
+            "repository": "yusufameri/dsh-t3-new-session-screen",
+            "path": "",
+            "revision": "74d3430f7ff22436b1840a2a61420dbfa731a62b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "256953b9a78ab676bd2989294bdf5091df3a99bb08a38050ff7e5c7695a095de",
+                "code": "74d3430f7ff22436b1840a2a61420dbfa731a62b",
+                "maintenance": "13cf1e0d3006a5fe45333e259c88100c0ab951e330add0eae73f0f43057f0957"
+            }
+        }
+    }
+}

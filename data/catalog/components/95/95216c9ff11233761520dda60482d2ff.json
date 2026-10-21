@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "95216c9ff11233761520dda60482d2ff",
+    "identity": "github:1362304285:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1362304285:root",
+            "repository": "icanfinish11/dsh-context-mode",
+            "path": "",
+            "revision": "587430c1590791873b68a620eb9a5f25ce62d3b5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "19f3faa3c16407e68ab2881690dc5d43c18cc2b599f1fbe7a761f0215c71da03",
+                "code": "587430c1590791873b68a620eb9a5f25ce62d3b5",
+                "maintenance": "988422cf8125454fa7e20f5308f9dd3d06dfe17698aff3c52e1a0bc1babc83f7"
+            }
+        }
+    }
+}

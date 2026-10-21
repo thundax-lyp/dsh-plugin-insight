@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c430d9f404b437aa76d02495b156f1af",
+    "identity": "github:1153598290:plugins-dsh-portfolio-os",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1153598290:plugins-dsh-portfolio-os",
+            "repository": "Snowball-labbot/Portfolio-OS",
+            "path": "plugins/dsh-portfolio-os",
+            "revision": "b5d525494bb212c1cbacfe71656d4eba22b9c2c0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b5fdc6fac98c473543a6947b3c08f751597a2fb4db3639cff9f633eb8d5ff297",
+                "code": "b5d525494bb212c1cbacfe71656d4eba22b9c2c0",
+                "maintenance": "fff406e23e4e417a1aeec404c6c6b611a8c332a8c8c40b27192beed30aa49828"
+            }
+        }
+    }
+}

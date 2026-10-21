@@ -1,8 +1,0 @@
-{
-  "revision": "bb74ab5d5eafdd97cec75a0be759346fdcacece7",
-  "items": {
-    "Host 路由": "状态、重启与bundle健康接口。",
-    "界面": "可拖动贴边刷新/重启小框及延迟选择。",
-    "后台": "Windows独立helper强停与原命令重拉。"
-  }
-}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5b970aac9432228ec59efd5934dd9936",
+    "identity": "github:1410012734:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1410012734:root",
+            "repository": "plyflai/dsh-ux-plus",
+            "path": "",
+            "revision": "a72afa113e1fe6bf86bea64980daf3aaef63a0d7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "04044b9cad15669bc6d09a19439556a5935fdefe860589b3a0b6e77b60096774",
+                "code": "a72afa113e1fe6bf86bea64980daf3aaef63a0d7",
+                "maintenance": "d32a339c43bbccea6ca4882199a1d356e9ca86f8a22d8b93954ea3928d676744"
+            }
+        }
+    }
+}

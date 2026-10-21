@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8ae3a0e72c1bf17ad006b2f31c8dc48c",
+    "identity": "github:1388366177:packages-dsh-enhancement",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1388366177:packages-dsh-enhancement",
+            "repository": "feng-yifan/dsh-plugins",
+            "path": "packages/dsh-enhancement",
+            "revision": "9e104268f3e2185425c761a89e2039bb4e8a06fc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "eaf44541c23d8d81f961a9715d218723641803b9b80d5aa893f3289f5ca0441f",
+                "code": "9e104268f3e2185425c761a89e2039bb4e8a06fc",
+                "maintenance": "819b6aa6c794da92b03320014249899e92aafd2eee0158f57ef9c9aa19818f05"
+            }
+        }
+    }
+}

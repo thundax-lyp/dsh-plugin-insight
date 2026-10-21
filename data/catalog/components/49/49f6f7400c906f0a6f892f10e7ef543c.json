@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "49f6f7400c906f0a6f892f10e7ef543c",
+    "identity": "github:1334682582:plugin",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334682582:plugin",
+            "repository": "songoao25/dsh-bottom-info-bar",
+            "path": "plugin",
+            "revision": "d5bf0f3ef327c6ecbd0949e82c87a8e82aeef5e3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "69af628c4ddd56b6ea2a3e106585d46e827a3df32bedd869241822769fc293d9",
+                "code": "d5bf0f3ef327c6ecbd0949e82c87a8e82aeef5e3",
+                "maintenance": "7e044d2aef5c9c8309471702d8e1c31b1faa16f5247d9b300908b32ae6351b9c"
+            }
+        }
+    }
+}

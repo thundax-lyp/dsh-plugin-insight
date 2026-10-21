@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2f964a25fb28daaa7fab6160fec9a4fb",
+    "identity": "github:1336159063:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336159063:root",
+            "repository": "bainianlaoyao/easy-archive",
+            "path": "",
+            "revision": "e8576dbe939bd4c3eb5de4b7fad126f7335c2054",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "940000d96a2d3b9944edd92fdbcddd0e5a4a4322e9d81188ce6f8754b284f7b7",
+                "code": "e8576dbe939bd4c3eb5de4b7fad126f7335c2054",
+                "maintenance": "eb927f4f820bf62958aed2bce06ff5a93ee36eec328d2e45580700fcaaddf711"
+            }
+        }
+    }
+}

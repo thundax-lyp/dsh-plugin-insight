@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9a23aa4c87eca9345cac9df041efb42f",
+    "identity": "github:1339031792:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339031792:root",
+            "repository": "duhu2000/qcc-mcp-legal-oauth",
+            "path": "",
+            "revision": "01865bb7f6194057ed133ebe24a22f41951a8ef1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "505444a86136d77f2de6e760ac5860db4ae958995d98ed6ab59fcd6c1980faed",
+                "code": "01865bb7f6194057ed133ebe24a22f41951a8ef1",
+                "maintenance": "0558f586e1bf7ccc131fcf0538bdcc106820e8dccd75060c241538b93ac3437d"
+            }
+        }
+    }
+}

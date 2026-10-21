@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "9d45fac5f03695dc94cd3595ff52b245",
+    "identity": "github:1333373432:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333373432:root",
+            "repository": "asdf17128/dsh-doctor",
+            "path": "",
+            "revision": "32d2bba1dc90d60be90a4e42fe0de788c74f980f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "e25a0ba664c5371c99c0573e3afcd59ba38741d9b479a25b373a5bfcbe99655e",
+                "code": "32d2bba1dc90d60be90a4e42fe0de788c74f980f",
+                "maintenance": "1b42dd27aadc3f8d492617b7613d33223edfe5c2a240d3fabc8bd63b908b58cd"
+            }
+        }
+    }
+}

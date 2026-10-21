@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "eaf6c542f1fb73a923ed963d4d764046",
+    "identity": "github:1335100960:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335100960:root",
+            "repository": "cirelir/dsh-change-review",
+            "path": "",
+            "revision": "1f2de55b3f95dd1c513e713fe56664648ca2e447",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "ac23cb3dec00039ed50fcd01cd05ef9d66d69d46452b2200b38a0f8f23a3c252",
+                "code": "1f2de55b3f95dd1c513e713fe56664648ca2e447",
+                "maintenance": "45d33535b42b7fc8f38e60fd187318740857cd945640e3309616937d008bbe19"
+            }
+        }
+    }
+}

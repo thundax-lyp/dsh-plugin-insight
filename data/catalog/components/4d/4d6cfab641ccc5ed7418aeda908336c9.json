@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "4d6cfab641ccc5ed7418aeda908336c9",
+    "identity": "github:1398779656:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1398779656:root",
+            "repository": "xingzhen199186/dsh-jev-ultrafast",
+            "path": "",
+            "revision": "9418f4b1cd4c11104c2d082077647c619b1d591f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "933ec633dc4b550b8bf63030389598108f8e7e8ab6c19705251734b158b9209f",
+                "code": "9418f4b1cd4c11104c2d082077647c619b1d591f",
+                "maintenance": "1dd4711b29024a27380f0b8a21fe9cfa18d0468a2908f28ec3ba528aa2e66962"
+            }
+        }
+    }
+}

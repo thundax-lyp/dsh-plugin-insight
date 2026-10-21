@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f82bf9f5d7bd555ab3bb9fe9bc577484",
+    "identity": "github:1355344668:dsh-plugin-stalegreen",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1355344668:dsh-plugin-stalegreen",
+            "repository": "pavangupta352/stalegreen",
+            "path": "dsh-plugin-stalegreen",
+            "revision": "9e4cbca4787558ea739c2e4ae9cc8314cdc9c173",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f662bc4e1709ab68fc2980fd92d9bf6ff0bea1e1ddce92b720c4fb67bbb1e026",
+                "code": "9e4cbca4787558ea739c2e4ae9cc8314cdc9c173",
+                "maintenance": "d37c32b8bbad6e19053f1de893915ae3f510bed48dc2173a4cf43e8cb6fe4e19"
+            }
+        }
+    }
+}

@@ -16,8 +16,8 @@ GitHub 来源与固定版本读取使用当前可用的 GitHub 插件或已认�
 新一轮与当前快照比较，不要求上一轮 SESSION、manifest 链或 runs 归档；历史版本需要时从 Git 查阅。
 具体合并、证据落位及清理条件以[数据契约](../_shared/references/DATA-CONTRACT.md#唯一当前快照与本轮增量)为准。
 
-正式真相由 `data/catalog/SNAPSHOT.json` v2 索引及 `data/catalog/snapshot/` 条目组成，存储见共享 `snapshot-storage.schema.json`，还原后的逻辑结构见 `snapshot.schema.json`；本轮工作入口为 `data/runs/<round>/WORK.json`，新建时使用 v2 小索引，INPUT、队列、会话状态与单项结果分开保存，完整逻辑结构见 `snapshot-work.schema.json`，拆分存储见 `work-storage.schema.json`。正式快照用共享 snapshot-storage 读取器加载，WORK／SESSION 用过程读取器加载，不直接读取索引后假设内嵌完整数据。
-使用 `npm run snapshot --` 完成 start／next／stage／block／plan／apply／render／validate／migrate-work／clean。`PLUGINS.json`、`PUBLICATION.json`、路径注册表、META 与页面是可重建的兼容输出，不再单独人工写入。
+正式真相由 `data/catalog/index.jsonl`、`data/catalog/components/<id前两位>/<id>.json`、全局 `state.json` 与独立证据组成；物理 id 为 canonical identity 的 MD5，完整格式见共享数据契约及 `component-storage.schema.json`，还原后的逻辑结构见 `snapshot.schema.json`。本轮工作入口仍为 `data/runs/<round>/WORK.json`，存储见 `work-storage.schema.json`，完整逻辑结构见 `snapshot-work.schema.json`。正式快照与 WORK／SESSION 均使用共享读取器，不假设索引内嵌完整数据。
+使用 `npm run snapshot --` 完成 start／next／stage／block／plan／apply／render／validate／migrate-work／clean。档案、路径、META 和发布数据集中在组件完整记录；不再生成旧聚合 JSON 或独立展示 META。页面是可重建输出，不单独人工写入。
 首次迁移才使用 `snapshot bootstrap`；它保留现有分析，明确列出缺失历史原件，不把迁移当成本轮研究。已有快照时不得重做 bootstrap。
 旧 research／publication 的正式写入不再用于新流程；命令及恢复语义见[会话与合并恢复](references/SESSION-OPERATIONS.md)。
 
@@ -64,18 +64,18 @@ GitHub 来源与固定版本读取使用当前可用的 GitHub 插件或已认�
    按研究规范和输出标准核对贡献识别、关键质疑、新假设及验证；场景、替代办法、依赖、流程和成本支撑贡献判断，不得用静态候选批量生成通用结论。
 5. **校验并暂存完成记录。** 核对每项身份、版本、来源指纹、完整 findings 复核、证据引用、报告及材料摘要。核对本轮两轴创新评分及理由已写入JSON，按数据契约校验版本、分项和依赖，不在读者Markdown中展示评分。
    计划与应用先针对本轮暂存的候选快照，不逐项写入正式档案；检查点代表本轮记录完整，不代表已合并或已通过宿主验收。
-   每项 DISPLAY.json 含 metadata 对象、单项 summaries／capabilities／advice 对象与 recommendations 数组；各项必须由人工研究形成，结构与发布 Schema 一致。
+   每项 DISPLAY.json 只含 metadata 对象和单项 summaries／capabilities／advice 对象；组件推荐结论和评分写入观察的 recommendation，不提交独立名单。stage核对本轮结论、四项理由、总分、版本和证据，未评估项不能作为新完成研究暂存。
    ```sh
    npm run snapshot -- stage --work data/runs/<round>/WORK.json --plugin <id> --observations <observations.json> --report <insight.md> --display <DISPLAY.json>
    ```
    失败保存部分材料与 reason JSON（稳定 `reason_code`、可读 `reason` 和自包含问题详情，结构见数据契约），再用 `snapshot block --work ... --plugin ... --input <reason.json>` 登记；block先写本轮、最终合并进正式 `research_blocks`。继续其余所选项，不补位、不重复应用。
-6. **形成合并候选。** 从已完成的贡献、质疑及假设论证归纳四标签短评；有共同问题时比较跨插件机制与业务取舍、尝试推导新假设，论证保存在现有报告中。再形成有依据的推荐候选与发布输入，按输出标准区分已验收安装与尚需验证的试用建议，读者页面不显示“条件试用”标签，同等级人工按场景价值和证据充分度安排顺序，不以创新评分自动排序，不为每轮凑出创新、分数或推荐。安装推荐仍要求固定版本的真实宿主验收证据。
+6. **形成合并候选。** 从已完成的贡献、质疑及假设论证归纳四标签短评；有共同问题时比较跨插件机制与业务取舍、尝试推导新假设，论证保存在现有报告中。每项研究由执行AI按研究规范的adoption-v1明确推荐结论、理由及四项评分，写入组件档案；不以创新分、Star或下载量推断。父Agent核对全部当前有效研究的推荐有效性，保留有效旧结论；从全量有效组件按采用分排序生成推荐，不限于本轮，不单独维护名单。结论、证据门槛与输出上限分别遵循数据契约、研究规范和输出标准，不为数量凑推荐。
    使用 META 采集器保存本轮采集结果，npm 包名必须由源码核实；未知值不填0。
    将支撑当前结论的分析原文和必要证据落入正式快照引用的位置；发布输入只引用合并候选中的当前材料，不引用待清理的 runs 文件。
    未选、失败或未完成项保留正式快照的有效记录，不因本轮 pending／blocked 将旧成果移出发布；新证据足以使旧结论失效时，单独校验并标记待复核，调整推荐，不伪装成完成。
 7. **最后合并与生成。** 汇总审阅本轮候选；检查正式基线摘要和依赖是否变化，冲突时重做合并计划，不覆盖并发修改。
    通过结构、身份、证据、依赖和语义校验后，再以一致的发布事务合并当前档案、分析／证据引用及展示输入；提交点前读者仍看到旧快照。
-   从合并后的当前快照生成 README、分类页和详情展示页。旧 SESSION、runs 和历史 manifest 不参与当前发布有效性判断。
+   从合并后的全部当前有效研究生成推荐：README前5项，推荐页前50项；同时生成分类页和详情展示页。旧 SESSION、runs 和历史 manifest 不参与当前发布有效性判断。
    ```sh
    npm run snapshot -- plan --work data/runs/<round>/WORK.json --out /tmp/dsh-snapshot-plan.json
    npm run snapshot -- apply --plan /tmp/dsh-snapshot-plan.json
@@ -108,7 +108,7 @@ GitHub 来源与固定版本读取使用当前可用的 GitHub 插件或已认�
 
 1. **先更新生成要求。** 将用户确认的阅读目标落实到 Skill 的写作与发布步骤，核对输出标准中的相关约定。已有确认要求优先，不把“改 Skill”替换成直接编辑生成的 Markdown；生成要求与既有标准有冲突时按用户当前要求处理并明确同步范围。
 2. **组织三个阅读层次。** 首页先定位和分类导航，再推荐、最新、最热、分类精选，最后出处、许可与页面更新时间；分类导航用“分类／用途／数量”紧凑表，精选用加粗名称、功能简介与必要指标，不为每个插件创建标题。分类页先说明范围，再给紧凑比较表，下方以二级插件标题保留四标签短评，取消重复的同名分类标题；表内只放简短用途和完整的关键条件，长建议放回短评。
-   最新、最热、推荐各有完整列表页，首页标题可点击进入；每栏首页最多5项，完整页展示全部合格条目与相同排序口径。最新按已核实npm latest版本发布时间展示30天内发版，普通发版不冒充重要更新，最热按已核实 npm 包近30天下载量排序、共用包仅占一席，推荐按证据与人群人工选择。所有页面按输出标准将Star、下载量、发布日期 Badge 紧邻排列，隐藏未知或0；最新条目用“最新发布”日期标签。具体门槛和当前实现限制只在输出标准维护，发布时不得把推送冒充重要更新或用创新分数排列推荐。
+   最新、最热、推荐各有完整列表页，首页标题可点击进入；每栏首页最多5项，最新与最热完整页展示全部合格条目，推荐页展示前50项，均使用相同排序口径。最新按已核实npm latest版本发布时间展示30天内发版，普通发版不冒充重要更新，最热按已核实 npm 包近30天下载量排序、共用包仅占一席，推荐从全部有效组件的recommendation按采用评分降序生成，同分按稳定ID。所有页面按输出标准将Star、下载量、发布日期 Badge 紧邻排列，隐藏未知或0；最新条目用“最新发布”日期标签。具体门槛和当前实现限制只在输出标准维护，发布时不得把推送冒充重要更新或用创新分数排列推荐。
 3. **应用详情写作要求。** 使用单插件洞察 Skill 的读者组织步骤；先给建议及如实的核查状态，再场景、能力与流程、效果与限制、工程分析，最后核查依据与辅助统计。完整提交链接保留可追溯目标，显示短 SHA；顶部 META 按输出标准展示已核实的“最新发布”日期 Badge；不显示历史对照或“最后更新”徽章，不安排真实宿主验证。
 4. **通过生成资源实施。** 检查现有模板与脚本是否支持上述生成要求；需要时修改本 Skill 的生成模板／脚本，而非直接修补 README、分类页或 INSIGHT。保持数据语义和版本绑定，不从统计、热度或格式推断采用结论；无法安全归类的正文保留原文，不能静默删除或强凑结构。
 5. **生成并检查。** 执行 `npm run render:research`，回读首页、分类页及长短详情代表样例；检查章节顺序、标题层级、锚点与返回链接、表格宽度、既有证据和假设状态。执行 `npm run check`。生成不代表安装、运行或宿主验收通过；只报告实际结果，未经授权不提交或推送。

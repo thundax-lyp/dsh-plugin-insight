@@ -16,7 +16,7 @@
         "research": "node .agents/skills/dsh-plugin-init/scripts/research-session.mjs",
         "prepare:plugin": "node .agents/skills/dsh-plugin-insight/scripts/prepare-plugin-materials.mjs",
         "publication": "node .agents/skills/dsh-plugin-init/scripts/publication-data.mjs",
-        "render:research": "node .agents/skills/dsh-plugin-init/scripts/render-research.mjs --input data/catalog/PUBLICATION.json",
+        "render:research": "node .agents/skills/dsh-plugin-init/scripts/render-research.mjs --input data/catalog/index.jsonl",
         "capture:meta": "node .agents/skills/dsh-plugin-insight/scripts/capture-plugin-meta.mjs",
         "inventory:plugin": "node .agents/skills/dsh-plugin-insight/scripts/plugin-inventory.mjs",
         "loc": "sloc",

@@ -16,21 +16,25 @@
 - 当前结论保留来源 URL、固定版本、证据类型、限制及必要材料。合并时将仍需引用的材料落入正式快照位置，不让有效结论依赖可清理的 runs 路径。
 - 合并回读成功且当前快照可独立校验、生成页面后，本轮不再被引用的材料可清理；未合并增量保留用于恢复。历史变迁由 Git 追踪，不要求每轮永久归档；本规则不自动授权删除既有文件。
 
-正式快照采用索引 → 条目存储：`data/catalog/SNAPSHOT.json` 是 v2 索引，由 [存储 Schema](../schemas/snapshot-storage.schema.json) 约束；`data/catalog/snapshot/<section>/<前缀>/<sha256>.json` 是按内容摘要命名的不可变条目。共享 `snapshot-storage.mjs` 读取器核对路径、每项摘要与完整语义摘要后，还原 [snapshot Schema](../schemas/snapshot.schema.json) 定义的 v1 逻辑对象，包含 catalog、publication、registry、discovery、reports、metadata、artifacts、research_blocks、迁移限制及合并标识。业务脚本使用读取器，不将索引当作内嵌快照读取。旧 v1 单文件继续兼容读取。
+正式快照采用 v3 组件存储，由 [组件存储 Schema](../schemas/component-storage.schema.json) 约束：
 
-档案、报告、META、发布记录和摘要／能力／建议按条目拆分；必要证据正文单独保存，不重复嵌入索引。发现清单按稳定ID摘要前两位分为最多256组，组内按ID排列，索引保存原清单顺序；单项变化不重写整个发现清单。索引只引用完整准备且校验通过的对象，同内容对象复用，缺失／损坏或路径、符号链接逃逸时拒绝读取，不从生成页面回填。旧缺失原件仍单列 unavailable_artifacts，不把迁移当作新验证。
+- `data/catalog/index.jsonl` 每行一个紧凑 JSON，按小写32位 `id` 升序，末尾换行；覆盖已研究组件与尚未研究的发现候选。包含身份、仓库、名称、分类、标签、可用性、研究层级、推荐结论／理由／分数／有效性、发布状态、稳定详情目录及组件文件字节 SHA-256。推荐页仍经过当前研究与依赖有效性校验，不直接按索引分数取榜。
+- `data/catalog/components/<id前两位>/<id>.json` 为该组件的完整记录，UTF-8、`indent=4`、末尾换行。`id = md5(UTF8(identity))`，`identity = github:<仓库数字ID>:<组件ID>`，不使用仓库名、路径或大小写转换重算身份；写入时检查 MD5 冲突。`data` 聚合档案、发现记录、报告原文、META、推荐评估、发布记录／摘要／能力／建议、详情目录及受阻记录；缺失部分不伪造。尚未研究候选索引标记 unassessed，分数为 null。
+- `data/catalog/state.json` 只保存全局来源、限制、事务标识、必要证据映射及逻辑数组的原始顺序，绑定索引字节摘要和完整语义摘要。它不另存组件档案。
+- `data/catalog/evidence/<sha256前两位>/<sha256>.json` 保存必要证据正文，按内容复用；原证据路径作为稳定引用标签保留，读取器通过映射取得内容。缺失原件仍列 unavailable_artifacts，不将迁移当作新验证。
+
+共享 `snapshot-storage.mjs` 校验格式、身份、排序、路径、符号链接、详情／证据摘要及索引派生字段，还原 [snapshot Schema](../schemas/snapshot.schema.json) 定义的 v1 逻辑对象供业务使用。逻辑对象内已有 `id`、依赖 `plugin_id` 和证据 ID 保留原身份字符串，避免改写研究证据与 WORK 基线；物理存储和索引的 `id` 统一为 MD5。索引字段由组件完整记录派生，不单独维护名单。旧 v1／v2 只由兼容读取器用于显式迁移。
 本轮完整逻辑状态由 [工作文件 Schema](../schemas/snapshot-work.schema.json) 约束，拆分入口、队列、状态和兼容链接由 [存储 Schema](../schemas/work-storage.schema.json) 约束。新建过程使用 v2 拆分存储：WORK 只保存 base_digest、INPUT／QUEUE／会话状态／单项记录的路径和 SHA-256；INPUT 保存唯一完整候选清单，QUEUE 保存按输入下标分组的变化及缺席项，状态文件只保存会话头与非默认状态／检查点，已完成记录逐项独立保存。SESSION.json 是指向同目录 WORK 的兼容入口，不另存完整清单。
 读取器校验引用路径、内容摘要、Schema、队列覆盖、选择和检查点后，重建原 v1 内存结构；内存结构的语义摘要保持不变，不因拆文件改变已有合并计划、事务标识或结论。session.base_digest 仍绑定正式快照，previous_digest 仅兼容旧工具。
 过程依赖对象按内容摘要命名且不可变，更新先准备依赖、再原子替换唯一 WORK 索引；中断前后读取旧／新完整状态。SESSION 入口通过 WORK 读取当前会话，不独立切换状态；未引用的中断残留不当作完成记录。引用只能落在本轮目录，拒绝路径逃逸、符号链接逃逸与摘要不符，不自动修正损坏内容。
 旧 v1 可继续读取；显式 `snapshot migrate-work --work ...` 只预览，加 `--apply` 才迁移。先保留 WORK／SESSION 原始字节到本轮 migration-originals，再生成、回读并核对完整语义摘要后切换 WORK；重复执行不得覆写备份或重置选择／状态。迁移不依赖当前正式基线仍匹配，也不执行研究或修改 SNAPSHOT。正常暂存旧 v1 保持旧格式，避免隐式迁移。
-合并计划从固定基线和经过校验的 WORK 重建结果；持有独占锁后复核基线、WORK 与结果摘要，先准备不可变条目，再原子替换 SNAPSHOT 索引，最后按完整语义摘要回读。中断最多留下旧／新两个完整状态之一；遗留锁须人工核实。重复 apply 同一结果返回 already_applied，不追加历史运行日志。已提交前的旧索引引用对象不删除，避免并发读取旧索引时丢失对象；未引用的中断对象不具备正式事实效力。
+合并计划从固定基线和经过校验的 WORK 重建结果；持有 `index.jsonl.lock` 后复核基线、WORK 与结果摘要。共享写入器先在内存准备并回读完整候选，再在 `.transaction/` 保存所有变更文件的旧字节及撤销清单，逐文件原子替换，最后更新 state 与 index 并核对完整语义摘要。事务存在期间读取拒绝返回部分状态，成功后清除撤销清单；普通写入失败自动回滚，中断后核实无活动写入者、处理遗留锁，再执行 `npm run snapshot -- recover-storage` 回滚。读取结束再次核对索引及事务状态，变化时拒绝并要求重读。`.transaction/` 不进入 Git，不可当缓存删除。重复 apply 返回 already_applied，不追加研究事实；无内容变化不重写文件。
 
-使用 `npm run snapshot -- migrate-storage --backup data/runs/<round>/migration-originals/snapshot-storage-v1/SNAPSHOT.json` 显式迁移已有单文件：持有正式快照锁，先保存原始字节，再准备条目、回读核对语义摘要，最后切换索引；重复执行仅校验已拆分状态，不覆盖备份。物理拆分不改变逻辑摘要、WORK基线、检查点、证据或研究版本，不重新研究。清理旧对象需另行核对当前及并发读取引用，本次不自动垃圾回收。
-PLUGINS、PUBLICATION、PLUGIN-PATHS、META 及页面从快照重建，生成前后核对快照摘要；生成中断可重跑，兼容输出不反向覆盖快照。当前研究有效性来自 records 与 catalog 的分析摘要匹配，不来自旧 manifest。
+使用 `npm run snapshot -- migrate-storage --backup data/runs/<round>/migration-originals/catalog-v2/SNAPSHOT.json` 显式迁移旧正式快照，持有相同锁，保存旧索引及旧引用图原始字节后生成新组件存储，回读核对完整语义摘要；重复执行只校验新存储。清理旧索引及其条目前，应备份整个旧引用图并确认语义与生成结果一致。迁移不改变 WORK 基线、检查点、推荐评分、研究版本或原证据。`PLUGINS.json`、`PUBLICATION.json`、`PLUGIN-PATHS.json` 和展示目录下的 `META.json` 不再生成；META 直接从组件文件读取。页面从当前快照重建，生成中断可重跑，生成物不反向覆盖快照。当前研究有效性来自 records 与 catalog 的分析摘要匹配，不来自旧 manifest。
 
 ## 身份与分类
 
-- `id = github:<repository_id>:<component_id>`；仓库数字 ID 与已分配组件 ID 是身份，名称和路径不是。
+- `identity = github:<repository_id>:<component_id>`，物理 `id = md5(identity)`；仓库数字 ID 与已分配组件 ID 是身份，名称和路径不是。
   改名、路径移动保留身份，旧位置进入 `aliases`；相同 URL 下重建而数字 ID 不同的仓库是另一身份。
 - 同仓库不同组件可分别建档；`entry_type` 表示条目类型，技术主类与业务主类各一个，`tags` 可多个。
   分类含义由[研究规范](../../dsh-plugin-insight/references/RESEARCH-STANDARD.md)定义，目录收录不证明可安装。
@@ -71,6 +75,19 @@ PLUGINS、PUBLICATION、PLUGIN-PATHS、META 及页面从快照重建，生成前
 - 评分进入分析摘要绑定；修改评分须同步当前记录的analysis摘要。新研究stage要求显式提交本轮两轴评分（允许null及缺口说明），版本必须匹配，复核时间不得早于会话截止时间。
 - 依赖失效将评分置为needs_review，不自动清零、继承为新版本有效评分或重新打分；新观察省略评分时保留已有评分并按依赖判断失效。人工重新复核后才能恢复current。
 - 兼容无评分的历史档案，不因加入此字段自动为历史插件补分或刷新复核时间。未评分、分项未知、版本不匹配或待复核的评分均不参与数值排序。原始评分和评分理由仅保存在JSON，不展示到读者Markdown。
+
+## 组件推荐结论与评分
+
+每个正式档案组件保存 `recommendation`，与 META 客观采集、创新评分分开；字段结构见 catalog Schema。研究由 AI 执行时记录 evaluator=ai，不把 AI 判断表述成人类已经审核。
+
+- `decision` 为 unassessed（未评估）、not_recommended（不推荐）、observe（观察）、trial（试用）、install（值得安装）。不在推荐页不等于不推荐；不可从旧名单缺席推断结论。
+- `reason` 用一行说明适合谁、推荐或不推荐的理由及关键条件。已评估项保存 adoption-v1 的四项 criteria（score、rationale）、总分 score、固定 revision、独立 reviewed_at、evaluator、evidence_ids 和 dependencies。推荐复核时间独立于源码检查时间，不借此刷新研究截止时间。
+- 未评估项 reason 说明缺口，score、criteria、revision、reviewed_at、evaluator 为 null，证据与依赖为空，status=current；null 不是0。已评估项必须有完整分项、数值总分和同版本源码证据。评分方法与结论含义见[研究规范](../../dsh-plugin-insight/references/RESEARCH-STANDARD.md#采用推荐评分adoption-v1)。
+- status=current／needs_review 表示结论有效性，不增加第六种推荐结论。当前推荐须匹配自身 code 指纹、固定分析版本与全部依赖；依赖变化保留原分和理由并置 needs_review，不自动升降级。脚本变化标记另由 META 控制暂停入榜。
+- install 的引用证据必须包含同版本、带 artifact 和 environment 的 host_acceptance；高分不能绕过验收。真实安装、核心功能与禁用／卸载内容仍须逐项审阅。
+- 新研究 stage 必须显式提交已评估的本轮结论、四项评分及理由，不接受 unassessed；总分由脚本求和，不能以创新分、Star、下载量或关键词推断。旧观察允许缺字段以供恢复；正式迁移逐项补 unassessed，只有已实际评估的项补分。
+- 推荐对象从全部当前有效 publication.records 关联的 catalog 组件中派生，不维护独立名单；仅 current、版本一致、无待复核结论且 decision 为 trial／install 的非空评分项参与。排序与上限见输出标准。历史 publication.recommendations 仅兼容读取，当前生成器忽略，后续正式合并删除该字段；DISPLAY 不再提交名单。
+- 推荐属于分析摘要；变更需同步发布记录的 analysis_sha256。仅复核推荐可使用 `snapshot assess-recommendations`，绑定正式基线及各项固定版本，持锁验证并原子合并，不改变原稿、检查时间或伪造新研究。保留档案但缺少有效发布记录的组件，只能依据已有固定版本源码证据补观察／不推荐结论及评分，并强制needs_review；不恢复发布、不将历史源码证据改标为当前版本。输入、预览及恢复见[会话操作](../../dsh-plugin-init/references/SESSION-OPERATIONS.md#组件推荐迁移与复核)。
 
 ## 观察批次与候选合并
 
@@ -126,7 +143,7 @@ PLUGINS、PUBLICATION、PLUGIN-PATHS、META 及页面从快照重建，生成前
 
 ## 发布输入、META 与统计字段
 
-- 发布输入只组织已有成果，不成为研究事实或结论的替代真相源；推荐对象必须为已完成项。
+- 发布输入只组织已有成果，不成为研究事实或结论的替代真相源；推荐对象由已完成项的组件推荐结论派生。
   `metadata` 以稳定插件 ID 关联快照，仓库数字 ID 和名称必须匹配；`history` 兼容旧输入。
   现有可选 `catalog` 与 `history` 字段仅兼容旧输入，不作为新流程的历史依赖；首次 added 仅表示本工程入档，不代表 npm 发布。
 - 发布输入 `summaries` 按插件 ID 绑定作者功能材料的归纳文本、来源 URL 和固定版本；它不是独立验证结论，也不冒充逐字引文。

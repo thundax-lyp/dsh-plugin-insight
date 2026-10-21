@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "795923a60316c1df7af4e087f95dc1ca",
+    "identity": "github:1413273663:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1413273663:root",
+            "repository": "yishuiliufang/dsh-wsl-first",
+            "path": "",
+            "revision": "4ba10afa5929c477a5e2e06e2128df0276882e95",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "58894f14111a5a1eecfff06010d8e10e0c7907bd2422674239ee08ebcb20f4ca",
+                "code": "4ba10afa5929c477a5e2e06e2128df0276882e95",
+                "maintenance": "d2d3b38ac3c8c482c0f9415571840585a94a55574e9657e2f91581f79ee61eb4"
+            }
+        }
+    }
+}

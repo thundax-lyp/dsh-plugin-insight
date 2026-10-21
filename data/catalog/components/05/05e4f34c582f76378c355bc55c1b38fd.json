@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "05e4f34c582f76378c355bc55c1b38fd",
+    "identity": "github:1407253149:dsh-code-workbench",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1407253149:dsh-code-workbench",
+            "repository": "FinalLawer/dsh-native-code-workbench",
+            "path": "dsh-code-workbench",
+            "revision": "6ad37cf375df97cfeb58afe88c7b84a656f7e8b0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fcc3122a197cbb7997647089d9d006a8913c71329069ff8dcf75421d49ea6d7b",
+                "code": "6ad37cf375df97cfeb58afe88c7b84a656f7e8b0",
+                "maintenance": "b18d451ec368b3a2ecf7a27233a78fa24bb9a6e5adae39618d444f1582dbc6a5"
+            }
+        }
+    }
+}

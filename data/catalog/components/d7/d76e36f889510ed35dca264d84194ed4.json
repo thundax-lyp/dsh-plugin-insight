@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d76e36f889510ed35dca264d84194ed4",
+    "identity": "github:1333756482:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333756482:root",
+            "repository": "wanderer-yk/dsh-xueqiu",
+            "path": "",
+            "revision": "3b468a49d10acc8cdc2ce51009c09ae97d1c1a46",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0a186b495830d9bf6bcca177b51b70e7fcdec83f2d0dbc3a37db387fe9a4db7a",
+                "code": "3b468a49d10acc8cdc2ce51009c09ae97d1c1a46",
+                "maintenance": "b9b64ba3d0224e6a94c27eca973a4f05e6bb4cb96445a76062a07a5a3bb9e49b"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a15f0816f8c89ebc4406dfdcc9116c94",
+    "identity": "github:1418243496:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1418243496:root",
+            "repository": "StartOver000/SuperPower-dsh",
+            "path": "",
+            "revision": "9973dbf0a72c57ffa9a8eb746d84115fcca42f16",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9ecb53babb1d86191c7d6a82405c6377ac2faa04c63247b2b03863c729598f8b",
+                "code": "9973dbf0a72c57ffa9a8eb746d84115fcca42f16",
+                "maintenance": "af8041a895ee1ef7e4123bc89f1809df925a3f2b08410e477c6648c428a9f3fb"
+            }
+        }
+    }
+}

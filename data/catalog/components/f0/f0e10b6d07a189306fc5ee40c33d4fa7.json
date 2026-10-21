@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f0e10b6d07a189306fc5ee40c33d4fa7",
+    "identity": "github:1333126918:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333126918:root",
+            "repository": "Small-tailqwq/dsh-tps",
+            "path": "",
+            "revision": "f01150fbf8ee091b4a9c03c2b50a4bd127c1aab6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "39f24abe8cbc3bead5843febf86393e352ffd7b506ea9afad035055d7124c9c8",
+                "code": "f01150fbf8ee091b4a9c03c2b50a4bd127c1aab6",
+                "maintenance": "88367b96e9b46ac739ddd149eefc98f81a0c8c175f12bd9158f6cced8048e9dc"
+            }
+        }
+    }
+}

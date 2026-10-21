@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "14e9bd34f957892b400f4d5a86389473",
+    "identity": "github:1345901808:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345901808:root",
+            "repository": "soarGuo/dsh-skin-lab",
+            "path": "",
+            "revision": "ad32833d069666a19f534715afd2bcd63bb3a80e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "09190681a7de758f106fddabd40b5ed9d79584b2c750a03ecd7dee9f15d02785",
+                "code": "ad32833d069666a19f534715afd2bcd63bb3a80e",
+                "maintenance": "57dd7c8af2806565e671a785882ded788e2b17caf7b670d45239c0ba5b4d1d27"
+            }
+        }
+    }
+}

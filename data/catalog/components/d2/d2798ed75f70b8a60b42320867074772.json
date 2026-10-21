@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d2798ed75f70b8a60b42320867074772",
+    "identity": "github:1388323417:plugins-dsh-drafta",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1388323417:plugins-dsh-drafta",
+            "repository": "rpegorov/drafta-mcp",
+            "path": "plugins/dsh-drafta",
+            "revision": "47db1283d94625aedf208013650053389134dd2c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3314a59ba2ed3c6fd5c2b35026e56a86f5e8797d6f804b3ac9ffbf0c724a64cb",
+                "code": "47db1283d94625aedf208013650053389134dd2c",
+                "maintenance": "5176988451a5aa725c8186022f9101362d150f205d3e47e0abf3e4a05d792044"
+            }
+        }
+    }
+}

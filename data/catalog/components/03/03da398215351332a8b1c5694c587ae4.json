@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "03da398215351332a8b1c5694c587ae4",
+    "identity": "github:1380851775:dsh-plugin",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1380851775:dsh-plugin",
+            "repository": "xianyuyijinban/boardwise",
+            "path": "dsh-plugin",
+            "revision": "a04c5c4af3cab6db9f417a0539e7b60059e9e95f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3806bd2715c950b8f0e56ef59d3b08ba97eb9c09f0d529166a42f44cc5c42762",
+                "code": "a04c5c4af3cab6db9f417a0539e7b60059e9e95f",
+                "maintenance": "aa0099e10d5368027baf2ff0ed894df70f5bb93092344204b91b93a4695a883a"
+            }
+        }
+    }
+}

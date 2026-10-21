@@ -1,0 +1,480 @@
+{
+    "schema_version": 3,
+    "id": "994fbe6a22e25d268945f8f3bf08c62c",
+    "identity": "github:1344713526:dsh-lsp-cpp",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1344713526:dsh-lsp-cpp",
+            "repository_id": 1344713526,
+            "component_id": "dsh-lsp-cpp",
+            "repository": "988hj7tczd-oss/dsh-lsp-packs",
+            "path": "dsh-lsp-cpp",
+            "aliases": [],
+            "name": "dsh-lsp-cpp",
+            "entry_type": "plugin",
+            "technical_category": "tools-integration",
+            "business_category": "software-delivery",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "92c40620678efa33cc9c60a9971896b6ca9bb5be3d2474b4a09eadcd3466e80f",
+                "code": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+                "maintenance": "c574dcf28e68df0fb97fbd81638d887e8e9b60b99dbcf2e34fc7481b1d25448e"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-04-github-1344713526-dsh-lsp-cpp-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T04:14:07.883Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-04-github-1344713526-dsh-lsp-cpp-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/988hj7tczd-oss/dsh-lsp-packs/blob/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-cpp/README.md",
+                    "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+                    "captured_at": "2026-10-21T04:14:07.883Z",
+                    "summary": "为DSH配置clangd的C/C++语言服务路由和文件扩展映射。",
+                    "artifact": "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--dsh-lsp-packs--dsh-lsp-cpp/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-04-github-1344713526-dsh-lsp-cpp-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/988hj7tczd-oss/dsh-lsp-packs/blob/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-cpp/src/index.ts",
+                    "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+                    "captured_at": "2026-10-21T04:14:07.883Z",
+                    "summary": "核查 dsh-lsp-cpp/src/index.ts、dsh-lsp-cpp/README.md、dsh-lsp-cpp/cordis.yml、dsh-lsp-cpp/tests/smoke.e2e.ts；dsh-lsp-cpp/src/index.ts以provider cpp、command clangd和空args配置官方LspStdio，映射.c/.h到c、.cpp/.hpp/.cc到cpp；cordis.yml只插入语言包行。",
+                    "artifact": "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--dsh-lsp-packs--dsh-lsp-cpp/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定SHA内本组件列明文件及配置/作者资料的有界源码检查；组件inventory不包含外部官方底座原创量。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "适合已有C/C++工具链、希望在DSH查询定义与引用的开发者；跨文件结果取决于实际项目构建信息。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344713526-dsh-lsp-cpp-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1344713526:dsh-lsp-cpp",
+                            "area": "code",
+                            "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:14:07.883Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "dsh-lsp-cpp/src/index.ts以provider cpp、command clangd和空args配置官方LspStdio，映射.c/.h到c、.cpp/.hpp/.cc到cpp；cordis.yml只插入语言包行。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344713526-dsh-lsp-cpp-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1344713526:dsh-lsp-cpp",
+                            "area": "code",
+                            "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:14:07.883Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定SHA内本组件列明文件及配置/作者资料的有界源码检查；组件inventory不包含外部官方底座原创量。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344713526-dsh-lsp-cpp-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1344713526:dsh-lsp-cpp",
+                            "area": "code",
+                            "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:14:07.883Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "分发以本组件固定package.json、组合配置与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344713526-dsh-lsp-cpp-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1344713526:dsh-lsp-cpp",
+                            "area": "code",
+                            "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:14:07.883Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "首次安装clangd并配置PATH、共享LSP底座及构建数据库；持续索引耗CPU/内存，人工维护编译参数。无本包固定现金费，失败导航与错误修改需另计人工成本。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344713526-dsh-lsp-cpp-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1344713526:dsh-lsp-cpp",
+                            "area": "code",
+                            "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:14:07.883Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "已有clangd项目可先试。先确认构建数据库和头文件语言，再在真实工程测跨文件定义/引用；单文件通过不能直接覆盖整个代码库。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344713526-dsh-lsp-cpp-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1344713526:dsh-lsp-cpp",
+                            "area": "code",
+                            "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:14:07.883Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "可减少语言配置重复，但没有真实C/C++工程导航准确率或工时对照。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344713526-dsh-lsp-cpp-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1344713526:dsh-lsp-cpp",
+                            "area": "code",
+                            "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:14:07.883Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "本包resolveServerConfig把默认值与覆盖合并，再经官方Config填界限，fallback有生命周期清理。统计仅本组件文件，生成骨架不等于协议创新；错误分类和扩展回退需改进。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344713526-dsh-lsp-cpp-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1344713526:dsh-lsp-cpp",
+                            "area": "code",
+                            "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:14:07.883Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "作者称开箱语言导航；本项实际增量是clangd启动默认值和C/C++扩展路由、可覆盖配置及不可用占位provider。协议和lsp工具由官方底座实现，不能将完整LSP能力归为本包原创；相对手写servers表，减少常见C/C++接线。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344713526-dsh-lsp-cpp-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1344713526:dsh-lsp-cpp",
+                            "area": "code",
+                            "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:14:07.883Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "README要求精确跨文件导航生成compile_commands.json；单文件smoke不代表宏、头文件搜索路径和多目标工程都正确。.h默认路由c并不覆盖所有C++头文件语义。catch把任意LspStdio加载错误称server不可用，fallback还用默认扩展表，用户扩展可能在故障时消失。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344713526-dsh-lsp-cpp-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1344713526:dsh-lsp-cpp",
+                            "area": "code",
+                            "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:14:07.883Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "待验证假设：clangd接线增加构建数据库存在性和头文件语言选择的只读诊断，可减少把项目配置错归因于模型导航。用有/无compile_commands及混合C/C++头文件项目比较定位正确率和排障时间；诊断不可替代真实server查询。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344713526-dsh-lsp-cpp-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1344713526:dsh-lsp-cpp",
+                            "area": "code",
+                            "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:14:07.883Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cross-language-readiness",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "跨插件比较：cpp与java的入口均把默认命令、扩展表和可覆盖参数交给同一官方LspStdio，协议复用相同；差异主要在项目就绪条件。cpp依赖clangd与compile_commands.json，java依赖作者README所列JDK/jdtls及独立Eclipse工作区。两者catch均把加载异常统称服务不可用，且故障provider使用默认扩展表。由此推导待验证假设：统一诊断框架应保留实际扩展配置并按“宿主装配、命令、项目元数据、索引就绪”逐层报告，各语言提供独立探针。在C/C++缺编译数据库与Java工作区锁冲突的故障矩阵中，对照当前统一错误，比较归因正确率和恢复时间；未执行该验证，不能从同骨架推断同等导航质量。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344713526-dsh-lsp-cpp-source",
+                        "2026-10-21-04-github-1344713526-dsh-lsp-java-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1344713526:dsh-lsp-cpp",
+                            "area": "code",
+                            "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+                        },
+                        {
+                            "plugin_id": "github:1344713526:dsh-lsp-java",
+                            "area": "code",
+                            "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:16:36.532Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T04:16:36.532Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+                "reviewed_at": "2026-10-21T04:14:07.883Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1344713526:dsh-lsp-cpp",
+                        "area": "code",
+                        "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 0,
+                        "mechanism": 8,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty=0：clangd/LSP均属上游，新增为配置。 mechanism=8：默认与覆盖/fallback有实现但范围有限。 transferability=10：配置模式可迁移，C/C++构建条件另需。 simplification=8：减少手写servers但不免项目配置。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344713526-dsh-lsp-cpp-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 10,
+                        "economics": 4
+                    },
+                    "rationale": "workflow=9：把现成clangd接到DSH查询。 delivery=8：可返回路由配置，工程准确性未验。 reach=10：C/C++用户适用，工具链前置明确。 economics=4：无跨文件收益与工时对照。",
+                    "basis": "interpretation",
+                    "score": 31,
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344713526-dsh-lsp-cpp-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "已有clangd项目接线有便利，但包声明DSH小于0.2.0；先确认当前底座兼容，再用compile_commands及头文件语言验跨文件导航。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "C/C++工程符号定义引用任务明确。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "默认clangd及扩展路由省servers表，主要分析属官方底座与clangd。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "入口和不可用fallback已查，.h按c及默认表故障回退限制明确。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "工具链编译数据库和索引内存需准备，旧宿主适配待核。"
+                    }
+                },
+                "score": 59,
+                "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-04-github-1344713526-dsh-lsp-cpp-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1344713526:dsh-lsp-cpp",
+                        "area": "code",
+                        "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1344713526:dsh-lsp-cpp",
+            "repository": "988hj7tczd-oss/dsh-lsp-packs",
+            "path": "dsh-lsp-cpp",
+            "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+            "fingerprints": {
+                "directory": "92c40620678efa33cc9c60a9971896b6ca9bb5be3d2474b4a09eadcd3466e80f",
+                "code": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+                "maintenance": "c574dcf28e68df0fb97fbd81638d887e8e9b60b99dbcf2e34fc7481b1d25448e"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T04:06:46Z",
+            "analysis_sha256": "f94b5b9c195a5402598b8e47952b5cd534f7d3a891462eefe8acdb3114fb6f83"
+        },
+        "publication.metadata": "data/plugins/988hj7tczd-oss--dsh-lsp-packs--dsh-lsp-cpp/META.json",
+        "publication.summaries": {
+            "text": "为DSH配置clangd的C/C++语言服务路由和文件扩展映射。",
+            "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+            "source_url": "https://github.com/988hj7tczd-oss/dsh-lsp-packs/blob/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-cpp/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+            "items": {
+                "后台": "cpp provider配置：clangd及C/C++扩展路由、不可用占位"
+            }
+        },
+        "publication.advice": {
+            "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+            "text": "已有clangd项目可先试。先确认构建数据库和头文件语言，再在真实工程测跨文件定义/引用；单文件通过不能直接覆盖整个代码库。"
+        },
+        "registry": "data/plugins/988hj7tczd-oss--dsh-lsp-packs--dsh-lsp-cpp",
+        "reports": "# dsh-lsp-cpp\n\n> 为DSH配置clangd的C/C++语言服务路由和文件扩展映射。\n\n## 使用建议\n\n已有clangd项目可先试。先确认构建数据库和头文件语言，再在真实工程测跨文件定义/引用；单文件通过不能直接覆盖整个代码库。\n\n**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，外部语言服务或技能流程的实际运行尚未验证；未来假设未验证。\n\n## 洞察短评\n\n- **用途**：适合已有C/C++工具链、希望在DSH查询定义与引用的开发者；跨文件结果取决于实际项目构建信息。\n- **亮点**：作者称开箱语言导航；本项实际增量是clangd启动默认值和C/C++扩展路由、可覆盖配置及不可用占位provider。协议和lsp工具由官方底座实现，不能将完整LSP能力归为本包原创；相对手写servers表，减少常见C/C++接线。\n- **思考**：README要求精确跨文件导航生成compile_commands.json；单文件smoke不代表宏、头文件搜索路径和多目标工程都正确。.h默认路由c并不覆盖所有C++头文件语义。catch把任意LspStdio加载错误称server不可用，fallback还用默认扩展表，用户扩展可能在故障时消失。\n- **建议**：待验证假设：clangd接线增加构建数据库存在性和头文件语言选择的只读诊断，可减少把项目配置错归因于模型导航。用有/无compile_commands及混合C/C++头文件项目比较定位正确率和排障时间；诊断不可替代真实server查询。\n\n## 场景与替代办法\n\n替代是编辑器clangd或手写DSH servers配置；本项提供标准默认接线，不实现clangd或LSP协议。\n\n## 能力清单\n\n- **后台**：cpp provider配置：clangd及C/C++扩展路由、不可用占位\n\n## 依赖与流程\n\ndsh-lsp-cpp/src/index.ts以provider cpp、command clangd和空args配置官方LspStdio，映射.c/.h到c、.cpp/.hpp/.cc到cpp；cordis.yml只插入语言包行。\n\n依赖fs/lsp/subprocess同一执行世界及官方dsh-lsp-stdio/tool-lsp；README前置clangd及C/C++工具链，精确跨文件需compile_commands。package兼容Node>=22.18、DSH>=0.1.2-alpha.3且<0.2.0。\n\n部署共享底座→安装语言包和外部clangd→首次匹配查询由底座懒启动→返回导航结果；加载失败注册LSP_UNAVAILABLE占位而非执行查询。\n\n## 成本与效果\n\n首次安装clangd并配置PATH、共享LSP底座及构建数据库；持续索引耗CPU/内存，人工维护编译参数。无本包固定现金费，失败导航与错误修改需另计人工成本。\n\n可减少语言配置重复，但没有真实C/C++工程导航准确率或工时对照。\n\n## 核心贡献\n\n作者称开箱语言导航；本项实际增量是clangd启动默认值和C/C++扩展路由、可覆盖配置及不可用占位provider。协议和lsp工具由官方底座实现，不能将完整LSP能力归为本包原创；相对手写servers表，减少常见C/C++接线。\n\n## 关键质疑\n\nREADME要求精确跨文件导航生成compile_commands.json；单文件smoke不代表宏、头文件搜索路径和多目标工程都正确。.h默认路由c并不覆盖所有C++头文件语义。catch把任意LspStdio加载错误称server不可用，fallback还用默认扩展表，用户扩展可能在故障时消失。\n\n## 工程亮点\n\n本包resolveServerConfig把默认值与覆盖合并，再经官方Config填界限，fallback有生命周期清理。统计仅本组件文件，生成骨架不等于协议创新；错误分类和扩展回退需改进。\n\n源码依据：[dsh-lsp-cpp/src/index.ts](https://github.com/988hj7tczd-oss/dsh-lsp-packs/blob/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-cpp/src/index.ts)、[dsh-lsp-cpp/README.md](https://github.com/988hj7tczd-oss/dsh-lsp-packs/blob/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-cpp/README.md)、[dsh-lsp-cpp/cordis.yml](https://github.com/988hj7tczd-oss/dsh-lsp-packs/blob/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-cpp/cordis.yml)、[dsh-lsp-cpp/tests/smoke.e2e.ts](https://github.com/988hj7tczd-oss/dsh-lsp-packs/blob/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-cpp/tests/smoke.e2e.ts)。\n\n跨插件比较：cpp与java的入口均把默认命令、扩展表和可覆盖参数交给同一官方LspStdio，协议复用相同；差异主要在项目就绪条件。cpp依赖clangd与compile_commands.json，java依赖作者README所列JDK/jdtls及独立Eclipse工作区。两者catch均把加载异常统称服务不可用，且故障provider使用默认扩展表。由此推导待验证假设：统一诊断框架应保留实际扩展配置并按“宿主装配、命令、项目元数据、索引就绪”逐层报告，各语言提供独立探针。在C/C++缺编译数据库与Java工作区锁冲突的故障矩阵中，对照当前统一错误，比较归因正确率和恢复时间；未执行该验证，不能从同骨架推断同等导航质量。\n\n对照源码：[Java入口](https://github.com/988hj7tczd-oss/dsh-lsp-packs/blob/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-java/src/index.ts)、[Java前置条件](https://github.com/988hj7tczd-oss/dsh-lsp-packs/blob/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-java/README.md)。\n\n## 未来设计假设（未验证）\n\n待验证假设：clangd接线增加构建数据库存在性和头文件语言选择的只读诊断，可减少把项目配置错归因于模型导航。用有/无compile_commands及混合C/C++头文件项目比较定位正确率和排障时间；诊断不可替代真实server查询。\n\n固定宿主检查混合.h、构建数据库缺失、用户新增扩展与加载故障，分别记录四个导航操作；本轮未启动clangd。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：dsh-lsp-cpp；内容摘要：ebf891edaf7384303300d2c908536fc22d43d207d9a7715699e583d084e6c8ae。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 2 | 132 | — | — | 982 |\n| .ts | source | 1 | 175 | 99 | 60 | — |\n| .ts | test | 1 | 185 | 136 | 25 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[988hj7tczd-oss/dsh-lsp-packs](https://github.com/988hj7tczd-oss/dsh-lsp-packs)\n- **版本号**：0.1.0（[固定提交 258bb640](https://github.com/988hj7tczd-oss/dsh-lsp-packs/tree/258bb6409c504fa1eed20b6f70d13009522ca0ce)）\n- **版本日期**：2026-09-01（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：dsh-lsp-cpp/src/index.ts、dsh-lsp-cpp/README.md、dsh-lsp-cpp/cordis.yml、dsh-lsp-cpp/tests/smoke.e2e.ts、作者README、package与固定范围inventory；源码抽读不等于完整审计。\n- 未验证：插件执行、测试、安装、真实宿主与独立采用。\n- 证据限制：固定SHA内本组件列明文件及配置/作者资料的有界源码检查；组件inventory不包含外部官方底座原创量。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。\n- 下一步：固定宿主检查混合.h、构建数据库缺失、用户新增扩展与加载故障，分别记录四个导航操作；本轮未启动clangd。\n",
+        "metadata": {
+            "repository": "988hj7tczd-oss/dsh-lsp-packs",
+            "repository_id": 1344713526,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 3,
+            "pushed_at": "2026-09-01T00:51:42Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-lsp-packs%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6412:9ED8B:14B078:226381:6AD84AE1 and timestamp 2026-10-21 05:17:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-lsp-packs%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640C:C23BB:148390:2245C3:6AD84AE2 and timestamp 2026-10-21 05:17:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-lsp-packs%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6414:AF775:146BD0:221870:6AD84AE2 and timestamp 2026-10-21 05:17:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-lsp-packs%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6415:33975D:14A868:224B9D:6AD84AE2 and timestamp 2026-10-21 05:17:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-lsp-packs%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6400:20AC7E:14AF3C:226818:6AD84AE2 and timestamp 2026-10-21 05:17:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "@dsh-lsp-packs/dsh-lsp-cpp",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40dsh-lsp-packs%2Fdsh-lsp-cpp",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/%40dsh-lsp-packs%2Fdsh-lsp-cpp",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+                "current_revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1344713526:dsh-lsp-cpp",
+            "repository": "988hj7tczd-oss/dsh-lsp-packs",
+            "path": "dsh-lsp-cpp",
+            "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "92c40620678efa33cc9c60a9971896b6ca9bb5be3d2474b4a09eadcd3466e80f",
+                "code": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+                "maintenance": "c574dcf28e68df0fb97fbd81638d887e8e9b60b99dbcf2e34fc7481b1d25448e"
+            }
+        }
+    }
+}

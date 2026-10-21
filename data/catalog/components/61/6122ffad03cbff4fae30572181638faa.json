@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6122ffad03cbff4fae30572181638faa",
+    "identity": "github:1347752454:plugins-dsh-code-rag-index-panel",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347752454:plugins-dsh-code-rag-index-panel",
+            "repository": "Ankali-Aylina/code-rag",
+            "path": "plugins/dsh-code-rag-index-panel",
+            "revision": "5c8ddfbde8a6dd0fff6d1292595064ea647edd83",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5de3b51e0a1a80166dd2827fe4d4266985e234e33acd7c7750fcde7e2acc6f48",
+                "code": "5c8ddfbde8a6dd0fff6d1292595064ea647edd83",
+                "maintenance": "4ce675c9092ce76c436f636aa216f809028495e803634b42ae250971a5b31f7e"
+            }
+        }
+    }
+}

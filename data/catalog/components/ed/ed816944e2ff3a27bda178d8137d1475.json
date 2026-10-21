@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ed816944e2ff3a27bda178d8137d1475",
+    "identity": "github:1334873712:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334873712:root",
+            "repository": "hyper-dsh-plugins/dsh-open-eyes",
+            "path": "",
+            "revision": "670c44e81d06062fbee4174a30423e678682ccd5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ee8e6b3400a344239bfc52c9a8074f6abc89f653fba68d4f248d5a176f1271c1",
+                "code": "670c44e81d06062fbee4174a30423e678682ccd5",
+                "maintenance": "7c015b9af4f871ea6d6487a475b91a6e6f377dc90ef1bd837aad2446a28e3293"
+            }
+        }
+    }
+}

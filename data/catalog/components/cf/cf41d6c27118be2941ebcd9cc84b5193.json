@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "cf41d6c27118be2941ebcd9cc84b5193",
+    "identity": "github:1343299287:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343299287:root",
+            "repository": "lsq-dsh-plugins/dsh-windows-notifications",
+            "path": "",
+            "revision": "94ef9060c3d9e081887a49c7e437a170a3aae4aa",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "bb27bd834dc1bc1ca1658d706df56b122e48abaf125c01f6afa23a531688af58",
+                "code": "94ef9060c3d9e081887a49c7e437a170a3aae4aa",
+                "maintenance": "0d0fc8127fdf9d88ab3a6661bd905a32cf6f4aded76411fe6cf7b557d8c5882e"
+            }
+        }
+    }
+}

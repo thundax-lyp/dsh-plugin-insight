@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7e44ce7c652ee89d4a66487bb14a4fbb",
+    "identity": "github:1378551163:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1378551163:root",
+            "repository": "HorusJiang/dsh-jev-tools",
+            "path": "",
+            "revision": "10ea6068fc15db7d8bf86efd151e82d55e83c376",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5068009ee42d14208cae39780bd66474822f0de95c65a50b570cf8d3ca2c2572",
+                "code": "10ea6068fc15db7d8bf86efd151e82d55e83c376",
+                "maintenance": "fddc658e0aa376fdd62139874b3dfaaca1645babf410fd3b2abd29532af9fa25"
+            }
+        }
+    }
+}

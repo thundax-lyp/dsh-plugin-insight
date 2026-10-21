@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "9c54d80b631d90ec855fb27880099166",
+    "identity": "github:1335344214:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335344214:root",
+            "repository": "Tisitan/dsh-live2d-companion",
+            "path": "",
+            "revision": "f434346e13a42a2d1e9f063c1e837f577f268997",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "23c8c78092a4f13875da76ce5bc95c1fe821339d8429e9390893e6ac50752ff9",
+                "code": "f434346e13a42a2d1e9f063c1e837f577f268997",
+                "maintenance": "2e91b3aba4a347a8d384a8d7659e145260200af19e959e8c9a8590ea97d8d4e5"
+            }
+        }
+    }
+}

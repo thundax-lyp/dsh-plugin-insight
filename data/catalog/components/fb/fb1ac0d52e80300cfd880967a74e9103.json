@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fb1ac0d52e80300cfd880967a74e9103",
+    "identity": "github:1351094687:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1351094687:root",
+            "repository": "alpacachen/dsh-automation",
+            "path": "",
+            "revision": "0ea9d848da45d8f47bc85ef09ca995f8fc7e80e6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a87510d243d01b3ffa74efb452f30012eb6fd897a6e3f7861f4839e2cce3cf80",
+                "code": "0ea9d848da45d8f47bc85ef09ca995f8fc7e80e6",
+                "maintenance": "e25d73f411cb61bb065c5173620ae88611d0cc5ddf12311eabe06310774a3c20"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0a16b29ff7f7fd2654980946eeaeb888",
+    "identity": "github:1342458359:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342458359:root",
+            "repository": "Yantingmo/dsh-lang-zh",
+            "path": "",
+            "revision": "bb2990dfbdec46281ac762c70049a5a76fe857e8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7c3eeb891d4f0ea32365d5904ef8ef6e42b176dc9f15780d1f01b1946163779b",
+                "code": "bb2990dfbdec46281ac762c70049a5a76fe857e8",
+                "maintenance": "432c0d797c25bee2f0c4d4cf33a54ea99ba47fc0be08f0bb964066c7d0061141"
+            }
+        }
+    }
+}

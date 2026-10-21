@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "ca956effcaa8ebde0f3568162da324bd",
+    "identity": "github:1334944307:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334944307:root",
+            "repository": "Js2Hou/dsh-mcp-manager",
+            "path": "",
+            "revision": "2970b3f9d0c988092b8a38d4f4ff101cd4ba25d7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "bb50ab85d3d34770559672bc3806baa74cd71dd3e3a6d443a4a351568eec1be7",
+                "code": "2970b3f9d0c988092b8a38d4f4ff101cd4ba25d7",
+                "maintenance": "fc99d09dc80f1706c00dda429a742619349d26d808e124cce06480588e8a4d0f"
+            }
+        }
+    }
+}

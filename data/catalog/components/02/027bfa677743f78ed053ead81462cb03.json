@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "027bfa677743f78ed053ead81462cb03",
+    "identity": "github:1333358589:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333358589:root",
+            "repository": "jihongboo/dsh-apple-mode",
+            "path": "",
+            "revision": "71e4e64c68726dc447aadee5b9fe9e9b31161f19",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fa05168093f9515890d9de89b5e31e349e00648e932b3a806d0e116c02926eab",
+                "code": "71e4e64c68726dc447aadee5b9fe9e9b31161f19",
+                "maintenance": "2994019bf8441c16990c7f20c46439d3cda2f4057a98a66675622808f4897fe2"
+            }
+        }
+    }
+}

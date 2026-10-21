@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "f2247664133f146272d140d60cf5800f",
+    "identity": "github:1342796136:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342796136:root",
+            "repository": "Zn-Dk/dsh-session-repair",
+            "path": "",
+            "revision": "04ec4b8b5edbe1a47a82b7cf314df12e80db1a19",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "e103a983f8b44b817b4bfdde34e1c5615fef3a8bb065171e5b3807e7717cc26e",
+                "code": "04ec4b8b5edbe1a47a82b7cf314df12e80db1a19",
+                "maintenance": "cca989ee48e32e089abd312989c4c7a8793fa6bd6c83852d169598bb8ef981a1"
+            }
+        }
+    }
+}

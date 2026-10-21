@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "69a0719f40d067b2e9f97b441077a019",
+    "identity": "github:1363608426:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1363608426:root",
+            "repository": "lemonxiny55/dsh-lint-loop",
+            "path": "",
+            "revision": "eaf24ae404d33ef9688aead75352f28bd0a6199a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c8dd49925495e5b4fdc2647a17621ff2f6be6f9a775f4454d0c33d65c18c125e",
+                "code": "eaf24ae404d33ef9688aead75352f28bd0a6199a",
+                "maintenance": "e64342495f6791a78293ce5de6d30ce44d7a11ab121131f67ba2c1b67d589963"
+            }
+        }
+    }
+}

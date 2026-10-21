@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "00f12c7bf366d05886fb413e1e4bca3f",
+    "identity": "github:1335433199:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335433199:root",
+            "repository": "STARDUSTLC666/dsh-code-security",
+            "path": "",
+            "revision": "f0ddf1fb92e39fa3438723653c0e55678293707c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ca2451a3442aa61a4df429aacc5a73ae62f4273d0d05c1c0df3beba34634d130",
+                "code": "f0ddf1fb92e39fa3438723653c0e55678293707c",
+                "maintenance": "76012e751cbc49773e526888514d91df452d6984af8a99f63b22a13aa6ce1127"
+            }
+        }
+    }
+}

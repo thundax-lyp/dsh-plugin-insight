@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6feaa992d0e7246a2f34e772fdfdfaf5",
+    "identity": "github:1387311017:packages-browser-connector",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1387311017:packages-browser-connector",
+            "repository": "Azhe0306/dsh-connectors",
+            "path": "packages/browser-connector",
+            "revision": "0e5a9012321db8f3e60184a06b1acc5eab0580c2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f946178ea5d0320b367fd61dc01837ec9fc32bbb9df27a6f008285376600ba3d",
+                "code": "0e5a9012321db8f3e60184a06b1acc5eab0580c2",
+                "maintenance": "c80214f3aa92406ddf614838479077089f06b6007d77414a0cbac16d714236b4"
+            }
+        }
+    }
+}

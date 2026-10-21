@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "cc9f0b9f0f6a255c0b0219c7c621bd07",
+    "identity": "github:1339286962:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339286962:root",
+            "repository": "seriousz158/dsh-memory",
+            "path": "",
+            "revision": "f7b03757f8bf546d3c007f8e9a074a847b681d3d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "77939e22231225d81932f30b66207d2c8cb8add9530908a8c449fbd37c81e7d2",
+                "code": "f7b03757f8bf546d3c007f8e9a074a847b681d3d",
+                "maintenance": "eec7745af3bdad7325e1c18845e9fbc1a951c22afcd22c68ce1b5225f4f03200"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a6f83e8ef506704317a12ee077ef658b",
+    "identity": "github:1406192137:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1406192137:root",
+            "repository": "luoshuizhiwei/dsh-desktop-restart",
+            "path": "",
+            "revision": "f7e767c17a2d3f5316d66c3f9f48893507c3cd67",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e3a7086d4deb7e30637d9556eb8f5a2897b70007d16fc9eb9c4010cf29af26b2",
+                "code": "f7e767c17a2d3f5316d66c3f9f48893507c3cd67",
+                "maintenance": "14fb9547fcd79de68b8e0da5d0d35fb3a6bea1e7aac4b96acedb60f3375d74b3"
+            }
+        }
+    }
+}

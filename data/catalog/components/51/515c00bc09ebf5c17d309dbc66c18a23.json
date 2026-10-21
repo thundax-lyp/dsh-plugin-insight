@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "515c00bc09ebf5c17d309dbc66c18a23",
+    "identity": "github:1337003902:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337003902:root",
+            "repository": "dhicoc/dsh-theme-mineradio",
+            "path": "",
+            "revision": "60ac976b9fb761ba6ded8f0ddf3a51459b82ffea",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "dd5fd18360e0e8a9292de332f3e8b520b5d34a85b28a601b56bcce90431c8eea",
+                "code": "60ac976b9fb761ba6ded8f0ddf3a51459b82ffea",
+                "maintenance": "a3806ad77d15f32e7ee1e89cee958c61a049f2fe53ffeadb52c1e6461d2040df"
+            }
+        }
+    }
+}

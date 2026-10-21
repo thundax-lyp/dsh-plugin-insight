@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "37876d40d9caed2b8f50646471f40b31",
+    "identity": "github:1344003310:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1344003310:root",
+            "repository": "zeropointnine/dsh-compact-and-branch",
+            "path": "",
+            "revision": "27a79ee635c4a5d2ff69b006eff65a8bc761345c",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "054a1382d9c2e4e878b63579e9794c1c7809e1a842cbe09e7aed9e4107e5eb02",
+                "code": "27a79ee635c4a5d2ff69b006eff65a8bc761345c",
+                "maintenance": "dfae9c9d1abba9a292fface5ac4087db5f181918c0654be621d587144946ee7d"
+            }
+        }
+    }
+}

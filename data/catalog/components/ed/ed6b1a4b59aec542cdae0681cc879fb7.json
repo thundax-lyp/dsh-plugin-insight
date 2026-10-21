@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ed6b1a4b59aec542cdae0681cc879fb7",
+    "identity": "github:1344685476:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1344685476:root",
+            "repository": "Lolancier/v-manager-dsh-pet",
+            "path": "",
+            "revision": "2cab8f14a7fed677826355e730b80f395f63dd76",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "75130945500caaec9af8a212c945446d1740b50b64ab166838fc1c70b9633e44",
+                "code": "2cab8f14a7fed677826355e730b80f395f63dd76",
+                "maintenance": "894e939cc25dfa7ca70177fa75061a5198351f261606823db818ec7fa39f155c"
+            }
+        }
+    }
+}

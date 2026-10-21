@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "aa46f38ddaceef1577572de6364fd264",
+    "identity": "github:1334284574:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334284574:root",
+            "repository": "jiayan-xu/dsh-nuphus-mcp",
+            "path": "",
+            "revision": "3b6ac446a80d2eda2e6112b91aeb5e015035c6c1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "79a994b918a6a64fc082d59a13af9d72032345141cbfca19aabcc15e70450a80",
+                "code": "3b6ac446a80d2eda2e6112b91aeb5e015035c6c1",
+                "maintenance": "0d22a1406aea4f9171a66fc3385c4cd3c325d278fcf522ff704ae894bcc7c5de"
+            }
+        }
+    }
+}

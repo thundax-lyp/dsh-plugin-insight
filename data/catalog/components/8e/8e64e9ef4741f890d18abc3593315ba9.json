@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8e64e9ef4741f890d18abc3593315ba9",
+    "identity": "github:1226490932:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1226490932:root",
+            "repository": "zcmilan/lelogin-skill",
+            "path": "",
+            "revision": "0ef9462d8c164e28661214db3a820d2839a999de",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c5841130dfcf65ebc4c7c8acfcb0687b5927ea41aac573e6d3145b471238d9f2",
+                "code": "0ef9462d8c164e28661214db3a820d2839a999de",
+                "maintenance": "a0b38ae296a5282d0aea0fb1be9c843a29c5edb1f33f7d9e1b86201dd4b5ec6e"
+            }
+        }
+    }
+}

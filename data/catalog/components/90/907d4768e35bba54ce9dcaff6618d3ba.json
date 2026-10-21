@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "907d4768e35bba54ce9dcaff6618d3ba",
+    "identity": "github:1333619228:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333619228:root",
+            "repository": "KinGao294/dsh-skin",
+            "path": "",
+            "revision": "0a571a27adcc5f780b7b72386c9c294243eec5b3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "7cb57534332ca8bf71accdbbac92182dfe8fbbc2633221e795b06a1d4f6454e4",
+                "code": "0a571a27adcc5f780b7b72386c9c294243eec5b3",
+                "maintenance": "c3eb0781cee0331e2c025f2a9f860cd3966625a5987d782f3eadb9ccc26d356e"
+            }
+        }
+    }
+}

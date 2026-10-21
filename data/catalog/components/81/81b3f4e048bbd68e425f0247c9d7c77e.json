@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "81b3f4e048bbd68e425f0247c9d7c77e",
+    "identity": "github:1342877124:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342877124:root",
+            "repository": "fengb3/dsh-session-icons",
+            "path": "",
+            "revision": "56c3d950de96ceb2777e3c99cf48e2b7feae29d4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "eed70d05e8899c8a0117af186039d3dcf19c08db758e2a6083236d08805b3b37",
+                "code": "56c3d950de96ceb2777e3c99cf48e2b7feae29d4",
+                "maintenance": "872e48b9f654f8ead700751bc256c841ce5ccbf4ed2a9f0e70072c29a4275f2e"
+            }
+        }
+    }
+}

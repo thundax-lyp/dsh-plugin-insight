@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f02732969ad004148ed63649945571e0",
+    "identity": "github:1400940863:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1400940863:root",
+            "repository": "Tleon-H/dsh-next-prompt",
+            "path": "",
+            "revision": "27eccf34107fc08fb4d891d57d3f7fdbfcf63dcc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "36681a98d4220a4cdfa70b7bd34d9ea2a4f80451acf808805eb2dd2f805bdd2c",
+                "code": "27eccf34107fc08fb4d891d57d3f7fdbfcf63dcc",
+                "maintenance": "21abe8db081e67fce329e4db15b33dd786d796b35a6cedfd1d88e5e1919d7e78"
+            }
+        }
+    }
+}

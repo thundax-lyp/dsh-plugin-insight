@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2351bbbb5386bbd40ae7dbfcd47c597a",
+    "identity": "github:1394044642:packages-dsh-mcp-flapi",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1394044642:packages-dsh-mcp-flapi",
+            "repository": "wangbodbs/dsh-plugins",
+            "path": "packages/dsh-mcp-flapi",
+            "revision": "61345737242f193b3509dab189592e12d5693f14",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "afc35d9b7bf81fb91b50a40d2f724d46b8b1ca583fc570c52b893df091c7e42e",
+                "code": "61345737242f193b3509dab189592e12d5693f14",
+                "maintenance": "86eb5e916a4d02d45128eb77c09cfa0c03f590dcc2590042fb35e37d3378c0ce"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "78f845d2b2f55968062f42e0f913eab5",
+    "identity": "github:1420393302:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1420393302:root",
+            "repository": "GuanYang14700/dsh-hermes-panel",
+            "path": "",
+            "revision": "7d74c4174dd610a38626dc4d8f6eb52843f71620",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9608ef8b81b166b0d6766ff2647168854e5812e40fdeec18c511b2551778b1ee",
+                "code": "7d74c4174dd610a38626dc4d8f6eb52843f71620",
+                "maintenance": "4ab75d758884ee707f3ae3641c9308e4635cdbe392b743ea7d70b02ddc7cb740"
+            }
+        }
+    }
+}

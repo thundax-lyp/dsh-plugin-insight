@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "719bac0f3b1842ec030178b5654c824c",
+    "identity": "github:1350133404:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1350133404:root",
+            "repository": "Lzh3070/dsh-search-hub",
+            "path": "",
+            "revision": "dd748ba570b5c38cd7b0f2d2e53c3363a88bd0b4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c132e1d0bb4f6b17682739055f3af3ecca91c906ce8aa42f11d900365aac0898",
+                "code": "dd748ba570b5c38cd7b0f2d2e53c3363a88bd0b4",
+                "maintenance": "150f531f2aec1496ceaec3a8146109f9180ee1bb75c1601d6ecb33c5937f19d5"
+            }
+        }
+    }
+}

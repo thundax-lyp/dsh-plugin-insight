@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "d4935bdb3226a5a08a525043848e5e5f",
+    "identity": "github:1334388179:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334388179:root",
+            "repository": "xiekai886/dsh-MusicPlayer",
+            "path": "",
+            "revision": "b026a1373092ba5a7993a7c63fee6611f0ebe39e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "fdd2981bb725248e8ffe1776c60a738d27ad3ed33383cd505a6e2df629d165da",
+                "code": "b026a1373092ba5a7993a7c63fee6611f0ebe39e",
+                "maintenance": "f207d31f47803a20c49ac7a2b8cc01886898b614b20364bc46325a371b7f779d"
+            }
+        }
+    }
+}

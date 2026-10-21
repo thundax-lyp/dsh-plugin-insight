@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9d4534518d8cc92bd7efb9f44b8a29cb",
+    "identity": "github:1364036006:integrations-dsh",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1364036006:integrations-dsh",
+            "repository": "OtterMind/sqlx",
+            "path": "integrations/dsh",
+            "revision": "56431372dda88ce677b5854faeabc7c849bf3ea2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "07005b884c7f93e5eb5f5a94853cf6c15dc569bb1191ce165d1d624bd91fe4db",
+                "code": "56431372dda88ce677b5854faeabc7c849bf3ea2",
+                "maintenance": "418a7539b138dbcbf534907b9657044e250dad224dc153fc5d74e4e78f2337e4"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "298ff7208a9f0d761952e361b029d4f6",
+    "identity": "github:1337992119:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337992119:root",
+            "repository": "zclDragon/dsh-tool-generate-image",
+            "path": "",
+            "revision": "0d75d26888fc4272ee3d294cd4ac3549a896b86e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "285d8ea0641f79432d53dabdba5574f5f67d845ce678ea0f93af32cfa9c278ba",
+                "code": "0d75d26888fc4272ee3d294cd4ac3549a896b86e",
+                "maintenance": "92638aadb12df08af42c499f179925ed5b82b8cc4406418f0eb98cd3ad4d8933"
+            }
+        }
+    }
+}

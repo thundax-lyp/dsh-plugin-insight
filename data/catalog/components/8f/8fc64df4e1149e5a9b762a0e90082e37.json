@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8fc64df4e1149e5a9b762a0e90082e37",
+    "identity": "github:1349438307:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1349438307:root",
+            "repository": "xiaobai2017666/dsh-chrome-cdp",
+            "path": "",
+            "revision": "3cb166ed242f0aded80cb1fce053a43434e915e5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d684cd2cdf2e3fa6495a02e34d185b0b24a3cc73904f2172069be080eaaa5802",
+                "code": "3cb166ed242f0aded80cb1fce053a43434e915e5",
+                "maintenance": "c74c0e52e5cad93a44acd0e6103a859fabf10e93eab9f43b8b1c6f5cf9c63102"
+            }
+        }
+    }
+}

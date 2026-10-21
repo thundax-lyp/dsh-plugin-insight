@@ -1,0 +1,366 @@
+{
+    "schema_version": 3,
+    "id": "33a9bd5663b97841b35249751038ac7c",
+    "identity": "github:1334269686:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1334269686:root",
+            "repository_id": 1334269686,
+            "component_id": "root",
+            "repository": "131CDA1/dsh-scrape-webpage",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-scrape-webpage",
+            "entry_type": "plugin",
+            "technical_category": "context-search",
+            "business_category": "research-knowledge",
+            "tags": [
+                "网页抓取",
+                "正文提取",
+                "图片分析"
+            ],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "3058a443a54b4c33e40a4becef948013e83df36d9f3097052a577dc48acd684c",
+                "code": "7485af10c063579323058583c7f13e69c4c8bd21",
+                "maintenance": "e0ca1a9d12ba7b2605ba6a8c4bad7c68aa6265a15b652c5b468dce68b606ab52"
+            },
+            "sources": [
+                {
+                    "id": "20261020-incremental40-r2-github-1334269686-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T04:29:59.041Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "20261020-incremental40-r2-github-1334269686-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/131CDA1/dsh-scrape-webpage/blob/7485af10c063579323058583c7f13e69c4c8bd21/README.md",
+                    "revision": "7485af10c063579323058583c7f13e69c4c8bd21",
+                    "captured_at": "2026-10-20T04:29:59.041Z",
+                    "summary": "抓取网页正文、结构、链接与关键词，可选下载内容图片并交给扩展分析器。",
+                    "artifact": "data/runs/2026-10-20-04/snapshots/131cda1--dsh-scrape-webpage/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "20261020-incremental40-r2-github-1334269686-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/131CDA1/dsh-scrape-webpage/blob/7485af10c063579323058583c7f13e69c4c8bd21/lib/index.js",
+                    "revision": "7485af10c063579323058583c7f13e69c4c8bd21",
+                    "captured_at": "2026-10-20T04:29:59.041Z",
+                    "summary": "核查 lib/index.js、lib/fetch.js、lib/html.js、lib/curl.js；lib/index.js 优先宿主 web.fetch，缺失或异常后经 shell 调用 curl；解析与统计分层，图片逐张下载并调用注册分析器。",
+                    "artifact": "data/runs/2026-10-20-04/snapshots/131cda1--dsh-scrape-webpage/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "非浏览器渲染，动态页面和登录状态未验证；任意URL、重定向和图片下载需要部署方检查网络边界。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "研究者读取具体网页时希望得到可引用正文与结构，原有办法是浏览器复制或宿主抓取工具。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1334269686-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334269686:root",
+                            "area": "code",
+                            "fingerprint": "7485af10c063579323058583c7f13e69c4c8bd21"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:29:59.041Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "lib/index.js 优先宿主 web.fetch，缺失或异常后经 shell 调用 curl；解析与统计分层，图片逐张下载并调用注册分析器。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1334269686-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334269686:root",
+                            "area": "code",
+                            "fingerprint": "7485af10c063579323058583c7f13e69c4c8bd21"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:29:59.041Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "分析器注册接口避免把视觉服务绑死，但自动提取并不证明正文完整或网页内容可信。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1334269686-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334269686:root",
+                            "area": "code",
+                            "fingerprint": "7485af10c063579323058583c7f13e69c4c8bd21"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:29:59.041Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "基础抓取有网络、超时和人工核对成本；图片分析另外消耗模型与存储。未测合格抓取率或单位成本。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1334269686-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334269686:root",
+                            "area": "code",
+                            "fingerprint": "7485af10c063579323058583c7f13e69c4c8bd21"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:29:59.041Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "html、analyze 与执行层分开便于复用；图片失败返回逐项说明。web 与 shell 两条路径的策略一致性仍需实际验证。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1334269686-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334269686:root",
+                            "area": "code",
+                            "fingerprint": "7485af10c063579323058583c7f13e69c4c8bd21"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:29:59.041Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "已有用户可保留正文抓取用途，先在公开测试页核对重定向、动态内容与超时；非 Windows 环境先验证 shell 回退，限制敏感网络目标。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1334269686-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334269686:root",
+                            "area": "code",
+                            "fingerprint": "7485af10c063579323058583c7f13e69c4c8bd21"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:29:59.041Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "非浏览器渲染，动态页面和登录状态未验证；任意URL、重定向和图片下载需要部署方检查网络边界。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1334269686-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334269686:root",
+                            "area": "code",
+                            "fingerprint": "7485af10c063579323058583c7f13e69c4c8bd21"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:29:59.041Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "1.0.0 Host-only；tools、systemPrompt、timer 为硬依赖，shell 回退使用 Windows 风格 PowerShell 路径与命令，跨平台不能假定。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1334269686-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334269686:root",
+                            "area": "code",
+                            "fingerprint": "7485af10c063579323058583c7f13e69c4c8bd21"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:29:59.041Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T04:29:59.041Z",
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "研究者可限公开静态页试正文抓取，先核对原页、重定向与超时，非Windows需验shell回退。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "具体网页正文结构提取的研究任务明确。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "解析与分析器扩展省整理，但原生抓取和浏览器是替代。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "抓取解析分层已读，动态内容和跨平台回退未验。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "任意URL边界、图片存储与可选分析模型增加负担。"
+                    }
+                },
+                "score": 59,
+                "revision": "7485af10c063579323058583c7f13e69c4c8bd21",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "20261020-incremental40-r2-github-1334269686-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1334269686:root",
+                        "area": "code",
+                        "fingerprint": "7485af10c063579323058583c7f13e69c4c8bd21"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1334269686:root",
+            "repository": "131CDA1/dsh-scrape-webpage",
+            "path": "",
+            "revision": "7485af10c063579323058583c7f13e69c4c8bd21",
+            "fingerprints": {
+                "directory": "3058a443a54b4c33e40a4becef948013e83df36d9f3097052a577dc48acd684c",
+                "code": "7485af10c063579323058583c7f13e69c4c8bd21",
+                "maintenance": "e0ca1a9d12ba7b2605ba6a8c4bad7c68aa6265a15b652c5b468dce68b606ab52"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T04:25:27.514Z",
+            "analysis_sha256": "0417ab6566402e0705568d4f240145f25d950ca622174a59172335ce6a0f9c90"
+        },
+        "publication.metadata": "data/plugins/131cda1--dsh-scrape-webpage/META.json",
+        "publication.summaries": {
+            "text": "抓取网页正文、结构、链接与关键词，可选下载内容图片并交给扩展分析器。",
+            "revision": "7485af10c063579323058583c7f13e69c4c8bd21",
+            "source_url": "https://github.com/131CDA1/dsh-scrape-webpage/blob/7485af10c063579323058583c7f13e69c4c8bd21/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "7485af10c063579323058583c7f13e69c4c8bd21",
+            "items": {
+                "模型工具": "scrape_webpage。",
+                "后台": "scrape.imageAnalyzer 注册及顺序分析。"
+            }
+        },
+        "publication.advice": {
+            "revision": "7485af10c063579323058583c7f13e69c4c8bd21",
+            "text": "已有用户可保留正文抓取用途，先在公开测试页核对重定向、动态内容与超时；非 Windows 环境先验证 shell 回退，限制敏感网络目标。"
+        },
+        "registry": "data/plugins/131cda1--dsh-scrape-webpage",
+        "reports": "# dsh-scrape-webpage\n\n> 抓取网页正文、结构、链接与关键词，可选下载内容图片并交给扩展分析器。\n\n## 固定范围与依据\n\n固定提交 [7485af10c063579323058583c7f13e69c4c8bd21](https://github.com/131CDA1/dsh-scrape-webpage/blob/7485af10c063579323058583c7f13e69c4c8bd21/lib/index.js)；组件路径：仓库根。核查时间 2026-10-20T04:29:59.041Z；本轮基准 2026-10-20T04:25:27.514Z。\n源码抽读路径：lib/index.js、lib/fetch.js、lib/html.js、lib/curl.js。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：研究者读取具体网页时希望得到可引用正文与结构，原有办法是浏览器复制或宿主抓取工具。\n- **亮点**：lib/index.js 优先宿主 web.fetch，缺失或异常后经 shell 调用 curl；解析与统计分层，图片逐张下载并调用注册分析器。\n- **思考**：分析器注册接口避免把视觉服务绑死，但自动提取并不证明正文完整或网页内容可信。\n- **建议**：已有用户可保留正文抓取用途，先在公开测试页核对重定向、动态内容与超时；非 Windows 环境先验证 shell 回退，限制敏感网络目标。\n\n## 场景与替代办法\n\n研究者读取具体网页时希望得到可引用正文与结构，原有办法是浏览器复制或宿主抓取工具。\n\n代码仍为7485af1，变化来自目录或维护背景，本轮重写采用画像并收窄跨平台结论；与浏览器阅读相比主要减少结构整理步骤。\n\n## 依赖与流程\n\n抓取依赖网络与宿主服务，图片依赖工作区、shell 和可选视觉分析器；TLS 权限升级需 approval 和 Agent 上下文，失败后不能直接视作网页不存在。\n\n输入URL获取正文与统计，必要时下载图片，人工检查原页与截断标记；TLS受限时按宿主审批重试，图片失败不冒充识图完成。\n\n## 成本与效果\n\n基础抓取有网络、超时和人工核对成本；图片分析另外消耗模型与存储。未测合格抓取率或单位成本。\n\n分析器注册接口避免把视觉服务绑死，但自动提取并不证明正文完整或网页内容可信。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：85b5c05d679412c6f8c60fe91617c416dbf9fcd6d1dd587c00d20d11880bff5b。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 2 | 139 | — | — | 1522 |\n| .js | source | 5 | 716 | 622 | 65 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **模型工具**：scrape_webpage。\n- **后台**：scrape.imageAnalyzer 注册及顺序分析。\n\n## 工程亮点\n\nhtml、analyze 与执行层分开便于复用；图片失败返回逐项说明。web 与 shell 两条路径的策略一致性仍需实际验证。\n\n## 分发与兼容\n\n1.0.0 Host-only；tools、systemPrompt、timer 为硬依赖，shell 回退使用 Windows 风格 PowerShell 路径与命令，跨平台不能假定。\n\n## 历史对照\n\n前次代码指纹为 7485af10c063579323058583c7f13e69c4c8bd21；本轮固定为 7485af10c063579323058583c7f13e69c4c8bd21。代码仍为7485af1，变化来自目录或维护背景，本轮重写采用画像并收窄跨平台结论；与浏览器阅读相比主要减少结构整理步骤。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：非浏览器渲染，动态页面和登录状态未验证；任意URL、重定向和图片下载需要部署方检查网络边界。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：对静态页、脚本页、重定向、内网和大正文分别比较原始页面，记录正文保留率、错误及人工修正时间。\n",
+        "metadata": {
+            "repository": "131CDA1/dsh-scrape-webpage",
+            "repository_id": 1334269686,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 10,
+            "pushed_at": "2026-08-20T06:26:10Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A131CDA1%2Fdsh-scrape-webpage%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6411:3E6BCD:14E208:225E29:6AD8491E and timestamp 2026-10-21 05:09:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A131CDA1%2Fdsh-scrape-webpage%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6417:2401FE:14A277:22135C:6AD8491E and timestamp 2026-10-21 05:09:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A131CDA1%2Fdsh-scrape-webpage%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641E:1E8271:143E5D:21B2A1:6AD8491E and timestamp 2026-10-21 05:09:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A131CDA1%2Fdsh-scrape-webpage%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C0:0BD3:9DD45:105A9A:6AD8491E and timestamp 2026-10-21 05:09:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A131CDA1%2Fdsh-scrape-webpage%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6409:194586:1498E7:2222B3:6AD8491E and timestamp 2026-10-21 05:09:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-scrape-webpage",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 1132,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-scrape-webpage",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-20T06:18:05.317Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-scrape-webpage",
+                    "error": null,
+                    "latest_version": "1.0.0",
+                    "latest_published_at": "2026-08-20T06:18:05.741Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "7485af10c063579323058583c7f13e69c4c8bd21",
+                "current_revision": "7485af10c063579323058583c7f13e69c4c8bd21",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1334269686:root",
+            "repository": "131CDA1/dsh-scrape-webpage",
+            "path": "",
+            "revision": "7485af10c063579323058583c7f13e69c4c8bd21",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3058a443a54b4c33e40a4becef948013e83df36d9f3097052a577dc48acd684c",
+                "code": "7485af10c063579323058583c7f13e69c4c8bd21",
+                "maintenance": "e0ca1a9d12ba7b2605ba6a8c4bad7c68aa6265a15b652c5b468dce68b606ab52"
+            }
+        }
+    }
+}

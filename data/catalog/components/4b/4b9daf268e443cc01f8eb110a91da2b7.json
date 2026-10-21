@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4b9daf268e443cc01f8eb110a91da2b7",
+    "identity": "github:1339101430:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339101430:root",
+            "repository": "MDR-EX1000/dsh-rw",
+            "path": "",
+            "revision": "ea7ef8a542913346f8606bc398126783ab008a84",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6e3c50c53b7cae3d13c91dccf7e163fcd1bfe8028ed3d3947944ec42238fbd5c",
+                "code": "ea7ef8a542913346f8606bc398126783ab008a84",
+                "maintenance": "0d365c51f4ff299924ddd57b8f870bb9d3948ed5f08b2aa3bddd3e0cc1aecb97"
+            }
+        }
+    }
+}

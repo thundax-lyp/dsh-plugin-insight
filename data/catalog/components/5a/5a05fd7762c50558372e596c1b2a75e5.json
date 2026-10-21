@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5a05fd7762c50558372e596c1b2a75e5",
+    "identity": "github:1385634154:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1385634154:root",
+            "repository": "MaybeJustLikeThis/rainbow-fart-dsh",
+            "path": "",
+            "revision": "1e4e89e465a5d9aeb5fcbaa8af602b2e03ebb8b3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "daa1e84274acdc137adf54ba747690f90abdcb3845e93990c4966f46fb402329",
+                "code": "1e4e89e465a5d9aeb5fcbaa8af602b2e03ebb8b3",
+                "maintenance": "0384983239fb6a46a150fddb59e9df5646c4c115c16e7aea69987804e2f7c125"
+            }
+        }
+    }
+}

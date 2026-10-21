@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "416fd514b63ac1802fe17590e31b1b1a",
+    "identity": "github:1354241970:packages-dsh-auto-trust-all",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1354241970:packages-dsh-auto-trust-all",
+            "repository": "mzzsfy/dsh-plugin",
+            "path": "packages/dsh-auto-trust-all",
+            "revision": "ef78178469af825c662b6850afc3cbcde593d3b3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1cee84c4c6d556baae268a6ae3e6938b7cf9e1eee96b1edb951281d7ff0c4423",
+                "code": "ef78178469af825c662b6850afc3cbcde593d3b3",
+                "maintenance": "1cffc0df00eb6f1f17f82160122dc9baba104fe94755a94c38be062ac0f6cb72"
+            }
+        }
+    }
+}

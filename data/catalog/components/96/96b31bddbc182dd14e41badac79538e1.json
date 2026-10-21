@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "96b31bddbc182dd14e41badac79538e1",
+    "identity": "github:1420499341:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1420499341:root",
+            "repository": "lucas07814-hub/dsh-pet-guardian-dragon",
+            "path": "",
+            "revision": "368130570e691a93be396af9b8d01b96017bbdb0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f9d155d0cc27d4e1828936e5e2789a5ad06b9eb0f0f7abca894a913a658dac45",
+                "code": "368130570e691a93be396af9b8d01b96017bbdb0",
+                "maintenance": "e61f8624ba4d6a6f8f39be308b959fdacfe62767dfde592c398b92c13b285020"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "94d9699576179d837920d6bf40b97fc3",
+    "identity": "github:1294612352:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1294612352:root",
+            "repository": "sunchaokun/PPT-Design-Skill",
+            "path": "",
+            "revision": "cbf7ef1324a026b29e2b77b71e2034554ddd3e22",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "36e1fd0e8f42ac911f5baf348c92304d0ad6db6016562f20574a16953963c7b1",
+                "code": "cbf7ef1324a026b29e2b77b71e2034554ddd3e22",
+                "maintenance": "bc0bf37d26d8a643ccd85bb408842b2016043c21b9a7f55a846a3b92bb20cded"
+            }
+        }
+    }
+}

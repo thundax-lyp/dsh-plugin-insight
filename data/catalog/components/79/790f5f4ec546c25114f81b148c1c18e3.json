@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "790f5f4ec546c25114f81b148c1c18e3",
+    "identity": "github:1334726163:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334726163:root",
+            "repository": "taichuy/deepseek-harness-auth",
+            "path": "",
+            "revision": "ac44b1081de6603dbfb6628a9df61f798d9e644d",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "0f3e04752aae3e82a7cca361d76292cb2ff92ecc747762cb30a2fe11ecde6eb9",
+                "code": "ac44b1081de6603dbfb6628a9df61f798d9e644d",
+                "maintenance": "316552677b07e7494ca472898fba0da46258dafbe97d82c4250eea88d7505386"
+            }
+        }
+    }
+}

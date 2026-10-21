@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ccbdddc97ac8bc28cb1153f924b2d66d",
+    "identity": "github:1335069239:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335069239:root",
+            "repository": "miisaka19800/dsh-restart-fab",
+            "path": "",
+            "revision": "99cd34aa81f4a279935afdb6e892d0900fe531dd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "342275d0b06f4b352d36790f3941e412e1d1544ba3636636a08ec00a302f8e9f",
+                "code": "99cd34aa81f4a279935afdb6e892d0900fe531dd",
+                "maintenance": "5daed3f4f30304cd786b3b904757c8e5dcfd1e549325677e9d91c53173badd18"
+            }
+        }
+    }
+}

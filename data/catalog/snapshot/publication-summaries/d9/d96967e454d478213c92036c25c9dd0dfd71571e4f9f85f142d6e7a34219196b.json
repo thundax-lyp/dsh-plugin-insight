@@ -1,5 +1,0 @@
-{
-  "text": "读取依赖锁文件并查询 OSV，生成漏洞、严重度和修复建议报告。",
-  "revision": "db879fc01cd02b9f0821a87ba728a310ae08d9ac",
-  "source_url": "https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/README.md"
-}

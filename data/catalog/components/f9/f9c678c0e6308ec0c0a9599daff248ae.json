@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f9c678c0e6308ec0c0a9599daff248ae",
+    "identity": "github:1401098255:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1401098255:root",
+            "repository": "KDDKBD/DeepSeek-splash-animation",
+            "path": "",
+            "revision": "bd82a5718507ecb752f04492d9639058ee9291d8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "dd05048dd068f247e89067aa779a1eab1edec33382866f41116fbaf708c8da5b",
+                "code": "bd82a5718507ecb752f04492d9639058ee9291d8",
+                "maintenance": "0c3cf561a60d708b5845bbcdbe1fa0f74aa4ccf75f78e240146a7d82b06432be"
+            }
+        }
+    }
+}

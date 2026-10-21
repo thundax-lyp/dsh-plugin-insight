@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "567b4442e4588a2c3698b4771be4b762",
+    "identity": "github:1334695137:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334695137:root",
+            "repository": "Huang-zhishi/dsh-plugin-call-trace",
+            "path": "",
+            "revision": "66e467535cc11bf97a8112ed8d8beece8d00e83f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ab1bfd6b01addab0089bb0d232807a25b9a8d532e9917398b42708c3a2d0d48e",
+                "code": "66e467535cc11bf97a8112ed8d8beece8d00e83f",
+                "maintenance": "fbc1145766eeebc882905a1762855a4eb9ef76d743441746dc3f1a14577cdf50"
+            }
+        }
+    }
+}

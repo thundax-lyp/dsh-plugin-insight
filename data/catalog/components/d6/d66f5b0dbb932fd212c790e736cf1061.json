@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d66f5b0dbb932fd212c790e736cf1061",
+    "identity": "github:1351084470:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1351084470:root",
+            "repository": "rebron1900/dsh-web-search-9router",
+            "path": "",
+            "revision": "80d1798ef24e73f5c0cb4b571c7b6eb88406e2d6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7a0c360564f20f8adfb1167efa1c2ddd11ca2ab39dd7ff7b5f65ce3008bbdb96",
+                "code": "80d1798ef24e73f5c0cb4b571c7b6eb88406e2d6",
+                "maintenance": "5cd8d2eb2d9ad3bdde99da6a86e34af520636c06b371418b6b35da5254bb65f4"
+            }
+        }
+    }
+}

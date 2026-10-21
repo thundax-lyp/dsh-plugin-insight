@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e061d07d143e4fc1c1cca713af4df03f",
+    "identity": "github:1341070870:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1341070870:root",
+            "repository": "huaxiren6/DSH-SmsWebhook",
+            "path": "",
+            "revision": "f5ff3615788fac553812913178a710a7ebf56901",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d087bef5bb5a89704b78246a94670e789f3307ab9cad63fa610f9b10905449e5",
+                "code": "f5ff3615788fac553812913178a710a7ebf56901",
+                "maintenance": "a69fead0a22462ba48d62d6834cc5df2772e9623135ccdf4763ac2db781c5a36"
+            }
+        }
+    }
+}

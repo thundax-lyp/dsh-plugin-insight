@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "abc12adcf2e42b4ea4b1fa0c46bcad58",
+    "identity": "github:1334561781:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334561781:root",
+            "repository": "xmanrui/dsh-im",
+            "path": "",
+            "revision": "8ac3e6ee10feefcb3c907ec0a893bf88a6b41382",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "3cc38383b7cf2f36c223d69aa7bf1023460034266e8ec7e34f544f82161cbb6c",
+                "code": "8ac3e6ee10feefcb3c907ec0a893bf88a6b41382",
+                "maintenance": "ae6e20235d878ed0cc84047076a786bbf7576f5398101070ca41548a3f66b447"
+            }
+        }
+    }
+}

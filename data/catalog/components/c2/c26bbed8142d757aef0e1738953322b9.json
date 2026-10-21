@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c26bbed8142d757aef0e1738953322b9",
+    "identity": "github:403559729:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:403559729:root",
+            "repository": "YaoApp/yao",
+            "path": "",
+            "revision": "22a7a2c3ea76ad37d19c19bf06457115c79bd7e3",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "23329e2cd316762c5ad7a95380cf171481a5c23542bc1c092cb37de688ac2439",
+                "code": "22a7a2c3ea76ad37d19c19bf06457115c79bd7e3",
+                "maintenance": "6aa0c9257b35d92e6051f35f6d847ae6fcd2b8638f0ceb71ea4ceb37988632ef"
+            }
+        }
+    }
+}

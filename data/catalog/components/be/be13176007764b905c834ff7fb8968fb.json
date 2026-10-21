@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "be13176007764b905c834ff7fb8968fb",
+    "identity": "github:1335248751:packages-dsh-task-board",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335248751:packages-dsh-task-board",
+            "repository": "DamonKoy/dsh-web-ui",
+            "path": "packages/dsh-task-board",
+            "revision": "3647a33fa467e0335260468614f6eed04b196c38",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fc5be2041f7c932d76c1304d99ea80d918994c77074b982a37f388b8b06086d3",
+                "code": "3647a33fa467e0335260468614f6eed04b196c38",
+                "maintenance": "3006678a3da32375f98dde533cd5999a73ad41afc20c676065b8dc945d77b3a6"
+            }
+        }
+    }
+}

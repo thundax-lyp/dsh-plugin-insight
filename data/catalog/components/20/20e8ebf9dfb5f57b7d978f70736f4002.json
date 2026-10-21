@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "20e8ebf9dfb5f57b7d978f70736f4002",
+    "identity": "github:1370759256:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1370759256:root",
+            "repository": "DYF-zs/dsh-qboson-ising-solver",
+            "path": "",
+            "revision": "b648224a4a1bcc2dcc066320ac619b3c2382c5f3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "88d3c78fc49bcd69b1c9f4f6fd1c76342d0332a1a15050a631240f609041d140",
+                "code": "b648224a4a1bcc2dcc066320ac619b3c2382c5f3",
+                "maintenance": "30e6fdb1770b189c225b661238319e06267ad002d7e184b76850fa38baa47271"
+            }
+        }
+    }
+}

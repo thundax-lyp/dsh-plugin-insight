@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "eeaa1319de9276f559219f4a88046371",
+    "identity": "github:1334111729:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334111729:root",
+            "repository": "lsjspl/dsh-plugin-grok2api-media-tool",
+            "path": "",
+            "revision": "01c6178e1158c9cc870cacff53dbed69235fe21d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "340feec9662af50b22a4bf00873d2f9fe402e2801f14edac6da65e0b264f708c",
+                "code": "01c6178e1158c9cc870cacff53dbed69235fe21d",
+                "maintenance": "702ea665285c3f7defddb580924cebed62c09aeccd1a01b5aea062aa7e17cd97"
+            }
+        }
+    }
+}

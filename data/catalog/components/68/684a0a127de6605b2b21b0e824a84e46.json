@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "684a0a127de6605b2b21b0e824a84e46",
+    "identity": "github:1341363840:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1341363840:root",
+            "repository": "lemonxiny55/dsh-code-index",
+            "path": "",
+            "revision": "ba24d2abdc158ae14d60727c20d77752453237ad",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8d79ac39f30a36bd15ee57a436d7714a3feb813d10022ad64c21b23b332109bd",
+                "code": "ba24d2abdc158ae14d60727c20d77752453237ad",
+                "maintenance": "09e6580142d75686eb8fe5ec35cfca09076111d0132613214756faafd802a71c"
+            }
+        }
+    }
+}

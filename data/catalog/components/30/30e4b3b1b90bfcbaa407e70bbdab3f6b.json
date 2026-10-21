@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "30e4b3b1b90bfcbaa407e70bbdab3f6b",
+    "identity": "github:1415432360:plugins-amber-forge",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1415432360:plugins-amber-forge",
+            "repository": "HCGuo2000/hcguo-public",
+            "path": "plugins/amber-forge",
+            "revision": "433fcd7f02b6c2e419c79508ac4e67d92632fc39",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a4e32db855b5976cd72f1567c5df3e044e9c80b74cc0665b2f4649f4de8564d9",
+                "code": "433fcd7f02b6c2e419c79508ac4e67d92632fc39",
+                "maintenance": "d01244c85ff9bfabf79a6b22ca25b14235169fd0d9e884464fe3f1005fddc0d0"
+            }
+        }
+    }
+}

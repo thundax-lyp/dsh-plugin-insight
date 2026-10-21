@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "c891b3b4da5507ec254a3c8619fda744",
+    "identity": "github:1334962266:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334962266:root",
+            "repository": "shaobeichen/dsh-pocket",
+            "path": "",
+            "revision": "aee3ae7e97516206049394c7a37dc38778ffb6da",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "c9dd22bd2be5cdf8a14484b325af3ae95d5ee74ae444e568854a197af44e7e8b",
+                "code": "aee3ae7e97516206049394c7a37dc38778ffb6da",
+                "maintenance": "ba395b733a7a7fa0a0e17b9aee6e9c8d20c8dbd6e232efd2b1c633cc2e88e3d2"
+            }
+        }
+    }
+}

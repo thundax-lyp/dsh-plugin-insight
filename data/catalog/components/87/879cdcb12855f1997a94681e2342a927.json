@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "879cdcb12855f1997a94681e2342a927",
+    "identity": "github:1414406583:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1414406583:root",
+            "repository": "qgd1850890306-rgb/dsh-todo-checklist",
+            "path": "",
+            "revision": "eb7bc9171cfef53bfcf40e0c2fadddeba626b4da",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c057b5b2bdb8c8a8bdabfac847daf81935ffe060921eb30f2f076457a449b16b",
+                "code": "eb7bc9171cfef53bfcf40e0c2fadddeba626b4da",
+                "maintenance": "c0798192f1ba3f8bce1471b80dfaab492ba3c26a3b18723470c5ed0d9b97bf42"
+            }
+        }
+    }
+}

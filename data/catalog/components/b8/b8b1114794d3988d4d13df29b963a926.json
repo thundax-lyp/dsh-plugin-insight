@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b8b1114794d3988d4d13df29b963a926",
+    "identity": "github:1348117901:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1348117901:root",
+            "repository": "WarrenMondeville/agents-unity-bridge",
+            "path": "",
+            "revision": "08a20966accc0f7f9aec2e3ad5ae03d79e8687f4",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "aecb7e00cf77563e793e41c3af1273e743bfd42faf65ffa8a4025d001f712997",
+                "code": "08a20966accc0f7f9aec2e3ad5ae03d79e8687f4",
+                "maintenance": "8f70230218f2106224e898cc3d5258d0f367b562cc518b70666e8b89c8d89b37"
+            }
+        }
+    }
+}

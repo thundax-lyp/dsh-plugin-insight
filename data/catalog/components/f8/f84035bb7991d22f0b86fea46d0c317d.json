@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f84035bb7991d22f0b86fea46d0c317d",
+    "identity": "github:1404695392:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1404695392:root",
+            "repository": "Cicero010/dsh-whale-atelier",
+            "path": "",
+            "revision": "e8433fbb90504374a532ff8d5141e7c4e8bff37e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0e136ef7eb7c65c4ae2fe1f31fe40958dac37b440a67aa59ea4cffe3e1a9376b",
+                "code": "e8433fbb90504374a532ff8d5141e7c4e8bff37e",
+                "maintenance": "8a4e714ee4ed45414fc592a672d0cf0f368da8a196de7e1fd750801d6e0c3d2c"
+            }
+        }
+    }
+}

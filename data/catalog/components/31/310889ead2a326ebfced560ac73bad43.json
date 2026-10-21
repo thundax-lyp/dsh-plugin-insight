@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "310889ead2a326ebfced560ac73bad43",
+    "identity": "github:1341968887:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1341968887:root",
+            "repository": "Xingkong42/dsh-zh-labels",
+            "path": "",
+            "revision": "f18c649a5bc8b005eca24196d8d2b08a2f7c3233",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7f426f3f94a1b0a2874733b20113482ca491fcf333b2a30c5d489b75c112dfcb",
+                "code": "f18c649a5bc8b005eca24196d8d2b08a2f7c3233",
+                "maintenance": "1bd18bb4a58962a2c4fddb10e371d5b01b5d70c122474c2d8ca934b1b86d9b41"
+            }
+        }
+    }
+}

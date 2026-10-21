@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2befa6c4d007842d72498c728f13983a",
+    "identity": "github:1424210426:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424210426:root",
+            "repository": "kkomia/dsh-code-team",
+            "path": "",
+            "revision": "576530e4f7d3bcbf25b89dc93796e7166643ae9a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3bb073deee063342227ff49dbb0dbd261264fd6709245efe9ffa1ca19ee72c9b",
+                "code": "576530e4f7d3bcbf25b89dc93796e7166643ae9a",
+                "maintenance": "ca51d6fbdd167fd3687d0cb4ee45ddb5b0513e453ddf50b165b24206d67bf62d"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0c1a3f0fbe1d3ca09f25e1e5db058858",
+    "identity": "github:1350363187:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1350363187:root",
+            "repository": "taoser258/dsh-client-ui-skin-qingxiao",
+            "path": "",
+            "revision": "ccaaaa0708384c457c17c771942d0255a03be9f1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "23b3d07333067b52a19a810177dd0806c7561db0ce01d143cfb6b31ed0398ae4",
+                "code": "ccaaaa0708384c457c17c771942d0255a03be9f1",
+                "maintenance": "1552582f7244f1066e062a953779f8582579cb3a0d57862b25c7283e3ab93e43"
+            }
+        }
+    }
+}

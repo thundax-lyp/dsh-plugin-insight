@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0fa202dd3553c2e1b8671f58265409c3",
+    "identity": "github:1333682494:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333682494:root",
+            "repository": "cpj-dev/dsh-plugin-cc",
+            "path": "",
+            "revision": "ffa8e8599d45582b1c73062cefcb9fcd40c69a72",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "28d1580c847e5e525cad02eded39faaa3a595bbbd3f04a9fba7e16b9f06f9e7c",
+                "code": "ffa8e8599d45582b1c73062cefcb9fcd40c69a72",
+                "maintenance": "c246f8936050f00294413373fbed02b9e0f4ce8ca81ec122bccc74da9f21d140"
+            }
+        }
+    }
+}

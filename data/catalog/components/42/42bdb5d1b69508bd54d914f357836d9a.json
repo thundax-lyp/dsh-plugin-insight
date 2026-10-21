@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "42bdb5d1b69508bd54d914f357836d9a",
+    "identity": "github:1344643372:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1344643372:root",
+            "repository": "XiaoluoFoxington/dsh-theme-hacker-terminal",
+            "path": "",
+            "revision": "9ac5d20fe56d220eea170b46d0cc6c2f002e476a",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "c0697a20f610d2be948b2f51681a4059b23740f20179d46e12893e4fec083555",
+                "code": "9ac5d20fe56d220eea170b46d0cc6c2f002e476a",
+                "maintenance": "08dd2a1140e674b6fd337014ae4ebe014fd2f76d8003d79525afe9225387e1f1"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a71c5a7b9256eee2ad098d6f558da817",
+    "identity": "github:1391898926:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1391898926:root",
+            "repository": "lilcandi/dsh-any-background-plus",
+            "path": "",
+            "revision": "57c109f48e314592b943f73a6ebc09c97c0b8fa1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "739d8ad2b316538b9cb8175f67126b1ad214e3d8d08aca2a635222b7d7005c25",
+                "code": "57c109f48e314592b943f73a6ebc09c97c0b8fa1",
+                "maintenance": "9cd67e025a8a176c708f1ef8e384821bd5137add1430ed40b4b94b4f3a4cce10"
+            }
+        }
+    }
+}

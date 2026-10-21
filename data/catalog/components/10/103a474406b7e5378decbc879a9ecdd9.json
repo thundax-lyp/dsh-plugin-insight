@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "103a474406b7e5378decbc879a9ecdd9",
+    "identity": "github:1334657392:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334657392:root",
+            "repository": "THEWOLFWALKER/dsh-notifier",
+            "path": "",
+            "revision": "9d69dd7a8908fcfec6e20d92d56509764a8f23ec",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "01974de2f23e95cbbbe5cae000c370ba9aee89de6b438b8d568cc2e5ba69659d",
+                "code": "9d69dd7a8908fcfec6e20d92d56509764a8f23ec",
+                "maintenance": "d8efead5cf7e2a6cf6c0ce48e5a38f0e84b244cccff20b88f0469363d090f0fe"
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "e3296a3046a5b45911f8ab8be710f223",
+    "identity": "github:1335547921:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335547921:root",
+            "repository": "Shiye-10Pages/dsh-memory-porter",
+            "path": "",
+            "revision": "6fe3c519c325d817f198e8918103e0d2b1c2b9a2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "b9cc3385ac73b9feecb59d83317e9961e7b5c1d8d7ca0fb73a8e74b92b0b1815",
+                "code": "6fe3c519c325d817f198e8918103e0d2b1c2b9a2",
+                "maintenance": "f7a6649a976c92c2ffeb9d3956c9ff008010e464c7d92984a49af978da30c665"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "716d666c4179c22351461bfdffc6590d",
+    "identity": "github:1420214306:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1420214306:root",
+            "repository": "liuhaolong16/dsh-quote-reply",
+            "path": "",
+            "revision": "8b302eed564b625233d3446b3f81b3bdb743b0f8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f7363a805867391c207f579f1e37de1c2c615b7e4722cb19e175a8138e008cef",
+                "code": "8b302eed564b625233d3446b3f81b3bdb743b0f8",
+                "maintenance": "b190d8f26ad430937a5d45af2588c2ad566c7e406b2594098677a14d13cecb0c"
+            }
+        }
+    }
+}

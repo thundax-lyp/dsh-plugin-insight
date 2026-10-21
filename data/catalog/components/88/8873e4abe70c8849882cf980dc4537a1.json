@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8873e4abe70c8849882cf980dc4537a1",
+    "identity": "github:1407298396:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1407298396:root",
+            "repository": "luoyuejun9/dsh-skin-rotation",
+            "path": "",
+            "revision": "7e42c4baf283447d6593d5d75bf406f284f66729",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "db257aa8c323fa2cc22d49fa1eddff1b302104b3d5494b205dee575982e91f6b",
+                "code": "7e42c4baf283447d6593d5d75bf406f284f66729",
+                "maintenance": "d608153793ad28bfdf2f33a4783cfd2c8b7ff51de9e1285f1e42513878828c3a"
+            }
+        }
+    }
+}

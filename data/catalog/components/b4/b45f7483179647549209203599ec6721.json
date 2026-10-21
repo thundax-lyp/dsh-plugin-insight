@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b45f7483179647549209203599ec6721",
+    "identity": "github:1408468706:plugins-kid-process",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1408468706:plugins-kid-process",
+            "repository": "baixiaoustc/dsh-kidlab",
+            "path": "plugins/kid-process",
+            "revision": "a87bd25e7b831eeddfdcea882c32ab2940ec562e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "cc49bd86679dfc1ae5025bbd1d577ca427c148db1560a37a2e226894c2a8af17",
+                "code": "a87bd25e7b831eeddfdcea882c32ab2940ec562e",
+                "maintenance": "c971c087074a3d75eea850e71d61f804626969f6b0e5dd20acae4e1c95da63b8"
+            }
+        }
+    }
+}

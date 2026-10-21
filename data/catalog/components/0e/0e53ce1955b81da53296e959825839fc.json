@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0e53ce1955b81da53296e959825839fc",
+    "identity": "github:1333241464:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333241464:root",
+            "repository": "Electricitysheep/dsh-tool-turbo",
+            "path": "",
+            "revision": "d29e7d9d73032516e37797ea69592ce18e0fe05f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3dadd7a6aaeab20655a9c1bdb95013285d09468241a2077b7b19460b06ead12e",
+                "code": "d29e7d9d73032516e37797ea69592ce18e0fe05f",
+                "maintenance": "0c024989035256a2ef31b43468d926d66d8322277dc6c1a2d258e2fde2939b30"
+            }
+        }
+    }
+}

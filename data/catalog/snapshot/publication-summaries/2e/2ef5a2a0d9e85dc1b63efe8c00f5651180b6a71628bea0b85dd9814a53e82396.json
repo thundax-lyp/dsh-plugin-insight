@@ -1,5 +1,0 @@
-{
-  "text": "查询llama.cpp等OpenAI兼容本地服务，并发起非流式聊天请求。",
-  "revision": "bc5454d19624f5f7575e841c6d62d47cbbdb2411",
-  "source_url": "https://github.com/173787247/dsh-wsl-llamacpp/blob/bc5454d19624f5f7575e841c6d62d47cbbdb2411/README.md"
-}

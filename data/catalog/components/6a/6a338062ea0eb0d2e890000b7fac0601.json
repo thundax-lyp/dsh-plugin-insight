@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6a338062ea0eb0d2e890000b7fac0601",
+    "identity": "github:1339631230:dsh-quote-selection",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339631230:dsh-quote-selection",
+            "repository": "pingg02/dsh-plugins",
+            "path": "dsh-quote-selection",
+            "revision": "c5516ad4994d2dcfb76fae31d7cefc332ef62f90",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6d900c98d516fd0b3da37a9a0298d25510ed8e3514f62c999d4b9f8b3ee5ac92",
+                "code": "c5516ad4994d2dcfb76fae31d7cefc332ef62f90",
+                "maintenance": "fb54509475ad33f46ab425e5375076b29c3b0340cba4db3e0dcbf798f4e36656"
+            }
+        }
+    }
+}

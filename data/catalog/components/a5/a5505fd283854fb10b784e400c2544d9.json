@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "a5505fd283854fb10b784e400c2544d9",
+    "identity": "github:1336062434:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336062434:root",
+            "repository": "sikadi233-hub/minecraft-dev",
+            "path": "",
+            "revision": "97a34dc50402038a771360b112c8f20f8e7d0e20",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "a94d37c7680c4bd49f008d8e26442aea23c400f69c7237a5ff41cd9f5dacada4",
+                "code": "97a34dc50402038a771360b112c8f20f8e7d0e20",
+                "maintenance": "509658cced8b4e7a7462e2cadcc91253bfa05c42e6716585381e5cbd5965b75c"
+            }
+        }
+    }
+}

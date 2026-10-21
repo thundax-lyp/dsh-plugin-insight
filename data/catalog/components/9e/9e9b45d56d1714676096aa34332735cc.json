@@ -1,0 +1,456 @@
+{
+    "schema_version": 3,
+    "id": "9e9b45d56d1714676096aa34332735cc",
+    "identity": "github:1336663562:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1336663562:root",
+            "repository_id": 1336663562,
+            "component_id": "root",
+            "repository": "863683348/dsh-plugin-translation",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-plugin-translation",
+            "entry_type": "plugin",
+            "technical_category": "tools-integration",
+            "business_category": "content-creation",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "02713746586bf09ccc128b49ba73e35920e8af3bac298e547615b185ec636d01",
+                "code": "2238d4d2ff479ddd0ae81d3efbff8b3ee1526854",
+                "maintenance": "1233a4c3501aa62ade52849066fb2c57b49b12c5a2486858a1915956319b337e"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-03-github-1336663562-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T03:44:21.104Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-03-github-1336663562-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/863683348/dsh-plugin-translation/blob/2238d4d2ff479ddd0ae81d3efbff8b3ee1526854/README.md",
+                    "revision": "2238d4d2ff479ddd0ae81d3efbff8b3ee1526854",
+                    "captured_at": "2026-10-21T03:44:21.104Z",
+                    "summary": "为Agent翻译提供分段、术语提取、一致性检查、风格指南及工作区翻译记忆。",
+                    "artifact": "data/runs/2026-10-21-03/snapshots/863683348--dsh-plugin-translation/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-03-github-1336663562-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/863683348/dsh-plugin-translation/blob/2238d4d2ff479ddd0ae81d3efbff8b3ee1526854/lib/translation.js",
+                    "revision": "2238d4d2ff479ddd0ae81d3efbff8b3ee1526854",
+                    "captured_at": "2026-10-21T03:44:21.104Z",
+                    "summary": "核查 lib/translation.js、lib/index.js；lib/translation.js以纯函数分段并检查数字、标点、长度和术语；lib/index.js注册translate_kit，记忆/词表/风格通过ctx.fs读写工作区文件。",
+                    "artifact": "data/runs/2026-10-21-03/snapshots/863683348--dsh-plugin-translation/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "持续翻译技术材料的用户需要跨段术语与格式一致，合格交付须同时保留数字、术语和语义；模型承担翻译，插件辅助组织与检查。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336663562-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336663562:root",
+                            "area": "code",
+                            "fingerprint": "2238d4d2ff479ddd0ae81d3efbff8b3ee1526854"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:44:21.104Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "lib/translation.js以纯函数分段并检查数字、标点、长度和术语；lib/index.js注册translate_kit，记忆/词表/风格通过ctx.fs读写工作区文件。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336663562-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336663562:root",
+                            "area": "code",
+                            "fingerprint": "2238d4d2ff479ddd0ae81d3efbff8b3ee1526854"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:44:21.104Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336663562-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336663562:root",
+                            "area": "code",
+                            "fingerprint": "2238d4d2ff479ddd0ae81d3efbff8b3ee1526854"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:44:21.104Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "包以lib/index.js挂载工具与提示词，不自带翻译服务；持久文件默认位于.dsh，数量有截断上限。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336663562-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336663562:root",
+                            "area": "code",
+                            "fingerprint": "2238d4d2ff479ddd0ae81d3efbff8b3ee1526854"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:44:21.104Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "首次需建立可信术语表与风格；日常模型费用、规则误报与人工语义复核分开计算，记忆写入与修正增加维护成本；未有对照数据。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336663562-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336663562:root",
+                            "area": "code",
+                            "fingerprint": "2238d4d2ff479ddd0ae81d3efbff8b3ee1526854"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:44:21.104Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "适合技术文档翻译先检查数字与术语一致。先用正反译和否定样例验证规则，quality高分后仍人工核对意义；不要将词表自动积累当正确性保证。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336663562-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336663562:root",
+                            "area": "code",
+                            "fingerprint": "2238d4d2ff479ddd0ae81d3efbff8b3ee1526854"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:44:21.104Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "可使形式性缺陷更容易发现，持续词表可能减少反复输入；未实测翻译合格率或费用降低。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336663562-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336663562:root",
+                            "area": "code",
+                            "fingerprint": "2238d4d2ff479ddd0ae81d3efbff8b3ee1526854"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:44:21.104Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "纯逻辑和宿主FS接线分离便于复用。resolveFileTarget仅在cwd已知时containment检查，调用方必须提供可信工作区；数值评分是可解释规则，命名应避免给出超出规则的语义保证。 源码依据：[lib/translation.js](https://github.com/863683348/dsh-plugin-translation/blob/2238d4d2ff479ddd0ae81d3efbff8b3ee1526854/lib/translation.js)、[lib/index.js](https://github.com/863683348/dsh-plugin-translation/blob/2238d4d2ff479ddd0ae81d3efbff8b3ee1526854/lib/index.js)。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336663562-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336663562:root",
+                            "area": "code",
+                            "fingerprint": "2238d4d2ff479ddd0ae81d3efbff8b3ee1526854"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:44:21.104Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "相对模型单次直译，增量是将分段、术语约束和持久记忆纳入可重复流程，降低规则性漏项。不是新翻译模型，也未证明启发式分数与人类忠实度一致；真正贡献是检查与知识积累的组合。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336663562-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336663562:root",
+                            "area": "code",
+                            "fingerprint": "2238d4d2ff479ddd0ae81d3efbff8b3ee1526854"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:44:21.104Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "quality中的fidelity是否测到了忠实度？scoreQuality从60+40开始按数字、术语、长度、标点等扣分，不能检测主客体颠倒或否定丢失；源文含中文而译文出现连续英文会扣“未翻译”分，也可能误伤正常中译英。高分只表示规则少触发，不能作语义验收。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336663562-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336663562:root",
+                            "area": "code",
+                            "fingerprint": "2238d4d2ff479ddd0ae81d3efbff8b3ee1526854"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:44:21.104Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "由规则检查与语义缺口推导，可输出“可确定违规/需人工语义核对”两层证据而非单一质量总分，把否定、数量关系和实体角色标为复核点。未验证假设是降低高分误放行。构造规则均通过但意义反转的译对，若新流程仍不能降低漏检与复核成本则否定。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336663562-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336663562:root",
+                            "area": "code",
+                            "fingerprint": "2238d4d2ff479ddd0ae81d3efbff8b3ee1526854"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:44:21.104Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T03:44:21.104Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "2238d4d2ff479ddd0ae81d3efbff8b3ee1526854",
+                "reviewed_at": "2026-10-21T03:44:21.104Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1336663562:root",
+                        "area": "code",
+                        "fingerprint": "2238d4d2ff479ddd0ae81d3efbff8b3ee1526854"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty是已有翻译辅助规则小档；mechanism规则组合小档；transferability纯逻辑半档；simplification轻量流程整合半档，不给语义保证加分。",
+                    "basis": "interpretation",
+                    "score": 35,
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336663562-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow跨段词表与记忆半档；delivery仍为译文小档；reach已有Agent译者小档；economics重复知识复用未测小档。",
+                    "basis": "interpretation",
+                    "score": 35,
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336663562-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "持续技术翻译者可试分段术语记忆与数字检查；以否定和主客体样例验规则，高分仍需语义校译，词表先审后存。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "跨段术语格式一致且数字保留交付明确。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "可重复检查加持久词表比单次模型直译少规则漏项。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "纯函数及fs记忆源码可查，fidelity只测启发式不能检颠倒。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "词表风格维护、模型费和规则误报校译成本仍在。"
+                    }
+                },
+                "score": 65,
+                "revision": "2238d4d2ff479ddd0ae81d3efbff8b3ee1526854",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-03-github-1336663562-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1336663562:root",
+                        "area": "code",
+                        "fingerprint": "2238d4d2ff479ddd0ae81d3efbff8b3ee1526854"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1336663562:root",
+            "repository": "863683348/dsh-plugin-translation",
+            "path": "",
+            "revision": "2238d4d2ff479ddd0ae81d3efbff8b3ee1526854",
+            "fingerprints": {
+                "directory": "02713746586bf09ccc128b49ba73e35920e8af3bac298e547615b185ec636d01",
+                "code": "2238d4d2ff479ddd0ae81d3efbff8b3ee1526854",
+                "maintenance": "1233a4c3501aa62ade52849066fb2c57b49b12c5a2486858a1915956319b337e"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T03:36:14Z",
+            "analysis_sha256": "a93d81f9e08986a2336695f01a42702597709943c8b62be72f3c5202b1a9d7e8"
+        },
+        "publication.metadata": "data/plugins/863683348--dsh-plugin-translation/META.json",
+        "publication.summaries": {
+            "text": "为Agent翻译提供分段、术语提取、一致性检查、风格指南及工作区翻译记忆。",
+            "revision": "2238d4d2ff479ddd0ae81d3efbff8b3ee1526854",
+            "source_url": "https://github.com/863683348/dsh-plugin-translation/blob/2238d4d2ff479ddd0ae81d3efbff8b3ee1526854/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "2238d4d2ff479ddd0ae81d3efbff8b3ee1526854",
+            "items": {
+                "模型工具": "translate_kit提供分段、词表、一致性、风格与记忆操作。"
+            }
+        },
+        "publication.advice": {
+            "revision": "2238d4d2ff479ddd0ae81d3efbff8b3ee1526854",
+            "text": "适合技术文档翻译先检查数字与术语一致。先用正反译和否定样例验证规则，quality高分后仍人工核对意义；不要将词表自动积累当正确性保证。"
+        },
+        "registry": "data/plugins/863683348--dsh-plugin-translation",
+        "reports": "# dsh-plugin-translation\n\n> 为Agent翻译提供分段、术语提取、一致性检查、风格指南及工作区翻译记忆。\n\n## 使用建议\n\n适合技术文档翻译先检查数字与术语一致。先用正反译和否定样例验证规则，quality高分后仍人工核对意义；不要将词表自动积累当正确性保证。\n\n核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。\n\n源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。\n\n## 洞察短评\n\n- **用途**：持续翻译技术材料的用户需要跨段术语与格式一致，合格交付须同时保留数字、术语和语义；模型承担翻译，插件辅助组织与检查。\n- **亮点**：相对模型单次直译，增量是将分段、术语约束和持久记忆纳入可重复流程，降低规则性漏项。不是新翻译模型，也未证明启发式分数与人类忠实度一致；真正贡献是检查与知识积累的组合。\n- **思考**：quality中的fidelity是否测到了忠实度？scoreQuality从60+40开始按数字、术语、长度、标点等扣分，不能检测主客体颠倒或否定丢失；源文含中文而译文出现连续英文会扣“未翻译”分，也可能误伤正常中译英。高分只表示规则少触发，不能作语义验收。\n- **建议**：由规则检查与语义缺口推导，可输出“可确定违规/需人工语义核对”两层证据而非单一质量总分，把否定、数量关系和实体角色标为复核点。未验证假设是降低高分误放行。构造规则均通过但意义反转的译对，若新流程仍不能降低漏检与复核成本则否定。\n\n## 场景与替代办法\n\n持续翻译技术材料的用户需要跨段术语与格式一致，合格交付须同时保留数字、术语和语义；模型承担翻译，插件辅助组织与检查。\n\n单次提示翻译更省配置；独立CAT工具有成熟记忆流程。本插件将轻量规则接到Agent，但未做同条件质量排名。\n\n## 能力清单\n\n- **模型工具**：translate_kit提供分段、词表、一致性、风格与记忆操作。\n\n## 依赖与流程\n\n必要为DSH tools/fs和执行翻译的模型；效果依赖词表正确性、会话cwd与人工校译，读写仍依赖宿主FS策略。\n\n分段与提候选术语，人工确认词表，模型逐段翻译，运行一致性/格式检查，复核后保存记忆与风格，再交付正文。\n\n## 成本与效果\n\n首次需建立可信术语表与风格；日常模型费用、规则误报与人工语义复核分开计算，记忆写入与修正增加维护成本；未有对照数据。\n\n可使形式性缺陷更容易发现，持续词表可能减少反复输入；未实测翻译合格率或费用降低。\n\n## 核心贡献\n\n相对模型单次直译，增量是将分段、术语约束和持久记忆纳入可重复流程，降低规则性漏项。不是新翻译模型，也未证明启发式分数与人类忠实度一致；真正贡献是检查与知识积累的组合。\n\n## 关键质疑\n\nquality中的fidelity是否测到了忠实度？scoreQuality从60+40开始按数字、术语、长度、标点等扣分，不能检测主客体颠倒或否定丢失；源文含中文而译文出现连续英文会扣“未翻译”分，也可能误伤正常中译英。高分只表示规则少触发，不能作语义验收。\n\n\n## 工程亮点\n\n纯逻辑和宿主FS接线分离便于复用。resolveFileTarget仅在cwd已知时containment检查，调用方必须提供可信工作区；数值评分是可解释规则，命名应避免给出超出规则的语义保证。 源码依据：[lib/translation.js](https://github.com/863683348/dsh-plugin-translation/blob/2238d4d2ff479ddd0ae81d3efbff8b3ee1526854/lib/translation.js)、[lib/index.js](https://github.com/863683348/dsh-plugin-translation/blob/2238d4d2ff479ddd0ae81d3efbff8b3ee1526854/lib/index.js)。\n\n## 未来设计假设（未验证）\n\n由规则检查与语义缺口推导，可输出“可确定违规/需人工语义核对”两层证据而非单一质量总分，把否定、数量关系和实体角色标为复核点。未验证假设是降低高分误放行。构造规则均通过但意义反转的译对，若新流程仍不能降低漏检与复核成本则否定。\n\n固定材料对照直译与分段+词表流程，统计数字/术语错误、否定和角色错误、质量高分误放行及人工校译时间。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：192dc790b935c869b6ccd3f0e161bbf5087624f37cc14434cf038dad195e1186。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 616 | 523 | 56 | — |\n| .md | source | 4 | 172 | — | — | 1590 |\n| .mjs | test | 1 | 228 | 200 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[863683348/dsh-plugin-translation](https://github.com/863683348/dsh-plugin-translation)\n- **版本号**：0.3.2（[固定提交 2238d4d2](https://github.com/863683348/dsh-plugin-translation/tree/2238d4d2ff479ddd0ae81d3efbff8b3ee1526854)）\n- **版本日期**：2026-09-11（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：作者 README、包清单、源码路径 lib/translation.js、lib/index.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。\n- 下一步：固定材料对照直译与分段+词表流程，统计数字/术语错误、否定和角色错误、质量高分误放行及人工校译时间。\n",
+        "metadata": {
+            "repository": "863683348/dsh-plugin-translation",
+            "repository_id": 1336663562,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 1,
+            "pushed_at": "2026-09-11T03:26:39Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-plugin-translation%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640D:1F14A0:A7B9E0:F12B99:6AD84A8B and timestamp 2026-10-21 05:15:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-plugin-translation%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6414:F5D0E:AA43ED:F384A3:6AD84A8B and timestamp 2026-10-21 05:15:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-plugin-translation%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6415:208D3:AAD36D:F42C51:6AD84A8B and timestamp 2026-10-21 05:15:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-plugin-translation%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6418:28E3E1:A869E4:F19904:6AD84A8B and timestamp 2026-10-21 05:15:56 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-plugin-translation%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6411:F5216:A6B7F4:EF9F9E:6AD84A8C and timestamp 2026-10-21 05:15:56 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-plugin-translation",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 1042,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-plugin-translation",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-18T04:30:03.939Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-plugin-translation",
+                    "error": null,
+                    "latest_version": "0.3.2",
+                    "latest_published_at": "2026-09-11T02:45:07.769Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "2238d4d2ff479ddd0ae81d3efbff8b3ee1526854",
+                "current_revision": "2238d4d2ff479ddd0ae81d3efbff8b3ee1526854",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1336663562:root",
+            "repository": "863683348/dsh-plugin-translation",
+            "path": "",
+            "revision": "2238d4d2ff479ddd0ae81d3efbff8b3ee1526854",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "02713746586bf09ccc128b49ba73e35920e8af3bac298e547615b185ec636d01",
+                "code": "2238d4d2ff479ddd0ae81d3efbff8b3ee1526854",
+                "maintenance": "1233a4c3501aa62ade52849066fb2c57b49b12c5a2486858a1915956319b337e"
+            }
+        }
+    }
+}

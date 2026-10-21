@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f1f2459ad0b9f5a99d8355a71cb50c54",
+    "identity": "github:1349850058:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1349850058:root",
+            "repository": "abbccdd/dsh-localtts",
+            "path": "",
+            "revision": "8f5df895bc21cea80a4473288ddb4cf2a62f3858",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8ea5aa2fb6f563f9796a0dd70b99ab0634d5c956a1a964218a6d2bff7439b597",
+                "code": "8f5df895bc21cea80a4473288ddb4cf2a62f3858",
+                "maintenance": "fad1ee329a758694ef6674bfacc84f03c72658aec6edbf5702bfd2a16ff2e434"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0616e7a07b44fc1720201023b4f37b24",
+    "identity": "github:1408468706:plugins-kid-security",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1408468706:plugins-kid-security",
+            "repository": "baixiaoustc/dsh-kidlab",
+            "path": "plugins/kid-security",
+            "revision": "a87bd25e7b831eeddfdcea882c32ab2940ec562e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e6cad640068995ff5f01f7f96b5f4e423fd2e77811ddf8ff9149625fae851127",
+                "code": "a87bd25e7b831eeddfdcea882c32ab2940ec562e",
+                "maintenance": "c971c087074a3d75eea850e71d61f804626969f6b0e5dd20acae4e1c95da63b8"
+            }
+        }
+    }
+}

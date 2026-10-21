@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "58c50e746833e4a0e7fae0f82be41155",
+    "identity": "github:1340275361:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340275361:root",
+            "repository": "JoFe2/kaleidosphere-dsh-plugin",
+            "path": "",
+            "revision": "f2d94d7a87236adf99409b4b4018cc29696a7ba5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a588b78ee385507b200c4d4a78513e64da89b12e3cfa9e4c860c02b6e9c5e76c",
+                "code": "f2d94d7a87236adf99409b4b4018cc29696a7ba5",
+                "maintenance": "38a5285920931ab548ab4a4e6b05e6d34e2d42cb4b1279e75a387799197aa87b"
+            }
+        }
+    }
+}

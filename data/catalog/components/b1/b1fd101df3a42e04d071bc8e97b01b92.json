@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "b1fd101df3a42e04d071bc8e97b01b92",
+    "identity": "github:1335841765:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335841765:root",
+            "repository": "JohnXu22786/hooks-adapter",
+            "path": "",
+            "revision": "bc9886481651f12a8fc79cd74061d8d505552060",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "a550588190a9a91fd8e44b3aac8475f126d9d31cf23ab99537f16d7ee2dc291b",
+                "code": "bc9886481651f12a8fc79cd74061d8d505552060",
+                "maintenance": "0bd2d9590644f7b4a7be5ebb345a3013189b152e502d72e318011a9c6582239d"
+            }
+        }
+    }
+}

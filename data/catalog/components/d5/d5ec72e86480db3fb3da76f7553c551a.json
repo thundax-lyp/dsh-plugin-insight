@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "d5ec72e86480db3fb3da76f7553c551a",
+    "identity": "github:1334840428:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334840428:root",
+            "repository": "xingyingyuzhui/dsh-liquid-glass",
+            "path": "",
+            "revision": "573a81d66ddff86216a61ebee4c755ed49ae31de",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "b19597a858378c8d2940fdbaf305ca0d61279c4d655d00c3e9cfcf5ebde16544",
+                "code": "573a81d66ddff86216a61ebee4c755ed49ae31de",
+                "maintenance": "02facaeeba1cf4b696297f2be3d55942a170badeb603b93aa5d4a18b29fbf665"
+            }
+        }
+    }
+}

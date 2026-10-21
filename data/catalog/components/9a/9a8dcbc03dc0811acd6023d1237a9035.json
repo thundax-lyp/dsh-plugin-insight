@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9a8dcbc03dc0811acd6023d1237a9035",
+    "identity": "github:1392614397:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1392614397:root",
+            "repository": "cyh3436332528/dsh-float-chat",
+            "path": "",
+            "revision": "40180cc184f9abeb4bd132f668adc6bce089f092",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0aa85344da653a23caaeb889bc5119c94aece0cc85bc0de7f3050529ad6fa689",
+                "code": "40180cc184f9abeb4bd132f668adc6bce089f092",
+                "maintenance": "121603de45280f6461b328bb79cba25bdd3436dea672bbe90abeec2ac63c9c85"
+            }
+        }
+    }
+}

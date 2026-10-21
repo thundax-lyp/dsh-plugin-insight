@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4c8fde88a220545f68b079984cfb8c2e",
+    "identity": "github:1421535937:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1421535937:root",
+            "repository": "Gjs9178U/dsh-pet-indesktop",
+            "path": "",
+            "revision": "2741abeaafa1973cf2564c2d7e1e8eb7132358ba",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "238c2e86105c950e17d50a02c83027201761afae2b5918a8d40e30bfdb31bcb5",
+                "code": "2741abeaafa1973cf2564c2d7e1e8eb7132358ba",
+                "maintenance": "24d4acfcb98d82a324b28e84befb051ba15747f9218b8b4b9557ae1be1dd684e"
+            }
+        }
+    }
+}

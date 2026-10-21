@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "38eb449f60a87ef78468a64a07864df7",
+    "identity": "github:1343495130:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343495130:root",
+            "repository": "RyensX/dsh-remote-gateway",
+            "path": "",
+            "revision": "63dedfce90ce5356de6df3eef7428508c44bd1f1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fe2ec49e2ae30f537af8181a9d7d5811cc6c7eee500bd0aa964657e944591d72",
+                "code": "63dedfce90ce5356de6df3eef7428508c44bd1f1",
+                "maintenance": "4c3008811b722032664f054a2041e1b4fe6d7a0d2a144b4862570fdec832e1a8"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fc1c7d998e8872d771a748dfe1913b2e",
+    "identity": "github:1410700488:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1410700488:root",
+            "repository": "huhu23333/dsh-plugin-subagent-model-route",
+            "path": "",
+            "revision": "10a7a515c240c04f1be266fb9b7ae83accd8f378",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "05b6b9b9ea52f8129df3a22db5b07cce0613e6f3350b491610eaee86eee86f75",
+                "code": "10a7a515c240c04f1be266fb9b7ae83accd8f378",
+                "maintenance": "aeac6e57d198cd0e9fcfaad6fac2adbcc46b74949cb9ad5e89cdcf7317259234"
+            }
+        }
+    }
+}

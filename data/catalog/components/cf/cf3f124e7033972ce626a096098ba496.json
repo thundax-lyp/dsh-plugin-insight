@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "cf3f124e7033972ce626a096098ba496",
+    "identity": "github:1346857688:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346857688:root",
+            "repository": "tieveto666-code/dsh-memory-migration",
+            "path": "",
+            "revision": "e5909073ee42b9e3be4c9713167ee016662aa8c6",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "f82410984648742d99e19718fc07c9a268acc39419725ed34ab2f6b8bfa81f5e",
+                "code": "e5909073ee42b9e3be4c9713167ee016662aa8c6",
+                "maintenance": "7d3f5ad7460d0bc661505ed3970309eb5221d1e92f4b82f09dd6d5c40ac6bdc2"
+            }
+        }
+    }
+}

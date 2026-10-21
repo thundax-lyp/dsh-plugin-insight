@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "855c9838fc37e7a65fc2d524476bff59",
+    "identity": "github:1424593395:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424593395:root",
+            "repository": "M1r0er/dsh-modpack",
+            "path": "",
+            "revision": "88d243086912259ccebc05d9e590244122f8307d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0745676590600b73a7e2f8d5736afbbd76fb26185df0a2a2e800c3b4fbd1ba3b",
+                "code": "88d243086912259ccebc05d9e590244122f8307d",
+                "maintenance": "6dc65138314670bc0911dbc626dd7dfeae44056922f597acd1a3cb4dff439000"
+            }
+        }
+    }
+}

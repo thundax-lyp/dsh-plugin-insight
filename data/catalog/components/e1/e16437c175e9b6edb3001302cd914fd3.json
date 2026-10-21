@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "e16437c175e9b6edb3001302cd914fd3",
+    "identity": "github:1345990768:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345990768:root",
+            "repository": "sryimnoob123/dsh-global-prompt",
+            "path": "",
+            "revision": "de3c329a28e8e611dcdbfc477a3599f258cea77a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "e2c8711ad66f204619ceda6dcc7d50858ccfb328a822e2548c638cf02380fed3",
+                "code": "de3c329a28e8e611dcdbfc477a3599f258cea77a",
+                "maintenance": "8694e21d86ab4ebdedcad2615d661235af69bfbeb61618e38bad974c9e0bcefa"
+            }
+        }
+    }
+}

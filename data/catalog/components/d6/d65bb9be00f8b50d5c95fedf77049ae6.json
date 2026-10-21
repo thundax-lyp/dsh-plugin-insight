@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "d65bb9be00f8b50d5c95fedf77049ae6",
+    "identity": "github:1348148139:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1348148139:root",
+            "repository": "PolinniZhong/dsh-skill-intelligence",
+            "path": "",
+            "revision": "d4854bc6136131e57af70d2aa68536b34f090102",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "8c0fa78331ed366f486b987634333a738afc5e38a7281d78da205d812379ddb7",
+                "code": "d4854bc6136131e57af70d2aa68536b34f090102",
+                "maintenance": "9a90bcb92a23483f149381ec08eba6323cd934c63f6557ab5e4af7613df75540"
+            }
+        }
+    }
+}

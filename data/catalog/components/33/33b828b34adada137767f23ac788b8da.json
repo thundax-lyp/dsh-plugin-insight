@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "33b828b34adada137767f23ac788b8da",
+    "identity": "github:1413246928:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1413246928:root",
+            "repository": "nailiang002-wq/deepseek-girl-harness",
+            "path": "",
+            "revision": "4be8adff5d19e2cdf707d729d6161d7d3f7f4c7b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0b2eba1c4e24ad0b64bc10aa37a481dc5d2f9dd6aef947d1be45f2481ab40d7b",
+                "code": "4be8adff5d19e2cdf707d729d6161d7d3f7f4c7b",
+                "maintenance": "cea4384694058ec53663ec9d73de0ad2d568a6f46fe58319260b668228b743da"
+            }
+        }
+    }
+}

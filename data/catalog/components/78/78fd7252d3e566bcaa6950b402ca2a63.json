@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "78fd7252d3e566bcaa6950b402ca2a63",
+    "identity": "github:1376591192:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1376591192:root",
+            "repository": "appthin/dsh-skills-manager-plus",
+            "path": "",
+            "revision": "3906f2f862a72a396d50777918a1f250ad1238fc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4a439261516d09d1b6c15e920d87889d9c30a5233b0107cfa41f15ee5048d635",
+                "code": "3906f2f862a72a396d50777918a1f250ad1238fc",
+                "maintenance": "2c9ac044e54ae676eb6d70a859e45a0d2b03c20622e6c6f3e70cf6bae82dbf71"
+            }
+        }
+    }
+}

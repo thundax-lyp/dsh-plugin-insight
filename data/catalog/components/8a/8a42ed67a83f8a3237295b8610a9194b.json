@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8a42ed67a83f8a3237295b8610a9194b",
+    "identity": "github:1415624849:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1415624849:root",
+            "repository": "shiliu153/dsh-mcp-manager",
+            "path": "",
+            "revision": "4f506dd9df8e71af57a6c987043c5baf8df71c0c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "cc3a2c09f8da0048647767e41cdfc3a2799ddc48ff94601c092bd7cfd8aeec88",
+                "code": "4f506dd9df8e71af57a6c987043c5baf8df71c0c",
+                "maintenance": "0128db85443cfa9669bcf06dc9338130882baff67a743bd4aadc75dc4a46cd3f"
+            }
+        }
+    }
+}

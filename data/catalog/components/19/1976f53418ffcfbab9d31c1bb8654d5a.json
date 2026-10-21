@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "1976f53418ffcfbab9d31c1bb8654d5a",
+    "identity": "github:1333655032:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333655032:root",
+            "repository": "anweat/dsh-voice-webspeech",
+            "path": "",
+            "revision": "38c0120054ce1f241e9e12a4324d9a1d1d2befba",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "4d4c3e43c11560de3c2d88465af87403b0b2aafa945abd854000cef43bf3f5cf",
+                "code": "38c0120054ce1f241e9e12a4324d9a1d1d2befba",
+                "maintenance": "8f1c63b826ef47f338248b01b2a12b551ec71375b473d2b5e16b69d5c0a53adf"
+            }
+        }
+    }
+}

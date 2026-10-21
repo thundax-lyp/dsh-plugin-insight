@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "13b0a78d936033f7d5ce10a19b18058f",
+    "identity": "github:1368139634:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1368139634:root",
+            "repository": "HarmlessFunny/dsh-background-by-model",
+            "path": "",
+            "revision": "64b196e760c97632f31d03b49ab557668a247bca",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fd2a767dcb34078a3f0e54fbf0c6c87c6e96c313b74c3e4cc456af92a1fd2e13",
+                "code": "64b196e760c97632f31d03b49ab557668a247bca",
+                "maintenance": "89eb4883746459625bc8d062d8e5987de058ed6e23a8541272c1e3fb8da1e82e"
+            }
+        }
+    }
+}

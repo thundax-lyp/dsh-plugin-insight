@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "ea2ba4b5f04e33aed84016769e8460e4",
+    "identity": "github:1348321855:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1348321855:root",
+            "repository": "Missher12/Missher-DSH-Project-Ops",
+            "path": "",
+            "revision": "5b7d3fb6895a01384e53e48689088b1ef26b8dfc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "38b1febc4cb429d45b6752d39c552e41ffeeba1686cdd592d8d338d86feb4c79",
+                "code": "5b7d3fb6895a01384e53e48689088b1ef26b8dfc",
+                "maintenance": "9a75f1ecdf3cb16e6a8d3e2270cfef52e0c7a4f8b44e41cf2cde373c988b9aed"
+            }
+        }
+    }
+}

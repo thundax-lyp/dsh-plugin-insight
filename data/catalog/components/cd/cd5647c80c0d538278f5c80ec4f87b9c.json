@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "cd5647c80c0d538278f5c80ec4f87b9c",
+    "identity": "github:1411237873:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1411237873:root",
+            "repository": "sixzjd/dsh-folder-attach",
+            "path": "",
+            "revision": "f8c454fc0e9d48e02f0b5bb3a5ff65368b7a0f08",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5005f04ab055e1428e81042519090d8e12a694b72baead1645fe199062543e69",
+                "code": "f8c454fc0e9d48e02f0b5bb3a5ff65368b7a0f08",
+                "maintenance": "c2136326da7e809667e829738d7b52c0c4bf6b5e899986acd4ef166d280e928c"
+            }
+        }
+    }
+}

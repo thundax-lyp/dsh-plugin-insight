@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "515f49995a7c773cf35be224282c16de",
+    "identity": "github:1335089635:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335089635:root",
+            "repository": "haiziyao/dsh-vision-mix",
+            "path": "",
+            "revision": "3ef61bbbcbcd7659b0c9d6b0efacc2c57247678f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "975fe65191344bfe03bbd8892777388cbb349b4e89fdc7bd4cb587832f0e8d32",
+                "code": "3ef61bbbcbcd7659b0c9d6b0efacc2c57247678f",
+                "maintenance": "89e72c30b496169d0e878399444b4bb30e45af60d148c8e97e0a3c65314651e3"
+            }
+        }
+    }
+}

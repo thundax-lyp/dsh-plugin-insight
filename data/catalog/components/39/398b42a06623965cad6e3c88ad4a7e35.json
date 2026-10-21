@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "398b42a06623965cad6e3c88ad4a7e35",
+    "identity": "github:1339144629:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339144629:root",
+            "repository": "ARFCON/dsh-hotplug-hub",
+            "path": "",
+            "revision": "7b14257265c131b731bd9989ac77ce368132befc",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "2edcb87b9f8feb3ceeeb886b01fda0ab64fa81ddfb6ab4e548d5902894f42348",
+                "code": "7b14257265c131b731bd9989ac77ce368132befc",
+                "maintenance": "17728b6fd6a3f5d2862dd755d29c326289810eb117eb1335b9556173490b8c44"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fc40eda9823931ab3da6bded7f8f4fd2",
+    "identity": "github:1425872016:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425872016:root",
+            "repository": "wjf1/dsh-prompt-enhance",
+            "path": "",
+            "revision": "b355d816ccbc6af1d18242717da7385dde666aaa",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f6acbd5c31e5c8a23963281d6acd9ecdd4ed8b19f1969be5fe251b5d0680ce38",
+                "code": "b355d816ccbc6af1d18242717da7385dde666aaa",
+                "maintenance": "228b1e44645a56033e690c78a80ff5d2191e88ad511af9dc947ce41716a56263"
+            }
+        }
+    }
+}

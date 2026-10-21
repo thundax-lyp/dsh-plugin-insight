@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "316f1ecb58e9cabbeca80ffb053ae1e6",
+    "identity": "github:1345874826:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345874826:root",
+            "repository": "merenguesL/dsh-tool-normalizer",
+            "path": "",
+            "revision": "64aca5b3175dd1e74ed434ef5d36a63632ee8c5c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "45ebf4ca79eda09b03250dc09b67bae51db01b45271ec2626356c3cac8cdc566",
+                "code": "64aca5b3175dd1e74ed434ef5d36a63632ee8c5c",
+                "maintenance": "1158c7ea69bf89f06ce262521b3d3406d96ceeeca2f87bcb088d1e5ba1e51b50"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d9dfb9cadbf81a37a300cb1293f86ee7",
+    "identity": "github:1406909420:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1406909420:root",
+            "repository": "LingYingNX/dsh-codex-parity",
+            "path": "",
+            "revision": "b8773a0b815ce0d7e2767dbd0953b0cec5bf9a1b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5b82fc973c315b20834cd18a46952cd92731cff520fb91f37ca3437aa5fc4b66",
+                "code": "b8773a0b815ce0d7e2767dbd0953b0cec5bf9a1b",
+                "maintenance": "e6addd0e25830897b0b7f2aa86b9a54a9fdb19b974f040395ad81e4496338127"
+            }
+        }
+    }
+}

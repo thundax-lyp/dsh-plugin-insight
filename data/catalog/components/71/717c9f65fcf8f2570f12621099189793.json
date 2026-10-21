@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "717c9f65fcf8f2570f12621099189793",
+    "identity": "github:1337291444:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337291444:root",
+            "repository": "JohnXu22786/bookkeeping",
+            "path": "",
+            "revision": "b52d1bd4188be8f7d4e8a3ceb52dc286330d4d3a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "301ec6cd023895d0b022d8f85aeb2921ccb403c67c26ccbf687dd6b7d76f4336",
+                "code": "b52d1bd4188be8f7d4e8a3ceb52dc286330d4d3a",
+                "maintenance": "e4fa7d998c9f9ae3ab6b938ae3986b7401c62559ab68f546c68cc682a6638ed4"
+            }
+        }
+    }
+}

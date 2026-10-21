@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f6c5aa522b218b02ed94ed8f85ad8558",
+    "identity": "github:1333816731:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333816731:root",
+            "repository": "WEP-56/DSH-Launcher",
+            "path": "",
+            "revision": "fa4f98e4cf89ef257367d7e6066ff886b53c4e79",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "f078e53ab8f1099c220b9d14af24c7b7b24b177927b2a1cc0b5972f3a729c361",
+                "code": "fa4f98e4cf89ef257367d7e6066ff886b53c4e79",
+                "maintenance": "38ced79449803e2b12d7d1a9a3f6ba4d6b3a8c57942cef8d6465462d0f3add3d"
+            }
+        }
+    }
+}

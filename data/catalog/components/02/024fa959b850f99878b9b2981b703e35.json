@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "024fa959b850f99878b9b2981b703e35",
+    "identity": "github:1335795105:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335795105:root",
+            "repository": "JamesYasR/dsh-email-push-master",
+            "path": "",
+            "revision": "79e52bda172bd30a1adff7abbe86160a735a7e30",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fbaf2a5bf23ec9ffb0f6c06f558591ad324766533bb04074bfb522802514ac5f",
+                "code": "79e52bda172bd30a1adff7abbe86160a735a7e30",
+                "maintenance": "f3bf1680f4f307667da63263f6415ff6e7d9bb05398044f4da90b68f1ad90ea9"
+            }
+        }
+    }
+}

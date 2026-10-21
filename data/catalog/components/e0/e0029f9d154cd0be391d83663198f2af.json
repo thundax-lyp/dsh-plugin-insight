@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e0029f9d154cd0be391d83663198f2af",
+    "identity": "github:1406421269:integrations-dsh",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1406421269:integrations-dsh",
+            "repository": "puffo-ai/huddo-mcp",
+            "path": "integrations/dsh",
+            "revision": "8faa5d81a270a34d6d08d5ac766efc0b2e96505b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "eaed9e988f97527027710d50d60e2b42b115f0bd940d73baf735ad7d437847a0",
+                "code": "8faa5d81a270a34d6d08d5ac766efc0b2e96505b",
+                "maintenance": "c1aa14f08149cbe1c55f66b445ced9e0c9419201956732b2f4416c991b55f3fd"
+            }
+        }
+    }
+}

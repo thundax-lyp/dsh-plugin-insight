@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "041cb7c2582b20cfa367a02437f3eaa2",
+    "identity": "github:1364613212:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1364613212:root",
+            "repository": "wx-yss/dsh-composer-enter",
+            "path": "",
+            "revision": "af9106f10d1877065b66b27b3cf5ad978bebcb2b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f6ab269f77c560c43fbebf12ef2021f07351fe98a75c10390b968ab1e2112573",
+                "code": "af9106f10d1877065b66b27b3cf5ad978bebcb2b",
+                "maintenance": "c5feb871a128bc80bffe4f96db445d96476b6cc07b5f4a2bd169c3e4b2209530"
+            }
+        }
+    }
+}

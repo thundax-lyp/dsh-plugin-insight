@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "f5f8c5655cff4c0b8237c90fb4ff3097",
+    "identity": "github:1334941782:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334941782:root",
+            "repository": "swaylq/dsh-digipet",
+            "path": "",
+            "revision": "1558da9e58c765041c95d061f6e49397b914d086",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "f48d6a00aec8d1896cdba5d30a1ce7901223ee369d8352da8a43d51f567ef6ea",
+                "code": "1558da9e58c765041c95d061f6e49397b914d086",
+                "maintenance": "35275055cba9f6747f5787a79889d04e5a3b1838f43ef2460ef5c5fad32845f9"
+            }
+        }
+    }
+}

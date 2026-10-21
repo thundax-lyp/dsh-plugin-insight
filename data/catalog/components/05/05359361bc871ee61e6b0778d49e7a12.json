@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "05359361bc871ee61e6b0778d49e7a12",
+    "identity": "github:1381290083:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1381290083:root",
+            "repository": "qianyuan-ltd/dsh-qianyuan",
+            "path": "",
+            "revision": "4612a851b58c03612542bbe572a8e02601730523",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0347855854471256dd8df6602acfa0908bff070c7c0920b3afe5d0a3a02c1e63",
+                "code": "4612a851b58c03612542bbe572a8e02601730523",
+                "maintenance": "53523f4a8716bc39acff2b590d4250f7e576d8404c7a16d6585c79ef59bad39e"
+            }
+        }
+    }
+}

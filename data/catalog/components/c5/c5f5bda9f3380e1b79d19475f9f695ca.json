@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c5f5bda9f3380e1b79d19475f9f695ca",
+    "identity": "github:1409463762:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1409463762:root",
+            "repository": "liumorrisclaw/dsh-composer-input-history",
+            "path": "",
+            "revision": "058f380d1ec72527dfbf830c2c5efdbc1731ce55",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5bab19f58e5f102f49864c506e71e3e1b67e27a8f60514ad3826c23d0fbf2991",
+                "code": "058f380d1ec72527dfbf830c2c5efdbc1731ce55",
+                "maintenance": "48bb032c79ee72f407c5144771e9ec8c05420a04ea7dce603b7d0b9b048e2578"
+            }
+        }
+    }
+}

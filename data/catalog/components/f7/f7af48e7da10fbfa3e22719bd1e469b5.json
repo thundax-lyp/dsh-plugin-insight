@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f7af48e7da10fbfa3e22719bd1e469b5",
+    "identity": "github:1425564780:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425564780:root",
+            "repository": "fuguang12123/dsh-theme-inkstone",
+            "path": "",
+            "revision": "c4d9a90032d10b984ff0c2f4be043b49d227b4cf",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e8c99cd000ff94a935c81e083a122e331a5e1846983063052b7849e4e171ecb3",
+                "code": "c4d9a90032d10b984ff0c2f4be043b49d227b4cf",
+                "maintenance": "fad27eaec85754066e55fece89ab0442f80ff52714cb1abc239fde8dd397d9eb"
+            }
+        }
+    }
+}

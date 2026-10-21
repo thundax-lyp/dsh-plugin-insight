@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6e92c8b7461c3d5dc4fdc047594bd4ae",
+    "identity": "github:1342816321:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342816321:root",
+            "repository": "MaRi23333/dsh-subagent-library",
+            "path": "",
+            "revision": "847f0d456101203daf4167b7830d981d3dbb411b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "dadbb26c732f35929fb06c8a636d61569fed28be97ee00d815df19e4bdac5fef",
+                "code": "847f0d456101203daf4167b7830d981d3dbb411b",
+                "maintenance": "a7966dea218e025e9f8d47b51fa3e49cac49ec5640f6aed1e84e8d141a6085b6"
+            }
+        }
+    }
+}

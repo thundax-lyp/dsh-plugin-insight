@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6ce8d2123bb48b1cd8921918e54b933f",
+    "identity": "github:1340501257:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340501257:root",
+            "repository": "initial-d/dsh-plugin-mlquant-benchmark",
+            "path": "",
+            "revision": "783c27354401912e3ba0ecd99ab581f282e4fb19",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6fe7fa40f31f88eae982be1557694e3aade2c20659b543be739a59104c36c9f2",
+                "code": "783c27354401912e3ba0ecd99ab581f282e4fb19",
+                "maintenance": "86f75940a6c09ce14c1b641b44e892a73695dbeeb0cc99bb00a1f5fdecf3cc51"
+            }
+        }
+    }
+}

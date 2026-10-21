@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f988bba612d0ba359ddfd37880e55c78",
+    "identity": "github:1382016333:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1382016333:root",
+            "repository": "SanYe-SanJiu/dsh-power-switch",
+            "path": "",
+            "revision": "5bbb2158c2f51c9fd4305ebc76498264283b72e8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "49ae59fcda7730aae21c295bb653819ab9dc3e0e974747634979ffbd85dc94c7",
+                "code": "5bbb2158c2f51c9fd4305ebc76498264283b72e8",
+                "maintenance": "ee69ce7b4d1e7e76ccf80cddca7e3e2cfd9c14ab7bf6556c851e12b9c1e0705a"
+            }
+        }
+    }
+}

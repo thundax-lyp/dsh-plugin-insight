@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "cbd8cafb5db97018db11a6be54e4dd43",
+    "identity": "github:1340601834:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340601834:root",
+            "repository": "Lacquervii/smooth-cursor",
+            "path": "",
+            "revision": "9863f61fe327391c8180c79e10914e7339b4e117",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0a44153e57daa32bd966c3d45cc4c0d5983c5448afda1affb36686465195a192",
+                "code": "9863f61fe327391c8180c79e10914e7339b4e117",
+                "maintenance": "c87902a195e9d58e6910d176f27381af3a26d0b9e4d690dc253f23da1cf574c2"
+            }
+        }
+    }
+}

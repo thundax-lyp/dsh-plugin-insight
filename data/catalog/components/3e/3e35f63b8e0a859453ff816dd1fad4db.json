@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3e35f63b8e0a859453ff816dd1fad4db",
+    "identity": "github:1396886280:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1396886280:root",
+            "repository": "crease123/dsh-journal-calendar",
+            "path": "",
+            "revision": "d937125f99aca9b60a70ddb0c3fe4ea9fcdd8683",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b57cc17452188d7283b51e1ed04d5432411228200ab808c28b594110a27bec1a",
+                "code": "d937125f99aca9b60a70ddb0c3fe4ea9fcdd8683",
+                "maintenance": "82a9c05c319af2d8bd59879e035b661870b8111a42bda645aa3eb22b1e338e1d"
+            }
+        }
+    }
+}

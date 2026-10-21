@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "6b9c3824e879bef78218c62d216287d9",
+    "identity": "github:1333732687:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333732687:root",
+            "repository": "PerryLink/dsh-background-agents",
+            "path": "",
+            "revision": "10d0bd21f9cd868acb66f82dd07be54d94a630ed",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "65c050f8e4719c7eb8430572cd8636075727f44192e99b99e6724c6080971824",
+                "code": "10d0bd21f9cd868acb66f82dd07be54d94a630ed",
+                "maintenance": "bcbbcc25af3cd783bc44136ea300cea4def5ad92d8915af19370d4f4f3f1223a"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bcbc832d69c65fa797ac40fc43902e41",
+    "identity": "github:1401697821:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1401697821:root",
+            "repository": "wjvalue/dsh-mac-keep-awake",
+            "path": "",
+            "revision": "7b6ca75395b097dee4313b4abd205ea43b5b0e38",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b14cef8cfe805650953e21a16087eca9faa002a3b2b3e259b796e7659b9d1055",
+                "code": "7b6ca75395b097dee4313b4abd205ea43b5b0e38",
+                "maintenance": "fed0c86c2ff73019f8200e1277f5f55a7011e67bf31d4baf5542427a47a3a501"
+            }
+        }
+    }
+}

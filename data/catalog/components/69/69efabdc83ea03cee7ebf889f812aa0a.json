@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "69efabdc83ea03cee7ebf889f812aa0a",
+    "identity": "github:1336578902:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336578902:root",
+            "repository": "xiyuepcl/dsh-approval-translator",
+            "path": "",
+            "revision": "2279a497b82029384c5126f9318a9b83141788cd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c9f7e9438ff3fa31fe66408bfa2cdb21a01e625a3b0ebbfb7e393176f1a2105c",
+                "code": "2279a497b82029384c5126f9318a9b83141788cd",
+                "maintenance": "7795797eb015c51142c1c208c5884c89eff4262e1debc197f89e91f87a585feb"
+            }
+        }
+    }
+}

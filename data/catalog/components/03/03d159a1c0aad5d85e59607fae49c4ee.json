@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "03d159a1c0aad5d85e59607fae49c4ee",
+    "identity": "github:1334509470:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334509470:root",
+            "repository": "MHfire/dsh-im-bridge",
+            "path": "",
+            "revision": "760e14593c93f15959025da41082c899142a668e",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "61c7e41c81096cd13c37158b3534ec841f3b01073cbcf9c94721acb7fe266089",
+                "code": "760e14593c93f15959025da41082c899142a668e",
+                "maintenance": "c295e1dddaa5ea683be90bc72e6ebc7ed9aeecf1ce72baca97e3d71930987c94"
+            }
+        }
+    }
+}

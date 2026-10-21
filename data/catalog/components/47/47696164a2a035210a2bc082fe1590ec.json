@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "47696164a2a035210a2bc082fe1590ec",
+    "identity": "github:1334214605:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334214605:root",
+            "repository": "dhicoc/dsh-reverse-skill",
+            "path": "",
+            "revision": "f1b61cf3deec370198ae81a23b8512338002d073",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "71d8ebdc4bfd7471be0373702231590bda3e7d506422b19357ab65cbb94905a3",
+                "code": "f1b61cf3deec370198ae81a23b8512338002d073",
+                "maintenance": "91b34acc928ec05654d2d19791dcd615e319273c7f9b28ea7f73479cf5201543"
+            }
+        }
+    }
+}

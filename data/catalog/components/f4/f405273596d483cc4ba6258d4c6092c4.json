@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f405273596d483cc4ba6258d4c6092c4",
+    "identity": "github:1335615067:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335615067:root",
+            "repository": "chunsi-w/dsh-trajectory-governor",
+            "path": "",
+            "revision": "ce53de0e420dc06bcafecfa448ec71e580b9bbb0",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "ab7ece75994a79a05564a6b71df187b95115672423733f5d2c098be0ab3d79ac",
+                "code": "ce53de0e420dc06bcafecfa448ec71e580b9bbb0",
+                "maintenance": "75d0723d62ed7b96dcd97fcbf4339d8160cfdb1ab6f275308a4f369cd8ec6112"
+            }
+        }
+    }
+}

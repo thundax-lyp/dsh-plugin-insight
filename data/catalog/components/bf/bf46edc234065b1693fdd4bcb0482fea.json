@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bf46edc234065b1693fdd4bcb0482fea",
+    "identity": "github:1335239016:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335239016:root",
+            "repository": "eri64/dsh-claude-ux",
+            "path": "",
+            "revision": "23f565aee7ffb55924ee6e36e30259f06a67877c",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "880c62c26193891db834b70bdb81d9ba78073f5250cac26bb67608784d0d75b5",
+                "code": "23f565aee7ffb55924ee6e36e30259f06a67877c",
+                "maintenance": "9562e3ca6e519eb065031910937417b2d4872ccc68da96208fafea7669214007"
+            }
+        }
+    }
+}

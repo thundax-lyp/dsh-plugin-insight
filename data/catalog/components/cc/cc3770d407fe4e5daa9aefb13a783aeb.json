@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "cc3770d407fe4e5daa9aefb13a783aeb",
+    "identity": "github:1335084391:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335084391:root",
+            "repository": "hanwuji1/dsh-web-launcher",
+            "path": "",
+            "revision": "7b2c49694f16225a84f6d88d7be0df6d15fa9fc5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "363239e15392cca59aca70afceb1bc33486080d969f0ebea26022163bf4af876",
+                "code": "7b2c49694f16225a84f6d88d7be0df6d15fa9fc5",
+                "maintenance": "88a3761c41fd5f357db2dd2c6a2e974391d114dfabfed2a5ff5d4937e038d133"
+            }
+        }
+    }
+}

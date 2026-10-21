@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f89b6def01ddbf405e3c91604bbc4dd5",
+    "identity": "github:1358013384:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1358013384:root",
+            "repository": "seeingrain/dsh-upload-file",
+            "path": "",
+            "revision": "ea625d20d2f2761386604e5d8f0a49a301898854",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "bdc7959146c6e9d5c1f21e67a4bc8059472e6606c0c45dc3b8dac871895e4a83",
+                "code": "ea625d20d2f2761386604e5d8f0a49a301898854",
+                "maintenance": "2852fd31faf535c2560156b95f56e701eb5abe88a0df48d1f453abb415f99df4"
+            }
+        }
+    }
+}

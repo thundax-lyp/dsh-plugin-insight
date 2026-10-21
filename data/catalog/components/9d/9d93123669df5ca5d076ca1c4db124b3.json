@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9d93123669df5ca5d076ca1c4db124b3",
+    "identity": "github:1354307141:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1354307141:root",
+            "repository": "wjj-8283/dsh-temp-workspace",
+            "path": "",
+            "revision": "658530b6ae65df8016506fa19a098e20b50973a5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "de1b122f120ffae6b2d51645036390754c6269a7c09f850c4da2a8cc7a2430c1",
+                "code": "658530b6ae65df8016506fa19a098e20b50973a5",
+                "maintenance": "57092324764bdc6064fe96d23ba49f15f6de4950aaa21580865d23627c6e932a"
+            }
+        }
+    }
+}

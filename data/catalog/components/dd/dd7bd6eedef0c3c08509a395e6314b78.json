@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "dd7bd6eedef0c3c08509a395e6314b78",
+    "identity": "github:1333909895:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333909895:root",
+            "repository": "evanfang0054/dsh-tailscale-console",
+            "path": "",
+            "revision": "4f6627e1d9f23e1e3eb39261765475747a79fccf",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "abbb3d2abe3178034b289dad2644dcb6088205d3297ebf588e807186e39e8390",
+                "code": "4f6627e1d9f23e1e3eb39261765475747a79fccf",
+                "maintenance": "c023f97c0e24a6e00a5bacbfd243f48cd2bd256ab2a524135f8358ce1b1b1f25"
+            }
+        }
+    }
+}

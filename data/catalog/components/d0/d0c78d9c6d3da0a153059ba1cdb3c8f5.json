@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d0c78d9c6d3da0a153059ba1cdb3c8f5",
+    "identity": "github:1350261446:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1350261446:root",
+            "repository": "kagurazakayashi/dsh-startup-command",
+            "path": "",
+            "revision": "9b0d3fb4723d55036a4dcbc216beea5c865c5e03",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8cd7023085e1b503f8e17dc219555ef2f512b169e40a8d49b753a37a95aa9d91",
+                "code": "9b0d3fb4723d55036a4dcbc216beea5c865c5e03",
+                "maintenance": "7f6ca7ad86b738c39311f88b9756fe53152a071a73619ce46e5632fb23cf67e4"
+            }
+        }
+    }
+}

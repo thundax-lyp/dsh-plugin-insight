@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "69cc5ef44ed6120e921a8deb21f95872",
+    "identity": "github:1409808625:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1409808625:root",
+            "repository": "seonzzy/dsh-zen-adapter",
+            "path": "",
+            "revision": "09f847119321866afc3a7ed310f8ba14eece747d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f3c733064ebe63da9e07484861846095c21f968d366b43a3a43c19cb024506a6",
+                "code": "09f847119321866afc3a7ed310f8ba14eece747d",
+                "maintenance": "84f716af984703e68595665b805266bdd95c4e9ad31876afe6be1ea9d7c00707"
+            }
+        }
+    }
+}

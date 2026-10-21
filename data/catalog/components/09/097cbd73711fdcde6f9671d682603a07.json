@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "097cbd73711fdcde6f9671d682603a07",
+    "identity": "github:1344165893:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1344165893:root",
+            "repository": "lcohvne-tomorin/dsh-background",
+            "path": "",
+            "revision": "417d13a2adc2bb515f765c9504e103dd902ce6da",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "fc952a5d36973a769976cb2f9bb27be07b66c588f707ba8331f22dce0e7e8ea0",
+                "code": "417d13a2adc2bb515f765c9504e103dd902ce6da",
+                "maintenance": "30fa6dd171220ba5690b8d0e020312148b0dda0a6d360a957f343b7504137b25"
+            }
+        }
+    }
+}

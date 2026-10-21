@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b235a5fa6cc4efc3219437a7d2552668",
+    "identity": "github:1345146407:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345146407:root",
+            "repository": "guihui2538/Every-token-you-spend-comes-back-as-a-waifu.",
+            "path": "",
+            "revision": "32df85d53c047e46ad095d884c355a94e044c000",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "11ffd7730919d4296b8a21731f58f1c565fe495e2a3c71106476d1fa46bb8494",
+                "code": "32df85d53c047e46ad095d884c355a94e044c000",
+                "maintenance": "109edc79170c1fd0ce8d49d3b1200612f174f22b61b7a16dd3349c6d89cef7e4"
+            }
+        }
+    }
+}

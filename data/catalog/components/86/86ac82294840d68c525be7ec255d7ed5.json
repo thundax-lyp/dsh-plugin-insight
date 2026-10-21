@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "86ac82294840d68c525be7ec255d7ed5",
+    "identity": "github:1336433989:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336433989:root",
+            "repository": "Tang-mm95/dsh-single-instance-guard",
+            "path": "",
+            "revision": "666bad9ddedeb21d496ba96368bdbeb9d1752704",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1e320dd059dd2eff3f3f8eacdf0f820661b5450b9166934e50b3ae3bfe6bbe5b",
+                "code": "666bad9ddedeb21d496ba96368bdbeb9d1752704",
+                "maintenance": "3c697afcf0e27711ea5dc36dcbcae43a3555649348e40d63ea60d5eea614a3a6"
+            }
+        }
+    }
+}

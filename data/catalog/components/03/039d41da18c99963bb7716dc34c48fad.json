@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "039d41da18c99963bb7716dc34c48fad",
+    "identity": "github:1336723106:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336723106:root",
+            "repository": "shuxue6662-a11y/dsh-risk-guard",
+            "path": "",
+            "revision": "790bda59aae6ca75fac0683b3651309cf4b146d6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "dbe6858fceedc050d34fa97740450ba8ecd1cb8de0fffe8dec650a697ba43e1a",
+                "code": "790bda59aae6ca75fac0683b3651309cf4b146d6",
+                "maintenance": "5a0a4a02d271d90fbea7d1edbc952bb597cd1c8f25ef60b2c12969a0ace77481"
+            }
+        }
+    }
+}

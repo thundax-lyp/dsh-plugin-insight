@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "82ca59432c8b3ad3f1af330f41c905e5",
+    "identity": "github:1382862022:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1382862022:root",
+            "repository": "yicun0316/dsh-claude-slider",
+            "path": "",
+            "revision": "0650abb9903e83fe6c46ffa7cb34d6813a5e3c3a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "29751731f0e5e585d08f89db6cf184779ddd0b1af4ec1c39ec732989ebe85a6c",
+                "code": "0650abb9903e83fe6c46ffa7cb34d6813a5e3c3a",
+                "maintenance": "cbc0cc45eafa49ff71fa1350fe0b52541f07b64429268608cc3f5d4e23eb4ef2"
+            }
+        }
+    }
+}

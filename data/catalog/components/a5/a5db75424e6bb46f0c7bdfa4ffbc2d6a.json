@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a5db75424e6bb46f0c7bdfa4ffbc2d6a",
+    "identity": "github:1334742573:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334742573:root",
+            "repository": "yangyongzhen/dsh-git-workflow",
+            "path": "",
+            "revision": "a7c2a9c7bdd65e0c89358cce1f6e38dc7e3d66d2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "167bf4c5215359d09925f93969f37986ed5c809336c9e4c39d37c380a29e6eb8",
+                "code": "a7c2a9c7bdd65e0c89358cce1f6e38dc7e3d66d2",
+                "maintenance": "fe94a85c19dd510ba2ed7f09f2e3a9632e00c304e16e460a9753c262bac680e5"
+            }
+        }
+    }
+}

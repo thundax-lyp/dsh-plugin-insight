@@ -1,0 +1,403 @@
+{
+    "schema_version": 3,
+    "id": "9d4de469c226ea274eac3648e79c7255",
+    "identity": "github:1334267268:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1334267268:root",
+            "repository_id": 1334267268,
+            "component_id": "root",
+            "repository": "2768651338/dsh-plugin-manager",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-plugin-manager",
+            "entry_type": "plugin",
+            "technical_category": "tools-integration",
+            "business_category": "infrastructure",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "7ae15d511cb990b6fc5eeafa01380c3cb8b9f5fcfabb412d86968e7d3f54426e",
+                "code": "df0a23258ed3761bcce12ad20958ba2c2a647a4c",
+                "maintenance": "cf74eb3b16b977345267380d77ebcbbfb3e48a3b3887608729dc2c6c5cbcbcf3"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-01-github-1334267268-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T02:09:34.439Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-01-github-1334267268-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/2768651338/dsh-plugin-manager/blob/df0a23258ed3761bcce12ad20958ba2c2a647a4c/README.md",
+                    "revision": "df0a23258ed3761bcce12ad20958ba2c2a647a4c",
+                    "captured_at": "2026-10-21T02:09:34.439Z",
+                    "summary": "给 DSH 插件提供中文目录说明、启停、备注编辑及配置备份管理界面。",
+                    "artifact": "data/runs/2026-10-21-01/snapshots/2768651338--dsh-plugin-manager/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-01-github-1334267268-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/2768651338/dsh-plugin-manager/blob/df0a23258ed3761bcce12ad20958ba2c2a647a4c/src/patch-file.ts",
+                    "revision": "df0a23258ed3761bcce12ad20958ba2c2a647a4c",
+                    "captured_at": "2026-10-21T02:09:34.439Z",
+                    "summary": "核查 src/patch-file.ts、src/index.ts、src/typert-host.ts；PluginManagerGateway投影loader状态与中文目录，写操作共用恢复型串行队列；patch-file.ts只编辑目标行disabled，拒绝表达式和未识别行，避免重写整份YAML。",
+                    "artifact": "data/runs/2026-10-21-01/snapshots/2768651338--dsh-plugin-manager/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "抽读指定核心源码与作者说明；未执行目标插件或测试、未安装或做真实宿主验收，未核实独立用户收益。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "维护多个DSH插件但不熟悉模块名的用户，需要辨认当前Loader行并安全启停，保留已有手写补丁。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1334267268-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334267268:root",
+                            "area": "code",
+                            "fingerprint": "df0a23258ed3761bcce12ad20958ba2c2a647a4c"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:09:34.439Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "PluginManagerGateway投影loader状态与中文目录，写操作共用恢复型串行队列；patch-file.ts只编辑目标行disabled，拒绝表达式和未识别行，避免重写整份YAML。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1334267268-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334267268:root",
+                            "area": "code",
+                            "fingerprint": "df0a23258ed3761bcce12ad20958ba2c2a647a4c"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:09:34.439Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "抽读指定核心源码与作者说明；未执行目标插件或测试、未安装或做真实宿主验收，未核实独立用户收益。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1334267268-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334267268:root",
+                            "area": "code",
+                            "fingerprint": "df0a23258ed3761bcce12ad20958ba2c2a647a4c"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:09:34.439Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "固定源码及包清单界定本次组件与分发；作者兼容和效果说明不等于本轮实际执行证据。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1334267268-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334267268:root",
+                            "area": "code",
+                            "fingerprint": "df0a23258ed3761bcce12ad20958ba2c2a647a4c"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:09:34.439Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "首次安装并整理目录备注；持续目录维护、备份保留和宿主兼容验证的人力，无必要额外模型费用。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1334267268-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334267268:root",
+                            "area": "code",
+                            "fingerprint": "df0a23258ed3761bcce12ad20958ba2c2a647a4c"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:09:34.439Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "需要批量辨认和启停时先在独立profile试用，核对系统保护、表达式拒绝、备份恢复及实际fiber状态后扩用。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1334267268-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334267268:root",
+                            "area": "code",
+                            "fingerprint": "df0a23258ed3761bcce12ad20958ba2c2a647a4c"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:09:34.439Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "中文说明与局部编辑降低误改负担有机制依据；用户错误率与维护时间收益未实测。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1334267268-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334267268:root",
+                            "area": "code",
+                            "fingerprint": "df0a23258ed3761bcce12ad20958ba2c2a647a4c"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:09:34.439Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "写队列then(run,run)并恢复tail避免一次失败毒化后续操作；parsePatchFile保留原文，但只支持明确的顶层id行形态并主动拒绝其他形式。 [固定源码](https://github.com/2768651338/dsh-plugin-manager/blob/df0a23258ed3761bcce12ad20958ba2c2a647a4c/src/patch-file.ts#L1)。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1334267268-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334267268:root",
+                            "area": "code",
+                            "fingerprint": "df0a23258ed3761bcce12ad20958ba2c2a647a4c"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:09:34.439Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T02:09:34.439Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "df0a23258ed3761bcce12ad20958ba2c2a647a4c",
+                "reviewed_at": "2026-10-21T02:09:34.439Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1334267268:root",
+                        "area": "code",
+                        "fingerprint": "df0a23258ed3761bcce12ad20958ba2c2a647a4c"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty：目录与局部编辑组合小幅；mechanism：保原文且拒绝不安全形态实质；transferability：配置边界策略实质可借鉴；simplification：统一写队列和局部修改实质。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1334267268-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 10,
+                        "economics": 4
+                    },
+                    "rationale": "workflow：管理入口小幅；delivery：配置交付小幅；reach：中文说明使非熟悉模块用户可达实质；economics：减少手工维护小幅，收益未测。",
+                    "basis": "interpretation",
+                    "score": 31,
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1334267268-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "维护多插件者可在独立profile试用中文目录与启停；先验系统保护、表达式拒绝、备份恢复和真实fiber状态。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "不熟模块名的维护者需要辨认Loader行及安全启停。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "局部disabled编辑保留手写YAML，较手改降低变更面积。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "串行写队列和保守解析已查，accepted与实际热加载有时间差。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "需可写DSH_HOME和HMR，目录备注与备份兼容仍需维护。"
+                    }
+                },
+                "score": 65,
+                "revision": "df0a23258ed3761bcce12ad20958ba2c2a647a4c",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-01-github-1334267268-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1334267268:root",
+                        "area": "code",
+                        "fingerprint": "df0a23258ed3761bcce12ad20958ba2c2a647a4c"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1334267268:root",
+            "repository": "2768651338/dsh-plugin-manager",
+            "path": "",
+            "revision": "df0a23258ed3761bcce12ad20958ba2c2a647a4c",
+            "fingerprints": {
+                "directory": "7ae15d511cb990b6fc5eeafa01380c3cb8b9f5fcfabb412d86968e7d3f54426e",
+                "code": "df0a23258ed3761bcce12ad20958ba2c2a647a4c",
+                "maintenance": "cf74eb3b16b977345267380d77ebcbbfb3e48a3b3887608729dc2c6c5cbcbcf3"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T01:54:44Z",
+            "analysis_sha256": "1481c89ab25bfeb1ec60d74cfcf3784616854456e2a04fa33c3225ce1a768633"
+        },
+        "publication.metadata": "data/plugins/2768651338--dsh-plugin-manager/META.json",
+        "publication.summaries": {
+            "text": "给 DSH 插件提供中文目录说明、启停、备注编辑及配置备份管理界面。",
+            "revision": "df0a23258ed3761bcce12ad20958ba2c2a647a4c",
+            "source_url": "https://github.com/2768651338/dsh-plugin-manager/blob/df0a23258ed3761bcce12ad20958ba2c2a647a4c/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "df0a23258ed3761bcce12ad20958ba2c2a647a4c",
+            "items": {
+                "界面": "插件中文目录、备注与启停设置",
+                "后台": "目标行补丁编辑、共享写队列与备份"
+            }
+        },
+        "publication.advice": {
+            "revision": "df0a23258ed3761bcce12ad20958ba2c2a647a4c",
+            "text": "需要批量辨认和启停时先在独立profile试用，核对系统保护、表达式拒绝、备份恢复及实际fiber状态后扩用。"
+        },
+        "registry": "data/plugins/2768651338--dsh-plugin-manager",
+        "reports": "# dsh-plugin-manager\n\n> 给 DSH 插件提供中文目录说明、启停、备注编辑及配置备份管理界面。\n\n## 研究范围\n\n- **仓库**：[2768651338/dsh-plugin-manager](https://github.com/2768651338/dsh-plugin-manager)\n- **版本号**：0.9.0（[固定提交 df0a2325](https://github.com/2768651338/dsh-plugin-manager/tree/df0a23258ed3761bcce12ad20958ba2c2a647a4c)）\n- **版本日期**：2026-10-20（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已实现机制由固定源码支持；效果未独立实测，未来假设未验证。\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：维护多个DSH插件但不熟悉模块名的用户，需要辨认当前Loader行并安全启停，保留已有手写补丁。\n- **亮点**：相对官方安装卸载服务，明确增量是可解释目录、行级启停与可编辑备注；独立命名空间保留官方服务。保留注释和表达式的局部编辑比普通解析再序列化更适合既有手写配置，但非通用YAML编辑器。\n- **思考**：写盘accepted是否代表插件已激活？setEnabled返回写入结果，实际热加载依赖宿主HMR与fiber状态；保留表达式和系统行限制是强支持，但Loader异步失败仍可能发生。目录说明数量也不等于插件可安装兼容。\n- **建议**：需要批量辨认和启停时先在独立profile试用，核对系统保护、表达式拒绝、备份恢复及实际fiber状态后扩用。\n\n采用建议：需要批量辨认和启停时先在独立profile试用，核对系统保护、表达式拒绝、备份恢复及实际fiber状态后扩用。\n\n## 核心贡献\n\n相对官方安装卸载服务，明确增量是可解释目录、行级启停与可编辑备注；独立命名空间保留官方服务。保留注释和表达式的局部编辑比普通解析再序列化更适合既有手写配置，但非通用YAML编辑器。\n\n## 关键质疑\n\n[核查分支](https://github.com/2768651338/dsh-plugin-manager/blob/df0a23258ed3761bcce12ad20958ba2c2a647a4c/src/index.ts#L532)。\n\n写盘accepted是否代表插件已激活？setEnabled返回写入结果，实际热加载依赖宿主HMR与fiber状态；保留表达式和系统行限制是强支持，但Loader异步失败仍可能发生。目录说明数量也不等于插件可安装兼容。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n待验证假设：启停结果绑定配置版本并等待目标fiber代次状态，能把已写入与已生效分开；新增负担为超时、重载竞态和可撤销操作状态。\n\n连续对同一行启停并注入加载失败，检查界面是否区分文件已写与fiber失败；若旧代次成功仍误报当前成功则否定假设。\n\n## 场景与替代办法\n\n维护多个DSH插件但不熟悉模块名的用户，需要辨认当前Loader行并安全启停，保留已有手写补丁。\n\n参照官方插件管理与手改disabled；本项目是说明和配置维护增强，官方安装卸载仍为另一责任层。\n\n## 依赖与流程\n\n需要宿主loader、Typert与Web客户端、可写DSH_HOME以及热加载支持；备份导入还依赖当前profile路径。\n\n读取loader和目录→展示分类说明→预检系统/表达式→串行写补丁和备份→宿主异步重载→界面再读状态。\n\n## 成本与效果\n\n首次安装并整理目录备注；持续目录维护、备份保留和宿主兼容验证的人力，无必要额外模型费用。\n\n中文说明与局部编辑降低误改负担有机制依据；用户错误率与维护时间收益未实测。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：4c0eaaddde06ec32d58645057d123cd94a84f5eaac9748accfa4f42afb6185ab。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 10 | 2398 | — | — | 31250 |\n| .js | source | 4 | 16781 | 15927 | 1500 | — |\n| .ts | source | 17 | 3405 | 2667 | 513 | — |\n| .mjs | source | 1 | 23 | 21 | 1 | — |\n| .tsx | source | 1 | 973 | 886 | 49 | — |\n| .mjs | test | 14 | 1514 | 1270 | 125 | — |\n\n排除 1 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **界面**：插件中文目录、备注与启停设置\n- **后台**：目标行补丁编辑、共享写队列与备份\n\n## 工程亮点\n\n写队列then(run,run)并恢复tail避免一次失败毒化后续操作；parsePatchFile保留原文，但只支持明确的顶层id行形态并主动拒绝其他形式。 [固定源码](https://github.com/2768651338/dsh-plugin-manager/blob/df0a23258ed3761bcce12ad20958ba2c2a647a4c/src/patch-file.ts#L1)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 src/patch-file.ts、src/index.ts、src/typert-host.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读指定核心源码与作者说明；未执行目标插件或测试、未安装或做真实宿主验收，未核实独立用户收益。\n- 下一步：连续对同一行启停并注入加载失败，检查界面是否区分文件已写与fiber失败；若旧代次成功仍误报当前成功则否定假设。\n",
+        "metadata": {
+            "repository": "2768651338/dsh-plugin-manager",
+            "repository_id": 1334267268,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 9,
+            "pushed_at": "2026-10-20T13:00:07Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A2768651338%2Fdsh-plugin-manager%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C0:3E0DB6:1428A1:21C7CA:6AD84A0D and timestamp 2026-10-21 05:13:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A2768651338%2Fdsh-plugin-manager%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640D:12770C:151620:22AF55:6AD84A0D and timestamp 2026-10-21 05:13:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A2768651338%2Fdsh-plugin-manager%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6416:12AB5A:13BABF:2154FB:6AD84A0D and timestamp 2026-10-21 05:13:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A2768651338%2Fdsh-plugin-manager%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641C:64E75:1411CE:21B283:6AD84A0D and timestamp 2026-10-21 05:13:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A2768651338%2Fdsh-plugin-manager%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641D:F50F:14B9E7:224E5B:6AD84A0D and timestamp 2026-10-21 05:13:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "@txc2768651338/dsh-plugin-manager",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 923,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40txc2768651338%2Fdsh-plugin-manager",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-10-01T08:43:04.858Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/%40txc2768651338%2Fdsh-plugin-manager",
+                    "error": null,
+                    "latest_version": "0.7.0",
+                    "latest_published_at": "2026-10-01T08:43:05.284Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "df0a23258ed3761bcce12ad20958ba2c2a647a4c",
+                "current_revision": "df0a23258ed3761bcce12ad20958ba2c2a647a4c",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1334267268:root",
+            "repository": "2768651338/dsh-plugin-manager",
+            "path": "",
+            "revision": "df0a23258ed3761bcce12ad20958ba2c2a647a4c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7ae15d511cb990b6fc5eeafa01380c3cb8b9f5fcfabb412d86968e7d3f54426e",
+                "code": "df0a23258ed3761bcce12ad20958ba2c2a647a4c",
+                "maintenance": "cf74eb3b16b977345267380d77ebcbbfb3e48a3b3887608729dc2c6c5cbcbcf3"
+            }
+        }
+    }
+}

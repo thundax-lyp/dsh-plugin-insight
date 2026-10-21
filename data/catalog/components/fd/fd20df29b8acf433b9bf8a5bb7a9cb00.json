@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fd20df29b8acf433b9bf8a5bb7a9cb00",
+    "identity": "github:1399065742:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1399065742:root",
+            "repository": "copylee711/dsh-image-gen",
+            "path": "",
+            "revision": "34ef250e0d3f5961f8c13c0ce188e267624415e4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "dcd67dd24366f010ce1bf5ba47d7a2ba540eb9e9b502eaed722d5144db87d648",
+                "code": "34ef250e0d3f5961f8c13c0ce188e267624415e4",
+                "maintenance": "269dfb626188c90b3f6799f4ceef0aab2bf419ba532aa554274898595bb9bbc9"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "15510e1d689741f238f6c819933baee2",
+    "identity": "github:1335535097:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335535097:root",
+            "repository": "qingmomo233/dsh-thinking-language",
+            "path": "",
+            "revision": "002ff6c1e4d03ad0f3b79fd7515d65199beb658d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "37ffb077627badfc619dfaf8cc98b4caa11db94936cddf0aea35fc546f7c5aff",
+                "code": "002ff6c1e4d03ad0f3b79fd7515d65199beb658d",
+                "maintenance": "f83d1524f40bb16d9881ebc1fcf7368b569653574241bb3ef2e521e3583ef08f"
+            }
+        }
+    }
+}

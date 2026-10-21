@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8b4d7ddc310243cbce03bfe872bcdd85",
+    "identity": "github:1388656248:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1388656248:root",
+            "repository": "xlxs123/dsh-session-multiselect",
+            "path": "",
+            "revision": "5a8a0b6e6b52471dee16f3848298c7fe12a3941b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c209537f26c7f52e2c6f99b880d384c59993c816f33f96295a77487bb6c1dc9a",
+                "code": "5a8a0b6e6b52471dee16f3848298c7fe12a3941b",
+                "maintenance": "bb9a846b0df6a6646ce1b59b835bce3e60523f3c1abaa4581b348720acb9eddd"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ad63835b5f8b07177e81ca40335ca78a",
+    "identity": "github:1337659295:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337659295:root",
+            "repository": "demacia1314/dsh-airdrop",
+            "path": "",
+            "revision": "6ae97eeb9636765819b1d7766f8a6bdac6eb5008",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a139aaad8b13360e09c3239e6d78022699e5fba8d92a567bd49811350fadb845",
+                "code": "6ae97eeb9636765819b1d7766f8a6bdac6eb5008",
+                "maintenance": "eb3ecae3ce1d6ba442230f74953666c7722b94d06ab3fbcfced8acf98d2ef284"
+            }
+        }
+    }
+}

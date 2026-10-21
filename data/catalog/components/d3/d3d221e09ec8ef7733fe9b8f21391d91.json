@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d3d221e09ec8ef7733fe9b8f21391d91",
+    "identity": "github:1416529458:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1416529458:root",
+            "repository": "ruaibeite/dsh-auto-observe",
+            "path": "",
+            "revision": "bc0b3cd908017156d0d4d6c00030ff3f994dfc86",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "33993bc9e322d37e8d90d5bd622101086a152dd255d6c9642c49351b334492ac",
+                "code": "bc0b3cd908017156d0d4d6c00030ff3f994dfc86",
+                "maintenance": "c2b08e02e0bf3deed2e687cc7bb0e3712d05643f96e94fb6afa8a37a7c07a34e"
+            }
+        }
+    }
+}

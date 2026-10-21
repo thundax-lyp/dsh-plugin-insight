@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e135a10d1e9e658ef4f3e134ca47d51f",
+    "identity": "github:1343465288:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343465288:root",
+            "repository": "jinxlux/xiao-theme-dsh-ui-plugin",
+            "path": "",
+            "revision": "d14085a6439e824e791909e6a7a10a8854cab4e3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fe0d2a3c74c00c19fba35fefb22b0c1fc93473e7684b1b3855996d828aa8672d",
+                "code": "d14085a6439e824e791909e6a7a10a8854cab4e3",
+                "maintenance": "af08c350522c463e7acd7d805ef6ec06ce77fcfa9881c47de566e307b4de81a8"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "319afa1a06b37fe3105e5c74dbac608a",
+    "identity": "github:1403127284:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1403127284:root",
+            "repository": "laoye666-6/dsh-plugin-media-wallpaper",
+            "path": "",
+            "revision": "89856d3bc627bc42caf2926d16bf171952abf3b9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ea080d87f8d50cc3d04231e4b91240be6e1d4f102b08f3f8e5eb197d57f72422",
+                "code": "89856d3bc627bc42caf2926d16bf171952abf3b9",
+                "maintenance": "9f9dbec5e7155d4938225f9889991901d1bf2e39e9dbb18f84145774671fa51c"
+            }
+        }
+    }
+}

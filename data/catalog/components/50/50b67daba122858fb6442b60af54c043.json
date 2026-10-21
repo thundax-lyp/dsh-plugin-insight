@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "50b67daba122858fb6442b60af54c043",
+    "identity": "github:1347131628:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347131628:root",
+            "repository": "exoticknight/dsh-theme-eink-retro",
+            "path": "",
+            "revision": "4b6d03f06b9f44273d194e2b9f92579e63cf6503",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "413fccddbcb844878e4371fe7fda9c819baf6343ce5f8dbdbb61e7cd3066601c",
+                "code": "4b6d03f06b9f44273d194e2b9f92579e63cf6503",
+                "maintenance": "20fe8a6f5a886afd94cdf6c51d5f454011a3a34d983f76947149e92cef004a29"
+            }
+        }
+    }
+}

@@ -1,0 +1,361 @@
+{
+    "schema_version": 3,
+    "id": "b8f03edc0d470ffe57ab46d30c677495",
+    "identity": "github:1350378372:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1350378372:root",
+            "repository_id": 1350378372,
+            "component_id": "root",
+            "repository": "173787247/dsh-wsl-clipboard",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-wsl-clipboard",
+            "entry_type": "plugin",
+            "technical_category": "tools-integration",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "2b07dc991912a8805ec75dd7534c757bcd71b254a2c710761937251d57bb51b1",
+                "code": "1aeac41d93ee494267b83095b4c8217226d7bd33",
+                "maintenance": "c8b27d915bd23d3087ee6730823e40b8892caabd69b91e6720fcf02c52c42323"
+            },
+            "sources": [
+                {
+                    "id": "20261020-incremental40-r2-github-1350378372-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T04:36:34.059Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "20261020-incremental40-r2-github-1350378372-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/173787247/dsh-wsl-clipboard/blob/1aeac41d93ee494267b83095b4c8217226d7bd33/README.md",
+                    "revision": "1aeac41d93ee494267b83095b4c8217226d7bd33",
+                    "captured_at": "2026-10-20T04:36:34.059Z",
+                    "summary": "从WSL读取或写入Windows文本剪贴板，支持长度限制与Unicode编码转换。",
+                    "artifact": "data/runs/2026-10-20-04/snapshots/173787247--dsh-wsl-clipboard/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "20261020-incremental40-r2-github-1350378372-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/173787247/dsh-wsl-clipboard/blob/1aeac41d93ee494267b83095b4c8217226d7bd33/index.js",
+                    "revision": "1aeac41d93ee494267b83095b4c8217226d7bd33",
+                    "captured_at": "2026-10-20T04:36:34.059Z",
+                    "summary": "核查 index.js、lib/clipboard.js、lib/wsl-host.js；lib/clipboard.js用PowerShell Forms Clipboard读写，写入文本先UTF-8编码为base64，输出携带字符数及截断标记。",
+                    "artifact": "data/runs/2026-10-20-04/snapshots/173787247--dsh-wsl-clipboard/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "只处理文本，不支持完整富媒体剪贴板；读取可能把已有敏感内容送入模型，写入会覆盖Windows当前剪贴板。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "WSL开发者需要在模型输出和Windows应用间传递文本，合格结果是文本完整且没有覆盖错误内容。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1350378372-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1350378372:root",
+                            "area": "code",
+                            "fingerprint": "1aeac41d93ee494267b83095b4c8217226d7bd33"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:36:34.059Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "lib/clipboard.js用PowerShell Forms Clipboard读写，写入文本先UTF-8编码为base64，输出携带字符数及截断标记。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1350378372-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1350378372:root",
+                            "area": "code",
+                            "fingerprint": "1aeac41d93ee494267b83095b4c8217226d7bd33"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:36:34.059Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "只处理文本，不支持完整富媒体剪贴板；读取可能把已有敏感内容送入模型，写入会覆盖Windows当前剪贴板。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1350378372-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1350378372:root",
+                            "area": "code",
+                            "fingerprint": "1aeac41d93ee494267b83095b4c8217226d7bd33"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:36:34.059Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "0.1.0，Node>=18，依赖WSL互操作及Windows PowerShell/桌面会话，无目标宿主运行验证。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1350378372-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1350378372:root",
+                            "area": "code",
+                            "fingerprint": "1aeac41d93ee494267b83095b4c8217226d7bd33"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:36:34.059Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "无额外云服务，主要是跨进程启动及人工确认；长文本截断或误覆盖后的恢复也要计入，未测效率。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1350378372-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1350378372:root",
+                            "area": "code",
+                            "fingerprint": "1aeac41d93ee494267b83095b4c8217226d7bd33"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:36:34.059Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先用测试字符串验证中文、换行和长度上限，写入前保存重要剪贴板内容；仅在明确需要时读取。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1350378372-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1350378372:root",
+                            "area": "code",
+                            "fingerprint": "1aeac41d93ee494267b83095b4c8217226d7bd33"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:36:34.059Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "base64传输减少字符串转义问题；把复制操作接入Agent并不会自动判断当前剪贴板是否该被读取或替换。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1350378372-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1350378372:root",
+                            "area": "code",
+                            "fingerprint": "1aeac41d93ee494267b83095b4c8217226d7bd33"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:36:34.059Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "文本编码与格式化分离、返回截断状态便于复核；桌面剪贴板占用或STA约束需要实际Windows验证。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1350378372-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1350378372:root",
+                            "area": "code",
+                            "fingerprint": "1aeac41d93ee494267b83095b4c8217226d7bd33"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:36:34.059Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T04:36:34.059Z",
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "WSL文本传递用户可用测试字符串试读写，先验中文换行和截断，保存旧剪贴板且仅按需读取。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "跨Windows应用与WSL传文本的需求反复发生。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "base64与字符数结果减少转义问题，手动复制仍更透明。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "PowerShell读写可查，桌面占用和STA约束未验。"
+                    },
+                    "cost": {
+                        "score": 15,
+                        "rationale": "无云服务，主要负担为启动延迟、敏感读取与覆盖复核。"
+                    }
+                },
+                "score": 64,
+                "revision": "1aeac41d93ee494267b83095b4c8217226d7bd33",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "20261020-incremental40-r2-github-1350378372-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1350378372:root",
+                        "area": "code",
+                        "fingerprint": "1aeac41d93ee494267b83095b4c8217226d7bd33"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1350378372:root",
+            "repository": "173787247/dsh-wsl-clipboard",
+            "path": "",
+            "revision": "1aeac41d93ee494267b83095b4c8217226d7bd33",
+            "fingerprints": {
+                "directory": "2b07dc991912a8805ec75dd7534c757bcd71b254a2c710761937251d57bb51b1",
+                "code": "1aeac41d93ee494267b83095b4c8217226d7bd33",
+                "maintenance": "c8b27d915bd23d3087ee6730823e40b8892caabd69b91e6720fcf02c52c42323"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T04:25:27.514Z",
+            "analysis_sha256": "c45ec811eea49dd09bbae5c92d7ee629d66fb5acae0bbf0b4680fddadd3cd702"
+        },
+        "publication.metadata": "data/plugins/173787247--dsh-wsl-clipboard/META.json",
+        "publication.summaries": {
+            "text": "从WSL读取或写入Windows文本剪贴板，支持长度限制与Unicode编码转换。",
+            "revision": "1aeac41d93ee494267b83095b4c8217226d7bd33",
+            "source_url": "https://github.com/173787247/dsh-wsl-clipboard/blob/1aeac41d93ee494267b83095b4c8217226d7bd33/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "1aeac41d93ee494267b83095b4c8217226d7bd33",
+            "items": {
+                "模型工具": "wsl_clipboard的get/set文本操作。"
+            }
+        },
+        "publication.advice": {
+            "revision": "1aeac41d93ee494267b83095b4c8217226d7bd33",
+            "text": "先用测试字符串验证中文、换行和长度上限，写入前保存重要剪贴板内容；仅在明确需要时读取。"
+        },
+        "registry": "data/plugins/173787247--dsh-wsl-clipboard",
+        "reports": "# dsh-wsl-clipboard\n\n> 从WSL读取或写入Windows文本剪贴板，支持长度限制与Unicode编码转换。\n\n## 固定范围与依据\n\n固定提交 [1aeac41d93ee494267b83095b4c8217226d7bd33](https://github.com/173787247/dsh-wsl-clipboard/blob/1aeac41d93ee494267b83095b4c8217226d7bd33/index.js)；组件路径：仓库根。核查时间 2026-10-20T04:36:34.059Z；本轮基准 2026-10-20T04:25:27.514Z。\n源码抽读路径：index.js、lib/clipboard.js、lib/wsl-host.js。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：WSL开发者需要在模型输出和Windows应用间传递文本，合格结果是文本完整且没有覆盖错误内容。\n- **亮点**：lib/clipboard.js用PowerShell Forms Clipboard读写，写入文本先UTF-8编码为base64，输出携带字符数及截断标记。\n- **思考**：base64传输减少字符串转义问题；把复制操作接入Agent并不会自动判断当前剪贴板是否该被读取或替换。\n- **建议**：先用测试字符串验证中文、换行和长度上限，写入前保存重要剪贴板内容；仅在明确需要时读取。\n\n## 场景与替代办法\n\nWSL开发者需要在模型输出和Windows应用间传递文本，合格结果是文本完整且没有覆盖错误内容。\n\n此前未入档；手工复制粘贴更透明，本项在频繁跨WSL/Windows文本传递时减少步骤。\n\n## 依赖与流程\n\n需要WSL到Windows互操作、可访问剪贴板的桌面用户会话；数据保密依赖工具调用范围与模型服务处理。\n\n明确get或set，执行后核对字符数和内容；出现占用或错误先检查Windows会话，不自动反复覆盖。\n\n## 成本与效果\n\n无额外云服务，主要是跨进程启动及人工确认；长文本截断或误覆盖后的恢复也要计入，未测效率。\n\nbase64传输减少字符串转义问题；把复制操作接入Agent并不会自动判断当前剪贴板是否该被读取或替换。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：ca03e3a37bb2ec1bab3d25eb654a506641e1650029d1e984e1c8843d59d168e7。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 179 | — | — | 879 |\n| .js | source | 3 | 226 | 205 | 2 | — |\n| .js | test | 1 | 28 | 25 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **模型工具**：wsl_clipboard的get/set文本操作。\n\n## 工程亮点\n\n文本编码与格式化分离、返回截断状态便于复核；桌面剪贴板占用或STA约束需要实际Windows验证。\n\n## 分发与兼容\n\n0.1.0，Node>=18，依赖WSL互操作及Windows PowerShell/桌面会话，无目标宿主运行验证。\n\n## 历史对照\n\n当前快照此前没有该稳定身份的研究档案。此前未入档；手工复制粘贴更透明，本项在频繁跨WSL/Windows文本传递时减少步骤。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：只处理文本，不支持完整富媒体剪贴板；读取可能把已有敏感内容送入模型，写入会覆盖Windows当前剪贴板。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：覆盖中文表情、引号、换行、空文本和超长内容，并在剪贴板被其他应用占用时检查错误与恢复。\n",
+        "metadata": {
+            "repository": "173787247/dsh-wsl-clipboard",
+            "repository_id": 1350378372,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 1,
+            "pushed_at": "2026-09-29T15:03:39Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-clipboard%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640E:3FDBB6:15062E:228A05:6AD8495C and timestamp 2026-10-21 05:10:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-clipboard%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C2:128E3:14A9DC:2229FA:6AD8495C and timestamp 2026-10-21 05:10:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-clipboard%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C3:30A0ED:1433BE:21B03D:6AD8495C and timestamp 2026-10-21 05:10:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-clipboard%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6401:1541C9:13F439:216BCE:6AD8495D and timestamp 2026-10-21 05:10:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-clipboard%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640C:C23BB:1432D0:21BD31:6AD8495D and timestamp 2026-10-21 05:10:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-wsl-clipboard",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-wsl-clipboard",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-wsl-clipboard",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "1aeac41d93ee494267b83095b4c8217226d7bd33",
+                "current_revision": "1aeac41d93ee494267b83095b4c8217226d7bd33",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1350378372:root",
+            "repository": "173787247/dsh-wsl-clipboard",
+            "path": "",
+            "revision": "1aeac41d93ee494267b83095b4c8217226d7bd33",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2b07dc991912a8805ec75dd7534c757bcd71b254a2c710761937251d57bb51b1",
+                "code": "1aeac41d93ee494267b83095b4c8217226d7bd33",
+                "maintenance": "c8b27d915bd23d3087ee6730823e40b8892caabd69b91e6720fcf02c52c42323"
+            }
+        }
+    }
+}

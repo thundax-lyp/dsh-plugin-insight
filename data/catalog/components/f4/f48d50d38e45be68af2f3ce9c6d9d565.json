@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f48d50d38e45be68af2f3ce9c6d9d565",
+    "identity": "github:1337246550:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337246550:root",
+            "repository": "linhut/dsh-stock-terminal",
+            "path": "",
+            "revision": "a11b6b5d78edb2d1ad59da7cb598d25c94acae6a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8c071df1a77b41d7abcafef6d46d29f6954684e129eaaf382a0f20b1a0917f02",
+                "code": "a11b6b5d78edb2d1ad59da7cb598d25c94acae6a",
+                "maintenance": "c84684a0543b26fbf7e53840a737e108748300e24bfe8e6c833208e237d65217"
+            }
+        }
+    }
+}

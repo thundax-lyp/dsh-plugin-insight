@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4b87e463f0c719276349182d888de722",
+    "identity": "github:1044010907:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1044010907:root",
+            "repository": "Devin-AXIS/iPolloWork",
+            "path": "",
+            "revision": "05fe4e2d8d99518004360ef08d95ba3c1a07eb4f",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "95a7debfc1fc53a92f5d1d9ce42777b3e206e88ddbab2bd7304c6fd6fd6ff6c6",
+                "code": "05fe4e2d8d99518004360ef08d95ba3c1a07eb4f",
+                "maintenance": "8b1fb155b73614fcaf00a8ed741a5047a7db857f5fd7b02494213b8ddda8411c"
+            }
+        }
+    }
+}

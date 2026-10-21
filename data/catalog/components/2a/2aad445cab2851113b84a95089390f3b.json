@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2aad445cab2851113b84a95089390f3b",
+    "identity": "github:1334161261:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334161261:root",
+            "repository": "mishibeikejie/zat-dsh-engine",
+            "path": "",
+            "revision": "11d5b5fb424b6d9dee7821c7c2f771bd42e7f46a",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "f0a63d45c23bab314ee6f90bda15a91752201c9bcb3e8318f00fd282c39051e5",
+                "code": "11d5b5fb424b6d9dee7821c7c2f771bd42e7f46a",
+                "maintenance": "bfed9e26039738821a5b5a107a4ab0c71f0e6d2987d6980346bb39d6a770ff49"
+            }
+        }
+    }
+}

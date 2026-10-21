@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a8383c2c1391d9db9be7cc8b19c2995e",
+    "identity": "github:1335806584:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335806584:root",
+            "repository": "Aisland-SJL/dsh-reminder",
+            "path": "",
+            "revision": "bd1b64f7056297d07ae49baecb90f1584c11f415",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "5c6cca969c4b0ae0230ff7e8270a9b44317f0ce6aba1ff77719f263053f36f10",
+                "code": "bd1b64f7056297d07ae49baecb90f1584c11f415",
+                "maintenance": "5d943f9e58e9c952bc19692d90a0e110642be14bf1970d771da9418d607abf02"
+            }
+        }
+    }
+}

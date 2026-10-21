@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4c7a261921cadb13ed0be0e4524ed70c",
+    "identity": "github:1347103774:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347103774:root",
+            "repository": "Mrxieyong/dsh-mcp-market",
+            "path": "",
+            "revision": "c40e275e0d6667845cdb12b0dc4e9f9cbe7b6399",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "557999e153a005ea4edffdb7b7b532bff10410f4e6f3e3fd5728d20bfb0c17bf",
+                "code": "c40e275e0d6667845cdb12b0dc4e9f9cbe7b6399",
+                "maintenance": "7668978804ba494010ce8c7c686563c22cbc781812b566fcefa4f2d2655f92ae"
+            }
+        }
+    }
+}

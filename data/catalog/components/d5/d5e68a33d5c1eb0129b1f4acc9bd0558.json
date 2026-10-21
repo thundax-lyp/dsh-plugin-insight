@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d5e68a33d5c1eb0129b1f4acc9bd0558",
+    "identity": "github:1424595969:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424595969:root",
+            "repository": "jidekaixin2dian/dsh-toolgate",
+            "path": "",
+            "revision": "0066fdb2e5be72bb3817d79d73467e1ce42daf84",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5abe8343c56bbcdcbce57fd311c31a65505b5cd737997424998b337e1535f67e",
+                "code": "0066fdb2e5be72bb3817d79d73467e1ce42daf84",
+                "maintenance": "2fa6e2a812dc671cb2fa87759f52146fb8c74327c406ea198fd13323f4c4d2e5"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f35d48d7c4dc149704fce4615ac8cd9a",
+    "identity": "github:1334666968:wallpaper-rotator",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334666968:wallpaper-rotator",
+            "repository": "liceses/dsh-wallpaper-rotator",
+            "path": "wallpaper-rotator",
+            "revision": "c07fef7269be9136312ec99c180830651260a73b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e2f26f935d19a8f972415f9e8e12fc8f0c00873758fd05c8f7251142355a5315",
+                "code": "c07fef7269be9136312ec99c180830651260a73b",
+                "maintenance": "200c85474d336ff1385dd0a092577488f93bce0bc6969b5bf8d9a9d110573a2a"
+            }
+        }
+    }
+}

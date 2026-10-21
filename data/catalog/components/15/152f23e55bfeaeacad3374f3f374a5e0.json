@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "152f23e55bfeaeacad3374f3f374a5e0",
+    "identity": "github:1403669255:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1403669255:root",
+            "repository": "drscrewdriver/dsh-mcp-registry",
+            "path": "",
+            "revision": "52df25e7a7eddba8deb39730f74b58c87d6442f6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "00a50b80138eb35b2ae0cab0569a947bf1b39ca3693d87f43f5357e35d668915",
+                "code": "52df25e7a7eddba8deb39730f74b58c87d6442f6",
+                "maintenance": "8fd3b7211df06f836f664ce5be2134777f8ceac783c914923eacb7b860e6d38c"
+            }
+        }
+    }
+}

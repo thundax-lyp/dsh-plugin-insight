@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9ae4cbd91db2bdc735b3a5c8346c87a9",
+    "identity": "github:1334768289:plugins-folio-events",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334768289:plugins-folio-events",
+            "repository": "nyantused-cpun/folio",
+            "path": "plugins/folio-events",
+            "revision": "a7bda5fcf9353d6f03934ba55cd846715e62b1b2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "dc46e24ce768414f93812d21be12789b66ff0820c42f252d82a840b482b1eb66",
+                "code": "a7bda5fcf9353d6f03934ba55cd846715e62b1b2",
+                "maintenance": "bae48081531e28be2b3a55d8bb50efb4dcad5727b618ccfc0e63d4f6a5b7d449"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8b99fa1b0c3528dcc67f8c1bb257178a",
+    "identity": "github:1349409573:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1349409573:root",
+            "repository": "SeverusZh/dsh-skills-mcp-group-manager",
+            "path": "",
+            "revision": "0bf51722c4a10325c2ae6b1ede2381ed885ab8e4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d327794609c465213f0ed0a07dea3c1f6676b292ba36e2e65e6631d1b46985f0",
+                "code": "0bf51722c4a10325c2ae6b1ede2381ed885ab8e4",
+                "maintenance": "298b68762cdee91fd562856677493ecd6959637a583ec1462c27c07910dd6260"
+            }
+        }
+    }
+}

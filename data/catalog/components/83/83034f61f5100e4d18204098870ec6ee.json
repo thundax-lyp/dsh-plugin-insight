@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "83034f61f5100e4d18204098870ec6ee",
+    "identity": "github:1343840865:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343840865:root",
+            "repository": "QinpanWan/dsh-hiboard-push",
+            "path": "",
+            "revision": "afa230b072d9ab5bc84e5d049fdfb98bced7abf5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "f8619e3941e7be63aaf1850e5763ca7f12db2d9b4d71572fe98e114785eb3cd1",
+                "code": "afa230b072d9ab5bc84e5d049fdfb98bced7abf5",
+                "maintenance": "21a2d69db3a877b07d6fcdce4208f1d23c0489fbe9c42aa24e2e16d0bb4869f6"
+            }
+        }
+    }
+}

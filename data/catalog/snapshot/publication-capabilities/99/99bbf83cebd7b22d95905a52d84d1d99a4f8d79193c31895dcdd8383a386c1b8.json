@@ -1,8 +1,0 @@
-{
-  "revision": "8237631e1dc7d1aaf37466e9682bf3299ad53cd0",
-  "items": {
-    "模型工具": "desktop_windows、desktop_snapshot、desktop_inspect、desktop_act、desktop_input、desktop_wait、desktop_launch、desktop_clipboard、desktop_screenshot（源码注册）",
-    "界面": "桌面控制设置面板",
-    "后台": "Windows UIA sidecar与操作审计"
-  }
-}

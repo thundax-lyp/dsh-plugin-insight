@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "65103c8f9c5bf9ba2cf5ac3c0b2066ba",
+    "identity": "github:1377865270:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1377865270:root",
+            "repository": "xbzbing/dsh-openviking-manager",
+            "path": "",
+            "revision": "4b1a76b5382101446c302bff37fa709976d0ddae",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4bb58c5738546ce79f660bb7a30dcf8ce61688ba6f1de99262d0aabd5b9d70d7",
+                "code": "4b1a76b5382101446c302bff37fa709976d0ddae",
+                "maintenance": "502a78291e38385cd5356f5eaab1273984441f302d4bacef0bb5056de8d31f00"
+            }
+        }
+    }
+}

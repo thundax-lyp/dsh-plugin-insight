@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6cfe9afa49ab88b75aecb460272fd1aa",
+    "identity": "github:1334537225:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334537225:root",
+            "repository": "nzl153/dsh-pet-whale",
+            "path": "",
+            "revision": "231a1936c427e0fae1d34ebb3942aa342192ffb6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4c32b9e1437204ad63a702e1e33f004b43c6061a4e8fb29e1d36d7535767ac1a",
+                "code": "231a1936c427e0fae1d34ebb3942aa342192ffb6",
+                "maintenance": "4cd1878319053f3c3b60d4445a86130c5bc5d8205b0d84ebf1c7e80278f98704"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fcd2c196eea190d2ec99ca8f1fb20d32",
+    "identity": "github:1407509118:dsh-plugin",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1407509118:dsh-plugin",
+            "repository": "cq-guojia/rulemux",
+            "path": "dsh-plugin",
+            "revision": "3cfca5fa82516aa93e714ffd2288b04dbb788d1c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4d406196c686fe29e130b08ca0a3fc6fa2a6346b831b2edf457a62875f064553",
+                "code": "3cfca5fa82516aa93e714ffd2288b04dbb788d1c",
+                "maintenance": "d1e4d1ac7be6fefcdc4842fe4818f572238fbd0356b4bb75730c4933f500e443"
+            }
+        }
+    }
+}

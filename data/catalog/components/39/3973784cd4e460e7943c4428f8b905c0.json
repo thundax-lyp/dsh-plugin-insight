@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3973784cd4e460e7943c4428f8b905c0",
+    "identity": "github:1362126140:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1362126140:root",
+            "repository": "shenkonghui/dsh-worktree-manager",
+            "path": "",
+            "revision": "c7766db3377c1ec9b5aa256c69ccc6044972b4b9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3db9f6d188757a6ef8b6760935184cdf6a65b32989101d81fe63dc166a4aa1ad",
+                "code": "c7766db3377c1ec9b5aa256c69ccc6044972b4b9",
+                "maintenance": "dd54f9aa551fe0ea3e7e59016fb471598834d907550a66bb6da267a427925955"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b22dfc4ffdcac0261fcffe412ea9921b",
+    "identity": "github:1336708336:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336708336:root",
+            "repository": "WSK-build/DSHBox",
+            "path": "",
+            "revision": "95f4e1688c03ef73d08795ea65504c0b061aa20b",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "26d4ff045a5537df662db803ac4191299e34ffdde65f5034555faab258f20590",
+                "code": "95f4e1688c03ef73d08795ea65504c0b061aa20b",
+                "maintenance": "ea8804caa19af9d60f6b5216a7582060dd9534f116dc78e687e2ba494d4fbec7"
+            }
+        }
+    }
+}

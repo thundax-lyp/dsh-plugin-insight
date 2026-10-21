@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "652d3076d26887d9f3b9075997421a57",
+    "identity": "github:1333166842:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333166842:root",
+            "repository": "nowledge-co/nowledge-mem-deepseek-harness",
+            "path": "",
+            "revision": "0adf1e587c10e2ee0203b9e4648f0ee15375d6b2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "81f6942d40a381f2419c09af9c46c2332e9949f064c4f35df546d17fc1e4e2ad",
+                "code": "0adf1e587c10e2ee0203b9e4648f0ee15375d6b2",
+                "maintenance": "53026ee6163790423d673ccdc5614cf5c857e7f6ea6d34c3c2a1e6ceaad876e2"
+            }
+        }
+    }
+}

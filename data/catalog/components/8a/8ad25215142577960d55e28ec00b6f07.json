@@ -1,0 +1,344 @@
+{
+    "schema_version": 3,
+    "id": "8ad25215142577960d55e28ec00b6f07",
+    "identity": "github:1374274469:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1374274469:root",
+            "repository_id": 1374274469,
+            "component_id": "root",
+            "repository": "1624318455/dsh-plugin-adapter",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-plugin-adapter",
+            "entry_type": "plugin",
+            "technical_category": "model-provider",
+            "business_category": "infrastructure",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "5d62d0c9d37bce39b67e8678dc3f7d741e3be03361facaa806d2f4a65839209c",
+                "code": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c",
+                "maintenance": "0072b899cd18256801eb7ccc1c35acbad35372605fa8486d4e6d21dcf1b4d9b1"
+            },
+            "sources": [
+                {
+                    "id": "20261020-incremental40-r2-github-1374274469-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T04:34:32.047Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "20261020-incremental40-r2-github-1374274469-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/1624318455/dsh-plugin-adapter/blob/db7f273bd7caf2bb87c2428dcb8bd883eb338d1c/README.md",
+                    "revision": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c",
+                    "captured_at": "2026-10-20T04:34:32.047Z",
+                    "summary": "把OpenCode Zen模型接入DSH模型目录，提供原生流式适配与可选网络路由管理。",
+                    "artifact": "data/runs/2026-10-20-04/snapshots/1624318455--dsh-plugin-adapter/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "20261020-incremental40-r2-github-1374274469-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/1624318455/dsh-plugin-adapter/blob/db7f273bd7caf2bb87c2428dcb8bd883eb338d1c/packages/plugin/package.json",
+                    "revision": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c",
+                    "captured_at": "2026-10-20T04:34:32.047Z",
+                    "summary": "核查 packages/plugin/package.json、packages/plugin/src/index.ts、packages/plugin/src/provider.ts、packages/plugin/src/adapter/catalog.ts；packages/plugin/src/index.ts默认注册zen-free及旧别名LlmAdapter，后台预热模型目录；另保留sidecar和可选IP池/代理配置。",
+                    "artifact": "data/runs/2026-10-20-04/snapshots/1624318455--dsh-plugin-adapter/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "匿名免费通道是否可用取决于上游，仿CLI请求不构成稳定服务承诺；未验证模型目录、工具语义或网络路由。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "希望在DSH尝试Zen模型的用户需要原生会话和工具调用接口，验收需包括流式文本、工具结果与失败恢复。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1374274469-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1374274469:root",
+                            "area": "code",
+                            "fingerprint": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:34:32.047Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "packages/plugin/src/index.ts默认注册zen-free及旧别名LlmAdapter，后台预热模型目录；另保留sidecar和可选IP池/代理配置。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1374274469-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1374274469:root",
+                            "area": "code",
+                            "fingerprint": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:34:32.047Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "匿名免费通道是否可用取决于上游，仿CLI请求不构成稳定服务承诺；未验证模型目录、工具语义或网络路由。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1374274469-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1374274469:root",
+                            "area": "code",
+                            "fingerprint": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:34:32.047Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "根是private包装包，依赖^0.3.4；仓库内插件子包0.3.9，Node>=20。根安装可解析外部版本，不能把本轮源码SHA当成实际npm产物。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1374274469-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1374274469:root",
+                            "area": "code",
+                            "fingerprint": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:34:32.047Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "无key是作者描述的接入方式，不等于无流量或运维成本；重试、上游限流及可选代理池有额外负担，未测可用性或单位任务成本。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1374274469-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1374274469:root",
+                            "area": "code",
+                            "fingerprint": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:34:32.047Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "适合非关键试验，先用原生adapter模式验证小任务，保留可用供应商回退；不要把免费通道当生产容量保证。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1374274469-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1374274469:root",
+                            "area": "code",
+                            "fingerprint": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:34:32.047Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "原生适配减少单独进程与UI切换；上游匿名接口变化可能让全部便利失效，需与直接使用原CLI比较维护负担。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1374274469-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1374274469:root",
+                            "area": "code",
+                            "fingerprint": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:34:32.047Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "默认adapter与legacy sidecar分开，缺llm时显式报错；网络池、安装器与代理管理扩大接入面的维护复杂度。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1374274469-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1374274469:root",
+                            "area": "code",
+                            "fingerprint": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:34:32.047Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T04:34:32.047Z",
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "Zen原生适配有试验价值，但根安装外部版本与固定源码不一致，先固定实际子包并核对流与工具终态。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "已有Zen用户在宿主原生会话接入的任务具体。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "原生adapter省进程切换，但原CLI可直接替代。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "适配和目录预热可查，根包装依赖与仓库子包版本不同。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "匿名上游容量、代理池及实际安装版本漂移增加维护。"
+                    }
+                },
+                "score": 54,
+                "revision": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "20261020-incremental40-r2-github-1374274469-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1374274469:root",
+                        "area": "code",
+                        "fingerprint": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1374274469:root",
+            "repository": "1624318455/dsh-plugin-adapter",
+            "path": "",
+            "revision": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c",
+            "fingerprints": {
+                "directory": "5d62d0c9d37bce39b67e8678dc3f7d741e3be03361facaa806d2f4a65839209c",
+                "code": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c",
+                "maintenance": "0072b899cd18256801eb7ccc1c35acbad35372605fa8486d4e6d21dcf1b4d9b1"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T04:25:27.514Z",
+            "analysis_sha256": "4b6b7061509dd7d7a637b84a708a682773b109cc65689b5e7388a92e0a901459"
+        },
+        "publication.metadata": "data/plugins/1624318455--dsh-plugin-adapter/META.json",
+        "publication.summaries": {
+            "text": "把OpenCode Zen模型接入DSH模型目录，提供原生流式适配与可选网络路由管理。",
+            "revision": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c",
+            "source_url": "https://github.com/1624318455/dsh-plugin-adapter/blob/db7f273bd7caf2bb87c2428dcb8bd883eb338d1c/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c",
+            "items": {
+                "后台": "原生Zen LlmAdapter、模型目录预热及legacy入口。",
+                "界面": "可选IP池设置界面。"
+            }
+        },
+        "publication.advice": {
+            "revision": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c",
+            "text": "适合非关键试验，先用原生adapter模式验证小任务，保留可用供应商回退；不要把免费通道当生产容量保证。"
+        },
+        "registry": "data/plugins/1624318455--dsh-plugin-adapter",
+        "reports": "# dsh-plugin-adapter\n\n> 把OpenCode Zen模型接入DSH模型目录，提供原生流式适配与可选网络路由管理。\n\n## 固定范围与依据\n\n固定提交 [db7f273bd7caf2bb87c2428dcb8bd883eb338d1c](https://github.com/1624318455/dsh-plugin-adapter/blob/db7f273bd7caf2bb87c2428dcb8bd883eb338d1c/packages/plugin/package.json)；组件路径：仓库根。核查时间 2026-10-20T04:34:32.047Z；本轮基准 2026-10-20T04:25:27.514Z。\n源码抽读路径：packages/plugin/package.json、packages/plugin/src/index.ts、packages/plugin/src/provider.ts、packages/plugin/src/adapter/catalog.ts。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：希望在DSH尝试Zen模型的用户需要原生会话和工具调用接口，验收需包括流式文本、工具结果与失败恢复。\n- **亮点**：packages/plugin/src/index.ts默认注册zen-free及旧别名LlmAdapter，后台预热模型目录；另保留sidecar和可选IP池/代理配置。\n- **思考**：原生适配减少单独进程与UI切换；上游匿名接口变化可能让全部便利失效，需与直接使用原CLI比较维护负担。\n- **建议**：适合非关键试验，先用原生adapter模式验证小任务，保留可用供应商回退；不要把免费通道当生产容量保证。\n\n## 场景与替代办法\n\n希望在DSH尝试Zen模型的用户需要原生会话和工具调用接口，验收需包括流式文本、工具结果与失败恢复。\n\n此前未入档；原生付费供应商与OpenCode CLI为替代，本轮只支持机制判断，不排名模型质量或稳定性。\n\n## 依赖与流程\n\n依赖宿主llm、credentials、settings及Zen网络端点；根包装的外部依赖版本与仓库源码还需分别固定，可选sidecar另需进程与端口。\n\n选adapter模式并加载目录，发起小请求，核对流与工具结果；目录未就绪先等预热状态，失败退回已验证的模型供应商。\n\n## 成本与效果\n\n无key是作者描述的接入方式，不等于无流量或运维成本；重试、上游限流及可选代理池有额外负担，未测可用性或单位任务成本。\n\n原生适配减少单独进程与UI切换；上游匿名接口变化可能让全部便利失效，需与直接使用原CLI比较维护负担。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：94d3914cc5fb55cb5db0b88a9dd853e974b9895e4ae6d720897918554af73ba4。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 10 | 2102 | — | — | 33390 |\n| .ts | source | 27 | 7192 | 5246 | 1536 | — |\n| .tsx | source | 1 | 951 | 860 | 52 | — |\n| .ts | test | 21 | 4282 | 3604 | 485 | — |\n| .mts | test | 3 | 311 | 223 | 64 | — |\n| .mjs | source | 1 | 21 | 10 | 9 | — |\n\n排除 1 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **后台**：原生Zen LlmAdapter、模型目录预热及legacy入口。\n- **界面**：可选IP池设置界面。\n\n## 工程亮点\n\n默认adapter与legacy sidecar分开，缺llm时显式报错；网络池、安装器与代理管理扩大接入面的维护复杂度。\n\n## 分发与兼容\n\n根是private包装包，依赖^0.3.4；仓库内插件子包0.3.9，Node>=20。根安装可解析外部版本，不能把本轮源码SHA当成实际npm产物。\n\n## 历史对照\n\n当前快照此前没有该稳定身份的研究档案。此前未入档；原生付费供应商与OpenCode CLI为替代，本轮只支持机制判断，不排名模型质量或稳定性。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：匿名免费通道是否可用取决于上游，仿CLI请求不构成稳定服务承诺；未验证模型目录、工具语义或网络路由。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：固定模型和小任务测试取消、429、工具参数及空目录；同时核对安装实际解析版本，记录失败重试与人工时间。\n",
+        "metadata": {
+            "repository": "1624318455/dsh-plugin-adapter",
+            "repository_id": 1374274469,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 5,
+            "pushed_at": "2026-09-20T23:35:21Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1624318455%2Fdsh-plugin-adapter%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640F:12F9BB:13B570:2134D3:6AD84948 and timestamp 2026-10-21 05:10:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1624318455%2Fdsh-plugin-adapter%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6405:2EA514:14AA54:22294E:6AD84949 and timestamp 2026-10-21 05:10:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1624318455%2Fdsh-plugin-adapter%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6413:B65AE:137019:20E2F6:6AD84949 and timestamp 2026-10-21 05:10:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1624318455%2Fdsh-plugin-adapter%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6418:1DEEF7:14913F:22136D:6AD84949 and timestamp 2026-10-21 05:10:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1624318455%2Fdsh-plugin-adapter%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6419:D1FDD:147E1D:220E89:6AD84949 and timestamp 2026-10-21 05:10:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c",
+                "current_revision": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1374274469:root",
+            "repository": "1624318455/dsh-plugin-adapter",
+            "path": "",
+            "revision": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5d62d0c9d37bce39b67e8678dc3f7d741e3be03361facaa806d2f4a65839209c",
+                "code": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c",
+                "maintenance": "0072b899cd18256801eb7ccc1c35acbad35372605fa8486d4e6d21dcf1b4d9b1"
+            }
+        }
+    }
+}

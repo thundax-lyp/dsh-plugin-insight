@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8fd8d69a1d36e025b85fc4690e507efe",
+    "identity": "github:1341523946:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1341523946:root",
+            "repository": "zhang-guangjie/dsh-video-bg",
+            "path": "",
+            "revision": "c466b7c879f206413315ae61610faa277a89d20e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4523727fde3a563bcf993fff69b550e3a8acb240283a5e51c2e7de554fc75f15",
+                "code": "c466b7c879f206413315ae61610faa277a89d20e",
+                "maintenance": "23c93ff6eb6c079ba54d6b505a8001ad89e913f337dc5e63adce0b667dccb3ff"
+            }
+        }
+    }
+}

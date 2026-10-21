@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "15c0ed04375167d04c0db90f841e8e72",
+    "identity": "github:1350418680:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1350418680:root",
+            "repository": "gongyijie85/dsh-agent-frugality",
+            "path": "",
+            "revision": "db998c2e7bd08262a5da13ca273e84950cab2586",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "173ca26bd27631dc139881361050f69e407f14101d365af73ca351ad10619666",
+                "code": "db998c2e7bd08262a5da13ca273e84950cab2586",
+                "maintenance": "39471d3ad1b6d2585d756655c2ca8b3fe0b462ebcb08730b63c235de63cb11ba"
+            }
+        }
+    }
+}

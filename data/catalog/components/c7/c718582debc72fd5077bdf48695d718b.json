@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c718582debc72fd5077bdf48695d718b",
+    "identity": "github:1334762070:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334762070:root",
+            "repository": "BotonJ/dsh-remote-link",
+            "path": "",
+            "revision": "f7a444eb6e0254c1c2f79a54d8389c01886dfc7f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "bd439ba92566bdbdbaac7333243b7d44e035202f54001fc1add00f2b7d0e0535",
+                "code": "f7a444eb6e0254c1c2f79a54d8389c01886dfc7f",
+                "maintenance": "c0b4e1449b43773ea25ee231b1232d691f440c016d70ca3e97c7649f0624bb6d"
+            }
+        }
+    }
+}

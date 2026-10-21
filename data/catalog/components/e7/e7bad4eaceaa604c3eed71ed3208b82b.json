@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e7bad4eaceaa604c3eed71ed3208b82b",
+    "identity": "github:1342363123:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342363123:root",
+            "repository": "huang-chunc/dsh-user-message-timeline",
+            "path": "",
+            "revision": "23e15ca78a0a75c865396d7b037120b3a99b4c7f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "847f3c2aa1afd9b2ce86249db8926319d19a6dc10dba41f0de30a4645f77f5e2",
+                "code": "23e15ca78a0a75c865396d7b037120b3a99b4c7f",
+                "maintenance": "9938dc511756a764cd0930e09777198e4c8a640383a5ecc73b0335b675a58773"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "62d7f259a10dd4fb3476fa85472bc21a",
+    "identity": "github:1333366918:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333366918:root",
+            "repository": "FlytoMAYDAY80/dsh-pet",
+            "path": "",
+            "revision": "6741135eb90dca28bf527b2950212dcdb246ad65",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "4676f400a4046201761da77c0ab57c78bf8585fe8c1b76c3be744b6cbfea6373",
+                "code": "6741135eb90dca28bf527b2950212dcdb246ad65",
+                "maintenance": "1c78e5c68383020df8776752ca2fd72ad47549c82619f4d18daec82640975928"
+            }
+        }
+    }
+}

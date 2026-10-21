@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7b7163c3c5357fbe05bb712e58bae548",
+    "identity": "github:1335338217:dsh-plugins-dsh-explorer",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335338217:dsh-plugins-dsh-explorer",
+            "repository": "No-PRM/dsh-explorer",
+            "path": "dsh-plugins/dsh-explorer",
+            "revision": "f0835e20914d1db9cd9f3a558b5977d678c84e47",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "69e1b7995d94a3c5a01695b8522a316c52a2097647f6d85cab13f735af94c7af",
+                "code": "f0835e20914d1db9cd9f3a558b5977d678c84e47",
+                "maintenance": "e16067b523185a4ddea1f57564ead4c6e77f698e39bf4bb1c0d4b71e39a7e2f1"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e3c7df641936670bdab0edc8df3f3fc9",
+    "identity": "github:1357521677:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1357521677:root",
+            "repository": "Illuminated2020/dsh-lark-claw",
+            "path": "",
+            "revision": "5d960742d386ecee6fa3469471234f705ceeaea8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a601826ae272faaa0a5fcf978b90d3332fdf128dbc0374741dc43aa44cb40f47",
+                "code": "5d960742d386ecee6fa3469471234f705ceeaea8",
+                "maintenance": "1e24408d6cf13db8cdd8fbfd71c074ed116fd8af4f8a464701739b4e10390eec"
+            }
+        }
+    }
+}

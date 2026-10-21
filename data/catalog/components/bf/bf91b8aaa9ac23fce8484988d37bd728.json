@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bf91b8aaa9ac23fce8484988d37bd728",
+    "identity": "github:1197335472:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1197335472:root",
+            "repository": "opencues/opencues",
+            "path": "",
+            "revision": "55eb0d1ec956dcdcd71bf5bee369fac5e4aae07c",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "4b7a03f12156c688cbcaac6afe249b90e1161dbabd37970fc82ddf278ff3818d",
+                "code": "55eb0d1ec956dcdcd71bf5bee369fac5e4aae07c",
+                "maintenance": "7d168ab08c7f9d89bf5c96855cd38cb9b2791b798586d26e803824f97010e260"
+            }
+        }
+    }
+}

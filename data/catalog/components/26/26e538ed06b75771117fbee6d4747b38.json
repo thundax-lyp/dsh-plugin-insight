@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "26e538ed06b75771117fbee6d4747b38",
+    "identity": "github:1334985209:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334985209:root",
+            "repository": "didclawapp-ai/DSH-Office",
+            "path": "",
+            "revision": "d4569418d5123bec63bf6e843ae7c7de7b749ea7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d6a2e1d2d2a4817f78bc6ae9fd071adaf132a829af171819d01c0bfb9146e920",
+                "code": "d4569418d5123bec63bf6e843ae7c7de7b749ea7",
+                "maintenance": "f9cc77ded0cf8325e751b4c2b5a521c2496dcc553be25fc2b8fd2f6f7eb5d926"
+            }
+        }
+    }
+}

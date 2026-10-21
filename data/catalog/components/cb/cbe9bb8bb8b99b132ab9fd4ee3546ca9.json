@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "cbe9bb8bb8b99b132ab9fd4ee3546ca9",
+    "identity": "github:1369906983:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1369906983:root",
+            "repository": "almazom/dsh-almazom-approve-escalate",
+            "path": "",
+            "revision": "bd741bda342ef6bfa9d3d1e7cfe3b2bf44dd9aeb",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "31a8718ae59d434f5063800c8a19367aa1edd73d993cfb5f18dbce58ef0bcc76",
+                "code": "bd741bda342ef6bfa9d3d1e7cfe3b2bf44dd9aeb",
+                "maintenance": "08ab72bda6936e2334c0e0bc3c02cbbf35f4d2addb3263f27752ca7e5e7b8849"
+            }
+        }
+    }
+}

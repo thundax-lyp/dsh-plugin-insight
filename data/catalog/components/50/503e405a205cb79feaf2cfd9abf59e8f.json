@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "503e405a205cb79feaf2cfd9abf59e8f",
+    "identity": "github:1336729064:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336729064:root",
+            "repository": "jiewaigongxing/dsh-jiey-browser",
+            "path": "",
+            "revision": "5754c35df81fb621989c49d5f03a75d58165d273",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c726df75fd7a49419bd81c6f74c0ac5af586a852495d3a934474e30c706b94db",
+                "code": "5754c35df81fb621989c49d5f03a75d58165d273",
+                "maintenance": "43ec02a4b88cc3792e329ce1abab966e803aae1679d3cec440a4c716dbfc0951"
+            }
+        }
+    }
+}

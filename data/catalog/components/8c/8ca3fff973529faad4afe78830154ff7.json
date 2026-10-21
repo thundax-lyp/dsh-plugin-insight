@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8ca3fff973529faad4afe78830154ff7",
+    "identity": "github:1404384390:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1404384390:root",
+            "repository": "dxxCaO/wincu",
+            "path": "",
+            "revision": "337a3f2aec4783e6aadcdefc2d2fc928bc1e8750",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "bb14afec65e738049098a858922e7e225f13fa720f7adede619e539fa89ae356",
+                "code": "337a3f2aec4783e6aadcdefc2d2fc928bc1e8750",
+                "maintenance": "78b0b2b245b0e4d66e8df01f754fc04fe10c6ca7dda43275627406db1599dc73"
+            }
+        }
+    }
+}

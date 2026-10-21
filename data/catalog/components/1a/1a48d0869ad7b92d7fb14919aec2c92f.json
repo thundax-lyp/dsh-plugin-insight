@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1a48d0869ad7b92d7fb14919aec2c92f",
+    "identity": "github:1142234916:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1142234916:root",
+            "repository": "ma-pony/deepspider",
+            "path": "",
+            "revision": "e53ab8cb85a372f55ebe43a4b408adc8378003f7",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "12ab20e0438b98a8d3f90c8e07e087f96e3c0bb1281fa81be8c38ce3fa1cf1f7",
+                "code": "e53ab8cb85a372f55ebe43a4b408adc8378003f7",
+                "maintenance": "72dcf0e5a091ac39e1173485d180cffdf0bc6b6d040cd729efd80b8c3528cfc9"
+            }
+        }
+    }
+}

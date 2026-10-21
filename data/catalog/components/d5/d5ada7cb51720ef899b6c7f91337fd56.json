@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d5ada7cb51720ef899b6c7f91337fd56",
+    "identity": "github:1353697837:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1353697837:root",
+            "repository": "liqiGeGe/dsh-plugin-execution-graph",
+            "path": "",
+            "revision": "7c870016b79a451150860be0ebc3e58f7bc9a57f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8889270167a862d0de890bba59f2c01267c7e88705542fd35374c5ee7841079e",
+                "code": "7c870016b79a451150860be0ebc3e58f7bc9a57f",
+                "maintenance": "68ea72c42aed22c22117d0405bfb87bf2963fa691a99e8918cc7e33bbbe3eaff"
+            }
+        }
+    }
+}

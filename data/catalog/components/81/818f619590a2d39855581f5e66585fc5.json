@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "818f619590a2d39855581f5e66585fc5",
+    "identity": "github:1356965793:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1356965793:root",
+            "repository": "GooDAnDReaDY/dsh-dsml-artifact-guard",
+            "path": "",
+            "revision": "110e7202636e0845a54e119f6e12333ba0303975",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "61d6d279dad051aeff4b83e5977f7517adb96c43bdbb90816cf93335d4f49e09",
+                "code": "110e7202636e0845a54e119f6e12333ba0303975",
+                "maintenance": "0f186eee4c6d4126ebe435400ba305e6fb037d8f1f90b4ed3c4bc5b36188476d"
+            }
+        }
+    }
+}

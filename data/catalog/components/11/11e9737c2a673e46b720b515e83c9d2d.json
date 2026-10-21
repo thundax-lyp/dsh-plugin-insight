@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "11e9737c2a673e46b720b515e83c9d2d",
+    "identity": "github:1351482127:packages-gameassist-roster",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1351482127:packages-gameassist-roster",
+            "repository": "w4xxx/dsh-xia-plugins",
+            "path": "packages/gameassist-roster",
+            "revision": "220290d7d1665ca16ce8b01c6aa216170a936fa6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0eba4b67b468124c3012ece5f1e45a22f792c5a1e5492a77b88dcb4fc4aed1ae",
+                "code": "220290d7d1665ca16ce8b01c6aa216170a936fa6",
+                "maintenance": "f02ec02d7a79078957fac2d50ccf009799a3465683861ad24549658457401091"
+            }
+        }
+    }
+}

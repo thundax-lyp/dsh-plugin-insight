@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9024c56cfba250638523527ade2c5235",
+    "identity": "github:1346003769:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346003769:root",
+            "repository": "qys0012/dsh-hotspots",
+            "path": "",
+            "revision": "55378b2360e13878e2a5428e87044a5aadffc5da",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c044bc6206ee09af822b9cdc5603e3c21cabcfacc7320e5c729d82f4b323baad",
+                "code": "55378b2360e13878e2a5428e87044a5aadffc5da",
+                "maintenance": "e1347d3b5ef2b95a5dda6c544f1fae15aac44a7b7a9122bebdebcd73b6cea79a"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "94d769e6a71e36455130f186faf90816",
+    "identity": "github:1335534433:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335534433:root",
+            "repository": "Zenjibad/deepseek-cost-usage-status-plugin",
+            "path": "",
+            "revision": "4d3de23b82a4412a32d933fec06ffc570e50b77f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ff84bf38f3124ee28ba2a61e086cf61cda20e9373c855e02d11635f55678fe3f",
+                "code": "4d3de23b82a4412a32d933fec06ffc570e50b77f",
+                "maintenance": "79b842a764b3a109a2038c1d1cfc6eec738d9e815423bdd03ecf92efa97403b7"
+            }
+        }
+    }
+}

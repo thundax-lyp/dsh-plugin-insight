@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4ddcb1736c50389bff34ff726b2b5e79",
+    "identity": "github:1396066027:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1396066027:root",
+            "repository": "mpinaev/dsh-context-governor",
+            "path": "",
+            "revision": "81af2bb30eb8b0321d0653ffddfee496b334f114",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "89ef126fbd8c26ebd628767489f9f8ddfe8786cd3c0d63b28e2a34fd483d2534",
+                "code": "81af2bb30eb8b0321d0653ffddfee496b334f114",
+                "maintenance": "30fd3602d1ea038a42938b245ff1fcbee83f4d4284afce9be3e041e37dca5b6e"
+            }
+        }
+    }
+}

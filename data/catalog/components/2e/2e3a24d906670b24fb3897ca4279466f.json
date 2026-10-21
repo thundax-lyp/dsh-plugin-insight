@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2e3a24d906670b24fb3897ca4279466f",
+    "identity": "github:1409162640:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1409162640:root",
+            "repository": "ZiOstudio/dsh-budget-handoff",
+            "path": "",
+            "revision": "85a85dd54b91c36b78b9b9e51718ea3d490353bc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3bd40f13925db8d8dea5856289ce6ba1f3af555950474896c40941f759d7fd7a",
+                "code": "85a85dd54b91c36b78b9b9e51718ea3d490353bc",
+                "maintenance": "0cae2edbc9ef84bba42b20265253bbb1523a59e6e667c07df88e550458af7b20"
+            }
+        }
+    }
+}

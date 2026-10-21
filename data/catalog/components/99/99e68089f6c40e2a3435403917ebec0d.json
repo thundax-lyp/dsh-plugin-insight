@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "99e68089f6c40e2a3435403917ebec0d",
+    "identity": "github:1334658517:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334658517:root",
+            "repository": "FleetingEcho/dsh-handoff",
+            "path": "",
+            "revision": "56e056e4cb477dc7e59f73f79b58748fcf1f60a1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7677c02d300b6ff6e89dfab53a1120c4ec796f954947d327178e88365b41af49",
+                "code": "56e056e4cb477dc7e59f73f79b58748fcf1f60a1",
+                "maintenance": "874f86929191439b2a740cd6051902f73c5405be9a36f97b8d7afc0d2aafdd23"
+            }
+        }
+    }
+}

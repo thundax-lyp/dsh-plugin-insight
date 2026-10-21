@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2f6f58a073b75f86aeabc8e87154ba7c",
+    "identity": "github:1346631237:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346631237:root",
+            "repository": "dongsheng123132/dsh-principal-binding-proof",
+            "path": "",
+            "revision": "a76fd5510f27d4aada5b91023cc4051e88d5b078",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "8765c2aeda2f5261fdf436002e4bfe893d3f55fe33cfebf5a579c9d62248745a",
+                "code": "a76fd5510f27d4aada5b91023cc4051e88d5b078",
+                "maintenance": "b541e9151bc4f025e86c890bc2e4e6b944d68a64bf328a23d8977fff0079ebfc"
+            }
+        }
+    }
+}

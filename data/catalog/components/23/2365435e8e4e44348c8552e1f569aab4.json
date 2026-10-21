@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2365435e8e4e44348c8552e1f569aab4",
+    "identity": "github:1410023352:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1410023352:root",
+            "repository": "wang6077/dsh-ide-vscode",
+            "path": "",
+            "revision": "352d3d6f0d7a06c229a5f31342bc2cc9eb8e5fcf",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8bdf023d310b4ad411b49d79e8acfad8377058ed281714a91b1a6110dd9a5787",
+                "code": "352d3d6f0d7a06c229a5f31342bc2cc9eb8e5fcf",
+                "maintenance": "01177915431b66160eb127ba1f1f9cdf79cfb8783da1437c32c8423a7ddad962"
+            }
+        }
+    }
+}

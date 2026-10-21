@@ -1,5 +1,0 @@
-{
-  "text": "将DSH轮次结束和部分等待用户输入事件推送至Gotify，并提供原因过滤、优先级与凭据设置。",
-  "revision": "6fe16310caa4233bb09086cd76c8dfb4b3e871c7",
-  "source_url": "https://github.com/AhYi8/dsh-gotify-notify/blob/6fe16310caa4233bb09086cd76c8dfb4b3e871c7/README.md"
-}

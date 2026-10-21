@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a4cbf2dd9008ebcd17ec2fe1fd0a01c7",
+    "identity": "github:1351285433:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1351285433:root",
+            "repository": "Edge-Echo/dsh-netassist",
+            "path": "",
+            "revision": "a9c91ce19abce57e6133d935d9f614a4e3a6b82f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7fafc02ac8b659101af765d0d7db85dd128a4c5060b5cb15dad395081005e88e",
+                "code": "a9c91ce19abce57e6133d935d9f614a4e3a6b82f",
+                "maintenance": "0a89d237fff016010089bd8ac2e40976e0c9cba563497a32b330e24a726fe39c"
+            }
+        }
+    }
+}

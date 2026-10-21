@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "dd19bfa20b736051687499e18ff65053",
+    "identity": "github:1422216485:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1422216485:root",
+            "repository": "XiaoOu2024/dsh-root-planner-preset",
+            "path": "",
+            "revision": "808a11b1dbb6e0e89f25cf7ff621f69daa31d8e3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "190855a64740eda3228557c087e9d31207d121f14a0d7c1f6a13faa16b89b53f",
+                "code": "808a11b1dbb6e0e89f25cf7ff621f69daa31d8e3",
+                "maintenance": "f7f24bdafc0898f2836c4838b52d3d553adf4bfe353929feacea876ab66d94b6"
+            }
+        }
+    }
+}

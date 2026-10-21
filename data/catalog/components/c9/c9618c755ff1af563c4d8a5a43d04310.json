@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c9618c755ff1af563c4d8a5a43d04310",
+    "identity": "github:1335151136:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335151136:root",
+            "repository": "moononnn/DeepSeek-Harness-Hanako-Memory",
+            "path": "",
+            "revision": "383ba17bb42b155b7ccdb9ad342dd75b0763e0a7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f221cf70b97c80f76874eb41610ef49de6ed825bf095d8bfbfca2379d75cb90d",
+                "code": "383ba17bb42b155b7ccdb9ad342dd75b0763e0a7",
+                "maintenance": "df59184f3e512c073c83c5c1434afc558fbb3f6d8f92377ac0d035b4f0256d11"
+            }
+        }
+    }
+}

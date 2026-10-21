@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4062f0eb738c43adc558d42c38853c12",
+    "identity": "github:1335099081:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335099081:root",
+            "repository": "garrisonz/dsh-sidebar-width",
+            "path": "",
+            "revision": "ff9e16386068f815d5a189e2eea40675addd0f08",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2c0befcb86df6b972aff1a4aa3e5a01c69e4de5905275c59e29e5c58b869e08c",
+                "code": "ff9e16386068f815d5a189e2eea40675addd0f08",
+                "maintenance": "74f5aec3ca8db27b2f8035848624f572512c7a1ef9ef1537e33493900054b6a3"
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "b8597ac606afbfd0f5fe15f70aca8600",
+    "identity": "github:1340918386:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340918386:root",
+            "repository": "fandc520/dsh-comfyui",
+            "path": "",
+            "revision": "1e10d0e2596956e9dffd85ff7f344151e57c34e0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "7b654f83171b76d9a9237d7bf9fddd4d7f1ad6600dde7048ddc466ce4be80705",
+                "code": "1e10d0e2596956e9dffd85ff7f344151e57c34e0",
+                "maintenance": "fe3060e6deac03962b716cd4b823b1ba053e1d45bfc494efc6fc49b2e81487f8"
+            }
+        }
+    }
+}

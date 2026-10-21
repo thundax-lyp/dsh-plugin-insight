@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8809dfa919f74144373bfaac0c6bbb97",
+    "identity": "github:1335700197:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335700197:root",
+            "repository": "lovezi0/dsh-memory-palace",
+            "path": "",
+            "revision": "2c37c2e988af42bb59c9becda22920b6f34f072a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "813e280517e7ff03abd945287d03889a6fc8530a2cf1525d7e534f45f271e803",
+                "code": "2c37c2e988af42bb59c9becda22920b6f34f072a",
+                "maintenance": "8ba4826805b832713ef0e8e6158e5b124e8d109c418a645cac263bb2fef443f7"
+            }
+        }
+    }
+}

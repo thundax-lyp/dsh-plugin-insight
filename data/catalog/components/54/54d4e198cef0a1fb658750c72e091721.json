@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "54d4e198cef0a1fb658750c72e091721",
+    "identity": "github:1343120970:plugin",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343120970:plugin",
+            "repository": "shendeguize/AgentSideCar",
+            "path": "plugin",
+            "revision": "6584c04e8ee1b2750e318fae9dfd9470c6f19aa6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a5087c50c43128dc328b509180983e121f215ceaeb03e07691e7a1224366d463",
+                "code": "6584c04e8ee1b2750e318fae9dfd9470c6f19aa6",
+                "maintenance": "7d6b3be492ea16c0336bc65dae45bbf58097fd6e78a259524fbbd9ce835bd3b2"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c628df2552aabbe185d3338a6a048c05",
+    "identity": "github:1337269177:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337269177:root",
+            "repository": "fan56/dsh-dcp",
+            "path": "",
+            "revision": "2664cc6e1457bfd2c906fe524a36eaf93dc5a4a4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c85e1ac97ca0cf58ba56c27bf196effdcc51c28acc980c1cccfbd1f42f2bad01",
+                "code": "2664cc6e1457bfd2c906fe524a36eaf93dc5a4a4",
+                "maintenance": "fcab0c2b282fa622d27cfc09cf478e26725b6d3c3d66d41c6be71c331630029f"
+            }
+        }
+    }
+}

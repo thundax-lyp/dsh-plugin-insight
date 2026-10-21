@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b358a2dea6176f9ba02be333208545b8",
+    "identity": "github:1349267122:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1349267122:root",
+            "repository": "Ansonfishing/dsh-cap-profile",
+            "path": "",
+            "revision": "ef1675acaf48e41297f94f24bd8f4ca13626827c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3e6ca9b3b00a02c81a229233886f9cd634be303eb549d03472a16e7befbab515",
+                "code": "ef1675acaf48e41297f94f24bd8f4ca13626827c",
+                "maintenance": "22dbf409ad655ae192b8468536fa043904d966f962c76cc4039fd980b50de322"
+            }
+        }
+    }
+}

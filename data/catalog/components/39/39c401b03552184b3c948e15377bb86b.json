@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "39c401b03552184b3c948e15377bb86b",
+    "identity": "github:1418119769:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1418119769:root",
+            "repository": "liu19666/dsh-model-block-picker",
+            "path": "",
+            "revision": "cea2073cb5ace6741d9786c124479f4c01aea3e8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "56526ca5e38cb72f687bec20157452a680133dd40e08c185483c1e05bc48aab9",
+                "code": "cea2073cb5ace6741d9786c124479f4c01aea3e8",
+                "maintenance": "12f75d6b6716b0dcfa5b65a557f4efbf5a9a673ab1d51dd205d35c73736c4b6e"
+            }
+        }
+    }
+}

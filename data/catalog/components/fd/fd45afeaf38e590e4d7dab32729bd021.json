@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fd45afeaf38e590e4d7dab32729bd021",
+    "identity": "github:1335038174:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335038174:root",
+            "repository": "zer0zio-stack/dsh-opencode-go-quota",
+            "path": "",
+            "revision": "99b164636d0e3405d98673f11cbeff74bee938af",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e17bb1e201411be0442a38ecab06a11e6023a8d46431874589aef00382db35c5",
+                "code": "99b164636d0e3405d98673f11cbeff74bee938af",
+                "maintenance": "0bab48f379c9e5dbc458c705473628c9d612f67e0539f7915bf9c58038b0c185"
+            }
+        }
+    }
+}

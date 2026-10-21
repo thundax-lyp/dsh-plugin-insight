@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "28e435f66a436e30806842e32fc7eba2",
+    "identity": "github:1341589814:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1341589814:root",
+            "repository": "alpacachen/dsh-worktree",
+            "path": "",
+            "revision": "6af3a3698d8467d6f91ca376fe3270bd69494406",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4905dac62baa4bf3f90f356f1a3951dab38ea3c552a2922a6e67e6a937a51c78",
+                "code": "6af3a3698d8467d6f91ca376fe3270bd69494406",
+                "maintenance": "f3f15b136eaf33b7699cf867731d84ad31dbad11a370dd2d7c98221fb2d54554"
+            }
+        }
+    }
+}

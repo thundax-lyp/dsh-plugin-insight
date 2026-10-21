@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a3844fc2b337fc376c18668a9604114f",
+    "identity": "github:1335054788:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335054788:root",
+            "repository": "baaai123/dsh-memory-protocol",
+            "path": "",
+            "revision": "0724c5a78ad169bb9d3ffe44f57fe5c36f81a838",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9a9d0b8add2ae3ee5617034319e768df5f7a175c4ef343dfc0e4dbda40f039a2",
+                "code": "0724c5a78ad169bb9d3ffe44f57fe5c36f81a838",
+                "maintenance": "6b8ffe136b8eb30fecbd8b46ff9d9ea118bbf542dfde4579c6315164859fcda8"
+            }
+        }
+    }
+}

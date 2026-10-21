@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "86b95f24049dbfdb5914012fc3d702d9",
+    "identity": "github:1364631699:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1364631699:root",
+            "repository": "Saknutella/dsh-thinking-quips",
+            "path": "",
+            "revision": "87d6b4d33a0adf5f31d1bf3b3d173ef6a5ee840d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c90b78a3fa65f00e55ee0c7f832811fd67c1cc1b5109cc820fc37bd1147dfc9f",
+                "code": "87d6b4d33a0adf5f31d1bf3b3d173ef6a5ee840d",
+                "maintenance": "5478755ced8b52872edaf70064755614f1304cf5a0a8c217e13176ccb4ed550a"
+            }
+        }
+    }
+}

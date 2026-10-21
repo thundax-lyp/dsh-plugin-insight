@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5c3aa03ceac38106d3521bc6a4341b0a",
+    "identity": "github:1421901446:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1421901446:root",
+            "repository": "konnga/dsh-hud",
+            "path": "",
+            "revision": "ef56a9c37b63edd929b7aa39f58e0dab14ce40de",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8562e012f58236d8f81c8cbe3bdbf79ce9a7e7eb864a532888d74e914b7b1ee0",
+                "code": "ef56a9c37b63edd929b7aa39f58e0dab14ce40de",
+                "maintenance": "f582d8f196e4515f8aeb2d07e9878470f05ed10a21e4649edd34c65b30169500"
+            }
+        }
+    }
+}

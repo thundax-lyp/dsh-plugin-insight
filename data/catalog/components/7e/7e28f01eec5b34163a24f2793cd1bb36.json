@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7e28f01eec5b34163a24f2793cd1bb36",
+    "identity": "github:1411832943:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1411832943:root",
+            "repository": "zhanshenovo/dsh-brake-pedal",
+            "path": "",
+            "revision": "a6d0aebeb7b2be9003423a768110e586046aee9e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7d1f36b01306ad5c9e18f69ea95376a6ade9ae915af74d53e99797bcbb60ba79",
+                "code": "a6d0aebeb7b2be9003423a768110e586046aee9e",
+                "maintenance": "514b30c0dcd0b26ba0b03386e247310bd7451f390c8b0cca916973b0557962d3"
+            }
+        }
+    }
+}

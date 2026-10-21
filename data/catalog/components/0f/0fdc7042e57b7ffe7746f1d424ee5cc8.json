@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "0fdc7042e57b7ffe7746f1d424ee5cc8",
+    "identity": "github:1335057123:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335057123:root",
+            "repository": "plur-ai/dsh-plugin",
+            "path": "",
+            "revision": "2c526f12fdb237ed3c303af96cbe2cdc93533d19",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "2063595e95975042ebd0d022b36e9e7575a0e3955d1fa01b321b4b85758d6353",
+                "code": "2c526f12fdb237ed3c303af96cbe2cdc93533d19",
+                "maintenance": "597888eaf1d8d3d98b3758daf995bf19032eeca2b558a1e64d561318350d6cd7"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6a075fff0d973f2b1f7cd65325ee4328",
+    "identity": "github:1333260502:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333260502:root",
+            "repository": "Sev7een/ds-api-usage",
+            "path": "",
+            "revision": "d7644200ed0530f60794a1b081b7176cb3ac93fd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ceb6aeb6814298d4ad239a1ad989b67fa148b5c20482c3efdfe2b545b6e8990a",
+                "code": "d7644200ed0530f60794a1b081b7176cb3ac93fd",
+                "maintenance": "2229c40a273c2a56451a84090985f93079ab95656f79bb11a518e6f5277ebad2"
+            }
+        }
+    }
+}

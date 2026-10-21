@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5548bfcfa3d69bd100cc74f0f17da697",
+    "identity": "github:1377792067:plugin",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1377792067:plugin",
+            "repository": "LonelyHerbivore/dsh-image-question",
+            "path": "plugin",
+            "revision": "f6249a8ff6aebc6649369498f1443ca175dc9ef8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "81a1b338c2ece3eaf8adba51c2dbdc7fb2de3f2a2a64d20c77e029bd75e4ae85",
+                "code": "f6249a8ff6aebc6649369498f1443ca175dc9ef8",
+                "maintenance": "87cbf1e0a935569b9080f03b83820735a2e95199e00b1f5eb5508f93759d0f46"
+            }
+        }
+    }
+}

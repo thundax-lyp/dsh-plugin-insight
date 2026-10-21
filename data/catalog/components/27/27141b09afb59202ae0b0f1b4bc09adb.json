@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "27141b09afb59202ae0b0f1b4bc09adb",
+    "identity": "github:1339684893:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339684893:root",
+            "repository": "SmileBuild/dsh-planchart",
+            "path": "",
+            "revision": "e63a6359ed43e6ae35cac505f10a8d128f53eba7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b4d0c9ea2dcd0a05ea96c4c372152444d4e8aa10a192a28d0524f04159af887e",
+                "code": "e63a6359ed43e6ae35cac505f10a8d128f53eba7",
+                "maintenance": "51f55315e59e1c04780fe16e2c292a9a81584cd1a7e576e9b59e76414ebb7e37"
+            }
+        }
+    }
+}

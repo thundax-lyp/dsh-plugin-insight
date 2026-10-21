@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c98fc7852c7e06260afadfa12d9e57b9",
+    "identity": "github:1381097401:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1381097401:root",
+            "repository": "CheeseFox259/dsh-better-composer",
+            "path": "",
+            "revision": "64a519bad3aed39eef3ee721b600f6459f3e40fa",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6cc234dbdc2a44d28731f8dbd6ee5ba21159e81ee3ff93d3924b0e44fa1e38f0",
+                "code": "64a519bad3aed39eef3ee721b600f6459f3e40fa",
+                "maintenance": "86b340f6c58496db91170f7c61dab5fa9b9bf7e392c35b6e5fe0ba47b21557f0"
+            }
+        }
+    }
+}

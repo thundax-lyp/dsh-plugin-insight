@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "134268a05817f0c77ef19e3f61c90b7d",
+    "identity": "github:1342785955:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342785955:root",
+            "repository": "curtainsmall/dsh-electro-lab",
+            "path": "",
+            "revision": "c4454f28623a2a4b57f3f7403306a3be321deda2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2c6ec60d62cdbad05d24c0c10b365530fac897f51901c6247105e0dedd6cf772",
+                "code": "c4454f28623a2a4b57f3f7403306a3be321deda2",
+                "maintenance": "b2e78559e75138263abbbba72f4a36ffb9e931dfb7b382aadbcd39dbab854062"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3344eb793764c1d51d153c27693fae12",
+    "identity": "github:1329587400:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1329587400:root",
+            "repository": "HuanLinOTO/dsh-plugin-ya-workspace-sidebar",
+            "path": "",
+            "revision": "2c112aaf1d6abea851ed40a8bfe7f3d45c10820f",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "8ca920a26ba3ef6e57d7a9372e021ef63dff0f601130452acff516093f6c1903",
+                "code": "2c112aaf1d6abea851ed40a8bfe7f3d45c10820f",
+                "maintenance": "db02a087deaa226e933f3b64c29ca11f4aed0bafaf5725b58f19de609052adeb"
+            }
+        }
+    }
+}

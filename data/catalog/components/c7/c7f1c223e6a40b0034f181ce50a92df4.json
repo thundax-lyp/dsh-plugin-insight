@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c7f1c223e6a40b0034f181ce50a92df4",
+    "identity": "github:1350137459:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1350137459:root",
+            "repository": "liangxiaobing520/dsh-local-vector-memory",
+            "path": "",
+            "revision": "a2d149fe33528cf9820a76cfcf796e7d51e2bcc0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5881fc0aca831960ab809ad59e7efd03cf9efb1844d57ad3e541063f97e67dd6",
+                "code": "a2d149fe33528cf9820a76cfcf796e7d51e2bcc0",
+                "maintenance": "e33d38c38e5f3f3a047c2a1476ffcd4bf3b468b72f65fe094517e17b959bde35"
+            }
+        }
+    }
+}

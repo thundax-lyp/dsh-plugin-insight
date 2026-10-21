@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "a1174faca389faca1beb8f0fa43e343f",
+    "identity": "github:1334159753:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334159753:root",
+            "repository": "LeemanCheung/dsh-token-usage",
+            "path": "",
+            "revision": "94db895a097297a425415323d7fcda85632adaab",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "8c57cbdd32ff013f8423320939088c90a7243fbc220e2b6a9f3c8c35e34df84d",
+                "code": "94db895a097297a425415323d7fcda85632adaab",
+                "maintenance": "6424f1f33c85051c4ee42a4914581a7df2f3747bb8f321645b8f1efb6fe1597b"
+            }
+        }
+    }
+}

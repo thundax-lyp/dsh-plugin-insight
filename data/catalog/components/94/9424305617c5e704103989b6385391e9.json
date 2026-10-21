@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9424305617c5e704103989b6385391e9",
+    "identity": "github:1424231302:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424231302:root",
+            "repository": "SereneJi/dsh-abacus",
+            "path": "",
+            "revision": "d74e96fed89aa5f5a80533624e2fd6c359a256b7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "cf4a08546c0bb616fd31961869848ce1bb721ed4536a133f2541a7d6e3c80eed",
+                "code": "d74e96fed89aa5f5a80533624e2fd6c359a256b7",
+                "maintenance": "64d02fe292f8d9e2cd70066dadf5730671973b85fda915c681389df24dbd63e3"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a510e1a50a8b09665b61c89d976af856",
+    "identity": "github:1335448931:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335448931:root",
+            "repository": "jilian-dsh/dsh-rule-engine",
+            "path": "",
+            "revision": "b86d6bc6f291a900da05c52c1e315108f868cc84",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "aedceecd08e91d39caf82abbe71d1f17c73ab5c43e528396f7b6785b8be2ff92",
+                "code": "b86d6bc6f291a900da05c52c1e315108f868cc84",
+                "maintenance": "86b1ec1416fb5b7922747e7be33ddef86b06d6b9d27bd41798c4fdefee7573fa"
+            }
+        }
+    }
+}

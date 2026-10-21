@@ -1,7 +1,0 @@
-{
-  "revision": "b5cdc8ec7f51a3c882598fc7bc073f7c629f4a11",
-  "items": {
-    "界面": "输入框下显示ETA和结束状态。",
-    "事件监听": "注册turnEta事件投影。"
-  }
-}

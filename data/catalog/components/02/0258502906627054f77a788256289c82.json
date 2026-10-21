@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "0258502906627054f77a788256289c82",
+    "identity": "github:1337004530:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337004530:root",
+            "repository": "Laplace-bit/dsh-pianist",
+            "path": "",
+            "revision": "6ab631567700efa80a954f33eb5534b265d91ddd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "f3bc2243f071792d2f466b68d4adb69cf7ce49c12c7e718750aa89dff51040ef",
+                "code": "6ab631567700efa80a954f33eb5534b265d91ddd",
+                "maintenance": "4e732cdedc8a1e0569824f6dd45d8e1fe4251b656739d5672214ea6389a3cade"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c529ac85f332f224eeb7b278c5ed7617",
+    "identity": "github:1403199733:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1403199733:root",
+            "repository": "moxiaoren/dsh-xiaoyiwork-connect",
+            "path": "",
+            "revision": "6c0507257ff143640ac26de52bfb692b08c554ba",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7a0db6c25d20f33eaa9a61e7ccc5dce676639707dee5d15adb71677651bb0d0c",
+                "code": "6c0507257ff143640ac26de52bfb692b08c554ba",
+                "maintenance": "61eb351cf5d9fa494810b1e69899c001ad6814d82e6d6db962b50acf9064b248"
+            }
+        }
+    }
+}

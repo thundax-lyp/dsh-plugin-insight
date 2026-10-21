@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b6617bb3581ebed8fb18ea0011e5b85d",
+    "identity": "github:1424388459:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424388459:root",
+            "repository": "milu7/dsh-directory-plugin",
+            "path": "",
+            "revision": "56abe0717c2a8f8678a9d3690a5a7f7942fbca7f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "32bfd470be6c8bc740a7aeee195d33752e5bf0148eea979ca5c1c2cc8336aa0e",
+                "code": "56abe0717c2a8f8678a9d3690a5a7f7942fbca7f",
+                "maintenance": "a6de682fd8f20c51a8e4590716902c199676e2c8047bcc49e868723a8afc37db"
+            }
+        }
+    }
+}

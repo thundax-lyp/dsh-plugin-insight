@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f9c7f99591ec965caa389a28025be92d",
+    "identity": "github:1195873793:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1195873793:root",
+            "repository": "agentic-os-org/ANOLISA",
+            "path": "",
+            "revision": "3e86d68e9278cf30903c9a1adc04236a9a377e7f",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "2331e59a5189fa5d504248c2f4aadbec6b4582e5080c97182ad86a495291e464",
+                "code": "3e86d68e9278cf30903c9a1adc04236a9a377e7f",
+                "maintenance": "668a9119fa014306132032e60f9904f1c42bf2f85a1ac6e4d120e767e5cfe152"
+            }
+        }
+    }
+}

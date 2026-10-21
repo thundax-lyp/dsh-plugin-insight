@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2c2896e6ccdf9c8b820804a04d7d8cd9",
+    "identity": "github:1342084531:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342084531:root",
+            "repository": "Wenaixi/dsh-ponytail",
+            "path": "",
+            "revision": "9b91c151d8838fd55c541d6f6424267d07c6bf7d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2b89cbd434a18610e37f439214082501293628ac71a1166d531e7db73e6f5b6e",
+                "code": "9b91c151d8838fd55c541d6f6424267d07c6bf7d",
+                "maintenance": "a2d093532e8a3178e7a6b3f39d84dfab5d329be9145f2e62cf9776469ca3b4ab"
+            }
+        }
+    }
+}

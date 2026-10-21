@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e72ee7b85a8bcf7cfdfc192d3670382e",
+    "identity": "github:1336638548:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336638548:root",
+            "repository": "yoza10635/dsh-argp",
+            "path": "",
+            "revision": "825760bc394d8bf5ea44dcbdb7dae4ff5e4dec5a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "60ee7af5a4c403ebd60c4c1360467462faccba4118c4616690c5db3eff78c3c1",
+                "code": "825760bc394d8bf5ea44dcbdb7dae4ff5e4dec5a",
+                "maintenance": "b5e78aefac36e6387a69b3fb89edb14936772afed62f626ebcc34571e9d68cfa"
+            }
+        }
+    }
+}

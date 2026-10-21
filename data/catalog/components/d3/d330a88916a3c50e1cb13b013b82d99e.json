@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d330a88916a3c50e1cb13b013b82d99e",
+    "identity": "github:1348021476:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1348021476:root",
+            "repository": "AstralFoundry/dsh-workspace",
+            "path": "",
+            "revision": "341c97ef6c27a4affb3a975719a17f21b368ee8d",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "bb04036d1753500a841d555ea693991002bb9fb8a75e63f91041127ad3ba2b9b",
+                "code": "341c97ef6c27a4affb3a975719a17f21b368ee8d",
+                "maintenance": "2c8439310df3bd043cde5014f3236422f562159f450db2568c94092ba7f23909"
+            }
+        }
+    }
+}

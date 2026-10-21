@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4d2f2af336046371f4c897e672516d80",
+    "identity": "github:1333686963:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333686963:root",
+            "repository": "CocoSgt/dsh-attachments",
+            "path": "",
+            "revision": "70c0b7e81d7d6a2707e282457bd92f2577bd6629",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "3634b99e91fd01cb115c08370319bcd998630662bb67fe372f775f94a0cb00d7",
+                "code": "70c0b7e81d7d6a2707e282457bd92f2577bd6629",
+                "maintenance": "f2343448317916ed0ef1e583453feafac2ecde9afce5afb7bd6c0a60913c5a90"
+            }
+        }
+    }
+}

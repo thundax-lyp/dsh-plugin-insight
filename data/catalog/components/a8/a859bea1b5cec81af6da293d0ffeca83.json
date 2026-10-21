@@ -1,0 +1,403 @@
+{
+    "schema_version": 3,
+    "id": "a859bea1b5cec81af6da293d0ffeca83",
+    "identity": "github:1335098475:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1335098475:root",
+            "repository_id": 1335098475,
+            "component_id": "root",
+            "repository": "1e0zj/dsh-plugin-mall",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-plugin-mall",
+            "entry_type": "plugin",
+            "technical_category": "runtime-deployment",
+            "business_category": "infrastructure",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "4a4b150d2a528c9dd220cbc60cf6828b14f883bd789b08cfb629f0212d17ce76",
+                "code": "d38485accdf8b29945c82311ce396ebef57058f1",
+                "maintenance": "c2b8ed7dfbe21a7c17941c2bda53499cbdc84e2e0f178f658a496a395c447aaf"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-20-08-github-1335098475-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T10:52:57.678Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-20-08-github-1335098475-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/1e0zj/dsh-plugin-mall/blob/d38485accdf8b29945c82311ce396ebef57058f1/README.md",
+                    "revision": "d38485accdf8b29945c82311ce396ebef57058f1",
+                    "captured_at": "2026-10-20T10:52:57.678Z",
+                    "summary": "在 DSH 中搜索 GitHub 插件并提供安装、更新、冲突预检与启动恢复。",
+                    "artifact": "data/runs/2026-10-20-08/snapshots/1e0zj--dsh-plugin-mall/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-20-08-github-1335098475-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/1e0zj/dsh-plugin-mall/blob/d38485accdf8b29945c82311ce396ebef57058f1/src/guard.js",
+                    "revision": "d38485accdf8b29945c82311ce396ebef57058f1",
+                    "captured_at": "2026-10-20T10:52:57.678Z",
+                    "summary": "核查 src/guard.js、src/installer.js、src/restart-protocol.js；topic搜索发现候选，核查dsh manifest与npm仓库归属；隔离禁脚本预装并组合补丁树对比；快照profile关键文件、挂pending标记，重启guard检查稳定窗口与恢复。",
+                    "artifact": "data/runs/2026-10-20-08/snapshots/1e0zj--dsh-plugin-mall/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "核查固定提交的所列核心实现与作者材料；未运行插件、安装、测试或真实宿主验收，未确认独立用户效果。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "DSH维护者需要发现第三方插件并避免安装破坏现有profile；合格交付是可解释的安装变更及失败后的可恢复状态。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1335098475-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335098475:root",
+                            "area": "code",
+                            "fingerprint": "d38485accdf8b29945c82311ce396ebef57058f1"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:52:57.678Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "topic搜索发现候选，核查dsh manifest与npm仓库归属；隔离禁脚本预装并组合补丁树对比；快照profile关键文件、挂pending标记，重启guard检查稳定窗口与恢复。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1335098475-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335098475:root",
+                            "area": "code",
+                            "fingerprint": "d38485accdf8b29945c82311ce396ebef57058f1"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:52:57.678Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "核查固定提交的所列核心实现与作者材料；未运行插件、安装、测试或真实宿主验收，未确认独立用户效果。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1335098475-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335098475:root",
+                            "area": "code",
+                            "fingerprint": "d38485accdf8b29945c82311ce396ebef57058f1"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:52:57.678Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "包清单与组件入口按固定提交核查；发布与宿主适配声明属于作者材料，不作为本次实际安装结果。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1335098475-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335098475:root",
+                            "area": "code",
+                            "fingerprint": "d38485accdf8b29945c82311ce396ebef57058f1"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:52:57.678Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "现金主要为网络与包存储；人工包括审批预检差异、重启维护窗口及失败恢复。大规模补丁规则和宿主加载器同步带来持续维护成本，无真实失败率收益测量。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1335098475-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335098475:root",
+                            "area": "code",
+                            "fingerprint": "d38485accdf8b29945c82311ce396ebef57058f1"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:52:57.678Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "适合维护多个插件的DSH环境；先在隔离profile验证冲突提示和回滚，再用于日常安装，重要环境保留独立备份。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1335098475-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335098475:root",
+                            "area": "code",
+                            "fingerprint": "d38485accdf8b29945c82311ce396ebef57058f1"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:52:57.678Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "明确暴露安装将变更的加载树能帮助判断；它降低部分安装风险，不能保证第三方功能正确或安全。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1335098475-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335098475:root",
+                            "area": "code",
+                            "fingerprint": "d38485accdf8b29945c82311ce396ebef57058f1"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:52:57.678Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "src/guard.js 区分候选身份与原依赖快照，解析补丁组合；src/installer.js 的 writeChecked 在写后解析失败时恢复原字节。值得借鉴“先可解释计划再写入”，但加载器语义更新与跨平台重启是复用成本。 源码：[src/guard.js](https://github.com/1e0zj/dsh-plugin-mall/blob/d38485accdf8b29945c82311ce396ebef57058f1/src/guard.js)、[src/installer.js](https://github.com/1e0zj/dsh-plugin-mall/blob/d38485accdf8b29945c82311ce396ebef57058f1/src/installer.js)、[src/restart-protocol.js](https://github.com/1e0zj/dsh-plugin-mall/blob/d38485accdf8b29945c82311ce396ebef57058f1/src/restart-protocol.js)。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1335098475-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335098475:root",
+                            "area": "code",
+                            "fingerprint": "d38485accdf8b29945c82311ce396ebef57058f1"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:52:57.678Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T10:52:57.678Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "d38485accdf8b29945c82311ce396ebef57058f1",
+                "reviewed_at": "2026-10-20T10:52:57.678Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1335098475:root",
+                        "area": "code",
+                        "fingerprint": "d38485accdf8b29945c82311ce396ebef57058f1"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 18,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty：市场成熟但补丁合成预检有宿主特定增量；mechanism：计划和恢复覆盖安装风险；transferability：快照事务方法可移植；simplification：统一入口但guard复杂。",
+                    "basis": "interpretation",
+                    "score": 51,
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1335098475-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 15,
+                        "reach": 10,
+                        "economics": 4
+                    },
+                    "rationale": "workflow：发现安装恢复成一条流程；delivery：可解释预检及回滚而非只下载；reach：降低维护者理解加载树门槛；economics：失败恢复收益未实测。",
+                    "basis": "interpretation",
+                    "score": 47,
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1335098475-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "维护多插件环境可在隔离profile试用冲突预检与恢复；先注入加载失败并核对备份，不把进程稳定视作功能验收。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "多插件安装冲突与可恢复变更目标清晰，轻量环境需求较低。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "比目录加plugin add多了组合补丁解释、快照及启动guard。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "guard和writeChecked源码支持恢复路径，延迟失败和业务能力未实测。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "pnpm、profile写入及重启维护窗口有负担，加载器变化需持续适配。"
+                    }
+                },
+                "score": 65,
+                "revision": "d38485accdf8b29945c82311ce396ebef57058f1",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-20-08-github-1335098475-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1335098475:root",
+                        "area": "code",
+                        "fingerprint": "d38485accdf8b29945c82311ce396ebef57058f1"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1335098475:root",
+            "repository": "1e0zj/dsh-plugin-mall",
+            "path": "",
+            "revision": "d38485accdf8b29945c82311ce396ebef57058f1",
+            "fingerprints": {
+                "directory": "4a4b150d2a528c9dd220cbc60cf6828b14f883bd789b08cfb629f0212d17ce76",
+                "code": "d38485accdf8b29945c82311ce396ebef57058f1",
+                "maintenance": "c2b8ed7dfbe21a7c17941c2bda53499cbdc84e2e0f178f658a496a395c447aaf"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T10:40:14Z",
+            "analysis_sha256": "fba43405f5dcd27d88823a99c560b190a6363777c2e8781a7d6ee952277e3004"
+        },
+        "publication.metadata": "data/plugins/1e0zj--dsh-plugin-mall/META.json",
+        "publication.summaries": {
+            "text": "在 DSH 中搜索 GitHub 插件并提供安装、更新、冲突预检与启动恢复。",
+            "revision": "d38485accdf8b29945c82311ce396ebef57058f1",
+            "source_url": "https://github.com/1e0zj/dsh-plugin-mall/blob/d38485accdf8b29945c82311ce396ebef57058f1/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "d38485accdf8b29945c82311ce396ebef57058f1",
+            "items": {
+                "界面": "插件市场搜索、安装与更新",
+                "后台": "安装预检、profile快照及启动guard恢复"
+            }
+        },
+        "publication.advice": {
+            "revision": "d38485accdf8b29945c82311ce396ebef57058f1",
+            "text": "适合维护多个插件的DSH环境；先在隔离profile验证冲突提示和回滚，再用于日常安装，重要环境保留独立备份。"
+        },
+        "registry": "data/plugins/1e0zj--dsh-plugin-mall",
+        "reports": "# dsh-plugin-mall\n\n> 在 DSH 中搜索 GitHub 插件并提供安装、更新、冲突预检与启动恢复。\n\n## 研究范围\n\n- **仓库**：[1e0zj/dsh-plugin-mall](https://github.com/1e0zj/dsh-plugin-mall)\n- **版本号**：0.4.17（[固定提交 d38485a](https://github.com/1e0zj/dsh-plugin-mall/tree/d38485accdf8b29945c82311ce396ebef57058f1)）\n- **版本日期**：2026-08-27（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n贡献机制有固定源码支持；效果与采用收益为条件性解释，后续设计假设尚未验证。\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：DSH维护者需要发现第三方插件并避免安装破坏现有profile；合格交付是可解释的安装变更及失败后的可恢复状态。\n- **亮点**：相对目录链接加手工安装，实际贡献是把发现开放性与安装冲突预检、profile快照和启动恢复连接起来；guard.js关注补丁组合结果而非单条静态扫描，能解释插件会修改谁的加载行。不是执行安全认证。\n- **思考**：核心是“重启成功”如何判定：作者README已明确加载到商城位置不证明整棵树组合完成，guard launch的稳定窗口才补上部分后续失败；进程稳定也不保证业务插件可用。静态预检对动态副作用的边界不能被“验证插件”徽章掩盖。\n- **建议**：适合维护多个插件的DSH环境；先在隔离profile验证冲突提示和回滚，再用于日常安装，重要环境保留独立备份。\n\n采用建议：适合维护多个插件的DSH环境；先在隔离profile验证冲突提示和回滚，再用于日常安装，重要环境保留独立备份。\n\n## 核心贡献\n\n相对目录链接加手工安装，实际贡献是把发现开放性与安装冲突预检、profile快照和启动恢复连接起来；guard.js关注补丁组合结果而非单条静态扫描，能解释插件会修改谁的加载行。不是执行安全认证。\n\n## 关键质疑\n\n核心是“重启成功”如何判定：作者README已明确加载到商城位置不证明整棵树组合完成，guard launch的稳定窗口才补上部分后续失败；进程稳定也不保证业务插件可用。静态预检对动态副作用的边界不能被“验证插件”徽章掩盖。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n待验证假设：在通用启动窗口后增加用户选择的只读能力探针，并把通过标准写入pending事务，可降低“进程活着但能力不可用”的漏检；来自恢复证据粒度与业务验收之间的缺口。探针必须隔离超时，不能默认为所有插件执行目标代码。\n\n在隔离profile对比手工安装与guard流程，注入补丁冲突、商城之后的加载失败及延迟崩溃，核对原文件摘要和候选依赖恢复；另以只读探针检测服务不可用，若误判正常插件则保持探针可选。\n\n## 场景与替代办法\n\nDSH维护者需要发现第三方插件并避免安装破坏现有profile；合格交付是可解释的安装变更及失败后的可恢复状态。\n\n参照awesome目录与原生plugin add；不把topic覆盖率当可用插件覆盖率，也不继承作者过滤比例为本次测量。\n\n## 依赖与流程\n\n需要GitHub/包注册表网络、pnpm及匹配的DSH profile加载语义；涉及可写profile、包下载、重启子进程。源码禁脚本预装降低一种风险，不能代替第三方依赖信任。\n\n搜索并看验证/兼容信息，选择版本后隔离预检；硬冲突阻止、警告需确认；快照后安装并记录pending，重启guard接管；失败按快照恢复，无法确认恢复时保留材料人工处理。\n\n## 成本与效果\n\n现金主要为网络与包存储；人工包括审批预检差异、重启维护窗口及失败恢复。大规模补丁规则和宿主加载器同步带来持续维护成本，无真实失败率收益测量。\n\n明确暴露安装将变更的加载树能帮助判断；它降低部分安装风险，不能保证第三方功能正确或安全。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：edc9adc71fa427a2dde98e8dd55d49184e1c62b564cbf71c323cf01124f9fb6a。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .mjs | source | 1 | 125 | 75 | 32 | — |\n| .md | source | 4 | 1720 | — | — | 24282 |\n| .js | source | 8 | 20469 | 15087 | 4530 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **界面**：插件市场搜索、安装与更新\n- **后台**：安装预检、profile快照及启动guard恢复\n\n## 工程亮点\n\nsrc/guard.js 区分候选身份与原依赖快照，解析补丁组合；src/installer.js 的 writeChecked 在写后解析失败时恢复原字节。值得借鉴“先可解释计划再写入”，但加载器语义更新与跨平台重启是复用成本。 源码：[src/guard.js](https://github.com/1e0zj/dsh-plugin-mall/blob/d38485accdf8b29945c82311ce396ebef57058f1/src/guard.js)、[src/installer.js](https://github.com/1e0zj/dsh-plugin-mall/blob/d38485accdf8b29945c82311ce396ebef57058f1/src/installer.js)、[src/restart-protocol.js](https://github.com/1e0zj/dsh-plugin-mall/blob/d38485accdf8b29945c82311ce396ebef57058f1/src/restart-protocol.js)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 src/guard.js、src/installer.js、src/restart-protocol.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：核查固定提交的所列核心实现与作者材料；未运行插件、安装、测试或真实宿主验收，未确认独立用户效果。\n- 下一步：在隔离profile对比手工安装与guard流程，注入补丁冲突、商城之后的加载失败及延迟崩溃，核对原文件摘要和候选依赖恢复；另以只读探针检测服务不可用，若误判正常插件则保持探针可选。\n",
+        "metadata": {
+            "repository": "1e0zj/dsh-plugin-mall",
+            "repository_id": 1335098475,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 4,
+            "pushed_at": "2026-08-27T15:53:03Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1e0zj%2Fdsh-plugin-mall%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641C:64E75:1408ED:21A2AA:6AD849DC and timestamp 2026-10-21 05:13:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1e0zj%2Fdsh-plugin-mall%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641E:37D83B:146A15:21F534:6AD849DC and timestamp 2026-10-21 05:13:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1e0zj%2Fdsh-plugin-mall%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6406:0C5F:630A8:A9144:6AD849DC and timestamp 2026-10-21 05:13:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1e0zj%2Fdsh-plugin-mall%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6400:330C23:144ECC:21DD6E:6AD849DC and timestamp 2026-10-21 05:13:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1e0zj%2Fdsh-plugin-mall%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640E:1DEEF7:14A9B3:2240EA:6AD849DD and timestamp 2026-10-21 05:13:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "@1e0zj/dsh-plugin-mall",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 1526,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%401e0zj%2Fdsh-plugin-mall",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-15T13:25:03.166Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/%401e0zj%2Fdsh-plugin-mall",
+                    "error": null,
+                    "latest_version": "0.4.17",
+                    "latest_published_at": "2026-08-27T13:32:08.276Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "d38485accdf8b29945c82311ce396ebef57058f1",
+                "current_revision": "d38485accdf8b29945c82311ce396ebef57058f1",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1335098475:root",
+            "repository": "1e0zj/dsh-plugin-mall",
+            "path": "",
+            "revision": "d38485accdf8b29945c82311ce396ebef57058f1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4a4b150d2a528c9dd220cbc60cf6828b14f883bd789b08cfb629f0212d17ce76",
+                "code": "d38485accdf8b29945c82311ce396ebef57058f1",
+                "maintenance": "c2b8ed7dfbe21a7c17941c2bda53499cbdc84e2e0f178f658a496a395c447aaf"
+            }
+        }
+    }
+}

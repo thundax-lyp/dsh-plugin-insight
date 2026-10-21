@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "c7dc5eed7080a90fa678817163df5a45",
+    "identity": "github:1335651249:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335651249:root",
+            "repository": "kenz1117/dsh-ui-usage-billing",
+            "path": "",
+            "revision": "104fb33fc174adabfdde7b064395ba684010182b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "bbe3c19b1be9499507ca927147783456ab6698c6ee786f2ddfa93c8f001f1d6f",
+                "code": "104fb33fc174adabfdde7b064395ba684010182b",
+                "maintenance": "e1f47fe526374e47f126b5be57871802fe63f77702ccc264e2cb7377099eb552"
+            }
+        }
+    }
+}

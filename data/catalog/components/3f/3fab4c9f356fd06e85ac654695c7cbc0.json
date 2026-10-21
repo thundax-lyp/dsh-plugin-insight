@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3fab4c9f356fd06e85ac654695c7cbc0",
+    "identity": "github:1338497743:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338497743:root",
+            "repository": "kuaiyukuaikuai/dsh-agent-sync",
+            "path": "",
+            "revision": "d0dde63bdda9e50408a23b15fc79494f54b5fcb8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9f7046d250db7955a061c8de5af75e25e00773c0539de5df8b25ca5e9f0c7bdf",
+                "code": "d0dde63bdda9e50408a23b15fc79494f54b5fcb8",
+                "maintenance": "53a0aff0c7f2bc20cb5553c88875564dcb68dba4ccb79b122d6ab433af818933"
+            }
+        }
+    }
+}

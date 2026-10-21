@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3d7a39c1d1f9de4b89dccf803a65aa10",
+    "identity": "github:1334109809:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334109809:root",
+            "repository": "chaos-03x/dsh-agy",
+            "path": "",
+            "revision": "e221b31653c4e7742b356b1423c3eb2b474340a0",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "24316d4cb3596f9c95a7175224e3798aa2b6fa40c8db6cbce2e8974c0d06e523",
+                "code": "e221b31653c4e7742b356b1423c3eb2b474340a0",
+                "maintenance": "f2cd3215dd2e3420b4b47a4ce882fe8b37bdc8cb761e2aac3f975e6bb532b1cc"
+            }
+        }
+    }
+}

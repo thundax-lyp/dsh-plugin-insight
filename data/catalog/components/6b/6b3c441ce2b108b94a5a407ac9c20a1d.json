@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6b3c441ce2b108b94a5a407ac9c20a1d",
+    "identity": "github:1346396104:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346396104:root",
+            "repository": "bigfurma-bot/dsh-web-restart",
+            "path": "",
+            "revision": "f4a6b3526b4211af37c4ee424948ba34ea7c30fd",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "e087fc6f574bf8ec273b18ea99e86e053a221b5f787dcb438bd086f77575b4b4",
+                "code": "f4a6b3526b4211af37c4ee424948ba34ea7c30fd",
+                "maintenance": "ae99e6c6bd223f326667fcf3eac80641bb3098463ef600aa31b38abb6b51b612"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "80180386d323f6e040d5708897cd7b1c",
+    "identity": "github:1365217032:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1365217032:root",
+            "repository": "wuwaka/dsh-clipboard-menu",
+            "path": "",
+            "revision": "4b8633969d6005c17309ee289fe0b08c135441bc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "db604c55d3c0e733da02664afd3852e819949f6405c6ca8f2ad4d9748bdd0659",
+                "code": "4b8633969d6005c17309ee289fe0b08c135441bc",
+                "maintenance": "f7b5cf03649cc29bef3d7c9583220f3f9a3802719667bb92be41d8c36b8e9122"
+            }
+        }
+    }
+}

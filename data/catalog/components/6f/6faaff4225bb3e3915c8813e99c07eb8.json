@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "6faaff4225bb3e3915c8813e99c07eb8",
+    "identity": "github:1346666086:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346666086:root",
+            "repository": "Jstn-1g/dsh-live-voice",
+            "path": "",
+            "revision": "3b4a17a2aa25a40c73e11291b6d8ff196bcaa477",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "0faca1487c13c04955fbfc6a7c53513d8fede235e0d466b5e5c44dfba5c49b63",
+                "code": "3b4a17a2aa25a40c73e11291b6d8ff196bcaa477",
+                "maintenance": "e52900f011be505a5918cc1790286684441186db9e3c5afe3d63a499c69795d8"
+            }
+        }
+    }
+}

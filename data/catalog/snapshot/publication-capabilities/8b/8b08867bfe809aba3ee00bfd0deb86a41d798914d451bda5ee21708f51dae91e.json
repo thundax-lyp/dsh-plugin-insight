@@ -1,7 +1,0 @@
-{
-  "revision": "ffecd361b7f2803fdccd1cf92149aad3e11a3271",
-  "items": {
-    "模型工具": "PDF扫描、页面混合读取和区域渲染。",
-    "后台": "Python内容检测与PNG缓存。"
-  }
-}

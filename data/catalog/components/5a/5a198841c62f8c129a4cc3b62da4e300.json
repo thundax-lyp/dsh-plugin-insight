@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5a198841c62f8c129a4cc3b62da4e300",
+    "identity": "github:1376792562:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1376792562:root",
+            "repository": "meihaoyidian/life-workbench",
+            "path": "",
+            "revision": "23d29a884f0e2542c9737a7c22999b1bfc599a75",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "eb0a16d8379bad2abf9f72edb40c41e383515a4b0dbf34947dcef14c047cf7a4",
+                "code": "23d29a884f0e2542c9737a7c22999b1bfc599a75",
+                "maintenance": "d7c0890f27190bb10b04a6591962a1592712e55dedc39856e92bcbb60c218fee"
+            }
+        }
+    }
+}

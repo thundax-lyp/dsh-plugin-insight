@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ddff0c6894d1ac2727ed08a901f7b99a",
+    "identity": "github:1333213862:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333213862:root",
+            "repository": "Moeblack/dsh-payload-capture",
+            "path": "",
+            "revision": "75cd434c6b854323f0f6bdb75ea8694480082d03",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "957c9a177450176b573e1e7a7fb826054b58da607d2cedd5fae874ab2a2007d5",
+                "code": "75cd434c6b854323f0f6bdb75ea8694480082d03",
+                "maintenance": "e34d425fb2540baf8b0b2e22ca1a70f2d6d0d99361256adfb02eb8b8783a708c"
+            }
+        }
+    }
+}

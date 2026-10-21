@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "28cfbe0c08468cb084977ed3ac4a374e",
+    "identity": "github:1353491642:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1353491642:root",
+            "repository": "drscrewdriver/dsh-perm-gate",
+            "path": "",
+            "revision": "e32599f752ab29d7519ccdcf5f82388b7f716814",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7b6310333575aea3e5ff8387b1b0cab24be4e1c67b57431432e76adf0eea7fd8",
+                "code": "e32599f752ab29d7519ccdcf5f82388b7f716814",
+                "maintenance": "d151bc7b4b32aedcf97af66b236b207ad6094a237483b32145b0c0e7d70055a5"
+            }
+        }
+    }
+}

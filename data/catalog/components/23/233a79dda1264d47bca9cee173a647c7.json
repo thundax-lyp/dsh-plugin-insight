@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "233a79dda1264d47bca9cee173a647c7",
+    "identity": "github:1375653556:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1375653556:root",
+            "repository": "weibaohui/dsh-gaokao",
+            "path": "",
+            "revision": "0d328f37e79e2737d525397014199fd9f3345504",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "9479eaa58041eb1fa7dc17e2260621909eb78bd49424d148e9d9c657d67f9ccc",
+                "code": "0d328f37e79e2737d525397014199fd9f3345504",
+                "maintenance": "9a182ae22c7a989de1cf18024e507c9b8334f4354b4b41e49702c462e216e535"
+            }
+        }
+    }
+}

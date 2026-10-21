@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a65c9335f11d1e152e6b1f473d390d80",
+    "identity": "github:1424221259:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424221259:root",
+            "repository": "fomalhaut1998/dsh-session-find",
+            "path": "",
+            "revision": "698fcb5312b717977bf4656f3ce0efbea63ba71c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2b7326a73fad296aaf3d3d9d20ab0e4fff877fd8bfecafd0b252f2ef9d45c946",
+                "code": "698fcb5312b717977bf4656f3ce0efbea63ba71c",
+                "maintenance": "f3a622d931ac80f9e3710b914ff7a5b0ebe5accce6784f1fe47105d014c643d4"
+            }
+        }
+    }
+}

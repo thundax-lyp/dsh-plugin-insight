@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0d7e755a091c2b98a5c468378e56ac25",
+    "identity": "github:1334003518:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334003518:root",
+            "repository": "xiake595/touhou-hakurei",
+            "path": "",
+            "revision": "74ff7d05cd86425502176399c60ea7dbcad5333f",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "4213ae3661e3a3378f7daa16c30ab99d4ed3fb8498432ec68f519a265a576e17",
+                "code": "74ff7d05cd86425502176399c60ea7dbcad5333f",
+                "maintenance": "0bcb719b1e414f737b3260812f2a88404132c6985958b63a1a7768367437c88e"
+            }
+        }
+    }
+}

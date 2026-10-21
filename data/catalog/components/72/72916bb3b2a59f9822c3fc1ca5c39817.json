@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "72916bb3b2a59f9822c3fc1ca5c39817",
+    "identity": "github:1333713103:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333713103:root",
+            "repository": "Sttrevens/dsh-cost-meter",
+            "path": "",
+            "revision": "9f8a924f2496856f671a508aca44bff7d3377770",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "87c170cc8aafba950d4c3cefd16883a789db956b78832dc0bf74d99a0185b611",
+                "code": "9f8a924f2496856f671a508aca44bff7d3377770",
+                "maintenance": "b6e92166808fac091220ddd2b52754f4ede05e6aa821b2e75573b0ad3d9c7a6e"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ce0de10040c62c225c1d99bcc296ef34",
+    "identity": "github:1345824760:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345824760:root",
+            "repository": "veermetri05/dsh-plugins",
+            "path": "",
+            "revision": "8110a04d0dfb1f16728098d2afeb74686eeca8c8",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "c0eb3d06d6a2222604389e920ebab2bacc623f8f7e8617d409fd00dd4939c089",
+                "code": "8110a04d0dfb1f16728098d2afeb74686eeca8c8",
+                "maintenance": "4ef6a7b1d2ee78b07c7b46213e2125da9ae82fd4339cc700d4e2bcdf264b5252"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f4e38324e7d11ff06f23f350b3532689",
+    "identity": "github:1266465567:packages-dsh",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1266465567:packages-dsh",
+            "repository": "severin-ye/uagent-sync",
+            "path": "packages/dsh",
+            "revision": "3400abc22b8381f9e1f5cb71925116c7b64f089c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "54fbcd21d0596593b366d4e0c802aa2cc14ec2615b921b03d731cfa3c7282c9c",
+                "code": "3400abc22b8381f9e1f5cb71925116c7b64f089c",
+                "maintenance": "e2815c741a235a3b65ef870f620ee3a667ee6558f8dffdf7be6be035322b74cd"
+            }
+        }
+    }
+}

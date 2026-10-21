@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "94455d52024f1d916232b70b31876d49",
+    "identity": "github:1353640172:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1353640172:root",
+            "repository": "CDeZT/better-basicfun",
+            "path": "",
+            "revision": "4f93b40047fa58d44190a2e5ddc3703706eb9cff",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fd148bb68c991c36c62816255503507f273c926eaf90ca0712e891eb6a9545bf",
+                "code": "4f93b40047fa58d44190a2e5ddc3703706eb9cff",
+                "maintenance": "536d1fdebbe58bace1430879426338e8d009533577e856bd534ce644ada5a84b"
+            }
+        }
+    }
+}

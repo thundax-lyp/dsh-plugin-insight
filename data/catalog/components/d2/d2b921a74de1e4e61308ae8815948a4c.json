@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d2b921a74de1e4e61308ae8815948a4c",
+    "identity": "github:1363263774:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1363263774:root",
+            "repository": "mrSutivu/plugin-effort-slider",
+            "path": "",
+            "revision": "00def6ea2e52b871fc75394fea5bff5b0da19131",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "718e632b2f77d1240261b331e241e56eb68f7a7ebc024115329b191113c78b86",
+                "code": "00def6ea2e52b871fc75394fea5bff5b0da19131",
+                "maintenance": "ffecfb4e4e0c171981b03fb967576540ffddb3d0a24b1813c32799cd3cb760e0"
+            }
+        }
+    }
+}

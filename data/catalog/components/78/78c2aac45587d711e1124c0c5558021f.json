@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "78c2aac45587d711e1124c0c5558021f",
+    "identity": "github:1388366177:packages-dsh-vertical-layout",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1388366177:packages-dsh-vertical-layout",
+            "repository": "feng-yifan/dsh-plugins",
+            "path": "packages/dsh-vertical-layout",
+            "revision": "9e104268f3e2185425c761a89e2039bb4e8a06fc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7928fa3e4bfa8f60a3bf21ed17f1dc67ffe483ba7ed24992dbb3ee44c08db6a2",
+                "code": "9e104268f3e2185425c761a89e2039bb4e8a06fc",
+                "maintenance": "819b6aa6c794da92b03320014249899e92aafd2eee0158f57ef9c9aa19818f05"
+            }
+        }
+    }
+}

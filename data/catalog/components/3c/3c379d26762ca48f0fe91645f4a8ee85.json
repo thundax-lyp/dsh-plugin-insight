@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3c379d26762ca48f0fe91645f4a8ee85",
+    "identity": "github:1400104434:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1400104434:root",
+            "repository": "lxj5820/dsh-boot-animation",
+            "path": "",
+            "revision": "4fb13e43edd3315cc773e7cffaa2ddb515c20866",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8928c35ecc97a32219f52c810ddc4c4606ab089a7a38ba8bd0e462fd7dd73156",
+                "code": "4fb13e43edd3315cc773e7cffaa2ddb515c20866",
+                "maintenance": "e0c8006724f1b4d4be3381743e472e8ffaf5c718fc054f632afc316ee69b5985"
+            }
+        }
+    }
+}

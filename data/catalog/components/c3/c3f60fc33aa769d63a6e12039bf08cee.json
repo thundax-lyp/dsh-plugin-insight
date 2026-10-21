@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "c3f60fc33aa769d63a6e12039bf08cee",
+    "identity": "github:1339750604:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339750604:root",
+            "repository": "usersx/dsh-automation-center",
+            "path": "",
+            "revision": "929f271aa40bd80b5b0906cf47ab151a57fd4525",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "b481387f589e51024c25fdfc3d30404362a267e904463b78394be3c0946fbbef",
+                "code": "929f271aa40bd80b5b0906cf47ab151a57fd4525",
+                "maintenance": "108ab58fb1382b7104fe23d56f6fc0e4719f59a3b922b9df65c01659d215aec7"
+            }
+        }
+    }
+}

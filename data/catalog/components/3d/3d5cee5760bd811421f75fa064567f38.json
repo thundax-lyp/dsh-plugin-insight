@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3d5cee5760bd811421f75fa064567f38",
+    "identity": "github:1408851498:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1408851498:root",
+            "repository": "PerryLink/dsh-spc-gbt-adapter",
+            "path": "",
+            "revision": "bf1392068cf3f261317fab536aa4a6296c0c78e3",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "08f7e8f3bebd901b35b72775c6cb64c14007ef380e75a4fa9450adc29cebc3a2",
+                "code": "bf1392068cf3f261317fab536aa4a6296c0c78e3",
+                "maintenance": "eddda1ab3c859b79ec00b419a4212f22f07081675d9e374b453782a51770c149"
+            }
+        }
+    }
+}

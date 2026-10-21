@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "d36e30adf28c1d78b42c904d1d234a9b",
+    "identity": "github:1334088310:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334088310:root",
+            "repository": "Player-MINEPIG/dsh-tavern",
+            "path": "",
+            "revision": "31d8c42a1d2b24dd23c9cd11f9c9f0079dffbf64",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "02e3eeff88f607efe665370b438077d58f8ce42d78817b1c70766f0f479e4879",
+                "code": "31d8c42a1d2b24dd23c9cd11f9c9f0079dffbf64",
+                "maintenance": "69bddc9c5b7bd1e363cbff4482a264311b1a52031c2faf5b2206deb3870293e6"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "43884049d7a7db60c27edd885b7012ec",
+    "identity": "github:1339126003:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339126003:root",
+            "repository": "pypcfx-glitch/risk-rule-design",
+            "path": "",
+            "revision": "89dff5161873917548ae28c1b1cb5f36f2f817fd",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "a23961332b2cc3f1143578d451d78dfd298cc66b8cfe43bdc04bca80c3c13167",
+                "code": "89dff5161873917548ae28c1b1cb5f36f2f817fd",
+                "maintenance": "bd98faad2e4dabdf4d564a37f807b12e1a5f2fb7db8033453933e70b3992d6b5"
+            }
+        }
+    }
+}

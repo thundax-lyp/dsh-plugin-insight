@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "345adb0dec6f9e6aa851572d183c1bd0",
+    "identity": "github:1333960156:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333960156:root",
+            "repository": "pc439527/dsh-notify-bark",
+            "path": "",
+            "revision": "7e2df52fcd0ab723b60e68aeb9998dfccf1b1bf6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "64379ee6cb94e36b84e670e4cad87deec52e49dbb7a9126b2526dba503fba2a3",
+                "code": "7e2df52fcd0ab723b60e68aeb9998dfccf1b1bf6",
+                "maintenance": "d43efc317f266fb0388dee82782f300bad4d081e80eb9ed099a1a7b137fcb149"
+            }
+        }
+    }
+}

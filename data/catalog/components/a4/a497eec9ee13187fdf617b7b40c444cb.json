@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "a497eec9ee13187fdf617b7b40c444cb",
+    "identity": "github:1330609336:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1330609336:root",
+            "repository": "freehul/sgme",
+            "path": "",
+            "revision": "5c57101165c4a9ad41d7ddeffc8147888865efe1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "2743167d76461aa0c3a82bd7a7b041114635569c8ef8cb0fdef78d18e54b7abc",
+                "code": "5c57101165c4a9ad41d7ddeffc8147888865efe1",
+                "maintenance": "3110c584e36e55043d9193a7fd8032454a70e8045aeff2d01e6a3ac1aa20fdb6"
+            }
+        }
+    }
+}

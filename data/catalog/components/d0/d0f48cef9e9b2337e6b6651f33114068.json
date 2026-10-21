@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "d0f48cef9e9b2337e6b6651f33114068",
+    "identity": "github:1373999617:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1373999617:root",
+            "repository": "ciskonc/dsh-context-imports",
+            "path": "",
+            "revision": "bcb57a58890a076ab77be87e137bb2e48918e531",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "b15874a9b9ae0ee2492a4161afb3f51efcc572417df4e75635867ece325fdf6d",
+                "code": "bcb57a58890a076ab77be87e137bb2e48918e531",
+                "maintenance": "cd8cf1aa69e10b910876b0529944f49ba4547e269903772cb4aec194b97efa94"
+            }
+        }
+    }
+}

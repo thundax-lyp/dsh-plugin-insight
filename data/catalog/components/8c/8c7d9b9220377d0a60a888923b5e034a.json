@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8c7d9b9220377d0a60a888923b5e034a",
+    "identity": "github:1424444709:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424444709:root",
+            "repository": "GEB-lab/dsh-codex-mcp",
+            "path": "",
+            "revision": "87770f3121ec755011745a7a2b7ce2e02516b73c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e3b2141455a0fbc9f674ed997bf1bd4db0a4b4c586ac7776f952830de1d078b6",
+                "code": "87770f3121ec755011745a7a2b7ce2e02516b73c",
+                "maintenance": "f837b64f789dc98a4621cf9659c7f8faa3c205e173fe1c2e8ce2f311095678a8"
+            }
+        }
+    }
+}

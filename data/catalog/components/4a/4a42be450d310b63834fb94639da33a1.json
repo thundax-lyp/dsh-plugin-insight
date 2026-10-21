@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4a42be450d310b63834fb94639da33a1",
+    "identity": "github:1342598910:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342598910:root",
+            "repository": "YiMlT/dsh-notify-yimit",
+            "path": "",
+            "revision": "8f435716561b6973cebddcfba071349a16bd2aa4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5732dc8bf5b156e22ff9b00dfbd9ff5cd22402a00941a30cb0702ef201a768da",
+                "code": "8f435716561b6973cebddcfba071349a16bd2aa4",
+                "maintenance": "d16de5d7af3a62acc9f6ad588780245a80556d7d78e57aa1d17beed82992f690"
+            }
+        }
+    }
+}

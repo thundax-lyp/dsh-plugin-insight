@@ -1,0 +1,402 @@
+{
+    "schema_version": 3,
+    "id": "1b78a11f4991d1613007717335f46490",
+    "identity": "github:1351854010:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1351854010:root",
+            "repository_id": 1351854010,
+            "component_id": "root",
+            "repository": "173787247/dsh-wsl-hostsvc",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-wsl-hostsvc",
+            "entry_type": "plugin",
+            "technical_category": "runtime-deployment",
+            "business_category": "infrastructure",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "fb467a3d47bc9c0c5e23be428681aab7a5ef2ad3edea94e0611a76489c94b499",
+                "code": "ef261f7a5d03f4beae08bd250f980941903e6304",
+                "maintenance": "6d5fe8f4eb67dfcfd9ebc3fd1b89dd80d947a4b36f0e5d040083b54317bac4fd"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-20-07-github-1351854010-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T10:01:48.787Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-20-07-github-1351854010-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/173787247/dsh-wsl-hostsvc/blob/ef261f7a5d03f4beae08bd250f980941903e6304/README.md",
+                    "revision": "ef261f7a5d03f4beae08bd250f980941903e6304",
+                    "captured_at": "2026-10-20T10:01:48.787Z",
+                    "summary": "从WSL探测Windows端本地模型服务，并生成连接与上下文配置建议。",
+                    "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-hostsvc/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-20-07-github-1351854010-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/173787247/dsh-wsl-hostsvc/blob/ef261f7a5d03f4beae08bd250f980941903e6304/index.js",
+                    "revision": "ef261f7a5d03f4beae08bd250f980941903e6304",
+                    "captured_at": "2026-10-20T10:01:48.787Z",
+                    "summary": "核查 index.js、lib/hostsvc.js、lib/providers.js；host_reach按服务端口探测多个候选地址，providers.js访问模型API并生成provider片段和上下文提示。",
+                    "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-hostsvc/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "抽读host_reach、服务探测与provider建议，未访问本地模型端口。 固定checkout的注册候选与关键主张定向抽读；未逐行完整审阅全部源码、测试、依赖及外部参照，未运行目标代码。评分仅针对文中明确的CLI/API/人工流程参照；跨场景迁移为解释性判断。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "本地模型运行在Windows而DSH运行于WSL时，找到实际可用的服务地址。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1351854010-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854010:root",
+                            "area": "code",
+                            "fingerprint": "ef261f7a5d03f4beae08bd250f980941903e6304"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:01:48.787Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "host_reach按服务端口探测多个候选地址，providers.js访问模型API并生成provider片段和上下文提示。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1351854010-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854010:root",
+                            "area": "code",
+                            "fingerprint": "ef261f7a5d03f4beae08bd250f980941903e6304"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:01:48.787Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "抽读host_reach、服务探测与provider建议，未访问本地模型端口。 固定checkout的注册候选与关键主张定向抽读；未逐行完整审阅全部源码、测试、依赖及外部参照，未运行目标代码。评分仅针对文中明确的CLI/API/人工流程参照；跨场景迁移为解释性判断。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1351854010-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854010:root",
+                            "area": "code",
+                            "fingerprint": "ef261f7a5d03f4beae08bd250f980941903e6304"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:01:48.787Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "固定版本包清单与作者说明已核对；依赖Windows模型服务、WSL网络互通与API格式；模型和驱动由外部环境提供。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1351854010-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854010:root",
+                            "area": "code",
+                            "fingerprint": "ef261f7a5d03f4beae08bd250f980941903e6304"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:01:48.787Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "探测请求与配置人工为主，模型加载及实际推理的资源成本另计，未测成功率。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1351854010-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854010:root",
+                            "area": "code",
+                            "fingerprint": "ef261f7a5d03f4beae08bd250f980941903e6304"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:01:48.787Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "优先核对apiReady而非仅TCP，再确认模型ID和真实上下文上限。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1351854010-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854010:root",
+                            "area": "code",
+                            "fingerprint": "ef261f7a5d03f4beae08bd250f980941903e6304"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:01:48.787Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "把传输连通、API就绪和配置生成串联，相比只看TCP端口更接近模型接入需求；没有证明真实生成成功。 models接口就绪不证明聊天、工具调用或目标上下文大小可用，自动生成配置仍需核对模型实际能力。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1351854010-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854010:root",
+                            "area": "code",
+                            "fingerprint": "ef261f7a5d03f4beae08bd250f980941903e6304"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:01:48.787Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "明确区分TCP与API就绪可借鉴；配置生成应保留实测能力与经验建议的边界。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1351854010-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854010:root",
+                            "area": "code",
+                            "fingerprint": "ef261f7a5d03f4beae08bd250f980941903e6304"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:01:48.787Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T10:01:48.787Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "ef261f7a5d03f4beae08bd250f980941903e6304",
+                "reviewed_at": "2026-10-20T10:01:48.787Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1351854010:root",
+                        "area": "code",
+                        "fingerprint": "ef261f7a5d03f4beae08bd250f980941903e6304"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 5,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty：WSL地址探测与provider生成属于适配；mechanism：TCP、API及上下文配置检查组合改变就绪判断，实质档但没有生成验收；transferability：分层健康模型可复用，服务接口耦合；simplification：把探测与配置串联为实质简化。",
+                    "basis": "interpretation",
+                    "score": 37,
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1351854010-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 0,
+                        "reach": 5,
+                        "economics": null
+                    },
+                    "rationale": "workflow：从多步骤地址/API检查到配置片段有实质流程组织；delivery：配置片段仍不等于成功模型任务；reach：便利跨系统部署者；economics：缺接通率与配置总时间对照。",
+                    "basis": "interpretation",
+                    "score": null,
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1351854010-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "Windows本地模型用户可试TCP/API分层探测，先核IP、模型ID与实际小生成，再采用配置片段。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "WSL寻找Windows推理服务地址的痛点明确。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "从连通到API就绪和配置生成比只探TCP更接近需求。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "服务模型列表探测可查，不证明聊天工具和上下文能力。"
+                    },
+                    "cost": {
+                        "score": 15,
+                        "rationale": "探测低成本，外部模型驱动资源及手工配置核对另计。"
+                    }
+                },
+                "score": 70,
+                "revision": "ef261f7a5d03f4beae08bd250f980941903e6304",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-20-07-github-1351854010-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1351854010:root",
+                        "area": "code",
+                        "fingerprint": "ef261f7a5d03f4beae08bd250f980941903e6304"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1351854010:root",
+            "repository": "173787247/dsh-wsl-hostsvc",
+            "path": "",
+            "revision": "ef261f7a5d03f4beae08bd250f980941903e6304",
+            "fingerprints": {
+                "directory": "fb467a3d47bc9c0c5e23be428681aab7a5ef2ad3edea94e0611a76489c94b499",
+                "code": "ef261f7a5d03f4beae08bd250f980941903e6304",
+                "maintenance": "6d5fe8f4eb67dfcfd9ebc3fd1b89dd80d947a4b36f0e5d040083b54317bac4fd"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T09:36:48.824Z",
+            "analysis_sha256": "155b3d44eb3377418980a686b33e27a4a04222e52229f3557cb87ea13435b55c"
+        },
+        "publication.metadata": "data/plugins/173787247--dsh-wsl-hostsvc/META.json",
+        "publication.summaries": {
+            "text": "从WSL探测Windows端本地模型服务，并生成连接与上下文配置建议。",
+            "revision": "ef261f7a5d03f4beae08bd250f980941903e6304",
+            "source_url": "https://github.com/173787247/dsh-wsl-hostsvc/blob/ef261f7a5d03f4beae08bd250f980941903e6304/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "ef261f7a5d03f4beae08bd250f980941903e6304",
+            "items": {
+                "模型工具": "host_reach：本地模型服务探测与配置建议。"
+            }
+        },
+        "publication.advice": {
+            "revision": "ef261f7a5d03f4beae08bd250f980941903e6304",
+            "text": "优先核对apiReady而非仅TCP，再确认模型ID和真实上下文上限。"
+        },
+        "registry": "data/plugins/173787247--dsh-wsl-hostsvc",
+        "reports": "# dsh-wsl-hostsvc\n\n> 从WSL探测Windows端本地模型服务，并生成连接与上下文配置建议。\n\n## 研究范围\n\n- **仓库**：[173787247/dsh-wsl-hostsvc](https://github.com/173787247/dsh-wsl-hostsvc)\n- **版本号**：0.4.3（[固定提交 ef261f7a5d03f4beae08bd250f980941903e6304](https://github.com/173787247/dsh-wsl-hostsvc/tree/ef261f7a5d03f4beae08bd250f980941903e6304)）\n- **版本日期**：2026-09-29（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已有贡献：把传输连通、API就绪和配置生成串联，相比只看TCP端口更接近模型接入需求；没有证明真实生成成功。\n\n结论边界：本次为固定版本源码核查，未执行目标代码或真实宿主验收，未核实独立使用效果。下文设计假设均未验证。\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：本地模型运行在Windows而DSH运行于WSL时，找到实际可用的服务地址。\n- **亮点**：把传输连通、API就绪和配置生成串联，相比只看TCP端口更接近模型接入需求；没有证明真实生成成功。\n- **思考**：models接口就绪不证明聊天、工具调用或目标上下文大小可用，自动生成配置仍需核对模型实际能力。\n- **建议**：待验证假设：将探测拆为TCP、模型列表、最小生成三层，可能减少配置看似正确但首个任务失败的情况；最后一层需单独执行授权。\n\n采用建议：优先核对apiReady而非仅TCP，再确认模型ID和真实上下文上限。\n\n## 核心贡献\n\n把传输连通、API就绪和配置生成串联，相比只看TCP端口更接近模型接入需求；没有证明真实生成成功。\n\n## 关键质疑\n\nmodels接口就绪不证明聊天、工具调用或目标上下文大小可用，自动生成配置仍需核对模型实际能力。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n待验证假设：将探测拆为TCP、模型列表、最小生成三层，可能减少配置看似正确但首个任务失败的情况；最后一层需单独执行授权。\n\n未来用仅开放端口、只支持models、实际可生成三种服务对照误判率；本轮不启动推理。\n\n## 场景与替代办法\n\n本地模型运行在Windows而DSH运行于WSL时，找到实际可用的服务地址。\n\n手工curl模型列表和检查网络地址；插件聚合配置提示，不替代服务自身健康检查。\n\n## 依赖与流程\n\n依赖Windows模型服务、WSL网络互通与API格式；模型和驱动由外部环境提供。\n\n运行探测，核对目标IP和模型ID，人工审查配置片段，再做小任务验证。\n\n## 成本与效果\n\n探测请求与配置人工为主，模型加载及实际推理的资源成本另计，未测成功率。\n\n把传输连通、API就绪和配置生成串联，相比只看TCP端口更接近模型接入需求；没有证明真实生成成功。 models接口就绪不证明聊天、工具调用或目标上下文大小可用，自动生成配置仍需核对模型实际能力。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：099f45df0fda1274d822f7e5f338a60a88c180018a98e733fbe7e73c29bac98e。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 232 | — | — | 1516 |\n| .js | source | 4 | 820 | 751 | 19 | — |\n| .js | test | 1 | 152 | 140 | 5 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **模型工具**：host_reach：本地模型服务探测与配置建议。\n\n## 工程亮点\n\n明确区分TCP与API就绪可借鉴；配置生成应保留实测能力与经验建议的边界。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 index.js、lib/hostsvc.js、lib/providers.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读host_reach、服务探测与provider建议，未访问本地模型端口。 固定checkout的注册候选与关键主张定向抽读；未逐行完整审阅全部源码、测试、依赖及外部参照，未运行目标代码。评分仅针对文中明确的CLI/API/人工流程参照；跨场景迁移为解释性判断。\n- 下一步：未来用仅开放端口、只支持models、实际可生成三种服务对照误判率；本轮不启动推理。\n",
+        "metadata": {
+            "repository": "173787247/dsh-wsl-hostsvc",
+            "repository_id": 1351854010,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 1,
+            "pushed_at": "2026-09-29T15:05:51Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-hostsvc%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640B:D1FDD:1489A8:222286:6AD84983 and timestamp 2026-10-21 05:11:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-hostsvc%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640C:17E195:13DE50:216CD0:6AD84983 and timestamp 2026-10-21 05:11:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-hostsvc%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640E:1DEEF7:149AE1:222569:6AD84983 and timestamp 2026-10-21 05:11:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-hostsvc%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6404:0BD8:0116:066D:6AD84983 and timestamp 2026-10-21 05:11:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-hostsvc%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6411:90BBC:149A70:222056:6AD84983 and timestamp 2026-10-21 05:11:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-wsl-hostsvc",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-wsl-hostsvc",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-wsl-hostsvc",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "ef261f7a5d03f4beae08bd250f980941903e6304",
+                "current_revision": "ef261f7a5d03f4beae08bd250f980941903e6304",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1351854010:root",
+            "repository": "173787247/dsh-wsl-hostsvc",
+            "path": "",
+            "revision": "ef261f7a5d03f4beae08bd250f980941903e6304",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fb467a3d47bc9c0c5e23be428681aab7a5ef2ad3edea94e0611a76489c94b499",
+                "code": "ef261f7a5d03f4beae08bd250f980941903e6304",
+                "maintenance": "6d5fe8f4eb67dfcfd9ebc3fd1b89dd80d947a4b36f0e5d040083b54317bac4fd"
+            }
+        }
+    }
+}

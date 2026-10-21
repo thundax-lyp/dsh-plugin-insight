@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "526b304ee55e99ea74c0e06cc74268d8",
+    "identity": "github:1334796299:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334796299:root",
+            "repository": "yokesky/dsh-usage-lens",
+            "path": "",
+            "revision": "8111fcc1c205c0a9155723bc03bf1a9a2b0fac1a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d32369877ef58f1d2d771bf0e7d13046cacb2f5f7112f6c1aeae9398171913ac",
+                "code": "8111fcc1c205c0a9155723bc03bf1a9a2b0fac1a",
+                "maintenance": "75e5e20f18799afaabc5d4050c47f997951034dd4a0839aa0578f896d9e7eabd"
+            }
+        }
+    }
+}

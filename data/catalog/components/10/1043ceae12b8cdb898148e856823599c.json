@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1043ceae12b8cdb898148e856823599c",
+    "identity": "github:1363739656:packages-enterprise-connection",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1363739656:packages-enterprise-connection",
+            "repository": "techflag/workdsh",
+            "path": "packages/enterprise-connection",
+            "revision": "e58137020fb4f5f863f551d8ae4234e6c3d355ea",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "df73db3837a6100293ef4b2080c67bb51cba872fda217c5d31b75e26e9e7c67e",
+                "code": "e58137020fb4f5f863f551d8ae4234e6c3d355ea",
+                "maintenance": "f93fce4568c764f8a0c087e216203939b5a0e8a9b8de2d3935bde165da3c7fb5"
+            }
+        }
+    }
+}

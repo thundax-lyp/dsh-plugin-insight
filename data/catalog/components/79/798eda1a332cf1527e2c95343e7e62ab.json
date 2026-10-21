@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "798eda1a332cf1527e2c95343e7e62ab",
+    "identity": "github:1333319964:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333319964:root",
+            "repository": "sliverp/DeepSeek-harness-qqbot",
+            "path": "",
+            "revision": "691af8ca2ffc9a1d67784d49744565b08d936f5e",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "63c07379c04db9652d4dd8f6f96c343ed8f3e0ebacca85b181ed33fe2aeaca0f",
+                "code": "691af8ca2ffc9a1d67784d49744565b08d936f5e",
+                "maintenance": "87289a038acc86d36b3859db1e0e9c582c700352997a8cab48d8cceaf0faa45f"
+            }
+        }
+    }
+}

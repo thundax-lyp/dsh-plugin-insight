@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "473771aab7a235c9785b24649f49ec0a",
+    "identity": "github:1373102804:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1373102804:root",
+            "repository": "black970/dsh-quota-viewer",
+            "path": "",
+            "revision": "9c475c3b53c6604060fa89c1b0156e4585cf5ccb",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "83637bd96d91f0d0f27187a989fcc00ff98f4c130d2a2118a3c20c4167ff2d99",
+                "code": "9c475c3b53c6604060fa89c1b0156e4585cf5ccb",
+                "maintenance": "a9a0e45396bf22ce8db6a0f484d0e0a884951bdb9696bc4761417ebbc321c0c0"
+            }
+        }
+    }
+}

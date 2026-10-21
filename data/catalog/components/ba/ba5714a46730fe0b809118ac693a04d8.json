@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ba5714a46730fe0b809118ac693a04d8",
+    "identity": "github:1345756903:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345756903:root",
+            "repository": "cking000bigdemon/dsh-acp-interactive",
+            "path": "",
+            "revision": "dfabf9be6a438237902cfde230afc5c3d44a96c8",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "fddc9c9a6c45b55e811a48e456bf31fcc90c785a6d80e653b927cf52d79c3b69",
+                "code": "dfabf9be6a438237902cfde230afc5c3d44a96c8",
+                "maintenance": "9e2faca260e61fbd04de707ef930ca2dcbe479d293e5b68b5108f9ba6fd89e36"
+            }
+        }
+    }
+}

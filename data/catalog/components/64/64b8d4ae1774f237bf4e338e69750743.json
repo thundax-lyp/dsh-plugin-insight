@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "64b8d4ae1774f237bf4e338e69750743",
+    "identity": "github:1367443766:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1367443766:root",
+            "repository": "WsTe47/dsh-step-clock",
+            "path": "",
+            "revision": "b0a304325b032560713ca6365f8155e74bc41744",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4524768d330b9f4b35446681e7de14f2329592b74f3ace57b0d6f804f3645c09",
+                "code": "b0a304325b032560713ca6365f8155e74bc41744",
+                "maintenance": "a45e0b665c89778fbbbebf1e50fc772b1f4d560e9b4cccbc123e776a62e0b578"
+            }
+        }
+    }
+}

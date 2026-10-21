@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ff470b6ad1510ba821fdfe09ce84d2eb",
+    "identity": "github:1335725904:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335725904:root",
+            "repository": "SoDaZilla-zzz/dsh-liquid-glass-balance-card",
+            "path": "",
+            "revision": "3fbca87bf6d68af66f1669c592bae1e6e6ab4463",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ef6a72e20ad68901c140c9766482c78b8ffd2fffa5b636d88312f1eb5179176b",
+                "code": "3fbca87bf6d68af66f1669c592bae1e6e6ab4463",
+                "maintenance": "075e3b7827f904a1a98788ecf88acc06075fa0370736946f47b7d0a767b24bfc"
+            }
+        }
+    }
+}

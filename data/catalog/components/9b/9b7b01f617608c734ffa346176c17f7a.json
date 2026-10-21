@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9b7b01f617608c734ffa346176c17f7a",
+    "identity": "github:1230059993:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1230059993:root",
+            "repository": "yuc16/PatentRadar",
+            "path": "",
+            "revision": "09805624bbd53d4acf58f51ef2c96822a436b2c5",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "dbbd6c5e87c9fddb72140a1d7c2356ca18a4baa2ca4606eb788aeb2d6f1b1937",
+                "code": "09805624bbd53d4acf58f51ef2c96822a436b2c5",
+                "maintenance": "383656d846eb6aaa073d1c0c4f0f83958cc6fd6d3b0881c8aae9547663b10074"
+            }
+        }
+    }
+}

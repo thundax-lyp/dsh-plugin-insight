@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "122921687b83ccfeb863281f4717599d",
+    "identity": "github:1333289615:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333289615:root",
+            "repository": "gxpppp/dsh-search-mcp",
+            "path": "",
+            "revision": "ae3a247aa104c952f720736cb4dfa3f024f01551",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "0fd2f7284ce5fff821493f90e857fb880262b2be488f6386b37fb682ec115c9b",
+                "code": "ae3a247aa104c952f720736cb4dfa3f024f01551",
+                "maintenance": "99afd901e50a54d84810205c7314779c23d81102fdc2d5134eca02edac9cf5dd"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5eac04c8a318129dd31ad3dc481f6de6",
+    "identity": "github:1415322910:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1415322910:root",
+            "repository": "Xxsttb/dsh-input-optimizer",
+            "path": "",
+            "revision": "49bb8bd1fb2d40d29aee07bb778d5c20122ff366",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "175bc90fbf629a5d2c8545e2202f69dc29427bc5f8bff2d57f99a18a764aff31",
+                "code": "49bb8bd1fb2d40d29aee07bb778d5c20122ff366",
+                "maintenance": "1e2cc33e1a9d86cd77551eac689b8731a442642871a5021b5e8c96fa5e808a2c"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "14b107a5787a9891368ff02d2706e397",
+    "identity": "github:1359535706:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1359535706:root",
+            "repository": "GooDAnDReaDY/dsh-session-control",
+            "path": "",
+            "revision": "5094fe0336b2434ea20fa57bdfdc1df2a53145fe",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3551571ffbb6fa65081445af987fb5f241798afe3ba65e0de9f4bcddb57dbd57",
+                "code": "5094fe0336b2434ea20fa57bdfdc1df2a53145fe",
+                "maintenance": "d77faea8993125799d21aea2f1a95b96e9519cedad672c4268e9e4ad84d63a68"
+            }
+        }
+    }
+}

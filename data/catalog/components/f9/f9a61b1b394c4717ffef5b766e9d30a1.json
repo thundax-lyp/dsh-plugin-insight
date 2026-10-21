@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "f9a61b1b394c4717ffef5b766e9d30a1",
+    "identity": "github:1348196954:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1348196954:root",
+            "repository": "duyanta123/dsh-repo-scanner",
+            "path": "",
+            "revision": "93780a2cec5e0f5cfa69212c7a0e8ca3468e9678",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "51bf26bec7183123b3004c5798d74459fc6863fc646da906412b2549800cf280",
+                "code": "93780a2cec5e0f5cfa69212c7a0e8ca3468e9678",
+                "maintenance": "a8ba8efdfd4fd56f74df33bb2dc13387673ab6cd72a1d13fb8344c5b7a633f22"
+            }
+        }
+    }
+}

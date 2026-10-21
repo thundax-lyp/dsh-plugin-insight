@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "5b6abf0597fe36fd02dc526eef3dea39",
+    "identity": "github:1334137030:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334137030:root",
+            "repository": "anneheartrecord/dsh-desk-pet",
+            "path": "",
+            "revision": "18bfb38316e5e4fe64f3c1fa50c5dd520776cfae",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "7c6d740303a685c860f15c81f2af475bb3e32d90d089fe9b24b45a162f2c9dbb",
+                "code": "18bfb38316e5e4fe64f3c1fa50c5dd520776cfae",
+                "maintenance": "fce73ab73d6ec800a3d893214bf5e284a812a284f17584fca6cc182288b00c97"
+            }
+        }
+    }
+}

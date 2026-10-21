@@ -1,7 +1,0 @@
-{
-  "revision": "7848bba53cccfe9e365a8fd46baa6d6883a29b78",
-  "items": {
-    "模型工具": "mysql_query、mysql_tables、mysql_execute、mysql_ddl。",
-    "界面": "连接配置及会话多选数据源。"
-  }
-}

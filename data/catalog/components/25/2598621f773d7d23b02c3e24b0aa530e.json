@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2598621f773d7d23b02c3e24b0aa530e",
+    "identity": "github:1335046216:packages-docker",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335046216:packages-docker",
+            "repository": "hyzyn/dsh-plugin-kit",
+            "path": "packages/docker",
+            "revision": "70074a602a42b595eaca2bdc2b4c0be3f3ab6a62",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5429c6d7a2aab532c27e1be1677d2bbd650a25af902210a3d882e4efec9a7522",
+                "code": "70074a602a42b595eaca2bdc2b4c0be3f3ab6a62",
+                "maintenance": "2e7b920c8063d40c640ac1413638a8754c56991d360e6f103eb8ec2a73934260"
+            }
+        }
+    }
+}

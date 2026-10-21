@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9501b893d0454fe3b852baab5c8e04a3",
+    "identity": "github:1327922805:integrations-deepseek-harness",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1327922805:integrations-deepseek-harness",
+            "repository": "yxy050208/multisim-mcp",
+            "path": "integrations/deepseek-harness",
+            "revision": "34b6f5bb449557a3993ba09c93b183bc2f829b09",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "581b84712d9d484effe4f3a3dbb8e012b2bb0dcbdf095a4caaa3158d0fe8dd9e",
+                "code": "34b6f5bb449557a3993ba09c93b183bc2f829b09",
+                "maintenance": "92a9788a29ab632144486ac757cec763942e24d46845e531617136e3c3af63ff"
+            }
+        }
+    }
+}

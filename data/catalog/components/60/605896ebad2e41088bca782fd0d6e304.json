@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "605896ebad2e41088bca782fd0d6e304",
+    "identity": "github:1377801500:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1377801500:root",
+            "repository": "curtainsmall/dsh-reckoner",
+            "path": "",
+            "revision": "1df7a04fa53e36320e9843bbb0279aa47a8f6899",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f39b536295362a313fd50214f421fe5eb39f1d1a9e179d64e6a7082b975b5848",
+                "code": "1df7a04fa53e36320e9843bbb0279aa47a8f6899",
+                "maintenance": "b9bb43ca6b6a261c90ffd33f94504a5d5c149113b4d6422c710a57e6a57bb868"
+            }
+        }
+    }
+}

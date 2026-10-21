@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0cde45bed1d11b25d8434de3f6bc8979",
+    "identity": "github:1349341851:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1349341851:root",
+            "repository": "xiaosurongjia/dsh-improved-inline-edit",
+            "path": "",
+            "revision": "9a1a3246cc251578b91b32f1a034bb102fdc26a9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "32ca18bc3ab8cddcc6cb11d2b4797f7726fc747b437506bf7c084387e1d00e9c",
+                "code": "9a1a3246cc251578b91b32f1a034bb102fdc26a9",
+                "maintenance": "6fb7c1ac06fb334f14dee44a2f534a8ed75ae2bc6d23a4f4ee113d18064d9e50"
+            }
+        }
+    }
+}

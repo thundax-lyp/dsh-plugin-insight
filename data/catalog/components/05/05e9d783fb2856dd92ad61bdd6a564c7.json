@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "05e9d783fb2856dd92ad61bdd6a564c7",
+    "identity": "github:1333883281:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333883281:root",
+            "repository": "Sev7een/dsh-plugin-automations",
+            "path": "",
+            "revision": "28829d3121032e3f0731ceca1718af3f233a1554",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2a93226bdeb7287f9c7b16cdbb8a3da272c62d930836a5f41f99739ffd80a715",
+                "code": "28829d3121032e3f0731ceca1718af3f233a1554",
+                "maintenance": "f5b18a4b09b836a1d95eac7a9da3e8a22e6f985fa0e82a79e65feba8b8ff8dc5"
+            }
+        }
+    }
+}

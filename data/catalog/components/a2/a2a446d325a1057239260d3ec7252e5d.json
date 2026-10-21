@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "a2a446d325a1057239260d3ec7252e5d",
+    "identity": "github:1333612974:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333612974:root",
+            "repository": "Fishsb/dsh-prompt-enhancer",
+            "path": "",
+            "revision": "435bd34e466d3480ec578d9b278076c6ee722721",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "224b8f6f3510d76744c2bffebe790e73412db5dabc7ad7997e50d31bc177f346",
+                "code": "435bd34e466d3480ec578d9b278076c6ee722721",
+                "maintenance": "734950ebbc5c3439b92f2ec66d45b545731eafe50aa094a46308bac07fb17e91"
+            }
+        }
+    }
+}

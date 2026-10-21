@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6f7828d5effeb36c8598148fa8b385d9",
+    "identity": "github:1420106452:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1420106452:root",
+            "repository": "yidao2000/dsh-local-background",
+            "path": "",
+            "revision": "67ae00283b6049e37ce292387bbafbfcafd0f1d8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4d50de2434ba8007f62ccde3769bb47e65a79920c1f39c7882d6637dd5a1b2d8",
+                "code": "67ae00283b6049e37ce292387bbafbfcafd0f1d8",
+                "maintenance": "5367fd306e4380938ca4d4b9fcd83bdeb7ef7436b519b31e1c05653b720bda3f"
+            }
+        }
+    }
+}

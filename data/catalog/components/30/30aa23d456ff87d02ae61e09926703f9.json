@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "30aa23d456ff87d02ae61e09926703f9",
+    "identity": "github:1334733769:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334733769:root",
+            "repository": "x2802490130-prog/dsh-writing-remote",
+            "path": "",
+            "revision": "d92fc1060a848b8cc6054ce420f7fb84bdc96e8c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "853d61dd095f626fe1e8e733107fa7f8d45fab8ccc7d65eb71ef46db80407ce2",
+                "code": "d92fc1060a848b8cc6054ce420f7fb84bdc96e8c",
+                "maintenance": "2ff2256474d5cb393331500e16838f2b12028ed9646dc714351bd0f6d5b862db"
+            }
+        }
+    }
+}

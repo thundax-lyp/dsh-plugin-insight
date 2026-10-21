@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f4799946c4750d4169505267914b9b02",
+    "identity": "github:1328831638:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1328831638:root",
+            "repository": "AnacondaKC/dsh-custom-css",
+            "path": "",
+            "revision": "d1e2ee86b223775947eb5e26c62291a45df2fdcd",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "40c28cb6d43e54ebd0b5c0c98a6dac23814187d16862d61b09e15e37f4fc59ab",
+                "code": "d1e2ee86b223775947eb5e26c62291a45df2fdcd",
+                "maintenance": "8dbbae35552eba418c83314b1941f32d3b263674cf2f83456672d4798b7f9415"
+            }
+        }
+    }
+}

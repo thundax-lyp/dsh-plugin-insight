@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "eedf792fdb06f151c1519478234ad105",
+    "identity": "github:1334190989:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334190989:root",
+            "repository": "Civitasv/dsh-plugin-diff-review",
+            "path": "",
+            "revision": "961596edc67524704b94d149c6a3be086254b701",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "0aabbedccefa3a06328abc612bda103748aff4959f635485bb4ff7fc23a09fc2",
+                "code": "961596edc67524704b94d149c6a3be086254b701",
+                "maintenance": "207052fe18986e0332fa001c31d0967b3802214e820dad63430c017330d13093"
+            }
+        }
+    }
+}

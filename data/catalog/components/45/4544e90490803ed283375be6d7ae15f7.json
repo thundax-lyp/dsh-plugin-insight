@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4544e90490803ed283375be6d7ae15f7",
+    "identity": "github:1284534061:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1284534061:root",
+            "repository": "openguardrails/openguardrails",
+            "path": "",
+            "revision": "a8e6e9e0cb4ff264e6d40a2c2eaefef85b4ee386",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "0c3926f124c953dd2b2cfe26f5b63b1861fa916f9454fece62f6f15f9cc43809",
+                "code": "a8e6e9e0cb4ff264e6d40a2c2eaefef85b4ee386",
+                "maintenance": "80396962a44ea40beb641000a843c9a5ea3100f3bbc711eb84384571daf7545f"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "03f6a508d0ae85577513a6f3618f5f78",
+    "identity": "github:1334972256:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334972256:root",
+            "repository": "chaojixinren/dsh-reviewer-bot",
+            "path": "",
+            "revision": "90e1906b3e00f2109af33d0246b00b814e7e0c49",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "096cbd4c59829346d0ee3327cf89f87202161f85ceea4ad01d219e8e4b87eaaa",
+                "code": "90e1906b3e00f2109af33d0246b00b814e7e0c49",
+                "maintenance": "4a56132a7fb0a2c7b3e84d3ce40ecaf2181275114046b54f28cbf853e8f063e3"
+            }
+        }
+    }
+}

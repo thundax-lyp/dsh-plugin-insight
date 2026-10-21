@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f74cff2e652d58439f2773c0281f7c4a",
+    "identity": "github:1345778070:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345778070:root",
+            "repository": "Ares-song-RD/dsh-desktop-pet",
+            "path": "",
+            "revision": "0c4124df67e9a4788d2675d7a8b6def8611d10bf",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "d45619efe9551ae4fc354d7020060ce64346314ab802585048aaef719abf7bfd",
+                "code": "0c4124df67e9a4788d2675d7a8b6def8611d10bf",
+                "maintenance": "7d5e4d0a9c1b27c75468e8f3ec16ec202806e6e1db4148e5a5964d5a54c5be2e"
+            }
+        }
+    }
+}

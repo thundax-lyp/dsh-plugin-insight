@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "95e238185e669156e1d1b2e81799c0a7",
+    "identity": "github:1353078028:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1353078028:root",
+            "repository": "Xian-JL/dsh-Kinich-theme",
+            "path": "",
+            "revision": "4ea3954195c6905d653a59e08e70e5d3a50f0f59",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "af3443115f5db908a69154ec6a88587831eb69ae19b35522a3d38eedf475423b",
+                "code": "4ea3954195c6905d653a59e08e70e5d3a50f0f59",
+                "maintenance": "4f94b74f7cbdbf3a546351b5f5a24704de23a53b94496da5f27a909b633d6b10"
+            }
+        }
+    }
+}

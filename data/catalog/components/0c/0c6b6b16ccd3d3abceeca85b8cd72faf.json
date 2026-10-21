@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0c6b6b16ccd3d3abceeca85b8cd72faf",
+    "identity": "github:1345093340:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345093340:root",
+            "repository": "dat-lequoc/dsh-kiro",
+            "path": "",
+            "revision": "6988643ea250d16e3dd20053f4ab679c90f7a68c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3a7a9832acc2867d0ed27f94e4eb02186cbea49706aa27df1a1892af4ce1d1e5",
+                "code": "6988643ea250d16e3dd20053f4ab679c90f7a68c",
+                "maintenance": "8594c0690d61ef573564e1ea3040514b02d3b153a8c937b5e6ccfe9fb4ecabae"
+            }
+        }
+    }
+}

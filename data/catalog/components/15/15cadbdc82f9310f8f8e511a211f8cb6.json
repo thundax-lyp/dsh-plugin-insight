@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "15cadbdc82f9310f8f8e511a211f8cb6",
+    "identity": "github:1335913663:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335913663:root",
+            "repository": "Cola1018/dsh-aicc-zhunao",
+            "path": "",
+            "revision": "b7d0180c8784f2c59b84c15815effc61d8089272",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d6c2ab538b8df2a02946cbd1cf2c0dcdf70f8fdf2212c611545146d88e79829b",
+                "code": "b7d0180c8784f2c59b84c15815effc61d8089272",
+                "maintenance": "fdc53f5ec5b6985b3d4e597894deb944dc691bc60e707aea39600b13e731fef6"
+            }
+        }
+    }
+}

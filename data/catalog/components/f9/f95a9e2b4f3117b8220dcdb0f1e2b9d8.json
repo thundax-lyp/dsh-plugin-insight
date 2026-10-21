@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f95a9e2b4f3117b8220dcdb0f1e2b9d8",
+    "identity": "github:1339547551:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339547551:root",
+            "repository": "Schumchanvi/dsh-voice-input-cn",
+            "path": "",
+            "revision": "af9391921eaf93b768e0d97d8b00aeeee04f7f14",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "48559c634998656bf677d4e141d6b01c23341ac6a84a6455181198f1905653a4",
+                "code": "af9391921eaf93b768e0d97d8b00aeeee04f7f14",
+                "maintenance": "751fcc8111eb96e40a345f5deb93377699de7a7351350d1cd0277be54773be9a"
+            }
+        }
+    }
+}

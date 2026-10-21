@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "736cb065e070c6af50c7919826dc6737",
+    "identity": "github:1337490420:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337490420:root",
+            "repository": "Yu-tao-Li/dsh-reference-checker",
+            "path": "",
+            "revision": "b6c1cf95937e4d19837702d1cd14f7679762a61e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9b30ee9d5a0ee2c4b35d805a6d142e05f8a79eec12f33dff9d68c1ad5d8afb72",
+                "code": "b6c1cf95937e4d19837702d1cd14f7679762a61e",
+                "maintenance": "1a43fb6c207ae94203e159c20855a86cb7bbb314f29a26c23cf4fefdd90ae504"
+            }
+        }
+    }
+}

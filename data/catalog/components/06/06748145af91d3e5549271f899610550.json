@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "06748145af91d3e5549271f899610550",
+    "identity": "github:1403153836:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1403153836:root",
+            "repository": "dreamtao2199/dsh-colors",
+            "path": "",
+            "revision": "39751b4e3fbb5dce7874750dc481c104d9740a0c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a76bb4faaaffaf8317595d9858c9dea5ae08fbce6bc4e1a4c77af4ae5df55ea4",
+                "code": "39751b4e3fbb5dce7874750dc481c104d9740a0c",
+                "maintenance": "3cb2ccae0a956174a3fa056d3bab92cff87ff6c93c6c511f3a974a101ac6d8f1"
+            }
+        }
+    }
+}

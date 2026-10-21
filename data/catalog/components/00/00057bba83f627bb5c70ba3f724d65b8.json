@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "00057bba83f627bb5c70ba3f724d65b8",
+    "identity": "github:1380631979:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1380631979:root",
+            "repository": "hawkongz/dsh-task-reminder",
+            "path": "",
+            "revision": "02de37d1b1307f16c68410dc761d027b2c871b09",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "42dc231008b1430bbc547ee8881a5977e15890e6c3d4491f9c78b0fe443f3be6",
+                "code": "02de37d1b1307f16c68410dc761d027b2c871b09",
+                "maintenance": "33ed30be346f001066e5a864d8575bd478b3672ef82546a01949d5a907b2e4e5"
+            }
+        }
+    }
+}

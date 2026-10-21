@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a43b328045c07efbd3e664adfe52b11a",
+    "identity": "github:1424067643:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424067643:root",
+            "repository": "Lovepeace-art/dsh-android-phone",
+            "path": "",
+            "revision": "40817f1ff30e4b2d944481d31c3115a6196c6a97",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "223a9cbab1dccd1f4149a6b1aa6988df3c2fe1b7ea07b678db2db99d8b48edae",
+                "code": "40817f1ff30e4b2d944481d31c3115a6196c6a97",
+                "maintenance": "481df57f31b09ef679758d1d98d7d73a9a9c64db1a66e65e8a0c56c842bbc04c"
+            }
+        }
+    }
+}

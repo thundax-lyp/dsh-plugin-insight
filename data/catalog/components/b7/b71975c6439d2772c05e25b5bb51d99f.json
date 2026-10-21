@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b71975c6439d2772c05e25b5bb51d99f",
+    "identity": "github:1353587413:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1353587413:root",
+            "repository": "VanadisGithub/dsh-skill-evolution",
+            "path": "",
+            "revision": "d88546e0973db33bd50fad388f7e14977cdee246",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "73d7b3c07aded791b33e7ac644560bebe173220003ee83a2721b681a940a51c2",
+                "code": "d88546e0973db33bd50fad388f7e14977cdee246",
+                "maintenance": "af6d54a8ceee56ecb6c6fe0d9d434488046e5f972c9fa07e2a6431ec81b08bc2"
+            }
+        }
+    }
+}

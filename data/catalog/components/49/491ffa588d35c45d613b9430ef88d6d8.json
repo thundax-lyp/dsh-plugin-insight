@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "491ffa588d35c45d613b9430ef88d6d8",
+    "identity": "github:1387405377:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1387405377:root",
+            "repository": "TetraSsky/dsh-hold",
+            "path": "",
+            "revision": "ebf5ee4d08a86579828c4f7997c82051c3078d63",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "83d7c8db2544a3937de9cc8d9156c61166d4a897286159104c386e9696259481",
+                "code": "ebf5ee4d08a86579828c4f7997c82051c3078d63",
+                "maintenance": "40dbdef1f28033aed5424d26bddaac186b8e67c7e448aa09760a52ca2bf3f7c9"
+            }
+        }
+    }
+}

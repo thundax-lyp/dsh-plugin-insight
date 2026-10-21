@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "00801a8a41c7dd6f6510391273b0829d",
+    "identity": "github:1425291372:plugins-cds-theme",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425291372:plugins-cds-theme",
+            "repository": "HwFee/HwFee-dsh",
+            "path": "plugins/cds-theme",
+            "revision": "c005bcfb1bb59490335db2cc6733bb41e0afddb9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "62ab704d175fadf3abed3cd0dcdf957c20d00b1bf210fc1dfed14c9f11744179",
+                "code": "c005bcfb1bb59490335db2cc6733bb41e0afddb9",
+                "maintenance": "0296699179363e0c52d39955fa2ee4e22fd48d35a76fde7f44bb2dcc4019d9e4"
+            }
+        }
+    }
+}

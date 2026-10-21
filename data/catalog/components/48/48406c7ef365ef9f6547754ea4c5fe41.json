@@ -1,0 +1,366 @@
+{
+    "schema_version": 3,
+    "id": "48406c7ef365ef9f6547754ea4c5fe41",
+    "identity": "github:1409724830:src",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1409724830:src",
+            "repository_id": 1409724830,
+            "component_id": "src",
+            "repository": "12we21/cute-fat-fish-pet",
+            "path": "src",
+            "aliases": [],
+            "name": "蓝毛小女仆桌宠",
+            "entry_type": "plugin",
+            "technical_category": "interface-input",
+            "business_category": "personal-productivity",
+            "tags": [
+                "桌宠",
+                "Electron",
+                "屏幕观察"
+            ],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "3fd6461052211f4b0fdd053bce371492b99b63044fc41b6c35c54a682a35c5b5",
+                "code": "e53f63e67227671aca092e3334c8611e29b880b6",
+                "maintenance": "0481cbbc951e64d846e6fd3a6ddf9702b4a284bf16ff206c0a0de604cd6718af"
+            },
+            "sources": [
+                {
+                    "id": "20261020-research40-github-1409724830-src-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T03:15:12.893Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "20261020-research40-github-1409724830-src-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/12we21/cute-fat-fish-pet/blob/e53f63e67227671aca092e3334c8611e29b880b6/src/README.md",
+                    "revision": "e53f63e67227671aca092e3334c8611e29b880b6",
+                    "captured_at": "2026-10-20T03:15:12.893Z",
+                    "summary": "以透明动画桌宠提供陪伴聊天，可选本地模型、在线模型与屏幕观察。",
+                    "artifact": "data/runs/2026-10-20-02/snapshots/12we21--cute-fat-fish-pet--src/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "20261020-research40-github-1409724830-src-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/12we21/cute-fat-fish-pet/blob/e53f63e67227671aca092e3334c8611e29b880b6/src/lib/index.js",
+                    "revision": "e53f63e67227671aca092e3334c8611e29b880b6",
+                    "captured_at": "2026-10-20T03:15:12.893Z",
+                    "summary": "核查 src/lib/index.js；插件 Host 调用本地 Ollama 或 DSH 模型，管理辅助进程与事件；资源和浏览器交互由 src 下的已构建 bundle 提供。",
+                    "artifact": "data/runs/2026-10-20-02/snapshots/12we21--cute-fat-fish-pet--src/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "只核查插件半区，不把独立 Windows 版离线语音和 TTS 算入；未验证辅助程序、资源许可或屏幕隐私。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "个人桌面用户希望用角色动画和轻量聊天增加陪伴感，而非完成标准化办公任务。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1409724830-src-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1409724830:src",
+                            "area": "code",
+                            "fingerprint": "e53f63e67227671aca092e3334c8611e29b880b6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:15:12.893Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "插件 Host 调用本地 Ollama 或 DSH 模型，管理辅助进程与事件；资源和浏览器交互由 src 下的已构建 bundle 提供。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1409724830-src-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1409724830:src",
+                            "area": "code",
+                            "fingerprint": "e53f63e67227671aca092e3334c8611e29b880b6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:15:12.893Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "角色交互价值高度主观；本地优先不是任何配置下都离线，在线模型可能接收聊天及选定观察内容。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1409724830-src-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1409724830:src",
+                            "area": "code",
+                            "fingerprint": "e53f63e67227671aca092e3334c8611e29b880b6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:15:12.893Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "资源下载、辅助进程和模型调用会占网络、内存与额度；没有量化陪伴效果或资源占用。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1409724830-src-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1409724830:src",
+                            "area": "code",
+                            "fingerprint": "e53f63e67227671aca092e3334c8611e29b880b6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:15:12.893Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "配置与聊天数据放在包外利于升级，但保留旧数据根与路由标识，重命名和卸载需按实际路径处理。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1409724830-src-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1409724830:src",
+                            "area": "code",
+                            "fingerprint": "e53f63e67227671aca092e3334c8611e29b880b6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:15:12.893Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先关闭屏幕观察和在线回退，确认数据路径、模型路由与卸载，再按个人偏好试用。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1409724830-src-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1409724830:src",
+                            "area": "code",
+                            "fingerprint": "e53f63e67227671aca092e3334c8611e29b880b6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:15:12.893Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "只核查插件半区，不把独立 Windows 版离线语音和 TTS 算入；未验证辅助程序、资源许可或屏幕隐私。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1409724830-src-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1409724830:src",
+                            "area": "code",
+                            "fingerprint": "e53f63e67227671aca092e3334c8611e29b880b6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:15:12.893Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "组件 src 的 cute-fat-fish-pet 1.2.3，仓库含大量动画与打包依赖，不能把总体行数当原创代码规模。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1409724830-src-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1409724830:src",
+                            "area": "code",
+                            "fingerprint": "e53f63e67227671aca092e3334c8611e29b880b6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:15:12.893Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T03:15:12.893Z",
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "角色陪伴有主观价值，但辅助程序、资源许可与数据路由未核，先关闭屏幕和在线回退核对这些关键前提。",
+                "criteria": {
+                    "scenario": {
+                        "score": 15,
+                        "rationale": "个人陪伴动画聊天有明确小众需求。"
+                    },
+                    "advantage": {
+                        "score": 6,
+                        "rationale": "相对纯动画增量是模型互动，未证明更有价值。"
+                    },
+                    "evidence": {
+                        "score": 6,
+                        "rationale": "仅核查插件Host半区，辅助程序和资源隐私未验。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "较大资源、模型与helper占内存网络且退出清理需维护。"
+                    }
+                },
+                "score": 32,
+                "revision": "e53f63e67227671aca092e3334c8611e29b880b6",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "20261020-research40-github-1409724830-src-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1409724830:src",
+                        "area": "code",
+                        "fingerprint": "e53f63e67227671aca092e3334c8611e29b880b6"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1409724830:src",
+            "repository": "12we21/cute-fat-fish-pet",
+            "path": "src",
+            "revision": "e53f63e67227671aca092e3334c8611e29b880b6",
+            "fingerprints": {
+                "directory": "3fd6461052211f4b0fdd053bce371492b99b63044fc41b6c35c54a682a35c5b5",
+                "code": "e53f63e67227671aca092e3334c8611e29b880b6",
+                "maintenance": "0481cbbc951e64d846e6fd3a6ddf9702b4a284bf16ff206c0a0de604cd6718af"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T02:51:30Z",
+            "analysis_sha256": "c4aa2c6de4865432fcd061a4bf88cd8bc4bb7b256460b74a459d2cdc61a91216"
+        },
+        "publication.metadata": "data/plugins/12we21--cute-fat-fish-pet--src/META.json",
+        "publication.summaries": {
+            "text": "以透明动画桌宠提供陪伴聊天，可选本地模型、在线模型与屏幕观察。",
+            "revision": "e53f63e67227671aca092e3334c8611e29b880b6",
+            "source_url": "https://github.com/12we21/cute-fat-fish-pet/blob/e53f63e67227671aca092e3334c8611e29b880b6/src/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "e53f63e67227671aca092e3334c8611e29b880b6",
+            "items": {
+                "界面": "动画桌宠和聊天交互。",
+                "后台": "模型路由与可选桌面辅助进程。"
+            }
+        },
+        "publication.advice": {
+            "revision": "e53f63e67227671aca092e3334c8611e29b880b6",
+            "text": "先关闭屏幕观察和在线回退，确认数据路径、模型路由与卸载，再按个人偏好试用。"
+        },
+        "registry": "data/plugins/12we21--cute-fat-fish-pet--src",
+        "reports": "# 蓝毛小女仆桌宠\n\n> 以透明动画桌宠提供陪伴聊天，可选本地模型、在线模型与屏幕观察。\n\n## 固定范围与依据\n\n固定提交 [e53f63e67227671aca092e3334c8611e29b880b6](https://github.com/12we21/cute-fat-fish-pet/blob/e53f63e67227671aca092e3334c8611e29b880b6/src/lib/index.js)；组件路径：src。核查时间 2026-10-20T03:15:12.893Z；本轮基准 2026-10-20T02:51:30Z。\n源码抽读路径：src/lib/index.js。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：个人桌面用户希望用角色动画和轻量聊天增加陪伴感，而非完成标准化办公任务。\n- **亮点**：插件 Host 调用本地 Ollama 或 DSH 模型，管理辅助进程与事件；资源和浏览器交互由 src 下的已构建 bundle 提供。\n- **思考**：角色交互价值高度主观；本地优先不是任何配置下都离线，在线模型可能接收聊天及选定观察内容。\n- **建议**：先关闭屏幕观察和在线回退，确认数据路径、模型路由与卸载，再按个人偏好试用。\n\n## 场景与替代办法\n\n个人桌面用户希望用角色动画和轻量聊天增加陪伴感，而非完成标准化办公任务。\n\n纯动画桌宠成本更低且少网络依赖；加入模型仅适合愿意管理角色、路由与隐私配置的人群。\n\n## 依赖与流程\n\n依赖 DSH 模型或 Ollama、动画解码和可选原生辅助进程；完整仓库安装还有较大下载体积。\n\n选模型与交互设置后聊天，观察屏幕能力明确启用；异常时分别检查 helper、模型和资源。\n\n## 成本与效果\n\n资源下载、辅助进程和模型调用会占网络、内存与额度；没有量化陪伴效果或资源占用。\n\n角色交互价值高度主观；本地优先不是任何配置下都离线，在线模型可能接收聊天及选定观察内容。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：src；内容摘要：7ebfc18ec4c79fb8e7b63ae3b4370bc0c14b950253280c6dd07d72da50e8cb22。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 13 | 17928 | 15530 | 2258 | — |\n| .md | source | 3 | 418 | — | — | 7243 |\n| .mjs | source | 2 | 454 | 329 | 102 | — |\n| .ts | source | 33 | 8986 | 6565 | 2013 | — |\n| .ts | test | 17 | 3130 | 2499 | 349 | — |\n\n排除 381 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **界面**：动画桌宠和聊天交互。\n- **后台**：模型路由与可选桌面辅助进程。\n\n## 工程亮点\n\n配置与聊天数据放在包外利于升级，但保留旧数据根与路由标识，重命名和卸载需按实际路径处理。\n\n## 分发与兼容\n\n组件 src 的 cute-fat-fish-pet 1.2.3，仓库含大量动画与打包依赖，不能把总体行数当原创代码规模。\n\n## 历史对照\n\n前次代码指纹为 e53f63e67227671aca092e3334c8611e29b880b6；本轮固定为 e53f63e67227671aca092e3334c8611e29b880b6。纯动画桌宠成本更低且少网络依赖；加入模型仅适合愿意管理角色、路由与隐私配置的人群。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：只核查插件半区，不把独立 Windows 版离线语音和 TTS 算入；未验证辅助程序、资源许可或屏幕隐私。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：检查本地/在线路由、无模型降级、屏幕开关、helper 退出和数据清理，并实测内存与下载。\n",
+        "metadata": {
+            "repository": "12we21/cute-fat-fish-pet",
+            "repository_id": 1409724830,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 12,
+            "pushed_at": "2026-10-18T06:46:43Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A12we21%2Fcute-fat-fish-pet%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6414:265AC:14677E:21C40D:6AD8491B and timestamp 2026-10-21 05:09:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A12we21%2Fcute-fat-fish-pet%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6402:23DB53:153C60:22BBBD:6AD8491B and timestamp 2026-10-21 05:09:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A12we21%2Fcute-fat-fish-pet%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6401:1541C9:13E902:215713:6AD8491B and timestamp 2026-10-21 05:09:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A12we21%2Fcute-fat-fish-pet%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641C:1CA4C8:1491B1:220DED:6AD8491B and timestamp 2026-10-21 05:09:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A12we21%2Fcute-fat-fish-pet%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641D:1F2B1B:147005:21E005:6AD8491B and timestamp 2026-10-21 05:09:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "cute-fat-fish-pet",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/cute-fat-fish-pet",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/cute-fat-fish-pet",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "e53f63e67227671aca092e3334c8611e29b880b6",
+                "current_revision": "e53f63e67227671aca092e3334c8611e29b880b6",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1409724830:src",
+            "repository": "12we21/cute-fat-fish-pet",
+            "path": "src",
+            "revision": "e53f63e67227671aca092e3334c8611e29b880b6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3fd6461052211f4b0fdd053bce371492b99b63044fc41b6c35c54a682a35c5b5",
+                "code": "e53f63e67227671aca092e3334c8611e29b880b6",
+                "maintenance": "0481cbbc951e64d846e6fd3a6ddf9702b4a284bf16ff206c0a0de604cd6718af"
+            }
+        }
+    }
+}

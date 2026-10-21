@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "279e4fbd11f3bc729a0a057a6311e03e",
+    "identity": "github:1421933799:plugin-dsh-session-window-client",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1421933799:plugin-dsh-session-window-client",
+            "repository": "CHIANGANGSTER/dsh-session-window",
+            "path": "plugin/dsh-session-window-client",
+            "revision": "56a1ab3fd6c349b01031d5160de47cff5f65ba61",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9c5b84acc334bb0ce76285482e8eef083f986827fb8010951a4bfa52ccb823b1",
+                "code": "56a1ab3fd6c349b01031d5160de47cff5f65ba61",
+                "maintenance": "8ad08b44b7c0eedcc8fe86c3277e265f27aa9eeb5b551b114a250813fa87749f"
+            }
+        }
+    }
+}

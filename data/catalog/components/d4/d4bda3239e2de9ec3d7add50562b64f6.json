@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d4bda3239e2de9ec3d7add50562b64f6",
+    "identity": "github:1392260416:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1392260416:root",
+            "repository": "winditer/dsh-paste-spill",
+            "path": "",
+            "revision": "6db48978fbcc9577a268b90ce4c7630b45c37b2a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b625e582bb7ded0c130199805a1f083fb7d12869ad4699af71903631427b713c",
+                "code": "6db48978fbcc9577a268b90ce4c7630b45c37b2a",
+                "maintenance": "e5088fb9cdeb622041386e5d79739b097af79a44e2f13b79510038bebc671d31"
+            }
+        }
+    }
+}

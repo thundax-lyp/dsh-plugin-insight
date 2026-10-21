@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "32b9add479313c34dcdc98a8ec5ea602",
+    "identity": "github:1340081645:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340081645:root",
+            "repository": "Kenerlee/dsh-moments-aieo",
+            "path": "",
+            "revision": "f99d524ee2eb9f3db17095577b6e741a38e84259",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "33114affa2130853efcd1d676dd780bbd505e3a5edf1f8b4ea3488067b3c7143",
+                "code": "f99d524ee2eb9f3db17095577b6e741a38e84259",
+                "maintenance": "cebb53d97102ecfa5093524b2ecbe73c3974f1ad06e6a5a1dcce91d9b57a1c46"
+            }
+        }
+    }
+}

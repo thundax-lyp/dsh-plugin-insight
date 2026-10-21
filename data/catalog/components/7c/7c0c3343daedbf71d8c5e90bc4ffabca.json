@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7c0c3343daedbf71d8c5e90bc4ffabca",
+    "identity": "github:1373482931:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1373482931:root",
+            "repository": "yuanyiHY/deepseek-media-gallery",
+            "path": "",
+            "revision": "c84a6f80aa1348713e375e2ec9f3f2f314609851",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2e9f60968c4ad13d42ad298657fbf0594b777b0a0c0f117022d6d030815de3c7",
+                "code": "c84a6f80aa1348713e375e2ec9f3f2f314609851",
+                "maintenance": "783f2331b3aacdb604503ac08f8b2ae27bf8d654fa13f9b6c5eed09a2985de06"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6380647af2321e5d21b737011cd1f3b6",
+    "identity": "github:1333878288:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333878288:root",
+            "repository": "NagasakiSoyo-ui/dsh-llm-deepseek-vision",
+            "path": "",
+            "revision": "4347929795042b665b6ddccd6806f22b92689f32",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "48747365b7c278ffb128cce29099f58a825468d5c4dad3f06972fa4c8f45fa14",
+                "code": "4347929795042b665b6ddccd6806f22b92689f32",
+                "maintenance": "68ecdf55394d1c0c550db6e946f3bae8e0928d07b85f3db4fea55afe51699771"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "600ffcc0fdfe4e2b08697f122d1143b7",
+    "identity": "github:1389183792:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1389183792:root",
+            "repository": "jyb114/pocket-bridge",
+            "path": "",
+            "revision": "feb74732a67035bc94760f48dc33ba4d80e2b3ba",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "89b1581e767c3148b12f797d2785f1ae175ad7853e7a9a30139cd333847d0ee2",
+                "code": "feb74732a67035bc94760f48dc33ba4d80e2b3ba",
+                "maintenance": "9385a93843b69be00fc52103a1eb901a83381406244e375496eb21d569aaafd2"
+            }
+        }
+    }
+}

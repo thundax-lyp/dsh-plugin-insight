@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "db2f7ec7c1b54403e1aff819678948f5",
+    "identity": "github:1425108451:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425108451:root",
+            "repository": "vlln/dsh-pancha",
+            "path": "",
+            "revision": "d7ffdc0f101e1bfce25d27c63683f3e7609c1ad7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "23e8a0519acb97ed2ad85c4341c1efbf0fe23a4e80eaf1d3b0be0f3ba3bb13eb",
+                "code": "d7ffdc0f101e1bfce25d27c63683f3e7609c1ad7",
+                "maintenance": "c965c03f9707a3702a6b74a21ed432dcc80fe26da467420ccf4179158bacce36"
+            }
+        }
+    }
+}

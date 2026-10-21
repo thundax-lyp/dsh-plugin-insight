@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "ddd9163a0e9c895e922ad609a79092e0",
+    "identity": "github:1335363771:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335363771:root",
+            "repository": "OK-wx/dsh-ocgo-lite",
+            "path": "",
+            "revision": "96314bcd7966c88b6907fe5797719793a9b014e9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "5b526f6a6d19ee598ecbb47d000338ff894b803e46f3ff5cc252033ffbd80dea",
+                "code": "96314bcd7966c88b6907fe5797719793a9b014e9",
+                "maintenance": "8bfb4249508f3a43f1ca0670aa82a431772cf8b2c58eb48a0311f91dd851bf98"
+            }
+        }
+    }
+}

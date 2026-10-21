@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f1f3d9f7e00bb975bc1f86e847a68467",
+    "identity": "github:1422020108:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1422020108:root",
+            "repository": "nanshang328/dsh-power",
+            "path": "",
+            "revision": "1e01f3023b3891e5f2ea08cf8982bd95232bdc50",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e61db40103755f98e853d39c21addadd2e02d405f47d32baf44700120249c01f",
+                "code": "1e01f3023b3891e5f2ea08cf8982bd95232bdc50",
+                "maintenance": "d2e79ef7b0753e4eca64093cf6cd98199eca5a0fc200528869d12e69a5073250"
+            }
+        }
+    }
+}

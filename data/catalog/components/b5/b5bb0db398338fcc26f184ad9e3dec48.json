@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b5bb0db398338fcc26f184ad9e3dec48",
+    "identity": "github:1419303080:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1419303080:root",
+            "repository": "quberi/dsh-quberi",
+            "path": "",
+            "revision": "6f7a797904fbf10658dc36b9e1d15a00b133fa87",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c5ccbfffbd218a138b890ae5604a7e98836bcbe953a4233453940d52cfaa308e",
+                "code": "6f7a797904fbf10658dc36b9e1d15a00b133fa87",
+                "maintenance": "4a83123fe9a5774bb0f916eac6373423fce2d10e894a78e218fc1ee73ba6ff72"
+            }
+        }
+    }
+}

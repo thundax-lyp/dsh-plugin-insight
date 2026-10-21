@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9e0a24f67792c42a3abf26c563d6386b",
+    "identity": "github:1334408207:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334408207:root",
+            "repository": "motongv/dsh-voice",
+            "path": "",
+            "revision": "9a392dda335b4b8af7102c7c5e9f87cd57c293cd",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "0dd33f866315d721db14c83eb259e3451dbc9229931b15e1f607942c7004c9ee",
+                "code": "9a392dda335b4b8af7102c7c5e9f87cd57c293cd",
+                "maintenance": "63adba8b36e4ac2ea1dcf050b2b5f6df601681d1a7071bf948783602fe5567ad"
+            }
+        }
+    }
+}

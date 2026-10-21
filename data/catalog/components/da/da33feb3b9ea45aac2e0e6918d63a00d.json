@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "da33feb3b9ea45aac2e0e6918d63a00d",
+    "identity": "github:1335248751:packages-dsh-liangshen",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335248751:packages-dsh-liangshen",
+            "repository": "DamonKoy/dsh-web-ui",
+            "path": "packages/dsh-liangshen",
+            "revision": "3647a33fa467e0335260468614f6eed04b196c38",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9f761221a20279491f14649b249c933f14deb938c5b3966576d4e971eb04ac22",
+                "code": "3647a33fa467e0335260468614f6eed04b196c38",
+                "maintenance": "3006678a3da32375f98dde533cd5999a73ad41afc20c676065b8dc945d77b3a6"
+            }
+        }
+    }
+}

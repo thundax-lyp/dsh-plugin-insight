@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "59f0f6facb85f1aa2498db4befb91030",
+    "identity": "github:1270079000:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1270079000:root",
+            "repository": "creght-dev/skills",
+            "path": "",
+            "revision": "6e2472125aa140de26923332ab54dbae58342c54",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "c9a068cff917bd085a8720c239551ecc3d45af7b83a9e427a8cb5922697c505b",
+                "code": "6e2472125aa140de26923332ab54dbae58342c54",
+                "maintenance": "f534b04d4a308ae642fe13a98d86e11ec3c453fe58dc7385476e09d85a72196c"
+            }
+        }
+    }
+}

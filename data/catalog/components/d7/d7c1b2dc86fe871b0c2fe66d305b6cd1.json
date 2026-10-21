@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d7c1b2dc86fe871b0c2fe66d305b6cd1",
+    "identity": "github:1407572157:plugin",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1407572157:plugin",
+            "repository": "lcy0121/dsh-plugin-compat-check",
+            "path": "plugin",
+            "revision": "a59328d55be6888848d2efa24500c772c61e10ee",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c49fbc6eeb4a4428efac26f63e50ef94b83b1b2710387120082efbfbe707f4f1",
+                "code": "a59328d55be6888848d2efa24500c772c61e10ee",
+                "maintenance": "fa0c885333b2b0b48deb64d516d2cf5d427e8f7b9a75b5f2e240bfda8b082c92"
+            }
+        }
+    }
+}

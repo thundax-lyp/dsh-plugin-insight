@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8dc2dcb527e81f7641ff0021905a2b2f",
+    "identity": "github:1336793734:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336793734:root",
+            "repository": "op7418/pilot-harness",
+            "path": "",
+            "revision": "d1fa9c15fc00c05ea6931aafd724554ca34d5a6d",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "16877b28703ab96f5addec386977a8c98e604f8c4b22c0ae30019af82a2e0d13",
+                "code": "d1fa9c15fc00c05ea6931aafd724554ca34d5a6d",
+                "maintenance": "dece6469b34b84b2f6deaf5f3e3d45ce5a3519ae271560437b1abe3483bed701"
+            }
+        }
+    }
+}

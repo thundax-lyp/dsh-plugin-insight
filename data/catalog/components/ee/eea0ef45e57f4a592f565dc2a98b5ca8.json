@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "eea0ef45e57f4a592f565dc2a98b5ca8",
+    "identity": "github:1370876956:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1370876956:root",
+            "repository": "RCYD857/857-dsh-file-attach",
+            "path": "",
+            "revision": "20245fb0a33b7c002744bfc4f26b9f8d2650485f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3e7b79c85a6036df455be1d26c1797fd418fcd083819a8d77a60996797f3fd1e",
+                "code": "20245fb0a33b7c002744bfc4f26b9f8d2650485f",
+                "maintenance": "471fd3c14d9b864ec88ee6b45d50477023491f3947e2da83fbdfdccc92f52b48"
+            }
+        }
+    }
+}

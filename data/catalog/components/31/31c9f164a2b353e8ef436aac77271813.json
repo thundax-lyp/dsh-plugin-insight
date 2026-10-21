@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "31c9f164a2b353e8ef436aac77271813",
+    "identity": "github:1403148994:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1403148994:root",
+            "repository": "hoshF/dsh-md-export",
+            "path": "",
+            "revision": "87ef6ce6ea04756c279999eeacc571cea2894ee7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0454183fc02b4ae26deb3bdd6e018151d55fdc0b24e13f8edd2875cc9414c323",
+                "code": "87ef6ce6ea04756c279999eeacc571cea2894ee7",
+                "maintenance": "3323916d28bf93984d04d2e9ed897daf91bbba4a7de24dd829841fbf01f6fd00"
+            }
+        }
+    }
+}

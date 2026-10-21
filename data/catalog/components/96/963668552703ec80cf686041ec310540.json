@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "963668552703ec80cf686041ec310540",
+    "identity": "github:1343287733:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343287733:root",
+            "repository": "etony668/dsh-task-board",
+            "path": "",
+            "revision": "a4fb549560b619b8881512c8cc52d8843bb20a21",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b622b4987a5ad108c2453ca4f6c342023fd04ca0317feda12a6111efb3cec750",
+                "code": "a4fb549560b619b8881512c8cc52d8843bb20a21",
+                "maintenance": "95cf9ad6d6edeee428373a8dac2602d9ff28cd15e661915d5b5b9c8827dd129a"
+            }
+        }
+    }
+}

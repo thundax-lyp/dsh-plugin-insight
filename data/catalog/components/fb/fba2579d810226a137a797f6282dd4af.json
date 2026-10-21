@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "fba2579d810226a137a797f6282dd4af",
+    "identity": "github:1335044426:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335044426:root",
+            "repository": "eric-song-dev/dsh-ikun-pet",
+            "path": "",
+            "revision": "ada74e3755730bbff1e619ca0f8ff7926d03ba98",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "832ebb778c00786ed733252fc410a3981c4d04b7e50960acbee52beeda1b7f78",
+                "code": "ada74e3755730bbff1e619ca0f8ff7926d03ba98",
+                "maintenance": "faa5172096e8ce35edf00eec70dd69e29797516e9b3bd6b0e849f4f53416f43d"
+            }
+        }
+    }
+}

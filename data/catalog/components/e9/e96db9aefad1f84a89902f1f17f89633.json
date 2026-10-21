@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e96db9aefad1f84a89902f1f17f89633",
+    "identity": "github:1343736374:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343736374:root",
+            "repository": "zhming0/dsh-yawn",
+            "path": "",
+            "revision": "ee783fda42fa98c38c479671d165e8ec28e8465c",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "c4b04d7e9d427cce00839d01431538e43bf1ca28c5f60dd5c5f40c6407600aad",
+                "code": "ee783fda42fa98c38c479671d165e8ec28e8465c",
+                "maintenance": "969f953d731e7259d9543b580edb28efd4b5a4ba056df9a2f6fb03753f943a5d"
+            }
+        }
+    }
+}

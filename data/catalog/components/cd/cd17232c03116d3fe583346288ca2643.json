@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "cd17232c03116d3fe583346288ca2643",
+    "identity": "github:1341408410:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1341408410:root",
+            "repository": "GreenLv/dsh-session-insights",
+            "path": "",
+            "revision": "7a1b21dbb867da9c7cda573e7e4d5c00be1a53a0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "89c766ef3ea0c53a86398afbf1cac3fa48f6022418bfa7b9124e8f0b67914e6a",
+                "code": "7a1b21dbb867da9c7cda573e7e4d5c00be1a53a0",
+                "maintenance": "2cf3a87c348e1c39b7eb22995cef84ea487004953dd1150773d5802a2d096693"
+            }
+        }
+    }
+}

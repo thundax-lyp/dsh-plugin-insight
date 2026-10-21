@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e883b81fd70376e1b0f166a6a6925bb6",
+    "identity": "github:1336076386:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336076386:root",
+            "repository": "izwarm195/dsh-net-tools",
+            "path": "",
+            "revision": "7392ec55ca6db884821311d739859ddea72211de",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f0004b071113aff3c154855d1468bf76ba567aa879714120c64b0360668c25e2",
+                "code": "7392ec55ca6db884821311d739859ddea72211de",
+                "maintenance": "08efcbef6bc47619e5da3bb35169097df0ea26eee254fe90bed23dfb8e2e7a91"
+            }
+        }
+    }
+}

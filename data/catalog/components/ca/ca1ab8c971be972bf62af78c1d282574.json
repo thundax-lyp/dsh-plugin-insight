@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ca1ab8c971be972bf62af78c1d282574",
+    "identity": "github:1368431886:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1368431886:root",
+            "repository": "Astervolans/dsh-literature-search",
+            "path": "",
+            "revision": "ce28917c589a3e13715729c0d91e5dc129f5ee1c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b04b6679d4ac3786a448fd0cf2cf0e474854b620a3d1765332ea03e4a8155aee",
+                "code": "ce28917c589a3e13715729c0d91e5dc129f5ee1c",
+                "maintenance": "d4d1f0cd69a0d71b923b43b52573c8a6577b1bba25af177c3bd1ebfc06f69270"
+            }
+        }
+    }
+}

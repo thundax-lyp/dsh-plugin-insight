@@ -1,8 +1,0 @@
-{
-  "revision": "2759e457534a1611b29d2744b154926af133a74d",
-  "items": {
-    "用户命令": "/language读取/设置/重置进程内语言覆盖。",
-    "事件监听": "提示section和agent/pre-step周期notice，设置更新刷新locale缓存。",
-    "界面": "设置表单投影及包声明client入口；未运行界面交互。"
-  }
-}

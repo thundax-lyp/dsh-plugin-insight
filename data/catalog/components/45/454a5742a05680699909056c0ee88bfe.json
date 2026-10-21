@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "454a5742a05680699909056c0ee88bfe",
+    "identity": "github:1423923338:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1423923338:root",
+            "repository": "yezitotempeace/dsh-tmp-cleaner",
+            "path": "",
+            "revision": "1ab8ba74aa9e30fa4fe276d4ca0b8ab0a6c853e0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e71efdb396b34017f54fc431e87e7b12843792fa5e00dc60bb1e5a11ba4781ff",
+                "code": "1ab8ba74aa9e30fa4fe276d4ca0b8ab0a6c853e0",
+                "maintenance": "dc44d3feaab4ca22cdb28071569356654cff66d0a2d02723d7a412a8311e2086"
+            }
+        }
+    }
+}

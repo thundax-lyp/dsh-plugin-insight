@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4deeff9ec662a7875baca6fc56552a66",
+    "identity": "github:1416614939:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1416614939:root",
+            "repository": "kobubu/Rag-Coding",
+            "path": "",
+            "revision": "e6300cd5a85d31cc91e2635b47338fad3b21c53a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4dbd1e3d56ff26c14ecbf7600c880e69565af6c253ea6a5a499b00a8323ace14",
+                "code": "e6300cd5a85d31cc91e2635b47338fad3b21c53a",
+                "maintenance": "47ce2191e011dfef57a6d30c29b2881cbfb76827c11dda1ba72cf6da5e2e35cf"
+            }
+        }
+    }
+}

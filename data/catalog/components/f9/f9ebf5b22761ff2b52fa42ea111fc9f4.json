@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f9ebf5b22761ff2b52fa42ea111fc9f4",
+    "identity": "github:1399356376:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1399356376:root",
+            "repository": "cspyz/dsh-terse-mode",
+            "path": "",
+            "revision": "42da6fbe16401b8243f0fd1ebcb870ae7be77398",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a7e87664ec860c9d99067edce3219cb42b0bb607bc0ce52cdf368c396359b7e3",
+                "code": "42da6fbe16401b8243f0fd1ebcb870ae7be77398",
+                "maintenance": "e4f889e2dbfdbb246eec071f80964e3a3c18c0ebc70e307ec5370219125819f2"
+            }
+        }
+    }
+}

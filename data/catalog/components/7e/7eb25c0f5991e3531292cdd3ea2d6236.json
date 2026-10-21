@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7eb25c0f5991e3531292cdd3ea2d6236",
+    "identity": "github:1391411136:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1391411136:root",
+            "repository": "Yum-wu/dsh-jev-preset",
+            "path": "",
+            "revision": "1aa6c0f1cae1f2d6a35ae8b420fe7015fe195b4a",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "e0dfbdc6a43fe54578b44216e788a99580db97e422b92edb34663dbfc51e300d",
+                "code": "1aa6c0f1cae1f2d6a35ae8b420fe7015fe195b4a",
+                "maintenance": "6c6550a0a36776c1ea453f68c1314ad5863268372aea22b86fb848447fa6981d"
+            }
+        }
+    }
+}

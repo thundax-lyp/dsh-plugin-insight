@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bc568714532321b23b279236e02fece2",
+    "identity": "github:1334147011:plugins-evidence-first",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334147011:plugins-evidence-first",
+            "repository": "jinguanghai/deepseek-harness-forge-plugins",
+            "path": "plugins/evidence-first",
+            "revision": "ad4e2dd73be06dc72fc05e0e1775032270bc3a0d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e22e25400a279a20b9a25b52f5a0521b5ca58829b1414a28f3ff205ac2582503",
+                "code": "ad4e2dd73be06dc72fc05e0e1775032270bc3a0d",
+                "maintenance": "cc63a08ef5929f674a8f9e78898cc36c70c9d32edb8e2bbfff92d522360abe7a"
+            }
+        }
+    }
+}

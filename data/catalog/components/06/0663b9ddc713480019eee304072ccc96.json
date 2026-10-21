@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0663b9ddc713480019eee304072ccc96",
+    "identity": "github:1422999066:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1422999066:root",
+            "repository": "kissfirembx/dsh-skill-map",
+            "path": "",
+            "revision": "eab967caadff753b77f2a7b8044f76855dfa398e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "175fdbf93f8352b6c9e1aa7654aa796229f88a1c1d92a5bcd8c7da00b55b4e0d",
+                "code": "eab967caadff753b77f2a7b8044f76855dfa398e",
+                "maintenance": "7effe53ec9aaeba88ab3337d84f4bc737423e0945422b4b7d428a1f3d5b0dab8"
+            }
+        }
+    }
+}

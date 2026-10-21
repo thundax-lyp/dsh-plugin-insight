@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a8640a979c936b9396529f7dcd328c13",
+    "identity": "github:1337068693:dsh-tool-control-chrome",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337068693:dsh-tool-control-chrome",
+            "repository": "lyd123qw2008/pi-control-chrome",
+            "path": "dsh-tool-control-chrome",
+            "revision": "a6d66800a83ed04ab1b09b73f7a532cb5241c3a6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "26785d761d20db15ce07becc117b2050c1183fd3500bf8cb6093e9b2b2fd2d32",
+                "code": "a6d66800a83ed04ab1b09b73f7a532cb5241c3a6",
+                "maintenance": "141dc3df9afe220c15b9e62800bad80d55e9a4b88b6e3f67f2bb45f391b1edde"
+            }
+        }
+    }
+}

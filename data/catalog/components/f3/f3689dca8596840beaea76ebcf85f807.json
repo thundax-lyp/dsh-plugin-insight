@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f3689dca8596840beaea76ebcf85f807",
+    "identity": "github:1385052998:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1385052998:root",
+            "repository": "YV919/dmxapi-dsh",
+            "path": "",
+            "revision": "665b70a99bcdc802bdb7926af7e69fe6e3147bb7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "891ec1366f141d7a3c33812cb799f65f748965bb87e27052fa371659a560e9a7",
+                "code": "665b70a99bcdc802bdb7926af7e69fe6e3147bb7",
+                "maintenance": "41108e33c5c4d66f9169a7db0b2e10619d860710c48262c7ed919aa8dd8b9b52"
+            }
+        }
+    }
+}

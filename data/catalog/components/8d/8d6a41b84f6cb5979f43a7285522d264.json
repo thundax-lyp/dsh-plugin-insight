@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8d6a41b84f6cb5979f43a7285522d264",
+    "identity": "github:1396933151:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1396933151:root",
+            "repository": "MuFeng262/dsh-thinking-slider",
+            "path": "",
+            "revision": "6ef6eaa59908ab0ebc6e70ac918cc01fceac8121",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ed087a532db5b9b4c8c4ee71cb039848197bc76297a9c9ee1481c68a8826c34a",
+                "code": "6ef6eaa59908ab0ebc6e70ac918cc01fceac8121",
+                "maintenance": "9a5148d987f2a787d58f8f945067312ff7b37c60a76e99c4d98c1ba82548d5f9"
+            }
+        }
+    }
+}

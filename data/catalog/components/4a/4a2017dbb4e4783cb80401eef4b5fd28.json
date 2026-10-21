@@ -1,0 +1,447 @@
+{
+    "schema_version": 3,
+    "id": "4a2017dbb4e4783cb80401eef4b5fd28",
+    "identity": "github:1415822787:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1415822787:root",
+            "repository_id": 1415822787,
+            "component_id": "root",
+            "repository": "AirPineApplea/feiyu-memory",
+            "path": "",
+            "aliases": [],
+            "name": "feiyu-memory",
+            "entry_type": "plugin",
+            "technical_category": "memory-knowledge",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "eedb9737f3229b7e2ca687d108830d3f6aa24ba8522643aa107ff2b5f1345e56",
+                "code": "37a81b92947b10d7376ed764d8ff6392e8969e93",
+                "maintenance": "6a094d1e7073dc3661642e1a00abe474909712e16e2afe5d1ce69a65ecf12f1b"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-07-github-1415822787-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T08:06:17.485Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-07-github-1415822787-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/AirPineApplea/feiyu-memory/blob/37a81b92947b10d7376ed764d8ff6392e8969e93/README.md",
+                    "revision": "37a81b92947b10d7376ed764d8ff6392e8969e93",
+                    "captured_at": "2026-10-21T08:06:17.485Z",
+                    "summary": "以分层日记、印象与检索记忆延续 DSH 对话中的角色体验。",
+                    "artifact": "data/runs/2026-10-21-07/snapshots/airpineapplea--feiyu-memory/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-07-github-1415822787-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/AirPineApplea/feiyu-memory/blob/37a81b92947b10d7376ed764d8ff6392e8969e93/src/host/index.mjs",
+                    "revision": "37a81b92947b10d7376ed764d8ff6392e8969e93",
+                    "captured_at": "2026-10-21T08:06:17.485Z",
+                    "summary": "核查 src/host/index.mjs、src/core/privacy.mjs、src/core/config.mjs、src/core/recall.mjs、src/core/archive.mjs、package.json；会话事件收集近期文本，turn-stopping本地gate决定是否入队；串行后台用宿主默认provider/模型生成日记和印象。发送前正则scrub，结构合并再落本地目录；新轮prompt按预算组合persona、最近记忆和BM25-lite相关日记。",
+                    "artifact": "data/runs/2026-10-21-07/snapshots/airpineapplea--feiyu-memory/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "根Host事件/模型固化/持久化，privacy/config/recall/archive及作者边界；未核全部归档/导出工具，不执行模型或读取用户真对话。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "娱乐陪伴对话用户希望新会话仍延续往事和称呼；交付是可查的日记记忆，不能当保管隐私的档案或工作事实真相。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1415822787-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1415822787:root",
+                            "area": "code",
+                            "fingerprint": "37a81b92947b10d7376ed764d8ff6392e8969e93"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:06:17.485Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "会话事件收集近期文本，turn-stopping本地gate决定是否入队；串行后台用宿主默认provider/模型生成日记和印象。发送前正则scrub，结构合并再落本地目录；新轮prompt按预算组合persona、最近记忆和BM25-lite相关日记。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1415822787-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1415822787:root",
+                            "area": "code",
+                            "fingerprint": "37a81b92947b10d7376ed764d8ff6392e8969e93"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:06:17.485Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "根Host事件/模型固化/持久化，privacy/config/recall/archive及作者边界；未核全部归档/导出工具，不执行模型或读取用户真对话。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1415822787-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1415822787:root",
+                            "area": "code",
+                            "fingerprint": "37a81b92947b10d7376ed764d8ff6392e8969e93"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:06:17.485Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "源码ESM双面bundle、可选Schemastery投影；数据默认~/.dsh/feiyu-diary，换插件包不等于清理记忆目录。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1415822787-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1415822787:root",
+                            "area": "code",
+                            "fingerprint": "37a81b92947b10d7376ed764d8ff6392e8969e93"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:06:17.485Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "现金为固化模型和每轮记忆prompt，预算不是无token；人工需删改误记、配置persona与隐私规则、备份/迁移记忆。零运行依赖不代表零联网或零维护。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1415822787-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1415822787:root",
+                            "area": "code",
+                            "fingerprint": "37a81b92947b10d7376ed764d8ff6392e8969e93"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:06:17.485Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "仅面向愿意审阅记忆的小型娱乐对话；私密内容、工作事实和多用户隔离场景不依赖其正则保护与共享日记。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1415822787-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1415822787:root",
+                            "area": "code",
+                            "fingerprint": "37a81b92947b10d7376ed764d8ff6392e8969e93"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:06:17.485Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "控制上下文长度并保留可读经历；无对照证明连续感、记忆准确或隐私泄漏率。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1415822787-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1415822787:root",
+                            "area": "code",
+                            "fingerprint": "37a81b92947b10d7376ed764d8ff6392e8969e93"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:06:17.485Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "writeChain串行并先合并磁盘手改再写，文件权限0600、按轮缓存减少prompt重算；正则预清洗优于原文直接送模型，但并非全面脱敏证明，持久化错误日志不等于可确认落盘。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1415822787-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1415822787:root",
+                            "area": "code",
+                            "fingerprint": "37a81b92947b10d7376ed764d8ff6392e8969e93"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:06:17.485Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "相较把全部历史塞入prompt，用本地启发式筛选、结构化固化和有限预算召回组织“经历”，并让手写人格/日记在持久化前参与合并。增量是陪伴记忆的取舍与维护机制；默认模型能力、BM25与摘要方法为已有技术，不能据此宣称真实人格连续。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1415822787-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1415822787:root",
+                            "area": "code",
+                            "fingerprint": "37a81b92947b10d7376ed764d8ff6392e8969e93"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:06:17.485Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "“全本地/密钥硬拦”是否足以保护对话？consolidate经ctx.llm选择默认provider，若是远程API仍会发送正则清洗后的文本、近期日记和关系结构；规则只能覆盖已列密钥/格式。各会话共享同一archive目录，相关性召回不是项目/用户访问隔离；模型总结还可能把误解固化成后续“记忆”。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1415822787-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1415822787:root",
+                            "area": "code",
+                            "fingerprint": "37a81b92947b10d7376ed764d8ff6392e8969e93"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:06:17.485Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "为记忆附可追溯原句/会话来源与可撤回确认，并按用途分区召回，可能降低错误印象反复强化和跨任务泄漏。以用户纠正旧事实、同主题不同会话和未命中格式的秘密样例比较污染率/误召回与人工负担；若更正后旧印象仍被注入，应否定保真改进。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1415822787-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1415822787:root",
+                            "area": "code",
+                            "fingerprint": "37a81b92947b10d7376ed764d8ff6392e8969e93"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:06:17.485Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T08:06:17.485Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "37a81b92947b10d7376ed764d8ff6392e8969e93",
+                "reviewed_at": "2026-10-21T08:06:17.485Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1415822787:root",
+                        "area": "code",
+                        "fingerprint": "37a81b92947b10d7376ed764d8ff6392e8969e93"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "新颖性9：分层摘要记忆与检索已有；机制15：本地门控、结构固化/手写合并和预算召回组合明确；迁移性10：按轮缓存/增量记忆可复用；简化8：少调用模型但维护选择与遗忘复杂度。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1415822787-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "工作流9：陪伴连续性体验改善，未改变工作交付责任；交付8：可读日记是新增持久内容但真实性待复核；覆盖5：作者明确娱乐用户而非生产；经济4：门控可少固化调用，实际节省未测。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1415822787-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "愿意审阅记忆的个人娱乐对话者可用少量非敏感内容试；核默认provider数据去向并清理误记，不用于工作真相或多用户隔离。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "陪伴对话延续往事与称呼需求明确。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "日记、印象与预算召回控制上下文并保留可读经历。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "已核正则清洗和默认模型固化，未验隐私或记忆准确。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "后台模型与提示token、共享目录及误记维护负担显著。"
+                    }
+                },
+                "score": 54,
+                "revision": "37a81b92947b10d7376ed764d8ff6392e8969e93",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-07-github-1415822787-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1415822787:root",
+                        "area": "code",
+                        "fingerprint": "37a81b92947b10d7376ed764d8ff6392e8969e93"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1415822787:root",
+            "repository": "AirPineApplea/feiyu-memory",
+            "path": "",
+            "revision": "37a81b92947b10d7376ed764d8ff6392e8969e93",
+            "fingerprints": {
+                "directory": "eedb9737f3229b7e2ca687d108830d3f6aa24ba8522643aa107ff2b5f1345e56",
+                "code": "37a81b92947b10d7376ed764d8ff6392e8969e93",
+                "maintenance": "6a094d1e7073dc3661642e1a00abe474909712e16e2afe5d1ce69a65ecf12f1b"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T07:52:12Z",
+            "analysis_sha256": "ec03f3bbd3cfd0f0f7a3e7258feee23579176d0b527c347ad428ff93c2172cc5"
+        },
+        "publication.metadata": "data/plugins/airpineapplea--feiyu-memory/META.json",
+        "publication.summaries": {
+            "text": "以分层日记、印象与检索记忆延续 DSH 对话中的角色体验。",
+            "revision": "37a81b92947b10d7376ed764d8ff6392e8969e93",
+            "source_url": "https://github.com/AirPineApplea/feiyu-memory/blob/37a81b92947b10d7376ed764d8ff6392e8969e93/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "37a81b92947b10d7376ed764d8ff6392e8969e93",
+            "items": {
+                "模型工具": "feiyu_note向后续会话留条记忆。",
+                "事件监听": "会话/Agent生命周期与turn-stopping触发固化及prompt记忆注入。",
+                "后台": "串行固化与本地分层档案维护。",
+                "Host 路由": "日记/配置/导入导出等本地UI桥。"
+            }
+        },
+        "publication.advice": {
+            "revision": "37a81b92947b10d7376ed764d8ff6392e8969e93",
+            "text": "仅面向愿意审阅记忆的小型娱乐对话；私密内容、工作事实和多用户隔离场景不依赖其正则保护与共享日记。"
+        },
+        "registry": "data/plugins/airpineapplea--feiyu-memory",
+        "reports": "# feiyu-memory\n\n> 以分层日记、印象与检索记忆延续 DSH 对话中的角色体验。\n\n## 使用建议\n\n仅面向愿意审阅记忆的小型娱乐对话；私密内容、工作事实和多用户隔离场景不依赖其正则保护与共享日记。\n\n核查状态：门控、清洗、固化和召回路径源码支持；记忆保真、隐私覆盖与人格连续体验未实测。 本轮只检查源码，未安装、执行目标代码/测试或真实宿主验收。\n\n## 洞察短评\n\n- **用途**：娱乐陪伴对话用户希望新会话仍延续往事和称呼；交付是可查的日记记忆，不能当保管隐私的档案或工作事实真相。\n- **亮点**：相较把全部历史塞入prompt，用本地启发式筛选、结构化固化和有限预算召回组织“经历”，并让手写人格/日记在持久化前参与合并。增量是陪伴记忆的取舍与维护机制；默认模型能力、BM25与摘要方法为已有技术，不能据此宣称真实人格连续。\n- **思考**：“全本地/密钥硬拦”是否足以保护对话？consolidate经ctx.llm选择默认provider，若是远程API仍会发送正则清洗后的文本、近期日记和关系结构；规则只能覆盖已列密钥/格式。各会话共享同一archive目录，相关性召回不是项目/用户访问隔离；模型总结还可能把误解固化成后续“记忆”。\n- **建议**：为记忆附可追溯原句/会话来源与可撤回确认，并按用途分区召回，可能降低错误印象反复强化和跨任务泄漏。以用户纠正旧事实、同主题不同会话和未命中格式的秘密样例比较污染率/误召回与人工负担；若更正后旧印象仍被注入，应否定保真改进。\n\n## 场景与替代办法\n\n娱乐陪伴对话用户希望新会话仍延续往事和称呼；交付是可查的日记记忆，不能当保管隐私的档案或工作事实真相。\n\n人工日记、简单摘要prompt或宿主记忆；本项为陪伴体验组织选择/遗忘，不提供权威知识库。\n\n## 能力清单\n\n- **模型工具**：feiyu_note向后续会话留条记忆。\n- **事件监听**：会话/Agent生命周期与turn-stopping触发固化及prompt记忆注入。\n- **后台**：串行固化与本地分层档案维护。\n- **Host 路由**：日记/配置/导入导出等本地UI桥。\n\n## 依赖与流程\n\n会话事件收集近期文本，turn-stopping本地gate决定是否入队；串行后台用宿主默认provider/模型生成日记和印象。发送前正则scrub，结构合并再落本地目录；新轮prompt按预算组合persona、最近记忆和BM25-lite相关日记。\n\nDSH llm/defaultModel、agents/sessions/systemPrompt和可写目录；默认provider可能远程，配置模型需与provider兼容。\n\n对话→本地gate→清洗近期12条→模型结构输出→合并日记/关系→写盘→新轮按预算召回；关闭/删除数据才能管理遗忘，需核是否备份残留。\n\n源码ESM双面bundle、可选Schemastery投影；数据默认~/.dsh/feiyu-diary，换插件包不等于清理记忆目录。\n\n## 成本与效果\n\n现金为固化模型和每轮记忆prompt，预算不是无token；人工需删改误记、配置persona与隐私规则、备份/迁移记忆。零运行依赖不代表零联网或零维护。\n\n控制上下文长度并保留可读经历；无对照证明连续感、记忆准确或隐私泄漏率。\n\n## 核心贡献\n\n相较把全部历史塞入prompt，用本地启发式筛选、结构化固化和有限预算召回组织“经历”，并让手写人格/日记在持久化前参与合并。增量是陪伴记忆的取舍与维护机制；默认模型能力、BM25与摘要方法为已有技术，不能据此宣称真实人格连续。\n\n## 关键质疑\n\n“全本地/密钥硬拦”是否足以保护对话？consolidate经ctx.llm选择默认provider，若是远程API仍会发送正则清洗后的文本、近期日记和关系结构；规则只能覆盖已列密钥/格式。各会话共享同一archive目录，相关性召回不是项目/用户访问隔离；模型总结还可能把误解固化成后续“记忆”。\n\n## 工程亮点\n\nwriteChain串行并先合并磁盘手改再写，文件权限0600、按轮缓存减少prompt重算；正则预清洗优于原文直接送模型，但并非全面脱敏证明，持久化错误日志不等于可确认落盘。\n\n固定源码依据：[src/host/index.mjs](https://github.com/AirPineApplea/feiyu-memory/blob/37a81b92947b10d7376ed764d8ff6392e8969e93/src/host/index.mjs)、[src/core/privacy.mjs](https://github.com/AirPineApplea/feiyu-memory/blob/37a81b92947b10d7376ed764d8ff6392e8969e93/src/core/privacy.mjs)、[src/core/config.mjs](https://github.com/AirPineApplea/feiyu-memory/blob/37a81b92947b10d7376ed764d8ff6392e8969e93/src/core/config.mjs)、[src/core/recall.mjs](https://github.com/AirPineApplea/feiyu-memory/blob/37a81b92947b10d7376ed764d8ff6392e8969e93/src/core/recall.mjs)、[src/core/archive.mjs](https://github.com/AirPineApplea/feiyu-memory/blob/37a81b92947b10d7376ed764d8ff6392e8969e93/src/core/archive.mjs)、[package.json](https://github.com/AirPineApplea/feiyu-memory/blob/37a81b92947b10d7376ed764d8ff6392e8969e93/package.json)。\n\n## 未来设计假设（未验证）\n\n为记忆附可追溯原句/会话来源与可撤回确认，并按用途分区召回，可能降低错误印象反复强化和跨任务泄漏。以用户纠正旧事实、同主题不同会话和未命中格式的秘密样例比较污染率/误召回与人工负担；若更正后旧印象仍被注入，应否定保真改进。\n\n未运行；固定合成对话可测更正传播、跨会话误召回、隐私漏检和固化调用总量，须区分自评与独立标注。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：fc7ffeed34fac24ab71f35161bf20bf40689a325c554d15841fdd3e7bfd8429f。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 7 | 2596 | — | — | 30617 |\n| .js | source | 1 | 449 | 350 | 66 | — |\n| .mjs | source | 22 | 6234 | 3716 | 2005 | — |\n| .mjs | test | 11 | 3725 | 3044 | 297 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n\n## 核查说明\n\n- 版本号：0.2.0；版本日期：2026-10-19（固定提交日期，北京时间，非包发布日期）。\n- 固定提交：[37a81b92](https://github.com/AirPineApplea/feiyu-memory/tree/37a81b92947b10d7376ed764d8ff6392e8969e93)；本轮基准：2026-10-21T07:52:12Z。\n- 已检查：上述源码路径、README、包清单及组件inventory。\n- 范围：根Host事件/模型固化/持久化，privacy/config/recall/archive及作者边界；未核全部归档/导出工具，不执行模型或读取用户真对话。\n- 未执行：目标安装、代码/测试、真实宿主和第三方服务。作者说明与源码不等于独立效果验证。\n",
+        "metadata": {
+            "repository": "AirPineApplea/feiyu-memory",
+            "repository_id": 1415822787,
+            "captured_at": "2026-10-21T07:59:12.555Z",
+            "window_start": "2026-09-21T07:59:12.555Z",
+            "stars": 4,
+            "pushed_at": "2026-10-19T15:59:38Z",
+            "issues": {
+                "open": 5,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAirPineApplea%2Ffeiyu-memory%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C670:264749:6D6BE5:7557CE:6AD870D9 and timestamp 2026-10-21 07:59:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAirPineApplea%2Ffeiyu-memory%20is%3Aissue%20created%3A2026-09-21T07%3A59%3A12.555Z..2026-10-21T07%3A59%3A12.555Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C830:274DC4:6E4A73:763552:6AD870DA and timestamp 2026-10-21 07:59:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAirPineApplea%2Ffeiyu-memory%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T07%3A59%3A12.555Z..2026-10-21T07%3A59%3A12.555Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CD42:52C57:65D55D:6DBEB6:6AD870DE and timestamp 2026-10-21 07:59:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAirPineApplea%2Ffeiyu-memory%20is%3Aissue%20updated%3A2026-09-21T07%3A59%3A12.555Z..2026-10-21T07%3A59%3A12.555Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D2B0:10F8F5:6DC5C3:75B020:6AD870E1 and timestamp 2026-10-21 07:59:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "feiyu-memory",
+                "captured_at": "2026-10-21T07:59:29.906Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/feiyu-memory",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:59:29.906Z",
+                    "source_url": "https://registry.npmjs.org/feiyu-memory",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1415822787:root",
+            "repository": "AirPineApplea/feiyu-memory",
+            "path": "",
+            "revision": "37a81b92947b10d7376ed764d8ff6392e8969e93",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "eedb9737f3229b7e2ca687d108830d3f6aa24ba8522643aa107ff2b5f1345e56",
+                "code": "37a81b92947b10d7376ed764d8ff6392e8969e93",
+                "maintenance": "6a094d1e7073dc3661642e1a00abe474909712e16e2afe5d1ce69a65ecf12f1b"
+            }
+        }
+    }
+}

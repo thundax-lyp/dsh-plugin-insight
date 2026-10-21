@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0c72f0c4ae4ca5b93757ee2b0430acd5",
+    "identity": "github:1333596918:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333596918:root",
+            "repository": "STARDUSTLC666/dsh-dingtalk",
+            "path": "",
+            "revision": "4145e163e52485fc0a28f78ebd81148f83ad8bbc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "054ea96901b3a0cb3d934fe5734304da2ee761abd70471ff65d526da14884c23",
+                "code": "4145e163e52485fc0a28f78ebd81148f83ad8bbc",
+                "maintenance": "5be6cb3f2307480f53afacb4ac57429a80e9c15bf0b819eadd60caddb8dbeebe"
+            }
+        }
+    }
+}

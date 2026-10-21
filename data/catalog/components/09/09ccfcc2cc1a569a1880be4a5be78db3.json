@@ -1,0 +1,382 @@
+{
+    "schema_version": 3,
+    "id": "09ccfcc2cc1a569a1880be4a5be78db3",
+    "identity": "github:1335139860:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1335139860:root",
+            "repository_id": 1335139860,
+            "component_id": "root",
+            "repository": "2006spy/dsh-token-billing",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-token-billing",
+            "entry_type": "plugin",
+            "technical_category": "observability-cost",
+            "business_category": "infrastructure",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "ecf4ad191a240c6a29a5356f20a2361f86f0db3e01594639ad30ec743f87b764",
+                "code": "098b9e8164bd66a6f2bdbc204ece186c6ca52060",
+                "maintenance": "de6296c503628eb6d18bb71776b08e41939029fd4921e62f8f10778374335f3d"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-20-08-github-1335139860-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T10:53:00.492Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-20-08-github-1335139860-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/2006spy/dsh-token-billing/blob/098b9e8164bd66a6f2bdbc204ece186c6ca52060/README.md",
+                    "revision": "098b9e8164bd66a6f2bdbc204ece186c6ca52060",
+                    "captured_at": "2026-10-20T10:53:00.492Z",
+                    "summary": "为 DSH 提供按供应商、模型、时段与用量计算的实时费用与账本统计。",
+                    "artifact": "data/runs/2026-10-20-08/snapshots/2006spy--dsh-token-billing/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-20-08-github-1335139860-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/2006spy/dsh-token-billing/blob/098b9e8164bd66a6f2bdbc204ece186c6ca52060/lib/ledger.js",
+                    "revision": "098b9e8164bd66a6f2bdbc204ece186c6ca52060",
+                    "captured_at": "2026-10-20T10:53:00.492Z",
+                    "summary": "核查 lib/ledger.js、lib/projection.js、lib/prices.js；projection根据usage与流式估算显示费用，收到精确usage修正；按provider+model和价格政策时间线计价，ledger用session/turn/step去重持久化并按币种聚合。",
+                    "artifact": "data/runs/2026-10-20-08/snapshots/2006spy--dsh-token-billing/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "核查固定提交的所列核心实现与作者材料；未运行插件、安装、测试或真实宿主验收，未确认独立用户效果。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "多供应商用户要追踪不同路由与缓存桶费用，避免只看模型别名误估；合格交付是可对账的费用估算及可导出账本。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1335139860-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335139860:root",
+                            "area": "code",
+                            "fingerprint": "098b9e8164bd66a6f2bdbc204ece186c6ca52060"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:53:00.492Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "projection根据usage与流式估算显示费用，收到精确usage修正；按provider+model和价格政策时间线计价，ledger用session/turn/step去重持久化并按币种聚合。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1335139860-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335139860:root",
+                            "area": "code",
+                            "fingerprint": "098b9e8164bd66a6f2bdbc204ece186c6ca52060"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:53:00.492Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "核查固定提交的所列核心实现与作者材料；未运行插件、安装、测试或真实宿主验收，未确认独立用户效果。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1335139860-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335139860:root",
+                            "area": "code",
+                            "fingerprint": "098b9e8164bd66a6f2bdbc204ece186c6ca52060"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:53:00.492Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "包清单与组件入口按固定提交核查；发布与宿主适配声明属于作者材料，不作为本次实际安装结果。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1335139860-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335139860:root",
+                            "area": "code",
+                            "fingerprint": "098b9e8164bd66a6f2bdbc204ece186c6ca52060"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:53:00.492Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "插件不直接减少模型调用；人工成本是核价、路由映射、订阅摊分和对账，账本占存储。不能由预算预警存在推出节省金额。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1335139860-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335139860:root",
+                            "area": "code",
+                            "fingerprint": "098b9e8164bd66a6f2bdbc204ece186c6ca52060"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:53:00.492Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "适合需要多路由费用参考的用户；先对照供应商账单核实缓存、峰谷和币种口径，再据看板调整预算。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1335139860-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335139860:root",
+                            "area": "code",
+                            "fingerprint": "098b9e8164bd66a6f2bdbc204ece186c6ca52060"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:53:00.492Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "按路由计价与持久账本提高追查能力；准确性依赖usage和价格，不是“实时显示”即可证明。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1335139860-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335139860:root",
+                            "area": "code",
+                            "fingerprint": "098b9e8164bd66a6f2bdbc204ece186c6ca52060"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:53:00.492Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "lib/ledger.js 明确去重键并用临时文件替换，projection.js集中价格政策与估算规则，便于复核时间边界；不同币种分桶避免直接相加。复用需明确修订与并发写入，不把单进程幂等推广为全局事务。 源码：[lib/ledger.js](https://github.com/2006spy/dsh-token-billing/blob/098b9e8164bd66a6f2bdbc204ece186c6ca52060/lib/ledger.js)、[lib/projection.js](https://github.com/2006spy/dsh-token-billing/blob/098b9e8164bd66a6f2bdbc204ece186c6ca52060/lib/projection.js)、[lib/prices.js](https://github.com/2006spy/dsh-token-billing/blob/098b9e8164bd66a6f2bdbc204ece186c6ca52060/lib/prices.js)。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1335139860-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335139860:root",
+                            "area": "code",
+                            "fingerprint": "098b9e8164bd66a6f2bdbc204ece186c6ca52060"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:53:00.492Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T10:53:00.492Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "098b9e8164bd66a6f2bdbc204ece186c6ca52060",
+                "reviewed_at": "2026-10-20T10:53:00.492Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1335139860:root",
+                        "area": "code",
+                        "fingerprint": "098b9e8164bd66a6f2bdbc204ece186c6ca52060"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty：成熟计费适配DSH路由；mechanism：时段和持久化修正有具体增量；transferability：价格政策可复用；simplification：集中规则但核价仍外部。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1335139860-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 15,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow：减少多路由手工汇总；delivery：可导出账本；reach：面板降低算价门槛；economics：观察成本未证实节费。",
+                    "basis": "interpretation",
+                    "score": 33,
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1335139860-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "多供应商用户可试用路由费用参考；先核对最终usage回补、缓存桶和币种，账本不能直接结算。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "多路由缓存与峰谷费用追踪需求具体。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "provider加model时间线及导出账本优于只看别名token。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "mergeSteps去重、投影修正与价格源码可查，最终回补是否遗漏未运行。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "价格汇率订阅分摊及账本一致性均需人工对账。"
+                    }
+                },
+                "score": 65,
+                "revision": "098b9e8164bd66a6f2bdbc204ece186c6ca52060",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-20-08-github-1335139860-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1335139860:root",
+                        "area": "code",
+                        "fingerprint": "098b9e8164bd66a6f2bdbc204ece186c6ca52060"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1335139860:root",
+            "repository": "2006spy/dsh-token-billing",
+            "path": "",
+            "revision": "098b9e8164bd66a6f2bdbc204ece186c6ca52060",
+            "fingerprints": {
+                "directory": "ecf4ad191a240c6a29a5356f20a2361f86f0db3e01594639ad30ec743f87b764",
+                "code": "098b9e8164bd66a6f2bdbc204ece186c6ca52060",
+                "maintenance": "de6296c503628eb6d18bb71776b08e41939029fd4921e62f8f10778374335f3d"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T10:40:14Z",
+            "analysis_sha256": "a0c49dee4b3439a2e551889eb1904c9211ec8371971707dfc1b62b8af70ee1d4"
+        },
+        "publication.metadata": "data/plugins/2006spy--dsh-token-billing/META.json",
+        "publication.summaries": {
+            "text": "为 DSH 提供按供应商、模型、时段与用量计算的实时费用与账本统计。",
+            "revision": "098b9e8164bd66a6f2bdbc204ece186c6ca52060",
+            "source_url": "https://github.com/2006spy/dsh-token-billing/blob/098b9e8164bd66a6f2bdbc204ece186c6ca52060/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "098b9e8164bd66a6f2bdbc204ece186c6ca52060",
+            "items": {
+                "界面": "实时费用显示、预算与统计看板",
+                "后台": "按路由时段计价、账本持久化与导出"
+            }
+        },
+        "publication.advice": {
+            "revision": "098b9e8164bd66a6f2bdbc204ece186c6ca52060",
+            "text": "适合需要多路由费用参考的用户；先对照供应商账单核实缓存、峰谷和币种口径，再据看板调整预算。"
+        },
+        "registry": "data/plugins/2006spy--dsh-token-billing",
+        "reports": "# dsh-token-billing\n\n> 为 DSH 提供按供应商、模型、时段与用量计算的实时费用与账本统计。\n\n## 研究范围\n\n- **仓库**：[2006spy/dsh-token-billing](https://github.com/2006spy/dsh-token-billing)\n- **版本号**：0.8.1（[固定提交 098b9e8](https://github.com/2006spy/dsh-token-billing/tree/098b9e8164bd66a6f2bdbc204ece186c6ca52060)）\n- **版本日期**：2026-09-12（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n贡献机制有固定源码支持；效果与采用收益为条件性解释，后续设计假设尚未验证。\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：多供应商用户要追踪不同路由与缓存桶费用，避免只看模型别名误估；合格交付是可对账的费用估算及可导出账本。\n- **亮点**：相对token总量乘单价，增量是把路由、时段、缓存桶和订阅/免费/本地模式分开，且把短暂估算与落地账本区分；不是服务商结算系统，内置价格不能自动视为当前适用合同。\n- **思考**：最关键是账本身份及单价可追溯：ledger.js 的 mergeSteps 对 seen.has(key) 直接 continue，既有相同 session|turn|step 记录不会经此合并路径被修订；是否实际遇到最终 usage 回补被忽略尚未运行验证。默认汇率与 fallback 价也只是估算前提。临时文件替换不单独证明多进程写入不会丢失。\n- **建议**：适合需要多路由费用参考的用户；先对照供应商账单核实缓存、峰谷和币种口径，再据看板调整预算。\n\n采用建议：适合需要多路由费用参考的用户；先对照供应商账单核实缓存、峰谷和币种口径，再据看板调整预算。\n\n## 核心贡献\n\n相对token总量乘单价，增量是把路由、时段、缓存桶和订阅/免费/本地模式分开，且把短暂估算与落地账本区分；不是服务商结算系统，内置价格不能自动视为当前适用合同。\n\n## 关键质疑\n\n最关键是账本身份及单价可追溯：ledger.js 的 mergeSteps 对 seen.has(key) 直接 continue，既有相同 session|turn|step 记录不会经此合并路径被修订；是否实际遇到最终 usage 回补被忽略尚未运行验证。默认汇率与 fallback 价也只是估算前提。临时文件替换不单独证明多进程写入不会丢失。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n待验证假设：每笔保留价格政策版本、路由和usage修订号，将未知价显式隔离，可使重算与原始账单更可追踪。来自持久化账本和动态价格时间线组合；需要定义历史重算是否改旧金额，避免静默漂移。\n\n用含缓存命中、未知路由、取消、中途精确回补和峰谷跨界的一批请求对账；重启再回放检查重复/漏记，与服务商账单分币种比较。若无法绑定结算口径则继续标为估算。\n\n## 场景与替代办法\n\n多供应商用户要追踪不同路由与缓存桶费用，避免只看模型别名误估；合格交付是可对账的费用估算及可导出账本。\n\n参照简单token计数、余额页与源码明确借鉴的live-stats估算思路；没有服务商真实账单对账。\n\n## 依赖与流程\n\n需要DSH会话usage/事件投影、可写storages及客户端插槽；价格更新依赖官网解析/用户覆盖，订阅费用摊分和汇率还需用户选择。\n\n确认provider和价格模式，流式阶段看估算，精确usage到达后修正；账本按身份合并并持久化，面板按日/月/模型汇总导出；漏价或账本异常回查原始事件。\n\n## 成本与效果\n\n插件不直接减少模型调用；人工成本是核价、路由映射、订阅摊分和对账，账本占存储。不能由预算预警存在推出节省金额。\n\n按路由计价与持久账本提高追查能力；准确性依赖usage和价格，不是“实时显示”即可证明。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：c639f486d622390ccedac192e664a7c071e2faaaa28c048b8e741e41ef509004。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 6 | 7129 | 5984 | 870 | — |\n| .md | source | 1 | 401 | — | — | 8187 |\n| .mjs | source | 4 | 968 | 744 | 160 | — |\n| .mjs | test | 13 | 2701 | 2088 | 394 | — |\n| .md | example | 1 | 18 | — | — | 338 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **界面**：实时费用显示、预算与统计看板\n- **后台**：按路由时段计价、账本持久化与导出\n\n## 工程亮点\n\nlib/ledger.js 明确去重键并用临时文件替换，projection.js集中价格政策与估算规则，便于复核时间边界；不同币种分桶避免直接相加。复用需明确修订与并发写入，不把单进程幂等推广为全局事务。 源码：[lib/ledger.js](https://github.com/2006spy/dsh-token-billing/blob/098b9e8164bd66a6f2bdbc204ece186c6ca52060/lib/ledger.js)、[lib/projection.js](https://github.com/2006spy/dsh-token-billing/blob/098b9e8164bd66a6f2bdbc204ece186c6ca52060/lib/projection.js)、[lib/prices.js](https://github.com/2006spy/dsh-token-billing/blob/098b9e8164bd66a6f2bdbc204ece186c6ca52060/lib/prices.js)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 lib/ledger.js、lib/projection.js、lib/prices.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：核查固定提交的所列核心实现与作者材料；未运行插件、安装、测试或真实宿主验收，未确认独立用户效果。\n- 下一步：用含缓存命中、未知路由、取消、中途精确回补和峰谷跨界的一批请求对账；重启再回放检查重复/漏记，与服务商账单分币种比较。若无法绑定结算口径则继续标为估算。\n",
+        "metadata": {
+            "repository": "2006spy/dsh-token-billing",
+            "repository_id": 1335139860,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 4,
+            "pushed_at": "2026-09-11T16:05:11Z",
+            "issues": {
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
+            },
+            "errors": [],
+            "npm": {
+                "package_name": "dsh-token-billing",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-token-billing",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-token-billing",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "098b9e8164bd66a6f2bdbc204ece186c6ca52060",
+                "current_revision": "098b9e8164bd66a6f2bdbc204ece186c6ca52060",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1335139860:root",
+            "repository": "2006spy/dsh-token-billing",
+            "path": "",
+            "revision": "098b9e8164bd66a6f2bdbc204ece186c6ca52060",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ecf4ad191a240c6a29a5356f20a2361f86f0db3e01594639ad30ec743f87b764",
+                "code": "098b9e8164bd66a6f2bdbc204ece186c6ca52060",
+                "maintenance": "de6296c503628eb6d18bb71776b08e41939029fd4921e62f8f10778374335f3d"
+            }
+        }
+    }
+}

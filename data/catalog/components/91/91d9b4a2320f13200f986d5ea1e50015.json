@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "91d9b4a2320f13200f986d5ea1e50015",
+    "identity": "github:1337862888:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337862888:root",
+            "repository": "Choi-Peng/dsh-footer-order",
+            "path": "",
+            "revision": "a32cdb03490efd99a9fdafd927c205556addf919",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "909f5c162a3991381f970bd40cc1a93ac066320d3ad4b12f648e06815ba2db9f",
+                "code": "a32cdb03490efd99a9fdafd927c205556addf919",
+                "maintenance": "89917ea121993e50ffb42d086a91bd425e3c73b03ea68f51e7f0d968798f5d0f"
+            }
+        }
+    }
+}

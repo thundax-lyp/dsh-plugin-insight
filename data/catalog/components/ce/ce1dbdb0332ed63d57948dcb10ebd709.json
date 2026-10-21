@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ce1dbdb0332ed63d57948dcb10ebd709",
+    "identity": "github:1338656543:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338656543:root",
+            "repository": "flyingfishzxf/dsh-dsbal",
+            "path": "",
+            "revision": "a5fe3a3475f0fc207ef23c336ec2afb43e3a4edd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5c3b433cf140616998a7e3c00970f28f8b7589e3d49b6d902c72f5c79f1ebe36",
+                "code": "a5fe3a3475f0fc207ef23c336ec2afb43e3a4edd",
+                "maintenance": "1374fc13235ac433e0c562144e7f6e257dd27edec4ac431fdaf6236f1d919ff7"
+            }
+        }
+    }
+}

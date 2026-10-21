@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5ed9e9a5404a75b94defabf874505448",
+    "identity": "github:1402358406:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1402358406:root",
+            "repository": "HerTa-st/dsh-theme-herta",
+            "path": "",
+            "revision": "9fa4112e97f2b118cae6c8d780daca3241807978",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "57255ece7d9b0bdba8473b262663fe22fd80822b83950f3e755e9ebda65df0e4",
+                "code": "9fa4112e97f2b118cae6c8d780daca3241807978",
+                "maintenance": "bb226896ad370999c09dde90ba2349e5e48c1afa5b5fc8f6d4c75e47c7259233"
+            }
+        }
+    }
+}

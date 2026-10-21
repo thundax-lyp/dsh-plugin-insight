@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ad971a75d02cc2459aaf69ff26751a8f",
+    "identity": "github:1357452527:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1357452527:root",
+            "repository": "Mlte0907/dsh-remote-x",
+            "path": "",
+            "revision": "9e32f391f0355e03ed369d369c1db67d6dd9496f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "65631e12af7da43d7215eb46c724e2b32fe7be815c9ef345fc1da32e4213993f",
+                "code": "9e32f391f0355e03ed369d369c1db67d6dd9496f",
+                "maintenance": "679c7564f42861c7b630299325813eaa0e43b5ac142770897555bac2d86b075d"
+            }
+        }
+    }
+}

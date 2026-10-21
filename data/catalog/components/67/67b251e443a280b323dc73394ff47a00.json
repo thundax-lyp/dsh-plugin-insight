@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "67b251e443a280b323dc73394ff47a00",
+    "identity": "github:1272251780:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1272251780:root",
+            "repository": "geml-spec/geml",
+            "path": "",
+            "revision": "9eaab9a171ed84088185b4c6b21401c9eeeaecf1",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "4e19b3c414e3b7997ca5b69d9b4f95e7eb89d32bfa7bb0b0dc1ce13fe8e5ff83",
+                "code": "9eaab9a171ed84088185b4c6b21401c9eeeaecf1",
+                "maintenance": "c8ebd9c5653b3bf9cf80aa62120bba0eb690030350ebaa1489d94be14be1cf08"
+            }
+        }
+    }
+}

@@ -1,5 +1,0 @@
-{
-  "text": "给纯文本模型路由添加图片附件转译旁路，使用智谱视觉模型生成文字证据。",
-  "revision": "10b0cbe8c6f06a175eaa985df28d276575539b6e",
-  "source_url": "https://github.com/314857493/dsh-vision/blob/10b0cbe8c6f06a175eaa985df28d276575539b6e/packages/vision-route/README.md"
-}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "13af0b4fff911132cd8001c66059f55e",
+    "identity": "github:1333800316:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333800316:root",
+            "repository": "Rain-Shuoyu/dsh-client-deep-sneak",
+            "path": "",
+            "revision": "21d0646de043b5bb2e18835826394e0aa2fe7497",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "10556159f4104b6cc810fb8c506937fc773146e711aa08f92a2e36d4c90e2c25",
+                "code": "21d0646de043b5bb2e18835826394e0aa2fe7497",
+                "maintenance": "435ec6c7cc32d581fbb5d5b0c449b3c68fab1c39c0d1fb9867719d680ba50d8c"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6783c4650a8483da7582ca300ae8cdc9",
+    "identity": "github:1344686506:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1344686506:root",
+            "repository": "MuAllen/dsh-gateway-wallet",
+            "path": "",
+            "revision": "c239009846d356bde8dbfa1f4b2bcf651d9c7439",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6a42e04224273a71448474f3a8021942ca70cd23b9bcde87a06d2a0b30f092ba",
+                "code": "c239009846d356bde8dbfa1f4b2bcf651d9c7439",
+                "maintenance": "67c227a94085cd92b7f7b6191ec66bfba828b81ca2bf5acd4693ecfce3b4da8e"
+            }
+        }
+    }
+}

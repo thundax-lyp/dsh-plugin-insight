@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5fa945615c3a77af0d028da0e6f4c599",
+    "identity": "github:1408188488:plugin",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1408188488:plugin",
+            "repository": "OrderG-X/dsh-chrome-bridge",
+            "path": "plugin",
+            "revision": "f4bf22b8860be68055c04cae65b560419e0d24ef",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1b2bcf03699899ed511caad92833ccedf6b4dead2a1605bed4a9eb021c7c9969",
+                "code": "f4bf22b8860be68055c04cae65b560419e0d24ef",
+                "maintenance": "2bc2029572ca733d019671525ba0a90c9fd1bf0ab53c3ec03447529c3f690d95"
+            }
+        }
+    }
+}

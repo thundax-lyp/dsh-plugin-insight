@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6baebf96567d44d1c4fef90222bdfb92",
+    "identity": "github:1353834106:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1353834106:root",
+            "repository": "ZK-Andy/dsh-frecency",
+            "path": "",
+            "revision": "461e7bf856c3d18b4fa56c8db15c79f37793c70d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "22f526b84cc6c2464733e9da824e9e33a5623877438ac0668df4b6827195282f",
+                "code": "461e7bf856c3d18b4fa56c8db15c79f37793c70d",
+                "maintenance": "d2abd704489660981c491dcf8dc010870e80c0c5c1a6ce1a0ba82893d30afe4f"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d4f194ccf456c39e4646d183c54c8475",
+    "identity": "github:1424364180:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424364180:root",
+            "repository": "minutiae3/dsh-thinking-zh",
+            "path": "",
+            "revision": "0d490f59418ab7c239ff8662f2049d9a49f93e59",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a86ac8d08f1ea8ab22534c468e3bc083625e7de6c80af8eb55628e1b16999379",
+                "code": "0d490f59418ab7c239ff8662f2049d9a49f93e59",
+                "maintenance": "639b2fba608cbd417763569fc792317b6051aa49cab63b979affa1af908f075f"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f546c7dfc90362a5bb875441af32f71b",
+    "identity": "github:1337950867:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337950867:root",
+            "repository": "Tasihi89/dsh-talk-map",
+            "path": "",
+            "revision": "b2d36d69b65f1a6a2c76022b1226392683767b9d",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "17f5ebb2379c2c05b7243024a48de25ee95d0a996c8533c551eb9c0a64d50790",
+                "code": "b2d36d69b65f1a6a2c76022b1226392683767b9d",
+                "maintenance": "5fbec95a36750776c322f54b7d06e66a2f0f22f3417bf7d084f0d0ebb569e3ce"
+            }
+        }
+    }
+}

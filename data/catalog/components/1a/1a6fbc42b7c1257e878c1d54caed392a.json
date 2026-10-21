@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1a6fbc42b7c1257e878c1d54caed392a",
+    "identity": "github:1344694090:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1344694090:root",
+            "repository": "SkuraSshly/dsh-done-badge",
+            "path": "",
+            "revision": "43b301dc8114a27e9b90429243aec030c48a263a",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "b84e35af88171a6d02068e516449fa90776ec8cc40b2bd84122fe5c4092f7631",
+                "code": "43b301dc8114a27e9b90429243aec030c48a263a",
+                "maintenance": "7f6268f3b382d44ccd3f82c9eaa835889c179b78f7f0770186139cf03cfefc25"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4149b6f0b3c9b070547a7491c78af585",
+    "identity": "github:1334044795:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334044795:root",
+            "repository": "mafeis/dsh-net-proxy",
+            "path": "",
+            "revision": "fe966ae61428ce561bbd91d1b3e45aeb7ede0108",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3e1e355c201823a625cae977214eb5bf607407b91c7063637f272e6a7ab6de7c",
+                "code": "fe966ae61428ce561bbd91d1b3e45aeb7ede0108",
+                "maintenance": "03dbe634778cc4066ceb6fd5e92dada71a9530a7b28a70601393f410a16d1950"
+            }
+        }
+    }
+}

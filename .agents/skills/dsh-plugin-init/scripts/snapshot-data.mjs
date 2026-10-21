@@ -2,8 +2,10 @@
 import {
     readSnapshotStorage,
     writeSnapshotStorage,
-    migrateSnapshotStorage
+    migrateSnapshotStorage,
+    recoverSnapshotStorage
 } from '../../_shared/scripts/snapshot-storage.mjs';
+import { assembleRecommendation, unassessedRecommendation } from '../../_shared/scripts/recommendation.mjs';
 import { readWork, saveWork, migrateWork, workStorageFiles } from '../../_shared/scripts/work-storage.mjs';
 import { existsSync, readFileSync, mkdirSync, writeFileSync, openSync, closeSync, unlinkSync, rmSync } from 'node:fs';
 import { resolve, relative, isAbsolute, dirname } from 'node:path';
@@ -33,7 +35,7 @@ import {
 } from './research-session.mjs';
 import { renderPublication } from './render-research.mjs';
 import { validateMetadata } from '../../dsh-plugin-insight/scripts/capture-plugin-meta.mjs';
-export const SNAPSHOT = 'data/catalog/SNAPSHOT.json';
+export const SNAPSHOT = 'data/catalog/index.jsonl';
 const hash = (text) => createHash('sha256').update(text).digest('hex');
 const ajv = new Ajv({ strict: true, allErrors: true });
 addFormats(ajv);
@@ -178,7 +180,16 @@ export function bootstrap(root = ROOT) {
     result.limitations.push('首次迁移只知道当前研究档案，不拥有历史完整来源成员清单；未入档对象的历史变化为 unknown。');
     result.catalog.runs = [];
     validateSnapshot(result, root);
-    writeSnapshotStorage(snapshotFile(root), result);
+    const file = snapshotFile(root);
+    mkdirSync(dirname(file), { recursive: true });
+    const fd = openSync(file + '.lock', 'wx', 0o600);
+    try {
+        if (existsSync(file)) throw Error('snapshot appeared during bootstrap');
+        writeSnapshotStorage(file, result);
+    } finally {
+        closeSync(fd);
+        unlinkSync(file + '.lock');
+    }
     return result;
 }
 export function startWork(input, path, limit = 40, root = ROOT, retryIds = []) {
@@ -332,7 +343,8 @@ function snapshotSelection(base, items = null, retryIds = []) {
                     researchedSet.has(plugin.id) &&
                     (!published.has(plugin.id) ||
                         plugin.findings.some((finding) => finding.status === 'needs_review') ||
-                        plugin.innovation_scores?.status === 'needs_review')
+                        plugin.innovation_scores?.status === 'needs_review' ||
+                        plugin.recommendation?.status === 'needs_review')
             )
             .map((plugin) => plugin.id)
     };
@@ -384,8 +396,6 @@ function assemble(base, work, root = ROOT) {
         records.set(id, recordFor(item, plugin, work.session.checked_at));
         for (const field of ['summaries', 'capabilities', 'advice']) next.publication[field][id] = entry[field];
         next.publication.metadata[id] = `${next.registry[id]}/META.json`;
-        next.publication.recommendations = next.publication.recommendations.filter((r) => r.plugin_id !== id);
-        next.publication.recommendations.push(...entry.recommendations);
     }
     // Dependency invalidation can affect an unselected published record; do not publish obsolete conclusions.
     for (const [id, record] of records) {
@@ -395,16 +405,18 @@ function assemble(base, work, root = ROOT) {
             plugin.innovation_scores?.status === 'needs_review'
         ) {
             records.delete(id);
-            next.publication.recommendations = next.publication.recommendations.filter((r) => r.plugin_id !== id);
-        } else if (!work.records[id] && analysisDigest(plugin) !== record.analysis_sha256)
-            throw Error('unselected analysis changed unexpectedly');
+        } else if (!work.records[id] && analysisDigest(plugin) !== record.analysis_sha256) {
+            if (plugin.recommendation?.status === 'needs_review') record.analysis_sha256 = analysisDigest(plugin);
+            else throw Error('unselected analysis changed unexpectedly');
+        }
     }
     // Keep the evidence needed by today's conclusions, rather than accumulating completed rounds.
     const referencedEvidence = new Set(
         next.catalog.plugins.flatMap((p) => [
             ...p.findings.flatMap((f) => f.evidence_ids),
             ...(p.innovation_scores?.technical.evidence_ids ?? []),
-            ...(p.innovation_scores?.business.evidence_ids ?? [])
+            ...(p.innovation_scores?.business.evidence_ids ?? []),
+            ...(p.recommendation?.evidence_ids ?? [])
         ])
     );
     for (const plugin of next.catalog.plugins) {
@@ -423,6 +435,7 @@ function assemble(base, work, root = ROOT) {
     next.unavailable_artifacts = next.unavailable_artifacts.filter((name) => referencedArtifacts.has(name));
     next.catalog.runs = [];
     next.publication.records = [...records.values()];
+    delete next.publication.recommendations;
     next.checked_at = work.session.checked_at;
     next.publication.checked_at = next.checked_at;
     next.publication.scope = `本轮所选 ${selected.size}，完成 ${Object.keys(work.records).length}，受阻 ${selectedItems(work.session).filter((i) => i.status === 'blocked').length}；已知同版本受阻跳过 ${work.session.selection?.suppressed_ids?.length ?? 0}；当前发布 ${records.size}`;
@@ -482,9 +495,11 @@ function stageRecordUnlocked(workPath, id, observationPath, reportPath, displayP
     const observations = read(observationPath),
         report = readFileSync(reportPath, 'utf8'),
         display = read(displayPath);
-    const expected = ['metadata', 'summaries', 'capabilities', 'advice', 'recommendations'];
+    const expected = ['metadata', 'summaries', 'capabilities', 'advice'];
     if (Object.keys(display).some((k) => !expected.includes(k)) || expected.some((k) => display[k] === undefined))
-        throw Error('display requires metadata, summaries, capabilities, advice and recommendations');
+        throw Error(
+            'display requires metadata, summaries, capabilities and advice; recommendations belong in observations'
+        );
     const plugin = observations.plugins.find((p) => p.id === id);
     if (!plugin || observations.plugins.length !== 1 || observations.errors.length)
         throw Error('stage needs one successful plugin');
@@ -495,6 +510,15 @@ function stageRecordUnlocked(workPath, id, observationPath, reportPath, displayP
         Date.parse(plugin.innovation_scores.reviewed_at) < Date.parse(work.session.checked_at)
     )
         throw Error('new research stage requires reviewed innovation scores for both axes');
+    const recommendation = plugin.recommendation;
+    if (
+        !recommendation ||
+        recommendation.decision === 'unassessed' ||
+        recommendation.status !== 'current' ||
+        recommendation.revision !== work.session.items.find((item) => item.id === id)?.revision ||
+        Date.parse(recommendation.reviewed_at) < Date.parse(work.session.checked_at)
+    )
+        throw Error('new research stage requires a current scored recommendation and reason');
     // Reconstruct only the candidate catalog; formal catalog is untouched.
     let catalog = structuredClone(base.catalog);
     for (const entry of Object.values(work.records))
@@ -623,14 +647,7 @@ export function renderSnapshot(root = ROOT, checkOnly = false) {
         ['README.md', result.readme],
         [snapshot.publication.catalog_page, result.catalog],
         ...result.details.map((d) => [d.path, d.content]),
-        ...result.categoryPages.map((d) => [d.path, d.content]),
-        [CATALOG, JSON.stringify(snapshot.catalog, null, 2) + '\n'],
-        [PUBLICATION, JSON.stringify(snapshot.publication, null, 2) + '\n'],
-        [REGISTRY, JSON.stringify(snapshot.registry, null, 2) + '\n'],
-        ...Object.entries(snapshot.metadata).map(([id, meta]) => [
-            `${snapshot.registry[id]}/META.json`,
-            JSON.stringify(meta, null, 2) + '\n'
-        ])
+        ...result.categoryPages.map((d) => [d.path, d.content])
     ];
     for (const [path, content] of outputs) {
         const full = local(root, path);
@@ -685,6 +702,78 @@ export function cleanWork(path, root = ROOT, apply = false) {
     );
     if (apply) for (const file of files) unlinkSync(file);
 }
+// Assess existing research without claiming new source inspection or changing the research cutoff.
+// The submitted baseline and fixed revisions prevent applying an assessment to concurrent/newer research.
+export function assessRecommendations(input, root = ROOT, apply = false) {
+    const file = snapshotFile(root),
+        lock = file + '.lock';
+    const fd = openSync(lock, 'wx', 0o600);
+    try {
+        writeFileSync(fd, JSON.stringify({ pid: process.pid }));
+        const base = readSnapshot(root);
+        if (
+            !input ||
+            Object.keys(input).sort().join(',') !== 'assessments,base_digest,reviewed_at' ||
+            !input.assessments ||
+            typeof input.assessments !== 'object' ||
+            Array.isArray(input.assessments) ||
+            !Number.isFinite(Date.parse(input.reviewed_at))
+        )
+            throw Error('invalid recommendation assessment input');
+        if (input.base_digest !== digest(base)) throw Error('recommendation assessment baseline changed');
+        const next = structuredClone(base);
+        const published = new Map(next.publication.records.map((r) => [r.id, r]));
+        const plugins = new Map(next.catalog.plugins.map((p) => [p.id, p]));
+        for (const [id, authored] of Object.entries(input.assessments)) {
+            const plugin = plugins.get(id),
+                record = published.get(id);
+            // Retained, unpublished research may be assessed conservatively without restoring publication.
+            // A missing report or obsolete version cannot be promoted into a current trial/install candidate.
+            const dormant = !record;
+            if (
+                !plugin ||
+                !authored ||
+                (record && authored.revision !== record.revision) ||
+                (dormant && !['observe', 'not_recommended'].includes(authored.decision)) ||
+                Date.parse(input.reviewed_at) < Date.parse(record?.checked_at ?? plugin.last_checked_at)
+            )
+                throw Error(
+                    `assessment requires matching retained research; unpublished items allow only observe/not_recommended: ${id}`
+                );
+            const { revision, ...assessment } = authored;
+            const evidenceIds = plugin.evidence
+                .filter(
+                    (e) =>
+                        e.revision === revision &&
+                        ['source_inspection', 'local_test', 'host_acceptance'].includes(e.kind)
+                )
+                .map((e) => e.id);
+            plugin.recommendation = assembleRecommendation(
+                assessment,
+                plugin,
+                revision,
+                input.reviewed_at,
+                evidenceIds
+            );
+            if (dormant) plugin.recommendation.status = 'needs_review';
+        }
+        for (const plugin of next.catalog.plugins) plugin.recommendation ??= unassessedRecommendation();
+        for (const record of next.publication.records) record.analysis_sha256 = analysisDigest(plugins.get(record.id));
+        delete next.publication.recommendations;
+        validateSnapshot(next, root);
+        const counts = {};
+        for (const p of next.catalog.plugins)
+            counts[p.recommendation.decision] = (counts[p.recommendation.decision] ?? 0) + 1;
+        if (apply) {
+            writeSnapshotStorage(file, next);
+            if (digest(readSnapshot(root)) !== digest(next)) throw Error('recommendation snapshot readback failed');
+        }
+        return { apply, counts, assessed: Object.keys(input.assessments).length, result_digest: digest(next) };
+    } finally {
+        closeSync(fd);
+        unlinkSync(lock);
+    }
+}
 export async function main(args = process.argv.slice(2)) {
     const [command, ...rest] = args;
     const { values: v } = parseArgs({
@@ -702,10 +791,28 @@ export async function main(args = process.argv.slice(2)) {
         if (!v[k]) throw Error(`--${k} required`);
         return resolve(v[k]);
     };
-    if (command === 'migrate-storage') {
-        readSnapshot(ROOT);
+    if (command === 'assess-recommendations') {
+        console.log(JSON.stringify(assessRecommendations(read(need('input')), ROOT, v.apply)));
+        if (v.apply) renderSnapshot();
+    } else if (command === 'migrate-storage') {
         const backup = need('backup');
-        console.log(JSON.stringify(migrateSnapshotStorage(snapshotFile(ROOT), backup)));
+        const file = snapshotFile(ROOT);
+        const fd = openSync(file + '.lock', 'wx', 0o600);
+        try {
+            console.log(JSON.stringify(migrateSnapshotStorage(file, backup)));
+        } finally {
+            closeSync(fd);
+            unlinkSync(file + '.lock');
+        }
+    } else if (command === 'recover-storage') {
+        const file = snapshotFile(ROOT);
+        const fd = openSync(file + '.lock', 'wx', 0o600);
+        try {
+            console.log(recoverSnapshotStorage(file));
+        } finally {
+            closeSync(fd);
+            unlinkSync(file + '.lock');
+        }
     } else if (command === 'bootstrap') {
         bootstrap();
         renderSnapshot();
@@ -746,7 +853,10 @@ export async function main(args = process.argv.slice(2)) {
     } else if (command === 'migrate-work') {
         console.log(JSON.stringify(migrateWork(need('work'), validateWork, v.apply)));
     } else if (command === 'clean') cleanWork(need('work'), ROOT, v.apply);
-    else throw Error('Usage: snapshot bootstrap|start|next|stage|block|plan|apply|render|validate|migrate-work|clean');
+    else
+        throw Error(
+            'Usage: snapshot bootstrap|start|next|stage|block|plan|apply|render|validate|assess-recommendations|migrate-storage|recover-storage|migrate-work|clean'
+        );
 }
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url))
     try {

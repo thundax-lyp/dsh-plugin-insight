@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "6ff079130a0ff29c81349fe1463e895e",
+    "identity": "github:1333322877:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333322877:root",
+            "repository": "Tyan66666/billion-context-dsh",
+            "path": "",
+            "revision": "91a8a1e581927d68511caf0678419a45040f2245",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "b239423b5004d2a46e05cfb434b5ab50f1a1f87fd4fa810494b2ac8571bd1008",
+                "code": "91a8a1e581927d68511caf0678419a45040f2245",
+                "maintenance": "91a2d0dccea215a84dc73fac0d30c832d7ab77b9f19b478d02f494980aede095"
+            }
+        }
+    }
+}

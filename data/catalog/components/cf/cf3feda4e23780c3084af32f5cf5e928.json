@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "cf3feda4e23780c3084af32f5cf5e928",
+    "identity": "github:1333745051:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333745051:root",
+            "repository": "Nwflower/dsh-file-claim",
+            "path": "",
+            "revision": "42f07e2171d3781edd932732d243646635f4c1a0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "6eba2ca6c3f1af89b22a63928cb583f34d93a698306a99c6ba4558447d2837a0",
+                "code": "42f07e2171d3781edd932732d243646635f4c1a0",
+                "maintenance": "ea335f465a2a7e2751509be5af87e908d429bc286f8945bdcbee126f8938f6ce"
+            }
+        }
+    }
+}

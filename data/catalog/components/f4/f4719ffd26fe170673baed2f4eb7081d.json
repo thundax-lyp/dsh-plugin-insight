@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f4719ffd26fe170673baed2f4eb7081d",
+    "identity": "github:1339059823:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339059823:root",
+            "repository": "gehennawu/dsh-service",
+            "path": "",
+            "revision": "59bdbbd26ecc4fa57f177df09208d3d39c962be9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e952fb5218eee3d01a045abba2d2d702bd36d81a092e980103f600eb76423846",
+                "code": "59bdbbd26ecc4fa57f177df09208d3d39c962be9",
+                "maintenance": "a06bb95dc2137febd9bd6045806c63b3cd2adf2992c45183a87bfe44cfe7caa8"
+            }
+        }
+    }
+}

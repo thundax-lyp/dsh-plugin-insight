@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "891ee2c975ce92697b80eda1da72d7b4",
+    "identity": "github:1369612101:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1369612101:root",
+            "repository": "xrn1997/dsh-novel",
+            "path": "",
+            "revision": "ea026d398966066201daba8cbd8798c13b46efb2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9173e0b49e6d62adab200762fa331366ee11e67e02bdca2536cb82870274a73f",
+                "code": "ea026d398966066201daba8cbd8798c13b46efb2",
+                "maintenance": "2ccd14fcfdeef5c3a7f53e831339072da89d64f59b17c2d67cb48d4cdcdd9620"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1ab53fabc15de4d7c43fe86a6f205cea",
+    "identity": "github:1338061227:packages-dsh-web-search",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338061227:packages-dsh-web-search",
+            "repository": "yugasun/dsh-plugins",
+            "path": "packages/dsh-web-search",
+            "revision": "e7acbc379bc997dd83e977386a835449565ecd29",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0ac4892cb80c7ea62a184c297615e35c830d11dad04d4ef475743e1a96dc35d7",
+                "code": "e7acbc379bc997dd83e977386a835449565ecd29",
+                "maintenance": "85ecefc42e1d0e27d12446846ab9c13f869eaadec9a6f88441afcf3577c7dacf"
+            }
+        }
+    }
+}

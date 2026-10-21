@@ -1,0 +1,434 @@
+{
+    "schema_version": 3,
+    "id": "62d0e0f147e183323ea875ce39c725b0",
+    "identity": "github:1331586818:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1331586818:root",
+            "repository_id": 1331586818,
+            "component_id": "root",
+            "repository": "AmethystLuna/logicprobe",
+            "path": "",
+            "aliases": [],
+            "name": "logicprobe",
+            "entry_type": "plugin",
+            "technical_category": "agent-workflow",
+            "business_category": "software-delivery",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "9def868ae808638e38542382abb0438f12effaf95ac7f7f0b8acd44791faf46d",
+                "code": "a264c4018b02d24e2b2103c772ca431e21c16e65",
+                "maintenance": "abfe51d82e8491c81849f77af10c600afea67b2977221dba38cfec27aed52da6"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-07-github-1331586818-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T08:05:08.087Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-07-github-1331586818-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/AmethystLuna/logicprobe/blob/a264c4018b02d24e2b2103c772ca431e21c16e65/README.md",
+                    "revision": "a264c4018b02d24e2b2103c772ca431e21c16e65",
+                    "captured_at": "2026-10-21T08:05:08.087Z",
+                    "summary": "以工具和技能检查设计声称、状态机、数据模型与依赖图，生成可比较的结构化核验报告。",
+                    "artifact": "data/runs/2026-10-21-07/snapshots/amethystluna--logicprobe/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-07-github-1331586818-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/AmethystLuna/logicprobe/blob/a264c4018b02d24e2b2103c772ca431e21c16e65/src/index.ts",
+                    "revision": "a264c4018b02d24e2b2103c772ca431e21c16e65",
+                    "captured_at": "2026-10-21T08:05:08.087Z",
+                    "summary": "核查 src/index.ts、src/engine.ts、src/structure.ts、src/report-view.ts、tools/python/logicprobe-engine.py；index注册skills与verify/data/compose/UML/structure/report-diff工具；TypeScript engine闭合模型校验与有限状态探索，报告区分ok/ran/verdict，保留hash、narrativeCoverage和truncated。",
+                    "artifact": "data/runs/2026-10-21-07/snapshots/amethystluna--logicprobe/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "抽读src/index.ts、src/engine.ts、src/structure.ts、src/report-view.ts、tools/python/logicprobe-engine.py；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "开发者希望在实现前找出状态/协议/迁移设计错误，合格交付是有来源且覆盖充分的模型和可定位反例。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1331586818-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1331586818:root",
+                            "area": "code",
+                            "fingerprint": "a264c4018b02d24e2b2103c772ca431e21c16e65"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:05:08.087Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "index注册skills与verify/data/compose/UML/structure/report-diff工具；TypeScript engine闭合模型校验与有限状态探索，报告区分ok/ran/verdict，保留hash、narrativeCoverage和truncated。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1331586818-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1331586818:root",
+                            "area": "code",
+                            "fingerprint": "a264c4018b02d24e2b2103c772ca431e21c16e65"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:05:08.087Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "抽读src/index.ts、src/engine.ts、src/structure.ts、src/report-view.ts、tools/python/logicprobe-engine.py；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1331586818-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1331586818:root",
+                            "area": "code",
+                            "fingerprint": "a264c4018b02d24e2b2103c772ca431e21c16e65"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:05:08.087Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "MIT引擎与跨平台技能；DSH接口版本、模型格式与外部验证器分别有边界。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1331586818-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1331586818:root",
+                            "area": "code",
+                            "fingerprint": "a264c4018b02d24e2b2103c772ca431e21c16e65"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:05:08.087Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "首次建模与领域专家复核是主要人工成本；状态空间、图转换和回归维护持续花费，工具运行本身不代表减少总审查成本。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1331586818-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1331586818:root",
+                            "area": "code",
+                            "fingerprint": "a264c4018b02d24e2b2103c772ca431e21c16e65"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:05:08.087Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "适合有明确状态/迁移模型的设计审查，先用已知缺陷验证反例与覆盖；读verdict并检查truncated，不能将pass写成源码已证正确。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1331586818-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1331586818:root",
+                            "area": "code",
+                            "fingerprint": "a264c4018b02d24e2b2103c772ca431e21c16e65"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:05:08.087Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "有助将模糊设计问题变成可重复报告，真实缺陷发现率与建模负担未测。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1331586818-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1331586818:root",
+                            "area": "code",
+                            "fingerprint": "a264c4018b02d24e2b2103c772ca431e21c16e65"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:05:08.087Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "闭合schema、注记不入语义hash、绝对与增量结论分离以及截断提示值得借鉴；报告消费者须按schema读取并保留覆盖限制。 源码依据：[src/index.ts](https://github.com/AmethystLuna/logicprobe/blob/a264c4018b02d24e2b2103c772ca431e21c16e65/src/index.ts)、[src/engine.ts](https://github.com/AmethystLuna/logicprobe/blob/a264c4018b02d24e2b2103c772ca431e21c16e65/src/engine.ts)、[src/structure.ts](https://github.com/AmethystLuna/logicprobe/blob/a264c4018b02d24e2b2103c772ca431e21c16e65/src/structure.ts)、[src/report-view.ts](https://github.com/AmethystLuna/logicprobe/blob/a264c4018b02d24e2b2103c772ca431e21c16e65/src/report-view.ts)、[tools/python/logicprobe-engine.py](https://github.com/AmethystLuna/logicprobe/blob/a264c4018b02d24e2b2103c772ca431e21c16e65/tools/python/logicprobe-engine.py)。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1331586818-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1331586818:root",
+                            "area": "code",
+                            "fingerprint": "a264c4018b02d24e2b2103c772ca431e21c16e65"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:05:08.087Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "把事实核查、可执行抽象模型、结构图和回归差异组织成统一审查流程；相对仅LLM口头评审有确定性检查与机器定位。外部UPPAAL/TLA+/PRISM/SPIN仍是独立验证器，导出不等于已运行。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1331586818-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1331586818:root",
+                            "area": "code",
+                            "fingerprint": "a264c4018b02d24e2b2103c772ca431e21c16e65"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:05:08.087Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "模型通过能否证明代码设计正确？提取模型可能遗漏真实并发、I/O或调度，有限搜索截断及不完整narrative要单列；concurrency scan只路由不证明。最强支持是确定性引擎，关键缺口是源码到模型保真度而非工具数量。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1331586818-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1331586818:root",
+                            "area": "code",
+                            "fingerprint": "a264c4018b02d24e2b2103c772ca431e21c16e65"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:05:08.087Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "由hash/coverage/差异报告推导，可将源码断言和模型边映射到可复核证据，遇源码变化自动标过期，抽样与执行轨迹对账。未验证；植入源码独有分支后模型仍pass但映射应报警，否则无法弥合抽象缺口。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1331586818-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1331586818:root",
+                            "area": "code",
+                            "fingerprint": "a264c4018b02d24e2b2103c772ca431e21c16e65"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:05:08.087Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T08:05:08.087Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "a264c4018b02d24e2b2103c772ca431e21c16e65",
+                "reviewed_at": "2026-10-21T08:05:08.087Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1331586818:root",
+                        "area": "code",
+                        "fingerprint": "a264c4018b02d24e2b2103c772ca431e21c16e65"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 18,
+                        "mechanism": 15,
+                        "transferability": 15,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty明确模型检查基线下统一报告/路由有实质组合；mechanism有限探索与语义报告半档，不称新形式方法；transferability源码证据到报告模式较强；simplification多域整合半档但建模负担仍在。",
+                    "basis": "interpretation",
+                    "score": 56,
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1331586818-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 15,
+                        "reach": 10,
+                        "economics": 4
+                    },
+                    "rationale": "workflow将主张转模型反例半档；delivery可复核报告半档；reachAgent辅助设计人员半档；economics可能降低返工但未测小档。",
+                    "basis": "interpretation",
+                    "score": 47,
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1331586818-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "有明确状态迁移模型者可试设计核查；用已知缺陷校准来源与覆盖，读verdict和truncated，pass不作源码正确证明。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "实现前寻找协议状态设计错误是明确任务。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "确定性有限状态反例与hash报告比纯口述评审更可重复。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "已核模型引擎和报告，源码到模型保真及真实缺陷率未验。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "领域专家建模、状态空间和回归维护成本高，适合小模型起步。"
+                    }
+                },
+                "score": 60,
+                "revision": "a264c4018b02d24e2b2103c772ca431e21c16e65",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-07-github-1331586818-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1331586818:root",
+                        "area": "code",
+                        "fingerprint": "a264c4018b02d24e2b2103c772ca431e21c16e65"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1331586818:root",
+            "repository": "AmethystLuna/logicprobe",
+            "path": "",
+            "revision": "a264c4018b02d24e2b2103c772ca431e21c16e65",
+            "fingerprints": {
+                "directory": "9def868ae808638e38542382abb0438f12effaf95ac7f7f0b8acd44791faf46d",
+                "code": "a264c4018b02d24e2b2103c772ca431e21c16e65",
+                "maintenance": "abfe51d82e8491c81849f77af10c600afea67b2977221dba38cfec27aed52da6"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T07:52:12Z",
+            "analysis_sha256": "2dcddbd14cb56cc1b9be5526610683916124b1f698c45408d3cb83e2860af907"
+        },
+        "publication.metadata": "data/plugins/amethystluna--logicprobe/META.json",
+        "publication.summaries": {
+            "text": "以工具和技能检查设计声称、状态机、数据模型与依赖图，生成可比较的结构化核验报告。",
+            "revision": "a264c4018b02d24e2b2103c772ca431e21c16e65",
+            "source_url": "https://github.com/AmethystLuna/logicprobe/blob/a264c4018b02d24e2b2103c772ca431e21c16e65/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "a264c4018b02d24e2b2103c772ca431e21c16e65",
+            "items": {
+                "Skill": "声称、状态机、并发、图及数据模型核查技能。",
+                "模型工具": "模型验证、组合、导出、UML/依赖审查与报告差异。",
+                "事件监听": "首步核查路由提示。"
+            }
+        },
+        "publication.advice": {
+            "revision": "a264c4018b02d24e2b2103c772ca431e21c16e65",
+            "text": "适合有明确状态/迁移模型的设计审查，先用已知缺陷验证反例与覆盖；读verdict并检查truncated，不能将pass写成源码已证正确。"
+        },
+        "registry": "data/plugins/amethystluna--logicprobe",
+        "reports": "# logicprobe\n\n> 以工具和技能检查设计声称、状态机、数据模型与依赖图，生成可比较的结构化核验报告。\n\n## 使用建议\n\n适合有明确状态/迁移模型的设计审查，先用已知缺陷验证反例与覆盖；读verdict并检查truncated，不能将pass写成源码已证正确。\n\n核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。\n\n源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。\n\n## 洞察短评\n\n- **用途**：开发者希望在实现前找出状态/协议/迁移设计错误，合格交付是有来源且覆盖充分的模型和可定位反例。\n- **亮点**：把事实核查、可执行抽象模型、结构图和回归差异组织成统一审查流程；相对仅LLM口头评审有确定性检查与机器定位。外部UPPAAL/TLA+/PRISM/SPIN仍是独立验证器，导出不等于已运行。\n- **思考**：模型通过能否证明代码设计正确？提取模型可能遗漏真实并发、I/O或调度，有限搜索截断及不完整narrative要单列；concurrency scan只路由不证明。最强支持是确定性引擎，关键缺口是源码到模型保真度而非工具数量。\n- **建议**：由hash/coverage/差异报告推导，可将源码断言和模型边映射到可复核证据，遇源码变化自动标过期，抽样与执行轨迹对账。未验证；植入源码独有分支后模型仍pass但映射应报警，否则无法弥合抽象缺口。\n\n## 场景与替代办法\n\n开发者希望在实现前找出状态/协议/迁移设计错误，合格交付是有来源且覆盖充分的模型和可定位反例。\n\n人工评审灵活但不可重复；通用模型检查器更成熟却建模成本高，此工具补Agent友好接线与报告。\n\n## 能力清单\n\n- **Skill**：声称、状态机、并发、图及数据模型核查技能。\n- **模型工具**：模型验证、组合、导出、UML/依赖审查与报告差异。\n- **事件监听**：首步核查路由提示。\n\n## 依赖与流程\n\nDSH tools/skills、Node引擎，非DSH路径有Python实现；外部导出验证器与模型提取证据另需准备。\n\n列声称→查事实/建模型→结构与对抗检查→读verdict/反例/覆盖→修正设计→基线差异；行为结论回到源码/测试复核。\n\n## 成本与效果\n\n首次建模与领域专家复核是主要人工成本；状态空间、图转换和回归维护持续花费，工具运行本身不代表减少总审查成本。\n\n有助将模糊设计问题变成可重复报告，真实缺陷发现率与建模负担未测。\n\n## 核心贡献\n\n把事实核查、可执行抽象模型、结构图和回归差异组织成统一审查流程；相对仅LLM口头评审有确定性检查与机器定位。外部UPPAAL/TLA+/PRISM/SPIN仍是独立验证器，导出不等于已运行。\n\n## 关键质疑\n\n模型通过能否证明代码设计正确？提取模型可能遗漏真实并发、I/O或调度，有限搜索截断及不完整narrative要单列；concurrency scan只路由不证明。最强支持是确定性引擎，关键缺口是源码到模型保真度而非工具数量。\n\n\n## 工程亮点\n\n闭合schema、注记不入语义hash、绝对与增量结论分离以及截断提示值得借鉴；报告消费者须按schema读取并保留覆盖限制。 源码依据：[src/index.ts](https://github.com/AmethystLuna/logicprobe/blob/a264c4018b02d24e2b2103c772ca431e21c16e65/src/index.ts)、[src/engine.ts](https://github.com/AmethystLuna/logicprobe/blob/a264c4018b02d24e2b2103c772ca431e21c16e65/src/engine.ts)、[src/structure.ts](https://github.com/AmethystLuna/logicprobe/blob/a264c4018b02d24e2b2103c772ca431e21c16e65/src/structure.ts)、[src/report-view.ts](https://github.com/AmethystLuna/logicprobe/blob/a264c4018b02d24e2b2103c772ca431e21c16e65/src/report-view.ts)、[tools/python/logicprobe-engine.py](https://github.com/AmethystLuna/logicprobe/blob/a264c4018b02d24e2b2103c772ca431e21c16e65/tools/python/logicprobe-engine.py)。\n\n## 未来设计假设（未验证）\n\n由hash/coverage/差异报告推导，可将源码断言和模型边映射到可复核证据，遇源码变化自动标过期，抽样与执行轨迹对账。未验证；植入源码独有分支后模型仍pass但映射应报警，否则无法弥合抽象缺口。\n\n用死锁/遗漏分支/截断/不忠实UML例子核对报告和roundtrip；比较人工基线的发现数、误报和建模时间，不运行目标本轮工具。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：a2e81222ef9fec9770469b19ae44fdeba5a04125e58b69bbb57a413330a5a338。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 27 | 5030 | — | — | 53321 |\n| .md | example | 1 | 46 | — | — | 276 |\n| .js | source | 21 | 9547 | 8510 | 1004 | — |\n| .mjs | source | 2 | 213 | 168 | 28 | — |\n| .ts | source | 19 | 9635 | 8005 | 1128 | — |\n| .mjs | test | 17 | 6168 | 5181 | 492 | — |\n| .md | test | 1 | 38 | — | — | 472 |\n\n排除 19 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[AmethystLuna/logicprobe](https://github.com/AmethystLuna/logicprobe)\n- **版本号**：1.4.1（[固定提交 a264c401](https://github.com/AmethystLuna/logicprobe/tree/a264c4018b02d24e2b2103c772ca431e21c16e65)）\n- **版本日期**：2026-10-18（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：作者 README、包清单、源码路径 src/index.ts、src/engine.ts、src/structure.ts、src/report-view.ts、tools/python/logicprobe-engine.py 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读src/index.ts、src/engine.ts、src/structure.ts、src/report-view.ts、tools/python/logicprobe-engine.py；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。\n- 下一步：用死锁/遗漏分支/截断/不忠实UML例子核对报告和roundtrip；比较人工基线的发现数、误报和建模时间，不运行目标本轮工具。\n",
+        "metadata": {
+            "repository": "AmethystLuna/logicprobe",
+            "repository_id": 1331586818,
+            "captured_at": "2026-10-21T08:02:07.380Z",
+            "window_start": "2026-09-21T08:02:07.380Z",
+            "stars": 5,
+            "pushed_at": "2026-10-18T12:05:02Z",
+            "issues": {
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAmethystLuna%2Flogicprobe%20is%3Aissue%20updated%3A2026-09-21T08%3A02%3A07.380Z..2026-10-21T08%3A02%3A07.380Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C26C:50F71:6A0060:71F19C:6AD8718F and timestamp 2026-10-21 08:02:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-logicprobe",
+                "captured_at": "2026-10-21T08:02:23.501Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 2967,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-logicprobe",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-24T03:39:31.558Z",
+                    "captured_at": "2026-10-21T08:02:23.501Z",
+                    "source_url": "https://registry.npmjs.org/dsh-logicprobe",
+                    "error": null,
+                    "latest_version": "1.4.1",
+                    "latest_published_at": "2026-10-18T06:25:05.335Z",
+                    "latest_error": null
+                }
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1331586818:root",
+            "repository": "AmethystLuna/logicprobe",
+            "path": "",
+            "revision": "a264c4018b02d24e2b2103c772ca431e21c16e65",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9def868ae808638e38542382abb0438f12effaf95ac7f7f0b8acd44791faf46d",
+                "code": "a264c4018b02d24e2b2103c772ca431e21c16e65",
+                "maintenance": "abfe51d82e8491c81849f77af10c600afea67b2977221dba38cfec27aed52da6"
+            }
+        }
+    }
+}

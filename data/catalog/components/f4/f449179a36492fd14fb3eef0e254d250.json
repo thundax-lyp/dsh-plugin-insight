@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f449179a36492fd14fb3eef0e254d250",
+    "identity": "github:1376861735:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1376861735:root",
+            "repository": "tcgbp/dock-flash",
+            "path": "",
+            "revision": "eb0cd20f496b7c9c40fce177f70dc9512fdf46a7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "24844e90183e2114ff777d5197c4d169656af93521bb96414057d55f6a8f238a",
+                "code": "eb0cd20f496b7c9c40fce177f70dc9512fdf46a7",
+                "maintenance": "254789bff9abe4306ec7e8e95e56b2932198f07fd26ed24bda0c64acbb28ed6d"
+            }
+        }
+    }
+}

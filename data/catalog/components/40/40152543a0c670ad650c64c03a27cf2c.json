@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "40152543a0c670ad650c64c03a27cf2c",
+    "identity": "github:1346151750:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346151750:root",
+            "repository": "dongsheng123132/dsh-retention-settlement-proof",
+            "path": "",
+            "revision": "8ff39eeb563b89214d997c682eec81a2938ee9e6",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "7daa9d64568b921f030e9c57ddc36201c5f01baabc4571595ff83cb9751b74c6",
+                "code": "8ff39eeb563b89214d997c682eec81a2938ee9e6",
+                "maintenance": "15e693feb3d1736eccc6a0bfada3b9cdb0f672a00907fe91f722c62e5d8a0e82"
+            }
+        }
+    }
+}

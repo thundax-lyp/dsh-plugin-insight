@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ed79ee803fb11e31696b8934c18bf491",
+    "identity": "github:1408841524:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1408841524:root",
+            "repository": "PerryLink/dsh-power-ticket-check",
+            "path": "",
+            "revision": "374fac9a5aea3e27b90659394adc1533674bcfc8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4e14255ca506d9e6caef257c6ddc84a869af1b0571ea0609700f95ff1006fc6b",
+                "code": "374fac9a5aea3e27b90659394adc1533674bcfc8",
+                "maintenance": "f64b0f49239d8fc7e2f192f7ea18a8869cc80a00a394e355f21fa62d5ab57856"
+            }
+        }
+    }
+}

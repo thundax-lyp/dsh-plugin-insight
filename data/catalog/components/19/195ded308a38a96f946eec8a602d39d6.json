@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "195ded308a38a96f946eec8a602d39d6",
+    "identity": "github:956330003:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:956330003:root",
+            "repository": "SepineTam/mcp-for-stata",
+            "path": "",
+            "revision": "1e94c3bfe82675eed8c85b18f6c9303dd92b4757",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "8a9b07ec4025dbb4a9414723fe02f5ceb1aa33fac3ca83daf02159aec990e823",
+                "code": "1e94c3bfe82675eed8c85b18f6c9303dd92b4757",
+                "maintenance": "0b99075c1663f4d9d2ee7ed82c8fb4987ff5e54e661e6973a68566c39e7c3e5e"
+            }
+        }
+    }
+}

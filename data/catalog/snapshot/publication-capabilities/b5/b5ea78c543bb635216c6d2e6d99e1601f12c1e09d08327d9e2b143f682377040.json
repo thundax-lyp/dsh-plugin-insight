@@ -1,8 +1,0 @@
-{
-  "revision": "f4d521615a9ca7ff7cbe2953a2a84074a7768091",
-  "items": {
-    "用户命令": "飞书/lp、/up、/np、/lc、/uc、/nc、/approve、/reject",
-    "后台": "飞书长连接、chat会话选择与审批桥接",
-    "Host 路由": "飞书绑定状态接口"
-  }
-}

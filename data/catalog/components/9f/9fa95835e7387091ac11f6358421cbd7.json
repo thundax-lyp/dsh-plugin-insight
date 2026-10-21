@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9fa95835e7387091ac11f6358421cbd7",
+    "identity": "github:1350549118:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1350549118:root",
+            "repository": "NoxTyrannus/dsh-cipher",
+            "path": "",
+            "revision": "b79286372a2ba9b94eae05991fb2f33bb6aa7380",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "05c9fbcd4a19cc92e609432e010ae6f73fe10c928290a57594c88c4481129c61",
+                "code": "b79286372a2ba9b94eae05991fb2f33bb6aa7380",
+                "maintenance": "56be2c8d7e0d63254847a1953106e087d2ff0dbadc96b3168cdc67769f8c81a4"
+            }
+        }
+    }
+}

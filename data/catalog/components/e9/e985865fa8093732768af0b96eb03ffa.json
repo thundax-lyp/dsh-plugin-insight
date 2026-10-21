@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e985865fa8093732768af0b96eb03ffa",
+    "identity": "github:1391095716:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1391095716:root",
+            "repository": "Missher12/Missher-DSH-Context-Manager",
+            "path": "",
+            "revision": "10a6dcd36d04c512d40a1ad178c7956fa3ea604b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "cd6f28c3c799a629e130b5013f3611c3f1be9380ade477b14c43b939f74c43f1",
+                "code": "10a6dcd36d04c512d40a1ad178c7956fa3ea604b",
+                "maintenance": "6d452f8a5fc4d83a7f2b211de3268a1226bbf369937c4cdc5d8852df96c9b6dd"
+            }
+        }
+    }
+}

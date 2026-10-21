@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "841fcd9ee901e1fd36169570a751c206",
+    "identity": "github:1336578514:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336578514:root",
+            "repository": "geebos/dsh-terminal",
+            "path": "",
+            "revision": "526bb161966c93876d0a686a551d8cccaf90069a",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "661404ada3ceea7c8770868323f6b82ef66527fcd14d3bc12b0593ec5fbcdbaf",
+                "code": "526bb161966c93876d0a686a551d8cccaf90069a",
+                "maintenance": "feed5cc51939a179cfd9b082e3ca6713ebd90d62581febb0c1529c3bd6ba76ed"
+            }
+        }
+    }
+}

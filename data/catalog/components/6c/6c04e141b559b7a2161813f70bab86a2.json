@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6c04e141b559b7a2161813f70bab86a2",
+    "identity": "github:1333268405:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333268405:root",
+            "repository": "vvlife/awesome-deepseek-harness-plugins",
+            "path": "",
+            "revision": "b2f9f75a83e02ae0828d5585e197eb71b24f3c9b",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "760053c1fe37d8bb041bbb0a6a00cf973202afd8cc0d8655548b3cd45f6d172e",
+                "code": "b2f9f75a83e02ae0828d5585e197eb71b24f3c9b",
+                "maintenance": "c7d3445315ba0d4418f0c934f6de743ce768e478718a1da0f2dd3beaabdf5d51"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b73819345c6ecd69c0c129583d8e9d35",
+    "identity": "github:1334026410:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334026410:root",
+            "repository": "MicroHEROX/dsh-koboldcpp-hands",
+            "path": "",
+            "revision": "0e75b2366ee21c35bf6178920cb7690e467f2322",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e9757715b2fb46c91daf6645de4703390dd8d2229d31f6712b030c4cdb49c263",
+                "code": "0e75b2366ee21c35bf6178920cb7690e467f2322",
+                "maintenance": "95a9adb408209da8c059baf8abe3b9f4ad88595748c4d8a7732b8e299c8cd905"
+            }
+        }
+    }
+}

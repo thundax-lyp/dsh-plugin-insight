@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0aa34cbfdde167ddcf0a5e36027f150c",
+    "identity": "github:1269979871:dsh-plugins-ark-plan-api",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1269979871:dsh-plugins-ark-plan-api",
+            "repository": "volcengine/ark-cli",
+            "path": "dsh-plugins/ark-plan-api",
+            "revision": "f2bcb0f534dcd120fea574a2005f7f0ac3ab8265",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f240a6a2a26f287a9a543fb6d33cd58f4f0ccda620ca69eca41b89c5300466a6",
+                "code": "f2bcb0f534dcd120fea574a2005f7f0ac3ab8265",
+                "maintenance": "de39f647372ec785040d170fa403b5dc8ce144437fdc3bcbf9c8e423bfc216ed"
+            }
+        }
+    }
+}

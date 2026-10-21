@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "56d0de52fd8f555e65e160356340ab81",
+    "identity": "github:1368442783:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1368442783:root",
+            "repository": "gezi-wen/dsh-repair",
+            "path": "",
+            "revision": "2b8a4c44354c5f385fe7f73f2ea7f4530d1ced1a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e4c75f542a85621f2965b268ebd453b744c39b08871f386914da4ccc58b5da03",
+                "code": "2b8a4c44354c5f385fe7f73f2ea7f4530d1ced1a",
+                "maintenance": "0610e9ce6be98b08a3b28ded00b21bbd3a69a78eb987e92c01eb9c835d542f4b"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8a351f7efb9e813fa34d07060de3c3ac",
+    "identity": "github:1346872712:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346872712:root",
+            "repository": "Buzzso/dsh-sev",
+            "path": "",
+            "revision": "4b0188ab2a1e2871c69d19b52bddb1dfc22ab49c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b9c9c2e6e317404d555d4cde5383ccfd48be7c99c62b030a183cb91c09b41262",
+                "code": "4b0188ab2a1e2871c69d19b52bddb1dfc22ab49c",
+                "maintenance": "ddd88e02ced05fdbe3fd4a061efb66d5d04d71006cb1a5e800cc02b2ae8c1776"
+            }
+        }
+    }
+}

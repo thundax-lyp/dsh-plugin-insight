@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c39c9ad46f1c465f6fae18a36e0d46cc",
+    "identity": "github:1330513167:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1330513167:root",
+            "repository": "ilharp/dsh-tool-approval",
+            "path": "",
+            "revision": "c01801a7e39c36515d8445747abff6a6388c1278",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d1601cb4310d7568d9394db59f5745ebafc4d6c881326b93e34d347477cd4c77",
+                "code": "c01801a7e39c36515d8445747abff6a6388c1278",
+                "maintenance": "a4f92dbb8430d39dadfdb5de1fe09b6affbf9f4597ae5b2fcb2268c2d5d4ed18"
+            }
+        }
+    }
+}

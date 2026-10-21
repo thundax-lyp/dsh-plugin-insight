@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5485efaab795815391194ba9c5c5d8f3",
+    "identity": "github:1425268388:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425268388:root",
+            "repository": "Eileenes/dsh-reel",
+            "path": "",
+            "revision": "b57529b6c509c951557fd6409ae6d6de77ebede8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3fb6595514f05a58a0f0fe91ac02bd642f2fcdf477dbcb25e6f9220daa70ba18",
+                "code": "b57529b6c509c951557fd6409ae6d6de77ebede8",
+                "maintenance": "6c1f8be73128180b957b1c427121e1079f71d067c568e20b19de5544c16db47c"
+            }
+        }
+    }
+}

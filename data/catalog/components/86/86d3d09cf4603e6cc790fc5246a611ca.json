@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "86d3d09cf4603e6cc790fc5246a611ca",
+    "identity": "github:1250332704:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1250332704:root",
+            "repository": "kobenfang/FruitPi",
+            "path": "",
+            "revision": "631f06e0ff9dadfb8baf7b1b05eef8b6a88ff079",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "aa71e576dcb7c71aef28cd95ae340c21b327ccff930f2eb8561dd0d8438a2453",
+                "code": "631f06e0ff9dadfb8baf7b1b05eef8b6a88ff079",
+                "maintenance": "d16f5f960c3da3dffef5cdb9c805cfd32e831ddc18a37b211a17ebd373aa8e02"
+            }
+        }
+    }
+}

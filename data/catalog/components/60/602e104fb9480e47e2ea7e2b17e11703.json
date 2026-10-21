@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "602e104fb9480e47e2ea7e2b17e11703",
+    "identity": "github:1340969707:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340969707:root",
+            "repository": "hytime/dsh-client-ui-shortcuts",
+            "path": "",
+            "revision": "006b13337ee7cd3f702740e31c49b6743809d04b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5454bbe7164a5cc9ac0f5337c29e90521089d9c9d09396c9ab0212c622570a2c",
+                "code": "006b13337ee7cd3f702740e31c49b6743809d04b",
+                "maintenance": "7b9c8962020ea37b160ff7d665f2458c1da49533b82c29779801a28ccc996968"
+            }
+        }
+    }
+}

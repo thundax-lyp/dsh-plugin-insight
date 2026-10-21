@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "069b0f0413020699262001173dbb483f",
+    "identity": "github:1333483404:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333483404:root",
+            "repository": "HeiGeAi/deepseek-harness-skin",
+            "path": "",
+            "revision": "848c92787e4b67b2892c7c15d6f45f1029a94d8d",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "341bbe9a634493126a98790fda4949a2b6b9511002d3b9c30ec172cfa3012276",
+                "code": "848c92787e4b67b2892c7c15d6f45f1029a94d8d",
+                "maintenance": "7b8bd3b353200902dc8ec16b9a175ef8879face764781880ca39e006a6605b76"
+            }
+        }
+    }
+}

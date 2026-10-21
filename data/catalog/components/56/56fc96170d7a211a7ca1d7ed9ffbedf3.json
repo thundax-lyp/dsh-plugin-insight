@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "56fc96170d7a211a7ca1d7ed9ffbedf3",
+    "identity": "github:1363470354:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1363470354:root",
+            "repository": "CAI-MH/dsh-steer",
+            "path": "",
+            "revision": "688cd5126ece1050627bae91aea7caa5eb6f03ce",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "59c6a8258061e6e07c9949ed3261702c43a6aac9b3cb7a40c113701dcf9bad79",
+                "code": "688cd5126ece1050627bae91aea7caa5eb6f03ce",
+                "maintenance": "fcf6e2b04eea97d2ef070abd42db07762608ac263d2e075a94896e26496bc02f"
+            }
+        }
+    }
+}

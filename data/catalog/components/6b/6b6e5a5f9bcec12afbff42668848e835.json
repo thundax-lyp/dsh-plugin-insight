@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6b6e5a5f9bcec12afbff42668848e835",
+    "identity": "github:1336046075:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336046075:root",
+            "repository": "future007s/dsh-peak-indicator",
+            "path": "",
+            "revision": "4c1fb3216ffa784a3de7314668b3fb11d7bddd91",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "39a9d5f12d66dbfdaf74a5f3596c5445a13721bfe2b30795330aabc55215d65a",
+                "code": "4c1fb3216ffa784a3de7314668b3fb11d7bddd91",
+                "maintenance": "9a5cf315fe63a59160444e976ecdd259f00e716e22c8f0a49468e6727666b63b"
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "388f511eb525ce2422efa70486070f54",
+    "identity": "github:1340454431:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340454431:root",
+            "repository": "qwert702/dsh-context-compressor",
+            "path": "",
+            "revision": "cde9a0b577c177b054f4d5c2d9578cb0a6d35222",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "ddadbe29b40f6658574fb16c1496f09bbe8cff3e18d904a85f2844b38e504feb",
+                "code": "cde9a0b577c177b054f4d5c2d9578cb0a6d35222",
+                "maintenance": "cd7474bc99423a4cb9f661ceacb65a5e578e67029a2aac92c0420e4edf1e3f51"
+            }
+        }
+    }
+}

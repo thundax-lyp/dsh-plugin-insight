@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "003cdac4711c8fc33c0b838e12ba9cf8",
+    "identity": "github:1334399127:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334399127:root",
+            "repository": "linxichen/dsh-rigorquant",
+            "path": "",
+            "revision": "7ec633e8b8fb1d5037d8d5bed07aac83fb709a98",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "723c5b8ba0f2482c80c2227a6ec4e7927eb42426add81ce82d7f2e0bc70bcacb",
+                "code": "7ec633e8b8fb1d5037d8d5bed07aac83fb709a98",
+                "maintenance": "6b624ebc44d2d86956566253f5b0333ea22edf07b24284ba5ac275fc69a0d16e"
+            }
+        }
+    }
+}

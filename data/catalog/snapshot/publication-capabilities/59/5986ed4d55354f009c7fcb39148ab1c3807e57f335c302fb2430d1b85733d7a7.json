@@ -1,7 +1,0 @@
-{
-  "revision": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
-  "items": {
-    "模型工具": "cortex_sleep、cortex_memory、cortex_homeo。",
-    "事件监听": "会话活动、工具结果与organism心跳。"
-  }
-}

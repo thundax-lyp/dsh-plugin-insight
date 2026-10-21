@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "af270ddf5cd257bc7553624a5d10e7f9",
+    "identity": "github:1334831582:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334831582:root",
+            "repository": "Mr-remon219/dsh-search-boost",
+            "path": "",
+            "revision": "be1c151741dee5844daf75c3b4b93dbc6bb85c57",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "1ca248a34bec85b2bd1e725fb755afc3116de0fb4596946937d712b61845c7c2",
+                "code": "be1c151741dee5844daf75c3b4b93dbc6bb85c57",
+                "maintenance": "400720cc09db1e49310389ad224e50a08e15bc784446f9306b3664ed07eb5bfb"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "46b533dab705199aa90501fcff2886bb",
+    "identity": "github:1347804925:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347804925:root",
+            "repository": "CagierAsh123/dsh-obsidian-agent-wiki",
+            "path": "",
+            "revision": "9ede768522450374e91eb64024b80ab95285e84b",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "b4c32374edd1a5c14a631a11089403e66762b3a5b96df7b1dfab53d8e8d15afe",
+                "code": "9ede768522450374e91eb64024b80ab95285e84b",
+                "maintenance": "1a364d49dc031b2ca1afe27f4ddc5a06463344452fc463c1c74298aa38586221"
+            }
+        }
+    }
+}

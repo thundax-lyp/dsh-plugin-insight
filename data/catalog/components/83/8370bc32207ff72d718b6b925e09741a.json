@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8370bc32207ff72d718b6b925e09741a",
+    "identity": "github:1355524476:plugins-dsh-plugin-repopanel",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1355524476:plugins-dsh-plugin-repopanel",
+            "repository": "ijry/DeepSeek-Harness-Desktop-Ultra",
+            "path": "plugins/dsh-plugin-repopanel",
+            "revision": "748806201eabfa13ef3ed9168e0f845410eeade5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1094091368b47ea86964cf5b0c48d3477430f5583d5457f6c3b712cea4a2ae38",
+                "code": "748806201eabfa13ef3ed9168e0f845410eeade5",
+                "maintenance": "9dc9c3fc32b33e2cca457220f6e1a4445cad1b1d9377d5a06647602cc39a85f6"
+            }
+        }
+    }
+}

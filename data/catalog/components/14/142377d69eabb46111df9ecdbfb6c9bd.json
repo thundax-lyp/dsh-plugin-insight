@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "142377d69eabb46111df9ecdbfb6c9bd",
+    "identity": "github:1343299857:plugins-dsh-headless-plus",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343299857:plugins-dsh-headless-plus",
+            "repository": "dennisrongo/dsh-plugins",
+            "path": "plugins/dsh-headless-plus",
+            "revision": "c6e06d6ee21dfd4955555ccb7036a8cb4d6355a4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "88530454d33a12edb979b34af8cdd671690a3b77d4387a2bb2fe863bb721b839",
+                "code": "c6e06d6ee21dfd4955555ccb7036a8cb4d6355a4",
+                "maintenance": "1433aa830dcd3f45daf52219106a3671b92d938d488d38ef0c810a479f48da53"
+            }
+        }
+    }
+}

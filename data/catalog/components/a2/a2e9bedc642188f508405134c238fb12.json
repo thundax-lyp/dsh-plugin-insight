@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "a2e9bedc642188f508405134c238fb12",
+    "identity": "github:1335518462:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335518462:root",
+            "repository": "Shiye-10Pages/dsh-whale-meter",
+            "path": "",
+            "revision": "c484500e6a00d26317dc71ee854ced26df6f2aaa",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "d291c0130c0eb8c6f19fe077f1e316141819452e36c9f095026a879fef33b7b1",
+                "code": "c484500e6a00d26317dc71ee854ced26df6f2aaa",
+                "maintenance": "f3e116ceab9dcd3af78f316709df642322e90e8305758dae79a15f58230572af"
+            }
+        }
+    }
+}

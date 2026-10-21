@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "48e7f57bba896d9e421042e5f76cd540",
+    "identity": "github:1340565841:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340565841:root",
+            "repository": "WilShi/dsh-skill-station",
+            "path": "",
+            "revision": "6d294d30c41132cca1d4ef519d1e8dcd321872fe",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f8d6df89ff20a8c8a60b5cdca97e1b1d2e3ce2dcac1a22006ddb737a97f4b950",
+                "code": "6d294d30c41132cca1d4ef519d1e8dcd321872fe",
+                "maintenance": "06aa585f0b970a7d85ec22fb321288268ad6d23cdcfed81db0ec3e7a960ee7cf"
+            }
+        }
+    }
+}

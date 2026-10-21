@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7d034f84b93ba3c52c6ef4d14e8f16df",
+    "identity": "github:1337396049:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337396049:root",
+            "repository": "Max-Null/dsh-skill-mcp-center",
+            "path": "",
+            "revision": "836fce11fbd9af7458fedfd897df8ed0517fdd42",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7ed1c165b5d724246098bb06a23987d9fccf0fc8416818a2199e3c6465495480",
+                "code": "836fce11fbd9af7458fedfd897df8ed0517fdd42",
+                "maintenance": "8b2c827d920f96a94149ace1539a8ad6299a82c16b10281e6b97b0c72ca6394e"
+            }
+        }
+    }
+}

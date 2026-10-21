@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "db26b62603acd3fe79c8f23daba2ac4d",
+    "identity": "github:1336819326:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336819326:root",
+            "repository": "biggerboy/dsh-conversation-anchors",
+            "path": "",
+            "revision": "f6057c4c202d5f7614de8ff5c2c546486da259c3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "a56fc77d8457a947edcaa3bfd0fab1e0a18cb66a00a2bc16271af9c371b0c9f3",
+                "code": "f6057c4c202d5f7614de8ff5c2c546486da259c3",
+                "maintenance": "46535490853d8f66de14bf8c0a2f3225959b18b24241766249163ff9d0c84a17"
+            }
+        }
+    }
+}

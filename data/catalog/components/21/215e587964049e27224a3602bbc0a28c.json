@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "215e587964049e27224a3602bbc0a28c",
+    "identity": "github:1360367316:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1360367316:root",
+            "repository": "MoonlitDropOfBlood/dsh-model-prompt-injector",
+            "path": "",
+            "revision": "94a8d777cfbda465a973f176ec6e7102a9d24190",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2fb08a9c8900a65b364452e525a78a8cab4fce97ea18e18eaebc18dcce750670",
+                "code": "94a8d777cfbda465a973f176ec6e7102a9d24190",
+                "maintenance": "c5cb849f9b893b5e17d62db9726ec027396228356a7251fa6a9754b5c98bf50f"
+            }
+        }
+    }
+}

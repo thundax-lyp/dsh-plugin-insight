@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "14a3515c96066227e6251bb837d7afcc",
+    "identity": "github:1337292910:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337292910:root",
+            "repository": "kanneiren/dsh-network-settings",
+            "path": "",
+            "revision": "567ca07bccd2246d96d49ffa849a38b35c2cb016",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "0dc7a449623d5b1049633b9c0638402ea693e224890cb104b8df9bb1a86625b7",
+                "code": "567ca07bccd2246d96d49ffa849a38b35c2cb016",
+                "maintenance": "da2f19d768b59b62d549633d252f76d586c61b9df696356a8460ce7f3d59e160"
+            }
+        }
+    }
+}

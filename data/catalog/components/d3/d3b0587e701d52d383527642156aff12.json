@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d3b0587e701d52d383527642156aff12",
+    "identity": "github:1334876723:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334876723:root",
+            "repository": "lucky8197/dsh-git-hygiene",
+            "path": "",
+            "revision": "05a56bace438ba7630b7a1797190694b143770b6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "00742b9c41606a05611fc10e2b88dad1627f6bfaa8e26441e29634497fcee7cc",
+                "code": "05a56bace438ba7630b7a1797190694b143770b6",
+                "maintenance": "0823a0f0afd773fa518aa0f81b46d53544802362b5da8a4cffbe937a0aa283db"
+            }
+        }
+    }
+}

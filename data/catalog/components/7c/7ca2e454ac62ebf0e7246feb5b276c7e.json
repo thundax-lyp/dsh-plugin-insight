@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7ca2e454ac62ebf0e7246feb5b276c7e",
+    "identity": "github:1335371695:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335371695:root",
+            "repository": "KLRSL/dsh-memory-layer",
+            "path": "",
+            "revision": "e0b27cd9cd15fca73c6a78f9f2c0c639a80c9092",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5adb3b6eb9fb33a8ddd6cdccd9cfce1c9602b269cfde34dea1d26486918777a7",
+                "code": "e0b27cd9cd15fca73c6a78f9f2c0c639a80c9092",
+                "maintenance": "aa384eb2965146ac6ee143d543889de1a635305a187c1aacfb7d382603ce0f81"
+            }
+        }
+    }
+}

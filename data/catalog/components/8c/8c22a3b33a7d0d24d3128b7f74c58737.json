@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8c22a3b33a7d0d24d3128b7f74c58737",
+    "identity": "github:1367930906:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1367930906:root",
+            "repository": "devacc8/dsh-billing-badge",
+            "path": "",
+            "revision": "ca7baabeaf84b85cc74ca41dfbf571bc62615a39",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a3d69e23cadb003d992c365b1b0aecf3c80226def211b108cf5c6c9b7e12e840",
+                "code": "ca7baabeaf84b85cc74ca41dfbf571bc62615a39",
+                "maintenance": "7285519bbdadae8ed15f96b8acb4985fc1af84a9feef8ed5f1d5a9e768259521"
+            }
+        }
+    }
+}

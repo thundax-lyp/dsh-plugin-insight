@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "11fcd81926121d4c70f3742dcf38f3b5",
+    "identity": "github:1424128217:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424128217:root",
+            "repository": "xqh-jason/dsh-sidebar-delete",
+            "path": "",
+            "revision": "1ab4ab4860125f97e6f8b06a6e0fa6911e89ac9b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "52fe4be10bb1cce8f5b61cab0a6ee2540792d57e6b48f35c251049f62ededd99",
+                "code": "1ab4ab4860125f97e6f8b06a6e0fa6911e89ac9b",
+                "maintenance": "6b614b5bbcb6820b9fc8079be1a8d69a85d2089aab260793da09a2a0b22a6cba"
+            }
+        }
+    }
+}

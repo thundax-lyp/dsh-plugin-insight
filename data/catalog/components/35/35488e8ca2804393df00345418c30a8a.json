@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "35488e8ca2804393df00345418c30a8a",
+    "identity": "github:1334809032:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334809032:root",
+            "repository": "ovdoesw/dsh-xiangqi",
+            "path": "",
+            "revision": "e2a92a398593a8305f14d51c166e2aec8dce0f5a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3888e9592166ee21166def24970ed80298864441131f01a1b34817043b399a57",
+                "code": "e2a92a398593a8305f14d51c166e2aec8dce0f5a",
+                "maintenance": "67ef35f26235a1a8cca902de5a934749a0304d2e46709156a53670432a0bdf14"
+            }
+        }
+    }
+}

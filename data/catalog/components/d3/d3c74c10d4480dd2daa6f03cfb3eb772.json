@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d3c74c10d4480dd2daa6f03cfb3eb772",
+    "identity": "github:1408468706:plugins-kid-storage",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1408468706:plugins-kid-storage",
+            "repository": "baixiaoustc/dsh-kidlab",
+            "path": "plugins/kid-storage",
+            "revision": "a87bd25e7b831eeddfdcea882c32ab2940ec562e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fc8f0ef4962d22e67189df7b64fc115292d2be5da74e0e74952a8bafbbfafed1",
+                "code": "a87bd25e7b831eeddfdcea882c32ab2940ec562e",
+                "maintenance": "c971c087074a3d75eea850e71d61f804626969f6b0e5dd20acae4e1c95da63b8"
+            }
+        }
+    }
+}

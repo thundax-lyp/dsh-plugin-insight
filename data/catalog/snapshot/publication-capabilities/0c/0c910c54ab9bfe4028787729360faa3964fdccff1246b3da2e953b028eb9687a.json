@@ -1,8 +1,0 @@
-{
-  "revision": "9fd81e6db10944b6fa339aeb731e2850e1627b9a",
-  "items": {
-    "Host 路由": "抽卡start/state/cancel三POST接口。",
-    "事件监听": "llm/stream透传观测文本信号。",
-    "界面": "发送区拉杆与全屏抽卡演出。"
-  }
-}

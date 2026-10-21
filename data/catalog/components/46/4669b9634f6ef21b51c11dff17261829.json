@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4669b9634f6ef21b51c11dff17261829",
+    "identity": "github:1335828542:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335828542:root",
+            "repository": "Eve-146T/DSH-CODEX-SUBSCRIPTION-POOL",
+            "path": "",
+            "revision": "b9b8d6943dc299d090955526952c4829b26d6d56",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e1a6e773ca7a5fddcf583f9b6d214c08f079053832938e110af1502bc92d924d",
+                "code": "b9b8d6943dc299d090955526952c4829b26d6d56",
+                "maintenance": "1722223c21fcb5b54a9fd0f548313ab2316f187a291e9aea614dbf3c03769a3e"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "672409356eea869fbcc8afed0f09bd2c",
+    "identity": "github:1338385684:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338385684:root",
+            "repository": "yyyy231209/ai-company-framework",
+            "path": "",
+            "revision": "465d08361dfcb03cf5958c648c4d3551189803e0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a170cd772b9281f96f1f8491dfb652e6833a169256030d03e73418429a46a84d",
+                "code": "465d08361dfcb03cf5958c648c4d3551189803e0",
+                "maintenance": "5088d7c34185fdde770979341a99fec45707ee2145590f583c418fbf730db954"
+            }
+        }
+    }
+}

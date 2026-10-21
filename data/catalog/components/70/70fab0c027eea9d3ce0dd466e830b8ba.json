@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "70fab0c027eea9d3ce0dd466e830b8ba",
+    "identity": "github:1367499008:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1367499008:root",
+            "repository": "yangyizhu8/dsh-unread-mark",
+            "path": "",
+            "revision": "69a6e33a08b73bce93088fbcdf6d8f4a5bfa24ca",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "53483eb7f52fa79e1e2b6084bee14e74559528ed7aa8be73312a97622fbdb45b",
+                "code": "69a6e33a08b73bce93088fbcdf6d8f4a5bfa24ca",
+                "maintenance": "b47a54090079311b6b92506b47d43df412b7790f19d6c9779a132f760151e794"
+            }
+        }
+    }
+}

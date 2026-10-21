@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "79068a281c729be3765a1de278c4dfa6",
+    "identity": "github:1368029306:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1368029306:root",
+            "repository": "hmr-BH/dsh-round-rightclick",
+            "path": "",
+            "revision": "80dd54db1f8f6be53046a550d1b653cc1c122562",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "01dab1a798884582b229236d0e7d7d0c6718cbe703f911ce65af3efc992e070d",
+                "code": "80dd54db1f8f6be53046a550d1b653cc1c122562",
+                "maintenance": "5c26acdaae88bbc482c048269eb9aaa32476b86f0661aa8a555412c8b363fa3b"
+            }
+        }
+    }
+}

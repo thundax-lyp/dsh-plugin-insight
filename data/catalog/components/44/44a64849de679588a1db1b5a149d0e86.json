@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "44a64849de679588a1db1b5a149d0e86",
+    "identity": "github:1333122965:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333122965:root",
+            "repository": "fuhefei/dsh-sentinel",
+            "path": "",
+            "revision": "08de99bec81011974b80e5ed3f951a808c0791d9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "7923a4735e6a5fefbcee5748f3d8e7aae9e2f32af1e2d0310cf83140cfbc574a",
+                "code": "08de99bec81011974b80e5ed3f951a808c0791d9",
+                "maintenance": "223a2150758dab6ffa55abbfe3ba7cd8e1b24b27694564f660f5bcf9d1385e12"
+            }
+        }
+    }
+}

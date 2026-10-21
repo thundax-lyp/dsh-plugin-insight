@@ -1,0 +1,364 @@
+{
+    "schema_version": 3,
+    "id": "092bcaba260eb88b60e0b86ff07aca98",
+    "identity": "github:1335704653:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1335704653:root",
+            "repository_id": 1335704653,
+            "component_id": "root",
+            "repository": "117BS/dsh-perlica-ding",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-perlica-ding",
+            "entry_type": "plugin",
+            "technical_category": "interface-input",
+            "business_category": "personal-productivity",
+            "tags": [
+                "提示音",
+                "通知"
+            ],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "c14dca6f94dd575e6a16ff4821756c76be36d90a4e5f111c0568d2d78ca5b50d",
+                "code": "f9db75c3cff13919659e81311a2b3d62f9af8aab",
+                "maintenance": "35185edd72fec89a66b749f18f8c99dbb1cc9d09882e2d8592da285c4ac9dd41"
+            },
+            "sources": [
+                {
+                    "id": "20261020-research40-github-1335704653-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T03:13:13.379Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "20261020-research40-github-1335704653-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/117BS/dsh-perlica-ding/blob/f9db75c3cff13919659e81311a2b3d62f9af8aab/README.md",
+                    "revision": "f9db75c3cff13919659e81311a2b3d62f9af8aab",
+                    "captured_at": "2026-10-20T03:13:13.379Z",
+                    "summary": "根据计划、执行、等待回应和错误状态播放分级提示音，普通问答保持安静。",
+                    "artifact": "data/runs/2026-10-20-02/snapshots/117bs--dsh-perlica-ding/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "20261020-research40-github-1335704653-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/117BS/dsh-perlica-ding/blob/f9db75c3cff13919659e81311a2b3d62f9af8aab/index.mjs",
+                    "revision": "f9db75c3cff13919659e81311a2b3d62f9af8aab",
+                    "captured_at": "2026-10-20T03:13:13.379Z",
+                    "summary": "核查 index.mjs；监听主会话事件和执行类工具，按类别去抖，通过 subprocess 调用系统播放程序；PCM 音量副本有内容缓存。",
+                    "artifact": "data/runs/2026-10-20-02/snapshots/117bs--dsh-perlica-ding/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "工具调用分类不证明任务成功，未验证平台播放器、静音策略与实际漏报误报。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "后台运行智能体时，用户希望听到需要关注的状态而不盯住窗口。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1335704653-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335704653:root",
+                            "area": "code",
+                            "fingerprint": "f9db75c3cff13919659e81311a2b3d62f9af8aab"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:13:13.379Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "监听主会话事件和执行类工具，按类别去抖，通过 subprocess 调用系统播放程序；PCM 音量副本有内容缓存。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1335704653-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335704653:root",
+                            "area": "code",
+                            "fingerprint": "f9db75c3cff13919659e81311a2b3d62f9af8aab"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:13:13.379Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "主会话限定与普通问答静音可减少噪声；有效性取决于事件分类是否符合使用者期待。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1335704653-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335704653:root",
+                            "area": "code",
+                            "fingerprint": "f9db75c3cff13919659e81311a2b3d62f9af8aab"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:13:13.379Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "没有模型专用调用，但需配置声音与免打扰，密集通知可能反而增加打断。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1335704653-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335704653:root",
+                            "area": "code",
+                            "fingerprint": "f9db75c3cff13919659e81311a2b3d62f9af8aab"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:13:13.379Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "参数化 subprocess、PCM 缩放和内容寻址缓存可借鉴；音效资源授权与平台行为仍需单独核查。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1335704653-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335704653:root",
+                            "area": "code",
+                            "fingerprint": "f9db75c3cff13919659e81311a2b3d62f9af8aab"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:13:13.379Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先用测试音和短任务核查四种状态，调整音量及去抖，不将完成音当验收。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1335704653-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335704653:root",
+                            "area": "code",
+                            "fingerprint": "f9db75c3cff13919659e81311a2b3d62f9af8aab"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:13:13.379Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "工具调用分类不证明任务成功，未验证平台播放器、静音策略与实际漏报误报。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1335704653-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335704653:root",
+                            "area": "code",
+                            "fingerprint": "f9db75c3cff13919659e81311a2b3d62f9af8aab"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:13:13.379Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "版本 0.2.1，入口 index.mjs，依赖 subprocess 及 macOS/Windows/Linux 对应播放器。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1335704653-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335704653:root",
+                            "area": "code",
+                            "fingerprint": "f9db75c3cff13919659e81311a2b3d62f9af8aab"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:13:13.379Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T03:13:13.379Z",
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "后台任务用户可先用测试音和短任务试分级提醒，核对去抖、免打扰和平台播放器。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "不用盯屏获知需关注状态的需求明确。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "主会话限定和分类声音补系统通知但不证明任务成功。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "事件分类、播放和PCM缓存可查，误报漏报未测。"
+                    },
+                    "cost": {
+                        "score": 15,
+                        "rationale": "无额外模型调用，主要负担为音量、资源许可与打断控制。"
+                    }
+                },
+                "score": 64,
+                "revision": "f9db75c3cff13919659e81311a2b3d62f9af8aab",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "20261020-research40-github-1335704653-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1335704653:root",
+                        "area": "code",
+                        "fingerprint": "f9db75c3cff13919659e81311a2b3d62f9af8aab"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1335704653:root",
+            "repository": "117BS/dsh-perlica-ding",
+            "path": "",
+            "revision": "f9db75c3cff13919659e81311a2b3d62f9af8aab",
+            "fingerprints": {
+                "directory": "c14dca6f94dd575e6a16ff4821756c76be36d90a4e5f111c0568d2d78ca5b50d",
+                "code": "f9db75c3cff13919659e81311a2b3d62f9af8aab",
+                "maintenance": "35185edd72fec89a66b749f18f8c99dbb1cc9d09882e2d8592da285c4ac9dd41"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T02:51:30Z",
+            "analysis_sha256": "bcba09db6933f24847b761f4c799880234a2d73549256435402000eb6775a951"
+        },
+        "publication.metadata": "data/plugins/117bs--dsh-perlica-ding/META.json",
+        "publication.summaries": {
+            "text": "根据计划、执行、等待回应和错误状态播放分级提示音，普通问答保持安静。",
+            "revision": "f9db75c3cff13919659e81311a2b3d62f9af8aab",
+            "source_url": "https://github.com/117BS/dsh-perlica-ding/blob/f9db75c3cff13919659e81311a2b3d62f9af8aab/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "f9db75c3cff13919659e81311a2b3d62f9af8aab",
+            "items": {
+                "后台": "主会话分级声音通知。"
+            }
+        },
+        "publication.advice": {
+            "revision": "f9db75c3cff13919659e81311a2b3d62f9af8aab",
+            "text": "先用测试音和短任务核查四种状态，调整音量及去抖，不将完成音当验收。"
+        },
+        "registry": "data/plugins/117bs--dsh-perlica-ding",
+        "reports": "# dsh-perlica-ding\n\n> 根据计划、执行、等待回应和错误状态播放分级提示音，普通问答保持安静。\n\n## 固定范围与依据\n\n固定提交 [f9db75c3cff13919659e81311a2b3d62f9af8aab](https://github.com/117BS/dsh-perlica-ding/blob/f9db75c3cff13919659e81311a2b3d62f9af8aab/index.mjs)；组件路径：仓库根。核查时间 2026-10-20T03:13:13.379Z；本轮基准 2026-10-20T02:51:30Z。\n源码抽读路径：index.mjs。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：后台运行智能体时，用户希望听到需要关注的状态而不盯住窗口。\n- **亮点**：监听主会话事件和执行类工具，按类别去抖，通过 subprocess 调用系统播放程序；PCM 音量副本有内容缓存。\n- **思考**：主会话限定与普通问答静音可减少噪声；有效性取决于事件分类是否符合使用者期待。\n- **建议**：先用测试音和短任务核查四种状态，调整音量及去抖，不将完成音当验收。\n\n## 场景与替代办法\n\n后台运行智能体时，用户希望听到需要关注的状态而不盯住窗口。\n\n系统通知更少资源定制；分级声音适合无需持续看屏的个人使用。\n\n## 依赖与流程\n\n依赖事件名称、执行工具清单和本机播放设备，缺播放器时没有声音不代表没完成。\n\n选择音效和音量，后台等待提示后回看任务实际结果；无声时先测试设备和播放器。\n\n## 成本与效果\n\n没有模型专用调用，但需配置声音与免打扰，密集通知可能反而增加打断。\n\n主会话限定与普通问答静音可减少噪声；有效性取决于事件分类是否符合使用者期待。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：c8cfcb1ceb257ff6ab915e835a2965800ee964c1e98ea02d02181c0f533a4b33。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .mjs | source | 4 | 1382 | 1073 | 217 | — |\n| .js | source | 1 | 307 | 269 | 22 | — |\n| .md | source | 2 | 272 | — | — | 2017 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **后台**：主会话分级声音通知。\n\n## 工程亮点\n\n参数化 subprocess、PCM 缩放和内容寻址缓存可借鉴；音效资源授权与平台行为仍需单独核查。\n\n## 分发与兼容\n\n版本 0.2.1，入口 index.mjs，依赖 subprocess 及 macOS/Windows/Linux 对应播放器。\n\n## 历史对照\n\n前次代码指纹为 f9db75c3cff13919659e81311a2b3d62f9af8aab；本轮固定为 f9db75c3cff13919659e81311a2b3d62f9af8aab。系统通知更少资源定制；分级声音适合无需持续看屏的个人使用。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：工具调用分类不证明任务成功，未验证平台播放器、静音策略与实际漏报误报。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：测试计划、纯问答、执行失败、子代理和连续审批，记录误响与漏响而非只听一次。\n",
+        "metadata": {
+            "repository": "117BS/dsh-perlica-ding",
+            "repository_id": 1335704653,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 7,
+            "pushed_at": "2026-10-07T13:38:52Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A117BS%2Fdsh-perlica-ding%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6409:194586:149598:221D0F:6AD8490D and timestamp 2026-10-21 05:09:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A117BS%2Fdsh-perlica-ding%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640A:1FA705:13C250:21335F:6AD8490E and timestamp 2026-10-21 05:09:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A117BS%2Fdsh-perlica-ding%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640B:13810:1467B9:21E548:6AD8490E and timestamp 2026-10-21 05:09:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A117BS%2Fdsh-perlica-ding%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640D:11B6:145882:21D4B7:6AD8490E and timestamp 2026-10-21 05:09:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A117BS%2Fdsh-perlica-ding%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6412:9ED8B:14457C:21B534:6AD8490E and timestamp 2026-10-21 05:09:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-perlica-ding",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 327,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-perlica-ding",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-16T09:38:45.734Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-perlica-ding",
+                    "error": null,
+                    "latest_version": "0.2.1",
+                    "latest_published_at": "2026-10-07T13:38:01.768Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "f9db75c3cff13919659e81311a2b3d62f9af8aab",
+                "current_revision": "f9db75c3cff13919659e81311a2b3d62f9af8aab",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1335704653:root",
+            "repository": "117BS/dsh-perlica-ding",
+            "path": "",
+            "revision": "f9db75c3cff13919659e81311a2b3d62f9af8aab",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c14dca6f94dd575e6a16ff4821756c76be36d90a4e5f111c0568d2d78ca5b50d",
+                "code": "f9db75c3cff13919659e81311a2b3d62f9af8aab",
+                "maintenance": "35185edd72fec89a66b749f18f8c99dbb1cc9d09882e2d8592da285c4ac9dd41"
+            }
+        }
+    }
+}

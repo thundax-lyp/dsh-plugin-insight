@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5c36e41cdc179006728a7dd4dbf07b8e",
+    "identity": "github:1418733748:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1418733748:root",
+            "repository": "Bainianzzz/dsh-fork-worktree",
+            "path": "",
+            "revision": "4296177f1000c0614902a585f630d0353ee0ddaf",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "bcf94c7090aefbdaf5b014dd05925395279798b442808ced53a724bcd64c854a",
+                "code": "4296177f1000c0614902a585f630d0353ee0ddaf",
+                "maintenance": "014fe7ebe664e27113a82ac664503b7763e25f108dd44a0fa216271df999eab2"
+            }
+        }
+    }
+}

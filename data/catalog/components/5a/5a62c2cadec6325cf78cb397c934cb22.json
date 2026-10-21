@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "5a62c2cadec6325cf78cb397c934cb22",
+    "identity": "github:1333928947:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333928947:root",
+            "repository": "qwert702/dsh-token-viewer",
+            "path": "",
+            "revision": "91b846b33884ed3333a680e2b4212b1ce08952b1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "0d9af7eeeb02c5153c28592c4e8e8034b91eb47446818c1a26ff41ecbeac4509",
+                "code": "91b846b33884ed3333a680e2b4212b1ce08952b1",
+                "maintenance": "a96ad9adb2a00fff65b91ebc91194d3a2561680bccf7c1aecf4c5c64399b36a5"
+            }
+        }
+    }
+}

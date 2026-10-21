@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "22432539ee438206392ee8573fecc72d",
+    "identity": "github:1333860715:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333860715:root",
+            "repository": "jiangnanquan/dsh-ux",
+            "path": "",
+            "revision": "36f04afa2c3ebecd6a2cc967ac2ca2ae278b092f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d77bcf89f5381070809937cf773faac981c075a0aaea943d3cbe93755c9562d8",
+                "code": "36f04afa2c3ebecd6a2cc967ac2ca2ae278b092f",
+                "maintenance": "ca276e6dea19929159c2e614ad4b78ed162b16c04d980d3032210fdb291aae02"
+            }
+        }
+    }
+}

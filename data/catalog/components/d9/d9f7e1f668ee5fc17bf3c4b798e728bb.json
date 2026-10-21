@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d9f7e1f668ee5fc17bf3c4b798e728bb",
+    "identity": "github:1338572270:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338572270:root",
+            "repository": "drscrewdriver/dsh-thinking-levels",
+            "path": "",
+            "revision": "3e1ba955dea07731151112e493b2674ee7b41bb6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0b2b55259da27db5fc0755b335ec741e768bfa314a317ab00540bdfcdecc2c6a",
+                "code": "3e1ba955dea07731151112e493b2674ee7b41bb6",
+                "maintenance": "f9cd4253181def8a5158e7e80689879f38166a34195fa66fbd204467ac08992c"
+            }
+        }
+    }
+}

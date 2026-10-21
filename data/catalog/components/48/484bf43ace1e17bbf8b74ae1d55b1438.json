@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "484bf43ace1e17bbf8b74ae1d55b1438",
+    "identity": "github:1344167199:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1344167199:root",
+            "repository": "Rannist/balance-dsh",
+            "path": "",
+            "revision": "4e225f2885242ba0340a94ed8edd6f006c6ba984",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fb59f10bbcc3640051bd76220a851cfa2667c4f440f3301fb419246cf71fe078",
+                "code": "4e225f2885242ba0340a94ed8edd6f006c6ba984",
+                "maintenance": "cce1a705992ad366f59fa310c30638b3dec9ce9ede2b37c2272f487e079db0fd"
+            }
+        }
+    }
+}

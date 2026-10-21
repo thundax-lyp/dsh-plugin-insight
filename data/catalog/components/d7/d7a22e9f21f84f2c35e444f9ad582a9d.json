@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "d7a22e9f21f84f2c35e444f9ad582a9d",
+    "identity": "github:1323384072:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1323384072:root",
+            "repository": "LoserFox/distill",
+            "path": "",
+            "revision": "78a508c8839a0cd4205c95416905d7d5e2e2775e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "0fd4d5c5b4b223c5bdc6e82324d353371914608efc86f513a133ddec90f7ded9",
+                "code": "78a508c8839a0cd4205c95416905d7d5e2e2775e",
+                "maintenance": "6fba7151504192c9cc803d13ebd307d7d3b1fa8802ece8811a348924b949b03a"
+            }
+        }
+    }
+}

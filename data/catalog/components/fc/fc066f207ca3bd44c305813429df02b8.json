@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fc066f207ca3bd44c305813429df02b8",
+    "identity": "github:1366877146:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1366877146:root",
+            "repository": "loyalchiiina/dsh-model-fold",
+            "path": "",
+            "revision": "ea87b843c99f58f72d87e88a86841ddfeb4fbf98",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a905836965e474cf232b6ede26d7fec4c12ce8ebbd553ac21bb326d2dc5e22b2",
+                "code": "ea87b843c99f58f72d87e88a86841ddfeb4fbf98",
+                "maintenance": "497c01fb5763e6c4ba2417c9bd1821be72f1c9d2d21091815e8fbdc671de32dd"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d965605baf703b019530505233cc4013",
+    "identity": "github:1406685793:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1406685793:root",
+            "repository": "RaditPasya/dsh-web-git-sidebar",
+            "path": "",
+            "revision": "e7837a41b53c49ab9547e20112705af398f50a60",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b789a7d840b3d288cc9f063739844f64ce3a4608b2713fb05355d2f87db3ded8",
+                "code": "e7837a41b53c49ab9547e20112705af398f50a60",
+                "maintenance": "eac7a690909c1ae69a7e9d756e929cdbbfc8282bd5274a3c9d4d7d4e37f5f4b3"
+            }
+        }
+    }
+}

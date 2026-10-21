@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "839e92be2f6bea98aeda2bb1b7af6cbb",
+    "identity": "github:1423038703:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1423038703:root",
+            "repository": "why-sir/dsh-bootstrap",
+            "path": "",
+            "revision": "4a07129b13cc125f0e1cd7bc51da818e775bb0e3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "092ebd5c8029e62c788ddfb3444065e3eeaff02c72c72bd0ba8aeaf479eb6959",
+                "code": "4a07129b13cc125f0e1cd7bc51da818e775bb0e3",
+                "maintenance": "9687fd4fc4460e6b1ae6e949a16c907a17278dd6f94b707a6570ed57833620a3"
+            }
+        }
+    }
+}

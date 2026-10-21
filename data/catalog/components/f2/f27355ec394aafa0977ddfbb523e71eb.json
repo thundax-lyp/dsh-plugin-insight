@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f27355ec394aafa0977ddfbb523e71eb",
+    "identity": "github:1342638861:packages-git-bundle",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342638861:packages-git-bundle",
+            "repository": "sakthiveltofficial/dsh-git-plugins",
+            "path": "packages/git/bundle",
+            "revision": "ec669e8794cf0e192e1e071c988bdd4e3312100e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5712779b7b5270dc4651abd9cf3942d133cfa84410dccaadbe61855dc2471427",
+                "code": "ec669e8794cf0e192e1e071c988bdd4e3312100e",
+                "maintenance": "b794ef4a3a294703b9ddd4d4e724550ee39fe1b7775cdfb7a2ca7a1307f729c5"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c1d93b2a9ab1927e56a8d47a8f5ada4d",
+    "identity": "github:1334974438:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334974438:root",
+            "repository": "xiaoxianyu-office/dsh-router-flash",
+            "path": "",
+            "revision": "554d3aedf76202f82eb263833f55d934774cc58f",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "ccf2c905beb21f209c1d8ef30fe91cfa9a9a76d55d84b532d63818c699c3da8f",
+                "code": "554d3aedf76202f82eb263833f55d934774cc58f",
+                "maintenance": "81e3170a4af642a48b7e8145433460d7321a17732ee0bc450a24ee6fbfc1deb3"
+            }
+        }
+    }
+}

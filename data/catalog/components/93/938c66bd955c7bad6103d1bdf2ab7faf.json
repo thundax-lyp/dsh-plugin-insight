@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "938c66bd955c7bad6103d1bdf2ab7faf",
+    "identity": "github:1336413130:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336413130:root",
+            "repository": "SodaMem/dsh-plugin-sodamem",
+            "path": "",
+            "revision": "290fb6bf4bce47d0f3fb0c738f1fe1d8c2dd389e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e9de69294603313a5ee0f8bb558081d52af26fce58610dfc43ce86d3ca195f67",
+                "code": "290fb6bf4bce47d0f3fb0c738f1fe1d8c2dd389e",
+                "maintenance": "25d418143970e070cdf60af29af4fa4b44093848b89cade8e3df34826fabe9d5"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fe75773f62f01aaf81b0765b573ac240",
+    "identity": "github:1417101851:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1417101851:root",
+            "repository": "taxah92/dsh-pve-vm",
+            "path": "",
+            "revision": "84b66d33f07acff8f9285735c327066e06a9fb3a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c2cf9c040400f432b54b9f775ede476f14021d2a53ca41847ffe647f19446265",
+                "code": "84b66d33f07acff8f9285735c327066e06a9fb3a",
+                "maintenance": "f1ade64f8748091d146ba3ebed57fe418d1799f9e0164f54d95aecbeac1352b9"
+            }
+        }
+    }
+}

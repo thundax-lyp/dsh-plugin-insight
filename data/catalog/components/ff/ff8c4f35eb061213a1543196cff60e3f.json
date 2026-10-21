@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "ff8c4f35eb061213a1543196cff60e3f",
+    "identity": "github:1339251799:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339251799:root",
+            "repository": "PensiveFei/dsh-secure-audit",
+            "path": "",
+            "revision": "430113f16f43e7885dadd10494a9770dd9b20443",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "c8941ab544e77ee7a33f3a3d6cf7036f595172b49a1fd3b0eccb6a5c387ab670",
+                "code": "430113f16f43e7885dadd10494a9770dd9b20443",
+                "maintenance": "6f1d0517a6abae08a896bf01bbe669d5977306c8dbff1a90fd3f80064cf46dfb"
+            }
+        }
+    }
+}

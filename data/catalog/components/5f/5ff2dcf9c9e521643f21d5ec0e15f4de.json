@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5ff2dcf9c9e521643f21d5ec0e15f4de",
+    "identity": "github:1333376022:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333376022:root",
+            "repository": "CAOGGL/dsh-ding",
+            "path": "",
+            "revision": "92a862a4b842b4a3142e43e067443760b0f00f54",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1e3b1d99572f8c295619ab2c54283fa765f72997cc57c8f17108c2c74a1ae7e4",
+                "code": "92a862a4b842b4a3142e43e067443760b0f00f54",
+                "maintenance": "a8fd48cec9296470ffc282a09efd889670467e73a63550bcf9b0355cea71bb2f"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9da3363772950a784f1bac7d5710c3fd",
+    "identity": "github:1333910685:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333910685:root",
+            "repository": "ChenChen913/dsh-session-cleaner-cli",
+            "path": "",
+            "revision": "0dca8390cb8a15307200d8ce17f6a5d4b9482f85",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "2074608e387137c6099f5fe7c8ffa1eb795df54c39bd129c244c07095067f1a5",
+                "code": "0dca8390cb8a15307200d8ce17f6a5d4b9482f85",
+                "maintenance": "e286be14e500c8d60ab740672141fb4b9b7604fa434c6c8c2a9906c2e03d6b66"
+            }
+        }
+    }
+}

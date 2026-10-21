@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1ad3eb5e5531e38760a2d1f782669311",
+    "identity": "github:1380828882:dsh-expmem",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1380828882:dsh-expmem",
+            "repository": "mengxiaoxian/lookover",
+            "path": "dsh-expmem",
+            "revision": "1b9629a08113b7fc30f424c0b1f97c54a2f5ccba",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b2d6d903a887c054f2cf5defed3c16012ac92586afe2a0d577d04d5ec4e6f260",
+                "code": "1b9629a08113b7fc30f424c0b1f97c54a2f5ccba",
+                "maintenance": "6277386d2bb550a27ca09b22de805713639576c7aeb146b0e42567d32d479734"
+            }
+        }
+    }
+}

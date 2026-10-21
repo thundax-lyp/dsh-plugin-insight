@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b3c68fbd4fe889071277a1e635208e0d",
+    "identity": "github:1416459175:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1416459175:root",
+            "repository": "XiaoSHang05/dsh-rice-guard",
+            "path": "",
+            "revision": "84ba6096555851d8acde23275b1e702459b6570a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5c44f1401f922bf71f0337e0a20affe8961ec6ab0a6b9e7bffe024b102e8176b",
+                "code": "84ba6096555851d8acde23275b1e702459b6570a",
+                "maintenance": "d89486e4343b2dde06628c39b84a61e3386338e2bdc2e35fae933a70c2caeb4e"
+            }
+        }
+    }
+}

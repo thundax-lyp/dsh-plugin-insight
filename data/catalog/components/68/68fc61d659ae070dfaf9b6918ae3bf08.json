@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "68fc61d659ae070dfaf9b6918ae3bf08",
+    "identity": "github:1340145656:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340145656:root",
+            "repository": "domparent/OLEDCare",
+            "path": "",
+            "revision": "ed4bbf8dab015a6ba7961503656288a0ccadaae7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "58eda0cabc8055179f9480ea8e57a015e87b6b045e9fab0ba0a9abe6f6e4f27e",
+                "code": "ed4bbf8dab015a6ba7961503656288a0ccadaae7",
+                "maintenance": "977967dfe5d721010b85893d3d4205eaed76f4d0af31014320878061387cd269"
+            }
+        }
+    }
+}

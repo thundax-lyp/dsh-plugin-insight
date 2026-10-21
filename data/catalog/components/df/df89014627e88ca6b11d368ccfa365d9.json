@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "df89014627e88ca6b11d368ccfa365d9",
+    "identity": "github:1337303017:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337303017:root",
+            "repository": "better-er/dsh-classic-coding",
+            "path": "",
+            "revision": "a07d3578c5a7499ed2b9dc19cb412b3f5bf7e025",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2322256e60077946180dbd9650d6f48c47678f228ac01d097eac4626ae604a90",
+                "code": "a07d3578c5a7499ed2b9dc19cb412b3f5bf7e025",
+                "maintenance": "7668ed67454a0c57dde1c502d2fd2c05c3e04a309bafda6e16d7d0f2b64b9f4d"
+            }
+        }
+    }
+}

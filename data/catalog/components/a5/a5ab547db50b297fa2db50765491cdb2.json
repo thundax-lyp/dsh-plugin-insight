@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a5ab547db50b297fa2db50765491cdb2",
+    "identity": "github:1335805848:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335805848:root",
+            "repository": "ZJUZhiyuCai/dsh-ivory",
+            "path": "",
+            "revision": "b44a2bd545da6ce3a5744a77e02e3362f16b6ed1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b88700fb6d1c92293dd220541f4754c914713f0406ab455c2b019dd54c43bf7f",
+                "code": "b44a2bd545da6ce3a5744a77e02e3362f16b6ed1",
+                "maintenance": "0c2d246a9873b813570e470b0026674b3e0b588d566c5e5e07e604a6bb5bf6bb"
+            }
+        }
+    }
+}

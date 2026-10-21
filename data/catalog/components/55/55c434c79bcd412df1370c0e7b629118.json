@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "55c434c79bcd412df1370c0e7b629118",
+    "identity": "github:1367973281:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1367973281:root",
+            "repository": "scottzx/session-reader",
+            "path": "",
+            "revision": "21c558090656107b89c57ab0944e1c47f8898c61",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "96ab95cc48ebc39c2acba0092573f9697993f0302826ca81d18e0eec8ac5b123",
+                "code": "21c558090656107b89c57ab0944e1c47f8898c61",
+                "maintenance": "4be629fe59e7a5d32c436170b6b30ce38f3a43043e2eafdc8fa13bfa5f00515e"
+            }
+        }
+    }
+}

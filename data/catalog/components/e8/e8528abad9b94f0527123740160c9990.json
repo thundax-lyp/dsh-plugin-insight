@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e8528abad9b94f0527123740160c9990",
+    "identity": "github:1381896598:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1381896598:root",
+            "repository": "hongxin/dsh-tvision",
+            "path": "",
+            "revision": "f01435aef41d03da39221da6adf3c0b0bae31c28",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ef00f58376e85ccd349b8e5a29b9ef3d113a1279d86dc1b86a0fde9f592f1f3c",
+                "code": "f01435aef41d03da39221da6adf3c0b0bae31c28",
+                "maintenance": "f71af8523f2b6de5c89dbea4d16f7928de60435d27875b7610f1c2eddde51527"
+            }
+        }
+    }
+}

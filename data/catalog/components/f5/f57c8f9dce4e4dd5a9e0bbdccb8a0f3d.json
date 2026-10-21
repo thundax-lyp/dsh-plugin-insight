@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "f57c8f9dce4e4dd5a9e0bbdccb8a0f3d",
+    "identity": "github:1334176234:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334176234:root",
+            "repository": "yeruizhi/dsh-lark-meeting-notifier",
+            "path": "",
+            "revision": "65782f8d13f79143af86fec1628dfa0918af335f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "9ef3210cbdd7c711b6018977033a98d9b4cd935b4d76f3af7ca35318e083e7a6",
+                "code": "65782f8d13f79143af86fec1628dfa0918af335f",
+                "maintenance": "15c3fe450bf6d98ea87d99b99f50081bc1ba73a4e7c4828fa6357663f2434da7"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b60e5145f6e6c4bd465dd71abd75ef10",
+    "identity": "github:1360959805:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1360959805:root",
+            "repository": "Xingkong42/dsh-open-workspace",
+            "path": "",
+            "revision": "416df44a2f7d8baf5ac60c0af8473a1d5caa76a7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8ecc56e5598fb72e45493e4f027251dd628eeb844721a8820ae6b0dc92787e77",
+                "code": "416df44a2f7d8baf5ac60c0af8473a1d5caa76a7",
+                "maintenance": "d5f252adbc2c0678e7d62a8610207f555a28d325b11e701da19ab47b859bfee3"
+            }
+        }
+    }
+}

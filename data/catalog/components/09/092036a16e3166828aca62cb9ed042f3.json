@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "092036a16e3166828aca62cb9ed042f3",
+    "identity": "github:1174622182:packages-dsh",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1174622182:packages-dsh",
+            "repository": "btspoony/mstar-harness",
+            "path": "packages/dsh",
+            "revision": "ee185357f4f339a049e21f7004c242aca13262fa",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2dd7404bcf9f567994fe927c412ce03154accff9a14329d50c611bfb4e5def49",
+                "code": "ee185357f4f339a049e21f7004c242aca13262fa",
+                "maintenance": "516c4cf4af237af046854cbc2f632f5d039acb94d95452edb3dc1955645cb30a"
+            }
+        }
+    }
+}

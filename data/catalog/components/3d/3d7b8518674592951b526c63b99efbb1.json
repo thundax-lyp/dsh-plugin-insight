@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3d7b8518674592951b526c63b99efbb1",
+    "identity": "github:1329739741:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1329739741:root",
+            "repository": "HuanLinOTO/dsh-plugin-sleep",
+            "path": "",
+            "revision": "2c14c0d79cb60d7993698f76cd7c41e5968c304c",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "dfc340d10a1dffb25059e5302af3a03a6dbd8530fd85acdcee7dbeb006b553e7",
+                "code": "2c14c0d79cb60d7993698f76cd7c41e5968c304c",
+                "maintenance": "800f7a7910c4fd2dc0aa794a42aa92a24afbdeecc16a682c8847036c5fa4e642"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "137cafdd1fed7c7e89b44eba36cc47b0",
+    "identity": "github:1342961132:tailnet-gateway",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342961132:tailnet-gateway",
+            "repository": "CREAIT-nl/dsh-plugins",
+            "path": "tailnet-gateway",
+            "revision": "c6086194b046a24cdd782ddba46961151a1e5388",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "11cbb285b2bf67bd677f29a7b2a0316a40d428f46272f01c3add57c0fb8909d7",
+                "code": "c6086194b046a24cdd782ddba46961151a1e5388",
+                "maintenance": "6968784152db5df6f5f613ff0291cbfd3b086d725430f3e564b9bb01021a5836"
+            }
+        }
+    }
+}

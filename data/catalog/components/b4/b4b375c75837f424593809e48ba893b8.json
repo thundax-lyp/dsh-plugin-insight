@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b4b375c75837f424593809e48ba893b8",
+    "identity": "github:1334028450:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334028450:root",
+            "repository": "lsz-asd/dsh-plugin-device-info",
+            "path": "",
+            "revision": "cca8aec573c99f1ff78df6d0214bd22232fb958c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8e503cbbe9a1ba7e59645d8cda4e849e516e7287b24261717e1d44e997dbab87",
+                "code": "cca8aec573c99f1ff78df6d0214bd22232fb958c",
+                "maintenance": "ade6320999d26aaedc2c87ae87b1c0bb56c7ea102006d6f904f2a7c16961a544"
+            }
+        }
+    }
+}

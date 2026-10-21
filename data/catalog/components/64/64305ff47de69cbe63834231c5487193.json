@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "64305ff47de69cbe63834231c5487193",
+    "identity": "github:1336020747:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336020747:root",
+            "repository": "sliverp/dsh-hub-plugin",
+            "path": "",
+            "revision": "2b21934040c167e6fb08959b66bea2767f6a1b63",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "1d762113874cb0390dd7b1a94fe3f67a4da315928bae01bce819a47429ab9f22",
+                "code": "2b21934040c167e6fb08959b66bea2767f6a1b63",
+                "maintenance": "3ce0f929ee7b512fe882e161d0b4bce54bc2058058dfc2637d0c43957740e970"
+            }
+        }
+    }
+}

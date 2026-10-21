@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3b75457c209292d2bd35f816352aebc4",
+    "identity": "github:1334107985:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334107985:root",
+            "repository": "LeslieWylie/dsh-fleet-audit",
+            "path": "",
+            "revision": "ea36c49c33798a460478f07d11654149e59a7b1c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6ab9d0d3aef250b4de088bdbc87f70fafb860d2842532a738c5cbf7acc52b071",
+                "code": "ea36c49c33798a460478f07d11654149e59a7b1c",
+                "maintenance": "4cc9ecfef6d9268e5dbe86aa574e2ab2940f91dcfd3a1f557d2d34133e5f0b6c"
+            }
+        }
+    }
+}

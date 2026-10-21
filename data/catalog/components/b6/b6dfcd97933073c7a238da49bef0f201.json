@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b6dfcd97933073c7a238da49bef0f201",
+    "identity": "github:1335248751:packages-dsh-pet",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335248751:packages-dsh-pet",
+            "repository": "DamonKoy/dsh-web-ui",
+            "path": "packages/dsh-pet",
+            "revision": "3647a33fa467e0335260468614f6eed04b196c38",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0f812a50984a6af390ff73dd82b1b679fdfaf394126be83ac842c2fe3ab47e51",
+                "code": "3647a33fa467e0335260468614f6eed04b196c38",
+                "maintenance": "3006678a3da32375f98dde533cd5999a73ad41afc20c676065b8dc945d77b3a6"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a6e711e558ac5e25161ddd4ac8568df7",
+    "identity": "github:1370267307:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1370267307:root",
+            "repository": "damlys99/dsh-queue-reorder",
+            "path": "",
+            "revision": "920e8c861d3d5ade9dcd1b77bf130e4bfc158a68",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f96f5eabe9581fa49647ad8d05dcaa04a35cf9555841d076e95c843da0f3af42",
+                "code": "920e8c861d3d5ade9dcd1b77bf130e4bfc158a68",
+                "maintenance": "ac91cce20a085917c3c665d28c602aeb0296416e3bcc65d57211bd396db0f135"
+            }
+        }
+    }
+}

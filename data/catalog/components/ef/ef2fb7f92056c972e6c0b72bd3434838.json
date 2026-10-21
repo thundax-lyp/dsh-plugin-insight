@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ef2fb7f92056c972e6c0b72bd3434838",
+    "identity": "github:1335377827:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335377827:root",
+            "repository": "xianshu-virtuous/dsh-whale-companion",
+            "path": "",
+            "revision": "508f8dc6b3ba8dd9b06836e2e75c6cbc6b701a65",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f636f1547e8cde4896c97170c074118d77f7255cb05287d4e2dcdcfaab4ff376",
+                "code": "508f8dc6b3ba8dd9b06836e2e75c6cbc6b701a65",
+                "maintenance": "9a223b195da05ae8984609e91d9988f27ea02beff3d5346374a537187fbb5351"
+            }
+        }
+    }
+}

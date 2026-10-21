@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "df6da4c4daff475eb6b838f11b66db04",
+    "identity": "github:1331998945:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1331998945:root",
+            "repository": "vibeinging/dsh-turn-navigator",
+            "path": "",
+            "revision": "bcae07a2684205b3ebbd3976493c9084c2e882a1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "5e0ffb923674110fe4646f04f3f60ece295ecd0cf49f7af2c92b1aa21330e525",
+                "code": "bcae07a2684205b3ebbd3976493c9084c2e882a1",
+                "maintenance": "47b073b83e28754f0f04fd0cb6dd6830b013da059b680b4cf6714a5936efa93b"
+            }
+        }
+    }
+}

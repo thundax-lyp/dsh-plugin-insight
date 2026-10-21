@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2ca39fa9fcc1cf73542c13716f9d9d51",
+    "identity": "github:1337302736:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337302736:root",
+            "repository": "wodongx123/dsh-desktop-tray",
+            "path": "",
+            "revision": "8f25fd2b600948b028733ef7f8e95f3dc5d74208",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fc0e1e0dd75c292522d070e168ed693774165eced8ad5b2c14df02819d27e7f7",
+                "code": "8f25fd2b600948b028733ef7f8e95f3dc5d74208",
+                "maintenance": "48ef614c5893d34a5f59e6020bf106b5bea142174cb226b6b471c21dde508d49"
+            }
+        }
+    }
+}

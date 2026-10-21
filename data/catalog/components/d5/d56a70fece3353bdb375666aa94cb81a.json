@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d56a70fece3353bdb375666aa94cb81a",
+    "identity": "github:1333687717:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333687717:root",
+            "repository": "CocoSgt/dsh-skills",
+            "path": "",
+            "revision": "e1eff623f3bd3e6c26a24d49a9ac953e28778cc9",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "be2b95d04843eb160dd5956973094d5c66cadc9151410fccbb29643c2716689c",
+                "code": "e1eff623f3bd3e6c26a24d49a9ac953e28778cc9",
+                "maintenance": "8c426ba5463bb3a085cb1532ea8841c6a0983a7b98f3774ee723bbe93b5e0d4b"
+            }
+        }
+    }
+}

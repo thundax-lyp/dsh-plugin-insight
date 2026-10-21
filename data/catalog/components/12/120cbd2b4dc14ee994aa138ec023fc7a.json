@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "120cbd2b4dc14ee994aa138ec023fc7a",
+    "identity": "github:1398293787:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1398293787:root",
+            "repository": "bauerelizabeth07139/MDSM",
+            "path": "",
+            "revision": "6393d2540d8c4937b5870ce7bdf1711526053c0f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f9200122232f38139d672c6925c9cc728e4a8821d7f1a87ec229aaebb0f5765f",
+                "code": "6393d2540d8c4937b5870ce7bdf1711526053c0f",
+                "maintenance": "41315e151747959246c88c0e62db687924370f61a2d5de749c0bd0af5572a0f6"
+            }
+        }
+    }
+}

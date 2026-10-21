@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "50e13bf6f438123e8311dfdbc0134a7c",
+    "identity": "github:1335601844:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335601844:root",
+            "repository": "JFWaskin/dsh-git-nexus",
+            "path": "",
+            "revision": "65b63233a905c70cb4152f70153917e11fded4c6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ebb742d5fbafa7b35239cbc1f62e89f106600251bccb59e598c9a7da746f7ad7",
+                "code": "65b63233a905c70cb4152f70153917e11fded4c6",
+                "maintenance": "3d93989161ad4dcf930f80922ee48dc17640a46bb8ac4e32253745cb95d8ffcd"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "135ea7ced6bea733dc9f9ae9ad9c258b",
+    "identity": "github:1405401014:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1405401014:root",
+            "repository": "JessenReinhart/dsh-poke-todo",
+            "path": "",
+            "revision": "c1476d71e746c393af4c4639a5695ef02648cddb",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1b539bb1e8c8020bd1d64406a684c333c07427edf0b04d6d32948395889341b6",
+                "code": "c1476d71e746c393af4c4639a5695ef02648cddb",
+                "maintenance": "a27efb2eb9c8c4cc0fe971fd13525d401c08c26b86b42087c885869caf7b75e7"
+            }
+        }
+    }
+}

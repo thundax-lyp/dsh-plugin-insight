@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "542b51b39fe1e9a70834b379c568b615",
+    "identity": "github:1147866277:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1147866277:root",
+            "repository": "GCWing/OpenBitFun",
+            "path": "",
+            "revision": "480cfae4ee56143059bdc85dc06076d7113d426b",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "a1969a5e13f03b5f315520a64d0d535c630a40274ec4475b1b6404060549ebd1",
+                "code": "480cfae4ee56143059bdc85dc06076d7113d426b",
+                "maintenance": "a2339bb822c08641b9a71b6801b07a0e499fe294cb12ccaed694781f2623b0e6"
+            }
+        }
+    }
+}

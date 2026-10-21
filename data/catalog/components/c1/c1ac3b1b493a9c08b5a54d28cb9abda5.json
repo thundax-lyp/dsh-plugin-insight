@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c1ac3b1b493a9c08b5a54d28cb9abda5",
+    "identity": "github:1392859351:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1392859351:root",
+            "repository": "goodjin/dsh-superpowers",
+            "path": "",
+            "revision": "7626373dc71697104eb08f144fbe342df68ee4e1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f1a34de6dcecd2bb167cb31d1116059b24c2afa0914036c73c6e266c82661f8b",
+                "code": "7626373dc71697104eb08f144fbe342df68ee4e1",
+                "maintenance": "78948bafa7913f31a4cb725ce70821e8eaa270d3b2aa70b9f7172e0ae2219b1a"
+            }
+        }
+    }
+}

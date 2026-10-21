@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "db6d1599b157ac77aacbe35747421b5d",
+    "identity": "github:1392949260:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1392949260:root",
+            "repository": "drscrewdriver/dsh-tidy-display",
+            "path": "",
+            "revision": "613619cab6d727f71d86c3d52f93186681c80a49",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "75a68483d64af47580a5f2f55a75dc65a2f409df8295c8685808a2ea3b32b788",
+                "code": "613619cab6d727f71d86c3d52f93186681c80a49",
+                "maintenance": "703daead06dbae231035d19a63a933ab5a1f8fd9c32f679bd0cd23b1eb50fd2e"
+            }
+        }
+    }
+}

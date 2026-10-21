@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8f875490c4f0d8ddea37e7852657439f",
+    "identity": "github:1339875264:packages-dsh-remote-web",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339875264:packages-dsh-remote-web",
+            "repository": "mrRisega/dsh-remote",
+            "path": "packages/dsh-remote-web",
+            "revision": "bff041e6f0b7e122852deeba4ae6634ddf52bc75",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "877088796ad402da2b15bfc76851790bda74268882e467a208512e40f003ce04",
+                "code": "bff041e6f0b7e122852deeba4ae6634ddf52bc75",
+                "maintenance": "1b2551cbb63bde0254674f1c646f0b3605101f261ff7f77e9911c9b4b6f246ea"
+            }
+        }
+    }
+}

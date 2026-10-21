@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2339a1d17be77db4cc7d2658855b7799",
+    "identity": "github:1399946972:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1399946972:root",
+            "repository": "vitas/dsh-ocr-free",
+            "path": "",
+            "revision": "e3e539c79f5e54dac5b035fa3af0b9c700c22413",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a12233fb7a7283d9d825453e9fa36a827b35ac973f98c79c95b04af59a236d78",
+                "code": "e3e539c79f5e54dac5b035fa3af0b9c700c22413",
+                "maintenance": "44b02e9dfad8e83eb2abff3be53dee4e86b7784c0747318991e51f08caf40298"
+            }
+        }
+    }
+}

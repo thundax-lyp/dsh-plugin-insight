@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "058fb533d13b6f55537680558a78bfc4",
+    "identity": "github:1354524531:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1354524531:root",
+            "repository": "yindf/taskfold",
+            "path": "",
+            "revision": "6107bc5046578de3501e212da2ab3dbba790bf09",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4b86a5ca54c80c13032a483cb36749a7a3276f41f4631ac79aaa964b45adc8a1",
+                "code": "6107bc5046578de3501e212da2ab3dbba790bf09",
+                "maintenance": "ba46194d0fd764d85d46af56db914c43983ec2fef88758810e52962b662aae1e"
+            }
+        }
+    }
+}

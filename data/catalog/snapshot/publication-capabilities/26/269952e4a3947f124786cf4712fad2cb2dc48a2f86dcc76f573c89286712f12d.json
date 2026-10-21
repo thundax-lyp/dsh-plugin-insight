@@ -1,8 +1,0 @@
-{
-  "revision": "f8b26198aff85bc72c3bb12a2e843ebec68c04d1",
-  "items": {
-    "模型工具": "vision识图/OCR/区域/比较",
-    "界面": "识图面板",
-    "事件监听": "compaction完成后恢复近期视觉记录"
-  }
-}

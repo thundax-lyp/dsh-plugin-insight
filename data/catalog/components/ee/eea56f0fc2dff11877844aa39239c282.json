@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "eea56f0fc2dff11877844aa39239c282",
+    "identity": "github:1335085461:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335085461:root",
+            "repository": "luumod/dsh-achievements",
+            "path": "",
+            "revision": "03642e5f89d85fb60cd76064ea2f995243e3a5b0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a72845cd1d4ab405a81893139ac2b9b916fde71addbcf2c9d6c10f3a9db85538",
+                "code": "03642e5f89d85fb60cd76064ea2f995243e3a5b0",
+                "maintenance": "3ec5d75acac309dfa59772bf2b73ebef6a2f217533804a268d194c8d355a73ab"
+            }
+        }
+    }
+}

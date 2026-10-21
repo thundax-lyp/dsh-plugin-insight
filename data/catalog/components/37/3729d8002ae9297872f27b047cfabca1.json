@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3729d8002ae9297872f27b047cfabca1",
+    "identity": "github:1332605291:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1332605291:root",
+            "repository": "LuminariSoftwares/context-guardian",
+            "path": "",
+            "revision": "86fbe7ee2615194e379fa40ffe2b39dabe5f82e5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7f43c419c8668c558ecbfdd17f8f1beb48cba160364dd59aa752b808cf7d141a",
+                "code": "86fbe7ee2615194e379fa40ffe2b39dabe5f82e5",
+                "maintenance": "c22a928591932e298db839499c2d439f38821d4708875dc03f5512d3a9d5ff0b"
+            }
+        }
+    }
+}

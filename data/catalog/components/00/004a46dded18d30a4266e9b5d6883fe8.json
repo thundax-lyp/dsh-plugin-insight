@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "004a46dded18d30a4266e9b5d6883fe8",
+    "identity": "github:1340671536:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340671536:root",
+            "repository": "jiangwangyang/dsh-theme-blackhole",
+            "path": "",
+            "revision": "05ff77b9191076eca58cb5f5bf1fbc939c42b234",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "67dc0d2b3c106718f80fe9ff159431b70d2c62c083aa3e7087406cf02c795be2",
+                "code": "05ff77b9191076eca58cb5f5bf1fbc939c42b234",
+                "maintenance": "1ab8fbbf141b2e37ada5d9f6ae37d293980c10b71aa9069afc48beea4ed8ebc0"
+            }
+        }
+    }
+}

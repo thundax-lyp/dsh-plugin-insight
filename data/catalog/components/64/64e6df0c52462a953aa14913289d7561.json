@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "64e6df0c52462a953aa14913289d7561",
+    "identity": "github:1333801410:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333801410:root",
+            "repository": "minybear/DeepSeek-Harness-Pet",
+            "path": "",
+            "revision": "ed48a0bf74bef5ed9b575d4c796495f5aaf6777b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f49139586711245924bc6aa2424f551241cd8e0ff41e91d8e18d0c41fdef4626",
+                "code": "ed48a0bf74bef5ed9b575d4c796495f5aaf6777b",
+                "maintenance": "27ea3d00b321e5572fe1859966ff2299eabea394a1be0a46268141995d8b6bed"
+            }
+        }
+    }
+}

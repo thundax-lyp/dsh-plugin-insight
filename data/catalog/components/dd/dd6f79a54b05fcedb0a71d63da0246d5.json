@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "dd6f79a54b05fcedb0a71d63da0246d5",
+    "identity": "github:1335515059:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335515059:root",
+            "repository": "Ultronen/dsh-archived-chats",
+            "path": "",
+            "revision": "8e30519c5a8397c0816239e6fadf9ecda203f269",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "661162c6243dfbdab1943c8156ad55ecacf47144af2704fe0ad1feb689021d36",
+                "code": "8e30519c5a8397c0816239e6fadf9ecda203f269",
+                "maintenance": "aa02290d868895b4cce2ae54f6cc27ae93b53be116b317770ad54e1cca9cb85c"
+            }
+        }
+    }
+}

@@ -203,8 +203,6 @@ export function renderHot(items, limit = 5) {
 export function renderRecommended(recommendations, byId, limit = 5) {
     const selected = recommendations
         .filter((r) => r.kind !== 'observe' && !byId.get(r.plugin_id).needsReview)
-        // Within each level preserve the editor's order; innovation scores do not rank adoption value.
-        .sort((a, b) => Number(b.kind === 'install') - Number(a.kind === 'install'))
         .slice(0, limit);
     return template('RECOMMENDED', {
         items:

@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "751015a22ee1a99e69c2f16d8810f860",
+    "identity": "github:1334096871:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334096871:root",
+            "repository": "Hilbert-beinghappy/seektty",
+            "path": "",
+            "revision": "42a2a7fa2a01b5a10a2e2ce368c151c8e0fdafc5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "ff7511832967879ed8c85c03cc358be541e558f845ae5d0be39be2b0a7d5bc61",
+                "code": "42a2a7fa2a01b5a10a2e2ce368c151c8e0fdafc5",
+                "maintenance": "b633ead99ad4deff663b3b6cfc53ac7075b2f85bc5a84bff7119bc12f323af52"
+            }
+        }
+    }
+}

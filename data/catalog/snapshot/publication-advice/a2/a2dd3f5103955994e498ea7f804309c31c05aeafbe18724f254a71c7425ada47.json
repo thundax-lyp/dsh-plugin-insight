@@ -1,4 +1,0 @@
-{
-  "revision": "305794fc429ad5fa43be6e6e6f3fb9abd80c135f",
-  "text": "先明确目标仓库和GitLab主机，对照一个已知MR核验字段，不把限量列表当全量。"
-}

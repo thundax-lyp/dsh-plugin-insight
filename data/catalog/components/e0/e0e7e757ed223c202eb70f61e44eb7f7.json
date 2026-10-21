@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e0e7e757ed223c202eb70f61e44eb7f7",
+    "identity": "github:1425030216:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425030216:root",
+            "repository": "znlgis/dsh-opengis-skill",
+            "path": "",
+            "revision": "e6618d50cdec8de78b020fa11d2be0b4aaea80fc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2741e4f1156de3f4591afc08ddacdfee67da8ba9440d2d572b7f70d589002905",
+                "code": "e6618d50cdec8de78b020fa11d2be0b4aaea80fc",
+                "maintenance": "9ae3ef4707cba0abfba4fa5e762e757c38b33a8cc421cdabcf93cbf15b7348c4"
+            }
+        }
+    }
+}

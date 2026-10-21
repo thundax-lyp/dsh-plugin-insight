@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "427eb67113a272277d2fc1d4b267ab45",
+    "identity": "github:1397110141:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1397110141:root",
+            "repository": "DynaMyhome/dsh-notes",
+            "path": "",
+            "revision": "5a1b3caf59124869a64439ec50b6bdd2c32de470",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e6f5c7ab1aabdc408becb66a8d90127c16381e6432a7643a393677176868eb5c",
+                "code": "5a1b3caf59124869a64439ec50b6bdd2c32de470",
+                "maintenance": "27dd50e5f7e2d97b76a140c6af79c11b73e2749c5bf8e8b4e65eff9ae427f460"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3249ed5659812781f9cd52ebcc1f4ed0",
+    "identity": "github:1337727499:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337727499:root",
+            "repository": "CypherNaught-0x/DSH-Subagent-Model-Router",
+            "path": "",
+            "revision": "432c0fdcb56699a7991fa780b57edfd2985d59ab",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "de2cd90fbbd73ffca3c7087ca61e3f2a4256d94030e4aeed26ee58d04ae5cf87",
+                "code": "432c0fdcb56699a7991fa780b57edfd2985d59ab",
+                "maintenance": "38a31f2febd4d4c0bd8cc7288aede2a23e7b3e6bf8c5d20a372fa7d848aa9c9d"
+            }
+        }
+    }
+}

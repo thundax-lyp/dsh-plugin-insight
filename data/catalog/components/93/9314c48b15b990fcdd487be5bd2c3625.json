@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9314c48b15b990fcdd487be5bd2c3625",
+    "identity": "github:1401231438:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1401231438:root",
+            "repository": "GreatArrow-ai/dsh-greatarrow",
+            "path": "",
+            "revision": "a12be37e199085bfe7b2e1807c559f7f87bbcab5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f4f50ab513d1e38518dfa03e676da26567caf8af3410628960bdac0922f71a15",
+                "code": "a12be37e199085bfe7b2e1807c559f7f87bbcab5",
+                "maintenance": "b4ee0ef289de91ee17c35c479150de40b2c22698e6c3ace25aa2fe4a294b9c8d"
+            }
+        }
+    }
+}

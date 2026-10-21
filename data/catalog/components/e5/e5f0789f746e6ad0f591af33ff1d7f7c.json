@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e5f0789f746e6ad0f591af33ff1d7f7c",
+    "identity": "github:1383464096:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1383464096:root",
+            "repository": "MaybeMeibeMaybi/dsh-harmonyos-hiboard",
+            "path": "",
+            "revision": "007c64095d76e9bfac0240e8fb1547516d32bd56",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "363138ff5bd25b779ccd115caccc7de0199cf7043278df2f6853b1e776cf5b2a",
+                "code": "007c64095d76e9bfac0240e8fb1547516d32bd56",
+                "maintenance": "ae190d23dac275e13b52522b5bddc8cce948dfdb710fa6f96c9146860c4e7761"
+            }
+        }
+    }
+}

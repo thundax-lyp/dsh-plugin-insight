@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5cbf9a6458144f17ef187d4eacf6bc4e",
+    "identity": "github:1216785679:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1216785679:root",
+            "repository": "esengine/DeepSeek-Reasonix",
+            "path": "",
+            "revision": "35b9f132aecf2154c27407ebf5c4d3cc42ab33b9",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "3c9d45465dc194ad20f9592001d763f13f65448cd79aafbcd2124c6c11555956",
+                "code": "35b9f132aecf2154c27407ebf5c4d3cc42ab33b9",
+                "maintenance": "820d89e30e8525ca6a2dbe380454baa721d916f1038c852828774647e7512227"
+            }
+        }
+    }
+}

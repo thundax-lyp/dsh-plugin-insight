@@ -1,9 +1,0 @@
-{
-  "revision": "4fb706a3fb2b68cdbb81e951885d2178905d6ca2",
-  "items": {
-    "模型工具": "generate_image、generate_video、send_media三个工具。",
-    "后台": "ctx.jobs长任务及所属会话完成通知，缺服务时detached回退。",
-    "界面": "工具和命令媒体展示、画廊与设置卡片。",
-    "用户命令": "/image、/video。"
-  }
-}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3b94bb1abe23f200ce26abf11b2cb82c",
+    "identity": "github:1345097857:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345097857:root",
+            "repository": "Ycet/dsh-session-plus",
+            "path": "",
+            "revision": "d50c0f902ffe4f8bfbe4c56e8514e3b6e122b77d",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "4ca7119ea22d1d111d33e04f25e927679e85e3631f57b94837688e3ed960d63a",
+                "code": "d50c0f902ffe4f8bfbe4c56e8514e3b6e122b77d",
+                "maintenance": "7e5d6741dc1851e6774b923da6cde7b3d7f8ae552cba481310c9dc933c62f67a"
+            }
+        }
+    }
+}

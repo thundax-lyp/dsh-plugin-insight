@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ae2e9f1b00453a49058dab73f169914c",
+    "identity": "github:1339300677:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339300677:root",
+            "repository": "waknow/dsh-web-icon-indicator",
+            "path": "",
+            "revision": "13c1743d148e8bcdfe4564c8bf06f835914ce978",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4f267c6dc631caa92572ad167e77d79d4058741a1f5e0830df442a622fba65e2",
+                "code": "13c1743d148e8bcdfe4564c8bf06f835914ce978",
+                "maintenance": "70a784b814c687f626063b1ed79eba4f1b1dceb4a9b4f3b491fa27cb47442f52"
+            }
+        }
+    }
+}

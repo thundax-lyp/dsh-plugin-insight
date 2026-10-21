@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "534ccb4ab5cfc03c06b65e8a1c8ffbf0",
+    "identity": "github:1335029625:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335029625:root",
+            "repository": "hellosky983/dsh-foundry",
+            "path": "",
+            "revision": "afb5be11c58d38a86dbae7e05e48d06ed1a36d44",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e56d944e5500bcece373fd87d5732c38ddf6780d7c6741aff076d30a98a78c9d",
+                "code": "afb5be11c58d38a86dbae7e05e48d06ed1a36d44",
+                "maintenance": "666733277b4b2e3fc1920c67706fe590759fb5551b31af17b9d89a48243d1c2a"
+            }
+        }
+    }
+}

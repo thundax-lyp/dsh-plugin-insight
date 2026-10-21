@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fd3ca5e5341b7e80975ea100e03ea04b",
+    "identity": "github:1333820512:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333820512:root",
+            "repository": "Jolly-J/dsh-deepseek-billing",
+            "path": "",
+            "revision": "408e9428c2f3f73c82506818857e825e21ef7c95",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9fae8f07d8f05c2dd8765a84bc8f7493f567d8e3e06c5fc3e04b9fab891dfb03",
+                "code": "408e9428c2f3f73c82506818857e825e21ef7c95",
+                "maintenance": "d4dd37f85e7fe5f928bb69b731aa46862d76999b2d6c3763b549415a7a037dfe"
+            }
+        }
+    }
+}

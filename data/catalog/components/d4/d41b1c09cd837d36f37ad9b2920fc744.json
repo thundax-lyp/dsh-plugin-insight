@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d41b1c09cd837d36f37ad9b2920fc744",
+    "identity": "github:1386625534:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1386625534:root",
+            "repository": "hbgdjb/dsh-mimo-quota",
+            "path": "",
+            "revision": "1815f24ac87fb5521ceecf16d2d59e1bcb30d533",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "164c1b6b8a0f065249d7e7c841210868c625ec29c02cfc2e3f34b61aa9f6a1a1",
+                "code": "1815f24ac87fb5521ceecf16d2d59e1bcb30d533",
+                "maintenance": "99a4a766dc068df4495c3f4c7ffcd19941daaf5d8d16ccb3e7c1be49ff1220d5"
+            }
+        }
+    }
+}

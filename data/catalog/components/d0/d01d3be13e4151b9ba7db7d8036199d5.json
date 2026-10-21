@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "d01d3be13e4151b9ba7db7d8036199d5",
+    "identity": "github:1335841150:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335841150:root",
+            "repository": "JohnXu22786/adversarial-review",
+            "path": "",
+            "revision": "3edd9f29447ceb94e3e0e36e807a7fe7e0e101fd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "37e3e21889a4cebc2b0917be230e5439eafe733c350c8adf85370234741d1cad",
+                "code": "3edd9f29447ceb94e3e0e36e807a7fe7e0e101fd",
+                "maintenance": "796c0703ddc6598cebd75b5f29fc16e13184abc04806f853515a9cbf8ecc0d20"
+            }
+        }
+    }
+}

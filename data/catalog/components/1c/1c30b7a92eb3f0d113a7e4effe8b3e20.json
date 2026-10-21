@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1c30b7a92eb3f0d113a7e4effe8b3e20",
+    "identity": "github:1336604596:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336604596:root",
+            "repository": "Hefulalala/dsh-remote-workspace",
+            "path": "",
+            "revision": "ae07df0bea8989914ce70e997d182d3fae3be953",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "72d2c28e352bb93de0f43fcec1b6873ab261ffe7e0058d61190694056f3ff419",
+                "code": "ae07df0bea8989914ce70e997d182d3fae3be953",
+                "maintenance": "183c4eee6effe75a4eaefb58f0bd3c83df64afb9e728ee840cd513a58c518e28"
+            }
+        }
+    }
+}

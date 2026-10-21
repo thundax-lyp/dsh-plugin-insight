@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f2cbd0d4f628d14544d5a79483d78493",
+    "identity": "github:1425355189:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425355189:root",
+            "repository": "David060323/dsh-phone-remote",
+            "path": "",
+            "revision": "c05ee49041dea95410b009d2d0a75d04a575e8a3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "feeef4dbd1a9dc82d0fa56509bb421b8c922431322bc703452941c1831e3a4f4",
+                "code": "c05ee49041dea95410b009d2d0a75d04a575e8a3",
+                "maintenance": "c2b5f125a5aa4fc144597f56a9b48b2d3fa94335ea63f5ea203983e7baf6f1f5"
+            }
+        }
+    }
+}

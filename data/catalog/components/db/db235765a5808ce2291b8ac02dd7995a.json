@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "db235765a5808ce2291b8ac02dd7995a",
+    "identity": "github:1351380895:packages-dsh-palm",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1351380895:packages-dsh-palm",
+            "repository": "Eternalloveone/dsh-palm",
+            "path": "packages/dsh-palm",
+            "revision": "295e3387e82d0aeed52626e0f9edc7c5e6f0c6ff",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "015c1fd9b2d77f37ce61820901842e7058e56acbae3e53254dc4ea28a72aeca2",
+                "code": "295e3387e82d0aeed52626e0f9edc7c5e6f0c6ff",
+                "maintenance": "12db006d4038230b1df343f54e006a72ba4659a600ca98758f1f84304260140e"
+            }
+        }
+    }
+}

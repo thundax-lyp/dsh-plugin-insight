@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "caa612e386f875dcb894b6d5d13a43cc",
+    "identity": "github:1332702225:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1332702225:root",
+            "repository": "bauerelizabeth07139/opencode-eyes",
+            "path": "",
+            "revision": "eedd192ad11e1d385a138314dbc7c048c283dbdc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0e92ab646822d874bc36578063234469e5c2001929ba6f27578e98b3d92d9b42",
+                "code": "eedd192ad11e1d385a138314dbc7c048c283dbdc",
+                "maintenance": "4f5ce0e359a306d15b111e37db52b0a4d06b8439c787444c0b8dba661b3d38e9"
+            }
+        }
+    }
+}

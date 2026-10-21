@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4ce2a0361090294bee97cbdbb4acd6e5",
+    "identity": "github:1338799812:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338799812:root",
+            "repository": "Zenjibad/dsh-mcp-toggle",
+            "path": "",
+            "revision": "e9a7ed6a0adceb039f6ea0540af117130c9fa6c4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d4cbf29edaa820a162f95ae8e551e66f48d92a31aff36845af40256149a1af9d",
+                "code": "e9a7ed6a0adceb039f6ea0540af117130c9fa6c4",
+                "maintenance": "e1615c00b403c190bf00cc669d579a0b1c700292af312fad2fa88d0766179685"
+            }
+        }
+    }
+}

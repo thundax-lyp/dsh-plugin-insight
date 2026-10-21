@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "115e0337911bff33cc4fad78347bfd82",
+    "identity": "github:1330704503:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1330704503:root",
+            "repository": "Moeblack/deepseek-manners",
+            "path": "",
+            "revision": "32f58a8a008797a624f0f46367cb91fed9de5dee",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "b315fc4f049fc9e20de556d68d2cfdae64655056bc323cd3879e0b3f874da2ca",
+                "code": "32f58a8a008797a624f0f46367cb91fed9de5dee",
+                "maintenance": "d0a96b356734e34f7c3af5dd7419b658e67328f899dd8c5d0a6b8c29974609c1"
+            }
+        }
+    }
+}

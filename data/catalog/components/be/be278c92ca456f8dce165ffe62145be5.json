@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "be278c92ca456f8dce165ffe62145be5",
+    "identity": "github:1333709625:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333709625:root",
+            "repository": "ChuanTianML/dsh-island",
+            "path": "",
+            "revision": "8bdfefc3724cb73337da6a66016f0904a7741135",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "9555f0cc193930a05e2a6cb66417457311dd9862698703da749d551c9530fa4d",
+                "code": "8bdfefc3724cb73337da6a66016f0904a7741135",
+                "maintenance": "b64e12e49cd0bba7ced74930a5039a1d378d71daecdb25bd13eb96dc44c84388"
+            }
+        }
+    }
+}

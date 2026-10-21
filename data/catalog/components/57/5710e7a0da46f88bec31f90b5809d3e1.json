@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5710e7a0da46f88bec31f90b5809d3e1",
+    "identity": "github:1335046216:packages-tty",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335046216:packages-tty",
+            "repository": "hyzyn/dsh-plugin-kit",
+            "path": "packages/tty",
+            "revision": "70074a602a42b595eaca2bdc2b4c0be3f3ab6a62",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f027eed7dba9bf668acfeb3f5a89136b229985fb3624b483d8c9689185d5d96d",
+                "code": "70074a602a42b595eaca2bdc2b4c0be3f3ab6a62",
+                "maintenance": "2e7b920c8063d40c640ac1413638a8754c56991d360e6f103eb8ec2a73934260"
+            }
+        }
+    }
+}

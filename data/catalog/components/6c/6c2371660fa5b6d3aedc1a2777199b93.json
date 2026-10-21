@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6c2371660fa5b6d3aedc1a2777199b93",
+    "identity": "github:1357850648:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1357850648:root",
+            "repository": "TheGoodMorty/chat-pace",
+            "path": "",
+            "revision": "1da6cc484db6a4eb75e23841b3b54d625ffdc084",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "96235d324f660ac59feb61bcedea9dbac080c918d0fca9e9c7579372fdbab604",
+                "code": "1da6cc484db6a4eb75e23841b3b54d625ffdc084",
+                "maintenance": "9cbf0174d72650605903acdb80aa78d9734d5f8be6750af7b8ed1691333c0c5e"
+            }
+        }
+    }
+}

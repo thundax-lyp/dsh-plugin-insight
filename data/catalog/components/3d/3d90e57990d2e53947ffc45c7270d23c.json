@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3d90e57990d2e53947ffc45c7270d23c",
+    "identity": "github:1338560133:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338560133:root",
+            "repository": "Frog755/dsh-client-auto-retry",
+            "path": "",
+            "revision": "3ffab63905166bfeb9a3434bfe7f20e049e72c62",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d9c0ceadb2801687078f95de6734ca588ff6be0c83d4c1c824dfde4692b6e904",
+                "code": "3ffab63905166bfeb9a3434bfe7f20e049e72c62",
+                "maintenance": "bfb62c5fea223d8c1eaab74104a02e38ed1c8809eeb32dd68f49f5c4cfe4c5fc"
+            }
+        }
+    }
+}

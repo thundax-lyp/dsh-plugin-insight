@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "62b90f536d596dd346e758c83a4157b4",
+    "identity": "github:1348202128:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1348202128:root",
+            "repository": "robiteame/dsh-session-tree-extension",
+            "path": "",
+            "revision": "3e2fa771e2133f3fed96e0684d0ba2f5b0c62b81",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "dc8ea6227b8a7385b70e3cc1e5f9e4decb84215936d02ddd0df1ce60d9a76c64",
+                "code": "3e2fa771e2133f3fed96e0684d0ba2f5b0c62b81",
+                "maintenance": "34449e22216673de2a03858f43145e8fcdd472739a5648d13085dd0e758283bb"
+            }
+        }
+    }
+}

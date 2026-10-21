@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "40a49085feb8ad1c09b60cda51bd1830",
+    "identity": "github:1424315474:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424315474:root",
+            "repository": "chaoge762/dsh-ears-prosody",
+            "path": "",
+            "revision": "f28cd16bc5646fb17c3c76564598e2c37e997d77",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "19d15bb614b9dbf2030f84bdbeb14ff5551beda5bc7c40048b404a4c8f1e09f4",
+                "code": "f28cd16bc5646fb17c3c76564598e2c37e997d77",
+                "maintenance": "dd307f68ec9c794d96ff8d13705904734e1045fc1efa66b94bb59e459bbbca54"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a300e4aa38524e444d117d11b54254c3",
+    "identity": "github:1335046216:packages-mcp",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335046216:packages-mcp",
+            "repository": "hyzyn/dsh-plugin-kit",
+            "path": "packages/mcp",
+            "revision": "70074a602a42b595eaca2bdc2b4c0be3f3ab6a62",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fd61936ee1c47792ca7930ef5265e86c644752eb8f650af495685b8314061c19",
+                "code": "70074a602a42b595eaca2bdc2b4c0be3f3ab6a62",
+                "maintenance": "2e7b920c8063d40c640ac1413638a8754c56991d360e6f103eb8ec2a73934260"
+            }
+        }
+    }
+}

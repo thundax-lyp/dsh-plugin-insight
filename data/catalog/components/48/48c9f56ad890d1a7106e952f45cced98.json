@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "48c9f56ad890d1a7106e952f45cced98",
+    "identity": "github:1334981389:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334981389:root",
+            "repository": "Bing-Bryan/dsh-unread-dot",
+            "path": "",
+            "revision": "c6dbc1dae83928f10f4f713f5fcfc7423babefd9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6e6079b9951ff012c6137acfce7c8bed331fd0f5c88933d4c908fa4005c7f151",
+                "code": "c6dbc1dae83928f10f4f713f5fcfc7423babefd9",
+                "maintenance": "13ae9dec7d4073535535eb6ea6748ec7c3680b6eb2c0514ff5fe490eab329934"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7731088cd58fe3cef869e2668bf059d1",
+    "identity": "github:1337887481:packages-dsh-balance",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337887481:packages-dsh-balance",
+            "repository": "kongshan-zhuyu/dsh-balance-quota",
+            "path": "packages/dsh-balance",
+            "revision": "04b5f1b1b6234c16ed2a1d9d4ca38407cfa538be",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f3762ee1fbf4fca5c6a70a8d3d9d93f7970bb2398fd88e90da23ed9e51b8423c",
+                "code": "04b5f1b1b6234c16ed2a1d9d4ca38407cfa538be",
+                "maintenance": "75692025524f6787aac44141d2e3b8d32efcc8bd93d8ef02aa94aff123eb8e9b"
+            }
+        }
+    }
+}

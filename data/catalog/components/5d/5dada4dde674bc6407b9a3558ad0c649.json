@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "5dada4dde674bc6407b9a3558ad0c649",
+    "identity": "github:1327564033:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1327564033:root",
+            "repository": "LoserFox/dsh-git-identity",
+            "path": "",
+            "revision": "39c608ca8e0779c93c66648ad457decffdf61903",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "31db9e80e6c484182c519e66b57f34b88279deb8e605e8c33796e939a5006716",
+                "code": "39c608ca8e0779c93c66648ad457decffdf61903",
+                "maintenance": "ff228c830b24388df332657e6da244cc1a64da8b0b67dd90745f739974b036b8"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1b3315c5a8730ac3d966178b49929d89",
+    "identity": "github:1342118175:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342118175:root",
+            "repository": "mumuer1024/dsh-ui-liteglass",
+            "path": "",
+            "revision": "586943c25e559409d202ab1e572d4f7f848eb7a6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "eda7fbb34828b3828d9e3401519db8b96ffd929451b937e1332c8ad8bdaa0398",
+                "code": "586943c25e559409d202ab1e572d4f7f848eb7a6",
+                "maintenance": "3145121f9e5310bd16fcf13d4bd376f1bd45420e82ce0560a66c8d278b879ef8"
+            }
+        }
+    }
+}

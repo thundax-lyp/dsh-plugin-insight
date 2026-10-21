@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "752884775e3452115790ec7d43ef88ac",
+    "identity": "github:1334600785:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334600785:root",
+            "repository": "icefall7/dsh-plugin-scout",
+            "path": "",
+            "revision": "cccc690850c986570a2d51980818644716344df0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ebd4b504d969130991e1ec41fa342b485259ca439f530830a4450385024ebe9e",
+                "code": "cccc690850c986570a2d51980818644716344df0",
+                "maintenance": "b72e19beb832b45f261fa4e0cad576edbf8838134d1dfdf53fcb5907a5e8257f"
+            }
+        }
+    }
+}

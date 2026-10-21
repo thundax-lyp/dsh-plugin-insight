@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f16e61e2115d777807b86f4a95e16962",
+    "identity": "github:1416526347:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1416526347:root",
+            "repository": "Monter-code/dsh-image-insight",
+            "path": "",
+            "revision": "532679ff3355aa126450d85fd4060f25fd7acd31",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2e44782430cccfb8c795cd7f7561ae6ae76e48c3d57f1c43dd077f3e2db04564",
+                "code": "532679ff3355aa126450d85fd4060f25fd7acd31",
+                "maintenance": "1d8dd8067032b4bdc5f3821a400419498d47ac1bc74a45641b7b704c3bf410aa"
+            }
+        }
+    }
+}

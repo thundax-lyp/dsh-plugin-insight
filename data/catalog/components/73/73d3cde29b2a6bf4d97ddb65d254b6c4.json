@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "73d3cde29b2a6bf4d97ddb65d254b6c4",
+    "identity": "github:1398536430:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1398536430:root",
+            "repository": "xlennart/dsh-auto-review-jev",
+            "path": "",
+            "revision": "8b04b77297af477c68ac5f367b7f2b8a3b661ce1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d699cd96751177d5870fa63606a10b122f2af76251002d9cfce2c412c33ebd30",
+                "code": "8b04b77297af477c68ac5f367b7f2b8a3b661ce1",
+                "maintenance": "a5d6dacc423b4da0cc30f5f55e185669b7e3ff3c0b7d9aded824d522cfa25717"
+            }
+        }
+    }
+}

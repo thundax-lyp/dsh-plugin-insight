@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "7d153336d4defc0f3507f9b634b1b33f",
+    "identity": "github:1345719578:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345719578:root",
+            "repository": "zhubaohi/dsh-qwen38-compaction-fix",
+            "path": "",
+            "revision": "080fa009920c966e235b8d15e296ee10310f1d71",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "5d5e2b46b5edec5b32b48d1da225710e3a110eae87e9f942ca37e5863870eb22",
+                "code": "080fa009920c966e235b8d15e296ee10310f1d71",
+                "maintenance": "baa3f156b4393d54d27b61cccf098472cddc4dd13e9c53e726ccf90bdd06fda3"
+            }
+        }
+    }
+}

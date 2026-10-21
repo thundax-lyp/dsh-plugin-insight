@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "340f604fdf97fdb456081fa71c0fb967",
+    "identity": "github:1365572890:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1365572890:root",
+            "repository": "nobu121/dsh-opencode-session",
+            "path": "",
+            "revision": "a7efa861d95e3506e8dda4e2e2b2b7f09d07b298",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a6ebff08780c70fb5a389b8302cc1ecbcff3afe252ab2577e5c3f2948972a38d",
+                "code": "a7efa861d95e3506e8dda4e2e2b2b7f09d07b298",
+                "maintenance": "98fae99330a8d7e48b34914e1b9e7443d799ce36c4c118f6d8f2c911d850ce5e"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b8d7f582d66ea84819b1fd98ea8ef98b",
+    "identity": "github:1338380211:packages-bundle",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338380211:packages-bundle",
+            "repository": "Blackman99/codsh",
+            "path": "packages/bundle",
+            "revision": "972d36f894f935c9a4bcf60bb870508b4460a419",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "68ac06128fc2ccc0576fec13ff0f3ebfec62e6cffd48742a4ffb9be4799b9696",
+                "code": "972d36f894f935c9a4bcf60bb870508b4460a419",
+                "maintenance": "b29f7356deca0eaf7f059cf8253b40a84de715a758addec0cac4f8b629b0432d"
+            }
+        }
+    }
+}

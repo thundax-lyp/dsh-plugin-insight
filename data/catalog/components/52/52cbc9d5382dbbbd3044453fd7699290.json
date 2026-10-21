@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "52cbc9d5382dbbbd3044453fd7699290",
+    "identity": "github:1350419329:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1350419329:root",
+            "repository": "Continuum-AI-Corp/OrcaReplay",
+            "path": "",
+            "revision": "a9178ca26af95cfd3231b8eb2da4ae11dbbd0a84",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "64a2bf56efb4318513158cd0b1ef28fd8912f1bd73bd00968320feb2384bdb9c",
+                "code": "a9178ca26af95cfd3231b8eb2da4ae11dbbd0a84",
+                "maintenance": "ebf892930fb18c54c3fd03a5c1a37a1cbf96fa5872f5ac4dece7e33c3036ccbc"
+            }
+        }
+    }
+}

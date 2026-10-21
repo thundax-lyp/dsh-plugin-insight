@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "23f2eae64de2817cd2b7f3a3eb3b1b5e",
+    "identity": "github:1334303936:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334303936:root",
+            "repository": "Smalldy/godot-bridge",
+            "path": "",
+            "revision": "2ee9368d7d63cb2bb4d1f21ab1a022154fd8706a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "6e957013406b80ce4d9e3d4ac7bcaf678aa79928a3292445a4ec4ac74cb905bc",
+                "code": "2ee9368d7d63cb2bb4d1f21ab1a022154fd8706a",
+                "maintenance": "0d4df8458deabe1db25cdbc8a11ab487c83802e4257d2ae6532e68b1f1aced41"
+            }
+        }
+    }
+}

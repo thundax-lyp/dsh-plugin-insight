@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c195561e74893ddb768f17542cabeea1",
+    "identity": "github:1383625373:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1383625373:root",
+            "repository": "yfwu2020/dsh-selection-explain",
+            "path": "",
+            "revision": "175fbbf9c976b9b9d5374194757d5741e90cfbea",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ab490a3647794581c378cb4726866199af14cb4100ba7482fd75e33911020860",
+                "code": "175fbbf9c976b9b9d5374194757d5741e90cfbea",
+                "maintenance": "e15646dbadc36589a038b350e5b2d7a859148616da07ed4bdd1a4d48a3cccf64"
+            }
+        }
+    }
+}

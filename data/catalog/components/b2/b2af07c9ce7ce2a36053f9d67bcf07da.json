@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b2af07c9ce7ce2a36053f9d67bcf07da",
+    "identity": "github:1348628311:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1348628311:root",
+            "repository": "hawk2048/oh-my-dsh",
+            "path": "",
+            "revision": "3b1f13bd3c60c150acaf1d9e89c8108ecb927b2a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "945585d0afcd22b0d755959762c32e08ef8cb5ca95a3ba6749b83aa0e3e6faf7",
+                "code": "3b1f13bd3c60c150acaf1d9e89c8108ecb927b2a",
+                "maintenance": "75818993db85088d0eb09ce018b8901811a8dee08df6df425d9413e2e663afd9"
+            }
+        }
+    }
+}

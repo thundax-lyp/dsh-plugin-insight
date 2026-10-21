@@ -1,7 +1,0 @@
-{
-  "revision": "a705c9d0cb5f025ce6eebd3e8c17a37d161a8628",
-  "items": {
-    "模型工具": "quota_meter 提供会话仪表。",
-    "用户命令": "/qm 查看用量与预测。"
-  }
-}

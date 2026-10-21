@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f827060145e03a26c0e489ff811d4389",
+    "identity": "github:1346230792:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346230792:root",
+            "repository": "L1ttleBad/dsh-multi-task",
+            "path": "",
+            "revision": "68993d7ea2f30d721236f74efa72576e9eb30bb7",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "5bb5dc5e339759ce5453eda28c5f3145e77c6331abfacb408161faef91e4f64a",
+                "code": "68993d7ea2f30d721236f74efa72576e9eb30bb7",
+                "maintenance": "745e1c9a6208f72f2648523909a3f0aff9982ddeda3a4621e153cf9fa0f62042"
+            }
+        }
+    }
+}

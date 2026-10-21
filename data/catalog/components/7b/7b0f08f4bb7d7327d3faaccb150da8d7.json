@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7b0f08f4bb7d7327d3faaccb150da8d7",
+    "identity": "github:1343926946:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343926946:root",
+            "repository": "shaomingbo/dsh-attention",
+            "path": "",
+            "revision": "487d4adcce4d67ebe1d353ac754cddeb80a484f8",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "a00fb3bf2188a8cd21c5a936595131f5e99b328759f201e40b32f41094289efc",
+                "code": "487d4adcce4d67ebe1d353ac754cddeb80a484f8",
+                "maintenance": "8e4db6b88f89319b0876d1e0dd689fb8c5700e0c3b47b20ffbe8c94d9f4ff46c"
+            }
+        }
+    }
+}

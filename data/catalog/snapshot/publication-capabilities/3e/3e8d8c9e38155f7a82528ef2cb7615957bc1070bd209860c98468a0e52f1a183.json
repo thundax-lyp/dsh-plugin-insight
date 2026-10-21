@@ -1,7 +1,0 @@
-{
-  "revision": "d1efd794049a2a26b8e75573b51df249bd72b62b",
-  "items": {
-    "后台": "turn/end 调用Python清运及首条消息输出守则注入。",
-    "用户命令": "dry-run、结项、回收清单与还原子命令。"
-  }
-}

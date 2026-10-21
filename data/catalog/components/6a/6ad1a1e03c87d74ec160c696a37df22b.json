@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6ad1a1e03c87d74ec160c696a37df22b",
+    "identity": "github:1353706108:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1353706108:root",
+            "repository": "NattoCB/dsh-safe-delete",
+            "path": "",
+            "revision": "149190d58104e8b09497967babaa69de2252d309",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d9923c10ca4d1a63e8e0c374bcdf284a6ebd633f5069e3179ed9845947bb8ca4",
+                "code": "149190d58104e8b09497967babaa69de2252d309",
+                "maintenance": "2b5c4f01c0db229acf966b49f1bf4478e6136fa0a3ad6d0947d83cafd05c77df"
+            }
+        }
+    }
+}

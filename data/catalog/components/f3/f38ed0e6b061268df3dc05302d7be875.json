@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f38ed0e6b061268df3dc05302d7be875",
+    "identity": "github:1365614974:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1365614974:root",
+            "repository": "RempleXI/word-docx-writer",
+            "path": "",
+            "revision": "d9a24c9bed53b14e760e9ab736caaf44dca4342b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ba87b12f0cb130627a9f3c625397b81526e656855f2de56793f754535a959537",
+                "code": "d9a24c9bed53b14e760e9ab736caaf44dca4342b",
+                "maintenance": "505fcc7cc0b0c2de97908100d29b57b53f68dbf08e07394c5ed1e8a31eb3533e"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "daa1e93076649747ad3607572489e5cc",
+    "identity": "github:1345872255:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345872255:root",
+            "repository": "zeros335882878/dsh-paper-survey",
+            "path": "",
+            "revision": "fb39f1471208a6a217856c43f7072610ae551f09",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "81bfdefe39404e024804f0d303e2cf68570490beda06ec2fbccad276d17738f7",
+                "code": "fb39f1471208a6a217856c43f7072610ae551f09",
+                "maintenance": "b6ba91fa21d9ce90e5cff2e85a88bb5f4f678d4424185278a338678fd6c292cd"
+            }
+        }
+    }
+}

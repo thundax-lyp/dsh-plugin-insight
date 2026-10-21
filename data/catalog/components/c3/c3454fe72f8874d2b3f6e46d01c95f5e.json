@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c3454fe72f8874d2b3f6e46d01c95f5e",
+    "identity": "github:1360367347:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1360367347:root",
+            "repository": "NoneadChina/dsh-nonead-universal-robots",
+            "path": "",
+            "revision": "bcb97e9487cd3c7bf0170b7b95cc72a647a3abd9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3c7b0b912c9ebc13abbc5b078852d01492a10db76a4bd27d13e6e5a9f025841f",
+                "code": "bcb97e9487cd3c7bf0170b7b95cc72a647a3abd9",
+                "maintenance": "a1e8cf11a4c02cf98edfc8f297a1ec5d2c4e14aefd9547762bc7b26adce1fd4f"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b0699fc9a5aeb6dd25f88c3635b77a9f",
+    "identity": "github:1348614531:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1348614531:root",
+            "repository": "qinpeizhan77/deepseek-harness-novel-studio",
+            "path": "",
+            "revision": "9a3d5ac23205546602f1f07d54fae6372f39a9a3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "737208abc3cbe7f1d5a388a6aec50076402b076e4a0da9c1ce031b11e53d4016",
+                "code": "9a3d5ac23205546602f1f07d54fae6372f39a9a3",
+                "maintenance": "82146ca9740f3ea1343f3c49ef80bdcbb8de9dbadb7dce408c2266f99d5d6a7a"
+            }
+        }
+    }
+}

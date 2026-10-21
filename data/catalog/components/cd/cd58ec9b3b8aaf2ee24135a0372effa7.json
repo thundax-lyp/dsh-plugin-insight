@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "cd58ec9b3b8aaf2ee24135a0372effa7",
+    "identity": "github:1352913821:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1352913821:root",
+            "repository": "chrisx9z/dsh-session-chat-share",
+            "path": "",
+            "revision": "69901974f7f263a3f8578172f4244474f493e9c4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c227055ab58400b4c5a783116e6dac73580a2e9a3cd03d5f140787c842578838",
+                "code": "69901974f7f263a3f8578172f4244474f493e9c4",
+                "maintenance": "9beba2bcaa98a0663544a145a13fd83c0416c34d03c7140f742ef389d19445ad"
+            }
+        }
+    }
+}

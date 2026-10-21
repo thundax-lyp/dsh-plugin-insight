@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "241ce23a216d6d025e18c11d1acfa7ed",
+    "identity": "github:1401797123:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1401797123:root",
+            "repository": "PriceDotWin/pricewin-dsh",
+            "path": "",
+            "revision": "c942d167948fedd91b7563f5eddc2f86269fca93",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "7d28e28f0bc9a8c2e2b658cf9f12006efff5ebb115d757f488c89b316033a977",
+                "code": "c942d167948fedd91b7563f5eddc2f86269fca93",
+                "maintenance": "b0791757248f27fcf5e82481f4ab43097a8b9106f0357401caae321f64ae6200"
+            }
+        }
+    }
+}

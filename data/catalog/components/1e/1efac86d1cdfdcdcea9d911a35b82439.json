@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1efac86d1cdfdcdcea9d911a35b82439",
+    "identity": "github:1339798643:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339798643:root",
+            "repository": "balue8246-maker/dsDragPasteALL",
+            "path": "",
+            "revision": "5f41459a5a6366f956f4ee2d0a98a0a342a8e61e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6bff766dae1d1f21bb8d407c030196e6de0b9ad18adb66e6a21b00f0d74902f8",
+                "code": "5f41459a5a6366f956f4ee2d0a98a0a342a8e61e",
+                "maintenance": "2b8760608437d063720cd1595852796a6c42a92cebda7b886b39dee25e4dc705"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "499a93bea0075d1212b13870c117d8b6",
+    "identity": "github:1352254179:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1352254179:root",
+            "repository": "Yeelight/dsh-yeelight-smart-home",
+            "path": "",
+            "revision": "d8be8aa355a20dd06d3cdd6775197a539c992682",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b91ba64bf810724f4b7ace076ed6a616a353a7f5dafb914078abcd83e425a51b",
+                "code": "d8be8aa355a20dd06d3cdd6775197a539c992682",
+                "maintenance": "2980660887a6df98ab7791fd2195c48e117810078316540a5660ef8051c37ea6"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "60357fabfb81e47da747b4b9d87d53a7",
+    "identity": "github:1202726483:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1202726483:root",
+            "repository": "YunTaiHua/illusion-agent",
+            "path": "",
+            "revision": "a379105aeed3f0b5364be3f69b27ca124724b3ca",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "9f121bdb04e3fce1dabc65f7897105e7db524fa246e18d1c6303ad671be55e8e",
+                "code": "a379105aeed3f0b5364be3f69b27ca124724b3ca",
+                "maintenance": "d023e887aacc767b73abd013f6287d24940f5f678cee2f187f418c2da819dfae"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d929df3b19ec34846d787e808f280724",
+    "identity": "github:1335126021:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335126021:root",
+            "repository": "wallpap/dsh-compact-activity",
+            "path": "",
+            "revision": "e54c662f4b94747beb2458774489fa54308dfcc3",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "6416733409ced70091c4ad68aed02125682f8dae8bf932e35bc42c2c7c3d1923",
+                "code": "e54c662f4b94747beb2458774489fa54308dfcc3",
+                "maintenance": "e53ee948077f841e869b0d5d85c1d8c73b13e892570352571cc06450cf6a4704"
+            }
+        }
+    }
+}

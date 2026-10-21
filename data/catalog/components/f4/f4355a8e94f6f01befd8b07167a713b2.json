@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f4355a8e94f6f01befd8b07167a713b2",
+    "identity": "github:1346576026:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346576026:root",
+            "repository": "LucienLL/dsh-session-memo",
+            "path": "",
+            "revision": "8db8abef3aa27cbcd6b8df282b0849d3187ce0d7",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "f188386f5bb21f6ff0c3b1ad928c8149ee9ccd4f43e8e614d2a985477d3f3ed1",
+                "code": "8db8abef3aa27cbcd6b8df282b0849d3187ce0d7",
+                "maintenance": "d56af3f5f12166467939368babc5208b00f00efa8ae4935f450846dbf9344325"
+            }
+        }
+    }
+}

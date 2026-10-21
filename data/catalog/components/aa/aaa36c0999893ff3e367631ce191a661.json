@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "aaa36c0999893ff3e367631ce191a661",
+    "identity": "github:1340893040:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340893040:root",
+            "repository": "jiaererw/dsh-plugin-chrome",
+            "path": "",
+            "revision": "2a7e7928aea98aa365a4eea5f66703dfbbc73d54",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5fb78ccf64a85a3e2284600a5fce95da7e18a7c45ae6052618f12557fd0b936e",
+                "code": "2a7e7928aea98aa365a4eea5f66703dfbbc73d54",
+                "maintenance": "2f5c0b991453fc38ba454b090808029a28a0feeb4f8cfd21c4e47464462801d9"
+            }
+        }
+    }
+}

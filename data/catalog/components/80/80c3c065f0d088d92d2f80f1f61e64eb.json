@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "80c3c065f0d088d92d2f80f1f61e64eb",
+    "identity": "github:1333973853:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333973853:root",
+            "repository": "huahai0202/dsh-better-archive",
+            "path": "",
+            "revision": "400cadeba99e87ca8a2ba4bf8f7ff4460ff92b29",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "aacdc9e0346ba528f3981c92a94b286a5fd34f344bf3837c61d1e567183d7c09",
+                "code": "400cadeba99e87ca8a2ba4bf8f7ff4460ff92b29",
+                "maintenance": "fd9d3bf355c81b7ec64b0264f58a659eceee854f8adc3cc50f4dcc8175bdc86e"
+            }
+        }
+    }
+}

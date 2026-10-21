@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b25ce79e32d4fc741f74963557577151",
+    "identity": "github:1304583136:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1304583136:root",
+            "repository": "shuguang1994/project-blueprint",
+            "path": "",
+            "revision": "26588c08ab37f02d4c3440ef0b7b1929351cddb6",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "4c3e4ec135c9d141d268f7d01557e2a98778589dabba10d08d3c00fd70cc2f0c",
+                "code": "26588c08ab37f02d4c3440ef0b7b1929351cddb6",
+                "maintenance": "4438ad8fdaf2ffd3640e5d0818aa88a33f3285567c1efabc4d970f34c40fd6be"
+            }
+        }
+    }
+}

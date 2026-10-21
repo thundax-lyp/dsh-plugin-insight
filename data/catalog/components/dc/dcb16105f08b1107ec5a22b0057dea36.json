@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "dcb16105f08b1107ec5a22b0057dea36",
+    "identity": "github:1399779976:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1399779976:root",
+            "repository": "mcf171/dsh-session-delete",
+            "path": "",
+            "revision": "e344a3f64f9b8bc29daaac9a497ea665c1f4436e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2e39196731bcfae0d3e7fa80fe2edab4875fabc35901a25e946dc9d6e10f82a0",
+                "code": "e344a3f64f9b8bc29daaac9a497ea665c1f4436e",
+                "maintenance": "38191b6bf247e094d5a2ffb9994ea301d4a5c1c8955d266f978bb50dfb9bc60e"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "91dc83f3965a347e3abb029d72bb3294",
+    "identity": "github:1380699076:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1380699076:root",
+            "repository": "ThinkofRain1213/deepseek-harness-wallet-patched",
+            "path": "",
+            "revision": "6f9f589820bf5308c003002c1b8a696ae18c6d8b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "76230f1608585d52571ee83741aa07ad3332be5ac7bf72b125b6d0840fe87bd9",
+                "code": "6f9f589820bf5308c003002c1b8a696ae18c6d8b",
+                "maintenance": "e731be4c9286bda490cec75c993968ffa58ba032e01fb93fef15a2c1eccd4358"
+            }
+        }
+    }
+}

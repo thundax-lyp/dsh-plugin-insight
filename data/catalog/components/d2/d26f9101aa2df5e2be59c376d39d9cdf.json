@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d26f9101aa2df5e2be59c376d39d9cdf",
+    "identity": "github:1347762485:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347762485:root",
+            "repository": "pauloapoloni/dsh-pr-checks",
+            "path": "",
+            "revision": "21ebe5bdbd6d32e9dade0ac020b9758247f4cb2e",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "1492220130fdd555428ddfda4477aa0d3d5e0e250d8e69ea580841a155e900b6",
+                "code": "21ebe5bdbd6d32e9dade0ac020b9758247f4cb2e",
+                "maintenance": "f9c0ca1ab339c14b4fdd1157d2f222de0bd4dafeb60ef9b43dc684ca16008aec"
+            }
+        }
+    }
+}

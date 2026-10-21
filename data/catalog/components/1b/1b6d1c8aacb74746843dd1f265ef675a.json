@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1b6d1c8aacb74746843dd1f265ef675a",
+    "identity": "github:1350611775:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1350611775:root",
+            "repository": "LONGSASASASASA/dsh-issue2pr",
+            "path": "",
+            "revision": "71f398373544ced002ff499fec57d28e642917bd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "513e2c6a0a06c71f0a11426eda82200084c3a6b8819c4c08a463190dc702d1cd",
+                "code": "71f398373544ced002ff499fec57d28e642917bd",
+                "maintenance": "05879280e7ec35165ff6d9e4050dae51f08c3d5dd3214bae07b1342fe8d71a26"
+            }
+        }
+    }
+}

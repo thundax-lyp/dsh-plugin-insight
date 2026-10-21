@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "7e694b43e551d31d5055a6faed6ec66a",
+    "identity": "github:1343002927:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343002927:root",
+            "repository": "Phant0Meow/dsh-meow-cachebilling",
+            "path": "",
+            "revision": "bc0d9204813d9106215f30cc31ca7b7fd3f179b7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "4d9d15e0d301ff608109baaba058ec9c8d37756e84c6448d18bdc1d99d4c8e0b",
+                "code": "bc0d9204813d9106215f30cc31ca7b7fd3f179b7",
+                "maintenance": "87aeab1d0b6c7408ec8675fc2371c23f3ef1a541525d430133f4f1bc1c1070ed"
+            }
+        }
+    }
+}

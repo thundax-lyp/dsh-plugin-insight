@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d0f0bfd698ffb1d7d52110b6a896380b",
+    "identity": "github:1347630516:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347630516:root",
+            "repository": "NOirBRight/dsh-llm-opencode-go",
+            "path": "",
+            "revision": "46db6af34e0da6ba738979e76dd6c8153178de3f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "48e36a8459880c9e668896b5e5660f40f052881972aaa3da69ea763bdb9a930f",
+                "code": "46db6af34e0da6ba738979e76dd6c8153178de3f",
+                "maintenance": "e0cf3162c9ffdf3b895c281a6c438d5cea6952aad67bf32380c66b8fe5b3474e"
+            }
+        }
+    }
+}

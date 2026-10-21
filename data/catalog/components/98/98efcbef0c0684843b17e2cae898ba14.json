@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "98efcbef0c0684843b17e2cae898ba14",
+    "identity": "github:1344270011:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1344270011:root",
+            "repository": "AnonyJcy/dsh-j-space",
+            "path": "",
+            "revision": "a3212f57d78fcc1a55342afb261cef3dd38b6454",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a57d07ae1b5be20186ac30e46f635a1708992cf03c5f10064ed54425443b38fc",
+                "code": "a3212f57d78fcc1a55342afb261cef3dd38b6454",
+                "maintenance": "2903ac18d6afb917d92fabd0e61c9500a37632cfe9220c305b153c98ebf1b8b4"
+            }
+        }
+    }
+}

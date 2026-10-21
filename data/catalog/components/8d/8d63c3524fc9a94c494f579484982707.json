@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8d63c3524fc9a94c494f579484982707",
+    "identity": "github:1409650113:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1409650113:root",
+            "repository": "residenthiago2011/DSH-Tool-Router",
+            "path": "",
+            "revision": "bbec9697b180dbcd50e45f93e9eb88db9ee76f38",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "49eba7ee4cebc4399a3111e8f81ae1fb933956e75c54595f50dc8db460904260",
+                "code": "bbec9697b180dbcd50e45f93e9eb88db9ee76f38",
+                "maintenance": "d69139f8d8e0bd0b3ef370a3ef9044627695565b05ee1186e75a069d6b3a2a5f"
+            }
+        }
+    }
+}

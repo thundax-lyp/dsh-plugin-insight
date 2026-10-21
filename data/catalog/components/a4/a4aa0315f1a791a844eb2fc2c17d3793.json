@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a4aa0315f1a791a844eb2fc2c17d3793",
+    "identity": "github:1333823235:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333823235:root",
+            "repository": "unitarylab/quantum-practices",
+            "path": "",
+            "revision": "572a24c9b5c9787caec98810351f5cb17c82250e",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "b14dca5669872fc5523b2e25626fa819298ec9a177fab51d7f71a0fa7d4f552c",
+                "code": "572a24c9b5c9787caec98810351f5cb17c82250e",
+                "maintenance": "01cfd22cec9782bb463658e151501e9745c909eaa3a3f4bedfdd8fb23c0ef169"
+            }
+        }
+    }
+}

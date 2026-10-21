@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b289cbca50a3240d4b28db9948fe9b75",
+    "identity": "github:1402713053:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1402713053:root",
+            "repository": "wwwyxsuper/dsh-session-purge",
+            "path": "",
+            "revision": "3633c5e580a1be5d30c11cff37b43ab9d143a976",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a1827e23d893f1ce83be8722b9be46a303507e3a9827bfc7702ebe8ea3afcbbb",
+                "code": "3633c5e580a1be5d30c11cff37b43ab9d143a976",
+                "maintenance": "f8c097f50d3d0bc6c90865d118d380ddba9ba75451c25fa5072daa22f7384727"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2c13f533238b4e11b161d4803a51cfbb",
+    "identity": "github:1361461768:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1361461768:root",
+            "repository": "drscrewdriver/dsh-date-wrapper",
+            "path": "",
+            "revision": "8468a4c7d2bee7ceadce187e24f8295ba3516873",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "87081857b9ddc56df4c35dfb477b61f017fe67bd926b003a607d96faf2b0a3b5",
+                "code": "8468a4c7d2bee7ceadce187e24f8295ba3516873",
+                "maintenance": "eacb5c18c637b794b0460e4d787cc9e3266b9cad64cf4afdb31ca8f5187056c5"
+            }
+        }
+    }
+}

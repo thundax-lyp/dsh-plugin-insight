@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0634a5c598ecf3eb9a8009b1ada352f0",
+    "identity": "github:1359122620:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1359122620:root",
+            "repository": "zhangTELL/dsh-diagram",
+            "path": "",
+            "revision": "f9f097480804d0aa2e040b1f2e4bb3d474b518a4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d6549d5fc15feb381f6e584069c404e311f3deb2b9c9b4a43cf2c8cd4e80e772",
+                "code": "f9f097480804d0aa2e040b1f2e4bb3d474b518a4",
+                "maintenance": "fe3a705ccb1d34b1153fbd5e8bf181ee9cf2c99a2e23665e03c64acccb6df43e"
+            }
+        }
+    }
+}

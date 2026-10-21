@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "308a06a017564c05dc2d360fa1c34bdf",
+    "identity": "github:1333415260:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333415260:root",
+            "repository": "GengDaPeng/dsh-agent-message",
+            "path": "",
+            "revision": "79932887601c9553ef668be93f129cc1527af34b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "904e248ada7dcf38912b51fac86388bbf9181629844442bd7f013d3cab3d32b7",
+                "code": "79932887601c9553ef668be93f129cc1527af34b",
+                "maintenance": "b7c17b482fc8afc3470d9783cfc59da6ef79637f749d02350fd406f19d2fc2ee"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4ce86c4538dc315a7e7a5b7a56bc91eb",
+    "identity": "github:1391393310:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1391393310:root",
+            "repository": "vitas/dsh-jev-subagent-dispatch",
+            "path": "",
+            "revision": "013490ab90b1fee29094783af76ea65581236cce",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3e9fa61583c7c0acc64558fb6f61accf52fd33abfb635f9cfbffb95769648ef5",
+                "code": "013490ab90b1fee29094783af76ea65581236cce",
+                "maintenance": "21c64a8a43ff18ef50bd6bb1b5ceeb62189d288c5e17b27c0322ab27b31c2d7a"
+            }
+        }
+    }
+}

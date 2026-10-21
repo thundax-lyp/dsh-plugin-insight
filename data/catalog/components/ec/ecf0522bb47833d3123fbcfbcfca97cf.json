@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ecf0522bb47833d3123fbcfbcfca97cf",
+    "identity": "github:1340063744:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340063744:root",
+            "repository": "WODE25500/dsh-skillopt",
+            "path": "",
+            "revision": "5a4cae6781521bad2d793595980e78e07f2b0e8e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a1700a4f3d42ca6ba45b8d170d873b70fb4af195c3d0f24b0847952c6d304469",
+                "code": "5a4cae6781521bad2d793595980e78e07f2b0e8e",
+                "maintenance": "88180c7cf84ba4b463600778f6e351308dbd8e6f4dbec96f6f5b82878683222c"
+            }
+        }
+    }
+}

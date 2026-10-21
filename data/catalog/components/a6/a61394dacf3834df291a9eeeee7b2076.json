@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a61394dacf3834df291a9eeeee7b2076",
+    "identity": "github:1347245974:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347245974:root",
+            "repository": "yongshuai0314/dsh-i-have-adhd",
+            "path": "",
+            "revision": "4dd11e9e80921739f6cddc1df08f3ca204c223fa",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "462bdd37a69dc7cdaa42820f9a56c94ee2ebee8e2ceb4190a5baae679b67a6f4",
+                "code": "4dd11e9e80921739f6cddc1df08f3ca204c223fa",
+                "maintenance": "7930dc840ddce7b5a68544dca42e0de4d7cc549fd158095de93d14bc4607a5a6"
+            }
+        }
+    }
+}

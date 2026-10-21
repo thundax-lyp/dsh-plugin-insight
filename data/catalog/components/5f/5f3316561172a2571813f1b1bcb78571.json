@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5f3316561172a2571813f1b1bcb78571",
+    "identity": "github:1425138063:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425138063:root",
+            "repository": "RUI-debug769/dsh-dotclaude",
+            "path": "",
+            "revision": "4e38b13d08d14aa42b31cbfd2bae81134c00dd1a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "cda2ea6aac1948a17385c6bc571d9ac0bfbbc64aebbf8b7d2d61e46b694e2777",
+                "code": "4e38b13d08d14aa42b31cbfd2bae81134c00dd1a",
+                "maintenance": "fa5303042765c8af97fbd51d34de3950c2a802ed6448581f41b1262681c407cc"
+            }
+        }
+    }
+}

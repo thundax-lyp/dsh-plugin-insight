@@ -1,0 +1,412 @@
+{
+    "schema_version": 3,
+    "id": "200ae051714c055b9744dbcd8cdfad6f",
+    "identity": "github:1335766616:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1335766616:root",
+            "repository_id": 1335766616,
+            "component_id": "root",
+            "repository": "2768651338/dsh-effort-slider",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-effort-slider",
+            "entry_type": "plugin",
+            "technical_category": "interface-input",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "c46b972e439152e0a6332ef6f67b900b063c027dec668c512c8e4b7957f77f95",
+                "code": "97bf5c1e5881ea0fcfb543844346fe86b87ff620",
+                "maintenance": "46d4c096b55c82bc9119251e08c71d6cfbf47c3702af17da66ff5072522070df"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-01-github-1335766616-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T02:06:34.673Z",
+                    "membership": "present"
+                },
+                {
+                    "id": "2026-10-21-01-github-1335766616-root-directory-1",
+                    "url": "https://github.com/0xsline/awesome-deepseek-harness",
+                    "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
+                    "retrieved_at": "2026-10-21T02:06:34.673Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-01-github-1335766616-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/2768651338/dsh-effort-slider/blob/97bf5c1e5881ea0fcfb543844346fe86b87ff620/README.md",
+                    "revision": "97bf5c1e5881ea0fcfb543844346fe86b87ff620",
+                    "captured_at": "2026-10-21T02:06:34.673Z",
+                    "summary": "为 DSH 模型菜单增加推理强度滑块，并向第三方模型供给方言配置。",
+                    "artifact": "data/runs/2026-10-21-01/snapshots/2768651338--dsh-effort-slider/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-01-github-1335766616-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/2768651338/dsh-effort-slider/blob/97bf5c1e5881ea0fcfb543844346fe86b87ff620/src/effort-core.ts",
+                    "revision": "97bf5c1e5881ea0fcfb543844346fe86b87ff620",
+                    "captured_at": "2026-10-21T02:06:34.673Z",
+                    "summary": "核查 src/effort-core.ts、src/index.ts、src/client/effort/EffortPanel.tsx；effort-core生成五档reasoning元数据和各协议compat映射；宿主读取settings并在revision核对后mutate，客户端滑块写入会话模型设置。",
+                    "artifact": "data/runs/2026-10-21-01/snapshots/2768651338--dsh-effort-slider/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定提交源码抽读与作者材料核查；没有执行目标代码、测试、安装或真实宿主验收，没有确认独立用户效果。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "使用第三方模型路由的用户在发送前调整推理档位，希望请求参数与所选档位一致。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1335766616-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335766616:root",
+                            "area": "code",
+                            "fingerprint": "97bf5c1e5881ea0fcfb543844346fe86b87ff620"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:06:34.673Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "effort-core生成五档reasoning元数据和各协议compat映射；宿主读取settings并在revision核对后mutate，客户端滑块写入会话模型设置。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1335766616-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335766616:root",
+                            "area": "code",
+                            "fingerprint": "97bf5c1e5881ea0fcfb543844346fe86b87ff620"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:06:34.673Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定提交源码抽读与作者材料核查；没有执行目标代码、测试、安装或真实宿主验收，没有确认独立用户效果。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1335766616-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335766616:root",
+                            "area": "code",
+                            "fingerprint": "97bf5c1e5881ea0fcfb543844346fe86b87ff620"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:06:34.673Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "检查固定提交包清单与入口；安装说明属于作者主张，本次未验证分发产物与宿主兼容。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1335766616-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335766616:root",
+                            "area": "code",
+                            "fingerprint": "97bf5c1e5881ea0fcfb543844346fe86b87ff620"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:06:34.673Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "无单独外部服务成本依据；人工需确认方言、端点支持及宿主版本，模型推理开销可能随档位变化；未测延迟或费用。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1335766616-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335766616:root",
+                            "area": "code",
+                            "fingerprint": "97bf5c1e5881ea0fcfb543844346fe86b87ff620"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:06:34.673Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "适合了解自定义路由协议的用户；用实际请求日志确认档位参数与服务端行为后再据此控制成本。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1335766616-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335766616:root",
+                            "area": "code",
+                            "fingerprint": "97bf5c1e5881ea0fcfb543844346fe86b87ff620"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:06:34.673Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "减少配置字段手改，但端点支持决定价值，视觉档位不提供效果保证。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1335766616-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335766616:root",
+                            "area": "code",
+                            "fingerprint": "97bf5c1e5881ea0fcfb543844346fe86b87ff620"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:06:34.673Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "纯effort-core与宿主服务分离，deepEqualJson、注入识别和revision重读支撑幂等更新；复用时须保留用户自定义配置跳过条件。 源码依据：[src/effort-core.ts](https://github.com/2768651338/dsh-effort-slider/blob/97bf5c1e5881ea0fcfb543844346fe86b87ff620/src/effort-core.ts#L24)、[src/index.ts](https://github.com/2768651338/dsh-effort-slider/blob/97bf5c1e5881ea0fcfb543844346fe86b87ff620/src/index.ts#L114)、[src/client/effort/EffortPanel.tsx](https://github.com/2768651338/dsh-effort-slider/blob/97bf5c1e5881ea0fcfb543844346fe86b87ff620/src/client/effort/EffortPanel.tsx#L85)。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1335766616-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335766616:root",
+                            "area": "code",
+                            "fingerprint": "97bf5c1e5881ea0fcfb543844346fe86b87ff620"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:06:34.673Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T02:06:34.673Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "97bf5c1e5881ea0fcfb543844346fe86b87ff620",
+                "reviewed_at": "2026-10-21T02:06:34.673Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1335766616:root",
+                        "area": "code",
+                        "fingerprint": "97bf5c1e5881ea0fcfb543844346fe86b87ff620"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 4
+                    },
+                    "rationale": "novelty：滑块属常见交互的宿主适配；mechanism：方言供给与revision保护改变配置可靠性；transferability：映射可移植但依赖协议；simplification：统一入口便利，协议差异仍在。",
+                    "basis": "interpretation",
+                    "score": 38,
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1335766616-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow：只改变发送前选档；delivery：请求参数可控但不改变交付物；reach：降低第三方路由配置门槛；economics：可调预算但未证明节省。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1335766616-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "熟悉第三方协议的用户可试用推理滑块；先从实际请求确认五档字段及端点响应，再用它调整预算。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "发送前切换推理强度具体，主要适用自定义路由。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "滑块省手改协议元数据，服务端未支持时没有额外效果。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "effort-core映射和revision核对有源码，请求效果未实测。"
+                    },
+                    "cost": {
+                        "score": 15,
+                        "rationale": "无额外服务，但需维护协议兼容且高档可能增加推理费用。"
+                    }
+                },
+                "score": 64,
+                "revision": "97bf5c1e5881ea0fcfb543844346fe86b87ff620",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-01-github-1335766616-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1335766616:root",
+                        "area": "code",
+                        "fingerprint": "97bf5c1e5881ea0fcfb543844346fe86b87ff620"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1335766616:root",
+            "repository": "2768651338/dsh-effort-slider",
+            "path": "",
+            "revision": "97bf5c1e5881ea0fcfb543844346fe86b87ff620",
+            "fingerprints": {
+                "directory": "c46b972e439152e0a6332ef6f67b900b063c027dec668c512c8e4b7957f77f95",
+                "code": "97bf5c1e5881ea0fcfb543844346fe86b87ff620",
+                "maintenance": "46d4c096b55c82bc9119251e08c71d6cfbf47c3702af17da66ff5072522070df"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T01:54:44Z",
+            "analysis_sha256": "307800259b73e6c4bf4669d62d7994a6ef8252bbd395ff6d43f64d05bfdfba60"
+        },
+        "publication.metadata": "data/plugins/2768651338--dsh-effort-slider/META.json",
+        "publication.summaries": {
+            "text": "为 DSH 模型菜单增加推理强度滑块，并向第三方模型供给方言配置。",
+            "revision": "97bf5c1e5881ea0fcfb543844346fe86b87ff620",
+            "source_url": "https://github.com/2768651338/dsh-effort-slider/blob/97bf5c1e5881ea0fcfb543844346fe86b87ff620/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "97bf5c1e5881ea0fcfb543844346fe86b87ff620",
+            "items": {
+                "后台": "推理档位元数据和多方言compat供给",
+                "界面": "模型菜单推理强度滑块"
+            }
+        },
+        "publication.advice": {
+            "revision": "97bf5c1e5881ea0fcfb543844346fe86b87ff620",
+            "text": "适合了解自定义路由协议的用户；用实际请求日志确认档位参数与服务端行为后再据此控制成本。"
+        },
+        "registry": "data/plugins/2768651338--dsh-effort-slider",
+        "reports": "# dsh-effort-slider\n\n> 为 DSH 模型菜单增加推理强度滑块，并向第三方模型供给方言配置。\n\n## 使用建议\n\n适合了解自定义路由协议的用户；用实际请求日志确认档位参数与服务端行为后再据此控制成本。\n\n**核查状态**：已实现机制有源码支持；贡献价值为条件性解释，未来设计假设未验证。本轮仅作固定版本源码核查，未安装、运行目标代码或验收宿主。\n\n- **用途**：使用第三方模型路由的用户在发送前调整推理档位，希望请求参数与所选档位一致。\n- **亮点**：相对内置档位菜单，主要增量不是火焰视觉，而是为缺少推理元数据的第三方路由补齐映射，并在写前重读防止覆盖并发用户编辑；将界面控制和线上协议适配联结。\n- **思考**：界面存在五档不证明端点接受或区别处理五档。wireFor仅在openai-completions注入compat，其余依赖pi-ai；off多数映射null即不发参数，不能保证服务端关闭思考。resolveModelInfo失败视为无原生推理也可能造成不必要供给。\n- **建议**：适合了解自定义路由协议的用户；用实际请求日志确认档位参数与服务端行为后再据此控制成本。\n\n## 能力与限制\n\n参照DSH内置档位菜单和手工pi-ai配置，未比较其他滑块插件实现。\n\neffort-core生成五档reasoning元数据和各协议compat映射；宿主读取settings并在revision核对后mutate，客户端滑块写入会话模型设置。\n\n\nDSH llm/settings和客户端模型目录服务、pi-ai映射及兼容端点；README声明0.2.1-rc.2适配未由本次运行确认。\n\n读取模型目录，跳过原生推理与用户自定义项，供给缺失映射；用户拖动释放吸附档位，写入后下一请求使用所选设置，错误显示状态。\n\n无单独外部服务成本依据；人工需确认方言、端点支持及宿主版本，模型推理开销可能随档位变化；未测延迟或费用。\n\n减少配置字段手改，但端点支持决定价值，视觉档位不提供效果保证。\n\n## 能力清单\n\n- **后台**：推理档位元数据和多方言compat供给\n- **界面**：模型菜单推理强度滑块\n\n## 工程分析\n\n纯effort-core与宿主服务分离，deepEqualJson、注入识别和revision重读支撑幂等更新；复用时须保留用户自定义配置跳过条件。 源码依据：[src/effort-core.ts](https://github.com/2768651338/dsh-effort-slider/blob/97bf5c1e5881ea0fcfb543844346fe86b87ff620/src/effort-core.ts#L24)、[src/index.ts](https://github.com/2768651338/dsh-effort-slider/blob/97bf5c1e5881ea0fcfb543844346fe86b87ff620/src/index.ts#L114)、[src/client/effort/EffortPanel.tsx](https://github.com/2768651338/dsh-effort-slider/blob/97bf5c1e5881ea0fcfb543844346fe86b87ff620/src/client/effort/EffortPanel.tsx#L85)。\n\n## 未来设计假设（未验证）\n\n待验证假设：以端点能力探测结果约束滑块档位，并区分关闭与未发送参数，可减少显示成功而实际无效的控制。由统一档位和协议差异推导，探测会产生请求成本且不能依靠模型自述。\n\n最小验证：使用记录请求体的不同方言端点，逐档检查字段与响应usage；注入不支持字段及配置并发编辑，比较误报有效控制率。若探测不能可靠区分端点支持则不发布能力结论。\n\n## 核查说明\n\n- **仓库**：[2768651338/dsh-effort-slider](https://github.com/2768651338/dsh-effort-slider)\n- **版本号**：0.5.1（[固定提交 97bf5c1](https://github.com/2768651338/dsh-effort-slider/tree/97bf5c1e5881ea0fcfb543844346fe86b87ff620)）\n- **版本日期**：2026-10-20（固定提交日期，北京时间；不是包发布日期）\n- **实际范围**：固定提交源码抽读与作者材料核查；没有执行目标代码、测试、安装或真实宿主验收，没有确认独立用户效果。\n- **来源**：作者README与上述固定版本源码；未确认独立采用效果，目录收录与下载统计不作效果证据。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：41f48b9b602738d7b16864e7ced25592a149047ba2eb89ecc5dfe5d4abe7034a。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 10 | 2697 | — | — | 36270 |\n| .js | source | 2 | 1760 | 1562 | 223 | — |\n| .ts | source | 9 | 1938 | 1450 | 351 | — |\n| .tsx | source | 1 | 426 | 321 | 85 | — |\n| .mjs | test | 8 | 1416 | 1167 | 156 | — |\n| .ts | test | 1 | 8 | 6 | 1 | — |\n\n排除 1 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n",
+        "metadata": {
+            "repository": "2768651338/dsh-effort-slider",
+            "repository_id": 1335766616,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 20,
+            "pushed_at": "2026-10-20T14:21:40Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A2768651338%2Fdsh-effort-slider%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C2:2EEE9E:13D311:216569:6AD849FD and timestamp 2026-10-21 05:13:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A2768651338%2Fdsh-effort-slider%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6400:330C23:1455C0:21E8FD:6AD849FD and timestamp 2026-10-21 05:13:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A2768651338%2Fdsh-effort-slider%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6407:30A0ED:14509A:21E3AD:6AD849FD and timestamp 2026-10-21 05:13:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A2768651338%2Fdsh-effort-slider%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6406:0C5F:637A4:A9D39:6AD849FD and timestamp 2026-10-21 05:13:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A2768651338%2Fdsh-effort-slider%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640B:D1FDD:14A130:224B46:6AD849FE and timestamp 2026-10-21 05:13:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "@txc2768651338/dsh-effort-slider",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 1403,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40txc2768651338%2Fdsh-effort-slider",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-10-01T08:03:51.076Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/%40txc2768651338%2Fdsh-effort-slider",
+                    "error": null,
+                    "latest_version": "0.5.1",
+                    "latest_published_at": "2026-10-20T11:42:25.940Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "97bf5c1e5881ea0fcfb543844346fe86b87ff620",
+                "current_revision": "97bf5c1e5881ea0fcfb543844346fe86b87ff620",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1335766616:root",
+            "repository": "2768651338/dsh-effort-slider",
+            "path": "",
+            "revision": "97bf5c1e5881ea0fcfb543844346fe86b87ff620",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "c46b972e439152e0a6332ef6f67b900b063c027dec668c512c8e4b7957f77f95",
+                "code": "97bf5c1e5881ea0fcfb543844346fe86b87ff620",
+                "maintenance": "46d4c096b55c82bc9119251e08c71d6cfbf47c3702af17da66ff5072522070df"
+            }
+        }
+    }
+}

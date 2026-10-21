@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0febe00ec03185cf4e5a251d57ae807b",
+    "identity": "github:1424281823:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424281823:root",
+            "repository": "spdw666/dsh-credit-hub",
+            "path": "",
+            "revision": "751276382eea0fba3734d4b4d823ef2e54713f05",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fa51c5fe5ad83938005414c2b22b61a42d15518eb9819ecb3fb5e93d3cfd0d5d",
+                "code": "751276382eea0fba3734d4b4d823ef2e54713f05",
+                "maintenance": "e6da2fc0a8602ee00deebacd8f7c89f4e850ec543bcfdc88e827fdbc5adf9fbc"
+            }
+        }
+    }
+}

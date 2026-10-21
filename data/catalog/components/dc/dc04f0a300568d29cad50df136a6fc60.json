@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "dc04f0a300568d29cad50df136a6fc60",
+    "identity": "github:1346736803:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346736803:root",
+            "repository": "shizhanyu13/dsh-waom",
+            "path": "",
+            "revision": "d46de1361f32114b782d77406630fa49194cae34",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "1c16188f548c233adaa2b9804a70a6e096b25c9abe8c5ec779b1be171ca4f196",
+                "code": "d46de1361f32114b782d77406630fa49194cae34",
+                "maintenance": "0199660675fe8a6efc55f98eb7c07b778b132ffaf4357833f13b4a746dd40d30"
+            }
+        }
+    }
+}

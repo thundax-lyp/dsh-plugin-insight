@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8527da068ecf225413847aa5a287fb94",
+    "identity": "github:1335024457:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335024457:root",
+            "repository": "Fengze233/dsh-vscode",
+            "path": "",
+            "revision": "caa75cd7b35092a276775e087edb51ec767647c6",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "766bae309d37edb2213cbac38647d8a17df14311eea3cb403f9fb0d12fb10689",
+                "code": "caa75cd7b35092a276775e087edb51ec767647c6",
+                "maintenance": "d64becdde503dc407a9e50b1cdb6b472eb7c81e19c221b43c5c69ef0c50dca96"
+            }
+        }
+    }
+}

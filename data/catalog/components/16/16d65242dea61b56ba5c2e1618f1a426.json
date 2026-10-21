@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "16d65242dea61b56ba5c2e1618f1a426",
+    "identity": "github:1358117478:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1358117478:root",
+            "repository": "wentao75/dsh-remote-auth",
+            "path": "",
+            "revision": "3622f68155377c4c9ef64dae72f0219b2260ff86",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e74dd68f5237e8d87116123a0bf63b90dbcb1eef1d7dc0e58751507f3b2af7d8",
+                "code": "3622f68155377c4c9ef64dae72f0219b2260ff86",
+                "maintenance": "b7b0d71e506490ec241aade1e9713ca8f851b10db396acd85b7da6ca077872bd"
+            }
+        }
+    }
+}

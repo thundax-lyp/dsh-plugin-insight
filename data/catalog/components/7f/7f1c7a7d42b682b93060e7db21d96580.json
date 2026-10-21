@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "7f1c7a7d42b682b93060e7db21d96580",
+    "identity": "github:1362388901:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1362388901:root",
+            "repository": "runcat-tommy/dsh-unitverse",
+            "path": "",
+            "revision": "f9834a97262482a4f10a21ec1ce7cce29ac6f849",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "a3629c5ae1f6fd6e846dfa6e0aa05d8b95495a8c79f4e2e3fe87588bcca3979d",
+                "code": "f9834a97262482a4f10a21ec1ce7cce29ac6f849",
+                "maintenance": "9242aabb173166672e318c984659a250ced46dc851efdb6bbc7a06e83a38472d"
+            }
+        }
+    }
+}

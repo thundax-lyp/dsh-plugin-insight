@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c71f5d732861934faaa64615541c0388",
+    "identity": "github:1361444540:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1361444540:root",
+            "repository": "chromoany/dsh-notify-me",
+            "path": "",
+            "revision": "2266662f9c0711c0c8f9ac4fdcf55c25eef5c85e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b0b7f4fc60a19748b0730d0c07b7eb673be17dbaf74d7872b565b08772e9feae",
+                "code": "2266662f9c0711c0c8f9ac4fdcf55c25eef5c85e",
+                "maintenance": "8e09708b6b59e38979136ba0fdb9ff01a93a35c1ac6f11c24d8807c9e31f6949"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "146f07708af7056d26e2781cfd67f8ff",
+    "identity": "github:1358071587:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1358071587:root",
+            "repository": "fu827707013/dsh-codebuddy-cli",
+            "path": "",
+            "revision": "698374cf146a0133325ed3c86037eb923a17dc59",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4a9435920832c5dba35a7891caabb88e285b2af3f47892059e1d3e04c93a8a6c",
+                "code": "698374cf146a0133325ed3c86037eb923a17dc59",
+                "maintenance": "91de0a7abe2b48e240fa0712ff7499ad2fb70d5de14b9107e377bc7f7ce7ec6c"
+            }
+        }
+    }
+}

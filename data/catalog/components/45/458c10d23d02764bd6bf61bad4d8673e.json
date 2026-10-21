@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "458c10d23d02764bd6bf61bad4d8673e",
+    "identity": "github:1413454338:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1413454338:root",
+            "repository": "prgrmrwy/dsh-sidebar-session-provider-icon",
+            "path": "",
+            "revision": "8f016f630231b369ae81256bccab8a80decc065b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ad26746af5c7b2c5ded21b18526529e467932d428f6bc5c0aa580ac14fc7b007",
+                "code": "8f016f630231b369ae81256bccab8a80decc065b",
+                "maintenance": "562af7f08e0802e3a1adea5e476c73aad16a06acbe5a606fd75c2f62314c7288"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "59fdd7968bf3ff8e65de3fc1dc3141b0",
+    "identity": "github:1339279557:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339279557:root",
+            "repository": "Shaky77/KISS_Law-DSH",
+            "path": "",
+            "revision": "14cb7534f77082c84810947f5ed400621370f4df",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "71c92e1bedff802d975afef82ee9dfae9dd9291bf4af7a7824530946974704ab",
+                "code": "14cb7534f77082c84810947f5ed400621370f4df",
+                "maintenance": "988436a74d45d17646558d4e2aba7b632f359ee1f2cf2c5714526d5894d4ec4f"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ab09af87f17c80e0ab34c1818ea22b1c",
+    "identity": "github:1391149912:packages-dsh-bridge",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1391149912:packages-dsh-bridge",
+            "repository": "Jessie-1939/whalepal",
+            "path": "packages/dsh-bridge",
+            "revision": "64da8fa7a010f6772d40473e24618f1f90907fef",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c500b5fa0ecd3a0527b37d4ce228efd3871e77a1eef127985fc749d343f6c493",
+                "code": "64da8fa7a010f6772d40473e24618f1f90907fef",
+                "maintenance": "190977a8f42b82ef598fc2069013288328f78e7f8a79eee50446be00e28d3402"
+            }
+        }
+    }
+}

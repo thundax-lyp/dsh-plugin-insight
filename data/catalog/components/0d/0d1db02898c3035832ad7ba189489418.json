@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "0d1db02898c3035832ad7ba189489418",
+    "identity": "github:1335828785:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335828785:root",
+            "repository": "sailoumili/novel-writer",
+            "path": "",
+            "revision": "bd0082106998a4737d3428bed334cacde46accd9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "143704f918c2edb18a69552f3e4c1a316b207b2d59424af03eb745c22a40d0fb",
+                "code": "bd0082106998a4737d3428bed334cacde46accd9",
+                "maintenance": "8ea8ec406d4c0f675cddae4ccae895fa531aa1ae021a9f7a5b379d0c70d5da1c"
+            }
+        }
+    }
+}

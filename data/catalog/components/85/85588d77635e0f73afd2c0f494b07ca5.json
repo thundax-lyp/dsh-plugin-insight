@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "85588d77635e0f73afd2c0f494b07ca5",
+    "identity": "github:1333676559:bundle",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333676559:bundle",
+            "repository": "hccccc01333/dsh-excel-chat",
+            "path": "bundle",
+            "revision": "d040afccb540c14bd2bff52e5a1ea6bcbde82ed3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "aab10985ebfa533291923e7d3c84aa1ea98ba68a302d612b98651f00d3d638d0",
+                "code": "d040afccb540c14bd2bff52e5a1ea6bcbde82ed3",
+                "maintenance": "e7ba6a0a1cf80a9e41f370cb09debc412f0de46ab1aa2eb425483eb11f89fa67"
+            }
+        }
+    }
+}

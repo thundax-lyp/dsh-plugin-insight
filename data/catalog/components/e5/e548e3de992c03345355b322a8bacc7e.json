@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e548e3de992c03345355b322a8bacc7e",
+    "identity": "github:1412984762:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1412984762:root",
+            "repository": "Seller-1990/dsh-model-smart-config",
+            "path": "",
+            "revision": "50de4a363fb5302632a2b2fa0c4bce316362a059",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f1f1e4405f4bd32560fb2acb65c09ad68b994e77378654e08884671f6cbdda6f",
+                "code": "50de4a363fb5302632a2b2fa0c4bce316362a059",
+                "maintenance": "7a4d099bf22978f56c83457e7c8724774d7f6f864cc83834da362d9d1b6b9012"
+            }
+        }
+    }
+}

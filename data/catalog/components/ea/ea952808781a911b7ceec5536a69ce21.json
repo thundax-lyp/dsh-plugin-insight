@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ea952808781a911b7ceec5536a69ce21",
+    "identity": "github:1330412774:skills-dsh-session-recovery-skill-md",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1330412774:skills-dsh-session-recovery-skill-md",
+            "repository": "fakechris/dsh-harness-ops",
+            "path": "skills/dsh-session-recovery/SKILL.md",
+            "revision": "791d8ad59999103c7e6cfa56bb01dd822e4f5687",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "4952db2f0ce994f63f6ec04adc8e2462591663cd847d98667118bb81bc8643ea",
+                "code": "791d8ad59999103c7e6cfa56bb01dd822e4f5687",
+                "maintenance": "8ca14b80fb5a4b17f6c1feaf7651d630360a26f27fa95bb8d0615647a83d453f"
+            }
+        }
+    }
+}

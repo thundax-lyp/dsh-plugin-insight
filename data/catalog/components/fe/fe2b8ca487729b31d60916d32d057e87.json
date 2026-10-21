@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fe2b8ca487729b31d60916d32d057e87",
+    "identity": "github:1335650755:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335650755:root",
+            "repository": "DeLightor/dsh-depguard",
+            "path": "",
+            "revision": "3f2e9814a5fa510707114086f25c5b0f7e7003df",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f841ea0f44da3f545c8cd9499b9a25126f4d3ca8d09308d16affc039565f500d",
+                "code": "3f2e9814a5fa510707114086f25c5b0f7e7003df",
+                "maintenance": "89e4f511eba448c27647226a06dfc37fba74cfb55b6f6154504eb60a2abeddcd"
+            }
+        }
+    }
+}

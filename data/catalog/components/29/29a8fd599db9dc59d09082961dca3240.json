@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "29a8fd599db9dc59d09082961dca3240",
+    "identity": "github:1340106006:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340106006:root",
+            "repository": "WODE25500/dsh-wsl",
+            "path": "",
+            "revision": "91d581e0a60ff9dd01392673b6ba393d6f8a42d9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "621b51e00c41e7364fc0fc9be584c93129be89227a48762a823fbffd5466fc03",
+                "code": "91d581e0a60ff9dd01392673b6ba393d6f8a42d9",
+                "maintenance": "cc1b77cc50af8cd66d42260a653bb6cd013411a002624f50331b267e527b7f2c"
+            }
+        }
+    }
+}

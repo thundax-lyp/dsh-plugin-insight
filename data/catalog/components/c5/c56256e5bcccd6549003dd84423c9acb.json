@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c56256e5bcccd6549003dd84423c9acb",
+    "identity": "github:1381204165:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1381204165:root",
+            "repository": "JoblessJoe/dsh-vitals",
+            "path": "",
+            "revision": "713ea81dd4fc3752de346218bd73b3c023a45b5c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "bc60eb0c753b11497fefb1a529e044b8098604f0f1547264f81e920e499aabf3",
+                "code": "713ea81dd4fc3752de346218bd73b3c023a45b5c",
+                "maintenance": "87e682393129854c416a3b1475a5428f4e79e44deb6ca942ce326da5b2ca4baf"
+            }
+        }
+    }
+}

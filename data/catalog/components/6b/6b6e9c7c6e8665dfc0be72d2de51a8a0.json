@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6b6e9c7c6e8665dfc0be72d2de51a8a0",
+    "identity": "github:1335268080:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335268080:root",
+            "repository": "SenryLee/dsh-frosted-window",
+            "path": "",
+            "revision": "ccee61d02837d2e3e3160743c07c8627a40c3438",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0d2f1f9d379300dc80e21034800c09c9fe9877a9900e04ff8165be86924a0af6",
+                "code": "ccee61d02837d2e3e3160743c07c8627a40c3438",
+                "maintenance": "3474241d3529143ce7b2bdf80c779738920ae3fbb2a6c3705b98b0d9ec8177e4"
+            }
+        }
+    }
+}

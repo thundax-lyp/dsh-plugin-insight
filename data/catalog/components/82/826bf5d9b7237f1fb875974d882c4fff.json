@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "826bf5d9b7237f1fb875974d882c4fff",
+    "identity": "github:1175278883:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1175278883:root",
+            "repository": "whiteguo233/OpenBiliClaw",
+            "path": "",
+            "revision": "a5cb16790d32d393b97f900492f49069d56158e5",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "655bc75dbb6217726de7b9a9672d731c841761df20dd6594dbb019a9615d45f7",
+                "code": "a5cb16790d32d393b97f900492f49069d56158e5",
+                "maintenance": "695c61e140da2d196655ba54eb53cf2fc86dd31317cdbab08e28fa3813857f2f"
+            }
+        }
+    }
+}

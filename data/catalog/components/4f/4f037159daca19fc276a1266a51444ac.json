@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4f037159daca19fc276a1266a51444ac",
+    "identity": "github:1417105751:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1417105751:root",
+            "repository": "GoJo22/dsh-catalog",
+            "path": "",
+            "revision": "eb2e651b42c2e3ebc0e1f24b21073760118fe069",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0fdbbd6ae49f521eb123f2c6e329f25f4297911a2b1c67970c172cce589e478d",
+                "code": "eb2e651b42c2e3ebc0e1f24b21073760118fe069",
+                "maintenance": "a7461214dbe966248726eca50dbbe83f2a16a719d3f805728f05aaf523db2ae3"
+            }
+        }
+    }
+}

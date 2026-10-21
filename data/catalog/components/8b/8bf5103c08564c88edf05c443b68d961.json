@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8bf5103c08564c88edf05c443b68d961",
+    "identity": "github:1421920915:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1421920915:root",
+            "repository": "Moowningstar/gitnexus-plus",
+            "path": "",
+            "revision": "65d61da04363a01913452f6a07202c9c06e38951",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c78389cfb304818f41ebbaef1a5ce761794715586a5bb69931c6d711224f546f",
+                "code": "65d61da04363a01913452f6a07202c9c06e38951",
+                "maintenance": "5efb20762a7446cdb5534831c6d296f2c9114854f3ba78644d514429b3e626ae"
+            }
+        }
+    }
+}

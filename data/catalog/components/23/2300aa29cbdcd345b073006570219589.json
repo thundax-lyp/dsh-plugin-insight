@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "2300aa29cbdcd345b073006570219589",
+    "identity": "github:1341805689:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1341805689:root",
+            "repository": "ZSeven-W/dsh-android",
+            "path": "",
+            "revision": "3363a85b1bbeefe994d42d52bd8e792c1527e9ec",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "dacafe2fa550c0263c5ef2fcae072b1a3125eeff3066ad3fef7c1cf4730b3fc7",
+                "code": "3363a85b1bbeefe994d42d52bd8e792c1527e9ec",
+                "maintenance": "ca7dec4838baf7fb36c4613305414626f8f7dff57b256df908f069f844ee8d36"
+            }
+        }
+    }
+}

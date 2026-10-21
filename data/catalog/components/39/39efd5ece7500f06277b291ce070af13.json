@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "39efd5ece7500f06277b291ce070af13",
+    "identity": "github:1335790877:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335790877:root",
+            "repository": "virggle/dsh-shutdown-after-task",
+            "path": "",
+            "revision": "2ef4cd16a003013caaf11b3650f3922400945185",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d07ebef65a3cb527939b4fdff1b06ac64f90feb331aca8a04375146beaa94c13",
+                "code": "2ef4cd16a003013caaf11b3650f3922400945185",
+                "maintenance": "9f4b0dcd6c6e4173d19404ba4c71bdbfae72153bdc0efa2f84d4eda206e6c87f"
+            }
+        }
+    }
+}

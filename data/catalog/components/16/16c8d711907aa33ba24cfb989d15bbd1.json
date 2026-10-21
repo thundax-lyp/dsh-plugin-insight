@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "16c8d711907aa33ba24cfb989d15bbd1",
+    "identity": "github:1394942497:packages-agent-import",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1394942497:packages-agent-import",
+            "repository": "Free-LZJ/free-dsh-plugins",
+            "path": "packages/agent-import",
+            "revision": "26e62068108abd6d5ba36c8f681f51c2cccbfcba",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8c60b5450d17a3cda80979b50c6af30b5cd98d2cf6c7e6629b8e3d0848384b27",
+                "code": "26e62068108abd6d5ba36c8f681f51c2cccbfcba",
+                "maintenance": "8bcca1db7c09f41308f30a1c0f0e75890abd94d4136da4a034309034d8e10710"
+            }
+        }
+    }
+}

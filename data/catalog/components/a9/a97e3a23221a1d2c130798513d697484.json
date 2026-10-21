@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a97e3a23221a1d2c130798513d697484",
+    "identity": "github:1349802808:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1349802808:root",
+            "repository": "mimosa776/dsh-plugin-recommender",
+            "path": "",
+            "revision": "45bc5254cc4a686f9e88c1a2367b1520fb6daa55",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3b8089c1306bfd4c4e487fb6f83bbeaeb4eea26b40a53ab278c5abae70c213b9",
+                "code": "45bc5254cc4a686f9e88c1a2367b1520fb6daa55",
+                "maintenance": "993763fc59b6f937469985d1e3d1617636c0bf53e68cd1048a8a467b29c6463d"
+            }
+        }
+    }
+}

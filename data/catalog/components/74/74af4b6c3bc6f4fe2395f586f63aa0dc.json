@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "74af4b6c3bc6f4fe2395f586f63aa0dc",
+    "identity": "github:1344940237:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1344940237:root",
+            "repository": "lovezi0/dsh-model-extension",
+            "path": "",
+            "revision": "4842e1ab9d33d1a60ee9616186c5e3c350680893",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3fd506c83e625138f3b93de5fe7cb871f75af7807af91779dfdc0f5f54591e84",
+                "code": "4842e1ab9d33d1a60ee9616186c5e3c350680893",
+                "maintenance": "4dfc530987e6a5b072767952edb2583e24b852e5d04473291a040ba0faf3c00c"
+            }
+        }
+    }
+}

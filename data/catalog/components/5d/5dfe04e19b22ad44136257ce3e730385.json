@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5dfe04e19b22ad44136257ce3e730385",
+    "identity": "github:1366993235:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1366993235:root",
+            "repository": "Z-Asset/ZA_literature",
+            "path": "",
+            "revision": "60969184f67c40e62cc39898a5412a40b4144882",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "42fafb9e8b90696dbea165194a2d038e40f89f3ee2509ff3c55070c1d426850b",
+                "code": "60969184f67c40e62cc39898a5412a40b4144882",
+                "maintenance": "d9b38e319ac937e8f90d205788d4e3689a1ea36fa2a4a379ddd680defa13fa3c"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ba973816dc5ebf4a2162bb0ae5d4ab75",
+    "identity": "github:1345662463:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345662463:root",
+            "repository": "TaoruiLiu19/dsh-gsv",
+            "path": "",
+            "revision": "92553aff0014c2c2bebcfc88bf91f6c1fd8d541a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7e5961be138979e82edc2aeb9af9b96da08bcd73eb451b0ab8ab0d4d367752bf",
+                "code": "92553aff0014c2c2bebcfc88bf91f6c1fd8d541a",
+                "maintenance": "28f3250f13510ab97e7fc922f9534a1b00e421d05d9db847c13602ba7dfed865"
+            }
+        }
+    }
+}

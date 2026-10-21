@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "066bbfff1236356e8b6646ad7ed6b964",
+    "identity": "github:1348305123:plugins-dsh-cortexm",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1348305123:plugins-dsh-cortexm",
+            "repository": "ssmurfgg04-gif/context-m",
+            "path": "plugins/dsh-cortexm",
+            "revision": "6a1c8126765d0ce385b9f29aa8216ec818246279",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "b32280fa027ea0475b10418c07cc336f21344d59f81f5b15715aba16d1c286c0",
+                "code": "6a1c8126765d0ce385b9f29aa8216ec818246279",
+                "maintenance": "944414799e14838c4c851b385bd28530dd2ad62e182e2698e49de1c25230fb30"
+            }
+        }
+    }
+}

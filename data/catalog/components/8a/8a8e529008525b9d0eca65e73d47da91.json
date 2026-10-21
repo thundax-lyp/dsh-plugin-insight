@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8a8e529008525b9d0eca65e73d47da91",
+    "identity": "github:1423953208:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1423953208:root",
+            "repository": "yyfabab1/dsh-gpt-image",
+            "path": "",
+            "revision": "9b8a3288124a06b7107475586bff85d35f85c2fa",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "55b5f79f6d8084ad65e2b34ec4a4c9de60869b4c08d39fc165549671b8b1cbfc",
+                "code": "9b8a3288124a06b7107475586bff85d35f85c2fa",
+                "maintenance": "734805b4516fb91fa9599c84583645eebf7b05bc777cbf1ecb087eb882543998"
+            }
+        }
+    }
+}

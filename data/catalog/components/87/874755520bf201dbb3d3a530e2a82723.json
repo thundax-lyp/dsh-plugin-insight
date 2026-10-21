@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "874755520bf201dbb3d3a530e2a82723",
+    "identity": "github:1344593188:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1344593188:root",
+            "repository": "JinRyu-online/dsh-svn-plugin",
+            "path": "",
+            "revision": "eafa3ff35dbf5ed8a86f99b44ba236d8fd7b1988",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "2fff4129d4d095dfe846efb4c7b1f7955f4e34abb9e01a39d671c3c83e97383c",
+                "code": "eafa3ff35dbf5ed8a86f99b44ba236d8fd7b1988",
+                "maintenance": "a9aa86ff09ea353ff19c073cbf94e500022f0360a61861e887ffe19e6a2fcecc"
+            }
+        }
+    }
+}

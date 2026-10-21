@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5e8eec719fff4096003d243dc44160ce",
+    "identity": "github:1343629749:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343629749:root",
+            "repository": "Mikuzjc/dsh-office-for-mso",
+            "path": "",
+            "revision": "5500bfe38aaf00b5d70b3833db072338ad5b7f87",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "221fb243105f2bef0ca463c3260838a0cb8e03da9204b409a23b4949c71e64cd",
+                "code": "5500bfe38aaf00b5d70b3833db072338ad5b7f87",
+                "maintenance": "29292fa91fc9356078f152feca66e708ed339b4258cb1c7b4c0027e74277667a"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ccb90a612074cd31fc8416f00e1e6564",
+    "identity": "github:1416694578:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1416694578:root",
+            "repository": "lizilong1993/dsh-offpeak",
+            "path": "",
+            "revision": "c27b44897817eb19ea29773185906156e827f70d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c1a10f57b7e6840735ddc5930d3c3621140c13bac11e2c158dc24ebf52e350ca",
+                "code": "c27b44897817eb19ea29773185906156e827f70d",
+                "maintenance": "1461651d095e2ca6d63446f240270e5f50980dd37826d5e7adc171dbd92ae2e0"
+            }
+        }
+    }
+}

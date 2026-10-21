@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "27713264a11b024301f36f8c28a14b13",
+    "identity": "github:1391690991:packages-team-flowise",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1391690991:packages-team-flowise",
+            "repository": "Drkoh-wz/team-craft",
+            "path": "packages/team-flowise",
+            "revision": "0b464a920c6f1c0ffb140614f3da48b1fce02b7b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c9b35c65172eff168021cb44c0b71b9c6056b133aef9b87e384be3194d646f29",
+                "code": "0b464a920c6f1c0ffb140614f3da48b1fce02b7b",
+                "maintenance": "29c4af05bc52702cab8ae26ede509bfff804eb3f3f35873a58be01cc5fe2cd39"
+            }
+        }
+    }
+}

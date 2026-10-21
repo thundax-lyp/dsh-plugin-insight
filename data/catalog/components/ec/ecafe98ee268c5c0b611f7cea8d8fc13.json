@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ecafe98ee268c5c0b611f7cea8d8fc13",
+    "identity": "github:1323404274:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1323404274:root",
+            "repository": "AdamPlatin123/dsh-plugin-radar",
+            "path": "",
+            "revision": "426921b7a4c219685788b679f59ec8b22051f4fa",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "76e515011739a982614dfa7bee094354cb1c19fe7287674e2aeabbf3d617d726",
+                "code": "426921b7a4c219685788b679f59ec8b22051f4fa",
+                "maintenance": "dcf738f67c48a55994e23940876e15df3c740beb7af643ba4f40aa24b42c159c"
+            }
+        }
+    }
+}

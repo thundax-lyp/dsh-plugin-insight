@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9d8779c4a4ff43577d69e66c0af5eb08",
+    "identity": "github:1398300149:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1398300149:root",
+            "repository": "XialerMoies/dsh-prompt-easymanager",
+            "path": "",
+            "revision": "9df067f446b5de03a2c51a03c88b254c5889bde5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d1878531c5a33e66c6993f54faa29162e1ba54f8204e9d70d8c21c0ecec435ea",
+                "code": "9df067f446b5de03a2c51a03c88b254c5889bde5",
+                "maintenance": "54558086fe7cece6f05e0457fbd7776b191241aa38384be1c1695bb2ddf86212"
+            }
+        }
+    }
+}

@@ -1,0 +1,402 @@
+{
+    "schema_version": 3,
+    "id": "7d8bfc24633dc24d23a90ef4799e64ab",
+    "identity": "github:1358821276:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1358821276:root",
+            "repository_id": 1358821276,
+            "component_id": "root",
+            "repository": "345420242/dsh-commandcode-usage-inline",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-commandcode-usage-inline",
+            "entry_type": "plugin",
+            "technical_category": "observability-cost",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "71bc8be16a0051d9a3da3722a7265789582d56dc26f6537fcb0cc7b4025bcd00",
+                "code": "67ae01891935472467cdf77562861062e91d9b5b",
+                "maintenance": "8f14854bc9f7b81bd65d07605057bdc898e0909b9eb9fd7078e508c0a8d9775f"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-01-github-1358821276-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T02:06:37.813Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-01-github-1358821276-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/345420242/dsh-commandcode-usage-inline/blob/67ae01891935472467cdf77562861062e91d9b5b/README.md",
+                    "revision": "67ae01891935472467cdf77562861062e91d9b5b",
+                    "captured_at": "2026-10-21T02:06:37.813Z",
+                    "summary": "在 DSH 输入栏内联展示 Command Code 账户窗口用量和剩余 credits。",
+                    "artifact": "data/runs/2026-10-21-01/snapshots/345420242--dsh-commandcode-usage-inline/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-01-github-1358821276-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/345420242/dsh-commandcode-usage-inline/blob/67ae01891935472467cdf77562861062e91d9b5b/dsh/client.js",
+                    "revision": "67ae01891935472467cdf77562861062e91d9b5b",
+                    "captured_at": "2026-10-21T02:06:37.813Z",
+                    "summary": "核查 dsh/client.js、dsh/index.js；纯客户端读取已挂载commandcode/report Remote，按当前会话provider显隐；解析账户report并优先active账户，每60秒刷新，错误时展示警告。",
+                    "artifact": "data/runs/2026-10-21-01/snapshots/345420242--dsh-commandcode-usage-inline/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定提交源码抽读与作者材料核查；没有执行目标代码、测试、安装或真实宿主验收，没有确认独立用户效果。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "Command Code用户在发起请求前查看额度和重置窗口，避免切到单独账户页面。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1358821276-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1358821276:root",
+                            "area": "code",
+                            "fingerprint": "67ae01891935472467cdf77562861062e91d9b5b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:06:37.813Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "纯客户端读取已挂载commandcode/report Remote，按当前会话provider显隐；解析账户report并优先active账户，每60秒刷新，错误时展示警告。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1358821276-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1358821276:root",
+                            "area": "code",
+                            "fingerprint": "67ae01891935472467cdf77562861062e91d9b5b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:06:37.813Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定提交源码抽读与作者材料核查；没有执行目标代码、测试、安装或真实宿主验收，没有确认独立用户效果。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1358821276-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1358821276:root",
+                            "area": "code",
+                            "fingerprint": "67ae01891935472467cdf77562861062e91d9b5b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:06:37.813Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "检查固定提交包清单与入口；安装说明属于作者主张，本次未验证分发产物与宿主兼容。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1358821276-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1358821276:root",
+                            "area": "code",
+                            "fingerprint": "67ae01891935472467cdf77562861062e91d9b5b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:06:37.813Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "本地轮询和少量UI开销；人工为provider安装、兼容升级和账户归属核对，未测轮询对上游请求成本。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1358821276-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1358821276:root",
+                            "area": "code",
+                            "fingerprint": "67ae01891935472467cdf77562861062e91d9b5b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:06:37.813Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "已用对应Command Code provider的用户可评估；多账户轮换时核对active标记，勿据首账户默认值作预算决定。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1358821276-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1358821276:root",
+                            "area": "code",
+                            "fingerprint": "67ae01891935472467cdf77562861062e91d9b5b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:06:37.813Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "在输入位置提示额度便于及时观察；显示百分比不能确保请求可用或准确预算。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1358821276-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1358821276:root",
+                            "area": "code",
+                            "fingerprint": "67ae01891935472467cdf77562861062e91d9b5b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:06:37.813Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "report边界解析容忍缺段，Host为显式no-op；客户端保留Remote错误并按provider显隐。复用时需保留未知账户和错误状态。 源码依据：[dsh/client.js](https://github.com/345420242/dsh-commandcode-usage-inline/blob/67ae01891935472467cdf77562861062e91d9b5b/dsh/client.js#L47)、[dsh/index.js](https://github.com/345420242/dsh-commandcode-usage-inline/blob/67ae01891935472467cdf77562861062e91d9b5b/dsh/index.js#L12)。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1358821276-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1358821276:root",
+                            "area": "code",
+                            "fingerprint": "67ae01891935472467cdf77562861062e91d9b5b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:06:37.813Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T02:06:37.813Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "67ae01891935472467cdf77562861062e91d9b5b",
+                "reviewed_at": "2026-10-21T02:06:37.813Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1358821276:root",
+                        "area": "code",
+                        "fingerprint": "67ae01891935472467cdf77562861062e91d9b5b"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "rationale": "novelty：相对侧栏是位置和交互改动；mechanism：复用Remote的局部适配；transferability：紧凑额度组件可迁移；simplification：不用复制认证但依赖外部接口。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1358821276-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 0
+                    },
+                    "rationale": "workflow：减少查额度操作；delivery：展示快照不是新交付物；reach：降低账户信息查找门槛；economics：未识别成本结构改变，额度可视不等于省钱。",
+                    "basis": "interpretation",
+                    "score": 22,
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1358821276-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "已用Command Code provider者可试用输入处额度提示；多账户先核对active归属和刷新窗口，不能按默认首账户设预算。",
+                "criteria": {
+                    "scenario": {
+                        "score": 15,
+                        "rationale": "特定provider用户免切账户页需求清楚但范围窄。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "输入位置60秒刷新方便观察，未新增精确配额能力。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "Remote报告解析与显隐源码已查，多账户真实轮换未验。"
+                    },
+                    "cost": {
+                        "score": 15,
+                        "rationale": "纯客户端开销低，仍依赖provider安装和报告协议。"
+                    }
+                },
+                "score": 56,
+                "revision": "67ae01891935472467cdf77562861062e91d9b5b",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-01-github-1358821276-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1358821276:root",
+                        "area": "code",
+                        "fingerprint": "67ae01891935472467cdf77562861062e91d9b5b"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1358821276:root",
+            "repository": "345420242/dsh-commandcode-usage-inline",
+            "path": "",
+            "revision": "67ae01891935472467cdf77562861062e91d9b5b",
+            "fingerprints": {
+                "directory": "71bc8be16a0051d9a3da3722a7265789582d56dc26f6537fcb0cc7b4025bcd00",
+                "code": "67ae01891935472467cdf77562861062e91d9b5b",
+                "maintenance": "8f14854bc9f7b81bd65d07605057bdc898e0909b9eb9fd7078e508c0a8d9775f"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T01:54:44Z",
+            "analysis_sha256": "500a44a7b73a8b4354168c96af25031e76dafb4d355002e8171f3473ec86db65"
+        },
+        "publication.metadata": "data/plugins/345420242--dsh-commandcode-usage-inline/META.json",
+        "publication.summaries": {
+            "text": "在 DSH 输入栏内联展示 Command Code 账户窗口用量和剩余 credits。",
+            "revision": "67ae01891935472467cdf77562861062e91d9b5b",
+            "source_url": "https://github.com/345420242/dsh-commandcode-usage-inline/blob/67ae01891935472467cdf77562861062e91d9b5b/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "67ae01891935472467cdf77562861062e91d9b5b",
+            "items": {
+                "界面": "Command Code窗口用量徽章与账户详情浮层"
+            }
+        },
+        "publication.advice": {
+            "revision": "67ae01891935472467cdf77562861062e91d9b5b",
+            "text": "已用对应Command Code provider的用户可评估；多账户轮换时核对active标记，勿据首账户默认值作预算决定。"
+        },
+        "registry": "data/plugins/345420242--dsh-commandcode-usage-inline",
+        "reports": "# dsh-commandcode-usage-inline\n\n> 在 DSH 输入栏内联展示 Command Code 账户窗口用量和剩余 credits。\n\n## 使用建议\n\n已用对应Command Code provider的用户可评估；多账户轮换时核对active标记，勿据首账户默认值作预算决定。\n\n**核查状态**：已实现机制有源码支持；贡献价值为条件性解释，未来设计假设未验证。本轮仅作固定版本源码核查，未安装、运行目标代码或验收宿主。\n\n- **用途**：Command Code用户在发起请求前查看额度和重置窗口，避免切到单独账户页面。\n- **亮点**：相对作者指出的侧栏用量面板，增量是把额度缩到模型选择旁的徽章，详情按需展开；复用provider认证与report接口，避免重复实现账户API。主要是界面适配贡献。\n- **思考**：active账户缺失时选首个configured账户，可能与实际请求轮换账户不同；“剩余”是report快照，不是本次请求额度承诺。外部provider Remote形状或挂载顺序变化也会让纯界面插件失效。\n- **建议**：已用对应Command Code provider的用户可评估；多账户轮换时核对active标记，勿据首账户默认值作预算决定。\n\n## 能力与限制\n\n作者明确参照zouxiaoyang的侧栏版；本次只核查该插件当前源码，不推断两个插件可以稳定共存。\n\n纯客户端读取已挂载commandcode/report Remote，按当前会话provider显隐；解析账户report并优先active账户，每60秒刷新，错误时展示警告。\n\n\nDSH客户端Remote和会话模型目录，已安装并启用@mars-sea/dsh-commandcode-provider；不直接持有API key。\n\n订阅会话模型目录，匹配commandcode后取得report，选当前账户渲染徽章，点击看明细；周期刷新，失败显示警告供重试。\n\n本地轮询和少量UI开销；人工为provider安装、兼容升级和账户归属核对，未测轮询对上游请求成本。\n\n在输入位置提示额度便于及时观察；显示百分比不能确保请求可用或准确预算。\n\n## 能力清单\n\n- **界面**：Command Code窗口用量徽章与账户详情浮层\n\n## 工程分析\n\nreport边界解析容忍缺段，Host为显式no-op；客户端保留Remote错误并按provider显隐。复用时需保留未知账户和错误状态。 源码依据：[dsh/client.js](https://github.com/345420242/dsh-commandcode-usage-inline/blob/67ae01891935472467cdf77562861062e91d9b5b/dsh/client.js#L47)、[dsh/index.js](https://github.com/345420242/dsh-commandcode-usage-inline/blob/67ae01891935472467cdf77562861062e91d9b5b/dsh/index.js#L12)。\n\n## 未来设计假设（未验证）\n\n待验证假设：当缺少active标记时明确显示“账户未确认”，并标注采集时间，比默认首账户更少诱发额度误判；由当前fallback选择规则推导，不需要增加API权限。\n\n最小验证：构造active缺失、账户切换、过期report和Remote晚挂载，比较默认首账户与未知提示的错误归属率；若提示仍导致预算误判则调整。\n\n## 核查说明\n\n- **仓库**：[345420242/dsh-commandcode-usage-inline](https://github.com/345420242/dsh-commandcode-usage-inline)\n- **版本号**：0.1.0（[固定提交 67ae018](https://github.com/345420242/dsh-commandcode-usage-inline/tree/67ae01891935472467cdf77562861062e91d9b5b)）\n- **版本日期**：2026-09-06（固定提交日期，北京时间；不是包发布日期）\n- **实际范围**：固定提交源码抽读与作者材料核查；没有执行目标代码、测试、安装或真实宿主验收，没有确认独立用户效果。\n- **来源**：作者README与上述固定版本源码；未确认独立采用效果，目录收录与下载统计不作效果证据。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：a0be5e324ab36d82bc2d1755a3114ea9bb9385e82218cb5de1e0a6776e4a7f6b。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 609 | 520 | 56 | — |\n| .md | source | 1 | 53 | — | — | 482 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n",
+        "metadata": {
+            "repository": "345420242/dsh-commandcode-usage-inline",
+            "repository_id": 1358821276,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 1,
+            "pushed_at": "2026-09-06T06:47:07Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A345420242%2Fdsh-commandcode-usage-inline%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6406:0C5F:638D9:A9F2A:6AD84A03 and timestamp 2026-10-21 05:13:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A345420242%2Fdsh-commandcode-usage-inline%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6407:30A0ED:1451CF:21E5A0:6AD84A04 and timestamp 2026-10-21 05:13:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A345420242%2Fdsh-commandcode-usage-inline%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641C:64E75:14108D:21AFDC:6AD84A04 and timestamp 2026-10-21 05:13:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A345420242%2Fdsh-commandcode-usage-inline%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641D:F50F:14B7CA:224AE7:6AD84A04 and timestamp 2026-10-21 05:13:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A345420242%2Fdsh-commandcode-usage-inline%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6404:0BD8:1B4D:3254:6AD84A04 and timestamp 2026-10-21 05:13:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-commandcode-usage-inline",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-commandcode-usage-inline",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-commandcode-usage-inline",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "67ae01891935472467cdf77562861062e91d9b5b",
+                "current_revision": "67ae01891935472467cdf77562861062e91d9b5b",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1358821276:root",
+            "repository": "345420242/dsh-commandcode-usage-inline",
+            "path": "",
+            "revision": "67ae01891935472467cdf77562861062e91d9b5b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "71bc8be16a0051d9a3da3722a7265789582d56dc26f6537fcb0cc7b4025bcd00",
+                "code": "67ae01891935472467cdf77562861062e91d9b5b",
+                "maintenance": "8f14854bc9f7b81bd65d07605057bdc898e0909b9eb9fd7078e508c0a8d9775f"
+            }
+        }
+    }
+}

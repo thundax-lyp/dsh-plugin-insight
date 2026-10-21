@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "11fbf8381756576ce4b6e5708678bd02",
+    "identity": "github:1339300438:packages-dsh-policy",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339300438:packages-dsh-policy",
+            "repository": "TGYD-helige/dsh-plugins",
+            "path": "packages/dsh-policy",
+            "revision": "1bac06860f5059d417563520b228c420e62badd6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7a921b7b7889a871e2a17462ae74f740fc704bffc24671d644952219d6e293e8",
+                "code": "1bac06860f5059d417563520b228c420e62badd6",
+                "maintenance": "4c91c619f6fa8efe719c82dde27cc0d0374132f61e199e1a8d47adb3c32301a5"
+            }
+        }
+    }
+}

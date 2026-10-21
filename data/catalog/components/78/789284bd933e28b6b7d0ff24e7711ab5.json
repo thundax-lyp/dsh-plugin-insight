@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "789284bd933e28b6b7d0ff24e7711ab5",
+    "identity": "github:1331953461:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1331953461:root",
+            "repository": "ywleeo/browser-mcp",
+            "path": "",
+            "revision": "fdab8ea7bc7090f6e2f23db929db0f1f74d32e07",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a4d72da7fa76832cc2c93cd0968ab5b3137872d09d6d86417b43eec76f6cb189",
+                "code": "fdab8ea7bc7090f6e2f23db929db0f1f74d32e07",
+                "maintenance": "4dc4c8f0e2d992cbdb842f40951b945329fb7d0c491c78d65d3faff6e1983e44"
+            }
+        }
+    }
+}

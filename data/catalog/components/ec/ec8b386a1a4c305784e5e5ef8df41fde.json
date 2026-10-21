@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ec8b386a1a4c305784e5e5ef8df41fde",
+    "identity": "github:1418823157:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1418823157:root",
+            "repository": "SereneJi/dsh-host-paths",
+            "path": "",
+            "revision": "5300618e3bbf6836e6ed569943cd2da13da869ab",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "cd6daa19a3fcc6771dc7b2087cc1daf1ab678e33c2d9d6316f8d8bcb303319e4",
+                "code": "5300618e3bbf6836e6ed569943cd2da13da869ab",
+                "maintenance": "7518baf7a05cadad53883ad639017d0c26b1c4a0893c3f910507a817663f92fa"
+            }
+        }
+    }
+}

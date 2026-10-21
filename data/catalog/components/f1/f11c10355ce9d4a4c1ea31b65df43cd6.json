@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f11c10355ce9d4a4c1ea31b65df43cd6",
+    "identity": "github:1339782061:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339782061:root",
+            "repository": "passingby000/dsh-nl-model-switch",
+            "path": "",
+            "revision": "74a646c9c1267d8c78098767dc0c26b330f596ed",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8aa00476d39be86e5f3c5d1d3b7f2cff563f1f9b01b4b4c08fc0ba3de15cceae",
+                "code": "74a646c9c1267d8c78098767dc0c26b330f596ed",
+                "maintenance": "ee971f4d0933d2e8693285069b1410e7d46fd88f75de602dac6e33abf16e18dd"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d206caf1f22db1cba7657c7cdfe60390",
+    "identity": "github:1367379083:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1367379083:root",
+            "repository": "fangwen9527/dsh-composer-ux",
+            "path": "",
+            "revision": "792609e50f1629f9f67798cf50def105f99f569c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8f4b82c09b6311c70c54bee12137e18c19628c2d9c0b1627e27b081321453523",
+                "code": "792609e50f1629f9f67798cf50def105f99f569c",
+                "maintenance": "c3ef0e3d1898bad022fbc1ba57a4d1a5d253b8373902d8d66b5705ce93ce3399"
+            }
+        }
+    }
+}

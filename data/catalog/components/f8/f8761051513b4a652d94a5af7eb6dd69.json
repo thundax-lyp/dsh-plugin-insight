@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f8761051513b4a652d94a5af7eb6dd69",
+    "identity": "github:1359686866:plugins-motor-repair-flow",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1359686866:plugins-motor-repair-flow",
+            "repository": "helllo-shijie/motor-hospital-plugins",
+            "path": "plugins/motor-repair-flow",
+            "revision": "6b13e4bb39d30f795b9af8402034f0c0a88f7ab9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0ab47361ea417ad56593413b896de77f6482a5dbf5d684ba4854cbcdc311adf9",
+                "code": "6b13e4bb39d30f795b9af8402034f0c0a88f7ab9",
+                "maintenance": "ae61c30fd903785b79008e00b9f602996e5f629205daa092405be9d1bae46ae1"
+            }
+        }
+    }
+}

@@ -1,6 +1,0 @@
-{
-  "revision": "c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29",
-  "items": {
-    "模型工具": "vecmem_status、vecmem_add、vecmem_search、vecmem_clear"
-  }
-}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e1eefae6612977af7cbe68d6bd4cdd45",
+    "identity": "github:1354300950:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1354300950:root",
+            "repository": "gejiaju/dsh-balance",
+            "path": "",
+            "revision": "c71e4157b9c49f85493f129d2ddcb6374c75d465",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f032ac27377eb20ec2c673a5bb4c9a9a0efa1117f2b62137901dabf12f9e556b",
+                "code": "c71e4157b9c49f85493f129d2ddcb6374c75d465",
+                "maintenance": "3b03ffd1e82eed2a70346072f56562fd24b3ccd62c8c2320e8454a808d839ec4"
+            }
+        }
+    }
+}

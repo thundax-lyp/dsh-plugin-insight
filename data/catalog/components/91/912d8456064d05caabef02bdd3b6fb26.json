@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "912d8456064d05caabef02bdd3b6fb26",
+    "identity": "github:1401143080:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1401143080:root",
+            "repository": "timestatic/dsh-session-notebook",
+            "path": "",
+            "revision": "b404ebc99c3f362849d5d8c28758692c0f0398ad",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f9332d54ad4c2831ef787af3b6da4134b87cf041412fb25fef3841536af607a1",
+                "code": "b404ebc99c3f362849d5d8c28758692c0f0398ad",
+                "maintenance": "7130f86c607f9ddeb43a09b28dccfbbadf2b5931a6ee294035eb3d03293cf2db"
+            }
+        }
+    }
+}

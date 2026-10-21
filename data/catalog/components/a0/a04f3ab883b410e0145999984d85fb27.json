@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a04f3ab883b410e0145999984d85fb27",
+    "identity": "github:1421097059:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1421097059:root",
+            "repository": "xiaohai-78/dsh-modes",
+            "path": "",
+            "revision": "fda77c7c27db59f39cd5cd529dfc671c3f77c62b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "55aefa9c197bf2cded9f25b5e15798b72e74dda2ed2a3c7e2d7b9f8c8b928863",
+                "code": "fda77c7c27db59f39cd5cd529dfc671c3f77c62b",
+                "maintenance": "9b27b38f1bedf23ba34003ca3b1b168d41f38c0c54d29d2dc4dcb0f3416a2d41"
+            }
+        }
+    }
+}

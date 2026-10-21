@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "766615b0ec875062af92aec32c5e4253",
+    "identity": "github:1333528857:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333528857:root",
+            "repository": "WSL043/dsh-codex-subscription",
+            "path": "",
+            "revision": "a87699e9c0e23e5cdbf5a3ce7353c8537c8d42e5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "3a5ce883dba0fc8f3fffa13b03c2d38d485b3c1bca637c8d5423220eb292b241",
+                "code": "a87699e9c0e23e5cdbf5a3ce7353c8537c8d42e5",
+                "maintenance": "79f2a9ba8a39c5242a8f88d5e4a635103f78784c71c86b9fa8a31b479a30f6af"
+            }
+        }
+    }
+}

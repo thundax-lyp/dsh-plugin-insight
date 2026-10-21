@@ -1,0 +1,403 @@
+{
+    "schema_version": 3,
+    "id": "c3b947e4a784f9be17b81ee67cb0b030",
+    "identity": "github:1370460115:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1370460115:root",
+            "repository_id": 1370460115,
+            "component_id": "root",
+            "repository": "173787247/dsh-wsl-im",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-wsl-im",
+            "entry_type": "plugin",
+            "technical_category": "channels-remote",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "67dc8e27c19d97f89fe3e735d5aa9c79a8ee9731b2e6b1fb2001c535df7f8f03",
+                "code": "c36e7cc4ae651756c7d81ff100401de10c10440a",
+                "maintenance": "90bf34cbcc0442c899488b01d3fdf2c3a10d1dcdf34cc651fa407a55dcc52336"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-20-07-github-1370460115-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T10:01:49.264Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-20-07-github-1370460115-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/173787247/dsh-wsl-im/blob/c36e7cc4ae651756c7d81ff100401de10c10440a/README.md",
+                    "revision": "c36e7cc4ae651756c7d81ff100401de10c10440a",
+                    "captured_at": "2026-10-20T10:01:49.264Z",
+                    "summary": "把多种即时通信平台接入DSH Agent，支持按聊天会话转发消息与媒体。",
+                    "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-im/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-20-07-github-1370460115-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/173787247/dsh-wsl-im/blob/c36e7cc4ae651756c7d81ff100401de10c10440a/index.js",
+                    "revision": "c36e7cc4ae651756c7d81ff100401de10c10440a",
+                    "captured_at": "2026-10-20T10:01:49.264Z",
+                    "summary": "核查 index.js、lib/bridge.js、lib/config.js、lib/inbound-media.js；Bridge按platform和chatId建立Agent会话并串行排队，适配器接收消息，监听session/event收集输出再回复。",
+                    "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-im/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "抽读桥接核心、配置和入口；未逐个平台审计适配器，未发送消息或运行ASR。 固定checkout的注册候选与关键主张定向抽读；未逐行完整审阅全部源码、测试、依赖及外部参照，未运行目标代码。评分仅针对文中明确的CLI/API/人工流程参照；跨场景迁移为解释性判断。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "用户希望从已有IM入口驱动本地Agent，并把回复送回原聊天。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1370460115-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1370460115:root",
+                            "area": "code",
+                            "fingerprint": "c36e7cc4ae651756c7d81ff100401de10c10440a"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:01:49.264Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "Bridge按platform和chatId建立Agent会话并串行排队，适配器接收消息，监听session/event收集输出再回复。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1370460115-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1370460115:root",
+                            "area": "code",
+                            "fingerprint": "c36e7cc4ae651756c7d81ff100401de10c10440a"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:01:49.264Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "抽读桥接核心、配置和入口；未逐个平台审计适配器，未发送消息或运行ASR。 固定checkout的注册候选与关键主张定向抽读；未逐行完整审阅全部源码、测试、依赖及外部参照，未运行目标代码。评分仅针对文中明确的CLI/API/人工流程参照；跨场景迁移为解释性判断。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1370460115-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1370460115:root",
+                            "area": "code",
+                            "fingerprint": "c36e7cc4ae651756c7d81ff100401de10c10440a"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:01:49.264Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "固定版本包清单与作者说明已核对；依赖各平台凭据与适配器、DSH agents及模型、网络连接；语音转写还依赖本地ASR。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1370460115-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1370460115:root",
+                            "area": "code",
+                            "fingerprint": "c36e7cc4ae651756c7d81ff100401de10c10440a"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:01:49.264Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "持续模型调用、平台连接、媒体落盘及ASR带来现金或算力成本；跨平台配置和恢复需要人工。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1370460115-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1370460115:root",
+                            "area": "code",
+                            "fingerprint": "c36e7cc4ae651756c7d81ff100401de10c10440a"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:01:49.264Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先限制允许用户并在测试群核查共享上下文，确认停止插件后连接和会话被回收。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1370460115-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1370460115:root",
+                            "area": "code",
+                            "fingerprint": "c36e7cc4ae651756c7d81ff100401de10c10440a"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:01:49.264Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "源码注明模式改编自MIT的dsh-im-hub；增量是WSL套件接线、平台工作区与媒体处理组合，不将多平台桥接范式计为原创。 isAllowed在平台allowedUserIds为空时允许所有用户；requireAllowlist只阻止缺少允许列表的已启用真实适配器启动，mock例外。同一platform/chatId共享Agent上下文，授权用户之间不按userId隔离。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1370460115-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1370460115:root",
+                            "area": "code",
+                            "fingerprint": "c36e7cc4ae651756c7d81ff100401de10c10440a"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:01:49.264Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "入站适配、会话队列与出站格式分离可复用；进程内chats与pending映射不等于持久消息幂等。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1370460115-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1370460115:root",
+                            "area": "code",
+                            "fingerprint": "c36e7cc4ae651756c7d81ff100401de10c10440a"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:01:49.264Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T10:01:49.264Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "c36e7cc4ae651756c7d81ff100401de10c10440a",
+                "reviewed_at": "2026-10-20T10:01:49.264Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1370460115:root",
+                        "area": "code",
+                        "fingerprint": "c36e7cc4ae651756c7d81ff100401de10c10440a"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty：桥接范式明确改编自dsh-im-hub，只给本套件适配小幅档；mechanism：按chatId串行排队/媒体处理形成实质组合，未验证持久幂等；transferability：适配器/桥/格式分层可迁移但宿主API耦合；simplification：多入口统一会话管理为实质整合，不能算原创多平台范式。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1370460115-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 15,
+                        "reach": 10,
+                        "economics": null
+                    },
+                    "rationale": "workflow：把IM消息接为Agent工作交接，实质档；delivery：回复/媒体回传改变交付渠道，实质档但正确性未测；reach：已有聊天入口让非终端使用者进入，实质档解释；economics：缺模型、平台维护与人工复制成本比较。",
+                    "basis": "interpretation",
+                    "score": null,
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1370460115-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "IM入口桥接有价值，但空列表可放开、群聊共享上下文且无持久幂等，先固定允许用户与隔离恢复语义。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "从已有聊天入口驱动Agent的需求明确。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "队列及回复接线省搬运，桥接模式来自上游。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "已查chatId共享与allowlist分支，未逐平台审计。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "平台凭据媒体、ASR和模型常驻成本及消息恢复负担高。"
+                    }
+                },
+                "score": 54,
+                "revision": "c36e7cc4ae651756c7d81ff100401de10c10440a",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-20-07-github-1370460115-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1370460115:root",
+                        "area": "code",
+                        "fingerprint": "c36e7cc4ae651756c7d81ff100401de10c10440a"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1370460115:root",
+            "repository": "173787247/dsh-wsl-im",
+            "path": "",
+            "revision": "c36e7cc4ae651756c7d81ff100401de10c10440a",
+            "fingerprints": {
+                "directory": "67dc8e27c19d97f89fe3e735d5aa9c79a8ee9731b2e6b1fb2001c535df7f8f03",
+                "code": "c36e7cc4ae651756c7d81ff100401de10c10440a",
+                "maintenance": "90bf34cbcc0442c899488b01d3fdf2c3a10d1dcdf34cc651fa407a55dcc52336"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T09:36:48.824Z",
+            "analysis_sha256": "ab0920749215f29e233685c6e76033c8031d6b0d99d4c05238caf08f592461ea"
+        },
+        "publication.metadata": "data/plugins/173787247--dsh-wsl-im/META.json",
+        "publication.summaries": {
+            "text": "把多种即时通信平台接入DSH Agent，支持按聊天会话转发消息与媒体。",
+            "revision": "c36e7cc4ae651756c7d81ff100401de10c10440a",
+            "source_url": "https://github.com/173787247/dsh-wsl-im/blob/c36e7cc4ae651756c7d81ff100401de10c10440a/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "c36e7cc4ae651756c7d81ff100401de10c10440a",
+            "items": {
+                "模型工具": "im_status：桥接状态查询。",
+                "后台": "IM适配器监听、按聊天会话排队与回复转发。"
+            }
+        },
+        "publication.advice": {
+            "revision": "c36e7cc4ae651756c7d81ff100401de10c10440a",
+            "text": "先限制允许用户并在测试群核查共享上下文，确认停止插件后连接和会话被回收。"
+        },
+        "registry": "data/plugins/173787247--dsh-wsl-im",
+        "reports": "# dsh-wsl-im\n\n> 把多种即时通信平台接入DSH Agent，支持按聊天会话转发消息与媒体。\n\n## 研究范围\n\n- **仓库**：[173787247/dsh-wsl-im](https://github.com/173787247/dsh-wsl-im)\n- **版本号**：0.3.8（[固定提交 c36e7cc4ae651756c7d81ff100401de10c10440a](https://github.com/173787247/dsh-wsl-im/tree/c36e7cc4ae651756c7d81ff100401de10c10440a)）\n- **版本日期**：2026-10-11（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已有贡献：源码注明模式改编自MIT的dsh-im-hub；增量是WSL套件接线、平台工作区与媒体处理组合，不将多平台桥接范式计为原创。\n\n结论边界：本次为固定版本源码核查，未执行目标代码或真实宿主验收，未核实独立使用效果。下文设计假设均未验证。\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：用户希望从已有IM入口驱动本地Agent，并把回复送回原聊天。\n- **亮点**：源码注明模式改编自MIT的dsh-im-hub；增量是WSL套件接线、平台工作区与媒体处理组合，不将多平台桥接范式计为原创。\n- **思考**：isAllowed在平台allowedUserIds为空时允许所有用户；requireAllowlist只阻止缺少允许列表的已启用真实适配器启动，mock例外。同一platform/chatId共享Agent上下文，授权用户之间不按userId隔离。\n- **建议**：待验证假设：把发送者权限与会话共享策略显式组合，可以降低群聊中的越界继承；与默认按用户隔离相比需衡量协作损失。\n\n采用建议：先限制允许用户并在测试群核查共享上下文，确认停止插件后连接和会话被回收。\n\n## 核心贡献\n\n源码注明模式改编自MIT的dsh-im-hub；增量是WSL套件接线、平台工作区与媒体处理组合，不将多平台桥接范式计为原创。\n\n## 关键质疑\n\nisAllowed在平台allowedUserIds为空时允许所有用户；requireAllowlist只阻止缺少允许列表的已启用真实适配器启动，mock例外。同一platform/chatId共享Agent上下文，授权用户之间不按userId隔离。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n待验证假设：把发送者权限与会话共享策略显式组合，可以降低群聊中的越界继承；与默认按用户隔离相比需衡量协作损失。\n\n用两个授权用户、一个未授权用户和同群并发消息，检查会话归属、阻断、重启恢复与重复投递；若隔离收益不足不扩大协议。\n\n## 场景与替代办法\n\n用户希望从已有IM入口驱动本地Agent，并把回复送回原聊天。\n\n人工复制消息或已有IM桥接；本插件减少入口搬运，但增加身份、会话与媒体生命周期维护。\n\n## 依赖与流程\n\n依赖各平台凭据与适配器、DSH agents及模型、网络连接；语音转写还依赖本地ASR。\n\n先配置平台和允许用户，启用requireAllowlist，在私人测试聊天验证回复与reset，再评估群聊。\n\n## 成本与效果\n\n持续模型调用、平台连接、媒体落盘及ASR带来现金或算力成本；跨平台配置和恢复需要人工。\n\n源码注明模式改编自MIT的dsh-im-hub；增量是WSL套件接线、平台工作区与媒体处理组合，不将多平台桥接范式计为原创。 isAllowed在平台allowedUserIds为空时允许所有用户；requireAllowlist只阻止缺少允许列表的已启用真实适配器启动，mock例外。同一platform/chatId共享Agent上下文，授权用户之间不按userId隔离。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：9990870ab0ce2a5c2a028d56cc56f7d416cb03834e8f11a491ca75876cb8b678。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 369 | — | — | 2838 |\n| .js | source | 22 | 4203 | 3681 | 259 | — |\n| .js | test | 1 | 482 | 460 | 10 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **模型工具**：im_status：桥接状态查询。\n- **后台**：IM适配器监听、按聊天会话排队与回复转发。\n\n## 工程亮点\n\n入站适配、会话队列与出站格式分离可复用；进程内chats与pending映射不等于持久消息幂等。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 index.js、lib/bridge.js、lib/config.js、lib/inbound-media.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读桥接核心、配置和入口；未逐个平台审计适配器，未发送消息或运行ASR。 固定checkout的注册候选与关键主张定向抽读；未逐行完整审阅全部源码、测试、依赖及外部参照，未运行目标代码。评分仅针对文中明确的CLI/API/人工流程参照；跨场景迁移为解释性判断。\n- 下一步：用两个授权用户、一个未授权用户和同群并发消息，检查会话归属、阻断、重启恢复与重复投递；若隔离收益不足不扩大协议。\n",
+        "metadata": {
+            "repository": "173787247/dsh-wsl-im",
+            "repository_id": 1370460115,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 1,
+            "pushed_at": "2026-10-10T16:22:11Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-im%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6408:3A08F:14777A:220DC5:6AD84984 and timestamp 2026-10-21 05:11:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-im%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6410:0BD3:9F574:1081BA:6AD84984 and timestamp 2026-10-21 05:11:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-im%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6412:15F2FE:147735:21F296:6AD84985 and timestamp 2026-10-21 05:11:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-im%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6415:136889:155729:22DD61:6AD84985 and timestamp 2026-10-21 05:11:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-im%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6413:3B024B:14215F:21A802:6AD84985 and timestamp 2026-10-21 05:11:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-wsl-im",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-wsl-im",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-wsl-im",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "c36e7cc4ae651756c7d81ff100401de10c10440a",
+                "current_revision": "c36e7cc4ae651756c7d81ff100401de10c10440a",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1370460115:root",
+            "repository": "173787247/dsh-wsl-im",
+            "path": "",
+            "revision": "c36e7cc4ae651756c7d81ff100401de10c10440a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "67dc8e27c19d97f89fe3e735d5aa9c79a8ee9731b2e6b1fb2001c535df7f8f03",
+                "code": "c36e7cc4ae651756c7d81ff100401de10c10440a",
+                "maintenance": "90bf34cbcc0442c899488b01d3fdf2c3a10d1dcdf34cc651fa407a55dcc52336"
+            }
+        }
+    }
+}

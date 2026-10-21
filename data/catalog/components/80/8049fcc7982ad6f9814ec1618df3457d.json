@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8049fcc7982ad6f9814ec1618df3457d",
+    "identity": "github:1346612177:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346612177:root",
+            "repository": "mengzhangj/dsh-wallpaper",
+            "path": "",
+            "revision": "cbab462a25891b71ad2412d6dc4067fb03e0299d",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "1216aa4aa498c96649f9b9e4030e2620b04f6c67ff30cc50603d6f146645d8d6",
+                "code": "cbab462a25891b71ad2412d6dc4067fb03e0299d",
+                "maintenance": "0fa37c3f942636cefffb37ca73c90243963eaa49701e31876f92eb51f19af467"
+            }
+        }
+    }
+}

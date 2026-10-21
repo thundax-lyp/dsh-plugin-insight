@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c6e1828339e1533967dea675661c741a",
+    "identity": "github:1345174970:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345174970:root",
+            "repository": "zerorigin-studio/dsh-desktop-shell",
+            "path": "",
+            "revision": "3bee0f09d61029d6571b8e5afb756c538b7ab9bd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3927b792c93b8fc7b44b880aacacc767fad2ed2d231311cfcb5a26969f857e83",
+                "code": "3bee0f09d61029d6571b8e5afb756c538b7ab9bd",
+                "maintenance": "cb9c6bb9d2d5fd7e789c7f62291f2b06d221ed5d2d5716b1bf80d79b51eca65e"
+            }
+        }
+    }
+}

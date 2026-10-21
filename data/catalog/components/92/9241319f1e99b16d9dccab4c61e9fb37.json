@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9241319f1e99b16d9dccab4c61e9fb37",
+    "identity": "github:1339479954:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339479954:root",
+            "repository": "ChenYiming-aaa/dsh-ui-ux-pro-max",
+            "path": "",
+            "revision": "8ed150d2e14b9bf515faad9853832c1f98298bab",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "44a83fd259772791a00385746f3df8ccc4aebe57fdf29737e802099b266487bc",
+                "code": "8ed150d2e14b9bf515faad9853832c1f98298bab",
+                "maintenance": "4da9342ec3a6eb26eaaa2b88ee909ea77c65683b4655752bcae4576ede6cc3e7"
+            }
+        }
+    }
+}

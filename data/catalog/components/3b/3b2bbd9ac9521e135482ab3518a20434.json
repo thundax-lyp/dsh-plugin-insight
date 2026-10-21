@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3b2bbd9ac9521e135482ab3518a20434",
+    "identity": "github:1399008728:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1399008728:root",
+            "repository": "scottzx/feature-blueprint",
+            "path": "",
+            "revision": "442130e0b50dc9ec113fe6c5bc8c1ab1a6e297d9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "093157bf3644403797e1422024812ba5f835c537691fd23636af0b65bdec07ce",
+                "code": "442130e0b50dc9ec113fe6c5bc8c1ab1a6e297d9",
+                "maintenance": "7789f6494bc12e0a2d34bed053f128a44fd07516b3aff66f619abd3a0485cee0"
+            }
+        }
+    }
+}

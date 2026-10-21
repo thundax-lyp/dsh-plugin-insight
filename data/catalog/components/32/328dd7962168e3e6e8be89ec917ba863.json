@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "328dd7962168e3e6e8be89ec917ba863",
+    "identity": "github:1347400625:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347400625:root",
+            "repository": "liulifu/dsh-tray",
+            "path": "",
+            "revision": "dff0c9bcd5e2372f88862a7cb85fed6e68939281",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "299b7e472db3374ea38e0d13be750bc7037765beffab4453b5d05ec075a65c42",
+                "code": "dff0c9bcd5e2372f88862a7cb85fed6e68939281",
+                "maintenance": "839ab0ed7a2f0467d6e8a2dbb17d6d4a6ad7836222f40739fa8c82318a43b546"
+            }
+        }
+    }
+}

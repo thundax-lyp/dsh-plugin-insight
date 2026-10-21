@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7b1d34e30b8aa3c9799bbfd561744da5",
+    "identity": "github:1337889874:packages-standard",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337889874:packages-standard",
+            "repository": "Liu-Bot24/dsh-trace-insight",
+            "path": "packages/standard",
+            "revision": "96d21bb02d99bf80c1ebf5753b8f3af1fb75f7b4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c97dc7635ceec564f621213131177b065d84007a3e07177f9be793f64c0b098a",
+                "code": "96d21bb02d99bf80c1ebf5753b8f3af1fb75f7b4",
+                "maintenance": "ec990eadc4a6d81c940e2f46f0ffd471255c40da16f54fe9259b9cd1b2673956"
+            }
+        }
+    }
+}

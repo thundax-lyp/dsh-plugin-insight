@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6f3f225624a6df8f1c089ee08f739f11",
+    "identity": "github:1346735605:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346735605:root",
+            "repository": "shizhanyu13/dsh-ironbound-policy",
+            "path": "",
+            "revision": "7da65a9a3ac7709457e200d30dcaf47229f71da6",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "abac12771c3de5700e44a39a0d59e5d713d2d141056d38cec9d5aa90159aef63",
+                "code": "7da65a9a3ac7709457e200d30dcaf47229f71da6",
+                "maintenance": "fc358ed4ee89d681ea52f838393c69e6bdcc67ef6deb6d8febb8fecc96247b32"
+            }
+        }
+    }
+}

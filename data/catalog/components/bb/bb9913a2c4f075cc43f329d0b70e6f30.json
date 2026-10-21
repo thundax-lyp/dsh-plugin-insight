@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bb9913a2c4f075cc43f329d0b70e6f30",
+    "identity": "github:1389102623:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1389102623:root",
+            "repository": "hiJoeLee/dsh-whale-brand",
+            "path": "",
+            "revision": "67c2e530eb2a1765b7a216e87ed5063a42665351",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5861f08f89ebaf5281fcfc834be508c75d76b42da160e7f5a181138c99afdcee",
+                "code": "67c2e530eb2a1765b7a216e87ed5063a42665351",
+                "maintenance": "a2cc846cbfa5a985e5f1e1f3a480ed5232b4a7296e77684dfb17c0342368bdb7"
+            }
+        }
+    }
+}

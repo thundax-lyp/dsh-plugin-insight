@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c03153317f354fdb6eda0870bb1435a9",
+    "identity": "github:1347367621:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347367621:root",
+            "repository": "Ranz-Feng/dsh-web-import",
+            "path": "",
+            "revision": "0a82cf23e0ab13234ce7ce7c71ef28525a0fe17d",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "3e3764e9a5937b98aeb3a0438626c78587f7353a619cc19a4c141ae24a4dad21",
+                "code": "0a82cf23e0ab13234ce7ce7c71ef28525a0fe17d",
+                "maintenance": "b195f1e41952e822bd705e2270cb7ea584ec8035bd1cd811b2b9d71fbe1d99d3"
+            }
+        }
+    }
+}

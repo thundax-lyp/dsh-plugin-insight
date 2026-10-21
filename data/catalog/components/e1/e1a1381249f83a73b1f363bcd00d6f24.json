@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e1a1381249f83a73b1f363bcd00d6f24",
+    "identity": "github:1424078727:packages-dsh-status-bar",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424078727:packages-dsh-status-bar",
+            "repository": "wfz2006/dsh-status-bar",
+            "path": "packages/dsh-status-bar",
+            "revision": "12c97e317c6f63919bbbd848729a84226d0b23b0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "eb6e162e9c4287d0e1aa79c15bc9ab78d109ea3a294d9d3cb6fb2e86e72a5ce6",
+                "code": "12c97e317c6f63919bbbd848729a84226d0b23b0",
+                "maintenance": "4127c57c400667ae763bc34f3040385e48eeae77898af66f40e238fa9c9e2919"
+            }
+        }
+    }
+}

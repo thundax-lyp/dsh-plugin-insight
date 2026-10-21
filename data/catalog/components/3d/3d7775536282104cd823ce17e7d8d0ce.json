@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "3d7775536282104cd823ce17e7d8d0ce",
+    "identity": "github:1329947687:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1329947687:root",
+            "repository": "vlln/whale-girl",
+            "path": "",
+            "revision": "38e2721ff9f1e8aedff8fc73b8d4455118116924",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "8f77cf90b8998410633a531b8eb69334004b760ce838b2f0f68dc0080e91ea88",
+                "code": "38e2721ff9f1e8aedff8fc73b8d4455118116924",
+                "maintenance": "5bb7f79f980ef181d8aed23878771f419a6e21a344034125a757d40023bfe1d9"
+            }
+        }
+    }
+}

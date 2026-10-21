@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "15c398a5f9ff76e5e219519591bd6298",
+    "identity": "github:1346872537:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346872537:root",
+            "repository": "yoshino-xiao7/dsh-grok-provider",
+            "path": "",
+            "revision": "6c9f88cf87e5cc31acc028053e1e5a117ef002e3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "483fa75997f9385fe78c6cabf564cc7f7bee17fadd1f2e20d6db07b4f5407311",
+                "code": "6c9f88cf87e5cc31acc028053e1e5a117ef002e3",
+                "maintenance": "bfed7644d78841321d2c3448b1b53d2375ec80109c1b4223c215c630ddfc35f7"
+            }
+        }
+    }
+}

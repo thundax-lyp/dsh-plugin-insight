@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "084d30c5969cbd6cd1ed3830487cf700",
+    "identity": "github:1411448429:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1411448429:root",
+            "repository": "YDT-china/dsh-web-search-session",
+            "path": "",
+            "revision": "5b762bab05d7a76593cdb2fa9c74473c9791d17e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "896191ec2630d3b48b468f4cdb5e4ce81d188063f3825747a13c2d6e27cbddda",
+                "code": "5b762bab05d7a76593cdb2fa9c74473c9791d17e",
+                "maintenance": "bbe5d905f59be17ae01d2f4e094d69a34bb2a1304ccb5cb8b50b81dd552e7f0e"
+            }
+        }
+    }
+}

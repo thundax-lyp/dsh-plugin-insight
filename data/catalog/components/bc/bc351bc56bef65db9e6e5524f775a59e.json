@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "bc351bc56bef65db9e6e5524f775a59e",
+    "identity": "github:1333699356:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333699356:root",
+            "repository": "taxueseek/dsh-files",
+            "path": "",
+            "revision": "1cb5a782711bc4c68b6ddcc7476a8293a806dbc6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "57bf0b174c0aa6d828a3bfabdcd5556e7fe0ab62efefcd5117013d7a48e9080e",
+                "code": "1cb5a782711bc4c68b6ddcc7476a8293a806dbc6",
+                "maintenance": "3369a2068318f5429ac65ed606cd3053877aecd3d37ac2818d294bf815ec7eb6"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "01cd44a5cad2e5d5f0803f7cddf6558d",
+    "identity": "github:1333662860:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333662860:root",
+            "repository": "BlockRunAI/dsh-clawrouter",
+            "path": "",
+            "revision": "5192ec9d12e1d7e8e16ba494e165e0f7efcb2ccc",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "3940c31cdd9f085771573c87e6de3a3d170cb0403fb5260f9c2202ed6fd46172",
+                "code": "5192ec9d12e1d7e8e16ba494e165e0f7efcb2ccc",
+                "maintenance": "c740204f7413e7bc2ba557c1d6563c801a090dd3cef158afa20aefb745e82d84"
+            }
+        }
+    }
+}

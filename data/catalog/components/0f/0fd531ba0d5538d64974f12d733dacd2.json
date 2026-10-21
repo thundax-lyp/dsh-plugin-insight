@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0fd531ba0d5538d64974f12d733dacd2",
+    "identity": "github:1339549394:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339549394:root",
+            "repository": "hherosoul/dsh-smart-charts",
+            "path": "",
+            "revision": "0595787f346e53c81d617ce3f86888ebbd58b5d8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "71e42f352a2c65b5af82c8423ecf44ca60e9ace8b977d840e72cf82546d9174a",
+                "code": "0595787f346e53c81d617ce3f86888ebbd58b5d8",
+                "maintenance": "27fea766daa4f18e5d6553b3db3b3398d1556eee0296778bf1fef4cc9303ee5c"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2cf65a8356724dd5cb30b68bda82ba34",
+    "identity": "github:1334220645:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334220645:root",
+            "repository": "Einskyle/dsh-llm-vision-bridge",
+            "path": "",
+            "revision": "6b9bd0081d9cead58f60d3eccab5069764c4c634",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "153ff4e89b8ea771a7d975bd7533ed879336bb59784e179ea0783b5b489e4a8c",
+                "code": "6b9bd0081d9cead58f60d3eccab5069764c4c634",
+                "maintenance": "844f850a57c1807540be4d325073e17892a597d6b84c9a2fdca44e0f3121e512"
+            }
+        }
+    }
+}

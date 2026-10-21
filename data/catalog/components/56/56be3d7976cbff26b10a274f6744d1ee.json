@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "56be3d7976cbff26b10a274f6744d1ee",
+    "identity": "github:1338463750:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338463750:root",
+            "repository": "Renzic-Stone/DSH-EasyRewrite",
+            "path": "",
+            "revision": "8ccdaf46238c09536bd776937273fa9d9d67578b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "0898085590f53014df2b618fe00e58f0d488ab9511c1e54df4729b52aced5650",
+                "code": "8ccdaf46238c09536bd776937273fa9d9d67578b",
+                "maintenance": "2d5bffbf2443c6f7ea2cb5f292679e0a5e5cc54dbf3824b67a18faaecee3c1ed"
+            }
+        }
+    }
+}

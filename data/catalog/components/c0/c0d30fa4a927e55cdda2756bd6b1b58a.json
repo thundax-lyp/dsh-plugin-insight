@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c0d30fa4a927e55cdda2756bd6b1b58a",
+    "identity": "github:1416899194:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1416899194:root",
+            "repository": "Audrey-cn/dsh-bot-codex-ui",
+            "path": "",
+            "revision": "aae58eb99544694731a326f0881c84dfb028e934",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c23a1eea1aeda7be6042e37050196227df92b839bce9af4407250d53ba5d2114",
+                "code": "aae58eb99544694731a326f0881c84dfb028e934",
+                "maintenance": "6d533b4e064dc5c1d88e43f5340d7be259c68a12242f61c513ff6a4cc1bd3d4e"
+            }
+        }
+    }
+}

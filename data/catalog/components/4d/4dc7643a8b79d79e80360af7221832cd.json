@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4dc7643a8b79d79e80360af7221832cd",
+    "identity": "github:1375429405:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1375429405:root",
+            "repository": "DPH-1121/dsh-opencode-go-plus",
+            "path": "",
+            "revision": "23b1338ba1e391e80e62b1946fe73f7e92c59e57",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "cc72c407f71fa7c98c098522701a630b962fa74caf468c859f8497c344e6e0bb",
+                "code": "23b1338ba1e391e80e62b1946fe73f7e92c59e57",
+                "maintenance": "0ce82eb2a251966a2e288be80ebacc3301c2c0cf9f46914323e10016964f891c"
+            }
+        }
+    }
+}

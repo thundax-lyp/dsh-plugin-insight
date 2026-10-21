@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1c81d6b6183c918b12e3e34400698e3b",
+    "identity": "github:1238532570:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1238532570:root",
+            "repository": "Weaxs/stock-analysis-plugin",
+            "path": "",
+            "revision": "985ce3848385e9916698b06201418200c20ae757",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "47e405899c0beb7157c354db4958ce9b8a458665de73d26d9ff1350380f4ddb0",
+                "code": "985ce3848385e9916698b06201418200c20ae757",
+                "maintenance": "12664d7b417d33a486aeaca077e9f0c40aeb1ce83309686d19be27d5d65b5865"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "577abf509a4a59530a6ca32817d09af6",
+    "identity": "github:1349269037:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1349269037:root",
+            "repository": "eve1329/dsh-shared-handoff",
+            "path": "",
+            "revision": "94553fd5826e323e6bed2e13550e9bb1ac7b8707",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3aa0f7e303ef5c6209ff0ed087464ba6334284fb3c3ed5664ecaad3153fa3428",
+                "code": "94553fd5826e323e6bed2e13550e9bb1ac7b8707",
+                "maintenance": "241912497da6588e0c89d722da92914fe8aa3219011bc311632fba5e3e325e16"
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "73ccd9f472e9ec089383ef0c493f8117",
+    "identity": "github:1335661102:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335661102:root",
+            "repository": "Walvez/dsh-codex-sync",
+            "path": "",
+            "revision": "75bbca80457eb5743a8fd293e1315f45a0771427",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "2ea112b442e8efaa86fda4030de2fd4d41f27e3cf1d0ad3cd8292a422cfea63e",
+                "code": "75bbca80457eb5743a8fd293e1315f45a0771427",
+                "maintenance": "00d21c2089a1bf0c85b7a6cc51c2eb74d263de9ebfd9e762cc0c7d021b185d88"
+            }
+        }
+    }
+}

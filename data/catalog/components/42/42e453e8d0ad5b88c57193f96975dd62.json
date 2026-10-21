@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "42e453e8d0ad5b88c57193f96975dd62",
+    "identity": "github:1313032827:dsh",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1313032827:dsh",
+            "repository": "Vladimir-Human/ru-marketplace-mcp",
+            "path": "dsh",
+            "revision": "cc89f2d87f59b8e2f2858db30a63208d439a7c3f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d538675dbc99ad22ef93d7014d52c5529fc7732f0711e8180c09c431eb9a261a",
+                "code": "cc89f2d87f59b8e2f2858db30a63208d439a7c3f",
+                "maintenance": "d7aecab73bf3ec7ab7085eb67f384547734f5dd8cc406f8c956704a1b4a8527a"
+            }
+        }
+    }
+}

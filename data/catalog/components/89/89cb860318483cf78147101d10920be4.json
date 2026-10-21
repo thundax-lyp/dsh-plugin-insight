@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "89cb860318483cf78147101d10920be4",
+    "identity": "github:1333311954:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333311954:root",
+            "repository": "xylt369/dsh-browser",
+            "path": "",
+            "revision": "2f1adeea9f56eed710680aab9d0a6d1da12407b3",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "9fd0d7b07f15fc3fbae87f81df22245cd5d17d59f7b8265684e14ed26b326ae2",
+                "code": "2f1adeea9f56eed710680aab9d0a6d1da12407b3",
+                "maintenance": "ce4985a27ca48674fc3d8496c6326f1b94ffe76919c10046b8d67bd3604ae089"
+            }
+        }
+    }
+}

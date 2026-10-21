@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "848dc45bd0192f94923f10ab646e0ef0",
+    "identity": "github:1376090595:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1376090595:root",
+            "repository": "Wangxian111/xaudaily-gold-data",
+            "path": "",
+            "revision": "6b6a350bfd122e2591142087c5520b1000a7f2e4",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "d0784c5fde8249450584dc93eba5f7e0a3253c54d78861f60e7f6563dfece3f9",
+                "code": "6b6a350bfd122e2591142087c5520b1000a7f2e4",
+                "maintenance": "98b18cabd003c215861fed517f9a5f7ba8b905e6435219432809fd261a4340a7"
+            }
+        }
+    }
+}

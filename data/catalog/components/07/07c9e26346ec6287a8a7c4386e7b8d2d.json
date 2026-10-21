@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "07c9e26346ec6287a8a7c4386e7b8d2d",
+    "identity": "github:1371054692:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1371054692:root",
+            "repository": "wyzh0117/dsh-port-manager",
+            "path": "",
+            "revision": "a2826bbd07a88de3b5ec2a81cb140aa159ed200c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4eb24d32e120da4df7ced21f779f31f707222ee5f2e9a73b9b33c6c651347e35",
+                "code": "a2826bbd07a88de3b5ec2a81cb140aa159ed200c",
+                "maintenance": "027ed7f963bf1b15a33f3847c6f8ea3747d5f066c83f941c9d732f916fd466f4"
+            }
+        }
+    }
+}

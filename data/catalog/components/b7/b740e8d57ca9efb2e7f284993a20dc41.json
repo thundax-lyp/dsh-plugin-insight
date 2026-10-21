@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b740e8d57ca9efb2e7f284993a20dc41",
+    "identity": "github:1354533275:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1354533275:root",
+            "repository": "MarchLiu/dsh-farm",
+            "path": "",
+            "revision": "ad330a4677017c1524f6b4e7ef120ab289d9b4ea",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "35b73f744106a6cc983389043a3b1ab1f3a77d1cd94a0dec6ed76ceb5b3f00cd",
+                "code": "ad330a4677017c1524f6b4e7ef120ab289d9b4ea",
+                "maintenance": "fdbf9f907a08dc0e8c2b1f45e0af45868d4afa348a062ff52af2061c43486057"
+            }
+        }
+    }
+}

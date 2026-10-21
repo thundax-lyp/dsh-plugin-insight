@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "dd862cb48b92091197a4555bf46537d0",
+    "identity": "github:1342087809:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342087809:root",
+            "repository": "enterhalf/dsh-web-network-optimizer",
+            "path": "",
+            "revision": "c735a1368eda845fb6754916d2b712027c54c2d7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "31c0e11e5d82497e434e5bee6fc914c82347ed8fb7a75b19ac69d4d2cf4a89e2",
+                "code": "c735a1368eda845fb6754916d2b712027c54c2d7",
+                "maintenance": "9f6abbfcf9fd8f6e98babfe15b2c6e9ca8b1facff15ab75d743cf8ab7b360634"
+            }
+        }
+    }
+}

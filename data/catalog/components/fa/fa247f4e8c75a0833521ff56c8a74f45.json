@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fa247f4e8c75a0833521ff56c8a74f45",
+    "identity": "github:1379343948:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1379343948:root",
+            "repository": "dreammaker2016/dsh-file-menu",
+            "path": "",
+            "revision": "f9a2872ad4b3018ac249da40e2b208d507131be6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5d18090e16c32ae7358b261217d9bff9e08d85b5b2f1ae6f0530c0ec8c017b1e",
+                "code": "f9a2872ad4b3018ac249da40e2b208d507131be6",
+                "maintenance": "7a29115f80f6fb0dff3dfef02e8b566afd5b17e443f5a76439748bc69bb1a912"
+            }
+        }
+    }
+}

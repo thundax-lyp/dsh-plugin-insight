@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "cb5714094d2ffb5fe5fd14c5f104fb08",
+    "identity": "github:1334238203:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334238203:root",
+            "repository": "caoqinnan-web/organize-workspace-sessions",
+            "path": "",
+            "revision": "b99ccf2b74293ba20c1c9215e74710673fa815de",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "98b0e16b1b7a4ff3aa7ef98ac572be37fa1c2ad92f3c895b0d84101d1d55ef77",
+                "code": "b99ccf2b74293ba20c1c9215e74710673fa815de",
+                "maintenance": "f7fb1f019ce8d86d40a98796ad6608b88299e9175e5c8cd01f7132435c410c72"
+            }
+        }
+    }
+}

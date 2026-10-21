@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0acd481db2e1bf88f1790a82a4540e15",
+    "identity": "github:1337125968:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337125968:root",
+            "repository": "eightHundreds/dsh-plannotator",
+            "path": "",
+            "revision": "372c19fd39a9cb427170ecf944c1278a6751f144",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a54b748c25415479ae9531d7e86415bba3857d625e36a93557e43db87814d059",
+                "code": "372c19fd39a9cb427170ecf944c1278a6751f144",
+                "maintenance": "9193a5a4814fdefa646ff0207754bd9e21951196baf53adc380b2db1189bc2cc"
+            }
+        }
+    }
+}

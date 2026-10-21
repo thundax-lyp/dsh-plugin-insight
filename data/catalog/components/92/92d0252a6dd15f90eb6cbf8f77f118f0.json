@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "92d0252a6dd15f90eb6cbf8f77f118f0",
+    "identity": "github:1355778254:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1355778254:root",
+            "repository": "kaixinguo360/dsh-script-manager",
+            "path": "",
+            "revision": "7534eaa7a1f2a4ab6734702ddfbe5c9e3b09dd49",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b13e431e599877ddd89a9d0b0b8562e2f6c382c5f6d912ae85a3da886782b6f0",
+                "code": "7534eaa7a1f2a4ab6734702ddfbe5c9e3b09dd49",
+                "maintenance": "fffa6d57d71c664d8ddfbf522626f1c1afdea0dd27633829a8fb7c050f372c08"
+            }
+        }
+    }
+}

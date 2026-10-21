@@ -1,0 +1,448 @@
+{
+    "schema_version": 3,
+    "id": "d8f9414b69b5969e47d9b8ac289124c2",
+    "identity": "github:1407166868:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1407166868:root",
+            "repository_id": 1407166868,
+            "component_id": "root",
+            "repository": "AL-Yichen/dsh-fullscreen-input",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-fullscreen-input",
+            "entry_type": "plugin",
+            "technical_category": "interface-input",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "02c624f18592d3be58aac4a8801825339edc9f6b0e61cc6ac8bd1506af0f9526",
+                "code": "0e211595f4f07289ba3b713b67d47b90498fa082",
+                "maintenance": "54ed6c4dd6dfb2f872410879a005345e20ca58bca6679dc663f7905d789779c3"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-06-github-1407166868-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T05:42:24.653Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-06-github-1407166868-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/AL-Yichen/dsh-fullscreen-input/blob/0e211595f4f07289ba3b713b67d47b90498fa082/README.md",
+                    "revision": "0e211595f4f07289ba3b713b67d47b90498fa082",
+                    "captured_at": "2026-10-21T05:42:24.653Z",
+                    "summary": "为同一会话草稿提供可拖动的大输入面板与明确发送手势。",
+                    "artifact": "data/runs/2026-10-21-06/snapshots/al-yichen--dsh-fullscreen-input/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-06-github-1407166868-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/AL-Yichen/dsh-fullscreen-input/blob/0e211595f4f07289ba3b713b67d47b90498fa082/lib/index.js",
+                    "revision": "0e211595f4f07289ba3b713b67d47b90498fa082",
+                    "captured_at": "2026-10-21T05:42:24.653Z",
+                    "summary": "核查 lib/index.js、src/client.js；浏览器slots提供面板，useInput和inputActions读写同一草稿，session scope取得insertReference；setDraft扁平化后按draftRev逐步恢复引用，submit调用宿主原动作。主机apply为空。",
+                    "artifact": "data/runs/2026-10-21-06/snapshots/al-yichen--dsh-fullscreen-input/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "长文本、中文输入法和附件引用混合输入，希望Enter始终换行的用户。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1407166868-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1407166868:root",
+                            "area": "code",
+                            "fingerprint": "0e211595f4f07289ba3b713b67d47b90498fa082"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:42:24.653Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "浏览器slots提供面板，useInput和inputActions读写同一草稿，session scope取得insertReference；setDraft扁平化后按draftRev逐步恢复引用，submit调用宿主原动作。主机apply为空。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1407166868-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1407166868:root",
+                            "area": "code",
+                            "fingerprint": "0e211595f4f07289ba3b713b67d47b90498fa082"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:42:24.653Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1407166868-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1407166868:root",
+                            "area": "code",
+                            "fingerprint": "0e211595f4f07289ba3b713b67d47b90498fa082"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:42:24.653Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "分发以本插件固定package.json、运行依赖与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1407166868-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1407166868:root",
+                            "area": "code",
+                            "fingerprint": "0e211595f4f07289ba3b713b67d47b90498fa082"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:42:24.653Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "无额外模型调用；复杂富文本兼容、快捷键及布局维护成本高于普通textarea，外观状态本地。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1407166868-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1407166868:root",
+                            "area": "code",
+                            "fingerprint": "0e211595f4f07289ba3b713b67d47b90498fa082"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:42:24.653Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先核自己的宿主版本、输入法与引用附件保留，再替代主要输入入口。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1407166868-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1407166868:root",
+                            "area": "code",
+                            "fingerprint": "0e211595f4f07289ba3b713b67d47b90498fa082"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:42:24.653Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "有减少误发送和输入空间限制的设计，无真实输入法/引用正确率数据。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1407166868-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1407166868:root",
+                            "area": "code",
+                            "fingerprint": "0e211595f4f07289ba3b713b67d47b90498fa082"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:42:24.653Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "调用宿主submit优于模拟Enter，版本化引用恢复和事件清理有实质细节；源码注释的“只读”不改变insertReference实际写草稿。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1407166868-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1407166868:root",
+                            "area": "code",
+                            "fingerprint": "0e211595f4f07289ba3b713b67d47b90498fa082"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:42:24.653Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "避免另存一份草稿的同步分叉，直接沿用宿主队列与提交；针对引用投影损失做带版本的恢复。不是新调度器或发送协议。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1407166868-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1407166868:root",
+                            "area": "code",
+                            "fingerprint": "0e211595f4f07289ba3b713b67d47b90498fa082"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:42:24.653Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "textarea是富文本的较贫乏投影，恢复依赖insertReference、范围及draftRev；缺能力时静默降级可能保留文本却丢引用语义。submit无返回确认后便关闭面板，动作未抛异常不等于消息已接受。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1407166868-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1407166868:root",
+                            "area": "code",
+                            "fingerprint": "0e211595f4f07289ba3b713b67d47b90498fa082"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:42:24.653Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "未验证假设：提供宿主原生富草稿编辑事务与引用恢复状态，可减少长文本引用丢失。以多引用编辑、附件上传、会话切换、IME和锁定样例比较引用身份及队列实际结果。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1407166868-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1407166868:root",
+                            "area": "code",
+                            "fingerprint": "0e211595f4f07289ba3b713b67d47b90498fa082"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:42:24.653Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T05:42:24.653Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "0e211595f4f07289ba3b713b67d47b90498fa082",
+                "reviewed_at": "2026-10-21T05:42:24.653Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1407166868:root",
+                        "area": "code",
+                        "fingerprint": "0e211595f4f07289ba3b713b67d47b90498fa082"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 4
+                    },
+                    "rationale": "novelty=9：扩展输入面板已有先例。 mechanism=15：共享草稿及引用恢复有机制。 transferability=10：会话API可迁移但强耦合。 simplification=4：减少复制和误发送，维护较重。",
+                    "basis": "interpretation",
+                    "score": 38,
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1407166868-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 10,
+                        "economics": 4
+                    },
+                    "rationale": "workflow=9：输入到宿主提交闭环。 delivery=8：富引用和接受状态待验。 reach=10：长文本/IME用户明确。 economics=4：无误发送与效率对照。 工作流仅取25%档：主要聚合既有个人操作，未证明改变任务组织、分工或交接责任。",
+                    "basis": "interpretation",
+                    "score": 31,
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1407166868-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "长文本与中文输入者可先用无重要附件草稿试全屏输入；富文本扁平化可能丢引用，替代主入口前核draftRev恢复和发送接受。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "长文本换行、空间与附件混输需求具体。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "使用原草稿动作和引用恢复降低误发送及空间限制。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "已核inputActions和恢复协议，缺能力静默降级未真实测试。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "无新增模型费，但富文本及快捷键兼容维护高，需保留原稿。"
+                    }
+                },
+                "score": 65,
+                "revision": "0e211595f4f07289ba3b713b67d47b90498fa082",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-06-github-1407166868-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1407166868:root",
+                        "area": "code",
+                        "fingerprint": "0e211595f4f07289ba3b713b67d47b90498fa082"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1407166868:root",
+            "repository": "AL-Yichen/dsh-fullscreen-input",
+            "path": "",
+            "revision": "0e211595f4f07289ba3b713b67d47b90498fa082",
+            "fingerprints": {
+                "directory": "02c624f18592d3be58aac4a8801825339edc9f6b0e61cc6ac8bd1506af0f9526",
+                "code": "0e211595f4f07289ba3b713b67d47b90498fa082",
+                "maintenance": "54ed6c4dd6dfb2f872410879a005345e20ca58bca6679dc663f7905d789779c3"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T05:26:52Z",
+            "analysis_sha256": "72dce34c8a5cf9f0d5aefc4ea1a4e3318f802108a92deef3a3d9cc94282a2038"
+        },
+        "publication.metadata": "data/plugins/al-yichen--dsh-fullscreen-input/META.json",
+        "publication.summaries": {
+            "text": "为同一会话草稿提供可拖动的大输入面板与明确发送手势。",
+            "revision": "0e211595f4f07289ba3b713b67d47b90498fa082",
+            "source_url": "https://github.com/AL-Yichen/dsh-fullscreen-input/blob/0e211595f4f07289ba3b713b67d47b90498fa082/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "0e211595f4f07289ba3b713b67d47b90498fa082",
+            "items": {
+                "界面": "共享会话草稿的大输入面板与外观设置"
+            }
+        },
+        "publication.advice": {
+            "revision": "0e211595f4f07289ba3b713b67d47b90498fa082",
+            "text": "先核自己的宿主版本、输入法与引用附件保留，再替代主要输入入口。"
+        },
+        "registry": "data/plugins/al-yichen--dsh-fullscreen-input",
+        "reports": "# dsh-fullscreen-input\n\n> 为同一会话草稿提供可拖动的大输入面板与明确发送手势。\n\n## 使用建议\n\n先核自己的宿主版本、输入法与引用附件保留，再替代主要输入入口。\n\n**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，插件与依赖流程的实际运行尚未验证；未来假设未验证。\n\n## 洞察短评\n\n- **用途**：长文本、中文输入法和附件引用混合输入，希望Enter始终换行的用户。\n- **亮点**：避免另存一份草稿的同步分叉，直接沿用宿主队列与提交；针对引用投影损失做带版本的恢复。不是新调度器或发送协议。\n- **思考**：textarea是富文本的较贫乏投影，恢复依赖insertReference、范围及draftRev；缺能力时静默降级可能保留文本却丢引用语义。submit无返回确认后便关闭面板，动作未抛异常不等于消息已接受。\n- **建议**：未验证假设：提供宿主原生富草稿编辑事务与引用恢复状态，可减少长文本引用丢失。以多引用编辑、附件上传、会话切换、IME和锁定样例比较引用身份及队列实际结果。\n\n## 场景与替代办法\n\n参照宿主composer与普通独立textarea；增量是共用草稿/提交动作，并尝试保留富文本引用。\n\n## 能力清单\n\n- **界面**：共享会话草稿的大输入面板与外观设置\n\n## 依赖与流程\n\n浏览器slots提供面板，useInput和inputActions读写同一草稿，session scope取得insertReference；setDraft扁平化后按draftRev逐步恢复引用，submit调用宿主原动作。主机apply为空。\n\n宿主slots/locale、会话inputActions及per-session conversation能力；本地存储只存面板外观偏好。\n\n打开面板→编辑共享投影→恢复引用→附件调用宿主动作→按钮或Ctrl/CmdEnter提交→关闭；普通Enter/ShiftEnter换行，IME guard先行。\n\n## 成本与效果\n\n无额外模型调用；复杂富文本兼容、快捷键及布局维护成本高于普通textarea，外观状态本地。\n\n有减少误发送和输入空间限制的设计，无真实输入法/引用正确率数据。\n\n## 核心贡献\n\n避免另存一份草稿的同步分叉，直接沿用宿主队列与提交；针对引用投影损失做带版本的恢复。不是新调度器或发送协议。\n\n## 关键质疑\n\ntextarea是富文本的较贫乏投影，恢复依赖insertReference、范围及draftRev；缺能力时静默降级可能保留文本却丢引用语义。submit无返回确认后便关闭面板，动作未抛异常不等于消息已接受。\n\n## 工程亮点\n\n调用宿主submit优于模拟Enter，版本化引用恢复和事件清理有实质细节；源码注释的“只读”不改变insertReference实际写草稿。\n\n源码依据：[lib/index.js](https://github.com/AL-Yichen/dsh-fullscreen-input/blob/0e211595f4f07289ba3b713b67d47b90498fa082/lib/index.js)、[src/client.js](https://github.com/AL-Yichen/dsh-fullscreen-input/blob/0e211595f4f07289ba3b713b67d47b90498fa082/src/client.js)。\n\n## 未来设计假设（未验证）\n\n未验证假设：提供宿主原生富草稿编辑事务与引用恢复状态，可减少长文本引用丢失。以多引用编辑、附件上传、会话切换、IME和锁定样例比较引用身份及队列实际结果。\n\n核共享草稿一致性、引用范围恢复失败提示、IME、忙状态与提交拒绝；本轮未输入或发消息。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：16fef7ce66f66900740e038a4e4dd9c0d8e7763a98b5b43e5b2806dcd60af59d。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 715 | — | — | 17435 |\n| .mjs | source | 1 | 46 | 19 | 23 | — |\n| .js | source | 3 | 6178 | 3886 | 2025 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[AL-Yichen/dsh-fullscreen-input](https://github.com/AL-Yichen/dsh-fullscreen-input)\n- **版本号**：1.2.4（[固定提交 0e211595](https://github.com/AL-Yichen/dsh-fullscreen-input/tree/0e211595f4f07289ba3b713b67d47b90498fa082)）\n- **版本日期**：2026-10-17（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：lib/index.js、src/client.js、作者README、package与固定范围inventory；源码抽读不等于完整审计。\n- 未验证：插件执行、测试、安装、真实宿主与独立采用。\n- 证据限制：固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。\n- 下一步：核共享草稿一致性、引用范围恢复失败提示、IME、忙状态与提交拒绝；本轮未输入或发消息。\n",
+        "metadata": {
+            "repository": "AL-Yichen/dsh-fullscreen-input",
+            "repository_id": 1407166868,
+            "captured_at": "2026-10-21T05:33:59.909Z",
+            "window_start": "2026-09-21T05:33:59.909Z",
+            "stars": 4,
+            "pushed_at": "2026-10-17T03:47:56Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAL-Yichen%2Fdsh-fullscreen-input%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F304:507C6:5569B4:5B77F0:6AD84EC9 and timestamp 2026-10-21 05:34:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAL-Yichen%2Fdsh-fullscreen-input%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F426:272FB3:5289C9:589551:6AD84ECA and timestamp 2026-10-21 05:34:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAL-Yichen%2Fdsh-fullscreen-input%20is%3Aissue%20created%3A2026-09-21T05%3A33%3A59.909Z..2026-10-21T05%3A33%3A59.909Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F53A:19A250:512DE0:5738CC:6AD84ECB and timestamp 2026-10-21 05:34:03 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAL-Yichen%2Fdsh-fullscreen-input%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A33%3A59.909Z..2026-10-21T05%3A33%3A59.909Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F642:272FB3:528AAB:589673:6AD84ECB and timestamp 2026-10-21 05:34:04 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAL-Yichen%2Fdsh-fullscreen-input%20is%3Aissue%20updated%3A2026-09-21T05%3A33%3A59.909Z..2026-10-21T05%3A33%3A59.909Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F746:271056:53B90C:59C42D:6AD84ECC and timestamp 2026-10-21 05:34:05 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-fullscreen-input",
+                "captured_at": "2026-10-21T05:34:05.056Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 748,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-fullscreen-input",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-10-06T11:58:49.743Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-fullscreen-input",
+                    "error": null,
+                    "latest_version": "1.2.4",
+                    "latest_published_at": "2026-10-07T12:27:52.103Z",
+                    "latest_error": null
+                }
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1407166868:root",
+            "repository": "AL-Yichen/dsh-fullscreen-input",
+            "path": "",
+            "revision": "0e211595f4f07289ba3b713b67d47b90498fa082",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "02c624f18592d3be58aac4a8801825339edc9f6b0e61cc6ac8bd1506af0f9526",
+                "code": "0e211595f4f07289ba3b713b67d47b90498fa082",
+                "maintenance": "54ed6c4dd6dfb2f872410879a005345e20ca58bca6679dc663f7905d789779c3"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "76d2a6aac252bffa4d002690390aef15",
+    "identity": "github:1160354976:dsh",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1160354976:dsh",
+            "repository": "chenxiachan/thoughtdag",
+            "path": "dsh",
+            "revision": "2fc5af8116268318579f759ea92b6be30ee7c1ea",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "071f41ea87c7bb0fcc3e7734cce2694a0b78fe661db79f72d3a7c00021318317",
+                "code": "2fc5af8116268318579f759ea92b6be30ee7c1ea",
+                "maintenance": "da03290e7f7d87576db6ed471a32f75e519f50f3c7ee664368b1128de5e9751c"
+            }
+        }
+    }
+}

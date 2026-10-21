@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "33f7a16d9bbcea40d9eb0ca9be917670",
+    "identity": "github:1333808174:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333808174:root",
+            "repository": "kam74515-boop/dsh-everything-oauth",
+            "path": "",
+            "revision": "fe7b691f52bc1acd433095f4abc47fa0e577dd89",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2de8bfd7e6187d4f429be871637bc2637649d0138c494ddf21e9e64a3f0996e4",
+                "code": "fe7b691f52bc1acd433095f4abc47fa0e577dd89",
+                "maintenance": "f27f3b231fc100dd01886b282d0094015e49f07d33797d3f6372c693b3d4d9e5"
+            }
+        }
+    }
+}

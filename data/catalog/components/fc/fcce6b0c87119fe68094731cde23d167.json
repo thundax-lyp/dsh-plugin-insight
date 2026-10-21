@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fcce6b0c87119fe68094731cde23d167",
+    "identity": "github:1335185710:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335185710:root",
+            "repository": "cerebrixos-org/dsh-asimovbox",
+            "path": "",
+            "revision": "12d152f0ab06a0523a3d3c824276cb3a3db695c7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "bcea2303a9521a00ee8788ff3d08fd8fe20f7b921d8c85815ded0e4e722c4280",
+                "code": "12d152f0ab06a0523a3d3c824276cb3a3db695c7",
+                "maintenance": "3845e7207ec06c53be84f2e79ec49a848b4bca5ede5f8cd373939b1d3c6bc5ff"
+            }
+        }
+    }
+}

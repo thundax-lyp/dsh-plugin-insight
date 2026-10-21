@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d5324aa9409db777674a8c16e68e0755",
+    "identity": "github:1341900334:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1341900334:root",
+            "repository": "jing-hy/computer-user",
+            "path": "",
+            "revision": "8a6fba93c1663642c49a3ad4d7f2561e7daf9927",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ba32c5c1ba6c0cc1ac5fdde9ceb8fa453004e6555123d4311209e47577df9261",
+                "code": "8a6fba93c1663642c49a3ad4d7f2561e7daf9927",
+                "maintenance": "06f360ae76594d04270ca90934b64484512ef1048230c842368987ee5afe3f7c"
+            }
+        }
+    }
+}

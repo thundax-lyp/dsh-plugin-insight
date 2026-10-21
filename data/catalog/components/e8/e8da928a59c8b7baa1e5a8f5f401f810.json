@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e8da928a59c8b7baa1e5a8f5f401f810",
+    "identity": "github:1402589370:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1402589370:root",
+            "repository": "shuxidemosheng/dsh-tool-todo-plus",
+            "path": "",
+            "revision": "5bae1006b83afd9607158ab9488bec9f394365cd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "773d96e5cdea09ac96db25b7d9dd8505f3c66991622a2c336457d0f99f60ba6f",
+                "code": "5bae1006b83afd9607158ab9488bec9f394365cd",
+                "maintenance": "211d7c26f7fd7eb74a27ec6ccbcad4d7bc36c59637d6d306c54f9608c941bf10"
+            }
+        }
+    }
+}

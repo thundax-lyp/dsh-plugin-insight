@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f61abd57bc9439dcff574ff278e1f247",
+    "identity": "github:1204369117:packages-dsh-tongflow",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1204369117:packages-dsh-tongflow",
+            "repository": "tong-io/tongflow",
+            "path": "packages/dsh-tongflow",
+            "revision": "fce4987200e8ae44db2830e0a2fa2985275d6d36",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e2cfa141e0be3167feba9e89c68aa6adeea133377af26c407e3888df20bfef11",
+                "code": "fce4987200e8ae44db2830e0a2fa2985275d6d36",
+                "maintenance": "991257de2c3b2529e9cde4aa0ecfc60391e40adb97c6daf8b3040fd2458bfbb1"
+            }
+        }
+    }
+}

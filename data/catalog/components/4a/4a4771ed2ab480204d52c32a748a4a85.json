@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4a4771ed2ab480204d52c32a748a4a85",
+    "identity": "github:1337954478:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337954478:root",
+            "repository": "CTWCTW9999/dsh-agent-preset-router",
+            "path": "",
+            "revision": "59fe55da4c8eb5659493c132c9f3d9ce2343ab7a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2d4e801a4c9d642a307ecac3b3254996d08e992589894717c582dbb1e15f636c",
+                "code": "59fe55da4c8eb5659493c132c9f3d9ce2343ab7a",
+                "maintenance": "9d80830332eb50d3b38e35f8c8a43ea3b5d56ad1870dc54ff3d7659435602bf7"
+            }
+        }
+    }
+}

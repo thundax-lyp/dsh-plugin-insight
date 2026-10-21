@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "24dece9668f215cd5d599aa9772f4485",
+    "identity": "github:1327795364:packages-dsh-tool-csv",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1327795364:packages-dsh-tool-csv",
+            "repository": "omdsh-dev/dsh-toolkit",
+            "path": "packages/dsh-tool-csv",
+            "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "6180cbca0f59de40093bec702874b135b2d10d81e30569c52168056b648a004f",
+                "code": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                "maintenance": "3ae551a78c77c641e0ea4533be6aa05bc96f60b0a41a2d5159ecb76a83d5f6ce"
+            }
+        }
+    }
+}

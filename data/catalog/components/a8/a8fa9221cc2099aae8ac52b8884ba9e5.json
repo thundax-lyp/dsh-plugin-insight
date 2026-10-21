@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a8fa9221cc2099aae8ac52b8884ba9e5",
+    "identity": "github:1355440489:packages-mayfly",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1355440489:packages-mayfly",
+            "repository": "Ephemeral-AI-Lab/mayfly",
+            "path": "packages/mayfly",
+            "revision": "4765ec546faecc3e7632b05263f32053bb2eeb58",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "090b1fc2cfc6ee2f234470717ab16f72b72ec065d7fd934c89cf594f34e283b3",
+                "code": "4765ec546faecc3e7632b05263f32053bb2eeb58",
+                "maintenance": "3e1bbd91d1de6094cdfd8527b5c515ada3685ad9ee23cb0b059b5b85f8108474"
+            }
+        }
+    }
+}

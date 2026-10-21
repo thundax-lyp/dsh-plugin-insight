@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "90b38d54d3ed1cb33dd777dd75a11a17",
+    "identity": "github:1331025830:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1331025830:root",
+            "repository": "multica-ai/dsh-multica-runtime",
+            "path": "",
+            "revision": "e29aae228449dfe50e88af60ef4281e38ca44e2a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "ad268979823f80408cafd6bea13953f15960fb872d9959a4089896899bdc3f84",
+                "code": "e29aae228449dfe50e88af60ef4281e38ca44e2a",
+                "maintenance": "2362ca979bf2649b8bdd45ef3f34b99c38da53e0dde24e7a6e0dcd2c38108c3b"
+            }
+        }
+    }
+}

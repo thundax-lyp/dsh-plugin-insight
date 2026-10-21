@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a4e0606a85e1ff8b0f184fce6319173a",
+    "identity": "github:1374936727:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1374936727:root",
+            "repository": "shuanzhe/dsh-turn-hard-delete",
+            "path": "",
+            "revision": "5e9b25cdfb33e3c4025bd1d51bbaaad04a986f99",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "037466099dab3dfcd50470c342632463b978d34a3aaea3a89c194fc66cbe368f",
+                "code": "5e9b25cdfb33e3c4025bd1d51bbaaad04a986f99",
+                "maintenance": "6068775f553c508352e55345f2b4f3ab4727b95d7be188693ba7c7e3518d7b05"
+            }
+        }
+    }
+}

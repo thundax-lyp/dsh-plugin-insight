@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c9338ff43f453e2cb8995546277303d2",
+    "identity": "github:1334245678:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334245678:root",
+            "repository": "xiaobright/dsh-anchored-standard",
+            "path": "",
+            "revision": "dda23ef119e3715f417d73f72eca407732846d1a",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "b664e75568b05f68f2bd227e1a5ecb4cf197c3d5507342c140399059ed041e74",
+                "code": "dda23ef119e3715f417d73f72eca407732846d1a",
+                "maintenance": "be08972de42a91b684ff69b491d2f73c3610693084a2467c93a865f258843092"
+            }
+        }
+    }
+}

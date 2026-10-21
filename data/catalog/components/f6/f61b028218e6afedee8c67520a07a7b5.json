@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f61b028218e6afedee8c67520a07a7b5",
+    "identity": "github:1411836942:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1411836942:root",
+            "repository": "lion231226/dsh-verified-progress",
+            "path": "",
+            "revision": "5edb0acf5b515cf8d255ecba5b53eaabc2f18f94",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "58b68596d47319a033ee3d30b529c564d77d80b3dc14e57c3cc8008bc931350c",
+                "code": "5edb0acf5b515cf8d255ecba5b53eaabc2f18f94",
+                "maintenance": "2d931e3fd84533937eba1ee4872918789e9ba5dbb47749031be5f749a08c4077"
+            }
+        }
+    }
+}

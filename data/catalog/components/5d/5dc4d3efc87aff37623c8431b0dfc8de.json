@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5dc4d3efc87aff37623c8431b0dfc8de",
+    "identity": "github:1408817740:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1408817740:root",
+            "repository": "TwinsEarth/dsh-windows2macos",
+            "path": "",
+            "revision": "2984ca1eabe41ff00bd171a2c2170be83b9ca297",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d5e7b0084783856332b77fc6184c259e1f837f39253e90b8f0f694d9de5fede2",
+                "code": "2984ca1eabe41ff00bd171a2c2170be83b9ca297",
+                "maintenance": "bb7609f027dd5d0bd0d40af590bbb165e306c9bcd6de2d9839f51926f561e013"
+            }
+        }
+    }
+}

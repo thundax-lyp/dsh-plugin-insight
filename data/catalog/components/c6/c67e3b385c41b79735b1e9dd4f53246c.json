@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c67e3b385c41b79735b1e9dd4f53246c",
+    "identity": "github:1338224071:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338224071:root",
+            "repository": "xohmai/dsh-cpa-status",
+            "path": "",
+            "revision": "f54a2ac4a06006b866ee2953a114d3b87342aba2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4321087f8cf367183be36612d0b3faf6d2567fbcf221aad857219e625755d861",
+                "code": "f54a2ac4a06006b866ee2953a114d3b87342aba2",
+                "maintenance": "ba4754f423340a6e2f9909415766f668567d3946fbf95da90e5bf92b70de8c19"
+            }
+        }
+    }
+}

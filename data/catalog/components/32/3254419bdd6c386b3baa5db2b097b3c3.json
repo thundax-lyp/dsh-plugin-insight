@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3254419bdd6c386b3baa5db2b097b3c3",
+    "identity": "github:1424408291:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424408291:root",
+            "repository": "woshipixiu1234/dsh-invest-bundle",
+            "path": "",
+            "revision": "e1ca2e52c64a84fb5f356429d14759b13427beb9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "72fd18b91efb95826d58a9805469849a9de5736415ff3627707bc30e3ad8e90f",
+                "code": "e1ca2e52c64a84fb5f356429d14759b13427beb9",
+                "maintenance": "6fd9e6adbc97fff35fb8b379907cae6588a4812db01dd794f2783e71e2779bd9"
+            }
+        }
+    }
+}

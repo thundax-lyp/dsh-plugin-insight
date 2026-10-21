@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f633b295eb86be6318eba92667f9540b",
+    "identity": "github:1338194172:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338194172:root",
+            "repository": "guo6x/dsh-palate",
+            "path": "",
+            "revision": "e0272f596382af07e893a0197b3bc2e8dba784ad",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3d73dc9155dc7507ef589aa7aefa0d58dfa2c52fec734d5991acf17917f95c9d",
+                "code": "e0272f596382af07e893a0197b3bc2e8dba784ad",
+                "maintenance": "89d913c16019d220ac6354bbc25b854a8c922af71a24ffc5cf7a86c2817e0981"
+            }
+        }
+    }
+}

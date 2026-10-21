@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "25770a7dbed6d540d1809b0d32379add",
+    "identity": "github:1334849499:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334849499:root",
+            "repository": "rayafriandion/dsh-oc-tui",
+            "path": "",
+            "revision": "75f224dd6d46558078521688b1bf0725cfdc02ba",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1b524fdb334121e8f4a6d83197a89b7a57f2607789aa9cc939bb0dcfc058cd0c",
+                "code": "75f224dd6d46558078521688b1bf0725cfdc02ba",
+                "maintenance": "77f0e3b6e91a62345739cc009c6db14e5ffbcf8d288c8e4e3435174dca8390a3"
+            }
+        }
+    }
+}

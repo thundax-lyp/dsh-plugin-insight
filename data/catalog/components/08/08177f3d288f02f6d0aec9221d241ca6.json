@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "08177f3d288f02f6d0aec9221d241ca6",
+    "identity": "github:1346173751:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346173751:root",
+            "repository": "jerryqx/dsh-ximalaya",
+            "path": "",
+            "revision": "2fbd8296e3032fe626f41e8ea2f56605ecf48d15",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "3b3b28be1016eb57489e9c30b084b885efcfdeb56bc239b7ab3f825512ddddd8",
+                "code": "2fbd8296e3032fe626f41e8ea2f56605ecf48d15",
+                "maintenance": "6f0c1e2b9f46e28ee93ada4aa3e9bde85bccb1e95c9f7edd38df846decdc9072"
+            }
+        }
+    }
+}

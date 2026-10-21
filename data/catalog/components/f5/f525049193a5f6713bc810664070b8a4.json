@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f525049193a5f6713bc810664070b8a4",
+    "identity": "github:1402605279:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1402605279:root",
+            "repository": "EarthPretender/dsh-session-delete",
+            "path": "",
+            "revision": "c29da4432985e2ea85eaba9883bb9af43155edd8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "62c9598b2c3dcabe6908e16af41a1751b4993cb3123c11065f90139a65f444ba",
+                "code": "c29da4432985e2ea85eaba9883bb9af43155edd8",
+                "maintenance": "67cef77ae023d19e51d55f72f583313354b65496cbb768b97d42afae4e8b7a01"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "320e022dc3726f7d40c71291f83eab82",
+    "identity": "github:1336000226:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336000226:root",
+            "repository": "charrywhite/dsh-sticky-notes",
+            "path": "",
+            "revision": "1d6fb7553f3b3a367e0652db14f12c2d5292e6bc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "40474164caf1e27684b2c692f7f556f654a46ee4b4baf9e14f55561542bbfef3",
+                "code": "1d6fb7553f3b3a367e0652db14f12c2d5292e6bc",
+                "maintenance": "da4d20164e0a6cad6bef6998043a2d9b69dd0ba635bd32d6a3e1df0cd88b66ec"
+            }
+        }
+    }
+}

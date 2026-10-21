@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "89bbf2406e73571ab66fef3590063b22",
+    "identity": "github:1390014830:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1390014830:root",
+            "repository": "pure-serendipity-five/dsh-liquid-glass-studio",
+            "path": "",
+            "revision": "c20d9c68fe03b99b01215a0ba3cba2fca894b5ac",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "81a4ee7158538c77ae332306694baf2b876a138476a03dd182aae68b8c67643e",
+                "code": "c20d9c68fe03b99b01215a0ba3cba2fca894b5ac",
+                "maintenance": "deebfceb629d5f33ce4f6649cd527b1994d95bf7d46e7c154299af37d5e174f2"
+            }
+        }
+    }
+}

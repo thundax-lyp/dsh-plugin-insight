@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c0e367de987c2bad841144a445e9aea0",
+    "identity": "github:1351219783:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1351219783:root",
+            "repository": "KannaKuron/dsh-better-workspace",
+            "path": "",
+            "revision": "026eabeb992e272406eeb18be03a6334fd339df6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a4a544e7176e7e1b7a523a4a1d787709f61e012946b43c8791484ad43849db3b",
+                "code": "026eabeb992e272406eeb18be03a6334fd339df6",
+                "maintenance": "8ae8189c02766f24ea92c5bf51520eb4eb3377a35e2c8f68c70f3dd28be95f77"
+            }
+        }
+    }
+}

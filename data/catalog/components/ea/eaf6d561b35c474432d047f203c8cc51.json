@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "eaf6d561b35c474432d047f203c8cc51",
+    "identity": "github:1423364447:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1423364447:root",
+            "repository": "BroCC57/dsh-pending-review-glow",
+            "path": "",
+            "revision": "5faabead9dbd495141ac402255351c92b7d7abbb",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "203fe210981309fe48047a920d16f2e883422e6219b4253ea537aac40a318d1e",
+                "code": "5faabead9dbd495141ac402255351c92b7d7abbb",
+                "maintenance": "5e15ac464a400dea8a2b0b1d8a683aa8d5f9d36483367eb917e6ef93129acdba"
+            }
+        }
+    }
+}

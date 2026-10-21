@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d8208b8bd74cf243c1f4a1efe27c450e",
+    "identity": "github:1421531918:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1421531918:root",
+            "repository": "Sevyn-Star/dsh-receipt",
+            "path": "",
+            "revision": "61865188ed28d7dfe8831bac0ed4bc6892ebb7be",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "722f66ace5b3a1c0e6dc2218ff27a86140212dafa93563a56bc4cb5ddc1ea382",
+                "code": "61865188ed28d7dfe8831bac0ed4bc6892ebb7be",
+                "maintenance": "c5b319dfabc9eafecef3a7b11a0503a0af5a7e6993b5a466006876f15bca2992"
+            }
+        }
+    }
+}

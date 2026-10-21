@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ac049edb367536fd0e1830e43139844a",
+    "identity": "github:1348304194:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1348304194:root",
+            "repository": "superkonka/dsh-poor-mode",
+            "path": "",
+            "revision": "76f8564aa02e1315c2cdc4c0de8e0e6a6e94b11c",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "9e627bb1d743125678e34a314ac18f01debfacc7bb79f780e3c3ed8a11c38e18",
+                "code": "76f8564aa02e1315c2cdc4c0de8e0e6a6e94b11c",
+                "maintenance": "d52c339304cb4aeb840b3ccaaf12a34a8e18d80aa70739274b1dd9a9ef8de467"
+            }
+        }
+    }
+}

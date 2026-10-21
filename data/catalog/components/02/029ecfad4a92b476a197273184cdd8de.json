@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "029ecfad4a92b476a197273184cdd8de",
+    "identity": "github:1333441087:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333441087:root",
+            "repository": "NigelYao/dsh-view-modes",
+            "path": "",
+            "revision": "a57d237e03b6488875cb7cc2a90bf6a37512632d",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "135b66a5a91ed2a872d832252c2b87cdd108e3a55e3ea6d7e7effddf1ddfe734",
+                "code": "a57d237e03b6488875cb7cc2a90bf6a37512632d",
+                "maintenance": "150b4c28b82f47b22aedc85539951828b77f552f227b32277eb115aa961e883e"
+            }
+        }
+    }
+}

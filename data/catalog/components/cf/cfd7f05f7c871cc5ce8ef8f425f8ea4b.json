@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "cfd7f05f7c871cc5ce8ef8f425f8ea4b",
+    "identity": "github:1360955835:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1360955835:root",
+            "repository": "duoduoqian708/dsh-voice-talk",
+            "path": "",
+            "revision": "0bca4460baa561ad47bd0e41a52915cfcd11bf32",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "62dbee35d0052bda4e681074dc904f52587bfe46cd08af491608aead2b40f35f",
+                "code": "0bca4460baa561ad47bd0e41a52915cfcd11bf32",
+                "maintenance": "4a363c8c1dc74f05b5e9f856acb384c35e08e8a2e770ebaeaf528b6b9f7d6beb"
+            }
+        }
+    }
+}

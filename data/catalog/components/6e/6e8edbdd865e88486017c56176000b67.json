@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6e8edbdd865e88486017c56176000b67",
+    "identity": "github:1377066973:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1377066973:root",
+            "repository": "john-walks-slow/dsh-wait-subagent",
+            "path": "",
+            "revision": "58e7f9b0e53697fb0e1c2b96c8de8588d14de292",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "de541905695cbf8e10c44462e74ed35eb938252f574cf0b9c2d5e79892ce0a8d",
+                "code": "58e7f9b0e53697fb0e1c2b96c8de8588d14de292",
+                "maintenance": "44faec4ad8fb17def7602083e839c782ba8b394c0da04fd372912c2bfdd63c65"
+            }
+        }
+    }
+}

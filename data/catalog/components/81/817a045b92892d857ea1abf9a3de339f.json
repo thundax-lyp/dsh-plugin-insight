@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "817a045b92892d857ea1abf9a3de339f",
+    "identity": "github:1339772993:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339772993:root",
+            "repository": "Han-Yao94/dsh-session-toolkit",
+            "path": "",
+            "revision": "db6ebfd4620cfc7832e9a9e146e44c56002d69db",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "799c39edb9c91ad06c6b01cc5d4a01417643b70b28c86c7baffc7f3dd4144f2a",
+                "code": "db6ebfd4620cfc7832e9a9e146e44c56002d69db",
+                "maintenance": "f2b002c519e2898ee8cfd0d0a3b0c2e22b9b0fc43434aceee1129cdd27f5321f"
+            }
+        }
+    }
+}

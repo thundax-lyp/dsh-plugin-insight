@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "153b680894ca259ae0a3179baee2d1d1",
+    "identity": "github:1338555312:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338555312:root",
+            "repository": "jerryjiao/dsh-wewrite",
+            "path": "",
+            "revision": "b62cd19a9b10be04cb63d31fcdb3772268973fab",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6b11ef19d8acee44554c0bc427c428e2157b38aa5128fc6bbcfba58a39b4c2c3",
+                "code": "b62cd19a9b10be04cb63d31fcdb3772268973fab",
+                "maintenance": "5c772e5946c3a7061f48ec81f10636e3ac94a25fe53eb9de896d88b4b45a74a2"
+            }
+        }
+    }
+}

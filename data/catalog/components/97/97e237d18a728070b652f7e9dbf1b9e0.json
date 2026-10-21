@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "97e237d18a728070b652f7e9dbf1b9e0",
+    "identity": "github:1343992164:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343992164:root",
+            "repository": "Yiklek/dsh-settings-manager",
+            "path": "",
+            "revision": "3cbbfc9aa16e8b8f35603ed1741ab04e29e29408",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "7fa5ad3c65f6a31cded550f80f6f56eefe70602afa0050dc056c16edcfa37da9",
+                "code": "3cbbfc9aa16e8b8f35603ed1741ab04e29e29408",
+                "maintenance": "6af5c011a9ca6f2d304b04bf3b04edf0f7ea31cfb0d3ac4e751eb78dd81f0672"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "865d042719eeba06f44d4a228af36455",
+    "identity": "github:1408829257:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1408829257:root",
+            "repository": "PerryLink/dsh-icd-rule-check",
+            "path": "",
+            "revision": "f383ee9409839976bcab54e7e3a74026144ac217",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "aaa85ea485ff3f88ca64d1571afcb39699a7b12ccd26973d4e94ef06ec2d3ba7",
+                "code": "f383ee9409839976bcab54e7e3a74026144ac217",
+                "maintenance": "71408fd6ad624664c3537af92b1a623522778c63541d5f12d0acc9cf5ac8b4f1"
+            }
+        }
+    }
+}

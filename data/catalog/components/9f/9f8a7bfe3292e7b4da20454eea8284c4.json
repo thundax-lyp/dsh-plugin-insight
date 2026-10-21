@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9f8a7bfe3292e7b4da20454eea8284c4",
+    "identity": "github:1335450444:packages-bundle",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335450444:packages-bundle",
+            "repository": "ayahunter/dsh-trail",
+            "path": "packages/bundle",
+            "revision": "65a662f283d0138396b8a44c9293d3f4f29dac7f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ecc2bf63e66721c355bcab1520d08e6310682b8babe7e751b58508432ce256a1",
+                "code": "65a662f283d0138396b8a44c9293d3f4f29dac7f",
+                "maintenance": "17e09cf3973d6a1fa892f12200726a4db39265f364b1eb2a6b547695a240b3f2"
+            }
+        }
+    }
+}

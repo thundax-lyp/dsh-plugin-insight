@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ec17603c758874b1ec58c23b7debd540",
+    "identity": "github:1334841529:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334841529:root",
+            "repository": "kyo615/dsh-browser-control",
+            "path": "",
+            "revision": "9c10f2c42999947a2c8009443994f6297d472b8c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3d427fcd0acf446641f651f9af40501a53177e81e7ec6428781526b2d60e856f",
+                "code": "9c10f2c42999947a2c8009443994f6297d472b8c",
+                "maintenance": "79144f13798840fa6bc67bcbc4d04bd90c362138d832800a7471e514942360b6"
+            }
+        }
+    }
+}

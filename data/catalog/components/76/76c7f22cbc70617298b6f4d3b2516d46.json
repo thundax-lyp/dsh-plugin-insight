@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "76c7f22cbc70617298b6f4d3b2516d46",
+    "identity": "github:1343568653:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343568653:root",
+            "repository": "XuXcode/dsh-loghud",
+            "path": "",
+            "revision": "36b47c9f5c76a483fafb5438320cfd5acdb2051b",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "444c0d75e30629a23cab970c4f5904e75d1abf25f3f7c00155d19cdcde4697b2",
+                "code": "36b47c9f5c76a483fafb5438320cfd5acdb2051b",
+                "maintenance": "8f114dd58f0ce888335215493ffb725467304f6fe375553d2eb671d408d44f55"
+            }
+        }
+    }
+}

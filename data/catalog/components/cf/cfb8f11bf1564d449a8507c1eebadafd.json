@@ -1,0 +1,345 @@
+{
+    "schema_version": 3,
+    "id": "cfb8f11bf1564d449a8507c1eebadafd",
+    "identity": "github:1363429979:plugin-daily-log",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1363429979:plugin-daily-log",
+            "repository_id": 1363429979,
+            "component_id": "plugin-daily-log",
+            "repository": "0x7A7A6572/dsh-forge-studio",
+            "path": "packages/plugin-daily-log",
+            "aliases": [],
+            "name": "Forge 工作报告",
+            "entry_type": "plugin",
+            "technical_category": "tools-integration",
+            "business_category": "office-operations",
+            "tags": [
+                "工作报告",
+                "Git",
+                "对话归纳"
+            ],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "baa668030b6855a92a8a2fdd03e2d8d62771c5607e81c401b2d7dc778ee10af6",
+                "code": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+                "maintenance": "3b8db7c619c4fb07bdc46fc33b60ebd53c612c483654be23b7c416d9ea35c3ba"
+            },
+            "sources": [
+                {
+                    "id": "20261020-research40-github-1363429979-plugin-daily-log-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T03:05:41.278Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "20261020-research40-github-1363429979-plugin-daily-log-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-daily-log/README.md",
+                    "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+                    "captured_at": "2026-10-20T03:05:41.278Z",
+                    "summary": "汇集 Git 提交和本地智能体对话，按模板生成并保存日报、周报或月报。",
+                    "artifact": "data/runs/2026-10-20-02/snapshots/0x7a7a6572--dsh-forge-studio--plugin-daily-log/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "20261020-research40-github-1363429979-plugin-daily-log-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-daily-log/src/index.ts",
+                    "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+                    "captured_at": "2026-10-20T03:05:41.278Z",
+                    "summary": "核查 packages/plugin-daily-log/src/index.ts、packages/plugin-daily-log/src/agent/tools.ts、packages/plugin-daily-log/src/agent/command-report.ts；入口按 agent 作用域启用报告工具，/report 转发用户需求，扫描索引和模板为后续生成提供材料。",
+                    "artifact": "data/runs/2026-10-20-02/snapshots/0x7a7a6572--dsh-forge-studio--plugin-daily-log/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "只核查本组件入口与工具授权，未验证各客户端日志解析完整性或报告事实准确率。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "面向需要定期汇报工作的个人或团队，从实际活动记录生成报告，并支持回查来源。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1363429979-plugin-daily-log-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1363429979:plugin-daily-log",
+                            "area": "code",
+                            "fingerprint": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:05:41.278Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "入口按 agent 作用域启用报告工具，/report 转发用户需求，扫描索引和模板为后续生成提供材料。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1363429979-plugin-daily-log-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1363429979:plugin-daily-log",
+                            "area": "code",
+                            "fingerprint": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:05:41.278Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "按需启用工具可减少常驻上下文；提交与对话是活动证据，不自动证明业务成果。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1363429979-plugin-daily-log-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1363429979:plugin-daily-log",
+                            "area": "code",
+                            "fingerprint": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:05:41.278Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "扫描、模型总结和逐项事实核对都计入成本；低频报告者可能不易摊薄接入维护。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1363429979-plugin-daily-log-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1363429979:plugin-daily-log",
+                            "area": "code",
+                            "fingerprint": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:05:41.278Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "派发器与作用域工具门控值得借鉴；写入授权受宿主审批策略影响，不能宣传为总会弹窗。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1363429979-plugin-daily-log-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1363429979:plugin-daily-log",
+                            "area": "code",
+                            "fingerprint": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:05:41.278Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先只接一个仓库和一种会话来源，对照手写周报检查作者过滤、遗漏与错误归功。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1363429979-plugin-daily-log-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1363429979:plugin-daily-log",
+                            "area": "code",
+                            "fingerprint": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:05:41.278Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "只核查本组件入口与工具授权，未验证各客户端日志解析完整性或报告事实准确率。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1363429979-plugin-daily-log-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1363429979:plugin-daily-log",
+                            "area": "code",
+                            "fingerprint": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:05:41.278Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "组件 @zzerx/dsh-plugin-daily-log 0.4.3，依赖一组 DSH 0.1.7-alpha 之后的服务。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1363429979-plugin-daily-log-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1363429979:plugin-daily-log",
+                            "area": "code",
+                            "fingerprint": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:05:41.278Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T03:05:41.278Z",
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "定期汇报者可先接单仓库单日志来源，对照手写报告检查作者过滤、遗漏和错误归功。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "把实际活动整理为周期报告的人群任务明确。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "按需工具门控和来源索引减少手工收集而不证明成果。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "入口与工具授权已查，各客户端解析和事实准确率未验。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "扫描、模型总结与事实逐项复核须计入总成本。"
+                    }
+                },
+                "score": 65,
+                "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "20261020-research40-github-1363429979-plugin-daily-log-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1363429979:plugin-daily-log",
+                        "area": "code",
+                        "fingerprint": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1363429979:plugin-daily-log",
+            "repository": "0x7A7A6572/dsh-forge-studio",
+            "path": "packages/plugin-daily-log",
+            "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+            "fingerprints": {
+                "directory": "baa668030b6855a92a8a2fdd03e2d8d62771c5607e81c401b2d7dc778ee10af6",
+                "code": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+                "maintenance": "3b8db7c619c4fb07bdc46fc33b60ebd53c612c483654be23b7c416d9ea35c3ba"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T02:51:30Z",
+            "analysis_sha256": "102b7aeca358872391a63d7775341c62251f4d14973cc37cdd9f109d9a57dd87"
+        },
+        "publication.metadata": "data/plugins/0x7a7a6572--dsh-forge-studio--plugin-daily-log/META.json",
+        "publication.summaries": {
+            "text": "汇集 Git 提交和本地智能体对话，按模板生成并保存日报、周报或月报。",
+            "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+            "source_url": "https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-daily-log/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+            "items": {
+                "模型工具": "daily_log 派发器按 agent 启用报告工具组。",
+                "用户命令": "/report 接收报告需求并转交模型。"
+            }
+        },
+        "publication.advice": {
+            "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+            "text": "先只接一个仓库和一种会话来源，对照手写周报检查作者过滤、遗漏与错误归功。"
+        },
+        "registry": "data/plugins/0x7a7a6572--dsh-forge-studio--plugin-daily-log",
+        "reports": "# Forge 工作报告\n\n> 汇集 Git 提交和本地智能体对话，按模板生成并保存日报、周报或月报。\n\n## 固定范围与依据\n\n固定提交 [acb136c0dbbf8e984bdffea9de48b6ed73d0103e](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-daily-log/src/index.ts)；组件路径：packages/plugin-daily-log。核查时间 2026-10-20T03:05:41.278Z；本轮基准 2026-10-20T02:51:30Z。\n源码抽读路径：packages/plugin-daily-log/src/index.ts、packages/plugin-daily-log/src/agent/tools.ts、packages/plugin-daily-log/src/agent/command-report.ts。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：面向需要定期汇报工作的个人或团队，从实际活动记录生成报告，并支持回查来源。\n- **亮点**：入口按 agent 作用域启用报告工具，/report 转发用户需求，扫描索引和模板为后续生成提供材料。\n- **思考**：按需启用工具可减少常驻上下文；提交与对话是活动证据，不自动证明业务成果。\n- **建议**：先只接一个仓库和一种会话来源，对照手写周报检查作者过滤、遗漏与错误归功。\n\n## 场景与替代办法\n\n面向需要定期汇报工作的个人或团队，从实际活动记录生成报告，并支持回查来源。\n\ngit log 加手写总结更简单；本轮版本功能扩展后仍需核查多源解析与归因边界。\n\n## 依赖与流程\n\n需要 storageDomain、tools、模型及可读取的本地日志；跨客户端日志格式是额外效果依赖。\n\n确认时间和项目后扫描，再选择材料生成，人工核对后保存或导出；失败返回到具体来源排查。\n\n## 成本与效果\n\n扫描、模型总结和逐项事实核对都计入成本；低频报告者可能不易摊薄接入维护。\n\n按需启用工具可减少常驻上下文；提交与对话是活动证据，不自动证明业务成果。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：packages/plugin-daily-log；内容摘要：938b073e2b4c71e11551d86ef1e4ba88aea17337613744e01814dca1ad750eeb。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 1 | 49 | — | — | 766 |\n| .mjs | source | 1 | 31 | 16 | 10 | — |\n| .ts | source | 36 | 3939 | 3065 | 554 | — |\n| .tsx | source | 12 | 856 | 748 | 69 | — |\n\n排除 1 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **模型工具**：daily_log 派发器按 agent 启用报告工具组。\n- **用户命令**：/report 接收报告需求并转交模型。\n\n## 工程亮点\n\n派发器与作用域工具门控值得借鉴；写入授权受宿主审批策略影响，不能宣传为总会弹窗。\n\n## 分发与兼容\n\n组件 @zzerx/dsh-plugin-daily-log 0.4.3，依赖一组 DSH 0.1.7-alpha 之后的服务。\n\n## 历史对照\n\n前次代码指纹为 acb136c0dbbf8e984bdffea9de48b6ed73d0103e；本轮固定为 acb136c0dbbf8e984bdffea9de48b6ed73d0103e。git log 加手写总结更简单；本轮版本功能扩展后仍需核查多源解析与归因边界。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：只核查本组件入口与工具授权，未验证各客户端日志解析完整性或报告事实准确率。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：用已知活动清单测试漏项、重复、作者归属和导出恢复，比较合格报告的总人工分钟。\n",
+        "metadata": {
+            "repository": "0x7A7A6572/dsh-forge-studio",
+            "repository_id": 1363429979,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 9,
+            "pushed_at": "2026-10-16T03:38:35Z",
+            "issues": {
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
+            },
+            "errors": [],
+            "npm": {
+                "package_name": "@zzerx/dsh-plugin-daily-log",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 1976,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40zzerx%2Fdsh-plugin-daily-log",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-09-15T02:00:59.838Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/%40zzerx%2Fdsh-plugin-daily-log",
+                    "error": null,
+                    "latest_version": "0.4.3",
+                    "latest_published_at": "2026-10-16T03:34:51.097Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+                "current_revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1363429979:plugin-daily-log",
+            "repository": "0x7A7A6572/dsh-forge-studio",
+            "path": "packages/plugin-daily-log",
+            "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "baa668030b6855a92a8a2fdd03e2d8d62771c5607e81c401b2d7dc778ee10af6",
+                "code": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+                "maintenance": "3b8db7c619c4fb07bdc46fc33b60ebd53c612c483654be23b7c416d9ea35c3ba"
+            }
+        }
+    }
+}

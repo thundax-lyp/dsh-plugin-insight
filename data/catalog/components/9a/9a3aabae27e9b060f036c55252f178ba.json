@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9a3aabae27e9b060f036c55252f178ba",
+    "identity": "github:1347097278:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347097278:root",
+            "repository": "lzxcs/dsh-enter-swap",
+            "path": "",
+            "revision": "46c960a1294dd5d231ba0cf3eb89ae7da9ed8d6d",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "adcec2e145dfadc0229b4614577e609e4bcb1ea1d88e5655dae34b54c14f1f13",
+                "code": "46c960a1294dd5d231ba0cf3eb89ae7da9ed8d6d",
+                "maintenance": "3f8d26cb951b2d7b8f77b44b93d9f12f8ad4614d9caecfa720050ca265a11ac2"
+            }
+        }
+    }
+}

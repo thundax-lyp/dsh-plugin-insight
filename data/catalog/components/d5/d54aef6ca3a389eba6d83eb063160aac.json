@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d54aef6ca3a389eba6d83eb063160aac",
+    "identity": "github:1342382831:plugins-dsh-my-observability",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342382831:plugins-dsh-my-observability",
+            "repository": "baosfeng/my-dsh-plugins",
+            "path": "plugins/dsh-my-observability",
+            "revision": "187f4e9342b0af0122cb681bb2f781b9aaa12008",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "484f6bf954166d036c11c6eab9802db16fced22516b86e78fc2023759f96fa4e",
+                "code": "187f4e9342b0af0122cb681bb2f781b9aaa12008",
+                "maintenance": "fb9b774cd98aed1498b3728886e651d430a33b9df901c2194b4f19380c3f5850"
+            }
+        }
+    }
+}

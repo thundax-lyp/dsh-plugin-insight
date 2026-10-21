@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "28f2a4fac51bdc09b46a3c9dde8cb0e3",
+    "identity": "github:1404193210:dsh-plugin",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1404193210:dsh-plugin",
+            "repository": "Ianzhyh/workbuddy-to-dsh",
+            "path": "dsh-plugin",
+            "revision": "9f5dfbb0b07a8b19650cf6c29e160e8fe7b2d50c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f365f2921d737f762c1fd3f17dc54d47aacb73cfefaa1ee51f313ed266b4e05e",
+                "code": "9f5dfbb0b07a8b19650cf6c29e160e8fe7b2d50c",
+                "maintenance": "cbdac399f046253c92e278155d3a7a5888c86186b80fd89ea56375c2cbff97b6"
+            }
+        }
+    }
+}

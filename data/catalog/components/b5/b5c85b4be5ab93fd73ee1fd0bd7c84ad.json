@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b5c85b4be5ab93fd73ee1fd0bd7c84ad",
+    "identity": "github:1388948125:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1388948125:root",
+            "repository": "Billwu18/dsh-cache-hit-monitor",
+            "path": "",
+            "revision": "46bbe6616c273a4ea2e5dbfde5a26ae25603908a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c1af2c3e5219205b1e2055848306246f13ad7f96815bdbdcaa8a9c64a219f5b8",
+                "code": "46bbe6616c273a4ea2e5dbfde5a26ae25603908a",
+                "maintenance": "7c000ed38359c39f03624a7a64d802fff0d627b4008f96554e0698b0e56d5d37"
+            }
+        }
+    }
+}

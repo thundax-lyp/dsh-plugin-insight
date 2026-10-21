@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6ceb1dd6ead804bb921e97d917a67f99",
+    "identity": "github:1402052803:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1402052803:root",
+            "repository": "louisyeaaah/dsh-reload",
+            "path": "",
+            "revision": "823966a9411256fece4cb4a4942ef4ca6f5db2ef",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a727737a26b8c4a89028f2e4f3433196b3e4b7f9a62efe6077bf66c70c2160a5",
+                "code": "823966a9411256fece4cb4a4942ef4ca6f5db2ef",
+                "maintenance": "852536c12d6cef5fc886d07d91b520b3fa01735d0b58b32a71bb8d1a8473ed06"
+            }
+        }
+    }
+}

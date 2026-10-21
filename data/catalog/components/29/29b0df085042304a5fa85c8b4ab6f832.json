@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "29b0df085042304a5fa85c8b4ab6f832",
+    "identity": "github:1264148937:packages-service",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1264148937:packages-service",
+            "repository": "scottzx/1acp",
+            "path": "packages/service",
+            "revision": "79b70632fe426ea236239d8e39d4f04a1bf17aac",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d3311d5e80d2f46827cbf70010fe967fb4db040e05fe560ec6cc4a906ff19a89",
+                "code": "79b70632fe426ea236239d8e39d4f04a1bf17aac",
+                "maintenance": "d57fedb65622cd6cb5337384392cb6aae97f07ade9325f0cf0ed042fdcdb0bfd"
+            }
+        }
+    }
+}

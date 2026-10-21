@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e44501531b706dfbc27b70d2bb070450",
+    "identity": "github:1192608669:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1192608669:root",
+            "repository": "hyhmrright/brooks-lint",
+            "path": "",
+            "revision": "917ea82286e74569817875e6a9da8bdf95030c3f",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "4c9a3dbe83e2c85524038c213d912a68e492d79dfd55ff8d6922b39390fbdb3e",
+                "code": "917ea82286e74569817875e6a9da8bdf95030c3f",
+                "maintenance": "348045c50e478a94ea293e4e1f001c5e66be41e2cedb6219ca30671a4ecd659b"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fc691f13aa51bce8928bc5b3026428b9",
+    "identity": "github:1374023806:belief-merge",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1374023806:belief-merge",
+            "repository": "aLIZELI/belief-merge",
+            "path": "belief-merge",
+            "revision": "2e605bdeb968f1dfbce93bead07a4b6a50151001",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d2e2cb5444d02fbc43ce7cc79f5359f6c78d27b75889796d3ba34984f11509b4",
+                "code": "2e605bdeb968f1dfbce93bead07a4b6a50151001",
+                "maintenance": "eae69f8d8a6ec0b2bbf9a670f07ad9f099eccfffc560ac08a1af9ac600db54b1"
+            }
+        }
+    }
+}

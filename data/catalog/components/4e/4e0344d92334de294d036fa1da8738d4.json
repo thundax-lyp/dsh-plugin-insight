@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4e0344d92334de294d036fa1da8738d4",
+    "identity": "github:1422021240:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1422021240:root",
+            "repository": "ikevss/dsh-ima",
+            "path": "",
+            "revision": "2f0a076a896188b919d8fe18e461d5941f4a4079",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "669d3f95f13ac43e81e7b138b4f98db204cdd07c4e411702a3e1391cefd023ce",
+                "code": "2f0a076a896188b919d8fe18e461d5941f4a4079",
+                "maintenance": "cc4df55390bd59001c91dd06d5624288b4822691403ecd432cb36a6cca2b76b9"
+            }
+        }
+    }
+}

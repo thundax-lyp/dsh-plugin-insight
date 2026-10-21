@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4912187f019d8e0f0ebfee8325ec66ec",
+    "identity": "github:1382853372:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1382853372:root",
+            "repository": "loyalchiiina/dsh-lobsterai-daddy",
+            "path": "",
+            "revision": "7653389d535079481c99847ecd89bd6ef331ed17",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fb9022d85ae064266fbf2fe57f1b9c08b163b509d29ad373223102b61e19d1ca",
+                "code": "7653389d535079481c99847ecd89bd6ef331ed17",
+                "maintenance": "02e89cf8b956838f0c09d853d8f603a10b969073239418eace594966f226e525"
+            }
+        }
+    }
+}

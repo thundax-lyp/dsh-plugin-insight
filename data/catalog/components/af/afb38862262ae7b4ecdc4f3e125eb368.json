@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "afb38862262ae7b4ecdc4f3e125eb368",
+    "identity": "github:1294942686:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1294942686:root",
+            "repository": "MiaoQichuan/new-litigation-visualization",
+            "path": "",
+            "revision": "ba121ca6e8d22e808905fdd9c35e2d3e9317be55",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "b90f4ade12eedf44f5eb9c426cffe270af512c2f16344687e874784cf46c7d41",
+                "code": "ba121ca6e8d22e808905fdd9c35e2d3e9317be55",
+                "maintenance": "1c7ad5019145246e3e069cb185cdc954990c05d51f2b59058814997eefab8831"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f7faf229a8440865d9128133b89d08c0",
+    "identity": "github:1334962013:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334962013:root",
+            "repository": "Huasecc/dsh-usage",
+            "path": "",
+            "revision": "eac5d050034b1f94bf1e924741500e90410443ae",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "b9213a5ec359c7cab62334ab135229000fcdc807f1af208ba6650d6278260a1d",
+                "code": "eac5d050034b1f94bf1e924741500e90410443ae",
+                "maintenance": "c7c821e67f1226384d4c520c3eb72221967cc753286f05555cd41b6ff9c6a85c"
+            }
+        }
+    }
+}

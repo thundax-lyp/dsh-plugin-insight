@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6a5bd0405c7e1fbe3f105c7879a391ad",
+    "identity": "github:1362224382:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1362224382:root",
+            "repository": "himeope/dsh-queue-first-enter",
+            "path": "",
+            "revision": "86e25c932f60ae5d452865c2e254d1b165e960cd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2ee50c7dfd73d0716b6e08133fd6929de07b07260ae7a8afd83ef556f459243d",
+                "code": "86e25c932f60ae5d452865c2e254d1b165e960cd",
+                "maintenance": "cd0bc8015af15603320897b114be97e0cb99aea985f659b63c7062d6ace77af0"
+            }
+        }
+    }
+}

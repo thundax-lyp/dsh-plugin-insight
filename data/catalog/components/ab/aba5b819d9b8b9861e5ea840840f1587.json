@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "aba5b819d9b8b9861e5ea840840f1587",
+    "identity": "github:1348555934:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1348555934:root",
+            "repository": "limlnx523/dsh-plus-plus",
+            "path": "",
+            "revision": "8d208f36534c73dd6c65ad8574fe7b142a83894f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "57c570ba1ba19f356678deb3e4c2a19f45007fcd8ea63634421c7da899bc710c",
+                "code": "8d208f36534c73dd6c65ad8574fe7b142a83894f",
+                "maintenance": "9af948a64e610c054f5056be8951d509539182cb49d6a05b11dc7d5203443f6e"
+            }
+        }
+    }
+}

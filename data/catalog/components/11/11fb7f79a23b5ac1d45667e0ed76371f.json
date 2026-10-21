@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "11fb7f79a23b5ac1d45667e0ed76371f",
+    "identity": "github:1335945062:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335945062:root",
+            "repository": "tokentopo-ai/dsh-octo",
+            "path": "",
+            "revision": "1d62fc65d3af2a56d4ff2564f26bb229f085949e",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "4e8e20bc52a6e110de9b600d4ad46341e2a10f32a886b277d0aa6a6f1b8de6f5",
+                "code": "1d62fc65d3af2a56d4ff2564f26bb229f085949e",
+                "maintenance": "237ace3487affddc4c8d6ecfddd2ed1de58e9668f1cd1e9537db7ca89814618e"
+            }
+        }
+    }
+}

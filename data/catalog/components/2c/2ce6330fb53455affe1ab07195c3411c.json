@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2ce6330fb53455affe1ab07195c3411c",
+    "identity": "github:1333228352:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333228352:root",
+            "repository": "xlennart/dsh-goal-mode-enhance",
+            "path": "",
+            "revision": "628ebe637a928bb14b0692cf54df146141b2ec92",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "33f4f446627f9a6c0afdfa7c8fcdaf2e7e6640f55e106a14aeffda1986c462ad",
+                "code": "628ebe637a928bb14b0692cf54df146141b2ec92",
+                "maintenance": "715e8ff10e19d2e00d539ed015006d78a616b7876cd99c60789693a58e5c69f1"
+            }
+        }
+    }
+}

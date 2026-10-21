@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "0b658e1c426d30d78c78ced85ed204fe",
+    "identity": "github:1324971591:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1324971591:root",
+            "repository": "omdsh-dev/stent",
+            "path": "",
+            "revision": "af701b3b1989066f5638e83a56413c58becb5d26",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "fc6a3295d3ce2d3890ed8982af0c6b9839918e14a1b2212a3d30cb5de2007957",
+                "code": "af701b3b1989066f5638e83a56413c58becb5d26",
+                "maintenance": "886b5fbb408fb78c7090eaa346e7d26b7dc905f74b3cc3dbef05a25407bc76ac"
+            }
+        }
+    }
+}

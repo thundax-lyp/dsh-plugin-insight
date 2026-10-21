@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "63dc638875d98478c045aa962428ee6f",
+    "identity": "github:1335046216:packages-codegraph",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335046216:packages-codegraph",
+            "repository": "hyzyn/dsh-plugin-kit",
+            "path": "packages/codegraph",
+            "revision": "70074a602a42b595eaca2bdc2b4c0be3f3ab6a62",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e49758a5d96e55aa1d342d3ae4230b8b3cf56ba910ead5496c81990cb66164ba",
+                "code": "70074a602a42b595eaca2bdc2b4c0be3f3ab6a62",
+                "maintenance": "2e7b920c8063d40c640ac1413638a8754c56991d360e6f103eb8ec2a73934260"
+            }
+        }
+    }
+}

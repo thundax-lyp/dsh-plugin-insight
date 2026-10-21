@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a654c9e5f365b7fabbac7d35a4021a93",
+    "identity": "github:1153190876:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1153190876:root",
+            "repository": "zilliztech/memsearch",
+            "path": "",
+            "revision": "00092f44d2809676fe959f278432bc07c7cb159a",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "a1b160981da4210cc7d8809b2aed6f136d331d4eeef08ae133659aa606452726",
+                "code": "00092f44d2809676fe959f278432bc07c7cb159a",
+                "maintenance": "bce162e3e398c5d24e969602e8ef7a08bc8fff126cdb121d379ad07cf5a6d5b9"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "94bfb897ecd3e2f0c98ef792612db07d",
+    "identity": "github:1347513033:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347513033:root",
+            "repository": "miuzel/dsh-subagent-ui",
+            "path": "",
+            "revision": "02036b5c3661302f902884e24e6094283eef8b21",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "183a0758d92e584bbc4267391e1af5f1f9403d089fa1ffa8690757fb2ba7f8a0",
+                "code": "02036b5c3661302f902884e24e6094283eef8b21",
+                "maintenance": "1331fc678c1a1d99c7fc55d7260ca6d8a82abe11cd8fdefcfb4e4e93d84e6865"
+            }
+        }
+    }
+}

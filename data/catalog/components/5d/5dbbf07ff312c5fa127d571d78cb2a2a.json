@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5dbbf07ff312c5fa127d571d78cb2a2a",
+    "identity": "github:1407102609:packages-plugin-wisdom",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1407102609:packages-plugin-wisdom",
+            "repository": "shanhai-city-states/kaipu-dsh-plugin-release",
+            "path": "packages/plugin-wisdom",
+            "revision": "2d806e7ceebbf5fd8e0f3776b72eada8adee6305",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6d467381ce3513c9f508cf7f900e7c48e36c400381db82dbe34c70a92e6ccf83",
+                "code": "2d806e7ceebbf5fd8e0f3776b72eada8adee6305",
+                "maintenance": "75e42e5e12016d6c9fb77bf950b2e85e4ab87a27c95003009fb11e8eda494ab5"
+            }
+        }
+    }
+}

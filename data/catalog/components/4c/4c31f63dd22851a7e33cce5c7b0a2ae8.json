@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4c31f63dd22851a7e33cce5c7b0a2ae8",
+    "identity": "github:1359686866:plugins-motor-fault-diagnosis",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1359686866:plugins-motor-fault-diagnosis",
+            "repository": "helllo-shijie/motor-hospital-plugins",
+            "path": "plugins/motor-fault-diagnosis",
+            "revision": "6b13e4bb39d30f795b9af8402034f0c0a88f7ab9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c1bfe133f70ee983930ffe8acfb33aed1d787d42c8dbd9eab27e33d8c003ef8a",
+                "code": "6b13e4bb39d30f795b9af8402034f0c0a88f7ab9",
+                "maintenance": "ae61c30fd903785b79008e00b9f602996e5f629205daa092405be9d1bae46ae1"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4521eb4f6b633a10def06a2ef0b128aa",
+    "identity": "github:1346374630:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346374630:root",
+            "repository": "Lanzgale/dsh-repo-browser",
+            "path": "",
+            "revision": "037fa4193f67815eb7248b0ae50d5df6b4aad1b8",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "f3da076765994d4b23e0f7bd5046fb88dcb19c043dca5e3882fdf795951d8dee",
+                "code": "037fa4193f67815eb7248b0ae50d5df6b4aad1b8",
+                "maintenance": "6a503cacfc1ca9c5d61bb2a0b3981980393d77a8b8826e70bd8e9aa80fb679b0"
+            }
+        }
+    }
+}

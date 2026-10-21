@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d4a759af44fee6e14e613ac0de60678d",
+    "identity": "github:1349380816:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1349380816:root",
+            "repository": "Cooberped/dsh-evidence",
+            "path": "",
+            "revision": "556af241007dd8a240dcc4c529fe9365b3f74768",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "f25ea835b94952f553a687329b8d3fc5d1b507a0ba703e239a5734bbcc2172e9",
+                "code": "556af241007dd8a240dcc4c529fe9365b3f74768",
+                "maintenance": "e3e7f34f325fb509abf198bb51f5790f55899a833ba2928a95e3039a15cbf23e"
+            }
+        }
+    }
+}

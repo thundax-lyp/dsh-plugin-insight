@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4f07eceb797f7528452d47a7f23f19e8",
+    "identity": "github:1422923772:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1422923772:root",
+            "repository": "TwinsEarth/DSH-GPW2",
+            "path": "",
+            "revision": "c7b0f47fbe266e4c385dcfdd47d1ceff1b0d1062",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ce16c827f8093873f5b3669962351de2e2a97951a9b47a7208a53f167e5aed53",
+                "code": "c7b0f47fbe266e4c385dcfdd47d1ceff1b0d1062",
+                "maintenance": "7d613c8bae13cbbe924b0f05eeed11b4480d5c19e23415678d8daa8b8f5b3a45"
+            }
+        }
+    }
+}

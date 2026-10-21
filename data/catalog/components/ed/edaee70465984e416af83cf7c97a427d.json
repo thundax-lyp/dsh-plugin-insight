@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "edaee70465984e416af83cf7c97a427d",
+    "identity": "github:1354768845:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1354768845:root",
+            "repository": "better-er/dsh-write-rule-guard",
+            "path": "",
+            "revision": "66d68fa90ae2c17a17bb1c53e78862bccdaf7f90",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "785169b1e85f80ed191cc1b700310be5592d4aa0c878db65368ae14456909bde",
+                "code": "66d68fa90ae2c17a17bb1c53e78862bccdaf7f90",
+                "maintenance": "19a0620068e1fab661eb36e01897831a53ca65ce5586459ae3321be9963d0f51"
+            }
+        }
+    }
+}

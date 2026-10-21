@@ -4,12 +4,49 @@ import { appendFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { digest } from '../../_shared/scripts/plugin-data.mjs';
-import { hydrateSnapshot } from '../../_shared/scripts/snapshot-storage.mjs';
+import { hydrateComponentStorage, componentId, componentFile } from '../../_shared/scripts/snapshot-storage.mjs';
 import { inspectPullRequest } from '../../codex-comment-fix/scripts/codex-review.mjs';
 
 // REST bot logins include [bot]; do not trust ordinary accounts with similar names.
 const CODEX = new Set(['chatgpt-codex-connector[bot]']);
 const git = (...args) => execFileSync('git', args, { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
+export function readGitSnapshot(ref) {
+    // Batch blobs: a component catalog contains thousands of files.
+    const entries = git('ls-tree', '-rz', ref, '--', 'data/catalog')
+        .split('\0')
+        .filter(Boolean)
+        .map((entry) => {
+            const match = /^100[0-9]{3} blob ([a-f0-9]+)\tdata\/catalog\/(.+)$/.exec(entry);
+            return match ? { oid: match[1], name: match[2] } : null;
+        })
+        .filter(
+            (entry) =>
+                entry &&
+                /^(?:index\.jsonl|state\.json|components\/[a-f0-9]{2}\/[a-f0-9]{32}\.json|evidence\/[a-f0-9]{2}\/[a-f0-9]{64}\.json)$/.test(
+                    entry.name
+                )
+        );
+    const output = execFileSync('git', ['cat-file', '--batch'], {
+        input: entries.map((entry) => entry.oid).join('\n') + '\n',
+        maxBuffer: 256 * 1024 * 1024
+    });
+    const blobs = new Map();
+    let offset = 0;
+    for (const entry of entries) {
+        const newline = output.indexOf(10, offset);
+        const header = output.subarray(offset, newline).toString('ascii').split(' ');
+        if (header[0] !== entry.oid || header[1] !== 'blob' || !/^[0-9]+$/.test(header[2]))
+            throw Error('invalid Git catalog blob');
+        const length = Number(header[2]);
+        blobs.set(entry.name, output.subarray(newline + 1, newline + 1 + length).toString('utf8'));
+        offset = newline + length + 2;
+    }
+    if (!blobs.has('index.jsonl')) throw Error('META PR must use current component storage');
+    return hydrateComponentStorage(blobs.get('index.jsonl'), (name, raw) => {
+        if (!blobs.has(name)) throw Error(`missing Git catalog object: ${name}`);
+        return raw ? blobs.get(name) : JSON.parse(blobs.get(name));
+    });
+}
 function api(repository, path, method = 'GET', body) {
     const args = ['api', `repos/${repository}/${path}`, '--method', method];
     if (method === 'POST' && path.endsWith('/dispatches')) args.push('-H', 'X-GitHub-Api-Version: 2026-03-10');
@@ -56,9 +93,12 @@ export function validateMetaScope(before, after, files) {
         digest(before.publication.metadata) !== digest(after.publication.metadata)
     )
         throw Error('META PR changes identity mappings');
-    const allowed = new Set(['README.md', 'data/catalog/SNAPSHOT.json']);
+    const allowed = new Set(['README.md', 'data/catalog/index.jsonl', 'data/catalog/state.json']);
+    for (const id of Object.keys(before.metadata)) {
+        const hash = componentId(id);
+        allowed.add(`data/catalog/${componentFile(hash)}`);
+    }
     for (const directory of Object.values(before.registry)) {
-        allowed.add(`${directory}/META.json`);
         allowed.add(`${directory}/INSIGHT.md`);
     }
     if (
@@ -66,11 +106,9 @@ export function validateMetaScope(before, after, files) {
         files.some(
             (file) =>
                 !(
-                    (file.status === 'modified' &&
-                        (allowed.has(file.filename) ||
-                            /^data\/views\/(?:categories|columns)\/[A-Z][A-Z-]*\.md$/.test(file.filename))) ||
-                    (file.status === 'added' &&
-                        /^data\/catalog\/snapshot\/metadata\/[a-f0-9]{2}\/[a-f0-9]{64}\.json$/.test(file.filename))
+                    file.status === 'modified' &&
+                    (allowed.has(file.filename) ||
+                        /^data\/views\/(?:categories|columns)\/[A-Z][A-Z-]*\.md$/.test(file.filename))
                 )
         )
     )
@@ -199,12 +237,8 @@ export function maintainMetaPullRequests({ repository, apply = false } = {}) {
         }
         git('fetch', '--no-tags', 'origin', pr.base.sha, pr.head.sha);
         const mergeBase = git('merge-base', pr.base.sha, pr.head.sha).trim();
-        const fromGit = (ref) =>
-            hydrateSnapshot(JSON.parse(git('show', `${ref}:data/catalog/SNAPSHOT.json`)), (name) =>
-                JSON.parse(git('show', `${ref}:data/catalog/${name}`))
-            );
-        const before = fromGit(mergeBase);
-        const after = fromGit(pr.head.sha);
+        const before = readGitSnapshot(mergeBase);
+        const after = readGitSnapshot(pr.head.sha);
         validateMetaScope(before, after, pages(repository, `pulls/${pr.number}/files`));
         if (mergeBase !== pr.base.sha) {
             report(pr.number, apply ? 'requesting branch update' : 'would update branch');

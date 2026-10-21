@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2262de4dabd5699ed21dce3571148bce",
+    "identity": "github:1339103778:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339103778:root",
+            "repository": "loeanxi/dsh-injection-guard",
+            "path": "",
+            "revision": "53f0721f3a7c24b394cd5854787c21ccdf87af6d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5d47337c0f3210f8e629388e20b9676ebc8167ba6e0d6f635605f0e533432138",
+                "code": "53f0721f3a7c24b394cd5854787c21ccdf87af6d",
+                "maintenance": "4abe3573affd0c8072f29e8adebbd9d777101795a52b547e42ceb5147927e600"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "839f55476440a290f5bfb76e6286dcd1",
+    "identity": "github:1408714322:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1408714322:root",
+            "repository": "yanzhaohui1999/dsh-perf-hud",
+            "path": "",
+            "revision": "4401b2c1d9d092c07e188d1df10c7ad57b805544",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "60980d5f927407e268cd05ee7ac4b25664c08e814411a435200bc4e4ae889fe6",
+                "code": "4401b2c1d9d092c07e188d1df10c7ad57b805544",
+                "maintenance": "c875553e2ae0b71b62fea71be2adf0568575ea5b7b096eecb4b575ab80de8dee"
+            }
+        }
+    }
+}

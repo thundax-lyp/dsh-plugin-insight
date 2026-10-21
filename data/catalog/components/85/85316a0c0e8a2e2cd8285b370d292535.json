@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "85316a0c0e8a2e2cd8285b370d292535",
+    "identity": "github:1347023916:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347023916:root",
+            "repository": "soulYANG/dsh-baogongtou",
+            "path": "",
+            "revision": "b2be3ef267ca90085b3d3e305dc55f45c1cf8735",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "bc4be09c14dc38fa16862b02cf3e56afaf609a9a111f68bf2f74b10680a43155",
+                "code": "b2be3ef267ca90085b3d3e305dc55f45c1cf8735",
+                "maintenance": "2a247c855afbb8b6eeabeb1b21eded854d502d6a21527c9f5e39248ae39a6482"
+            }
+        }
+    }
+}

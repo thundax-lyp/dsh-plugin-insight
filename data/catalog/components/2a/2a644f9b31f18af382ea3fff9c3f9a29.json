@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2a644f9b31f18af382ea3fff9c3f9a29",
+    "identity": "github:1425179289:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425179289:root",
+            "repository": "lucifersteps/telos-harness",
+            "path": "",
+            "revision": "028253b92cf43fc09674fa468c2a3fa8c9da58f4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5513039cb5a7eb3dc2b1955743d94d704dfc3f79d18b805a27e96d63c1969ae5",
+                "code": "028253b92cf43fc09674fa468c2a3fa8c9da58f4",
+                "maintenance": "b77884266bf36c3c98aa9ca1d02addf71279028c844c8a6f6edaa1a98acb36fe"
+            }
+        }
+    }
+}

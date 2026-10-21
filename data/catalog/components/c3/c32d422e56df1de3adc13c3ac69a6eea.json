@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c32d422e56df1de3adc13c3ac69a6eea",
+    "identity": "github:1333722525:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333722525:root",
+            "repository": "yweilai77-dev/dsh-plugin-cost",
+            "path": "",
+            "revision": "c66cc922577109a77120f3965cae469e8b4fd338",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "d7a3f537bc4bbed5114d3c735a53ec9b728c0028ffc8a52605d96309d072103d",
+                "code": "c66cc922577109a77120f3965cae469e8b4fd338",
+                "maintenance": "8352574178ea1758fe7ab1285b4d332e4b3efe25c4ba1823767d656706af94aa"
+            }
+        }
+    }
+}

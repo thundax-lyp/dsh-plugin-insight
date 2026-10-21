@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a7d320be58f46c30cb3ae122b662b9c5",
+    "identity": "github:1345807796:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345807796:root",
+            "repository": "wilburli/onlyMemory-plugin",
+            "path": "",
+            "revision": "c775a722823a9aed3368d42e4539f7ecd4d19949",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "bf4a107072944228cb4db05c1649fbf2969286954f881bbc0c4add5c4495e805",
+                "code": "c775a722823a9aed3368d42e4539f7ecd4d19949",
+                "maintenance": "0dcc8de15ddb4979958ef5fb4b1593c4866db9479b05a5680183175411451481"
+            }
+        }
+    }
+}

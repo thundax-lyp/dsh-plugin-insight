@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bdb45cf592a6d6d45138053cb4d7c312",
+    "identity": "github:1350614472:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1350614472:root",
+            "repository": "zengweicheng666/dsh-svn-tools",
+            "path": "",
+            "revision": "0ccaeddb5f5a95ef1e5d5524c312a9c790243360",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c7c5e6cdda6e5396e97f6833b1c6a2b945ee534f059a7bc8a8ce54fff479a557",
+                "code": "0ccaeddb5f5a95ef1e5d5524c312a9c790243360",
+                "maintenance": "9c9ac5ac3375dae0116e48c396d44e28c2b3569664d989d713a736883a898b4a"
+            }
+        }
+    }
+}

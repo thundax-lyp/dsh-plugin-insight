@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a540547e371aab8249b6ce30f788484a",
+    "identity": "github:1328988789:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1328988789:root",
+            "repository": "HuanLinOTO/dsh-plugin-spur",
+            "path": "",
+            "revision": "74b233d95a3fe637588d0f9c16bc3f7fc76e758c",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "4b3b72137c8bae0f070f8c775202382733f740b9edf82d0aa4307b30845a9609",
+                "code": "74b233d95a3fe637588d0f9c16bc3f7fc76e758c",
+                "maintenance": "0915d667ddfd69117b788e0dc9a51a4dd973b654eeb779a298eae60592a14cef"
+            }
+        }
+    }
+}

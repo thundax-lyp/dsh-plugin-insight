@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a0bd65422cb7644669c46eb0f395a171",
+    "identity": "github:1368569221:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1368569221:root",
+            "repository": "sixtysevenlf/dsh-blender-plugin",
+            "path": "",
+            "revision": "f044a019bbb97513443b24cc5ebcad111a002628",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1169beb02dd1eb941d9e0da42638bbd03cdde22e287cf739f20deb341ecba9a6",
+                "code": "f044a019bbb97513443b24cc5ebcad111a002628",
+                "maintenance": "be19e6a6ed30285cf8e24c6561935fbcc7084eeaf8fecc7b956e2b461c8414cc"
+            }
+        }
+    }
+}

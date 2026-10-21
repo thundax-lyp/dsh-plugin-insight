@@ -1,0 +1,356 @@
+{
+    "schema_version": 3,
+    "id": "d796a65058193fdcf7d78ce56ca1cf83",
+    "identity": "github:1333370288:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1333370288:root",
+            "repository_id": 1333370288,
+            "component_id": "root",
+            "repository": "030611/dsh-verification-receipt",
+            "path": "",
+            "aliases": [],
+            "name": "DSH Verification Receipt",
+            "entry_type": "plugin",
+            "technical_category": "security-governance",
+            "business_category": "software-delivery",
+            "tags": [
+                "source-inspected",
+                "runtime-unverified"
+            ],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "2719f26a259ba5270a25e71182cf79bd62f0b53a7e879451a9877be960ad9221",
+                "code": "87f3fb0198090f0f26a37a52840db150609db748",
+                "release": "ce4b903c9dd9bac74f8003700253286c97b55dd39d4ad278333d2e28e8c1c16a",
+                "maintenance": "92df825f823e5a0c27febd4eb42684c53f1aa3740ae34127f9405f07812dc346",
+                "compatibility": "a68fb3d222a3ee7a255f70203e64a3fde804b1b5ee4f77d7c86317bbe7af4120"
+            },
+            "sources": [
+                {
+                    "id": "20261020-research40-github-1333370288-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T03:03:51.750Z",
+                    "membership": "present"
+                },
+                {
+                    "id": "20261020-research40-github-1333370288-root-directory-1",
+                    "url": "https://github.com/0xsline/awesome-deepseek-harness",
+                    "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
+                    "retrieved_at": "2026-10-20T03:03:51.750Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "20261020-research40-github-1333370288-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/030611/dsh-verification-receipt/blob/87f3fb0198090f0f26a37a52840db150609db748/README.md",
+                    "revision": "87f3fb0198090f0f26a37a52840db150609db748",
+                    "captured_at": "2026-10-20T03:03:51.750Z",
+                    "summary": "在每轮持久化结束时保存工具次数和验证形态信号的本地 JSONL 回执。",
+                    "artifact": "data/runs/2026-10-20-02/snapshots/030611--dsh-verification-receipt/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "20261020-research40-github-1333370288-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/030611/dsh-verification-receipt/blob/87f3fb0198090f0f26a37a52840db150609db748/src/index.ts",
+                    "revision": "87f3fb0198090f0f26a37a52840db150609db748",
+                    "captured_at": "2026-10-20T03:03:51.750Z",
+                    "summary": "核查 src/index.ts、src/receipt.ts；监听 turn/end 相关 session 事件，按执行轨迹和词法信号生成摘要并串行追加 JSONL。",
+                    "artifact": "data/runs/2026-10-20-02/snapshots/030611--dsh-verification-receipt/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "验证形态是启发式信号，不证明测试真实执行、断言正确或最终代码可用。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "代码协作者希望追问某轮究竟记录过哪些执行信号，而不是只看模型完成声明。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1333370288-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333370288:root",
+                            "area": "code",
+                            "fingerprint": "87f3fb0198090f0f26a37a52840db150609db748"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:03:51.750Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "监听 turn/end 相关 session 事件，按执行轨迹和词法信号生成摘要并串行追加 JSONL。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1333370288-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333370288:root",
+                            "area": "code",
+                            "fingerprint": "87f3fb0198090f0f26a37a52840db150609db748"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:03:51.750Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "验证形态是启发式信号，不证明测试真实执行、断言正确或最终代码可用。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1333370288-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333370288:root",
+                            "area": "code",
+                            "fingerprint": "87f3fb0198090f0f26a37a52840db150609db748"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:03:51.750Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "包版本 0.1.1，session peer 明确列出 alpha 版本，部署前须核对实际宿主。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1333370288-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333370288:root",
+                            "area": "code",
+                            "fingerprint": "87f3fb0198090f0f26a37a52840db150609db748"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:03:51.750Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "本地日志增加存储和审查负担，不发模型请求；仍未测长期日志增长和审阅收益。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1333370288-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333370288:root",
+                            "area": "code",
+                            "fingerprint": "87f3fb0198090f0f26a37a52840db150609db748"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:03:51.750Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先对照一次明确成功和一次失败的测试任务，逐项比对回执与真实命令结果。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1333370288-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333370288:root",
+                            "area": "code",
+                            "fingerprint": "87f3fb0198090f0f26a37a52840db150609db748"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:03:51.750Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "缩小到可检查的执行信号比声称自动验收更可靠；回执本身不能代替失败放行规则。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1333370288-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333370288:root",
+                            "area": "code",
+                            "fingerprint": "87f3fb0198090f0f26a37a52840db150609db748"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:03:51.750Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "追加队列、隐私化标识与确定性摘要可复用；接入时要保留事件丢失和写盘失败告警。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1333370288-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333370288:root",
+                            "area": "code",
+                            "fingerprint": "87f3fb0198090f0f26a37a52840db150609db748"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:03:51.750Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T03:03:51.750Z",
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "代码协作者可把回执作为定位线索试用，先对照成功和失败命令，不能据其自动放行。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "追查模型完成声明对应的执行信号是具体审阅任务。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "自动回执省查轨迹步骤，但词法信号弱于真实结果核对。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "结束事件、摘要和串行JSONL追加可查，启发式准确性未测。"
+                    },
+                    "cost": {
+                        "score": 15,
+                        "rationale": "本地日志无模型费用，仍需留存和人工审查。"
+                    }
+                },
+                "score": 64,
+                "revision": "87f3fb0198090f0f26a37a52840db150609db748",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "20261020-research40-github-1333370288-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1333370288:root",
+                        "area": "code",
+                        "fingerprint": "87f3fb0198090f0f26a37a52840db150609db748"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1333370288:root",
+            "repository": "030611/dsh-verification-receipt",
+            "path": "",
+            "revision": "87f3fb0198090f0f26a37a52840db150609db748",
+            "fingerprints": {
+                "directory": "2719f26a259ba5270a25e71182cf79bd62f0b53a7e879451a9877be960ad9221",
+                "code": "87f3fb0198090f0f26a37a52840db150609db748",
+                "release": "ce4b903c9dd9bac74f8003700253286c97b55dd39d4ad278333d2e28e8c1c16a",
+                "maintenance": "92df825f823e5a0c27febd4eb42684c53f1aa3740ae34127f9405f07812dc346",
+                "compatibility": "a68fb3d222a3ee7a255f70203e64a3fde804b1b5ee4f77d7c86317bbe7af4120"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T02:51:30Z",
+            "analysis_sha256": "f42fbddd0b22a03c6105d13bfca58a38833f95599870ef959536966ec81e56cc"
+        },
+        "publication.metadata": "data/plugins/030611--dsh-verification-receipt/META.json",
+        "publication.summaries": {
+            "text": "在每轮持久化结束时保存工具次数和验证形态信号的本地 JSONL 回执。",
+            "revision": "87f3fb0198090f0f26a37a52840db150609db748",
+            "source_url": "https://github.com/030611/dsh-verification-receipt/blob/87f3fb0198090f0f26a37a52840db150609db748/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "87f3fb0198090f0f26a37a52840db150609db748",
+            "items": {
+                "事件监听": "回合结束事件驱动本地执行摘要回执。"
+            }
+        },
+        "publication.advice": {
+            "revision": "87f3fb0198090f0f26a37a52840db150609db748",
+            "text": "先对照一次明确成功和一次失败的测试任务，逐项比对回执与真实命令结果。"
+        },
+        "registry": "data/plugins/030611--dsh-verification-receipt",
+        "reports": "# DSH Verification Receipt\n\n> 在每轮持久化结束时保存工具次数和验证形态信号的本地 JSONL 回执。\n\n## 固定范围与依据\n\n固定提交 [87f3fb0198090f0f26a37a52840db150609db748](https://github.com/030611/dsh-verification-receipt/blob/87f3fb0198090f0f26a37a52840db150609db748/src/index.ts)；组件路径：仓库根。核查时间 2026-10-20T03:03:51.750Z；本轮基准 2026-10-20T02:51:30Z。\n源码抽读路径：src/index.ts、src/receipt.ts。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：代码协作者希望追问某轮究竟记录过哪些执行信号，而不是只看模型完成声明。\n- **亮点**：监听 turn/end 相关 session 事件，按执行轨迹和词法信号生成摘要并串行追加 JSONL。\n- **思考**：缩小到可检查的执行信号比声称自动验收更可靠；回执本身不能代替失败放行规则。\n- **建议**：先对照一次明确成功和一次失败的测试任务，逐项比对回执与真实命令结果。\n\n## 场景与替代办法\n\n代码协作者希望追问某轮究竟记录过哪些执行信号，而不是只看模型完成声明。\n\n人工查会话工具轨迹也能核对；自动摘要节省定位步骤但新增启发式误读风险。\n\n## 依赖与流程\n\n需要对应 session 事件和可写的 DSH_HOME，效果依赖执行轨迹是否完整记录。\n\n回合结束后后台写回执，审阅者再与真实执行结果对照；写入失败从日志排查而非补造结果。\n\n## 成本与效果\n\n本地日志增加存储和审查负担，不发模型请求；仍未测长期日志增长和审阅收益。\n\n缩小到可检查的执行信号比声称自动验收更可靠；回执本身不能代替失败放行规则。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：c2d134c7ae0c9606bdac10cb2d42fd3a1bbeac472663f6cc09da05dd301ad9a4。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 482 | — | — | 4515 |\n| .mjs | source | 2 | 131 | 124 | 0 | — |\n| .ts | source | 3 | 424 | 327 | 56 | — |\n| .ts | test | 3 | 391 | 361 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **事件监听**：回合结束事件驱动本地执行摘要回执。\n\n## 工程亮点\n\n追加队列、隐私化标识与确定性摘要可复用；接入时要保留事件丢失和写盘失败告警。\n\n## 分发与兼容\n\n包版本 0.1.1，session peer 明确列出 alpha 版本，部署前须核对实际宿主。\n\n## 历史对照\n\n前次代码指纹为 87f3fb0198090f0f26a37a52840db150609db748；本轮固定为 87f3fb0198090f0f26a37a52840db150609db748。人工查会话工具轨迹也能核对；自动摘要节省定位步骤但新增启发式误读风险。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：验证形态是启发式信号，不证明测试真实执行、断言正确或最终代码可用。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：构造名称像测试但未执行测试的工具调用，观察误标，并检查中断和写盘失败后的记录边界。\n",
+        "metadata": {
+            "repository": "030611/dsh-verification-receipt",
+            "repository_id": 1333370288,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 4,
+            "pushed_at": "2026-09-03T16:29:04Z",
+            "issues": {
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
+            },
+            "errors": [],
+            "npm": {
+                "package_name": "dsh-verification-receipt",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 862,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-verification-receipt",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-14T05:17:58.624Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-verification-receipt",
+                    "error": null,
+                    "latest_version": "0.1.0",
+                    "latest_published_at": "2026-08-14T05:17:59.003Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "87f3fb0198090f0f26a37a52840db150609db748",
+                "current_revision": "87f3fb0198090f0f26a37a52840db150609db748",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1333370288:root",
+            "repository": "030611/dsh-verification-receipt",
+            "path": "",
+            "revision": "87f3fb0198090f0f26a37a52840db150609db748",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "2719f26a259ba5270a25e71182cf79bd62f0b53a7e879451a9877be960ad9221",
+                "code": "87f3fb0198090f0f26a37a52840db150609db748",
+                "maintenance": "92df825f823e5a0c27febd4eb42684c53f1aa3740ae34127f9405f07812dc346"
+            }
+        }
+    }
+}

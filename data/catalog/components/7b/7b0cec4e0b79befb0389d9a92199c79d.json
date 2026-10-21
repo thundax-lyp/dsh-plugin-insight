@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7b0cec4e0b79befb0389d9a92199c79d",
+    "identity": "github:1344496369:packages-voice-app",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1344496369:packages-voice-app",
+            "repository": "WayneYu430/dsh-voice-agent",
+            "path": "packages/voice-app",
+            "revision": "43f0703804f32d26d9b64b50e6a985d362725296",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7ed7ad0122579175ab3e4573979d30c0a599458c8510db99e4dbcf2543249be6",
+                "code": "43f0703804f32d26d9b64b50e6a985d362725296",
+                "maintenance": "fd39ca71b9536b06acc42766624665ec4ff22694202fc149db95282fbbe8849b"
+            }
+        }
+    }
+}

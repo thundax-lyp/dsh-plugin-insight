@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b05b45fa770666eb3831720b6c57fb91",
+    "identity": "github:1333397767:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333397767:root",
+            "repository": "147228/dsh-xiaoyao-skins",
+            "path": "",
+            "revision": "555a9acbc4c269faa64fd2647205b290d4654903",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "94673bfb0dca2542396ea67501842714ef7c6515f962f9b7b743e7e20add72a1",
+                "code": "555a9acbc4c269faa64fd2647205b290d4654903",
+                "maintenance": "95cfce24972153aaa52c26a96ac044e61a847ae6c39eee802ada9311d3ad25bc"
+            }
+        }
+    }
+}

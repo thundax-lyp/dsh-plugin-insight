@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "18a526a3fea447ca9eb830d19ae7c0e7",
+    "identity": "github:1340797026:client",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340797026:client",
+            "repository": "wwumit/dsh-phone",
+            "path": "client",
+            "revision": "bdb23bb89dbb78dc2e8db8418b07a315e1891fe3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a3f2e90865ccbd8754e56df8426d9e7015f5dae3a2d746a04e0ec240656ec268",
+                "code": "bdb23bb89dbb78dc2e8db8418b07a315e1891fe3",
+                "maintenance": "360edb79186ca51b382de50e3e1fd7f2cafba87906070b94eedd54331bdd77ac"
+            }
+        }
+    }
+}

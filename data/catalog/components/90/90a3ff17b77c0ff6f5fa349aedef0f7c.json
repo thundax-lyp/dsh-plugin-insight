@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "90a3ff17b77c0ff6f5fa349aedef0f7c",
+    "identity": "github:1368705255:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1368705255:root",
+            "repository": "better-er/dsh-notify-ding",
+            "path": "",
+            "revision": "84cd79e1382bd35f88a51b8d38304607647e6a25",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1b3d86e18e5796c6c3884a54c15795f58a9a15f886943b9e72e257955aa3ee59",
+                "code": "84cd79e1382bd35f88a51b8d38304607647e6a25",
+                "maintenance": "4cbfd486cee5b5ccfec4642c98f963d3dddf9a4253e7e95529c06cb8c66ed344"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "47b5556b6fc2277ea27fd6a05ce438cc",
+    "identity": "github:1343169831:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343169831:root",
+            "repository": "Max-Null/dsh-capture",
+            "path": "",
+            "revision": "9de5df41543859f16dba29c416c3a5858740b75d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6803dbdaaf6d15757216504e0f02b6c5e1d9c70101ff10b39192b3f079d5520e",
+                "code": "9de5df41543859f16dba29c416c3a5858740b75d",
+                "maintenance": "35ff388d6e65625bcb4fc05d05ff875ba9e07ba463599717340c8e1875a54e69"
+            }
+        }
+    }
+}

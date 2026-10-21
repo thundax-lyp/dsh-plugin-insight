@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0c4a28d464f20652a7d4930d01eb57df",
+    "identity": "github:1351888782:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1351888782:root",
+            "repository": "MarioLuLu7/dsh-git-plus",
+            "path": "",
+            "revision": "963b6e8ee15d836697984f3f0c109265e6d5d984",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "abb78f7ab6901e9023e559061565e32c71a9962669e60e59245809f28eef07f2",
+                "code": "963b6e8ee15d836697984f3f0c109265e6d5d984",
+                "maintenance": "83faaf2e609a0bc126d3b4577fd1ca4c900cc34368eb8a3b08b236e3b9dbd767"
+            }
+        }
+    }
+}

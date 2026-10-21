@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "f2587cc4ba2b999f052c1b62234ee54d",
+    "identity": "github:1334811048:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334811048:root",
+            "repository": "Asher-2000/dsh-expert-mode",
+            "path": "",
+            "revision": "ed9a19d64bb0fc1889ebcb1a998ca3716c56d299",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "9409762f43a6da2d3ce979206298da1f54cd1d16e7420d189b862a83e355b631",
+                "code": "ed9a19d64bb0fc1889ebcb1a998ca3716c56d299",
+                "maintenance": "2acb1228d837aba70d070269811267512f1e68a7adbc7b417f2b39560eb6b89b"
+            }
+        }
+    }
+}

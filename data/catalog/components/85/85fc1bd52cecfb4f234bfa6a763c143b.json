@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "85fc1bd52cecfb4f234bfa6a763c143b",
+    "identity": "github:1335864434:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335864434:root",
+            "repository": "chouyong/dsh-branch-review",
+            "path": "",
+            "revision": "c9df293fcc2335e773d2b1f795c8b4b3dab0fc77",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "ba94ff68fcdba1f8c74c7f858c81c240e65f99c2a0391b7290f3872da68df66b",
+                "code": "c9df293fcc2335e773d2b1f795c8b4b3dab0fc77",
+                "maintenance": "3d103879424aff878b71c418773d8d6fe405c6022ed31904caa84ecb263295dd"
+            }
+        }
+    }
+}

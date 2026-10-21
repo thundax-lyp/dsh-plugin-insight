@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "86712a2a47b9e7ecaa0d43d2ee5ab0ad",
+    "identity": "github:1334317887:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334317887:root",
+            "repository": "LemCAE/dsh-balance",
+            "path": "",
+            "revision": "04686d592ad52762f235eb129518869bea7c55cc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "34e03bec2a22947fd495123db465a901138e1de5906131d78a89ff044f767f51",
+                "code": "04686d592ad52762f235eb129518869bea7c55cc",
+                "maintenance": "fd9cb9ccc98993c09f94dbf92e8e86f499da66cfde453bd4747e824e4eabf441"
+            }
+        }
+    }
+}

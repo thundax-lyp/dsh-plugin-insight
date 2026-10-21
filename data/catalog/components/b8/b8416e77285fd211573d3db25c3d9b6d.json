@@ -1,0 +1,402 @@
+{
+    "schema_version": 3,
+    "id": "b8416e77285fd211573d3db25c3d9b6d",
+    "identity": "github:1351854356:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1351854356:root",
+            "repository_id": 1351854356,
+            "component_id": "root",
+            "repository": "173787247/dsh-wsl-ssh-agent",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-wsl-ssh-agent",
+            "entry_type": "plugin",
+            "technical_category": "observability-cost",
+            "business_category": "software-delivery",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "33336ef6f4a5ea9197e6f4322078e44cb9bfb57e57b450b12ec8a3ac9508ceaa",
+                "code": "99716388c9fa204b53bb6e931a239810d4524a0b",
+                "maintenance": "dabe9eef54fb2349b8386b3852df4b9a1dbc60ec0b2bb99392f0eda4922b2483"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-20-07-github-1351854356-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T10:02:01.550Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-20-07-github-1351854356-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/173787247/dsh-wsl-ssh-agent/blob/99716388c9fa204b53bb6e931a239810d4524a0b/README.md",
+                    "revision": "99716388c9fa204b53bb6e931a239810d4524a0b",
+                    "captured_at": "2026-10-20T10:02:01.550Z",
+                    "summary": "诊断WSL的SSH代理环境、已加载密钥数量与Windows代理桥接条件。",
+                    "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-ssh-agent/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-20-07-github-1351854356-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/173787247/dsh-wsl-ssh-agent/blob/99716388c9fa204b53bb6e931a239810d4524a0b/index.js",
+                    "revision": "99716388c9fa204b53bb6e931a239810d4524a0b",
+                    "captured_at": "2026-10-20T10:02:01.550Z",
+                    "summary": "核查 index.js、lib/ssh-agent.js；ssh_agent_hint检查SSH_AUTH_SOCK路径存在、执行ssh-add -l、查看常见私钥文件名和npiperelay位置，再给建议。",
+                    "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-ssh-agent/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "检查入口和诊断实现；未读用户密钥、调用ssh-add或连接Git服务。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "Git SSH认证失败时，区分环境未继承、代理失效、未加载密钥与Windows桥接未配。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1351854356-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854356:root",
+                            "area": "code",
+                            "fingerprint": "99716388c9fa204b53bb6e931a239810d4524a0b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:02:01.550Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "ssh_agent_hint检查SSH_AUTH_SOCK路径存在、执行ssh-add -l、查看常见私钥文件名和npiperelay位置，再给建议。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1351854356-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854356:root",
+                            "area": "code",
+                            "fingerprint": "99716388c9fa204b53bb6e931a239810d4524a0b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:02:01.550Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "检查入口和诊断实现；未读用户密钥、调用ssh-add或连接Git服务。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1351854356-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854356:root",
+                            "area": "code",
+                            "fingerprint": "99716388c9fa204b53bb6e931a239810d4524a0b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:02:01.550Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "固定版本包清单与作者说明已核对；依赖WSL、OpenSSH工具和宿主进程环境；Windows转发另需npiperelay/socat与Windows OpenSSH agent。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1351854356-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854356:root",
+                            "area": "code",
+                            "fingerprint": "99716388c9fa204b53bb6e931a239810d4524a0b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:02:01.550Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "进程探测、配置桥接和用户核对人工为主，无恢复率实测。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1351854356-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854356:root",
+                            "area": "code",
+                            "fingerprint": "99716388c9fa204b53bb6e931a239810d4524a0b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:02:01.550Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "把live socket当启发式提示，失败时查看sshAddDetail；不要在聊天中复制私钥。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1351854356-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854356:root",
+                            "area": "code",
+                            "fingerprint": "99716388c9fa204b53bb6e931a239810d4524a0b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:02:01.550Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "把常见SSH代理排障线索聚合为不回传私钥内容的提示；不自动建立代理桥接，也不证明目标Git服务认证通过。 sockAlive只由exists判断，路径存在不证明是可服务的socket；ssh-add失败被归为keyCount=0，与真实空代理不同，可能误导加载密钥建议。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1351854356-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854356:root",
+                            "area": "code",
+                            "fingerprint": "99716388c9fa204b53bb6e931a239810d4524a0b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:02:01.550Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "建议构造与探测可注入依赖，便于边界验证；未知、失败与零数量应保留区别。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1351854356-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854356:root",
+                            "area": "code",
+                            "fingerprint": "99716388c9fa204b53bb6e931a239810d4524a0b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:02:01.550Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T10:02:01.550Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "99716388c9fa204b53bb6e931a239810d4524a0b",
+                "reviewed_at": "2026-10-20T10:02:01.550Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1351854356:root",
+                        "area": "code",
+                        "fingerprint": "99716388c9fa204b53bb6e931a239810d4524a0b"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "rationale": "novelty为常见排障命令包装；mechanism为多信号建议；transferability可用于其他凭据诊断；simplification减少重复采集。 固定版本源码支持接口和流程存在，未执行目标代码；分数表达相对文中基线的设计解释，不代表效果、采用或收益验证。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1351854356-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 0,
+                        "reach": 5,
+                        "economics": 0
+                    },
+                    "rationale": "workflow聚合排障的小幅改善；delivery不新增认证交付；reach方便WSL Agent；economics无独立增量证据。 固定版本源码支持接口和流程存在，未执行目标代码；分数表达相对文中基线的设计解释，不代表效果、采用或收益验证。",
+                    "basis": "interpretation",
+                    "score": 14,
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1351854356-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "SSH认证排障者可试聚合提示，先读sshAddDetail，socket存在和零密钥需原生命令复核。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "代理未继承失效与未加载密钥的区分任务具体。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "不回传私钥的多线索提示减少手动拼接。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "探测可查，exists非存活且ssh-add失败归零限制可靠性。"
+                    },
+                    "cost": {
+                        "score": 15,
+                        "rationale": "不自动改桥接或读私钥，主要是配置与人工授权复核。"
+                    }
+                },
+                "score": 64,
+                "revision": "99716388c9fa204b53bb6e931a239810d4524a0b",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-20-07-github-1351854356-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1351854356:root",
+                        "area": "code",
+                        "fingerprint": "99716388c9fa204b53bb6e931a239810d4524a0b"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1351854356:root",
+            "repository": "173787247/dsh-wsl-ssh-agent",
+            "path": "",
+            "revision": "99716388c9fa204b53bb6e931a239810d4524a0b",
+            "fingerprints": {
+                "directory": "33336ef6f4a5ea9197e6f4322078e44cb9bfb57e57b450b12ec8a3ac9508ceaa",
+                "code": "99716388c9fa204b53bb6e931a239810d4524a0b",
+                "maintenance": "dabe9eef54fb2349b8386b3852df4b9a1dbc60ec0b2bb99392f0eda4922b2483"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T09:36:48.824Z",
+            "analysis_sha256": "64b1936d0de6a33859ab758808fc46c4ccb5c1ee4fbc37bd5541d4457af51357"
+        },
+        "publication.metadata": "data/plugins/173787247--dsh-wsl-ssh-agent/META.json",
+        "publication.summaries": {
+            "text": "诊断WSL的SSH代理环境、已加载密钥数量与Windows代理桥接条件。",
+            "revision": "99716388c9fa204b53bb6e931a239810d4524a0b",
+            "source_url": "https://github.com/173787247/dsh-wsl-ssh-agent/blob/99716388c9fa204b53bb6e931a239810d4524a0b/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "99716388c9fa204b53bb6e931a239810d4524a0b",
+            "items": {
+                "模型工具": "ssh_agent_hint：SSH代理与Windows桥接诊断。"
+            }
+        },
+        "publication.advice": {
+            "revision": "99716388c9fa204b53bb6e931a239810d4524a0b",
+            "text": "把live socket当启发式提示，失败时查看sshAddDetail；不要在聊天中复制私钥。"
+        },
+        "registry": "data/plugins/173787247--dsh-wsl-ssh-agent",
+        "reports": "# dsh-wsl-ssh-agent\n\n> 诊断WSL的SSH代理环境、已加载密钥数量与Windows代理桥接条件。\n\n## 研究范围\n\n- **仓库**：[173787247/dsh-wsl-ssh-agent](https://github.com/173787247/dsh-wsl-ssh-agent)\n- **版本号**：0.2.0（[固定提交 99716388c9fa204b53bb6e931a239810d4524a0b](https://github.com/173787247/dsh-wsl-ssh-agent/tree/99716388c9fa204b53bb6e931a239810d4524a0b)）\n- **版本日期**：2026-09-30（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已有贡献：把常见SSH代理排障线索聚合为不回传私钥内容的提示；不自动建立代理桥接，也不证明目标Git服务认证通过。\n\n结论边界：本次为固定版本源码核查，未执行目标代码或真实宿主验收，未核实独立使用效果。下文设计假设均未验证。\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：Git SSH认证失败时，区分环境未继承、代理失效、未加载密钥与Windows桥接未配。\n- **亮点**：把常见SSH代理排障线索聚合为不回传私钥内容的提示；不自动建立代理桥接，也不证明目标Git服务认证通过。\n- **思考**：sockAlive只由exists判断，路径存在不证明是可服务的socket；ssh-add失败被归为keyCount=0，与真实空代理不同，可能误导加载密钥建议。\n- **建议**：待验证假设：分别表示路径存在、socket类型、代理协议可达和目标授权，可减少把不同失败合并；额外探测可能增加延迟和权限要求。\n\n采用建议：把live socket当启发式提示，失败时查看sshAddDetail；不要在聊天中复制私钥。\n\n## 核心贡献\n\n把常见SSH代理排障线索聚合为不回传私钥内容的提示；不自动建立代理桥接，也不证明目标Git服务认证通过。\n\n## 关键质疑\n\nsockAlive只由exists判断，路径存在不证明是可服务的socket；ssh-add失败被归为keyCount=0，与真实空代理不同，可能误导加载密钥建议。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n待验证假设：分别表示路径存在、socket类型、代理协议可达和目标授权，可减少把不同失败合并；额外探测可能增加延迟和权限要求。\n\n用普通文件冒充socket路径、空代理和拒绝连接样例核对诊断，再在获准测试目标验证认证；若仍混淆网络与授权则需独立状态。\n\n## 场景与替代办法\n\nGit SSH认证失败时，区分环境未继承、代理失效、未加载密钥与Windows桥接未配。\n\n手工查看环境、ssh-add及Windows代理状态；插件聚合已有命令结果。\n\n## 依赖与流程\n\n依赖WSL、OpenSSH工具和宿主进程环境；Windows转发另需npiperelay/socat与Windows OpenSSH agent。\n\n先读诊断，人工核对对应会话环境，再配置代理或加载测试密钥，最后独立验证目标授权。\n\n## 成本与效果\n\n进程探测、配置桥接和用户核对人工为主，无恢复率实测。\n\n把常见SSH代理排障线索聚合为不回传私钥内容的提示；不自动建立代理桥接，也不证明目标Git服务认证通过。 sockAlive只由exists判断，路径存在不证明是可服务的socket；ssh-add失败被归为keyCount=0，与真实空代理不同，可能误导加载密钥建议。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：45dbeee023a05694c79d4bd8773dec7732746d4b94a2bb84eb9769b32d708832。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 3 | 104 | — | — | 616 |\n| .js | source | 3 | 247 | 221 | 4 | — |\n| .js | test | 1 | 39 | 35 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **模型工具**：ssh_agent_hint：SSH代理与Windows桥接诊断。\n\n## 工程亮点\n\n建议构造与探测可注入依赖，便于边界验证；未知、失败与零数量应保留区别。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 index.js、lib/ssh-agent.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：检查入口和诊断实现；未读用户密钥、调用ssh-add或连接Git服务。\n- 下一步：用普通文件冒充socket路径、空代理和拒绝连接样例核对诊断，再在获准测试目标验证认证；若仍混淆网络与授权则需独立状态。\n",
+        "metadata": {
+            "repository": "173787247/dsh-wsl-ssh-agent",
+            "repository_id": 1351854356,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 1,
+            "pushed_at": "2026-09-30T03:22:46Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-ssh-agent%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6407:30A0ED:1441D8:21CA4E:6AD849B1 and timestamp 2026-10-21 05:12:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-ssh-agent%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640A:128E3:14BBFD:2247FD:6AD849B1 and timestamp 2026-10-21 05:12:18 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-ssh-agent%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6409:A4F3B:140F6D:21A870:6AD849B2 and timestamp 2026-10-21 05:12:18 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-ssh-agent%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6418:EFE19:141A08:21AC46:6AD849B2 and timestamp 2026-10-21 05:12:18 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-ssh-agent%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6400:330C23:1446A3:21CF75:6AD849B2 and timestamp 2026-10-21 05:12:18 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-wsl-ssh-agent",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-wsl-ssh-agent",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-wsl-ssh-agent",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "99716388c9fa204b53bb6e931a239810d4524a0b",
+                "current_revision": "99716388c9fa204b53bb6e931a239810d4524a0b",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1351854356:root",
+            "repository": "173787247/dsh-wsl-ssh-agent",
+            "path": "",
+            "revision": "99716388c9fa204b53bb6e931a239810d4524a0b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "33336ef6f4a5ea9197e6f4322078e44cb9bfb57e57b450b12ec8a3ac9508ceaa",
+                "code": "99716388c9fa204b53bb6e931a239810d4524a0b",
+                "maintenance": "dabe9eef54fb2349b8386b3852df4b9a1dbc60ec0b2bb99392f0eda4922b2483"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9ca4d9270f25192fbe7f8d303aa8374d",
+    "identity": "github:1346967596:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346967596:root",
+            "repository": "GitNoHup/macaron-theme",
+            "path": "",
+            "revision": "ae1509a4196a91109456e25a9f0c26a792d7ed3b",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "1837f4471337271a43cd821ce7e0823b2d243428bbf55e7cee4eb790732d8a66",
+                "code": "ae1509a4196a91109456e25a9f0c26a792d7ed3b",
+                "maintenance": "57659441e0793e73e23602f892bcf7ed12b714bfc07082faedf479edbac91b3e"
+            }
+        }
+    }
+}

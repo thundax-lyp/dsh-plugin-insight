@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ba472b6fee2cbe64d0b42f0284e102ec",
+    "identity": "github:1337299062:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337299062:root",
+            "repository": "lemonorangeapple/dsh-effort-switcher",
+            "path": "",
+            "revision": "1c4f796ed592c68fd5c33fa6bb370755a2fcbfb9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4626ba08cc460cd677b54fdb3c1fa814f24dcbf58491d7e0ff3e129ef4b50da2",
+                "code": "1c4f796ed592c68fd5c33fa6bb370755a2fcbfb9",
+                "maintenance": "6cc01a132dc56f3b5ec9de821ad7620d40263f6ad33142ba12057394dd257cf3"
+            }
+        }
+    }
+}

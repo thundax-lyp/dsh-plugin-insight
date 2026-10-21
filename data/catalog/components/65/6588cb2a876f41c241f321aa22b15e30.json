@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6588cb2a876f41c241f321aa22b15e30",
+    "identity": "github:1424114133:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424114133:root",
+            "repository": "Duoasa/DSH-to-Figma",
+            "path": "",
+            "revision": "9a1d9ff7e2f6d1bccaa7a2534bdad8a6dc64421d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8152da73c939ac9373c98877cfc9db7ac33cb366b45c6aa7c2c78e8b1cdf74d0",
+                "code": "9a1d9ff7e2f6d1bccaa7a2534bdad8a6dc64421d",
+                "maintenance": "f83529547ed8074282bf03945a1946e434269ba55c77de2280f789a9183b46d7"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fea414a6439a2b613d641c0bdae32f98",
+    "identity": "github:1341515091:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1341515091:root",
+            "repository": "suntianc/dsh-ui-settings-icons",
+            "path": "",
+            "revision": "437d5df0f11cd9b943bf38317396a6789afd703c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5621ec1755b73ddf736f8d51d869ee0d9f9d9c62e6b5a5678b8c74915bdadce4",
+                "code": "437d5df0f11cd9b943bf38317396a6789afd703c",
+                "maintenance": "c4c7d717b69ba2cf89f1139f5595b4a7d502c946e804e2c3b3240a49621f2e6b"
+            }
+        }
+    }
+}

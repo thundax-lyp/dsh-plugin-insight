@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "cb2a9ca385b1ee5dd43c70509cc55037",
+    "identity": "github:1336094276:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336094276:root",
+            "repository": "sunshaobei/dsh-input-history",
+            "path": "",
+            "revision": "6778f393cf1d85f11f08a17a2d2517e940d563d3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "bf54d87ec9329f65afa8626ec4dfa69c25c7f7926d046fc0a665dedfe47dd395",
+                "code": "6778f393cf1d85f11f08a17a2d2517e940d563d3",
+                "maintenance": "2b17774d7b0471c541ff09bdecba06e86860e27c3a158374b84b1a857b50fa66"
+            }
+        }
+    }
+}

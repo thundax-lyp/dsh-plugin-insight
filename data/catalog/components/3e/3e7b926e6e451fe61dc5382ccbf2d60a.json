@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3e7b926e6e451fe61dc5382ccbf2d60a",
+    "identity": "github:1348576964:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1348576964:root",
+            "repository": "bitterSmilezzz/dsh-model-selector",
+            "path": "",
+            "revision": "d68056bb8c4b5a38957e5b781eb4ce3b494ff37b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c727c1fa0a0209069dcf9de40352b194b2cc0678455ae75a54ed255ae17a3ac0",
+                "code": "d68056bb8c4b5a38957e5b781eb4ce3b494ff37b",
+                "maintenance": "02a8bb4fd61dec8bba0eae401236ac574b20d5dd912e372b05b8efc26d0ac9e5"
+            }
+        }
+    }
+}

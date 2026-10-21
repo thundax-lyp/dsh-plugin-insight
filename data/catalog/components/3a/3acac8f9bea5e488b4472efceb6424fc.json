@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3acac8f9bea5e488b4472efceb6424fc",
+    "identity": "github:1339254109:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339254109:root",
+            "repository": "ZChenW/dsh-codex-switch",
+            "path": "",
+            "revision": "7cde17417e3b2a194eb033b3e419d50ddff17190",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3b647a62a391466d3de511602de7627bb7d2d744784f7095aa8f6c45b1fcc677",
+                "code": "7cde17417e3b2a194eb033b3e419d50ddff17190",
+                "maintenance": "bd25f1a954351c2b993d3609f8c4d5ec8edfe77432017c897beac4631c2be107"
+            }
+        }
+    }
+}

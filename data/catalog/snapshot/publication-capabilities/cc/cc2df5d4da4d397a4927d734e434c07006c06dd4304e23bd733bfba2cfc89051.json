@@ -1,8 +1,0 @@
-{
-  "revision": "e5c9c5df08a56a23e37966640390d07052fcc9a6",
-  "items": {
-    "模型工具": "audit_sync、audit_top、audit_plugin、audit_scan及趋势查询",
-    "界面": "实验性插件榜单面板",
-    "后台": "本地catalog/meta/history与可选定时同步"
-  }
-}

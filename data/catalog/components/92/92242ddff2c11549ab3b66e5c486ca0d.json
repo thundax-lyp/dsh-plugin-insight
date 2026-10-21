@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "92242ddff2c11549ab3b66e5c486ca0d",
+    "identity": "github:1425534441:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425534441:root",
+            "repository": "TinyBOOOOM/dsh-cliproxyapi-pro",
+            "path": "",
+            "revision": "5ca93a4fbf849f81607a0d8063474a20455a7d8b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "45994f3522c29d01e1e1386bfca48ea461dbb47fb784a7abc0169d1af210c20b",
+                "code": "5ca93a4fbf849f81607a0d8063474a20455a7d8b",
+                "maintenance": "27dab59d3da06d9bf931253aee53f6655ab39cbc628055c4096eb246e299b91f"
+            }
+        }
+    }
+}

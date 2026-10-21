@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9f6a7bdecf193da2f1a5a82a5adf59c1",
+    "identity": "github:1354765689:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1354765689:root",
+            "repository": "QuantumKuba/dsh-continuum",
+            "path": "",
+            "revision": "2d4b589ab6bd0b2df9575930ab9c36511637846e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4d9d544e91caa63ceb419e7cf16f82f47bb02e10d11115898ba0a30a91221ada",
+                "code": "2d4b589ab6bd0b2df9575930ab9c36511637846e",
+                "maintenance": "628a0c7cd30430ed44490f11f3d4e2d7da9c152a652c0212e75b0f4756ca88d8"
+            }
+        }
+    }
+}

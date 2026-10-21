@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b7e9cfb1b1189fce3be6a67836300e1f",
+    "identity": "github:1335721523:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335721523:root",
+            "repository": "Laplace-bit/dsh-bell-notify",
+            "path": "",
+            "revision": "a2d2440f0905a5b6fc48584e59ab45a8c58bcc38",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ec49ed24a9a36db6aa3478263214707126d3c5c34510c87aceca95567059b3ea",
+                "code": "a2d2440f0905a5b6fc48584e59ab45a8c58bcc38",
+                "maintenance": "77b1ac8e0df0b4765735814026c39ca5ede5d9385e41e72368f5ab1a6c7a18e5"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "92a21b0afa021c9edf40a1c80e8ac065",
+    "identity": "github:1334361148:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334361148:root",
+            "repository": "xuboboo/dsh-xiaohongshu-viral-note",
+            "path": "",
+            "revision": "a10ed9ceb6a25653f7ce58c5fecd08a636e06baa",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "ff0b57f22f5c137222f561071b3116fcce4ee474c9022daf483c6cdd6e9ed2a9",
+                "code": "a10ed9ceb6a25653f7ce58c5fecd08a636e06baa",
+                "maintenance": "dea49d93ad30bd9ee0c953c900ec732c56c3f18a7cf02d408b4ab6d71bc33254"
+            }
+        }
+    }
+}

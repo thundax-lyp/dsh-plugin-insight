@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "c1ae076e7e1009d0c13a5b2b66f7fa0c",
+    "identity": "github:1332051085:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1332051085:root",
+            "repository": "hellodigua/dsh-share",
+            "path": "",
+            "revision": "b5212ef748ac56aeb4d56c6f8a86be836921114f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "f12100f9075da87cece1ec32c2a20582929e5357049ea2536d01a929c0b3d1db",
+                "code": "b5212ef748ac56aeb4d56c6f8a86be836921114f",
+                "maintenance": "7cd4313875480b197a917a2cd38ea3aa75301177623f5b1ec2d8a951fe41eed4"
+            }
+        }
+    }
+}

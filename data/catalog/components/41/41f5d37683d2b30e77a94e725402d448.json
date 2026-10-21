@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "41f5d37683d2b30e77a94e725402d448",
+    "identity": "github:1336813290:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336813290:root",
+            "repository": "uigdwunm/dsh-process-fold",
+            "path": "",
+            "revision": "b9aa91c652fcef3db443de462c742404b3754e2a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d2507400bb4b8e5a2c8dd5f8e939cbf6caf439cdf2f395841ecca04c5155cce7",
+                "code": "b9aa91c652fcef3db443de462c742404b3754e2a",
+                "maintenance": "8f18943bfa282dbc26eab8c6d3a2deda33afd85b8c4be2e83c161ff7498c83b2"
+            }
+        }
+    }
+}

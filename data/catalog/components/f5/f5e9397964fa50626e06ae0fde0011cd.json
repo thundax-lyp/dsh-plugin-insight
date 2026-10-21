@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f5e9397964fa50626e06ae0fde0011cd",
+    "identity": "github:1369593038:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1369593038:root",
+            "repository": "Missher12/Missher-DSH-Brain",
+            "path": "",
+            "revision": "dda4cdb04b19d574fff8deeed6f7fd6dae29fa08",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "08395d4d932818b1a46d0fab5cf31408a14337451396d38723ed2f6f95d21fc2",
+                "code": "dda4cdb04b19d574fff8deeed6f7fd6dae29fa08",
+                "maintenance": "a2632c1315b217fb6fd6435ddef36e6f9e4530b0a71126f70556766af5f96bb2"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d78c9650aa9ef7611f3b57aebc402219",
+    "identity": "github:1343875898:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343875898:root",
+            "repository": "Unintendedz/dsh-session-workspace",
+            "path": "",
+            "revision": "cedbfe9d4d55360da20e19024bc2edfd6a619a37",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "0cc8c91408649200701e1640b0ff19eb9109b465e1b3a6380bd625794dd79a9c",
+                "code": "cedbfe9d4d55360da20e19024bc2edfd6a619a37",
+                "maintenance": "3141dc1fd6a86fa9bc340907136e6863837a2c70763ed4926939abad35be8748"
+            }
+        }
+    }
+}

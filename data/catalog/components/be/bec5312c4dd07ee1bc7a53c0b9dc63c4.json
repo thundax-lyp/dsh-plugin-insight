@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bec5312c4dd07ee1bc7a53c0b9dc63c4",
+    "identity": "github:1415654468:packages-dsh-sidebar-tidy",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1415654468:packages-dsh-sidebar-tidy",
+            "repository": "Cjrrrrrrrr/dsh-plugins",
+            "path": "packages/dsh-sidebar-tidy",
+            "revision": "3d546b1dcd534ba412f5eaa7989368e0d5f5e006",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8a91f8ee5f0d5dffce165f36a27b159a195f25a4fb5c375dc223a56350d7a329",
+                "code": "3d546b1dcd534ba412f5eaa7989368e0d5f5e006",
+                "maintenance": "f6251047ad6adaa3f9a5df9b74d14707738f9fb9045ec478bbf4f4ab03838c03"
+            }
+        }
+    }
+}

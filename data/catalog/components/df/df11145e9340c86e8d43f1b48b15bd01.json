@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "df11145e9340c86e8d43f1b48b15bd01",
+    "identity": "github:1333773605:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333773605:root",
+            "repository": "ljsysfurryACE/dsh-compaction",
+            "path": "",
+            "revision": "cd360149d7ee4daa520b2ccb53e448de13c64cbf",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "32d39ed7d816334750acb8278e5fff334bc349271343c9128eeb08ec57b89d68",
+                "code": "cd360149d7ee4daa520b2ccb53e448de13c64cbf",
+                "maintenance": "7e227f200c8fbc002209c44c4acdc3d2ae73bfb3d4c6d922f756cb55a202132f"
+            }
+        }
+    }
+}

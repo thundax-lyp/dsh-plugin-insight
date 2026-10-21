@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "103df155d30a1429245a78aaa2f107cd",
+    "identity": "github:1333354895:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333354895:root",
+            "repository": "PerryLink/dsh-claude-move",
+            "path": "",
+            "revision": "9db243d8d1b4a024b538e6bc4c32cbe2eb847b22",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "f0d77c47582f256395919de81183d4be7ad7fedcc314f4ce2a4e1062c90469b8",
+                "code": "9db243d8d1b4a024b538e6bc4c32cbe2eb847b22",
+                "maintenance": "fbec8fc13335e1bb933a746bcb72082dfc727b716e2b2a91cc337d88b7c66a0f"
+            }
+        }
+    }
+}

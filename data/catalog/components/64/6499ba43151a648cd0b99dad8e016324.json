@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6499ba43151a648cd0b99dad8e016324",
+    "identity": "github:1335272572:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335272572:root",
+            "repository": "imkingjh999/dsh-shorts-wall",
+            "path": "",
+            "revision": "adf56faa041b7271edb0cc2476296040d36e074c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1be3516ef93ef34395cf8718b302316fbe20dd369ab6b3077a07bbc0122d5eb1",
+                "code": "adf56faa041b7271edb0cc2476296040d36e074c",
+                "maintenance": "2a15bbc6861167a6ad1eecb651708823812ad1a90ac818aa88c30780f9e2cc16"
+            }
+        }
+    }
+}

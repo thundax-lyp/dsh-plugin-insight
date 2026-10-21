@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "f39fdaca954790aa1cb1995bebccb299",
+    "identity": "github:1337920628:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337920628:root",
+            "repository": "MeteorNOX/DeepSeek-Balance-Whale-Widget",
+            "path": "",
+            "revision": "5247dd6813d6e4430728f39ccc63d43cda046022",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "a1b560b8667c8cfff82a738e384519f30d90e50ce026e4dec1b176bac00d028f",
+                "code": "5247dd6813d6e4430728f39ccc63d43cda046022",
+                "maintenance": "2b5dd4940c94eae491c9b536107560a327a9661eb0818ca218d278b7a7b9a793"
+            }
+        }
+    }
+}

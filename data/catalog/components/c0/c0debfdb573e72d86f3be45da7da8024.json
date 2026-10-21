@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c0debfdb573e72d86f3be45da7da8024",
+    "identity": "github:1338252697:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338252697:root",
+            "repository": "superfish058/dsh-llm-proxy",
+            "path": "",
+            "revision": "a0aa646474037e30b8354fb85b598103507b7f6f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f165c465ae6a4b67d8cb6a8e29f2fb8fe8606d06eb369af85274326a44dc7174",
+                "code": "a0aa646474037e30b8354fb85b598103507b7f6f",
+                "maintenance": "861d72812b82021389f7f31b88946c88664d8d68c3d69c292d07aab868601eaf"
+            }
+        }
+    }
+}

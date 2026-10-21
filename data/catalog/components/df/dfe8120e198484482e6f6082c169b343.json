@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "dfe8120e198484482e6f6082c169b343",
+    "identity": "github:1333982245:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333982245:root",
+            "repository": "hi-wenw/dsh-telegram-channel",
+            "path": "",
+            "revision": "7af6cefb9cb6b9b5fb2e58785dd45933f0a682ad",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "f71169d17b21ee54f241e19e360c9017004b3c725b95a2bcf5e6f919c5709395",
+                "code": "7af6cefb9cb6b9b5fb2e58785dd45933f0a682ad",
+                "maintenance": "bb769f1dc03eeba8c8413aec01154cb8f7ef3e4f2531e73c4dbd77ba0b0fce77"
+            }
+        }
+    }
+}

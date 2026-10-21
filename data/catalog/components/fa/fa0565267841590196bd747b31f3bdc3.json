@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fa0565267841590196bd747b31f3bdc3",
+    "identity": "github:1336060382:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336060382:root",
+            "repository": "Juryorca/dsh-custom-theme-import",
+            "path": "",
+            "revision": "b77585d24385302bf243251df6f7b1d9a9cf5703",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "97ddd836b2add6ee5da0031cf8cca741d9bf7294ae2c608989992cbec270cff3",
+                "code": "b77585d24385302bf243251df6f7b1d9a9cf5703",
+                "maintenance": "b09bc1c41da1d2be547b7f29aaabc7722f52c00f486ab399b40e116b6d0415f2"
+            }
+        }
+    }
+}

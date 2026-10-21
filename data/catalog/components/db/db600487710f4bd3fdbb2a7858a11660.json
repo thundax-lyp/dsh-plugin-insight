@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "db600487710f4bd3fdbb2a7858a11660",
+    "identity": "github:1418650637:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1418650637:root",
+            "repository": "chenyuan1251/dsh-pet-niumali",
+            "path": "",
+            "revision": "02cfce59ee5a3f9cc718293751566e0123fed726",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b9094a5bb7d19c87806f7bd542ac7030e17b1a8cbe4b68756b7d1c8f5567cd27",
+                "code": "02cfce59ee5a3f9cc718293751566e0123fed726",
+                "maintenance": "c8be5134ef25c1cdc2ae5634a6e13e19ee7bbc73268dd51586f03536e5d8a374"
+            }
+        }
+    }
+}

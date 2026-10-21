@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "466354b68395dba91d3c5546fcbeb671",
+    "identity": "github:1358542017:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1358542017:root",
+            "repository": "drscrewdriver/dsh-context-compression-improved",
+            "path": "",
+            "revision": "dad9f5e9b60a2362f26a26367ab27cac30144a7c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "838e77b0fbadd0c1f75e117de2d25d2a11d65acffe6e93b54db1e9e799bab570",
+                "code": "dad9f5e9b60a2362f26a26367ab27cac30144a7c",
+                "maintenance": "d0e675c90dcd9ee3056dad7fca44f33a395bcfc0b9a8436fbdf7ef82c907202b"
+            }
+        }
+    }
+}

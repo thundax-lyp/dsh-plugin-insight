@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "009269771cff99997cf486f82a3b929c",
+    "identity": "github:1340608525:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340608525:root",
+            "repository": "ChuShiZ/dsh-archive-manager",
+            "path": "",
+            "revision": "ece9bc799753c231581906f8e45adcbe5acfdf91",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "35dc74b52fb5693780b812815117e4e63213e133d986b02b6e73065a2ffb9392",
+                "code": "ece9bc799753c231581906f8e45adcbe5acfdf91",
+                "maintenance": "041c56cf113a63751f92881ef964b0ff7a649b524a043fecdd3f51a3e6aaf678"
+            }
+        }
+    }
+}

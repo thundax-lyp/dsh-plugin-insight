@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "83ea3cf860eba11f865eb5007d70b9c3",
+    "identity": "github:1334063554:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334063554:root",
+            "repository": "Awu12277/dsh-stock-watch",
+            "path": "",
+            "revision": "ea922597583d339f4e0fba0facae95b5a127d004",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "a67e165ac4fae7f6577be593dd0fe8095d5afe7a87a019eb8f33581f4de79723",
+                "code": "ea922597583d339f4e0fba0facae95b5a127d004",
+                "maintenance": "0979811b6c7b5407bd8f9e597c1e16d84165397a5565b0bf61cf1b480022de10"
+            }
+        }
+    }
+}

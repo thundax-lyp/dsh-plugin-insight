@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "71ff8a1671ee6503746d6fa9168cf7e7",
+    "identity": "github:1335133973:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335133973:root",
+            "repository": "Elohia/dsh-genome",
+            "path": "",
+            "revision": "4ac0199c29d5d53af82e35d7c2b2cb953f9e4e4a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f83c2a384dddd88ab1867f9b669d1c0630c11c483691b898f7380884e605e795",
+                "code": "4ac0199c29d5d53af82e35d7c2b2cb953f9e4e4a",
+                "maintenance": "587f4fa82698200196c8bff9c476af6c4d911f94b670b4fdb1bf448d8dabee36"
+            }
+        }
+    }
+}

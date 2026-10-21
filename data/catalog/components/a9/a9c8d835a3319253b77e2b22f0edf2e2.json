@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a9c8d835a3319253b77e2b22f0edf2e2",
+    "identity": "github:1340565092:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340565092:root",
+            "repository": "luxueliu/luxueliu-usage-command",
+            "path": "",
+            "revision": "41fbc5e80b178697b7a1d4aa2b50cf647a665858",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1ae59be4884c24c72a05fac903ed15fc60bd5ffd30b2229ce860f1f05f223058",
+                "code": "41fbc5e80b178697b7a1d4aa2b50cf647a665858",
+                "maintenance": "781c189c8670b08f887b9ef1097b30f78b353ac447a8c40d7779e5a7c7c0c5dd"
+            }
+        }
+    }
+}

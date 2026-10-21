@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "b71bb7d8d11d22912f71e45fd58384a2",
+    "identity": "github:1347086814:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347086814:root",
+            "repository": "zenvertao/dsh-inline-comments",
+            "path": "",
+            "revision": "d586bc8a1c823cdd948d4dc6a335c6d387c5a506",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "74ab1fd216066206e9a4f00e92504910b629cce5c55e203b213ff968f19c9243",
+                "code": "d586bc8a1c823cdd948d4dc6a335c6d387c5a506",
+                "maintenance": "98ab7f6434b3b2df19d25d6a0479ccf076eddc2bc18ea164ab23ac37509ee458"
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "230aed376f05bd7a8d21a0da607d096c",
+    "identity": "github:1343837363:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343837363:root",
+            "repository": "luweiyabo/dsh-whale-pet",
+            "path": "",
+            "revision": "4c9ad7ff8c8ad640a827525b3512ca544572e9ca",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "256deaaf6070e3922e9562321b412285649a3c2a4311a272217b923143cfb362",
+                "code": "4c9ad7ff8c8ad640a827525b3512ca544572e9ca",
+                "maintenance": "fa81e4face490e3b94356dff31c1dad131cd9c26cb6f014dc001492dfa7ca657"
+            }
+        }
+    }
+}

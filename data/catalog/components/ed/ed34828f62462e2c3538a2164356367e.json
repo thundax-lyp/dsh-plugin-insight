@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ed34828f62462e2c3538a2164356367e",
+    "identity": "github:1416411327:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1416411327:root",
+            "repository": "realguan/dsh-deepseek-chat-embed",
+            "path": "",
+            "revision": "1347ac644d478d261fc294908dc213e32e02695d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2ea1fe71f634d961f39b84c8ea44017c7d3f10f18d79797228f28fb57ae30b3e",
+                "code": "1347ac644d478d261fc294908dc213e32e02695d",
+                "maintenance": "58de72f362ae5937961f972de821b51db2ee91deaffaaca2fb2bc67e190fa82b"
+            }
+        }
+    }
+}

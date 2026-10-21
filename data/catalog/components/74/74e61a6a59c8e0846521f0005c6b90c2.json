@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "74e61a6a59c8e0846521f0005c6b90c2",
+    "identity": "github:1335954292:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335954292:root",
+            "repository": "pzc2004/dsh-frostfin",
+            "path": "",
+            "revision": "1d86efcbc218698a58225e3381bc76b5b600baed",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "827758c98778e79e3dfd9f1628b132a0fc9760d9c7901cc997d8b96f66d5a77f",
+                "code": "1d86efcbc218698a58225e3381bc76b5b600baed",
+                "maintenance": "eac4495719022682e101e534073867fb701d8afabc943484a14ec66256f78180"
+            }
+        }
+    }
+}

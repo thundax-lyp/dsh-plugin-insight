@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4bef94c6d0b01a3185d51a93ddd4f415",
+    "identity": "github:1333710014:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333710014:root",
+            "repository": "NoWint/Oh-My-DSH",
+            "path": "",
+            "revision": "154c95ebcdfbfd7b2a7877ccfae8c4870f30a863",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "ab61f03426e1020a11f43f4545c2afd83b708f2350e68227394b3abb996c80c1",
+                "code": "154c95ebcdfbfd7b2a7877ccfae8c4870f30a863",
+                "maintenance": "d9fc6b9a99c59d96da415c296d1048b8375d4f83697bd1c92ca22c46f0090227"
+            }
+        }
+    }
+}

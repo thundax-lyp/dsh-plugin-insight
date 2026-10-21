@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1009fcdad539ac367f9c17d12471e6cb",
+    "identity": "github:1369151201:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1369151201:root",
+            "repository": "weimingyu9312/DSHSwitch",
+            "path": "",
+            "revision": "ebecd9530619e5587dad29534d0d317faccc54f3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7922dd322d155098ce6b6663977a2db92b3908e9ac0156f644325a2eab264c96",
+                "code": "ebecd9530619e5587dad29534d0d317faccc54f3",
+                "maintenance": "90f7afc382b47f9fc193cacb84d62bc387ac0398f682f376d6b1751648376781"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2484c00fbdef4a5556eef29a356c7dd9",
+    "identity": "github:1159938129:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1159938129:root",
+            "repository": "ZSeven-W/openpencil",
+            "path": "",
+            "revision": "d155cd08c09cdb79f4c0a2c733dc5f9376765abd",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "6cd4b1fc5d072b68bf0e30aee53c7a71d04a39b0e4d06534a151646f7d47b303",
+                "code": "d155cd08c09cdb79f4c0a2c733dc5f9376765abd",
+                "maintenance": "f02f028b99ff90771cdf34c76d28171247b9c26782464e4f2e922e5c513aa8f1"
+            }
+        }
+    }
+}

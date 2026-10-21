@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "87211322e9f3eafcb975c7c5445e8b75",
+    "identity": "github:1403786073:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1403786073:root",
+            "repository": "Stmol/dsh-prompt-lib",
+            "path": "",
+            "revision": "fc6dd22fd2855b18dd55cd01238680a76b20bc8d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3f6ef5dd555f1e52c182fe7f4dfed29b83828a9506f06e4127926edcd4facd63",
+                "code": "fc6dd22fd2855b18dd55cd01238680a76b20bc8d",
+                "maintenance": "85b7140a59f2509f18d9d30d4e63c8e6761406183e83698b53d67def8c6b8a38"
+            }
+        }
+    }
+}

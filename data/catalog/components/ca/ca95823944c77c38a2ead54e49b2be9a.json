@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ca95823944c77c38a2ead54e49b2be9a",
+    "identity": "github:1407572157:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1407572157:root",
+            "repository": "lcy0121/dsh-plugin-compat-check",
+            "path": "",
+            "revision": "a59328d55be6888848d2efa24500c772c61e10ee",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "630667157b69d5db718947a5d2631458b990eb3523e42f33f4dd0f28114af018",
+                "code": "a59328d55be6888848d2efa24500c772c61e10ee",
+                "maintenance": "fa0c885333b2b0b48deb64d516d2cf5d427e8f7b9a75b5f2e240bfda8b082c92"
+            }
+        }
+    }
+}

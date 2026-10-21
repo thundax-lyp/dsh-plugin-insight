@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8b307de36a814303daadc2cfee7ab34a",
+    "identity": "github:1342726695:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342726695:root",
+            "repository": "Edge-HH/GrokBot_in_DeepseekHerness",
+            "path": "",
+            "revision": "70cf298b3e187dfda96253d8da6ed657f19adb07",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "dd7647938d5ca18062cc9065984576ba13ea125648986011440591bba5aeba20",
+                "code": "70cf298b3e187dfda96253d8da6ed657f19adb07",
+                "maintenance": "3cba5c8b8478ffdfff604be45825194eccdf2e72c600094beee242eb7c5d8bf6"
+            }
+        }
+    }
+}

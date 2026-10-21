@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "dac636cc000e2c52c8adabd592692c3f",
+    "identity": "github:1335691027:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335691027:root",
+            "repository": "zjl1989-li/dsh-harness-zh-cn",
+            "path": "",
+            "revision": "7b282c4d6665d149f81a37059921a9108251167f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "670ec0dff7bbb5d4d83ce4d50a28d3535ba38a2625180a27aa8656304d49aae2",
+                "code": "7b282c4d6665d149f81a37059921a9108251167f",
+                "maintenance": "2c7c8495205aeab37f16926c43fe2d326e7f91b8cfebcb9c30371c274ef944b2"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "117f743a4073651a9a8ee25c41079c3b",
+    "identity": "github:1338852104:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338852104:root",
+            "repository": "uson1x/dsh-plugin-llm-verifier",
+            "path": "",
+            "revision": "5bd2a6704e679f2eb88a2146d2c6d459edc5d1e5",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "07e1dba3afc8091bcefa3d6073460bf5a1a4609cfabae2d6b8874aeb72e05de5",
+                "code": "5bd2a6704e679f2eb88a2146d2c6d459edc5d1e5",
+                "maintenance": "646fcdab3da4760b3a4c7740741b8426c722b3927683d6d18d5205a3c1229bfc"
+            }
+        }
+    }
+}

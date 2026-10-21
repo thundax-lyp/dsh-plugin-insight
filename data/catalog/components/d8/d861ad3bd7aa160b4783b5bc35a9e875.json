@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d861ad3bd7aa160b4783b5bc35a9e875",
+    "identity": "github:1378391353:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1378391353:root",
+            "repository": "blkpne/dsh-database",
+            "path": "",
+            "revision": "c22af95f0b7426ebe9196641301154fb3cbfc14d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "bc377d53fe6e69d60f058fe19a18686707b556b304fffd504a950525c125aa20",
+                "code": "c22af95f0b7426ebe9196641301154fb3cbfc14d",
+                "maintenance": "7597d99030a87b2a43bb9536d47e7ee8a47cf7bb39535dfb722288ab8d99c91f"
+            }
+        }
+    }
+}

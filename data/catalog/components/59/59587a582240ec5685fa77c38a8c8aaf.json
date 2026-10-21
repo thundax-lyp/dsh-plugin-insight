@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "59587a582240ec5685fa77c38a8c8aaf",
+    "identity": "github:1334846559:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334846559:root",
+            "repository": "Jungod1121/dsh-anchored-standard",
+            "path": "",
+            "revision": "560530f0e1af6dba3528ac8962f5e5e63951b1bb",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "80d6e830b9f6a01ab036af2963971d638015bac6c18d898eaa133ee04454898e",
+                "code": "560530f0e1af6dba3528ac8962f5e5e63951b1bb",
+                "maintenance": "8d93083ee2185f7772875ac3018dd0c79f2ecd443b741cbb7091e16ea0c26f51"
+            }
+        }
+    }
+}

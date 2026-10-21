@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e894702a3749187884780382c791842c",
+    "identity": "github:1334733789:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334733789:root",
+            "repository": "x2802490130-prog/dsh-client-ui-writing",
+            "path": "",
+            "revision": "a7b759a110ee1cc4056e7726d31ccb0cb5fd577b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6a580dbf1645831201b5839d9991742adc26ea2def55edec6b37e3d3a95bfcbb",
+                "code": "a7b759a110ee1cc4056e7726d31ccb0cb5fd577b",
+                "maintenance": "c3f1b519a650cdd1a53388c40e59923ffa8085e611b8169ef9bb1944cac4718a"
+            }
+        }
+    }
+}

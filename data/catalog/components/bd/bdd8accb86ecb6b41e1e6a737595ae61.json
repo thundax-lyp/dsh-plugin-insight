@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bdd8accb86ecb6b41e1e6a737595ae61",
+    "identity": "github:1336016459:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336016459:root",
+            "repository": "Lhy723/dsh-agent-canvas",
+            "path": "",
+            "revision": "87d27f23905fbea29d251374795ec6f977076d00",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "bbdb979423059e47554cb16c73d140bb348686c65409782b49834027f342790b",
+                "code": "87d27f23905fbea29d251374795ec6f977076d00",
+                "maintenance": "785d8ca7dc168e1bffa4a369d31397da52f13537ae10fa247e2cf21cedc5ef72"
+            }
+        }
+    }
+}

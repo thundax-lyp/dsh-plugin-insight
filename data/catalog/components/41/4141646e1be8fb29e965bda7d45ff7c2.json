@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4141646e1be8fb29e965bda7d45ff7c2",
+    "identity": "github:1368481604:packages-deepblend-bundle",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1368481604:packages-deepblend-bundle",
+            "repository": "pearjelly/deep-blend",
+            "path": "packages/deepblend/bundle",
+            "revision": "7e4779338952cc1342d7cf076161eeae8615e6a6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "83e0c999baf928cb705645bd3f19abcc7801c726a5ee5f15c08101db9dbf77ea",
+                "code": "7e4779338952cc1342d7cf076161eeae8615e6a6",
+                "maintenance": "9f65f480cb0bb01d56103827a29aa1a80fcb375c9b6c897e3ce49bfa0cb6f384"
+            }
+        }
+    }
+}

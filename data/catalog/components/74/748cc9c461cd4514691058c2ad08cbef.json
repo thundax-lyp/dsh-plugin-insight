@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "748cc9c461cd4514691058c2ad08cbef",
+    "identity": "github:1372899257:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1372899257:root",
+            "repository": "hoyyang/dsh-agent-billing",
+            "path": "",
+            "revision": "990e88fbcec36810aef2b0b2f3065bca0670e0c6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "33434dd2fd0e5a674dc2831abfde48c8ccf86ca2d89297123d66d2e8c3e494d3",
+                "code": "990e88fbcec36810aef2b0b2f3065bca0670e0c6",
+                "maintenance": "adc34fd2200742169cc4a5f6309b040794be11c8f453980859961c06efcf93ef"
+            }
+        }
+    }
+}

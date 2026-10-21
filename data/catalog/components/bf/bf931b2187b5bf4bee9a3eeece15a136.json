@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bf931b2187b5bf4bee9a3eeece15a136",
+    "identity": "github:1424123378:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424123378:root",
+            "repository": "azkbzxf/dsh-account-balance-pill",
+            "path": "",
+            "revision": "c2ebad989071191d02d038dd5b50a1f3478a4957",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f6e5bd62263d1c819a6ea65528afa33997c3ebe64a6a75e070797e2a7ec86613",
+                "code": "c2ebad989071191d02d038dd5b50a1f3478a4957",
+                "maintenance": "d9bc5a64ec2ac9d43a3a68c620ae0eaec320ef5feefe3ee7cf738e4cb144ff1f"
+            }
+        }
+    }
+}

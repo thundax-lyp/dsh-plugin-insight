@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5c47b720a3c4ffd4f29984f284ecfab6",
+    "identity": "github:1361254970:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1361254970:root",
+            "repository": "boogoo619/dsh-noteboard",
+            "path": "",
+            "revision": "4f8978e95e2c7a8eeee03a13e5e9e77ee163fe13",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0394b9edbc7a1419c8ebdccb95bd8d8927ae6a9ca1154c3f3e498ceeca713427",
+                "code": "4f8978e95e2c7a8eeee03a13e5e9e77ee163fe13",
+                "maintenance": "8188c6063f7546d83f6d8111489a397aec31840dddef415fa9fcc7ac5576fae7"
+            }
+        }
+    }
+}

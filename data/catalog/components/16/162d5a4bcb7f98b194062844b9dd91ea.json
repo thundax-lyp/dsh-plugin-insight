@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "162d5a4bcb7f98b194062844b9dd91ea",
+    "identity": "github:1423896452:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1423896452:root",
+            "repository": "yezitotempeace/dsh-big-compact",
+            "path": "",
+            "revision": "94fa3625dcc3f52dcddfd15d0c647dbd11b150c2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "489851df1c0293d180f530c8812e1ac34b2b610727a55fe29638654cec039b8a",
+                "code": "94fa3625dcc3f52dcddfd15d0c647dbd11b150c2",
+                "maintenance": "88ab2eda3293461da7ac376f3ee4d77284c3076b4d0084d6789f4acb519fe241"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c1d03a7666a186cc712ff2cf0868617e",
+    "identity": "github:1335083285:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335083285:root",
+            "repository": "Stellum-Waq/dsh-pet-ronaldo",
+            "path": "",
+            "revision": "db09e4d59a99c1916fef06d444a0f2a562e6ddc2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "73bb6f697ec2a92ed75b79390383c5a010065011bd238590d2805705c47eb6fb",
+                "code": "db09e4d59a99c1916fef06d444a0f2a562e6ddc2",
+                "maintenance": "2b7afaac29586133ea40d0bbf85f82832fdfa03615ad7757de0cad8c0720bf2e"
+            }
+        }
+    }
+}

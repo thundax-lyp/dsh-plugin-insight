@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "58e9fc43558be4ed2de8bdf7d4a0971a",
+    "identity": "github:1392986238:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1392986238:root",
+            "repository": "iasiv5/dsh-quota-watch",
+            "path": "",
+            "revision": "9db7613c8399d01c95b124aa22d0f3db15645e52",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "049afbf615c62e6b0f482eacdb5cb5d3b90f4f5a4b5291a9e6f6aab309e961d2",
+                "code": "9db7613c8399d01c95b124aa22d0f3db15645e52",
+                "maintenance": "c2d07af93d5692dd3d5071eb71ae5c45d515003db9fe863fb516aa66a6068c90"
+            }
+        }
+    }
+}

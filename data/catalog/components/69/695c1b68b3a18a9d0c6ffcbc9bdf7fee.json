@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "695c1b68b3a18a9d0c6ffcbc9bdf7fee",
+    "identity": "github:1335906370:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335906370:root",
+            "repository": "jiuyuechuwuhao/dsh-canvas-preview",
+            "path": "",
+            "revision": "46de48d147b0bbdb0013d32764d7db75344fc3c4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "98c35d21a4de1098ca696575db08c5408f2a9253dee85916ea98708b346eddb3",
+                "code": "46de48d147b0bbdb0013d32764d7db75344fc3c4",
+                "maintenance": "d14ac1744c097174d21baf205433262dfaacc45a48702483c52ba81e9f8045c1"
+            }
+        }
+    }
+}

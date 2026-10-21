@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { validateRecommendation } from './recommendation.mjs';
 import { validateInnovationScores } from './innovation-score.mjs';
 import { CATALOG } from './data-paths.mjs';
 import { createHash, randomUUID } from 'node:crypto';
@@ -65,7 +66,8 @@ export const analysisDigest = (plugin) =>
         last_checked_at: plugin.last_checked_at,
         research_depth: plugin.research_depth,
         findings: plugin.findings,
-        ...(plugin.innovation_scores ? { innovation_scores: plugin.innovation_scores } : {})
+        ...(plugin.innovation_scores ? { innovation_scores: plugin.innovation_scores } : {}),
+        ...(plugin.recommendation ? { recommendation: plugin.recommendation } : {})
     });
 
 const ajv = new Ajv2020({ allErrors: true, strict: true });
@@ -122,6 +124,7 @@ export const validate = (catalog) => {
     }
     for (const plugin of plugins.values()) {
         validateInnovationScores(plugin, plugins);
+        validateRecommendation(plugin, plugins);
         for (const finding of plugin.findings) {
             if (finding.evidence_ids.some((id) => !evidence.has(id)))
                 throw new Error(`unknown evidence reference: ${finding.id}`);
@@ -152,6 +155,7 @@ export const validateObservations = (observations) => {
         indexed(plugin.evidence, 'evidence');
         indexed(plugin.findings, 'finding');
         validateInnovationScores(plugin);
+        validateRecommendation(plugin);
         if (Date.parse(plugin.last_checked_at) > Date.parse(observations.checked_at)) {
             throw new Error('plugin check is later than batch cutoff');
         }
@@ -192,6 +196,8 @@ export const plan = (catalog, observations, mode) => {
             const merged = structuredClone(fresh);
             if (!fresh.innovation_scores && old.innovation_scores)
                 merged.innovation_scores = structuredClone(old.innovation_scores);
+            if (!fresh.recommendation && old.recommendation)
+                merged.recommendation = structuredClone(old.recommendation);
             merged.sources = mergeImmutable(old.sources, fresh.sources, 'source');
             merged.evidence = mergeImmutable(old.evidence, fresh.evidence, 'evidence');
             const findings = indexed(structuredClone(old.findings), 'finding');
@@ -226,6 +232,13 @@ export const plan = (catalog, observations, mode) => {
         if (plugin.innovation_scores && stale(plugin.innovation_scores, plugins)) {
             invalidated ||= plugin.innovation_scores.status === 'current';
             plugin.innovation_scores.status = 'needs_review';
+        }
+        if (
+            plugin.recommendation?.decision !== 'unassessed' &&
+            plugin.recommendation &&
+            stale(plugin.recommendation, plugins)
+        ) {
+            plugin.recommendation.status = 'needs_review';
         }
         if (invalidated) changes.push({ plugin_id: key, kind: 'review_invalidated', areas: [] });
     }
@@ -267,8 +280,8 @@ export const atomicWrite = (path, value) => {
 
 export const apply = (catalogPath, prepared) => {
     if (prepared?.plan_version !== 1) throw new Error('unsupported plan version');
-    if (resolve(catalogPath) === resolve(ROOT, CATALOG) && existsSync(resolve(ROOT, 'data/catalog/SNAPSHOT.json')))
-        throw new Error('formal catalog is derived from SNAPSHOT.json; use snapshot staging and merge');
+    if (resolve(catalogPath) === resolve(ROOT, CATALOG) && existsSync(resolve(ROOT, 'data/catalog/index.jsonl')))
+        throw new Error('formal catalog is stored in index.jsonl; use snapshot staging and merge');
     const lockPath = `${catalogPath}.lock`;
     // Exclusive creation serializes writers without a native addon. Never steal a lock.
     let lock;
@@ -293,7 +306,7 @@ export const apply = (catalogPath, prepared) => {
     }
 };
 
-export const main = (args = process.argv.slice(2)) => {
+export const main = async (args = process.argv.slice(2)) => {
     const [command, ...rest] = args;
     const allowed = {
         validate: ['catalog', 'observations'],
@@ -310,8 +323,14 @@ export const main = (args = process.argv.slice(2)) => {
         if (!values[key]) throw new Error(`--${key} is required`);
         return values[key];
     };
+    const official = !values.catalog && existsSync(resolve(ROOT, 'data/catalog/index.jsonl'));
+    if (official && command !== 'validate') throw Error('use snapshot stage/plan/apply for the formal catalog');
     if (command === 'validate') {
-        validate(read(catalogPath));
+        const catalog = official
+            ? (await import('./snapshot-storage.mjs')).readSnapshotStorage(resolve(ROOT, 'data/catalog/index.jsonl'))
+                  .catalog
+            : read(catalogPath);
+        validate(catalog);
         if (values.observations) validateObservations(read(values.observations));
         console.log('Data validation passed');
     } else if (command === 'plan') {
@@ -325,10 +344,8 @@ export const main = (args = process.argv.slice(2)) => {
 };
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-    try {
-        main();
-    } catch (error) {
+    main().catch((error) => {
         console.error(`Error: ${error.message}`);
         process.exitCode = 1;
-    }
+    });
 }

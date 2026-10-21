@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "66182e599c23bb00287d5cefd2d22218",
+    "identity": "github:1423456429:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1423456429:root",
+            "repository": "kiive357q/dsh-nekojishi-vn",
+            "path": "",
+            "revision": "91e05b63a80a05370a4870750f00113b9fbb47cc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9517bb72ccd2802bee79aebe79b21ee0725650bd009a1c6192d01eefda007ae5",
+                "code": "91e05b63a80a05370a4870750f00113b9fbb47cc",
+                "maintenance": "c376d8d59081eba2d30130488a51fa91e5bf227f3f3ddcfbef2d865e93392015"
+            }
+        }
+    }
+}

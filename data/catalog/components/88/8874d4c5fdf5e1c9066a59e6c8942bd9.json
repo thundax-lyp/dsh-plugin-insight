@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8874d4c5fdf5e1c9066a59e6c8942bd9",
+    "identity": "github:1392041836:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1392041836:root",
+            "repository": "shinelon/dsh-mcp-plugin",
+            "path": "",
+            "revision": "2852d89c2322a01784a1f0db862bbc20d67987e0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d59ed45a6ea1e7deacfd4e377b2978629773f54f0486ca11f3c7fc7987445c09",
+                "code": "2852d89c2322a01784a1f0db862bbc20d67987e0",
+                "maintenance": "167e9dfc6984fba68469a56e4dab8ef19123bb2f38ea56c606550f0b6833944b"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "423d885e1e136346e217e405f8c930b9",
+    "identity": "github:1413849053:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1413849053:root",
+            "repository": "helloHub1212/dsh-windows-mcp",
+            "path": "",
+            "revision": "103c9d76705d4822c2029429dbb1a466b28e7c46",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "82795e632df1056bab230a48caeedc8c0eb45d208ee6266468b4d0810c7a83ef",
+                "code": "103c9d76705d4822c2029429dbb1a466b28e7c46",
+                "maintenance": "8a366f1f1420d92dfbdd9bb3fa2565fdf0487c45d52d9a9a86b5043adc6514b9"
+            }
+        }
+    }
+}

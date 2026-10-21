@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c1ff6b1a0f384197339edd3be9f28dab",
+    "identity": "github:1335975184:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335975184:root",
+            "repository": "Viger1/dsh-preview",
+            "path": "",
+            "revision": "ac08fa218b9088b61316008c9621b878aaa358a0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2cef3b7f61b04b5e648488ca9a4dd11a163e795a6106311159a27db2514e13c9",
+                "code": "ac08fa218b9088b61316008c9621b878aaa358a0",
+                "maintenance": "3eec39751e6173616fc921183a3e6347e1e5a1b10de255ec98bd96cb05b6c027"
+            }
+        }
+    }
+}

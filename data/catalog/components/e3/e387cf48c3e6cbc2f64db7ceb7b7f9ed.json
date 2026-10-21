@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e387cf48c3e6cbc2f64db7ceb7b7f9ed",
+    "identity": "github:1254012505:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1254012505:root",
+            "repository": "Xuxchloris/Alex",
+            "path": "",
+            "revision": "491776832f257f7d63113f8f4b541bd075cdda55",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "5d7dac88d9a55f7c9d0a1bb637119f0d3612201644c35933bc574bdc3db28ddc",
+                "code": "491776832f257f7d63113f8f4b541bd075cdda55",
+                "maintenance": "66dbbae1edb0c0e881c3e3b8b1fe870346c906a7594eb1e3c05e743d44883514"
+            }
+        }
+    }
+}

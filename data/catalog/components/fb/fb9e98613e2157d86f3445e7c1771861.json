@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fb9e98613e2157d86f3445e7c1771861",
+    "identity": "github:1351152846:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1351152846:root",
+            "repository": "nicecx/dsh-reset-handoff",
+            "path": "",
+            "revision": "c5c34f626fe1f9972e7a3948a238b3be5828352c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "693b5371f064ae7b1943122fdc4af19f380a39b494142ada9f7ed9ef814ab839",
+                "code": "c5c34f626fe1f9972e7a3948a238b3be5828352c",
+                "maintenance": "41dd3c643a423d7b1e1f1f0df3216d06e85ffa7c9b0591e4b78c58d826b8d21c"
+            }
+        }
+    }
+}

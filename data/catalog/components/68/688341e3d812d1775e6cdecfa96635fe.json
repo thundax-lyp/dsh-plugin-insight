@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "688341e3d812d1775e6cdecfa96635fe",
+    "identity": "github:1377851040:packages-dsh-deephub-share",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1377851040:packages-dsh-deephub-share",
+            "repository": "Voellin/dsh-deephub-share",
+            "path": "packages/dsh-deephub-share",
+            "revision": "5c69f83b123b0c81482dbd7086a3e0d852e25c6a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a0cc82204bcfe93dc2358ab956e48b17cd773111cfa451de23007efdfc35731b",
+                "code": "5c69f83b123b0c81482dbd7086a3e0d852e25c6a",
+                "maintenance": "89310aafd527c778d45c5c994445f1f86eb22a9d7d0fb16510b31b64a9a61d03"
+            }
+        }
+    }
+}

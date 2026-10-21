@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "518df097cd0617370f5be0aa09a07de4",
+    "identity": "github:1333338499:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333338499:root",
+            "repository": "Jesse-njx/dsh-chatnode-wechat",
+            "path": "",
+            "revision": "2bd4c15e28c4ca8285817297bd76dc19489cd567",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8e2c5c5145d3e75264c4a313756bcfe4e7db9e936874fabcdf9629091870ba29",
+                "code": "2bd4c15e28c4ca8285817297bd76dc19489cd567",
+                "maintenance": "4b55fb5ff281c5a82ef595e3ee77163b01cdec89a2c4b3caba23da6bfadf1a9e"
+            }
+        }
+    }
+}

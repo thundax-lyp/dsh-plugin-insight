@@ -1,6 +1,0 @@
-{
-  "revision": "4dbc65c4bb250f72388edfd42b3d3e4d0103699c",
-  "items": {
-    "模型工具": "MCP list_log_servers、read_log、search_log三工具，经宿主bridge暴露。"
-  }
-}

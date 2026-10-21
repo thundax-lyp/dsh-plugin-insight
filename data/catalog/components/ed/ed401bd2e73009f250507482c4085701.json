@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "ed401bd2e73009f250507482c4085701",
+    "identity": "github:1362016653:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1362016653:root",
+            "repository": "weibaohui/dsh-webdav-server",
+            "path": "",
+            "revision": "8ac72e4adc28e7b9d8a80d9d74a250466c0c88c4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "b5e27dd4d778929db4899f74496903b53b828d14d0443e068b5068097d2360ea",
+                "code": "8ac72e4adc28e7b9d8a80d9d74a250466c0c88c4",
+                "maintenance": "63fcb61eac8119019843134fe97d6d47c74fc6d1c5609e0220c4f29080e6342d"
+            }
+        }
+    }
+}

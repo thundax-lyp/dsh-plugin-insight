@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "508d0514dd04e186f75107f947ecef6f",
+    "identity": "github:1335735694:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335735694:root",
+            "repository": "JunNanLYS/dsh-layered-memory",
+            "path": "",
+            "revision": "69028fbee43e9950fffecc578430909fc827527e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "fded411ff39b894239a2dfe0632557ea88e75bd57fe57291dac96fad60b976ce",
+                "code": "69028fbee43e9950fffecc578430909fc827527e",
+                "maintenance": "6c3480ca39dea630947382860835de6e7e1b628750ff2452a013e6ef4c74f7fd"
+            }
+        }
+    }
+}

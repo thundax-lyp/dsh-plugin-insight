@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d17df95fd9b715be8b05b7151e159062",
+    "identity": "github:1401129651:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1401129651:root",
+            "repository": "DucLong06/dsh-vietnam",
+            "path": "",
+            "revision": "6d6aa42e00d6f5014954571a107ce353a6631534",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "33c87288106e941d8a9b90ad08f3984e5e73f6e0c0c086e1fcc10b1a491c1cc2",
+                "code": "6d6aa42e00d6f5014954571a107ce353a6631534",
+                "maintenance": "49f1b53db6a785722a1d811fea9faaacf6685cf5683a825ec4673054027b029e"
+            }
+        }
+    }
+}

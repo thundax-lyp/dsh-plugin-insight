@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b58c01a0fff81e88c03935ca3b973763",
+    "identity": "github:1343773044:packages-dsh-lowtide",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343773044:packages-dsh-lowtide",
+            "repository": "KelaoHu/dsh-lowtide",
+            "path": "packages/dsh-lowtide",
+            "revision": "8ef7d254546a4c0e534d80b89a2ccb5d9b00410d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9e52b4cd763d6ff7d88820bcad501787083592a1bebb38c087456f7242cdbf9f",
+                "code": "8ef7d254546a4c0e534d80b89a2ccb5d9b00410d",
+                "maintenance": "5504edac86aa0db55b75b52615d5a0d289ff1a6e0026237479d8bf724d30f669"
+            }
+        }
+    }
+}

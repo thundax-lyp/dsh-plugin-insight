@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7a6b8d677c319c9463926597511a7896",
+    "identity": "github:1335551790:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335551790:root",
+            "repository": "wqx-txdsyl/dsh-ds-attach",
+            "path": "",
+            "revision": "7b11a471e731253b74d6f41a34e15dabaa715244",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "14123a02cc8f72f228828eef8b02925bf15899f317752a6c05476c083fec3ec6",
+                "code": "7b11a471e731253b74d6f41a34e15dabaa715244",
+                "maintenance": "3c99efed4f50a799f8c9ae7efdbab08cc0b3e23a18275b487e9f879b420cc6a2"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2cc7b07f857bbe13c85cd667a92e82ac",
+    "identity": "github:1339276232:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339276232:root",
+            "repository": "annexwu/dsh-cos",
+            "path": "",
+            "revision": "306c249d3cffaf87ce67726de586050b828daad6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "bf87be65729d74db22672ac5d6ed55ef08f5ec65af6ca4421229156aeb338acf",
+                "code": "306c249d3cffaf87ce67726de586050b828daad6",
+                "maintenance": "6725d31a813d0a7b6b609b0ba01054ad8d99af9f1da3cf58086fd3087f39e266"
+            }
+        }
+    }
+}

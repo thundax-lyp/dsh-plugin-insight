@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f142fc12b1bab919fdffaf5127b5e2b0",
+    "identity": "github:1338460580:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338460580:root",
+            "repository": "haochi72/dsh-auto-continue-429",
+            "path": "",
+            "revision": "697a8b47bf0f24ef6a6851d2f966df23f0c097d9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "46a58cf6f7e18b6759d212275c4d94e708d33a63b817f773ef2f3021ec10c6e3",
+                "code": "697a8b47bf0f24ef6a6851d2f966df23f0c097d9",
+                "maintenance": "bc828d6903f59a0b42359c900efd6b2e81842d6b5d7c37bfdf485b643eb6acef"
+            }
+        }
+    }
+}

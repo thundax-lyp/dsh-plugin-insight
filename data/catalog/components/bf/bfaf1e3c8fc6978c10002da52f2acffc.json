@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bfaf1e3c8fc6978c10002da52f2acffc",
+    "identity": "github:1339227896:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339227896:root",
+            "repository": "CZ1900/suanzhang-dsh",
+            "path": "",
+            "revision": "79cd9cd793326b3069679cbfc2dc5558af35c842",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4c6e2d284e380d4b77bc2d530daa7d6637a2ad98bc30043f2b1271d556c39e3a",
+                "code": "79cd9cd793326b3069679cbfc2dc5558af35c842",
+                "maintenance": "2f93b7f9d75b84ac381d9ac0a892541b8c0d0b11385dc300e0f0bf407b465284"
+            }
+        }
+    }
+}

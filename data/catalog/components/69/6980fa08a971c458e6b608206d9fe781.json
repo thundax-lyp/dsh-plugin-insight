@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6980fa08a971c458e6b608206d9fe781",
+    "identity": "github:1347254242:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347254242:root",
+            "repository": "abbccdd/dsh-panel-tint",
+            "path": "",
+            "revision": "1d2cf639218e91d2d54a3446369cfa7c2745afb7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b31b09ba892574d3b726e4abccff70bafbe5e28723bfc280aa0b773add6436c3",
+                "code": "1d2cf639218e91d2d54a3446369cfa7c2745afb7",
+                "maintenance": "35a0cf4f08c5e115388380bdd03fc017abf76f4c0e039839d2af0078e0037c2d"
+            }
+        }
+    }
+}

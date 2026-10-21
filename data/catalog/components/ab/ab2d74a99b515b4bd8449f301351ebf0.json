@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "ab2d74a99b515b4bd8449f301351ebf0",
+    "identity": "github:1335791950:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335791950:root",
+            "repository": "MutaLucem/dsh-plugin-integration",
+            "path": "",
+            "revision": "0f720b7e53c0633b77e48c04c8bb8e06d16b7a37",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "0222d73081cda2e34261434a5d91ade8f678baacb514b8b7ccfc550fda9b0474",
+                "code": "0f720b7e53c0633b77e48c04c8bb8e06d16b7a37",
+                "maintenance": "fc061325a9097030ba60d12cfde5e03c4d4d232c4a15f998b00d428b47f13faa"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d71e73af0ae0ebbd875ef5164c439fa5",
+    "identity": "github:1411748656:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1411748656:root",
+            "repository": "Arun1016/dsh-cost",
+            "path": "",
+            "revision": "20be220d554feb5df6c2c71f8b59d8a198e17c8f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "16135fbe39388caf6474051e122058832f6952aa27cb4e5c49cc5b3911fd0227",
+                "code": "20be220d554feb5df6c2c71f8b59d8a198e17c8f",
+                "maintenance": "d53a8e9062f586fc6f30a91813446bee199f722e1fdd42d0b67d9c48114cf95f"
+            }
+        }
+    }
+}

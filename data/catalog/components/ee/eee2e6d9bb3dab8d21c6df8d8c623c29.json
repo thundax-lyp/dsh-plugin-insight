@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "eee2e6d9bb3dab8d21c6df8d8c623c29",
+    "identity": "github:1337215762:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337215762:root",
+            "repository": "SIMON-WORLD/dsh-eco-indicator",
+            "path": "",
+            "revision": "c0b99dcf204640c95165d9044534dc4db532e886",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d4f916bb8b35c63e4b8ad658721cc9b23be8bbe9ecd2dab49974abb9d39a294a",
+                "code": "c0b99dcf204640c95165d9044534dc4db532e886",
+                "maintenance": "fde4b26927221b8e4aabb4d5da43583259d78fb4de05162c87ce5238c3d2206d"
+            }
+        }
+    }
+}

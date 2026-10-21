@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ccdd0683b0c1273e6e0704098d707d98",
+    "identity": "github:1365239644:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1365239644:root",
+            "repository": "lifangjin/dsh-paoding",
+            "path": "",
+            "revision": "79751bf37e104de72c672802ac459b9ae95b6f18",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d3bb923d6dd5e569ec818c42fbc7a147f7d13bcab45181cc0c614cafbc27fb76",
+                "code": "79751bf37e104de72c672802ac459b9ae95b6f18",
+                "maintenance": "da527bcedb3cebbbd1788f3babeead7d7aa177995db67eb03024e9b3e53fa7ee"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a78be9a829d6e1f39ddb59f0f0748cde",
+    "identity": "github:1345793435:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345793435:root",
+            "repository": "lurejewel/dsh-usage-plugin",
+            "path": "",
+            "revision": "d7923a7c32e846c3753bf9be18321ec4528caf73",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "7e11169b65a6909401415653f6c59424f9d1f77b68c3c6821b3f99ee7b620c70",
+                "code": "d7923a7c32e846c3753bf9be18321ec4528caf73",
+                "maintenance": "5f48747e16414e86c4ffd2373cbf36f26fb0426b1450021f1d194c009ba800dd"
+            }
+        }
+    }
+}

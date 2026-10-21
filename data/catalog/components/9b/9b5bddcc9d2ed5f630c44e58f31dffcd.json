@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9b5bddcc9d2ed5f630c44e58f31dffcd",
+    "identity": "github:1391621735:dsh-based-agent-service-dsh-tsm-agent",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1391621735:dsh-based-agent-service-dsh-tsm-agent",
+            "repository": "ljwzhaoxiaoniu/DLR",
+            "path": "DSH-based Agent Service/dsh-tsm-agent",
+            "revision": "1ef3b7e91d17545028807313f67c6f27461143e1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "aa1ea5c37c144bea52ada95e3062d74bc312536a6b135cb609fcc77a5f640a3a",
+                "code": "1ef3b7e91d17545028807313f67c6f27461143e1",
+                "maintenance": "842bde2432191d4854d0533dde352447672c03440c6abc344b1971efdd25d6df"
+            }
+        }
+    }
+}

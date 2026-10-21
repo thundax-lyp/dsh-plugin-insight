@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "99e357c003038b588c89e469542df6c9",
+    "identity": "github:1351276292:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1351276292:root",
+            "repository": "Edge-Echo/dsh-win-toolkit",
+            "path": "",
+            "revision": "2b1444c5f75889b418d04a23f5a22bac13170d81",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "149b976d0de3b8c8ab1a008750ab618779ab7315762b68be7f630fb21ff95a8c",
+                "code": "2b1444c5f75889b418d04a23f5a22bac13170d81",
+                "maintenance": "48afd9a64167cf9ed4b99f026abede81ef425cf6a9e3c137dd9bc600a95a0dc3"
+            }
+        }
+    }
+}

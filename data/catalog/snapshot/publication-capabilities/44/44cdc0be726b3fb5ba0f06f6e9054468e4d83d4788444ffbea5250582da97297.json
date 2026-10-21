@@ -1,8 +1,0 @@
-{
-  "revision": "fc9af918ac14f03d63bee299cab90862adbc8963",
-  "items": {
-    "模型工具": "constraints查询规则及用量辅助工具。",
-    "事件监听": "pre-step在条件满足时注入项目brief。",
-    "界面": "约束与用量状态卡片。"
-  }
-}

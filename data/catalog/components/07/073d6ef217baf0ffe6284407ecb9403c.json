@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "073d6ef217baf0ffe6284407ecb9403c",
+    "identity": "github:1408468706:plugins-kid-network",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1408468706:plugins-kid-network",
+            "repository": "baixiaoustc/dsh-kidlab",
+            "path": "plugins/kid-network",
+            "revision": "a87bd25e7b831eeddfdcea882c32ab2940ec562e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ae0eb2214bc38f0d91f7a174042c829a208ee74744e3a6ab812f6d1966776ad1",
+                "code": "a87bd25e7b831eeddfdcea882c32ab2940ec562e",
+                "maintenance": "c971c087074a3d75eea850e71d61f804626969f6b0e5dd20acae4e1c95da63b8"
+            }
+        }
+    }
+}

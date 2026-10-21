@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ad5fb883ecbf742ca8f6a3b1eca7ccf4",
+    "identity": "github:1352587685:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1352587685:root",
+            "repository": "yangdongzhen590/dsh-knj-prompts",
+            "path": "",
+            "revision": "fcc97dac2aeeee430e5526d2946b5fb9c6f3a4cf",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "59eb60f35a1915426f9c9ce34032989bf5e20dcca55d924943bfc3914893ffbe",
+                "code": "fcc97dac2aeeee430e5526d2946b5fb9c6f3a4cf",
+                "maintenance": "be48c4082d55313f2ac6050a9195ba8a44949acbdd84dbf274a053d338d527bb"
+            }
+        }
+    }
+}

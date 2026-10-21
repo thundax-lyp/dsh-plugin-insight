@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "de7b8d92b2355cba9bd4ef7839eb8645",
+    "identity": "github:1334946271:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334946271:root",
+            "repository": "XanthanL/dsh-plugin-uisfx",
+            "path": "",
+            "revision": "f020972c3291abcbd84b99c6355953866e045b5c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "77c72817c11bd542c1d51eaf4debc7da88f8ab3ca9ee65b0963c36506b718ef3",
+                "code": "f020972c3291abcbd84b99c6355953866e045b5c",
+                "maintenance": "054c85e065b186e66d53acce6a79879d8302c08bd444f8eac7e656ae91bc1cdf"
+            }
+        }
+    }
+}

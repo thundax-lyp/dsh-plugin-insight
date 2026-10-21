@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e8e5097e13a908264402b5017ce6c57c",
+    "identity": "github:1426542198:liuguang",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1426542198:liuguang",
+            "repository": "ShokouP/dsh-theme-liuguang",
+            "path": "liuguang",
+            "revision": "c7d05ef39e2d061aa07f5755daf8684c51128c37",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c68b9a1211da27ebd77d8bb831421a6ea4d530372842f6cd157765e32b7baadc",
+                "code": "c7d05ef39e2d061aa07f5755daf8684c51128c37",
+                "maintenance": "474e84bc436020b02a1692992aa7720dda8c0aa48f08207291df3b70a66a4dac"
+            }
+        }
+    }
+}

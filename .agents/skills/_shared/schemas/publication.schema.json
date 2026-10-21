@@ -5,8 +5,7 @@
     "schema_version",
     "scope",
     "catalog",
-    "catalog_page",
-    "recommendations"
+    "catalog_page"
   ],
   "properties": {
     "schema_version": {
@@ -59,7 +58,8 @@
             "minLength": 1
           }
         }
-      }
+      },
+      "description": "仅兼容历史输入；当前推荐从catalog插件的recommendation派生，生成器忽略本名单。"
     },
     "metadata": {
       "type": "object",

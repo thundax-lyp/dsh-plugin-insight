@@ -1,0 +1,458 @@
+{
+    "schema_version": 3,
+    "id": "b8664dd036c313d268816917caab4c9f",
+    "identity": "github:1422488467:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1422488467:root",
+            "repository_id": 1422488467,
+            "component_id": "root",
+            "repository": "7gzgn/dsh-inpage-translator",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-inpage-translator",
+            "entry_type": "plugin",
+            "technical_category": "tools-integration",
+            "business_category": "research-knowledge",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "57b75f220246279e9136a4f5cf24fa91f716e25f11d519ba3e5866c039410465",
+                "code": "4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190",
+                "maintenance": "cc6dffadf427fdb38c0bed5e84d7fdf14b5cd88a6cc385f995445a388b3968ba"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-02-github-1422488467-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T03:20:06.341Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-02-github-1422488467-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/7gzgn/dsh-inpage-translator/blob/4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190/README.md",
+                    "revision": "4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190",
+                    "captured_at": "2026-10-21T03:20:06.341Z",
+                    "summary": "在DSH浏览器页面注入翻译按钮，用宿主模型分块翻译可见文本并支持还原。",
+                    "artifact": "data/runs/2026-10-21-02/snapshots/7gzgn--dsh-inpage-translator/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-02-github-1422488467-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/7gzgn/dsh-inpage-translator/blob/4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190/lib/index.js",
+                    "revision": "4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190",
+                    "captured_at": "2026-10-21T03:20:06.341Z",
+                    "summary": "核查 lib/index.js、lib/translate.js、lib/page-script.js、lib/constants.js；index.js读取浏览器运行时会话表并轮询装按钮/处理请求；page-script.js收集可见文本并标记回填，translate.js去重分块调用宿主LLM、缓存译文，失败块回退原文。",
+                    "artifact": "data/runs/2026-10-21-02/snapshots/7gzgn--dsh-inpage-translator/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "在DSH浏览器阅读外文网页的用户希望原位翻译并可对照原文；合格交付是重点信息忠实、覆盖范围明确且页面交互可恢复。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1422488467-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422488467:root",
+                            "area": "code",
+                            "fingerprint": "4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:20:06.341Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "index.js读取浏览器运行时会话表并轮询装按钮/处理请求；page-script.js收集可见文本并标记回填，translate.js去重分块调用宿主LLM、缓存译文，失败块回退原文。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1422488467-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422488467:root",
+                            "area": "code",
+                            "fingerprint": "4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:20:06.341Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1422488467-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422488467:root",
+                            "area": "code",
+                            "fingerprint": "4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:20:06.341Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "发布Node库，依赖宿主browser和llm；插件不直接管理key，但页面文本仍经过配置模型服务。进程内LRU最多4000条，非跨重启持久缓存。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1422488467-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422488467:root",
+                            "area": "code",
+                            "fingerprint": "4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:20:06.341Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "首次需模型和浏览器服务；日常有分块模型调用现金成本、轮询与翻译延迟，去重缓存可能减少重复调用但无费用实测。敏感页面文本需按所选模型的处理条件判断。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1422488467-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422488467:root",
+                            "area": "code",
+                            "fingerprint": "4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:20:06.341Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "适合普通公开网页阅读时先试用。先检查模型路由与页面内容范围，重要数字和否定句对照原文；不把按钮完成当整页覆盖或译文正确证明。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1422488467-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422488467:root",
+                            "area": "code",
+                            "fingerprint": "4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:20:06.341Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "减少复制粘贴和重复菜单翻译，不能取代专业校译或敏感资料处理判断；没有独立用户或同条件成本结果。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1422488467-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422488467:root",
+                            "area": "code",
+                            "fingerprint": "4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:20:06.341Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "DOM脚本与模型编排分离、textContent写入、分块失败降级和路线+语言+原文缓存值得借鉴。复用需处理私有会话枚举、动态DOM版本和缓存隔离；格式可解析不等于翻译语义正确。 源码依据：[lib/index.js](https://github.com/7gzgn/dsh-inpage-translator/blob/4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190/lib/index.js)、[lib/translate.js](https://github.com/7gzgn/dsh-inpage-translator/blob/4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190/lib/translate.js)、[lib/page-script.js](https://github.com/7gzgn/dsh-inpage-translator/blob/4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190/lib/page-script.js)、[lib/constants.js](https://github.com/7gzgn/dsh-inpage-translator/blob/4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190/lib/constants.js)。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1422488467-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422488467:root",
+                            "area": "code",
+                            "fingerprint": "4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:20:06.341Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "相对复制网页文字到聊天，增量是宿主凭据留在宿主侧、页面按钮仅提交标记，再将批量译文映回原文位置。去重后限额与按模型路线缓存减少重复文本处理，属于成熟翻译/DOM机制在缺少工具栏扩展点下的组合。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1422488467-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422488467:root",
+                            "area": "code",
+                            "fingerprint": "4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:20:06.341Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "整页原位替换是否保留语义与页面行为？固定范围不含iframe/图像/输入框，动态DOM可覆盖译文，失败块又按原文回退；因此按钮完成并不表示整页已翻。后台枚举私有runtime.providers与provider.sessions也使当前页面选择、导航期间回填和兼容性成为核心边界。没有翻译忠实度评测。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1422488467-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422488467:root",
+                            "area": "code",
+                            "fingerprint": "4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:20:06.341Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "由部分覆盖和可还原标记推导，可将翻译结果作为带DOM文本摘要与版本的旁路层：回填前核对节点原文未变，失败/跳过区域可见标记，并保留原文可一键比较。未验证假设是提高覆盖可信度且减少动态页面错位。对实时更新与嵌套标签页测试，若错配或阅读负担不降则否定。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1422488467-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422488467:root",
+                            "area": "code",
+                            "fingerprint": "4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:20:06.341Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T03:20:06.341Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190",
+                "reviewed_at": "2026-10-21T03:20:06.341Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1422488467:root",
+                        "area": "code",
+                        "fingerprint": "4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty成熟DOM翻译适配小档；mechanism宿主侧调用与去重限额组合半档；transferability模块分离半档；simplification页面请求标记避免凭据bridge半档。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1422488467-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 8,
+                        "reach": 10,
+                        "economics": 4
+                    },
+                    "rationale": "workflow原位翻译减少切换半档；delivery仍为译文阅读小档；reach外文阅读者半档；economics重复串缓存可减少调用但未测小档。",
+                    "basis": "interpretation",
+                    "score": 40,
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1422488467-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "阅读公开外文网页者可试原位翻译；先验当前页面和模型路由，数字否定句对原文，iframe及动态内容不在完整覆盖保证内。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "网页原位阅读与原文对照交付清晰。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "宿主保管凭据并批量回填较复制聊天少切换。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "去重分块缓存和回退原文源码支持，私有会话发现及翻译忠实度未验。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "分块模型费和轮询延迟需计，敏感页出网与DOM升级需维护。"
+                    }
+                },
+                "score": 65,
+                "revision": "4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-02-github-1422488467-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1422488467:root",
+                        "area": "code",
+                        "fingerprint": "4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1422488467:root",
+            "repository": "7gzgn/dsh-inpage-translator",
+            "path": "",
+            "revision": "4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190",
+            "fingerprints": {
+                "directory": "57b75f220246279e9136a4f5cf24fa91f716e25f11d519ba3e5866c039410465",
+                "code": "4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190",
+                "maintenance": "cc6dffadf427fdb38c0bed5e84d7fdf14b5cd88a6cc385f995445a388b3968ba"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T03:00:27Z",
+            "analysis_sha256": "8faa5a0de380528143357bf26a46a18e612ff2bd2e0bb3c85f28a8886cee802d"
+        },
+        "publication.metadata": "data/plugins/7gzgn--dsh-inpage-translator/META.json",
+        "publication.summaries": {
+            "text": "在DSH浏览器页面注入翻译按钮，用宿主模型分块翻译可见文本并支持还原。",
+            "revision": "4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190",
+            "source_url": "https://github.com/7gzgn/dsh-inpage-translator/blob/4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190",
+            "items": {
+                "模型工具": "translate_page提供安装/翻译/还原/状态和会话查询。",
+                "界面": "页面内可拖拽翻译按钮。",
+                "后台": "轮询现有浏览器会话补按钮与处理翻译请求。"
+            }
+        },
+        "publication.advice": {
+            "revision": "4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190",
+            "text": "适合普通公开网页阅读时先试用。先检查模型路由与页面内容范围，重要数字和否定句对照原文；不把按钮完成当整页覆盖或译文正确证明。"
+        },
+        "registry": "data/plugins/7gzgn--dsh-inpage-translator",
+        "reports": "# dsh-inpage-translator\n\n> 在DSH浏览器页面注入翻译按钮，用宿主模型分块翻译可见文本并支持还原。\n\n## 使用建议\n\n适合普通公开网页阅读时先试用。先检查模型路由与页面内容范围，重要数字和否定句对照原文；不把按钮完成当整页覆盖或译文正确证明。\n\n核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。\n\n源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。\n\n## 洞察短评\n\n- **用途**：在DSH浏览器阅读外文网页的用户希望原位翻译并可对照原文；合格交付是重点信息忠实、覆盖范围明确且页面交互可恢复。\n- **亮点**：相对复制网页文字到聊天，增量是宿主凭据留在宿主侧、页面按钮仅提交标记，再将批量译文映回原文位置。去重后限额与按模型路线缓存减少重复文本处理，属于成熟翻译/DOM机制在缺少工具栏扩展点下的组合。\n- **思考**：整页原位替换是否保留语义与页面行为？固定范围不含iframe/图像/输入框，动态DOM可覆盖译文，失败块又按原文回退；因此按钮完成并不表示整页已翻。后台枚举私有runtime.providers与provider.sessions也使当前页面选择、导航期间回填和兼容性成为核心边界。没有翻译忠实度评测。\n- **建议**：由部分覆盖和可还原标记推导，可将翻译结果作为带DOM文本摘要与版本的旁路层：回填前核对节点原文未变，失败/跳过区域可见标记，并保留原文可一键比较。未验证假设是提高覆盖可信度且减少动态页面错位。对实时更新与嵌套标签页测试，若错配或阅读负担不降则否定。\n\n## 场景与替代办法\n\n在DSH浏览器阅读外文网页的用户希望原位翻译并可对照原文；合格交付是重点信息忠实、覆盖范围明确且页面交互可恢复。\n\n浏览器内置翻译更少宿主适配，复制文本到聊天便于解释但割裂阅读；此插件适合已有DSH浏览器/模型工作流，未做质量排名。\n\n## 能力清单\n\n- **模型工具**：translate_page提供安装/翻译/还原/状态和会话查询。\n- **界面**：页面内可拖拽翻译按钮。\n- **后台**：轮询现有浏览器会话补按钮与处理翻译请求。\n\n## 依赖与流程\n\n必要为ctx.browser、ctx.llm与可访问页面DOM；模型能力决定忠实度，跨域iframe受浏览器限制；自动会话发现依赖私有运行时结构。\n\n后台巡检页面补按钮，用户点击后收集可见文本，去重后分块调用模型并合并缓存，按标记回填；再次点击还原，失败与超限统计应供用户判断。\n\n## 成本与效果\n\n首次需模型和浏览器服务；日常有分块模型调用现金成本、轮询与翻译延迟，去重缓存可能减少重复调用但无费用实测。敏感页面文本需按所选模型的处理条件判断。\n\n减少复制粘贴和重复菜单翻译，不能取代专业校译或敏感资料处理判断；没有独立用户或同条件成本结果。\n\n## 核心贡献\n\n相对复制网页文字到聊天，增量是宿主凭据留在宿主侧、页面按钮仅提交标记，再将批量译文映回原文位置。去重后限额与按模型路线缓存减少重复文本处理，属于成熟翻译/DOM机制在缺少工具栏扩展点下的组合。\n\n## 关键质疑\n\n整页原位替换是否保留语义与页面行为？固定范围不含iframe/图像/输入框，动态DOM可覆盖译文，失败块又按原文回退；因此按钮完成并不表示整页已翻。后台枚举私有runtime.providers与provider.sessions也使当前页面选择、导航期间回填和兼容性成为核心边界。没有翻译忠实度评测。\n\n\n## 工程亮点\n\nDOM脚本与模型编排分离、textContent写入、分块失败降级和路线+语言+原文缓存值得借鉴。复用需处理私有会话枚举、动态DOM版本和缓存隔离；格式可解析不等于翻译语义正确。 源码依据：[lib/index.js](https://github.com/7gzgn/dsh-inpage-translator/blob/4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190/lib/index.js)、[lib/translate.js](https://github.com/7gzgn/dsh-inpage-translator/blob/4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190/lib/translate.js)、[lib/page-script.js](https://github.com/7gzgn/dsh-inpage-translator/blob/4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190/lib/page-script.js)、[lib/constants.js](https://github.com/7gzgn/dsh-inpage-translator/blob/4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190/lib/constants.js)。\n\n## 未来设计假设（未验证）\n\n由部分覆盖和可还原标记推导，可将翻译结果作为带DOM文本摘要与版本的旁路层：回填前核对节点原文未变，失败/跳过区域可见标记，并保留原文可一键比较。未验证假设是提高覆盖可信度且减少动态页面错位。对实时更新与嵌套标签页测试，若错配或阅读负担不降则否定。\n\n用含数字、否定、重复菜单、动态节点和iframe的固定公开页面，对比原文与译文、覆盖计数、还原行为及重复调用费用；切换/导航时检查回填目标。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：54722034a82466f098036a68b7f1e3a2b7ba896b50ad0d60591e66921d32d8fe。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 4 | 1960 | 1418 | 418 | — |\n| .md | source | 1 | 143 | — | — | 2247 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[7gzgn/dsh-inpage-translator](https://github.com/7gzgn/dsh-inpage-translator)\n- **版本号**：0.2.4（[固定提交 4a57cad0](https://github.com/7gzgn/dsh-inpage-translator/tree/4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190)）\n- **版本日期**：2026-10-17（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：作者 README、包清单、源码路径 lib/index.js、lib/translate.js、lib/page-script.js、lib/constants.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。\n- 下一步：用含数字、否定、重复菜单、动态节点和iframe的固定公开页面，对比原文与译文、覆盖计数、还原行为及重复调用费用；切换/导航时检查回填目标。\n",
+        "metadata": {
+            "repository": "7gzgn/dsh-inpage-translator",
+            "repository_id": 1422488467,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 0,
+            "pushed_at": "2026-10-17T11:06:51Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A7gzgn%2Fdsh-inpage-translator%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6401:25685:A8CB19:F1CC90:6AD84A7E and timestamp 2026-10-21 05:15:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A7gzgn%2Fdsh-inpage-translator%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6400:25685:A8CB5F:F1CD1D:6AD84A7E and timestamp 2026-10-21 05:15:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A7gzgn%2Fdsh-inpage-translator%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640E:1B0790:A5A976:EEC02F:6AD84A7E and timestamp 2026-10-21 05:15:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A7gzgn%2Fdsh-inpage-translator%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6413:38A53A:A871BF:F1E62B:6AD84A7F and timestamp 2026-10-21 05:15:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A7gzgn%2Fdsh-inpage-translator%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6416:208D3:AAC310:F41472:6AD84A7F and timestamp 2026-10-21 05:15:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-inpage-translator",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-inpage-translator",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-inpage-translator",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190",
+                "current_revision": "4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1422488467:root",
+            "repository": "7gzgn/dsh-inpage-translator",
+            "path": "",
+            "revision": "4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "57b75f220246279e9136a4f5cf24fa91f716e25f11d519ba3e5866c039410465",
+                "code": "4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190",
+                "maintenance": "cc6dffadf427fdb38c0bed5e84d7fdf14b5cd88a6cc385f995445a388b3968ba"
+            }
+        }
+    }
+}

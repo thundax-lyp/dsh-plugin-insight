@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "cb9ecf48f5fafa39880ea834fda90648",
+    "identity": "github:1345017673:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345017673:root",
+            "repository": "Missher12/Missher-DSH-Evolution",
+            "path": "",
+            "revision": "2fc6b92eb6567d3317c0a4756ec1c23fbede10cd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0cea8282b0af3bd62164c8efa532bb3daea383ea1f9ac14ea38e9ba686f26472",
+                "code": "2fc6b92eb6567d3317c0a4756ec1c23fbede10cd",
+                "maintenance": "e5d9e95e8f3883b83c8be074ce1032e01a5feb1a9bdd0653de93dd8353c9e581"
+            }
+        }
+    }
+}

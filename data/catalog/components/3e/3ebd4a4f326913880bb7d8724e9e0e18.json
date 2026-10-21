@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3ebd4a4f326913880bb7d8724e9e0e18",
+    "identity": "github:1373808907:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1373808907:root",
+            "repository": "picsky/dsh-pocket-console",
+            "path": "",
+            "revision": "410767f3c9fffe2aaa551722185a9989043394e1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4b1771330008d58869764e1f608ebae484b417f5cf9abf5965b7ff9708577490",
+                "code": "410767f3c9fffe2aaa551722185a9989043394e1",
+                "maintenance": "ef2e7af7b136733abc51c253e324c4dfac5b56121e1bae4b29a2f7561beb6dd1"
+            }
+        }
+    }
+}

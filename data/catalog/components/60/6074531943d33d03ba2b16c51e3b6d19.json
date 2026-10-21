@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6074531943d33d03ba2b16c51e3b6d19",
+    "identity": "github:1367573378:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1367573378:root",
+            "repository": "igormel81/dsh-chat-cost",
+            "path": "",
+            "revision": "8b37b31edf63190277690243d505f93715c72739",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b5d13d3b4cb8fcfe8673af84b15eb26881bd5ebe35698fb9b5a6a54595d24709",
+                "code": "8b37b31edf63190277690243d505f93715c72739",
+                "maintenance": "fb4acbe14755aebf4e0755af41ea92b31b2bed2bfad20c1d359065c37ba25cd7"
+            }
+        }
+    }
+}

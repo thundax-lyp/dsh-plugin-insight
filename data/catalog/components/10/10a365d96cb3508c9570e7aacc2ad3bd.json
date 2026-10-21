@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "10a365d96cb3508c9570e7aacc2ad3bd",
+    "identity": "github:1399969286:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1399969286:root",
+            "repository": "ltmroberthk915/dsh-pet",
+            "path": "",
+            "revision": "cdc78891791329f1bdeef1a2ad838e504878483a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6a8226b00ee1626739627ea284465729a078dc96754a97d47e57a19339449fcd",
+                "code": "cdc78891791329f1bdeef1a2ad838e504878483a",
+                "maintenance": "8dfecdcb397f70e04328bb62dfdafd89f7cc6d1393acab9959101fa27b8d47b0"
+            }
+        }
+    }
+}

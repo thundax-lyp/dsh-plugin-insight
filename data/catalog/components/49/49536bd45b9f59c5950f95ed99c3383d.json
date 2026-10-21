@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "49536bd45b9f59c5950f95ed99c3383d",
+    "identity": "github:1336561394:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336561394:root",
+            "repository": "iceleaf916/dsh-launcher",
+            "path": "",
+            "revision": "1815be05d1adbd4a700f7dc0af28e5a0f6a1b2b0",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "814cf69c3c076d46ff5a1e8c1736d78990ff1c2866df18c4feaf1d310c465c3a",
+                "code": "1815be05d1adbd4a700f7dc0af28e5a0f6a1b2b0",
+                "maintenance": "bbc0ba18dde97b5fbf5897d0e2b78cbff41ccfe33c1133aff4c093ab9aa5062b"
+            }
+        }
+    }
+}

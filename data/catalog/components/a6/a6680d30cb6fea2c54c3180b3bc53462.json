@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a6680d30cb6fea2c54c3180b3bc53462",
+    "identity": "github:1334025844:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334025844:root",
+            "repository": "Aa728848/dsh-chatgpt-subscription",
+            "path": "",
+            "revision": "51fa9e64cad282718a5afc293eb7e6f719797f52",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "9b79c305e2c9462461b025481333609f7b368c80697f6eaf44c89c850f6fa6b0",
+                "code": "51fa9e64cad282718a5afc293eb7e6f719797f52",
+                "maintenance": "72694d2849ad37b0ea9928c74daef682ea64185b95c960da1c4c8f577192d61f"
+            }
+        }
+    }
+}

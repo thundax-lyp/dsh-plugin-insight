@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "cce8bbfabcb04b0f801e39a8b84cbf36",
+    "identity": "github:1422429406:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1422429406:root",
+            "repository": "big-head-pigeon/dsh-session-menu",
+            "path": "",
+            "revision": "a9c6abee408b6c4917d83779f9862de5473041e9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b247462225749b87ae44ba25ee5cb75fc1627f6bac3404f2f98cef0b2e4e4f3f",
+                "code": "a9c6abee408b6c4917d83779f9862de5473041e9",
+                "maintenance": "628de75e3ef628acf73ab6ed8073b6c45de3b3c206202bf0a98e33ae45ca9d27"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "59f7aef69346b498fa1e7b211244e876",
+    "identity": "github:1333758271:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333758271:root",
+            "repository": "arrow949/dsh-turn-approval",
+            "path": "",
+            "revision": "5b4cbfd425885ed3f3ed93c796d5113847cc93b8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "eedf3408aa459c7abfc8221a9e3f40ef31026677ef79e99e3d18804e66431c10",
+                "code": "5b4cbfd425885ed3f3ed93c796d5113847cc93b8",
+                "maintenance": "bf6df85870f70410e8d706a81fee5c31557693d81f07eb9e0100732a509cecfa"
+            }
+        }
+    }
+}

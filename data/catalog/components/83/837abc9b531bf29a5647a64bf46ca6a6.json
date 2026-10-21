@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "837abc9b531bf29a5647a64bf46ca6a6",
+    "identity": "github:1335456884:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335456884:root",
+            "repository": "ccch713/deepddw",
+            "path": "",
+            "revision": "6065fa46283f2f4f309f66478dd54f880c57d3e1",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "c77860b9c48bb3217a312fddbc4767401878a7b38542f380c44a124453d27e54",
+                "code": "6065fa46283f2f4f309f66478dd54f880c57d3e1",
+                "maintenance": "46c7591872a70db7099b4d697b1d64720276264a893a4fefd2f3c3c1508edbe1"
+            }
+        }
+    }
+}

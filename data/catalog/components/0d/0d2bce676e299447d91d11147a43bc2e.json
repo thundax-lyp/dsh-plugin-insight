@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0d2bce676e299447d91d11147a43bc2e",
+    "identity": "github:1150374613:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1150374613:root",
+            "repository": "labring/sealos-skills",
+            "path": "",
+            "revision": "a8e45c97b498c460901dcf526a874ee949a9e0ea",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "3d57c939e24f8d95680f83565ff77e45322c49c2e8f538bf1d7be91f86934104",
+                "code": "a8e45c97b498c460901dcf526a874ee949a9e0ea",
+                "maintenance": "ef5c790246abe023325faba893fc84fac5fdb117e3ff9617df51cc37e6c2d047"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4b4facae7b0aa9872e50ecac69ba4a33",
+    "identity": "github:1392182438:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1392182438:root",
+            "repository": "yuhhhong/dsh-skill-status",
+            "path": "",
+            "revision": "1e6d897cf86fa2aafeaf7c9fe76eb365260c1d42",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c94acb91891f7290e1082c9e0b429f32a45d878dc585ccbf2c5c4a03673c3801",
+                "code": "1e6d897cf86fa2aafeaf7c9fe76eb365260c1d42",
+                "maintenance": "ecfbddf89be80d9008bef020d2acd0975901e74ac6057283992828631f299b8c"
+            }
+        }
+    }
+}

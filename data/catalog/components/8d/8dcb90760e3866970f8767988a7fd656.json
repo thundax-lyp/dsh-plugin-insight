@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8dcb90760e3866970f8767988a7fd656",
+    "identity": "github:1337444564:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337444564:root",
+            "repository": "couldbeme/dsh-write-gate",
+            "path": "",
+            "revision": "8f46f9f1937db996037ca856b83baefd640ec300",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e198ca66762757d96d0383cb277c40749b6c2c537b1ce8eda6ca817d8d4978cb",
+                "code": "8f46f9f1937db996037ca856b83baefd640ec300",
+                "maintenance": "2347b2f7a902fdf02d3b813d934e9ef6a47dfb86345c924bbd46ed2332b2825b"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "eb742f4a35fa40c5a9aa37aa0ea90b1a",
+    "identity": "github:1337071402:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337071402:root",
+            "repository": "knyazev741/knyazevai-dsh",
+            "path": "",
+            "revision": "d856f2fd82759a707bdce07f041d53d2af009090",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1969b6f45c6fd6f80d44d7ff400c5345eb63c82bf528832db17f1be547b1ff8e",
+                "code": "d856f2fd82759a707bdce07f041d53d2af009090",
+                "maintenance": "6d67750736234a203cbca3067bd1eecadd3bd2bd97cb9a0df682331ea9f8cd32"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "00a82894c5792b5b1dcb0e0f4b8c5693",
+    "identity": "github:1321408361:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1321408361:root",
+            "repository": "zenx0x/allinluna",
+            "path": "",
+            "revision": "b471713089d8352c1c97e05fe3d25907a4164b1a",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "557dd26bad57d89d4a8e5c2410a5cb96b371ce7c6f5c5b63d07bd9cb7ba0926d",
+                "code": "b471713089d8352c1c97e05fe3d25907a4164b1a",
+                "maintenance": "43a7e488f138b9ef909e3c641ceaaa4b7d273688c94cc6378f05713d372098a0"
+            }
+        }
+    }
+}

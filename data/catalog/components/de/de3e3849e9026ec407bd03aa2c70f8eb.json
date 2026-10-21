@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "de3e3849e9026ec407bd03aa2c70f8eb",
+    "identity": "github:1369773370:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1369773370:root",
+            "repository": "LLYlab/DLT",
+            "path": "",
+            "revision": "afdaf1c6a25d0b343e899b26472c818e2b1d4231",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "43ea780d12a2fdf97bcd3882a714ab969466e31df32340de1dbd9b485fdb8235",
+                "code": "afdaf1c6a25d0b343e899b26472c818e2b1d4231",
+                "maintenance": "23b2b26a4d01b4c53e1df39c9ef5cc386b325d453b581f182b60d627c5d24670"
+            }
+        }
+    }
+}

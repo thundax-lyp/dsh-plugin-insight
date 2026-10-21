@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a2ebf0f7348835f030e9ba1484bc372c",
+    "identity": "github:1365324182:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1365324182:root",
+            "repository": "WYR-233/dsh-multi-tts",
+            "path": "",
+            "revision": "7cc25bf79876116aacb24fa7f4ddd60e4bc112fd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3363317d631047b5dacc53c3b82d923656dcb11f5beb6087921aa763e06ec240",
+                "code": "7cc25bf79876116aacb24fa7f4ddd60e4bc112fd",
+                "maintenance": "b9a3ea61edf831d036b3c5d1350892b153db6d83215e3d48a953851799124dc0"
+            }
+        }
+    }
+}

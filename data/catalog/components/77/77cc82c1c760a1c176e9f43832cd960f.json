@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "77cc82c1c760a1c176e9f43832cd960f",
+    "identity": "github:1333471394:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333471394:root",
+            "repository": "PerryLink/dsh-memento",
+            "path": "",
+            "revision": "3508257eb8876a884545f575e98246d6e062f2d6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "aa42e78430d751d67be37eff04a12f8f1bf87b4206f811dc9845c810dfdbdbff",
+                "code": "3508257eb8876a884545f575e98246d6e062f2d6",
+                "maintenance": "78694aab61c172a9c83a2377cf4fc404bddf97dfdf3dcb99a31c917763b4bfc5"
+            }
+        }
+    }
+}

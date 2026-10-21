@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "82147e2a8538305ea06ef877295b1181",
+    "identity": "github:1347985156:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347985156:root",
+            "repository": "extracurricular-ai/dsh-filesnap",
+            "path": "",
+            "revision": "832387bb8605be9ed6cd83c977bea954634e5653",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "a86bd634f7f87ec95bc7958bb7192933465fe51b208751bd3dc6cb950b05b3aa",
+                "code": "832387bb8605be9ed6cd83c977bea954634e5653",
+                "maintenance": "efae9538a86ad340b62ee19ac7c86f65a543ba18b4091d367d0efd771d16c4d2"
+            }
+        }
+    }
+}

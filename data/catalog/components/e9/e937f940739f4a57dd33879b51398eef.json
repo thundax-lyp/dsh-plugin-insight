@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e937f940739f4a57dd33879b51398eef",
+    "identity": "github:1379039644:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1379039644:root",
+            "repository": "zhy5/dsh-wx-bridge",
+            "path": "",
+            "revision": "7b8d7eac9ed4bfee8f1db89f734abb113eeb6c33",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b849f4ddb40e1315ae0d9472bdb23468062cd7accd57ceb80106bcd08fea80ed",
+                "code": "7b8d7eac9ed4bfee8f1db89f734abb113eeb6c33",
+                "maintenance": "3ce89d4fa622a913be9c54dfedddc802e3d6ce8e2589604903a68e268ad07cb5"
+            }
+        }
+    }
+}

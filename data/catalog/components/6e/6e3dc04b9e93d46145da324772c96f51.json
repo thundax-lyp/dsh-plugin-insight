@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6e3dc04b9e93d46145da324772c96f51",
+    "identity": "github:1334061249:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334061249:root",
+            "repository": "yzx4036/dsh-memory-snapshot",
+            "path": "",
+            "revision": "b9cdf631a3a7a1b87855bef1f1553c4331fc8cb7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5a20bd42b437b06db61d2a1eb4d5652099affca2b8e9598bf6d246d621cc3008",
+                "code": "b9cdf631a3a7a1b87855bef1f1553c4331fc8cb7",
+                "maintenance": "4820df8d06b43f779082e0d6b82fe4650caff8c44f2dd31aa18ede85589abe2c"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "48ad25765da4aaabe259aad59ddeb474",
+    "identity": "github:1368472090:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1368472090:root",
+            "repository": "DanielW203/dsh-native-macos",
+            "path": "",
+            "revision": "3a7b6faccb427fb62d0daa3244ae5d2563f46ae2",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "e3296c2cf3c589bb7a97f8ee4a38f4d3e42d902207f493f51487c9a3f82129d8",
+                "code": "3a7b6faccb427fb62d0daa3244ae5d2563f46ae2",
+                "maintenance": "63406fd2922916aaf7ca493953607e5e1b0135f4b1098442fa2829aa02fe996c"
+            }
+        }
+    }
+}

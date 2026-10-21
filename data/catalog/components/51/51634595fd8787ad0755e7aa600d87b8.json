@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "51634595fd8787ad0755e7aa600d87b8",
+    "identity": "github:1401217326:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1401217326:root",
+            "repository": "AusertDream/TravelPlanner",
+            "path": "",
+            "revision": "b13bdae368f760b50be79cd5c609b27269e373a8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6b677d7723024120ed01b7cdc21f2e1ea7de047d542504a83446598ee22ea61e",
+                "code": "b13bdae368f760b50be79cd5c609b27269e373a8",
+                "maintenance": "8d72944ec2f8e27694a68150a2f6f5de00683ed997df917de76fd6ba460183ce"
+            }
+        }
+    }
+}

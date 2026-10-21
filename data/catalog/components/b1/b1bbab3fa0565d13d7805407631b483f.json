@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b1bbab3fa0565d13d7805407631b483f",
+    "identity": "github:1339191026:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339191026:root",
+            "repository": "AgentValet/dsh-agentvalet",
+            "path": "",
+            "revision": "d08d242c77a04ce79646f86a1d877d244d7bc3f9",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "c05f3583366d5761f3f8099bc0c75c84e26482e0a9ed4aa99e6092bff8bbdb45",
+                "code": "d08d242c77a04ce79646f86a1d877d244d7bc3f9",
+                "maintenance": "24d548027de1454d6416dac4968f39fa03eff4bf20dd6ecb2724f264cdda2a51"
+            }
+        }
+    }
+}

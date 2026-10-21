@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "34366143f74e6b5dbe0c1e8c6a1ea33c",
+    "identity": "github:1354877691:packages-dsh-skill-cheatsheet",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1354877691:packages-dsh-skill-cheatsheet",
+            "repository": "WMXS-A/dsh-utility-plugins",
+            "path": "packages/dsh-skill-cheatsheet",
+            "revision": "5eb622a48bfcb5ee00255dfd8afbb0cb132784c6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2b165d045d72c1eb064b8b100227e77bfe74bf7d9cdf60116f6907d2c71f4d2f",
+                "code": "5eb622a48bfcb5ee00255dfd8afbb0cb132784c6",
+                "maintenance": "38d30cbea0281e1e8010c914354914120c0536d78af1b69cec10013e50eb5009"
+            }
+        }
+    }
+}

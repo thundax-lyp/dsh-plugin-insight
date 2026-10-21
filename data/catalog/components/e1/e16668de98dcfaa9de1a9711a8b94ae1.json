@@ -1,0 +1,459 @@
+{
+    "schema_version": 3,
+    "id": "e16668de98dcfaa9de1a9711a8b94ae1",
+    "identity": "github:1416950630:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1416950630:root",
+            "repository_id": 1416950630,
+            "component_id": "root",
+            "repository": "58catmiao/dsh-sciwork",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-sciwork",
+            "entry_type": "plugin",
+            "technical_category": "agent-workflow",
+            "business_category": "research-knowledge",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "66df9f880edff0523d975e9d294304203e7c86d420feefc487a4d7024a5e98b3",
+                "code": "21c6e9d5f8f48cd03363305d9fa3c641f8d0f808",
+                "maintenance": "d4dc1562434aa41d1f4862793f58e60d32d869b74e07c445bbb0ee45e35646d8"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-02-github-1416950630-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T03:16:22.912Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-02-github-1416950630-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/58catmiao/dsh-sciwork/blob/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808/README.md",
+                    "revision": "21c6e9d5f8f48cd03363305d9fa3c641f8d0f808",
+                    "captured_at": "2026-10-21T03:16:22.912Z",
+                    "summary": "提供科研模式预设、本地科研库面板、文献和数据管理及投稿前检查流程。",
+                    "artifact": "data/runs/2026-10-21-02/snapshots/58catmiao--dsh-sciwork/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-02-github-1416950630-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/58catmiao/dsh-sciwork/blob/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808/lib/index.js",
+                    "revision": "21c6e9d5f8f48cd03363305d9fa3c641f8d0f808",
+                    "captured_at": "2026-10-21T03:16:22.912Z",
+                    "summary": "核查 lib/index.js、lib/actions.js、library/scripts/research.py；lib/index.js注册research/call精确Fetch路由；actions.js分派快照、导入、归档、变换及投稿动作，库写入转给Python脚本；技能与research预设组织工作流。",
+                    "artifact": "data/runs/2026-10-21-02/snapshots/58catmiao--dsh-sciwork/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "核查固定提交内列明入口、核心实现及相关配置/作者材料的源码子集；未执行插件、其测试、安装、付费请求或真实宿主验收，未核实独立用户采用。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "适合已有本地数据与文献、需要组织图表和稿件的科研者；交付物是可迁移的文件库与投稿包。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1416950630-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1416950630:root",
+                            "area": "code",
+                            "fingerprint": "21c6e9d5f8f48cd03363305d9fa3c641f8d0f808"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:22.912Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "lib/index.js注册research/call精确Fetch路由；actions.js分派快照、导入、归档、变换及投稿动作，库写入转给Python脚本；技能与research预设组织工作流。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1416950630-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1416950630:root",
+                            "area": "code",
+                            "fingerprint": "21c6e9d5f8f48cd03363305d9fa3c641f8d0f808"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:22.912Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "核查固定提交内列明入口、核心实现及相关配置/作者材料的源码子集；未执行插件、其测试、安装、付费请求或真实宿主验收，未核实独立用户采用。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1416950630-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1416950630:root",
+                            "area": "code",
+                            "fingerprint": "21c6e9d5f8f48cd03363305d9fa3c641f8d0f808"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:22.912Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "发布与依赖以本项固定package.json、README和本轮META为界；npm或仓库统计不是采用证据。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1416950630-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1416950630:root",
+                            "area": "code",
+                            "fingerprint": "21c6e9d5f8f48cd03363305d9fa3c641f8d0f808"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:22.912Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "首次安装Python、建库及迁移命名；Origin另需相应系统、软件与外部插件。现金成本取决于软件和模型，人工主要是引用核实、期刊规则更新与归档恢复。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1416950630-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1416950630:root",
+                            "area": "code",
+                            "fingerprint": "21c6e9d5f8f48cd03363305d9fa3c641f8d0f808"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:22.912Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "适合愿意使用目录式科研库的用户。先在副本导入、归档和恢复，再核对投稿档案是否适用于目标期刊；面板检查不能替代科研与编辑审阅。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1416950630-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1416950630:root",
+                            "area": "code",
+                            "fingerprint": "21c6e9d5f8f48cd03363305d9fa3c641f8d0f808"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:22.912Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "可减少跨文件整理和投稿材料收集，缺乏真实课题的差错率与工时对照。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1416950630-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1416950630:root",
+                            "area": "code",
+                            "fingerprint": "21c6e9d5f8f48cd03363305d9fa3c641f8d0f808"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:22.912Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "精确Fetch路由避免抢占共享/api拦截器；面板动作集中在actions、路径经resolveInside，文件索引可重建，利于迁移。复用时仍须核对Python引擎及删除恢复语义。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1416950630-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1416950630:root",
+                            "area": "code",
+                            "fingerprint": "21c6e9d5f8f48cd03363305d9fa3c641f8d0f808"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:22.912Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "作者定位为科研工作台；实际增量是把文件系统作为真相源，面板与CLI共用写入路径，将数据、引用、期刊检查和包清单连接起来。相对散落文件与人工清单，增加登记及溯源；Origin绘图来自外部Fantasality插件，不属于本项目实现。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1416950630-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1416950630:root",
+                            "area": "code",
+                            "fingerprint": "21c6e9d5f8f48cd03363305d9fa3c641f8d0f808"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:22.912Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "期刊规则档案的机器检查只能覆盖编码条款，不能替代现行刊方要求或科学正确性。README称面板只读为主，但actions明确包含remove、writeText、runCli等写操作；采用前须按实际动作评估路径和备份，而不能按只读描述判断。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1416950630-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1416950630:root",
+                            "area": "code",
+                            "fingerprint": "21c6e9d5f8f48cd03363305d9fa3c641f8d0f808"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:22.912Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "待验证假设：让投稿检查每条结论绑定期刊来源日期及输入文件摘要，可在规则或稿件变化后只重验失效条目。用一组稿件修改和规则变化比较遗漏率与人工核对时间；未验证，不能宣称自动合规。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1416950630-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1416950630:root",
+                            "area": "code",
+                            "fingerprint": "21c6e9d5f8f48cd03363305d9fa3c641f8d0f808"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:22.912Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T03:16:22.912Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "21c6e9d5f8f48cd03363305d9fa3c641f8d0f808",
+                "reviewed_at": "2026-10-21T03:16:22.912Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1416950630:root",
+                        "area": "code",
+                        "fingerprint": "21c6e9d5f8f48cd03363305d9fa3c641f8d0f808"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 15,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty=9：科研文件管理与投稿清单已有成熟参照。 mechanism=15：统一动作与Python库写入有整合深度。 transferability=15：文件真相源和可重建索引利于迁移。 simplification=8：面板统一资料操作但外部绘图仍需适配。",
+                    "basis": "interpretation",
+                    "score": 47,
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1416950630-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 26,
+                        "delivery": 23,
+                        "reach": 10,
+                        "economics": 8
+                    },
+                    "rationale": "workflow=26：资料、数据、稿件到投稿包形成较完整流程。 delivery=23：包manifest和检查表有可审阅交付机制。 reach=10：科研场景明确但Python/Origin等条件限制覆盖。 economics=8：可减少整理步骤，无实际净工时对照。",
+                    "basis": "interpretation",
+                    "score": 67,
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1416950630-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "愿维护目录科研库者可在副本试导入归档恢复；按实际remove/writeText/runCli评权限，并独立核对期刊规则与引用。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "已有数据文献组织图稿投稿包任务明确。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "文件真相源与面板CLI共路径减少散落文件交接。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "research/call与Python写入分派可查，机器期刊规则不验科学正确。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "需Python与迁移，Origin另依赖软件插件，引用及规则更新有成本。"
+                    }
+                },
+                "score": 65,
+                "revision": "21c6e9d5f8f48cd03363305d9fa3c641f8d0f808",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-02-github-1416950630-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1416950630:root",
+                        "area": "code",
+                        "fingerprint": "21c6e9d5f8f48cd03363305d9fa3c641f8d0f808"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1416950630:root",
+            "repository": "58catmiao/dsh-sciwork",
+            "path": "",
+            "revision": "21c6e9d5f8f48cd03363305d9fa3c641f8d0f808",
+            "fingerprints": {
+                "directory": "66df9f880edff0523d975e9d294304203e7c86d420feefc487a4d7024a5e98b3",
+                "code": "21c6e9d5f8f48cd03363305d9fa3c641f8d0f808",
+                "maintenance": "d4dc1562434aa41d1f4862793f58e60d32d869b74e07c445bbb0ee45e35646d8"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T03:00:27Z",
+            "analysis_sha256": "9ffd6b33a41e4ce3e68323afad485f388e94d55f6e6802e34945b070b0f64ba6"
+        },
+        "publication.metadata": "data/plugins/58catmiao--dsh-sciwork/META.json",
+        "publication.summaries": {
+            "text": "提供科研模式预设、本地科研库面板、文献和数据管理及投稿前检查流程。",
+            "revision": "21c6e9d5f8f48cd03363305d9fa3c641f8d0f808",
+            "source_url": "https://github.com/58catmiao/dsh-sciwork/blob/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "21c6e9d5f8f48cd03363305d9fa3c641f8d0f808",
+            "items": {
+                "Agent/Preset": "research科研模式",
+                "Skill": "research-studio、literature-refs、paper-writing、journal-profile、origin-plot",
+                "Host 路由": "/api/research/call精确Fetch路由",
+                "界面": "科研库管理面板"
+            }
+        },
+        "publication.advice": {
+            "revision": "21c6e9d5f8f48cd03363305d9fa3c641f8d0f808",
+            "text": "适合愿意使用目录式科研库的用户。先在副本导入、归档和恢复，再核对投稿档案是否适用于目标期刊；面板检查不能替代科研与编辑审阅。"
+        },
+        "registry": "data/plugins/58catmiao--dsh-sciwork",
+        "reports": "# dsh-sciwork\n\n> 提供科研模式预设、本地科研库面板、文献和数据管理及投稿前检查流程。\n\n## 使用建议\n\n适合愿意使用目录式科研库的用户。先在副本导入、归档和恢复，再核对投稿档案是否适用于目标期刊；面板检查不能替代科研与编辑审阅。\n\n**核查状态**：已检查固定版本源码，未安装、执行目标插件或完成真实宿主验收。已有贡献仅由固定版本源码支持，实际宿主和任务效果尚未验证；未来设计假设保持未验证。\n\n## 洞察短评\n\n- **用途**：适合已有本地数据与文献、需要组织图表和稿件的科研者；交付物是可迁移的文件库与投稿包。\n- **亮点**：作者定位为科研工作台；实际增量是把文件系统作为真相源，面板与CLI共用写入路径，将数据、引用、期刊检查和包清单连接起来。相对散落文件与人工清单，增加登记及溯源；Origin绘图来自外部Fantasality插件，不属于本项目实现。\n- **思考**：期刊规则档案的机器检查只能覆盖编码条款，不能替代现行刊方要求或科学正确性。README称面板只读为主，但actions明确包含remove、writeText、runCli等写操作；采用前须按实际动作评估路径和备份，而不能按只读描述判断。\n- **建议**：待验证假设：让投稿检查每条结论绑定期刊来源日期及输入文件摘要，可在规则或稿件变化后只重验失效条目。用一组稿件修改和规则变化比较遗漏率与人工核对时间；未验证，不能宣称自动合规。\n\n## 当前插件分析\n\n### 场景与替代办法\n\n替代是目录+文献管理器+手工投稿清单；项目的价值在统一工作流，未替代专业统计或文献数据库。\n\n### 能力、依赖与流程\n\nlib/index.js注册research/call精确Fetch路由；actions.js分派快照、导入、归档、变换及投稿动作，库写入转给Python脚本；技能与research预设组织工作流。\n\n- **Agent/Preset**：research科研模式\n- **Skill**：research-studio、literature-refs、paper-writing、journal-profile、origin-plot\n- **Host 路由**：/api/research/call精确Fetch路由\n- **界面**：科研库管理面板\n\n宿主connection与预设/客户端能力、Node及Python3；绘图额外依赖Origin和外部dsh-origin-plugin；期刊资料有时间边界。\n\n建库→选research预设→导入数据文献→变换或外部绘图并登记→写稿核引→按期刊档案体检→导出带摘要清单的包；归档可恢复，真删需额外谨慎。\n\n### 成本与效果\n\n首次安装Python、建库及迁移命名；Origin另需相应系统、软件与外部插件。现金成本取决于软件和模型，人工主要是引用核实、期刊规则更新与归档恢复。\n\n可减少跨文件整理和投稿材料收集，缺乏真实课题的差错率与工时对照。\n\n### 工程亮点\n\n精确Fetch路由避免抢占共享/api拦截器；面板动作集中在actions、路径经resolveInside，文件索引可重建，利于迁移。复用时仍须核对Python引擎及删除恢复语义。\n\n源码依据：[lib/index.js](https://github.com/58catmiao/dsh-sciwork/blob/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808/lib/index.js)、[lib/actions.js](https://github.com/58catmiao/dsh-sciwork/blob/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808/lib/actions.js)、[library/scripts/research.py](https://github.com/58catmiao/dsh-sciwork/blob/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808/library/scripts/research.py)。\n\n## 未来设计假设（未验证）\n\n待验证假设：让投稿检查每条结论绑定期刊来源日期及输入文件摘要，可在规则或稿件变化后只重验失效条目。用一组稿件修改和规则变化比较遗漏率与人工核对时间；未验证，不能宣称自动合规。\n\n用复制库验证路径逃逸、同名导入、归档恢复、缺DOI引用及过期期刊条款；检查投稿包逐文件摘要，本轮未执行。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：38081849c36a65e5c22b494ab3afdecaf4b336449557c3b29320039ad3a60e24。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 16 | 2674 | — | — | 45435 |\n| .js | source | 11 | 6376 | 5154 | 832 | — |\n| .mjs | source | 8 | 2958 | 2461 | 295 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[58catmiao/dsh-sciwork](https://github.com/58catmiao/dsh-sciwork)\n- **版本号**：0.2.2（[固定提交 21c6e9d5](https://github.com/58catmiao/dsh-sciwork/tree/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808)）\n- **版本日期**：2026-10-19（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：lib/index.js、lib/actions.js、library/scripts/research.py、作者README与固定范围inventory；源码抽读不等于完整审计。\n- 未完成：目标插件执行、测试、安装、模型调用和真实宿主验收。\n- 证据限制：核查固定提交内列明入口、核心实现及相关配置/作者材料的源码子集；未执行插件、其测试、安装、付费请求或真实宿主验收，未核实独立用户采用。\n- 下一步：用复制库验证路径逃逸、同名导入、归档恢复、缺DOI引用及过期期刊条款；检查投稿包逐文件摘要，本轮未执行。\n",
+        "metadata": {
+            "repository": "58catmiao/dsh-sciwork",
+            "repository_id": 1416950630,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 2,
+            "pushed_at": "2026-10-19T07:10:23Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A58catmiao%2Fdsh-sciwork%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640C:17E195:14078D:21B311:6AD84A4F and timestamp 2026-10-21 05:14:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A58catmiao%2Fdsh-sciwork%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C0:3E0DB6:143772:21E002:6AD84A4F and timestamp 2026-10-21 05:14:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A58catmiao%2Fdsh-sciwork%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C1:2F40AA:1483FC:221B6B:6AD84A4F and timestamp 2026-10-21 05:14:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A58catmiao%2Fdsh-sciwork%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C2:2EEE9E:13E6F3:21852A:6AD84A50 and timestamp 2026-10-21 05:14:56 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A58catmiao%2Fdsh-sciwork%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C3:C61AA:1551AD:230C2B:6AD84A50 and timestamp 2026-10-21 05:14:56 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-sciwork",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-sciwork",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-sciwork",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "21c6e9d5f8f48cd03363305d9fa3c641f8d0f808",
+                "current_revision": "21c6e9d5f8f48cd03363305d9fa3c641f8d0f808",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1416950630:root",
+            "repository": "58catmiao/dsh-sciwork",
+            "path": "",
+            "revision": "21c6e9d5f8f48cd03363305d9fa3c641f8d0f808",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "66df9f880edff0523d975e9d294304203e7c86d420feefc487a4d7024a5e98b3",
+                "code": "21c6e9d5f8f48cd03363305d9fa3c641f8d0f808",
+                "maintenance": "d4dc1562434aa41d1f4862793f58e60d32d869b74e07c445bbb0ee45e35646d8"
+            }
+        }
+    }
+}

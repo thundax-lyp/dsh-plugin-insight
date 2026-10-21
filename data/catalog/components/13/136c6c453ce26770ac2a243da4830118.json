@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "136c6c453ce26770ac2a243da4830118",
+    "identity": "github:1335302714:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335302714:root",
+            "repository": "XieZongChen/dsh-md-notes",
+            "path": "",
+            "revision": "d98ac7cd4fbe0824d5a7ffcd5127c5bb59f56c4a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "2cbbbbf0350bbccfe6169d607be3d9d14dff194220e0e3174996c968ce31c0d0",
+                "code": "d98ac7cd4fbe0824d5a7ffcd5127c5bb59f56c4a",
+                "maintenance": "d6b1ddd79a5e59c08bf2dd0fb0d5afc820fa945d2d0a94dbcd18ce3f591d6b54"
+            }
+        }
+    }
+}

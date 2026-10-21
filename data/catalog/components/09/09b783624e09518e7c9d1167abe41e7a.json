@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "09b783624e09518e7c9d1167abe41e7a",
+    "identity": "github:1345752312:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345752312:root",
+            "repository": "gwsbhqt/dsh-insight",
+            "path": "",
+            "revision": "cd988c02f43036147efd678a85faab21f26e0931",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0e9ac54a981535e80c793984f50f6dcf20385424d661e73dab6564bb65256863",
+                "code": "cd988c02f43036147efd678a85faab21f26e0931",
+                "maintenance": "c92b6a51d3f5b14090356cbe906121f48a885f6a4509d83144590ea7d1c6f144"
+            }
+        }
+    }
+}

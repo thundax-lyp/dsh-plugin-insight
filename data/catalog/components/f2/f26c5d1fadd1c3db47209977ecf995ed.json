@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f26c5d1fadd1c3db47209977ecf995ed",
+    "identity": "github:1348298661:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1348298661:root",
+            "repository": "xobexo/dsh-smart-scenario-router",
+            "path": "",
+            "revision": "33689ccb49cd888201c00c3a50861d8dae5cd3aa",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "041e09d2c90895424a112d8156c242db772f4b1d1360429399ac0e68c0b9767e",
+                "code": "33689ccb49cd888201c00c3a50861d8dae5cd3aa",
+                "maintenance": "5a62284cba9683258bf7cde5a3ba3b0fd9e565a0f05b67972fbbb1b09849a990"
+            }
+        }
+    }
+}

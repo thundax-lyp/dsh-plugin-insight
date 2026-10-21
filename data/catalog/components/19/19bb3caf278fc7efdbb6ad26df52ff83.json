@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "19bb3caf278fc7efdbb6ad26df52ff83",
+    "identity": "github:1375511240:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1375511240:root",
+            "repository": "wzn16/dsh-auto-archive",
+            "path": "",
+            "revision": "b8be86fa319a5c763eea12830767d9d7039c8ca3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9bc72710bdfb44b700531ab4c54f7a784fba530dea00cf6c253d2e7c91ff1c7b",
+                "code": "b8be86fa319a5c763eea12830767d9d7039c8ca3",
+                "maintenance": "f89395ad3faed27d26de2edf8ee7963e7e104298be4ffc64396fe3ad7fd3f302"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c9a6e5e359e8b7dc7d0c2511a5bbbdfb",
+    "identity": "github:1412616840:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1412616840:root",
+            "repository": "LINinLIN-0079/godot-imagegen",
+            "path": "",
+            "revision": "51db5aef52c6f47b2401e602442cd61e02361cb4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "64565c822b4532ebb049109991b4c92c3c28b1ef08e8c9be36567cb64135237a",
+                "code": "51db5aef52c6f47b2401e602442cd61e02361cb4",
+                "maintenance": "e598a9803c99fb25a0b41a9a51e19fd21d75e54944d79d9725f20fe99392a45f"
+            }
+        }
+    }
+}

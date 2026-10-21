@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f65ee1711b9dd772e477c664b9daf50d",
+    "identity": "github:1347427335:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347427335:root",
+            "repository": "GooDAnDReaDY/dsh-messenger-gateway",
+            "path": "",
+            "revision": "b535e7d0f872552f47f07ba1202cd5c8199787cb",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a496fb09790e81991eb6ba1702e5b17c2bb227ac81b241bce3a2b3d925391524",
+                "code": "b535e7d0f872552f47f07ba1202cd5c8199787cb",
+                "maintenance": "a44f9d7b5479d058e70ae01c69a8c4379c30bf9ed58430a9cd5d4e7937a7605b"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "cbc1f52ed4aee397f68157bcf0bcdaf2",
+    "identity": "github:1367531023:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1367531023:root",
+            "repository": "corrinehu/dsh-buddy-checkin",
+            "path": "",
+            "revision": "7a0e699afd3d971b9a54806b8de8de00b8e45bd3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "051517390102faf9d17fd6dc8cdeba206341d44849f03be7e80fc209250be58a",
+                "code": "7a0e699afd3d971b9a54806b8de8de00b8e45bd3",
+                "maintenance": "ab21e4c5f7723752f86fe2039a79de042458fc7ffecb717910f5494be8ec7ff8"
+            }
+        }
+    }
+}

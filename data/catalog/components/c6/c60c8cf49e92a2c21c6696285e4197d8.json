@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c60c8cf49e92a2c21c6696285e4197d8",
+    "identity": "github:1177055450:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1177055450:root",
+            "repository": "PM-Shawn/Abu-Cowork",
+            "path": "",
+            "revision": "9e01c093bef4332a3faafe85e7589357878e211b",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "e3daeeddcf897be69bb56a3f2a4a52ef772ec61a7403615c4e807d806b56cb1b",
+                "code": "9e01c093bef4332a3faafe85e7589357878e211b",
+                "maintenance": "1a7e53d76de5b91243b96af995031d111b9fae53b155eb70cffc494da2873935"
+            }
+        }
+    }
+}

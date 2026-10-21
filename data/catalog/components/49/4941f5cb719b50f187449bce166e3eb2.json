@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4941f5cb719b50f187449bce166e3eb2",
+    "identity": "github:1333913099:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333913099:root",
+            "repository": "dclichang2022/dsh-green-meter",
+            "path": "",
+            "revision": "73b61dd3b5e0fc165310d0dfb85ff8673b87958c",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "d0dc2c441952da6e9937ff81f001397dfd297c22cfc8559038a3bfd5393ad6e4",
+                "code": "73b61dd3b5e0fc165310d0dfb85ff8673b87958c",
+                "maintenance": "05146c76896d1f2c893aed75ddd8dc4f706ef2bd2a33c93efa7692e5d45c24ce"
+            }
+        }
+    }
+}

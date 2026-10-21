@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "90a78cf1c98f8a368af1c4cc1bdea345",
+    "identity": "github:1358021459:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1358021459:root",
+            "repository": "djs326/dsh-plugin-width-slider",
+            "path": "",
+            "revision": "fead3aead4b0e495247d3b2bf971ba7ee98074ea",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0c0212d8f7ed6daa9871615d3594c4ebc5307679cdb418b50bec13290cbf5525",
+                "code": "fead3aead4b0e495247d3b2bf971ba7ee98074ea",
+                "maintenance": "b4e1aa557dee8445fc90f41af8d27d91f87a5ec1bb375335e4176d363cfa3f9a"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0ed582a08c74d61cd10fd202d0ce850b",
+    "identity": "github:1378377907:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1378377907:root",
+            "repository": "DDDMUC/dsh-delete-turn",
+            "path": "",
+            "revision": "c1ef0c61d5a806d27fd65ac11473533b88e1b485",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "59b9e9fdffd56d9d45d07f469379e8b04dbfa039021f7628cc500d3d365248c8",
+                "code": "c1ef0c61d5a806d27fd65ac11473533b88e1b485",
+                "maintenance": "8535acfb47e9cc1eba129a7b17c8f5c75fbedf1707bd60068bce43837da62467"
+            }
+        }
+    }
+}

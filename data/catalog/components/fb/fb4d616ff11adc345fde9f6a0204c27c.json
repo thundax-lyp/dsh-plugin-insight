@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fb4d616ff11adc345fde9f6a0204c27c",
+    "identity": "github:1349266980:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1349266980:root",
+            "repository": "Ansonfishing/dsh-model-manager",
+            "path": "",
+            "revision": "d9c6b17c2a71528bbdd3faf9b7eb506cb7854dff",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3c1ec2c788243b12ad42cefe7daf71070fd5c9ed74e6cb40117170fde3db27d7",
+                "code": "d9c6b17c2a71528bbdd3faf9b7eb506cb7854dff",
+                "maintenance": "42b3609764c0fe163386dc11e4e2658eea5f659c6aa3eb08299723ca12e226e9"
+            }
+        }
+    }
+}

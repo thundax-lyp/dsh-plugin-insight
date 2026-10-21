@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "eb6d885e6c43eb2dc6141d260dd7d938",
+    "identity": "github:1357268674:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1357268674:root",
+            "repository": "zaofan-make/dsh-qqbot",
+            "path": "",
+            "revision": "ed39be0727c0608ecf539ddba0f8ae6ec03941c3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7208dc7ca8aca8d0d2be66ca8d4534be63c83b3dd48b093d9bf11a937c2dd23e",
+                "code": "ed39be0727c0608ecf539ddba0f8ae6ec03941c3",
+                "maintenance": "945d7d6f7f10c70194e2e5113090e68e2a7b35908a0ec3cccef9906120560e5c"
+            }
+        }
+    }
+}

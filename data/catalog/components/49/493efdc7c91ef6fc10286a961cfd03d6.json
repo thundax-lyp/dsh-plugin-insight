@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "493efdc7c91ef6fc10286a961cfd03d6",
+    "identity": "github:1334055906:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334055906:root",
+            "repository": "Mombrane/dsh-subagent-monitor",
+            "path": "",
+            "revision": "f8beee47f4dea63096070c141a97f889181a590a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "66c27dcf20542b3300aa2e147127e7a6663edd8e47d700d8e28320730b1d55b5",
+                "code": "f8beee47f4dea63096070c141a97f889181a590a",
+                "maintenance": "b0281f8f3c6c60af0862d0a5fbd7f6bba708bae96b6d1319c7a70f0863f42a4f"
+            }
+        }
+    }
+}

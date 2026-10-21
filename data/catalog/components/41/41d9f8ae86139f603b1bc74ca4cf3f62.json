@@ -1,0 +1,434 @@
+{
+    "schema_version": 3,
+    "id": "41d9f8ae86139f603b1bc74ca4cf3f62",
+    "identity": "github:1336720864:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1336720864:root",
+            "repository_id": 1336720864,
+            "component_id": "root",
+            "repository": "AlexYin-Tongji/dsh-plugin-console",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-plugin-console",
+            "entry_type": "plugin",
+            "technical_category": "runtime-deployment",
+            "business_category": "infrastructure",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "2be2ccc8216e982dda96d6b393e1380f64f62e8687692a12bb33293a1da02a7b",
+                "code": "224e53959c1b03f83993b80f8438b49b17d820d6",
+                "maintenance": "8784f1ef84f98ff2957ab184a5f74c5d42377abc73d6c5ae097bd464c07095db"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-07-github-1336720864-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T08:08:47.941Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-07-github-1336720864-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/AlexYin-Tongji/dsh-plugin-console/blob/224e53959c1b03f83993b80f8438b49b17d820d6/README.md",
+                    "revision": "224e53959c1b03f83993b80f8438b49b17d820d6",
+                    "captured_at": "2026-10-21T08:08:47.941Z",
+                    "summary": "在设置页浏览目录与已装插件，规划变更并执行官方CLI和隔离profile启动检查。",
+                    "artifact": "data/runs/2026-10-21-07/snapshots/alexyin-tongji--dsh-plugin-console/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-07-github-1336720864-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/AlexYin-Tongji/dsh-plugin-console/blob/224e53959c1b03f83993b80f8438b49b17d820d6/src/index.ts",
+                    "revision": "224e53959c1b03f83993b80f8438b49b17d820d6",
+                    "captured_at": "2026-10-21T08:08:47.941Z",
+                    "summary": "核查 src/index.ts、src/operations.ts、src/canary.ts；目录验证npm integrity/patch或固定Git SHA；操作plan绑定5分钟期限/profile指纹，执行重验并锁profile、备份文件和依赖，调用官方CLI；新包通过临时HOME/DSH_HOME canary初始化与客户端加载检查，否则尝试回滚。",
+                    "artifact": "data/runs/2026-10-21-07/snapshots/alexyin-tongji--dsh-plugin-console/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "维护DSH Web profile插件，安装更新前确认目标和回退路径。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1336720864-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336720864:root",
+                            "area": "code",
+                            "fingerprint": "224e53959c1b03f83993b80f8438b49b17d820d6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:08:47.941Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "目录验证npm integrity/patch或固定Git SHA；操作plan绑定5分钟期限/profile指纹，执行重验并锁profile、备份文件和依赖，调用官方CLI；新包通过临时HOME/DSH_HOME canary初始化与客户端加载检查，否则尝试回滚。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1336720864-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336720864:root",
+                            "area": "code",
+                            "fingerprint": "224e53959c1b03f83993b80f8438b49b17d820d6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:08:47.941Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1336720864-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336720864:root",
+                            "area": "code",
+                            "fingerprint": "224e53959c1b03f83993b80f8438b49b17d820d6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:08:47.941Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "分发以本插件固定package.json、运行依赖与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1336720864-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336720864:root",
+                            "area": "code",
+                            "fingerprint": "224e53959c1b03f83993b80f8438b49b17d820d6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:08:47.941Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "下载/拷贝node_modules、完整profile启动、磁盘和等待成本；失败恢复可能需人工修复，第三方初始化仍可能联网/写外部路径。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1336720864-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336720864:root",
+                            "area": "code",
+                            "fingerprint": "224e53959c1b03f83993b80f8438b49b17d820d6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:08:47.941Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "适合维护测试profile；先核备份空间、canary与回滚，生产环境重启后的UI必须另验。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1336720864-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336720864:root",
+                            "area": "code",
+                            "fingerprint": "224e53959c1b03f83993b80f8438b49b17d820d6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:08:47.941Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "变更前后状态和回滚机制有源码支持，无真实安装失败率或恢复时间对照。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1336720864-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336720864:root",
+                            "area": "code",
+                            "fingerprint": "224e53959c1b03f83993b80f8438b49b17d820d6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:08:47.941Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "同步busy预留、单次plan消耗、指纹复验/独占锁和依赖快照是可借鉴事务设计；仅canary passed不代表完整业务验收。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1336720864-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336720864:root",
+                            "area": "code",
+                            "fingerprint": "224e53959c1b03f83993b80f8438b49b17d820d6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:08:47.941Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "把来源确认、目标冻结和失败恢复带入插件管理流程，而非只是包装安装按钮。初始化/客户端资源探针扩大了检查范围，但不能把代码验证描述为安全认证。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1336720864-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336720864:root",
+                            "area": "code",
+                            "fingerprint": "224e53959c1b03f83993b80f8438b49b17d820d6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:08:47.941Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "canaryEnvironment先展开process.env再删除少数变量，HOME/TMP隔离不等于OS沙箱，任意插件仍可读绝对路径和联网，其他API密钥也未全部清除。其价值是兼容冲突检测，不能证明恶意或高权限代码安全；回滚profile不自动回滚插件外部副作用。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1336720864-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336720864:root",
+                            "area": "code",
+                            "fingerprint": "224e53959c1b03f83993b80f8438b49b17d820d6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:08:47.941Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "未验证假设：将canary明确分为兼容探针与可选OS级最小权限运行，并记录外部副作用，可降低对“隔离试运行”的误解。用写绝对路径、读环境、网络请求和初始化冲突样例分别核边界；若无法隔离就只声明兼容验证。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1336720864-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336720864:root",
+                            "area": "code",
+                            "fingerprint": "224e53959c1b03f83993b80f8438b49b17d820d6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:08:47.941Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T08:08:47.941Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "224e53959c1b03f83993b80f8438b49b17d820d6",
+                "reviewed_at": "2026-10-21T08:08:47.941Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1336720864:root",
+                        "area": "code",
+                        "fingerprint": "224e53959c1b03f83993b80f8438b49b17d820d6"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty=9：安装器和canary已有先例。 mechanism=15：版本计划与恢复约束实质集成。 transferability=10：可迁移变更方法，profile实现耦合。 simplification=8：单流程组合确认/检查/回滚有意义。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1336720864-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 15,
+                        "reach": 10,
+                        "economics": 4
+                    },
+                    "rationale": "workflow=18：改变确认与失败交接责任。 delivery=15：新增兼容证据而非安全认证。 reach=10：降低Web profile维护门槛。 economics=4：增加检查成本换风险降低未量化。",
+                    "basis": "interpretation",
+                    "score": 47,
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1336720864-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "Web profile维护者可在测试profile试安装计划与回滚；核空间和canary结果，临时HOME非OS沙箱，只用可信插件并另验重启UI。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "版本维护前确认目标与回退的任务明确。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "固定来源、plan指纹、锁和canary比直接安装多控制。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "已核备份回滚和环境继承，未测真实失败恢复时间。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "node_modules复制与完整启动代价高，但可信测试profile可控。"
+                    }
+                },
+                "score": 65,
+                "revision": "224e53959c1b03f83993b80f8438b49b17d820d6",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-07-github-1336720864-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1336720864:root",
+                        "area": "code",
+                        "fingerprint": "224e53959c1b03f83993b80f8438b49b17d820d6"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1336720864:root",
+            "repository": "AlexYin-Tongji/dsh-plugin-console",
+            "path": "",
+            "revision": "224e53959c1b03f83993b80f8438b49b17d820d6",
+            "fingerprints": {
+                "directory": "2be2ccc8216e982dda96d6b393e1380f64f62e8687692a12bb33293a1da02a7b",
+                "code": "224e53959c1b03f83993b80f8438b49b17d820d6",
+                "maintenance": "8784f1ef84f98ff2957ab184a5f74c5d42377abc73d6c5ae097bd464c07095db"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T07:52:12Z",
+            "analysis_sha256": "10a385ce5044069e226e3b645c001549d2c49e1c63ae57d1f524213ce1270946"
+        },
+        "publication.metadata": "data/plugins/alexyin-tongji--dsh-plugin-console/META.json",
+        "publication.summaries": {
+            "text": "在设置页浏览目录与已装插件，规划变更并执行官方CLI和隔离profile启动检查。",
+            "revision": "224e53959c1b03f83993b80f8438b49b17d820d6",
+            "source_url": "https://github.com/AlexYin-Tongji/dsh-plugin-console/blob/224e53959c1b03f83993b80f8438b49b17d820d6/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "224e53959c1b03f83993b80f8438b49b17d820d6",
+            "items": {
+                "界面": "插件目录和已装管理",
+                "Host 路由": "插件计划、执行和状态",
+                "后台": "CLI变更、备份回滚和canary生命周期"
+            }
+        },
+        "publication.advice": {
+            "revision": "224e53959c1b03f83993b80f8438b49b17d820d6",
+            "text": "适合维护测试profile；先核备份空间、canary与回滚，生产环境重启后的UI必须另验。"
+        },
+        "registry": "data/plugins/alexyin-tongji--dsh-plugin-console",
+        "reports": "# dsh-plugin-console\n\n> 在设置页浏览目录与已装插件，规划变更并执行官方CLI和隔离profile启动检查。\n\n## 使用建议\n\n适合维护测试profile；先核备份空间、canary与回滚，生产环境重启后的UI必须另验。\n\n**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，插件与依赖流程的实际运行尚未验证；未来假设未验证。\n\n## 洞察短评\n\n- **用途**：维护DSH Web profile插件，安装更新前确认目标和回退路径。\n- **亮点**：把来源确认、目标冻结和失败恢复带入插件管理流程，而非只是包装安装按钮。初始化/客户端资源探针扩大了检查范围，但不能把代码验证描述为安全认证。\n- **思考**：canaryEnvironment先展开process.env再删除少数变量，HOME/TMP隔离不等于OS沙箱，任意插件仍可读绝对路径和联网，其他API密钥也未全部清除。其价值是兼容冲突检测，不能证明恶意或高权限代码安全；回滚profile不自动回滚插件外部副作用。\n- **建议**：未验证假设：将canary明确分为兼容探针与可选OS级最小权限运行，并记录外部副作用，可降低对“隔离试运行”的误解。用写绝对路径、读环境、网络请求和初始化冲突样例分别核边界；若无法隔离就只声明兼容验证。\n\n## 场景与替代办法\n\n参照手工目录浏览、dsh plugin CLI和复制profile测试；增量是artifact校验、短期plan、锁/备份和canary组合。\n\n## 能力清单\n\n- **界面**：插件目录和已装管理\n- **Host 路由**：插件计划、执行和状态\n- **后台**：CLI变更、备份回滚和canary生命周期\n\n## 依赖与流程\n\n目录验证npm integrity/patch或固定Git SHA；操作plan绑定5分钟期限/profile指纹，执行重验并锁profile、备份文件和依赖，调用官方CLI；新包通过临时HOME/DSH_HOME canary初始化与客户端加载检查，否则尝试回滚。\n\n宿主webServer/connection/loader、官方dsh/pnpm、网络目录/registry/GitHub及可启动完整Web profile环境；UI交互仍用户重启后验收。\n\n浏览→生成plan→人工确认→重验锁→备份→包变更→canary→成功待重启或失败回滚→用户重启验界面。\n\n## 成本与效果\n\n下载/拷贝node_modules、完整profile启动、磁盘和等待成本；失败恢复可能需人工修复，第三方初始化仍可能联网/写外部路径。\n\n变更前后状态和回滚机制有源码支持，无真实安装失败率或恢复时间对照。\n\n## 核心贡献\n\n把来源确认、目标冻结和失败恢复带入插件管理流程，而非只是包装安装按钮。初始化/客户端资源探针扩大了检查范围，但不能把代码验证描述为安全认证。\n\n## 关键质疑\n\ncanaryEnvironment先展开process.env再删除少数变量，HOME/TMP隔离不等于OS沙箱，任意插件仍可读绝对路径和联网，其他API密钥也未全部清除。其价值是兼容冲突检测，不能证明恶意或高权限代码安全；回滚profile不自动回滚插件外部副作用。\n\n## 工程亮点\n\n同步busy预留、单次plan消耗、指纹复验/独占锁和依赖快照是可借鉴事务设计；仅canary passed不代表完整业务验收。\n\n源码依据：[src/index.ts](https://github.com/AlexYin-Tongji/dsh-plugin-console/blob/224e53959c1b03f83993b80f8438b49b17d820d6/src/index.ts)、[src/operations.ts](https://github.com/AlexYin-Tongji/dsh-plugin-console/blob/224e53959c1b03f83993b80f8438b49b17d820d6/src/operations.ts)、[src/canary.ts](https://github.com/AlexYin-Tongji/dsh-plugin-console/blob/224e53959c1b03f83993b80f8438b49b17d820d6/src/canary.ts)。\n\n## 未来设计假设（未验证）\n\n未验证假设：将canary明确分为兼容探针与可选OS级最小权限运行，并记录外部副作用，可降低对“隔离试运行”的误解。用写绝对路径、读环境、网络请求和初始化冲突样例分别核边界；若无法隔离就只声明兼容验证。\n\n未来隔离测试环境核变更漂移、回滚失败、子进程清理及副作用边界；本轮未安装或启动目标插件。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：6fabe9d878f4aec7813377c042789c5f919455950541c4a6f730edfef2025915。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 8 | 575 | — | — | 6287 |\n| .js | source | 3 | 37319 | 26808 | 10660 | — |\n| .ts | source | 20 | 6182 | 5643 | 198 | — |\n| .tsx | source | 3 | 1236 | 1145 | 17 | — |\n| .ts | test | 12 | 2689 | 2536 | 58 | — |\n| .tsx | test | 3 | 481 | 448 | 15 | — |\n\n排除 4 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[AlexYin-Tongji/dsh-plugin-console](https://github.com/AlexYin-Tongji/dsh-plugin-console)\n- **版本号**：0.3.2（[固定提交 224e5395](https://github.com/AlexYin-Tongji/dsh-plugin-console/tree/224e53959c1b03f83993b80f8438b49b17d820d6)）\n- **版本日期**：2026-08-24（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：src/index.ts、src/operations.ts、src/canary.ts、作者README、package与固定范围inventory；源码抽读不等于完整审计。\n- 未验证：插件执行、测试、安装、真实宿主与独立采用。\n- 证据限制：固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。\n- 下一步：未来隔离测试环境核变更漂移、回滚失败、子进程清理及副作用边界；本轮未安装或启动目标插件。\n",
+        "metadata": {
+            "repository": "AlexYin-Tongji/dsh-plugin-console",
+            "repository_id": 1336720864,
+            "captured_at": "2026-10-21T07:59:55.451Z",
+            "window_start": "2026-09-21T07:59:55.451Z",
+            "stars": 1,
+            "pushed_at": "2026-09-07T04:51:53Z",
+            "issues": {
+                "open": 1,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": null,
+                "updated_30d": 0
+            },
+            "errors": [
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAlexYin-Tongji%2Fdsh-plugin-console%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T07%3A59%3A55.451Z..2026-10-21T07%3A59%3A55.451Z&per_page=1: Get \"https://api.github.com/search/issues?q=repo%3AAlexYin-Tongji%2Fdsh-plugin-console%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T07%3A59%3A55.451Z..2026-10-21T07%3A59%3A55.451Z&per_page=1\": net/http: TLS handshake timeout"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-plugin-console",
+                "captured_at": "2026-10-21T08:00:27.885Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 1126,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-plugin-console",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-17T08:24:19.828Z",
+                    "captured_at": "2026-10-21T08:00:27.885Z",
+                    "source_url": "https://registry.npmjs.org/dsh-plugin-console",
+                    "error": null,
+                    "latest_version": "0.3.2",
+                    "latest_published_at": "2026-08-24T07:58:33.799Z",
+                    "latest_error": null
+                }
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1336720864:root",
+            "repository": "AlexYin-Tongji/dsh-plugin-console",
+            "path": "",
+            "revision": "224e53959c1b03f83993b80f8438b49b17d820d6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2be2ccc8216e982dda96d6b393e1380f64f62e8687692a12bb33293a1da02a7b",
+                "code": "224e53959c1b03f83993b80f8438b49b17d820d6",
+                "maintenance": "8784f1ef84f98ff2957ab184a5f74c5d42377abc73d6c5ae097bd464c07095db"
+            }
+        }
+    }
+}

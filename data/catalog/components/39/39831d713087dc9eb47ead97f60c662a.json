@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "39831d713087dc9eb47ead97f60c662a",
+    "identity": "github:1336964711:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336964711:root",
+            "repository": "liu3734/jira-tasks-dsh-plugin",
+            "path": "",
+            "revision": "7e33a09eb4a3767ffe17fdc929b17f41416b391a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0281bcfee74e9c6972469edfdb8fb7480d9c9629f572aa84e71640082e30c56c",
+                "code": "7e33a09eb4a3767ffe17fdc929b17f41416b391a",
+                "maintenance": "c680f4e2ab62cdb6b4b2c27be073c2a13540e1c7d110f390139128c8924fc008"
+            }
+        }
+    }
+}

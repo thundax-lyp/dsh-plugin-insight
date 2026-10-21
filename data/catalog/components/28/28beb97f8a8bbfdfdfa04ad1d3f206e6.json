@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "28beb97f8a8bbfdfdfa04ad1d3f206e6",
+    "identity": "github:1334972650:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334972650:root",
+            "repository": "luumod/dsh-desktop-lifecycle",
+            "path": "",
+            "revision": "8e921c2e6ff6efd6ead0ff41f0d998541bcdc3d4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "70c4e5f095e0320a50e8f39df0dc87c39c488ffe2763a928f02b8b1d83ea8982",
+                "code": "8e921c2e6ff6efd6ead0ff41f0d998541bcdc3d4",
+                "maintenance": "19d42d92910b6f07f0d4f9c093b2920ea0f98a4f4c3d09b8fe74020a940774d8"
+            }
+        }
+    }
+}

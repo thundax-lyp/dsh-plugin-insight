@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0bf3aeedaa6451e41f2a095c351848f6",
+    "identity": "github:1334855664:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334855664:root",
+            "repository": "timwhitez/dsh-self-evolving",
+            "path": "",
+            "revision": "d0f3c80473df1c21a6c8fb011aae6b7767669317",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "f6dab4dae2a1d82bdea90f90d0db893fddf41bf673b8c74ce2a4b2634829b21f",
+                "code": "d0f3c80473df1c21a6c8fb011aae6b7767669317",
+                "maintenance": "8197490a28a7384fd4b2a95e0429b4df883f261d93a36c9b3a0ee0f49144f337"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "063c2a84f663de27bebc75a8e5eecb6c",
+    "identity": "github:1420437928:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1420437928:root",
+            "repository": "wasteoneslife/dsh-skill-creator",
+            "path": "",
+            "revision": "50552cda94b853f4dcca752eb20fe6ed2c8b9757",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0a57ece2a675393c9addf3409988da7e05d9a62794c5187ade1ebe19ddd270f1",
+                "code": "50552cda94b853f4dcca752eb20fe6ed2c8b9757",
+                "maintenance": "fb029adff32d26ba3a6d0e02c989b24e5eb3d5692b6c9bbad27f1d899dcf0824"
+            }
+        }
+    }
+}

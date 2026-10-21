@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "da189e837a877de60846408739a53e75",
+    "identity": "github:1355389750:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1355389750:root",
+            "repository": "bitsmug/dsh-bgjobs",
+            "path": "",
+            "revision": "b78dc2538266508843d4a88774c4abd3d60b685a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "76306fd49451a9edce94aa502068a9726a2454fbea35909d072e7ec021329cb9",
+                "code": "b78dc2538266508843d4a88774c4abd3d60b685a",
+                "maintenance": "7ba5bfbc6100f51d35c7682781df6a9708bda63707dad07f224c69140403224d"
+            }
+        }
+    }
+}

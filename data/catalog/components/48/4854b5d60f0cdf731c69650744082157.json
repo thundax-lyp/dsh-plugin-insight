@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4854b5d60f0cdf731c69650744082157",
+    "identity": "github:1382040645:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1382040645:root",
+            "repository": "yefengliu1/dsh-theme-songgrid",
+            "path": "",
+            "revision": "bdb2cda5c4d186eaf1539dc18deb676a102ed3e3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f2916f619ff371393b7020988de0378938bfae61550d6a951d2850ec9947bcec",
+                "code": "bdb2cda5c4d186eaf1539dc18deb676a102ed3e3",
+                "maintenance": "55d149f372e4bdfb52ed956fd39d229e1786081bae40edfc546fa77d84aa0d24"
+            }
+        }
+    }
+}

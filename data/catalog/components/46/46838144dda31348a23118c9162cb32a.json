@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "46838144dda31348a23118c9162cb32a",
+    "identity": "github:1335230778:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335230778:root",
+            "repository": "MiraculousGarfield/dsh-ops-health",
+            "path": "",
+            "revision": "f4fd1f49cfab58d4f8b8c15c75c647b88ad75946",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a64701cc7119c5c35330c5d6c191c4d0c786b32c7bc9ed66ccd4061aeac3777f",
+                "code": "f4fd1f49cfab58d4f8b8c15c75c647b88ad75946",
+                "maintenance": "6dc01c57e3d6bc93f466967af5834e4738f4b74a915d097c41f99ba4e291a982"
+            }
+        }
+    }
+}

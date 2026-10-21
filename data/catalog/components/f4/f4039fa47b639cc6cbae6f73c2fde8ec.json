@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f4039fa47b639cc6cbae6f73c2fde8ec",
+    "identity": "github:1412742037:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1412742037:root",
+            "repository": "john-walks-slow/dsh-cd",
+            "path": "",
+            "revision": "c16cd0932606a64b4db26567d9a55c14247372ea",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5629017296167e9970f3c9dfcc4549b31517b7cc702d47f369a9820015c9e957",
+                "code": "c16cd0932606a64b4db26567d9a55c14247372ea",
+                "maintenance": "fce392d3d48d457d4469ab26fcf2f7d6ec0206023f1d09044ce86d84ab60ad9e"
+            }
+        }
+    }
+}

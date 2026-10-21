@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "114599f3a5d36c3f434a3d3e6dcf6e19",
+    "identity": "github:1352606686:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1352606686:root",
+            "repository": "xswt442-cmd/dsh-ballast",
+            "path": "",
+            "revision": "d28804d706a3fa1b246d2d573aaf3851089917c4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d56e82c80b9fa8621ae1340d25c842befbae506a60dcc338a7dd0e604fdf15fe",
+                "code": "d28804d706a3fa1b246d2d573aaf3851089917c4",
+                "maintenance": "db038edb765f6426a23332342780123f47524cc4a9938ec6f11624362926fbcd"
+            }
+        }
+    }
+}

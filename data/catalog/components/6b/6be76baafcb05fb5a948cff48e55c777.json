@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6be76baafcb05fb5a948cff48e55c777",
+    "identity": "github:1357330513:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1357330513:root",
+            "repository": "CAI-MH/dsh-quality-review",
+            "path": "",
+            "revision": "7c5a67ddc76e91d2a87725fabb23a04b80370f3b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7917f165eb71deb4e9661df342c0785700a911ce7ed2c1bbfef1c4036621a416",
+                "code": "7c5a67ddc76e91d2a87725fabb23a04b80370f3b",
+                "maintenance": "b9d89099d82bc3343c59e07a1f83c572ab2c15cdf096ade28bb4f766dc87f199"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a5c5971703bf3752c0c7fca6494b9f44",
+    "identity": "github:1334638902:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334638902:root",
+            "repository": "x2802490130-prog/dsh-lan-pass",
+            "path": "",
+            "revision": "78022bd33cb8653e7d4c56b76f5a8921e3880371",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8306202f442168075a3611116f8e7c3456cf6cbbe9586d0aac715ceffa905e19",
+                "code": "78022bd33cb8653e7d4c56b76f5a8921e3880371",
+                "maintenance": "bfeb927187f506d606537daf490a5edd63640fbf4a8deae47e541a9f53c22144"
+            }
+        }
+    }
+}

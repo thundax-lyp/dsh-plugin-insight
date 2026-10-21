@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d86749e0d8e7b36b0244f406241fa28d",
+    "identity": "github:1417159497:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1417159497:root",
+            "repository": "sbearbug/dsh-highlightpin",
+            "path": "",
+            "revision": "1ecf1d3b08aa6cc451c25db7d5b8ae2c622243f4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ef341e6e2237192133e1324d83ec4e2fa752b2b0abf7d0cf2aea3a9bf4e75228",
+                "code": "1ecf1d3b08aa6cc451c25db7d5b8ae2c622243f4",
+                "maintenance": "f5c7d3fcc1c33386d6da6761a66965c4699776f9eae7d5a928fa235467c9e852"
+            }
+        }
+    }
+}

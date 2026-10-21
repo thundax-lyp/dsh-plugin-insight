@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e67cdfa4013c5d2d5b24afc5d430e0be",
+    "identity": "github:1347135755:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347135755:root",
+            "repository": "kober-basket/dsh-cachescope",
+            "path": "",
+            "revision": "65985a6f4715e3978dbef657b0142a4c2b74d9c0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5068683bc441d7e668a9d2a0e4729327c13c94e147bf176123377ae4e0aea2b7",
+                "code": "65985a6f4715e3978dbef657b0142a4c2b74d9c0",
+                "maintenance": "0995d195a09bcf9043ce6f470f8ebddf6d7f984b82127b0e25037a29a763344e"
+            }
+        }
+    }
+}

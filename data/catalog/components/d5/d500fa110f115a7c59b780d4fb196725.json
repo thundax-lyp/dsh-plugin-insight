@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d500fa110f115a7c59b780d4fb196725",
+    "identity": "github:1346777319:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346777319:root",
+            "repository": "liujia-io/dsh-image-picker",
+            "path": "",
+            "revision": "eb45eaa71cb107f8ad6d814e56acaff631ab4bd9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a663071b5631a0d2811956d619c14f414c02874e1c24f342d33a0e1bd47cccaa",
+                "code": "eb45eaa71cb107f8ad6d814e56acaff631ab4bd9",
+                "maintenance": "4b34e3968841e98d6c74685f0d740913dba8cc3272995da3a9a7711b98219c59"
+            }
+        }
+    }
+}

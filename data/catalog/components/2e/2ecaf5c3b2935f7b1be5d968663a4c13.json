@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "2ecaf5c3b2935f7b1be5d968663a4c13",
+    "identity": "github:1333240748:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333240748:root",
+            "repository": "springbrand-lab/dsh-oauth-mcp-client",
+            "path": "",
+            "revision": "796f415186c5f95326241008ea2181082fd205af",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "f04c97176c229526327c465f04111856d0d3b13c77c1134e76793df817679b44",
+                "code": "796f415186c5f95326241008ea2181082fd205af",
+                "maintenance": "97e8b6bc31a1ac72207e102e299a896d45627703a016784693faacc6b3d68b75"
+            }
+        }
+    }
+}

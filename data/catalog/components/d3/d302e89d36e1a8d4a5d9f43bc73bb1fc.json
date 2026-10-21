@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d302e89d36e1a8d4a5d9f43bc73bb1fc",
+    "identity": "github:1352355124:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1352355124:root",
+            "repository": "GooDAnDReaDY/dsh-time-machine",
+            "path": "",
+            "revision": "de73c38d8f780eac00c88d6f9bbf00e07223b56f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1878ad5337417eb542ce4f5672d9ba546641c40cffa6b06302553323670f47f1",
+                "code": "de73c38d8f780eac00c88d6f9bbf00e07223b56f",
+                "maintenance": "1bfb0d8e31061ad223663cef47a00cfe9749dd4fd9cbcbedd3afe809449f4355"
+            }
+        }
+    }
+}

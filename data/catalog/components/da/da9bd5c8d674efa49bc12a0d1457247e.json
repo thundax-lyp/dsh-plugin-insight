@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "da9bd5c8d674efa49bc12a0d1457247e",
+    "identity": "github:1402940383:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1402940383:root",
+            "repository": "zhang-tod/dsh-codebuddy",
+            "path": "",
+            "revision": "e813fea468582dc60bea5ef8a134e657337f255a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9a31939902b5c88afac1ecb8ef326f08215858af0c5c54c9f8a733b08cef4b2c",
+                "code": "e813fea468582dc60bea5ef8a134e657337f255a",
+                "maintenance": "fd6e278af08b952cbad554a0f6a8afbf39c9167663c7cb8361a1fcefcc715338"
+            }
+        }
+    }
+}

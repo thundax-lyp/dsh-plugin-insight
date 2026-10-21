@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "28369515c9ea3f13e0232eb1dcf70745",
+    "identity": "github:1338237286:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338237286:root",
+            "repository": "skepsun/dsh-engram",
+            "path": "",
+            "revision": "5f08d21dc5e120c27c014f040aabe1395367ed4b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ab4d22dc0cb24a1459190917618e70daa1523e6191392929658dd3e9735bd9b9",
+                "code": "5f08d21dc5e120c27c014f040aabe1395367ed4b",
+                "maintenance": "fc9218945346b6576f9b702f9d64d3ddda585ff5ec4add4a0e59b9f6d1e204ef"
+            }
+        }
+    }
+}

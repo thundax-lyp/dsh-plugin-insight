@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ca664849989006ac38e2a8e1b84bc74d",
+    "identity": "github:1139128402:dsh",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1139128402:dsh",
+            "repository": "Vladimir-Human/humanizer-ru",
+            "path": "dsh",
+            "revision": "9922280b6bfc83a7947442f2141fe649b35e0f33",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "262ad9ecc9451548c270594057ea6b061cf25143dba85cdc7cb5ef0f6bde13ff",
+                "code": "9922280b6bfc83a7947442f2141fe649b35e0f33",
+                "maintenance": "1589f9932a037b3f5859923ab265abc6fa100e20d0c1e786420b7667be256209"
+            }
+        }
+    }
+}

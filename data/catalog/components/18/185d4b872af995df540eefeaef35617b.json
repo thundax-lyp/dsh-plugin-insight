@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "185d4b872af995df540eefeaef35617b",
+    "identity": "github:1338994333:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338994333:root",
+            "repository": "kriskite/dsh-network-proxy",
+            "path": "",
+            "revision": "b191f365db02e85e82df207e5b64f27edb9fc628",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "29484c4e9b707cd4a415c84b1ea262c8121d3ac8173a23504da065703baa9b77",
+                "code": "b191f365db02e85e82df207e5b64f27edb9fc628",
+                "maintenance": "7e846cbaefa2a7c60e8ff0b13c712b6c1f550f0597b30e69b01b105b7461938e"
+            }
+        }
+    }
+}

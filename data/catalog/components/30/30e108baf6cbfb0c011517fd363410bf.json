@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "30e108baf6cbfb0c011517fd363410bf",
+    "identity": "github:1414565513:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1414565513:root",
+            "repository": "DragonHorizon-xtihc/dsh-connect-opencode-free",
+            "path": "",
+            "revision": "26cabe4201088e4cff8953510c346247d09683b6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7edf9ec43e223dc26f20f818c462c601ee0e73cc862c58015f489e575ad31184",
+                "code": "26cabe4201088e4cff8953510c346247d09683b6",
+                "maintenance": "01e7b43304e7c0f84cc710e9026c108c796fc68a7873772e0c6c82bd1b3a094c"
+            }
+        }
+    }
+}

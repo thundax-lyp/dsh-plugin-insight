@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a4803a6ce509461c14701a20cfc64438",
+    "identity": "github:1334249383:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334249383:root",
+            "repository": "WYH66666666/DSH-Transparent-UI-Plugin",
+            "path": "",
+            "revision": "d94431a95bd147c11ef3fe95fa1915d1e96b028b",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "64bf1c0274b4e9625911fedef2586b61a622d42b5be907868ed3133c76bfce8d",
+                "code": "d94431a95bd147c11ef3fe95fa1915d1e96b028b",
+                "maintenance": "e8da4d87496da7dda46b7c5e6f97e91349371b6746ddfc5caa6b9bfd04abe5cf"
+            }
+        }
+    }
+}

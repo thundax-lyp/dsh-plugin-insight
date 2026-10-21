@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9a99509e9cdeef3f16af565b14332bee",
+    "identity": "github:1366938269:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1366938269:root",
+            "repository": "Celebrate-W/dsh-topic-trail",
+            "path": "",
+            "revision": "5a22c1f001f81289f3e577364cba943a0c7022a7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0493af8464e4a00300e0dd5ca0177e9cc174b676dcf5b80861f96758973fe316",
+                "code": "5a22c1f001f81289f3e577364cba943a0c7022a7",
+                "maintenance": "2577108e7972bccfe9df5a5eeda5ec6be8c78c2e774ad2f87c8e7d2039e8549c"
+            }
+        }
+    }
+}

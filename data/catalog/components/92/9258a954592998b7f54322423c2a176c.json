@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9258a954592998b7f54322423c2a176c",
+    "identity": "github:1363033350:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1363033350:root",
+            "repository": "whiteS18/dsh-image-generation",
+            "path": "",
+            "revision": "03d00586d9e98a764a3017968e1c6eab95a6e1a4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fb766332b93f1d0be006f435b4127791e046b6b809f2be2f4adb075e5a5a8e30",
+                "code": "03d00586d9e98a764a3017968e1c6eab95a6e1a4",
+                "maintenance": "faca11049c5b4a9341ec2c64886ca8e39c77a12176fd26951d690343f74a1bc7"
+            }
+        }
+    }
+}

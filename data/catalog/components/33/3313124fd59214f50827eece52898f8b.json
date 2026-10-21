@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "3313124fd59214f50827eece52898f8b",
+    "identity": "github:1338654346:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338654346:root",
+            "repository": "PensiveFei/deep-read-summarize",
+            "path": "",
+            "revision": "dabf50a6a0ca544dbfdbfdf36a1ee180d55b27dd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "21a9a4bc86269944e48031daf2a20d2adcb84c39dd6b7a1a1da0feacc18d95d2",
+                "code": "dabf50a6a0ca544dbfdbfdf36a1ee180d55b27dd",
+                "maintenance": "ec6edb00db68781d19aa4a4d43b69a1073edeed366e13dc6fc276b513860c09b"
+            }
+        }
+    }
+}

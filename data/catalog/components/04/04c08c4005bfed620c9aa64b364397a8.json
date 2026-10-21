@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "04c08c4005bfed620c9aa64b364397a8",
+    "identity": "github:1339765268:packages-overlay-check",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339765268:packages-overlay-check",
+            "repository": "taltara/mddl-harness",
+            "path": "packages/overlay-check",
+            "revision": "039de9ccec3b70ac1efa1cd8f23cb7c265c8a7d9",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "173d849c8ef00215a4fd0175589f4db0f3dafdde724f350341e277c913430147",
+                "code": "039de9ccec3b70ac1efa1cd8f23cb7c265c8a7d9",
+                "maintenance": "2259c53280b4d6ecd289629264a3a3e35ef7e91870dc04b905ad206ba446f23a"
+            }
+        }
+    }
+}

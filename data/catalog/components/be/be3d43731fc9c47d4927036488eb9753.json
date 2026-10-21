@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "be3d43731fc9c47d4927036488eb9753",
+    "identity": "github:1335046237:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335046237:root",
+            "repository": "temotee2103/dsh-ci-co-pilot",
+            "path": "",
+            "revision": "22b48139dbd215ae9f5b7d7ed96116d7b5cd0293",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "0819793a8a371d8e18d5a15efb9f2acf6c1710c32a63ab1aee5653e869400957",
+                "code": "22b48139dbd215ae9f5b7d7ed96116d7b5cd0293",
+                "maintenance": "0340d0675498c928161cb3e87a18d1533af79008dba7869a3e927671519ce4db"
+            }
+        }
+    }
+}

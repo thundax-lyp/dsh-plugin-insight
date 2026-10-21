@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4c420c3807004982d9ce3d380162e57e",
+    "identity": "github:1335357809:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335357809:root",
+            "repository": "YEYEYEYESHIFU/dsh-session-hotkeys",
+            "path": "",
+            "revision": "d1f38ebc5128a7b8fada47f0472207c2d5260393",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a690a19865cf1471df7967e23a5be887eef0e4edfc628b3a605b24f129b46460",
+                "code": "d1f38ebc5128a7b8fada47f0472207c2d5260393",
+                "maintenance": "c53be8cd3afee51ea20e6c208b060a80b7bde844bfdaf1874237abc9c68182d2"
+            }
+        }
+    }
+}

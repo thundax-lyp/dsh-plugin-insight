@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "805912c171343f384947366d83bedaa5",
+    "identity": "github:1335664048:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335664048:root",
+            "repository": "kirkchinese/claude2dsh",
+            "path": "",
+            "revision": "987a53e9fcd4a660b2a1a06d4bc2d3ff2df2c56c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ed73e96e3a22444fe8dae62f99baf53c7aaa3707fa3daa466ea7d8e2b875e53a",
+                "code": "987a53e9fcd4a660b2a1a06d4bc2d3ff2df2c56c",
+                "maintenance": "dae5a7a68d4d9ea8ba00daf330993d88bec25c7e3782d417d9af1125b45fa2eb"
+            }
+        }
+    }
+}

@@ -1,4 +1,0 @@
-{
-  "revision": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b",
-  "text": "先备份 profile，对单个模型检查实际请求与撤销结果，再考虑批量补齐。"
-}

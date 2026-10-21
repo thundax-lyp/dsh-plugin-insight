@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "54e89d83c00c330345b98ca48743e881",
+    "identity": "github:1411252468:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1411252468:root",
+            "repository": "honwee/dsh-plugin-mynah",
+            "path": "",
+            "revision": "ce57663ca28de46c78507e72f455b6e99738ee18",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8eee1cb64ff3c91ee306eed034f87399f0d48c272969fbe0c8f57ba1285931a8",
+                "code": "ce57663ca28de46c78507e72f455b6e99738ee18",
+                "maintenance": "c760751d40485f6569ebf23197aa40b6dd2f0e19548ca6e3a1a15008de25cafa"
+            }
+        }
+    }
+}

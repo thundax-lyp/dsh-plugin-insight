@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d24e7c8b9f2d8308abc7f001a9bcfd4c",
+    "identity": "github:1349138440:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1349138440:root",
+            "repository": "yakoylp/dsh-md-convert",
+            "path": "",
+            "revision": "082c876dd350a17f99f31f9aa7afedd498658fb5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ac619595c0c36e64aade62f41aab34d3b6234427dede35845ba77fbfc6cb801d",
+                "code": "082c876dd350a17f99f31f9aa7afedd498658fb5",
+                "maintenance": "9e42f3d3c392ccdab5d5c450fe4843037f8fe54917e966bc7105ab7fea5cf0eb"
+            }
+        }
+    }
+}

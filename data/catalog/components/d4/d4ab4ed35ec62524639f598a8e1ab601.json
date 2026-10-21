@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d4ab4ed35ec62524639f598a8e1ab601",
+    "identity": "github:1333810524:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333810524:root",
+            "repository": "lanlandeli/dsh-usage-stats",
+            "path": "",
+            "revision": "ee0c818310071c542330ed0df95e6ed91482ed19",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "31d246915f79ce5e1e7031e6fec6512b6087617aaa4bd4d28c07ceba80ecd604",
+                "code": "ee0c818310071c542330ed0df95e6ed91482ed19",
+                "maintenance": "43765e8c6cb3f790e99a109df78363c86cced375c1d18e4408f0467aa02149b5"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "04754777d423fd35bfd99ca128294b20",
+    "identity": "github:1425522104:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425522104:root",
+            "repository": "ium9khbep8834-maker/dsh-cache-saver",
+            "path": "",
+            "revision": "f1d8fd426e82330cdcd2febb8d7d1eda719064eb",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ef143e7558ab9ad8cc647357549858274c935cc53929b0ad5b59db251d206e9a",
+                "code": "f1d8fd426e82330cdcd2febb8d7d1eda719064eb",
+                "maintenance": "aee8ebff24e061d2fc35b7dd6b19d9e508cf504f444fec524e97b014efb57899"
+            }
+        }
+    }
+}

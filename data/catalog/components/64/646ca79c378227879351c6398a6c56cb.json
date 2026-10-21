@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "646ca79c378227879351c6398a6c56cb",
+    "identity": "github:1335717440:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335717440:root",
+            "repository": "Zlyraz/dsh-ballute",
+            "path": "",
+            "revision": "68e4b07bb108bdad7cdb782d0b2ce15755356526",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9bf1e86bd8920da6e1c423dcf78633ba4224803c1e7772acbbbf96f85ff3ace2",
+                "code": "68e4b07bb108bdad7cdb782d0b2ce15755356526",
+                "maintenance": "bccf2602b92f1823cb8cbfdfce4d2e15813238350be02cf9b56783e9d4a208a5"
+            }
+        }
+    }
+}

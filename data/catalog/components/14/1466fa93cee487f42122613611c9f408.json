@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1466fa93cee487f42122613611c9f408",
+    "identity": "github:1422373025:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1422373025:root",
+            "repository": "zhz8888/dsh-ios-simulator-helper",
+            "path": "",
+            "revision": "d078273c42cc116a5de75c0c0a7adc597c18ab1a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1a3c193e3e422f3626bcabf4336c14019194752285ba8c77251f5a45386bed20",
+                "code": "d078273c42cc116a5de75c0c0a7adc597c18ab1a",
+                "maintenance": "4c85d4313fc000fe7f02bbc523b374bd2a5156b980d41260fd1e68d6911e5c51"
+            }
+        }
+    }
+}

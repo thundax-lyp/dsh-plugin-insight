@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4f3d31eb3b7228dde629abca5391b7c8",
+    "identity": "github:1411325562:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1411325562:root",
+            "repository": "gulagala001/dsh-intelligent-ui",
+            "path": "",
+            "revision": "a37ff9c29bf07e833db597e471bb43e0a2b1c5d1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4092f72df944cb5a7d8d03c5ae8feab82e86590d9e8b3ed620dff236e38a7770",
+                "code": "a37ff9c29bf07e833db597e471bb43e0a2b1c5d1",
+                "maintenance": "531671c45df12797ef298da8cc062b1924be69181fe06e14b67f207d07645e17"
+            }
+        }
+    }
+}

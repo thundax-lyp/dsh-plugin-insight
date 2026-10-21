@@ -1,0 +1,456 @@
+{
+    "schema_version": 3,
+    "id": "6244e13ab9ba7c2bb10de9dcb235cbcb",
+    "identity": "github:1339332869:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1339332869:root",
+            "repository_id": 1339332869,
+            "component_id": "root",
+            "repository": "764475881/dsh-chat-width",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-chat-width",
+            "entry_type": "plugin",
+            "technical_category": "interface-input",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "c2f83d3753278cf0cbcba1ea5a83be487a1b1a4b177d0985531984cfde9ae7c6",
+                "code": "5d61f65224b1d811047d5eb1d9d4772dbf0e7bfd",
+                "maintenance": "c234738ccbba6ab71c6b2a18f9c98d5924d5a9f5b1e033f228ca3dddb30da31c"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-02-github-1339332869-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T03:16:29.353Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-02-github-1339332869-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/764475881/dsh-chat-width/blob/5d61f65224b1d811047d5eb1d9d4772dbf0e7bfd/README.md",
+                    "revision": "5d61f65224b1d811047d5eb1d9d4772dbf0e7bfd",
+                    "captured_at": "2026-10-21T03:16:29.353Z",
+                    "summary": "为旧版DSH网页添加可拖拽并记忆的聊天内容宽度控制，在内置同功能版本上自动让位。",
+                    "artifact": "data/runs/2026-10-21-02/snapshots/764475881--dsh-chat-width/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-02-github-1339332869-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/764475881/dsh-chat-width/blob/5d61f65224b1d811047d5eb1d9d4772dbf0e7bfd/lib/client.js",
+                    "revision": "5d61f65224b1d811047d5eb1d9d4772dbf0e7bfd",
+                    "captured_at": "2026-10-21T03:16:29.353Z",
+                    "summary": "核查 lib/client.js、package.json；lib/client.js用CSS变量覆盖宽度、pointer capture实现拖拽，以2倍指针位移匹配居中列边缘；MutationObserver跟踪会话根节点，检测原生把手后移除自身样式。",
+                    "artifact": "data/runs/2026-10-21-02/snapshots/764475881--dsh-chat-width/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "旧版DSH的大屏用户需要调整聊天列宽，合格结果是宽度随拖动持久保存且不产生重复控件；当前内置宽度功能的宿主没有必要为此安装。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1339332869-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1339332869:root",
+                            "area": "code",
+                            "fingerprint": "5d61f65224b1d811047d5eb1d9d4772dbf0e7bfd"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:29.353Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "lib/client.js用CSS变量覆盖宽度、pointer capture实现拖拽，以2倍指针位移匹配居中列边缘；MutationObserver跟踪会话根节点，检测原生把手后移除自身样式。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1339332869-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1339332869:root",
+                            "area": "code",
+                            "fingerprint": "5d61f65224b1d811047d5eb1d9d4772dbf0e7bfd"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:29.353Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1339332869-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1339332869:root",
+                            "area": "code",
+                            "fingerprint": "5d61f65224b1d811047d5eb1d9d4772dbf0e7bfd"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:29.353Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "客户端插件发布lib/client.js与空宿主入口，本地localStorage保存偏好，不提供服务器同步。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1339332869-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1339332869:root",
+                            "area": "code",
+                            "fingerprint": "5d61f65224b1d811047d5eb1d9d4772dbf0e7bfd"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:29.353Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "无模型或外部服务成本；首次与升级需核对DOM适配，持续成本是MutationObserver与样式冲突排查，未测浏览器开销。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1339332869-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1339332869:root",
+                            "area": "code",
+                            "fingerprint": "5d61f65224b1d811047d5eb1d9d4772dbf0e7bfd"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:29.353Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "新版DSH优先使用内置把手。仍用旧版且需要宽列时可在一个浏览器先检查拖动、重载记忆和禁用清理，再考虑保留。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1339332869-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1339332869:root",
+                            "area": "code",
+                            "fingerprint": "5d61f65224b1d811047d5eb1d9d4772dbf0e7bfd"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:29.353Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "改善大屏阅读空间取舍；宽列也可能降低长段落可读性，未有阅读效率对照。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1339332869-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1339332869:root",
+                            "area": "code",
+                            "fingerprint": "5d61f65224b1d811047d5eb1d9d4772dbf0e7bfd"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:29.353Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "2倍位移映射把居中布局的几何关系写清楚，pointer capture与effect清理完整可读。DOM哈希选择器和全局观察器是迁移成本来源；复用时应提供稳定宿主钩子。 源码依据：[lib/client.js](https://github.com/764475881/dsh-chat-width/blob/5d61f65224b1d811047d5eb1d9d4772dbf0e7bfd/lib/client.js)、[package.json](https://github.com/764475881/dsh-chat-width/blob/5d61f65224b1d811047d5eb1d9d4772dbf0e7bfd/package.json)。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1339332869-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1339332869:root",
+                            "area": "code",
+                            "fingerprint": "5d61f65224b1d811047d5eb1d9d4772dbf0e7bfd"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:29.353Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "相对控制台手写CSS，增量是可发现的拖拽入口与本地偏好记忆；更值得借鉴的是原生功能出现后主动退让，而非继续竞争样式。它没有改变模型交付能力，贡献限于旧宿主的阅读交互。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1339332869-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1339332869:root",
+                            "area": "code",
+                            "fingerprint": "5d61f65224b1d811047d5eb1d9d4772dbf0e7bfd"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:29.353Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "原生功能探测是否足够稳健？检测依赖data-width-handle、哈希类名与CSS变量层级；主题或宿主DOM变动可能误判。README已说明0.1.7+内置，而源码仍观察整棵DOM，因此安装便利不能自动等于现代宿主上的增益。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1339332869-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1339332869:root",
+                            "area": "code",
+                            "fingerprint": "5d61f65224b1d811047d5eb1d9d4772dbf0e7bfd"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:29.353Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "由主动退让机制推导，可把界面补丁做成宿主能力声明驱动的短期扩展：存在官方能力时同时迁移旧偏好并停用观察器。相比DOM启发式可减少重复控件与长期维护；未验证。跨旧/新宿主和不同主题测试偏好保留及误判率，若不优于当前探测则无需引入额外协议。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1339332869-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1339332869:root",
+                            "area": "code",
+                            "fingerprint": "5d61f65224b1d811047d5eb1d9d4772dbf0e7bfd"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:29.353Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T03:16:29.353Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "5d61f65224b1d811047d5eb1d9d4772dbf0e7bfd",
+                "reviewed_at": "2026-10-21T03:16:29.353Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1339332869:root",
+                        "area": "code",
+                        "fingerprint": "5d61f65224b1d811047d5eb1d9d4772dbf0e7bfd"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty是界面补齐小档；mechanism几何映射常规小档；transferability DOM耦合小档；simplification原生退让半档。",
+                    "basis": "interpretation",
+                    "score": 30,
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1339332869-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 0,
+                        "reach": 5,
+                        "economics": 0
+                    },
+                    "rationale": "workflow局部交互便利小档；delivery不改变交付取0；reach旧版大屏用户小档；economics未改变资源或服务结构取0。",
+                    "basis": "interpretation",
+                    "score": 14,
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1339332869-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "not_recommended",
+                "reason": "当前DSH优先原生宽度把手，新增安装无必要；只有仍用旧版者才考虑核对拖动、持久化与禁用清理。",
+                "criteria": {
+                    "scenario": {
+                        "score": 15,
+                        "rationale": "旧版大屏调宽明确，现代宿主已有相同需求入口。"
+                    },
+                    "advantage": {
+                        "score": 6,
+                        "rationale": "插件主动退让原生，但继续安装只多DOM观察而无现代宿主增益。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "CSS变量和原生把手检测源码可查，哈希类名兼容脆弱。"
+                    },
+                    "cost": {
+                        "score": 15,
+                        "rationale": "无模型服务费用，但旧版DOM及样式冲突仍需维护。"
+                    }
+                },
+                "score": 49,
+                "revision": "5d61f65224b1d811047d5eb1d9d4772dbf0e7bfd",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-02-github-1339332869-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1339332869:root",
+                        "area": "code",
+                        "fingerprint": "5d61f65224b1d811047d5eb1d9d4772dbf0e7bfd"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1339332869:root",
+            "repository": "764475881/dsh-chat-width",
+            "path": "",
+            "revision": "5d61f65224b1d811047d5eb1d9d4772dbf0e7bfd",
+            "fingerprints": {
+                "directory": "c2f83d3753278cf0cbcba1ea5a83be487a1b1a4b177d0985531984cfde9ae7c6",
+                "code": "5d61f65224b1d811047d5eb1d9d4772dbf0e7bfd",
+                "maintenance": "c234738ccbba6ab71c6b2a18f9c98d5924d5a9f5b1e033f228ca3dddb30da31c"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T03:00:27Z",
+            "analysis_sha256": "8ced525261426b87394c720ce30ebfba51433baef3e6f165629defe160e10157"
+        },
+        "publication.metadata": "data/plugins/764475881--dsh-chat-width/META.json",
+        "publication.summaries": {
+            "text": "为旧版DSH网页添加可拖拽并记忆的聊天内容宽度控制，在内置同功能版本上自动让位。",
+            "revision": "5d61f65224b1d811047d5eb1d9d4772dbf0e7bfd",
+            "source_url": "https://github.com/764475881/dsh-chat-width/blob/5d61f65224b1d811047d5eb1d9d4772dbf0e7bfd/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "5d61f65224b1d811047d5eb1d9d4772dbf0e7bfd",
+            "items": {
+                "界面": "居中列边缘跟手调整并记忆宽度。 检测官方宽度把手后撤下自身样式与把手。"
+            }
+        },
+        "publication.advice": {
+            "revision": "5d61f65224b1d811047d5eb1d9d4772dbf0e7bfd",
+            "text": "新版DSH优先使用内置把手。仍用旧版且需要宽列时可在一个浏览器先检查拖动、重载记忆和禁用清理，再考虑保留。"
+        },
+        "registry": "data/plugins/764475881--dsh-chat-width",
+        "reports": "# dsh-chat-width\n\n> 为旧版DSH网页添加可拖拽并记忆的聊天内容宽度控制，在内置同功能版本上自动让位。\n\n## 使用建议\n\n新版DSH优先使用内置把手。仍用旧版且需要宽列时可在一个浏览器先检查拖动、重载记忆和禁用清理，再考虑保留。\n\n核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。\n\n源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。\n\n## 洞察短评\n\n- **用途**：旧版DSH的大屏用户需要调整聊天列宽，合格结果是宽度随拖动持久保存且不产生重复控件；当前内置宽度功能的宿主没有必要为此安装。\n- **亮点**：相对控制台手写CSS，增量是可发现的拖拽入口与本地偏好记忆；更值得借鉴的是原生功能出现后主动退让，而非继续竞争样式。它没有改变模型交付能力，贡献限于旧宿主的阅读交互。\n- **思考**：原生功能探测是否足够稳健？检测依赖data-width-handle、哈希类名与CSS变量层级；主题或宿主DOM变动可能误判。README已说明0.1.7+内置，而源码仍观察整棵DOM，因此安装便利不能自动等于现代宿主上的增益。\n- **建议**：由主动退让机制推导，可把界面补丁做成宿主能力声明驱动的短期扩展：存在官方能力时同时迁移旧偏好并停用观察器。相比DOM启发式可减少重复控件与长期维护；未验证。跨旧/新宿主和不同主题测试偏好保留及误判率，若不优于当前探测则无需引入额外协议。\n\n## 场景与替代办法\n\n旧版DSH的大屏用户需要调整聊天列宽，合格结果是宽度随拖动持久保存且不产生重复控件；当前内置宽度功能的宿主没有必要为此安装。\n\n原生DSH宽度把手可满足新版需求；旧版手动CSS也能调宽但缺少持久且可发现的操作。\n\n## 能力清单\n\n- **界面**：居中列边缘跟手调整并记忆宽度。 检测官方宽度把手后撤下自身样式与把手。\n\n## 依赖与流程\n\n依赖浏览器localStorage、CSS变量、pointer事件、DSH ModuleLoader与会话DOM；无服务器权限或账号要求。\n\n用户拖动把手，CSS即时更新，松开写localStorage；双击恢复默认，原生把手出现后移除自身控件，禁用时清理observer与样式。\n\n## 成本与效果\n\n无模型或外部服务成本；首次与升级需核对DOM适配，持续成本是MutationObserver与样式冲突排查，未测浏览器开销。\n\n改善大屏阅读空间取舍；宽列也可能降低长段落可读性，未有阅读效率对照。\n\n## 核心贡献\n\n相对控制台手写CSS，增量是可发现的拖拽入口与本地偏好记忆；更值得借鉴的是原生功能出现后主动退让，而非继续竞争样式。它没有改变模型交付能力，贡献限于旧宿主的阅读交互。\n\n## 关键质疑\n\n原生功能探测是否足够稳健？检测依赖data-width-handle、哈希类名与CSS变量层级；主题或宿主DOM变动可能误判。README已说明0.1.7+内置，而源码仍观察整棵DOM，因此安装便利不能自动等于现代宿主上的增益。\n\n\n## 工程亮点\n\n2倍位移映射把居中布局的几何关系写清楚，pointer capture与effect清理完整可读。DOM哈希选择器和全局观察器是迁移成本来源；复用时应提供稳定宿主钩子。 源码依据：[lib/client.js](https://github.com/764475881/dsh-chat-width/blob/5d61f65224b1d811047d5eb1d9d4772dbf0e7bfd/lib/client.js)、[package.json](https://github.com/764475881/dsh-chat-width/blob/5d61f65224b1d811047d5eb1d9d4772dbf0e7bfd/package.json)。\n\n## 未来设计假设（未验证）\n\n由主动退让机制推导，可把界面补丁做成宿主能力声明驱动的短期扩展：存在官方能力时同时迁移旧偏好并停用观察器。相比DOM启发式可减少重复控件与长期维护；未验证。跨旧/新宿主和不同主题测试偏好保留及误判率，若不优于当前探测则无需引入额外协议。\n\n旧新版宿主分别检查拖动边缘跟手、重载、窄屏、主题切换、原生控件晚挂载和禁用后DOM清理。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：893f5ed97ceb86dd8fb8d73fc6a783e6a0a779542b929409914755529b9f567f。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 3 | 153 | — | — | 1776 |\n| .js | source | 2 | 292 | 228 | 46 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[764475881/dsh-chat-width](https://github.com/764475881/dsh-chat-width)\n- **版本号**：0.1.2（[固定提交 5d61f652](https://github.com/764475881/dsh-chat-width/tree/5d61f65224b1d811047d5eb1d9d4772dbf0e7bfd)）\n- **版本日期**：2026-09-28（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：作者 README、包清单、源码路径 lib/client.js、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。\n- 下一步：旧新版宿主分别检查拖动边缘跟手、重载、窄屏、主题切换、原生控件晚挂载和禁用后DOM清理。\n",
+        "metadata": {
+            "repository": "764475881/dsh-chat-width",
+            "repository_id": 1339332869,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 4,
+            "pushed_at": "2026-09-28T06:18:22Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A764475881%2Fdsh-chat-width%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6411:F5216:A68711:EF59D2:6AD84A69 and timestamp 2026-10-21 05:15:21 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A764475881%2Fdsh-chat-width%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6412:F5216:A68761:EF5A47:6AD84A6A and timestamp 2026-10-21 05:15:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A764475881%2Fdsh-chat-width%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6413:38A53A:A851EE:F1B912:6AD84A6A and timestamp 2026-10-21 05:15:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A764475881%2Fdsh-chat-width%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6401:25685:A8AEA9:F1A3F6:6AD84A6A and timestamp 2026-10-21 05:15:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A764475881%2Fdsh-chat-width%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6400:25685:A8AEED:F1A464:6AD84A6A and timestamp 2026-10-21 05:15:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-chat-width",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 99,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-chat-width",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-13T13:01:44.182Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-chat-width",
+                    "error": null,
+                    "latest_version": "0.1.0",
+                    "latest_published_at": "2026-08-13T13:01:44.502Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "5d61f65224b1d811047d5eb1d9d4772dbf0e7bfd",
+                "current_revision": "5d61f65224b1d811047d5eb1d9d4772dbf0e7bfd",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1339332869:root",
+            "repository": "764475881/dsh-chat-width",
+            "path": "",
+            "revision": "5d61f65224b1d811047d5eb1d9d4772dbf0e7bfd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c2f83d3753278cf0cbcba1ea5a83be487a1b1a4b177d0985531984cfde9ae7c6",
+                "code": "5d61f65224b1d811047d5eb1d9d4772dbf0e7bfd",
+                "maintenance": "c234738ccbba6ab71c6b2a18f9c98d5924d5a9f5b1e033f228ca3dddb30da31c"
+            }
+        }
+    }
+}

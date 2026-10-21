@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8177a0ae48f8eb0e46bc58f7f36c21b9",
+    "identity": "github:1335997245:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335997245:root",
+            "repository": "paicat1/dsh-screenshot",
+            "path": "",
+            "revision": "cfc83f68dd5892fbe77dce2e29d6dfec4836ab28",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "51b4d8a2821b8af1b24af7b316d36c5ffcfaaa3d1904d34e7e2f3861c3f2056d",
+                "code": "cfc83f68dd5892fbe77dce2e29d6dfec4836ab28",
+                "maintenance": "a4d95d07e064aaafaa50e2f28863d9e3b897ad612cd8d86e501ea4aa37532fe5"
+            }
+        }
+    }
+}

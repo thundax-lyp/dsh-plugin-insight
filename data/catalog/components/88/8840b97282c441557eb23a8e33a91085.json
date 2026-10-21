@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8840b97282c441557eb23a8e33a91085",
+    "identity": "github:1338846723:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338846723:root",
+            "repository": "Palaiologos1453/dsh-worktree-studio",
+            "path": "",
+            "revision": "6265c9691d297a559498ca81327b07c0140d7c8f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5f58a18018054d5368dd505569e3d4669b29e19cf5a4f84595ac9da9d93d0822",
+                "code": "6265c9691d297a559498ca81327b07c0140d7c8f",
+                "maintenance": "7a243901e8dab89c2b19997c1b27457783602b3359be16e953aeefba723c5973"
+            }
+        }
+    }
+}

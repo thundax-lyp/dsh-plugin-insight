@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5708980f8ff0e0c64914ff359dee47d3",
+    "identity": "github:1335731311:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335731311:root",
+            "repository": "ciceroyang/dsh-trajectory",
+            "path": "",
+            "revision": "98ead25fd3a6e0eed6b0920fac5955035b50b32c",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "ed17defb5adbd55f565f01059ece1fa03f2c6807c6d4247534302553329bd6a8",
+                "code": "98ead25fd3a6e0eed6b0920fac5955035b50b32c",
+                "maintenance": "a48fa1fa994dbad050755c20ec1b6068b4102b529c446d54f00219d194a8432f"
+            }
+        }
+    }
+}

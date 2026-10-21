@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "2257bc8615648a935897bf153be810a1",
+    "identity": "github:1334370736:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334370736:root",
+            "repository": "WangPaoPaoLab/dsh-font",
+            "path": "",
+            "revision": "d299f56bde1e10e7fef152848e74cff2eecd7917",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "0f3cb766a7722328690fd238020bb8b68be0583d5fd04bccd7f5a06b6a5a73e7",
+                "code": "d299f56bde1e10e7fef152848e74cff2eecd7917",
+                "maintenance": "b815a2ae5d82d039c972359f1867cf37aa0d4d6178b6ff06beed0b21c93af19e"
+            }
+        }
+    }
+}

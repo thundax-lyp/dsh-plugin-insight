@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2c758ab9b6927a01ccaf9b930db656f7",
+    "identity": "github:1334829805:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334829805:root",
+            "repository": "chinosk6/dsh-roleplay",
+            "path": "",
+            "revision": "ebe57737327de196b4625b7f9a45b0bf042673ad",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2f40f6d41786169729f7d65535d7f8d05f931be814ad32e799d7907f58e3db29",
+                "code": "ebe57737327de196b4625b7f9a45b0bf042673ad",
+                "maintenance": "b3af2a5368403c71ae2dc199e458ad11a64b239af2875d0864aac2e011b75be2"
+            }
+        }
+    }
+}

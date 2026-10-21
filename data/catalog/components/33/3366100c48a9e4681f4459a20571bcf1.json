@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3366100c48a9e4681f4459a20571bcf1",
+    "identity": "github:1333906304:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333906304:root",
+            "repository": "CZX2244/dsh-bilibili",
+            "path": "",
+            "revision": "2b8e4852f2a36a44bae2148254276697314b018c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e0216e67540362b782ae93efd177fc1211d168092ed551da8d7ae045db185b85",
+                "code": "2b8e4852f2a36a44bae2148254276697314b018c",
+                "maintenance": "28f5ad459451bcd8533bac3363b65841d75e476584f9ac8035df017c6d77391f"
+            }
+        }
+    }
+}

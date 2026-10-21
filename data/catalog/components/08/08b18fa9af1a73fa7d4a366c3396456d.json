@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "08b18fa9af1a73fa7d4a366c3396456d",
+    "identity": "github:1345783779:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345783779:root",
+            "repository": "woshishadowhunter/dsh-seed-society",
+            "path": "",
+            "revision": "16e6d3b52e332c54c57e1e14d27331a90853ddec",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "882dd93d05717dcca8506648d9b6802bcf580a60d4a55b1751d40c9ad91842ef",
+                "code": "16e6d3b52e332c54c57e1e14d27331a90853ddec",
+                "maintenance": "d969e36bd991152a2a5b7c371833d44af78e2d28fd16e4a936d487a74e35d821"
+            }
+        }
+    }
+}

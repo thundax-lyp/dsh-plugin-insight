@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "91d200840193d22914bf99796e461c86",
+    "identity": "github:1336081431:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336081431:root",
+            "repository": "T-Auto/dsh-std",
+            "path": "",
+            "revision": "37e9c35b953f0dccaad089df6e68e4f00daae7bd",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "5961042408bdff73203c054ac83da9f428d438a5bca9c871169525c3d461ffdd",
+                "code": "37e9c35b953f0dccaad089df6e68e4f00daae7bd",
+                "maintenance": "f36554994f1d618952a9d8ff149772c5f4162ee9ce3aac70a8dd9700f66f138e"
+            }
+        }
+    }
+}

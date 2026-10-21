@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c9d09908b374190bfa668ee0e136be13",
+    "identity": "github:1345520772:packages-bundle",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345520772:packages-bundle",
+            "repository": "ph4310822/dsh-edex-xry-ui",
+            "path": "packages/bundle",
+            "revision": "efacac8c031132d861e7a5aaa18eb4f38fc73b11",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a9566794b4e368efbd3ce6909ef0c5ac2a53bb5afaf6cdd4d6df5823caef9401",
+                "code": "efacac8c031132d861e7a5aaa18eb4f38fc73b11",
+                "maintenance": "1cbd5f6af12d3e1f3a43e1489799a94a6b79621f18e018a85acc6dc06e4be1b0"
+            }
+        }
+    }
+}

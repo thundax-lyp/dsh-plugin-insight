@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6cfd092ae6a5215f45a29f586a4cc624",
+    "identity": "github:1340819872:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340819872:root",
+            "repository": "Harzva/dsh-cli-store",
+            "path": "",
+            "revision": "9d9994817b97f22bfbda927a2f408ebdfea8ce61",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "50f8376547cc9bb2ecba836aa65eee53ef4b5c174f597a706a18413de12ff5a3",
+                "code": "9d9994817b97f22bfbda927a2f408ebdfea8ce61",
+                "maintenance": "b0e1e42df1954c91963efb8f78d8b57421bf5a9e7925634d46f3a32c28017ac7"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "78fc0eed0cafc2ef47436645ad90796c",
+    "identity": "github:1316202030:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1316202030:root",
+            "repository": "mudden2380078550-creator/write-chinese-long-screenplay",
+            "path": "",
+            "revision": "c7f0003e3238f79426b27708ab0592cd39686ae2",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "275685b007355ef6d4290b0742a960f79960ab495752e251eecdaf86eaa10e96",
+                "code": "c7f0003e3238f79426b27708ab0592cd39686ae2",
+                "maintenance": "95ff7b1754860b6460027bc2904fde64fc7f0ad2836f7fb512d510dcab0465bf"
+            }
+        }
+    }
+}

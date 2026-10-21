@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1afa93cfcc3c5b661fd6826d815c7d25",
+    "identity": "github:1340365338:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340365338:root",
+            "repository": "JohnXu22786/apply-patch",
+            "path": "",
+            "revision": "5f74c21018e2b5e856a56936fdb0bc4bf95691e6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a2a7bfa031d594ca8b24337dd3d1b6d48cf3c4cd255bfe967bd3a8fd0a6fb854",
+                "code": "5f74c21018e2b5e856a56936fdb0bc4bf95691e6",
+                "maintenance": "cd8dc58b10c99e5ce1e9df062d617d93fa61f067ce4766b464ff8e14fd65f66d"
+            }
+        }
+    }
+}

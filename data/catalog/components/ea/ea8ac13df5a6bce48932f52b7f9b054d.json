@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ea8ac13df5a6bce48932f52b7f9b054d",
+    "identity": "github:1342065278:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342065278:root",
+            "repository": "Wenaixi/dsh-superpower",
+            "path": "",
+            "revision": "629dfff09b2808255b0e407913f86b5b3cdcd30a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1e3213b82dab543f7f2e5313a228421962aef726279722b1883d47091c7d97f2",
+                "code": "629dfff09b2808255b0e407913f86b5b3cdcd30a",
+                "maintenance": "2b44fbe32203f2796e362ffd36fe8f28e0bcbbb075a47d61e5e6ee53fc6db57b"
+            }
+        }
+    }
+}

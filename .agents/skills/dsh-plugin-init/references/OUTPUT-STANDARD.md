@@ -11,12 +11,12 @@
 研究事实的唯一正式真相是当前档案及其引用的当前分析、来源和必要证据；本轮记录先在 runs 暂存，校验后最终合并。完整语义见[数据契约](../../_shared/references/DATA-CONTRACT.md#唯一当前快照与本轮增量)。
 展示输入只组织当前成果，生成页面不承担人工研究真相。下一轮、当前校验和页面生成不应依赖旧 SESSION、历史 manifest 链或已经合并的 runs。
 
-正式快照为 `data/catalog/SNAPSHOT.json` 索引及 `data/catalog/snapshot/` 不可变条目；WORK 暂存与索引原子切换由 snapshot-data.mjs 和共享存储层实现。分析原文、展示数据和必要证据内容由索引引用的条目保存；文件式档案、META 和页面是可重新生成的兼容输出。迁移缺失原件有显式限制，不当作新验证。
+正式快照为 `data/catalog/index.jsonl`、按 MD5 ID 分桶的组件 JSON、`state.json` 全局状态与独立必要证据；物理格式、摘要和事务恢复见数据契约。每个组件的分析原文、META、推荐评估和展示数据集中保存，README、分类及详情是可重新生成的页面。迁移缺失原件有显式限制，不当作新验证。
 
 ## README 生成物与读者路由
 
 项目根 `README.md` 是面向读者的研究成果总入口，由 `npm run render:research` 生成，不手工维护。
-生成输入为 `data/catalog/PUBLICATION.json`，结构由[发布输入 Schema](../../_shared/schemas/publication.schema.json)约束。
+生成输入为当前 `data/catalog/index.jsonl` 还原的 publication，逻辑结构由[发布输入 Schema](../../_shared/schemas/publication.schema.json)约束。
 README 由独立块函数合成：标题、头图与定位说明 → 分类导航 → 推荐 → 最新 → 最热 → 分类精选 → 研究出处 → LICENSE → 更新时间。
 LICENSE 区块链接根 `LICENSE`，标明 CC0-1.0，位于末尾更新时间之前。
 Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/` 维护：README／CATALOG 为总模板，UPDATED／HOME-NAVIGATION／WEEKLY-NEW／LATEST／HOT／RECOMMENDED／CATEGORIES／SOURCES 为块模板，
@@ -25,14 +25,13 @@ Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/
 不展示研究历史、本轮范围、完成计数、研究深度、工程使用、内部数据入口或“具体来源版本与覆盖限制见本轮报告”等过程说明。
 
 - **更新时间：** 取当前 META 快照最新北京时间日期；无 META 时用会话检查日期。独立的 META 时间保存在数据中。
-- **三栏及列表页：** 最新、最热、推荐分别回答“有什么变化／哪些下载最多／哪些适合尝试”。首页每栏最多5项，标题链接对应完整列表页：`data/views/columns/LATEST.md`、`HOT.md`、`RECOMMENDED.md`；列表页包含全部符合本栏口径的条目，不受首页上限限制，保留排序、时间窗口、数据限制、详情及返回首页链接。允许跨栏重复，各自交代入选原因，不为数量凑条目。统一展示插件名、同版本功能简介、本栏理由及 GitHub Star／已核实 npm 包近30天下载量；未获取或为0的Star／下载量不展示Badge，未核实 npm 包不展示下载项。
+- **三栏及列表页：** 最新、最热、推荐分别回答“有什么变化／哪些下载最多／哪些适合尝试”。首页每栏最多5项，标题链接对应完整列表页：`data/views/columns/LATEST.md`、`HOT.md`、`RECOMMENDED.md`；最新与最热列表页包含全部符合本栏口径的条目；推荐列表页最多50项，保留排序、时间窗口、数据限制、详情及返回首页链接。允许跨栏重复，各自交代入选原因，不为数量凑条目。统一展示插件名、同版本功能简介、本栏理由及 GitHub Star／已核实 npm 包近30天下载量；未获取或为0的Star／下载量不展示Badge，未核实 npm 包不展示下载项。
 - **最新：** 按已核实 npm `dist-tags.latest` 对应版本的发布时间倒序展示最近30天发版，同时间按稳定ID；采用北京时间页面数据日期截止的30个自然日。日期缺失、失败或旧快照未采集时不排名，不回退首次发布时间、time.modified或仓库推送。
   首页与完整列表的指标组末尾展示“最新发布 YYYY-MM-DD”Badge，低饱和绿色标签配中性灰日期，链接已核实npm包，保留可读替代文本。普通版本发布不等于实质功能更新，也不表示当前源码分析已覆盖该包版本；当前不自动判断“重要更新”，此类判断仍需比较明确版本并检查主要能力、关键修复、兼容或破坏性变化。首次入档、仓库创建、普通推送和文档更新都不替代npm发版证据，不单列“本周新增”。
 - **最热：** 按已核实 npm 包近30天下载量降序，同量按稳定ID，不与 Star 混合加权。使用 META 采集的最近30个完整 UTC 日期；不在条目 Badge 后追加包名或统计日期窗口文本，包名由 Badge 链接提供，精确窗口保留于 META。窗口日期可能随采集批次不同，不宣称完全同期。随每日 META 刷新更新，缺失、失败或非30天窗口不排名，真实0下载可入榜；没有已核实 npm 包的插件仍可进入最新和推荐。
   同一 npm 包仅占一席，同量按稳定ID选择代表组件；同仓库不同已核实包可分别入榜，不合计多个包，也不把共用包下载量解释为组件独立用量。GitHub Star 只展示技术关注度，不等于代码质量，不参与最热排序。下载量不等于独立用户或活跃用户。
-- **推荐：** 由人工研究选择，内部先按install后trial排序，trial不显示等级标签，同等级保留人工候选顺序，由研究者按场景价值、替代方案增益、证据充分度与维护负担审阅，不按创新均分、Star或下载量自动排序。observe不进入推荐，脚本变化待复核项暂停推荐。
-  值得安装须有固定版本、目标环境中的安装、核心功能及禁用／卸载验证，说明适用环境和关键限制；trial须有源码与文档依据，写明验证不足和先检查什么。只有host_acceptance记录是机械必要条件，完整验收内容仍须人工审阅。推荐绑定分析版本，相关代码、关键依赖或宿主变化后复核；每轮发布检查推荐有效性，长期未变也定期核查可安装性与维护状态。
-  创新分数、分项、评分理由及评分状态只存JSON，不展示在读者Markdown。推荐列表保留人群、理由与条件，链接详情中的思考、成本、试用方法与核查边界；不因新排版升级原有结论。读者页面不使用“条件试用”一词；历史推荐摘要中的该词在展示层改为“试用”，具体人群、步骤和验证限制保留，正式快照原文不改写。
+- **推荐：** 从全部当前有效研究的组件 recommendation 派生，按采用评分降序、同分按稳定组件ID升序；README最多5项，完整推荐页最多50项，不足时不凑数，不限于本轮所选。trial与install共同按分数排序，install显示“值得安装”，trial不显示等级标签。未评估、不推荐、观察、版本不符及待复核项不参与；高分不覆盖状态和证据门槛。字段语义见数据契约，评分方法见研究规范；创新分、Star与下载量不参与推荐排序。
+  AI在完成每项研究后给出结论、分项分数和理由；不将其表述为用户逐项人工挑选。推荐理由保留人群、价值和先检查的条件，链接详情中的思考、成本、试用方法与核查边界。install必须有固定版本真实宿主验收，完整验收仍须审阅；每轮发布检查全部现有推荐的版本与依赖有效性，保留有效旧结论。采用分与创新分只保存JSON，不展示数值，也不因排版升级结论。历史摘要“条件试用”在展示层转为“试用”，正式原文不改写。
 - **分类导航与列表：** 首页导航用“分类／用途／数量”紧凑表，分类名直接进入完整分类页，分类范围说明由生成器统一维护并复用于分类页。分类精选按 Star 降序展示最多5项，每项采用加粗名称、同版本功能摘要和 Star／npm 近30天下载指标的紧凑列表，保留脚本更新待复核提示，不创建插件标题或重复四标签短评；分类标题和“更多”链接完整分类页。完整分类页使用一级分类名、范围说明、比较表与二级插件标题，取消重复的同名分类标题；表内链接本页短评，下方保留完整四标签。
   比较表的主要用途复用同版本功能摘要，关键条件取同版本使用建议的第一条完整句子（优先 advice，否则原稿“建议”；没有句号时保留整条），不按字符数截断或推断新条件。完整建议保留在短评中。单元格转义竖线及 HTML 特殊字符；首页与分类页分别标明排序依据。
 - **研究出处：** 两个 GitHub 发现目录放在 README 最后；固定提交、证据边界和必要依据保存在当前快照；本轮错误与断点在合并前保存在 runs。
@@ -43,7 +42,7 @@ Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/
 - [0xsline/awesome-deepseek-harness](https://github.com/0xsline/awesome-deepseek-harness)
 
 子页面职责：推荐页展开人群、采用理由、思考、条件与试用方法；分类索引页链接各分类，完整分类页按插件名字母顺序呈现短评；
-单插件详情承担完整采用分析和证据引用；Git 内运行清单说明来源版本、范围、状态、摘要与复现命令。
+单插件详情承担完整采用分析和证据引用；本地运行清单记录轮次范围、检查点与复现命令；当前来源、版本和研究依据由组件记录及必要证据保存。
 本轮原始采集、观察、断点和报告先暂存在 `data/runs/`；支撑当前结论的分析和证据在最终合并时落入正式快照，其他过程副本不要求永久保留。
 工程执行另从根 AGENTS 路由到规范、Skill 和脚本，不进入生成的读者导航。
 
@@ -66,15 +65,13 @@ Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/
 | 产物 | 位置 | 要求 |
 |---|---|---|
 | 研究入口 | 根 `README.md` | 由模板生成，插件标题链接稳定详情入口 |
-| 唯一正式快照索引 | `data/catalog/SNAPSHOT.json` | 当前条目引用及语义摘要；原子合并点 |
-| 正式快照条目 | `data/catalog/snapshot/<section>/<前缀>/<sha256>.json` | 按内容复用的档案、发现分组、报告、META、发布输入及证据对象 |
+| 唯一正式快照索引 | `data/catalog/index.jsonl` | 一行一个组件，按 MD5 ID 升序，查询属性与详情摘要由完整记录派生 |
+| 完整组件记录 | `data/catalog/components/<id前两位>/<id>.json` | UTF-8、indent=4，集中保存该组件全部已知数据 |
+| 全局状态 | `data/catalog/state.json` | 全局来源、原始顺序、事务与摘要，不重复档案 |
+| 必要证据 | `data/catalog/evidence/<前缀>/<sha256>.json` | 按内容复用的证据正文 |
 | 本轮工作记录 | `data/runs/<round>/WORK.json` | v2保存固定基线与过程文件摘要索引；合并后可按引用清理 |
-| 档案兼容输出 | `data/catalog/PLUGINS.json` | 从正式快照生成，不单独人工维护 |
-| 发布兼容输出 | `data/catalog/PUBLICATION.json` | 从快照生成，records 保存当前有效完成记录，不引用历史会话 |
-| 插件路径注册表 | `data/catalog/PLUGIN-PATHS.json` | 稳定 ID 到可读插件目录的唯一映射 |
 | 当前详情展示 | `data/plugins/<plugin-slug>/INSIGHT.md` | 从快照 reports 原文生成，包含最新 Issue 信息 |
-| 当前 META | `data/plugins/<plugin-slug>/META.json` | 当前采集结果；本轮采集先暂存，核实后更新 |
-| 旧运行清单 | `data/manifests/<round>.json` | 新文件由 .gitignore 忽略；已跟踪且仍被当前工具或详情引用的文件暂留，解除依赖后删除 |
+| 本地兼容运行清单 | `data/manifests/<round>.json` | Git 忽略；仅供旧流程或本地审计，当前页面不得依赖它 |
 | 本地来源输入与问题 | `data/runs/<round>/INPUT.json`、`INPUT-PROBLEMS.json` | Git 忽略；固定目录解析、身份核实结果与未解决边界 |
 | 本地会话与进度 | `data/runs/<round>/SESSION.json` | Git 忽略；v2为指向同轮WORK的兼容入口；实际会话头、状态和检查点独立存储 |
 | 本地单插件观察 | `data/runs/<round>/observations/<plugin-slug>.json` | Git 忽略；批次只含本项，历史多项批次可用 MULTI-PLUGIN.json |
@@ -82,7 +79,7 @@ Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/
 | 过程迁移审计 | `data/runs/<round>/WORK-MIGRATION.json`、`migration-originals/work-storage-v1/` | 迁移摘要与旧 WORK／SESSION 原始字节，不由 clean 自动删除 |
 | 本地研究原稿 | `data/runs/<round>/insights/<plugin-slug>.md` | Git 忽略；本轮暂存原稿，合并时将当前原文落入正式位置 |
 | 本地材料索引 | `data/runs/<round>/snapshots/<plugin-slug>/MATERIALS.json` | Git 忽略；机械绑定 checkout、作者材料、inventory 与待核查候选，不承载结论 |
-| 本地发布输入 | `data/runs/<round>/PUBLICATION-INPUT.json` | Git 忽略；人工审阅的推荐、摘要、能力、META 映射与建议，供发布 plan／apply 使用 |
+| 本地发布输入 | `data/runs/<round>/PUBLICATION-INPUT.json` | Git 忽略；摘要、能力、META 映射与建议；推荐结论保存在组件观察中，供正式合并使用 |
 | 本地报告与推荐 | `data/runs/<round>/REPORT.md`、`RECOMMENDATIONS.md` | Git 忽略；描述范围、依据、判断及未完成项 |
 | 本地原始材料 | `data/runs/<round>/snapshots/` | Git 忽略；保存来源、源码、版本、统计、META及失败材料 |
 | 分类索引与完整页 | `data/views/categories/INDEX.md`、`<CATEGORY>.md` | 当前分类页按名称排序，与 README 一起生成 |
@@ -90,7 +87,7 @@ Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/
 | 临时计划／缓存／源码检出 | 系统临时目录或 `data/tmp/`、`cache/`、`checkouts/` | 可重建且不提交，不放正式证据 |
 
 `plugin-slug` 首次由 owner、repo 组成 `owner--repo`，子组件追加稳定组件名；统一小写。
-首次分配写入注册表，仓库改名或组件移动后保持目录不变，不根据新名字再次创建目录。
+首次分配写入组件完整记录的 registry 字段，仓库改名或组件移动后保持目录不变，不根据新名字再次创建目录。
 `round` 使用北京时间日期与当日序号 `YYYY-MM-DD-NN`（至少两位，从01起），如 `2026-10-19-03`；新轮次使用未占用目录，不能复用历史编号。日期是轮次开始日，续跑跨日不改名。SESSION、REPORT、RECOMMENDATIONS 及 SOURCE、META 等文件不再重复添加时间；精确时间保留在 JSON 字段中。独立 META 采集批次可在 snapshots 下使用独立批次目录，避免覆盖已有证据。
 观察 `run_id` 使用轮次与插件标识形成唯一 ID；历史内部 ID、提交 SHA 与精确 ISO 时间保留在字段中，不为改目录而改身份。
 
@@ -105,7 +102,7 @@ Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/
 - 最终合并前，将当前快照仍需引用的分析、证据和 META 落入正式位置并校验，不能留下指向待清理 runs 的有效引用。
 - 合并结果回读、当前引用完整且可独立生成页面后，本轮无引用副本可以清理；永久归档不是交付条件。活动锁、未合并记录和未知文件不能当作已合并副本清理。
 - Git 跟踪正式当前状态的变迁；不生成逐插件历史导航。历史 manifest 仅供首次迁移和可选追溯，不成为当前生成或新研究前置条件。
-- `.gitignore` 忽略新增的 `data/manifests/` 过程文件；已跟踪文件不会因此退出 Git。清理旧文件须核对引用并通过后续提交删除，不使用强制添加继续累积历史 manifest。每日 META 更新只暂存当前数据和页面，不暂存该目录。
+- `.gitignore` 忽略新增的 `data/manifests/` 过程文件；现有历史清单核对引用后退出跟踪并可保留本地副本，不使用强制添加继续累积 manifest。每日 META 更新只暂存当前数据和页面，不暂存该目录。
 - 现有 `maintain:runs` 只清理它支持的旧重复视图，不能充当新模型的合并后清理器。新清理流程须先预览引用与合并状态，再执行并回读；本次不执行清理。
 
 ## 研究清单与断点
@@ -126,7 +123,7 @@ Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/
   本轮使用 `data/runs/<round>/insights/<plugin-slug>.md` 暂存；最终合并时保存当前正式分析及必要证据，详情展示页从它们生成。
 - **分类列表：** 以业务场景为主分类，技术类别作为辅助信息。每个插件使用下述四标签短评，
   标题链接到对应详细分析；标明范围、截止时间和研究深度，未深评条目明确哪些内容仍未知。
-- **推荐页：** 最后从已完成详情中筛选，链接对应分析。说明推荐给谁、为什么、思考、
+- **推荐页：** 最后从全部当前有效研究的组件推荐结论中按分数筛选前50项，链接对应分析。说明推荐给谁、为什么、思考、
   必要依赖与成本、证据层级及最小试用方法；未形成推荐时直接说明原因，不凑数。
 
 推荐页区分两个用途：
@@ -137,9 +134,9 @@ Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/
   试什么以及成功／停止判据。源码级证据可支撑试用候选，不能据此写成已验证增效；
   明确本周起止日期与候选覆盖范围，不把有限样本写成全生态最佳，也不隐含定期执行授权。
 
-每轮重新完成全部所选条目的详情，再生成分类短评和推荐；与当前快照对照，需要更早版本时查 Git，不要求保存每轮报告。
+每轮重新完成全部所选条目的详情及推荐评估，再从全部当前有效成果生成分类短评和推荐；与当前快照对照，需要更早版本时查 Git，不要求保存每轮报告。
 同轮续跑复用已完成项，README 指向实际生成的最新产物。
-不为输出格式重新初始化数据或增加未定义字段；创新评分使用数据契约定义的innovation_scores。
+不为输出格式重新初始化数据；创新评分使用innovation_scores，采用结论与评分使用recommendation，均遵循数据契约。
 
 ## 报告共同结构
 

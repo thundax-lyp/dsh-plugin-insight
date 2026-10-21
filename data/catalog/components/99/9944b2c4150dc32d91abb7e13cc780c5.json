@@ -1,0 +1,450 @@
+{
+    "schema_version": 3,
+    "id": "9944b2c4150dc32d91abb7e13cc780c5",
+    "identity": "github:1334434271:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1334434271:root",
+            "repository_id": 1334434271,
+            "component_id": "root",
+            "repository": "AKS1st/dsh-sysmon",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-sysmon",
+            "entry_type": "plugin",
+            "technical_category": "observability-cost",
+            "business_category": "infrastructure",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "4a588da2a05ef1eb030eb047538a8b2901809d4c26c1a8b062732bdc61bcd275",
+                "code": "4cb7a241f0228329d12010b4846c1bd508271ec0",
+                "maintenance": "eceace503180182cffd4526fa82e68d5e554a03c477108b70de2714dc350bd44"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-06-github-1334434271-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T05:38:59.541Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-06-github-1334434271-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/AKS1st/dsh-sysmon/blob/4cb7a241f0228329d12010b4846c1bd508271ec0/README.md",
+                    "revision": "4cb7a241f0228329d12010b4846c1bd508271ec0",
+                    "captured_at": "2026-10-21T05:38:59.541Z",
+                    "summary": "周期采集Linux整机CPU、内存与根磁盘并显示状态浮层。",
+                    "artifact": "data/runs/2026-10-21-06/snapshots/aks1st--dsh-sysmon/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-06-github-1334434271-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/AKS1st/dsh-sysmon/blob/4cb7a241f0228329d12010b4846c1bd508271ec0/src/index.ts",
+                    "revision": "4cb7a241f0228329d12010b4846c1bd508271ec0",
+                    "captured_at": "2026-10-21T05:38:59.541Z",
+                    "summary": "核查 src/index.ts、src/collect.ts、src/client/index.ts；每秒通过ctx.shell运行固定awk/nproc/df命令，解析/proc；CPU按前后差值乘核心数，GET只返回缓存。",
+                    "artifact": "data/runs/2026-10-21-06/snapshots/aks1st--dsh-sysmon/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "在DSH内观察主机资源压力，不能直接归因某模型或会话。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1334434271-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334434271:root",
+                            "area": "code",
+                            "fingerprint": "4cb7a241f0228329d12010b4846c1bd508271ec0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:38:59.541Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "每秒通过ctx.shell运行固定awk/nproc/df命令，解析/proc；CPU按前后差值乘核心数，GET只返回缓存。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1334434271-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334434271:root",
+                            "area": "code",
+                            "fingerprint": "4cb7a241f0228329d12010b4846c1bd508271ec0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:38:59.541Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1334434271-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334434271:root",
+                            "area": "code",
+                            "fingerprint": "4cb7a241f0228329d12010b4846c1bd508271ec0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:38:59.541Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "分发以本插件固定package.json、运行依赖与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1334434271-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334434271:root",
+                            "area": "code",
+                            "fingerprint": "4cb7a241f0228329d12010b4846c1bd508271ec0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:38:59.541Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "每秒固定子进程及客户端轮询有持续成本，低于每请求采样；无模型token调用，平台维护有负担。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1334434271-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334434271:root",
+                            "area": "code",
+                            "fingerprint": "4cb7a241f0228329d12010b4846c1bd508271ec0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:38:59.541Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "Linux主机辅助观察，先验证指标尺度和失败状态；正式告警另用监控系统。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1334434271-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334434271:root",
+                            "area": "code",
+                            "fingerprint": "4cb7a241f0228329d12010b4846c1bd508271ec0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:38:59.541Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "提供就地资源线索，未证明故障定位或性能收益。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1334434271-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334434271:root",
+                            "area": "code",
+                            "fingerprint": "4cb7a241f0228329d12010b4846c1bd508271ec0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:38:59.541Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "采样/纯解析/展示分离，缓存防请求放大可复用；sameOrigin允许无来源头，不能描述为独立身份认证。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1334434271-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334434271:root",
+                            "area": "code",
+                            "fingerprint": "4cb7a241f0228329d12010b4846c1bd508271ec0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:38:59.541Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "把采样从请求解耦，sampling锁避免重叠，3秒/4096字节限制控制子进程；整机指标呈现便捷，非新监控方法。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1334434271-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334434271:root",
+                            "area": "code",
+                            "fingerprint": "4cb7a241f0228329d12010b4846c1bd508271ec0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:38:59.541Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "失败保留旧缓存而响应没有采样时间/过期标记，可能把陈旧健康值当实时；CPU总核百分比可超100且首样为0，需清晰解释。数据不含进程归因，不能据此推断Agent成本。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1334434271-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334434271:root",
+                            "area": "code",
+                            "fingerprint": "4cb7a241f0228329d12010b4846c1bd508271ec0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:38:59.541Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "未验证假设：返回采样时间、失败状态和容量归一显示可减少误读。模拟连续失败、首次启动与多核满载，比较用户对新鲜度和饱和程度的判断。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1334434271-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334434271:root",
+                            "area": "code",
+                            "fingerprint": "4cb7a241f0228329d12010b4846c1bd508271ec0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:38:59.541Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T05:38:59.541Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "4cb7a241f0228329d12010b4846c1bd508271ec0",
+                "reviewed_at": "2026-10-21T05:38:59.541Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1334434271:root",
+                        "area": "code",
+                        "fingerprint": "4cb7a241f0228329d12010b4846c1bd508271ec0"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 0,
+                        "mechanism": 15,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "rationale": "novelty=0：传统系统指标。 mechanism=15：有采样锁和缓存机制。 transferability=5：Linux命令限制迁移。 simplification=4：就地看数省切换。",
+                    "basis": "interpretation",
+                    "score": 24,
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1334434271-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 10,
+                        "economics": 4
+                    },
+                    "rationale": "workflow=9：辅助诊断非自动修复。 delivery=8：陈旧标记缺失限制告警。 reach=10：Linux DSH用户。 economics=4：有固定采样成本无收益对照。",
+                    "basis": "interpretation",
+                    "score": 31,
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1334434271-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "Linux用户可试就地资源线索；采样失败会保留旧值且无过期标记，须与系统监控对照，不用于正式告警或模型归因。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "在DSH看主机压力的辅助任务明确。"
+                    },
+                    "advantage": {
+                        "score": 6,
+                        "rationale": "就近展示/proc指标是便利，系统监控可直接替代。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "已核每秒命令及缓存，CPU尺度和陈旧状态限制明确。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "每秒子进程与轮询持续开销，需人工辨别失效数据。"
+                    }
+                },
+                "score": 52,
+                "revision": "4cb7a241f0228329d12010b4846c1bd508271ec0",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-06-github-1334434271-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1334434271:root",
+                        "area": "code",
+                        "fingerprint": "4cb7a241f0228329d12010b4846c1bd508271ec0"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1334434271:root",
+            "repository": "AKS1st/dsh-sysmon",
+            "path": "",
+            "revision": "4cb7a241f0228329d12010b4846c1bd508271ec0",
+            "fingerprints": {
+                "directory": "4a588da2a05ef1eb030eb047538a8b2901809d4c26c1a8b062732bdc61bcd275",
+                "code": "4cb7a241f0228329d12010b4846c1bd508271ec0",
+                "maintenance": "eceace503180182cffd4526fa82e68d5e554a03c477108b70de2714dc350bd44"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T05:26:52Z",
+            "analysis_sha256": "3e383f8ae30a1ebbae360bcadcc3eda8366863401c7e567f74f5fc6d267c82a3"
+        },
+        "publication.metadata": "data/plugins/aks1st--dsh-sysmon/META.json",
+        "publication.summaries": {
+            "text": "周期采集Linux整机CPU、内存与根磁盘并显示状态浮层。",
+            "revision": "4cb7a241f0228329d12010b4846c1bd508271ec0",
+            "source_url": "https://github.com/AKS1st/dsh-sysmon/blob/4cb7a241f0228329d12010b4846c1bd508271ec0/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "4cb7a241f0228329d12010b4846c1bd508271ec0",
+            "items": {
+                "后台": "每秒Linux资源缓存采样",
+                "Host 路由": "/dsh-sysmon/api缓存查询",
+                "界面": "整机资源浮层"
+            }
+        },
+        "publication.advice": {
+            "revision": "4cb7a241f0228329d12010b4846c1bd508271ec0",
+            "text": "Linux主机辅助观察，先验证指标尺度和失败状态；正式告警另用监控系统。"
+        },
+        "registry": "data/plugins/aks1st--dsh-sysmon",
+        "reports": "# dsh-sysmon\n\n> 周期采集Linux整机CPU、内存与根磁盘并显示状态浮层。\n\n## 使用建议\n\nLinux主机辅助观察，先验证指标尺度和失败状态；正式告警另用监控系统。\n\n**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，插件与依赖流程的实际运行尚未验证；未来假设未验证。\n\n## 洞察短评\n\n- **用途**：在DSH内观察主机资源压力，不能直接归因某模型或会话。\n- **亮点**：把采样从请求解耦，sampling锁避免重叠，3秒/4096字节限制控制子进程；整机指标呈现便捷，非新监控方法。\n- **思考**：失败保留旧缓存而响应没有采样时间/过期标记，可能把陈旧健康值当实时；CPU总核百分比可超100且首样为0，需清晰解释。数据不含进程归因，不能据此推断Agent成本。\n- **建议**：未验证假设：返回采样时间、失败状态和容量归一显示可减少误读。模拟连续失败、首次启动与多核满载，比较用户对新鲜度和饱和程度的判断。\n\n## 场景与替代办法\n\n参照top/free/df与监控面板；增量是宿主shell有界采样、缓存路由和前台展示。\n\n## 能力清单\n\n- **后台**：每秒Linux资源缓存采样\n- **Host 路由**：/dsh-sysmon/api缓存查询\n- **界面**：整机资源浮层\n\n## 依赖与流程\n\n每秒通过ctx.shell运行固定awk/nproc/df命令，解析/proc；CPU按前后差值乘核心数，GET只返回缓存。\n\n宿主webServer/shell/timer、Linux /proc、awk/nproc/df及客户端overlay；其他系统没有等价采集回退。\n\n后台单次采样→差分CPU→缓存→浏览器轮询→阈值颜色；采样失败保留旧值。\n\n## 成本与效果\n\n每秒固定子进程及客户端轮询有持续成本，低于每请求采样；无模型token调用，平台维护有负担。\n\n提供就地资源线索，未证明故障定位或性能收益。\n\n## 核心贡献\n\n把采样从请求解耦，sampling锁避免重叠，3秒/4096字节限制控制子进程；整机指标呈现便捷，非新监控方法。\n\n## 关键质疑\n\n失败保留旧缓存而响应没有采样时间/过期标记，可能把陈旧健康值当实时；CPU总核百分比可超100且首样为0，需清晰解释。数据不含进程归因，不能据此推断Agent成本。\n\n## 工程亮点\n\n采样/纯解析/展示分离，缓存防请求放大可复用；sameOrigin允许无来源头，不能描述为独立身份认证。\n\n源码依据：[src/index.ts](https://github.com/AKS1st/dsh-sysmon/blob/4cb7a241f0228329d12010b4846c1bd508271ec0/src/index.ts)、[src/collect.ts](https://github.com/AKS1st/dsh-sysmon/blob/4cb7a241f0228329d12010b4846c1bd508271ec0/src/collect.ts)、[src/client/index.ts](https://github.com/AKS1st/dsh-sysmon/blob/4cb7a241f0228329d12010b4846c1bd508271ec0/src/client/index.ts)。\n\n## 未来设计假设（未验证）\n\n未验证假设：返回采样时间、失败状态和容量归一显示可减少误读。模拟连续失败、首次启动与多核满载，比较用户对新鲜度和饱和程度的判断。\n\n隔离Linux核采样超时、失败陈旧、CPU分母与root磁盘含义；本轮未调用shell采样。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：bc6ed3b7f338d02f16aa4f0770f6b730a404405a63a015b0a0999b3014fce6aa。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 10 | 710 | 513 | 195 | — |\n| .md | source | 2 | 71 | — | — | 727 |\n| .ts | source | 5 | 343 | 217 | 100 | — |\n| .ts | test | 2 | 145 | 125 | 5 | — |\n| .mjs | source | 1 | 30 | 29 | 0 | — |\n\n排除 5 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[AKS1st/dsh-sysmon](https://github.com/AKS1st/dsh-sysmon)\n- **版本号**：0.2.1（[固定提交 4cb7a241](https://github.com/AKS1st/dsh-sysmon/tree/4cb7a241f0228329d12010b4846c1bd508271ec0)）\n- **版本日期**：2026-09-08（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：src/index.ts、src/collect.ts、src/client/index.ts、作者README、package与固定范围inventory；源码抽读不等于完整审计。\n- 未验证：插件执行、测试、安装、真实宿主与独立采用。\n- 证据限制：固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。\n- 下一步：隔离Linux核采样超时、失败陈旧、CPU分母与root磁盘含义；本轮未调用shell采样。\n",
+        "metadata": {
+            "repository": "AKS1st/dsh-sysmon",
+            "repository_id": 1334434271,
+            "captured_at": "2026-10-21T05:33:51.379Z",
+            "window_start": "2026-09-21T05:33:51.379Z",
+            "stars": 2,
+            "pushed_at": "2026-09-08T03:19:35Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdsh-sysmon%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E82A:275C9A:549FEB:5AACD2:6AD84EC1 and timestamp 2026-10-21 05:33:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdsh-sysmon%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E998:110ECF:503CA4:5643A5:6AD84EC2 and timestamp 2026-10-21 05:33:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdsh-sysmon%20is%3Aissue%20created%3A2026-09-21T05%3A33%3A51.379Z..2026-10-21T05%3A33%3A51.379Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID EA98:4F1F4:51124E:571BDF:6AD84EC2 and timestamp 2026-10-21 05:33:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdsh-sysmon%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A33%3A51.379Z..2026-10-21T05%3A33%3A51.379Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID EC32:4C3CE:516EC0:577CF4:6AD84EC3 and timestamp 2026-10-21 05:33:56 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdsh-sysmon%20is%3Aissue%20updated%3A2026-09-21T05%3A33%3A51.379Z..2026-10-21T05%3A33%3A51.379Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID ED3C:271D3E:53DF8C:59EA1D:6AD84EC4 and timestamp 2026-10-21 05:33:56 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-sysmon",
+                "captured_at": "2026-10-21T05:33:56.915Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 117,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-sysmon",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-28T02:53:07.563Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-sysmon",
+                    "error": null,
+                    "latest_version": "0.1.1",
+                    "latest_published_at": "2026-08-28T02:56:00.534Z",
+                    "latest_error": null
+                }
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1334434271:root",
+            "repository": "AKS1st/dsh-sysmon",
+            "path": "",
+            "revision": "4cb7a241f0228329d12010b4846c1bd508271ec0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4a588da2a05ef1eb030eb047538a8b2901809d4c26c1a8b062732bdc61bcd275",
+                "code": "4cb7a241f0228329d12010b4846c1bd508271ec0",
+                "maintenance": "eceace503180182cffd4526fa82e68d5e554a03c477108b70de2714dc350bd44"
+            }
+        }
+    }
+}

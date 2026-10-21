@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3986fe46bf3fed190aec5c298931301f",
+    "identity": "github:1337503267:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337503267:root",
+            "repository": "baixianger/dsh-weave",
+            "path": "",
+            "revision": "68e41bdc3e10bf8ad96eb83851f72eb791e93600",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "cc9b75b65856bd9ed268752a37d7f4dbc33f02f15f71c7fa95075c3025bf6cb1",
+                "code": "68e41bdc3e10bf8ad96eb83851f72eb791e93600",
+                "maintenance": "c010ab8b31a7f0ce56e9b4e086146697957ca7b8d34465d44a659bf20cca8e1c"
+            }
+        }
+    }
+}

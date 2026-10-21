@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "566a4ae4732db519129dd07c0d2a7c8c",
+    "identity": "github:1339893049:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339893049:root",
+            "repository": "NOirBRight/dsh-codex-sidebar",
+            "path": "",
+            "revision": "919557e2e23bb958a5dd9020d8ed48fa5f223192",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "29600bbf42a0ed1eacbfd9c3bb14746850f491a5f5636c000843dc253beec477",
+                "code": "919557e2e23bb958a5dd9020d8ed48fa5f223192",
+                "maintenance": "3a177c54b8cd222894e4694ae98e569b019ae3d87d7a412a38d608c5a86eb0f5"
+            }
+        }
+    }
+}

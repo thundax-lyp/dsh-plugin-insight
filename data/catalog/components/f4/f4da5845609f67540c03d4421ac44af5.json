@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f4da5845609f67540c03d4421ac44af5",
+    "identity": "github:1342582142:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342582142:root",
+            "repository": "ConTr0L0/dsh-balance-monitor",
+            "path": "",
+            "revision": "c03963c75f9560c00c16a0a3fb9e7e2f46e15757",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0c899214206b3afe473a6c002e5db19d314d331d13a6d968c68b24527db3c2b2",
+                "code": "c03963c75f9560c00c16a0a3fb9e7e2f46e15757",
+                "maintenance": "44d9f48393228c47b71ad994ada3565a54b87a7e6be466a977c913fb03983418"
+            }
+        }
+    }
+}

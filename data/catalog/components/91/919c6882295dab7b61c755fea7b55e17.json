@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "919c6882295dab7b61c755fea7b55e17",
+    "identity": "github:1336035716:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336035716:root",
+            "repository": "jiuge2467/dsh-studio",
+            "path": "",
+            "revision": "e85107ade4fe8266f657a6387268b24b5e2ac74f",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "076c3dd7f322e1e1528888c8e469f3c43b8079508deb145621176f0f240438d5",
+                "code": "e85107ade4fe8266f657a6387268b24b5e2ac74f",
+                "maintenance": "86dc2d450f8748f380b1113d669d4008784d51197eeb7c42fbe2b38effdcbd69"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8dd7e0559333f5123d1af6091cc12d63",
+    "identity": "github:1342839228:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342839228:root",
+            "repository": "Sddft97/dsh-client-ui-skin-verdandi",
+            "path": "",
+            "revision": "5ff0fb227b03c32f0b566dd678d87fb414f5ee3f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d80f097aae54c45198b618f3c48a37b0444013db65f3043c8c0861cfd28dbd7a",
+                "code": "5ff0fb227b03c32f0b566dd678d87fb414f5ee3f",
+                "maintenance": "657ada9b9a0354ef9b1117c608c9084244500a50211251b0af8cb93c452e4e4f"
+            }
+        }
+    }
+}

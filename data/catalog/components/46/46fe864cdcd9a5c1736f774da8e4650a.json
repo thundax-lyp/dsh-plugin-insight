@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "46fe864cdcd9a5c1736f774da8e4650a",
+    "identity": "github:1423447515:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1423447515:root",
+            "repository": "linlin539/dsh-skill-writing-plans",
+            "path": "",
+            "revision": "a9128c1e46a17d135b5174ef56f6e9b2886a3747",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "214da9b0ce84d5ef7a81fbefbb231399723b6e49894b8c6c1c52a639f2b66978",
+                "code": "a9128c1e46a17d135b5174ef56f6e9b2886a3747",
+                "maintenance": "ff12e85be5f2d808cf7c369852b92d0d5f0cbd7ce7714a749cb083c82b7e4a73"
+            }
+        }
+    }
+}

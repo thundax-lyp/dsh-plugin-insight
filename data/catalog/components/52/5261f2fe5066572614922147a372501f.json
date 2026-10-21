@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5261f2fe5066572614922147a372501f",
+    "identity": "github:1422465674:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1422465674:root",
+            "repository": "lilcandi/dsh-continue-button",
+            "path": "",
+            "revision": "3a7d7f4540efad10551619646141374c154088f6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3301941eef331ef2d0ce49dc229a81d0dfffade10b76bbc138d94f6b03679a67",
+                "code": "3a7d7f4540efad10551619646141374c154088f6",
+                "maintenance": "832269d56d0a9476722f4e669d0b9d9b158e794f7b3b4d1813c93e5aa769dd87"
+            }
+        }
+    }
+}

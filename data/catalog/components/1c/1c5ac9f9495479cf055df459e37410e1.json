@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1c5ac9f9495479cf055df459e37410e1",
+    "identity": "github:1237266636:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1237266636:root",
+            "repository": "goodrain/rainskills",
+            "path": "",
+            "revision": "3ad8a3863b6d4566a98c92e8c7f184dfee4dca8f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a804c9a3b6ebdf2992e90f93562f83d9c98f85f909b35fd68b649af6e06dff3e",
+                "code": "3ad8a3863b6d4566a98c92e8c7f184dfee4dca8f",
+                "maintenance": "a89a3e74a1e72ed245121c028fa00fbb00e786f891e56c13f389d6c6451f18fa"
+            }
+        }
+    }
+}

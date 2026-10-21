@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "693aacafcfdee730202af129b5d904b7",
+    "identity": "github:1345856208:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345856208:root",
+            "repository": "HenryHwong/dsh-ui-turn-rail",
+            "path": "",
+            "revision": "79726b24ed3099c12315254487b7d48e5196fcd7",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "e6024665b7df8f6594ad8948dd3bb067b9d1a0ed949d8cf9767854561d0374d7",
+                "code": "79726b24ed3099c12315254487b7d48e5196fcd7",
+                "maintenance": "3ea8354d879937591a53463dff6c740226dc2fc36bb29f90056b1c5ebcda6d49"
+            }
+        }
+    }
+}

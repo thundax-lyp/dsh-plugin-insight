@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a171f46aa198db1e1f0e87e1029032eb",
+    "identity": "github:1340413724:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340413724:root",
+            "repository": "aa2246740/dsh-creator-mode-plus",
+            "path": "",
+            "revision": "cc641bca35f108d518684963403e1df4ee9cf260",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "310954c86150c316cff4ee0fa07e7262c2eedffe4ef0436dc8bae8ea6993ec07",
+                "code": "cc641bca35f108d518684963403e1df4ee9cf260",
+                "maintenance": "99b8de6c227c218bbefc8c3fc002db13ae72a12927ea9464a4429eaf51061640"
+            }
+        }
+    }
+}

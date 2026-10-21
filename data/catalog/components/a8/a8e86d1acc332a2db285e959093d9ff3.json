@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a8e86d1acc332a2db285e959093d9ff3",
+    "identity": "github:1333729604:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333729604:root",
+            "repository": "tsrigo/dsh-from-scratch",
+            "path": "",
+            "revision": "bc4e47f5024f1f7bc6d8b6ac88ce44fa6e4249af",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "57315f6dbf572fc9146dcc04877600c64c42e461a477a97c9b49ff1e0c8c4c19",
+                "code": "bc4e47f5024f1f7bc6d8b6ac88ce44fa6e4249af",
+                "maintenance": "0082441221793c6b49182872aee3610cb9358e9051f61bad330a8644134f4e4f"
+            }
+        }
+    }
+}

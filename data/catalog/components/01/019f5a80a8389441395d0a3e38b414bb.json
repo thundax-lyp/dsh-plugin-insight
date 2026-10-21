@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "019f5a80a8389441395d0a3e38b414bb",
+    "identity": "github:1373415374:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1373415374:root",
+            "repository": "Witherwithwinter/DSH-Codinput",
+            "path": "",
+            "revision": "a32da33ce4d50616bf490d360ae3dfe784e8aa50",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7ab3a007f0f7667730e481cf3131c570bb8461db8cc02200d7859eac74f8a78c",
+                "code": "a32da33ce4d50616bf490d360ae3dfe784e8aa50",
+                "maintenance": "16f8ec78bbbad5480c7f25b79cc04bf44f5db4605c452081e48196e90bd9d07f"
+            }
+        }
+    }
+}

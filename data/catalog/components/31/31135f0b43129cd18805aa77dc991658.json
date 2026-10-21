@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "31135f0b43129cd18805aa77dc991658",
+    "identity": "github:1403906109:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1403906109:root",
+            "repository": "ItQianChen/dsh-github-flow",
+            "path": "",
+            "revision": "a915fb1c6916812a9358b38a9f74f5e9e764fa53",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a51c0cc2db6e184d2830739a59223a4d1d1ce10d64f5b6b5566c4adbea827815",
+                "code": "a915fb1c6916812a9358b38a9f74f5e9e764fa53",
+                "maintenance": "830b9fa8c18c1f85832073eefc360bc37c14de5da04a4763753c461e3f2e772f"
+            }
+        }
+    }
+}

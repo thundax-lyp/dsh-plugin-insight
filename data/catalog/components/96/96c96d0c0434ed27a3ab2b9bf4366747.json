@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "96c96d0c0434ed27a3ab2b9bf4366747",
+    "identity": "github:1328269939:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1328269939:root",
+            "repository": "omdsh-dev/dsh-mygo",
+            "path": "",
+            "revision": "43bb29683680c5610a769c4a3b2308877e114e0d",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "0a175048bd9e8f6bbbac97a02457701623a2e92fedc38f482c81d782ee993354",
+                "code": "43bb29683680c5610a769c4a3b2308877e114e0d",
+                "maintenance": "1428c7172f576d9bdce0307825bd619d8cea7900321f7477ff3740de11e56d76"
+            }
+        }
+    }
+}

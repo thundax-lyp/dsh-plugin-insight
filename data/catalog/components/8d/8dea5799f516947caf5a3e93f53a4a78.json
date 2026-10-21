@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8dea5799f516947caf5a3e93f53a4a78",
+    "identity": "github:1371262850:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1371262850:root",
+            "repository": "tearslee/dsh-workbuddy2api",
+            "path": "",
+            "revision": "74fbb214e06ab3127931ec89fc24faf157706605",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ba94367fc4d11bc9144e1c56ad52500e0b3f59bba2610e0a5849d0712eeebde7",
+                "code": "74fbb214e06ab3127931ec89fc24faf157706605",
+                "maintenance": "e35720d7d394b0296e54b6526e116c5ac3b84fd3d82c7f5592a4558b6a580e5b"
+            }
+        }
+    }
+}

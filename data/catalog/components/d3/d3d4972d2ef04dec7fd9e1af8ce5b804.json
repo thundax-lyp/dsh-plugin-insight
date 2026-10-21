@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d3d4972d2ef04dec7fd9e1af8ce5b804",
+    "identity": "github:1363559244:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1363559244:root",
+            "repository": "bycall/dsh-consistency-guard",
+            "path": "",
+            "revision": "37546f2217cf2b9cbeed58128fa223e19ae82f23",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f79d0b24046d3b49b423bff48d19ff59644d7c5c62b8e5985ad87a07ea7af8f2",
+                "code": "37546f2217cf2b9cbeed58128fa223e19ae82f23",
+                "maintenance": "bc287d0f5f6278944a48c8bcfc5de2f700c5ef895d1fd007489593637e329ebb"
+            }
+        }
+    }
+}

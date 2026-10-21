@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f14771be2538411007d040d1a6302510",
+    "identity": "github:1333125576:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333125576:root",
+            "repository": "LaplaceYoung/dsh-qq2006",
+            "path": "",
+            "revision": "ddde58e2cb8d1ff62543cc195f58a507605b7845",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "6c403cc8f5862575c8d6eaee5007d891a25db0c1857527775ec593c008adc869",
+                "code": "ddde58e2cb8d1ff62543cc195f58a507605b7845",
+                "maintenance": "9409f8676ea9f71f3329cc084a974972b772174927ea78ba2fcb52e05068b17d"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "da49befe407c7eb5cde12bf77333b22c",
+    "identity": "github:1334768289:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334768289:root",
+            "repository": "nyantused-cpun/folio",
+            "path": "",
+            "revision": "a7bda5fcf9353d6f03934ba55cd846715e62b1b2",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "8f43868557cad7269f415af8b000ef119b63b8d4e78d51eb19ac0febe1e06229",
+                "code": "a7bda5fcf9353d6f03934ba55cd846715e62b1b2",
+                "maintenance": "bae48081531e28be2b3a55d8bb50efb4dcad5727b618ccfc0e63d4f6a5b7d449"
+            }
+        }
+    }
+}

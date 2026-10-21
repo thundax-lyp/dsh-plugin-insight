@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "af8e10117e299bacbd68d202d1e4eb44",
+    "identity": "github:1420425027:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1420425027:root",
+            "repository": "bbskye5008/dsh-task-runner",
+            "path": "",
+            "revision": "bf77bf38ca506b2e18e07519ca93769b273e4fbe",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "465bd1474d3557a4d586ef7a48efa5989fc2cf6059894156dc54ee4ef52c4ee9",
+                "code": "bf77bf38ca506b2e18e07519ca93769b273e4fbe",
+                "maintenance": "839280286c2948bca6c578a27da2c868096e025250b4410a6b9d913198da7b1b"
+            }
+        }
+    }
+}

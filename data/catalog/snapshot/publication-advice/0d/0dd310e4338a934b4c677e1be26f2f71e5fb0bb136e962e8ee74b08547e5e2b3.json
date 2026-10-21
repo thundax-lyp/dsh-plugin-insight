@@ -1,4 +1,0 @@
-{
-  "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
-  "text": "先在小Gradle项目试，分别核.kt和.kts，等待首次索引；不要只看包加载。"
-}

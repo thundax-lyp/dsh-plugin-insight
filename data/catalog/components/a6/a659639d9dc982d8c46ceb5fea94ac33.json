@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a659639d9dc982d8c46ceb5fea94ac33",
+    "identity": "github:1374394947:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1374394947:root",
+            "repository": "john-walks-slow/dsh-message-datetime",
+            "path": "",
+            "revision": "0963101f3ad1471c2ff90f6143a72f74b255c459",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "65e0e6b8fb79d8c9cb70b969f8c91d05bd6b5cfb28829b931d3f6205533ff1fa",
+                "code": "0963101f3ad1471c2ff90f6143a72f74b255c459",
+                "maintenance": "49e0e18c4f2a919d556c5cb462031278917c2856f9afe05ae717a068232930f9"
+            }
+        }
+    }
+}

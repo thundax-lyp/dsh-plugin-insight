@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a77acaddb05411bbbcabe5d9c35b74de",
+    "identity": "github:1414281260:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1414281260:root",
+            "repository": "xiaolu511/dsh-hot-restart",
+            "path": "",
+            "revision": "6ef17a04fa2f3b9c43f8c14cfcbf5bf248c14061",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3bd20677b84885c1104ceeb76d83c14483c6a19376ed8831ecd973ec77632d41",
+                "code": "6ef17a04fa2f3b9c43f8c14cfcbf5bf248c14061",
+                "maintenance": "d3555054a8d038f0e7b358b8589b9e27bd6172b56cee7b24d69c56ead9851c17"
+            }
+        }
+    }
+}

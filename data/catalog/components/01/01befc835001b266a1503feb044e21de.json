@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "01befc835001b266a1503feb044e21de",
+    "identity": "github:1411333270:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1411333270:root",
+            "repository": "LFY-bot/dsh-api-probe",
+            "path": "",
+            "revision": "d869fee582e4a71f046ba5fb16eee1f9e2a34251",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "abdbe011b8ac87115c5ff233ad84e550b79195deb0c3a8e3a97f3d4067aeaadc",
+                "code": "d869fee582e4a71f046ba5fb16eee1f9e2a34251",
+                "maintenance": "c88454e83ad5fc09463ef7d5f34c1565187b62f33a3222aa3edb6140c4a1aec5"
+            }
+        }
+    }
+}

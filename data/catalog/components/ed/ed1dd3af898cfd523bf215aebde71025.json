@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ed1dd3af898cfd523bf215aebde71025",
+    "identity": "github:1397142659:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1397142659:root",
+            "repository": "Tim5613/dsh-homepage-glass",
+            "path": "",
+            "revision": "a9bb39e7a9ceb1a83b1467312076f786d6e30fa0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "cc414cdaf54481c35efe5b9837368adcb444538fb8e3e8952ec279a97eaae778",
+                "code": "a9bb39e7a9ceb1a83b1467312076f786d6e30fa0",
+                "maintenance": "aa881219c319d3853d35da0fa291d5b70415d1869a2dffbe23d93b83cd3aa3c0"
+            }
+        }
+    }
+}

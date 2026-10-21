@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "1779ee57cd5923f060a0e3458fdb7325",
+    "identity": "github:1333785789:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333785789:root",
+            "repository": "zhuiyueya/dsh-im-gateway",
+            "path": "",
+            "revision": "8e8fbca125dda15b5cdd2ae79ac63a91e21f7c37",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "2a591fe53900eb76700126fd8d5d1443a77942750db4ae6f4db90bfa5afbd13a",
+                "code": "8e8fbca125dda15b5cdd2ae79ac63a91e21f7c37",
+                "maintenance": "89b1c445c15b1f4a6915f57f82181bd3be8aae4434a4c999e1c35c844ca55c84"
+            }
+        }
+    }
+}

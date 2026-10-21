@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ed6dfd28eac4cc0ff0d462e119cc6ac4",
+    "identity": "github:1342932407:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342932407:root",
+            "repository": "edge-sky/dsh-oauth-adapter",
+            "path": "",
+            "revision": "207a459a55157959f15b01adda418166aba7ede3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "79cad2ffb84420a211f488d500e44730916edd93fe0f025ae26ce107f4cf9487",
+                "code": "207a459a55157959f15b01adda418166aba7ede3",
+                "maintenance": "c0589865bd3770daa2e79d6f67c613f67d21f3cd76198701ee2206f58303dd84"
+            }
+        }
+    }
+}

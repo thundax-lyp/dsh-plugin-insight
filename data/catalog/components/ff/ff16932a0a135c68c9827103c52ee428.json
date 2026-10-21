@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ff16932a0a135c68c9827103c52ee428",
+    "identity": "github:1340583919:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340583919:root",
+            "repository": "chumingjun/dsh-harness-one",
+            "path": "",
+            "revision": "08aef04761e8c6586efaa4077b49d349d4f0f920",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "0f8847bb15029434c59050ecc1ce0f28fd2772e51f63b73730ab9273070d93df",
+                "code": "08aef04761e8c6586efaa4077b49d349d4f0f920",
+                "maintenance": "9ca727faff03401c076c443a48f9b4d1ebb34c676c8c62cc6e65563b16d7f417"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "718a04d927ab1b9d125ce9d38b7b7a1f",
+    "identity": "github:1332322835:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1332322835:root",
+            "repository": "renat3u/tonghuashun-webui",
+            "path": "",
+            "revision": "c3817d6ab35da06e1cca40af5d8e377031a6e0dd",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "1bb59ae185cfcd8b5f3a37b3b687463e34d2456554fc32dbf8853345ac7b0b6e",
+                "code": "c3817d6ab35da06e1cca40af5d8e377031a6e0dd",
+                "maintenance": "571cb6b869bea1dfe9fa26f5eac3970e3977e976a35ef92b86efc860124878f7"
+            }
+        }
+    }
+}

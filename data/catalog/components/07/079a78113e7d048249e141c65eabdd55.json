@@ -1,0 +1,403 @@
+{
+    "schema_version": 3,
+    "id": "079a78113e7d048249e141c65eabdd55",
+    "identity": "github:1346023186:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1346023186:root",
+            "repository_id": 1346023186,
+            "component_id": "root",
+            "repository": "452926826/dsh-at-skill",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-at-skill",
+            "entry_type": "plugin",
+            "technical_category": "interface-input",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "674c71f790a2ad95e72a951fcaa5899ec410e4dd546db1aa6895beed3769a909",
+                "code": "7502c9bce1a65597188c12d4ab1e33e9365e3a22",
+                "maintenance": "12c727f5aebdc7b0b60a9701a6c798195e2b96b75ec854362f8eba9479df1c4f"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-01-github-1346023186-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T02:06:41.930Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-01-github-1346023186-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/452926826/dsh-at-skill/blob/7502c9bce1a65597188c12d4ab1e33e9365e3a22/README.md",
+                    "revision": "7502c9bce1a65597188c12d4ab1e33e9365e3a22",
+                    "captured_at": "2026-10-21T02:06:41.930Z",
+                    "summary": "为 DSH 增加 @name 技能候选和发送前确定性技能加载。",
+                    "artifact": "data/runs/2026-10-21-01/snapshots/452926826--dsh-at-skill/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-01-github-1346023186-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/452926826/dsh-at-skill/blob/7502c9bce1a65597188c12d4ab1e33e9365e3a22/src/index.ts",
+                    "revision": "7502c9bce1a65597188c12d4ab1e33e9365e3a22",
+                    "captured_at": "2026-10-21T02:06:41.930Z",
+                    "summary": "核查 src/index.ts、src/client/index.ts；客户端向inputTriggers注册@候选，按会话缓存skills列表；宿主agent/pre-step扫描用户文本中空白边界的@名称，查可调用Skill并注入带skill-invocation来源的用户消息。",
+                    "artifact": "data/runs/2026-10-21-01/snapshots/452926826--dsh-at-skill/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定提交源码抽读与作者材料核查；没有执行目标代码、测试、安装或真实宿主验收，没有确认独立用户效果。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "用户在输入框选择可调用Skill并确保模型开始前加载其指令，减少记忆斜杠命令或依赖模型自行判断。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1346023186-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1346023186:root",
+                            "area": "code",
+                            "fingerprint": "7502c9bce1a65597188c12d4ab1e33e9365e3a22"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:06:41.930Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "客户端向inputTriggers注册@候选，按会话缓存skills列表；宿主agent/pre-step扫描用户文本中空白边界的@名称，查可调用Skill并注入带skill-invocation来源的用户消息。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1346023186-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1346023186:root",
+                            "area": "code",
+                            "fingerprint": "7502c9bce1a65597188c12d4ab1e33e9365e3a22"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:06:41.930Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定提交源码抽读与作者材料核查；没有执行目标代码、测试、安装或真实宿主验收，没有确认独立用户效果。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1346023186-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1346023186:root",
+                            "area": "code",
+                            "fingerprint": "7502c9bce1a65597188c12d4ab1e33e9365e3a22"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:06:41.930Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "检查固定提交包清单与入口；安装说明属于作者主张，本次未验证分发产物与宿主兼容。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1346023186-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1346023186:root",
+                            "area": "code",
+                            "fingerprint": "7502c9bce1a65597188c12d4ab1e33e9365e3a22"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:06:41.930Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "本地候选缓存和消息注入开销；人工为命名冲突、候选陈旧和重复指令核对，构建配置还引用本地Harness路径，升级维护需处理。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1346023186-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1346023186:root",
+                            "area": "code",
+                            "fingerprint": "7502c9bce1a65597188c12d4ab1e33e9365e3a22"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:06:41.930Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "Skill命名清晰的用户可评估；与插件或子代理重名时谨慎使用，发送前确认文本，加载不代表任务执行验收。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1346023186-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1346023186:root",
+                            "area": "code",
+                            "fingerprint": "7502c9bce1a65597188c12d4ab1e33e9365e3a22"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:06:41.930Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "让显式Skill选择更可预测；同名歧义是文本协议边界，不能靠菜单分组消除。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1346023186-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1346023186:root",
+                            "area": "code",
+                            "fingerprint": "7502c9bce1a65597188c12d4ab1e33e9365e3a22"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:06:41.930Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "客户端注册源生命周期与连接重置缓存清理明确；宿主先尊重拒绝再追加Skill消息，查找带signal/cwd/scope。复用需保留原始用户消息与类型身份，不能将正则匹配当授权。 源码依据：[src/index.ts](https://github.com/452926826/dsh-at-skill/blob/7502c9bce1a65597188c12d4ab1e33e9365e3a22/src/index.ts#L28)、[src/client/index.ts](https://github.com/452926826/dsh-at-skill/blob/7502c9bce1a65597188c12d4ab1e33e9365e3a22/src/client/index.ts#L8)。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1346023186-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1346023186:root",
+                            "area": "code",
+                            "fingerprint": "7502c9bce1a65597188c12d4ab1e33e9365e3a22"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:06:41.930Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T02:06:41.930Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "7502c9bce1a65597188c12d4ab1e33e9365e3a22",
+                "reviewed_at": "2026-10-21T02:06:41.930Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1346023186:root",
+                        "area": "code",
+                        "fingerprint": "7502c9bce1a65597188c12d4ab1e33e9365e3a22"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty：已有@补全与Skill加载的组合适配；mechanism：pre-step确定加载为局部机制改动；transferability：类型化引用模式可推广但当前实现依赖宿主；simplification：统一入口减少记命令。",
+                    "basis": "interpretation",
+                    "score": 30,
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1346023186-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 0
+                    },
+                    "rationale": "workflow：简化Skill选择步骤；delivery：指令加载可确认，不等于任务完成；reach：降低命令记忆门槛；economics：未发现成本结构改变。",
+                    "basis": "interpretation",
+                    "score": 22,
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1346023186-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "Skill命名清楚者可试用@候选；先检查同名和缓存陈旧，并核对发出文本，加载指令不代表执行合格。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "显式选Skill且模型前加载指令需求具体。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "输入菜单省记斜杠和自行猜测，同名文本协议仍有歧义。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "pre-step边界扫描与来源消息注入源码可查，重名流程未验。"
+                    },
+                    "cost": {
+                        "score": 15,
+                        "rationale": "无专用服务但需处理构建本地路径、命名及宿主升级。"
+                    }
+                },
+                "score": 64,
+                "revision": "7502c9bce1a65597188c12d4ab1e33e9365e3a22",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-01-github-1346023186-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1346023186:root",
+                        "area": "code",
+                        "fingerprint": "7502c9bce1a65597188c12d4ab1e33e9365e3a22"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1346023186:root",
+            "repository": "452926826/dsh-at-skill",
+            "path": "",
+            "revision": "7502c9bce1a65597188c12d4ab1e33e9365e3a22",
+            "fingerprints": {
+                "directory": "674c71f790a2ad95e72a951fcaa5899ec410e4dd546db1aa6895beed3769a909",
+                "code": "7502c9bce1a65597188c12d4ab1e33e9365e3a22",
+                "maintenance": "12c727f5aebdc7b0b60a9701a6c798195e2b96b75ec854362f8eba9479df1c4f"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T01:54:44Z",
+            "analysis_sha256": "cd8bd0db85e4e4b51f690f3bfe8046f325b5e178ec1813f59fe3c7e6cf2c27aa"
+        },
+        "publication.metadata": "data/plugins/452926826--dsh-at-skill/META.json",
+        "publication.summaries": {
+            "text": "为 DSH 增加 @name 技能候选和发送前确定性技能加载。",
+            "revision": "7502c9bce1a65597188c12d4ab1e33e9365e3a22",
+            "source_url": "https://github.com/452926826/dsh-at-skill/blob/7502c9bce1a65597188c12d4ab1e33e9365e3a22/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "7502c9bce1a65597188c12d4ab1e33e9365e3a22",
+            "items": {
+                "界面": "@Skill候选补全",
+                "事件监听": "agent/pre-step确定性Skill加载"
+            }
+        },
+        "publication.advice": {
+            "revision": "7502c9bce1a65597188c12d4ab1e33e9365e3a22",
+            "text": "Skill命名清晰的用户可评估；与插件或子代理重名时谨慎使用，发送前确认文本，加载不代表任务执行验收。"
+        },
+        "registry": "data/plugins/452926826--dsh-at-skill",
+        "reports": "# dsh-at-skill\n\n> 为 DSH 增加 @name 技能候选和发送前确定性技能加载。\n\n## 使用建议\n\nSkill命名清晰的用户可评估；与插件或子代理重名时谨慎使用，发送前确认文本，加载不代表任务执行验收。\n\n**核查状态**：已实现机制有源码支持；贡献价值为条件性解释，未来设计假设未验证。本轮仅作固定版本源码核查，未安装、运行目标代码或验收宿主。\n\n- **用途**：用户在输入框选择可调用Skill并确保模型开始前加载其指令，减少记忆斜杠命令或依赖模型自行判断。\n- **亮点**：相对只给输入补全，将匹配token的Skill在模型步骤前确定性加载；同时遵循next拒绝决定、用户可调用过滤与会话cwd/scope查找，保持宿主作用域。\n- **思考**：文本token不携带来源身份。与subagent/plugin同名或用户仅讨论@名称时，宿主仍可加载匹配Skill。客户端会话缓存只在connection/reset清理，Skill变更后候选与宿主即时查找可能不同；“确定性”不等于用户意图准确。\n- **建议**：Skill命名清晰的用户可评估；与插件或子代理重名时谨慎使用，发送前确认文本，加载不代表任务执行验收。\n\n## 能力与限制\n\n参照现有斜杠Skill入口和@subagent/@plugin；本次不主张底层Skill能力由该插件创造。\n\n客户端向inputTriggers注册@候选，按会话缓存skills列表；宿主agent/pre-step扫描用户文本中空白边界的@名称，查可调用Skill并注入带skill-invocation来源的用户消息。\n\n\nDSH agents/skills和inputTriggers/connection服务；预建lib可安装，开发构建引用本地Harness路径需配置。\n\n输入@列会话Skill候选，选择插入token；发送后pre-step查可调用Skill，将renderSkillContent注入后进入模型步骤；连接重置清候选缓存。\n\n本地候选缓存和消息注入开销；人工为命名冲突、候选陈旧和重复指令核对，构建配置还引用本地Harness路径，升级维护需处理。\n\n让显式Skill选择更可预测；同名歧义是文本协议边界，不能靠菜单分组消除。\n\n## 能力清单\n\n- **界面**：@Skill候选补全\n- **事件监听**：agent/pre-step确定性Skill加载\n\n## 工程分析\n\n客户端注册源生命周期与连接重置缓存清理明确；宿主先尊重拒绝再追加Skill消息，查找带signal/cwd/scope。复用需保留原始用户消息与类型身份，不能将正则匹配当授权。 源码依据：[src/index.ts](https://github.com/452926826/dsh-at-skill/blob/7502c9bce1a65597188c12d4ab1e33e9365e3a22/src/index.ts#L28)、[src/client/index.ts](https://github.com/452926826/dsh-at-skill/blob/7502c9bce1a65597188c12d4ab1e33e9365e3a22/src/client/index.ts#L8)。\n\n## 未来设计假设（未验证）\n\n待验证假设：让输入选择携带类型化skill引用并由宿主核对，可在保持补全体验时减少名称碰撞；由当前文字注入和README承认的冲突推导，需要宿主消息格式支持而非只改正则。\n\n最小验证：建立同名Skill/子代理/插件和仅讨论@名称的消息，比较文字token与类型引用的误加载；热更新Skill后比较菜单与宿主解析一致性，若仍有误加载则假设失败。\n\n## 核查说明\n\n- **仓库**：[452926826/dsh-at-skill](https://github.com/452926826/dsh-at-skill)\n- **版本号**：0.1.0（[固定提交 7502c9b](https://github.com/452926826/dsh-at-skill/tree/7502c9bce1a65597188c12d4ab1e33e9365e3a22)）\n- **版本日期**：2026-08-26（固定提交日期，北京时间；不是包发布日期）\n- **实际范围**：固定提交源码抽读与作者材料核查；没有执行目标代码、测试、安装或真实宿主验收，没有确认独立用户效果。\n- **来源**：作者README与上述固定版本源码；未确认独立采用效果，目录收录与下载统计不作效果证据。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：4b2434a6c3878682b7d36bb7e995a79eb800b7f6726ce60bffd5c9ff83b77d37。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 4 | 103 | — | — | 722 |\n| .js | source | 2 | 114 | 106 | 9 | — |\n| .ts | source | 3 | 111 | 96 | 2 | — |\n| .js | test | 1 | 16 | 14 | 1 | — |\n\n排除 2 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n",
+        "metadata": {
+            "repository": "452926826/dsh-at-skill",
+            "repository_id": 1346023186,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 2,
+            "pushed_at": "2026-08-26T09:57:05Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A452926826%2Fdsh-at-skill%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640F:1EF33:13E507:21806D:6AD84A0B and timestamp 2026-10-21 05:13:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A452926826%2Fdsh-at-skill%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6412:15F2FE:1491F5:22205C:6AD84A0B and timestamp 2026-10-21 05:13:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A452926826%2Fdsh-at-skill%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641A:AF775:1442BF:21D088:6AD84A0B and timestamp 2026-10-21 05:13:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A452926826%2Fdsh-at-skill%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641B:250B02:14CAC1:22655E:6AD84A0C and timestamp 2026-10-21 05:13:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A452926826%2Fdsh-at-skill%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6403:B3C47:146F30:221F86:6AD84A0C and timestamp 2026-10-21 05:13:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-at-skill",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-at-skill",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-at-skill",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "7502c9bce1a65597188c12d4ab1e33e9365e3a22",
+                "current_revision": "7502c9bce1a65597188c12d4ab1e33e9365e3a22",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1346023186:root",
+            "repository": "452926826/dsh-at-skill",
+            "path": "",
+            "revision": "7502c9bce1a65597188c12d4ab1e33e9365e3a22",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "674c71f790a2ad95e72a951fcaa5899ec410e4dd546db1aa6895beed3769a909",
+                "code": "7502c9bce1a65597188c12d4ab1e33e9365e3a22",
+                "maintenance": "12c727f5aebdc7b0b60a9701a6c798195e2b96b75ec854362f8eba9479df1c4f"
+            }
+        }
+    }
+}

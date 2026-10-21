@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "cf07a67480689563a7cb101af6c40334",
+    "identity": "github:1347059600:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347059600:root",
+            "repository": "JiayiXie-jpg/dsh-desktop-pet",
+            "path": "",
+            "revision": "2676eb58a20641dc29d2899d15044bb180db7d53",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "d8e7682ee33cdb2be44558a76de4a6ba7ea4990d857a94b30c746377cb7309f8",
+                "code": "2676eb58a20641dc29d2899d15044bb180db7d53",
+                "maintenance": "f8b452ff89411d71c918b0255c76d02e4f27b3c9cfff543259bff8e291308fd3"
+            }
+        }
+    }
+}

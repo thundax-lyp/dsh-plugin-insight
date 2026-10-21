@@ -1,0 +1,456 @@
+{
+    "schema_version": 3,
+    "id": "a264f0014e9ee6c449449810c77f9fb5",
+    "identity": "github:1336583700:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1336583700:root",
+            "repository_id": 1336583700,
+            "component_id": "root",
+            "repository": "863683348/dsh-recipe",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-recipe",
+            "entry_type": "plugin",
+            "technical_category": "runtime-deployment",
+            "business_category": "infrastructure",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "d6b826d0742598b0115909e5faba5ed8a21d392df4b45b8ae7136cbf4399b6f5",
+                "code": "67f2d4c662954ccd25c771fa0e0a99433cf3b530",
+                "maintenance": "e178587839b9b2faaef3323cf056475a9c78d77546abda3f2d68389108890d23"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-03-github-1336583700-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T03:44:23.329Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-03-github-1336583700-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/863683348/dsh-recipe/blob/67f2d4c662954ccd25c771fa0e0a99433cf3b530/README.md",
+                    "revision": "67f2d4c662954ccd25c771fa0e0a99433cf3b530",
+                    "captured_at": "2026-10-21T03:44:23.329Z",
+                    "summary": "按场景检索插件配方，展开有序插件列表与安装命令，并合并去重多套配方。",
+                    "artifact": "data/runs/2026-10-21-03/snapshots/863683348--dsh-recipe/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-03-github-1336583700-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/863683348/dsh-recipe/blob/67f2d4c662954ccd25c771fa0e0a99433cf3b530/lib/recipe.js",
+                    "revision": "67f2d4c662954ccd25c771fa0e0a99433cf3b530",
+                    "captured_at": "2026-10-21T03:44:23.329Z",
+                    "summary": "核查 lib/recipe.js、lib/recipe-data.json、lib/index.js；recipe.js从本地JSON载入目录与配方，按名称/描述词面打分检索；expandRecipe保留顺序并标记未知项，composeRecipes按首次出现去重，installSequence拼接安装命令。",
+                    "artifact": "data/runs/2026-10-21-03/snapshots/863683348--dsh-recipe/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "新用户想配置一套特定用途的DSH环境，需要先拿到可审阅的插件清单；合格交付是依赖兼容且可恢复的环境，本插件实际终点仅为安装计划。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336583700-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336583700:root",
+                            "area": "code",
+                            "fingerprint": "67f2d4c662954ccd25c771fa0e0a99433cf3b530"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:44:23.329Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "recipe.js从本地JSON载入目录与配方，按名称/描述词面打分检索；expandRecipe保留顺序并标记未知项，composeRecipes按首次出现去重，installSequence拼接安装命令。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336583700-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336583700:root",
+                            "area": "code",
+                            "fingerprint": "67f2d4c662954ccd25c771fa0e0a99433cf3b530"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:44:23.329Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336583700-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336583700:root",
+                            "area": "code",
+                            "fingerprint": "67f2d4c662954ccd25c771fa0e0a99433cf3b530"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:44:23.329Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "本地recipe-data.json与plugins.json为固定包快照，默认无联网、无写入，目录有效性不会自动刷新。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336583700-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336583700:root",
+                            "area": "code",
+                            "fingerprint": "67f2d4c662954ccd25c771fa0e0a99433cf3b530"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:44:23.329Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "首次由维护者整理配方；用户仍需核实来源、版本与配置并承担每项安装成本。未量化节省搜索时间，失败安装和迁移不由清单工具消除。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336583700-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336583700:root",
+                            "area": "code",
+                            "fingerprint": "67f2d4c662954ccd25c771fa0e0a99433cf3b530"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:44:23.329Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "适合先找候选组合的用户。执行前逐项核对当前版本、依赖与可选配置，合并配方时检查同名项冲突；不要直接把生成命令当已验收部署。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336583700-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336583700:root",
+                            "area": "code",
+                            "fingerprint": "67f2d4c662954ccd25c771fa0e0a99433cf3b530"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:44:23.329Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "把“按任务选环境”从口头经验转为可重复清单；实际业务交付和安装成功率未验证。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336583700-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336583700:root",
+                            "area": "code",
+                            "fingerprint": "67f2d4c662954ccd25c771fa0e0a99433cf3b530"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:44:23.329Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "数据/纯逻辑/宿主入口分离，未知插件不静默丢失可借鉴；first-seen去重简洁但会隐藏配置选择，复用时要显式冲突策略。 源码依据：[lib/recipe.js](https://github.com/863683348/dsh-recipe/blob/67f2d4c662954ccd25c771fa0e0a99433cf3b530/lib/recipe.js)、[lib/recipe-data.json](https://github.com/863683348/dsh-recipe/blob/67f2d4c662954ccd25c771fa0e0a99433cf3b530/lib/recipe-data.json)、[lib/index.js](https://github.com/863683348/dsh-recipe/blob/67f2d4c662954ccd25c771fa0e0a99433cf3b530/lib/index.js)。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336583700-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336583700:root",
+                            "area": "code",
+                            "fingerprint": "67f2d4c662954ccd25c771fa0e0a99433cf3b530"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:44:23.329Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "相对逐个搜索插件，增量是将场景知识保存为可合并配方并给有序计划；本地、只读的设计使用户可先审阅。数组顺序与名称去重是常规清单处理，不构成依赖求解或安装事务。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336583700-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336583700:root",
+                            "area": "code",
+                            "fingerprint": "67f2d4c662954ccd25c771fa0e0a99433cf3b530"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:44:23.329Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "“一套环境”是否因清单有序而可用？compose仅first-seen去重，重复插件的不同config没有冲突合并，installSequence只生成plugin add而不应用config、锁版本或校验依赖。故输出可降低选择负担，但不能证明整套兼容或“一键安装成功”。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336583700-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336583700:root",
+                            "area": "code",
+                            "fingerprint": "67f2d4c662954ccd25c771fa0e0a99433cf3b530"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:44:23.329Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "由配方已有config但安装命令未携带推导，可增加固定版本/配置冲突的只读计划器，先显示冲突与回滚清单再执行。未验证假设是减少配方组合后返工；用两个共享插件但配置相反的配方测试，若不能确定提示冲突则不成立。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336583700-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336583700:root",
+                            "area": "code",
+                            "fingerprint": "67f2d4c662954ccd25c771fa0e0a99433cf3b530"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:44:23.329Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T03:44:23.329Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "67f2d4c662954ccd25c771fa0e0a99433cf3b530",
+                "reviewed_at": "2026-10-21T03:44:23.329Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1336583700:root",
+                        "area": "code",
+                        "fingerprint": "67f2d4c662954ccd25c771fa0e0a99433cf3b530"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty清单配方封装小档；mechanism词面检索与去重小档；transferability场景数据可移植小档；simplification计划组织半档，依赖求解未实现。",
+                    "basis": "interpretation",
+                    "score": 30,
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336583700-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 8,
+                        "reach": 10,
+                        "economics": 4
+                    },
+                    "rationale": "workflow按场景选组合半档；delivery计划而非环境小档；reach新手半档；economics搜索维护分摊尚未测小档。",
+                    "basis": "interpretation",
+                    "score": 40,
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336583700-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "新用户可试场景配方清单；执行前核版本依赖和同名config冲突，命令不应用配置也不证明整套部署可用。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "按用途配置环境前拿可审插件组合任务清楚。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "本地可合并配方省逐个搜索，未做依赖求解。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "first-seen去重和plugin add拼接源码可查，不锁版本或合并config。"
+                    },
+                    "cost": {
+                        "score": 15,
+                        "rationale": "生成只读计划负担低，实际逐项安装验收成本仍由用户承担。"
+                    }
+                },
+                "score": 64,
+                "revision": "67f2d4c662954ccd25c771fa0e0a99433cf3b530",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-03-github-1336583700-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1336583700:root",
+                        "area": "code",
+                        "fingerprint": "67f2d4c662954ccd25c771fa0e0a99433cf3b530"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1336583700:root",
+            "repository": "863683348/dsh-recipe",
+            "path": "",
+            "revision": "67f2d4c662954ccd25c771fa0e0a99433cf3b530",
+            "fingerprints": {
+                "directory": "d6b826d0742598b0115909e5faba5ed8a21d392df4b45b8ae7136cbf4399b6f5",
+                "code": "67f2d4c662954ccd25c771fa0e0a99433cf3b530",
+                "maintenance": "e178587839b9b2faaef3323cf056475a9c78d77546abda3f2d68389108890d23"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T03:36:14Z",
+            "analysis_sha256": "961c92a401e6ba8ba4e04f9ca208e0f7e79e62cf5307e65eb9bfe67ebadd4423"
+        },
+        "publication.metadata": "data/plugins/863683348--dsh-recipe/META.json",
+        "publication.summaries": {
+            "text": "按场景检索插件配方，展开有序插件列表与安装命令，并合并去重多套配方。",
+            "revision": "67f2d4c662954ccd25c771fa0e0a99433cf3b530",
+            "source_url": "https://github.com/863683348/dsh-recipe/blob/67f2d4c662954ccd25c771fa0e0a99433cf3b530/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "67f2d4c662954ccd25c771fa0e0a99433cf3b530",
+            "items": {
+                "模型工具": "recipe提供list/search/apply/compose计划输出。"
+            }
+        },
+        "publication.advice": {
+            "revision": "67f2d4c662954ccd25c771fa0e0a99433cf3b530",
+            "text": "适合先找候选组合的用户。执行前逐项核对当前版本、依赖与可选配置，合并配方时检查同名项冲突；不要直接把生成命令当已验收部署。"
+        },
+        "registry": "data/plugins/863683348--dsh-recipe",
+        "reports": "# dsh-recipe\n\n> 按场景检索插件配方，展开有序插件列表与安装命令，并合并去重多套配方。\n\n## 使用建议\n\n适合先找候选组合的用户。执行前逐项核对当前版本、依赖与可选配置，合并配方时检查同名项冲突；不要直接把生成命令当已验收部署。\n\n核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。\n\n源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。\n\n## 洞察短评\n\n- **用途**：新用户想配置一套特定用途的DSH环境，需要先拿到可审阅的插件清单；合格交付是依赖兼容且可恢复的环境，本插件实际终点仅为安装计划。\n- **亮点**：相对逐个搜索插件，增量是将场景知识保存为可合并配方并给有序计划；本地、只读的设计使用户可先审阅。数组顺序与名称去重是常规清单处理，不构成依赖求解或安装事务。\n- **思考**：“一套环境”是否因清单有序而可用？compose仅first-seen去重，重复插件的不同config没有冲突合并，installSequence只生成plugin add而不应用config、锁版本或校验依赖。故输出可降低选择负担，但不能证明整套兼容或“一键安装成功”。\n- **建议**：由配方已有config但安装命令未携带推导，可增加固定版本/配置冲突的只读计划器，先显示冲突与回滚清单再执行。未验证假设是减少配方组合后返工；用两个共享插件但配置相反的配方测试，若不能确定提示冲突则不成立。\n\n## 场景与替代办法\n\n新用户想配置一套特定用途的DSH环境，需要先拿到可审阅的插件清单；合格交付是依赖兼容且可恢复的环境，本插件实际终点仅为安装计划。\n\n手工维护dotfiles/插件清单同样可用；插件增加自然语言检索与组合入口，但不替代包管理器。\n\n## 能力清单\n\n- **模型工具**：recipe提供list/search/apply/compose计划输出。\n\n## 依赖与流程\n\n只需宿主tools与包内JSON即可生成计划；实际安装另需网络、包来源、宿主兼容与权限，均不由recipe验证。\n\n用户描述场景，搜索并审阅配方，展开或组合，检查未知项与顺序，再由人或独立流程执行命令和验收。\n\n## 成本与效果\n\n首次由维护者整理配方；用户仍需核实来源、版本与配置并承担每项安装成本。未量化节省搜索时间，失败安装和迁移不由清单工具消除。\n\n把“按任务选环境”从口头经验转为可重复清单；实际业务交付和安装成功率未验证。\n\n## 核心贡献\n\n相对逐个搜索插件，增量是将场景知识保存为可合并配方并给有序计划；本地、只读的设计使用户可先审阅。数组顺序与名称去重是常规清单处理，不构成依赖求解或安装事务。\n\n## 关键质疑\n\n“一套环境”是否因清单有序而可用？compose仅first-seen去重，重复插件的不同config没有冲突合并，installSequence只生成plugin add而不应用config、锁版本或校验依赖。故输出可降低选择负担，但不能证明整套兼容或“一键安装成功”。\n\n\n## 工程亮点\n\n数据/纯逻辑/宿主入口分离，未知插件不静默丢失可借鉴；first-seen去重简洁但会隐藏配置选择，复用时要显式冲突策略。 源码依据：[lib/recipe.js](https://github.com/863683348/dsh-recipe/blob/67f2d4c662954ccd25c771fa0e0a99433cf3b530/lib/recipe.js)、[lib/recipe-data.json](https://github.com/863683348/dsh-recipe/blob/67f2d4c662954ccd25c771fa0e0a99433cf3b530/lib/recipe-data.json)、[lib/index.js](https://github.com/863683348/dsh-recipe/blob/67f2d4c662954ccd25c771fa0e0a99433cf3b530/lib/index.js)。\n\n## 未来设计假设（未验证）\n\n由配方已有config但安装命令未携带推导，可增加固定版本/配置冲突的只读计划器，先显示冲突与回滚清单再执行。未验证假设是减少配方组合后返工；用两个共享插件但配置相反的配方测试，若不能确定提示冲突则不成立。\n\n用缺失目录项、重复插件不同config、版本冲突和错误顺序配方检查输出是否充分暴露问题，再在隔离profile衡量安装返工。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：63d8bea5784a29917e0ad729442c5f1b7f5d1ab9f1890a25e983572bf47c2509。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 6 | 124 | — | — | 890 |\n| .js | source | 2 | 324 | 266 | 39 | — |\n| .mjs | test | 1 | 77 | 66 | 1 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[863683348/dsh-recipe](https://github.com/863683348/dsh-recipe)\n- **版本号**：0.1.0（[固定提交 67f2d4c6](https://github.com/863683348/dsh-recipe/tree/67f2d4c662954ccd25c771fa0e0a99433cf3b530)）\n- **版本日期**：2026-09-11（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：作者 README、包清单、源码路径 lib/recipe.js、lib/recipe-data.json、lib/index.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。\n- 下一步：用缺失目录项、重复插件不同config、版本冲突和错误顺序配方检查输出是否充分暴露问题，再在隔离profile衡量安装返工。\n",
+        "metadata": {
+            "repository": "863683348/dsh-recipe",
+            "repository_id": 1336583700,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 0,
+            "pushed_at": "2026-09-11T03:26:44Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-recipe%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640F:3FE178:A96F2C:F2E3AC:6AD84A8F and timestamp 2026-10-21 05:15:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-recipe%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6403:24642:A9D1C1:F364AC:6AD84A8F and timestamp 2026-10-21 05:15:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-recipe%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6412:F5216:A6BD4D:EFA77C:6AD84A8F and timestamp 2026-10-21 05:15:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-recipe%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6413:38A53A:A888CC:F2078D:6AD84A90 and timestamp 2026-10-21 05:16:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-recipe%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641A:360622:A3BADE:EBBDED:6AD84A90 and timestamp 2026-10-21 05:16:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-recipe",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 128,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-recipe",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-17T02:43:26.794Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-recipe",
+                    "error": null,
+                    "latest_version": "0.1.0",
+                    "latest_published_at": "2026-08-17T02:43:27.100Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "67f2d4c662954ccd25c771fa0e0a99433cf3b530",
+                "current_revision": "67f2d4c662954ccd25c771fa0e0a99433cf3b530",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1336583700:root",
+            "repository": "863683348/dsh-recipe",
+            "path": "",
+            "revision": "67f2d4c662954ccd25c771fa0e0a99433cf3b530",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d6b826d0742598b0115909e5faba5ed8a21d392df4b45b8ae7136cbf4399b6f5",
+                "code": "67f2d4c662954ccd25c771fa0e0a99433cf3b530",
+                "maintenance": "e178587839b9b2faaef3323cf056475a9c78d77546abda3f2d68389108890d23"
+            }
+        }
+    }
+}

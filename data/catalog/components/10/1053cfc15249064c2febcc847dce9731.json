@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1053cfc15249064c2febcc847dce9731",
+    "identity": "github:1402810313:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1402810313:root",
+            "repository": "wbb316/dsh-comfyui-image",
+            "path": "",
+            "revision": "eddc3f6ccad005dff7e9a11746948f42c0998583",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e4d9425212c297a1ec1fca38b6e0e29d2456934771577741efdb222cd360e78b",
+                "code": "eddc3f6ccad005dff7e9a11746948f42c0998583",
+                "maintenance": "0e493a28fb09e6f825b523ff76898d59d3aea0fed2144fe1ec88ed1a04e88a21"
+            }
+        }
+    }
+}

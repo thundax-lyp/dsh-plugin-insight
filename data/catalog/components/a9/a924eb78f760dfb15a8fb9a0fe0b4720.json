@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a924eb78f760dfb15a8fb9a0fe0b4720",
+    "identity": "github:1394458159:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1394458159:root",
+            "repository": "better-er/dsh-mobile-drawer",
+            "path": "",
+            "revision": "53207c6757119e4a18aaa706f5a2c6b746d31194",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f6b43293e4d18a50309a81e2fd7ae974a15823077189b6e58b4a79fd768d6339",
+                "code": "53207c6757119e4a18aaa706f5a2c6b746d31194",
+                "maintenance": "fbfb2c5d27b043156c287780ec5dc6d59beea58d0f07cdd4d70921c068512b38"
+            }
+        }
+    }
+}

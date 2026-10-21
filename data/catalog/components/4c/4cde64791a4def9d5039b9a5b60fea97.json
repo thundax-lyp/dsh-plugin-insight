@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4cde64791a4def9d5039b9a5b60fea97",
+    "identity": "github:1342875361:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342875361:root",
+            "repository": "uckkk/dsh-valley-meter",
+            "path": "",
+            "revision": "a7487f4abc92d943b029ade5f28c17c81c5a4afd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "468472f757fe8e425c5123a03a52365a8674f1670adf05742fe7e2e007f9eac1",
+                "code": "a7487f4abc92d943b029ade5f28c17c81c5a4afd",
+                "maintenance": "5dd243fb1ca67cca1e6f8ebb69a4d724278d9bc7868c2ea7687948ba763b9ace"
+            }
+        }
+    }
+}

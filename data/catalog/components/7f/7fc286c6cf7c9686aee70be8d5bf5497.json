@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7fc286c6cf7c9686aee70be8d5bf5497",
+    "identity": "github:1338042088:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338042088:root",
+            "repository": "TencentCloud/tencentcloud-agentobs-sdk-dsh",
+            "path": "",
+            "revision": "e46575d2432367990de8fd3937758eaa78b0731e",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "3f28ade62b8bad7289a227935b3d21667c95841536f7cb5685b352eb1075ce33",
+                "code": "e46575d2432367990de8fd3937758eaa78b0731e",
+                "maintenance": "f26f0503014236f30022d42a2fbd77bff7c6c728df2e6bbc8892f065e91b145b"
+            }
+        }
+    }
+}

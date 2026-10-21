@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "81bbd61f0a205015caff2ad04a3c9768",
+    "identity": "github:1338344522:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338344522:root",
+            "repository": "TFboy1/dsh-minecraft-ui",
+            "path": "",
+            "revision": "ec5313b87f8688b82421f124cc2f3887c84b3a8c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f8cee3dbae9500719f2f58ff033075275be425de1e174e33c3cfb808cc4e44bf",
+                "code": "ec5313b87f8688b82421f124cc2f3887c84b3a8c",
+                "maintenance": "3d984f259864614f87b7630bdeebc0eb24925eeadbda119765413234f4d86777"
+            }
+        }
+    }
+}

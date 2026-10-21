@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "85e3628d10a91226db7c6d07d10fd57e",
+    "identity": "github:1347273095:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347273095:root",
+            "repository": "niushuanan/dsh-image-vision",
+            "path": "",
+            "revision": "2b0203e3d412bffede9c141a06d0294a5425eccb",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "941a3a8f91afcaa964654f4fa96f6d7fea9ed17486e32e4e7bb6fde308de5cfe",
+                "code": "2b0203e3d412bffede9c141a06d0294a5425eccb",
+                "maintenance": "3f8da585ab774fd1ef782826b1cb2ef4991fb8006ef39f6b45ef3bfae9381b43"
+            }
+        }
+    }
+}

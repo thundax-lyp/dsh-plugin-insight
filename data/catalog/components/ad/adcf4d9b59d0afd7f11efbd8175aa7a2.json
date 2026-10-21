@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "adcf4d9b59d0afd7f11efbd8175aa7a2",
+    "identity": "github:1312924592:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1312924592:root",
+            "repository": "JingxuanC/causal-memory",
+            "path": "",
+            "revision": "39053ff6fd7a18771d59f0c10240b19c37f412b6",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "49aec06ef97eaf8dfb7a5e80e7293ea23ea4ad1927610d468e125527a7a06c0f",
+                "code": "39053ff6fd7a18771d59f0c10240b19c37f412b6",
+                "maintenance": "339b646195fe29c8db380e87a4adf3aed4a89bb4b55758d0397c758054638bdc"
+            }
+        }
+    }
+}

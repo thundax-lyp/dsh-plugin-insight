@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "b9c951e2166a4d9f55caa2536b7d05b8",
+    "identity": "github:1334352273:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334352273:root",
+            "repository": "BeiZi6/dsh-opencodego-usage",
+            "path": "",
+            "revision": "0990d71ccb0965c758b86a048a8a2614d082a14f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "7622d5912e6c1a7ababc7c3566eff49a0a2e80c83bf130c461117af5cbc4c95c",
+                "code": "0990d71ccb0965c758b86a048a8a2614d082a14f",
+                "maintenance": "f3cf545a90a53acb4f17f629a41f6ace9df829cab8da35590284c0677f180b5b"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "cec675697cb91c570b10aba2153c009b",
+    "identity": "github:1337462690:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337462690:root",
+            "repository": "Linxiushen/dsh-workflow-isolate",
+            "path": "",
+            "revision": "0928d2b5cec465a4b69f2425d53fc63324c7e043",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "4aff29854f9b37641a74fea6a126e1b4c523c012ad1394a9bef5ec027f2740dc",
+                "code": "0928d2b5cec465a4b69f2425d53fc63324c7e043",
+                "maintenance": "9dd8d4e8ddd71969cbd405da921f1882f3e7ca14a76128f8bff545632e9ed03a"
+            }
+        }
+    }
+}

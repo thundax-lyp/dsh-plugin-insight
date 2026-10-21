@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ca60918158827221bb36786a834bedec",
+    "identity": "github:1333414880:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333414880:root",
+            "repository": "lonelymoon87/dsh-specflow",
+            "path": "",
+            "revision": "39acc6f785438f7b6a133e9147f9cb0c40c3ec15",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "59851b0a697383a67a9abbe524b10244ac8091766bbdf12df9ad0692387971b9",
+                "code": "39acc6f785438f7b6a133e9147f9cb0c40c3ec15",
+                "maintenance": "7d02f86a2062e115f928340d33c837ccb5eb0e1856c60ded321303bc11b5ab61"
+            }
+        }
+    }
+}

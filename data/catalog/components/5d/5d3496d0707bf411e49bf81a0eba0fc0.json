@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5d3496d0707bf411e49bf81a0eba0fc0",
+    "identity": "github:1333891395:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333891395:root",
+            "repository": "biedongbin/dsh-claude-compat",
+            "path": "",
+            "revision": "73efd8381ad2ea4827faca64dedb563a4b9388a8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a9c7ed0a7689c9859b906cb99fbfd5703ecf9aa35511fe2056369a616d92bb06",
+                "code": "73efd8381ad2ea4827faca64dedb563a4b9388a8",
+                "maintenance": "903abc9690abc6993ad9b7c9a2cc78a24b2f105b23d4b276c2c97f96336b21af"
+            }
+        }
+    }
+}

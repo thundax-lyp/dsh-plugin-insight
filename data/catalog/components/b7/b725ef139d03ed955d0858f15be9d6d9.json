@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b725ef139d03ed955d0858f15be9d6d9",
+    "identity": "github:1401121876:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1401121876:root",
+            "repository": "DelayNooMore/dsh-plugin-session-trash",
+            "path": "",
+            "revision": "8222a5d573b288ddf3213743aa33ece71909ce7b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "cd7ed2ee0c06b74b3800e0a15690a6ba8f5a2bc5d85e0987af71bb03bc5b7f8b",
+                "code": "8222a5d573b288ddf3213743aa33ece71909ce7b",
+                "maintenance": "fbcbcdd1c3ff55a7be96fd130616991e53890c92efcbace422254040ec7b24a2"
+            }
+        }
+    }
+}

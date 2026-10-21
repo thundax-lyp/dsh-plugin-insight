@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d937482722dfeb534cea37fda87055bd",
+    "identity": "github:1335864613:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335864613:root",
+            "repository": "king-bcolor/dsh-multi-tenant-projects",
+            "path": "",
+            "revision": "77dfd9e67240d48e159d1886dd9a29d9cebf5425",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "1c0369d9830364dbb062d3ca20bf97fed45d4282676620d604309bd405b67b0e",
+                "code": "77dfd9e67240d48e159d1886dd9a29d9cebf5425",
+                "maintenance": "c64b4f5e8931a45a68d6c9cb5c3c3b901849983874bb7654ea6f0096ca56cd08"
+            }
+        }
+    }
+}

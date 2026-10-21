@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "56d0be45cdd7f7649a9b3db62eca6b01",
+    "identity": "github:1341636090:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1341636090:root",
+            "repository": "fuxin123z/dsh-skill-manage",
+            "path": "",
+            "revision": "cc2e84b8d35c3016a99b9a108021342869ce26e5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b9299ecfa7b42e85ee0750a1e78347dc0c7586691e485c82c345ac67c51a1a8d",
+                "code": "cc2e84b8d35c3016a99b9a108021342869ce26e5",
+                "maintenance": "b6b6e2a8f39e7dd99d104a5d7a78a62d85a223a8a4308272a8ed5c0d53f0ce06"
+            }
+        }
+    }
+}

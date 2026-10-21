@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "308b370c49b2dee312edc26c70134f31",
+    "identity": "github:1348257750:plugins-dsh-workspace-sort",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1348257750:plugins-dsh-workspace-sort",
+            "repository": "Moonshile/moonshile-dsh-plugins",
+            "path": "plugins/dsh-workspace-sort",
+            "revision": "5dfb4caa96a8ea748fd71b6a33744e013381e969",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "10d36ac7d7d9e0e344eac822db8295d865c493e98df06c6c4abd21cf9400f958",
+                "code": "5dfb4caa96a8ea748fd71b6a33744e013381e969",
+                "maintenance": "7d2b8302462e1d03a0de6abe124a6f8e1aa26afabcaf482179450c841d723805"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ce2fba1368c8947370dadb06911e6005",
+    "identity": "github:1336555973:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336555973:root",
+            "repository": "grelvan/dsh-ocr-local",
+            "path": "",
+            "revision": "81ba3cdaba6e7186bcf049800d635c07b317eb97",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "17d2a00c54be0d448c2aa55440d46aaad792fa19098d47d725cf490a798ee0e9",
+                "code": "81ba3cdaba6e7186bcf049800d635c07b317eb97",
+                "maintenance": "958c5234251e1c4bc48e3821af5ada6317b5f6aac61e935f3cb4ea730d773f31"
+            }
+        }
+    }
+}

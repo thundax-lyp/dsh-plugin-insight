@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "01378276989fb34357f47bc415cbde11",
+    "identity": "github:1377995490:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1377995490:root",
+            "repository": "Ryuu-64/dsh-find-all",
+            "path": "",
+            "revision": "10d874e8c50954b51ac55625b4ef360b9a695cb1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "de45c0e131c95dc6fadb130b9719838d2cc6eb4b151a14e1744a9fc7343c6732",
+                "code": "10d874e8c50954b51ac55625b4ef360b9a695cb1",
+                "maintenance": "fefd09bb1a65db9c7bf4a5db42dce552e3f56b8f542ddcc44749f7a0c7946907"
+            }
+        }
+    }
+}

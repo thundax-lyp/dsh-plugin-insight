@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "870f002d37e7966645cad8f8bc699dc8",
+    "identity": "github:1333726561:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333726561:root",
+            "repository": "MicroHEROX/dsh-Kimi-WebBridge",
+            "path": "",
+            "revision": "098e041fd2e3c60190a46c4dc5ca6463ab2a4956",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "49f9fd764c4edc70796eb458894503139f3d3b4f618036c1458d63251d435fd8",
+                "code": "098e041fd2e3c60190a46c4dc5ca6463ab2a4956",
+                "maintenance": "a9171e7c0ff5d2908e5a4da7fe444481d30186a4129b15c97855b601eb3eaa85"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ae666a7534855bd258d03b902ec1f94c",
+    "identity": "github:1383116068:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1383116068:root",
+            "repository": "JessenReinhart/dsh-snapcompact",
+            "path": "",
+            "revision": "22c2d5714c656d863aa51fa3f12fd55d7c2e6029",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ce02f421f3d4c36aa41f130b91044c1154526ac41915e002fce6a3d03084f389",
+                "code": "22c2d5714c656d863aa51fa3f12fd55d7c2e6029",
+                "maintenance": "a4801226ef063f4bb6184fa2230862b6313fa9575817e848b02d3c84b88b76c7"
+            }
+        }
+    }
+}

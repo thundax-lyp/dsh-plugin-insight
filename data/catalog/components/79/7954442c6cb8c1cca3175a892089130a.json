@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7954442c6cb8c1cca3175a892089130a",
+    "identity": "github:1411474110:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1411474110:root",
+            "repository": "LaoganR/dsh-novel-reader",
+            "path": "",
+            "revision": "be0d3bb43274c38cb260b0c668a0f586d97301e3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f1949b19fa6500d5ade3a0c52b99be934f9a6e9f9cfa8536ceb34c02733d0ed5",
+                "code": "be0d3bb43274c38cb260b0c668a0f586d97301e3",
+                "maintenance": "28073fb61b4d15691f3360e74016a18b1a256e394de0426ca3fdfe9fa8cf8588"
+            }
+        }
+    }
+}

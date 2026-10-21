@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b970d056e4b50bb9ef85e1fec893f58f",
+    "identity": "github:1419220734:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1419220734:root",
+            "repository": "wmk66ds/dsh-vision-unlock",
+            "path": "",
+            "revision": "ba8b3630185bd1f9c71c976290cb001dc9b2b616",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ab013aa29a9aa5873f138307b848a1c54e2ab02a563ba3bba3f60bc671f09a89",
+                "code": "ba8b3630185bd1f9c71c976290cb001dc9b2b616",
+                "maintenance": "a163e98b2a76755fe44dc17927a023363ce413dd4c58088883740ad7b8270300"
+            }
+        }
+    }
+}

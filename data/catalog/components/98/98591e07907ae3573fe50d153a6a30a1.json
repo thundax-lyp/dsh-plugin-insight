@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "98591e07907ae3573fe50d153a6a30a1",
+    "identity": "github:1338366890:packages-client-ui-roundtable",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338366890:packages-client-ui-roundtable",
+            "repository": "NeoMei/dsh-roundtable",
+            "path": "packages/client/ui-roundtable",
+            "revision": "51c86ba9b97aaf03c2cc97d5e49bf6cf43c12d13",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "294e39c7e2848cd73f8ba58a00b38e396d02dd21fbed93e9ebaa51bef991bf4b",
+                "code": "51c86ba9b97aaf03c2cc97d5e49bf6cf43c12d13",
+                "maintenance": "5164165f92ec761f25d3c81acd5707afa97520f10a069b3791d703c274be04b7"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d57e92ecfbac89366c9e4f807b4ef8c1",
+    "identity": "github:1373874035:xy-dsh-lamp",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1373874035:xy-dsh-lamp",
+            "repository": "Xinyuan-Gao/xy-dsh",
+            "path": "xy-dsh-lamp",
+            "revision": "ab82e6360132fa6a5240b9460c4836a79427c5b2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4e0c7cf41d111b18fbb07a2ae966bca0339af9304ca687ab5b413dece8729e31",
+                "code": "ab82e6360132fa6a5240b9460c4836a79427c5b2",
+                "maintenance": "0f94f506ac287254936ddce7139ab95ed04037050eaaaaeb8421aac44829898f"
+            }
+        }
+    }
+}

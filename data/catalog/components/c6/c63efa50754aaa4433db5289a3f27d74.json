@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c63efa50754aaa4433db5289a3f27d74",
+    "identity": "github:1398871197:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1398871197:root",
+            "repository": "Leafyezi233/dsh-model-gateway",
+            "path": "",
+            "revision": "a44e63fad40b9a670488d5b3211c60213ea7c44f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5f088ea04e6750363504e2d05a9ee7d1931aa20898e61ca3fbb4f40a4e8013c4",
+                "code": "a44e63fad40b9a670488d5b3211c60213ea7c44f",
+                "maintenance": "079d1083a7dc3bc82852261f16d8ba4c442638ad651a88960bb923e80d1279b2"
+            }
+        }
+    }
+}

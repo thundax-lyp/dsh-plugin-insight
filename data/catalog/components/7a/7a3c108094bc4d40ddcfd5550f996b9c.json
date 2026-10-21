@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7a3c108094bc4d40ddcfd5550f996b9c",
+    "identity": "github:1340327095:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340327095:root",
+            "repository": "JUNQINGV587/dsh-maestro",
+            "path": "",
+            "revision": "685060827fcf89079649c4ae962165bbe72e0432",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9a41c69c48b1258577c827bcdc8d2536c83fbb05b860e61678041cb7c8d03430",
+                "code": "685060827fcf89079649c4ae962165bbe72e0432",
+                "maintenance": "f064cdf6610185278c0f7b50463d9b99ca9cef7c1fba4c30e0891b1ed3d9a0d3"
+            }
+        }
+    }
+}

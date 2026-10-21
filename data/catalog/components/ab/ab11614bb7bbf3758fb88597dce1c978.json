@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ab11614bb7bbf3758fb88597dce1c978",
+    "identity": "github:1420110365:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1420110365:root",
+            "repository": "mengwEX/dsh-block-ptc",
+            "path": "",
+            "revision": "fd70a7e090423cd7d68f1791e0e1931a6968235b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4f33764deb9b0da0f00b3a271caa6294fd40e5010cefb5493540c8495e7a5566",
+                "code": "fd70a7e090423cd7d68f1791e0e1931a6968235b",
+                "maintenance": "e4d1ba806414e1ea17b43b0bb19eeba037989760933f591cb78740a77dfcd540"
+            }
+        }
+    }
+}

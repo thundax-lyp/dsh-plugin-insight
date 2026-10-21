@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "96e7dae821e79c602a9a49ac0f8bbde4",
+    "identity": "github:1414551806:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1414551806:root",
+            "repository": "lugezuishuai/dsh-token-chart",
+            "path": "",
+            "revision": "795329e2a267e3c98c5be56c0391a85dcf806cf6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7ae4f2ac1b5a77edafb0a52f540a932ee66308fd282378f07504f889ecc08801",
+                "code": "795329e2a267e3c98c5be56c0391a85dcf806cf6",
+                "maintenance": "a2ac196fa3bf9ed7190c98b4508149a38ff4e852c405014dc966ae6e7a7d4bf3"
+            }
+        }
+    }
+}

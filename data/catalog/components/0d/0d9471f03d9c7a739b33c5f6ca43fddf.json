@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0d9471f03d9c7a739b33c5f6ca43fddf",
+    "identity": "github:1384751718:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1384751718:root",
+            "repository": "idoall/dsh-lan-guard",
+            "path": "",
+            "revision": "6cb0349cb8b9c99a9acbd3064853f5a56889ad1d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d4ed62b81a7a2f14cc2665ec5d63581f26372c68b310cf86996f4a6a09bb2d55",
+                "code": "6cb0349cb8b9c99a9acbd3064853f5a56889ad1d",
+                "maintenance": "75f426d2598465e89798f1965fbdf156c4686796cd6a6d495dca63e8240c0b85"
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "4cafeb970dbb9728b2501ec8aa39623f",
+    "identity": "github:1334875164:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334875164:root",
+            "repository": "hytime/dsh-thinking-effort",
+            "path": "",
+            "revision": "83b7ad6520930068bc2c075c9af2492c4c14cf15",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "a91277259f796c9732b54a5916ad24db071a49f679c82c515ab6576055f44111",
+                "code": "83b7ad6520930068bc2c075c9af2492c4c14cf15",
+                "maintenance": "79a8a6cf8c16e473170823e0de738dc290e9d7a443f17a8555bab0f547dfc761"
+            }
+        }
+    }
+}

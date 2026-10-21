@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1f439725c2608166b6a006f2e40f5edc",
+    "identity": "github:1354743516:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1354743516:root",
+            "repository": "nicecx/insta360-ai-content-studio",
+            "path": "",
+            "revision": "abf472566198aeefb493b742f3fe69d9132ff460",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2e6539ee8acfe20488589b4aa7088e9dcb986a6cd25ccbb5d523280f4de04623",
+                "code": "abf472566198aeefb493b742f3fe69d9132ff460",
+                "maintenance": "a1e21d43d1d3ff3fbfc3a7a666055e6a591dc614d90cbd093a2916f9af6b08d2"
+            }
+        }
+    }
+}

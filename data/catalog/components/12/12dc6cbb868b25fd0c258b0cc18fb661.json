@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "12dc6cbb868b25fd0c258b0cc18fb661",
+    "identity": "github:1379126508:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1379126508:root",
+            "repository": "wangxuewangxue98/dsh-motor-ai-l0",
+            "path": "",
+            "revision": "45769d11b4b996e51429ccaeffcfeb06d0bf3229",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2310b055b54e2756dea8273c79e36b774cc3b125aad8c7e7ca250e432fedd694",
+                "code": "45769d11b4b996e51429ccaeffcfeb06d0bf3229",
+                "maintenance": "eb67dd86bb83e183f4cf90b2469f245e464206fa534b5249f035d402b0f82458"
+            }
+        }
+    }
+}

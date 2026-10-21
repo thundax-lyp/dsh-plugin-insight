@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1ebae6a5753a70b000b38c886401c611",
+    "identity": "github:1338406644:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338406644:root",
+            "repository": "LittleBlackTong/dsh-plugin-heartbeat",
+            "path": "",
+            "revision": "8c2463e36b008a47f2ab4bddb00dbf1e240dee25",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6d43968e8a54131df32b0983a022dcdf550522f9fbcc24055c563b027d5c2317",
+                "code": "8c2463e36b008a47f2ab4bddb00dbf1e240dee25",
+                "maintenance": "9c537d9f6dafd9e44b48b98ce5b10b3fccdae099a54b6140aa9b7cd7eb597fdb"
+            }
+        }
+    }
+}

@@ -1,5 +1,0 @@
-{
-  "text": "通过预配置 SSH 别名读取或搜索有界远端日志，作为 MCP 工具接入 DSH。",
-  "revision": "4dbc65c4bb250f72388edfd42b3d3e4d0103699c",
-  "source_url": "https://github.com/452926826/dsh-ssh-logs/blob/4dbc65c4bb250f72388edfd42b3d3e4d0103699c/README.md"
-}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2f8eda90e6bc27ea8746b0687fb0f01c",
+    "identity": "github:1333504012:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333504012:root",
+            "repository": "akira399/dsh-godot-skill",
+            "path": "",
+            "revision": "5ff40843e2f9bba8f86e9a76eec3341a9a0e22ca",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "6ff9b81dec4430f79f4ff7a3d05b42dc062378cd835bfe15dcc2ed7823762291",
+                "code": "5ff40843e2f9bba8f86e9a76eec3341a9a0e22ca",
+                "maintenance": "e81769c7358038fb8ad24122bb3c6f601664712dc3cf559258e092bfd3b21a78"
+            }
+        }
+    }
+}

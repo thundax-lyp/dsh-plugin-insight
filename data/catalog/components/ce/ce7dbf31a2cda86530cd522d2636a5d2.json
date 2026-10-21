@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ce7dbf31a2cda86530cd522d2636a5d2",
+    "identity": "github:1357253635:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1357253635:root",
+            "repository": "iasiv5/dsh-skip-browser-auth",
+            "path": "",
+            "revision": "44904778b7660494164ddadca134659ab2395568",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4ae118c24dc3300af66175c9e8cb7b4f4131a4b85ebf4c06955a67c9503516dc",
+                "code": "44904778b7660494164ddadca134659ab2395568",
+                "maintenance": "711443f9f79befb262789a2dfb2caf8fc7fe0cb1e37c1f3c198ed4d7197b47dd"
+            }
+        }
+    }
+}

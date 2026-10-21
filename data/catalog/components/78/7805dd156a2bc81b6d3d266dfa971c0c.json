@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7805dd156a2bc81b6d3d266dfa971c0c",
+    "identity": "github:1338499102:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338499102:root",
+            "repository": "luxiwusuobuneng/dsh-plugin-context-manager",
+            "path": "",
+            "revision": "be110699f9f605566c03151675cd32ab64abbd01",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7b014fcb0bb6b4e1ad9b805ca9c7f76821bd22cdb3541ff231f66ccce0ca3451",
+                "code": "be110699f9f605566c03151675cd32ab64abbd01",
+                "maintenance": "e97c7b84db48bee466a4b1088fd59c20736e6ace1e2700c1ea1ebec1ed2664c9"
+            }
+        }
+    }
+}

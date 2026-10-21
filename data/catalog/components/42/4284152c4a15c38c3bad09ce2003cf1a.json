@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4284152c4a15c38c3bad09ce2003cf1a",
+    "identity": "github:1335367284:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335367284:root",
+            "repository": "vvvspec/better-reasoning-slider",
+            "path": "",
+            "revision": "ba879cf9668a9aad3dd488565634740a9faf8ffe",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "22310271d9a61749f53102be7be5bc87354bbd0a21fb1ec7e3809d70c8795649",
+                "code": "ba879cf9668a9aad3dd488565634740a9faf8ffe",
+                "maintenance": "84fa1ae9b84091d6a21722ebe3421dbd2475a8a0b2feb383b310980dec761899"
+            }
+        }
+    }
+}

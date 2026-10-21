@@ -1,0 +1,329 @@
+{
+    "schema_version": 3,
+    "id": "cdf966258d4346f4cc92f828cf63846f",
+    "identity": "github:1170373459:dsh-invoice-downloader",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1170373459:dsh-invoice-downloader",
+            "repository_id": 1170373459,
+            "component_id": "dsh-invoice-downloader",
+            "repository": "EthanYoQ/Invoice-Downloader",
+            "path": "plugins/dsh-invoice-downloader",
+            "aliases": [],
+            "name": "InvoiceFlowAI — DSH 发票整理插件",
+            "entry_type": "plugin",
+            "technical_category": "tools-integration",
+            "business_category": "office-operations",
+            "tags": [
+                "发票整理",
+                "IMAP",
+                "OCR",
+                "报销准备",
+                "条件试用"
+            ],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "17aeffc38c6e674f603864414044daf73122042a57a6d859d3923ceaf4900047",
+                "code": "dd7b9656ae8faf326cc111f2c6f68ac054650a11",
+                "release": "1746c1a9c82763ea84c0482f8f7d44463a4789b253514515a32a81e05de85de5",
+                "compatibility": "f80c06fcf9a074ca76a8446a0e43202c5e2ccd061198bd8af184463b6e748d9b",
+                "maintenance": "34f1866a5733c24140525903710b3f1dda5af6c7220f547f98ab41de9a369c6f"
+            },
+            "sources": [
+                {
+                    "id": "github:1170373459:dsh-invoice-downloader:20261019T065545Z-init:directory",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/13dcda27177db72e1004b6116f0d589675176fba/data/plugins/EthanYoQ__Invoice-Downloader--plugins-dsh-invoice-downloader.yml",
+                    "revision": "13dcda27177db72e1004b6116f0d589675176fba",
+                    "retrieved_at": "2026-10-19T06:56:42.509Z",
+                    "membership": "present"
+                },
+                {
+                    "id": "github:1170373459:dsh-invoice-downloader:20261019T065545Z-init:repository",
+                    "url": "https://github.com/EthanYoQ/Invoice-Downloader/blob/8fe3a1147c619268b41f1480e73c4fa38d97db69/plugins/dsh-invoice-downloader/package.json",
+                    "revision": "8fe3a1147c619268b41f1480e73c4fa38d97db69",
+                    "retrieved_at": "2026-10-19T06:56:40.092Z"
+                },
+                {
+                    "id": "github:1170373459:dsh-invoice-downloader:20261019T074011Z-smoke-invoice:source",
+                    "url": "https://github.com/EthanYoQ/Invoice-Downloader/blob/8fe3a1147c619268b41f1480e73c4fa38d97db69/plugins/dsh-invoice-downloader/README.md",
+                    "revision": "8fe3a1147c619268b41f1480e73c4fa38d97db69",
+                    "retrieved_at": "2026-10-19T07:46:02.719Z"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "github:1170373459:dsh-invoice-downloader:20261019T065545Z-init:author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/EthanYoQ/Invoice-Downloader/blob/8fe3a1147c619268b41f1480e73c4fa38d97db69/plugins/dsh-invoice-downloader/README.md",
+                    "revision": "8fe3a1147c619268b41f1480e73c4fa38d97db69",
+                    "captured_at": "2026-10-19T07:02:45.192Z",
+                    "summary": "作者描述 DSH 插件连接 QQ/163 IMAP，在本地 OCR 后调用所选模型，归档并生成 Excel；本机 Python、受支持平台及人工复核仍是条件。",
+                    "artifact": "data/runs/2026-10-19-01/snapshots/ethanyoq--invoice-downloader--dsh-invoice-downloader/SOURCE.json",
+                    "limitations": [
+                        "作者描述不等于安装、实际任务或收益验证。",
+                        "源码快照与发布包全量一致性未验证。"
+                    ]
+                },
+                {
+                    "id": "github:1170373459:dsh-invoice-downloader:20261019T065545Z-init:implementation",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/EthanYoQ/Invoice-Downloader/blob/8fe3a1147c619268b41f1480e73c4fa38d97db69/plugins/dsh-invoice-downloader/src/invoice-scanner.ts",
+                    "revision": "8fe3a1147c619268b41f1480e73c4fa38d97db69",
+                    "captured_at": "2026-10-19T07:02:45.192Z",
+                    "summary": "核查组件14个文件：本地安装器下载 Python/OCR 依赖与 Chromium；模型桥使用宿主当前模型；可选 GLM 分支按凭据启用。",
+                    "artifact": "data/runs/2026-10-19-01/snapshots/ethanyoq--invoice-downloader--dsh-invoice-downloader/SOURCE.json",
+                    "limitations": [
+                        "源码级研究，未执行第三方代码或测试。",
+                        "抽读范围见报告，不是完整安全或正确性审计。"
+                    ]
+                },
+                {
+                    "id": "github:1170373459:dsh-invoice-downloader:20261019T065545Z-init:distribution",
+                    "kind": "source_inspection",
+                    "url": "https://registry.npmjs.org/@ethanyoq%2fdsh-invoice-downloader/latest",
+                    "revision": "0.1.1",
+                    "captured_at": "2026-10-19T07:02:45.192Z",
+                    "summary": "公开 npm latest HTTP 200，版本0.1.1与所读组件清单一致；未核对tarball。",
+                    "artifact": "data/runs/2026-10-19-01/snapshots/ethanyoq--invoice-downloader--dsh-invoice-downloader/NPM.json",
+                    "limitations": [
+                        "时间敏感的公开元数据检查；不等于安装成功。"
+                    ]
+                },
+                {
+                    "id": "github:1170373459:dsh-invoice-downloader:20261019T074011Z-smoke-invoice:author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/EthanYoQ/Invoice-Downloader/blob/8fe3a1147c619268b41f1480e73c4fa38d97db69/plugins/dsh-invoice-downloader/README.md",
+                    "revision": "8fe3a1147c619268b41f1480e73c4fa38d97db69",
+                    "captured_at": "2026-10-19T07:46:02.719Z",
+                    "summary": "本轮重新阅读作者描述，区分插件场景、承诺和限制。",
+                    "limitations": [
+                        "作者描述不证明任务效果；未安装目标插件。"
+                    ],
+                    "artifact": "data/runs/2026-10-19-01/snapshots/ethanyoq--invoice-downloader--dsh-invoice-downloader/SOURCE.json"
+                },
+                {
+                    "id": "github:1170373459:dsh-invoice-downloader:20261019T074011Z-smoke-invoice:source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/EthanYoQ/Invoice-Downloader/blob/8fe3a1147c619268b41f1480e73c4fa38d97db69/plugins/dsh-invoice-downloader/src/invoice-scanner.ts",
+                    "revision": "8fe3a1147c619268b41f1480e73c4fa38d97db69",
+                    "captured_at": "2026-10-19T07:46:02.719Z",
+                    "summary": "本轮重新核对固定提交、复读原始源码材料，围绕场景、依赖、流程、成本与验收形成判断。",
+                    "limitations": [
+                        "仅源码机制核查，未执行插件测试或真实宿主。",
+                        "源码提交未变，复用同版本原始快照；原采集时间保留。"
+                    ],
+                    "artifact": "data/runs/2026-10-19-01/snapshots/ethanyoq--invoice-downloader--dsh-invoice-downloader/SOURCE.json"
+                },
+                {
+                    "id": "github:1170373459:dsh-invoice-downloader:20261019T074011Z-smoke-invoice:npm",
+                    "kind": "source_inspection",
+                    "url": "https://registry.npmjs.org/@ethanyoq%2fdsh-invoice-downloader/latest",
+                    "revision": "8fe3a1147c619268b41f1480e73c4fa38d97db69",
+                    "captured_at": "2026-10-19T07:46:02.719Z",
+                    "summary": "公开npm latest HTTP200，版本0.1.1；默认分支与发布包未比对。",
+                    "limitations": [
+                        "公开元数据不证明安装成功或包内容相同。"
+                    ],
+                    "artifact": "data/runs/2026-10-19-02/snapshots/ethanyoq--invoice-downloader--dsh-invoice-downloader/NPM.json"
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "适合固定邮箱、高频批量收票到报销准备材料；需正确原件与报表对应，不代表审批和会计处理完成。",
+                    "evidence_ids": [
+                        "github:1170373459:dsh-invoice-downloader:20261019T074011Z-smoke-invoice:source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1170373459:dsh-invoice-downloader",
+                            "area": "code",
+                            "fingerprint": "dd7b9656ae8faf326cc111f2c6f68ac054650a11"
+                        },
+                        {
+                            "plugin_id": "github:1170373459:dsh-invoice-downloader",
+                            "area": "release",
+                            "fingerprint": "1746c1a9c82763ea84c0482f8f7d44463a4789b253514515a32a81e05de85de5"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-19T07:46:02.719Z",
+                    "status": "current"
+                },
+                {
+                    "id": "dependencies",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "组件需本地Python/OCR/Chromium和IMAP授权，OCR文本经当前DSH模型路由结构化；默认不能视为纯本地，GLM后备为可选。",
+                    "evidence_ids": [
+                        "github:1170373459:dsh-invoice-downloader:20261019T074011Z-smoke-invoice:source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1170373459:dsh-invoice-downloader",
+                            "area": "code",
+                            "fingerprint": "dd7b9656ae8faf326cc111f2c6f68ac054650a11"
+                        },
+                        {
+                            "plugin_id": "github:1170373459:dsh-invoice-downloader",
+                            "area": "release",
+                            "fingerprint": "1746c1a9c82763ea84c0482f8f7d44463a4789b253514515a32a81e05de85de5"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-19T07:46:02.719Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "流程集成有潜在价值，成立条件是重复批次能摊薄部署和人工复核；偶发收票可能更适合人工或桌面版。",
+                    "evidence_ids": [
+                        "github:1170373459:dsh-invoice-downloader:20261019T074011Z-smoke-invoice:source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1170373459:dsh-invoice-downloader",
+                            "area": "code",
+                            "fingerprint": "dd7b9656ae8faf326cc111f2c6f68ac054650a11"
+                        },
+                        {
+                            "plugin_id": "github:1170373459:dsh-invoice-downloader",
+                            "area": "release",
+                            "fingerprint": "1746c1a9c82763ea84c0482f8f7d44463a4789b253514515a32a81e05de85de5"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-19T07:46:02.719Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "unverified",
+                    "text": "未测量合格率、人工分钟与账单；maxTokens 500不是单票总费用，需计入配置、失败与复核。",
+                    "evidence_ids": [
+                        "github:1170373459:dsh-invoice-downloader:20261019T074011Z-smoke-invoice:source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1170373459:dsh-invoice-downloader",
+                            "area": "code",
+                            "fingerprint": "dd7b9656ae8faf326cc111f2c6f68ac054650a11"
+                        },
+                        {
+                            "plugin_id": "github:1170373459:dsh-invoice-downloader",
+                            "area": "release",
+                            "fingerprint": "1746c1a9c82763ea84c0482f8f7d44463a4789b253514515a32a81e05de85de5"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-19T07:46:02.719Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "本轮公开npm latest返回200/0.1.1，与组件清单一致；未核对tarball或宿主安装。",
+                    "evidence_ids": [
+                        "github:1170373459:dsh-invoice-downloader:20261019T074011Z-smoke-invoice:npm"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1170373459:dsh-invoice-downloader",
+                            "area": "code",
+                            "fingerprint": "dd7b9656ae8faf326cc111f2c6f68ac054650a11"
+                        },
+                        {
+                            "plugin_id": "github:1170373459:dsh-invoice-downloader",
+                            "area": "release",
+                            "fingerprint": "1746c1a9c82763ea84c0482f8f7d44463a4789b253514515a32a81e05de85de5"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-19T07:46:02.719Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "维持条件试用；先用有真值的混合票据对照人工流程，原件或关键字段不合格、总人工时间不降时暂缓。",
+                    "evidence_ids": [
+                        "github:1170373459:dsh-invoice-downloader:20261019T074011Z-smoke-invoice:source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1170373459:dsh-invoice-downloader",
+                            "area": "code",
+                            "fingerprint": "dd7b9656ae8faf326cc111f2c6f68ac054650a11"
+                        },
+                        {
+                            "plugin_id": "github:1170373459:dsh-invoice-downloader",
+                            "area": "release",
+                            "fingerprint": "1746c1a9c82763ea84c0482f8f7d44463a4789b253514515a32a81e05de85de5"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-19T07:46:02.719Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-19T07:46:02.719Z",
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "面向固定邮箱、高频批量收票者有流程集成价值，但当前档案缺有效发布原稿且代码指纹与所引源码版本不一致；先补齐版本绑定，再用脱敏真值票据核对原件、字段、漏件和总人工时间，暂不入推荐榜。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "固定邮箱反复批量取票到报销准备有具体交付物，偶发收票难摊薄部署负担。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "既有源码研究确认收件、OCR、模型结构化、归档和Excel汇总串联，相对人工分步整理有机制增量。"
+                    },
+                    "evidence": {
+                        "score": 6,
+                        "rationale": "仅有8fe3a114固定源码与旧findings；正式快照无有效发布原稿，当前code指纹为dd7b9656，不能据旧材料确认当前可用性。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "需Python、RapidOCR、Chromium、IMAP授权及模型通道，包含首次联网配置、敏感票据流转和逐票人工复核负担。"
+                    }
+                },
+                "score": 53,
+                "revision": "8fe3a1147c619268b41f1480e73c4fa38d97db69",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "needs_review",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "github:1170373459:dsh-invoice-downloader:20261019T065545Z-init:implementation",
+                    "github:1170373459:dsh-invoice-downloader:20261019T074011Z-smoke-invoice:source",
+                    "github:1170373459:dsh-invoice-downloader:20261019T074011Z-smoke-invoice:npm"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1170373459:dsh-invoice-downloader",
+                        "area": "code",
+                        "fingerprint": "dd7b9656ae8faf326cc111f2c6f68ac054650a11"
+                    }
+                ]
+            }
+        },
+        "registry": "data/plugins/ethanyoq--invoice-downloader--dsh-invoice-downloader",
+        "discovery.plugins": {
+            "id": "github:1170373459:dsh-invoice-downloader",
+            "repository": "EthanYoQ/Invoice-Downloader",
+            "path": "plugins/dsh-invoice-downloader",
+            "revision": "8fe3a1147c619268b41f1480e73c4fa38d97db69",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "567d33be9721a06125fa40ea0643b7273213b868bc951802314af261c9475aee",
+                "code": "8fe3a1147c619268b41f1480e73c4fa38d97db69",
+                "maintenance": "34f1866a5733c24140525903710b3f1dda5af6c7220f547f98ab41de9a369c6f"
+            }
+        }
+    }
+}

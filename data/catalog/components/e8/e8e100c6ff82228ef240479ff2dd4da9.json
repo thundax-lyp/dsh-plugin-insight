@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e8e100c6ff82228ef240479ff2dd4da9",
+    "identity": "github:1345834429:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345834429:root",
+            "repository": "outprintHelloLi/dsh-piggy-bank",
+            "path": "",
+            "revision": "1aabc0b85b9a1819f10b94b07160ac99508450e5",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "286b1b80f905b93c8e401a85c682daaf9c647374b5f683b4b1e105ea8f14c29d",
+                "code": "1aabc0b85b9a1819f10b94b07160ac99508450e5",
+                "maintenance": "45f9c314e6f273ddf1a2c792d87b4ab36f3431d0acd423033d1be16ee31bdc71"
+            }
+        }
+    }
+}

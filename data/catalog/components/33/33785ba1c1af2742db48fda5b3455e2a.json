@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "33785ba1c1af2742db48fda5b3455e2a",
+    "identity": "github:1335752156:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335752156:root",
+            "repository": "FuncWei/dsh-wechat-mp-studio",
+            "path": "",
+            "revision": "d5341aeaaf67830f0193cd004ade402b99de93d9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "582c30c2957a1190c5270ebf825732ce3f5aeaed1851eae616248b7bea0426db",
+                "code": "d5341aeaaf67830f0193cd004ade402b99de93d9",
+                "maintenance": "b03f90538a049511255188e74a2cb4154c95e3439c4e9c797400d3bb0922df4d"
+            }
+        }
+    }
+}

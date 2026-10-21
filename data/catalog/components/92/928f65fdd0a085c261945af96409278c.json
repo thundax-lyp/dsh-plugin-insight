@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "928f65fdd0a085c261945af96409278c",
+    "identity": "github:1408258579:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1408258579:root",
+            "repository": "raymondkm2025/dsh-go-game",
+            "path": "",
+            "revision": "e807172cdabfbb6bc7acc874b3aa3a3c17b2e5d6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7f4f36864ba1bb29963b51b1b57331ee41f02e24fe2b0ceb0a2d6b58c6f963c5",
+                "code": "e807172cdabfbb6bc7acc874b3aa3a3c17b2e5d6",
+                "maintenance": "a9c97ac5fbf5d93c1e8ad1f024973d443ebcd9449cdad93cf7073425c8704f74"
+            }
+        }
+    }
+}

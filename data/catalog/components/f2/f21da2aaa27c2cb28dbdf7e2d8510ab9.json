@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f21da2aaa27c2cb28dbdf7e2d8510ab9",
+    "identity": "github:1370652461:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1370652461:root",
+            "repository": "youdotcom-oss/dsh-plugin-youcom",
+            "path": "",
+            "revision": "95f22d8c193bed4f25ad5d40af2c3d950cf277bf",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "39a8bfc291d5fd27351f800240f2a9a4006e44a6a545cffaf6047d9dba249954",
+                "code": "95f22d8c193bed4f25ad5d40af2c3d950cf277bf",
+                "maintenance": "6a78dbd78ca952868aa6ff7b62dcfd4fb902fb534ab7210dc5455663a133b0be"
+            }
+        }
+    }
+}

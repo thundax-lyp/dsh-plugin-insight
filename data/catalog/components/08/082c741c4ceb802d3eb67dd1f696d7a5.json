@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "082c741c4ceb802d3eb67dd1f696d7a5",
+    "identity": "github:1405369578:dsh",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1405369578:dsh",
+            "repository": "Galaxy-2001/Rhine-Lab-Codex-Theme",
+            "path": "dsh",
+            "revision": "ee315aefaa031474ccdec205d81cd922f5ef7654",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "774bec505d47c583cd0fbaa33ee09bba3beb80e14757e46bea1a93c9022f024f",
+                "code": "ee315aefaa031474ccdec205d81cd922f5ef7654",
+                "maintenance": "8d3ea58c8845c32f150387f4aabedb62734ed2970c3c0dbeab93a0c57f2f5e83"
+            }
+        }
+    }
+}

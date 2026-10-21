@@ -1,0 +1,403 @@
+{
+    "schema_version": 3,
+    "id": "677934e9aca6542daa55ccf5a839e77e",
+    "identity": "github:1415116420:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1415116420:root",
+            "repository_id": 1415116420,
+            "component_id": "root",
+            "repository": "2026heshao/dsh-obsidian-board",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-obsidian-board",
+            "entry_type": "plugin",
+            "technical_category": "memory-knowledge",
+            "business_category": "research-knowledge",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "daca67a2d01f7b6302eaff6f4942884baa27772bfaeff3060c63421d7403cf6a",
+                "code": "072612e0245565cee12cbfd07a421f2029d35c4e",
+                "maintenance": "3dce70df9e35e48d94dd35a5457133415299bdb52f28a41a22e6471d9204750e"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-20-08-github-1415116420-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T10:51:06.823Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-20-08-github-1415116420-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/README.md",
+                    "revision": "072612e0245565cee12cbfd07a421f2029d35c4e",
+                    "captured_at": "2026-10-20T10:51:06.823Z",
+                    "summary": "将本地 Obsidian 笔记库接入 DSH 三栏问答面板，提供本地关键词检索和可点击引用。",
+                    "artifact": "data/runs/2026-10-20-08/snapshots/2026heshao--dsh-obsidian-board/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-20-08-github-1415116420-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/vault.js",
+                    "revision": "072612e0245565cee12cbfd07a421f2029d35c4e",
+                    "captured_at": "2026-10-20T10:51:06.823Z",
+                    "summary": "核查 lib/vault.js、lib/index.js；lib/vault.js 对Markdown切块，以BM25、CJK bigram、标题及标签加权检索，并对收集语料降权；lib/index.js 将检索片段交给宿主llm，chatStart/Poll/Stop通过attempt代次处理模型回退。",
+                    "artifact": "data/runs/2026-10-20-08/snapshots/2026heshao--dsh-obsidian-board/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "抽读索引、扫描/增量更新和host问答/回退路径，未检验全部客户端交互、未运行万条库性能或真实模型；作者兼容声明未独立复现。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "适合已有Markdown笔记库、希望边问边查出处的知识工作者；合格答案应引用实际支持结论的笔记，而不是仅能打开一个文件。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1415116420-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1415116420:root",
+                            "area": "code",
+                            "fingerprint": "072612e0245565cee12cbfd07a421f2029d35c4e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:51:06.823Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "lib/vault.js 对Markdown切块，以BM25、CJK bigram、标题及标签加权检索，并对收集语料降权；lib/index.js 将检索片段交给宿主llm，chatStart/Poll/Stop通过attempt代次处理模型回退。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1415116420-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1415116420:root",
+                            "area": "code",
+                            "fingerprint": "072612e0245565cee12cbfd07a421f2029d35c4e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:51:06.823Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "抽读索引、扫描/增量更新和host问答/回退路径，未检验全部客户端交互、未运行万条库性能或真实模型；作者兼容声明未独立复现。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1415116420-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1415116420:root",
+                            "area": "code",
+                            "fingerprint": "072612e0245565cee12cbfd07a421f2029d35c4e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:51:06.823Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "双半插件使用Typert与main页面、侧栏入口，不是Obsidian扩展；面板历史host内存配localStorage兜底，不应将它当DSH正式会话持久历史。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1415116420-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1415116420:root",
+                            "area": "code",
+                            "fingerprint": "072612e0245565cee12cbfd07a421f2029d35c4e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:51:06.823Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "无需embedding服务减少一类配置与向量成本，但索引扫描占本地资源，问答与可选规划/模型回退消耗现有模型额度；迁移vault路径和复核引用需人工。未将作者秒级扫描声明转为实测单位成本。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1415116420-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1415116420:root",
+                            "area": "code",
+                            "fingerprint": "072612e0245565cee12cbfd07a421f2029d35c4e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:51:06.823Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "已有结构清楚的Markdown笔记库可先用已知答案测试原词、同义改写和外部资料问题，逐条点引用核对；涉及敏感笔记时先确认所选模型通道允许发送检索片段。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1415116420-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1415116420:root",
+                            "area": "code",
+                            "fingerprint": "072612e0245565cee12cbfd07a421f2029d35c4e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:51:06.823Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "三栏减少切换与复制的机制可见；检索排名、片段截断和模型归纳仍影响合格答案率，是否优于直接搜索要以同题引用支持率和人工纠错时间判断。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1415116420-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1415116420:root",
+                            "area": "code",
+                            "fingerprint": "072612e0245565cee12cbfd07a421f2029d35c4e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:51:06.823Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "vault.js 将并发构建笔记与提交索引分开，并压实旧chunk，值得用于增量索引。index.js 使用attempt重置正文/思考/usage和客户端偏移，防止回退拼接旧回答；移植需要客户端同代次协议。扫描失败跳过与关键词检索边界应可观察，不能把没搜到当库中不存在。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1415116420-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1415116420:root",
+                            "area": "code",
+                            "fingerprint": "072612e0245565cee12cbfd07a421f2029d35c4e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:51:06.823Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T10:51:06.823Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "072612e0245565cee12cbfd07a421f2029d35c4e",
+                "reviewed_at": "2026-10-20T10:51:06.823Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1415116420:root",
+                        "area": "code",
+                        "fingerprint": "072612e0245565cee12cbfd07a421f2029d35c4e"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty：成熟RAG适配笔记库，小幅；mechanism：语料权重及attempt隔离改变实际取舍，实质；transferability：增量索引/代次协议可复用但需适配，实质；simplification：免embedding和三栏核对有实质简化，性能未证。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1415116420-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 15,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow：查找、提问、回看出处有实质整合；delivery：引用问答相对手工复制实质改变交付物，真实性未测；reach：已有vault用户接入更方便，小幅；economics：免embedding减少配置，小幅，模型总成本未知。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1415116420-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "已有Markdown库者可先用已知答案试用三栏检索问答；比较同义题和外部资料召回并核对引用及外发片段。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "笔记库边读边问有明确用户和可核查答案。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "BM25、CJK与引用面板减少复制切换，无需embedding服务。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "切块权重与attempt回退已查，召回与引用支持率未测。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "本地扫描加模型调用，路径迁移和引用复核仍需人工。"
+                    }
+                },
+                "score": 65,
+                "revision": "072612e0245565cee12cbfd07a421f2029d35c4e",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-20-08-github-1415116420-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1415116420:root",
+                        "area": "code",
+                        "fingerprint": "072612e0245565cee12cbfd07a421f2029d35c4e"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1415116420:root",
+            "repository": "2026heshao/dsh-obsidian-board",
+            "path": "",
+            "revision": "072612e0245565cee12cbfd07a421f2029d35c4e",
+            "fingerprints": {
+                "directory": "daca67a2d01f7b6302eaff6f4942884baa27772bfaeff3060c63421d7403cf6a",
+                "code": "072612e0245565cee12cbfd07a421f2029d35c4e",
+                "maintenance": "3dce70df9e35e48d94dd35a5457133415299bdb52f28a41a22e6471d9204750e"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T10:40:14Z",
+            "analysis_sha256": "34b60ef32ecfa642d1f65bec10deea1b842fdbcb5a6eb53475c185164be6868c"
+        },
+        "publication.metadata": "data/plugins/2026heshao--dsh-obsidian-board/META.json",
+        "publication.summaries": {
+            "text": "将本地 Obsidian 笔记库接入 DSH 三栏问答面板，提供本地关键词检索和可点击引用。",
+            "revision": "072612e0245565cee12cbfd07a421f2029d35c4e",
+            "source_url": "https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "072612e0245565cee12cbfd07a421f2029d35c4e",
+            "items": {
+                "Host 路由": "Typert提供本地笔记检索、读原文与chatStart/Poll/Stop",
+                "后台": "BM25/CJK bigram索引和增量更新"
+            }
+        },
+        "publication.advice": {
+            "revision": "072612e0245565cee12cbfd07a421f2029d35c4e",
+            "text": "已有结构清楚的Markdown笔记库可先用已知答案测试原词、同义改写和外部资料问题，逐条点引用核对；涉及敏感笔记时先确认所选模型通道允许发送检索片段。"
+        },
+        "registry": "data/plugins/2026heshao--dsh-obsidian-board",
+        "reports": "# dsh-obsidian-board\n\n> 将本地 Obsidian 笔记库接入 DSH 三栏问答面板，提供本地关键词检索和可点击引用。\n\n## 研究范围\n\n- **仓库**：[2026heshao/dsh-obsidian-board](https://github.com/2026heshao/dsh-obsidian-board)\n- **版本号**：0.2.4（[固定提交 072612e0](https://github.com/2026heshao/dsh-obsidian-board/tree/072612e0245565cee12cbfd07a421f2029d35c4e)）\n- **版本日期**：2026-10-20（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已确认本地检索与引用面板、按尝试隔离流式输出的设计；未复现性能和回答正确率。检索本地不代表发送给模型的片段不出本机，未来证据覆盖提示假设未验证。\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：适合已有Markdown笔记库、希望边问边查出处的知识工作者；合格答案应引用实际支持结论的笔记，而不是仅能打开一个文件。\n- **亮点**：相对在Obsidian关键词搜索后复制到聊天，插件把查找、回答和原文核对放在三栏；BM25和中文bigram是成熟方法，具体增量是笔记标题/标签/别名、收集语料降权以及attempt切换时重置输出偏移，减少来源库与模型回退造成的使用断点。不能将算法名称或作者万条笔记耗时认作本次实测。\n- **思考**：最影响价值的是引用能否覆盖真正支持结论的笔记。BM25更适合词面匹配，固定0.45收集语料降权能让自有笔记优先，却可能压低用户此刻正要找的外部材料。可点击[n]只证明可回看，不证明检索召回或引用蕴含关系；同义改写与外部资料问题是最强反例。\n- **建议**：已有结构清楚的Markdown笔记库可先用已知答案测试原词、同义改写和外部资料问题，逐条点引用核对；涉及敏感笔记时先确认所选模型通道允许发送检索片段。\n\n采用建议：已有结构清楚的Markdown笔记库可先用已知答案测试原词、同义改写和外部资料问题，逐条点引用核对；涉及敏感笔记时先确认所选模型通道允许发送检索片段。\n\n## 核心贡献\n\n相对在Obsidian关键词搜索后复制到聊天，插件把查找、回答和原文核对放在三栏；BM25和中文bigram是成熟方法，具体增量是笔记标题/标签/别名、收集语料降权以及attempt切换时重置输出偏移，减少来源库与模型回退造成的使用断点。不能将算法名称或作者万条笔记耗时认作本次实测。\n\n## 关键质疑\n\n最影响价值的是引用能否覆盖真正支持结论的笔记。BM25更适合词面匹配，固定0.45收集语料降权能让自有笔记优先，却可能压低用户此刻正要找的外部材料。可点击[n]只证明可回看，不证明检索召回或引用蕴含关系；同义改写与外部资料问题是最强反例。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n待验证假设：在答案旁显式显示检索来源构成与未覆盖主题，并允许按问题选择“自有经验/全部资料”权重。它从固定vendored降权和可回看引用推导，改变的是检索意图控制而非增加另一个模型；额外负担是解释权重和建立小型带标注问题集。\n\n在固定库人工标注20个原词、同义改写和外部材料问题，对比普通BM25、当前加权及用户可选权重；记录topK召回、引用支持率、人工纠错时间和全部模型调用。选择权重若只增加操作而不改善外部资料题，则否定假设。\n\n## 场景与替代办法\n\n适合已有Markdown笔记库、希望边问边查出处的知识工作者；合格答案应引用实际支持结论的笔记，而不是仅能打开一个文件。\n\n参照Obsidian原生词面搜索加手工复制，以及常见embedding RAG；本项选择无需向量服务的轻部署方案，牺牲部分语义召回，未证明普遍优于embedding。\n\n## 依赖与流程\n\n需要可访问的本地vault目录、DSH llm/loader/Typert和浏览器；索引不联网，但问答通过已配置模型发送上下文，隐私随模型渠道变化。笔记结构、别名质量、库规模及模型能力决定效果。\n\n选择vault→扫描切块建索引→输入问题→检索及可选规划→模型生成→按300ms轮询取增量→点引用回看；停止通过AbortController，失败回退新attempt并重置输出，重启后历史需客户端存储兜底。\n\n## 成本与效果\n\n无需embedding服务减少一类配置与向量成本，但索引扫描占本地资源，问答与可选规划/模型回退消耗现有模型额度；迁移vault路径和复核引用需人工。未将作者秒级扫描声明转为实测单位成本。\n\n三栏减少切换与复制的机制可见；检索排名、片段截断和模型归纳仍影响合格答案率，是否优于直接搜索要以同题引用支持率和人工纠错时间判断。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：8322b56fde9ffc9b320835e35b32ddc11a771052ad9bd1dfb98ec28523f99c5c。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 23 | 1699 | — | — | 24131 |\n| .mjs | source | 25 | 1519 | 1196 | 151 | — |\n| .js | source | 4 | 4593 | 3590 | 880 | — |\n| .mjs | test | 22 | 1782 | 1355 | 233 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **Host 路由**：Typert提供本地笔记检索、读原文与chatStart/Poll/Stop\n- **后台**：BM25/CJK bigram索引和增量更新\n\n## 工程亮点\n\nvault.js 将并发构建笔记与提交索引分开，并压实旧chunk，值得用于增量索引。index.js 使用attempt重置正文/思考/usage和客户端偏移，防止回退拼接旧回答；移植需要客户端同代次协议。扫描失败跳过与关键词检索边界应可观察，不能把没搜到当库中不存在。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 lib/vault.js、lib/index.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读索引、扫描/增量更新和host问答/回退路径，未检验全部客户端交互、未运行万条库性能或真实模型；作者兼容声明未独立复现。\n- 下一步：在固定库人工标注20个原词、同义改写和外部材料问题，对比普通BM25、当前加权及用户可选权重；记录topK召回、引用支持率、人工纠错时间和全部模型调用。选择权重若只增加操作而不改善外部资料题，则否定假设。\n\n## 源码索引\n\n- [lib/vault.js](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/vault.js)\n- [lib/index.js](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/index.js)\n",
+        "metadata": {
+            "repository": "2026heshao/dsh-obsidian-board",
+            "repository_id": 1415116420,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 3,
+            "pushed_at": "2026-10-20T01:28:47Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A2026heshao%2Fdsh-obsidian-board%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640E:1DEEF7:14A75F:223C84:6AD849CF and timestamp 2026-10-21 05:12:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A2026heshao%2Fdsh-obsidian-board%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6412:15F2FE:14870C:220CF4:6AD849CF and timestamp 2026-10-21 05:12:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A2026heshao%2Fdsh-obsidian-board%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641D:F50F:14ABF8:22377F:6AD849CF and timestamp 2026-10-21 05:12:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A2026heshao%2Fdsh-obsidian-board%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6415:136889:156627:22F6F6:6AD849CF and timestamp 2026-10-21 05:12:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A2026heshao%2Fdsh-obsidian-board%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641A:AF775:1436E0:21BC1F:6AD849CF and timestamp 2026-10-21 05:12:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-obsidian-board",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 133,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-obsidian-board",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-10-13T02:37:20.877Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-obsidian-board",
+                    "error": null,
+                    "latest_version": "0.2.4",
+                    "latest_published_at": "2026-10-20T01:30:32.365Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "072612e0245565cee12cbfd07a421f2029d35c4e",
+                "current_revision": "072612e0245565cee12cbfd07a421f2029d35c4e",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1415116420:root",
+            "repository": "2026heshao/dsh-obsidian-board",
+            "path": "",
+            "revision": "072612e0245565cee12cbfd07a421f2029d35c4e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "daca67a2d01f7b6302eaff6f4942884baa27772bfaeff3060c63421d7403cf6a",
+                "code": "072612e0245565cee12cbfd07a421f2029d35c4e",
+                "maintenance": "3dce70df9e35e48d94dd35a5457133415299bdb52f28a41a22e6471d9204750e"
+            }
+        }
+    }
+}

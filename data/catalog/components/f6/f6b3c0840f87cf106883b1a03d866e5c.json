@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f6b3c0840f87cf106883b1a03d866e5c",
+    "identity": "github:1272366053:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1272366053:root",
+            "repository": "Azzygoatcoder/agent-useful-skills",
+            "path": "",
+            "revision": "243a02767af4ef2721a4d1f3360d03c5d805b755",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "07a71581bb7e2a4b2b8d203d2bdffb38a1adb48b7d241f6c8d21960210fcb706",
+                "code": "243a02767af4ef2721a4d1f3360d03c5d805b755",
+                "maintenance": "4f03a3058e2b22213dd60aa0c6d520ba7142f2e7b6a0ef33ff40f0b9fe9c2b33"
+            }
+        }
+    }
+}

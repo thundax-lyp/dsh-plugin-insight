@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "19be13ad8759c0c60947b9ec75e5a989",
+    "identity": "github:1334268109:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334268109:root",
+            "repository": "feiyang-dev/dsh-usage-plugin",
+            "path": "",
+            "revision": "a7a01981f0d0fa5975065b1a33a4f8de003cc969",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "0a0e7cf632b514a39fd695056c1d39a8f0de393e70d5ddf6239695758a3db4ae",
+                "code": "a7a01981f0d0fa5975065b1a33a4f8de003cc969",
+                "maintenance": "5339372a25c1e53fba4c2984da53c0ae7bbf9d0812f313c276cb2d9acb277085"
+            }
+        }
+    }
+}

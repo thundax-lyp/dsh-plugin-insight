@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "009ba9d03e3250c1385c0b2a29b55f4e",
+    "identity": "github:1412680847:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1412680847:root",
+            "repository": "xufu5438-netizen/dsh-boot-video",
+            "path": "",
+            "revision": "0d7e0b10930e12eccb3f6d79b07b0e2bfb8a030e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "199678d3964f7455b2d862081dda64af4c5ce7301f3020164a4064bb733a9256",
+                "code": "0d7e0b10930e12eccb3f6d79b07b0e2bfb8a030e",
+                "maintenance": "e5ffbc2619d9832396f6c54e7363a2f78995c0450d2e5e6f11f87fd208707ad0"
+            }
+        }
+    }
+}

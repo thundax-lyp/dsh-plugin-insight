@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5188c83edc2b1f829d209be68817afe3",
+    "identity": "github:1342366227:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342366227:root",
+            "repository": "liyu34/dsh-wsl-tray",
+            "path": "",
+            "revision": "ff0327610f76733ebdadc5d9de510f6f09699085",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "703174c4f480f07d8f8c2193379d26c5329a001e125c1cdbb7118599f8f832d1",
+                "code": "ff0327610f76733ebdadc5d9de510f6f09699085",
+                "maintenance": "7ab2c66fe72225504b7c58e144d990874ac095f77a808167413b0a3cb60857be"
+            }
+        }
+    }
+}

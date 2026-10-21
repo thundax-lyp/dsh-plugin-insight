@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "2fc4f08d84a4fd0b370df9851b8ebf14",
+    "identity": "github:1347299756:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347299756:root",
+            "repository": "xain/ui-beep",
+            "path": "",
+            "revision": "e8b86665ff884f862d5e01ac3a760cb223db583b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "5a49c18d7ae9a708e9a9843328092b77c6e1b9bf9a3ed7e8ac47507a23886280",
+                "code": "e8b86665ff884f862d5e01ac3a760cb223db583b",
+                "maintenance": "7f0fe8d5ce32b9e23ad8c864f3ec38f7b2b201392cdb4b9d1d7bfc0456bae170"
+            }
+        }
+    }
+}

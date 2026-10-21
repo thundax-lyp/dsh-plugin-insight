@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "2ea4070ff5e85a839d63cb9b025aa651",
+    "identity": "github:1334876923:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334876923:root",
+            "repository": "sjh9714/dsh-win32",
+            "path": "",
+            "revision": "88f6a8909bc64c0964336a9f1dc46b6d00ea7b50",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "bf256d1c1a7dcf7d44ccae527a1e1ac1738b1ebca4c5ff8838168cb4c663012f",
+                "code": "88f6a8909bc64c0964336a9f1dc46b6d00ea7b50",
+                "maintenance": "2d33bf874d4001355fdd39339a5a4e51d7a682b82a4f9cb64ce9a1fcd2383496"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "25caf82fb78a5070e638146ff76483b9",
+    "identity": "github:1339631230:dsh-desktop-entry",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339631230:dsh-desktop-entry",
+            "repository": "pingg02/dsh-plugins",
+            "path": "dsh-desktop-entry",
+            "revision": "c5516ad4994d2dcfb76fae31d7cefc332ef62f90",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "38d3401ce07c86eacb02e6686ed14821aba7dd8fad56e92e8d6e0b1702e1abaf",
+                "code": "c5516ad4994d2dcfb76fae31d7cefc332ef62f90",
+                "maintenance": "fb54509475ad33f46ab425e5375076b29c3b0340cba4db3e0dcbf798f4e36656"
+            }
+        }
+    }
+}

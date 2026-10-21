@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b551ff7b628f3ad5f66cab5403002e76",
+    "identity": "github:1337202760:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337202760:root",
+            "repository": "zeng6125-rgb/dsh-llm-retry-settings",
+            "path": "",
+            "revision": "c9db2a15487ed17f11bc8ace3caa6b563683f208",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5a47288c5758790c51ccd3dfc03151135bd808c25852c8aebaa743173f0b67f7",
+                "code": "c9db2a15487ed17f11bc8ace3caa6b563683f208",
+                "maintenance": "3ef559caa38f8bb5e783021d8e6ac4acfd11be085f8d8aefc9e833519ef13f2d"
+            }
+        }
+    }
+}

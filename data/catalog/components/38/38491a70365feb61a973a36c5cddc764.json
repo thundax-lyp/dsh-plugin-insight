@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "38491a70365feb61a973a36c5cddc764",
+    "identity": "github:1338165972:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338165972:root",
+            "repository": "GooDAnDReaDY/dsh-image-gen",
+            "path": "",
+            "revision": "8aa2700d0a044b1e07d97a3f1fea80002664a56e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fd82effcb462f3c13033403f72d26a1f04a89add6dfba3dcb8c837bfd61871b8",
+                "code": "8aa2700d0a044b1e07d97a3f1fea80002664a56e",
+                "maintenance": "802faac7ddac94309a2810c263d1ac092d16f4efc0155397812f968963c72a1f"
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "cd0d894665ec7abd6b70db90bbd63291",
+    "identity": "github:1337673512:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337673512:root",
+            "repository": "photon-hq/dsh-imessage",
+            "path": "",
+            "revision": "a644183adf332bff12b2fe359b3326ca1c066846",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "05493cd0541584d538ee8184f184d65a24f4af85c7af0f90d5954ce80efc6274",
+                "code": "a644183adf332bff12b2fe359b3326ca1c066846",
+                "maintenance": "1121911ebeea9ec92a6448c4e9931edf8ce9a38dd07318dd49f2a6cd86f397ef"
+            }
+        }
+    }
+}

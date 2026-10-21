@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "92100f66948422640dd27da455f9a23e",
+    "identity": "github:1355457384:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1355457384:root",
+            "repository": "toddpan/dsh-webapi",
+            "path": "",
+            "revision": "ae11d98786c963ee3130f361aecd6abbd71a5162",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "abb3d79bb7e4a45313a72d7000d83ff170bc8cb350d206fcb8e91336e06dec77",
+                "code": "ae11d98786c963ee3130f361aecd6abbd71a5162",
+                "maintenance": "04bc15651d3f7bb9cb26b88da5b9fb04080f86b146ce1694ad5eaf63250eedb1"
+            }
+        }
+    }
+}

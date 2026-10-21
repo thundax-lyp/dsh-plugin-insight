@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e1470d99a14139b5fa013d577e328669",
+    "identity": "github:1341443562:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1341443562:root",
+            "repository": "Daive1119/local-ocr",
+            "path": "",
+            "revision": "3191e1b98870cfc4174f01ee5258e7e14a1025b8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1e56d805cdaae679a345c2878c7c16a8dd1bec4468ce33bc9fc7dc9b4c2fc49d",
+                "code": "3191e1b98870cfc4174f01ee5258e7e14a1025b8",
+                "maintenance": "b012e5953673c6cdc776d6b4c858c869c64bdaef6ae3fd9b3eb3afb68f4434ca"
+            }
+        }
+    }
+}

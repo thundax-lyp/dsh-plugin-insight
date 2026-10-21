@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d88a0c0707bc1e4a382484fe497b452d",
+    "identity": "github:1342673556:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342673556:root",
+            "repository": "lispking/dsh-auto-evolve",
+            "path": "",
+            "revision": "c85a281e3ae354e6ca5f6edc5f8b36140e5f9e76",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "82268b0d73374ea15921643754e5f1b892ff71fe8c98df1e71972ee66ebf2a90",
+                "code": "c85a281e3ae354e6ca5f6edc5f8b36140e5f9e76",
+                "maintenance": "3f9d8f7566592a06e175e736f3e378f3ca9f0f0b4ac54d4fb746131b6f42407e"
+            }
+        }
+    }
+}

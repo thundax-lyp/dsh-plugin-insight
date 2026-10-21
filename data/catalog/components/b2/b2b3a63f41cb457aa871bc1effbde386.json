@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b2b3a63f41cb457aa871bc1effbde386",
+    "identity": "github:1423298339:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1423298339:root",
+            "repository": "STARDUSTLC666/dsh-review",
+            "path": "",
+            "revision": "53a30cf1152a15ebc615c7ffadf11ba288afcaef",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b6a4dbf4dbb7c4b3642bd4ac42babfccceb2778f64689f166fdd0e1d1b0396b9",
+                "code": "53a30cf1152a15ebc615c7ffadf11ba288afcaef",
+                "maintenance": "c1b6a44d9a3c6a83b9fec2510cd98fb9a5c3fc0951e4b2a3e2bebe8f0c98bc00"
+            }
+        }
+    }
+}

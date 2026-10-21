@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d78e352f7aae3cbdac389adb57f0c2ea",
+    "identity": "github:1337525048:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337525048:root",
+            "repository": "victorzhong0110/dsh-outcome-loop",
+            "path": "",
+            "revision": "d119d0d98b6864ce6a10824e4fa667a471cb975e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6e931e55d8f7bcf1b49548b03ff74378e38941d2ca4ca7c34a22ed63a6d2a0d0",
+                "code": "d119d0d98b6864ce6a10824e4fa667a471cb975e",
+                "maintenance": "d07fc58d16ea334e52293c3911d9e3337e469d52b1b84f8f7a3e6ccbca4c9b80"
+            }
+        }
+    }
+}

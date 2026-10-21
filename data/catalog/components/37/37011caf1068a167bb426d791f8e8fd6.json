@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "37011caf1068a167bb426d791f8e8fd6",
+    "identity": "github:1345815125:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345815125:root",
+            "repository": "PensiveFei/dsh-voice-scribe",
+            "path": "",
+            "revision": "06fd137b4a1381b4ff008d9ef977cc9902137270",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c9c8f28ea54db719186e9e5595e27548812c3588c7fc1c29147e5de5c55cb6d6",
+                "code": "06fd137b4a1381b4ff008d9ef977cc9902137270",
+                "maintenance": "77331f5fc19c7199ccbe66668246da527e379a68445facb6a3c3cd3a5b3e9c7f"
+            }
+        }
+    }
+}

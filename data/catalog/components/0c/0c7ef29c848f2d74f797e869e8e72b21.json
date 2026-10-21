@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0c7ef29c848f2d74f797e869e8e72b21",
+    "identity": "github:1211139949:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1211139949:root",
+            "repository": "tt-a1i/archify",
+            "path": "",
+            "revision": "25cf37080fc8b1dbe758a4efc3935b55f3327083",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "f767d80c1e2d7cc5475dbac16de1a30f53d7f97677a7df0055b9c811fe2b2f44",
+                "code": "25cf37080fc8b1dbe758a4efc3935b55f3327083",
+                "maintenance": "39f3f90d79a1d6f88d5954fda86d8e60d6ea489d4ccb66cbf21f8d699b6beb84"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4a54914dcc838caa232bb74ce294fb3d",
+    "identity": "github:1350683931:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1350683931:root",
+            "repository": "kobenfang/BigTimer",
+            "path": "",
+            "revision": "88b11928177ca6a785b70ec082f332f62c290c06",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a651e29f9abe5fade7eeefdaa2fc1b7432970e66324d25b745864c73f63014d6",
+                "code": "88b11928177ca6a785b70ec082f332f62c290c06",
+                "maintenance": "7247bb975a6b7db1bf70410d6cb8fbacc5267f03815dfaab72471491c87e2f05"
+            }
+        }
+    }
+}

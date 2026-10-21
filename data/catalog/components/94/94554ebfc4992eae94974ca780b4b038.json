@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "94554ebfc4992eae94974ca780b4b038",
+    "identity": "github:1335460421:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335460421:root",
+            "repository": "mervyn-teo/dsh-plugin-collapsible-steps",
+            "path": "",
+            "revision": "667ed25de8c3a45abe001725d6916cf5cc6a2fec",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6c3ef266c3894fe66f0dc5bc679448dddbfc301d2eeed35862bb5ac3abf8f3e8",
+                "code": "667ed25de8c3a45abe001725d6916cf5cc6a2fec",
+                "maintenance": "20bd1bc5a52e34f256b6afd17e29088f8969d56ad41a298571766333d291d6f9"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d44c02495222e1f21da447de62032254",
+    "identity": "github:1333755311:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333755311:root",
+            "repository": "QCYTSN/dsh-dafeiyu",
+            "path": "",
+            "revision": "43542f8fc9567f45ce98534d407abca2ff4ff74e",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "bb6d3a33e5cfcef1a40379870beae051ff5cf5258c949fccb4e2b4e8d4f13faf",
+                "code": "43542f8fc9567f45ce98534d407abca2ff4ff74e",
+                "maintenance": "2310533f761110f7d5645280b098845d64f939b0f1d5690d982f72d34254fb8f"
+            }
+        }
+    }
+}

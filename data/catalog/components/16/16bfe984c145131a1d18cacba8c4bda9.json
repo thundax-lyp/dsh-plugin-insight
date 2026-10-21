@@ -1,0 +1,390 @@
+{
+    "schema_version": 3,
+    "id": "16bfe984c145131a1d18cacba8c4bda9",
+    "identity": "github:1333258432:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1333258432:root",
+            "repository_id": 1333258432,
+            "component_id": "root",
+            "repository": "1na-ko/dsh-hdc-bridge",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-hdc-bridge",
+            "entry_type": "plugin",
+            "technical_category": "tools-integration",
+            "business_category": "software-delivery",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "62928f303fd8e06983245220c42dccdf57ffadcbd08ab07b53c61d53c14b39ec",
+                "code": "51868ae19c9114ea1f7d148f708928c0c0d00e59",
+                "maintenance": "fa038c59c1fa22c38e05472585201010119ce455e22204fc1f9585863f80d5a2"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-01-github-1333258432-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T02:06:33.063Z",
+                    "membership": "present"
+                },
+                {
+                    "id": "2026-10-21-01-github-1333258432-root-directory-1",
+                    "url": "https://github.com/0xsline/awesome-deepseek-harness",
+                    "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
+                    "retrieved_at": "2026-10-21T02:06:33.063Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-01-github-1333258432-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/1na-ko/dsh-hdc-bridge/blob/51868ae19c9114ea1f7d148f708928c0c0d00e59/README.md",
+                    "revision": "51868ae19c9114ea1f7d148f708928c0c0d00e59",
+                    "captured_at": "2026-10-21T02:06:33.063Z",
+                    "summary": "在 DSH 中连接鸿蒙设备，构建调试应用并查询版本化开发知识。",
+                    "artifact": "data/runs/2026-10-21-01/snapshots/1na-ko--dsh-hdc-bridge/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-01-github-1333258432-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/1na-ko/dsh-hdc-bridge/blob/51868ae19c9114ea1f7d148f708928c0c0d00e59/lib/host.js",
+                    "revision": "51868ae19c9114ea1f7d148f708928c0c0d00e59",
+                    "captured_at": "2026-10-21T02:06:33.063Z",
+                    "summary": "核查 lib/host.js、lib/hdc-core.mjs、lib/knowledge.mjs；host.js按会话策略调用shell，新execute/result和旧run两种宿主接口兼容；hdc-core统一设备发现与目标选择，knowledge读取带出处的离线官方文档。",
+                    "artifact": "data/runs/2026-10-21-01/snapshots/1na-ko--dsh-hdc-bridge/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定提交源码抽读与作者材料核查；没有执行目标代码、测试、安装或真实宿主验收，没有确认独立用户效果。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "鸿蒙应用开发者在会话中观察设备、修改代码、构建部署并复核行为；合格交付是目标设备上符合预期的应用。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1333258432-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333258432:root",
+                            "area": "code",
+                            "fingerprint": "51868ae19c9114ea1f7d148f708928c0c0d00e59"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:06:33.063Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "host.js按会话策略调用shell，新execute/result和旧run两种宿主接口兼容；hdc-core统一设备发现与目标选择，knowledge读取带出处的离线官方文档。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1333258432-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333258432:root",
+                            "area": "code",
+                            "fingerprint": "51868ae19c9114ea1f7d148f708928c0c0d00e59"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:06:33.063Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定提交源码抽读与作者材料核查；没有执行目标代码、测试、安装或真实宿主验收，没有确认独立用户效果。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1333258432-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333258432:root",
+                            "area": "code",
+                            "fingerprint": "51868ae19c9114ea1f7d148f708928c0c0d00e59"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:06:33.063Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "检查固定提交包清单与入口；安装说明属于作者主张，本次未验证分发产物与宿主兼容。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1333258432-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333258432:root",
+                            "area": "code",
+                            "fingerprint": "51868ae19c9114ea1f7d148f708928c0c0d00e59"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:06:33.063Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "现金包括设备、模型与开发环境；人工为调试授权、签名、SDK布局兼容及失败复核。回退会增加命令执行与诊断时间，尚无同条件收益测量。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1333258432-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333258432:root",
+                            "area": "code",
+                            "fingerprint": "51868ae19c9114ea1f7d148f708928c0c0d00e59"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:06:33.063Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "已有鸿蒙环境的开发者可在测试设备评估；先验证构建产物与设备身份，再评价闭环是否省时。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1333258432-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333258432:root",
+                            "area": "code",
+                            "fingerprint": "51868ae19c9114ea1f7d148f708928c0c0d00e59"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:06:33.063Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "同一会话承接观察与部署减少手工交接，但源码完整性不能证明修复成功率。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1333258432-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333258432:root",
+                            "area": "code",
+                            "fingerprint": "51868ae19c9114ea1f7d148f708928c0c0d00e59"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:06:33.063Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "hdc-core以依赖注入闭包共享设备发现，知识加载保留来源及截断标记；host的环境失败分类避免缓存错误发现结果。复用时须保留策略、设备身份和产物验证语义。 源码依据：[lib/host.js](https://github.com/1na-ko/dsh-hdc-bridge/blob/51868ae19c9114ea1f7d148f708928c0c0d00e59/lib/host.js#L46)、[lib/hdc-core.mjs](https://github.com/1na-ko/dsh-hdc-bridge/blob/51868ae19c9114ea1f7d148f708928c0c0d00e59/lib/hdc-core.mjs#L17)、[lib/knowledge.mjs](https://github.com/1na-ko/dsh-hdc-bridge/blob/51868ae19c9114ea1f7d148f708928c0c0d00e59/lib/knowledge.mjs#L27)。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1333258432-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333258432:root",
+                            "area": "code",
+                            "fingerprint": "51868ae19c9114ea1f7d148f708928c0c0d00e59"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:06:33.063Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T02:06:33.063Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "51868ae19c9114ea1f7d148f708928c0c0d00e59",
+                "reviewed_at": "2026-10-21T02:06:33.063Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1333258432:root",
+                        "area": "code",
+                        "fingerprint": "51868ae19c9114ea1f7d148f708928c0c0d00e59"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 18,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty：相对直接hdc增量是宿主集成；mechanism：结构化故障和双shell seam有实质适配；transferability：设备漏斗可迁移但需宿主服务；simplification：统一入口仍保留复杂工具链。",
+                    "basis": "interpretation",
+                    "score": 51,
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1333258432-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 15,
+                        "reach": 10,
+                        "economics": 4
+                    },
+                    "rationale": "workflow：集中开发步骤但不代替验收；delivery：设备观察提升交付依据；reach：仍需鸿蒙设备及SDK；economics：减少搬运为推断，未测总工时。",
+                    "basis": "interpretation",
+                    "score": 47,
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1333258432-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "已有鸿蒙环境者仅在人工固定测试设备并核验产物时试用；devecocli可带stale成功、默认会回退首设备，不能以ok认定本次代码部署正确。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "鸿蒙设备调试用户和测试设备交付明确，受硬件环境限制。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "统一发现选设备并附离线官方知识，减少手写hdc与查文档切换。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "两代shell及设备选择源码已查；devecocli允许stale成功、自动回退首设备，真机闭环未验。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "依赖已有HDC与设备工具链，命令失败及设备身份需人工核对。"
+                    }
+                },
+                "score": 65,
+                "revision": "51868ae19c9114ea1f7d148f708928c0c0d00e59",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-01-github-1333258432-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1333258432:root",
+                        "area": "code",
+                        "fingerprint": "51868ae19c9114ea1f7d148f708928c0c0d00e59"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1333258432:root",
+            "repository": "1na-ko/dsh-hdc-bridge",
+            "path": "",
+            "revision": "51868ae19c9114ea1f7d148f708928c0c0d00e59",
+            "fingerprints": {
+                "directory": "62928f303fd8e06983245220c42dccdf57ffadcbd08ab07b53c61d53c14b39ec",
+                "code": "51868ae19c9114ea1f7d148f708928c0c0d00e59",
+                "maintenance": "fa038c59c1fa22c38e05472585201010119ce455e22204fc1f9585863f80d5a2"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T01:54:44Z",
+            "analysis_sha256": "3edd579e435893f3551f815c9af78f64637950a51c9d1da8500c652746f98edb"
+        },
+        "publication.metadata": "data/plugins/1na-ko--dsh-hdc-bridge/META.json",
+        "publication.summaries": {
+            "text": "在 DSH 中连接鸿蒙设备，构建调试应用并查询版本化开发知识。",
+            "revision": "51868ae19c9114ea1f7d148f708928c0c0d00e59",
+            "source_url": "https://github.com/1na-ko/dsh-hdc-bridge/blob/51868ae19c9114ea1f7d148f708928c0c0d00e59/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "51868ae19c9114ea1f7d148f708928c0c0d00e59",
+            "items": {
+                "模型工具": "hdc_list_targets、hdc_screenshot、build_project、start_app（源码注册）；带来源的离线官方知识读取与本地SDK查询"
+            }
+        },
+        "publication.advice": {
+            "revision": "51868ae19c9114ea1f7d148f708928c0c0d00e59",
+            "text": "已有鸿蒙环境的开发者可在测试设备评估；先验证构建产物与设备身份，再评价闭环是否省时。"
+        },
+        "registry": "data/plugins/1na-ko--dsh-hdc-bridge",
+        "reports": "# dsh-hdc-bridge\n\n> 在 DSH 中连接鸿蒙设备，构建调试应用并查询版本化开发知识。\n\n## 使用建议\n\n已有鸿蒙环境的开发者可在测试设备评估；先验证构建产物与设备身份，再评价闭环是否省时。\n\n**核查状态**：已实现机制有源码支持；贡献价值为条件性解释，未来设计假设未验证。本轮仅作固定版本源码核查，未安装、运行目标代码或验收宿主。\n\n- **用途**：鸿蒙应用开发者在会话中观察设备、修改代码、构建部署并复核行为；合格交付是目标设备上符合预期的应用。\n- **亮点**：作者明确以hdc_mcp为已有参照、不重写协议。增量在将会话策略、设备观察、构建回退和版本知识接入同一工作流；shell seam缺失与沙箱环境失败独立报告，减少把环境故障误认成hdc缺失。\n- **思考**：构建成功是否真的对应本次代码？build_project允许devecocli产物未更新时返回成功并附stale警告；hvigorw回退则要求mtime增长，增量无变化可能被拒。产物存在与mtime均不足以证明包对应目标配置，不能把ok视为部署验收。设备自动回退首台也可能改变观察对象。\n- **建议**：已有鸿蒙环境的开发者可在测试设备评估；先验证构建产物与设备身份，再评价闭环是否省时。\n\n## 能力与限制\n\n参照直接hdc脚本及作者点名的hdc_mcp，未对该上游作完整实现比较，不主张协议创新。\n\nhost.js按会话策略调用shell，新execute/result和旧run两种宿主接口兼容；hdc-core统一设备发现与目标选择，knowledge读取带出处的离线官方文档。\n\n\n本机hdc、授权设备及DSH shell服务；构建需DevEco或CLT/SDK、签名凭据，可选devecocli；图像检查依赖图像模型。\n\n先switch_cwd和环境体检，显式选择设备，静态检查与构建，核查产物后安装启动，再以UI树、截图及日志复核；失败按结构化原因处理。\n\n现金包括设备、模型与开发环境；人工为调试授权、签名、SDK布局兼容及失败复核。回退会增加命令执行与诊断时间，尚无同条件收益测量。\n\n同一会话承接观察与部署减少手工交接，但源码完整性不能证明修复成功率。\n\n## 能力清单\n\n- **模型工具**：hdc_list_targets、hdc_screenshot、build_project、start_app（源码注册）；带来源的离线官方知识读取与本地SDK查询\n\n## 工程分析\n\nhdc-core以依赖注入闭包共享设备发现，知识加载保留来源及截断标记；host的环境失败分类避免缓存错误发现结果。复用时须保留策略、设备身份和产物验证语义。 源码依据：[lib/host.js](https://github.com/1na-ko/dsh-hdc-bridge/blob/51868ae19c9114ea1f7d148f708928c0c0d00e59/lib/host.js#L46)、[lib/hdc-core.mjs](https://github.com/1na-ko/dsh-hdc-bridge/blob/51868ae19c9114ea1f7d148f708928c0c0d00e59/lib/hdc-core.mjs#L17)、[lib/knowledge.mjs](https://github.com/1na-ko/dsh-hdc-bridge/blob/51868ae19c9114ea1f7d148f708928c0c0d00e59/lib/knowledge.mjs#L27)。\n\n## 未来设计假设（未验证）\n\n待验证假设：为每次构建部署绑定代码摘要、目标配置、HAP摘要、设备ID和观察记录，可减少过期包与多设备误归因。由已有构建产物检查和设备漏斗组合推导；需额外记录存储并处理敏感日志。\n\n最小验证：两个API设备交替部署，注入旧HAP、无变化增量构建和错误签名；比较直接hdc与身份绑定流程的误投设备、错误成功和人工复核工时；未降低误判即否定假设。\n\n## 核查说明\n\n- **仓库**：[1na-ko/dsh-hdc-bridge](https://github.com/1na-ko/dsh-hdc-bridge)\n- **版本号**：0.10.2（[固定提交 51868ae](https://github.com/1na-ko/dsh-hdc-bridge/tree/51868ae19c9114ea1f7d148f708928c0c0d00e59)）\n- **版本日期**：2026-10-20（固定提交日期，北京时间；不是包发布日期）\n- **实际范围**：固定提交源码抽读与作者材料核查；没有执行目标代码、测试、安装或真实宿主验收，没有确认独立用户效果。\n- **来源**：作者README与上述固定版本源码；未确认独立采用效果，目录收录与下载统计不作效果证据。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：1dffa38a008c6f6980f23053ed5cfb111f51e885450f412f1aeb82ab901de396。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 47 | 41131 | — | — | 270128 |\n| .cjs | source | 1 | 458 | 361 | 36 | — |\n| .js | source | 2 | 3281 | 2860 | 324 | — |\n| .mjs | source | 17 | 3453 | 2904 | 377 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n",
+        "metadata": {
+            "repository": "1na-ko/dsh-hdc-bridge",
+            "repository_id": 1333258432,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 19,
+            "pushed_at": "2026-10-20T12:02:10Z",
+            "issues": {
+                "open": 0,
+                "closed": 3,
+                "created_30d": 1,
+                "closed_30d": 1,
+                "updated_30d": 1
+            },
+            "errors": [],
+            "npm": {
+                "package_name": "dsh-hdc-bridge",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 1740,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-hdc-bridge",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-13T15:46:07.317Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-hdc-bridge",
+                    "error": null,
+                    "latest_version": "0.10.2",
+                    "latest_published_at": "2026-10-12T07:05:59.715Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "51868ae19c9114ea1f7d148f708928c0c0d00e59",
+                "current_revision": "51868ae19c9114ea1f7d148f708928c0c0d00e59",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1333258432:root",
+            "repository": "1na-ko/dsh-hdc-bridge",
+            "path": "",
+            "revision": "51868ae19c9114ea1f7d148f708928c0c0d00e59",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "62928f303fd8e06983245220c42dccdf57ffadcbd08ab07b53c61d53c14b39ec",
+                "code": "51868ae19c9114ea1f7d148f708928c0c0d00e59",
+                "maintenance": "fa038c59c1fa22c38e05472585201010119ce455e22204fc1f9585863f80d5a2"
+            }
+        }
+    }
+}

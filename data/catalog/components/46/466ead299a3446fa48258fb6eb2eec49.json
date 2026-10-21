@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "466ead299a3446fa48258fb6eb2eec49",
+    "identity": "github:1333253750:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333253750:root",
+            "repository": "cendaifeng/dsh-learn-everything",
+            "path": "",
+            "revision": "67cd99210c17564aff3183cae043ba7d2df085bc",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "55236f38f7e4f569f72e38ff66e1367967e25131b5a8df0da13f40d0b381d8ee",
+                "code": "67cd99210c17564aff3183cae043ba7d2df085bc",
+                "maintenance": "3628298bcfb50bb8ebcfe6450e72f56c7c6122ad8a408a2a82229b147efa4278"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9f624cabc70ba334882426ad3d8f1bcd",
+    "identity": "github:1421771749:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1421771749:root",
+            "repository": "weirwei/dsh-logseq",
+            "path": "",
+            "revision": "14faad8c938af1f9794fe520f5073058ac07db42",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ebe2c9f5d78be351e3e4a6aa9ba1f26d918af860ad9c19a74b6f6bf57a4bee64",
+                "code": "14faad8c938af1f9794fe520f5073058ac07db42",
+                "maintenance": "4111241e1df1aa38529b2fbb8104d7796bc93791d767a5f771b2a7024aabc07e"
+            }
+        }
+    }
+}

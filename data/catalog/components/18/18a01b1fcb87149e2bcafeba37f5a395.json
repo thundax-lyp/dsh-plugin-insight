@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "18a01b1fcb87149e2bcafeba37f5a395",
+    "identity": "github:1346758324:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346758324:root",
+            "repository": "navid-kianfar/dsh-usage-info",
+            "path": "",
+            "revision": "52fb93fa1d7a2001fd51f5878fa1ce5d947e8aeb",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "fccf4374f9342c1088fde5a7ad4c85e79151c2fa0964b920b773c465814a8df8",
+                "code": "52fb93fa1d7a2001fd51f5878fa1ce5d947e8aeb",
+                "maintenance": "5b163e3ba971a881623e1ba460e9b87b692cb2bc1a9fe5156d00597986998502"
+            }
+        }
+    }
+}

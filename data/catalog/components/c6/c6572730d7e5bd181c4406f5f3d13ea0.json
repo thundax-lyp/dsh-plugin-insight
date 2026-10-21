@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c6572730d7e5bd181c4406f5f3d13ea0",
+    "identity": "github:1417157734:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1417157734:root",
+            "repository": "Fleey/deepseek-harness-trae",
+            "path": "",
+            "revision": "35cafb11479b8b89d73ecdc60dc6da2d602ce9b3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f2585a7b45228bd20a326429c6e796207077ca5715f0f82c116914676868f099",
+                "code": "35cafb11479b8b89d73ecdc60dc6da2d602ce9b3",
+                "maintenance": "b0ff9285e13a959622692be2bbc047a7cd8f2bd14faa813567c24a5d6bc6cdfb"
+            }
+        }
+    }
+}

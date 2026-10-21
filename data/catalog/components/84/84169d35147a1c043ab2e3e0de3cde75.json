@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "84169d35147a1c043ab2e3e0de3cde75",
+    "identity": "github:1334158914:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334158914:root",
+            "repository": "YMRYMR/deepseek-peak",
+            "path": "",
+            "revision": "07fd9ff6106b671dbcfbb9efac4b433c779491d3",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "f3b375a051b834d2551360923bfc4bb31a23d198c1dbfe3cdae43413dd63dd2b",
+                "code": "07fd9ff6106b671dbcfbb9efac4b433c779491d3",
+                "maintenance": "7bf1073cfae53815146c8c20da382d98d52424ca82b6adffda87844807a430ec"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2c99d91fabacba076a3f26d5a04c4eac",
+    "identity": "github:1337014356:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337014356:root",
+            "repository": "drscrewdriver/dsh-input-traffic",
+            "path": "",
+            "revision": "c64fa70bdb981993706e4eee0b055743d9812c97",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "70ce2919dcdde47ffe776c89584fadf7b7bf3a826f6efabc4ec6027acd386450",
+                "code": "c64fa70bdb981993706e4eee0b055743d9812c97",
+                "maintenance": "563255c0a0284228cf4e7adba47ef028c070c3e848870d0b927f188d316839b6"
+            }
+        }
+    }
+}

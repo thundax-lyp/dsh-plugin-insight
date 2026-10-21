@@ -1,8 +1,0 @@
-{
-  "revision": "bc8edbe47de17d91f9b8a06e0f82e0be7d9d9b67",
-  "items": {
-    "用户命令": "bundle启用的rollback-undo依赖定义/undo回滚入口",
-    "后台": "bundle组合私有Shadow Git、journal恢复及会话分叉依赖",
-    "界面": "bundle配置回滚按钮、归档设置、工具卡片及轨迹折叠客户端"
-  }
-}

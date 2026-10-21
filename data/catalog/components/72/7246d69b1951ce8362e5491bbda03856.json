@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7246d69b1951ce8362e5491bbda03856",
+    "identity": "github:1369358758:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1369358758:root",
+            "repository": "nuaaweixinye/dsh-gme-test-generator",
+            "path": "",
+            "revision": "07c58246e43e28b0eec1be48fb74afa68d9bdb05",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5b864e666e77d651dcf24256d39d43a2b0548703f67775be66cb002c56da93d2",
+                "code": "07c58246e43e28b0eec1be48fb74afa68d9bdb05",
+                "maintenance": "af3b0e598731c72986d945d2c87478f7f0d3f00d8f3076cbac5c1637752dca23"
+            }
+        }
+    }
+}

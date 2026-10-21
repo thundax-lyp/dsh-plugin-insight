@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b3d39316241fb139e5f7fbb5dc772047",
+    "identity": "github:1337355786:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337355786:root",
+            "repository": "Eligahyu/dsh-sentinel-scanner",
+            "path": "",
+            "revision": "5fe1af4fc813e4c3f0e84073aff4e507911c3968",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "cf2a8ce2edc6665ac3e0e72525f6735bb28d0ba934988bbf603ad61414574a20",
+                "code": "5fe1af4fc813e4c3f0e84073aff4e507911c3968",
+                "maintenance": "70efc9292e011f1a58942c1c6c353b015d291db323ca5c751843569347e1a5be"
+            }
+        }
+    }
+}

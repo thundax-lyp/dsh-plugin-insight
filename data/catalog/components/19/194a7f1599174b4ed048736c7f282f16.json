@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "194a7f1599174b4ed048736c7f282f16",
+    "identity": "github:1354241970:packages-dsh-usage-dash",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1354241970:packages-dsh-usage-dash",
+            "repository": "mzzsfy/dsh-plugin",
+            "path": "packages/dsh-usage-dash",
+            "revision": "ef78178469af825c662b6850afc3cbcde593d3b3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8965a60577a09b83d43bdaaa1f70cc6172240624329bfb10be35b4d8a6572fb5",
+                "code": "ef78178469af825c662b6850afc3cbcde593d3b3",
+                "maintenance": "1cffc0df00eb6f1f17f82160122dc9baba104fe94755a94c38be062ac0f6cb72"
+            }
+        }
+    }
+}

@@ -1,7 +1,0 @@
-{
-  "revision": "ccabca348ca2194287f0770ce348283fdb8bf3d8",
-  "items": {
-    "后台": "router.suppliers的Loomy工厂、本机登录态读取及SSE收尾守卫",
-    "Host 路由": "Loomy客户端状态与登录操作页面路由"
-  }
-}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "056a5f4efa71eea07b1016583864a6c6",
+    "identity": "github:1347569379:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347569379:root",
+            "repository": "WJNCT55555/dsh-crt-theme",
+            "path": "",
+            "revision": "3b425d527adb0f96476567af27077911c7f72a47",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "166c8d9ab5a548dc326b3be67eca168bd5285c923b2ff68d05a6238c9c44e980",
+                "code": "3b425d527adb0f96476567af27077911c7f72a47",
+                "maintenance": "d054312289e9e641e4e46b780ab022439369e861b1c434114764c5040188e2a6"
+            }
+        }
+    }
+}

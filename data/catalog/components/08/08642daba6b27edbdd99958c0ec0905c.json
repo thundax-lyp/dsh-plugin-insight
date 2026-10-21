@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "08642daba6b27edbdd99958c0ec0905c",
+    "identity": "github:1336292944:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336292944:root",
+            "repository": "lincong1987/dsh-model-switch",
+            "path": "",
+            "revision": "388de8a36cb3f6514a161e9e9dcc45ca04cd3a08",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "19d2c39b1916f76974efa5e81cc5069a369fd5e609733f8cc2540b61301ddd3b",
+                "code": "388de8a36cb3f6514a161e9e9dcc45ca04cd3a08",
+                "maintenance": "3b09a36902ecb4e20d0c3cf94b3667db019c4ddb7846f07da6a830e9876b786a"
+            }
+        }
+    }
+}

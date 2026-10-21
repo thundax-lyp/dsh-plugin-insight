@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f0e08065868d52df07cadb0476e8a885",
+    "identity": "github:1364186473:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1364186473:root",
+            "repository": "Nicholaskin/vision-exp-tile",
+            "path": "",
+            "revision": "eb60e9104cc5999dda2a0a728550301be70123a8",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "04bd4efc5500340fecf527f34a58ec52ea99671f316fd163a75238feaafcf005",
+                "code": "eb60e9104cc5999dda2a0a728550301be70123a8",
+                "maintenance": "92316fbdfa470f4500588beb60b8d0446844eb7fec94b2299331326ecf93b7c1"
+            }
+        }
+    }
+}

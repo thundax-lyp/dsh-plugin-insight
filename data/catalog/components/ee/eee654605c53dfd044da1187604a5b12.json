@@ -1,0 +1,512 @@
+{
+    "schema_version": 3,
+    "id": "eee654605c53dfd044da1187604a5b12",
+    "identity": "github:1340492335:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1340492335:root",
+            "repository_id": 1340492335,
+            "component_id": "root",
+            "repository": "AKS1st/dock-editor",
+            "path": "",
+            "aliases": [],
+            "name": "dock-editor",
+            "entry_type": "plugin",
+            "technical_category": "interface-input",
+            "business_category": "software-delivery",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "4ae51b272dc85dae1f847ee4e1a73413d643dae2d4cf0529f0742a0ee8369635",
+                "code": "f6e5e0845c42e2b09a7a8d671a66b331fe094634",
+                "maintenance": "ec1fcb6a77d60b26f7afaace62498f4afd4fa60a4b20ee18c822a89c975be7e9"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-06-github-1340492335-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T05:36:01.315Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-06-github-1340492335-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/AKS1st/dock-editor/blob/f6e5e0845c42e2b09a7a8d671a66b331fe094634/README.md",
+                    "revision": "f6e5e0845c42e2b09a7a8d671a66b331fe094634",
+                    "captured_at": "2026-10-21T05:36:01.315Z",
+                    "summary": "把受限文本读写与CodeMirror编辑接入Dock文件查看器。",
+                    "artifact": "data/runs/2026-10-21-06/snapshots/aks1st--dock-editor/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-06-github-1340492335-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/AKS1st/dock-editor/blob/f6e5e0845c42e2b09a7a8d671a66b331fe094634/src/index.ts",
+                    "revision": "f6e5e0845c42e2b09a7a8d671a66b331fe094634",
+                    "captured_at": "2026-10-21T05:36:01.315Z",
+                    "summary": "核查 src/index.ts、src/client/index.ts、src/client/EditorView.tsx、src/client/CodeMirrorEditor.tsx；服务端注册/desk-editor读写路由，客户端向files注册默认文本viewer、向workbench注册编辑视图；EditorView管理加载、dirty与保存，CodeMirror负责编辑器能力。",
+                    "artifact": "data/runs/2026-10-21-06/snapshots/aks1st--dock-editor/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-06-parent-dock-1340492184",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/AKS1st/dock/blob/8535f6e24670931d9e93fb087ab474e38aa01856/src/client/service.ts",
+                    "revision": "8535f6e24670931d9e93fb087ab474e38aa01856",
+                    "captured_at": "2026-10-21T05:37:28.591Z",
+                    "summary": "父Agent对照AKS1st/dock/src/client/service.ts的注册、资源桥接或保存路径。",
+                    "artifact": "data/runs/2026-10-21-06/snapshots/aks1st--dock-editor/PARENT-COMPARISON.json",
+                    "limitations": [
+                        "抽读所列固定源码，未安装/执行、未验证宿主或并发行为。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-06-parent-dock-1340492214",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/AKS1st/dock-files/blob/d24224beb8cf024a9c6e79fe97445001d73150b8/src/client/openBridge.ts",
+                    "revision": "d24224beb8cf024a9c6e79fe97445001d73150b8",
+                    "captured_at": "2026-10-21T05:37:28.591Z",
+                    "summary": "父Agent对照AKS1st/dock-files/src/client/openBridge.ts的注册、资源桥接或保存路径。",
+                    "artifact": "data/runs/2026-10-21-06/snapshots/aks1st--dock-editor/PARENT-COMPARISON.json",
+                    "limitations": [
+                        "抽读所列固定源码，未安装/执行、未验证宿主或并发行为。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-06-parent-dock-1340492335",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/AKS1st/dock-editor/blob/f6e5e0845c42e2b09a7a8d671a66b331fe094634/src/index.ts",
+                    "revision": "f6e5e0845c42e2b09a7a8d671a66b331fe094634",
+                    "captured_at": "2026-10-21T05:37:28.591Z",
+                    "summary": "父Agent对照AKS1st/dock-editor/src/index.ts的注册、资源桥接或保存路径。",
+                    "artifact": "data/runs/2026-10-21-06/snapshots/aks1st--dock-editor/PARENT-COMPARISON.json",
+                    "limitations": [
+                        "抽读所列固定源码，未安装/执行、未验证宿主或并发行为。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "在聊天旁查看和编辑会话工作区的小型文本文件，外部绝对路径只读。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492335-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492335:root",
+                            "area": "code",
+                            "fingerprint": "f6e5e0845c42e2b09a7a8d671a66b331fe094634"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:36:01.315Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "服务端注册/desk-editor读写路由，客户端向files注册默认文本viewer、向workbench注册编辑视图；EditorView管理加载、dirty与保存，CodeMirror负责编辑器能力。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492335-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492335:root",
+                            "area": "code",
+                            "fingerprint": "f6e5e0845c42e2b09a7a8d671a66b331fe094634"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:36:01.315Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492335-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492335:root",
+                            "area": "code",
+                            "fingerprint": "f6e5e0845c42e2b09a7a8d671a66b331fe094634"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:36:01.315Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "分发以本插件固定package.json、运行依赖与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492335-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492335:root",
+                            "area": "code",
+                            "fingerprint": "f6e5e0845c42e2b09a7a8d671a66b331fe094634"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:36:01.315Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "需三个插件兼容与构建产物，日常维护编辑状态和API版本；无模型token调用，浏览器内存与文本限制约束大文件。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492335-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492335:root",
+                            "area": "code",
+                            "fingerprint": "f6e5e0845c42e2b09a7a8d671a66b331fe094634"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:36:01.315Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "适合工作区小文本的辅助编辑；先验证保存冲突与关闭恢复，再处理重要文件。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492335-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492335:root",
+                            "area": "code",
+                            "fingerprint": "f6e5e0845c42e2b09a7a8d671a66b331fe094634"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:36:01.315Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "减少小改动切换应用的步骤，未有耗时/丢失率对照或真实宿主验收。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492335-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492335:root",
+                            "area": "code",
+                            "fingerprint": "f6e5e0845c42e2b09a7a8d671a66b331fe094634"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:36:01.315Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "读写权限分层、服务端独立写约束、dirty同步到工作台关闭钩子可复用；生成bundle与CodeMirror体量不能当作本插件原创实现。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492335-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492335:root",
+                            "area": "code",
+                            "fingerprint": "f6e5e0845c42e2b09a7a8d671a66b331fe094634"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:36:01.315Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "将编辑权限和显示状态接起来：读取最多256KiB并识别NUL二进制，截断或外部只读文件禁保存，写端独立realpath约束会话工作区。核心编辑能力归CodeMirror，项目贡献在宿主接线和有限文本操作。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492335-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492335:root",
+                            "area": "code",
+                            "fingerprint": "f6e5e0845c42e2b09a7a8d671a66b331fe094634"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:36:01.315Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "fs.write最终直接writeFile且没有原内容/mtime版本比较；外部程序或另一视图修改后，保存可能覆盖新内容。关闭提示不能解决并发写；读取允许任意绝对路径，工作区约束只适用于写入，不能将其描述为完整读隔离。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492335-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492335:root",
+                            "area": "code",
+                            "fingerprint": "f6e5e0845c42e2b09a7a8d671a66b331fe094634"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:36:01.315Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "未验证假设：保存请求附读取时内容摘要并在冲突时提供重新载入/差异视图，可减少静默覆盖。以两个编辑者交错保存及外部修改样本比较覆盖率和恢复工时，冲突必须保留双方内容。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492335-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492335:root",
+                            "area": "code",
+                            "fingerprint": "f6e5e0845c42e2b09a7a8d671a66b331fe094634"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:36:01.315Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cross-dock-resource-contract",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "跨插件比较：dock基座提供视图注册、实例seed和beforeClose；dock-files把带session的资源地址解析成路径，再交workbench.openPath；dock-editor读端允许绝对路径、写端独立限制会话工作区，并直接writeFile。它们分别解决界面生命周期、资源分派和写入范围，关闭提示与路径围栏都不能替代保存时的版本比较。由此推导未验证假设：跨插件资源句柄统一携带原会话身份、读写能力及读取版本，保存时比较内容摘要，冲突保留两份内容。这可能降低Agent与人工编辑同一文件时的静默覆盖，也便于追踪资源归属。最小验证用两个会话和外部改写交错打开/保存，对照现有路径传递，测错误目标、覆盖率及恢复工时；若冲突率或恢复成本未改善则否定，不宣称当前组合已通过安全或并发验收。",
+                    "evidence_ids": [
+                        "2026-10-21-06-parent-dock-1340492184",
+                        "2026-10-21-06-parent-dock-1340492214",
+                        "2026-10-21-06-parent-dock-1340492335"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492184:root",
+                            "area": "code",
+                            "fingerprint": "8535f6e24670931d9e93fb087ab474e38aa01856"
+                        },
+                        {
+                            "plugin_id": "github:1340492214:root",
+                            "area": "code",
+                            "fingerprint": "d24224beb8cf024a9c6e79fe97445001d73150b8"
+                        },
+                        {
+                            "plugin_id": "github:1340492335:root",
+                            "area": "code",
+                            "fingerprint": "f6e5e0845c42e2b09a7a8d671a66b331fe094634"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:37:28.591Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T05:37:28.591Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "f6e5e0845c42e2b09a7a8d671a66b331fe094634",
+                "reviewed_at": "2026-10-21T05:36:01.315Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1340492335:root",
+                        "area": "code",
+                        "fingerprint": "f6e5e0845c42e2b09a7a8d671a66b331fe094634"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 4
+                    },
+                    "rationale": "novelty=9：成熟编辑引擎的宿主集成。 mechanism=15：读写约束和脏状态有具体接线。 transferability=10：接口可复用但绑定Dock/files。 simplification=4：小文件便捷，兼容维护增加。",
+                    "basis": "interpretation",
+                    "score": 38,
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492335-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 15,
+                        "reach": 10,
+                        "economics": 4
+                    },
+                    "rationale": "workflow=18：打开编辑保存闭环明确。 delivery=15：并发版本保护缺失，交付需复核。 reach=10：适合Dock用户的小文本。 economics=4：无切换时间与维护收益对照。",
+                    "basis": "interpretation",
+                    "score": 47,
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492335-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "工作区文本编辑者应先增加保存版本冲突校验；当前直接writeFile可能覆盖外部新内容，关闭提示不足以保护重要文件。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "聊天旁小文本编辑是明确需求。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "CodeMirror与Dock/files结合减少应用切换。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "已核dirty及保存路径，确认无mtime/内容版本比较。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "三插件契约及读绝对路径成本之外，并发覆盖阻碍可靠编辑。"
+                    }
+                },
+                "score": 54,
+                "revision": "f6e5e0845c42e2b09a7a8d671a66b331fe094634",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-06-github-1340492335-root-source",
+                    "2026-10-21-06-parent-dock-1340492335"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1340492335:root",
+                        "area": "code",
+                        "fingerprint": "f6e5e0845c42e2b09a7a8d671a66b331fe094634"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1340492335:root",
+            "repository": "AKS1st/dock-editor",
+            "path": "",
+            "revision": "f6e5e0845c42e2b09a7a8d671a66b331fe094634",
+            "fingerprints": {
+                "directory": "4ae51b272dc85dae1f847ee4e1a73413d643dae2d4cf0529f0742a0ee8369635",
+                "code": "f6e5e0845c42e2b09a7a8d671a66b331fe094634",
+                "maintenance": "ec1fcb6a77d60b26f7afaace62498f4afd4fa60a4b20ee18c822a89c975be7e9"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T05:26:52Z",
+            "analysis_sha256": "43e1afb3f73157645cfc13366bc1d85098c7e63720a7f178648b0737cae0276e"
+        },
+        "publication.metadata": "data/plugins/aks1st--dock-editor/META.json",
+        "publication.summaries": {
+            "text": "把受限文本读写与CodeMirror编辑接入Dock文件查看器。",
+            "revision": "f6e5e0845c42e2b09a7a8d671a66b331fe094634",
+            "source_url": "https://github.com/AKS1st/dock-editor/blob/f6e5e0845c42e2b09a7a8d671a66b331fe094634/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "f6e5e0845c42e2b09a7a8d671a66b331fe094634",
+            "items": {
+                "界面": "Dock文本编辑与默认文件viewer",
+                "Host 路由": "/desk-editor/fs.read和fs.write"
+            }
+        },
+        "publication.advice": {
+            "revision": "f6e5e0845c42e2b09a7a8d671a66b331fe094634",
+            "text": "适合工作区小文本的辅助编辑；先验证保存冲突与关闭恢复，再处理重要文件。"
+        },
+        "registry": "data/plugins/aks1st--dock-editor",
+        "reports": "# dock-editor\n\n> 把受限文本读写与CodeMirror编辑接入Dock文件查看器。\n\n## 使用建议\n\n适合工作区小文本的辅助编辑；先验证保存冲突与关闭恢复，再处理重要文件。\n\n**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，插件与依赖流程的实际运行尚未验证；未来假设未验证。\n\n## 洞察短评\n\n- **用途**：在聊天旁查看和编辑会话工作区的小型文本文件，外部绝对路径只读。\n- **亮点**：将编辑权限和显示状态接起来：读取最多256KiB并识别NUL二进制，截断或外部只读文件禁保存，写端独立realpath约束会话工作区。核心编辑能力归CodeMirror，项目贡献在宿主接线和有限文本操作。\n- **思考**：fs.write最终直接writeFile且没有原内容/mtime版本比较；外部程序或另一视图修改后，保存可能覆盖新内容。关闭提示不能解决并发写；读取允许任意绝对路径，工作区约束只适用于写入，不能将其描述为完整读隔离。\n- **建议**：未验证假设：保存请求附读取时内容摘要并在冲突时提供重新载入/差异视图，可减少静默覆盖。以两个编辑者交错保存及外部修改样本比较覆盖率和恢复工时，冲突必须保留双方内容。\n\n## 场景与替代办法\n\n参照CodeMirror编辑器与外部IDE；增量是Dock资源分派、脏状态关闭保护和会话工作区写入约束，不是新编辑引擎。\n\n## 能力清单\n\n- **界面**：Dock文本编辑与默认文件viewer\n- **Host 路由**：/desk-editor/fs.read和fs.write\n\n## 依赖与流程\n\n服务端注册/desk-editor读写路由，客户端向files注册默认文本viewer、向workbench注册编辑视图；EditorView管理加载、dirty与保存，CodeMirror负责编辑器能力。\n\n依赖Dock的workbench、dock-files文件viewer服务及宿主webServer/sessions/webRuntime；CodeMirror随构建打包，服务契约副本须与运行版本一致。\n\n文件分派→fs.read返回内容、binary/truncated/writable→编辑→fs.write→更新dirty；关闭前用seed元数据提示未保存内容。\n\n## 成本与效果\n\n需三个插件兼容与构建产物，日常维护编辑状态和API版本；无模型token调用，浏览器内存与文本限制约束大文件。\n\n减少小改动切换应用的步骤，未有耗时/丢失率对照或真实宿主验收。\n\n## 核心贡献\n\n将编辑权限和显示状态接起来：读取最多256KiB并识别NUL二进制，截断或外部只读文件禁保存，写端独立realpath约束会话工作区。核心编辑能力归CodeMirror，项目贡献在宿主接线和有限文本操作。\n\n## 关键质疑\n\nfs.write最终直接writeFile且没有原内容/mtime版本比较；外部程序或另一视图修改后，保存可能覆盖新内容。关闭提示不能解决并发写；读取允许任意绝对路径，工作区约束只适用于写入，不能将其描述为完整读隔离。\n\n## 工程亮点\n\n读写权限分层、服务端独立写约束、dirty同步到工作台关闭钩子可复用；生成bundle与CodeMirror体量不能当作本插件原创实现。\n\n源码依据：[src/index.ts](https://github.com/AKS1st/dock-editor/blob/f6e5e0845c42e2b09a7a8d671a66b331fe094634/src/index.ts)、[src/client/index.ts](https://github.com/AKS1st/dock-editor/blob/f6e5e0845c42e2b09a7a8d671a66b331fe094634/src/client/index.ts)、[src/client/EditorView.tsx](https://github.com/AKS1st/dock-editor/blob/f6e5e0845c42e2b09a7a8d671a66b331fe094634/src/client/EditorView.tsx)、[src/client/CodeMirrorEditor.tsx](https://github.com/AKS1st/dock-editor/blob/f6e5e0845c42e2b09a7a8d671a66b331fe094634/src/client/CodeMirrorEditor.tsx)。\n\n跨插件比较：dock基座提供视图注册、实例seed和beforeClose；dock-files把带session的资源地址解析成路径，再交workbench.openPath；dock-editor读端允许绝对路径、写端独立限制会话工作区，并直接writeFile。它们分别解决界面生命周期、资源分派和写入范围，关闭提示与路径围栏都不能替代保存时的版本比较。由此推导未验证假设：跨插件资源句柄统一携带原会话身份、读写能力及读取版本，保存时比较内容摘要，冲突保留两份内容。这可能降低Agent与人工编辑同一文件时的静默覆盖，也便于追踪资源归属。最小验证用两个会话和外部改写交错打开/保存，对照现有路径传递，测错误目标、覆盖率及恢复工时；若冲突率或恢复成本未改善则否定，不宣称当前组合已通过安全或并发验收。\n\n对照源码：[AKS1st/dock/src/client/service.ts](https://github.com/AKS1st/dock/blob/8535f6e24670931d9e93fb087ab474e38aa01856/src/client/service.ts)、[AKS1st/dock-files/src/client/openBridge.ts](https://github.com/AKS1st/dock-files/blob/d24224beb8cf024a9c6e79fe97445001d73150b8/src/client/openBridge.ts)、[AKS1st/dock-editor/src/index.ts](https://github.com/AKS1st/dock-editor/blob/f6e5e0845c42e2b09a7a8d671a66b331fe094634/src/index.ts)。\n\n## 未来设计假设（未验证）\n\n未验证假设：保存请求附读取时内容摘要并在冲突时提供重新载入/差异视图，可减少静默覆盖。以两个编辑者交错保存及外部修改样本比较覆盖率和恢复工时，冲突必须保留双方内容。\n\n在隔离工作区检查同时保存、软链接外写拒绝、超限/二进制只读和取消关闭；本轮未执行。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：bae481108bb81042acec8ec2bfcf27c0fc4c4cd98b04cc50010fb0a621642608。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 30952 | 26213 | 5076 | — |\n| .md | source | 2 | 131 | — | — | 1838 |\n| .ts | source | 8 | 1310 | 872 | 348 | — |\n| .tsx | source | 3 | 808 | 625 | 129 | — |\n| .mjs | source | 1 | 52 | 38 | 12 | — |\n\n排除 11 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[AKS1st/dock-editor](https://github.com/AKS1st/dock-editor)\n- **版本号**：0.2.2（[固定提交 f6e5e084](https://github.com/AKS1st/dock-editor/tree/f6e5e0845c42e2b09a7a8d671a66b331fe094634)）\n- **版本日期**：2026-09-11（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：src/index.ts、src/client/index.ts、src/client/EditorView.tsx、src/client/CodeMirrorEditor.tsx、作者README、package与固定范围inventory；源码抽读不等于完整审计。\n- 未验证：插件执行、测试、安装、真实宿主与独立采用。\n- 证据限制：固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。\n- 下一步：在隔离工作区检查同时保存、软链接外写拒绝、超限/二进制只读和取消关闭；本轮未执行。\n",
+        "metadata": {
+            "repository": "AKS1st/dock-editor",
+            "repository_id": 1340492335,
+            "captured_at": "2026-10-21T05:33:26.700Z",
+            "window_start": "2026-09-21T05:33:26.700Z",
+            "stars": 3,
+            "pushed_at": "2026-09-11T08:05:39Z",
+            "issues": {
+                "open": 0,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-editor%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CC1E:2723D0:511027:571769:6AD84EA9 and timestamp 2026-10-21 05:33:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-editor%20is%3Aissue%20created%3A2026-09-21T05%3A33%3A26.700Z..2026-10-21T05%3A33%3A26.700Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CD10:32D9F:516C2B:5774BC:6AD84EAA and timestamp 2026-10-21 05:33:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-editor%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A33%3A26.700Z..2026-10-21T05%3A33%3A26.700Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CECE:110389:553835:5B405B:6AD84EAB and timestamp 2026-10-21 05:33:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-editor%20is%3Aissue%20updated%3A2026-09-21T05%3A33%3A26.700Z..2026-10-21T05%3A33%3A26.700Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CFC6:4AA35:55BFBC:5BC8E5:6AD84EAC and timestamp 2026-10-21 05:33:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dock-editor",
+                "captured_at": "2026-10-21T05:33:32.463Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 903,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dock-editor",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-23T06:01:16.552Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dock-editor",
+                    "error": null,
+                    "latest_version": "0.2.2",
+                    "latest_published_at": "2026-09-11T08:19:29.155Z",
+                    "latest_error": null
+                }
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1340492335:root",
+            "repository": "AKS1st/dock-editor",
+            "path": "",
+            "revision": "f6e5e0845c42e2b09a7a8d671a66b331fe094634",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4ae51b272dc85dae1f847ee4e1a73413d643dae2d4cf0529f0742a0ee8369635",
+                "code": "f6e5e0845c42e2b09a7a8d671a66b331fe094634",
+                "maintenance": "ec1fcb6a77d60b26f7afaace62498f4afd4fa60a4b20ee18c822a89c975be7e9"
+            }
+        }
+    }
+}

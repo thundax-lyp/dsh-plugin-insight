@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6180c99a3c91128e81e3f2c22dca5d12",
+    "identity": "github:1346041946:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346041946:root",
+            "repository": "birdmanhj/dsh-mv-session",
+            "path": "",
+            "revision": "a621388e9ed8186776f14d69ea8fa6ff005a20c5",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "b7165eed0f508f4319f985a2635eb97a5e0372c42423cee821e3bcac68f4d99c",
+                "code": "a621388e9ed8186776f14d69ea8fa6ff005a20c5",
+                "maintenance": "a7ca9b969333eda13c89cbf4bbb4139037400df9e5202c0cf1032f28c637fe15"
+            }
+        }
+    }
+}

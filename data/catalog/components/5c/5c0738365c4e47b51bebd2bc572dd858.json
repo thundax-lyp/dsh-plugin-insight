@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5c0738365c4e47b51bebd2bc572dd858",
+    "identity": "github:1403020394:plugins-dsh-bulletin-announce",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1403020394:plugins-dsh-bulletin-announce",
+            "repository": "southsnowL/dsh-bulletin",
+            "path": "plugins/dsh-bulletin-announce",
+            "revision": "8798db2b5367f2b66f188b438a295699b7d7577b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "740185bd79fa079a2a3e3d9e631e265d37f05bb79c541e0b005bc39a38ce38da",
+                "code": "8798db2b5367f2b66f188b438a295699b7d7577b",
+                "maintenance": "b7bf6304fae8c7e44867e07a9a90d42c1ab67054fc5a1080bb04d7d3e872881e"
+            }
+        }
+    }
+}

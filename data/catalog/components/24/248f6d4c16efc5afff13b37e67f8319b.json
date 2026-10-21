@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "248f6d4c16efc5afff13b37e67f8319b",
+    "identity": "github:1414805409:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1414805409:root",
+            "repository": "Noct2vis/dsh-mastery-loop",
+            "path": "",
+            "revision": "6949d32e79b7071168a35b6b042187a15437f7be",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3124afea99c5eeee0e3810bf5076da59cf76f1e19a991f7bdf120937897ccdb2",
+                "code": "6949d32e79b7071168a35b6b042187a15437f7be",
+                "maintenance": "8ee3a90303e39552595f8cea5d799c473c85a28e46d71a399289d1e75987afda"
+            }
+        }
+    }
+}

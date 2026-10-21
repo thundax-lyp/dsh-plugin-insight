@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "18a6045b20f91af35ba82722da5c3cfc",
+    "identity": "github:1407542248:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1407542248:root",
+            "repository": "zhp282515-wq/dsh-plugin-agnes-image",
+            "path": "",
+            "revision": "95190674274856b79ac9e3f27d0dad7d7896cea6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "70cffad1e8e2ff39377fda5a371c22cf05b5e10f4375a39f9c243ab60e60debe",
+                "code": "95190674274856b79ac9e3f27d0dad7d7896cea6",
+                "maintenance": "d11fc0536178661316a70caf1df695f6e2710e03290283fcdd5591f088b8964f"
+            }
+        }
+    }
+}

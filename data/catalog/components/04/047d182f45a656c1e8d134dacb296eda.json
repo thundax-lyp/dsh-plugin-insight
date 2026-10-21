@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "047d182f45a656c1e8d134dacb296eda",
+    "identity": "github:1334430738:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334430738:root",
+            "repository": "a179-sanae/dsh-auto-collapse",
+            "path": "",
+            "revision": "141a5c71d7bf556a2feba030d0f6f43104e903d4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "18528215797c3c05ceffd2fe5310614519f9918afce1375b9274ecea248c212b",
+                "code": "141a5c71d7bf556a2feba030d0f6f43104e903d4",
+                "maintenance": "17b150deda6a3028eb7f7052879ee0550902fd40611e51546ea6953b9e8a4e9d"
+            }
+        }
+    }
+}

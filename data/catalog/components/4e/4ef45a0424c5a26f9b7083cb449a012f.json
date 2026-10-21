@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4ef45a0424c5a26f9b7083cb449a012f",
+    "identity": "github:1336777771:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336777771:root",
+            "repository": "kobenfang/BigFocus",
+            "path": "",
+            "revision": "65095b123d6db7d04bcf8bd85f38f386e5a1758c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1dcf02bd38645bb61b87c229b82fdf941b550418f4f256ba120987d2559703ad",
+                "code": "65095b123d6db7d04bcf8bd85f38f386e5a1758c",
+                "maintenance": "f59006c7cbe2df6d950d4960043f47baf8fd7c3739535fa7bb41962a3c8db528"
+            }
+        }
+    }
+}

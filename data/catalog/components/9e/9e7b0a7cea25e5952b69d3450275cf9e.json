@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9e7b0a7cea25e5952b69d3450275cf9e",
+    "identity": "github:1336556851:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336556851:root",
+            "repository": "Luke-Yong/dsh-plugin-project-management",
+            "path": "",
+            "revision": "b10c38fa50b4d195971f649444e1326d0900febf",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "244033e7eaffd138a0a89b48b2f31dbdefd5e140822fa3e3c319c6d1aa6f4702",
+                "code": "b10c38fa50b4d195971f649444e1326d0900febf",
+                "maintenance": "75eba9032aded61594811010afa643d6d15a1e48784ffb2bbf6574633d91102e"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "69b92f1b74170c8e7a035b1bc47cc3b6",
+    "identity": "github:1321865940:task-complete-notify-for-dsh",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1321865940:task-complete-notify-for-dsh",
+            "repository": "lxp731/agents-plugins",
+            "path": "task-complete-notify-for-dsh",
+            "revision": "ad955d486a421ec0c58d25270d5350199dd97069",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "279e04cf6cf7826704183d30987d836f55ab25055b801dfd9e956d31adcb2936",
+                "code": "ad955d486a421ec0c58d25270d5350199dd97069",
+                "maintenance": "2e801da8b0e402932e1387cc86f23a4c95fe3265e15329a775b323a8d8f707e1"
+            }
+        }
+    }
+}

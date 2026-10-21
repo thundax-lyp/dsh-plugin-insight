@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bcc4191d795350e8a18520d6d0c5a9f8",
+    "identity": "github:1268795053:dsh-copree",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1268795053:dsh-copree",
+            "repository": "Coprexist/Copree",
+            "path": "dsh-copree",
+            "revision": "295a4cb666d8f122c993b6e306e4b43d2af21bd7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "08816ba41cc73d5e89af67c19ab0e5c3c2f97e83feaf559e7b2662b45e735df5",
+                "code": "295a4cb666d8f122c993b6e306e4b43d2af21bd7",
+                "maintenance": "16e5c3e3555fb1ff6daae2300239ef87ea504d51c1a2494b9d901264817f6294"
+            }
+        }
+    }
+}

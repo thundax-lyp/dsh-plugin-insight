@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "67f2239293e7eaa59374b180c544c2b7",
+    "identity": "github:1360022877:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1360022877:root",
+            "repository": "lumoping/dsh-todo-inbox",
+            "path": "",
+            "revision": "21cb2506813f14195e4344f8263458538eb95c69",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f10733a195c71b5f2ba21dd292c0343d947773b95bc8ef33137caa35206448ab",
+                "code": "21cb2506813f14195e4344f8263458538eb95c69",
+                "maintenance": "0610cb208dd4f497ef1531010f5388405a5bc894dcc52747e796c360ad77936c"
+            }
+        }
+    }
+}

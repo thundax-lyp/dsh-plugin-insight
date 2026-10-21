@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "988f8ecd11772c9952a3a19e81762225",
+    "identity": "github:1337978261:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337978261:root",
+            "repository": "Asianfleet/dsh-message-copy-enhance",
+            "path": "",
+            "revision": "9d8595501224621db5942fadddcbdb0efceba686",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "94f43a48c49f53d2a0c7eae61b039f1687d6facdbec2403148ccdd7e58657420",
+                "code": "9d8595501224621db5942fadddcbdb0efceba686",
+                "maintenance": "5429610e75322b0b50272dc24089e47f14fc2a2bc53921b6a583cb56791cb845"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3817e1a4c9c07549cabc222ffd29bf4f",
+    "identity": "github:1425551330:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425551330:root",
+            "repository": "cxv117793-blip/dsh-step-pause",
+            "path": "",
+            "revision": "eeb93a7ff027e4beba94b8089dfb72dfe45b2550",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1398b7be8a70982233a92a737f4b97f5302af5d1b2258ce1fe8431d87d453592",
+                "code": "eeb93a7ff027e4beba94b8089dfb72dfe45b2550",
+                "maintenance": "55ba71868ba8bc322c19e79737d87b7000816726f0f25ce1c2c1126aaa97a2f2"
+            }
+        }
+    }
+}

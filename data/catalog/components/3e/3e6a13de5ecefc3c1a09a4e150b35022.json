@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3e6a13de5ecefc3c1a09a4e150b35022",
+    "identity": "github:1335028281:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335028281:root",
+            "repository": "cindyguyuehu123/dsh-mobile",
+            "path": "",
+            "revision": "33415c77045cbf47d85256b60f4d3fa8802cdd90",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c9c50e426f55d28f3c523d1d13ab58de78306cb366d430f8db5df6e3f2e9d7ae",
+                "code": "33415c77045cbf47d85256b60f4d3fa8802cdd90",
+                "maintenance": "d23650d81f74c04d523c9140629675b0360d58c28fb4412bc8bc8e6e8a3aa064"
+            }
+        }
+    }
+}

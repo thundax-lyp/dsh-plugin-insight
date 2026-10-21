@@ -1,0 +1,363 @@
+{
+    "schema_version": 3,
+    "id": "e70e9fad4ec3e5df5cb966d87920790f",
+    "identity": "github:1364961230:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1364961230:root",
+            "repository_id": 1364961230,
+            "component_id": "root",
+            "repository": "1569126506-sudo/dsh-team-cost",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-team-cost",
+            "entry_type": "plugin",
+            "technical_category": "observability-cost",
+            "business_category": "office-operations",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "7535fe7f1b6735c96005fd439aec738c07b7b2cab74707dad71da422e6e01a41",
+                "code": "72f371c7cf45578791739c06b1d949e2868536dd",
+                "maintenance": "a976e1143a69db1e1958530eaf4ecb1ac54ded653da3e32d4555f1b98d68438d"
+            },
+            "sources": [
+                {
+                    "id": "20261020-incremental40-r2-github-1364961230-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T04:31:53.465Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "20261020-incremental40-r2-github-1364961230-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/1569126506-sudo/dsh-team-cost/blob/72f371c7cf45578791739c06b1d949e2868536dd/README.md",
+                    "revision": "72f371c7cf45578791739c06b1d949e2868536dd",
+                    "captured_at": "2026-10-20T04:31:53.465Z",
+                    "summary": "按工作区归属成员统计模型用量，提供团队报表、预算告警和可选请求拦截。",
+                    "artifact": "data/runs/2026-10-20-04/snapshots/1569126506-sudo--dsh-team-cost/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "20261020-incremental40-r2-github-1364961230-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/1569126506-sudo/dsh-team-cost/blob/72f371c7cf45578791739c06b1d949e2868536dd/src/index.ts",
+                    "revision": "72f371c7cf45578791739c06b1d949e2868536dd",
+                    "captured_at": "2026-10-20T04:31:53.465Z",
+                    "summary": "核查 src/index.ts、src/attribution.ts、src/pricing.ts、src/quota.ts、src/store.ts；src/index.ts监听assistant/message用量，按cwd最长前缀归因，写JSONL及汇总；agent/request可按团队或成员预算拒绝新请求。",
+                    "artifact": "data/runs/2026-10-20-04/snapshots/1569126506-sudo--dsh-team-cost/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "路径前缀不是登录身份认证，startsWith未检查目录边界；未知模型默认零价会低估金额，成员拦截依赖请求payload可解析。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "共用宿主的团队需要把用量归到成员并管预算，验收应对齐账单与身份，不能只看报表有数字。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1364961230-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1364961230:root",
+                            "area": "code",
+                            "fingerprint": "72f371c7cf45578791739c06b1d949e2868536dd"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:31:53.465Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "src/index.ts监听assistant/message用量，按cwd最长前缀归因，写JSONL及汇总；agent/request可按团队或成员预算拒绝新请求。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1364961230-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1364961230:root",
+                            "area": "code",
+                            "fingerprint": "72f371c7cf45578791739c06b1d949e2868536dd"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:31:53.465Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "路径前缀不是登录身份认证，startsWith未检查目录边界；未知模型默认零价会低估金额，成员拦截依赖请求payload可解析。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1364961230-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1364961230:root",
+                            "area": "code",
+                            "fingerprint": "72f371c7cf45578791739c06b1d949e2868536dd"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:31:53.465Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "0.2.1，Node>=22，发布入口dist/index.js，依赖zod及宿主session/request事件、Web RPC；作者说npm渠道尚待开放。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1364961230-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1364961230:root",
+                            "area": "code",
+                            "fingerprint": "72f371c7cf45578791739c06b1d949e2868536dd"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:31:53.465Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "账本写入、轮询与Webhook有运维负担，价格维护和归属纠错占人工；没有实测漏计比例或账单精度。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1364961230-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1364961230:root",
+                            "area": "code",
+                            "fingerprint": "72f371c7cf45578791739c06b1d949e2868536dd"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:31:53.465Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先只监测不拦截，对照实际账单和子代理用量，补全模型价格并检查相似工作区前缀；金额可信后再考虑预算阻断。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1364961230-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1364961230:root",
+                            "area": "code",
+                            "fingerprint": "72f371c7cf45578791739c06b1d949e2868536dd"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:31:53.465Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "把团队汇总接到请求门禁有管理价值；若归属或单价缺失，报表精确显示也会掩盖错误。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1364961230-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1364961230:root",
+                            "area": "code",
+                            "fingerprint": "72f371c7cf45578791739c06b1d949e2868536dd"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:31:53.465Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "归因、价格、quota与store分层便于替换；路径规范化无大小写平台区分，未知价回退与字符串前缀都需独立约束。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1364961230-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1364961230:root",
+                            "area": "code",
+                            "fingerprint": "72f371c7cf45578791739c06b1d949e2868536dd"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:31:53.465Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T04:31:53.465Z",
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "团队成本管理有价值，但路径前缀误归属与未知价默认为零会影响核心金额，先修归因和缺价再评估预算阻断。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "团队成员用量归因和预算管理需求明确。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "归因连到请求门禁较单人仪表有增量。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "源码已确认startsWith无目录边界及未知价归零。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "错误金额与身份会导致误拦或漏拦，价格和账本需专人维护。"
+                    }
+                },
+                "score": 60,
+                "revision": "72f371c7cf45578791739c06b1d949e2868536dd",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "20261020-incremental40-r2-github-1364961230-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1364961230:root",
+                        "area": "code",
+                        "fingerprint": "72f371c7cf45578791739c06b1d949e2868536dd"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1364961230:root",
+            "repository": "1569126506-sudo/dsh-team-cost",
+            "path": "",
+            "revision": "72f371c7cf45578791739c06b1d949e2868536dd",
+            "fingerprints": {
+                "directory": "7535fe7f1b6735c96005fd439aec738c07b7b2cab74707dad71da422e6e01a41",
+                "code": "72f371c7cf45578791739c06b1d949e2868536dd",
+                "maintenance": "a976e1143a69db1e1958530eaf4ecb1ac54ded653da3e32d4555f1b98d68438d"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T04:25:27.514Z",
+            "analysis_sha256": "309f5d99e3b6a1311f9c51276d50b9a0a522591dc80084996623cb3b0e959089"
+        },
+        "publication.metadata": "data/plugins/1569126506-sudo--dsh-team-cost/META.json",
+        "publication.summaries": {
+            "text": "按工作区归属成员统计模型用量，提供团队报表、预算告警和可选请求拦截。",
+            "revision": "72f371c7cf45578791739c06b1d949e2868536dd",
+            "source_url": "https://github.com/1569126506-sudo/dsh-team-cost/blob/72f371c7cf45578791739c06b1d949e2868536dd/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "72f371c7cf45578791739c06b1d949e2868536dd",
+            "items": {
+                "模型工具": "team_cost_report。",
+                "后台": "成员归因、用量账本、预算告警及请求拦截。",
+                "界面": "RPC团队成本看板。"
+            }
+        },
+        "publication.advice": {
+            "revision": "72f371c7cf45578791739c06b1d949e2868536dd",
+            "text": "先只监测不拦截，对照实际账单和子代理用量，补全模型价格并检查相似工作区前缀；金额可信后再考虑预算阻断。"
+        },
+        "registry": "data/plugins/1569126506-sudo--dsh-team-cost",
+        "reports": "# dsh-team-cost\n\n> 按工作区归属成员统计模型用量，提供团队报表、预算告警和可选请求拦截。\n\n## 固定范围与依据\n\n固定提交 [72f371c7cf45578791739c06b1d949e2868536dd](https://github.com/1569126506-sudo/dsh-team-cost/blob/72f371c7cf45578791739c06b1d949e2868536dd/src/index.ts)；组件路径：仓库根。核查时间 2026-10-20T04:31:53.465Z；本轮基准 2026-10-20T04:25:27.514Z。\n源码抽读路径：src/index.ts、src/attribution.ts、src/pricing.ts、src/quota.ts、src/store.ts。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：共用宿主的团队需要把用量归到成员并管预算，验收应对齐账单与身份，不能只看报表有数字。\n- **亮点**：src/index.ts监听assistant/message用量，按cwd最长前缀归因，写JSONL及汇总；agent/request可按团队或成员预算拒绝新请求。\n- **思考**：把团队汇总接到请求门禁有管理价值；若归属或单价缺失，报表精确显示也会掩盖错误。\n- **建议**：先只监测不拦截，对照实际账单和子代理用量，补全模型价格并检查相似工作区前缀；金额可信后再考虑预算阻断。\n\n## 场景与替代办法\n\n共用宿主的团队需要把用量归到成员并管预算，验收应对齐账单与身份，不能只看报表有数字。\n\n此前未入档；厂商账单与单人用量插件为对照。本项主要补团队归因，但没有独立证据支持README中的漏计倍数。\n\n## 依赖与流程\n\n需要完整usage事件、准确cwd、价格表与可写账本，Webhook另依赖外部接收方；没有归属时会落默认成员。\n\n配置成员路径和价格，积累报表，对账后设置告警；触发预算时核对请求身份，误拦先关闭enforce并修归属，不把缺价当免费。\n\n## 成本与效果\n\n账本写入、轮询与Webhook有运维负担，价格维护和归属纠错占人工；没有实测漏计比例或账单精度。\n\n把团队汇总接到请求门禁有管理价值；若归属或单价缺失，报表精确显示也会掩盖错误。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：b71cf60b1c62bf3cb41976228da5bd12ed5b18bd98fdeb110cef67c5a434a8f6。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 193 | 163 | 17 | — |\n| .md | source | 2 | 181 | — | — | 1918 |\n| .mjs | source | 2 | 128 | 98 | 18 | — |\n| .ts | source | 10 | 1038 | 795 | 156 | — |\n| .mjs | test | 1 | 93 | 78 | 7 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **模型工具**：team_cost_report。\n- **后台**：成员归因、用量账本、预算告警及请求拦截。\n- **界面**：RPC团队成本看板。\n\n## 工程亮点\n\n归因、价格、quota与store分层便于替换；路径规范化无大小写平台区分，未知价回退与字符串前缀都需独立约束。\n\n## 分发与兼容\n\n0.2.1，Node>=22，发布入口dist/index.js，依赖zod及宿主session/request事件、Web RPC；作者说npm渠道尚待开放。\n\n## 历史对照\n\n当前快照此前没有该稳定身份的研究档案。此前未入档；厂商账单与单人用量插件为对照。本项主要补团队归因，但没有独立证据支持README中的漏计倍数。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：路径前缀不是登录身份认证，startsWith未检查目录边界；未知模型默认零价会低估金额，成员拦截依赖请求payload可解析。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：以父子会话、相邻目录前缀、重放事件与未知模型对账，验证重启去重、预算边界及并发请求超额，记录差异金额。\n",
+        "metadata": {
+            "repository": "1569126506-sudo/dsh-team-cost",
+            "repository_id": 1364961230,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 2,
+            "pushed_at": "2026-09-10T22:18:19Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1569126506-sudo%2Fdsh-team-cost%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6403:3FE872:13A5C7:211C7C:6AD84947 and timestamp 2026-10-21 05:10:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1569126506-sudo%2Fdsh-team-cost%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6415:DBD0:155DE7:22CC19:6AD84947 and timestamp 2026-10-21 05:10:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1569126506-sudo%2Fdsh-team-cost%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6416:1E49B1:145349:21C222:6AD84947 and timestamp 2026-10-21 05:10:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1569126506-sudo%2Fdsh-team-cost%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6417:2401FE:14AB68:22222F:6AD84947 and timestamp 2026-10-21 05:10:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1569126506-sudo%2Fdsh-team-cost%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641C:1CA4C8:149884:221B10:6AD84947 and timestamp 2026-10-21 05:10:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-team-cost",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-team-cost",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-team-cost",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "72f371c7cf45578791739c06b1d949e2868536dd",
+                "current_revision": "72f371c7cf45578791739c06b1d949e2868536dd",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1364961230:root",
+            "repository": "1569126506-sudo/dsh-team-cost",
+            "path": "",
+            "revision": "72f371c7cf45578791739c06b1d949e2868536dd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7535fe7f1b6735c96005fd439aec738c07b7b2cab74707dad71da422e6e01a41",
+                "code": "72f371c7cf45578791739c06b1d949e2868536dd",
+                "maintenance": "a976e1143a69db1e1958530eaf4ecb1ac54ded653da3e32d4555f1b98d68438d"
+            }
+        }
+    }
+}

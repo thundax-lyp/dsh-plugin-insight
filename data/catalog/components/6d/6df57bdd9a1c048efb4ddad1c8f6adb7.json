@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6df57bdd9a1c048efb4ddad1c8f6adb7",
+    "identity": "github:1407518555:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1407518555:root",
+            "repository": "Nishikinov/dsh-sidebar-settings-button",
+            "path": "",
+            "revision": "cbde5b022210b4af3525198d0dfe11397588b2fd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6222caebe82993b221cca7e2f9f0ae739f61f627752075e1bc43e5cc774f2a49",
+                "code": "cbde5b022210b4af3525198d0dfe11397588b2fd",
+                "maintenance": "5187fc239983cd79094af716ca9655e95b00f27ee4749b6869d8905b60275fa5"
+            }
+        }
+    }
+}

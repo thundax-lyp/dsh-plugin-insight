@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c166912548e951af27930548107757e9",
+    "identity": "github:1418755588:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1418755588:root",
+            "repository": "imtwa/dsh-recall-sessions",
+            "path": "",
+            "revision": "acd5a99485350d91767b9925c4559300e2d789bb",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d0070e2322d2f9079bb33fb86e6af4c0210d0b60659b703def5c8846ee968d73",
+                "code": "acd5a99485350d91767b9925c4559300e2d789bb",
+                "maintenance": "0dad9047dee33480fde821017e5268e2c85979725aa4627dcb91fe041afc31b8"
+            }
+        }
+    }
+}

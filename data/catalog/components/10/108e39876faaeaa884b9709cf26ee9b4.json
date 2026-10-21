@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "108e39876faaeaa884b9709cf26ee9b4",
+    "identity": "github:1394707772:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1394707772:root",
+            "repository": "Fwkkk666/dsh-za-warudo",
+            "path": "",
+            "revision": "3ac4ac1c46e5cf0a35381472f664e3198f8eac9b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a8dc208544b657c07ea75ab0ff6f4d79a90da985c63f1e9327c059876bf3ee79",
+                "code": "3ac4ac1c46e5cf0a35381472f664e3198f8eac9b",
+                "maintenance": "13ce676efbd8c184f8e958bd62cd45c6b6f2ac80992253ff4f39e8421965c5b4"
+            }
+        }
+    }
+}

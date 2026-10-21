@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "352a5f1fc0fa8a93f95d1fd467eabcf0",
+    "identity": "github:1423285413:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1423285413:root",
+            "repository": "afawfawffaf/dsh-plugin-lx-music",
+            "path": "",
+            "revision": "9ea31789e45c3ce41dd74aaa5c58a787cd557e02",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c6b3ec4d9e0fb5d397aa5dbdf9bf8b5a014525bde5381002096cc179d4a61e50",
+                "code": "9ea31789e45c3ce41dd74aaa5c58a787cd557e02",
+                "maintenance": "f74eae74885e8f7586c5472dca3e793e367bd6af905671e9eafad5401f6699a4"
+            }
+        }
+    }
+}

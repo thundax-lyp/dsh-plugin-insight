@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f61f9b98124a983f22edb2943a9e1e13",
+    "identity": "github:1422457585:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1422457585:root",
+            "repository": "ferrisching/dsh-prompt-predict",
+            "path": "",
+            "revision": "ded6c292b4347a47825520ef54b5b20ca53e8bd7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8bc72ae3f6e344937899da5ecae4bf3d8f72f9bd2338f7dccdc2e343c0244cfc",
+                "code": "ded6c292b4347a47825520ef54b5b20ca53e8bd7",
+                "maintenance": "aee799d02443c2e644de7b10da1cd95afcd5015f53b10b43026def499ada9b17"
+            }
+        }
+    }
+}

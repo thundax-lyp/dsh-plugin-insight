@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b979e3533cb94d5444b155a72e612867",
+    "identity": "github:1342551567:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342551567:root",
+            "repository": "BrianHIO-x/dsh-think-expand",
+            "path": "",
+            "revision": "8954cd7459d1df8736a9aa679c1c2382607ecf90",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d43af23153db794352d835062a61af8fcd37487cbbbbb3cf3a95ab211e5a5d04",
+                "code": "8954cd7459d1df8736a9aa679c1c2382607ecf90",
+                "maintenance": "88e1d13c734c50e101457810f0a38d9f9328b9950c94403e0f2872fe32fc27a9"
+            }
+        }
+    }
+}

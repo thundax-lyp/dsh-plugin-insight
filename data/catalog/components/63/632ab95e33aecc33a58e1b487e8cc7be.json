@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "632ab95e33aecc33a58e1b487e8cc7be",
+    "identity": "github:1352949866:packages-memory-mcp",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1352949866:packages-memory-mcp",
+            "repository": "Luisarg03/dsh-memory-vault",
+            "path": "packages/memory-mcp",
+            "revision": "eaafdcf6b1e356c97c0076ee72b988affbf57ba1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2237b88ac4304068affb2f1a3fc16a714cd46ed68af7752dd1c3001573bb13c4",
+                "code": "eaafdcf6b1e356c97c0076ee72b988affbf57ba1",
+                "maintenance": "b54cb83db332ebeae6ff6867366a742acc7a11ba0537e1b95e6f95dcb00cd790"
+            }
+        }
+    }
+}

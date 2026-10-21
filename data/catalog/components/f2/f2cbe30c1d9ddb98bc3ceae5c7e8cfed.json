@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f2cbe30c1d9ddb98bc3ceae5c7e8cfed",
+    "identity": "github:1340484421:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340484421:root",
+            "repository": "alloevil/dsh-xray",
+            "path": "",
+            "revision": "2fe86c376099a3131dee2b88d1bd52252a81c5e6",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "f1b3f7c3b823f807ceb6894f333d49e7906f49ab3da15c4962f62e8bf9b09731",
+                "code": "2fe86c376099a3131dee2b88d1bd52252a81c5e6",
+                "maintenance": "099234b7e461339705ad3615f1b1dc637b904e23b2a2e9997ff6c754e1d53eb0"
+            }
+        }
+    }
+}

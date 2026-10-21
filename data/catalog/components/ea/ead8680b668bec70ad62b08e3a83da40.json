@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "ead8680b668bec70ad62b08e3a83da40",
+    "identity": "github:1334366968:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334366968:root",
+            "repository": "Cavan-Ou/hermes-dsh-collab",
+            "path": "",
+            "revision": "459f8753a5e2dc3e2455182b9c89dda79202e655",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "2c67e1ab22e1dbd07a6b63a8eafdf356bb01e9fc1365dafa3baaeac27d4b7563",
+                "code": "459f8753a5e2dc3e2455182b9c89dda79202e655",
+                "maintenance": "2242ebe47603cd79e1496989f39b850a5dfb8916b7e6517a3537c2ee6a3e2526"
+            }
+        }
+    }
+}

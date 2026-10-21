@@ -1,0 +1,361 @@
+{
+    "schema_version": 3,
+    "id": "3b5b9d0bebd5b4b8c43ab298de1a171b",
+    "identity": "github:1384810806:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1384810806:root",
+            "repository_id": 1384810806,
+            "component_id": "root",
+            "repository": "173787247/dsh-device-bridge",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-device-bridge",
+            "entry_type": "plugin",
+            "technical_category": "tools-integration",
+            "business_category": "office-operations",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "6d55e827825ac79239403ed3054079d8f9d455413c5af5087a970ef85ac3a8b9",
+                "code": "25699dfd31f32500e5016e90d271c8e6674c1945",
+                "maintenance": "66b3a5af458294b29b2d9ea9d0ca23d7c76af2aedf3f99bfeb32fbb36d5d0f0e"
+            },
+            "sources": [
+                {
+                    "id": "20261020-incremental40-r2-github-1384810806-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T04:34:40.899Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "20261020-incremental40-r2-github-1384810806-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/173787247/dsh-device-bridge/blob/25699dfd31f32500e5016e90d271c8e6674c1945/README.md",
+                    "revision": "25699dfd31f32500e5016e90d271c8e6674c1945",
+                    "captured_at": "2026-10-20T04:34:40.899Z",
+                    "summary": "把实现Companion协议的手机或设备接入DSH，提供设备列表、健康查询和动作调用。",
+                    "artifact": "data/runs/2026-10-20-04/snapshots/173787247--dsh-device-bridge/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "20261020-incremental40-r2-github-1384810806-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/173787247/dsh-device-bridge/blob/25699dfd31f32500e5016e90d271c8e6674c1945/index.js",
+                    "revision": "25699dfd31f32500e5016e90d271c8e6674c1945",
+                    "captured_at": "2026-10-20T04:34:40.899Z",
+                    "summary": "核查 index.js、lib/companion_client.js、docs/PROTOCOL.md；index.js注册三个工具，按配置选择设备和允许动作，再委托dsh-wsl-common的Companion客户端发送HTTP请求。",
+                    "artifact": "data/runs/2026-10-20-04/snapshots/173787247--dsh-device-bridge/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "仓库只重导出共享客户端，依赖为未固定SHA的GitHub引用；mock与Termux样例不证明任意IoT实际可用。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "用户希望从会话触发已知设备动作，合格交付是正确设备实际完成动作并能报告失败。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1384810806-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1384810806:root",
+                            "area": "code",
+                            "fingerprint": "25699dfd31f32500e5016e90d271c8e6674c1945"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:34:40.899Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "index.js注册三个工具，按配置选择设备和允许动作，再委托dsh-wsl-common的Companion客户端发送HTTP请求。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1384810806-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1384810806:root",
+                            "area": "code",
+                            "fingerprint": "25699dfd31f32500e5016e90d271c8e6674c1945"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:34:40.899Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "仓库只重导出共享客户端，依赖为未固定SHA的GitHub引用；mock与Termux样例不证明任意IoT实际可用。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1384810806-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1384810806:root",
+                            "area": "code",
+                            "fingerprint": "25699dfd31f32500e5016e90d271c8e6674c1945"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:34:40.899Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "0.1.1，Node>=18，需要DSH tools/systemPrompt及外部dsh-wsl-common；是可选桥接，不随套件默认安装。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1384810806-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1384810806:root",
+                            "area": "code",
+                            "fingerprint": "25699dfd31f32500e5016e90d271c8e6674c1945"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:34:40.899Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "需要部署并维护设备端服务、网络及token，失败重试与人工确认设备状态占时间；没有端到端完成率或费用实测。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1384810806-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1384810806:root",
+                            "area": "code",
+                            "fingerprint": "25699dfd31f32500e5016e90d271c8e6674c1945"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:34:40.899Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先只开放ping/status等无副作用动作，在隔离网络核对设备身份；固定共享依赖与设备端实现后再启用实际控制。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1384810806-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1384810806:root",
+                            "area": "code",
+                            "fingerprint": "25699dfd31f32500e5016e90d271c8e6674c1945"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:34:40.899Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "统一轻量协议能降低多设备接入重复工作；动作名白名单并不证明动作本身无副作用。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1384810806-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1384810806:root",
+                            "area": "code",
+                            "fingerprint": "25699dfd31f32500e5016e90d271c8e6674c1945"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:34:40.899Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "工具层显式设备选择与allowActions清单清楚；实际确认、鉴权和传输边界主要落在未固定共享依赖与设备服务。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1384810806-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1384810806:root",
+                            "area": "code",
+                            "fingerprint": "25699dfd31f32500e5016e90d271c8e6674c1945"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:34:40.899Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T04:34:40.899Z",
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "设备动作桥接有潜力，但实际确认鉴权落在未固定共享依赖，先固定SHA与设备服务，再以ping核对身份。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "已知设备的具名动作接入场景明确。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "统一协议减少接线，但原API或SSH可替代。"
+                    },
+                    "evidence": {
+                        "score": 6,
+                        "rationale": "当前仅薄入口与重导出，关键共享传输实现未绑定版本。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "设备常驻服务、网络token与重复动作恢复提高运维负担。"
+                    }
+                },
+                "score": 47,
+                "revision": "25699dfd31f32500e5016e90d271c8e6674c1945",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "20261020-incremental40-r2-github-1384810806-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1384810806:root",
+                        "area": "code",
+                        "fingerprint": "25699dfd31f32500e5016e90d271c8e6674c1945"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1384810806:root",
+            "repository": "173787247/dsh-device-bridge",
+            "path": "",
+            "revision": "25699dfd31f32500e5016e90d271c8e6674c1945",
+            "fingerprints": {
+                "directory": "6d55e827825ac79239403ed3054079d8f9d455413c5af5087a970ef85ac3a8b9",
+                "code": "25699dfd31f32500e5016e90d271c8e6674c1945",
+                "maintenance": "66b3a5af458294b29b2d9ea9d0ca23d7c76af2aedf3f99bfeb32fbb36d5d0f0e"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T04:25:27.514Z",
+            "analysis_sha256": "bc888e002c2dd5e49c1942fd0880d672c0436491a132374a55373878ff224afd"
+        },
+        "publication.metadata": "data/plugins/173787247--dsh-device-bridge/META.json",
+        "publication.summaries": {
+            "text": "把实现Companion协议的手机或设备接入DSH，提供设备列表、健康查询和动作调用。",
+            "revision": "25699dfd31f32500e5016e90d271c8e6674c1945",
+            "source_url": "https://github.com/173787247/dsh-device-bridge/blob/25699dfd31f32500e5016e90d271c8e6674c1945/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "25699dfd31f32500e5016e90d271c8e6674c1945",
+            "items": {
+                "模型工具": "device_list、device_status、device_invoke。"
+            }
+        },
+        "publication.advice": {
+            "revision": "25699dfd31f32500e5016e90d271c8e6674c1945",
+            "text": "先只开放ping/status等无副作用动作，在隔离网络核对设备身份；固定共享依赖与设备端实现后再启用实际控制。"
+        },
+        "registry": "data/plugins/173787247--dsh-device-bridge",
+        "reports": "# dsh-device-bridge\n\n> 把实现Companion协议的手机或设备接入DSH，提供设备列表、健康查询和动作调用。\n\n## 固定范围与依据\n\n固定提交 [25699dfd31f32500e5016e90d271c8e6674c1945](https://github.com/173787247/dsh-device-bridge/blob/25699dfd31f32500e5016e90d271c8e6674c1945/index.js)；组件路径：仓库根。核查时间 2026-10-20T04:34:40.899Z；本轮基准 2026-10-20T04:25:27.514Z。\n源码抽读路径：index.js、lib/companion_client.js、docs/PROTOCOL.md。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：用户希望从会话触发已知设备动作，合格交付是正确设备实际完成动作并能报告失败。\n- **亮点**：index.js注册三个工具，按配置选择设备和允许动作，再委托dsh-wsl-common的Companion客户端发送HTTP请求。\n- **思考**：统一轻量协议能降低多设备接入重复工作；动作名白名单并不证明动作本身无副作用。\n- **建议**：先只开放ping/status等无副作用动作，在隔离网络核对设备身份；固定共享依赖与设备端实现后再启用实际控制。\n\n## 场景与替代办法\n\n用户希望从会话触发已知设备动作，合格交付是正确设备实际完成动作并能报告失败。\n\n此前未入档；设备原生API和SSH为替代，本项适合已有统一HTTP动作协议的薄设备。\n\n## 依赖与流程\n\n需要可达且受控的Companion服务、与协议匹配的动作实现和共享包；效果依赖设备在线及动作结果可核查。\n\n列设备、查健康、选择白名单动作并调用，随后核对设备状态；超时先查询实际结果，避免重复触发有副作用动作。\n\n## 成本与效果\n\n需要部署并维护设备端服务、网络及token，失败重试与人工确认设备状态占时间；没有端到端完成率或费用实测。\n\n统一轻量协议能降低多设备接入重复工作；动作名白名单并不证明动作本身无副作用。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：776417459bff6849290e1a7c103b55992f61258f5ecc41321e4c3c31f8491b89。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 125 | — | — | 551 |\n| .js | source | 2 | 127 | 119 | 1 | — |\n| .js | test | 1 | 13 | 12 | 2 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **模型工具**：device_list、device_status、device_invoke。\n\n## 工程亮点\n\n工具层显式设备选择与allowActions清单清楚；实际确认、鉴权和传输边界主要落在未固定共享依赖与设备服务。\n\n## 分发与兼容\n\n0.1.1，Node>=18，需要DSH tools/systemPrompt及外部dsh-wsl-common；是可选桥接，不随套件默认安装。\n\n## 历史对照\n\n当前快照此前没有该稳定身份的研究档案。此前未入档；设备原生API和SSH为替代，本项适合已有统一HTTP动作协议的薄设备。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：仓库只重导出共享客户端，依赖为未固定SHA的GitHub引用；mock与Termux样例不证明任意IoT实际可用。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：固定依赖后测试错设备、错误token、动作拒绝、超时已执行与重试；以设备端日志核对是否重复执行。\n",
+        "metadata": {
+            "repository": "173787247/dsh-device-bridge",
+            "repository_id": 1384810806,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 1,
+            "pushed_at": "2026-09-30T03:21:30Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-device-bridge%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6402:23DB53:15483A:22CF5C:6AD84951 and timestamp 2026-10-21 05:10:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-device-bridge%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640B:13810:147548:21FCC5:6AD84952 and timestamp 2026-10-21 05:10:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-device-bridge%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640C:C23BB:142FE0:21B894:6AD84952 and timestamp 2026-10-21 05:10:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-device-bridge%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6408:24715:143D9B:21B290:6AD84952 and timestamp 2026-10-21 05:10:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-device-bridge%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641B:E4386:14FB5D:22737D:6AD84952 and timestamp 2026-10-21 05:10:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-device-bridge",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-device-bridge",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-device-bridge",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "25699dfd31f32500e5016e90d271c8e6674c1945",
+                "current_revision": "25699dfd31f32500e5016e90d271c8e6674c1945",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1384810806:root",
+            "repository": "173787247/dsh-device-bridge",
+            "path": "",
+            "revision": "25699dfd31f32500e5016e90d271c8e6674c1945",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6d55e827825ac79239403ed3054079d8f9d455413c5af5087a970ef85ac3a8b9",
+                "code": "25699dfd31f32500e5016e90d271c8e6674c1945",
+                "maintenance": "66b3a5af458294b29b2d9ea9d0ca23d7c76af2aedf3f99bfeb32fbb36d5d0f0e"
+            }
+        }
+    }
+}

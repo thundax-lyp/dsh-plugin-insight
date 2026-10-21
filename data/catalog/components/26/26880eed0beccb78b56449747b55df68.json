@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "26880eed0beccb78b56449747b55df68",
+    "identity": "github:1397400254:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1397400254:root",
+            "repository": "Han-1413141/dsh-compat-guardian",
+            "path": "",
+            "revision": "91638f9a984e269020afff84f3ebb3d4315bef5d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "f569a256a04c85ce216372f6f0d7f05bdcac5e806a38dc038f2acef5496ca3a5",
+                "code": "91638f9a984e269020afff84f3ebb3d4315bef5d",
+                "maintenance": "d0a80920f3f2a59172783aec9ade8717c7cd300e4d3bb4f7c6f657f2b53905ce"
+            }
+        }
+    }
+}

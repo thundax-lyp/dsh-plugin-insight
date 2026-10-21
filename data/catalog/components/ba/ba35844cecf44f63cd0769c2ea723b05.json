@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ba35844cecf44f63cd0769c2ea723b05",
+    "identity": "github:1343299857:plugins-dsh-plan-board",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343299857:plugins-dsh-plan-board",
+            "repository": "dennisrongo/dsh-plugins",
+            "path": "plugins/dsh-plan-board",
+            "revision": "c6e06d6ee21dfd4955555ccb7036a8cb4d6355a4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d0cc04b4e898192fa62275f87d1f1123d0da9226617903e51b8a2089ed2363c4",
+                "code": "c6e06d6ee21dfd4955555ccb7036a8cb4d6355a4",
+                "maintenance": "1433aa830dcd3f45daf52219106a3671b92d938d488d38ef0c810a479f48da53"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "650f00d20076cc8ccb0ae2eea906df11",
+    "identity": "github:1333730394:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333730394:root",
+            "repository": "xingyingyuzhui/dsh-updater-ui",
+            "path": "",
+            "revision": "2db597b84f82a504c8c74acbdf9aae1df9b25092",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a590a8cb9baf858a059ae80163de385c25edb2db08fd9889c5cdad64c7507cfa",
+                "code": "2db597b84f82a504c8c74acbdf9aae1df9b25092",
+                "maintenance": "fa2fd0fa55345c4c0f291f813fd7db6d4a5915523d75cf906552e58793cb228b"
+            }
+        }
+    }
+}

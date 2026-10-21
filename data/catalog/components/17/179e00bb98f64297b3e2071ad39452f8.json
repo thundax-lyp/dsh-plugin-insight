@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "179e00bb98f64297b3e2071ad39452f8",
+    "identity": "github:1394637389:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1394637389:root",
+            "repository": "acdsh4869/dsh-deepseek-web-relay",
+            "path": "",
+            "revision": "bebd12c9016bdb50fc9dd0ed139ae02222fe7aa7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1019649e7bb2060312ba48316cda27082fd0e36fa760c2ce0a980ff0771e0acf",
+                "code": "bebd12c9016bdb50fc9dd0ed139ae02222fe7aa7",
+                "maintenance": "dba3fb516f3d0b7c6198867b27d80973dcc6f22f809ecb9fed668ae7e2b5bb8d"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8b55f50b280100510b0a6f39037be9a2",
+    "identity": "github:1366231146:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1366231146:root",
+            "repository": "HERO476/dsh-instruction-memory",
+            "path": "",
+            "revision": "9330de76e9498c116fe36fe4297d36f055d3b4f4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "afcab035166cd3b7974135377fc0083c16104386d042208db6ee01dda9d2e216",
+                "code": "9330de76e9498c116fe36fe4297d36f055d3b4f4",
+                "maintenance": "612d73d02bcff4d8770188fdea48fcd51a9062b0760c730fe2edab6c6f826eec"
+            }
+        }
+    }
+}

@@ -1,7 +1,0 @@
-{
-  "revision": "5ee6b1d8aa90a1dab83c30db96838482331db304",
-  "items": {
-    "Host 路由": "GET周榜数据及上游缓存降级。",
-    "界面": "main面板、侧栏入口和原生bundle命令复制。"
-  }
-}

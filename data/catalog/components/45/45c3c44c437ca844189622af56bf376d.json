@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "45c3c44c437ca844189622af56bf376d",
+    "identity": "github:1420216247:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1420216247:root",
+            "repository": "dingchenhui0618-arch/dsh-turing-table",
+            "path": "",
+            "revision": "224d2711cdf798fa63f5818800f311e8ef77fb44",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "dab9bf4790ce51b32e8c59df5fe335983b5dd46bda589d3475454172e44d1cf0",
+                "code": "224d2711cdf798fa63f5818800f311e8ef77fb44",
+                "maintenance": "0160da2b4fef40e14a4db8bd3f6d64348b6a97202c8c1b486e126094ecf1d641"
+            }
+        }
+    }
+}

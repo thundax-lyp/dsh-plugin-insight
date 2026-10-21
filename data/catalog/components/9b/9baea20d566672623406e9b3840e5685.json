@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9baea20d566672623406e9b3840e5685",
+    "identity": "github:1348865504:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1348865504:root",
+            "repository": "xiaoshi7915/dsh-kb-manager",
+            "path": "",
+            "revision": "0b5af12be166a95d9017a6b6ee86975eed9bd585",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fd32545140bdca2a360a10cf06f4f6a7defdc53366c9a8d4e0a206ac41755aaf",
+                "code": "0b5af12be166a95d9017a6b6ee86975eed9bd585",
+                "maintenance": "7771154f3f0831f7d3ed7949ff8af5c6a980d4e05c81c1c9697b3dc52ec1aade"
+            }
+        }
+    }
+}

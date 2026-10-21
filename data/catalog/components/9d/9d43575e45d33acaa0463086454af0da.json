@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9d43575e45d33acaa0463086454af0da",
+    "identity": "github:1326935381:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1326935381:root",
+            "repository": "shenjackyuanjie/dsh-ica",
+            "path": "",
+            "revision": "419f76d202f1b463007a099acc18c6b402f4fd60",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "d76709d1ab4437b948b63990ac98dcb463af0cb1552f9e0d0e72d6d5fe811283",
+                "code": "419f76d202f1b463007a099acc18c6b402f4fd60",
+                "maintenance": "84e1ae36fefe5d00695f57417a1dce56621eba0c663993f0c025bd787cdaa29c"
+            }
+        }
+    }
+}

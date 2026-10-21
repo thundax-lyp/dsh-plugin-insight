@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8f4f4ab3b1aaadeb48b152de21f48a79",
+    "identity": "github:1413074206:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1413074206:root",
+            "repository": "WenOwen/dsh-your-turn",
+            "path": "",
+            "revision": "44f4687c2bcca6d7cb6465ab720af25a486aa0ef",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7465c8faad8fb322a31505db273c059550b5227747cd050fad9962305e50460b",
+                "code": "44f4687c2bcca6d7cb6465ab720af25a486aa0ef",
+                "maintenance": "4da95be4bce6169824b72058e28ea20c566e7a1ebe176ca5e45a0a75305275ec"
+            }
+        }
+    }
+}

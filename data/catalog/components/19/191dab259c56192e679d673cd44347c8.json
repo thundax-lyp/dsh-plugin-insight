@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "191dab259c56192e679d673cd44347c8",
+    "identity": "github:1392747174:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1392747174:root",
+            "repository": "yiyunet/dsh-learn-skills",
+            "path": "",
+            "revision": "aa1ece60bfc7ce8a59d51da156659f00676e6905",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ac4c7380dbae2ea94793c6e1210d1b6a6c9474083bdf6f9b48a74f48b9657fa7",
+                "code": "aa1ece60bfc7ce8a59d51da156659f00676e6905",
+                "maintenance": "5d6542ad0326dcc9829fcb78c04c787f36d71889e44d0f3aa080c884378f520f"
+            }
+        }
+    }
+}

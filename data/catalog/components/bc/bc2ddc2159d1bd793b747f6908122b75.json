@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "bc2ddc2159d1bd793b747f6908122b75",
+    "identity": "github:1335569052:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335569052:root",
+            "repository": "MichengAI/dsh-archive-manager",
+            "path": "",
+            "revision": "ba4c99e7388e61c13ec2c5733225357e1c199c0f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "7f392f96e1ac84ed062f6560dbfd0fca329518cab60781da0a759cd7698437b6",
+                "code": "ba4c99e7388e61c13ec2c5733225357e1c199c0f",
+                "maintenance": "0e9e3554da03efa1aaf82e2f1063b19cd3a70e2c34aec95a9a65fc6ef0cc54a0"
+            }
+        }
+    }
+}

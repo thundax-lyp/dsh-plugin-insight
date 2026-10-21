@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "9ee345bc3880aa74a743df800171cfd2",
+    "identity": "github:1347149176:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347149176:root",
+            "repository": "svgop/dsh-rich-questions",
+            "path": "",
+            "revision": "da2e619187418e8aba61673ebecf2b5012e51e75",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "b8d57ab14c6cf83765aadece672bd1bba1d81812ec973b7f69bcd6a3523fc635",
+                "code": "da2e619187418e8aba61673ebecf2b5012e51e75",
+                "maintenance": "c9e2a6beb33bfb08aab7a5520b21968ef6c04d5b1d0ab8ddb8ca8302110597f5"
+            }
+        }
+    }
+}

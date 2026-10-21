@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "95b96fd2d44a36f9329140f32621616f",
+    "identity": "github:1335708690:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335708690:root",
+            "repository": "TecFancy/dsh-mobile",
+            "path": "",
+            "revision": "505704abddb4fdb26efafe3e92160c956d664ee9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "627a26a4bdfd7c0ac9684a83ecaddffcc4d4c0a1f39a355b546a5d3a854caf7b",
+                "code": "505704abddb4fdb26efafe3e92160c956d664ee9",
+                "maintenance": "96b47e384035d7bbb480d0eb722b3c7ec3abc075963040642a306fb33f510e69"
+            }
+        }
+    }
+}

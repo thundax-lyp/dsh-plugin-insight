@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b8f1c6d9795736cbbfbb113abfc0ca1e",
+    "identity": "github:1338606111:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338606111:root",
+            "repository": "ShenpingDD/wooden-fish-dsh",
+            "path": "",
+            "revision": "9b4514098e91cdff880f439a18abd3c18efafbf4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c9df8d1884718e835eea2a7a7fc63d4c13ede396923b58064c9db623c042ff83",
+                "code": "9b4514098e91cdff880f439a18abd3c18efafbf4",
+                "maintenance": "a5671c92b200a1888b25a885a353c8d86ed48f0b38f84024fb9a8172732cd67d"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "68750e047f29183eb722dc7a2dace7cf",
+    "identity": "github:1349267272:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1349267272:root",
+            "repository": "Ansonfishing/dsh-ca-ref",
+            "path": "",
+            "revision": "a773ae460e90a0d4711c85b5e81b1c641ff3094b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "98e844501dea8a50fab72b45922a977eb7d00c6fc88cd2d2fc3c6027cbf5a221",
+                "code": "a773ae460e90a0d4711c85b5e81b1c641ff3094b",
+                "maintenance": "0593cf71f186efe1fa9e4579363b442466c61690c135a1e0256be993e058805c"
+            }
+        }
+    }
+}

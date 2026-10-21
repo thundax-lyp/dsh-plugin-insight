@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "04e00faa9b366103288af6c378ca805e",
+    "identity": "github:1301657572:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1301657572:root",
+            "repository": "superdesigndev/treg",
+            "path": "",
+            "revision": "6f8f82eb1c6cf4998b7cad699e6e91925d62d26b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "d6fd15722f545810c9af7f13e67f04fb8e79425790113bce2a9f441f729b9c4c",
+                "code": "6f8f82eb1c6cf4998b7cad699e6e91925d62d26b",
+                "maintenance": "917129fcbee467a10435b0455163e3100fa1380ba6071c669a20f1f96cc98788"
+            }
+        }
+    }
+}

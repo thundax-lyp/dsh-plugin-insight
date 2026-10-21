@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "7e5b605e00fe5256b7c39c2b2d4922f0",
+    "identity": "github:1336486034:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336486034:root",
+            "repository": "a903067276-rgb/dsh-plan-switch",
+            "path": "",
+            "revision": "c4b32611eec1b5c4992f01353f60801b78075e61",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "e9d61764ae234e810daf969fa1a79955107ea902d918f042fbcc4c2f08e23c23",
+                "code": "c4b32611eec1b5c4992f01353f60801b78075e61",
+                "maintenance": "5794a5377348cb90ac7e93127f8308790846abebf9781ec0eb98167cc9b853d7"
+            }
+        }
+    }
+}

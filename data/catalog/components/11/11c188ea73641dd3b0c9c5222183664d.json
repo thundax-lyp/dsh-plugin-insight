@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "11c188ea73641dd3b0c9c5222183664d",
+    "identity": "github:1334973634:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334973634:root",
+            "repository": "zhangzhenwen1/qmd-autosearch",
+            "path": "",
+            "revision": "e55636c661b405613a754ed3f6a0a948e9042964",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f564eb9d2bc3192ff58f745c26d9ca2612409267692f8a4e5f16002fbbfa158d",
+                "code": "e55636c661b405613a754ed3f6a0a948e9042964",
+                "maintenance": "7e1b36f75a77f842d42337692b7171fea92d612101892714d31cf0806bf7f521"
+            }
+        }
+    }
+}

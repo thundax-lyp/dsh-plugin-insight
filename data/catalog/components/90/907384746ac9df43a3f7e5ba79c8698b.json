@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "907384746ac9df43a3f7e5ba79c8698b",
+    "identity": "github:1314587317:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1314587317:root",
+            "repository": "cofy-x/axern",
+            "path": "",
+            "revision": "c0d8444964d21468d2e778a769570cc7b21b00ef",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "09dadeb76422e3941623579ed2e4c08cdff2f3c37b5787394bb3783e0ccd33e7",
+                "code": "c0d8444964d21468d2e778a769570cc7b21b00ef",
+                "maintenance": "d97386fa77a521b55b70945da7ee0d5b42631af263a643fd0cb02ad8184b1c88"
+            }
+        }
+    }
+}

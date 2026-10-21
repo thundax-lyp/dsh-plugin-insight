@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3360183c85a7c3af8a154c465eefdb61",
+    "identity": "github:1357647610:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1357647610:root",
+            "repository": "WLV-ZEDD/dsh-chatgpt-web",
+            "path": "",
+            "revision": "96e3b35b6bf85e6a60d80690dd41c0f922581ce6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ced128f53235c1da967c7cf3cce78711f62d54f6c4a016c1bbd5d6631c9f8ae4",
+                "code": "96e3b35b6bf85e6a60d80690dd41c0f922581ce6",
+                "maintenance": "329c90479ae18ab004026c830f8451fd78ef2c5d2cdeb7b79b1242eeadd95af4"
+            }
+        }
+    }
+}

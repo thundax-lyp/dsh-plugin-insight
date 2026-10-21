@@ -1,0 +1,404 @@
+{
+    "schema_version": 3,
+    "id": "a07a8ac2617ef29186dd824a4b30b22c",
+    "identity": "github:1356896576:dsh-capmap-viz",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1356896576:dsh-capmap-viz",
+            "repository_id": 1356896576,
+            "component_id": "dsh-capmap-viz",
+            "repository": "1741505640/capmap-skills",
+            "path": "dsh-capmap-viz",
+            "aliases": [],
+            "name": "dsh-capmap-viz",
+            "entry_type": "plugin",
+            "technical_category": "memory-knowledge",
+            "business_category": "software-delivery",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "b5d7bfdb1a08dfc63f59d2fbd959b8942cb8278d88dbe9bf71c4dba339b09e3d",
+                "code": "49228e54a6a536ddbbb0adca85bd016334cbf4cc",
+                "maintenance": "d76785f2e713740b2f5c68553c3276e2f029aefe850e7b76a91e6467edbf8c6e"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-20-08-github-1356896576-dsh-capmap-viz-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T10:50:41.778Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-20-08-github-1356896576-dsh-capmap-viz-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/1741505640/capmap-skills/blob/49228e54a6a536ddbbb0adca85bd016334cbf4cc/dsh-capmap-viz/README.md",
+                    "revision": "49228e54a6a536ddbbb0adca85bd016334cbf4cc",
+                    "captured_at": "2026-10-20T10:50:41.778Z",
+                    "summary": "在 DSH 中把 CapMap 文档渲染为语义图谱、能力面板和状态看板。",
+                    "artifact": "data/runs/2026-10-20-08/snapshots/1741505640--capmap-skills--dsh-capmap-viz/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-20-08-github-1356896576-dsh-capmap-viz-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/1741505640/capmap-skills/blob/49228e54a6a536ddbbb0adca85bd016334cbf4cc/dsh-capmap-viz/src/index.ts",
+                    "revision": "49228e54a6a536ddbbb0adca85bd016334cbf4cc",
+                    "captured_at": "2026-10-20T10:50:41.778Z",
+                    "summary": "核查 dsh-capmap-viz/src/index.ts、dsh-capmap-viz/src/parser/parse.ts、dsh-capmap-viz/src/parser/queries.ts、dsh-capmap-viz/src/client/index.tsx、dsh-capmap-viz/src/bootstrap/bootstrap.ts、dsh-capmap-viz/src/bootstrap/installSkills.ts、dsh-capmap-viz/src/invariant.ts、dsh-capmap-viz/src/parser/queries.test.ts；src/parser/parse.ts 解析capmap.yaml与Markdown标签/链接；queries.ts 推导frontier/validationGate/§1冲突；src/index.ts提供RPC、chokidar revision和读取，客户端挂侧栏与图谱。",
+                    "artifact": "data/runs/2026-10-20-08/snapshots/1741505640--capmap-skills--dsh-capmap-viz/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定提交 49228e54a6a536ddbbb0adca85bd016334cbf4cc，检查作者说明、入口、所列核心实现与测试内容；未执行测试或插件、未核实外部套件和独立用户效果。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "已经采用CapMap目录/标签规范的软件团队，想从本地文档定位能力、方案、测试和可开工切片；交付是可回到原文的状态视图。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1356896576-dsh-capmap-viz-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1356896576:dsh-capmap-viz",
+                            "area": "code",
+                            "fingerprint": "49228e54a6a536ddbbb0adca85bd016334cbf4cc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:50:41.778Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "src/parser/parse.ts 解析capmap.yaml与Markdown标签/链接；queries.ts 推导frontier/validationGate/§1冲突；src/index.ts提供RPC、chokidar revision和读取，客户端挂侧栏与图谱。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1356896576-dsh-capmap-viz-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1356896576:dsh-capmap-viz",
+                            "area": "code",
+                            "fingerprint": "49228e54a6a536ddbbb0adca85bd016334cbf4cc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:50:41.778Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定提交 49228e54a6a536ddbbb0adca85bd016334cbf4cc，检查作者说明、入口、所列核心实现与测试内容；未执行测试或插件、未核实外部套件和独立用户效果。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1356896576-dsh-capmap-viz-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1356896576:dsh-capmap-viz",
+                            "area": "code",
+                            "fingerprint": "49228e54a6a536ddbbb0adca85bd016334cbf4cc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:50:41.778Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "固定版本 package.json 与 cordis.patch.yml 提供 DSH bundle 接线；README 为作者安装说明，包存在不等于安装或宿主验收通过。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1356896576-dsh-capmap-viz-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1356896576:dsh-capmap-viz",
+                            "area": "code",
+                            "fingerprint": "49228e54a6a536ddbbb0adca85bd016334cbf4cc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:50:41.778Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "无已证实订阅费用；首次迁移文档标签/目录、维护关系和搭建前后端版本是主要人工成本，大仓同步解析和watch成本未测。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1356896576-dsh-capmap-viz-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1356896576:dsh-capmap-viz",
+                            "area": "code",
+                            "fingerprint": "49228e54a6a536ddbbb0adca85bd016334cbf4cc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:50:41.778Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "适合已有CapMap规范的团队先在工作区副本浏览；核对看板关联与原文，初始化会写文档并安装Skill，先审阅预期文件，不能用状态标签代替验收证据。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1356896576-dsh-capmap-viz-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1356896576:dsh-capmap-viz",
+                            "area": "code",
+                            "fingerprint": "49228e54a6a536ddbbb0adca85bd016334cbf4cc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:50:41.778Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "规范化文档团队有具体导航价值；非CapMap仓库迁移代价可能超过图谱收益，未做团队采用或任务效率验证。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1356896576-dsh-capmap-viz-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1356896576:dsh-capmap-viz",
+                            "area": "code",
+                            "fingerprint": "49228e54a6a536ddbbb0adca85bd016334cbf4cc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:50:41.778Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "Cordis-free parser与纯查询可独立复用；异步bootstrap job避免长RPC阻塞且报告进度。src/index.ts 的read做字符串路径边界但未realpath，不是符号链接隔离；bootstrap部分成功状态需保留。queries同主题回退适合提示但不宜强门禁。 源码：[dsh-capmap-viz/src/index.ts](https://github.com/1741505640/capmap-skills/blob/49228e54a6a536ddbbb0adca85bd016334cbf4cc/dsh-capmap-viz/src/index.ts)、[dsh-capmap-viz/src/parser/parse.ts](https://github.com/1741505640/capmap-skills/blob/49228e54a6a536ddbbb0adca85bd016334cbf4cc/dsh-capmap-viz/src/parser/parse.ts)、[dsh-capmap-viz/src/parser/queries.ts](https://github.com/1741505640/capmap-skills/blob/49228e54a6a536ddbbb0adca85bd016334cbf4cc/dsh-capmap-viz/src/parser/queries.ts)、[dsh-capmap-viz/src/client/index.tsx](https://github.com/1741505640/capmap-skills/blob/49228e54a6a536ddbbb0adca85bd016334cbf4cc/dsh-capmap-viz/src/client/index.tsx)、[dsh-capmap-viz/src/bootstrap/bootstrap.ts](https://github.com/1741505640/capmap-skills/blob/49228e54a6a536ddbbb0adca85bd016334cbf4cc/dsh-capmap-viz/src/bootstrap/bootstrap.ts)、[dsh-capmap-viz/src/bootstrap/installSkills.ts](https://github.com/1741505640/capmap-skills/blob/49228e54a6a536ddbbb0adca85bd016334cbf4cc/dsh-capmap-viz/src/bootstrap/installSkills.ts)、[dsh-capmap-viz/src/invariant.ts](https://github.com/1741505640/capmap-skills/blob/49228e54a6a536ddbbb0adca85bd016334cbf4cc/dsh-capmap-viz/src/invariant.ts)、[dsh-capmap-viz/src/parser/queries.test.ts](https://github.com/1741505640/capmap-skills/blob/49228e54a6a536ddbbb0adca85bd016334cbf4cc/dsh-capmap-viz/src/parser/queries.test.ts)。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1356896576-dsh-capmap-viz-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1356896576:dsh-capmap-viz",
+                            "area": "code",
+                            "fingerprint": "49228e54a6a536ddbbb0adca85bd016334cbf4cc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:50:41.778Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T10:50:41.778Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "49228e54a6a536ddbbb0adca85bd016334cbf4cc",
+                "reviewed_at": "2026-10-20T10:50:41.778Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1356896576:dsh-capmap-viz",
+                        "area": "code",
+                        "fingerprint": "49228e54a6a536ddbbb0adca85bd016334cbf4cc"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 18,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty 18：相对通用链接图新增能力/方案/测试/切片语义组织；mechanism 15：纯解析查询、sidecar与watch组成可解释视图，但关联启发并非真实验收；transferability 10：parser/queries可独立移植，绑定CapMap标签规范；simplification 8：同面板导航与看板减少工具切换，但增加规范维护。",
+                    "basis": "interpretation",
+                    "score": 51,
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1356896576-dsh-capmap-viz-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 15,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow 18：把分散文档状态变为可开工/验证提示，改变日常巡视方式；delivery 15：新增可回到原文的能力与依赖视图，未产生可信验收记录；reach 5：主要服务已采用CapMap的团队，迁移门槛未消除；economics 4：可能省定位时间，尚无标注准确率或维护成本对照。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1356896576-dsh-capmap-viz-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "已有CapMap团队可限工作区副本试图谱浏览，核原文与链接，bootstrap写文档装Skill需先审文件计划。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "规范团队定位能力方案测试和切片的任务明确。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "解析查询加watch图谱比文档散读更集中。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "纯parser和查询可查，read无realpath及bootstrap部分成功需核。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "文档规范迁移、前后端兼容和标签维护成本高，非现有用户不宜贸然迁移。"
+                    }
+                },
+                "score": 60,
+                "revision": "49228e54a6a536ddbbb0adca85bd016334cbf4cc",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-20-08-github-1356896576-dsh-capmap-viz-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1356896576:dsh-capmap-viz",
+                        "area": "code",
+                        "fingerprint": "49228e54a6a536ddbbb0adca85bd016334cbf4cc"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1356896576:dsh-capmap-viz",
+            "repository": "1741505640/capmap-skills",
+            "path": "dsh-capmap-viz",
+            "revision": "49228e54a6a536ddbbb0adca85bd016334cbf4cc",
+            "fingerprints": {
+                "directory": "b5d7bfdb1a08dfc63f59d2fbd959b8942cb8278d88dbe9bf71c4dba339b09e3d",
+                "code": "49228e54a6a536ddbbb0adca85bd016334cbf4cc",
+                "maintenance": "d76785f2e713740b2f5c68553c3276e2f029aefe850e7b76a91e6467edbf8c6e"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T10:40:14Z",
+            "analysis_sha256": "07cb55bed804391641c0bf419d1b336c0e2068a96856343a7b1e66f72ec3aa26"
+        },
+        "publication.metadata": "data/plugins/1741505640--capmap-skills--dsh-capmap-viz/META.json",
+        "publication.summaries": {
+            "text": "在 DSH 中把 CapMap 文档渲染为语义图谱、能力面板和状态看板。",
+            "revision": "49228e54a6a536ddbbb0adca85bd016334cbf4cc",
+            "source_url": "https://github.com/1741505640/capmap-skills/blob/49228e54a6a536ddbbb0adca85bd016334cbf4cc/dsh-capmap-viz/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "49228e54a6a536ddbbb0adca85bd016334cbf4cc",
+            "items": {
+                "界面": "侧栏入口与图谱能力面板",
+                "后台": "文档 watch 与 revision 查询",
+                "Host 路由": "/capmap RPC解析、读取及后台初始化"
+            }
+        },
+        "publication.advice": {
+            "revision": "49228e54a6a536ddbbb0adca85bd016334cbf4cc",
+            "text": "适合已有CapMap规范的团队先在工作区副本浏览；核对看板关联与原文，初始化会写文档并安装Skill，先审阅预期文件，不能用状态标签代替验收证据。"
+        },
+        "registry": "data/plugins/1741505640--capmap-skills--dsh-capmap-viz",
+        "reports": "# dsh-capmap-viz\n\n> 在 DSH 中把 CapMap 文档渲染为语义图谱、能力面板和状态看板。\n\n## 研究范围\n\n- **仓库**：[1741505640/capmap-skills](https://github.com/1741505640/capmap-skills)\n- **版本号**：0.2.4（[固定提交 49228e54a6a536ddbbb0adca85bd016334cbf4cc](https://github.com/1741505640/capmap-skills/tree/49228e54a6a536ddbbb0adca85bd016334cbf4cc)）\n- **版本日期**：2026-09-20（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n源码支持所述适配机制；贡献评价属于有固定源码依据的解释。尚未安装或运行，效果与宿主兼容未验证；新设计推演均未实现。\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：已经采用CapMap目录/标签规范的软件团队，想从本地文档定位能力、方案、测试和可开工切片；交付是可回到原文的状态视图。\n- **亮点**：相对通用Obsidian链接图，具体增量是把方案/测试/能力和切片sidecar分层，生成依赖可开工与验证门视图；D3图布局、文件watch与Cordis接线来自上游。业务增量是将文档规范变成日常检查入口，不是自动验收系统。\n- **思考**：最关键的质疑是看板的“验证门”是否真实绑定方案证据。queries.ts 把同主题测试也视作关联，可能用另一方案的已验证测试消除警报；状态来自人工标签，不读取运行验收。图谱可导航不能证明实施完毕。\n- **建议**：适合已有CapMap规范的团队先在工作区副本浏览；核对看板关联与原文，初始化会写文档并安装Skill，先审阅预期文件，不能用状态标签代替验收证据。\n\n采用建议：适合已有CapMap规范的团队先在工作区副本浏览；核对看板关联与原文，初始化会写文档并安装Skill，先审阅预期文件，不能用状态标签代替验收证据。\n\n## 核心贡献\n\n相对通用Obsidian链接图，具体增量是把方案/测试/能力和切片sidecar分层，生成依赖可开工与验证门视图；D3图布局、文件watch与Cordis接线来自上游。业务增量是将文档规范变成日常检查入口，不是自动验收系统。\n\n## 关键质疑\n\n最关键的质疑是看板的“验证门”是否真实绑定方案证据。queries.ts 把同主题测试也视作关联，可能用另一方案的已验证测试消除警报；状态来自人工标签，不读取运行验收。图谱可导航不能证明实施完毕。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n待验证假设：用显式方案ID—测试ID—验收artifact关系替代同主题启发，并把缺失证据保留为未知，可提高验证门准确率；代价是维护关系和证据版本，当前未实现该强绑定。\n\n构造同主题两方案、仅一方案有已验证测试的文档集，人工标定预期警报；比较启发式与显式边准确率，再让维护者完成同一定位任务测总耗时，误消警报即推翻可靠门控主张。\n\n## 场景与替代办法\n\n已经采用CapMap目录/标签规范的软件团队，想从本地文档定位能力、方案、测试和可开工切片；交付是可回到原文的状态视图。\n\n本次比较参照为上述人工命令、平台接口或本地脚本；没有独立同任务运行对照，不声称整体收益或首创。\n\n## 依赖与流程\n\nNode/DSH web Cordis与client runtime等peer、React、chokidar、js-yaml、d3-force必要；有效capmap.yaml/docs_root与标签规范决定效果。bootstrap默认npx skills安装，失败git sparse回退，需要网络/Git并写工作区。\n\n选工作区→parse→图谱/面板→watch revision刷新→读原文；缺docs_root时可选择后台bootstrap job、安装Skill并写骨架；安装失败仍可能已写骨架，需人工检查部分成果。\n\n## 成本与效果\n\n无已证实订阅费用；首次迁移文档标签/目录、维护关系和搭建前后端版本是主要人工成本，大仓同步解析和watch成本未测。\n\n规范化文档团队有具体导航价值；非CapMap仓库迁移代价可能超过图谱收益，未做团队采用或任务效率验证。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：dsh-capmap-viz；内容摘要：b7834519f3d2671fc406a7ab68815f4a5f8672492c67aca5a2cd00e59cc023b5。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 12 | 5818 | 5587 | 335 | — |\n| .md | source | 1 | 119 | — | — | 740 |\n| .mjs | source | 1 | 34 | 28 | 1 | — |\n| .ts | source | 21 | 2713 | 2332 | 122 | — |\n| .ts | test | 8 | 667 | 631 | 4 | — |\n| .tsx | source | 9 | 2921 | 2747 | 28 | — |\n\n排除 13 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **界面**：侧栏入口与图谱能力面板\n- **后台**：文档 watch 与 revision 查询\n- **Host 路由**：/capmap RPC解析、读取及后台初始化\n\n## 工程亮点\n\nCordis-free parser与纯查询可独立复用；异步bootstrap job避免长RPC阻塞且报告进度。src/index.ts 的read做字符串路径边界但未realpath，不是符号链接隔离；bootstrap部分成功状态需保留。queries同主题回退适合提示但不宜强门禁。 源码：[dsh-capmap-viz/src/index.ts](https://github.com/1741505640/capmap-skills/blob/49228e54a6a536ddbbb0adca85bd016334cbf4cc/dsh-capmap-viz/src/index.ts)、[dsh-capmap-viz/src/parser/parse.ts](https://github.com/1741505640/capmap-skills/blob/49228e54a6a536ddbbb0adca85bd016334cbf4cc/dsh-capmap-viz/src/parser/parse.ts)、[dsh-capmap-viz/src/parser/queries.ts](https://github.com/1741505640/capmap-skills/blob/49228e54a6a536ddbbb0adca85bd016334cbf4cc/dsh-capmap-viz/src/parser/queries.ts)、[dsh-capmap-viz/src/client/index.tsx](https://github.com/1741505640/capmap-skills/blob/49228e54a6a536ddbbb0adca85bd016334cbf4cc/dsh-capmap-viz/src/client/index.tsx)、[dsh-capmap-viz/src/bootstrap/bootstrap.ts](https://github.com/1741505640/capmap-skills/blob/49228e54a6a536ddbbb0adca85bd016334cbf4cc/dsh-capmap-viz/src/bootstrap/bootstrap.ts)、[dsh-capmap-viz/src/bootstrap/installSkills.ts](https://github.com/1741505640/capmap-skills/blob/49228e54a6a536ddbbb0adca85bd016334cbf4cc/dsh-capmap-viz/src/bootstrap/installSkills.ts)、[dsh-capmap-viz/src/invariant.ts](https://github.com/1741505640/capmap-skills/blob/49228e54a6a536ddbbb0adca85bd016334cbf4cc/dsh-capmap-viz/src/invariant.ts)、[dsh-capmap-viz/src/parser/queries.test.ts](https://github.com/1741505640/capmap-skills/blob/49228e54a6a536ddbbb0adca85bd016334cbf4cc/dsh-capmap-viz/src/parser/queries.test.ts)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 dsh-capmap-viz/src/index.ts、dsh-capmap-viz/src/parser/parse.ts、dsh-capmap-viz/src/parser/queries.ts、dsh-capmap-viz/src/client/index.tsx、dsh-capmap-viz/src/bootstrap/bootstrap.ts、dsh-capmap-viz/src/bootstrap/installSkills.ts、dsh-capmap-viz/src/invariant.ts、dsh-capmap-viz/src/parser/queries.test.ts 及固定范围 inventory；组件：dsh-capmap-viz。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定提交 49228e54a6a536ddbbb0adca85bd016334cbf4cc，检查作者说明、入口、所列核心实现与测试内容；未执行测试或插件、未核实外部套件和独立用户效果。\n- 下一步：构造同主题两方案、仅一方案有已验证测试的文档集，人工标定预期警报；比较启发式与显式边准确率，再让维护者完成同一定位任务测总耗时，误消警报即推翻可靠门控主张。\n",
+        "metadata": {
+            "repository": "1741505640/capmap-skills",
+            "repository_id": 1356896576,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 1,
+            "pushed_at": "2026-09-20T11:59:42Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1741505640%2Fcapmap-skills%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6407:30A0ED:144563:21D0A2:6AD849C7 and timestamp 2026-10-21 05:12:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1741505640%2Fcapmap-skills%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6409:A4F3B:141363:21AF45:6AD849C7 and timestamp 2026-10-21 05:12:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1741505640%2Fcapmap-skills%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6410:0BD3:A04DA:109A7D:6AD849C8 and timestamp 2026-10-21 05:12:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1741505640%2Fcapmap-skills%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6400:330C23:144B06:21D6B3:6AD849C8 and timestamp 2026-10-21 05:12:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1741505640%2Fcapmap-skills%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6403:B3C47:1461F0:220888:6AD849C8 and timestamp 2026-10-21 05:12:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "@chenjh12/dsh-capmap-viz",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 640,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40chenjh12%2Fdsh-capmap-viz",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-09-07T07:08:55.095Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/%40chenjh12%2Fdsh-capmap-viz",
+                    "error": null,
+                    "latest_version": "0.2.4",
+                    "latest_published_at": "2026-09-08T09:08:05.418Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "49228e54a6a536ddbbb0adca85bd016334cbf4cc",
+                "current_revision": "49228e54a6a536ddbbb0adca85bd016334cbf4cc",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1356896576:dsh-capmap-viz",
+            "repository": "1741505640/capmap-skills",
+            "path": "dsh-capmap-viz",
+            "revision": "49228e54a6a536ddbbb0adca85bd016334cbf4cc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b5d7bfdb1a08dfc63f59d2fbd959b8942cb8278d88dbe9bf71c4dba339b09e3d",
+                "code": "49228e54a6a536ddbbb0adca85bd016334cbf4cc",
+                "maintenance": "d76785f2e713740b2f5c68553c3276e2f029aefe850e7b76a91e6467edbf8c6e"
+            }
+        }
+    }
+}

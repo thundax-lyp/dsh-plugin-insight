@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "6aa9e94bcd9d37c51fc35a058bf407ef",
+    "identity": "github:1211255316:plugins-hacker-news",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1211255316:plugins-hacker-news",
+            "repository": "heartleo/hn-cli",
+            "path": "plugins/hacker-news",
+            "revision": "682f99354aed57d7143d60ee5d14ba65e820909b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "0c9c4091cbd83ea964f5d104bf769616a8ff4148eba2067d238c92202e11563a",
+                "code": "682f99354aed57d7143d60ee5d14ba65e820909b",
+                "maintenance": "9805c506439eafff1657a75443af527d8a9e7123d629400c584bfd3dbdd64fb3"
+            }
+        }
+    }
+}

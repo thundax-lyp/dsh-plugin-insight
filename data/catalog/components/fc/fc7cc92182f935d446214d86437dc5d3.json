@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fc7cc92182f935d446214d86437dc5d3",
+    "identity": "github:1348755060:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1348755060:root",
+            "repository": "RGarvel/dsh-channel-view",
+            "path": "",
+            "revision": "f6383668141a96cbe5ddeefb278b575d1855a779",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b058420a24ec051971571fb4671e12094e6e5d97921bbc21bf4145de30236cc9",
+                "code": "f6383668141a96cbe5ddeefb278b575d1855a779",
+                "maintenance": "cfd4ce9bbdf2b4706bee196bbd67e82b308b13df94ee93e872d041b74d9e9ea6"
+            }
+        }
+    }
+}

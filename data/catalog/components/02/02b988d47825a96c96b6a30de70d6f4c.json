@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "02b988d47825a96c96b6a30de70d6f4c",
+    "identity": "github:1425334288:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425334288:root",
+            "repository": "wilsonchengassistant/dsh-zh-hant",
+            "path": "",
+            "revision": "52e0b9512d4bd772b8ceb8b6ac465b9c0df7af8e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "da497f5f8a2dd8927a1aee5b796279b4657fe8b53355282826ff2b8a8c4be8e1",
+                "code": "52e0b9512d4bd772b8ceb8b6ac465b9c0df7af8e",
+                "maintenance": "21b24849abae955e839fd6774d418acd8653cd01206ddc50f3ab6aa48dea550d"
+            }
+        }
+    }
+}

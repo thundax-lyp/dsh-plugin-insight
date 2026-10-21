@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a5f6248dd18dd134daf683f0ce598570",
+    "identity": "github:1397071246:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1397071246:root",
+            "repository": "MyRemme/dsh-lan-pair",
+            "path": "",
+            "revision": "eb58ea9511e37f49570c42b3396cfa68eebebdd3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0214bb9e5d8dcf36703f23469b2786c349e2a64ad7a3741442f6a1a3af715601",
+                "code": "eb58ea9511e37f49570c42b3396cfa68eebebdd3",
+                "maintenance": "bea306d709c583885d1973b843b149b4742dbab0e97a62b23e6e06f193416d0d"
+            }
+        }
+    }
+}

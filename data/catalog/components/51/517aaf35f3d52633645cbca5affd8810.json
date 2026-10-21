@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "517aaf35f3d52633645cbca5affd8810",
+    "identity": "github:1338123290:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338123290:root",
+            "repository": "LittleBlackTong/dsh-plugin-memory",
+            "path": "",
+            "revision": "eb568c1e9d551428b46b72748ce63c8e69d389c6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4fe29a921e2cf461c8629f47dc336ffdac7d9f5e196ef85e450eb8fe36f3e166",
+                "code": "eb568c1e9d551428b46b72748ce63c8e69d389c6",
+                "maintenance": "5455c6cb53ba4ef98da715850d7c35aeddd83e4c0459508032854da5d4b9e1ef"
+            }
+        }
+    }
+}

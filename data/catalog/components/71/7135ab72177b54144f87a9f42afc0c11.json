@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7135ab72177b54144f87a9f42afc0c11",
+    "identity": "github:1421752095:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1421752095:root",
+            "repository": "linglanxin/dsh-feng-gu-lite",
+            "path": "",
+            "revision": "f2b6cdc54089091d6b962558ee3cd77a14de85a9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e1c835d61874b19efb6c34014512aea56e550483dbd24a25b38f5f756d936e51",
+                "code": "f2b6cdc54089091d6b962558ee3cd77a14de85a9",
+                "maintenance": "154f0864e2e85bb9b4b8d615a2336f6be19d0ebf2a5ab29228c052b9bf91d2e0"
+            }
+        }
+    }
+}

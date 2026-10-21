@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "39f461ddaa36964e5234ee0c8048490a",
+    "identity": "github:1345140781:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345140781:root",
+            "repository": "chemmy-11/dsh-nautilus",
+            "path": "",
+            "revision": "cfa2769096d8a725601112ee1afd0c1e8d378796",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "c4a09edfc8d64d9b2a1f2d779f5382a54f539db5ac776568e73999035f942c77",
+                "code": "cfa2769096d8a725601112ee1afd0c1e8d378796",
+                "maintenance": "788170f18053ec2ff840b9ea3c736f1f3cee51ee4c65206e1c88f9f5ae320b68"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8b85ce5f7942225fe61eb490372ebda8",
+    "identity": "github:1359260551:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1359260551:root",
+            "repository": "huangfuren/dsh-localsend",
+            "path": "",
+            "revision": "234e5c9f312c8fca577a4c0820daafcafb650358",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "95ae5c784cfa2a5fd1cf9fd3a294891fbf9a923b8f74d17b247f55f5f97ce4d8",
+                "code": "234e5c9f312c8fca577a4c0820daafcafb650358",
+                "maintenance": "550a80c04c2aa763533c27afd1dc868595f653ac277e47bca5fd6896f48f55e5"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a33972e54ddd1de44800d01fda3e8fd2",
+    "identity": "github:1336671238:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336671238:root",
+            "repository": "penguin-oo/dsh-quota-hub",
+            "path": "",
+            "revision": "2936772e4bc2664324e915e54aa5108e4dc83277",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "593573b9ce2632aaaa42af7c6d0fe43cc87ae7f61af21e76ebb9e2723b810e6d",
+                "code": "2936772e4bc2664324e915e54aa5108e4dc83277",
+                "maintenance": "74be0ddf03a9387c05c7e508111b00399d4250a73a72f99dede042c933a82788"
+            }
+        }
+    }
+}

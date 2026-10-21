@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1feb22c715bc9f571ac35c639bf1e8b8",
+    "identity": "github:1415323523:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1415323523:root",
+            "repository": "zyfgood/dsh-a2a",
+            "path": "",
+            "revision": "5a522c3656c53813c0df6e8b69e1f250c175b901",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e94048e9f256b72e19ff225d5fc4c3b88191e88fbad6c53f11d67f2157229083",
+                "code": "5a522c3656c53813c0df6e8b69e1f250c175b901",
+                "maintenance": "cc69c290638e72e2ba1148627863ff5e36fd9c4c5d4c245bfd60b7ecc6c1e430"
+            }
+        }
+    }
+}

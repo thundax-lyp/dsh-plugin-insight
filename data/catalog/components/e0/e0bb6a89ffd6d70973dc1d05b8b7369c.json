@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e0bb6a89ffd6d70973dc1d05b8b7369c",
+    "identity": "github:1335015720:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335015720:root",
+            "repository": "ishuowang/dsh-rolehub-bridge",
+            "path": "",
+            "revision": "d6780fd92c33538e3942b098952cb80f7ddb157d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "479cd176e0e8e9176392ba5b01aa96ad185cf963ae8a38bf005109cf0dbf0f90",
+                "code": "d6780fd92c33538e3942b098952cb80f7ddb157d",
+                "maintenance": "74787e65ae5f514144929c2ecb728d9b884850b14ad5256dd00a209511aed142"
+            }
+        }
+    }
+}

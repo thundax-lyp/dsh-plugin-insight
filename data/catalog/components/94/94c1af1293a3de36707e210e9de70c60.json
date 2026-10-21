@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "94c1af1293a3de36707e210e9de70c60",
+    "identity": "github:1408581184:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1408581184:root",
+            "repository": "mirror9933/dsh-pixmart",
+            "path": "",
+            "revision": "c86375de3ea3cc4531f8a9c1d8c5ac2b06c086fe",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "72da77c817f1f0c9dbf5e81973c9d1cf95012f6370739ac66e7123c50eada9cf",
+                "code": "c86375de3ea3cc4531f8a9c1d8c5ac2b06c086fe",
+                "maintenance": "a37043f64888b039eeecb1cc708431e44603d6a186e9d08b8b859127e2591dcb"
+            }
+        }
+    }
+}

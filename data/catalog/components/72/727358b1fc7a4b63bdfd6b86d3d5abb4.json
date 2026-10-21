@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "727358b1fc7a4b63bdfd6b86d3d5abb4",
+    "identity": "github:1342572974:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342572974:root",
+            "repository": "menotbobbybrown/dsh-plugin-memory",
+            "path": "",
+            "revision": "697bb53e74c1fda875dcb182b4e8339882c7a659",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c8c7e2da1c15b80599ab80f0aa38488659a44c2c9552314102ceed67860942fa",
+                "code": "697bb53e74c1fda875dcb182b4e8339882c7a659",
+                "maintenance": "6abacc99bda4c2246a2bfa1b4b2f1aed4d233c60d567049600fe64250f1b5935"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f7bd8376e8bcac56ef32330474943696",
+    "identity": "github:1391840154:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1391840154:root",
+            "repository": "eghrhegpe/dsh-connect-sensenova-token-plan",
+            "path": "",
+            "revision": "c97609b84f527c3e551c5c1cbf325130e8e1d4c1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fe14c74ee2981ffe23a00e45ffbd559cde67776940a433f08a801578cd46803e",
+                "code": "c97609b84f527c3e551c5c1cbf325130e8e1d4c1",
+                "maintenance": "bb777e5e693137d12e8648f231f114004992aeef3265975dcf5aa267330e773a"
+            }
+        }
+    }
+}

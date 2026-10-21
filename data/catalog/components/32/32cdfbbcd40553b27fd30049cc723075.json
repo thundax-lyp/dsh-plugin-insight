@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "32cdfbbcd40553b27fd30049cc723075",
+    "identity": "github:1415002150:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1415002150:root",
+            "repository": "dingchenhui0618-arch/dsh-ship-receipt",
+            "path": "",
+            "revision": "d428569ba141d525c1ddfade4654a3966415a775",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a3ef0a498ce14d6171d22fef4811bb74592f1bba5b7d79a2c52d8bef32152faa",
+                "code": "d428569ba141d525c1ddfade4654a3966415a775",
+                "maintenance": "b17b3d91da7984614b5f02ea2940815e76d22ccd169393a52285e00077624355"
+            }
+        }
+    }
+}

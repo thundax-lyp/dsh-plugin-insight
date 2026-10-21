@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a65c795bcf3d669c17565fe558fe2de6",
+    "identity": "github:1335097661:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335097661:root",
+            "repository": "txy-ucas/dsh-workspace-snapshot",
+            "path": "",
+            "revision": "99bc94a9cf5293f90dc8f043746a7a6ce7fe86a0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "623697e9ef1d226b87a475c1256ed662b26d5f1a5b923bf80cac7518b8f089a8",
+                "code": "99bc94a9cf5293f90dc8f043746a7a6ce7fe86a0",
+                "maintenance": "8b1aac3c9444ebb5b54c2e6e7f7ad84c4d40664637beba3bccee9a8b2c4d5de7"
+            }
+        }
+    }
+}

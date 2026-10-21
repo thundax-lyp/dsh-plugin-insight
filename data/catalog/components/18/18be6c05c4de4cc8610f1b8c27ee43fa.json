@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "18be6c05c4de4cc8610f1b8c27ee43fa",
+    "identity": "github:1330691547:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1330691547:root",
+            "repository": "vibeinging/dsh-trace",
+            "path": "",
+            "revision": "caadf1b831ae2643bd25a365cc1356c2100e7a05",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "5ccccc7653a627a5546b78d14bf3766707b78ab8cb576127aaca5e2f85b807f9",
+                "code": "caadf1b831ae2643bd25a365cc1356c2100e7a05",
+                "maintenance": "19e7eeb3687cc264b92639ea3a6b59a904a09b57b92c8af42ac1a15487cca9f1"
+            }
+        }
+    }
+}

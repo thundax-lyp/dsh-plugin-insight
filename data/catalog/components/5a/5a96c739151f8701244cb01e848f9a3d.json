@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5a96c739151f8701244cb01e848f9a3d",
+    "identity": "github:1359815227:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1359815227:root",
+            "repository": "chendefine/dsh-composer-markdown",
+            "path": "",
+            "revision": "367abb54b6ae7d5b4aec59feacf02bde54bc4a54",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "548c3cd89d50a124f4882491da8dc98d077e5592130b33678e2aebc24c22060c",
+                "code": "367abb54b6ae7d5b4aec59feacf02bde54bc4a54",
+                "maintenance": "c431bf3d8163eec07573715c267ffd9b9091efb16d2c94586ed26d911d6a3919"
+            }
+        }
+    }
+}

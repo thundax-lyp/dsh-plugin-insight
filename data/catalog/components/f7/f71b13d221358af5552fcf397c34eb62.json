@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f71b13d221358af5552fcf397c34eb62",
+    "identity": "github:1342607336:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342607336:root",
+            "repository": "oneinitAI/dsh-thunderforge",
+            "path": "",
+            "revision": "fa8bf1db1071ebde6631d1a8d781eaed4eb610ce",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "4c096f46f37d5c4b21ddb0a7436466f1a15b98c82948bc0be9d3ced79f7db2cc",
+                "code": "fa8bf1db1071ebde6631d1a8d781eaed4eb610ce",
+                "maintenance": "4f51fda388e28690b04f4f2b261bd648a40c1c6164d42a3ee16ee68924a8e210"
+            }
+        }
+    }
+}

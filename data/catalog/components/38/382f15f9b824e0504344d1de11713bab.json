@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "382f15f9b824e0504344d1de11713bab",
+    "identity": "github:1344447926:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1344447926:root",
+            "repository": "wyouwd1/dsh-opencode-models",
+            "path": "",
+            "revision": "9f6451ac58885b39d038e085d5475467f2746e97",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "90933dc9fb982404f6bcf356694869f30c09ed355bdbe4300516a7ddbaa8bc01",
+                "code": "9f6451ac58885b39d038e085d5475467f2746e97",
+                "maintenance": "6d8bdc90508a564eb9222effeeb189d454d04f6796172cbf75d091242b39a3f0"
+            }
+        }
+    }
+}

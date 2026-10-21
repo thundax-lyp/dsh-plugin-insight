@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4c34ac13fdadc17716e43ae2b521aa17",
+    "identity": "github:1341938261:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1341938261:root",
+            "repository": "GooDAnDReaDY/dsh-grok-xsearch",
+            "path": "",
+            "revision": "d6dd16e63c5721f3b366c92d4bdadc3980489b5d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e91efa5cfbb2d32e735230409b17f4219c7852b270df6b38312a7c35590f0fa1",
+                "code": "d6dd16e63c5721f3b366c92d4bdadc3980489b5d",
+                "maintenance": "e4d1818bca84a4e90516341c1bf5949c88960be8e2f06467423dd8ac56109a64"
+            }
+        }
+    }
+}

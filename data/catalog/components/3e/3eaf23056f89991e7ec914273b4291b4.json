@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3eaf23056f89991e7ec914273b4291b4",
+    "identity": "github:1361971566:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1361971566:root",
+            "repository": "cjm-m/dsh-paste-code-block",
+            "path": "",
+            "revision": "4c5d3f247eb1f13d5874f422b7523522d964039d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5751720c29bb30340db66fc7ed54e0f807d6e895f5e60ea993f63e18f1a96fca",
+                "code": "4c5d3f247eb1f13d5874f422b7523522d964039d",
+                "maintenance": "dca8ab06152e4f5b0323bfab088a8c016eeee35184ae205a06f8004e5e43e1a5"
+            }
+        }
+    }
+}

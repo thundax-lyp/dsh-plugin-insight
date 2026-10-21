@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1eb3a08fd4c5094a00dfbabbd65ceebd",
+    "identity": "github:1334522273:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334522273:root",
+            "repository": "Lxiayu/DshCockpit",
+            "path": "",
+            "revision": "1a97114330d3fb09607f306976786a0f0cf65e76",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "e283742a13c9c207daa76a68ea4948f5ee42972204d3782f9633edecc26b0ffc",
+                "code": "1a97114330d3fb09607f306976786a0f0cf65e76",
+                "maintenance": "4689850c0cb35ac1b29e9084a7a4f90da53ac6835c1573ec6393bd3bdbfba74e"
+            }
+        }
+    }
+}

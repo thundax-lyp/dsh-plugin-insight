@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "543dff67492e4f29397b3cf690b4e006",
+    "identity": "github:1404050072:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1404050072:root",
+            "repository": "overact/dsh-statusline-plus",
+            "path": "",
+            "revision": "411fa62770d9fdc87099d4fc35e543a85b2de42a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "945e745197d3a85e25b8a5e30bd70d018ffcf28956a9fb44b4e55effee60c52f",
+                "code": "411fa62770d9fdc87099d4fc35e543a85b2de42a",
+                "maintenance": "b4d2856d60c6764993abc934f98f6b0c60a0ff8496f8dd09e0fd72e6878e0fd7"
+            }
+        }
+    }
+}

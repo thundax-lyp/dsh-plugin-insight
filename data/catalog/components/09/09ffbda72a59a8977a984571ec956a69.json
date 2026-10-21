@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "09ffbda72a59a8977a984571ec956a69",
+    "identity": "github:1340631674:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340631674:root",
+            "repository": "htcqp802/dsh-web-search-openai",
+            "path": "",
+            "revision": "3dac5dc0b970ffead8327d699bcf61de520ab41e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "15f8468312515f70fb681c396074d5af39fb69e4f6c93cc7d549de60875f934b",
+                "code": "3dac5dc0b970ffead8327d699bcf61de520ab41e",
+                "maintenance": "24a082a1f4e9d97febf19ccb156d3b1a62d50ab7b91a0f4c48a2cd7df19e07ba"
+            }
+        }
+    }
+}

@@ -1,5 +1,0 @@
-{
-  "text": "为 DSH Web 提供登录、用户管理和认证网关，并支持 TOTP、Passkey 与会话隔离。",
-  "revision": "6c5e87b44be4e973b092910968001916bb97d22e",
-  "source_url": "https://github.com/0QwQ0/dsh-ui-auth/blob/6c5e87b44be4e973b092910968001916bb97d22e/README.md"
-}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ebc61a51896bda6a30ee94b8d8ba5d88",
+    "identity": "github:1335118903:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335118903:root",
+            "repository": "Bcy2020/dsh-cc-ecosystem",
+            "path": "",
+            "revision": "355fb15043cd4eb515c7b9bfa882896c300079fc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1efa2cb73151930ec9b92aea99b9dd434c1c3d1e80a7eb20681996b3a83a43bf",
+                "code": "355fb15043cd4eb515c7b9bfa882896c300079fc",
+                "maintenance": "db6cf6cf1301bf1f8ff599def62b8a6bf765adfe33d7552136820764563db8bd"
+            }
+        }
+    }
+}

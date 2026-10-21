@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "86ccc8ea4cd8a128741c4dc2e4bb5347",
+    "identity": "github:1347022033:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347022033:root",
+            "repository": "sANDzER0/dsh-hippocampus",
+            "path": "",
+            "revision": "c57e4647e6fd0d3b08e1d2c627052047a5dc8672",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "58a0f6f5fb42dfd6fb7ac1acaa6a1e13d62001be6ac67595ef18d92fb7c834d9",
+                "code": "c57e4647e6fd0d3b08e1d2c627052047a5dc8672",
+                "maintenance": "c51030a454fdbd2eb04a03da19026ce5cae58000bedce4aa4655099f5df0c289"
+            }
+        }
+    }
+}

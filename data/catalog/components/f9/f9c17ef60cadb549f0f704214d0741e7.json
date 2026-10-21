@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f9c17ef60cadb549f0f704214d0741e7",
+    "identity": "github:1378499997:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1378499997:root",
+            "repository": "tangjx2007/dsh-audio-cue",
+            "path": "",
+            "revision": "aff46777b28366f18b6af1e8d4d98cd044dec938",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6a4df948283ea0f395cc85765abeb75f530709e8b36516f46a2baebf897f8b48",
+                "code": "aff46777b28366f18b6af1e8d4d98cd044dec938",
+                "maintenance": "d04d46fa5e1ae935cacfa7282d466e94be862ebb42c7b0f8cb3da1d911461d3d"
+            }
+        }
+    }
+}

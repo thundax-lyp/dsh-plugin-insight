@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { rankedRecommendations } from '../../_shared/scripts/recommendation.mjs';
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { resolve, relative, dirname, isAbsolute } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -248,23 +249,11 @@ export function renderPublication(input, root = ROOT, context = null) {
             };
         });
     const byId = new Map(items.map((p) => [p.i.id, p]));
-    if (input.recommendations.length !== new Set(input.recommendations.map((r) => r.plugin_id)).size)
-        throw Error('duplicate recommendation');
+    const recommendations = rankedRecommendations(items);
     const link = (from, to) =>
         relative(dirname(local(root, from)), local(root, to))
             .split('\\')
             .join('/');
-    for (const rec of input.recommendations) {
-        const entry = byId.get(rec.plugin_id);
-        if (!entry) throw Error('recommendation must reference completed analysis');
-        if (
-            rec.kind === 'install' &&
-            !entry.plugin.evidence.some(
-                (e) => e.kind === 'host_acceptance' && e.revision === entry.i.revision && e.environment && e.artifact
-            )
-        )
-            throw Error('install recommendation needs pinned host acceptance');
-    }
     const dates = [...metadataDates].sort();
     const updated = dates.at(-1) ?? new Date(Date.parse(manifest.checked_at) + 8 * 3600000).toISOString().slice(0, 10);
     const directory = dirname(input.catalog_page);
@@ -297,7 +286,7 @@ export function renderPublication(input, root = ROOT, context = null) {
                 ? renderLatest(entries, updated, Infinity)
                 : key === 'HOT'
                   ? renderHot(entries, Infinity)
-                  : renderRecommended(input.recommendations, entriesById, Infinity);
+                  : renderRecommended(recommendations, entriesById, 50);
         return {
             path,
             content:
@@ -314,7 +303,7 @@ export function renderPublication(input, root = ROOT, context = null) {
             navigation: renderHomeNavigation(homeGroups),
             latest: renderLatest(homeItems, updated),
             hot: renderHot(homeItems),
-            recommended: renderRecommended(input.recommendations, homeById),
+            recommended: renderRecommended(recommendations, homeById),
             categories: renderHomeCategories(homeGroups, (e) => e.detailPath),
             sources: renderSources(sources)
         }) + '\n';
@@ -349,7 +338,7 @@ export async function main(args = process.argv.slice(2)) {
         options: { input: { type: 'string' }, check: { type: 'boolean', default: false } }
     });
     if (!v.input) throw Error('--input is required');
-    if (existsSync(resolve(ROOT, 'data/catalog/SNAPSHOT.json'))) {
+    if (existsSync(resolve(ROOT, 'data/catalog/index.jsonl'))) {
         const { renderSnapshot } = await import('./snapshot-data.mjs');
         renderSnapshot(ROOT, v.check);
         return;

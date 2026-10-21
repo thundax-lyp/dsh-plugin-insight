@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ad3a109cc4f86cf0ac2ec0e54a3cfee4",
+    "identity": "github:1421763001:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1421763001:root",
+            "repository": "star-Cosmo/dsh-model-tidy",
+            "path": "",
+            "revision": "53c2220b72a863892e920dadf97b3f15b38b6003",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2500d0ee0aa408c73fd49d0c7b7a733c73c501e5d15e0bd124b46709c3727891",
+                "code": "53c2220b72a863892e920dadf97b3f15b38b6003",
+                "maintenance": "d8d611afa604c09ca5f5bc9ecf210560e6cece2459d3dcf1576cb2815355984a"
+            }
+        }
+    }
+}

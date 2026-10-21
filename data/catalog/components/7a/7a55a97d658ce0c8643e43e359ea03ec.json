@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7a55a97d658ce0c8643e43e359ea03ec",
+    "identity": "github:1363906153:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1363906153:root",
+            "repository": "advance-lion/dsh-brand",
+            "path": "",
+            "revision": "ee36881f989989924cbf8f6541baa34ffb466882",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "285569c0f4d9ab2cb1fde3e3a390105e1fb206141e002de7905697db3c44ccc9",
+                "code": "ee36881f989989924cbf8f6541baa34ffb466882",
+                "maintenance": "8b5a4927b0c82d6e953671e4214091b6c76de5ada19433bb841272976fa80e19"
+            }
+        }
+    }
+}

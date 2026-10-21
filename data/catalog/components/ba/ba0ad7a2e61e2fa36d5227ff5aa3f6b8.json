@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ba0ad7a2e61e2fa36d5227ff5aa3f6b8",
+    "identity": "github:1363776037:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1363776037:root",
+            "repository": "zzy6-a/dsh-upgrade-guard",
+            "path": "",
+            "revision": "90c4cd0293182ebf5174c3e9240a7700fd8a8589",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ca485b26a8874d0a79f1524f0b5a2c237e6a37d29e66166cb687e3c80abf05ce",
+                "code": "90c4cd0293182ebf5174c3e9240a7700fd8a8589",
+                "maintenance": "bb6e7c19dca216cbed44a911066dabb88f4c9edcbd20e69933400bc643956fd1"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "be8792fc958e5b6a00d9666d61754240",
+    "identity": "github:1415280440:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1415280440:root",
+            "repository": "Minokun/dsh-serper-search",
+            "path": "",
+            "revision": "b5fb0ce555a4ca068a9f4557e51bcfc388e1a8f4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "75385607254283496185cfc269b557adc085222a419526cf7ef131030405a2af",
+                "code": "b5fb0ce555a4ca068a9f4557e51bcfc388e1a8f4",
+                "maintenance": "ddb970db4aee0e488974523fdfeafe0f50db49243a96caf0e6531786c99bcbef"
+            }
+        }
+    }
+}

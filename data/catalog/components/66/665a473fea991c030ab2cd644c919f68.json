@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "665a473fea991c030ab2cd644c919f68",
+    "identity": "github:1338971087:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338971087:root",
+            "repository": "young-tim/dsh-profile-lab",
+            "path": "",
+            "revision": "2cf8c3b7ae29c9ad67465161ee683615c6884cba",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "490d616516f352644597d399598581b82a3b07da85b4521747913790bf52b82a",
+                "code": "2cf8c3b7ae29c9ad67465161ee683615c6884cba",
+                "maintenance": "3540a127a3b059d9ccbb1534c5a4e640e2b0e31f0fb7cb3f641d9bb0f3f1d3f2"
+            }
+        }
+    }
+}

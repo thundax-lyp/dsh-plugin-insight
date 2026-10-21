@@ -1,0 +1,402 @@
+{
+    "schema_version": 3,
+    "id": "f59890b660db2173870ccb1ac13f7ca1",
+    "identity": "github:1381989584:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1381989584:root",
+            "repository_id": 1381989584,
+            "component_id": "root",
+            "repository": "2333hutao/dsh-ls125-uv-probe",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-ls125-uv-probe",
+            "entry_type": "plugin",
+            "technical_category": "tools-integration",
+            "business_category": "research-knowledge",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "1b1258a3a71b6496decde9f8e248f868cebf4ccb9c5972dcb7b4991a22122a03",
+                "code": "c252d589d1d021bc08a386cd110e96cd011cb4a2",
+                "maintenance": "7d53ee4e52e8947cb063e3084d5bc929c9099a3b97075c7263ca6a7c7050789e"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-20-08-github-1381989584-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T10:51:10.049Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-20-08-github-1381989584-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/2333hutao/dsh-ls125-uv-probe/blob/c252d589d1d021bc08a386cd110e96cd011cb4a2/README.md",
+                    "revision": "c252d589d1d021bc08a386cd110e96cd011cb4a2",
+                    "captured_at": "2026-10-20T10:51:10.049Z",
+                    "summary": "为 LS125 UVALED-X3 紫外探头提供 UART 协议、抓取分析工具与 STM32F103 主机固件的技能包。",
+                    "artifact": "data/runs/2026-10-20-08/snapshots/2333hutao--dsh-ls125-uv-probe/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-20-08-github-1381989584-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/2333hutao/dsh-ls125-uv-probe/blob/c252d589d1d021bc08a386cd110e96cd011cb4a2/index.js",
+                    "revision": "c252d589d1d021bc08a386cd110e96cd011cb4a2",
+                    "captured_at": "2026-10-20T10:51:10.049Z",
+                    "summary": "核查 index.js、skill/SKILL.md、skill/PROTOCOL.md、skill/tools/uv-analyze.cjs、skill/firmware/f103_probe/main.c；index.js解析单一SKILL正文并注册skills资源目录；skill/PROTOCOL.md描述9600 8N1、28字节帧和CRC-16/MODBUS，工具解UART/扫描浮点候选，F103固件按固定轮询命令收帧。",
+                    "artifact": "data/runs/2026-10-20-08/snapshots/2333hutao--dsh-ls125-uv-probe/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "静态核查技能注册、协议文档、UART分析脚本和F103主机固件；未执行捕获/解码脚本、未烧录、未核对真实辐照度或安全测量条件。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "面向已有LS125/UVALED-X3硬件、想用自有MCU读取紫外测量的嵌入式研究者；合格结果须帧校验正确、量纲匹配并与原仪表对照。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1381989584-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381989584:root",
+                            "area": "code",
+                            "fingerprint": "c252d589d1d021bc08a386cd110e96cd011cb4a2"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:51:10.049Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "index.js解析单一SKILL正文并注册skills资源目录；skill/PROTOCOL.md描述9600 8N1、28字节帧和CRC-16/MODBUS，工具解UART/扫描浮点候选，F103固件按固定轮询命令收帧。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1381989584-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381989584:root",
+                            "area": "code",
+                            "fingerprint": "c252d589d1d021bc08a386cd110e96cd011cb4a2"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:51:10.049Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "静态核查技能注册、协议文档、UART分析脚本和F103主机固件；未执行捕获/解码脚本、未烧录、未核对真实辐照度或安全测量条件。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1381989584-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381989584:root",
+                            "area": "code",
+                            "fingerprint": "c252d589d1d021bc08a386cd110e96cd011cb4a2"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:51:10.049Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "技能正文和资源同目录通过resourceBase提供，避免两份协议正文漂移；Windows采集链包含libusb DLL和构建/刷写脚本，不能把入口无依赖理解为全部工具跨平台零配置。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1381989584-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381989584:root",
+                            "area": "code",
+                            "fingerprint": "c252d589d1d021bc08a386cd110e96cd011cb4a2"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:51:10.049Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "必需探头、MCU/逻辑分析仪、接线与参考仪表，硬件采购和实验人时明显超过技能安装；部分固件/采集工具需工具链。未估算测量精度、校准或商业替代节省金额。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1381989584-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381989584:root",
+                            "area": "code",
+                            "fingerprint": "c252d589d1d021bc08a386cd110e96cd011cb4a2"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:51:10.049Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "已有对应硬件的工程人员可把它当复核起点，先只读轮询并对照原表，核对电气连接、CRC与单位后再试清零；不直接将示例读数用于要求校准证明的交付。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1381989584-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381989584:root",
+                            "area": "code",
+                            "fingerprint": "c252d589d1d021bc08a386cd110e96cd011cb4a2"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:51:10.049Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "可能减少重新摸索协议和Windows采集问题的时间；可测数据链不等于校准仪器的替代，实际收益需扣接线、版本适配和误解字段的返工。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1381989584-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381989584:root",
+                            "area": "code",
+                            "fingerprint": "c252d589d1d021bc08a386cd110e96cd011cb4a2"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:51:10.049Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "index.js保持技能正文单一真相和相对资源，适合分发带工具知识。uv-analyze.cjs通过位置变化和滑动浮点候选协助实验归因，但合理浮点不证明字段语义；固件CRC与帧头验证是保护边界，移植需匹配串口电平、时钟与量纲。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1381989584-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381989584:root",
+                            "area": "code",
+                            "fingerprint": "c252d589d1d021bc08a386cd110e96cd011cb4a2"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:51:10.049Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T10:51:10.049Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "c252d589d1d021bc08a386cd110e96cd011cb4a2",
+                "reviewed_at": "2026-10-20T10:51:10.049Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1381989584:root",
+                        "area": "code",
+                        "fingerprint": "c252d589d1d021bc08a386cd110e96cd011cb4a2"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 18,
+                        "mechanism": 8,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty：针对具体私有探头的协议知识为实质增量，非声称全球首创；mechanism：UART/CRC成熟，具体解码接线小幅；transferability：实验推断与资源分发可实质复用；simplification：协议/固件/工具一处交付实质简化，跨平台未证。",
+                    "basis": "interpretation",
+                    "score": 44,
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1381989584-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 15,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow：从逆向到自制主机的交接有实质改变；delivery：可实现的协议和固件相对手读数是实质交付；reach：已有硬件研发人员获入口，小幅；economics：减少重复逆向有小幅机制依据，硬件/校准成本未知。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1381989584-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "持有LS125/UVALED-X3的工程人员可作协议复核起点；先只读轮询并对原表验证CRC、单位和电气，不能替代校准。",
+                "criteria": {
+                    "scenario": {
+                        "score": 15,
+                        "rationale": "特定探头自有MCU采集很明确但人群狭窄。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "具体帧字段、陷阱和F103链路减少从零逆向。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "协议和固件已查，作者实验有记录但原始case未齐，不能推到所有固件。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "硬件仪表接线工具链成本高，长期漂移与校准需另外承担。"
+                    }
+                },
+                "score": 52,
+                "revision": "c252d589d1d021bc08a386cd110e96cd011cb4a2",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-20-08-github-1381989584-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1381989584:root",
+                        "area": "code",
+                        "fingerprint": "c252d589d1d021bc08a386cd110e96cd011cb4a2"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1381989584:root",
+            "repository": "2333hutao/dsh-ls125-uv-probe",
+            "path": "",
+            "revision": "c252d589d1d021bc08a386cd110e96cd011cb4a2",
+            "fingerprints": {
+                "directory": "1b1258a3a71b6496decde9f8e248f868cebf4ccb9c5972dcb7b4991a22122a03",
+                "code": "c252d589d1d021bc08a386cd110e96cd011cb4a2",
+                "maintenance": "7d53ee4e52e8947cb063e3084d5bc929c9099a3b97075c7263ca6a7c7050789e"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T10:40:14Z",
+            "analysis_sha256": "a05eaa4550b91aca6fc7d6952a793532364e8fe8dd1c5a462b7519af6b39bacf"
+        },
+        "publication.metadata": "data/plugins/2333hutao--dsh-ls125-uv-probe/META.json",
+        "publication.summaries": {
+            "text": "为 LS125 UVALED-X3 紫外探头提供 UART 协议、抓取分析工具与 STM32F103 主机固件的技能包。",
+            "revision": "c252d589d1d021bc08a386cd110e96cd011cb4a2",
+            "source_url": "https://github.com/2333hutao/dsh-ls125-uv-probe/blob/c252d589d1d021bc08a386cd110e96cd011cb4a2/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "c252d589d1d021bc08a386cd110e96cd011cb4a2",
+            "items": {
+                "Skill": "ls125-uv-probe技能及协议、分析脚本、F103固件资源目录"
+            }
+        },
+        "publication.advice": {
+            "revision": "c252d589d1d021bc08a386cd110e96cd011cb4a2",
+            "text": "已有对应硬件的工程人员可把它当复核起点，先只读轮询并对照原表，核对电气连接、CRC与单位后再试清零；不直接将示例读数用于要求校准证明的交付。"
+        },
+        "registry": "data/plugins/2333hutao--dsh-ls125-uv-probe",
+        "reports": "# dsh-ls125-uv-probe\n\n> 为 LS125 UVALED-X3 紫外探头提供 UART 协议、抓取分析工具与 STM32F103 主机固件的技能包。\n\n## 研究范围\n\n- **仓库**：[2333hutao/dsh-ls125-uv-probe](https://github.com/2333hutao/dsh-ls125-uv-probe)\n- **版本号**：1.0.0（[固定提交 c252d589](https://github.com/2333hutao/dsh-ls125-uv-probe/tree/c252d589d1d021bc08a386cd110e96cd011cb4a2)）\n- **版本日期**：2026-09-23（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n确认可分发的协议知识、分析脚本和固件实现存在；21/21帧与表显一致是作者报告，未独立接线/采样复现，不能升级为本次硬件验收。跨探头适配假设未验证。\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：面向已有LS125/UVALED-X3硬件、想用自有MCU读取紫外测量的嵌入式研究者；合格结果须帧校验正确、量纲匹配并与原仪表对照。\n- **亮点**：相比仅给AI一段设备说明，本项把反向协议、否定实验陷阱、示例捕获和MCU实现一起作为资源分发，使Agent能追溯字段和采样方法。CRC/UART均为成熟技术，具体贡献在该探头的协议知识与从仪表脱离的实现材料，不宣称通用仪器协议创新。\n- **思考**：样本设备实验能否支持该型号所有探头？PROTOCOL有字段对照、清零和排除实验，提供比单段演示更强的作者证据；但文中“完整原始证据”指向另一技能的case文件，当前分发未含全部原始轮次，偏移16–17含义也未知。21帧正确不能覆盖批次、固件、漂移和长时间计时溢出。\n- **建议**：已有对应硬件的工程人员可把它当复核起点，先只读轮询并对照原表，核对电气连接、CRC与单位后再试清零；不直接将示例读数用于要求校准证明的交付。\n\n采用建议：已有对应硬件的工程人员可把它当复核起点，先只读轮询并对照原表，核对电气连接、CRC与单位后再试清零；不直接将示例读数用于要求校准证明的交付。\n\n## 核心贡献\n\n相比仅给AI一段设备说明，本项把反向协议、否定实验陷阱、示例捕获和MCU实现一起作为资源分发，使Agent能追溯字段和采样方法。CRC/UART均为成熟技术，具体贡献在该探头的协议知识与从仪表脱离的实现材料，不宣称通用仪器协议创新。\n\n## 关键质疑\n\n样本设备实验能否支持该型号所有探头？PROTOCOL有字段对照、清零和排除实验，提供比单段演示更强的作者证据；但文中“完整原始证据”指向另一技能的case文件，当前分发未含全部原始轮次，偏移16–17含义也未知。21帧正确不能覆盖批次、固件、漂移和长时间计时溢出。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n待验证假设：按探头身份/固件保存协议兼容向量，先用只读轮询识别固定头、CRC、量纲与字段范围，再允许清零。它从未知字段与有限设备证据推导，把“一套协议通吃”改成可拒绝的兼容握手；新增负担是采集多个实物版本和维护指纹。\n\n用至少两个批次探头在稳定与变化光源下记录完整帧/原表读数，检验CRC、单位、清零和计时边界；未知版本先只读拒绝危险命令。若兼容向量不能识别字段漂移或误拒正常探头，则否定假设。\n\n## 场景与替代办法\n\n面向已有LS125/UVALED-X3硬件、想用自有MCU读取紫外测量的嵌入式研究者；合格结果须帧校验正确、量纲匹配并与原仪表对照。\n\n参照厂商仪表人工读数、从零逆向与一般UART分析工具；该包新增具体设备知识和复现实物链路，不替代校准、实验设计或通用硬件驱动。\n\n## 依赖与流程\n\n宿主skills服务仅负责知识分发；实际工作依赖UVALED-X3、9600 8N1电气接线及采集/烧录工具链。Windows工具含原生libusb依赖，其他环境需替换；外部原始case证据未完整随包交付。\n\n阅读协议/陷阱→建立原仪表对照→抓取或读示例→UART解码与字段分析→MCU只读轮询/CRC核对→明确需要时清零→长期对照。失败先分电气、时序、校验与单位，不凭设备可扫描认定采集可用。\n\n## 成本与效果\n\n必需探头、MCU/逻辑分析仪、接线与参考仪表，硬件采购和实验人时明显超过技能安装；部分固件/采集工具需工具链。未估算测量精度、校准或商业替代节省金额。\n\n可能减少重新摸索协议和Windows采集问题的时间；可测数据链不等于校准仪器的替代，实际收益需扣接线、版本适配和误解字段的返工。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：4ac329ae09c95ba7094400ff4743beee09795b75bb4124087c9b64794b859601。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 1 | 101 | 57 | 33 | — |\n| .md | source | 7 | 847 | — | — | 9232 |\n| .cjs | source | 6 | 756 | 612 | 82 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **Skill**：ls125-uv-probe技能及协议、分析脚本、F103固件资源目录\n\n## 工程亮点\n\nindex.js保持技能正文单一真相和相对资源，适合分发带工具知识。uv-analyze.cjs通过位置变化和滑动浮点候选协助实验归因，但合理浮点不证明字段语义；固件CRC与帧头验证是保护边界，移植需匹配串口电平、时钟与量纲。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 index.js、skill/SKILL.md、skill/PROTOCOL.md、skill/tools/uv-analyze.cjs、skill/firmware/f103_probe/main.c 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：静态核查技能注册、协议文档、UART分析脚本和F103主机固件；未执行捕获/解码脚本、未烧录、未核对真实辐照度或安全测量条件。\n- 下一步：用至少两个批次探头在稳定与变化光源下记录完整帧/原表读数，检验CRC、单位、清零和计时边界；未知版本先只读拒绝危险命令。若兼容向量不能识别字段漂移或误拒正常探头，则否定假设。\n\n## 源码索引\n\n- [index.js](https://github.com/2333hutao/dsh-ls125-uv-probe/blob/c252d589d1d021bc08a386cd110e96cd011cb4a2/index.js)\n- [skill/SKILL.md](https://github.com/2333hutao/dsh-ls125-uv-probe/blob/c252d589d1d021bc08a386cd110e96cd011cb4a2/skill/SKILL.md)\n- [skill/PROTOCOL.md](https://github.com/2333hutao/dsh-ls125-uv-probe/blob/c252d589d1d021bc08a386cd110e96cd011cb4a2/skill/PROTOCOL.md)\n- [skill/tools/uv-analyze.cjs](https://github.com/2333hutao/dsh-ls125-uv-probe/blob/c252d589d1d021bc08a386cd110e96cd011cb4a2/skill/tools/uv-analyze.cjs)\n- [skill/firmware/f103_probe/main.c](https://github.com/2333hutao/dsh-ls125-uv-probe/blob/c252d589d1d021bc08a386cd110e96cd011cb4a2/skill/firmware/f103_probe/main.c)\n",
+        "metadata": {
+            "repository": "2333hutao/dsh-ls125-uv-probe",
+            "repository_id": 1381989584,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 1,
+            "pushed_at": "2026-09-22T17:33:41Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A2333hutao%2Fdsh-ls125-uv-probe%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6404:0BD8:1730:2B19:6AD849EC and timestamp 2026-10-21 05:13:16 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A2333hutao%2Fdsh-ls125-uv-probe%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641E:37D83B:146D2E:21FA8E:6AD849ED and timestamp 2026-10-21 05:13:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A2333hutao%2Fdsh-ls125-uv-probe%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6415:136889:156C8A:230195:6AD849ED and timestamp 2026-10-21 05:13:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A2333hutao%2Fdsh-ls125-uv-probe%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6400:330C23:145296:21E397:6AD849ED and timestamp 2026-10-21 05:13:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A2333hutao%2Fdsh-ls125-uv-probe%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C0:3E0DB6:1421A6:21BC3B:6AD849ED and timestamp 2026-10-21 05:13:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-ls125-uv-probe",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-ls125-uv-probe",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-ls125-uv-probe",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "c252d589d1d021bc08a386cd110e96cd011cb4a2",
+                "current_revision": "c252d589d1d021bc08a386cd110e96cd011cb4a2",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1381989584:root",
+            "repository": "2333hutao/dsh-ls125-uv-probe",
+            "path": "",
+            "revision": "c252d589d1d021bc08a386cd110e96cd011cb4a2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1b1258a3a71b6496decde9f8e248f868cebf4ccb9c5972dcb7b4991a22122a03",
+                "code": "c252d589d1d021bc08a386cd110e96cd011cb4a2",
+                "maintenance": "7d53ee4e52e8947cb063e3084d5bc929c9099a3b97075c7263ca6a7c7050789e"
+            }
+        }
+    }
+}

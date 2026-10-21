@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8818230ad1bd4366504cd9d820bedd77",
+    "identity": "github:1333770266:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333770266:root",
+            "repository": "realguan/dsh-mermaid-preview",
+            "path": "",
+            "revision": "fcbb7e3ff3c273962524a9bb5610aeb4f01c6cb3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2eb655410f6cac55428f99e089ee73866300c7d24bead1c8f328f3925acd638c",
+                "code": "fcbb7e3ff3c273962524a9bb5610aeb4f01c6cb3",
+                "maintenance": "9fc75141de8a5fd9237339fe540c5c15ff6bfe75502756832842ad0eaff961b6"
+            }
+        }
+    }
+}

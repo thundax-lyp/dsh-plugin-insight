@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b30a119ee756350c4c45b8ba258d89b2",
+    "identity": "github:1374070082:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1374070082:root",
+            "repository": "lpf20200901/dsh-memory-delta",
+            "path": "",
+            "revision": "1a5af1662a0521ee2fde5975822c795d22d4d197",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6d60bacf75261a88bb54dd72c8697cd3e5ad70fdfa898d0430f756841d5ea76b",
+                "code": "1a5af1662a0521ee2fde5975822c795d22d4d197",
+                "maintenance": "d5735b0a380c7a8d080428e9756ce1a4065f342199b7dd6877ae2afb7c5b664c"
+            }
+        }
+    }
+}

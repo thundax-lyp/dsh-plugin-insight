@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ec0cd33dccd48803a1a267ace1a77222",
+    "identity": "github:1172884215:packages-dsh-reaudit",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1172884215:packages-dsh-reaudit",
+            "repository": "RoseSamaras/reaudit-ai-plugin",
+            "path": "packages/dsh-reaudit",
+            "revision": "93268dc3fa4b0768243c28917ab9b41318322c69",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "10448c56f490eb25a38ae63de81a1d79f843acc0fa9928b183ea8d12ad095293",
+                "code": "93268dc3fa4b0768243c28917ab9b41318322c69",
+                "maintenance": "04cfded88086ab125ddd0e6760a0096b02185b33ddf802cc4026bd0d83ee65d7"
+            }
+        }
+    }
+}

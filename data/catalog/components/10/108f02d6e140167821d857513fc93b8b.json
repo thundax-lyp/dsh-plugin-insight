@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "108f02d6e140167821d857513fc93b8b",
+    "identity": "github:1335858978:packages-dsh-api-balance",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335858978:packages-dsh-api-balance",
+            "repository": "Vast-Unhurried/dsh-toolkit",
+            "path": "packages/dsh-api-balance",
+            "revision": "f86506fa5d1199cb21d3e49b6a1a850a6f1c9b11",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f81bb130f08cd508066da5a9fed804712e4b66e30cb219cc20155d76e11de985",
+                "code": "f86506fa5d1199cb21d3e49b6a1a850a6f1c9b11",
+                "maintenance": "fcb1846603465243813dbe05e9b6dae5cc325b179829d89cd74e6281e95b79eb"
+            }
+        }
+    }
+}

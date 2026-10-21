@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6c7bb20d5a0e2d59ca048f78b3fd573d",
+    "identity": "github:1401743391:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1401743391:root",
+            "repository": "Ndsanes/dsh-rules",
+            "path": "",
+            "revision": "62d0d37fda8ab5a5fd4debd3dd5a218cb8840e16",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "68ba036cae65647df5b6302276537df68b9be04a9e7467968da85b9ad7fd1a16",
+                "code": "62d0d37fda8ab5a5fd4debd3dd5a218cb8840e16",
+                "maintenance": "5d00f5183da1a852a7db421c99bf771556f3d8c3322bf9d420436b6df75ef14c"
+            }
+        }
+    }
+}

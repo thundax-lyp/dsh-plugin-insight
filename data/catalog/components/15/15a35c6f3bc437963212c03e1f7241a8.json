@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "15a35c6f3bc437963212c03e1f7241a8",
+    "identity": "github:1334700321:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334700321:root",
+            "repository": "GodD6366/dsh-sub2api",
+            "path": "",
+            "revision": "610ff6f26370a587223cff27449ea894ad87da96",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9906f398809a4ccef457cec47e24c0695e6c61c95f603cc36e92707b95da33b1",
+                "code": "610ff6f26370a587223cff27449ea894ad87da96",
+                "maintenance": "31162a1cda393ac4a121445beaf065e148e66ca207cb5d6f7df8d11b7a57c71a"
+            }
+        }
+    }
+}

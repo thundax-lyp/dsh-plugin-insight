@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "de1be804e8c7e079a1f3349f26f56974",
+    "identity": "github:1349207533:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1349207533:root",
+            "repository": "Anna-la/dsh-simplify",
+            "path": "",
+            "revision": "5acef7c1be296276af0db5a071b61db3bac1b14d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3992f1e389f19565b3ab56afd79a235401fc06e08cb41b86ed4d0bd5c3cf3570",
+                "code": "5acef7c1be296276af0db5a071b61db3bac1b14d",
+                "maintenance": "177b3910a2923f5af3237c5af9c0185f5ce49d7ac9c30541666e905a5b19f889"
+            }
+        }
+    }
+}

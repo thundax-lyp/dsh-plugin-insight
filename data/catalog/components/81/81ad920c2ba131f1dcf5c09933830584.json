@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "81ad920c2ba131f1dcf5c09933830584",
+    "identity": "github:1425388074:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425388074:root",
+            "repository": "wilsonchengassistant/dsh-quick-workspace",
+            "path": "",
+            "revision": "86e506248e1d8360d8926ab3e224e07a5aac57aa",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "da047bdab82f3bb5124c3d13602f152e4cdcfc13147b1578d9be19d92660661c",
+                "code": "86e506248e1d8360d8926ab3e224e07a5aac57aa",
+                "maintenance": "86c43b617dc09476e33f6cc71f70f6087bc1cbabc7c2ae7376e2dedbc4833eac"
+            }
+        }
+    }
+}

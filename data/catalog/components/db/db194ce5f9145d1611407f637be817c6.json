@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "db194ce5f9145d1611407f637be817c6",
+    "identity": "github:1413004822:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1413004822:root",
+            "repository": "MoruTeaven/dsh-model-quickslots",
+            "path": "",
+            "revision": "0d8fe34e5d2256efb0690c7dfec7e25aba7caf00",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a949f968f670f261ee5120b25ec6aa1fc2398f5695b89bde8e0f4d5014d49cf2",
+                "code": "0d8fe34e5d2256efb0690c7dfec7e25aba7caf00",
+                "maintenance": "dceb4ed18060148043ca1e81a139756aa3197e7f441a89e118a8edb6d8099cc1"
+            }
+        }
+    }
+}

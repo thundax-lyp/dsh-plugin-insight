@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ea149fa042c3f027390477cb482f6e05",
+    "identity": "github:1348068438:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1348068438:root",
+            "repository": "chen731215-dev/dsh-muv-table",
+            "path": "",
+            "revision": "f0e8a76454f429762bbb36855f13556a0a3af106",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6db01fb9b7d7adc725cc1384166ec833653703a026801d38e7b0189117337d58",
+                "code": "f0e8a76454f429762bbb36855f13556a0a3af106",
+                "maintenance": "f64c78e317e0a1a1bf1220bec6f761b3e61ebd539ae61e6e1ed6a5c5ff104795"
+            }
+        }
+    }
+}

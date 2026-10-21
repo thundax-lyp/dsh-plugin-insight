@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "dd469293d214f10eddd5dfe870a45628",
+    "identity": "github:1346964317:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346964317:root",
+            "repository": "imroc/dsh-project-prompt",
+            "path": "",
+            "revision": "69d3ed221ceb079f7426a202723d12c15a55272f",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "b1f294dd2a543cf0855a96bf11a851f59fc69091c6ec57d232ac0cf16d1713b0",
+                "code": "69d3ed221ceb079f7426a202723d12c15a55272f",
+                "maintenance": "8c554c57a2e9e8809de23201715403b79a9b25f0da6a3f5b57b241ec2ecb6d09"
+            }
+        }
+    }
+}

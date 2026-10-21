@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d42762b62b4ea82b4b7c7ce6e1a1de83",
+    "identity": "github:1342382831:plugins-dsh-my-notify",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342382831:plugins-dsh-my-notify",
+            "repository": "baosfeng/my-dsh-plugins",
+            "path": "plugins/dsh-my-notify",
+            "revision": "187f4e9342b0af0122cb681bb2f781b9aaa12008",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a279c26e443644084a91166ee02575eb942642628b28ac23b6a813b1d9a1825e",
+                "code": "187f4e9342b0af0122cb681bb2f781b9aaa12008",
+                "maintenance": "fb9b774cd98aed1498b3728886e651d430a33b9df901c2194b4f19380c3f5850"
+            }
+        }
+    }
+}

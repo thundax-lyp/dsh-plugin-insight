@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "0d7db774a51d91cd2f0e916563f0cdfa",
+    "identity": "github:1350816706:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1350816706:root",
+            "repository": "Oscar-Williams/dsh-deepcanary",
+            "path": "",
+            "revision": "22c1cc0b80b8b94de35ae6382f81a0f6e10cd945",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "80803d9bc3eecc502662e822c88e1a266888a0eb8b40a206e5034448cb6b40ec",
+                "code": "22c1cc0b80b8b94de35ae6382f81a0f6e10cd945",
+                "maintenance": "3017fc38ba498fce2bf30afab4d58c1fd44e429e30cc1238d3fe8e0bd60e9006"
+            }
+        }
+    }
+}

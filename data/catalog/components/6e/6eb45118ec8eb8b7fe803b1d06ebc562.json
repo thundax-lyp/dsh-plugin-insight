@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6eb45118ec8eb8b7fe803b1d06ebc562",
+    "identity": "github:1354592524:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1354592524:root",
+            "repository": "FeatherHunter/dsh-im-companion",
+            "path": "",
+            "revision": "f962ff3d62072dd6b63424dc613395b03a9dad39",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "be3903814e05e75d06ac495347cfd0d993294426f346dc06511f89d535697b44",
+                "code": "f962ff3d62072dd6b63424dc613395b03a9dad39",
+                "maintenance": "c063297a58ce90860a9776805bfaadd1176b200132acebfc162b908cc066fa29"
+            }
+        }
+    }
+}

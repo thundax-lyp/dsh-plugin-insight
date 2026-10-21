@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6684018bab660a3dc978e6aae46f9a6c",
+    "identity": "github:1336995537:dsh",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336995537:dsh",
+            "repository": "iqingyoung/search2chart-mcp",
+            "path": "dsh",
+            "revision": "da37d08e48cbd470b316097c7b88a686fe254a93",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "513185b6bd0f2ade4e37128eb1fe9bfd415fac04bb882dbca3149cd1c28b7ac5",
+                "code": "da37d08e48cbd470b316097c7b88a686fe254a93",
+                "maintenance": "d9a48730fa9e0117c54ecabfe50c3af1488a790e363b897aaa6ef6390cd38261"
+            }
+        }
+    }
+}

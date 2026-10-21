@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "d4f3fa5d4af2a52798f50778ef84a2ba",
+    "identity": "github:1334170127:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334170127:root",
+            "repository": "tomowang/dsh-tui",
+            "path": "",
+            "revision": "3e7a51f6ec14eaaaeb79c8102c996e8fe9c3b0df",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "656948acab752fc6a510c04b1e0e97887f6d45258cb4332ee58d94da2ea46071",
+                "code": "3e7a51f6ec14eaaaeb79c8102c996e8fe9c3b0df",
+                "maintenance": "a05a6dc0798e4f66a2a75315bf79533cce97a3a339dc353b7ce2a85453cdbd4c"
+            }
+        }
+    }
+}

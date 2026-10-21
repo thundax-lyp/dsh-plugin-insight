@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c279fcc2b9655134a07f1fcb3ff9c74e",
+    "identity": "github:1345800744:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345800744:root",
+            "repository": "mycyg/memory-palace",
+            "path": "",
+            "revision": "36046f1223fe73a490c387611efacafd7a5c36b5",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "b841ec00a8f6afed0f23837cc2cc1815f4ae5a18cbc572e959f7aa94a72a07f9",
+                "code": "36046f1223fe73a490c387611efacafd7a5c36b5",
+                "maintenance": "bc082aa6f70dd59e2a403eb2b54f1e1b32e723d0fcf6f2fc814efb52eef7337d"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f7510fa93f1aed6446b0b1dc0f514543",
+    "identity": "github:959005755:plugins-deepseek-harness",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:959005755:plugins-deepseek-harness",
+            "repository": "tiwe0/GeoChat",
+            "path": "plugins/deepseek-harness",
+            "revision": "288b3b15be39312b2baf771eaf015f67b9f841a2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "db3cf7e9b97a4f52eb0159d78d016b58fc20c5d38c2d6991e5c6ac0f8224f1d9",
+                "code": "288b3b15be39312b2baf771eaf015f67b9f841a2",
+                "maintenance": "aa31598e5321b7d9fb720cb5f1ecfa63257c3dafd62b56170d73b1f60b7f5776"
+            }
+        }
+    }
+}

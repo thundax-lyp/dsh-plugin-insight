@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ae5cea1446eb50b87f39a229a499a3f3",
+    "identity": "github:1404727387:packages-verify",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1404727387:packages-verify",
+            "repository": "deepsleepAquarium/dsh-whale-post",
+            "path": "packages/verify",
+            "revision": "d78a82699722f0da6ae3d2b4cbdbaa411f2f67af",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d9f47a89a54d165da67f7bcfe56c16cc9f2a50fbb54ee94e18c9e2f55f78daff",
+                "code": "d78a82699722f0da6ae3d2b4cbdbaa411f2f67af",
+                "maintenance": "46507574f8c0a0b98dc9580edc4394ff7259d4d7ba33dc97d3042541fbb96349"
+            }
+        }
+    }
+}

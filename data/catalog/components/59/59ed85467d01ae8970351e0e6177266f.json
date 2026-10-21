@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "59ed85467d01ae8970351e0e6177266f",
+    "identity": "github:1378518852:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1378518852:root",
+            "repository": "shenA2024/whale-persona",
+            "path": "",
+            "revision": "c3d2886188b1a6df2329654da0780055e888f8d8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e387f537366ea61dab0530b069e03b696978ea6a6d7f04820034ae6d9c280f7b",
+                "code": "c3d2886188b1a6df2329654da0780055e888f8d8",
+                "maintenance": "5e1915e80ee0a0fb400e3a566f8ffc5cfb3b34305b6a674045beebf980d93839"
+            }
+        }
+    }
+}

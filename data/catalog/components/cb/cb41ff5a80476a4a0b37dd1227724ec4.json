@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "cb41ff5a80476a4a0b37dd1227724ec4",
+    "identity": "github:1356626149:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1356626149:root",
+            "repository": "meyaomiao/dsh-graphmemory",
+            "path": "",
+            "revision": "7cbba969c8fa76ff8a7c812aadc3666d886e40a8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fc9002125bbeb35ad89450533d0de3598f2c6eb217ca06ff39105d0389b62bb1",
+                "code": "7cbba969c8fa76ff8a7c812aadc3666d886e40a8",
+                "maintenance": "d005434f9fcb7367e1d77d64142c8b8e3dd3f6805a4eeebd80bf93005d96a884"
+            }
+        }
+    }
+}

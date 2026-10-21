@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b5304c2913930eef5427415dd56607aa",
+    "identity": "github:1397546616:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1397546616:root",
+            "repository": "DedsecLemon/dsh-obsidian",
+            "path": "",
+            "revision": "f0fb92ade2ba237e32bcaae41847ac3877102636",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "afecf9506bed2794ec5d1c63fc3a93da411fa1f64ab33e73db56bf03ff7b19d8",
+                "code": "f0fb92ade2ba237e32bcaae41847ac3877102636",
+                "maintenance": "a6790454799b94abcc277b950a2675a6d3450737fd486952d76f62811f7b1e70"
+            }
+        }
+    }
+}

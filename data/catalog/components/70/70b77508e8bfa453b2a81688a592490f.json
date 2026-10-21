@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "70b77508e8bfa453b2a81688a592490f",
+    "identity": "github:1334968416:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334968416:root",
+            "repository": "ciceroyang/dsh-doctor",
+            "path": "",
+            "revision": "a05df029ba37d555cba0f54a628bb9cc97ede610",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "9e4b30894eb4f9900ed31338b90c16fcbce4cea65d0cae131053753ae1333fef",
+                "code": "a05df029ba37d555cba0f54a628bb9cc97ede610",
+                "maintenance": "49d767eda3a129b981e80efd1cb7a3964c0c88f20fc0fefaff341d581d811626"
+            }
+        }
+    }
+}

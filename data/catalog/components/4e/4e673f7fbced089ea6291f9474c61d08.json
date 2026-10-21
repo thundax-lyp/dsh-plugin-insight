@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4e673f7fbced089ea6291f9474c61d08",
+    "identity": "github:1346780117:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346780117:root",
+            "repository": "more-nico/dsh-nico-theme",
+            "path": "",
+            "revision": "9c2d90cbf550567e4ba96a4af6e0a1168efc36e7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "43e91e9a1a211cf3bda8d866e468164aac5deb722a44b26e43a6eaacc0640be0",
+                "code": "9c2d90cbf550567e4ba96a4af6e0a1168efc36e7",
+                "maintenance": "d52449fbff03440942214ad577188c2b46c282f10477d270d5cb5834435da4f1"
+            }
+        }
+    }
+}

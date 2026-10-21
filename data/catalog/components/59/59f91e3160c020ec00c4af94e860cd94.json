@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "59f91e3160c020ec00c4af94e860cd94",
+    "identity": "github:1399217287:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1399217287:root",
+            "repository": "zhaoxiagongsi001/dsh-prompt-forge",
+            "path": "",
+            "revision": "bcda8ad87dde79ce0ec770e1a38f87775565a8bb",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "65a54909a6600cf6924cbfa242382e0d408d600f5c7e26fb270e648561bb373e",
+                "code": "bcda8ad87dde79ce0ec770e1a38f87775565a8bb",
+                "maintenance": "a7b4eae1ee5355db360cc3434006328bbeb60c8f7ce6905be461733fcb957419"
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "065e440892ae3028fdddfc9669d4254e",
+    "identity": "github:1397399860:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1397399860:root",
+            "repository": "Han-1413141/dsh-autocompose",
+            "path": "",
+            "revision": "563fe9b4c9b1ee85439ae73da6c98f49cd6ec74e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "e5e7e252871e0de35fb75a286b83f419e4effd6d46df5d090a0b0547867df464",
+                "code": "563fe9b4c9b1ee85439ae73da6c98f49cd6ec74e",
+                "maintenance": "ce4333067db98d42d126de73d9cf9f5e1ee8a89ae369f56cd187ef796a2ce474"
+            }
+        }
+    }
+}

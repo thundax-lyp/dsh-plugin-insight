@@ -1,0 +1,340 @@
+{
+    "schema_version": 3,
+    "id": "25705464233dffa5eb46230282ef6bdb",
+    "identity": "github:1351854301:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1351854301:root",
+            "repository_id": 1351854301,
+            "component_id": "root",
+            "repository": "173787247/dsh-wsl-docker",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-wsl-docker",
+            "entry_type": "plugin",
+            "technical_category": "observability-cost",
+            "business_category": "infrastructure",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "16eb3b960f5bcc5242b75f8c526c74c77c3627a565043da62de634b85d7c2340",
+                "code": "89b19c3428df8dffa4c6771050e774bf1f1eb22b",
+                "maintenance": "20cb3ebb7e592f480c779bcd048250bc8d8abc248b70fa4723a01922ba5d2596"
+            },
+            "sources": [
+                {
+                    "id": "20261020-incremental40-r2-github-1351854301-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T04:38:14.947Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "20261020-incremental40-r2-github-1351854301-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/173787247/dsh-wsl-docker/blob/89b19c3428df8dffa4c6771050e774bf1f1eb22b/README.md",
+                    "revision": "89b19c3428df8dffa4c6771050e774bf1f1eb22b",
+                    "captured_at": "2026-10-20T04:38:14.947Z",
+                    "summary": "检查WSL的Docker CLI、daemon与context，汇总疑似推理容器及本地API端口线索。",
+                    "artifact": "data/runs/2026-10-20-04/snapshots/173787247--dsh-wsl-docker/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "20261020-incremental40-r2-github-1351854301-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/173787247/dsh-wsl-docker/blob/89b19c3428df8dffa4c6771050e774bf1f1eb22b/index.js",
+                    "revision": "89b19c3428df8dffa4c6771050e774bf1f1eb22b",
+                    "captured_at": "2026-10-20T04:38:14.947Z",
+                    "summary": "核查 index.js、lib/docker.js、lib/wsl-host.js；lib/docker.js执行Docker只读命令，按名称/镜像/8000端口识别候选，查询runtime并探测HTTP，生成后续建议。",
+                    "artifact": "data/runs/2026-10-20-04/snapshots/173787247--dsh-wsl-docker/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "容器名与端口是启发式线索；HTTP健康函数把小于500的状态都算响应正常，401/404不能证明OpenAI兼容推理可用。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "开发者在Docker Desktop和WSL引擎之间排障，想确认容器、GPU和推理服务处于哪一层失败。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1351854301-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854301:root",
+                            "area": "code",
+                            "fingerprint": "89b19c3428df8dffa4c6771050e774bf1f1eb22b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:38:14.947Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "lib/docker.js执行Docker只读命令，按名称/镜像/8000端口识别候选，查询runtime并探测HTTP，生成后续建议。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1351854301-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854301:root",
+                            "area": "code",
+                            "fingerprint": "89b19c3428df8dffa4c6771050e774bf1f1eb22b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:38:14.947Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "容器名与端口是启发式线索；HTTP健康函数把小于500的状态都算响应正常，401/404不能证明OpenAI兼容推理可用。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1351854301-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854301:root",
+                            "area": "code",
+                            "fingerprint": "89b19c3428df8dffa4c6771050e774bf1f1eb22b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:38:14.947Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "0.2.2，Node>=18，需WSL及Docker CLI/daemon；本轮未连接Docker或执行GPU推理。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1351854301-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854301:root",
+                            "area": "code",
+                            "fingerprint": "89b19c3428df8dffa4c6771050e774bf1f1eb22b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:38:14.947Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "无新模型服务费用，但Docker查询与端口探测耗时；真实推理测试的显存、模型加载及费用不包含在诊断结果里。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1351854301-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854301:root",
+                            "area": "code",
+                            "fingerprint": "89b19c3428df8dffa4c6771050e774bf1f1eb22b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:38:14.947Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先用作收集context与容器信息，再用受控/v1/models和小请求验证API；不要因portHealth为ok就交付推理服务。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1351854301-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854301:root",
+                            "area": "code",
+                            "fingerprint": "89b19c3428df8dffa4c6771050e774bf1f1eb22b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:38:14.947Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "能把CLI存在、daemon可达和候选推理容器分开；启发式绿色状态仍需应用层验收。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1351854301-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854301:root",
+                            "area": "code",
+                            "fingerprint": "89b19c3428df8dffa4c6771050e774bf1f1eb22b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:38:14.947Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "容器解析、GPU特征和HTTP探针分开便于复用；执行错误回退空字符串使权限失败与不存在可能混同，需原生命令补证。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1351854301-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854301:root",
+                            "area": "code",
+                            "fingerprint": "89b19c3428df8dffa4c6771050e774bf1f1eb22b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:38:14.947Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T04:38:14.947Z",
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "Docker/WSL排障者可试分层信息收集，HTTP绿色仍需受控/v1/models与小请求验收。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "跨Docker Desktop与WSL引擎定位故障有明确需求。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "区分CLI、daemon和候选容器较手工汇总便利。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "探针可查，401/404被视为响应正常不能证明推理可用。"
+                    },
+                    "cost": {
+                        "score": 15,
+                        "rationale": "只读查询无新模型费，GPU真实测试和人工复核另计。"
+                    }
+                },
+                "score": 64,
+                "revision": "89b19c3428df8dffa4c6771050e774bf1f1eb22b",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "20261020-incremental40-r2-github-1351854301-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1351854301:root",
+                        "area": "code",
+                        "fingerprint": "89b19c3428df8dffa4c6771050e774bf1f1eb22b"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1351854301:root",
+            "repository": "173787247/dsh-wsl-docker",
+            "path": "",
+            "revision": "89b19c3428df8dffa4c6771050e774bf1f1eb22b",
+            "fingerprints": {
+                "directory": "16eb3b960f5bcc5242b75f8c526c74c77c3627a565043da62de634b85d7c2340",
+                "code": "89b19c3428df8dffa4c6771050e774bf1f1eb22b",
+                "maintenance": "20cb3ebb7e592f480c779bcd048250bc8d8abc248b70fa4723a01922ba5d2596"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T04:25:27.514Z",
+            "analysis_sha256": "21bf70cda66d1ce000941fa2611f89e8511be6a0a7a5be5f7a6b129876d785b8"
+        },
+        "publication.metadata": "data/plugins/173787247--dsh-wsl-docker/META.json",
+        "publication.summaries": {
+            "text": "检查WSL的Docker CLI、daemon与context，汇总疑似推理容器及本地API端口线索。",
+            "revision": "89b19c3428df8dffa4c6771050e774bf1f1eb22b",
+            "source_url": "https://github.com/173787247/dsh-wsl-docker/blob/89b19c3428df8dffa4c6771050e774bf1f1eb22b/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "89b19c3428df8dffa4c6771050e774bf1f1eb22b",
+            "items": {
+                "模型工具": "docker_doctor。"
+            }
+        },
+        "publication.advice": {
+            "revision": "89b19c3428df8dffa4c6771050e774bf1f1eb22b",
+            "text": "先用作收集context与容器信息，再用受控/v1/models和小请求验证API；不要因portHealth为ok就交付推理服务。"
+        },
+        "registry": "data/plugins/173787247--dsh-wsl-docker",
+        "reports": "# dsh-wsl-docker\n\n> 检查WSL的Docker CLI、daemon与context，汇总疑似推理容器及本地API端口线索。\n\n## 固定范围与依据\n\n固定提交 [89b19c3428df8dffa4c6771050e774bf1f1eb22b](https://github.com/173787247/dsh-wsl-docker/blob/89b19c3428df8dffa4c6771050e774bf1f1eb22b/index.js)；组件路径：仓库根。核查时间 2026-10-20T04:38:14.947Z；本轮基准 2026-10-20T04:25:27.514Z。\n源码抽读路径：index.js、lib/docker.js、lib/wsl-host.js。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：开发者在Docker Desktop和WSL引擎之间排障，想确认容器、GPU和推理服务处于哪一层失败。\n- **亮点**：lib/docker.js执行Docker只读命令，按名称/镜像/8000端口识别候选，查询runtime并探测HTTP，生成后续建议。\n- **思考**：能把CLI存在、daemon可达和候选推理容器分开；启发式绿色状态仍需应用层验收。\n- **建议**：先用作收集context与容器信息，再用受控/v1/models和小请求验证API；不要因portHealth为ok就交付推理服务。\n\n## 场景与替代办法\n\n开发者在Docker Desktop和WSL引擎之间排障，想确认容器、GPU和推理服务处于哪一层失败。\n\n此前未入档；原生docker context/version/ps提供同类证据，插件减少汇总步骤但不取代推理验收。\n\n## 依赖与流程\n\n需要正确Docker context与读取权限，GPU能力依赖实际容器配置和驱动；端口可达不等于模型已加载。\n\n查docker_doctor，区分CLI、daemon、容器、GPU与HTTP层，逐层复核；失败后先确认目标引擎，不随意重建容器。\n\n## 成本与效果\n\n无新模型服务费用，但Docker查询与端口探测耗时；真实推理测试的显存、模型加载及费用不包含在诊断结果里。\n\n能把CLI存在、daemon可达和候选推理容器分开；启发式绿色状态仍需应用层验收。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：a6a90157a34f1ba2451636f0b9671f270b3da5e6ddcdda68bb80aa9592546e89。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 3 | 133 | — | — | 775 |\n| .js | source | 3 | 330 | 298 | 2 | — |\n| .js | test | 1 | 60 | 54 | 3 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **模型工具**：docker_doctor。\n\n## 工程亮点\n\n容器解析、GPU特征和HTTP探针分开便于复用；执行错误回退空字符串使权限失败与不存在可能混同，需原生命令补证。\n\n## 分发与兼容\n\n0.2.2，Node>=18，需WSL及Docker CLI/daemon；本轮未连接Docker或执行GPU推理。\n\n## 历史对照\n\n当前快照此前没有该稳定身份的研究档案。此前未入档；原生docker context/version/ps提供同类证据，插件减少汇总步骤但不取代推理验收。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：容器名与端口是启发式线索；HTTP健康函数把小于500的状态都算响应正常，401/404不能证明OpenAI兼容推理可用。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：覆盖无CLI、错误context、无权限、404端口和实际模型服务，比较诊断标签与已知状态，并记录误判。\n",
+        "metadata": {
+            "repository": "173787247/dsh-wsl-docker",
+            "repository_id": 1351854301,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 1,
+            "pushed_at": "2026-09-30T03:21:51Z",
+            "issues": {
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
+            },
+            "errors": [],
+            "npm": {
+                "package_name": "dsh-wsl-docker",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-wsl-docker",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-wsl-docker",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "89b19c3428df8dffa4c6771050e774bf1f1eb22b",
+                "current_revision": "89b19c3428df8dffa4c6771050e774bf1f1eb22b",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1351854301:root",
+            "repository": "173787247/dsh-wsl-docker",
+            "path": "",
+            "revision": "89b19c3428df8dffa4c6771050e774bf1f1eb22b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "16eb3b960f5bcc5242b75f8c526c74c77c3627a565043da62de634b85d7c2340",
+                "code": "89b19c3428df8dffa4c6771050e774bf1f1eb22b",
+                "maintenance": "20cb3ebb7e592f480c779bcd048250bc8d8abc248b70fa4723a01922ba5d2596"
+            }
+        }
+    }
+}

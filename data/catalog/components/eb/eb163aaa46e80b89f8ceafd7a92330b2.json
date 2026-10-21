@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "eb163aaa46e80b89f8ceafd7a92330b2",
+    "identity": "github:1343392656:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343392656:root",
+            "repository": "jaaty/dsh-gsd-bundle",
+            "path": "",
+            "revision": "49a091c459bbd5c4b131d5e04a94ac2df3a97f50",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "453e87a8f467f1fd21a0997d9f686ac6e92b9b6d5bb846c005ce11564d947140",
+                "code": "49a091c459bbd5c4b131d5e04a94ac2df3a97f50",
+                "maintenance": "d927ecad11e65d647e8eb7999ef677087a26458e0d59b66e374e0052e5c1575e"
+            }
+        }
+    }
+}

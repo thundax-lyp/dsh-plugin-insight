@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b7e33b61267fff5643781008d8086a22",
+    "identity": "github:1395875350:packages-dsh-prompt-setting",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1395875350:packages-dsh-prompt-setting",
+            "repository": "zangxx66/dsh-prompt-setting",
+            "path": "packages/dsh-prompt-setting",
+            "revision": "381581f011e6555ab78b69016c9c6e016cc8464d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ec6e5ba621ef417156703520bfafb3b90d6597deef760bb286f097d76a392822",
+                "code": "381581f011e6555ab78b69016c9c6e016cc8464d",
+                "maintenance": "7286d4841fe5d7e5cc6d313bd22db9e29ed7c2fa8575553e5c951ded658294ea"
+            }
+        }
+    }
+}

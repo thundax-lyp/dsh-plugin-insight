@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9952353137777beeae24e88d09465c4a",
+    "identity": "github:1365336780:plugins-mcwiki-search",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1365336780:plugins-mcwiki-search",
+            "repository": "Yinxe/dshp",
+            "path": "plugins/mcwiki-search",
+            "revision": "05138744877ff041210fa7e71e5c2446da017f14",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a0da05f941295bbef33fe9713a6ac50ee4b5292d1876e2444e625399fa3448ba",
+                "code": "05138744877ff041210fa7e71e5c2446da017f14",
+                "maintenance": "9cf94ef1ccebddf1fd5f018f35276c1d0f1108cfe23d180768b06f734ba4b97a"
+            }
+        }
+    }
+}

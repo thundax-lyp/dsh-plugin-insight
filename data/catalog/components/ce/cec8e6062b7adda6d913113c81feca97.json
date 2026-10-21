@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "cec8e6062b7adda6d913113c81feca97",
+    "identity": "github:1335307613:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335307613:root",
+            "repository": "wuxiangru915/dsh-session-manager",
+            "path": "",
+            "revision": "52181dd2c8fdbe8e899383cfcf8ad613cf4fa8c0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0d786d072d17bdec7e0df724bede12f60f62b0560b412c4fbdb433a30521c2cb",
+                "code": "52181dd2c8fdbe8e899383cfcf8ad613cf4fa8c0",
+                "maintenance": "2452225e3824844db731f2c3ee14dfc419f62a80e2ff68b74e30827e88884474"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9b93f52a611b08290cff42a2c75599ae",
+    "identity": "github:1412823076:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1412823076:root",
+            "repository": "sorawithcat/dsh-health-reminder",
+            "path": "",
+            "revision": "f662ffe03a8c2740626523d5f1aa28283da1cf5b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "aadf97c038c0c69627698620d27da1236fa8e43fb0d7ce23dca22e6460dec98e",
+                "code": "f662ffe03a8c2740626523d5f1aa28283da1cf5b",
+                "maintenance": "1ddb258b8fbb92f1f61015659150e0a53aae24c662166f4e01fa8326cb77823e"
+            }
+        }
+    }
+}

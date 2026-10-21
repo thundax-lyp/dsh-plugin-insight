@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a70ed0d0a60ddfcd6524d9782ccf77d4",
+    "identity": "github:1324949198:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1324949198:root",
+            "repository": "ranxianglei/billion-context",
+            "path": "",
+            "revision": "933b5d519f923f6f2b0fce37f4ef06371562cba8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1a3a95ba82a4fa37129f15a4353315266d9f256b81183b2e91bdbdeb0db8e3f7",
+                "code": "933b5d519f923f6f2b0fce37f4ef06371562cba8",
+                "maintenance": "065bd349072cb4a0feefd3e1e07340eb436db6967046e800afac078ff3f5628e"
+            }
+        }
+    }
+}

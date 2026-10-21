@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "404978502ef6ca497ebd3a8a1fe81e4f",
+    "identity": "github:1374007757:plugins-dsh-semi-ui-showcase-plugin",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1374007757:plugins-dsh-semi-ui-showcase-plugin",
+            "repository": "FNOSP/fnos-dsh",
+            "path": "plugins/dsh-semi-ui-showcase-plugin",
+            "revision": "414b19708e1de54b530bdfc4730f5c368b819759",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "531317287706cf972161246832b81f31e0a4ff554aae2544253460d9388ad575",
+                "code": "414b19708e1de54b530bdfc4730f5c368b819759",
+                "maintenance": "3334471516f7994da129dce4abfb26f8ba6b3daf2af2c352f73cec681a048c2b"
+            }
+        }
+    }
+}

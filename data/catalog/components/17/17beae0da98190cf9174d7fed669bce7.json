@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "17beae0da98190cf9174d7fed669bce7",
+    "identity": "github:1334284079:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334284079:root",
+            "repository": "jiayan-xu/dsh-memoria-extra",
+            "path": "",
+            "revision": "21fc8bd70ff9bb6fd4ba63c3900d89f846359b3d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "26fa7992ef10b26350ed87d2cf3647f1f31dd8c96998c489ad93b7940f880888",
+                "code": "21fc8bd70ff9bb6fd4ba63c3900d89f846359b3d",
+                "maintenance": "afaec0c67eab49fd5d71150fd688d8d76235072d3809bb9cd2d81f30fdda052f"
+            }
+        }
+    }
+}

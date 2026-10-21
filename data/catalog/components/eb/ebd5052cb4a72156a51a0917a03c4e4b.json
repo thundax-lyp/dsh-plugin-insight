@@ -1,0 +1,362 @@
+{
+    "schema_version": 3,
+    "id": "ebd5052cb4a72156a51a0917a03c4e4b",
+    "identity": "github:1374274543:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1374274543:root",
+            "repository_id": 1374274543,
+            "component_id": "root",
+            "repository": "1624318455/dsh-plugin-proxy",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-plugin-proxy",
+            "entry_type": "plugin",
+            "technical_category": "runtime-deployment",
+            "business_category": "infrastructure",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "f868217aa58f02dd5493c9cb32eff1c55c1d810612ce834c6fa22996b1e357c7",
+                "code": "b5b5af209e7bd36a6a7008db703a4a9d6d67c1df",
+                "maintenance": "42249f015300ba981855cbaf251dca667efa14903fe0a949eb3b691b7033fc88"
+            },
+            "sources": [
+                {
+                    "id": "20261020-incremental40-r2-github-1374274543-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T04:34:34.186Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "20261020-incremental40-r2-github-1374274543-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/1624318455/dsh-plugin-proxy/blob/b5b5af209e7bd36a6a7008db703a4a9d6d67c1df/README.md",
+                    "revision": "b5b5af209e7bd36a6a7008db703a4a9d6d67c1df",
+                    "captured_at": "2026-10-20T04:34:34.186Z",
+                    "summary": "通过运行时设置切换DSH全局fetch代理，支持直连、系统代理和手动HTTP或SOCKS代理。",
+                    "artifact": "data/runs/2026-10-20-04/snapshots/1624318455--dsh-plugin-proxy/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "20261020-incremental40-r2-github-1374274543-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/1624318455/dsh-plugin-proxy/blob/b5b5af209e7bd36a6a7008db703a4a9d6d67c1df/lib/index.js",
+                    "revision": "b5b5af209e7bd36a6a7008db703a4a9d6d67c1df",
+                    "captured_at": "2026-10-20T04:34:34.186Z",
+                    "summary": "核查 lib/index.js、lib/client.js；lib/index.js用undici setGlobalDispatcher替换全局调度器，设置变化重新应用，旧连接宽限关闭，卸载恢复基线和本插件改过的环境变量。",
+                    "artifact": "data/runs/2026-10-20-04/snapshots/1624318455--dsh-plugin-proxy/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "全局fetch不等于任意网络库都受控；错误配置可能回退直连，因此不能当成禁止直连的数据出口策略。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "网络环境经常变化的用户希望不重启会话就切换出站路线，验收是目标请求确实经过预期代理。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1374274543-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1374274543:root",
+                            "area": "code",
+                            "fingerprint": "b5b5af209e7bd36a6a7008db703a4a9d6d67c1df"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:34:34.186Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "lib/index.js用undici setGlobalDispatcher替换全局调度器，设置变化重新应用，旧连接宽限关闭，卸载恢复基线和本插件改过的环境变量。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1374274543-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1374274543:root",
+                            "area": "code",
+                            "fingerprint": "b5b5af209e7bd36a6a7008db703a4a9d6d67c1df"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:34:34.186Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "全局fetch不等于任意网络库都受控；错误配置可能回退直连，因此不能当成禁止直连的数据出口策略。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1374274543-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1374274543:root",
+                            "area": "code",
+                            "fingerprint": "b5b5af209e7bd36a6a7008db703a4a9d6d67c1df"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:34:34.186Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "0.1.3，Node>=20，依赖undici ^8.10.0；宿主Node与undici版本兼容须实际验证，Web卡片依赖设置服务。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1374274543-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1374274543:root",
+                            "area": "code",
+                            "fingerprint": "b5b5af209e7bd36a6a7008db703a4a9d6d67c1df"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:34:34.186Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "代理服务、链路延迟和排障有持续成本；切换时在途连接可能中断，不能把无需重启等同零损耗。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1374274543-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1374274543:root",
+                            "area": "code",
+                            "fingerprint": "b5b5af209e7bd36a6a7008db703a4a9d6d67c1df"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:34:34.186Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先用可观察测试端点核验fetch与目标客户端，确认无代理或配置错误时的直连回退可接受，再切换真实任务。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1374274543-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1374274543:root",
+                            "area": "code",
+                            "fingerprint": "b5b5af209e7bd36a6a7008db703a4a9d6d67c1df"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:34:34.186Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "集中运行期设置简化多处代理配置；进程全局影响也可能改变其他插件的出站路径。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1374274543-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1374274543:root",
+                            "area": "code",
+                            "fingerprint": "b5b5af209e7bd36a6a7008db703a4a9d6d67c1df"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:34:34.186Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "环境快照和条件恢复避免覆盖操作者后续修改，日志脱敏proxy userinfo；多个插件同时修改global dispatcher时的卸载顺序仍需核对。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1374274543-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1374274543:root",
+                            "area": "code",
+                            "fingerprint": "b5b5af209e7bd36a6a7008db703a4a9d6d67c1df"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:34:34.186Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T04:34:34.186Z",
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "频繁换网络者可用测试端点试热切换，先确认错误配置直连回退可接受并验卸载恢复。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "不重启切换网络路线的重复需求明确。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "全局dispatcher热切换及条件还原补启动环境变量。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "切换与环境快照可查，其他HTTP库不必受控。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "进程全局影响、在途连接及代理服务增加排障负担。"
+                    }
+                },
+                "score": 65,
+                "revision": "b5b5af209e7bd36a6a7008db703a4a9d6d67c1df",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "20261020-incremental40-r2-github-1374274543-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1374274543:root",
+                        "area": "code",
+                        "fingerprint": "b5b5af209e7bd36a6a7008db703a4a9d6d67c1df"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1374274543:root",
+            "repository": "1624318455/dsh-plugin-proxy",
+            "path": "",
+            "revision": "b5b5af209e7bd36a6a7008db703a4a9d6d67c1df",
+            "fingerprints": {
+                "directory": "f868217aa58f02dd5493c9cb32eff1c55c1d810612ce834c6fa22996b1e357c7",
+                "code": "b5b5af209e7bd36a6a7008db703a4a9d6d67c1df",
+                "maintenance": "42249f015300ba981855cbaf251dca667efa14903fe0a949eb3b691b7033fc88"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T04:25:27.514Z",
+            "analysis_sha256": "e7db13b8e8e0c3fa1045c715c0d4edf1f227c6aec325f5fe0a3aa71eece4067b"
+        },
+        "publication.metadata": "data/plugins/1624318455--dsh-plugin-proxy/META.json",
+        "publication.summaries": {
+            "text": "通过运行时设置切换DSH全局fetch代理，支持直连、系统代理和手动HTTP或SOCKS代理。",
+            "revision": "b5b5af209e7bd36a6a7008db703a4a9d6d67c1df",
+            "source_url": "https://github.com/1624318455/dsh-plugin-proxy/blob/b5b5af209e7bd36a6a7008db703a4a9d6d67c1df/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "b5b5af209e7bd36a6a7008db703a4a9d6d67c1df",
+            "items": {
+                "后台": "全局undici调度器切换与环境变量管理。",
+                "界面": "代理模式设置卡片。"
+            }
+        },
+        "publication.advice": {
+            "revision": "b5b5af209e7bd36a6a7008db703a4a9d6d67c1df",
+            "text": "先用可观察测试端点核验fetch与目标客户端，确认无代理或配置错误时的直连回退可接受，再切换真实任务。"
+        },
+        "registry": "data/plugins/1624318455--dsh-plugin-proxy",
+        "reports": "# dsh-plugin-proxy\n\n> 通过运行时设置切换DSH全局fetch代理，支持直连、系统代理和手动HTTP或SOCKS代理。\n\n## 固定范围与依据\n\n固定提交 [b5b5af209e7bd36a6a7008db703a4a9d6d67c1df](https://github.com/1624318455/dsh-plugin-proxy/blob/b5b5af209e7bd36a6a7008db703a4a9d6d67c1df/lib/index.js)；组件路径：仓库根。核查时间 2026-10-20T04:34:34.186Z；本轮基准 2026-10-20T04:25:27.514Z。\n源码抽读路径：lib/index.js、lib/client.js。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：网络环境经常变化的用户希望不重启会话就切换出站路线，验收是目标请求确实经过预期代理。\n- **亮点**：lib/index.js用undici setGlobalDispatcher替换全局调度器，设置变化重新应用，旧连接宽限关闭，卸载恢复基线和本插件改过的环境变量。\n- **思考**：集中运行期设置简化多处代理配置；进程全局影响也可能改变其他插件的出站路径。\n- **建议**：先用可观察测试端点核验fetch与目标客户端，确认无代理或配置错误时的直连回退可接受，再切换真实任务。\n\n## 场景与替代办法\n\n网络环境经常变化的用户希望不重启会话就切换出站路线，验收是目标请求确实经过预期代理。\n\n此前未入档；环境变量或宿主启动代理更简单，本项主要提供热切换与还原，不证明所有协议统一走代理。\n\n## 依赖与流程\n\n需要可用代理及宿主fetch实现兼容，子进程是否继承取决于exportEnv和工具自身；系统代理探测失败会降级。\n\n保存路由模式，查看生效日志并探测出口，观察当前请求；异常时明确切回基线，检查在途任务再重试。\n\n## 成本与效果\n\n代理服务、链路延迟和排障有持续成本；切换时在途连接可能中断，不能把无需重启等同零损耗。\n\n集中运行期设置简化多处代理配置；进程全局影响也可能改变其他插件的出站路径。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：be31f16460cca68a189106fb79e3106174b87e3004906e164e4d76272cf44d46。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 771 | 513 | 194 | — |\n| .md | source | 2 | 361 | — | — | 2754 |\n| .mjs | source | 2 | 373 | 280 | 47 | — |\n| .mjs | test | 1 | 633 | 498 | 94 | — |\n\n排除 1 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **后台**：全局undici调度器切换与环境变量管理。\n- **界面**：代理模式设置卡片。\n\n## 工程亮点\n\n环境快照和条件恢复避免覆盖操作者后续修改，日志脱敏proxy userinfo；多个插件同时修改global dispatcher时的卸载顺序仍需核对。\n\n## 分发与兼容\n\n0.1.3，Node>=20，依赖undici ^8.10.0；宿主Node与undici版本兼容须实际验证，Web卡片依赖设置服务。\n\n## 历史对照\n\n当前快照此前没有该稳定身份的研究档案。此前未入档；环境变量或宿主启动代理更简单，本项主要提供热切换与还原，不证明所有协议统一走代理。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：全局fetch不等于任意网络库都受控；错误配置可能回退直连，因此不能当成禁止直连的数据出口策略。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：覆盖fetch、独立HTTP库、MCP与子进程，切换过程中观察出口和取消；验证配置错误、禁用及多代理插件共存。\n",
+        "metadata": {
+            "repository": "1624318455/dsh-plugin-proxy",
+            "repository_id": 1374274543,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 0,
+            "pushed_at": "2026-09-17T14:39:25Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1624318455%2Fdsh-plugin-proxy%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6414:265AC:147440:21D795:6AD8494A and timestamp 2026-10-21 05:10:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1624318455%2Fdsh-plugin-proxy%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641F:9F47E:14B9F3:223E32:6AD8494A and timestamp 2026-10-21 05:10:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1624318455%2Fdsh-plugin-proxy%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640A:1FA705:13D0ED:214AA9:6AD8494A and timestamp 2026-10-21 05:10:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1624318455%2Fdsh-plugin-proxy%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640E:3FDBB6:150290:2283C8:6AD8494A and timestamp 2026-10-21 05:10:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1624318455%2Fdsh-plugin-proxy%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C0:0BD3:9E751:106B1E:6AD8494A and timestamp 2026-10-21 05:10:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "@memef1f1y/dsh-plugin-proxy",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 85,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40memef1f1y%2Fdsh-plugin-proxy",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-09-17T14:45:53.084Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/%40memef1f1y%2Fdsh-plugin-proxy",
+                    "error": null,
+                    "latest_version": "0.1.4",
+                    "latest_published_at": "2026-10-13T01:15:27.556Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "b5b5af209e7bd36a6a7008db703a4a9d6d67c1df",
+                "current_revision": "b5b5af209e7bd36a6a7008db703a4a9d6d67c1df",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1374274543:root",
+            "repository": "1624318455/dsh-plugin-proxy",
+            "path": "",
+            "revision": "b5b5af209e7bd36a6a7008db703a4a9d6d67c1df",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f868217aa58f02dd5493c9cb32eff1c55c1d810612ce834c6fa22996b1e357c7",
+                "code": "b5b5af209e7bd36a6a7008db703a4a9d6d67c1df",
+                "maintenance": "42249f015300ba981855cbaf251dca667efa14903fe0a949eb3b691b7033fc88"
+            }
+        }
+    }
+}

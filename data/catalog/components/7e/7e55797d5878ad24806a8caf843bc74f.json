@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7e55797d5878ad24806a8caf843bc74f",
+    "identity": "github:1410181221:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1410181221:root",
+            "repository": "Arbeiter-bit/dsh-reedit",
+            "path": "",
+            "revision": "dddb9749cdf14358e535ab772e938102d104e9a6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ef287eb2407615b5bf8ba5a839ad080887bce7c41dc4a056f98fec85f37099cc",
+                "code": "dddb9749cdf14358e535ab772e938102d104e9a6",
+                "maintenance": "598efd50d6fb459db25b8dd04de6def47c8a94c4985db346ec81fec2ab4e3615"
+            }
+        }
+    }
+}

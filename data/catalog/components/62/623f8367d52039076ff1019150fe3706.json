@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "623f8367d52039076ff1019150fe3706",
+    "identity": "github:1334094801:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334094801:root",
+            "repository": "LeslieWylie/agent-loop-workflow",
+            "path": "",
+            "revision": "4ea9be64e9ef3e2940d4719576866044430e8d2c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3f6693aa21a971976504cdfa7fadf4e23b737821664f5df84fc3d11f579fce55",
+                "code": "4ea9be64e9ef3e2940d4719576866044430e8d2c",
+                "maintenance": "0249a199e312eb973403ad8841e981679d78bcc6689069d1884841a21bcf232b"
+            }
+        }
+    }
+}

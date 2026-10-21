@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3e97a8df96707d5e0b3324a14564252d",
+    "identity": "github:1335355937:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335355937:root",
+            "repository": "Jensen-Yao/deepseek-harness-android-app",
+            "path": "",
+            "revision": "c27eb2dbef83d707a4979371a4713d84ebd4c10d",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "b63739c527dd5b0ce89968e712ef36219d32f72abb7ac7d7a86f3602f765e855",
+                "code": "c27eb2dbef83d707a4979371a4713d84ebd4c10d",
+                "maintenance": "3a13bed4bec9b899a79e4abeaa36ebfb864ab7ff72c764ac87fe9dbbbb7677a6"
+            }
+        }
+    }
+}

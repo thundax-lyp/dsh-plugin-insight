@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "142c8e8d8b4383f8fb550174fae0bda4",
+    "identity": "github:1334827911:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334827911:root",
+            "repository": "bowen507/dsh-whale-switch",
+            "path": "",
+            "revision": "0ece40fcf1afd5c2894a1bc615d094eb0a48bf75",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "337f712543ec729b08bf19bbe46721c28091de7752e49a3359ee6c229fa9fa90",
+                "code": "0ece40fcf1afd5c2894a1bc615d094eb0a48bf75",
+                "maintenance": "60de70d18b6c69e90c34a31c5d42fdba1c910f1a27cfdf3ac83ce490b57034c6"
+            }
+        }
+    }
+}

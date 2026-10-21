@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "994dd376ed08f9386fa88c079f1c0d90",
+    "identity": "github:1336677036:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336677036:root",
+            "repository": "SiriLee/dsh-rewind",
+            "path": "",
+            "revision": "6e627cc0fa4e9a0991db8398ca1967bc361e98f8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "87364e240746ed7e1709bc16c83b44ff4ffe9c73a5c84b9e9f07ee855616cdf1",
+                "code": "6e627cc0fa4e9a0991db8398ca1967bc361e98f8",
+                "maintenance": "6f588d05f778f900ca41de6c565540a2bc79363a8939dece63ac66985f21109e"
+            }
+        }
+    }
+}

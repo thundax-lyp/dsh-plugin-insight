@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c991dc6652bd11352993433ba79016f7",
+    "identity": "github:1334788917:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334788917:root",
+            "repository": "YZz-S/dsh-billing-balance",
+            "path": "",
+            "revision": "1d5a857b33c46971269d2fc35a64fb2b756caf6a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "89b74c98e3cd1e07c60c7bbd1d1fcfe23f67b785e6b9caa9adde5e9d531d5d3d",
+                "code": "1d5a857b33c46971269d2fc35a64fb2b756caf6a",
+                "maintenance": "d7e491145ee4710d9bd7c081a33203336fcc08cd1352cf7d1f867af8faa61fdf"
+            }
+        }
+    }
+}

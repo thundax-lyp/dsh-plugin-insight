@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6091206b23894e0d6a4686bd09f12e08",
+    "identity": "github:1363593491:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1363593491:root",
+            "repository": "aa2246740/dsh-notch",
+            "path": "",
+            "revision": "73e70bfa865456b17b44bf2f9d36ad32495891db",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3a68a1afe62b29d1c3ae95ca2289b1444d115e7757fc7aca7f76a8d7335f1686",
+                "code": "73e70bfa865456b17b44bf2f9d36ad32495891db",
+                "maintenance": "4af82552b6fcf9678eb33558bebfc8f92669343e943ae394c71b889e854de409"
+            }
+        }
+    }
+}

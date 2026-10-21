@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f5421e93d174dbca8dc3fbbf4f930309",
+    "identity": "github:1372880103:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1372880103:root",
+            "repository": "QuantumKuba/dsh-webstack",
+            "path": "",
+            "revision": "459a2719aa1aaa5300130f0712bb201ca932ac8e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8ef75a28da9622d0740bd8beab18508fe0a321f2ee51286dbef3cb560f227642",
+                "code": "459a2719aa1aaa5300130f0712bb201ca932ac8e",
+                "maintenance": "d48d0d1f73e929b288f4dfd2a6e78a5f523dd06b09803ecee94373bc5d412101"
+            }
+        }
+    }
+}

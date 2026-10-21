@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b4ce056172046d19e5b737710c4a1ab1",
+    "identity": "github:1344904206:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1344904206:root",
+            "repository": "LucienLL/dsh-session-id",
+            "path": "",
+            "revision": "4eda67dd50581fc18817d620df84244f53186e40",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "f09aa0eb56e95aa53a7fa6a857adc9d3502cd5ca19ac30363e244af3d9303431",
+                "code": "4eda67dd50581fc18817d620df84244f53186e40",
+                "maintenance": "ca141a073c3b218dada8b4b885589b832863c5a31a6e5d5afaedcce0661fb001"
+            }
+        }
+    }
+}

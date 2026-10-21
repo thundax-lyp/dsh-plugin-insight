@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "bf00e82cd0f7efde35c0037cc9f2a6d3",
+    "identity": "github:1348963599:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1348963599:root",
+            "repository": "Raphaelutumn/dsh-mood",
+            "path": "",
+            "revision": "9dba2d4b2e9e7d02c829bd86d92a724c2b13507a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "ee0a6a9ee36ad6ea61bcf2b6bef6ab19b5102387a73aa9fdaac64ee1fecdfefc",
+                "code": "9dba2d4b2e9e7d02c829bd86d92a724c2b13507a",
+                "maintenance": "7e8183007d4495801d8abcac49fabfcbd16946b848d9de0f2540436ef9c5496d"
+            }
+        }
+    }
+}

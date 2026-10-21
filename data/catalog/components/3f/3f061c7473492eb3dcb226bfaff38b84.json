@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "3f061c7473492eb3dcb226bfaff38b84",
+    "identity": "github:1333741476:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333741476:root",
+            "repository": "xiaoshihou514/dsh-desktop-pet",
+            "path": "",
+            "revision": "5f0060620d3b25c37c1d725af877f78708672ef5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "df7d59c1da38f70e8eed452d8841726e618d7bfd80f3cc28e4c14f7697855188",
+                "code": "5f0060620d3b25c37c1d725af877f78708672ef5",
+                "maintenance": "8760ea0bfea907e02aa8784fcd2d5ae87b214bd2053c48d5edfb752a262d237e"
+            }
+        }
+    }
+}

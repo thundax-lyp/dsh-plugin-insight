@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "429f03ecfba9b1880f4952dfe88f9386",
+    "identity": "github:1334016354:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334016354:root",
+            "repository": "acnlabs/dsh-plugin-acn",
+            "path": "",
+            "revision": "13f2f93d5159372cb8282545bfad45e8335e9274",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "11f1ffa8a5155ca4b581e1487b4c3772385b27eabd7bd6104f892df9e70b48b2",
+                "code": "13f2f93d5159372cb8282545bfad45e8335e9274",
+                "maintenance": "e89540319c6415eea88f608120b3f30aaf84ad0e1523d676c54727a5568a3961"
+            }
+        }
+    }
+}

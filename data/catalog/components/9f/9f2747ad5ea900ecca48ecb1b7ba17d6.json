@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9f2747ad5ea900ecca48ecb1b7ba17d6",
+    "identity": "github:988892963:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:988892963:root",
+            "repository": "TencentCloudBase/CloudBase-AI-Toolkit",
+            "path": "",
+            "revision": "074a97d32eb45f511bcc2c9f8af2facfa2321e63",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "1a0eadc760e0934915cb4dc27552381f3d9c87fa458dcc81b5ca3bc71a8ca901",
+                "code": "074a97d32eb45f511bcc2c9f8af2facfa2321e63",
+                "maintenance": "86d4f1b8148044f18573ee1edd7fc7fffa0c155a2196b5abd7114392a63ed108"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5ae6b54ac8cefd03f6464b9d2fe4b0ab",
+    "identity": "github:1401264698:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1401264698:root",
+            "repository": "leexiaode4/dsh-launch-buttons",
+            "path": "",
+            "revision": "0242fb51afb05e04db19fe32649949d0045a7082",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "82f84355221c67edcc5ac2b35cc387a991c6ba16c105d49b3405635e98a0da47",
+                "code": "0242fb51afb05e04db19fe32649949d0045a7082",
+                "maintenance": "e81185377e0033dea7a59a230e293d2691a3dfdb178277c7a29daaeced6140bc"
+            }
+        }
+    }
+}

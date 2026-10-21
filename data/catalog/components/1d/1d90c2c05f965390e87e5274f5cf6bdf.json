@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1d90c2c05f965390e87e5274f5cf6bdf",
+    "identity": "github:1348898987:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1348898987:root",
+            "repository": "nickkkkkk123123/dsh-whale-girl",
+            "path": "",
+            "revision": "8b86b7e1985da57fad1d9d1f5e3321e28f70f330",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "01cdad68b2d8527b84bf12d6ddf78baf24f590565af616a817e49171fcfd153e",
+                "code": "8b86b7e1985da57fad1d9d1f5e3321e28f70f330",
+                "maintenance": "ac819e2982865c5614157522c3b8956995797317ca2982ab728d9c9cd8f81d5c"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f818fd27d9439345197e76c4865503c4",
+    "identity": "github:1349543434:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1349543434:root",
+            "repository": "gitByteFree/dsh-mermaid-smooth",
+            "path": "",
+            "revision": "ae161e18f8fbb1ea60c6dcaf7dc673518427a9c2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1f4ec9cdbf27600cf7e09767c6c57d3430862f076dd7ec86640c4aa410f5a758",
+                "code": "ae161e18f8fbb1ea60c6dcaf7dc673518427a9c2",
+                "maintenance": "5de8aecc9b43e2fcf68227d68a2fb36c73ddcabd731912cb2fc3a5f6e4776e95"
+            }
+        }
+    }
+}

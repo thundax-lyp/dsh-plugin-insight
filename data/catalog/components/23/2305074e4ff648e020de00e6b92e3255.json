@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2305074e4ff648e020de00e6b92e3255",
+    "identity": "github:1336331587:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336331587:root",
+            "repository": "says693/dsh-log-memory",
+            "path": "",
+            "revision": "1b785f25e2f4a841bcaaa69adbe1110f220b83c0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b3c272495a5550bd47cce0cdea5bc054a63d74f4b73f98f831061b3a26b9e286",
+                "code": "1b785f25e2f4a841bcaaa69adbe1110f220b83c0",
+                "maintenance": "3e06d7e20a6993d82e7cca6f644dc16201a8f08dbcf26e2a45e14e5d58a530d3"
+            }
+        }
+    }
+}

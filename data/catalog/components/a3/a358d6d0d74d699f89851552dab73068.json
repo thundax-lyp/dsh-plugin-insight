@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a358d6d0d74d699f89851552dab73068",
+    "identity": "github:1335686196:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335686196:root",
+            "repository": "michaelcode-wang/dsh-wecom",
+            "path": "",
+            "revision": "2ea09993e85bf52181510acb7868a30c5ec15a59",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "457e9ebce60a107f1f102b2ba97923906297b67be26080913932b5472de6c857",
+                "code": "2ea09993e85bf52181510acb7868a30c5ec15a59",
+                "maintenance": "aa21edd45e7ed918846af60717b9b47a503794d1bcd185a87828f48c564e644b"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b161642888df17f0442feb23d057ca06",
+    "identity": "github:1339291599:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339291599:root",
+            "repository": "kuangre123/deepseek-harness-mac",
+            "path": "",
+            "revision": "c27e732f777ac3422007081535686a0e5b22db7c",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "13d4a41465d8ff7a3551079cb5361dcd2ca9f406d362470d59c494c93421ad59",
+                "code": "c27e732f777ac3422007081535686a0e5b22db7c",
+                "maintenance": "6cfaf2309bfb717492c199154353973d84714e1575743a8aa820bdc02f517f4b"
+            }
+        }
+    }
+}

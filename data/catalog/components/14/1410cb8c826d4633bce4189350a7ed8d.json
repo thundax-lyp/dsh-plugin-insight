@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1410cb8c826d4633bce4189350a7ed8d",
+    "identity": "github:1347412606:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347412606:root",
+            "repository": "nullptr-DZF/dsh-academic-research-skills",
+            "path": "",
+            "revision": "a6859a3752cfe582a166ca283c10d3a45e1f9c9c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5c6c68b37f8474a170748a295f61be28a32fbfd0a12b734c3d4706e3fcd0bdcc",
+                "code": "a6859a3752cfe582a166ca283c10d3a45e1f9c9c",
+                "maintenance": "2b976a8ccf107d57c3fc228c47c6bc83192d1d0ad1be5b56bdc0112de404da4d"
+            }
+        }
+    }
+}

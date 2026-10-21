@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2115a8778d7f752ec7878c52e3c4bc07",
+    "identity": "github:1344547047:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1344547047:root",
+            "repository": "ziduup/dsh-programming-mode",
+            "path": "",
+            "revision": "a31a95ff6a9bc766daa2f2a46baf3966a8487247",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "124751b58353f7e39de3a563412e562a9f0982c272f2937a8ce42fe76fb1c9f5",
+                "code": "a31a95ff6a9bc766daa2f2a46baf3966a8487247",
+                "maintenance": "a8385d78d9926469734d88f419c8cf705293ee41830dbbe166e52339750404ad"
+            }
+        }
+    }
+}

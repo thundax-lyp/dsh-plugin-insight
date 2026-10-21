@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "aac1ce82b1eb54a758a8b2c2a2b2743c",
+    "identity": "github:1405112946:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1405112946:root",
+            "repository": "panando/dsh-prompt-optimizer",
+            "path": "",
+            "revision": "06d8ef8c7265dfb13308bea594e89a6a91a6ab1b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d40f3dbb02ab9c1bcc76462fb43ff35d1b10c2c3d04b15af5b36e1ae62d1bfe2",
+                "code": "06d8ef8c7265dfb13308bea594e89a6a91a6ab1b",
+                "maintenance": "6364b625d7616a1ac04d959dc02a6e334426e325d6cd399a90c7f0b5c3c525ac"
+            }
+        }
+    }
+}

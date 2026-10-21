@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8d676f1f1029cec29859f573138d4767",
+    "identity": "github:1350484605:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1350484605:root",
+            "repository": "rogerdigital/dsh-vet",
+            "path": "",
+            "revision": "b26f6c0d4ddb1f3d3205e9fd60f647929c1aedce",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "dd4bc3a468cd86e4d306157ba70be7db8144df667fbc222db7506bdf7f45737a",
+                "code": "b26f6c0d4ddb1f3d3205e9fd60f647929c1aedce",
+                "maintenance": "aa93e88d0613a3832cd1c3352c839020a7f71c82a46b79b16f37a344a79c123f"
+            }
+        }
+    }
+}

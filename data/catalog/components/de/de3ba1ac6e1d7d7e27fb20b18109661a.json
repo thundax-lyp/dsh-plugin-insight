@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "de3ba1ac6e1d7d7e27fb20b18109661a",
+    "identity": "github:1335766559:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335766559:root",
+            "repository": "penguin-oo/dsh-delegate-router",
+            "path": "",
+            "revision": "33db3b0d393e48f3d62d1f44cced4b579fae2306",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "0417fe1b59e6685a05b46ed12691f4b0164b318852fa3b78dc73e4a0a68bbc47",
+                "code": "33db3b0d393e48f3d62d1f44cced4b579fae2306",
+                "maintenance": "33ee7291e71f159b23bddb66b1db9bfce42f0c04e54596d15b2146e9a9386973"
+            }
+        }
+    }
+}

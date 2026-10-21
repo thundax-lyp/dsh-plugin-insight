@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ff7625cc4b6122deccd705294b9154ae",
+    "identity": "github:1362651541:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1362651541:root",
+            "repository": "TianJie52009/dsh-kaomoji",
+            "path": "",
+            "revision": "27a2792cd90c677dc6c0cbfc27f107064e63a855",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b2c0703bffac1f682051ac3ac8d6d816bf227cd06f66d60b783b9af56c18c7e6",
+                "code": "27a2792cd90c677dc6c0cbfc27f107064e63a855",
+                "maintenance": "700fdfa86cffd25a962d32d3d7df94e1c1b19c8449c3291ddb4ba750b5f31b79"
+            }
+        }
+    }
+}

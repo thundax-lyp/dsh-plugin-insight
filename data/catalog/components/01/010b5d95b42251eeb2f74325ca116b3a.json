@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "010b5d95b42251eeb2f74325ca116b3a",
+    "identity": "github:1353208343:packages-dsh-dev-git-graph",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1353208343:packages-dsh-dev-git-graph",
+            "repository": "kp-z/dsh-dev-git-graph",
+            "path": "packages/dsh-dev-git-graph",
+            "revision": "96a97e1fd38914681e5780d6d2129cb3ef910df7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "392f4ccc5780c81ccb956ed3c24b4d3ec840a4d98c14711b159fc37e1348807a",
+                "code": "96a97e1fd38914681e5780d6d2129cb3ef910df7",
+                "maintenance": "15f92a9b7f02b876bd9bbdadbe9aaf1ecf54c474d4da80fe17a5c47b185b8c2d"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e34ac2a47cc023b11092ef2b7b929304",
+    "identity": "github:1336948620:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336948620:root",
+            "repository": "hanyi7867069-create/dsh-moonrise",
+            "path": "",
+            "revision": "4e8029680754eafa5fa738fea3f03ac2c605c138",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3acff8aa12925852868dd441305b4e89697dfcdac649599f2d10c4db3e99650b",
+                "code": "4e8029680754eafa5fa738fea3f03ac2c605c138",
+                "maintenance": "75d8c8b94e13e55cfb526caf47609bd9a015af753d9372ef1bcf66171a9828b3"
+            }
+        }
+    }
+}

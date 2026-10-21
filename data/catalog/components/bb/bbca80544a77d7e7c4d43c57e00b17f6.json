@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bbca80544a77d7e7c4d43c57e00b17f6",
+    "identity": "github:1377250948:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1377250948:root",
+            "repository": "kaminn/dsh-web-fetch-fakeip",
+            "path": "",
+            "revision": "0e0d5f63006570be971b49694b1e0afee2f0bc14",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c31cdcaaac2673a295e80889a5133e6b8bcb62a91b1d5b6ce4d943f07855d147",
+                "code": "0e0d5f63006570be971b49694b1e0afee2f0bc14",
+                "maintenance": "25661cd1f211cc3181655e4c9a86150945c5f357058cebd060c346518595e583"
+            }
+        }
+    }
+}

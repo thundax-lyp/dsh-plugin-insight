@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "298a4970ef386a5e5dd6ddd7e55e47ba",
+    "identity": "github:1334795135:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334795135:root",
+            "repository": "zhijun-dai/dsh-Fonts",
+            "path": "",
+            "revision": "60b3e6a56b213c294d4a3acd6e865712ae7b497e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b14d5d44fda264160fba2fd6bf935501c1f7fa4639dbc0b47fbb88d95ec7a51a",
+                "code": "60b3e6a56b213c294d4a3acd6e865712ae7b497e",
+                "maintenance": "45ccd0f542c511cdc407bf20d742ed43aa4a2e407b4cfeb7563396b7510fa42f"
+            }
+        }
+    }
+}

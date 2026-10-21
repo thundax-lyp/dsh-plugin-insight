@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b18a75bec2a349067c16087fbe451e41",
+    "identity": "github:1338041841:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338041841:root",
+            "repository": "lanbaolu/dsh-wechat-bridge",
+            "path": "",
+            "revision": "555391e918104bdd65c4c5fd9c91dc4ff417a7f5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ae75de94c96496ff8c84a1929eee9c43108d521fde1a8f0a4dedf9005741849a",
+                "code": "555391e918104bdd65c4c5fd9c91dc4ff417a7f5",
+                "maintenance": "52a45a20a47d0f21db083e207fa8fedcb8cf041d9d5577d0a8e736039dad5e2c"
+            }
+        }
+    }
+}

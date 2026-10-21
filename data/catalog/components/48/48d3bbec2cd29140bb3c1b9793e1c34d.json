@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "48d3bbec2cd29140bb3c1b9793e1c34d",
+    "identity": "github:1407888779:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1407888779:root",
+            "repository": "zzstar101/dsh-sandbox-noop-escalation",
+            "path": "",
+            "revision": "6bcc773b85f4ab37a75169c8fa251b483fb4ee9a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "80d9f38d52b7eaf6af8d41d7e34bece6fa6e73434bdc45ab58b9b2c638b3985c",
+                "code": "6bcc773b85f4ab37a75169c8fa251b483fb4ee9a",
+                "maintenance": "787a13cf11442fabc6cd6f72031e1ca04090a19c83c9dcca536ebb0b8263031f"
+            }
+        }
+    }
+}

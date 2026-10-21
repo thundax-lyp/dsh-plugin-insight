@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bd6b793beadf349ab95ceb44cc267224",
+    "identity": "github:1422958215:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1422958215:root",
+            "repository": "DragonHorizon-xtihc/dsh-connect-trae-models",
+            "path": "",
+            "revision": "800cf9548b0c6f59922bc72c2d18a4b672fdb229",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "72424b45a235f40e0f852b7d0771d4f0ee7d7366fcaa7970cf8e51c333f82b9a",
+                "code": "800cf9548b0c6f59922bc72c2d18a4b672fdb229",
+                "maintenance": "98986a44c38cdcad5aca990281929ba06319877506c0e70beabec50313d3aa17"
+            }
+        }
+    }
+}

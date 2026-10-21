@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f0e615f2c57e8a574b09974085435e88",
+    "identity": "github:1386380953:packages-personal-web",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1386380953:packages-personal-web",
+            "repository": "psychiiii/dsh-three-window",
+            "path": "packages/personal-web",
+            "revision": "8392a4a26828198b68d2017f3b726f5bbf7c5fcd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "dcccbcd2e93b714ae56380bb920a345b9a7a43da5cca73f2e2720523becf1aa8",
+                "code": "8392a4a26828198b68d2017f3b726f5bbf7c5fcd",
+                "maintenance": "20938c0c9f9222f53148ed2b5ffc84ce6e7132fcb7183fa2e1beda95b578489f"
+            }
+        }
+    }
+}

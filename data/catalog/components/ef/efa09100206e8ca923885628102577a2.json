@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "efa09100206e8ca923885628102577a2",
+    "identity": "github:1334712589:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334712589:root",
+            "repository": "peiqi10086/dsh-skills-market",
+            "path": "",
+            "revision": "4ffd75108d643402409eb339b285e4e839497d99",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "8f73364ce6428856ae870249ee3cb482eb781cb04b745b894d68a843789b8a58",
+                "code": "4ffd75108d643402409eb339b285e4e839497d99",
+                "maintenance": "6f65d9b7446f5503bb010a9b3715a194afa18a146baab9c3ecb1d37d95213d07"
+            }
+        }
+    }
+}

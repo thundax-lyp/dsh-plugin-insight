@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2542d77852d32915d6d929ba34591e93",
+    "identity": "github:1423871319:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1423871319:root",
+            "repository": "chinwe/dsh-compound-memory",
+            "path": "",
+            "revision": "7a6ea8554abfce2138c9353df973294bc602918b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "42ec82ce9fd74aab660980b5f0a30347b981c0bfca3d37edd2edc70fd3908e81",
+                "code": "7a6ea8554abfce2138c9353df973294bc602918b",
+                "maintenance": "143263b21cdc9ce8785da40461053cc438d58816b7e04a2114e4781501bccf53"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "900b22319a997d625cb43d0ae38881a8",
+    "identity": "github:1327854826:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1327854826:root",
+            "repository": "Inference1/clarify-intent-and-establish-shared-understanding",
+            "path": "",
+            "revision": "6798dff7b81e1ef9f5ca2263ab8fc8cb9ce80b6c",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "5a4ac4429b1e7d9f6a6eda04778077cbffcb5dd1a751b2260f288fde967223bf",
+                "code": "6798dff7b81e1ef9f5ca2263ab8fc8cb9ce80b6c",
+                "maintenance": "eb7179be7446d4229c911809d8b1feed48f3aec8142577b0ab4b5b20e5921970"
+            }
+        }
+    }
+}

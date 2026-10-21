@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e6a0cbffe708e739363f566a6a9f2564",
+    "identity": "github:1372802507:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1372802507:root",
+            "repository": "huuthuan-nguyen/dsh-knowcode",
+            "path": "",
+            "revision": "1d4d32200260057dc427ad703d35774ba24b1189",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "e4b0ab01328845a5bde61cce527988bb54eda5e62b1dfb3015ca83847fe2d545",
+                "code": "1d4d32200260057dc427ad703d35774ba24b1189",
+                "maintenance": "a5c122bb201969593481ab9de0f7556ac511364f707d24c1b065dd6c1220010f"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6863dc86e5a8ccac11f916595dc73ebf",
+    "identity": "github:849121458:integrations-dsh",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:849121458:integrations-dsh",
+            "repository": "agentscope-ai/ReMe",
+            "path": "integrations/dsh",
+            "revision": "bfc05bf3b79976c52439008f2b6dd5c4c5a53b0e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "245f36447f53e0ea4cf52b5e9ce203babd15a1de4655c47cb5f9891d0de25293",
+                "code": "bfc05bf3b79976c52439008f2b6dd5c4c5a53b0e",
+                "maintenance": "6ecd48984332d3870f753d91c6a97a5a2bc0b6d6b6122c974e76227567659cec"
+            }
+        }
+    }
+}

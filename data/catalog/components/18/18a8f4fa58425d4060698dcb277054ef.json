@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "18a8f4fa58425d4060698dcb277054ef",
+    "identity": "github:1333173677:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333173677:root",
+            "repository": "Dominic789654/awesome-deepseek-harness",
+            "path": "",
+            "revision": "152af342f4281bdbfe38b95728909457126eede3",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "339a252ffc738233b50fd8abcfe6670d1713f121a015eedad56a2aa18ee2ae20",
+                "code": "152af342f4281bdbfe38b95728909457126eede3",
+                "maintenance": "4295d60d7285103a3598a584811e6ce18660ae39cbf153ad9c296db82baf149c"
+            }
+        }
+    }
+}

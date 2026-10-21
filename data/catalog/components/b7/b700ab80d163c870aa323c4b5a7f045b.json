@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b700ab80d163c870aa323c4b5a7f045b",
+    "identity": "github:1336671463:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336671463:root",
+            "repository": "yu502950715yang/dsh-use-wallpaper",
+            "path": "",
+            "revision": "73fe6ab126688c3a2ddf6dbb63e9c2b38b9f8151",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a08fd5abe21a5116a425e11a9f6e5baf9c0f810a2d4935714bccf215e9517a0b",
+                "code": "73fe6ab126688c3a2ddf6dbb63e9c2b38b9f8151",
+                "maintenance": "fb1cc6e940c90f5194c247943f88e71ecf927db758b7aa786af71703baff4f4c"
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "3982506cad54cecb494630fa704d21a7",
+    "identity": "github:1346645585:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346645585:root",
+            "repository": "robbywang25/dsh-llm-mlx",
+            "path": "",
+            "revision": "f61219ece704331e85ff54ad26f6cd317b03dfad",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "134c7d36990fc5246fe43958eb06927213aa3ab6582a66599d1bc83b4eaa6ea6",
+                "code": "f61219ece704331e85ff54ad26f6cd317b03dfad",
+                "maintenance": "58e3c1b3622bd9c68d18f1dba5f4f216f2fb97ace0dac631ca87eebc34617c4a"
+            }
+        }
+    }
+}

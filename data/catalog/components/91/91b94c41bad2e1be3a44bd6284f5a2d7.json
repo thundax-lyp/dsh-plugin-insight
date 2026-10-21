@@ -1,0 +1,365 @@
+{
+    "schema_version": 3,
+    "id": "91b94c41bad2e1be3a44bd6284f5a2d7",
+    "identity": "github:1367305514:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1367305514:root",
+            "repository_id": 1367305514,
+            "component_id": "root",
+            "repository": "1069137617/dsh-reasoning-tiers",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-reasoning-tiers",
+            "entry_type": "plugin",
+            "technical_category": "model-provider",
+            "business_category": "infrastructure",
+            "tags": [
+                "模型能力",
+                "推理档位"
+            ],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "5bc7230f875765ea3eb08f6b4e85cc237d9401bc9670e9e7e5b955bc62c370a0",
+                "code": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b",
+                "maintenance": "578ceb2b77e3cc5c9671ad1be42bbaaf0f67d43bee453d9a668a9f446b1cc54e"
+            },
+            "sources": [
+                {
+                    "id": "20261020-research40-github-1367305514-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T03:11:15.964Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "20261020-research40-github-1367305514-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/1069137617/dsh-reasoning-tiers/blob/fe642c8ec878b6ba46a7c1831fc6cea557083e5b/README.md",
+                    "revision": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b",
+                    "captured_at": "2026-10-20T03:11:15.964Z",
+                    "summary": "按规则补齐第三方模型推理档位，并在设置页编辑模型能力声明。",
+                    "artifact": "data/runs/2026-10-20-02/snapshots/1069137617--dsh-reasoning-tiers/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "20261020-research40-github-1367305514-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/1069137617/dsh-reasoning-tiers/blob/fe642c8ec878b6ba46a7c1831fc6cea557083e5b/src/index.ts",
+                    "revision": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b",
+                    "captured_at": "2026-10-20T03:11:15.964Z",
+                    "summary": "核查 src/index.ts；按知识表和实时模型信息生成设置补丁，带版本写入、重算冲突并记录撤销日志，不接管请求适配器。",
+                    "artifact": "data/runs/2026-10-20-02/snapshots/1069137617--dsh-reasoning-tiers/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "档位出现不证明服务端确实改变推理量；本轮未做请求字节或质量对照。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "自定义供应商模型缺少档位元数据时，用户需要恢复可选档位并识别无效配置。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1367305514-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1367305514:root",
+                            "area": "code",
+                            "fingerprint": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:11:15.964Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "按知识表和实时模型信息生成设置补丁，带版本写入、重算冲突并记录撤销日志，不接管请求适配器。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1367305514-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1367305514:root",
+                            "area": "code",
+                            "fingerprint": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:11:15.964Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "配置缝修复比拦截模型请求侵入小；声明能力仍须与真实提供商行为一致。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1367305514-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1367305514:root",
+                            "area": "code",
+                            "fingerprint": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:11:15.964Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "规则维护、备份和撤销演练是主要成本；模型高档位可能增加实际推理费用，未测增益。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1367305514-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1367305514:root",
+                            "area": "code",
+                            "fingerprint": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:11:15.964Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "版本冲突后重算一次、知识表异常拒写和独立日志可借鉴；撤销日志与实际写入一致性需实测。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1367305514-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1367305514:root",
+                            "area": "code",
+                            "fingerprint": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:11:15.964Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先备份 profile，对单个模型检查实际请求与撤销结果，再考虑批量补齐。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1367305514-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1367305514:root",
+                            "area": "code",
+                            "fingerprint": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:11:15.964Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "档位出现不证明服务端确实改变推理量；本轮未做请求字节或质量对照。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1367305514-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1367305514:root",
+                            "area": "code",
+                            "fingerprint": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:11:15.964Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "版本 0.3.1；Host 兼容旧事件与 0.2.0 document-updated，能力界面要求 0.2.0。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1367305514-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1367305514:root",
+                            "area": "code",
+                            "fingerprint": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:11:15.964Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T03:11:15.964Z",
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "自定义模型用户可备份profile后试单模型档位修补，先核对真实请求和撤销结果。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "缺失档位元数据导致不可选配置的任务具体。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "带冲突重算和撤销的配置修补比手填可管理。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "补丁与知识表处理可查，服务端推理量和质量未对照。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "需维护规则备份，升档还可能增加推理费用。"
+                    }
+                },
+                "score": 65,
+                "revision": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "20261020-research40-github-1367305514-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1367305514:root",
+                        "area": "code",
+                        "fingerprint": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1367305514:root",
+            "repository": "1069137617/dsh-reasoning-tiers",
+            "path": "",
+            "revision": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b",
+            "fingerprints": {
+                "directory": "5bc7230f875765ea3eb08f6b4e85cc237d9401bc9670e9e7e5b955bc62c370a0",
+                "code": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b",
+                "maintenance": "578ceb2b77e3cc5c9671ad1be42bbaaf0f67d43bee453d9a668a9f446b1cc54e"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T02:51:30Z",
+            "analysis_sha256": "3d8120284a1fdb3607ec0a2b8de27d9b3435f3e406a771be978676726525e199"
+        },
+        "publication.metadata": "data/plugins/1069137617--dsh-reasoning-tiers/META.json",
+        "publication.summaries": {
+            "text": "按规则补齐第三方模型推理档位，并在设置页编辑模型能力声明。",
+            "revision": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b",
+            "source_url": "https://github.com/1069137617/dsh-reasoning-tiers/blob/fe642c8ec878b6ba46a7c1831fc6cea557083e5b/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b",
+            "items": {
+                "后台": "模型档位配置补齐与诊断。",
+                "界面": "模型能力设置页。"
+            }
+        },
+        "publication.advice": {
+            "revision": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b",
+            "text": "先备份 profile，对单个模型检查实际请求与撤销结果，再考虑批量补齐。"
+        },
+        "registry": "data/plugins/1069137617--dsh-reasoning-tiers",
+        "reports": "# dsh-reasoning-tiers\n\n> 按规则补齐第三方模型推理档位，并在设置页编辑模型能力声明。\n\n## 固定范围与依据\n\n固定提交 [fe642c8ec878b6ba46a7c1831fc6cea557083e5b](https://github.com/1069137617/dsh-reasoning-tiers/blob/fe642c8ec878b6ba46a7c1831fc6cea557083e5b/src/index.ts)；组件路径：仓库根。核查时间 2026-10-20T03:11:15.964Z；本轮基准 2026-10-20T02:51:30Z。\n源码抽读路径：src/index.ts。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：自定义供应商模型缺少档位元数据时，用户需要恢复可选档位并识别无效配置。\n- **亮点**：按知识表和实时模型信息生成设置补丁，带版本写入、重算冲突并记录撤销日志，不接管请求适配器。\n- **思考**：配置缝修复比拦截模型请求侵入小；声明能力仍须与真实提供商行为一致。\n- **建议**：先备份 profile，对单个模型检查实际请求与撤销结果，再考虑批量补齐。\n\n## 场景与替代办法\n\n自定义供应商模型缺少档位元数据时，用户需要恢复可选档位并识别无效配置。\n\n手工填写提供商官方能力更费时但来源直接；不能用插件自己的表格自证档位有效。\n\n## 依赖与流程\n\n依赖 settings、llm、llm-pi-ai 和内置知识表；宿主版本决定事件和表单接口。\n\n检查模型能力后补缺失配置，重启需要启动读取的部分；有误时按日志撤销并核对。\n\n## 成本与效果\n\n规则维护、备份和撤销演练是主要成本；模型高档位可能增加实际推理费用，未测增益。\n\n配置缝修复比拦截模型请求侵入小；声明能力仍须与真实提供商行为一致。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：d93c2f565125ca5897b875f4db296e645ceede70acc8f5b615b44e86127153bd。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 4 | 1416 | — | — | 10572 |\n| .mjs | source | 3 | 526 | 382 | 98 | — |\n| .ts | source | 11 | 2640 | 1770 | 671 | — |\n| .tsx | source | 1 | 245 | 209 | 25 | — |\n| .mjs | test | 9 | 1330 | 1133 | 68 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **后台**：模型档位配置补齐与诊断。\n- **界面**：模型能力设置页。\n\n## 工程亮点\n\n版本冲突后重算一次、知识表异常拒写和独立日志可借鉴；撤销日志与实际写入一致性需实测。\n\n## 分发与兼容\n\n版本 0.3.1；Host 兼容旧事件与 0.2.0 document-updated，能力界面要求 0.2.0。\n\n## 历史对照\n\n前次代码指纹为 fe642c8ec878b6ba46a7c1831fc6cea557083e5b；本轮固定为 fe642c8ec878b6ba46a7c1831fc6cea557083e5b。手工填写提供商官方能力更费时但来源直接；不能用插件自己的表格自证档位有效。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：档位出现不证明服务端确实改变推理量；本轮未做请求字节或质量对照。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：测试已有配置保留、并发修改、撤销、平坦档位与不支持档位的服务端错误。\n",
+        "metadata": {
+            "repository": "1069137617/dsh-reasoning-tiers",
+            "repository_id": 1367305514,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 0,
+            "pushed_at": "2026-10-06T13:21:42Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1069137617%2Fdsh-reasoning-tiers%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640E:3FDBB6:14F477:226B68:6AD84905 and timestamp 2026-10-21 05:09:25 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1069137617%2Fdsh-reasoning-tiers%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6418:1DEEF7:1484DA:21FCD3:6AD84905 and timestamp 2026-10-21 05:09:25 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1069137617%2Fdsh-reasoning-tiers%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641B:E4386:14E619:22533A:6AD84905 and timestamp 2026-10-21 05:09:25 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1069137617%2Fdsh-reasoning-tiers%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641C:1CA4C8:148D62:22065E:6AD84905 and timestamp 2026-10-21 05:09:25 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1069137617%2Fdsh-reasoning-tiers%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641D:1F2B1B:146B69:21D830:6AD84905 and timestamp 2026-10-21 05:09:25 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-reasoning-tiers",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 1044,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-reasoning-tiers",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-09-12T13:38:40.238Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-reasoning-tiers",
+                    "error": null,
+                    "latest_version": "0.3.0",
+                    "latest_published_at": "2026-09-13T03:14:01.894Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b",
+                "current_revision": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1367305514:root",
+            "repository": "1069137617/dsh-reasoning-tiers",
+            "path": "",
+            "revision": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5bc7230f875765ea3eb08f6b4e85cc237d9401bc9670e9e7e5b955bc62c370a0",
+                "code": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b",
+                "maintenance": "578ceb2b77e3cc5c9671ad1be42bbaaf0f67d43bee453d9a668a9f446b1cc54e"
+            }
+        }
+    }
+}

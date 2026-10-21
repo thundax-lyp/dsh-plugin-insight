@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "77b797dd4114a507381ebb3112da0001",
+    "identity": "github:1338514004:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338514004:root",
+            "repository": "WilliamShi666/dsh-multiple-chat-panels",
+            "path": "",
+            "revision": "46809e207ff500777fd2a36901428ca1cb56e670",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "baeaf10a466aa82adfa7e66f2d14741aa3857862a1bb8a9534c8658e0d2d5acd",
+                "code": "46809e207ff500777fd2a36901428ca1cb56e670",
+                "maintenance": "6daad36cf0f665aa4c79a777e2d0a832aadde576e6e78d543de0e7ed672d5606"
+            }
+        }
+    }
+}

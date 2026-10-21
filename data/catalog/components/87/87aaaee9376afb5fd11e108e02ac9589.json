@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "87aaaee9376afb5fd11e108e02ac9589",
+    "identity": "github:1346960807:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346960807:root",
+            "repository": "buchylx/create-dsh-content-plugin",
+            "path": "",
+            "revision": "22869d5a0144cd7a9e867af29522d72dc7b3968f",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "6825c45de384c3b4219283b98d0f74d5b84c18f6a0d5395eac6177f77bfc0052",
+                "code": "22869d5a0144cd7a9e867af29522d72dc7b3968f",
+                "maintenance": "56fd5cb7f7f9c3e0af4ca13739f89313ec936ca3a577073d436d13b4266754bc"
+            }
+        }
+    }
+}

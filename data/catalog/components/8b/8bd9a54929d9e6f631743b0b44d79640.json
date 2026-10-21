@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8bd9a54929d9e6f631743b0b44d79640",
+    "identity": "github:1410800218:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1410800218:root",
+            "repository": "Faide-cyber/dsh-model-in-use",
+            "path": "",
+            "revision": "14236ac5d033540191cd0bc30db71e05b813dace",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7b562a8aef41901f50e1ab21e8f19b0ff060a33165b31d759744036850da5399",
+                "code": "14236ac5d033540191cd0bc30db71e05b813dace",
+                "maintenance": "580237c092e16ad03c72ef904fa33c31dc5810d050dd7940f4babd2487176614"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "06e029c3c89613cfcb819f6a8cc12359",
+    "identity": "github:1336743982:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336743982:root",
+            "repository": "JUNQINGV587/mattpocock-skills-dsh",
+            "path": "",
+            "revision": "705904e00a322a628bb5a5e4601f0d7c60755c05",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "061f0c1e42b045a4f2b4869fd9a9b4be332c05a691739fed3d6607b50f2caf72",
+                "code": "705904e00a322a628bb5a5e4601f0d7c60755c05",
+                "maintenance": "6fdf5e28f36dce82d65eea1144cf990838e2187438b5d3de88c64bd8af082754"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8cda861e0d183d1a66b50f0bfa66bdcf",
+    "identity": "github:1335027284:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335027284:root",
+            "repository": "apheli0os/deepseek-harness-orchestrate",
+            "path": "",
+            "revision": "6a1863dfabafa565bf7af160ce60e2749f4bad17",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "95c2cab0b8c5aafd8c695f212b4596b0c51a4c7d783dac125aa783c8b20f5143",
+                "code": "6a1863dfabafa565bf7af160ce60e2749f4bad17",
+                "maintenance": "344ce32285da6cf5cf69cd36dd7c177b118a659db07cf29fdf549eb55379cf44"
+            }
+        }
+    }
+}

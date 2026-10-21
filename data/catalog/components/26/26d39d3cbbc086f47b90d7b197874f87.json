@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "26d39d3cbbc086f47b90d7b197874f87",
+    "identity": "github:1335761093:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335761093:root",
+            "repository": "baisama-cloud/dsh-omni-bridge",
+            "path": "",
+            "revision": "de46a1b44558f733a7ddb329d686c6735252fd28",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "58893d196541af71001ad9ac4a9fb5d8fd9e0ff63f6536be039e674b9a973faa",
+                "code": "de46a1b44558f733a7ddb329d686c6735252fd28",
+                "maintenance": "1bcc463745c66787a5d62ced6806694316790a0ecaa3b47051bac8195f61e642"
+            }
+        }
+    }
+}

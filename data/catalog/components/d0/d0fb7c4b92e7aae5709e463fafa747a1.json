@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d0fb7c4b92e7aae5709e463fafa747a1",
+    "identity": "github:1381270887:packages-dsh",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1381270887:packages-dsh",
+            "repository": "Sur-Cai/macos-computer-use-kit",
+            "path": "packages/dsh",
+            "revision": "2d40a8ee9c903bdddcd7a9792fca0e8ea78b0352",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4b0e5c1fb1bf8669b9836da4e0455da590b5e68c78cfdb84e05b06d7f4809f72",
+                "code": "2d40a8ee9c903bdddcd7a9792fca0e8ea78b0352",
+                "maintenance": "8ed66dcb318dd868e1abab7645319a24d8602b870b0fe5799e44cf8b585746b8"
+            }
+        }
+    }
+}

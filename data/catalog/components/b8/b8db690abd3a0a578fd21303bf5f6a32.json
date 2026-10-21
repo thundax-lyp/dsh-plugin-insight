@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b8db690abd3a0a578fd21303bf5f6a32",
+    "identity": "github:1348761490:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1348761490:root",
+            "repository": "domitor-syh/dsh-ui-skin-switcher",
+            "path": "",
+            "revision": "5ec59ecb76c816bddb71ae5f509f9549dfdf7b43",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a552dc40d6dcf67dd531c6e5d0a16ea4c3a9f8beb5587d9b2cbf244ca418b8ff",
+                "code": "5ec59ecb76c816bddb71ae5f509f9549dfdf7b43",
+                "maintenance": "e1a6f3a988ca77d210b0a07613943cf7c6525b34fa07fe929749b08832236034"
+            }
+        }
+    }
+}

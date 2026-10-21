@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "066afb768f66c3b584ed5f768591aa8c",
+    "identity": "github:1336190565:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336190565:root",
+            "repository": "NOirBRight/dsh-llm-grok",
+            "path": "",
+            "revision": "e9206daa99ba3fea6af4c7db48c10247e3a0e4bb",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "29790aa806461add395a1c337c34183d8be25a07ddbcbceb37a0f045b82305c3",
+                "code": "e9206daa99ba3fea6af4c7db48c10247e3a0e4bb",
+                "maintenance": "1d64a5e669be95d783594dd7b36c5e8e0236c8d149e58c796731e2343d2e2aa7"
+            }
+        }
+    }
+}

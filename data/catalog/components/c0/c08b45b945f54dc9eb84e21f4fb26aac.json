@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c08b45b945f54dc9eb84e21f4fb26aac",
+    "identity": "github:1402707750:packages-dsh-tether-ios",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1402707750:packages-dsh-tether-ios",
+            "repository": "chinahhy/DSH-plugins",
+            "path": "packages/dsh-tether-ios",
+            "revision": "71f84addab8bab34de83ead863ea86df0269dec9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ad458f9852f7a1e21782c1a2d36efc129152b99a52d0c786d41725fcac323766",
+                "code": "71f84addab8bab34de83ead863ea86df0269dec9",
+                "maintenance": "3c98fb8d912c11ac6ab55b7b1097e5df1b85cef1afb96b3beb1766aef2219907"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e96337516c94a9952c5a1239ee870372",
+    "identity": "github:1337362097:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337362097:root",
+            "repository": "rayadesune/DeepSeek-Harness-chat-billing",
+            "path": "",
+            "revision": "c40685752b22f3b44dd39ab0e1c59058dcc4dbf3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "01a9c638aad0d71d95467e0ce9faf5780b2e30b29b2532ef3a46bee1b2d3d9f8",
+                "code": "c40685752b22f3b44dd39ab0e1c59058dcc4dbf3",
+                "maintenance": "77e56e23e6cb1ca89501c132f43e231d2f506e50be146e027a2043c0e43b3ed0"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d500ed9a5e92d42e1ca7493fade9e91d",
+    "identity": "github:1420506850:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1420506850:root",
+            "repository": "waterha/dsh-pintop",
+            "path": "",
+            "revision": "13fd910ed40bb22d9178dde88836c275d2dce510",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b529cea58c74cff323a8b561ef1b703377eef6f82d4bf491cebd4cc0c17baeb8",
+                "code": "13fd910ed40bb22d9178dde88836c275d2dce510",
+                "maintenance": "ca205b2cbe1a0f1a817663df7c182e811eb74f7ff3fab03db24457c039889184"
+            }
+        }
+    }
+}

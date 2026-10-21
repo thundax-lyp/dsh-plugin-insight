@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "3a22d04b295caf3d11aa3fb06a044fd3",
+    "identity": "github:1334282453:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334282453:root",
+            "repository": "imlishiyuan/deepseek-harness-zh-cn",
+            "path": "",
+            "revision": "285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "f55e0a818928fa21b84db6d4aed6e1416d702347cbbb0d7ad0c841f4f170f51b",
+                "code": "285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd",
+                "maintenance": "3cf076b8dd004f285b15cff9c993574c7b7d258d24d3feac053b1232a3d500c2"
+            }
+        }
+    }
+}

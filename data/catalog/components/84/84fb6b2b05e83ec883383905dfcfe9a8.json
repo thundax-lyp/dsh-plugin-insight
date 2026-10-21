@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "84fb6b2b05e83ec883383905dfcfe9a8",
+    "identity": "github:1354229194:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1354229194:root",
+            "repository": "wzn16/dsh-fs-allowlist",
+            "path": "",
+            "revision": "8605d0c85b3c7474b5aae84028a3fa4a9a357f00",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "361c580bce139a320065b5ded6126fd161a24b1f66c46b593a9a1add57a52c2c",
+                "code": "8605d0c85b3c7474b5aae84028a3fa4a9a357f00",
+                "maintenance": "3972138ad9745e33bf687549695c4b595fe8d74b8940f683458575fdf02a8a25"
+            }
+        }
+    }
+}

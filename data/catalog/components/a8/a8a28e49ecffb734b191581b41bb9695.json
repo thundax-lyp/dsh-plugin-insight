@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a8a28e49ecffb734b191581b41bb9695",
+    "identity": "github:1333412213:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333412213:root",
+            "repository": "Jesse-njx/dsh-plugin-manager-registry",
+            "path": "",
+            "revision": "ed074c4fe3de63549d9e7cff92c20d723c465ac1",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "fb3a2488fbb886e4929fa6b9f1d59e2ccd395dfd4410c413a04d31cb7e21d51b",
+                "code": "ed074c4fe3de63549d9e7cff92c20d723c465ac1",
+                "maintenance": "6173230c93d159a4696525b47a5145244e246bef37752a7724f4212258d5e13a"
+            }
+        }
+    }
+}

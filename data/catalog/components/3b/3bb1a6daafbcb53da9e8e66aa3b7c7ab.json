@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3bb1a6daafbcb53da9e8e66aa3b7c7ab",
+    "identity": "github:1351434803:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1351434803:root",
+            "repository": "d3vmeh/dsh-fetch-timeouts",
+            "path": "",
+            "revision": "2b4e09b350e93bb2b61d0c4a25f5bb5bbaa60a68",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "18b19b5a4b8938fbc92d3c09d8f2a57a024facc380439ad36cc7501359b9dfa1",
+                "code": "2b4e09b350e93bb2b61d0c4a25f5bb5bbaa60a68",
+                "maintenance": "fb6d044f77a28a0207e2cd01bd504555e2a5949d990bf624e6cc2ee4163efe7c"
+            }
+        }
+    }
+}

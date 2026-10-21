@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2890d08f58fe1f4ccd4f610729368edb",
+    "identity": "github:1336967139:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336967139:root",
+            "repository": "SunQingyuan0/Kabutack",
+            "path": "",
+            "revision": "1aa59d31d7eb4d596fb11afc56f097275af2ec47",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "57490d8628e160b8594494cc192eed8fd1c20359c1c3daa40b50aaca53e95036",
+                "code": "1aa59d31d7eb4d596fb11afc56f097275af2ec47",
+                "maintenance": "5af48cfc1d66a5bf642cd538ff5012469d10a25920504aa199da7f3b000d013c"
+            }
+        }
+    }
+}

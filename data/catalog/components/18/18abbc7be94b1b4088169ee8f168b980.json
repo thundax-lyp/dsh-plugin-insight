@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "18abbc7be94b1b4088169ee8f168b980",
+    "identity": "github:1422802391:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1422802391:root",
+            "repository": "cdredfox/dsh-prompt-shortcuts",
+            "path": "",
+            "revision": "e39bcfeca741c1fbf1a2d064a4ccc6655c95b3d4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "cdc7d149706ab10868eb0d459eba1afca29dfb429d6965b1862018be5f28057e",
+                "code": "e39bcfeca741c1fbf1a2d064a4ccc6655c95b3d4",
+                "maintenance": "42ecdd12d85cab3efb4d4afff6b8818b4cff2f59f7f705b4991b57784b1a15bc"
+            }
+        }
+    }
+}

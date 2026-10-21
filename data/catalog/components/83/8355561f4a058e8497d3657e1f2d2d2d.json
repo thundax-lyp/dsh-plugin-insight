@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8355561f4a058e8497d3657e1f2d2d2d",
+    "identity": "github:1413134763:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1413134763:root",
+            "repository": "LUDIWUSI12138/dsh-sqy-rewind",
+            "path": "",
+            "revision": "b8753fc8e207f147115b63951867d88d2c58bc0c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5009ba3cfaa8b71eca980872d7dfb2c6270482d5482957e84a939b22924642cb",
+                "code": "b8753fc8e207f147115b63951867d88d2c58bc0c",
+                "maintenance": "5ed4c07c70d716809ab9964b9b200fe62d4fadc6a1ac97c7810894c5bd4632cc"
+            }
+        }
+    }
+}

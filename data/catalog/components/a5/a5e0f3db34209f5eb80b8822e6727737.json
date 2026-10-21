@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a5e0f3db34209f5eb80b8822e6727737",
+    "identity": "github:1346383842:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346383842:root",
+            "repository": "IP050/dsh-video-player",
+            "path": "",
+            "revision": "11967b02d2658ecee9b93b723ea6e9c51e4f408c",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "ac58ef7a3cbb239d08d88d5697922e13d9a6cc4e0c59a5931647d4f8f4ef5fa9",
+                "code": "11967b02d2658ecee9b93b723ea6e9c51e4f408c",
+                "maintenance": "4389738c87e9ea4464ac896b8842213ef88e4d68f150f0667764a7c709085511"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9b5b7b86daa3ace87f02a826516b1b8e",
+    "identity": "github:1334484371:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334484371:root",
+            "repository": "cmfok/dsh-feishucard",
+            "path": "",
+            "revision": "c409eba71bd85f7630df88324f7ef0caede67682",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "dce0f8e4421c2579d4eac78d72d776cf40f7f58a2410083d31a555c48a36a9ae",
+                "code": "c409eba71bd85f7630df88324f7ef0caede67682",
+                "maintenance": "715c5ebfb9b43835541b91bae21264e661b389c56abc5f26cc189f5ea2b5c366"
+            }
+        }
+    }
+}

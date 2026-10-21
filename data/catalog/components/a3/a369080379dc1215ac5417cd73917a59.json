@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a369080379dc1215ac5417cd73917a59",
+    "identity": "github:1343419490:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343419490:root",
+            "repository": "piaobo123/dafeiyu-buchibaifan",
+            "path": "",
+            "revision": "4af6e3f3c528aeb1136ba7df1b371748cb53e3ac",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4d3ae97daf859a1de48f959e16df7b6935dbf3f34d1b312ac7a3c8f77dcafa0d",
+                "code": "4af6e3f3c528aeb1136ba7df1b371748cb53e3ac",
+                "maintenance": "70fae0b81e86f209c0b06beae21ddefee40b8999057ba96ca76dba775f38afbc"
+            }
+        }
+    }
+}

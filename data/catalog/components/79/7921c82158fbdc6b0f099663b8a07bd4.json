@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7921c82158fbdc6b0f099663b8a07bd4",
+    "identity": "github:1350415897:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1350415897:root",
+            "repository": "mengnanxyyyy/dsh-markdown-xyy",
+            "path": "",
+            "revision": "fae588b9d83c551b58057454e41574ab31c94d65",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "eb9382d0f4b5cf566083bb876d7b0efaa6f63e3f2d66da7feb2b2d5e09afb299",
+                "code": "fae588b9d83c551b58057454e41574ab31c94d65",
+                "maintenance": "29e55092eece0f1ad41a26f63de6bee9e33f749c98deaedb6c93fa42c45661eb"
+            }
+        }
+    }
+}

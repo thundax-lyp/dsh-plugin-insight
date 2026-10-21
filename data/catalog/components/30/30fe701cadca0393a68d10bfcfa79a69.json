@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "30fe701cadca0393a68d10bfcfa79a69",
+    "identity": "github:1341235368:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1341235368:root",
+            "repository": "shetengteng/dsh-lumina-tarot",
+            "path": "",
+            "revision": "ab45e116e01ea0558e6665bf2d7797e1135909f7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "235d7e4dfcada0deb51899796052d230d9ab37cf67f50d433e17d1ca4666a161",
+                "code": "ab45e116e01ea0558e6665bf2d7797e1135909f7",
+                "maintenance": "f5c083128a7262c23a9ec5c1ef43608f502c8897fafcd83f4120718c2236be2c"
+            }
+        }
+    }
+}

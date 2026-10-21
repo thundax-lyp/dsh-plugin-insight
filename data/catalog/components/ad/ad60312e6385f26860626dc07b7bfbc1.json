@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ad60312e6385f26860626dc07b7bfbc1",
+    "identity": "github:1416174732:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1416174732:root",
+            "repository": "neobones/dsh-locale-es-cl",
+            "path": "",
+            "revision": "768a74198b23d7b13b7c7c0fc5de1b7011370514",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e7359004c8487b0d04d048caf757c58e434d90c6e446c7eff2eaaba3fc536868",
+                "code": "768a74198b23d7b13b7c7c0fc5de1b7011370514",
+                "maintenance": "0c46e3f55c59ab22fb985008eda029a0dde4fdd476c90bf123b90911db5cc8fd"
+            }
+        }
+    }
+}

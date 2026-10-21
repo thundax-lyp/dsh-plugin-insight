@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "cf4208a34a75e8f6e5398bdc1778e3aa",
+    "identity": "github:1334855664:packages-dsh-self-evolving",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334855664:packages-dsh-self-evolving",
+            "repository": "timwhitez/dsh-self-evolving",
+            "path": "packages/dsh-self-evolving",
+            "revision": "d0f3c80473df1c21a6c8fb011aae6b7767669317",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "eb714e771c8d5df39a7a6760130cec74ab779e9e936480ece4350120a300dbe9",
+                "code": "d0f3c80473df1c21a6c8fb011aae6b7767669317",
+                "maintenance": "8197490a28a7384fd4b2a95e0429b4df883f261d93a36c9b3a0ee0f49144f337"
+            }
+        }
+    }
+}

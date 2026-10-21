@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bd90c3046f3eee6dc681bc565c8c6293",
+    "identity": "github:1407949460:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1407949460:root",
+            "repository": "MacilyDots/dsh-prompt-inject",
+            "path": "",
+            "revision": "314984a7e10bf2befd117991c9a779e207b6b98b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0fa42b2e3e37e3fd92fbbf1eba5777d42997f5054f6d9c156fc718b2647a2d3a",
+                "code": "314984a7e10bf2befd117991c9a779e207b6b98b",
+                "maintenance": "9ba1f7ac3e2f4a84b829c4fbaeb6eb8a770aa97db51125172a83c57b779fd3c6"
+            }
+        }
+    }
+}

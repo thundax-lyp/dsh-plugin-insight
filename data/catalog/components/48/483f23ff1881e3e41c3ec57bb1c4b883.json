@@ -1,0 +1,362 @@
+{
+    "schema_version": 3,
+    "id": "483f23ff1881e3e41c3ec57bb1c4b883",
+    "identity": "github:1366089972:workspace-plugins-dsh-organism",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1366089972:workspace-plugins-dsh-organism",
+            "repository_id": 1366089972,
+            "component_id": "workspace-plugins-dsh-organism",
+            "repository": "1420079678-ctrl/agent-body",
+            "path": "workspace/plugins/dsh-organism",
+            "aliases": [],
+            "name": "dsh-organism",
+            "entry_type": "plugin",
+            "technical_category": "agent-workflow",
+            "business_category": "infrastructure",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "c304bda87c6ea232deaeffaf99c2bc8f12d9d27ffcfa597c35dcef8e8fde9232",
+                "code": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
+                "maintenance": "43f096365ebe99c29ae5999e57cb00a1b8b3292441388102d038dfe5b740737c"
+            },
+            "sources": [
+                {
+                    "id": "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-organism-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T04:31:47.705Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-organism-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/README.md",
+                    "revision": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
+                    "captured_at": "2026-10-20T04:31:47.705Z",
+                    "summary": "把插件组织为可观测器官，提供心跳、反射、自愈账本和工具schema按需门控。",
+                    "artifact": "data/runs/2026-10-20-04/snapshots/1420079678-ctrl--agent-body--workspace-plugins-dsh-organism/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-organism-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-organism/src/index.ts",
+                    "revision": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
+                    "captured_at": "2026-10-20T04:31:47.705Z",
+                    "summary": "核查 workspace/plugins/dsh-organism/src/index.ts、workspace/plugins/dsh-organism/lib/index.js；组件src/index.ts连接tools与session事件、心跳和持久账本；按器官选择工具schema，反射可再次执行工具，带副作用处方要求人工裁决。",
+                    "artifact": "data/runs/2026-10-20-04/snapshots/1420079678-ctrl--agent-body--workspace-plugins-dsh-organism/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "自愈率和器官比喻是框架指标，不能推出智能提升或业务可用；自动反射可能形成额外调用链，未验证收敛与权限传播。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "多插件组合维护者希望统一发现工具、跟踪故障和触发恢复，合格结果是可追踪的实际恢复而非状态计数增长。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-organism-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1366089972:workspace-plugins-dsh-organism",
+                            "area": "code",
+                            "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:31:47.705Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "组件src/index.ts连接tools与session事件、心跳和持久账本；按器官选择工具schema，反射可再次执行工具，带副作用处方要求人工裁决。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-organism-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1366089972:workspace-plugins-dsh-organism",
+                            "area": "code",
+                            "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:31:47.705Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "自愈率和器官比喻是框架指标，不能推出智能提升或业务可用；自动反射可能形成额外调用链，未验证收敛与权限传播。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-organism-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1366089972:workspace-plugins-dsh-organism",
+                            "area": "code",
+                            "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:31:47.705Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "0.1.1，依赖Cordis和DSH tools/llm等服务，含源码与发布lib；根仓库同时含其他器官，不能把全部规模归于本组件。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-organism-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1366089972:workspace-plugins-dsh-organism",
+                            "area": "code",
+                            "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:31:47.705Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "心跳、日志、schema管理和恢复调用增加常驻负担；需配置器官契约并调反射，模型与人工排查成本未实测。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-organism-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1366089972:workspace-plugins-dsh-organism",
+                            "area": "code",
+                            "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:31:47.705Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "适合愿意维护统一器官协议的实验环境；先只开启观测，再逐条批准恢复路径，验证重复故障不会重复副作用。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-organism-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1366089972:workspace-plugins-dsh-organism",
+                            "area": "code",
+                            "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:31:47.705Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "统一事件与恢复账本有集成价值；把任意插件命名为器官不能自动消除兼容差异，也不能证明任务成功。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-organism-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1366089972:workspace-plugins-dsh-organism",
+                            "area": "code",
+                            "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:31:47.705Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "工具登记、可见schema门控与恢复账本相连值得研究；单一大模块跨观测、提示和执行，修改一个恢复路径可能影响多处。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-organism-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1366089972:workspace-plugins-dsh-organism",
+                            "area": "code",
+                            "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:31:47.705Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T04:31:47.705Z",
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "多插件实验维护者可只开观测试用，再逐条批准恢复，检查重复故障不产生重复副作用。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "组合插件的故障跟踪与恢复需求明确。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "统一账本和器官协议减少接线，独立健康脚本更简单。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "事件账本与反射可查，收敛和权限传播未测。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "心跳、契约、schema及恢复调用常驻成本高。"
+                    }
+                },
+                "score": 54,
+                "revision": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-organism-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1366089972:workspace-plugins-dsh-organism",
+                        "area": "code",
+                        "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1366089972:workspace-plugins-dsh-organism",
+            "repository": "1420079678-ctrl/agent-body",
+            "path": "workspace/plugins/dsh-organism",
+            "revision": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
+            "fingerprints": {
+                "directory": "c304bda87c6ea232deaeffaf99c2bc8f12d9d27ffcfa597c35dcef8e8fde9232",
+                "code": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
+                "maintenance": "43f096365ebe99c29ae5999e57cb00a1b8b3292441388102d038dfe5b740737c"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T04:25:27.514Z",
+            "analysis_sha256": "c7d95212f3b060f4f00e5a6be5738d852968fb6e0a187ca7a68c94b4737caadf"
+        },
+        "publication.metadata": "data/plugins/1420079678-ctrl--agent-body--workspace-plugins-dsh-organism/META.json",
+        "publication.summaries": {
+            "text": "把插件组织为可观测器官，提供心跳、反射、自愈账本和工具schema按需门控。",
+            "revision": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
+            "source_url": "https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
+            "items": {
+                "模型工具": "body_map、body_status、body_heart、body_reflex、body_heal等器官管理工具。",
+                "后台": "心跳、故障账本、反射执行及schema门控。"
+            }
+        },
+        "publication.advice": {
+            "revision": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
+            "text": "适合愿意维护统一器官协议的实验环境；先只开启观测，再逐条批准恢复路径，验证重复故障不会重复副作用。"
+        },
+        "registry": "data/plugins/1420079678-ctrl--agent-body--workspace-plugins-dsh-organism",
+        "reports": "# dsh-organism\n\n> 把插件组织为可观测器官，提供心跳、反射、自愈账本和工具schema按需门控。\n\n## 固定范围与依据\n\n固定提交 [9403444d87d5e962f9a4f0c4c10fdb48f37f7d66](https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-organism/src/index.ts)；组件路径：workspace/plugins/dsh-organism。核查时间 2026-10-20T04:31:47.705Z；本轮基准 2026-10-20T04:25:27.514Z。\n源码抽读路径：workspace/plugins/dsh-organism/src/index.ts、workspace/plugins/dsh-organism/lib/index.js。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：多插件组合维护者希望统一发现工具、跟踪故障和触发恢复，合格结果是可追踪的实际恢复而非状态计数增长。\n- **亮点**：组件src/index.ts连接tools与session事件、心跳和持久账本；按器官选择工具schema，反射可再次执行工具，带副作用处方要求人工裁决。\n- **思考**：统一事件与恢复账本有集成价值；把任意插件命名为器官不能自动消除兼容差异，也不能证明任务成功。\n- **建议**：适合愿意维护统一器官协议的实验环境；先只开启观测，再逐条批准恢复路径，验证重复故障不会重复副作用。\n\n## 场景与替代办法\n\n多插件组合维护者希望统一发现工具、跟踪故障和触发恢复，合格结果是可追踪的实际恢复而非状态计数增长。\n\n此前未入档；独立健康检查和显式恢复脚本更简单，本框架在多插件共享契约时可能减少自建接线。\n\n## 依赖与流程\n\n依赖可兼容的宿主事件、插件声明、可写运行目录和实际工具；自愈成功判断依赖各工具返回语义，不能只信进程或字符串成功。\n\n登记器官与观察事件，查看体征，诊断故障，按只读/副作用处方恢复，再检查实际交付；复发时停用对应反射并人工接管。\n\n## 成本与效果\n\n心跳、日志、schema管理和恢复调用增加常驻负担；需配置器官契约并调反射，模型与人工排查成本未实测。\n\n统一事件与恢复账本有集成价值；把任意插件命名为器官不能自动消除兼容差异，也不能证明任务成功。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：workspace/plugins/dsh-organism；内容摘要：7f7f3a6710741af31e6fb946af39626ada1ac0047da2a3770c874e7ddecee382。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 1 | 3005 | 2705 | 318 | — |\n| .mjs | source | 1 | 324 | 270 | 28 | — |\n| .ts | source | 1 | 3106 | 2493 | 422 | — |\n\n排除 1 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **模型工具**：body_map、body_status、body_heart、body_reflex、body_heal等器官管理工具。\n- **后台**：心跳、故障账本、反射执行及schema门控。\n\n## 工程亮点\n\n工具登记、可见schema门控与恢复账本相连值得研究；单一大模块跨观测、提示和执行，修改一个恢复路径可能影响多处。\n\n## 分发与兼容\n\n0.1.1，依赖Cordis和DSH tools/llm等服务，含源码与发布lib；根仓库同时含其他器官，不能把全部规模归于本组件。\n\n## 历史对照\n\n当前快照此前没有该稳定身份的研究档案。此前未入档；独立健康检查和显式恢复脚本更简单，本框架在多插件共享契约时可能减少自建接线。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：自愈率和器官比喻是框架指标，不能推出智能提升或业务可用；自动反射可能形成额外调用链，未验证收敛与权限传播。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：以缺服务、超时、重复失败、需要确认的写操作测试反射和账本，比较观测模式与恢复模式的故障办结率及额外调用。\n",
+        "metadata": {
+            "repository": "1420079678-ctrl/agent-body",
+            "repository_id": 1366089972,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 17,
+            "pushed_at": "2026-09-30T00:33:17Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1420079678-ctrl%2Fagent-body%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640B:13810:147256:21F72F:6AD8493F and timestamp 2026-10-21 05:10:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1420079678-ctrl%2Fagent-body%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640D:11B6:14651C:21E863:6AD84940 and timestamp 2026-10-21 05:10:24 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1420079678-ctrl%2Fagent-body%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640E:3FDBB6:15007E:228022:6AD84940 and timestamp 2026-10-21 05:10:24 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1420079678-ctrl%2Fagent-body%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6411:3E6BCD:14EAF3:226C00:6AD84940 and timestamp 2026-10-21 05:10:24 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1420079678-ctrl%2Fagent-body%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6402:23DB53:15449D:22C938:6AD84940 and timestamp 2026-10-21 05:10:24 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "@dsh-external/dsh-organism",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40dsh-external%2Fdsh-organism",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/%40dsh-external%2Fdsh-organism",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
+                "current_revision": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1366089972:workspace-plugins-dsh-organism",
+            "repository": "1420079678-ctrl/agent-body",
+            "path": "workspace/plugins/dsh-organism",
+            "revision": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c304bda87c6ea232deaeffaf99c2bc8f12d9d27ffcfa597c35dcef8e8fde9232",
+                "code": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
+                "maintenance": "43f096365ebe99c29ae5999e57cb00a1b8b3292441388102d038dfe5b740737c"
+            }
+        }
+    }
+}

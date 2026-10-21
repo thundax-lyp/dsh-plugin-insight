@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "040124d3b8274873754dfb1c388c5134",
+    "identity": "github:1400568418:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1400568418:root",
+            "repository": "vitas/dsh-codex-review",
+            "path": "",
+            "revision": "230ea975c0351e986f69ce286f8d996027a29bd1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3c785a25448f559e26417378323f0dded41c8aa2066edb9595130043f0301e09",
+                "code": "230ea975c0351e986f69ce286f8d996027a29bd1",
+                "maintenance": "aa32997d95e942da2c50cb405f1f48499404aa06f99b3bd0ecde64af503c3e46"
+            }
+        }
+    }
+}

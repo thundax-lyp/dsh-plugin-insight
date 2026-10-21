@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "eb9d667702ea495394d312d97690c740",
+    "identity": "github:1361643279:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1361643279:root",
+            "repository": "ljc6413/yihe-packs-dsh",
+            "path": "",
+            "revision": "fb10ff92690335ab56d2a2232cda9ba318ba2b5f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "31125b5b3e2a729f1bab3f070f1c875be61fef1be0f1be6611776444ae287b61",
+                "code": "fb10ff92690335ab56d2a2232cda9ba318ba2b5f",
+                "maintenance": "c79b8330db349c46ebc527156ed5ed55fc1f91a59ee8f5105aaf023d38e17594"
+            }
+        }
+    }
+}

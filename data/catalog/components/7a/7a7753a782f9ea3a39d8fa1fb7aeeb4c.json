@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "7a7753a782f9ea3a39d8fa1fb7aeeb4c",
+    "identity": "github:1333816810:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333816810:root",
+            "repository": "lire1131/dsh-undo-savepoint",
+            "path": "",
+            "revision": "2458ef3f80454f065f6abf82746d82fe8ecd0ab7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "14eff1a3fbb56295dca0a1583d535319dc2ea2e0bb97d1fe35834b0b8f51ef53",
+                "code": "2458ef3f80454f065f6abf82746d82fe8ecd0ab7",
+                "maintenance": "470385d0157d805c387acd114ab81a7195ceeb3152327bbcde45daaad5d08885"
+            }
+        }
+    }
+}

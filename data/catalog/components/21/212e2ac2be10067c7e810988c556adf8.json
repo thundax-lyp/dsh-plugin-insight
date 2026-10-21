@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "212e2ac2be10067c7e810988c556adf8",
+    "identity": "github:1336777147:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336777147:root",
+            "repository": "kobenfang/BigLead",
+            "path": "",
+            "revision": "009ee339a8f1dc7b698924f91893ec6f4a0acc7e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "489a42f4d1433838312d831161c0e60646c00ca8b64300fef7334859acb7b48e",
+                "code": "009ee339a8f1dc7b698924f91893ec6f4a0acc7e",
+                "maintenance": "4fd3a95b693639730ecdf47b2e138ceac198100bd28a0449056f849e6e68b633"
+            }
+        }
+    }
+}

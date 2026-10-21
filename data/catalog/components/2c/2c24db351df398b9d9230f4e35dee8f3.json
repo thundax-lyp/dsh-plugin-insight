@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2c24db351df398b9d9230f4e35dee8f3",
+    "identity": "github:1414551541:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1414551541:root",
+            "repository": "Lutisure/cyrene-dsh-plugin",
+            "path": "",
+            "revision": "79fcc226dbcc506603292da41edd54148ec16adb",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "54f20ca18dedf2ca2974ddc580c2e959e5d1923aac7416c987c88d3a99ad770a",
+                "code": "79fcc226dbcc506603292da41edd54148ec16adb",
+                "maintenance": "2276f27dfa65c526de86bc9dccd92db818eb6e919b644f8258b9197947b597f9"
+            }
+        }
+    }
+}

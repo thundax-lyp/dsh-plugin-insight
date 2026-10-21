@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "dbfac86fe6259d54142cd0d6bcc2fec2",
+    "identity": "github:1156882085:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1156882085:root",
+            "repository": "vivekchand/clawmetry",
+            "path": "",
+            "revision": "6228537b0271572d55f5bf02ee130f76038f7cd5",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "de65a7ee47d2ed616f665d6ea84c5862a2b25f122062e58e7612bc8164b7ef17",
+                "code": "6228537b0271572d55f5bf02ee130f76038f7cd5",
+                "maintenance": "267893493dae29864b596091b28b773b6c725a3c03c2c63ac1ddb8cc0f19c729"
+            }
+        }
+    }
+}

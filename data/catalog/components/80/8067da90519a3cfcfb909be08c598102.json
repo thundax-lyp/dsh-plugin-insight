@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "8067da90519a3cfcfb909be08c598102",
+    "identity": "github:1339101586:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339101586:root",
+            "repository": "amlyczz/dsh-agy-link",
+            "path": "",
+            "revision": "3436867bcb0d9fbd2939aaaabc7be2c707b19914",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "6400a547f70908a3bdae575b365175d72d0cf01550c48e250447d0f70046f791",
+                "code": "3436867bcb0d9fbd2939aaaabc7be2c707b19914",
+                "maintenance": "8330bb4f8944945cf36fe21603b3b5d4d90ff104d322fd7d115b5461257287b2"
+            }
+        }
+    }
+}

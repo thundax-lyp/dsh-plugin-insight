@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3b42d37d61a3621a1fa8a61c97af598f",
+    "identity": "github:1400940347:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1400940347:root",
+            "repository": "sjh9714/dsh-retry-guard",
+            "path": "",
+            "revision": "e14427aad6a598b1b40d8b5b17dd20eeafcc90f6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0aa7a901f36b3cd42eadbcad0a41e1f012eb656a49843866a9d5c3da82dd698e",
+                "code": "e14427aad6a598b1b40d8b5b17dd20eeafcc90f6",
+                "maintenance": "e498d43ac8440dfee137ed89bfd141173a3bb768ee05c4d785c0b3e2359dfca7"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "56d5e9521171000d759e8b3464f52cc2",
+    "identity": "github:1346837878:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346837878:root",
+            "repository": "jiang12345-code/dsh-multi-role-debate",
+            "path": "",
+            "revision": "52a6276093d6f3b0dd9c686535dad05a1a0a74bf",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "91f89b37d01c6e82ebf450326d5281e2b730ecc600901a65e26bdfbbe59c5032",
+                "code": "52a6276093d6f3b0dd9c686535dad05a1a0a74bf",
+                "maintenance": "57a26ea911371294cb147e795c1c03b5919ec22d7d60781ea87e844b21eb5525"
+            }
+        }
+    }
+}

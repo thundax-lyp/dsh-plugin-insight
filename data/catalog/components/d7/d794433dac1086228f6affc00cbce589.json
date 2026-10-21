@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d794433dac1086228f6affc00cbce589",
+    "identity": "github:1320255652:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1320255652:root",
+            "repository": "jcaiagent7143-ui/sendpage-mcp",
+            "path": "",
+            "revision": "32a6e68f008556d23b66be5565513f0d28235336",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "280d9697b9cadb9c5e284712b03b4245cbdd4d343f46240a698c3d3bb69887b3",
+                "code": "32a6e68f008556d23b66be5565513f0d28235336",
+                "maintenance": "f5805077d062bbc759956cbf2c18f5a9c3c814de7094cfbab34d36c71f8c7ae9"
+            }
+        }
+    }
+}

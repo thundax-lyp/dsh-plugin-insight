@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fa965492a79d4ec18da240972e779248",
+    "identity": "github:1394971330:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1394971330:root",
+            "repository": "lordraiden/dsh-9router-web-search",
+            "path": "",
+            "revision": "cff02e9000f53d129f4fe461c8d51b50cc8cb7fe",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e07dc4a3cbd5fb6e391b6d13c16d50058dba89fa261823d13240dd25735b3be6",
+                "code": "cff02e9000f53d129f4fe461c8d51b50cc8cb7fe",
+                "maintenance": "1f792f1687e668374ea5b75b597d4cb60bd4c26339ce4b26c4cf5fa528532901"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7476ef281d075a3eb032e7778be1f73d",
+    "identity": "github:1333378809:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333378809:root",
+            "repository": "lhmd/dsh-promotion-toolkit",
+            "path": "",
+            "revision": "c4e19742d4399e0282ab70829e412fb47bbb42a7",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "623e4262bcdb1e677c84069a443daa52ff3490e60958f834fba4756e00fb198e",
+                "code": "c4e19742d4399e0282ab70829e412fb47bbb42a7",
+                "maintenance": "9456440f243b5dad50526912ac47957c4b838b3b8e39f26a5d9611c3ef1e6400"
+            }
+        }
+    }
+}

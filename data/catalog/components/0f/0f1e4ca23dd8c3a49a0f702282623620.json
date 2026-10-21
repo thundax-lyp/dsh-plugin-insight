@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "0f1e4ca23dd8c3a49a0f702282623620",
+    "identity": "github:1346835172:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346835172:root",
+            "repository": "jerryqx/dsh-xiaoyuzhou",
+            "path": "",
+            "revision": "ac6a2defc85d4379a38f6b0406b2d4d171cc3627",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "e91974e631211f61bf401b1c289d76364385767f090420911329e9db1f621864",
+                "code": "ac6a2defc85d4379a38f6b0406b2d4d171cc3627",
+                "maintenance": "2dc7d8f397fba5d0e695f38a2d960793dbdec064b24dfd3896740c871d22b57b"
+            }
+        }
+    }
+}

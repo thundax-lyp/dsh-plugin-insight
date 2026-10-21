@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b67fe987df2976486f24bbd58c96aaf1",
+    "identity": "github:1334247457:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334247457:root",
+            "repository": "weopenfire-git/hme-plugin",
+            "path": "",
+            "revision": "c524f092757e88e2bd701d788687b8f5df92b817",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "c29c5a89ef518f7e494e8137a0f20136fe71b41690dcbdf91e2e3feb31b3126f",
+                "code": "c524f092757e88e2bd701d788687b8f5df92b817",
+                "maintenance": "7796f6446f4c89f8aa5e139ddca22840b58daa4cc40f9ef30a624132b1bb4fe8"
+            }
+        }
+    }
+}

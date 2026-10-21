@@ -1,7 +1,0 @@
-{
-  "revision": "d17acfa8689666d799c94e196020a3efed11ad0a",
-  "items": {
-    "Host 路由": "/dsh-alive/ping进程内HTTP应答。",
-    "界面": "会话header在线/离线/检测中状态点及15秒轮询。"
-  }
-}

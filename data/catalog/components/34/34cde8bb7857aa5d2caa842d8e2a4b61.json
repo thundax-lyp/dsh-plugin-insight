@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "34cde8bb7857aa5d2caa842d8e2a4b61",
+    "identity": "github:1338773001:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338773001:root",
+            "repository": "Zenjibad/dsh-plugin-toggle",
+            "path": "",
+            "revision": "f05e2f0cf7791b31cd2d1e7c87bcd278322d0c59",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "028c89103bbbfcfe093fb735b6a7d51387196991da207e27aa2622496e61ea71",
+                "code": "f05e2f0cf7791b31cd2d1e7c87bcd278322d0c59",
+                "maintenance": "f9b79997d3d2b27650f27038b931e80a697d31703e1f87df0e1f2da3e814a091"
+            }
+        }
+    }
+}

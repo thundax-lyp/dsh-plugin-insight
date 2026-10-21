@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5987fb8888d1226ca68937ec3f5472fb",
+    "identity": "github:1417109708:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1417109708:root",
+            "repository": "guhanfei-ai/dsh-zterm",
+            "path": "",
+            "revision": "a27c494ee9147580968014dae3c561236993650e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7440801b0a2e280d6c5287fc19115bf2a892e2b42eeb93c36b898ffa8515c640",
+                "code": "a27c494ee9147580968014dae3c561236993650e",
+                "maintenance": "07d051a9e1002030f9337c8a0c7e718dbdcf9705623c7a4edefdf22b1b06647a"
+            }
+        }
+    }
+}

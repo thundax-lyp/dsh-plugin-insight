@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "99fadbd4378fc017a76cf8dbbd142279",
+    "identity": "github:1379241260:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1379241260:root",
+            "repository": "xienda/dsh-jev-verify",
+            "path": "",
+            "revision": "fef0c9eeb6c77d3be4d0f7c8b14be484e0161315",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b80cccfe762de8ba809f1c24084775644cc0b3a67bc2fbb93d0773f2c5282fa7",
+                "code": "fef0c9eeb6c77d3be4d0f7c8b14be484e0161315",
+                "maintenance": "4430b02be1cb4dd65690f3f81c8559b9d4740c39562b03fb813a61c4f2baf2e9"
+            }
+        }
+    }
+}

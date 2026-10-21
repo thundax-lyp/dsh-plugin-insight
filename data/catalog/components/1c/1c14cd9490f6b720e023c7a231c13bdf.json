@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1c14cd9490f6b720e023c7a231c13bdf",
+    "identity": "github:1335709931:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335709931:root",
+            "repository": "Qing45/dsh-feishu-chat",
+            "path": "",
+            "revision": "80e65bde3c9aa799272beafcf4ee958f08534f71",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a6d739176c414a3a5c4de0a5f8a8993cbecfd617025aa4ebfc101d39bf921ecd",
+                "code": "80e65bde3c9aa799272beafcf4ee958f08534f71",
+                "maintenance": "7a6778d5eba212747d68c283c9b4f4ab14bd6e5d50ab83814beb2495b104e725"
+            }
+        }
+    }
+}

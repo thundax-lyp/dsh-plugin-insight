@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "7a9ba5792440299175ca8c36a7cfa216",
+    "identity": "github:1332222725:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1332222725:root",
+            "repository": "hellodigua/dsh-emoji",
+            "path": "",
+            "revision": "4c8e13d9785a02bd7c794c5cbb3e49132810d303",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "195452ae5c9c63dbaf4947821372a90a30b3bdfcf508d13b8b5af534bc3afb4c",
+                "code": "4c8e13d9785a02bd7c794c5cbb3e49132810d303",
+                "maintenance": "a2be6337a9052ef730d63da1163420acb21ecff1af02975103e47ff94e16ebb0"
+            }
+        }
+    }
+}

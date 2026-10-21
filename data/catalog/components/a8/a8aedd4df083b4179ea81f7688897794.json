@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a8aedd4df083b4179ea81f7688897794",
+    "identity": "github:1367305510:packages-dsh-plugin-redact",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1367305510:packages-dsh-plugin-redact",
+            "repository": "L-ingqin12/dsh-redaction",
+            "path": "packages/dsh-plugin-redact",
+            "revision": "da1d7ce71c0f28ee918d7f225ff6254c9b462af3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "40775b6997778f86e341b49763c3f01795e6ebb0560e1d1960acd67fd1979224",
+                "code": "da1d7ce71c0f28ee918d7f225ff6254c9b462af3",
+                "maintenance": "477ac8e0a8ee4eaa24a46a7a4380efe1cf83cdf2c46a12a51ac658d2c49aaa4e"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e1a8c2fcf9506ca7bae4d3ae7b793976",
+    "identity": "github:1346391311:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346391311:root",
+            "repository": "bochen2029-pixel/dsh-first-hop",
+            "path": "",
+            "revision": "10e488368ff610568a6da84a7d3f102ee9d6dbff",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "5a9fa357f85850c525cf07334864492b3718ab18ede8766f974ebcf0ef186ea0",
+                "code": "10e488368ff610568a6da84a7d3f102ee9d6dbff",
+                "maintenance": "195ebe206a283e849a08df33ba47d3e83b91c0a6ff5fc1fe6d2e62643099f5b5"
+            }
+        }
+    }
+}

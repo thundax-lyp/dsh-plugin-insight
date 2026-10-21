@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "15514147c0e01ac8853ccc458a012482",
+    "identity": "github:1343695590:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343695590:root",
+            "repository": "Vesna-Strivozha/DSH-LLM-wiki-plugin",
+            "path": "",
+            "revision": "084e7f5a1ec60e63245ce95e00a5bb4c77bbed85",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "108a1e0dcb4eb1b6c508184727d43904dd00abd21c31a29fb858b140e8d7e619",
+                "code": "084e7f5a1ec60e63245ce95e00a5bb4c77bbed85",
+                "maintenance": "b953b34d45764228df71a75ac603e69c6b99b6919d778b5afbc8f9949e4269fb"
+            }
+        }
+    }
+}

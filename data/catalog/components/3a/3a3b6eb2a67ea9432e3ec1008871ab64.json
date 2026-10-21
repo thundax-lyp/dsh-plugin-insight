@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3a3b6eb2a67ea9432e3ec1008871ab64",
+    "identity": "github:1402938353:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1402938353:root",
+            "repository": "yaanlaan/deepseek-colorful",
+            "path": "",
+            "revision": "e8f0172d212a1d705d8a5090bbbc08b134f34513",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5d54ec2ddd76fd3c3c17d2e88ca4f6579e01b3e1a3beb98a636c35f42db18f85",
+                "code": "e8f0172d212a1d705d8a5090bbbc08b134f34513",
+                "maintenance": "2193214532e297256c1477ba4e614751f8adf408700ae9575be0a82fe5acc651"
+            }
+        }
+    }
+}

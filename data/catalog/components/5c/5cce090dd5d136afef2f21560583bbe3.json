@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5cce090dd5d136afef2f21560583bbe3",
+    "identity": "github:1347559476:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347559476:root",
+            "repository": "konanzheng/dsh-timeline",
+            "path": "",
+            "revision": "de888a23be9eee57208fe0f236aa34ab189febbd",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "0be6e31b7faa6abc966dbfc7166e7143dea9cd4ef6068720fe7150e2f83a7315",
+                "code": "de888a23be9eee57208fe0f236aa34ab189febbd",
+                "maintenance": "8342974692a713614557254f8bbd735ec3f127cb6a0deecf5ec3a013ce107af5"
+            }
+        }
+    }
+}

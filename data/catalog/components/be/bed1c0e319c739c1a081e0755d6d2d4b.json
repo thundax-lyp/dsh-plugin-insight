@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bed1c0e319c739c1a081e0755d6d2d4b",
+    "identity": "github:1334903781:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334903781:root",
+            "repository": "HuiHuitie-zhu/dsh-check-update",
+            "path": "",
+            "revision": "872b65aa543162a8ccf8d2f9d6428208f373131c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "65e81dc691de3b43a427547951bad3f445ebad5126856db70ce2b9f3c3b35552",
+                "code": "872b65aa543162a8ccf8d2f9d6428208f373131c",
+                "maintenance": "a16e63d3c718042871db214381b3f5aadb6620ac8012ade0aa600694b392a880"
+            }
+        }
+    }
+}

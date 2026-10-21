@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b64eded11ab0bd862128d72a163df587",
+    "identity": "github:1368152838:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1368152838:root",
+            "repository": "Neptune810/dsh-model-router",
+            "path": "",
+            "revision": "1d1968a0e101d561c9b086b7de2e72260ebd8dc1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6bdeb8abddec1be75f37518a666e9dc228cc84d5141fe10df2f71ea75b776989",
+                "code": "1d1968a0e101d561c9b086b7de2e72260ebd8dc1",
+                "maintenance": "c2a847ed03aedd86d7718eb9a8062b1e35185e1ea6f8fd1234b74895bfed6808"
+            }
+        }
+    }
+}

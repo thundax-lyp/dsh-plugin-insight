@@ -1,0 +1,456 @@
+{
+    "schema_version": 3,
+    "id": "ab3cad28cc7edc225c08748a65bb1cff",
+    "identity": "github:1344713526:dsh-lsp-csharp",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1344713526:dsh-lsp-csharp",
+            "repository_id": 1344713526,
+            "component_id": "dsh-lsp-csharp",
+            "repository": "988hj7tczd-oss/dsh-lsp-packs",
+            "path": "dsh-lsp-csharp",
+            "aliases": [],
+            "name": "dsh-lsp-csharp",
+            "entry_type": "plugin",
+            "technical_category": "tools-integration",
+            "business_category": "software-delivery",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "7320040954616f4f438679cea4c8171d3687bc18dc6145279f636bbc097299f5",
+                "code": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+                "maintenance": "c574dcf28e68df0fb97fbd81638d887e8e9b60b99dbcf2e34fc7481b1d25448e"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-04-github-1344713526-dsh-lsp-csharp-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T04:15:56.841Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-04-github-1344713526-dsh-lsp-csharp-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/988hj7tczd-oss/dsh-lsp-packs/blob/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-csharp/README.md",
+                    "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+                    "captured_at": "2026-10-21T04:15:56.841Z",
+                    "summary": "为DSH配置OmniSharp或自定义C#语言服务的导航路由。",
+                    "artifact": "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--dsh-lsp-packs--dsh-lsp-csharp/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-04-github-1344713526-dsh-lsp-csharp-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/988hj7tczd-oss/dsh-lsp-packs/blob/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-csharp/src/index.ts",
+                    "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+                    "captured_at": "2026-10-21T04:15:56.841Z",
+                    "summary": "核查 dsh-lsp-csharp/src/index.ts、dsh-lsp-csharp/README.md、dsh-lsp-csharp/cordis.yml、dsh-lsp-csharp/tests/smoke.e2e.ts；csharp入口以provider csharp调用官方LspStdio，默认omnisharp --stdio，.cs→csharp；command/args可替换为dotnet及OmniSharp.dll路径。",
+                    "artifact": "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--dsh-lsp-packs--dsh-lsp-csharp/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定SHA内本组件列明文件及配置/作者资料的有界源码检查；组件inventory不包含外部官方底座原创量。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "适合已有.NET项目、希望从DSH访问C#符号的开发者。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344713526-dsh-lsp-csharp-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1344713526:dsh-lsp-csharp",
+                            "area": "code",
+                            "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:15:56.841Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "csharp入口以provider csharp调用官方LspStdio，默认omnisharp --stdio，.cs→csharp；command/args可替换为dotnet及OmniSharp.dll路径。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344713526-dsh-lsp-csharp-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1344713526:dsh-lsp-csharp",
+                            "area": "code",
+                            "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:15:56.841Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定SHA内本组件列明文件及配置/作者资料的有界源码检查；组件inventory不包含外部官方底座原创量。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344713526-dsh-lsp-csharp-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1344713526:dsh-lsp-csharp",
+                            "area": "code",
+                            "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:15:56.841Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "分发以本组件固定package.json、组合配置与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344713526-dsh-lsp-csharp-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1344713526:dsh-lsp-csharp",
+                            "area": "code",
+                            "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:15:56.841Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "首次准备README所述.NET SDK或Mono、OmniSharp及项目；持续成本为项目加载内存与SDK升级适配，现金无插件收费证据，人工核查项目引用。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344713526-dsh-lsp-csharp-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1344713526:dsh-lsp-csharp",
+                            "area": "code",
+                            "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:15:56.841Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先按本机OmniSharp分发形式设置命令，再在真实csproj检查定义和引用；单文件示例不能代表解决方案。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344713526-dsh-lsp-csharp-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1344713526:dsh-lsp-csharp",
+                            "area": "code",
+                            "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:15:56.841Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "可省C#服务接线，没有跨解决方案导航效果数据。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344713526-dsh-lsp-csharp-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1344713526:dsh-lsp-csharp",
+                            "area": "code",
+                            "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:15:56.841Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "csharp组件的覆盖表和fallback复用同一生成骨架，原创建议只认配置增量；失败占位使用默认.cs表，用户新增扩展未保留，且加载错误解释较宽。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344713526-dsh-lsp-csharp-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1344713526:dsh-lsp-csharp",
+                            "area": "code",
+                            "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:15:56.841Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "贡献是将C#启动器差异纳入独立包的覆盖参数，减少手写DSH连接表；符号分析来自OmniSharp或替换server，协议来自官方底座。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344713526-dsh-lsp-csharp-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1344713526:dsh-lsp-csharp",
+                            "area": "code",
+                            "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:15:56.841Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "README的裸Sample.cs测试不能证明.sln/.csproj解析与项目引用正常。默认omnisharp并不等同dotnet DLL启动形式；替换Roslyn还需核其参数和协议，不能仅凭command字段可改就宣称drop-in兼容。catch还把配置错误统一归为服务不可用。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344713526-dsh-lsp-csharp-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1344713526:dsh-lsp-csharp",
+                            "area": "code",
+                            "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:15:56.841Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "未验证假设：按可执行程序、dotnet DLL和项目文件分别预检，可缩短C#首次配置时间。对三个布局及错误SDK版本比较启动归因与跨项目引用命中；若只检查命令存在不能预测索引成功，保留人工验证。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344713526-dsh-lsp-csharp-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1344713526:dsh-lsp-csharp",
+                            "area": "code",
+                            "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:15:56.841Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T04:15:56.841Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+                "reviewed_at": "2026-10-21T04:15:56.841Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1344713526:dsh-lsp-csharp",
+                        "area": "code",
+                        "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 0,
+                        "mechanism": 8,
+                        "transferability": 10,
+                        "simplification": 4
+                    },
+                    "rationale": "novelty=0：C#分析属上游。 mechanism=8：有启动覆盖非协议实现。 transferability=10：配置可复用，分发差异需适配。 simplification=4：exe/DLL仍需人工选择。",
+                    "basis": "interpretation",
+                    "score": 22,
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344713526-dsh-lsp-csharp-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow=9：连接C#导航步骤。 delivery=8：未证真实项目引用。 reach=5：SDK和解决方案要求较窄。 economics=4：无排障工时对照。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344713526-dsh-lsp-csharp-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "已有.NET项目可评估OmniSharp接线，但包声明DSH小于0.2.0；先验底座和启动形式，再测csproj引用，裸文件不证解决方案。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "C#真实项目查询符号需求具体。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "独立覆盖启动器省手写连接，符号能力由OmniSharp与底座承担。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "默认omnisharp --stdio及dotnet覆盖可查，catch混配置错误且真实工程未验。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "需SDK或Mono和OmniSharp项目加载，兼容与引用配置维护有成本。"
+                    }
+                },
+                "score": 59,
+                "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-04-github-1344713526-dsh-lsp-csharp-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1344713526:dsh-lsp-csharp",
+                        "area": "code",
+                        "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1344713526:dsh-lsp-csharp",
+            "repository": "988hj7tczd-oss/dsh-lsp-packs",
+            "path": "dsh-lsp-csharp",
+            "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+            "fingerprints": {
+                "directory": "7320040954616f4f438679cea4c8171d3687bc18dc6145279f636bbc097299f5",
+                "code": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+                "maintenance": "c574dcf28e68df0fb97fbd81638d887e8e9b60b99dbcf2e34fc7481b1d25448e"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T04:06:46Z",
+            "analysis_sha256": "22bfb4fc5fee0279bda8f44710a61846f5f902d385b8c505216e9c11255f655c"
+        },
+        "publication.metadata": "data/plugins/988hj7tczd-oss--dsh-lsp-packs--dsh-lsp-csharp/META.json",
+        "publication.summaries": {
+            "text": "为DSH配置OmniSharp或自定义C#语言服务的导航路由。",
+            "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+            "source_url": "https://github.com/988hj7tczd-oss/dsh-lsp-packs/blob/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-csharp/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+            "items": {
+                "后台": "csharp provider及.cs默认映射、可覆盖启动参数"
+            }
+        },
+        "publication.advice": {
+            "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+            "text": "先按本机OmniSharp分发形式设置命令，再在真实csproj检查定义和引用；单文件示例不能代表解决方案。"
+        },
+        "registry": "data/plugins/988hj7tczd-oss--dsh-lsp-packs--dsh-lsp-csharp",
+        "reports": "# dsh-lsp-csharp\n\n> 为DSH配置OmniSharp或自定义C#语言服务的导航路由。\n\n## 使用建议\n\n先按本机OmniSharp分发形式设置命令，再在真实csproj检查定义和引用；单文件示例不能代表解决方案。\n\n**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，外部语言服务或技能流程的实际运行尚未验证；未来假设未验证。\n\n## 洞察短评\n\n- **用途**：适合已有.NET项目、希望从DSH访问C#符号的开发者。\n- **亮点**：贡献是将C#启动器差异纳入独立包的覆盖参数，减少手写DSH连接表；符号分析来自OmniSharp或替换server，协议来自官方底座。\n- **思考**：README的裸Sample.cs测试不能证明.sln/.csproj解析与项目引用正常。默认omnisharp并不等同dotnet DLL启动形式；替换Roslyn还需核其参数和协议，不能仅凭command字段可改就宣称drop-in兼容。catch还把配置错误统一归为服务不可用。\n- **建议**：未验证假设：按可执行程序、dotnet DLL和项目文件分别预检，可缩短C#首次配置时间。对三个布局及错误SDK版本比较启动归因与跨项目引用命中；若只检查命令存在不能预测索引成功，保留人工验证。\n\n## 场景与替代办法\n\n替代为IDE C#服务或手写servers表；本包不提供编译器或Roslyn索引。\n\n## 能力清单\n\n- **后台**：csharp provider及.cs默认映射、可覆盖启动参数\n\n## 依赖与流程\n\ncsharp入口以provider csharp调用官方LspStdio，默认omnisharp --stdio，.cs→csharp；command/args可替换为dotnet及OmniSharp.dll路径。\n\nfs/lsp/subprocess和官方LSP底座、README所述.NET SDK或Mono及OmniSharp；兼容声明DSH<0.2.0、Node>=22.18。\n\n共享底座→C#包→解析omnisharp或覆盖dotnet DLL→查询触发索引→结果；缺服务返回LSP_UNAVAILABLE，修复后重载。\n\n## 成本与效果\n\n首次准备README所述.NET SDK或Mono、OmniSharp及项目；持续成本为项目加载内存与SDK升级适配，现金无插件收费证据，人工核查项目引用。\n\n可省C#服务接线，没有跨解决方案导航效果数据。\n\n## 核心贡献\n\n贡献是将C#启动器差异纳入独立包的覆盖参数，减少手写DSH连接表；符号分析来自OmniSharp或替换server，协议来自官方底座。\n\n## 关键质疑\n\nREADME的裸Sample.cs测试不能证明.sln/.csproj解析与项目引用正常。默认omnisharp并不等同dotnet DLL启动形式；替换Roslyn还需核其参数和协议，不能仅凭command字段可改就宣称drop-in兼容。catch还把配置错误统一归为服务不可用。\n\n## 工程亮点\n\ncsharp组件的覆盖表和fallback复用同一生成骨架，原创建议只认配置增量；失败占位使用默认.cs表，用户新增扩展未保留，且加载错误解释较宽。\n\n源码依据：[dsh-lsp-csharp/src/index.ts](https://github.com/988hj7tczd-oss/dsh-lsp-packs/blob/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-csharp/src/index.ts)、[dsh-lsp-csharp/README.md](https://github.com/988hj7tczd-oss/dsh-lsp-packs/blob/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-csharp/README.md)、[dsh-lsp-csharp/cordis.yml](https://github.com/988hj7tczd-oss/dsh-lsp-packs/blob/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-csharp/cordis.yml)、[dsh-lsp-csharp/tests/smoke.e2e.ts](https://github.com/988hj7tczd-oss/dsh-lsp-packs/blob/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-csharp/tests/smoke.e2e.ts)。\n\n## 未来设计假设（未验证）\n\n未验证假设：按可执行程序、dotnet DLL和项目文件分别预检，可缩短C#首次配置时间。对三个布局及错误SDK版本比较启动归因与跨项目引用命中；若只检查命令存在不能预测索引成功，保留人工验证。\n\n分别验证exe/DLL配置、缺SDK、csproj跨文件与替换server，检查测试实际跳过项；本轮未运行。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：dsh-lsp-csharp；内容摘要：0567515c37812ca654c3c5a851c444e85cce716c7ecae60c5dc6c80f7ca6fb4a。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 2 | 139 | — | — | 1009 |\n| .ts | source | 1 | 171 | 95 | 60 | — |\n| .ts | test | 1 | 183 | 134 | 25 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[988hj7tczd-oss/dsh-lsp-packs](https://github.com/988hj7tczd-oss/dsh-lsp-packs)\n- **版本号**：0.1.0（[固定提交 258bb640](https://github.com/988hj7tczd-oss/dsh-lsp-packs/tree/258bb6409c504fa1eed20b6f70d13009522ca0ce)）\n- **版本日期**：2026-09-01（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：dsh-lsp-csharp/src/index.ts、dsh-lsp-csharp/README.md、dsh-lsp-csharp/cordis.yml、dsh-lsp-csharp/tests/smoke.e2e.ts、作者README、package与固定范围inventory；源码抽读不等于完整审计。\n- 未验证：插件执行、测试、安装、真实宿主与独立采用。\n- 证据限制：固定SHA内本组件列明文件及配置/作者资料的有界源码检查；组件inventory不包含外部官方底座原创量。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。\n- 下一步：分别验证exe/DLL配置、缺SDK、csproj跨文件与替换server，检查测试实际跳过项；本轮未运行。\n",
+        "metadata": {
+            "repository": "988hj7tczd-oss/dsh-lsp-packs",
+            "repository_id": 1344713526,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 3,
+            "pushed_at": "2026-09-01T00:51:42Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-lsp-packs%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6416:D5CAC:14C526:226BA5:6AD84AE9 and timestamp 2026-10-21 05:17:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-lsp-packs%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C6:23190F:14E1EF:229D19:6AD84AE9 and timestamp 2026-10-21 05:17:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-lsp-packs%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C7:2B28:153E02:2327B9:6AD84AE9 and timestamp 2026-10-21 05:17:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-lsp-packs%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6418:1DEEF7:14E925:22A73D:6AD84AEA and timestamp 2026-10-21 05:17:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-lsp-packs%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641D:1F2B1B:14D9CF:228BC8:6AD84AEA and timestamp 2026-10-21 05:17:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "@dsh-lsp-packs/dsh-lsp-csharp",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40dsh-lsp-packs%2Fdsh-lsp-csharp",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/%40dsh-lsp-packs%2Fdsh-lsp-csharp",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+                "current_revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1344713526:dsh-lsp-csharp",
+            "repository": "988hj7tczd-oss/dsh-lsp-packs",
+            "path": "dsh-lsp-csharp",
+            "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7320040954616f4f438679cea4c8171d3687bc18dc6145279f636bbc097299f5",
+                "code": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+                "maintenance": "c574dcf28e68df0fb97fbd81638d887e8e9b60b99dbcf2e34fc7481b1d25448e"
+            }
+        }
+    }
+}

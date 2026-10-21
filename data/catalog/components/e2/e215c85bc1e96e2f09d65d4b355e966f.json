@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e215c85bc1e96e2f09d65d4b355e966f",
+    "identity": "github:1341605661:packages-dsh-codex-appserver",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1341605661:packages-dsh-codex-appserver",
+            "repository": "seriousz158/dsh-codex-use",
+            "path": "packages/dsh-codex-appserver",
+            "revision": "3bbaf7abc708ec48e5338a615e0c4268b5370a8b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ca30b4f2c1c0f1cf05604b3708321dc51c01cc9ff327f5b79cad0f6355087991",
+                "code": "3bbaf7abc708ec48e5338a615e0c4268b5370a8b",
+                "maintenance": "ad70bcbdf88581a3dce2b967dad1b11c1f8d38c2edf9a74e1427882634d72d6c"
+            }
+        }
+    }
+}

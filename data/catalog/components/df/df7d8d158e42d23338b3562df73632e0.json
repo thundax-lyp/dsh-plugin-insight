@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "df7d8d158e42d23338b3562df73632e0",
+    "identity": "github:1335150064:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335150064:root",
+            "repository": "Starfie1d1272/dsh-github-skills",
+            "path": "",
+            "revision": "101d90ff3fb6e1185c1972859c50fc1e95c9e469",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "6adbdf3b15649f8438995ccdd128d61925024835d497e6523a0e1bce1bf200e3",
+                "code": "101d90ff3fb6e1185c1972859c50fc1e95c9e469",
+                "maintenance": "8d1988ec8b2a54b54addf62b2aa6d456195caf2979301d1879473b7c02da2f10"
+            }
+        }
+    }
+}

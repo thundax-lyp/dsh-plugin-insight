@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2b300914acf57ac7663783144fc16cbe",
+    "identity": "github:1209966933:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1209966933:root",
+            "repository": "morluto/rea",
+            "path": "",
+            "revision": "a5f982de8dbe4b092cc20ab89d492b7e7028b758",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "e848d5bb9a5c0f64822e53ff3b4112e764393787f86d1b07d3ddd5c72e6cd939",
+                "code": "a5f982de8dbe4b092cc20ab89d492b7e7028b758",
+                "maintenance": "31b18e30ba54a2bc01d8087ade563b366c82aae29da2f7df140237fe69be339b"
+            }
+        }
+    }
+}

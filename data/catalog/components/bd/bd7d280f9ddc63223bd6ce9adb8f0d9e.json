@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bd7d280f9ddc63223bd6ce9adb8f0d9e",
+    "identity": "github:1420978360:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1420978360:root",
+            "repository": "dotdance/dsh-skill-scope",
+            "path": "",
+            "revision": "c5de60d0eb26da7e026dcfaa46a2b8f0869e78c5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "abd34a94452662060b1d63af787b87fb2379c6e3a268daa3a230aff6456c5738",
+                "code": "c5de60d0eb26da7e026dcfaa46a2b8f0869e78c5",
+                "maintenance": "daedf8855b475cd19c5fd4d5bb57740a238262978e96fd6dc351ccc6b5cfe16d"
+            }
+        }
+    }
+}

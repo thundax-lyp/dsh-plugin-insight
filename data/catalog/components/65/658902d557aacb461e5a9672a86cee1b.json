@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "658902d557aacb461e5a9672a86cee1b",
+    "identity": "github:1396306951:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1396306951:root",
+            "repository": "huanglianqi/dsh-math-render",
+            "path": "",
+            "revision": "588e13d75e34f725ea62340ad3d7221f90292cf9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3420b82d70ccae1e536f2537ba361819e04d5bd9eabe7c7b91c04082c74b151d",
+                "code": "588e13d75e34f725ea62340ad3d7221f90292cf9",
+                "maintenance": "7397c41adbbe75022c237c8d49be228fa5ff665afecfbf0f52fd3bab6cf08806"
+            }
+        }
+    }
+}

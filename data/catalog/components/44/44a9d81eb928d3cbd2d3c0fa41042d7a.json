@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "44a9d81eb928d3cbd2d3c0fa41042d7a",
+    "identity": "github:1424183806:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424183806:root",
+            "repository": "xcw520/dsh-dania-voice",
+            "path": "",
+            "revision": "9bb1af12c84d723ca09b20e5f1977534783a16e3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "eccb8e67347af9bc74b1ec7f04ec4396fff238a718e12f3c0d44b21eba5b8f13",
+                "code": "9bb1af12c84d723ca09b20e5f1977534783a16e3",
+                "maintenance": "6eaae03c8fd8b12ddab61025df4a6964efbee6e2afd5709ac9ad0642d0a4e60b"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "27c99d1988cda94c4e546e098187b384",
+    "identity": "github:1335083314:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335083314:root",
+            "repository": "QlzqQlzq/dsh-dual-agent-presets",
+            "path": "",
+            "revision": "46c4cbf21d13815fd706ca1aa2217e45d9fb4400",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "828cffbe49642c595f9ba72828f4831c5a1a892716d4d152063a49ae2876d60b",
+                "code": "46c4cbf21d13815fd706ca1aa2217e45d9fb4400",
+                "maintenance": "3d53e1ba2f043aef53b67ad41cd2f6819522c7d1fb45850dda0a5563f2241921"
+            }
+        }
+    }
+}

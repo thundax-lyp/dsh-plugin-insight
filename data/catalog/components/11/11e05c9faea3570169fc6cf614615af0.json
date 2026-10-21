@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "11e05c9faea3570169fc6cf614615af0",
+    "identity": "github:1175756746:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1175756746:root",
+            "repository": "mem9-ai/mem9",
+            "path": "",
+            "revision": "c1ffe9c1b3c18b7a1b1621763662d9cf9bb31dda",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "0116479fa6d28b6f6bb46a7bd4d4ded2c582d4f6346bef547929c904f00a5143",
+                "code": "c1ffe9c1b3c18b7a1b1621763662d9cf9bb31dda",
+                "maintenance": "350a30b49eef05a5027b58a45e8f96aa6e983fce9e92e5bce9d387e0dff5e049"
+            }
+        }
+    }
+}

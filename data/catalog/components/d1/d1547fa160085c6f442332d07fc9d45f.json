@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d1547fa160085c6f442332d07fc9d45f",
+    "identity": "github:1377918635:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1377918635:root",
+            "repository": "LoveIrishCoffee/dsh-effort-ultra-skin",
+            "path": "",
+            "revision": "203cd9078bd7be5af6fa1fad497ef512e7eb7b52",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3d54fdd1be3b335b0731ddde4999e00f99fa4425392749c1860b6fd1c8fbc7a6",
+                "code": "203cd9078bd7be5af6fa1fad497ef512e7eb7b52",
+                "maintenance": "91b27d5740fb470b07483d33eccd85f188adb5f89472cc1eded252c5fc1d6c2c"
+            }
+        }
+    }
+}

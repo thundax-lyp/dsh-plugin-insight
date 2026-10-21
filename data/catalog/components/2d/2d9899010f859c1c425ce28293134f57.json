@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2d9899010f859c1c425ce28293134f57",
+    "identity": "github:1372445839:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1372445839:root",
+            "repository": "activeing123/dsh-mcptoon",
+            "path": "",
+            "revision": "4e496dfcb93964bf421670cd7b37fc3f36678529",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2f6b6c73c2cea5da6447188218645cf918d603722576af4db72ff379671b3408",
+                "code": "4e496dfcb93964bf421670cd7b37fc3f36678529",
+                "maintenance": "95c5ddbc63932ee7d2acf1703fc51307ea7639344ac68304ab70fb43bc52640b"
+            }
+        }
+    }
+}

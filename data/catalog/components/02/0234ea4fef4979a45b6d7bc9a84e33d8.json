@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "0234ea4fef4979a45b6d7bc9a84e33d8",
+    "identity": "github:1334709708:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334709708:root",
+            "repository": "JUANWANG-BUAA/dsh-full-remote",
+            "path": "",
+            "revision": "0d4b48c8837ac4b11f3c477b1c04bde46c75f5d6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "0084ccf72e4f4234106603eaca09674626b005824509597e6b54d862ed8473b6",
+                "code": "0d4b48c8837ac4b11f3c477b1c04bde46c75f5d6",
+                "maintenance": "1f06803416dde95882003d39e3345f4ae6c26b5f7797f3b14095815618b0e4bf"
+            }
+        }
+    }
+}

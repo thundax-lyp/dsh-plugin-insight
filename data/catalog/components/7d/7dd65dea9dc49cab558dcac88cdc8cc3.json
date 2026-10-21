@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7dd65dea9dc49cab558dcac88cdc8cc3",
+    "identity": "github:1379003266:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1379003266:root",
+            "repository": "hoyyang/dsh-best-ponytail",
+            "path": "",
+            "revision": "1ab463a67b9e26cf6d4644161e7189e8cc5bc939",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e2fa8d5197654970b0fe2b3a10466e85c15ddaf1ad6a2986cf85b5e9eb4a9482",
+                "code": "1ab463a67b9e26cf6d4644161e7189e8cc5bc939",
+                "maintenance": "3ebc742c0e0238758d19ba49f0c6554a34e851391fb12e3bb80a7d0e817c35f2"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "dc2e7e3db76eb3605913f2fb391ede3f",
+    "identity": "github:1338368502:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338368502:root",
+            "repository": "hyperion2144/dsh-desktop-tauriapp",
+            "path": "",
+            "revision": "577a6d3ac95aeb956e7bb8134efb574294ea63d2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7dc9bc4a921e6e9f3597fb47d82991daaff0b76152f936cd86d2c46aca5dcc76",
+                "code": "577a6d3ac95aeb956e7bb8134efb574294ea63d2",
+                "maintenance": "a305b47a54ae1fd860e4d09897d1f56fe1f7da45a2725b538304b42d689748f8"
+            }
+        }
+    }
+}

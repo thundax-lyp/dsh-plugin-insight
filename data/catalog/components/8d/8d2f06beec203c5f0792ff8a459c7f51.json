@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8d2f06beec203c5f0792ff8a459c7f51",
+    "identity": "github:1345287933:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345287933:root",
+            "repository": "rchen1207/dsh-password-generator",
+            "path": "",
+            "revision": "61c9b7dcda37e3c36c737979f710c6ebc56b2381",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "9ddabea6dbf078339040db38a5a8a0e2757b28c391600696397f6dabc59e1e93",
+                "code": "61c9b7dcda37e3c36c737979f710c6ebc56b2381",
+                "maintenance": "2da599fcb0e82cd420fc1580e8d284b4db2c467e3fc38bfa01217e9afe66ccdd"
+            }
+        }
+    }
+}

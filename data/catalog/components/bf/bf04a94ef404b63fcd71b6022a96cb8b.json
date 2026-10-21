@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bf04a94ef404b63fcd71b6022a96cb8b",
+    "identity": "github:1396492004:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1396492004:root",
+            "repository": "BeyondandSharp/dsh-plugin-notoken",
+            "path": "",
+            "revision": "4beafb2f7f72b3fcfe225458ac68b93db93e44e4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "358765f4b8ff88565085ee2f944389504b9e20dc001681bd7ea67d6e7679db00",
+                "code": "4beafb2f7f72b3fcfe225458ac68b93db93e44e4",
+                "maintenance": "78fa713759faf1f8ccc1adb45c952bfaa37514f579db7f39791b77fa748d90ef"
+            }
+        }
+    }
+}

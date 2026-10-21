@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e3f2af12a0267b468dedacb568366713",
+    "identity": "github:1347251525:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347251525:root",
+            "repository": "sijie-ni-0214/dsh-subagent-error-details",
+            "path": "",
+            "revision": "267d2b1cae9a3898343eeafe9b0be321fa343d2b",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "6c56d193815390c6b3893ad64bc3976ae7a6322f6ec73d0ad9fcbaf9cd75e0ea",
+                "code": "267d2b1cae9a3898343eeafe9b0be321fa343d2b",
+                "maintenance": "63de2e5c98b9d822c9c6522da811d4e2f0d4108bcfe4d5a19fd739e42e6334d7"
+            }
+        }
+    }
+}

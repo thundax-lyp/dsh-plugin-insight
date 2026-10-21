@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5a933015a4208bbbe83ec0ecd77de8a3",
+    "identity": "github:1344687108:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1344687108:root",
+            "repository": "Guard42/dsh-humanize",
+            "path": "",
+            "revision": "18adeaf0f25862c21a0943539fda16345504deed",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6546e3c4b236750b78ad480539f87a7b5a0449e48de23b83a40bcc9058170f16",
+                "code": "18adeaf0f25862c21a0943539fda16345504deed",
+                "maintenance": "2f001b043372871b80bab9e49795ae365ae8de1228fcf8ea1205e46562a3a165"
+            }
+        }
+    }
+}

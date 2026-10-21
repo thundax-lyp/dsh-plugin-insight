@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "986bf125df218ee1ff993e41df6192d6",
+    "identity": "github:1336328763:better-dsh",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336328763:better-dsh",
+            "repository": "pgmi-builds/better-dsh",
+            "path": "better-dsh",
+            "revision": "fe3c99ad156cca093d5915f65f96859aa9f6a519",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d0057409550a71802e9976940ebbf70d69c1e778bbcf73e5b47d9fc65f79df11",
+                "code": "fe3c99ad156cca093d5915f65f96859aa9f6a519",
+                "maintenance": "afc037f00962952d1a8d168cdfe226bf857958302a0784df05d7ac77bcbfd3ff"
+            }
+        }
+    }
+}

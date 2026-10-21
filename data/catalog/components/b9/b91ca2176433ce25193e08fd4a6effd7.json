@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b91ca2176433ce25193e08fd4a6effd7",
+    "identity": "github:1424142508:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424142508:root",
+            "repository": "Shad0wwa1ker/dsh-per-request-cost",
+            "path": "",
+            "revision": "dbb9dfa982024124993b61ea040b2115002737e9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6b957b17ce855d4d21a1b6ea326aa66065277ae2773ed2e5fd1cc3b4ae0aae13",
+                "code": "dbb9dfa982024124993b61ea040b2115002737e9",
+                "maintenance": "d1b9c8fa9583f70daa94f5225dd9be54453876a1493a63cac5028e4c1d711368"
+            }
+        }
+    }
+}

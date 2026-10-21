@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "063e7b4431b3e0d1fe18c1bd9c3a1d47",
+    "identity": "github:1164005541:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1164005541:root",
+            "repository": "foryourhealth111-pixel/Vibe-Skills",
+            "path": "",
+            "revision": "4628953b9d7d80f01e6b42903b7171a53457d4ec",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "5301e568e0f0cdbdfd0a98e82cdb6c4b70fbd26ab2a8e05ee458682a8acd8ce0",
+                "code": "4628953b9d7d80f01e6b42903b7171a53457d4ec",
+                "maintenance": "d6b548ab03d86e1ff57268debcb6d29deb9d3da73adc47e8714d649f8b374470"
+            }
+        }
+    }
+}

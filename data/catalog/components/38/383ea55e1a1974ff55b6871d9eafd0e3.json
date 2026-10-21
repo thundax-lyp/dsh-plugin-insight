@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "383ea55e1a1974ff55b6871d9eafd0e3",
+    "identity": "github:1335718387:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335718387:root",
+            "repository": "pengpengyi92/dsh-quant",
+            "path": "",
+            "revision": "b07a7881b03cefbc7cf95a2cae3d2b056bc695ca",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "4acfc174bf981cb60a346debbb9190ec5eed2ad4e025ac92f3c6b3e49130b66a",
+                "code": "b07a7881b03cefbc7cf95a2cae3d2b056bc695ca",
+                "maintenance": "5a0cd7792641770f55d4c465c47dde4f2db08135495bb6d02163c20225f923ce"
+            }
+        }
+    }
+}

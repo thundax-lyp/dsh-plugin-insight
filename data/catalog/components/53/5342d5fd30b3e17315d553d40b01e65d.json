@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5342d5fd30b3e17315d553d40b01e65d",
+    "identity": "github:1230123793:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1230123793:root",
+            "repository": "WeirdSky924/agent-handoff-skill",
+            "path": "",
+            "revision": "ef01fa9db0ea0aab19141954644a1049da4da795",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "60cb3f1f5669ea9486547cad196a41f5397ecc63ea8717b0fd856d190eb62397",
+                "code": "ef01fa9db0ea0aab19141954644a1049da4da795",
+                "maintenance": "cfa28758720b9b9429d0402f6dc121a021ce716046abdf272c6b686a4087ab06"
+            }
+        }
+    }
+}

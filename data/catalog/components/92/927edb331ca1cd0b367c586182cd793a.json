@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "927edb331ca1cd0b367c586182cd793a",
+    "identity": "github:1407102609:packages-plugin-workstation",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1407102609:packages-plugin-workstation",
+            "repository": "shanhai-city-states/kaipu-dsh-plugin-release",
+            "path": "packages/plugin-workstation",
+            "revision": "2d806e7ceebbf5fd8e0f3776b72eada8adee6305",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "491377a8b4e70a54292238c35a874fe2f1f119ec89c346c331b233d1adf8fd57",
+                "code": "2d806e7ceebbf5fd8e0f3776b72eada8adee6305",
+                "maintenance": "75e42e5e12016d6c9fb77bf950b2e85e4ab87a27c95003009fb11e8eda494ab5"
+            }
+        }
+    }
+}

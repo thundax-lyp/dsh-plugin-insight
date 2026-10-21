@@ -1,0 +1,486 @@
+{
+    "schema_version": 3,
+    "id": "01e42095b70000375746b2afc1536a54",
+    "identity": "github:1422943787:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1422943787:root",
+            "repository_id": 1422943787,
+            "component_id": "root",
+            "repository": "4444wjt/dsh-plugin-veriscope",
+            "path": "",
+            "aliases": [],
+            "name": "VeriScope 门禁重放",
+            "entry_type": "plugin",
+            "technical_category": "security-governance",
+            "business_category": "research-knowledge",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "2acaf32ff4e2af715e16b035c3b21e336d9a325f9a21b5ab7e17f13d860222a9",
+                "code": "5299b64087bbfa5beef6ae2e336045468f1af01d",
+                "maintenance": "70da063f885e3af3ca30e909d0f8dfc3efa0d8efb374fe3a54401f715231ddcc"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-01-github-1422943787-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T02:11:13.055Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-01-github-1422943787-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/4444wjt/dsh-plugin-veriscope/blob/5299b64087bbfa5beef6ae2e336045468f1af01d/README.md",
+                    "revision": "5299b64087bbfa5beef6ae2e336045468f1af01d",
+                    "captured_at": "2026-10-21T02:11:13.055Z",
+                    "summary": "对已有逐条评分执行三态阈值判定，保存并复验绑定输入与策略的回执。",
+                    "artifact": "data/runs/2026-10-21-01/snapshots/4444wjt--dsh-plugin-veriscope/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-01-github-1422943787-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/4444wjt/dsh-plugin-veriscope/blob/5299b64087bbfa5beef6ae2e336045468f1af01d/lib/builtin.js",
+                    "revision": "5299b64087bbfa5beef6ae2e336045468f1af01d",
+                    "captured_at": "2026-10-21T02:11:13.055Z",
+                    "summary": "核查 lib/builtin.js、lib/builtin-rules.js、lib/managed.js、lib/status.js、lib/builtin-receipt.js、lib/decimal.js、package.json；Node builtin接受显式GateArchive/Ragas records和策略，三态判定不补零不跳缺失；V2从原始JSON数值词元做精确十进制均值/逐行比较。receipt绑定输入/策略/插件/环境，status重新核摘要；原replay路径另调用固定上游Python。",
+                    "artifact": "data/runs/2026-10-21-01/snapshots/4444wjt--dsh-plugin-veriscope/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "核查builtin、规则、回执、状态与managed路径；未运行Python/Node门禁、外部宿主或作者CI，评分来源质量不在门禁保证内。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "已有RAG或模型逐条评分的评测维护者，判断给定策略下能否放行并保存复验材料；合格交付是范围明确、当前有效的回执，评分真值和实际发布由其他系统负责。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1422943787-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422943787:root",
+                            "area": "code",
+                            "fingerprint": "5299b64087bbfa5beef6ae2e336045468f1af01d"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:11:13.055Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "Node builtin接受显式GateArchive/Ragas records和策略，三态判定不补零不跳缺失；V2从原始JSON数值词元做精确十进制均值/逐行比较。receipt绑定输入/策略/插件/环境，status重新核摘要；原replay路径另调用固定上游Python。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1422943787-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422943787:root",
+                            "area": "code",
+                            "fingerprint": "5299b64087bbfa5beef6ae2e336045468f1af01d"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:11:13.055Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "核查builtin、规则、回执、状态与managed路径；未运行Python/Node门禁、外部宿主或作者CI，评分来源质量不在门禁保证内。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1422943787-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422943787:root",
+                            "area": "code",
+                            "fingerprint": "5299b64087bbfa5beef6ae2e336045468f1af01d"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:11:13.055Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "dsh-plugin-veriscope 0.6.0；作者提供跨宿主验收材料，本轮未重放，不把作者CI/宿主记录当本次实测。DSH兼容固定alpha SDK需先确认。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1422943787-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422943787:root",
+                            "area": "code",
+                            "fingerprint": "5299b64087bbfa5beef6ae2e336045468f1af01d"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:11:13.055Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "首次需整理评分导出与策略、配置状态备份；持续保存回执（不自动清理）和处理REVIEW，可能需要Python环境维护。无需新增评测模型调用，但上游评分成本不消失。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1422943787-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422943787:root",
+                            "area": "code",
+                            "fingerprint": "5299b64087bbfa5beef6ae2e336045468f1af01d"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:11:13.055Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "已有评测结果且需要可追溯裁决的团队可先用构造样本核验策略；把PASS解释为当前输入满足该阈值，真正发布仍由接入方执行器负责。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1422943787-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422943787:root",
+                            "area": "code",
+                            "fingerprint": "5299b64087bbfa5beef6ae2e336045468f1af01d"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:11:13.055Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "降低旧结论在输入/环境变化后被误用的风险，适合审计链；不能替代数据质量、样本覆盖和实际回答事实验证。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1422943787-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422943787:root",
+                            "area": "code",
+                            "fingerprint": "5299b64087bbfa5beef6ae2e336045468f1af01d"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:11:13.055Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "判定、回执、状态与managed模块分开，V2保留原始十进制词元和FAIL优先故障语义可借鉴；实现scope反复核验能缩小竞态窗口，不能替代外部事务。状态目录和hash绑定升级需迁移/重跑。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1422943787-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422943787:root",
+                            "area": "code",
+                            "fingerprint": "5299b64087bbfa5beef6ae2e336045468f1af01d"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:11:13.055Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "相对只看均值或旧报告，贡献是把缺证据作为REVIEW、已知FAIL不被留痕异常掩盖，以及让回执有效性依赖输入/策略/环境绑定。V2把最差行诊断与显式逐行门槛分开，避免把“展示最差行”偷换成拒绝规则。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1422943787-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422943787:root",
+                            "area": "code",
+                            "fingerprint": "5299b64087bbfa5beef6ae2e336045468f1af01d"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:11:13.055Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "核心质疑是PASS究竟约束到哪里。源码支持当前回执的完整性与阈值裁决，不证明原始评分准确或输入未提前删行；builtin B2明确不支持bind/complete，原replay的managed complete只写自有完成文件，没有拦截外部发布副作用。不能据“门禁”名称声称所有发布被强制保护。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1422943787-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422943787:root",
+                            "area": "code",
+                            "fingerprint": "5299b64087bbfa5beef6ae2e336045468f1af01d"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:11:13.055Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "待验证假设：外部发布适配器消费一次性、绑定最终产物哈希的当前PASS回执，并在执行前再次校验，可能把记录式门禁扩展到实际放行。推导自现有scope复验和managed二次核查，但需要明确令牌消费、变更竞态和未知发布结果责任；尚未实现。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1422943787-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422943787:root",
+                            "area": "code",
+                            "fingerprint": "5299b64087bbfa5beef6ae2e336045468f1af01d"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:11:13.055Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cross_delivery_gate_boundary",
+                    "topic": "comparison",
+                    "text": "在“生成网页后决定是否提交或发布”的共同流程中，task-monitor汇总活动并提供Git写入口；dsh-verify执行给定浏览器断言；VeriScope复验评分回执并约束自有完成记录。三者分别改变可见性、可重复检查和裁决追溯，当前源码未将三种状态与最终Git/GitHub副作用绑定成同一事务，因此不能以面板活动、断言PASS或完成文件任一项替代最终放行。没有进行组合安装或同条件效果实验。",
+                    "basis": "interpretation",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1335843750-root-source",
+                        "2026-10-21-01-github-1406156934-dsh-task-monitor-source",
+                        "2026-10-21-01-github-1422943787-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335843750:root",
+                            "area": "code",
+                            "fingerprint": "d969899808e51dcccd261588f667b18633020fca"
+                        },
+                        {
+                            "plugin_id": "github:1406156934:dsh-task-monitor",
+                            "area": "code",
+                            "fingerprint": "e628e3ea76cf0f7f0a3489b93c9f00271daeb791"
+                        },
+                        {
+                            "plugin_id": "github:1422943787:root",
+                            "area": "code",
+                            "fingerprint": "5299b64087bbfa5beef6ae2e336045468f1af01d"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:13:19.043Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T02:13:19.043Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "5299b64087bbfa5beef6ae2e336045468f1af01d",
+                "reviewed_at": "2026-10-21T02:11:13.055Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1422943787:root",
+                        "area": "code",
+                        "fingerprint": "5299b64087bbfa5beef6ae2e336045468f1af01d"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 18,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty：三态与可复验回执形成明确组合增量，不宣称全球首次。 mechanism：缺失值保持、FAIL优先和精确词元比较改变判定可靠性边界，运行未复现。 transferability：归档/策略/回执机制可跨宿主复用，输入格式需明确适配。 simplification：builtin移除Python依赖但保留严格输入契约，未消除评分前置。",
+                    "basis": "interpretation",
+                    "score": 51,
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1422943787-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 15,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow：报告阅读变为可复验裁决和责任边界，外部发布仍另行控制。 delivery：交付带输入/策略/环境绑定的回执，而非单一PASS文本。 reach：Node B2与MCP扩大已有评分用户可达性，DSH SDK仍窄。 economics：无需重新调用评分模型，状态维护与原评分成本仍在。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1422943787-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "已有RAG评分的团队可试用三态回执；以缺失、阈值边界和过期样本验证策略，PASS只约束当前输入，发布另控。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "范围明确且可复验评分裁决是具体审计任务。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "精确小数、REVIEW与摘要有效性优于只看均值旧报告。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "原始数值词元和receipt绑定已查，不验证评分真值或外部发布。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "需整理策略及保留回执，旧replay另需Python，REVIEW处理有人工成本。"
+                    }
+                },
+                "score": 65,
+                "revision": "5299b64087bbfa5beef6ae2e336045468f1af01d",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-01-github-1422943787-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1422943787:root",
+                        "area": "code",
+                        "fingerprint": "5299b64087bbfa5beef6ae2e336045468f1af01d"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1422943787:root",
+            "repository": "4444wjt/dsh-plugin-veriscope",
+            "path": "",
+            "revision": "5299b64087bbfa5beef6ae2e336045468f1af01d",
+            "fingerprints": {
+                "directory": "2acaf32ff4e2af715e16b035c3b21e336d9a325f9a21b5ab7e17f13d860222a9",
+                "code": "5299b64087bbfa5beef6ae2e336045468f1af01d",
+                "maintenance": "70da063f885e3af3ca30e909d0f8dfc3efa0d8efb374fe3a54401f715231ddcc"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T01:54:44Z",
+            "analysis_sha256": "2062ac98fa07cbe1de097568f886fda9acbc777a2cb9ac24965743da633c2cbc"
+        },
+        "publication.metadata": "data/plugins/4444wjt--dsh-plugin-veriscope/META.json",
+        "publication.summaries": {
+            "text": "对已有逐条评分执行三态阈值判定，保存并复验绑定输入与策略的回执。",
+            "revision": "5299b64087bbfa5beef6ae2e336045468f1af01d",
+            "source_url": "https://github.com/4444wjt/dsh-plugin-veriscope/blob/5299b64087bbfa5beef6ae2e336045468f1af01d/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "5299b64087bbfa5beef6ae2e336045468f1af01d",
+            "items": {
+                "模型工具": "check/replay/status/list等门禁工具；B2与原replay能力边界不同。"
+            }
+        },
+        "publication.advice": {
+            "revision": "5299b64087bbfa5beef6ae2e336045468f1af01d",
+            "text": "已有评测结果且需要可追溯裁决的团队可先用构造样本核验策略；把PASS解释为当前输入满足该阈值，真正发布仍由接入方执行器负责。"
+        },
+        "registry": "data/plugins/4444wjt--dsh-plugin-veriscope",
+        "reports": "# VeriScope 门禁重放\n\n> 对已有逐条评分执行三态阈值判定，保存并复验绑定输入与策略的回执。\n\n## 使用建议\n\n已有评测结果且需要可追溯裁决的团队可先用构造样本核验策略；把PASS解释为当前输入满足该阈值，真正发布仍由接入方执行器负责。\n\n核查状态：源码支持本文所述机制与有限集成贡献；效果、宿主兼容和独立采用未验证。未来设计假设仅为推演，未实现、未验证。 只执行研究工程的统计/装配与结构验证，未安装插件、运行目标代码/测试或做真实宿主验收。\n\n- **用途**：已有RAG或模型逐条评分的评测维护者，判断给定策略下能否放行并保存复验材料；合格交付是范围明确、当前有效的回执，评分真值和实际发布由其他系统负责。\n- **亮点**：相对只看均值或旧报告，贡献是把缺证据作为REVIEW、已知FAIL不被留痕异常掩盖，以及让回执有效性依赖输入/策略/环境绑定。V2把最差行诊断与显式逐行门槛分开，避免把“展示最差行”偷换成拒绝规则。\n- **思考**：核心质疑是PASS究竟约束到哪里。源码支持当前回执的完整性与阈值裁决，不证明原始评分准确或输入未提前删行；builtin B2明确不支持bind/complete，原replay的managed complete只写自有完成文件，没有拦截外部发布副作用。不能据“门禁”名称声称所有发布被强制保护。\n- **建议**：已有评测结果且需要可追溯裁决的团队可先用构造样本核验策略；把PASS解释为当前输入满足该阈值，真正发布仍由接入方执行器负责。\n\n## 能力与限制\n\n参照简单阈值脚本、静态评测报告和上游VeriScope Python；本组件新增回执/状态/宿主桥接，原评分与上游裁决分别归属。\n\nNode builtin接受显式GateArchive/Ragas records和策略，三态判定不补零不跳缺失；V2从原始JSON数值词元做精确十进制均值/逐行比较。receipt绑定输入/策略/插件/环境，status重新核摘要；原replay路径另调用固定上游Python。\n\n\nNode>=22.19，B2需显式持久VERISCOPE_STATE_DIR；原replay还需固定上游与Python/pandas。DSH工具SDK固定0.2.1-alpha.2，MCP/CLI不加载该SDK；无自动评分和模型API调用。\n\n准备逐条结果和显式策略→check/replay→保存来源/日志/report/receipt→status核当前有效性→人工或外部系统判断下一步。原replay可bind并在complete时两次校验后写完成记录；B2拒绝该路径，MCP不提供原生受管完成。\n\n首次需整理评分导出与策略、配置状态备份；持续保存回执（不自动清理）和处理REVIEW，可能需要Python环境维护。无需新增评测模型调用，但上游评分成本不消失。\n\n降低旧结论在输入/环境变化后被误用的风险，适合审计链；不能替代数据质量、样本覆盖和实际回答事实验证。\n\n## 能力清单\n\n- **模型工具**：check/replay/status/list等门禁工具；B2与原replay能力边界不同。\n\n## 工程分析\n\n判定、回执、状态与managed模块分开，V2保留原始十进制词元和FAIL优先故障语义可借鉴；实现scope反复核验能缩小竞态窗口，不能替代外部事务。状态目录和hash绑定升级需迁移/重跑。\n\ndsh-plugin-veriscope 0.6.0；作者提供跨宿主验收材料，本轮未重放，不把作者CI/宿主记录当本次实测。DSH兼容固定alpha SDK需先确认。\n\n固定源码依据：[lib/managed.js L59–74](https://github.com/4444wjt/dsh-plugin-veriscope/blob/5299b64087bbfa5beef6ae2e336045468f1af01d/lib/managed.js#L59-L74)；[lib/builtin.js L12–17](https://github.com/4444wjt/dsh-plugin-veriscope/blob/5299b64087bbfa5beef6ae2e336045468f1af01d/lib/builtin.js#L12-L17)；[lib/builtin-rules.js L16–35](https://github.com/4444wjt/dsh-plugin-veriscope/blob/5299b64087bbfa5beef6ae2e336045468f1af01d/lib/builtin-rules.js#L16-L35)。上述贡献与关键质疑均限定于这些固定源码，不把测试文件存在当运行通过。\n\n## 跨插件比较：验收与最终写入\n\n在“生成网页后决定是否提交或发布”的共同流程中，task-monitor汇总活动并提供Git写入口；dsh-verify执行给定浏览器断言；VeriScope复验评分回执并约束自有完成记录。三者分别改变可见性、可重复检查和裁决追溯，当前源码未将三种状态与最终Git/GitHub副作用绑定成同一事务，因此不能以面板活动、断言PASS或完成文件任一项替代最终放行。没有进行组合安装或同条件效果实验。\n\n共同任务的合格交付应同时满足：需求覆盖的检查已通过、被检查产物就是将发布产物、最终写入结果可回读。简单对照是人工核对差异、执行现成浏览器清单，再手工提交；组合方案增加回执保管、版本匹配和写入恢复成本。\n\n依据：[活动与写入入口](https://github.com/3450892121/dsh-task-monitor/blob/e628e3ea76cf0f7f0a3489b93c9f00271daeb791/dsh-task-monitor/index.js#L1053-L1103)、[给定浏览器断言](https://github.com/263311487-ux/dsh-verify/blob/d969899808e51dcccd261588f667b18633020fca/bin/verify.mjs#L225-L262)、[完成记录边界](https://github.com/4444wjt/dsh-plugin-veriscope/blob/5299b64087bbfa5beef6ae2e336045468f1af01d/lib/managed.js#L59-L74)。比较依赖已在结构化finding中绑定三个稳定ID和各自code指纹。\n\n## 未来设计假设（未验证）\n\n待验证假设：外部发布适配器消费一次性、绑定最终产物哈希的当前PASS回执，并在执行前再次校验，可能把记录式门禁扩展到实际放行。推导自现有scope复验和managed二次核查，但需要明确令牌消费、变更竞态和未知发布结果责任；尚未实现。\n\n最小验证与否定条件：构造完整通过、缺值、均值通过但单行失败、输入中途变更和日志落盘失败五类样本；对照简单均值脚本，要求REVIEW不转PASS、已知FAIL不被覆盖、策略变更使旧回执失效。另证明B2不能managed complete；外部真实发布须另接执行器验收，不能只看completion文件。\n\n组合验证（未执行）：对照人工流程和拟议回执适配器，分别注入首次截图基线、检查后改产物、远端写成功后丢响应。检查适配器是否拒绝过期产物，以及结果未知时能否先查询再重试；若仍可发布未验收产物或重复写入，否定组合的放行保证。状态所有权归实际写入适配器，面板与检查器只提供证据，不能各自重放写入。\n\n## 核查说明\n\n- 版本依据：仓库：[4444wjt/dsh-plugin-veriscope](https://github.com/4444wjt/dsh-plugin-veriscope)；固定提交：[5299b640](https://github.com/4444wjt/dsh-plugin-veriscope/tree/5299b64087bbfa5beef6ae2e336045468f1af01d)；版本号：0.6.0；版本日期：2026-10-18（固定提交日期，北京时间，非包发布日期）。\n- 已检查与未覆盖范围：核查builtin、规则、回执、状态与managed路径；未运行Python/Node门禁、外部宿主或作者CI，评分来源质量不在门禁保证内。\n- 证据限制：作者功能摘要来自固定版本README；未核实独立用户采用、同条件效果或端到端收益。版本、证据原文与inventory绑定保存在本项JSON；GitHub/npm统计仅作背景，不构成采用证明。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；版本号：0.6.0；版本日期：2026-10-18（固定提交日期，北京时间，非包发布日期）；组件：根；内容摘要：3724f2bbcbc82e93ccedda2296499a43a9e3d47684c5a3daec56808ef630e6eb。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 20 | 1628 | — | — | 32791 |\n| .js | source | 29 | 2763 | 2598 | 71 | — |\n| .md | example | 2 | 29 | — | — | 518 |\n| .mjs | source | 6 | 333 | 316 | 5 | — |\n| .js | test | 21 | 2744 | 2598 | 6 | — |\n| .mjs | example | 1 | 43 | 41 | 1 | — |\n\n排除 0 项；解析错误 0 项。统计为固定Git范围，源码抽读不冒充全面审计；JS/TS与Markdown分别计量。默认排除为启发式，不能从LOC推算原创量或工时。\n\n",
+        "metadata": {
+            "repository": "4444wjt/dsh-plugin-veriscope",
+            "repository_id": 1422943787,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 0,
+            "pushed_at": "2026-10-18T07:13:12Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A4444wjt%2Fdsh-plugin-veriscope%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6412:15F2FE:149AA4:222E12:6AD84A2F and timestamp 2026-10-21 05:14:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A4444wjt%2Fdsh-plugin-veriscope%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641C:64E75:1417B6:21BD36:6AD84A2F and timestamp 2026-10-21 05:14:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A4444wjt%2Fdsh-plugin-veriscope%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641D:F50F:14C144:225A49:6AD84A2F and timestamp 2026-10-21 05:14:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A4444wjt%2Fdsh-plugin-veriscope%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641E:37D83B:147C27:2212C6:6AD84A2F and timestamp 2026-10-21 05:14:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A4444wjt%2Fdsh-plugin-veriscope%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641F:287071:13BAA6:215593:6AD84A2F and timestamp 2026-10-21 05:14:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-plugin-veriscope",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 956,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-plugin-veriscope",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-10-17T09:02:12.887Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-plugin-veriscope",
+                    "error": null,
+                    "latest_version": "0.6.0",
+                    "latest_published_at": "2026-10-17T17:54:34.880Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "5299b64087bbfa5beef6ae2e336045468f1af01d",
+                "current_revision": "5299b64087bbfa5beef6ae2e336045468f1af01d",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1422943787:root",
+            "repository": "4444wjt/dsh-plugin-veriscope",
+            "path": "",
+            "revision": "5299b64087bbfa5beef6ae2e336045468f1af01d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2acaf32ff4e2af715e16b035c3b21e336d9a325f9a21b5ab7e17f13d860222a9",
+                "code": "5299b64087bbfa5beef6ae2e336045468f1af01d",
+                "maintenance": "70da063f885e3af3ca30e909d0f8dfc3efa0d8efb374fe3a54401f715231ddcc"
+            }
+        }
+    }
+}

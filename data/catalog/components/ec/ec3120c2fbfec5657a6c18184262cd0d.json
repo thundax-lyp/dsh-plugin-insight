@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ec3120c2fbfec5657a6c18184262cd0d",
+    "identity": "github:1333392459:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333392459:root",
+            "repository": "dingkaihu63/dsh-robotic-harness",
+            "path": "",
+            "revision": "8cc09e7e3389a9fdafd4349d2840cfbac9b6e9c6",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "4da70387b921354f39e6548b730c440fa688937d045981f4eb3c324372008c85",
+                "code": "8cc09e7e3389a9fdafd4349d2840cfbac9b6e9c6",
+                "maintenance": "d118c0772357b01fd6fffaa5ed356c9709a9ee322f5acb725788b9df97165abe"
+            }
+        }
+    }
+}

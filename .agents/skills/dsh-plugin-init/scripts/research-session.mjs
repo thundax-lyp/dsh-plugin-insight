@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { readSnapshotStorage } from '../../_shared/scripts/snapshot-storage.mjs';
 import { readResearchSession } from '../../_shared/scripts/work-storage.mjs';
 import {
     existsSync,
@@ -228,9 +229,13 @@ const hasFreshAnalysis = (plugin, checkedAt) =>
     plugin.findings.every(
         (finding) => Date.parse(finding.reviewed_at) >= Date.parse(checkedAt) && finding.status !== 'needs_review'
     );
+function currentCatalog(root = ROOT) {
+    const index = resolve(root, 'data/catalog/index.jsonl');
+    return existsSync(index) ? readSnapshotStorage(index).catalog : read(resolve(root, CATALOG));
+}
 export function createManifest(session, sessionPath, root = ROOT) {
     validateSession(session, root);
-    const catalog = read(resolve(root, CATALOG));
+    const catalog = currentCatalog(root);
     validateCatalog(catalog);
     const catalogById = new Map(catalog.plugins.map((plugin) => [plugin.id, plugin]));
     const relativeSession = relative(root, resolve(sessionPath)).split('\\').join('/');
@@ -407,7 +412,7 @@ export function saveSession(path, action) {
     }
 }
 export function publishItem(session, id, out, root = ROOT) {
-    if (existsSync(resolve(root, 'data/catalog/SNAPSHOT.json')))
+    if (existsSync(resolve(root, 'data/catalog/index.jsonl')))
         throw Error('formal details are derived from snapshot; stage records and merge instead');
     const current = validateSession(session, root);
     const item = current.items.find((item) => item.id === id && item.status === 'complete');
@@ -500,13 +505,13 @@ export function main(args = process.argv.slice(2)) {
                     need('plugin'),
                     need('observations'),
                     need('report'),
-                    read(v.catalog ?? resolve(ROOT, CATALOG))
+                    v.catalog ? read(v.catalog) : currentCatalog()
                 );
             const item = s.items.find((p) => p.id === need('plugin'));
             if (!item || !selectedItems(s).includes(item)) throw new Error('item missing or deferred');
             if (command === 'invalidate') {
                 if (item.status !== 'complete') throw new Error('invalidate requires a complete item');
-                const catalog = read(v.catalog ?? resolve(ROOT, CATALOG));
+                const catalog = v.catalog ? read(v.catalog) : currentCatalog();
                 validateCatalog(catalog);
                 if (
                     hasFreshAnalysis(

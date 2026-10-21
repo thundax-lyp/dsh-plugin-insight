@@ -1,0 +1,402 @@
+{
+    "schema_version": 3,
+    "id": "c33ec91b4b18c22d4f4a65bbcf958261",
+    "identity": "github:1407379611:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1407379611:root",
+            "repository_id": 1407379611,
+            "component_id": "root",
+            "repository": "439436269-ctrl/dsh-pinned-sessions",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-pinned-sessions",
+            "entry_type": "plugin",
+            "technical_category": "sessions-messages",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "f63bb0c0fe4fe824c25c2901ed20d14f1f41853eb958c9d80f2180a52b164b57",
+                "code": "20044d963ce5d0a780915be97491b9d330285bf3",
+                "maintenance": "157f25f8b39d5c5b343af5d9fa0516cb539e0fd35365507c9a1927dd44e89d9a"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-01-github-1407379611-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T02:05:43.940Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-01-github-1407379611-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/439436269-ctrl/dsh-pinned-sessions/blob/20044d963ce5d0a780915be97491b9d330285bf3/README.md",
+                    "revision": "20044d963ce5d0a780915be97491b9d330285bf3",
+                    "captured_at": "2026-10-21T02:05:43.940Z",
+                    "summary": "在侧栏集中展示跨工作区的置顶会话，提供搜索、状态与取消置顶操作。",
+                    "artifact": "data/runs/2026-10-21-01/snapshots/439436269-ctrl--dsh-pinned-sessions/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-01-github-1407379611-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/439436269-ctrl/dsh-pinned-sessions/blob/20044d963ce5d0a780915be97491b9d330285bf3/lib/client.js",
+                    "revision": "20044d963ce5d0a780915be97491b9d330285bf3",
+                    "captured_at": "2026-10-21T02:05:43.940Z",
+                    "summary": "核查 lib/client.js、lib/index.js；lib/client.js从原生sessions/workspaces与uiSession状态读取置顶集合，通过createPortal挂进侧栏滚动容器，取消置顶调用原生unpinSession。",
+                    "artifact": "data/runs/2026-10-21-01/snapshots/439436269-ctrl--dsh-pinned-sessions/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "抽读指定核心源码与作者说明；未执行目标插件或测试、未安装或做真实宿主验收，未核实独立用户收益。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "经常跨多个工作区切换会话的DSH用户，需从一个平面入口快速找到已置顶会话。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1407379611-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1407379611:root",
+                            "area": "code",
+                            "fingerprint": "20044d963ce5d0a780915be97491b9d330285bf3"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:05:43.940Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "lib/client.js从原生sessions/workspaces与uiSession状态读取置顶集合，通过createPortal挂进侧栏滚动容器，取消置顶调用原生unpinSession。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1407379611-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1407379611:root",
+                            "area": "code",
+                            "fingerprint": "20044d963ce5d0a780915be97491b9d330285bf3"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:05:43.940Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "抽读指定核心源码与作者说明；未执行目标插件或测试、未安装或做真实宿主验收，未核实独立用户收益。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1407379611-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1407379611:root",
+                            "area": "code",
+                            "fingerprint": "20044d963ce5d0a780915be97491b9d330285bf3"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:05:43.940Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "固定源码及包清单界定本次组件与分发；作者兼容和效果说明不等于本轮实际执行证据。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1407379611-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1407379611:root",
+                            "area": "code",
+                            "fingerprint": "20044d963ce5d0a780915be97491b9d330285bf3"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:05:43.940Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "首次安装刷新界面；无新增模型调用费用，持续成本主要为宿主DOM适配与跨版本验证。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1407379611-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1407379611:root",
+                            "area": "code",
+                            "fingerprint": "20044d963ce5d0a780915be97491b9d330285bf3"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:05:43.940Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "已有跨工作区置顶需求时可试用；先验证搜索、归档过滤与取消置顶，宿主升级后检查入口是否仍在。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1407379611-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1407379611:root",
+                            "area": "code",
+                            "fingerprint": "20044d963ce5d0a780915be97491b9d330285bf3"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:05:43.940Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "集中导航可减少展开工作区的步骤；实际定位时间与长列表性能尚未本轮测量。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1407379611-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1407379611:root",
+                            "area": "code",
+                            "fingerprint": "20044d963ce5d0a780915be97491b9d330285bf3"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:05:43.940Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "pinnedSessionIds过滤归档、空白与subagent，状态来自uiSession，取消置顶不直接改store；MutationObserver加定时重对齐降低重渲染丢挂载。 [固定源码](https://github.com/439436269-ctrl/dsh-pinned-sessions/blob/20044d963ce5d0a780915be97491b9d330285bf3/lib/client.js#L1)。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1407379611-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1407379611:root",
+                            "area": "code",
+                            "fingerprint": "20044d963ce5d0a780915be97491b9d330285bf3"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:05:43.940Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T02:05:43.940Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "20044d963ce5d0a780915be97491b9d330285bf3",
+                "reviewed_at": "2026-10-21T02:05:43.940Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1407379611:root",
+                        "area": "code",
+                        "fingerprint": "20044d963ce5d0a780915be97491b9d330285bf3"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty：跨工作区聚合小幅；mechanism：portal与原生状态复用小幅；transferability：锚点依赖限制复用小幅；simplification：不复制后端状态实质。",
+                    "basis": "interpretation",
+                    "score": 30,
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1407379611-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow：导航步骤小幅；delivery：既有会话可达性小幅；reach：降低找会话门槛小幅；economics：避免重复状态维护小幅，收益未测。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1407379611-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "适合跨多个工作区找置顶会话，先验证搜索、归档过滤与取消置顶；宿主升级后核对侧栏入口，尚未进行真实宿主验证。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "多工作区用户有清楚的会话定位需求，单工作区用户的增益较小。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "相对原生分工作区置顶，集中聚合且复用原生置顶状态，避免第二套真相。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "固定源码支持过滤、原生取消置顶和挂载机制，未执行真实侧栏或大列表验证。"
+                    },
+                    "cost": {
+                        "score": 15,
+                        "rationale": "无新增模型调用，主要负担是DOM耦合及升级核查，入口失配时功能可能隐藏。"
+                    }
+                },
+                "score": 70,
+                "revision": "20044d963ce5d0a780915be97491b9d330285bf3",
+                "reviewed_at": "2026-10-21T09:16:52.633Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-01-github-1407379611-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1407379611:root",
+                        "area": "code",
+                        "fingerprint": "20044d963ce5d0a780915be97491b9d330285bf3"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1407379611:root",
+            "repository": "439436269-ctrl/dsh-pinned-sessions",
+            "path": "",
+            "revision": "20044d963ce5d0a780915be97491b9d330285bf3",
+            "fingerprints": {
+                "directory": "f63bb0c0fe4fe824c25c2901ed20d14f1f41853eb958c9d80f2180a52b164b57",
+                "code": "20044d963ce5d0a780915be97491b9d330285bf3",
+                "maintenance": "157f25f8b39d5c5b343af5d9fa0516cb539e0fd35365507c9a1927dd44e89d9a"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T01:54:44Z",
+            "analysis_sha256": "ea0f8c6fc28972adb73777d0291ed506400992ac92af435e4fab19c53ccf7e8f"
+        },
+        "publication.metadata": "data/plugins/439436269-ctrl--dsh-pinned-sessions/META.json",
+        "publication.summaries": {
+            "text": "在侧栏集中展示跨工作区的置顶会话，提供搜索、状态与取消置顶操作。",
+            "revision": "20044d963ce5d0a780915be97491b9d330285bf3",
+            "source_url": "https://github.com/439436269-ctrl/dsh-pinned-sessions/blob/20044d963ce5d0a780915be97491b9d330285bf3/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "20044d963ce5d0a780915be97491b9d330285bf3",
+            "items": {
+                "界面": "跨工作区置顶分组、搜索、状态提示与取消置顶"
+            }
+        },
+        "publication.advice": {
+            "revision": "20044d963ce5d0a780915be97491b9d330285bf3",
+            "text": "已有跨工作区置顶需求时可试用；先验证搜索、归档过滤与取消置顶，宿主升级后检查入口是否仍在。"
+        },
+        "registry": "data/plugins/439436269-ctrl--dsh-pinned-sessions",
+        "reports": "# dsh-pinned-sessions\n\n> 在侧栏集中展示跨工作区的置顶会话，提供搜索、状态与取消置顶操作。\n\n## 研究范围\n\n- **仓库**：[439436269-ctrl/dsh-pinned-sessions](https://github.com/439436269-ctrl/dsh-pinned-sessions)\n- **版本号**：0.4.1（[固定提交 20044d96](https://github.com/439436269-ctrl/dsh-pinned-sessions/tree/20044d963ce5d0a780915be97491b9d330285bf3)）\n- **版本日期**：2026-10-20（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已实现机制由固定源码支持；效果未独立实测，未来假设未验证。\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：经常跨多个工作区切换会话的DSH用户，需从一个平面入口快速找到已置顶会话。\n- **亮点**：相对原生只在各工作区内部重排置顶，会话集合跨工作区聚合有明确导航价值；重用原生状态避免第二套置顶真相。DOM锚点portal是宿主缺少扩展槽位时的适配，不是新状态模型。\n- **思考**：原生样式一致是否等于长期兼容？代码依赖data-slot及具体侧栏列表结构，找不到时隐藏，降低破坏性但功能仍消失；README前后对挂载位置和是否共享滚动有不同叙述，应该以当前源码和宿主实测为准。\n- **建议**：已有跨工作区置顶需求时可试用；先验证搜索、归档过滤与取消置顶，宿主升级后检查入口是否仍在。\n\n采用建议：已有跨工作区置顶需求时可试用；先验证搜索、归档过滤与取消置顶，宿主升级后检查入口是否仍在。\n\n## 核心贡献\n\n相对原生只在各工作区内部重排置顶，会话集合跨工作区聚合有明确导航价值；重用原生状态避免第二套置顶真相。DOM锚点portal是宿主缺少扩展槽位时的适配，不是新状态模型。\n\n## 关键质疑\n\n原生样式一致是否等于长期兼容？代码依赖data-slot及具体侧栏列表结构，找不到时隐藏，降低破坏性但功能仍消失；README前后对挂载位置和是否共享滚动有不同叙述，应该以当前源码和宿主实测为准。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n待验证假设：宿主增加只负责列表首部的扩展slot，可消除DOM探测并保留原生浏览器所有权；代价是需要宿主API设计与版本适配。\n\n比较现有锚点方式与slot原型在扁平/分组/搜索/折叠及DOM重排后的可见性；若slot同样需要内部DOM猜测则否定简化假设。\n\n## 场景与替代办法\n\n经常跨多个工作区切换会话的DSH用户，需从一个平面入口快速找到已置顶会话。\n\n参照DSH原生工作区内置顶与手工搜索；价值来自聚合入口，不增加后端会话能力。\n\n## 依赖与流程\n\n需要slots、sessions、workspaces、uiWorkspace、uiSession等客户端服务和匹配侧栏结构。\n\n原生置顶→读取集合→过滤隐藏项→挂载分组→搜索或打开→原生取消置顶；锚点消失则移除自身节点。\n\n## 成本与效果\n\n首次安装刷新界面；无新增模型调用费用，持续成本主要为宿主DOM适配与跨版本验证。\n\n集中导航可减少展开工作区的步骤；实际定位时间与长列表性能尚未本轮测量。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：cc182a0798d9ddbd812562073c28ecb41dc579236c2f6a0c10f84a99e256b25a。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 4 | 917 | — | — | 11206 |\n| .js | source | 2 | 804 | 613 | 192 | — |\n| .mjs | test | 1 | 422 | 332 | 65 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **界面**：跨工作区置顶分组、搜索、状态提示与取消置顶\n\n## 工程亮点\n\npinnedSessionIds过滤归档、空白与subagent，状态来自uiSession，取消置顶不直接改store；MutationObserver加定时重对齐降低重渲染丢挂载。 [固定源码](https://github.com/439436269-ctrl/dsh-pinned-sessions/blob/20044d963ce5d0a780915be97491b9d330285bf3/lib/client.js#L1)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 lib/client.js、lib/index.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读指定核心源码与作者说明；未执行目标插件或测试、未安装或做真实宿主验收，未核实独立用户收益。\n- 下一步：比较现有锚点方式与slot原型在扁平/分组/搜索/折叠及DOM重排后的可见性；若slot同样需要内部DOM猜测则否定简化假设。\n",
+        "metadata": {
+            "repository": "439436269-ctrl/dsh-pinned-sessions",
+            "repository_id": 1407379611,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 0,
+            "pushed_at": "2026-10-20T15:19:57Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-pinned-sessions%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6412:15F2FE:148F0D:221AD8:6AD849F9 and timestamp 2026-10-21 05:13:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-pinned-sessions%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6413:3B024B:143A03:21D103:6AD849F9 and timestamp 2026-10-21 05:13:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-pinned-sessions%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6414:D5CAC:14962E:221A36:6AD849F9 and timestamp 2026-10-21 05:13:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-pinned-sessions%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6402:1CA4C8:14B973:225562:6AD849F9 and timestamp 2026-10-21 05:13:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-pinned-sessions%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6415:136889:156EFD:2305CD:6AD849F9 and timestamp 2026-10-21 05:13:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "@vfvrpq/dsh-pinned-sessions",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 479,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40vfvrpq%2Fdsh-pinned-sessions",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-10-06T14:47:19.177Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/%40vfvrpq%2Fdsh-pinned-sessions",
+                    "error": null,
+                    "latest_version": "0.4.1",
+                    "latest_published_at": "2026-10-20T15:18:31.798Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "20044d963ce5d0a780915be97491b9d330285bf3",
+                "current_revision": "20044d963ce5d0a780915be97491b9d330285bf3",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1407379611:root",
+            "repository": "439436269-ctrl/dsh-pinned-sessions",
+            "path": "",
+            "revision": "20044d963ce5d0a780915be97491b9d330285bf3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f63bb0c0fe4fe824c25c2901ed20d14f1f41853eb958c9d80f2180a52b164b57",
+                "code": "20044d963ce5d0a780915be97491b9d330285bf3",
+                "maintenance": "157f25f8b39d5c5b343af5d9fa0516cb539e0fd35365507c9a1927dd44e89d9a"
+            }
+        }
+    }
+}

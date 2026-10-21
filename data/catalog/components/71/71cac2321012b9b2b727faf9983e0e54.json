@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "71cac2321012b9b2b727faf9983e0e54",
+    "identity": "github:1420314833:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1420314833:root",
+            "repository": "foreee/dsh-app-restart",
+            "path": "",
+            "revision": "bb52ac4c5cfcbbb1dd403a7468d4142d7e9281a5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "afd7733034e80ed5276d873a3fefbfe79d2282efc127450bccd4b4d4f1d7c7f3",
+                "code": "bb52ac4c5cfcbbb1dd403a7468d4142d7e9281a5",
+                "maintenance": "108fffc1415a756cefb21dbfbab20988484e564dca0cfc70a3272f98e8c8d343"
+            }
+        }
+    }
+}

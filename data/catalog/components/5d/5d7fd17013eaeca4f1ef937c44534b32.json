@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5d7fd17013eaeca4f1ef937c44534b32",
+    "identity": "github:1407746213:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1407746213:root",
+            "repository": "MacilyDots/dsh-olivia-bridge",
+            "path": "",
+            "revision": "8c0593a984b64fce263278fa7aae11896d670771",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b90d3293feefa0d561d1a1643023fcc172e94e27aa26d94330acd320f599ca36",
+                "code": "8c0593a984b64fce263278fa7aae11896d670771",
+                "maintenance": "881ddac5f49551913015d3fa3cab986e3428492c41bf11df77ac7e2c44a19557"
+            }
+        }
+    }
+}

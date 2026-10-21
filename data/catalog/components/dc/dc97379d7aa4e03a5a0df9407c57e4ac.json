@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "dc97379d7aa4e03a5a0df9407c57e4ac",
+    "identity": "github:1326394141:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1326394141:root",
+            "repository": "Fisfzy/dsh-ego-browser",
+            "path": "",
+            "revision": "c02428e25446bb26e1f8e09532d688090246cfe4",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "54db5d7e5243364d8a7dd0a3542b184830968e5945539f3a2486699cdfc7254d",
+                "code": "c02428e25446bb26e1f8e09532d688090246cfe4",
+                "maintenance": "c7cbed55ba174664163d90f9345e56fc401be03823b8c5ea7c136adab81140a8"
+            }
+        }
+    }
+}

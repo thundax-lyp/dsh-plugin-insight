@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4f5019c3741ce0620b4c70a1b2106800",
+    "identity": "github:1341712226:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1341712226:root",
+            "repository": "chendefine/dsh-web-fetch-playwright",
+            "path": "",
+            "revision": "910a882a727f4311b969c96b32b05ddb78d73cde",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2bbdc474c82dd4b0760cb8c7627ec551f92fcaebc302b498b85f2644cb30961b",
+                "code": "910a882a727f4311b969c96b32b05ddb78d73cde",
+                "maintenance": "3f0a2c7928dda5e56f55da8ff00462a4906b635474dd95cc7c1d51686c08eb10"
+            }
+        }
+    }
+}

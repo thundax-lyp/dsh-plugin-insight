@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7c8345761257e5a6217b3374a6455fb8",
+    "identity": "github:1365163902:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1365163902:root",
+            "repository": "ArimaKana-Akane/dsh-sakurafrp",
+            "path": "",
+            "revision": "1c68de7b79afa2b08734a28aa696a42d1bc0e250",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6a970cf900785f03de3321b58d68161cbd98bd2f5a6f782a271db31143b605a3",
+                "code": "1c68de7b79afa2b08734a28aa696a42d1bc0e250",
+                "maintenance": "ac4711134700faf1d386fb5406a173d9b604dff3f82d7950c3bfcb96d53be09d"
+            }
+        }
+    }
+}

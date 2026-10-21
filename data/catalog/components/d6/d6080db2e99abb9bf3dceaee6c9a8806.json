@@ -1,0 +1,362 @@
+{
+    "schema_version": 3,
+    "id": "d6080db2e99abb9bf3dceaee6c9a8806",
+    "identity": "github:1336538202:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1336538202:root",
+            "repository_id": 1336538202,
+            "component_id": "root",
+            "repository": "1321928757/dsh-prompt-polish",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-prompt-polish",
+            "entry_type": "plugin",
+            "technical_category": "interface-input",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "8a635e01390501793829e1d48345d38657f4a0a8853e58bc4b9514e895e690e0",
+                "code": "c894ae3de6590542f8353b76e314656a4a3fe3a0",
+                "maintenance": "ef876331b4443cb3a23ff5d59301e495a05fbd2b4b41830f4e2a51d54ec2d401"
+            },
+            "sources": [
+                {
+                    "id": "20261020-incremental40-r2-github-1336538202-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T04:30:01.105Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "20261020-incremental40-r2-github-1336538202-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/1321928757/dsh-prompt-polish/blob/c894ae3de6590542f8353b76e314656a4a3fe3a0/README.md",
+                    "revision": "c894ae3de6590542f8353b76e314656a4a3fe3a0",
+                    "captured_at": "2026-10-20T04:30:01.105Z",
+                    "summary": "在输入栏调用宿主模型重写草稿，支持策略、语言、上下文与人工确认采纳。",
+                    "artifact": "data/runs/2026-10-20-04/snapshots/1321928757--dsh-prompt-polish/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "20261020-incremental40-r2-github-1336538202-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/1321928757/dsh-prompt-polish/blob/c894ae3de6590542f8353b76e314656a4a3fe3a0/lib/index.js",
+                    "revision": "c894ae3de6590542f8353b76e314656a4a3fe3a0",
+                    "captured_at": "2026-10-20T04:30:01.105Z",
+                    "summary": "核查 lib/index.js、lib/shared.js、lib/client.js；lib/index.js 收集启用的目标、任务和历史，在字符预算内构建请求，调用宿主llm.stream；客户端展示结果，采纳由用户决定。",
+                    "artifact": "data/runs/2026-10-20-04/snapshots/1321928757--dsh-prompt-polish/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "未证实改写改善下游任务；上下文可能带入无关信息，超时停止等待不应直接当成服务端计费已停止。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "用户反复组织复杂请求，希望提交前改善表达并保留原意；验收标准是约束无遗漏，而非文字更长。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1336538202-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336538202:root",
+                            "area": "code",
+                            "fingerprint": "c894ae3de6590542f8353b76e314656a4a3fe3a0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:30:01.105Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "lib/index.js 收集启用的目标、任务和历史，在字符预算内构建请求，调用宿主llm.stream；客户端展示结果，采纳由用户决定。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1336538202-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336538202:root",
+                            "area": "code",
+                            "fingerprint": "c894ae3de6590542f8353b76e314656a4a3fe3a0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:30:01.105Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "未证实改写改善下游任务；上下文可能带入无关信息，超时停止等待不应直接当成服务端计费已停止。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1336538202-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336538202:root",
+                            "area": "code",
+                            "fingerprint": "c894ae3de6590542f8353b76e314656a4a3fe3a0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:30:01.105Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "0.4.1，声明DSH 0.2.0-rc.2到0.3.0前；多项宿主服务及typert/UI适配构成效果前提，不能因peer可选就理解为功能无依赖。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1336538202-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336538202:root",
+                            "area": "code",
+                            "fingerprint": "c894ae3de6590542f8353b76e314656a4a3fe3a0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:30:01.105Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "每次优化额外调用模型，携带历史扩大输入；核对语义、重试和放弃结果都应计入成本，没有实测节省时间。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1336538202-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336538202:root",
+                            "area": "code",
+                            "fingerprint": "c894ae3de6590542f8353b76e314656a4a3fe3a0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:30:01.105Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先不带历史改写普通草稿，对照检查否定、数字和交付限制；需要上下文时再开启，并人工决定是否采用。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1336538202-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336538202:root",
+                            "area": "code",
+                            "fingerprint": "c894ae3de6590542f8353b76e314656a4a3fe3a0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:30:01.105Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "确认式采纳比自动替换更可控；同一模型改写并不保证比直接发送原请求更好。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1336538202-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336538202:root",
+                            "area": "code",
+                            "fingerprint": "c894ae3de6590542f8353b76e314656a4a3fe3a0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:30:01.105Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "runId到AbortController的映射与finally清理便于取消，区分截断、取消和错误；超时分支是否终止底层流需宿主实测。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1336538202-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336538202:root",
+                            "area": "code",
+                            "fingerprint": "c894ae3de6590542f8353b76e314656a4a3fe3a0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:30:01.105Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T04:30:01.105Z",
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "复杂请求作者可先不带历史试改草稿，对照数字否定和交付限制，再人工决定采纳。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "提交前整理复杂请求且保留约束的需求清楚。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "确认取消入口较直接润色便利，但下游质量增益未知。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "字符预算、流取消映射可查，超时是否停计费未验。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "每次额外模型调用及语义核对可能抵消节省。"
+                    }
+                },
+                "score": 59,
+                "revision": "c894ae3de6590542f8353b76e314656a4a3fe3a0",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "20261020-incremental40-r2-github-1336538202-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1336538202:root",
+                        "area": "code",
+                        "fingerprint": "c894ae3de6590542f8353b76e314656a4a3fe3a0"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1336538202:root",
+            "repository": "1321928757/dsh-prompt-polish",
+            "path": "",
+            "revision": "c894ae3de6590542f8353b76e314656a4a3fe3a0",
+            "fingerprints": {
+                "directory": "8a635e01390501793829e1d48345d38657f4a0a8853e58bc4b9514e895e690e0",
+                "code": "c894ae3de6590542f8353b76e314656a4a3fe3a0",
+                "maintenance": "ef876331b4443cb3a23ff5d59301e495a05fbd2b4b41830f4e2a51d54ec2d401"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T04:25:27.514Z",
+            "analysis_sha256": "8fb74659c6e3fe47cbf84540d2c42917d4bf1dfc0d7a41212aef4cdf4efc737c"
+        },
+        "publication.metadata": "data/plugins/1321928757--dsh-prompt-polish/META.json",
+        "publication.summaries": {
+            "text": "在输入栏调用宿主模型重写草稿，支持策略、语言、上下文与人工确认采纳。",
+            "revision": "c894ae3de6590542f8353b76e314656a4a3fe3a0",
+            "source_url": "https://github.com/1321928757/dsh-prompt-polish/blob/c894ae3de6590542f8353b76e314656a4a3fe3a0/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "c894ae3de6590542f8353b76e314656a4a3fe3a0",
+            "items": {
+                "界面": "优化按钮、设置、结果确认与近期历史。",
+                "后台": "当前模型流式优化及取消请求。"
+            }
+        },
+        "publication.advice": {
+            "revision": "c894ae3de6590542f8353b76e314656a4a3fe3a0",
+            "text": "先不带历史改写普通草稿，对照检查否定、数字和交付限制；需要上下文时再开启，并人工决定是否采用。"
+        },
+        "registry": "data/plugins/1321928757--dsh-prompt-polish",
+        "reports": "# dsh-prompt-polish\n\n> 在输入栏调用宿主模型重写草稿，支持策略、语言、上下文与人工确认采纳。\n\n## 固定范围与依据\n\n固定提交 [c894ae3de6590542f8353b76e314656a4a3fe3a0](https://github.com/1321928757/dsh-prompt-polish/blob/c894ae3de6590542f8353b76e314656a4a3fe3a0/lib/index.js)；组件路径：仓库根。核查时间 2026-10-20T04:30:01.105Z；本轮基准 2026-10-20T04:25:27.514Z。\n源码抽读路径：lib/index.js、lib/shared.js、lib/client.js。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：用户反复组织复杂请求，希望提交前改善表达并保留原意；验收标准是约束无遗漏，而非文字更长。\n- **亮点**：lib/index.js 收集启用的目标、任务和历史，在字符预算内构建请求，调用宿主llm.stream；客户端展示结果，采纳由用户决定。\n- **思考**：确认式采纳比自动替换更可控；同一模型改写并不保证比直接发送原请求更好。\n- **建议**：先不带历史改写普通草稿，对照检查否定、数字和交付限制；需要上下文时再开启，并人工决定是否采用。\n\n## 场景与替代办法\n\n用户反复组织复杂请求，希望提交前改善表达并保留原意；验收标准是约束无遗漏，而非文字更长。\n\n此前未入档；直接编辑或要求当前会话润色是较低配置的替代，本项增量在输入栏确认、取消与历史管理。\n\n## 依赖与流程\n\n需要宿主模型、计费账号和UI/会话服务；敏感草稿及启用的上下文会发送至当前模型供应方。模型质量决定语义忠实度。\n\n输入草稿，选择策略和语言，等待优化，比较原稿后采纳或保留；超时先检查是否仍有请求，避免连续发起重试。\n\n## 成本与效果\n\n每次优化额外调用模型，携带历史扩大输入；核对语义、重试和放弃结果都应计入成本，没有实测节省时间。\n\n确认式采纳比自动替换更可控；同一模型改写并不保证比直接发送原请求更好。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：b801a6937fbb1f46e9edad51d1f7a2f6c2e435f09949aca932be0747b036c5cc。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 4 | 1827 | — | — | 16263 |\n| .js | source | 4 | 2333 | 2032 | 193 | — |\n| .mjs | source | 1 | 115 | 112 | 2 | — |\n| .mjs | test | 4 | 474 | 432 | 3 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **界面**：优化按钮、设置、结果确认与近期历史。\n- **后台**：当前模型流式优化及取消请求。\n\n## 工程亮点\n\nrunId到AbortController的映射与finally清理便于取消，区分截断、取消和错误；超时分支是否终止底层流需宿主实测。\n\n## 分发与兼容\n\n0.4.1，声明DSH 0.2.0-rc.2到0.3.0前；多项宿主服务及typert/UI适配构成效果前提，不能因peer可选就理解为功能无依赖。\n\n## 历史对照\n\n当前快照此前没有该稳定身份的研究档案。此前未入档；直接编辑或要求当前会话润色是较低配置的替代，本项增量在输入栏确认、取消与历史管理。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：未证实改写改善下游任务；上下文可能带入无关信息，超时停止等待不应直接当成服务端计费已停止。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：固定一批含否定与数值的请求，盲评语义保留和后续交付率，记录优化调用、失败和人工复核总耗时。\n",
+        "metadata": {
+            "repository": "1321928757/dsh-prompt-polish",
+            "repository_id": 1336538202,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 3,
+            "pushed_at": "2026-10-16T02:06:47Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1321928757%2Fdsh-prompt-polish%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6403:3FE872:13A236:21166A:6AD84936 and timestamp 2026-10-21 05:10:14 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1321928757%2Fdsh-prompt-polish%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6417:2401FE:14A7B7:221BF5:6AD84936 and timestamp 2026-10-21 05:10:14 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1321928757%2Fdsh-prompt-polish%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6401:1541C9:13EDDD:215FC5:6AD84936 and timestamp 2026-10-21 05:10:14 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1321928757%2Fdsh-prompt-polish%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640F:12F9BB:13B1C2:212E78:6AD84936 and timestamp 2026-10-21 05:10:14 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1321928757%2Fdsh-prompt-polish%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6418:1DEEF7:148DEA:220D23:6AD84936 and timestamp 2026-10-21 05:10:14 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-prompt-polish",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 358,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-prompt-polish",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-26T04:47:29.654Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-prompt-polish",
+                    "error": null,
+                    "latest_version": "0.1.0",
+                    "latest_published_at": "2026-08-26T04:47:29.926Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "c894ae3de6590542f8353b76e314656a4a3fe3a0",
+                "current_revision": "c894ae3de6590542f8353b76e314656a4a3fe3a0",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1336538202:root",
+            "repository": "1321928757/dsh-prompt-polish",
+            "path": "",
+            "revision": "c894ae3de6590542f8353b76e314656a4a3fe3a0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8a635e01390501793829e1d48345d38657f4a0a8853e58bc4b9514e895e690e0",
+                "code": "c894ae3de6590542f8353b76e314656a4a3fe3a0",
+                "maintenance": "ef876331b4443cb3a23ff5d59301e495a05fbd2b4b41830f4e2a51d54ec2d401"
+            }
+        }
+    }
+}

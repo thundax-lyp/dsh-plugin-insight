@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0f5ccd0ef7ae6fc22899536bed1a0c5d",
+    "identity": "github:1411392126:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1411392126:root",
+            "repository": "yuyang2230/dsh-zcode-coding-plan",
+            "path": "",
+            "revision": "a7a0f5181acad3874ec781700df60432fd910a4e",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "f3bb3e8f33bcf2a5c673b1cf1d2f17dabb98413557e02ea23f1376b5a48f3035",
+                "code": "a7a0f5181acad3874ec781700df60432fd910a4e",
+                "maintenance": "a95bdf592d161e4224daae017a82748949d762c1591cff96da03867c792ad710"
+            }
+        }
+    }
+}

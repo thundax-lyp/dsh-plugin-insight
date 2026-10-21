@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4b6cbd389c9c86aef028675606af5e3e",
+    "identity": "github:1335850864:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335850864:root",
+            "repository": "siweina/dsh-novel-writer",
+            "path": "",
+            "revision": "f2798d8b26827711ad90de99fcb5ad1b1d0db2eb",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "c31bd9911ec55eadca93983b5f3ae4ce725328354284d737ab528d5d1877a030",
+                "code": "f2798d8b26827711ad90de99fcb5ad1b1d0db2eb",
+                "maintenance": "8c3a105df45a6900b68f22ec9cb13dcce02fe9fee90c7242519eca5c1c1f4a09"
+            }
+        }
+    }
+}

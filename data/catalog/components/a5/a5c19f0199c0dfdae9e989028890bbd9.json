@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a5c19f0199c0dfdae9e989028890bbd9",
+    "identity": "github:1393139973:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1393139973:root",
+            "repository": "menghuanshiguang/devctl-dsh",
+            "path": "",
+            "revision": "51631ad08b178c5008d2e504e0fb75bd113e0816",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6dabb68b678bbd603fdc96cef3a87d851b13333a405d2b61eee25f17ac08eee7",
+                "code": "51631ad08b178c5008d2e504e0fb75bd113e0816",
+                "maintenance": "aca1e1c74c65f82553d42c7fe3a7cbb2b15ad5bc0793cecce18011bb4e4d7e99"
+            }
+        }
+    }
+}

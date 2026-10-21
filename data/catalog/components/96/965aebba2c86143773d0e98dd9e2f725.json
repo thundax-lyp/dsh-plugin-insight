@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "965aebba2c86143773d0e98dd9e2f725",
+    "identity": "github:1335369469:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335369469:root",
+            "repository": "Starlight-bananice/dsh-status-bar",
+            "path": "",
+            "revision": "b860f7a6e42866beadd6f8e6919e1d469a4f5f8d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7e0e4342fca930132efa985e212f3268eba40b13bab26aa74b481df1be10115f",
+                "code": "b860f7a6e42866beadd6f8e6919e1d469a4f5f8d",
+                "maintenance": "d8f577dbf4228278c52c4d8af9cc22e9ed81544b2685f11e26e42c51a6bf39f9"
+            }
+        }
+    }
+}

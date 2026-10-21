@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "98f3f43758ffbcc74bc3a7ebf51d8713",
+    "identity": "github:1338329361:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338329361:root",
+            "repository": "shenkonghui/dsh-llm-acp",
+            "path": "",
+            "revision": "8995b438ee9610d6acd1df6912bfdd5cdd7a5b19",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4f63148fa9b20a3ade130d57d518ff5e7cad481f89c04ebbcdb8e8406e09dfa6",
+                "code": "8995b438ee9610d6acd1df6912bfdd5cdd7a5b19",
+                "maintenance": "3f38bee6cf3cd69686c69867005d623f611df85b2ea9f2122e80a3e77a2b5163"
+            }
+        }
+    }
+}

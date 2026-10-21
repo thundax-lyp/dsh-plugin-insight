@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3eef0a404d9de7b8a3710e868fa01df8",
+    "identity": "github:1333765170:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333765170:root",
+            "repository": "sunshine-lang/dsh-weather",
+            "path": "",
+            "revision": "9f85d87ac58402d5864aa7bdbd8346c136589458",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "36a670ec29de2d2d2663b2cb61dea50d49758ebf54d1c7866f5c286aaebe5b7a",
+                "code": "9f85d87ac58402d5864aa7bdbd8346c136589458",
+                "maintenance": "3551d9d51b091d4ffb727700108b59dcb89e426d6a766d7904b1181c77ab9c8e"
+            }
+        }
+    }
+}

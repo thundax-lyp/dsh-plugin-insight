@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b422d7cfc534abacd63587570dfa8040",
+    "identity": "github:1345004279:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345004279:root",
+            "repository": "bluechips-zhao/dsh-receipt",
+            "path": "",
+            "revision": "b032708010a0114e481013f88a73c9e45bc9fe0f",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "4e1361c0656315aebbc4e737332b89bb3014ded3abe3592344940bbb380102f5",
+                "code": "b032708010a0114e481013f88a73c9e45bc9fe0f",
+                "maintenance": "67769eb98a78f4a07e81978a1c202523298233bafac9fb77201379bc864473aa"
+            }
+        }
+    }
+}

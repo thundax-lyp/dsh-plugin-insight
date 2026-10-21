@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "162f5822ea9665045466d114b58506e1",
+    "identity": "github:1333877841:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333877841:root",
+            "repository": "SnowAmberX/dsh-role-router",
+            "path": "",
+            "revision": "81ec65b221bcd1147715100af4fd7f4887a4658a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "bf3b5eb8ca27ee6a7c89aeb9b453f3ab4d2fd72dcc7c6a137f999b17ec19f43f",
+                "code": "81ec65b221bcd1147715100af4fd7f4887a4658a",
+                "maintenance": "b961197e887185cd54bb673b07b29d03e3e46cd010c773a7429c3bee17aaa32c"
+            }
+        }
+    }
+}

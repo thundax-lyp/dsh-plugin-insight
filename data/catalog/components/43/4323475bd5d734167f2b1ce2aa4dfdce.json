@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4323475bd5d734167f2b1ce2aa4dfdce",
+    "identity": "github:1400855715:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1400855715:root",
+            "repository": "Tommy00748/dsh-self-evolution",
+            "path": "",
+            "revision": "0f6139cdc0d441ca8559717e72dbe8d71e5b1e88",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9ba89325cde59487d9263eaa9fde0124b77f6abb3938d4cbbc249f4a2999f0ba",
+                "code": "0f6139cdc0d441ca8559717e72dbe8d71e5b1e88",
+                "maintenance": "1d8438f7e8c677a939bdd4fe67465fed3fa51f5cc8685fe0e810ff84e2a5ad95"
+            }
+        }
+    }
+}

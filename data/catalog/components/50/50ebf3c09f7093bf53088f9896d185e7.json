@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "50ebf3c09f7093bf53088f9896d185e7",
+    "identity": "github:1333633428:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333633428:root",
+            "repository": "Lixiaoyiao/deepseek-harness-action",
+            "path": "",
+            "revision": "d569cf736f33c9bf0c6c262c5bc42b3a65afa1d3",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "59312fbca1faeee4289c6c13e228727ef6a4c387e315393f746314ed708dd41f",
+                "code": "d569cf736f33c9bf0c6c262c5bc42b3a65afa1d3",
+                "maintenance": "9220961cf6892ff2f43aca8913dd58cd1a7f601ddaeb425cd3fc34e6d10ab8db"
+            }
+        }
+    }
+}

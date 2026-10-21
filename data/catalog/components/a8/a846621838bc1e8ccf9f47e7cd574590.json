@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a846621838bc1e8ccf9f47e7cd574590",
+    "identity": "github:1363186738:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1363186738:root",
+            "repository": "wbaws/dsh-scenery",
+            "path": "",
+            "revision": "b927ca5d703a066e6a835f5ac57b0b2f2ba52eb7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0196af677597fba95aebadc6da3a551473a4d877833e325b1668bcaa6e36b820",
+                "code": "b927ca5d703a066e6a835f5ac57b0b2f2ba52eb7",
+                "maintenance": "ef5d1e44c39ee7bf807da60cf150e5b0408ffec865c1f84a8b947a6cef792900"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c6ed96419ebd46c5bc1b5f66ffbde351",
+    "identity": "github:1336821761:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336821761:root",
+            "repository": "lkshjd/dsh-debate",
+            "path": "",
+            "revision": "480884c4fcecb5d2d12dadbf84f9dfde7b0dfdb2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "808ac0b4d17ff0f40ac016ce59f8d77a405e929264f1c4142678f9e9af3723c4",
+                "code": "480884c4fcecb5d2d12dadbf84f9dfde7b0dfdb2",
+                "maintenance": "33f2104ff508bb59b80a1e5d620e8993d1b95afebee6c820d2551b0f3912ac6d"
+            }
+        }
+    }
+}

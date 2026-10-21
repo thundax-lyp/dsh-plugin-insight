@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "cc496f595d43c3d6b7d8b16d34274167",
+    "identity": "github:1329568204:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1329568204:root",
+            "repository": "ycp424c/dsh-browser-bridge",
+            "path": "",
+            "revision": "ddd6c931127abc35bee3675bbd8dcda8d59e98d3",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "b80609203479e7cb5ca5b05e178c9af3150bb411c6355d3ef76361bf42824357",
+                "code": "ddd6c931127abc35bee3675bbd8dcda8d59e98d3",
+                "maintenance": "214d3c28d6ae7148d55e18c3c23137e89c4847c9c0f80f2c74806a92f636dffe"
+            }
+        }
+    }
+}

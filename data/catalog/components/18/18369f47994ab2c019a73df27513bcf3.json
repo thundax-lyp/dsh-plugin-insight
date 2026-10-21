@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "18369f47994ab2c019a73df27513bcf3",
+    "identity": "github:1343934425:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343934425:root",
+            "repository": "mingzeng21/dsh-stock-mentions",
+            "path": "",
+            "revision": "5bee3468681cfc8a54bb8f117e889c4c6c790e0c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "cbc392853c52e1fc74d2cbf84e6971e5bd48330340c92f6715cd88bf972069af",
+                "code": "5bee3468681cfc8a54bb8f117e889c4c6c790e0c",
+                "maintenance": "4f96a85740d103b7d41000915d4b6ed7bc05bc0ad7d58f30a004ec0aed02c853"
+            }
+        }
+    }
+}

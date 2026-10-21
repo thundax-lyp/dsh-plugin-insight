@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "96b26ff70825af40d91c4b708adb3074",
+    "identity": "github:1333435948:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333435948:root",
+            "repository": "Simon314620/dsh-turn-index",
+            "path": "",
+            "revision": "a324ecde201a219448c23c1c8bbd872bdab512b4",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "e084df4906919e2e57a870612ce8a3812ef59e1d820609e410cd7a493335150b",
+                "code": "a324ecde201a219448c23c1c8bbd872bdab512b4",
+                "maintenance": "5953b40f82df55f2aa8a3a1db4c166e83175f26e877ce358713b32495435fac3"
+            }
+        }
+    }
+}

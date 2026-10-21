@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "755eab402b76538b81693fe1546993c1",
+    "identity": "github:1419420213:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1419420213:root",
+            "repository": "LUgABeEEE/dsh-global-todo",
+            "path": "",
+            "revision": "6473625b232b451fce92143ef7923b603d46d285",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b5fa031ab7a4620b973522986e2cb8e6cf41351ef0b0ae79af93565d7669a2f1",
+                "code": "6473625b232b451fce92143ef7923b603d46d285",
+                "maintenance": "8f58a9ddb4b2cb7ccca6e2628f08984a143c1237a8b31c7ef695ade72446fc99"
+            }
+        }
+    }
+}

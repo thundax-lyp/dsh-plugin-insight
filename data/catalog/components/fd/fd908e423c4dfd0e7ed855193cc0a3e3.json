@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "fd908e423c4dfd0e7ed855193cc0a3e3",
+    "identity": "github:1369813650:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1369813650:root",
+            "repository": "exoticknight/dsh-just-chat",
+            "path": "",
+            "revision": "906ac8faec71bcf6ff1b974a368e6b2798232012",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "6676a67524327f0bd07293d0e45301a21d6a9e29a2820105beb83303da671e00",
+                "code": "906ac8faec71bcf6ff1b974a368e6b2798232012",
+                "maintenance": "13d8ca64b7acebc3f84d10799c185fb12ac2555bc68613306cf5b997f2122880"
+            }
+        }
+    }
+}

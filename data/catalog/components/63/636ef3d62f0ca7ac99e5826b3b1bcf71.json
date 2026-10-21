@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "636ef3d62f0ca7ac99e5826b3b1bcf71",
+    "identity": "github:1335998959:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335998959:root",
+            "repository": "huxint/dsh-team",
+            "path": "",
+            "revision": "3ac69851af687cda1b6315bbfb12c92cb0537703",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3b95204afe4f2af4e8259006369e885b110996149fe2bb2ab985499b95167952",
+                "code": "3ac69851af687cda1b6315bbfb12c92cb0537703",
+                "maintenance": "0ec57d87d682796199baf4cdec15f02a67b943d42b342d3c81f232ddfb10aa49"
+            }
+        }
+    }
+}

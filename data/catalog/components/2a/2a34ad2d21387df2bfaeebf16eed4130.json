@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2a34ad2d21387df2bfaeebf16eed4130",
+    "identity": "github:1346411765:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346411765:root",
+            "repository": "dongsheng123132/dsh-tool-surface-proof",
+            "path": "",
+            "revision": "8db6d315c91a8a99e16c70162e8ad7587f4f4768",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "0c3be5edccb6a9241600b0d536d30cd11b57e52e2762b1520326ad6256006bc9",
+                "code": "8db6d315c91a8a99e16c70162e8ad7587f4f4768",
+                "maintenance": "d688c02a40bedd07c8342627773e31ffdd9eb878dc57c17d4d83edc7aaec2f1e"
+            }
+        }
+    }
+}

@@ -1,7 +1,0 @@
-{
-  "revision": "6e4d700ca56445a11d6c185efe9332c3680ad4d7",
-  "items": {
-    "Host 路由": "/plugin-config/dsh-keyboard-manager提供keymap JSON。",
-    "事件监听": "捕获keydown，将三组Ctrl组合路由到布局与按钮动作。"
-  }
-}

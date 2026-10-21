@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ae2ca2223d4dc8799aa143aa63946689",
+    "identity": "github:1372755258:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1372755258:root",
+            "repository": "ChaoJie0/dsh-tm-guard",
+            "path": "",
+            "revision": "c3340dd5f8e2cecf39b016c5980123a51ba679ff",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5f0beb616ec9da3d4fb6da955d78a7f78b25f17908985a5e11dc9f90f47673f6",
+                "code": "c3340dd5f8e2cecf39b016c5980123a51ba679ff",
+                "maintenance": "6171bf4bd2b6a9ffa82a0fa730ff02b73b00b8f93988eca0439cd883eafb0bb5"
+            }
+        }
+    }
+}

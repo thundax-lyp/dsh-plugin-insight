@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0a10de852b2ecec56c819a74add07ab5",
+    "identity": "github:1332206753:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1332206753:root",
+            "repository": "havingautism/dsh-deepresearch",
+            "path": "",
+            "revision": "31db81744225edc4296d1f12095460fc645dfe98",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "fce9e8ff95ac6f6ba37850361cd0d881f7af4d963cd72632d9d2fbc34d416c84",
+                "code": "31db81744225edc4296d1f12095460fc645dfe98",
+                "maintenance": "125fb58657e5bbb391012af104f338dc63f06379afb2214c8e2d0f90a5a28687"
+            }
+        }
+    }
+}

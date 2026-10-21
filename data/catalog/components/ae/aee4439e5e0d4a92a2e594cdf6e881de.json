@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "aee4439e5e0d4a92a2e594cdf6e881de",
+    "identity": "github:1350616690:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1350616690:root",
+            "repository": "Lorvaste/DSH-Project-Initialization",
+            "path": "",
+            "revision": "947d3d14ede26f67958225816784bbca04570734",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "00b92fae70c412a897fbac0028fd7f06f612bd3c934ea203ae2a68a29b327b90",
+                "code": "947d3d14ede26f67958225816784bbca04570734",
+                "maintenance": "65199120ffbf81bfc1cdcef4fb32aa441a711602e13f719ee4a92c884bccf293"
+            }
+        }
+    }
+}

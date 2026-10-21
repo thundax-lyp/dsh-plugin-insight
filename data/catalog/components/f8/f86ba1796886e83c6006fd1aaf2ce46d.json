@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f86ba1796886e83c6006fd1aaf2ce46d",
+    "identity": "github:1402415298:plugins-dsh-page-refresh",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1402415298:plugins-dsh-page-refresh",
+            "repository": "day-day-dream/dsh-page-refresh",
+            "path": "plugins/dsh-page-refresh",
+            "revision": "a65e6448a7fec4587e18692f14932f405f8e934e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c63ea26be2ee5cebf0d4e1d246e05c86d15ac6a5a2ab2254e34ee676b1240d22",
+                "code": "a65e6448a7fec4587e18692f14932f405f8e934e",
+                "maintenance": "0546ced777a6f54eb5db629329b41fda8bf643370dbe86dac176cbb4a5898168"
+            }
+        }
+    }
+}

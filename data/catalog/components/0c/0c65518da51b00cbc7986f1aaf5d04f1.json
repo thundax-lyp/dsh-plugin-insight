@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "0c65518da51b00cbc7986f1aaf5d04f1",
+    "identity": "github:1340787045:packages-serverchan-notify",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340787045:packages-serverchan-notify",
+            "repository": "nickhelion/dsh-plugins",
+            "path": "packages/serverchan-notify",
+            "revision": "5999be1f151b1a5033b46fcbf904c2b2c2c9a7b8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "bbb900dc2c7813a81fb2ccd56b9d0582131734c42f62c49ed222787be8593997",
+                "code": "5999be1f151b1a5033b46fcbf904c2b2c2c9a7b8",
+                "maintenance": "f95d42ab81551f98b1b96a588c950ac095be03f64b43d89c6c1d47e208cde1a1"
+            }
+        }
+    }
+}

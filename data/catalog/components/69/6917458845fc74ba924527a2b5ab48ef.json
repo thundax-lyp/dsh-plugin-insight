@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6917458845fc74ba924527a2b5ab48ef",
+    "identity": "github:1334910338:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334910338:root",
+            "repository": "izz-BLUE/dsh-devtools",
+            "path": "",
+            "revision": "a5353db21bfd24a05ba5fc433722e38fe0e1cde6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c82f67a44811c6f4f59fb114c9514d76e65a6adc426a01ca288778fb12a9da2e",
+                "code": "a5353db21bfd24a05ba5fc433722e38fe0e1cde6",
+                "maintenance": "bf56d774c3bc39942feeaae5d87c3dfd8dd4673e5b4cf6af77267df27205b293"
+            }
+        }
+    }
+}

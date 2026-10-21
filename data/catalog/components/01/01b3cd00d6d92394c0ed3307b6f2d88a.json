@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "01b3cd00d6d92394c0ed3307b6f2d88a",
+    "identity": "github:1347077937:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347077937:root",
+            "repository": "lcthe/dsh-hermes-memory",
+            "path": "",
+            "revision": "ca2cbd2d83ea69e3c784234f7841e6ca592caef9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2a702e8e5a8d502bd0154022dd56a0adb72e729c65dc9159bd782eb9978323aa",
+                "code": "ca2cbd2d83ea69e3c784234f7841e6ca592caef9",
+                "maintenance": "1f17d094c695c6dd230049b36c943d02f151f181b46683b586ab1389013c9740"
+            }
+        }
+    }
+}

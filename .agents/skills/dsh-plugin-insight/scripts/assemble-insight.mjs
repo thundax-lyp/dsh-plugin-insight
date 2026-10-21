@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import { readSnapshotStorage } from '../../_shared/scripts/snapshot-storage.mjs';
+import { assembleRecommendation } from '../../_shared/scripts/recommendation.mjs';
 import { assembleInnovationScores } from '../../_shared/scripts/innovation-score.mjs';
 import { readWork } from '../../_shared/scripts/work-storage.mjs';
 // Assemble only an explicitly authored, complete single-plugin analysis; never infer findings from inventory.
@@ -46,6 +47,7 @@ export function assembleInsight(workPath, pluginId, analysisPath) {
         'innovation_hypothesis',
         'conclusion_findings',
         'innovation_scores',
+        'recommendation',
         'scope',
         'distribution',
         'cost',
@@ -61,13 +63,11 @@ export function assembleInsight(workPath, pluginId, analysisPath) {
         'technical_category',
         'business_category'
     ];
-    if (
-        Object.keys(analysis).some((k) => ![...required, 'trial_summary'].includes(k)) ||
-        required.some((k) => analysis[k] === undefined)
-    )
+    if (Object.keys(analysis).some((k) => !required.includes(k)) || required.some((k) => analysis[k] === undefined))
         throw Error('authored single-plugin analysis fields are incomplete or unknown');
     for (const key of required.filter(
-        (k) => !['source_paths', 'capabilities', 'innovation_scores', 'conclusion_findings'].includes(k)
+        (k) =>
+            !['source_paths', 'capabilities', 'innovation_scores', 'recommendation', 'conclusion_findings'].includes(k)
     ))
         if (typeof analysis[key] !== 'string' || !analysis[key].trim()) throw Error(`analysis text required: ${key}`);
     const conclusions = ['contribution', 'critical_question', 'innovation_hypothesis'];
@@ -92,13 +92,6 @@ export function assembleInsight(workPath, pluginId, analysisPath) {
         throw Error('explicit inspected source paths and capabilities object required');
     if ([...analysis.summary].length > 80 || /[\r\n]/.test(analysis.summary))
         throw Error('author summary must be one line, at most 80 characters');
-    if (
-        analysis.trial_summary !== undefined &&
-        (typeof analysis.trial_summary !== 'string' ||
-            !analysis.trial_summary.trim() ||
-            /[\r\n]/.test(analysis.trial_summary))
-    )
-        throw Error('authored trial summary must be nonempty single-line text');
     const item = work.session.items.find((p) => p.id === pluginId);
     if (
         !item ||
@@ -106,7 +99,7 @@ export function assembleInsight(workPath, pluginId, analysisPath) {
         (work.session.selected_ids && !work.session.selected_ids.includes(pluginId))
     )
         throw Error('analysis must target one selected pending item');
-    const snapshot = readSnapshotStorage(resolve(ROOT, 'data/catalog/SNAPSHOT.json'));
+    const snapshot = readSnapshotStorage(resolve(ROOT, 'data/catalog/index.jsonl'));
     const old = snapshot.catalog.plugins.find((p) => p.id === pluginId);
     const slug = basename(pluginDirectory({ ...item, component_id: item.id.split(':')[2] }, ROOT));
     const folder = resolve(workPath, '..'),
@@ -250,6 +243,7 @@ export function assembleInsight(workPath, pluginId, analysisPath) {
             evidenceId
         )
     };
+    plugin.recommendation = assembleRecommendation(analysis.recommendation, plugin, item.revision, now, [evidenceId]);
     validateObservations({ schema_version: 1, run_id: run, checked_at: now, plugins: [plugin], errors: [] });
     const statistics = [
         '| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |',
@@ -276,10 +270,7 @@ export function assembleInsight(workPath, pluginId, analysisPath) {
         metadata,
         summaries: { text: analysis.summary, revision: item.revision, source_url: url(readme.path) },
         capabilities: { revision: item.revision, items: analysis.capabilities },
-        advice: { revision: item.revision, text: analysis.adoption },
-        recommendations: analysis.trial_summary
-            ? [{ plugin_id: item.id, kind: 'trial', summary: analysis.trial_summary }]
-            : []
+        advice: { revision: item.revision, text: analysis.adoption }
     });
     return {
         report: relative(ROOT, reportPath),

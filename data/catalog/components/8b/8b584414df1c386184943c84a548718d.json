@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8b584414df1c386184943c84a548718d",
+    "identity": "github:1367679732:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1367679732:root",
+            "repository": "drscrewdriver/dsh-arrowkey-nav",
+            "path": "",
+            "revision": "0564a79cfeebd8e92076938ca32c2957c887cae5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0e2e0839926dd396f2d48509be6ad0c96ce437f8c2e6ca0c05f657e3526edf93",
+                "code": "0564a79cfeebd8e92076938ca32c2957c887cae5",
+                "maintenance": "03e91b586fbafb00ca5136f87d4ef1dc4add77bd46ba0c4915141a51416084c7"
+            }
+        }
+    }
+}

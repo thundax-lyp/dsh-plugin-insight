@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "87f27a8cccf23851577239c276ad601f",
+    "identity": "github:1344430368:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1344430368:root",
+            "repository": "lory69060/cn-intel-mcp-dsh",
+            "path": "",
+            "revision": "46e73b82c1c6cf33d1d86763143e4e7073634cff",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "721288b61c8ebe31bec73f5a94180cff318dbc082dd388d5ba70faaaa81d545e",
+                "code": "46e73b82c1c6cf33d1d86763143e4e7073634cff",
+                "maintenance": "3f2f94d77e60db686be4a064e4482b9e5e0cd25a6c9bd76a2157aebac43a4320"
+            }
+        }
+    }
+}

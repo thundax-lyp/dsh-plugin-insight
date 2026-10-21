@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bdf0e820accc1dc00ae00ccf586e8ecd",
+    "identity": "github:1356722958:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1356722958:root",
+            "repository": "loyalchiiina/dsh-skill-browser",
+            "path": "",
+            "revision": "fb972c1a42bc34e00f4ebe2512d3d5c52b3f02fd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "900f1609fb564e9db73f11049b27dcaa666c922ca9541f91f1fae7f41171dc21",
+                "code": "fb972c1a42bc34e00f4ebe2512d3d5c52b3f02fd",
+                "maintenance": "53a03891ceed697a284cbd299b8b09cda9bfc440c988269a16352fc4a60a6907"
+            }
+        }
+    }
+}

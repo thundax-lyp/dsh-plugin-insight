@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "324bcc2e1ed1b60d14c7e50f710c1fa9",
+    "identity": "github:1338584959:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338584959:root",
+            "repository": "lanbaolu/dsh-fail-soft",
+            "path": "",
+            "revision": "cc14ae97b4758affd5befb975e56d1fd6e10ebe1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "bc3dd9e1b3a23e7e7d2c28918d5c0eb84fabd798e5fc21ad95a80e39190458be",
+                "code": "cc14ae97b4758affd5befb975e56d1fd6e10ebe1",
+                "maintenance": "54bdca987b046ea7509e465421d73971f6b5ffa2af41566aa09a5a02dde7138a"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a6652c8cff25dce75845290dc5f10d6a",
+    "identity": "github:1350910058:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1350910058:root",
+            "repository": "Max-Null/dsh-quick-toolbar",
+            "path": "",
+            "revision": "f52cf6366834fd3e05e2f6feb4a94283d1a25271",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "54d5b412d10d9f2a39ab93a8c42b415898f7a0bb54427238e4e7fa86a5e2d133",
+                "code": "f52cf6366834fd3e05e2f6feb4a94283d1a25271",
+                "maintenance": "f95b7ded3be753c6e59e4d338e195a1304616e6a0964bbef880082faa0a8814d"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f84ab9c3872344d29ee2a68db8e2100f",
+    "identity": "github:1340911992:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340911992:root",
+            "repository": "GooDAnDReaDY/dsh-lanmode",
+            "path": "",
+            "revision": "edff2bd05460463607dad1a2c7bee860885eb0c6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "da758b00b3bb3a369c6d25a1eaeceda4b866c5900e2b223daf1d621150e01af9",
+                "code": "edff2bd05460463607dad1a2c7bee860885eb0c6",
+                "maintenance": "ed9d23da334ec665e532cfdede84be3dd8285133c07668e0264b329e0ab4e940"
+            }
+        }
+    }
+}

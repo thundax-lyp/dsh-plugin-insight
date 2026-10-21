@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "501032d930963abb23e37f86110b8d26",
+    "identity": "github:1413143090:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1413143090:root",
+            "repository": "loyalchiiina/dsh-archive-favorites-forge",
+            "path": "",
+            "revision": "722eaf8436d5748e1e26f5de64a45c5f2c9ce668",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "44c8d993d664fba195c94d47776bf16555e6e9a5794bf08b926e9b662dcaf6bb",
+                "code": "722eaf8436d5748e1e26f5de64a45c5f2c9ce668",
+                "maintenance": "48727e1ccb6588f62d79f791c9708878655cfdb9e9a35cc4b96148aa15bf699d"
+            }
+        }
+    }
+}

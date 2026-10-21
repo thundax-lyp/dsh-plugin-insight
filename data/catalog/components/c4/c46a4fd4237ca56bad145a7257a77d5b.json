@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c46a4fd4237ca56bad145a7257a77d5b",
+    "identity": "github:1397538946:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1397538946:root",
+            "repository": "Tangcuyu4/dsh-ciku-pack",
+            "path": "",
+            "revision": "c80781197c6dc3ce97c77a3e8c728ce84fe16280",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "48dd9ff7186e6f23e51806f4d1b6f5622540ecfab1b0a7ab341b3646968d55a5",
+                "code": "c80781197c6dc3ce97c77a3e8c728ce84fe16280",
+                "maintenance": "f6e94780c6d138c4bc19df2f911a2d4341c354c4748fa6035f0d1ab8f9a844a1"
+            }
+        }
+    }
+}

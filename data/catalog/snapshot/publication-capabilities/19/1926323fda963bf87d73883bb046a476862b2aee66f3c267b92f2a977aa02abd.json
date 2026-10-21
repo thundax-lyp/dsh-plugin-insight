@@ -1,8 +1,0 @@
-{
-  "revision": "9ad5c7dc076bc9ebd98f3c4ea100ced301d10905",
-  "items": {
-    "后台": "按配置注册Qoder/QoderCN一次性子代理提供方。",
-    "模型工具": "qoder_subagent_status查询有界执行账本。",
-    "用户命令": "按provider名注册快捷委派命令。"
-  }
-}

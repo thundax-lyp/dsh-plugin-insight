@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "377b83a6c9ff84f0aa731d45629b7194",
+    "identity": "github:1074296776:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1074296776:root",
+            "repository": "houyanchao/chatgpt-gemini-timeline",
+            "path": "",
+            "revision": "cfaa5c6eb1849cb85778fc98df3ce9690cda80e6",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "fa8d658fb1737d0d81c1afaf776e6ad50cf1f74f20cabc2088f5650163d9c251",
+                "code": "cfaa5c6eb1849cb85778fc98df3ce9690cda80e6",
+                "maintenance": "740b67aa66d1b9e58768b653a9f3efccf9f32d9acfa7f73869be2c1b7898df65"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "35f81364e13acb6882d2513b88326c38",
+    "identity": "github:1334231279:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334231279:root",
+            "repository": "Khellendros97/dsh-better-model-selector",
+            "path": "",
+            "revision": "4781f4c215f1ad4d55a44e1409bafe58f05b721f",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "fdcf81541214f75b8ab16328a057025c9c75d5c1fba4d97392883f6d80668d83",
+                "code": "4781f4c215f1ad4d55a44e1409bafe58f05b721f",
+                "maintenance": "129ed4eaa5aac8a8bc3540d06d36bfad0daead6a0fd560cd7e213099fd1c0ee5"
+            }
+        }
+    }
+}
