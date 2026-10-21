@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { validateRecommendation } from './recommendation.mjs';
 import { validateInnovationScores } from './innovation-score.mjs';
 import { CATALOG } from './data-paths.mjs';
 import { createHash, randomUUID } from 'node:crypto';
@@ -65,7 +66,8 @@ export const analysisDigest = (plugin) =>
         last_checked_at: plugin.last_checked_at,
         research_depth: plugin.research_depth,
         findings: plugin.findings,
-        ...(plugin.innovation_scores ? { innovation_scores: plugin.innovation_scores } : {})
+        ...(plugin.innovation_scores ? { innovation_scores: plugin.innovation_scores } : {}),
+        ...(plugin.recommendation ? { recommendation: plugin.recommendation } : {})
     });
 
 const ajv = new Ajv2020({ allErrors: true, strict: true });
@@ -122,6 +124,7 @@ export const validate = (catalog) => {
     }
     for (const plugin of plugins.values()) {
         validateInnovationScores(plugin, plugins);
+        validateRecommendation(plugin, plugins);
         for (const finding of plugin.findings) {
             if (finding.evidence_ids.some((id) => !evidence.has(id)))
                 throw new Error(`unknown evidence reference: ${finding.id}`);
@@ -152,6 +155,7 @@ export const validateObservations = (observations) => {
         indexed(plugin.evidence, 'evidence');
         indexed(plugin.findings, 'finding');
         validateInnovationScores(plugin);
+        validateRecommendation(plugin);
         if (Date.parse(plugin.last_checked_at) > Date.parse(observations.checked_at)) {
             throw new Error('plugin check is later than batch cutoff');
         }
@@ -192,6 +196,8 @@ export const plan = (catalog, observations, mode) => {
             const merged = structuredClone(fresh);
             if (!fresh.innovation_scores && old.innovation_scores)
                 merged.innovation_scores = structuredClone(old.innovation_scores);
+            if (!fresh.recommendation && old.recommendation)
+                merged.recommendation = structuredClone(old.recommendation);
             merged.sources = mergeImmutable(old.sources, fresh.sources, 'source');
             merged.evidence = mergeImmutable(old.evidence, fresh.evidence, 'evidence');
             const findings = indexed(structuredClone(old.findings), 'finding');
@@ -226,6 +232,13 @@ export const plan = (catalog, observations, mode) => {
         if (plugin.innovation_scores && stale(plugin.innovation_scores, plugins)) {
             invalidated ||= plugin.innovation_scores.status === 'current';
             plugin.innovation_scores.status = 'needs_review';
+        }
+        if (
+            plugin.recommendation?.decision !== 'unassessed' &&
+            plugin.recommendation &&
+            stale(plugin.recommendation, plugins)
+        ) {
+            plugin.recommendation.status = 'needs_review';
         }
         if (invalidated) changes.push({ plugin_id: key, kind: 'review_invalidated', areas: [] });
     }
