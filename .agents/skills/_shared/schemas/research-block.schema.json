@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "research-block",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "plugin_id",
+    "revision",
+    "reason_code",
+    "reason",
+    "details",
+    "blocked_at",
+    "run_id"
+  ],
+  "properties": {
+    "plugin_id": {
+      "type": "string",
+      "pattern": "^github:[0-9]+:[a-zA-Z0-9_-]+$"
+    },
+    "revision": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "reason_code": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*$"
+    },
+    "reason": {
+      "type": "string",
+      "minLength": 1
+    },
+    "details": {
+      "type": "object",
+      "minProperties": 1
+    },
+    "blocked_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

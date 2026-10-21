@@ -163,6 +163,9 @@
                 "minLength": 1
               }
             }
+          },
+          "block": {
+            "$ref": "research-block"
           }
         },
         "allOf": [
@@ -240,6 +243,22 @@
           }
         },
         "review_required_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^github:[0-9]+:[a-zA-Z0-9_-]+$"
+          }
+        },
+        "suppressed_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^github:[0-9]+:[a-zA-Z0-9_-]+$"
+          }
+        },
+        "retry_ids": {
           "type": "array",
           "uniqueItems": true,
           "items": {

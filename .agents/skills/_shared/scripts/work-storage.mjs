@@ -74,7 +74,7 @@ function hydrate(index, folder) {
     if (assigned.size !== items.length) fail('incomplete queue indices');
     const byId = new Map(items.map((item) => [item.id, item]));
     for (const [id, value] of Object.entries(state.states)) {
-        if (!byId.has(id) || Object.keys(value).some((k) => !['status', 'reason', 'checkpoint'].includes(k)))
+        if (!byId.has(id) || Object.keys(value).some((k) => !['status', 'reason', 'checkpoint', 'block'].includes(k)))
             fail('invalid session state');
         Object.assign(byId.get(id), value);
     }
@@ -130,11 +130,19 @@ function prepare(path, work) {
     const { items, ...header } = work.session;
     const states = Object.fromEntries(
         items
-            .filter((item) => item.status !== 'pending' || item.reason !== undefined || item.checkpoint !== undefined)
+            .filter(
+                (item) =>
+                    item.status !== 'pending' ||
+                    item.reason !== undefined ||
+                    item.checkpoint !== undefined ||
+                    item.block !== undefined
+            )
             .map((item) => [
                 item.id,
                 Object.fromEntries(
-                    ['status', 'reason', 'checkpoint'].filter((k) => item[k] !== undefined).map((k) => [k, item[k]])
+                    ['status', 'reason', 'checkpoint', 'block']
+                        .filter((k) => item[k] !== undefined)
+                        .map((k) => [k, item[k]])
                 )
             ])
     );

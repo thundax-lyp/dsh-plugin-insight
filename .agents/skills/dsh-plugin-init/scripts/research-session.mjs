@@ -28,6 +28,7 @@ import {
 } from '../../_shared/scripts/plugin-data.mjs';
 const ajv = new Ajv({ allErrors: true, strict: true });
 addFormats(ajv);
+ajv.addSchema(read(resolve(ROOT, '.agents/skills/_shared/schemas/research-block.schema.json')));
 const schema = read(resolve(ROOT, '.agents/skills/_shared/schemas/research-session.schema.json'));
 const check = ajv.compile(schema);
 const manifestSchema = read(resolve(ROOT, '.agents/skills/_shared/schemas/run-manifest.schema.json'));
@@ -61,7 +62,16 @@ export function validateManifest(manifest) {
 export function validateSession(session, root = ROOT) {
     if (!check(session)) throw new Error(ajv.errorsText(check.errors));
     if (session.selection) {
+        const suppressed = new Set(session.selection.suppressed_ids ?? []);
+        const retries = new Set(session.selection.retry_ids ?? []);
+        const candidates = new Set(session.items.map((item) => item.id));
+        if (
+            [...suppressed, ...retries].some((id) => !candidates.has(id)) ||
+            [...retries].some((id) => suppressed.has(id))
+        )
+            throw Error('invalid blocked selection');
         const expected = incrementalSelection(session);
+        if ([...retries].some((id) => !expected.includes(id))) throw Error('retry exceeds research limit');
         if (digest(session.selected_ids) !== digest(expected)) throw new Error('invalid incremental selection');
     } else if (
         session.research_limit !== undefined &&
@@ -81,9 +91,22 @@ export function validateSession(session, root = ROOT) {
         if (
             selected &&
             !selected.has(item.id) &&
-            (item.status !== 'pending' || item.reason !== undefined || item.checkpoint !== undefined)
+            (item.status !== 'pending' ||
+                item.reason !== undefined ||
+                item.checkpoint !== undefined ||
+                item.block !== undefined)
         )
             throw new Error('deferred item must remain pending without completion state');
+        if (
+            item.block &&
+            (item.status !== 'blocked' ||
+                item.block.plugin_id !== item.id ||
+                item.block.revision !== item.revision ||
+                item.block.reason !== item.reason ||
+                item.block.run_id !== session.id ||
+                Date.parse(item.block.blocked_at) < Date.parse(session.checked_at))
+        )
+            throw Error('block differs from fixed session item');
         if (item.status === 'complete') {
             const obs = read(artifact(root, item.checkpoint.observations));
             validateObservations(obs);
@@ -176,12 +199,22 @@ export function startSession(input, previous = null, limit = undefined) {
 export function incrementalSelection(session) {
     const researched = new Set(session.selection.researched_ids);
     const required = new Set(session.selection.review_required_ids);
-    const updates = session.items.filter(
+    const suppressed = new Set(session.selection.suppressed_ids ?? []);
+    const retries = new Set(session.selection.retry_ids ?? []);
+    const eligible = session.items.filter((item) => !suppressed.has(item.id));
+    const updates = eligible.filter(
         (item) =>
             researched.has(item.id) && (required.has(item.id) || item.changes.some((change) => change !== 'unchanged'))
     );
-    const additions = session.items.filter((item) => !researched.has(item.id));
-    return [...updates, ...additions].slice(0, session.research_limit).map((item) => item.id);
+    const additions = eligible.filter((item) => !researched.has(item.id));
+    const priority = eligible.filter((item) => retries.has(item.id));
+    return [
+        ...priority,
+        ...updates.filter((item) => !retries.has(item.id)),
+        ...additions.filter((item) => !retries.has(item.id))
+    ]
+        .slice(0, session.research_limit)
+        .map((item) => item.id);
 }
 export function selectedItems(session) {
     if (session.selection) {

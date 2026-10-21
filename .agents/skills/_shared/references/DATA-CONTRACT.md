@@ -3,11 +3,11 @@
 本契约只解释字段语义与数据不变量；版本及结构以对应 Schema 为准：
 [档案](../schemas/catalog.schema.json)、[观察批次](../schemas/observations.schema.json)、
 [研究会话](../schemas/research-session.schema.json)、[运行清单](../schemas/run-manifest.schema.json)、[发布输入](../schemas/publication.schema.json)、
-[META](../schemas/github-meta.schema.json)。未知字段、重复 JSON 键及非法日期均拒绝。
+[META](../schemas/github-meta.schema.json)、[受阻记录](../schemas/research-block.schema.json)。未知字段、重复 JSON 键及非法日期均拒绝。
 
 ## 唯一当前快照与本轮增量
 
-- 当前快照是唯一正式研究真相：当前插件档案、来源状态，以及它引用的当前分析和必要证据。唯一性指逻辑上只有一套权威现状，不要求所有材料塞进一个 JSON；生成页面和本轮工作副本不构成第二真相。
+- 当前快照是唯一正式研究真相：当前插件档案、来源状态，以及它引用的当前分析、必要证据和持久受阻状态。唯一性指逻辑上只有一套权威现状，不要求所有材料塞进一个 JSON；生成页面和本轮工作副本不构成第二真相。
 - 新一轮只读当前快照作为比较基线，记录摘要；不要求历史会话、历史 manifest 或 runs 归档。当前来源成员清单或比较维度缺失时记 unknown，不能凭研究子集推断全目录移除。
 - 本轮先独立生成观察、分析、证据和进度，再合成候选快照。逐项完成只更新本轮暂存区；正式快照在最终合并前保持可用。
 - 合并必须校验基线摘要、身份、来源与代码版本、证据引用、结论依赖及生成一致性。基线变化须重新计划；重复应用同一增量不得重复追加事实。
@@ -16,7 +16,7 @@
 - 当前结论保留来源 URL、固定版本、证据类型、限制及必要材料。合并时将仍需引用的材料落入正式快照位置，不让有效结论依赖可清理的 runs 路径。
 - 合并回读成功且当前快照可独立校验、生成页面后，本轮不再被引用的材料可清理；未合并增量保留用于恢复。历史变迁由 Git 追踪，不要求每轮永久归档；本规则不自动授权删除既有文件。
 
-正式快照采用索引 → 条目存储：`data/catalog/SNAPSHOT.json` 是 v2 索引，由 [存储 Schema](../schemas/snapshot-storage.schema.json) 约束；`data/catalog/snapshot/<section>/<前缀>/<sha256>.json` 是按内容摘要命名的不可变条目。共享 `snapshot-storage.mjs` 读取器核对路径、每项摘要与完整语义摘要后，还原 [snapshot Schema](../schemas/snapshot.schema.json) 定义的 v1 逻辑对象，包含 catalog、publication、registry、discovery、reports、metadata、artifacts、迁移限制及合并标识。业务脚本使用读取器，不将索引当作内嵌快照读取。旧 v1 单文件继续兼容读取。
+正式快照采用索引 → 条目存储：`data/catalog/SNAPSHOT.json` 是 v2 索引，由 [存储 Schema](../schemas/snapshot-storage.schema.json) 约束；`data/catalog/snapshot/<section>/<前缀>/<sha256>.json` 是按内容摘要命名的不可变条目。共享 `snapshot-storage.mjs` 读取器核对路径、每项摘要与完整语义摘要后，还原 [snapshot Schema](../schemas/snapshot.schema.json) 定义的 v1 逻辑对象，包含 catalog、publication、registry、discovery、reports、metadata、artifacts、research_blocks、迁移限制及合并标识。业务脚本使用读取器，不将索引当作内嵌快照读取。旧 v1 单文件继续兼容读取。
 
 档案、报告、META、发布记录和摘要／能力／建议按条目拆分；必要证据正文单独保存，不重复嵌入索引。发现清单按稳定ID摘要前两位分为最多256组，组内按ID排列，索引保存原清单顺序；单项变化不重写整个发现清单。索引只引用完整准备且校验通过的对象，同内容对象复用，缺失／损坏或路径、符号链接逃逸时拒绝读取，不从生成页面回填。旧缺失原件仍单列 unavailable_artifacts，不把迁移当作新验证。
 本轮完整逻辑状态由 [工作文件 Schema](../schemas/snapshot-work.schema.json) 约束，拆分入口、队列、状态和兼容链接由 [存储 Schema](../schemas/work-storage.schema.json) 约束。新建过程使用 v2 拆分存储：WORK 只保存 base_digest、INPUT／QUEUE／会话状态／单项记录的路径和 SHA-256；INPUT 保存唯一完整候选清单，QUEUE 保存按输入下标分组的变化及缺席项，状态文件只保存会话头与非默认状态／检查点，已完成记录逐项独立保存。SESSION.json 是指向同目录 WORK 的兼容入口，不另存完整清单。
@@ -83,6 +83,16 @@ PLUGINS、PUBLICATION、PLUGIN-PATHS、META 及页面从快照重建，生成前
 - 写入必须同时满足基础档案摘要、候选结果摘要及结构约束，拒绝过期计划、损坏计划和并发覆盖。
   档案与会话写入采用独占锁和原子替换；已有锁不得被自动抢占。
 
+## 持久受阻与重试
+
+- 正式快照可含 `research_blocks` 映射，按稳定组件ID保存最近一次受阻，独立于完成研究档案和发布记录。旧快照没有此字段等价于无已登记受阻，不强制改写历史。
+- 每项按受阻Schema保存 `plugin_id`、固定 `revision`（未知为null）、稳定 `reason_code`、可读 `reason`、自包含 `details`、`blocked_at` 与登记轮次 `run_id`。详情保留问题文件、错误/必要字节事实、固定版本出处和下一步，不只引用本机runs路径；不保存凭据。原因代码描述稳定故障类别，不以时间、原始报错措辞或轮次生成新代码。
+- block先写本轮所选条目的 `block` 及blocked状态，最终plan/apply与研究成果一起持久化；全轮只有受阻记录也可合并，不伪造成功研究。失败不覆盖已有有效报告/展示；后续成功stage并合并才清除该组件的旧受阻。新版本再次失败则替换为新版本原因，历史由Git追踪。
+- 新轮次候选的非空代码版本与正式受阻版本相同时，沿用已知原因，默认放入 `selection.suppressed_ids`，不准备材料、不调用洞察、不占额度。只有目录、热度或报错描述变化不触发重试；未重新处理不能声称已确认故障消失或原因变化。未知版本不作同版本去重。
+- 版本变化恢复正常增量候选资格，仍按额度和顺序选择。用户明确要求重试时，`snapshot start --retry-plugin <稳定ID>`（可重复）固定 `selection.retry_ids`，指定项优先、去重后占正常额度，超额度或非已登记受阻候选则拒绝；不能用重试扩充额度。相同版本的环境/统计器修复也通过显式重试处理，不每轮自动试探。
+- 同轮恢复保持固定选择和跳过集合；仅用户明确要求时可用 `snapshot retry --work ... --plugin ...` 将尚未合并的已选blocked项重置pending，删除本轮block后重新准备，保留原始失败文件。未选/已完成项不接受retry；已合并轮次通过新轮显式重试，不修改旧事务。
+- 选择绑定正式快照摘要与上述跳过/重试集合；合并时重新计算核对，不允许随意填入跳过ID绕过研究。已知受阻跳过数量、本轮受阻数量和完成数量分别报告；跳过不算完成或本轮失败。
+
 ## 本轮会话与检查点
 
 - 会话 `id` 标识本轮增量，`checked_at` 为本轮检查基准时间；新轮次绑定当前快照摘要，同轮续跑保留选择和完成材料。
@@ -98,10 +108,10 @@ PLUGINS、PUBLICATION、PLUGIN-PATHS、META 及页面从快照重建，生成前
   缩小范围不算生态删除；变化标记可重叠，不能相加为对象总数，也不能据此免除本轮重新分析。
 - 新轮次使用 `selection.mode = incremental`，将基线中已有完成研究记录（含保留完整研究原稿、因失效退出当前展示的项）的 ID 固定在 `selection.researched_ids`，其中结论已失效或尚未恢复当前展示记录的待复核 ID 固定在 `selection.review_required_ids`；两者必须与正式基线一致。目录中已发现但从未完成研究的条目仍是新研究项。
   先比较全部已有成果与本轮输入；有变化、缺席无法确认、指纹未知或依赖失效的已有项进入更新队列，确认未变的已有项保留原成果且不占额度。比较基线取该项最后完成研究的记录，不能取后来只发现而未完成研究的版本。
-  按完整输入顺序排列更新队列（缺席项追加其后），再排列尚无完成研究记录的新项，去重后按此顺序固定 `selected_ids`。
+  先排除正式同版本受阻项，将显式重试项按输入顺序置前，再按完整输入顺序排列更新队列（缺席项追加其后）和尚无完成研究记录的新项，去重后按此顺序固定 `selected_ids`。
   `research_limit` 表示更新与新项的总额度，必须为正安全整数；新调用省略参数时默认40，并在新会话中显式保存40。历史会话未保存额度时保持原有选择语义，不在恢复时套用新默认值。额度40、待更新 n≤40时补充最多40−n个新项；n>40时先做40个更新项，剩余更新留待后轮。新项不足时允许少于额度。
   `selected_ids` 在增量模式总是存在（允许空数组）；`selectedItems` 按固定选择顺序返回。未带 `selection` 的既有会话继续按旧的前 N 项语义校验和恢复，不反写历史选择。
-  受阻项占名额，续跑不补位、不重置；未选项保留 pending，但不接受完成、受阻或重试状态变更。
+  本轮选中后首次受阻的项仍占名额，续跑不补位、不重置；正式同版本受阻在选择前跳过，不占新轮名额；未选项保留 pending，但不接受完成、受阻或重试状态变更。
 - 新会话条目从 pending 开始；blocked 带受阻原因，complete 必须带检查点。
   所选范围的 complete／blocked／total 与完整列表 listed、未选 deferred 分开统计，不能把未选条目称作已研究。
 - 检查点绑定本轮已暂存并验证的观察批次、运行 ID、固定版本与材料摘要；候选档案必须匹配提交的指纹、证据和检查时间。

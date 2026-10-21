@@ -37,6 +37,7 @@ export const SNAPSHOT = 'data/catalog/SNAPSHOT.json';
 const hash = (text) => createHash('sha256').update(text).digest('hex');
 const ajv = new Ajv({ strict: true, allErrors: true });
 addFormats(ajv);
+ajv.addSchema(read(resolve(ROOT, '.agents/skills/_shared/schemas/research-block.schema.json')));
 const check = ajv.compile(read(resolve(ROOT, '.agents/skills/_shared/schemas/snapshot.schema.json')));
 const workCheck = ajv.compile(read(resolve(ROOT, '.agents/skills/_shared/schemas/snapshot-work.schema.json')));
 export const validateWork = (work, root = ROOT) => {
@@ -53,6 +54,9 @@ export const validateWork = (work, root = ROOT) => {
         .slice(0, work.input.plugins.length)
         .map((item) => Object.fromEntries(keys.map((k) => [k, item[k]])));
     if (digest(fixed) !== digest(work.input.plugins)) throw Error('session candidates differ from fixed input');
+    for (const item of selectedItems(work.session))
+        if (item.status === 'blocked' && work.session.selection?.suppressed_ids !== undefined && !item.block)
+            throw Error('blocked item requires durable reason details');
     return work;
 };
 const local = (root, name) => {
@@ -73,6 +77,8 @@ const recordFor = (item, plugin, checkedAt) => ({
 });
 export function validateSnapshot(value, root = ROOT) {
     if (!check(value)) throw Error(ajv.errorsText(check.errors));
+    for (const [id, block] of Object.entries(value.research_blocks ?? {}))
+        if (id !== block.plugin_id) throw Error('invalid research block identity');
     validateCatalog(value.catalog);
     validatePublication(value.publication);
     startSession(
@@ -175,19 +181,19 @@ export function bootstrap(root = ROOT) {
     writeSnapshotStorage(snapshotFile(root), result);
     return result;
 }
-export function startWork(input, path, limit = 40, root = ROOT) {
+export function startWork(input, path, limit = 40, root = ROOT, retryIds = []) {
     mkdirSync(dirname(path), { recursive: true });
     const lock = path + '.lock',
         fd = openSync(lock, 'wx', 0o600);
     try {
         if (existsSync(resolve(dirname(path), 'SESSION.json.lock'))) throw Error('active session lock');
-        return startWorkUnlocked(input, path, limit, root);
+        return startWorkUnlocked(input, path, limit, root, retryIds);
     } finally {
         closeSync(fd);
         unlinkSync(lock);
     }
 }
-function startWorkUnlocked(input, path, limit, root) {
+function startWorkUnlocked(input, path, limit, root, retryIds) {
     if (existsSync(path)) throw Error('work already exists; resume it');
     const rel = relative(root, resolve(path)).split('\\').join('/');
     if (!/^data\/runs\/\d{4}-\d{2}-\d{2}-\d{2,}\/WORK\.json$/.test(rel))
@@ -274,7 +280,7 @@ function startWorkUnlocked(input, path, limit, root) {
         for (const url of item.source_urls)
             if (!session.sources.some((source) => source.url === url))
                 session.sources.push({ url, revision: null, complete: false });
-    session.selection = snapshotSelection(base);
+    session.selection = snapshotSelection(base, session.items, retryIds);
     session.selected_ids = incrementalSelection(session);
     session.base_digest = digest(base);
     const work = {
@@ -289,7 +295,7 @@ function startWorkUnlocked(input, path, limit, root) {
     saveWork(path, work, true);
     return work;
 }
-function snapshotSelection(base) {
+function snapshotSelection(base, items = null, retryIds = []) {
     const published = new Set(base.publication.records.map((record) => record.id));
     const researched = [
         ...new Set([
@@ -298,8 +304,27 @@ function snapshotSelection(base) {
         ])
     ];
     const researchedSet = new Set(researched);
+    const blockedSelection = {};
+    if (items) {
+        const incoming = new Map(items.map((item) => [item.id, item]));
+        if (
+            new Set(retryIds).size !== retryIds.length ||
+            retryIds.some((id) => !incoming.has(id) || !base.research_blocks?.[id])
+        )
+            throw Error('retry must name distinct known blocked candidates');
+        blockedSelection.retry_ids = [...retryIds];
+        blockedSelection.suppressed_ids = items
+            .filter(
+                (item) =>
+                    item.revision &&
+                    base.research_blocks?.[item.id]?.revision === item.revision &&
+                    !retryIds.includes(item.id)
+            )
+            .map((item) => item.id);
+    }
     return {
         mode: 'incremental',
+        ...blockedSelection,
         researched_ids: researched,
         review_required_ids: base.catalog.plugins
             .filter(
@@ -316,9 +341,17 @@ function assemble(base, work, root = ROOT) {
     if (work.base_digest !== digest(base) || work.session.base_digest !== work.base_digest)
         throw Error('snapshot baseline changed; replan work explicitly');
     validateWork(work, root);
-    if (work.session.selection && digest(work.session.selection) !== digest(snapshotSelection(base)))
+    const selection = work.session.selection;
+    const expectedSelection = snapshotSelection(
+        base,
+        selection?.suppressed_ids === undefined ? null : work.session.items,
+        selection?.retry_ids ?? []
+    );
+    if (selection && digest(selection) !== digest(expectedSelection))
         throw Error('incremental selection baseline differs from snapshot');
     const next = structuredClone(base);
+    for (const item of selectedItems(work.session))
+        if (item.block) (next.research_blocks ??= {})[item.id] = structuredClone(item.block);
     const selected = new Set(selectedItems(work.session).map((p) => p.id));
     const records = new Map(next.publication.records.map((r) => [r.id, r]));
     for (const [id, entry] of Object.entries(work.records)) {
@@ -342,6 +375,7 @@ function assemble(base, work, root = ROOT) {
             digest(entry.report) !== item.checkpoint.report_digest
         )
             throw Error('staged record checkpoint differs');
+        if (next.research_blocks) delete next.research_blocks[id];
         next.catalog = candidate;
         next.registry[id] ??= pluginDirectory(plugin, root);
         next.reports[id] = entry.report;
@@ -391,7 +425,7 @@ function assemble(base, work, root = ROOT) {
     next.publication.records = [...records.values()];
     next.checked_at = work.session.checked_at;
     next.publication.checked_at = next.checked_at;
-    next.publication.scope = `本轮所选 ${selected.size}，完成 ${Object.keys(work.records).length}，受阻 ${selectedItems(work.session).filter((i) => i.status === 'blocked').length}；当前发布 ${records.size}`;
+    next.publication.scope = `本轮所选 ${selected.size}，完成 ${Object.keys(work.records).length}，受阻 ${selectedItems(work.session).filter((i) => i.status === 'blocked').length}；已知同版本受阻跳过 ${work.session.selection?.suppressed_ids?.length ?? 0}；当前发布 ${records.size}`;
     next.discovery = mergeDiscovery(base.discovery, work.input);
     next.transaction = { id: work.session.id, work_digest: digest(work) };
     return validateSnapshot(next, root);
@@ -466,6 +500,7 @@ function stageRecordUnlocked(workPath, id, observationPath, reportPath, displayP
     for (const entry of Object.values(work.records))
         catalog = planCatalog(catalog, entry.observations, 'update').result;
     catalog = planCatalog(catalog, observations, 'update').result;
+    delete work.session.items.find((item) => item.id === id).block;
     completeItem(
         work.session,
         id,
@@ -491,6 +526,48 @@ function stageRecordUnlocked(workPath, id, observationPath, reportPath, displayP
     saveWork(workPath, work);
     return work;
 }
+// null input is an explicit retry of an already selected blocked item.
+export function changeBlockRecord(workPath, id, input, root = ROOT) {
+    const lock = workPath + '.lock',
+        fd = openSync(lock, 'wx', 0o600);
+    try {
+        writeFileSync(fd, JSON.stringify({ pid: process.pid }));
+        if (existsSync(resolve(dirname(workPath), 'SESSION.json.lock'))) throw Error('active session lock');
+        const work = validateWork(readWork(workPath), root);
+        if (work.base_digest !== digest(readSnapshot(root))) throw Error('snapshot baseline changed');
+        const item = selectedItems(work.session).find((p) => p.id === id);
+        if (input === null) {
+            if (!item || item.status !== 'blocked') throw Error('only blocked selected item can be retried');
+            item.status = 'pending';
+            delete item.reason;
+            delete item.block;
+        } else {
+            if (!item || item.status !== 'pending') throw Error('only pending selected item can be blocked');
+            if (
+                (input.plugin_id !== undefined && input.plugin_id !== item.id) ||
+                (input.revision !== undefined && input.revision !== item.revision)
+            )
+                throw Error('block input identity or revision differs');
+            item.status = 'blocked';
+            item.reason = input.reason;
+            item.block = {
+                plugin_id: item.id,
+                revision: item.revision,
+                reason_code: input.reason_code,
+                reason: input.reason,
+                details: input,
+                blocked_at: new Date().toISOString(),
+                run_id: work.session.id
+            };
+        }
+        validateWork(work, root);
+        saveWork(workPath, work);
+        return work;
+    } finally {
+        closeSync(fd);
+        unlinkSync(lock);
+    }
+}
 export function assertMergeReady(work) {
     if (selectedItems(work.session).some((item) => item.status === 'pending'))
         throw Error('selected pending items must be completed or blocked before merging');
@@ -498,7 +575,11 @@ export function assertMergeReady(work) {
 export function planSnapshot(workPath, root = ROOT) {
     const base = readSnapshot(root),
         work = validateWork(readWork(workPath), root);
-    if (selectedItems(work.session).length && !Object.keys(work.records).length)
+    if (
+        selectedItems(work.session).length &&
+        !Object.keys(work.records).length &&
+        !selectedItems(work.session).some((item) => item.block)
+    )
         throw Error('no successful records to merge');
     assertMergeReady(work);
     const result = assemble(base, work, root);
@@ -611,7 +692,10 @@ export async function main(args = process.argv.slice(2)) {
         options: Object.fromEntries(
             ['input', 'work', 'limit', 'plugin', 'observations', 'report', 'display', 'out', 'plan', 'backup']
                 .map((k) => [k, { type: 'string' }])
-                .concat([['apply', { type: 'boolean', default: false }]])
+                .concat([
+                    ['apply', { type: 'boolean', default: false }],
+                    ['retry-plugin', { type: 'string', multiple: true }]
+                ])
         )
     });
     const need = (k) => {
@@ -627,8 +711,15 @@ export async function main(args = process.argv.slice(2)) {
         renderSnapshot();
     } else if (command === 'start') {
         const n = v.limit === undefined ? undefined : Number(v.limit);
-        const w = startWork(read(need('input')), need('work'), n);
-        console.log(JSON.stringify({ selected: selectedItems(w.session).length, listed: w.session.items.length }));
+        const w = startWork(read(need('input')), need('work'), n, ROOT, v['retry-plugin'] ?? []);
+        console.log(
+            JSON.stringify({
+                selected: selectedItems(w.session).length,
+                listed: w.session.items.length,
+                suppressed: w.session.selection.suppressed_ids.length,
+                retry_ids: w.session.selection.retry_ids
+            })
+        );
     } else if (command === 'next') {
         const w = validateWork(readWork(need('work')));
         validateSession(w.session);
@@ -637,25 +728,9 @@ export async function main(args = process.argv.slice(2)) {
         if (!v.plugin) throw Error('--plugin required');
         stageRecord(need('work'), v.plugin, need('observations'), need('report'), need('display'));
         console.log('Record staged; formal snapshot unchanged');
-    } else if (command === 'block') {
+    } else if (command === 'block' || command === 'retry') {
         if (!v.plugin) throw Error('--plugin required');
-        const path = need('work'),
-            lock = path + '.lock',
-            fd = openSync(lock, 'wx', 0o600);
-        try {
-            writeFileSync(fd, JSON.stringify({ pid: process.pid }));
-            if (existsSync(resolve(dirname(path), 'SESSION.json.lock'))) throw Error('active session lock');
-            const w = validateWork(readWork(path));
-            const p = selectedItems(w.session).find((i) => i.id === v.plugin);
-            if (!p || p.status !== 'pending') throw Error('only pending selected item can be blocked');
-            p.status = 'blocked';
-            p.reason = read(need('input')).reason;
-            validateSession(w.session);
-            saveWork(need('work'), w);
-        } finally {
-            closeSync(fd);
-            unlinkSync(lock);
-        }
+        changeBlockRecord(need('work'), v.plugin, command === 'block' ? read(need('input')) : null);
     } else if (command === 'plan') {
         atomicWrite(need('out'), planSnapshot(need('work')));
     } else if (command === 'apply') {
