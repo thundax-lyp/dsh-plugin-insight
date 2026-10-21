@@ -7,7 +7,7 @@
 分析版本：[fc9af91](https://github.com/962599627/agent-development-constraints/tree/fc9af918ac14f03d63bee299cab90862adbc8963)
 
 <!-- BEGIN META -->
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/962599627/agent-development-constraints)
+
 <!-- END META -->
 
 **使用建议**：适合有重复事故且愿意维护规则检查的团队先选少量规则试用。安装前审阅AGENTS修改与hook范围，不把提示注入当硬门禁，也不要直接照搬全部规则。

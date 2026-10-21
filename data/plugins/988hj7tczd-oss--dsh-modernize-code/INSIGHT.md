@@ -7,7 +7,7 @@
 分析版本：[4d11010](https://github.com/988hj7tczd-oss/dsh-modernize-code/tree/4d110103666fde9515b9a8077b7e0458d00023a8)
 
 <!-- BEGIN META -->
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-modernize-code)
+
 <!-- END META -->
 
 **使用建议**：适合先生成迁移评估材料。确认报告写入位置，并把预检就绪理解为静态准备状态；路线图、代码改动和每阶段验证都需独立核查。

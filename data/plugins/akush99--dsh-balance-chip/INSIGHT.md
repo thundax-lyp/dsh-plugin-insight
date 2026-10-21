@@ -7,7 +7,7 @@
 分析版本：[a2080e0](https://github.com/AKUSH99/dsh-balance-chip/tree/a2080e0f5024f95d35439988107183f024ba034d)
 
 <!-- BEGIN META -->
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/AKUSH99/dsh-balance-chip)
+
 <!-- END META -->
 
 **使用建议**：先修核轮询释放、货币与外层授权；不能作为预算闸门。

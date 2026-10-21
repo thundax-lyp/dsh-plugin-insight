@@ -7,7 +7,7 @@
 分析版本：[d0f5113](https://github.com/7vw58n3ftvq7cn89v/dsh-plugin-session-colors/tree/d0f51131aef40e6bc3f60b560342e22551a972cd)
 
 <!-- BEGIN META -->
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/7vw58n3ftvq7cn89v/dsh-plugin-session-colors)
+
 <!-- END META -->
 
 **使用建议**：会话多的人可先给独名会话少量标色；刷新后确认持久保存，同名或离线改色要核对，别用颜色承载关键任务状态。

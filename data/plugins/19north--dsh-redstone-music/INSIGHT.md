@@ -7,7 +7,7 @@
 分析版本：[7ab206d](https://github.com/19north/dsh-redstone-music/tree/7ab206d8b7befe321603cd8b046bdae5be5f66ef)
 
 <!-- BEGIN META -->
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/19north/dsh-redstone-music)
+
 <!-- END META -->
 
 **使用建议**：适合已有 Minecraft 音乐环境的创作者；先用短片段验证采样、时序和世界备份恢复，再构建长曲。

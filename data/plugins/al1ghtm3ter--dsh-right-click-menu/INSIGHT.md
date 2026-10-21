@@ -7,7 +7,7 @@
 分析版本：[9976d21](https://github.com/AL1ghtm3ter/dsh-right-click-menu/tree/9976d213318032c6f128e3affa5d1b873cd47871)
 
 <!-- BEGIN META -->
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/AL1ghtm3ter/dsh-right-click-menu)
+
 <!-- END META -->
 
 **使用建议**：先在隔离目录核保存目标、覆盖和权限；菜单便利不代表按会话受限文件能力。

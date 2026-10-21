@@ -7,7 +7,7 @@
 分析版本：[fd84079](https://github.com/AhYi8/dsh-agent-recycle-guard/tree/fd84079f98170d5066547c087c58c824b4e59d07)
 
 <!-- BEGIN META -->
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/AhYi8/dsh-agent-recycle-guard) · [![npm 30d 876](https://img.shields.io/static/v1?label=npm+30d&message=876&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-agent-recycle-guard)
+[![npm 30d 876](https://img.shields.io/static/v1?label=npm+30d&message=876&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-agent-recycle-guard) [![首次发布 2026-10-11](https://img.shields.io/static/v1?label=%E9%A6%96%E6%AC%A1%E5%8F%91%E5%B8%83&message=2026-10-11&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-agent-recycle-guard)
 <!-- END META -->
 
 **使用建议**：在可丢弃目录验证平台真实回收和恢复后采用。作为常见误删防护，继续保留宿主沙箱、备份和重要路径权限。

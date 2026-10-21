@@ -7,7 +7,7 @@
 分析版本：[238ccd9](https://github.com/863683348/dsh-trend-radar/tree/238ccd97948617fe8dd92f9ee5c5c05360592026)
 
 <!-- BEGIN META -->
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/863683348/dsh-trend-radar) · [![npm 30d 117](https://img.shields.io/static/v1?label=npm+30d&message=117&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-trend-radar)
+[![npm 30d 117](https://img.shields.io/static/v1?label=npm+30d&message=117&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-trend-radar) [![首次发布 2026-08-17](https://img.shields.io/static/v1?label=%E9%A6%96%E6%AC%A1%E5%8F%91%E5%B8%83&message=2026-08-17&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-trend-radar)
 <!-- END META -->
 
 **使用建议**：适合对限定样本做探索性观察。先核对采集范围、缺页和时间间隔，再解释差分；不要用前100滚动榜推断生态总量、移除或真实需求。

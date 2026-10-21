@@ -7,7 +7,7 @@
 分析版本：[fe4f23b](https://github.com/137/dsh-chatgpt-style/tree/fe4f23bed4bec14ad01577050eaacdc0893f57d9)
 
 <!-- BEGIN META -->
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/137/dsh-chatgpt-style)
+
 <!-- END META -->
 
 **使用建议**：先检查长文、流式输出、代码块、公式和输入法，再验证禁用能还原；供应商未声明推理档位时使用原生模型菜单。

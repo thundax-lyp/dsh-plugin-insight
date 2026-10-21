@@ -1,1 +1,1 @@
-{{stars}}{{downloads}}{{review}}
+{{badges}}{{review}}

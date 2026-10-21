@@ -30,6 +30,39 @@ const categoryScopes = {
 };
 export const categoryScope = (key) => categoryScopes[key] ?? categoryScopes.other;
 const nameLink = (e) => template('LINK', { label: clean(e.plugin.name), url: e.href ?? `#${e.anchor}` });
+export function renderCountBadge(label, value, { color, logo, url }) {
+    if (!Number.isSafeInteger(value) || value <= 0) return '';
+    return template('BADGE', {
+        alt: `${label} ${value.toLocaleString('en-US')}`,
+        image:
+            'https://img.shields.io/static/v1?' +
+            new URLSearchParams({
+                label,
+                message: value.toLocaleString('en-US'),
+                color,
+                logo,
+                style: 'flat'
+            }).toString(),
+        url
+    });
+}
+export function renderPublicationBadge(label, publishedAt, url) {
+    if (!publishedAt || !Number.isFinite(Date.parse(publishedAt))) return '';
+    const date = new Date(Date.parse(publishedAt) + 8 * 3600000).toISOString().slice(0, 10);
+    return template('BADGE', {
+        alt: `${label} ${date}`,
+        image:
+            'https://img.shields.io/static/v1?' +
+            new URLSearchParams({
+                label,
+                message: date,
+                labelColor: '668a73',
+                color: 'grey',
+                style: 'flat'
+            }).toString(),
+        url
+    });
+}
 export function renderIssueActivity(metadata, repository) {
     const end = metadata?.captured_at;
     const start = metadata?.window_start;
@@ -59,7 +92,7 @@ export function renderIssueActivity(metadata, repository) {
         });
     });
     return template('ISSUES', {
-        metrics: metrics.join(' · '),
+        metrics: metrics.join(' '),
         notice: missing.length
             ? template('ISSUES-MISSING', { fields: missing.map(([label]) => label).join('、') })
             : '',
@@ -85,7 +118,11 @@ export function renderWeeklyNew(items, date) {
     return template('WEEKLY-NEW', {
         items: selected
             .map((e) =>
-                template('LATEST-ITEM', { plugin: nameLink(e), summary: clean(e.summary), metrics: e.listMetrics })
+                template('LATEST-ITEM', {
+                    plugin: nameLink(e),
+                    summary: clean(e.summary),
+                    metrics: e.listMetrics ? ` · ${e.listMetrics}` : ''
+                })
             )
             .join('\n')
     });
@@ -109,8 +146,19 @@ export function renderLatest(items, date, limit = 5) {
                 .map((e) =>
                     template('LATEST-ITEM', {
                         plugin: nameLink(e),
-                        metrics: e.listMetrics,
-                        summary: `${clean(e.summary)} · 新发布：${new Date(Date.parse(e.npmFirstPublished) + 8 * 3600000).toISOString().slice(0, 10)}`
+                        metrics:
+                            ' · ' +
+                            [
+                                e.baseMetrics,
+                                renderPublicationBadge(
+                                    '新发布',
+                                    e.npmFirstPublished,
+                                    `https://www.npmjs.com/package/${e.npmDownloads.package_name}`
+                                )
+                            ]
+                                .filter(Boolean)
+                                .join(' '),
+                        summary: clean(e.summary)
                     })
                 )
                 .join('\n') || '最近30天暂无已核实的新发布记录。'
@@ -141,13 +189,10 @@ export function renderHot(items, limit = 5) {
         items:
             selected
                 .map((e) => {
-                    const npm = e.npmDownloads;
                     return template('HOT-ITEM', {
                         plugin: nameLink(e),
                         summary: clean(e.summary),
-                        metrics: e.listMetrics,
-                        window: `${npm.window_start}～${npm.window_end} UTC`,
-                        package: npm.package_name
+                        metrics: e.listMetrics ? ` · ${e.listMetrics}` : ''
                     });
                 })
                 .join('\n') || '暂无已核实的近30天 npm 下载数据。'
@@ -169,7 +214,7 @@ export function renderRecommended(recommendations, byId, limit = 5) {
                         plugin: nameLink(e),
                         kind: r.kind === 'install' ? ' · 值得安装' : '',
                         summary: `${clean(e.summary)} ${clean(r.summary).replaceAll('条件试用', '试用')}`,
-                        metrics: e.listMetrics,
+                        metrics: e.listMetrics ? ` · ${e.listMetrics}` : '',
                         review: ''
                     });
                 })

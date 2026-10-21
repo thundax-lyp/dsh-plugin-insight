@@ -7,7 +7,7 @@
 分析版本：[f073bfa](https://github.com/9Ashwin/dsh-session-rename/tree/f073bfa1fa7e59832df5efacb5b94ee44749326c)
 
 <!-- BEGIN META -->
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/9Ashwin/dsh-session-rename)
+
 <!-- END META -->
 
 **使用建议**：先用当前会话改成简短需求ID；指定别的会话前确认目标已加载且确需修改，记住显式标题会取代自动生成。

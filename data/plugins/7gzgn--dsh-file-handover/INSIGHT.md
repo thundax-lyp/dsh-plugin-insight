@@ -7,7 +7,7 @@
 分析版本：[e1c6158](https://github.com/7gzgn/dsh-file-handover/tree/e1c6158dbd4a4ec5c3057305d7d9c445edb9799f)
 
 <!-- BEGIN META -->
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/7gzgn/dsh-file-handover)
+
 <!-- END META -->
 
 **使用建议**：适合单一明确文件对话框的Windows任务先试用。先dryRun检查窗口PID与标题，再填文件，最后在接收应用核对文件名和大小；多窗口并存先收敛到唯一目标。

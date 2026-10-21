@@ -7,7 +7,7 @@
 分析版本：[d1efd79](https://github.com/1344738825/ai-residue-cleaner/tree/d1efd794049a2a26b8e75573b51df249bd72b62b)
 
 <!-- BEGIN META -->
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/1344738825/ai-residue-cleaner)
+
 <!-- END META -->
 
 **使用建议**：先在完整副本执行dry-run，核对日志和backup类文件是否仍需保留，再启用自动清理并设置合适保留期。

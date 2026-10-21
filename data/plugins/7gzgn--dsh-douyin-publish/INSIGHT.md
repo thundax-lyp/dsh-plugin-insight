@@ -7,7 +7,7 @@
 分析版本：[3413d53](https://github.com/7gzgn/dsh-douyin-publish/tree/3413d538e2b4a3384092c456c56f97862f787fed)
 
 <!-- BEGIN META -->
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/7gzgn/dsh-douyin-publish)
+
 <!-- END META -->
 
 **使用建议**：适合固定抖音/B站工作流的创作者在非公开测试稿先检查。先用dryRun，再用draft逐字段核对视频与可见性；遇到发布结果不明时先去平台查状态，不重复发布。

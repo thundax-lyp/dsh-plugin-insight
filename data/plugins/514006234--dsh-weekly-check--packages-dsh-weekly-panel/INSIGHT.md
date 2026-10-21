@@ -7,7 +7,7 @@
 分析版本：[5ee6b1d](https://github.com/514006234/dsh-weekly-check/tree/5ee6b1d8aa90a1dab83c30db96838482331db304/packages/dsh-weekly-panel)
 
 <!-- BEGIN META -->
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/514006234/dsh-weekly-check)
+
 <!-- END META -->
 
 **使用建议**：想在DSH里查看中文榜单可先试只读面板；看清数据日期与赞助/互推标识，复制安装命令后仍要检查插件自身要求。

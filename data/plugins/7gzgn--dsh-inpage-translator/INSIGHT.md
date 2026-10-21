@@ -7,7 +7,7 @@
 分析版本：[4a57cad](https://github.com/7gzgn/dsh-inpage-translator/tree/4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190)
 
 <!-- BEGIN META -->
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/7gzgn/dsh-inpage-translator)
+
 <!-- END META -->
 
 **使用建议**：适合普通公开网页阅读时先试用。先检查模型路由与页面内容范围，重要数字和否定句对照原文；不把按钮完成当整页覆盖或译文正确证明。
