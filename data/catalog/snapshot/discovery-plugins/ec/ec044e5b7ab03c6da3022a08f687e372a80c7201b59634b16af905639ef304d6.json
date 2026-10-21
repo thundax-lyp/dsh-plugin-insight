@@ -1,0 +1,314 @@
+[
+  {
+    "id": "github:1190633989:root",
+    "repository": "lizhiyao/oh-my-knowledge",
+    "path": "",
+    "revision": "3798c7bdd191ea3de249843c9ee6c4abdc02aced",
+    "source_urls": [
+      "https://github.com/0xsline/awesome-deepseek-harness"
+    ],
+    "fingerprints": {
+      "directory": "fb399f48a552ab4cf92c17983e2507cc15986b8f8cfa0e0848b8c2dce38e9175",
+      "code": "3798c7bdd191ea3de249843c9ee6c4abdc02aced",
+      "maintenance": "8d5082cec450faaaa24ce4e1a43d264a89a9595c83d6fcfcd017f06d5d0816f2"
+    }
+  },
+  {
+    "id": "github:1268026464:root",
+    "repository": "Cci-65/dsh-ui-plugin",
+    "path": "",
+    "revision": "26bce9b250dc2c34c60ee7e94106e1b89e672ac3",
+    "source_urls": [
+      "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+    ],
+    "fingerprints": {
+      "directory": "c5ad312fb26650d3cbc17c774f75ed79158863574b6761f1f0e56c4416b6c1e2",
+      "code": "26bce9b250dc2c34c60ee7e94106e1b89e672ac3",
+      "maintenance": "7f2b1977fd6b561c883d3b18141295440b7b063b2d352d6807f0ccfcb1fb822d"
+    }
+  },
+  {
+    "id": "github:1333768172:root",
+    "repository": "PerryLink/dsh-mcp-panel",
+    "path": "",
+    "revision": "b46d8389ff94d1d55ed0a8f940f6b4e4c98bdc86",
+    "source_urls": [
+      "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "https://github.com/0xsline/awesome-deepseek-harness"
+    ],
+    "fingerprints": {
+      "directory": "f16c7afffe126a4f6a33dbe7f8e9e50e0a9908a2c37cba8a8e9376f8bfdf6cfe",
+      "code": "b46d8389ff94d1d55ed0a8f940f6b4e4c98bdc86",
+      "maintenance": "dca2e5127b22e7dbb277b17d7dd7deb84c5d4eb004d17f11d23d0154e92cb6f3"
+    }
+  },
+  {
+    "id": "github:1333859039:root",
+    "repository": "ICCuse/dsh-knowledge",
+    "path": "",
+    "revision": "34bec0c1ec33d32c8546f87d373740333adaddae",
+    "source_urls": [
+      "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+    ],
+    "fingerprints": {
+      "directory": "1de6f2b4e6f6cad52e38962f8405987924aa8de6037b9ec693a92cb53e3774e0",
+      "code": "34bec0c1ec33d32c8546f87d373740333adaddae",
+      "maintenance": "0e5ac6d590cf2f755b998d0b460187b5bcd74963d1205c0b6a0056d76c19ddf3"
+    }
+  },
+  {
+    "id": "github:1333936445:root",
+    "repository": "UNLINEARITY/dsh-code",
+    "path": "",
+    "revision": "7de989b94c7eab5d074422512729385f650699ce",
+    "source_urls": [
+      "https://github.com/0xsline/awesome-deepseek-harness"
+    ],
+    "fingerprints": {
+      "directory": "8cb4d2a5e7e3c3434c624c3f7833f2dfc8a2a36f5231c7b580f500f74e29ca9e",
+      "code": "7de989b94c7eab5d074422512729385f650699ce",
+      "maintenance": "20dabb9e2c8afbecc27a324a3969cdbf20fa4a92569497583f552fea41342c1a"
+    }
+  },
+  {
+    "id": "github:1334003854:root",
+    "repository": "ZhengQingJing/dsh-session-tree",
+    "path": "",
+    "revision": "28e7887a888adf1747e9a35b38b96f1dac233a23",
+    "source_urls": [
+      "https://github.com/0xsline/awesome-deepseek-harness"
+    ],
+    "fingerprints": {
+      "directory": "05ddaf8970d20b5ae166b1ea99ca45bd0352ea7b641e7613c666535518f2f23e",
+      "code": "28e7887a888adf1747e9a35b38b96f1dac233a23",
+      "maintenance": "c924802d5028bb83d28a94f8a19687c3af8cbb770cb73fa423ec2220fb9128f0"
+    }
+  },
+  {
+    "id": "github:1334248865:root",
+    "repository": "Make0209/dsh-usage-stats",
+    "path": "",
+    "revision": "8992d306cdca8857b4362868d591fde3689765b0",
+    "source_urls": [
+      "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "https://github.com/0xsline/awesome-deepseek-harness"
+    ],
+    "fingerprints": {
+      "directory": "6943ac5e7963a214db3071430f1989224d19292f4df45a06cc1e07b657bf40ab",
+      "code": "8992d306cdca8857b4362868d591fde3689765b0",
+      "maintenance": "e12e31b7f2c78a93ed35cb40129a5f6bbb560c38a5a619dec89307f75e5938f2"
+    }
+  },
+  {
+    "id": "github:1335080638:dsh-review",
+    "repository": "Tlyer233/dsh-vscode-review",
+    "path": "dsh-review",
+    "revision": "18ed68705376feea97ffc76260948648efc2701d",
+    "source_urls": [
+      "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+    ],
+    "fingerprints": {
+      "directory": "d63a725dfa92337fca667f958a7a6ac30e01069ebb3b4261a94e192ef7a84aa8",
+      "code": "18ed68705376feea97ffc76260948648efc2701d",
+      "maintenance": "431ec4568ba61498445e23cc176a7d24b8f4ff0568654ce409cb1a046b17215f"
+    }
+  },
+  {
+    "id": "github:1335151014:root",
+    "repository": "mingzeng21/dsh-notion",
+    "path": "",
+    "revision": "eac024696e7036d3b7d9eeec3130d3eeddbe3fe3",
+    "source_urls": [
+      "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+    ],
+    "fingerprints": {
+      "directory": "0209ef5568f100132381a9938ab738c100da55f9806f19227b1c1474d9725541",
+      "code": "eac024696e7036d3b7d9eeec3130d3eeddbe3fe3",
+      "maintenance": "42f41c740feded7fae89e213d4f688811ff3df97a3380cc4ea0c2ee066b7f61c"
+    }
+  },
+  {
+    "id": "github:1336592549:root",
+    "repository": "DshMarketPlace/dsh-plugins-store",
+    "path": "",
+    "revision": "651dc6c6c13190f25eb76d73cac11f3673a77500",
+    "source_urls": [
+      "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "https://github.com/0xsline/awesome-deepseek-harness"
+    ],
+    "fingerprints": {
+      "directory": "8101ac23b87dabd8acf2d20985d269a9622e818644daa5173c98236931d093ad",
+      "code": "651dc6c6c13190f25eb76d73cac11f3673a77500",
+      "maintenance": "037a61f1199fd0324c4ef94a6b1317f3081112b8cb34c5cccd75188668325bcb"
+    }
+  },
+  {
+    "id": "github:1342650617:root",
+    "repository": "Nicholas023/vision-exp-tile",
+    "path": "",
+    "revision": "99f3c26bdc89cd0f392c3238304c5cfea8ffded4",
+    "source_urls": [
+      "https://github.com/0xsline/awesome-deepseek-harness"
+    ],
+    "fingerprints": {
+      "directory": "d9a6b4bcc3048279c7f7e36262e93bc8a14aad7d796bf53c7b362b8b3cfe7022",
+      "code": "99f3c26bdc89cd0f392c3238304c5cfea8ffded4",
+      "maintenance": "8f99e243dba07cd7781327a57a7f41b95591978694c410bf4ecc6c73cc75de1f"
+    }
+  },
+  {
+    "id": "github:1345161869:root",
+    "repository": "Suixin04/dsh-session-migrator",
+    "path": "",
+    "revision": "f73f2edf07e8d3a7e91ba265e64130a3c1f6460e",
+    "source_urls": [
+      "https://github.com/0xsline/awesome-deepseek-harness"
+    ],
+    "fingerprints": {
+      "directory": "089db7396a84e2dc3de10d46bbbe765f4e337bd99115de013874fcb6d42dbec6",
+      "code": "f73f2edf07e8d3a7e91ba265e64130a3c1f6460e",
+      "maintenance": "182ba8e60fe6a5d714a0fdf36c535566b95fdcf7164e02cea9bd7d5da6c87899"
+    }
+  },
+  {
+    "id": "github:1345901808:root",
+    "repository": "soarGuo/dsh-skin-lab",
+    "path": "",
+    "revision": "ad32833d069666a19f534715afd2bcd63bb3a80e",
+    "source_urls": [
+      "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "https://github.com/0xsline/awesome-deepseek-harness"
+    ],
+    "fingerprints": {
+      "directory": "09190681a7de758f106fddabd40b5ed9d79584b2c750a03ecd7dee9f15d02785",
+      "code": "ad32833d069666a19f534715afd2bcd63bb3a80e",
+      "maintenance": "57dd7c8af2806565e671a785882ded788e2b17caf7b670d45239c0ba5b4d1d27"
+    }
+  },
+  {
+    "id": "github:1362142284:root",
+    "repository": "kvmem/dsh-super-advisor",
+    "path": "",
+    "revision": "dc47128a7401550567eb25e5f6eea2636e0c2c24",
+    "source_urls": [
+      "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+    ],
+    "fingerprints": {
+      "directory": "fc1d1c37ea53c40cb680635e43f8a046505cc2fb3f58c37846869575e12b7666",
+      "code": "dc47128a7401550567eb25e5f6eea2636e0c2c24",
+      "maintenance": "d81b65556b434542468894b1d278875549e3f4f77cc842dd9f0497b3bb13b164"
+    }
+  },
+  {
+    "id": "github:1370984890:root",
+    "repository": "sailoumili/dsh-sidebar-plus",
+    "path": "",
+    "revision": "82df9ee5cc6a764c7603ed903eeaae2702bfd66c",
+    "source_urls": [
+      "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+    ],
+    "fingerprints": {
+      "directory": "5c2a24dc88537c2259569b86492dbe93adf92671ea29bb99867f506184af2ad7",
+      "code": "82df9ee5cc6a764c7603ed903eeaae2702bfd66c",
+      "maintenance": "da6a8bc45310adb5e1c22bfa7554b7bae17a49c759dfaca10b0799084f24cbf7"
+    }
+  },
+  {
+    "id": "github:1371090297:root",
+    "repository": "LAwLi3tCoding/dsh-approval-review",
+    "path": "",
+    "revision": "7ebbbf2975f8c097bc51f495dd31b9329f8e1c30",
+    "source_urls": [
+      "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+    ],
+    "fingerprints": {
+      "directory": "49edb81a22eb77af73e0a31de9f4ccaac88e43762cf88d2cdcc8cb9cce06ad11",
+      "code": "7ebbbf2975f8c097bc51f495dd31b9329f8e1c30",
+      "maintenance": "b49f5f5a674c0f768e40f5cf99404526447f8a2f11607d18a59d7a1dd75b2d88"
+    }
+  },
+  {
+    "id": "github:1371226901:root",
+    "repository": "pgjh/dsh-model-metadata",
+    "path": "",
+    "revision": "173b09c47332182dc5982994c64913bb6a8d312a",
+    "source_urls": [
+      "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+    ],
+    "fingerprints": {
+      "directory": "7b8659089d730a862a6bf79beddfcfd2eda132aee06469dfecd47bfff5c4c61e",
+      "code": "173b09c47332182dc5982994c64913bb6a8d312a",
+      "maintenance": "feedd31416a354e62b49c3d775ec27ea3a0ba43ea701a387fd364148ec1badb1"
+    }
+  },
+  {
+    "id": "github:1381304936:root",
+    "repository": "Rice00/dsh-tree-view",
+    "path": "",
+    "revision": "108575731c76b8ab813a96d60bf898d570bb2ef4",
+    "source_urls": [
+      "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+    ],
+    "fingerprints": {
+      "directory": "be57bbb8803c124d067e77abd95209de29cecdd4a42f68e64c17e275d92d2c6b",
+      "code": "108575731c76b8ab813a96d60bf898d570bb2ef4",
+      "maintenance": "a34928f21deb9b5e0fc60e4cbb6ce092394bda46699b1ab773629f2b9419131c"
+    }
+  },
+  {
+    "id": "github:1414284940:root",
+    "repository": "shuxidemosheng/dsh-tool-workflow-plus",
+    "path": "",
+    "revision": "3bfd515fc92c482d43775b79c9feb30711b8f90a",
+    "source_urls": [
+      "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+    ],
+    "fingerprints": {
+      "directory": "70f3e41a09758c1d87d0371fb64c40ab3d5e10156c2ea30fb7034f1d4be7cf6a",
+      "code": "3bfd515fc92c482d43775b79c9feb30711b8f90a",
+      "maintenance": "82d26992255075b0982edccd517587793c68a53ebb2413b71cc28a87bca07100"
+    }
+  },
+  {
+    "id": "github:1415225894:root",
+    "repository": "ylw-ux/dsh-pins-fixtool",
+    "path": "",
+    "revision": "66341e68cf319dfce993a35939421b157b4a0590",
+    "source_urls": [
+      "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+    ],
+    "fingerprints": {
+      "directory": "c0cf8c76f40231576051150d520eb804fc3905698e86b4b5c80671b4d6c190ed",
+      "code": "66341e68cf319dfce993a35939421b157b4a0590",
+      "maintenance": "b88b79981bc4956aef9f310b11021a507b896055f2fe9768bded670b2bd8d93b"
+    }
+  },
+  {
+    "id": "github:1418487770:root",
+    "repository": "OZONGO/dsh-keyboard-shortcut",
+    "path": "",
+    "revision": "ddd8ae5e11bbc063aef9df2b34e9e4ba0c8549eb",
+    "source_urls": [
+      "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+    ],
+    "fingerprints": {
+      "directory": "928e0ee5ce261613cae958896402ee89bd3d8ed82f11bf0a11d6f88e903ae185",
+      "code": "ddd8ae5e11bbc063aef9df2b34e9e4ba0c8549eb",
+      "maintenance": "c7fea5fbd5b74b2393acdce1dd54f2fb7bfa187d4ff09a5d793767ce5ae41179"
+    }
+  },
+  {
+    "id": "github:1424510133:root",
+    "repository": "Dengzi555/dsh-quotalk",
+    "path": "",
+    "revision": "370b722206729057a555b3f57bf4bebb87c26434",
+    "source_urls": [
+      "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+    ],
+    "fingerprints": {
+      "directory": "75c65c90e701e944dbec9186cf41e8923b1f48f159de7d009e97302c7d76766b",
+      "code": "370b722206729057a555b3f57bf4bebb87c26434",
+      "maintenance": "8c2f4a31429c277de01eb8f6e01307cb3a49d4e690ca50654836808623732eb5"
+    }
+  }
+]

@@ -1,0 +1,306 @@
+{
+  "id": "github:1335664137:root",
+  "repository_id": 1335664137,
+  "component_id": "root",
+  "repository": "54xkeee/dsh-vision",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-vision",
+  "entry_type": "plugin",
+  "technical_category": "model-provider",
+  "business_category": "research-knowledge",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "d3ac9be9ef32e74abf7197b6fb85491173d3d3eb21adb9fa676700237dbf7c0a",
+    "code": "f8b26198aff85bc72c3bb12a2e843ebec68c04d1",
+    "maintenance": "315e8052470be7de71f742b6fd6fa5793d4dedc2a3effd28d63e8eb464b749a5"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-02-github-1335664137-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T03:16:19.294Z",
+      "membership": "present"
+    },
+    {
+      "id": "2026-10-21-02-github-1335664137-root-directory-1",
+      "url": "https://github.com/0xsline/awesome-deepseek-harness",
+      "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
+      "retrieved_at": "2026-10-21T03:16:19.294Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-02-github-1335664137-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/54xkeee/dsh-vision/blob/f8b26198aff85bc72c3bb12a2e843ebec68c04d1/README.md",
+      "revision": "f8b26198aff85bc72c3bb12a2e843ebec68c04d1",
+      "captured_at": "2026-10-21T03:16:19.294Z",
+      "summary": "为纯文本模型接入多通道识图，提供图片面板、视觉工具和会话证据记忆。",
+      "artifact": "data/runs/2026-10-21-02/snapshots/54xkeee--dsh-vision/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-02-github-1335664137-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/54xkeee/dsh-vision/blob/f8b26198aff85bc72c3bb12a2e843ebec68c04d1/src/index.ts",
+      "revision": "f8b26198aff85bc72c3bb12a2e843ebec68c04d1",
+      "captured_at": "2026-10-21T03:16:19.294Z",
+      "summary": "核查 src/index.ts、src/vision-core.ts；src/index.ts包装上游provider，把图片块替换为附件占位，注册vision工具；vision-core.ts规范化结构化视觉证据、内容缓存键，压缩结束后恢复近期记录。",
+      "artifact": "data/runs/2026-10-21-02/snapshots/54xkeee--dsh-vision/REVIEWED-SOURCE.json",
+      "limitations": [
+        "核查固定提交内列明入口、核心实现及相关配置/作者材料的源码子集；未执行插件、其测试、安装、付费请求或真实宿主验收，未核实独立用户采用。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "适合保持文本主模型、额外理解截图或表格的用户；应保留原图作为最终核对依据。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1335664137-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335664137:root",
+          "area": "code",
+          "fingerprint": "f8b26198aff85bc72c3bb12a2e843ebec68c04d1"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:19.294Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "src/index.ts包装上游provider，把图片块替换为附件占位，注册vision工具；vision-core.ts规范化结构化视觉证据、内容缓存键，压缩结束后恢复近期记录。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1335664137-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335664137:root",
+          "area": "code",
+          "fingerprint": "f8b26198aff85bc72c3bb12a2e843ebec68c04d1"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:19.294Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "核查固定提交内列明入口、核心实现及相关配置/作者材料的源码子集；未执行插件、其测试、安装、付费请求或真实宿主验收，未核实独立用户采用。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1335664137-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335664137:root",
+          "area": "code",
+          "fingerprint": "f8b26198aff85bc72c3bb12a2e843ebec68c04d1"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:19.294Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "发布与依赖以本项固定package.json、README和本轮META为界；npm或仓库统计不是采用证据。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1335664137-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335664137:root",
+          "area": "code",
+          "fingerprint": "f8b26198aff85bc72c3bb12a2e843ebec68c04d1"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:19.294Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次需登录浏览器、桥接进程或配置API/IDE通道；每轮可能两遍识图，现金随实际通道，人工需维护登录、DOM和错误描述。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1335664137-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335664137:root",
+          "area": "code",
+          "fingerprint": "f8b26198aff85bc72c3bb12a2e843ebec68c04d1"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:19.294Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "已有可用视觉通道且愿意核对原图时可试。先检查桥接登录、密集截图和压缩后记录恢复，敏感图片先确认会送到哪个通道。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1335664137-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335664137:root",
+          "area": "code",
+          "fingerprint": "f8b26198aff85bc72c3bb12a2e843ebec68c04d1"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:19.294Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "证据缓存有减少重复识图的机制依据，准确率、免费服务持续性与业务节省均未独立验证。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1335664137-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335664137:root",
+          "area": "code",
+          "fingerprint": "f8b26198aff85bc72c3bb12a2e843ebec68c04d1"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:19.294Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "纯函数vision-core将规范化、缓存键与提示分离；失败缓存删除和compaction/end后的有限恢复值得借鉴。fallback容忍非结构化结果也会削弱结构保证，应显式展示structured状态。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1335664137-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335664137:root",
+          "area": "code",
+          "fingerprint": "f8b26198aff85bc72c3bb12a2e843ebec68c04d1"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:19.294Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "作者把免API key的豆包Web作为默认卖点；源码更有价值的增量是将识图结果分成中性证据与当前问题回答，绑定图片摘要并复用到后续对话。相对每轮手工截图另问视觉模型，减少重复调用；视觉推断仍由通道模型完成。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1335664137-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335664137:root",
+          "area": "code",
+          "fingerprint": "f8b26198aff85bc72c3bb12a2e843ebec68c04d1"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:19.294Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "Web桥接依赖已登录Chrome及页面结构，零API现金不等于零维护成本。auto档根据视觉模型自己给出的complexity决定是否深查，漏判可能跳过必要第二遍；JSON解析失败回退文本且默认simple，不能据此宣称可靠升级。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1335664137-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335664137:root",
+          "area": "code",
+          "fingerprint": "f8b26198aff85bc72c3bb12a2e843ebec68c04d1"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:19.294Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "待验证假设：用OCR密度与用户任务类型等确定信号补充complexity自报，可降低密集界面漏升级。对固定标注截图比较漏字率、额外调用和延迟；若召回改善不足以抵消双遍开销，则保持人工深查。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1335664137-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335664137:root",
+          "area": "code",
+          "fingerprint": "f8b26198aff85bc72c3bb12a2e843ebec68c04d1"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:19.294Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T03:16:19.294Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "f8b26198aff85bc72c3bb12a2e843ebec68c04d1",
+    "reviewed_at": "2026-10-21T03:16:19.294Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1335664137:root",
+        "area": "code",
+        "fingerprint": "f8b26198aff85bc72c3bb12a2e843ebec68c04d1"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 23,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty=9：视觉工具与证据记忆已有参照。 mechanism=23：缓存、结构化证据和压缩恢复形成较完整机制。 transferability=10：证据模块可复用，Web桥接平台受限。 simplification=8：减少重复识图但桥接维护抵消部分简化。",
+      "basis": "interpretation",
+      "score": 50,
+      "evidence_ids": [
+        "2026-10-21-02-github-1335664137-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 15,
+        "reach": 10,
+        "economics": 4
+      },
+      "rationale": "workflow=18：文本主模型加视觉工具串联截图流程。 delivery=15：结构化证据可交付但模型自判复杂度。 reach=10：多渠道扩展人群但受登录/CDP条件限制。 economics=4：缓存有节省机制，无实测费用净收益。",
+      "basis": "interpretation",
+      "score": 47,
+      "evidence_ids": [
+        "2026-10-21-02-github-1335664137-root-source"
+      ]
+    }
+  }
+}

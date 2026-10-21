@@ -1,0 +1,299 @@
+{
+  "id": "github:1374149009:root",
+  "repository_id": 1374149009,
+  "component_id": "root",
+  "repository": "598829314/oil-dsh-title",
+  "path": "",
+  "aliases": [],
+  "name": "oil-dsh-title",
+  "entry_type": "plugin",
+  "technical_category": "sessions-messages",
+  "business_category": "personal-productivity",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "d63869ed9cc001011d3f0d499096e121dcac3884d610050dd3b64adb8f6d750b",
+    "code": "f384454dfbed3ac3f263e7f09e1bc0c210c1abc4",
+    "maintenance": "e205e56a0ccc0650e40dd86674d8e96b4cfc7e627a9d10dac24c6f0140147a88"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-02-github-1374149009-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T03:16:24.671Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-02-github-1374149009-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/598829314/oil-dsh-title/blob/f384454dfbed3ac3f263e7f09e1bc0c210c1abc4/README.md",
+      "revision": "f384454dfbed3ac3f263e7f09e1bc0c210c1abc4",
+      "captured_at": "2026-10-21T03:16:24.671Z",
+      "summary": "根据近期用户消息生成和维护带类别标识的会话标题。",
+      "artifact": "data/runs/2026-10-21-02/snapshots/598829314--oil-dsh-title/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-02-github-1374149009-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/598829314/oil-dsh-title/blob/f384454dfbed3ac3f263e7f09e1bc0c210c1abc4/lib/index.js",
+      "revision": "f384454dfbed3ac3f263e7f09e1bc0c210c1abc4",
+      "captured_at": "2026-10-21T03:16:24.671Z",
+      "summary": "核查 lib/index.js、lib/core.js；lib/index.js读取最近五条真实user消息及最多16个冲突标题，以会话模型调用标题生成；core.js清洗控制字符、拼接流文本并校验emoji、分隔符及长度。",
+      "artifact": "data/runs/2026-10-21-02/snapshots/598829314--oil-dsh-title/REVIEWED-SOURCE.json",
+      "limitations": [
+        "核查固定提交内列明入口、核心实现及相关配置/作者材料的源码子集；未执行插件、其测试、安装、付费请求或真实宿主验收，未核实独立用户采用。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "适合并行会话较多、需要在侧栏快速识别任务主线的用户。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1374149009-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1374149009:root",
+          "area": "code",
+          "fingerprint": "f384454dfbed3ac3f263e7f09e1bc0c210c1abc4"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:24.671Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "lib/index.js读取最近五条真实user消息及最多16个冲突标题，以会话模型调用标题生成；core.js清洗控制字符、拼接流文本并校验emoji、分隔符及长度。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1374149009-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1374149009:root",
+          "area": "code",
+          "fingerprint": "f384454dfbed3ac3f263e7f09e1bc0c210c1abc4"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:24.671Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "核查固定提交内列明入口、核心实现及相关配置/作者材料的源码子集；未执行插件、其测试、安装、付费请求或真实宿主验收，未核实独立用户采用。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1374149009-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1374149009:root",
+          "area": "code",
+          "fingerprint": "f384454dfbed3ac3f263e7f09e1bc0c210c1abc4"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:24.671Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "发布与依赖以本项固定package.json、README和本轮META为界；npm或仓库统计不是采用证据。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1374149009-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1374149009:root",
+          "area": "code",
+          "fingerprint": "f384454dfbed3ac3f263e7f09e1bc0c210c1abc4"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:24.671Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "自动标题有额外模型调用，maxTokens256、超时60秒但输入仍计费；人工需纠正误命名，迁移依赖宿主sessionTitle接口。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1374149009-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1374149009:root",
+          "area": "code",
+          "fingerprint": "f384454dfbed3ac3f263e7f09e1bc0c210c1abc4"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:24.671Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "会话多时可在非敏感任务先检查标题质量。注意标题是模型归纳，敏感信息不要只依赖提示中的禁止规则。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1374149009-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1374149009:root",
+          "area": "code",
+          "fingerprint": "f384454dfbed3ac3f263e7f09e1bc0c210c1abc4"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:24.671Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "改善侧栏查找具有明确场景，但无用户检索速度或误标题率数据。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1374149009-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1374149009:root",
+          "area": "code",
+          "fingerprint": "f384454dfbed3ac3f263e7f09e1bc0c210c1abc4"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:24.671Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "core纯函数隔离清洗、JSON提取和流组装；工具调用块直接拒绝，超时AbortController与inFlight防重复。可复用标题格式校验，但脱敏与语义检查需要另外实现。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1374149009-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1374149009:root",
+          "area": "code",
+          "fingerprint": "f384454dfbed3ac3f263e7f09e1bc0c210c1abc4"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:24.671Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "作者提供会话标题编辑器；增量是将持续任务主线提示、keep/rename结构及本地格式校验接入sessionTitle，优于只截取首句。分类emoji和对象｜目标增加可扫读性，语义准确性仍来自所选模型。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1374149009-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1374149009:root",
+          "area": "code",
+          "fingerprint": "f384454dfbed3ac3f263e7f09e1bc0c210c1abc4"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:24.671Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "本地格式校验不验证标题忠实于主线，最近五条每条600字符及16个冲突标题可能遗漏长期任务和重复；提示禁止邮箱电话等，而validateTitle只显式检查部分字符串，不能当完整脱敏器。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1374149009-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1374149009:root",
+          "area": "code",
+          "fingerprint": "f384454dfbed3ac3f263e7f09e1bc0c210c1abc4"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:24.671Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "待验证假设：用用户确认的稳定任务锚点与近期消息共同输入，可减少收尾动作劫持标题。对长任务插入提交/截图等短指令，比较标题漂移和查找时间；若锚点阻止真实任务切换则需撤回。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1374149009-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1374149009:root",
+          "area": "code",
+          "fingerprint": "f384454dfbed3ac3f263e7f09e1bc0c210c1abc4"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:24.671Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T03:16:24.671Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "f384454dfbed3ac3f263e7f09e1bc0c210c1abc4",
+    "reviewed_at": "2026-10-21T03:16:24.671Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1374149009:root",
+        "area": "code",
+        "fingerprint": "f384454dfbed3ac3f263e7f09e1bc0c210c1abc4"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 15,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty=9：标题生成属于常见模型应用。 mechanism=15：清洗、流拼装及格式拒绝有实现。 transferability=10：纯core易迁移，触发接口依宿主。 simplification=8：减少手工命名但误标题需纠正。",
+      "basis": "interpretation",
+      "score": 42,
+      "evidence_ids": [
+        "2026-10-21-02-github-1374149009-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 8,
+        "reach": 10,
+        "economics": 4
+      },
+      "rationale": "workflow=18：近期任务到侧栏标题的步骤明确。 delivery=8：标题可交付但主线忠实度未验证。 reach=10：适合多会话用户，未证普遍采用。 economics=4：额外模型调用，无查找工时对照。",
+      "basis": "interpretation",
+      "score": 40,
+      "evidence_ids": [
+        "2026-10-21-02-github-1374149009-root-source"
+      ]
+    }
+  }
+}

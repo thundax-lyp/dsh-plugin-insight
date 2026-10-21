@@ -1,0 +1,8 @@
+{
+  "revision": "4bc4110efbfb4888286b81aaf53191705dade9dd",
+  "items": {
+    "模型工具": "prompt_preset_list/use/off/save/delete及角色卡导入",
+    "Host 路由": "/prompt-manager/api预设管理",
+    "事件监听": "本地JSON热载与世界书触发"
+  }
+}

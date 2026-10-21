@@ -1,0 +1,18 @@
+{
+  "id": "github:1335664137:root",
+  "repository": "54xkeee/dsh-vision",
+  "path": "",
+  "revision": "f8b26198aff85bc72c3bb12a2e843ebec68c04d1",
+  "fingerprints": {
+    "directory": "d3ac9be9ef32e74abf7197b6fb85491173d3d3eb21adb9fa676700237dbf7c0a",
+    "code": "f8b26198aff85bc72c3bb12a2e843ebec68c04d1",
+    "maintenance": "315e8052470be7de71f742b6fd6fa5793d4dedc2a3effd28d63e8eb464b749a5"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+    "https://github.com/0xsline/awesome-deepseek-harness"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T03:00:27Z",
+  "analysis_sha256": "f9db10d9197253f9c7967c29d3d6390689af51f4746f2de6237ae235e604077f"
+}

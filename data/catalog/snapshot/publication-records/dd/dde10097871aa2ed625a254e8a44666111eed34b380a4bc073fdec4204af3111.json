@@ -1,0 +1,17 @@
+{
+  "id": "github:1422240642:root",
+  "repository": "7bder/dsh-plugin-orchd",
+  "path": "",
+  "revision": "ef331b30c89854e29dc9d4954bd86e457a24b850",
+  "fingerprints": {
+    "directory": "37faaee186471c7ea85ef298f659cb2e29f7cc5e9b19fd518080f5a18361c549",
+    "code": "ef331b30c89854e29dc9d4954bd86e457a24b850",
+    "maintenance": "9e8815ee05fb5a3c87dd4c83af9841ff60d2efd7985f0c17045f0357ebfcb540"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T03:00:27Z",
+  "analysis_sha256": "a6eb2079c3b7a0ef4f05de3d9a0825159e9573ee066835cab1086b7e391bdb15"
+}

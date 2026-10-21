@@ -1,0 +1,9 @@
+{
+  "revision": "21c6e9d5f8f48cd03363305d9fa3c641f8d0f808",
+  "items": {
+    "Agent/Preset": "research科研模式",
+    "Skill": "research-studio、literature-refs、paper-writing、journal-profile、origin-plot",
+    "Host 路由": "/api/research/call精确Fetch路由",
+    "界面": "科研库管理面板"
+  }
+}

@@ -1,0 +1,299 @@
+{
+  "id": "github:1422121370:root",
+  "repository_id": 1422121370,
+  "component_id": "root",
+  "repository": "7gzgn/dsh-gui-guard",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-gui-guard",
+  "entry_type": "plugin",
+  "technical_category": "tools-integration",
+  "business_category": "personal-productivity",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "ea1d992f9af4518fcb4fd27364e8a68bd4fd6c153832a760672c42aa27b91d31",
+    "code": "dd118dbc4a1839ebf2a5730eb0682a5fa1a93ffd",
+    "maintenance": "1eb606dc7d1bd01181a6dd61dcb5b47ffbe384bfff085badee6cbf6208633740"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-02-github-1422121370-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T03:20:05.316Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-02-github-1422121370-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/7gzgn/dsh-gui-guard/blob/dd118dbc4a1839ebf2a5730eb0682a5fa1a93ffd/README.md",
+      "revision": "dd118dbc4a1839ebf2a5730eb0682a5fa1a93ffd",
+      "captured_at": "2026-10-21T03:20:05.316Z",
+      "summary": "在Windows窗口点击或输入前检查并准备前台状态，换算坐标口径并返回动作诊断。",
+      "artifact": "data/runs/2026-10-21-02/snapshots/7gzgn--dsh-gui-guard/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-02-github-1422121370-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/7gzgn/dsh-gui-guard/blob/dd118dbc4a1839ebf2a5730eb0682a5fa1a93ffd/lib/index.js",
+      "revision": "dd118dbc4a1839ebf2a5730eb0682a5fa1a93ffd",
+      "captured_at": "2026-10-21T03:20:05.316Z",
+      "summary": "核查 lib/index.js、lib/win32.ps1；lib/win32.ps1按窗口/PID定位，恢复窗口并尝试前置，取GetDpiForWindow缩放物理坐标再SetCursorPos点击；type使用SendKeys，结果回显前台与坐标字段。",
+      "artifact": "data/runs/2026-10-21-02/snapshots/7gzgn--dsh-gui-guard/REVIEWED-SOURCE.json",
+      "limitations": [
+        "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "已从截图/OCR取得坐标的Agent需要在Windows应用准确执行点击或输入；合格结果是目标控件产生预期状态变化，而不是鼠标移动到请求坐标。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1422121370-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422121370:root",
+          "area": "code",
+          "fingerprint": "dd118dbc4a1839ebf2a5730eb0682a5fa1a93ffd"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:20:05.316Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "lib/win32.ps1按窗口/PID定位，恢复窗口并尝试前置，取GetDpiForWindow缩放物理坐标再SetCursorPos点击；type使用SendKeys，结果回显前台与坐标字段。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1422121370-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422121370:root",
+          "area": "code",
+          "fingerprint": "dd118dbc4a1839ebf2a5730eb0682a5fa1a93ffd"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:20:05.316Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1422121370-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422121370:root",
+          "area": "code",
+          "fingerprint": "dd118dbc4a1839ebf2a5730eb0682a5fa1a93ffd"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:20:05.316Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "纯Node/PowerShell包，无额外npm运行依赖声明，Windows user32后端；API降级只说明避免缺符号，不证明所有宿主加载成功。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1422121370-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422121370:root",
+          "area": "code",
+          "fingerprint": "dd118dbc4a1839ebf2a5730eb0682a5fa1a93ffd"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:20:05.316Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "无模型/网络服务成本；每次spawn与多段固定Sleep增加延迟，首次需理解坐标口径与窗口定位，误点后恢复费用未测。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1422121370-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422121370:root",
+          "area": "code",
+          "fingerprint": "dd118dbc4a1839ebf2a5730eb0682a5fa1a93ffd"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:20:05.316Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "适合已有可靠目标坐标的Windows用户在无破坏性窗口先检查。必须查看isForeground与cursorMatches，并回读应用结果；混合DPI、多屏和失焦场景验证前不要依赖ok作成功判据。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1422121370-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422121370:root",
+          "area": "code",
+          "fingerprint": "dd118dbc4a1839ebf2a5730eb0682a5fa1a93ffd"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:20:05.316Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "可使坐标/焦点错误更可诊断，是否减少端到端误操作未验证，不能保证自绘控件响应。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1422121370-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422121370:root",
+          "area": "code",
+          "fingerprint": "dd118dbc4a1839ebf2a5730eb0682a5fa1a93ffd"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:20:05.316Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "ASCII脚本与base64 JSON边界减少编码转义问题，动作诊断输出值得借鉴。维护重点是DPI虚拟化和输入时序；SendKeys还具有特殊字符语义，文本输入应验证最终内容而非仅sentLength。 源码依据：[lib/index.js](https://github.com/7gzgn/dsh-gui-guard/blob/dd118dbc4a1839ebf2a5730eb0682a5fa1a93ffd/lib/index.js)、[lib/win32.ps1](https://github.com/7gzgn/dsh-gui-guard/blob/dd118dbc4a1839ebf2a5730eb0682a5fa1a93ffd/lib/win32.ps1)。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1422121370-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422121370:root",
+          "area": "code",
+          "fingerprint": "dd118dbc4a1839ebf2a5730eb0682a5fa1a93ffd"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:20:05.316Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "相对直接mouse_event与SendKeys，增量是把最小化、激活、坐标口径和诊断统一封装，给调用方保留requested/applied证据。它是输入可靠性适配层，不提供OCR或业务验收。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1422121370-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422121370:root",
+          "area": "code",
+          "fingerprint": "dd118dbc4a1839ebf2a5730eb0682a5fa1a93ffd"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:20:05.316Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "“可靠性层”会否把失败前提继续执行为ok？Ensure-Foreground返回isForeground，但click/type不以false阻断；click的ok=true也不取决于cursorMatches，更没有控件效果回读。全局坐标直接除以目标窗口scale在混合DPI多屏布局是否正确亦需验证。因此诊断比盲点有增量，但不是原子成功保证。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1422121370-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422121370:root",
+          "area": "code",
+          "fingerprint": "dd118dbc4a1839ebf2a5730eb0682a5fa1a93ffd"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:20:05.316Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "由前台诊断已存在而未作门禁推导，可把动作拆为prepare令牌与执行后条件：前台不成立拒绝发送，坐标绑定截图时刻/窗口矩形，动作后由调用者检查控件状态。未验证假设是降低误点而非只增日志。用焦点抢占与混合DPI双屏对照，若错误动作率不降则否定。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1422121370-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422121370:root",
+          "area": "code",
+          "fingerprint": "dd118dbc4a1839ebf2a5730eb0682a5fa1a93ffd"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:20:05.316Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T03:20:05.316Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "dd118dbc4a1839ebf2a5730eb0682a5fa1a93ffd",
+    "reviewed_at": "2026-10-21T03:20:05.316Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1422121370:root",
+        "area": "code",
+        "fingerprint": "dd118dbc4a1839ebf2a5730eb0682a5fa1a93ffd"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty系统API常规组合小档；mechanism诊断封装小档未硬门禁；transferability窗口操作层半档；simplification前置检查组合半档。",
+      "basis": "interpretation",
+      "score": 35,
+      "evidence_ids": [
+        "2026-10-21-02-github-1422121370-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 8,
+        "reach": 5,
+        "economics": 4
+      },
+      "rationale": "workflow局部可靠性操作小档；delivery诊断回执小档；reach已有坐标用户小档；economics可能减少重复操作但未测小档。",
+      "basis": "interpretation",
+      "score": 26,
+      "evidence_ids": [
+        "2026-10-21-02-github-1422121370-root-source"
+      ]
+    }
+  }
+}

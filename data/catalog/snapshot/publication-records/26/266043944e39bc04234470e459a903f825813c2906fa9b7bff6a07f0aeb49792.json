@@ -1,0 +1,17 @@
+{
+  "id": "github:1391040578:root",
+  "repository": "643048695/dsh-compaction-route",
+  "path": "",
+  "revision": "6039b260d96652ce4af606f850cd1a179cd9d4f7",
+  "fingerprints": {
+    "directory": "2f4fa1878d3db6411797082ec101d016200bc52d3df20c48e16f0be3abb06908",
+    "code": "6039b260d96652ce4af606f850cd1a179cd9d4f7",
+    "maintenance": "d58ce7ccc2000f6bb976aacdfb185b6756e85f6fc039ba67218da9ba276fb4bb"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T03:00:27Z",
+  "analysis_sha256": "20b479bc643bbf85a29395e3c93525238edd5407d80b63b9d92ce8152f7d902a"
+}

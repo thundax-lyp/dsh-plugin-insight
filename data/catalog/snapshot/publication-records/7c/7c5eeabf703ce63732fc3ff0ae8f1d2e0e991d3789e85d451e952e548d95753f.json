@@ -1,0 +1,17 @@
+{
+  "id": "github:1335045545:root",
+  "repository": "54xkeee/dsh-youreyes",
+  "path": "",
+  "revision": "86f02fa124cd158438e4d9290625d2f8dd610967",
+  "fingerprints": {
+    "directory": "d83ee762178fb611550ff1e23137cc4eecd1de5ea872eefe91707171dde84eaf",
+    "code": "86f02fa124cd158438e4d9290625d2f8dd610967",
+    "maintenance": "a1ae476f5e6e47dbd8fe86fc306993ea370c88c387f556461abf576db7317e26"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T03:00:27Z",
+  "analysis_sha256": "8da0d87f930512cc14726b82e503ca225aa7bcb478ec495748c03b998f2c1762"
+}

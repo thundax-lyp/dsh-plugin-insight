@@ -1,0 +1,299 @@
+{
+  "id": "github:1422328385:root",
+  "repository_id": 1422328385,
+  "component_id": "root",
+  "repository": "456erddgr/dsh-boo550wt-animation",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-boo550wt-animation",
+  "entry_type": "plugin",
+  "technical_category": "interface-input",
+  "business_category": "personal-productivity",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "6c5f38d7eb4cf3bdc130b0a38b3a1683c71f8324739cb6ef44d1a12faadebb47",
+    "code": "aeac4c96f33b7947e19b44c36c421185ec2cda1a",
+    "maintenance": "f187ede4e704aba7aa3a90e134a9ec68e8ef9b91db748731963768061d69b9c8"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-02-github-1422328385-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T03:16:58.591Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-02-github-1422328385-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/README.md",
+      "revision": "aeac4c96f33b7947e19b44c36c421185ec2cda1a",
+      "captured_at": "2026-10-21T03:16:58.591Z",
+      "summary": "在 DSH 启动时覆盖播放视频，提供跳过、淡出和同源媒体读取。",
+      "artifact": "data/runs/2026-10-21-02/snapshots/456erddgr--dsh-boo550wt-animation/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-02-github-1422328385-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/lib/index.js",
+      "revision": "aeac4c96f33b7947e19b44c36c421185ec2cda1a",
+      "captured_at": "2026-10-21T03:16:58.591Z",
+      "summary": "核查 lib/index.js、lib/inject.js、lib/media.js、tools/browser-check.mjs、package.json；lib/index.js通过webserver/index-inject发布样式/脚本，lib/inject.js在body挂视频遮罩并处理Esc/播放降级，lib/media.js通过GET/HEAD与Range服务固定视频。",
+      "artifact": "data/runs/2026-10-21-02/snapshots/456erddgr--dsh-boo550wt-animation/REVIEWED-SOURCE.json",
+      "limitations": [
+        "抽读host/inject/media与作者自检源码；未解码素材、未复现截图、未运行浏览器或真实DSH启动。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "希望定制DSH启动视觉的人在应用加载时播放本地视频；交付启动体验，不改变模型任务或业务成果。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1422328385-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422328385:root",
+          "area": "code",
+          "fingerprint": "aeac4c96f33b7947e19b44c36c421185ec2cda1a"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:58.591Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "lib/index.js通过webserver/index-inject发布样式/脚本，lib/inject.js在body挂视频遮罩并处理Esc/播放降级，lib/media.js通过GET/HEAD与Range服务固定视频。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1422328385-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422328385:root",
+          "area": "code",
+          "fingerprint": "aeac4c96f33b7947e19b44c36c421185ec2cda1a"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:58.591Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "抽读host/inject/media与作者自检源码；未解码素材、未复现截图、未运行浏览器或真实DSH启动。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1422328385-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422328385:root",
+          "area": "code",
+          "fingerprint": "aeac4c96f33b7947e19b44c36c421185ec2cda1a"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:58.591Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "host-only bundle，无client构建；依赖webServer注入行与媒体路由，用户视频由固定配置路径读取。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1422328385-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422328385:root",
+          "area": "code",
+          "fingerprint": "aeac4c96f33b7947e19b44c36c421185ec2cda1a"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:58.591Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次安装重启和选择合法可分发素材；启动额外等待与素材体积是持续成本，视频尾部moov会影响首帧等待。没有现金收益或任务效率测量。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1422328385-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422328385:root",
+          "area": "code",
+          "fingerprint": "aeac4c96f33b7947e19b44c36c421185ec2cda1a"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:58.591Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "只想个性化启动画面的人可在可恢复profile试用；先验证Esc和坏视频退出，尤其检查超长或无效时长素材，别把maxSeconds当已验证硬限。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1422328385-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422328385:root",
+          "area": "code",
+          "fingerprint": "aeac4c96f33b7947e19b44c36c421185ec2cda1a"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:58.591Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "价值在个人化视觉体验，不能改善模型能力或证明启动提速；遮罩延迟也可能增加等待感。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1422328385-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422328385:root",
+          "area": "code",
+          "fingerprint": "aeac4c96f33b7947e19b44c36c421185ec2cda1a"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:58.591Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "将注入DOM与Range服务分离、真实函数toString生成脚本、避免碰React root有复用价值；多个计时器应分清绝对deadline和媒体估计，资源清理须在异常路径验证。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1422328385-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422328385:root",
+          "area": "code",
+          "fingerprint": "aeac4c96f33b7947e19b44c36c421185ec2cda1a"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:58.591Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "相对客户端加载后再显示动画，本插件使用更早的webserver注入行，尝试在宿主启动就绪之前覆盖首帧，并把视频Range服务与DOM清理集中为host-only组件。时机与接线是DSH适配增量，媒体解码由浏览器完成，不是新视频技术。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1422328385-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422328385:root",
+          "area": "code",
+          "fingerprint": "aeac4c96f33b7947e19b44c36c421185ec2cda1a"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:58.591Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "maxSeconds是否真是永远不会锁窗的硬上限？onMetadata先清除初始guard，再用video.duration+graceMs重设；时长超过maxSeconds会延长等待，非有限或无效时长直接return且没有新guard，违背README对硬上限的强表述。Esc仍提供人工退出，但不能拿它替代自动上限；首帧也取决于宿主消费注入行的实际时序。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1422328385-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422328385:root",
+          "area": "code",
+          "fingerprint": "aeac4c96f33b7947e19b44c36c421185ec2cda1a"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:58.591Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "待验证假设：保留独立且不重置的绝对启动deadline，再用较短的媒体时长计时辅助退出，可使失败视频不延迟交接。由onMetadata覆盖guard的缺口推导，尚未实现。用无元数据、无效时长、超长视频与正常视频四组对照检查遮罩关闭时间、Esc和监听清理；要求任何状态不超过固定deadline，代价是长片被截断。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1422328385-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422328385:root",
+          "area": "code",
+          "fingerprint": "aeac4c96f33b7947e19b44c36c421185ec2cda1a"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:58.591Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T03:16:58.591Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "aeac4c96f33b7947e19b44c36c421185ec2cda1a",
+    "reviewed_at": "2026-10-21T03:16:58.591Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1422328385:root",
+        "area": "code",
+        "fingerprint": "aeac4c96f33b7947e19b44c36c421185ec2cda1a"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 5,
+        "simplification": 4
+      },
+      "rationale": "novelty 小幅：DSH启动注入适配；mechanism 小幅：标准视频覆盖与Range，硬上限有缺口；transferability 小幅：可迁移启动视觉但需宿主时序；simplification 小幅：host-only无需client构建。",
+      "basis": "interpretation",
+      "score": 26,
+      "evidence_ids": [
+        "2026-10-21-02-github-1422328385-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 0,
+        "delivery": 8,
+        "reach": 5,
+        "economics": 0
+      },
+      "rationale": "workflow 未识别：不改变任务组织；delivery 小幅：新增启动视觉；reach 小幅：配置视频方便个人定制；economics 未识别：没有成本结构改善。",
+      "basis": "interpretation",
+      "score": 13,
+      "evidence_ids": [
+        "2026-10-21-02-github-1422328385-root-source"
+      ]
+    }
+  }
+}

@@ -1,0 +1,299 @@
+{
+  "id": "github:1425159954:root",
+  "repository_id": 1425159954,
+  "component_id": "root",
+  "repository": "66rapper/dsh-model-auto-enricher",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-model-auto-enricher",
+  "entry_type": "plugin",
+  "technical_category": "model-provider",
+  "business_category": "infrastructure",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "b8058357920d25467c707ada48efbff9f62639095dff681979568aa909444373",
+    "code": "4c18dc2a231f336a31d49dccfff9606edc6456c9",
+    "maintenance": "2dda41048ad6cc1b7d642c250a8cc65fbf9b8e7f3beb4328f0b698ba73b12c8e"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-02-github-1425159954-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T03:16:29.033Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-02-github-1425159954-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/66rapper/dsh-model-auto-enricher/blob/4c18dc2a231f336a31d49dccfff9606edc6456c9/README.md",
+      "revision": "4c18dc2a231f336a31d49dccfff9606edc6456c9",
+      "captured_at": "2026-10-21T03:16:29.033Z",
+      "summary": "按模型名称规则补写Profile中的上下文、输出、模态与思考档位配置。",
+      "artifact": "data/runs/2026-10-21-02/snapshots/66rapper--dsh-model-auto-enricher/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-02-github-1425159954-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/66rapper/dsh-model-auto-enricher/blob/4c18dc2a231f336a31d49dccfff9606edc6456c9/lib/core.js",
+      "revision": "4c18dc2a231f336a31d49dccfff9606edc6456c9",
+      "captured_at": "2026-10-21T03:16:29.033Z",
+      "summary": "核查 lib/core.js、lib/index.js；lib/core.js解析cordis.patch.yml，按id/name正则选择系列规则，未知名落入1M/64k/image与推理兜底；只升不降合并字段，写前备份并重序列化YAML；lib/index.js监听设置保存后自动执行。",
+      "artifact": "data/runs/2026-10-21-02/snapshots/66rapper--dsh-model-auto-enricher/REVIEWED-SOURCE.json",
+      "limitations": [
+        "核查固定提交内列明入口、核心实现及相关配置/作者材料的源码子集；未执行插件、其测试、安装、付费请求或真实宿主验收，未核实独立用户采用。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "面向批量添加模型渠道的DSH用户，目的是减少逐模型编辑；正确交付应是与真实端点能力匹配的配置。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1425159954-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1425159954:root",
+          "area": "code",
+          "fingerprint": "4c18dc2a231f336a31d49dccfff9606edc6456c9"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:29.033Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "lib/core.js解析cordis.patch.yml，按id/name正则选择系列规则，未知名落入1M/64k/image与推理兜底；只升不降合并字段，写前备份并重序列化YAML；lib/index.js监听设置保存后自动执行。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1425159954-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1425159954:root",
+          "area": "code",
+          "fingerprint": "4c18dc2a231f336a31d49dccfff9606edc6456c9"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:29.033Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "核查固定提交内列明入口、核心实现及相关配置/作者材料的源码子集；未执行插件、其测试、安装、付费请求或真实宿主验收，未核实独立用户采用。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1425159954-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1425159954:root",
+          "area": "code",
+          "fingerprint": "4c18dc2a231f336a31d49dccfff9606edc6456c9"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:29.033Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "发布与依赖以本项固定package.json、README和本轮META为界；npm或仓库统计不是采用证据。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1425159954-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1425159954:root",
+          "area": "code",
+          "fingerprint": "4c18dc2a231f336a31d49dccfff9606edc6456c9"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:29.033Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次备份与核实每个实际端点规格；持续成本包括无效大请求、错误多模态调用和文件重写复核。现金随供应商失败/长输入计费，人工恢复成本可能超过省下的点选时间。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1425159954-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1425159954:root",
+          "area": "code",
+          "fingerprint": "4c18dc2a231f336a31d49dccfff9606edc6456c9"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:29.033Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "不宜直接让自动补齐改生产Profile。先用配置副本预览，并逐项按供应商实际规格核对；未知模型保留未知，备份和幂等都不能替代能力验证。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1425159954-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1425159954:root",
+          "area": "code",
+          "fingerprint": "4c18dc2a231f336a31d49dccfff9606edc6456c9"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:29.033Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "能减少机械编辑，但正确配置率未经验证；对未知或受限中转端点可能造成负价值。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1425159954-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1425159954:root",
+          "area": "code",
+          "fingerprint": "4c18dc2a231f336a31d49dccfff9606edc6456c9"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:29.033Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "inspect/dryRun与planModel分离、写前copy和字段合并便于审阅；规则集中利于维护。自动watch写回与猜测能力耦合是关键短板，可借鉴规划层而应替换推断来源。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1425159954-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1425159954:root",
+          "area": "code",
+          "fingerprint": "4c18dc2a231f336a31d49dccfff9606edc6456c9"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:29.033Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "作者称自动补齐最佳模型状态；源码可确认的是规则驱动批量配置、预览、备份与幂等检测，减少逐项输入。相对手工编辑，自动化明确；但这不是实际能力发现，规则高估能力会把配置便利变成不可用请求，不能把宣告能力当真实提升。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1425159954-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1425159954:root",
+          "area": "code",
+          "fingerprint": "4c18dc2a231f336a31d49dccfff9606edc6456c9"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:29.033Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "核心假设是名称正则能可靠推出实际渠道能力，源码没有端点探测，未知模型反而默认百万上下文、图片及max思考档位。只升不降保留错误高值，可能阻止纠错；备份只能恢复文件，不能证明语义安全。YAML主体重序列化也非全文件注释保真。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1425159954-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1425159954:root",
+          "area": "code",
+          "fingerprint": "4c18dc2a231f336a31d49dccfff9606edc6456c9"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:29.033Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "待验证假设：以保守未知值、端点能力来源和用户确认差异取代旗舰兜底，可减少配置后的请求失败。收集已知小窗口、纯文本和未知模型的脱敏配置，比较规则版与保守确认版的错误声明、编辑时间及回滚率；若无改善则否定。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1425159954-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1425159954:root",
+          "area": "code",
+          "fingerprint": "4c18dc2a231f336a31d49dccfff9606edc6456c9"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:29.033Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T03:16:29.033Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "4c18dc2a231f336a31d49dccfff9606edc6456c9",
+    "reviewed_at": "2026-10-21T03:16:29.033Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1425159954:root",
+        "area": "code",
+        "fingerprint": "4c18dc2a231f336a31d49dccfff9606edc6456c9"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 0,
+        "mechanism": 8,
+        "transferability": 10,
+        "simplification": 4
+      },
+      "rationale": "novelty=0：名称正则补配置缺乏新颖能力发现。 mechanism=8：规则计划和备份有实现，核心能力推断薄弱。 transferability=10：规划与预览可复用，规则来源需重做。 simplification=4：减少点选但错误高值增加恢复负担。",
+      "basis": "interpretation",
+      "score": 22,
+      "evidence_ids": [
+        "2026-10-21-02-github-1425159954-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 8,
+        "reach": 10,
+        "economics": 0
+      },
+      "rationale": "workflow=9：批量改模型设置是局部效率流程。 delivery=8：输出是配置字段，未证与端点能力相符。 reach=10：多渠道用户可用但未知模型兜底风险大。 economics=0：无净收益证据且错误请求可能造成负价值。",
+      "basis": "interpretation",
+      "score": 27,
+      "evidence_ids": [
+        "2026-10-21-02-github-1425159954-root-source"
+      ]
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "github:1334205011:root",
+  "repository": "dsh-wsl-workspace-maintainers/dsh-wsl-workspace",
+  "path": "",
+  "revision": "00106d9575d8d087daec0596dd51f283f78dcdbb",
+  "fingerprints": {
+    "directory": "724bafc68b9a91bb6d3e8a5a0155e6580a0e9c00aa0fa0abc7e4af68a4524bcf",
+    "code": "00106d9575d8d087daec0596dd51f283f78dcdbb",
+    "maintenance": "e0b121c2b417bbe63c89b26c3d36f49e0d576fa294d1dc8d16be4d8cf39a1511"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+    "https://github.com/0xsline/awesome-deepseek-harness"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T03:00:27Z",
+  "analysis_sha256": "621e5415268ec3e4e84f5b02e04cf4e42d7f538f82a61f8d5c2e3e07c61bfc06"
+}

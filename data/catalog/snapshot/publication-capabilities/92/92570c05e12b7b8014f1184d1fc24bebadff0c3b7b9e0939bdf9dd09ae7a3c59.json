@@ -1,0 +1,7 @@
+{
+  "revision": "aeac4c96f33b7947e19b44c36c421185ec2cda1a",
+  "items": {
+    "Host 路由": "固定视频与状态读取，Range/HEAD处理。",
+    "界面": "启动覆盖、Esc跳过、播放降级和淡出。"
+  }
+}

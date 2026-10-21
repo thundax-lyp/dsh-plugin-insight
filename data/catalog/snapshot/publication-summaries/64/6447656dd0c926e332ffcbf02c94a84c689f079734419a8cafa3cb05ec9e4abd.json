@@ -1,0 +1,5 @@
+{
+  "text": "根据DSH会话的轮次与步骤历史估计当前轮剩余时间，并在输入框下显示进度。",
+  "revision": "b5cdc8ec7f51a3c882598fc7bc073f7c629f4a11",
+  "source_url": "https://github.com/778672151/dsh-session-turn-eta/blob/b5cdc8ec7f51a3c882598fc7bc073f7c629f4a11/README.md"
+}
