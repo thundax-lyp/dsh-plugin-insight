@@ -81,6 +81,9 @@ PLUGINS、PUBLICATION、PLUGIN-PATHS、META 及页面从快照重建，生成前
 - 未评估项 reason 说明缺口，score、criteria、revision、reviewed_at、evaluator 为 null，证据与依赖为空，status=current；null 不是0。已评估项必须有完整分项、数值总分和同版本源码证据。评分方法与结论含义见[研究规范](../../dsh-plugin-insight/references/RESEARCH-STANDARD.md#采用推荐评分adoption-v1)。
 - status=current／needs_review 表示结论有效性，不增加第六种推荐结论。当前推荐须匹配自身 code 指纹、固定分析版本与全部依赖；依赖变化保留原分和理由并置 needs_review，不自动升降级。脚本变化标记另由 META 控制暂停入榜。
 - install 的引用证据必须包含同版本、带 artifact 和 environment 的 host_acceptance；高分不能绕过验收。真实安装、核心功能与禁用／卸载内容仍须逐项审阅。
+- 新研究 stage 必须显式提交已评估的本轮结论、四项评分及理由，不接受 unassessed；总分由脚本求和，不能以创新分、Star、下载量或关键词推断。旧观察允许缺字段以供恢复；正式迁移逐项补 unassessed，只有已实际评估的项补分。
+- 推荐对象从全部当前有效 publication.records 关联的 catalog 组件中派生，不维护独立名单；仅 current、版本一致、无待复核结论且 decision 为 trial／install 的非空评分项参与。排序与上限见输出标准。历史 publication.recommendations 仅兼容读取，当前生成器忽略，后续正式合并删除该字段；DISPLAY 不再提交名单。
+- 推荐属于分析摘要；变更需同步发布记录的 analysis_sha256。仅复核推荐可使用 `snapshot assess-recommendations`，绑定正式基线及各项固定版本，持锁验证并原子合并，不改变原稿、检查时间或伪造新研究。保留档案但缺少有效发布记录的组件，只能依据已有固定版本源码证据补观察／不推荐结论及评分，并强制needs_review；不恢复发布、不将历史源码证据改标为当前版本。输入、预览及恢复见[会话操作](../../dsh-plugin-init/references/SESSION-OPERATIONS.md#组件推荐迁移与复核)。
 
 ## 观察批次与候选合并
 
@@ -136,7 +139,7 @@ PLUGINS、PUBLICATION、PLUGIN-PATHS、META 及页面从快照重建，生成前
 
 ## 发布输入、META 与统计字段
 
-- 发布输入只组织已有成果，不成为研究事实或结论的替代真相源；推荐对象必须为已完成项。
+- 发布输入只组织已有成果，不成为研究事实或结论的替代真相源；推荐对象由已完成项的组件推荐结论派生。
   `metadata` 以稳定插件 ID 关联快照，仓库数字 ID 和名称必须匹配；`history` 兼容旧输入。
   现有可选 `catalog` 与 `history` 字段仅兼容旧输入，不作为新流程的历史依赖；首次 added 仅表示本工程入档，不代表 npm 发布。
 - 发布输入 `summaries` 按插件 ID 绑定作者功能材料的归纳文本、来源 URL 和固定版本；它不是独立验证结论，也不冒充逐字引文。

@@ -23,6 +23,12 @@
 
 `npm run snapshot -- migrate-storage --backup data/runs/<round>/migration-originals/snapshot-storage-v1/SNAPSHOT.json` 将已有单文件迁为索引与独立条目。命令保存原始字节并核对完整语义摘要，持有正式锁且不改研究结论；已拆分状态重复调用只校验，不覆盖原件。迁移不改变 WORK 基线，具体存储不变量见数据契约。业务读取使用共享 snapshot-storage，不直接解析索引取得 catalog／reports。
 
+## 组件推荐迁移与复核
+
+`npm run snapshot -- assess-recommendations --input <ASSESSMENTS.json>` 预览；核对后加 `--apply` 持正式锁校验、原子合并并重生成页面。可用于给已有研究补推荐评估，不重做源码研究；不得据此宣称新安装或运行验证。旧组件缺字段时补为未评估、分数null；只对输入中已实际复核的组件赋予结论和分数，保留其他已有评估。历史独立推荐名单退出真相源，不从缺席推断不推荐。
+
+输入必须包含 base_digest（共享digest对还原后的正式快照计算）、reviewed_at 和 assessments 映射；每个稳定ID对应 revision、decision、reason、criteria，criteria结构与单项ANALYSIS.recommendation一致。当前发布项仅接受匹配已完成研究版本及不早于研究时间的复核；未发布但保留研究档案的组件只允许observe／not_recommended，须引用确实存在的同版本源码证据并强制needs_review，不恢复发布记录。install另引用宿主验收。命令同步分析摘要但不改源码检查时间、原稿或轮次事务；正式基线变化时先重读再复核，不覆盖并发。已应用输入再次执行因基线变化而拒绝，应先回读当前结论，不自动重放。
+
 ## 暂存与最终合并
 
 - 所选项为空时允许仅推进 discovery、来源核查信息与轮次时间，保留既有研究和展示记录；所选项全部受阻时，只要每项有完整持久block，也允许仅合并受阻原因；既无成功也无完整block则拒绝。
