@@ -124,6 +124,6 @@ index.js 用 lastGood 与逐币 stale 避免全空界面，值得复用降级可
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-20），可前往 [GitHub Issues](https://github.com/18569663yz-web/dsh-plugin-crypto-ticker/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/18569663yz-web/dsh-plugin-crypto-ticker/issues) 查看。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

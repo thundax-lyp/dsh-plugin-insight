@@ -7,7 +7,7 @@
 分析版本：[72cbba8](https://github.com/240xu/dsh-websearch/tree/72cbba8e3c19c77fea2396c7ac00c40b08df52a9)
 
 <!-- BEGIN META -->
-[![GitHub ★ 7](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7&color=yellow&logo=github&style=flat)](https://github.com/240xu/dsh-websearch) · [![npm 30d 4850](https://img.shields.io/static/v1?label=npm+30d&message=4%2C850&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@240xu/dsh-websearch)
+[![GitHub ★ 7](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7&color=yellow&logo=github&style=flat)](https://github.com/240xu/dsh-websearch) · [![npm 30d 4802](https://img.shields.io/static/v1?label=npm+30d&message=4%2C802&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@240xu/dsh-websearch)
 <!-- END META -->
 
 **使用建议**：先选少量可访问后端，用常见中文与时效问题核对出处、耗时和全部调用预算；逐步增加有独立增益的服务。重要研究仍应打开原文核查，不能把聚合排序当事实验证。
@@ -131,6 +131,6 @@ provider.js以Promise.resolve().then(fn)把同步抛错纳入limiter的finally�
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-20），可前往 [GitHub Issues](https://github.com/240xu/dsh-websearch/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/240xu/dsh-websearch/issues) 查看。
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)

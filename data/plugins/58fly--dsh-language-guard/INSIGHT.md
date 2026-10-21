@@ -7,7 +7,7 @@
 分析版本：[68cdc5c](https://github.com/58fly/dsh-language-guard/tree/68cdc5c77c3755fbfe4d4d7e9e45f4bd8e6a6ce3)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/58fly/dsh-language-guard) · [![npm 30d 暂未获取](https://img.shields.io/static/v1?label=npm+30d&message=%E6%9A%82%E6%9C%AA%E8%8E%B7%E5%8F%96&color=lightgrey&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-language-guard)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/58fly/dsh-language-guard) · [![npm 30d 暂未获取](https://img.shields.io/static/v1?label=npm+30d&message=%E6%9A%82%E6%9C%AA%E8%8E%B7%E5%8F%96&color=lightgrey&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-language-guard) · **脚本有更新，待重新洞察**
 <!-- END META -->
 
 **使用建议**：有稳定语言偏好可先试B档。繁体或任务语言与界面不同请手动设置；用含英文代码和引用的长对话检查是否误改内容。
@@ -136,10 +136,6 @@ lib/index.js注册head/mid/tail三个稳定section，动态读取强度和语言
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/58fly/dsh-language-guard/issues?q=is%3Aissue+is%3Aopen) · [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/58fly/dsh-language-guard/issues?q=is%3Aissue+created%3A2026-09-21T03%3A09%3A45.323Z..2026-10-21T03%3A09%3A45.323Z) · [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/58fly/dsh-language-guard/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-21T03%3A09%3A45.323Z..2026-10-21T03%3A09%3A45.323Z)
-
-
-
-统计日期：2026-10-21。
+Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/58fly/dsh-language-guard/issues) 查看。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

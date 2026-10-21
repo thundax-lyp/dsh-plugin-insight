@@ -7,7 +7,7 @@
 分析版本：[d38485a](https://github.com/1e0zj/dsh-plugin-mall/tree/d38485accdf8b29945c82311ce396ebef57058f1)
 
 <!-- BEGIN META -->
-[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/1e0zj/dsh-plugin-mall) · [![npm 30d 1603](https://img.shields.io/static/v1?label=npm+30d&message=1%2C603&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@1e0zj/dsh-plugin-mall)
+[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/1e0zj/dsh-plugin-mall) · [![npm 30d 1526](https://img.shields.io/static/v1?label=npm+30d&message=1%2C526&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@1e0zj/dsh-plugin-mall)
 <!-- END META -->
 
 **使用建议**：适合维护多个插件的DSH环境；先在隔离profile验证冲突提示和回滚，再用于日常安装，重要环境保留独立备份。
@@ -122,6 +122,6 @@ src/guard.js 区分候选身份与原依赖快照，解析补丁组合；src/ins
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-20），可前往 [GitHub Issues](https://github.com/1e0zj/dsh-plugin-mall/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/1e0zj/dsh-plugin-mall/issues) 查看。
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)

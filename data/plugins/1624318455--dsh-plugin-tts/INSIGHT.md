@@ -7,7 +7,7 @@
 分析版本：[5b09401](https://github.com/1624318455/dsh-plugin-tts/tree/5b094011dfba35a1d30d44a18d2b411654e8fff8)
 
 <!-- BEGIN META -->
-[![GitHub ★ 26](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=26&color=yellow&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-tts) · [![npm 30d 2693](https://img.shields.io/static/v1?label=npm+30d&message=2%2C693&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@memef1f1y/dsh-plugin-tts)
+[![GitHub ★ 28](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=28&color=yellow&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-tts) · [![npm 30d 2693](https://img.shields.io/static/v1?label=npm+30d&message=2%2C693&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@memef1f1y/dsh-plugin-tts)
 <!-- END META -->
 
 **使用建议**：先选一个后端，用短文本和长文检查播放与取消，再引入本地音色服务；需要离线或隐私边界时逐条确认所选后端数据流。
@@ -74,6 +74,6 @@ Edge联网、Cloud请求以及本地模型算力各有成本；下载音色包�
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-20），可前往 [GitHub Issues](https://github.com/1624318455/dsh-plugin-tts/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/1624318455/dsh-plugin-tts/issues) 查看。
 
 [返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)

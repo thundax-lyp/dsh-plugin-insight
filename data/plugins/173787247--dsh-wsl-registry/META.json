@@ -1,44 +1,39 @@
 {
   "repository": "173787247/dsh-wsl-registry",
   "repository_id": 1391142974,
-  "captured_at": "2026-10-20T09:42:26.505Z",
-  "window_start": "2026-09-20T09:42:26.505Z",
+  "captured_at": "2026-10-21T05:08:56.162Z",
+  "window_start": "2026-09-21T05:08:56.162Z",
   "stars": 1,
   "pushed_at": "2026-09-29T15:32:42Z",
   "issues": {
     "open": 0,
     "closed": 0,
-    "created_30d": null,
-    "closed_30d": null,
-    "updated_30d": null
+    "created_30d": 0,
+    "closed_30d": 0,
+    "updated_30d": 0
   },
-  "errors": [
-    {
-      "target": "created_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-registry%20is%3Aissue%20created%3A2026-09-20T09%3A42%3A26.505Z..2026-10-20T09%3A42%3A26.505Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D980:1F71A8:24DA7C:27CA6A:6AD73786 and timestamp 2026-10-20 09:42:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "closed_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-registry%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T09%3A42%3A26.505Z..2026-10-20T09%3A42%3A26.505Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DA2E:8E38F:259555:2882DB:6AD73787 and timestamp 2026-10-20 09:42:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "updated_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-registry%20is%3Aissue%20updated%3A2026-09-20T09%3A42%3A26.505Z..2026-10-20T09%3A42%3A26.505Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DB1C:3CC5DA:26F3D5:29E406:6AD73787 and timestamp 2026-10-20 09:42:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    }
-  ],
+  "errors": [],
   "npm": {
     "package_name": "dsh-wsl-registry",
-    "captured_at": "2026-10-20T09:42:32.081Z",
-    "window_start": "2026-09-20",
-    "window_end": "2026-10-19",
+    "captured_at": "2026-10-21T05:08:56.162Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
     "downloads_30d": null,
-    "source_url": "https://api.npmjs.org/downloads/point/2026-09-20:2026-10-19/dsh-wsl-registry",
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-wsl-registry",
     "error": "HTTP 404",
     "publication": {
       "first_published_at": null,
-      "captured_at": "2026-10-20T09:42:32.081Z",
+      "captured_at": "2026-10-21T05:08:56.162Z",
       "source_url": "https://registry.npmjs.org/dsh-wsl-registry",
       "error": "HTTP 404"
     }
+  },
+  "code_update": {
+    "checked_at": "2026-10-21T05:08:56.162Z",
+    "baseline_revision": "ec36b50ceab4f15549c2b2ac7f97033084a3eb56",
+    "current_revision": "ec36b50ceab4f15549c2b2ac7f97033084a3eb56",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
   }
 }

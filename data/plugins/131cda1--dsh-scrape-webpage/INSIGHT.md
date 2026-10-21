@@ -7,7 +7,7 @@
 分析版本：[7485af1](https://github.com/131CDA1/dsh-scrape-webpage/tree/7485af10c063579323058583c7f13e69c4c8bd21)
 
 <!-- BEGIN META -->
-[![GitHub ★ 9](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9&color=yellow&logo=github&style=flat)](https://github.com/131CDA1/dsh-scrape-webpage) · [![npm 30d 1151](https://img.shields.io/static/v1?label=npm+30d&message=1%2C151&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-scrape-webpage)
+[![GitHub ★ 10](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=10&color=yellow&logo=github&style=flat)](https://github.com/131CDA1/dsh-scrape-webpage) · [![npm 30d 1132](https://img.shields.io/static/v1?label=npm+30d&message=1%2C132&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-scrape-webpage)
 <!-- END META -->
 
 **使用建议**：已有用户可保留正文抓取用途，先在公开测试页核对重定向、动态内容与超时；非 Windows 环境先验证 shell 回退，限制敏感网络目标。
@@ -71,6 +71,6 @@ html、analyze 与执行层分开便于复用；图片失败返回逐项说明�
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-20），可前往 [GitHub Issues](https://github.com/131CDA1/dsh-scrape-webpage/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/131CDA1/dsh-scrape-webpage/issues) 查看。
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)

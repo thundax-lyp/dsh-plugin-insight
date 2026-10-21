@@ -1,8 +1,8 @@
 {
   "repository": "863683348/dsh-insight",
   "repository_id": 1336649545,
-  "captured_at": "2026-10-21T03:40:21.932Z",
-  "window_start": "2026-09-21T03:40:21.932Z",
+  "captured_at": "2026-10-21T05:08:56.162Z",
+  "window_start": "2026-09-21T05:08:56.162Z",
   "stars": 1,
   "pushed_at": "2026-09-11T03:26:07Z",
   "issues": {
@@ -15,28 +15,28 @@
   "errors": [
     {
       "target": "open",
-      "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-insight%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 35A0:26CA49:418FB9:461EE1:6AD83427 and timestamp 2026-10-21 03:40:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-insight%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6406:157B26:15094B:22C026:6AD84AB1 and timestamp 2026-10-21 05:16:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed",
-      "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-insight%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 36C0:2723D0:3DE9DD:427687:6AD83428 and timestamp 2026-10-21 03:40:24 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-insight%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641C:1CA4C8:14DEB0:22953D:6AD84AB1 and timestamp 2026-10-21 05:16:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "created_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-insight%20is%3Aissue%20created%3A2026-09-21T03%3A40%3A21.932Z..2026-10-21T03%3A40%3A21.932Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 381A:103C86:40D826:456934:6AD83429 and timestamp 2026-10-21 03:40:25 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-insight%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6408:592A:143F99:2203C3:6AD84AB1 and timestamp 2026-10-21 05:16:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-insight%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T03%3A40%3A21.932Z..2026-10-21T03%3A40%3A21.932Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3968:50F71:3F3689:43C41B:6AD8342A and timestamp 2026-10-21 03:40:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-insight%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640A:3E2BCC:152142:22EC81:6AD84AB2 and timestamp 2026-10-21 05:16:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "updated_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-insight%20is%3Aissue%20updated%3A2026-09-21T03%3A40%3A21.932Z..2026-10-21T03%3A40%3A21.932Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3AA8:4C3CE:3F4B97:43DDA7:6AD8342B and timestamp 2026-10-21 03:40:27 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-insight%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641F:9F47E:150F5E:22C76B:6AD84AB2 and timestamp 2026-10-21 05:16:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     }
   ],
   "npm": {
     "package_name": "dsh-insight",
-    "captured_at": "2026-10-21T03:40:27.452Z",
+    "captured_at": "2026-10-21T05:08:56.162Z",
     "window_start": "2026-09-21",
     "window_end": "2026-10-20",
     "downloads_30d": 828,
@@ -44,9 +44,17 @@
     "error": null,
     "publication": {
       "first_published_at": "2026-08-17T04:06:43.845Z",
-      "captured_at": "2026-10-21T03:40:27.452Z",
+      "captured_at": "2026-10-21T05:08:56.162Z",
       "source_url": "https://registry.npmjs.org/dsh-insight",
       "error": null
     }
+  },
+  "code_update": {
+    "checked_at": "2026-10-21T05:08:56.162Z",
+    "baseline_revision": "6fcb8fc9a04b70e391e78d2c41bbfb240b6f021b",
+    "current_revision": "6fcb8fc9a04b70e391e78d2c41bbfb240b6f021b",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
   }
 }

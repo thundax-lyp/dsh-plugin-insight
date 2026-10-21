@@ -125,10 +125,6 @@ TS双端构建，DSH版本与可选服务接线敏感；阵容只定义谁来会
 
 **活跃度**
 
-[![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/9931666/dsh-plugin-roundtable/issues?q=is%3Aissue+created%3A2026-09-21T04%3A11%3A21.868Z..2026-10-21T04%3A11%3A21.868Z) · [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/9931666/dsh-plugin-roundtable/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-21T04%3A11%3A21.868Z..2026-10-21T04%3A11%3A21.868Z)
-
-暂未获取：Issue 未关闭。
-
-统计日期：2026-10-21。
+Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/9931666/dsh-plugin-roundtable/issues) 查看。
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)

@@ -1,42 +1,21 @@
 {
   "repository": "27painter/dsh-moli",
   "repository_id": 1415767842,
-  "captured_at": "2026-10-21T02:00:53.332Z",
-  "window_start": "2026-09-21T02:00:53.332Z",
+  "captured_at": "2026-10-21T05:08:56.162Z",
+  "window_start": "2026-09-21T05:08:56.162Z",
   "stars": 5,
   "pushed_at": "2026-10-19T04:56:08Z",
   "issues": {
-    "open": null,
-    "closed": null,
-    "created_30d": null,
-    "closed_30d": null,
-    "updated_30d": null
+    "open": 0,
+    "closed": 5,
+    "created_30d": 5,
+    "closed_30d": 5,
+    "updated_30d": 5
   },
-  "errors": [
-    {
-      "target": "open",
-      "message": "GitHub request failed for search/issues?q=repo%3A27painter%2Fdsh-moli%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5FFC:1A0B93:2D6C12:30B3BD:6AD81CD6 and timestamp 2026-10-21 02:00:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "closed",
-      "message": "GitHub request failed for search/issues?q=repo%3A27painter%2Fdsh-moli%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 60F0:26CA49:304FC6:3396F8:6AD81CD8 and timestamp 2026-10-21 02:00:56 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "created_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A27painter%2Fdsh-moli%20is%3Aissue%20created%3A2026-09-21T02%3A00%3A53.332Z..2026-10-21T02%3A00%3A53.332Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 61D8:2750FB:2D4C12:3094C3:6AD81CD8 and timestamp 2026-10-21 02:01:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "closed_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A27painter%2Fdsh-moli%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T02%3A00%3A53.332Z..2026-10-21T02%3A00%3A53.332Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 65C2:2704E0:2D3891:3080BA:6AD81CDD and timestamp 2026-10-21 02:01:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "updated_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A27painter%2Fdsh-moli%20is%3Aissue%20updated%3A2026-09-21T02%3A00%3A53.332Z..2026-10-21T02%3A00%3A53.332Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6698:1127A1:312528:346D85:6AD81CDE and timestamp 2026-10-21 02:01:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    }
-  ],
+  "errors": [],
   "npm": {
     "package_name": "dsh-moli",
-    "captured_at": "2026-10-21T02:01:02.312Z",
+    "captured_at": "2026-10-21T05:08:56.162Z",
     "window_start": "2026-09-21",
     "window_end": "2026-10-20",
     "downloads_30d": 1514,
@@ -44,9 +23,17 @@
     "error": null,
     "publication": {
       "first_published_at": "2026-10-13T08:56:45.309Z",
-      "captured_at": "2026-10-21T02:01:02.312Z",
+      "captured_at": "2026-10-21T05:08:56.162Z",
       "source_url": "https://registry.npmjs.org/dsh-moli",
       "error": null
     }
+  },
+  "code_update": {
+    "checked_at": "2026-10-21T05:08:56.162Z",
+    "baseline_revision": "b3a1fc970a513fa3ecd81830c8e0029334032e92",
+    "current_revision": "b3a1fc970a513fa3ecd81830c8e0029334032e92",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
   }
 }

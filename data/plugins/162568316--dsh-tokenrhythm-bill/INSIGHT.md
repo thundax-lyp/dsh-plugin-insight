@@ -7,7 +7,7 @@
 分析版本：[df72615](https://github.com/162568316/dsh-tokenrhythm-bill/tree/df72615bc5c8f6ccfe287b8a3cfef627923b2f1f)
 
 <!-- BEGIN META -->
-[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/162568316/dsh-tokenrhythm-bill) · [![npm 30d 1681](https://img.shields.io/static/v1?label=npm+30d&message=1%2C681&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-tokenrhythm-bill)
+[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/162568316/dsh-tokenrhythm-bill) · [![npm 30d 1667](https://img.shields.io/static/v1?label=npm+30d&message=1%2C667&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-tokenrhythm-bill)
 <!-- END META -->
 
 **使用建议**：先只接入常用平台，对照控制台核验当前账号和限时额度，按需启用模型探测；敏感凭据留在受控宿主。
@@ -71,6 +71,6 @@ Host侧限制秘密返回并为状态文件设置权限，账号缓存有身份�
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-20），可前往 [GitHub Issues](https://github.com/162568316/dsh-tokenrhythm-bill/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/162568316/dsh-tokenrhythm-bill/issues) 查看。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

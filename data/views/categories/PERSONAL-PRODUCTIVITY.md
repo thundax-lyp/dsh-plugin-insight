@@ -204,7 +204,7 @@
 
 ## [dsh-boo550wt-animation](../../plugins/456erddgr--dsh-boo550wt-animation/INSIGHT.md)
 
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/456erddgr/dsh-boo550wt-animation)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/456erddgr/dsh-boo550wt-animation)
 
 - **用途**：希望定制DSH启动视觉的人在应用加载时播放本地视频；交付启动体验，不改变模型任务或业务成果。
 - **亮点**：相对客户端加载后再显示动画，本插件使用更早的webserver注入行，尝试在宿主启动就绪之前覆盖首帧，并把视频Range服务与DOM清理集中为host-only组件。时机与接线是DSH适配增量，媒体解码由浏览器完成，不是新视频技术。
@@ -248,7 +248,7 @@
 
 ## [dsh-composer-expand](../../plugins/13071301808--dsh-composer-expand/INSIGHT.md)
 
-[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=yellow&logo=github&style=flat)](https://github.com/13071301808/dsh-composer-expand) · [![npm 30d 1011](https://img.shields.io/static/v1?label=npm+30d&message=1%2C011&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-composer-expand)
+[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=yellow&logo=github&style=flat)](https://github.com/13071301808/dsh-composer-expand) · [![npm 30d 979](https://img.shields.io/static/v1?label=npm+30d&message=979&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-composer-expand)
 
 - **用途**：经常编辑长提示词的用户需要在发送前查看和修改更多草稿内容。
 - **亮点**：客户端插槽按钮切换 CSS class 并保存浏览器偏好，DOM observer 修复重建后的样式，捕获普通 Enter 避免发送。
@@ -380,7 +380,7 @@
 
 ## [dsh-language-guard](../../plugins/58fly--dsh-language-guard/INSIGHT.md)
 
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/58fly/dsh-language-guard) · [![npm 30d 暂未获取](https://img.shields.io/static/v1?label=npm+30d&message=%E6%9A%82%E6%9C%AA%E8%8E%B7%E5%8F%96&color=lightgrey&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-language-guard)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/58fly/dsh-language-guard) · [![npm 30d 暂未获取](https://img.shields.io/static/v1?label=npm+30d&message=%E6%9A%82%E6%9C%AA%E8%8E%B7%E5%8F%96&color=lightgrey&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-language-guard) · **脚本有更新，待重新洞察**
 
 - **用途**：适合长对话容易语言漂移的多语用户，尤其需要固定回复语言而保留代码标识的任务。
 - **亮点**：作者主张语言守卫；实际贡献是把语言偏好解析、强度档位及周期提醒做成可配置宿主集成。相对每轮手工要求中文，减少重复输入；三态未设置哨兵保留旧用户手选语言，属于有用迁移设计，不是语言能力创新。
@@ -413,7 +413,7 @@
 
 ## [dsh-neo-skin](../../plugins/0nt-one--dsh-neo-skin/INSIGHT.md)
 
-[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/0nt-one/dsh-neo-skin) · [![npm 30d 113](https://img.shields.io/static/v1?label=npm+30d&message=113&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-neo-skin)
+[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/0nt-one/dsh-neo-skin) · [![npm 30d 108](https://img.shields.io/static/v1?label=npm+30d&message=108&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-neo-skin)
 
 - **用途**：长时间使用 DSH Web 且偏好高对比外观的用户，需要可撤销的视觉定制。
 - **亮点**：客户端调用 theme.overrideTokens，设置插槽控制开关与方案，偏好保存在 localStorage。
@@ -424,7 +424,7 @@
 
 ## [dsh-perlica-ding](../../plugins/117bs--dsh-perlica-ding/INSIGHT.md)
 
-[![GitHub ★ 7](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7&color=yellow&logo=github&style=flat)](https://github.com/117BS/dsh-perlica-ding) · [![npm 30d 333](https://img.shields.io/static/v1?label=npm+30d&message=333&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-perlica-ding)
+[![GitHub ★ 7](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7&color=yellow&logo=github&style=flat)](https://github.com/117BS/dsh-perlica-ding) · [![npm 30d 327](https://img.shields.io/static/v1?label=npm+30d&message=327&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-perlica-ding)
 
 - **用途**：后台运行智能体时，用户希望听到需要关注的状态而不盯住窗口。
 - **亮点**：监听主会话事件和执行类工具，按类别去抖，通过 subprocess 调用系统播放程序；PCM 音量副本有内容缓存。
@@ -435,7 +435,7 @@
 
 ## [dsh-pet-live2d](../../plugins/a8chann--dsh-pet-live2d--dsh-live2d-pet/INSIGHT.md)
 
-[![GitHub ★ 45](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=45&color=yellow&logo=github&style=flat)](https://github.com/A8Chann/dsh-pet-live2d) · [![npm 30d 7358](https://img.shields.io/static/v1?label=npm+30d&message=7%2C358&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-pet-live2d)
+[![GitHub ★ 46](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=46&color=yellow&logo=github&style=flat)](https://github.com/A8Chann/dsh-pet-live2d) · [![npm 30d 7358](https://img.shields.io/static/v1?label=npm+30d&message=7%2C358&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-pet-live2d)
 
 - **用途**：希望获得会话状态提示与桌面陪伴的用户，合格表现是状态一致、透明画布不挡操作且自定义资源升级不丢失。
 - **亮点**：相对纯静态桌宠，增量是会话相位与动作池、用户互动和可保存配置结合。渲染依赖Cubism/Pixi，随包角色是独立授权资产，不能归为插件原创。
@@ -523,7 +523,7 @@
 
 ## [dsh-prompt-polish](../../plugins/1321928757--dsh-prompt-polish/INSIGHT.md)
 
-[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/1321928757/dsh-prompt-polish) · [![npm 30d 368](https://img.shields.io/static/v1?label=npm+30d&message=368&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-prompt-polish)
+[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/1321928757/dsh-prompt-polish) · [![npm 30d 358](https://img.shields.io/static/v1?label=npm+30d&message=358&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-prompt-polish)
 
 - **用途**：用户反复组织复杂请求，希望提交前改善表达并保留原意；验收标准是约束无遗漏，而非文字更长。
 - **亮点**：lib/index.js 收集启用的目标、任务和历史，在字符预算内构建请求，调用宿主llm.stream；客户端展示结果，采纳由用户决定。
@@ -600,7 +600,7 @@
 
 ## [dsh-spotlight](../../plugins/0xsline--dsh-spotlight/INSIGHT.md)
 
-[![GitHub ★ 23](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=23&color=yellow&logo=github&style=flat)](https://github.com/0xsline/dsh-spotlight) · [![npm 30d 667](https://img.shields.io/static/v1?label=npm+30d&message=667&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@0xsline/dsh-spotlight)
+[![GitHub ★ 23](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=23&color=yellow&logo=github&style=flat)](https://github.com/0xsline/dsh-spotlight) · [![npm 30d 634](https://img.shields.io/static/v1?label=npm+30d&message=634&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@0xsline/dsh-spotlight)
 
 - **用途**：大量使用快捷键的 DSH Web 用户需要减少在会话与设置之间寻找入口的操作。
 - **亮点**：客户端注入 sessions、commands 和 pluginInventory，挂载面板并通过原生 commandUi 注册 /spotlight。
@@ -622,7 +622,7 @@
 
 ## [dsh-status-rotator](../../plugins/01virex--dsh-status-rotator/INSIGHT.md)
 
-[![GitHub ★ 186](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=186&color=yellow&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator) · [![npm 30d 11750](https://img.shields.io/static/v1?label=npm+30d&message=11%2C750&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-status-rotator)
+[![GitHub ★ 190](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=190&color=yellow&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator) · [![npm 30d 11337](https://img.shields.io/static/v1?label=npm+30d&message=11%2C337&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-status-rotator)
 
 - **用途**：希望改善等待体验的桌面用户，以更清楚或有趣的状态文案替代默认状态行。
 - **亮点**：Host 保存并提供配置，客户端按阶段和偏好选择文案，支持持久化覆盖与扩展词库。
@@ -666,7 +666,7 @@
 
 ## [dsh-tokenrhythm-bill](../../plugins/162568316--dsh-tokenrhythm-bill/INSIGHT.md)
 
-[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/162568316/dsh-tokenrhythm-bill) · [![npm 30d 1681](https://img.shields.io/static/v1?label=npm+30d&message=1%2C681&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-tokenrhythm-bill)
+[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/162568316/dsh-tokenrhythm-bill) · [![npm 30d 1667](https://img.shields.io/static/v1?label=npm+30d&message=1%2C667&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-tokenrhythm-bill)
 
 - **用途**：多个中转或套餐用户需要对齐账户额度与模型清单，验收是当前账号的真实数据和明确的有效期。
 - **亮点**：Host读取配置/凭据并代理平台账户接口，状态文件保存会话Cookie和账号信息；模型探测会发真实小请求，Client展示分平台面板。
@@ -710,7 +710,7 @@
 
 ## [dsh-vision-fallback](../../plugins/1helloman1--dsh-vision-fallback/INSIGHT.md)
 
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/1HelloMan1/dsh-vision-fallback) · [![npm 30d 932](https://img.shields.io/static/v1?label=npm+30d&message=932&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-vision-fallback)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/1HelloMan1/dsh-vision-fallback) · [![npm 30d 919](https://img.shields.io/static/v1?label=npm+30d&message=919&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-vision-fallback)
 
 - **用途**：偏好纯文本主模型的用户仍需处理截图或图片；交付物是主模型基于视觉观察形成的回答。
 - **亮点**：相对手动切换视觉模型并复制描述，增量是把视觉作为受限预处理并保留主模型工作流；lib/index.js 的压缩旁路复用避免摘要请求再反复发图。视觉识别能力属于外部模型，不是插件原创。
@@ -732,7 +732,7 @@
 
 ## [dsh-voice-input-web](../../plugins/0nt-one--dsh-voice-input/INSIGHT.md)
 
-[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=yellow&logo=github&style=flat)](https://github.com/0nt-one/dsh-voice-input) · [![npm 30d 71](https://img.shields.io/static/v1?label=npm+30d&message=71&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-voice-input-web)
+[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=yellow&logo=github&style=flat)](https://github.com/0nt-one/dsh-voice-input) · [![npm 30d 64](https://img.shields.io/static/v1?label=npm+30d&message=64&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-voice-input-web)
 
 - **用途**：偏好口述输入的用户，希望先得到可编辑草稿再发送消息。
 - **亮点**：客户端检测 SpeechRecognition/webkitSpeechRecognition，将最终结果追加到输入区，自动发送由本地开关控制。
@@ -743,7 +743,7 @@
 
 ## [dsh-workspace-menu](../../plugins/0imzero--dsh-workspace-menu/INSIGHT.md)
 
-[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/0imzero/dsh-workspace-menu)
+[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/0imzero/dsh-workspace-menu)
 
 - **用途**：经常整理多个工作区和会话的用户，希望减少查找管理入口的步骤。
 - **亮点**：客户端用 DOM/React fiber 定位行，Host 执行文件管理器调用；危险删除与归档管理器协作。
@@ -875,7 +875,7 @@
 
 ## [Forge 便签](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-notes/INSIGHT.md)
 
-[![GitHub ★ 8](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8&color=yellow&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) · [![npm 30d 2563](https://img.shields.io/static/v1?label=npm+30d&message=2%2C563&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-notes)
+[![GitHub ★ 9](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9&color=yellow&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) · [![npm 30d 2413](https://img.shields.io/static/v1?label=npm+30d&message=2%2C413&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-notes)
 
 - **用途**：需要从临时想法转为任务的用户，希望在聊天旁管理笔记及执行状态。
 - **亮点**：便签 CRUD 通过 storage-domain 持久化；日程与任务泳道状态关联，工具就绪后再挂 agent 桥。
@@ -919,7 +919,7 @@
 
 ## [Prompt Desk](../../plugins/1015677515--dsh-prompt-errornotes-desk/INSIGHT.md)
 
-[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/1015677515/dsh-prompt-ErrorNotes-desk)
+[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/1015677515/dsh-prompt-ErrorNotes-desk)
 
 - **用途**：经常纠正同类行为的用户需要维护少量可复用教训，合格结果是正确经验被下轮读取且可撤回。
 - **亮点**：index.js 逐个尝试认错标记，跳过不合法的首次出现，要求同一行按错误经过、教训顺序解析；结果先入待确认队列，采纳后才注入。

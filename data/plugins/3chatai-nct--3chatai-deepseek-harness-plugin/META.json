@@ -1,30 +1,21 @@
 {
   "repository": "3ChatAI-NCT/3chatai-deepseek-harness-plugin",
   "repository_id": 1374055714,
-  "captured_at": "2026-10-21T02:01:25.124Z",
-  "window_start": "2026-09-21T02:01:25.124Z",
+  "captured_at": "2026-10-21T05:08:56.162Z",
+  "window_start": "2026-09-21T05:08:56.162Z",
   "stars": 7,
   "pushed_at": "2026-10-19T07:35:51Z",
   "issues": {
-    "open": null,
-    "closed": null,
+    "open": 0,
+    "closed": 0,
     "created_30d": 0,
     "closed_30d": 0,
     "updated_30d": 0
   },
-  "errors": [
-    {
-      "target": "open",
-      "message": "GitHub request failed for search/issues?q=repo%3A3ChatAI-NCT%2F3chatai-deepseek-harness-plugin%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 829A:27DDDF:2FAE00:32F655:6AD81CF8 and timestamp 2026-10-21 02:01:28 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "closed",
-      "message": "GitHub request failed for search/issues?q=repo%3A3ChatAI-NCT%2F3chatai-deepseek-harness-plugin%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 84DC:103C86:2F9012:32DB4D:6AD81CFA and timestamp 2026-10-21 02:01:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    }
-  ],
+  "errors": [],
   "npm": {
     "package_name": "3chat-customer-growth",
-    "captured_at": "2026-10-21T02:01:37.136Z",
+    "captured_at": "2026-10-21T05:08:56.162Z",
     "window_start": "2026-09-21",
     "window_end": "2026-10-20",
     "downloads_30d": null,
@@ -32,9 +23,17 @@
     "error": "HTTP 404",
     "publication": {
       "first_published_at": null,
-      "captured_at": "2026-10-21T02:01:37.136Z",
+      "captured_at": "2026-10-21T05:08:56.162Z",
       "source_url": "https://registry.npmjs.org/3chat-customer-growth",
       "error": "HTTP 404"
     }
+  },
+  "code_update": {
+    "checked_at": "2026-10-21T05:08:56.162Z",
+    "baseline_revision": "d741956969f0adcd523c13d682e9ca8d7b313cb0",
+    "current_revision": "d741956969f0adcd523c13d682e9ca8d7b313cb0",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
   }
 }

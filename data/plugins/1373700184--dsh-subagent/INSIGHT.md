@@ -7,7 +7,7 @@
 分析版本：[a0b1147](https://github.com/1373700184/dsh-subagent/tree/a0b1147ed7a752c119c79d2d73e3adc2161b3588)
 
 <!-- BEGIN META -->
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/1373700184/dsh-subagent) · [![npm 30d 22](https://img.shields.io/static/v1?label=npm+30d&message=22&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-subagent)
+[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/1373700184/dsh-subagent) · [![npm 30d 22](https://img.shields.io/static/v1?label=npm+30d&message=22&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-subagent) · **脚本有更新，待重新洞察**
 <!-- END META -->
 
 **使用建议**：已有对应CLI且能隔离工作目录的人先试只读任务；为每驱动设置硬超时，检查错误事件、最终输出和取消后进程，不让自动回退承担不可重复写入。
@@ -124,10 +124,6 @@ Provider/Run和DRIVERS/sink分离、有界ledger及stderr尾部便于借鉴；�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1373700184/dsh-subagent/issues?q=is%3Aissue+is%3Aopen) · [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/1373700184/dsh-subagent/issues?q=is%3Aissue+created%3A2026-09-21T04%3A10%3A21.209Z..2026-10-21T04%3A10%3A21.209Z) · [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1373700184/dsh-subagent/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-21T04%3A10%3A21.209Z..2026-10-21T04%3A10%3A21.209Z)
-
-
-
-统计日期：2026-10-21。
+Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/1373700184/dsh-subagent/issues) 查看。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

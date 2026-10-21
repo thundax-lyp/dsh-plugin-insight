@@ -1,8 +1,8 @@
 {
   "repository": "2333hutao/dsh-ls125-uv-probe",
   "repository_id": 1381989584,
-  "captured_at": "2026-10-20T10:45:04.655Z",
-  "window_start": "2026-09-20T10:45:04.655Z",
+  "captured_at": "2026-10-21T05:08:56.162Z",
+  "window_start": "2026-09-21T05:08:56.162Z",
   "stars": 1,
   "pushed_at": "2026-09-22T17:33:41Z",
   "issues": {
@@ -15,38 +15,46 @@
   "errors": [
     {
       "target": "open",
-      "message": "GitHub request failed for search/issues?q=repo%3A2333hutao%2Fdsh-ls125-uv-probe%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9EC4:349ACC:3A3B66:567C3A:6AD74632 and timestamp 2026-10-20 10:45:06 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A2333hutao%2Fdsh-ls125-uv-probe%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6404:0BD8:1730:2B19:6AD849EC and timestamp 2026-10-21 05:13:16 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed",
-      "message": "GitHub request failed for search/issues?q=repo%3A2333hutao%2Fdsh-ls125-uv-probe%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9FE0:3AE55C:3BCEC1:58218F:6AD74633 and timestamp 2026-10-20 10:45:07 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A2333hutao%2Fdsh-ls125-uv-probe%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641E:37D83B:146D2E:21FA8E:6AD849ED and timestamp 2026-10-21 05:13:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "created_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A2333hutao%2Fdsh-ls125-uv-probe%20is%3Aissue%20created%3A2026-09-20T10%3A45%3A04.655Z..2026-10-20T10%3A45%3A04.655Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A0F2:208F4D:3AA0F4:56E552:6AD74634 and timestamp 2026-10-20 10:45:08 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A2333hutao%2Fdsh-ls125-uv-probe%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6415:136889:156C8A:230195:6AD849ED and timestamp 2026-10-21 05:13:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A2333hutao%2Fdsh-ls125-uv-probe%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T10%3A45%3A04.655Z..2026-10-20T10%3A45%3A04.655Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A1D2:3AE55C:3BD0A6:582454:6AD74635 and timestamp 2026-10-20 10:45:09 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A2333hutao%2Fdsh-ls125-uv-probe%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6400:330C23:145296:21E397:6AD849ED and timestamp 2026-10-21 05:13:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "updated_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A2333hutao%2Fdsh-ls125-uv-probe%20is%3Aissue%20updated%3A2026-09-20T10%3A45%3A04.655Z..2026-10-20T10%3A45%3A04.655Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A2B2:87185:39E56F:562980:6AD74636 and timestamp 2026-10-20 10:45:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A2333hutao%2Fdsh-ls125-uv-probe%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C0:3E0DB6:1421A6:21BC3B:6AD849ED and timestamp 2026-10-21 05:13:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     }
   ],
   "npm": {
     "package_name": "dsh-ls125-uv-probe",
-    "captured_at": "2026-10-20T10:45:10.557Z",
-    "window_start": "2026-09-20",
-    "window_end": "2026-10-19",
+    "captured_at": "2026-10-21T05:08:56.162Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
     "downloads_30d": null,
-    "source_url": "https://api.npmjs.org/downloads/point/2026-09-20:2026-10-19/dsh-ls125-uv-probe",
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-ls125-uv-probe",
     "error": "HTTP 404",
     "publication": {
       "first_published_at": null,
-      "captured_at": "2026-10-20T10:45:10.557Z",
+      "captured_at": "2026-10-21T05:08:56.162Z",
       "source_url": "https://registry.npmjs.org/dsh-ls125-uv-probe",
       "error": "HTTP 404"
     }
+  },
+  "code_update": {
+    "checked_at": "2026-10-21T05:08:56.162Z",
+    "baseline_revision": "c252d589d1d021bc08a386cd110e96cd011cb4a2",
+    "current_revision": "c252d589d1d021bc08a386cd110e96cd011cb4a2",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
   }
 }

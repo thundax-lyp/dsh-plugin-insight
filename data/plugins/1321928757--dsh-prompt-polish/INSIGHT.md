@@ -7,7 +7,7 @@
 分析版本：[c894ae3](https://github.com/1321928757/dsh-prompt-polish/tree/c894ae3de6590542f8353b76e314656a4a3fe3a0)
 
 <!-- BEGIN META -->
-[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/1321928757/dsh-prompt-polish) · [![npm 30d 368](https://img.shields.io/static/v1?label=npm+30d&message=368&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-prompt-polish)
+[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/1321928757/dsh-prompt-polish) · [![npm 30d 358](https://img.shields.io/static/v1?label=npm+30d&message=358&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-prompt-polish)
 <!-- END META -->
 
 **使用建议**：先不带历史改写普通草稿，对照检查否定、数字和交付限制；需要上下文时再开启，并人工决定是否采用。
@@ -73,6 +73,6 @@ runId到AbortController的映射与finally清理便于取消，区分截断、�
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-20），可前往 [GitHub Issues](https://github.com/1321928757/dsh-prompt-polish/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/1321928757/dsh-prompt-polish/issues) 查看。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

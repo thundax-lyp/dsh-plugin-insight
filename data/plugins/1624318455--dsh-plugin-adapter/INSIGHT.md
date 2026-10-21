@@ -7,7 +7,7 @@
 分析版本：[db7f273](https://github.com/1624318455/dsh-plugin-adapter/tree/db7f273bd7caf2bb87c2428dcb8bd883eb338d1c)
 
 <!-- BEGIN META -->
-[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-adapter)
+[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=yellow&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-adapter)
 <!-- END META -->
 
 **使用建议**：适合非关键试验，先用原生adapter模式验证小任务，保留可用供应商回退；不要把免费通道当生产容量保证。
@@ -75,6 +75,6 @@
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-20），可前往 [GitHub Issues](https://github.com/1624318455/dsh-plugin-adapter/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/1624318455/dsh-plugin-adapter/issues) 查看。
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)

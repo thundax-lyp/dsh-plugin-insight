@@ -1,0 +1,45 @@
+{
+  "repository": "1344738825/ai-residue-cleaner",
+  "repository_id": 1406611614,
+  "captured_at": "2026-10-21T05:08:56.162Z",
+  "window_start": "2026-09-21T05:08:56.162Z",
+  "stars": 0,
+  "pushed_at": "2026-10-17T17:10:56Z",
+  "issues": {
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3A1344738825%2Fai-residue-cleaner%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640D:11B6:1463C1:21E64C:6AD8493A and timestamp 2026-10-21 05:10:18 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3A1344738825%2Fai-residue-cleaner%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6412:9ED8B:145069:21C68D:6AD8493A and timestamp 2026-10-21 05:10:18 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A1344738825%2Fai-residue-cleaner%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6402:23DB53:154373:22C747:6AD8493A and timestamp 2026-10-21 05:10:18 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A1344738825%2Fai-residue-cleaner%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6413:B65AE:136DCB:20DE8F:6AD8493A and timestamp 2026-10-21 05:10:18 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A1344738825%2Fai-residue-cleaner%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6415:DBD0:15588D:22C4CA:6AD8493A and timestamp 2026-10-21 05:10:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "code_update": {
+    "checked_at": "2026-10-21T05:08:56.162Z",
+    "baseline_revision": "d1efd794049a2a26b8e75573b51df249bd72b62b",
+    "current_revision": "d1efd794049a2a26b8e75573b51df249bd72b62b",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
+  }
+}

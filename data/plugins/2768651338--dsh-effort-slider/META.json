@@ -1,34 +1,42 @@
 {
   "repository": "2768651338/dsh-effort-slider",
   "repository_id": 1335766616,
-  "captured_at": "2026-10-21T02:00:40.205Z",
-  "window_start": "2026-09-21T02:00:40.205Z",
+  "captured_at": "2026-10-21T05:08:56.162Z",
+  "window_start": "2026-09-21T05:08:56.162Z",
   "stars": 20,
   "pushed_at": "2026-10-20T14:21:40Z",
   "issues": {
-    "open": 0,
-    "closed": 2,
+    "open": null,
+    "closed": null,
     "created_30d": null,
     "closed_30d": null,
     "updated_30d": null
   },
   "errors": [
     {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3A2768651338%2Fdsh-effort-slider%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C2:2EEE9E:13D311:216569:6AD849FD and timestamp 2026-10-21 05:13:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3A2768651338%2Fdsh-effort-slider%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6400:330C23:1455C0:21E8FD:6AD849FD and timestamp 2026-10-21 05:13:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
       "target": "created_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A2768651338%2Fdsh-effort-slider%20is%3Aissue%20created%3A2026-09-21T02%3A00%3A40.205Z..2026-10-21T02%3A00%3A40.205Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5B62:AA00D:30C576:340CE8:6AD81CD1 and timestamp 2026-10-21 02:00:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A2768651338%2Fdsh-effort-slider%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6407:30A0ED:14509A:21E3AD:6AD849FD and timestamp 2026-10-21 05:13:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A2768651338%2Fdsh-effort-slider%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T02%3A00%3A40.205Z..2026-10-21T02%3A00%3A40.205Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5D06:1BBF60:2FBD55:3304F8:6AD81CD3 and timestamp 2026-10-21 02:00:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A2768651338%2Fdsh-effort-slider%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6406:0C5F:637A4:A9D39:6AD849FD and timestamp 2026-10-21 05:13:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "updated_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A2768651338%2Fdsh-effort-slider%20is%3Aissue%20updated%3A2026-09-21T02%3A00%3A40.205Z..2026-10-21T02%3A00%3A40.205Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5E7E:4DAEE:2D6920:30B179:6AD81CD5 and timestamp 2026-10-21 02:00:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A2768651338%2Fdsh-effort-slider%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640B:D1FDD:14A130:224B46:6AD849FE and timestamp 2026-10-21 05:13:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     }
   ],
   "npm": {
     "package_name": "@txc2768651338/dsh-effort-slider",
-    "captured_at": "2026-10-21T02:00:53.284Z",
+    "captured_at": "2026-10-21T05:08:56.162Z",
     "window_start": "2026-09-21",
     "window_end": "2026-10-20",
     "downloads_30d": 1403,
@@ -36,9 +44,17 @@
     "error": null,
     "publication": {
       "first_published_at": "2026-10-01T08:03:51.076Z",
-      "captured_at": "2026-10-21T02:00:53.284Z",
+      "captured_at": "2026-10-21T05:08:56.162Z",
       "source_url": "https://registry.npmjs.org/%40txc2768651338%2Fdsh-effort-slider",
       "error": null
     }
+  },
+  "code_update": {
+    "checked_at": "2026-10-21T05:08:56.162Z",
+    "baseline_revision": "97bf5c1e5881ea0fcfb543844346fe86b87ff620",
+    "current_revision": "97bf5c1e5881ea0fcfb543844346fe86b87ff620",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
   }
 }

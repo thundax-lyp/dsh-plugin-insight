@@ -116,7 +116,7 @@
 
 ## [dsh-feishu（2048lr）](../../plugins/2048lr--dsh-feishu/INSIGHT.md)
 
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/2048lr/dsh-feishu) · [![npm 30d 77](https://img.shields.io/static/v1?label=npm+30d&message=77&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-feishu)
+[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/2048lr/dsh-feishu) · [![npm 30d 75](https://img.shields.io/static/v1?label=npm+30d&message=75&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-feishu)
 
 - **用途**：面向需要把分析写成飞书文档/表格、并由实际操作者取得所有权的团队；成功标准包括内容正确、落在目标身份空间且可供用户访问。
 - **亮点**：相对手工导出并上传、通用原始API或应用身份机器人，增量在把个人OAuth身份与创建落点明确连接，auto降级应用身份时返回warnings；领域工具还能组织多维表格图表和聚合。REST/OAuth本身不是原创，贡献是避免“创建成功但人看不到”的流程断裂。
@@ -160,7 +160,7 @@
 
 ## [dsh-plugin-nlbi](../../plugins/1byteone--dsh-plugin-nlbi/INSIGHT.md)
 
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/1byteone/dsh-plugin-nlbi) · [![npm 30d 917](https://img.shields.io/static/v1?label=npm+30d&message=917&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-nlbi)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/1byteone/dsh-plugin-nlbi) · [![npm 30d 906](https://img.shields.io/static/v1?label=npm+30d&message=906&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-nlbi)
 
 - **用途**：业务分析人员想把问题转为 MySQL 查询和可重跑报表；合格交付是业务口径正确、权限允许且可复核的SQL结果。
 - **亮点**：作者明确继承 dsh-mysql v0.1.4，数据库连接和原有 mysql 工具不算本插件原创；新增贡献是 Text2SQL、AST护栏、BI与报表复用串联，相对裸SQL对话提高可检查性。
@@ -270,7 +270,7 @@
 
 ## [Forge 工作报告](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-daily-log/INSIGHT.md)
 
-[![GitHub ★ 8](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8&color=yellow&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) · [![npm 30d 1980](https://img.shields.io/static/v1?label=npm+30d&message=1%2C980&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-daily-log)
+[![GitHub ★ 9](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9&color=yellow&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) · [![npm 30d 1976](https://img.shields.io/static/v1?label=npm+30d&message=1%2C976&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-daily-log)
 
 - **用途**：面向需要定期汇报工作的个人或团队，从实际活动记录生成报告，并支持回查来源。
 - **亮点**：入口按 agent 作用域启用报告工具，/report 转发用户需求，扫描索引和模板为后续生成提供材料。

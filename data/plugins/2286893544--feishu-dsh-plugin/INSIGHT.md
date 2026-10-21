@@ -141,10 +141,6 @@ autoGrantOwner把授权失败与创建结果区分，避免掩盖已成功副作
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/2286893544/feishu-dsh-plugin/issues?q=is%3Aissue+is%3Aopen)
-
-暂未获取：近30天新建、近30天关闭。
-
-统计日期：2026-10-20。
+Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/2286893544/feishu-dsh-plugin/issues) 查看。
 
 [返回分类](../../views/categories/OFFICE-OPERATIONS.md) · [返回首页](../../../README.md)

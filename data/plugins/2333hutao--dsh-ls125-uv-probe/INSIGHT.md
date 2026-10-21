@@ -132,6 +132,6 @@ index.js保持技能正文单一真相和相对资源，适合分发带工具知
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-20），可前往 [GitHub Issues](https://github.com/2333hutao/dsh-ls125-uv-probe/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/2333hutao/dsh-ls125-uv-probe/issues) 查看。
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)

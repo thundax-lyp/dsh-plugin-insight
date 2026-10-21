@@ -115,7 +115,7 @@
 
 ## [DSH Telemetry Redactor](../../plugins/030611--dsh-telemetry-redactor/INSIGHT.md)
 
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/030611/dsh-telemetry-redactor) · [![npm 30d 1216](https://img.shields.io/static/v1?label=npm+30d&message=1%2C216&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-telemetry-redactor)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/030611/dsh-telemetry-redactor) · [![npm 30d 1182](https://img.shields.io/static/v1?label=npm+30d&message=1%2C182&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-telemetry-redactor)
 
 - **用途**：向观测后端发送会话遥测的部署者需要减少凭据外传，输入是遥测副本。
 - **亮点**：session-telemetry/record 前置规则调用 next 后递归生成脱敏记录，不重写规范会话。
@@ -137,7 +137,7 @@
 
 ## [dsh-api-dashboard](../../plugins/133563825as-ai--dsh-api-dashboard/INSIGHT.md)
 
-[![GitHub ★ 17](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=17&color=yellow&logo=github&style=flat)](https://github.com/133563825as-ai/dsh-api-dashboard) · [![npm 30d 4246](https://img.shields.io/static/v1?label=npm+30d&message=4%2C246&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-api-dashboard)
+[![GitHub ★ 17](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=17&color=yellow&logo=github&style=flat)](https://github.com/133563825as-ai/dsh-api-dashboard) · [![npm 30d 4179](https://img.shields.io/static/v1?label=npm+30d&message=4%2C179&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-api-dashboard)
 
 - **用途**：同时使用多个供应商的用户需要观察额度和花费趋势，合格输出应能区分实际余额、估算与无法查询。
 - **亮点**：src/index.js 从凭据及平台接口取余额，以内置或自定义单价计算会话消耗，混合币种分别显示；客户端定时刷新看板。
@@ -159,7 +159,7 @@
 
 ## [dsh-armory](../../plugins/2026heshao--dsh-armory/INSIGHT.md)
 
-[![GitHub ★ 14](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=14&color=yellow&logo=github&style=flat)](https://github.com/2026heshao/dsh-armory) · [![npm 30d 261](https://img.shields.io/static/v1?label=npm+30d&message=261&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-armory)
+[![GitHub ★ 17](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=17&color=yellow&logo=github&style=flat)](https://github.com/2026heshao/dsh-armory) · [![npm 30d 261](https://img.shields.io/static/v1?label=npm+30d&message=261&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-armory)
 
 - **用途**：同时维护多项目MCP和第三方技能的用户，希望集中导入、辨认安装来源并隔离会话工具。
 - **亮点**：作者声明fork自Imzl-zl MCP看板，原面板不计原创。可识别贡献是项目共享连接所有权与异步释放占位、统一导入准入，以及在静态header宿主前补OAuth授权流程；目录规模并非已安装能力数量。
@@ -313,7 +313,7 @@
 
 ## [dsh-plugin-adapter](../../plugins/1624318455--dsh-plugin-adapter/INSIGHT.md)
 
-[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-adapter)
+[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=yellow&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-adapter)
 
 - **用途**：希望在DSH尝试Zen模型的用户需要原生会话和工具调用接口，验收需包括流式文本、工具结果与失败恢复。
 - **亮点**：packages/plugin/src/index.ts默认注册zen-free及旧别名LlmAdapter，后台预热模型目录；另保留sidecar和可选IP池/代理配置。
@@ -357,7 +357,7 @@
 
 ## [dsh-plugin-mall](../../plugins/1e0zj--dsh-plugin-mall/INSIGHT.md)
 
-[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/1e0zj/dsh-plugin-mall) · [![npm 30d 1603](https://img.shields.io/static/v1?label=npm+30d&message=1%2C603&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@1e0zj/dsh-plugin-mall)
+[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/1e0zj/dsh-plugin-mall) · [![npm 30d 1526](https://img.shields.io/static/v1?label=npm+30d&message=1%2C526&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@1e0zj/dsh-plugin-mall)
 
 - **用途**：DSH维护者需要发现第三方插件并避免安装破坏现有profile；合格交付是可解释的安装变更及失败后的可恢复状态。
 - **亮点**：相对目录链接加手工安装，实际贡献是把发现开放性与安装冲突预检、profile快照和启动恢复连接起来；guard.js关注补丁组合结果而非单条静态扫描，能解释插件会修改谁的加载行。不是执行安全认证。
@@ -390,7 +390,7 @@
 
 ## [dsh-plugin-proxy](../../plugins/1624318455--dsh-plugin-proxy/INSIGHT.md)
 
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-proxy) · [![npm 30d 94](https://img.shields.io/static/v1?label=npm+30d&message=94&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@memef1f1y/dsh-plugin-proxy)
+[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-proxy) · [![npm 30d 85](https://img.shields.io/static/v1?label=npm+30d&message=85&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@memef1f1y/dsh-plugin-proxy)
 
 - **用途**：网络环境经常变化的用户希望不重启会话就切换出站路线，验收是目标请求确实经过预期代理。
 - **亮点**：lib/index.js用undici setGlobalDispatcher替换全局调度器，设置变化重新应用，旧连接宽限关闭，卸载恢复基线和本插件改过的环境变量。
@@ -423,7 +423,7 @@
 
 ## [dsh-reasoning-tiers](../../plugins/1069137617--dsh-reasoning-tiers/INSIGHT.md)
 
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/1069137617/dsh-reasoning-tiers) · [![npm 30d 1061](https://img.shields.io/static/v1?label=npm+30d&message=1%2C061&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-reasoning-tiers)
+[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/1069137617/dsh-reasoning-tiers) · [![npm 30d 1044](https://img.shields.io/static/v1?label=npm+30d&message=1%2C044&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-reasoning-tiers)
 
 - **用途**：自定义供应商模型缺少档位元数据时，用户需要恢复可选档位并识别无效配置。
 - **亮点**：按知识表和实时模型信息生成设置补丁，带版本写入、重算冲突并记录撤销日志，不接管请求适配器。
@@ -478,7 +478,7 @@
 
 ## [dsh-router-loomy](../../plugins/2404723600--dsh-router-loomy/INSIGHT.md)
 
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/2404723600/dsh-router-loomy) · [![npm 30d 1729](https://img.shields.io/static/v1?label=npm+30d&message=1%2C729&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-router-loomy)
+[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/2404723600/dsh-router-loomy) · [![npm 30d 1685](https://img.shields.io/static/v1?label=npm+30d&message=1%2C685&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-router-loomy)
 
 - **用途**：面向已登录Loomy且使用dsh-router的用户，想在DSH中使用同一模型通道；成功标准是请求用预期账号完成、异常流可被识别且凭证不误暴露。
 - **亮点**：作者明确参照dsh-router-traework同构范式，不能把核心选号、冷却和换号算插件原创。本项增量是Loomy本地会话发现、追踪头与“有[DONE]却无finish_reason”流的区分，处理常规兼容转发容易把半回答当成功的边界。
@@ -511,7 +511,7 @@
 
 ## [dsh-ui-auth](../../plugins/0qwq0--dsh-ui-auth/INSIGHT.md)
 
-[![GitHub ★ 8](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8&color=yellow&logo=github&style=flat)](https://github.com/0QwQ0/dsh-ui-auth) · [![npm 30d 1608](https://img.shields.io/static/v1?label=npm+30d&message=1%2C608&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-ui-auth)
+[![GitHub ★ 9](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9&color=yellow&logo=github&style=flat)](https://github.com/0QwQ0/dsh-ui-auth) · [![npm 30d 1594](https://img.shields.io/static/v1?label=npm+30d&message=1%2C594&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-ui-auth)
 
 - **用途**：需要让多个用户访问 DSH Web 的部署者，需要认证入口和数据访问边界。
 - **亮点**：包装 HTTP 与 upgrade 入口，现代网关按会话处理认证；宿主能力缺失时 fail-closed。
@@ -533,7 +533,7 @@
 
 ## [dsh-usage-dashboard-plus](../../plugins/1helloman1--dsh-usage-dashboard-plus/INSIGHT.md)
 
-[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/1HelloMan1/dsh-usage-dashboard-plus) · [![npm 30d 1066](https://img.shields.io/static/v1?label=npm+30d&message=1%2C066&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-usage-dashboard-plus)
+[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/1HelloMan1/dsh-usage-dashboard-plus) · [![npm 30d 1049](https://img.shields.io/static/v1?label=npm+30d&message=1%2C049&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-usage-dashboard-plus)
 
 - **用途**：多模型 DSH 用户希望知道账户余额及当天花费；合格交付是带价格口径的估算与可追查调用记录。
 - **亮点**：相对只看服务商余额，插件将会话用量、视觉旁路调用和模型分组放到一个入口，补足主模型账单看不到辅助调用的观察盲区；余额与日志费用来自不同路径，属于观测整合而非精确账务系统。
@@ -896,7 +896,7 @@
 
 ## [Forge 用量计费](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-usage-billing/INSIGHT.md)
 
-[![GitHub ★ 8](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8&color=yellow&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) · [![npm 30d 1814](https://img.shields.io/static/v1?label=npm+30d&message=1%2C814&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-usage-billing)
+[![GitHub ★ 9](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9&color=yellow&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) · [![npm 30d 1814](https://img.shields.io/static/v1?label=npm+30d&message=1%2C814&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-usage-billing)
 
 - **用途**：需要了解模型使用支出的开发者希望把日志用量与预算放在同一视图。
 - **亮点**：服务聚合账本分片并锁定价格快照，联网价表与汇率有缓存和降级；未知项目不静默记零。
@@ -907,7 +907,7 @@
 
 ## [Qiushi DSH Evidence Audit](../../plugins/030611--qiushi-dsh-evidence-audit/INSIGHT.md)
 
-[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/030611/qiushi-dsh-evidence-audit) · [![npm 30d 1208](https://img.shields.io/static/v1?label=npm+30d&message=1%2C208&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/qiushi-dsh-evidence-audit)
+[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/030611/qiushi-dsh-evidence-audit) · [![npm 30d 1173](https://img.shields.io/static/v1?label=npm+30d&message=1%2C173&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/qiushi-dsh-evidence-audit)
 
 - **用途**：需要排查执行记录是否缺失或被改动的本地部署者，关注观察链的一致性。
 - **亮点**：工具结果和事件被规范化、哈希化，再以 previousRecordHash 连接到追加记录。
@@ -918,7 +918,7 @@
 
 ## [Quota 用量仪表](../../plugins/121212165--dsh-plugin-quota/INSIGHT.md)
 
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/121212165/dsh-plugin-quota) · [![npm 30d 138](https://img.shields.io/static/v1?label=npm+30d&message=138&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-quota)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/121212165/dsh-plugin-quota) · [![npm 30d 126](https://img.shields.io/static/v1?label=npm+30d&message=126&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-quota)
 
 - **用途**：长任务开发者希望在继续调用前看到消耗趋势和可能的预算边界。
 - **亮点**：监听 assistant/message usage 累加本地账本，通过 systemPrompt 注入一行仪表，/qm 与工具展示统计。

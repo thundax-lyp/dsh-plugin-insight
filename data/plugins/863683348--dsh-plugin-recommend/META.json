@@ -1,8 +1,8 @@
 {
   "repository": "863683348/dsh-plugin-recommend",
   "repository_id": 1336684098,
-  "captured_at": "2026-10-21T03:40:45.050Z",
-  "window_start": "2026-09-21T03:40:45.050Z",
+  "captured_at": "2026-10-21T05:08:56.162Z",
+  "window_start": "2026-09-21T05:08:56.162Z",
   "stars": 0,
   "pushed_at": "2026-09-11T03:26:34Z",
   "issues": {
@@ -15,28 +15,28 @@
   "errors": [
     {
       "target": "open",
-      "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-plugin-recommend%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 535C:47E31:3D443A:41D5DF:6AD8343E and timestamp 2026-10-21 03:40:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-plugin-recommend%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6416:D5CAC:14BED6:226057:6AD84AC7 and timestamp 2026-10-21 05:16:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed",
-      "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-plugin-recommend%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 543E:32D9F:3F0530:4395AB:6AD8343F and timestamp 2026-10-21 03:40:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-plugin-recommend%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C5:2AF002:15151E:22C3DF:6AD84AC7 and timestamp 2026-10-21 05:16:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "created_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-plugin-recommend%20is%3Aissue%20created%3A2026-09-21T03%3A40%3A45.050Z..2026-10-21T03%3A40%3A45.050Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 55B0:1889E9:5AF897:5F8A5E:6AD83440 and timestamp 2026-10-21 03:40:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-plugin-recommend%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C6:23190F:14DBDF:229247:6AD84AC7 and timestamp 2026-10-21 05:16:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-plugin-recommend%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T03%3A40%3A45.050Z..2026-10-21T03%3A40%3A45.050Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5690:3AE7C0:3F52DB:43E3ED:6AD83441 and timestamp 2026-10-21 03:40:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-plugin-recommend%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C7:2B28:153525:2319A3:6AD84AC7 and timestamp 2026-10-21 05:16:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "updated_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-plugin-recommend%20is%3Aissue%20updated%3A2026-09-21T03%3A40%3A45.050Z..2026-10-21T03%3A40%3A45.050Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 57FC:268135:41D8BB:466962:6AD83442 and timestamp 2026-10-21 03:40:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-plugin-recommend%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C8:AC499:14A84F:225126:6AD84AC7 and timestamp 2026-10-21 05:16:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     }
   ],
   "npm": {
     "package_name": "dsh-plugin-recommend",
-    "captured_at": "2026-10-21T03:40:50.727Z",
+    "captured_at": "2026-10-21T05:08:56.162Z",
     "window_start": "2026-09-21",
     "window_end": "2026-10-20",
     "downloads_30d": 739,
@@ -44,9 +44,17 @@
     "error": null,
     "publication": {
       "first_published_at": "2026-08-19T15:29:54.177Z",
-      "captured_at": "2026-10-21T03:40:50.727Z",
+      "captured_at": "2026-10-21T05:08:56.162Z",
       "source_url": "https://registry.npmjs.org/dsh-plugin-recommend",
       "error": null
     }
+  },
+  "code_update": {
+    "checked_at": "2026-10-21T05:08:56.162Z",
+    "baseline_revision": "e553b1a6b6da777694bf6094e5c9b5ba5f51cd8b",
+    "current_revision": "e553b1a6b6da777694bf6094e5c9b5ba5f51cd8b",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
   }
 }

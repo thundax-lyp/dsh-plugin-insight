@@ -71,6 +71,6 @@ private 包版本 0.2.1，以 GitHub bundle 或本地包接入；不能仅凭包
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-20），可前往 [GitHub Issues](https://github.com/02Muller25/dsh-api-balance/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/02Muller25/dsh-api-balance/issues) 查看。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

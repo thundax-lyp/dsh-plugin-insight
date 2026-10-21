@@ -7,7 +7,7 @@
 分析版本：[c7e23f9](https://github.com/240xu/verdict-engine/tree/c7e23f9e131694af6dbd9f3ed11301602a514864/packages/dsh-tech-lead)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/240xu/verdict-engine) · [![npm 30d 68](https://img.shields.io/static/v1?label=npm+30d&message=68&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@240xu/dsh-tech-lead)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/240xu/verdict-engine) · [![npm 30d 67](https://img.shields.io/static/v1?label=npm+30d&message=67&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@240xu/dsh-tech-lead)
 <!-- END META -->
 
 **使用建议**：新采用者先核对根项目推荐的dsh-themis迁移路线，不优先安装这个旧组件；已有使用者可把它作为输入一致性检查，并保留真实测试和人工评审，先验证旧协议返回与现有调用方兼容。
@@ -131,6 +131,6 @@
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-20），可前往 [GitHub Issues](https://github.com/240xu/verdict-engine/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/240xu/verdict-engine/issues) 查看。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

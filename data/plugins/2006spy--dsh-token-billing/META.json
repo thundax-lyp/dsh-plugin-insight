@@ -1,52 +1,39 @@
 {
   "repository": "2006spy/dsh-token-billing",
   "repository_id": 1335139860,
-  "captured_at": "2026-10-20T10:44:45.467Z",
-  "window_start": "2026-09-20T10:44:45.467Z",
+  "captured_at": "2026-10-21T05:08:56.162Z",
+  "window_start": "2026-09-21T05:08:56.162Z",
   "stars": 4,
   "pushed_at": "2026-09-11T16:05:11Z",
   "issues": {
-    "open": null,
-    "closed": null,
-    "created_30d": null,
-    "closed_30d": null,
-    "updated_30d": null
+    "open": 0,
+    "closed": 0,
+    "created_30d": 0,
+    "closed_30d": 0,
+    "updated_30d": 0
   },
-  "errors": [
-    {
-      "target": "open",
-      "message": "GitHub request failed for search/issues?q=repo%3A2006spy%2Fdsh-token-billing%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2C58:1F64B3:2F58C2:33168D:6AD7461F and timestamp 2026-10-20 10:44:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "closed",
-      "message": "GitHub request failed for search/issues?q=repo%3A2006spy%2Fdsh-token-billing%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2D12:3D329A:2DA9A9:3169A3:6AD7461F and timestamp 2026-10-20 10:44:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "created_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A2006spy%2Fdsh-token-billing%20is%3Aissue%20created%3A2026-09-20T10%3A44%3A45.467Z..2026-10-20T10%3A44%3A45.467Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8EF0:2F8C21:38C9FF:552719:6AD74620 and timestamp 2026-10-20 10:44:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "closed_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A2006spy%2Fdsh-token-billing%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T10%3A44%3A45.467Z..2026-10-20T10%3A44%3A45.467Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8FAC:32F9F1:38B54D:547EDC:6AD74621 and timestamp 2026-10-20 10:44:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "updated_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A2006spy%2Fdsh-token-billing%20is%3Aissue%20updated%3A2026-09-20T10%3A44%3A45.467Z..2026-10-20T10%3A44%3A45.467Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9046:141A53:3965FB:5597FE:6AD74622 and timestamp 2026-10-20 10:44:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    }
-  ],
+  "errors": [],
   "npm": {
     "package_name": "dsh-token-billing",
-    "captured_at": "2026-10-20T10:44:50.743Z",
-    "window_start": "2026-09-20",
-    "window_end": "2026-10-19",
+    "captured_at": "2026-10-21T05:08:56.162Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
     "downloads_30d": null,
-    "source_url": "https://api.npmjs.org/downloads/point/2026-09-20:2026-10-19/dsh-token-billing",
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-token-billing",
     "error": "HTTP 404",
     "publication": {
       "first_published_at": null,
-      "captured_at": "2026-10-20T10:44:50.743Z",
+      "captured_at": "2026-10-21T05:08:56.162Z",
       "source_url": "https://registry.npmjs.org/dsh-token-billing",
       "error": "HTTP 404"
     }
+  },
+  "code_update": {
+    "checked_at": "2026-10-21T05:08:56.162Z",
+    "baseline_revision": "098b9e8164bd66a6f2bdbc204ece186c6ca52060",
+    "current_revision": "098b9e8164bd66a6f2bdbc204ece186c6ca52060",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
   }
 }
