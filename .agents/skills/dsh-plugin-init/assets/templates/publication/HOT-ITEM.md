@@ -1,1 +1,1 @@
-- {{plugin}} · {{summary}} · {{metrics}}（{{package}}；{{window}}）
+- {{plugin}} · {{summary}}{{metrics}}（{{package}}；{{window}}）

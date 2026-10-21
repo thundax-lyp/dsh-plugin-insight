@@ -7,7 +7,7 @@
 分析版本：[6039b26](https://github.com/643048695/dsh-compaction-route/tree/6039b260d96652ce4af606f850cd1a179cd9d4f7)
 
 <!-- BEGIN META -->
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/643048695/dsh-compaction-route)
+
 <!-- END META -->
 
 **使用建议**：已遇到压缩路由失败时可试。先检查主备都支持实际输入量和推理档位，再测取消、失败及摘要完整性。

@@ -7,7 +7,7 @@
 分析版本：[d370852](https://github.com/AHIOSUZ/dsh-workspace-tools/tree/d370852671425f09909862a7d220f7b0538f2f3c)
 
 <!-- BEGIN META -->
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/AHIOSUZ/dsh-workspace-tools)
+
 <!-- END META -->
 
 **使用建议**：适合工作区信任稳定的用户先用保守权限测试。新建立即运行和手动改选时核对持久会话最终值，不把自动默认当授权审核。

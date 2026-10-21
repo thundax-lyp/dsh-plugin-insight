@@ -7,7 +7,7 @@
 分析版本：[bb74ab5](https://github.com/7gzgn/dsh-restart-dock/tree/bb74ab5d5eafdd97cec75a0be759346fdcacece7)
 
 <!-- BEGIN META -->
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/7gzgn/dsh-restart-dock)
+
 <!-- END META -->
 
 **使用建议**：Windows上需要手动重载插件的人先检查没有任务写入；先验证状态与取消、保留工作，再测试重启，macOS/Linux只期待刷新。

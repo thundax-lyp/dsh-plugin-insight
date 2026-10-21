@@ -7,7 +7,7 @@
 分析版本：[0147e9b](https://github.com/AK-blank/dsh-plugin-auto-answer/tree/0147e9b83cd100b4532024f8907799741ce87429)
 
 <!-- BEGIN META -->
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/AK-blank/dsh-plugin-auto-answer)
+
 <!-- END META -->
 
 **使用建议**：仅在明确允许机器默认的低风险偏好任务先试用。先设fallback=none、freeText=block核对边界，保持plan-review忽略；自动选项不得作为人类授权证据。

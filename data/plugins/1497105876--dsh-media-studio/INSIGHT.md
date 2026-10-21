@@ -7,7 +7,7 @@
 分析版本：[4fb706a](https://github.com/1497105876/dsh-media-studio/tree/4fb706a3fb2b68cdbb81e951885d2178905d6ca2)
 
 <!-- BEGIN META -->
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/1497105876/dsh-media-studio)
+
 <!-- END META -->
 
 **使用建议**：先在低预算测试环境核对一个模型、后台完成和重开会话后附件；不把预设列表等同逐家验收，不对未知结果自动重复生成。

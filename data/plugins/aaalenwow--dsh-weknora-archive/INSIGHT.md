@@ -7,7 +7,7 @@
 分析版本：[46079ec](https://github.com/AAAlenwow/dsh-weknora-archive/tree/46079ecb3554239797b1dcbe2e82f74a21adb9a1)
 
 <!-- BEGIN META -->
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/AAAlenwow/dsh-weknora-archive)
+
 <!-- END META -->
 
 **使用建议**：先审阅脱敏摘要并在测试WeKnora使用固定库ID。不要在未知目标上把dry_run当无写入保证，归档后核对文档解析和后续会话更新。

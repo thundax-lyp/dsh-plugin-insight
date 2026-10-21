@@ -7,7 +7,7 @@
 分析版本：[42970dd](https://github.com/1497105876/dsh-text-inject/tree/42970dd9743730259ba04af40f5ece1db1e7c7bc)
 
 <!-- BEGIN META -->
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/1497105876/dsh-text-inject)
+
 <!-- END META -->
 
 **使用建议**：先用少量无冲突规则验证每轮实际上下文，并确认删除与恢复生效；需要关键词门控时先核实当前版本，不能仅照README。

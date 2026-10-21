@@ -18,6 +18,7 @@ import {
     renderUpdated,
     renderIssueActivity,
     renderPublicationBadge,
+    renderCountBadge,
     renderLatest,
     renderHot,
     renderRecommended,
@@ -158,84 +159,47 @@ export function renderPublication(input, root = ROOT, context = null) {
                 stars = null,
                 pushedAt = null,
                 issues = renderIssueActivity(null, plugin.repository);
-            let starsBadge = template('BADGE', {
-                alt: 'GitHub ★ 暂未获取',
-                image:
-                    'https://img.shields.io/static/v1?' +
-                    new URLSearchParams({
-                        label: 'GitHub ★',
-                        message: '暂未获取',
-                        color: 'lightgrey',
-                        logo: 'github',
-                        style: 'flat'
-                    }).toString(),
-                url: `https://github.com/${plugin.repository}`
-            });
-            let listMetrics = starsBadge;
-            let meta = template('META', { stars: starsBadge, downloads: '', review: '' });
+            let starsBadge = '',
+                baseMetrics = '',
+                listMetrics = '',
+                meta = '';
             if (path) {
                 const m = validateMetadata(context?.metadata[i.id] ?? read(local(root, path)));
                 if (m.repository_id !== null && m.repository_id !== plugin.repository_id)
                     throw Error('metadata repository identity differs');
                 if (m.repository.toLowerCase() !== plugin.repository.toLowerCase())
                     throw Error('metadata repository differs');
-                const n = (v) => (v === null ? '暂未获取' : v);
                 issues = renderIssueActivity(m, m.repository);
                 // A declared package name with two 404 responses is not a confirmed npm publication.
                 // Retain the failed capture in metadata without advertising an unverified package.
                 const npmAvailable = m.npm && !(m.npm.error === 'HTTP 404' && m.npm.publication?.error === 'HTTP 404');
                 npmDownloads = npmAvailable ? m.npm : null;
-                const badge = npmAvailable
-                    ? 'https://img.shields.io/static/v1?' +
-                      new URLSearchParams({
-                          label: 'npm 30d',
-                          message:
-                              m.npm.downloads_30d === null ? '暂未获取' : m.npm.downloads_30d.toLocaleString('en-US'),
-                          color: m.npm.downloads_30d === null ? 'lightgrey' : 'blue',
+                const downloads = m.npm?.error
+                    ? ''
+                    : renderCountBadge('npm 30d', npmDownloads?.downloads_30d, {
+                          color: 'blue',
                           logo: 'npm',
-                          style: 'flat'
-                      }).toString()
-                    : null;
-                const downloads = npmAvailable
-                    ? ' · ' +
-                      template('BADGE', {
-                          alt: `npm 30d ${n(m.npm.downloads_30d)}`,
-                          image: badge,
-                          url: `https://www.npmjs.com/package/${m.npm.package_name}`
-                      })
-                    : '';
+                          url: `https://www.npmjs.com/package/${npmDownloads?.package_name}`
+                      });
                 npmFirstPublished = m.npm?.publication?.error ? null : (m.npm?.publication?.first_published_at ?? null);
                 for (const at of [m.captured_at, m.npm?.captured_at, m.npm?.publication?.captured_at].filter(Boolean))
                     metadataDates.add(new Date(Date.parse(at) + 8 * 3600000).toISOString().slice(0, 10));
-                const starImage =
-                    'https://img.shields.io/static/v1?' +
-                    new URLSearchParams({
-                        label: 'GitHub ★',
-                        message: String(n(m.stars)),
-                        color: 'yellow',
-                        logo: 'github',
-                        style: 'flat'
-                    }).toString();
                 needsReview = m.code_update?.script_changed === true;
                 const update = needsReview
-                    ? ' · **脚本有更新，待重新洞察**'
+                    ? '**脚本有更新，待重新洞察**'
                     : m.code_update?.script_changed === null
-                      ? ' · 脚本更新状态暂未确认'
+                      ? '脚本更新状态暂未确认'
                       : '';
                 stars = m.stars;
                 pushedAt = m.pushed_at;
-                starsBadge = template('BADGE', {
-                    alt: `GitHub ★ ${n(m.stars)}`,
-                    image: starImage,
+                starsBadge = renderCountBadge('GitHub ★', m.stars, {
+                    color: 'yellow',
+                    logo: 'github',
                     url: `https://github.com/${m.repository}`
                 });
-                listMetrics = starsBadge + downloads;
-                meta = template('META', { stars: starsBadge, downloads, review: update });
-            }
-            const longRead = report.length >= 8000 || /^## .*?(?:创新推演|未来设计假设)/m.test(report);
-            const detail = renderDetailLayout(renderDetailReport(report, i), i, {
-                meta: [
-                    meta,
+                baseMetrics = [starsBadge, downloads].filter(Boolean).join(' ');
+                listMetrics = [
+                    baseMetrics,
                     renderPublicationBadge(
                         '首次发布',
                         npmFirstPublished,
@@ -243,7 +207,15 @@ export function renderPublication(input, root = ROOT, context = null) {
                     )
                 ]
                     .filter(Boolean)
-                    .join(' · '),
+                    .join(' ');
+                meta = template('META', {
+                    badges: listMetrics,
+                    review: update ? `${listMetrics ? ' · ' : ''}${update}` : ''
+                });
+            }
+            const longRead = report.length >= 8000 || /^## .*?(?:创新推演|未来设计假设)/m.test(report);
+            const detail = renderDetailLayout(renderDetailReport(report, i), i, {
+                meta,
                 issues,
                 advice: usageConditions,
                 capabilities,
@@ -261,6 +233,7 @@ export function renderPublication(input, root = ROOT, context = null) {
                 needsReview,
                 stars,
                 starsBadge,
+                baseMetrics,
                 listMetrics,
                 pushedAt,
                 npmFirstPublished,

@@ -7,7 +7,7 @@
 分析版本：[fe04c50](https://github.com/1497105876/dsh-mimotts/tree/fe04c509d3a308a2807238162998792ba8de6bca)
 
 <!-- BEGIN META -->
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/1497105876/dsh-mimotts)
+
 <!-- END META -->
 
 **使用建议**：先用无敏感信息的短文本验证读音、取消和历史，再配置音色；听到语音不应代替核对原始技术结论。

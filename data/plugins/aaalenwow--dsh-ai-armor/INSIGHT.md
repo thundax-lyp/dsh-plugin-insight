@@ -7,7 +7,7 @@
 分析版本：[dedf8d3](https://github.com/AAAlenwow/dsh-ai-armor/tree/dedf8d32fcaaa70e8584f432ba1c63b103f133dc)
 
 <!-- BEGIN META -->
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/AAAlenwow/dsh-ai-armor)
+
 <!-- END META -->
 
 **使用建议**：可按具体只读诊断工具需求评估；二分执行与静态扫描需分别授权和隔离，不能因本地工具或零依赖而当作无副作用。

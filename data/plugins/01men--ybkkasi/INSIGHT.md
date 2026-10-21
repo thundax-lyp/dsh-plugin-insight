@@ -7,7 +7,7 @@
 分析版本：[d42aa3b](https://github.com/01men/ybkkasi/tree/d42aa3bb5925f1f8be7c92337682d006484ec413)
 
 <!-- BEGIN META -->
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/01men/ybkkasi)
+
 <!-- END META -->
 
 **使用建议**：已有多用户治理需求的团队先在隔离环境跑一条业务链；核对拒绝、例外入口与备份恢复，再扩部门和资源，避免把启动健康当业务验收。

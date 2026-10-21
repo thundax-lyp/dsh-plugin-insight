@@ -7,7 +7,7 @@
 分析版本：[a2af408](https://github.com/873360545/dsh-auto-shutdown/tree/a2af408455e31a0acf4021e3383d1384dcb7aebc)
 
 <!-- BEGIN META -->
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/873360545/dsh-auto-shutdown)
+
 <!-- END META -->
 
 **使用建议**：先用作者提供的dryrun路径在临时环境检查事件和复位，不直接在有未保存任务的主机启用。确认取消命令与设置写入失败行为后再决定使用。

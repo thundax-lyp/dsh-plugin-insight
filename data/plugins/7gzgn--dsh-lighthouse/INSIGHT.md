@@ -7,7 +7,7 @@
 分析版本：[d72f8ac](https://github.com/7gzgn/dsh-lighthouse/tree/d72f8acf3009712bd1a9d536a4d2f9ccd13ac1cb)
 
 <!-- BEGIN META -->
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/7gzgn/dsh-lighthouse)
+
 <!-- END META -->
 
 **使用建议**：维护多个作品的人可先录入少量明确身份条目；核对npm包、市场项和PR来源，再用异常排序安排人工检查，不以下载/星数认定真实采用。

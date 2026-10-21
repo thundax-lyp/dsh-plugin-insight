@@ -7,7 +7,7 @@
 分析版本：[b041224](https://github.com/11111353535/dsh-reaper/tree/b0412244e623d54fbf0bded66cba5203de8c85c4)
 
 <!-- BEGIN META -->
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/11111353535/dsh-reaper)
+
 <!-- END META -->
 
 **使用建议**：先仅用扫描与预览，对照系统工具确认归属；实际清理只在可丢弃开发进程上验收。

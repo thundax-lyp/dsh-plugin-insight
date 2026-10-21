@@ -7,7 +7,7 @@
 分析版本：[838ddf0](https://github.com/6mt/dsh-plugin-loopback-trust/tree/838ddf0d79fb977be896c6cb5dcd0bba68015832)
 
 <!-- BEGIN META -->
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/6mt/dsh-plugin-loopback-trust)
+
 <!-- END META -->
 
 **使用建议**：仅适合已经配置访问控制的自管反代管理员核查后试用。先验证未授权访问被反代阻止，再验证设置保存与卸载恢复；公开匿名实例不宜启用。

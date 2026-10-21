@@ -7,7 +7,7 @@
 分析版本：[46f407f](https://github.com/AAAlenwow/dsh-spring-admin-kit/tree/46f407f29a9cc22f733962a8c56c00b65ef0e9d8)
 
 <!-- BEGIN META -->
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/AAAlenwow/dsh-spring-admin-kit)
+
 <!-- END META -->
 
 **使用建议**：适合相同技术栈先在小功能试用。确认字段、只读列与业务唯一键，真正编译模板并在测试库检查失败回滚；勿把Skill叫guard当拦截器。

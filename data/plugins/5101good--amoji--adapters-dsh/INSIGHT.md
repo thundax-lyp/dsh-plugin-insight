@@ -7,7 +7,7 @@
 分析版本：[abb823a](https://github.com/5101good/amoji/tree/abb823a78660bc3853c46545e765ed6af4508298/adapters/dsh)
 
 <!-- BEGIN META -->
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/5101good/amoji)
+
 <!-- END META -->
 
 **使用建议**：想用图像表达协作意图且能固定DSH版本的人，可先在隔离profile试基础表情；按release说明装成品包，逐条核对原生消息与图片状态，遇到未知结果查原请求，不重复发送。

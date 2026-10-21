@@ -7,7 +7,7 @@
 分析版本：[7894da8](https://github.com/11111353535/dsh-which/tree/7894da833582b46526b251348cd8993b70a5ce85)
 
 <!-- BEGIN META -->
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/11111353535/dsh-which)
+
 <!-- END META -->
 
 **使用建议**：先只查询并对照当前 shell 的解析结果，必要时对可信二进制启用版本探测。

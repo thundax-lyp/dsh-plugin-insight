@@ -7,7 +7,7 @@
 分析版本：[7369098](https://github.com/2008924/dsh-progress-viz/tree/736909845ac33cf5ac671e1a4b6beecc814d983f/plugin)
 
 <!-- BEGIN META -->
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/2008924/dsh-progress-viz)
+
 <!-- END META -->
 
 **使用建议**：适合看长任务活动；先验证同会话空闲后继续工作的显示，关键任务以实际产物和会话结果验收。

@@ -7,7 +7,7 @@
 分析版本：[8b578f8](https://github.com/7gzgn/dsh-leak-guard/tree/8b578f80898b80acc77285f3f4c095b433dda0a4)
 
 <!-- BEGIN META -->
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/7gzgn/dsh-leak-guard)
+
 <!-- END META -->
 
 **使用建议**：适合发布前补查明显秘密；显式传项目路径，查看所有跳过项，再检查真实打包文件与Git历史，别把ok当无泄露保证。

@@ -7,7 +7,7 @@
 分析版本：[1933430](https://github.com/1032740078/dsh-web-url-view/tree/193343093186016080a81c5512c6936809daff25)
 
 <!-- BEGIN META -->
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/1032740078/dsh-web-url-view)
+
 <!-- END META -->
 
 **使用建议**：先保持回环绑定，测试重启后的令牌更新与拒绝外部 Origin，再考虑受控网络访问。
