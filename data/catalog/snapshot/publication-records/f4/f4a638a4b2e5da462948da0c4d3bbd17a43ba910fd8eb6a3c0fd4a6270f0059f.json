@@ -1,0 +1,17 @@
+{
+  "id": "github:1368115538:root",
+  "repository": "9Ashwin/dsh-session-rename",
+  "path": "",
+  "revision": "f073bfa1fa7e59832df5efacb5b94ee44749326c",
+  "fingerprints": {
+    "directory": "1b8ae72c15fc1c0308ee843af7b9a8fc29528a2941d0ee2975fb26b1adc453c4",
+    "code": "f073bfa1fa7e59832df5efacb5b94ee44749326c",
+    "maintenance": "0ca59127f4548970bcd584551e0272ab68222a9a6901f9b72ac28a0fdb7d3361"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T04:06:46Z",
+  "analysis_sha256": "e786adcf847b864662ab10b40be6ce62d4165c91ddd24e14693932ca37c067a4"
+}

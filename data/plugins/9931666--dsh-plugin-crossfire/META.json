@@ -1,0 +1,40 @@
+{
+  "repository": "9931666/dsh-plugin-crossfire",
+  "repository_id": 1399279897,
+  "captured_at": "2026-10-21T04:11:20.063Z",
+  "window_start": "2026-09-21T04:11:20.063Z",
+  "stars": 1,
+  "pushed_at": "2026-10-18T07:29:20Z",
+  "issues": {
+    "open": null,
+    "closed": null,
+    "created_30d": 0,
+    "closed_30d": 0,
+    "updated_30d": 0
+  },
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3A9931666%2Fdsh-plugin-crossfire%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID BBA8:27069F:461D6E:4B1563:6AD83B69 and timestamp 2026-10-21 04:11:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3A9931666%2Fdsh-plugin-crossfire%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID BE88:51118:42AB98:47A3ED:6AD83B6B and timestamp 2026-10-21 04:11:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "@y9931666/dsh-plugin-crossfire",
+    "captured_at": "2026-10-21T04:11:26.821Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": 669,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40y9931666%2Fdsh-plugin-crossfire",
+    "error": null,
+    "publication": {
+      "first_published_at": "2026-10-01T13:31:12.828Z",
+      "captured_at": "2026-10-21T04:11:26.821Z",
+      "source_url": "https://registry.npmjs.org/%40y9931666%2Fdsh-plugin-crossfire",
+      "error": null
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "github:1344714660:root",
+  "repository": "988hj7tczd-oss/dsh-receipts",
+  "path": "",
+  "revision": "ebc1ae1cc2a24da9ce8407bb02606db0438e83a7",
+  "fingerprints": {
+    "directory": "53da1e6e129bf99a73f041741401e0cf6dfe9c3295322bbc30ecf635df265841",
+    "code": "ebc1ae1cc2a24da9ce8407bb02606db0438e83a7",
+    "maintenance": "08409c646fcd91b1d0f76269350ab818473911d5a822ebf40c1d8fed1d769fd1"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T04:06:46Z",
+  "analysis_sha256": "0a10d9ca78a784c9d29d3590d6e245ad8df6ae4a02abc38c918d092ede697f51"
+}

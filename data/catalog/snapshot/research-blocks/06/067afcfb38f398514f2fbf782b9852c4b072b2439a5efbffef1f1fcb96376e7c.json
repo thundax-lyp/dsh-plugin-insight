@@ -1,0 +1,24 @@
+{
+  "plugin_id": "github:1336693516:root",
+  "revision": "fb20d0c4875cf57685c866ce12f1de4ae7361fbd",
+  "reason_code": "source_contains_nul",
+  "reason": "固定源码含NUL字节，标准统计器拒绝，未取得完整inventory。",
+  "details": {
+    "plugin_id": "github:1336693516:root",
+    "revision": "fb20d0c4875cf57685c866ce12f1de4ae7361fbd",
+    "reason_code": "source_contains_nul",
+    "reason": "固定源码含NUL字节，标准统计器拒绝，未取得完整inventory。",
+    "file": "scripts/publish-http.mjs",
+    "bytes": 5055,
+    "nul_offsets": [
+      2147
+    ],
+    "sha256": "66b756fdde91ac02fee16381b06f74137b29e9be2e7b80e0ceaa929282a0d03c",
+    "utf8_decodable": true,
+    "source_url": "https://github.com/863683348/dsh-plugin-scorecard/blob/fb20d0c4875cf57685c866ce12f1de4ae7361fbd/scripts/publish-http.mjs",
+    "detail": "统计器报not UTF-8 text；字节可解码，不能据此断言目标代码不可运行。本次登记既有失败，不重新研究。",
+    "next_step": "版本变化或用户明确要求后重试；先确认合法统计规则，不修改目标源码。"
+  },
+  "blocked_at": "2026-10-21T04:43:38.940Z",
+  "run_id": "2026-10-21-05"
+}

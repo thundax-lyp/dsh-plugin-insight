@@ -1,0 +1,4 @@
+{
+  "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+  "text": "单文件Lua可先试；有宿主全局或第三方库时先核configuration，再测实际符号。"
+}

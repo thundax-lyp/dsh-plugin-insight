@@ -1,0 +1,299 @@
+{
+  "id": "github:1402771540:root",
+  "repository_id": 1402771540,
+  "component_id": "root",
+  "repository": "A42Null/dsh-opencode-zen-plugin",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-opencode-zen-plugin",
+  "entry_type": "plugin",
+  "technical_category": "model-provider",
+  "business_category": "infrastructure",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "8e54fb5a7a6c7f1e9136995200ff36878bcf92f45cd2e930813b225000a2cc2b",
+    "code": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29",
+    "maintenance": "e248d056b853456ca3a1ee09ca4e0ae66fbb47e238487d9de1599ca0bb8d7bad"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-04-github-1402771540-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T04:13:23.414Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-04-github-1402771540-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/A42Null/dsh-opencode-zen-plugin/blob/e1d0054333d5f8185f3d6e55f563e5fe91e19b29/README.md",
+      "revision": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29",
+      "captured_at": "2026-10-21T04:13:23.414Z",
+      "summary": "把OpenCode Console模型目录与多种流式协议接入DSH模型选择和配置界面。",
+      "artifact": "data/runs/2026-10-21-04/snapshots/a42null--dsh-opencode-zen-plugin/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-04-github-1402771540-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/A42Null/dsh-opencode-zen-plugin/blob/e1d0054333d5f8185f3d6e55f563e5fe91e19b29/lib/index.js",
+      "revision": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29",
+      "captured_at": "2026-10-21T04:13:23.414Z",
+      "summary": "核查 lib/index.js；lib/index.js定时拉模型ID与models.dev元数据、用模型名前缀/例外表选四类协议，统一SSE事件与推理参数，并用watchdog中断无活动流。",
+      "artifact": "data/runs/2026-10-21-04/snapshots/a42null--dsh-opencode-zen-plugin/REVIEWED-SOURCE.json",
+      "limitations": [
+        "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "持有Console API key的用户希望在DSH使用目录中的聊天模型，合格结果需文本、工具调用、usage和错误都正确映射。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1402771540-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1402771540:root",
+          "area": "code",
+          "fingerprint": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:13:23.414Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "lib/index.js定时拉模型ID与models.dev元数据、用模型名前缀/例外表选四类协议，统一SSE事件与推理参数，并用watchdog中断无活动流。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1402771540-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1402771540:root",
+          "area": "code",
+          "fingerprint": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:13:23.414Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1402771540-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1402771540:root",
+          "area": "code",
+          "fingerprint": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:13:23.414Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "MIT双面JS包，需付费Console账号与key；免费层默认隐藏，静态目录不是当前授权证明，未核实当前模型供给/价格。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1402771540-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1402771540:root",
+          "area": "code",
+          "fingerprint": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:13:23.414Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "配置key与资金，实际调用按服务收费，自动刷新/失败重试有开销；跨协议适配维护持续，无费用节省实测。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1402771540-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1402771540:root",
+          "area": "code",
+          "fingerprint": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:13:23.414Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "适合已有Console账号的用户先对固定模型验证文本、工具和usage。目录出现不代表可用，保留原生provider回退。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1402771540-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1402771540:root",
+          "area": "code",
+          "fingerprint": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:13:23.414Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "减少逐模型配置，但不提高模型本身能力或证明更低成本。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1402771540-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1402771540:root",
+          "area": "code",
+          "fingerprint": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:13:23.414Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "协议builder/stream转换/watchdog分区、可操作错误分类可借鉴；单文件协议映射和模型命名例外是维护热点，静态元数据应标来源。 源码依据：[lib/index.js](https://github.com/A42Null/dsh-opencode-zen-plugin/blob/e1d0054333d5f8185f3d6e55f563e5fe91e19b29/lib/index.js)。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1402771540-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1402771540:root",
+          "area": "code",
+          "fingerprint": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:13:23.414Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "相比手工逐模型配置，增量是动态目录、协议路由和错误分类一体化；模型能力与服务供给属于Console，上下文元数据来自外部目录。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1402771540-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1402771540:root",
+          "area": "code",
+          "fingerprint": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:13:23.414Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "模型可选是否等于已兼容？apiForModel用名字路由、未知默认chat，目录离线可用静态回落；新模型协议变更或元数据过期会显示却不可调用。状态ok可与lastError并存，不能用目录非空认定服务健康。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1402771540-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1402771540:root",
+          "area": "code",
+          "fingerprint": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:13:23.414Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "由命名路由与回落推导，可为模型记录协议来源、元数据日期和最近能力探测状态，未知模型先标待确认。未验证；用新前缀/过期元数据/工具调用流测试，若仍把未验证项展示为完整支持则否定。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1402771540-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1402771540:root",
+          "area": "code",
+          "fingerprint": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:13:23.414Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T04:13:23.414Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29",
+    "reviewed_at": "2026-10-21T04:13:23.414Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1402771540:root",
+        "area": "code",
+        "fingerprint": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 15,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty多协议provider适配小档；mechanism目录路由组合半档；transferability流转换半档；simplification自动目录半档。",
+      "basis": "interpretation",
+      "score": 42,
+      "evidence_ids": [
+        "2026-10-21-04-github-1402771540-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 8,
+        "reach": 10,
+        "economics": 4
+      },
+      "rationale": "workflow配置便利小档；delivery现有模型接入小档；reach跨服务用户半档；economics未测小档。",
+      "basis": "interpretation",
+      "score": 31,
+      "evidence_ids": [
+        "2026-10-21-04-github-1402771540-root-source"
+      ]
+    }
+  }
+}

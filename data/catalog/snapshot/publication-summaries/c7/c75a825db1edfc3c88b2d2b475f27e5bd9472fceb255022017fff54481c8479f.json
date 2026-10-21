@@ -1,0 +1,5 @@
+{
+  "text": "在DSH用户问题超时后自动选择提问方标为推荐的选项，并允许配置回退与计划评审策略。",
+  "revision": "0147e9b83cd100b4532024f8907799741ce87429",
+  "source_url": "https://github.com/AK-blank/dsh-plugin-auto-answer/blob/0147e9b83cd100b4532024f8907799741ce87429/README.md"
+}

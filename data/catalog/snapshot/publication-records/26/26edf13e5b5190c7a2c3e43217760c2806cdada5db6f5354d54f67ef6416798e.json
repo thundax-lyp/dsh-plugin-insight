@@ -1,0 +1,17 @@
+{
+  "id": "github:1344713683:root",
+  "repository": "988hj7tczd-oss/dsh-skill-creator",
+  "path": "",
+  "revision": "f9ff56714decd8d604d97dced494206937c8f907",
+  "fingerprints": {
+    "directory": "6843d3e21d8d81fc80317391c6324297b1c52b1e4d3ffb727e3126379e9dfa7e",
+    "code": "f9ff56714decd8d604d97dced494206937c8f907",
+    "maintenance": "0d5c0a5a12c38d805765b9c8b8a0eddd59854d0acab82b6f17db1bd73e2e5a5a"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T04:06:46Z",
+  "analysis_sha256": "552d4da8c43e38b1c0b2c4ae0fcd3ecee4c73de64faad193d24d6790dd2f7f6f"
+}

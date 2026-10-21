@@ -1,0 +1,17 @@
+{
+  "id": "github:1344713526:dsh-lsp-cpp",
+  "repository": "988hj7tczd-oss/dsh-lsp-packs",
+  "path": "dsh-lsp-cpp",
+  "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+  "fingerprints": {
+    "directory": "92c40620678efa33cc9c60a9971896b6ca9bb5be3d2474b4a09eadcd3466e80f",
+    "code": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+    "maintenance": "c574dcf28e68df0fb97fbd81638d887e8e9b60b99dbcf2e34fc7481b1d25448e"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T04:06:46Z",
+  "analysis_sha256": "27e5d490166ef76afe72543d831e9765d62b1be8e340ede46c3aab4e1a2f931d"
+}

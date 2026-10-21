@@ -1,0 +1,299 @@
+{
+  "id": "github:1378097401:dsh-live2d-pet",
+  "repository_id": 1378097401,
+  "component_id": "dsh-live2d-pet",
+  "repository": "A8Chann/dsh-pet-live2d",
+  "path": "dsh-live2d-pet",
+  "aliases": [],
+  "name": "dsh-pet-live2d",
+  "entry_type": "plugin",
+  "technical_category": "interface-input",
+  "business_category": "personal-productivity",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "670a48447564fc098fe8bc716b816c5f28d58188af869d271d0e6ba8e92100e4",
+    "code": "2b48355bc9fb0c99cd5d32df64675b1900629e88",
+    "maintenance": "e4bdfa37dd6ce2cb274af8a0836995da97c27b390a5b7866ffe65924277e77f1"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-04-github-1378097401-dsh-live2d-pet-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T04:13:24.418Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-04-github-1378097401-dsh-live2d-pet-author",
+      "kind": "author_claim",
+      "url": "https://github.com/A8Chann/dsh-pet-live2d/blob/2b48355bc9fb0c99cd5d32df64675b1900629e88/dsh-live2d-pet/README.md",
+      "revision": "2b48355bc9fb0c99cd5d32df64675b1900629e88",
+      "captured_at": "2026-10-21T04:13:24.418Z",
+      "summary": "在DSH中显示可拖动Live2D宠物，并随会话状态切换动作、气泡与表情。",
+      "artifact": "data/runs/2026-10-21-04/snapshots/a8chann--dsh-pet-live2d--dsh-live2d-pet/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-04-github-1378097401-dsh-live2d-pet-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/A8Chann/dsh-pet-live2d/blob/2b48355bc9fb0c99cd5d32df64675b1900629e88/dsh-live2d-pet/lib/index.js",
+      "revision": "2b48355bc9fb0c99cd5d32df64675b1900629e88",
+      "captured_at": "2026-10-21T04:13:24.418Z",
+      "summary": "核查 dsh-live2d-pet/lib/index.js、dsh-live2d-pet/README.md、dsh-live2d-pet/LICENSE、dsh-live2d-pet/pets/ds-whale-girl/LICENSE；组件lib/index.js提供宠物目录/资源/事件路由，启动复制随包宠物并按pet.json哈希判断升级；首次缺Core时从官方CDN下载缓存，客户端渲染Live2D。",
+      "artifact": "data/runs/2026-10-21-04/snapshots/a8chann--dsh-pet-live2d--dsh-live2d-pet/REVIEWED-SOURCE.json",
+      "limitations": [
+        "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "希望获得会话状态提示与桌面陪伴的用户，合格表现是状态一致、透明画布不挡操作且自定义资源升级不丢失。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1378097401-dsh-live2d-pet-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1378097401:dsh-live2d-pet",
+          "area": "code",
+          "fingerprint": "2b48355bc9fb0c99cd5d32df64675b1900629e88"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:13:24.418Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "组件lib/index.js提供宠物目录/资源/事件路由，启动复制随包宠物并按pet.json哈希判断升级；首次缺Core时从官方CDN下载缓存，客户端渲染Live2D。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1378097401-dsh-live2d-pet-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1378097401:dsh-live2d-pet",
+          "area": "code",
+          "fingerprint": "2b48355bc9fb0c99cd5d32df64675b1900629e88"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:13:24.418Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1378097401-dsh-live2d-pet-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1378097401:dsh-live2d-pet",
+          "area": "code",
+          "fingerprint": "2b48355bc9fb0c99cd5d32df64675b1900629e88"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:13:24.418Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "组件代码MIT；角色CC BY-NC-SA 4.0，Cubism Core专有且运行时下载，不能将代码许可外推到素材/商业分发。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1378097401-dsh-live2d-pet-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1378097401:dsh-live2d-pet",
+          "area": "code",
+          "fingerprint": "2b48355bc9fb0c99cd5d32df64675b1900629e88"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:13:24.418Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次下载Core与资源，运行占渲染/音频资源，持续维护宿主事件和自定义模型；没有用户效率或GPU开销实测。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1378097401-dsh-live2d-pet-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1378097401:dsh-live2d-pet",
+          "area": "code",
+          "fingerprint": "2b48355bc9fb0c99cd5d32df64675b1900629e88"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:13:24.418Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "适合个人会话提示先试用。自定义资源先独立备份，核对角色与Core使用条件；升级前检查只改贴图情形，不以manifest未变认定无人修改。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1378097401-dsh-live2d-pet-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1378097401:dsh-live2d-pet",
+          "area": "code",
+          "fingerprint": "2b48355bc9fb0c99cd5d32df64675b1900629e88"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:13:24.418Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "改善状态可见与个性体验，未证明工作产出提升。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1378097401-dsh-live2d-pet-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1378097401:dsh-live2d-pet",
+          "area": "code",
+          "fingerprint": "2b48355bc9fb0c99cd5d32df64675b1900629e88"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:13:24.418Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "组件边界、事件镜像与资源同步记录可借鉴；哈希只覆盖manifest的保护范围必须如实表达，许可证与运行时供应链分开管理。 源码依据：[dsh-live2d-pet/lib/index.js](https://github.com/A8Chann/dsh-pet-live2d/blob/2b48355bc9fb0c99cd5d32df64675b1900629e88/dsh-live2d-pet/lib/index.js)、[dsh-live2d-pet/README.md](https://github.com/A8Chann/dsh-pet-live2d/blob/2b48355bc9fb0c99cd5d32df64675b1900629e88/dsh-live2d-pet/README.md)、[dsh-live2d-pet/LICENSE](https://github.com/A8Chann/dsh-pet-live2d/blob/2b48355bc9fb0c99cd5d32df64675b1900629e88/dsh-live2d-pet/LICENSE)、[dsh-live2d-pet/pets/ds-whale-girl/LICENSE](https://github.com/A8Chann/dsh-pet-live2d/blob/2b48355bc9fb0c99cd5d32df64675b1900629e88/dsh-live2d-pet/pets/ds-whale-girl/LICENSE)。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1378097401-dsh-live2d-pet-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1378097401:dsh-live2d-pet",
+          "area": "code",
+          "fingerprint": "2b48355bc9fb0c99cd5d32df64675b1900629e88"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:13:24.418Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "相对纯静态桌宠，增量是会话相位与动作池、用户互动和可保存配置结合。渲染依赖Cubism/Pixi，随包角色是独立授权资产，不能归为插件原创。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1378097401-dsh-live2d-pet-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1378097401:dsh-live2d-pet",
+          "area": "code",
+          "fingerprint": "2b48355bc9fb0c99cd5d32df64675b1900629e88"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:13:24.418Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "“自改目录一个字不碰”是否由指纹保证？同步判断只比较pet.json，后续cpSync逐文件覆盖；用户只改同名贴图而manifest未变时未必受保护。Core下载仅长度与标记检查不是固定摘要验证，离线首次安装也需要外部运行时。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1378097401-dsh-live2d-pet-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1378097401:dsh-live2d-pet",
+          "area": "code",
+          "fingerprint": "2b48355bc9fb0c99cd5d32df64675b1900629e88"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:13:24.418Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "由manifest级判定推导，可保存每个随包文件摘要并做逐文件三方更新，冲突保留用户版本并给预览。未验证；分别只改贴图/音频/manifest再升级，若仍覆盖用户同名资源则否定。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1378097401-dsh-live2d-pet-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1378097401:dsh-live2d-pet",
+          "area": "code",
+          "fingerprint": "2b48355bc9fb0c99cd5d32df64675b1900629e88"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:13:24.418Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T04:13:24.418Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "2b48355bc9fb0c99cd5d32df64675b1900629e88",
+    "reviewed_at": "2026-10-21T04:13:24.418Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1378097401:dsh-live2d-pet",
+        "area": "code",
+        "fingerprint": "2b48355bc9fb0c99cd5d32df64675b1900629e88"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 15,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty桌宠集成小档；mechanism事件动作池半档；transferability资源/相位模式半档；simplification随包与配置半档。",
+      "basis": "interpretation",
+      "score": 42,
+      "evidence_ids": [
+        "2026-10-21-04-github-1378097401-dsh-live2d-pet-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 8,
+        "reach": 5,
+        "economics": 0
+      },
+      "rationale": "workflow状态提示小档；delivery个性界面小档；reach偏好用户小档；economics未改成本结构取0。",
+      "basis": "interpretation",
+      "score": 22,
+      "evidence_ids": [
+        "2026-10-21-04-github-1378097401-dsh-live2d-pet-source"
+      ]
+    }
+  }
+}

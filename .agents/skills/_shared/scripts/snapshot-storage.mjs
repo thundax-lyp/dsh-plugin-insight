@@ -23,6 +23,7 @@ const sections = {
     'publication.capabilities': 'map',
     'publication.advice': 'map',
     registry: 'map',
+    research_blocks: 'map',
     reports: 'map',
     metadata: 'map',
     artifacts: 'map',
@@ -106,7 +107,7 @@ export function writeSnapshotStorage(path, snapshot) {
     for (const [name, kind] of Object.entries(sections)) {
         const value = get(snapshot, name);
         if (value === undefined) continue;
-        const label = name.replaceAll('.', '-');
+        const label = name.replace(/[._]/g, '-');
         if (kind === 'array') parts[name] = { kind, refs: value.map((item) => put(label, item)) };
         else if (kind === 'map')
             parts[name] = {

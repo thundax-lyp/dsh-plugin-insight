@@ -1,0 +1,299 @@
+{
+  "id": "github:1344713526:dsh-lsp-swift",
+  "repository_id": 1344713526,
+  "component_id": "dsh-lsp-swift",
+  "repository": "988hj7tczd-oss/dsh-lsp-packs",
+  "path": "dsh-lsp-swift",
+  "aliases": [],
+  "name": "dsh-lsp-swift",
+  "entry_type": "plugin",
+  "technical_category": "tools-integration",
+  "business_category": "software-delivery",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "62073aa2873fdffa05d0977dc05daf1501bc25cde480ab1468569c31a277e9c7",
+    "code": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+    "maintenance": "c574dcf28e68df0fb97fbd81638d887e8e9b60b99dbcf2e34fc7481b1d25448e"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-04-github-1344713526-dsh-lsp-swift-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T04:17:50.636Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-04-github-1344713526-dsh-lsp-swift-author",
+      "kind": "author_claim",
+      "url": "https://github.com/988hj7tczd-oss/dsh-lsp-packs/blob/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-swift/README.md",
+      "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+      "captured_at": "2026-10-21T04:17:50.636Z",
+      "summary": "为DSH配置SourceKit-LSP的Swift代码导航路由。",
+      "artifact": "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--dsh-lsp-packs--dsh-lsp-swift/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-04-github-1344713526-dsh-lsp-swift-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/988hj7tczd-oss/dsh-lsp-packs/blob/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-swift/src/index.ts",
+      "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+      "captured_at": "2026-10-21T04:17:50.636Z",
+      "summary": "核查 dsh-lsp-swift/src/index.ts、dsh-lsp-swift/README.md、dsh-lsp-swift/cordis.yml、dsh-lsp-swift/tests/smoke.e2e.ts；swift入口默认sourcekit-lsp空args，provider swift映射.swift；官方LspStdio负责启动。组件测试另有swift build预构建守卫以取得索引。",
+      "artifact": "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--dsh-lsp-packs--dsh-lsp-swift/REVIEWED-SOURCE.json",
+      "limitations": [
+        "固定SHA内本组件列明文件及配置/作者资料的有界源码检查；组件inventory不包含外部官方底座原创量。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "适合已有Xcode或Swift工具链、需要DSH访问SwiftPM符号的开发者。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-swift-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344713526:dsh-lsp-swift",
+          "area": "code",
+          "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:17:50.636Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "swift入口默认sourcekit-lsp空args，provider swift映射.swift；官方LspStdio负责启动。组件测试另有swift build预构建守卫以取得索引。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-swift-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344713526:dsh-lsp-swift",
+          "area": "code",
+          "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:17:50.636Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "固定SHA内本组件列明文件及配置/作者资料的有界源码检查；组件inventory不包含外部官方底座原创量。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-swift-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344713526:dsh-lsp-swift",
+          "area": "code",
+          "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:17:50.636Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "分发以本组件固定package.json、组合配置与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-swift-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344713526:dsh-lsp-swift",
+          "area": "code",
+          "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:17:50.636Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次准备Xcode/Swift工具链和SwiftPM工程，持续build与索引有时间、磁盘和人工配置成本；现金取决于已有开发环境，没有插件定价证据。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-swift-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344713526:dsh-lsp-swift",
+          "area": "code",
+          "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:17:50.636Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "先确认所选工具链并构建测试工程，再分别检查四操作；尤其看引用/实现是否被跳过。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-swift-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344713526:dsh-lsp-swift",
+          "area": "code",
+          "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:17:50.636Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "减少SourceKit接线，无Swift工程整体任务收益数据。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-swift-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344713526:dsh-lsp-swift",
+          "area": "code",
+          "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:17:50.636Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "组件保持配置层、测试显式区分预构建失败是可借鉴处；源码未因此实现构建自动化，运行期索引由外部负责。规模只计swift目录。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-swift-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344713526:dsh-lsp-swift",
+          "area": "code",
+          "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:17:50.636Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "本项提供Swift工具链服务的DSH接线与默认映射，不实现SourceKit索引；相对手配更简洁，但可用性仍取决于构建产生的索引。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-swift-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344713526:dsh-lsp-swift",
+          "area": "code",
+          "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:17:50.636Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "README与测试说明引用/实现依赖SwiftPM构建；构建失败时相关测试显式skip，定义/hover通过不能当四操作全通过。默认PATH选择的SourceKit可能与项目工具链不同。配置层catch不能区分无可执行与索引缺失，错误应按阶段解释。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-swift-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344713526:dsh-lsp-swift",
+          "area": "code",
+          "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:17:50.636Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "未验证假设：把编译索引就绪与可启动服务拆开显示，可减少Swift四操作半可用被当全面可用。用成功build、失败build和不同工具链比较引用/实现结果及skip提示。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-swift-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344713526:dsh-lsp-swift",
+          "area": "code",
+          "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:17:50.636Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T04:17:50.636Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+    "reviewed_at": "2026-10-21T04:17:50.636Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1344713526:dsh-lsp-swift",
+        "area": "code",
+        "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 0,
+        "mechanism": 8,
+        "transferability": 10,
+        "simplification": 4
+      },
+      "rationale": "novelty=0：Swift分析属SourceKit。 mechanism=8：配置及预构建测试边界可查。 transferability=10：配置可移用，IndexStore条件较重。 simplification=4：构建维护限制简化。",
+      "basis": "interpretation",
+      "score": 22,
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-swift-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 8,
+        "reach": 5,
+        "economics": 4
+      },
+      "rationale": "workflow=9：提供Swift接入局部流程。 delivery=8：四操作受索引及skip限制。 reach=5：工具链人群和构建条件窄。 economics=4：无构建后净收益对照。",
+      "basis": "interpretation",
+      "score": 26,
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-swift-source"
+      ]
+    }
+  }
+}

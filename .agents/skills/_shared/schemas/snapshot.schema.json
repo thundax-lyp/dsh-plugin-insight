@@ -126,6 +126,12 @@
           "pattern": "^[a-f0-9]{64}$"
         }
       }
+    },
+    "research_blocks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "research-block"
+      }
     }
   }
 }

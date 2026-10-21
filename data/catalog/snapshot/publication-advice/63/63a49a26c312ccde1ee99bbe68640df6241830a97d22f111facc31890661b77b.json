@@ -1,0 +1,4 @@
+{
+  "revision": "f9ff56714decd8d604d97dced494206937c8f907",
+  "text": "Skill作者先生成草稿和包；保留原description，以真实正负用例确认后再commit，中文需求别依赖保词判定。"
+}

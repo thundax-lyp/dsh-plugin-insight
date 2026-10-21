@@ -10,6 +10,7 @@
 
 | 插件 | 主要用途 | 关键使用条件 |
 | --- | --- | --- |
+| [air-pixel-liquid-glass](#plugin-1414238544-root) | 为DSH提供可配置半透明玻璃主题、壁纸、光标和点击效果，并可选适配桌面窗口透明。 | 先试CSS主题并保留足够消息对比度。 |
 | [Amoji for dsh](#plugin-1378933589-adapters-dsh) | 在人与模型之间传递带固定文字语义的表情，并管理版本、表情包和市场发布。 | 想用图像表达协作意图且能固定DSH版本的人，可先在隔离profile试基础表情；按release说明装成品包，逐条核对原生消息与图片状态，遇到未知结果查原请求，不重复发送。 |
 | [api-balance](#plugin-1334899834-root) | 在 DSH Web 输入区显示 DeepSeek 账户余额，支持手动和定时刷新。 | 先用手动刷新核对官方控制台；检查凭据暴露和日志后，再按需要开启较低频率轮询。 |
 | [chicheng-peak](#plugin-1336366824-root) | 按配置时区与峰谷时段显示 DSH 边缘和输入框光效，并发送阶段提醒。 | 需要时间提示的人可先使用自定义时段；把颜色当提醒，发请求前以自己账户和模型的实际价格为准，并测试提醒渠道，别依赖它保证送达。 |
@@ -24,6 +25,7 @@
 | [dsh-chatgpt-style](#plugin-1421963463-root) | 调整DSH聊天排版与语义标注，并在发送框旁提供思考或快速档位切换。 | 先检查长文、流式输出、代码块、公式和输入法，再验证禁用能还原；供应商未声明推理档位时使用原生模型菜单。 |
 | [dsh-commandcode-usage-inline](#plugin-1358821276-root) | 在 DSH 输入栏内联展示 Command Code 账户窗口用量和剩余 credits。 | 已用对应Command Code provider的用户可评估；多账户轮换时核对active标记，勿据首账户默认值作预算决定。 |
 | [dsh-composer-expand](#plugin-1334850903-root) | 为输入框增加展开按钮，切换到较高书写区域并调整展开时回车行为。 | 先以长草稿测试中文输入法、斜杠菜单和 Ctrl/Cmd+Enter，确认关闭后恢复原生行为。 |
+| [dsh-computer-use](#plugin-1335236592-root) | 为 DSH 提供桌面观察、元素或坐标操作、虚拟光标及应用管理工具。 | 需要无API桌面操作的人先用隔离非敏感页面；固定应用白名单，串行操作并每次变化重观察，核对坐标路径与并发会话再用于真实任务。 |
 | [dsh-discord-richpresence](#plugin-1342915339-root) | 把 DSH 的粗粒度活动或可选丰富状态同步到本地 Discord Rich Presence。 | 先只开模糊状态，检查实际 Discord 展示内容和断线重连，再考虑丰富模式。 |
 | [dsh-douyin-webview](#plugin-1423040689-root) | 在 DSH Desktop 侧栏挂载可移动和缩放的抖音 webview 视频窗口。 | 只适合DSH Desktop里需要小窗观看的人先试；确认关闭后释放资源、重启登录是否保留、网页改版后全屏能退出，浏览器版无需按可播放功能期待。 |
 | [dsh-draft-attachments](#plugin-1414492607-root) | 将 DSH 输入框未发送的附件保存到 IndexedDB，并在会话输入区重挂载时恢复。 | 可先用可丢弃附件验证切换、重启、发送后不复活及超限行为，再用于常用流程；敏感附件要把浏览器持久保存纳入清理习惯，不能把它当跨设备草稿同步。 |
@@ -32,27 +34,34 @@
 | [dsh-forget-session](#plugin-1413882487-root) | 在 DSH 会话菜单中遗忘会话，清理活动会话、日志目录与投影缓存并复查残留。 | 只在备份过的可丢弃会话上先验证删除后刷新、重启和守卫结束状态；需要可恢复整理时优先归档。 |
 | [dsh-gui-guard](#plugin-1422121370-root) | 在Windows窗口点击或输入前检查并准备前台状态，换算坐标口径并返回动作诊断。 | 适合已有可靠目标坐标的Windows用户在无破坏性窗口先检查。 |
 | [dsh-harness-chat-control](#plugin-1357066651-root) | 为 DSH 会话提供引用、侧聊、会话编辑及侧聊模型与历史控制。 | 适合经常引用局部问题开侧聊的用户；先验证编辑与重载后的引用一致性，再将其纳入重要讨论记录。 |
+| [dsh-im-qq](#plugin-1335806472-root) | 通过 QQ 官方机器人接入 DSH 会话，支持文本、命令、白名单和审批桥。 | 熟悉QQ机器人者先用私聊沙箱和非敏感目录；收紧白名单，核对审批点击身份与never含义，再考虑群聊，不在缺身份路径使用高影响授权。 |
 | [dsh-inline-images](#plugin-1334134226-root) | 把助手消息中的本地图片路径改写成可在对话正文展示的图片，并提供灯箱与尺寸设置。 | 限同机 Web 环境小范围试用，先检查图片展示、重启后历史链接和文件服务权限；敏感图片或远程访问需先明确可读范围。 |
 | [dsh-language-guard](#plugin-1424475406-root) | 以系统提示片段和周期提醒约束回复语言，支持语言命令与界面语言跟随。 | 有稳定语言偏好可先试B档。 |
 | [dsh-memory-setup](#plugin-1337350700-root) | 保存工作区偏好、约定与纠错教训，支持知识检索、快照和上下文注入。 | 适合在单个非敏感项目先试。 |
 | [dsh-mimotts](#plugin-1397477851-root) | 把定稿助手回复交给MiMo TTS合成语音，提供消息播放按钮、内联播放器与语音历史。 | 先用无敏感信息的短文本验证读音、取消和历史，再配置音色；听到语音不应代替核对原始技术结论。 |
 | [dsh-neo-skin](#plugin-1335557891-root) | 通过主题覆盖层为 DSH Web 提供新粗野主义配色和可切换外观方案。 | 先在测试配置中切换深浅主题、关闭插件并刷新，确认能完整恢复原生样式。 |
 | [dsh-perlica-ding](#plugin-1335704653-root) | 根据计划、执行、等待回应和错误状态播放分级提示音，普通问答保持安静。 | 先用测试音和短任务核查四种状态，调整音量及去抖，不将完成音当验收。 |
+| [dsh-pet-live2d](#plugin-1378097401-dsh-live2d-pet) | 在DSH中显示可拖动Live2D宠物，并随会话状态切换动作、气泡与表情。 | 适合个人会话提示先试用。 |
 | [dsh-pinned-sessions](#plugin-1407379611-root) | 在侧栏集中展示跨工作区的置顶会话，提供搜索、状态与取消置顶操作。 | 已有跨工作区置顶需求时可试用；先验证搜索、归档过滤与取消置顶，宿主升级后检查入口是否仍在。 |
+| [dsh-plugin-auto-answer](#plugin-1423966960-root) | 在DSH用户问题超时后自动选择提问方标为推荐的选项，并允许配置回退与计划评审策略。 | 仅在明确允许机器默认的低风险偏好任务先试用。 |
 | [dsh-plugin-crypto-ticker](#plugin-1389061748-root) | 在 DSH 侧栏显示加密货币价格、涨跌与走势图，支持多来源降级。 | 适合参考性看盘；先检查当前来源和逐币 stale 状态，遇到来源切换时到交易平台复核价格。 |
 | [dsh-plugin-local-life](#plugin-1336663652-root) | 提供预算、分账、单价、折扣、单位、账本和分期等日常计算辅助。 | 适合日常计算草稿。 |
 | [dsh-plugin-namecards](#plugin-1424219088-root) | 为 DSH 插件列表添加本地名片、中文备注、图标、文件夹和收藏。 | 插件较多且愿意维护个人目录的用户可评估；启停前核对真实包名，导出备份后再迁移布局。 |
 | [dsh-plugin-session-colors](#plugin-1394188597-root) | 在 DSH 侧栏为会话选择颜色，并将颜色映射保存到宿主。 | 会话多的人可先给独名会话少量标色；刷新后确认持久保存，同名或离线改色要核对，别用颜色承载关键任务状态。 |
 | [dsh-profile-stylist](#plugin-1422500224-root) | 借助宿主模型生成资料草稿，并通过浏览器填写 GitHub 或 Gitee 个人资料。 | 要修改GitHub或Gitee自己资料的人先生成草稿并检查账号；小范围填一个字段后重新打开资料页确认，头像和批量字段待验证后再用。 |
 | [dsh-prompt-polish](#plugin-1336538202-root) | 在输入栏调用宿主模型重写草稿，支持策略、语言、上下文与人工确认采纳。 | 先不带历史改写普通草稿，对照检查否定、数字和交付限制；需要上下文时再开启，并人工决定是否采用。 |
+| [dsh-receipts](#plugin-1344714660-root) | 从本地DSH会话日志汇总使用记录，结合Git信息生成Markdown和离线HTML报告。 | 当前先在复制日志和Git关闭模式审阅。 |
 | [dsh-session-path](#plugin-1412141303-root) | 定位 DSH 会话日志并导出可读 Markdown 或 JSONL 交接文件。 | 需要接续时优先检查Markdown导出及截断；JSONL预算语义与长日志内存问题确认前，不用作有界最新上下文保证。 |
+| [dsh-session-rename](#plugin-1368115538-root) | 给 DSH 模型提供 rename_session 工具，设置当前或已加载会话的显式标题。 | 先用当前会话改成简短需求ID；指定别的会话前确认目标已加载且确需修改，记住显式标题会取代自动生成。 |
 | [dsh-session-turn-eta](#plugin-1368581082-root) | 根据DSH会话的轮次与步骤历史估计当前轮剩余时间，并在输入框下显示进度。 | 适合把进度当粗略等待提示的用户先试用。 |
 | [dsh-side-session](#plugin-1355639507-root) | 从命令菜单创建可继续的旁会话，并跳转到原生子会话聊天视图。 | 先测试主会话忙碌、双击和连续创建，确认旁会话可恢复且不会跳错子会话。 |
+| [dsh-sound](#plugin-1335332435-root) | 在DSH网页中按任务完成、审批、提问、阻塞和失败事件播放可定制提示音。 | 适合多任务用户先以主Agent事件试用。 |
 | [dsh-spotlight](#plugin-1333136466-root) | 以键盘命令面板统一查找原生命令、近期会话和插件入口。 | 先用常用的十条命令与十个会话检查搜索命中和导航，再决定是否替代原生入口。 |
 | [dsh-starter-zh](#plugin-1336658798-root) | 在DSH会话中提供中文欢迎、五阶段学习路径、场景插件建议和新手自查清单。 | 适合希望中文概览的新用户先阅读路径。 |
 | [dsh-status-rotator](#plugin-1333328839-root) | 为 DSH Web 状态区提供阶段化文案、主题词库、动画与可编辑设置。 | 先只开静态文案，确认设置能保存且与原生状态共存，再逐步启用弹幕和动画。 |
 | [dsh-sticker-pack](#plugin-1418769012-root) | 订阅远端表情包清单，按上下文挑选图片，提供缓存、贴图概率与会话显示适配。 | 需要共用表情素材时可先在非工作关键会话试。 |
 | [dsh-text-inject](#plugin-1389458393-root) | 从独立Markdown文件加载系统提示和上下文块，提供设置页编辑、热加载与历史备份。 | 先用少量无冲突规则验证每轮实际上下文，并确认删除与恢复生效；需要关键词门控时先核实当前版本，不能仅照README。 |
+| [dsh-think-bounce-pet](#plugin-1343882273-root) | 在 DSH Web 显示常驻和随 reasoning 文本变化的弹球宠物，可调整物理效果。 | 喜欢界面装饰的人可先调低速度/大小；遇到遮挡或干扰关闭，不把思考球当可靠运行状态。 |
 | [dsh-tokenrhythm-bill](#plugin-1351903192-root) | 集中展示基元律动等平台的余额、用量、模型与密钥，并提供账号切换和连通探测。 | 先只接入常用平台，对照控制台核验当前账号和限时额度，按需启用模型探测；敏感凭据留在受控宿主。 |
 | [dsh-tts-flash](#plugin-1363291561-root) | 为 DSH 流式回复提供语音朗读、字幕浮条及等待短语，支持 Edge 与 OpenAI 兼容语音服务。 | 需要听当前回复的用户可先用非敏感短文试用，确认窗口切换、停止和自动播放正常；长回复必须对照文字检查是否跳句，不适合直接当完整有声文稿导出器。 |
 | [dsh-usage-analytics](#plugin-1356960582-root) | 在 DSH 设置页展示本机 Token、模型分布和技能调用状态。 | 适合个人用量复盘；先以少量原始日志核对重试和技能状态，勿把成功率作为技能业务质量。 |
@@ -61,6 +70,7 @@
 | [dsh-voice](#plugin-1334554745-root) | 通过麦克风或快捷键把语音识别为 DSH 普通聊天输入。 | 先用非敏感内容核对生效引擎及识别质量；有严格本地要求时需核查回退行为，重要指令提交前复核文字。 |
 | [dsh-voice-input-web](#plugin-1335558973-root) | 在输入框旁增加麦克风入口，使用浏览器语音识别把文字写入草稿。 | 先关闭自动发送，用专有名词和噪声样本比较打字与听写的总校对时间。 |
 | [dsh-workspace-menu](#plugin-1339803365-root) | 在 DSH 工作区与会话行增加右键操作、置顶、归档及文件管理器入口。 | 先只开启置顶、复制路径和归档，对测试目录验证删除确认后再决定是否启用删除功能。 |
+| [dsh-workspace-tools](#plugin-1363511446-root) | 为工作区保存Agent和权限默认预设，并在新根会话创建时自动应用。 | 适合工作区信任稳定的用户先用保守权限测试。 |
 | [dsh-wsl-browser](#plugin-1350379388-root) | 从WSL调用Windows默认浏览器打开HTTP或HTTPS地址，并给出localhost排障提示。 | 适合已用WSL开发的人，先打开测试URL并核对默认浏览器，远端服务先确认监听和访问权限。 |
 | [dsh-wsl-clipboard](#plugin-1350378372-root) | 从WSL读取或写入Windows文本剪贴板，支持长度限制与Unicode编码转换。 | 先用测试字符串验证中文、换行和长度上限，写入前保存重要剪贴板内容；仅在明确需要时读取。 |
 | [dsh-wsl-download](#plugin-1351854499-root) | 列出Windows下载目录中的文件并复制到WSL，另提供本地模型文件管理提示。 | 先列文件和检查目标是否已有同名内容，复制后核对大小与哈希；大模型先确认磁盘余量和是否可直接复用共享路径。 |
@@ -72,12 +82,24 @@
 | [dsh-wsl-picker](#plugin-1351853863-root) | 在DSH中浏览WSL目录与挂载盘，支持名称过滤和工作区快捷入口。 | 适合小中目录导航；先确认返回路径，敏感目录仍受进程权限而非插件白名单控制。 |
 | [dsh-wsl-shot](#plugin-1351854253-root) | 把Windows剪贴板中的图片保存为WSL文件供多模态聊天使用。 | 先用非敏感截图确认保存和模型读取链路；及时检查Windows临时文件残留。 |
 | [Forge 便签](#plugin-1363429979-plugin-notes) | 提供 Markdown 便签板、搜索归档和任务泳道，可把便签交给智能体或定时执行。 | 先只用便签与归档，再用无副作用任务检查定时运行和失败恢复。 |
+| [harness-memory](#plugin-1333716755-plugins-harness-memory) | 为 DSH 保存长期记忆，并在后续会话的系统提示中分类注入。 | 个人先保存少量非敏感稳定偏好；跨项目使用前核对适用范围，重要约定保留文档真相，定期清理错误记忆。 |
 | [messaging-core](#plugin-1335798113-packages-messaging-core) | 将多种消息渠道接入 DSH，统一授权、聊天会话映射、命令与回复路由。 | 已有机器人接入经验的人可先用一个平台的私人聊天测试；固定版本、收紧白名单，核对重连和长消息，再开放群聊，群成员的共享上下文要提前明确。 |
 | [oil-dsh-title](#plugin-1374149009-root) | 根据近期用户消息生成和维护带类别标识的会话标题。 | 会话多时可在非敏感任务先检查标题质量。 |
 | [Prompt Desk](#plugin-1418691015-root) | 在对话标题栏编辑全局与会话提示词，并把模型自报错误收为待确认经验草稿。 | 已有用户应重点检查先引用标记再真正认错的消息，先只保留少量能复现的教训，并确认禁用或删除后的注入变化。 |
 | [上下文交接提醒](#plugin-1396768359-root) | 消费上下文占用投影，显示提醒并在工作目录生成机器事实交接草稿。 | 适合愿意主动交接的长会话用户先用临时目录验证；先决定是否允许默认写入，再评估提醒阈值，不能将草稿当作已办结交接。 |
 | [滚动钢琴与消息小地图](#plugin-1412162067-root) | 在聊天区边缘按鼠标位置演奏钢琴音，并预览和跳转用户消息。 | 作为趣味和用户消息回看辅助试用；长会话和侧栏布局先核对刻度覆盖，办公环境先调低音量，不替代正式搜索。 |
 | [蓝毛小女仆桌宠](#plugin-1409724830-src) | 以透明动画桌宠提供陪伴聊天，可选本地模型、在线模型与屏幕观察。 | 先关闭屏幕观察和在线回退，确认数据路径、模型路由与卸载，再按个人偏好试用。 |
+
+<a id="plugin-1414238544-root"></a>
+
+## [air-pixel-liquid-glass](../../plugins/air-pixel--air-pixel-liquid-glass/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/AIR-pixel/air-pixel-liquid-glass)
+
+- **用途**：希望定制界面且保持可读性的DSH用户，合格体验需对比度和性能可接受、禁用可恢复；桌面透明与网页CSS是不同能力。
+- **亮点**：相对单一换色，增量是玻璃强度与双侧消息对比度一起可配，并显式区分窗口材质与CSS。Electron窗口效果归平台机制，插件实现主题和接线。
+- **思考**：是否“装主题”就得到桌面透明？README明确需主进程patch，运行宿主本身不能直接调BrowserWindow；更新替换asar后需重新核对。截图是stand-in shell渲染而非真实透明截图，不能据示例认定当前目标机器效果或性能。
+- **建议**：由patch外部通道推导，可通过宿主正式窗口材质API和可达性能力声明替代归档修改，同时按实测对比度限制强度。未验证；不同背景/主题/升级下测文本可读与恢复，若仍需不可追踪patch则不成立。
 
 <a id="plugin-1378933589-adapters-dsh"></a>
 
@@ -233,6 +255,17 @@
 - **思考**：可逆且范围小的界面增量容易评估；收益取决于长文本频率，不应夸大为通用生产力提升。
 - **建议**：先以长草稿测试中文输入法、斜杠菜单和 Ctrl/Cmd+Enter，确认关闭后恢复原生行为。
 
+<a id="plugin-1335236592-root"></a>
+
+## [dsh-computer-use](../../plugins/988hj7tczd-oss--dsh-computer-use/INSIGHT.md)
+
+[![GitHub ★ 58](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=58&color=yellow&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-computer-use) · [![npm 30d 3633](https://img.shields.io/static/v1?label=npm+30d&message=3%2C633&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-computer-use)
+
+- **用途**：Agent需要操作原生应用或Canvas时，先观察后点击/输入再验证，交付桌面动作结果及新观察；不是业务成功自动判定。
+- **亮点**：相对自由鼠标脚本，增量是把新鲜快照、窗口身份、元素token与动作绑定，并将可见虚拟光标和明确引擎拒绝映射回DSH；实际OS输入由cua-driver提供，不应把驱动能力归本插件原创。
+- **思考**：新鲜快照能否保证正确且有权限的动作？snapshot模块是进程单例而非按Agent会话分区，并发观察会替换目标；TTL不能防界面在有效期内改变。密码/危险词检测只在element编号路径，坐标和快捷键无法同样识别，allowedApps空时不限制应用；不能把护栏概括为完整安全边界。
+- **建议**：待验证假设：快照按会话/动作序列隔离，并把高影响动作绑定目标变化摘要和独立确认，可减少并发串窗口及坐标绕过语义审查。由全局snapshot与元素特定guard推导，未实现。用双会话交错观察、TTL内弹窗、坐标点付款三组对照，测错窗/错点与误拦；无法识别坐标语义时应明确未知而非承诺安全。
+
 <a id="plugin-1342915339-root"></a>
 
 ## [dsh-discord-richpresence](../../plugins/0qwq0--dsh-discord-richpresence/INSIGHT.md)
@@ -321,6 +354,17 @@
 - **思考**：核心质疑是界面中的“编辑”能否与模型看到的 surface 一致。原生历史与投影视图分离，插件为 replacement 做专门处理，说明不是普通文本编辑；多次编辑、重载后引用及图片附件一致性仍需真实宿主验证。
 - **建议**：适合经常引用局部问题开侧聊的用户；先验证编辑与重载后的引用一致性，再将其纳入重要讨论记录。
 
+<a id="plugin-1335806472-root"></a>
+
+## [dsh-im-qq](../../plugins/988hj7tczd-oss--dsh-im-qq/INSIGHT.md)
+
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-im-qq) · [![npm 30d 293](https://img.shields.io/static/v1?label=npm+30d&message=293&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-im-qq)
+
+- **用途**：用户从QQ私聊或群@访问完整DSH Agent，交付对话回复与审批交接；本机文件/工具权限随挂载preset进入。
+- **亮点**：相对只转发LLM文本的机器人，增量是接DSH完整preset、持久会话和原生审批链，平台无关core与QQ transport分层；QQ协议和DSH Agent能力归上游，非插件独创。
+- **思考**：群聊审批是否真正绑定发起人？approval.onInteraction只有initiator和clicker同时存在且不同才拒绝，任一缺失放行；“始终允许”会把整会话policy设never，并非只授权一个动作。群白名单授权群不等于所有成员都可批准高影响操作，缺身份不能作为防误伤而默认放行。
+- **建议**：待验证假设：审批令牌绑定发起人、聊天、请求摘要及有效期，身份缺失拒绝且长期授权限能力范围，可减少群内冒批和过宽授权。由当前缺身份放行/全会话never推导，未实现。对照缺clicker、异人按钮、过期重放及群中不同用户，测错批与正常审批成功；需要平台可靠身份支持。
+
 <a id="plugin-1334134226-root"></a>
 
 ## [dsh-inline-images](../../plugins/3403473060--dsh-inline-images/INSIGHT.md)
@@ -387,6 +431,17 @@
 - **思考**：主会话限定与普通问答静音可减少噪声；有效性取决于事件分类是否符合使用者期待。
 - **建议**：先用测试音和短任务核查四种状态，调整音量及去抖，不将完成音当验收。
 
+<a id="plugin-1378097401-dsh-live2d-pet"></a>
+
+## [dsh-pet-live2d](../../plugins/a8chann--dsh-pet-live2d--dsh-live2d-pet/INSIGHT.md)
+
+[![GitHub ★ 45](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=45&color=yellow&logo=github&style=flat)](https://github.com/A8Chann/dsh-pet-live2d) · [![npm 30d 7358](https://img.shields.io/static/v1?label=npm+30d&message=7%2C358&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-pet-live2d)
+
+- **用途**：希望获得会话状态提示与桌面陪伴的用户，合格表现是状态一致、透明画布不挡操作且自定义资源升级不丢失。
+- **亮点**：相对纯静态桌宠，增量是会话相位与动作池、用户互动和可保存配置结合。渲染依赖Cubism/Pixi，随包角色是独立授权资产，不能归为插件原创。
+- **思考**：“自改目录一个字不碰”是否由指纹保证？同步判断只比较pet.json，后续cpSync逐文件覆盖；用户只改同名贴图而manifest未变时未必受保护。Core下载仅长度与标记检查不是固定摘要验证，离线首次安装也需要外部运行时。
+- **建议**：由manifest级判定推导，可保存每个随包文件摘要并做逐文件三方更新，冲突保留用户版本并给预览。未验证；分别只改贴图/音频/manifest再升级，若仍覆盖用户同名资源则否定。
+
 <a id="plugin-1407379611-root"></a>
 
 ## [dsh-pinned-sessions](../../plugins/439436269-ctrl--dsh-pinned-sessions/INSIGHT.md)
@@ -397,6 +452,17 @@
 - **亮点**：相对原生只在各工作区内部重排置顶，会话集合跨工作区聚合有明确导航价值；重用原生状态避免第二套置顶真相。DOM锚点portal是宿主缺少扩展槽位时的适配，不是新状态模型。
 - **思考**：原生样式一致是否等于长期兼容？代码依赖data-slot及具体侧栏列表结构，找不到时隐藏，降低破坏性但功能仍消失；README前后对挂载位置和是否共享滚动有不同叙述，应该以当前源码和宿主实测为准。
 - **建议**：已有跨工作区置顶需求时可试用；先验证搜索、归档过滤与取消置顶，宿主升级后检查入口是否仍在。
+
+<a id="plugin-1423966960-root"></a>
+
+## [dsh-plugin-auto-answer](../../plugins/ak-blank--dsh-plugin-auto-answer/INSIGHT.md)
+
+[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/AK-blank/dsh-plugin-auto-answer)
+
+- **用途**：无人值守长任务不希望被低风险偏好问题卡住；合格行为要保留人工及时回答、取消与真实授权，不应把无回应变成所有决策同意。
+- **亮点**：相对永远等待，增量是把超时与缺客户端情况转为明确可配置的答案流程，保留及时人答和取消。它不生成领域判断，推荐依据完全来自提问方标签。
+- **思考**：推荐标签是否足以代表用户偏好或授权？普通问题不一定低风险，默认first/skip可能丢失必要信息；模型自己给推荐标签不是独立批准。auto-answer还不能关闭已有浏览器问题卡，界面仍像待答，人工后续输入与真实已继续状态可能混淆。
+- **建议**：由协议plan-review分流推导，可只对白名单偏好类型自动答，并附machine-default来源及可撤销收据；授权/缺必需信息一律留人。未验证；用标签诱导、授权伪装普通问题、批量部分不可答与临界人答竞态测试，若错误同意未降则否定。
 
 <a id="plugin-1389061748-root"></a>
 
@@ -464,6 +530,17 @@
 - **思考**：确认式采纳比自动替换更可控；同一模型改写并不保证比直接发送原请求更好。
 - **建议**：先不带历史改写普通草稿，对照检查否定、数字和交付限制；需要上下文时再开启，并人工决定是否采用。
 
+<a id="plugin-1344714660-root"></a>
+
+## [dsh-receipts](../../plugins/988hj7tczd-oss--dsh-receipts/INSIGHT.md)
+
+[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-receipts) · [![npm 30d 77](https://img.shields.io/static/v1?label=npm+30d&message=77&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-receipts)
+
+- **用途**：适合个人回顾会话和工具活动；会话痕迹不能直接作为生产率、节省工时或业务影响证明。
+- **亮点**：实际增量是将本地会话、工具调用和Git痕迹组织成可离线审阅的个人报告，支持压缩日志与失败跳过材料。相对手工翻日志更便于自省；这不是工时计费系统，Git提交与模型工作不能建立因果归属。
+- **思考**：根约束接线有缺口：工具把越界project标unavailable却保留cwd，随后attachGitCrossCheck不检查状态，对所有非空cwd执行git -C log，可能仍读越界Git信息。工具调用也未传since/until，函数默认since=0/until=now，Git计数可能覆盖全历史。活动时长用首尾事件跨度，不等于连续劳动；redactPaths默认关且只去路径，不等于会话文本脱敏。
+- **建议**：未验证假设：把日志时间窗和允许Git目标明确传给纯交叉核对接口，并区分活动跨度与可归因产出，可减少报告误导。用窗外提交、越界cwd、长空闲及并发会话夹具比较是否误读和重复计时；不推断节省工时。
+
 <a id="plugin-1412141303-root"></a>
 
 ## [dsh-session-path](../../plugins/439436269-ctrl--dsh-session-path/INSIGHT.md)
@@ -474,6 +551,17 @@
 - **亮点**：相对只复制不可直接read的压缩日志路径，把日志转成可读交接文件是实质工作流增量；Markdown保留最近条目能适配接续。Zstd解压及路径工具是现成机制组合，不证明语义交接完整。
 - **思考**：是否真的按预算保留最近上下文且内存有界？renderEntries倒序保留尾部，但renderJsonl正序累积直到预算耗尽，保留的是头部；writeHandoff先收集全部records/entries，逐帧解压不能推出整个导出内存有界。该源码反例影响长会话接续主张，尚未运行复现。
 - **建议**：需要接续时优先检查Markdown导出及截断；JSONL预算语义与长日志内存问题确认前，不用作有界最新上下文保证。
+
+<a id="plugin-1368115538-root"></a>
+
+## [dsh-session-rename](../../plugins/9ashwin--dsh-session-rename/INSIGHT.md)
+
+[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/9Ashwin/dsh-session-rename)
+
+- **用途**：用户希望用需求ID或任务名定位会话，由Agent组织标题并调用工具；不做自动总结或业务状态管理。
+- **亮点**：相对只有host API或人手标题入口，增量是把sessionTitle.rename暴露为模型工具，支持当前会话默认，零官方包import减少链接路径冲突。标题持久语义由宿主提供，不是插件新存储机制。
+- **思考**：模型显式标题与用户手工标题是否应同等钉住？宿主rename会生成user来源标题并覆盖自动生成，插件不区分模型与人工意图；指定任意已加载session_id可改别的会话，未做“仅当前会话”的工具层限制。调用返回事件seq也不证明持久化已完成。
+- **建议**：待验证假设：默认只允许当前会话，并把模型建议标题与用户固定标题区分来源，可减少跨会话误改和自动标题永久被压制。由任意loaded目标与显式user语义推导，未实现。用双会话、自动标题在途和用户已有固定标题对照误覆盖与找回成本；跨会话改名需显式目标授权。
 
 <a id="plugin-1368581082-root"></a>
 
@@ -496,6 +584,17 @@
 - **亮点**：/side-chat 调用 startContinuable 创建子会话，客户端在成功事件后比较子目录并打开新会话。
 - **思考**：复用原生聊天视图避免维护第二套面板；便利不代表资源或权限完全隔离。
 - **建议**：先测试主会话忙碌、双击和连续创建，确认旁会话可恢复且不会跳错子会话。
+
+<a id="plugin-1335332435-root"></a>
+
+## [dsh-sound](../../plugins/ai-galaxy-gpu--dsh-sound/INSIGHT.md)
+
+[![GitHub ★ 14](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=14&color=yellow&logo=github&style=flat)](https://github.com/AI-Galaxy-GPU/dsh-sound) · [![npm 30d 948](https://img.shields.io/static/v1?label=npm+30d&message=948&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@ai-galaxy/dsh-sound)
+
+- **用途**：用户离开当前聊天视线时需要知道何时介入，合格通知应少漏报/重复且区分子Agent，声音响不代表业务成功。
+- **亮点**：相对仅完成铃，增量是人类介入事件分类、子Agent分流与跨标签抑制噪声；不改变后台任务执行或审批结果。
+- **思考**：跨标签“只响一次”是否无条件？协商依赖BroadcastChannel及时到达和已发现peer，未发现时立即播放；多个新标签同时收到事件仍需真实调度验证。浏览器音频策略/静音也可能导致未响，不能把脚本调用当用户听见。
+- **建议**：由事件ID与协商推导，可增加用户可见通知收据和声音自检，明确重播恢复/未播放原因；跨标签用租约而非短时随机窗口。未验证；后台节流/同时开标签/权限拒绝时测漏重报，若不改善则否定。
 
 <a id="plugin-1333136466-root"></a>
 
@@ -551,6 +650,17 @@
 - **亮点**：lib/index.js解析块后先释放旧注册，再用systemPrompt.section/context注册；监听目录处理原子保存，路由保存与恢复历史。
 - **思考**：独立文件与历史便于回退；注入入口更方便也可能让过期规则长期影响不同任务。
 - **建议**：先用少量无冲突规则验证每轮实际上下文，并确认删除与恢复生效；需要关键词门控时先核实当前版本，不能仅照README。
+
+<a id="plugin-1343882273-root"></a>
+
+## [dsh-think-bounce-pet](../../plugins/9livewolf--dsh-think-bounce-pet/INSIGHT.md)
+
+[![GitHub ★ 18](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=18&color=yellow&logo=github&style=flat)](https://github.com/9livewolf/dsh-think-bounce-pet)
+
+- **用途**：用户希望界面有陪伴和思考状态视觉提示，交付本地动画，不代表真实推理进度或任务结果。
+- **亮点**：相对固定装饰图，增量是可拍打拖扔的物理球和基于会话reasoning可见文本的状态响应，区分常驻与思考球。物理动画/React槽位为成熟方法，不是任务能力提升。
+- **思考**：宠物出现能否说明Agent真在思考？仅检测legacy.partial.blocks含非空reasoning，隐藏推理/不同provider或宿主投影变化会无球，残留块也可能误提示；常驻动画与可交互球会占用注意力和指针区域，不能由pointer-events none概括为完全不干扰。
+- **建议**：待验证假设：将宠物状态改为宿主明确运行/等待/结束事件，并给低动态或可访问模式，可减少伪进度和视觉干扰。由reasoning文本启发式与物理动画推导，未实现。对照无reasoning模型、历史回放、会话切换和减少动态设置，测状态误导、误触与帧耗时；不宣传提效。
 
 <a id="plugin-1351903192-root"></a>
 
@@ -639,6 +749,17 @@
 - **亮点**：客户端用 DOM/React fiber 定位行，Host 执行文件管理器调用；危险删除与归档管理器协作。
 - **思考**：就地管理减少界面跳转，但把磁盘删除与日常菜单放在一起增加误操作后果。
 - **建议**：先只开启置顶、复制路径和归档，对测试目录验证删除确认后再决定是否启用删除功能。
+
+<a id="plugin-1363511446-root"></a>
+
+## [dsh-workspace-tools](../../plugins/ahiosuz--dsh-workspace-tools/INSIGHT.md)
+
+[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/AHIOSUZ/dsh-workspace-tools)
+
+- **用途**：在不同项目间重复切换预设的用户，希望减少每次设置；合格结果是只影响正确新会话，人工选择优先且权限默认符合项目信任。
+- **亮点**：相对全局同一默认值，增量是项目上下文默认化，采用官方服务并保留后续手动选择。不是新权限引擎，权限实际语义归宿主。
+- **思考**：创建后异步切换是否必定先于第一轮和手选？监听void applyRule，Agent切换await后再改权限；源码检查已有turn发生在应用前，执行期间的首轮/用户选择存在时序待验。normalizePath还统一大小写，非Windows大小写敏感路径需检查，不能由ID主路径推断所有fallback正确。
+- **建议**：由异步双预设应用推导，可让宿主创建时携带原子默认计划，应用前后版本检查并在人手选后取消自动任务。未验证；注入慢select与立即首轮/手选，若自动值仍覆盖选择则否定。
 
 <a id="plugin-1350379388-root"></a>
 
@@ -760,6 +881,17 @@
 - **亮点**：便签 CRUD 通过 storage-domain 持久化；日程与任务泳道状态关联，工具就绪后再挂 agent 桥。
 - **思考**：把输入、任务和状态放在同一处可减少转录；自动执行却会引入授权和重复副作用风险。
 - **建议**：先只用便签与归档，再用无副作用任务检查定时运行和失败恢复。
+
+<a id="plugin-1333716755-plugins-harness-memory"></a>
+
+## [harness-memory](../../plugins/988hj7tczd-oss--harness-desktop--plugins-harness-memory/INSIGHT.md)
+
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/988hj7tczd-oss/harness-desktop) · [![npm 30d 224](https://img.shields.io/static/v1?label=npm+30d&message=224&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/harness-memory)
+
+- **用途**：个人跨会话保留偏好、项目约定和成功做法，交付持久文本记忆；需自己管理过期和敏感信息。
+- **亮点**：相对反复手贴偏好，增量是DSH存储域加工具和每次组装时分类注入，简单且透明；没有语义检索/自动事实验证，不将宿主整套桌面能力算入本组件。
+- **思考**：长期记忆是否可靠且范围合适？表未按会话/项目/用户分区，所有记忆直接注入系统提示；最近50条排序会挤掉旧但重要约定，文本精确去重不处理矛盾。工具描述称ID可从提示获得，render实际只列text无ID，删除便利也需核对。
+- **建议**：待验证假设：为记忆增加来源、适用项目/用户、有效期和冲突关系，并按当前任务检索，可减少陈旧/越域指令。由全表最近注入与精确文本去重推导，未实现。用双项目矛盾规则、超过50条和过期偏好对照误召回/漏重要约定与token成本；模型提炼不能自作真值。
 
 <a id="plugin-1335798113-packages-messaging-core"></a>
 

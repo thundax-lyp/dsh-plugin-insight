@@ -1,0 +1,299 @@
+{
+  "id": "github:1333716755:plugins-harness-memory",
+  "repository_id": 1333716755,
+  "component_id": "plugins-harness-memory",
+  "repository": "988hj7tczd-oss/harness-desktop",
+  "path": "plugins/harness-memory",
+  "aliases": [],
+  "name": "harness-memory",
+  "entry_type": "plugin",
+  "technical_category": "memory-knowledge",
+  "business_category": "personal-productivity",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "91e034e9a6a3af2ba787f950194a67e94df2f6ef76e471ec74364b29910f8ca5",
+    "code": "9808ab77392c7cd285f87de094daff1fcd322109",
+    "maintenance": "0929bf6a292bfdce7395251eec220891799a6352343ca34e990bb057c5a8e463"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-04-github-1333716755-plugins-harness-memory-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T04:16:40.904Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-04-github-1333716755-plugins-harness-memory-author",
+      "kind": "author_claim",
+      "url": "https://github.com/988hj7tczd-oss/harness-desktop/blob/9808ab77392c7cd285f87de094daff1fcd322109/README.md",
+      "revision": "9808ab77392c7cd285f87de094daff1fcd322109",
+      "captured_at": "2026-10-21T04:16:40.904Z",
+      "summary": "为 DSH 保存长期记忆，并在后续会话的系统提示中分类注入。",
+      "artifact": "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--harness-desktop--plugins-harness-memory/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-04-github-1333716755-plugins-harness-memory-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/988hj7tczd-oss/harness-desktop/blob/9808ab77392c7cd285f87de094daff1fcd322109/plugins/harness-memory/index.js",
+      "revision": "9808ab77392c7cd285f87de094daff1fcd322109",
+      "captured_at": "2026-10-21T04:16:40.904Z",
+      "summary": "核查 plugins/harness-memory/index.js、plugins/harness-memory/package.json、plugins/harness-memory/cordis.patch.yml；组件index声明storageDomain表，memory_save按完整文本去重更新tags/时间，forget按ID或完整文本删；systemPrompt每次按updatedAt取最近maxMemories并按tag分类。",
+      "artifact": "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--harness-desktop--plugins-harness-memory/REVIEWED-SOURCE.json",
+      "limitations": [
+        "仅组件3文件统计，抽读index与manifest/bundle；根README仅提供作者记忆功能说明，不审整套desktop。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "个人跨会话保留偏好、项目约定和成功做法，交付持久文本记忆；需自己管理过期和敏感信息。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1333716755-plugins-harness-memory-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1333716755:plugins-harness-memory",
+          "area": "code",
+          "fingerprint": "9808ab77392c7cd285f87de094daff1fcd322109"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:16:40.904Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "组件index声明storageDomain表，memory_save按完整文本去重更新tags/时间，forget按ID或完整文本删；systemPrompt每次按updatedAt取最近maxMemories并按tag分类。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1333716755-plugins-harness-memory-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1333716755:plugins-harness-memory",
+          "area": "code",
+          "fingerprint": "9808ab77392c7cd285f87de094daff1fcd322109"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:16:40.904Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "仅组件3文件统计，抽读index与manifest/bundle；根README仅提供作者记忆功能说明，不审整套desktop。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1333716755-plugins-harness-memory-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1333716755:plugins-harness-memory",
+          "area": "code",
+          "fingerprint": "9808ab77392c7cd285f87de094daff1fcd322109"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:16:40.904Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "plugins/harness-memory子包，依赖storageDomain/systemPrompt/tools及zod/schemastery；不能从根桌面发行版推断子包独立安装已验。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1333716755-plugins-harness-memory-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1333716755:plugins-harness-memory",
+          "area": "code",
+          "fingerprint": "9808ab77392c7cd285f87de094daff1fcd322109"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:16:40.904Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次匹配存储域，持续清理过期/矛盾记忆和系统提示token；人工维护和收益未测。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1333716755-plugins-harness-memory-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1333716755:plugins-harness-memory",
+          "area": "code",
+          "fingerprint": "9808ab77392c7cd285f87de094daff1fcd322109"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:16:40.904Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "个人先保存少量非敏感稳定偏好；跨项目使用前核对适用范围，重要约定保留文档真相，定期清理错误记忆。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1333716755-plugins-harness-memory-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1333716755:plugins-harness-memory",
+          "area": "code",
+          "fingerprint": "9808ab77392c7cd285f87de094daff1fcd322109"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:16:40.904Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "降低重复描述上下文，但不能保证记忆真实、完整或在正确场景生效。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1333716755-plugins-harness-memory-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1333716755:plugins-harness-memory",
+          "area": "code",
+          "fingerprint": "9808ab77392c7cd285f87de094daff1fcd322109"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:16:40.904Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "声明存储schema与lifecycle close、每次提示求值不另缓存可借鉴；需要来源/范围控制及暴露稳定删除ID。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1333716755-plugins-harness-memory-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1333716755:plugins-harness-memory",
+          "area": "code",
+          "fingerprint": "9808ab77392c7cd285f87de094daff1fcd322109"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:16:40.904Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "相对反复手贴偏好，增量是DSH存储域加工具和每次组装时分类注入，简单且透明；没有语义检索/自动事实验证，不将宿主整套桌面能力算入本组件。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1333716755-plugins-harness-memory-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1333716755:plugins-harness-memory",
+          "area": "code",
+          "fingerprint": "9808ab77392c7cd285f87de094daff1fcd322109"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:16:40.904Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "长期记忆是否可靠且范围合适？表未按会话/项目/用户分区，所有记忆直接注入系统提示；最近50条排序会挤掉旧但重要约定，文本精确去重不处理矛盾。工具描述称ID可从提示获得，render实际只列text无ID，删除便利也需核对。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1333716755-plugins-harness-memory-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1333716755:plugins-harness-memory",
+          "area": "code",
+          "fingerprint": "9808ab77392c7cd285f87de094daff1fcd322109"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:16:40.904Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "待验证假设：为记忆增加来源、适用项目/用户、有效期和冲突关系，并按当前任务检索，可减少陈旧/越域指令。由全表最近注入与精确文本去重推导，未实现。用双项目矛盾规则、超过50条和过期偏好对照误召回/漏重要约定与token成本；模型提炼不能自作真值。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1333716755-plugins-harness-memory-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1333716755:plugins-harness-memory",
+          "area": "code",
+          "fingerprint": "9808ab77392c7cd285f87de094daff1fcd322109"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:16:40.904Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T04:16:40.904Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "9808ab77392c7cd285f87de094daff1fcd322109",
+    "reviewed_at": "2026-10-21T04:16:40.904Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1333716755:plugins-harness-memory",
+        "area": "code",
+        "fingerprint": "9808ab77392c7cd285f87de094daff1fcd322109"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 5,
+        "simplification": 8
+      },
+      "rationale": "novelty 小幅：常规持久记忆适配；mechanism 小幅：最近条目提示注入；transferability 小幅：storageDomain接口可移植但非通用检索；simplification 实质：工具+提示简洁组合。",
+      "basis": "interpretation",
+      "score": 30,
+      "evidence_ids": [
+        "2026-10-21-04-github-1333716755-plugins-harness-memory-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 8,
+        "reach": 5,
+        "economics": 4
+      },
+      "rationale": "workflow 小幅：减少重复交接；delivery 小幅：持久偏好文本；reach 小幅：对话工具方便个人；economics 小幅：省重复输入但注入token成本未测。",
+      "basis": "interpretation",
+      "score": 26,
+      "evidence_ids": [
+        "2026-10-21-04-github-1333716755-plugins-harness-memory-source"
+      ]
+    }
+  }
+}

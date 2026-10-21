@@ -190,6 +190,9 @@
               },
               "checkpoint": {
                 "type": "object"
+              },
+              "block": {
+                "type": "object"
               }
             }
           }

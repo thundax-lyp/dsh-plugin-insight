@@ -1,0 +1,17 @@
+{
+  "id": "github:1344714177:root",
+  "repository": "988hj7tczd-oss/dsh-pr-description",
+  "path": "",
+  "revision": "7608cb9b7b61447a3aff14491537ba7ee8caad6b",
+  "fingerprints": {
+    "directory": "be1db8077acab058a133577bb23b19ea97da9db23ef34eadc44588b3851d499b",
+    "code": "7608cb9b7b61447a3aff14491537ba7ee8caad6b",
+    "maintenance": "828f9d570ed411ddd00a3cf4151cb97b1038a032a31dca59fa4d487a94816810"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T04:06:46Z",
+  "analysis_sha256": "feeb9e236f23e6801658ff299d89ce0c18b7f6e17d912a8026c90bbd5c2f114e"
+}
