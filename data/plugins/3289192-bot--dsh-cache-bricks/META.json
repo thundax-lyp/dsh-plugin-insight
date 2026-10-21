@@ -1,0 +1,52 @@
+{
+  "repository": "3289192-bot/dsh-cache-bricks",
+  "repository_id": 1386463441,
+  "captured_at": "2026-10-21T02:01:14.619Z",
+  "window_start": "2026-09-21T02:01:14.619Z",
+  "stars": 0,
+  "pushed_at": "2026-09-27T19:42:21Z",
+  "issues": {
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3A3289192-bot%2Fdsh-cache-bricks%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 763E:272681:2DA0C4:30E8A8:6AD81CEC and timestamp 2026-10-21 02:01:16 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3A3289192-bot%2Fdsh-cache-bricks%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7758:1112D2:2D78FE:30C116:6AD81CED and timestamp 2026-10-21 02:01:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A3289192-bot%2Fdsh-cache-bricks%20is%3Aissue%20created%3A2026-09-21T02%3A01%3A14.619Z..2026-10-21T02%3A01%3A14.619Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7858:47E31:2D6CB3:30B5BA:6AD81CEE and timestamp 2026-10-21 02:01:18 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A3289192-bot%2Fdsh-cache-bricks%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T02%3A01%3A14.619Z..2026-10-21T02%3A01%3A14.619Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 79C4:4F21B:2E8F98:31D8BE:6AD81CEF and timestamp 2026-10-21 02:01:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A3289192-bot%2Fdsh-cache-bricks%20is%3Aissue%20updated%3A2026-09-21T02%3A01%3A14.619Z..2026-10-21T02%3A01%3A14.619Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7A84:26E54B:2E38A1:317F00:6AD81CF0 and timestamp 2026-10-21 02:01:20 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "dsh-cache-bricks",
+    "captured_at": "2026-10-21T02:01:20.324Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": null,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-cache-bricks",
+    "error": "HTTP 404",
+    "publication": {
+      "first_published_at": null,
+      "captured_at": "2026-10-21T02:01:20.324Z",
+      "source_url": "https://registry.npmjs.org/dsh-cache-bricks",
+      "error": "HTTP 404"
+    }
+  }
+}

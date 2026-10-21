@@ -1,0 +1,299 @@
+{
+  "id": "github:1374055714:root",
+  "repository_id": 1374055714,
+  "component_id": "root",
+  "repository": "3ChatAI-NCT/3chatai-deepseek-harness-plugin",
+  "path": "",
+  "aliases": [],
+  "name": "3Chat 私域客户运营",
+  "entry_type": "plugin",
+  "technical_category": "channels-remote",
+  "business_category": "customer-service",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "a23d39ffb07a8f2ac5f35904fafa2be507b7a32b4ec7689d2383350e2417ad92",
+    "code": "d741956969f0adcd523c13d682e9ca8d7b313cb0",
+    "maintenance": "0f555bc35f44fba60ea0de1d0989bf129ebb1d036fef4875b365fb2503ff4a29"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-01-github-1374055714-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T02:11:08.529Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-01-github-1374055714-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/blob/d741956969f0adcd523c13d682e9ca8d7b313cb0/README.md",
+      "revision": "d741956969f0adcd523c13d682e9ca8d7b313cb0",
+      "captured_at": "2026-10-21T02:11:08.529Z",
+      "summary": "连接 3Chat 客户和会话，准备跟进消息并经确认发送及查询批次结果。",
+      "artifact": "data/runs/2026-10-21-01/snapshots/3chatai-nct--3chatai-deepseek-harness-plugin/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-01-github-1374055714-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/blob/d741956969f0adcd523c13d682e9ca8d7b313cb0/src/tools.js",
+      "revision": "d741956969f0adcd523c13d682e9ca8d7b313cb0",
+      "captured_at": "2026-10-21T02:11:08.529Z",
+      "summary": "核查 src/tools.js、src/connection.js、src/tool-schema.js、src/oauth/credentials.js、src/oauth/flow.js、package.json；区域化OAuth连接器获取远端MCP工具，公开工具名/参数契约校验后动态注册；写工具串行并在tools执行决策中要求确认。连接层拦截自动写重放，超时后已dispatch的写返回acceptance unknown。",
+      "artifact": "data/runs/2026-10-21-01/snapshots/3chatai-nct--3chatai-deepseek-harness-plugin/REVIEWED-SOURCE.json",
+      "limitations": [
+        "核查工具注册、连接状态、OAuth和写重放约束；未连接3Chat、访问客户或发送消息。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "已有3Chat组织和渠道的运营人员，按客户沟通上下文准备单发/批量跟进；交付客户筛选、草稿与可核对发送结果，成交仍需业务记录确认。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1374055714-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1374055714:root",
+          "area": "code",
+          "fingerprint": "d741956969f0adcd523c13d682e9ca8d7b313cb0"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:08.529Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "区域化OAuth连接器获取远端MCP工具，公开工具名/参数契约校验后动态注册；写工具串行并在tools执行决策中要求确认。连接层拦截自动写重放，超时后已dispatch的写返回acceptance unknown。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1374055714-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1374055714:root",
+          "area": "code",
+          "fingerprint": "d741956969f0adcd523c13d682e9ca8d7b313cb0"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:08.529Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "核查工具注册、连接状态、OAuth和写重放约束；未连接3Chat、访问客户或发送消息。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1374055714-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1374055714:root",
+          "area": "code",
+          "fingerprint": "d741956969f0adcd523c13d682e9ca8d7b313cb0"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:08.529Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "包3chat-customer-growth 2.1.4，DSH web双面插件；打包依赖在dist，业务Skill与渠道实现来源需分别归属。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1374055714-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1374055714:root",
+          "area": "code",
+          "fingerprint": "d741956969f0adcd523c13d682e9ca8d7b313cb0"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:08.529Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "初装需渠道接入、OAuth和业务规则配置；持续有3Chat服务、模型调用、附件上传及人工消息审阅成本。无本轮价格、成交率或ROI数据，不能把草稿/任务创建算收入。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1374055714-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1374055714:root",
+          "area": "code",
+          "fingerprint": "d741956969f0adcd523c13d682e9ca8d7b313cb0"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:08.529Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "已有3Chat渠道的团队先用测试客户验证查询和确认发送，再启用批量；保留人工处理未知结果和业务回复的流程。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1374055714-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1374055714:root",
+          "area": "code",
+          "fingerprint": "d741956969f0adcd523c13d682e9ca8d7b313cb0"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:08.529Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "能把客户洞察直接接入可执行跟进，前提是渠道授权和上下文质量；是否提高成交属于未验证业务结果。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1374055714-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1374055714:root",
+          "area": "code",
+          "fingerprint": "d741956969f0adcd523c13d682e9ca8d7b313cb0"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:08.529Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "公开工具allowlist、完整新代际准备后切换注册、写串行和WRITE_REPLAY_BLOCKED值得复用。它们约束插件自动行为，仍需远端幂等/送达语义，不能声称绝对不重复。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1374055714-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1374055714:root",
+          "area": "code",
+          "fingerprint": "d741956969f0adcd523c13d682e9ca8d7b313cb0"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:08.529Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "相对人工在CRM筛客并复制发信，贡献是把客户上下文、草稿和渠道执行放进DSH编排，同时显式处理授权、写确认和未知结果。渠道/客服Agent能力归3Chat平台；本插件未实现7×24回复引擎或成交归因。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1374055714-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1374055714:root",
+          "area": "code",
+          "fingerprint": "d741956969f0adcd523c13d682e9ca8d7b313cb0"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:08.529Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "核心假设是模型筛客与自动编排能提高跟进质量而不放大误发。确认提示与串行队列有支持，但用户能否看清批量收件人、远端返回是否代表实际送达仍需端到端验收。未知写结果不能自动重发；原地重试可能产生重复触达。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1374055714-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1374055714:root",
+          "area": "code",
+          "fingerprint": "d741956969f0adcd523c13d682e9ca8d7b313cb0"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:08.529Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "待验证假设：以批次收件人和内容摘要生成一次性确认凭据，再把远端任务id和逐项结果绑定，可减少“批准的是A，发送的是B”及未知结果重试。基于已有动态工具代际、确认与禁止重放推导；服务端去重支持和状态所有权需共同设计。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1374055714-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1374055714:root",
+          "area": "code",
+          "fingerprint": "d741956969f0adcd523c13d682e9ca8d7b313cb0"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:08.529Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T02:11:08.529Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "d741956969f0adcd523c13d682e9ca8d7b313cb0",
+    "reviewed_at": "2026-10-21T02:11:08.529Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1374055714:root",
+        "area": "code",
+        "fingerprint": "d741956969f0adcd523c13d682e9ca8d7b313cb0"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 15,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty：CRM工具桥接常见，增量是DSH授权/连接代际适配。 mechanism：未知写状态与禁止自动重放改变故障处理约束，真实服务待验。 transferability：写确认/串行/代际模式可复用，远端协议需适配。 simplification：查询与发送同会话组织，服务准备和确认仍必要。",
+      "basis": "interpretation",
+      "score": 42,
+      "evidence_ids": [
+        "2026-10-21-01-github-1374055714-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 15,
+        "reach": 10,
+        "economics": 4
+      },
+      "rationale": "workflow：客户分析到触达在同会话接续，平台回复另行负责。 delivery：交付可执行草稿和发送批次结果，非成交归因。 reach：让自然语言用户操作已有渠道，需组织权限。 economics：减少复制与交接的潜在成本，服务费和人工复核未测。",
+      "basis": "interpretation",
+      "score": 47,
+      "evidence_ids": [
+        "2026-10-21-01-github-1374055714-root-source"
+      ]
+    }
+  }
+}

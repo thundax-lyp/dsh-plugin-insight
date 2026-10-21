@@ -1,0 +1,245 @@
+{
+  "id": "github:1423253220:root",
+  "repository_id": 1423253220,
+  "component_id": "root",
+  "repository": "439436269-ctrl/dsh-search",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-search",
+  "entry_type": "plugin",
+  "technical_category": "context-search",
+  "business_category": "research-knowledge",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "906d6f197bc17274dfb2bdc19e89691549686d654d95fed97f8cf95e4b53997c",
+    "code": "24bc2e4b985559fe05497530b5c4484bc9168d71",
+    "maintenance": "6ca93e3d0748966eb82be00e216b5b631b54a0a579a0a731bf4859a67eba8873"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-01-github-1423253220-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T02:06:40.142Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-01-github-1423253220-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/439436269-ctrl/dsh-search/blob/24bc2e4b985559fe05497530b5c4484bc9168d71/README.md",
+      "revision": "24bc2e4b985559fe05497530b5c4484bc9168d71",
+      "captured_at": "2026-10-21T02:06:40.142Z",
+      "summary": "把 DeepSeek Search/Fetch 接口接入 DSH，支持结构化搜索与正文抓取。",
+      "artifact": "data/runs/2026-10-21-01/snapshots/439436269-ctrl--dsh-search/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-01-github-1423253220-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/439436269-ctrl/dsh-search/blob/24bc2e4b985559fe05497530b5c4484bc9168d71/lib/client.js",
+      "revision": "24bc2e4b985559fe05497530b5c4484bc9168d71",
+      "captured_at": "2026-10-21T02:06:40.142Z",
+      "summary": "核查 lib/client.js、lib/tools/research.js、lib/query.js；三个工具将query过滤、HTTP认证重试、结果归一化分离；research先搜索再顺序抓前N页，保留每页fetchError与正文节选。",
+      "artifact": "data/runs/2026-10-21-01/snapshots/439436269-ctrl--dsh-search/REVIEWED-SOURCE.json",
+      "limitations": [
+        "固定提交源码抽读与作者材料核查；没有执行目标代码、测试、安装或真实宿主验收，没有确认独立用户效果。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "研究或开发用户先搜候选页面再读取正文，以原始URL为证据完成回答；交付应是可追溯原文依据。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1423253220-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1423253220:root",
+          "area": "code",
+          "fingerprint": "24bc2e4b985559fe05497530b5c4484bc9168d71"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:40.142Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "三个工具将query过滤、HTTP认证重试、结果归一化分离；research先搜索再顺序抓前N页，保留每页fetchError与正文节选。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1423253220-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1423253220:root",
+          "area": "code",
+          "fingerprint": "24bc2e4b985559fe05497530b5c4484bc9168d71"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:40.142Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "固定提交源码抽读与作者材料核查；没有执行目标代码、测试、安装或真实宿主验收，没有确认独立用户效果。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1423253220-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1423253220:root",
+          "area": "code",
+          "fingerprint": "24bc2e4b985559fe05497530b5c4484bc9168d71"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:40.142Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "检查固定提交包清单与入口；安装说明属于作者主张，本次未验证分发产物与宿主兼容。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1423253220-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1423253220:root",
+          "area": "code",
+          "fingerprint": "24bc2e4b985559fe05497530b5c4484bc9168d71"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:40.142Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "现金为上游Search/Fetch请求费用，实际价格与结算需单独核实；人工包括原文核查、登录/SPA失败回退及结果反证，重试可能增加请求。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1423253220-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1423253220:root",
+          "area": "code",
+          "fingerprint": "24bc2e4b985559fe05497530b5c4484bc9168d71"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:40.142Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "需要结构化公开网页材料的用户可评估；版本、价格和API字段回读原文，登录态或交互站点另用浏览器，先核实账户计费口径。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1423253220-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1423253220:root",
+          "area": "code",
+          "fingerprint": "24bc2e4b985559fe05497530b5c4484bc9168d71"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:40.142Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "减少搜索与抓取的工具编排步骤；多条摘要和高分不能替代关键事实查证。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1423253220-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1423253220:root",
+          "area": "code",
+          "fingerprint": "24bc2e4b985559fe05497530b5c4484bc9168d71"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:40.142Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "HTTP client独占key、超时、退避与状态错误翻译；工具独立文件，research逐页保留失败。可借鉴局部失败呈现，复用时不能把成功响应计数命名为确定账单。 源码依据：[lib/client.js](https://github.com/439436269-ctrl/dsh-search/blob/24bc2e4b985559fe05497530b5c4484bc9168d71/lib/client.js#L31)、[lib/tools/research.js](https://github.com/439436269-ctrl/dsh-search/blob/24bc2e4b985559fe05497530b5c4484bc9168d71/lib/tools/research.js#L17)、[lib/query.js](https://github.com/439436269-ctrl/dsh-search/blob/24bc2e4b985559fe05497530b5c4484bc9168d71/lib/query.js#L21)。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1423253220-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1423253220:root",
+          "area": "code",
+          "fingerprint": "24bc2e4b985559fe05497530b5c4484bc9168d71"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:40.142Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T02:06:40.142Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "24bc2e4b985559fe05497530b5c4484bc9168d71",
+    "reviewed_at": "2026-10-21T02:06:40.142Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1423253220:root",
+        "area": "code",
+        "fingerprint": "24bc2e4b985559fe05497530b5c4484bc9168d71"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 5,
+        "simplification": 8
+      },
+      "rationale": "novelty：已有API的DSH包装；mechanism：结构化归一化与错误隔离是局部增量；transferability：工具/HTTP分层可复用；simplification：组合搜索抓取减少模型编排往返。",
+      "basis": "interpretation",
+      "score": 30,
+      "evidence_ids": [
+        "2026-10-21-01-github-1423253220-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 8,
+        "reach": 5,
+        "economics": 4
+      },
+      "rationale": "workflow：搜索后自动取前页减少交接；delivery：保留来源正文但不是证据正确性验收；reach：参数化工具降低HTTP门槛；economics：可控top改变请求预算，净成本未测。",
+      "basis": "interpretation",
+      "score": 26,
+      "evidence_ids": [
+        "2026-10-21-01-github-1423253220-root-source"
+      ]
+    }
+  }
+}

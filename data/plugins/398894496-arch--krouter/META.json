@@ -1,0 +1,31 @@
+{
+  "repository": "398894496-arch/KRouter",
+  "repository_id": 1341648244,
+  "captured_at": "2026-10-21T02:01:26.565Z",
+  "window_start": "2026-09-21T02:01:26.565Z",
+  "stars": 46,
+  "pushed_at": "2026-10-20T20:44:05Z",
+  "issues": {
+    "open": 2,
+    "closed": 8,
+    "created_30d": 3,
+    "closed_30d": 7,
+    "updated_30d": 9
+  },
+  "errors": [],
+  "npm": {
+    "package_name": "dsh-krouter",
+    "captured_at": "2026-10-21T02:01:41.511Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": null,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-krouter",
+    "error": "HTTP 404",
+    "publication": {
+      "first_published_at": null,
+      "captured_at": "2026-10-21T02:01:41.511Z",
+      "source_url": "https://registry.npmjs.org/dsh-krouter",
+      "error": "HTTP 404"
+    }
+  }
+}

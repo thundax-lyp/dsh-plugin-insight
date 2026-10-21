@@ -1,0 +1,245 @@
+{
+  "id": "github:1406500233:root",
+  "repository_id": 1406500233,
+  "component_id": "root",
+  "repository": "439436269-ctrl/dsh-zspace",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-zspace",
+  "entry_type": "plugin",
+  "technical_category": "tools-integration",
+  "business_category": "infrastructure",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "a82fdbccd2f85d5f2aba1bf402cacc5098963b9a215f4725432b1a334fb9c83e",
+    "code": "70743909450191c09f3dcef15d46d8d0119200a9",
+    "maintenance": "227976950230fda47035dc977a3a2723b75ab89534908af1e59472bdf8ac5982"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-01-github-1406500233-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T02:06:41.052Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-01-github-1406500233-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/439436269-ctrl/dsh-zspace/blob/70743909450191c09f3dcef15d46d8d0119200a9/README.md",
+      "revision": "70743909450191c09f3dcef15d46d8d0119200a9",
+      "captured_at": "2026-10-21T02:06:41.052Z",
+      "summary": "将极空间 NAS 文件管理与容器诊断能力接入 DSH，自动选择直连或中转。",
+      "artifact": "data/runs/2026-10-21-01/snapshots/439436269-ctrl--dsh-zspace/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-01-github-1406500233-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/439436269-ctrl/dsh-zspace/blob/70743909450191c09f3dcef15d46d8d0119200a9/lib/client/router.js",
+      "revision": "70743909450191c09f3dcef15d46d8d0119200a9",
+      "captured_at": "2026-10-21T02:06:41.052Z",
+      "summary": "核查 lib/client/router.js、lib/tools/remove.js、lib/tools/docker-health.js；通过已登录桌面客户端中转或WebDAV访问同一工具面；router按PROPFIND可达性选路，网络失败冷却后同调用回退中转；删除等工具有显式confirm。",
+      "artifact": "data/runs/2026-10-21-01/snapshots/439436269-ctrl--dsh-zspace/REVIEWED-SOURCE.json",
+      "limitations": [
+        "固定提交源码抽读与作者材料核查；没有执行目标代码、测试、安装或真实宿主验收，没有确认独立用户效果。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "已有极空间NAS的用户在本地或远程网络用会话管理文件与诊断容器；交付是核实后的文件状态和设备状态。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1406500233-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1406500233:root",
+          "area": "code",
+          "fingerprint": "70743909450191c09f3dcef15d46d8d0119200a9"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:41.052Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "通过已登录桌面客户端中转或WebDAV访问同一工具面；router按PROPFIND可达性选路，网络失败冷却后同调用回退中转；删除等工具有显式confirm。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1406500233-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1406500233:root",
+          "area": "code",
+          "fingerprint": "70743909450191c09f3dcef15d46d8d0119200a9"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:41.052Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "固定提交源码抽读与作者材料核查；没有执行目标代码、测试、安装或真实宿主验收，没有确认独立用户效果。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1406500233-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1406500233:root",
+          "area": "code",
+          "fingerprint": "70743909450191c09f3dcef15d46d8d0119200a9"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:41.052Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "检查固定提交包清单与入口；安装说明属于作者主张，本次未验证分发产物与宿主兼容。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1406500233-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1406500233:root",
+          "area": "code",
+          "fingerprint": "70743909450191c09f3dcef15d46d8d0119200a9"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:41.052Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "需要既有NAS与桌面客户端/账号，WebDAV可选；人工为权限、映射、凭据、变更核对和恢复，故障回退增加延迟和重复操作风险。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1406500233-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1406500233:root",
+          "area": "code",
+          "fingerprint": "70743909450191c09f3dcef15d46d8d0119200a9"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:41.052Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "先用只读列表、stat及测试文件评估；重要写入和删除固定通道并核对结果，网络失败后确认实际状态再重试。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1406500233-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1406500233:root",
+          "area": "code",
+          "fingerprint": "70743909450191c09f3dcef15d46d8d0119200a9"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:41.052Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "统一网络路径减少手工切换；自动选路可用性不应掩盖不同变更语义和未知执行结果。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1406500233-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1406500233:root",
+          "area": "code",
+          "fingerprint": "70743909450191c09f3dcef15d46d8d0119200a9"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:41.052Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "router将可达性、冷却和传输错误分类集中；工具按单能力拆分，健康诊断保留探针可信度。复用需另加变更幂等/结果核对，不能无差别套用读操作回退。 源码依据：[lib/client/router.js](https://github.com/439436269-ctrl/dsh-zspace/blob/70743909450191c09f3dcef15d46d8d0119200a9/lib/client/router.js#L63)、[lib/tools/remove.js](https://github.com/439436269-ctrl/dsh-zspace/blob/70743909450191c09f3dcef15d46d8d0119200a9/lib/tools/remove.js#L7)、[lib/tools/docker-health.js](https://github.com/439436269-ctrl/dsh-zspace/blob/70743909450191c09f3dcef15d46d8d0119200a9/lib/tools/docker-health.js#L23)。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1406500233-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1406500233:root",
+          "area": "code",
+          "fingerprint": "70743909450191c09f3dcef15d46d8d0119200a9"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:41.052Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T02:06:41.052Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "70743909450191c09f3dcef15d46d8d0119200a9",
+    "reviewed_at": "2026-10-21T02:06:41.052Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1406500233:root",
+        "area": "code",
+        "fingerprint": "70743909450191c09f3dcef15d46d8d0119200a9"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 18,
+        "mechanism": 15,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty：NAS已有协议与客户端复用，增量为双通道统一工具；mechanism：可达性选路与真实进程健康判据改变取舍；transferability：读写分类路由可复用；simplification：单工具面减少网络切换但增加未知结果复杂度。",
+      "basis": "interpretation",
+      "score": 51,
+      "evidence_ids": [
+        "2026-10-21-01-github-1406500233-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 15,
+        "reach": 10,
+        "economics": 4
+      },
+      "rationale": "workflow：跨网络文件任务统一入口；delivery：文件与容器状态成为可操作交付但仍需验收；reach：不熟NAS接口者可用模型操作，需既有账号；economics：减少切换为条件推断，误操作恢复成本未知。",
+      "basis": "interpretation",
+      "score": 47,
+      "evidence_ids": [
+        "2026-10-21-01-github-1406500233-root-source"
+      ]
+    }
+  }
+}

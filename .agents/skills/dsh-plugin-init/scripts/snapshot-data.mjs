@@ -366,7 +366,13 @@ function assemble(base, work, root = ROOT) {
             throw Error('unselected analysis changed unexpectedly');
     }
     // Keep the evidence needed by today's conclusions, rather than accumulating completed rounds.
-    const referencedEvidence = new Set(next.catalog.plugins.flatMap((p) => p.findings.flatMap((f) => f.evidence_ids)));
+    const referencedEvidence = new Set(
+        next.catalog.plugins.flatMap((p) => [
+            ...p.findings.flatMap((f) => f.evidence_ids),
+            ...(p.innovation_scores?.technical.evidence_ids ?? []),
+            ...(p.innovation_scores?.business.evidence_ids ?? [])
+        ])
+    );
     for (const plugin of next.catalog.plugins) {
         const fresh = work.records[plugin.id]?.observations.plugins[0];
         if (!fresh) continue;

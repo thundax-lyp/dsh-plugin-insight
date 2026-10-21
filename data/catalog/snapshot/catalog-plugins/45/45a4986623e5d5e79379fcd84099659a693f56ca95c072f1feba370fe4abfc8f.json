@@ -1,0 +1,299 @@
+{
+  "id": "github:1425006726:root",
+  "repository_id": 1425006726,
+  "component_id": "root",
+  "repository": "1373700184/dsh-subagent",
+  "path": "",
+  "aliases": [],
+  "name": "Qoder 子代理聚合",
+  "entry_type": "plugin",
+  "technical_category": "agent-workflow",
+  "business_category": "software-delivery",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "50e81ec5d07ce68cc1b966b7133361f50c76d01a3efc452a4ce483bf668d0af0",
+    "code": "9ad5c7dc076bc9ebd98f3c4ea100ced301d10905",
+    "maintenance": "6be9e55402907eff9d9aafa0bc21987ef72701e81ca1ab5fb477aff82b48d850"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-01-github-1425006726-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T02:11:00.310Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-01-github-1425006726-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/1373700184/dsh-subagent/blob/9ad5c7dc076bc9ebd98f3c4ea100ced301d10905/README.md",
+      "revision": "9ad5c7dc076bc9ebd98f3c4ea100ced301d10905",
+      "captured_at": "2026-10-21T02:11:00.310Z",
+      "summary": "把 Qoder 与 QoderCN 订阅 CLI 接入 DSH 子代理，展示进度与执行状态。",
+      "artifact": "data/runs/2026-10-21-01/snapshots/1373700184--dsh-subagent/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-01-github-1425006726-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/1373700184/dsh-subagent/blob/9ad5c7dc076bc9ebd98f3c4ea100ced301d10905/lib/index.js",
+      "revision": "9ad5c7dc076bc9ebd98f3c4ea100ced301d10905",
+      "captured_at": "2026-10-21T02:11:00.310Z",
+      "summary": "核查 lib/index.js、src/client.js、cordis.patch.yml、package.json；QoderJsonProvider 声明 NO_START_CAPABILITIES 和 inheritsParentContext=false，以 stdin 传提示，spawn CLI 并折叠 stream-json 为宿主 SubagentResult；内存 ledger 提供最近运行和动作查询。",
+      "artifact": "data/runs/2026-10-21-01/snapshots/1373700184--dsh-subagent/REVIEWED-SOURCE.json",
+      "limitations": [
+        "核查provider/run/账本及客户端接线，未调用外部CLI，未验证订阅计费、子进程树或宿主取消。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "已有 Qoder 订阅和本地 CLI 的开发者把独立任务从父会话委派出去，交付最终文本和可查询执行记录；需在任务里显式附全上下文。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1425006726-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1425006726:root",
+          "area": "code",
+          "fingerprint": "9ad5c7dc076bc9ebd98f3c4ea100ced301d10905"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:00.310Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "QoderJsonProvider 声明 NO_START_CAPABILITIES 和 inheritsParentContext=false，以 stdin 传提示，spawn CLI 并折叠 stream-json 为宿主 SubagentResult；内存 ledger 提供最近运行和动作查询。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1425006726-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1425006726:root",
+          "area": "code",
+          "fingerprint": "9ad5c7dc076bc9ebd98f3c4ea100ced301d10905"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:00.310Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "核查provider/run/账本及客户端接线，未调用外部CLI，未验证订阅计费、子进程树或宿主取消。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1425006726-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1425006726:root",
+          "area": "code",
+          "fingerprint": "9ad5c7dc076bc9ebd98f3c4ea100ced301d10905"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:00.310Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "包版本0.5.0，web 客户端；目前只有 qoder-json driver，不支持续话、结构化输出和模型选择能力协商。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1425006726-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1425006726:root",
+          "area": "code",
+          "fingerprint": "9ad5c7dc076bc9ebd98f3c4ea100ced301d10905"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:00.310Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次需 CLI 登录、版本和权限校验；每次消耗外部订阅额度并增加父侧描述/复核时间。账本截断意味着事后分析需额外保留证据；无单位任务成本实测。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1425006726-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1425006726:root",
+          "area": "code",
+          "fingerprint": "9ad5c7dc076bc9ebd98f3c4ea100ced301d10905"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:00.310Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "已有对应订阅且能隔离工作目录的团队可先做可撤销任务；配置明确超时与权限后，再评估写任务，不以可查询进度代替验收。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1425006726-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1425006726:root",
+          "area": "code",
+          "fingerprint": "9ad5c7dc076bc9ebd98f3c4ea100ced301d10905"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:00.310Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "改变的是任务入口与执行额度来源，并非已证明更低成本或更高质量；不继承上下文使边界清楚，也增加交接负担。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1425006726-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1425006726:root",
+          "area": "code",
+          "fingerprint": "9ad5c7dc076bc9ebd98f3c4ea100ced301d10905"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:00.310Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "Provider 与 Run 生命周期分离、有界 ledger、复用宿主 settleRunResult 是可借鉴结构；扩展新 CLI 必须实现协议和取消语义，不能只添加 provider 名称。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1425006726-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1425006726:root",
+          "area": "code",
+          "fingerprint": "9ad5c7dc076bc9ebd98f3c4ea100ced301d10905"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:00.310Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "相对手工切 CLI，贡献在于复用 DSH 子代理接口连接外部订阅执行，并让父 Agent/UI 查询同一个运行 id。传输与结算复用 dsh-subagent 上游 helper，新增的是 qoder-json 协议适配和有界活动账本。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1425006726-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1425006726:root",
+          "area": "code",
+          "fingerprint": "9ad5c7dc076bc9ebd98f3c4ea100ced301d10905"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:00.310Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "进度可见不代表任务完成合格。默认 permissionMode=bypass_permissions、timeoutSeconds 无上限，而且子代理不继承父上下文；收益可能被上下文补写、越权操作和结果复核抵消。只有记录了 result 事件也不能证明代码变更正确。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1425006726-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1425006726:root",
+          "area": "code",
+          "fingerprint": "9ad5c7dc076bc9ebd98f3c4ea100ced301d10905"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:00.310Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "待验证假设：委派前附可机器检查的输入/输出契约，并把静默告警和最终文件摘要一起返回，可能降低父 Agent 对“看似完成”的误判；依据是已有事件账本能观测活动却没有业务验收。新负担是定义任务契约，不能把它冒充当前功能。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1425006726-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1425006726:root",
+          "area": "code",
+          "fingerprint": "9ad5c7dc076bc9ebd98f3c4ea100ced301d10905"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:00.310Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T02:11:00.310Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "9ad5c7dc076bc9ebd98f3c4ea100ced301d10905",
+    "reviewed_at": "2026-10-21T02:11:00.310Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1425006726:root",
+        "area": "code",
+        "fingerprint": "9ad5c7dc076bc9ebd98f3c4ea100ced301d10905"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty：CLI协议桥接是局部适配，宿主子代理机制来自上游。 mechanism：事件折叠与告警提高可见性，未改变结果正确性。 transferability：provider/run分离可迁移，但只实现一种协议。 simplification：将CLI执行、查询与UI合并，省去手工切换。",
+      "basis": "interpretation",
+      "score": 35,
+      "evidence_ids": [
+        "2026-10-21-01-github-1425006726-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 8,
+        "reach": 5,
+        "economics": 4
+      },
+      "rationale": "workflow：父会话委派并查询进度改变交接入口，仍需补全上下文。 delivery：最终文本与动作记录是辅助交付，不保证补丁验收。 reach：已有订阅用户可复用CLI，仍需本地安装登录。 economics：复用订阅额度来源，未核实额度和总成本收益。",
+      "basis": "interpretation",
+      "score": 35,
+      "evidence_ids": [
+        "2026-10-21-01-github-1425006726-root-source"
+      ]
+    }
+  }
+}

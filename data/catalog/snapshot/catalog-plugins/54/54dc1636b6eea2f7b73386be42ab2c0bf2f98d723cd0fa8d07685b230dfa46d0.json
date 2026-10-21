@@ -1,0 +1,245 @@
+{
+  "id": "github:1334554745:root",
+  "repository_id": 1334554745,
+  "component_id": "root",
+  "repository": "3274375092/dsh-voice",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-voice",
+  "entry_type": "plugin",
+  "technical_category": "interface-input",
+  "business_category": "personal-productivity",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "6c22f12dea2edd0557d229ee81c55dc01f5eabf8a91107b672d6e31e0ca41af2",
+    "code": "de3911b18e4ecc9ec1bad7709c66c45b62c57f46",
+    "maintenance": "4d121351da287264c444cf521c19939552838c773a7dd7b1d5e04b3430d8fa31"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-01-github-1334554745-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T02:06:36.282Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-01-github-1334554745-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/3274375092/dsh-voice/blob/de3911b18e4ecc9ec1bad7709c66c45b62c57f46/README.md",
+      "revision": "de3911b18e4ecc9ec1bad7709c66c45b62c57f46",
+      "captured_at": "2026-10-21T02:06:36.282Z",
+      "summary": "通过麦克风或快捷键把语音识别为 DSH 普通聊天输入。",
+      "artifact": "data/runs/2026-10-21-01/snapshots/3274375092--dsh-voice/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-01-github-1334554745-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/3274375092/dsh-voice/blob/de3911b18e4ecc9ec1bad7709c66c45b62c57f46/src/core/engine.ts",
+      "revision": "de3911b18e4ecc9ec1bad7709c66c45b62c57f46",
+      "captured_at": "2026-10-21T02:06:36.282Z",
+      "summary": "核查 src/core/engine.ts、src/core/host-asr.ts、src/client/voice-service.ts、src/index.ts；浏览器采集音频重采样后经RPC送宿主，原生sherpa模型与VAD按会话维护识别状态；host统一引擎决策，资源加载失败锁存并回退Web Speech。",
+      "artifact": "data/runs/2026-10-21-01/snapshots/3274375092--dsh-voice/REVIEWED-SOURCE.json",
+      "limitations": [
+        "固定提交源码抽读与作者材料核查；没有执行目标代码、测试、安装或真实宿主验收，没有确认独立用户效果。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "不便持续键盘输入的用户口述需求，期望最终文字准确提交到当前会话，并保留普通预设行为。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1334554745-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334554745:root",
+          "area": "code",
+          "fingerprint": "de3911b18e4ecc9ec1bad7709c66c45b62c57f46"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:36.282Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "浏览器采集音频重采样后经RPC送宿主，原生sherpa模型与VAD按会话维护识别状态；host统一引擎决策，资源加载失败锁存并回退Web Speech。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1334554745-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334554745:root",
+          "area": "code",
+          "fingerprint": "de3911b18e4ecc9ec1bad7709c66c45b62c57f46"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:36.282Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "固定提交源码抽读与作者材料核查；没有执行目标代码、测试、安装或真实宿主验收，没有确认独立用户效果。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1334554745-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334554745:root",
+          "area": "code",
+          "fingerprint": "de3911b18e4ecc9ec1bad7709c66c45b62c57f46"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:36.282Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "检查固定提交包清单与入口；安装说明属于作者主张，本次未验证分发产物与宿主兼容。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1334554745-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334554745:root",
+          "area": "code",
+          "fingerprint": "de3911b18e4ecc9ec1bad7709c66c45b62c57f46"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:36.282Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "原生模型下载约百MB为作者估计，现金还含本地计算；人工为模型安装、麦克风权限、误识别纠正与热键冲突，未测字错率或总输入时间。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1334554745-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334554745:root",
+          "area": "code",
+          "fingerprint": "de3911b18e4ecc9ec1bad7709c66c45b62c57f46"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:36.282Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "先用非敏感内容核对生效引擎及识别质量；有严格本地要求时需核查回退行为，重要指令提交前复核文字。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1334554745-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334554745:root",
+          "area": "code",
+          "fingerprint": "de3911b18e4ecc9ec1bad7709c66c45b62c57f46"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:36.282Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "降低文字输入操作负担，无法从实时partial显示推出准确率和省时。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1334554745-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334554745:root",
+          "area": "code",
+          "fingerprint": "de3911b18e4ecc9ec1bad7709c66c45b62c57f46"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:36.282Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "engine资源状态机单飞加载并锁存失败，HostAsr独占解码与会话池；RPC边界统一错误翻译。复用需保留会话隔离、驱逐提示和引擎可见性。 源码依据：[src/core/engine.ts](https://github.com/3274375092/dsh-voice/blob/de3911b18e4ecc9ec1bad7709c66c45b62c57f46/src/core/engine.ts#L15)、[src/core/host-asr.ts](https://github.com/3274375092/dsh-voice/blob/de3911b18e4ecc9ec1bad7709c66c45b62c57f46/src/core/host-asr.ts#L39)、[src/client/voice-service.ts](https://github.com/3274375092/dsh-voice/blob/de3911b18e4ecc9ec1bad7709c66c45b62c57f46/src/client/voice-service.ts#L27)、[src/index.ts](https://github.com/3274375092/dsh-voice/blob/de3911b18e4ecc9ec1bad7709c66c45b62c57f46/src/index.ts#L59)。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1334554745-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334554745:root",
+          "area": "code",
+          "fingerprint": "de3911b18e4ecc9ec1bad7709c66c45b62c57f46"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:36.282Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T02:06:36.282Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "de3911b18e4ecc9ec1bad7709c66c45b62c57f46",
+    "reviewed_at": "2026-10-21T02:06:36.282Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1334554745:root",
+        "area": "code",
+        "fingerprint": "de3911b18e4ecc9ec1bad7709c66c45b62c57f46"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty：ASR与VAD来自现有引擎，增量为DSH适配；mechanism：真实加载能力和统一引擎决策是局部可靠性改善；transferability：输入适配层可迁移；simplification：双引擎共享普通消息路径。",
+      "basis": "interpretation",
+      "score": 35,
+      "evidence_ids": [
+        "2026-10-21-01-github-1334554745-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 8,
+        "reach": 10,
+        "economics": 4
+      },
+      "rationale": "workflow：增加口述输入而非团队分工；delivery：输出普通文字；reach：降低键盘输入限制但准确率未测；economics：本地模型可能减少外部服务调用，硬件及纠错成本未知。",
+      "basis": "interpretation",
+      "score": 31,
+      "evidence_ids": [
+        "2026-10-21-01-github-1334554745-root-source"
+      ]
+    }
+  }
+}

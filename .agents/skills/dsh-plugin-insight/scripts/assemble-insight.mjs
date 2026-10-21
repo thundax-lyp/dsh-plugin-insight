@@ -44,6 +44,7 @@ export function assembleInsight(workPath, pluginId, analysisPath) {
         'contribution',
         'critical_question',
         'innovation_hypothesis',
+        'conclusion_findings',
         'innovation_scores',
         'scope',
         'distribution',
@@ -65,8 +66,23 @@ export function assembleInsight(workPath, pluginId, analysisPath) {
         required.some((k) => analysis[k] === undefined)
     )
         throw Error('authored single-plugin analysis fields are incomplete or unknown');
-    for (const key of required.filter((k) => !['source_paths', 'capabilities', 'innovation_scores'].includes(k)))
+    for (const key of required.filter(
+        (k) => !['source_paths', 'capabilities', 'innovation_scores', 'conclusion_findings'].includes(k)
+    ))
         if (typeof analysis[key] !== 'string' || !analysis[key].trim()) throw Error(`analysis text required: ${key}`);
+    const conclusions = ['contribution', 'critical_question', 'innovation_hypothesis'];
+    const exactKeys = (value, keys) =>
+        value &&
+        typeof value === 'object' &&
+        !Array.isArray(value) &&
+        Object.keys(value).length === keys.length &&
+        keys.every((key) => Object.hasOwn(value, key));
+    if (
+        !exactKeys(analysis.conclusion_findings, conclusions) ||
+        conclusions.some((id) => !exactKeys(analysis.conclusion_findings[id], ['topic', 'basis'])) ||
+        analysis.conclusion_findings.innovation_hypothesis.basis !== 'unverified'
+    )
+        throw Error('author topic and basis for all three conclusions; hypotheses must remain unverified');
     if (
         !Array.isArray(analysis.source_paths) ||
         !analysis.source_paths.length ||
@@ -181,14 +197,19 @@ export function assembleInsight(workPath, pluginId, analysisPath) {
         cost: 'limitations',
         adoption: 'adoption',
         value: 'business_value',
-        engineering: 'engineering'
+        engineering: 'engineering',
+        ...Object.fromEntries(conclusions.map((id) => [id, analysis.conclusion_findings[id].topic]))
     };
     if (old?.findings.some((f) => !Object.hasOwn(topics, f.id)))
         throw Error('existing findings need explicit per-ID review; no fallback allowed');
     const findings = Object.entries(topics).map(([id, topic]) => ({
         id,
         topic,
-        basis: ['mechanism', 'distribution'].includes(id) ? 'supported' : 'interpretation',
+        basis: conclusions.includes(id)
+            ? analysis.conclusion_findings[id].basis
+            : ['mechanism', 'distribution'].includes(id)
+              ? 'supported'
+              : 'interpretation',
         text: analysis[id],
         evidence_ids: [evidenceId],
         dependencies: [{ plugin_id: pluginId, area: 'code', fingerprint: item.fingerprints.code }],

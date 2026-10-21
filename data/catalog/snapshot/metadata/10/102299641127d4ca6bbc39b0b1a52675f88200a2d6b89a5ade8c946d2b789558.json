@@ -1,0 +1,40 @@
+{
+  "repository": "2507483326/dsh-eteams",
+  "repository_id": 1372993989,
+  "captured_at": "2026-10-21T02:00:40.637Z",
+  "window_start": "2026-09-21T02:00:40.637Z",
+  "stars": 2,
+  "pushed_at": "2026-09-22T13:21:58Z",
+  "issues": {
+    "open": 0,
+    "closed": 0,
+    "created_30d": 0,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A2507483326%2Fdsh-eteams%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T02%3A00%3A40.637Z..2026-10-21T02%3A00%3A40.637Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5938:4DAEE:2D65AD:30ADCD:6AD81CCF and timestamp 2026-10-21 02:00:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A2507483326%2Fdsh-eteams%20is%3Aissue%20updated%3A2026-09-21T02%3A00%3A40.637Z..2026-10-21T02%3A00%3A40.637Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5B2A:27069F:2FEAF8:3332FA:6AD81CD1 and timestamp 2026-10-21 02:00:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "dsh-eteams",
+    "captured_at": "2026-10-21T02:00:50.515Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": 1445,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-eteams",
+    "error": null,
+    "publication": {
+      "first_published_at": "2026-09-16T12:58:09.261Z",
+      "captured_at": "2026-10-21T02:00:50.515Z",
+      "source_url": "https://registry.npmjs.org/dsh-eteams",
+      "error": null
+    }
+  }
+}

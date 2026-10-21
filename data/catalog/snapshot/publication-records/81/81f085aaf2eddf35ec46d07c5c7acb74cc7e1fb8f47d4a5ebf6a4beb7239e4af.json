@@ -1,0 +1,19 @@
+{
+  "id": "github:1416699252:root",
+  "repository": "01men/ybkkasi",
+  "path": "",
+  "revision": "d3cdcd2d1923c98d81159484bde36504a5e1338d",
+  "fingerprints": {
+    "directory": "7211bbc316a9b1a44ab2573fc56debe9e43cf120c1f01f0a4448b9ef6473a5b0",
+    "code": "d3cdcd2d1923c98d81159484bde36504a5e1338d",
+    "release": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "maintenance": "c124c66363a51dc12e1006472c65a3835420ff77540c3fe2ec8c3a2237e30971",
+    "compatibility": "6ed9dc0721e0b80be8d990cd773a8d9445dc3f60bba24361558c1ab75d6e1833"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T01:54:44Z",
+  "analysis_sha256": "78f4140e16e4abd572c9a5a92537423a0629dff0aaa26a0707b71bdf38e7e7bb"
+}

@@ -1,0 +1,7 @@
+{
+  "revision": "d3cdcd2d1923c98d81159484bde36504a5e1338d",
+  "items": {
+    "Host 路由": "共享gate注册权限声明并在业务处理前检查权限。",
+    "后台": "独立Context与bootAll装配平台服务。"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "repository": "439436269-ctrl/dsh-piano",
+  "repository_id": 1412161923,
+  "captured_at": "2026-10-21T02:01:48.643Z",
+  "window_start": "2026-09-21T02:01:48.643Z",
+  "stars": 0,
+  "pushed_at": "2026-10-09T16:44:49Z",
+  "issues": {
+    "open": 0,
+    "closed": 0,
+    "created_30d": 0,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-piano%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T02%3A01%3A48.643Z..2026-10-21T02%3A01%3A48.643Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9BD4:1852C3:306101:33AC32:6AD81D12 and timestamp 2026-10-21 02:01:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-piano%20is%3Aissue%20updated%3A2026-09-21T02%3A01%3A48.643Z..2026-10-21T02%3A01%3A48.643Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9CEC:1A0B93:2D9762:30E266:6AD81D13 and timestamp 2026-10-21 02:01:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "dsh-piano",
+    "captured_at": "2026-10-21T02:01:55.425Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": 560,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-piano",
+    "error": null,
+    "publication": {
+      "first_published_at": "2026-10-08T23:57:25.452Z",
+      "captured_at": "2026-10-21T02:01:55.425Z",
+      "source_url": "https://registry.npmjs.org/dsh-piano",
+      "error": null
+    }
+  }
+}

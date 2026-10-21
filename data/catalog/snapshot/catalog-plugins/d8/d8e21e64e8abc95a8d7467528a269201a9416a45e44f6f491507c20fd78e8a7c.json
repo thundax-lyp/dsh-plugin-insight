@@ -1,0 +1,245 @@
+{
+  "id": "github:1358821276:root",
+  "repository_id": 1358821276,
+  "component_id": "root",
+  "repository": "345420242/dsh-commandcode-usage-inline",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-commandcode-usage-inline",
+  "entry_type": "plugin",
+  "technical_category": "observability-cost",
+  "business_category": "personal-productivity",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "71bc8be16a0051d9a3da3722a7265789582d56dc26f6537fcb0cc7b4025bcd00",
+    "code": "67ae01891935472467cdf77562861062e91d9b5b",
+    "maintenance": "8f14854bc9f7b81bd65d07605057bdc898e0909b9eb9fd7078e508c0a8d9775f"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-01-github-1358821276-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T02:06:37.813Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-01-github-1358821276-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/345420242/dsh-commandcode-usage-inline/blob/67ae01891935472467cdf77562861062e91d9b5b/README.md",
+      "revision": "67ae01891935472467cdf77562861062e91d9b5b",
+      "captured_at": "2026-10-21T02:06:37.813Z",
+      "summary": "在 DSH 输入栏内联展示 Command Code 账户窗口用量和剩余 credits。",
+      "artifact": "data/runs/2026-10-21-01/snapshots/345420242--dsh-commandcode-usage-inline/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-01-github-1358821276-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/345420242/dsh-commandcode-usage-inline/blob/67ae01891935472467cdf77562861062e91d9b5b/dsh/client.js",
+      "revision": "67ae01891935472467cdf77562861062e91d9b5b",
+      "captured_at": "2026-10-21T02:06:37.813Z",
+      "summary": "核查 dsh/client.js、dsh/index.js；纯客户端读取已挂载commandcode/report Remote，按当前会话provider显隐；解析账户report并优先active账户，每60秒刷新，错误时展示警告。",
+      "artifact": "data/runs/2026-10-21-01/snapshots/345420242--dsh-commandcode-usage-inline/REVIEWED-SOURCE.json",
+      "limitations": [
+        "固定提交源码抽读与作者材料核查；没有执行目标代码、测试、安装或真实宿主验收，没有确认独立用户效果。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "Command Code用户在发起请求前查看额度和重置窗口，避免切到单独账户页面。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1358821276-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1358821276:root",
+          "area": "code",
+          "fingerprint": "67ae01891935472467cdf77562861062e91d9b5b"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:37.813Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "纯客户端读取已挂载commandcode/report Remote，按当前会话provider显隐；解析账户report并优先active账户，每60秒刷新，错误时展示警告。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1358821276-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1358821276:root",
+          "area": "code",
+          "fingerprint": "67ae01891935472467cdf77562861062e91d9b5b"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:37.813Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "固定提交源码抽读与作者材料核查；没有执行目标代码、测试、安装或真实宿主验收，没有确认独立用户效果。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1358821276-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1358821276:root",
+          "area": "code",
+          "fingerprint": "67ae01891935472467cdf77562861062e91d9b5b"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:37.813Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "检查固定提交包清单与入口；安装说明属于作者主张，本次未验证分发产物与宿主兼容。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1358821276-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1358821276:root",
+          "area": "code",
+          "fingerprint": "67ae01891935472467cdf77562861062e91d9b5b"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:37.813Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "本地轮询和少量UI开销；人工为provider安装、兼容升级和账户归属核对，未测轮询对上游请求成本。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1358821276-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1358821276:root",
+          "area": "code",
+          "fingerprint": "67ae01891935472467cdf77562861062e91d9b5b"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:37.813Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "已用对应Command Code provider的用户可评估；多账户轮换时核对active标记，勿据首账户默认值作预算决定。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1358821276-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1358821276:root",
+          "area": "code",
+          "fingerprint": "67ae01891935472467cdf77562861062e91d9b5b"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:37.813Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "在输入位置提示额度便于及时观察；显示百分比不能确保请求可用或准确预算。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1358821276-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1358821276:root",
+          "area": "code",
+          "fingerprint": "67ae01891935472467cdf77562861062e91d9b5b"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:37.813Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "report边界解析容忍缺段，Host为显式no-op；客户端保留Remote错误并按provider显隐。复用时需保留未知账户和错误状态。 源码依据：[dsh/client.js](https://github.com/345420242/dsh-commandcode-usage-inline/blob/67ae01891935472467cdf77562861062e91d9b5b/dsh/client.js#L47)、[dsh/index.js](https://github.com/345420242/dsh-commandcode-usage-inline/blob/67ae01891935472467cdf77562861062e91d9b5b/dsh/index.js#L12)。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1358821276-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1358821276:root",
+          "area": "code",
+          "fingerprint": "67ae01891935472467cdf77562861062e91d9b5b"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:37.813Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T02:06:37.813Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "67ae01891935472467cdf77562861062e91d9b5b",
+    "reviewed_at": "2026-10-21T02:06:37.813Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1358821276:root",
+        "area": "code",
+        "fingerprint": "67ae01891935472467cdf77562861062e91d9b5b"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 5,
+        "simplification": 4
+      },
+      "rationale": "novelty：相对侧栏是位置和交互改动；mechanism：复用Remote的局部适配；transferability：紧凑额度组件可迁移；simplification：不用复制认证但依赖外部接口。",
+      "basis": "interpretation",
+      "score": 26,
+      "evidence_ids": [
+        "2026-10-21-01-github-1358821276-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 8,
+        "reach": 5,
+        "economics": 0
+      },
+      "rationale": "workflow：减少查额度操作；delivery：展示快照不是新交付物；reach：降低账户信息查找门槛；economics：未识别成本结构改变，额度可视不等于省钱。",
+      "basis": "interpretation",
+      "score": 22,
+      "evidence_ids": [
+        "2026-10-21-01-github-1358821276-root-source"
+      ]
+    }
+  }
+}
