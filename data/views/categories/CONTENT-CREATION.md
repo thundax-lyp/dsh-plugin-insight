@@ -10,12 +10,48 @@
 
 | 插件 | 主要用途 | 关键使用条件 |
 | --- | --- | --- |
+| [dsh-douyin-publish](#plugin-1422396858-root) | 把本地视频上传到抖音或B站投稿页并填写内容，默认私密且停在发布前。 | 适合固定抖音/B站工作流的创作者在非公开测试稿先检查。 |
+| [dsh-image2-tool](#plugin-1422216012-root) | 通过兼容图片接口生成或编辑图片，将结果保存到会话目录并支持内联预览。 | 适合已能确认中转服务支持的图片任务。 |
+| [dsh-LorebookMD](#plugin-1334395883-root) | 管理提示词预设并导入酒馆角色卡、世界书及正则资料，按需注入对话上下文。 | 已有酒馆资料的写作者可先导入副本。 |
 | [dsh-media-studio](#plugin-1399694663-root) | 在DSH聊天中生成图片与视频，发送本地媒体，并提供后台任务与内联展示。 | 先在低预算测试环境核对一个模型、后台完成和重开会话后附件；不把预设列表等同逐家验收，不对未知结果自动重复生成。 |
 | [dsh-plugin-tts](#plugin-1334773156-root) | 为DSH提供Edge、云端及本地语音后端，支持长文分块播放和自定义音色管理。 | 先选一个后端，用短文本和长文检查播放与取消，再引入本地音色服务；需要离线或隐私边界时逐条确认所选后端数据流。 |
 | [dsh-redstone-music](#plugin-1401037852-root) | 在 DSH 中渲染音乐采样并生成、部署 Minecraft 红石音乐数据包。 | 适合已有 Minecraft 音乐环境的创作者；先用短片段验证采样、时序和世界备份恢复，再构建长曲。 |
 | [dsh-wsl-media](#plugin-1381725238-root) | 在DSH中调用本地媒体与文档CLI，进行探测、转写、OCR及格式处理。 | 先配置小范围目录，逐项确认依赖；把OCR和ASR文本与原件抽查，避免复用同名输出。 |
 | [No AI Style](#plugin-1418493685-root) | 以写作 Skill 和输入框入口帮助润色中英日专业文本，保留事实、引文与不确定性。 | 先用带数字和引用的旧稿试改，逐项对照事实与限定词，不把文风自然当作内容可靠。 |
 | [短视频 Skill 流水线](#plugin-1414936636-root) | 将选题、配音、生图、合成、核验和多平台发布 Skill 打包接入 DSH。 | 适合已有视频生产工具和账号、愿意逐工序适配的创作者；先落地本地合成与核验，发布步骤单独确认且回读，不能依照总入口一句话跳过配置。 |
+
+<a id="plugin-1422396858-root"></a>
+
+## [dsh-douyin-publish](../../plugins/7gzgn--dsh-douyin-publish/INSIGHT.md)
+
+[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/7gzgn/dsh-douyin-publish)
+
+- **用途**：已有成片和文案的创作者需要自动完成投稿准备，合格交付是正确视频、标题、话题和可见性均可回读；最终发布是独立且不可随意重试的动作。
+- **亮点**：相对逐次系统对话框与手填表单，增量是将交文件、版式探测、填写和状态回执组成投稿准备链，并把默认终点设为人工发布前。文件注入和浏览器自动化是成熟手段，主要贡献在保守终点与分阶段验证的流程组合。
+- **思考**：“待发布”与“已发布”回执能否可靠区分？源码有draft与private保护、平台不支持的可见性会拒绝，这是有力支持；但页面选择器与成功迹象仍是外站可变信号，发布后超时不代表没发布，重新跑pipeline也不是既有草稿的事务提交。作者真机记录不能替代当前宿主验收。
+- **建议**：由草稿终点与发布未知结果推导，可把准备结果固定为带内容摘要和平台草稿ID的回执，最终发布只引用该回执并先查询状态；相对重新跑整条上传链，可减少重复稿件。未验证。模拟点击发布后网络断开，要求恢复只查询而不重传；若不能准确绑定同一草稿则方案不成立。
+
+<a id="plugin-1422216012-root"></a>
+
+## [dsh-image2-tool](../../plugins/544244857--dsh-image2-plugin/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/544244857/dsh-image2-plugin) · [![npm 30d 582](https://img.shields.io/static/v1?label=npm+30d&message=582&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-image2-tool)
+
+- **用途**：适合已有图片中转服务的开发者制作插图；交付物是本地可检查图片，而非接口成功提示。
+- **亮点**：作者主张一句话生图；源码可确认的增量是把兼容图片接口、参考图上传、会话内落盘和视觉复查提示连接起来。相对手写curl与另存图片，减少路径整理和接回对话的步骤；模型能力归属远端服务，内联显示归属依赖的Wisdoverse插件。
+- **思考**：自动生成开关和最多六次请求预算只写在工具描述中，execute没有任务级计数或授权判断，因此不是费用硬闸门。输出目录检查realpath，但参考图可读绝对路径，二者权限边界不同。视觉自检同样只是要求模型调用read_image，不能证明生成质量。
+- **建议**：待验证假设：将任务预算与视觉验收状态保存为独立记录，可把提示纪律变成可审计流程。对照同一素材任务的提示版与持久计数版，测超额请求、漏验收和人工确认时间；若代价大于费用与漏验收改善则否定。
+
+<a id="plugin-1334395883-root"></a>
+
+## [dsh-LorebookMD](../../plugins/609476965--dsh-lorebookmd/INSIGHT.md)
+
+[![GitHub ★ 23](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=23&color=yellow&logo=github&style=flat)](https://github.com/609476965/dsh-LorebookMD) · [![npm 30d 705](https://img.shields.io/static/v1?label=npm+30d&message=705&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-lorebookmd)
+
+- **用途**：适合已有角色卡与世界设定、需要在DSH管理写作或角色扮演上下文的作者。
+- **亮点**：作者主张集中预设管理；可确认增量是将SillyTavern资料格式转换、热切换预设与关键词世界书带到DSH。相对复制整份设定到系统提示，可减少重复整理；角色卡格式和世界书思想来自酒馆生态，未证明与原运行时语义等价。
+- **思考**：角色卡占位符被清理后能避免宿主unknown variable，却可能丢失原模板语义；关键词触发也不等价完整SillyTavern规则。外部资料被注入systemPrompt会影响模型行为，应把导入内容当用户选择的配置核对，不能因PNG格式就认为可信。
+- **建议**：待验证假设：导入时输出逐字段转换损失清单并允许预览本轮命中世界条目，可减少作者排查角色偏差。用相同角色卡在两种运行时比较触发和占位符覆盖；若仍难解释输出偏差，不宣称兼容。
 
 <a id="plugin-1399694663-root"></a>
 
