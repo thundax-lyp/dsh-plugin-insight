@@ -1,0 +1,322 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$defs": {
+        "index": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "id",
+                "identity",
+                "repository",
+                "name",
+                "entry_type",
+                "technical_category",
+                "business_category",
+                "availability",
+                "research_depth",
+                "recommendation_status",
+                "directory",
+                "tags",
+                "recommendation",
+                "score",
+                "published",
+                "sha256",
+                "repository_id",
+                "component_id",
+                "recommendation_reason"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{32}$"
+                },
+                "identity": {
+                    "type": "string",
+                    "pattern": "^github:[1-9][0-9]*:.+$"
+                },
+                "repository": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "entry_type": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "technical_category": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "business_category": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "availability": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "research_depth": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "recommendation_status": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "directory": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "recommendation": {
+                    "enum": [
+                        "unassessed",
+                        "not_recommended",
+                        "observe",
+                        "trial",
+                        "install"
+                    ]
+                },
+                "score": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "minimum": 0,
+                    "maximum": 100
+                },
+                "published": {
+                    "type": "boolean"
+                },
+                "sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                },
+                "repository_id": {
+                    "type": "integer",
+                    "minimum": 1
+                },
+                "component_id": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "recommendation_reason": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "detail": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "schema_version",
+                "id",
+                "identity",
+                "data"
+            ],
+            "properties": {
+                "schema_version": {
+                    "const": 3
+                },
+                "id": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{32}$"
+                },
+                "identity": {
+                    "type": "string",
+                    "pattern": "^github:[1-9][0-9]*:.+$"
+                },
+                "data": {
+                    "type": "object",
+                    "minProperties": 1,
+                    "additionalProperties": false,
+                    "properties": {
+                        "catalog.plugins": {},
+                        "publication.records": {},
+                        "publication.metadata": {},
+                        "publication.summaries": {},
+                        "publication.capabilities": {},
+                        "publication.advice": {},
+                        "registry": {},
+                        "research_blocks": {},
+                        "reports": {},
+                        "metadata": {},
+                        "discovery.plugins": {}
+                    }
+                }
+            }
+        },
+        "state": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "schema_version",
+                "snapshot_digest",
+                "index_sha256",
+                "head",
+                "orders",
+                "artifacts"
+            ],
+            "properties": {
+                "schema_version": {
+                    "const": 3
+                },
+                "snapshot_digest": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                },
+                "index_sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                },
+                "head": {
+                    "type": "object"
+                },
+                "orders": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "catalog.plugins": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "pattern": "^github:[1-9][0-9]*:.+$"
+                            }
+                        },
+                        "publication.records": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "pattern": "^github:[1-9][0-9]*:.+$"
+                            }
+                        },
+                        "publication.metadata": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "pattern": "^github:[1-9][0-9]*:.+$"
+                            }
+                        },
+                        "publication.summaries": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "pattern": "^github:[1-9][0-9]*:.+$"
+                            }
+                        },
+                        "publication.capabilities": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "pattern": "^github:[1-9][0-9]*:.+$"
+                            }
+                        },
+                        "publication.advice": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "pattern": "^github:[1-9][0-9]*:.+$"
+                            }
+                        },
+                        "registry": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "pattern": "^github:[1-9][0-9]*:.+$"
+                            }
+                        },
+                        "research_blocks": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "pattern": "^github:[1-9][0-9]*:.+$"
+                            }
+                        },
+                        "reports": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "pattern": "^github:[1-9][0-9]*:.+$"
+                            }
+                        },
+                        "metadata": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "pattern": "^github:[1-9][0-9]*:.+$"
+                            }
+                        },
+                        "discovery.plugins": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "pattern": "^github:[1-9][0-9]*:.+$"
+                            }
+                        }
+                    }
+                },
+                "artifacts": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": [
+                            "path",
+                            "sha256"
+                        ],
+                        "properties": {
+                            "path": {
+                                "type": "string",
+                                "pattern": "^evidence/[a-f0-9]{2}/[a-f0-9]{64}\\.json$"
+                            },
+                            "sha256": {
+                                "type": "string",
+                                "pattern": "^[a-f0-9]{64}$"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
