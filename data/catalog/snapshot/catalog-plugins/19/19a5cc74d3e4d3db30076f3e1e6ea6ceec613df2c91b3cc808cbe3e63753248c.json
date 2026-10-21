@@ -1,0 +1,299 @@
+{
+  "id": "github:1378138611:root",
+  "repository_id": 1378138611,
+  "component_id": "root",
+  "repository": "7starsseeker/dsh-jev-guard",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-jev-guard",
+  "entry_type": "plugin",
+  "technical_category": "security-governance",
+  "business_category": "software-delivery",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "743895657ca9db7dc2e1a620cc84b78208a81711edc55f73ca0a7e8e62edaac6",
+    "code": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312",
+    "maintenance": "e4392940500466f4c718d5cb41afacf78fb7b9a713a22c6146015054ddd57d19"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-03-github-1378138611-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T03:48:25.745Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-03-github-1378138611-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/README.md",
+      "revision": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312",
+      "captured_at": "2026-10-21T03:48:25.745Z",
+      "summary": "在 DSH 命令执行前结合静态规则与 Jev 判定，返回放行、改写、拒绝或人工升级。",
+      "artifact": "data/runs/2026-10-21-03/snapshots/7starsseeker--dsh-jev-guard/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-03-github-1378138611-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/adapters/dsh/index.js",
+      "revision": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312",
+      "captured_at": "2026-10-21T03:48:25.745Z",
+      "summary": "核查 adapters/dsh/index.js、lib/gate.js、lib/rules.js、lib/quota.js、lib/token.js、lib/audit.js、package.json；adapters/dsh/index.js挂tools/pre-execute提取command，gate先L0再只读/可重建预筛，再调用Jev按阈值判定；额度/认证故障进入持久降级，按宿主ask/never映射typed决策，token提供一次授权路径。",
+      "artifact": "data/runs/2026-10-21-03/snapshots/7starsseeker--dsh-jev-guard/REVIEWED-SOURCE.json",
+      "limitations": [
+        "抽读DSH adapter、gate缓存/状态/API、rules/quota/token；未运行危险命令、校准集或外部Jev，不宣称生产准确率。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "开发Agent在bash/pwsh执行前补一道误删/覆盖事故检查，交付拦截或人工升级决定及审计；不是完整安全沙箱。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1378138611-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1378138611:root",
+          "area": "code",
+          "fingerprint": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:25.745Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "adapters/dsh/index.js挂tools/pre-execute提取command，gate先L0再只读/可重建预筛，再调用Jev按阈值判定；额度/认证故障进入持久降级，按宿主ask/never映射typed决策，token提供一次授权路径。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1378138611-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1378138611:root",
+          "area": "code",
+          "fingerprint": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:25.745Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "抽读DSH adapter、gate缓存/状态/API、rules/quota/token；未运行危险命令、校准集或外部Jev，不宣称生产准确率。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1378138611-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1378138611:root",
+          "area": "code",
+          "fingerprint": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:25.745Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "DSH执行管线适配与独立CLI，零运行依赖、Node>=20；支持平台由命令语法与宿主实际hook决定。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1378138611-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1378138611:root",
+          "area": "code",
+          "fingerprint": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:25.745Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次配置密钥、阈值、覆盖工具与审批政策；持续承担判据API、人工升级、误拦改写与审计存储。作者延迟/费用仅其测量，无本轮成本复现。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1378138611-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1378138611:root",
+          "area": "code",
+          "fingerprint": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:25.745Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "作为已有沙箱和审批的补充先在隔离项目试；检查实际覆盖的工具、网络故障和降级提示，核对脚本变更后是否重新判断，不把allow当无风险。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1378138611-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1378138611:root",
+          "area": "code",
+          "fingerprint": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:25.745Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "有机会拦下明显破坏命令并让灰区交人；默认可用性优先的fail-open意味着它不承担不可绕过的安全边界。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1378138611-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1378138611:root",
+          "area": "code",
+          "fingerprint": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:25.745Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "判据语言独立UI、静态规则先于token、降级状态分scope与global可借鉴；缓存需绑定内容，审计含命令应避免保存敏感参数。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1378138611-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1378138611:root",
+          "area": "code",
+          "fingerprint": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:25.745Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "相对仅提示模型小心，贡献是执行管线前真实typed拦截，并将免费规则、语义灰区改写/人工升级和额度故障可见化组合。Jev是外部模型、宿主审批是上游能力；插件增量是命令状态构造、决策映射和降级生命周期。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1378138611-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1378138611:root",
+          "area": "code",
+          "fingerprint": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:25.745Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "事故阀门能否当安全边界？默认只覆盖bash/pwsh，网络/超时错误fail-open，降级仅L0+预筛；绕过工具或未知语法不受全面保障。cache键为cwd+command，在buildState读取脚本前命中，脚本内容变了但命令没变可能复用旧判定。作者小样本校准也不能保证任意生产命令召回。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1378138611-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1378138611:root",
+          "area": "code",
+          "fingerprint": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:25.745Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "待验证假设：判定缓存绑定实际被执行脚本/包脚本摘要与规则/模型版本，遇到无法固定输入时不用旧allow，可减少内容变化后的陈旧放行。由cache先于buildState及同命令复用推导，未实现。对照先安全后危险同名脚本、package.json脚本变更和模型故障，测陈旧命中、误拦与延迟；不能以缓存节省牺牲未检查内容。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1378138611-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1378138611:root",
+          "area": "code",
+          "fingerprint": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:25.745Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T03:48:25.745Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312",
+    "reviewed_at": "2026-10-21T03:48:25.745Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1378138611:root",
+        "area": "code",
+        "fingerprint": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 15,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty 小幅：执行前规则/模型分类已有先例；mechanism 实质：typed拦截与额度显式降级；transferability 实质：宿主无关gate可复用但审批语义需适配；simplification 实质：多层判断统一四态。",
+      "basis": "interpretation",
+      "score": 42,
+      "evidence_ids": [
+        "2026-10-21-03-github-1378138611-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 8,
+        "reach": 5,
+        "economics": 4
+      },
+      "rationale": "workflow 实质：执行前改写/人工升级改变交接；delivery 小幅：命令决定与审计非业务结果；reach 小幅：为Agent提供附加事故检查；economics 小幅：预筛缓存少API，漏报和延迟未独立测量。",
+      "basis": "interpretation",
+      "score": 35,
+      "evidence_ids": [
+        "2026-10-21-03-github-1378138611-root-source"
+      ]
+    }
+  }
+}

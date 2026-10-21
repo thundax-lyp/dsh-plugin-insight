@@ -1,0 +1,17 @@
+{
+  "id": "github:1336663652:root",
+  "repository": "863683348/dsh-plugin-local-life",
+  "path": "",
+  "revision": "c7abe0935ceab43d784019fb42caf600b3aaadc5",
+  "fingerprints": {
+    "directory": "de94ba3182c1930ca13ed9503fa38ef69f14ea6ef30d7654dcadf56cd7a2bc51",
+    "code": "c7abe0935ceab43d784019fb42caf600b3aaadc5",
+    "maintenance": "80f3055d492084c5f25bd5cf3a0e9c0cff9da255ed2179b68903954c4e87ded2"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T03:36:14Z",
+  "analysis_sha256": "73dcb7fbc7420d2302f450a05ce1231a7f36fe5f9090043bb7791bb4cfcc5100"
+}

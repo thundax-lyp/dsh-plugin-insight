@@ -1,0 +1,52 @@
+{
+  "repository": "863683348/dsh-feed",
+  "repository_id": 1336585522,
+  "captured_at": "2026-10-21T03:40:19.748Z",
+  "window_start": "2026-09-21T03:40:19.748Z",
+  "stars": 0,
+  "pushed_at": "2026-09-11T03:26:00Z",
+  "issues": {
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-feed%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 32B8:10A7AB:3E21C1:42B0CD:6AD83425 and timestamp 2026-10-21 03:40:21 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-feed%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3434:10F8F5:414972:45D934:6AD83426 and timestamp 2026-10-21 03:40:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-feed%20is%3Aissue%20created%3A2026-09-21T03%3A40%3A19.748Z..2026-10-21T03%3A40%3A19.748Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3544:110ECF:3E261F:42B315:6AD83427 and timestamp 2026-10-21 03:40:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-feed%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T03%3A40%3A19.748Z..2026-10-21T03%3A40%3A19.748Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 364A:4E2C1:408977:45170F:6AD83428 and timestamp 2026-10-21 03:40:24 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-feed%20is%3Aissue%20updated%3A2026-09-21T03%3A40%3A19.748Z..2026-10-21T03%3A40%3A19.748Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 378A:E6488:4F5207:53E3F8:6AD83429 and timestamp 2026-10-21 03:40:25 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "dsh-feed",
+    "captured_at": "2026-10-21T03:40:25.201Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": 97,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-feed",
+    "error": null,
+    "publication": {
+      "first_published_at": "2026-08-17T02:45:58.403Z",
+      "captured_at": "2026-10-21T03:40:25.201Z",
+      "source_url": "https://registry.npmjs.org/dsh-feed",
+      "error": null
+    }
+  }
+}

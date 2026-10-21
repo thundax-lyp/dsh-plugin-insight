@@ -1,0 +1,299 @@
+{
+  "id": "github:1336583700:root",
+  "repository_id": 1336583700,
+  "component_id": "root",
+  "repository": "863683348/dsh-recipe",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-recipe",
+  "entry_type": "plugin",
+  "technical_category": "runtime-deployment",
+  "business_category": "infrastructure",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "d6b826d0742598b0115909e5faba5ed8a21d392df4b45b8ae7136cbf4399b6f5",
+    "code": "67f2d4c662954ccd25c771fa0e0a99433cf3b530",
+    "maintenance": "e178587839b9b2faaef3323cf056475a9c78d77546abda3f2d68389108890d23"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-03-github-1336583700-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T03:44:23.329Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-03-github-1336583700-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/863683348/dsh-recipe/blob/67f2d4c662954ccd25c771fa0e0a99433cf3b530/README.md",
+      "revision": "67f2d4c662954ccd25c771fa0e0a99433cf3b530",
+      "captured_at": "2026-10-21T03:44:23.329Z",
+      "summary": "按场景检索插件配方，展开有序插件列表与安装命令，并合并去重多套配方。",
+      "artifact": "data/runs/2026-10-21-03/snapshots/863683348--dsh-recipe/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-03-github-1336583700-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/863683348/dsh-recipe/blob/67f2d4c662954ccd25c771fa0e0a99433cf3b530/lib/recipe.js",
+      "revision": "67f2d4c662954ccd25c771fa0e0a99433cf3b530",
+      "captured_at": "2026-10-21T03:44:23.329Z",
+      "summary": "核查 lib/recipe.js、lib/recipe-data.json、lib/index.js；recipe.js从本地JSON载入目录与配方，按名称/描述词面打分检索；expandRecipe保留顺序并标记未知项，composeRecipes按首次出现去重，installSequence拼接安装命令。",
+      "artifact": "data/runs/2026-10-21-03/snapshots/863683348--dsh-recipe/REVIEWED-SOURCE.json",
+      "limitations": [
+        "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "新用户想配置一套特定用途的DSH环境，需要先拿到可审阅的插件清单；合格交付是依赖兼容且可恢复的环境，本插件实际终点仅为安装计划。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336583700-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336583700:root",
+          "area": "code",
+          "fingerprint": "67f2d4c662954ccd25c771fa0e0a99433cf3b530"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:44:23.329Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "recipe.js从本地JSON载入目录与配方，按名称/描述词面打分检索；expandRecipe保留顺序并标记未知项，composeRecipes按首次出现去重，installSequence拼接安装命令。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336583700-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336583700:root",
+          "area": "code",
+          "fingerprint": "67f2d4c662954ccd25c771fa0e0a99433cf3b530"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:44:23.329Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336583700-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336583700:root",
+          "area": "code",
+          "fingerprint": "67f2d4c662954ccd25c771fa0e0a99433cf3b530"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:44:23.329Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "本地recipe-data.json与plugins.json为固定包快照，默认无联网、无写入，目录有效性不会自动刷新。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336583700-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336583700:root",
+          "area": "code",
+          "fingerprint": "67f2d4c662954ccd25c771fa0e0a99433cf3b530"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:44:23.329Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次由维护者整理配方；用户仍需核实来源、版本与配置并承担每项安装成本。未量化节省搜索时间，失败安装和迁移不由清单工具消除。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336583700-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336583700:root",
+          "area": "code",
+          "fingerprint": "67f2d4c662954ccd25c771fa0e0a99433cf3b530"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:44:23.329Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "适合先找候选组合的用户。执行前逐项核对当前版本、依赖与可选配置，合并配方时检查同名项冲突；不要直接把生成命令当已验收部署。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336583700-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336583700:root",
+          "area": "code",
+          "fingerprint": "67f2d4c662954ccd25c771fa0e0a99433cf3b530"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:44:23.329Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "把“按任务选环境”从口头经验转为可重复清单；实际业务交付和安装成功率未验证。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336583700-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336583700:root",
+          "area": "code",
+          "fingerprint": "67f2d4c662954ccd25c771fa0e0a99433cf3b530"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:44:23.329Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "数据/纯逻辑/宿主入口分离，未知插件不静默丢失可借鉴；first-seen去重简洁但会隐藏配置选择，复用时要显式冲突策略。 源码依据：[lib/recipe.js](https://github.com/863683348/dsh-recipe/blob/67f2d4c662954ccd25c771fa0e0a99433cf3b530/lib/recipe.js)、[lib/recipe-data.json](https://github.com/863683348/dsh-recipe/blob/67f2d4c662954ccd25c771fa0e0a99433cf3b530/lib/recipe-data.json)、[lib/index.js](https://github.com/863683348/dsh-recipe/blob/67f2d4c662954ccd25c771fa0e0a99433cf3b530/lib/index.js)。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336583700-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336583700:root",
+          "area": "code",
+          "fingerprint": "67f2d4c662954ccd25c771fa0e0a99433cf3b530"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:44:23.329Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "相对逐个搜索插件，增量是将场景知识保存为可合并配方并给有序计划；本地、只读的设计使用户可先审阅。数组顺序与名称去重是常规清单处理，不构成依赖求解或安装事务。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336583700-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336583700:root",
+          "area": "code",
+          "fingerprint": "67f2d4c662954ccd25c771fa0e0a99433cf3b530"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:44:23.329Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "“一套环境”是否因清单有序而可用？compose仅first-seen去重，重复插件的不同config没有冲突合并，installSequence只生成plugin add而不应用config、锁版本或校验依赖。故输出可降低选择负担，但不能证明整套兼容或“一键安装成功”。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336583700-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336583700:root",
+          "area": "code",
+          "fingerprint": "67f2d4c662954ccd25c771fa0e0a99433cf3b530"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:44:23.329Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "由配方已有config但安装命令未携带推导，可增加固定版本/配置冲突的只读计划器，先显示冲突与回滚清单再执行。未验证假设是减少配方组合后返工；用两个共享插件但配置相反的配方测试，若不能确定提示冲突则不成立。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336583700-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336583700:root",
+          "area": "code",
+          "fingerprint": "67f2d4c662954ccd25c771fa0e0a99433cf3b530"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:44:23.329Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T03:44:23.329Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "67f2d4c662954ccd25c771fa0e0a99433cf3b530",
+    "reviewed_at": "2026-10-21T03:44:23.329Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1336583700:root",
+        "area": "code",
+        "fingerprint": "67f2d4c662954ccd25c771fa0e0a99433cf3b530"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 5,
+        "simplification": 8
+      },
+      "rationale": "novelty清单配方封装小档；mechanism词面检索与去重小档；transferability场景数据可移植小档；simplification计划组织半档，依赖求解未实现。",
+      "basis": "interpretation",
+      "score": 30,
+      "evidence_ids": [
+        "2026-10-21-03-github-1336583700-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 8,
+        "reach": 10,
+        "economics": 4
+      },
+      "rationale": "workflow按场景选组合半档；delivery计划而非环境小档；reach新手半档；economics搜索维护分摊尚未测小档。",
+      "basis": "interpretation",
+      "score": 40,
+      "evidence_ids": [
+        "2026-10-21-03-github-1336583700-root-source"
+      ]
+    }
+  }
+}

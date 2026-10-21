@@ -1,0 +1,5 @@
+{
+  "text": "在DSH轮次边界保存增量文件快照，支持恢复文件并分叉到对应对话切点重新开始。",
+  "revision": "8fcce843ca288b8cc4639d15e1c9f1abfdd467dd",
+  "source_url": "https://github.com/985451842/dsh-snapshot-manager/blob/8fcce843ca288b8cc4639d15e1c9f1abfdd467dd/README.md"
+}

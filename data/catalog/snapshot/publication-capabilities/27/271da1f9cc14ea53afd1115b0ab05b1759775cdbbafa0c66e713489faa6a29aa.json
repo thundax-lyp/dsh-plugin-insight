@@ -1,0 +1,8 @@
+{
+  "revision": "8fcce843ca288b8cc4639d15e1c9f1abfdd467dd",
+  "items": {
+    "事件监听": "轮次开始快照与会话改动日志。",
+    "界面": "时间线、恢复预览和编辑重来入口。",
+    "Host 路由": "快照capture/preview/restore/prune/gc接口。"
+  }
+}

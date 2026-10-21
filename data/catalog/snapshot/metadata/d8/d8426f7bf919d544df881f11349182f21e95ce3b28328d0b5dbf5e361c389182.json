@@ -1,0 +1,52 @@
+{
+  "repository": "962599627/agent-development-constraints",
+  "repository_id": 1404700411,
+  "captured_at": "2026-10-21T03:41:07.942Z",
+  "window_start": "2026-09-21T03:41:07.942Z",
+  "stars": 0,
+  "pushed_at": "2026-10-05T12:01:30Z",
+  "issues": {
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3A962599627%2Fagent-development-constraints%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7188:4B1BC:3F4E83:43E09A:6AD83455 and timestamp 2026-10-21 03:41:09 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3A962599627%2Fagent-development-constraints%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 72FC:271D3E:40D147:45617F:6AD83456 and timestamp 2026-10-21 03:41:11 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A962599627%2Fagent-development-constraints%20is%3Aissue%20created%3A2026-09-21T03%3A41%3A07.942Z..2026-10-21T03%3A41%3A07.942Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7472:10E8BA:43DAB1:486D80:6AD83457 and timestamp 2026-10-21 03:41:12 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A962599627%2Fagent-development-constraints%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T03%3A41%3A07.942Z..2026-10-21T03%3A41%3A07.942Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 75E2:52C57:3DD570:4266D9:6AD83458 and timestamp 2026-10-21 03:41:12 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A962599627%2Fagent-development-constraints%20is%3Aissue%20updated%3A2026-09-21T03%3A41%3A07.942Z..2026-10-21T03%3A41%3A07.942Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 76E4:106C7E:413889:45CC6D:6AD83459 and timestamp 2026-10-21 03:41:13 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "agent-development-constraints",
+    "captured_at": "2026-10-21T03:41:13.657Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": null,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/agent-development-constraints",
+    "error": "HTTP 404",
+    "publication": {
+      "first_published_at": null,
+      "captured_at": "2026-10-21T03:41:13.657Z",
+      "source_url": "https://registry.npmjs.org/agent-development-constraints",
+      "error": "HTTP 404"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "github:1336658798:root",
+  "repository": "863683348/dsh-starter-zh",
+  "path": "",
+  "revision": "d97e7f9d2a5d64ac8bbbb239e83e6a22070509fe",
+  "fingerprints": {
+    "directory": "55b3888cfbc4ca8cc201bbd3786abaf92f2e975e795ac7255b2ea60a8247d4f1",
+    "code": "d97e7f9d2a5d64ac8bbbb239e83e6a22070509fe",
+    "maintenance": "b4a513d943a7716e10124164c97739c9773163484147788feadf3ae8db1e8c46"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T03:36:14Z",
+  "analysis_sha256": "eee5e5393361cd6a80410f6d09416db1fa67c099c36f4c3d93e0fb8bce22efa3"
+}

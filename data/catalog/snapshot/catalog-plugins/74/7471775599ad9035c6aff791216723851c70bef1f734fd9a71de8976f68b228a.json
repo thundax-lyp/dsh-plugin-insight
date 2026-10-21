@@ -1,0 +1,299 @@
+{
+  "id": "github:1422364992:root",
+  "repository_id": 1422364992,
+  "component_id": "root",
+  "repository": "7gzgn/dsh-lighthouse",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-lighthouse",
+  "entry_type": "plugin",
+  "technical_category": "observability-cost",
+  "business_category": "software-delivery",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "0c22f1ee4431e82ff854505083845071c3c21b3893ed392b376121046dd94482",
+    "code": "d72f8acf3009712bd1a9d536a4d2f9ccd13ac1cb",
+    "maintenance": "4d6d9351911a01a41467ec188dd5cf984116284f12165c03e48553ef8aac4ff9"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-03-github-1422364992-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T03:43:26.218Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-03-github-1422364992-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/7gzgn/dsh-lighthouse/blob/d72f8acf3009712bd1a9d536a4d2f9ccd13ac1cb/README.md",
+      "revision": "d72f8acf3009712bd1a9d536a4d2f9ccd13ac1cb",
+      "captured_at": "2026-10-21T03:43:26.218Z",
+      "summary": "汇总本地作品、GitHub、npm 与 DSH 市场状态，提供工具、面板和报告卡片。",
+      "artifact": "data/runs/2026-10-21-03/snapshots/7gzgn--dsh-lighthouse/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-03-github-1422364992-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/7gzgn/dsh-lighthouse/blob/d72f8acf3009712bd1a9d536a4d2f9ccd13ac1cb/lib/index.js",
+      "revision": "d72f8acf3009712bd1a9d536a4d2f9ccd13ac1cb",
+      "captured_at": "2026-10-21T03:43:26.218Z",
+      "summary": "核查 lib/index.js、lib/collect.js、lib/fleet.js、client.js、package.json；collect读取fleet作品名册并采集本地/GitHub/市场/npm；registry按fetch实例缓存5分钟，collectAll共享采集结果；index工具/只读status路由与client面板使用同一数据。",
+      "artifact": "data/runs/2026-10-21-03/snapshots/7gzgn--dsh-lighthouse/REVIEWED-SOURCE.json",
+      "limitations": [
+        "抽读采集、名册验证、工具/路由、报告与client；未实际采集或核实各作品身份。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "维护多个插件的作者查看哪些仓库、收录PR或发布状态需要处理，交付时间相关的状态表而非真实用户采用证明。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1422364992-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422364992:root",
+          "area": "code",
+          "fingerprint": "d72f8acf3009712bd1a9d536a4d2f9ccd13ac1cb"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:43:26.218Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "collect读取fleet作品名册并采集本地/GitHub/市场/npm；registry按fetch实例缓存5分钟，collectAll共享采集结果；index工具/只读status路由与client面板使用同一数据。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1422364992-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422364992:root",
+          "area": "code",
+          "fingerprint": "d72f8acf3009712bd1a9d536a4d2f9ccd13ac1cb"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:43:26.218Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "抽读采集、名册验证、工具/路由、报告与client；未实际采集或核实各作品身份。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1422364992-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422364992:root",
+          "area": "code",
+          "fingerprint": "d72f8acf3009712bd1a9d536a4d2f9ccd13ac1cb"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:43:26.218Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "host/client及CLI，DSH 0.2线声明；市场URL可由webServer origin推导，需市场服务存在；token可选用于GitHub配额。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1422364992-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422364992:root",
+          "area": "code",
+          "fingerprint": "d72f8acf3009712bd1a9d536a4d2f9ccd13ac1cb"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:43:26.218Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次维护准确fleet和发布源身份，持续承担API限额、缓存与来源变化；查询成本以平台为准，节省人工时间未测。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1422364992-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422364992:root",
+          "area": "code",
+          "fingerprint": "d72f8acf3009712bd1a9d536a4d2f9ccd13ac1cb"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:43:26.218Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "维护多个作品的人可先录入少量明确身份条目；核对npm包、市场项和PR来源，再用异常排序安排人工检查，不以下载/星数认定真实采用。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1422364992-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422364992:root",
+          "area": "code",
+          "fingerprint": "d72f8acf3009712bd1a9d536a4d2f9ccd13ac1cb"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:43:26.218Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "把“哪里需要处理”集中在一屏有操作价值；仓库存在、收录和下载都不是插件可安装或业务收益的证明。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1422364992-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422364992:root",
+          "area": "code",
+          "fingerprint": "d72f8acf3009712bd1a9d536a4d2f9ccd13ac1cb"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:43:26.218Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "采集函数可注入fetch、registry一次读取并缓存、多入口共用结果有借鉴处；同名匹配与openIssues口径必须与UI文案一致。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1422364992-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422364992:root",
+          "area": "code",
+          "fingerprint": "d72f8acf3009712bd1a9d536a4d2f9ccd13ac1cb"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:43:26.218Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "相对作者逐个打开仓库/市场/PR，贡献是用显式作品名册组织采集并按待处理状态呈现，多入口共享结果减少口径漂移。平台指标是既有API，增量在跨源作品身份关联、报告与DSH界面，不是新采用度量。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1422364992-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422364992:root",
+          "area": "code",
+          "fingerprint": "d72f8acf3009712bd1a9d536a4d2f9ccd13ac1cb"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:43:26.218Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "“有人用/留言”能否从面板指标直接判断？collectGitHub把open_issues_count作为留言，包含PR；下载也不是用户数。市场按work.name匹配、npm亦由名册name查询，同名未核实身份可误关联；API数字客观不等于解释正确，采集失败和缓存年龄还需保留。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1422364992-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422364992:root",
+          "area": "code",
+          "fingerprint": "d72f8acf3009712bd1a9d536a4d2f9ccd13ac1cb"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:43:26.218Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "待验证假设：每个指标保存明确对象ID、时间窗口、来源与含义，并把身份不匹配转unknown，可减少跨源同名误关联与热度冒充采用。依据是name关联和混合指标口径，未实现完整证据卡。以同名npm、仓库PR充当issues、缓存过期三类对照，测误判与排障时间；缺独立采用证据时明确未知。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1422364992-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422364992:root",
+          "area": "code",
+          "fingerprint": "d72f8acf3009712bd1a9d536a4d2f9ccd13ac1cb"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:43:26.218Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T03:43:26.218Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "d72f8acf3009712bd1a9d536a4d2f9ccd13ac1cb",
+    "reviewed_at": "2026-10-21T03:43:26.218Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1422364992:root",
+        "area": "code",
+        "fingerprint": "d72f8acf3009712bd1a9d536a4d2f9ccd13ac1cb"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty 小幅：既有API聚合；mechanism 小幅：缓存/共享采集常规；transferability 实质：名册+collector可复用；simplification 实质：多源同屏与待处理排序。",
+      "basis": "interpretation",
+      "score": 35,
+      "evidence_ids": [
+        "2026-10-21-03-github-1422364992-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 8,
+        "reach": 5,
+        "economics": 4
+      },
+      "rationale": "workflow 实质：作者发布后巡检集中；delivery 小幅：状态报告而非新增业务验收；reach 小幅：GUI降低API查询负担；economics 小幅：少重复查询，维护和误关联成本未测。",
+      "basis": "interpretation",
+      "score": 35,
+      "evidence_ids": [
+        "2026-10-21-03-github-1422364992-root-source"
+      ]
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "github:1335559646:root",
+  "repository": "1264459640/dsh-trellis",
+  "path": "",
+  "revision": "86e1aa521c19ca91cd92b74df8b8c59a8f6f2489",
+  "fingerprints": {
+    "directory": "bc117338bca28f25b93326f99a4a50fb24a79733d1d01d1bf42bedbb3e3f8175",
+    "code": "86e1aa521c19ca91cd92b74df8b8c59a8f6f2489",
+    "maintenance": "ac9e9e2a5141cc8afe38dd6e3a4ea7cb02b6043e9acae8e82e47832e43282243"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T03:36:14Z",
+  "analysis_sha256": "813016ac2607f1a1254c681fb034dce8f33870f9a64fd148c63a8b0fb8a6a883"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "github:1336223158:root",
+  "repository": "863683348/dsh-plugin-audit",
+  "path": "",
+  "revision": "e5c9c5df08a56a23e37966640390d07052fcc9a6",
+  "fingerprints": {
+    "directory": "31757138971be268567faf04e7bdf64277552b8829c47db0736480e22d6d881f",
+    "code": "e5c9c5df08a56a23e37966640390d07052fcc9a6",
+    "maintenance": "3f807bcba491c3879b4f57be8804d72326023852dfd4732e38dd0c0130f771b0"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T03:36:14Z",
+  "analysis_sha256": "dc2e64309489b7a0bee3f8906749b400d9c9629fb84b75e4e01e5e74eb1d89e8"
+}

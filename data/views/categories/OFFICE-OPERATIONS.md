@@ -19,6 +19,7 @@
 | [dsh-feishu-bot](#plugin-1346023250-root) | 通过飞书应用机器人长连接操作 DSH 项目与会话，支持扫码绑定、审批与完成通知。 | 远程控制需求明确时在专用profile试用，先固定允许chat、验证拒绝/取消/断连恢复；普通消息具有该DSH profile的实际权限。 |
 | [dsh-feishu（2048lr）](#plugin-1418842530-root) | 为 DSH 提供飞书与 Lark 文档、表格、多维表格、消息和授权工具及操作面板。 | 先在测试租户明确选user身份，创建一份可丢弃文档并确认实际落点和权限，再验证token过期及超时重试；正式写入前要检查重复创建，避免把auto降级警告忽略。 |
 | [dsh-mac-companion](#plugin-1384810483-root) | 从DSH经HTTP调用Mac端Companion，支持通知、快捷指令和剪贴板读写。 | 先只测试通知，再检查剪贴板和快捷指令权限；写入前保留剪贴板副本，并使用专门的低风险Shortcut。 |
+| [dsh-plugin-finance-data](#plugin-1336663504-root) | 对调用者提供的财务数字执行格式化、收益、比率、风险和组合计算。 | 当前仅作源码和计算接口参考。 |
 | [dsh-plugin-nlbi](#plugin-1343622602-root) | 在 DSH 中用自然语言查询 MySQL，生成表格、图表与可保存报表。 | 适合有可复核SQL和只读数据环境的分析任务；先定义关键指标标准答案，核对生成SQL再复用报表。 |
 | [dsh-team-cost](#plugin-1364961230-root) | 按工作区归属成员统计模型用量，提供团队报表、预算告警和可选请求拦截。 | 先只监测不拦截，对照实际账单和子代理用量，补全模型价格并检查相似工作区前缀；金额可信后再考虑预算阻断。 |
 | [dsh-wsl-cal](#plugin-1381860995-root) | 通过本地khal读取日历列表、今日日程和未来指定天数的安排。 | 适合已配置khal的人，先核对本地日期、时区与日历数量；空输出先确认同步与过滤，不直接判断没有安排。 |
@@ -131,6 +132,17 @@
 - **亮点**：index.js注册Mac专用工具，将通知、shortcut和剪贴板动作交给共享Companion客户端；Mac侧Python服务调用系统能力。
 - **思考**：为跨系统桌面任务提供薄协议有便利；读取剪贴板会把潜在敏感文本带入工具输出及模型上下文。
 - **建议**：先只测试通知，再检查剪贴板和快捷指令权限；写入前保留剪贴板副本，并使用专门的低风险Shortcut。
+
+<a id="plugin-1336663504-root"></a>
+
+## [dsh-plugin-finance-data](../../plugins/863683348--dsh-plugin-finance-data/INSIGHT.md)
+
+[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=yellow&logo=github&style=flat)](https://github.com/863683348/dsh-plugin-finance-data) · [![npm 30d 1049](https://img.shields.io/static/v1?label=npm+30d&message=1%2C049&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-finance-data)
+
+- **用途**：适合需要可检查的财务算术草稿，不提供行情抓取、实际交易或投资判断。
+- **亮点**：作者希望把财务算术从模型自由生成中分离；实际增量是提供确定函数与结构返回，便于检查输入输出。相比让模型心算，方向合理；但当前工具壳与计算函数单位契约和长期投影存在明确源码问题，不能承诺算术正确。
+- **思考**：computeRatio的roe/roa/利润率已乘100，index再以percent=true调用formatNumber乘100；例如10/100应表达10%，这条路径会显示1000%。projectPlan默认steps=12并令total=min(periods,steps)，years>1的月度计划仍只累计12期却标完整年数；index未暴露steps覆盖。portfolio targets/values声明additionalProperties:false却无已声明资产键，也需宿主schema验收。
+- **建议**：待验证假设：把量纲、小数/百分数和投影期数写进可校验类型契约，可比增加更多指标更有效地减少财务工具错误。用10/100比率和五年月度零收益定投等可手算样本，先验证各层单位及60期累计一致，再评估实际数据任务。
 
 <a id="plugin-1343622602-root"></a>
 

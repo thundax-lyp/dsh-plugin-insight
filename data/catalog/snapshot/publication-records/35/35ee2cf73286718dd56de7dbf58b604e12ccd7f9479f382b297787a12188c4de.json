@@ -1,0 +1,17 @@
+{
+  "id": "github:1335988605:root",
+  "repository": "82c86b8z86-stack/dsh-engineering-workflow",
+  "path": "",
+  "revision": "3e251eb78002625bcc238a42d9926d87c3a38bfe",
+  "fingerprints": {
+    "directory": "b224c1f019ccc826544f8c5012b87263ae10e3b1a712a0f44c7f2dc4af8e4c88",
+    "code": "3e251eb78002625bcc238a42d9926d87c3a38bfe",
+    "maintenance": "f2ec2baf37d85082a5fb51fc407323d7d5cf92671dcd88ae9dce0c60733baaee"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T03:36:14Z",
+  "analysis_sha256": "931153a430e56337516dfd5fb15a74c70fcf125fa483d6486f973d20e0a3c647"
+}

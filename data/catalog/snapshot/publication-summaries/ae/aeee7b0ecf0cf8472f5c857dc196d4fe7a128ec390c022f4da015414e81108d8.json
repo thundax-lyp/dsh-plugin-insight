@@ -1,0 +1,5 @@
+{
+  "text": "汇总Agent成功文件改动供逐文件或逐块保留、回退，并支持导入本地版本控制差异。",
+  "revision": "393bdc4c9b6ee007027c9e4da4d9732d60c9e168",
+  "source_url": "https://github.com/9087/dsh-diff-approval/blob/393bdc4c9b6ee007027c9e4da4d9732d60c9e168/README.md"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "github:1425073734:root",
+  "repository": "873360545/dsh-auto-shutdown",
+  "path": "",
+  "revision": "a2af408455e31a0acf4021e3383d1384dcb7aebc",
+  "fingerprints": {
+    "directory": "d0a29937943ad4ec4efbcde7aa2b87cc73256d9fd0f163c02e238cdc176d2f77",
+    "code": "a2af408455e31a0acf4021e3383d1384dcb7aebc",
+    "maintenance": "cc6b6d089c71c1692d7834b0fd719db911c08159dbb74822ed4e1f83427c4001"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T03:36:14Z",
+  "analysis_sha256": "4eedbd44e05ffb39afcb6de0e0f7a273439c11792387d2c35fd71aa2bbe9c467"
+}

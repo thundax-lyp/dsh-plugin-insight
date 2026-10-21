@@ -1,0 +1,4 @@
+{
+  "revision": "5a70cbdc230ee19bb4578e52440e18cc93153ee8",
+  "text": "适合把它当检索和体检辅助。先看实际命中行与上下文，再给结论；不要依据verified或high自动放行，也不要把unsupported写成证伪。"
+}

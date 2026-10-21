@@ -1,0 +1,52 @@
+{
+  "repository": "863683348/dsh-plugin-audit",
+  "repository_id": 1336223158,
+  "captured_at": "2026-10-21T03:40:30.456Z",
+  "window_start": "2026-09-21T03:40:30.456Z",
+  "stars": 1,
+  "pushed_at": "2026-09-11T03:26:16Z",
+  "issues": {
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-plugin-audit%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 40F4:26F45E:3E6E40:42FEB1:6AD83430 and timestamp 2026-10-21 03:40:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-plugin-audit%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4240:205F4D:4252DA:46E42D:6AD83431 and timestamp 2026-10-21 03:40:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-plugin-audit%20is%3Aissue%20created%3A2026-09-21T03%3A40%3A30.456Z..2026-10-21T03%3A40%3A30.456Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4334:3AE7C0:3F4905:43D907:6AD83432 and timestamp 2026-10-21 03:40:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-plugin-audit%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T03%3A40%3A30.456Z..2026-10-21T03%3A40%3A30.456Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4428:2723D0:3DF1DF:427F1C:6AD83432 and timestamp 2026-10-21 03:40:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-plugin-audit%20is%3Aissue%20updated%3A2026-09-21T03%3A40%3A30.456Z..2026-10-21T03%3A40%3A30.456Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4548:272681:3E661A:42F543:6AD83433 and timestamp 2026-10-21 03:40:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "dsh-audit",
+    "captured_at": "2026-10-21T03:40:35.861Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": 821,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-audit",
+    "error": null,
+    "publication": {
+      "first_published_at": "2026-08-17T02:21:22.804Z",
+      "captured_at": "2026-10-21T03:40:35.861Z",
+      "source_url": "https://registry.npmjs.org/dsh-audit",
+      "error": null
+    }
+  }
+}

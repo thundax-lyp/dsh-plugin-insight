@@ -1,0 +1,52 @@
+{
+  "repository": "863683348/dsh-memory-setup",
+  "repository_id": 1337350700,
+  "captured_at": "2026-10-21T03:40:23.151Z",
+  "window_start": "2026-09-21T03:40:23.151Z",
+  "stars": 1,
+  "pushed_at": "2026-09-11T03:26:11Z",
+  "issues": {
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-memory-setup%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3724:FADC5:3E7C6F:430C80:6AD83428 and timestamp 2026-10-21 03:40:25 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-memory-setup%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3856:2704E0:3D981A:4228E4:6AD83429 and timestamp 2026-10-21 03:40:25 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-memory-setup%20is%3Aissue%20created%3A2026-09-21T03%3A40%3A23.151Z..2026-10-21T03%3A40%3A23.151Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 39AE:502CD:4083C7:4513E5:6AD8342A and timestamp 2026-10-21 03:40:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-memory-setup%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T03%3A40%3A23.151Z..2026-10-21T03%3A40%3A23.151Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3AB6:D33B9:3EEF4C:437DEF:6AD8342B and timestamp 2026-10-21 03:40:27 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-memory-setup%20is%3Aissue%20updated%3A2026-09-21T03%3A40%3A23.151Z..2026-10-21T03%3A40%3A23.151Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3BFA:4B1BC:3F2EF8:43BEE0:6AD8342C and timestamp 2026-10-21 03:40:28 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "dsh-memory-setup",
+    "captured_at": "2026-10-21T03:40:28.300Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": 158,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-memory-setup",
+    "error": null,
+    "publication": {
+      "first_published_at": "2026-08-19T15:29:48.317Z",
+      "captured_at": "2026-10-21T03:40:28.300Z",
+      "source_url": "https://registry.npmjs.org/dsh-memory-setup",
+      "error": null
+    }
+  }
+}
