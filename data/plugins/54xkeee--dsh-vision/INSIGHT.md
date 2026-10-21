@@ -7,7 +7,7 @@
 分析版本：[f8b2619](https://github.com/54xkeee/dsh-vision/tree/f8b26198aff85bc72c3bb12a2e843ebec68c04d1)
 
 <!-- BEGIN META -->
-[![GitHub ★ 7](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7&color=yellow&logo=github&style=flat)](https://github.com/54xkeee/dsh-vision) · [![npm 30d 1431](https://img.shields.io/static/v1?label=npm+30d&message=1%2C431&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-vision-web)
+[![GitHub ★ 7](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7&color=yellow&logo=github&style=flat)](https://github.com/54xkeee/dsh-vision) · [![npm 30d 1431](https://img.shields.io/static/v1?label=npm+30d&message=1%2C431&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-vision-web) · [![首次发布 2026-08-16](https://img.shields.io/static/v1?label=%E9%A6%96%E6%AC%A1%E5%8F%91%E5%B8%83&message=2026-08-16&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-vision-web)
 <!-- END META -->
 
 **使用建议**：已有可用视觉通道且愿意核对原图时可试。先检查桥接登录、密集截图和压缩后记录恢复，敏感图片先确认会送到哪个通道。

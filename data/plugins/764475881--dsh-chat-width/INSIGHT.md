@@ -7,7 +7,7 @@
 分析版本：[5d61f65](https://github.com/764475881/dsh-chat-width/tree/5d61f65224b1d811047d5eb1d9d4772dbf0e7bfd)
 
 <!-- BEGIN META -->
-[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/764475881/dsh-chat-width) · [![npm 30d 99](https://img.shields.io/static/v1?label=npm+30d&message=99&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-chat-width)
+[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/764475881/dsh-chat-width) · [![npm 30d 99](https://img.shields.io/static/v1?label=npm+30d&message=99&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-chat-width) · [![首次发布 2026-08-13](https://img.shields.io/static/v1?label=%E9%A6%96%E6%AC%A1%E5%8F%91%E5%B8%83&message=2026-08-13&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-chat-width)
 <!-- END META -->
 
 **使用建议**：新版DSH优先使用内置把手。仍用旧版且需要宽列时可在一个浏览器先检查拖动、重载记忆和禁用清理，再考虑保留。

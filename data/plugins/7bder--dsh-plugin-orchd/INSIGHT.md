@@ -7,7 +7,7 @@
 分析版本：[ef331b3](https://github.com/7bder/dsh-plugin-orchd/tree/ef331b30c89854e29dc9d4954bd86e457a24b850)
 
 <!-- BEGIN META -->
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/7bder/dsh-plugin-orchd) · [![npm 30d 301](https://img.shields.io/static/v1?label=npm+30d&message=301&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-orchd)
+[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/7bder/dsh-plugin-orchd) · [![npm 30d 301](https://img.shields.io/static/v1?label=npm+30d&message=301&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-orchd) · [![首次发布 2026-10-16](https://img.shields.io/static/v1?label=%E9%A6%96%E6%AC%A1%E5%8F%91%E5%B8%83&message=2026-10-16&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-orchd)
 <!-- END META -->
 
 **使用建议**：适合已有orchd项目先在副本试用。先核对会话对应项目、Python/引擎版本以及刷新前后文件和账本不变，勿把面板就绪当作任务验收通过。

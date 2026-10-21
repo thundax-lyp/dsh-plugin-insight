@@ -7,7 +7,7 @@
 分析版本：[d1ae124](https://github.com/988hj7tczd-oss/dsh-im-qq/tree/d1ae12486264359f9c516bb2cf0ed5e75e811d37)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-im-qq) · [![npm 30d 293](https://img.shields.io/static/v1?label=npm+30d&message=293&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-im-qq)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-im-qq) · [![npm 30d 293](https://img.shields.io/static/v1?label=npm+30d&message=293&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-im-qq) · [![首次发布 2026-08-16](https://img.shields.io/static/v1?label=%E9%A6%96%E6%AC%A1%E5%8F%91%E5%B8%83&message=2026-08-16&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-im-qq)
 <!-- END META -->
 
 **使用建议**：熟悉QQ机器人者先用私聊沙箱和非敏感目录；收紧白名单，核对审批点击身份与never含义，再考虑群聊，不在缺身份路径使用高影响授权。

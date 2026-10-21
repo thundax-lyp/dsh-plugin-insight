@@ -17,6 +17,7 @@ import {
     categoryScope,
     renderUpdated,
     renderIssueActivity,
+    renderPublicationBadge,
     renderLatest,
     renderHot,
     renderRecommended,
@@ -233,7 +234,16 @@ export function renderPublication(input, root = ROOT, context = null) {
             }
             const longRead = report.length >= 8000 || /^## .*?(?:创新推演|未来设计假设)/m.test(report);
             const detail = renderDetailLayout(renderDetailReport(report, i), i, {
-                meta,
+                meta: [
+                    meta,
+                    renderPublicationBadge(
+                        '首次发布',
+                        npmFirstPublished,
+                        `https://www.npmjs.com/package/${npmDownloads?.package_name}`
+                    )
+                ]
+                    .filter(Boolean)
+                    .join(' · '),
                 issues,
                 advice: usageConditions,
                 capabilities,

@@ -60,6 +60,8 @@ Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/
 正式更新使用 `snapshot stage／plan／apply`；旧 publication-data.mjs 仅保留兼容实现，并拒绝单独覆盖正式派生发布输入。发布 records 绑定当前 catalog 分析摘要，未选、失败和受阻项保留当前有效记录；受依赖变化影响的失效结论退出推荐与当前展示。
 不得用临时脚本直接覆盖正式数据来替代事务合并，也不得手写 README 或从静态候选自动生成推荐判断。
 
+详情顶部 META 区在现有指标后展示同样样式的“首次发布 YYYY-MM-DD”Badge，不受30天窗口限制。日期只取已核实 npm `time.created`（META 的 `npm.publication.first_published_at` 且 publication.error 为空）；未知、失败或未核实包不展示，不以仓库创建、推送、提交日期或当前版本发布日期替代。该字段由展示层读取 META，不写入研究原稿，不改变分析版本或核查状态；仍禁止“最后更新”徽章。
+
 ## 文件位置与命名
 
 | 产物 | 位置 | 要求 |

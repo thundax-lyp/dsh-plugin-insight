@@ -7,7 +7,7 @@
 分析版本：[7608cb9](https://github.com/988hj7tczd-oss/dsh-pr-description/tree/7608cb9b7b61447a3aff14491537ba7ee8caad6b)
 
 <!-- BEGIN META -->
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-pr-description) · [![npm 30d 385](https://img.shields.io/static/v1?label=npm+30d&message=385&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-pr-description)
+[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-pr-description) · [![npm 30d 385](https://img.shields.io/static/v1?label=npm+30d&message=385&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-pr-description) · [![首次发布 2026-08-24](https://img.shields.io/static/v1?label=%E9%A6%96%E6%AC%A1%E5%8F%91%E5%B8%83&message=2026-08-24&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-pr-description)
 <!-- END META -->
 
 **使用建议**：适合先生成本地草稿。明确base和输出路径，逐段核业务动机、breaking与已跑测试；只有确实要创建PR时才用openPr。

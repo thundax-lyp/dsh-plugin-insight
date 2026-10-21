@@ -7,7 +7,7 @@
 分析版本：[97bf5c1](https://github.com/2768651338/dsh-effort-slider/tree/97bf5c1e5881ea0fcfb543844346fe86b87ff620)
 
 <!-- BEGIN META -->
-[![GitHub ★ 20](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=20&color=yellow&logo=github&style=flat)](https://github.com/2768651338/dsh-effort-slider) · [![npm 30d 1403](https://img.shields.io/static/v1?label=npm+30d&message=1%2C403&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@txc2768651338/dsh-effort-slider)
+[![GitHub ★ 20](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=20&color=yellow&logo=github&style=flat)](https://github.com/2768651338/dsh-effort-slider) · [![npm 30d 1403](https://img.shields.io/static/v1?label=npm+30d&message=1%2C403&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@txc2768651338/dsh-effort-slider) · [![首次发布 2026-10-01](https://img.shields.io/static/v1?label=%E9%A6%96%E6%AC%A1%E5%8F%91%E5%B8%83&message=2026-10-01&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@txc2768651338/dsh-effort-slider)
 <!-- END META -->
 
 **使用建议**：适合了解自定义路由协议的用户；用实际请求日志确认档位参数与服务端行为后再据此控制成本。

@@ -7,7 +7,7 @@
 分析版本：[d97e7f9](https://github.com/863683348/dsh-starter-zh/tree/d97e7f9d2a5d64ac8bbbb239e83e6a22070509fe)
 
 <!-- BEGIN META -->
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/863683348/dsh-starter-zh) · [![npm 30d 135](https://img.shields.io/static/v1?label=npm+30d&message=135&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-starter-zh)
+[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/863683348/dsh-starter-zh) · [![npm 30d 135](https://img.shields.io/static/v1?label=npm+30d&message=135&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-starter-zh) · [![首次发布 2026-08-19](https://img.shields.io/static/v1?label=%E9%A6%96%E6%AC%A1%E5%8F%91%E5%B8%83&message=2026-08-19&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-starter-zh)
 <!-- END META -->
 
 **使用建议**：适合希望中文概览的新用户先阅读路径。执行命令前核对当前宿主帮助和profile，清单由自己逐项确认，推荐插件仍需分别查证。
