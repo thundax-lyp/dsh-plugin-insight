@@ -189,7 +189,41 @@
                 "string",
                 "null"
               ]
+            },
+            "latest_version": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "minLength": 1
+            },
+            "latest_published_at": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "date-time"
+            },
+            "latest_error": {
+              "type": [
+                "string",
+                "null"
+              ]
             }
+          },
+          "dependentRequired": {
+            "latest_version": [
+              "latest_published_at",
+              "latest_error"
+            ],
+            "latest_published_at": [
+              "latest_version",
+              "latest_error"
+            ],
+            "latest_error": [
+              "latest_version",
+              "latest_published_at"
+            ]
           }
         }
       }
