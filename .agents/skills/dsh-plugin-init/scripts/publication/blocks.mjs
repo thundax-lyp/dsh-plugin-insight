@@ -30,6 +30,23 @@ const categoryScopes = {
 };
 export const categoryScope = (key) => categoryScopes[key] ?? categoryScopes.other;
 const nameLink = (e) => template('LINK', { label: clean(e.plugin.name), url: e.href ?? `#${e.anchor}` });
+export function renderPublicationBadge(label, publishedAt, url) {
+    if (!publishedAt || !Number.isFinite(Date.parse(publishedAt))) return '';
+    const date = new Date(Date.parse(publishedAt) + 8 * 3600000).toISOString().slice(0, 10);
+    return template('BADGE', {
+        alt: `${label} ${date}`,
+        image:
+            'https://img.shields.io/static/v1?' +
+            new URLSearchParams({
+                label,
+                message: date,
+                labelColor: '668a73',
+                color: 'grey',
+                style: 'flat'
+            }).toString(),
+        url
+    });
+}
 export function renderIssueActivity(metadata, repository) {
     const end = metadata?.captured_at;
     const start = metadata?.window_start;
@@ -85,7 +102,12 @@ export function renderWeeklyNew(items, date) {
     return template('WEEKLY-NEW', {
         items: selected
             .map((e) =>
-                template('LATEST-ITEM', { plugin: nameLink(e), summary: clean(e.summary), metrics: e.listMetrics })
+                template('LATEST-ITEM', {
+                    plugin: nameLink(e),
+                    publication: '',
+                    summary: clean(e.summary),
+                    metrics: e.listMetrics
+                })
             )
             .join('\n')
     });
@@ -109,8 +131,13 @@ export function renderLatest(items, date, limit = 5) {
                 .map((e) =>
                     template('LATEST-ITEM', {
                         plugin: nameLink(e),
+                        publication: renderPublicationBadge(
+                            '新发布',
+                            e.npmFirstPublished,
+                            `https://www.npmjs.com/package/${e.npmDownloads.package_name}`
+                        ),
                         metrics: e.listMetrics,
-                        summary: `${clean(e.summary)} · 新发布：${new Date(Date.parse(e.npmFirstPublished) + 8 * 3600000).toISOString().slice(0, 10)}`
+                        summary: clean(e.summary)
                     })
                 )
                 .join('\n') || '最近30天暂无已核实的新发布记录。'
