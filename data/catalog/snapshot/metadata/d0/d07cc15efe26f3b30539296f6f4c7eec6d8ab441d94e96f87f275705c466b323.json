@@ -1,0 +1,52 @@
+{
+  "repository": "AgentConnect/dsh-awiki",
+  "repository_id": 1334428397,
+  "captured_at": "2026-10-21T05:34:49.369Z",
+  "window_start": "2026-09-21T05:34:49.369Z",
+  "stars": 19,
+  "pushed_at": "2026-10-21T03:38:21Z",
+  "issues": {
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3AAgentConnect%2Fdsh-awiki%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3220:4DAEE:50D54E:56E4DD:6AD84EFB and timestamp 2026-10-21 05:34:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3AAgentConnect%2Fdsh-awiki%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3306:1112D2:505487:566260:6AD84EFC and timestamp 2026-10-21 05:34:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3AAgentConnect%2Fdsh-awiki%20is%3Aissue%20created%3A2026-09-21T05%3A34%3A49.369Z..2026-10-21T05%3A34%3A49.369Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3416:26E54B:52062A:581029:6AD84EFC and timestamp 2026-10-21 05:34:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3AAgentConnect%2Fdsh-awiki%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A34%3A49.369Z..2026-10-21T05%3A34%3A49.369Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3516:272681:50A6BB:56B465:6AD84EFD and timestamp 2026-10-21 05:34:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3AAgentConnect%2Fdsh-awiki%20is%3Aissue%20updated%3A2026-09-21T05%3A34%3A49.369Z..2026-10-21T05%3A34%3A49.369Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 361C:106C7E:550FC1:5B208B:6AD84EFE and timestamp 2026-10-21 05:34:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "@awiki/dsh-plugin",
+    "captured_at": "2026-10-21T05:34:54.962Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": 1584,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40awiki%2Fdsh-plugin",
+    "error": null,
+    "publication": {
+      "first_published_at": "2026-08-17T12:44:56.132Z",
+      "captured_at": "2026-10-21T05:34:54.962Z",
+      "source_url": "https://registry.npmjs.org/%40awiki%2Fdsh-plugin",
+      "error": null
+    }
+  }
+}

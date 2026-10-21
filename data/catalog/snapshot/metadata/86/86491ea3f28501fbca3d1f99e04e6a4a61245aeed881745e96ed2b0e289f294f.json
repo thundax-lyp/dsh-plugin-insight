@@ -1,0 +1,37 @@
+{
+  "repository": "AKS1st/ikun-theme-skin",
+  "repository_id": 1335144603,
+  "captured_at": "2026-10-21T05:33:51.437Z",
+  "window_start": "2026-09-21T05:33:51.437Z",
+  "stars": 9,
+  "pushed_at": "2026-08-18T03:58:35Z",
+  "issues": {
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fikun-theme-skin%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E7FE:25D4C9:585D04:5E6516:6AD84EC0 and timestamp 2026-10-21 05:33:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fikun-theme-skin%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E98A:4F1F4:511177:571B06:6AD84EC1 and timestamp 2026-10-21 05:33:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fikun-theme-skin%20is%3Aissue%20created%3A2026-09-21T05%3A33%3A51.437Z..2026-10-21T05%3A33%3A51.437Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID EA94:109A61:4ED5A5:54E03D:6AD84EC2 and timestamp 2026-10-21 05:33:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fikun-theme-skin%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A33%3A51.437Z..2026-10-21T05%3A33%3A51.437Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID EBDC:5146D:542765:5A3393:6AD84EC3 and timestamp 2026-10-21 05:33:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fikun-theme-skin%20is%3Aissue%20updated%3A2026-09-21T05%3A33%3A51.437Z..2026-10-21T05%3A33%3A51.437Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID ED16:205F4D:55320F:5B3FA6:6AD84EC4 and timestamp 2026-10-21 05:33:56 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ]
+}

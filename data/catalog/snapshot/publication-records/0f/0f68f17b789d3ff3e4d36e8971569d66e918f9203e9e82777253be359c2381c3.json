@@ -1,0 +1,17 @@
+{
+  "id": "github:1335060115:root",
+  "repository": "AKS1st/dsh-archived-conversations",
+  "path": "",
+  "revision": "cb1afc38e44c58da2d3e50954b83430cac6e1c12",
+  "fingerprints": {
+    "directory": "ede43465ec4526f2f4d9546e77bc9aea86b4b9a22ae567721f5fd5a3f7be5f73",
+    "code": "cb1afc38e44c58da2d3e50954b83430cac6e1c12",
+    "maintenance": "42516a6709a109aa937b996c4dccc9eefc51a6e98717f2f7cfb4e726b34296c0"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T05:26:52Z",
+  "analysis_sha256": "e3cce271478af62f4e840420b3cfb2905be2e1a9e4977223982152e97b08283c"
+}

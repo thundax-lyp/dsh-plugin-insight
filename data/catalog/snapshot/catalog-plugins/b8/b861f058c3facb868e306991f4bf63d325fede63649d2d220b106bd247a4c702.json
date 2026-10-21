@@ -1,0 +1,299 @@
+{
+  "id": "github:1296792947:integrations-dsh-agentdebugx",
+  "repository_id": 1296792947,
+  "component_id": "integrations-dsh-agentdebugx",
+  "repository": "AgentDebugX/AgentDebugX",
+  "path": "integrations/dsh-agentdebugx",
+  "aliases": [],
+  "name": "AgentDebugX",
+  "entry_type": "plugin",
+  "technical_category": "observability-cost",
+  "business_category": "software-delivery",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "7c50b90f0eb0fe5742f5959d6a25d4efc769370104d3c3e8aa4ee4fd54b8daf3",
+    "code": "2437c73c3183e6b6495259dfbb12464a7f07f6b8",
+    "maintenance": "5faa62256e92200bf18e0e62831dbf24b02d7a6b93a96b1a28e1db34a56fb607"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-06-github-1296792947-integrations-dsh-agentdebugx-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T05:40:01.691Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-06-github-1296792947-integrations-dsh-agentdebugx-author",
+      "kind": "author_claim",
+      "url": "https://github.com/AgentDebugX/AgentDebugX/blob/2437c73c3183e6b6495259dfbb12464a7f07f6b8/integrations/dsh-agentdebugx/README.md",
+      "revision": "2437c73c3183e6b6495259dfbb12464a7f07f6b8",
+      "captured_at": "2026-10-21T05:40:01.691Z",
+      "summary": "按需将DSH当前或选定历史会话接入AgentDebugX诊断，并保存可关联的轨迹与报告。",
+      "artifact": "data/runs/2026-10-21-06/snapshots/agentdebugx--agentdebugx--integrations-dsh-agentdebugx/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-06-github-1296792947-integrations-dsh-agentdebugx-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/AgentDebugX/AgentDebugX/blob/2437c73c3183e6b6495259dfbb12464a7f07f6b8/integrations/dsh-agentdebugx/index.js",
+      "revision": "2437c73c3183e6b6495259dfbb12464a7f07f6b8",
+      "captured_at": "2026-10-21T05:40:01.691Z",
+      "summary": "核查 integrations/dsh-agentdebugx/index.js、integrations/dsh-agentdebugx/bridge/agentdebug_bridge.py、integrations/dsh-agentdebugx/package.json；DSH commands/tools显式触发Python JSON桥接；读取完整Zstd帧并丢弃末尾撕裂帧，以已完成轮次为边界建trajectory；诊断start/result写入会话，heuristic和调用宿主模型的deep区分。",
+      "artifact": "data/runs/2026-10-21-06/snapshots/agentdebugx--agentdebugx--integrations-dsh-agentdebugx/REVIEWED-SOURCE.json",
+      "limitations": [
+        "抽读integrations/dsh-agentdebugx/index.js、integrations/dsh-agentdebugx/bridge/agentdebug_bridge.py、integrations/dsh-agentdebugx/package.json；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "开发者追查Agent失败需要将原始会话与诊断结论对应，不能把诊断者意见当真实根因。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1296792947-integrations-dsh-agentdebugx-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1296792947:integrations-dsh-agentdebugx",
+          "area": "code",
+          "fingerprint": "2437c73c3183e6b6495259dfbb12464a7f07f6b8"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:01.691Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "DSH commands/tools显式触发Python JSON桥接；读取完整Zstd帧并丢弃末尾撕裂帧，以已完成轮次为边界建trajectory；诊断start/result写入会话，heuristic和调用宿主模型的deep区分。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1296792947-integrations-dsh-agentdebugx-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1296792947:integrations-dsh-agentdebugx",
+          "area": "code",
+          "fingerprint": "2437c73c3183e6b6495259dfbb12464a7f07f6b8"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:01.691Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "抽读integrations/dsh-agentdebugx/index.js、integrations/dsh-agentdebugx/bridge/agentdebug_bridge.py、integrations/dsh-agentdebugx/package.json；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1296792947-integrations-dsh-agentdebugx-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1296792947:integrations-dsh-agentdebugx",
+          "area": "code",
+          "fingerprint": "2437c73c3183e6b6495259dfbb12464a7f07f6b8"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:01.691Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "独立MIT集成包，Python AgentDebugX运行时另装、版本分别维护；组件不在安装时启动Python。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1296792947-integrations-dsh-agentdebugx-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1296792947:integrations-dsh-agentdebugx",
+          "area": "code",
+          "fingerprint": "2437c73c3183e6b6495259dfbb12464a7f07f6b8"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:01.691Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次Python环境、轨迹存储和可选viewer，heuristic不额外调用模型；deep额外模型回合和判读成本，未测诊断收益。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1296792947-integrations-dsh-agentdebugx-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1296792947:integrations-dsh-agentdebugx",
+          "area": "code",
+          "fingerprint": "2437c73c3183e6b6495259dfbb12464a7f07f6b8"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:01.691Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "先在脱敏历史会话验证映射和诊断准确性；保留原始轨迹并审查持久化范围，deep结论需独立证据。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1296792947-integrations-dsh-agentdebugx-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1296792947:integrations-dsh-agentdebugx",
+          "area": "code",
+          "fingerprint": "2437c73c3183e6b6495259dfbb12464a7f07f6b8"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:01.691Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "减少会话导出和分析入口摩擦，实际定位速度/修复有效性未验。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1296792947-integrations-dsh-agentdebugx-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1296792947:integrations-dsh-agentdebugx",
+          "area": "code",
+          "fingerprint": "2437c73c3183e6b6495259dfbb12464a7f07f6b8"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:01.691Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "完整帧扫描、完成前缀、按需进程与分析ID关联值得借鉴；协议和压缩格式变更需回归。 源码依据：[integrations/dsh-agentdebugx/index.js](https://github.com/AgentDebugX/AgentDebugX/blob/2437c73c3183e6b6495259dfbb12464a7f07f6b8/integrations/dsh-agentdebugx/index.js)、[integrations/dsh-agentdebugx/bridge/agentdebug_bridge.py](https://github.com/AgentDebugX/AgentDebugX/blob/2437c73c3183e6b6495259dfbb12464a7f07f6b8/integrations/dsh-agentdebugx/bridge/agentdebug_bridge.py)、[integrations/dsh-agentdebugx/package.json](https://github.com/AgentDebugX/AgentDebugX/blob/2437c73c3183e6b6495259dfbb12464a7f07f6b8/integrations/dsh-agentdebugx/package.json)。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1296792947-integrations-dsh-agentdebugx-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1296792947:integrations-dsh-agentdebugx",
+          "area": "code",
+          "fingerprint": "2437c73c3183e6b6495259dfbb12464a7f07f6b8"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:01.691Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "组件贡献是DSH持久会话映射、按需桥接和诊断事件可追溯；Detect-Attribute-Recover与DeepDebug算法归AgentDebugX核心，本组件不包含全部上游CLI能力。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1296792947-integrations-dsh-agentdebugx-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1296792947:integrations-dsh-agentdebugx",
+          "area": "code",
+          "fingerprint": "2437c73c3183e6b6495259dfbb12464a7f07f6b8"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:01.691Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "映射成功能否保证根因正确？丢弃不完整末帧和只取完成边界会排除正在失败的信息；deep默认可由产生轨迹的同模型判断，非独立验证。保存轨迹也引入敏感上下文持久化。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1296792947-integrations-dsh-agentdebugx-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1296792947:integrations-dsh-agentdebugx",
+          "area": "code",
+          "fingerprint": "2437c73c3183e6b6495259dfbb12464a7f07f6b8"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:01.691Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "由稳定边界和诊断事件推导，可附映射覆盖率/被排除事件清单，配独立模型与人工标签对照，区分观察与归因置信度。未验证；带已知故障的轨迹比较漏诊/误归因，覆盖率提升应改善准确率才成立。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1296792947-integrations-dsh-agentdebugx-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1296792947:integrations-dsh-agentdebugx",
+          "area": "code",
+          "fingerprint": "2437c73c3183e6b6495259dfbb12464a7f07f6b8"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:01.691Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T05:40:01.691Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "2437c73c3183e6b6495259dfbb12464a7f07f6b8",
+    "reviewed_at": "2026-10-21T05:40:01.691Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1296792947:integrations-dsh-agentdebugx",
+        "area": "code",
+        "fingerprint": "2437c73c3183e6b6495259dfbb12464a7f07f6b8"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 15,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty已有诊断框架接线小档；mechanism帧扫描/事件映射半档；transferability按需诊断桥接半档；simplification素材导入半档，上游算法不重复计。",
+      "basis": "interpretation",
+      "score": 42,
+      "evidence_ids": [
+        "2026-10-21-06-github-1296792947-integrations-dsh-agentdebugx-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 15,
+        "reach": 5,
+        "economics": 0
+      },
+      "rationale": "workflow会话到归因链半档；delivery诊断记录半档；reach开发调试用户小档；economics未证额外诊断费换来收益为0。",
+      "basis": "interpretation",
+      "score": 38,
+      "evidence_ids": [
+        "2026-10-21-06-github-1296792947-integrations-dsh-agentdebugx-source"
+      ]
+    }
+  }
+}

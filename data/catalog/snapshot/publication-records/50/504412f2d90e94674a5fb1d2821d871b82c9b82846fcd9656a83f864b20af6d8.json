@@ -1,0 +1,17 @@
+{
+  "id": "github:1407166868:root",
+  "repository": "AL-Yichen/dsh-fullscreen-input",
+  "path": "",
+  "revision": "0e211595f4f07289ba3b713b67d47b90498fa082",
+  "fingerprints": {
+    "directory": "02c624f18592d3be58aac4a8801825339edc9f6b0e61cc6ac8bd1506af0f9526",
+    "code": "0e211595f4f07289ba3b713b67d47b90498fa082",
+    "maintenance": "54ed6c4dd6dfb2f872410879a005345e20ca58bca6679dc663f7905d789779c3"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T05:26:52Z",
+  "analysis_sha256": "72abb9c1e9ace067cd06b99e33c269f0f5009cd0575b8305f35942a4d469ee79"
+}

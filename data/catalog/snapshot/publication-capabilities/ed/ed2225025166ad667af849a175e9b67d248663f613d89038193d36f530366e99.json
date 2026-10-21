@@ -1,0 +1,7 @@
+{
+  "revision": "4ef3cc6f3e4332a85d913a13ae929f5eb587818a",
+  "items": {
+    "模型工具": "monitor、monitor_list、monitor_stop管理后台watcher。",
+    "后台": "定时读文件或执行shell，按Agent idle/busy送followup/inject。"
+  }
+}

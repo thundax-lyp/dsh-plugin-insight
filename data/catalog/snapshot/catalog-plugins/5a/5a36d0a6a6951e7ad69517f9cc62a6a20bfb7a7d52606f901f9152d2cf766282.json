@@ -1,0 +1,299 @@
+{
+  "id": "github:1389469406:root",
+  "repository_id": 1389469406,
+  "component_id": "root",
+  "repository": "Aicksion/dsh-clean-desktop-shell-pro",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-clean-desktop-shell-pro",
+  "entry_type": "plugin",
+  "technical_category": "runtime-deployment",
+  "business_category": "personal-productivity",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "804f5bace132d1ca3dcde2d8c296b4bfc3a3b5d9ea062fc69071ee4d59db69df",
+    "code": "03fdf5d8b0959c3738cdb3d887baa6d017443fe6",
+    "maintenance": "98518fb75d7aad66a4fe955c6cfe827182a9ee8c0cabccb04959f1601cb8d9a6"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-06-github-1389469406-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T05:40:05.415Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-06-github-1389469406-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/Aicksion/dsh-clean-desktop-shell-pro/blob/03fdf5d8b0959c3738cdb3d887baa6d017443fe6/README.md",
+      "revision": "03fdf5d8b0959c3738cdb3d887baa6d017443fe6",
+      "captured_at": "2026-10-21T05:40:05.415Z",
+      "summary": "以Electron封装DSH网页，并增强本地后端自动启动、托盘退出选择与故障恢复。",
+      "artifact": "data/runs/2026-10-21-06/snapshots/aicksion--dsh-clean-desktop-shell-pro/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-06-github-1389469406-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/Aicksion/dsh-clean-desktop-shell-pro/blob/03fdf5d8b0959c3738cdb3d887baa6d017443fe6/src/host/index.js",
+      "revision": "03fdf5d8b0959c3738cdb3d887baa6d017443fe6",
+      "captured_at": "2026-10-21T05:40:05.415Z",
+      "summary": "核查 src/host/index.js、electron/main.js、electron/service.js、electron/tray.js、electron/window.js、electron/update.js；Host准备Electron运行时并等loader/connection生成launchURL再spawn；service探测与管理dsh web --no-open，status带probe/exit/stop cause；窗口用认证启动URL恢复，tray提供关闭后端/仅退出/取消。",
+      "artifact": "data/runs/2026-10-21-06/snapshots/aicksion--dsh-clean-desktop-shell-pro/REVIEWED-SOURCE.json",
+      "limitations": [
+        "抽读src/host/index.js、electron/main.js、electron/service.js、electron/tray.js、electron/window.js、electron/update.js；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "用户希望双击进入原生窗口并清楚区分窗口退出、本地服务停止与短暂网络不可达。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1389469406-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1389469406:root",
+          "area": "code",
+          "fingerprint": "03fdf5d8b0959c3738cdb3d887baa6d017443fe6"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:05.415Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "Host准备Electron运行时并等loader/connection生成launchURL再spawn；service探测与管理dsh web --no-open，status带probe/exit/stop cause；窗口用认证启动URL恢复，tray提供关闭后端/仅退出/取消。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1389469406-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1389469406:root",
+          "area": "code",
+          "fingerprint": "03fdf5d8b0959c3738cdb3d887baa6d017443fe6"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:05.415Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "抽读src/host/index.js、electron/main.js、electron/service.js、electron/tray.js、electron/window.js、electron/update.js；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1389469406-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1389469406:root",
+          "area": "code",
+          "fingerprint": "03fdf5d8b0959c3738cdb3d887baa6d017443fe6"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:05.415Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "MIT fork保留上游归属；Electron运行时、平台快捷方式/更新路径及网络下载另需维护。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1389469406-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1389469406:root",
+          "area": "code",
+          "fingerprint": "03fdf5d8b0959c3738cdb3d887baa6d017443fe6"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:05.415Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次运行时下载与桌面配置，持续双进程内存、升级和服务排错成本；并行启动时延未测。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1389469406-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1389469406:root",
+          "area": "code",
+          "fingerprint": "03fdf5d8b0959c3738cdb3d887baa6d017443fe6"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:05.415Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "适合偏好桌面入口者在单独profile验证启动与退出；先移除冲突原版，确认仅退出不会误停共享后端。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1389469406-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1389469406:root",
+          "area": "code",
+          "fingerprint": "03fdf5d8b0959c3738cdb3d887baa6d017443fe6"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:05.415Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "可减少手动开服务步骤，未证明替代官方桌面或提高任务效率。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1389469406-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1389469406:root",
+          "area": "code",
+          "fingerprint": "03fdf5d8b0959c3738cdb3d887baa6d017443fe6"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:05.415Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "probe观察与exit事实分开、token只内存保存、装饰图标步骤设deadline可借鉴；HTTP状态仍是粗粒度健康信号。 源码依据：[src/host/index.js](https://github.com/Aicksion/dsh-clean-desktop-shell-pro/blob/03fdf5d8b0959c3738cdb3d887baa6d017443fe6/src/host/index.js)、[electron/main.js](https://github.com/Aicksion/dsh-clean-desktop-shell-pro/blob/03fdf5d8b0959c3738cdb3d887baa6d017443fe6/electron/main.js)、[electron/service.js](https://github.com/Aicksion/dsh-clean-desktop-shell-pro/blob/03fdf5d8b0959c3738cdb3d887baa6d017443fe6/electron/service.js)、[electron/tray.js](https://github.com/Aicksion/dsh-clean-desktop-shell-pro/blob/03fdf5d8b0959c3738cdb3d887baa6d017443fe6/electron/tray.js)、[electron/window.js](https://github.com/Aicksion/dsh-clean-desktop-shell-pro/blob/03fdf5d8b0959c3738cdb3d887baa6d017443fe6/electron/window.js)、[electron/update.js](https://github.com/Aicksion/dsh-clean-desktop-shell-pro/blob/03fdf5d8b0959c3738cdb3d887baa6d017443fe6/electron/update.js)。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1389469406-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1389469406:root",
+          "area": "code",
+          "fingerprint": "03fdf5d8b0959c3738cdb3d887baa6d017443fe6"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:05.415Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "明确fork原版，增量集中在后端自动启动、退出生命周期和并行启动；Electron外壳与大量恢复机制来自原版，不能把整套桌面封装全计原创。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1389469406-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1389469406:root",
+          "area": "code",
+          "fingerprint": "03fdf5d8b0959c3738cdb3d887baa6d017443fe6"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:05.415Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "端口响应能否认定目标后端可用？probeState把<500视alive、非401视authenticated，不能证明页面/版本/会话可用；外部既有进程的所有权与停止边界需实际验。README冷启动更快未有本轮测量。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1389469406-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1389469406:root",
+          "area": "code",
+          "fingerprint": "03fdf5d8b0959c3738cdb3d887baa6d017443fe6"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:05.415Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "由cause分离推导，可增加宿主版本/实例ID的ready握手及后端所有权凭证，只允许停止自己启动的实例。未验证；错误服务占端口、外部后端、短断网和真实子进程退出应呈不同状态且不误停。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1389469406-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1389469406:root",
+          "area": "code",
+          "fingerprint": "03fdf5d8b0959c3738cdb3d887baa6d017443fe6"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:05.415Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T05:40:05.415Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "03fdf5d8b0959c3738cdb3d887baa6d017443fe6",
+    "reviewed_at": "2026-10-21T05:40:05.415Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1389469406:root",
+        "area": "code",
+        "fingerprint": "03fdf5d8b0959c3738cdb3d887baa6d017443fe6"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "noveltyfork生命周期便利小档；mechanism启动/退出管理小档，不重复计原版；transferability进程cause模式半档；simplification双击启动半档。",
+      "basis": "interpretation",
+      "score": 35,
+      "evidence_ids": [
+        "2026-10-21-06-github-1389469406-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 15,
+        "reach": 5,
+        "economics": 0
+      },
+      "rationale": "workflow入口便利小档；delivery窗口与服务联动半档；reach特定桌面偏好小档；economics运行时负担与节时未测0。",
+      "basis": "interpretation",
+      "score": 29,
+      "evidence_ids": [
+        "2026-10-21-06-github-1389469406-root-source"
+      ]
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "github:1334428397:root",
+  "repository": "AgentConnect/dsh-awiki",
+  "path": "",
+  "revision": "60db12b72181668b8ea1a270bddb279bb0f50ed7",
+  "fingerprints": {
+    "directory": "dc12b25a7e24ffe71ffa9a9bb4854dbed47840bd2f3cc398de0feefbbb13b8f3",
+    "code": "60db12b72181668b8ea1a270bddb279bb0f50ed7",
+    "maintenance": "115e573e39781419f9f0bc2a3ffdeb77034624e4baa75d7f8ef29e4c73024d70"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+    "https://github.com/0xsline/awesome-deepseek-harness"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T05:26:52Z",
+  "analysis_sha256": "e8025748d7c6666dde371ab8eac3126b693df1af171c949810c06bb1512ffa24"
+}

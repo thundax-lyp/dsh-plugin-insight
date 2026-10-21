@@ -1,0 +1,17 @@
+{
+  "id": "github:1425045401:root",
+  "repository": "AAAlenwow/dsh-ai-armor",
+  "path": "",
+  "revision": "dedf8d32fcaaa70e8584f432ba1c63b103f133dc",
+  "fingerprints": {
+    "directory": "cf9396974cea9570959f51f8d9640fe1e2a345663b812c4074a9aab1362da39b",
+    "code": "dedf8d32fcaaa70e8584f432ba1c63b103f133dc",
+    "maintenance": "f11d5e5c322290d7fedca603a65fd45ff075a7fa5379d54a32d40533a494fc48"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T05:26:52Z",
+  "analysis_sha256": "f193a5dffc027eb8e8c1fd7ebd7b2166f9a1d363c1294727bae9c1c7afd1e8c4"
+}

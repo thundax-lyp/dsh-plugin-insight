@@ -13,16 +13,21 @@
 | [AI 残渣清运](#plugin-1406611614-root) | 按规则把会话副产物移入可还原回收站，并提供项目结项归类、归档与清理清单。 | 先在完整副本执行dry-run，核对日志和backup类文件是否仍需保留，再启用自动清理并设置合适保留期。 |
 | [chicheng-cron](#plugin-1335807482-root) | 在 DSH Web 配置 cron 定时脚本、Skill 与 Agent 任务，查看历史并发送完成通知。 | 适合可重复、可撤销的个人定时任务；先用不改文件的任务检查时间、工作目录、超时、输出与通知，再尝试写操作，关键任务另配完成检查。 |
 | [chicheng-push](#plugin-1335382133-root) | 在 DSH 配置多种推送渠道，并通过进程内服务或 HTTP 接口发送通知。 | 有多个任务插件要发通知时可先接一个非敏感测试渠道；检查每渠道结果、令牌文件权限和远程接口范围，再发正式任务摘要，避免把秘密内容直接推到群里。 |
+| [dock-spreadsheet](#plugin-1400109121-root) | 在Dock只读预览工作簿及UTF-8分隔文本，保持表格坐标。 | 用于小表快速阅读；需编辑、计算或完整报表时另用表格软件。 |
+| [dsh-awiki](#plugin-1334428397-root) | 把AWiki身份、设备加入/恢复、消息和邮件接入DSH，区分Host管理与模型可用操作。 | 适合已有AWiki体系者在测试身份验证设备撤销与发送审批。 |
 | [dsh-crypto-portfolio](#plugin-1342742812-root) | 以 DSH 插件启动 Python 资产看板，汇集链上钱包和交易所账户数据。 | 先使用公开钱包和无资金操作权限的测试账户，对照账户原始持仓再考虑正式使用。 |
+| [dsh-cua-pre](#plugin-1346533795-root) | 以Windows无障碍树优先的工具、Python worker和可视面板，为DSH提供桌面观察与操作。 | 先在可丢弃窗口、明确PID范围验证观察/动作/停止；高影响任务保留人工确认和结果核对，不能将提示纪律当已实现审批。 |
 | [dsh-desktop-uia](#plugin-1381221232-root) | 通过 Windows UI Automation 为 DSH 提供桌面控件读取、操作与审计面板。 | 适合控件可访问性良好的Windows应用；先对照审批模式检查实际放行条件，在无敏感数据的应用里验证动作和后置状态。 |
 | [dsh-device-bridge](#plugin-1384810806-root) | 把实现Companion协议的手机或设备接入DSH，提供设备列表、健康查询和动作调用。 | 先只开放ping/status等无副作用动作，在隔离网络核对设备身份；固定共享依赖与设备端实现后再启用实际控制。 |
 | [dsh-feishu-bot](#plugin-1346023250-root) | 通过飞书应用机器人长连接操作 DSH 项目与会话，支持扫码绑定、审批与完成通知。 | 远程控制需求明确时在专用profile试用，先固定允许chat、验证拒绝/取消/断连恢复；普通消息具有该DSH profile的实际权限。 |
 | [dsh-feishu（2048lr）](#plugin-1418842530-root) | 为 DSH 提供飞书与 Lark 文档、表格、多维表格、消息和授权工具及操作面板。 | 先在测试租户明确选user身份，创建一份可丢弃文档并确认实际落点和权限，再验证token过期及超时重试；正式写入前要检查重复创建，避免把auto降级警告忽略。 |
 | [dsh-invoice-tools](#plugin-1344714819-root) | 在本地解析电子发票字段，核对金额并汇总生成报销单资料。 | 先用脱敏且有XML/文本层的发票做汇总草稿；逐张核票号、买卖方与金额，确认缓存会话和.xlsx.b64解码后再交财务。 |
 | [dsh-mac-companion](#plugin-1384810483-root) | 从DSH经HTTP调用Mac端Companion，支持通知、快捷指令和剪贴板读写。 | 先只测试通知，再检查剪贴板和快捷指令权限；写入前保留剪贴板副本，并使用专门的低风险Shortcut。 |
+| [dsh-msg-hub](#plugin-1335387524-root) | 把微信、QQ、飞书消息接到 DSH 会话，并提供主动推送与远程审批。 | 可先作为渠道桥源码候选；当前远程批准归属不足，不建议让它承担真实高影响工具的批准。 |
 | [dsh-plugin-finance-data](#plugin-1336663504-root) | 对调用者提供的财务数字执行格式化、收益、比率、风险和组合计算。 | 当前仅作源码和计算接口参考。 |
 | [dsh-plugin-nlbi](#plugin-1343622602-root) | 在 DSH 中用自然语言查询 MySQL，生成表格、图表与可保存报表。 | 适合有可复核SQL和只读数据环境的分析任务；先定义关键指标标准答案，核对生成SQL再复用报表。 |
 | [dsh-team-cost](#plugin-1364961230-root) | 按工作区归属成员统计模型用量，提供团队报表、预算告警和可选请求拦截。 | 先只监测不拦截，对照实际账单和子代理用量，补全模型价格并检查相似工作区前缀；金额可信后再考虑预算阻断。 |
+| [dsh-toolbox-web](#plugin-1335244607-root) | 在 Web 管理会话、回收站、搜索与配置，并提供后台定时心跳。 | 可按只读搜索和会话整理需求分功能评估；在线编辑/截断原会话需要先解决代际与并发一致性，不能仅因带回收站就视为全程可逆。 |
 | [dsh-wsl-cal](#plugin-1381860995-root) | 通过本地khal读取日历列表、今日日程和未来指定天数的安排。 | 适合已配置khal的人，先核对本地日期、时区与日历数量；空输出先确认同步与过滤，不直接判断没有安排。 |
 | [dsh-wsl-mail](#plugin-1381860693-root) | 通过notmuch或himalaya读取邮件列表、未读统计与搜索结果。 | 先核对返回backend和note；使用himalaya时把结果理解为最近收件箱列表。 |
 | [dsh-wsl-rclone](#plugin-1381859181-root) | 通过rclone列出远程存储配置、文件名及配额信息。 | 适合已配rclone的只读盘点，先限定allowedRemotes和目录规模；需要传输、删除或完整清单验收时另选流程。 |
@@ -68,6 +73,28 @@
 - **思考**：返回ok是否等于用户可靠收到？sender多以HTTP和渠道业务码判断接受，并无统一送达回执或持久重试；串行多渠道可能累积12秒超时。publicChannel返回完整config，令牌还明文存channels.json，fence信任边界必须与远程访问配置一起检查，不能因“只在本机”就省略敏感字段范围。
 - **建议**：待验证假设：为调用方提供幂等通知ID与持久发送账本，按“已提交/平台接受/确认收到”分层，允许失败渠道重试，可减少任务重试引发的重复提醒。由每渠道results但无持久投递状态推导，当前未实现。用成功后连接断开、部分渠道失败和调用方重放对照，测重复率、漏发与等待时间；不支持回执的平台必须保持unknown，不能伪造已读。
 
+<a id="plugin-1400109121-root"></a>
+
+## [dock-spreadsheet](../../plugins/aks1st--dock-spreadsheet/INSIGHT.md)
+
+[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/AKS1st/dock-spreadsheet) · [![npm 30d 413](https://img.shields.io/static/v1?label=npm+30d&message=413&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dock-spreadsheet)
+
+- **用途**：快速查看模型产出或工作区表格，不承担编辑和公式重新计算。
+- **亮点**：首行保留为数据而非猜标题、范围偏移保留为真实行列坐标，避免常见预览歧义；解析和虚拟表格来自上游。
+- **思考**：行列上限在工作簿解析之后才应用，20MiB压缩文件不代表展开内存有界；公式显示依赖缓存/格式化值，不能用预览判断计算正确。只读不意味着文件内容可当可靠业务报表。
+- **建议**：未验证假设：解析隔离到worker并提供取消/复杂度预算和公式缓存提示，可使大表失败可控。比较高压缩XLSX、大范围和陈旧公式缓存样例的峰值内存、可取消性及误判。
+
+<a id="plugin-1334428397-root"></a>
+
+## [dsh-awiki](../../plugins/agentconnect--dsh-awiki/INSIGHT.md)
+
+[![GitHub ★ 19](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=19&color=yellow&logo=github&style=flat)](https://github.com/AgentConnect/dsh-awiki) · [![npm 30d 1584](https://img.shields.io/static/v1?label=npm+30d&message=1%2C584&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@awiki/dsh-plugin)
+
+- **用途**：Agent需以稳定身份参与通信，设备丢失/切换仍可明确账户和消息归属；必须将发送和身份控制区分。
+- **亮点**：增量是身份/设备/恢复和DSH Agent生命周期的边界整合，不只是消息转发。DID密钥与文档归独立ANP Identity，协议与数据库/恢复实现大量来自IM Core。
+- **思考**：界面确认是否覆盖所有身份与外部写入？工具层ask是可读证据，但真实宿主策略与Core的租约、设备撤销/恢复一致性未验证；大量本地状态和网络边界不能凭测试目录认定端到端成功。
+- **建议**：由Host lease与可见操作分离推导，可为恢复/发送提供跨层收据，绑定身份代次、设备和请求结果，遇未知结果只核查不重放。未验证；丢响应、撤设备、切身份时应不会由旧会话继续签发或重复发送。
+
 <a id="plugin-1342742812-root"></a>
 
 ## [dsh-crypto-portfolio](../../plugins/0xrabit--dsh-crypto-portfolio/INSIGHT.md)
@@ -78,6 +105,17 @@
 - **亮点**：Node 入口初始化配置模板并启动 run.py 子进程，默认绑定回环地址，卸载时发送 SIGTERM。
 - **思考**：多来源汇总有明确便利，但看板属于数据呈现，不能提供资产真实性或收益保证。
 - **建议**：先使用公开钱包和无资金操作权限的测试账户，对照账户原始持仓再考虑正式使用。
+
+<a id="plugin-1346533795-root"></a>
+
+## [dsh-cua-pre](../../plugins/aik358--dsh-cua-pre/INSIGHT.md)
+
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/Aik358/dsh-cua-pre) · [![npm 30d 381](https://img.shields.io/static/v1?label=npm+30d&message=381&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@a9i5k4/dsh-cua-pre)
+
+- **用途**：Windows桌面任务需先观察、定位后动作，并区分未执行与可能已执行，尤其不能重复发送/支付等副作用。
+- **亮点**：将观察失效、目标校验、未知动作结果和持久停止纳入同一工具协议，比裸pyautogui坐标脚本更可治理；UIA/SendInput及视觉模型本身来自系统与上游。
+- **思考**：安全语义是否等于实际动作保证？RuntimeId不支持时会降级，矩形容差也不能保证同语义控件；timeout只是等待结果结束，noop不能撤销已发原生动作。付款/删除/外发确认主要是GUIDANCE措辞，不是通用Host硬审批。
+- **建议**：由epoch和观察状态推导，可对高影响动作增加Host授权令牌和动作后可核查收据，未知结果冻结同业务动作直到人工或只读对账。未验证；注入worker迟响应/崩溃与UI漂移时应不重放、不误点，确认不可仅靠模型守提示。
 
 <a id="plugin-1381221232-root"></a>
 
@@ -145,6 +183,17 @@
 - **思考**：为跨系统桌面任务提供薄协议有便利；读取剪贴板会把潜在敏感文本带入工具输出及模型上下文。
 - **建议**：先只测试通知，再检查剪贴板和快捷指令权限；写入前保留剪贴板副本，并使用专门的低风险Shortcut。
 
+<a id="plugin-1335387524-root"></a>
+
+## [dsh-msg-hub](../../plugins/abcdefgxw--dsh-msg-hub/INSIGHT.md)
+
+[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=yellow&logo=github&style=flat)](https://github.com/AbcdefgXW/dsh-msg-hub) · [![npm 30d 1207](https://img.shields.io/static/v1?label=npm+30d&message=1%2C207&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-msg-hub)
+
+- **用途**：离开电脑的操作者从IM发任务、收结果并处理绑定会话的审批；交付物是渠道消息与可关联的Agent结果，必须保留批准人的身份和具体请求归属。
+- **亮点**：把不同IM接入、稳定会话和可复用push/task服务合在一个桥，使其他定时插件也能复用消息回传；相较每渠道独立机器人减少会话管理重复。渠道协议与上游vendored代码不算全仓原创；远程审批新增业务控制入口，其正确性不能由消息收发成功推定。
+- **思考**：“批准”是否绑定到收到该请求的那个人和那次调用？remote.pending只存resolve/timer，不存session或peer；handleCommand收到任何匹配文本就取pending第一个resolve，没有检查channel/peer/session/callId。多个会话并发或无关peer发yes都可能批准错误请求，五分钟拒绝不能弥补归属缺失。/bind也直接持久化输入sid，未在此路径见所有者验证。
+- **建议**：每次审批加入一次性挑战码并绑定request ID、channel、peer、session、操作摘要与到期时间，可能避免串审批。用两个peer两请求交叉答复、过期/重放和未绑定peer答复案例，要求仅匹配请求可一次结算；若平台身份不能可靠绑定，应保留原宿主审批而只做通知。
+
 <a id="plugin-1336663504-root"></a>
 
 ## [dsh-plugin-finance-data](../../plugins/863683348--dsh-plugin-finance-data/INSIGHT.md)
@@ -177,6 +226,17 @@
 - **亮点**：src/index.ts监听assistant/message用量，按cwd最长前缀归因，写JSONL及汇总；agent/request可按团队或成员预算拒绝新请求。
 - **思考**：把团队汇总接到请求门禁有管理价值；若归属或单价缺失，报表精确显示也会掩盖错误。
 - **建议**：先只监测不拦截，对照实际账单和子代理用量，补全模型价格并检查相似工作区前缀；金额可信后再考虑预算阻断。
+
+<a id="plugin-1335244607-root"></a>
+
+## [dsh-toolbox-web](../../plugins/abcdefgxw--dsh-toolbox-web/INSIGHT.md)
+
+[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=yellow&logo=github&style=flat)](https://github.com/AbcdefgXW/dsh-toolbox-web) · [![npm 30d 1058](https://img.shields.io/static/v1?label=npm+30d&message=1%2C058&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-toolbox-web)
+
+- **用途**：DSH操作者集中整理大量会话、恢复误删内容或定时唤醒任务；管理结果应可恢复且与宿主持久状态一致。
+- **亮点**：把会话整理、可恢复删除与定时任务入口集中到一个Web工具箱；回收站比直接rm多恢复路径，逐帧搜索避免长期保留整份解压文本。业务增量在运维操作的集中化，不是新会话存储引擎；原生索引/fork能力归宿主。
+- **思考**：管理操作是否与正在运行的宿主持久化一致？messages列表使用resolveSessionLog最高代，编辑/截断却硬编码session.jsonl.zstd，可能改旧代；backup失败返回null仍继续写原文件，写入非rename且无expected revision/live会话锁。回收站先移动后写meta也有中途失败窗口；UI默认关闭某功能不等于后端授权，RPC方法自身只作参数校验。
+- **建议**：将编辑/截断迁到宿主版本化事务接口，先确认目标代和快照摘要、可靠备份成功再写，并让恢复成为同事务操作，可能减少旧代修改和并发丢事件。用v3日志、运行中追加、备份失败和进程中断案例要求不写错代且原事件完整；若宿主无事务接口，应限制为离线导出编辑而非在线覆盖。
 
 <a id="plugin-1381860995-root"></a>
 

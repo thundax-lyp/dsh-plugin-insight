@@ -1,32 +1,29 @@
 # dsh-language-guard
 
-> 以系统提示片段和周期提醒约束回复语言，支持语言命令与界面语言跟随。
+> 以可配置提示片段、语言命令和周期提醒约束 DSH 输出语言。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[68cdc5c](https://github.com/58fly/dsh-language-guard/tree/68cdc5c77c3755fbfe4d4d7e9e45f4bd8e6a6ce3)
+分析版本：[2759e45](https://github.com/58fly/dsh-language-guard/tree/2759e457534a1611b29d2744b154926af133a74d)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/58fly/dsh-language-guard) · [![npm 30d 暂未获取](https://img.shields.io/static/v1?label=npm+30d&message=%E6%9A%82%E6%9C%AA%E8%8E%B7%E5%8F%96&color=lightgrey&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-language-guard) · **脚本有更新，待重新洞察**
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/58fly/dsh-language-guard) · [![npm 30d 暂未获取](https://img.shields.io/static/v1?label=npm+30d&message=%E6%9A%82%E6%9C%AA%E8%8E%B7%E5%8F%96&color=lightgrey&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-language-guard)
 <!-- END META -->
 
-**使用建议**：有稳定语言偏好可先试B档。繁体或任务语言与界面不同请手动设置；用含英文代码和引用的长对话检查是否误改内容。
+**使用建议**：有固定输出语言需求者可评估；多会话不同语言或任务需按项目规范切换语言时，先明确模块级临时覆盖与强制文案是否符合要求。
 
 **核查状态**：已检查源码，未进行真实宿主验证。
 
 **本文目录**
 
 - [当前插件分析](#detail-section-1)
-  - [场景与替代办法](#detail-section-2)
-  - [能力、依赖与流程](#detail-section-3)
-  - [成本与效果](#detail-section-4)
-  - [工程亮点](#detail-section-5)
-  - [使用判断](#detail-section-6)
-  - [能力、流程与成本](#detail-section-7)
-  - [工程贡献](#detail-section-8)
-  - [核查说明与分析版本](#detail-section-9)
-- [未来设计假设（未验证）](#detail-section-10)
-- [辅助信息](#detail-section-11)
+  - [使用判断](#detail-section-2)
+  - [能力、流程与成本](#detail-section-3)
+  - [工程贡献](#detail-section-4)
+  - [主要限制](#detail-section-5)
+  - [核查说明与分析版本](#detail-section-6)
+- [未来设计假设（未验证）](#detail-section-7)
+- [辅助信息](#detail-section-8)
 
 <a id="detail-section-1"></a>
 
@@ -34,108 +31,101 @@
 
 <a id="detail-section-2"></a>
 
-### 场景与替代办法
+### 使用判断
 
-替代是自定义系统提示或每轮语言要求；插件增加配置迁移、动态档位和提醒，不改变模型权重。
+- **用途**：长对话含英文工具说明与代码时，用户希望固定回答语言；合格交付是保留原始代码/引用而让说明遵循目标语言。
+
+- **建议**：将临时覆盖改为session作用域、提示只约束用户可见输出且显式保留任务语言例外，可能在减少跨会话串扰的同时保持语言稳定。用两个会话分别设ja/zh-TW并交错提问，加入多语引文与用户要求翻译的反例，统计串扰和错误改写；若只隔离设置但输出漂移不变，应分别报告配置收益和模型效果。
+
+有固定输出语言需求者可评估；多会话不同语言或任务需按项目规范切换语言时，先明确模块级临时覆盖与强制文案是否符合要求。
+
+核查状态：提示装配与三态迁移机制可确认；语言遵守率、内部推理语言及token性价比未验证。 本轮只检查源码，未安装、执行目标代码/测试或真实宿主验收。
+
+手动提示、AGENTS语言约定或宿主系统提示即可表达偏好；本项减少重复配置，不另建语言检测或纠错模型。
 
 <a id="detail-section-3"></a>
 
-### 能力、依赖与流程
+### 能力、流程与成本
 
-lib/index.js注册head/mid/tail三个稳定section，动态读取强度和语言；language.js纯函数处理auto/manual及旧配置；cycle.js在D档按轮次插入自检提醒。
+- **用户命令**：/language读取/设置/重置进程内语言覆盖。
+- **事件监听**：提示section和agent/pre-step周期notice，设置更新刷新locale缓存。
+- **界面**：设置表单投影及包声明client入口；未运行界面交互。
 
-- **用户命令**：/language语言控制
-- **事件监听**：D档周期自检提醒
+**流程与依赖**
 
-核心依赖systemPrompt；settings与commands可选，设置表单依赖Schemastery解析链。
+head/mid/tail稳定section动态取语言与B/C/D强度；auto从settings locale.preference解析，manual保留配置，空串模式哨兵保护旧配置。D档在顶层会话的命中轮首step、真实输入存在时插入带language-guard来源的notice，并保留下游决策字段。
 
-读取配置及界面语言→解析目标语言→装配三处提示→D档周期提醒→/language可覆盖；缺偏好信号回退配置，不猜系统语言。
+DSH system prompt、agent/pre-step、可选commands/settings、locale preference；无可靠Host系统语言信号时回退配置。
+
+设置决定模式/强度→按locale缓存解析→prompt动态生成→D档命中轮提醒；/language仅写进程内覆盖，reset清除，重启不持久。
+
+DSH Host/client bundle与固定package依赖；settings/commands懒注入，Schemastery不可解析时表单投影降级告警，不将npm统计当采用证据。
+
+**效果与成本**
+
+现金为额外提示token和可能的重复上下文；人工配置强度、繁简及任务例外。强度更高不等于准确率更高，缺漂移率/错误翻译/时间的对照。
+
+减少手写语言提醒，配置迁移细节可复用；不保证内部推理语言、翻译质量或全程遵守。
+
+- **思考**：约束是否作用在正确会话与正确层级？state.js的languageOverride为模块单值，/language处理器不接session ID，所谓“本会话”临时切换可能影响同进程其他会话。mapPreference把所有zh映成zh-CN；head还要求覆盖AGENTS/用户语言并不解释冲突。D档虽标notice而非冒充真实用户，仍额外进入模型上下文；无法证明不可见推理遵守。
 
 <a id="detail-section-4"></a>
 
-### 成本与效果
+### 工程贡献
 
-首次选自动/手动与档位；持续成本是提示token和复核错误翻译，现金随模型token，人工需处理繁简与多语任务例外。
+- **亮点**：把重复的“用某语言回答”组织成可热配置的宿主提示策略；稳定section、纯语言解析和未设置哨兵让迁移不覆盖老用户语言。增量是配置/装配机制，不是模型语言能力，也不能因文案声称最高优先级就获得更高指令权限。
 
-可减少重复语言提醒，但无可比漂移率实验，强度高不代表更准确。
+把重复的“用某语言回答”组织成可热配置的宿主提示策略；稳定section、纯语言解析和未设置哨兵让迁移不覆盖老用户语言。增量是配置/装配机制，不是模型语言能力，也不能因文案声称最高优先级就获得更高指令权限。
+
+cycle先next再按拥有的决策插入，spread保留startsRequestSeries等字段，首step/非空/幂等/顶层门控避免无输入循环；notice显式来源可区分真实用户。state的单例覆盖与命令会话宣称不一致是可追踪实现边界。
+
+固定源码依据：[lib/index.js](https://github.com/58fly/dsh-language-guard/blob/2759e457534a1611b29d2744b154926af133a74d/lib/index.js)、[lib/language.js](https://github.com/58fly/dsh-language-guard/blob/2759e457534a1611b29d2744b154926af133a74d/lib/language.js)、[lib/cycle.js](https://github.com/58fly/dsh-language-guard/blob/2759e457534a1611b29d2744b154926af133a74d/lib/cycle.js)、[lib/commands.js](https://github.com/58fly/dsh-language-guard/blob/2759e457534a1611b29d2744b154926af133a74d/lib/commands.js)、[lib/state.js](https://github.com/58fly/dsh-language-guard/blob/2759e457534a1611b29d2744b154926af133a74d/lib/state.js)、[lib/text.js](https://github.com/58fly/dsh-language-guard/blob/2759e457534a1611b29d2744b154926af133a74d/lib/text.js)、[package.json](https://github.com/58fly/dsh-language-guard/blob/2759e457534a1611b29d2744b154926af133a74d/package.json)。
 
 <a id="detail-section-5"></a>
 
-### 工程亮点
+### 主要限制
 
-语言解析纯函数与宿主分离，空串哨兵保护迁移；设置服务懒注入和Schemastery导入失败告警提供降级。可借鉴稳定section与显式回退。
-
-源码依据：[lib/index.js](https://github.com/58fly/dsh-language-guard/blob/68cdc5c77c3755fbfe4d4d7e9e45f4bd8e6a6ce3/lib/index.js)、[lib/language.js](https://github.com/58fly/dsh-language-guard/blob/68cdc5c77c3755fbfe4d4d7e9e45f4bd8e6a6ce3/lib/language.js)。
+约束是否作用在正确会话与正确层级？state.js的languageOverride为模块单值，/language处理器不接session ID，所谓“本会话”临时切换可能影响同进程其他会话。mapPreference把所有zh映成zh-CN；head还要求覆盖AGENTS/用户语言并不解释冲突。D档虽标notice而非冒充真实用户，仍额外进入模型上下文；无法证明不可见推理遵守。
 
 <a id="detail-section-6"></a>
 
-### 使用判断
+### 核查说明与分析版本
 
-- **用途**：适合长对话容易语言漂移的多语用户，尤其需要固定回复语言而保留代码标识的任务。
-
-- **建议**：待验证假设：按实际语言漂移触发提醒，比固定每N轮更省上下文。用混合代码、多语引文和长会话对照漂移率、错误提醒与token；若识别器误判引用导致额外约束，则否定。
-
-有稳定语言偏好可先试B档。繁体或任务语言与界面不同请手动设置；用含英文代码和引用的长对话检查是否误改内容。
-
-**核查状态**：已检查固定版本源码，未安装、执行目标插件或完成真实宿主验收。已有贡献仅由固定版本源码支持，实际宿主和任务效果尚未验证；未来设计假设保持未验证。
+- 版本号：0.3.3；版本日期：2026-10-21（固定提交日期，北京时间，非包发布日期）。
+- 固定提交：[2759e457](https://github.com/58fly/dsh-language-guard/tree/2759e457534a1611b29d2744b154926af133a74d)；本轮基准：2026-10-21T05:26:52Z。
+- 已检查：上述源码路径、README、包清单及组件inventory。
+- 范围：根组件提示装配、文本、语言解析、状态、命令和周期注入；复核正式快照旧11项findings/证据及评分，当前notice来源与模块覆盖范围重新判断。
+- 未执行：目标安装、代码/测试、真实宿主和第三方服务。作者说明与源码不等于独立效果验证。
 
 <a id="detail-section-7"></a>
 
-### 能力、流程与成本
+## 未来设计假设（未验证）
 
-- **用户命令**：/language语言控制
-- **事件监听**：D档周期自检提醒
+将临时覆盖改为session作用域、提示只约束用户可见输出且显式保留任务语言例外，可能在减少跨会话串扰的同时保持语言稳定。用两个会话分别设ja/zh-TW并交错提问，加入多语引文与用户要求翻译的反例，统计串扰和错误改写；若只隔离设置但输出漂移不变，应分别报告配置收益和模型效果。
 
-- **思考**：提示层约束无法保证模型推理和回答始终遵守语言要求；多处注入增加token，D档提醒进入既有user/message还可能影响任务上下文。mapPreference把所有zh主标签映成zh-CN，繁体偏好需manual，不能宣称自动精确跟随。
+未执行目标；最小验证应分别记录双会话串扰、繁体手动模式、混合代码引用的误翻译及每轮token，不以源码里的测试断言作通过结果。
 
 <a id="detail-section-8"></a>
 
-### 工程贡献
-
-- **亮点**：作者主张语言守卫；实际贡献是把语言偏好解析、强度档位及周期提醒做成可配置宿主集成。相对每轮手工要求中文，减少重复输入；三态未设置哨兵保留旧用户手选语言，属于有用迁移设计，不是语言能力创新。
-
-<a id="detail-section-9"></a>
-
-### 核查说明与分析版本
-
-- **仓库**：[58fly/dsh-language-guard](https://github.com/58fly/dsh-language-guard)
-- **版本号**：0.3.1（[固定提交 68cdc5c7](https://github.com/58fly/dsh-language-guard/tree/68cdc5c77c3755fbfe4d4d7e9e45f4bd8e6a6ce3)）
-- **版本日期**：2026-10-21（固定提交日期，北京时间；不是包发布日期）
-
-- 已检查：lib/index.js、lib/language.js、作者README与固定范围inventory；源码抽读不等于完整审计。
-- 未完成：目标插件执行、测试、安装、模型调用和真实宿主验收。
-- 证据限制：核查固定提交内列明入口、核心实现及相关配置/作者材料的源码子集；未执行插件、其测试、安装、付费请求或真实宿主验收，未核实独立用户采用。
-- 下一步：固定宿主跑繁简、旧配置、缺settings、多语引用及长对话对照，记录任务正确性与语言漂移；本轮未执行。
-
-<a id="detail-section-10"></a>
-
-## 未来设计假设（未验证）
-
-待验证假设：按实际语言漂移触发提醒，比固定每N轮更省上下文。用混合代码、多语引文和长会话对照漂移率、错误提醒与token；若识别器误判引用导致额外约束，则否定。
-
-固定宿主跑繁简、旧配置、缺settings、多语引用及长对话对照，记录任务正确性与语言漂移；本轮未执行。
+## 辅助信息
 
 <details>
-<summary>工程统计</summary>
-
-统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：4cabe13f957dd762ef4e915a1828f9bb5ccaa74d67d2f6ac1dc9c688d4d35a62。sloc 0.3.2，TypeScript 5.9.3。
+<summary>工程统计与口径</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 32 | 10742 | — | — | 152560 |
-| .js | source | 7 | 2423 | 1682 | 555 | — |
-| .mjs | source | 5 | 1160 | 880 | 155 | — |
-
-排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。
+| .md | source | 33 | 11038 | — | — | 157215 |
+| .js | source | 7 | 2440 | 1693 | 560 | — |
+| .mjs | source | 6 | 1386 | 1039 | 201 | — |
 
 </details>
 
-<a id="detail-section-11"></a>
-
-## 辅助信息
-
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/58fly/dsh-language-guard/issues) 查看。
+[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/58fly/dsh-language-guard/issues?q=is%3Aissue+is%3Aopen) · [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/58fly/dsh-language-guard/issues?q=is%3Aissue+created%3A2026-09-21T05%3A33%3A12.488Z..2026-10-21T05%3A33%3A12.488Z) · [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/58fly/dsh-language-guard/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-21T05%3A33%3A12.488Z..2026-10-21T05%3A33%3A12.488Z)
+
+
+
+统计日期：2026-10-21。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

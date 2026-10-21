@@ -1,0 +1,299 @@
+{
+  "id": "github:1340492378:root",
+  "repository_id": 1340492378,
+  "component_id": "root",
+  "repository": "AKS1st/dock-images",
+  "path": "",
+  "aliases": [],
+  "name": "dock-images",
+  "entry_type": "plugin",
+  "technical_category": "interface-input",
+  "business_category": "personal-productivity",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "8f24c7efc50a262e8a79b53909e71c3d51385434f6a8f7157a0a8faa722737a6",
+    "code": "b98f3910c59af6f30c742b0ddc001315c2c176ee",
+    "maintenance": "2c4c3091e0142dd918bd3e8605b62b3a3e5ba6bd78a814f9fd344e6753288006"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-06-github-1340492378-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T05:37:30.049Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-06-github-1340492378-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/AKS1st/dock-images/blob/b98f3910c59af6f30c742b0ddc001315c2c176ee/README.md",
+      "revision": "b98f3910c59af6f30c742b0ddc001315c2c176ee",
+      "captured_at": "2026-10-21T05:37:30.049Z",
+      "summary": "通过受限文件读取在Dock缩放、旋转和拖动图片。",
+      "artifact": "data/runs/2026-10-21-06/snapshots/aks1st--dock-images/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-06-github-1340492378-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/AKS1st/dock-images/blob/b98f3910c59af6f30c742b0ddc001315c2c176ee/src/index.ts",
+      "revision": "b98f3910c59af6f30c742b0ddc001315c2c176ee",
+      "captured_at": "2026-10-21T05:37:30.049Z",
+      "summary": "核查 src/index.ts、src/client/index.ts、src/client/ImageView.tsx；主机/read按扩展名和文件大小读取base64，客户端ImageView建立data URL并以CSS transform缩放旋转拖动。",
+      "artifact": "data/runs/2026-10-21-06/snapshots/aks1st--dock-images/REVIEWED-SOURCE.json",
+      "limitations": [
+        "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "查看聊天相关本地截图或素材，保持在工作台中。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1340492378-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1340492378:root",
+          "area": "code",
+          "fingerprint": "b98f3910c59af6f30c742b0ddc001315c2c176ee"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:37:30.049Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "主机/read按扩展名和文件大小读取base64，客户端ImageView建立data URL并以CSS transform缩放旋转拖动。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1340492378-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1340492378:root",
+          "area": "code",
+          "fingerprint": "b98f3910c59af6f30c742b0ddc001315c2c176ee"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:37:30.049Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1340492378-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1340492378:root",
+          "area": "code",
+          "fingerprint": "b98f3910c59af6f30c742b0ddc001315c2c176ee"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:37:30.049Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "分发以本插件固定package.json、运行依赖与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1340492378-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1340492378:root",
+          "area": "code",
+          "fingerprint": "b98f3910c59af6f30c742b0ddc001315c2c176ee"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:37:30.049Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "无token费用；服务端全文件读取、base64和浏览器解码占内存带宽，维护viewer契约。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1340492378-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1340492378:root",
+          "area": "code",
+          "fingerprint": "b98f3910c59af6f30c742b0ddc001315c2c176ee"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:37:30.049Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "用于普通小图片预览；大图先核资源占用，别把视图旋转当文件编辑。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1340492378-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1340492378:root",
+          "area": "code",
+          "fingerprint": "b98f3910c59af6f30c742b0ddc001315c2c176ee"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:37:30.049Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "预览便利性有源码支持，无耗时与内存实测。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1340492378-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1340492378:root",
+          "area": "code",
+          "fingerprint": "b98f3910c59af6f30c742b0ddc001315c2c176ee"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:37:30.049Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "img data URL而非内联SVG HTML，指针捕获与响应取消标志使交互实现明确；压缩字节限制不覆盖解码成本。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1340492378-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1340492378:root",
+          "area": "code",
+          "fingerprint": "b98f3910c59af6f30c742b0ddc001315c2c176ee"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:37:30.049Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "在统一资源入口提供无需外部应用的图片预览，缩放限制0.1至8倍、加载切换时丢弃旧响应；不是图像处理或模型识别。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1340492378-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1340492378:root",
+          "area": "code",
+          "fingerprint": "b98f3910c59af6f30c742b0ddc001315c2c176ee"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:37:30.049Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "20MiB文件限制和扩展名MIME映射不限制解码像素与内存，base64还放大传输；路径允许任意绝对文件，不能宣称工作区读隔离。旋转不产生可保存的新图。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1340492378-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1340492378:root",
+          "area": "code",
+          "fingerprint": "b98f3910c59af6f30c742b0ddc001315c2c176ee"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:37:30.049Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "未验证假设：读取前核像素与格式、对大图返回缩略图可降低峰值内存。用小压缩高像素、误扩展及普通截图比较内存、首屏延迟和拒绝提示。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1340492378-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1340492378:root",
+          "area": "code",
+          "fingerprint": "b98f3910c59af6f30c742b0ddc001315c2c176ee"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:37:30.049Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T05:37:30.049Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "b98f3910c59af6f30c742b0ddc001315c2c176ee",
+    "reviewed_at": "2026-10-21T05:37:30.049Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1340492378:root",
+        "area": "code",
+        "fingerprint": "b98f3910c59af6f30c742b0ddc001315c2c176ee"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 0,
+        "mechanism": 8,
+        "transferability": 5,
+        "simplification": 4
+      },
+      "rationale": "novelty=0：常规img交互无新方法。 mechanism=8：读取与视图变换接线清楚。 transferability=5：依赖Dock文件契约。 simplification=4：省切换但功能有限。",
+      "basis": "interpretation",
+      "score": 17,
+      "evidence_ids": [
+        "2026-10-21-06-github-1340492378-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 8,
+        "reach": 10,
+        "economics": 0
+      },
+      "rationale": "workflow=9：只有查看流程。 delivery=8：无图像编辑交付。 reach=10：本地图片查看用户。 economics=0：无收益对照。",
+      "basis": "interpretation",
+      "score": 27,
+      "evidence_ids": [
+        "2026-10-21-06-github-1340492378-root-source"
+      ]
+    }
+  }
+}

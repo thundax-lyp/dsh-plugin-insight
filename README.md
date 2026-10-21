@@ -8,12 +8,12 @@
 
 | 分类 | 用途 | 数量 |
 | --- | --- | ---: |
-| [个人效率](data/views/categories/PERSONAL-PRODUCTIVITY.md) | 输入、会话、快捷操作与个人工作体验 | 79 |
-| [办公与运营](data/views/categories/OFFICE-OPERATIONS.md) | 工作记录、日程、团队用量与日常运营 | 24 |
-| [研究与知识](data/views/categories/RESEARCH-KNOWLEDGE.md) | 信息检索、网页读取、笔记与长期知识 | 34 |
-| [基础设施](data/views/categories/INFRASTRUCTURE.md) | 模型接入、认证、运行环境与系统支撑 | 78 |
-| [软件交付](data/views/categories/SOFTWARE-DELIVERY.md) | 代码开发、任务编排、调试与交付流程 | 85 |
-| [内容生产](data/views/categories/CONTENT-CREATION.md) | 写作、语音、图片与视频内容生产 | 10 |
+| [个人效率](data/views/categories/PERSONAL-PRODUCTIVITY.md) | 输入、会话、快捷操作与个人工作体验 | 101 |
+| [办公与运营](data/views/categories/OFFICE-OPERATIONS.md) | 工作记录、日程、团队用量与日常运营 | 29 |
+| [研究与知识](data/views/categories/RESEARCH-KNOWLEDGE.md) | 信息检索、网页读取、笔记与长期知识 | 37 |
+| [基础设施](data/views/categories/INFRASTRUCTURE.md) | 模型接入、认证、运行环境与系统支撑 | 86 |
+| [软件交付](data/views/categories/SOFTWARE-DELIVERY.md) | 代码开发、任务编排、调试与交付流程 | 90 |
+| [内容生产](data/views/categories/CONTENT-CREATION.md) | 写作、语音、图片与视频内容生产 | 11 |
 | [其他](data/views/categories/OTHER.md) | 其他尚未归入上述场景的插件 | 3 |
 | [客户服务](data/views/categories/CUSTOMER-SERVICE.md) | 客户沟通、服务响应与支持流程 | 1 |
 
@@ -30,11 +30,11 @@
 
 > 最近30天已核实的新发布；重要更新待完成版本差异核查后纳入，不按仓库推送排名。
 
-- [dsh-language-guard](data/plugins/58fly--dsh-language-guard/INSIGHT.md) · 以系统提示片段和周期提醒约束回复语言，支持语言命令与界面语言跟随。 · 新发布：2026-10-20 · [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/58fly/dsh-language-guard) · [![npm 30d 暂未获取](https://img.shields.io/static/v1?label=npm+30d&message=%E6%9A%82%E6%9C%AA%E8%8E%B7%E5%8F%96&color=lightgrey&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-language-guard)
+- [dsh-language-guard](data/plugins/58fly--dsh-language-guard/INSIGHT.md) · 以可配置提示片段、语言命令和周期提醒约束 DSH 输出语言。 · 新发布：2026-10-20 · [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/58fly/dsh-language-guard) · [![npm 30d 暂未获取](https://img.shields.io/static/v1?label=npm+30d&message=%E6%9A%82%E6%9C%AA%E8%8E%B7%E5%8F%96&color=lightgrey&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-language-guard)
+- [dsh-vercel](data/plugins/adenxie--dsh-vercel/INSIGHT.md) · 将Vercel官方MCP接入DSH，提供OAuth、按Agent限额加载工具及结果检索与管理界面。 · 新发布：2026-10-19 · [![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/AdenXie/dsh-vercel) · [![npm 30d 暂未获取](https://img.shields.io/static/v1?label=npm+30d&message=%E6%9A%82%E6%9C%AA%E8%8E%B7%E5%8F%96&color=lightgrey&logo=npm&style=flat)](https://www.npmjs.com/package/@adenxie/dsh-vercel)
 - [dsh-domain-bridge](data/plugins/1lany2a--dsh-domain-role--plugins-dsh-domain-bridge/INSIGHT.md) · 为 DSH 顶层会话提供域寻址、消息投递、分级暂停与模型分派。 · 新发布：2026-10-18 · [![GitHub ★ 7](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7&color=yellow&logo=github&style=flat)](https://github.com/1Lany2a/dsh-domain-role) · [![npm 30d 372](https://img.shields.io/static/v1?label=npm+30d&message=372&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-domain-bridge)
 - [dsh-plugin-namecards](data/plugins/3tiga3--dsh-plugin-namecards/INSIGHT.md) · 为 DSH 插件列表添加本地名片、中文备注、图标、文件夹和收藏。 · 新发布：2026-10-18 · [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/3Tiga3/dsh-plugin-namecards) · [![npm 30d 860](https://img.shields.io/static/v1?label=npm+30d&message=860&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-namecards)
 - [dsh-search](data/plugins/439436269-ctrl--dsh-search/INSIGHT.md) · 把 DeepSeek Search/Fetch 接口接入 DSH，支持结构化搜索与正文抓取。 · 新发布：2026-10-17 · [![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/439436269-ctrl/dsh-search) · [![npm 30d 239](https://img.shields.io/static/v1?label=npm+30d&message=239&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@vfvrpq/dsh-search)
-- [VeriScope 门禁重放](data/plugins/4444wjt--dsh-plugin-veriscope/INSIGHT.md) · 对已有逐条评分执行三态阈值判定，保存并复验绑定输入与策略的回执。 · 新发布：2026-10-17 · [![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/4444wjt/dsh-plugin-veriscope) · [![npm 30d 956](https://img.shields.io/static/v1?label=npm+30d&message=956&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-veriscope)
 
 ## [最热](data/views/columns/HOT.md)
 
@@ -52,7 +52,7 @@
 
 <a id="category-personal-productivity"></a>
 
-### [个人效率（79）](data/views/categories/PERSONAL-PRODUCTIVITY.md)
+### [个人效率（101）](data/views/categories/PERSONAL-PRODUCTIVITY.md)
 
 <a id="plugin-1333328839-root"></a>
 
@@ -78,7 +78,11 @@
 
 <a id="category-office-operations"></a>
 
-### [办公与运营（24）](data/views/categories/OFFICE-OPERATIONS.md)
+### [办公与运营（29）](data/views/categories/OFFICE-OPERATIONS.md)
+
+<a id="plugin-1334428397-root"></a>
+
+- **[dsh-awiki](data/plugins/agentconnect--dsh-awiki/INSIGHT.md)**：把AWiki身份、设备加入/恢复、消息和邮件接入DSH，区分Host管理与模型可用操作。 [![GitHub ★ 19](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=19&color=yellow&logo=github&style=flat)](https://github.com/AgentConnect/dsh-awiki) · [![npm 30d 1584](https://img.shields.io/static/v1?label=npm+30d&message=1%2C584&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@awiki/dsh-plugin)
 
 <a id="plugin-1363429979-plugin-daily-log"></a>
 
@@ -92,19 +96,15 @@
 
 - **[chicheng-push](data/plugins/534119219--chicheng-push/INSIGHT.md)**：在 DSH 配置多种推送渠道，并通过进程内服务或 HTTP 接口发送通知。 [![GitHub ★ 7](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7&color=yellow&logo=github&style=flat)](https://github.com/534119219/chicheng-push)
 
-<a id="plugin-1336663504-root"></a>
+<a id="plugin-1335387524-root"></a>
 
-- **[dsh-plugin-finance-data](data/plugins/863683348--dsh-plugin-finance-data/INSIGHT.md)**：对调用者提供的财务数字执行格式化、收益、比率、风险和组合计算。 [![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=yellow&logo=github&style=flat)](https://github.com/863683348/dsh-plugin-finance-data) · [![npm 30d 1049](https://img.shields.io/static/v1?label=npm+30d&message=1%2C049&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-finance-data)
-
-<a id="plugin-1335286261-root"></a>
-
-- **[Markdown 批注器](data/plugins/3361805598-gif--dsh-md-annotator/INSIGHT.md)**：在 Better Sidebar 中预览和编辑 Markdown，把批注整理为会话草稿。 [![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/3361805598-gif/dsh-md-annotator)
+- **[dsh-msg-hub](data/plugins/abcdefgxw--dsh-msg-hub/INSIGHT.md)**：把微信、QQ、飞书消息接到 DSH 会话，并提供主动推送与远程审批。 [![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=yellow&logo=github&style=flat)](https://github.com/AbcdefgXW/dsh-msg-hub) · [![npm 30d 1207](https://img.shields.io/static/v1?label=npm+30d&message=1%2C207&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-msg-hub)
 
 [更多 办公与运营 →](data/views/categories/OFFICE-OPERATIONS.md)
 
 <a id="category-research-knowledge"></a>
 
-### [研究与知识（34）](data/views/categories/RESEARCH-KNOWLEDGE.md)
+### [研究与知识（37）](data/views/categories/RESEARCH-KNOWLEDGE.md)
 
 <a id="plugin-1341648244-root"></a>
 
@@ -130,7 +130,11 @@
 
 <a id="category-infrastructure"></a>
 
-### [基础设施（78）](data/views/categories/INFRASTRUCTURE.md)
+### [基础设施（86）](data/views/categories/INFRASTRUCTURE.md)
+
+<a id="plugin-1334255288-root"></a>
+
+- **[dsh-web-lan-access](data/plugins/acidgr--dsh-web-lan-access/INSIGHT.md)**：让DSH网页监听全部网卡，并为局域网页面提供Host能力声明与地址信任配置。 [![GitHub ★ 39](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=39&color=yellow&logo=github&style=flat)](https://github.com/AcidGr/dsh-web-lan-access) · [![npm 30d 1548](https://img.shields.io/static/v1?label=npm+30d&message=1%2C548&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-web-lan-access)
 
 <a id="plugin-1366089972-workspace-plugins-dsh-anatomy-panel"></a>
 
@@ -148,15 +152,11 @@
 
 - **[DSH-Official-WorkBuddy-Credit-Proxy](data/plugins/2861292267--dsh-official-workbuddy-credit-proxy/INSIGHT.md)**：将本机 WorkBuddy、CodeBuddy 账号接入 DSH 模型池，并提供多协议代理与积分面板。 [![GitHub ★ 17](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=17&color=yellow&logo=github&style=flat)](https://github.com/2861292267/DSH-Official-WorkBuddy-Credit-Proxy) · [![npm 30d 577](https://img.shields.io/static/v1?label=npm+30d&message=577&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-rotakit)
 
-<a id="plugin-1366089972-workspace-plugins-dsh-organism"></a>
-
-- **[dsh-organism](data/plugins/1420079678-ctrl--agent-body--workspace-plugins-dsh-organism/INSIGHT.md)**：把插件组织为可观测器官，提供心跳、反射、自愈账本和工具schema按需门控。 [![GitHub ★ 17](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=17&color=yellow&logo=github&style=flat)](https://github.com/1420079678-ctrl/agent-body)
-
 [更多 基础设施 →](data/views/categories/INFRASTRUCTURE.md)
 
 <a id="category-software-delivery"></a>
 
-### [软件交付（85）](data/views/categories/SOFTWARE-DELIVERY.md)
+### [软件交付（90）](data/views/categories/SOFTWARE-DELIVERY.md)
 
 <a id="plugin-1334304098-packages-helmd"></a>
 
@@ -166,6 +166,10 @@
 
 - **[dsh-wsl-workspace](data/plugins/dsh-wsl-workspace-maintainers--dsh-wsl-workspace/INSIGHT.md)**：在DSH界面添加WSL工作区，让会话的命令和文件工具使用Linux路径与发行版环境。 [![GitHub ★ 94](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=94&color=yellow&logo=github&style=flat)](https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace) · [![npm 30d 3340](https://img.shields.io/static/v1?label=npm+30d&message=3%2C340&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-wsl-workspace)
 
+<a id="plugin-1296792947-integrations-dsh-agentdebugx"></a>
+
+- **[AgentDebugX](data/plugins/agentdebugx--agentdebugx--integrations-dsh-agentdebugx/INSIGHT.md)**：按需将DSH当前或选定历史会话接入AgentDebugX诊断，并保存可关联的轨迹与报告。 [![GitHub ★ 66](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=66&color=yellow&logo=github&style=flat)](https://github.com/AgentDebugX/AgentDebugX) · [![npm 30d 792](https://img.shields.io/static/v1?label=npm+30d&message=792&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-agentdebugx)
+
 <a id="plugin-1339316901-root"></a>
 
 - **[dsh-project-memory](data/plugins/00080000--dsh-project-memory/INSIGHT.md)**：为项目保存任务、文档、代码符号与经验记录，支持跨会话检索和按条件注入。 [![GitHub ★ 23](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=23&color=yellow&logo=github&style=flat)](https://github.com/00080000/dsh-project-memory) · [![npm 30d 4533](https://img.shields.io/static/v1?label=npm+30d&message=4%2C533&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@yolk_vat-y/dsh-project-memory)
@@ -174,15 +178,11 @@
 
 - **[dsh-hdc-bridge](data/plugins/1na-ko--dsh-hdc-bridge/INSIGHT.md)**：在 DSH 中连接鸿蒙设备，构建调试应用并查询版本化开发知识。 [![GitHub ★ 19](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=19&color=yellow&logo=github&style=flat)](https://github.com/1na-ko/dsh-hdc-bridge) · [![npm 30d 1740](https://img.shields.io/static/v1?label=npm+30d&message=1%2C740&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-hdc-bridge)
 
-<a id="plugin-1366089972-workspace-plugins-dsh-zero-residence"></a>
-
-- **[dsh-zero-residence](data/plugins/1420079678-ctrl--agent-body--workspace-plugins-dsh-zero-residence/INSIGHT.md)**：把长会话内容压缩为可回查指针，提供账本、召回、强制压缩和异步命令入口。 [![GitHub ★ 17](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=17&color=yellow&logo=github&style=flat)](https://github.com/1420079678-ctrl/agent-body)
-
 [更多 软件交付 →](data/views/categories/SOFTWARE-DELIVERY.md)
 
 <a id="category-content-creation"></a>
 
-### [内容生产（10）](data/views/categories/CONTENT-CREATION.md)
+### [内容生产（11）](data/views/categories/CONTENT-CREATION.md)
 
 <a id="plugin-1334773156-root"></a>
 
@@ -196,13 +196,13 @@
 
 - **[No AI Style](data/plugins/01ngvi-qingyi--no-ai-style/INSIGHT.md)**：以写作 Skill 和输入框入口帮助润色中英日专业文本，保留事实、引文与不确定性。 [![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/01NGVI-QINGYI/no-ai-style)
 
+<a id="plugin-1352959121-root"></a>
+
+- **[dsh-ark9canvas](data/plugins/aik358--dsh-ark9canvas/INSIGHT.md)**：为DSH提供多渠道图片工作台、批量任务和Agent生图审批队列，生成结果保存为本地路径。 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/Aik358/dsh-ark9canvas) · [![npm 30d 877](https://img.shields.io/static/v1?label=npm+30d&message=877&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@a9i5k4/dsh-ark9canvas)
+
 <a id="plugin-1422216012-root"></a>
 
 - **[dsh-image2-tool](data/plugins/544244857--dsh-image2-plugin/INSIGHT.md)**：通过兼容图片接口生成或编辑图片，将结果保存到会话目录并支持内联预览。 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/544244857/dsh-image2-plugin) · [![npm 30d 582](https://img.shields.io/static/v1?label=npm+30d&message=582&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-image2-tool)
-
-<a id="plugin-1336663562-root"></a>
-
-- **[dsh-plugin-translation](data/plugins/863683348--dsh-plugin-translation/INSIGHT.md)**：为Agent翻译提供分段、术语提取、一致性检查、风格指南及工作区翻译记忆。 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/863683348/dsh-plugin-translation) · [![npm 30d 1042](https://img.shields.io/static/v1?label=npm+30d&message=1%2C042&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-translation)
 
 [更多 内容生产 →](data/views/categories/CONTENT-CREATION.md)
 

@@ -1,0 +1,7 @@
+{
+  "revision": "0fd11c38fa21d5639ea53f067a221d8ff7d8675c",
+  "items": {
+    "事件监听": "渠道入站与approval/request/Agent状态桥接。",
+    "后台": "三渠道连接、会话队列与dsh-channels-push服务，含远程审批等待。"
+  }
+}

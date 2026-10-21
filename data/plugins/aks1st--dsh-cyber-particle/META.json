@@ -1,0 +1,37 @@
+{
+  "repository": "AKS1st/dsh-cyber-particle",
+  "repository_id": 1334274281,
+  "captured_at": "2026-10-21T05:33:44.474Z",
+  "window_start": "2026-09-21T05:33:44.474Z",
+  "stars": 19,
+  "pushed_at": "2026-08-18T03:58:04Z",
+  "issues": {
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdsh-cyber-particle%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E024:274DC4:54CE3F:5AD951:6AD84EB9 and timestamp 2026-10-21 05:33:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdsh-cyber-particle%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E146:4C3CE:516A2B:5777E0:6AD84EBA and timestamp 2026-10-21 05:33:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdsh-cyber-particle%20is%3Aissue%20created%3A2026-09-21T05%3A33%3A44.474Z..2026-10-21T05%3A33%3A44.474Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E30A:4F777:52B838:58C315:6AD84EBC and timestamp 2026-10-21 05:33:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdsh-cyber-particle%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A33%3A44.474Z..2026-10-21T05%3A33%3A44.474Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E406:4B1BC:5152BC:575DB8:6AD84EBD and timestamp 2026-10-21 05:33:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdsh-cyber-particle%20is%3Aissue%20updated%3A2026-09-21T05%3A33%3A44.474Z..2026-10-21T05%3A33%3A44.474Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E4DA:3AE7C0:528F87:589A2B:6AD84EBE and timestamp 2026-10-21 05:33:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ]
+}

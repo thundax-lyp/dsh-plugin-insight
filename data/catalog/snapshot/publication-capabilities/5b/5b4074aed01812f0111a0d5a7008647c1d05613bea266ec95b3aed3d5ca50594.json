@@ -1,0 +1,9 @@
+{
+  "revision": "a8d1a444ffb02faa2818d12d6f0f1a1c22df1e57",
+  "items": {
+    "事件监听": "llm/stream与session/event统计",
+    "后台": "用量台账、持久化与历史回填",
+    "Host 路由": "/__musage-stats快照和配置",
+    "界面": "消费/趋势/价格与余额设置"
+  }
+}
