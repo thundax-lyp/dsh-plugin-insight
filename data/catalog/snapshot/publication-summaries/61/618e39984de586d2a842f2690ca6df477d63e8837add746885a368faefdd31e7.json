@@ -1,0 +1,5 @@
+{
+  "text": "统计DSH推理文本的词汇指纹并展示波段，可选分级提示、取消当前回合与重设persona/工具。",
+  "revision": "086bd05e1e3035ddf23133f3a0ee479291a4b237",
+  "source_url": "https://github.com/Aik358/dsh-anchored-monitor/blob/086bd05e1e3035ddf23133f3a0ee479291a4b237/README.md"
+}

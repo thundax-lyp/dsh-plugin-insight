@@ -1,0 +1,306 @@
+{
+  "id": "github:1334274281:root",
+  "repository_id": 1334274281,
+  "component_id": "root",
+  "repository": "AKS1st/dsh-cyber-particle",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-cyber-particle",
+  "entry_type": "plugin",
+  "technical_category": "interface-input",
+  "business_category": "personal-productivity",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "c58d18cd5a83efbc520329d55a0c6d391ce842df08bfd839807b926b79223c18",
+    "code": "e08111d59df009454d9de6b8384907f697e038f6",
+    "maintenance": "b6e27c592c9754a69a07a2322d93ddc740dd9c9360e1176a8d8a31e8ba80b8e5"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-06-github-1334274281-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T05:38:58.428Z",
+      "membership": "present"
+    },
+    {
+      "id": "2026-10-21-06-github-1334274281-root-directory-1",
+      "url": "https://github.com/0xsline/awesome-deepseek-harness",
+      "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
+      "retrieved_at": "2026-10-21T05:38:58.428Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-06-github-1334274281-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/AKS1st/dsh-cyber-particle/blob/e08111d59df009454d9de6b8384907f697e038f6/README.md",
+      "revision": "e08111d59df009454d9de6b8384907f697e038f6",
+      "captured_at": "2026-10-21T05:38:58.428Z",
+      "summary": "给DSH界面增加可配置Canvas粒子背景。",
+      "artifact": "data/runs/2026-10-21-06/snapshots/aks1st--dsh-cyber-particle/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-06-github-1334274281-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/AKS1st/dsh-cyber-particle/blob/e08111d59df009454d9de6b8384907f697e038f6/index.js",
+      "revision": "e08111d59df009454d9de6b8384907f697e038f6",
+      "captured_at": "2026-10-21T05:38:58.428Z",
+      "summary": "核查 index.js、client.js；client.js注册shell.overlay/settings.section，按视口密度生成粒子，以33ms宿主timer更新和两两连线；localStorage保存配置，无主机路由。",
+      "artifact": "data/runs/2026-10-21-06/snapshots/aks1st--dsh-cyber-particle/REVIEWED-SOURCE.json",
+      "limitations": [
+        "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "偏好动态视觉的用户个性化界面，不改善Agent工具流程。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1334274281-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334274281:root",
+          "area": "code",
+          "fingerprint": "e08111d59df009454d9de6b8384907f697e038f6"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:38:58.428Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "client.js注册shell.overlay/settings.section，按视口密度生成粒子，以33ms宿主timer更新和两两连线；localStorage保存配置，无主机路由。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1334274281-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334274281:root",
+          "area": "code",
+          "fingerprint": "e08111d59df009454d9de6b8384907f697e038f6"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:38:58.428Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1334274281-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334274281:root",
+          "area": "code",
+          "fingerprint": "e08111d59df009454d9de6b8384907f697e038f6"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:38:58.428Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "分发以本插件固定package.json、运行依赖与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1334274281-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334274281:root",
+          "area": "code",
+          "fingerprint": "e08111d59df009454d9de6b8384907f697e038f6"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:38:58.428Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "无token/网络服务费；持续CPU/GPU和电池成本，视觉干扰因人而异。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1334274281-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334274281:root",
+          "area": "code",
+          "fingerprint": "e08111d59df009454d9de6b8384907f697e038f6"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:38:58.428Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "按个人偏好试用，先核动画偏好与设备负载。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1334274281-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334274281:root",
+          "area": "code",
+          "fingerprint": "e08111d59df009454d9de6b8384907f697e038f6"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:38:58.428Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "个性化价值可见于实现，无生产效率证据。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1334274281-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334274281:root",
+          "area": "code",
+          "fingerprint": "e08111d59df009454d9de6b8384907f697e038f6"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:38:58.428Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "pointer-events:none及aria-hidden避免背景抢交互，隐藏停绘与配置释放明确；reduce恢复分支值得修正。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1334274281-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334274281:root",
+          "area": "code",
+          "fingerprint": "e08111d59df009454d9de6b8384907f697e038f6"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:38:58.428Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "视觉设置、视口密度归一、DPR上限和不可交互背景组成轻量皮肤；没有新的渲染算法或工作流机制。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1334274281-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334274281:root",
+          "area": "code",
+          "fingerprint": "e08111d59df009454d9de6b8384907f697e038f6"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:38:58.428Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "连线双循环随粒子数平方增长，240粒子上限仍需低端设备实测；首次prefers-reduced-motion会禁止start，但visibilitychange回到可见时无reduce判断再次start，减少动态偏好可能被破坏。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1334274281-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334274281:root",
+          "area": "code",
+          "fingerprint": "e08111d59df009454d9de6b8384907f697e038f6"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:38:58.428Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "未验证假设：统一动画许可谓词并监听偏好变化，可保证隐藏/回前台都尊重减少动态。以reduce开关、切后台和高密度测试timer与帧耗时；未达预算自动降密度。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1334274281-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334274281:root",
+          "area": "code",
+          "fingerprint": "e08111d59df009454d9de6b8384907f697e038f6"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:38:58.428Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T05:38:58.428Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "e08111d59df009454d9de6b8384907f697e038f6",
+    "reviewed_at": "2026-10-21T05:38:58.428Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1334274281:root",
+        "area": "code",
+        "fingerprint": "e08111d59df009454d9de6b8384907f697e038f6"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 0,
+        "mechanism": 8,
+        "transferability": 5,
+        "simplification": 0
+      },
+      "rationale": "novelty=0：常见粒子背景。 mechanism=8：有密度和生命周期实现。 transferability=5：可移植视觉，宿主接线较薄。 simplification=0：无任务简化。",
+      "basis": "interpretation",
+      "score": 13,
+      "evidence_ids": [
+        "2026-10-21-06-github-1334274281-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 0,
+        "delivery": 8,
+        "reach": 5,
+        "economics": 0
+      },
+      "rationale": "workflow=0：不形成业务流程。 delivery=8：仅视觉效果交付。 reach=5：个性化偏好受众。 economics=0：没有生产收益。",
+      "basis": "interpretation",
+      "score": 13,
+      "evidence_ids": [
+        "2026-10-21-06-github-1334274281-root-source"
+      ]
+    }
+  }
+}

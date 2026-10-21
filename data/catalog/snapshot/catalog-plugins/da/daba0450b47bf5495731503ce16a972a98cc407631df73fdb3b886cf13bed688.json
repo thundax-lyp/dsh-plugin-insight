@@ -1,0 +1,299 @@
+{
+  "id": "github:1336106328:root",
+  "repository_id": 1336106328,
+  "component_id": "root",
+  "repository": "AKS1st/dsh-skill-manager",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-skill-manager",
+  "entry_type": "plugin",
+  "technical_category": "tools-integration",
+  "business_category": "infrastructure",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "ffa4313558ea1c8f0ed5b88853fd3b86a7adc159ecf57c547df6fe73b075c558",
+    "code": "fb452031031ea50a3287292d22b54e765d1039dc",
+    "maintenance": "d0cfaa29c13590ba616165b081b691119ca37962952928f656890cac96e32f64"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-06-github-1336106328-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T05:40:37.830Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-06-github-1336106328-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/AKS1st/dsh-skill-manager/blob/fb452031031ea50a3287292d22b54e765d1039dc/README.md",
+      "revision": "fb452031031ea50a3287292d22b54e765d1039dc",
+      "captured_at": "2026-10-21T05:40:37.830Z",
+      "summary": "在设置界面分层浏览、编辑和导入导出技能目录。",
+      "artifact": "data/runs/2026-10-21-06/snapshots/aks1st--dsh-skill-manager/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-06-github-1336106328-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/AKS1st/dsh-skill-manager/blob/fb452031031ea50a3287292d22b54e765d1039dc/src/index.ts",
+      "revision": "fb452031031ea50a3287292d22b54e765d1039dc",
+      "captured_at": "2026-10-21T05:40:37.830Z",
+      "summary": "核查 src/index.ts、src/client/index.ts；主机skillManager服务经connection.fetch精确RPC路由提供list/files/read/write/import/export/delete/toggle；客户端设置页与编辑器调用。枚举后建立canonical可读/可写目录白名单。",
+      "artifact": "data/runs/2026-10-21-06/snapshots/aks1st--dsh-skill-manager/REVIEWED-SOURCE.json",
+      "limitations": [
+        "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "维护用户或项目技能并识别只读系统/预设来源。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1336106328-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336106328:root",
+          "area": "code",
+          "fingerprint": "fb452031031ea50a3287292d22b54e765d1039dc"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:37.830Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "主机skillManager服务经connection.fetch精确RPC路由提供list/files/read/write/import/export/delete/toggle；客户端设置页与编辑器调用。枚举后建立canonical可读/可写目录白名单。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1336106328-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336106328:root",
+          "area": "code",
+          "fingerprint": "fb452031031ea50a3287292d22b54e765d1039dc"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:37.830Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1336106328-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336106328:root",
+          "area": "code",
+          "fingerprint": "fb452031031ea50a3287292d22b54e765d1039dc"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:37.830Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "分发以本插件固定package.json、运行依赖与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1336106328-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336106328:root",
+          "area": "code",
+          "fingerprint": "fb452031031ea50a3287292d22b54e765d1039dc"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:37.830Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "维护宿主多来源API、目录扫描及解压限制；无内建模型token，人工仍审技能指令和脚本。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1336106328-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336106328:root",
+          "area": "code",
+          "fingerprint": "fb452031031ea50a3287292d22b54e765d1039dc"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:37.830Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "可先只读浏览；在验证多文件ZIP完整性前不要依赖导入成功作为可运行验收。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1336106328-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336106328:root",
+          "area": "code",
+          "fingerprint": "fb452031031ea50a3287292d22b54e765d1039dc"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:37.830Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "有简化技能维护的实现，未证明导入完整或维护工时下降。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1336106328-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336106328:root",
+          "area": "code",
+          "fingerprint": "fb452031031ea50a3287292d22b54e765d1039dc"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:37.830Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "5000树节点、2000ZIP条目与解压前声明100MiB预算、规范路径和frontmatter gate有明确边界；这些不替代导入语义校验。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1336106328-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336106328:root",
+          "area": "code",
+          "fingerprint": "fb452031031ea50a3287292d22b54e765d1039dc"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:37.830Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "把来源层级与文件可写性绑定，系统/预设只读，realpath校验避免路径逃逸；SKILL前置校验减少错误保存导致技能消失。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1336106328-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336106328:root",
+          "area": "code",
+          "fingerprint": "fb452031031ea50a3287292d22b54e765d1039dc"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:37.830Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "ZIP规范化时skillNameByEntry只记录SKILL.md或顶层md，提取循环对其他条目因未映射而continue，因此脚本/引用附件可能未导入，技能列表成功不等于资源包完整。写入也无版本冲突比较，前置格式校验不等于技能语义正确。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1336106328-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336106328:root",
+          "area": "code",
+          "fingerprint": "fb452031031ea50a3287292d22b54e765d1039dc"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:37.830Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "未验证假设：按顶层技能目录归属解包全部合法资源，并以manifest摘要做导出再导入一致性核查，可防“有Skill无脚本”。用含references/scripts、多技能与路径逃逸ZIP比较字节集合及拒绝行为。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1336106328-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336106328:root",
+          "area": "code",
+          "fingerprint": "fb452031031ea50a3287292d22b54e765d1039dc"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:37.830Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T05:40:37.830Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "fb452031031ea50a3287292d22b54e765d1039dc",
+    "reviewed_at": "2026-10-21T05:40:37.830Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1336106328:root",
+        "area": "code",
+        "fingerprint": "fb452031031ea50a3287292d22b54e765d1039dc"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 15,
+        "transferability": 10,
+        "simplification": 4
+      },
+      "rationale": "novelty=9：常规技能文件管理。 mechanism=15：分层权限与资源管理有机制。 transferability=10：宿主来源接口限制迁移。 simplification=4：省目录操作但需复核导入。",
+      "basis": "interpretation",
+      "score": 38,
+      "evidence_ids": [
+        "2026-10-21-06-github-1336106328-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 8,
+        "reach": 10,
+        "economics": 4
+      },
+      "rationale": "workflow=9：编辑管理闭环明确。 delivery=8：多文件ZIP完整性存疑。 reach=10：面向技能维护者。 economics=4：未测工时，维护风险具体。 工作流仅取25%档：主要聚合既有个人操作，未证明改变任务组织、分工或交接责任。",
+      "basis": "interpretation",
+      "score": 31,
+      "evidence_ids": [
+        "2026-10-21-06-github-1336106328-root-source"
+      ]
+    }
+  }
+}

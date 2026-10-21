@@ -1,0 +1,17 @@
+{
+  "id": "github:1352959121:root",
+  "repository": "Aik358/dsh-ark9canvas",
+  "path": "",
+  "revision": "adc7072ad4d76ba2c57a81a8cdec85a0d42afdc1",
+  "fingerprints": {
+    "directory": "3507d89ece59acde908fc20d1301102c78c206e80d5f7d7099a7311f58bd5275",
+    "code": "adc7072ad4d76ba2c57a81a8cdec85a0d42afdc1",
+    "maintenance": "e1a8bc5dc918695b7d4c1307d3dd82913c159549f4fd9cdd3c02975171e1f3d1"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T05:26:52Z",
+  "analysis_sha256": "a7c090056b6729094f3626099733fa785d124acd4e4c1f9d5b1b0f2385b3eaca"
+}

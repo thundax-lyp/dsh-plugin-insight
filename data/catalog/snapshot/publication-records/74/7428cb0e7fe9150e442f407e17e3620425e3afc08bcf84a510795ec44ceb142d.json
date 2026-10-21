@@ -1,0 +1,17 @@
+{
+  "id": "github:1389469406:root",
+  "repository": "Aicksion/dsh-clean-desktop-shell-pro",
+  "path": "",
+  "revision": "03fdf5d8b0959c3738cdb3d887baa6d017443fe6",
+  "fingerprints": {
+    "directory": "804f5bace132d1ca3dcde2d8c296b4bfc3a3b5d9ea062fc69071ee4d59db69df",
+    "code": "03fdf5d8b0959c3738cdb3d887baa6d017443fe6",
+    "maintenance": "98518fb75d7aad66a4fe955c6cfe827182a9ee8c0cabccb04959f1601cb8d9a6"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T05:26:52Z",
+  "analysis_sha256": "d34664b966cb19a9327ce964fbbd771bf459d3f932e6bed85d3f5a63267ba5c0"
+}

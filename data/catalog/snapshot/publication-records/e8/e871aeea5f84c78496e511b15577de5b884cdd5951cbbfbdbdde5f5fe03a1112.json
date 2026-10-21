@@ -1,0 +1,18 @@
+{
+  "id": "github:1334569498:root",
+  "repository": "AKS1st/dsh-mermaid",
+  "path": "",
+  "revision": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48",
+  "fingerprints": {
+    "directory": "b139a9baf78efe6680a8213c3949f928311d0087ac8aec37e4067d11924832ad",
+    "code": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48",
+    "maintenance": "a864c310f36df7d756f71ad7e2b4bb01cadd639b6d35ca9bcfcee24051118f7b"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+    "https://github.com/0xsline/awesome-deepseek-harness"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T05:26:52Z",
+  "analysis_sha256": "f2f6ee04b2e63538c565ac30dfe4991a732d025e540eac6b77c7ec4e66ac411d"
+}

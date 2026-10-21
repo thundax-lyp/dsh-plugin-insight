@@ -1,0 +1,27 @@
+{
+  "plugin_id": "github:1333928744:root",
+  "revision": "550a87713562a4a09d249ada074d2a17954b794e",
+  "reason_code": "source_contains_nul",
+  "reason": "固定文件docs/teamwork-impl/04-同步原语与服务端契约.md含2个NUL字节，标准文本统计拒绝；未生成完整inventory。",
+  "details": {
+    "reason_code": "source_contains_nul",
+    "reason": "固定文件docs/teamwork-impl/04-同步原语与服务端契约.md含2个NUL字节，标准文本统计拒绝；未生成完整inventory。",
+    "plugin_id": "github:1333928744:root",
+    "revision": "550a87713562a4a09d249ada074d2a17954b794e",
+    "details": {
+      "path": "docs/teamwork-impl/04-同步原语与服务端契约.md",
+      "bytes": 32741,
+      "nul_bytes": 2,
+      "nul_offsets": [
+        20910,
+        20928
+      ],
+      "utf8_error": null,
+      "sha256": "bad66bf62921a5ad9f62c94223a302dfc457107cd0126e3500ff3c4e343f2637",
+      "source_url": "https://github.com/Aik358/dsh-auto-memory/blob/550a87713562a4a09d249ada074d2a17954b794e/docs/teamwork-impl/04-同步原语与服务端契约.md"
+    },
+    "next_step": "请维护者澄清NUL并提供可统计的新固定修订；不修改原始文件，不把统计拒绝解释为运行失败。"
+  },
+  "blocked_at": "2026-10-21T05:39:07.835Z",
+  "run_id": "2026-10-21-06"
+}

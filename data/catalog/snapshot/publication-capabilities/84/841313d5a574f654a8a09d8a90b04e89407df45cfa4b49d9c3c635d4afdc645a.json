@@ -1,0 +1,8 @@
+{
+  "revision": "429ce915f6438295078e53739dbb1dfe70074ccc",
+  "items": {
+    "Skill": "注册anet、anet-setup、anet-status三份组件Skill。",
+    "模型工具": "patch经官方MCP client接入外部anet mcp；14项工具为作者说明，本组件只确认连接配置。",
+    "后台": "stdio MCP launcher统一二进制与identity；daemon由外部ANet维护。"
+  }
+}

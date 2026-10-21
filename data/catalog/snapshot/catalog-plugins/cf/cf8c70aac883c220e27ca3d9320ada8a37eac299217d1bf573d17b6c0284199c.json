@@ -1,0 +1,299 @@
+{
+  "id": "github:1335060115:root",
+  "repository_id": 1335060115,
+  "component_id": "root",
+  "repository": "AKS1st/dsh-archived-conversations",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-archived-conversations",
+  "entry_type": "plugin",
+  "technical_category": "sessions-messages",
+  "business_category": "personal-productivity",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "ede43465ec4526f2f4d9546e77bc9aea86b4b9a22ae567721f5fd5a3f7be5f73",
+    "code": "cb1afc38e44c58da2d3e50954b83430cac6e1c12",
+    "maintenance": "42516a6709a109aa937b996c4dccc9eefc51a6e98717f2f7cfb4e726b34296c0"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-06-github-1335060115-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T05:38:57.343Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-06-github-1335060115-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/AKS1st/dsh-archived-conversations/blob/cb1afc38e44c58da2d3e50954b83430cac6e1c12/README.md",
+      "revision": "cb1afc38e44c58da2d3e50954b83430cac6e1c12",
+      "captured_at": "2026-10-21T05:38:57.343Z",
+      "summary": "在设置页列出归档会话并提供最小只读文本预览。",
+      "artifact": "data/runs/2026-10-21-06/snapshots/aks1st--dsh-archived-conversations/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-06-github-1335060115-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/AKS1st/dsh-archived-conversations/blob/cb1afc38e44c58da2d3e50954b83430cac6e1c12/src/index.ts",
+      "revision": "cb1afc38e44c58da2d3e50954b83430cac6e1c12",
+      "captured_at": "2026-10-21T05:38:57.343Z",
+      "summary": "核查 src/index.ts、src/client/index.js；客户端使用标准useSessions/useWorkspaces列归档ID，主机先核workspaceRegistry归档成员，再用sessionQuery读记录，仅抽最近6条真实user/assistant文本，每条400字符。",
+      "artifact": "data/runs/2026-10-21-06/snapshots/aks1st--dsh-archived-conversations/REVIEWED-SOURCE.json",
+      "limitations": [
+        "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "找回已归档对话的大意，不能用来恢复或继续原会话。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1335060115-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335060115:root",
+          "area": "code",
+          "fingerprint": "cb1afc38e44c58da2d3e50954b83430cac6e1c12"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:38:57.343Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "客户端使用标准useSessions/useWorkspaces列归档ID，主机先核workspaceRegistry归档成员，再用sessionQuery读记录，仅抽最近6条真实user/assistant文本，每条400字符。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1335060115-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335060115:root",
+          "area": "code",
+          "fingerprint": "cb1afc38e44c58da2d3e50954b83430cac6e1c12"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:38:57.343Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1335060115-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335060115:root",
+          "area": "code",
+          "fingerprint": "cb1afc38e44c58da2d3e50954b83430cac6e1c12"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:38:57.343Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "分发以本插件固定package.json、运行依赖与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1335060115-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335060115:root",
+          "area": "code",
+          "fingerprint": "cb1afc38e44c58da2d3e50954b83430cac6e1c12"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:38:57.343Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "无模型调用；全日志读取与客户端列表成本随历史增长，宿主事件结构升级需维护。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1335060115-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335060115:root",
+          "area": "code",
+          "fingerprint": "cb1afc38e44c58da2d3e50954b83430cac6e1c12"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:38:57.343Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "用于本机归档摘要；确认片段不足以替代全文证据，远程使用需另设计授权。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1335060115-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335060115:root",
+          "area": "code",
+          "fingerprint": "cb1afc38e44c58da2d3e50954b83430cac6e1c12"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:38:57.343Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "便于回忆历史，未证明检索效率提升，不是完整历史搜索。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1335060115-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335060115:root",
+          "area": "code",
+          "fingerprint": "cb1afc38e44c58da2d3e50954b83430cac6e1c12"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:38:57.343Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "固定错误文本、no-store、loopback Host/来源/成员多层检查与显式截断，接口范围清楚。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1335060115-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335060115:root",
+          "area": "code",
+          "fingerprint": "cb1afc38e44c58da2d3e50954b83430cac6e1c12"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:38:57.343Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "以归档成员验证和文本最小返回实现有界可见性，跳过工具/推理及注入上下文，比整份日志暴露更克制。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1335060115-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335060115:root",
+          "area": "code",
+          "fingerprint": "cb1afc38e44c58da2d3e50954b83430cac6e1c12"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:38:57.343Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "返回上限不代表读取成本上限：readSession先获得全部events再遍历，大归档仍可能昂贵。loopback限定会阻止远程Web使用；不能将“当前无取消归档API”的作者版本说明泛化为宿主永久限制。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1335060115-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335060115:root",
+          "area": "code",
+          "fingerprint": "cb1afc38e44c58da2d3e50954b83430cac6e1c12"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:38:57.343Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "未验证假设：sessionQuery提供末尾有界读取与预览摘要缓存可降低大归档耗时，同时维持成员校验。用大小不同归档、取消归档并发和远程请求比较延迟/错误暴露。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1335060115-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335060115:root",
+          "area": "code",
+          "fingerprint": "cb1afc38e44c58da2d3e50954b83430cac6e1c12"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:38:57.343Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T05:38:57.343Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "cb1afc38e44c58da2d3e50954b83430cac6e1c12",
+    "reviewed_at": "2026-10-21T05:38:57.343Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1335060115:root",
+        "area": "code",
+        "fingerprint": "cb1afc38e44c58da2d3e50954b83430cac6e1c12"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 15,
+        "transferability": 5,
+        "simplification": 4
+      },
+      "rationale": "novelty=9：归档预览是常规功能。 mechanism=15：成员及文本过滤具体。 transferability=5：事件与本机限制影响迁移。 simplification=4：少步骤但不提供全文恢复。",
+      "basis": "interpretation",
+      "score": 33,
+      "evidence_ids": [
+        "2026-10-21-06-github-1335060115-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 8,
+        "reach": 10,
+        "economics": 0
+      },
+      "rationale": "workflow=9：只读回忆流程有限。 delivery=8：片段完整性不适合正式交付。 reach=10：本机归档用户。 economics=0：无检索成本对照。",
+      "basis": "interpretation",
+      "score": 27,
+      "evidence_ids": [
+        "2026-10-21-06-github-1335060115-root-source"
+      ]
+    }
+  }
+}

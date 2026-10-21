@@ -1,0 +1,44 @@
+{
+  "repository": "AcidGr/dsh-web-lan-access",
+  "repository_id": 1334255288,
+  "captured_at": "2026-10-21T05:34:26.960Z",
+  "window_start": "2026-09-21T05:34:26.960Z",
+  "stars": 39,
+  "pushed_at": "2026-10-17T17:57:09Z",
+  "issues": {
+    "open": 0,
+    "closed": 3,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3AAcidGr%2Fdsh-web-lan-access%20is%3Aissue%20created%3A2026-09-21T05%3A34%3A26.960Z..2026-10-21T05%3A34%3A26.960Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8B42:F5216:AD369E:F8F9C3:6AD84EE6 and timestamp 2026-10-21 05:34:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3AAcidGr%2Fdsh-web-lan-access%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A34%3A26.960Z..2026-10-21T05%3A34%3A26.960Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8C50:1B0790:ABCEF3:F7CC56:6AD84EE7 and timestamp 2026-10-21 05:34:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3AAcidGr%2Fdsh-web-lan-access%20is%3Aissue%20updated%3A2026-09-21T05%3A34%3A26.960Z..2026-10-21T05%3A34%3A26.960Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8D86:1B0790:ABD082:F7CE5F:6AD84EE8 and timestamp 2026-10-21 05:34:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "dsh-web-lan-access",
+    "captured_at": "2026-10-21T05:34:33.449Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": 1548,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-web-lan-access",
+    "error": null,
+    "publication": {
+      "first_published_at": "2026-08-14T14:57:40.425Z",
+      "captured_at": "2026-10-21T05:34:33.449Z",
+      "source_url": "https://registry.npmjs.org/dsh-web-lan-access",
+      "error": null
+    }
+  }
+}

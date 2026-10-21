@@ -1,0 +1,299 @@
+{
+  "id": "github:1302597978:deploy-plugins-dist-dsh",
+  "repository_id": 1302597978,
+  "component_id": "deploy-plugins-dist-dsh",
+  "repository": "ANetResearch/ANet",
+  "path": "deploy/plugins/dist/dsh",
+  "aliases": [],
+  "name": "ANet DSH 适配组件",
+  "entry_type": "plugin",
+  "technical_category": "tools-integration",
+  "business_category": "infrastructure",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "eea52ac7ea2beae19e40356691d5db3095b63683cc8ee22ece28a7181606d1af",
+    "code": "429ce915f6438295078e53739dbb1dfe70074ccc",
+    "maintenance": "7f14d77dbf200ba8122994885b2931115e7726b130f6d50f6fe1c612a5ad293a"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-06-github-1302597978-deploy-plugins-dist-dsh-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T05:41:14.044Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-06-github-1302597978-deploy-plugins-dist-dsh-author",
+      "kind": "author_claim",
+      "url": "https://github.com/ANetResearch/ANet/blob/429ce915f6438295078e53739dbb1dfe70074ccc/deploy/plugins/dist/dsh/README.md",
+      "revision": "429ce915f6438295078e53739dbb1dfe70074ccc",
+      "captured_at": "2026-10-21T05:41:14.044Z",
+      "summary": "以 Skill 与 MCP 启动器将 DSH 接到本地 ANet 节点。",
+      "artifact": "data/runs/2026-10-21-06/snapshots/anetresearch--anet--deploy-plugins-dist-dsh/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-06-github-1302597978-deploy-plugins-dist-dsh-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/ANetResearch/ANet/blob/429ce915f6438295078e53739dbb1dfe70074ccc/deploy/plugins/dist/dsh/index.js",
+      "revision": "429ce915f6438295078e53739dbb1dfe70074ccc",
+      "captured_at": "2026-10-21T05:41:14.044Z",
+      "summary": "核查 deploy/plugins/dist/dsh/index.js、deploy/plugins/dist/dsh/skills.js、deploy/plugins/dist/dsh/cordis.patch.yml、deploy/plugins/dist/dsh/bin/anet-run.sh、deploy/plugins/dist/dsh/bin/anet-mcp.sh、deploy/plugins/dist/dsh/skills/anet/SKILL.md、deploy/plugins/dist/dsh/package.json；组件index提供bundle root/两项设置，并把可执行文件与identity映射进进程环境；skills.js读取三份Skill、替换转义后的bundle路径。patch用官方MCP client启动POSIX脚本，再由anet-run统一可执行文件/身份执行anet mcp；实际任务、加密、支付和审计位于外部ANet程序。",
+      "artifact": "data/runs/2026-10-21-06/snapshots/anetresearch--anet--deploy-plugins-dist-dsh/REVIEWED-SOURCE.json",
+      "limitations": [
+        "只统计deploy/plugins/dist/dsh组件；抽读index、skills注册、patch、两个launcher和anet主Skill，未审计上游daemon/密码学/支付实现，README主张不升级成独立验证。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "已有ANet身份与节点的用户从DSH发现其他Agent、发任务、跟踪回执并处理报价；交付物是外部任务结果与状态，不代表结果已验真。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1302597978-deploy-plugins-dist-dsh-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1302597978:deploy-plugins-dist-dsh",
+          "area": "code",
+          "fingerprint": "429ce915f6438295078e53739dbb1dfe70074ccc"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:41:14.044Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "组件index提供bundle root/两项设置，并把可执行文件与identity映射进进程环境；skills.js读取三份Skill、替换转义后的bundle路径。patch用官方MCP client启动POSIX脚本，再由anet-run统一可执行文件/身份执行anet mcp；实际任务、加密、支付和审计位于外部ANet程序。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1302597978-deploy-plugins-dist-dsh-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1302597978:deploy-plugins-dist-dsh",
+          "area": "code",
+          "fingerprint": "429ce915f6438295078e53739dbb1dfe70074ccc"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:41:14.044Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "只统计deploy/plugins/dist/dsh组件；抽读index、skills注册、patch、两个launcher和anet主Skill，未审计上游daemon/密码学/支付实现，README主张不升级成独立验证。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1302597978-deploy-plugins-dist-dsh-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1302597978:deploy-plugins-dist-dsh",
+          "area": "code",
+          "fingerprint": "429ce915f6438295078e53739dbb1dfe70074ccc"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:41:14.044Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "组件是整仓deploy/plugins/dist/dsh的dsh-anet 0.1.3 bundle，声明DSH 0.2范围；POSIX launcher不支持Windows，需外部anet>=0.3.0与运行中的daemon。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1302597978-deploy-plugins-dist-dsh-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1302597978:deploy-plugins-dist-dsh",
+          "area": "code",
+          "fingerprint": "429ce915f6438295078e53739dbb1dfe70074ccc"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:41:14.044Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "现金：外部报价和本地Agent模型开销由限额与任务决定；人工：安装身份、常驻节点、hub加入、授权和未知结果追踪。setup可能下载执行安装器，仅按Skill要求经用户同意，本轮未做。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1302597978-deploy-plugins-dist-dsh-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1302597978:deploy-plugins-dist-dsh",
+          "area": "code",
+          "fingerprint": "429ce915f6438295078e53739dbb1dfe70074ccc"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:41:14.044Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "已有受信ANet场景者可把它当连接器评估；没有节点/身份或无法确认外部能力边界时，不据此推荐发送业务数据或支付。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1302597978-deploy-plugins-dist-dsh-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1302597978:deploy-plugins-dist-dsh",
+          "area": "code",
+          "fingerprint": "429ce915f6438295078e53739dbb1dfe70074ccc"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:41:14.044Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "统一DSH到节点的配置，强调完成状态不等于正确、未知效果不能重试；尚无跨Agent质量/费用收益验证。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1302597978-deploy-plugins-dist-dsh-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1302597978:deploy-plugins-dist-dsh",
+          "area": "code",
+          "fingerprint": "429ce915f6438295078e53739dbb1dfe70074ccc"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:41:14.044Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "显式配置路径必须绝对且可执行，错误不偷偷换另一副本；Skill路径转义支持特殊字符；环境恢复仅在值仍为本插件所设时进行。MCP 15分钟timeout配置只是等待上限，不是任务取消保证。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1302597978-deploy-plugins-dist-dsh-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1302597978:deploy-plugins-dist-dsh",
+          "area": "code",
+          "fingerprint": "429ce915f6438295078e53739dbb1dfe70074ccc"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:41:14.044Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "组件的实际贡献是让MCP与Skill命令到达同一身份/二进制，并把长等待、未知执行效果和运营者限额写进使用协议；不把整仓A2A、加密、支付系统当作本适配组件原创。相对手写MCP配置，减少路径与身份不一致。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1302597978-deploy-plugins-dist-dsh-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1302597978:deploy-plugins-dist-dsh",
+          "area": "code",
+          "fingerprint": "429ce915f6438295078e53739dbb1dfe70074ccc"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:41:14.044Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "协议说明能否保证跨Agent副作用不重复？Skill要求wait超时继续等、未知效果不重发，并区分completed/UNVERIFIED，但执行保障在外部daemon，组件未实现幂等或支付限额校验。组件改process.env是进程共享状态，多profile/其他插件并行时的设置归属也不能只靠dispose恢复证明隔离。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1302597978-deploy-plugins-dist-dsh-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1302597978:deploy-plugins-dist-dsh",
+          "area": "code",
+          "fingerprint": "429ce915f6438295078e53739dbb1dfe70074ccc"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:41:14.044Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "如果适配层把任务ID、message_id、效果状态和支付回执组成只读交接凭证，父Agent在未知状态下只能继续查询原任务，可能降低重复派单/支付。对超时、断线、相同文本新任务及换身份四种案例检查既不重发又不吞新请求；若只提示而无可核验状态，不能声称获得执行级保证。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1302597978-deploy-plugins-dist-dsh-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1302597978:deploy-plugins-dist-dsh",
+          "area": "code",
+          "fingerprint": "429ce915f6438295078e53739dbb1dfe70074ccc"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:41:14.044Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T05:41:14.044Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "429ce915f6438295078e53739dbb1dfe70074ccc",
+    "reviewed_at": "2026-10-21T05:41:14.044Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1302597978:deploy-plugins-dist-dsh",
+        "area": "code",
+        "fingerprint": "429ce915f6438295078e53739dbb1dfe70074ccc"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "新颖性9：MCP和Skill包装为已有接入模式；机制8：身份/路径统一和环境恢复具体但核心网络在外部；迁移性10：统一launcher与未知结果指引可借鉴；简化8：减少配置重复。",
+      "basis": "interpretation",
+      "score": 35,
+      "evidence_ids": [
+        "2026-10-21-06-github-1302597978-deploy-plugins-dist-dsh-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 8,
+        "reach": 5,
+        "economics": 4
+      },
+      "rationale": "工作流9：组件接入已有外部派单流程，未在组件实现结算责任变化；交付8：Skill教正确报告状态，非独立验真；覆盖5：依赖ANet节点且launcher限POSIX；经济4：外部报价/人工等待未测。",
+      "basis": "interpretation",
+      "score": 26,
+      "evidence_ids": [
+        "2026-10-21-06-github-1302597978-deploy-plugins-dist-dsh-source"
+      ]
+    }
+  }
+}

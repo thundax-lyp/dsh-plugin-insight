@@ -1,0 +1,17 @@
+{
+  "id": "github:1412623357:root",
+  "repository": "AhYi8/dsh-gotify-notify",
+  "path": "",
+  "revision": "6fe16310caa4233bb09086cd76c8dfb4b3e871c7",
+  "fingerprints": {
+    "directory": "c6e98f08572541ff5f559cf915a61d7c3228ce0bc655ba6235e771156896d95f",
+    "code": "6fe16310caa4233bb09086cd76c8dfb4b3e871c7",
+    "maintenance": "8cdc99c9f85902a8033896e41d3bdb686028c3225eccd0b1e4bb72324132387f"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T05:26:52Z",
+  "analysis_sha256": "a0cda82d97b0076024ad8feb5b88100d4d994b8882e15e52a2398beda1f1aab7"
+}

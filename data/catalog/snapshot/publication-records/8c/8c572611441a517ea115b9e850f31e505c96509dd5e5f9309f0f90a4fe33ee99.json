@@ -1,0 +1,17 @@
+{
+  "id": "github:1340492424:root",
+  "repository": "AKS1st/dock-markdown",
+  "path": "",
+  "revision": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54",
+  "fingerprints": {
+    "directory": "2c2334d69874ce1966cf8536b21f3897dfa732c7bac122fa3a89af4a96c3e1eb",
+    "code": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54",
+    "maintenance": "3c435994189e924eccbe87bd7cc9c189e9b5de8f2bf6b29fcf57794952524fe4"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T05:26:52Z",
+  "analysis_sha256": "325e53a57428ae1b91310b7a3562379cb3d5db248791542c454d63afd2223066"
+}

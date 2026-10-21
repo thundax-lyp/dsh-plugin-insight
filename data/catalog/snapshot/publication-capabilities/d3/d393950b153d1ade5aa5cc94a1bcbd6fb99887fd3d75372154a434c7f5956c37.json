@@ -1,0 +1,8 @@
+{
+  "revision": "c915fdb857bea9380ed0c181169d43c8350c4d7e",
+  "items": {
+    "Host 路由": "通过typert/localStore声明ToolsApi管理RPC，非额外手写HTTP路径。",
+    "界面": "会话/回收站/搜索/配置等Web工具箱入口。",
+    "后台": "间隔/定点心跳与回收站保留期清理，可选msg-hub渠道任务。"
+  }
+}

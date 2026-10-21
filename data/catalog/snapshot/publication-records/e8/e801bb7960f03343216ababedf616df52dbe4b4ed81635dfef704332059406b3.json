@@ -1,0 +1,17 @@
+{
+  "id": "github:1404720276:root",
+  "repository": "AL1ghtm3ter/dsh-right-click-menu",
+  "path": "",
+  "revision": "9976d213318032c6f128e3affa5d1b873cd47871",
+  "fingerprints": {
+    "directory": "df4ad07767d597eac92f9017eb308480b746f76051f4770bdfdd437259b3c906",
+    "code": "9976d213318032c6f128e3affa5d1b873cd47871",
+    "maintenance": "ea1773c3aa79397b4ee78c16e4edcbee34f1a63e73705e919d4bb7549fa69e0a"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T05:26:52Z",
+  "analysis_sha256": "535c25c62636d685f142dec0f36aafd28ef73cb13eaf5c0a2e5ecb6bc2f26be6"
+}

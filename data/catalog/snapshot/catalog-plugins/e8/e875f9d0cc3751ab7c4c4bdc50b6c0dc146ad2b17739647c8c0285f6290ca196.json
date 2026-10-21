@@ -1,0 +1,299 @@
+{
+  "id": "github:1410794267:root",
+  "repository_id": 1410794267,
+  "component_id": "root",
+  "repository": "AdilAlmahmoud/dsh-RTL-chat",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-RTL-chat",
+  "entry_type": "plugin",
+  "technical_category": "interface-input",
+  "business_category": "personal-productivity",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "a6d1d5e33452defe5a1a87fb22ee9045a53d5c9894ee507f3c35bc9a3182e335",
+    "code": "cb47d8708ae0c95205926f03b6c7228c50de5e29",
+    "maintenance": "3e501864675af30e6bbadcd050c60983c06119ca4c7bb005d54a2cf91f4b3edb"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-06-github-1410794267-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T05:35:18.142Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-06-github-1410794267-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/AdilAlmahmoud/dsh-RTL-chat/blob/cb47d8708ae0c95205926f03b6c7228c50de5e29/README.md",
+      "revision": "cb47d8708ae0c95205926f03b6c7228c50de5e29",
+      "captured_at": "2026-10-21T05:35:18.142Z",
+      "summary": "为DSH对话阅读区提供可持久化的RTL/LTR切换，并保持代码块从左向右。",
+      "artifact": "data/runs/2026-10-21-06/snapshots/adilalmahmoud--dsh-rtl-chat/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-06-github-1410794267-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/AdilAlmahmoud/dsh-RTL-chat/blob/cb47d8708ae0c95205926f03b6c7228c50de5e29/index.js",
+      "revision": "cb47d8708ae0c95205926f03b6c7228c50de5e29",
+      "captured_at": "2026-10-21T05:35:18.142Z",
+      "summary": "核查 index.js、client.js、package.json；客户端slot注册header按钮，localStorage保存方向；对data-conversation-scroll设direction:rtl，pre/code/kbd/samp覆盖LTR。host为空。",
+      "artifact": "data/runs/2026-10-21-06/snapshots/adilalmahmoud--dsh-rtl-chat/REVIEWED-SOURCE.json",
+      "limitations": [
+        "抽读index.js、client.js、package.json；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "阿拉伯语等RTL文本阅读者希望调整答案方向同时不扰动侧栏与代码。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1410794267-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1410794267:root",
+          "area": "code",
+          "fingerprint": "cb47d8708ae0c95205926f03b6c7228c50de5e29"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:35:18.142Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "客户端slot注册header按钮，localStorage保存方向；对data-conversation-scroll设direction:rtl，pre/code/kbd/samp覆盖LTR。host为空。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1410794267-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1410794267:root",
+          "area": "code",
+          "fingerprint": "cb47d8708ae0c95205926f03b6c7228c50de5e29"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:35:18.142Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "抽读index.js、client.js、package.json；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1410794267-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1410794267:root",
+          "area": "code",
+          "fingerprint": "cb47d8708ae0c95205926f03b6c7228c50de5e29"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:35:18.142Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "MIT、private包声明；客户端React/slots接口，无模型调用与外部服务。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1410794267-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1410794267:root",
+          "area": "code",
+          "fingerprint": "cb47d8708ae0c95205926f03b6c7228c50de5e29"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:35:18.142Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次选择阅读偏好，升级选择器与混排可达性回归，无已证阅读速度收益。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1410794267-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1410794267:root",
+          "area": "code",
+          "fingerprint": "cb47d8708ae0c95205926f03b6c7228c50de5e29"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:35:18.142Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "有RTL阅读需求时可先用混排样例核查；检查代码复制、链接及卸载样式残留。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1410794267-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1410794267:root",
+          "area": "code",
+          "fingerprint": "cb47d8708ae0c95205926f03b6c7228c50de5e29"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:35:18.142Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "解决特定语言阅读障碍的潜力明确，效果仍需目标语言用户验证。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1410794267-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1410794267:root",
+          "area": "code",
+          "fingerprint": "cb47d8708ae0c95205926f03b6c7228c50de5e29"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:35:18.142Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "对话区域隔离、代码方向例外与存储异常回退清楚；样式生命周期应覆盖所有插入。 源码依据：[index.js](https://github.com/AdilAlmahmoud/dsh-RTL-chat/blob/cb47d8708ae0c95205926f03b6c7228c50de5e29/index.js)、[client.js](https://github.com/AdilAlmahmoud/dsh-RTL-chat/blob/cb47d8708ae0c95205926f03b6c7228c50de5e29/client.js)、[package.json](https://github.com/AdilAlmahmoud/dsh-RTL-chat/blob/cb47d8708ae0c95205926f03b6c7228c50de5e29/package.json)。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1410794267-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1410794267:root",
+          "area": "code",
+          "fingerprint": "cb47d8708ae0c95205926f03b6c7228c50de5e29"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:35:18.142Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "贡献是窄作用域方向控制与代码例外，复用CSS双向排版和宿主slot；不是翻译或整套阿拉伯语本地化。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1410794267-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1410794267:root",
+          "area": "code",
+          "fingerprint": "cb47d8708ae0c95205926f03b6c7228c50de5e29"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:35:18.142Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "容器级RTL能否正确处理混合语言、表格与引用？CSS direction无法识别每段语义，可能改变标点和布局；BTN_CSS插入返回的disposer未登记，卸载RTL样式与按钮样式清理不同。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1410794267-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1410794267:root",
+          "area": "code",
+          "fingerprint": "cb47d8708ae0c95205926f03b6c7228c50de5e29"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:35:18.142Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "由容器方向例外推导，可按段落dir=auto并允许用户覆盖，代码仍显式LTR。未验证；混合数字/URL/列表对照人工阅读，错误顺序与切换次数应低于整容器RTL。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1410794267-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1410794267:root",
+          "area": "code",
+          "fingerprint": "cb47d8708ae0c95205926f03b6c7228c50de5e29"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:35:18.142Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T05:35:18.142Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "cb47d8708ae0c95205926f03b6c7228c50de5e29",
+    "reviewed_at": "2026-10-21T05:35:18.142Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1410794267:root",
+        "area": "code",
+        "fingerprint": "cb47d8708ae0c95205926f03b6c7228c50de5e29"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 10,
+        "simplification": 4
+      },
+      "rationale": "novelty标准CSS方向适配小档；mechanism scoped方向与例外小档；transferability阅读区模式半档；simplification单开关便利小档。",
+      "basis": "interpretation",
+      "score": 31,
+      "evidence_ids": [
+        "2026-10-21-06-github-1410794267-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 8,
+        "reach": 5,
+        "economics": 0
+      },
+      "rationale": "workflow阅读偏好便利小档；delivery窄范围语言可达性小档；reach特定语言用户小档；economics未识别成本结构改变为0。",
+      "basis": "interpretation",
+      "score": 22,
+      "evidence_ids": [
+        "2026-10-21-06-github-1410794267-root-source"
+      ]
+    }
+  }
+}

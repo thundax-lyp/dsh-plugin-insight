@@ -1,0 +1,31 @@
+{
+  "repository": "AbcdefgXW/dsh-toolbox-web",
+  "repository_id": 1335244607,
+  "captured_at": "2026-10-21T05:34:17.359Z",
+  "window_start": "2026-09-21T05:34:17.359Z",
+  "stars": 5,
+  "pushed_at": "2026-09-15T18:44:10Z",
+  "issues": {
+    "open": 0,
+    "closed": 1,
+    "created_30d": 0,
+    "closed_30d": 0,
+    "updated_30d": 0
+  },
+  "errors": [],
+  "npm": {
+    "package_name": "dsh-toolbox-web",
+    "captured_at": "2026-10-21T05:34:24.043Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": 1058,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-toolbox-web",
+    "error": null,
+    "publication": {
+      "first_published_at": "2026-08-16T06:40:23.890Z",
+      "captured_at": "2026-10-21T05:34:24.043Z",
+      "source_url": "https://registry.npmjs.org/dsh-toolbox-web",
+      "error": null
+    }
+  }
+}

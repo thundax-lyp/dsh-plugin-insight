@@ -1,0 +1,52 @@
+{
+  "repository": "AKS1st/dock-markdown",
+  "repository_id": 1340492424,
+  "captured_at": "2026-10-21T05:33:35.485Z",
+  "window_start": "2026-09-21T05:33:35.485Z",
+  "stars": 3,
+  "pushed_at": "2026-09-11T08:05:48Z",
+  "issues": {
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-markdown%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D698:26CA49:54B83B:5AC188:6AD84EB1 and timestamp 2026-10-21 05:33:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-markdown%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D76C:10E8BA:5786B6:5D91E5:6AD84EB2 and timestamp 2026-10-21 05:33:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-markdown%20is%3Aissue%20created%3A2026-09-21T05%3A33%3A35.485Z..2026-10-21T05%3A33%3A35.485Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D84A:4F1F4:5106AA:570F7A:6AD84EB3 and timestamp 2026-10-21 05:33:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-markdown%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A33%3A35.485Z..2026-10-21T05%3A33%3A35.485Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D944:1112D2:5022FB:562CCF:6AD84EB4 and timestamp 2026-10-21 05:33:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-markdown%20is%3Aissue%20updated%3A2026-09-21T05%3A33%3A35.485Z..2026-10-21T05%3A33%3A35.485Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DAC8:110389:553F29:5B480D:6AD84EB5 and timestamp 2026-10-21 05:33:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "dock-markdown",
+    "captured_at": "2026-10-21T05:33:41.614Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": 900,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dock-markdown",
+    "error": null,
+    "publication": {
+      "first_published_at": "2026-08-23T06:01:22.424Z",
+      "captured_at": "2026-10-21T05:33:41.614Z",
+      "source_url": "https://registry.npmjs.org/dock-markdown",
+      "error": null
+    }
+  }
+}

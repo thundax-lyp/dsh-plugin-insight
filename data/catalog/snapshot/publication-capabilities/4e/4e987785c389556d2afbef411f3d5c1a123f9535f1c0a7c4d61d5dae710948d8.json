@@ -1,0 +1,9 @@
+{
+  "revision": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb",
+  "items": {
+    "模型工具": "桌面观察、点击、键盘、截图与停止控制。",
+    "后台": "Windows Python UIA worker与协议桥接。",
+    "Host 路由": "loopback配置、状态和帧接口。",
+    "界面": "操作记录、帧墙与设置。"
+  }
+}

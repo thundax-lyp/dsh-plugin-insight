@@ -1,0 +1,299 @@
+{
+  "id": "github:1400109121:root",
+  "repository_id": 1400109121,
+  "component_id": "root",
+  "repository": "AKS1st/dock-spreadsheet",
+  "path": "",
+  "aliases": [],
+  "name": "dock-spreadsheet",
+  "entry_type": "plugin",
+  "technical_category": "interface-input",
+  "business_category": "office-operations",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "c38083b212e8e1d49b8a7a05f8ae291ab8b5da66f48996a89c2ce9e4dfa4ab0e",
+    "code": "8ad1eeadf9ed7e6d8b27373a76c20b08964efeb7",
+    "maintenance": "ca5d82e88f84595f28dace853236ec5ea7ad278e7884c61e572df24a42ea6b4d"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-06-github-1400109121-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T05:37:32.374Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-06-github-1400109121-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/AKS1st/dock-spreadsheet/blob/8ad1eeadf9ed7e6d8b27373a76c20b08964efeb7/README.md",
+      "revision": "8ad1eeadf9ed7e6d8b27373a76c20b08964efeb7",
+      "captured_at": "2026-10-21T05:37:32.374Z",
+      "summary": "在Dock只读预览工作簿及UTF-8分隔文本，保持表格坐标。",
+      "artifact": "data/runs/2026-10-21-06/snapshots/aks1st--dock-spreadsheet/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-06-github-1400109121-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/AKS1st/dock-spreadsheet/blob/8ad1eeadf9ed7e6d8b27373a76c20b08964efeb7/src/index.ts",
+      "revision": "8ad1eeadf9ed7e6d8b27373a76c20b08964efeb7",
+      "captured_at": "2026-10-21T05:37:32.374Z",
+      "summary": "核查 src/index.ts、src/client/index.ts、src/client/workbook.ts、src/client/links.ts；主机/read以同一open句柄核文件类型和20MiB前后大小，客户端解析后每表最多5000行256列、保留原起始坐标，文本URL窄匹配。",
+      "artifact": "data/runs/2026-10-21-06/snapshots/aks1st--dock-spreadsheet/REVIEWED-SOURCE.json",
+      "limitations": [
+        "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "快速查看模型产出或工作区表格，不承担编辑和公式重新计算。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1400109121-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1400109121:root",
+          "area": "code",
+          "fingerprint": "8ad1eeadf9ed7e6d8b27373a76c20b08964efeb7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:37:32.374Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "主机/read以同一open句柄核文件类型和20MiB前后大小，客户端解析后每表最多5000行256列、保留原起始坐标，文本URL窄匹配。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1400109121-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1400109121:root",
+          "area": "code",
+          "fingerprint": "8ad1eeadf9ed7e6d8b27373a76c20b08964efeb7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:37:32.374Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1400109121-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1400109121:root",
+          "area": "code",
+          "fingerprint": "8ad1eeadf9ed7e6d8b27373a76c20b08964efeb7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:37:32.374Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "分发以本插件固定package.json、运行依赖与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1400109121-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1400109121:root",
+          "area": "code",
+          "fingerprint": "8ad1eeadf9ed7e6d8b27373a76c20b08964efeb7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:37:32.374Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "无模型token或CDN请求；打包依赖、全量解析和网格占浏览器资源，格式兼容须维护。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1400109121-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1400109121:root",
+          "area": "code",
+          "fingerprint": "8ad1eeadf9ed7e6d8b27373a76c20b08964efeb7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:37:32.374Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "用于小表快速阅读；需编辑、计算或完整报表时另用表格软件。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1400109121-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1400109121:root",
+          "area": "code",
+          "fingerprint": "8ad1eeadf9ed7e6d8b27373a76c20b08964efeb7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:37:32.374Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "便捷坐标预览有实现，未证明替代专业表格工具或提升处理效率。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1400109121-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1400109121:root",
+          "area": "code",
+          "fingerprint": "8ad1eeadf9ed7e6d8b27373a76c20b08964efeb7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:37:32.374Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "同句柄前后限长、首行不猜表头及单元格字符串化是清晰边界；链接只识别明确http(s)/www，保留其余文本。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1400109121-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1400109121:root",
+          "area": "code",
+          "fingerprint": "8ad1eeadf9ed7e6d8b27373a76c20b08964efeb7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:37:32.374Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "首行保留为数据而非猜标题、范围偏移保留为真实行列坐标，避免常见预览歧义；解析和虚拟表格来自上游。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1400109121-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1400109121:root",
+          "area": "code",
+          "fingerprint": "8ad1eeadf9ed7e6d8b27373a76c20b08964efeb7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:37:32.374Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "行列上限在工作簿解析之后才应用，20MiB压缩文件不代表展开内存有界；公式显示依赖缓存/格式化值，不能用预览判断计算正确。只读不意味着文件内容可当可靠业务报表。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1400109121-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1400109121:root",
+          "area": "code",
+          "fingerprint": "8ad1eeadf9ed7e6d8b27373a76c20b08964efeb7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:37:32.374Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "未验证假设：解析隔离到worker并提供取消/复杂度预算和公式缓存提示，可使大表失败可控。比较高压缩XLSX、大范围和陈旧公式缓存样例的峰值内存、可取消性及误判。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1400109121-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1400109121:root",
+          "area": "code",
+          "fingerprint": "8ad1eeadf9ed7e6d8b27373a76c20b08964efeb7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:37:32.374Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T05:37:32.374Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "8ad1eeadf9ed7e6d8b27373a76c20b08964efeb7",
+    "reviewed_at": "2026-10-21T05:37:32.374Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1400109121:root",
+        "area": "code",
+        "fingerprint": "8ad1eeadf9ed7e6d8b27373a76c20b08964efeb7"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 15,
+        "transferability": 10,
+        "simplification": 4
+      },
+      "rationale": "novelty=9：成熟表格库集成。 mechanism=15：坐标及限长细节明确。 transferability=10：viewer可复用但格式依赖重。 simplification=4：省切换，解析负担仍在。",
+      "basis": "interpretation",
+      "score": 38,
+      "evidence_ids": [
+        "2026-10-21-06-github-1400109121-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 15,
+        "reach": 10,
+        "economics": 0
+      },
+      "rationale": "workflow=9：只读查看非编辑闭环。 delivery=15：坐标可交付，计算正确性不保证。 reach=10：适合有限本地表格。 economics=0：无性能与工时对照。",
+      "basis": "interpretation",
+      "score": 34,
+      "evidence_ids": [
+        "2026-10-21-06-github-1400109121-root-source"
+      ]
+    }
+  }
+}

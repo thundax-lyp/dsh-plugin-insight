@@ -1,0 +1,7 @@
+{
+  "revision": "a9ef9439a1e8f7957a402c742bc639919ab1d1c8",
+  "items": {
+    "事件监听": "监听 agent/status、session/event、提问、审批及错误等 Host 事件。",
+    "后台": "串行发送系统通知并选择 terminal-notifier/osascript 与声音后端。"
+  }
+}
