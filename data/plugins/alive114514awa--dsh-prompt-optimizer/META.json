@@ -44,9 +44,12 @@
     "error": null,
     "publication": {
       "first_published_at": "2026-08-19T07:12:49.252Z",
-      "captured_at": "2026-10-21T05:34:11.888Z",
+      "captured_at": "2026-10-21T07:15:57.121Z",
       "source_url": "https://registry.npmjs.org/dsh-prompt-optimizer",
-      "error": null
+      "error": null,
+      "latest_version": "2.0.3",
+      "latest_published_at": "2026-09-03T09:03:57.833Z",
+      "latest_error": null
     }
   }
 }

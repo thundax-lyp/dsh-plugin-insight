@@ -40,9 +40,12 @@
     "error": null,
     "publication": {
       "first_published_at": "2026-08-23T06:01:16.552Z",
-      "captured_at": "2026-10-21T05:33:32.463Z",
+      "captured_at": "2026-10-21T07:15:57.121Z",
       "source_url": "https://registry.npmjs.org/dock-editor",
-      "error": null
+      "error": null,
+      "latest_version": "0.2.2",
+      "latest_published_at": "2026-09-11T08:19:29.155Z",
+      "latest_error": null
     }
   }
 }

@@ -132,12 +132,13 @@ export function renderLatest(items, date, limit = 5) {
     const selected = items
         .filter(
             (e) =>
-                e.npmFirstPublished &&
-                Date.parse(e.npmFirstPublished) <= end &&
-                Date.parse(e.npmFirstPublished) > end - 30 * 86400000
+                e.npmLatestPublished &&
+                Date.parse(e.npmLatestPublished) <= end &&
+                Date.parse(e.npmLatestPublished) > end - 30 * 86400000
         )
         .sort(
-            (a, b) => Date.parse(b.npmFirstPublished) - Date.parse(a.npmFirstPublished) || a.i.id.localeCompare(b.i.id)
+            (a, b) =>
+                Date.parse(b.npmLatestPublished) - Date.parse(a.npmLatestPublished) || a.i.id.localeCompare(b.i.id)
         )
         .slice(0, limit);
     return template('LATEST', {
@@ -151,8 +152,8 @@ export function renderLatest(items, date, limit = 5) {
                             [
                                 e.baseMetrics,
                                 renderPublicationBadge(
-                                    '新发布',
-                                    e.npmFirstPublished,
+                                    '最新发布',
+                                    e.npmLatestPublished,
                                     `https://www.npmjs.com/package/${e.npmDownloads.package_name}`
                                 )
                             ]
@@ -161,7 +162,7 @@ export function renderLatest(items, date, limit = 5) {
                         summary: clean(e.summary)
                     })
                 )
-                .join('\n') || '最近30天暂无已核实的新发布记录。'
+                .join('\n') || '最近30天暂无已核实的版本发布记录。'
     });
 }
 export function renderHot(items, limit = 5) {

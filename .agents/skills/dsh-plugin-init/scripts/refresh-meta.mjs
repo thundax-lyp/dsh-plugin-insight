@@ -9,6 +9,7 @@ import { ROOT, read, atomicWrite } from '../../_shared/scripts/plugin-data.mjs';
 import { api } from '../../_shared/scripts/capture-github.mjs';
 import {
     captureMetadata,
+    captureNpmPublication,
     captureNpmDownloads,
     validateMetadata
 } from '../../dsh-plugin-insight/scripts/capture-plugin-meta.mjs';
@@ -53,18 +54,26 @@ export function inspectUpdate(item, request = api, at = new Date().toISOString()
 }
 export async function refresh(
     inputPath,
-    { request = api, downloads = captureNpmDownloads, at = new Date().toISOString(), root = ROOT } = {}
+    {
+        request = api,
+        downloads = captureNpmDownloads,
+        publication = captureNpmPublication,
+        publicationOnly = false,
+        at = new Date().toISOString(),
+        root = ROOT
+    } = {}
 ) {
     const snapshotPath = resolve(root, 'data/catalog/SNAPSHOT.json');
     const snapshot = existsSync(snapshotPath) ? readSnapshotStorage(snapshotPath) : null;
+    if (publicationOnly && !snapshot) throw Error('publication-only refresh requires formal snapshot');
     const baseDigest = snapshot ? (await import('../../_shared/scripts/plugin-data.mjs')).digest(snapshot) : null;
-    const publication = snapshot?.publication ?? read(resolve(root, inputPath));
+    const publicationInput = snapshot?.publication ?? read(resolve(root, inputPath));
     const manifest = snapshot
-        ? { items: publication.records, round: at.slice(0, 10) + '-01' }
-        : validateManifest(read(resolve(root, publication.manifest)));
+        ? { items: publicationInput.records, round: at.slice(0, 10) + '-01' }
+        : validateManifest(read(resolve(root, publicationInput.manifest)));
     const stamp = at.replace(/[-:]/g, '').replace(/\.\d+Z$/, 'Z');
     const result = [];
-    const mapping = { ...publication.metadata };
+    const mapping = { ...publicationInput.metadata };
     // Read the fixed list; no discovery, deep analysis, catalog writes or checkpoint edits.
     for (const item of manifest.items.filter((item) => item.status === 'complete')) {
         const previous = snapshot
@@ -72,12 +81,16 @@ export async function refresh(
             : mapping[item.id]
               ? validateMetadata(read(resolve(root, mapping[item.id])))
               : null;
-        const metadata = captureMetadata(item.repository, request, at);
+        if (publicationOnly && !previous?.npm) continue;
+        const metadata = publicationOnly ? structuredClone(previous) : captureMetadata(item.repository, request, at);
         if (metadata.repository_id !== null && metadata.repository_id !== Number(item.id.split(':')[1]))
             throw Error(`repository identity changed: ${item.id}`);
         // Only use previously confirmed npm identity. Never derive it from repository name.
-        if (previous?.npm) metadata.npm = await downloads(previous.npm.package_name, undefined, at);
-        metadata.code_update = inspectUpdate(item, request, at);
+        if (publicationOnly) metadata.npm.publication = await publication(previous.npm.package_name, undefined, at);
+        else {
+            if (previous?.npm) metadata.npm = await downloads(previous.npm.package_name, undefined, at);
+            metadata.code_update = inspectUpdate(item, request, at);
+        }
         validateMetadata(metadata);
         const plugin = { ...item, component_id: item.id.split(':')[2] };
         const directory = pluginDirectory(plugin, root);
@@ -89,16 +102,17 @@ export async function refresh(
         mapping[item.id] = current;
         result.push({
             id: item.id,
-            script_changed: metadata.code_update.script_changed,
+            script_changed: metadata.code_update?.script_changed ?? null,
             errors: [
                 ...metadata.errors.map((e) => e.message),
                 ...(metadata.npm?.error ? [metadata.npm.error] : []),
                 ...(metadata.npm?.publication?.error ? [metadata.npm.publication.error] : []),
-                ...(metadata.code_update.error ? [metadata.code_update.error] : [])
+                ...(metadata.code_update?.error ? [metadata.code_update.error] : []),
+                ...(metadata.npm?.publication?.latest_error ? [metadata.npm.publication.latest_error] : [])
             ]
         });
     }
-    publication.metadata = mapping;
+    publicationInput.metadata = mapping;
     if (snapshot) {
         const { digest } = await import('../../_shared/scripts/plugin-data.mjs');
         const { validateSnapshot, renderSnapshot } = await import('./snapshot-data.mjs');
@@ -114,13 +128,18 @@ export async function refresh(
             unlinkSync(snapshotPath + '.lock');
         }
         renderSnapshot(root);
-    } else atomicWrite(resolve(root, inputPath), publication);
+    } else atomicWrite(resolve(root, inputPath), publicationInput);
     return result;
 }
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
     try {
-        const { values: v } = parseArgs({ options: { input: { type: 'string', default: PUBLICATION } } });
-        const result = await refresh(v.input);
+        const { values: v } = parseArgs({
+            options: {
+                input: { type: 'string', default: PUBLICATION },
+                'npm-publication-only': { type: 'boolean', default: false }
+            }
+        });
+        const result = await refresh(v.input, { publicationOnly: v['npm-publication-only'] });
         await render(['--input', v.input]);
         console.log(JSON.stringify(result));
     } catch (e) {

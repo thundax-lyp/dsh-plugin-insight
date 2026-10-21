@@ -32,9 +32,12 @@
     "error": null,
     "publication": {
       "first_published_at": "2026-08-21T15:39:25.545Z",
-      "captured_at": "2026-10-21T05:34:32.381Z",
+      "captured_at": "2026-10-21T07:15:57.121Z",
       "source_url": "https://registry.npmjs.org/%40luziyang2026%2Fdsh-question-nav",
-      "error": null
+      "error": null,
+      "latest_version": "0.7.8",
+      "latest_published_at": "2026-09-01T15:10:21.599Z",
+      "latest_error": null
     }
   }
 }

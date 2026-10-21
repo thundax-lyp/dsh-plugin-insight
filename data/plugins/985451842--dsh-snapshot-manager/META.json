@@ -44,9 +44,12 @@
     "error": null,
     "publication": {
       "first_published_at": "2026-10-10T09:02:27.759Z",
-      "captured_at": "2026-10-21T05:08:56.162Z",
+      "captured_at": "2026-10-21T07:15:57.121Z",
       "source_url": "https://registry.npmjs.org/dsh-snapshot-manager",
-      "error": null
+      "error": null,
+      "latest_version": "0.2.4",
+      "latest_published_at": "2026-10-19T07:50:07.980Z",
+      "latest_error": null
     }
   },
   "code_update": {

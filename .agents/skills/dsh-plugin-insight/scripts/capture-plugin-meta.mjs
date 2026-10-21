@@ -11,6 +11,13 @@ addFormats(ajv);
 const check = ajv.compile(read(resolve(ROOT, '.agents/skills/_shared/schemas/github-meta.schema.json')));
 export function validateMetadata(value) {
     if (!check(value)) throw Error(ajv.errorsText(check.errors));
+    const publication = value.npm?.publication;
+    if (publication?.latest_version != null || publication?.latest_published_at != null) {
+        if (!publication.latest_version || !publication.latest_published_at || publication.latest_error !== null)
+            throw Error('latest npm release requires version, date and successful capture');
+    } else if (publication && Object.hasOwn(publication, 'latest_error') && publication.latest_error === null) {
+        throw Error('missing latest npm release requires an explicit error');
+    }
     return value;
 }
 export function captureMetadata(repository, request = api, at = new Date().toISOString()) {
@@ -66,15 +73,40 @@ export async function captureNpmPublication(
 ) {
     if (!/^(?:@[a-z0-9][a-z0-9._-]*\/)?[a-z0-9][a-z0-9._-]*$/.test(name)) throw Error('invalid npm package name');
     const url = `https://registry.npmjs.org/${encodeURIComponent(name)}`;
-    const result = { first_published_at: null, captured_at: at, source_url: url, error: null };
+    const result = {
+        first_published_at: null,
+        captured_at: at,
+        source_url: url,
+        error: null,
+        latest_version: null,
+        latest_published_at: null,
+        latest_error: null
+    };
     try {
         const data = await request(url);
+        if (data.name !== name) throw Error('npm package identity mismatch');
         const time = Date.parse(data.time?.created);
-        if (data.name !== name || !Number.isFinite(time) || time > Date.parse(at))
-            throw Error('npm package identity or first publication time mismatch');
-        result.first_published_at = new Date(time).toISOString();
+        if (!Number.isFinite(time) || time > Date.parse(at)) result.error = 'npm first publication time mismatch';
+        else result.first_published_at = new Date(time).toISOString();
+        const latest = data['dist-tags']?.latest;
+        const release = data.versions?.[latest];
+        const published = Date.parse(data.time?.[latest]);
+        if (
+            typeof latest !== 'string' ||
+            !latest ||
+            release?.version !== latest ||
+            release?.name !== name ||
+            !Number.isFinite(published) ||
+            published > Date.parse(at)
+        ) {
+            result.latest_error = 'npm latest tag, version identity or publication time mismatch';
+        } else {
+            result.latest_version = latest;
+            result.latest_published_at = new Date(published).toISOString();
+        }
     } catch (e) {
         result.error = e.message;
+        result.latest_error = e.message;
     }
     return result;
 }

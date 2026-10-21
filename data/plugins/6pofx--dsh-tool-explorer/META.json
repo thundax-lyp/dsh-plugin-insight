@@ -23,9 +23,12 @@
     "error": null,
     "publication": {
       "first_published_at": "2026-08-31T02:24:29.246Z",
-      "captured_at": "2026-10-21T05:08:56.162Z",
+      "captured_at": "2026-10-21T07:15:57.121Z",
       "source_url": "https://registry.npmjs.org/dsh-tool-explorer",
-      "error": null
+      "error": null,
+      "latest_version": "0.4.4",
+      "latest_published_at": "2026-10-19T15:27:03.938Z",
+      "latest_error": null
     }
   },
   "code_update": {

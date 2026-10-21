@@ -155,6 +155,7 @@ export function renderPublication(input, root = ROOT, context = null) {
             const path = input.metadata?.[i.id];
             let npmDownloads = null,
                 npmFirstPublished = null,
+                npmLatestPublished = null,
                 needsReview = false,
                 stars = null,
                 pushedAt = null,
@@ -182,6 +183,8 @@ export function renderPublication(input, root = ROOT, context = null) {
                           url: `https://www.npmjs.com/package/${npmDownloads?.package_name}`
                       });
                 npmFirstPublished = m.npm?.publication?.error ? null : (m.npm?.publication?.first_published_at ?? null);
+                npmLatestPublished =
+                    m.npm?.publication?.latest_error === null ? (m.npm.publication.latest_published_at ?? null) : null;
                 for (const at of [m.captured_at, m.npm?.captured_at, m.npm?.publication?.captured_at].filter(Boolean))
                     metadataDates.add(new Date(Date.parse(at) + 8 * 3600000).toISOString().slice(0, 10));
                 needsReview = m.code_update?.script_changed === true;
@@ -201,8 +204,8 @@ export function renderPublication(input, root = ROOT, context = null) {
                 listMetrics = [
                     baseMetrics,
                     renderPublicationBadge(
-                        '首次发布',
-                        npmFirstPublished,
+                        '最新发布',
+                        npmLatestPublished,
                         `https://www.npmjs.com/package/${npmDownloads?.package_name}`
                     )
                 ]
@@ -237,6 +240,7 @@ export function renderPublication(input, root = ROOT, context = null) {
                 listMetrics,
                 pushedAt,
                 npmFirstPublished,
+                npmLatestPublished,
                 npmDownloads,
                 detailPath,
                 longRead,

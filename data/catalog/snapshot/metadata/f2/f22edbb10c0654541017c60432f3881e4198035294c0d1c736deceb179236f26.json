@@ -1,0 +1,51 @@
+{
+  "repository": "AKS1st/dock-editor",
+  "repository_id": 1340492335,
+  "captured_at": "2026-10-21T05:33:26.700Z",
+  "window_start": "2026-09-21T05:33:26.700Z",
+  "stars": 3,
+  "pushed_at": "2026-09-11T08:05:39Z",
+  "issues": {
+    "open": 0,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-editor%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CC1E:2723D0:511027:571769:6AD84EA9 and timestamp 2026-10-21 05:33:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-editor%20is%3Aissue%20created%3A2026-09-21T05%3A33%3A26.700Z..2026-10-21T05%3A33%3A26.700Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CD10:32D9F:516C2B:5774BC:6AD84EAA and timestamp 2026-10-21 05:33:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-editor%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A33%3A26.700Z..2026-10-21T05%3A33%3A26.700Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CECE:110389:553835:5B405B:6AD84EAB and timestamp 2026-10-21 05:33:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-editor%20is%3Aissue%20updated%3A2026-09-21T05%3A33%3A26.700Z..2026-10-21T05%3A33%3A26.700Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CFC6:4AA35:55BFBC:5BC8E5:6AD84EAC and timestamp 2026-10-21 05:33:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "dock-editor",
+    "captured_at": "2026-10-21T05:33:32.463Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": 903,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dock-editor",
+    "error": null,
+    "publication": {
+      "first_published_at": "2026-08-23T06:01:16.552Z",
+      "captured_at": "2026-10-21T07:15:57.121Z",
+      "source_url": "https://registry.npmjs.org/dock-editor",
+      "error": null,
+      "latest_version": "0.2.2",
+      "latest_published_at": "2026-09-11T08:19:29.155Z",
+      "latest_error": null
+    }
+  }
+}

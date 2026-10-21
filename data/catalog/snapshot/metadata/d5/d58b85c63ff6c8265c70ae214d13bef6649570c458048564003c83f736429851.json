@@ -1,0 +1,42 @@
+{
+  "repository": "6pofx/dsh-tool-explorer",
+  "repository_id": 1351594249,
+  "captured_at": "2026-10-21T05:08:56.162Z",
+  "window_start": "2026-09-21T05:08:56.162Z",
+  "stars": 1,
+  "pushed_at": "2026-10-19T15:28:29Z",
+  "issues": {
+    "open": 0,
+    "closed": 0,
+    "created_30d": 0,
+    "closed_30d": 0,
+    "updated_30d": 0
+  },
+  "errors": [],
+  "npm": {
+    "package_name": "dsh-tool-explorer",
+    "captured_at": "2026-10-21T05:08:56.162Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": 673,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-tool-explorer",
+    "error": null,
+    "publication": {
+      "first_published_at": "2026-08-31T02:24:29.246Z",
+      "captured_at": "2026-10-21T07:15:57.121Z",
+      "source_url": "https://registry.npmjs.org/dsh-tool-explorer",
+      "error": null,
+      "latest_version": "0.4.4",
+      "latest_published_at": "2026-10-19T15:27:03.938Z",
+      "latest_error": null
+    }
+  },
+  "code_update": {
+    "checked_at": "2026-10-21T05:08:56.162Z",
+    "baseline_revision": "63ea4c8192f715c3157af69e71fef67915db8af1",
+    "current_revision": "63ea4c8192f715c3157af69e71fef67915db8af1",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
+  }
+}

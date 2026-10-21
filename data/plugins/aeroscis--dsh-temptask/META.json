@@ -44,9 +44,12 @@
     "error": null,
     "publication": {
       "first_published_at": "2026-09-27T10:21:38.001Z",
-      "captured_at": "2026-10-21T05:34:44.325Z",
+      "captured_at": "2026-10-21T07:15:57.121Z",
       "source_url": "https://registry.npmjs.org/%40aeroscis%2Fdsh-temptask",
-      "error": null
+      "error": null,
+      "latest_version": "0.5.0",
+      "latest_published_at": "2026-10-20T14:18:09.733Z",
+      "latest_error": null
     }
   }
 }

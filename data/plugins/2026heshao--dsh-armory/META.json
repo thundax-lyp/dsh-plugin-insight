@@ -44,9 +44,12 @@
     "error": null,
     "publication": {
       "first_published_at": "2026-10-13T02:37:33.593Z",
-      "captured_at": "2026-10-21T05:08:56.162Z",
+      "captured_at": "2026-10-21T07:15:57.121Z",
       "source_url": "https://registry.npmjs.org/dsh-armory",
-      "error": null
+      "error": null,
+      "latest_version": "2.0.0",
+      "latest_published_at": "2026-10-20T15:03:46.248Z",
+      "latest_error": null
     }
   },
   "code_update": {

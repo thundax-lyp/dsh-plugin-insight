@@ -1,0 +1,42 @@
+{
+  "repository": "AI-Galaxy-GPU/dsh-sound",
+  "repository_id": 1335332435,
+  "captured_at": "2026-10-21T05:08:56.162Z",
+  "window_start": "2026-09-21T05:08:56.162Z",
+  "stars": 14,
+  "pushed_at": "2026-09-15T16:35:44Z",
+  "issues": {
+    "open": 1,
+    "closed": 2,
+    "created_30d": 1,
+    "closed_30d": 0,
+    "updated_30d": 1
+  },
+  "errors": [],
+  "npm": {
+    "package_name": "@ai-galaxy/dsh-sound",
+    "captured_at": "2026-10-21T05:08:56.162Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": 948,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40ai-galaxy%2Fdsh-sound",
+    "error": null,
+    "publication": {
+      "first_published_at": "2026-09-13T04:12:06.937Z",
+      "captured_at": "2026-10-21T07:15:57.121Z",
+      "source_url": "https://registry.npmjs.org/%40ai-galaxy%2Fdsh-sound",
+      "error": null,
+      "latest_version": "0.4.1",
+      "latest_published_at": "2026-09-14T02:43:55.411Z",
+      "latest_error": null
+    }
+  },
+  "code_update": {
+    "checked_at": "2026-10-21T05:08:56.162Z",
+    "baseline_revision": "aa7be415ee34570bd1c834da9d8a500e85401583",
+    "current_revision": "aa7be415ee34570bd1c834da9d8a500e85401583",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
+  }
+}

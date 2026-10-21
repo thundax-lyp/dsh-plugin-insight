@@ -1,0 +1,34 @@
+{
+  "repository": "1264459640/dsh-trellis",
+  "repository_id": 1335559646,
+  "captured_at": "2026-10-21T05:33:14.295Z",
+  "window_start": "2026-09-21T05:33:14.295Z",
+  "stars": 9,
+  "pushed_at": "2026-10-21T04:58:17Z",
+  "issues": {
+    "open": 1,
+    "closed": 2,
+    "created_30d": 1,
+    "closed_30d": 1,
+    "updated_30d": 2
+  },
+  "errors": [],
+  "npm": {
+    "package_name": "@banana-peeljj12/dsh-trellis",
+    "captured_at": "2026-10-21T05:33:21.953Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": 1538,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40banana-peeljj12%2Fdsh-trellis",
+    "error": null,
+    "publication": {
+      "first_published_at": "2026-08-18T03:29:35.618Z",
+      "captured_at": "2026-10-21T07:15:57.121Z",
+      "source_url": "https://registry.npmjs.org/%40banana-peeljj12%2Fdsh-trellis",
+      "error": null,
+      "latest_version": "0.4.1",
+      "latest_published_at": "2026-10-21T04:59:29.418Z",
+      "latest_error": null
+    }
+  }
+}
