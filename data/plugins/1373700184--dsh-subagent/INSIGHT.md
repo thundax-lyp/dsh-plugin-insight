@@ -7,7 +7,7 @@
 分析版本：[6889bdd](https://github.com/1373700184/dsh-subagent/tree/6889bdd592d47f7c0f25ee56545e884abdc8927d)
 
 <!-- BEGIN META -->
-[![npm 30d 22](https://img.shields.io/static/v1?label=npm+30d&message=22&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-subagent) [![首次发布 2026-08-20](https://img.shields.io/static/v1?label=%E9%A6%96%E6%AC%A1%E5%8F%91%E5%B8%83&message=2026-08-20&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-subagent)
+[![npm 30d 22](https://img.shields.io/static/v1?label=npm+30d&message=22&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-subagent) [![最新发布 2026-08-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-20&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-subagent)
 <!-- END META -->
 
 **使用建议**：已有对应CLI且可隔离工作目录者可评估；不可重复写入任务应先解决回退幂等、全程超时和进程树取消，不能因preset叫“自由”而放宽验收。

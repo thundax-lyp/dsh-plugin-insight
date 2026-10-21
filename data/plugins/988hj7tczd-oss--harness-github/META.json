@@ -44,9 +44,12 @@
     "error": null,
     "publication": {
       "first_published_at": "2026-08-23T11:41:02.706Z",
-      "captured_at": "2026-10-21T05:08:56.162Z",
+      "captured_at": "2026-10-21T07:15:57.121Z",
       "source_url": "https://registry.npmjs.org/harness-github",
-      "error": null
+      "error": null,
+      "latest_version": "0.1.0",
+      "latest_published_at": "2026-08-23T11:41:02.979Z",
+      "latest_error": null
     }
   },
   "code_update": {

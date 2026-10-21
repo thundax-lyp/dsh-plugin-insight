@@ -7,7 +7,7 @@
 分析版本：[8fcce84](https://github.com/985451842/dsh-snapshot-manager/tree/8fcce843ca288b8cc4639d15e1c9f1abfdd467dd)
 
 <!-- BEGIN META -->
-[![npm 30d 816](https://img.shields.io/static/v1?label=npm+30d&message=816&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-snapshot-manager) [![首次发布 2026-10-10](https://img.shields.io/static/v1?label=%E9%A6%96%E6%AC%A1%E5%8F%91%E5%B8%83&message=2026-10-10&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-snapshot-manager)
+[![npm 30d 816](https://img.shields.io/static/v1?label=npm+30d&message=816&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-snapshot-manager) [![最新发布 2026-10-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-19&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-snapshot-manager)
 <!-- END META -->
 
 **使用建议**：先在可丢弃项目测试快照和dryRun。核对排除项、对象摘要与并发写，真正回退前保存独立备份并查看恢复/删除清单；不要视为数据库或全机备份。

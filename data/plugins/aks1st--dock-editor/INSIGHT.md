@@ -7,7 +7,7 @@
 分析版本：[f6e5e08](https://github.com/AKS1st/dock-editor/tree/f6e5e0845c42e2b09a7a8d671a66b331fe094634)
 
 <!-- BEGIN META -->
-[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/AKS1st/dock-editor) [![npm 30d 903](https://img.shields.io/static/v1?label=npm+30d&message=903&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dock-editor) [![首次发布 2026-08-23](https://img.shields.io/static/v1?label=%E9%A6%96%E6%AC%A1%E5%8F%91%E5%B8%83&message=2026-08-23&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dock-editor)
+[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/AKS1st/dock-editor) [![npm 30d 903](https://img.shields.io/static/v1?label=npm+30d&message=903&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dock-editor) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dock-editor)
 <!-- END META -->
 
 **使用建议**：适合工作区小文本的辅助编辑；先验证保存冲突与关闭恢复，再处理重要文件。

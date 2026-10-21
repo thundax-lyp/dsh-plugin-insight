@@ -23,9 +23,12 @@
     "error": null,
     "publication": {
       "first_published_at": "2026-09-15T02:00:59.838Z",
-      "captured_at": "2026-10-21T05:08:56.162Z",
+      "captured_at": "2026-10-21T07:15:57.121Z",
       "source_url": "https://registry.npmjs.org/%40zzerx%2Fdsh-plugin-daily-log",
-      "error": null
+      "error": null,
+      "latest_version": "0.4.3",
+      "latest_published_at": "2026-10-16T03:34:51.097Z",
+      "latest_error": null
     }
   },
   "code_update": {

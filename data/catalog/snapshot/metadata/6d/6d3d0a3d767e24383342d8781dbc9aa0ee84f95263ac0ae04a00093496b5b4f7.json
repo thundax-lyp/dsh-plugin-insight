@@ -1,0 +1,63 @@
+{
+  "repository": "535408248-oss/dsh-douyin-webview",
+  "repository_id": 1423040689,
+  "captured_at": "2026-10-21T05:08:56.162Z",
+  "window_start": "2026-09-21T05:08:56.162Z",
+  "stars": 1,
+  "pushed_at": "2026-10-17T06:53:25Z",
+  "issues": {
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3A535408248-oss%2Fdsh-douyin-webview%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6405:F5D0E:A9E130:F2F5FE:6AD84A45 and timestamp 2026-10-21 05:14:45 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3A535408248-oss%2Fdsh-douyin-webview%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6408:360622:A34EB0:EB2439:6AD84A45 and timestamp 2026-10-21 05:14:45 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A535408248-oss%2Fdsh-douyin-webview%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6402:39E13C:A2B549:EA7E40:6AD84A45 and timestamp 2026-10-21 05:14:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A535408248-oss%2Fdsh-douyin-webview%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6401:25685:A876E2:F1559B:6AD84A46 and timestamp 2026-10-21 05:14:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A535408248-oss%2Fdsh-douyin-webview%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640B:208D3:AA6BE9:F39A1B:6AD84A46 and timestamp 2026-10-21 05:14:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "dsh-douyin-webview",
+    "captured_at": "2026-10-21T05:08:56.162Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": null,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-douyin-webview",
+    "error": "HTTP 404",
+    "publication": {
+      "first_published_at": null,
+      "captured_at": "2026-10-21T07:15:57.121Z",
+      "source_url": "https://registry.npmjs.org/dsh-douyin-webview",
+      "error": "HTTP 404",
+      "latest_version": null,
+      "latest_published_at": null,
+      "latest_error": "HTTP 404"
+    }
+  },
+  "code_update": {
+    "checked_at": "2026-10-21T05:08:56.162Z",
+    "baseline_revision": "52e1d551a8ede5d7d3cbeb4157fca8655be2f401",
+    "current_revision": "52e1d551a8ede5d7d3cbeb4157fca8655be2f401",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
+  }
+}

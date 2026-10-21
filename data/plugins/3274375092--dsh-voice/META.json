@@ -44,9 +44,12 @@
     "error": null,
     "publication": {
       "first_published_at": "2026-08-14T21:29:18.960Z",
-      "captured_at": "2026-10-21T05:08:56.162Z",
+      "captured_at": "2026-10-21T07:15:57.121Z",
       "source_url": "https://registry.npmjs.org/%40nn12138%2Fdsh-voice",
-      "error": null
+      "error": null,
+      "latest_version": "0.2.6",
+      "latest_published_at": "2026-08-21T10:44:46.269Z",
+      "latest_error": null
     }
   },
   "code_update": {

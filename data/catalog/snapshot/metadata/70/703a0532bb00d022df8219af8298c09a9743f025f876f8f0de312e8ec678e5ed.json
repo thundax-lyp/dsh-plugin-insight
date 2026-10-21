@@ -1,0 +1,63 @@
+{
+  "repository": "9931666/dsh-plugin-roundtable",
+  "repository_id": 1342524723,
+  "captured_at": "2026-10-21T05:08:56.162Z",
+  "window_start": "2026-09-21T05:08:56.162Z",
+  "stars": 12,
+  "pushed_at": "2026-10-18T07:33:32Z",
+  "issues": {
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3A9931666%2Fdsh-plugin-roundtable%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6402:39E13C:A3C631:EC0676:6AD84B07 and timestamp 2026-10-21 05:17:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3A9931666%2Fdsh-plugin-roundtable%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6401:25685:A98896:F2E126:6AD84B07 and timestamp 2026-10-21 05:17:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A9931666%2Fdsh-plugin-roundtable%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6404:F5D0E:AB0251:F4923F:6AD84B07 and timestamp 2026-10-21 05:17:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A9931666%2Fdsh-plugin-roundtable%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6405:F5D0E:AB0294:F492B7:6AD84B07 and timestamp 2026-10-21 05:17:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A9931666%2Fdsh-plugin-roundtable%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6407:F5D0E:AB02EE:F4932C:6AD84B07 and timestamp 2026-10-21 05:18:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "@y9931666/dsh-plugin-roundtable",
+    "captured_at": "2026-10-21T05:08:56.162Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": 1464,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40y9931666%2Fdsh-plugin-roundtable",
+    "error": null,
+    "publication": {
+      "first_published_at": "2026-10-01T13:52:06.605Z",
+      "captured_at": "2026-10-21T07:15:57.121Z",
+      "source_url": "https://registry.npmjs.org/%40y9931666%2Fdsh-plugin-roundtable",
+      "error": null,
+      "latest_version": "1.0.0-rc.3",
+      "latest_published_at": "2026-10-03T07:55:20.846Z",
+      "latest_error": null
+    }
+  },
+  "code_update": {
+    "checked_at": "2026-10-21T05:08:56.162Z",
+    "baseline_revision": "e2cb127bc0c2654a92cf2db64256c982c78b90e4",
+    "current_revision": "e2cb127bc0c2654a92cf2db64256c982c78b90e4",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
+  }
+}

@@ -23,9 +23,12 @@
     "error": null,
     "publication": {
       "first_published_at": "2026-08-13T15:46:07.317Z",
-      "captured_at": "2026-10-21T05:08:56.162Z",
+      "captured_at": "2026-10-21T07:15:57.121Z",
       "source_url": "https://registry.npmjs.org/dsh-hdc-bridge",
-      "error": null
+      "error": null,
+      "latest_version": "0.10.2",
+      "latest_published_at": "2026-10-12T07:05:59.715Z",
+      "latest_error": null
     }
   },
   "code_update": {

@@ -44,9 +44,12 @@
     "error": null,
     "publication": {
       "first_published_at": "2026-08-28T04:07:58.382Z",
-      "captured_at": "2026-10-21T05:08:56.162Z",
+      "captured_at": "2026-10-21T07:15:57.121Z",
       "source_url": "https://registry.npmjs.org/dsh-api-dashboard",
-      "error": null
+      "error": null,
+      "latest_version": "1.7.0",
+      "latest_published_at": "2026-10-10T05:55:20.672Z",
+      "latest_error": null
     }
   },
   "code_update": {

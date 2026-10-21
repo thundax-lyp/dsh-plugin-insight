@@ -7,7 +7,7 @@
 分析版本：[21b3c73](https://github.com/AdenXie/dsh-vercel/tree/21b3c7372284ab53d10e61f2c717d44f752d9567)
 
 <!-- BEGIN META -->
-[![首次发布 2026-10-19](https://img.shields.io/static/v1?label=%E9%A6%96%E6%AC%A1%E5%8F%91%E5%B8%83&message=2026-10-19&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@adenxie/dsh-vercel)
+[![最新发布 2026-10-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-19&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@adenxie/dsh-vercel)
 <!-- END META -->
 
 **使用建议**：适合已有Vercel账户者从只读项目查询核查。先验证账号范围、断开清理及真实审批，再进入会改变部署的工具。

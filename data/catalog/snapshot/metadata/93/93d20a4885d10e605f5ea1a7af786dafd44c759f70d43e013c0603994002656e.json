@@ -1,0 +1,63 @@
+{
+  "repository": "7starsseeker/dsh-fact-check",
+  "repository_id": 1380181057,
+  "captured_at": "2026-10-21T05:08:56.162Z",
+  "window_start": "2026-09-21T05:08:56.162Z",
+  "stars": 2,
+  "pushed_at": "2026-10-17T15:25:13Z",
+  "issues": {
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3A7starsseeker%2Fdsh-fact-check%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641F:9F47E:150D96:22C496:6AD84AAB and timestamp 2026-10-21 05:16:27 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3A7starsseeker%2Fdsh-fact-check%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C0:0BD3:A37F2:10EE62:6AD84AAB and timestamp 2026-10-21 05:16:27 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A7starsseeker%2Fdsh-fact-check%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C1:09C1:14C4CB:227559:6AD84AAB and timestamp 2026-10-21 05:16:27 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A7starsseeker%2Fdsh-fact-check%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6408:592A:143E76:220198:6AD84AAB and timestamp 2026-10-21 05:16:27 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A7starsseeker%2Fdsh-fact-check%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640A:3E2BCC:151F7E:22E9F5:6AD84AAB and timestamp 2026-10-21 05:16:27 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "dsh-fact-check",
+    "captured_at": "2026-10-21T05:08:56.162Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": 1495,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-fact-check",
+    "error": null,
+    "publication": {
+      "first_published_at": "2026-09-21T19:06:07.838Z",
+      "captured_at": "2026-10-21T07:15:57.121Z",
+      "source_url": "https://registry.npmjs.org/dsh-fact-check",
+      "error": null,
+      "latest_version": "1.4.0",
+      "latest_published_at": "2026-10-17T10:49:18.914Z",
+      "latest_error": null
+    }
+  },
+  "code_update": {
+    "checked_at": "2026-10-21T05:08:56.162Z",
+    "baseline_revision": "dd28c59fb7552a43d40f03632b0247695fbda65b",
+    "current_revision": "dd28c59fb7552a43d40f03632b0247695fbda65b",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
+  }
+}

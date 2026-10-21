@@ -7,7 +7,7 @@
 分析版本：[6c5e87b](https://github.com/0QwQ0/dsh-ui-auth/tree/6c5e87b44be4e973b092910968001916bb97d22e)
 
 <!-- BEGIN META -->
-[![GitHub ★ 9](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9&color=yellow&logo=github&style=flat)](https://github.com/0QwQ0/dsh-ui-auth) [![npm 30d 1,594](https://img.shields.io/static/v1?label=npm+30d&message=1%2C594&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-ui-auth) [![首次发布 2026-09-07](https://img.shields.io/static/v1?label=%E9%A6%96%E6%AC%A1%E5%8F%91%E5%B8%83&message=2026-09-07&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-ui-auth)
+[![GitHub ★ 9](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9&color=yellow&logo=github&style=flat)](https://github.com/0QwQ0/dsh-ui-auth) [![npm 30d 1,594](https://img.shields.io/static/v1?label=npm+30d&message=1%2C594&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-ui-auth) [![最新发布 2026-10-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-16&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-ui-auth)
 <!-- END META -->
 
 **使用建议**：先在隔离环境逐一测试 HTTP、WebSocket 和多用户访问，不把安装成功当成公网安全保证。

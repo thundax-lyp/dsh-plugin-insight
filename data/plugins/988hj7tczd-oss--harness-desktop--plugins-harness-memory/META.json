@@ -44,9 +44,12 @@
     "error": null,
     "publication": {
       "first_published_at": "2026-03-29T09:52:49.181Z",
-      "captured_at": "2026-10-21T05:08:56.162Z",
+      "captured_at": "2026-10-21T07:15:57.121Z",
       "source_url": "https://registry.npmjs.org/harness-memory",
-      "error": null
+      "error": null,
+      "latest_version": "0.5.1",
+      "latest_published_at": "2026-04-09T11:49:25.466Z",
+      "latest_error": null
     }
   },
   "code_update": {

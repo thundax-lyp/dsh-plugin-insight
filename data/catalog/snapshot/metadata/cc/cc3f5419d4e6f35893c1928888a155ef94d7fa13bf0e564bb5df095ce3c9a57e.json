@@ -1,0 +1,42 @@
+{
+  "repository": "AIR-pixel/air-pixel-liquid-glass",
+  "repository_id": 1414238544,
+  "captured_at": "2026-10-21T05:08:56.162Z",
+  "window_start": "2026-09-21T05:08:56.162Z",
+  "stars": 1,
+  "pushed_at": "2026-10-18T05:16:07Z",
+  "issues": {
+    "open": 0,
+    "closed": 0,
+    "created_30d": 0,
+    "closed_30d": 0,
+    "updated_30d": 0
+  },
+  "errors": [],
+  "npm": {
+    "package_name": "air-pixel-liquid-glass",
+    "captured_at": "2026-10-21T05:08:56.162Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": null,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/air-pixel-liquid-glass",
+    "error": "HTTP 404",
+    "publication": {
+      "first_published_at": null,
+      "captured_at": "2026-10-21T07:15:57.121Z",
+      "source_url": "https://registry.npmjs.org/air-pixel-liquid-glass",
+      "error": "HTTP 404",
+      "latest_version": null,
+      "latest_published_at": null,
+      "latest_error": "HTTP 404"
+    }
+  },
+  "code_update": {
+    "checked_at": "2026-10-21T05:08:56.162Z",
+    "baseline_revision": "4b980fb2cbac292274a6b3136696ab27e3b1decc",
+    "current_revision": "4b980fb2cbac292274a6b3136696ab27e3b1decc",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
+  }
+}

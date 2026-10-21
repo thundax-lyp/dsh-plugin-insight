@@ -44,9 +44,12 @@
     "error": null,
     "publication": {
       "first_published_at": "2026-08-16T10:09:02.985Z",
-      "captured_at": "2026-10-21T05:08:56.162Z",
+      "captured_at": "2026-10-21T07:15:57.121Z",
       "source_url": "https://registry.npmjs.org/dsh-im-qq",
-      "error": null
+      "error": null,
+      "latest_version": "0.1.1",
+      "latest_published_at": "2026-08-16T10:35:34.337Z",
+      "latest_error": null
     }
   },
   "code_update": {

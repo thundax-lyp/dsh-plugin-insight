@@ -7,7 +7,7 @@
 分析版本：[c478634](https://github.com/988hj7tczd-oss/dsh-asciinema/tree/c47863413886ffac9b66ee13a9ab276ab195d5d9)
 
 <!-- BEGIN META -->
-[![npm 30d 401](https://img.shields.io/static/v1?label=npm+30d&message=401&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-asciinema) [![首次发布 2026-08-24](https://img.shields.io/static/v1?label=%E9%A6%96%E6%AC%A1%E5%8F%91%E5%B8%83&message=2026-08-24&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-asciinema)
+[![npm 30d 401](https://img.shields.io/static/v1?label=npm+30d&message=401&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-asciinema) [![最新发布 2026-08-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-24&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-asciinema)
 <!-- END META -->
 
 **使用建议**：适合记录普通非敏感工具文本供本插件回放。先检查输出内容和截断，分享HTML前脱敏；需要真实终端保真或官方.cast互操作时先做独立验收。

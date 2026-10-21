@@ -1,0 +1,63 @@
+{
+  "repository": "117BS/dsh-perlica-ding",
+  "repository_id": 1335704653,
+  "captured_at": "2026-10-21T05:08:56.162Z",
+  "window_start": "2026-09-21T05:08:56.162Z",
+  "stars": 7,
+  "pushed_at": "2026-10-07T13:38:52Z",
+  "issues": {
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3A117BS%2Fdsh-perlica-ding%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6409:194586:149598:221D0F:6AD8490D and timestamp 2026-10-21 05:09:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3A117BS%2Fdsh-perlica-ding%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640A:1FA705:13C250:21335F:6AD8490E and timestamp 2026-10-21 05:09:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A117BS%2Fdsh-perlica-ding%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640B:13810:1467B9:21E548:6AD8490E and timestamp 2026-10-21 05:09:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A117BS%2Fdsh-perlica-ding%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640D:11B6:145882:21D4B7:6AD8490E and timestamp 2026-10-21 05:09:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A117BS%2Fdsh-perlica-ding%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6412:9ED8B:14457C:21B534:6AD8490E and timestamp 2026-10-21 05:09:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "dsh-perlica-ding",
+    "captured_at": "2026-10-21T05:08:56.162Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": 327,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-perlica-ding",
+    "error": null,
+    "publication": {
+      "first_published_at": "2026-08-16T09:38:45.734Z",
+      "captured_at": "2026-10-21T07:15:57.121Z",
+      "source_url": "https://registry.npmjs.org/dsh-perlica-ding",
+      "error": null,
+      "latest_version": "0.2.1",
+      "latest_published_at": "2026-10-07T13:38:01.768Z",
+      "latest_error": null
+    }
+  },
+  "code_update": {
+    "checked_at": "2026-10-21T05:08:56.162Z",
+    "baseline_revision": "f9db75c3cff13919659e81311a2b3d62f9af8aab",
+    "current_revision": "f9db75c3cff13919659e81311a2b3d62f9af8aab",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
+  }
+}

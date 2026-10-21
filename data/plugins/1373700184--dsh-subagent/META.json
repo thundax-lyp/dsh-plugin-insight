@@ -23,9 +23,12 @@
     "error": null,
     "publication": {
       "first_published_at": "2026-08-20T02:03:50.907Z",
-      "captured_at": "2026-10-21T05:33:17.845Z",
+      "captured_at": "2026-10-21T07:15:57.121Z",
       "source_url": "https://registry.npmjs.org/dsh-subagent",
-      "error": null
+      "error": null,
+      "latest_version": "0.0.1",
+      "latest_published_at": "2026-08-20T02:03:51.153Z",
+      "latest_error": null
     }
   }
 }

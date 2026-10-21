@@ -44,9 +44,12 @@
     "error": "HTTP 404",
     "publication": {
       "first_published_at": null,
-      "captured_at": "2026-10-21T05:08:56.162Z",
+      "captured_at": "2026-10-21T07:15:57.121Z",
       "source_url": "https://registry.npmjs.org/%40zeng%2Fdsh-sidebar-git-graph",
-      "error": "HTTP 404"
+      "error": "HTTP 404",
+      "latest_version": null,
+      "latest_published_at": null,
+      "latest_error": "HTTP 404"
     }
   },
   "code_update": {

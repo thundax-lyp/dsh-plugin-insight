@@ -23,9 +23,12 @@
     "error": null,
     "publication": {
       "first_published_at": "2026-09-11T10:15:18.472Z",
-      "captured_at": "2026-10-21T05:34:23.747Z",
+      "captured_at": "2026-10-21T07:15:57.121Z",
       "source_url": "https://registry.npmjs.org/%40aaronandwork%2Fdsh-evidence-gate",
-      "error": null
+      "error": null,
+      "latest_version": "0.2.1",
+      "latest_published_at": "2026-09-12T06:19:09.156Z",
+      "latest_error": null
     }
   }
 }

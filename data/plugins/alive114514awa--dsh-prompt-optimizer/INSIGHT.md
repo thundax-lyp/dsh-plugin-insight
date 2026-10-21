@@ -7,7 +7,7 @@
 分析版本：[0f6d8d4](https://github.com/ALIve114514awa/dsh-prompt-optimizer/tree/0f6d8d42bc3418c78153ad56968117f9c38c3d42)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/ALIve114514awa/dsh-prompt-optimizer) [![npm 30d 1,554](https://img.shields.io/static/v1?label=npm+30d&message=1%2C554&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-prompt-optimizer) [![首次发布 2026-08-19](https://img.shields.io/static/v1?label=%E9%A6%96%E6%AC%A1%E5%8F%91%E5%B8%83&message=2026-08-19&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-prompt-optimizer)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/ALIve114514awa/dsh-prompt-optimizer) [![npm 30d 1,554](https://img.shields.io/static/v1?label=npm+30d&message=1%2C554&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-prompt-optimizer) [![最新发布 2026-09-03](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-03&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-prompt-optimizer)
 <!-- END META -->
 
 **使用建议**：需要先整理需求且愿意审阅改写者可列为候选；直接明确的小任务收益有限，TUI应用回执不能当作已落地保证。

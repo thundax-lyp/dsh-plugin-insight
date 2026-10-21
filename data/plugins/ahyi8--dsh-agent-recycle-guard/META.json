@@ -44,9 +44,12 @@
     "error": null,
     "publication": {
       "first_published_at": "2026-10-11T12:27:23.263Z",
-      "captured_at": "2026-10-21T05:34:56.006Z",
+      "captured_at": "2026-10-21T07:15:57.121Z",
       "source_url": "https://registry.npmjs.org/dsh-agent-recycle-guard",
-      "error": null
+      "error": null,
+      "latest_version": "1.2.1",
+      "latest_published_at": "2026-10-13T02:41:01.536Z",
+      "latest_error": null
     }
   }
 }

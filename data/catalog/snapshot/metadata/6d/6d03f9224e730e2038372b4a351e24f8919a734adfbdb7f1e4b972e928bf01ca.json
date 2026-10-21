@@ -1,0 +1,55 @@
+{
+  "repository": "AL-Yichen/dsh-fullscreen-input",
+  "repository_id": 1407166868,
+  "captured_at": "2026-10-21T05:33:59.909Z",
+  "window_start": "2026-09-21T05:33:59.909Z",
+  "stars": 4,
+  "pushed_at": "2026-10-17T03:47:56Z",
+  "issues": {
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3AAL-Yichen%2Fdsh-fullscreen-input%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F304:507C6:5569B4:5B77F0:6AD84EC9 and timestamp 2026-10-21 05:34:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3AAL-Yichen%2Fdsh-fullscreen-input%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F426:272FB3:5289C9:589551:6AD84ECA and timestamp 2026-10-21 05:34:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3AAL-Yichen%2Fdsh-fullscreen-input%20is%3Aissue%20created%3A2026-09-21T05%3A33%3A59.909Z..2026-10-21T05%3A33%3A59.909Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F53A:19A250:512DE0:5738CC:6AD84ECB and timestamp 2026-10-21 05:34:03 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3AAL-Yichen%2Fdsh-fullscreen-input%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A33%3A59.909Z..2026-10-21T05%3A33%3A59.909Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F642:272FB3:528AAB:589673:6AD84ECB and timestamp 2026-10-21 05:34:04 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3AAL-Yichen%2Fdsh-fullscreen-input%20is%3Aissue%20updated%3A2026-09-21T05%3A33%3A59.909Z..2026-10-21T05%3A33%3A59.909Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F746:271056:53B90C:59C42D:6AD84ECC and timestamp 2026-10-21 05:34:05 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "dsh-fullscreen-input",
+    "captured_at": "2026-10-21T05:34:05.056Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": 748,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-fullscreen-input",
+    "error": null,
+    "publication": {
+      "first_published_at": "2026-10-06T11:58:49.743Z",
+      "captured_at": "2026-10-21T07:15:57.121Z",
+      "source_url": "https://registry.npmjs.org/dsh-fullscreen-input",
+      "error": null,
+      "latest_version": "1.2.4",
+      "latest_published_at": "2026-10-07T12:27:52.103Z",
+      "latest_error": null
+    }
+  }
+}

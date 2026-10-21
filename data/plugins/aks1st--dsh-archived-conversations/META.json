@@ -44,9 +44,12 @@
     "error": null,
     "publication": {
       "first_published_at": "2026-09-08T02:52:59.039Z",
-      "captured_at": "2026-10-21T05:33:48.047Z",
+      "captured_at": "2026-10-21T07:15:57.121Z",
       "source_url": "https://registry.npmjs.org/dsh-archived-conversations",
-      "error": null
+      "error": null,
+      "latest_version": "0.3.2",
+      "latest_published_at": "2026-09-11T03:51:32.615Z",
+      "latest_error": null
     }
   }
 }

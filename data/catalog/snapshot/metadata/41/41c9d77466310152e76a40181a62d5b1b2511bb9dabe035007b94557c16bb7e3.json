@@ -1,0 +1,42 @@
+{
+  "repository": "A8Chann/dsh-pet-live2d",
+  "repository_id": 1378097401,
+  "captured_at": "2026-10-21T05:08:56.162Z",
+  "window_start": "2026-09-21T05:08:56.162Z",
+  "stars": 46,
+  "pushed_at": "2026-10-20T03:41:40Z",
+  "issues": {
+    "open": 0,
+    "closed": 3,
+    "created_30d": 3,
+    "closed_30d": 3,
+    "updated_30d": 3
+  },
+  "errors": [],
+  "npm": {
+    "package_name": "dsh-pet-live2d",
+    "captured_at": "2026-10-21T05:08:56.162Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": 7358,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-pet-live2d",
+    "error": null,
+    "publication": {
+      "first_published_at": "2026-09-21T15:19:30.741Z",
+      "captured_at": "2026-10-21T07:15:57.121Z",
+      "source_url": "https://registry.npmjs.org/dsh-pet-live2d",
+      "error": null,
+      "latest_version": "3.3.3",
+      "latest_published_at": "2026-10-20T03:40:09.040Z",
+      "latest_error": null
+    }
+  },
+  "code_update": {
+    "checked_at": "2026-10-21T05:08:56.162Z",
+    "baseline_revision": "2b48355bc9fb0c99cd5d32df64675b1900629e88",
+    "current_revision": "2b48355bc9fb0c99cd5d32df64675b1900629e88",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
+  }
+}

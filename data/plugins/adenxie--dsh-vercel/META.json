@@ -44,9 +44,12 @@
     "error": "HTTP 404",
     "publication": {
       "first_published_at": "2026-10-19T05:07:49.032Z",
-      "captured_at": "2026-10-21T05:34:44.157Z",
+      "captured_at": "2026-10-21T07:15:57.121Z",
       "source_url": "https://registry.npmjs.org/%40adenxie%2Fdsh-vercel",
-      "error": null
+      "error": null,
+      "latest_version": "0.4.0",
+      "latest_published_at": "2026-10-19T13:09:08.221Z",
+      "latest_error": null
     }
   }
 }

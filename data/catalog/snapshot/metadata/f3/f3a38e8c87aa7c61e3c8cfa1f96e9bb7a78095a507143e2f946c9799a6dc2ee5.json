@@ -1,0 +1,55 @@
+{
+  "repository": "AgentDebugX/AgentDebugX",
+  "repository_id": 1296792947,
+  "captured_at": "2026-10-21T05:34:46.788Z",
+  "window_start": "2026-09-21T05:34:46.788Z",
+  "stars": 66,
+  "pushed_at": "2026-10-20T16:58:57Z",
+  "issues": {
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3AAgentDebugX%2FAgentDebugX%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9F8E:28E3E1:AF0025:FB1AD2:6AD84EF8 and timestamp 2026-10-21 05:34:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3AAgentDebugX%2FAgentDebugX%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A086:1F14A0:AE4E9B:FAB00E:6AD84EF9 and timestamp 2026-10-21 05:34:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3AAgentDebugX%2FAgentDebugX%20is%3Aissue%20created%3A2026-09-21T05%3A34%3A46.788Z..2026-10-21T05%3A34%3A46.788Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 316C:26A83F:51350E:5743E1:6AD84EFA and timestamp 2026-10-21 05:34:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3AAgentDebugX%2FAgentDebugX%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A34%3A46.788Z..2026-10-21T05%3A34%3A46.788Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3260:271056:53D86E:59E634:6AD84EFB and timestamp 2026-10-21 05:34:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3AAgentDebugX%2FAgentDebugX%20is%3Aissue%20updated%3A2026-09-21T05%3A34%3A46.788Z..2026-10-21T05%3A34%3A46.788Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3366:4AA35:55F5BC:5C03A0:6AD84EFC and timestamp 2026-10-21 05:34:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "dsh-agentdebugx",
+    "captured_at": "2026-10-21T05:34:52.695Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": 792,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-agentdebugx",
+    "error": null,
+    "publication": {
+      "first_published_at": "2026-08-25T13:09:31.687Z",
+      "captured_at": "2026-10-21T07:15:57.121Z",
+      "source_url": "https://registry.npmjs.org/dsh-agentdebugx",
+      "error": null,
+      "latest_version": "0.1.0",
+      "latest_published_at": "2026-08-25T13:09:32.020Z",
+      "latest_error": null
+    }
+  }
+}

@@ -44,9 +44,12 @@
     "error": null,
     "publication": {
       "first_published_at": "2026-08-19T15:29:41.027Z",
-      "captured_at": "2026-10-21T05:08:56.162Z",
+      "captured_at": "2026-10-21T07:15:57.121Z",
       "source_url": "https://registry.npmjs.org/dsh-plugin-gate",
-      "error": null
+      "error": null,
+      "latest_version": "1.3.2",
+      "latest_published_at": "2026-09-11T02:48:02.781Z",
+      "latest_error": null
     }
   },
   "code_update": {

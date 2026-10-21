@@ -7,7 +7,7 @@
 分析版本：[ebc1ae1](https://github.com/988hj7tczd-oss/dsh-receipts/tree/ebc1ae1cc2a24da9ce8407bb02606db0438e83a7)
 
 <!-- BEGIN META -->
-[![npm 30d 77](https://img.shields.io/static/v1?label=npm+30d&message=77&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-receipts) [![首次发布 2026-08-24](https://img.shields.io/static/v1?label=%E9%A6%96%E6%AC%A1%E5%8F%91%E5%B8%83&message=2026-08-24&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-receipts)
+[![npm 30d 77](https://img.shields.io/static/v1?label=npm+30d&message=77&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-receipts) [![最新发布 2026-08-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-24&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-receipts)
 <!-- END META -->
 
 **使用建议**：当前先在复制日志和Git关闭模式审阅。修复越界目标及时间窗传递后再启用交叉核对；分享HTML前检查路径与会话内容，活动时长不当收益。

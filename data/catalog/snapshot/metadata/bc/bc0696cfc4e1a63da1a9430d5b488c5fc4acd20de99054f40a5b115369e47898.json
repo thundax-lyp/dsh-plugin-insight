@@ -1,0 +1,55 @@
+{
+  "repository": "Aafff623/dsh-callout",
+  "repository_id": 1359145352,
+  "captured_at": "2026-10-21T05:34:08.090Z",
+  "window_start": "2026-09-21T05:34:08.090Z",
+  "stars": 0,
+  "pushed_at": "2026-09-09T12:34:40Z",
+  "issues": {
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3AAafff623%2Fdsh-callout%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID FCD4:26E54B:51EB05:57F28C:6AD84ED1 and timestamp 2026-10-21 05:34:09 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3AAafff623%2Fdsh-callout%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID FDE4:16071B:53FC9D:5A0826:6AD84ED2 and timestamp 2026-10-21 05:34:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3AAafff623%2Fdsh-callout%20is%3Aissue%20created%3A2026-09-21T05%3A34%3A08.090Z..2026-10-21T05%3A34%3A08.090Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7304:360622:A98294:F4469E:6AD84ED3 and timestamp 2026-10-21 05:34:11 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3AAafff623%2Fdsh-callout%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A34%3A08.090Z..2026-10-21T05%3A34%3A08.090Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7446:1ADA16:A9EC4C:F4488D:6AD84ED4 and timestamp 2026-10-21 05:34:12 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3AAafff623%2Fdsh-callout%20is%3Aissue%20updated%3A2026-09-21T05%3A34%3A08.090Z..2026-10-21T05%3A34%3A08.090Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7596:1ADA16:A9EE33:F44B5F:6AD84ED5 and timestamp 2026-10-21 05:34:13 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "dsh-callout",
+    "captured_at": "2026-10-21T05:34:13.660Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": null,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-callout",
+    "error": "HTTP 404",
+    "publication": {
+      "first_published_at": null,
+      "captured_at": "2026-10-21T07:15:57.121Z",
+      "source_url": "https://registry.npmjs.org/dsh-callout",
+      "error": "HTTP 404",
+      "latest_version": null,
+      "latest_published_at": null,
+      "latest_error": "HTTP 404"
+    }
+  }
+}

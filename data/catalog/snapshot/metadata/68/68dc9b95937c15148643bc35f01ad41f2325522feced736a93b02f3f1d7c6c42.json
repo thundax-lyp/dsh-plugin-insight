@@ -1,0 +1,42 @@
+{
+  "repository": "988hj7tczd-oss/dsh-lsp-packs",
+  "repository_id": 1344713526,
+  "captured_at": "2026-10-21T05:08:56.162Z",
+  "window_start": "2026-09-21T05:08:56.162Z",
+  "stars": 3,
+  "pushed_at": "2026-09-01T00:51:42Z",
+  "issues": {
+    "open": 0,
+    "closed": 0,
+    "created_30d": 0,
+    "closed_30d": 0,
+    "updated_30d": 0
+  },
+  "errors": [],
+  "npm": {
+    "package_name": "@dsh-lsp-packs/dsh-lsp-java",
+    "captured_at": "2026-10-21T05:08:56.162Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": null,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40dsh-lsp-packs%2Fdsh-lsp-java",
+    "error": "HTTP 404",
+    "publication": {
+      "first_published_at": null,
+      "captured_at": "2026-10-21T07:15:57.121Z",
+      "source_url": "https://registry.npmjs.org/%40dsh-lsp-packs%2Fdsh-lsp-java",
+      "error": "HTTP 404",
+      "latest_version": null,
+      "latest_published_at": null,
+      "latest_error": "HTTP 404"
+    }
+  },
+  "code_update": {
+    "checked_at": "2026-10-21T05:08:56.162Z",
+    "baseline_revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+    "current_revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
+  }
+}

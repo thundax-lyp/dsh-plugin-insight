@@ -1,0 +1,55 @@
+{
+  "repository": "AdonisSheldon/dsh-openai-oauth",
+  "repository_id": 1335992154,
+  "captured_at": "2026-10-21T05:34:36.817Z",
+  "window_start": "2026-09-21T05:34:36.817Z",
+  "stars": 9,
+  "pushed_at": "2026-08-20T16:23:48Z",
+  "issues": {
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3AAdonisSheldon%2Fdsh-openai-oauth%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9392:1F14A0:AE3EDB:FA9887:6AD84EEE and timestamp 2026-10-21 05:34:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3AAdonisSheldon%2Fdsh-openai-oauth%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 94F0:360622:A9AB61:F4823D:6AD84EEF and timestamp 2026-10-21 05:34:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3AAdonisSheldon%2Fdsh-openai-oauth%20is%3Aissue%20created%3A2026-09-21T05%3A34%3A36.817Z..2026-10-21T05%3A34%3A36.817Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9602:38A53A:AEAE2B:FB1450:6AD84EF0 and timestamp 2026-10-21 05:34:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3AAdonisSheldon%2Fdsh-openai-oauth%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A34%3A36.817Z..2026-10-21T05%3A34%3A36.817Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 986C:28E3E1:AEF62F:FB0C1F:6AD84EF2 and timestamp 2026-10-21 05:34:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3AAdonisSheldon%2Fdsh-openai-oauth%20is%3Aissue%20updated%3A2026-09-21T05%3A34%3A36.817Z..2026-10-21T05%3A34%3A36.817Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 996C:3BA9DC:AA605C:F473DE:6AD84EF3 and timestamp 2026-10-21 05:34:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "dsh-openai-oauth",
+    "captured_at": "2026-10-21T05:34:43.750Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": 814,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-openai-oauth",
+    "error": null,
+    "publication": {
+      "first_published_at": "2026-08-14T16:04:29.875Z",
+      "captured_at": "2026-10-21T07:15:57.121Z",
+      "source_url": "https://registry.npmjs.org/dsh-openai-oauth",
+      "error": null,
+      "latest_version": "0.4.0",
+      "latest_published_at": "2026-08-14T16:04:30.245Z",
+      "latest_error": null
+    }
+  }
+}

@@ -44,9 +44,12 @@
     "error": null,
     "publication": {
       "first_published_at": "2026-09-25T02:28:38.713Z",
-      "captured_at": "2026-10-21T05:08:56.162Z",
+      "captured_at": "2026-10-21T07:15:57.121Z",
       "source_url": "https://registry.npmjs.org/%40memef1f1y%2Fdsh-plugin-tts",
-      "error": null
+      "error": null,
+      "latest_version": "0.6.7",
+      "latest_published_at": "2026-10-13T02:46:38.569Z",
+      "latest_error": null
     }
   },
   "code_update": {
