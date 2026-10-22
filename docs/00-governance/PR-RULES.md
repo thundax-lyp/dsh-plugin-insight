@@ -66,11 +66,3 @@ GitHub Skill／插件与本机 gh 的凭据和权限可能不同。
 修改 job 名称或远端保护时核对二者一致，防止缺失检查阻塞或无检查放行；
 远端配置修改仍须单独获得对应授权。
 治理或工作流变化执行相称验证，结果写入 PR 或实际交付证据，不将运行快照复制回治理规则。
-
-每日 META 工作流由用户明确授权的定时维护触发，可在保留的 `codex/daily-meta-*` 机器人分支提交并创建／更新 PR，
-在本节限定的自动化门槛满足后授权普通 merge commit 合并，不授权直接写 main、绕过保护或改写历史；普通人工任务继续独立判断提交／推送／PR授权。
-机器人创建的 PR 使用 workflow_dispatch 显式运行原 CI，必需检查名称保持 Repository checks。
-
-META PR 自动维护由受信任 main 上的 `maintain:meta-pr` 执行，只有本仓库 github-actions 机器人创建、base 为 main、head 符合 `codex/daily-meta-<run_id>` 且来源确为成功每日 META 运行的 PR 才进入流程。差异仅限 META、既有生成页面和快照 metadata；研究、证据、发现记录、身份映射及工作流／脚本变化均不自动合并。
-维护流程只批准该 PR 当前提交的原 CI 执行，不批准 PR review，不删除评审、不自动 resolve。当前提交的 Codex 评审必须完成，全部 review threads 已解决，summary findings 已由具备仓库写权限的协作者明确 fixed／rejected，并通过当前 PR CI 及仓库所有实际保护门槛后，才按固定 head SHA 普通合并。评审缺失时自动请求一次；失败、未知或待决状态继续等待，不视为通过。
-main 推进后先通过 GitHub 更新 PR 分支，重新检查新 head 的范围、CI 和评审；冲突保留待处理。CI、评审与评论事件触发复核，定时兜底检查讨论 resolve 以及因事件抑制或延迟未推进的流程。自动合并后显式触发并回读 main CI 的运行 ID、工作流及其包含的合并提交；main 已前进时允许验证包含该合并提交的后续 main 运行。维护任务回查近24小时已合并 META PR，补偿未创建成功的合并后 CI；不把本地校验或旧提交的检查冒充当前提交结果。
