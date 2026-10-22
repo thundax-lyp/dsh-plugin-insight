@@ -1,14 +1,14 @@
 ---
 name: dsh-plugin-insight
-description: 显式调用时研究一个固定版本的 DSH 插件，识别技术或业务核心贡献、检验关键质疑并推导新创新假设，交付证据、详细分析和观察批次。可由用户独立调用，或由已显式启动的列表编排 Skill 调用。
+description: 显式调用时研究一个固定版本的 DSH 插件，识别技术或业务核心贡献、检验关键质疑并推导新创新假设，先分解明确研究问题，逐题交付完整回答、证据与未知项，再综合详细分析和观察批次。可由用户独立调用，或由已显式启动的列表编排 Skill 调用。
 ---
 
 # 单插件洞察
 
 由子 Agent 执行，仅处理父 Agent 分配的稳定组件及其固定版本，不隐式扩展为整轮清单扫描。
 用户独立调用本 Skill 时，由当前父 Agent 完成输入确认并分派子 Agent 执行洞察，接收并核对交付后返回；不因此启动整轮研究。
-使用[数据契约](../_shared/references/DATA-CONTRACT.md)、[研究规范](references/RESEARCH-STANDARD.md)
-及[输出标准](../dsh-plugin-init/references/OUTPUT-STANDARD.md)。依赖整个工程及当前可用的 GitHub Skill 或插件，不假设特定外部 Skill 名称。
+使用[数据契约](../_shared/references/DATA-CONTRACT.md)、[研究规范](references/RESEARCH-STANDARD.md)、
+[逐题研究与综合](references/QUESTION-WORKFLOW.md)及[输出标准](../dsh-plugin-init/references/OUTPUT-STANDARD.md)。依赖整个工程及当前可用的 GitHub Skill 或插件，不假设特定外部 Skill 名称。
 命令从工程根执行，Node 遵循 `.node-version`；Git 协作按根 AGENTS。
 
 专用工具为 [代码统计脚本](scripts/plugin-inventory.mjs)、[材料准备脚本](scripts/prepare-plugin-materials.mjs)与 [META 采集脚本](scripts/capture-plugin-meta.mjs)，
@@ -17,8 +17,11 @@ description: 显式调用时研究一个固定版本的 DSH 插件，识别技�
 1. **确定输入边界。** 获取稳定组件 ID、注册表中的 plugin-slug、轮次目录、仓库／组件路径、固定版本、检查时间、目标研究深度、来源材料和输出位置。
    父 Agent 分派本 Skill 给子 Agent 执行，多个子 Agent 可并行分析不同插件；职责与共享写入边界遵循[列表编排 Skill 的多 Agent 协作](../dsh-plugin-init/SKILL.md#多-agent-协作)。只处理父 Agent 分配的组件和独占本轮输出，父 Agent 统一验收与暂存，不自行改动共享 WORK／SESSION 或扩展委派。
    编排调用提供会话截止时间及当前快照中的分析、证据和基线摘要，不要求历史会话或 runs 归档。独立调用缺少身份或版本时先核对 GitHub 来源，确定后再分析；不得编造 ID。
-2. **识别并核查贡献。** 按研究规范的核心主线，区分作者主张和研究者识别的贡献，核对已有参照、上游归属与具体增量；明确谁在什么场景完成什么任务、原有办法和合格交付物。
+2. **先分解研究问题，再逐题核查。** 先按[逐题流程](references/QUESTION-WORKFLOW.md)保存总目标与 PLAN，为每道具体问题分配稳定ID、主题与回答判据；按研究规范的路由读取相关问题参考，分别采集与分析，不以一份通用材料包或几句总评代替各题回答。每题独立保存完整回答、对应证据、未知项及状态；装配后核对完整 research_questions 已随 REVIEWED-SOURCE.json 进入正式快照 artifacts，再清理本地过程副本；问题可共享材料，结论必须逐题说明支持、反证和边界。
+   Git 材料按[数据契约](../_shared/references/DATA-CONTRACT.md#git-原始材料的可追溯定位)记录原始仓库、完整提交及相对路径；逐题引用用绑定完整提交的文件/行号链接，正文不重复罗列同一 Git 定位及哈希；完整字段仍保存在结构化证据。非 Git 材料保留必要快照和上下文。
+   **识别并核查贡献。** 按研究规范的核心主线，区分作者主张和研究者识别的贡献，核对已有参照、上游归属与具体增量；明确谁在什么场景完成什么任务、原有办法和合格交付物。
    围绕核心贡献核查安装／效果依赖、用户／后台／异常流程、首次／持续／迁移成本及效果条件，深度按主张相关性选择。
+   成本按首次使用、持续使用和失败恢复分开核查，按[输出标准](../dsh-plugin-init/references/OUTPUT-STANDARD.md#成本与效果的表格展示)交付成本表与效果表；金额、耗时和效果未知时写明缺口，不填0或虚构收益。
    成本包括失败、重试和人工复核，现金与人工时间分列。源码与测试支撑判断，只有实际运行才记录执行证据。
    按研究规范先执行 `npm run inventory:plugin -- --root <readonly-checkout> --ref <commit> --component <path> --out data/runs/<round>/snapshots/<plugin-slug>/INVENTORY.json`；`data/runs/` 是本地运行目录，不进入 Git。
    根组件省略 component；只有抽读快照时用 --snapshot 替代 root/ref 并明确子集，不把抽读行数写成完整 LOC。
@@ -35,20 +38,28 @@ description: 显式调用时研究一个固定版本的 DSH 插件，识别技�
    ```
    有本地目录条目原件时可重复传入 `--directory-entry <file>`。该脚本只生成机械材料索引，不创建 observation、finding、研究深度或报告；
    checkout 必须位于固定提交且无改动，身份／版本／组件与 inventory 不一致时停止。
-3. **质疑与创新推演。** 检验最影响贡献成立的关键假设，核对归因、反例与其他解释；通过已有方案比较、机制推广／组合／替换或业务流程重组，尝试提出有推导依据的新创新假设及最小验证。状态和论证按研究规范、输出标准处理，不强凑创新，不以采用风险清单代替贡献分析。
+3. **逐题验收后综合。** 对照计划检查每题交付，未回答不能被综合摘要掩盖；partial／unknown 解释缺口、影响和补证动作，不适用须说明。检查跨题冲突并回指问题ID，再形成核心贡献、质疑、采用结论、创新假设与评分。
+   **质疑与创新推演。** 检验最影响贡献成立的关键假设，核对归因、反例与其他解释；通过已有方案比较、机制推广／组合／替换或业务流程重组，尝试提出有推导依据的新创新假设及最小验证。状态和论证按研究规范、输出标准处理，不强凑创新，不以采用风险清单代替贡献分析。
    编排只将所选的新项和待更新项传入本 Skill，确认未变的已有项不调用；独立调用或因依赖等变化入选时，即使代码版本未变也完整分析。内部核对当前快照的结论是否仍适用；当前证据仅在版本、环境和适用范围匹配时复用。INSIGHT 按输出标准只展示当前状态，不开展版本差异研究或回顾旧稿。
-   按本 Skill 的[百分制创新评分标准](references/RESEARCH-STANDARD.md#创新评分标准innovation-v1)分别评技术与业务创新；逐项说明参照、增量及限制，不将新假设计入插件贡献。创新评分写入观察批次的innovation_scores，数值与理由仅存JSON，不写入INSIGHT；未知项按数据契约处理。另按研究规范的采用推荐评分逐项判断不推荐／观察／试用／值得安装，保存recommendation及理由；新完成研究不得保留未评估，不从创新分或热度推断推荐，不将AI判断称为用户人工认可。
+   按本 Skill 的[百分制创新评分标准](references/SCORING-STANDARD.md#创新评分标准innovation-v1)分别评技术与业务创新；逐项说明参照、增量及限制，不将新假设计入插件贡献。创新评分写入观察批次的innovation_scores，数值与理由仅存JSON，不写入INSIGHT；未知项按数据契约处理。另按研究规范的采用推荐评分逐项判断不推荐／观察／试用／值得安装，保存recommendation及理由；新完成研究不得保留未评估，不从创新分或热度推断推荐，不将AI判断称为用户人工认可。
 4. **保存单项交付。** 原始材料写入本地 `data/runs/<round>/snapshots/<plugin-slug>/`，本轮完整洞察写入本地 `data/runs/<round>/insights/<plugin-slug>.md`，
    观察批次写入 `data/runs/<round>/observations/<plugin-slug>.json`，使用新批次 ID；批次只含本组件成功观察及其错误。
+   最终报告必须保留“研究问题与完整回答”正文，逐题完整呈现回答、证据原文及位置、未知项和状态；不能只留下摘要、只链接本地过程文件或折叠全部回答。证据原文达到10行时按输出标准默认折叠代码块，来源链接、依据解释和回答正文保持展开。
    详情须包含唯一一组“用途／亮点／思考／建议”四标签，正文以贡献、关键质疑、新创新假设与最小验证为主线，相关场景、依赖、流程、成本用于支撑论证，保留验证边界。
-   **按阅读目的组织正文。** 名称与功能摘要后给使用建议及实际核查状态；源码核查不能写成运行验证，不为补齐版式安排真实宿主验证。先回答适用场景、替代办法、能力、流程、依赖与兼容，再解释效果、成本和主要限制，随后放工程亮点与源码依据，最后放核查说明、分析版本与辅助统计。提交链接显示短 SHA，完整链接目标与版本绑定保留；不展示历史对照和“最后更新”徽章。
-   短篇优先合并成“使用建议／能力与限制／工程分析／核查说明”四部分，不将一两句话拆成十多个章节；短评给结论，正文只补原因、实例和证据。长篇提供页内目录，先完整组织“当前插件分析”，再独立展开“未来设计假设（未验证）”，不要把推演混入已实现能力；已有贡献、待验证假设与探索性设想的状态必须保留。工程统计放文末或折叠区，不打断使用判断。
+   表格化后逐段去除正文对表格的重复复述，综合与逐题回答均核对；正文只补独有机制、条件、计量口径和证据，保留未知项，不用相似度规则自动删研究内容。
+   展示层将用途、亮点、思考、建议等强调性短评统一输出为引用块；操作步骤、并列事项及缺口保持列表，表格和原文证据不做全局列表转换。研究原稿的四标签装配格式仍按现有接口提供。
+   按输出标准核对叙述标点，冒号主要留给格式标签，内容写成自然完整句子；标签后不叠加冒号引导语，源码和链接不作全局标点改写。
+   检查各表格组有唯一的小标题（能力、启动与依赖、启动步骤、成本、效果），避免丢失标题或同义标题连续堆叠；层级按输出标准执行。
+   能力清单按[输出标准](../dsh-plugin-init/references/OUTPUT-STANDARD.md)采用“能力／主要用途／使用条件与边界”表格；装配输入用可选 capability_table 保存人工撰写的表格，capabilities 继续保存正向摘要。表格不替代机制分析和逐题证据。
+   启动、依赖与流程按[输出标准](../dsh-plugin-init/references/OUTPUT-STANDARD.md#启动依赖与流程的表格展示)先给依赖条件表和简短启动步骤表，再展开机制、证据与限制；逐题回答不因表格展示而缩写。
+   **按阅读目的组织正文。** 顶部以引用块概览实现功能、已有核心亮点与风险缺陷，风险块保留关键质疑及其证据边界，不把静态风险写成已复现故障；完整使用建议移至限制分析之后；源码级研究的“已检查源码”和具体未覆盖项放在核查说明；源码核查不能写成运行验证，不为补齐版式安排真实宿主验证。先回答适用场景、替代办法、能力、流程、依赖与兼容，再解释效果、成本和主要限制，随后放工程亮点与源码依据，最后放核查说明、分析版本与辅助统计。提交链接显示短 SHA，完整链接目标与版本绑定保留；不展示历史对照和“最后更新”徽章。
+   短篇按内容合并为“用途与适用场景／能力与限制／工程分析／使用建议／核查说明”等必要部分，不将一两句话拆成十多个章节；短评给结论，正文保留完整逐题论证；短篇合并不得删掉逐题回答。展示层按[输出标准](../dsh-plugin-init/references/OUTPUT-STANDARD.md)给二、三级章节自动编号，逐题标题保留 Q01 等原编号，研究原稿不手写展示序号。长篇提供页内目录，不另加孤立的创新快捷跳转链接，先完整组织“插件分析”，第一子章节为“用途与适用场景”，解释做什么、谁在何种业务场景用、合格结果、原有办法和不适用条件，再独立展开“未来设计假设（未验证）”，不要把推演混入已实现能力；已有贡献、待验证假设与探索性设想的状态必须保留。工程统计放文末或折叠区，不打断使用判断。
    显式提交本轮复核的 findings 与时间，不以空数组直接继承旧点评。可参考合成示例，但不能导入为真实数据。
    不使用整轮生成器从静态候选或通用段落批量产生上述语义；若使用装配工具，输入必须是本项已完成且人工核对过的结构化分析，缺字段时失败而不是从旧结论猜测。
    `npm run assemble:insight -- --work <WORK.json> --plugin <id> --analysis <ANALYSIS.json>` 只装配本项人工分析；必填字段由脚本校验，源码路径必须实际存在。
-   ANALYSIS 包含 name、summary、scenario、mechanism、conclusion_status、contribution、critical_question、innovation_hypothesis、conclusion_findings、innovation_scores、recommendation、scope、distribution、cost、adoption、value、engineering、dependencies、workflow、baseline、verification、source_paths、capabilities、technical_category、business_category。recommendation必须包含AI结合本项研究明确给定的decision、reason及criteria（scenario／advantage／evidence／cost，各含score、rationale），按研究规范adoption-v1独立评分；装配器只求和并绑定版本、时间、源码证据和code依赖，不从adoption文案推断结论，不再使用trial_summary。conclusion_status 单独说明贡献与假设的结论状态；研究范围展示、版本日期口径和创新推演的重点呈现遵循输出标准。contribution、critical_question、innovation_hypothesis 分别承载输出标准要求的贡献论证、关键质疑和假设推演（无贡献判断／无新假设时写明原因）；三者必须由人工完成论证，装配器同时将原文写入报告及同名 findings，绑定本次源码证据、当前 code 指纹、复核时间和 current 状态；conclusion_findings 必须显式包含 contribution、critical_question、innovation_hypothesis 三个对象，各仅有人工选择的 topic 与 basis（使用档案 Schema 现有枚举），不重复正文；innovation_hypothesis 的 basis 必须为 unverified，引用推导材料不表示假设已经验证。装配器不从静态候选推断这些内容；额外证据、跨插件依赖及其他判断性质仍须人工逐条补充并校验。innovation_scores为technical／business对象，各含criteria、rationale、basis；分项键和上限遵循评分标准，人工给定分项，脚本只计算轴总分并绑定版本、时间及源码证据，评分不装配进Markdown。distribution保留为JSON分析材料，不装配为独立章节；按输出标准将影响贡献或建议的事实人工归入对应论证、建议或依赖条件。脚本不生成研究或采用判断、不自动暂存完成状态，已有交付拒绝覆盖。
-5. **核对并返回。** 执行观察批次结构校验，人工检查证据引用、身份、版本、可比条件及贡献—质疑—假设的推导语义，验收要求以输出标准为准。
-   同时检查读者是否能先看到建议与核查状态、长短篇展开是否合适、目录与章节是否一致，确认合并章节没有丢失证据、条件或假设状态。顶部 META 按输出标准保持Star、下载量、发布日期 Badge 的顺序并隐藏未知或0；“最新发布”日期 Badge 由生成器按输出标准读取已核实 npm 元数据，不人工补写研究原稿。只做展示重生成时由列表编排 Skill 读取当前原稿并生成，不修改正式原稿或检查点摘要。
+   ANALYSIS 必须包含 research_questions（结构及验收见逐题流程）以及 name、summary、scenario、mechanism、conclusion_status、contribution、critical_question、innovation_hypothesis、conclusion_findings、innovation_scores、recommendation、scope、distribution、cost、adoption、value、engineering、dependencies、workflow、baseline、verification、source_paths、capabilities、technical_category、business_category。recommendation必须包含AI结合本项研究明确给定的decision、reason及criteria（scenario／advantage／evidence／cost，各含score、rationale），按研究规范adoption-v1独立评分；装配器只求和并绑定版本、时间、源码证据和code依赖，不从adoption文案推断结论，不再使用trial_summary。conclusion_status 单独说明贡献与假设的结论状态；研究范围展示、版本日期口径和创新推演的重点呈现遵循输出标准。contribution、critical_question、innovation_hypothesis 分别承载输出标准要求的贡献论证、关键质疑和假设推演（无贡献判断／无新假设时写明原因）；三者必须由人工完成论证，装配器同时将原文写入报告及同名 findings，绑定本次源码证据、当前 code 指纹、复核时间和 current 状态；conclusion_findings 必须显式包含 contribution、critical_question、innovation_hypothesis 三个对象，各仅有人工选择的 topic 与 basis（使用档案 Schema 现有枚举），不重复正文；innovation_hypothesis 的 basis 必须为 unverified，引用推导材料不表示假设已经验证。装配器不从静态候选推断这些内容；额外证据、跨插件依赖及其他判断性质仍须人工逐条补充并校验。innovation_scores为technical／business对象，各含criteria、rationale、basis；分项键和上限遵循评分标准，人工给定分项，脚本只计算轴总分并绑定版本、时间及源码证据，评分不装配进Markdown。distribution保留为JSON分析材料，不装配为独立章节；按输出标准将影响贡献或建议的事实人工归入对应论证、建议或依赖条件。脚本不生成研究或采用判断、不自动暂存完成状态，已有交付拒绝覆盖。
+5. **核对并返回。** 对照 PLAN 按问题ID逐题验收完整回答、证据与未知项，确认综合与逐题正文均已保留；执行观察批次结构校验，人工检查证据引用、身份、版本、可比条件及贡献—质疑—假设的推导语义，验收要求以输出标准为准。
+   同时检查读者能否先看到功能、亮点和风险重点，再进入用途与业务场景；检查建议及核查状态是否归入对应正文，长短篇展开是否合适、目录与章节是否一致，确认合并章节没有丢失证据、条件或假设状态。顶部 META 按输出标准保持Star、下载量、发布日期 Badge 的顺序并隐藏未知或0；“最新发布”日期 Badge 由生成器按输出标准读取已核实 npm 元数据，不人工补写研究原稿。只做展示重生成时由列表编排 Skill 读取当前原稿并生成，不修改正式原稿或检查点摘要。
    返回人工确认的正向能力清单（带固定版本，未发现／未确认项不填0），以及基于项目自身 README／包描述的功能摘要（最多80字符，含来源URL与版本，不掺评价），以及稳定 ID、版本、实际完成深度、证据／详情／观察批次路径、未验证项及错误；受阻时返回已保存材料、稳定原因代码、可读原因、自包含问题详情和具体下一步，由父Agent登记正式受阻状态；不自行重试已被编排器跳过的项。
    返回的是本轮暂存记录，不代表已经覆盖正式快照。编排先校验所有可合并记录，最后合并到唯一当前快照；未通过的项不替换有效记录。
    不自行 plan／apply、不改会话状态、不生成全轮分类或推荐页、不改 README；这些由列表编排负责。

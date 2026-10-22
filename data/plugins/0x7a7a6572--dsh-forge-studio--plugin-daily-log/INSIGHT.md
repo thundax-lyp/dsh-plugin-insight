@@ -1,7 +1,5 @@
 # Forge 工作报告
 
-> 汇集 Git 提交和本地智能体对话，按模板生成并保存日报、周报或月报。
-
 [返回分类](../../views/categories/OFFICE-OPERATIONS.md) · [返回首页](../../../README.md)
 
 分析版本：[acb136c](https://github.com/0x7A7A6572/dsh-forge-studio/tree/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-daily-log)
@@ -10,17 +8,25 @@
 [![GitHub ★ 9](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9&color=yellow&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) [![npm 30d 1,976](https://img.shields.io/static/v1?label=npm+30d&message=1%2C976&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-daily-log) [![最新发布 2026-10-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-16&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-daily-log)
 <!-- END META -->
 
-**使用建议**：先只接一个仓库和一种会话来源，对照手写周报检查作者过滤、遗漏与错误归功。
+> **实现功能**：汇集 Git 提交和本地智能体对话，按模板生成并保存日报、周报或月报。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：入口按 agent 作用域启用报告工具，/report 转发用户需求，扫描索引和模板为后续生成提供材料。
 
-## 使用建议
+> **风险与缺陷**：按需启用工具可减少常驻上下文；提交与对话是活动证据，不自动证明业务成果。
 
-- **用途**：面向需要定期汇报工作的个人或团队，从实际活动记录生成报告，并支持回查来源。
+<a id="detail-section-1"></a>
+
+## 1 用途与适用场景
+
+> **用途**：面向需要定期汇报工作的个人或团队，从实际活动记录生成报告，并支持回查来源。
 
 git log 加手写总结更简单；本轮版本功能扩展后仍需核查多源解析与归因边界。
 
-## 能力与限制
+<a id="detail-section-2"></a>
+
+## 2 能力与限制
+
+**能力**
 
 - **模型工具**：daily_log 派发器按 agent 启用报告工具组。
 - **用户命令**：/report 接收报告需求并转交模型。
@@ -39,15 +45,27 @@ git log 加手写总结更简单；本轮版本功能扩展后仍需核查多源
 
 扫描、模型总结和逐项事实核对都计入成本；低频报告者可能不易摊薄接入维护。
 
-- **思考**：按需启用工具可减少常驻上下文；提交与对话是活动证据，不自动证明业务成果。
+> **思考**：按需启用工具可减少常驻上下文；提交与对话是活动证据，不自动证明业务成果。
 
-## 工程分析
+<a id="detail-section-3"></a>
 
-- **亮点**：入口按 agent 作用域启用报告工具，/report 转发用户需求，扫描索引和模板为后续生成提供材料。
+## 3 工程分析
+
+> **亮点**：入口按 agent 作用域启用报告工具，/report 转发用户需求，扫描索引和模板为后续生成提供材料。
 
 派发器与作用域工具门控值得借鉴；写入授权受宿主审批策略影响，不能宣传为总会弹窗。
 
-## 核查说明
+<a id="detail-section-4"></a>
+
+## 4 使用建议
+
+先只接一个仓库和一种会话来源，对照手写周报检查作者过滤、遗漏与错误归功。
+
+<a id="detail-section-5"></a>
+
+## 5 核查说明
+
+**核查状态**：已检查源码。
 
 - 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。

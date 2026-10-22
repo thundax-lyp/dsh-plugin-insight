@@ -1,0 +1,1 @@
+| {{plugin}} | {{purpose}} | {{downloads}} | {{stars}} |

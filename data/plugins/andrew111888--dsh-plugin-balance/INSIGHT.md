@@ -1,7 +1,5 @@
 # dsh-plugin-balance
 
-> 在DSH输入框附近显示多供应商余额/套餐用量，并持久统计会话token及估算费用。
-
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
 分析版本：[96bb159](https://github.com/Andrew111888/dsh-plugin-balance/tree/96bb1592c949456aa37ccc3a296085f59df2ee9c)
@@ -10,44 +8,41 @@
 [![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=yellow&logo=github&style=flat)](https://github.com/Andrew111888/dsh-plugin-balance) [![npm 30d 1,271](https://img.shields.io/static/v1?label=npm+30d&message=1%2C271&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-balance) [![最新发布 2026-08-26](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-26&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-balance)
 <!-- END META -->
 
-**使用建议**：先使用固定可信端点，并核对自定义目标与凭据绑定。以服务账单验算统计，金额仅作估算，不直接用于报销或财务结算。
+> **实现功能**：在DSH输入框附近显示多供应商余额/套餐用量，并持久统计会话token及估算费用。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：增量是额度查询与持久会话用量同页展示，并处理流中多次usage样本覆盖；余额数据来自供应商，估价表不是计费真相。
+
+> **风险与缺陷**：密钥不回浏览器是否等于不会发错目的地？custom请求允许客户端baseUrl/path，凭据由providerId对应设置解析，handler未见将地址绑定已注册provider或独立信任校验；可能把现有key发到自定义目标。账目重放与静态价格亦不能保证实际费用准确。
 
 **本文目录**
 
-- [当前插件分析](#detail-section-1)
-  - [使用判断](#detail-section-2)
-  - [能力、流程与成本](#detail-section-3)
-  - [工程贡献](#detail-section-4)
-  - [主要限制](#detail-section-5)
-  - [核查说明与分析版本](#detail-section-6)
-- [未来设计假设（未验证）](#detail-section-7)
-- [辅助信息](#detail-section-8)
+- [1 插件分析](#detail-section-1)
+  - [1.1 用途与适用场景](#detail-section-2)
+  - [1.2 能力、流程与成本](#detail-section-3)
+  - [1.3 工程贡献](#detail-section-4)
+  - [1.4 主要限制](#detail-section-5)
+  - [1.5 使用建议](#detail-section-6)
+  - [1.6 核查说明与分析版本](#detail-section-7)
+- [2 未来设计假设（未验证）](#detail-section-8)
+- [3 辅助信息](#detail-section-9)
 
 <a id="detail-section-1"></a>
 
-## 当前插件分析
+## 1 插件分析
 
 <a id="detail-section-2"></a>
 
-### 使用判断
+### 1.1 用途与适用场景
 
-- **用途**：多模型用户希望区分账户额度、会话消耗与预计费用，合格账目应可与实际服务账单对照。
-
-- **建议**：由服务端凭据代理推导，可把可用provider、目标origin和凭据ref绑定在Host配置，浏览器只传稳定ID，返回账单来源与价格版本。未验证；伪造baseUrl/重定向必须拒绝且不带key，账单样本误差应可解释。
-
-先使用固定可信端点，并核对自定义目标与凭据绑定。以服务账单验算统计，金额仅作估算，不直接用于报销或财务结算。
-
-核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。
-
-源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。
+> **用途**：多模型用户希望区分账户额度、会话消耗与预计费用，合格账目应可与实际服务账单对照。
 
 供应商原始账单权威但分散；宿主token视图更直接，插件聚合历史与额度并增加代理责任。
 
 <a id="detail-section-3"></a>
 
-### 能力、流程与成本
+### 1.2 能力、流程与成本
+
+**能力**
 
 - **Host 路由**：余额代理、provider列表与用量统计。
 - **事件监听**：会话usage折叠。
@@ -66,13 +61,13 @@ DSH credentials/llm/settings/sessions/webServer、供应商接口和可选HTTP�
 
 提高消耗可见性，未证明降低支出或跨供应商费用准确可比。
 
-- **思考**：密钥不回浏览器是否等于不会发错目的地？custom请求允许客户端baseUrl/path，凭据由providerId对应设置解析，handler未见将地址绑定已注册provider或独立信任校验；可能把现有key发到自定义目标。账目重放与静态价格亦不能保证实际费用准确。
+> **思考**：密钥不回浏览器是否等于不会发错目的地？custom请求允许客户端baseUrl/path，凭据由providerId对应设置解析，handler未见将地址绑定已注册provider或独立信任校验；可能把现有key发到自定义目标。账目重放与静态价格亦不能保证实际费用准确。
 
 <a id="detail-section-4"></a>
 
-### 工程贡献
+### 1.3 工程贡献
 
-- **亮点**：增量是额度查询与持久会话用量同页展示，并处理流中多次usage样本覆盖；余额数据来自供应商，估价表不是计费真相。
+> **亮点**：增量是额度查询与持久会话用量同页展示，并处理流中多次usage样本覆盖；余额数据来自供应商，估价表不是计费真相。
 
 增量是额度查询与持久会话用量同页展示，并处理流中多次usage样本覆盖；余额数据来自供应商，估价表不是计费真相。
 
@@ -80,13 +75,25 @@ usage游标/请求样本替换、迁移备份和有界缓存有用；通用凭�
 
 <a id="detail-section-5"></a>
 
-### 主要限制
+### 1.4 主要限制
 
 密钥不回浏览器是否等于不会发错目的地？custom请求允许客户端baseUrl/path，凭据由providerId对应设置解析，handler未见将地址绑定已注册provider或独立信任校验；可能把现有key发到自定义目标。账目重放与静态价格亦不能保证实际费用准确。
 
 <a id="detail-section-6"></a>
 
-### 核查说明与分析版本
+### 1.5 使用建议
+
+先使用固定可信端点，并核对自定义目标与凭据绑定。以服务账单验算统计，金额仅作估算，不直接用于报销或财务结算。
+
+核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。
+
+源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。
+
+<a id="detail-section-7"></a>
+
+### 1.6 核查说明与分析版本
+
+**核查状态**：已检查源码。
 
 - **仓库**：[Andrew111888/dsh-plugin-balance](https://github.com/Andrew111888/dsh-plugin-balance)
 - **版本号**：1.4.4（[固定提交 96bb1592](https://github.com/Andrew111888/dsh-plugin-balance/tree/96bb1592c949456aa37ccc3a296085f59df2ee9c)）
@@ -97,9 +104,9 @@ usage游标/请求样本替换、迁移备份和有界缓存有用；通用凭�
 - 边界：抽读lib/index.js、lib/client.js；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。
 - 下一步：模拟供应商和密钥，用伪造目标/重定向核对无泄露；对流式多usage、重启重放、价格变化和多进程统计测去重与账单误差。
 
-<a id="detail-section-7"></a>
+<a id="detail-section-8"></a>
 
-## 未来设计假设（未验证）
+## 2 未来设计假设（未验证）
 
 由服务端凭据代理推导，可把可用provider、目标origin和凭据ref绑定在Host配置，浏览器只传稳定ID，返回账单来源与价格版本。未验证；伪造baseUrl/重定向必须拒绝且不带key，账单样本误差应可解释。
 
@@ -119,9 +126,9 @@ usage游标/请求样本替换、迁移备份和有界缓存有用；通用凭�
 
 </details>
 
-<a id="detail-section-8"></a>
+<a id="detail-section-9"></a>
 
-## 辅助信息
+## 3 辅助信息
 
 **活跃度**
 

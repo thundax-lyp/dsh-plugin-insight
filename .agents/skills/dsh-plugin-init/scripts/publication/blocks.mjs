@@ -30,33 +30,33 @@ const categoryScopes = {
 };
 export const categoryScope = (key) => categoryScopes[key] ?? categoryScopes.other;
 const nameLink = (e) => template('LINK', { label: clean(e.plugin.name), url: e.href ?? `#${e.anchor}` });
-export function renderCountBadge(label, value, { color, logo, url }) {
-    if (!Number.isSafeInteger(value) || value <= 0) return '';
+export function renderCountBadge(label, value, { color, logo, url, compact = false }) {
+    if (!Number.isSafeInteger(value) || value <= 0) return compact ? '-' : '';
     return template('BADGE', {
         alt: `${label} ${value.toLocaleString('en-US')}`,
         image:
             'https://img.shields.io/static/v1?' +
             new URLSearchParams({
-                label,
+                label: compact ? '' : label,
                 message: value.toLocaleString('en-US'),
                 color,
-                logo,
+                ...(compact ? {} : { logo }),
                 style: 'flat'
             }).toString(),
         url
     });
 }
-export function renderPublicationBadge(label, publishedAt, url) {
-    if (!publishedAt || !Number.isFinite(Date.parse(publishedAt))) return '';
+export function renderPublicationBadge(label, publishedAt, url, { compact = false } = {}) {
+    if (!publishedAt || !Number.isFinite(Date.parse(publishedAt))) return compact ? '-' : '';
     const date = new Date(Date.parse(publishedAt) + 8 * 3600000).toISOString().slice(0, 10);
     return template('BADGE', {
         alt: `${label} ${date}`,
         image:
             'https://img.shields.io/static/v1?' +
             new URLSearchParams({
-                label,
+                label: compact ? '' : label,
                 message: date,
-                labelColor: '668a73',
+                ...(compact ? {} : { labelColor: '668a73' }),
                 color: 'grey',
                 style: 'flat'
             }).toString(),
@@ -127,7 +127,7 @@ export function renderWeeklyNew(items, date) {
             .join('\n')
     });
 }
-export function renderLatest(items, date, limit = 5) {
+function selectLatest(items, date, limit = 5) {
     const end = Date.parse(date + 'T23:59:59+08:00');
     const selected = items
         .filter(
@@ -141,6 +141,10 @@ export function renderLatest(items, date, limit = 5) {
                 Date.parse(b.npmLatestPublished) - Date.parse(a.npmLatestPublished) || a.i.id.localeCompare(b.i.id)
         )
         .slice(0, limit);
+    return selected;
+}
+export function renderLatest(items, date, limit = 5) {
+    const selected = selectLatest(items, date, limit);
     return template('LATEST', {
         items:
             selected
@@ -165,7 +169,7 @@ export function renderLatest(items, date, limit = 5) {
                 .join('\n') || '最近30天暂无已核实的版本发布记录。'
     });
 }
-export function renderHot(items, limit = 5) {
+function selectHot(items, limit = 5) {
     const packages = new Set();
     const selected = items
         .filter((e) => {
@@ -186,6 +190,10 @@ export function renderHot(items, limit = 5) {
             return true;
         })
         .slice(0, limit);
+    return selected;
+}
+export function renderHot(items, limit = 5) {
+    const selected = selectHot(items, limit);
     return template('HOT', {
         items:
             selected
@@ -200,10 +208,14 @@ export function renderHot(items, limit = 5) {
     });
 }
 
-export function renderRecommended(recommendations, byId, limit = 5) {
+function selectRecommended(recommendations, byId, limit = 5) {
     const selected = recommendations
         .filter((r) => r.kind !== 'observe' && !byId.get(r.plugin_id).needsReview)
         .slice(0, limit);
+    return selected;
+}
+export function renderRecommended(recommendations, byId, limit = 5) {
+    const selected = selectRecommended(recommendations, byId, limit);
     return template('RECOMMENDED', {
         items:
             selected
@@ -219,6 +231,97 @@ export function renderRecommended(recommendations, byId, limit = 5) {
                 })
                 .join('\n') || '暂无符合条件的推荐。'
     });
+}
+// Standalone columns share the homepage's selection and ordering, with local comparison anchors.
+export function renderColumn(key, items, date, recommendations) {
+    const byId = new Map(items.map((entry) => [entry.i.id, entry]));
+    const selected =
+        key === 'LATEST'
+            ? selectLatest(items, date, Infinity)
+            : key === 'HOT'
+              ? selectHot(items, Infinity)
+              : key === 'RECOMMENDED'
+                ? selectRecommended(recommendations, byId, 50).map((recommendation) => ({
+                      ...byId.get(recommendation.plugin_id),
+                      recommendation
+                  }))
+                : null;
+    if (!selected) throw Error(`unknown column: ${key}`);
+    const index = selected
+        .map((entry) => {
+            const common = {
+                plugin: nameLink({ ...entry, href: `#${entry.anchor}` }),
+                purpose: tableCell(entry.summary)
+            };
+            if (key === 'RECOMMENDED')
+                return template('COLUMN-ROW', {
+                    ...common,
+                    value: tableCell(entry.recommendation.summary.replaceAll('条件试用', '试用'))
+                });
+            if (key === 'HOT')
+                return template('COLUMN-HOT-ROW', {
+                    ...common,
+                    downloads: renderCountBadge('npm 近30天下载', entry.npmDownloads.downloads_30d, {
+                        color: 'blue',
+                        compact: true,
+                        url: `https://www.npmjs.com/package/${entry.npmDownloads.package_name}`
+                    }),
+                    stars: renderCountBadge('GitHub Star', entry.stars, {
+                        color: 'yellow',
+                        compact: true,
+                        url: `https://github.com/${entry.plugin.repository}`
+                    })
+                });
+            return template('COLUMN-ROW', {
+                ...common,
+                value: renderPublicationBadge(
+                    '最新发布',
+                    entry.npmLatestPublished,
+                    `https://www.npmjs.com/package/${entry.npmDownloads.package_name}`,
+                    { compact: true }
+                )
+            });
+        })
+        .join('\n');
+    const details = selected
+        .map((entry) => {
+            const reason =
+                key === 'RECOMMENDED'
+                    ? template('COLUMN-RECOMMENDATION', {
+                          reason: clean(entry.recommendation.summary).replaceAll('条件试用', '试用'),
+                          kind: entry.recommendation.kind === 'install' ? ' · 值得安装' : ''
+                      })
+                    : key === 'HOT'
+                      ? template('COLUMN-DOWNLOADS', {
+                            downloads: entry.npmDownloads.downloads_30d.toLocaleString('en-US'),
+                            start: entry.npmDownloads.window_start,
+                            end: entry.npmDownloads.window_end
+                        })
+                      : template('COLUMN-RELEASE', {
+                            version: clean(entry.npmDownloads.publication.latest_version ?? '版本未知'),
+                            published: new Date(Date.parse(entry.npmLatestPublished) + 8 * 3600000)
+                                .toISOString()
+                                .slice(0, 10),
+                            package: `https://www.npmjs.com/package/${entry.npmDownloads.package_name}`
+                        });
+            return template('COLUMN-DETAIL', {
+                anchor: entry.anchor,
+                plugin: nameLink(entry),
+                meta: entry.meta,
+                purpose: clean(entry.summary),
+                reason,
+                conditions: clean(entry.usageConditions)
+            });
+        })
+        .join('\n\n');
+    const content = selected.length
+        ? template('COLUMN-COMPARISON', {
+              index: template(`COLUMN-INDEX-${key}`, { rows: index }),
+              details
+          })
+        : template(`COLUMN-EMPTY-${key}`);
+    // Share the reader-facing introduction while replacing only the compact list body.
+    return template(key, { items: content }).replace(/^## \[([^\]]+)\]\([^\n]+\)/, '# $1');
 }
 export function categoryGroups(items) {
     const groups = new Map();

@@ -1,7 +1,5 @@
 # dsh-wsl-cal
 
-> 通过本地khal读取日历列表、今日日程和未来指定天数的安排。
-
 [返回分类](../../views/categories/OFFICE-OPERATIONS.md) · [返回首页](../../../README.md)
 
 分析版本：[675bc5c](https://github.com/173787247/dsh-wsl-cal/tree/675bc5cc7efaf79a171e205e4f570ac2b945bb13)
@@ -10,17 +8,25 @@
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-cal)
 <!-- END META -->
 
-**使用建议**：适合已配置khal的人，先核对本地日期、时区与日历数量；空输出先确认同步与过滤，不直接判断没有安排。
+> **实现功能**：通过本地khal读取日历列表、今日日程和未来指定天数的安排。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：lib/cal.js查找khal，分别调用printcalendars和list，限制未来天数、超时与输出长度；Host注册状态、日历与日程工具。
 
-## 使用建议
+> **风险与缺陷**：把已有日历读取接入会话有便利，安装它不能自动把企业日历同步进来。
 
-- **用途**：已有khal日历的用户希望在会话内查询近期安排，交付应与本地日历一致，不误以为已创建事件。
+<a id="detail-section-1"></a>
+
+## 1 用途与适用场景
+
+> **用途**：已有khal日历的用户希望在会话内查询近期安排，交付应与本地日历一致，不误以为已创建事件。
 
 此前未入档；直接khal或原生日历更直观，本项适合希望在技术会话中顺手查询的人。
 
-## 能力与限制
+<a id="detail-section-2"></a>
+
+## 2 能力与限制
+
+**能力**
 
 - **模型工具**：cal_status、cal_calendars、cal_today、cal_list。
 
@@ -38,15 +44,27 @@
 
 首次部署khal和同步账户是主要负担；日常CLI开销低但同步失败需要排查，模型读取日程仍会消耗上下文。
 
-- **思考**：把已有日历读取接入会话有便利，安装它不能自动把企业日历同步进来。
+> **思考**：把已有日历读取接入会话有便利，安装它不能自动把企业日历同步进来。
 
-## 工程分析
+<a id="detail-section-3"></a>
 
-- **亮点**：lib/cal.js查找khal，分别调用printcalendars和list，限制未来天数、超时与输出长度；Host注册状态、日历与日程工具。
+## 3 工程分析
+
+> **亮点**：lib/cal.js查找khal，分别调用printcalendars和list，限制未来天数、超时与输出长度；Host注册状态、日历与日程工具。
 
 独立CLI执行器限制输出和超时，calendarCount未知用null；路径探测依赖bash环境，CLI与宿主环境不一致需核实。
 
-## 核查说明
+<a id="detail-section-4"></a>
+
+## 4 使用建议
+
+适合已配置khal的人，先核对本地日期、时区与日历数量；空输出先确认同步与过滤，不直接判断没有安排。
+
+<a id="detail-section-5"></a>
+
+## 5 核查说明
+
+**核查状态**：已检查源码。
 
 - 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。

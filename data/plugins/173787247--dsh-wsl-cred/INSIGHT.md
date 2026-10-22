@@ -1,7 +1,5 @@
 # dsh-wsl-cred
 
-> 读取Git凭据助手与远端类型，给出WSL使用Windows Git Credential Manager的排障提示。
-
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
 分析版本：[1c45da3](https://github.com/173787247/dsh-wsl-cred/tree/1c45da3969a109959783373175150c87a3a33fa0)
@@ -10,17 +8,25 @@
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-cred)
 <!-- END META -->
 
-**使用建议**：先确认工具工作目录和远端协议，只读查看配置后再人工修改；不要为了验证把token贴进会话。
+> **实现功能**：读取Git凭据助手与远端类型，给出WSL使用Windows Git Credential Manager的排障提示。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：lib/cred.js执行git config与remote get-url，分类HTTPS/SSH并隐藏URL userinfo，探测常见Windows GCM路径，生成相应建议。
 
-## 使用建议
+> **风险与缺陷**：把SSH与HTTPS路径分开能减少错修；找到GCM可执行文件不证明凭据存在或具备目标仓库写权限。
 
-- **用途**：WSL中git push认证失败的开发者需要区分HTTPS凭据与SSH代理问题，交付是明确下一步核查而非得到token。
+<a id="detail-section-1"></a>
+
+## 1 用途与适用场景
+
+> **用途**：WSL中git push认证失败的开发者需要区分HTTPS凭据与SSH代理问题，交付是明确下一步核查而非得到token。
 
 此前未入档；原生命令可提供同样证据，本项优势是把多处结果整理为可读提示。
 
-## 能力与限制
+<a id="detail-section-2"></a>
+
+## 2 能力与限制
+
+**能力**
 
 - **模型工具**：cred_hint。
 
@@ -38,15 +44,27 @@
 
 无外部服务订阅，主要是探测时间与人工修认证配置；错误套用全局helper会影响其他仓库，回退时间应计入。
 
-- **思考**：把SSH与HTTPS路径分开能减少错修；找到GCM可执行文件不证明凭据存在或具备目标仓库写权限。
+> **思考**：把SSH与HTTPS路径分开能减少错修；找到GCM可执行文件不证明凭据存在或具备目标仓库写权限。
 
-## 工程分析
+<a id="detail-section-3"></a>
 
-- **亮点**：lib/cred.js执行git config与remote get-url，分类HTTPS/SSH并隐藏URL userinfo，探测常见Windows GCM路径，生成相应建议。
+## 3 工程分析
+
+> **亮点**：lib/cred.js执行git config与remote get-url，分类HTTPS/SSH并隐藏URL userinfo，探测常见Windows GCM路径，生成相应建议。
 
 远端分类和建议生成分离便于复用，常见URL userinfo已掩码；helper读取失败回退为空会混同未配置与读取失败。
 
-## 核查说明
+<a id="detail-section-4"></a>
+
+## 4 使用建议
+
+先确认工具工作目录和远端协议，只读查看配置后再人工修改；不要为了验证把token贴进会话。
+
+<a id="detail-section-5"></a>
+
+## 5 核查说明
+
+**核查状态**：已检查源码。
 
 - 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。

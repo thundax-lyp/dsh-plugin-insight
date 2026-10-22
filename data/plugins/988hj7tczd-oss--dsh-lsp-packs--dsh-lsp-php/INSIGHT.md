@@ -1,7 +1,5 @@
 # dsh-lsp-php
 
-> 为DSH配置Intelephense或自定义PHP语言服务路由。
-
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
 分析版本：[258bb64](https://github.com/988hj7tczd-oss/dsh-lsp-packs/tree/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-php)
@@ -10,42 +8,41 @@
 [![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-lsp-packs)
 <!-- END META -->
 
-**使用建议**：先选清楚默认服务或phpactor，再逐项测需要的导航动作；别从统一工具名推断高级功能免费可用。
+> **实现功能**：为DSH配置Intelephense或自定义PHP语言服务路由。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：把默认PHP服务和替代启动参数封装成独立配置包，省手写servers表；Intelephense/phpactor的分析能力不属本项实现，提供替换字段不代表两个server效果相同。
+
+> **风险与缺陷**：README把Intelephense付费高级功能与phpactor替代分别说明，故工具暴露四操作不等于默认免费server都实现。测试只在默认intelephense存在时跑真实lane，不能证明phpactor兼容；替代还需PHP运行时。fallback仅保留默认.php表，不能保全覆盖。
 
 **本文目录**
 
-- [当前插件分析](#detail-section-1)
-  - [使用判断](#detail-section-2)
-  - [能力、流程与成本](#detail-section-3)
-  - [工程贡献](#detail-section-4)
-  - [主要限制](#detail-section-5)
-  - [核查说明与分析版本](#detail-section-6)
-- [未来设计假设（未验证）](#detail-section-7)
-- [辅助信息](#detail-section-8)
+- [1 插件分析](#detail-section-1)
+  - [1.1 用途与适用场景](#detail-section-2)
+  - [1.2 能力、流程与成本](#detail-section-3)
+  - [1.3 工程贡献](#detail-section-4)
+  - [1.4 主要限制](#detail-section-5)
+  - [1.5 使用建议](#detail-section-6)
+  - [1.6 核查说明与分析版本](#detail-section-7)
+- [2 未来设计假设（未验证）](#detail-section-8)
+- [3 辅助信息](#detail-section-9)
 
 <a id="detail-section-1"></a>
 
-## 当前插件分析
+## 1 插件分析
 
 <a id="detail-section-2"></a>
 
-### 使用判断
+### 1.1 用途与适用场景
 
-- **用途**：适合已有PHP工程、需要把外部语言服务接入DSH的开发者。
-
-- **建议**：未验证假设：把server实际能力与许可条件呈现在查询前，可减少把未实现操作误当连接失败。分别用两个server和四操作验证支持矩阵及报错归因；未知能力保持未知。
-
-先选清楚默认服务或phpactor，再逐项测需要的导航动作；别从统一工具名推断高级功能免费可用。
-
-**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，外部语言服务或技能流程的实际运行尚未验证；未来假设未验证。
+> **用途**：适合已有PHP工程、需要把外部语言服务接入DSH的开发者。
 
 替代是PHP IDE或直接手配stdio；本包不包含PHP语言引擎。
 
 <a id="detail-section-3"></a>
 
-### 能力、流程与成本
+### 1.2 能力、流程与成本
+
+**能力**
 
 - **后台**：php provider、.php映射与可替换server配置
 
@@ -63,13 +60,13 @@ php入口默认intelephense --stdio，provider php映射.php；README给phpactor
 
 降低PHP接线重复，无默认与替代服务效果对照。
 
-- **思考**：README把Intelephense付费高级功能与phpactor替代分别说明，故工具暴露四操作不等于默认免费server都实现。测试只在默认intelephense存在时跑真实lane，不能证明phpactor兼容；替代还需PHP运行时。fallback仅保留默认.php表，不能保全覆盖。
+> **思考**：README把Intelephense付费高级功能与phpactor替代分别说明，故工具暴露四操作不等于默认免费server都实现。测试只在默认intelephense存在时跑真实lane，不能证明phpactor兼容；替代还需PHP运行时。fallback仅保留默认.php表，不能保全覆盖。
 
 <a id="detail-section-4"></a>
 
-### 工程贡献
+### 1.3 工程贡献
 
-- **亮点**：把默认PHP服务和替代启动参数封装成独立配置包，省手写servers表；Intelephense/phpactor的分析能力不属本项实现，提供替换字段不代表两个server效果相同。
+> **亮点**：把默认PHP服务和替代启动参数封装成独立配置包，省手写servers表；Intelephense/phpactor的分析能力不属本项实现，提供替换字段不代表两个server效果相同。
 
 把默认PHP服务和替代启动参数封装成独立配置包，省手写servers表；Intelephense/phpactor的分析能力不属本项实现，提供替换字段不代表两个server效果相同。
 
@@ -79,13 +76,23 @@ php入口默认intelephense --stdio，provider php映射.php；README给phpactor
 
 <a id="detail-section-5"></a>
 
-### 主要限制
+### 1.4 主要限制
 
 README把Intelephense付费高级功能与phpactor替代分别说明，故工具暴露四操作不等于默认免费server都实现。测试只在默认intelephense存在时跑真实lane，不能证明phpactor兼容；替代还需PHP运行时。fallback仅保留默认.php表，不能保全覆盖。
 
 <a id="detail-section-6"></a>
 
-### 核查说明与分析版本
+### 1.5 使用建议
+
+先选清楚默认服务或phpactor，再逐项测需要的导航动作；别从统一工具名推断高级功能免费可用。
+
+**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，外部语言服务或技能流程的实际运行尚未验证；未来假设未验证。
+
+<a id="detail-section-7"></a>
+
+### 1.6 核查说明与分析版本
+
+**核查状态**：已检查源码。
 
 - **仓库**：[988hj7tczd-oss/dsh-lsp-packs](https://github.com/988hj7tczd-oss/dsh-lsp-packs)
 - **版本号**：0.1.0（[固定提交 258bb640](https://github.com/988hj7tczd-oss/dsh-lsp-packs/tree/258bb6409c504fa1eed20b6f70d13009522ca0ce)）
@@ -96,9 +103,9 @@ README把Intelephense付费高级功能与phpactor替代分别说明，故工具
 - 证据限制：固定SHA内本组件列明文件及配置/作者资料的有界源码检查；组件inventory不包含外部官方底座原创量。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。
 - 下一步：固定宿主对两个server测四操作、许可限制、错误命令和覆盖扩展；本轮未执行或购买许可。
 
-<a id="detail-section-7"></a>
+<a id="detail-section-8"></a>
 
-## 未来设计假设（未验证）
+## 2 未来设计假设（未验证）
 
 未验证假设：把server实际能力与许可条件呈现在查询前，可减少把未实现操作误当连接失败。分别用两个server和四操作验证支持矩阵及报错归因；未知能力保持未知。
 
@@ -119,9 +126,9 @@ README把Intelephense付费高级功能与phpactor替代分别说明，故工具
 
 </details>
 
-<a id="detail-section-8"></a>
+<a id="detail-section-9"></a>
 
-## 辅助信息
+## 3 辅助信息
 
 **活跃度**
 

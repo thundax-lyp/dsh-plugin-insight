@@ -1,7 +1,5 @@
 # dsh-awiki
 
-> 把AWiki身份、设备加入/恢复、消息和邮件接入DSH，区分Host管理与模型可用操作。
-
 [返回分类](../../views/categories/OFFICE-OPERATIONS.md) · [返回首页](../../../README.md)
 
 分析版本：[60db12b](https://github.com/AgentConnect/dsh-awiki/tree/60db12b72181668b8ea1a270bddb279bb0f50ed7)
@@ -10,44 +8,41 @@
 [![GitHub ★ 19](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=19&color=yellow&logo=github&style=flat)](https://github.com/AgentConnect/dsh-awiki) [![npm 30d 1,584](https://img.shields.io/static/v1?label=npm+30d&message=1%2C584&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@awiki/dsh-plugin) [![最新发布 2026-10-14](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-14&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@awiki/dsh-plugin)
 <!-- END META -->
 
-**使用建议**：适合已有AWiki体系者在测试身份验证设备撤销与发送审批。恢复、转移和清本地数据须按明确操作边界验收后再用于重要身份。
+> **实现功能**：把AWiki身份、设备加入/恢复、消息和邮件接入DSH，区分Host管理与模型可用操作。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：增量是身份/设备/恢复和DSH Agent生命周期的边界整合，不只是消息转发。DID密钥与文档归独立ANP Identity，协议与数据库/恢复实现大量来自IM Core。
+
+> **风险与缺陷**：界面确认是否覆盖所有身份与外部写入？工具层ask是可读证据，但真实宿主策略与Core的租约、设备撤销/恢复一致性未验证；大量本地状态和网络边界不能凭测试目录认定端到端成功。
 
 **本文目录**
 
-- [当前插件分析](#detail-section-1)
-  - [使用判断](#detail-section-2)
-  - [能力、流程与成本](#detail-section-3)
-  - [工程贡献](#detail-section-4)
-  - [主要限制](#detail-section-5)
-  - [核查说明与分析版本](#detail-section-6)
-- [未来设计假设（未验证）](#detail-section-7)
-- [辅助信息](#detail-section-8)
+- [1 插件分析](#detail-section-1)
+  - [1.1 用途与适用场景](#detail-section-2)
+  - [1.2 能力、流程与成本](#detail-section-3)
+  - [1.3 工程贡献](#detail-section-4)
+  - [1.4 主要限制](#detail-section-5)
+  - [1.5 使用建议](#detail-section-6)
+  - [1.6 核查说明与分析版本](#detail-section-7)
+- [2 未来设计假设（未验证）](#detail-section-8)
+- [3 辅助信息](#detail-section-9)
 
 <a id="detail-section-1"></a>
 
-## 当前插件分析
+## 1 插件分析
 
 <a id="detail-section-2"></a>
 
-### 使用判断
+### 1.1 用途与适用场景
 
-- **用途**：Agent需以稳定身份参与通信，设备丢失/切换仍可明确账户和消息归属；必须将发送和身份控制区分。
-
-- **建议**：由Host lease与可见操作分离推导，可为恢复/发送提供跨层收据，绑定身份代次、设备和请求结果，遇未知结果只核查不重放。未验证；丢响应、撤设备、切身份时应不会由旧会话继续签发或重复发送。
-
-适合已有AWiki体系者在测试身份验证设备撤销与发送审批。恢复、转移和清本地数据须按明确操作边界验收后再用于重要身份。
-
-核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。
-
-源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。
+> **用途**：Agent需以稳定身份参与通信，设备丢失/切换仍可明确账户和消息归属；必须将发送和身份控制区分。
 
 独立AWiki客户端可通信，插件使Agent共享身份但必须额外治理机器发送及恢复权限。
 
 <a id="detail-section-3"></a>
 
-### 能力、流程与成本
+### 1.2 能力、流程与成本
+
+**能力**
 
 - **模型工具**：AWiki消息/邮件读取与申请发送。
 - **界面**：身份、设备、恢复及收件管理。
@@ -66,13 +61,13 @@ DSH服务/tools/Remote与客户端，ANP Identity、AWiki IM Core SDK/租户网�
 
 将通信与身份管理接入任务界面，潜在减少切换；网络服务和恢复运维使采用成本显著。
 
-- **思考**：界面确认是否覆盖所有身份与外部写入？工具层ask是可读证据，但真实宿主策略与Core的租约、设备撤销/恢复一致性未验证；大量本地状态和网络边界不能凭测试目录认定端到端成功。
+> **思考**：界面确认是否覆盖所有身份与外部写入？工具层ask是可读证据，但真实宿主策略与Core的租约、设备撤销/恢复一致性未验证；大量本地状态和网络边界不能凭测试目录认定端到端成功。
 
 <a id="detail-section-4"></a>
 
-### 工程贡献
+### 1.3 工程贡献
 
-- **亮点**：增量是身份/设备/恢复和DSH Agent生命周期的边界整合，不只是消息转发。DID密钥与文档归独立ANP Identity，协议与数据库/恢复实现大量来自IM Core。
+> **亮点**：增量是身份/设备/恢复和DSH Agent生命周期的边界整合，不只是消息转发。DID密钥与文档归独立ANP Identity，协议与数据库/恢复实现大量来自IM Core。
 
 增量是身份/设备/恢复和DSH Agent生命周期的边界整合，不只是消息转发。DID密钥与文档归独立ANP Identity，协议与数据库/恢复实现大量来自IM Core。
 
@@ -80,13 +75,25 @@ Host-only lease、脱敏固定错误、可重放体限制与发送ask钩子有�
 
 <a id="detail-section-5"></a>
 
-### 主要限制
+### 1.4 主要限制
 
 界面确认是否覆盖所有身份与外部写入？工具层ask是可读证据，但真实宿主策略与Core的租约、设备撤销/恢复一致性未验证；大量本地状态和网络边界不能凭测试目录认定端到端成功。
 
 <a id="detail-section-6"></a>
 
-### 核查说明与分析版本
+### 1.5 使用建议
+
+适合已有AWiki体系者在测试身份验证设备撤销与发送审批。恢复、转移和清本地数据须按明确操作边界验收后再用于重要身份。
+
+核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。
+
+源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。
+
+<a id="detail-section-7"></a>
+
+### 1.6 核查说明与分析版本
+
+**核查状态**：已检查源码。
 
 - **仓库**：[AgentConnect/dsh-awiki](https://github.com/AgentConnect/dsh-awiki)
 - **版本号**：0.3.18（[固定提交 60db12b7](https://github.com/AgentConnect/dsh-awiki/tree/60db12b72181668b8ea1a270bddb279bb0f50ed7)）
@@ -97,9 +104,9 @@ Host-only lease、脱敏固定错误、可重放体限制与发送ask钩子有�
 - 边界：抽读src/index.ts、src/provider.ts、src/tools.ts、src/external-http-auth.ts、src/settings-rpc.ts；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。
 - 下一步：测试身份切换/撤销竞态、丢响应恢复、重复发送、邮件标读审批和Host密钥不可出Remote；不对真实联系人发消息。
 
-<a id="detail-section-7"></a>
+<a id="detail-section-8"></a>
 
-## 未来设计假设（未验证）
+## 2 未来设计假设（未验证）
 
 由Host lease与可见操作分离推导，可为恢复/发送提供跨层收据，绑定身份代次、设备和请求结果，遇未知结果只核查不重放。未验证；丢响应、撤设备、切身份时应不会由旧会话继续签发或重复发送。
 
@@ -127,9 +134,9 @@ Host-only lease、脱敏固定错误、可重放体限制与发送ask钩子有�
 
 </details>
 
-<a id="detail-section-8"></a>
+<a id="detail-section-9"></a>
 
-## 辅助信息
+## 3 辅助信息
 
 **活跃度**
 

@@ -1,7 +1,5 @@
 # chicheng-cron
 
-> 在 DSH Web 配置 cron 定时脚本、Skill 与 Agent 任务，查看历史并发送完成通知。
-
 [返回分类](../../views/categories/OFFICE-OPERATIONS.md) · [返回首页](../../../README.md)
 
 分析版本：[99a223e](https://github.com/534119219/chicheng-cron/tree/99a223edfa090afa2f1f05c77526a53a0f277961)
@@ -10,31 +8,34 @@
 [![GitHub ★ 7](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7&color=yellow&logo=github&style=flat)](https://github.com/534119219/chicheng-cron)
 <!-- END META -->
 
-**使用建议**：适合可重复、可撤销的个人定时任务；先用不改文件的任务检查时间、工作目录、超时、输出与通知，再尝试写操作，关键任务另配完成检查。
+> **实现功能**：在 DSH Web 配置 cron 定时脚本、Skill 与 Agent 任务，查看历史并发送完成通知。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：相对系统cron加独立日志脚本，增量是把DSH Skill/Agent与普通脚本放进一个有历史、输出查看和通知的界面，并整理headless会话。cron语法、进程执行与推送服务为既有机制；贡献是统一任务生命周期和DSH交接，而非新调度算法。
+
+> **风险与缺陷**：进程退出0能否代表Agent任务成功？executeRun以退出码和timeout状态结算并触发成功归档，缺少业务产物断言；attach/archive通过开始时间定位会话的路径还需并发验证。超时直接child.kill不能证明整棵后代进程停止，且Web停机错过时点不补跑，关键任务不能只靠绿色历史。
 
 **本文目录**
 
-- [当前插件分析](#detail-section-1)
-  - [场景与替代办法](#detail-section-2)
-  - [能力、流程与依赖](#detail-section-3)
-  - [效果、成本与限制](#detail-section-4)
-  - [核心贡献与工程亮点](#detail-section-5)
-  - [使用判断](#detail-section-6)
-  - [能力、流程与成本](#detail-section-7)
-  - [工程贡献](#detail-section-8)
-  - [核查说明与分析版本](#detail-section-9)
-- [未来设计假设（未验证）](#detail-section-10)
-- [辅助信息](#detail-section-11)
+- [1 插件分析](#detail-section-1)
+  - [1.1 场景与替代办法](#detail-section-2)
+  - [1.2 能力、流程与依赖](#detail-section-3)
+  - [1.3 效果、成本与限制](#detail-section-4)
+  - [1.4 核心贡献与工程亮点](#detail-section-5)
+  - [1.5 用途与适用场景](#detail-section-6)
+  - [1.6 能力、流程与成本](#detail-section-7)
+  - [1.7 工程贡献](#detail-section-8)
+  - [1.8 使用建议](#detail-section-9)
+  - [1.9 核查说明与分析版本](#detail-section-10)
+- [2 未来设计假设（未验证）](#detail-section-11)
+- [3 辅助信息](#detail-section-12)
 
 <a id="detail-section-1"></a>
 
-## 当前插件分析
+## 1 插件分析
 
 <a id="detail-section-2"></a>
 
-### 场景与替代办法
+### 1.1 场景与替代办法
 
 需要周期性本机脚本或Agent任务的人，在GUI配置时间、cwd、超时与通知，交付任务输出和运行记录；适用于允许错过时点且宿主持久在线的自动化。
 
@@ -42,7 +43,7 @@
 
 <a id="detail-section-3"></a>
 
-### 能力、流程与依赖
+### 1.2 能力、流程与依赖
 
 lib/index.js解析cron并周期扫描，spawn shell/python/node或headless DSH；持久化任务与运行记录，输出限512KiB，运行后可推送、挂工作区与归档会话。
 
@@ -58,7 +59,7 @@ web bundle，任务和历史在DSH_HOME/cron，Agent/Skill使用headless profile
 
 <a id="detail-section-4"></a>
 
-### 效果、成本与限制
+### 1.3 效果、成本与限制
 
 把周期执行和DSH会话管理集中起来，减少手工启动与找日志；不能保证漏跑补偿、幂等或业务成功。
 
@@ -68,7 +69,7 @@ web bundle，任务和历史在DSH_HOME/cron，Agent/Skill使用headless profile
 
 <a id="detail-section-5"></a>
 
-### 核心贡献与工程亮点
+### 1.4 核心贡献与工程亮点
 
 相对系统cron加独立日志脚本，增量是把DSH Skill/Agent与普通脚本放进一个有历史、输出查看和通知的界面，并整理headless会话。cron语法、进程执行与推送服务为既有机制；贡献是统一任务生命周期和DSH交接，而非新调度算法。
 
@@ -78,35 +79,41 @@ web bundle，任务和历史在DSH_HOME/cron，Agent/Skill使用headless profile
 
 <a id="detail-section-6"></a>
 
-### 使用判断
+### 1.5 用途与适用场景
 
-- **用途**：需要周期性本机脚本或Agent任务的人，在GUI配置时间、cwd、超时与通知，交付任务输出和运行记录；适用于允许错过时点且宿主持久在线的自动化。
-
-- **建议**：待验证假设：每次调度生成显式runId并贯穿headless会话、产物与通知，增加任务定义中的输出断言，可减少误归档和“exit0但未交付”。由当前runId记录与基于时间找会话之间的缺口推导。对照并发两次同类Agent、exit0不写产物、超时生成子进程三类任务，验证归属准确率、漏交付率与残留；需要用户定义合格产物，不能自动猜验收。
-
-适合可重复、可撤销的个人定时任务；先用不改文件的任务检查时间、工作目录、超时、输出与通知，再尝试写操作，关键任务另配完成检查。
-
-**核查状态**：已抽读固定版本源码，未安装、运行目标插件或真实宿主验收。源码支持多类型调度与记录；脚本执行、真实通知、会话归属及业务结果未验证。未来运行身份与交付断言是假设。
+> **用途**：需要周期性本机脚本或Agent任务的人，在GUI配置时间、cwd、超时与通知，交付任务输出和运行记录；适用于允许错过时点且宿主持久在线的自动化。
 
 <a id="detail-section-7"></a>
 
-### 能力、流程与成本
+### 1.6 能力、流程与成本
+
+**能力**
 
 - **Host 路由**：任务配置、立即运行与历史输出API。
 - **界面**：任务编辑和执行历史。
 - **后台**：cron多类型调度、可选通知与会话整理。
 
-- **思考**：进程退出0能否代表Agent任务成功？executeRun以退出码和timeout状态结算并触发成功归档，缺少业务产物断言；attach/archive通过开始时间定位会话的路径还需并发验证。超时直接child.kill不能证明整棵后代进程停止，且Web停机错过时点不补跑，关键任务不能只靠绿色历史。
+> **思考**：进程退出0能否代表Agent任务成功？executeRun以退出码和timeout状态结算并触发成功归档，缺少业务产物断言；attach/archive通过开始时间定位会话的路径还需并发验证。超时直接child.kill不能证明整棵后代进程停止，且Web停机错过时点不补跑，关键任务不能只靠绿色历史。
 
 <a id="detail-section-8"></a>
 
-### 工程贡献
+### 1.7 工程贡献
 
-- **亮点**：相对系统cron加独立日志脚本，增量是把DSH Skill/Agent与普通脚本放进一个有历史、输出查看和通知的界面，并整理headless会话。cron语法、进程执行与推送服务为既有机制；贡献是统一任务生命周期和DSH交接，而非新调度算法。
+> **亮点**：相对系统cron加独立日志脚本，增量是把DSH Skill/Agent与普通脚本放进一个有历史、输出查看和通知的界面，并整理headless会话。cron语法、进程执行与推送服务为既有机制；贡献是统一任务生命周期和DSH交接，而非新调度算法。
 
 <a id="detail-section-9"></a>
 
-### 核查说明与分析版本
+### 1.8 使用建议
+
+适合可重复、可撤销的个人定时任务；先用不改文件的任务检查时间、工作目录、超时、输出与通知，再尝试写操作，关键任务另配完成检查。
+
+**核查状态**：已抽读固定版本源码，未安装、运行目标插件或真实宿主验收。源码支持多类型调度与记录；脚本执行、真实通知、会话归属及业务结果未验证。未来运行身份与交付断言是假设。
+
+<a id="detail-section-10"></a>
+
+### 1.9 核查说明与分析版本
+
+**核查状态**：已检查源码。
 
 - 版本号：0.1.1；版本日期：2026-08-26（固定提交日期，北京时间；不是包发布日期）。
 - 固定版本：[99a223ed](https://github.com/534119219/chicheng-cron/tree/99a223edfa090afa2f1f05c77526a53a0f277961)；本次截止 2026-10-21T03:00:27Z。
@@ -130,17 +137,17 @@ web bundle，任务和历史在DSH_HOME/cron，Agent/Skill使用headless profile
 
 </details>
 
-<a id="detail-section-10"></a>
+<a id="detail-section-11"></a>
 
-## 未来设计假设（未验证）
+## 2 未来设计假设（未验证）
 
 待验证假设：每次调度生成显式runId并贯穿headless会话、产物与通知，增加任务定义中的输出断言，可减少误归档和“exit0但未交付”。由当前runId记录与基于时间找会话之间的缺口推导。对照并发两次同类Agent、exit0不写产物、超时生成子进程三类任务，验证归属准确率、漏交付率与残留；需要用户定义合格产物，不能自动猜验收。
 
 隔离目录验证跨日时区、重启漏跑、并发Agent的会话归属、exit0无产物、子进程超时与通知失败；本轮不执行目标任务。
 
-<a id="detail-section-11"></a>
+<a id="detail-section-12"></a>
 
-## 辅助信息
+## 3 辅助信息
 
 **活跃度**
 

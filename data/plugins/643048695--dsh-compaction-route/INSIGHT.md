@@ -1,7 +1,5 @@
 # dsh-compaction-route
 
-> 为会话压缩请求指定主模型和备用模型，在失败时切换摘要路由。
-
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
 分析版本：[6039b26](https://github.com/643048695/dsh-compaction-route/tree/6039b260d96652ce4af606f850cd1a179cd9d4f7)
@@ -10,37 +8,40 @@
 
 <!-- END META -->
 
-**使用建议**：已遇到压缩路由失败时可试。先检查主备都支持实际输入量和推理档位，再测取消、失败及摘要完整性。
+> **实现功能**：为会话压缩请求指定主模型和备用模型，在失败时切换摘要路由。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：作者针对压缩无备用路由的问题；可确认贡献是在请求瀑布层限定purpose，给摘要加入显式主备，而不影响聊天、标题等请求。相对手动改配置重试，故障路径更集中；摘要质量仍取决于实际后端与模型。
+
+> **风险与缺陷**：切换同一长请求到备用模型不保证窗口适配，fallback也可能同样溢出。collectAttempt缓冲整个流，outcomeOf没找到finish会视作无failure，这使异常截断边界值得重点验证；兼容provider的reasoning effort也需检查。
 
 **本文目录**
 
-- [当前插件分析](#detail-section-1)
-  - [场景与替代办法](#detail-section-2)
-  - [能力、依赖与流程](#detail-section-3)
-  - [成本与效果](#detail-section-4)
-  - [工程亮点](#detail-section-5)
-  - [使用判断](#detail-section-6)
-  - [能力、流程与成本](#detail-section-7)
-  - [工程贡献](#detail-section-8)
-  - [核查说明与分析版本](#detail-section-9)
-- [未来设计假设（未验证）](#detail-section-10)
-- [辅助信息](#detail-section-11)
+- [1 插件分析](#detail-section-1)
+  - [1.1 场景与替代办法](#detail-section-2)
+  - [1.2 能力、依赖与流程](#detail-section-3)
+  - [1.3 成本与效果](#detail-section-4)
+  - [1.4 工程亮点](#detail-section-5)
+  - [1.5 用途与适用场景](#detail-section-6)
+  - [1.6 能力、流程与成本](#detail-section-7)
+  - [1.7 工程贡献](#detail-section-8)
+  - [1.8 使用建议](#detail-section-9)
+  - [1.9 核查说明与分析版本](#detail-section-10)
+- [2 未来设计假设（未验证）](#detail-section-11)
+- [3 辅助信息](#detail-section-12)
 
 <a id="detail-section-1"></a>
 
-## 当前插件分析
+## 1 插件分析
 
 <a id="detail-section-2"></a>
 
-### 场景与替代办法
+### 1.1 场景与替代办法
 
 替代是手工更换摘要模型或宿主原生单路由；项目提供请求级主备而非更好的压缩算法。
 
 <a id="detail-section-3"></a>
 
-### 能力、依赖与流程
+### 1.2 能力、依赖与流程
 
 lib/index.js仅拦截purpose=compaction的llm/stream；重新进入ctx.llm.stream传修改路由，以WeakSet避免递归，收集单次流块后按终止状态切换fallback。
 
@@ -53,7 +54,7 @@ Schemastery、可用llm服务及宿主purpose=compaction约定，主备模型需
 
 <a id="detail-section-4"></a>
 
-### 成本与效果
+### 1.3 成本与效果
 
 首次配置有效主备provider/model；失败会多一次摘要请求并增加延迟，现金可能含失败调用，人工需核对压缩后事实和备用路由权限。
 
@@ -61,7 +62,7 @@ Schemastery、可用llm服务及宿主purpose=compaction约定，主备模型需
 
 <a id="detail-section-5"></a>
 
-### 工程亮点
+### 1.4 工程亮点
 
 WeakSet处理Cordis next闭包不能改参的约束，未配置primary时透明放行；按purpose隔离易复用。全流缓冲及结束标记语义需要与宿主协议保持一致。
 
@@ -69,34 +70,40 @@ WeakSet处理Cordis next闭包不能改参的约束，未配置primary时透明�
 
 <a id="detail-section-6"></a>
 
-### 使用判断
+### 1.5 用途与适用场景
 
-- **用途**：适合主聊天模型可用但压缩模型额度或窗口不足的长会话用户。
+> **用途**：适合主聊天模型可用但压缩模型额度或窗口不足的长会话用户。
 
-- **建议**：待验证假设：主备选择同时核对请求估算与目标模型窗口，可降低盲目重试。用不同窗口和限流故障矩阵比较有效摘要率、请求次数与费用；若估算不准导致误跳过健康路由，则保持显式选择。
+<a id="detail-section-7"></a>
+
+### 1.6 能力、流程与成本
+
+**能力**
+
+- **事件监听**：purpose=compaction的llm/stream主备路由
+- **界面**：压缩路由配置
+
+> **思考**：切换同一长请求到备用模型不保证窗口适配，fallback也可能同样溢出。collectAttempt缓冲整个流，outcomeOf没找到finish会视作无failure，这使异常截断边界值得重点验证；兼容provider的reasoning effort也需检查。
+
+<a id="detail-section-8"></a>
+
+### 1.7 工程贡献
+
+> **亮点**：作者针对压缩无备用路由的问题；可确认贡献是在请求瀑布层限定purpose，给摘要加入显式主备，而不影响聊天、标题等请求。相对手动改配置重试，故障路径更集中；摘要质量仍取决于实际后端与模型。
+
+<a id="detail-section-9"></a>
+
+### 1.8 使用建议
 
 已遇到压缩路由失败时可试。先检查主备都支持实际输入量和推理档位，再测取消、失败及摘要完整性。
 
 **核查状态**：已检查固定版本源码，未安装、执行目标插件或完成真实宿主验收。已有贡献仅由固定版本源码支持，实际宿主和任务效果尚未验证；未来设计假设保持未验证。
 
-<a id="detail-section-7"></a>
+<a id="detail-section-10"></a>
 
-### 能力、流程与成本
+### 1.9 核查说明与分析版本
 
-- **事件监听**：purpose=compaction的llm/stream主备路由
-- **界面**：压缩路由配置
-
-- **思考**：切换同一长请求到备用模型不保证窗口适配，fallback也可能同样溢出。collectAttempt缓冲整个流，outcomeOf没找到finish会视作无failure，这使异常截断边界值得重点验证；兼容provider的reasoning effort也需检查。
-
-<a id="detail-section-8"></a>
-
-### 工程贡献
-
-- **亮点**：作者针对压缩无备用路由的问题；可确认贡献是在请求瀑布层限定purpose，给摘要加入显式主备，而不影响聊天、标题等请求。相对手动改配置重试，故障路径更集中；摘要质量仍取决于实际后端与模型。
-
-<a id="detail-section-9"></a>
-
-### 核查说明与分析版本
+**核查状态**：已检查源码。
 
 - **仓库**：[643048695/dsh-compaction-route](https://github.com/643048695/dsh-compaction-route)
 - **版本号**：0.1.0（[固定提交 6039b260](https://github.com/643048695/dsh-compaction-route/tree/6039b260d96652ce4af606f850cd1a179cd9d4f7)）
@@ -107,9 +114,9 @@ WeakSet处理Cordis next闭包不能改参的约束，未配置primary时透明�
 - 证据限制：核查固定提交内列明入口、核心实现及相关配置/作者材料的源码子集；未执行插件、其测试、安装、付费请求或真实宿主验收，未核实独立用户采用。
 - 下一步：覆盖错误finish、缺finish、迭代器抛错、取消、超窗口与不支持effort；本轮未执行目标代码。
 
-<a id="detail-section-10"></a>
+<a id="detail-section-11"></a>
 
-## 未来设计假设（未验证）
+## 2 未来设计假设（未验证）
 
 待验证假设：主备选择同时核对请求估算与目标模型窗口，可降低盲目重试。用不同窗口和限流故障矩阵比较有效摘要率、请求次数与费用；若估算不准导致误跳过健康路由，则保持显式选择。
 
@@ -129,9 +136,9 @@ WeakSet处理Cordis next闭包不能改参的约束，未配置primary时透明�
 
 </details>
 
-<a id="detail-section-11"></a>
+<a id="detail-section-12"></a>
 
-## 辅助信息
+## 3 辅助信息
 
 **活跃度**
 

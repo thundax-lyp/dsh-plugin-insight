@@ -1,7 +1,5 @@
 # dsh-autocompact
 
-> 为会话与模型设置自动压缩阈值，保留近期上下文并调用宿主压缩后端。
-
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
 分析版本：[c80abc7](https://github.com/5aaee9/pi-agent-extensions/tree/c80abc7c4904fee9206f8649214a211ef84961ff/dsh-autocompact)
@@ -10,37 +8,40 @@
 [![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/5aaee9/pi-agent-extensions) [![npm 30d 735](https://img.shields.io/static/v1?label=npm+30d&message=735&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@indexyz/dsh-autocompact) [![最新发布 2026-10-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-19&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@indexyz/dsh-autocompact)
 <!-- END META -->
 
-**使用建议**：长会话且了解模型窗口时可试。先确认阈值、保留尾部和重启行为，用含工具结果的任务检查压缩后能否继续。
+> **实现功能**：为会话与模型设置自动压缩阈值，保留近期上下文并调用宿主压缩后端。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：作者明确这是pi-autocompact的DSH移植；可确认增量是适配DSH的surface位置和Agent平面后端，提供会话阈值而不伪改模型contextWindow。相对全局缩小模型窗口，保留真实元数据并减少跨会话副作用；压缩算法仍归宿主。
+
+> **风险与缺陷**：测量阈值只是压力信号，不保证压缩能保留任务语义；不可拆的大消息或配对范围使选区返回undefined，仍可能溢出。会话命令覆盖在内存里，重启不应被理解为持久配置；默认配置与临时覆盖须区分。
 
 **本文目录**
 
-- [当前插件分析](#detail-section-1)
-  - [场景与替代办法](#detail-section-2)
-  - [能力、依赖与流程](#detail-section-3)
-  - [成本与效果](#detail-section-4)
-  - [工程亮点](#detail-section-5)
-  - [使用判断](#detail-section-6)
-  - [能力、流程与成本](#detail-section-7)
-  - [工程贡献](#detail-section-8)
-  - [核查说明与分析版本](#detail-section-9)
-- [未来设计假设（未验证）](#detail-section-10)
-- [辅助信息](#detail-section-11)
+- [1 插件分析](#detail-section-1)
+  - [1.1 场景与替代办法](#detail-section-2)
+  - [1.2 能力、依赖与流程](#detail-section-3)
+  - [1.3 成本与效果](#detail-section-4)
+  - [1.4 工程亮点](#detail-section-5)
+  - [1.5 用途与适用场景](#detail-section-6)
+  - [1.6 能力、流程与成本](#detail-section-7)
+  - [1.7 工程贡献](#detail-section-8)
+  - [1.8 使用建议](#detail-section-9)
+  - [1.9 核查说明与分析版本](#detail-section-10)
+- [2 未来设计假设（未验证）](#detail-section-11)
+- [3 辅助信息](#detail-section-12)
 
 <a id="detail-section-1"></a>
 
-## 当前插件分析
+## 1 插件分析
 
 <a id="detail-section-2"></a>
 
-### 场景与替代办法
+### 1.1 场景与替代办法
 
 替代是手工/compact或宿主默认压缩；项目新增细粒度触发策略，不提供独立摘要质量保证。
 
 <a id="detail-section-3"></a>
 
-### 能力、依赖与流程
+### 1.2 能力、依赖与流程
 
 组件index.ts按会话与provider/model维护覆盖值并访问当前Agent的compaction服务；compaction.ts要求token测量与surface节点一致，保留系统头和预算尾部并检查工具调用配对。
 
@@ -54,7 +55,7 @@
 
 <a id="detail-section-4"></a>
 
-### 成本与效果
+### 1.3 成本与效果
 
 首次核对宿主压缩接口与模型阈值；持续压缩增加摘要模型token和延迟，人工需检查关键事实是否丢失，迁移受DSH服务接口影响。
 
@@ -62,7 +63,7 @@
 
 <a id="detail-section-5"></a>
 
-### 工程亮点
+### 1.4 工程亮点
 
 显式surface一致性校验和toolPairingBalancedBefore比字符截断更稳；serviceForAgent处理预设隔离。可复用纯范围选择逻辑，必须保留宿主版本与配对不变量。
 
@@ -70,35 +71,41 @@
 
 <a id="detail-section-6"></a>
 
-### 使用判断
+### 1.5 用途与适用场景
 
-- **用途**：适合模型上下文预算不同、希望比宿主默认更早压缩的长会话开发者。
-
-- **建议**：待验证假设：在保留token预算之外加入用户目标/未完成工具依赖的保护标签，可改善压缩后任务恢复。对含长工具结果的同一会话比较答案一致性、压缩次数与保留体积；不假设保留更多一定更好。
-
-长会话且了解模型窗口时可试。先确认阈值、保留尾部和重启行为，用含工具结果的任务检查压缩后能否继续。
-
-**核查状态**：已检查固定版本源码，未安装、执行目标插件或完成真实宿主验收。已有贡献仅由固定版本源码支持，实际宿主和任务效果尚未验证；未来设计假设保持未验证。
+> **用途**：适合模型上下文预算不同、希望比宿主默认更早压缩的长会话开发者。
 
 <a id="detail-section-7"></a>
 
-### 能力、流程与成本
+### 1.6 能力、流程与成本
+
+**能力**
 
 - **用户命令**：/autocompact会话模型阈值
 - **事件监听**：请求前测量与平衡选区压缩
 - **界面**：模型阈值设置
 
-- **思考**：测量阈值只是压力信号，不保证压缩能保留任务语义；不可拆的大消息或配对范围使选区返回undefined，仍可能溢出。会话命令覆盖在内存里，重启不应被理解为持久配置；默认配置与临时覆盖须区分。
+> **思考**：测量阈值只是压力信号，不保证压缩能保留任务语义；不可拆的大消息或配对范围使选区返回undefined，仍可能溢出。会话命令覆盖在内存里，重启不应被理解为持久配置；默认配置与临时覆盖须区分。
 
 <a id="detail-section-8"></a>
 
-### 工程贡献
+### 1.7 工程贡献
 
-- **亮点**：作者明确这是pi-autocompact的DSH移植；可确认增量是适配DSH的surface位置和Agent平面后端，提供会话阈值而不伪改模型contextWindow。相对全局缩小模型窗口，保留真实元数据并减少跨会话副作用；压缩算法仍归宿主。
+> **亮点**：作者明确这是pi-autocompact的DSH移植；可确认增量是适配DSH的surface位置和Agent平面后端，提供会话阈值而不伪改模型contextWindow。相对全局缩小模型窗口，保留真实元数据并减少跨会话副作用；压缩算法仍归宿主。
 
 <a id="detail-section-9"></a>
 
-### 核查说明与分析版本
+### 1.8 使用建议
+
+长会话且了解模型窗口时可试。先确认阈值、保留尾部和重启行为，用含工具结果的任务检查压缩后能否继续。
+
+**核查状态**：已检查固定版本源码，未安装、执行目标插件或完成真实宿主验收。已有贡献仅由固定版本源码支持，实际宿主和任务效果尚未验证；未来设计假设保持未验证。
+
+<a id="detail-section-10"></a>
+
+### 1.9 核查说明与分析版本
+
+**核查状态**：已检查源码。
 
 - **仓库**：[5aaee9/pi-agent-extensions](https://github.com/5aaee9/pi-agent-extensions)
 - **版本号**：0.2.0（[固定提交 c80abc7c](https://github.com/5aaee9/pi-agent-extensions/tree/c80abc7c4904fee9206f8649214a211ef84961ff)）
@@ -109,9 +116,9 @@
 - 证据限制：核查固定提交内列明入口、核心实现及相关配置/作者材料的源码子集；未执行插件、其测试、安装、付费请求或真实宿主验收，未核实独立用户采用。
 - 下一步：固定宿主验证surface漂移、超大单条、工具配对、不同模型阈值及重启覆盖丢失；本轮只阅读组件源码。
 
-<a id="detail-section-10"></a>
+<a id="detail-section-11"></a>
 
-## 未来设计假设（未验证）
+## 2 未来设计假设（未验证）
 
 待验证假设：在保留token预算之外加入用户目标/未完成工具依赖的保护标签，可改善压缩后任务恢复。对含长工具结果的同一会话比较答案一致性、压缩次数与保留体积；不假设保留更多一定更好。
 
@@ -133,9 +140,9 @@
 
 </details>
 
-<a id="detail-section-11"></a>
+<a id="detail-section-12"></a>
 
-## 辅助信息
+## 3 辅助信息
 
 **活跃度**
 

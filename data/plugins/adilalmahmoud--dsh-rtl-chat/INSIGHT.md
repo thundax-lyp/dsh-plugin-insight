@@ -1,7 +1,5 @@
 # dsh-RTL-chat
 
-> 为DSH对话阅读区提供可持久化的RTL/LTR切换，并保持代码块从左向右。
-
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
 分析版本：[cb47d87](https://github.com/AdilAlmahmoud/dsh-RTL-chat/tree/cb47d8708ae0c95205926f03b6c7228c50de5e29)
@@ -10,44 +8,41 @@
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/AdilAlmahmoud/dsh-RTL-chat)
 <!-- END META -->
 
-**使用建议**：有RTL阅读需求时可先用混排样例核查；检查代码复制、链接及卸载样式残留。
+> **实现功能**：为DSH对话阅读区提供可持久化的RTL/LTR切换，并保持代码块从左向右。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：贡献是窄作用域方向控制与代码例外，复用CSS双向排版和宿主slot；不是翻译或整套阿拉伯语本地化。
+
+> **风险与缺陷**：容器级RTL能否正确处理混合语言、表格与引用？CSS direction无法识别每段语义，可能改变标点和布局；BTN_CSS插入返回的disposer未登记，卸载RTL样式与按钮样式清理不同。
 
 **本文目录**
 
-- [当前插件分析](#detail-section-1)
-  - [使用判断](#detail-section-2)
-  - [能力、流程与成本](#detail-section-3)
-  - [工程贡献](#detail-section-4)
-  - [主要限制](#detail-section-5)
-  - [核查说明与分析版本](#detail-section-6)
-- [未来设计假设（未验证）](#detail-section-7)
-- [辅助信息](#detail-section-8)
+- [1 插件分析](#detail-section-1)
+  - [1.1 用途与适用场景](#detail-section-2)
+  - [1.2 能力、流程与成本](#detail-section-3)
+  - [1.3 工程贡献](#detail-section-4)
+  - [1.4 主要限制](#detail-section-5)
+  - [1.5 使用建议](#detail-section-6)
+  - [1.6 核查说明与分析版本](#detail-section-7)
+- [2 未来设计假设（未验证）](#detail-section-8)
+- [3 辅助信息](#detail-section-9)
 
 <a id="detail-section-1"></a>
 
-## 当前插件分析
+## 1 插件分析
 
 <a id="detail-section-2"></a>
 
-### 使用判断
+### 1.1 用途与适用场景
 
-- **用途**：阿拉伯语等RTL文本阅读者希望调整答案方向同时不扰动侧栏与代码。
-
-- **建议**：由容器方向例外推导，可按段落dir=auto并允许用户覆盖，代码仍显式LTR。未验证；混合数字/URL/列表对照人工阅读，错误顺序与切换次数应低于整容器RTL。
-
-有RTL阅读需求时可先用混排样例核查；检查代码复制、链接及卸载样式残留。
-
-核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。
-
-源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。
+> **用途**：阿拉伯语等RTL文本阅读者希望调整答案方向同时不扰动侧栏与代码。
 
 浏览器/宿主逐段auto方向更语义化；插件提供用户显式切换并避免整个应用反转。
 
 <a id="detail-section-3"></a>
 
-### 能力、流程与成本
+### 1.2 能力、流程与成本
+
+**能力**
 
 - **界面**：对话RTL/LTR切换与代码LTR保留。
 
@@ -63,13 +58,13 @@ DSH conversation slot和data-conversation-scroll、浏览器localStorage、CSS b
 
 解决特定语言阅读障碍的潜力明确，效果仍需目标语言用户验证。
 
-- **思考**：容器级RTL能否正确处理混合语言、表格与引用？CSS direction无法识别每段语义，可能改变标点和布局；BTN_CSS插入返回的disposer未登记，卸载RTL样式与按钮样式清理不同。
+> **思考**：容器级RTL能否正确处理混合语言、表格与引用？CSS direction无法识别每段语义，可能改变标点和布局；BTN_CSS插入返回的disposer未登记，卸载RTL样式与按钮样式清理不同。
 
 <a id="detail-section-4"></a>
 
-### 工程贡献
+### 1.3 工程贡献
 
-- **亮点**：贡献是窄作用域方向控制与代码例外，复用CSS双向排版和宿主slot；不是翻译或整套阿拉伯语本地化。
+> **亮点**：贡献是窄作用域方向控制与代码例外，复用CSS双向排版和宿主slot；不是翻译或整套阿拉伯语本地化。
 
 贡献是窄作用域方向控制与代码例外，复用CSS双向排版和宿主slot；不是翻译或整套阿拉伯语本地化。
 
@@ -77,13 +72,25 @@ DSH conversation slot和data-conversation-scroll、浏览器localStorage、CSS b
 
 <a id="detail-section-5"></a>
 
-### 主要限制
+### 1.4 主要限制
 
 容器级RTL能否正确处理混合语言、表格与引用？CSS direction无法识别每段语义，可能改变标点和布局；BTN_CSS插入返回的disposer未登记，卸载RTL样式与按钮样式清理不同。
 
 <a id="detail-section-6"></a>
 
-### 核查说明与分析版本
+### 1.5 使用建议
+
+有RTL阅读需求时可先用混排样例核查；检查代码复制、链接及卸载样式残留。
+
+核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。
+
+源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。
+
+<a id="detail-section-7"></a>
+
+### 1.6 核查说明与分析版本
+
+**核查状态**：已检查源码。
 
 - **仓库**：[AdilAlmahmoud/dsh-RTL-chat](https://github.com/AdilAlmahmoud/dsh-RTL-chat)
 - **版本号**：1.0.0（[固定提交 cb47d870](https://github.com/AdilAlmahmoud/dsh-RTL-chat/tree/cb47d8708ae0c95205926f03b6c7228c50de5e29)）
@@ -94,9 +101,9 @@ DSH conversation slot和data-conversation-scroll、浏览器localStorage、CSS b
 - 边界：抽读index.js、client.js、package.json；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。
 - 下一步：RTL/LTR混排、代码/数学/表格、窄屏和无localStorage，反复启停检查残留与按钮键盘可达性。
 
-<a id="detail-section-7"></a>
+<a id="detail-section-8"></a>
 
-## 未来设计假设（未验证）
+## 2 未来设计假设（未验证）
 
 由容器方向例外推导，可按段落dir=auto并允许用户覆盖，代码仍显式LTR。未验证；混合数字/URL/列表对照人工阅读，错误顺序与切换次数应低于整容器RTL。
 
@@ -116,9 +123,9 @@ RTL/LTR混排、代码/数学/表格、窄屏和无localStorage，反复启停�
 
 </details>
 
-<a id="detail-section-8"></a>
+<a id="detail-section-9"></a>
 
-## 辅助信息
+## 3 辅助信息
 
 **活跃度**
 

@@ -1,7 +1,5 @@
 # dsh-neo-skin
 
-> 通过主题覆盖层为 DSH Web 提供新粗野主义配色和可切换外观方案。
-
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
 分析版本：[fe5ef0e](https://github.com/0nt-one/dsh-neo-skin/tree/fe5ef0e671fab5ab8c8700013f3966eb9642455f)
@@ -10,17 +8,25 @@
 [![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/0nt-one/dsh-neo-skin) [![npm 30d 108](https://img.shields.io/static/v1?label=npm+30d&message=108&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-neo-skin) [![最新发布 2026-08-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-15&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-neo-skin)
 <!-- END META -->
 
-**使用建议**：先在测试配置中切换深浅主题、关闭插件并刷新，确认能完整恢复原生样式。
+> **实现功能**：通过主题覆盖层为 DSH Web 提供新粗野主义配色和可切换外观方案。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：客户端调用 theme.overrideTokens，设置插槽控制开关与方案，偏好保存在 localStorage。
 
-## 使用建议
+> **风险与缺陷**：叠加覆盖比替换原生主题更容易回退；个性化审美价值不能写成工作效率提升。
 
-- **用途**：长时间使用 DSH Web 且偏好高对比外观的用户，需要可撤销的视觉定制。
+<a id="detail-section-1"></a>
+
+## 1 用途与适用场景
+
+> **用途**：长时间使用 DSH Web 且偏好高对比外观的用户，需要可撤销的视觉定制。
 
 宿主自带主题维护最低；本轮确认仍是覆盖方案，不是完整独立主题引擎。
 
-## 能力与限制
+<a id="detail-section-2"></a>
+
+## 2 能力与限制
+
+**能力**
 
 - **界面**：主题覆盖和外观开关设置。
 
@@ -38,15 +44,27 @@
 
 无需模型服务，但维护自定义外观和排查主题冲突需要时间，未测视觉疲劳改善。
 
-- **思考**：叠加覆盖比替换原生主题更容易回退；个性化审美价值不能写成工作效率提升。
+> **思考**：叠加覆盖比替换原生主题更容易回退；个性化审美价值不能写成工作效率提升。
 
-## 工程分析
+<a id="detail-section-3"></a>
 
-- **亮点**：客户端调用 theme.overrideTokens，设置插槽控制开关与方案，偏好保存在 localStorage。
+## 3 工程分析
+
+> **亮点**：客户端调用 theme.overrideTokens，设置插槽控制开关与方案，偏好保存在 localStorage。
 
 主题 token 与开关持久化分离可借鉴；复用依赖宿主主题和设置插槽契约。
 
-## 核查说明
+<a id="detail-section-4"></a>
+
+## 4 使用建议
+
+先在测试配置中切换深浅主题、关闭插件并刷新，确认能完整恢复原生样式。
+
+<a id="detail-section-5"></a>
+
+## 5 核查说明
+
+**核查状态**：已检查源码。
 
 - 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。

@@ -1,7 +1,5 @@
 # DSH Verification Receipt
 
-> 在每轮持久化结束时保存工具次数和验证形态信号的本地 JSONL 回执。
-
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
 分析版本：[87f3fb0](https://github.com/030611/dsh-verification-receipt/tree/87f3fb0198090f0f26a37a52840db150609db748)
@@ -10,17 +8,25 @@
 [![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/030611/dsh-verification-receipt) [![npm 30d 862](https://img.shields.io/static/v1?label=npm+30d&message=862&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-verification-receipt) [![最新发布 2026-08-14](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-14&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-verification-receipt)
 <!-- END META -->
 
-**使用建议**：先对照一次明确成功和一次失败的测试任务，逐项比对回执与真实命令结果。
+> **实现功能**：在每轮持久化结束时保存工具次数和验证形态信号的本地 JSONL 回执。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：监听 turn/end 相关 session 事件，按执行轨迹和词法信号生成摘要并串行追加 JSONL。
 
-## 使用建议
+> **风险与缺陷**：缩小到可检查的执行信号比声称自动验收更可靠；回执本身不能代替失败放行规则。
 
-- **用途**：代码协作者希望追问某轮究竟记录过哪些执行信号，而不是只看模型完成声明。
+<a id="detail-section-1"></a>
+
+## 1 用途与适用场景
+
+> **用途**：代码协作者希望追问某轮究竟记录过哪些执行信号，而不是只看模型完成声明。
 
 人工查会话工具轨迹也能核对；自动摘要节省定位步骤但新增启发式误读风险。
 
-## 能力与限制
+<a id="detail-section-2"></a>
+
+## 2 能力与限制
+
+**能力**
 
 - **事件监听**：回合结束事件驱动本地执行摘要回执。
 
@@ -38,15 +44,27 @@
 
 本地日志增加存储和审查负担，不发模型请求；仍未测长期日志增长和审阅收益。
 
-- **思考**：缩小到可检查的执行信号比声称自动验收更可靠；回执本身不能代替失败放行规则。
+> **思考**：缩小到可检查的执行信号比声称自动验收更可靠；回执本身不能代替失败放行规则。
 
-## 工程分析
+<a id="detail-section-3"></a>
 
-- **亮点**：监听 turn/end 相关 session 事件，按执行轨迹和词法信号生成摘要并串行追加 JSONL。
+## 3 工程分析
+
+> **亮点**：监听 turn/end 相关 session 事件，按执行轨迹和词法信号生成摘要并串行追加 JSONL。
 
 追加队列、隐私化标识与确定性摘要可复用；接入时要保留事件丢失和写盘失败告警。
 
-## 核查说明
+<a id="detail-section-4"></a>
+
+## 4 使用建议
+
+先对照一次明确成功和一次失败的测试任务，逐项比对回执与真实命令结果。
+
+<a id="detail-section-5"></a>
+
+## 5 核查说明
+
+**核查状态**：已检查源码。
 
 - 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。

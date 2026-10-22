@@ -1,7 +1,5 @@
 # dsh-wsl-clock
 
-> 比较WSL与Windows时间，报告时钟偏差并给出休眠后TLS或令牌故障的排查建议。
-
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
 分析版本：[111cc4c](https://github.com/173787247/dsh-wsl-clock/tree/111cc4c013ef17a495c8790fbfa6373d7abbdebc)
@@ -10,17 +8,25 @@
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-clock)
 <!-- END META -->
 
-**使用建议**：先把它当粗粒度线索，临界偏差用系统命令复核；保存工作后再考虑关闭WSL或同步时间。
+> **实现功能**：比较WSL与Windows时间，报告时钟偏差并给出休眠后TLS或令牌故障的排查建议。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：lib/clock.js先取WSL Date.now，再通过PowerShell取Windows毫秒时间，计算偏差等级并返回诊断建议。
 
-## 使用建议
+> **风险与缺陷**：把常见休眠漂移变成具名探针有帮助；单次偏差不能直接解释所有TLS失败。
 
-- **用途**：笔记本休眠后WSL联网或令牌异常，开发者希望先确认时钟是否明显漂移，验收是找到实际故障原因。
+<a id="detail-section-1"></a>
+
+## 1 用途与适用场景
+
+> **用途**：笔记本休眠后WSL联网或令牌异常，开发者希望先确认时钟是否明显漂移，验收是找到实际故障原因。
 
 此前未入档；手工比较date和Windows时间同样可行，本项减少收集与格式化步骤。
 
-## 能力与限制
+<a id="detail-section-2"></a>
+
+## 2 能力与限制
+
+**能力**
 
 - **模型工具**：clock_doctor。
 
@@ -38,15 +44,27 @@
 
 无需外部API，主要是进程启动时间和人工排查；重启WSL等建议会中断任务，应计入恢复成本。
 
-- **思考**：把常见休眠漂移变成具名探针有帮助；单次偏差不能直接解释所有TLS失败。
+> **思考**：把常见休眠漂移变成具名探针有帮助；单次偏差不能直接解释所有TLS失败。
 
-## 工程分析
+<a id="detail-section-3"></a>
 
-- **亮点**：lib/clock.js先取WSL Date.now，再通过PowerShell取Windows毫秒时间，计算偏差等级并返回诊断建议。
+## 3 工程分析
+
+> **亮点**：lib/clock.js先取WSL Date.now，再通过PowerShell取Windows毫秒时间，计算偏差等级并返回诊断建议。
 
 偏差计算与建议生成是可复用纯函数，读取失败单独返回；顺序采样缺少往返延迟校正，精度边界清楚。
 
-## 核查说明
+<a id="detail-section-4"></a>
+
+## 4 使用建议
+
+先把它当粗粒度线索，临界偏差用系统命令复核；保存工作后再考虑关闭WSL或同步时间。
+
+<a id="detail-section-5"></a>
+
+## 5 核查说明
+
+**核查状态**：已检查源码。
 
 - 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。

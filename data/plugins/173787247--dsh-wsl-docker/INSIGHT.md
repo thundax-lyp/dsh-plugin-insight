@@ -1,7 +1,5 @@
 # dsh-wsl-docker
 
-> 检查WSL的Docker CLI、daemon与context，汇总疑似推理容器及本地API端口线索。
-
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
 分析版本：[89b19c3](https://github.com/173787247/dsh-wsl-docker/tree/89b19c3428df8dffa4c6771050e774bf1f1eb22b)
@@ -10,17 +8,25 @@
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-docker)
 <!-- END META -->
 
-**使用建议**：先用作收集context与容器信息，再用受控/v1/models和小请求验证API；不要因portHealth为ok就交付推理服务。
+> **实现功能**：检查WSL的Docker CLI、daemon与context，汇总疑似推理容器及本地API端口线索。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：lib/docker.js执行Docker只读命令，按名称/镜像/8000端口识别候选，查询runtime并探测HTTP，生成后续建议。
 
-## 使用建议
+> **风险与缺陷**：能把CLI存在、daemon可达和候选推理容器分开；启发式绿色状态仍需应用层验收。
 
-- **用途**：开发者在Docker Desktop和WSL引擎之间排障，想确认容器、GPU和推理服务处于哪一层失败。
+<a id="detail-section-1"></a>
+
+## 1 用途与适用场景
+
+> **用途**：开发者在Docker Desktop和WSL引擎之间排障，想确认容器、GPU和推理服务处于哪一层失败。
 
 此前未入档；原生docker context/version/ps提供同类证据，插件减少汇总步骤但不取代推理验收。
 
-## 能力与限制
+<a id="detail-section-2"></a>
+
+## 2 能力与限制
+
+**能力**
 
 - **模型工具**：docker_doctor。
 
@@ -38,15 +44,27 @@
 
 无新模型服务费用，但Docker查询与端口探测耗时；真实推理测试的显存、模型加载及费用不包含在诊断结果里。
 
-- **思考**：能把CLI存在、daemon可达和候选推理容器分开；启发式绿色状态仍需应用层验收。
+> **思考**：能把CLI存在、daemon可达和候选推理容器分开；启发式绿色状态仍需应用层验收。
 
-## 工程分析
+<a id="detail-section-3"></a>
 
-- **亮点**：lib/docker.js执行Docker只读命令，按名称/镜像/8000端口识别候选，查询runtime并探测HTTP，生成后续建议。
+## 3 工程分析
+
+> **亮点**：lib/docker.js执行Docker只读命令，按名称/镜像/8000端口识别候选，查询runtime并探测HTTP，生成后续建议。
 
 容器解析、GPU特征和HTTP探针分开便于复用；执行错误回退空字符串使权限失败与不存在可能混同，需原生命令补证。
 
-## 核查说明
+<a id="detail-section-4"></a>
+
+## 4 使用建议
+
+先用作收集context与容器信息，再用受控/v1/models和小请求验证API；不要因portHealth为ok就交付推理服务。
+
+<a id="detail-section-5"></a>
+
+## 5 核查说明
+
+**核查状态**：已检查源码。
 
 - 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。

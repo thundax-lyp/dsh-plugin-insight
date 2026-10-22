@@ -56,6 +56,16 @@
 - `research_depth` 的 catalog／source／tested／host_verified 表示已有证据层级；提高层级须有对应证据。
   历史执行证据不自动证明当前版本通过，源码与作者声明不等于运行效果。
 
+## Git 原始材料的可追溯定位
+
+Git 文件采用 evidence.git_refs 保存结构化定位，以[Git 引用 Schema](../schemas/git-reference.schema.json)为准。每项必含原始 `repository_url`、完整 `commit`（40位SHA-1或64位Git SHA-256）及仓库内相对 `path`；分支、标签、短SHA或采集时间不能替代提交。可附成对的 `line_start`／`line_end`、符号名 `symbol` 和文件内容的 `content_sha256`。路径须规范化，不含绝对路径、反斜线、空段、`.`或`..`；URL不能含凭据、查询参数或片段。关键判断仍由 summary、finding 或逐题 observation 说明，定位不能代替论证。
+
+此定位足以表示文件可追溯，不要求将整个上游仓库复制进本仓库。固定版本URL是方便点击的展示形式，不能代替三个定位字段；摘录或已保存快照是补充保全材料。可追溯不等于永久可取得，上游删除、转私有或提交不可达时须说明访问缺口，不能默认为新核查成功。需要重新获取时核对提交、路径与已有内容摘要。
+
+这条规则仅适用于Git中的原文件。npm/API返回、网页、Issue页面快照、运行日志、测试与宿主验收结果须另存当时材料和采集／执行条件，不能用源码提交证明当时服务状态或执行结果。既有artifact及缺失原件清单保持原状态，不因存在源码定位就宣称非Git原件已恢复。
+
+新研究按此格式记录；旧记录暂兼容既有固定版本URL，不强行回填未知的仓库、提交或路径，不复用原证据ID伪装成新核查。执行证据仍须有artifact和environment。
+
 ## 结论与依赖
 
 - `findings` 保存主题、结论、判断性质、`evidence_ids`、`dependencies`、`reviewed_at` 与状态。
@@ -69,7 +79,7 @@
 
 ## 创新评分数据
 
-- 当前插件的 `innovation_scores` 保存唯一评分真相，结构见 catalog Schema；评分方法仅由洞察 Skill 的[研究规范](../../dsh-plugin-insight/references/RESEARCH-STANDARD.md#创新评分标准innovation-v1)维护，发布输入不复制评分。
+- 当前插件的 `innovation_scores` 保存唯一评分真相，结构见 catalog Schema；评分方法仅由洞察 Skill 的[研究规范](../../dsh-plugin-insight/references/SCORING-STANDARD.md#创新评分标准innovation-v1)维护，发布输入不复制评分。
 - 保存 `rubric`、固定源码 `revision`、`reviewed_at`、`status` 和 `dependencies`；technical／business 各含 criteria、score、rationale、basis、evidence_ids。分项缺失用null，任何分项为null时该轴score必须为null；其余情况下score必须等于分项和。
 - 数值必须符合对应权重的档位，理由非空，引用本插件已有证据；数值轴须有可核查证据及supported／interpretation判断性质，unverified不能携带数值轴总分。评分复核时间不得晚于插件检查时间。current评分须有对应revision的源码核查证据及自身code指纹依赖，引用的依赖必须可定位。
 - 评分进入分析摘要绑定；修改评分须同步当前记录的analysis摘要。新研究stage要求显式提交本轮两轴评分（允许null及缺口说明），版本必须匹配，复核时间不得早于会话截止时间。
@@ -82,7 +92,7 @@
 
 - `decision` 为 unassessed（未评估）、not_recommended（不推荐）、observe（观察）、trial（试用）、install（值得安装）。不在推荐页不等于不推荐；不可从旧名单缺席推断结论。
 - `reason` 用一行说明适合谁、推荐或不推荐的理由及关键条件。已评估项保存 adoption-v1 的四项 criteria（score、rationale）、总分 score、固定 revision、独立 reviewed_at、evaluator、evidence_ids 和 dependencies。推荐复核时间独立于源码检查时间，不借此刷新研究截止时间。
-- 未评估项 reason 说明缺口，score、criteria、revision、reviewed_at、evaluator 为 null，证据与依赖为空，status=current；null 不是0。已评估项必须有完整分项、数值总分和同版本源码证据。评分方法与结论含义见[研究规范](../../dsh-plugin-insight/references/RESEARCH-STANDARD.md#采用推荐评分adoption-v1)。
+- 未评估项 reason 说明缺口，score、criteria、revision、reviewed_at、evaluator 为 null，证据与依赖为空，status=current；null 不是0。已评估项必须有完整分项、数值总分和同版本源码证据。评分方法与结论含义见[研究规范](../../dsh-plugin-insight/references/SCORING-STANDARD.md#采用推荐评分adoption-v1)。
 - status=current／needs_review 表示结论有效性，不增加第六种推荐结论。当前推荐须匹配自身 code 指纹、固定分析版本与全部依赖；依赖变化保留原分和理由并置 needs_review，不自动升降级。脚本变化标记另由 META 控制暂停入榜。
 - install 的引用证据必须包含同版本、带 artifact 和 environment 的 host_acceptance；高分不能绕过验收。真实安装、核心功能与禁用／卸载内容仍须逐项审阅。
 - 新研究 stage 必须显式提交已评估的本轮结论、四项评分及理由，不接受 unassessed；总分由脚本求和，不能以创新分、Star、下载量或关键词推断。旧观察允许缺字段以供恢复；正式迁移逐项补 unassessed，只有已实际评估的项补分。
@@ -98,7 +108,7 @@
 - 来源移除或仓库归档保留稳定身份及明确的当前状态；超时、403、404、截断不能推断删除或不可用。
   `init` 仅适用于空档案，`update` 用于已有档案；两者均不物理删除历史条目。
 - 写入必须同时满足基础档案摘要、候选结果摘要及结构约束，拒绝过期计划、损坏计划和并发覆盖。
-  档案与会话写入采用独占锁和原子替换；已有锁不得被自动抢占。
+  档案与会话写入采用独占锁和原子替换；已有锁不得被自动抢占。组件快照原子替换的临时文件使用随机标识和 `.tmp` 后缀，避免中断残留因 PID 复用阻塞重写；新旧临时命名均不进入 Git，事务撤销仍以 `.transaction/` 为准。
 
 ## 持久受阻与重试
 
@@ -167,3 +177,17 @@
 - 已合并记录的后续变化通过新增量替换当前状态，旧状态可由 Git 查询；不要求重新创建旧轮次或保留所有本地原件。
 - 清理前检查当前引用、未合并状态与活动锁；当前仍引用的材料先迁入正式位置并校验，再清理过程副本。
 - 旧迁移记录及清理脚本仅适用于其原有归档格式。适配新模型前不得用旧工具扩大删除范围，也不得删除现有材料来绕过校验。更新规范本身不执行数据迁移。
+
+## 逐题研究材料与正式报告
+
+新单插件装配输入的 research_questions 由[问题交付 Schema](../schemas/research-questions.schema.json)约束，研究执行以[逐题流程](../../dsh-plugin-insight/references/QUESTION-WORKFLOW.md)为准。它是研究输入与过程结构，不新增 catalog 字段，不改既有分析摘要或身份。逐题完整回答、固定版本证据定位与原文写入正式 reports；完整 research_questions（含 status 和全部 unknowns）随 REVIEWED-SOURCE.json 材料包进入正式 artifacts，读者展示过滤不改变持久化内容。源材料仍通过 artifacts 保存。主题覆盖、文本、ID和源码位置可机械校验，论证充分性与结论真实性须逐题审阅。
+
+已合并的当前研究不能依赖 PLAN、逐题本地文件或 ANALYSIS 存在；清理过程副本前验证正式报告和必要证据足以独立回读。历史报告缺少逐题结构时保持原状态，不从旧摘要补造研究，不因展示重生成升级研究深度或验收状态。
+
+## 能力表格的展示绑定
+
+发布输入 capabilities 的 revision、items 继续保存同版本的正向能力摘要；可选 table 保存研究者据实际源码撰写的 Markdown 能力表。table 须与正式原稿“能力清单”唯一章节的正文一致，生成前核对，不能从摘要自动推导使用条件或边界。历史输入不含 table 时继续核对原列表；版式变更不刷新研究时间、证据层级或评分。展示列及编写要求由[输出标准](../../dsh-plugin-init/references/OUTPUT-STANDARD.md)维护。
+
+## 逐题缺口与范围说明
+
+逐题 unknowns 的可选 kind 按研究问题 Schema 区分实际研究缺口 research_gap 与本轮未安排的工作 scope_boundary，省略时视为 research_gap。分类由研究者给定，不改变 status 验收或证据层级；读者正文只列实际缺口，范围说明仍保存。呈现要求见输出标准，字段解释与填写流程见逐题研究规范。

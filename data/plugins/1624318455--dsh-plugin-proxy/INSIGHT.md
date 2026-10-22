@@ -1,7 +1,5 @@
 # dsh-plugin-proxy
 
-> 通过运行时设置切换DSH全局fetch代理，支持直连、系统代理和手动HTTP或SOCKS代理。
-
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
 分析版本：[b5b5af2](https://github.com/1624318455/dsh-plugin-proxy/tree/b5b5af209e7bd36a6a7008db703a4a9d6d67c1df)
@@ -10,17 +8,25 @@
 [![npm 30d 85](https://img.shields.io/static/v1?label=npm+30d&message=85&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@memef1f1y/dsh-plugin-proxy) [![最新发布 2026-10-13](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-13&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@memef1f1y/dsh-plugin-proxy)
 <!-- END META -->
 
-**使用建议**：先用可观察测试端点核验fetch与目标客户端，确认无代理或配置错误时的直连回退可接受，再切换真实任务。
+> **实现功能**：通过运行时设置切换DSH全局fetch代理，支持直连、系统代理和手动HTTP或SOCKS代理。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：lib/index.js用undici setGlobalDispatcher替换全局调度器，设置变化重新应用，旧连接宽限关闭，卸载恢复基线和本插件改过的环境变量。
 
-## 使用建议
+> **风险与缺陷**：集中运行期设置简化多处代理配置；进程全局影响也可能改变其他插件的出站路径。
 
-- **用途**：网络环境经常变化的用户希望不重启会话就切换出站路线，验收是目标请求确实经过预期代理。
+<a id="detail-section-1"></a>
+
+## 1 用途与适用场景
+
+> **用途**：网络环境经常变化的用户希望不重启会话就切换出站路线，验收是目标请求确实经过预期代理。
 
 此前未入档；环境变量或宿主启动代理更简单，本项主要提供热切换与还原，不证明所有协议统一走代理。
 
-## 能力与限制
+<a id="detail-section-2"></a>
+
+## 2 能力与限制
+
+**能力**
 
 - **后台**：全局undici调度器切换与环境变量管理。
 - **界面**：代理模式设置卡片。
@@ -39,15 +45,27 @@
 
 代理服务、链路延迟和排障有持续成本；切换时在途连接可能中断，不能把无需重启等同零损耗。
 
-- **思考**：集中运行期设置简化多处代理配置；进程全局影响也可能改变其他插件的出站路径。
+> **思考**：集中运行期设置简化多处代理配置；进程全局影响也可能改变其他插件的出站路径。
 
-## 工程分析
+<a id="detail-section-3"></a>
 
-- **亮点**：lib/index.js用undici setGlobalDispatcher替换全局调度器，设置变化重新应用，旧连接宽限关闭，卸载恢复基线和本插件改过的环境变量。
+## 3 工程分析
+
+> **亮点**：lib/index.js用undici setGlobalDispatcher替换全局调度器，设置变化重新应用，旧连接宽限关闭，卸载恢复基线和本插件改过的环境变量。
 
 环境快照和条件恢复避免覆盖操作者后续修改，日志脱敏proxy userinfo；多个插件同时修改global dispatcher时的卸载顺序仍需核对。
 
-## 核查说明
+<a id="detail-section-4"></a>
+
+## 4 使用建议
+
+先用可观察测试端点核验fetch与目标客户端，确认无代理或配置错误时的直连回退可接受，再切换真实任务。
+
+<a id="detail-section-5"></a>
+
+## 5 核查说明
+
+**核查状态**：已检查源码。
 
 - 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。

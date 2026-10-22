@@ -12,7 +12,7 @@ import {
     readdirSync
 } from 'node:fs';
 import { dirname, resolve, relative } from 'node:path';
-import { createHash } from 'node:crypto';
+import { createHash, randomUUID } from 'node:crypto';
 import { ROOT, read, digest } from './plugin-data.mjs';
 import Ajv from 'ajv/dist/2020.js';
 import { readSnapshotStorage as readLegacy } from './legacy-snapshot-storage.mjs';
@@ -188,7 +188,7 @@ function syncedWrite(path, text) {
 }
 function replace(path, text) {
     mkdirSync(dirname(path), { recursive: true });
-    const temp = path + `.tmp-${process.pid}`;
+    const temp = path + `.${randomUUID()}.tmp`;
     try {
         syncedWrite(temp, text);
         renameSync(temp, path);

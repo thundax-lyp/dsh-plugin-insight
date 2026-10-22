@@ -1,7 +1,5 @@
 # model-usage-plugin
 
-> 聚合模型用量、工具活动及按可配置单价估算的费用趋势。
-
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
 分析版本：[a8d1a44](https://github.com/AKS1st/model-usage-plugin/tree/a8d1a444ffb02faa2818d12d6f0f1a1c22df1e57)
@@ -10,42 +8,41 @@
 [![GitHub ★ 7](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7&color=yellow&logo=github&style=flat)](https://github.com/AKS1st/model-usage-plugin) [![npm 30d 991](https://img.shields.io/static/v1?label=npm+30d&message=991&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/model-usage-plugin) [![最新发布 2026-09-14](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-14&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/model-usage-plugin)
 <!-- END META -->
 
-**使用建议**：作为估算面板使用，先校准provider、套餐和单价口径；正式费用以供应商账单核对。
+> **实现功能**：聚合模型用量、工具活动及按可配置单价估算的费用趋势。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：将缓存读写、失败调用、工具活动和时间台账组成消费观察链，并有价格迁移与用户配置保护；统计机制是接线和账本管理，不是新计费模型。
+
+> **风险与缺陷**：费用依赖内置/自填价格、汇率和provider/套餐归属；TokenPlan只记token不计费不代表订阅经济成本为零。流包装只保留最后usage，依赖宿主usage为完整口径；工具按最近模型归因是启发式，不等于工具由该模型因果产生。
 
 **本文目录**
 
-- [当前插件分析](#detail-section-1)
-  - [使用判断](#detail-section-2)
-  - [能力、流程与成本](#detail-section-3)
-  - [工程贡献](#detail-section-4)
-  - [主要限制](#detail-section-5)
-  - [核查说明与分析版本](#detail-section-6)
-- [未来设计假设（未验证）](#detail-section-7)
-- [辅助信息](#detail-section-8)
+- [1 插件分析](#detail-section-1)
+  - [1.1 用途与适用场景](#detail-section-2)
+  - [1.2 能力、流程与成本](#detail-section-3)
+  - [1.3 工程贡献](#detail-section-4)
+  - [1.4 主要限制](#detail-section-5)
+  - [1.5 使用建议](#detail-section-6)
+  - [1.6 核查说明与分析版本](#detail-section-7)
+- [2 未来设计假设（未验证）](#detail-section-8)
+- [3 辅助信息](#detail-section-9)
 
 <a id="detail-section-1"></a>
 
-## 当前插件分析
+## 1 插件分析
 
 <a id="detail-section-2"></a>
 
-### 使用判断
+### 1.1 用途与适用场景
 
-- **用途**：在DSH内理解模型消费结构，作预算线索而非财务账单。
-
-- **建议**：未验证假设：每个费用单元带价格生效版本、usage口径与归因可信度，再与供应商账单对账，可降低预算误差。比较跨provider同名模型、缓存、套餐、中断和历史迁移，报告无法对账而非归零。
-
-作为估算面板使用，先校准provider、套餐和单价口径；正式费用以供应商账单核对。
-
-**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，插件与依赖流程的实际运行尚未验证；未来假设未验证。
+> **用途**：在DSH内理解模型消费结构，作预算线索而非财务账单。
 
 参照供应商账单与宿主usage事件；增量是跨模型本地台账、价格配置、趋势与历史回填。
 
 <a id="detail-section-3"></a>
 
-### 能力、流程与成本
+### 1.2 能力、流程与成本
+
+**能力**
 
 - **事件监听**：llm/stream与session/event统计
 - **后台**：用量台账、持久化与历史回填
@@ -66,13 +63,13 @@ llm/stream包装器透传chunk并记最后usage，session/event按最近会话�
 
 有消费可见性实现，无账单误差、节约金额或独立效果数据。
 
-- **思考**：费用依赖内置/自填价格、汇率和provider/套餐归属；TokenPlan只记token不计费不代表订阅经济成本为零。流包装只保留最后usage，依赖宿主usage为完整口径；工具按最近模型归因是启发式，不等于工具由该模型因果产生。
+> **思考**：费用依赖内置/自填价格、汇率和provider/套餐归属；TokenPlan只记token不计费不代表订阅经济成本为零。流包装只保留最后usage，依赖宿主usage为完整口径；工具按最近模型归因是启发式，不等于工具由该模型因果产生。
 
 <a id="detail-section-4"></a>
 
-### 工程贡献
+### 1.3 工程贡献
 
-- **亮点**：将缓存读写、失败调用、工具活动和时间台账组成消费观察链，并有价格迁移与用户配置保护；统计机制是接线和账本管理，不是新计费模型。
+> **亮点**：将缓存读写、失败调用、工具活动和时间台账组成消费观察链，并有价格迁移与用户配置保护；统计机制是接线和账本管理，不是新计费模型。
 
 将缓存读写、失败调用、工具活动和时间台账组成消费观察链，并有价格迁移与用户配置保护；统计机制是接线和账本管理，不是新计费模型。
 
@@ -82,13 +79,23 @@ llm/stream包装器透传chunk并记最后usage，session/event按最近会话�
 
 <a id="detail-section-5"></a>
 
-### 主要限制
+### 1.4 主要限制
 
 费用依赖内置/自填价格、汇率和provider/套餐归属；TokenPlan只记token不计费不代表订阅经济成本为零。流包装只保留最后usage，依赖宿主usage为完整口径；工具按最近模型归因是启发式，不等于工具由该模型因果产生。
 
 <a id="detail-section-6"></a>
 
-### 核查说明与分析版本
+### 1.5 使用建议
+
+作为估算面板使用，先校准provider、套餐和单价口径；正式费用以供应商账单核对。
+
+**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，插件与依赖流程的实际运行尚未验证；未来假设未验证。
+
+<a id="detail-section-7"></a>
+
+### 1.6 核查说明与分析版本
+
+**核查状态**：已检查源码。
 
 - **仓库**：[AKS1st/model-usage-plugin](https://github.com/AKS1st/model-usage-plugin)
 - **版本号**：0.17.0（[固定提交 a8d1a444](https://github.com/AKS1st/model-usage-plugin/tree/a8d1a444ffb02faa2818d12d6f0f1a1c22df1e57)）
@@ -99,9 +106,9 @@ llm/stream包装器透传chunk并记最后usage，session/event按最近会话�
 - 证据限制：固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。
 - 下一步：固定合成事件核最后usage语义、回填幂等、时区边界、套餐和价格迁移；再在授权账单样本对账，本轮未调用网络或真实账户。
 
-<a id="detail-section-7"></a>
+<a id="detail-section-8"></a>
 
-## 未来设计假设（未验证）
+## 2 未来设计假设（未验证）
 
 未验证假设：每个费用单元带价格生效版本、usage口径与归因可信度，再与供应商账单对账，可降低预算误差。比较跨provider同名模型、缓存、套餐、中断和历史迁移，报告无法对账而非归零。
 
@@ -123,9 +130,9 @@ llm/stream包装器透传chunk并记最后usage，session/event按最近会话�
 
 </details>
 
-<a id="detail-section-8"></a>
+<a id="detail-section-9"></a>
 
-## 辅助信息
+## 3 辅助信息
 
 **活跃度**
 

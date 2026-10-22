@@ -1,7 +1,5 @@
 # dsh-plugin-gate
 
-> 对插件目录或npm包做静态风险扫描，并提供危险命令、路径及扫描差异检查。
-
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
 分析版本：[b75c3a1](https://github.com/863683348/dsh-plugin-gate/tree/b75c3a1b768448ee84a6fa07735206e6f8945411)
@@ -10,37 +8,40 @@
 [![npm 30d 1,535](https://img.shields.io/static/v1?label=npm+30d&message=1%2C535&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-gate) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-gate)
 <!-- END META -->
 
-**使用建议**：适合作安装前静态检查。逐条读命中、截断与OSV未知，别把PASS当安全认证；要真正拦操作，先验证执行前绑定机制。
+> **实现功能**：对插件目录或npm包做静态风险扫描，并提供危险命令、路径及扫描差异检查。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：作者称安装安全闸门；可确认增量是给模型一个带逐行证据、扫描边界和差异输出的静态检查工具，扫描不执行目标代码。相比仅凭README安装，增加可审阅证据；所谓gate主要是工具结果与模型指引，不是不可绕过的安装拦截器。
+
+> **风险与缺陷**：gate_guard需模型主动调用并遵守结果，入口未接执行前拦截，因此不保证rm等命令会被宿主挡住。evaluatePath只规范斜线和尾分隔符，不解析..或符号链接；根匹配也只是字符串启发式。PASS表示没命中所扫模式，不能推出依赖安全或无恶意；OSV只查有限精确直接版本并可离线降级。
 
 **本文目录**
 
-- [当前插件分析](#detail-section-1)
-  - [场景与替代办法](#detail-section-2)
-  - [能力、依赖与流程](#detail-section-3)
-  - [成本与效果](#detail-section-4)
-  - [工程亮点](#detail-section-5)
-  - [使用判断](#detail-section-6)
-  - [能力、流程与成本](#detail-section-7)
-  - [工程贡献](#detail-section-8)
-  - [核查说明与分析版本](#detail-section-9)
-- [未来设计假设（未验证）](#detail-section-10)
-- [辅助信息](#detail-section-11)
+- [1 插件分析](#detail-section-1)
+  - [1.1 场景与替代办法](#detail-section-2)
+  - [1.2 能力、依赖与流程](#detail-section-3)
+  - [1.3 成本与效果](#detail-section-4)
+  - [1.4 工程亮点](#detail-section-5)
+  - [1.5 用途与适用场景](#detail-section-6)
+  - [1.6 能力、流程与成本](#detail-section-7)
+  - [1.7 工程贡献](#detail-section-8)
+  - [1.8 使用建议](#detail-section-9)
+  - [1.9 核查说明与分析版本](#detail-section-10)
+- [2 未来设计假设（未验证）](#detail-section-11)
+- [3 辅助信息](#detail-section-12)
 
 <a id="detail-section-1"></a>
 
-## 当前插件分析
+## 1 插件分析
 
 <a id="detail-section-2"></a>
 
-### 场景与替代办法
+### 1.1 场景与替代办法
 
 替代是人工源码审阅、包扫描器与宿主权限；本项目提供DSH静态工具入口，未替代执行隔离。
 
 <a id="detail-section-3"></a>
 
-### 能力、依赖与流程
+### 1.2 能力、依赖与流程
 
 lib/index.js注册gate_scan/guard/diff/report和提示section；scan.js只读遍历目录或内存tar包并跑签名，protect.js按命令模式和字符串路径返回BLOCK/WARN/PASS，未在入口注册tools/pre-execute钩子。
 
@@ -52,7 +53,7 @@ lib/index.js注册gate_scan/guard/diff/report和提示section；scan.js只读遍
 
 <a id="detail-section-4"></a>
 
-### 成本与效果
+### 1.3 成本与效果
 
 首次核扫描范围、允许主机与OSV配置；运行消耗目录读取、tar下载及API等待。现金无固定服务费依据，人工需审误报与漏扫，BLOCK复核成本与安全收益不能用签名数量替代。
 
@@ -60,7 +61,7 @@ lib/index.js注册gate_scan/guard/diff/report和提示section；scan.js只读遍
 
 <a id="detail-section-5"></a>
 
-### 工程亮点
+### 1.4 工程亮点
 
 扫描层与规则、tar解析、保护判定分离；文档/注释降级减少误报但不是语义分析。返回具体文件行和范围比只给分数更可复核，字符串路径判断须补真实目标解析。
 
@@ -68,33 +69,39 @@ lib/index.js注册gate_scan/guard/diff/report和提示section；scan.js只读遍
 
 <a id="detail-section-6"></a>
 
-### 使用判断
+### 1.5 用途与适用场景
 
-- **用途**：适合安装前收集风险线索及审阅危险操作；扫描结论不等于宿主执行层已经阻断。
+> **用途**：适合安装前收集风险线索及审阅危险操作；扫描结论不等于宿主执行层已经阻断。
 
-- **建议**：待验证假设：把扫描摘要绑定固定包摘要和待执行目标，再由独立执行前策略检查，可减少扫描后换包或漏调用；仅把两个工具装一起不足以成立。用相同包、换包、未扫描、路径别名和取消轨迹验证是否错误放行，必须先核宿主钩子契约。
+<a id="detail-section-7"></a>
+
+### 1.6 能力、流程与成本
+
+**能力**
+
+- **模型工具**：gate_scan、gate_guard、gate_diff、gate_report
+
+> **思考**：gate_guard需模型主动调用并遵守结果，入口未接执行前拦截，因此不保证rm等命令会被宿主挡住。evaluatePath只规范斜线和尾分隔符，不解析..或符号链接；根匹配也只是字符串启发式。PASS表示没命中所扫模式，不能推出依赖安全或无恶意；OSV只查有限精确直接版本并可离线降级。
+
+<a id="detail-section-8"></a>
+
+### 1.7 工程贡献
+
+> **亮点**：作者称安装安全闸门；可确认增量是给模型一个带逐行证据、扫描边界和差异输出的静态检查工具，扫描不执行目标代码。相比仅凭README安装，增加可审阅证据；所谓gate主要是工具结果与模型指引，不是不可绕过的安装拦截器。
+
+<a id="detail-section-9"></a>
+
+### 1.8 使用建议
 
 适合作安装前静态检查。逐条读命中、截断与OSV未知，别把PASS当安全认证；要真正拦操作，先验证执行前绑定机制。
 
 **核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。已有贡献由固定版本源码支持，实际运行与宿主效果未验证；未来设计假设均未验证。
 
-<a id="detail-section-7"></a>
+<a id="detail-section-10"></a>
 
-### 能力、流程与成本
+### 1.9 核查说明与分析版本
 
-- **模型工具**：gate_scan、gate_guard、gate_diff、gate_report
-
-- **思考**：gate_guard需模型主动调用并遵守结果，入口未接执行前拦截，因此不保证rm等命令会被宿主挡住。evaluatePath只规范斜线和尾分隔符，不解析..或符号链接；根匹配也只是字符串启发式。PASS表示没命中所扫模式，不能推出依赖安全或无恶意；OSV只查有限精确直接版本并可离线降级。
-
-<a id="detail-section-8"></a>
-
-### 工程贡献
-
-- **亮点**：作者称安装安全闸门；可确认增量是给模型一个带逐行证据、扫描边界和差异输出的静态检查工具，扫描不执行目标代码。相比仅凭README安装，增加可审阅证据；所谓gate主要是工具结果与模型指引，不是不可绕过的安装拦截器。
-
-<a id="detail-section-9"></a>
-
-### 核查说明与分析版本
+**核查状态**：已检查源码。
 
 - **仓库**：[863683348/dsh-plugin-gate](https://github.com/863683348/dsh-plugin-gate)
 - **版本号**：1.3.2（[固定提交 b75c3a1b](https://github.com/863683348/dsh-plugin-gate/tree/b75c3a1b768448ee84a6fa07735206e6f8945411)）
@@ -105,9 +112,9 @@ lib/index.js注册gate_scan/guard/diff/report和提示section；scan.js只读遍
 - 证据限制：固定提交内列明源码和作者材料的有界抽读，静态inventory为组件范围；没有安装、执行目标代码或测试、发起插件服务请求、真实宿主验收或独立采用核实。
 - 下一步：固定宿主验证不调用guard时行为、包摘要变化、..和符号链接、截断、文档示例误报及OSV失效；本轮不执行扫描或破坏命令。
 
-<a id="detail-section-10"></a>
+<a id="detail-section-11"></a>
 
-## 未来设计假设（未验证）
+## 2 未来设计假设（未验证）
 
 待验证假设：把扫描摘要绑定固定包摘要和待执行目标，再由独立执行前策略检查，可减少扫描后换包或漏调用；仅把两个工具装一起不足以成立。用相同包、换包、未扫描、路径别名和取消轨迹验证是否错误放行，必须先核宿主钩子契约。
 
@@ -129,9 +136,9 @@ lib/index.js注册gate_scan/guard/diff/report和提示section；scan.js只读遍
 
 </details>
 
-<a id="detail-section-11"></a>
+<a id="detail-section-12"></a>
 
-## 辅助信息
+## 3 辅助信息
 
 **活跃度**
 

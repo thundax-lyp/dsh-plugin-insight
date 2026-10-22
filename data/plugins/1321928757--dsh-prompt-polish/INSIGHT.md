@@ -1,7 +1,5 @@
 # dsh-prompt-polish
 
-> 在输入栏调用宿主模型重写草稿，支持策略、语言、上下文与人工确认采纳。
-
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
 分析版本：[c894ae3](https://github.com/1321928757/dsh-prompt-polish/tree/c894ae3de6590542f8353b76e314656a4a3fe3a0)
@@ -10,17 +8,25 @@
 [![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/1321928757/dsh-prompt-polish) [![npm 30d 358](https://img.shields.io/static/v1?label=npm+30d&message=358&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-prompt-polish) [![最新发布 2026-08-26](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-26&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-prompt-polish)
 <!-- END META -->
 
-**使用建议**：先不带历史改写普通草稿，对照检查否定、数字和交付限制；需要上下文时再开启，并人工决定是否采用。
+> **实现功能**：在输入栏调用宿主模型重写草稿，支持策略、语言、上下文与人工确认采纳。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：lib/index.js 收集启用的目标、任务和历史，在字符预算内构建请求，调用宿主llm.stream；客户端展示结果，采纳由用户决定。
 
-## 使用建议
+> **风险与缺陷**：确认式采纳比自动替换更可控；同一模型改写并不保证比直接发送原请求更好。
 
-- **用途**：用户反复组织复杂请求，希望提交前改善表达并保留原意；验收标准是约束无遗漏，而非文字更长。
+<a id="detail-section-1"></a>
+
+## 1 用途与适用场景
+
+> **用途**：用户反复组织复杂请求，希望提交前改善表达并保留原意；验收标准是约束无遗漏，而非文字更长。
 
 此前未入档；直接编辑或要求当前会话润色是较低配置的替代，本项增量在输入栏确认、取消与历史管理。
 
-## 能力与限制
+<a id="detail-section-2"></a>
+
+## 2 能力与限制
+
+**能力**
 
 - **界面**：优化按钮、设置、结果确认与近期历史。
 - **后台**：当前模型流式优化及取消请求。
@@ -39,15 +45,27 @@
 
 每次优化额外调用模型，携带历史扩大输入；核对语义、重试和放弃结果都应计入成本，没有实测节省时间。
 
-- **思考**：确认式采纳比自动替换更可控；同一模型改写并不保证比直接发送原请求更好。
+> **思考**：确认式采纳比自动替换更可控；同一模型改写并不保证比直接发送原请求更好。
 
-## 工程分析
+<a id="detail-section-3"></a>
 
-- **亮点**：lib/index.js 收集启用的目标、任务和历史，在字符预算内构建请求，调用宿主llm.stream；客户端展示结果，采纳由用户决定。
+## 3 工程分析
+
+> **亮点**：lib/index.js 收集启用的目标、任务和历史，在字符预算内构建请求，调用宿主llm.stream；客户端展示结果，采纳由用户决定。
 
 runId到AbortController的映射与finally清理便于取消，区分截断、取消和错误；超时分支是否终止底层流需宿主实测。
 
-## 核查说明
+<a id="detail-section-4"></a>
+
+## 4 使用建议
+
+先不带历史改写普通草稿，对照检查否定、数字和交付限制；需要上下文时再开启，并人工决定是否采用。
+
+<a id="detail-section-5"></a>
+
+## 5 核查说明
+
+**核查状态**：已检查源码。
 
 - 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。

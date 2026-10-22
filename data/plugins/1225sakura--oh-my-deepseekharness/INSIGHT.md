@@ -1,7 +1,5 @@
 # oh-my-dsh
 
-> 为 DSH 提供角色、Skill 与多智能体协调协议，支持自动推进和显式团队流程。
-
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
 分析版本：[f38d8a6](https://github.com/1225Sakura/oh-my-deepseekharness/tree/f38d8a6cffca4d2beb97e3cdd53208794163b92f)
@@ -10,17 +8,25 @@
 [![GitHub ★ 11](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=11&color=yellow&logo=github&style=flat)](https://github.com/1225Sakura/oh-my-deepseekharness) [![npm 30d 2,379](https://img.shields.io/static/v1?label=npm+30d&message=2%2C379&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@sakura12/oh-my-deepseekharness) [![最新发布 2026-10-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-16&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@sakura12/oh-my-deepseekharness)
 <!-- END META -->
 
-**使用建议**：先验装探测与取消，再对单仓库小任务比较原生单 agent 和一条显式 team 流程。
+> **实现功能**：为 DSH 提供角色、Skill 与多智能体协调协议，支持自动推进和显式团队流程。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：入口注入协议并注册资产、命令和 MCP，team 模块维护阶段、队员身份与邮箱；实际派发与合并仍由领队模型驱动。
 
-## 使用建议
+> **风险与缺陷**：统一委派与恢复数据面可降低自建成本；多代理可能放大误解、冲突和预算超支。
 
-- **用途**：复杂开发任务需要规划、委派与验证分工，用户希望复用一套宿主适配的编排约定。
+<a id="detail-section-1"></a>
+
+## 1 用途与适用场景
+
+> **用途**：复杂开发任务需要规划、委派与验证分工，用户希望复用一套宿主适配的编排约定。
 
 原生单 agent 与有限手工委派是对照；只有复杂可拆分任务才值得增加协调层。
 
-## 能力与限制
+<a id="detail-section-2"></a>
+
+## 2 能力与限制
+
+**能力**
 
 - **Skill**：编排和角色资产注册。
 - **后台**：能力探测、团队心跳与内置 MCP server 接入。
@@ -39,15 +45,27 @@
 
 多角色和多轮评审增加模型、上下文与状态维护成本，不能以并行数量推断更快更省。
 
-- **思考**：统一委派与恢复数据面可降低自建成本；多代理可能放大误解、冲突和预算超支。
+> **思考**：统一委派与恢复数据面可降低自建成本；多代理可能放大误解、冲突和预算超支。
 
-## 工程分析
+<a id="detail-section-3"></a>
 
-- **亮点**：入口注入协议并注册资产、命令和 MCP，team 模块维护阶段、队员身份与邮箱；实际派发与合并仍由领队模型驱动。
+## 3 工程分析
+
+> **亮点**：入口注入协议并注册资产、命令和 MCP，team 模块维护阶段、队员身份与邮箱；实际派发与合并仍由领队模型驱动。
 
 能力探测、降级公告、终态限制和心跳只报告不自动杀有可借鉴性；集成面大意味着持续适配负担。
 
-## 核查说明
+<a id="detail-section-4"></a>
+
+## 4 使用建议
+
+先验装探测与取消，再对单仓库小任务比较原生单 agent 和一条显式 team 流程。
+
+<a id="detail-section-5"></a>
+
+## 5 核查说明
+
+**核查状态**：已检查源码。
 
 - 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。

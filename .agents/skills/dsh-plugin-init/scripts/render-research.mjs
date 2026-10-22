@@ -9,7 +9,7 @@ import addFormats from 'ajv-formats';
 import { ROOT, read, validate as validateCatalog } from '../../_shared/scripts/plugin-data.mjs';
 import { validateMetadata } from '../../dsh-plugin-insight/scripts/capture-plugin-meta.mjs';
 import { template } from './publication/template.mjs';
-import { renderDetailLayout } from './publication/detail-layout.mjs';
+import { renderDetailLayout, splitSections } from './publication/detail-layout.mjs';
 import {
     categoryGroups,
     renderCategoryIndex,
@@ -23,6 +23,7 @@ import {
     renderLatest,
     renderHot,
     renderRecommended,
+    renderColumn,
     renderCategories,
     renderSources
 } from './publication/blocks.mjs';
@@ -42,7 +43,34 @@ function local(root, path) {
     if (isAbsolute(path) || relative(root, full).startsWith('..')) throw Error('path must be inside project');
     return full;
 }
+function normalizeLegacyTrial(text) {
+    let questions = false,
+        fence = null;
+    return text
+        .split('\n')
+        .map((line) => {
+            const marker = line.match(/^ {0,3}(`{3,}|~{3,})(.*)$/);
+            if (marker) {
+                if (!fence) fence = marker[1];
+                else if (marker[1][0] === fence[0] && marker[1].length >= fence.length && !marker[2].trim())
+                    fence = null;
+            } else if (!fence && /^## /.test(line)) questions = /^## (?:[0-9]+ )?研究问题与完整回答$/.test(line);
+            return questions ? line : line.replaceAll('条件试用', '试用');
+        })
+        .join('\n');
+}
 export function renderDetailReport(report, item) {
+    const sections = splitSections(report);
+    const questions = sections.filter((part) => part.title === '研究问题与完整回答');
+    if (questions.length > 1) throw Error('duplicate complete research question section');
+    if (questions.length) {
+        const rest = sections
+            .filter((part) => part.title !== '研究问题与完整回答')
+            .map((part) => (part.title ? `## ${part.title}\n\n${part.body}` : part.body))
+            .join('\n\n');
+        return renderDetailReport(rest, item) + '\n\n## 研究问题与完整回答\n\n' + questions[0].body;
+    }
+
     const versionUrl = `https://github.com/${item.repository}/tree/${item.revision}${item.path ? `/${item.path}` : ''}`;
     const shortParagraphs = new Set(
         [...report.matchAll(/^- \*\*(?:用途|亮点|思考|关键质疑|建议)(?:：\*\*|\*\*：)(.+)$/gm)].map((match) =>
@@ -68,39 +96,47 @@ export function latestManifestItems(manifests) {
         for (const item of manifest.items) latest.set(item.id, { item, checked_at: manifest.checked_at });
     return [...latest.values()];
 }
-function renderReadingNavigation(detail, navigation, longRead) {
-    let content = detail;
+export function renderReadingNavigation(detail, navigation, longRead) {
+    const entries = [];
+    let fence = null,
+        chapter = 0,
+        subsection = 0;
+    let content = detail
+        .split('\n')
+        .map((line) => {
+            const marker = line.match(/^ {0,3}(`{3,}|~{3,})(.*)$/);
+            if (marker) {
+                if (!fence) fence = marker[1];
+                else if (marker[1][0] === fence[0] && marker[1].length >= fence.length && !marker[2].trim())
+                    fence = null;
+                return line;
+            }
+            const heading = !fence && line.match(/^(#{2,3}) (.+)$/);
+            if (!heading) return line;
+            const level = heading[1].length;
+            let title = heading[2];
+            if (level === 2) {
+                chapter += 1;
+                subsection = 0;
+            }
+            if (!/^Q[0-9]+(?:\b|[ ·：:])/.test(title)) {
+                if (level === 3) subsection += 1;
+                title = `${level === 2 ? chapter : `${chapter}.${subsection}`} ${title}`;
+            }
+            const anchor = `detail-section-${entries.length + 1}`;
+            entries.push(
+                template('DETAIL-CONTENTS-ITEM', { title: clean(title), anchor, indent: level === 3 ? '  ' : '' })
+            );
+            return `<a id="${anchor}"></a>\n\n${heading[1]} ${title}`;
+        })
+        .join('\n');
     if (longRead) {
-        const entries = [];
-        let fence = null;
-        content = content
-            .split('\n')
-            .map((line) => {
-                const marker = line.match(/^ {0,3}(`{3,}|~{3,})(.*)$/);
-                if (marker) {
-                    if (!fence) fence = marker[1];
-                    else if (marker[1][0] === fence[0] && marker[1].length >= fence.length && !marker[2].trim())
-                        fence = null;
-                    return line;
-                }
-                const heading = !fence && line.match(/^(#{2,3}) (.+)$/);
-                if (!heading) return line;
-                const anchor = `detail-section-${entries.length + 1}`;
-                entries.push(
-                    template('DETAIL-CONTENTS-ITEM', {
-                        title: clean(heading[2]),
-                        anchor,
-                        indent: heading[1].length === 3 ? '  ' : ''
-                    })
-                );
-                return `<a id="${anchor}"></a>\n\n${line}`;
-            })
-            .join('\n');
         const contents = template('DETAIL-CONTENTS', { items: entries.join('\n') });
-        content = content.replace(/(\*\*核查状态\*\*：[^\n]+\n)/, `$1\n${contents}\n`);
+        content = content.replace('<a id="detail-section-1"></a>', `${contents}\n\n<a id="detail-section-1"></a>`);
     }
-    return content.replace(/^(# [^\n]+\n\n> [^\n]+\n)/, `$1\n${navigation}\n`) + `\n${navigation}\n`;
+    return content.replace(/^(# [^\n]+\n)/, `$1\n${navigation}\n`) + `\n${navigation}\n`;
 }
+
 export function renderPublication(input, root = ROOT, context = null) {
     if (!check(input)) throw Error(ajv.errorsText(check.errors));
     const text = (path) => readFileSync(local(root, path), 'utf8');
@@ -130,28 +166,45 @@ export function renderPublication(input, root = ROOT, context = null) {
             )
                 throw Error(`pinned author summary required: ${i.id}`);
             if (!report.includes(`> ${summary.text}`)) throw Error(`detail summary differs: ${i.id}`);
+            const summarySections = splitSections(report);
+            const summarySource = summarySections.some((part) => part.title === '研究问题与完整回答')
+                ? summarySections
+                      .filter((part) => part.title !== '研究问题与完整回答')
+                      .map((part) => (part.title ? `## ${part.title}\n\n${part.body}` : part.body))
+                      .join('\n\n')
+                : report;
             const labels = ['用途', '亮点', '思考', '建议'];
             const shortItems = labels.map((label) => {
                 const sourceLabel = label === '思考' ? '(?:思考|关键质疑)' : label;
                 const matches = [
-                    ...report.matchAll(new RegExp(`^- \\*\\*${sourceLabel}(?:：\\*\\*|\\*\\*：)(.+)$`, 'gm'))
+                    ...summarySource.matchAll(new RegExp(`^- \\*\\*${sourceLabel}(?:：\\*\\*|\\*\\*：)(.+)$`, 'gm'))
                 ];
                 if (matches.length !== 1) throw Error(`detail needs one ${label}: ${i.id}`);
                 return template('SHORT-ITEM', { label, text: matches[0][1] });
             });
-            const short = shortItems.join('\n');
+            const short = shortItems.join('\n\n');
             const title = report.match(/^# [^\n]+/)?.[0];
             if (!title) throw Error('detail needs a title');
             const capabilities = input.capabilities?.[i.id];
             if (!capabilities || capabilities.revision !== i.revision)
                 throw Error(`pinned capability inventory required: ${i.id}`);
-            for (const [name, value] of Object.entries(capabilities.items))
-                if (!report.includes(`- **${name}**：${value}`))
-                    throw Error(`detail capability differs: ${i.id}/${name}`);
+            if (capabilities.table !== undefined) {
+                const sections = splitSections(report).filter((part) => part.title === '能力清单');
+                if (
+                    !capabilities.table.trim() ||
+                    sections.length !== 1 ||
+                    sections[0].body !== capabilities.table.trim()
+                )
+                    throw Error(`detail capability table differs: ${i.id}`);
+            } else {
+                for (const [name, value] of Object.entries(capabilities.items))
+                    if (!report.includes(`- **${name}**：${value}`))
+                        throw Error(`detail capability differs: ${i.id}/${name}`);
+            }
             const advice = input.advice?.[i.id];
             if (advice && advice.revision !== i.revision) throw Error(`advice revision differs: ${i.id}`);
             if (advice && !report.includes(advice.text)) throw Error(`detail advice differs: ${i.id}`);
-            const usageConditions = advice?.text ?? report.match(/^- \*\*建议(?:：\*\*|\*\*：)(.+)$/m)[1].trim();
+            const usageConditions = advice?.text ?? summarySource.match(/^- \*\*建议(?:：\*\*|\*\*：)(.+)$/m)[1].trim();
             const anchor = `plugin-${plugin.repository_id}-${plugin.component_id}`;
             const path = input.metadata?.[i.id];
             let npmDownloads = null,
@@ -280,19 +333,13 @@ export function renderPublication(input, root = ROOT, context = null) {
     const columnPages = ['LATEST', 'HOT', 'RECOMMENDED'].map((key) => {
         const path = `data/views/columns/${key}.md`;
         const entries = items.map((e) => ({ ...e, href: link(path, e.detailPath) }));
-        const entriesById = new Map(entries.map((e) => [e.i.id, e]));
-        const content =
-            key === 'LATEST'
-                ? renderLatest(entries, updated, Infinity)
-                : key === 'HOT'
-                  ? renderHot(entries, Infinity)
-                  : renderRecommended(recommendations, entriesById, 50);
+        const content = renderColumn(key, entries, updated, recommendations);
         return {
             path,
             content:
                 template('COLUMN-PAGE', {
                     home: link(path, 'README.md'),
-                    content: content.replace(/^## \[([^\]]+)\]\([^\n]+\)/, '# $1'),
+                    content,
                     updated: renderUpdated(updated)
                 }) + '\n'
         };
@@ -326,7 +373,7 @@ export function renderPublication(input, root = ROOT, context = null) {
             });
             return {
                 path: e.detailPath,
-                content: renderReadingNavigation(e.detail, navigation, e.longRead).replaceAll('条件试用', '试用')
+                content: normalizeLegacyTrial(renderReadingNavigation(e.detail, navigation, e.longRead))
             };
         }),
         registry

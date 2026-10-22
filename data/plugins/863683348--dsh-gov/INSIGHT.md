@@ -1,7 +1,5 @@
 # dsh-gov
 
-> 提供工具调用策略、JSONL审计及按Agent记录的token配额提示。
-
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
 分析版本：[bb06125](https://github.com/863683348/dsh-gov/tree/bb061250a1dcead15edc202b4666c7d54f36da4a)
@@ -10,38 +8,41 @@
 [![npm 30d 152](https://img.shields.io/static/v1?label=npm+30d&message=152&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-gov) [![最新发布 2026-08-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-17&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-gov)
 <!-- END META -->
 
-**使用建议**：可在独立Profile试验工具deny/ask与审计。先验证规则生效、日志写盘失败和运行中quota_set，配额当前只能当提示与估算，不能据此承诺费用封顶。
+> **实现功能**：提供工具调用策略、JSONL审计及按Agent记录的token配额提示。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：作者称企业治理套件；源码可确认增量是把实际执行前钩子、结果日志和Agent用量状态统一到gov工具及持久化目录。相对只写禁止提示，deny/ask返回确实位于工具执行链；但企业合规、不可篡改审计和硬费用控制没有因此成立。
+
+> **风险与缺陷**：配额超过后返回enter消息而不是reject，不能硬停请求；hook仅在启动时defaultLimit>0或已有配额时注册，空初始状态中之后quota_set可能没有计量hook。totalTokens是会话测量值却作为delta反复相加，可能重复累计上下文压力；状态与日志写入失败均吞掉，不能承诺审计完整。
 
 **本文目录**
 
-- [当前插件分析](#detail-section-1)
-  - [场景与替代办法](#detail-section-2)
-  - [能力、依赖与流程](#detail-section-3)
-  - [成本与效果](#detail-section-4)
-  - [工程亮点](#detail-section-5)
-  - [使用判断](#detail-section-6)
-  - [能力、流程与成本](#detail-section-7)
-  - [工程贡献](#detail-section-8)
-  - [核查说明与分析版本](#detail-section-9)
-  - [扫描结论与执行约束的比较](#detail-section-10)
-- [未来设计假设（未验证）](#detail-section-11)
-- [辅助信息](#detail-section-12)
+- [1 插件分析](#detail-section-1)
+  - [1.1 场景与替代办法](#detail-section-2)
+  - [1.2 能力、依赖与流程](#detail-section-3)
+  - [1.3 成本与效果](#detail-section-4)
+  - [1.4 工程亮点](#detail-section-5)
+  - [1.5 用途与适用场景](#detail-section-6)
+  - [1.6 能力、流程与成本](#detail-section-7)
+  - [1.7 工程贡献](#detail-section-8)
+  - [1.8 使用建议](#detail-section-9)
+  - [1.9 核查说明与分析版本](#detail-section-10)
+  - [1.10 扫描结论与执行约束的比较](#detail-section-11)
+- [2 未来设计假设（未验证）](#detail-section-12)
+- [3 辅助信息](#detail-section-13)
 
 <a id="detail-section-1"></a>
 
-## 当前插件分析
+## 1 插件分析
 
 <a id="detail-section-2"></a>
 
-### 场景与替代办法
+### 1.1 场景与替代办法
 
 替代是宿主原生权限和独立审计；本项目增加集中策略/查询层，未替代强认证、不可篡改日志或账单系统。
 
 <a id="detail-section-3"></a>
 
-### 能力、依赖与流程
+### 1.2 能力、依赖与流程
 
 lib/index.js监听tools/pre-execute返回deny/ask或next，tools/result记录结果；policy.js按优先级及deny>ask>allow平局规则匹配；quota.js累计pre-step测量值，超过预算注入警告消息。
 
@@ -55,7 +56,7 @@ lib/index.js监听tools/pre-execute返回deny/ask或next，tools/result记录结
 
 <a id="detail-section-4"></a>
 
-### 成本与效果
+### 1.3 成本与效果
 
 首次编写策略并核实宿主钩子；持续维护规则、审计文件及日志轮转，现金成本取决于实际模型而非此计数。人工要处理误拒绝、权限例外及日志缺口，治理规则同样需要保护其修改入口。
 
@@ -63,7 +64,7 @@ lib/index.js监听tools/pre-execute返回deny/ask或next，tools/result记录结
 
 <a id="detail-section-5"></a>
 
-### 工程亮点
+### 1.4 工程亮点
 
 policy与quota纯逻辑分层使判定易解释；明确平局规则值得借鉴。默认allow、best-effort落盘和模型可调用规则管理工具意味着还需独立管理员边界；不是装上即获得合规。
 
@@ -71,35 +72,41 @@ policy与quota纯逻辑分层使判定易解释；明确平局规则值得借鉴
 
 <a id="detail-section-6"></a>
 
-### 使用判断
+### 1.5 用途与适用场景
 
-- **用途**：适合研究DSH集中工具权限与审计的维护者；要区分执行前策略拒绝与用量提醒。
-
-- **建议**：待验证假设：将预算分成请求压力、实际计费用量与可执行拒绝三种状态，再绑定不可变调用ID，可减少误计量和提示被误当硬配额。以重复pre-step、写盘失败、运行中设置quota及跨Agent轨迹验证计数和阻断；若宿主没有可靠计费用量，保留压力指标。
-
-可在独立Profile试验工具deny/ask与审计。先验证规则生效、日志写盘失败和运行中quota_set，配额当前只能当提示与估算，不能据此承诺费用封顶。
-
-**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。已有贡献由固定版本源码支持，实际运行与宿主效果未验证；未来设计假设均未验证。
+> **用途**：适合研究DSH集中工具权限与审计的维护者；要区分执行前策略拒绝与用量提醒。
 
 <a id="detail-section-7"></a>
 
-### 能力、流程与成本
+### 1.6 能力、流程与成本
+
+**能力**
 
 - **模型工具**：gov规则、审计及配额管理
 - **事件监听**：tools/pre-execute策略与tools/result审计、agent/pre-step提示
 - **后台**：gov.json及audit.jsonl持久化
 
-- **思考**：配额超过后返回enter消息而不是reject，不能硬停请求；hook仅在启动时defaultLimit>0或已有配额时注册，空初始状态中之后quota_set可能没有计量hook。totalTokens是会话测量值却作为delta反复相加，可能重复累计上下文压力；状态与日志写入失败均吞掉，不能承诺审计完整。
+> **思考**：配额超过后返回enter消息而不是reject，不能硬停请求；hook仅在启动时defaultLimit>0或已有配额时注册，空初始状态中之后quota_set可能没有计量hook。totalTokens是会话测量值却作为delta反复相加，可能重复累计上下文压力；状态与日志写入失败均吞掉，不能承诺审计完整。
 
 <a id="detail-section-8"></a>
 
-### 工程贡献
+### 1.7 工程贡献
 
-- **亮点**：作者称企业治理套件；源码可确认增量是把实际执行前钩子、结果日志和Agent用量状态统一到gov工具及持久化目录。相对只写禁止提示，deny/ask返回确实位于工具执行链；但企业合规、不可篡改审计和硬费用控制没有因此成立。
+> **亮点**：作者称企业治理套件；源码可确认增量是把实际执行前钩子、结果日志和Agent用量状态统一到gov工具及持久化目录。相对只写禁止提示，deny/ask返回确实位于工具执行链；但企业合规、不可篡改审计和硬费用控制没有因此成立。
 
 <a id="detail-section-9"></a>
 
-### 核查说明与分析版本
+### 1.8 使用建议
+
+可在独立Profile试验工具deny/ask与审计。先验证规则生效、日志写盘失败和运行中quota_set，配额当前只能当提示与估算，不能据此承诺费用封顶。
+
+**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。已有贡献由固定版本源码支持，实际运行与宿主效果未验证；未来设计假设均未验证。
+
+<a id="detail-section-10"></a>
+
+### 1.9 核查说明与分析版本
+
+**核查状态**：已检查源码。
 
 - **仓库**：[863683348/dsh-gov](https://github.com/863683348/dsh-gov)
 - **版本号**：0.1.0（[固定提交 bb061250](https://github.com/863683348/dsh-gov/tree/bb061250a1dcead15edc202b4666c7d54f36da4a)）
@@ -110,17 +117,17 @@ policy与quota纯逻辑分层使判定易解释；明确平局规则值得借鉴
 - 证据限制：固定提交内列明源码和作者材料的有界抽读，静态inventory为组件范围；没有安装、执行目标代码或测试、发起插件服务请求、真实宿主验收或独立采用核实。
 - 下一步：在固定宿主验证deny/ask是否真实阻止、gov自修改权限、日志磁盘故障、重复测量和新配额hook，记录实际轨迹；本轮未执行。
 
-<a id="detail-section-10"></a>
+<a id="detail-section-11"></a>
 
-### 扫描结论与执行约束的比较
+### 1.10 扫描结论与执行约束的比较
 
 在“安装前审查并限制工具执行”的共同场景中，gate_scan/guard提供启发式证据与BLOCK/WARN/PASS建议，依赖模型主动调用；gov则在tools/pre-execute返回deny/ask，存在实际执行链控制点，但匹配依据仍是工具/Agent/工作区规则，未绑定某次扫描的包摘要。两者组合不自动形成“扫描通过才可安装”的保证。gov默认allow且管理工具另需保护，quota也只是提示。待验证设计是由受独立权限保护的策略核检查固定包摘要、扫描覆盖状态、批准事件和当前执行目标；换包、未扫描、过期批准或未知结果时拒绝相关写入。新增代价为包目标识别、状态失效和合法操作误拦，需在固定宿主对照仅提示、仅规则和摘要绑定三组轨迹比较漏放/误拦与人工时间；本轮没有部署组合或执行这些实验。
 
 固定源码：[gov执行前策略](https://github.com/863683348/dsh-gov/blob/bb061250a1dcead15edc202b4666c7d54f36da4a/lib/index.js)、[gate主动扫描与提示](https://github.com/863683348/dsh-plugin-gate/blob/b75c3a1b768448ee84a6fa07735206e6f8945411/lib/index.js)。
 
-<a id="detail-section-11"></a>
+<a id="detail-section-12"></a>
 
-## 未来设计假设（未验证）
+## 2 未来设计假设（未验证）
 
 待验证假设：将预算分成请求压力、实际计费用量与可执行拒绝三种状态，再绑定不可变调用ID，可减少误计量和提示被误当硬配额。以重复pre-step、写盘失败、运行中设置quota及跨Agent轨迹验证计数和阻断；若宿主没有可靠计费用量，保留压力指标。
 
@@ -142,9 +149,9 @@ policy与quota纯逻辑分层使判定易解释；明确平局规则值得借鉴
 
 </details>
 
-<a id="detail-section-12"></a>
+<a id="detail-section-13"></a>
 
-## 辅助信息
+## 3 辅助信息
 
 **活跃度**
 

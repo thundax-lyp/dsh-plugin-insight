@@ -1,7 +1,5 @@
 # dsh-ui-auth
 
-> 为 DSH Web 提供登录、用户管理和认证网关，并支持 TOTP、Passkey 与会话隔离。
-
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
 分析版本：[6c5e87b](https://github.com/0QwQ0/dsh-ui-auth/tree/6c5e87b44be4e973b092910968001916bb97d22e)
@@ -10,17 +8,25 @@
 [![GitHub ★ 9](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9&color=yellow&logo=github&style=flat)](https://github.com/0QwQ0/dsh-ui-auth) [![npm 30d 1,594](https://img.shields.io/static/v1?label=npm+30d&message=1%2C594&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-ui-auth) [![最新发布 2026-10-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-16&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-ui-auth)
 <!-- END META -->
 
-**使用建议**：先在隔离环境逐一测试 HTTP、WebSocket 和多用户访问，不把安装成功当成公网安全保证。
+> **实现功能**：为 DSH Web 提供登录、用户管理和认证网关，并支持 TOTP、Passkey 与会话隔离。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：包装 HTTP 与 upgrade 入口，现代网关按会话处理认证；宿主能力缺失时 fail-closed。
 
-## 使用建议
+> **风险与缺陷**：统一入口与关闭式失败路径是有效机制；全接口安全仍依赖覆盖、宿主升级和反代配置。
 
-- **用途**：需要让多个用户访问 DSH Web 的部署者，需要认证入口和数据访问边界。
+<a id="detail-section-1"></a>
+
+## 1 用途与适用场景
+
+> **用途**：需要让多个用户访问 DSH Web 的部署者，需要认证入口和数据访问边界。
 
 反向代理认证是可替代的入口层，但未必有宿主会话隔离；两者要按同一越权用例比较。
 
-## 能力与限制
+<a id="detail-section-2"></a>
+
+## 2 能力与限制
+
+**能力**
 
 - **Host 路由**：认证网关及 HTTP/WebSocket 访问裁决。
 - **界面**：登录与用户管理设置页面。
@@ -39,15 +45,27 @@
 
 需维护账号、密钥、恢复方式和反向代理配置；省掉自写登录页不代表省掉安全运维。
 
-- **思考**：统一入口与关闭式失败路径是有效机制；全接口安全仍依赖覆盖、宿主升级和反代配置。
+> **思考**：统一入口与关闭式失败路径是有效机制；全接口安全仍依赖覆盖、宿主升级和反代配置。
 
-## 工程分析
+<a id="detail-section-3"></a>
 
-- **亮点**：包装 HTTP 与 upgrade 入口，现代网关按会话处理认证；宿主能力缺失时 fail-closed。
+## 3 工程分析
+
+> **亮点**：包装 HTTP 与 upgrade 入口，现代网关按会话处理认证；宿主能力缺失时 fail-closed。
 
 集中处理 transport 与注销清理可降低散落拦截；打包客户端含第三方代码，不应把其行数算原创。
 
-## 核查说明
+<a id="detail-section-4"></a>
+
+## 4 使用建议
+
+先在隔离环境逐一测试 HTTP、WebSocket 和多用户访问，不把安装成功当成公网安全保证。
+
+<a id="detail-section-5"></a>
+
+## 5 核查说明
+
+**核查状态**：已检查源码。
 
 - 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。

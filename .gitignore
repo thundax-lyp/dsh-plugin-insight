@@ -14,6 +14,7 @@ node_modules/
 /data/**/node_modules/
 /data/**/*.lock
 /data/**/*.tmp
+/data/**/*.tmp-*
 /data/**/.DS_Store
 
 # Catalog write journal: preserve locally until recovery.

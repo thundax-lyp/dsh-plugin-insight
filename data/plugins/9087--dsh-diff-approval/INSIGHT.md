@@ -1,7 +1,5 @@
 # dsh-diff-approval
 
-> 汇总Agent成功文件改动供逐文件或逐块保留、回退，并支持导入本地版本控制差异。
-
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
 分析版本：[393bdc4](https://github.com/9087/dsh-diff-approval/tree/393bdc4c9b6ee007027c9e4da4d9732d60c9e168)
@@ -10,44 +8,41 @@
 [![GitHub ★ 14](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=14&color=yellow&logo=github&style=flat)](https://github.com/9087/dsh-diff-approval) [![npm 30d 5,714](https://img.shields.io/static/v1?label=npm+30d&message=5%2C714&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-diff-approval) [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-20&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-diff-approval)
 <!-- END META -->
 
-**使用建议**：适合经常逐块审阅Agent改动的开发者在临时仓库试用。先核对已写入后的审阅语义、外部改动提示与回退权限，重要工作保留版本控制备份。
+> **实现功能**：汇总Agent成功文件改动供逐文件或逐块保留、回退，并支持导入本地版本控制差异。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：相对仅看聊天文件列表或git diff，增量是把工具改动、逐块决定、行引用与重启后待审状态接到同一界面，降低审阅与Agent沟通的切换。差分算法和FS由上游能力支撑，主要贡献在状态与交互接线。
+
+> **风险与缺陷**：“approval”会不会让用户误以为写入前被阻止？intent监听明确调用next，成功改动才进入pending；shell等未跟踪路径仍需VCS导入。回退实际写文件且新文件回退会删除；undo仅内存，不能当通用备份。源码持久层已是全局pending.json，而README仍描述按workspace文件，使用范围要以实现核对。
 
 **本文目录**
 
-- [当前插件分析](#detail-section-1)
-  - [使用判断](#detail-section-2)
-  - [能力、流程与成本](#detail-section-3)
-  - [工程贡献](#detail-section-4)
-  - [主要限制](#detail-section-5)
-  - [核查说明与分析版本](#detail-section-6)
-- [未来设计假设（未验证）](#detail-section-7)
-- [辅助信息](#detail-section-8)
+- [1 插件分析](#detail-section-1)
+  - [1.1 用途与适用场景](#detail-section-2)
+  - [1.2 能力、流程与成本](#detail-section-3)
+  - [1.3 工程贡献](#detail-section-4)
+  - [1.4 主要限制](#detail-section-5)
+  - [1.5 使用建议](#detail-section-6)
+  - [1.6 核查说明与分析版本](#detail-section-7)
+- [2 未来设计假设（未验证）](#detail-section-8)
+- [3 辅助信息](#detail-section-9)
 
 <a id="detail-section-1"></a>
 
-## 当前插件分析
+## 1 插件分析
 
 <a id="detail-section-2"></a>
 
-### 使用判断
+### 1.1 用途与适用场景
 
-- **用途**：开发者需要审阅Agent已经写入工作区的内容，合格结果是看到可信基线与当前差异、按授权回退且不误覆盖别人的改动。它是事后审阅，不是写前审批。
-
-- **建议**：由事后pending与外部改动观察推导，可为每次决定绑定可见内容摘要和作用域，再由FS版本守卫提交；内容漂移时要求重新审阅而非沿旧确认回写。未验证假设是减少跨会话/外部编辑误覆盖。并发编辑、keep/revert与重启交错测试，若旧决定仍可覆盖新内容则否定。
-
-适合经常逐块审阅Agent改动的开发者在临时仓库试用。先核对已写入后的审阅语义、外部改动提示与回退权限，重要工作保留版本控制备份。
-
-核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。
-
-源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。
+> **用途**：开发者需要审阅Agent已经写入工作区的内容，合格结果是看到可信基线与当前差异、按授权回退且不误覆盖别人的改动。它是事后审阅，不是写前审批。
 
 git diff与编辑器回退更通用，插件优势在会话关联、未提交工具改动和注释沟通；没有同任务审阅效率对照。
 
 <a id="detail-section-3"></a>
 
-### 能力、流程与成本
+### 1.2 能力、流程与成本
+
+**能力**
 
 - **界面**：待审改动面板与逐块keep/revert交互。
 - **事件监听**：采集工具结果及FS intent前置基线。
@@ -64,13 +59,13 @@ Agent写文件，插件采集基线与结果，用户看diff并保留/回退；�
 
 将审阅与Agent讨论放近可能降低遗漏，但保留不等于代码正确或合并许可，未证实缺陷逃逸率降低。
 
-- **思考**：“approval”会不会让用户误以为写入前被阻止？intent监听明确调用next，成功改动才进入pending；shell等未跟踪路径仍需VCS导入。回退实际写文件且新文件回退会删除；undo仅内存，不能当通用备份。源码持久层已是全局pending.json，而README仍描述按workspace文件，使用范围要以实现核对。
+> **思考**：“approval”会不会让用户误以为写入前被阻止？intent监听明确调用next，成功改动才进入pending；shell等未跟踪路径仍需VCS导入。回退实际写文件且新文件回退会删除；undo仅内存，不能当通用备份。源码持久层已是全局pending.json，而README仍描述按workspace文件，使用范围要以实现核对。
 
 <a id="detail-section-4"></a>
 
-### 工程贡献
+### 1.3 工程贡献
 
-- **亮点**：相对仅看聊天文件列表或git diff，增量是把工具改动、逐块决定、行引用与重启后待审状态接到同一界面，降低审阅与Agent沟通的切换。差分算法和FS由上游能力支撑，主要贡献在状态与交互接线。
+> **亮点**：相对仅看聊天文件列表或git diff，增量是把工具改动、逐块决定、行引用与重启后待审状态接到同一界面，降低审阅与Agent沟通的切换。差分算法和FS由上游能力支撑，主要贡献在状态与交互接线。
 
 相对仅看聊天文件列表或git diff，增量是把工具改动、逐块决定、行引用与重启后待审状态接到同一界面，降低审阅与Agent沟通的切换。差分算法和FS由上游能力支撑，主要贡献在状态与交互接线。
 
@@ -78,13 +73,25 @@ FS intent旁路捕获不接管策略、回退沿请求会话权限、状态临�
 
 <a id="detail-section-5"></a>
 
-### 主要限制
+### 1.4 主要限制
 
 “approval”会不会让用户误以为写入前被阻止？intent监听明确调用next，成功改动才进入pending；shell等未跟踪路径仍需VCS导入。回退实际写文件且新文件回退会删除；undo仅内存，不能当通用备份。源码持久层已是全局pending.json，而README仍描述按workspace文件，使用范围要以实现核对。
 
 <a id="detail-section-6"></a>
 
-### 核查说明与分析版本
+### 1.5 使用建议
+
+适合经常逐块审阅Agent改动的开发者在临时仓库试用。先核对已写入后的审阅语义、外部改动提示与回退权限，重要工作保留版本控制备份。
+
+核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。
+
+源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。
+
+<a id="detail-section-7"></a>
+
+### 1.6 核查说明与分析版本
+
+**核查状态**：已检查源码。
 
 - **仓库**：[9087/dsh-diff-approval](https://github.com/9087/dsh-diff-approval)
 - **版本号**：0.36.1（[固定提交 393bdc4c](https://github.com/9087/dsh-diff-approval/tree/393bdc4c9b6ee007027c9e4da4d9732d60c9e168)）
@@ -95,9 +102,9 @@ FS intent旁路捕获不接管策略、回退沿请求会话权限、状态临�
 - 边界：固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。
 - 下一步：临时仓库覆盖重复编辑、跨会话同路径、外部修改、重启、创建文件回退删除、read-only拒绝和未跟踪导入；核对文件与pending状态一致。
 
-<a id="detail-section-7"></a>
+<a id="detail-section-8"></a>
 
-## 未来设计假设（未验证）
+## 2 未来设计假设（未验证）
 
 由事后pending与外部改动观察推导，可为每次决定绑定可见内容摘要和作用域，再由FS版本守卫提交；内容漂移时要求重新审阅而非沿旧确认回写。未验证假设是减少跨会话/外部编辑误覆盖。并发编辑、keep/revert与重启交错测试，若旧决定仍可覆盖新内容则否定。
 
@@ -121,9 +128,9 @@ FS intent旁路捕获不接管策略、回退沿请求会话权限、状态临�
 
 </details>
 
-<a id="detail-section-8"></a>
+<a id="detail-section-9"></a>
 
-## 辅助信息
+## 3 辅助信息
 
 **活跃度**
 

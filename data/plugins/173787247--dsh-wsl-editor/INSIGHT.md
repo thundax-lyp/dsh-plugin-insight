@@ -1,7 +1,5 @@
 # dsh-wsl-editor
 
-> 把WSL文件路径转换为Windows路径，在Cursor、VS Code或记事本中打开并可定位行列。
-
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
 分析版本：[0bc7619](https://github.com/173787247/dsh-wsl-editor/tree/0bc7619da7b473a622ae9e498d19fd0360162261)
@@ -10,17 +8,25 @@
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-editor)
 <!-- END META -->
 
-**使用建议**：适合Windows+WSL开发，先测试当前发行版路径、中文空格和行号；自动回退后人工确认文件与定位。
+> **实现功能**：把WSL文件路径转换为Windows路径，在Cursor、VS Code或记事本中打开并可定位行列。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：lib/editor.js检查路径存在并realpath，调用wslpath -w转换，依序用PowerShell Start-Process启动编辑器，支持code/cursor的-g目标。
 
-## 使用建议
+> **风险与缺陷**：减少复制路径和手工跳行的步骤；自动打开入口不意味着文件修改或任务已完成。
 
-- **用途**：用户希望从Agent定位的源码快速跳到Windows编辑器，验收是正确文件和行号实际可见。
+<a id="detail-section-1"></a>
+
+## 1 用途与适用场景
+
+> **用途**：用户希望从Agent定位的源码快速跳到Windows编辑器，验收是正确文件和行号实际可见。
 
 此前未入档；原生code/cursor CLI也能完成，本项统一状态探测与自动回退，适合不想记跨系统参数的人。
 
-## 能力与限制
+<a id="detail-section-2"></a>
+
+## 2 能力与限制
+
+**能力**
 
 - **模型工具**：win_editor、win_editor_status。
 
@@ -38,15 +44,27 @@
 
 无额外云服务，主要是路径转换与进程启动延迟；编辑器配置、UNC访问和失败排查占人工，未测省时幅度。
 
-- **思考**：减少复制路径和手工跳行的步骤；自动打开入口不意味着文件修改或任务已完成。
+> **思考**：减少复制路径和手工跳行的步骤；自动打开入口不意味着文件修改或任务已完成。
 
-## 工程分析
+<a id="detail-section-3"></a>
 
-- **亮点**：lib/editor.js检查路径存在并realpath，调用wslpath -w转换，依序用PowerShell Start-Process启动编辑器，支持code/cursor的-g目标。
+## 3 工程分析
+
+> **亮点**：lib/editor.js检查路径存在并realpath，调用wslpath -w转换，依序用PowerShell Start-Process启动编辑器，支持code/cursor的-g目标。
 
 realpath后转换和PowerShell单引号转义便于复用，status探测与打开分开；进程启动成功和GUI可见性需要额外验收。
 
-## 核查说明
+<a id="detail-section-4"></a>
+
+## 4 使用建议
+
+适合Windows+WSL开发，先测试当前发行版路径、中文空格和行号；自动回退后人工确认文件与定位。
+
+<a id="detail-section-5"></a>
+
+## 5 核查说明
+
+**核查状态**：已检查源码。
 
 - 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。

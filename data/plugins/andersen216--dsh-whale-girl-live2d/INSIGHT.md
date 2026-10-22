@@ -1,7 +1,5 @@
 # dsh-whale-girl-live2d
 
-> 将DSH会话事件映射为Live2D桌宠动作与状态，并提供输入、钱包和可选桌面外壳。
-
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
 分析版本：[f977bef](https://github.com/Andersen216/dsh-whale-girl-live2d/tree/f977bef508690e75ba6535cd8f4ce18e7f6ba9b0)
@@ -10,44 +8,41 @@
 [![GitHub ★ 44](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=44&color=yellow&logo=github&style=flat)](https://github.com/Andersen216/dsh-whale-girl-live2d)
 <!-- END META -->
 
-**使用建议**：偏好桌宠时先确认美术非商业条款与宿主版本；在临时profile核对多会话状态和输入路由保护，费用仍以服务账单为准。
+> **实现功能**：将DSH会话事件映射为Live2D桌宠动作与状态，并提供输入、钱包和可选桌面外壳。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：相对纯装饰桌宠，增量是会话阶段、工具动作和人机输入反馈的配套接线；Live2D运行时与美术素材来自第三方，角色资产不是MIT代码授权范围。
+
+> **风险与缺陷**：跟着Agent动作是否可靠反映当前任务？主要会话选择和事件映射会简化并行任务；费用是固定价格估算。更关键的是requestRejection服务缺失或异常时return false放行，不能笼统称全部路由可靠受保护。
 
 **本文目录**
 
-- [当前插件分析](#detail-section-1)
-  - [使用判断](#detail-section-2)
-  - [能力、流程与成本](#detail-section-3)
-  - [工程贡献](#detail-section-4)
-  - [主要限制](#detail-section-5)
-  - [核查说明与分析版本](#detail-section-6)
-- [未来设计假设（未验证）](#detail-section-7)
-- [辅助信息](#detail-section-8)
+- [1 插件分析](#detail-section-1)
+  - [1.1 用途与适用场景](#detail-section-2)
+  - [1.2 能力、流程与成本](#detail-section-3)
+  - [1.3 工程贡献](#detail-section-4)
+  - [1.4 主要限制](#detail-section-5)
+  - [1.5 使用建议](#detail-section-6)
+  - [1.6 核查说明与分析版本](#detail-section-7)
+- [2 未来设计假设（未验证）](#detail-section-8)
+- [3 辅助信息](#detail-section-9)
 
 <a id="detail-section-1"></a>
 
-## 当前插件分析
+## 1 插件分析
 
 <a id="detail-section-2"></a>
 
-### 使用判断
+### 1.1 用途与适用场景
 
-- **用途**：希望用角色反馈感知Agent活动的用户；动画状态是事件映射，不能代替任务成功或审批结果。
-
-- **建议**：由事件映射与信任分支推导，可把角色状态附会话ID/事件新鲜度，并将写回输入与取消动作统一fail-closed认证，离线/旧状态明确显示。未验证；多会话切换、丢流和信任服务故障时不应误显示完成或放行写回。
-
-偏好桌宠时先确认美术非商业条款与宿主版本；在临时profile核对多会话状态和输入路由保护，费用仍以服务账单为准。
-
-核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。
-
-源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。
+> **用途**：希望用角色反馈感知Agent活动的用户；动画状态是事件映射，不能代替任务成功或审批结果。
 
 宿主原生事件/状态更精确，桌宠补角色化展示而非新的任务能力。
 
 <a id="detail-section-3"></a>
 
-### 能力、流程与成本
+### 1.2 能力、流程与成本
+
+**能力**
 
 - **界面**：Live2D角色、事件动作、输入与钱包。
 - **事件监听**：模型与会话活动广播。
@@ -65,13 +60,13 @@ DSH0.2.x connection/webServer/sessionController、浏览器WebGL/Live2D；余额
 
 提供情感化状态反馈，未证明减少工作时间或提高模型能力。
 
-- **思考**：跟着Agent动作是否可靠反映当前任务？主要会话选择和事件映射会简化并行任务；费用是固定价格估算。更关键的是requestRejection服务缺失或异常时return false放行，不能笼统称全部路由可靠受保护。
+> **思考**：跟着Agent动作是否可靠反映当前任务？主要会话选择和事件映射会简化并行任务；费用是固定价格估算。更关键的是requestRejection服务缺失或异常时return false放行，不能笼统称全部路由可靠受保护。
 
 <a id="detail-section-4"></a>
 
-### 工程贡献
+### 1.3 工程贡献
 
-- **亮点**：相对纯装饰桌宠，增量是会话阶段、工具动作和人机输入反馈的配套接线；Live2D运行时与美术素材来自第三方，角色资产不是MIT代码授权范围。
+> **亮点**：相对纯装饰桌宠，增量是会话阶段、工具动作和人机输入反馈的配套接线；Live2D运行时与美术素材来自第三方，角色资产不是MIT代码授权范围。
 
 相对纯装饰桌宠，增量是会话阶段、工具动作和人机输入反馈的配套接线；Live2D运行时与美术素材来自第三方，角色资产不是MIT代码授权范围。
 
@@ -79,13 +74,25 @@ DSH0.2.x connection/webServer/sessionController、浏览器WebGL/Live2D；余额
 
 <a id="detail-section-5"></a>
 
-### 主要限制
+### 1.4 主要限制
 
 跟着Agent动作是否可靠反映当前任务？主要会话选择和事件映射会简化并行任务；费用是固定价格估算。更关键的是requestRejection服务缺失或异常时return false放行，不能笼统称全部路由可靠受保护。
 
 <a id="detail-section-6"></a>
 
-### 核查说明与分析版本
+### 1.5 使用建议
+
+偏好桌宠时先确认美术非商业条款与宿主版本；在临时profile核对多会话状态和输入路由保护，费用仍以服务账单为准。
+
+核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。
+
+源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。
+
+<a id="detail-section-7"></a>
+
+### 1.6 核查说明与分析版本
+
+**核查状态**：已检查源码。
 
 - **仓库**：[Andersen216/dsh-whale-girl-live2d](https://github.com/Andersen216/dsh-whale-girl-live2d)
 - **版本号**：0.4.6（[固定提交 f977bef5](https://github.com/Andersen216/dsh-whale-girl-live2d/tree/f977bef508690e75ba6535cd8f4ce18e7f6ba9b0)）
@@ -96,9 +103,9 @@ DSH0.2.x connection/webServer/sessionController、浏览器WebGL/Live2D；余额
 - 边界：抽读lib/index.js、assets/pet.js、NOTICE.md；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。
 - 下一步：模拟并行Agent、断流、取消、缺connection服务，核对所有写路由拒绝与动作归属；比较禁用后资源与监听，价格只作标注估算。
 
-<a id="detail-section-7"></a>
+<a id="detail-section-8"></a>
 
-## 未来设计假设（未验证）
+## 2 未来设计假设（未验证）
 
 由事件映射与信任分支推导，可把角色状态附会话ID/事件新鲜度，并将写回输入与取消动作统一fail-closed认证，离线/旧状态明确显示。未验证；多会话切换、丢流和信任服务故障时不应误显示完成或放行写回。
 
@@ -119,9 +126,9 @@ DSH0.2.x connection/webServer/sessionController、浏览器WebGL/Live2D；余额
 
 </details>
 
-<a id="detail-section-8"></a>
+<a id="detail-section-9"></a>
 
-## 辅助信息
+## 3 辅助信息
 
 **活跃度**
 

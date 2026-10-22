@@ -1,7 +1,5 @@
 # Forge 记忆
 
-> 为 DSH 保存偏好、项目决策与关系化记忆，支持检索和跨会话使用。
-
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
 分析版本：[acb136c](https://github.com/0x7A7A6572/dsh-forge-studio/tree/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory)
@@ -10,17 +8,25 @@
 [![GitHub ★ 9](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9&color=yellow&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) [![npm 30d 2,385](https://img.shields.io/static/v1?label=npm+30d&message=2%2C385&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-memory) [![最新发布 2026-10-08](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-08&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-memory)
 <!-- END META -->
 
-**使用建议**：先记录少量明确偏好，测试修改和删除后是否停止影响回答，再扩展自动积累。
+> **实现功能**：为 DSH 保存偏好、项目决策与关系化记忆，支持检索和跨会话使用。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：storage-domain 支撑实体、关系和审计记录，服务统一管理写入、查询与导入校验。
 
-## 使用建议
+> **风险与缺陷**：结构化存储比散落提示词更可管理；错误或跨范围记忆可能持续影响后续决策。
 
-- **用途**：反复在项目间切换的使用者需要可管理的长期偏好和决策，而非无差别保存聊天。
+<a id="detail-section-1"></a>
+
+## 1 用途与适用场景
+
+> **用途**：反复在项目间切换的使用者需要可管理的长期偏好和决策，而非无差别保存聊天。
 
 项目说明和人工摘要仍是更透明的低复杂度替代；本轮只确认机制，不宣布优于其他记忆插件。
 
-## 能力与限制
+<a id="detail-section-2"></a>
+
+## 2 能力与限制
+
+**能力**
 
 - **模型工具**：记忆查询和维护工具由组件接线提供。
 
@@ -38,15 +44,27 @@
 
 记忆抽取、注入和纠错有模型及人工开销；没有测量净节省 token 或重复任务收益。
 
-- **思考**：结构化存储比散落提示词更可管理；错误或跨范围记忆可能持续影响后续决策。
+> **思考**：结构化存储比散落提示词更可管理；错误或跨范围记忆可能持续影响后续决策。
 
-## 工程分析
+<a id="detail-section-3"></a>
 
-- **亮点**：storage-domain 支撑实体、关系和审计记录，服务统一管理写入、查询与导入校验。
+## 3 工程分析
+
+> **亮点**：storage-domain 支撑实体、关系和审计记录，服务统一管理写入、查询与导入校验。
 
 持久化成功后再更新可见状态及集中 bundle 校验可借鉴，迁移需带上领域数据和关系。
 
-## 核查说明
+<a id="detail-section-4"></a>
+
+## 4 使用建议
+
+先记录少量明确偏好，测试修改和删除后是否停止影响回答，再扩展自动积累。
+
+<a id="detail-section-5"></a>
+
+## 5 核查说明
+
+**核查状态**：已检查源码。
 
 - 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。

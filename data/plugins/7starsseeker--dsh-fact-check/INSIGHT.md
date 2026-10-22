@@ -1,7 +1,5 @@
 # dsh-fact-check
 
-> 为 DSH 提供多源网页事实核查 Skill，含来源路由和可选 Jev 判据工具。
-
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
 分析版本：[dd28c59](https://github.com/7starsseeker/dsh-fact-check/tree/dd28c59fb7552a43d40f03632b0247695fbda65b)
@@ -10,31 +8,34 @@
 [![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/7starsseeker/dsh-fact-check) [![npm 30d 1,495](https://img.shields.io/static/v1?label=npm+30d&message=1%2C495&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-fact-check) [![最新发布 2026-10-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-17&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-fact-check)
 <!-- END META -->
 
-**使用建议**：经常做资料核查的人可先用低风险题目检查来源和正文；保留未核实，遇到转载、封闭生态或无反证时别自动升置信，重要结论由人复核。
+> **实现功能**：为 DSH 提供多源网页事实核查 Skill，含来源路由和可选 Jev 判据工具。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：相对直接问模型凭记忆回答，贡献是把原文、来源独立性、反证和未核实状态写成可复用流程，并以确定性路由和可选判据辅助；DSH增量是Skill provider、同名优先级与编辑失效。搜索服务和Jev判断为外部能力，实际报告质量依执行者，非插件自动保证。
+
+> **风险与缺陷**：两三来源和“没搜到反证”是否足以高置信？转载可共用单源，检索无反证也可能是覆盖不足；SKILL的要求不是机械验证。作者MEASUREMENTS的小型自建集只测局部判据，sufficient表现不足且工具明确不据此停止搜索，不能把support命中率外推整份事实报告可靠性。
 
 **本文目录**
 
-- [当前插件分析](#detail-section-1)
-  - [场景与替代办法](#detail-section-2)
-  - [能力、流程与依赖](#detail-section-3)
-  - [效果、成本与限制](#detail-section-4)
-  - [核心贡献与工程亮点](#detail-section-5)
-  - [使用判断](#detail-section-6)
-  - [能力、流程与成本](#detail-section-7)
-  - [工程贡献](#detail-section-8)
-  - [核查说明与分析版本](#detail-section-9)
-- [未来设计假设（未验证）](#detail-section-10)
-- [辅助信息](#detail-section-11)
+- [1 插件分析](#detail-section-1)
+  - [1.1 场景与替代办法](#detail-section-2)
+  - [1.2 能力、流程与依赖](#detail-section-3)
+  - [1.3 效果、成本与限制](#detail-section-4)
+  - [1.4 核心贡献与工程亮点](#detail-section-5)
+  - [1.5 用途与适用场景](#detail-section-6)
+  - [1.6 能力、流程与成本](#detail-section-7)
+  - [1.7 工程贡献](#detail-section-8)
+  - [1.8 使用建议](#detail-section-9)
+  - [1.9 核查说明与分析版本](#detail-section-10)
+- [2 未来设计假设（未验证）](#detail-section-11)
+- [3 辅助信息](#detail-section-12)
 
 <a id="detail-section-1"></a>
 
-## 当前插件分析
+## 1 插件分析
 
 <a id="detail-section-2"></a>
 
-### 场景与替代办法
+### 1.1 场景与替代办法
 
 研究者把传闻或数字拆成可核实事实点，抓原文交叉与反向搜索，交付结论、缺口及可追溯来源。
 
@@ -42,7 +43,7 @@
 
 <a id="detail-section-3"></a>
 
-### 能力、流程与依赖
+### 1.2 能力、流程与依赖
 
 lib/index.js在skills registry注册单一fact-check，现读SKILL并监听失效；正文规定搜索/正文/独立来源/反证，route做确定性来源建议，jev-verdict以冻结判据调用外部结构化模型并只允许降档。
 
@@ -57,7 +58,7 @@ lib/index.js在skills registry注册单一fact-check，现读SKILL并监听失�
 
 <a id="detail-section-4"></a>
 
-### 效果、成本与限制
+### 1.3 效果、成本与限制
 
 提高报告可追溯性、避免只凭模型记忆；未证明跨主题端到端事实准确率，也不替代专业判断。
 
@@ -67,7 +68,7 @@ lib/index.js在skills registry注册单一fact-check，现读SKILL并监听失�
 
 <a id="detail-section-5"></a>
 
-### 核心贡献与工程亮点
+### 1.4 核心贡献与工程亮点
 
 相对直接问模型凭记忆回答，贡献是把原文、来源独立性、反证和未核实状态写成可复用流程，并以确定性路由和可选判据辅助；DSH增量是Skill provider、同名优先级与编辑失效。搜索服务和Jev判断为外部能力，实际报告质量依执行者，非插件自动保证。
 
@@ -77,34 +78,40 @@ Skill描述/正文同源、读取失败拒绝而非冒充删除、编辑watch失
 
 <a id="detail-section-6"></a>
 
-### 使用判断
+### 1.5 用途与适用场景
 
-- **用途**：研究者把传闻或数字拆成可核实事实点，抓原文交叉与反向搜索，交付结论、缺口及可追溯来源。
+> **用途**：研究者把传闻或数字拆成可核实事实点，抓原文交叉与反向搜索，交付结论、缺口及可追溯来源。
 
-- **建议**：待验证假设：把每条事实的原始发布链与检索覆盖保存为证据图，并让结论门槛依事实类型和时效变化，可减少重复转载计独立及来源数够但要素缺失。依据是当前来源独立规范与局部判据不足，未实现图校验。用同源多转载、单一权威原件和新事件无反证三组盲审，对照独立性误判、未核实标注与时间成本；必须由独立标注者核对，模型自评不作真值。
+<a id="detail-section-7"></a>
+
+### 1.6 能力、流程与成本
+
+**能力**
+
+- **Skill**：fact-check单一核查Skill及来源/输出流程。
+- **后台**：provider现读与文件编辑失效监听。
+
+> **思考**：两三来源和“没搜到反证”是否足以高置信？转载可共用单源，检索无反证也可能是覆盖不足；SKILL的要求不是机械验证。作者MEASUREMENTS的小型自建集只测局部判据，sufficient表现不足且工具明确不据此停止搜索，不能把support命中率外推整份事实报告可靠性。
+
+<a id="detail-section-8"></a>
+
+### 1.7 工程贡献
+
+> **亮点**：相对直接问模型凭记忆回答，贡献是把原文、来源独立性、反证和未核实状态写成可复用流程，并以确定性路由和可选判据辅助；DSH增量是Skill provider、同名优先级与编辑失效。搜索服务和Jev判断为外部能力，实际报告质量依执行者，非插件自动保证。
+
+<a id="detail-section-9"></a>
+
+### 1.8 使用建议
 
 经常做资料核查的人可先用低风险题目检查来源和正文；保留未核实，遇到转载、封闭生态或无反证时别自动升置信，重要结论由人复核。
 
 **核查状态**：已抽读固定版本源码，未安装、运行目标插件或真实宿主验收。源码确认Skill注册与核查方法、工具及作者小样本记录；未执行真实核查、判据API或宿主验证，不能把作者量表当独立准确率。
 
-<a id="detail-section-7"></a>
+<a id="detail-section-10"></a>
 
-### 能力、流程与成本
+### 1.9 核查说明与分析版本
 
-- **Skill**：fact-check单一核查Skill及来源/输出流程。
-- **后台**：provider现读与文件编辑失效监听。
-
-- **思考**：两三来源和“没搜到反证”是否足以高置信？转载可共用单源，检索无反证也可能是覆盖不足；SKILL的要求不是机械验证。作者MEASUREMENTS的小型自建集只测局部判据，sufficient表现不足且工具明确不据此停止搜索，不能把support命中率外推整份事实报告可靠性。
-
-<a id="detail-section-8"></a>
-
-### 工程贡献
-
-- **亮点**：相对直接问模型凭记忆回答，贡献是把原文、来源独立性、反证和未核实状态写成可复用流程，并以确定性路由和可选判据辅助；DSH增量是Skill provider、同名优先级与编辑失效。搜索服务和Jev判断为外部能力，实际报告质量依执行者，非插件自动保证。
-
-<a id="detail-section-9"></a>
-
-### 核查说明与分析版本
+**核查状态**：已检查源码。
 
 - 版本号：1.4.0；版本日期：2026-10-17（固定提交日期，北京时间；不是包发布日期）。
 - 固定版本：[dd28c59f](https://github.com/7starsseeker/dsh-fact-check/tree/dd28c59fb7552a43d40f03632b0247695fbda65b)；本次截止 2026-10-21T03:36:14Z。
@@ -128,17 +135,17 @@ Skill描述/正文同源、读取失败拒绝而非冒充删除、编辑watch失
 
 </details>
 
-<a id="detail-section-10"></a>
+<a id="detail-section-11"></a>
 
-## 未来设计假设（未验证）
+## 2 未来设计假设（未验证）
 
 待验证假设：把每条事实的原始发布链与检索覆盖保存为证据图，并让结论门槛依事实类型和时效变化，可减少重复转载计独立及来源数够但要素缺失。依据是当前来源独立规范与局部判据不足，未实现图校验。用同源多转载、单一权威原件和新事件无反证三组盲审，对照独立性误判、未核实标注与时间成本；必须由独立标注者核对，模型自评不作真值。
 
 独立标注多主题盲测，分开评来源独立、引文支持与报告结论，记录漏搜及成本；本轮未调用外部API。
 
-<a id="detail-section-11"></a>
+<a id="detail-section-12"></a>
 
-## 辅助信息
+## 3 辅助信息
 
 **活跃度**
 

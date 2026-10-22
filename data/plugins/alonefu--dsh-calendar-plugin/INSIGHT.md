@@ -1,7 +1,5 @@
 # dsh-calendar
 
-> 在 DSH 右侧栏读 Obsidian 日记与待办，并受控写回 Markdown。
-
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
 分析版本：[6ce4095](https://github.com/AloneFu/dsh-calendar-plugin/tree/6ce4095ef800838f91abc162aa6d6646435f7605)
@@ -10,42 +8,41 @@
 [![npm 30d 6,032](https://img.shields.io/static/v1?label=npm+30d&message=6%2C032&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-calendar) [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-20&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-calendar)
 <!-- END META -->
 
-**使用建议**：已有Markdown任务日记者可评估；先备份并核外部编辑冲突策略，别把可选expect当强制版本事务。
+> **实现功能**：在 DSH 右侧栏读 Obsidian 日记与待办，并受控写回 Markdown。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：以同一Markdown为真源将日历操作和DSH上下文连接，避免导入副本；写回保留行尾/BOM/任务元数据，比直接重写整篇更有针对性。日历/Tasks语法来自既有生态，业务角色仍是原用户。
+
+> **风险与缺陷**：乐观并发保护是否强制覆盖所有写者？mutateTaskLine仅当body.expect为string才检查，未提供expect仍可写；锁只约束本插件请求，Obsidian等外部编辑不共锁，从读到rename存在覆盖窗口。日期isIsoDate只限月1–12/日1–31，2月31等可被接受。回读本行正确不证明文件其他行没有丢失。
 
 **本文目录**
 
-- [当前插件分析](#detail-section-1)
-  - [使用判断](#detail-section-2)
-  - [能力、流程与成本](#detail-section-3)
-  - [工程贡献](#detail-section-4)
-  - [主要限制](#detail-section-5)
-  - [核查说明与分析版本](#detail-section-6)
-- [未来设计假设（未验证）](#detail-section-7)
-- [辅助信息](#detail-section-8)
+- [1 插件分析](#detail-section-1)
+  - [1.1 用途与适用场景](#detail-section-2)
+  - [1.2 能力、流程与成本](#detail-section-3)
+  - [1.3 工程贡献](#detail-section-4)
+  - [1.4 主要限制](#detail-section-5)
+  - [1.5 使用建议](#detail-section-6)
+  - [1.6 核查说明与分析版本](#detail-section-7)
+- [2 未来设计假设（未验证）](#detail-section-8)
+- [3 辅助信息](#detail-section-9)
 
 <a id="detail-section-1"></a>
 
-## 当前插件分析
+## 1 插件分析
 
 <a id="detail-section-2"></a>
 
-### 使用判断
+### 1.1 用途与适用场景
 
-- **用途**：已有Markdown日记/Tasks语法的用户在会话旁查看日历、时间块和待办，减少切换编辑器；合格交付是原文件正确更新且其他编辑不被覆盖。
-
-- **建议**：强制文件摘要/原行版本凭据并在写前再核整个文件，冲突返回差异而不覆盖，可能减少多编辑器丢更新。用缺expect、外部插行/改其他行和非法日期反例，要求拒绝冲突且合法任务元数据不变；若仅同插件串行通过不算外部并发保证。
-
-已有Markdown任务日记者可评估；先备份并核外部编辑冲突策略，别把可选expect当强制版本事务。
-
-核查状态：任务解析、单页嵌入与受控写回可确认；Obsidian并发编辑与完整日期语义未实测。 本轮只检查源码，未安装、执行目标代码/测试或真实宿主验收。
+> **用途**：已有Markdown日记/Tasks语法的用户在会话旁查看日历、时间块和待办，减少切换编辑器；合格交付是原文件正确更新且其他编辑不被覆盖。
 
 Obsidian原生Calendar/Tasks/Day Planner；插件把同数据嵌入DSH，不替代其完整编辑器。
 
 <a id="detail-section-3"></a>
 
-### 能力、流程与成本
+### 1.2 能力、流程与成本
+
+**能力**
 
 - **Host 路由**：日记/任务扫描、setup与受控写回接口。
 - **界面**：右侧tab/header日历入口与同源iframe日历页。
@@ -66,13 +63,13 @@ DSH webServer/right tabs/slots、Node文件权限、指定Markdown目录；Obsid
 
 减少日记与任务分散复制，保持原文件；未证明总管理时间或并发安全。
 
-- **思考**：乐观并发保护是否强制覆盖所有写者？mutateTaskLine仅当body.expect为string才检查，未提供expect仍可写；锁只约束本插件请求，Obsidian等外部编辑不共锁，从读到rename存在覆盖窗口。日期isIsoDate只限月1–12/日1–31，2月31等可被接受。回读本行正确不证明文件其他行没有丢失。
+> **思考**：乐观并发保护是否强制覆盖所有写者？mutateTaskLine仅当body.expect为string才检查，未提供expect仍可写；锁只约束本插件请求，Obsidian等外部编辑不共锁，从读到rename存在覆盖窗口。日期isIsoDate只限月1–12/日1–31，2月31等可被接受。回读本行正确不证明文件其他行没有丢失。
 
 <a id="detail-section-4"></a>
 
-### 工程贡献
+### 1.3 工程贡献
 
-- **亮点**：以同一Markdown为真源将日历操作和DSH上下文连接，避免导入副本；写回保留行尾/BOM/任务元数据，比直接重写整篇更有针对性。日历/Tasks语法来自既有生态，业务角色仍是原用户。
+> **亮点**：以同一Markdown为真源将日历操作和DSH上下文连接，避免导入副本；写回保留行尾/BOM/任务元数据，比直接重写整篇更有针对性。日历/Tasks语法来自既有生态，业务角色仍是原用户。
 
 以同一Markdown为真源将日历操作和DSH上下文连接，避免导入副本；写回保留行尾/BOM/任务元数据，比直接重写整篇更有针对性。日历/Tasks语法来自既有生态，业务角色仍是原用户。
 
@@ -82,13 +79,23 @@ DSH webServer/right tabs/slots、Node文件权限、指定Markdown目录；Obsid
 
 <a id="detail-section-5"></a>
 
-### 主要限制
+### 1.4 主要限制
 
 乐观并发保护是否强制覆盖所有写者？mutateTaskLine仅当body.expect为string才检查，未提供expect仍可写；锁只约束本插件请求，Obsidian等外部编辑不共锁，从读到rename存在覆盖窗口。日期isIsoDate只限月1–12/日1–31，2月31等可被接受。回读本行正确不证明文件其他行没有丢失。
 
 <a id="detail-section-6"></a>
 
-### 核查说明与分析版本
+### 1.5 使用建议
+
+已有Markdown任务日记者可评估；先备份并核外部编辑冲突策略，别把可选expect当强制版本事务。
+
+核查状态：任务解析、单页嵌入与受控写回可确认；Obsidian并发编辑与完整日期语义未实测。 本轮只检查源码，未安装、执行目标代码/测试或真实宿主验收。
+
+<a id="detail-section-7"></a>
+
+### 1.6 核查说明与分析版本
+
+**核查状态**：已检查源码。
 
 - 版本号：1.1.0；版本日期：2026-10-04（固定提交日期，北京时间，非包发布日期）。
 - 固定提交：[6ce4095e](https://github.com/AloneFu/dsh-calendar-plugin/tree/6ce4095ef800838f91abc162aa6d6646435f7605)；本轮基准：2026-10-21T07:52:12Z。
@@ -96,17 +103,17 @@ DSH webServer/right tabs/slots、Node文件权限、指定Markdown目录；Obsid
 - 范围：根Host解析/写回/请求围栏、client tab/iframe接线及README；未运行独立日历页或外部Obsidian，未把外部编辑器安装当硬运行依赖。
 - 未执行：目标安装、代码/测试、真实宿主和第三方服务。作者说明与源码不等于独立效果验证。
 
-<a id="detail-section-7"></a>
+<a id="detail-section-8"></a>
 
-## 未来设计假设（未验证）
+## 2 未来设计假设（未验证）
 
 强制文件摘要/原行版本凭据并在写前再核整个文件，冲突返回差异而不覆盖，可能减少多编辑器丢更新。用缺expect、外部插行/改其他行和非法日期反例，要求拒绝冲突且合法任务元数据不变；若仅同插件串行通过不算外部并发保证。
 
 未运行；拟跨编辑器并发插行/修改别行、缺expect、符号链接与非法日期验证，分别核整文件不丢与当前行准确。
 
-<a id="detail-section-8"></a>
+<a id="detail-section-9"></a>
 
-## 辅助信息
+## 3 辅助信息
 
 <details>
 <summary>工程统计与口径</summary>

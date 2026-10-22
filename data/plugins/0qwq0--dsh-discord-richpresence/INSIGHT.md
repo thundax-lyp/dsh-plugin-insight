@@ -1,7 +1,5 @@
 # dsh-discord-richpresence
 
-> 把 DSH 的粗粒度活动或可选丰富状态同步到本地 Discord Rich Presence。
-
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
 分析版本：[bf8d34b](https://github.com/0QwQ0/dsh-discord-richpresence/tree/bf8d34b4a4c52e9128a44ca7abf6a7de52880266)
@@ -10,17 +8,25 @@
 [![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/0QwQ0/dsh-discord-richpresence)
 <!-- END META -->
 
-**使用建议**：先只开模糊状态，检查实际 Discord 展示内容和断线重连，再考虑丰富模式。
+> **实现功能**：把 DSH 的粗粒度活动或可选丰富状态同步到本地 Discord Rich Presence。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：Host 聚合活动信号，通过本地 Discord RPC 更新文案；丰富模式按最短展示间隔轮换数据。
 
-## 使用建议
+> **风险与缺陷**：减少手动改状态，但不能证明专注度或工作产出；企业环境应先确认活动公开政策。
 
-- **用途**：希望向 Discord 联系人展示工作状态的桌面用户，而非需要团队任务追踪的部署。
+<a id="detail-section-1"></a>
+
+## 1 用途与适用场景
+
+> **用途**：希望向 Discord 联系人展示工作状态的桌面用户，而非需要团队任务追踪的部署。
 
 手工状态或系统勿扰更轻；本轮源码核查支持自动同步机制，不支持效率提升结论。
 
-## 能力与限制
+<a id="detail-section-2"></a>
+
+## 2 能力与限制
+
+**能力**
 
 - **后台**：本地 Discord RPC 连接、活动更新与重连。
 
@@ -38,15 +44,27 @@
 
 无额外模型服务，持续代价是常驻连接、重连和隐私配置；没有资源占用实测。
 
-- **思考**：减少手动改状态，但不能证明专注度或工作产出；企业环境应先确认活动公开政策。
+> **思考**：减少手动改状态，但不能证明专注度或工作产出；企业环境应先确认活动公开政策。
 
-## 工程分析
+<a id="detail-section-3"></a>
 
-- **亮点**：Host 聚合活动信号，通过本地 Discord RPC 更新文案；丰富模式按最短展示间隔轮换数据。
+## 3 工程分析
+
+> **亮点**：Host 聚合活动信号，通过本地 Discord RPC 更新文案；丰富模式按最短展示间隔轮换数据。
 
 把状态模板与 RPC 传输分离便于检查外发数据；复用时需重新评估默认文案和更新频率。
 
-## 核查说明
+<a id="detail-section-4"></a>
+
+## 4 使用建议
+
+先只开模糊状态，检查实际 Discord 展示内容和断线重连，再考虑丰富模式。
+
+<a id="detail-section-5"></a>
+
+## 5 核查说明
+
+**核查状态**：已检查源码。
 
 - 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
