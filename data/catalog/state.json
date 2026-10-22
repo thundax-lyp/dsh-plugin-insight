@@ -1,7 +1,7 @@
 {
     "schema_version": 3,
-    "snapshot_digest": "cbbc248086e413588d13af042ab5d2ebbad1591550c6698b6d70e21926bb6b46",
-    "index_sha256": "aa555da02031910e2dda1ef429f7a5a52975291ae67ee33641ebbc18e4d5ad77",
+    "snapshot_digest": "ed5558199e85d5c2f9db4c2ec88972fbac6104599fc3b2e5f86b994ad9a292e7",
+    "index_sha256": "b3d0f037ae3754870fb39119b46ae5574611b4cd12d905ec189d64f97e0fb79a",
     "head": {
         "schema_version": 1,
         "checked_at": "2026-10-22T04:36:02.544Z",
@@ -12,7 +12,7 @@
         },
         "publication": {
             "schema_version": 1,
-            "scope": "本次逐题研究已更新 334/336，保留其余有效研究",
+            "scope": "本轮所选 404，完成 336，受阻 68；已知同版本受阻跳过 0；当前发布 404",
             "catalog": "data/catalog/PLUGINS.json",
             "catalog_page": "data/views/categories/INDEX.md",
             "metadata": {},
@@ -11257,10 +11257,6 @@
             "path": "evidence/e3/e3ef02c5377d949b6215cfe8c77a01b6ab47485bd6d250b9cbe9dc1ea19c5fe0.json",
             "sha256": "e3ef02c5377d949b6215cfe8c77a01b6ab47485bd6d250b9cbe9dc1ea19c5fe0"
         },
-        "data/runs/2026-10-21-01/snapshots/439436269-ctrl--dsh-piano/REVIEWED-SOURCE.json": {
-            "path": "evidence/77/77244fa76438d53c069d32c1017aca6d69626b97053318ec7c937a596d7cfe2e.json",
-            "sha256": "77244fa76438d53c069d32c1017aca6d69626b97053318ec7c937a596d7cfe2e"
-        },
         "data/runs/2026-10-21-01/snapshots/439436269-ctrl--dsh-search/REVIEWED-SOURCE.json": {
             "path": "evidence/8a/8a3de2acf9c1f95177751b5fb0c18494c53159bf626831203ba87aff805b221e.json",
             "sha256": "8a3de2acf9c1f95177751b5fb0c18494c53159bf626831203ba87aff805b221e"
@@ -11300,10 +11296,6 @@
         "data/runs/2026-10-21-02/snapshots/54xkeee--dsh-vision/REVIEWED-SOURCE.json": {
             "path": "evidence/3f/3f417db9bcd38b978d8a590bebe41dda405c55dc817840c7acb491120cbac4d8.json",
             "sha256": "3f417db9bcd38b978d8a590bebe41dda405c55dc817840c7acb491120cbac4d8"
-        },
-        "data/runs/2026-10-21-02/snapshots/571242--dsh-armor-switch/REVIEWED-SOURCE.json": {
-            "path": "evidence/1b/1b451646e0fa89c82653ba3688a140b6a2cbebf0ee3b8b4e82273898ff861a53.json",
-            "sha256": "1b451646e0fa89c82653ba3688a140b6a2cbebf0ee3b8b4e82273898ff861a53"
         },
         "data/runs/2026-10-21-02/snapshots/643048695--dsh-subagent-role-router/REVIEWED-SOURCE.json": {
             "path": "evidence/1e/1e0b7296442cbfae68796be1cc2d017b196104cbd69b01da73f912bd4ccf2680.json",
@@ -11585,6 +11577,10 @@
             "path": "evidence/17/1724257d5c69af672a7ea3f1e65e80a9dc2e792794e7c0c0e1317f746ad6bfec.json",
             "sha256": "1724257d5c69af672a7ea3f1e65e80a9dc2e792794e7c0c0e1317f746ad6bfec"
         },
+        "data/runs/2026-10-22-02/snapshots/439436269-ctrl--dsh-piano/REVIEWED-SOURCE.json": {
+            "path": "evidence/c6/c6baa7ad5ea35eb7e7732e626401acbbbd26c03c5494a56cbb199d44dfe4c7ec.json",
+            "sha256": "c6baa7ad5ea35eb7e7732e626401acbbbd26c03c5494a56cbb199d44dfe4c7ec"
+        },
         "data/runs/2026-10-22-02/snapshots/all3ncn--dsh-qa-suite-n23/REVIEWED-SOURCE.json": {
             "path": "evidence/ea/ea5f81e6e77bceacbed66e7bb0be419d70a89ea66fd62b95441c2825ae1086b7.json",
             "sha256": "ea5f81e6e77bceacbed66e7bb0be419d70a89ea66fd62b95441c2825ae1086b7"
@@ -11856,6 +11852,10 @@
         "data/runs/2026-10-22-02/snapshots/0xrabit--dsh-crypto-portfolio/REVIEWED-SOURCE.json": {
             "path": "evidence/f3/f3e8f6e782231d07013c34446033190aedf0d569f93d9a3d831fb1c51868d294.json",
             "sha256": "f3e8f6e782231d07013c34446033190aedf0d569f93d9a3d831fb1c51868d294"
+        },
+        "data/runs/2026-10-22-02/snapshots/571242--dsh-armor-switch/REVIEWED-SOURCE.json": {
+            "path": "evidence/60/604402ec5950ac868dcdc297829f93b819a69bc219d4bb91dbbbf42db77457aa.json",
+            "sha256": "604402ec5950ac868dcdc297829f93b819a69bc219d4bb91dbbbf42db77457aa"
         },
         "data/runs/2026-10-22-02/snapshots/a8chann--dsh-pet-live2d--dsh-live2d-pet/REVIEWED-SOURCE.json": {
             "path": "evidence/bc/bcffe48d21f0f5bd091982df5417549370d0dfef0175a7b62cad8a7c5e8f8c81.json",
