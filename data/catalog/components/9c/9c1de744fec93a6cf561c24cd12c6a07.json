@@ -13,7 +13,7 @@
             "name": "dsh-plugin-finance-data",
             "entry_type": "plugin",
             "technical_category": "tools-integration",
-            "business_category": "office-operations",
+            "business_category": "research-knowledge",
             "tags": [],
             "availability": "unknown",
             "research_depth": "source",
@@ -24,36 +24,76 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-03-github-1336663504-root-directory-0",
+                    "id": "2026-10-22-02-github-1336663504-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T03:49:27.475Z",
+                    "retrieved_at": "2026-10-22T06:15:39.804Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-03-github-1336663504-root-author",
+                    "id": "2026-10-22-02-github-1336663504-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/863683348/dsh-plugin-finance-data/blob/0a10267fa6f8f75da68005406b899894b60dd796/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/863683348/dsh-plugin-finance-data",
+                            "commit": "0a10267fa6f8f75da68005406b899894b60dd796",
+                            "path": "README.md",
+                            "content_sha256": "2d9c2d534a130783cd469ab343499c5bd791965d9ecfaa43e960df20664f3a02"
+                        }
+                    ],
                     "revision": "0a10267fa6f8f75da68005406b899894b60dd796",
-                    "captured_at": "2026-10-21T03:49:27.475Z",
-                    "summary": "对调用者提供的财务数字执行格式化、收益、比率、风险和组合计算。",
-                    "artifact": "data/runs/2026-10-21-03/snapshots/863683348--dsh-plugin-finance-data/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T06:15:39.804Z",
+                    "summary": "DSH Agent 的确定性金融算术工具，但比率文本、跨年定投和组合再平衡路径存在可核不一致。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/863683348--dsh-plugin-finance-data/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-03-github-1336663504-root-source",
+                    "id": "2026-10-22-02-github-1336663504-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/863683348/dsh-plugin-finance-data/blob/0a10267fa6f8f75da68005406b899894b60dd796/lib/index.js",
+                    "url": "https://github.com/863683348/dsh-plugin-finance-data/blob/0a10267fa6f8f75da68005406b899894b60dd796/README.zh.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/863683348/dsh-plugin-finance-data",
+                            "commit": "0a10267fa6f8f75da68005406b899894b60dd796",
+                            "path": "README.zh.md",
+                            "content_sha256": "49fc14cf6c4a44afb1083cb67b5adf30efe1960104824df6d6dd7e7c8e57cc20"
+                        },
+                        {
+                            "repository_url": "https://github.com/863683348/dsh-plugin-finance-data",
+                            "commit": "0a10267fa6f8f75da68005406b899894b60dd796",
+                            "path": "package.json",
+                            "content_sha256": "3c0e5cd4c316c47a6519f66e14dff8d8c8784d0aadd0ef853206905202de06d7"
+                        },
+                        {
+                            "repository_url": "https://github.com/863683348/dsh-plugin-finance-data",
+                            "commit": "0a10267fa6f8f75da68005406b899894b60dd796",
+                            "path": "lib/index.js",
+                            "content_sha256": "4c31845748e0f7f1296034bcc584348dbeac0c1abc78cca276e6ffe4819299b7"
+                        },
+                        {
+                            "repository_url": "https://github.com/863683348/dsh-plugin-finance-data",
+                            "commit": "0a10267fa6f8f75da68005406b899894b60dd796",
+                            "path": "lib/finance.js",
+                            "content_sha256": "7fd452e02878859f81f225ed73c3b166e9f357d7f1ff3f740ede2be3e0fbc77d"
+                        },
+                        {
+                            "repository_url": "https://github.com/863683348/dsh-plugin-finance-data",
+                            "commit": "0a10267fa6f8f75da68005406b899894b60dd796",
+                            "path": "test/finance.test.mjs",
+                            "content_sha256": "c0c81cb66f35c3ac550de9bdfda41ea3d3793d1bcf3cded4e70e59a97c7b9131"
+                        }
+                    ],
                     "revision": "0a10267fa6f8f75da68005406b899894b60dd796",
-                    "captured_at": "2026-10-21T03:49:27.475Z",
-                    "summary": "核查 lib/index.js、lib/finance.js；lib/index.js注册finance_data并把参数交给finance.js纯计算；formatNumber处理小数/百分比，computeRatio算比率，projectPlan生成分期表，riskMetrics基于输入收益序列算样本指标。",
-                    "artifact": "data/runs/2026-10-21-03/snapshots/863683348--dsh-plugin-finance-data/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T06:15:39.804Z",
+                    "summary": "核查 README.zh.md、package.json、lib/index.js、lib/finance.js、test/finance.test.mjs；finance.js 纯计算函数，index.js 注册工具和提示段并把参数分派到 action。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/863683348--dsh-plugin-finance-data/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "固定提交内列明源码和作者材料的有界抽读，静态inventory为组件范围；没有安装、执行目标代码或测试、发起插件服务请求、真实宿主验收或独立采用核实。",
+                        "静态审阅 README.zh、finance.js、index.js，未执行插件或进行投资/市场数据核验。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +104,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "适合需要可检查的财务算术草稿，不提供行情抓取、实际交易或投资判断。",
+                    "text": "Agent 在有已核来源/口径的数字上做格式化、收益与风险计算。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336663504-root-source"
+                        "2026-10-22-02-github-1336663504-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +115,16 @@
                             "fingerprint": "0a10267fa6f8f75da68005406b899894b60dd796"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:27.475Z",
+                    "reviewed_at": "2026-10-22T06:15:39.804Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "lib/index.js注册finance_data并把参数交给finance.js纯计算；formatNumber处理小数/百分比，computeRatio算比率，projectPlan生成分期表，riskMetrics基于输入收益序列算样本指标。",
+                    "text": "finance.js 纯计算函数，index.js 注册工具和提示段并把参数分派到 action。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336663504-root-source"
+                        "2026-10-22-02-github-1336663504-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +133,16 @@
                             "fingerprint": "0a10267fa6f8f75da68005406b899894b60dd796"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:27.475Z",
+                    "reviewed_at": "2026-10-22T06:15:39.804Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "固定提交内列明源码和作者材料的有界抽读，静态inventory为组件范围；没有安装、执行目标代码或测试、发起插件服务请求、真实宿主验收或独立采用核实。",
+                    "text": "静态审阅 README.zh、finance.js、index.js，未执行插件或进行投资/市场数据核验。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336663504-root-source"
+                        "2026-10-22-02-github-1336663504-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +151,16 @@
                             "fingerprint": "0a10267fa6f8f75da68005406b899894b60dd796"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:27.475Z",
+                    "reviewed_at": "2026-10-22T06:15:39.804Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "分发与依赖限定固定package.json、README及本轮META；仓库热度、包存在或结构校验不能证明运行可用。",
+                    "text": "MIT；包发布/宿主适配仅按包内声明，本轮未安装。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336663504-root-source"
+                        "2026-10-22-02-github-1336663504-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +169,16 @@
                             "fingerprint": "0a10267fa6f8f75da68005406b899894b60dd796"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:27.475Z",
+                    "reviewed_at": "2026-10-22T06:15:39.804Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "首次需整理可信数据和每个指标单位；无模块网络成本，模型token另计。错误百分数及投影会带来高人工复核与返工成本，现金收益没有证据，不用于真实资金决策。",
+                    "text": "#### 成本\n\n| 阶段 | 资源 | 边界 |\n| --- | --- | --- |\n| 输入 | 经核口径数字 | 无行情来源 |\n| 核算 | 黄金样本复核 | 当前三个关键错误 |\n| 维护 | 单位/期数测试 | 金融输出需严格可靠 |",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336663504-root-source"
+                        "2026-10-22-02-github-1336663504-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +187,16 @@
                             "fingerprint": "0a10267fa6f8f75da68005406b899894b60dd796"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:27.475Z",
+                    "reviewed_at": "2026-10-22T06:15:39.804Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "当前仅作源码和计算接口参考。先修复百分数二次放大与长期计划截断，并用手算样本核对；工具不抓取或验证数据来源。",
+                    "text": "修复关键路径前不用于真实决策；以 10/100 比率、2 年月投和组合偏离样本验每个 action。详见[Q02](#research-q02)至[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336663504-root-source"
+                        "2026-10-22-02-github-1336663504-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +205,16 @@
                             "fingerprint": "0a10267fa6f8f75da68005406b899894b60dd796"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:27.475Z",
+                    "reviewed_at": "2026-10-22T06:15:39.804Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "确定计算接口可减少自由算术，但上述接线缺陷使当前结果存在实质误导风险，未验证业务收益。",
+                    "text": "#### 效果\n\n| 项 | 源码支持 | 问题 |\n| --- | --- | --- |\n| 比率 | 纯函数 | 展示百倍 |\n| 定投 | 周期循环 | 默认截断 12 期 |\n| 组合 | 权重/独立再平衡函数 | 工具未接再平衡 |",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336663504-root-source"
+                        "2026-10-22-02-github-1336663504-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +223,16 @@
                             "fingerprint": "0a10267fa6f8f75da68005406b899894b60dd796"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:27.475Z",
+                    "reviewed_at": "2026-10-22T06:15:39.804Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "纯finance函数与薄工具壳本应便于测试，实际显示函数单测不能替代端到端单位检查；函数显式抛部分无效输入是可借鉴点，尚需统一所有指标的量纲及时间口径。",
+                    "text": "工具将 10 类 action 派到纯函数；比率展示、plan steps 和 portfolio 接线存在分层契约不一致。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336663504-root-source"
+                        "2026-10-22-02-github-1336663504-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +241,16 @@
                             "fingerprint": "0a10267fa6f8f75da68005406b899894b60dd796"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:27.475Z",
+                    "reviewed_at": "2026-10-22T06:15:39.804Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
-                    "topic": "technical_innovation",
-                    "basis": "interpretation",
-                    "text": "作者希望把财务算术从模型自由生成中分离；实际增量是提供确定函数与结构返回，便于检查输入输出。相比让模型心算，方向合理；但当前工具壳与计算函数单位契约和长期投影存在明确源码问题，不能承诺算术正确。",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "将常见财务算术从模型口算转为确定性工具，并提示数据来源/口径。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336663504-root-source"
+                        "2026-10-22-02-github-1336663504-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +259,16 @@
                             "fingerprint": "0a10267fa6f8f75da68005406b899894b60dd796"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:27.475Z",
+                    "reviewed_at": "2026-10-22T06:15:39.804Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
-                    "basis": "interpretation",
-                    "text": "computeRatio的roe/roa/利润率已乘100，index再以percent=true调用formatNumber乘100；例如10/100应表达10%，这条路径会显示1000%。projectPlan默认steps=12并令total=min(periods,steps)，years>1的月度计划仍只累计12期却标完整年数；index未暴露steps覆盖。portfolio targets/values声明additionalProperties:false却无已声明资产键，也需宿主schema验收。",
+                    "basis": "supported",
+                    "text": "四类财务比率在计算层和展示层各乘 100；多年 plan 默认只算 12 期，portfolio 未返回再平衡单。详见[Q02](#research-q02)、[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336663504-root-source"
+                        "2026-10-22-02-github-1336663504-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +277,16 @@
                             "fingerprint": "0a10267fa6f8f75da68005406b899894b60dd796"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:27.475Z",
+                    "reviewed_at": "2026-10-22T06:15:39.804Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "unverified",
-                    "text": "待验证假设：把量纲、小数/百分数和投影期数写进可校验类型契约，可比增加更多指标更有效地减少财务工具错误。用10/100比率和五年月度零收益定投等可手算样本，先验证各层单位及60期累计一致，再评估实际数据任务。",
+                    "text": "统一单位契约并分离最终计算与表格采样，配黄金样本可提高可靠性；修复效果尚未验。详见[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336663504-root-source"
+                        "2026-10-22-02-github-1336663504-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +295,15 @@
                             "fingerprint": "0a10267fa6f8f75da68005406b899894b60dd796"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:27.475Z",
+                    "reviewed_at": "2026-10-22T06:15:39.804Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T03:49:27.475Z",
+            "last_checked_at": "2026-10-22T06:15:39.804Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "0a10267fa6f8f75da68005406b899894b60dd796",
-                "reviewed_at": "2026-10-21T03:49:27.475Z",
+                "reviewed_at": "2026-10-22T06:15:39.804Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -277,59 +317,59 @@
                         "novelty": 0,
                         "mechanism": 8,
                         "transferability": 10,
-                        "simplification": 0
+                        "simplification": 8
                     },
-                    "rationale": "novelty=0：常见财务公式和格式没有新颖性。 mechanism=8：有确定计算代码但单位和期数接线失误。 transferability=10：纯函数便于复用，需先修契约。 simplification=0：当前错误导致额外复核，未证简化。",
+                    "rationale": "纯计算/薄壳便于迁移，但公式常见且多个 action 接线有明显错误。",
                     "basis": "interpretation",
-                    "score": 18,
+                    "score": 26,
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336663504-root-source"
+                        "2026-10-22-02-github-1336663504-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
                         "workflow": 9,
-                        "delivery": 0,
-                        "reach": 10,
+                        "delivery": 8,
+                        "reach": 5,
                         "economics": 0
                     },
-                    "rationale": "workflow=9：局部财务计算入口明确。 delivery=0：重要比率和长期投影当前不可靠。 reach=10：基础数字用户可覆盖，数据核实另需。 economics=0：无净收益，错误可能造成负价值。",
+                    "rationale": "降低口算负担的价值明确，关键金额输出错误阻碍采用。",
                     "basis": "interpretation",
-                    "score": 19,
+                    "score": 22,
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336663504-root-source"
+                        "2026-10-22-02-github-1336663504-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "observe",
-                "reason": "确定财务算术方向有价值，但百分数被二次乘100、长期计划仅算12期；先修单位和期数并用手算对照，当前勿用于资金判断。",
+                "decision": "not_recommended",
+                "reason": "当前关键百分数、跨年定投和再平衡输出存在代码级错误；修复并以黄金样本验证后再评。",
                 "criteria": {
                     "scenario": {
-                        "score": 23,
-                        "rationale": "财务算术草稿和分期表需求清楚。"
+                        "score": 15,
+                        "rationale": "金融数据计算场景明确。"
                     },
                     "advantage": {
                         "score": 6,
-                        "rationale": "确定函数本应减少心算，当前实质错误削弱额外价值。"
+                        "rationale": "纯函数可测，但常规公式且接线错误。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "roe后formatNumber再次百分化、steps截断源码直接支持问题。"
+                        "rationale": "关键错误可从源码路径确认，未实机。"
                     },
                     "cost": {
-                        "score": 5,
-                        "rationale": "错误金融结果复核及返工代价高，无行情或数据源验证。"
+                        "score": 0,
+                        "rationale": "错误金额可能造成高昂判断成本。"
                     }
                 },
-                "score": 47,
+                "score": 34,
                 "revision": "0a10267fa6f8f75da68005406b899894b60dd796",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T06:15:39.804Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-03-github-1336663504-root-source"
+                    "2026-10-22-02-github-1336663504-root-source"
                 ],
                 "dependencies": [
                     {
@@ -354,103 +394,57 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T03:36:14Z",
-            "analysis_sha256": "5b147bb72e85e7c07f558db8dcd80a58be6f0a6107ea3e63007712cfca191a45"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "c7b313e052832d21a44b7f07f86204a553526b6e104db8bfca8ec33c5453253a"
         },
         "publication.metadata": "data/plugins/863683348--dsh-plugin-finance-data/META.json",
         "publication.summaries": {
-            "text": "对调用者提供的财务数字执行格式化、收益、比率、风险和组合计算。",
+            "text": "DSH Agent 的确定性金融算术工具，但比率文本、跨年定投和组合再平衡路径存在可核不一致。",
             "revision": "0a10267fa6f8f75da68005406b899894b60dd796",
             "source_url": "https://github.com/863683348/dsh-plugin-finance-data/blob/0a10267fa6f8f75da68005406b899894b60dd796/README.md"
         },
         "publication.capabilities": {
             "revision": "0a10267fa6f8f75da68005406b899894b60dd796",
             "items": {
-                "模型工具": "finance_data格式化、财务比率、风险、投影与组合计算"
-            }
+                "模型工具": "finance_data 生活金融算术与指标工具"
+            },
+            "table": "| 能力 | 用途 | 当前边界 |\n| --- | --- | --- |\n| 比率 | 财务分析 | 百倍展示错误 |\n| 定投 | 长期规划 | 默认只算 12 期 |\n| 组合 | 漂移评估 | 未返回交易指令 |"
         },
         "publication.advice": {
             "revision": "0a10267fa6f8f75da68005406b899894b60dd796",
-            "text": "当前仅作源码和计算接口参考。先修复百分数二次放大与长期计划截断，并用手算样本核对；工具不抓取或验证数据来源。"
+            "text": "修复关键路径前不用于真实决策；以 10/100 比率、2 年月投和组合偏离样本验每个 action。详见[Q02](#research-q02)至[Q04](#research-q04)。"
         },
         "registry": "data/plugins/863683348--dsh-plugin-finance-data",
-        "reports": "# dsh-plugin-finance-data\n\n> 对调用者提供的财务数字执行格式化、收益、比率、风险和组合计算。\n\n## 使用建议\n\n当前仅作源码和计算接口参考。先修复百分数二次放大与长期计划截断，并用手算样本核对；工具不抓取或验证数据来源。\n\n**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。已有贡献由固定版本源码支持，实际运行与宿主效果未验证；未来设计假设均未验证。\n\n## 洞察短评\n\n- **用途**：适合需要可检查的财务算术草稿，不提供行情抓取、实际交易或投资判断。\n- **亮点**：作者希望把财务算术从模型自由生成中分离；实际增量是提供确定函数与结构返回，便于检查输入输出。相比让模型心算，方向合理；但当前工具壳与计算函数单位契约和长期投影存在明确源码问题，不能承诺算术正确。\n- **思考**：computeRatio的roe/roa/利润率已乘100，index再以percent=true调用formatNumber乘100；例如10/100应表达10%，这条路径会显示1000%。projectPlan默认steps=12并令total=min(periods,steps)，years>1的月度计划仍只累计12期却标完整年数；index未暴露steps覆盖。portfolio targets/values声明additionalProperties:false却无已声明资产键，也需宿主schema验收。\n- **建议**：待验证假设：把量纲、小数/百分数和投影期数写进可校验类型契约，可比增加更多指标更有效地减少财务工具错误。用10/100比率和五年月度零收益定投等可手算样本，先验证各层单位及60期累计一致，再评估实际数据任务。\n\n## 当前插件分析\n\n### 场景与替代办法\n\n替代是受审阅电子表格或成熟金融计算库；项目新增DSH工具封装而非新财务方法或数据源。\n\n### 能力、依赖与流程\n\nlib/index.js注册finance_data并把参数交给finance.js纯计算；formatNumber处理小数/百分比，computeRatio算比率，projectPlan生成分期表，riskMetrics基于输入收益序列算样本指标。\n\n- **模型工具**：finance_data格式化、财务比率、风险、投影与组合计算\n\n宿主tools/systemPrompt与Schemastery；调用者提供实际数据、期间、币种和定义，插件不连接行情服务、不执行订单。\n\n模型收集数据→选择action并传数值→纯函数计算→index格式化输出→人工核单位和期间；当前比率显示与长期投影应停止用于实际结论。\n\n### 成本与效果\n\n首次需整理可信数据和每个指标单位；无模块网络成本，模型token另计。错误百分数及投影会带来高人工复核与返工成本，现金收益没有证据，不用于真实资金决策。\n\n确定计算接口可减少自由算术，但上述接线缺陷使当前结果存在实质误导风险，未验证业务收益。\n\n### 工程亮点\n\n纯finance函数与薄工具壳本应便于测试，实际显示函数单测不能替代端到端单位检查；函数显式抛部分无效输入是可借鉴点，尚需统一所有指标的量纲及时间口径。\n\n源码依据：[lib/index.js](https://github.com/863683348/dsh-plugin-finance-data/blob/0a10267fa6f8f75da68005406b899894b60dd796/lib/index.js)、[lib/finance.js](https://github.com/863683348/dsh-plugin-finance-data/blob/0a10267fa6f8f75da68005406b899894b60dd796/lib/finance.js)。\n\n## 未来设计假设（未验证）\n\n待验证假设：把量纲、小数/百分数和投影期数写进可校验类型契约，可比增加更多指标更有效地减少财务工具错误。用10/100比率和五年月度零收益定投等可手算样本，先验证各层单位及60期累计一致，再评估实际数据任务。\n\n在固定宿主对比10/100比率、零利率五年60期定投、负数/零分母和多资产schema；本轮仅源码推导，未运行目标代码。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：a837657d83aac6f337f7e325c6d04f7493885962871ef29c963b97783e488998。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 480 | 426 | 34 | — |\n| .md | source | 4 | 160 | — | — | 1356 |\n| .mjs | test | 1 | 178 | 150 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[863683348/dsh-plugin-finance-data](https://github.com/863683348/dsh-plugin-finance-data)\n- **版本号**：0.3.2（[固定提交 0a10267f](https://github.com/863683348/dsh-plugin-finance-data/tree/0a10267fa6f8f75da68005406b899894b60dd796)）\n- **版本日期**：2026-09-11（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：lib/index.js、lib/finance.js、作者README、package与固定范围inventory；源码抽读不等于完整审计。\n- 未验证：插件执行、测试、安装、真实宿主与独立采用。\n- 证据限制：固定提交内列明源码和作者材料的有界抽读，静态inventory为组件范围；没有安装、执行目标代码或测试、发起插件服务请求、真实宿主验收或独立采用核实。\n- 下一步：在固定宿主对比10/100比率、零利率五年60期定投、负数/零分母和多资产schema；本轮仅源码推导，未运行目标代码。\n",
+        "reports": "# dsh-plugin-finance-data\n\n> DSH Agent 的确定性金融算术工具，但比率文本、跨年定投和组合再平衡路径存在可核不一致。\n\n## 研究范围\n\n- **仓库**：[863683348/dsh-plugin-finance-data](https://github.com/863683348/dsh-plugin-finance-data)\n- **版本号**：0.3.2（[固定提交 0a10267fa6f8f75da68005406b899894b60dd796](https://github.com/863683348/dsh-plugin-finance-data/tree/0a10267fa6f8f75da68005406b899894b60dd796)）\n- **版本日期**：2026-09-11（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n源码确认纯算术工具与 10 类 action；百分数百倍展示、定投默认仅 12 期和再平衡函数未接工具属于明确代码路径问题。\n\n## 洞察短评\n\n- **用途**：Agent 在有已核来源/口径的数字上做格式化、收益与风险计算。\n- **亮点**：将常见财务算术从模型口算转为确定性工具，并提示数据来源/口径。详见[Q01](#research-q01)。\n- **思考**：四类财务比率在计算层和展示层各乘 100；多年 plan 默认只算 12 期，portfolio 未返回再平衡单。详见[Q02](#research-q02)、[Q03](#research-q03)。\n- **建议**：统一单位契约并分离最终计算与表格采样，配黄金样本可提高可靠性；修复效果尚未验。详见[Q04](#research-q04)。\n\n采用建议：修复关键路径前不用于真实决策；以 10/100 比率、2 年月投和组合偏离样本验每个 action。详见[Q02](#research-q02)至[Q04](#research-q04)。\n\n## 核心贡献\n\n将常见财务算术从模型口算转为确定性工具，并提示数据来源/口径。详见[Q01](#research-q01)。\n\n## 关键质疑\n\n四类财务比率在计算层和展示层各乘 100；多年 plan 默认只算 12 期，portfolio 未返回再平衡单。详见[Q02](#research-q02)、[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n统一单位契约并分离最终计算与表格采样，配黄金样本可提高可靠性；修复效果尚未验。详见[Q04](#research-q04)。\n\n修复后对所有 action 做单位、期数、边界和黄金样本核对，再到目标宿主复验文本/结构值。\n\n## 场景与替代办法\n\nAgent 在有已核来源/口径的数字上做格式化、收益与风险计算。\n\n模型自行计算或电子表格；工具可重复，但当前关键输出不可靠。\n\n## 依赖与流程\n\n#### 条件\n\n| 条件 | 用途 | 缺失时 |\n| --- | --- | --- |\n| DSH tools/systemPrompt | Agent 调用 | 无工具入口 |\n| 已核金融输入 | 正确解释 | 结果无事实根基 |\n| 黄金样本 | 公式回归 | 错误易扩散 |\n\n#### 修复验证\n\n| 步骤 | 输入 | 判据 |\n| --- | --- | --- |\n| 比率 | 10/100 | 10% |\n| 定投 | 两年月投 | 24 期终值 |\n| 组合 | 60/40 目标与偏离 | 给出买卖金额 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 资源 | 边界 |\n| --- | --- | --- |\n| 输入 | 经核口径数字 | 无行情来源 |\n| 核算 | 黄金样本复核 | 当前三个关键错误 |\n| 维护 | 单位/期数测试 | 金融输出需严格可靠 |\n\n#### 效果\n\n| 项 | 源码支持 | 问题 |\n| --- | --- | --- |\n| 比率 | 纯函数 | 展示百倍 |\n| 定投 | 周期循环 | 默认截断 12 期 |\n| 组合 | 权重/独立再平衡函数 | 工具未接再平衡 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**核实金融计算工具的用途、输出口径与代码/宣传不一致；不给投资建议。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 工具包实际提供什么？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n插件注册 finance_data Agent 工具和可选金融提示段，纯函数做格式、收益、财务比率、现值/终值、风险、清单、定投、组合、趋势与同业分位数。数学与宿主适配分在 finance.js/index.js，便于离线算术与单元测试。它不提供原始行情、财报、事实核验或投资决策；模型需提供来源、时点、单位与口径。README 中文表列 8 类动作，但工具枚举还有 trend/peer 两类，文档范围滞后。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.zh.md:1-35](https://github.com/863683348/dsh-plugin-finance-data/blob/0a10267fa6f8f75da68005406b899894b60dd796/README.zh.md#L1-L35)\n\n作者说明确定性计算、8 类动作与薄适配层。\n\n<details>\n<summary>查看原文（35行）</summary>\n\n````text\n# dsh-plugin-finance-data\n\n面向 [DeepSeek Harness](https://github.com/deepseek-ai/dsh) agent 的**金融数据工具包**：数字格式化、收益计算、估值与盈利比率、时间价值、风险指标，全部确定性计算。模型负责解读，插件负责算术。\n\n## 安装\n\n```bash\ndsh plugin --profile <profile> add dsh-plugin-finance-data\n```\n\n重启 DSH 后，`finance_data` 工具全局注册。\n\n## 工具\n\n| 动作 | 用途 |\n| --- | --- |\n| `format` | 数字/货币/百分比格式化，千分位，中文万/亿单位 |\n| `return` | 简单/对数/年化收益（CAGR 风格） |\n| `ratio` | PE、PB、ROE、ROA、毛利率、净利率、产权比率 |\n| `value` | 现值、终值、隐含收益率 |\n| `risk` | 收益率序列的均值、波动率、最大回撤、历史 VaR(95)、夏普比率 |\n| `checklist` | 数据质量检查清单（来源、时点、单位、口径） |\n| `plan` | 定投/复利模拟（终值时间表、通胀调整实际价值） |\n| `portfolio` | 组合权重、漂移与再平衡指令（买/卖金额）\n\n## 配置\n\n均为可选项，写在组合行的 `config` 里：\n\n| 键 | 默认值 | 含义 |\n| --- | --- | --- |\n| `personaSection` | `true` | 是否注册金融提示词段 |\n| `sectionOrder` | `6` | 提示词段顺序（persona 为 0，升序） |\n\n## 设计\n````\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:12-24](https://github.com/863683348/dsh-plugin-finance-data/blob/0a10267fa6f8f75da68005406b899894b60dd796/lib/index.js#L12-L24)\n\n引入计算函数并声明 tools/systemPrompt。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\nimport z from \"@deepseek-ai/schemastery\";\nimport { defineTool } from \"@deepseek-ai/dsh-tools\";\nimport {\n  analyzeTrend,\n  computeRatio,\n  computeReturn,\n  dataChecklist,\n  formatNumber,\n  peerCompare,\n  portfolioWeights,\n  projectPlan,\n  rebalance,\n  riskMetrics,\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:53-71](https://github.com/863683348/dsh-plugin-finance-data/blob/0a10267fa6f8f75da68005406b899894b60dd796/lib/index.js#L53-L71)\n\n工具枚举共 10 类动作。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n  ctx.tools.register(defineTool({\n    name: \"finance_data\",\n    description: \"Finance-data helper: `format` (number/currency/percent formatting, optional Chinese wan/yi units), `return` (simple, log, and annualized returns), `ratio` (PE, PB, ROE, ROA, gross/net margin, debt-to-equity), `value` (present/future value and implied rate), `risk` (mean, volatility, max drawdown, historical VaR(95), Sharpe from a return series), `checklist` (data-quality checklist), `plan` (DCA/compound projection with inflation adjustment), `portfolio` (portfolio weights, drift and rebalance orders), `trend` (metric time-series level/direction/volatility), `peer` (value vs peer distribution: P10/P50/P90 + percentile rank). Use it whenever the task involves financial figures, returns, valuations, or risk.\",\n    parameters: {\n      action: {\n        type: \"string\", required: true,\n        enum: [\"format\", \"return\", \"ratio\", \"value\", \"risk\", \"checklist\", \"plan\", \"portfolio\", \"trend\", \"peer\"],\n        description: \"Which finance helper to run.\",\n      },\n      value: { type: \"number\", description: \"Number to format (format).\" },\n      decimals: { type: \"integer\", description: \"Decimal places (format).\" },\n      thousands: { type: \"boolean\", description: \"Thousands separators (format).\" },\n      currency: { type: \"string\", description: \"Currency symbol prefix (format).\" },\n      percent: { type: \"boolean\", description: \"Treat value as a fraction and render as percent (format).\" },\n      zh: { type: \"boolean\", description: \"Use Chinese wan/yi units (format).\" },\n      start: { type: \"number\", description: \"Starting value (return).\" },\n      end: { type: \"number\", description: \"Ending value (return).\" },\n      periods: { type: \"integer\", description: \"Number of periods for annualization (return).\" },\n      annualized: { type: \"boolean\", description: \"Compute annualized return (return).\" },\n```\n\n</details>\n\n#### 缺口\n\n- 未在目标 DSH 调用工具。\n  **影响：**模型选择、参数补全和界面输出未核。\n  **进一步探讨：**用受控案例在宿主检验 action 选择和错误处理。\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 比率百分数输出是否准确？\n\n**研究主题：**功能与机制、缺陷与关键质疑\n\n#### 完整回答\n\nfinance.js 的 roe、roa、grossMargin、netMargin 已把除法结果乘 100，返回百分数数值；index.js 的 ratio 分支又把这四类设置 percent=true，formatNumber 再乘 100 并附 %。例如净利润 10、收入 100，计算值为 10，但工具文本格式化成 1000.00%。这是静态代码路径可直接推导的百倍展示错误，且风险是 Agent 可能引用文本而不是原值。PE/PB 等非百分数不走这条错误路径。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/finance.js:10-24](https://github.com/863683348/dsh-plugin-finance-data/blob/0a10267fa6f8f75da68005406b899894b60dd796/lib/finance.js#L10-L24)\n\npercent 格式化对输入再乘 100。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\nexport function formatNumber({ value, decimals = 2, thousands = true, currency = \"\", percent = false, zh = false } = {}) {\n  const v = Number(value);\n  if (!Number.isFinite(v)) throw new Error(\"finance: value must be a finite number\");\n  let out;\n  if (percent) {\n    out = (v * 100).toFixed(Math.max(0, Math.floor(decimals))) + \"%\";\n  } else if (zh && Math.abs(v) >= 1e8) {\n    out = (v / 1e8).toFixed(Math.max(0, Math.floor(decimals))) + \"亿\";\n  } else if (zh && Math.abs(v) >= 1e4) {\n    out = (v / 1e4).toFixed(Math.max(0, Math.floor(decimals))) + \"万\";\n  } else {\n    out = v.toFixed(Math.max(0, Math.floor(decimals)));\n    if (thousands) out = out.replace(/\\B(?=(\\d{3})+(?!\\d))/g, \",\");\n  }\n  return (currency ? currency + out : out);\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/finance.js:43-55](https://github.com/863683348/dsh-plugin-finance-data/blob/0a10267fa6f8f75da68005406b899894b60dd796/lib/finance.js#L43-L55)\n\n四个比率计算时已乘 100。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\nexport function computeRatio({ type = \"pe\", price, eps, bvps, netIncome, equity, assets, revenue, cogs, debt } = {}) {\n  const ratio = {\n    pe: () => { if (price == null || eps == null || eps === 0) throw new Error(\"finance: pe needs price and eps (eps != 0)\"); return price / eps; },\n    pb: () => { if (price == null || bvps == null || bvps === 0) throw new Error(\"finance: pb needs price and bvps (bvps != 0)\"); return price / bvps; },\n    roe: () => { if (netIncome == null || equity == null || equity === 0) throw new Error(\"finance: roe needs netIncome and equity (equity != 0)\"); return (netIncome / equity) * 100; },\n    roa: () => { if (netIncome == null || assets == null || assets === 0) throw new Error(\"finance: roa needs netIncome and assets (assets != 0)\"); return (netIncome / assets) * 100; },\n    grossMargin: () => { if (revenue == null || cogs == null || revenue === 0) throw new Error(\"finance: grossMargin needs revenue and cogs (revenue != 0)\"); return ((revenue - cogs) / revenue) * 100; },\n    netMargin: () => { if (netIncome == null || revenue == null || revenue === 0) throw new Error(\"finance: netMargin needs netIncome and revenue (revenue != 0)\"); return (netIncome / revenue) * 100; },\n    debtToEquity: () => { if (debt == null || equity == null || equity === 0) throw new Error(\"finance: debtToEquity needs debt and equity (equity != 0)\"); return debt / equity; },\n  }[type];\n  if (!ratio) throw new Error(\"finance: unknown ratio type '\" + type + \"'\");\n  return { type, value: ratio() };\n}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:137-145](https://github.com/863683348/dsh-plugin-finance-data/blob/0a10267fa6f8f75da68005406b899894b60dd796/lib/index.js#L137-L145)\n\nratio 分支对四类再次调用 percent 格式化。\n\n```text\n        case \"ratio\":\n          values = computeRatio({\n            type: args.type, price: args.price, eps: args.eps, bvps: args.bvps,\n            netIncome: args.netIncome, equity: args.equity, assets: args.assets,\n            revenue: args.revenue, cogs: args.cogs, debt: args.debt,\n          });\n          value = values.value;\n          const isPct = [\"roe\", \"roa\", \"grossMargin\", \"netMargin\"].includes(args.type);\n          text = values.type + \" = \" + formatNumber({ value, percent: isPct, decimals: 2, zh: true });\n```\n\n#### 缺口\n\n- 未执行目标工具确认宿主最终展示。\n  **影响：**已能从代码确定文本计算路径，但实际模型采信程度未知。\n  **进一步探讨：**用 ROE=10/100 等固定案例验证工具 text/value，并统一比率单位契约。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 定投和组合动作是否兑现描述？\n\n**研究主题：**工程质量与复用、缺陷与关键质疑\n\n#### 完整回答\n\nplan 的周期数为 years×频率，却用默认 steps=12 截断实际迭代；index.js 调用 projectPlan 时未传 steps。故默认月度定投无论 years=2 或 10，表和 final 只算前 12 期，摘要仍显示用户输入的 years。portfolio 说明称权重、漂移及再平衡买卖指令，finance.js 有 rebalance 函数，但 index.js portfolio case 只调用 portfolioWeights，未把 rebalance 结果交给工具，买卖指令不会出现。这两个接口/文档不一致会直接影响金额和动作建议。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/finance.js:133-171](https://github.com/863683348/dsh-plugin-finance-data/blob/0a10267fa6f8f75da68005406b899894b60dd796/lib/finance.js#L133-L171)\n\nplan 用 Math.min(periods,steps) 截断并据此算 final。\n\n<details>\n<summary>查看原文（39行）</summary>\n\n```text\nexport function projectPlan({ principal = 0, contribution = 0, contributionFrequency = \"month\", annualRate = 0, years = 1, inflation = 0, steps = 12 } = {}) {\n  const p = Number(principal) || 0;\n  const c = Number(contribution) || 0;\n  const r = Number(annualRate) || 0;\n  const yrs = Math.max(0.1, Number(years) || 0);\n  const inf = Number(inflation) || 0;\n  if (p < 0 || c < 0) throw new Error(\"finance: principal and contribution must be non-negative\");\n  if (r < -100) throw new Error(\"finance: annualRate must be >= -100\");\n  const perYear = contributionFrequency === \"year\" ? 1 : contributionFrequency === \"week\" ? 52 : contributionFrequency === \"quarter\" ? 4 : 12;\n  const n = Math.max(1, Math.floor(steps));\n  const perPeriod = r / (perYear * 100);\n  const periods = Math.max(1, Math.round(yrs * perYear));\n  const total = Math.min(periods, n);\n  let balance = p;\n  const schedule = [];\n  for (let i = 1; i <= total; i++) {\n    balance = balance * (1 + perPeriod) + c;\n    const nominal = balance;\n    const real = nominal / Math.pow(1 + inf / 100, i / perYear);\n    schedule.push({ period: i, balance: round2(nominal), real: round2(real) });\n  }\n  const final = balance;\n  const invested = p + c * total;\n  const totalReturn = final - invested;\n  const finalReal = final / Math.pow(1 + inf / 100, total / perYear);\n  const text = [\n    \"# Projection\",\n    \"\",\n    \"Principal: \" + round2(p) + \", contribution: \" + round2(c) + \"/\" + contributionFrequency + \", annual rate: \" + r + \"%, years: \" + yrs + (inf > 0 ? \", inflation: \" + inf + \"%\" : \"\"),\n    \"\",\n    \"| Period | Balance | Real (after inflation) |\",\n    \"|--------|---------|------------------------|\",\n    ...schedule.map((s) => \"| \" + s.period + \" | \" + s.balance + \" | \" + s.real + \" |\"),\n    \"\",\n    \"Invested: \" + round2(invested) + \", final: \" + round2(final) + \", return: \" + round2(totalReturn) + \" (\" + (invested > 0 ? round2((totalReturn / invested) * 100) : 0) + \"%)\",\n    \"Final real value: \" + round2(finalReal),\n  ].join(\"\\n\");\n  return { principal: round2(p), contributionPerPeriod: round2(c), totalContributed: round2(c * total), invested: round2(invested), final: round2(final), finalReal: round2(finalReal), totalReturn: round2(totalReturn), returnPct: invested > 0 ? round2((totalReturn / invested) * 100) : 0, schedule, text };\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:166-175](https://github.com/863683348/dsh-plugin-finance-data/blob/0a10267fa6f8f75da68005406b899894b60dd796/lib/index.js#L166-L175)\n\nplan 不传 steps；portfolio 仅调用 portfolioWeights。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n        case \"plan\":\n          text = projectPlan({\n            principal: args.principal, contribution: args.contribution,\n            contributionFrequency: args.contributionFrequency, annualRate: args.annualRate,\n            years: args.years, inflation: args.inflation,\n          }).text;\n          break;\n        case \"portfolio\":\n          text = portfolioWeights({ targets: args.targets, values: args.values }).text;\n          break;\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/finance.js:198-214](https://github.com/863683348/dsh-plugin-finance-data/blob/0a10267fa6f8f75da68005406b899894b60dd796/lib/finance.js#L198-L214)\n\nrebalance 存在但未用于工具分支。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n/** Rebalance orders to bring the portfolio back to target weights. */\nexport function rebalance({ targets = {}, values = {} } = {}) {\n  const base = portfolioWeights({ targets, values });\n  const orders = base.rows.map((r) => {\n    const desired = (r.target / 100) * base.totalValue;\n    const diff = desired - r.value;\n    return { name: r.name, targetValue: round2(desired), diff: round2(diff), action: diff >= 0 ? \"buy\" : \"sell\", amount: round2(Math.abs(diff)) };\n  });\n  const text = [\n    \"# Rebalance orders\",\n    \"\",\n    \"| Asset | Target value | Current | Action | Amount |\",\n    \"|-------|--------------|---------|--------|--------|\",\n    ...orders.map((o) => \"| \" + o.name + \" | \" + o.targetValue + \" | \" + o.diff + \" | \" + o.action + \" | \" + o.amount + \" |\"),\n  ].join(\"\\n\");\n  return { orders, text };\n}\n```\n\n</details>\n\n**依据 4 · 作者声明**：[README.zh.md:18-27](https://github.com/863683348/dsh-plugin-finance-data/blob/0a10267fa6f8f75da68005406b899894b60dd796/README.zh.md#L18-L27)\n\n作者宣称定投终值与再平衡指令。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n| `return` | 简单/对数/年化收益（CAGR 风格） |\n| `ratio` | PE、PB、ROE、ROA、毛利率、净利率、产权比率 |\n| `value` | 现值、终值、隐含收益率 |\n| `risk` | 收益率序列的均值、波动率、最大回撤、历史 VaR(95)、夏普比率 |\n| `checklist` | 数据质量检查清单（来源、时点、单位、口径） |\n| `plan` | 定投/复利模拟（终值时间表、通胀调整实际价值） |\n| `portfolio` | 组合权重、漂移与再平衡指令（买/卖金额）\n\n## 配置\n\n```\n\n</details>\n\n#### 缺口\n\n- 未执行目标工具的多年输入。\n  **影响：**源码路径清楚，但修复后数值与输出上限需单测。\n  **进一步探讨：**以 years=2/10、月/周频率核最终期数和金额；组合同时验买卖明细。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 怎样安全采用？\n\n**研究主题：**采用判断、效果与总成本、新假设与验证、依赖、兼容与流程\n\n#### 完整回答\n\n当前版本不宜将比率百分数、跨年 plan 终值或 portfolio 再平衡文本用于实际金融判断；其他算术也应做黄金样本核算。建议先修统一比率单位（内部用小数、展示时乘 100 或内部百分数、展示不再乘）、把 schedule 输出采样与最终计算解耦，并让 portfolio 显式组合 weights 与 rebalance。风险指标也需明确收益频率、无年化 Sharpe 和 VaR 符号约定。插件不能替代数据来源和专业判断，本轮只审代码、不验证现实金融数据。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/finance.js:91-113](https://github.com/863683348/dsh-plugin-finance-data/blob/0a10267fa6f8f75da68005406b899894b60dd796/lib/finance.js#L91-L113)\n\n风险指标按输入期均值/样本标准差计算，无频率参数。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n/** Basic risk metrics from a series of period returns (decimals, e.g. 0.01). */\nexport function riskMetrics({ returns = [], riskFree = 0 } = {}) {\n  if (!Array.isArray(returns) || returns.length < 2) throw new Error(\"finance: risk needs at least 2 returns\");\n  const rs = returns.map(Number);\n  if (rs.some((x) => !Number.isFinite(x))) throw new Error(\"finance: returns must be finite numbers\");\n  const n = rs.length;\n  const mean = rs.reduce((a, b) => a + b, 0) / n;\n  const variance = rs.reduce((a, b) => a + (b - mean) ** 2, 0) / (n - 1);\n  const stdev = Math.sqrt(variance);\n  let peak = 1;\n  let maxDrawdown = 0;\n  let cum = 1;\n  for (const r of rs) {\n    cum *= 1 + r;\n    if (cum > peak) peak = cum;\n    const dd = (peak - cum) / peak;\n    if (dd > maxDrawdown) maxDrawdown = dd;\n  }\n  const sorted = [...rs].sort((a, b) => a - b);\n  const var95 = percentile(sorted, 0.05);\n  const sharpe = stdev === 0 ? NaN : (mean - Number(riskFree)) / stdev;\n  return { mean, stdev, maxDrawdown, var95, sharpe, samples: n };\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:53-111](https://github.com/863683348/dsh-plugin-finance-data/blob/0a10267fa6f8f75da68005406b899894b60dd796/lib/index.js#L53-L111)\n\n工具参数/描述与输出契约。\n\n<details>\n<summary>查看原文（59行）</summary>\n\n```text\n  ctx.tools.register(defineTool({\n    name: \"finance_data\",\n    description: \"Finance-data helper: `format` (number/currency/percent formatting, optional Chinese wan/yi units), `return` (simple, log, and annualized returns), `ratio` (PE, PB, ROE, ROA, gross/net margin, debt-to-equity), `value` (present/future value and implied rate), `risk` (mean, volatility, max drawdown, historical VaR(95), Sharpe from a return series), `checklist` (data-quality checklist), `plan` (DCA/compound projection with inflation adjustment), `portfolio` (portfolio weights, drift and rebalance orders), `trend` (metric time-series level/direction/volatility), `peer` (value vs peer distribution: P10/P50/P90 + percentile rank). Use it whenever the task involves financial figures, returns, valuations, or risk.\",\n    parameters: {\n      action: {\n        type: \"string\", required: true,\n        enum: [\"format\", \"return\", \"ratio\", \"value\", \"risk\", \"checklist\", \"plan\", \"portfolio\", \"trend\", \"peer\"],\n        description: \"Which finance helper to run.\",\n      },\n      value: { type: \"number\", description: \"Number to format (format).\" },\n      decimals: { type: \"integer\", description: \"Decimal places (format).\" },\n      thousands: { type: \"boolean\", description: \"Thousands separators (format).\" },\n      currency: { type: \"string\", description: \"Currency symbol prefix (format).\" },\n      percent: { type: \"boolean\", description: \"Treat value as a fraction and render as percent (format).\" },\n      zh: { type: \"boolean\", description: \"Use Chinese wan/yi units (format).\" },\n      start: { type: \"number\", description: \"Starting value (return).\" },\n      end: { type: \"number\", description: \"Ending value (return).\" },\n      periods: { type: \"integer\", description: \"Number of periods for annualization (return).\" },\n      annualized: { type: \"boolean\", description: \"Compute annualized return (return).\" },\n      log: { type: \"boolean\", description: \"Also compute log return (return).\" },\n      type: { type: \"string\", description: \"Ratio type: pe | pb | roe | roa | grossMargin | netMargin | debtToEquity (ratio).\" },\n      price: { type: \"number\", description: \"Price per share (ratio pe/pb).\" },\n      eps: { type: \"number\", description: \"Earnings per share (ratio pe).\" },\n      bvps: { type: \"number\", description: \"Book value per share (ratio pb).\" },\n      netIncome: { type: \"number\", description: \"Net income (ratio roe/roa/netMargin).\" },\n      equity: { type: \"number\", description: \"Shareholders' equity (ratio roe/debtToEquity).\" },\n      assets: { type: \"number\", description: \"Total assets (ratio roa).\" },\n      revenue: { type: \"number\", description: \"Revenue (ratio grossMargin/netMargin).\" },\n      cogs: { type: \"number\", description: \"Cost of goods sold (ratio grossMargin).\" },\n      debt: { type: \"number\", description: \"Total debt (ratio debtToEquity).\" },\n      mode: { type: \"string\", description: \"fv | pv | rate (value).\" },\n      present: { type: \"number\", description: \"Present value (value).\" },\n      future: { type: \"number\", description: \"Future value (value).\" },\n      rate: { type: \"number\", description: \"Per-period rate (value).\" },\n      returns: { type: \"array\", items: { type: \"number\" }, description: \"Return series as decimals, e.g. [0.01, -0.02] (risk).\" },\n      principal: { type: \"number\", description: \"Starting principal (plan).\" },\n      contribution: { type: \"number\", description: \"Periodic contribution amount (plan).\" },\n      contributionFrequency: { type: \"string\", enum: [\"month\", \"quarter\", \"year\", \"week\"], description: \"Contribution frequency (plan).\" },\n      annualRate: { type: \"number\", description: \"Annual rate in percent, e.g. 6 for 6% (plan).\" },\n      years: { type: \"number\", description: \"Projection length in years (plan).\" },\n      inflation: { type: \"number\", description: \"Annual inflation in percent (plan).\" },\n      targets: { type: \"object\", additionalProperties: false, description: \"Target weights in percent summing to 100, e.g. {\\\"equity\\\": 60} (portfolio).\" },\n      values: { type: \"object\", additionalProperties: false, description: \"Current market values per asset, e.g. {\\\"equity\\\": 50000} (portfolio).\" },\n      metricValues: { type: \"array\", items: { type: \"number\" }, description: \"Chronological metric values, oldest first (trend).\" },\n      labels: { type: \"array\", items: { type: \"string\" }, description: \"Optional period labels (trend).\" },\n      peers: { type: \"array\", items: { type: \"number\" }, description: \"Peer group values for the same metric (peer).\" },\n      metric: { type: \"string\", description: \"Metric name, e.g. PE / ROE (peer).\" },\n      higherIsBetter: { type: \"boolean\", description: \"Whether a higher value is favorable (peer).\" },\n      riskFree: { type: \"number\", description: \"Risk-free rate for Sharpe (risk).\" },\n    },\n    output: {\n      schema: {\n        type: \"object\",\n        additionalProperties: true,\n        properties: {\n          action: { type: \"string\", required: true },\n          text: { type: \"string\" },\n          value: { type: \"number\" },\n          values: { type: \"object\", additionalProperties: true },\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/finance.js:133-214](https://github.com/863683348/dsh-plugin-finance-data/blob/0a10267fa6f8f75da68005406b899894b60dd796/lib/finance.js#L133-L214)\n\n定投及再平衡实现。\n\n<details>\n<summary>查看原文（82行）</summary>\n\n```text\nexport function projectPlan({ principal = 0, contribution = 0, contributionFrequency = \"month\", annualRate = 0, years = 1, inflation = 0, steps = 12 } = {}) {\n  const p = Number(principal) || 0;\n  const c = Number(contribution) || 0;\n  const r = Number(annualRate) || 0;\n  const yrs = Math.max(0.1, Number(years) || 0);\n  const inf = Number(inflation) || 0;\n  if (p < 0 || c < 0) throw new Error(\"finance: principal and contribution must be non-negative\");\n  if (r < -100) throw new Error(\"finance: annualRate must be >= -100\");\n  const perYear = contributionFrequency === \"year\" ? 1 : contributionFrequency === \"week\" ? 52 : contributionFrequency === \"quarter\" ? 4 : 12;\n  const n = Math.max(1, Math.floor(steps));\n  const perPeriod = r / (perYear * 100);\n  const periods = Math.max(1, Math.round(yrs * perYear));\n  const total = Math.min(periods, n);\n  let balance = p;\n  const schedule = [];\n  for (let i = 1; i <= total; i++) {\n    balance = balance * (1 + perPeriod) + c;\n    const nominal = balance;\n    const real = nominal / Math.pow(1 + inf / 100, i / perYear);\n    schedule.push({ period: i, balance: round2(nominal), real: round2(real) });\n  }\n  const final = balance;\n  const invested = p + c * total;\n  const totalReturn = final - invested;\n  const finalReal = final / Math.pow(1 + inf / 100, total / perYear);\n  const text = [\n    \"# Projection\",\n    \"\",\n    \"Principal: \" + round2(p) + \", contribution: \" + round2(c) + \"/\" + contributionFrequency + \", annual rate: \" + r + \"%, years: \" + yrs + (inf > 0 ? \", inflation: \" + inf + \"%\" : \"\"),\n    \"\",\n    \"| Period | Balance | Real (after inflation) |\",\n    \"|--------|---------|------------------------|\",\n    ...schedule.map((s) => \"| \" + s.period + \" | \" + s.balance + \" | \" + s.real + \" |\"),\n    \"\",\n    \"Invested: \" + round2(invested) + \", final: \" + round2(final) + \", return: \" + round2(totalReturn) + \" (\" + (invested > 0 ? round2((totalReturn / invested) * 100) : 0) + \"%)\",\n    \"Final real value: \" + round2(finalReal),\n  ].join(\"\\n\");\n  return { principal: round2(p), contributionPerPeriod: round2(c), totalContributed: round2(c * total), invested: round2(invested), final: round2(final), finalReal: round2(finalReal), totalReturn: round2(totalReturn), returnPct: invested > 0 ? round2((totalReturn / invested) * 100) : 0, schedule, text };\n}\n\n/** Portfolio actual weights and drift vs target weights. */\nexport function portfolioWeights({ targets = {}, values = {} } = {}) {\n  const names = Object.keys(targets);\n  if (names.length === 0) throw new Error(\"finance: target weights are required\");\n  const totalTarget = names.reduce((s, n) => s + (Number(targets[n]) || 0), 0);\n  if (Math.abs(totalTarget - 100) > 1e-6) throw new Error(\"finance: target weights must sum to 100\");\n  const totalValue = names.reduce((s, n) => s + (Number(values[n]) || 0), 0);\n  const rows = names.map((n) => {\n    const target = Number(targets[n]) || 0;\n    const value = Number(values[n]) || 0;\n    const actual = totalValue > 0 ? (value / totalValue) * 100 : 0;\n    return { name: n, target, value: round2(value), actual: round2(actual), drift: round2(actual - target) };\n  });\n  const text = [\n    \"# Portfolio weights\",\n    \"\",\n    \"Total value: \" + round2(totalValue),\n    \"\",\n    \"| Asset | Target % | Value | Actual % | Drift |\",\n    \"|-------|----------|-------|----------|-------|\",\n    ...rows.map((r) => \"| \" + r.name + \" | \" + r.target + \" | \" + r.value + \" | \" + r.actual + \" | \" + r.drift + \" |\"),\n  ].join(\"\\n\");\n  return { totalValue: round2(totalValue), rows, text };\n}\n\n/** Rebalance orders to bring the portfolio back to target weights. */\nexport function rebalance({ targets = {}, values = {} } = {}) {\n  const base = portfolioWeights({ targets, values });\n  const orders = base.rows.map((r) => {\n    const desired = (r.target / 100) * base.totalValue;\n    const diff = desired - r.value;\n    return { name: r.name, targetValue: round2(desired), diff: round2(diff), action: diff >= 0 ? \"buy\" : \"sell\", amount: round2(Math.abs(diff)) };\n  });\n  const text = [\n    \"# Rebalance orders\",\n    \"\",\n    \"| Asset | Target value | Current | Action | Amount |\",\n    \"|-------|--------------|---------|--------|--------|\",\n    ...orders.map((o) => \"| \" + o.name + \" | \" + o.targetValue + \" | \" + o.diff + \" | \" + o.action + \" | \" + o.amount + \" |\"),\n  ].join(\"\\n\");\n  return { orders, text };\n}\n```\n\n</details>\n\n#### 缺口\n\n- 尚无独立黄金样本和目标宿主复验。\n  **影响：**无法量化其他公式的实际错误率。\n  **进一步探讨：**修复后建立单位、期数、边界和金额黄金样本，再测试 Agent 是否正确解释。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：a837657d83aac6f337f7e325c6d04f7493885962871ef29c963b97783e488998。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 480 | 426 | 34 | — |\n| .md | source | 4 | 160 | — | — | 1356 |\n| .mjs | test | 1 | 178 | 150 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 当前边界 |\n| --- | --- | --- |\n| 比率 | 财务分析 | 百倍展示错误 |\n| 定投 | 长期规划 | 默认只算 12 期 |\n| 组合 | 漂移评估 | 未返回交易指令 |\n\n## 工程亮点\n\n工具将 10 类 action 派到纯函数；比率展示、plan steps 和 portfolio 接线存在分层契约不一致。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.zh.md、package.json、lib/index.js、lib/finance.js、test/finance.test.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：静态审阅 README.zh、finance.js、index.js，未执行插件或进行投资/市场数据核验。\n- 下一步：修复后对所有 action 做单位、期数、边界和黄金样本核对，再到目标宿主复验文本/结构值。\n",
         "metadata": {
             "repository": "863683348/dsh-plugin-finance-data",
             "repository_id": 1336663504,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T06:08:30.292Z",
+            "window_start": "2026-09-22T06:08:30.292Z",
             "stars": 6,
             "pushed_at": "2026-09-11T03:26:22Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-plugin-finance-data%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C2:2F411E:14EF7C:22AE91:6AD84AC2 and timestamp 2026-10-21 05:16:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-plugin-finance-data%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C3:223B46:15E871:23A428:6AD84AC2 and timestamp 2026-10-21 05:16:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-plugin-finance-data%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6403:3FE872:13EADC:219877:6AD84AC2 and timestamp 2026-10-21 05:16:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-plugin-finance-data%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6400:20AC7E:14A8ED:225D40:6AD84AC2 and timestamp 2026-10-21 05:16:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-plugin-finance-data%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640F:12F9BB:140C02:21C0EE:6AD84AC2 and timestamp 2026-10-21 05:16:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
-            "npm": {
-                "package_name": "dsh-plugin-finance-data",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 1049,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-plugin-finance-data",
-                "error": null,
-                "publication": {
-                    "first_published_at": "2026-08-17T04:18:08.277Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
-                    "source_url": "https://registry.npmjs.org/dsh-plugin-finance-data",
-                    "error": null,
-                    "latest_version": "0.3.2",
-                    "latest_published_at": "2026-09-11T02:43:21.431Z",
-                    "latest_error": null
-                }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "0a10267fa6f8f75da68005406b899894b60dd796",
-                "current_revision": "0a10267fa6f8f75da68005406b899894b60dd796",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
-            }
+            "errors": []
         },
         "discovery.plugins": {
             "id": "github:1336663504:root",
             "repository": "863683348/dsh-plugin-finance-data",
             "path": "",
             "revision": "0a10267fa6f8f75da68005406b899894b60dd796",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "33411325a6b81a0cce5078cbdf8daa96e927a1e2a387ef9e9dde09e28c938082",
                 "code": "0a10267fa6f8f75da68005406b899894b60dd796",
                 "maintenance": "0b3ff18cd714c792478b766f84ddbe18645167fde8cc68740f62ab0ca7990ba4"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

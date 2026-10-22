@@ -24,36 +24,76 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-20-07-github-1381859919-root-directory-0",
+                    "id": "2026-10-22-02-github-1381859919-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
-                    "retrieved_at": "2026-10-20T10:01:47.391Z",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-22T09:22:21.224Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-20-07-github-1381859919-root-author",
+                    "id": "2026-10-22-02-github-1381859919-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/173787247/dsh-wsl-glab/blob/305794fc429ad5fa43be6e6e6f3fb9abd80c135f/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-glab",
+                            "commit": "305794fc429ad5fa43be6e6e6f3fb9abd80c135f",
+                            "path": "README.md",
+                            "content_sha256": "6ef3108bf17569324fc911ede73d90355a8f9cff7e9c6e917f7cb47c65a61b0d"
+                        }
+                    ],
                     "revision": "305794fc429ad5fa43be6e6e6f3fb9abd80c135f",
-                    "captured_at": "2026-10-20T10:01:47.391Z",
-                    "summary": "封装glab，查询GitLab合并请求、Issue与流水线状态。",
-                    "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-glab/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:22:21.224Z",
+                    "summary": "将glab认证概览、MR/issue单页列表和CI文本接入模型工具，脱敏与错误展示仍有缺口。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-glab/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-20-07-github-1381859919-root-source",
+                    "id": "2026-10-22-02-github-1381859919-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/173787247/dsh-wsl-glab/blob/305794fc429ad5fa43be6e6e6f3fb9abd80c135f/index.js",
+                    "url": "https://github.com/173787247/dsh-wsl-glab/blob/305794fc429ad5fa43be6e6e6f3fb9abd80c135f/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-glab",
+                            "commit": "305794fc429ad5fa43be6e6e6f3fb9abd80c135f",
+                            "path": "README.md",
+                            "content_sha256": "6ef3108bf17569324fc911ede73d90355a8f9cff7e9c6e917f7cb47c65a61b0d"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-glab",
+                            "commit": "305794fc429ad5fa43be6e6e6f3fb9abd80c135f",
+                            "path": "package.json",
+                            "content_sha256": "3b2376b9ef381e7b39655bfee38a3549d288ca3f834ba726daec77d851791f55"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-glab",
+                            "commit": "305794fc429ad5fa43be6e6e6f3fb9abd80c135f",
+                            "path": "index.js",
+                            "content_sha256": "a6ffd6802c2b497a52c68ea1d8d17903fca78f50fe7941e6485dac0713ff91cc"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-glab",
+                            "commit": "305794fc429ad5fa43be6e6e6f3fb9abd80c135f",
+                            "path": "lib/glab.js",
+                            "content_sha256": "21a265df301eb8a49934517a0751ea9019ff6518261fcf247af9a13de714e5ab"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-glab",
+                            "commit": "305794fc429ad5fa43be6e6e6f3fb9abd80c135f",
+                            "path": "test/glab.test.js",
+                            "content_sha256": "d8eeb99c13cb788bb09322665d7839b0449d411ab08b6a5a2d6978fa00a2e445"
+                        }
+                    ],
                     "revision": "305794fc429ad5fa43be6e6e6f3fb9abd80c135f",
-                    "captured_at": "2026-10-20T10:01:47.391Z",
-                    "summary": "核查 index.js、lib/glab.js；入口注册四项工具，lib/glab.js固定子命令并限制条数、超时和输出字符，依赖glab已有认证。",
-                    "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-glab/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:22:21.224Z",
+                    "summary": "核查 README.md、package.json、index.js、lib/glab.js、test/glab.test.js；固定CLI argv加state/repo验证，JSON挑字段和CI文本返回。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-glab/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "抽读注册和glab命令路径；未连接GitLab或执行目标测试。 固定checkout的注册候选与关键主张定向抽读；未逐行完整审阅全部源码、测试、依赖及外部参照，未运行目标代码。评分仅针对文中明确的CLI/API/人工流程参照；跨场景迁移为解释性判断。",
+                        "完整139行入口/181行glab/6行测试及README/package；不执行CLI/真实认证或访问GitLab。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +104,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "使用GitLab的开发者希望在DSH内查看协作对象及流水线，而不手工复制CLI长输出。",
+                    "text": "已认证GitLab开发者查询项目协作状态。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1381859919-root-source"
+                        "2026-10-22-02-github-1381859919-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +115,16 @@
                             "fingerprint": "305794fc429ad5fa43be6e6e6f3fb9abd80c135f"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:47.391Z",
+                    "reviewed_at": "2026-10-22T09:22:21.224Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "入口注册四项工具，lib/glab.js固定子命令并限制条数、超时和输出字符，依赖glab已有认证。",
+                    "text": "固定CLI argv加state/repo验证，JSON挑字段和CI文本返回。",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1381859919-root-source"
+                        "2026-10-22-02-github-1381859919-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +133,16 @@
                             "fingerprint": "305794fc429ad5fa43be6e6e6f3fb9abd80c135f"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:47.391Z",
+                    "reviewed_at": "2026-10-22T09:22:21.224Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "抽读注册和glab命令路径；未连接GitLab或执行目标测试。 固定checkout的注册候选与关键主张定向抽读；未逐行完整审阅全部源码、测试、依赖及外部参照，未运行目标代码。评分仅针对文中明确的CLI/API/人工流程参照；跨场景迁移为解释性判断。",
+                    "text": "完整139行入口/181行glab/6行测试及README/package；不执行CLI/真实认证或访问GitLab。",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1381859919-root-source"
+                        "2026-10-22-02-github-1381859919-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +151,16 @@
                             "fingerprint": "305794fc429ad5fa43be6e6e6f3fb9abd80c135f"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:47.391Z",
+                    "reviewed_at": "2026-10-22T09:22:21.224Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "固定版本包清单与作者说明已核对；需要Linux glab、可用认证与仓库访问权限；自建GitLab地址及版本兼容未验证。",
+                    "text": "0.1.1 MIT ESM，Node>=18，需glab/bash和既有认证，glab版本未固定，无WSL门。",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1381859919-root-source"
+                        "2026-10-22-02-github-1381859919-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +169,16 @@
                             "fingerprint": "305794fc429ad5fa43be6e6e6f3fb9abd80c135f"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:47.391Z",
+                    "reviewed_at": "2026-10-22T09:22:21.224Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "现有GitLab与CLI维护成本为主，限量摘要减少返回量但可能增加补查，无实测收益。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | glab/bash、认证与网络资源，金额未知 | 核host/account/repo/固定CLI版本及摘要可外发性，工时未知 | 先核最小GitLab权限，不把认证结果当公开数据 |\n| 持续使用 | CLI/API网络、JSON上下文；不新增插件独立模型调用 | 复核单页完整性、parse与CI退出状态，实际耗时未知 | 最多50项不保证完整；API额度/企业访问费用未知，未有节时对照 |\n| 失败恢复 | 核目标与版本后重新查询；插件不写glab认证配置 | 排查错项目/错误状态；已外发敏感摘要需另行纠正 | 停用无法撤回模型/会话结果；重查金额与纠错工时未知 |\n",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1381859919-root-source"
+                        "2026-10-22-02-github-1381859919-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +187,16 @@
                             "fingerprint": "305794fc429ad5fa43be6e6e6f3fb9abd80c135f"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:47.391Z",
+                    "reviewed_at": "2026-10-22T09:22:21.224Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "先明确目标仓库和GitLab主机，对照一个已知MR核验字段，不把限量列表当全量。",
+                    "text": "先观察，补输出和状态契约再重评。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1381859919-root-source"
+                        "2026-10-22-02-github-1381859919-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +205,16 @@
                             "fingerprint": "305794fc429ad5fa43be6e6e6f3fb9abd80c135f"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:47.391Z",
+                    "reviewed_at": "2026-10-22T09:22:21.224Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "把GitLab CLI的只读子集结构化接入Agent；主要增量是输出整形与调用约束，未发现新的协作流程机制。 列表按单页和条数上限返回，截断或一页结果不能支持仓库全量统计；ci status与当前待审提交的对应关系需额外核对。",
+                    "text": "#### 效果\n\n| 目标 | 支持 | 边界 |\n| --- | --- | --- |\n| 列表概览 | 单页挑字段 | parse失败可假空 |\n| CI查询 | 输出/exitCode | ok非通过 |\n| 认证提示 | 有限正则 | 非无秘密保证 |",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1381859919-root-source"
+                        "2026-10-22-02-github-1381859919-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +223,16 @@
                             "fingerprint": "305794fc429ad5fa43be6e6e6f3fb9abd80c135f"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:47.391Z",
+                    "reviewed_at": "2026-10-22T09:22:21.224Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "固定子命令、参数数组与超时封装可借鉴，分页与JSON失败回退需保留可见性。",
+                    "text": "固定读命令边界明确，测试不足以守脱敏/CLI/降级，需显式状态。详见[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1381859919-root-source"
+                        "2026-10-22-02-github-1381859919-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,15 +241,69 @@
                             "fingerprint": "305794fc429ad5fa43be6e6e6f3fb9abd80c135f"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:47.391Z",
+                    "reviewed_at": "2026-10-22T09:22:21.224Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "把常见GitLab读取命令统一到模型摘要入口。详见[Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1381859919-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381859919:root",
+                            "area": "code",
+                            "fingerprint": "305794fc429ad5fa43be6e6e6f3fb9abd80c135f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:22:21.224Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "supported",
+                    "text": "auth正则可能漏空格分隔秘密，issue parse失败render假空，CI错误包装ok，项目和CLI版本隐式。详见[Q03](#research-q03)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1381859919-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381859919:root",
+                            "area": "code",
+                            "fingerprint": "305794fc429ad5fa43be6e6e6f3fb9abd80c135f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:22:21.224Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "engineering",
+                    "basis": "unverified",
+                    "text": "研究白名单认证摘要/显式项目来源与parse-partial状态契约，对照假空和敏感外发，尚未验证。详见[Q05](#research-q05)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1381859919-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381859919:root",
+                            "area": "code",
+                            "fingerprint": "305794fc429ad5fa43be6e6e6f3fb9abd80c135f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:22:21.224Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-20T10:01:47.391Z",
+            "last_checked_at": "2026-10-22T09:22:21.224Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "305794fc429ad5fa43be6e6e6f3fb9abd80c135f",
-                "reviewed_at": "2026-10-20T10:01:47.391Z",
+                "reviewed_at": "2026-10-22T09:22:21.224Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -223,59 +317,59 @@
                         "novelty": 9,
                         "mechanism": 8,
                         "transferability": 5,
-                        "simplification": 4
+                        "simplification": 8
                     },
-                    "rationale": "novelty：glab常见查询封装；mechanism：参数固定和输出截断为常规约束；transferability：执行器可迁移但CLI字段耦合；simplification：摘要减少返回量，分页缺口仍存。",
+                    "rationale": "novelty小幅，CLI连接常见；mechanism小幅，参数/JSON映射；transferability小幅，glab版本绑定；simplification实质，少手工复制。",
                     "basis": "interpretation",
-                    "score": 26,
+                    "score": 30,
                     "evidence_ids": [
-                        "2026-10-20-07-github-1381859919-root-source"
+                        "2026-10-22-02-github-1381859919-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
                         "workflow": 9,
-                        "delivery": 0,
+                        "delivery": 8,
                         "reach": 5,
-                        "economics": null
+                        "economics": 4
                     },
-                    "rationale": "workflow：少量集中MR/Issue/CI查询；delivery：仍为原协作对象信息；reach：向DSH暴露CLI已有查询；economics：缺补查次数与维护成本测量。",
+                    "rationale": "workflow取9，参照手工glab列表/CI查询，只做入口统一而未改变协作责任；delivery取8，MR/issue字段摘要和CI输出进入统一结构化模型结果，较原始CLI复制有小幅交付格式增量，未形成新的审查或发布成果，parse和退出码展示仍受限；reach取5，适用已具GitLab账户和CLI的人群，新增可达范围有限；economics取4，减少手动复制/整理步骤而费用节省未量化。delivery评价现有结果形态，不以没有运行验收代表零增量。",
                     "basis": "interpretation",
-                    "score": null,
+                    "score": 26,
                     "evidence_ids": [
-                        "2026-10-20-07-github-1381859919-root-source"
+                        "2026-10-22-02-github-1381859919-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "trial",
-                "reason": "GitLab用户可用已知MR试只读封装，核repo主机、分页与流水线提交。",
+                "decision": "observe",
+                "reason": "先补认证输出最小化、解析失败和CI非零状态展示；有限正则与假空降级不宜直接作安全可靠项目概览。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "会话内查MR和流水线的任务具体。"
+                        "rationale": "GitLab状态查询明确。"
                     },
                     "advantage": {
-                        "score": 13,
-                        "rationale": "固定命令与有界输出省整理但不扩展glab流程。"
+                        "score": 6,
+                        "rationale": "少量CLI封装，官方CLI/连接器可替。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "参数和分页限制可查，自建兼容及运行未验。"
+                        "rationale": "固定链可核，CLI版本契约具体未知。"
                     },
                     "cost": {
-                        "score": 15,
-                        "rationale": "已有glab认证时增量成本低，限量结果可能需补查。"
+                        "score": 5,
+                        "rationale": "认证外发和错状态纠正成本。"
                     }
                 },
-                "score": 64,
+                "score": 47,
                 "revision": "305794fc429ad5fa43be6e6e6f3fb9abd80c135f",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T09:22:21.224Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-20-07-github-1381859919-root-source"
+                    "2026-10-22-02-github-1381859919-root-source"
                 ],
                 "dependencies": [
                     {
@@ -300,88 +394,60 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-20T09:36:48.824Z",
-            "analysis_sha256": "5ba0ce591564318d94d260a82f3f36576731423ad4ef191bd2d58eb3e22c881f"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "7b680b733c2083c628d409460b82529811cf13256556e918df811560fc51dd22"
         },
         "publication.metadata": "data/plugins/173787247--dsh-wsl-glab/META.json",
         "publication.summaries": {
-            "text": "封装glab，查询GitLab合并请求、Issue与流水线状态。",
+            "text": "将glab认证概览、MR/issue单页列表和CI文本接入模型工具，脱敏与错误展示仍有缺口。",
             "revision": "305794fc429ad5fa43be6e6e6f3fb9abd80c135f",
             "source_url": "https://github.com/173787247/dsh-wsl-glab/blob/305794fc429ad5fa43be6e6e6f3fb9abd80c135f/README.md"
         },
         "publication.capabilities": {
             "revision": "305794fc429ad5fa43be6e6e6f3fb9abd80c135f",
             "items": {
-                "模型工具": "glab_status、MR列表、Issue列表与CI状态查询。"
-            }
+                "模型工具": "四个固定glab状态/列表/CI读取入口"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| `glab_status` | 查CLI版本与认证摘要 | 依本地CLI/账户；有限脱敏不保证任意格式无秘密 |\n| `glab_mr_list` | 查询MR单页字段摘要 | 核host/repo和CLI版本；JSON失败回raw，最多50非完整清单 |\n| `glab_issue_list` | 查询issue单页摘要 | JSON失败可能在render显示none，不能直接断言无issue |\n| `glab_ci_status` | 读取CI状态文本和退出码 | 任意非零仍包装ok，需区分管线失败/认证/网络错误 |"
         },
         "publication.advice": {
             "revision": "305794fc429ad5fa43be6e6e6f3fb9abd80c135f",
-            "text": "先明确目标仓库和GitLab主机，对照一个已知MR核验字段，不把限量列表当全量。"
+            "text": "先观察，补输出和状态契约再重评。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/173787247--dsh-wsl-glab",
-        "reports": "# dsh-wsl-glab\n\n> 封装glab，查询GitLab合并请求、Issue与流水线状态。\n\n## 研究范围\n\n- **仓库**：[173787247/dsh-wsl-glab](https://github.com/173787247/dsh-wsl-glab)\n- **版本号**：0.1.1（[固定提交 305794fc429ad5fa43be6e6e6f3fb9abd80c135f](https://github.com/173787247/dsh-wsl-glab/tree/305794fc429ad5fa43be6e6e6f3fb9abd80c135f)）\n- **版本日期**：2026-09-30（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已有贡献：把GitLab CLI的只读子集结构化接入Agent；主要增量是输出整形与调用约束，未发现新的协作流程机制。\n\n结论边界：本次为固定版本源码核查，未执行目标代码或真实宿主验收，未核实独立使用效果。下文设计假设均未验证。\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：使用GitLab的开发者希望在DSH内查看协作对象及流水线，而不手工复制CLI长输出。\n- **亮点**：把GitLab CLI的只读子集结构化接入Agent；主要增量是输出整形与调用约束，未发现新的协作流程机制。\n- **思考**：列表按单页和条数上限返回，截断或一页结果不能支持仓库全量统计；ci status与当前待审提交的对应关系需额外核对。\n- **建议**：本次未形成新的创新假设；先检查分页完整性与流水线提交绑定，避免将展示便利当成验收。\n\n采用建议：先明确目标仓库和GitLab主机，对照一个已知MR核验字段，不把限量列表当全量。\n\n## 核心贡献\n\n把GitLab CLI的只读子集结构化接入Agent；主要增量是输出整形与调用约束，未发现新的协作流程机制。\n\n## 关键质疑\n\n列表按单页和条数上限返回，截断或一页结果不能支持仓库全量统计；ci status与当前待审提交的对应关系需额外核对。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n本次未形成新的创新假设；先检查分页完整性与流水线提交绑定，避免将展示便利当成验收。\n\n在超过50个对象的仓库对照glab原始分页，核对条数、字段、权限错误及运行对应提交。\n\n## 场景与替代办法\n\n使用GitLab的开发者希望在DSH内查看协作对象及流水线，而不手工复制CLI长输出。\n\n直接运行glab或GitLab网页；封装只覆盖有限查询。\n\n## 依赖与流程\n\n需要Linux glab、可用认证与仓库访问权限；自建GitLab地址及版本兼容未验证。\n\n先查glab状态，再指定repo读取MR或Issue，并打开具体对象复核流水线。\n\n## 成本与效果\n\n现有GitLab与CLI维护成本为主，限量摘要减少返回量但可能增加补查，无实测收益。\n\n把GitLab CLI的只读子集结构化接入Agent；主要增量是输出整形与调用约束，未发现新的协作流程机制。 列表按单页和条数上限返回，截断或一页结果不能支持仓库全量统计；ci status与当前待审提交的对应关系需额外核对。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：66ba324c4c0ac59143e081d111e3c1cabe6434e7ac4e7cdd197837b1402695ac。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 4 | 118 | — | — | 485 |\n| .js | source | 2 | 320 | 299 | 4 | — |\n| .js | test | 1 | 6 | 6 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **模型工具**：glab_status、MR列表、Issue列表与CI状态查询。\n\n## 工程亮点\n\n固定子命令、参数数组与超时封装可借鉴，分页与JSON失败回退需保留可见性。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 index.js、lib/glab.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读注册和glab命令路径；未连接GitLab或执行目标测试。 固定checkout的注册候选与关键主张定向抽读；未逐行完整审阅全部源码、测试、依赖及外部参照，未运行目标代码。评分仅针对文中明确的CLI/API/人工流程参照；跨场景迁移为解释性判断。\n- 下一步：在超过50个对象的仓库对照glab原始分页，核对条数、字段、权限错误及运行对应提交。\n",
+        "reports": "# dsh-wsl-glab\n\n> 将glab认证概览、MR/issue单页列表和CI文本接入模型工具，脱敏与错误展示仍有缺口。\n\n## 研究范围\n\n- **仓库**：[173787247/dsh-wsl-glab](https://github.com/173787247/dsh-wsl-glab)\n- **版本号**：0.1.1（[固定提交 305794fc429ad5fa43be6e6e6f3fb9abd80c135f](https://github.com/173787247/dsh-wsl-glab/tree/305794fc429ad5fa43be6e6e6f3fb9abd80c135f)）\n- **版本日期**：2026-09-30（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定读入口可核，auth有限正则、issue假空降级与CI非零ok需改善。\n\n## 洞察短评\n\n- **用途**：已认证GitLab开发者查询项目协作状态。详见[Q01](#research-q01)。\n- **亮点**：把常见GitLab读取命令统一到模型摘要入口。详见[Q01](#research-q01)。\n- **思考**：auth正则可能漏空格分隔秘密，issue parse失败render假空，CI错误包装ok，项目和CLI版本隐式。详见[Q03](#research-q03)。\n- **建议**：研究白名单认证摘要/显式项目来源与parse-partial状态契约，对照假空和敏感外发，尚未验证。详见[Q05](#research-q05)。\n\n采用建议：先观察，补输出和状态契约再重评。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n把常见GitLab读取命令统一到模型摘要入口。详见[Q01](#research-q01)。\n\n## 关键质疑\n\nauth正则可能漏空格分隔秘密，issue parse失败render假空，CI错误包装ok，项目和CLI版本隐式。详见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n研究白名单认证摘要/显式项目来源与parse-partial状态契约，对照假空和敏感外发，尚未验证。详见[Q05](#research-q05)。\n\n以虚构token格式/截断JSON/非零CI及多项目反例核状态契约。\n\n## 场景与替代办法\n\n已认证GitLab开发者查询项目协作状态。详见[Q01](#research-q01)。\n\n官方glab/连接器只读查询，插件不完成评审发布。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 条件 | 用途 | 失效影响 |\n| --- | --- | --- |\n| Node/tools | 入口 | ABI匹配 |\n| glab/bash版本 | CLI/定位 | flag/JSON依版本 |\n| host/account/repo | 目标 | 隐式环境可能错 |\n| GitLab网络/权限 | 查询 | 非零不可当业务正常 |\n\n#### 启动步骤\n\n| 步骤 | 执行者 | 判断标准 |\n| --- | --- | --- |\n| 本地核认证摘要 | 用户 | 无敏感值外发 |\n| 指定目标/版本 | 用户 | host/project清楚 |\n| 查列表/CI | 工具 | 看原始状态/parse |\n| 业务判断 | 用户 | 不按ok或空列表断言 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | glab/bash、认证与网络资源，金额未知 | 核host/account/repo/固定CLI版本及摘要可外发性，工时未知 | 先核最小GitLab权限，不把认证结果当公开数据 |\n| 持续使用 | CLI/API网络、JSON上下文；不新增插件独立模型调用 | 复核单页完整性、parse与CI退出状态，实际耗时未知 | 最多50项不保证完整；API额度/企业访问费用未知，未有节时对照 |\n| 失败恢复 | 核目标与版本后重新查询；插件不写glab认证配置 | 排查错项目/错误状态；已外发敏感摘要需另行纠正 | 停用无法撤回模型/会话结果；重查金额与纠错工时未知 |\n\n\n#### 效果\n\n| 目标 | 支持 | 边界 |\n| --- | --- | --- |\n| 列表概览 | 单页挑字段 | parse失败可假空 |\n| CI查询 | 输出/exitCode | ok非通过 |\n| 认证提示 | 有限正则 | 非无秘密保证 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**固定glab只读封装能否可靠呈现目标/认证/列表/CI状态，脱敏和降级边界是什么？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · GitLab封装面向什么场景，是否能写远端？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n面向已装并认证glab的开发者，让模型查MR/issue列表和CI状态，不开放创建、合并、评论或通用api命令。入口只构造专用读命令，认证走既有CLI环境，插件不要求把token作为工具参数。贡献是把常用列表挑字段接进模型工具，基线是手动glab或连接器，不是新的GitLab协作/审核机制。\n\n所谓read-only来自暴露的固定命令，不是WRITE集合的动态拦截；WRITE最终void未被检查，但也没有通用执行工具，不能据此声称已有写入入口。CI查询返回进程输出和exitCode，ok不是流水线成功或发布验收。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:5-34](https://github.com/173787247/dsh-wsl-glab/blob/305794fc429ad5fa43be6e6e6f3fb9abd80c135f/README.md#L5-L34)\n\n作者用途和不写边界。\n\n<details>\n<summary>查看原文（30行）</summary>\n\n````text\nGitLab CLI（glab）只读：MR / issue / ci status。\n\n| | |\n|---|---|\n| 版本 | **0.1.0** |\n| 套件 | [dsh-wsl-kit](https://github.com/173787247/dsh-wsl-kit) **可选**，不在 `install.sh` |\n\n## 安装\n\n```sh\ndsh plugin --profile web add github:173787247/dsh-wsl-glab\n# 或本机 path：\n# dsh plugin --profile web add /mnt/c/Users/YOU/Desktop/AIFullStackDevelopment/dsh-wsl-glab\n```\n\nkit 批量链接（可选）：`bash dsh-wsl-kit/scripts/link-linux-plugins.sh`\n\n## 工具\n\n| 工具 | 作用 |\n|------|------|\n| `glab_status` | glab 版本 |\n| `glab_mr_list` | MR 列表 |\n| `glab_issue_list` | Issue 列表 |\n| `glab_ci_status` | 流水线状态 |\n\n## 配置要点\n\n`timeoutMs`\n\n````\n\n</details>\n\n**依据 2 · 源码核查**：[index.js:20-137](https://github.com/173787247/dsh-wsl-glab/blob/305794fc429ad5fa43be6e6e6f3fb9abd80c135f/index.js#L20-L137)\n\n四固定工具。\n\n<details>\n<summary>查看原文（118行）</summary>\n\n```text\n  ctx.tools.register({\n    name: \"glab_status\",\n    description: \"Whether glab is on PATH; version + auth status summary (never returns tokens).\",\n    parameters: { type: \"object\", additionalProperties: false, properties: {} },\n    output: { schema: { type: \"object\", additionalProperties: true }, render: (_a, v) => [{ type: \"text\", text: JSON.stringify(v, null, 2) }] },\n    timeoutMs: 15_000,\n    isConcurrencySafe: () => true,\n    async execute() {\n      return glabStatus();\n    },\n    presentCall: () => ({ card: \"generic\", title: \"glab status\" }),\n    presentResult: (_a, r) => ({ card: \"generic\", title: \"glab status\", content: r.content }),\n  });\n\n  ctx.tools.register({\n    name: \"glab_mr_list\",\n    description: \"List merge requests (json summary). Optional repo path group/project.\",\n    parameters: {\n      type: \"object\",\n      additionalProperties: false,\n      properties: {\n        state: { type: \"string\" },\n        limit: { type: \"number\" },\n        repo: { type: \"string\" },\n      },\n    },\n    output: {\n      schema: { type: \"object\", additionalProperties: true },\n      render: (_a, v) => [\n        {\n          type: \"text\",\n          text:\n            v.ok === false\n              ? v.error\n              : (v.mrs || []).map((m) => `!${m.iid} ${m.state} ${m.title}\\n${m.web_url}`).join(\"\\n\\n\") ||\n                v.raw ||\n                \"(none)\",\n        },\n      ],\n    },\n    timeoutMs,\n    isConcurrencySafe: () => true,\n    async execute(args) {\n      try {\n        return await glabMrList({ ...args, timeoutMs });\n      } catch (e) {\n        return { ok: false, error: e instanceof Error ? e.message : String(e) };\n      }\n    },\n    presentCall: () => ({ card: \"generic\", title: \"glab mr list\" }),\n    presentResult: (_a, r) => ({ card: \"generic\", title: \"glab mr list\", content: r.content }),\n  });\n\n  ctx.tools.register({\n    name: \"glab_issue_list\",\n    description: \"List issues (json summary).\",\n    parameters: {\n      type: \"object\",\n      additionalProperties: false,\n      properties: {\n        state: { type: \"string\" },\n        limit: { type: \"number\" },\n        repo: { type: \"string\" },\n      },\n    },\n    output: {\n      schema: { type: \"object\", additionalProperties: true },\n      render: (_a, v) => [\n        {\n          type: \"text\",\n          text:\n            v.ok === false\n              ? v.error\n              : (v.issues || []).map((i) => `#${i.iid} ${i.state} ${i.title}\\n${i.web_url}`).join(\"\\n\\n\") || \"(none)\",\n        },\n      ],\n    },\n    timeoutMs,\n    isConcurrencySafe: () => true,\n    async execute(args) {\n      try {\n        return await glabIssueList({ ...args, timeoutMs });\n      } catch (e) {\n        return { ok: false, error: e instanceof Error ? e.message : String(e) };\n      }\n    },\n    presentCall: () => ({ card: \"generic\", title: \"glab issue list\" }),\n    presentResult: (_a, r) => ({ card: \"generic\", title: \"glab issue list\", content: r.content }),\n  });\n\n  ctx.tools.register({\n    name: \"glab_ci_status\",\n    description: \"glab ci status for current pipeline (read-only summary text).\",\n    parameters: {\n      type: \"object\",\n      additionalProperties: false,\n      properties: { repo: { type: \"string\" } },\n    },\n    output: {\n      schema: { type: \"object\", additionalProperties: true },\n      render: (_a, v) => [{ type: \"text\", text: v.ok === false ? v.error : v.output }],\n    },\n    timeoutMs,\n    isConcurrencySafe: () => true,\n    async execute(args) {\n      try {\n        return await glabCiStatus({ repo: args?.repo, timeoutMs });\n      } catch (e) {\n        return { ok: false, error: e instanceof Error ? e.message : String(e) };\n      }\n    },\n    presentCall: () => ({ card: \"generic\", title: \"glab ci\" }),\n    presentResult: (_a, r) => ({ card: \"generic\", title: \"glab ci\", content: r.content }),\n  });\n}\n\nfunction positive(v, fb) {\n  const n = Number(v);\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/glab.js:48-70](https://github.com/173787247/dsh-wsl-glab/blob/305794fc429ad5fa43be6e6e6f3fb9abd80c135f/lib/glab.js#L48-L70)\n\n未使用WRITE。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n  \"mr\",\n  \"issue\",\n  \"release\",\n  \"repo\",\n  \"label\",\n  \"milestone\",\n  \"snippet\",\n  \"schedule\",\n  \"variable\",\n  \"securefile\",\n  \"deploy-key\",\n  \"ssh-key\",\n  \"token\",\n  \"user\",\n  \"alias\",\n  \"config\",\n  \"auth\",\n  \"api\",\n  \"ci\",\n]);\n\n// Read-ish glab verbs we expose as dedicated tools; block generic shell-out of write commands.\nexport async function glabStatus() {\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/glab.js:141-156](https://github.com/173787247/dsh-wsl-glab/blob/305794fc429ad5fa43be6e6e6f3fb9abd80c135f/lib/glab.js#L141-L156)\n\nCI结果。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n    args.push(\"-R\", repo);\n  }\n  const r = await run(bin, args, { timeoutMs, maxOut });\n  // ci status may exit non-zero when failed — still return output\n  return {\n    ok: true,\n    exitCode: r.code,\n    truncated: r.truncated,\n    output: (r.stdout || r.stderr).trim(),\n  };\n}\n\nexport async function glabIssueList({ state = \"opened\", limit = 20, repo, timeoutMs, maxOut = 40_000 } = {}) {\n  const bin = (await which(\"glab\")) || \"glab\";\n  const n = Math.min(50, Math.max(1, Number(limit) || 20));\n  const args = [\"issue\", \"list\", \"--per-page\", String(n), \"-F\", \"json\"];\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 目标GitLab与返回内容如何确定？\n\n**研究主题：**功能与机制、依赖、兼容与流程\n\n#### 完整回答\n\n通过bash -lc command-v找glab再spawn固定argv，MR/issue限制state枚举与repo字符，limit夹1到50但未取整，单次--per-page并无翻页。repo未填时依赖宿主进程cwd/继承glab环境推当前项目，没有agent cwd/scope、GitLab host或项目允许名单；填repo也只给-R group/project字符形式，具体host由CLI配置决定。用户必须核目标账户/主机，不把当前session等同CLI项目。\n\n版本/认证工具读取CLI version与auth status，auth只汇总而不新登录。MR/issue用-F json和--state等参数，state=all则不加state参数，不显式请求全状态；项目未固定glab版本，实际命令flag及默认状态要与所装版本核对，不能从源码枚举all推已拿全部。Node>=18、gitlab可达网络、glab/bash、既有账户与宿主tools/systemPrompt为依赖，无WSL门。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/glab.js:3-16](https://github.com/173787247/dsh-wsl-glab/blob/305794fc429ad5fa43be6e6e6f3fb9abd80c135f/lib/glab.js#L3-L16)\n\n定位与spawn。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\nexport function which(cmd) {\n  const safe = String(cmd || \"\").replace(/[^a-zA-Z0-9._+-]/g, \"\");\n  if (!safe) return Promise.resolve(\"\");\n  return new Promise((r) => {\n    const child = spawn(\"bash\", [\"-lc\", `command -v ${safe}`], { stdio: [\"ignore\", \"pipe\", \"ignore\"] });\n    let out = \"\";\n    child.stdout.on(\"data\", (d) => (out += d));\n    child.on(\"close\", (c) => r(c === 0 ? out.trim() : \"\"));\n  });\n}\n\nexport function run(bin, args, { timeoutMs = 30_000, maxOut = 80_000, env } = {}) {\n  return new Promise((resolvePromise, reject) => {\n    const child = spawn(bin, args, {\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/glab.js:105-139](https://github.com/173787247/dsh-wsl-glab/blob/305794fc429ad5fa43be6e6e6f3fb9abd80c135f/lib/glab.js#L105-L139)\n\nMR参数/解析。\n\n<details>\n<summary>查看原文（35行）</summary>\n\n```text\n\nexport async function glabMrList({ state = \"opened\", limit = 20, repo, timeoutMs, maxOut = 40_000 } = {}) {\n  const bin = (await which(\"glab\")) || \"glab\";\n  const n = Math.min(50, Math.max(1, Number(limit) || 20));\n  const args = [\"mr\", \"list\", \"--per-page\", String(n), \"-F\", \"json\"];\n  const st = String(state || \"opened\");\n  if (!/^(opened|closed|merged|all)$/.test(st)) throw new Error(\"invalid mr state\");\n  if (st !== \"all\") args.push(\"--state\", st);\n  if (repo) {\n    if (!/^[A-Za-z0-9._/-]+$/.test(repo)) throw new Error(\"invalid repo\");\n    args.push(\"-R\", repo);\n  }\n  const r = await run(bin, args, { timeoutMs, maxOut });\n  if (r.code !== 0) throw new Error(`glab mr list failed: ${r.stderr || r.code}`);\n  let items;\n  try {\n    items = JSON.parse(r.stdout || \"[]\");\n  } catch {\n    return { ok: true, raw: r.stdout, truncated: r.truncated };\n  }\n  const list = (Array.isArray(items) ? items : []).slice(0, n).map((m) => ({\n    iid: m.iid,\n    title: m.title,\n    state: m.state,\n    web_url: m.web_url,\n    source_branch: m.source_branch,\n    target_branch: m.target_branch,\n  }));\n  return { ok: true, count: list.length, mrs: list };\n}\n\nexport async function glabCiStatus({ repo, timeoutMs, maxOut = 40_000 } = {}) {\n  const bin = (await which(\"glab\")) || \"glab\";\n  const args = [\"ci\", \"status\"];\n  if (repo) {\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/glab.js:158-181](https://github.com/173787247/dsh-wsl-glab/blob/305794fc429ad5fa43be6e6e6f3fb9abd80c135f/lib/glab.js#L158-L181)\n\nissue参数。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n  if (!/^(opened|closed|all)$/.test(st)) throw new Error(\"invalid issue state\");\n  if (st !== \"all\") args.push(\"--state\", st);\n  if (repo) {\n    if (!/^[A-Za-z0-9._/-]+$/.test(repo)) throw new Error(\"invalid repo\");\n    args.push(\"-R\", repo);\n  }\n  const r = await run(bin, args, { timeoutMs, maxOut });\n  if (r.code !== 0) throw new Error(`glab issue list failed: ${r.stderr || r.code}`);\n  let items;\n  try {\n    items = JSON.parse(r.stdout || \"[]\");\n  } catch {\n    return { ok: true, raw: r.stdout };\n  }\n  const list = (Array.isArray(items) ? items : []).slice(0, n).map((i) => ({\n    iid: i.iid,\n    title: i.title,\n    state: i.state,\n    web_url: i.web_url,\n  }));\n  return { ok: true, count: list.length, issues: list };\n}\n\nvoid WRITE;\n```\n\n</details>\n\n**依据 4 · 源码核查**：[index.js:33-44](https://github.com/173787247/dsh-wsl-glab/blob/305794fc429ad5fa43be6e6e6f3fb9abd80c135f/index.js#L33-L44)\n\n模型repo/state输入。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n\n  ctx.tools.register({\n    name: \"glab_mr_list\",\n    description: \"List merge requests (json summary). Optional repo path group/project.\",\n    parameters: {\n      type: \"object\",\n      additionalProperties: false,\n      properties: {\n        state: { type: \"string\" },\n        limit: { type: \"number\" },\n        repo: { type: \"string\" },\n      },\n```\n\n</details>\n\n**依据 5 · 源码核查**：[package.json:6-10](https://github.com/173787247/dsh-wsl-glab/blob/305794fc429ad5fa43be6e6e6f3fb9abd80c135f/package.json#L6-L10)\n\nNode。\n\n```text\n  \"repository\": { \"type\": \"git\", \"url\": \"https://github.com/173787247/dsh-wsl-glab.git\" },\n  \"type\": \"module\",\n  \"main\": \"index.js\",\n  \"engines\": { \"node\": \">=18\" },\n  \"scripts\": { \"test\": \"node --test test/*.test.js\" },\n```\n\n#### 缺口\n\n- 目标glab版本的-F/--state/all默认语义及自建GitLab主机解析\n  **影响：**工具生成参数不等已验证兼容或全状态查询\n  **进一步探讨：**读明确版本CLI官方命令契约并用保存的无凭据输出核schema，不凭泛化glab名称推兼容\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 脱敏、解析和成功状态有哪些风险？\n\n**研究主题：**缺陷与关键质疑\n\n#### 完整回答\n\nauth摘要将包含token/oauth/pat的非空白连续串替换，再丢含常见ghp/glpat前缀行，但没有只允许host/user行。若秘密以“Token: 敏感值”空格分隔且无已知前缀，正则只删Token:，后面的值仍留；固定数据流不能支持never returns tokens的无条件说明。本次不调用真实认证、不采任何秘密；这是格式覆盖缺陷。loggedIn还可在exit非0但文字匹配Logged in to时true，需看完整exitCode。\n\nrun先缓冲再截stdout，超过2*maxOut kill，stderr也先无界缓冲后截4000。JSON截断/输出格式变化会parse失败：MR返回ok+raw+truncated，issue返回ok+raw但renderer只读issues，结果可能显示(none)掩盖真实错误原文；parse成功非数组也静默当空。成功列表不保留run.truncated，且只是单页，不是完整清单。\n\nCI任意非零仍ok=true以保失败流水线输出，但认证/网络/未知命令非零也同样包装，render不显示exitCode/truncated。应把“命令结果已返回”和“业务状态正常”分开，不能按工具ok判CI通过。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/glab.js:81-104](https://github.com/173787247/dsh-wsl-glab/blob/305794fc429ad5fa43be6e6e6f3fb9abd80c135f/lib/glab.js#L81-L104)\n\n有限正则和loggedIn。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n  try {\n    const r = await run(glab, [\"auth\", \"status\"], { timeoutMs: 10_000, maxOut: 8_000 });\n    // Strip anything that looks like a token; keep host/user lines only\n    const lines = (r.stdout || r.stderr || \"\")\n      .split(\"\\n\")\n      .map((l) => l.replace(/(token|oauth|pat)[^\\s]*/gi, \"[redacted]\"))\n      .filter((l) => l.trim() && !/ghp_|glpat-|gho_|ghu_/i.test(l))\n      .slice(0, 20);\n    auth = {\n      exitCode: r.code,\n      loggedIn: r.code === 0 || /Logged in to/i.test(lines.join(\"\\n\")),\n      summary: lines.join(\"\\n\").slice(0, 1500),\n    };\n  } catch (e) {\n    auth = { ok: false, error: e instanceof Error ? e.message : String(e) };\n  }\n  return { ok: true, glab, version, auth };\n}\n\nexport async function glabVersion({ timeoutMs } = {}) {\n  const bin = (await which(\"glab\")) || \"glab\";\n  const r = await run(bin, [\"version\"], { timeoutMs: timeoutMs || 10_000, maxOut: 5_000 });\n  return { ok: true, output: (r.stdout || r.stderr).trim() };\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/glab.js:14-45](https://github.com/173787247/dsh-wsl-glab/blob/305794fc429ad5fa43be6e6e6f3fb9abd80c135f/lib/glab.js#L14-L45)\n\n缓冲/截断。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\nexport function run(bin, args, { timeoutMs = 30_000, maxOut = 80_000, env } = {}) {\n  return new Promise((resolvePromise, reject) => {\n    const child = spawn(bin, args, {\n      stdio: [\"ignore\", \"pipe\", \"pipe\"],\n      env: { ...process.env, ...(env || {}) },\n    });\n    let stdout = \"\";\n    let stderr = \"\";\n    const t = setTimeout(() => {\n      child.kill(\"SIGKILL\");\n      reject(new Error(\"timeout\"));\n    }, timeoutMs);\n    child.stdout.on(\"data\", (d) => {\n      stdout += d;\n      if (stdout.length > maxOut * 2) child.kill(\"SIGKILL\");\n    });\n    child.stderr.on(\"data\", (d) => (stderr += d));\n    child.on(\"close\", (code) => {\n      clearTimeout(t);\n      resolvePromise({\n        code,\n        stdout: stdout.slice(0, maxOut),\n        stderr: stderr.slice(0, 4000),\n        truncated: stdout.length > maxOut,\n      });\n    });\n    child.on(\"error\", (e) => {\n      clearTimeout(t);\n      reject(e);\n    });\n  });\n}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/glab.js:122-139](https://github.com/173787247/dsh-wsl-glab/blob/305794fc429ad5fa43be6e6e6f3fb9abd80c135f/lib/glab.js#L122-L139)\n\nMR降级。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n  } catch {\n    return { ok: true, raw: r.stdout, truncated: r.truncated };\n  }\n  const list = (Array.isArray(items) ? items : []).slice(0, n).map((m) => ({\n    iid: m.iid,\n    title: m.title,\n    state: m.state,\n    web_url: m.web_url,\n    source_branch: m.source_branch,\n    target_branch: m.target_branch,\n  }));\n  return { ok: true, count: list.length, mrs: list };\n}\n\nexport async function glabCiStatus({ repo, timeoutMs, maxOut = 40_000 } = {}) {\n  const bin = (await which(\"glab\")) || \"glab\";\n  const args = [\"ci\", \"status\"];\n  if (repo) {\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/glab.js:168-181](https://github.com/173787247/dsh-wsl-glab/blob/305794fc429ad5fa43be6e6e6f3fb9abd80c135f/lib/glab.js#L168-L181)\n\nissue降级。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n    items = JSON.parse(r.stdout || \"[]\");\n  } catch {\n    return { ok: true, raw: r.stdout };\n  }\n  const list = (Array.isArray(items) ? items : []).slice(0, n).map((i) => ({\n    iid: i.iid,\n    title: i.title,\n    state: i.state,\n    web_url: i.web_url,\n  }));\n  return { ok: true, count: list.length, issues: list };\n}\n\nvoid WRITE;\n```\n\n</details>\n\n**依据 5 · 源码核查**：[index.js:82-93](https://github.com/173787247/dsh-wsl-glab/blob/305794fc429ad5fa43be6e6e6f3fb9abd80c135f/index.js#L82-L93)\n\nissue render丢raw。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n        repo: { type: \"string\" },\n      },\n    },\n    output: {\n      schema: { type: \"object\", additionalProperties: true },\n      render: (_a, v) => [\n        {\n          type: \"text\",\n          text:\n            v.ok === false\n              ? v.error\n              : (v.issues || []).map((i) => `#${i.iid} ${i.state} ${i.title}\\n${i.web_url}`).join(\"\\n\\n\") || \"(none)\",\n```\n\n</details>\n\n**依据 6 · 源码核查**：[lib/glab.js:141-156](https://github.com/173787247/dsh-wsl-glab/blob/305794fc429ad5fa43be6e6e6f3fb9abd80c135f/lib/glab.js#L141-L156)\n\n非零CI仍ok。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n    args.push(\"-R\", repo);\n  }\n  const r = await run(bin, args, { timeoutMs, maxOut });\n  // ci status may exit non-zero when failed — still return output\n  return {\n    ok: true,\n    exitCode: r.code,\n    truncated: r.truncated,\n    output: (r.stdout || r.stderr).trim(),\n  };\n}\n\nexport async function glabIssueList({ state = \"opened\", limit = 20, repo, timeoutMs, maxOut = 40_000 } = {}) {\n  const bin = (await which(\"glab\")) || \"glab\";\n  const n = Math.min(50, Math.max(1, Number(limit) || 20));\n  const args = [\"issue\", \"list\", \"--per-page\", String(n), \"-F\", \"json\"];\n```\n\n</details>\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 测试、超时和使用成本如何判断？\n\n**研究主题：**效果与总成本、工程质量与复用\n\n#### 完整回答\n\n6行测试直接调用glabStatus只断言ok=true，机器缺glab时也ok，因此不验证真实列表/CI、CLI参数、脱敏和解析。固定argv与参数字符约束是积极工程边界；没有shell拼用户repo，但which本身无error监听/timeout，缺bash或登录脚本卡住可能先于run预算。status版本最多8秒、auth10秒，加两次which，外层15秒，未统一deadline/取消signal。列表每个CLI局部timeout也没有宿主abort透传。\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | glab/bash、认证与网络资源，金额未知 | 核host/account/repo/固定CLI版本及摘要可外发性，工时未知 | 先核最小GitLab权限，不把认证结果当公开数据 |\n| 持续使用 | CLI/API网络、JSON上下文；不新增插件独立模型调用 | 复核单页完整性、parse与CI退出状态，实际耗时未知 | 最多50项不保证完整；API额度/企业访问费用未知，未有节时对照 |\n| 失败恢复 | 核目标与版本后重新查询；插件不写glab认证配置 | 排查错项目/错误状态；已外发敏感摘要需另行纠正 | 停用无法撤回模型/会话结果；重查金额与纠错工时未知 |\n\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[test/glab.test.js:1-6](https://github.com/173787247/dsh-wsl-glab/blob/305794fc429ad5fa43be6e6e6f3fb9abd80c135f/test/glab.test.js#L1-L6)\n\n仅status ok。\n\n```text\nimport { describe, it } from \"node:test\";\nimport assert from \"node:assert/strict\";\nimport { glabStatus } from \"../lib/glab.js\";\ndescribe(\"glab\", () => {\n  it(\"status shape\", async () => { assert.equal((await glabStatus()).ok, true); });\n});\n```\n\n**依据 2 · 源码核查**：[lib/glab.js:3-11](https://github.com/173787247/dsh-wsl-glab/blob/305794fc429ad5fa43be6e6e6f3fb9abd80c135f/lib/glab.js#L3-L11)\n\nwhich无error/timeout。\n\n```text\nexport function which(cmd) {\n  const safe = String(cmd || \"\").replace(/[^a-zA-Z0-9._+-]/g, \"\");\n  if (!safe) return Promise.resolve(\"\");\n  return new Promise((r) => {\n    const child = spawn(\"bash\", [\"-lc\", `command -v ${safe}`], { stdio: [\"ignore\", \"pipe\", \"ignore\"] });\n    let out = \"\";\n    child.stdout.on(\"data\", (d) => (out += d));\n    child.on(\"close\", (c) => r(c === 0 ? out.trim() : \"\"));\n  });\n```\n\n**依据 3 · 源码核查**：[lib/glab.js:73-104](https://github.com/173787247/dsh-wsl-glab/blob/305794fc429ad5fa43be6e6e6f3fb9abd80c135f/lib/glab.js#L73-L104)\n\nstatus串联预算。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\n  let version = null;\n  let auth = null;\n  try {\n    const ver = await glabVersion({ timeoutMs: 8_000 });\n    version = ver.output || null;\n  } catch {\n    /* ignore */\n  }\n  try {\n    const r = await run(glab, [\"auth\", \"status\"], { timeoutMs: 10_000, maxOut: 8_000 });\n    // Strip anything that looks like a token; keep host/user lines only\n    const lines = (r.stdout || r.stderr || \"\")\n      .split(\"\\n\")\n      .map((l) => l.replace(/(token|oauth|pat)[^\\s]*/gi, \"[redacted]\"))\n      .filter((l) => l.trim() && !/ghp_|glpat-|gho_|ghu_/i.test(l))\n      .slice(0, 20);\n    auth = {\n      exitCode: r.code,\n      loggedIn: r.code === 0 || /Logged in to/i.test(lines.join(\"\\n\")),\n      summary: lines.join(\"\\n\").slice(0, 1500),\n    };\n  } catch (e) {\n    auth = { ok: false, error: e instanceof Error ? e.message : String(e) };\n  }\n  return { ok: true, glab, version, auth };\n}\n\nexport async function glabVersion({ timeoutMs } = {}) {\n  const bin = (await which(\"glab\")) || \"glab\";\n  const r = await run(bin, [\"version\"], { timeoutMs: timeoutMs || 10_000, maxOut: 5_000 });\n  return { ok: true, output: (r.stdout || r.stderr).trim() };\n}\n```\n\n</details>\n\n**依据 4 · 源码核查**：[index.js:20-27](https://github.com/173787247/dsh-wsl-glab/blob/305794fc429ad5fa43be6e6e6f3fb9abd80c135f/index.js#L20-L27)\n\n外层15秒。\n\n```text\n  ctx.tools.register({\n    name: \"glab_status\",\n    description: \"Whether glab is on PATH; version + auth status summary (never returns tokens).\",\n    parameters: { type: \"object\", additionalProperties: false, properties: {} },\n    output: { schema: { type: \"object\", additionalProperties: true }, render: (_a, v) => [{ type: \"text\", text: JSON.stringify(v, null, 2) }] },\n    timeoutMs: 15_000,\n    isConcurrencySafe: () => true,\n    async execute() {\n```\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 当前是否推荐，继续研究从哪里着手？\n\n**研究主题：**新假设与验证、采用判断\n\n#### 完整回答\n\n先观察。常见列表封装便利，但认证摘要有限脱敏、issue解析失败假空和CI非零ok的展示语义，会使“安全只读概览”不够可靠；无需拿未冒烟当理由。若读者仅查明确非敏感项目，也先核CLI固定版本、host/repo和原始状态，别按(none)/ok当无事项或CI通过。\n\n继续可研究auth输出严格最小字段白名单或仅结构化布尔、显式项目来源/host、parse-error与partial状态以及CLI版本契约。基线为当前正则/空数组降级，反例为虚构空格分隔token、非数组JSON、超长截断、CLI参数不支持、all默认、认证失败CI与A/B项目切换。比较敏感片段泄露、假空/假绿和查询恢复时间，尚未验证。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/glab.js:81-104](https://github.com/173787247/dsh-wsl-glab/blob/305794fc429ad5fa43be6e6e6f3fb9abd80c135f/lib/glab.js#L81-L104)\n\n脱敏基线。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n  try {\n    const r = await run(glab, [\"auth\", \"status\"], { timeoutMs: 10_000, maxOut: 8_000 });\n    // Strip anything that looks like a token; keep host/user lines only\n    const lines = (r.stdout || r.stderr || \"\")\n      .split(\"\\n\")\n      .map((l) => l.replace(/(token|oauth|pat)[^\\s]*/gi, \"[redacted]\"))\n      .filter((l) => l.trim() && !/ghp_|glpat-|gho_|ghu_/i.test(l))\n      .slice(0, 20);\n    auth = {\n      exitCode: r.code,\n      loggedIn: r.code === 0 || /Logged in to/i.test(lines.join(\"\\n\")),\n      summary: lines.join(\"\\n\").slice(0, 1500),\n    };\n  } catch (e) {\n    auth = { ok: false, error: e instanceof Error ? e.message : String(e) };\n  }\n  return { ok: true, glab, version, auth };\n}\n\nexport async function glabVersion({ timeoutMs } = {}) {\n  const bin = (await which(\"glab\")) || \"glab\";\n  const r = await run(bin, [\"version\"], { timeoutMs: timeoutMs || 10_000, maxOut: 5_000 });\n  return { ok: true, output: (r.stdout || r.stderr).trim() };\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/glab.js:122-181](https://github.com/173787247/dsh-wsl-glab/blob/305794fc429ad5fa43be6e6e6f3fb9abd80c135f/lib/glab.js#L122-L181)\n\n解析/状态基线。\n\n<details>\n<summary>查看原文（60行）</summary>\n\n```text\n  } catch {\n    return { ok: true, raw: r.stdout, truncated: r.truncated };\n  }\n  const list = (Array.isArray(items) ? items : []).slice(0, n).map((m) => ({\n    iid: m.iid,\n    title: m.title,\n    state: m.state,\n    web_url: m.web_url,\n    source_branch: m.source_branch,\n    target_branch: m.target_branch,\n  }));\n  return { ok: true, count: list.length, mrs: list };\n}\n\nexport async function glabCiStatus({ repo, timeoutMs, maxOut = 40_000 } = {}) {\n  const bin = (await which(\"glab\")) || \"glab\";\n  const args = [\"ci\", \"status\"];\n  if (repo) {\n    if (!/^[A-Za-z0-9._/-]+$/.test(repo)) throw new Error(\"invalid repo\");\n    args.push(\"-R\", repo);\n  }\n  const r = await run(bin, args, { timeoutMs, maxOut });\n  // ci status may exit non-zero when failed — still return output\n  return {\n    ok: true,\n    exitCode: r.code,\n    truncated: r.truncated,\n    output: (r.stdout || r.stderr).trim(),\n  };\n}\n\nexport async function glabIssueList({ state = \"opened\", limit = 20, repo, timeoutMs, maxOut = 40_000 } = {}) {\n  const bin = (await which(\"glab\")) || \"glab\";\n  const n = Math.min(50, Math.max(1, Number(limit) || 20));\n  const args = [\"issue\", \"list\", \"--per-page\", String(n), \"-F\", \"json\"];\n  const st = String(state || \"opened\");\n  if (!/^(opened|closed|all)$/.test(st)) throw new Error(\"invalid issue state\");\n  if (st !== \"all\") args.push(\"--state\", st);\n  if (repo) {\n    if (!/^[A-Za-z0-9._/-]+$/.test(repo)) throw new Error(\"invalid repo\");\n    args.push(\"-R\", repo);\n  }\n  const r = await run(bin, args, { timeoutMs, maxOut });\n  if (r.code !== 0) throw new Error(`glab issue list failed: ${r.stderr || r.code}`);\n  let items;\n  try {\n    items = JSON.parse(r.stdout || \"[]\");\n  } catch {\n    return { ok: true, raw: r.stdout };\n  }\n  const list = (Array.isArray(items) ? items : []).slice(0, n).map((i) => ({\n    iid: i.iid,\n    title: i.title,\n    state: i.state,\n    web_url: i.web_url,\n  }));\n  return { ok: true, count: list.length, issues: list };\n}\n\nvoid WRITE;\n```\n\n</details>\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：66ba324c4c0ac59143e081d111e3c1cabe6434e7ac4e7cdd197837b1402695ac。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 4 | 118 | — | — | 485 |\n| .js | source | 2 | 320 | 299 | 4 | — |\n| .js | test | 1 | 6 | 6 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| `glab_status` | 查CLI版本与认证摘要 | 依本地CLI/账户；有限脱敏不保证任意格式无秘密 |\n| `glab_mr_list` | 查询MR单页字段摘要 | 核host/repo和CLI版本；JSON失败回raw，最多50非完整清单 |\n| `glab_issue_list` | 查询issue单页摘要 | JSON失败可能在render显示none，不能直接断言无issue |\n| `glab_ci_status` | 读取CI状态文本和退出码 | 任意非零仍包装ok，需区分管线失败/认证/网络错误 |\n\n## 工程亮点\n\n固定读命令边界明确，测试不足以守脱敏/CLI/降级，需显式状态。详见[Q04](#research-q04)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、index.js、lib/glab.js、test/glab.test.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：完整139行入口/181行glab/6行测试及README/package；不执行CLI/真实认证或访问GitLab。\n- 下一步：以虚构token格式/截断JSON/非零CI及多项目反例核状态契约。\n",
         "metadata": {
             "repository": "173787247/dsh-wsl-glab",
             "repository_id": 1381859919,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T07:29:09.128Z",
+            "window_start": "2026-09-22T07:29:09.128Z",
             "stars": 1,
             "pushed_at": "2026-09-30T03:22:08Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-glab%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6401:64792:143C11:21CF72:6AD8497E and timestamp 2026-10-21 05:11:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-glab%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6405:E4386:150478:228305:6AD8497E and timestamp 2026-10-21 05:11:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-glab%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6410:0BD3:9F3FF:107F69:6AD8497E and timestamp 2026-10-21 05:11:27 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-glab%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6415:136889:1555EF:22DB3F:6AD8497F and timestamp 2026-10-21 05:11:27 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-glab%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641E:37D83B:145A74:21D82C:6AD8497F and timestamp 2026-10-21 05:11:27 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "dsh-wsl-glab",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T07:29:18.383Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": null,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-wsl-glab",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-wsl-glab",
                 "error": "HTTP 404",
                 "publication": {
                     "first_published_at": null,
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T07:29:18.383Z",
                     "source_url": "https://registry.npmjs.org/dsh-wsl-glab",
                     "error": "HTTP 404",
                     "latest_version": null,
                     "latest_published_at": null,
                     "latest_error": "HTTP 404"
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "305794fc429ad5fa43be6e6e6f3fb9abd80c135f",
-                "current_revision": "305794fc429ad5fa43be6e6e6f3fb9abd80c135f",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {
@@ -389,14 +455,14 @@
             "repository": "173787247/dsh-wsl-glab",
             "path": "",
             "revision": "305794fc429ad5fa43be6e6e6f3fb9abd80c135f",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "86cb28ef0954109eedb78f93e78a712352fe957d7563455d33dc04a9e1b9d395",
                 "code": "305794fc429ad5fa43be6e6e6f3fb9abd80c135f",
                 "maintenance": "a2ea059e1d53c9789ff51ba6aacce9bac0d7f477fed9fe65e88d6b3a08324b96"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

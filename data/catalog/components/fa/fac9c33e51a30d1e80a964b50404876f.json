@@ -24,36 +24,76 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-02-github-1422328385-root-directory-0",
+                    "id": "2026-10-22-02-github-1422328385-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T03:16:58.591Z",
+                    "retrieved_at": "2026-10-22T06:59:32.059Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-02-github-1422328385-root-author",
+                    "id": "2026-10-22-02-github-1422328385-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/456erddgr/dsh-boo550wt-animation",
+                            "commit": "aeac4c96f33b7947e19b44c36c421185ec2cda1a",
+                            "path": "README.md",
+                            "content_sha256": "67623ceee5718e623a43a8c9ac14f0426c81945f4a611700658093b325c51740"
+                        }
+                    ],
                     "revision": "aeac4c96f33b7947e19b44c36c421185ec2cda1a",
-                    "captured_at": "2026-10-21T03:16:58.591Z",
-                    "summary": "在 DSH 启动时覆盖播放视频，提供跳过、淡出和同源媒体读取。",
-                    "artifact": "data/runs/2026-10-21-02/snapshots/456erddgr--dsh-boo550wt-animation/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T06:59:32.059Z",
+                    "summary": "DSH Desktop/Web 启动前注入视频遮罩并经同源 Range 路由播放的个性化动画。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/456erddgr--dsh-boo550wt-animation/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-02-github-1422328385-root-source",
+                    "id": "2026-10-22-02-github-1422328385-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/lib/index.js",
+                    "url": "https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/456erddgr/dsh-boo550wt-animation",
+                            "commit": "aeac4c96f33b7947e19b44c36c421185ec2cda1a",
+                            "path": "README.md",
+                            "content_sha256": "67623ceee5718e623a43a8c9ac14f0426c81945f4a611700658093b325c51740"
+                        },
+                        {
+                            "repository_url": "https://github.com/456erddgr/dsh-boo550wt-animation",
+                            "commit": "aeac4c96f33b7947e19b44c36c421185ec2cda1a",
+                            "path": "lib/index.js",
+                            "content_sha256": "46d427c1862464f52b984f9f92ac19edaf4f70b9d4ed2c2627603ac5f7611259"
+                        },
+                        {
+                            "repository_url": "https://github.com/456erddgr/dsh-boo550wt-animation",
+                            "commit": "aeac4c96f33b7947e19b44c36c421185ec2cda1a",
+                            "path": "lib/inject.js",
+                            "content_sha256": "ed92c2fa4a4a4bc0f6e3441c2445fd29a5bf69b25f075050e0b9bcf6d83331e7"
+                        },
+                        {
+                            "repository_url": "https://github.com/456erddgr/dsh-boo550wt-animation",
+                            "commit": "aeac4c96f33b7947e19b44c36c421185ec2cda1a",
+                            "path": "lib/media.js",
+                            "content_sha256": "e73587eac7b2926d2852ad1eaa4715a1efdc5fcbcfa978a1c2d310f76a9e1887"
+                        },
+                        {
+                            "repository_url": "https://github.com/456erddgr/dsh-boo550wt-animation",
+                            "commit": "aeac4c96f33b7947e19b44c36c421185ec2cda1a",
+                            "path": "package.json",
+                            "content_sha256": "465374e1723f7b64a611b16c6bcfb9a4a12c2a6d2f06f7b94211a64962113e93"
+                        }
+                    ],
                     "revision": "aeac4c96f33b7947e19b44c36c421185ec2cda1a",
-                    "captured_at": "2026-10-21T03:16:58.591Z",
-                    "summary": "核查 lib/index.js、lib/inject.js、lib/media.js、tools/browser-check.mjs、package.json；lib/index.js通过webserver/index-inject发布样式/脚本，lib/inject.js在body挂视频遮罩并处理Esc/播放降级，lib/media.js通过GET/HEAD与Range服务固定视频。",
-                    "artifact": "data/runs/2026-10-21-02/snapshots/456erddgr--dsh-boo550wt-animation/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T06:59:32.059Z",
+                    "summary": "核查 README.md、lib/index.js、lib/inject.js、lib/media.js、package.json；Host-only 注入 style/body script，路由按 Range 提供视频；浏览器脚本控遮罩、播放、降级、跳过和淡出。详见[Q02](#research-q02)。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/456erddgr--dsh-boo550wt-animation/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "抽读host/inject/media与作者自检源码；未解码素材、未复现截图、未运行浏览器或真实DSH启动。",
+                        "只读核固定提交 README、Host/注入/媒体源码与素材大小；未运行插件、自检、浏览器或目标 Desktop；旧 META 仅复用。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +104,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "希望定制DSH启动视觉的人在应用加载时播放本地视频；交付启动体验，不改变模型任务或业务成果。",
+                    "text": "个人用户为 DSH 开机增加品牌化 550W 风格视频，播毕或 Esc 后进入界面。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1422328385-root-source"
+                        "2026-10-22-02-github-1422328385-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +115,16 @@
                             "fingerprint": "aeac4c96f33b7947e19b44c36c421185ec2cda1a"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:58.591Z",
+                    "reviewed_at": "2026-10-22T06:59:32.059Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "lib/index.js通过webserver/index-inject发布样式/脚本，lib/inject.js在body挂视频遮罩并处理Esc/播放降级，lib/media.js通过GET/HEAD与Range服务固定视频。",
+                    "text": "Host-only 注入 style/body script，路由按 Range 提供视频；浏览器脚本控遮罩、播放、降级、跳过和淡出。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1422328385-root-source"
+                        "2026-10-22-02-github-1422328385-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +133,16 @@
                             "fingerprint": "aeac4c96f33b7947e19b44c36c421185ec2cda1a"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:58.591Z",
+                    "reviewed_at": "2026-10-22T06:59:32.059Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "抽读host/inject/media与作者自检源码；未解码素材、未复现截图、未运行浏览器或真实DSH启动。",
+                    "text": "只读核固定提交 README、Host/注入/媒体源码与素材大小；未运行插件、自检、浏览器或目标 Desktop；旧 META 仅复用。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1422328385-root-source"
+                        "2026-10-22-02-github-1422328385-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +151,16 @@
                             "fingerprint": "aeac4c96f33b7947e19b44c36c421185ec2cda1a"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:58.591Z",
+                    "reviewed_at": "2026-10-22T06:59:32.059Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "host-only bundle，无client构建；依赖webServer注入行与媒体路由，用户视频由固定配置路径读取。",
+                    "text": "作者给 Desktop profile CLI 安装/重启流程，源码带 MIT 许可；实时包可用性未核。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1422328385-root-source"
+                        "2026-10-22-02-github-1422328385-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +169,16 @@
                             "fingerprint": "aeac4c96f33b7947e19b44c36c421185ec2cda1a"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:58.591Z",
+                    "reviewed_at": "2026-10-22T06:59:32.059Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "首次安装重启和选择合法可分发素材；启动额外等待与素材体积是持续成本，视频尾部moov会影响首帧等待。没有现金收益或任务效率测量。",
+                    "text": "#### 成本\n\n| 阶段 | 资源成本 | 人工投入 | 边界 |\n| --- | --- | --- | --- |\n| 安装 | DSH Desktop 与约 12.1MB 素材 | profile 安装/重启 | 版本兼容未测 |\n| 播放 | 视频下载/解码、默认 16.6 秒等待 | 跳过/更换素材 | 首帧、电量未知 |\n| 异常 | 长视频/坏配置可能拖延遮罩 | Esc 或停用配置 | 硬上限缺口 |",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1422328385-root-source"
+                        "2026-10-22-02-github-1422328385-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +187,16 @@
                             "fingerprint": "aeac4c96f33b7947e19b44c36c421185ec2cda1a"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:58.591Z",
+                    "reviewed_at": "2026-10-22T06:59:32.059Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "只想个性化启动画面的人可在可恢复profile试用；先验证Esc和坏视频退出，尤其检查超长或无效时长素材，别把maxSeconds当已验证硬限。",
+                    "text": "个人视觉定制可观察使用；先核 Esc、错误视频和长视频超时，减动效用户宜关闭。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1422328385-root-source"
+                        "2026-10-22-02-github-1422328385-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +205,16 @@
                             "fingerprint": "aeac4c96f33b7947e19b44c36c421185ec2cda1a"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:58.591Z",
+                    "reviewed_at": "2026-10-22T06:59:32.059Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "价值在个人化视觉体验，不能改善模型能力或证明启动提速；遮罩延迟也可能增加等待感。",
+                    "text": "#### 效果\n\n| 效果项 | 源码支持 | 未证实 |\n| --- | --- | --- |\n| 启动遮罩 | 注入视频、淡出 | 所有目标版本时序 |\n| 失败回退 | Esc/错误/静音降级 | 真实自动播放策略 |\n| 硬上限 | 初始 120 秒 guard | metadata 后仍生效，源码否定 |",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1422328385-root-source"
+                        "2026-10-22-02-github-1422328385-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +223,16 @@
                             "fingerprint": "aeac4c96f33b7947e19b44c36c421185ec2cda1a"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:58.591Z",
+                    "reviewed_at": "2026-10-22T06:59:32.059Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "将注入DOM与Range服务分离、真实函数toString生成脚本、避免碰React root有复用价值；多个计时器应分清绝对deadline和媒体估计，资源清理须在异常路径验证。",
+                    "text": "Host-only 注入与 Range 服务可复用；独立硬上限和参数校验应补。详见[Q02](#research-q02)至[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1422328385-root-source"
+                        "2026-10-22-02-github-1422328385-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +241,16 @@
                             "fingerprint": "aeac4c96f33b7947e19b44c36c421185ec2cda1a"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:58.591Z",
+                    "reviewed_at": "2026-10-22T06:59:32.059Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
                     "topic": "technical_innovation",
                     "basis": "interpretation",
-                    "text": "相对客户端加载后再显示动画，本插件使用更早的webserver注入行，尝试在宿主启动就绪之前覆盖首帧，并把视频Range服务与DOM清理集中为host-only组件。时机与接线是DSH适配增量，媒体解码由浏览器完成，不是新视频技术。",
+                    "text": "把启动前遮罩与原生媒体栈结合，不需客户端 bundle；具备跳过与错误退出路径。详见[Q01](#research-q01)和[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1422328385-root-source"
+                        "2026-10-22-02-github-1422328385-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +259,16 @@
                             "fingerprint": "aeac4c96f33b7947e19b44c36c421185ec2cda1a"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:58.591Z",
+                    "reviewed_at": "2026-10-22T06:59:32.059Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "maxSeconds是否真是永远不会锁窗的硬上限？onMetadata先清除初始guard，再用video.duration+graceMs重设；时长超过maxSeconds会延长等待，非有限或无效时长直接return且没有新guard，违背README对硬上限的强表述。Esc仍提供人工退出，但不能拿它替代自动上限；首帧也取决于宿主消费注入行的实际时序。",
+                    "text": "maxSeconds 初始计时器被 metadata 清掉，长视频或无效 duration 可能延迟/失去自动解锁；数值配置未逐项校验。详见[Q03](#research-q03)和[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1422328385-root-source"
+                        "2026-10-22-02-github-1422328385-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +277,16 @@
                             "fingerprint": "aeac4c96f33b7947e19b44c36c421185ec2cda1a"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:58.591Z",
+                    "reviewed_at": "2026-10-22T06:59:32.059Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
                     "topic": "technical_innovation",
                     "basis": "unverified",
-                    "text": "待验证假设：保留独立且不重置的绝对启动deadline，再用较短的媒体时长计时辅助退出，可使失败视频不延迟交接。由onMetadata覆盖guard的缺口推导，尚未实现。用无元数据、无效时长、超长视频与正常视频四组对照检查遮罩关闭时间、Esc和监听清理；要求任何状态不超过固定deadline，代价是长片被截断。",
+                    "text": "未验证方向为独立绝对上限计时器、配置 schema/range、减动效门控和状态路由权限审计。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1422328385-root-source"
+                        "2026-10-22-02-github-1422328385-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +295,15 @@
                             "fingerprint": "aeac4c96f33b7947e19b44c36c421185ec2cda1a"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:58.591Z",
+                    "reviewed_at": "2026-10-22T06:59:32.059Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T03:16:58.591Z",
+            "last_checked_at": "2026-10-22T06:59:32.059Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "aeac4c96f33b7947e19b44c36c421185ec2cda1a",
-                "reviewed_at": "2026-10-21T03:16:58.591Z",
+                "reviewed_at": "2026-10-22T06:59:32.059Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -275,15 +315,15 @@
                 "technical": {
                     "criteria": {
                         "novelty": 9,
-                        "mechanism": 8,
-                        "transferability": 5,
-                        "simplification": 4
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
                     },
-                    "rationale": "novelty 小幅：DSH启动注入适配；mechanism 小幅：标准视频覆盖与Range，硬上限有缺口；transferability 小幅：可迁移启动视觉但需宿主时序；simplification 小幅：host-only无需client构建。",
+                    "rationale": "早期注入与 Range 服务组合可借鉴，但超时边界不足。",
                     "basis": "interpretation",
-                    "score": 26,
+                    "score": 42,
                     "evidence_ids": [
-                        "2026-10-21-02-github-1422328385-root-source"
+                        "2026-10-22-02-github-1422328385-root-source"
                     ]
                 },
                 "business": {
@@ -293,43 +333,43 @@
                         "reach": 5,
                         "economics": 0
                     },
-                    "rationale": "workflow 未识别：不改变任务组织；delivery 小幅：新增启动视觉；reach 小幅：配置视频方便个人定制；economics 未识别：没有成本结构改善。",
+                    "rationale": "偏向个人装饰，无任务效率/经济证据，启动还增加等待。",
                     "basis": "interpretation",
                     "score": 13,
                     "evidence_ids": [
-                        "2026-10-21-02-github-1422328385-root-source"
+                        "2026-10-22-02-github-1422328385-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "observe",
-                "reason": "启动视频可个性化，但maxSeconds并非硬上限且无效时长可能失去自动guard；先修正退出保护再采用。",
+                "reason": "个人装饰可试，但绝对超时与减动效需先修/验证。",
                 "criteria": {
                     "scenario": {
-                        "score": 15,
-                        "rationale": "本地启动视觉用途清楚，业务成果收益有限。"
+                        "score": 8,
+                        "rationale": "有视觉定制需求但非功能必需。"
                     },
                     "advantage": {
                         "score": 6,
-                        "rationale": "较早注入与Range服务有整合便利，不提高模型能力。"
+                        "rationale": "开机前注入与原生媒体服务，替代视频装饰可行。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "onMetadata清guard及按duration重设源码反证硬上限，宿主时序未验。"
+                        "rationale": "固定源码可核，目标 Desktop 未运行。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "素材体积和启动等待持续存在，Esc需人工且不能代自动退出。"
+                        "score": 5,
+                        "rationale": "约 12MB 素材与播放等待可见，性能和维护成本未知。"
                     }
                 },
-                "score": 44,
+                "score": 32,
                 "revision": "aeac4c96f33b7947e19b44c36c421185ec2cda1a",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T06:59:32.059Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-02-github-1422328385-root-source"
+                    "2026-10-22-02-github-1422328385-root-source"
                 ],
                 "dependencies": [
                     {
@@ -354,28 +394,30 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T03:00:27Z",
-            "analysis_sha256": "10cc995bbfa54869c0e36888a49b6c42be414db682b545285970d8e17811a3e9"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "dd155f964c936654157805c3144b5e5633df53659cf455a27f234881e8d50d21"
         },
         "publication.metadata": "data/plugins/456erddgr--dsh-boo550wt-animation/META.json",
         "publication.summaries": {
-            "text": "在 DSH 启动时覆盖播放视频，提供跳过、淡出和同源媒体读取。",
+            "text": "DSH Desktop/Web 启动前注入视频遮罩并经同源 Range 路由播放的个性化动画。",
             "revision": "aeac4c96f33b7947e19b44c36c421185ec2cda1a",
             "source_url": "https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/README.md"
         },
         "publication.capabilities": {
             "revision": "aeac4c96f33b7947e19b44c36c421185ec2cda1a",
             "items": {
-                "Host 路由": "固定视频与状态读取，Range/HEAD处理。",
-                "界面": "启动覆盖、Esc跳过、播放降级和淡出。"
-            }
+                "界面": "启动前视频遮罩、Esc 跳过与淡出",
+                "Host 路由": "视频 GET/HEAD/Range 与状态接口",
+                "事件监听": "webserver/index-inject 注入启动页"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 视频开机 | 个性化体验 | 增加等待/解码 |\n| Range 路由 | 浏览器原生解码 | 宿主代理未联调 |\n| 跳过/超时 | 恢复界面 | maxSeconds 不是绝对上限 |"
         },
         "publication.advice": {
             "revision": "aeac4c96f33b7947e19b44c36c421185ec2cda1a",
-            "text": "只想个性化启动画面的人可在可恢复profile试用；先验证Esc和坏视频退出，尤其检查超长或无效时长素材，别把maxSeconds当已验证硬限。"
+            "text": "个人视觉定制可观察使用；先核 Esc、错误视频和长视频超时，减动效用户宜关闭。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/456erddgr--dsh-boo550wt-animation",
-        "reports": "# dsh-boo550wt-animation\n\n> 在 DSH 启动时覆盖播放视频，提供跳过、淡出和同源媒体读取。\n\n## 使用建议\n\n只想个性化启动画面的人可在可恢复profile试用；先验证Esc和坏视频退出，尤其检查超长或无效时长素材，别把maxSeconds当已验证硬限。\n\n**核查状态**：已抽读固定版本源码，未安装、运行目标插件或真实宿主验收。固定源码支持注入时序、媒体字节服务与跳过设计；作者截图和浏览器自检未在本轮复现，硬上限存在源码疑点。\n\n- **用途**：希望定制DSH启动视觉的人在应用加载时播放本地视频；交付启动体验，不改变模型任务或业务成果。\n- **亮点**：相对客户端加载后再显示动画，本插件使用更早的webserver注入行，尝试在宿主启动就绪之前覆盖首帧，并把视频Range服务与DOM清理集中为host-only组件。时机与接线是DSH适配增量，媒体解码由浏览器完成，不是新视频技术。\n- **思考**：maxSeconds是否真是永远不会锁窗的硬上限？onMetadata先清除初始guard，再用video.duration+graceMs重设；时长超过maxSeconds会延长等待，非有限或无效时长直接return且没有新guard，违背README对硬上限的强表述。Esc仍提供人工退出，但不能拿它替代自动上限；首帧也取决于宿主消费注入行的实际时序。\n- **建议**：待验证假设：保留独立且不重置的绝对启动deadline，再用较短的媒体时长计时辅助退出，可使失败视频不延迟交接。由onMetadata覆盖guard的缺口推导，尚未实现。用无元数据、无效时长、超长视频与正常视频四组对照检查遮罩关闭时间、Esc和监听清理；要求任何状态不超过固定deadline，代价是长片被截断。\n\n## 当前插件分析\n\n### 场景与替代办法\n\n希望定制DSH启动视觉的人在应用加载时播放本地视频；交付启动体验，不改变模型任务或业务成果。\n\n参照普通网页开屏视频与启动后client遮罩；不将作者自检存在当作本轮运行验证。\n\n### 能力、流程与依赖\n\nlib/index.js通过webserver/index-inject发布样式/脚本，lib/inject.js在body挂视频遮罩并处理Esc/播放降级，lib/media.js通过GET/HEAD与Range服务固定视频。\n\n- **Host 路由**：固定视频与状态读取，Range/HEAD处理。\n- **界面**：启动覆盖、Esc跳过、播放降级和淡出。\n\nDSH webServer/index-inject消费时序、浏览器自动播放/编码支持与本地视频可读性；desktop安装路径依发行包而异。\n\nhost注册媒体和注入行→页面挂遮罩→加载播放视频→拒绝有声时尝试静音→结束/Esc/计时退出→淡出并移除监听；错误路径需确认恢复界面。\n\nhost-only bundle，无client构建；依赖webServer注入行与媒体路由，用户视频由固定配置路径读取。\n\n### 效果、成本与限制\n\n价值在个人化视觉体验，不能改善模型能力或证明启动提速；遮罩延迟也可能增加等待感。\n\n首次安装重启和选择合法可分发素材；启动额外等待与素材体积是持续成本，视频尾部moov会影响首帧等待。没有现金收益或任务效率测量。\n\nmaxSeconds是否真是永远不会锁窗的硬上限？onMetadata先清除初始guard，再用video.duration+graceMs重设；时长超过maxSeconds会延长等待，非有限或无效时长直接return且没有新guard，违背README对硬上限的强表述。Esc仍提供人工退出，但不能拿它替代自动上限；首帧也取决于宿主消费注入行的实际时序。\n\n### 核心贡献与工程亮点\n\n相对客户端加载后再显示动画，本插件使用更早的webserver注入行，尝试在宿主启动就绪之前覆盖首帧，并把视频Range服务与DOM清理集中为host-only组件。时机与接线是DSH适配增量，媒体解码由浏览器完成，不是新视频技术。\n\n将注入DOM与Range服务分离、真实函数toString生成脚本、避免碰React root有复用价值；多个计时器应分清绝对deadline和媒体估计，资源清理须在异常路径验证。\n\n源码依据：[lib/index.js](https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/lib/index.js)、[lib/inject.js](https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/lib/inject.js)、[lib/media.js](https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/lib/media.js)、[tools/browser-check.mjs](https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/tools/browser-check.mjs)、[package.json](https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/package.json)。\n\n## 未来设计假设（未验证）\n\n待验证假设：保留独立且不重置的绝对启动deadline，再用较短的媒体时长计时辅助退出，可使失败视频不延迟交接。由onMetadata覆盖guard的缺口推导，尚未实现。用无元数据、无效时长、超长视频与正常视频四组对照检查遮罩关闭时间、Esc和监听清理；要求任何状态不超过固定deadline，代价是长片被截断。\n\n隔离宿主测试注入首帧、Range/HEAD/416、无效时长与超过maxSeconds素材、播放拒绝和Esc；核对截止与清理，不执行本轮目标脚本。\n\n## 核查说明\n\n- 版本号：1.0.0；版本日期：2026-10-19（固定提交日期，北京时间；不是包发布日期）。\n- 固定版本：[aeac4c96](https://github.com/456erddgr/dsh-boo550wt-animation/tree/aeac4c96f33b7947e19b44c36c421185ec2cda1a)；本次截止 2026-10-21T03:00:27Z。\n- 已检查：README、package与以上源码路径及固定组件统计。\n- 未执行：目标代码、目标测试、安装、真实宿主或第三方服务验证。\n- 范围限制：抽读host/inject/media与作者自检源码；未解码素材、未复现截图、未运行浏览器或真实DSH启动。\n- 证据边界：源码与作者说明不等于独立效果验证；GitHub/npm指标不证明采用或收益。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：25b22745cc34d743aa3f64cd5f5724a26691935e16f3c525a99ef0a3577b8865。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 3 | 500 | 359 | 95 | — |\n| .md | source | 1 | 148 | — | — | 1753 |\n| .mjs | source | 4 | 900 | 744 | 84 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n",
+        "reports": "# dsh-boo550wt-animation\n\n> DSH Desktop/Web 启动前注入视频遮罩并经同源 Range 路由播放的个性化动画。\n\n## 研究范围\n\n- **仓库**：[456erddgr/dsh-boo550wt-animation](https://github.com/456erddgr/dsh-boo550wt-animation)\n- **版本号**：1.0.0（[固定提交 aeac4c96f33b7947e19b44c36c421185ec2cda1a](https://github.com/456erddgr/dsh-boo550wt-animation/tree/aeac4c96f33b7947e19b44c36c421185ec2cda1a)）\n- **版本日期**：2026-10-19（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n源码可核注入/Range/跳过；loadedmetadata 会替换 maxSeconds guard，所谓硬上限不成立，配置和减动效缺口未实测。\n\n## 洞察短评\n\n- **用途**：个人用户为 DSH 开机增加品牌化 550W 风格视频，播毕或 Esc 后进入界面。详见[Q01](#research-q01)。\n- **亮点**：把启动前遮罩与原生媒体栈结合，不需客户端 bundle；具备跳过与错误退出路径。详见[Q01](#research-q01)和[Q02](#research-q02)。\n- **思考**：maxSeconds 初始计时器被 metadata 清掉，长视频或无效 duration 可能延迟/失去自动解锁；数值配置未逐项校验。详见[Q03](#research-q03)和[Q04](#research-q04)。\n- **建议**：未验证方向为独立绝对上限计时器、配置 schema/range、减动效门控和状态路由权限审计。详见[Q05](#research-q05)。\n\n采用建议：个人视觉定制可观察使用；先核 Esc、错误视频和长视频超时，减动效用户宜关闭。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n把启动前遮罩与原生媒体栈结合，不需客户端 bundle；具备跳过与错误退出路径。详见[Q01](#research-q01)和[Q02](#research-q02)。\n\n## 关键质疑\n\nmaxSeconds 初始计时器被 metadata 清掉，长视频或无效 duration 可能延迟/失去自动解锁；数值配置未逐项校验。详见[Q03](#research-q03)和[Q04](#research-q04)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n未验证方向为独立绝对上限计时器、配置 schema/range、减动效门控和状态路由权限审计。详见[Q05](#research-q05)。\n\n目标 Desktop 冷启动、Range/解码、自动播放拒绝、无效/长 metadata、负值配置、减动效与 state 鉴权。\n\n## 场景与替代办法\n\n个人用户为 DSH 开机增加品牌化 550W 风格视频，播毕或 Esc 后进入界面。详见[Q01](#research-q01)。\n\n默认 DSH 直接进入界面；动画提升风格但增加启动等待和资源。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖 | 必需 | 用途 | 缺失后果 |\n| --- | --- | --- | --- |\n| DSH webServer/index-inject | 必需 | 早期脚本/路由 | 无遮罩或视频 |\n| 浏览器媒体栈 | 必需 | H.264/AAC 解码与 Range | 播放失败回退 |\n| boot.mp4/自定义视频 | 必需 | 内容 | 404/错误退出 |\n\n#### 使用步骤\n\n| 步骤 | 动作 | 判据/恢复 |\n| --- | --- | --- |\n| 安装 | Desktop profile CLI 加包、重启 | state 路由可读 |\n| 播放 | 打开 DSH | 视频遮罩覆盖启动界面 |\n| 跳过 | 按 Esc | 淡出并解除锁定 |\n| 改视频 | 配 videoPath | 核长视频/超时边界 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 资源成本 | 人工投入 | 边界 |\n| --- | --- | --- | --- |\n| 安装 | DSH Desktop 与约 12.1MB 素材 | profile 安装/重启 | 版本兼容未测 |\n| 播放 | 视频下载/解码、默认 16.6 秒等待 | 跳过/更换素材 | 首帧、电量未知 |\n| 异常 | 长视频/坏配置可能拖延遮罩 | Esc 或停用配置 | 硬上限缺口 |\n\n#### 效果\n\n| 效果项 | 源码支持 | 未证实 |\n| --- | --- | --- |\n| 启动遮罩 | 注入视频、淡出 | 所有目标版本时序 |\n| 失败回退 | Esc/错误/静音降级 | 真实自动播放策略 |\n| 硬上限 | 初始 120 秒 guard | metadata 后仍生效，源码否定 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**启动遮罩能否可靠交接且在长视频、异常配置和无障碍条件下及时释放界面？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 开机动画如何覆盖应用启动，实际带来何种价值？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n插件在 Desktop/Web 入口的 webserver/index-inject 中注入 style 和 body script，先于客户端模块加载建立全屏视频遮罩；应用在下面继续启动，视频播完或按 Esc 后淡出。自带 12.1MB 素材、可换本地 mp4，适合个人品牌化启动体验，不改变 DSH 工作流效率。README 的真实 Chromium 截图/自检是作者报告，本轮只看源码与资源存在，未复现目标 Desktop。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-23](https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/README.md#L1-L23)\n\n作者启动体验和预览声明\n\n<details>\n<summary>查看原文（23行）</summary>\n\n````text\n# dsh-boo550wt-animation\n\n给 **DeepSeek Harness** 加一段开机动画：打开 DSH 时全屏播放一段视频，播完（或者按 `Esc`）才进入界面。\n\n> 自带素材 `assets/boot.mp4` 是一段 **550W 风格**的启动动画 —— 16.6 秒、1024×576、H.264 + AAC、12.1 MB。\n\n```\n打开 DSH  ─▶  黑底 + 视频  ─▶  播完 / 按 Esc  ─▶  淡出  ─▶  正常界面\n```\n\n关键在于**交接时机**：遮罩在 DSH 结算「启动就绪」之前就已经挂上去了，所以应用是在遮罩底下正常渲染的，等动画结束再把界面让出来 —— 而不是先看到界面再盖一层。\n\n## 效果预览\n\n自带素材的分镜（2.0s / 6.0s / 12.0s / 15.0s）：\n\n![开机动画分镜：550W 标志、量子计算机控制系统、剩余进度 69%、剩余进度 100%](docs/preview.png)\n\n真实播放时的样子 —— 画面铺满窗口，右下角在 4 秒后浮现跳过提示：\n\n![实际播放画面，右下角显示「按 Esc 跳过」](docs/boot-scene.png)\n\n> 两张图都是从 `assets/boot.mp4` 里实拍的，不是效果图：用真实 Chromium 媒体栈经插件的 Range 路由解码后截帧生成（`tools/stills.mjs` 与 `tools/browser-check.mjs --shot=`）。\n````\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:127-148](https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/lib/index.js#L127-L148)\n\n注入 style/script\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n  const disposers = [];\n  disposers.push(ctx.effect(() => ctx.webServer.register({ kind: \"prefix\", path: BASE, handler }), \"boot-animation: clip route\"));\n\n  ctx.on(\"webserver/index-inject\", (table) => {\n    table.push({ kind: \"style\", text: BOOT_STYLE });\n    table.push({\n      kind: \"script\",\n      placement: \"body\",\n      text: bootScript({\n        src: `${BASE}${VIDEO_ROUTE}`,\n        zIndex: settings.zIndex,\n        skipHint: settings.skipHint,\n        silentHint: settings.silentHint,\n        blockedHint: settings.blockedHint,\n        errorHint: settings.errorHint,\n        hintDelayMs: settings.hintDelayMs,\n        maxSeconds: settings.maxSeconds,\n        graceMs: settings.graceMs,\n        fadeMs: settings.fadeMs,\n      }),\n    });\n  });\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/inject.js:49-81](https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/lib/inject.js#L49-L81)\n\n视频遮罩在页面直接挂载\n\n<details>\n<summary>查看原文（33行）</summary>\n\n```text\nfunction bootClient(CONFIG) {\n  var doc = document;\n  var ID = \"dsh-boo550wt-animation-layer\";\n  var existing = doc.getElementById(ID);\n  if (existing !== null && existing.parentNode !== null) return; // already mounted\n\n  var layer = doc.createElement(\"div\");\n  layer.id = ID;\n  layer.className = \"dsh-boo550wt-animation-layer\";\n  layer.setAttribute(\"aria-hidden\", \"true\");\n  layer.setAttribute(\"data-dsh-boo550wt-animation\", \"playing\");\n  layer.style.zIndex = String(CONFIG.zIndex);\n\n  var video = doc.createElement(\"video\");\n  video.className = \"dsh-boo550wt-animation-video\";\n  video.autoplay = true;\n  video.playsInline = true;\n  video.setAttribute(\"playsinline\", \"\");\n  video.setAttribute(\"webkit-playsinline\", \"\");\n  video.setAttribute(\"preload\", \"auto\");\n  video.controls = false;\n  video.loop = false;\n  video.disablePictureInPicture = true;\n  video.src = CONFIG.src;\n\n  var hint = doc.createElement(\"div\");\n  hint.className = \"dsh-boo550wt-animation-hint\";\n  hint.textContent = CONFIG.skipHint;\n\n  layer.appendChild(video);\n  layer.appendChild(hint);\n  (doc.body !== null ? doc.body : doc.documentElement).appendChild(layer);\n  doc.documentElement.classList.add(\"dsh-boo550wt-animation-locked\");\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/inject.js:124-152](https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/lib/inject.js#L124-L152)\n\n播毕淡出/解锁\n\n<details>\n<summary>查看原文（29行）</summary>\n\n```text\n  function finish() {\n    if (finished) return;\n    finished = true;\n    if (guard !== null) clearTimeout(guard);\n    if (hintTimer !== null) clearTimeout(hintTimer);\n    guard = null;\n    hintTimer = null;\n    disarmGesture();\n    window.removeEventListener(\"keydown\", onKeyDown, true);\n    video.removeEventListener(\"ended\", finish);\n    video.removeEventListener(\"loadedmetadata\", onMetadata);\n    video.removeEventListener(\"error\", onVideoError);\n    layer.setAttribute(\"data-dsh-boo550wt-animation\", \"done\");\n    try { video.pause(); } catch (ignored) { /* ignore */ }\n    layer.classList.add(\"dsh-boo550wt-animation-out\");\n    fade = setTimeout(unmount, CONFIG.fadeMs);\n  }\n\n  function unmount() {\n    if (fade !== null) clearTimeout(fade);\n    fade = null;\n    doc.documentElement.classList.remove(\"dsh-boo550wt-animation-locked\");\n    if (layer.parentNode !== null) layer.parentNode.removeChild(layer);\n    try {\n      video.removeAttribute(\"src\");\n      video.load();\n    } catch (ignored) { /* ignore */ }\n    try { delete globalThis.__DSH_BOOT_ANIMATION__; } catch (ignored) { /* ignore */ }\n  }\n```\n\n</details>\n\n#### 缺口\n\n- 目标 Desktop 注入时序与用户体感未测\n  **影响：**不能保证所有宿主版本首帧无遮挡或有收益\n  **进一步探讨：**真实 Desktop 冷/热启动截图与主观等待测试\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 视频字节服务与失败回退如何实现？\n\n**研究主题：**功能与机制、依赖、兼容与流程\n\n#### 完整回答\n\nHost 把包内或 videoPath 指向的 mp4 通过同源 /boot-animation/video.mp4 路由提供 GET/HEAD，支持单字节 Range、206/416 与流式读取，遇文件不存在/非文件返回 404；脚本处理播放结束、视频错误、自动播放拒绝，先试静音并允许用户手势重播，Esc 可跳过，卸载时移除 DOM/监听、清视频 src。成功依赖 DSH webServer/index-inject 及浏览器媒体栈；未执行项目自检或目标宿主。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:90-129](https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/lib/index.js#L90-L129)\n\n路由及视频路径\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n  const video = settings.videoPath === \"\" ? BUNDLED_VIDEO : resolve(settings.videoPath);\n  const logger = ctx.logger?.(\"boot-animation\");\n\n  /** Answer the plugin's own subpaths; anything else is not ours. */\n  const handler = async (req, res) => {\n    const path = new URL(req.url ?? \"/\", \"http://x\").pathname;\n    if (path === `${BASE}${VIDEO_ROUTE}`) {\n      if (req.method !== \"GET\" && req.method !== \"HEAD\") {\n        res.writeHead(405, { allow: \"GET, HEAD\", \"cache-control\": \"no-store\" });\n        res.end();\n        return;\n      }\n      await serveVideo(video, req, res);\n      return;\n    }\n    if (path === `${BASE}${STATE_ROUTE}` && (req.method === \"GET\" || req.method === \"HEAD\")) {\n      let stat = null;\n      try {\n        const { promises: fs } = await import(\"node:fs\");\n        stat = await fs.stat(video);\n      } catch {\n        stat = null;\n      }\n      sendJson(res, 200, {\n        plugin: \"dsh-boo550wt-animation\",\n        base: BASE,\n        video,\n        videoAvailable: stat !== null && stat.isFile(),\n        videoBytes: stat !== null && stat.isFile() ? stat.size : null,\n        settings,\n      });\n      return;\n    }\n    res.writeHead(404, { \"cache-control\": \"no-store\" });\n    res.end();\n  };\n\n  const disposers = [];\n  disposers.push(ctx.effect(() => ctx.webServer.register({ kind: \"prefix\", path: BASE, handler }), \"boot-animation: clip route\"));\n\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/media.js:25-46](https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/lib/media.js#L25-L46)\n\nRange 解析\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n/** Parse a single-range `Range` header against a known total size. */\nexport function parseRange(header, size) {\n  if (typeof header !== \"string\" || header.length === 0) return { kind: \"full\" };\n  const match = /^bytes=(.*)$/i.exec(header.trim());\n  if (match === null) return { kind: \"unsatisfiable\" };\n  const spec = match[1].split(\",\")[0].trim();\n  const parts = /^(\\d*)-(\\d*)$/.exec(spec);\n  if (parts === null) return { kind: \"unsatisfiable\" };\n  const rawStart = parts[1];\n  const rawEnd = parts[2];\n  if (rawStart === \"\" && rawEnd === \"\") return { kind: \"unsatisfiable\" };\n  if (rawStart === \"\") {\n    const suffix = Number(rawEnd);\n    if (!Number.isFinite(suffix) || suffix <= 0) return { kind: \"unsatisfiable\" };\n    const start = Math.max(0, size - suffix);\n    return { kind: \"range\", start, end: size - 1 };\n  }\n  const start = Number(rawStart);\n  if (!Number.isFinite(start) || start >= size) return { kind: \"unsatisfiable\" };\n  const end = rawEnd === \"\" ? size - 1 : Math.min(Number(rawEnd), size - 1);\n  if (!Number.isFinite(end) || end < start) return { kind: \"unsatisfiable\" };\n  return { kind: \"range\", start, end };\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/media.js:71-136](https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/lib/media.js#L71-L136)\n\nGET/HEAD/206/416 与流输出\n\n<details>\n<summary>查看原文（66行）</summary>\n\n```text\nexport async function serveVideo(file, req, res) {\n  let stat;\n  try {\n    stat = await fs.stat(file);\n  } catch (error) {\n    res.writeHead(404, { \"content-type\": \"text/plain; charset=utf-8\", \"cache-control\": \"no-store\" });\n    res.end(`boot animation: clip is unavailable (${error.code ?? \"unknown\"})`);\n    return;\n  }\n  if (!stat.isFile()) {\n    res.writeHead(404, { \"content-type\": \"text/plain; charset=utf-8\", \"cache-control\": \"no-store\" });\n    res.end(\"boot animation: clip path is not a file\");\n    return;\n  }\n\n  const size = stat.size;\n  const range = parseRange(req.headers.range, size);\n\n  if (range.kind === \"unsatisfiable\") {\n    res.writeHead(416, {\n      \"content-range\": `bytes */${size}`,\n      \"accept-ranges\": \"bytes\",\n      \"cache-control\": \"no-store\",\n    });\n    res.end();\n    return;\n  }\n\n  if (req.method === \"HEAD\") {\n    if (range.kind === \"full\") sendHead(res, 200, size, undefined);\n    else sendHead(res, 206, size, range);\n    res.end();\n    return;\n  }\n\n  if (range.kind === \"full\") {\n    sendHead(res, 200, size, undefined);\n    await pump(createReadStream(file, { highWaterMark: CHUNK }), res);\n    return;\n  }\n\n  sendHead(res, 206, size, range);\n  await pump(createReadStream(file, { start: range.start, end: range.end, highWaterMark: CHUNK }), res);\n}\n\n/** Pipe a stream into the response, tolerating client disconnects. */\nfunction pump(stream, res) {\n  return new Promise((resolve) => {\n    let settled = false;\n    const done = () => {\n      if (settled) return;\n      settled = true;\n      resolve();\n    };\n    stream.on(\"error\", () => {\n      if (!res.headersSent) res.writeHead(500, { \"cache-control\": \"no-store\" });\n      res.end();\n      done();\n    });\n    res.on(\"close\", () => {\n      stream.destroy();\n      done();\n    });\n    res.on(\"finish\", done);\n    stream.pipe(res);\n  });\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/inject.js:91-116](https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/lib/inject.js#L91-L116)\n\n跳过与手势处理\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n  function onKeyDown(event) {\n    if (event.key === \"Escape\" || event.key === \"Esc\" || event.keyCode === 27) {\n      event.preventDefault();\n      event.stopPropagation();\n      finish();\n    }\n  }\n\n  function onGestureStart() {\n    disarmGesture();\n    var attempt = video.play();\n    if (attempt !== undefined && typeof attempt.catch === \"function\") attempt.catch(noop);\n  }\n\n  function armGesture() {\n    if (gestureArmed || finished) return;\n    gestureArmed = true;\n    window.addEventListener(\"pointerdown\", onGestureStart, true);\n    window.addEventListener(\"keydown\", onGestureStart, true);\n  }\n\n  function disarmGesture() {\n    if (!gestureArmed) return;\n    gestureArmed = false;\n    window.removeEventListener(\"pointerdown\", onGestureStart, true);\n    window.removeEventListener(\"keydown\", onGestureStart, true);\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/inject.js:124-207](https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/lib/inject.js#L124-L207)\n\n失败/结束/清理\n\n<details>\n<summary>查看原文（84行）</summary>\n\n```text\n  function finish() {\n    if (finished) return;\n    finished = true;\n    if (guard !== null) clearTimeout(guard);\n    if (hintTimer !== null) clearTimeout(hintTimer);\n    guard = null;\n    hintTimer = null;\n    disarmGesture();\n    window.removeEventListener(\"keydown\", onKeyDown, true);\n    video.removeEventListener(\"ended\", finish);\n    video.removeEventListener(\"loadedmetadata\", onMetadata);\n    video.removeEventListener(\"error\", onVideoError);\n    layer.setAttribute(\"data-dsh-boo550wt-animation\", \"done\");\n    try { video.pause(); } catch (ignored) { /* ignore */ }\n    layer.classList.add(\"dsh-boo550wt-animation-out\");\n    fade = setTimeout(unmount, CONFIG.fadeMs);\n  }\n\n  function unmount() {\n    if (fade !== null) clearTimeout(fade);\n    fade = null;\n    doc.documentElement.classList.remove(\"dsh-boo550wt-animation-locked\");\n    if (layer.parentNode !== null) layer.parentNode.removeChild(layer);\n    try {\n      video.removeAttribute(\"src\");\n      video.load();\n    } catch (ignored) { /* ignore */ }\n    try { delete globalThis.__DSH_BOOT_ANIMATION__; } catch (ignored) { /* ignore */ }\n  }\n\n  function onMetadata() {\n    if (guard !== null) clearTimeout(guard);\n    var seconds = video.duration;\n    // Phrased as a negated comparison so the emitted text stays free of angle\n    // brackets: the row is inserted verbatim inside a script element.\n    if (typeof seconds !== \"number\" || !isFinite(seconds) || !(seconds > 0)) return;\n    guard = setTimeout(finish, Math.round(seconds * 1000) + CONFIG.graceMs);\n  }\n\n  function onVideoError() {\n    if (finished) return;\n    showHint(CONFIG.errorHint);\n    if (guard !== null) clearTimeout(guard);\n    guard = setTimeout(finish, 900);\n  }\n\n  function onPlayRefused() {\n    if (finished) return;\n    // Sound was refused (or playback entirely). Muted playback is allowed by\n    // every engine, so fall back to it and say so; a gesture retries with sound.\n    video.muted = true;\n    var retry = video.play();\n    if (retry !== undefined && typeof retry.catch === \"function\") {\n      retry.catch(function () {\n        if (finished) return;\n        showHint(CONFIG.blockedHint);\n        armGesture();\n      });\n    }\n    showHint(CONFIG.silentHint);\n  }\n\n  function start() {\n    var attempt = video.play();\n    if (attempt !== undefined && typeof attempt.catch === \"function\") attempt.catch(onPlayRefused);\n  }\n\n  video.addEventListener(\"ended\", finish);\n  video.addEventListener(\"loadedmetadata\", onMetadata);\n  video.addEventListener(\"error\", onVideoError);\n  window.addEventListener(\"keydown\", onKeyDown, true);\n\n  // Absolute ceiling: never hold the user hostage if the file stalls.\n  guard = setTimeout(finish, CONFIG.maxSeconds * 1000);\n  // The skip affordance only appears after the animation has had the stage.\n  hintTimer = setTimeout(function () {\n    if (!finished) hint.classList.add(\"dsh-boo550wt-animation-hint-on\");\n  }, CONFIG.hintDelayMs);\n\n  try {\n    globalThis.__DSH_BOOT_ANIMATION__ = { skip: finish, element: layer, video: video };\n  } catch (ignored) { /* ignore */ }\n\n  start();\n```\n\n</details>\n\n#### 缺口\n\n- 目标浏览器编码/自动播放/Range 代理行为未测\n  **影响：**不能从源码保证实际解码播放\n  **进一步探讨：**目标 Desktop 冷启动、错误视频和 Range 网络检查\n\n<a id=\"research-q03\"></a>\n\n### Q03 · maxSeconds 是否真的构成绝对硬上限？\n\n**研究主题：**缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\n脚本在启动时设置 maxSeconds 定时器，但 loadedmetadata 事件会先 clearTimeout(guard)，再把 guard 改为 duration×1000+graceMs。若自定义视频长度超过 maxSeconds，或 metadata 上报很长而播放停住，上限可延到媒体时长以后；README 所称硬上限因此与源码不一致。若时长无效，旧 guard 已被清掉且代码直接 return，Esc 仍可跳过，但没有自动兜底 timer。该风险是代码路径判断，目标播放器时序未实测。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:73-85](https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/README.md#L73-L85)\n\n作者将 maxSeconds 称为硬上限\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n| 字段 | 默认值 | 含义 |\n| --- | --- | --- |\n| `enabled` | `true` | 设 `false` 可以临时停用而不卸载 |\n| `videoPath` | `\"\"` | 换成别的视频；留空 = 用自带素材 |\n| `zIndex` | `2147483000` | 遮罩层级 |\n| `maxSeconds` | `120` | 硬上限，卡死的视频也绝不会锁住窗口 |\n| `graceMs` | `1500` | 上报时长之外再宽限多久才触发上限 |\n| `fadeMs` | `380` | 交接时的淡出时长 |\n| `hintDelayMs` | `4000` | 多久之后出现跳过提示 |\n| `skipHint` | `按 Esc 跳过` | 提示文字 |\n| `silentHint` | `按 Esc 跳过 · 点击开启声音` | 被降级成静音时显示 |\n| `blockedHint` | `点击以播放开机动画` | 自动播放被彻底拦截时显示 |\n| `errorHint` | `开机动画不可用` | 视频解不开时显示 |\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/inject.js:154-161](https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/lib/inject.js#L154-L161)\n\nmetadata 清旧 guard 并按媒体时长重设\n\n```text\n  function onMetadata() {\n    if (guard !== null) clearTimeout(guard);\n    var seconds = video.duration;\n    // Phrased as a negated comparison so the emitted text stays free of angle\n    // brackets: the row is inserted verbatim inside a script element.\n    if (typeof seconds !== \"number\" || !isFinite(seconds) || !(seconds > 0)) return;\n    guard = setTimeout(finish, Math.round(seconds * 1000) + CONFIG.graceMs);\n  }\n```\n\n**依据 3 · 源码核查**：[lib/inject.js:191-201](https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/lib/inject.js#L191-L201)\n\n初始 maxSeconds 守卫与跳过\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n  video.addEventListener(\"ended\", finish);\n  video.addEventListener(\"loadedmetadata\", onMetadata);\n  video.addEventListener(\"error\", onVideoError);\n  window.addEventListener(\"keydown\", onKeyDown, true);\n\n  // Absolute ceiling: never hold the user hostage if the file stalls.\n  guard = setTimeout(finish, CONFIG.maxSeconds * 1000);\n  // The skip affordance only appears after the animation has had the stage.\n  hintTimer = setTimeout(function () {\n    if (!finished) hint.classList.add(\"dsh-boo550wt-animation-hint-on\");\n  }, CONFIG.hintDelayMs);\n```\n\n</details>\n\n#### 缺口\n\n- 长/损坏 metadata 在目标媒体栈是否触发未测\n  **影响：**不能承诺窗口最多锁 120 秒\n  **进一步探讨：**保留独立 absolute guard，长视频/无效 metadata/停滞回归\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 参数与无障碍边界是否受控？\n\n**研究主题：**缺陷与关键质疑、效果与总成本\n\n#### 完整回答\n\nresolveConfig 只校验 videoPath 为字符串和 zIndex 为有限数，其余 maxSeconds/graceMs/fadeMs/hintDelayMs 可接收负数、非数字或极大值，随后直接进入 setTimeout；hint 等文案虽经 JSON.stringify 注入，但无需假定 HTML 字符串拼接风险。启动脚本没有读取 prefers-reduced-motion，默认自动播视频且遮罩拦住界面，Esc/禁用配置可绕过。12.1MB 视频资源和重启加载成本在源码/资产中可见，电量和实际首帧延迟未测。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:39-63](https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/lib/index.js#L39-L63)\n\n配置默认值与有限校验\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\nconst DEFAULTS = Object.freeze({\n  enabled: true,\n  videoPath: \"\",\n  zIndex: 2147483000,\n  maxSeconds: 120,\n  graceMs: 1500,\n  fadeMs: 380,\n  hintDelayMs: 4000,\n  skipHint: \"按 Esc 跳过\",\n  silentHint: \"按 Esc 跳过 · 点击开启声音\",\n  blockedHint: \"点击以播放开机动画\",\n  errorHint: \"开机动画不可用\",\n});\n\n/** Merge user config onto the defaults, rejecting unusable values. */\nfunction resolveConfig(config) {\n  const input = config !== null && typeof config === \"object\" ? config : {};\n  const out = { ...DEFAULTS };\n  for (const key of Object.keys(DEFAULTS)) {\n    if (input[key] === undefined || input[key] === null) continue;\n    out[key] = key === \"enabled\" ? input[key] === true : input[key];\n  }\n  if (typeof out.videoPath !== \"string\") out.videoPath = DEFAULTS.videoPath;\n  if (!Number.isFinite(out.zIndex)) out.zIndex = DEFAULTS.zIndex;\n  return out;\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/inject.js:154-207](https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/lib/inject.js#L154-L207)\n\n定时/自动播放，无 reduced-motion 分支\n\n<details>\n<summary>查看原文（54行）</summary>\n\n```text\n  function onMetadata() {\n    if (guard !== null) clearTimeout(guard);\n    var seconds = video.duration;\n    // Phrased as a negated comparison so the emitted text stays free of angle\n    // brackets: the row is inserted verbatim inside a script element.\n    if (typeof seconds !== \"number\" || !isFinite(seconds) || !(seconds > 0)) return;\n    guard = setTimeout(finish, Math.round(seconds * 1000) + CONFIG.graceMs);\n  }\n\n  function onVideoError() {\n    if (finished) return;\n    showHint(CONFIG.errorHint);\n    if (guard !== null) clearTimeout(guard);\n    guard = setTimeout(finish, 900);\n  }\n\n  function onPlayRefused() {\n    if (finished) return;\n    // Sound was refused (or playback entirely). Muted playback is allowed by\n    // every engine, so fall back to it and say so; a gesture retries with sound.\n    video.muted = true;\n    var retry = video.play();\n    if (retry !== undefined && typeof retry.catch === \"function\") {\n      retry.catch(function () {\n        if (finished) return;\n        showHint(CONFIG.blockedHint);\n        armGesture();\n      });\n    }\n    showHint(CONFIG.silentHint);\n  }\n\n  function start() {\n    var attempt = video.play();\n    if (attempt !== undefined && typeof attempt.catch === \"function\") attempt.catch(onPlayRefused);\n  }\n\n  video.addEventListener(\"ended\", finish);\n  video.addEventListener(\"loadedmetadata\", onMetadata);\n  video.addEventListener(\"error\", onVideoError);\n  window.addEventListener(\"keydown\", onKeyDown, true);\n\n  // Absolute ceiling: never hold the user hostage if the file stalls.\n  guard = setTimeout(finish, CONFIG.maxSeconds * 1000);\n  // The skip affordance only appears after the animation has had the stage.\n  hintTimer = setTimeout(function () {\n    if (!finished) hint.classList.add(\"dsh-boo550wt-animation-hint-on\");\n  }, CONFIG.hintDelayMs);\n\n  try {\n    globalThis.__DSH_BOOT_ANIMATION__ = { skip: finish, element: layer, video: video };\n  } catch (ignored) { /* ignore */ }\n\n  start();\n```\n\n</details>\n\n**依据 3 · 作者声明**：[README.md:3-11](https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/README.md#L3-L11)\n\n作者描述素材/遮罩\n\n````text\n给 **DeepSeek Harness** 加一段开机动画：打开 DSH 时全屏播放一段视频，播完（或者按 `Esc`）才进入界面。\n\n> 自带素材 `assets/boot.mp4` 是一段 **550W 风格**的启动动画 —— 16.6 秒、1024×576、H.264 + AAC、12.1 MB。\n\n```\n打开 DSH  ─▶  黑底 + 视频  ─▶  播完 / 按 Esc  ─▶  淡出  ─▶  正常界面\n```\n\n关键在于**交接时机**：遮罩在 DSH 结算「启动就绪」之前就已经挂上去了，所以应用是在遮罩底下正常渲染的，等动画结束再把界面让出来 —— 而不是先看到界面再盖一层。\n````\n\n#### 缺口\n\n- 减动效需求、解码性能和非数配置影响未测\n  **影响：**不能称所有配置下硬上限/无障碍安全\n  **进一步探讨：**参数边界、reduced-motion、内存/首帧性能矩阵\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 安装与回退应怎样验收？\n\n**研究主题：**采用判断、新假设与验证\n\n#### 完整回答\n\n作者给 Desktop profile CLI 安装/重启流程，/boot-animation/state 可报告视频绝对路径、文件可用性/字节数和 settings，适合确认 Host 加载；但该状态路由也暴露本地文件路径与配置，目标 webServer 的鉴权边界本轮未核。启用前应确认开机可 Esc 跳过、错误视频 0.9 秒后退出及长视频不超过期望；可改进独立硬上限、数值范围校验和减动效门控。以上改进均未实现，建议个人环境观察使用。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:27-59](https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/README.md#L27-L59)\n\n作者安装及状态路由自查\n\n<details>\n<summary>查看原文（33行）</summary>\n\n````text\n## 怎么用\n\n### 1. 装\n\nDSH 的插件用它自己的 CLI 安装（`desktop` 是保留 profile，由 Electron 应用托管）：\n\n```powershell\n# 先拿到仓库\ngit clone https://github.com/456erddgr/dsh-boo550wt-animation.git\n\n# 再用 DSH 自带的 CLI 装进 desktop profile\n$env:ELECTRON_RUN_AS_NODE = '1'\n& \"<你的安装目录>\\DeepSeek Harness.exe\" --expose-internals `\n  \"<你的安装目录>\\resources\\app.asar\\dsh\\node_modules\\@deepseek-ai\\dsh-desktop-host\\lib\\cli.js\" `\n  plugin --profile desktop add \"<clone 出来的目录>\"\n```\n\n`<你的安装目录>` 默认是 `%LOCALAPPDATA%\\Programs\\DeepSeek Harness`。\n\n这条命令会做三件事：加一条 `link:` 依赖、在 `node_modules` 里建好入口、把 bundle 追加进 `dsh.profile.bundles`。\n\n> `add` 底层是 pnpm，所以也接受 git 形式：\n> `plugin --profile desktop add github:456erddgr/dsh-boo550wt-animation`\n\n### 2. 重启 DSH\n\n**必须重启。** Host 半侧的代码只在 DSH 启动时被 import 一次，热更新不会加载它。\n\n重启后可以自查 —— 浏览器打开这个地址，返回 JSON 就说明 Host 半侧已经起来了：\n\n```\nhttp://127.0.0.1:19387/boot-animation/state\n```\n````\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:105-120](https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/lib/index.js#L105-L120)\n\n状态路由返回绝对路径和配置\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n    if (path === `${BASE}${STATE_ROUTE}` && (req.method === \"GET\" || req.method === \"HEAD\")) {\n      let stat = null;\n      try {\n        const { promises: fs } = await import(\"node:fs\");\n        stat = await fs.stat(video);\n      } catch {\n        stat = null;\n      }\n      sendJson(res, 200, {\n        plugin: \"dsh-boo550wt-animation\",\n        base: BASE,\n        video,\n        videoAvailable: stat !== null && stat.isFile(),\n        videoBytes: stat !== null && stat.isFile() ? stat.size : null,\n        settings,\n      });\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/inject.js:163-167](https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/lib/inject.js#L163-L167)\n\n错误 900ms 退出\n\n```text\n  function onVideoError() {\n    if (finished) return;\n    showHint(CONFIG.errorHint);\n    if (guard !== null) clearTimeout(guard);\n    guard = setTimeout(finish, 900);\n```\n\n**依据 4 · 源码核查**：[lib/inject.js:91-96](https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/lib/inject.js#L91-L96)\n\nEsc 退出\n\n```text\n  function onKeyDown(event) {\n    if (event.key === \"Escape\" || event.key === \"Esc\" || event.keyCode === 27) {\n      event.preventDefault();\n      event.stopPropagation();\n      finish();\n    }\n```\n\n#### 缺口\n\n- 目标 Desktop 安装/鉴权与回退实效未测\n  **影响：**不可用状态路由或自测声明替代目标验收\n  **进一步探讨：**目标环境做鉴权/安装/损坏素材/长视频/减动效验收\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：25b22745cc34d743aa3f64cd5f5724a26691935e16f3c525a99ef0a3577b8865。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 3 | 500 | 359 | 95 | — |\n| .md | source | 1 | 148 | — | — | 1753 |\n| .mjs | source | 4 | 900 | 744 | 84 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 视频开机 | 个性化体验 | 增加等待/解码 |\n| Range 路由 | 浏览器原生解码 | 宿主代理未联调 |\n| 跳过/超时 | 恢复界面 | maxSeconds 不是绝对上限 |\n\n## 工程亮点\n\nHost-only 注入与 Range 服务可复用；独立硬上限和参数校验应补。详见[Q02](#research-q02)至[Q04](#research-q04)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、lib/index.js、lib/inject.js、lib/media.js、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：只读核固定提交 README、Host/注入/媒体源码与素材大小；未运行插件、自检、浏览器或目标 Desktop；旧 META 仅复用。\n- 下一步：目标 Desktop 冷启动、Range/解码、自动播放拒绝、无效/长 metadata、负值配置、减动效与 state 鉴权。\n",
         "metadata": {
             "repository": "456erddgr/dsh-boo550wt-animation",
             "repository_id": 1422328385,
@@ -426,14 +468,14 @@
             "repository": "456erddgr/dsh-boo550wt-animation",
             "path": "",
             "revision": "aeac4c96f33b7947e19b44c36c421185ec2cda1a",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "6c5f38d7eb4cf3bdc130b0a38b3a1683c71f8324739cb6ef44d1a12faadebb47",
                 "code": "aeac4c96f33b7947e19b44c36c421185ec2cda1a",
                 "maintenance": "f187ede4e704aba7aa3a90e134a9ec68e8ef9b91db748731963768061d69b9c8"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

@@ -27,36 +27,94 @@
             },
             "sources": [
                 {
-                    "id": "20261020-research40-github-1367305514-root-directory-0",
+                    "id": "2026-10-22-02-github-1367305514-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
-                    "retrieved_at": "2026-10-20T03:11:15.964Z",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-22T08:58:23.269Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "20261020-research40-github-1367305514-root-author",
+                    "id": "2026-10-22-02-github-1367305514-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/1069137617/dsh-reasoning-tiers/blob/fe642c8ec878b6ba46a7c1831fc6cea557083e5b/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/1069137617/dsh-reasoning-tiers",
+                            "commit": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b",
+                            "path": "README.md",
+                            "content_sha256": "71520d76aa077da009a7198aae900a69df9acd7ea818264afe690d08ae5a96dd"
+                        }
+                    ],
                     "revision": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b",
-                    "captured_at": "2026-10-20T03:11:15.964Z",
-                    "summary": "按规则补齐第三方模型推理档位，并在设置页编辑模型能力声明。",
-                    "artifact": "data/runs/2026-10-20-02/snapshots/1069137617--dsh-reasoning-tiers/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T08:58:23.269Z",
+                    "summary": "按模型知识规则补齐pi-ai推理档位声明，并提供模型上下文、输出与图片能力编辑页。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/1069137617--dsh-reasoning-tiers/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "20261020-research40-github-1367305514-root-source",
+                    "id": "2026-10-22-02-github-1367305514-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/1069137617/dsh-reasoning-tiers/blob/fe642c8ec878b6ba46a7c1831fc6cea557083e5b/src/index.ts",
+                    "url": "https://github.com/1069137617/dsh-reasoning-tiers/blob/fe642c8ec878b6ba46a7c1831fc6cea557083e5b/src/config.ts",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/1069137617/dsh-reasoning-tiers",
+                            "commit": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b",
+                            "path": "src/config.ts",
+                            "content_sha256": "d80e69964d80fe13f81e5baa0c08a87b27007b510ba17fe7a73358390a85b74b"
+                        },
+                        {
+                            "repository_url": "https://github.com/1069137617/dsh-reasoning-tiers",
+                            "commit": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b",
+                            "path": "src/index.ts",
+                            "content_sha256": "baebbc348fd4c4785acf81ec46099eef8df62baf49d2868ffba676007c943313"
+                        },
+                        {
+                            "repository_url": "https://github.com/1069137617/dsh-reasoning-tiers",
+                            "commit": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b",
+                            "path": "src/knowledge.ts",
+                            "content_sha256": "25c33592fa88c7087808cf8406b939391ceb8c270fbf8ee0a313e0b97209ec35"
+                        },
+                        {
+                            "repository_url": "https://github.com/1069137617/dsh-reasoning-tiers",
+                            "commit": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b",
+                            "path": "src/capabilities.ts",
+                            "content_sha256": "7d918dc59f63ac7933cb7b99801f327ace3a2fb359f75ebe00c44f39909127b9"
+                        },
+                        {
+                            "repository_url": "https://github.com/1069137617/dsh-reasoning-tiers",
+                            "commit": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b",
+                            "path": "src/journal.ts",
+                            "content_sha256": "0a0c52e16312b6170c88035f73b961b4a6d5b2f55ad5676294b09563a0237cd1"
+                        },
+                        {
+                            "repository_url": "https://github.com/1069137617/dsh-reasoning-tiers",
+                            "commit": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b",
+                            "path": "package.json",
+                            "content_sha256": "aefb67a86bf7c3a6c32c071af2532cc4b784bec1deed2f82c33cf9a00439f345"
+                        },
+                        {
+                            "repository_url": "https://github.com/1069137617/dsh-reasoning-tiers",
+                            "commit": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b",
+                            "path": "README.md",
+                            "content_sha256": "71520d76aa077da009a7198aae900a69df9acd7ea818264afe690d08ae5a96dd"
+                        },
+                        {
+                            "repository_url": "https://github.com/1069137617/dsh-reasoning-tiers",
+                            "commit": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b",
+                            "path": "src/ladder.ts",
+                            "content_sha256": "bce006fb16703385d7850c4e4561ea4e2d1c71838301c9b4fee8da88b158e12c"
+                        }
+                    ],
                     "revision": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b",
-                    "captured_at": "2026-10-20T03:11:15.964Z",
-                    "summary": "核查 src/index.ts；按知识表和实时模型信息生成设置补丁，带版本写入、重算冲突并记录撤销日志，不接管请求适配器。",
-                    "artifact": "data/runs/2026-10-20-02/snapshots/1069137617--dsh-reasoning-tiers/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T08:58:23.269Z",
+                    "summary": "核查 src/config.ts、src/index.ts、src/knowledge.ts、src/capabilities.ts、src/journal.ts、package.json、README.md、src/ladder.ts；匹配知识规则/探测已有能力，默认生成revision绑定patch后写settings和journal，Client编辑provider配置。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/1069137617--dsh-reasoning-tiers/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "档位出现不证明服务端确实改变推理量；本轮未做请求字节或质量对照。",
+                        "固定Host提交/重试/撤销、journal、默认配置、knowledge/ladder/plan契约与能力草稿；未调用provider或全面审计Client表单，不读全部规则外部文档。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -67,9 +125,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "自定义供应商模型缺少档位元数据时，用户需要恢复可选档位并识别无效配置。",
+                    "text": "维护DSH第三方pi-ai模型metadata缺口，需真实协议支持与可恢复配置。",
                     "evidence_ids": [
-                        "20261020-research40-github-1367305514-root-source"
+                        "2026-10-22-02-github-1367305514-root-source"
                     ],
                     "dependencies": [
                         {
@@ -78,16 +136,16 @@
                             "fingerprint": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:11:15.964Z",
+                    "reviewed_at": "2026-10-22T08:58:23.269Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "按知识表和实时模型信息生成设置补丁，带版本写入、重算冲突并记录撤销日志，不接管请求适配器。",
+                    "text": "匹配知识规则/探测已有能力，默认生成revision绑定patch后写settings和journal，Client编辑provider配置。",
                     "evidence_ids": [
-                        "20261020-research40-github-1367305514-root-source"
+                        "2026-10-22-02-github-1367305514-root-source"
                     ],
                     "dependencies": [
                         {
@@ -96,16 +154,16 @@
                             "fingerprint": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:11:15.964Z",
+                    "reviewed_at": "2026-10-22T08:58:23.269Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "配置缝修复比拦截模型请求侵入小；声明能力仍须与真实提供商行为一致。",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 档位可选 | 写reasoningEfforts及协议compat计划 | 远端是否接受/语义相同 |\n| 能力编辑 | context/max/image有纯编辑逻辑 | 声明值与真实模型极限一致性 |\n| 恢复 | 有journal与按值比较撤销设计 | 重试、失败与跨profile时依据不丢失 |\n",
                     "evidence_ids": [
-                        "20261020-research40-github-1367305514-root-source"
+                        "2026-10-22-02-github-1367305514-root-source"
                     ],
                     "dependencies": [
                         {
@@ -114,16 +172,16 @@
                             "fingerprint": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:11:15.964Z",
+                    "reviewed_at": "2026-10-22T08:58:23.269Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "规则维护、备份和撤销演练是主要成本；模型高档位可能增加实际推理费用，未测增益。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 构建/peer、备份空间，金额未知 | 模型协议、知识表、计划与配置核对 | 默认最多200次能力探测非生成任务 |\n| 持续使用 | 设置事件重算、元数据探测与journal读写 | 模型变更/真实支持维护 | 真实更高effort可能改变模型耗时/费用，未测 |\n| 失败恢复 | 配置回滚、journal恢复与重新核对 | 区分设置已写/记录失败/撤销失败 | journal缺失或坏文件按空处理 |\n",
                     "evidence_ids": [
-                        "20261020-research40-github-1367305514-root-source"
+                        "2026-10-22-02-github-1367305514-root-source"
                     ],
                     "dependencies": [
                         {
@@ -132,16 +190,16 @@
                             "fingerprint": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:11:15.964Z",
+                    "reviewed_at": "2026-10-22T08:58:23.269Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "版本冲突后重算一次、知识表异常拒写和独立日志可借鉴；撤销日志与实际写入一致性需实测。",
+                    "text": "可复用的是pure plan/ladder验证、区分用户层与resolved值、尊重已有能力、revision写入和来源/置信度日志；这些减少盲目覆盖。journal原子rename能防半文件，但不把settings和日志变事务，也不解决多profile所有权。",
                     "evidence_ids": [
-                        "20261020-research40-github-1367305514-root-source"
+                        "2026-10-22-02-github-1367305514-root-source"
                     ],
                     "dependencies": [
                         {
@@ -150,16 +208,16 @@
                             "fingerprint": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:11:15.964Z",
+                    "reviewed_at": "2026-10-22T08:58:23.269Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "先备份 profile，对单个模型检查实际请求与撤销结果，再考虑批量补齐。",
+                    "text": "先观察，关闭自动写并备份，先修最终写集/撤销失败保留，再评估单profile单模型。详见[Q06](#research-q06)。",
                     "evidence_ids": [
-                        "20261020-research40-github-1367305514-root-source"
+                        "2026-10-22-02-github-1367305514-root-source"
                     ],
                     "dependencies": [
                         {
@@ -168,16 +226,16 @@
                             "fingerprint": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:11:15.964Z",
+                    "reviewed_at": "2026-10-22T08:58:23.269Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "档位出现不证明服务端确实改变推理量；本轮未做请求字节或质量对照。",
+                    "text": "固定Host提交/重试/撤销、journal、默认配置、knowledge/ladder/plan契约与能力草稿；未调用provider或全面审计Client表单，不读全部规则外部文档。",
                     "evidence_ids": [
-                        "20261020-research40-github-1367305514-root-source"
+                        "2026-10-22-02-github-1367305514-root-source"
                     ],
                     "dependencies": [
                         {
@@ -186,16 +244,16 @@
                             "fingerprint": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:11:15.964Z",
+                    "reviewed_at": "2026-10-22T08:58:23.269Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "版本 0.3.1；Host 兼容旧事件与 0.2.0 document-updated，能力界面要求 0.2.0。",
+                    "text": "npm0.3.1、MIT、Node>=20及DSH settings/llm peer，能力页需0.2；prepare构建。",
                     "evidence_ids": [
-                        "20261020-research40-github-1367305514-root-source"
+                        "2026-10-22-02-github-1367305514-root-source"
                     ],
                     "dependencies": [
                         {
@@ -204,40 +262,135 @@
                             "fingerprint": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:11:15.964Z",
+                    "reviewed_at": "2026-10-22T08:58:23.269Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "mechanism",
+                    "basis": "interpretation",
+                    "text": "不接管adapter而补齐能力声明/选择器接线，尊重已有档位并显示来源，未证明模型推理增强。详见[Q01](#research-q01)与[Q02](#research-q02)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1367305514-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1367305514:root",
+                            "area": "code",
+                            "fingerprint": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T08:58:23.269Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "重试实际patch与原plan记录可能不同，revert失败仍消费remaining，journal缺profile身份；有undo不等所有失败可恢复。详见[Q02](#research-q02)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1367305514-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1367305514:root",
+                            "area": "code",
+                            "fingerprint": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T08:58:23.269Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "mechanism",
+                    "basis": "unverified",
+                    "text": "可探讨profile/版本绑定实际写收据，commit返回最终写集，失败保留撤销依据；有迁移/恢复状态成本，未验证。详见[Q05](#research-q05)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1367305514-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1367305514:root",
+                            "area": "code",
+                            "fingerprint": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T08:58:23.269Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-20T03:11:15.964Z",
+            "last_checked_at": "2026-10-22T08:58:23.269Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b",
+                "reviewed_at": "2026-10-22T08:58:23.269Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1367305514:root",
+                        "area": "code",
+                        "fingerprint": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty知识驱动配置补齐取小幅；mechanism能力探测/计划分层取实质；transferability保守patch/置信度可迁移取实质；simplification统一配置缺口取实质，未计模型效果。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1367305514-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow第三方模型配置取实质；delivery仍声明配置取小幅；reach限pi-ai模型用户取小幅；economics缺同任务成本对照取小幅。",
+                    "basis": "interpretation",
+                    "score": 35,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1367305514-root-source"
+                    ]
+                }
+            },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "trial",
-                "reason": "自定义模型用户可备份profile后试单模型档位修补，先核对真实请求和撤销结果。",
+                "decision": "observe",
+                "reason": "能力接线有用，但默认自动写与实际journal/撤销失败一致性影响恢复，先修边界再试。详见[Q06](#research-q06)。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "缺失档位元数据导致不可选配置的任务具体。"
+                        "rationale": "第三方模型metadata缺口具体，需求/完成率未知。"
                     },
                     "advantage": {
-                        "score": 19,
-                        "rationale": "带冲突重算和撤销的配置修补比手填可管理。"
+                        "score": 13,
+                        "rationale": "自动保守patch/能力页有增量，手工可替代。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "补丁与知识表处理可查，服务端推理量和质量未对照。"
+                        "rationale": "固定源码支持，未调用真实模型。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "需维护规则备份，升档还可能增加推理费用。"
+                        "score": 5,
+                        "rationale": "知识表/宿主/自动配置与恢复维护责任高。"
                     }
                 },
-                "score": 65,
+                "score": 54,
                 "revision": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T08:58:23.269Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "20261020-research40-github-1367305514-root-source"
+                    "2026-10-22-02-github-1367305514-root-source"
                 ],
                 "dependencies": [
                     {
@@ -262,89 +415,62 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-20T02:51:30Z",
-            "analysis_sha256": "3d8120284a1fdb3607ec0a2b8de27d9b3435f3e406a771be978676726525e199"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "09c2755767c0bd0039e9000009c4e075c2a0b740eba155d46ca527d005b8f133"
         },
         "publication.metadata": "data/plugins/1069137617--dsh-reasoning-tiers/META.json",
         "publication.summaries": {
-            "text": "按规则补齐第三方模型推理档位，并在设置页编辑模型能力声明。",
+            "text": "按模型知识规则补齐pi-ai推理档位声明，并提供模型上下文、输出与图片能力编辑页。",
             "revision": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b",
             "source_url": "https://github.com/1069137617/dsh-reasoning-tiers/blob/fe642c8ec878b6ba46a7c1831fc6cea557083e5b/README.md"
         },
         "publication.capabilities": {
             "revision": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b",
             "items": {
-                "后台": "模型档位配置补齐与诊断。",
-                "界面": "模型能力设置页。"
-            }
+                "后台": "设置事件驱动档位填充/撤销",
+                "界面": "模型能力设置页",
+                "事件监听": "settings新旧更新事件"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 档位填充 | 补reasoningEfforts | metadata声明不证明远端支持 |\n| compat | 适配协议思考字段 | 默认开启，规则需按模型核 |\n| 能力页 | context/max/image声明 | 不是测得真实模型极限 |\n| journal/revert | 记录与移除插件写入 | 重试/失败/profile边界待修 |"
         },
         "publication.advice": {
             "revision": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b",
-            "text": "先备份 profile，对单个模型检查实际请求与撤销结果，再考虑批量补齐。"
+            "text": "先观察，关闭自动写并备份，先修最终写集/撤销失败保留，再评估单profile单模型。详见[Q06](#research-q06)。"
         },
         "registry": "data/plugins/1069137617--dsh-reasoning-tiers",
-        "reports": "# dsh-reasoning-tiers\n\n> 按规则补齐第三方模型推理档位，并在设置页编辑模型能力声明。\n\n## 固定范围与依据\n\n固定提交 [fe642c8ec878b6ba46a7c1831fc6cea557083e5b](https://github.com/1069137617/dsh-reasoning-tiers/blob/fe642c8ec878b6ba46a7c1831fc6cea557083e5b/src/index.ts)；组件路径：仓库根。核查时间 2026-10-20T03:11:15.964Z；本轮基准 2026-10-20T02:51:30Z。\n源码抽读路径：src/index.ts。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：自定义供应商模型缺少档位元数据时，用户需要恢复可选档位并识别无效配置。\n- **亮点**：按知识表和实时模型信息生成设置补丁，带版本写入、重算冲突并记录撤销日志，不接管请求适配器。\n- **思考**：配置缝修复比拦截模型请求侵入小；声明能力仍须与真实提供商行为一致。\n- **建议**：先备份 profile，对单个模型检查实际请求与撤销结果，再考虑批量补齐。\n\n## 场景与替代办法\n\n自定义供应商模型缺少档位元数据时，用户需要恢复可选档位并识别无效配置。\n\n手工填写提供商官方能力更费时但来源直接；不能用插件自己的表格自证档位有效。\n\n## 依赖与流程\n\n依赖 settings、llm、llm-pi-ai 和内置知识表；宿主版本决定事件和表单接口。\n\n检查模型能力后补缺失配置，重启需要启动读取的部分；有误时按日志撤销并核对。\n\n## 成本与效果\n\n规则维护、备份和撤销演练是主要成本；模型高档位可能增加实际推理费用，未测增益。\n\n配置缝修复比拦截模型请求侵入小；声明能力仍须与真实提供商行为一致。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：d93c2f565125ca5897b875f4db296e645ceede70acc8f5b615b44e86127153bd。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 4 | 1416 | — | — | 10572 |\n| .mjs | source | 3 | 526 | 382 | 98 | — |\n| .ts | source | 11 | 2640 | 1770 | 671 | — |\n| .tsx | source | 1 | 245 | 209 | 25 | — |\n| .mjs | test | 9 | 1330 | 1133 | 68 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **后台**：模型档位配置补齐与诊断。\n- **界面**：模型能力设置页。\n\n## 工程亮点\n\n版本冲突后重算一次、知识表异常拒写和独立日志可借鉴；撤销日志与实际写入一致性需实测。\n\n## 分发与兼容\n\n版本 0.3.1；Host 兼容旧事件与 0.2.0 document-updated，能力界面要求 0.2.0。\n\n## 历史对照\n\n前次代码指纹为 fe642c8ec878b6ba46a7c1831fc6cea557083e5b；本轮固定为 fe642c8ec878b6ba46a7c1831fc6cea557083e5b。手工填写提供商官方能力更费时但来源直接；不能用插件自己的表格自证档位有效。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：档位出现不证明服务端确实改变推理量；本轮未做请求字节或质量对照。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：测试已有配置保留、并发修改、撤销、平坦档位与不支持档位的服务端错误。\n",
+        "reports": "# dsh-reasoning-tiers\n\n> 按模型知识规则补齐pi-ai推理档位声明，并提供模型上下文、输出与图片能力编辑页。\n\n## 研究范围\n\n- **仓库**：[1069137617/dsh-reasoning-tiers](https://github.com/1069137617/dsh-reasoning-tiers)\n- **版本号**：0.3.1（[固定提交 fe642c8ec878b6ba46a7c1831fc6cea557083e5b](https://github.com/1069137617/dsh-reasoning-tiers/tree/fe642c8ec878b6ba46a7c1831fc6cea557083e5b)）\n- **版本日期**：2026-10-06（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n源码支持推理参数规则、能力探测与配置patch/journal接线；冲突重规划的实际写集和撤销状态不完全一致，不能证明可靠回滚或推理质量提升。profile/版本绑定写入收据尚未验证。\n\n## 洞察短评\n\n- **用途**：维护DSH第三方pi-ai模型metadata缺口，需真实协议支持与可恢复配置。\n- **亮点**：不接管adapter而补齐能力声明/选择器接线，尊重已有档位并显示来源，未证明模型推理增强。详见[Q01](#research-q01)与[Q02](#research-q02)。\n- **思考**：重试实际patch与原plan记录可能不同，revert失败仍消费remaining，journal缺profile身份；有undo不等所有失败可恢复。详见[Q02](#research-q02)。\n- **建议**：可探讨profile/版本绑定实际写收据，commit返回最终写集，失败保留撤销依据；有迁移/恢复状态成本，未验证。详见[Q05](#research-q05)。\n\n采用建议：先观察，关闭自动写并备份，先修最终写集/撤销失败保留，再评估单profile单模型。详见[Q06](#research-q06)。\n\n## 核心贡献\n\n不接管adapter而补齐能力声明/选择器接线，尊重已有档位并显示来源，未证明模型推理增强。详见[Q01](#research-q01)与[Q02](#research-q02)。\n\n## 关键质疑\n\n重试实际patch与原plan记录可能不同，revert失败仍消费remaining，journal缺profile身份；有undo不等所有失败可恢复。详见[Q02](#research-q02)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可探讨profile/版本绑定实际写收据，commit返回最终写集，失败保留撤销依据；有迁移/恢复状态成本，未验证。详见[Q05](#research-q05)。\n\n进一步探讨可用settings/journal桩覆盖冲突换计划、compat降级、两profile与失败消费，再看单模型远端接受/效果。\n\n## 场景与替代办法\n\n维护DSH第三方pi-ai模型metadata缺口，需真实协议支持与可恢复配置。\n\n手工按provider协议给模型最小配置patch可替代；插件减少规则接线但增知识/自动写/恢复责任。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| Node>=20、DSH settings/llm及Cordis peers | Host必需 | 读配置/能力并写pi-ai section | 宿主契约版本需固定核对 |\n| llm-pi-ai配置模型与协议 | 生效必需 | reasoningEfforts/dialect声明 | 其他adapter不能推断同样适用 |\n| 可写当前profile settings与DSH_HOME journal | 自动填充/撤销必需 | 真实配置与撤销依据 | 两者不是原子事务，先备份 |\n| DSH0.2 configForms/Client | 能力页必需 | 编辑context/max/image | Host兼容旧版不等Client同样可用 |\n| 真实provider支持 | 实际推理必需 | 解释所发effort字段 | metadata可选不证明远端接受或效果 |\n\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 准备 | 备份profile与journal，先关闭autofill/revert核对计划 | 默认会自动写，不能无感装入生产profile |\n| 核对 | 维护者确认目标模型/协议/已有设置 | 区分知识表推测与真实支持 |\n| 写入 | 明确开启后检查实际settings差异与journal | revision冲突重算后记录要对应实际写集 |\n| 撤销/退出 | 核对revert返回及原配置，不单看完成日志 | 停用/卸载不自动删已写配置 |\n\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 构建/peer、备份空间，金额未知 | 模型协议、知识表、计划与配置核对 | 默认最多200次能力探测非生成任务 |\n| 持续使用 | 设置事件重算、元数据探测与journal读写 | 模型变更/真实支持维护 | 真实更高effort可能改变模型耗时/费用，未测 |\n| 失败恢复 | 配置回滚、journal恢复与重新核对 | 区分设置已写/记录失败/撤销失败 | journal缺失或坏文件按空处理 |\n\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 档位可选 | 写reasoningEfforts及协议compat计划 | 远端是否接受/语义相同 |\n| 能力编辑 | context/max/image有纯编辑逻辑 | 声明值与真实模型极限一致性 |\n| 恢复 | 有journal与按值比较撤销设计 | 重试、失败与跨profile时依据不丢失 |\n\n\n## 研究问题与完整回答\n\n**插件研究总目标：**核查模型档位/能力声明到settings写入与撤销的实际所有权及成本。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 适用什么场景，匹配到配置写入怎样运行？\n\n**研究主题：**场景与需求、功能与机制\n\n#### 完整回答\n\n面向在DSH用第三方pi-ai模型、已有模型缺reasoning metadata而档位选择无效的维护者，也给0.2客户端提供模型能力编辑页。输入是用户层provider/model配置、live能力元数据、知识表和可选自定义规则，输出最小设置patch与journal。合格交付需可选项对应实际协议/模型支持，保留已有设置且撤销可追溯；不是提高模型推理本身。\n\nHost默认autofill/compatAutofill/respectExisting=true，订阅settings新旧事件合并重算，plan按模型名/协议匹配规则并探测已有能力，跳过已有档位。commit带revision更新llm-pi-ai，成功后写DSH_HOME journal；revert由记录与当前设置比较生成删除操作。Client能力页编辑provider自己的contextWindow/maxTokens/input配置，不截获模型请求。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/config.ts:22-35](https://github.com/1069137617/dsh-reasoning-tiers/blob/fe642c8ec878b6ba46a7c1831fc6cea557083e5b/src/config.ts#L22-L35)\n\n默认自动写、保守项与探测上限。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\nexport const DEFAULTS = {\n  autofill: true,\n  revert: false,\n  compatAutofill: true,\n  respectExisting: true,\n  alignGlobalEffort: false,\n  diagnose: true,\n  widenToGlobalEffort: false,\n  excludeProviders: [] as string[],\n  excludeModels: [] as string[],\n  bootRetryDelaysMs: [1000, 2000, 4000, 8000, 16000, 30000],\n  debounceMs: 250,\n  maxProbes: 200,\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/index.ts:130-146](https://github.com/1069137617/dsh-reasoning-tiers/blob/fe642c8ec878b6ba46a7c1831fc6cea557083e5b/src/index.ts#L130-L146)\n\n新旧设置事件。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n  // 0.2.0 renamed the document event: `settings/document-updated` announces the\n  // raw section moving as `(ns, revision)`, while 0.1.x's `settings/updated`\n  // carried the resolved value as `(ns, next, prev, source)`. Both name the\n  // namespace first, which is all this listener reads, so both are registered:\n  // a host emits exactly one of them, and an event with no emitter is inert.\n  const onSettingsChanged = (ns: unknown): void => {\n    if (String(ns) !== PI_AI_NS) return\n    // Guard against self-excitation: our own write lands while `running` is\n    // still set, and a pass with nothing left to write emits nothing anyway.\n    if (running) return\n    schedule('settings')\n  }\n  ctx.on('settings/document-updated', (ns) => {\n    onSettingsChanged(ns)\n  })\n  ;(ctx as unknown as { on(name: string, listener: (ns: unknown) => void): unknown }).on(\n    'settings/updated',\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/index.ts:256-276](https://github.com/1069137617/dsh-reasoning-tiers/blob/fe642c8ec878b6ba46a7c1831fc6cea557083e5b/src/index.ts#L256-L276)\n\n计划提交后journal。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n/** One autofill pass: plan, write, record, report. */\nasync function autofillOnce(\n  ctx: Context,\n  config: ResolvedConfig,\n  logger: Logger,\n  why: string,\n  tableBroken: boolean,\n): Promise<void> {\n  if (tableBroken) return\n  const outcome = await planPass(ctx, config)\n  if (outcome === undefined) return\n  const { plan, revision } = outcome\n\n  report(logger, plan, why)\n  if (config.diagnose) reportTierAudit(ctx, plan, logger)\n  if (Object.keys(plan.patch).length === 0) return\n\n  const path = journalPath()\n  const journal = await readJournal(path)\n  if (!(await commit(ctx, config, plan.patch, revision, logger, 0))) return\n  await writeJournal(path, mergeJournal(journal, plan.writes))\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/knowledge.ts:41-59](https://github.com/1069137617/dsh-reasoning-tiers/blob/fe642c8ec878b6ba46a7c1831fc6cea557083e5b/src/knowledge.ts#L41-L59)\n\n匹配与confidence/source字段。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n/** One family's declaration. */\nexport interface FamilyEntry {\n  /** Stable identifier for logs and tests. */\n  readonly id: string\n  /** Full model ids (normalized) this entry answers for. Checked first. */\n  readonly exact?: readonly string[]\n  /** Normalized id prefixes. Checked second. */\n  readonly prefix?: readonly string[]\n  /** Source text of a case-insensitive regular expression. Checked last. */\n  readonly pattern?: string\n  /** Declared tiers and their wire spellings. */\n  readonly ladder: Ladder\n  /** Dialect switches, applied only to a protocol that can carry them. */\n  readonly dialect?: Dialect\n  /** Protocols this entry may serve; absent means any protocol. */\n  readonly protocols?: readonly KnownProtocol[]\n  readonly confidence: Confidence\n  /** Where the claim comes from. */\n  readonly source: string\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/capabilities.ts:71-77](https://github.com/1069137617/dsh-reasoning-tiers/blob/fe642c8ec878b6ba46a7c1831fc6cea557083e5b/src/capabilities.ts#L71-L77)\n\n模型能力字段草稿。\n\n```text\nfunction draftOf(id: string, raw: Record<string, unknown>): ModelDraft {\n  return {\n    id,\n    contextText: countText(raw.contextWindow),\n    maxText: countText(raw.maxTokens),\n    image: imageModeOf(raw.input),\n    raw,\n```\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 集成贡献和最关键恢复缺口是什么？\n\n**研究主题：**贡献与相对优势、缺陷与关键质疑\n\n#### 完整回答\n\n贡献是在不接管adapter或请求流的前提下，填补第三方模型metadata与官方选择器之间的配置空隙，保留已有档位、给规则来源/置信度和撤销记录。只是声明可选能力，不证明远端接受effort、窗口或图片，也没有任务效果对照；知识表source需逐模型核对，本轮没有读取其所有外部文档。\n\n最关键缺口是实际设置写入与journal不是同一事务。autofill先commit再保存原plan.writes，设置revision冲突时commit内部另算新plan后仅返回boolean，外层仍记旧写集；compat失败降级去字段也仍可能记录原计划。写成功但journal失败/损坏时撤销依据可能丢失。\n\nrevert更直接地忽略commit返回false，mutate捕获失败仅日志且不向上传递，随后仍写plan.remaining，可能清掉尚未撤销字段的记录并宣告完成。journalPath仅DSH_HOME、不含profile身份，多个profile相同route/model会共享撤销记录；按当前值相等检查不能证明字段归属。以上为静态路径推导，未实际改配置。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:273-276](https://github.com/1069137617/dsh-reasoning-tiers/blob/fe642c8ec878b6ba46a7c1831fc6cea557083e5b/src/index.ts#L273-L276)\n\n设置成功后保存原plan.writes。\n\n```text\n  const path = journalPath()\n  const journal = await readJournal(path)\n  if (!(await commit(ctx, config, plan.patch, revision, logger, 0))) return\n  await writeJournal(path, mergeJournal(journal, plan.writes))\n```\n\n**依据 2 · 源码核查**：[src/index.ts:292-317](https://github.com/1069137617/dsh-reasoning-tiers/blob/fe642c8ec878b6ba46a7c1831fc6cea557083e5b/src/index.ts#L292-L317)\n\n冲突重算/compat降级只返回boolean。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n  try {\n    await ctx.settings.update(PI_AI_NS, patch, revision)\n    return true\n  } catch (error) {\n    const message = errorMessage(error)\n    if (isConflict(error) && depth < 1) {\n      // The user wrote while this pass was running: recompute against their\n      // document rather than overwrite it with a stale one.\n      logger.info('settings moved mid-pass; recomputing once')\n      const again = await planPass(ctx, config)\n      if (again === undefined || Object.keys(again.plan.patch).length === 0) return false\n      return commit(ctx, config, again.plan.patch, again.revision, logger, depth + 1)\n    }\n    if (depth < 1 && config.compatAutofill) {\n      // The provider refuses a compat switch its model's protocol does not\n      // take. Retry with ladders only: the tier list is what restores the\n      // control, and a rejected dialect guess should not cost it.\n      logger.warn(`write refused (${message}); retrying without compat switches`)\n      return commit(\n        ctx,\n        { ...config, compatAutofill: false },\n        stripCompat(patch),\n        revision,\n        logger,\n        depth + 1,\n      )\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/index.ts:398-408](https://github.com/1069137617/dsh-reasoning-tiers/blob/fe642c8ec878b6ba46a7c1831fc6cea557083e5b/src/index.ts#L398-L408)\n\n忽略写结果后落remaining并完成。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n  const plan = buildRevert(layer.section, journal)\n  for (const entry of plan.left) logger.info(`left ${entry.route}/${entry.model} in place (${entry.reason})`)\n\n  const quiet: ResolvedConfig = { ...config, compatAutofill: false }\n  if (Object.keys(plan.patch).length > 0)\n    await commit(ctx, quiet, plan.patch, layer.revision, logger, 0)\n  if (plan.ops.length > 0) await mutate(ctx, plan.ops, logger)\n\n  await writeJournal(path, plan.remaining)\n  if (plan.remaining.ladders.length === 0 && plan.remaining.compat.length === 0)\n    logger.info('revert complete; ledger cleared')\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/index.ts:412-419](https://github.com/1069137617/dsh-reasoning-tiers/blob/fe642c8ec878b6ba46a7c1831fc6cea557083e5b/src/index.ts#L412-L419)\n\nmutate失败吞成日志。\n\n```text\nasync function mutate(ctx: Context, ops: readonly SettingsPathOp[], logger: Logger): Promise<void> {\n  const layer = readLayer(ctx)\n  if (layer === undefined) return\n  try {\n    await ctx.settings.mutate(PI_AI_NS, ops, layer.revision)\n  } catch (error) {\n    logger.error(`revert write refused: ${errorMessage(error)}`)\n  }\n```\n\n**依据 5 · 源码核查**：[src/journal.ts:68-94](https://github.com/1069137617/dsh-reasoning-tiers/blob/fe642c8ec878b6ba46a7c1831fc6cea557083e5b/src/journal.ts#L68-L94)\n\n全局路径与损坏按空。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\n/** Where the ledger lives. */\nexport function journalPath(env: Record<string, string | undefined> = process.env): string {\n  return join(resolveDshHome(undefined, env), 'dsh-reasoning-tiers', 'journal.json')\n}\n\n/** An empty ledger. */\nexport function emptyJournal(): Journal {\n  return { version: JOURNAL_VERSION, ladders: [], compat: [] }\n}\n\n/**\n * Read the ledger, tolerating absence and corruption.\n * @param path - journal location.\n * @returns the stored ledger, or an empty one.\n */\nexport async function readJournal(path: string): Promise<Journal> {\n  let raw: string\n  try {\n    raw = await readFile(path, 'utf8')\n  } catch {\n    return emptyJournal()\n  }\n  try {\n    return parseJournal(JSON.parse(raw))\n  } catch {\n    return emptyJournal()\n  }\n```\n\n</details>\n\n**依据 6 · 源码核查**：[src/journal.ts:148-160](https://github.com/1069137617/dsh-reasoning-tiers/blob/fe642c8ec878b6ba46a7c1831fc6cea557083e5b/src/journal.ts#L148-L160)\n\n记录身份为route/model/mode。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\nexport function mergeJournal(journal: Journal, writes: readonly WriteLike[]): Journal {\n  for (const write of writes) {\n    const at = journal.ladders.findIndex(\n      (entry) => entry.route === write.route && entry.model === write.model && entry.mode === write.mode,\n    )\n    const record: LadderRecord = {\n      route: write.route,\n      model: write.model,\n      mode: write.mode,\n      ladder: write.ladder,\n    }\n    if (at === -1) journal.ladders.push(record)\n    else journal.ladders[at] = record\n```\n\n</details>\n\n#### 缺口\n\n- 失败重试、journal写失败及revert拒绝未做实际故障注入。\n  **影响：**不能把有撤销功能称为所有失败下可恢复。\n  **进一步探讨：**可用settings/journal桩分别拒绝update/mutate/write，比较实际字段和保留写集，不改真实profile。\n- 模型规则及能力声明与真实provider协议/限制未逐项验证。\n  **影响：**可选档位不等远端有效或任务更好。\n  **进一步探讨：**可从实际需要的单模型固定provider文档/协议和请求字段入手，区分声明、接受与任务效果。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 依赖、配置与退出条件是什么？\n\n**研究主题：**依赖、兼容与流程\n\n#### 完整回答\n\n包Node>=20及DSH settings/llm/home paths peers，Host支持0.1.x/0.2形状，能力页需0.2 configForms。需要当前profile的pi-ai模型设置，不把所有adapter一概套用。journal位于DSH_HOME的共享目录，备份需与实际profile成对。默认自动填充/compat开启，安装就可能写配置，停用和卸载只停止继续处理，不自动撤销旧写入。\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| Node>=20、DSH settings/llm及Cordis peers | Host必需 | 读配置/能力并写pi-ai section | 宿主契约版本需固定核对 |\n| llm-pi-ai配置模型与协议 | 生效必需 | reasoningEfforts/dialect声明 | 其他adapter不能推断同样适用 |\n| 可写当前profile settings与DSH_HOME journal | 自动填充/撤销必需 | 真实配置与撤销依据 | 两者不是原子事务，先备份 |\n| DSH0.2 configForms/Client | 能力页必需 | 编辑context/max/image | Host兼容旧版不等Client同样可用 |\n| 真实provider支持 | 实际推理必需 | 解释所发effort字段 | metadata可选不证明远端接受或效果 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 准备 | 备份profile与journal，先关闭autofill/revert核对计划 | 默认会自动写，不能无感装入生产profile |\n| 核对 | 维护者确认目标模型/协议/已有设置 | 区分知识表推测与真实支持 |\n| 写入 | 明确开启后检查实际settings差异与journal | revision冲突重算后记录要对应实际写集 |\n| 撤销/退出 | 核对revert返回及原配置，不单看完成日志 | 停用/卸载不自动删已写配置 |\n\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:50-76](https://github.com/1069137617/dsh-reasoning-tiers/blob/fe642c8ec878b6ba46a7c1831fc6cea557083e5b/package.json#L50-L76)\n\n引擎与peer。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\n  \"engines\": {\n    \"node\": \">=20\"\n  },\n  \"os\": [\n    \"darwin\",\n    \"linux\",\n    \"win32\"\n  ],\n  \"license\": \"MIT\",\n  \"scripts\": {\n    \"prepare\": \"npm run build\",\n    \"build\": \"npm run build:host && npm run build:client\",\n    \"build:host\": \"tsc -p tsconfig.json\",\n    \"build:client\": \"node scripts/build.mjs\",\n    \"watch\": \"node scripts/build.mjs --watch\",\n    \"clean\": \"node -e \\\"require('node:fs').rmSync('lib',{recursive:true,force:true})\\\"\",\n    \"typecheck\": \"tsc -p tsconfig.json --noEmit && tsc -p tsconfig.client.json --noEmit\",\n    \"pretest\": \"npm run build\",\n    \"test\": \"node --test\",\n    \"verify:install\": \"node scripts/verify-install.mjs\",\n    \"prepublishOnly\": \"npm test\"\n  },\n  \"peerDependencies\": {\n    \"@deepseek-ai/cordis\": \"^4.0.2\",\n    \"@deepseek-ai/dsh-home-paths\": \">=0.1.5-rc.1 || >=0.2.0-rc.1\",\n    \"@deepseek-ai/dsh-llm\": \">=0.1.5-rc.1 || >=0.2.0-rc.1\",\n    \"@deepseek-ai/dsh-settings\": \">=0.1.5-rc.1 || >=0.2.0-rc.1\"\n```\n\n</details>\n\n**依据 2 · 作者声明**：[README.md:15-22](https://github.com/1069137617/dsh-reasoning-tiers/blob/fe642c8ec878b6ba46a7c1831fc6cea557083e5b/README.md#L15-L22)\n\n作者版本与能力页边界。\n\n```text\n0.3.1 adapts to **DSH 0.2.0** (desktop 0.2.0-rc.2): the host half rides the renamed\n`settings/document-updated` event and reads resolved sections off `describe()` (0.2.0 dropped\n`settings.get`), and the browser half registers through the `configForms` service that replaced\n`settingsScope`. The 0.1.x event and `get()` stay supported in the host half; the capabilities\npage requires a 0.2.0 host.\n\nNo adapter takeover, no request interception. The tier writes happen once, conservatively, and\nwith an undo; the capabilities page only edits the provider's own settings through the standard\n```\n\n**依据 3 · 源码核查**：[src/config.ts:22-35](https://github.com/1069137617/dsh-reasoning-tiers/blob/fe642c8ec878b6ba46a7c1831fc6cea557083e5b/src/config.ts#L22-L35)\n\n默认自动填充。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\nexport const DEFAULTS = {\n  autofill: true,\n  revert: false,\n  compatAutofill: true,\n  respectExisting: true,\n  alignGlobalEffort: false,\n  diagnose: true,\n  widenToGlobalEffort: false,\n  excludeProviders: [] as string[],\n  excludeModels: [] as string[],\n  bootRetryDelaysMs: [1000, 2000, 4000, 8000, 16000, 30000],\n  debounceMs: 250,\n  maxProbes: 200,\n}\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/journal.ts:68-70](https://github.com/1069137617/dsh-reasoning-tiers/blob/fe642c8ec878b6ba46a7c1831fc6cea557083e5b/src/journal.ts#L68-L70)\n\n共享journal路径。\n\n```text\n/** Where the ledger lives. */\nexport function journalPath(env: Record<string, string | undefined> = process.env): string {\n  return join(resolveDshHome(undefined, env), 'dsh-reasoning-tiers', 'journal.json')\n```\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 首次、持续和失败恢复成本效果怎样判断？\n\n**研究主题：**效果与总成本\n\n#### 完整回答\n\n插件主要做设置/metadata探测，不直接推理生成；因此自身不能给出模型效果提升。声明更高effort或上下文只是改变可选配置，真实请求耗时/费用和任务质量仍需单模型对照，不能因为选择器出现max就计为成功。配置事件、boot重试和最多200探测有资源/维护成本。\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 构建/peer、备份空间，金额未知 | 模型协议、知识表、计划与配置核对 | 默认最多200次能力探测非生成任务 |\n| 持续使用 | 设置事件重算、元数据探测与journal读写 | 模型变更/真实支持维护 | 真实更高effort可能改变模型耗时/费用，未测 |\n| 失败恢复 | 配置回滚、journal恢复与重新核对 | 区分设置已写/记录失败/撤销失败 | journal缺失或坏文件按空处理 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 档位可选 | 写reasoningEfforts及协议compat计划 | 远端是否接受/语义相同 |\n| 能力编辑 | context/max/image有纯编辑逻辑 | 声明值与真实模型极限一致性 |\n| 恢复 | 有journal与按值比较撤销设计 | 重试、失败与跨profile时依据不丢失 |\n\n与手工最小设置patch比较，应统计实际字段正确率、远端接受、完整任务质量/资源和撤销人时，不按知识表覆盖模型数评优。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/config.ts:22-35](https://github.com/1069137617/dsh-reasoning-tiers/blob/fe642c8ec878b6ba46a7c1831fc6cea557083e5b/src/config.ts#L22-L35)\n\n事件/boot/探测参数。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\nexport const DEFAULTS = {\n  autofill: true,\n  revert: false,\n  compatAutofill: true,\n  respectExisting: true,\n  alignGlobalEffort: false,\n  diagnose: true,\n  widenToGlobalEffort: false,\n  excludeProviders: [] as string[],\n  excludeModels: [] as string[],\n  bootRetryDelaysMs: [1000, 2000, 4000, 8000, 16000, 30000],\n  debounceMs: 250,\n  maxProbes: 200,\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/ladder.ts:15-17](https://github.com/1069137617/dsh-reasoning-tiers/blob/fe642c8ec878b6ba46a7c1831fc6cea557083e5b/src/ladder.ts#L15-L17)\n\n显式dict替换能力而非继承。\n\n```text\n * Declaring a dict **replaces** the inherited capability: a level absent from\n * the dict is pinned unsupported, not inherited. That asymmetry is why this\n * plugin never rewrites a model that already offers a tier — see `plan.ts`.\n```\n\n**依据 3 · 源码核查**：[src/index.ts:273-276](https://github.com/1069137617/dsh-reasoning-tiers/blob/fe642c8ec878b6ba46a7c1831fc6cea557083e5b/src/index.ts#L273-L276)\n\n配置/记录两步成本。\n\n```text\n  const path = journalPath()\n  const journal = await readJournal(path)\n  if (!(await commit(ctx, config, plan.patch, revision, logger, 0))) return\n  await writeJournal(path, mergeJournal(journal, plan.writes))\n```\n\n**依据 4 · 源码核查**：[src/journal.ts:83-94](https://github.com/1069137617/dsh-reasoning-tiers/blob/fe642c8ec878b6ba46a7c1831fc6cea557083e5b/src/journal.ts#L83-L94)\n\n失败/坏文件为空。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\nexport async function readJournal(path: string): Promise<Journal> {\n  let raw: string\n  try {\n    raw = await readFile(path, 'utf8')\n  } catch {\n    return emptyJournal()\n  }\n  try {\n    return parseJournal(JSON.parse(raw))\n  } catch {\n    return emptyJournal()\n  }\n```\n\n</details>\n\n#### 缺口\n\n- 没有同模型同任务真实请求接受、质量、耗时/tokens与手工配置对照。\n  **影响：**不能承诺推理能力/质量改善或省成本。\n  **进一步探讨：**可先核字段和provider接受，再按明确授权比较相同任务的effort输出及完整资源，不只看UI档位。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 可复用机制与版本绑定写收据假设如何证伪？\n\n**研究主题：**工程质量与复用、新假设与验证\n\n#### 完整回答\n\n可复用的是pure plan/ladder验证、区分用户层与resolved值、尊重已有能力、revision写入和来源/置信度日志；这些减少盲目覆盖。journal原子rename能防半文件，但不把settings和日志变事务，也不解决多profile所有权。\n\n可探讨未验证的“profile/版本绑定实际写收据”。commit返回最终实际写集/前后revision，重试后使用新计划记录；先写待执行意图，提交后标完成，撤销仅在全部对应写成功后消耗记录，失败保留待恢复。journal加profile/settings文档身份与跨进程协调。相对当前boolean，它明确哪次副作用由谁拥有。代价是迁移、崩溃恢复与部分完成状态。最小夹具包括revision冲突换计划、compat降级、日志失败、update/mutate拒绝与两profile同名模型，比较丢失记录/错误撤销；若失败后仍宣告完成或丢依据，应否定当前收据协议。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:292-317](https://github.com/1069137617/dsh-reasoning-tiers/blob/fe642c8ec878b6ba46a7c1831fc6cea557083e5b/src/index.ts#L292-L317)\n\n重试计划只返回boolean。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n  try {\n    await ctx.settings.update(PI_AI_NS, patch, revision)\n    return true\n  } catch (error) {\n    const message = errorMessage(error)\n    if (isConflict(error) && depth < 1) {\n      // The user wrote while this pass was running: recompute against their\n      // document rather than overwrite it with a stale one.\n      logger.info('settings moved mid-pass; recomputing once')\n      const again = await planPass(ctx, config)\n      if (again === undefined || Object.keys(again.plan.patch).length === 0) return false\n      return commit(ctx, config, again.plan.patch, again.revision, logger, depth + 1)\n    }\n    if (depth < 1 && config.compatAutofill) {\n      // The provider refuses a compat switch its model's protocol does not\n      // take. Retry with ladders only: the tier list is what restores the\n      // control, and a rejected dialect guess should not cost it.\n      logger.warn(`write refused (${message}); retrying without compat switches`)\n      return commit(\n        ctx,\n        { ...config, compatAutofill: false },\n        stripCompat(patch),\n        revision,\n        logger,\n        depth + 1,\n      )\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/index.ts:398-418](https://github.com/1069137617/dsh-reasoning-tiers/blob/fe642c8ec878b6ba46a7c1831fc6cea557083e5b/src/index.ts#L398-L418)\n\n撤销失败仍消费依据的起点。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n  const plan = buildRevert(layer.section, journal)\n  for (const entry of plan.left) logger.info(`left ${entry.route}/${entry.model} in place (${entry.reason})`)\n\n  const quiet: ResolvedConfig = { ...config, compatAutofill: false }\n  if (Object.keys(plan.patch).length > 0)\n    await commit(ctx, quiet, plan.patch, layer.revision, logger, 0)\n  if (plan.ops.length > 0) await mutate(ctx, plan.ops, logger)\n\n  await writeJournal(path, plan.remaining)\n  if (plan.remaining.ladders.length === 0 && plan.remaining.compat.length === 0)\n    logger.info('revert complete; ledger cleared')\n}\n\n/** Apply path-addressed unsets; a merge alone cannot delete a dict key. */\nasync function mutate(ctx: Context, ops: readonly SettingsPathOp[], logger: Logger): Promise<void> {\n  const layer = readLayer(ctx)\n  if (layer === undefined) return\n  try {\n    await ctx.settings.mutate(PI_AI_NS, ops, layer.revision)\n  } catch (error) {\n    logger.error(`revert write refused: ${errorMessage(error)}`)\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/journal.ts:126-130](https://github.com/1069137617/dsh-reasoning-tiers/blob/fe642c8ec878b6ba46a7c1831fc6cea557083e5b/src/journal.ts#L126-L130)\n\n原子journal写。\n\n```text\nexport async function writeJournal(path: string, journal: Journal): Promise<void> {\n  await mkdir(dirname(path), { recursive: true })\n  const temp = `${path}.${String(process.pid)}.tmp`\n  await writeFile(temp, `${JSON.stringify(journal, null, 2)}\\n`, 'utf8')\n  await rename(temp, path)\n```\n\n**依据 4 · 源码核查**：[src/journal.ts:148-160](https://github.com/1069137617/dsh-reasoning-tiers/blob/fe642c8ec878b6ba46a7c1831fc6cea557083e5b/src/journal.ts#L148-L160)\n\n当前记录身份。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\nexport function mergeJournal(journal: Journal, writes: readonly WriteLike[]): Journal {\n  for (const write of writes) {\n    const at = journal.ladders.findIndex(\n      (entry) => entry.route === write.route && entry.model === write.model && entry.mode === write.mode,\n    )\n    const record: LadderRecord = {\n      route: write.route,\n      model: write.model,\n      mode: write.mode,\n      ladder: write.ladder,\n    }\n    if (at === -1) journal.ladders.push(record)\n    else journal.ladders[at] = record\n```\n\n</details>\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 当前建议和停止标准是什么？\n\n**研究主题：**采用判断\n\n#### 完整回答\n\n推荐observe。metadata补齐和能力页有清楚用途，但默认自动配置写入与撤销依据不一致影响采用，不能靠“有undo”口号放心安装。优先备份并关闭autofill/revert做源码/计划核对，先修实际写集和失败保留，再评估单profile trial。\n\n继续探讨可用无真实settings桩验证冲突/失败/两profile，再固定单模型provider协议。出现journal缺失/坏文件、实际patch与记录不同、revert拒绝却宣告完成、已有能力被压缩或远端不接受字段，应停止自动写与反复撤销，保存原profile/journal盘点。依据Q02/Q04，不把出现档位当模型增强，本轮未调用模型或写配置。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/config.ts:22-29](https://github.com/1069137617/dsh-reasoning-tiers/blob/fe642c8ec878b6ba46a7c1831fc6cea557083e5b/src/config.ts#L22-L29)\n\n默认动作与关闭选项。\n\n```text\nexport const DEFAULTS = {\n  autofill: true,\n  revert: false,\n  compatAutofill: true,\n  respectExisting: true,\n  alignGlobalEffort: false,\n  diagnose: true,\n  widenToGlobalEffort: false,\n```\n\n**依据 2 · 源码核查**：[src/index.ts:273-276](https://github.com/1069137617/dsh-reasoning-tiers/blob/fe642c8ec878b6ba46a7c1831fc6cea557083e5b/src/index.ts#L273-L276)\n\n实际写与记录顺序。\n\n```text\n  const path = journalPath()\n  const journal = await readJournal(path)\n  if (!(await commit(ctx, config, plan.patch, revision, logger, 0))) return\n  await writeJournal(path, mergeJournal(journal, plan.writes))\n```\n\n**依据 3 · 源码核查**：[src/index.ts:398-418](https://github.com/1069137617/dsh-reasoning-tiers/blob/fe642c8ec878b6ba46a7c1831fc6cea557083e5b/src/index.ts#L398-L418)\n\n撤销失败边界。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n  const plan = buildRevert(layer.section, journal)\n  for (const entry of plan.left) logger.info(`left ${entry.route}/${entry.model} in place (${entry.reason})`)\n\n  const quiet: ResolvedConfig = { ...config, compatAutofill: false }\n  if (Object.keys(plan.patch).length > 0)\n    await commit(ctx, quiet, plan.patch, layer.revision, logger, 0)\n  if (plan.ops.length > 0) await mutate(ctx, plan.ops, logger)\n\n  await writeJournal(path, plan.remaining)\n  if (plan.remaining.ladders.length === 0 && plan.remaining.compat.length === 0)\n    logger.info('revert complete; ledger cleared')\n}\n\n/** Apply path-addressed unsets; a merge alone cannot delete a dict key. */\nasync function mutate(ctx: Context, ops: readonly SettingsPathOp[], logger: Logger): Promise<void> {\n  const layer = readLayer(ctx)\n  if (layer === undefined) return\n  try {\n    await ctx.settings.mutate(PI_AI_NS, ops, layer.revision)\n  } catch (error) {\n    logger.error(`revert write refused: ${errorMessage(error)}`)\n```\n\n</details>\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：d93c2f565125ca5897b875f4db296e645ceede70acc8f5b615b44e86127153bd。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 4 | 1416 | — | — | 10572 |\n| .mjs | source | 3 | 526 | 382 | 98 | — |\n| .ts | source | 11 | 2640 | 1770 | 671 | — |\n| .tsx | source | 1 | 245 | 209 | 25 | — |\n| .mjs | test | 9 | 1330 | 1133 | 68 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 档位填充 | 补reasoningEfforts | metadata声明不证明远端支持 |\n| compat | 适配协议思考字段 | 默认开启，规则需按模型核 |\n| 能力页 | context/max/image声明 | 不是测得真实模型极限 |\n| journal/revert | 记录与移除插件写入 | 重试/失败/profile边界待修 |\n\n## 工程亮点\n\n可复用的是pure plan/ladder验证、区分用户层与resolved值、尊重已有能力、revision写入和来源/置信度日志；这些减少盲目覆盖。journal原子rename能防半文件，但不把settings和日志变事务，也不解决多profile所有权。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 src/config.ts、src/index.ts、src/knowledge.ts、src/capabilities.ts、src/journal.ts、package.json、README.md、src/ladder.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定Host提交/重试/撤销、journal、默认配置、knowledge/ladder/plan契约与能力草稿；未调用provider或全面审计Client表单，不读全部规则外部文档。\n- 下一步：进一步探讨可用settings/journal桩覆盖冲突换计划、compat降级、两profile与失败消费，再看单模型远端接受/效果。\n",
         "metadata": {
             "repository": "1069137617/dsh-reasoning-tiers",
             "repository_id": 1367305514,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T05:57:26.118Z",
+            "window_start": "2026-09-22T05:57:26.118Z",
             "stars": 0,
             "pushed_at": "2026-10-06T13:21:42Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1069137617%2Fdsh-reasoning-tiers%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640E:3FDBB6:14F477:226B68:6AD84905 and timestamp 2026-10-21 05:09:25 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1069137617%2Fdsh-reasoning-tiers%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6418:1DEEF7:1484DA:21FCD3:6AD84905 and timestamp 2026-10-21 05:09:25 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1069137617%2Fdsh-reasoning-tiers%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641B:E4386:14E619:22533A:6AD84905 and timestamp 2026-10-21 05:09:25 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1069137617%2Fdsh-reasoning-tiers%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641C:1CA4C8:148D62:22065E:6AD84905 and timestamp 2026-10-21 05:09:25 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1069137617%2Fdsh-reasoning-tiers%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641D:1F2B1B:146B69:21D830:6AD84905 and timestamp 2026-10-21 05:09:25 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "dsh-reasoning-tiers",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 1044,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-reasoning-tiers",
+                "captured_at": "2026-10-22T05:57:34.655Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 1017,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-reasoning-tiers",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-09-12T13:38:40.238Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T05:57:34.655Z",
                     "source_url": "https://registry.npmjs.org/dsh-reasoning-tiers",
                     "error": null,
                     "latest_version": "0.3.0",
                     "latest_published_at": "2026-09-13T03:14:01.894Z",
                     "latest_error": null
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b",
-                "current_revision": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {
@@ -352,14 +478,14 @@
             "repository": "1069137617/dsh-reasoning-tiers",
             "path": "",
             "revision": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "5bc7230f875765ea3eb08f6b4e85cc237d9401bc9670e9e7e5b955bc62c370a0",
                 "code": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b",
                 "maintenance": "578ceb2b77e3cc5c9671ad1be42bbaaf0f67d43bee453d9a668a9f446b1cc54e"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

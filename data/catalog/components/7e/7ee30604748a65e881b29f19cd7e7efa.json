@@ -24,36 +24,124 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-04-github-1393980674-root-directory-0",
+                    "id": "2026-10-22-02-github-1393980674-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T04:16:53.010Z",
+                    "retrieved_at": "2026-10-22T04:46:38.704Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-04-github-1393980674-root-author",
+                    "id": "2026-10-22-02-github-1393980674-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/AFunDog/dsh-sidebar-git-graph/blob/4dfefb3cc465be189fa1806f0bc9a33d30006a95/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AFunDog/dsh-sidebar-git-graph",
+                            "commit": "4dfefb3cc465be189fa1806f0bc9a33d30006a95",
+                            "path": "README.md",
+                            "content_sha256": "9f76c743b764bfd27b952b14a7d37d284363c0ef7b6d34dfd159867eed311dcb"
+                        }
+                    ],
                     "revision": "4dfefb3cc465be189fa1806f0bc9a33d30006a95",
-                    "captured_at": "2026-10-21T04:16:53.010Z",
-                    "summary": "在DSH右侧栏显示当前会话仓库的分支提交图、工作树和暂存区差异。",
-                    "artifact": "data/runs/2026-10-21-04/snapshots/afundog--dsh-sidebar-git-graph/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T04:46:38.704Z",
+                    "summary": "在DSH右侧栏查看当前会话仓库的提交关系、工作树改动和文件差异。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/afundog--dsh-sidebar-git-graph/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-04-github-1393980674-root-source",
+                    "id": "2026-10-22-02-github-1393980674-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/AFunDog/dsh-sidebar-git-graph/blob/4dfefb3cc465be189fa1806f0bc9a33d30006a95/lib/git-read.js",
+                    "url": "https://github.com/AFunDog/dsh-sidebar-git-graph/blob/4dfefb3cc465be189fa1806f0bc9a33d30006a95/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AFunDog/dsh-sidebar-git-graph",
+                            "commit": "4dfefb3cc465be189fa1806f0bc9a33d30006a95",
+                            "path": "README.md",
+                            "content_sha256": "9f76c743b764bfd27b952b14a7d37d284363c0ef7b6d34dfd159867eed311dcb"
+                        },
+                        {
+                            "repository_url": "https://github.com/AFunDog/dsh-sidebar-git-graph",
+                            "commit": "4dfefb3cc465be189fa1806f0bc9a33d30006a95",
+                            "path": "package.json",
+                            "content_sha256": "5c6bfd485af350483e9dfa67f9183fba8999a1055efdf744784a25627a156daa"
+                        },
+                        {
+                            "repository_url": "https://github.com/AFunDog/dsh-sidebar-git-graph",
+                            "commit": "4dfefb3cc465be189fa1806f0bc9a33d30006a95",
+                            "path": "lib/index.js",
+                            "content_sha256": "fd80222f2499fbcba9ef2683c138ec9d4baae817a0145a467ac06d5129cd0c77"
+                        },
+                        {
+                            "repository_url": "https://github.com/AFunDog/dsh-sidebar-git-graph",
+                            "commit": "4dfefb3cc465be189fa1806f0bc9a33d30006a95",
+                            "path": "lib/client.js",
+                            "content_sha256": "667c4e8f99c3c9882aabaebd65ddf225973c9b776203cddc30db79867eef9edb"
+                        },
+                        {
+                            "repository_url": "https://github.com/AFunDog/dsh-sidebar-git-graph",
+                            "commit": "4dfefb3cc465be189fa1806f0bc9a33d30006a95",
+                            "path": "lib/workspace.js",
+                            "content_sha256": "b64fa632eafb5bef4334ab1a18c26379f4b3861d68ebc8669529c2a35a0640cf"
+                        },
+                        {
+                            "repository_url": "https://github.com/AFunDog/dsh-sidebar-git-graph",
+                            "commit": "4dfefb3cc465be189fa1806f0bc9a33d30006a95",
+                            "path": "lib/repos.js",
+                            "content_sha256": "951381082c0448ac82df0d7bff82426d35dae811a77473944193820a8b703182"
+                        },
+                        {
+                            "repository_url": "https://github.com/AFunDog/dsh-sidebar-git-graph",
+                            "commit": "4dfefb3cc465be189fa1806f0bc9a33d30006a95",
+                            "path": "lib/git-read.js",
+                            "content_sha256": "b316e19b1f1e05d7385a158c79fdee2ff9cc2f52da49dd99ada37a698febf704"
+                        },
+                        {
+                            "repository_url": "https://github.com/AFunDog/dsh-sidebar-git-graph",
+                            "commit": "4dfefb3cc465be189fa1806f0bc9a33d30006a95",
+                            "path": "lib/changes.js",
+                            "content_sha256": "48d95aabf2a1b5636462d016e983a0a219c728d6ad8b44d8055b4a068f373d33"
+                        },
+                        {
+                            "repository_url": "https://github.com/AFunDog/dsh-sidebar-git-graph",
+                            "commit": "4dfefb3cc465be189fa1806f0bc9a33d30006a95",
+                            "path": "lib/commit-files.js",
+                            "content_sha256": "12af0c307ad8518ab1867fa110e90c24464972fe4799a9f5c4ee86a0cde00f9c"
+                        },
+                        {
+                            "repository_url": "https://github.com/AFunDog/dsh-sidebar-git-graph",
+                            "commit": "4dfefb3cc465be189fa1806f0bc9a33d30006a95",
+                            "path": "lib/worktrees.js",
+                            "content_sha256": "8cb0dd73a869789e18d13d943c09b6f078af6ca08c4e35713345722d8769e12f"
+                        },
+                        {
+                            "repository_url": "https://github.com/AFunDog/dsh-sidebar-git-graph",
+                            "commit": "4dfefb3cc465be189fa1806f0bc9a33d30006a95",
+                            "path": "scripts/test.mjs",
+                            "content_sha256": "22cca8eb8495d787a263425205a09db15f635f86d4841fc124230035244e91f0"
+                        },
+                        {
+                            "repository_url": "https://github.com/AFunDog/dsh-sidebar-git-graph",
+                            "commit": "4dfefb3cc465be189fa1806f0bc9a33d30006a95",
+                            "path": "test/route.test.cjs",
+                            "content_sha256": "fd28ebf984a236f1d9a5c19d4dd24dceb5bc66b6aa7089dfa7afd5b8b5f9ed0d"
+                        },
+                        {
+                            "repository_url": "https://github.com/AFunDog/dsh-sidebar-git-graph",
+                            "commit": "4dfefb3cc465be189fa1806f0bc9a33d30006a95",
+                            "path": "cordis.patch.yml",
+                            "content_sha256": "58673c448c95304d6161413e40dad22fc046bf201d7110b6814777705facb0c0"
+                        }
+                    ],
                     "revision": "4dfefb3cc465be189fa1806f0bc9a33d30006a95",
-                    "captured_at": "2026-10-21T04:16:53.010Z",
-                    "summary": "核查 lib/git-read.js、lib/repos.js；git-read.js构建只读Git argv并用NUL/RS解析；repos.js有深度/目录/数量/时间上限扫描嵌套仓库，不跟符号链接；客户端绘制泳道并展开diff。",
-                    "artifact": "data/runs/2026-10-21-04/snapshots/afundog--dsh-sidebar-git-graph/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T04:46:38.704Z",
+                    "summary": "核查 README.md、package.json、lib/index.js、lib/client.js、lib/workspace.js、lib/repos.js、lib/git-read.js、lib/changes.js、lib/commit-files.js、lib/worktrees.js、scripts/test.mjs、test/route.test.cjs、cordis.patch.yml；浏览器并发请求图谱和改动，宿主解析会话工作区及worktree后执行固定Git argv，纯函数解析NUL记录，按需返回文件patch。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/afundog--dsh-sidebar-git-graph/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "抽读lib/git-read.js、lib/repos.js、lib/index.js；未覆盖全部参考/界面分支与真实并发宿主行为，未运行目标代码、外部工具或安装验收。",
+                        "固定提交源码研究，读取宿主、客户端、Git解析、仓库扫描及部分测试；未覆盖完整宿主认证链，未执行目标代码。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +152,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "开发者在会话中确认分支与改动归属，合格展示需明确仓库、分页和刷新时点，不能把图形完整误认作所有历史。",
+                    "text": "开发者在多工作树会话中确认仓库、分支和改动归属；合格结果需交代选择来源、截断和本地新鲜度。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1393980674-root-source"
+                        "2026-10-22-02-github-1393980674-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +163,16 @@
                             "fingerprint": "4dfefb3cc465be189fa1806f0bc9a33d30006a95"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:16:53.010Z",
+                    "reviewed_at": "2026-10-22T04:46:38.704Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "git-read.js构建只读Git argv并用NUL/RS解析；repos.js有深度/目录/数量/时间上限扫描嵌套仓库，不跟符号链接；客户端绘制泳道并展开diff。",
+                    "text": "浏览器并发请求图谱和改动，宿主解析会话工作区及worktree后执行固定Git argv，纯函数解析NUL记录，按需返回文件patch。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1393980674-root-source"
+                        "2026-10-22-02-github-1393980674-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +181,16 @@
                             "fingerprint": "4dfefb3cc465be189fa1806f0bc9a33d30006a95"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:16:53.010Z",
+                    "reviewed_at": "2026-10-22T04:46:38.704Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "抽读lib/git-read.js、lib/repos.js、lib/index.js；未覆盖全部参考/界面分支与真实并发宿主行为，未运行目标代码、外部工具或安装验收。",
+                    "text": "固定提交源码研究，读取宿主、客户端、Git解析、仓库扫描及部分测试；未覆盖完整宿主认证链，未执行目标代码。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1393980674-root-source"
+                        "2026-10-22-02-github-1393980674-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +199,16 @@
                             "fingerprint": "4dfefb3cc465be189fa1806f0bc9a33d30006a95"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:16:53.010Z",
+                    "reviewed_at": "2026-10-22T04:46:38.704Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "MIT纯JS包，Git CLI必须可用，兼容better-sidebar或原生席位；无fetch/push等写操作声明已由argv抽读支持。",
+                    "text": "package声明v0.5.0、MIT、Node>=22.19与DSH peer>=0.1.7-rc.1，作者指向GitHub分发；本轮npm查询为404，不能据此判项目不可用。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1393980674-root-source"
+                        "2026-10-22-02-github-1393980674-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +217,16 @@
                             "fingerprint": "4dfefb3cc465be189fa1806f0bc9a33d30006a95"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:16:53.010Z",
+                    "reviewed_at": "2026-10-22T04:46:38.704Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "初始安装与仓库识别，日常大型仓库log/diff/扫描成本与人工刷新；无性能/审阅节时实测。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 本地 Node、Git、宿主与浏览器资源；金额未知 | 安装固定来源、重启、刷新、确认目标仓库 | 没有本次安装耗时数据 |\n| 持续使用 | 刷新触发多条 Git 读取与目录扫描；实际 CPU/IO 未测 | 解释截断、新鲜度和选择来源，必要时终端复核 | 单条 Git 10 秒超时、48MiB 输出预算不等于整页耗时上限 |\n| 失败恢复 | 重读与重新扫描的资源未知 | 修 PATH、缩扫描深度、重选已存在 worktree、重启旧宿主 | 需要判断失败是空结果、旧版本还是范围限制 |\n\n",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1393980674-root-source"
+                        "2026-10-22-02-github-1393980674-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +235,16 @@
                             "fingerprint": "4dfefb3cc465be189fa1806f0bc9a33d30006a95"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:16:53.010Z",
+                    "reviewed_at": "2026-10-22T04:46:38.704Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "适合会话内只读查看Git。先确认选中仓库、扫描范围和刷新，再作提交判断；图谱不是CI或代码正确性验收。",
+                    "text": "本地单用户开发者可先用小仓库试用并与CLI核对；先审查webServer访问控制，出现静默换库、未说明截断或无法解释的差异即回到CLI。尚不足以推荐持续安装。详见[Q09](#research-q09)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1393980674-root-source"
+                        "2026-10-22-02-github-1393980674-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +253,16 @@
                             "fingerprint": "4dfefb3cc465be189fa1806f0bc9a33d30006a95"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:16:53.010Z",
+                    "reviewed_at": "2026-10-22T04:46:38.704Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "减少上下文切换，不能替代版本控制备份或审查。",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 会话内查阅 | 图谱、改动和差异集成 | 定位时间和正确率的净改善 |\n| 资源边界 | 有扫描、查询、patch限制和缓存 | 大仓库端到端成本及尾延迟 |",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1393980674-root-source"
+                        "2026-10-22-02-github-1393980674-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +271,16 @@
                             "fingerprint": "4dfefb3cc465be189fa1806f0bc9a33d30006a95"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:16:53.010Z",
+                    "reviewed_at": "2026-10-22T04:46:38.704Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "分隔符解析与有界无符号链接扫描可借鉴；将读取与展示拆分便于验证，复用需补统一时点和异常/截断可见性。 源码依据：[lib/git-read.js](https://github.com/AFunDog/dsh-sidebar-git-graph/blob/4dfefb3cc465be189fa1806f0bc9a33d30006a95/lib/git-read.js)、[lib/repos.js](https://github.com/AFunDog/dsh-sidebar-git-graph/blob/4dfefb3cc465be189fa1806f0bc9a33d30006a95/lib/repos.js)。",
+                    "text": "值得复用的是宿主 IO 与纯解析层分离。git-read、changes、commit-files 构造固定 argv 并解析 NUL 分隔记录，宿主集中执行进程、处理超时及响应。changes 统一输出路径安全 flags，commit-files 复用这些属性，降低分叉实现逐渐漂移的可能。迁移时仍要保留 Git 特定的比较语义，例如暂存区相对 HEAD、未暂存相对索引、冲突用普通 unified 格式，以及 no-index 返回码的特殊处理。\n\n另一处值得借鉴的是对“不知道”和“没有”的区分。计数命令失败用 countsAvailable，而不是直接画成零；扫描和 patch 超限分别带标记；选择失败原因进入响应。工作树请求还做 pending 去重，减少同一次刷新重复执行。客户端请求序号抑制晚到响应，但不会提供全链路事务一致性。\n\n维护代价也明确。主 index 负责多种解析与策略编排，client 是较长的手写 bundle，读者需跨多层理解生命周期与状态；工作区 fallback 读取宿主非公开存储布局，版本适配责任仍在插件。测试 runner 自动发现测试文件并先做语法检查，是测试遗漏防线。这里只检查 runner 和部分 route 断言，没有运行测试，也不能由测试存在推断全部行为正确。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1393980674-root-source"
+                        "2026-10-22-02-github-1393980674-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +289,16 @@
                             "fingerprint": "4dfefb3cc465be189fa1806f0bc9a33d30006a95"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:16:53.010Z",
+                    "reviewed_at": "2026-10-22T04:46:38.704Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "interpretation",
-                    "text": "相对切换CLI或IDE，增量是将仓库身份、工作树/暂存区与历史图放到会话旁；Git事实仍来自Git，本插件不管理版本操作。",
+                    "text": "把Git图谱、工作树与差异接到DSH会话，在手选、标签和历史提示间明确优先级并显示回退原因；贡献属于可解释的接线与信息组织，不是新的Git机制。详见[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1393980674-root-source"
+                        "2026-10-22-02-github-1393980674-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +307,16 @@
                             "fingerprint": "4dfefb3cc465be189fa1806f0bc9a33d30006a95"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:16:53.010Z",
+                    "reviewed_at": "2026-10-22T04:46:38.704Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
-                    "basis": "interpretation",
-                    "text": "“当前会话仓库”与图完整性是否清楚？扫描会截断并排除目录，多个只读命令并发返回也可能跨越新的提交/暂存操作。无写入避免修改仓库，却不保证一组数据来自同一时点；读图仍需看truncated与仓库选项。",
+                    "basis": "supported",
+                    "text": "只读不能保证授权隔离或快照一致性。无工作区候选时存在claimed-unfenced退路，图谱与改动独立读取可能跨时点；这些是静态边界，未作越权或竞态复现。详见[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1393980674-root-source"
+                        "2026-10-22-02-github-1393980674-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +325,16 @@
                             "fingerprint": "4dfefb3cc465be189fa1806f0bc9a33d30006a95"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:16:53.010Z",
+                    "reviewed_at": "2026-10-22T04:46:38.704Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "unverified",
-                    "text": "由多命令快照推导，可每次加载前后读取HEAD/索引标识，不一致时标明刷新并避免拼接旧新图。未验证；高频提交/切仓库时检查视图是否混用，若不能区分则否定。",
+                    "text": "可探索共同读取收据与状态变化提示，以显式呈现跨请求不一致；需比较误判、误报和尾延迟，当前未实现，不计为已有创新。详见[Q08](#research-q08)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1393980674-root-source"
+                        "2026-10-22-02-github-1393980674-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +343,15 @@
                             "fingerprint": "4dfefb3cc465be189fa1806f0bc9a33d30006a95"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:16:53.010Z",
+                    "reviewed_at": "2026-10-22T04:46:38.704Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T04:16:53.010Z",
+            "last_checked_at": "2026-10-22T04:46:38.704Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "4dfefb3cc465be189fa1806f0bc9a33d30006a95",
-                "reviewed_at": "2026-10-21T04:16:53.010Z",
+                "reviewed_at": "2026-10-22T04:46:38.704Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -279,57 +367,57 @@
                         "transferability": 10,
                         "simplification": 8
                     },
-                    "rationale": "novelty成熟Git图适配小档；mechanism有界扫描与解析小档；transferability纯层半档；simplification就近组合半档。",
+                    "rationale": "novelty为常规Git图形读取的会话适配小幅增量；mechanism为选择优先级及原因透传的小幅增量；transferability的实质增量在显式回退契约，可移植但依赖宿主适配；simplification的实质增量在无构建双侧栏接入，未证明整体维护成本下降。参照固定Git读取和外部图形查阅，不计未实现收据假设。",
                     "basis": "interpretation",
                     "score": 35,
                     "evidence_ids": [
-                        "2026-10-21-04-github-1393980674-root-source"
+                        "2026-10-22-02-github-1393980674-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 9,
+                        "workflow": 18,
                         "delivery": 8,
                         "reach": 5,
                         "economics": 4
                     },
-                    "rationale": "workflow查看便利小档；delivery历史视图小档；reach开发者小档；economics切换时间未测小档。",
+                    "rationale": "workflow为减少离开会话查阅并明确工作树归属的实质增量；delivery仅整合既有Git信息而非新的业务交付，小幅增量；reach为web侧栏降低终端切换门槛的小幅增量；economics仅有按需读取与缓存的小幅资源结构增量，无真实节时或ROI。",
                     "basis": "interpretation",
-                    "score": 26,
+                    "score": 35,
                     "evidence_ids": [
-                        "2026-10-21-04-github-1393980674-root-source"
+                        "2026-10-22-02-github-1393980674-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "适合在会话旁只读查看Git历史、工作树和暂存区；先确认仓库、扫描截断及刷新时点，不把图谱当CI或完整审查，尚未进行真实宿主验证。",
+                "reason": "适合本地单用户DSH开发者受控试用会话内Git查阅，先核对访问控制、仓库选择和CLI结果，不把只读视图当授权或原子状态保证。",
                 "criteria": {
                     "scenario": {
-                        "score": 30,
-                        "rationale": "开发者核对分支、历史和当前差异是常见且结果可与Git直接对照的任务。"
+                        "score": 23,
+                        "rationale": "多工作树会话定位任务清楚且重复发生，但实际频率未调查。"
                     },
                     "advantage": {
-                        "score": 19,
-                        "rationale": "将会话仓库身份、工作树和提交图就近组合，减少切换CLI或IDE的步骤。"
+                        "score": 13,
+                        "rationale": "会话标签联动和透明回退相对手动CLI有集成价值，同任务效率未测。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "固定源码支持只读Git命令和图形组织，未实测大型仓库、linked-worktree及并发快照。"
+                        "rationale": "固定源码可查主链路和测试意图，仅源码研究，不能高于50%档。"
                     },
                     "cost": {
                         "score": 15,
-                        "rationale": "不管理Git写操作，退出负担有限；持续成本在仓库扫描、刷新和宿主侧栏兼容。"
+                        "rationale": "无运行依赖包且只读、可选侧栏回退降低接入负担；仍需Git、宿主重启和权限复核。"
                     }
                 },
-                "score": 77,
+                "score": 64,
                 "revision": "4dfefb3cc465be189fa1806f0bc9a33d30006a95",
-                "reviewed_at": "2026-10-21T09:16:52.633Z",
+                "reviewed_at": "2026-10-22T04:46:38.704Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-04-github-1393980674-root-source"
+                    "2026-10-22-02-github-1393980674-root-source"
                 ],
                 "dependencies": [
                     {
@@ -354,88 +442,61 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T04:06:46Z",
-            "analysis_sha256": "d225bda0dcb480867b76f2f92a7043c58201f15bf9dcdd8f39bc0c6a04fe8a51"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "09f4026fa3191c0cde10ba233e63cbbd97e0821ba6b4ddea5ff720d9104d9fa4"
         },
         "publication.metadata": "data/plugins/afundog--dsh-sidebar-git-graph/META.json",
         "publication.summaries": {
-            "text": "在DSH右侧栏显示当前会话仓库的分支提交图、工作树和暂存区差异。",
+            "text": "在DSH右侧栏查看当前会话仓库的提交关系、工作树改动和文件差异。",
             "revision": "4dfefb3cc465be189fa1806f0bc9a33d30006a95",
             "source_url": "https://github.com/AFunDog/dsh-sidebar-git-graph/blob/4dfefb3cc465be189fa1806f0bc9a33d30006a95/README.md"
         },
         "publication.capabilities": {
             "revision": "4dfefb3cc465be189fa1806f0bc9a33d30006a95",
             "items": {
-                "界面": "Git泳道图与工作树/暂存区差异。"
-            }
+                "Host 路由": "一个POST API，静态分派graph、changes、diff、commit和commitDiff五类读取",
+                "界面": "Git图谱与工作树改动侧栏，支持betterSidebar和原生tab回退"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 提交关系图 | 在侧栏看分支、合并与 refs | 本地 Git 历史，默认400条、单次最多2000条 |\n| 工作树改动区 | 分开看冲突、未暂存与暂存文件 | 超过3000行改动会截断，计数失败保留未知 |\n| 文件差异 | 点击工作区或提交文件查看 patch | 单文件512KiB上限，比较基准取决于区域 |\n| 多仓库与 worktree 选择 | 跟随手选、会话标签或提示切换 | 标签和路径会回退，必须核对来源和原因 |\n| 双侧栏接入 | 原生 DSH 与 betterSidebar 入口 | 浏览器 web 平台，增强侧栏为可选 |\n"
         },
         "publication.advice": {
             "revision": "4dfefb3cc465be189fa1806f0bc9a33d30006a95",
-            "text": "适合会话内只读查看Git。先确认选中仓库、扫描范围和刷新，再作提交判断；图谱不是CI或代码正确性验收。"
+            "text": "本地单用户开发者可先用小仓库试用并与CLI核对；先审查webServer访问控制，出现静默换库、未说明截断或无法解释的差异即回到CLI。尚不足以推荐持续安装。详见[Q09](#research-q09)。"
         },
         "registry": "data/plugins/afundog--dsh-sidebar-git-graph",
-        "reports": "# dsh-sidebar-git-graph\n\n> 在DSH右侧栏显示当前会话仓库的分支提交图、工作树和暂存区差异。\n\n## 使用建议\n\n适合会话内只读查看Git。先确认选中仓库、扫描范围和刷新，再作提交判断；图谱不是CI或代码正确性验收。\n\n核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。\n\n源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。\n\n## 洞察短评\n\n- **用途**：开发者在会话中确认分支与改动归属，合格展示需明确仓库、分页和刷新时点，不能把图形完整误认作所有历史。\n- **亮点**：相对切换CLI或IDE，增量是将仓库身份、工作树/暂存区与历史图放到会话旁；Git事实仍来自Git，本插件不管理版本操作。\n- **思考**：“当前会话仓库”与图完整性是否清楚？扫描会截断并排除目录，多个只读命令并发返回也可能跨越新的提交/暂存操作。无写入避免修改仓库，却不保证一组数据来自同一时点；读图仍需看truncated与仓库选项。\n- **建议**：由多命令快照推导，可每次加载前后读取HEAD/索引标识，不一致时标明刷新并避免拼接旧新图。未验证；高频提交/切仓库时检查视图是否混用，若不能区分则否定。\n\n## 场景与替代办法\n\n开发者在会话中确认分支与改动归属，合格展示需明确仓库、分页和刷新时点，不能把图形完整误认作所有历史。\n\ngit log --graph与IDE成熟；插件的增量是会话关联和就近查看，不提供新Git语义。\n\n## 能力清单\n\n- **界面**：Git泳道图与工作树/暂存区差异。\n\n## 依赖与流程\n\nGit CLI、DSH会话cwd与侧栏；结果取决于本机仓库状态，无远端刷新自动真实性。\n\n解析会话目录，扫描/选择仓库，读status/refs/log/diff并绘图；用户查看提交与工作区差异，变化时刷新。\n\n## 成本与效果\n\n初始安装与仓库识别，日常大型仓库log/diff/扫描成本与人工刷新；无性能/审阅节时实测。\n\n减少上下文切换，不能替代版本控制备份或审查。\n\n## 核心贡献\n\n相对切换CLI或IDE，增量是将仓库身份、工作树/暂存区与历史图放到会话旁；Git事实仍来自Git，本插件不管理版本操作。\n\n## 关键质疑\n\n“当前会话仓库”与图完整性是否清楚？扫描会截断并排除目录，多个只读命令并发返回也可能跨越新的提交/暂存操作。无写入避免修改仓库，却不保证一组数据来自同一时点；读图仍需看truncated与仓库选项。\n\n\n## 工程亮点\n\n分隔符解析与有界无符号链接扫描可借鉴；将读取与展示拆分便于验证，复用需补统一时点和异常/截断可见性。 源码依据：[lib/git-read.js](https://github.com/AFunDog/dsh-sidebar-git-graph/blob/4dfefb3cc465be189fa1806f0bc9a33d30006a95/lib/git-read.js)、[lib/repos.js](https://github.com/AFunDog/dsh-sidebar-git-graph/blob/4dfefb3cc465be189fa1806f0bc9a33d30006a95/lib/repos.js)。\n\n## 未来设计假设（未验证）\n\n由多命令快照推导，可每次加载前后读取HEAD/索引标识，不一致时标明刷新并避免拼接旧新图。未验证；高频提交/切仓库时检查视图是否混用，若不能区分则否定。\n\n临时多仓库/linked-worktree、大历史分页、奇异文件名与并发提交测试，核对Git原始结果和truncated提示。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：8bf04fb84dd1a7f63a64e2763b3a297d4dd7f437d166148ec0482251baa828aa。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 4 | 1002 | — | — | 14207 |\n| .js | source | 8 | 5448 | 3463 | 1718 | — |\n| .mjs | source | 2 | 170 | 124 | 31 | — |\n| .cjs | test | 19 | 5248 | 3821 | 960 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[AFunDog/dsh-sidebar-git-graph](https://github.com/AFunDog/dsh-sidebar-git-graph)\n- **版本号**：0.5.0（[固定提交 4dfefb3c](https://github.com/AFunDog/dsh-sidebar-git-graph/tree/4dfefb3cc465be189fa1806f0bc9a33d30006a95)）\n- **版本日期**：2026-10-17（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：作者 README、包清单、源码路径 lib/git-read.js、lib/repos.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读lib/git-read.js、lib/repos.js、lib/index.js；未覆盖全部参考/界面分支与真实并发宿主行为，未运行目标代码、外部工具或安装验收。\n- 下一步：临时多仓库/linked-worktree、大历史分页、奇异文件名与并发提交测试，核对Git原始结果和truncated提示。\n",
+        "reports": "# dsh-sidebar-git-graph\n\n> 在DSH右侧栏查看当前会话仓库的提交关系、工作树改动和文件差异。\n\n## 研究范围\n\n- **仓库**：[AFunDog/dsh-sidebar-git-graph](https://github.com/AFunDog/dsh-sidebar-git-graph)\n- **版本号**：0.5.0（[固定提交 4dfefb3cc465be189fa1806f0bc9a33d30006a95](https://github.com/AFunDog/dsh-sidebar-git-graph/tree/4dfefb3cc465be189fa1806f0bc9a33d30006a95)）\n- **版本日期**：2026-10-17（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已有贡献是源码支持的会话集成与选择透明化；效率优势没有同任务对照；读取收据为未实现假设。\n\n## 洞察短评\n\n- **用途**：开发者在多工作树会话中确认仓库、分支和改动归属；合格结果需交代选择来源、截断和本地新鲜度。\n- **亮点**：把Git图谱、工作树与差异接到DSH会话，在手选、标签和历史提示间明确优先级并显示回退原因；贡献属于可解释的接线与信息组织，不是新的Git机制。详见[Q03](#research-q03)。\n- **思考**：只读不能保证授权隔离或快照一致性。无工作区候选时存在claimed-unfenced退路，图谱与改动独立读取可能跨时点；这些是静态边界，未作越权或竞态复现。详见[Q04](#research-q04)。\n- **建议**：可探索共同读取收据与状态变化提示，以显式呈现跨请求不一致；需比较误判、误报和尾延迟，当前未实现，不计为已有创新。详见[Q08](#research-q08)。\n\n采用建议：本地单用户开发者可先用小仓库试用并与CLI核对；先审查webServer访问控制，出现静默换库、未说明截断或无法解释的差异即回到CLI。尚不足以推荐持续安装。详见[Q09](#research-q09)。\n\n## 核心贡献\n\n把Git图谱、工作树与差异接到DSH会话，在手选、标签和历史提示间明确优先级并显示回退原因；贡献属于可解释的接线与信息组织，不是新的Git机制。详见[Q03](#research-q03)。\n\n## 关键质疑\n\n只读不能保证授权隔离或快照一致性。无工作区候选时存在claimed-unfenced退路，图谱与改动独立读取可能跨时点；这些是静态边界，未作越权或竞态复现。详见[Q04](#research-q04)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可探索共同读取收据与状态变化提示，以显式呈现跨请求不一致；需比较误判、误报和尾延迟，当前未实现，不计为已有创新。详见[Q08](#research-q08)。\n\n进一步探讨可从两个worktree的并发修改时间线入手，对照CLI核对归属、截断与状态变化提示，再比较人工时间和误判。\n\n## 场景与替代办法\n\n开发者在多工作树会话中确认仓库、分支和改动归属；合格结果需交代选择来源、截断和本地新鲜度。\n\nGit CLI 分别读取log/status/diff或外部图形客户端能完成信息查询；插件增加会话接线，不能替代写入和远端同步。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| Node >=22.19、DSH >=0.1.7-rc.1 | 包声明必需 | ESM 宿主和插件接口 | 声明不等于已实测所有版本兼容 |\n| DSH web 与 webServer | 启动必需 | HTTP API 和浏览器侧栏 | 无 webServer 无法注册宿主路由 |\n| PATH 中的 Git 与可读仓库 | 查看任务必需 | log、status、diff、worktree | 返回 no-git／not-a-repo 等错误 |\n| betterSidebar | 可选 | 增强侧栏的标签和设置 | 约两秒观察后走原生侧栏接口 |\n| sessionWorktree 服务 | 可选 | 按会话标签选择工作树 | 使用手选、提示或工作目录回退 |\n| GitHub 固定版本材料 | 作者给出的分发方式 | 获取本插件 | 不能用同名 npm 插件替代 |\n\n\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 准备 | 用户确认 web profile、Git 和仓库路径 | 可读目标仓库，明确安装来源 |\n| 加载 | 用户安装固定来源后重启 dsh web 并硬刷新 | 宿主路由和客户端版本一致 |\n| 查阅 | 在侧栏选图谱，核对仓库根和选择提示 | 图谱、改动区与实际目标相符 |\n| 恢复 | 缺 Git 修 PATH；旧宿主提示先重启；仓库缺失重新选择 | 不把空结果当作无改动 |\n\n持久工作区解析还会退回宿主存储文件，带来对未公开布局的兼容耦合。浏览器侧与宿主侧更新方式不同，硬刷新不能代替宿主重启。禁用时路由和注册通过 ctx.effect 绑定生命周期，源码体现清理意图，但没有借此声称真实卸载已经通过。\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 本地 Node、Git、宿主与浏览器资源；金额未知 | 安装固定来源、重启、刷新、确认目标仓库 | 没有本次安装耗时数据 |\n| 持续使用 | 刷新触发多条 Git 读取与目录扫描；实际 CPU/IO 未测 | 解释截断、新鲜度和选择来源，必要时终端复核 | 单条 Git 10 秒超时、48MiB 输出预算不等于整页耗时上限 |\n| 失败恢复 | 重读与重新扫描的资源未知 | 修 PATH、缩扫描深度、重选已存在 worktree、重启旧宿主 | 需要判断失败是空结果、旧版本还是范围限制 |\n\n\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 会话内查阅 | 图谱、改动和差异集成 | 定位时间和正确率的净改善 |\n| 资源边界 | 有扫描、查询、patch限制和缓存 | 大仓库端到端成本及尾延迟 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**判断固定版本会话内只读 Git 图谱的实现贡献、可信边界与采用条件。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 谁需要会话内图谱，怎样才算读对仓库及改动？\n\n**研究主题：**场景与需求\n\n#### 完整回答\n\n面向在 DSH web 中持续审阅代码、切换会话和使用多个 Git worktree 的开发者。任务不是执行版本控制，而是确认当前会话实际对应哪个仓库、分支、提交关系以及暂存和未暂存改动。合格结果必须同时交代仓库根、选择来源、工作树和本地数据的新鲜度，不能只画出一张看似完整的图。\n\n原有办法是离开会话，在终端分别执行 git log、status 和 diff，或打开外部 Git 图形客户端。插件把这些读取放到侧栏，减少上下文切换，并提供点击提交查看文件清单和 patch 的入口。它不替代提交审查的业务判断，不执行提交、切分支或远端同步。未提交的大文件、超限历史和远端尚未 fetch 的变化都不能凭侧栏视觉完整性确认。\n\n场景依据来自作者的用途定义和源码中的工作树选择优先级，并非真实用户使用频率调查。对只需要提交、推送或合并操作的人，额外侧栏不能完成目标流程；对频繁多工作树观察任务则存在明确的集成价值。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:6-12](https://github.com/AFunDog/dsh-sidebar-git-graph/blob/4dfefb3cc465be189fa1806f0bc9a33d30006a95/README.md#L6-L12)\n\n作者定义当前会话内的只读图谱和工作树改动用途。\n\n```text\n给 **DSH（DeepSeek Harness）** 加一个右侧栏页面：把当前会话的仓库画成**分支/合并关系图**\n（VS Code 风格 —— 彩色泳道、分叉与汇入的贝塞尔曲线、ref 芯片、点开看提交详情），\n并在它上方给出**工作树改动区**。\n\n**只读**：不 checkout、不 commit、不 reset、不 rebase、不 fetch/push、不 add、不 restore、\n不 `worktree add/remove/prune`。\n只跑 `rev-parse`、`status`、`for-each-ref`、`log`、`diff`、`worktree list` 六条命令。\n```\n\n**依据 2 · 源码核查**：[lib/index.js:675-717](https://github.com/AFunDog/dsh-sidebar-git-graph/blob/4dfefb3cc465be189fa1806f0bc9a33d30006a95/lib/index.js#L675-L717)\n\n手动选择和会话标签均经仓库根验证，标签选择失败保留原因，支撑正确归属的合格标准。\n\n<details>\n<summary>查看原文（43行）</summary>\n\n```text\n  if (requested !== null) {\n    // 三道闸都过了才认：路径关系合法（或它是本仓库的另一个工作树）、目录存在、\n    // 且 git 确认它自己就是仓库根（不是仓库里的子目录）。\n    if (repoRelationAllowed(workspaceCwd, requested, worktreePaths) && existsSync(requested)) {\n      const check = await repoRootOf(requested)\n      const claimed = canonical(requested) ?? requested\n      if (check.ok === true && check.root === claimed) {\n        root = claimed\n        source = 'requested'\n      } else reason = 'not-root'\n    } else if (!existsSync(requested)) {\n      // 目录不在有两种：被删了，或它是个 prunable 的工作树（git 还记着它）。\n      reason = worktreesRaw.some((entry) => entry.prunable === true && (canonical(entry.path) ?? entry.path) === (canonical(requested) ?? requested))\n        ? 'prunable'\n        : 'missing'\n    } else reason = 'fenced'\n  }\n\n  // 档 2：会话 worktree 标签。用户没在页面上手点（或手点的没认）时才轮到这里。\n  //\n  // 标签指向的路径**仍要过与 `repo` 同一套闸**——标签是用户设的，但它是**另一个插件**\n  // 给的，跨插件的数据一样不可信。过不了就**如实记下原因**（`tagReason`），\n  // 由前端说清「标签指的那个用不了，改画了 X」，绝不静默换仓库还不吭声。\n  let tagReason = null\n  let tagRequested = null\n  if (root === null && tagged !== null) {\n    tagRequested = tagged.path\n    if (!existsSync(tagged.path)) {\n      tagReason = 'missing'\n    } else if (!repoRelationAllowed(workspaceCwd, tagged.path, worktreePaths)) {\n      tagReason = 'fenced'\n    } else {\n      const check = await repoRootOf(tagged.path)\n      const claimed = canonical(tagged.path) ?? tagged.path\n      if (check.ok === true && check.root === claimed) {\n        root = claimed\n        source = 'session-worktree'\n      } else tagReason = 'not-root'\n    }\n  }\n\n  // 档 3：客户端上次记住的仓库（提示，不是点名）。\n  if (root === null && hintRaw !== null) {\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 从会话选择到图谱与差异的完整链路是什么？\n\n**研究主题：**功能与机制\n\n#### 完整回答\n\n浏览器侧 GraphView 读取 sessionId、cwd、插件设置和本地记住的仓库提示，随后并发请求 graph 与 changes。宿主只挂一个 POST 路由，通过 method 将图谱、工作树改动、单文件差异、提交文件清单和提交差异分派给对应处理器；未知 method 返回错误，避免把不支持的能力误当成功。\n\n仓库解析先选择工作目录，再由 Git 验证仓库根、查询关联工作树并扫描嵌套仓库。显式选择优先，其次为会话 worktree 标签、历史提示、当前目录所属仓库和扫描结果。graph 并行读取 status、refs 和 log，纯函数解析后装配 selection、工作树、截断和新鲜度信息。changes 独立读取 porcelain v2 状态和两组 numstat，映射冲突、未暂存、暂存三区。\n\n单文件 diff 会先验证相对路径，再根据暂存、未暂存、冲突和未跟踪状态选择不同 argv。未跟踪 diff 使用 no-index，退出码 1 在有差异时按正常结果处理。客户端按需取得提交清单和 patch，并用请求序号丢弃旧响应。这里的并发缩短等待链，但图谱和改动并非同一时点的原子快照；请求序号只能防止旧网络响应覆盖新请求，不能冻结仓库。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/client.js:1429-1452](https://github.com/AFunDog/dsh-sidebar-git-graph/blob/4dfefb3cc465be189fa1806f0bc9a33d30006a95/lib/client.js#L1429-L1452)\n\n同一刷新并行请求 graph 与 changes，序号仅丢弃过期刷新。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n\n      const load = useCallback(async () => {\n        const seq = requestSeq.current + 1\n        requestSeq.current = seq\n        setState((previous) => (previous.status === 'ready' ? { ...previous, refreshing: true } : { status: 'loading' }))\n        setChangesState((previous) => (previous.status === 'ready' ? { ...previous, refreshing: true } : { status: 'loading' }))\n        // 两个请求并发：图谱与改动互不依赖，串起来只会让页面慢一倍。\n        const [graphOutcome, changesOutcome] = await Promise.all([\n          requestGraph({ sessionId, cwd, repo: repoChoice, repoHint, scanDepth, max: maxCommits, skip: 0, scope }),\n          requestChanges({ sessionId, cwd, repo: repoChoice, repoHint, scanDepth }),\n        ])\n        if (requestSeq.current !== seq) return\n        if (graphOutcome.ok) setState({ status: 'ready', value: graphOutcome.value, refreshing: false })\n        else setState({ status: 'error', error: graphOutcome.error })\n        // 形状校验见 looksLikeChanges 的注释：旧版宿主会把 `changes` 当 `graph` 回，\n        // 不校验就会把「一个改动都没问过」显示成「没有未提交的改动」。\n        if (changesOutcome.ok && looksLikeChanges(changesOutcome.value)) {\n          setChangesState({ status: 'ready', value: changesOutcome.value, refreshing: false })\n        } else if (changesOutcome.ok) {\n          setChangesState({ status: 'error', error: { code: 'stale-host', message: STALE_HOST_COPY } })\n        } else {\n          setChangesState({ status: 'error', error: changesOutcome.error })\n        }\n      }, [sessionId, cwd, repoChoice, scanDepth, maxCommits, scope])\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:1188-1219](https://github.com/AFunDog/dsh-sidebar-git-graph/blob/4dfefb3cc465be189fa1806f0bc9a33d30006a95/lib/index.js#L1188-L1219)\n\n唯一 POST 路由及五种方法的静态分派。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\nasync function handleRoute(ctx, req, res) {\n  let rpcId = 'unknown'\n  try {\n    if (req.method !== 'POST') {\n      sendJson(res, 405, { type: 'server-response', rpcId, result: { ok: false, error: { code: 'method', message: 'POST only' } } })\n      return\n    }\n    if (!isTrustedRequest(req)) {\n      sendJson(res, 403, { type: 'server-response', rpcId, result: { ok: false, error: { code: 'forbidden', message: 'cross-origin request refused' } } })\n      return\n    }\n    const raw = await readBody(req)\n    let payload = {}\n    // 客户端一直在信封里发 `method`，宿主侧此前忽略它（只服务 graph）。现在接上：\n    // 未知 method 明确回错，而不是当成 graph 静默跑一遍 log（那会让人以为\"改了没生效\"）。\n    let method = 'graph'\n    try {\n      const body = raw !== '' ? JSON.parse(raw) : {}\n      if (body !== null && typeof body === 'object') {\n        if (typeof body.rpcId === 'string') rpcId = body.rpcId\n        if (typeof body.method === 'string' && body.method !== '') method = body.method\n        if (body.payload !== null && typeof body.payload === 'object') payload = body.payload\n      }\n    } catch (error) { /* 解析失败也照常回包 */ }\n\n    let outcome\n    if (method === 'graph') outcome = await handleGraph(ctx, payload)\n    else if (method === 'changes') outcome = await handleChanges(ctx, payload)\n    else if (method === 'diff') outcome = await handleDiff(ctx, payload)\n    else if (method === 'commit') outcome = await handleCommit(ctx, payload)\n    else if (method === 'commitDiff') outcome = await handleCommitDiff(ctx, payload)\n    else outcome = fail('bad-method', `未知的 method：${method}`)\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:981-1027](https://github.com/AFunDog/dsh-sidebar-git-graph/blob/4dfefb3cc465be189fa1806f0bc9a33d30006a95/lib/index.js#L981-L1027)\n\n路径验证、不同 diff 模式和 no-index 退出码处理。\n\n<details>\n<summary>查看原文（47行）</summary>\n\n```text\nasync function handleDiff(ctx, payload) {\n  const rawPath = typeof payload.path === 'string' ? payload.path : ''\n  // 路径围栏在**跑 git 之前**：非法路径连仓库都不用解析，直接回。\n  if (!isRepoRelativePath(rawPath)) {\n    return fail('bad-path', '路径不合法（只接受仓库根相对路径）')\n  }\n  const rawOrig = typeof payload.origPath === 'string' && payload.origPath !== '' ? payload.origPath : ''\n  if (rawOrig !== '' && !isRepoRelativePath(rawOrig)) {\n    return fail('bad-path', '原路径不合法（只接受仓库根相对路径）')\n  }\n\n  const resolved = await resolveRepo(ctx, payload)\n  if (resolved.ok === false) return { ok: false, error: resolved.error }\n  const { root } = resolved\n\n  const section = payload.section === 'staged' ? 'staged' : 'unstaged'\n  const untracked = payload.untracked === true\n  const unmerged = payload.unmerged === true\n  // 未跟踪文件只可能出现在「更改」段；反过来说「暂存的未跟踪文件」是自相矛盾的请求。\n  if (untracked && section === 'staged') {\n    return fail('bad-request', '未跟踪的文件不会有暂存改动')\n  }\n  if (untracked && unmerged) {\n    return fail('bad-request', '未跟踪与未合并不可能同时成立')\n  }\n  const base = { path: rawPath, section, origPath: rawOrig === '' ? undefined : rawOrig }\n\n  const result = await runGit(diffArgv(root, {\n    section,\n    path: rawPath,\n    origPath: rawOrig,\n    untracked,\n    unmerged,\n  }), { cwd: root })\n\n  // `--no-index` 在「有差异」时返回 1 且 stdout 是完整 patch、stderr 为空。\n  // 不特判的表现是「未跟踪文件永远打不开 diff」，而且没有任何错误信息可查（实测）。\n  const noIndexDiff = untracked && result.ok === false && result.code === '1'\n  if (!result.ok && !noIndexDiff) {\n    return fail('git-failed', 'git diff 失败', { detail: stderrTail(result) })\n  }\n\n  return patchValue(result, base)\n}\n\n/**\n * patch 文本 → 客户端载荷。\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 相比 Git CLI 和外部图形客户端，实际贡献在哪里？\n\n**研究主题：**贡献与相对优势\n\n#### 完整回答\n\n源码支持的贡献是把成熟 Git 读取和图形展示接到会话身份、worktree 标签与 DSH 侧栏，而不是发明新的 Git 存储或提交图语义。最具体的增量是选择优先级。用户本次手动点名可以覆盖标签，历史 localStorage 选择降为 repoHint，避免旧记忆永远压住会话标签。标签过期时返回原因，不无声改画另一个仓库。\n\n另一项集成贡献是双侧栏路径。浏览器先等待 betterSidebar 服务，短观察窗后使用原生 sidebarRightTabs 和 slot 接口。这样可选侧栏增强不是强制安装依赖。单文件 bundle 没有额外构建层，移植者可以直接定位实际部署代码，不过这也增加大型文件阅读负担。\n\n参照 Git CLI，增量主要在信息组织和会话接线，读取能力由 Git 提供；参照外部图形客户端，优势假设是减少会话切换，并非已经证实的图形能力领先。没有同任务收益对照，不能由界面更集中推出审查更准确。最值得借鉴的是把选择来源与回退原因作为数据契约，而非隐藏在 UI 默认行为。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/client.js:1397-1407](https://github.com/AFunDog/dsh-sidebar-git-graph/blob/4dfefb3cc465be189fa1806f0bc9a33d30006a95/lib/client.js#L1397-L1407)\n\n将已记住仓库降为提示，明确手选、标签和提示的区别。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n      // 再看 cwd 所在仓库）。只有**真的在下拉里点过**才会被设上 —— 见 rememberRepoChoice\n      // 与 savedRepoHint 的区别。\n      const [repoChoice, setRepoChoice] = useState(undefined)\n      // localStorage 里**上次记住**的仓库：降级成**提示**发给宿主，不再当点名。\n      //\n      // ⚠️ 这个降级是「图谱跟随会话 worktree」联动的**关键**（2026-10-01）：\n      // 此前它是以 `repo` **点名**发出去的，于是一旦用户点过一次下拉，那个记忆就\n      // **永远压过会话标签**，标签永远轮不到。降级成 `repoHint` 之后优先级变成\n      // 「手点 > 会话标签 > 上次记住 > cwd 所在仓库」，与用户直觉一致。\n      const [repoHint, setRepoHint] = useState(() => readSavedRepo(cwd))\n      // 段的折叠状态（照 VS Code 两段式）。持久化到 localStorage。\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:831-848](https://github.com/AFunDog/dsh-sidebar-git-graph/blob/4dfefb3cc465be189fa1806f0bc9a33d30006a95/lib/index.js#L831-L848)\n\n响应显式保存选择来源、标签失败原因与回退。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n    source,\n    // 点名了但没认（仓库被删了 / 换机器了 / 路径出围栏了 / 它是个 prunable 工作树）→\n    // 前端按 `reason` 说准确的话，别一律讲成\"仓库不在了\"。\n    fallback: requested !== null && source !== 'requested',\n    reason: requested !== null && source !== 'requested' ? reason : null,\n    // ── 会话 worktree 联动（2026-10-01）────────────────────────────────────\n    // `source === 'session-worktree'` 表示这次是**跟着会话标签**画的。\n    // `tagged` 是标签指向的路径（没有标签时为 null）；\n    // `tagReason` 是「有标签但用不了」的原因，前端要说出来而不是默默换一个。\n    tagged: tagRequested,\n    tagReason,\n    tagApplied: source === 'session-worktree',\n  }\n  // 载荷形状版本：客户端据此判断宿主半是不是旧版（PIT-060：宿主半改动要重启，\n  // 浏览器半刷新即换，前后端版本错位是常态；旧宿主会**忽略**新字段却回 ok:true）。\n  // 4 = 增加 `workspace.stale`（原来挑中的工作目录已被删、这次换了一个画）。\n  value.schema = 4\n  value.worktrees = summarizeWorktrees(worktreesRaw, worktrees)\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/client.js:2273-2305](https://github.com/AFunDog/dsh-sidebar-git-graph/blob/4dfefb3cc465be189fa1806f0bc9a33d30006a95/lib/client.js#L2273-L2305)\n\nbetterSidebar 观察窗、原生注册回退与单次 claim。\n\n<details>\n<summary>查看原文（33行）</summary>\n\n```text\n    function apply(ctx) {\n      let claimed = false\n      const claim = () => {\n        if (claimed) return false\n        claimed = true\n        return true\n      }\n\n      // 回退观察窗：better-sidebar 若在场，它 provide 在 apply 开头，通常同一次 tick 就能看到；\n      // 2s 内没等到就用原生注册（此后即使它再出现也不重复注册）。\n      let attempts = 0\n      const timer = setInterval(() => {\n        attempts += 1\n        if (claimed) { clearInterval(timer); return }\n        if (ctx.get('betterSidebar') !== undefined) { clearInterval(timer); return }\n        if (attempts >= 40) {\n          clearInterval(timer)\n          if (claim() && registerNative(ctx)) log(ctx, 'info', 'dsh-sidebar-git-graph: registered the native sidebar tab (dsh-better-sidebar absent)')\n        }\n      }, 50)\n      ctx.effect(() => () => clearInterval(timer), 'dsh-sidebar-git-graph: fallback timer')\n\n      ctx.inject(['betterSidebar'], (scoped) => {\n        clearInterval(timer)\n        if (!claim()) return\n        const service = scoped.get('betterSidebar')\n        if (service === undefined || service === null || typeof service.registerTab !== 'function') {\n          if (registerNative(ctx)) log(ctx, 'info', 'dsh-sidebar-git-graph: registered the native sidebar tab (service shape unexpected)')\n          return\n        }\n        scoped.effect(() => service.registerTab(betterSidebarTab(service)), 'dsh-sidebar-git-graph: better-sidebar tab')\n        log(ctx, 'info', 'dsh-sidebar-git-graph: registered the sidebar tab through dsh-better-sidebar')\n      })\n```\n\n</details>\n\n#### 缺口\n\n- 没有同任务 Git CLI／外部图形客户端的判断正确率和切换时间对照。\n  **影响：**只能确认实现上的集成增量，不能确认用户效率优势。\n  **进一步探讨：**可从包含两个 worktree、过期标签与远端陈旧状态的盲任务对照入手，同时记录定位正确率和人工时间。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 只读及仓库选择能否保证视图可信、安全？\n\n**研究主题：**缺陷与关键质疑\n\n#### 完整回答\n\n只读 argv、固定方法分派、相对路径验证和禁止外部 diff/textconv 为降低副作用提供了实际支持，但不能把“只读”理解为授权隔离或同一时点准确性。尤其要区分有工作区候选时的围栏和无候选的退路。chooseCandidate 在 candidates 为空且客户端 cwd 存在时直接接纳 claimed-unfenced；因此“所有请求只可读取已登记工作区”不是无条件成立的保证。测试源码也显式期待这一退路，说明它是设计行为而非本次复现出的异常。\n\n请求围栏接受 same-origin、same-site 或 none；没有相关头时也允许请求。它提供部分浏览器来源检查，不是账户认证，不能单凭这段代码推断公网或多用户部署已安全。暴露范围和上层 webServer 鉴权要独立核查，本次未核查完整宿主部署链。\n\n视图方面，多个 Git 命令并行读取。并发修改时状态、refs、log、计数和后来点击的 patch 可能分别对应不同瞬间。refs 或图谱 status 失败时还会退为空 refs 或默认状态，图形成功不代表所有辅助读取成功。查询上限及远端新鲜度信息能提醒一部分不完整性，却不把历史窗口转成全量仓库证明。以上是静态可见边界，未进行攻击或竞态复现。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:274-299](https://github.com/AFunDog/dsh-sidebar-git-graph/blob/4dfefb3cc465be189fa1806f0bc9a33d30006a95/lib/index.js#L274-L299)\n\n无宿主候选时允许 claimed-unfenced，反证绝对工作区白名单承诺。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\nfunction chooseCandidate(ctx, dshHome, payload) {\n  const sessionId = typeof payload.sessionId === 'string' && payload.sessionId !== '' ? payload.sessionId : undefined\n  const candidates = resolutionCandidates(ctx, dshHome, sessionId)\n  const allowed = new Set()\n  for (const candidate of candidates) {\n    const key = canonical(candidate.path)\n    if (key !== null) allowed.add(key)\n  }\n  const claimed = typeof payload.cwd === 'string' && payload.cwd !== '' ? payload.cwd : undefined\n  // 存在性只查一次：既用来决定要不要采纳，也用来决定要不要记进 skippedClaim。\n  const claimedAlive = claimed !== undefined && existsSync(claimed)\n  if (claimedAlive) {\n    const key = canonical(claimed)\n    if (key !== null && (allowed.has(key) || isBackedByWorkspace(ctx, dshHome, claimed))) {\n      return { cwd: claimed, source: 'claimed' }\n    }\n    // 没有任何宿主候选时（本机没登记工作区）给客户端路径一个机会：能 rev-parse 出来就用。\n    if (candidates.length === 0) return { cwd: claimed, source: 'claimed-unfenced' }\n  }\n  if (candidates.length === 0) {\n    // 一个宿主候选都没有、客户端给的路径又不存在：照旧把它带下去，让 resolveRepo 报出\n    // **具体是哪个目录没了**。\"拿不到工作目录：会话没有记录 cwd，也没有已注册的工作区\"\n    // 会把诊断带偏——那是另一回事（本机没登记过任何工作区）。\n    if (claimed !== undefined) return { cwd: claimed, source: 'claimed-unfenced' }\n    return null\n  }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/workspace.js:209-231](https://github.com/AFunDog/dsh-sidebar-git-graph/blob/4dfefb3cc465be189fa1806f0bc9a33d30006a95/lib/workspace.js#L209-L231)\n\n来源检查允许 same-site 和无头请求，不包含用户身份鉴权。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n/**\n * 浏览器同源信任围栏。\n *\n * 带 `sec-fetch-site` 的现代浏览器是主判据；缺它时退回 `Origin` 与 `Host` 比对。\n * 两个头都没有的请求（curl / 脚本）放行——真正的边界是「只能查已注册工作区」，\n * 而不是「只有浏览器能问」（见 index.js 的 chooseCandidate）。\n * @param req - node http 请求。\n * @returns 是否可信。\n */\nexport function isTrustedRequest(req) {\n  const headers = req !== null && req !== undefined && req.headers !== undefined ? req.headers : {}\n  const site = headers['sec-fetch-site']\n  if (typeof site === 'string' && site !== '') {\n    return site === 'same-origin' || site === 'same-site' || site === 'none'\n  }\n  const origin = headers.origin\n  if (typeof origin === 'string' && origin !== '') {\n    try {\n      return new URL(origin).host === headers.host\n    } catch (error) { return false }\n  }\n  return true\n}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:793-809](https://github.com/AFunDog/dsh-sidebar-git-graph/blob/4dfefb3cc465be189fa1806f0bc9a33d30006a95/lib/index.js#L793-L809)\n\nstatus、refs、log 并发读取且辅助失败有默认值。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n  const [statusResult, refsResult, logResult] = await Promise.all([\n    runGit(statusArgv(root), { cwd: root }),\n    runGit(refsArgv(root), { cwd: root }),\n    runGit(logArgv(root, { max, skip, scope }), { cwd: root }),\n  ])\n  if (!logResult.ok) {\n    return fail('git-failed', 'git log 失败', { detail: stderrTail(logResult) })\n  }\n\n  const commits = parseLog(logResult.stdout)\n  const refs = refsResult.ok ? parseRefs(refsResult.stdout) : []\n  const status = statusResult.ok\n    ? parseStatus(statusResult.stdout)\n    : { branch: null, upstream: null, ahead: 0, behind: 0, dirty: 0, detached: false, initial: false }\n\n  const value = buildSnapshot({\n    root,\n```\n\n</details>\n\n**依据 4 · 源码核查**：[test/route.test.cjs:153-165](https://github.com/AFunDog/dsh-sidebar-git-graph/blob/4dfefb3cc465be189fa1806f0bc9a33d30006a95/test/route.test.cjs#L153-L165)\n\n测试明确预期无工作区表时采用 claimed-unfenced；这里只阅读测试，没有执行。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n  assert.ok(refNames.includes('branch:main'), `refs 缺 main：${refNames.join(',')}`)\n  assert.ok(refNames.includes('branch:feature/pet'), `refs 缺 feature/pet：${refNames.join(',')}`)\n  assert.ok(refNames.includes('tag:v-test'), `refs 缺标签：${refNames.join(',')}`)\n  assert.ok(!refNames.some((entry) => entry.endsWith('/HEAD')), 'origin/HEAD 不该出现')\n  assert.strictEqual(value.refs.find((ref) => ref.name === 'main').isCurrent, true)\n  assert.strictEqual(value.truncated, false)\n  assert.strictEqual(value.workspace.source, 'claimed-unfenced', '本机没有工作区表时应走无围栏兜底')\n\n  // 只取 1 条 → 必须报截断。\n  const limited = await handleGraph(ctx, { cwd: repo, max: 1 })\n  assert.strictEqual(limited.ok, true)\n  assert.strictEqual(limited.value.commits.length, 1)\n  assert.strictEqual(limited.value.truncated, true)\n```\n\n</details>\n\n#### 缺口\n\n- 未独立核查部署中的宿主认证、监听范围和反向代理访问控制。\n  **影响：**不能支持多人或公网环境中的读取保密性结论。\n  **进一步探讨：**继续讨论可从实际部署的 webServer 鉴权链与匿名请求路径入手，核对工作区无候选时的读取权限。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 安装、生效和恢复需要什么？\n\n**研究主题：**依赖、兼容与流程\n\n#### 完整回答\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| Node >=22.19、DSH >=0.1.7-rc.1 | 包声明必需 | ESM 宿主和插件接口 | 声明不等于已实测所有版本兼容 |\n| DSH web 与 webServer | 启动必需 | HTTP API 和浏览器侧栏 | 无 webServer 无法注册宿主路由 |\n| PATH 中的 Git 与可读仓库 | 查看任务必需 | log、status、diff、worktree | 返回 no-git／not-a-repo 等错误 |\n| betterSidebar | 可选 | 增强侧栏的标签和设置 | 约两秒观察后走原生侧栏接口 |\n| sessionWorktree 服务 | 可选 | 按会话标签选择工作树 | 使用手选、提示或工作目录回退 |\n| GitHub 固定版本材料 | 作者给出的分发方式 | 获取本插件 | 不能用同名 npm 插件替代 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 准备 | 用户确认 web profile、Git 和仓库路径 | 可读目标仓库，明确安装来源 |\n| 加载 | 用户安装固定来源后重启 dsh web 并硬刷新 | 宿主路由和客户端版本一致 |\n| 查阅 | 在侧栏选图谱，核对仓库根和选择提示 | 图谱、改动区与实际目标相符 |\n| 恢复 | 缺 Git 修 PATH；旧宿主提示先重启；仓库缺失重新选择 | 不把空结果当作无改动 |\n\n持久工作区解析还会退回宿主存储文件，带来对未公开布局的兼容耦合。浏览器侧与宿主侧更新方式不同，硬刷新不能代替宿主重启。禁用时路由和注册通过 ctx.effect 绑定生命周期，源码体现清理意图，但没有借此声称真实卸载已经通过。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:48-66](https://github.com/AFunDog/dsh-sidebar-git-graph/blob/4dfefb3cc465be189fa1806f0bc9a33d30006a95/package.json#L48-L66)\n\n声明 Node、DSH peer 和 web client 平台要求。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n  ],\n  \"engines\": {\n    \"node\": \">=22.19\"\n  },\n  \"scripts\": {\n    \"test\": \"node scripts/test.mjs\"\n  },\n  \"peerDependencies\": {\n    \"@deepseek-ai/dsh\": \">=0.1.7-rc.1\"\n  },\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    },\n    \"host\": {\n      \"platform\": \"any\"\n    },\n    \"client\": {\n      \"platform\": \"web\"\n```\n\n</details>\n\n**依据 2 · 作者声明**：[README.md:62-92](https://github.com/AFunDog/dsh-sidebar-git-graph/blob/4dfefb3cc465be189fa1806f0bc9a33d30006a95/README.md#L62-L92)\n\n作者给出 GitHub 安装、重启、刷新及可选侧栏路径。\n\n<details>\n<summary>查看原文（31行）</summary>\n\n````text\n## 安装\n\n```sh\ndsh plugin --profile web add github:AFunDog/dsh-sidebar-git-graph\n```\n\n装完**重启 `dsh web`**（宿主半要挂路由），再硬刷新浏览器。打开右侧栏选「Git 图谱」——\n装了 dsh-better-sidebar 时它在 `+` 菜单里；裸 DSH 下就在侧栏的**引导页**上（该格已经放着引导页时\n`+` 控件不会绘制）。\n页面跟随你**正在看的会话**：切会话就重新读那个会话的工作区。\n\n<details>\n<summary>钉版本 / 从本地克隆安装</summary>\n\n```sh\n# 钉 tag（推荐：lockfile 会记下解析到的 commit）\ndsh plugin --profile web add github:AFunDog/dsh-sidebar-git-graph#v0.2.0\n\n# 从本地克隆（只接受**绝对**路径 —— 相对路径会被 spec 解析器拒绝）\ndsh plugin --profile web add /path/to/dsh-sidebar-git-graph\n```\n</details>\n\n### 装没装 dsh-better-sidebar 都能用\n\n页面会自动二选一：\n\n| 你的环境 | 行为 |\n|---|---|\n| 装了 [dsh-better-sidebar](https://github.com/omdsh-dev/DSH-better-sidebar) | 走它的公开扩展点 `ctx.betterSidebar.registerTab`：出现在 `+` 菜单，并在**设置 → 侧边卡片**里得到一张卡片（开关 + 一个\"每次加载条数\"的插件设置），名字是「Git 图谱」。 |\n| 裸 DSH | 走 DSH 原生的侧栏 tab 类型（`ctx.sidebarRightTabs` + `sidebar.right.pane.tab` 槽）：同一列、同一个 `+` 菜单，只是没有那张设置卡片。 |\n````\n\n</details>\n\n**依据 3 · 源码核查**：[lib/client.js:2273-2305](https://github.com/AFunDog/dsh-sidebar-git-graph/blob/4dfefb3cc465be189fa1806f0bc9a33d30006a95/lib/client.js#L2273-L2305)\n\n可选服务观察窗和生命周期清理。\n\n<details>\n<summary>查看原文（33行）</summary>\n\n```text\n    function apply(ctx) {\n      let claimed = false\n      const claim = () => {\n        if (claimed) return false\n        claimed = true\n        return true\n      }\n\n      // 回退观察窗：better-sidebar 若在场，它 provide 在 apply 开头，通常同一次 tick 就能看到；\n      // 2s 内没等到就用原生注册（此后即使它再出现也不重复注册）。\n      let attempts = 0\n      const timer = setInterval(() => {\n        attempts += 1\n        if (claimed) { clearInterval(timer); return }\n        if (ctx.get('betterSidebar') !== undefined) { clearInterval(timer); return }\n        if (attempts >= 40) {\n          clearInterval(timer)\n          if (claim() && registerNative(ctx)) log(ctx, 'info', 'dsh-sidebar-git-graph: registered the native sidebar tab (dsh-better-sidebar absent)')\n        }\n      }, 50)\n      ctx.effect(() => () => clearInterval(timer), 'dsh-sidebar-git-graph: fallback timer')\n\n      ctx.inject(['betterSidebar'], (scoped) => {\n        clearInterval(timer)\n        if (!claim()) return\n        const service = scoped.get('betterSidebar')\n        if (service === undefined || service === null || typeof service.registerTab !== 'function') {\n          if (registerNative(ctx)) log(ctx, 'info', 'dsh-sidebar-git-graph: registered the native sidebar tab (service shape unexpected)')\n          return\n        }\n        scoped.effect(() => service.registerTab(betterSidebarTab(service)), 'dsh-sidebar-git-graph: better-sidebar tab')\n        log(ctx, 'info', 'dsh-sidebar-git-graph: registered the sidebar tab through dsh-better-sidebar')\n      })\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:1257-1278](https://github.com/AFunDog/dsh-sidebar-git-graph/blob/4dfefb3cc465be189fa1806f0bc9a33d30006a95/lib/index.js#L1257-L1278)\n\n宿主路由经 effect 注册。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n  fetchFreshness,\n  upstreamRefFile,\n  upstreamOfBranch,\n}\n\nexport function apply(ctx) {\n  const webServer = ctx.get('webServer')\n  if (webServer === undefined || webServer === null || typeof webServer.register !== 'function') {\n    ctx.logger.warn('dsh-sidebar-git-graph: webServer unavailable, /dsh-sidebar-git-graph/api not served')\n    return\n  }\n  const route = {\n    kind: 'prefix',\n    path: ROUTE,\n    handler: (req, res) => {\n      // handler 里任何抛出都会变成宿主侧未处理错误：在这里兜住，绝不让它冒出去。\n      handleRoute(ctx, req, res).catch((error) => {\n        ctx.logger.warn(`dsh-sidebar-git-graph: request failed: ${String(error)}`)\n      })\n    },\n  }\n  ctx.effect(() => webServer.register(route), 'dsh-sidebar-git-graph: /dsh-sidebar-git-graph/api route')\n```\n\n</details>\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 一次正确定位改动的收益和总成本是什么？\n\n**研究主题：**效果与总成本\n\n#### 完整回答\n\n合格任务定义为对指定会话准确给出仓库、分支、工作树，以及某个暂存或未暂存文件的正确差异；仅成功显示页面不算合格。源码展示出按需读 patch、限制历史条数和缓存工作树清单等资源控制，但没有任务级耗时、错误率和机器资源测量。\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 本地 Node、Git、宿主与浏览器资源；金额未知 | 安装固定来源、重启、刷新、确认目标仓库 | 没有本次安装耗时数据 |\n| 持续使用 | 刷新触发多条 Git 读取与目录扫描；实际 CPU/IO 未测 | 解释截断、新鲜度和选择来源，必要时终端复核 | 单条 Git 10 秒超时、48MiB 输出预算不等于整页耗时上限 |\n| 失败恢复 | 重读与重新扫描的资源未知 | 修 PATH、缩扫描深度、重选已存在 worktree、重启旧宿主 | 需要判断失败是空结果、旧版本还是范围限制 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 集中查阅 | 图谱与改动在会话侧栏合并呈现 | 实际节省的切换时间 |\n| 扫盘负担控制 | 深度、目录数、仓库数、时间预算与截断状态 | 大目录里每批探测造成的最坏尾延迟 |\n| 重复请求控制 | worktree 查询有 pending 去重及缓存 | 不同任务负载下命中率和总体资源收益 |\n\n扫描的时间预算在循环边界检查，不是强制中止每次文件系统操作。每次 refresh 并发 graph 和 changes，在慢盘或持续修改仓库中，省下界面切换的收益可能被等待和复核抵消。没有合格交付数和实付资源成本，不能计算单位任务成本或 ROI。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:86-93](https://github.com/AFunDog/dsh-sidebar-git-graph/blob/4dfefb3cc465be189fa1806f0bc9a33d30006a95/lib/index.js#L86-L93)\n\n单查询预算和请求体限制，不能等同整任务成本。\n\n```text\n/** 单次请求默认/最大提交条数。 */\nconst DEFAULT_MAX = 400\nconst HARD_MAX = 2000\n/** 单条 git 命令的预算。 */\nconst TIMEOUT_MS = 10000\nconst MAX_BUFFER = 48 * 1024 * 1024\n/** 请求体上限（只含 sessionId/cwd/几个数字）。 */\nconst MAX_BODY = 64 * 1024\n```\n\n**依据 2 · 源码核查**：[lib/index.js:318-365](https://github.com/AFunDog/dsh-sidebar-git-graph/blob/4dfefb3cc465be189fa1806f0bc9a33d30006a95/lib/index.js#L318-L365)\n\n扫描缓存及 worktree pending 去重。\n\n<details>\n<summary>查看原文（48行）</summary>\n\n```text\nasync function scanWorkspace(workspaceCwd, maxDepth) {\n  const key = `${workspaceCwd}\\u0000${maxDepth}`\n  const now = Date.now()\n  const cached = scanCache.get(key)\n  if (cached !== undefined && now - cached.at < SCAN_TTL_MS) return cached.value\n  const value = await discoverRepos(workspaceCwd, { maxDepth })\n  if (scanCache.size > 64) scanCache.clear()\n  scanCache.set(key, { at: now, value })\n  return value\n}\n\n/**\n * 一个仓库的工作树清单（带缓存 + 并发去重）。\n *\n * 为什么要有它：**关联工作树在目录上可以与主工作区毫无关系**（实测是两个兄弟目录），\n * 所以按文件系统扫盘永远发现不了它们；而 `git worktree list` 是 git 自己给的权威清单。\n * 详见 lib/worktrees.js 的文件头。\n *\n * 缓存与去重都是必要的：页面一次刷新会并发发 `graph` 与 `changes` 两个请求，\n * 没有 in-flight 去重就会同时起两条一模一样的 git 进程。\n * @param root - 仓库根（任意一个工作树的根都行，git 会给出全集）。\n * @returns 工作树数组（**未**过滤 prunable，调用方按需过 listableWorktrees）。\n */\nconst worktreeCache = new Map()\nasync function listWorktrees(root) {\n  const key = canonical(root) ?? root\n  const now = Date.now()\n  const cached = worktreeCache.get(key)\n  if (cached !== undefined) {\n    if (cached.pending !== undefined) return cached.pending\n    if (now - cached.at < SCAN_TTL_MS) return cached.value\n  }\n  const pending = (async () => {\n    const result = await runGit(worktreeListArgv(root), { cwd: root })\n    // 命令失败一律当作「没有工作树」——那正是旧行为，不该让工作树这一个加分项\n    // 把整个页面变成错误页（老 git 没有 --porcelain 时就是这个样子）。\n    if (!result.ok) return []\n    return parseWorktrees(result.stdout)\n  })()\n  if (worktreeCache.size > 64) worktreeCache.clear()\n  worktreeCache.set(key, { at: now, pending })\n  const value = await pending\n  worktreeCache.set(key, { at: Date.now(), value })\n  return value\n}\n\n\n/**\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/repos.js:96-153](https://github.com/AFunDog/dsh-sidebar-git-graph/blob/4dfefb3cc465be189fa1806f0bc9a33d30006a95/lib/repos.js#L96-L153)\n\n循环式扫描预算和批量目录读取。\n\n<details>\n<summary>查看原文（58行）</summary>\n\n```text\nexport async function discoverRepos(rootDir, options) {\n  const settings = options === undefined || options === null ? {} : options\n  const requested = Number.isFinite(settings.maxDepth) ? Math.trunc(settings.maxDepth) : DEFAULT_DEPTH\n  const maxDepth = Math.min(MAX_DEPTH, Math.max(0, requested))\n  const started = Date.now()\n  const found = []\n  const truncated = { repos: false, dirs: false, time: false }\n  let dirsVisited = 0\n\n  if (maxDepth === 0) {\n    // 关掉扫描：只认工作区根自己（父级仓库由 index.js 用 rev-parse 单独补）。\n    if (await hasGitEntry(rootDir)) found.push({ dir: rootDir, depth: 0 })\n    return finish(found, rootDir, truncated, { dirs: 0, ms: Date.now() - started })\n  }\n\n  let queue = [{ dir: rootDir, depth: 0 }]\n  // 所有 push 都走它：批次是按目录并发处理的，一个批次里可能一次冒出好几个仓库，\n  // 只在循环顶端查上限会冲过头（实测：130 个仓库的目录一趟冲到 128 条）。\n  const add = (dir, depth) => {\n    if (found.length >= MAX_REPOS) { truncated.repos = true; return false }\n    found.push({ dir, depth })\n    return true\n  }\n\n  while (queue.length > 0) {\n    if (found.length >= MAX_REPOS) { truncated.repos = true; break }\n    if (dirsVisited >= MAX_DIRS) { truncated.dirs = true; break }\n    if (Date.now() - started > TIME_BUDGET_MS) { truncated.time = true; break }\n\n    const batch = queue.splice(0, CONCURRENCY)\n    const read = await Promise.all(batch.map((item) => readEntries(item.dir)))\n    const probes = []\n\n    for (let index = 0; index < batch.length; index += 1) {\n      const item = batch[index]\n      const entries = read[index]\n      dirsVisited += 1\n      if (entries === null) continue\n      let isRepo = false\n      for (const entry of entries) {\n        if (entry.name === '.git') { isRepo = true; continue }\n        // 链接的 isDirectory() 为 false，天然被挡在外面（见文件头第 4 条）。\n        if (!entry.isDirectory()) continue\n        const child = join(item.dir, entry.name)\n        if (SKIP_DIRS.has(entry.name)) { probes.push(child); continue }\n        if (item.depth < maxDepth) queue.push({ dir: child, depth: item.depth + 1 })\n      }\n      if (isRepo && !add(item.dir, item.depth)) break\n    }\n\n    // 被跳过的目录只做一次 stat：命中就说明它自己是个仓库，照样列出来。\n    if (probes.length > 0) {\n      const hits = await Promise.all(probes.map((dir) => hasGitEntry(dir)))\n      for (let index = 0; index < probes.length; index += 1) {\n        if (hits[index] && !add(probes[index], -1)) break\n      }\n    }\n  }\n```\n\n</details>\n\n#### 缺口\n\n- 没有按仓库规模、文件数量和存储介质分层的端到端成本与任务正确率数据。\n  **影响：**无法证明集中侧栏降低总任务成本，也不能估计大仓库使用阈值。\n  **进一步探讨：**可从同一批定位任务的 CLI 对照和分层仓库样本入手，分别记录资源、人工复核和失败恢复。\n\n<a id=\"research-q07\"></a>\n\n### Q07 · 哪些工程设计可靠且可复用？\n\n**研究主题：**工程质量与复用\n\n#### 完整回答\n\n值得复用的是宿主 IO 与纯解析层分离。git-read、changes、commit-files 构造固定 argv 并解析 NUL 分隔记录，宿主集中执行进程、处理超时及响应。changes 统一输出路径安全 flags，commit-files 复用这些属性，降低分叉实现逐渐漂移的可能。迁移时仍要保留 Git 特定的比较语义，例如暂存区相对 HEAD、未暂存相对索引、冲突用普通 unified 格式，以及 no-index 返回码的特殊处理。\n\n另一处值得借鉴的是对“不知道”和“没有”的区分。计数命令失败用 countsAvailable，而不是直接画成零；扫描和 patch 超限分别带标记；选择失败原因进入响应。工作树请求还做 pending 去重，减少同一次刷新重复执行。客户端请求序号抑制晚到响应，但不会提供全链路事务一致性。\n\n维护代价也明确。主 index 负责多种解析与策略编排，client 是较长的手写 bundle，读者需跨多层理解生命周期与状态；工作区 fallback 读取宿主非公开存储布局，版本适配责任仍在插件。测试 runner 自动发现测试文件并先做语法检查，是测试遗漏防线。这里只检查 runner 和部分 route 断言，没有运行测试，也不能由测试存在推断全部行为正确。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/changes.js:27-48](https://github.com/AFunDog/dsh-sidebar-git-graph/blob/4dfefb3cc465be189fa1806f0bc9a33d30006a95/lib/changes.js#L27-L48)\n\n集中定义 literal pathspec 与禁止外部 diff/textconv 的公共 flags。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n/**\n * 只读命令共用的顶层选项。\n *\n * `--literal-pathspecs` 是关键的一条：关掉 pathspec 的魔法语法，`:(glob)`、`:(exclude)`、\n * 前导 `:` 之类一律按字面路径处理。没有它，客户端传来的 `path` 就能变成一条 pathspec 表达式\n * （例如 `:(top)*`），把「只读一个文件」放大成「读整个仓库」。\n *\n * ⚠️ **导出它是给 commit-files.js 用的，不要复制一份**：这两条是安全属性（关掉 pathspec 魔法、\n * 关掉 textconv），复制出去迟早有一份被改、另一份没跟上，而这种漂移不报错。\n */\nexport const SAFE_FLAGS = [\n  '-c', 'core.quotepath=false',\n  '-c', 'i18n.logOutputEncoding=UTF-8',\n  '--no-optional-locks',\n  '--literal-pathspecs',\n]\n\n/**\n * patch 相关的稳定选项：不要颜色、不要外部 diff、不要 textconv（否则会执行仓库配置里的命令）。\n * 同样**导出给 commit-files.js 复用**，理由同上。\n */\nexport const PATCH_FLAGS = ['--no-color', '--no-ext-diff', '--no-textconv', '--unified=3']\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:950-966](https://github.com/AFunDog/dsh-sidebar-git-graph/blob/4dfefb3cc465be189fa1806f0bc9a33d30006a95/lib/index.js#L950-L966)\n\ncountsAvailable 显式保留未知计数，避免错误零值。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n        staged: summarizeRows(sections.staged),\n      },\n      truncated: parsed.truncated,\n      // 计数命令失败时不是「没有改动」，而是「不知道」——如实带出去，页面才好说话。\n      countsAvailable: stagedCounts.ok && unstagedCounts.ok,\n      // `stale` 同图谱载荷：这次的工作目录是跳过一条死路径之后的那个。\n      workspace: { cwd: chosen.cwd, source: chosen.source, stale: chosen.stale ?? null },\n      // 仓库清单也带在这里：下拉框此前只挂在 graph 载荷上，graph 一失败（或它还没回来）\n      // 下拉就整个消失——而改动区自己的请求明明也能给出同一份清单。\n      repos: buildRepoList({\n        workspaceCwd,\n        cwdRoot: cwdRepo.ok === true ? cwdRepo.root : null,\n        scanned,\n        selected: root,\n        worktrees,\n      }),\n      reposTruncated: scanned.truncated,\n```\n\n</details>\n\n**依据 3 · 源码核查**：[scripts/test.mjs:36-56](https://github.com/AFunDog/dsh-sidebar-git-graph/blob/4dfefb3cc465be189fa1806f0bc9a33d30006a95/scripts/test.mjs#L36-L56)\n\n自动发现 lib 与测试，空测试目录失败；只作静态检查。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\nfor (const file of readdirSync(libDir).filter((name) => name.endsWith('.js')).sort()) {\n  if (!run(`node --check lib/${file}`, ['--check', join('lib', file)])) failures.push(`lib/${file}`)\n}\n\n// 2) 测试文件自动发现：test/*.test.cjs，跑完全部再汇总（不要第一个失败就停，\n//    不然一次只能修一个问题）。\nconst testDir = join(root, 'test')\nconst tests = readdirSync(testDir).filter((name) => name.endsWith('.test.cjs')).sort()\nif (tests.length === 0) {\n  console.error('test/ 下没发现任何 *.test.cjs —— 这不是\"全过了\"，是清单空了')\n  process.exit(1)\n}\nfor (const file of tests) {\n  if (!run(`node test/${file}`, [join('test', file)])) failures.push(`test/${file}`)\n}\n\nif (failures.length > 0) {\n  console.error(`\\n${failures.length} 项失败：\\n  ${failures.join('\\n  ')}`)\n  process.exit(1)\n}\nconsole.log(`\\n全部通过：${tests.length} 个测试文件 + lib 语法检查`)\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/workspace.js:1-17](https://github.com/AFunDog/dsh-sidebar-git-graph/blob/4dfefb3cc465be189fa1806f0bc9a33d30006a95/lib/workspace.js#L1-L17)\n\n作者明确 fallback 依赖非公开宿主布局。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n/**\n * dsh-sidebar-git-graph 宿主半的「定位工作区」与「信任围栏」两件事。\n *\n * 定位优先级（越靠前越可信）：\n *   1. 宿主自己的会话记录 `ctx.get('sessions').get(id).header.cwd`（服务在就直接用）；\n *   2. 持久化工作区表 `~/.dsh/storages/workspace.json` 里该 sessionId 所属工作区；\n *   3. `ctx.get('workspaceRegistry').list()` 里的工作区路径（按 sessionId 命中优先）；\n *   4. 兜底：扫 `~/.dsh/sessions/` 找最近写入的会话所在目录。\n *\n * 客户端传来的 `cwd` 不可信，只有在它能被上面的结果背书（同一个路径，或落在某个\n * 已注册工作区之内）时才采用——见 index.js 的 chooseCandidate。\n *\n * 第 2、4 条读的是 DSH 自己的落盘布局（`storages/workspace.json` 的 `tables.workspaces`、\n * `sessions/<编码路径>/<会话id>/`），属于**未公开的实现细节**：它们只是服务缺失时的兜底，\n * 前两条（服务）才是正路。DSH 改了这套布局也不会让插件失效——最差是退回\"没有候选\"分支。\n */\nimport { existsSync, readFileSync, readdirSync, realpathSync, statSync } from 'node:fs'\n```\n\n</details>\n\n<a id=\"research-q08\"></a>\n\n### Q08 · 能从视图非原子性推导什么新设计？\n\n**研究主题：**新假设与验证\n\n#### 完整回答\n\n可以推导一种未验证的读取收据设计。现在 graph 和 changes 分别解析仓库并读取不同数据，之后 diff 又发独立请求。请求序号保障的是 UI 请求次序，不是仓库版本一致。因此可尝试让同次刷新返回共同的仓库解析收据、读取前后 HEAD／索引指纹和时间窗口；客户端在收据不一致时明确标为已变化，文件 diff 可显示自己相对哪个状态。\n\n相对当前做法，增量不是把多条读取伪装成事务，而是把非原子性公开为可判断状态。潜在收益是减少并发提交或暂存时对归属的误判。新增负担包括额外读取、收据缓存和状态变化提示，频繁变动仓库可能让界面过度警报，故不能直接认为更好。\n\n最小对照可采用一个持续在两个 worktree 中修改、暂存、提交的可控仓库，比较现有双请求与收据设计在相同脚本时间线下对 HEAD、暂存差异归属和错误提示的表现。记录不一致状态被识别的比例、误报率和 p95 延迟。若没有降低误判，或额外等待抵消收益，就应否定收益主张。该方案未实现、未执行，也不计入现有创新评分。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/client.js:1429-1452](https://github.com/AFunDog/dsh-sidebar-git-graph/blob/4dfefb3cc465be189fa1806f0bc9a33d30006a95/lib/client.js#L1429-L1452)\n\n同次刷新使用独立 graph、changes 请求，是收据假设的起点。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n\n      const load = useCallback(async () => {\n        const seq = requestSeq.current + 1\n        requestSeq.current = seq\n        setState((previous) => (previous.status === 'ready' ? { ...previous, refreshing: true } : { status: 'loading' }))\n        setChangesState((previous) => (previous.status === 'ready' ? { ...previous, refreshing: true } : { status: 'loading' }))\n        // 两个请求并发：图谱与改动互不依赖，串起来只会让页面慢一倍。\n        const [graphOutcome, changesOutcome] = await Promise.all([\n          requestGraph({ sessionId, cwd, repo: repoChoice, repoHint, scanDepth, max: maxCommits, skip: 0, scope }),\n          requestChanges({ sessionId, cwd, repo: repoChoice, repoHint, scanDepth }),\n        ])\n        if (requestSeq.current !== seq) return\n        if (graphOutcome.ok) setState({ status: 'ready', value: graphOutcome.value, refreshing: false })\n        else setState({ status: 'error', error: graphOutcome.error })\n        // 形状校验见 looksLikeChanges 的注释：旧版宿主会把 `changes` 当 `graph` 回，\n        // 不校验就会把「一个改动都没问过」显示成「没有未提交的改动」。\n        if (changesOutcome.ok && looksLikeChanges(changesOutcome.value)) {\n          setChangesState({ status: 'ready', value: changesOutcome.value, refreshing: false })\n        } else if (changesOutcome.ok) {\n          setChangesState({ status: 'error', error: { code: 'stale-host', message: STALE_HOST_COPY } })\n        } else {\n          setChangesState({ status: 'error', error: changesOutcome.error })\n        }\n      }, [sessionId, cwd, repoChoice, scanDepth, maxCommits, scope])\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:793-809](https://github.com/AFunDog/dsh-sidebar-git-graph/blob/4dfefb3cc465be189fa1806f0bc9a33d30006a95/lib/index.js#L793-L809)\n\n单图谱也由多条并行命令组成，不能仅合并 HTTP 请求就宣称原子。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n  const [statusResult, refsResult, logResult] = await Promise.all([\n    runGit(statusArgv(root), { cwd: root }),\n    runGit(refsArgv(root), { cwd: root }),\n    runGit(logArgv(root, { max, skip, scope }), { cwd: root }),\n  ])\n  if (!logResult.ok) {\n    return fail('git-failed', 'git log 失败', { detail: stderrTail(logResult) })\n  }\n\n  const commits = parseLog(logResult.stdout)\n  const refs = refsResult.ok ? parseRefs(refsResult.stdout) : []\n  const status = statusResult.ok\n    ? parseStatus(statusResult.stdout)\n    : { branch: null, upstream: null, ahead: 0, behind: 0, dirty: 0, detached: false, initial: false }\n\n  const value = buildSnapshot({\n    root,\n```\n\n</details>\n\n#### 缺口\n\n- 读取收据是否能减少真实判断错误尚无实验结果。\n  **影响：**只能作为设计假设，不能提升本插件现有能力或采用等级。\n  **进一步探讨：**继续探讨可先用可控并发修改时间线比较误判、误报和延迟，再决定是否值得实现。\n\n<a id=\"research-q09\"></a>\n\n### Q09 · 哪些人值得试用，什么条件应停止？\n\n**研究主题：**采用判断\n\n#### 完整回答\n\n建议结论为试用。适合在本地单用户 DSH web 中频繁检查多 worktree 关系、愿意核对仓库与新鲜度提示的开发者。只读设计和可选侧栏回退提供了可控试用路径，实际价值是会话内查阅，不是替代 Git 写入流程或给出安全审查结论。\n\n开始前明确 webServer 的访问控制和安装来源，选择一个可回溯的小仓库，核对显式仓库、会话标签、暂存和未暂存差异是否与 Git CLI 一致。发现静默换库、旧宿主假空结果、未标明截断或不能解释的内容差异时，应停止依赖图谱作判断并回到 CLI。GitHub 分发名和另一个作者的 npm 同名项目不可混用。\n\n不建议在未审查访问控制的多人或公网宿主直接依赖其读取围栏，也不适合把视图当成远端已同步和仓库状态原子一致的证明。没有本轮同版本安装、核心功能和禁用验收，不给值得安装结论。上述边界会压低证据分，但并不抹去源码可见的集成价值；后续采用判断应以任务正确率和复核负担为核心，而非 Star 或代码规模。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:103-137](https://github.com/AFunDog/dsh-sidebar-git-graph/blob/4dfefb3cc465be189fa1806f0bc9a33d30006a95/README.md#L103-L137)\n\n作者明示只读、截断、远端与分发边界；其真机声明不当作本次宿主验收。\n\n<details>\n<summary>查看原文（35行）</summary>\n\n```text\n## 已知限制\n\n- **只读是设计**：不暂存、不提交、不切分支、不 push。要改工作树就用别的工具。\n- **未跟踪文件没有 +/− 计数**：`git diff --no-index` 只比较两个路径，要行数就得**每个文件起一个进程**\n  （一个还没 `add` 过的仓库里可能是几百次）。所以段头只统计拿得到计数的行，拿不到的**留空**，\n  而不是印一个会被读成「没有改动」的 `0`。一个文件两侧都改过（`MM`）会**同时出现在两段**——\n  那正是这两段的含义。\n- **内嵌的独立仓库是一行不可点的目录**：git 不会下钻进「仓库里的仓库」（`-uall` 也不下钻），\n  所以外层仓库只看得见一个目录，它没有 diff 可显示。页面在那一行上说明原因，而不是点了没反应。\n- **上限**：一次最多 3000 行改动、单个文件最多 512 KiB patch；两者都会在页面上如实说明，\n  而不是悄悄截掉。\n- **窗口有上限**（单次最多 2000 条，默认 400）；更老的历史会明确提示\"被截断\"，而不是静默丢弃。\n- **仓库发现是有上限的扫盘**：层数、目录数、仓库数、耗时四道闸门，踩到任何一条都会在页面上\n  如实说明（而不是假装清单就是全的）；解决办法是把扫描层数调小。显然不会住着\"想单独画的仓库\"\n  的目录（`node_modules`、`target`、`.venv`、构建产物…）不向下递归——但每个仍会 stat 一次，\n  所以一个恰好叫 `build` 的仓库不会被漏掉。\n- **下拉里只会出现从工作区够得到的仓库**：工作区自身、它里面的、把它包住的那个，以及\n  **工作区所属仓库的工作树**（以 `git worktree list` 为准）。别的路径即使浏览器点名，宿主也会\n  拒绝；并且会用 `rev-parse` 复核它确实是仓库根。\n- **工作目录被删了就不再拿它当工作区**：会话/标签页手里的那个路径可能是一条**已经删掉的关联\n  工作树**（活干完就删是常态）。宿主会跳过它、改用仍然存在的候选继续画，并在页面上说清\n  \"上次的工作目录（…）已经不在了，这次改画 …\"——而不是整页只剩一句「工作目录不存在」。\n- **每个工作树各读各的**：`git status` 与 `git log` 都是按工作树算的，所以每个工作树显示自己的\n  分支、自己的未提交改动、自己的 `HEAD`；页面从不把两个工作树合成一份。\n  目录已不在的（`prunable`）与裸仓库不列出，只在提示里给出条数。\n- **提交的文件清单有上限**：一个提交最多列 2000 个文件（初始提交在大仓库上可能有上万个），\n  超了会写明「共 N 个，只列了前 M 个」，绝不悄悄少列。合并提交列的是**相对第一父提交**的改动\n  （与 VS Code 同口径）；空提交如实说「没有任何文件改动」。\n- **搜索不过滤图**（理由见特性一节）。\n- **泳道配色**由 DSH 主题令牌 + `color-mix()` 派生；不支持 `color-mix()` 的浏览器退化为四个主题状态色循环。\n- 在 DSH `0.1.7-rc.2` + `dsh-better-sidebar` 0.21.1 上真机验证过；原生回退路径有同一套测试覆盖，\n  但真机使用得少一些。\n- npm 上的 `dsh-git-graph` 是**另一个作者的另一个插件**\n  （[enoughpower/dsh-git-graph](https://www.npmjs.com/package/dsh-git-graph)）。\n  本插件是 `@zeng/dsh-sidebar-git-graph`，目前只从 GitHub 分发。\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:274-299](https://github.com/AFunDog/dsh-sidebar-git-graph/blob/4dfefb3cc465be189fa1806f0bc9a33d30006a95/lib/index.js#L274-L299)\n\n无候选时的未围栏回退要求采用前独立核查访问控制。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\nfunction chooseCandidate(ctx, dshHome, payload) {\n  const sessionId = typeof payload.sessionId === 'string' && payload.sessionId !== '' ? payload.sessionId : undefined\n  const candidates = resolutionCandidates(ctx, dshHome, sessionId)\n  const allowed = new Set()\n  for (const candidate of candidates) {\n    const key = canonical(candidate.path)\n    if (key !== null) allowed.add(key)\n  }\n  const claimed = typeof payload.cwd === 'string' && payload.cwd !== '' ? payload.cwd : undefined\n  // 存在性只查一次：既用来决定要不要采纳，也用来决定要不要记进 skippedClaim。\n  const claimedAlive = claimed !== undefined && existsSync(claimed)\n  if (claimedAlive) {\n    const key = canonical(claimed)\n    if (key !== null && (allowed.has(key) || isBackedByWorkspace(ctx, dshHome, claimed))) {\n      return { cwd: claimed, source: 'claimed' }\n    }\n    // 没有任何宿主候选时（本机没登记工作区）给客户端路径一个机会：能 rev-parse 出来就用。\n    if (candidates.length === 0) return { cwd: claimed, source: 'claimed-unfenced' }\n  }\n  if (candidates.length === 0) {\n    // 一个宿主候选都没有、客户端给的路径又不存在：照旧把它带下去，让 resolveRepo 报出\n    // **具体是哪个目录没了**。\"拿不到工作目录：会话没有记录 cwd，也没有已注册的工作区\"\n    // 会把诊断带偏——那是另一回事（本机没登记过任何工作区）。\n    if (claimed !== undefined) return { cwd: claimed, source: 'claimed-unfenced' }\n    return null\n  }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/client.js:1437-1450](https://github.com/AFunDog/dsh-sidebar-git-graph/blob/4dfefb3cc465be189fa1806f0bc9a33d30006a95/lib/client.js#L1437-L1450)\n\n对旧宿主载荷形状核查提供可观察的试用停止条件。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n          requestGraph({ sessionId, cwd, repo: repoChoice, repoHint, scanDepth, max: maxCommits, skip: 0, scope }),\n          requestChanges({ sessionId, cwd, repo: repoChoice, repoHint, scanDepth }),\n        ])\n        if (requestSeq.current !== seq) return\n        if (graphOutcome.ok) setState({ status: 'ready', value: graphOutcome.value, refreshing: false })\n        else setState({ status: 'error', error: graphOutcome.error })\n        // 形状校验见 looksLikeChanges 的注释：旧版宿主会把 `changes` 当 `graph` 回，\n        // 不校验就会把「一个改动都没问过」显示成「没有未提交的改动」。\n        if (changesOutcome.ok && looksLikeChanges(changesOutcome.value)) {\n          setChangesState({ status: 'ready', value: changesOutcome.value, refreshing: false })\n        } else if (changesOutcome.ok) {\n          setChangesState({ status: 'error', error: { code: 'stale-host', message: STALE_HOST_COPY } })\n        } else {\n          setChangesState({ status: 'error', error: changesOutcome.error })\n```\n\n</details>\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：8bf04fb84dd1a7f63a64e2763b3a297d4dd7f437d166148ec0482251baa828aa。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 4 | 1002 | — | — | 14207 |\n| .js | source | 8 | 5448 | 3463 | 1718 | — |\n| .mjs | source | 2 | 170 | 124 | 31 | — |\n| .cjs | test | 19 | 5248 | 3821 | 960 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 提交关系图 | 在侧栏看分支、合并与 refs | 本地 Git 历史，默认400条、单次最多2000条 |\n| 工作树改动区 | 分开看冲突、未暂存与暂存文件 | 超过3000行改动会截断，计数失败保留未知 |\n| 文件差异 | 点击工作区或提交文件查看 patch | 单文件512KiB上限，比较基准取决于区域 |\n| 多仓库与 worktree 选择 | 跟随手选、会话标签或提示切换 | 标签和路径会回退，必须核对来源和原因 |\n| 双侧栏接入 | 原生 DSH 与 betterSidebar 入口 | 浏览器 web 平台，增强侧栏为可选 |\n\n\n## 工程亮点\n\n值得复用的是宿主 IO 与纯解析层分离。git-read、changes、commit-files 构造固定 argv 并解析 NUL 分隔记录，宿主集中执行进程、处理超时及响应。changes 统一输出路径安全 flags，commit-files 复用这些属性，降低分叉实现逐渐漂移的可能。迁移时仍要保留 Git 特定的比较语义，例如暂存区相对 HEAD、未暂存相对索引、冲突用普通 unified 格式，以及 no-index 返回码的特殊处理。\n\n另一处值得借鉴的是对“不知道”和“没有”的区分。计数命令失败用 countsAvailable，而不是直接画成零；扫描和 patch 超限分别带标记；选择失败原因进入响应。工作树请求还做 pending 去重，减少同一次刷新重复执行。客户端请求序号抑制晚到响应，但不会提供全链路事务一致性。\n\n维护代价也明确。主 index 负责多种解析与策略编排，client 是较长的手写 bundle，读者需跨多层理解生命周期与状态；工作区 fallback 读取宿主非公开存储布局，版本适配责任仍在插件。测试 runner 自动发现测试文件并先做语法检查，是测试遗漏防线。这里只检查 runner 和部分 route 断言，没有运行测试，也不能由测试存在推断全部行为正确。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、lib/client.js、lib/workspace.js、lib/repos.js、lib/git-read.js、lib/changes.js、lib/commit-files.js、lib/worktrees.js、scripts/test.mjs、test/route.test.cjs、cordis.patch.yml 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定提交源码研究，读取宿主、客户端、Git解析、仓库扫描及部分测试；未覆盖完整宿主认证链，未执行目标代码。\n- 下一步：进一步探讨可从两个worktree的并发修改时间线入手，对照CLI核对归属、截断与状态变化提示，再比较人工时间和误判。\n",
         "metadata": {
             "repository": "AFunDog/dsh-sidebar-git-graph",
             "repository_id": 1393980674,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T04:37:45.612Z",
+            "window_start": "2026-09-22T04:37:45.612Z",
             "stars": 1,
             "pushed_at": "2026-10-17T09:13:41Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAFunDog%2Fdsh-sidebar-git-graph%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6415:33975D:14AB95:225111:6AD84AF1 and timestamp 2026-10-21 05:17:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAFunDog%2Fdsh-sidebar-git-graph%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641D:1F2B1B:14DBAF:228EA1:6AD84AF1 and timestamp 2026-10-21 05:17:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAFunDog%2Fdsh-sidebar-git-graph%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6401:1541C9:1445CF:21F65C:6AD84AF1 and timestamp 2026-10-21 05:17:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAFunDog%2Fdsh-sidebar-git-graph%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6403:3FE872:13F4C6:21A90D:6AD84AF1 and timestamp 2026-10-21 05:17:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAFunDog%2Fdsh-sidebar-git-graph%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6418:1DEEF7:14EAF6:22AA41:6AD84AF1 and timestamp 2026-10-21 05:17:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "@zeng/dsh-sidebar-git-graph",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T04:37:53.847Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": null,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40zeng%2Fdsh-sidebar-git-graph",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/%40zeng%2Fdsh-sidebar-git-graph",
                 "error": "HTTP 404",
                 "publication": {
                     "first_published_at": null,
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T04:37:53.847Z",
                     "source_url": "https://registry.npmjs.org/%40zeng%2Fdsh-sidebar-git-graph",
                     "error": "HTTP 404",
                     "latest_version": null,
                     "latest_published_at": null,
                     "latest_error": "HTTP 404"
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "4dfefb3cc465be189fa1806f0bc9a33d30006a95",
-                "current_revision": "4dfefb3cc465be189fa1806f0bc9a33d30006a95",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {
@@ -443,14 +504,14 @@
             "repository": "AFunDog/dsh-sidebar-git-graph",
             "path": "",
             "revision": "4dfefb3cc465be189fa1806f0bc9a33d30006a95",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "f9867833f39509aca5bde2c0539da5337ee0d67efcde1c95f204238e076a8794",
                 "code": "4dfefb3cc465be189fa1806f0bc9a33d30006a95",
                 "maintenance": "42322489590ed02385f3c402f4cbd45283f0ab5200d516de810c50c78c73c22d"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

@@ -10,7 +10,7 @@
             "repository": "283Gawin/dsh-heatmap",
             "path": "",
             "aliases": [],
-            "name": "dsh-activity-heatmap",
+            "name": "dsh-heatmap",
             "entry_type": "plugin",
             "technical_category": "observability-cost",
             "business_category": "personal-productivity",
@@ -24,36 +24,100 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-01-github-1334318461-root-directory-0",
+                    "id": "2026-10-22-02-github-1334318461-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T02:06:35.448Z",
+                    "retrieved_at": "2026-10-22T08:58:39.433Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-01-github-1334318461-root-author",
+                    "id": "2026-10-22-02-github-1334318461-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/283Gawin/dsh-heatmap/blob/4ba131df0980c8c8af72901ca9fa0f31accb9a6d/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/283Gawin/dsh-heatmap",
+                            "commit": "4ba131df0980c8c8af72901ca9fa0f31accb9a6d",
+                            "path": "README.md",
+                            "content_sha256": "4287764bd61965235fa7ed89a2474a0cf17c874917363298253fd9a84fd042b6"
+                        }
+                    ],
                     "revision": "4ba131df0980c8c8af72901ca9fa0f31accb9a6d",
-                    "captured_at": "2026-10-21T02:06:35.448Z",
-                    "summary": "在 DSH 侧栏展示活动热力图、Token 用量、缓存命中和估算花费。",
-                    "artifact": "data/runs/2026-10-21-01/snapshots/283gawin--dsh-heatmap/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T08:58:39.433Z",
+                    "summary": "从全部DSH会话usage和工作区Git历史生成侧栏热力图、今日token/cache及模型费用估值。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/283gawin--dsh-heatmap/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-01-github-1334318461-root-source",
+                    "id": "2026-10-22-02-github-1334318461-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/283Gawin/dsh-heatmap/blob/4ba131df0980c8c8af72901ca9fa0f31accb9a6d/src/core/aggregate.ts",
+                    "url": "https://github.com/283Gawin/dsh-heatmap/blob/4ba131df0980c8c8af72901ca9fa0f31accb9a6d/src/host/stats-service.ts",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/283Gawin/dsh-heatmap",
+                            "commit": "4ba131df0980c8c8af72901ca9fa0f31accb9a6d",
+                            "path": "src/host/stats-service.ts",
+                            "content_sha256": "7ec02652cd242cbf571e7856e22e95b4c443e23ae5ff2c216811d9c6da564350"
+                        },
+                        {
+                            "repository_url": "https://github.com/283Gawin/dsh-heatmap",
+                            "commit": "4ba131df0980c8c8af72901ca9fa0f31accb9a6d",
+                            "path": "src/core/aggregate.ts",
+                            "content_sha256": "ab160e71f29e52cc27f228c24859619d31ddab43f86fbe251b22a65a0b8b925a"
+                        },
+                        {
+                            "repository_url": "https://github.com/283Gawin/dsh-heatmap",
+                            "commit": "4ba131df0980c8c8af72901ca9fa0f31accb9a6d",
+                            "path": "src/client/heatmap.ts",
+                            "content_sha256": "1e3b0a69ae87b6fc5efcc051182aa88c910f1707fdc0680fe56696e173681552"
+                        },
+                        {
+                            "repository_url": "https://github.com/283Gawin/dsh-heatmap",
+                            "commit": "4ba131df0980c8c8af72901ca9fa0f31accb9a6d",
+                            "path": "src/core/types.ts",
+                            "content_sha256": "c019e5dd81d2dd23b7f0960e8bf43f4a43f097346f2f659208615c81197cac26"
+                        },
+                        {
+                            "repository_url": "https://github.com/283Gawin/dsh-heatmap",
+                            "commit": "4ba131df0980c8c8af72901ca9fa0f31accb9a6d",
+                            "path": "src/core/pricing.ts",
+                            "content_sha256": "becd67596bba1401602a1867d33d481900f491a90ade2f87fdf9b03ba01ce0df"
+                        },
+                        {
+                            "repository_url": "https://github.com/283Gawin/dsh-heatmap",
+                            "commit": "4ba131df0980c8c8af72901ca9fa0f31accb9a6d",
+                            "path": "src/index.ts",
+                            "content_sha256": "f264811fbf913d1544a8ce66e3e8eea0d2854aa9a9bc2bb66dcd00a36622ef4f"
+                        },
+                        {
+                            "repository_url": "https://github.com/283Gawin/dsh-heatmap",
+                            "commit": "4ba131df0980c8c8af72901ca9fa0f31accb9a6d",
+                            "path": "src/host/routes.ts",
+                            "content_sha256": "67d505f83e1b332ea4f48930c03495cde1213d856b1c24f9add5b1ee8452a45a"
+                        },
+                        {
+                            "repository_url": "https://github.com/283Gawin/dsh-heatmap",
+                            "commit": "4ba131df0980c8c8af72901ca9fa0f31accb9a6d",
+                            "path": "package.json",
+                            "content_sha256": "84fd65d1252c15c717953c7370c57fd88e57d1ce9318fdb65f26b4cc2a9be26b"
+                        },
+                        {
+                            "repository_url": "https://github.com/283Gawin/dsh-heatmap",
+                            "commit": "4ba131df0980c8c8af72901ca9fa0f31accb9a6d",
+                            "path": "README.md",
+                            "content_sha256": "4287764bd61965235fa7ed89a2474a0cf17c874917363298253fd9a84fd042b6"
+                        }
+                    ],
                     "revision": "4ba131df0980c8c8af72901ca9fa0f31accb9a6d",
-                    "captured_at": "2026-10-21T02:06:35.448Z",
-                    "summary": "核查 src/core/aggregate.ts、src/core/pricing.ts、src/host/stats-service.ts；官方sessionPersistence读取durable事件，按turn/step归并assistant usage并归属最近请求模型；工作区git log计数，经TTL缓存和REST提供日桶统计。",
-                    "artifact": "data/runs/2026-10-21-01/snapshots/283gawin--dsh-heatmap/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T08:58:39.433Z",
+                    "summary": "核查 src/host/stats-service.ts、src/core/aggregate.ts、src/client/heatmap.ts、src/core/types.ts、src/core/pricing.ts、src/index.ts、src/host/routes.ts、package.json、README.md；SDK持久日志按step fold，签名缓存/TTL合流，Git日期计数，当前价表估值与Web面板轮询。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/283gawin--dsh-heatmap/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "固定提交源码抽读与作者材料核查；没有执行目标代码、测试、安装或真实宿主验收，没有确认独立用户效果。",
+                        "固定Host扫描/缓存/路由/注册、usage/价格核心和Client窗口/轮询；未核provider账单口径、当前价格或制品字节/全部UI。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +128,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "希望回顾本机使用节奏的开发者将会话用量与Git提交按日查看；交付是观测面板而非财务账单或生产力排名。",
+                    "text": "个人观察使用/提交趋势，需明确统计范围和估价，不能当产出或账单证明。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1334318461-root-source"
+                        "2026-10-22-02-github-1334318461-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +139,16 @@
                             "fingerprint": "4ba131df0980c8c8af72901ca9fa0f31accb9a6d"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:06:35.448Z",
+                    "reviewed_at": "2026-10-22T08:58:39.433Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "官方sessionPersistence读取durable事件，按turn/step归并assistant usage并归属最近请求模型；工作区git log计数，经TTL缓存和REST提供日桶统计。",
+                    "text": "SDK持久日志按step fold，签名缓存/TTL合流，Git日期计数，当前价表估值与Web面板轮询。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1334318461-root-source"
+                        "2026-10-22-02-github-1334318461-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +157,16 @@
                             "fingerprint": "4ba131df0980c8c8af72901ca9fa0f31accb9a6d"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:06:35.448Z",
+                    "reviewed_at": "2026-10-22T08:58:39.433Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "固定提交源码抽读与作者材料核查；没有执行目标代码、测试、安装或真实宿主验收，没有确认独立用户效果。",
+                    "text": "固定Host扫描/缓存/路由/注册、usage/价格核心和Client窗口/轮询；未核provider账单口径、当前价格或制品字节/全部UI。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1334318461-root-source"
+                        "2026-10-22-02-github-1334318461-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +175,16 @@
                             "fingerprint": "4ba131df0980c8c8af72901ca9fa0f31accb9a6d"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:06:35.448Z",
+                    "reviewed_at": "2026-10-22T08:58:39.433Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "检查固定提交包清单与入口；安装说明属于作者主张，本次未验证分发产物与宿主兼容。",
+                    "text": "包0.1.0/DSH rc.6相关服务，设置卡需作者所述宿主namespace白名单补丁。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1334318461-root-source"
+                        "2026-10-22-02-github-1334318461-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +193,16 @@
                             "fingerprint": "4ba131df0980c8c8af72901ca9fa0f31accb9a6d"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:06:35.448Z",
+                    "reviewed_at": "2026-10-22T08:58:39.433Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "现金未见独立付费依赖；人工需维护定价、核对usage口径与宿主设置白名单，扫描历史日志和Git占本地资源。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 读全部日志/缓存样本与Git扫描 | 核模型口径、价格、仓库和宿主补丁 | 不新增LLM调用但非零CPU/内存 |\n| 持续使用 | 每60秒请求，变更会话从0读/最多64根串行Git | 价格/路径/兼容维护 | 增量为文件签名重读，不是事件增量 |\n| 失败恢复 | 重读/重启/重建缓存 | 核缺失与估价漂移，保留原始账单 | 扫描错误与0值当前不充分区分 |\n",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1334318461-root-source"
+                        "2026-10-22-02-github-1334318461-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +211,16 @@
                             "fingerprint": "4ba131df0980c8c8af72901ca9fa0f31accb9a6d"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:06:35.448Z",
+                    "reviewed_at": "2026-10-22T08:58:39.433Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "适合个人趋势观察；先与少量原始usage和实际账单核对，不用于财务结算或绩效评价。",
+                    "text": "先观察，先核usage/价格/缺数和禁用授权再评估趋势面板，不能作精确支出核算。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1334318461-root-source"
+                        "2026-10-22-02-github-1334318461-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +229,16 @@
                             "fingerprint": "4ba131df0980c8c8af72901ca9fa0f31accb9a6d"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:06:35.448Z",
+                    "reviewed_at": "2026-10-22T08:58:39.433Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "方便发现异常用量日期；花费估算与提交活跃度不能推出投入产出。",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 活动趋势 | 按本地日聚合usage/Git日期 | 完整覆盖/个人归属和工作质量 |\n| 费用估算 | 四token分量乘当前表 | 实际provider账单、历史价/促销/未知模型 |\n| 低打扰展示 | TTL合流/四路读/侧栏 | 大历史资源和禁用/卸载行为 |\n",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1334318461-root-source"
+                        "2026-10-22-02-github-1334318461-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +247,16 @@
                             "fingerprint": "4ba131df0980c8c8af72901ca9fa0f31accb9a6d"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:06:35.448Z",
+                    "reviewed_at": "2026-10-22T08:58:39.433Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "aggregate纯函数将归因、去重、日桶解耦；StatsService有单飞扫描和日志签名缓存。复用需明确时间区与同模型不同供应商价格差异。 源码依据：[src/core/aggregate.ts](https://github.com/283Gawin/dsh-heatmap/blob/4ba131df0980c8c8af72901ca9fa0f31accb9a6d/src/core/aggregate.ts#L29)、[src/core/pricing.ts](https://github.com/283Gawin/dsh-heatmap/blob/4ba131df0980c8c8af72901ca9fa0f31accb9a6d/src/core/pricing.ts#L201)、[src/host/stats-service.ts](https://github.com/283Gawin/dsh-heatmap/blob/4ba131df0980c8c8af72901ca9fa0f31accb9a6d/src/host/stats-service.ts#L53)。",
+                    "text": "纯fold和price函数、SDK seam、TTL在途合流、四路读取、删除会话状态清理、HTTP错误通用化及Client定时/监听清理值得复用；它们不弥补统计口径/缺失和路由生命周期。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1334318461-root-source"
+                        "2026-10-22-02-github-1334318461-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,15 +265,69 @@
                             "fingerprint": "4ba131df0980c8c8af72901ca9fa0f31accb9a6d"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:06:35.448Z",
+                    "reviewed_at": "2026-10-22T08:58:39.433Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "mechanism",
+                    "basis": "interpretation",
+                    "text": "统一usage/model、Git和常驻趋势入口，纯聚合可核，增量在可见性/接线而非计费或生产力算法。详见[Q01](#research-q01)与[Q02](#research-q02)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1334318461-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334318461:root",
+                            "area": "code",
+                            "fingerprint": "4ba131df0980c8c8af72901ca9fa0f31accb9a6d"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T08:58:39.433Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "未知模型默认估价且后缀override可能失效，失败/重复仓库缺覆盖说明；enabled不停止路由/扫描，估值非账单。详见[Q02](#research-q02)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1334318461-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334318461:root",
+                            "area": "code",
+                            "fingerprint": "4ba131df0980c8c8af72901ca9fa0f31accb9a6d"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T08:58:39.433Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "mechanism",
+                    "basis": "unverified",
+                    "text": "可探讨覆盖/价格版本收据，规范化仓库和模型/计费时间、未知分级及明确禁用/清理，维护成本未验证。详见[Q05](#research-q05)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1334318461-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334318461:root",
+                            "area": "code",
+                            "fingerprint": "4ba131df0980c8c8af72901ca9fa0f31accb9a6d"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T08:58:39.433Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T02:06:35.448Z",
+            "last_checked_at": "2026-10-22T08:58:39.433Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "4ba131df0980c8c8af72901ca9fa0f31accb9a6d",
-                "reviewed_at": "2026-10-21T02:06:35.448Z",
+                "reviewed_at": "2026-10-22T08:58:39.433Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -221,61 +339,61 @@
                 "technical": {
                     "criteria": {
                         "novelty": 9,
-                        "mechanism": 8,
-                        "transferability": 5,
-                        "simplification": 4
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 11
                     },
-                    "rationale": "novelty：常见热力图在DSH适配；mechanism：事件去重与扫描缓存是局部增量；transferability：纯聚合可复用；simplification：统一观测但新增定价维护。",
+                    "rationale": "novelty成熟热力图取小幅；mechanismusage/Git/缓存整合取实质；transferability纯fold/seam取实质；simplification集中观察取较强，不计估价为账单。",
                     "basis": "interpretation",
-                    "score": 26,
+                    "score": 45,
                     "evidence_ids": [
-                        "2026-10-21-01-github-1334318461-root-source"
+                        "2026-10-22-02-github-1334318461-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 9,
-                        "delivery": 8,
-                        "reach": 5,
-                        "economics": 0
+                        "workflow": 18,
+                        "delivery": 15,
+                        "reach": 10,
+                        "economics": 4
                     },
-                    "rationale": "workflow：汇总查看少跨页；delivery：提供活动视图不改变业务成果；reach：无需手工日志分析；economics：未识别成本结构改变，定价展示非节费证明。",
+                    "rationale": "workflow活动回顾取实质；delivery持续面板取实质；reachWeb用户取实质；economics无决策/费用误差对照取小幅。",
                     "basis": "interpretation",
-                    "score": 22,
+                    "score": 47,
                     "evidence_ids": [
-                        "2026-10-21-01-github-1334318461-root-source"
+                        "2026-10-22-02-github-1334318461-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "trial",
-                "reason": "需要个人用量节奏回顾者可试用热图；先对原始usage和账单核对，不将提交计数用于绩效。",
+                "decision": "observe",
+                "reason": "趋势入口有价值，但默认估价、覆盖/重复和禁用语义需先核，不能直接据此核支出。详见[Q05](#research-q05)。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "按日回顾用量和Git活动清楚，非财务或生产力测量。"
+                        "rationale": "活动趋势明确，财务/个人产出边界需区分。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "统一日桶趋势比翻日志便利，额外解释力有限。"
+                        "rationale": "持久usage/Git整合有增量，原始可替代。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "durable归并和git log计数源码支持，账务准确未对照。"
+                        "rationale": "固定源码可核，账单口径未独立对照。"
                     },
                     "cost": {
-                        "score": 15,
-                        "rationale": "无必要付费服务，历史扫描与价格维护有本地成本。"
+                        "score": 5,
+                        "rationale": "全历史/价格/宿主补丁和隐私维护。"
                     }
                 },
-                "score": 64,
+                "score": 54,
                 "revision": "4ba131df0980c8c8af72901ca9fa0f31accb9a6d",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T08:58:39.433Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-01-github-1334318461-root-source"
+                    "2026-10-22-02-github-1334318461-root-source"
                 ],
                 "dependencies": [
                     {
@@ -300,89 +418,61 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T01:54:44Z",
-            "analysis_sha256": "3bec8f306bafa7eb7733364d17dd11902795230cdb974197357c93f1f1c7e9ad"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "006e29ab488ef1897e217155e4eb17f5a372243887cb30e7e57088cc1d9536be"
         },
         "publication.metadata": "data/plugins/283gawin--dsh-heatmap/META.json",
         "publication.summaries": {
-            "text": "在 DSH 侧栏展示活动热力图、Token 用量、缓存命中和估算花费。",
+            "text": "从全部DSH会话usage和工作区Git历史生成侧栏热力图、今日token/cache及模型费用估值。",
             "revision": "4ba131df0980c8c8af72901ca9fa0f31accb9a6d",
             "source_url": "https://github.com/283Gawin/dsh-heatmap/blob/4ba131df0980c8c8af72901ca9fa0f31accb9a6d/README.md"
         },
         "publication.capabilities": {
             "revision": "4ba131df0980c8c8af72901ca9fa0f31accb9a6d",
             "items": {
-                "后台": "会话Token/缓存/模型估算成本及Git提交日聚合",
-                "界面": "侧栏热力图"
-            }
+                "Host 路由": "GET统计快照",
+                "界面": "侧栏热力图/设置卡"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| usage趋势 | 全会话按日token/cache | 缺失/重试口径需核 |\n| 估价 | 当前模型表乘分量 | 默认未知价/历史重估非账单 |\n| Git趋势 | 仓库日提交 | 非个人贡献，根去重/截断需核 |\n| 面板 | 91天UI/365天Host | enabled非停止采集开关 |"
         },
         "publication.advice": {
             "revision": "4ba131df0980c8c8af72901ca9fa0f31accb9a6d",
-            "text": "适合个人趋势观察；先与少量原始usage和实际账单核对，不用于财务结算或绩效评价。"
+            "text": "先观察，先核usage/价格/缺数和禁用授权再评估趋势面板，不能作精确支出核算。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/283gawin--dsh-heatmap",
-        "reports": "# dsh-activity-heatmap\n\n> 在 DSH 侧栏展示活动热力图、Token 用量、缓存命中和估算花费。\n\n## 使用建议\n\n适合个人趋势观察；先与少量原始usage和实际账单核对，不用于财务结算或绩效评价。\n\n**核查状态**：已实现机制有源码支持；贡献价值为条件性解释，未来设计假设未验证。本轮仅作固定版本源码核查，未安装、运行目标代码或验收宿主。\n\n- **用途**：希望回顾本机使用节奏的开发者将会话用量与Git提交按日查看；交付是观测面板而非财务账单或生产力排名。\n- **亮点**：相对分别查看日志和Git记录，增量是将模型用量、缓存与开发活动聚合到常驻侧栏；纯聚合与宿主扫描分离，重复turn/step记录替换而非累加。\n- **思考**：README仍称90天，但stats-service的WINDOW_DAYS为365，实际范围需以源码为准；模型定价和usage字段口径决定估算准确性，最近模型名归因与缺失字段补0不能证明财务完整。提交量也不能代表交付价值。 pricing.ts对未知模型使用DEFAULT_PRICE而非未知值，因此新模型也会显示貌似精确的估算。\n- **建议**：适合个人趋势观察；先与少量原始usage和实际账单核对，不用于财务结算或绩效评价。\n\n## 能力与限制\n\n参照手工session日志及git log汇总；未对TokenTracker原实现独立比较，作者引用的价格不能充当当前官方价格验证。\n\n官方sessionPersistence读取durable事件，按turn/step归并assistant usage并归属最近请求模型；工作区git log计数，经TTL缓存和REST提供日桶统计。\n\n\nDSH sessionPersistence、subprocess、web路由与客户端挂载；设置卡片白名单修改为作者声明的额外维护条件。\n\n扫描会话和工作区，按本机日历归桶，套用价格表，缓存快照供侧栏切维度；缺失来源需人工核对。\n\n现金未见独立付费依赖；人工需维护定价、核对usage口径与宿主设置白名单，扫描历史日志和Git占本地资源。\n\n方便发现异常用量日期；花费估算与提交活跃度不能推出投入产出。\n\n## 能力清单\n\n- **后台**：会话Token/缓存/模型估算成本及Git提交日聚合\n- **界面**：侧栏热力图\n\n## 工程分析\n\naggregate纯函数将归因、去重、日桶解耦；StatsService有单飞扫描和日志签名缓存。复用需明确时间区与同模型不同供应商价格差异。 源码依据：[src/core/aggregate.ts](https://github.com/283Gawin/dsh-heatmap/blob/4ba131df0980c8c8af72901ca9fa0f31accb9a6d/src/core/aggregate.ts#L29)、[src/core/pricing.ts](https://github.com/283Gawin/dsh-heatmap/blob/4ba131df0980c8c8af72901ca9fa0f31accb9a6d/src/core/pricing.ts#L201)、[src/host/stats-service.ts](https://github.com/283Gawin/dsh-heatmap/blob/4ba131df0980c8c8af72901ca9fa0f31accb9a6d/src/host/stats-service.ts#L53)。\n\n## 未来设计假设（未验证）\n\n待验证假设：在日桶同时显示已知价格覆盖率、缺失usage及源日志范围，能减少用户把估算当账单；由当前模型归因与静态定价依赖推导，需额外覆盖信息而非更多漂亮图表。\n\n最小验证：合成具有已知账单的缺失usage、重复step、跨日和未知模型记录，比较覆盖提示前后账单误读；以原始记录精确对账，覆盖未知仍显示精确费用则假设失败。\n\n## 核查说明\n\n- **仓库**：[283Gawin/dsh-heatmap](https://github.com/283Gawin/dsh-heatmap)\n- **版本号**：0.1.0（[固定提交 4ba131d](https://github.com/283Gawin/dsh-heatmap/tree/4ba131df0980c8c8af72901ca9fa0f31accb9a6d)）\n- **版本日期**：2026-08-15（固定提交日期，北京时间；不是包发布日期）\n- **实际范围**：固定提交源码抽读与作者材料核查；没有执行目标代码、测试、安装或真实宿主验收，没有确认独立用户效果。\n- **来源**：作者README与上述固定版本源码；未确认独立采用效果，目录收录与下载统计不作效果证据。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：a05903ce0bbab4cee430615b8fe8942155869fb64e87d1c6cfefa25eb861548d。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 2198 | 2040 | 205 | — |\n| .md | source | 1 | 164 | — | — | 1507 |\n| .ts | source | 14 | 1878 | 1318 | 410 | — |\n| .tsx | source | 2 | 62 | 58 | 0 | — |\n| .ts | test | 1 | 190 | 166 | 14 | — |\n\n排除 14 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n",
+        "reports": "# dsh-heatmap\n\n> 从全部DSH会话usage和工作区Git历史生成侧栏热力图、今日token/cache及模型费用估值。\n\n## 研究范围\n\n- **仓库**：[283Gawin/dsh-heatmap](https://github.com/283Gawin/dsh-heatmap)\n- **版本号**：0.1.0（[固定提交 4ba131df0980c8c8af72901ca9fa0f31accb9a6d](https://github.com/283Gawin/dsh-heatmap/tree/4ba131df0980c8c8af72901ca9fa0f31accb9a6d)）\n- **版本日期**：2026-08-15（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n源码支持durable usage与Git活动的本地聚合和侧栏展示；默认估价、后缀覆盖、缺数/重复仓库及禁用语义限制解释，不能作精确账单或个人产出。覆盖与价格版本收据尚未验证。\n\n## 洞察短评\n\n- **用途**：个人观察使用/提交趋势，需明确统计范围和估价，不能当产出或账单证明。\n- **亮点**：统一usage/model、Git和常驻趋势入口，纯聚合可核，增量在可见性/接线而非计费或生产力算法。详见[Q01](#research-q01)与[Q02](#research-q02)。\n- **思考**：未知模型默认估价且后缀override可能失效，失败/重复仓库缺覆盖说明；enabled不停止路由/扫描，估值非账单。详见[Q02](#research-q02)。\n- **建议**：可探讨覆盖/价格版本收据，规范化仓库和模型/计费时间、未知分级及明确禁用/清理，维护成本未验证。详见[Q05](#research-q05)。\n\n采用建议：先观察，先核usage/价格/缺数和禁用授权再评估趋势面板，不能作精确支出核算。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n统一usage/model、Git和常驻趋势入口，纯聚合可核，增量在可见性/接线而非计费或生产力算法。详见[Q01](#research-q01)与[Q02](#research-q02)。\n\n## 关键质疑\n\n未知模型默认估价且后缀override可能失效，失败/重复仓库缺覆盖说明；enabled不停止路由/扫描，估值非账单。详见[Q02](#research-q02)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可探讨覆盖/价格版本收据，规范化仓库和模型/计费时间、未知分级及明确禁用/清理，维护成本未验证。详见[Q05](#research-q05)。\n\n进一步探讨从固定脱敏usage/重试/未知模型/后缀覆盖/重复repo/失败/禁用夹具核覆盖，再测大历史资源。\n\n## 场景与替代办法\n\n个人观察使用/提交趋势，需明确统计范围和估价，不能当产出或账单证明。\n\n原始provider用量/账单与git log可替代；插件集中趋势，也增加价格/覆盖和Host补丁维护。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| 匹配DSH persistence/webServer/subprocess/systemPrompt | Host必需 | 读全部会话/跑git/统计路由 | 版本/权限不满足影响统计完整性 |\n| Web slots/settingsScope/React与DOM侧栏 | 客户端必需 | 设置卡/自愈挂载 | DOM/样式/设置命名空间需匹配 |\n| Git及目标仓库读取权限 | 提交维度必需 | git log | 错误可静默缺数，非确认为0 |\n| 价格覆盖/模型usage口径核对 | 费用解读必需 | 非账单估值 | 未知fallback/历史重估需标明 |\n| 宿主设置白名单修改 | 作者文档所述条件 | 暴露activity-heatmap设置 | 升级覆盖需重补，额外维护 |\n\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 准备 | 固定宿主/制品，确认全会话统计可见范围 | 先副本核usage和Git样本，不改正式宿主 |\n| 核数 | 对照一组已知请求/模型/仓库 | 重试/未知模型/多工作树/缺日志分开 |\n| 展示 | 只当趋势看热力图，费用明确估算 | 不用颜色/提交次数代表质量/生产力 |\n| 恢复 | 失败核覆盖范围/缓存/设置而非直接补0 | 停用需核实际路由/轮询，不仅enabled |\n\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 读全部日志/缓存样本与Git扫描 | 核模型口径、价格、仓库和宿主补丁 | 不新增LLM调用但非零CPU/内存 |\n| 持续使用 | 每60秒请求，变更会话从0读/最多64根串行Git | 价格/路径/兼容维护 | 增量为文件签名重读，不是事件增量 |\n| 失败恢复 | 重读/重启/重建缓存 | 核缺失与估价漂移，保留原始账单 | 扫描错误与0值当前不充分区分 |\n\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 活动趋势 | 按本地日聚合usage/Git日期 | 完整覆盖/个人归属和工作质量 |\n| 费用估算 | 四token分量乘当前表 | 实际provider账单、历史价/促销/未知模型 |\n| 低打扰展示 | TTL合流/四路读/侧栏 | 大历史资源和禁用/卸载行为 |\n\n\n## 研究问题与完整回答\n\n**插件研究总目标：**核全会话usage/Git趋势和模型估价，区分缺失、默认估价与账单及禁用/可见范围。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 面向谁，统计到热力图如何走？\n\n**研究主题：**场景与需求、功能与机制\n\n#### 完整回答\n\n面向想在DSH Web查看调用/提交活动趋势的个人用户。输入本地全部会话durable日志、会话cwd仓库及可选额外仓库/价格覆盖，输出逐日本地日桶、今日token/cache和估价。成功需清楚口径和覆盖，不能把提交次数当个人贡献或把估价当实付账单。\n\nHost list全部会话，对日志size+mtime签名缓存，变更从0 readFrom后fold；usage来自assistant/message，最近request/header/context模型归属，同turn:step保留最后样本。最多四路读，Host日桶365天；Git最多64根逐个log、默认排merge，按输出日期计次。60秒TTL/在途合流后GET统计，Client60秒轮询，UI取最近91天，与README“近90天”略有差别。侧栏DOM自愈+设置卡，提示仅公告不是模型工具。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/host/stats-service.ts:31-38](https://github.com/283Gawin/dsh-heatmap/blob/4ba131df0980c8c8af72901ca9fa0f31accb9a6d/src/host/stats-service.ts#L31-L38)\n\nTTL/并发/窗口。\n\n```text\n/** Snapshot freshness window; a scan runs at most once per window. */\nconst TTL_MS = 60_000\n/** Concurrency cap while scanning session logs. */\nconst SESSION_CONCURRENCY = 4\n/** Days the heatmap covers. */\nconst WINDOW_DAYS = 365\n/** Git log output cap (a year of short dates is tiny; 1 MiB is generous). */\nconst GIT_OUTPUT_CAP = 1 << 20\n```\n\n**依据 2 · 源码核查**：[src/host/stats-service.ts:102-150](https://github.com/283Gawin/dsh-heatmap/blob/4ba131df0980c8c8af72901ca9fa0f31accb9a6d/src/host/stats-service.ts#L102-L150)\n\n快照/Git与聚合。\n\n<details>\n<summary>查看原文（49行）</summary>\n\n```text\n  /** Snapshot with TTL caching; concurrent callers share one scan. */\n  async snapshot(): Promise<HeatmapPayload> {\n    const cached = this.cache\n    if (cached !== undefined && Date.now() - cached.at < TTL_MS) return cached.payload\n    if (this.inflight !== undefined) return this.inflight\n    this.inflight = this.scan()\n      .then((payload) => {\n        this.cache = { payload, at: Date.now() }\n        return payload\n      })\n      .finally(() => {\n        this.inflight = undefined\n      })\n    return this.inflight\n  }\n\n  /** Drop the cache (settings changed); the next snapshot rescans. */\n  invalidate(): void {\n    this.cache = undefined\n  }\n\n  /** Full incremental scan: changed sessions re-read, new sessions added, git rescanned. */\n  private async scan(): Promise<HeatmapPayload> {\n    const now = Date.now()\n    const days = emptyBuckets(WINDOW_DAYS, now)\n    const samples = await this.scanSessions()\n    const table = this.table()\n    foldSamplesInto(days, samples, table)\n\n    const roots = await this.collectRepos()\n    const commitDates: string[] = []\n    const since = dateKey(now - (WINDOW_DAYS - 1) * 86_400_000)\n    for (const root of roots) {\n      const argv = ['log', '--since=' + since + ' 00:00:00', '--date=short', '--pretty=format:%ad']\n      if (!(this.config().includeMerges ?? false)) argv.push('--no-merges')\n      try {\n        const result = await this.git.run(argv, root)\n        if (result.exitCode === 0) {\n          commitDates.push(...parseGitLogDates(result.stdout))\n        }\n        // Non-zero (not a repository / no commits) is a normal absence.\n      } catch {\n        // A failed git run must not take the whole snapshot down.\n      }\n    }\n    foldCommitsInto(days, commitDates)\n\n    const todaySamples = samples.filter((sample) => dateKey(sample.time) === dateKey(now))\n    return assemblePayload(days, todaySamples, table, now, this.config().usdCnyRate ?? 0)\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/host/stats-service.ts:154-201](https://github.com/283Gawin/dsh-heatmap/blob/4ba131df0980c8c8af72901ca9fa0f31accb9a6d/src/host/stats-service.ts#L154-L201)\n\n签名和变更重读。\n\n<details>\n<summary>查看原文（48行）</summary>\n\n```text\n  private async scanSessions() {\n    const headers = await this.persistence.list()\n    const all: ReturnType<typeof foldSessionUsages> = []\n\n    // Discover repo roots from headers and refresh per-session signatures.\n    const pending: { id: SessionId; signature: string }[] = []\n    for (const header of headers) {\n      if (typeof header.cwd === 'string' && header.cwd !== '') this.repoRoots.add(header.cwd)\n      let signature = ''\n      const location = this.persistence.locate(header)\n      if (location !== undefined) {\n        try {\n          const info = await stat(location.path)\n          signature = info.size + ':' + info.mtimeMs\n        } catch {\n          // The log may not be materialized yet; treat as new next round.\n        }\n      }\n      const state = this.sessionStates.get(header.id)\n      if (state !== undefined && state.signature === signature) {\n        all.push(...state.samples)\n        continue\n      }\n      pending.push({ id: header.id, signature })\n    }\n\n    let cursor = 0\n    const workers = Array.from({ length: Math.min(SESSION_CONCURRENCY, Math.max(1, pending.length)) }, async () => {\n      while (cursor < pending.length) {\n        const item = pending[cursor]\n        cursor += 1\n        try {\n          const { events } = await this.persistence.readFrom(item.id, 0)\n          const samples = foldSessionUsages(events)\n          this.sessionStates.set(item.id, { signature: item.signature, samples })\n          all.push(...samples)\n        } catch (error) {\n          logError('session scan failed for ' + item.id + ': ' + String(error))\n        }\n      }\n    })\n    await Promise.all(workers)\n\n    // Drop states for sessions that disappeared.\n    const live = new Set(headers.map((header) => String(header.id)))\n    for (const id of [...this.sessionStates.keys()]) {\n      if (!live.has(id)) this.sessionStates.delete(id)\n    }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/core/aggregate.ts:47-83](https://github.com/283Gawin/dsh-heatmap/blob/4ba131df0980c8c8af72901ca9fa0f31accb9a6d/src/core/aggregate.ts#L47-L83)\n\nusage/model/step处理。\n\n<details>\n<summary>查看原文（37行）</summary>\n\n```text\nexport function foldSessionUsages(events: readonly SessionEvent[]): UsageSample[] {\n  let model = UNKNOWN_MODEL\n  const latest = new Map<string, UsageSample>()\n  for (const event of events) {\n    switch (event.type) {\n      case 'request/header': {\n        const config = event.data.header?.config\n        if (config !== undefined && typeof config.model === 'string' && config.model !== '') {\n          model = config.model\n        }\n        break\n      }\n      case 'request/context': {\n        if (typeof event.data.model === 'string' && event.data.model !== '') {\n          model = event.data.model\n        }\n        break\n      }\n      case 'assistant/message': {\n        const usage: TokenUsage | undefined = event.data.usage\n        if (usage === undefined) break\n        const key = `${event.data.turn}:${event.data.step}`\n        latest.set(key, {\n          time: event.time,\n          inputTokens: usage.inputTokens ?? 0,\n          cacheReadTokens: usage.cacheReadTokens ?? 0,\n          cacheWriteTokens: usage.cacheWriteTokens ?? 0,\n          outputTokens: usage.outputTokens ?? 0,\n          model,\n        })\n        break\n      }\n      default:\n        break\n    }\n  }\n  return [...latest.values()]\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/client/heatmap.ts:68-69](https://github.com/283Gawin/dsh-heatmap/blob/4ba131df0980c8c8af72901ca9fa0f31accb9a6d/src/client/heatmap.ts#L68-L69)\n\nUI窗口。\n\n```text\nfunction windowDays(payload: HeatmapPayload): DayUsage[] {\n  return payload.days.slice(Math.max(0, payload.days.length - HEATMAP_DAYS))\n```\n\n**依据 6 · 源码核查**：[src/core/types.ts:57-57](https://github.com/283Gawin/dsh-heatmap/blob/4ba131df0980c8c8af72901ca9fa0f31accb9a6d/src/core/types.ts#L57-L57)\n\n91天常量。\n\n```text\nexport const HEATMAP_DAYS = 91\n```\n\n**依据 7 · 源码核查**：[src/client/heatmap.ts:214-225](https://github.com/283Gawin/dsh-heatmap/blob/4ba131df0980c8c8af72901ca9fa0f31accb9a6d/src/client/heatmap.ts#L214-L225)\n\n轮询/清理。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n  /** Begin polling and attach the visibility listener. */\n  start(): void {\n    void this.refresh()\n    this.timer = window.setInterval(() => { void this.refresh() }, POLL_MS)\n    document.addEventListener('visibilitychange', this.onVis)\n  }\n\n  dispose(): void {\n    this.disposed = true\n    if (this.timer !== undefined) clearInterval(this.timer)\n    document.removeEventListener('visibilitychange', this.onVis)\n    this.element.remove()\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 增量和估价/完整性/关闭的关键边界是什么？\n\n**研究主题：**贡献与相对优势、缺陷与关键质疑\n\n#### 完整回答\n\n贡献在统一SDK日志读取、usage/model归属、Git与持久面板，提供随时可见趋势；纯聚合可审计，比只猜字符量更有依据。但它不测任务成果，也不是账单计费引擎。\n\n同turn:step只保最后usage是否正确依宿主重试日志语义，若多次实际付费则可能少计；缺usage默认没有样本、字段缺失补0。inputTokens被视为cache-miss后再加cacheRead/cacheWrite，需确认provider统一口径互斥。未知模型按固定默认价格估值而无unknown/覆盖比例，历史事件用本次当前价格重算。同一模型名不同provider/计价时段未保留。尤其table只包含内置/覆盖精确键，fold遇日期后缀样本缺精确键会priceFor(model,undefined)，前缀覆盖可能被忽略；纯priceFor支持override不等实际fold使用正确覆盖。\n\n会话失败仅日志，Git非零/异常跳过，API仍成功、无缺数收据；仓库仅按cwd字符串去重，同一Git库多子目录/工作树可能重复算，历史repoRoots只加不清且只取前64，extra可能被截。Git是仓库全部可达历史作者日期，不代表当前用户或当前会话产出。\n\nenabledfalse只使sync不注册公告，route已先注册、Stats和Client轮询仍可用；不是停止收集的总开关。Host获得disposeRoutes但未纳入effect返回/调用，源码未明确清理，热卸载还需宿主约定。GET只校验方法/path，不另做身份/Origin/会话范围；全部会话聚合可见性依宿主外层控制，不能以same-origin称已授权。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/core/aggregate.ts:65-76](https://github.com/283Gawin/dsh-heatmap/blob/4ba131df0980c8c8af72901ca9fa0f31accb9a6d/src/core/aggregate.ts#L65-L76)\n\nstep最后usage/缺字段0。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n      case 'assistant/message': {\n        const usage: TokenUsage | undefined = event.data.usage\n        if (usage === undefined) break\n        const key = `${event.data.turn}:${event.data.step}`\n        latest.set(key, {\n          time: event.time,\n          inputTokens: usage.inputTokens ?? 0,\n          cacheReadTokens: usage.cacheReadTokens ?? 0,\n          cacheWriteTokens: usage.cacheWriteTokens ?? 0,\n          outputTokens: usage.outputTokens ?? 0,\n          model,\n        })\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/core/aggregate.ts:96-98](https://github.com/283Gawin/dsh-heatmap/blob/4ba131df0980c8c8af72901ca9fa0f31accb9a6d/src/core/aggregate.ts#L96-L98)\n\n分量合计。\n\n```text\n/** Billed token total for one day (all four components). */\nexport function billedFor(day: DayUsage): number {\n  return day.inputTokens + day.cacheReadTokens + day.cacheWriteTokens + day.outputTokens\n```\n\n**依据 3 · 源码核查**：[src/core/pricing.ts:31-32](https://github.com/283Gawin/dsh-heatmap/blob/4ba131df0980c8c8af72901ca9fa0f31accb9a6d/src/core/pricing.ts#L31-L32)\n\n默认估价。\n\n```text\n/** Fallback price applied to models absent from the table. */\nconst DEFAULT_PRICE: ModelPrice = { inputPerM: 0.27, cacheReadPerM: 0.07, cacheWritePerM: 0, outputPerM: 1.1 }\n```\n\n**依据 4 · 源码核查**：[src/core/aggregate.ts:139-143](https://github.com/283Gawin/dsh-heatmap/blob/4ba131df0980c8c8af72901ca9fa0f31accb9a6d/src/core/aggregate.ts#L139-L143)\n\n缺精确价格不传override。\n\n```text\n  const index = indexBuckets(days)\n  for (const sample of samples) {\n    const day = index.get(dateKey(sample.time))\n    if (day === undefined) continue // older than the window: ignore\n    mergeSample(day, sample, table[sample.model] ?? priceFor(sample.model, undefined))\n```\n\n**依据 5 · 源码核查**：[src/core/pricing.ts:281-289](https://github.com/283Gawin/dsh-heatmap/blob/4ba131df0980c8c8af72901ca9fa0f31accb9a6d/src/core/pricing.ts#L281-L289)\n\n只枚举精确键。\n\n```text\nexport function resolvePriceTable(\n  overrides: Record<string, { inputPerM?: number; cacheReadPerM?: number; cacheWritePerM?: number; outputPerM?: number }> | undefined,\n): Record<string, ModelPrice> {\n  const table: Record<string, ModelPrice> = {}\n  const keys = new Set([...Object.keys(DEFAULT_MODEL_PRICES), ...Object.keys(overrides ?? {})])\n  for (const model of keys) {\n    table[model] = resolveRow(model, overrides, DEFAULT_MODEL_PRICES)\n  }\n  return table\n```\n\n**依据 6 · 源码核查**：[src/host/stats-service.ts:134-145](https://github.com/283Gawin/dsh-heatmap/blob/4ba131df0980c8c8af72901ca9fa0f31accb9a6d/src/host/stats-service.ts#L134-L145)\n\nGit失败跳过。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n    for (const root of roots) {\n      const argv = ['log', '--since=' + since + ' 00:00:00', '--date=short', '--pretty=format:%ad']\n      if (!(this.config().includeMerges ?? false)) argv.push('--no-merges')\n      try {\n        const result = await this.git.run(argv, root)\n        if (result.exitCode === 0) {\n          commitDates.push(...parseGitLogDates(result.stdout))\n        }\n        // Non-zero (not a repository / no commits) is a normal absence.\n      } catch {\n        // A failed git run must not take the whole snapshot down.\n      }\n```\n\n</details>\n\n**依据 7 · 源码核查**：[src/host/stats-service.ts:185-201](https://github.com/283Gawin/dsh-heatmap/blob/4ba131df0980c8c8af72901ca9fa0f31accb9a6d/src/host/stats-service.ts#L185-L201)\n\n会话失败日志。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n        try {\n          const { events } = await this.persistence.readFrom(item.id, 0)\n          const samples = foldSessionUsages(events)\n          this.sessionStates.set(item.id, { signature: item.signature, samples })\n          all.push(...samples)\n        } catch (error) {\n          logError('session scan failed for ' + item.id + ': ' + String(error))\n        }\n      }\n    })\n    await Promise.all(workers)\n\n    // Drop states for sessions that disappeared.\n    const live = new Set(headers.map((header) => String(header.id)))\n    for (const id of [...this.sessionStates.keys()]) {\n      if (!live.has(id)) this.sessionStates.delete(id)\n    }\n```\n\n</details>\n\n**依据 8 · 源码核查**：[src/host/stats-service.ts:205-211](https://github.com/283Gawin/dsh-heatmap/blob/4ba131df0980c8c8af72901ca9fa0f31accb9a6d/src/host/stats-service.ts#L205-L211)\n\n根/64限制。\n\n```text\n  /** Repo roots: session cwds (deduped, up to a sane cap) plus configured extras. */\n  private async collectRepos(): Promise<string[]> {\n    const roots = [...this.repoRoots]\n    for (const extra of this.config().extraRepos ?? []) {\n      if (extra !== '' && !roots.includes(extra)) roots.push(extra)\n    }\n    return roots.slice(0, 64)\n```\n\n**依据 9 · 源码核查**：[src/index.ts:46-67](https://github.com/283Gawin/dsh-heatmap/blob/4ba131df0980c8c8af72901ca9fa0f31accb9a6d/src/index.ts#L46-L67)\n\nenabled/路由与dispose变量。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\nexport function apply(ctx: Context, config?: HeatmapConfig): void {\n  let current: () => HeatmapConfig = () => config ?? {}\n  const stats = new StatsService(ctx, current)\n  const disposeRoutes = registerStatsRoutes(ctx, stats)\n  let disposeSection: (() => void) | undefined\n\n  const sync = (): void => {\n    if (disposeSection !== undefined) { disposeSection(); disposeSection = undefined }\n    if ((current().enabled ?? true) === false) return\n    disposeSection = ctx.systemPrompt.section({\n      name: 'plugin:activity-heatmap',\n      order: SECTION_ORDER,\n      text: ACTIVITY_HEATMAP_GUIDANCE,\n    })\n    stats.invalidate()\n  }\n\n  installSettingsSection(ctx, HEATMAP_NS, Config, config ?? {}, {\n    setSource: (source) => { current = source },\n    onChange: sync,\n  })\n  sync()\n```\n\n</details>\n\n**依据 10 · 源码核查**：[src/host/routes.ts:24-41](https://github.com/283Gawin/dsh-heatmap/blob/4ba131df0980c8c8af72901ca9fa0f31accb9a6d/src/host/routes.ts#L24-L41)\n\nHTTP仅方法/path。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n  const handler = async (req: IncomingMessage, res: ServerResponse): Promise<void> => {\n    const url = new URL(req.url ?? '/', 'http://x')\n    if (req.method !== 'GET' || url.pathname !== '/activity-heatmap/stats') {\n      res.writeHead(405)\n      res.end()\n      return\n    }\n    try {\n      const payload = await stats.snapshot()\n      res.writeHead(200, { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' })\n      res.end(JSON.stringify({ ok: true, value: payload } satisfies StatsEnvelope<HeatmapPayload>))\n    } catch (error) {\n      ctx.logger.warn('[dsh-activity-heatmap] stats snapshot failed: ' + String(error))\n      res.writeHead(500, { 'content-type': 'application/json; charset=utf-8' })\n      res.end(JSON.stringify({ ok: false, error: SCAN_ERROR } satisfies StatsEnvelope<never>))\n    }\n  }\n\n```\n\n</details>\n\n#### 缺口\n\n- 宿主重试usage累计/覆盖语义、provider缓存token归一化与实际账单价未确定。\n  **影响：**不能把金额/总token作精确支出核算。\n  **进一步探讨：**可固定SDK/模型provider和一组原始调用收据，逐分量核对后标估价/未知覆盖。\n- 外层访问授权、Host路由卸载和统计缺失范围未由插件完整表达。\n  **影响：**禁用/卸载和全会话聚合保密范围不能只看UI。\n  **进一步探讨：**可从宿主exact路由生命周期/认证、enabled含义和缺数收据入手。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 依赖、隐私和读者步骤是什么？\n\n**研究主题：**依赖、兼容与流程\n\n#### 完整回答\n\n包@linxin666/dsh-client-ui-activity-heatmap0.1.0依多项DSH rc.6服务和React，宿主硬注入persistence/webServer/subprocess/systemPrompt。README明确设置namespace需修改宿主白名单、升级后重补，不能称完全零宿主改动。库源码和发布lib同在仓库，本轮分析src不等核对制品字节。\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| 匹配DSH persistence/webServer/subprocess/systemPrompt | Host必需 | 读全部会话/跑git/统计路由 | 版本/权限不满足影响统计完整性 |\n| Web slots/settingsScope/React与DOM侧栏 | 客户端必需 | 设置卡/自愈挂载 | DOM/样式/设置命名空间需匹配 |\n| Git及目标仓库读取权限 | 提交维度必需 | git log | 错误可静默缺数，非确认为0 |\n| 价格覆盖/模型usage口径核对 | 费用解读必需 | 非账单估值 | 未知fallback/历史重估需标明 |\n| 宿主设置白名单修改 | 作者文档所述条件 | 暴露activity-heatmap设置 | 升级覆盖需重补，额外维护 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 准备 | 固定宿主/制品，确认全会话统计可见范围 | 先副本核usage和Git样本，不改正式宿主 |\n| 核数 | 对照一组已知请求/模型/仓库 | 重试/未知模型/多工作树/缺日志分开 |\n| 展示 | 只当趋势看热力图，费用明确估算 | 不用颜色/提交次数代表质量/生产力 |\n| 恢复 | 失败核覆盖范围/缓存/设置而非直接补0 | 停用需核实际路由/轮询，不仅enabled |\n\n读取全会话而非当前profile/工作区过滤，HTTP输出是聚合而非原文，但模型名/使用时间/费用仍可能敏感。设置覆盖会重估历史，应保留原始provider账单独立对照，本文不提供当前价表或采信作者价格声明为现行事实。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:1-5](https://github.com/283Gawin/dsh-heatmap/blob/4ba131df0980c8c8af72901ca9fa0f31accb9a6d/package.json#L1-L5)\n\n版本/包身份。\n\n```text\n{\n  \"name\": \"@linxin666/dsh-client-ui-activity-heatmap\",\n  \"description\": \"Activity heatmap for the dsh web GUI sidebar: a persistent GitHub-style year grid switching between daily commits / token usage / estimated spend, plus a today line with all-session token totals, cache hit rate, and per-model auto-priced cost. Data is aggregated host-side from the durable session logs (provider usage) and the workspace git repositories, served at /activity-heatmap/stats. Hot-pluggable - mounted via ~/.dsh/cordis.patch.yml + a profile node_modules symlink, no dsh source changes. Pricing table follows the xiufengsun/TokenTracker curated rates.\",\n  \"version\": \"0.1.0\",\n  \"type\": \"module\",\n```\n\n**依据 2 · 源码核查**：[src/index.ts:39-49](https://github.com/283Gawin/dsh-heatmap/blob/4ba131df0980c8c8af72901ca9fa0f31accb9a6d/src/index.ts#L39-L49)\n\n硬服务/路由。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\nexport const inject = ['sessionPersistence', 'webServer', 'subprocess', 'systemPrompt']\n\n/**\n * Apply the host half.\n * @param ctx - context carrying sessionPersistence, webServer, subprocess, systemPrompt.\n * @param config - resolved plugin config (schema defaults applied by the loader).\n */\nexport function apply(ctx: Context, config?: HeatmapConfig): void {\n  let current: () => HeatmapConfig = () => config ?? {}\n  const stats = new StatsService(ctx, current)\n  const disposeRoutes = registerStatsRoutes(ctx, stats)\n```\n\n</details>\n\n**依据 3 · 作者声明**：[README.md:59-65](https://github.com/283Gawin/dsh-heatmap/blob/4ba131df0980c8c8af72901ca9fa0f31accb9a6d/README.md#L59-L65)\n\n作者白名单补丁条件。\n\n```text\n> 白名单（`dsh-host-apiproxy` 的 `WEB_SETTINGS_NAMESPACES`，官方包内\n> hardcode）。新插件必须把它的 namespace 加进该白名单，否则设置页卡片显示\n> \"Settings not available for this plugin.\"。本插件需要把\n> `\"activity-heatmap\"` 追加到该数组；**升级 dsh 后该修改会被覆盖，需重新\n> 打补丁**。修改后重启 dsh web 生效。\n\n## 配置\n```\n\n**依据 4 · 源码核查**：[src/host/stats-service.ts:154-161](https://github.com/283Gawin/dsh-heatmap/blob/4ba131df0980c8c8af72901ca9fa0f31accb9a6d/src/host/stats-service.ts#L154-L161)\n\n全部会话。\n\n```text\n  private async scanSessions() {\n    const headers = await this.persistence.list()\n    const all: ReturnType<typeof foldSessionUsages> = []\n\n    // Discover repo roots from headers and refresh per-session signatures.\n    const pending: { id: SessionId; signature: string }[] = []\n    for (const header of headers) {\n      if (typeof header.cwd === 'string' && header.cwd !== '') this.repoRoots.add(header.cwd)\n```\n\n**依据 5 · 作者声明**：[src/core/pricing.ts:34-42](https://github.com/283Gawin/dsh-heatmap/blob/4ba131df0980c8c8af72901ca9fa0f31accb9a6d/src/core/pricing.ts#L34-L42)\n\n作者冻结表日期声明。\n\n```text\n/** Built-in price rows for the models DSH commonly routes to.\n * Rates follow the xiufengsun/TokenTracker curated price overrides\n * (verified against vendor pages 2026-06/07) plus vendor list pages.\n * Units: USD per 1M tokens. */\nexport const DEFAULT_MODEL_PRICES: Record<string, ModelPrice> = {\n  // ---- DeepSeek (official api-docs.deepseek.com, verified 2026-06-10) ----\n  // V4 series: current flat pricing (before the 2026-08-16 peak/off-peak switch).\n  'deepseek-v4-flash': { inputPerM: 0.14, cacheReadPerM: 0.0028, cacheWritePerM: 0.14, outputPerM: 0.28 },\n  'deepseek-v4-pro': { inputPerM: 0.435, cacheReadPerM: 0.003625, cacheWritePerM: 0.435, outputPerM: 0.87 },\n```\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 三阶段成本效果如何评估？\n\n**研究主题：**效果与总成本\n\n#### 完整回答\n\n首次读全日志，持续变更会话也从0读并缓存所有样本，窗口365并不限制源读取历史长度。四路/TTL/签名降低重复负担，但每周期仍stat会话、Git串行最多64根；subprocessgraceMs不是明确总执行timeout。相同size+mtime变化可能漏检，失败未表达在payload时容易误读为低活动。\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 读全部日志/缓存样本与Git扫描 | 核模型口径、价格、仓库和宿主补丁 | 不新增LLM调用但非零CPU/内存 |\n| 持续使用 | 每60秒请求，变更会话从0读/最多64根串行Git | 价格/路径/兼容维护 | 增量为文件签名重读，不是事件增量 |\n| 失败恢复 | 重读/重启/重建缓存 | 核缺失与估价漂移，保留原始账单 | 扫描错误与0值当前不充分区分 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 活动趋势 | 按本地日聚合usage/Git日期 | 完整覆盖/个人归属和工作质量 |\n| 费用估算 | 四token分量乘当前表 | 实际provider账单、历史价/促销/未知模型 |\n| 低打扰展示 | TTL合流/四路读/侧栏 | 大历史资源和禁用/卸载行为 |\n\n无额外模型调用不等零上下文成本，公告段每次进入提示也有资源；实际token支出仍由使用行为与provider决定。效果对照应测缺数/估价误差、扫描资源和用户决策帮助，不用颜色深或提交多来评价生产力。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/host/stats-service.ts:53-71](https://github.com/283Gawin/dsh-heatmap/blob/4ba131df0980c8c8af72901ca9fa0f31accb9a6d/src/host/stats-service.ts#L53-L71)\n\nGit spawn/输出cap/grace。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\nexport function subprocessGitRunner(ctx: Context): GitRunner {\n  return {\n    async run(argv, cwd) {\n      const handle = ctx.subprocess.spawn({\n        argv: ['git', ...argv],\n        cwd,\n        stdio: {\n          stdin: 'ignore',\n          stdout: { maxBytes: GIT_OUTPUT_CAP },\n          stderr: { maxBytes: GIT_OUTPUT_CAP },\n        },\n        graceMs: 15_000,\n      })\n      const outcome = await handle.done\n      return {\n        exitCode: outcome.exitCode,\n        stdout: handle.collected.stdout?.readFrom(0).text ?? '',\n        stderr: handle.collected.stderr?.readFrom(0).text ?? '',\n      }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/host/stats-service.ts:154-188](https://github.com/283Gawin/dsh-heatmap/blob/4ba131df0980c8c8af72901ca9fa0f31accb9a6d/src/host/stats-service.ts#L154-L188)\n\n签名与全量重读。\n\n<details>\n<summary>查看原文（35行）</summary>\n\n```text\n  private async scanSessions() {\n    const headers = await this.persistence.list()\n    const all: ReturnType<typeof foldSessionUsages> = []\n\n    // Discover repo roots from headers and refresh per-session signatures.\n    const pending: { id: SessionId; signature: string }[] = []\n    for (const header of headers) {\n      if (typeof header.cwd === 'string' && header.cwd !== '') this.repoRoots.add(header.cwd)\n      let signature = ''\n      const location = this.persistence.locate(header)\n      if (location !== undefined) {\n        try {\n          const info = await stat(location.path)\n          signature = info.size + ':' + info.mtimeMs\n        } catch {\n          // The log may not be materialized yet; treat as new next round.\n        }\n      }\n      const state = this.sessionStates.get(header.id)\n      if (state !== undefined && state.signature === signature) {\n        all.push(...state.samples)\n        continue\n      }\n      pending.push({ id: header.id, signature })\n    }\n\n    let cursor = 0\n    const workers = Array.from({ length: Math.min(SESSION_CONCURRENCY, Math.max(1, pending.length)) }, async () => {\n      while (cursor < pending.length) {\n        const item = pending[cursor]\n        cursor += 1\n        try {\n          const { events } = await this.persistence.readFrom(item.id, 0)\n          const samples = foldSessionUsages(events)\n          this.sessionStates.set(item.id, { signature: item.signature, samples })\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/host/stats-service.ts:205-211](https://github.com/283Gawin/dsh-heatmap/blob/4ba131df0980c8c8af72901ca9fa0f31accb9a6d/src/host/stats-service.ts#L205-L211)\n\n仓库上限。\n\n```text\n  /** Repo roots: session cwds (deduped, up to a sane cap) plus configured extras. */\n  private async collectRepos(): Promise<string[]> {\n    const roots = [...this.repoRoots]\n    for (const extra of this.config().extraRepos ?? []) {\n      if (extra !== '' && !roots.includes(extra)) roots.push(extra)\n    }\n    return roots.slice(0, 64)\n```\n\n**依据 4 · 源码核查**：[src/index.ts:52-60](https://github.com/283Gawin/dsh-heatmap/blob/4ba131df0980c8c8af72901ca9fa0f31accb9a6d/src/index.ts#L52-L60)\n\n公告资源。\n\n```text\n  const sync = (): void => {\n    if (disposeSection !== undefined) { disposeSection(); disposeSection = undefined }\n    if ((current().enabled ?? true) === false) return\n    disposeSection = ctx.systemPrompt.section({\n      name: 'plugin:activity-heatmap',\n      order: SECTION_ORDER,\n      text: ACTIVITY_HEATMAP_GUIDANCE,\n    })\n    stats.invalidate()\n```\n\n#### 缺口\n\n- 无大历史扫描CPU/内存/延迟、覆盖误差及趋势决策收益对照。\n  **影响：**不能承诺低开销或精确财务结果。\n  **进一步探讨：**可用固定脱敏日志和规范化Git库对照原始计数/账单，计所有扫描与维护资源。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 工程复用、覆盖收据假设和采用结论？\n\n**研究主题：**工程质量与复用、新假设与验证、采用判断\n\n#### 完整回答\n\n纯fold和price函数、SDK seam、TTL在途合流、四路读取、删除会话状态清理、HTTP错误通用化及Client定时/监听清理值得复用；它们不弥补统计口径/缺失和路由生命周期。\n\n可探讨未验证的“覆盖/价格版本收据”。每次payload附会话成功/失败/缺usage、仓库规范common-dir去重/截断、时间窗口和模型价命中来源；未知价不默默默认，保存实际provider/模型/计费时间以及价格版本，显示估值与账单差。对日期后缀统一同一resolve逻辑并让禁用停止路由/轮询、dispose明确释放。在已有趋势上可避免把不完整/重估值当真实变化。代价是数据隐私/历史价维护和更多元数据。可用相同步重试、缺usage、后缀override、重复repo、多于64根、读取失败/禁用卸载夹具研究。\n\n推荐observe，先作为有缺口的活动趋势研究，不直接用于实付核算或个人产出评价。继续从usage/价格命中/覆盖收据、禁用与授权范围入手，再评估小范围面板试用。发现未知被补确定价格、失败当0、重复计数、禁用仍读/暴露或统计与已知样本不符时，应停止据此决策，保留原始账单/日志对照。本轮无真实会话扫描。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/host/stats-service.ts:102-121](https://github.com/283Gawin/dsh-heatmap/blob/4ba131df0980c8c8af72901ca9fa0f31accb9a6d/src/host/stats-service.ts#L102-L121)\n\nTTL/inflight。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n  /** Snapshot with TTL caching; concurrent callers share one scan. */\n  async snapshot(): Promise<HeatmapPayload> {\n    const cached = this.cache\n    if (cached !== undefined && Date.now() - cached.at < TTL_MS) return cached.payload\n    if (this.inflight !== undefined) return this.inflight\n    this.inflight = this.scan()\n      .then((payload) => {\n        this.cache = { payload, at: Date.now() }\n        return payload\n      })\n      .finally(() => {\n        this.inflight = undefined\n      })\n    return this.inflight\n  }\n\n  /** Drop the cache (settings changed); the next snapshot rescans. */\n  invalidate(): void {\n    this.cache = undefined\n  }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/host/stats-service.ts:180-201](https://github.com/283Gawin/dsh-heatmap/blob/4ba131df0980c8c8af72901ca9fa0f31accb9a6d/src/host/stats-service.ts#L180-L201)\n\n并发和清理。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n    let cursor = 0\n    const workers = Array.from({ length: Math.min(SESSION_CONCURRENCY, Math.max(1, pending.length)) }, async () => {\n      while (cursor < pending.length) {\n        const item = pending[cursor]\n        cursor += 1\n        try {\n          const { events } = await this.persistence.readFrom(item.id, 0)\n          const samples = foldSessionUsages(events)\n          this.sessionStates.set(item.id, { signature: item.signature, samples })\n          all.push(...samples)\n        } catch (error) {\n          logError('session scan failed for ' + item.id + ': ' + String(error))\n        }\n      }\n    })\n    await Promise.all(workers)\n\n    // Drop states for sessions that disappeared.\n    const live = new Set(headers.map((header) => String(header.id)))\n    for (const id of [...this.sessionStates.keys()]) {\n      if (!live.has(id)) this.sessionStates.delete(id)\n    }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/core/aggregate.ts:139-143](https://github.com/283Gawin/dsh-heatmap/blob/4ba131df0980c8c8af72901ca9fa0f31accb9a6d/src/core/aggregate.ts#L139-L143)\n\n价格命中收据起点。\n\n```text\n  const index = indexBuckets(days)\n  for (const sample of samples) {\n    const day = index.get(dateKey(sample.time))\n    if (day === undefined) continue // older than the window: ignore\n    mergeSample(day, sample, table[sample.model] ?? priceFor(sample.model, undefined))\n```\n\n**依据 4 · 源码核查**：[src/index.ts:46-67](https://github.com/283Gawin/dsh-heatmap/blob/4ba131df0980c8c8af72901ca9fa0f31accb9a6d/src/index.ts#L46-L67)\n\n禁用/卸载起点。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\nexport function apply(ctx: Context, config?: HeatmapConfig): void {\n  let current: () => HeatmapConfig = () => config ?? {}\n  const stats = new StatsService(ctx, current)\n  const disposeRoutes = registerStatsRoutes(ctx, stats)\n  let disposeSection: (() => void) | undefined\n\n  const sync = (): void => {\n    if (disposeSection !== undefined) { disposeSection(); disposeSection = undefined }\n    if ((current().enabled ?? true) === false) return\n    disposeSection = ctx.systemPrompt.section({\n      name: 'plugin:activity-heatmap',\n      order: SECTION_ORDER,\n      text: ACTIVITY_HEATMAP_GUIDANCE,\n    })\n    stats.invalidate()\n  }\n\n  installSettingsSection(ctx, HEATMAP_NS, Config, config ?? {}, {\n    setSource: (source) => { current = source },\n    onChange: sync,\n  })\n  sync()\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/client/heatmap.ts:221-225](https://github.com/283Gawin/dsh-heatmap/blob/4ba131df0980c8c8af72901ca9fa0f31accb9a6d/src/client/heatmap.ts#L221-L225)\n\n客户端清理。\n\n```text\n  dispose(): void {\n    this.disposed = true\n    if (this.timer !== undefined) clearInterval(this.timer)\n    document.removeEventListener('visibilitychange', this.onVis)\n    this.element.remove()\n```\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：a05903ce0bbab4cee430615b8fe8942155869fb64e87d1c6cfefa25eb861548d。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 2198 | 2040 | 205 | — |\n| .md | source | 1 | 164 | — | — | 1507 |\n| .ts | source | 14 | 1878 | 1318 | 410 | — |\n| .tsx | source | 2 | 62 | 58 | 0 | — |\n| .ts | test | 1 | 190 | 166 | 14 | — |\n\n排除 14 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| usage趋势 | 全会话按日token/cache | 缺失/重试口径需核 |\n| 估价 | 当前模型表乘分量 | 默认未知价/历史重估非账单 |\n| Git趋势 | 仓库日提交 | 非个人贡献，根去重/截断需核 |\n| 面板 | 91天UI/365天Host | enabled非停止采集开关 |\n\n## 工程亮点\n\n纯fold和price函数、SDK seam、TTL在途合流、四路读取、删除会话状态清理、HTTP错误通用化及Client定时/监听清理值得复用；它们不弥补统计口径/缺失和路由生命周期。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 src/host/stats-service.ts、src/core/aggregate.ts、src/client/heatmap.ts、src/core/types.ts、src/core/pricing.ts、src/index.ts、src/host/routes.ts、package.json、README.md 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定Host扫描/缓存/路由/注册、usage/价格核心和Client窗口/轮询；未核provider账单口径、当前价格或制品字节/全部UI。\n- 下一步：进一步探讨从固定脱敏usage/重试/未知模型/后缀覆盖/重复repo/失败/禁用夹具核覆盖，再测大历史资源。\n",
         "metadata": {
             "repository": "283Gawin/dsh-heatmap",
             "repository_id": 1334318461,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T07:00:58.231Z",
+            "window_start": "2026-09-22T07:00:58.231Z",
             "stars": 5,
             "pushed_at": "2026-08-14T16:17:32Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 1,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A283Gawin%2Fdsh-heatmap%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640F:1EF33:13E2CD:217C7C:6AD849FF and timestamp 2026-10-21 05:13:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A283Gawin%2Fdsh-heatmap%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6402:1CA4C8:14BAC0:22577B:6AD849FF and timestamp 2026-10-21 05:13:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A283Gawin%2Fdsh-heatmap%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6410:0BD3:A107B:10AE19:6AD849FF and timestamp 2026-10-21 05:13:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A283Gawin%2Fdsh-heatmap%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6411:90BBC:14B254:22498A:6AD849FF and timestamp 2026-10-21 05:13:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A283Gawin%2Fdsh-heatmap%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6412:15F2FE:14901F:221CC5:6AD849FF and timestamp 2026-10-21 05:13:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "@linxin666/dsh-client-ui-activity-heatmap",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T07:01:08.476Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": null,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40linxin666%2Fdsh-client-ui-activity-heatmap",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/%40linxin666%2Fdsh-client-ui-activity-heatmap",
                 "error": "HTTP 404",
                 "publication": {
                     "first_published_at": null,
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T07:01:08.476Z",
                     "source_url": "https://registry.npmjs.org/%40linxin666%2Fdsh-client-ui-activity-heatmap",
                     "error": "HTTP 404",
                     "latest_version": null,
                     "latest_published_at": null,
                     "latest_error": "HTTP 404"
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "4ba131df0980c8c8af72901ca9fa0f31accb9a6d",
-                "current_revision": "4ba131df0980c8c8af72901ca9fa0f31accb9a6d",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {
@@ -390,14 +480,14 @@
             "repository": "283Gawin/dsh-heatmap",
             "path": "",
             "revision": "4ba131df0980c8c8af72901ca9fa0f31accb9a6d",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "4e867d2797d5fdf181f3a90a48f23198015959eba64d57c291043fb31328d2e6",
                 "code": "4ba131df0980c8c8af72901ca9fa0f31accb9a6d",
                 "maintenance": "979a733be342a317b8efb8c7ec428809f10573c29969be25373619212444e25d"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

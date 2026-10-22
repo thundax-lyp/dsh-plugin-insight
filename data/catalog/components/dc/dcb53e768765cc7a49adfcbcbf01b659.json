@@ -13,7 +13,7 @@
             "name": "dsh-evidence-gate",
             "entry_type": "plugin",
             "technical_category": "security-governance",
-            "business_category": "research-knowledge",
+            "business_category": "software-delivery",
             "tags": [],
             "availability": "unknown",
             "research_depth": "source",
@@ -24,36 +24,64 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-06-github-1365519118-root-directory-0",
+                    "id": "2026-10-22-02-github-1365519118-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T05:44:42.043Z",
+                    "retrieved_at": "2026-10-22T05:24:23.648Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-06-github-1365519118-root-author",
+                    "id": "2026-10-22-02-github-1365519118-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/AaronandWork/dsh-evidence-gate/blob/845ddf415e045eb6b2a014bca97a9c63aee1befa/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AaronandWork/dsh-evidence-gate",
+                            "commit": "845ddf415e045eb6b2a014bca97a9c63aee1befa",
+                            "path": "README.md",
+                            "content_sha256": "5c304a9ef0564ba0f61fb2fbc5e737aef23e8dacabe7de0171f6bff435972705"
+                        }
+                    ],
                     "revision": "845ddf415e045eb6b2a014bca97a9c63aee1befa",
-                    "captured_at": "2026-10-21T05:44:42.043Z",
-                    "summary": "按工具活动索引检查结论自报依据，提供判定卡、会话开关与账本。",
-                    "artifact": "data/runs/2026-10-21-06/snapshots/aaronandwork--dsh-evidence-gate/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:24:23.648Z",
+                    "summary": "为 DSH 会话提供可切换的证据提示、主张裁定工具及持久活动索引。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/aaronandwork--dsh-evidence-gate/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-06-github-1365519118-root-source",
+                    "id": "2026-10-22-02-github-1365519118-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/AaronandWork/dsh-evidence-gate/blob/845ddf415e045eb6b2a014bca97a9c63aee1befa/lib/index.js",
+                    "url": "https://github.com/AaronandWork/dsh-evidence-gate/blob/845ddf415e045eb6b2a014bca97a9c63aee1befa/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AaronandWork/dsh-evidence-gate",
+                            "commit": "845ddf415e045eb6b2a014bca97a9c63aee1befa",
+                            "path": "README.md",
+                            "content_sha256": "5c304a9ef0564ba0f61fb2fbc5e737aef23e8dacabe7de0171f6bff435972705"
+                        },
+                        {
+                            "repository_url": "https://github.com/AaronandWork/dsh-evidence-gate",
+                            "commit": "845ddf415e045eb6b2a014bca97a9c63aee1befa",
+                            "path": "package.json",
+                            "content_sha256": "bc41ab7c849497388c52823d92b2793b9c6f55c5708cce5b3728835ee36bb5ac"
+                        },
+                        {
+                            "repository_url": "https://github.com/AaronandWork/dsh-evidence-gate",
+                            "commit": "845ddf415e045eb6b2a014bca97a9c63aee1befa",
+                            "path": "lib/index.js",
+                            "content_sha256": "a1aae54da606a49018c61f0d86148d23637bca18a11e214d16af73ed1d818218"
+                        }
+                    ],
                     "revision": "845ddf415e045eb6b2a014bca97a9c63aee1befa",
-                    "captured_at": "2026-10-21T05:44:42.043Z",
-                    "summary": "核查 lib/index.js、lib/client.mjs、package.json、cordis.patch.yml；默认会话开关OFF；tools/result持续记录参数摘要与输出路径/URL/关键词，存每会话400项和最多50会话；开启后提示要求模型调用evidence_gate。工具按basis及非空证据分类，逐级匹配本会话/其他会话活动、输出词与存在路径，生成verdict和计数，JSON防半写持久化；UI呈现盾牌与判定卡。",
-                    "artifact": "data/runs/2026-10-21-06/snapshots/aaronandwork--dsh-evidence-gate/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:24:23.648Z",
+                    "summary": "核查 README.md、package.json、lib/index.js；监听工具结果形成参数/输出锚点索引，持久按会话记录；模型自愿调用 evidence_gate，按依据类型和字符串匹配给出裁定。详见[Q02](#research-q02)。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/aaronandwork--dsh-evidence-gate/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "根Host活动索引、路径/URL匹配、判定、持久化及注册，client槽位与README；未执行目标，不对全部政策和匹配分支做完整审计。",
+                        "只读核固定提交 README、包声明和 lib/index.js，未运行插件/测试或真实会话；复用前次 META，不当作本轮新采集。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +92,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "用户希望区分Agent亲查、引用和假设，尤其审查“读过文件/测试通过”的承重结论；交付物是可查的声明与匹配记录，非事实真值。",
+                    "text": "面向需要把亲测、引用和猜测分开的 DSH 会话；合格答复仍需逐项复查事实与原始证据。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1365519118-root-source"
+                        "2026-10-22-02-github-1365519118-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +103,16 @@
                             "fingerprint": "845ddf415e045eb6b2a014bca97a9c63aee1befa"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:44:42.043Z",
+                    "reviewed_at": "2026-10-22T05:24:23.648Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "默认会话开关OFF；tools/result持续记录参数摘要与输出路径/URL/关键词，存每会话400项和最多50会话；开启后提示要求模型调用evidence_gate。工具按basis及非空证据分类，逐级匹配本会话/其他会话活动、输出词与存在路径，生成verdict和计数，JSON防半写持久化；UI呈现盾牌与判定卡。",
+                    "text": "监听工具结果形成参数/输出锚点索引，持久按会话记录；模型自愿调用 evidence_gate，按依据类型和字符串匹配给出裁定。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1365519118-root-source"
+                        "2026-10-22-02-github-1365519118-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +121,16 @@
                             "fingerprint": "845ddf415e045eb6b2a014bca97a9c63aee1befa"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:44:42.043Z",
+                    "reviewed_at": "2026-10-22T05:24:23.648Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "根Host活动索引、路径/URL匹配、判定、持久化及注册，client槽位与README；未执行目标，不对全部政策和匹配分支做完整审计。",
+                    "text": "只读核固定提交 README、包声明和 lib/index.js，未运行插件/测试或真实会话；复用前次 META，不当作本轮新采集。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1365519118-root-source"
+                        "2026-10-22-02-github-1365519118-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +139,16 @@
                             "fingerprint": "845ddf415e045eb6b2a014bca97a9c63aee1befa"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:44:42.043Z",
+                    "reviewed_at": "2026-10-22T05:24:23.648Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "DSH bundle与Web client，依赖Host工具结果事件和session上下文；同DSH_HOME多进程共用store为last-write-wins，非数据库并发保证。",
+                    "text": "包声明 @aaronandwork/dsh-evidence-gate 0.2.1、Node >=18；前次 META 的 npm 下载/发布日期是 2026-10-21 抓取，不表示本轮可安装性已验证。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1365519118-root-source"
+                        "2026-10-22-02-github-1365519118-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +157,16 @@
                             "fingerprint": "845ddf415e045eb6b2a014bca97a9c63aee1befa"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:44:42.043Z",
+                    "reviewed_at": "2026-10-22T05:24:23.648Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "现金是过门额外工具往返/提示token；人工要填证据、解释弱命中和核对版本。持久索引保留路径/输出词产生本地敏感信息管理成本；误VERIFIED可能比误拦更昂贵。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | DSH 宿主、Node、持久目录；金额未知 | 核会话键、存储权限及 Web 暴露；耗时未知 | 默认关闭，需主动开启 |\n| 持续使用 | 活动索引写盘、字符串扫描；资源值未知 | 回查每个 verified 的原始结果/版本；频率未知 | 最多 400 条/会话、持久 50 会话 |\n| 失败恢复 | 重新采集/撤回误判；金额未知 | 处理存储丢失、错判与末写覆盖；耗时未知 | 多进程共享存储风险 |",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1365519118-root-source"
+                        "2026-10-22-02-github-1365519118-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +175,16 @@
                             "fingerprint": "845ddf415e045eb6b2a014bca97a9c63aee1befa"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:44:42.043Z",
+                    "reviewed_at": "2026-10-22T05:24:23.648Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "需要声明可追溯性的团队可评估其账本；不能将绿色VERIFIED作为测试通过、真实阅读或事实正确的唯一证据。",
+                    "text": "建议观察，单人本地可作为提醒和线索索引；关键事实须回查原始输出，不能依赖 verified 机器标签自动放行。详见[Q06](#research-q06)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1365519118-root-source"
+                        "2026-10-22-02-github-1365519118-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +193,16 @@
                             "fingerprint": "845ddf415e045eb6b2a014bca97a9c63aee1befa"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:44:42.043Z",
+                    "reviewed_at": "2026-10-22T05:24:23.648Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "帮助发现空证据和明显不匹配声明；只有启发式关联，计数提高不证明研究质量提升。",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 证据提醒 | 可切换提示与模型工具 | 模型调用覆盖率和答复遵守率 |\n| 活动追溯 | 有限的参数/输出锚点与持久报告 | 多会话恢复完整率及误归因 |\n| 真伪核验 | 文本关联与路径存在检查 | 主张真实性、失败工具和旧版本识别 |",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1365519118-root-source"
+                        "2026-10-22-02-github-1365519118-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +211,16 @@
                             "fingerprint": "845ddf415e045eb6b2a014bca97a9c63aee1befa"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:44:42.043Z",
+                    "reviewed_at": "2026-10-22T05:24:23.648Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "有界索引/近期会话、debounced写临时文件再rename与来源隔离使台账可恢复；弱采信单独计数有透明性，但顶层VERIFIED掩盖证据强度、跨会话归因过宽。",
+                    "text": "有容量限制的索引与明示依据类型值得借鉴；把字符串关联或路径存在提升为已实证需收紧，并保留人工复核通道。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1365519118-root-source"
+                        "2026-10-22-02-github-1365519118-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +229,16 @@
                             "fingerprint": "845ddf415e045eb6b2a014bca97a9c63aee1befa"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:44:42.043Z",
+                    "reviewed_at": "2026-10-22T05:24:23.648Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
                     "topic": "technical_innovation",
                     "basis": "interpretation",
-                    "text": "比纯“不要猜测”的提示多了可追踪活动索引和显式声明判定，区分已引用/未核验以及弱采信计数。贡献是声明纪律与审查线索，而非独立证据验证器；工具日志来自宿主，事实正确性仍需人工或专门验证。",
+                    "text": "相较单纯提醒或静态提示，插件把工具活动做成持久、按会话可查的核验线索，并记录亲测/引用/猜测的处理结果；其辅助复核价值取决于模型调用和人工回查，不能称为强制事实门。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1365519118-root-source"
+                        "2026-10-22-02-github-1365519118-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +247,16 @@
                             "fingerprint": "845ddf415e045eb6b2a014bca97a9c63aee1befa"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:44:42.043Z",
+                    "reviewed_at": "2026-10-22T05:24:23.648Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "VERIFIED是否超过机制能证明的范围？entryMatches可用basename与包含关系命中，且跨任意其他会话无父子关系限制；某路径存在就能weak却仍verdict=verified。它关联的是活动与文本而非claim语义，也不核工具是否成功或版本一致；模型可跳过工具直接回答，未见输出拦截器。因此“结构强制/实证”应降格为协作约束和启发式匹配。",
+                    "text": "“已实证”可由同名、子串、单词、跨会话活动或仅存在路径触发，且未核对工具成功、内容、时间和主张语义；弱命中仍返回 verified。这使裁定标签可能超过证据强度。详见[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1365519118-root-source"
+                        "2026-10-22-02-github-1365519118-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +265,16 @@
                             "fingerprint": "845ddf415e045eb6b2a014bca97a9c63aee1befa"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:44:42.043Z",
+                    "reviewed_at": "2026-10-22T05:24:23.648Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
                     "topic": "technical_innovation",
                     "basis": "unverified",
-                    "text": "把活动回执绑定成功状态、内容摘要、当前版本与会话委派谱系，并将weak保持UNVERIFIED，可能降低假验证。用同basename异文件、失败read、旧版本测试及无关会话同路径反例，比较误VERIFIED率和真实证据召回；若误报下降代价是大量真实证据被拒，应展示置信分层而非二值真值。",
+                    "text": "未验证方向是把证据绑定委派关系、成功状态、内容/版本与时间，弱关联降为待复核，并在提交最终答复前检查承载结论的裁定；用固定误判夹具评估假阳性、假阴性和成本。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1365519118-root-source"
+                        "2026-10-22-02-github-1365519118-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +283,15 @@
                             "fingerprint": "845ddf415e045eb6b2a014bca97a9c63aee1befa"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:44:42.043Z",
+                    "reviewed_at": "2026-10-22T05:24:23.648Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T05:44:42.043Z",
+            "last_checked_at": "2026-10-22T05:24:23.648Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "845ddf415e045eb6b2a014bca97a9c63aee1befa",
-                "reviewed_at": "2026-10-21T05:44:42.043Z",
+                "reviewed_at": "2026-10-22T05:24:23.648Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -279,57 +307,57 @@
                         "transferability": 10,
                         "simplification": 4
                     },
-                    "rationale": "新颖性9：证据台账与声明分类是已有治理模式；机制15：参数/输出锚点、持久索引和UI联动实质；迁移性10：声明-活动关联可迁移但需加强版本；简化4：省部分人工检索，增加过门调用负担。",
+                    "rationale": "novelty 来自持久活动锚点与会话开关联动而非新验证算法；mechanism 有索引/持久/裁定完整链，但弱命中误判；transferability 可借鉴到代理复核；simplification 降低检索步骤却增加人工审核。",
                     "basis": "interpretation",
                     "score": 38,
                     "evidence_ids": [
-                        "2026-10-21-06-github-1365519118-root-source"
+                        "2026-10-22-02-github-1365519118-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 9,
-                        "delivery": 8,
+                        "workflow": 18,
+                        "delivery": 15,
                         "reach": 10,
                         "economics": 4
                     },
-                    "rationale": "工作流9：增加自报检查步骤，未强制输出验收；交付8：审查线索而非事实保证；覆盖10：代码/资料声明场景广但匹配启发式；经济4：额外token与复核误报，收益未测。",
+                    "rationale": "workflow 给会话提供检查提醒；delivery 有裁定与报告但不强制最终答复；reach 受 DSH 宿主及用户主动使用限制；economics 无误判与审核时间对照。",
                     "basis": "interpretation",
-                    "score": 31,
+                    "score": 47,
                     "evidence_ids": [
-                        "2026-10-21-06-github-1365519118-root-source"
+                        "2026-10-22-02-github-1365519118-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "observe",
-                "reason": "需证据追溯的团队可关注活动账本；先收窄跨会话和路径弱匹配的VERIFIED语义，再以版本化原证据核承重声明。",
+                "reason": "可以当提醒和线索索引观察，不能把 verified 用于自动审计；先复现弱命中与漏调用再决定试用。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "识别读文件或测试通过声明的证据归属需求明确。"
+                        "rationale": "对事实主张复核的场景清楚，但门禁并非强制。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "活动索引与claim匹配帮助发现空证据，但不是语义验证。"
+                        "rationale": "持久索引优于仅靠会话记忆，误判削弱收益。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "已核basename/路径存在也可verified和无输出拦截器。"
+                        "rationale": "固定源码支撑机制和风险，未运行真实宿主或正确率评估。"
                     },
                     "cost": {
                         "score": 5,
-                        "rationale": "额外往返、敏感索引维护及误VERIFIED的审核成本较高。"
+                        "rationale": "写入、隐私与人工回查负担存在，数值未知。"
                     }
                 },
                 "score": 54,
                 "revision": "845ddf415e045eb6b2a014bca97a9c63aee1befa",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T05:24:23.648Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-06-github-1365519118-root-source"
+                    "2026-10-22-02-github-1365519118-root-source"
                 ],
                 "dependencies": [
                     {
@@ -354,31 +382,30 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T05:26:52Z",
-            "analysis_sha256": "339455b99d1e86b42070ddad009c65ea87dde77dbbd961a20206798455f897da"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "cdd181f94339e726616892e256632743aef3fb770d2c55bd36225bfc970b1c5b"
         },
         "publication.metadata": "data/plugins/aaronandwork--dsh-evidence-gate/META.json",
         "publication.summaries": {
-            "text": "按工具活动索引检查结论自报依据，提供判定卡、会话开关与账本。",
+            "text": "为 DSH 会话提供可切换的证据提示、主张裁定工具及持久活动索引。",
             "revision": "845ddf415e045eb6b2a014bca97a9c63aee1befa",
             "source_url": "https://github.com/AaronandWork/dsh-evidence-gate/blob/845ddf415e045eb6b2a014bca97a9c63aee1befa/README.md"
         },
         "publication.capabilities": {
             "revision": "845ddf415e045eb6b2a014bca97a9c63aee1befa",
             "items": {
-                "模型工具": "evidence_gate判定声明、evidence_gate_switch会话开关。",
-                "用户命令": "/evidence-gate on/off/status/report。",
-                "事件监听": "tools/result记录活动、systemPrompt按会话开关注入政策。",
-                "Host 路由": "/api/dsh-evidence-gate会话账本与开关桥。",
-                "界面": "输入区盾牌开关及evidence_gate判定卡。"
-            }
+                "模型工具": "evidence_gate 对主张给出实证/引用/拦截裁定",
+                "后台": "工具活动锚点、持久索引和计数报告",
+                "Host 路由": "会话状态查询和开关"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 会话提示与开关 | 引导模型声明依据 | 默认关闭，需用户开启且模型遵守 |\n| evidence_gate 裁定 | 逐簇记录亲测/引用/猜测 | 必须主动调用；字符串命中不证明真实性 |\n| 持久索引与报告 | 跨上下文查活动线索 | 容量受限，跨会话可能误归因，含敏感信息 |\n| Web 状态路由 | UI 查询与切换 | 无认证 loopback 设想，需宿主控制网络边界 |"
         },
         "publication.advice": {
             "revision": "845ddf415e045eb6b2a014bca97a9c63aee1befa",
-            "text": "需要声明可追溯性的团队可评估其账本；不能将绿色VERIFIED作为测试通过、真实阅读或事实正确的唯一证据。"
+            "text": "建议观察，单人本地可作为提醒和线索索引；关键事实须回查原始输出，不能依赖 verified 机器标签自动放行。详见[Q06](#research-q06)。"
         },
         "registry": "data/plugins/aaronandwork--dsh-evidence-gate",
-        "reports": "# dsh-evidence-gate\n\n> 按工具活动索引检查结论自报依据，提供判定卡、会话开关与账本。\n\n## 使用建议\n\n需要声明可追溯性的团队可评估其账本；不能将绿色VERIFIED作为测试通过、真实阅读或事实正确的唯一证据。\n\n核查状态：声明分类、活动关联和账本机制源码支持；无法据此证明结论正确或模型一定过门。 本轮只检查源码，未安装、执行目标代码/测试或真实宿主验收。\n\n## 洞察短评\n\n- **用途**：用户希望区分Agent亲查、引用和假设，尤其审查“读过文件/测试通过”的承重结论；交付物是可查的声明与匹配记录，非事实真值。\n- **亮点**：比纯“不要猜测”的提示多了可追踪活动索引和显式声明判定，区分已引用/未核验以及弱采信计数。贡献是声明纪律与审查线索，而非独立证据验证器；工具日志来自宿主，事实正确性仍需人工或专门验证。\n- **思考**：VERIFIED是否超过机制能证明的范围？entryMatches可用basename与包含关系命中，且跨任意其他会话无父子关系限制；某路径存在就能weak却仍verdict=verified。它关联的是活动与文本而非claim语义，也不核工具是否成功或版本一致；模型可跳过工具直接回答，未见输出拦截器。因此“结构强制/实证”应降格为协作约束和启发式匹配。\n- **建议**：把活动回执绑定成功状态、内容摘要、当前版本与会话委派谱系，并将weak保持UNVERIFIED，可能降低假验证。用同basename异文件、失败read、旧版本测试及无关会话同路径反例，比较误VERIFIED率和真实证据召回；若误报下降代价是大量真实证据被拒，应展示置信分层而非二值真值。\n\n## 场景与替代办法\n\n用户希望区分Agent亲查、引用和假设，尤其审查“读过文件/测试通过”的承重结论；交付物是可查的声明与匹配记录，非事实真值。\n\n提示要求引用加人工检查工具日志；本项自动检索部分锚点，不能替代语义审查或真实复现。\n\n## 能力清单\n\n- **模型工具**：evidence_gate判定声明、evidence_gate_switch会话开关。\n- **用户命令**：/evidence-gate on/off/status/report。\n- **事件监听**：tools/result记录活动、systemPrompt按会话开关注入政策。\n- **Host 路由**：/api/dsh-evidence-gate会话账本与开关桥。\n- **界面**：输入区盾牌开关及evidence_gate判定卡。\n\n## 依赖与流程\n\n默认会话开关OFF；tools/result持续记录参数摘要与输出路径/URL/关键词，存每会话400项和最多50会话；开启后提示要求模型调用evidence_gate。工具按basis及非空证据分类，逐级匹配本会话/其他会话活动、输出词与存在路径，生成verdict和计数，JSON防半写持久化；UI呈现盾牌与判定卡。\n\nDSH tools/systemPrompt/commands/session、可写DSH_HOME及Web slots；路径存在floor实现只接受Windows盘符/UNC样式，平台行为不一致。\n\n被动收集活动（即使OFF）→按会话开启→Agent自报claim/basis/evidence→匹配判定与账本→Agent自行核验或降级；/evidence-gate显示/切换/report，不强制拦截最终输出。\n\nDSH bundle与Web client，依赖Host工具结果事件和session上下文；同DSH_HOME多进程共用store为last-write-wins，非数据库并发保证。\n\n## 成本与效果\n\n现金是过门额外工具往返/提示token；人工要填证据、解释弱命中和核对版本。持久索引保留路径/输出词产生本地敏感信息管理成本；误VERIFIED可能比误拦更昂贵。\n\n帮助发现空证据和明显不匹配声明；只有启发式关联，计数提高不证明研究质量提升。\n\n## 核心贡献\n\n比纯“不要猜测”的提示多了可追踪活动索引和显式声明判定，区分已引用/未核验以及弱采信计数。贡献是声明纪律与审查线索，而非独立证据验证器；工具日志来自宿主，事实正确性仍需人工或专门验证。\n\n## 关键质疑\n\nVERIFIED是否超过机制能证明的范围？entryMatches可用basename与包含关系命中，且跨任意其他会话无父子关系限制；某路径存在就能weak却仍verdict=verified。它关联的是活动与文本而非claim语义，也不核工具是否成功或版本一致；模型可跳过工具直接回答，未见输出拦截器。因此“结构强制/实证”应降格为协作约束和启发式匹配。\n\n## 工程亮点\n\n有界索引/近期会话、debounced写临时文件再rename与来源隔离使台账可恢复；弱采信单独计数有透明性，但顶层VERIFIED掩盖证据强度、跨会话归因过宽。\n\n固定源码依据：[lib/index.js](https://github.com/AaronandWork/dsh-evidence-gate/blob/845ddf415e045eb6b2a014bca97a9c63aee1befa/lib/index.js)、[lib/client.mjs](https://github.com/AaronandWork/dsh-evidence-gate/blob/845ddf415e045eb6b2a014bca97a9c63aee1befa/lib/client.mjs)、[package.json](https://github.com/AaronandWork/dsh-evidence-gate/blob/845ddf415e045eb6b2a014bca97a9c63aee1befa/package.json)、[cordis.patch.yml](https://github.com/AaronandWork/dsh-evidence-gate/blob/845ddf415e045eb6b2a014bca97a9c63aee1befa/cordis.patch.yml)。\n\n## 未来设计假设（未验证）\n\n把活动回执绑定成功状态、内容摘要、当前版本与会话委派谱系，并将weak保持UNVERIFIED，可能降低假验证。用同basename异文件、失败read、旧版本测试及无关会话同路径反例，比较误VERIFIED率和真实证据召回；若误报下降代价是大量真实证据被拒，应展示置信分层而非二值真值。\n\n未运行；最小反例集合包括失败工具结果、同名异路径、无关会话、旧版本与仅存在路径，并检查Agent不调用gate时是否仍能输出。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：e082671648fcc68f295c98e13a3edf845ed12b59e55b5ac362ffea5ecf7f6a68。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .mjs | source | 1 | 761 | 658 | 53 | — |\n| .js | source | 3 | 2236 | 1923 | 175 | — |\n| .md | source | 1 | 249 | — | — | 3591 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n\n## 核查说明\n\n- 版本号：0.2.1；版本日期：2026-09-12（固定提交日期，北京时间，非包发布日期）。\n- 固定提交：[845ddf41](https://github.com/AaronandWork/dsh-evidence-gate/tree/845ddf415e045eb6b2a014bca97a9c63aee1befa)；本轮基准：2026-10-21T05:26:52Z。\n- 已检查：上述源码路径、README、包清单及组件inventory。\n- 范围：根Host活动索引、路径/URL匹配、判定、持久化及注册，client槽位与README；未执行目标，不对全部政策和匹配分支做完整审计。\n- 未执行：目标安装、代码/测试、真实宿主和第三方服务。作者说明与源码不等于独立效果验证。\n",
+        "reports": "# dsh-evidence-gate\n\n> 为 DSH 会话提供可切换的证据提示、主张裁定工具及持久活动索引。\n\n## 研究范围\n\n- **仓库**：[AaronandWork/dsh-evidence-gate](https://github.com/AaronandWork/dsh-evidence-gate)\n- **版本号**：0.2.1（[固定提交 845ddf415e045eb6b2a014bca97a9c63aee1befa](https://github.com/AaronandWork/dsh-evidence-gate/tree/845ddf415e045eb6b2a014bca97a9c63aee1befa)）\n- **版本日期**：2026-09-12（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定源码确认了提示、索引、开关及工具调用时的裁定链；索引命中不证明主张真实，误判风险是源码推导，未在宿主复现；强化核验假设尚未实现。\n\n## 洞察短评\n\n- **用途**：面向需要把亲测、引用和猜测分开的 DSH 会话；合格答复仍需逐项复查事实与原始证据。详见[Q01](#research-q01)。\n- **亮点**：相较单纯提醒或静态提示，插件把工具活动做成持久、按会话可查的核验线索，并记录亲测/引用/猜测的处理结果；其辅助复核价值取决于模型调用和人工回查，不能称为强制事实门。详见[Q01](#research-q01)。\n- **思考**：“已实证”可由同名、子串、单词、跨会话活动或仅存在路径触发，且未核对工具成功、内容、时间和主张语义；弱命中仍返回 verified。这使裁定标签可能超过证据强度。详见[Q03](#research-q03)。\n- **建议**：未验证方向是把证据绑定委派关系、成功状态、内容/版本与时间，弱关联降为待复核，并在提交最终答复前检查承载结论的裁定；用固定误判夹具评估假阳性、假阴性和成本。详见[Q05](#research-q05)。\n\n采用建议：建议观察，单人本地可作为提醒和线索索引；关键事实须回查原始输出，不能依赖 verified 机器标签自动放行。详见[Q06](#research-q06)。\n\n## 核心贡献\n\n相较单纯提醒或静态提示，插件把工具活动做成持久、按会话可查的核验线索，并记录亲测/引用/猜测的处理结果；其辅助复核价值取决于模型调用和人工回查，不能称为强制事实门。详见[Q01](#research-q01)。\n\n## 关键质疑\n\n“已实证”可由同名、子串、单词、跨会话活动或仅存在路径触发，且未核对工具成功、内容、时间和主张语义；弱命中仍返回 verified。这使裁定标签可能超过证据强度。详见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n未验证方向是把证据绑定委派关系、成功状态、内容/版本与时间，弱关联降为待复核，并在提交最终答复前检查承载结论的裁定；用固定误判夹具评估假阳性、假阴性和成本。详见[Q05](#research-q05)。\n\n以同名路径、失败读取、旧版本测试、无关会话、正确委派和仅存在路径构造有真值夹具；测假阳性/假阴性、漏调用、延迟、持久恢复及人工核对时长。\n\n## 场景与替代办法\n\n面向需要把亲测、引用和猜测分开的 DSH 会话；合格答复仍需逐项复查事实与原始证据。详见[Q01](#research-q01)。\n\n人工核查或静态提示能要求报告证据，插件新增持久活动索引和裁定；但匹配不是内容真实性验证，人工审核成本未消失。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| DSH tools 服务 | 必需 | 注册裁定/开关工具并监听结果 | 无工具裁定链 |\n| systemPrompt、commands、webServer | 对应入口需要 | 提示、Slash 与 UI 路由 | 对应入口缺失或不可用 |\n| 可写本地存储 | 跨重启保留需要 | 保存会话索引和裁定 | 仅进程内/可能丢状态 |\n| 原始工具输出人工复核 | 可信结论需要 | 检查成败、内容与版本 | verified 不足以证明主张 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 配置 | 管理者确认宿主接口、存储权限与 Web 绑定 | 会话身份不落共享桶，目录可控 |\n| 开启 | 用户对目标会话开启开关 | 下一模型步提示生效，状态可查 |\n| 核验 | 模型逐簇调用，用户回查关键原始证据 | 失败/旧数据不被作实证 |\n| 复盘 | 查报告并纠正误判 | 对外结论只保留真实可追溯证据 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | DSH 宿主、Node、持久目录；金额未知 | 核会话键、存储权限及 Web 暴露；耗时未知 | 默认关闭，需主动开启 |\n| 持续使用 | 活动索引写盘、字符串扫描；资源值未知 | 回查每个 verified 的原始结果/版本；频率未知 | 最多 400 条/会话、持久 50 会话 |\n| 失败恢复 | 重新采集/撤回误判；金额未知 | 处理存储丢失、错判与末写覆盖；耗时未知 | 多进程共享存储风险 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 证据提醒 | 可切换提示与模型工具 | 模型调用覆盖率和答复遵守率 |\n| 活动追溯 | 有限的参数/输出锚点与持久报告 | 多会话恢复完整率及误归因 |\n| 真伪核验 | 文本关联与路径存在检查 | 主张真实性、失败工具和旧版本识别 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**实证门如何约束 DSH 会话中的事实主张，证据索引的命中能否支撑“已实证”，以及它对使用者的真实成本是什么？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 目标场景和合格结果是什么，插件比纯提示词多做了什么？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n它面向需要在 DSH 答复前区分亲测、引用与推测的会话。合格结果应是关键事实主张逐项有可复查证据，未核实主张被降级，最终答复不把弱关联说成实测。作者提供可切换的系统提示段、模型工具、工具结果活动索引、会话计数和报告；相比人工提醒或一段静态提示，多了按会话保存与交叉查找的机制。但源码只在模型主动调用 evidence_gate 时形成裁定，提示文本也只要求模型调用，未见最终答复发送前的强制拦截。因此“门”是自愿调用的辅助复核，不是可证明每个结论均被审查的强制审计。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:35-61](https://github.com/AaronandWork/dsh-evidence-gate/blob/845ddf415e045eb6b2a014bca97a9c63aee1befa/README.md#L35-L61)\n\n作者描述启停、结果级别与持久索引。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\nPrompt-only \"don't guess\" instructions are unenforceable and unauditable. This plugin makes conclusion discipline **structural**:\n\n1. **Policy** — a system-prompt section establishing the evidence hierarchy injected before every model step.\n2. **Gate** — a model tool the agent calls before stating load-bearing conclusions; each claim gets a verdict.\n3. **Cross-check** — claimed direct observations are verified against the session's recorded tool activity (`tools/result` stream).\n4. **Ledger** — per-session counts: how many guesses were blocked, how many were converted into real verification.\n\n## How it works\n\n| Component | Mechanism |\n|---|---|\n| Policy section | `systemPrompt.section` (order 550), text provider |\n| `evidence_gate` tool | registered via the `tools` registry; verdicts `VERIFIED / REFERENCED / UNVERIFIED / INVALID / OFF` |\n| Evidence hierarchy | `tested / measured / read_directly / prior_verified` (direct) · `documented / community_practice` (must cite source) · `assumption` (only as a labeled hypothesis + next verification step) |\n| Cross-check | `tools/result` listener records a durable per-session evidence index (400 entries) — tool arguments AND output anchors (paths / URLs / distinctive output words); gate claims of direct observation must match it |\n| Anti-false-kill ladder | own-session hit → recorded-output keyword hit → other-session hit (subagent) → existence floor (cited path really exists → pass with ⚠ weak note) → block |\n| Metrics | `blocked` (guesses downgraded) vs `converted` (blocked claims that later came back VERIFIED) vs `charity` (existence-floor passes, visible as 采信) |\n| Card badges | tool card titles: 🟢 VERIFIED · 🔵 REFERENCED · 🟠 UNVERIFIED · ⚪ OFF |\n| Switch | `/evidence-gate on\\|off\\|status\\|report` + `evidence_gate_switch` model tool — **per-session**, persisted |\n\n### v0.2 semantics\n\n- **Per-session everything**: the switch, the ledger, and the prompt section are scoped to `sessionId`. Turning the gate on in one conversation never leaks into another; the chip tooltip shows 本会话 stats only. The policy section's text provider resolves per assembly (`context.agent.sessionId`).\n- **Persistence**: ledger + switch + evidence index survive deployment restarts and context compaction (JSON store under `DSH_HOME/evidence-gate/store.json`, debounced atomic writes; override the path with `EVIDENCE_GATE_STORE`). Top 50 sessions by recency are kept.\n- **Quiet startup**: mounting the bundle prints nothing to the host console — set `EVIDENCE_GATE_DEBUG=1` to print the load breadcrumbs (store restore + each registered component) when diagnosing a mount problem. Error/warning diagnostics are never gated.\n- **Output-aware cross-check**: evidence like \"pnpm test → SMOKE PASSED\" now correlates against recorded tool OUTPUT (keywords, paths, URLs extracted from the `tools/result` payload), not just command strings.\n- **Honest-claim protection**: misses fall through to other sessions (subagent work), then to an existence floor (a cited path that really exists on disk passes with a weak/采信 note instead of blocking). Fabricated paths, empty evidence, and `assumption` still block.\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:53-61](https://github.com/AaronandWork/dsh-evidence-gate/blob/845ddf415e045eb6b2a014bca97a9c63aee1befa/lib/index.js#L53-L61)\n\n系统提示要求模型在最终答复前调用。\n\n```text\nconst POLICY_TEXT = [\n  '## Evidence-first policy (active)',\n  'When drawing any conclusion about code, files, system state, external services, or data:',\n  '1. Prefer direct verification in this session: run the command, read the file, execute the test, fetch the data — before asserting it.',\n  '2. You may reference documented or community-practice conclusions (official docs, changelogs, issue threads, prior verified results) — but name the source and phrase it as reported knowledge, not first-hand observation.',\n  '3. Never present an unverified guess as a conclusion. A guess may appear only as an explicitly labeled hypothesis (e.g. 「推测，未验证」) together with its concrete next verification step.',\n  'Before a final answer that rests on load-bearing factual claims about the system, code, or data, call the `evidence_gate` tool once per claim cluster with its basis and evidence, and follow its verdict: 已拦截 (UNVERIFIED) means verify now or downgrade the claim to a labeled hypothesis in your answer.',\n  \"Claims of direct observation (read/tested) are cross-checked against this session's recorded tool activity — claim only what was actually done.\",\n].join('\\n')\n```\n\n**依据 3 · 源码核查**：[lib/index.js:1314-1413](https://github.com/AaronandWork/dsh-evidence-gate/blob/845ddf415e045eb6b2a014bca97a9c63aee1befa/lib/index.js#L1314-L1413)\n\n模型工具只在被调用时执行 gateReport；默认关闭时返回 off。\n\n<details>\n<summary>查看原文（100行）</summary>\n\n```text\n    const tools = ctx.get('tools')\n    if (tools !== undefined) {\n      ctx.effect(() =>\n        tools.register({\n          name: 'evidence_gate',\n          description:\n            'Gate for load-bearing conclusions — call once per claim cluster before the final answer. ' +\n            'basis: tested/measured/read_directly/prior_verified require evidence (command+output, file+line, measurement); ' +\n            'documented/community_practice require source (must be cited); assumption = unverified. ' +\n            'First-hand claims are cross-checked against the durable session evidence index. ' +\n            'Verdict: 已实证 | 已引用 | 已拦截 (verdict \"off\" when this session has the gate disabled).',\n          parameters: {\n            type: 'object',\n            additionalProperties: false,\n            properties: {\n              claim: { type: 'string', description: 'The load-bearing claim/conclusion to gate' },\n              basis: {\n                type: 'string',\n                enum: ['tested', 'measured', 'read_directly', 'prior_verified', 'documented', 'community_practice', 'assumption'],\n                description: 'Evidence basis of the claim',\n              },\n              evidence: { type: 'string', description: 'Concrete observation: command + key output, file path + line, measurement' },\n              source: { type: 'string', description: 'Named source (URL/doc) for documented/community_practice' },\n              next_verification: { type: 'string', description: 'Next verification step (required for assumption)' },\n            },\n            required: ['claim', 'basis'],\n          },\n          output: {\n            schema: { type: 'object', additionalProperties: true },\n            render(_args, value) {\n              const text = value && typeof value.report === 'string' ? value.report : 'evidence_gate result unavailable'\n              return [{ type: 'text', text: text }]\n            },\n            presentationMeta(_args, value) {\n              return {\n                verdict: value && typeof value.verdict === 'string' ? value.verdict : 'unknown',\n                reason: value && typeof value.reason === 'string' ? value.reason : '',\n                action: value && typeof value.action === 'string' ? value.action : '',\n                actionOk: !!(value && value.actionOk),\n                actionLabel: value && typeof value.actionLabel === 'string' ? value.actionLabel : '',\n                actionDetail: value && typeof value.actionDetail === 'string' ? value.actionDetail : '',\n                basis: value && typeof value.basis === 'string' ? value.basis : '',\n                evidence: value && typeof value.evidence === 'string' ? value.evidence : '',\n                check: value && typeof value.check === 'string' ? value.check : 'skip',\n                note: value && typeof value.note === 'string' ? value.note : '',\n              }\n            },\n          },\n          presentCall(args) {\n            const a = (args && typeof args === 'object') ? args : {}\n            const c = typeof a.claim === 'string' ? a.claim : ''\n            return {\n              card: 'generic',\n              title: '🛡 实证门 — ' + (c !== '' ? truncate(c, 60) : '核验结论中'),\n              rawInput: { basis: a.basis },\n            }\n          },\n          presentResult(args, result) {\n            let verdict = 'unknown'\n            if (result && result.meta && typeof result.meta.verdict === 'string') {\n              verdict = result.meta.verdict\n            } else if (\n              result && Array.isArray(result.content) && result.content.length > 0 &&\n              result.content[0] && typeof result.content[0].text === 'string'\n            ) {\n              const t = result.content[0].text\n              if (t.indexOf('【已实证') === 0) {\n                verdict = 'verified'\n              } else if (t.indexOf('【已引用') === 0) {\n                verdict = 'referenced'\n              } else if (t.indexOf('【已拦截') === 0) {\n                verdict = 'unverified'\n              } else if (t.indexOf('【无效') === 0) {\n                verdict = 'invalid'\n              } else if (t.indexOf('【门未开启') === 0) {\n                verdict = 'off'\n              }\n            }\n            const a = (args && typeof args === 'object') ? args : {}\n            const c = typeof a.claim === 'string' ? truncate(a.claim, 56) : ''\n            const badge =\n              verdict === 'verified' ? '🟢 已实证' :\n              verdict === 'referenced' ? '🔵 已引用' :\n              verdict === 'unverified' ? '🟠 已拦截' :\n              verdict === 'off' ? '⚪ 门未开启' :\n              '⚠ ' + verdict\n            return { card: 'generic', title: badge + ' · ' + c }\n          },\n          execute(args, exec) {\n            const key = keyOf(exec)\n            const st = stateFor(key)\n            if (st.enabled !== true) {\n              return {\n                verdict: 'off',\n                ledger: snapshot(st),\n                report: '【门未开启 Gate off】本会话实证门未开启，本次调用不计数。开启方式：/evidence-gate on，或输入框旁的盾形开关（shield toggle）。',\n              }\n            }\n            return gateReport(key, args)\n          },\n```\n\n</details>\n\n#### 缺口\n\n- 未测真实对话中调用覆盖率和最终答复的遵守率\n  **影响：**不能声明自动消除幻觉或强制审计\n  **进一步探讨：**用相同任务对比无门、开门与强制提交前核验，人工标注漏检和错判\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 活动证据如何采集、保存和在会话间复用？\n\n**研究主题：**功能与机制\n\n#### 完整回答\n\n插件在 tools/result 上收集除自身工具外的工具名、参数摘要，以及结果前 1200 字符中的路径、URL 与最多 20 个词；每会话活动索引最多 400 条。会话身份优先取 agent.sessionId，缺失会落入共享桶。索引与开关、统计、最近裁定写入 DSH_HOME 下 JSON，可用环境变量改位置，1.5 秒防抖，先写带 PID 的临时文件再 rename；持久化最多 50 会话。查询路径会先搜本会话，再扫至多 30 个其他会话各 100 条。这保留了上下文压缩后的部分线索，却可能把不相关会话活动当作当前结论的证据；多进程共用存储时源码注释也承认末写覆盖。索引截断、只取有限输出意味着未命中不等于未做，命中也不等于内容正确。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:87-98](https://github.com/AaronandWork/dsh-evidence-gate/blob/845ddf415e045eb6b2a014bca97a9c63aee1befa/lib/index.js#L87-L98)\n\n索引、会话与扫描容量限制。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\nconst INDEX_CAP = 400\nconst PENDING_CAP = 20\nconst RECENT_CAP = 12\nconst CONTAIN_MIN_DIGEST = 8\nconst BASENAME_MIN = 6\nconst WORD_MIN = 5\nconst CROSS_SESSION_SCAN_CAP = 30\nconst CROSS_SESSION_ENTRY_CAP = 100\nconst PERSIST_SESSION_CAP = 50\nconst SAVE_DEBOUNCE_MS = 1500\n\nconst sessions = new Map()\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:229-297](https://github.com/AaronandWork/dsh-evidence-gate/blob/845ddf415e045eb6b2a014bca97a9c63aee1befa/lib/index.js#L229-L297)\n\n最多 50 会话、防抖和临时文件 rename 持久化。\n\n<details>\n<summary>查看原文（69行）</summary>\n\n```text\nfunction serializeState(st) {\n  const basis = {}\n  for (const [k, n] of st.ledger.basis) {\n    basis[k] = n\n  }\n  return {\n    enabled: st.enabled === true,\n    updatedAt: st.updatedAt,\n    ledger: {\n      verified: st.ledger.verified,\n      referenced: st.ledger.referenced,\n      unverified: st.ledger.unverified,\n      invalid: st.ledger.invalid,\n      seq: st.ledger.seq,\n      converted: st.ledger.converted,\n      crossChecked: st.ledger.crossChecked,\n      charity: st.ledger.charity,\n      basis: basis,\n      recent: st.ledger.recent,\n    },\n    pending: st.pending,\n    index: st.activity,\n  }\n}\n\nfunction saveNow() {\n  if (!PERSIST_OK) {\n    return\n  }\n  try {\n    const picked = []\n    for (const [key, st] of sessions) {\n      if (st.enabled === true || st.ledger.seq > 0 || st.activity.length > 0) {\n        picked.push([key, st])\n      }\n    }\n    picked.sort((a, b) => (b[1].updatedAt || 0) - (a[1].updatedAt || 0))\n    const out = { v: 2, savedAt: new Date().toISOString(), sessions: {} }\n    const cap = Math.min(picked.length, PERSIST_SESSION_CAP)\n    for (let i = 0; i < cap; i++) {\n      out.sessions[picked[i][0]] = serializeState(picked[i][1])\n    }\n    FS.mkdirSync(path.dirname(STORE_FILE), { recursive: true })\n    // pid-suffixed tmp: two processes must never race on the same temp name\n    const tmp = STORE_FILE + '.' + process.pid + '.tmp'\n    FS.writeFileSync(tmp, JSON.stringify(out))\n    FS.renameSync(tmp, STORE_FILE)\n  } catch (e) {\n    console.error('[evidence-gate] persist failed: ' + String(e))\n  }\n}\n\nfunction scheduleSave() {\n  if (!PERSIST_OK || saveTimer !== null) {\n    return\n  }\n  saveTimer = setTimeout(() => {\n    saveTimer = null\n    saveNow()\n  }, SAVE_DEBOUNCE_MS)\n  if (typeof saveTimer.unref === 'function') {\n    saveTimer.unref()\n  }\n}\n\nfunction markDirty(st) {\n  st.updatedAt = Date.now()\n  scheduleSave()\n}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:317-335](https://github.com/AaronandWork/dsh-evidence-gate/blob/845ddf415e045eb6b2a014bca97a9c63aee1befa/lib/index.js#L317-L335)\n\n会话身份缺失时回退共享桶。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\nfunction keyOf(source) {\n  const agent = source && source.agent\n  // identity sources, best first: agent.sessionId, then a bare sessionId on the\n  // event itself (defensive — an emitter may pass the agent/session object\n  // directly), then agent.id (an Agent handle that hides its sessionId)\n  const id = (agent && agent.sessionId) || (source && source.sessionId) || (agent && agent.id) || null\n  if (id) {\n    return String(id)\n  }\n  if (!sharedWarned) {\n    sharedWarned = true\n    const what = source && source.name ? ' (tool: ' + source.name + ')' : ''\n    console.warn(\n      '[evidence-gate] session identity unavailable' + what +\n      \" — falling back to the shared bucket. With multiple main sessions this state is shared across them; please report which action produced it.\",\n    )\n  }\n  return 'shared'\n}\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:412-485](https://github.com/AaronandWork/dsh-evidence-gate/blob/845ddf415e045eb6b2a014bca97a9c63aee1befa/lib/index.js#L412-L485)\n\n只记录有限的参数与输出锚点，保存索引。\n\n<details>\n<summary>查看原文（74行）</summary>\n\n```text\nfunction resultTextOf(result) {\n  if (typeof result === 'string') {\n    return result\n  }\n  if (result && typeof result === 'object') {\n    if (Array.isArray(result.content)) {\n      const parts = []\n      for (let i = 0; i < result.content.length && i < 3; i++) {\n        const c = result.content[i]\n        if (c && typeof c.text === 'string') {\n          parts.push(c.text)\n        }\n      }\n      return parts.join('\\n')\n    }\n    if (typeof result.text === 'string') {\n      return result.text\n    }\n  }\n  return ''\n}\n\nfunction outWords(text) {\n  const seen = {}\n  const out = []\n  const parts = String(text || '').toLowerCase().split(/[^a-z0-9_\\-]+/)\n  for (let i = 0; i < parts.length && out.length < 20; i++) {\n    const w = parts[i]\n    if (w.length >= WORD_MIN && seen[w] !== true) {\n      seen[w] = true\n      out.push(w)\n    }\n  }\n  return out\n}\n\n/** Extract corroboration anchors (urls / paths / distinctive words) from one tool output. */\nfunction outAnchors(result) {\n  const text = String(resultTextOf(result) || '').slice(0, 1200)\n  if (text === '') {\n    return null\n  }\n  const urls = []\n  const re = /https?:\\/\\/[^\\s\"'<>）】》]+/g\n  let m = re.exec(text)\n  while (m !== null && urls.length < 3) {\n    urls.push(m[0])\n    m = re.exec(text)\n  }\n  const paths = pathTokens(text)\n  const words = outWords(text)\n  if (urls.length === 0 && paths.length === 0 && words.length === 0) {\n    return null\n  }\n  return { urls: urls, paths: paths, words: words }\n}\n\nfunction noteActivity(st, exec, result) {\n  if (!exec || typeof exec.name !== 'string') {\n    return\n  }\n  if (exec.name.indexOf('evidence_gate') === 0) {\n    return\n  }\n  const entry = { tool: exec.name, digest: digestOf(exec.arguments) }\n  const out = outAnchors(result)\n  if (out !== null) {\n    entry.out = out\n  }\n  st.activity.unshift(entry)\n  if (st.activity.length > INDEX_CAP) {\n    st.activity.length = INDEX_CAP\n  }\n  markDirty(st)\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/index.js:598-621](https://github.com/AaronandWork/dsh-evidence-gate/blob/845ddf415e045eb6b2a014bca97a9c63aee1befa/lib/index.js#L598-L621)\n\n跨会话路径匹配不检查委派关系。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n/** Path corroboration across sessions (subagent did the work, parent claims it). */\nfunction findPathAny(st, key, token) {\n  if (findEntry(st, token) !== null) {\n    return { cross: false }\n  }\n  const t = normalizePathish(token)\n  const tb = baseOf(t)\n  let scanned = 0\n  for (const [k2, st2] of sessions) {\n    if (k2 === key || st2.activity.length === 0) {\n      continue\n    }\n    scanned = scanned + 1\n    if (scanned > CROSS_SESSION_SCAN_CAP) {\n      break\n    }\n    const lim = Math.min(st2.activity.length, CROSS_SESSION_ENTRY_CAP)\n    for (let i = 0; i < lim; i++) {\n      if (entryMatches(st2.activity[i], t, tb)) {\n        return { cross: true }\n      }\n    }\n  }\n  return null\n```\n\n</details>\n\n#### 缺口\n\n- 未在多进程、压缩后与长期高调用量会话执行恢复测试\n  **影响：**无法确认持久完整率和错配率\n  **进一步探讨：**用隔离存储并发重启、超过 400 条索引和共享桶夹具核对恢复与命中\n\n<a id=\"research-q03\"></a>\n\n### Q03 · “已实证”的交叉核验实际验证了什么，最关键的误判路径是什么？\n\n**研究主题：**缺陷与关键质疑\n\n#### 完整回答\n\n路径命中使用双向子串与同 basename 回退；不校验工具是否成功、文件版本、内容哈希或主张语义。tested/measured 可因命令摘要或输出中的一个关键词命中，已有文件路径即使索引未命中也获得 weak，而 gateReport 对 hit、weak 甚至 skip 都返回 verdict=verified；weak 的展示虽要求谨慎，机器裁定仍是已实证。跨会话查找也未验证是否真为该主张授权的子代理。因此同名文件、失败的读取、过期测试、无关会话活动和只存在的文件都可能使主张被放行。这是静态源码可推导的假阳性风险，未运行目标插件构造复现；作者 README 也承认核对是概率性的，路径匹配不核验内容真伪。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:553-621](https://github.com/AaronandWork/dsh-evidence-gate/blob/845ddf415e045eb6b2a014bca97a9c63aee1befa/lib/index.js#L553-L621)\n\n路径匹配与跨会话扫描基于路径字符串。\n\n<details>\n<summary>查看原文（69行）</summary>\n\n```text\n/**\n * Does one index entry corroborate a claimed path-like token?\n * Same rules as v0.1 (two-way normalized containment with the short-pattern\n * guard, plus the >= BASENAME_MIN basename fallback), extended to the output\n * anchors a tool result contributed.\n */\nfunction entryMatches(a, t, tb) {\n  const cands = [a.digest]\n  if (a.out && Array.isArray(a.out.paths)) {\n    for (let i = 0; i < a.out.paths.length; i++) {\n      cands.push(a.out.paths[i])\n    }\n  }\n  for (let i = 0; i < cands.length; i++) {\n    const d = normalizePathish(cands[i])\n    if (d.length === 0) {\n      continue\n    }\n    if (t === '') {\n      return true\n    }\n    if (d.indexOf(t) >= 0) {\n      return true\n    }\n    if (d.length >= CONTAIN_MIN_DIGEST && t.indexOf(d) >= 0) {\n      return true\n    }\n    if (tb.length >= BASENAME_MIN && baseOf(d) === tb) {\n      return true\n    }\n  }\n  return false\n}\n\nfunction findEntry(st, token) {\n  const t = normalizePathish(token)\n  const tb = baseOf(t)\n  for (let i = 0; i < st.activity.length; i++) {\n    if (entryMatches(st.activity[i], t, tb)) {\n      return st.activity[i]\n    }\n  }\n  return null\n}\n\n/** Path corroboration across sessions (subagent did the work, parent claims it). */\nfunction findPathAny(st, key, token) {\n  if (findEntry(st, token) !== null) {\n    return { cross: false }\n  }\n  const t = normalizePathish(token)\n  const tb = baseOf(t)\n  let scanned = 0\n  for (const [k2, st2] of sessions) {\n    if (k2 === key || st2.activity.length === 0) {\n      continue\n    }\n    scanned = scanned + 1\n    if (scanned > CROSS_SESSION_SCAN_CAP) {\n      break\n    }\n    const lim = Math.min(st2.activity.length, CROSS_SESSION_ENTRY_CAP)\n    for (let i = 0; i < lim; i++) {\n      if (entryMatches(st2.activity[i], t, tb)) {\n        return { cross: true }\n      }\n    }\n  }\n  return null\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:702-750](https://github.com/AaronandWork/dsh-evidence-gate/blob/845ddf415e045eb6b2a014bca97a9c63aee1befa/lib/index.js#L702-L750)\n\n路径存在即可进入 weak。\n\n<details>\n<summary>查看原文（49行）</summary>\n\n```text\n/** First cited path token that really exists on disk (existence floor for unindexed honest claims). */\nfunction existingPathToken(evidence) {\n  if (!FS_OK) {\n    return null\n  }\n  const tokens = pathTokens(evidence)\n  for (let i = 0; i < tokens.length; i++) {\n    const p = normalizePathish(tokens[i])\n    if (!/^[a-z]:\\//.test(p) && p.indexOf('//') !== 0) {\n      continue\n    }\n    try {\n      const stat = FS.statSync(p.replace(/\\/$/, ''))\n      if (stat) {\n        return tokens[i]\n      }\n    } catch (e) {\n      // not present — keep looking\n    }\n  }\n  return null\n}\n\n/**\n * Cross-check a first-hand/referenced claim against the durable evidence index.\n * Order: own-session paths → tested command correlation → recorded OUTPUT\n * keywords → other sessions → existence floor → miss.\n */\nfunction crossCheck(st, key, basis, evidence, source) {\n  // Uniform logic for empty AND populated indexes: own-session lookups no-op on\n  // an empty index while cross-session hits, the existence floor, and the\n  // referenced-URL path still work — no early \"window just opened\" auto-pass.\n  if (VERIFIED_BASES[basis] === true) {\n    const tokens = pathTokens(evidence)\n    if (tokens.length > 0) {\n      for (let i = 0; i < tokens.length; i++) {\n        const found = findPathAny(st, key, tokens[i])\n        if (found !== null) {\n          st.ledger.crossChecked = st.ledger.crossChecked + 1\n          return {\n            mode: 'hit',\n            note: (found.cross ? '命中其他会话工具活动（子代理/早前会话） \"' : '命中工具活动记录 \"') + truncate(tokens[i], 60) + '\"',\n          }\n        }\n      }\n      const floor = existingPathToken(evidence)\n      if (floor !== null) {\n        st.ledger.charity = st.ledger.charity + 1\n        return { mode: 'weak', note: '索引未命中，但证据路径真实存在——按指针采信（如未实测请自行复核）' }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:753-794](https://github.com/AaronandWork/dsh-evidence-gate/blob/845ddf415e045eb6b2a014bca97a9c63aee1befa/lib/index.js#L753-L794)\n\n实测命令/输出匹配使用文本与单词。\n\n<details>\n<summary>查看原文（42行）</summary>\n\n```text\n    }\n    if (basis === 'tested' || basis === 'measured') {\n      const head = normalizePathish(truncate(evidence, 24))\n      const words = evidenceWords(evidence)\n      for (let i = 0; i < st.activity.length; i++) {\n        const a = st.activity[i]\n        if (!SHELL_TOOLS[a.tool]) {\n          continue\n        }\n        const d = normalizePathish(a.digest)\n        if (d.length === 0) {\n          continue\n        }\n        if (head.length >= CONTAIN_MIN_DIGEST && (d.indexOf(head) >= 0 || (head.indexOf(d) >= 0 && d.length >= CONTAIN_MIN_DIGEST))) {\n          st.ledger.crossChecked = st.ledger.crossChecked + 1\n          return { mode: 'hit', note: '证据与已记录命令关联' }\n        }\n        if (d.length >= 3 && containsWholeWord(evidence.toLowerCase(), d)) {\n          st.ledger.crossChecked = st.ledger.crossChecked + 1\n          return { mode: 'hit', note: '证据引用了已记录命令 \"' + truncate(a.digest, 40) + '\"' }\n        }\n        for (let w = 0; w < words.length; w++) {\n          if (d.indexOf(words[w]) >= 0) {\n            st.ledger.crossChecked = st.ledger.crossChecked + 1\n            return { mode: 'hit', note: '已记录命令包含证据关键词 \"' + words[w] + '\"' }\n          }\n        }\n      }\n      // recorded tool OUTPUT contains an evidence keyword (\"pnpm test → SMOKE PASSED\")\n      for (let i = 0; i < st.activity.length; i++) {\n        const a = st.activity[i]\n        if (!a.out || !Array.isArray(a.out.words) || a.out.words.length === 0) {\n          continue\n        }\n        for (let w = 0; w < words.length; w++) {\n          if (a.out.words.indexOf(words[w]) >= 0) {\n            st.ledger.crossChecked = st.ledger.crossChecked + 1\n            return { mode: 'hit', note: '命中已记录输出关键词 \"' + words[w] + '\"（' + a.tool + '）' }\n          }\n        }\n      }\n      return { mode: 'miss', note: '证据索引中没有与该「实测」关联的命令或输出——请在 evidence 中引用确切命令与输出' }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:845-866](https://github.com/AaronandWork/dsh-evidence-gate/blob/845ddf415e045eb6b2a014bca97a9c63aee1befa/lib/index.js#L845-L866)\n\n除 miss 外统一赋 verified。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n  if (VERIFIED_BASES[basis] === true) {\n    if (evidence !== '') {\n      const cc = crossCheck(st, key, basis, evidence, source)\n      checkMode = cc.mode\n      checkNote = cc.note\n      if (cc.mode === 'miss') {\n        verdict = 'unverified'\n        reason = '交叉核验失败：' + cc.note\n        actionOk = false\n        actionLabel = '不得作结论 No'\n        actionDetail = '重新实测后翻案，或标注「推测，未验证」'\n        message = '【已拦截 Blocked·交叉核验失败 Cross-check failed】' + cc.note + '。二选一：① 重新实测（运行/读取）后以实际证据再次过门；② 在回答中降级为「推测，未验证」。'\n      } else {\n        verdict = 'verified'\n        reason = cc.mode === 'hit' ? '交叉核验✓ ' + cc.note : cc.mode === 'weak' ? '采信：' + cc.note : '无可核验路径（按声明采信）'\n        actionOk = true\n        actionLabel = cc.mode === 'weak' ? '可引用 Cite' : '可作结论 OK'\n        actionDetail = cc.mode === 'hit' ? '保留证据出处' : cc.mode === 'weak' ? '表述须谨慎' : '建议保留出处'\n        action = (actionOk ? '✔ ' : '✘ ') + actionLabel + (actionDetail !== '' ? ' — ' + actionDetail : '')\n        message =\n          '【已实证 Verified】' + basisZh + '，' + (cc.mode === 'hit' ? '交叉核验✓（' + cc.note + '）' : cc.mode === 'weak' ? cc.note : '无可核验路径，按声明采信') +\n          '。可在回答中陈述该结论，证据出处：' + truncate(evidence, 120)\n```\n\n</details>\n\n**依据 5 · 作者声明**：[README.md:142-148](https://github.com/AaronandWork/dsh-evidence-gate/blob/845ddf415e045eb6b2a014bca97a9c63aee1befa/README.md#L142-L148)\n\n作者说明索引核对不是内容真实性证明。\n\n```text\n## Limitations (read this)\n\n- The policy is a **probabilistic constraint, not a hard guarantee** — nothing in the harness can intercept final prose. The gate + cross-check + visible ledger is the practical optimum at this layer.\n- The cross-check only sees what passed through the `tools/result` stream **while the plugin was loaded**; with an empty index, first-hand claims fall through cross-session lookup and the existence floor before failing closed.\n- Cross-check is corroboration, not truth: a real command run for an unrelated reason can still match, and a determined agent can cite a real path. It raises the cost of lying, it does not make lying impossible.\n- A tool execution that carries **no session identity** falls into a single shared bucket (the host log warns once when this happens). With multiple main sessions, that bucket is shared across them — if you ever see the warning, report which action produced it.\n- Deployments sharing one `DSH_HOME` (e.g. several profiles) share the store file (last write wins per 1.5s debounce).\n```\n\n#### 缺口\n\n- 假阳性频率及宿主工具结果形态未实际测量\n  **影响：**不能量化错误放行率或宣称每个示例必然可触发\n  **进一步探讨：**隔离测试同 basename、失败 read、历史 test、无关会话和仅存在路径的裁定\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 开关、Web 路由与持久化给部署带来什么成本和安全边界？\n\n**研究主题：**依赖、兼容与流程、效果与总成本\n\n#### 完整回答\n\n包为 Node >=18 的 DSH 插件，注入 tools、webServer，并可用 systemPrompt、commands 服务。默认按会话关闭；Slash 命令、模型工具和 Web POST 可改变开关，Web GET 可按 session 查询或返回汇总。POST 检查 Origin 与 Host 和 JSON Content-Type，并限制正文约 64KB，但路由注释明确是无认证的 loopback 接口；仅凭 session 字符串可读写指定会话状态，故部署若把宿主 Web 服务暴露到不可信网络，需先由宿主另设访问边界。首次使用要确认存储目录权限、真实会话键和开关生效时序；持续使用需承受最多 400 条活动/会话的磁盘写入与证据复核；失败恢复要处理存储丢失、末写覆盖和错判撤回。金额、延迟与人工复核耗时无测量。索引含命令、路径、URL 与结果词，属于可能敏感的持久资料。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:1-47](https://github.com/AaronandWork/dsh-evidence-gate/blob/845ddf415e045eb6b2a014bca97a9c63aee1befa/package.json#L1-L47)\n\n插件入口、Node 和宿主服务依赖。\n\n<details>\n<summary>查看原文（47行）</summary>\n\n```text\n{\n  \"name\": \"@aaronandwork/dsh-evidence-gate\",\n  \"version\": \"0.2.1\",\n  \"description\": \"Evidence-first conclusion gate for DeepSeek Harness (DSH): 3-tier evidence hierarchy policy, a model tool that verdicts claims (VERIFIED/REFERENCED/UNVERIFIED), durable per-session tool-activity cross-checking (arguments + output anchors, restart-surviving), per-session switch + persisted ledger, and a session-scoped UI toggle.\",\n  \"main\": \"lib/index.js\",\n  \"exports\": {\n    \".\": \"./lib/index.js\",\n    \"./client\": \"./lib/client.mjs\",\n    \"./package.json\": \"./package.json\"\n  },\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    },\n    \"client\": {\n      \"platform\": \"web\",\n      \"inject\": [\n        \"slots\"\n      ]\n    }\n  },\n  \"keywords\": [\n    \"dsh\",\n    \"deepseek-harness\",\n    \"dsh-plugin\",\n    \"cordis\",\n    \"cordis-plugin\",\n    \"evidence\",\n    \"verification\",\n    \"anti-hallucination\",\n    \"agent\"\n  ],\n  \"license\": \"MIT\",\n  \"engines\": {\n    \"node\": \">=18\"\n  },\n  \"files\": [\n    \"lib\",\n    \"cordis.patch.yml\",\n    \"README.md\",\n    \"LICENSE\"\n  ],\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/AaronandWork/dsh-evidence-gate.git\"\n  }\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:104-117](https://github.com/AaronandWork/dsh-evidence-gate/blob/845ddf415e045eb6b2a014bca97a9c63aee1befa/lib/index.js#L104-L117)\n\n存储位置来源。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\nconst STORE_FILE = (() => {\n  const custom = (typeof process !== 'undefined' && process.env && process.env.EVIDENCE_GATE_STORE) || ''\n  if (custom !== '') {\n    return String(custom)\n  }\n  const home =\n    (typeof process !== 'undefined' && process.env && (process.env.DSH_HOME || process.env.USERPROFILE || process.env.HOME)) || ''\n  if (home === '') {\n    return ''\n  }\n  return path.join(home, 'evidence-gate', 'store.json')\n})()\n\nconst PERSIST_OK = FS_OK && STORE_FILE !== ''\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:1064-1160](https://github.com/AaronandWork/dsh-evidence-gate/blob/845ddf415e045eb6b2a014bca97a9c63aee1befa/lib/index.js#L1064-L1160)\n\n无认证路由的请求与会话键处理。\n\n<details>\n<summary>查看原文（97行）</summary>\n\n```text\n/** The route is unauthenticated and loopback-bound; keep every input bounded. */\nconst POST_BODY_LIMIT = 64 * 1024\n\n/** Session keys come from agent sessionIds — generous charset, hard length cap, no control chars. */\nfunction validSessionKey(s) {\n  return typeof s === 'string' && s.length >= 1 && s.length <= 200 && !/[\\s\\u0000-\\u001f\\u007f]/.test(s)\n}\n\nasync function routeApi(ctx, req, res) {\n  const send = (code, payload) => {\n    if (res.writableEnded || res.destroyed) {\n      return\n    }\n    res.writeHead(code, { 'content-type': 'application/json; charset=utf-8' })\n    res.end(JSON.stringify(payload))\n  }\n  try {\n    if (req.method === 'GET') {\n      const session = queryOf(req.url).get('session')\n      if (session !== null && session !== '' && validSessionKey(String(session))) {\n        send(200, sessionView(String(session)))\n      } else {\n        send(200, aggregateView())\n      }\n      return\n    }\n    if (req.method === 'POST') {\n      // Same-origin gate: the web GUI is the only legitimate caller. Blocks the\n      // cross-site no-cors form POST (its Origin never matches this host).\n      const origin = req.headers.origin\n      if (origin !== undefined && origin !== '') {\n        let originHost = '?'\n        try {\n          originHost = new URL(String(origin)).host\n        } catch (e) {\n          originHost = '?'\n        }\n        if (originHost !== String(req.headers.host || '')) {\n          send(403, { error: 'cross-origin request rejected' })\n          return\n        }\n      }\n      // Requiring application/json also kills the cross-site no-cors vector:\n      // such requests cannot set this content type (no preflight possible).\n      const ct = String(req.headers['content-type'] || '').toLowerCase()\n      if (ct.indexOf('application/json') !== 0) {\n        send(415, { error: 'content-type must be application/json' })\n        return\n      }\n      let body = ''\n      let overflow = false\n      let settled = false\n      req.on('data', (chunk) => {\n        if (settled || overflow) {\n          return // drain without buffering\n        }\n        body = body + chunk\n        if (body.length > POST_BODY_LIMIT) {\n          overflow = true\n          body = ''\n          settled = true\n          send(413, { error: 'request body too large' })\n        }\n      })\n      req.on('end', () => {\n        if (settled || overflow) {\n          return\n        }\n        settled = true\n        try {\n          const a = body ? JSON.parse(body) : {}\n          const action = typeof a.action === 'string' ? a.action.trim().toLowerCase() : ''\n          const session = typeof a.session === 'string' ? a.session.trim() : ''\n          // validate EVERYTHING before touching stateFor — no state creation on\n          // invalid input, and no unbounded in-memory session growth\n          if (action !== 'on' && action !== 'off' && action !== 'toggle' && action !== 'status') {\n            send(400, { error: 'action must be on | off | toggle | status' })\n            return\n          }\n          if (!validSessionKey(session)) {\n            send(400, { error: 'invalid session key' })\n            return\n          }\n          if (action === 'status') {\n            send(200, sessionView(session)) // read-only: never creates state\n            return\n          }\n          const st = stateFor(session)\n          if (action === 'on') {\n            st.enabled = true\n          } else if (action === 'off') {\n            st.enabled = false\n          } else {\n            st.enabled = !(st.enabled === true)\n          }\n          markDirty(st)\n          send(200, sessionView(session))\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:1186-1219](https://github.com/AaronandWork/dsh-evidence-gate/blob/845ddf415e045eb6b2a014bca97a9c63aee1befa/lib/index.js#L1186-L1219)\n\n注册服务、记录活动和条件提示。\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\nmodule.exports = {\n  name: 'evidence-gate',\n  inject: ['tools', 'webServer'],\n  apply(ctx) {\n    loadStore()\n    installExitHook()\n\n    ctx.on('tools/result', function (exec, result) {\n      try {\n        // record always (durable bounded index): honest actions taken while the\n        // gate was OFF must still be cross-checkable after the user turns it ON.\n        noteActivity(stateFor(keyOf(exec)), exec, result)\n      } catch (e) {\n        console.error('[evidence-gate] activity note failed: ' + String(e))\n      }\n    })\n    debugLog('[evidence-gate] tools/result listener attached (arguments + output anchors)')\n\n    const systemPrompt = ctx.get('systemPrompt')\n    if (systemPrompt !== undefined) {\n      ctx.effect(() =>\n        systemPrompt.section({\n          name: 'evidence_gate_policy',\n          order: 550,\n          text(context) {\n            const key = keyOf(context)\n            const st = peekState(key)\n            return st !== undefined && st.enabled === true ? POLICY_TEXT : ''\n          },\n        }),\n      )\n      debugLog('[evidence-gate] per-session policy section registered')\n    } else {\n      console.error('[evidence-gate] systemPrompt service unavailable — section skipped')\n```\n\n</details>\n\n#### 缺口\n\n- 宿主 Web 绑定、文件权限与实际资源占用未查验\n  **影响：**不能推断默认网络可达性或量化运营成本\n  **进一步探讨：**在目标宿主只读核网络绑定和存储权限，并在隔离会话计量索引增长及复核耗时\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 如何将现有索引机制提升为可证伪的可信结论核验？\n\n**研究主题：**工程质量与复用、新假设与验证\n\n#### 完整回答\n\n可借鉴之处是把工具活动形成容量受限的持久线索，清晰分出亲测、引用、假设并记录错判后再验证的计数。然而核心问题是“活动发生”被直接等同于“主张得到证实”。未验证的改进是假设把 evidence item 绑定会话/明确委派关系、工具成功状态、输出摘要、文件版本或内容哈希与时间范围；把仅存在路径、子串或跨会话弱关联降为 unverified/needs_review，最终答复前由宿主检查每个承载结论的 verdict。最小实验建立真值已知的读取、失败、旧版本、同名、无关会话和正确委派夹具，比较假阳性、假阴性、调用覆盖率、延迟与人工审阅时长。严格匹配可能增假阴性，需设可解释的人工复核通道，不能把更严直接宣称更好。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:469-485](https://github.com/AaronandWork/dsh-evidence-gate/blob/845ddf415e045eb6b2a014bca97a9c63aee1befa/lib/index.js#L469-L485)\n\n活动与输出锚点采集。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\nfunction noteActivity(st, exec, result) {\n  if (!exec || typeof exec.name !== 'string') {\n    return\n  }\n  if (exec.name.indexOf('evidence_gate') === 0) {\n    return\n  }\n  const entry = { tool: exec.name, digest: digestOf(exec.arguments) }\n  const out = outAnchors(result)\n  if (out !== null) {\n    entry.out = out\n  }\n  st.activity.unshift(entry)\n  if (st.activity.length > INDEX_CAP) {\n    st.activity.length = INDEX_CAP\n  }\n  markDirty(st)\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:730-813](https://github.com/AaronandWork/dsh-evidence-gate/blob/845ddf415e045eb6b2a014bca97a9c63aee1befa/lib/index.js#L730-L813)\n\n现有交叉核验的 hit/weak/skip 分支。\n\n<details>\n<summary>查看原文（84行）</summary>\n\n```text\nfunction crossCheck(st, key, basis, evidence, source) {\n  // Uniform logic for empty AND populated indexes: own-session lookups no-op on\n  // an empty index while cross-session hits, the existence floor, and the\n  // referenced-URL path still work — no early \"window just opened\" auto-pass.\n  if (VERIFIED_BASES[basis] === true) {\n    const tokens = pathTokens(evidence)\n    if (tokens.length > 0) {\n      for (let i = 0; i < tokens.length; i++) {\n        const found = findPathAny(st, key, tokens[i])\n        if (found !== null) {\n          st.ledger.crossChecked = st.ledger.crossChecked + 1\n          return {\n            mode: 'hit',\n            note: (found.cross ? '命中其他会话工具活动（子代理/早前会话） \"' : '命中工具活动记录 \"') + truncate(tokens[i], 60) + '\"',\n          }\n        }\n      }\n      const floor = existingPathToken(evidence)\n      if (floor !== null) {\n        st.ledger.charity = st.ledger.charity + 1\n        return { mode: 'weak', note: '索引未命中，但证据路径真实存在——按指针采信（如未实测请自行复核）' }\n      }\n      return { mode: 'miss', note: '证据索引中无与 \"' + truncate(tokens[0], 60) + '\" 匹配的活动' }\n    }\n    if (basis === 'tested' || basis === 'measured') {\n      const head = normalizePathish(truncate(evidence, 24))\n      const words = evidenceWords(evidence)\n      for (let i = 0; i < st.activity.length; i++) {\n        const a = st.activity[i]\n        if (!SHELL_TOOLS[a.tool]) {\n          continue\n        }\n        const d = normalizePathish(a.digest)\n        if (d.length === 0) {\n          continue\n        }\n        if (head.length >= CONTAIN_MIN_DIGEST && (d.indexOf(head) >= 0 || (head.indexOf(d) >= 0 && d.length >= CONTAIN_MIN_DIGEST))) {\n          st.ledger.crossChecked = st.ledger.crossChecked + 1\n          return { mode: 'hit', note: '证据与已记录命令关联' }\n        }\n        if (d.length >= 3 && containsWholeWord(evidence.toLowerCase(), d)) {\n          st.ledger.crossChecked = st.ledger.crossChecked + 1\n          return { mode: 'hit', note: '证据引用了已记录命令 \"' + truncate(a.digest, 40) + '\"' }\n        }\n        for (let w = 0; w < words.length; w++) {\n          if (d.indexOf(words[w]) >= 0) {\n            st.ledger.crossChecked = st.ledger.crossChecked + 1\n            return { mode: 'hit', note: '已记录命令包含证据关键词 \"' + words[w] + '\"' }\n          }\n        }\n      }\n      // recorded tool OUTPUT contains an evidence keyword (\"pnpm test → SMOKE PASSED\")\n      for (let i = 0; i < st.activity.length; i++) {\n        const a = st.activity[i]\n        if (!a.out || !Array.isArray(a.out.words) || a.out.words.length === 0) {\n          continue\n        }\n        for (let w = 0; w < words.length; w++) {\n          if (a.out.words.indexOf(words[w]) >= 0) {\n            st.ledger.crossChecked = st.ledger.crossChecked + 1\n            return { mode: 'hit', note: '命中已记录输出关键词 \"' + words[w] + '\"（' + a.tool + '）' }\n          }\n        }\n      }\n      return { mode: 'miss', note: '证据索引中没有与该「实测」关联的命令或输出——请在 evidence 中引用确切命令与输出' }\n    }\n    return { mode: 'skip', note: '无可核验的路径' }\n  }\n  if (REFERENCED_BASES[basis] === true) {\n    const src = source !== '' ? source : evidence\n    if (src.indexOf('http') === 0) {\n      const hit = findWebAny(key, src)\n      if (hit !== null) {\n        st.ledger.crossChecked = st.ledger.crossChecked + 1\n        return {\n          mode: 'hit',\n          note: hit.cross ? '该来源出现在其他会话的搜索/抓取记录中' : '该来源已出现在本会话的搜索/抓取记录中',\n        }\n      }\n      return { mode: 'weak', note: '该 URL 本会话未抓取——引用时须谨慎' }\n    }\n    return { mode: 'skip', note: '' }\n  }\n  return { mode: 'skip', note: '' }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:845-866](https://github.com/AaronandWork/dsh-evidence-gate/blob/845ddf415e045eb6b2a014bca97a9c63aee1befa/lib/index.js#L845-L866)\n\n弱证据被抬升为 verified 的核心缺口。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n  if (VERIFIED_BASES[basis] === true) {\n    if (evidence !== '') {\n      const cc = crossCheck(st, key, basis, evidence, source)\n      checkMode = cc.mode\n      checkNote = cc.note\n      if (cc.mode === 'miss') {\n        verdict = 'unverified'\n        reason = '交叉核验失败：' + cc.note\n        actionOk = false\n        actionLabel = '不得作结论 No'\n        actionDetail = '重新实测后翻案，或标注「推测，未验证」'\n        message = '【已拦截 Blocked·交叉核验失败 Cross-check failed】' + cc.note + '。二选一：① 重新实测（运行/读取）后以实际证据再次过门；② 在回答中降级为「推测，未验证」。'\n      } else {\n        verdict = 'verified'\n        reason = cc.mode === 'hit' ? '交叉核验✓ ' + cc.note : cc.mode === 'weak' ? '采信：' + cc.note : '无可核验路径（按声明采信）'\n        actionOk = true\n        actionLabel = cc.mode === 'weak' ? '可引用 Cite' : '可作结论 OK'\n        actionDetail = cc.mode === 'hit' ? '保留证据出处' : cc.mode === 'weak' ? '表述须谨慎' : '建议保留出处'\n        action = (actionOk ? '✔ ' : '✘ ') + actionLabel + (actionDetail !== '' ? ' — ' + actionDetail : '')\n        message =\n          '【已实证 Verified】' + basisZh + '，' + (cc.mode === 'hit' ? '交叉核验✓（' + cc.note + '）' : cc.mode === 'weak' ? cc.note : '无可核验路径，按声明采信') +\n          '。可在回答中陈述该结论，证据出处：' + truncate(evidence, 120)\n```\n\n</details>\n\n#### 缺口\n\n- 绑定式核验与提交前门禁均未实现\n  **影响：**不能把减少错误或操作成本记作现有贡献\n  **进一步探讨：**实现隔离原型后按固定夹具和真实任务人工标注评估误判与额外成本\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 现阶段适合如何试用，哪些结论必须保留人工核对？\n\n**研究主题：**采用判断\n\n#### 完整回答\n\n可在单人本地会话中把它作为提醒与证据线索索引，明确打开开关，对 gate verdict 回查原始工具输出及版本；报告统计可辅助发现未核结论。不能把 verified 机器状态当作事实证明，也不能用它作为自动安全门或审计合规证明。若共享 DSH_HOME、存在多会话或联网宿主，先核会话隔离与访问边界。当前建议观察而非直接纳入强制流程，优先复现弱命中误判并测漏调用。作者的 npm 发布/下载历史属于旧 META 快照，不是本轮实时安装成功；本轮只读固定提交，不运行插件或目标测试。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:1402-1413](https://github.com/AaronandWork/dsh-evidence-gate/blob/845ddf415e045eb6b2a014bca97a9c63aee1befa/lib/index.js#L1402-L1413)\n\n默认关闭且仅工具调用时执行裁定。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n          execute(args, exec) {\n            const key = keyOf(exec)\n            const st = stateFor(key)\n            if (st.enabled !== true) {\n              return {\n                verdict: 'off',\n                ledger: snapshot(st),\n                report: '【门未开启 Gate off】本会话实证门未开启，本次调用不计数。开启方式：/evidence-gate on，或输入框旁的盾形开关（shield toggle）。',\n              }\n            }\n            return gateReport(key, args)\n          },\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:845-866](https://github.com/AaronandWork/dsh-evidence-gate/blob/845ddf415e045eb6b2a014bca97a9c63aee1befa/lib/index.js#L845-L866)\n\n已实证状态包括弱核验。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n  if (VERIFIED_BASES[basis] === true) {\n    if (evidence !== '') {\n      const cc = crossCheck(st, key, basis, evidence, source)\n      checkMode = cc.mode\n      checkNote = cc.note\n      if (cc.mode === 'miss') {\n        verdict = 'unverified'\n        reason = '交叉核验失败：' + cc.note\n        actionOk = false\n        actionLabel = '不得作结论 No'\n        actionDetail = '重新实测后翻案，或标注「推测，未验证」'\n        message = '【已拦截 Blocked·交叉核验失败 Cross-check failed】' + cc.note + '。二选一：① 重新实测（运行/读取）后以实际证据再次过门；② 在回答中降级为「推测，未验证」。'\n      } else {\n        verdict = 'verified'\n        reason = cc.mode === 'hit' ? '交叉核验✓ ' + cc.note : cc.mode === 'weak' ? '采信：' + cc.note : '无可核验路径（按声明采信）'\n        actionOk = true\n        actionLabel = cc.mode === 'weak' ? '可引用 Cite' : '可作结论 OK'\n        actionDetail = cc.mode === 'hit' ? '保留证据出处' : cc.mode === 'weak' ? '表述须谨慎' : '建议保留出处'\n        action = (actionOk ? '✔ ' : '✘ ') + actionLabel + (actionDetail !== '' ? ' — ' + actionDetail : '')\n        message =\n          '【已实证 Verified】' + basisZh + '，' + (cc.mode === 'hit' ? '交叉核验✓（' + cc.note + '）' : cc.mode === 'weak' ? cc.note : '无可核验路径，按声明采信') +\n          '。可在回答中陈述该结论，证据出处：' + truncate(evidence, 120)\n```\n\n</details>\n\n**依据 3 · 作者声明**：[README.md:142-148](https://github.com/AaronandWork/dsh-evidence-gate/blob/845ddf415e045eb6b2a014bca97a9c63aee1befa/README.md#L142-L148)\n\n作者说明非真相证明。\n\n```text\n## Limitations (read this)\n\n- The policy is a **probabilistic constraint, not a hard guarantee** — nothing in the harness can intercept final prose. The gate + cross-check + visible ledger is the practical optimum at this layer.\n- The cross-check only sees what passed through the `tools/result` stream **while the plugin was loaded**; with an empty index, first-hand claims fall through cross-session lookup and the existence floor before failing closed.\n- Cross-check is corroboration, not truth: a real command run for an unrelated reason can still match, and a determined agent can cite a real path. It raises the cost of lying, it does not make lying impossible.\n- A tool execution that carries **no session identity** falls into a single shared bucket (the host log warns once when this happens). With multiple main sessions, that bucket is shared across them — if you ever see the warning, report which action produced it.\n- Deployments sharing one `DSH_HOME` (e.g. several profiles) share the store file (last write wins per 1.5s debounce).\n```\n\n#### 缺口\n\n- 真实多会话用户的正确率、调用遵从率和恢复体验未知\n  **影响：**不能给自动化安装与强制使用建议\n  **进一步探讨：**先做误判夹具，再进行一轮人工标注的真实会话对照试用\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：e082671648fcc68f295c98e13a3edf845ed12b59e55b5ac362ffea5ecf7f6a68。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .mjs | source | 1 | 761 | 658 | 53 | — |\n| .js | source | 3 | 2236 | 1923 | 175 | — |\n| .md | source | 1 | 249 | — | — | 3591 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 会话提示与开关 | 引导模型声明依据 | 默认关闭，需用户开启且模型遵守 |\n| evidence_gate 裁定 | 逐簇记录亲测/引用/猜测 | 必须主动调用；字符串命中不证明真实性 |\n| 持久索引与报告 | 跨上下文查活动线索 | 容量受限，跨会话可能误归因，含敏感信息 |\n| Web 状态路由 | UI 查询与切换 | 无认证 loopback 设想，需宿主控制网络边界 |\n\n## 工程亮点\n\n有容量限制的索引与明示依据类型值得借鉴；把字符串关联或路径存在提升为已实证需收紧，并保留人工复核通道。详见[Q05](#research-q05)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：只读核固定提交 README、包声明和 lib/index.js，未运行插件/测试或真实会话；复用前次 META，不当作本轮新采集。\n- 下一步：以同名路径、失败读取、旧版本测试、无关会话、正确委派和仅存在路径构造有真值夹具；测假阳性/假阴性、漏调用、延迟、持久恢复及人工核对时长。\n",
         "metadata": {
             "repository": "AaronandWork/dsh-evidence-gate",
             "repository_id": 1365519118,
@@ -418,14 +445,14 @@
             "repository": "AaronandWork/dsh-evidence-gate",
             "path": "",
             "revision": "845ddf415e045eb6b2a014bca97a9c63aee1befa",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "5cfe1ddaf3e5e3cbfa45eb3bcf976ae7ad28cfb7f44ea21dbf5d167219bddc03",
                 "code": "845ddf415e045eb6b2a014bca97a9c63aee1befa",
                 "maintenance": "cb7f4d82d16ed4e47fbac44cbbe33fa1055fbe41d2a1fb4eb519c5f7e7a8e36d"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

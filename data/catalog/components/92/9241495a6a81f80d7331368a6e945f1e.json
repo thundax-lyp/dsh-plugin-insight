@@ -12,7 +12,7 @@
             "aliases": [],
             "name": "dsh-web-restart",
             "entry_type": "plugin",
-            "technical_category": "runtime-deployment",
+            "technical_category": "tools-integration",
             "business_category": "infrastructure",
             "tags": [
                 "重启",
@@ -27,36 +27,70 @@
             },
             "sources": [
                 {
-                    "id": "20261020-research40-github-1335060007-root-directory-0",
+                    "id": "2026-10-22-02-github-1335060007-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
-                    "retrieved_at": "2026-10-20T03:13:11.782Z",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-22T06:59:35.088Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "20261020-research40-github-1335060007-root-author",
+                    "id": "2026-10-22-02-github-1335060007-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/1123762794/dsh-web-restart/blob/5de8214051b3245a8cfc825e7e907cf5e57f51d8/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/1123762794/dsh-web-restart",
+                            "commit": "5de8214051b3245a8cfc825e7e907cf5e57f51d8",
+                            "path": "README.md",
+                            "content_sha256": "187616315d6f8f9533bf2cc7866d7da7454be8c7ca5ad6709ea8f88d186fdf18"
+                        }
+                    ],
                     "revision": "5de8214051b3245a8cfc825e7e907cf5e57f51d8",
-                    "captured_at": "2026-10-20T03:13:11.782Z",
-                    "summary": "在 Web 侧边栏提供重启按钮，通过独立 PowerShell 进程触发宿主重启脚本。",
-                    "artifact": "data/runs/2026-10-20-02/snapshots/1123762794--dsh-web-restart/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T06:59:35.088Z",
+                    "summary": "Windows DSH Web 的侧栏重启按钮，调用硬编码 PowerShell 外部脚本。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/1123762794--dsh-web-restart/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "20261020-research40-github-1335060007-root-source",
+                    "id": "2026-10-22-02-github-1335060007-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/1123762794/dsh-web-restart/blob/5de8214051b3245a8cfc825e7e907cf5e57f51d8/lib/index.js",
+                    "url": "https://github.com/1123762794/dsh-web-restart/blob/5de8214051b3245a8cfc825e7e907cf5e57f51d8/README.zh.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/1123762794/dsh-web-restart",
+                            "commit": "5de8214051b3245a8cfc825e7e907cf5e57f51d8",
+                            "path": "README.zh.md",
+                            "content_sha256": "d60fe1edc783be3e2f3f35361949b3f4f85c02ac7ccc6690684506139bb7707e"
+                        },
+                        {
+                            "repository_url": "https://github.com/1123762794/dsh-web-restart",
+                            "commit": "5de8214051b3245a8cfc825e7e907cf5e57f51d8",
+                            "path": "lib/index.js",
+                            "content_sha256": "7c11631f75e20cdda840306d8fccf3ee264fdd38797ef7675e78a81c78aab5d8"
+                        },
+                        {
+                            "repository_url": "https://github.com/1123762794/dsh-web-restart",
+                            "commit": "5de8214051b3245a8cfc825e7e907cf5e57f51d8",
+                            "path": "lib/client.js",
+                            "content_sha256": "72421c0059d3f49b14c969060d2feaa08ce9447faa74b8f27200d9b44999c223"
+                        },
+                        {
+                            "repository_url": "https://github.com/1123762794/dsh-web-restart",
+                            "commit": "5de8214051b3245a8cfc825e7e907cf5e57f51d8",
+                            "path": "package.json",
+                            "content_sha256": "886c2b6c2e969873eb541badba9c92af3674c0cac68dae402056993ce25f2a52"
+                        }
+                    ],
                     "revision": "5de8214051b3245a8cfc825e7e907cf5e57f51d8",
-                    "captured_at": "2026-10-20T03:13:11.782Z",
-                    "summary": "核查 lib/index.js；POST /restart-dsh 延迟启动隐藏 PowerShell，读取硬编码 D:\\1\\dsh-web-host.ps1；健康路由只报告当前进程存活。",
-                    "artifact": "data/runs/2026-10-20-02/snapshots/1123762794--dsh-web-restart/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T06:59:35.088Z",
+                    "summary": "核查 README.zh.md、lib/index.js、lib/client.js、package.json；Client POST 精确路由，Host 先回包再延时以 danger-full-access 启 PowerShell；健康点五秒轮询。详见[Q02](#research-q02)。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/1123762794--dsh-web-restart/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "硬编码作者机器路径和 Windows 命令使其不具通用部署条件；响应成功发生在实际重启之前。",
+                        "只读核固定提交 README.zh.md、Host/Client/包声明；未运行目标 PowerShell/插件，仓库无外部 ps1；旧 META 仅复用。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -67,9 +101,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "Windows 本机调试人员希望从浏览器重启 DSH，不再切回终端。",
+                    "text": "作者 Windows Web profile 的维护操作；单击会中断 DSH 服务，脚本路径必须按机器改。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "20261020-research40-github-1335060007-root-source"
+                        "2026-10-22-02-github-1335060007-root-source"
                     ],
                     "dependencies": [
                         {
@@ -78,16 +112,16 @@
                             "fingerprint": "5de8214051b3245a8cfc825e7e907cf5e57f51d8"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:13:11.782Z",
+                    "reviewed_at": "2026-10-22T06:59:35.088Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "POST /restart-dsh 延迟启动隐藏 PowerShell，读取硬编码 D:\\1\\dsh-web-host.ps1；健康路由只报告当前进程存活。",
+                    "text": "Client POST 精确路由，Host 先回包再延时以 danger-full-access 启 PowerShell；健康点五秒轮询。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "20261020-research40-github-1335060007-root-source"
+                        "2026-10-22-02-github-1335060007-root-source"
                     ],
                     "dependencies": [
                         {
@@ -96,16 +130,16 @@
                             "fingerprint": "5de8214051b3245a8cfc825e7e907cf5e57f51d8"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:13:11.782Z",
+                    "reviewed_at": "2026-10-22T06:59:35.088Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "便利入口不能替代可靠的进程管理；返回触发成功不能当作重启完成。",
+                    "text": "#### 效果\n\n| 效果项 | 源码支持 | 未证实 |\n| --- | --- | --- |\n| 侧栏按钮 | 单击 POST | 服务真实重启 |\n| 防重入 | 进程内 bool | 多进程/脚本层重入 |\n| 状态点 | 健康路由可达 | 会话恢复/脚本成功 |",
                     "evidence_ids": [
-                        "20261020-research40-github-1335060007-root-source"
+                        "2026-10-22-02-github-1335060007-root-source"
                     ],
                     "dependencies": [
                         {
@@ -114,16 +148,16 @@
                             "fingerprint": "5de8214051b3245a8cfc825e7e907cf5e57f51d8"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:13:11.782Z",
+                    "reviewed_at": "2026-10-22T06:59:35.088Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "需要改造并维护本地脚本，重启会中断运行；一次点击减少操作却增加误触和恢复负担。",
+                    "text": "#### 成本\n\n| 阶段 | 资源成本 | 人工投入 | 边界 |\n| --- | --- | --- | --- |\n| 安装 | DSH Web/Windows/受控 ps1，价格未知 | fork、改路径、安装 | 脚本未提供 |\n| 操作 | 主动断开约 15–20 秒为作者说法 | 检查会话/通知并等待 | 实际恢复未证 |\n| 故障 | 全权限脚本/错误反馈 | 人工排障和回滚 | 响应不反映执行结果 |",
                     "evidence_ids": [
-                        "20261020-research40-github-1335060007-root-source"
+                        "2026-10-22-02-github-1335060007-root-source"
                     ],
                     "dependencies": [
                         {
@@ -132,16 +166,16 @@
                             "fingerprint": "5de8214051b3245a8cfc825e7e907cf5e57f51d8"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:13:11.782Z",
+                    "reviewed_at": "2026-10-22T06:59:35.088Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "独立进程可在宿主退出后继续运行，但固定路径和全权限 shell 使可移植性较弱。",
+                    "text": "原生 setTimeout 避开 handler fiber 的约束是实现细节；缺脚本配置、执行回执与权限边界，UI 忽略 ok:false。详见[Q02](#research-q02)至[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "20261020-research40-github-1335060007-root-source"
+                        "2026-10-22-02-github-1335060007-root-source"
                     ],
                     "dependencies": [
                         {
@@ -150,16 +184,16 @@
                             "fingerprint": "5de8214051b3245a8cfc825e7e907cf5e57f51d8"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:13:11.782Z",
+                    "reviewed_at": "2026-10-22T06:59:35.088Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "当前更适合参考实现，先在可丢弃 profile 验证脚本路径、失败反馈和会话恢复。",
+                    "text": "暂不直接采用；只在隔离 Windows 复核脚本、授权和失败状态后考虑。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "20261020-research40-github-1335060007-root-source"
+                        "2026-10-22-02-github-1335060007-root-source"
                     ],
                     "dependencies": [
                         {
@@ -168,16 +202,16 @@
                             "fingerprint": "5de8214051b3245a8cfc825e7e907cf5e57f51d8"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:13:11.782Z",
+                    "reviewed_at": "2026-10-22T06:59:35.088Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "硬编码作者机器路径和 Windows 命令使其不具通用部署条件；响应成功发生在实际重启之前。",
+                    "text": "只读核固定提交 README.zh.md、Host/Client/包声明；未运行目标 PowerShell/插件，仓库无外部 ps1；旧 META 仅复用。",
                     "evidence_ids": [
-                        "20261020-research40-github-1335060007-root-source"
+                        "2026-10-22-02-github-1335060007-root-source"
                     ],
                     "dependencies": [
                         {
@@ -186,16 +220,16 @@
                             "fingerprint": "5de8214051b3245a8cfc825e7e907cf5e57f51d8"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:13:11.782Z",
+                    "reviewed_at": "2026-10-22T06:59:35.088Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "版本 0.1.0，依赖 Web 与 shell，当前源码并未提供跨平台自动适配。",
+                    "text": "README 安装示例使用 YOUR_OWNER 占位符且需要 Windows/自行改 D:\\1 脚本路径；实时包可用性未核。",
                     "evidence_ids": [
-                        "20261020-research40-github-1335060007-root-source"
+                        "2026-10-22-02-github-1335060007-root-source"
                     ],
                     "dependencies": [
                         {
@@ -204,40 +238,135 @@
                             "fingerprint": "5de8214051b3245a8cfc825e7e907cf5e57f51d8"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:13:11.782Z",
+                    "reviewed_at": "2026-10-22T06:59:35.088Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "将重启入口与在线状态点放进 DSH Web 侧栏；用户可从界面触发作者环境的维护动作。详见[Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1335060007-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335060007:root",
+                            "area": "code",
+                            "fingerprint": "5de8214051b3245a8cfc825e7e907cf5e57f51d8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T06:59:35.088Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "已触发 UI 不代表重启成功，路由只有方法/重入检查；全权限外部脚本和单击中断需核外层授权。详见[Q03](#research-q03)与[Q04](#research-q04)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1335060007-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335060007:root",
+                            "area": "code",
+                            "fingerprint": "5de8214051b3245a8cfc825e7e907cf5e57f51d8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T06:59:35.088Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "未验证改进为受控脚本路径、管理员授权/确认、异步 job 回执和恢复验收；先在隔离环境实测。详见[Q05](#research-q05)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1335060007-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335060007:root",
+                            "area": "code",
+                            "fingerprint": "5de8214051b3245a8cfc825e7e907cf5e57f51d8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T06:59:35.088Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-20T03:13:11.782Z",
+            "last_checked_at": "2026-10-22T06:59:35.088Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "5de8214051b3245a8cfc825e7e907cf5e57f51d8",
+                "reviewed_at": "2026-10-22T06:59:35.088Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1335060007:root",
+                        "area": "code",
+                        "fingerprint": "5de8214051b3245a8cfc825e7e907cf5e57f51d8"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "rationale": "薄路由加按钮常见，特定路径和无回执降低可迁移性。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1335060007-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 0,
+                        "economics": 0
+                    },
+                    "rationale": "省一次手工重启但只适合作者机器，存在中断与失败反馈成本。",
+                    "basis": "interpretation",
+                    "score": 17,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1335060007-root-source"
+                    ]
+                }
+            },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "not_recommended",
-                "reason": "当前硬编码作者Windows脚本路径，不适合新采用；优先CLI或系统服务管理器，参考前先补失败反馈。",
+                "reason": "脚本缺失且硬编码、全权限执行及反馈/授权边界未验，不能直接部署。",
                 "criteria": {
                     "scenario": {
-                        "score": 15,
-                        "rationale": "浏览器重启本机调试服务的需求存在但范围窄。"
+                        "score": 8,
+                        "rationale": "维护重启明确但高影响且环境特定。"
                     },
                     "advantage": {
                         "score": 6,
-                        "rationale": "减少切终端，可靠进程管理仍需外部脚本承担。"
+                        "rationale": "侧栏入口便捷，手工受控替代容易。"
                     },
                     "evidence": {
-                        "score": 13,
-                        "rationale": "已确认固定D盘路径和提前成功响应，非仅缺实测。"
+                        "score": 6,
+                        "rationale": "可核源码但关键 ps1 缺失且目标环境未测。"
                     },
                     "cost": {
-                        "score": 0,
-                        "rationale": "必须改造作者路径且中断任务，全权限PowerShell增加恢复负担。"
+                        "score": 5,
+                        "rationale": "金钱成本未知，服务中断与误报成本较高。"
                     }
                 },
-                "score": 34,
+                "score": 25,
                 "revision": "5de8214051b3245a8cfc825e7e907cf5e57f51d8",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T06:59:35.088Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "20261020-research40-github-1335060007-root-source"
+                    "2026-10-22-02-github-1335060007-root-source"
                 ],
                 "dependencies": [
                     {
@@ -262,27 +391,30 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-20T02:51:30Z",
-            "analysis_sha256": "f61f29935ebbce4a1f045a7e809ace9227afb32c019f4ecadaa8dd46fd59391d"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "2406e3d0cd86765c8f2c30fc56907eec4cee157e8b6b90ea5135a854bb174f4a"
         },
         "publication.metadata": "data/plugins/1123762794--dsh-web-restart/META.json",
         "publication.summaries": {
-            "text": "在 Web 侧边栏提供重启按钮，通过独立 PowerShell 进程触发宿主重启脚本。",
+            "text": "Windows DSH Web 的侧栏重启按钮，调用硬编码 PowerShell 外部脚本。",
             "revision": "5de8214051b3245a8cfc825e7e907cf5e57f51d8",
             "source_url": "https://github.com/1123762794/dsh-web-restart/blob/5de8214051b3245a8cfc825e7e907cf5e57f51d8/README.md"
         },
         "publication.capabilities": {
             "revision": "5de8214051b3245a8cfc825e7e907cf5e57f51d8",
             "items": {
-                "Host 路由": "重启触发和健康检查。"
-            }
+                "界面": "侧栏重启按钮与健康状态",
+                "Host 路由": "重启触发与健康查询接口",
+                "后台": "延迟启动外部 PowerShell 重启脚本"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 一键重启 | 操作便捷 | 作者硬编码脚本 |\n| 防重入 | 限本进程重复调用 | 客户端忽略 ok:false |\n| 在线点 | 可达性显示 | 非执行成功证明 |"
         },
         "publication.advice": {
             "revision": "5de8214051b3245a8cfc825e7e907cf5e57f51d8",
-            "text": "当前更适合参考实现，先在可丢弃 profile 验证脚本路径、失败反馈和会话恢复。"
+            "text": "暂不直接采用；只在隔离 Windows 复核脚本、授权和失败状态后考虑。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/1123762794--dsh-web-restart",
-        "reports": "# dsh-web-restart\n\n> 在 Web 侧边栏提供重启按钮，通过独立 PowerShell 进程触发宿主重启脚本。\n\n## 固定范围与依据\n\n固定提交 [5de8214051b3245a8cfc825e7e907cf5e57f51d8](https://github.com/1123762794/dsh-web-restart/blob/5de8214051b3245a8cfc825e7e907cf5e57f51d8/lib/index.js)；组件路径：仓库根。核查时间 2026-10-20T03:13:11.782Z；本轮基准 2026-10-20T02:51:30Z。\n源码抽读路径：lib/index.js。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：Windows 本机调试人员希望从浏览器重启 DSH，不再切回终端。\n- **亮点**：POST /restart-dsh 延迟启动隐藏 PowerShell，读取硬编码 D:\\1\\dsh-web-host.ps1；健康路由只报告当前进程存活。\n- **思考**：便利入口不能替代可靠的进程管理；返回触发成功不能当作重启完成。\n- **建议**：当前更适合参考实现，先在可丢弃 profile 验证脚本路径、失败反馈和会话恢复。\n\n## 场景与替代办法\n\nWindows 本机调试人员希望从浏览器重启 DSH，不再切回终端。\n\n宿主 CLI 或系统服务管理器更通用，当前插件主要减少作者环境的重复操作。\n\n## 依赖与流程\n\n依赖 Windows PowerShell、外部重启脚本和足够进程权限；其他系统无法直接照搬。\n\n保存工作后点击按钮，等待服务恢复并核对状态；脚本缺失或启动失败需回到终端处理。\n\n## 成本与效果\n\n需要改造并维护本地脚本，重启会中断运行；一次点击减少操作却增加误触和恢复负担。\n\n便利入口不能替代可靠的进程管理；返回触发成功不能当作重启完成。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：22d6dac685f59337c1479fbc7e69dba928500011e1a551747752f24916bcd815。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 218 | 173 | 34 | — |\n| .md | source | 2 | 164 | — | — | 1267 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **Host 路由**：重启触发和健康检查。\n\n## 工程亮点\n\n独立进程可在宿主退出后继续运行，但固定路径和全权限 shell 使可移植性较弱。\n\n## 分发与兼容\n\n版本 0.1.0，依赖 Web 与 shell，当前源码并未提供跨平台自动适配。\n\n## 历史对照\n\n前次代码指纹为 5de8214051b3245a8cfc825e7e907cf5e57f51d8；本轮固定为 5de8214051b3245a8cfc825e7e907cf5e57f51d8。宿主 CLI 或系统服务管理器更通用，当前插件主要减少作者环境的重复操作。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：硬编码作者机器路径和 Windows 命令使其不具通用部署条件；响应成功发生在实际重启之前。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：覆盖脚本缺失、权限失败、重复点击、启动失败与未完成任务恢复，不能仅测 HTTP 200。\n",
+        "reports": "# dsh-web-restart\n\n> Windows DSH Web 的侧栏重启按钮，调用硬编码 PowerShell 外部脚本。\n\n## 研究范围\n\n- **仓库**：[1123762794/dsh-web-restart](https://github.com/1123762794/dsh-web-restart)\n- **版本号**：0.1.0（[固定提交 5de8214051b3245a8cfc825e7e907cf5e57f51d8](https://github.com/1123762794/dsh-web-restart/tree/5de8214051b3245a8cfc825e7e907cf5e57f51d8)）\n- **版本日期**：2026-08-18（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n源码可核按钮与后端启动链，但外部脚本缺失/硬编码，响应在执行前确认且 Client 忽略 ok:false；目标环境未跑。\n\n## 洞察短评\n\n- **用途**：作者 Windows Web profile 的维护操作；单击会中断 DSH 服务，脚本路径必须按机器改。详见[Q01](#research-q01)。\n- **亮点**：将重启入口与在线状态点放进 DSH Web 侧栏；用户可从界面触发作者环境的维护动作。详见[Q01](#research-q01)。\n- **思考**：已触发 UI 不代表重启成功，路由只有方法/重入检查；全权限外部脚本和单击中断需核外层授权。详见[Q03](#research-q03)与[Q04](#research-q04)。\n- **建议**：未验证改进为受控脚本路径、管理员授权/确认、异步 job 回执和恢复验收；先在隔离环境实测。详见[Q05](#research-q05)。\n\n采用建议：暂不直接采用；只在隔离 Windows 复核脚本、授权和失败状态后考虑。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n将重启入口与在线状态点放进 DSH Web 侧栏；用户可从界面触发作者环境的维护动作。详见[Q01](#research-q01)。\n\n## 关键质疑\n\n已触发 UI 不代表重启成功，路由只有方法/重入检查；全权限外部脚本和单击中断需核外层授权。详见[Q03](#research-q03)与[Q04](#research-q04)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n未验证改进为受控脚本路径、管理员授权/确认、异步 job 回执和恢复验收；先在隔离环境实测。详见[Q05](#research-q05)。\n\n隔离 Windows 测脚本存在/失败、ok:false、外层授权、实际进程退出/再上线、会话落盘和重复请求。\n\n## 场景与替代办法\n\n作者 Windows Web profile 的维护操作；单击会中断 DSH 服务，脚本路径必须按机器改。详见[Q01](#research-q01)。\n\n手工受控终端重启可查看脚本退出和进程状态；当前按钮省点击但隐藏失败。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖 | 必需 | 用途 | 缺失后果 |\n| --- | --- | --- | --- |\n| DSH webServer/shell/slots | 必需 | 路由、进程、按钮 | 无法触发 |\n| Windows PowerShell | 必需 | 独立重启进程 | 启动失败 |\n| D:\\1\\dsh-web-host.ps1 | 必需 | 实际停/启动 | 仓库不含、需自备 |\n\n#### 操作步骤\n\n| 步骤 | 动作 | 判据/恢复 |\n| --- | --- | --- |\n| 预备 | 审核外部脚本/会话与权限 | 可回滚 |\n| 安装 | 改路径、profile 加载 | 按钮与健康点出现 |\n| 触发 | 单击按钮 | 仅收到请求已接受 |\n| 验收 | Web 断开再恢复/会话复核 | 成功要端到端验证 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 资源成本 | 人工投入 | 边界 |\n| --- | --- | --- | --- |\n| 安装 | DSH Web/Windows/受控 ps1，价格未知 | fork、改路径、安装 | 脚本未提供 |\n| 操作 | 主动断开约 15–20 秒为作者说法 | 检查会话/通知并等待 | 实际恢复未证 |\n| 故障 | 全权限脚本/错误反馈 | 人工排障和回滚 | 响应不反映执行结果 |\n\n#### 效果\n\n| 效果项 | 源码支持 | 未证实 |\n| --- | --- | --- |\n| 侧栏按钮 | 单击 POST | 服务真实重启 |\n| 防重入 | 进程内 bool | 多进程/脚本层重入 |\n| 状态点 | 健康路由可达 | 会话恢复/脚本成功 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**一键重启能否在受控权限下可靠触发、报告结果并恢复 DSH Web？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 一键重启适合什么场景，默认能否直接迁移？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n插件面向作者 Windows 上的 DSH Web：侧栏底部一个单击重启按钮和 5 秒健康状态点。Host 延后 1 秒启动隐藏 PowerShell 子进程，子进程再等 3 秒运行作者机器的 D:\\1\\dsh-web-host.ps1；脚本本身不在仓库。README 明确要求 fork 后改硬编码路径，故不能把本仓库当通用可安装重启方案。它会中断活跃会话，作者的“自动落盘恢复/15–20秒”未有目标环境复核。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.zh.md:3-16](https://github.com/1123762794/dsh-web-restart/blob/5de8214051b3245a8cfc825e7e907cf5e57f51d8/README.zh.md#L3-L16)\n\n作者场景及恢复声明\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n**DeepSeek Harness Web 界面的一键重启按钮。**\n\n在侧边栏底部（设置按钮旁）增加一个圆形重启按钮（↻）。**单击**即可立即重启 `dsh web` 进程——页面断开约 15–20 秒，刷新后一切恢复（会话数据自动落盘并恢复）。按钮是**常驻**的：它触发的重启不会把它自己带走。\n\n> 仅限 Windows：重启通过独立的隐藏 PowerShell 进程拉起 `dsh web`，因此即使 harness 进程被杀死，脚本也会继续执行完毕。\n\n## 功能\n\n- 单击直接重启——无需二次确认，也不用连点两下。\n- 常驻：以 bundle 层插件安装，DSH 重启后依然存在（不是会话级动态插件）。\n- 轻量：位于侧边栏底部设置入口旁；56px 窄轨只显示图标，宽轨显示图标 + 文字。\n- 状态反馈：请求处理中按钮变红并显示「重启中…」→「已触发」。\n- 防重入：重启进行中再次点击会被拒绝。\n- 在线状态点：按钮旁显示 DSH 存活状态——绿色圆点每 5 秒轮询 `GET /dsh-health`（harness 不可达 / 重启中显示红色）。\n```\n\n</details>\n\n**依据 2 · 作者声明**：[README.zh.md:66-70](https://github.com/1123762794/dsh-web-restart/blob/5de8214051b3245a8cfc825e7e907cf5e57f51d8/README.zh.md#L66-L70)\n\n作者承认脚本路径硬编码\n\n```text\n## 兼容性\n\n- DeepSeek Harness `0.1.0-rc.6`（web profile）。\n- 重启脚本路径（`D:\\1\\dsh-web-host.ps1`）硬编码自作者机器——**请 fork 后自行调整**（或替换 `lib/index.js` 中的命令）。欢迎贡献使其可配置。\n\n```\n\n**依据 3 · 源码核查**：[lib/index.js:46-65](https://github.com/1123762794/dsh-web-restart/blob/5de8214051b3245a8cfc825e7e907cf5e57f51d8/lib/index.js#L46-L65)\n\n具体 PowerShell 启动链\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n      restarting = true\n      // 注意：webServer handler 是纯 Node http 回调，不在 Cordis fiber 上下文里，\n      // ctx.timeout（mixin→ctx.effect）在此不触发；改用 Node 原生 setTimeout。\n      setTimeout(() => {\n        try {\n          // 独立进程 + 内部 3 秒延迟：DSH 被脚本杀掉后脚本继续执行，前端有时间渲染状态\n          const command = \"Start-Process powershell -ArgumentList '-NoProfile','-ExecutionPolicy','Bypass','-Command','Start-Sleep -Seconds 3; & \\\"D:\\\\1\\\\dsh-web-host.ps1\\\"' -WindowStyle Hidden\"\n          const spec = ctx.shell.resolve({\n            command,\n            sandboxPolicy: { mode: 'danger-full-access' }\n          })\n          ctx.shell.start(spec)\n          console.log('[dsh-web-restart] restart script launched')\n        } catch (error) {\n          restarting = false\n          console.error('[dsh-web-restart] failed to launch restart:', error)\n        }\n      }, 1000)\n      res.writeHead(200, { 'content-type': 'application/json' })\n      res.end(JSON.stringify({ ok: true, message: '重启已触发：DSH 将断开约 15-20 秒，之后请刷新页面' }))\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/client.js:45-81](https://github.com/1123762794/dsh-web-restart/blob/5de8214051b3245a8cfc825e7e907cf5e57f51d8/lib/client.js#L45-L81)\n\n按钮与轮询\n\n<details>\n<summary>查看原文（37行）</summary>\n\n```text\n      // ── footer action button + online status dot ──\n      ctx.effect(() => {\n        var disposeSlot = ctx.slots.inject('sidebar.footer.action', () => ctx.slots.register({\n          name: 'sidebar.footer.action',\n          id: 'restart-dsh',\n          order: -100,\n          label: () => '重启 DSH'\n        }, (props) => {\n          var wide = props.wide;\n          var phaseState = React.useState('idle');\n          var phase = phaseState[0];\n          var setPhase = phaseState[1];\n          var messageState = React.useState('');\n          var message = messageState[0];\n          var setMessage = messageState[1];\n          // 在线状态：'checking' | 'ok' | 'down'\n          var healthState = React.useState('checking');\n          var health = healthState[0];\n          var setHealth = healthState[1];\n\n          // 每 5 秒探测 /dsh-health；fetch 失败或非 200 视为离线\n          React.useEffect(function () {\n            var check = function () {\n              fetch('/dsh-health', { method: 'GET' })\n                .then(function (res) { return res.ok ? setHealth('ok') : setHealth('down'); })\n                .catch(function () { setHealth('down'); });\n            };\n            check();\n            var timer = setInterval(check, 5000);\n            return function () { clearInterval(timer); };\n          }, []);\n\n          // 单击直接重启（无二次确认）\n          var click = () => {\n            if (phase === 'sending' || phase === 'done') return;\n            setPhase('sending');\n            fetch('/restart-dsh', { method: 'POST' })\n```\n\n</details>\n\n#### 缺口\n\n- 外部脚本内容与宿主持久化行为未知\n  **影响：**不能承诺跨机可用或会话安全恢复\n  **进一步探讨：**取得脚本后在隔离 Windows 测环境与持久化\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 前后端如何触发并反馈重启？\n\n**研究主题：**功能与机制、依赖、兼容与流程\n\n#### 完整回答\n\nClient 在 sidebar.footer.action 注入按钮，单击 POST /restart-dsh；Host 仅允许 POST，进程内 restarting 标志阻止重复启动，立即返回 ok:true，再用 Node setTimeout 异步 shell.resolve/start，sandboxPolicy 为 danger-full-access。健康路由 /dsh-health 返回时间戳，客户端每 5 秒轮询；但状态点只说明该路由当下可达，不能证明外部脚本已启动或重启成功。目标宿主权限和进程行为未测。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:20-69](https://github.com/1123762794/dsh-web-restart/blob/5de8214051b3245a8cfc825e7e907cf5e57f51d8/lib/index.js#L20-L69)\n\n路由/延迟/权限/锁\n\n<details>\n<summary>查看原文（50行）</summary>\n\n```text\nexport function apply(ctx) {\n  let restarting = false\n\n  const disposeHealth = ctx.webServer.register({\n    kind: 'exact',\n    path: '/dsh-health',\n    handler: async (req, res) => {\n      res.writeHead(200, { 'content-type': 'application/json', 'cache-control': 'no-store' })\n      res.end(JSON.stringify({ ok: true, ts: Date.now() }))\n    }\n  })\n\n  const disposeRoute = ctx.webServer.register({\n    kind: 'exact',\n    path: '/restart-dsh',\n    handler: async (req, res) => {\n      if (req.method !== 'POST') {\n        res.writeHead(405, { 'content-type': 'application/json' })\n        res.end(JSON.stringify({ ok: false, message: 'method not allowed' }))\n        return\n      }\n      if (restarting) {\n        res.writeHead(200, { 'content-type': 'application/json' })\n        res.end(JSON.stringify({ ok: false, message: '重启已在进行中，请稍候' }))\n        return\n      }\n      restarting = true\n      // 注意：webServer handler 是纯 Node http 回调，不在 Cordis fiber 上下文里，\n      // ctx.timeout（mixin→ctx.effect）在此不触发；改用 Node 原生 setTimeout。\n      setTimeout(() => {\n        try {\n          // 独立进程 + 内部 3 秒延迟：DSH 被脚本杀掉后脚本继续执行，前端有时间渲染状态\n          const command = \"Start-Process powershell -ArgumentList '-NoProfile','-ExecutionPolicy','Bypass','-Command','Start-Sleep -Seconds 3; & \\\"D:\\\\1\\\\dsh-web-host.ps1\\\"' -WindowStyle Hidden\"\n          const spec = ctx.shell.resolve({\n            command,\n            sandboxPolicy: { mode: 'danger-full-access' }\n          })\n          ctx.shell.start(spec)\n          console.log('[dsh-web-restart] restart script launched')\n        } catch (error) {\n          restarting = false\n          console.error('[dsh-web-restart] failed to launch restart:', error)\n        }\n      }, 1000)\n      res.writeHead(200, { 'content-type': 'application/json' })\n      res.end(JSON.stringify({ ok: true, message: '重启已触发：DSH 将断开约 15-20 秒，之后请刷新页面' }))\n    }\n  })\n\n  return () => { disposeHealth(); disposeRoute() }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/client.js:45-91](https://github.com/1123762794/dsh-web-restart/blob/5de8214051b3245a8cfc825e7e907cf5e57f51d8/lib/client.js#L45-L91)\n\n按钮调用与健康轮询\n\n<details>\n<summary>查看原文（47行）</summary>\n\n```text\n      // ── footer action button + online status dot ──\n      ctx.effect(() => {\n        var disposeSlot = ctx.slots.inject('sidebar.footer.action', () => ctx.slots.register({\n          name: 'sidebar.footer.action',\n          id: 'restart-dsh',\n          order: -100,\n          label: () => '重启 DSH'\n        }, (props) => {\n          var wide = props.wide;\n          var phaseState = React.useState('idle');\n          var phase = phaseState[0];\n          var setPhase = phaseState[1];\n          var messageState = React.useState('');\n          var message = messageState[0];\n          var setMessage = messageState[1];\n          // 在线状态：'checking' | 'ok' | 'down'\n          var healthState = React.useState('checking');\n          var health = healthState[0];\n          var setHealth = healthState[1];\n\n          // 每 5 秒探测 /dsh-health；fetch 失败或非 200 视为离线\n          React.useEffect(function () {\n            var check = function () {\n              fetch('/dsh-health', { method: 'GET' })\n                .then(function (res) { return res.ok ? setHealth('ok') : setHealth('down'); })\n                .catch(function () { setHealth('down'); });\n            };\n            check();\n            var timer = setInterval(check, 5000);\n            return function () { clearInterval(timer); };\n          }, []);\n\n          // 单击直接重启（无二次确认）\n          var click = () => {\n            if (phase === 'sending' || phase === 'done') return;\n            setPhase('sending');\n            fetch('/restart-dsh', { method: 'POST' })\n              .then((res) => res.json().catch(() => null))\n              .then((data) => {\n                setPhase('done');\n                setMessage((data && data.message) || '重启已触发');\n              })\n              .catch((err) => {\n                setPhase('error');\n                setMessage(String((err && err.message) || err));\n              });\n          };\n```\n\n</details>\n\n**依据 3 · 作者声明**：[README.zh.md:52-65](https://github.com/1123762794/dsh-web-restart/blob/5de8214051b3245a8cfc825e7e907cf5e57f51d8/README.zh.md#L52-L65)\n\n作者机制说明\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n## 工作原理\n\n| 层 | 文件 | 作用 |\n| --- | --- | --- |\n| Host | `lib/index.js` | 在 webServer 注册精确路由 `POST /restart-dsh`；以 `danger-full-access` 沙箱策略、独立隐藏 PowerShell 进程启动重启脚本 |\n| Client | `lib/client.js` | 在 `sidebar.footer.action` slot 注册侧边栏底部按钮；单击 `fetch` `POST /restart-dsh`；每 5 秒轮询 `GET /dsh-health` 驱动状态点 |\n| Bundle | `cordis.patch.yml` | 同时挂载 host / client 两半的加载器行 |\n\nhost 路由在重启发生**之前**返回（约 1 秒宿主定时器 + 3 秒内部延迟），给浏览器留出渲染「重启中」状态的时间。\n\n### 为什么路由 handler 里不用 `ctx.timeout`\n\n`ctx.timeout` 是 Cordis mixin，底层由 `ctx.effect()` 实现，而 `ctx.effect` 绑定 **fiber** 生命周期。`webServer` 路由 handler 是纯 Node HTTP 回调——不在任何 fiber 上下文中——因此 `ctx.effect` 注册的定时器会被静默丢弃，重启永远不触发。本插件在 handler 中使用 Node 原生 `setTimeout` 解决。\n\n```\n\n</details>\n\n#### 缺口\n\n- ctx.shell.start 返回值、外部脚本退出状态与宿主权限未知\n  **影响：**200 响应只是接受触发，不是成功重启证据\n  **进一步探讨：**记录子进程 pid/退出与目标 Web 再上线验收\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 失败状态和防重入会不会误导用户？\n\n**研究主题：**缺陷与关键质疑、效果与总成本\n\n#### 完整回答\n\nHost 在异步启动前就返回 ok:true，若一秒后 shell.resolve/start 抛错，日志记录并清 restarting，但已无法更正先前 HTTP 响应；若外部脚本启动后失败，当前代码没有回执。重复请求返回 HTTP 200、正文 ok:false，Client 只要 JSON 可解析就 setPhase(done)，不检查 data.ok，因此也会把“重启已在进行中”显示为已触发。健康点继续在线也不证明成功。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:41-65](https://github.com/1123762794/dsh-web-restart/blob/5de8214051b3245a8cfc825e7e907cf5e57f51d8/lib/index.js#L41-L65)\n\n重复请求/先回包后启动/捕获异常\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n      if (restarting) {\n        res.writeHead(200, { 'content-type': 'application/json' })\n        res.end(JSON.stringify({ ok: false, message: '重启已在进行中，请稍候' }))\n        return\n      }\n      restarting = true\n      // 注意：webServer handler 是纯 Node http 回调，不在 Cordis fiber 上下文里，\n      // ctx.timeout（mixin→ctx.effect）在此不触发；改用 Node 原生 setTimeout。\n      setTimeout(() => {\n        try {\n          // 独立进程 + 内部 3 秒延迟：DSH 被脚本杀掉后脚本继续执行，前端有时间渲染状态\n          const command = \"Start-Process powershell -ArgumentList '-NoProfile','-ExecutionPolicy','Bypass','-Command','Start-Sleep -Seconds 3; & \\\"D:\\\\1\\\\dsh-web-host.ps1\\\"' -WindowStyle Hidden\"\n          const spec = ctx.shell.resolve({\n            command,\n            sandboxPolicy: { mode: 'danger-full-access' }\n          })\n          ctx.shell.start(spec)\n          console.log('[dsh-web-restart] restart script launched')\n        } catch (error) {\n          restarting = false\n          console.error('[dsh-web-restart] failed to launch restart:', error)\n        }\n      }, 1000)\n      res.writeHead(200, { 'content-type': 'application/json' })\n      res.end(JSON.stringify({ ok: true, message: '重启已触发：DSH 将断开约 15-20 秒，之后请刷新页面' }))\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/client.js:77-90](https://github.com/1123762794/dsh-web-restart/blob/5de8214051b3245a8cfc825e7e907cf5e57f51d8/lib/client.js#L77-L90)\n\n忽略 ok 字段后设置 done\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n          // 单击直接重启（无二次确认）\n          var click = () => {\n            if (phase === 'sending' || phase === 'done') return;\n            setPhase('sending');\n            fetch('/restart-dsh', { method: 'POST' })\n              .then((res) => res.json().catch(() => null))\n              .then((data) => {\n                setPhase('done');\n                setMessage((data && data.message) || '重启已触发');\n              })\n              .catch((err) => {\n                setPhase('error');\n                setMessage(String((err && err.message) || err));\n              });\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/client.js:65-75](https://github.com/1123762794/dsh-web-restart/blob/5de8214051b3245a8cfc825e7e907cf5e57f51d8/lib/client.js#L65-L75)\n\n5 秒健康轮询\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n          // 每 5 秒探测 /dsh-health；fetch 失败或非 200 视为离线\n          React.useEffect(function () {\n            var check = function () {\n              fetch('/dsh-health', { method: 'GET' })\n                .then(function (res) { return res.ok ? setHealth('ok') : setHealth('down'); })\n                .catch(function () { setHealth('down'); });\n            };\n            check();\n            var timer = setInterval(check, 5000);\n            return function () { clearInterval(timer); };\n          }, []);\n```\n\n</details>\n\n#### 缺口\n\n- 目标异常和脚本失败频率未测\n  **影响：**UI 可能误报成功，无法据此操作复盘\n  **进一步探讨：**设计 job 状态/失败回执并分别模拟 ok:false 与启动失败\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 重启路由的权限和滥用面如何界定？\n\n**研究主题：**缺陷与关键质疑、依赖、兼容与流程\n\n#### 完整回答\n\n源码只检查请求方法与进程内 restarting 布尔值，路由 handler 没有独立用户授权、Origin/CSRF 校验或确认令牌；是否由 DSH webServer 外层会话保护未核，不能直接断言远端可滥用。脚本以 danger-full-access 启动 PowerShell 并使用 ExecutionPolicy Bypass，且客户端单击无二次确认，因此若路由可被非预期调用就会导致服务中断。该插件仅适用于明确隔离/授权的作者 Windows 环境，其他主机先审宿主边界。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:32-65](https://github.com/1123762794/dsh-web-restart/blob/5de8214051b3245a8cfc825e7e907cf5e57f51d8/lib/index.js#L32-L65)\n\n路由仅方法/重入检查和全权限 PowerShell\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\n  const disposeRoute = ctx.webServer.register({\n    kind: 'exact',\n    path: '/restart-dsh',\n    handler: async (req, res) => {\n      if (req.method !== 'POST') {\n        res.writeHead(405, { 'content-type': 'application/json' })\n        res.end(JSON.stringify({ ok: false, message: 'method not allowed' }))\n        return\n      }\n      if (restarting) {\n        res.writeHead(200, { 'content-type': 'application/json' })\n        res.end(JSON.stringify({ ok: false, message: '重启已在进行中，请稍候' }))\n        return\n      }\n      restarting = true\n      // 注意：webServer handler 是纯 Node http 回调，不在 Cordis fiber 上下文里，\n      // ctx.timeout（mixin→ctx.effect）在此不触发；改用 Node 原生 setTimeout。\n      setTimeout(() => {\n        try {\n          // 独立进程 + 内部 3 秒延迟：DSH 被脚本杀掉后脚本继续执行，前端有时间渲染状态\n          const command = \"Start-Process powershell -ArgumentList '-NoProfile','-ExecutionPolicy','Bypass','-Command','Start-Sleep -Seconds 3; & \\\"D:\\\\1\\\\dsh-web-host.ps1\\\"' -WindowStyle Hidden\"\n          const spec = ctx.shell.resolve({\n            command,\n            sandboxPolicy: { mode: 'danger-full-access' }\n          })\n          ctx.shell.start(spec)\n          console.log('[dsh-web-restart] restart script launched')\n        } catch (error) {\n          restarting = false\n          console.error('[dsh-web-restart] failed to launch restart:', error)\n        }\n      }, 1000)\n      res.writeHead(200, { 'content-type': 'application/json' })\n      res.end(JSON.stringify({ ok: true, message: '重启已触发：DSH 将断开约 15-20 秒，之后请刷新页面' }))\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/client.js:77-81](https://github.com/1123762794/dsh-web-restart/blob/5de8214051b3245a8cfc825e7e907cf5e57f51d8/lib/client.js#L77-L81)\n\n客户端单击即 POST\n\n```text\n          // 单击直接重启（无二次确认）\n          var click = () => {\n            if (phase === 'sending' || phase === 'done') return;\n            setPhase('sending');\n            fetch('/restart-dsh', { method: 'POST' })\n```\n\n**依据 3 · 作者声明**：[README.zh.md:3-7](https://github.com/1123762794/dsh-web-restart/blob/5de8214051b3245a8cfc825e7e907cf5e57f51d8/README.zh.md#L3-L7)\n\n作者 Windows 限定\n\n```text\n**DeepSeek Harness Web 界面的一键重启按钮。**\n\n在侧边栏底部（设置按钮旁）增加一个圆形重启按钮（↻）。**单击**即可立即重启 `dsh web` 进程——页面断开约 15–20 秒，刷新后一切恢复（会话数据自动落盘并恢复）。按钮是**常驻**的：它触发的重启不会把它自己带走。\n\n> 仅限 Windows：重启通过独立的隐藏 PowerShell 进程拉起 `dsh web`，因此即使 harness 进程被杀死，脚本也会继续执行完毕。\n```\n\n#### 缺口\n\n- webServer 外层认证/CSRF/网络暴露范围未知\n  **影响：**不能宣称路由安全或远程可利用\n  **进一步探讨：**核目标宿主认证/Origin，限定管理员和可信本机\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 如何把它变成可核验的维护操作？\n\n**研究主题：**采用判断、新假设与验证、工程质量与复用\n\n#### 完整回答\n\n当前实现应先观察，不宜直接在生产 profile 安装：需把外部脚本纳入受控配置并确认其只作用于目标 DSH 实例，启动前保存会话/通知用户，提供二次确认和管理员权限边界。技术上可令路由返回 job id，Client 按 ok/失败和健康恢复状态展示，异步启动失败需有可查询结果；修正样式查找属性与实际 dataset 名不符的问题，防重复挂载。以上为未实现改进，不能记作现有能力。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.zh.md:66-70](https://github.com/1123762794/dsh-web-restart/blob/5de8214051b3245a8cfc825e7e907cf5e57f51d8/README.zh.md#L66-L70)\n\n作者要求自行改脚本路径\n\n```text\n## 兼容性\n\n- DeepSeek Harness `0.1.0-rc.6`（web profile）。\n- 重启脚本路径（`D:\\1\\dsh-web-host.ps1`）硬编码自作者机器——**请 fork 后自行调整**（或替换 `lib/index.js` 中的命令）。欢迎贡献使其可配置。\n\n```\n\n**依据 2 · 源码核查**：[lib/index.js:49-65](https://github.com/1123762794/dsh-web-restart/blob/5de8214051b3245a8cfc825e7e907cf5e57f51d8/lib/index.js#L49-L65)\n\n缺异步结果回执\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n      setTimeout(() => {\n        try {\n          // 独立进程 + 内部 3 秒延迟：DSH 被脚本杀掉后脚本继续执行，前端有时间渲染状态\n          const command = \"Start-Process powershell -ArgumentList '-NoProfile','-ExecutionPolicy','Bypass','-Command','Start-Sleep -Seconds 3; & \\\"D:\\\\1\\\\dsh-web-host.ps1\\\"' -WindowStyle Hidden\"\n          const spec = ctx.shell.resolve({\n            command,\n            sandboxPolicy: { mode: 'danger-full-access' }\n          })\n          ctx.shell.start(spec)\n          console.log('[dsh-web-restart] restart script launched')\n        } catch (error) {\n          restarting = false\n          console.error('[dsh-web-restart] failed to launch restart:', error)\n        }\n      }, 1000)\n      res.writeHead(200, { 'content-type': 'application/json' })\n      res.end(JSON.stringify({ ok: true, message: '重启已触发：DSH 将断开约 15-20 秒，之后请刷新页面' }))\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/client.js:21-27](https://github.com/1123762794/dsh-web-restart/blob/5de8214051b3245a8cfc825e7e907cf5e57f51d8/lib/client.js#L21-L27)\n\nstyle selector 与 dataset 属性不一致\n\n```text\n      ctx.effect(() => {\n        if (typeof document === 'undefined') return () => {};\n        var existing = document.querySelector('style[data-dsh-web-restart-css]');\n        if (existing !== null) return () => {};\n        var tag = document.createElement('style');\n        tag.dataset.dshRestartButtonCss = '1';\n        tag.textContent = [\n```\n\n**依据 4 · 源码核查**：[lib/client.js:77-91](https://github.com/1123762794/dsh-web-restart/blob/5de8214051b3245a8cfc825e7e907cf5e57f51d8/lib/client.js#L77-L91)\n\n客户端结果处理\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n          // 单击直接重启（无二次确认）\n          var click = () => {\n            if (phase === 'sending' || phase === 'done') return;\n            setPhase('sending');\n            fetch('/restart-dsh', { method: 'POST' })\n              .then((res) => res.json().catch(() => null))\n              .then((data) => {\n                setPhase('done');\n                setMessage((data && data.message) || '重启已触发');\n              })\n              .catch((err) => {\n                setPhase('error');\n                setMessage(String((err && err.message) || err));\n              });\n          };\n```\n\n</details>\n\n#### 缺口\n\n- 改进成本、完整脚本行为与目标恢复流程未知\n  **影响：**未验之前重启可造成实际中断/状态误判\n  **进一步探讨：**隔离主机端到端试验和失败注入验收\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：22d6dac685f59337c1479fbc7e69dba928500011e1a551747752f24916bcd815。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 218 | 173 | 34 | — |\n| .md | source | 2 | 164 | — | — | 1267 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 一键重启 | 操作便捷 | 作者硬编码脚本 |\n| 防重入 | 限本进程重复调用 | 客户端忽略 ok:false |\n| 在线点 | 可达性显示 | 非执行成功证明 |\n\n## 工程亮点\n\n原生 setTimeout 避开 handler fiber 的约束是实现细节；缺脚本配置、执行回执与权限边界，UI 忽略 ok:false。详见[Q02](#research-q02)至[Q05](#research-q05)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.zh.md、lib/index.js、lib/client.js、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：只读核固定提交 README.zh.md、Host/Client/包声明；未运行目标 PowerShell/插件，仓库无外部 ps1；旧 META 仅复用。\n- 下一步：隔离 Windows 测脚本存在/失败、ok:false、外层授权、实际进程退出/再上线、会话落盘和重复请求。\n",
         "metadata": {
             "repository": "1123762794/dsh-web-restart",
             "repository_id": 1335060007,
@@ -351,14 +483,14 @@
             "repository": "1123762794/dsh-web-restart",
             "path": "",
             "revision": "5de8214051b3245a8cfc825e7e907cf5e57f51d8",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "91e28cb64a2b8af6f97a3e072d542cf00eae3244a33cfe8c0ab3d331b31aab8d",
                 "code": "5de8214051b3245a8cfc825e7e907cf5e57f51d8",
                 "maintenance": "08b79bf3eedf91be2fe180ab3540735ef45c329a1cb8208b10f403a2a329ff06"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

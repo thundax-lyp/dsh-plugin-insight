@@ -10,52 +10,37 @@
 
 | 插件 | 主要用途 | 关键使用条件 |
 | --- | --- | --- |
-| [dsh-ai-arcade](#plugin-1413897334-root) | 在 DSH 中提供双脑贪吃蛇和中国象棋，结合本地规则引擎与模型策略解说。 | 娱乐用途可隔离试用并设调用预算；不要用游戏胜率或作者单机延迟数字选择生产模型。 |
-| [dsh-codefall](#plugin-1409889533-root) | 为 DSH 添加数字雨启动动画、矩形光门转场和可调绿色主题。 | 只在愿意接受启动动画的个人环境试用；先验证禁用、减少动态效果和窗口恢复，工作效率场景不因动画安装而预期提速。 |
-| [dsh-piano](#plugin-1412161923-root) | 在 DSH 浮动面板中用 Web Audio 合成钢琴音并支持滑动刮奏。 | 适合轻量即兴发声；在目标浏览器确认音频延迟和拖动行为，不作为专业键盘替代。 |
+| [dsh-armor-switch](#plugin-1409096911-root) | 向 DSH 提示词插入覆盖性规则并暴露运行时开关和显式权限预设；当前版禁止新磁盘清洗。 | 不在真实环境安装；防御研究限无凭证模拟宿主。 |
+| [dsh-piano](#plugin-1412161923-root) | 在 DSH web 提供可拖按钮、浮动键盘与 Web Audio 合成的单音和刮奏。 | 娱乐用途可观察或在隔离浏览器小范围试用，先核发声、刮奏与停用后资源；不用于需 MIDI/录音交付的场景。 |
 
-<a id="plugin-1413897334-root"></a>
+<a id="plugin-1409096911-root"></a>
 
-## [dsh-ai-arcade](../../plugins/439436269-ctrl--dsh-ai-arcade/INSIGHT.md)
+## [dsh-armor-switch](../../plugins/571242--dsh-armor-switch/INSIGHT.md)
 
-[![npm 30d 299](https://img.shields.io/static/v1?label=npm+30d&message=299&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-ai-arcade) [![最新发布 2026-10-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-11&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-ai-arcade)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/571242/dsh-armor-switch)
 
-> **用途**：希望在DSH内娱乐或观察模型策略表达的用户；合格结果是合法、流畅游戏而不是模型棋力基准。
+> **用途**：开发者研究 DSH 提示词扩展/历史还原时可静态分析；真实使用会冲击指令层级与权限。
 
-> **亮点**：相对让LLM逐帧直接控制游戏，贡献在快循环本地规则与慢循环模型意图分离；模型失联时保留可运行游戏。中国象棋棋力主要来自本地搜索，不能归为模型推理增强。
+> **亮点**：展示 section/context 热切换和维护诊断结构；不将规避安全的提示词视为正向创新。详见[Q02](#research-q02)。
 
-> **思考**：模型真的影响胜负还是只增加拟人说明？作者明确本地引擎承担棋力，brain调用仅返回文本，合法性与具体行动还需客户端约束；模型延迟与失败时兜底让游戏可玩，却使胜率不能作为模型能力证据。
+> **思考**：规则文本要求无条件服从工作区/操作者且覆盖高风险类别；fullAccess 可改权限。README 仍称可清洗宿主，但当前 RPC 禁用。详见[Q01](#research-q01)、[Q03](#research-q03)。
 
-> **建议**：娱乐用途可隔离试用并设调用预算；不要用游戏胜率或作者单机延迟数字选择生产模型。
-
-<a id="plugin-1409889533-root"></a>
-
-## [dsh-codefall](../../plugins/4444hao--dsh-codefall/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/4444Hao/dsh-codefall) [![npm 30d 407](https://img.shields.io/static/v1?label=npm+30d&message=407&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-codefall) [![最新发布 2026-10-13](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-13&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-codefall)
-
-> **用途**：喜欢视觉个性化的桌面用户，需动画在界面就绪后退出而不阻挡实际操作。
-
-> **亮点**：相对普通静态主题，首帧动画、就绪握手与桌面恢复重播的组合改变启动体验；Canvas数字雨与主题色映射是常见技术，价值主要为视觉定制而非生产效率。
-
-> **思考**：装饰层能否保证不延迟工作？默认交互退出且还要宿主就绪，存在用户等待和误判就绪的可能；源码有超时、失败保护及减少动态效果分支，支持容错设计，真实托盘恢复仍需平台验收。
-
-> **建议**：只在愿意接受启动动画的个人环境试用；先验证禁用、减少动态效果和窗口恢复，工作效率场景不因动画安装而预期提速。
+> **建议**：可把来源标记与低信任提示词隔离做成防御性检测；此包未实现。详见[Q05](#research-q05)。
 
 <a id="plugin-1412161923-root"></a>
 
 ## [dsh-piano](../../plugins/439436269-ctrl--dsh-piano/INSIGHT.md)
 
-[![npm 30d 560](https://img.shields.io/static/v1?label=npm+30d&message=560&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-piano) [![最新发布 2026-10-09](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-09&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-piano)
 
-> **用途**：用户在工作间隙即兴点击和滑动发声；交付是即时声音，不是MIDI录制或专业音乐制作。
 
-> **亮点**：相对独立浏览器小钢琴，增量是无采样、无网络依赖地嵌入DSH；共享压缩器和缓存噪声缓冲减少每音重复资源分配。音乐合成方法本身属已有技术组合。
+> **用途**：希望在 DSH web 界面临时体验钢琴音效的个人用户。
 
-> **思考**：零网络不意味着低延迟或专业音色；快速滑奏会叠加多音，压缩器避免削波仍不能证明无音频抖动。没有录制、节拍与导出证据，不宜扩展为内容生产工具。
+> **亮点**：把钢琴键盘、24ms 跨键限速、Web Audio 合成与可拖浮钮接入 DSH overlay；增量主要是宿主内就近娱乐交互，非音乐算法突破。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-> **建议**：适合轻量即兴发声；在目标浏览器确认音频延迟和拖动行为，不作为专业键盘替代。
+> **思考**：style 在模块加载时插入、AudioContext 在模块作用域缓存，没有显式卸载移除/关闭；热卸载后的资源状态未知，不能把零采样等于零成本。详见[Q03](#research-q03)。
+
+> **建议**：可把样式、音频和按钮延迟 timer 绑定 overlay 生命周期，并以重复挂载/卸载对照资源残留与再进入首音成功率；当前未实现。详见[Q04](#research-q04)。
 
 ## 更新时间
 
-2026-10-21
+2026-10-22

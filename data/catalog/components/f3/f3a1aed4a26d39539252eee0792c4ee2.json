@@ -10,9 +10,9 @@
             "repository": "3ChatAI-NCT/3chatai-deepseek-harness-plugin",
             "path": "",
             "aliases": [],
-            "name": "3Chat 私域客户运营",
+            "name": "3chat-customer-growth",
             "entry_type": "plugin",
-            "technical_category": "channels-remote",
+            "technical_category": "tools-integration",
             "business_category": "customer-service",
             "tags": [],
             "availability": "unknown",
@@ -24,36 +24,124 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-01-github-1374055714-root-directory-0",
+                    "id": "2026-10-22-02-github-1374055714-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T02:11:08.529Z",
+                    "retrieved_at": "2026-10-22T08:59:38.755Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-01-github-1374055714-root-author",
+                    "id": "2026-10-22-02-github-1374055714-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/blob/d741956969f0adcd523c13d682e9ca8d7b313cb0/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin",
+                            "commit": "d741956969f0adcd523c13d682e9ca8d7b313cb0",
+                            "path": "README.md",
+                            "content_sha256": "fcdc3d5297e56dec625010027ab1977fae4a5a9ae797048a5fafaf8dc5fbd284"
+                        }
+                    ],
                     "revision": "d741956969f0adcd523c13d682e9ca8d7b313cb0",
-                    "captured_at": "2026-10-21T02:11:08.529Z",
-                    "summary": "连接 3Chat 客户和会话，准备跟进消息并经确认发送及查询批次结果。",
-                    "artifact": "data/runs/2026-10-21-01/snapshots/3chatai-nct--3chatai-deepseek-harness-plugin/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T08:59:38.755Z",
+                    "summary": "连接3Chat组织的客户、会话和群数据，在DSH中拟稿并经确认上传/发送消息，查询批次结果，国内外连接器按语言分流。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/3chatai-nct--3chatai-deepseek-harness-plugin/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-01-github-1374055714-root-source",
+                    "id": "2026-10-22-02-github-1374055714-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/blob/d741956969f0adcd523c13d682e9ca8d7b313cb0/src/tools.js",
+                    "url": "https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/blob/d741956969f0adcd523c13d682e9ca8d7b313cb0/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin",
+                            "commit": "d741956969f0adcd523c13d682e9ca8d7b313cb0",
+                            "path": "README.md",
+                            "content_sha256": "fcdc3d5297e56dec625010027ab1977fae4a5a9ae797048a5fafaf8dc5fbd284"
+                        },
+                        {
+                            "repository_url": "https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin",
+                            "commit": "d741956969f0adcd523c13d682e9ca8d7b313cb0",
+                            "path": "package.json",
+                            "content_sha256": "1ce4e21135b733bb4d582e83f4e223e54cb3bce7f155edb4fc8bd7e1a40afac7"
+                        },
+                        {
+                            "repository_url": "https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin",
+                            "commit": "d741956969f0adcd523c13d682e9ca8d7b313cb0",
+                            "path": "cordis.patch.yml",
+                            "content_sha256": "2c0ef1eb3b545e7144fa7a5cebfe0769ede99130a9be3fcabcb01924fd3bf371"
+                        },
+                        {
+                            "repository_url": "https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin",
+                            "commit": "d741956969f0adcd523c13d682e9ca8d7b313cb0",
+                            "path": "src/index.js",
+                            "content_sha256": "0077af9743c14da071778d6bc25df515bfc5c0651ceae65118de3650420347b9"
+                        },
+                        {
+                            "repository_url": "https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin",
+                            "commit": "d741956969f0adcd523c13d682e9ca8d7b313cb0",
+                            "path": "src/connection.js",
+                            "content_sha256": "e0c30c7e3ebb61ed378773b18444f705838bbb8bf1da4d2c7e132d870c24d764"
+                        },
+                        {
+                            "repository_url": "https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin",
+                            "commit": "d741956969f0adcd523c13d682e9ca8d7b313cb0",
+                            "path": "src/tools.js",
+                            "content_sha256": "d7214aa67a2e89af7f3b54ca33b30c409ce64c152a181ba6531830a61e79a1b7"
+                        },
+                        {
+                            "repository_url": "https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin",
+                            "commit": "d741956969f0adcd523c13d682e9ca8d7b313cb0",
+                            "path": "src/regions.js",
+                            "content_sha256": "7a8b2ec7c1d875b168e06e75c93339c2348cb7e805b5b02a3f02c72b05f45ba1"
+                        },
+                        {
+                            "repository_url": "https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin",
+                            "commit": "d741956969f0adcd523c13d682e9ca8d7b313cb0",
+                            "path": "src/tool-schema.js",
+                            "content_sha256": "423a39ee3116338a438788ae13a17b503453fa5fe6931d94b4db3c9d074ca0c1"
+                        },
+                        {
+                            "repository_url": "https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin",
+                            "commit": "d741956969f0adcd523c13d682e9ca8d7b313cb0",
+                            "path": "src/oauth/flow.js",
+                            "content_sha256": "aacffe4b65964cbaa9ef5f393cf67d484e86f499a9a8ef6aac8832e54f2a178e"
+                        },
+                        {
+                            "repository_url": "https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin",
+                            "commit": "d741956969f0adcd523c13d682e9ca8d7b313cb0",
+                            "path": "src/oauth/provider.js",
+                            "content_sha256": "2fb737c27b118bad896bfff7d92a2476414d5c4c79db23577faf6b37d77549b5"
+                        },
+                        {
+                            "repository_url": "https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin",
+                            "commit": "d741956969f0adcd523c13d682e9ca8d7b313cb0",
+                            "path": "src/oauth/credentials.js",
+                            "content_sha256": "0f1a2f183d8d2f67819e1d121559a5ac314c0d35b847eda0fbf98f872f2d7af5"
+                        },
+                        {
+                            "repository_url": "https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin",
+                            "commit": "d741956969f0adcd523c13d682e9ca8d7b313cb0",
+                            "path": "src/oauth/callback.js",
+                            "content_sha256": "77a045ee3ea90ffbebf4bb8c7673fa4f9ef73d763a63d74313c8c9da82bdad41"
+                        },
+                        {
+                            "repository_url": "https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin",
+                            "commit": "d741956969f0adcd523c13d682e9ca8d7b313cb0",
+                            "path": "references/3chat-customer-growth-1.0.4/skills/3chat-customer-growth/SKILL.md",
+                            "content_sha256": "13a5aa393fe8dfe4f8958ed7102ecc6c1e0ed956274a278e5fcbd71e928b8d46"
+                        }
+                    ],
                     "revision": "d741956969f0adcd523c13d682e9ca8d7b313cb0",
-                    "captured_at": "2026-10-21T02:11:08.529Z",
-                    "summary": "核查 src/tools.js、src/connection.js、src/tool-schema.js、src/oauth/credentials.js、src/oauth/flow.js、package.json；区域化OAuth连接器获取远端MCP工具，公开工具名/参数契约校验后动态注册；写工具串行并在tools执行决策中要求确认。连接层拦截自动写重放，超时后已dispatch的写返回acceptance unknown。",
-                    "artifact": "data/runs/2026-10-21-01/snapshots/3chatai-nct--3chatai-deepseek-harness-plugin/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T08:59:38.755Z",
+                    "summary": "核查 README.md、package.json、cordis.patch.yml、src/index.js、src/connection.js、src/tools.js、src/regions.js、src/tool-schema.js、src/oauth/flow.js、src/oauth/provider.js、src/oauth/credentials.js、src/oauth/callback.js、references/3chat-customer-growth-1.0.4/skills/3chat-customer-growth/SKILL.md；bundle拆为threeChat服务、tools消费者和Skill filesystem。Host建立国内/海外两个固定MCP端点与独立credentialKey，通过OAuth连接组织授权；UI语言激活某端点，切换增加selectionGeneration并清工具。工具注册时捕获region/generation，调用再校验，避免旧注册静默发到新区域。\n\n远端listTools最多20页，prepareCatalog只接受十二公开业务名、可编译object schema，重复名剔除；保留服务端真实参数而非自造租户字段。Ajv按tool对象缓存且去$id以免跨租户同$id重用；调用前再次discover并按最新schema验证。能力缺失返回tool-unavailable，不捏造结果。\n\n贡献是把组织客户数据、消息/附件执行、OAuth和动态契约接入DSH，并提供明确触达礼仪和受理未知收据。不是新客户模型，也不是3Chat Agent自身的能力实现；运营效果依赖实际数据、渠道和模型。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/3chatai-nct--3chatai-deepseek-harness-plugin/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "核查工具注册、连接状态、OAuth和写重放约束；未连接3Chat、访问客户或发送消息。",
+                        "固定src OAuth/connection/tools/region/schema和Host选择链、随包Skill，dist关键拒绝/unknown/ask标记核对；不平台登录或客户调用、不运行作者测试。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +152,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "已有3Chat组织和渠道的运营人员，按客户沟通上下文准备单发/批量跟进；交付客户筛选、草稿与可核对发送结果，成交仍需业务记录确认。",
+                    "text": "面向已有3Chat组织、渠道和客户权限的运营人员。通过DSH查询客户/会话/群上下文，模型生成个性化跟进草稿，经确认上传附件/向单个或批量目标发送，再查批次结果。国内与海外渠道不同，服务跟随DSH语言选择，不能把插件当直接登录任意社交账号的机器人。\n\n合格结果须明确canonical客户/群ID、发送账号/渠道、最终正文附件与范围，区分平台受理、发送、渠道送达/已读和成交。客户回复后24小时接待依赖3Chat里事先配置的Agent，插件没有配置这些Agent或证明购买转化。\n\n基线是人手在3Chat查客户上下文、撰稿发送。增量在模型辅助理解与同对话工具编排，不能把拟稿/分析等同获准触达，也不能将客户记忆和模型推断混为事实。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1374055714-root-source"
+                        "2026-10-22-02-github-1374055714-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +163,16 @@
                             "fingerprint": "d741956969f0adcd523c13d682e9ca8d7b313cb0"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:11:08.529Z",
+                    "reviewed_at": "2026-10-22T08:59:38.755Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "区域化OAuth连接器获取远端MCP工具，公开工具名/参数契约校验后动态注册；写工具串行并在tools执行决策中要求确认。连接层拦截自动写重放，超时后已dispatch的写返回acceptance unknown。",
+                    "text": "bundle拆为threeChat服务、tools消费者和Skill filesystem。Host建立国内/海外两个固定MCP端点与独立credentialKey，通过OAuth连接组织授权；UI语言激活某端点，切换增加selectionGeneration并清工具。工具注册时捕获region/generation，调用再校验，避免旧注册静默发到新区域。\n\n远端listTools最多20页，prepareCatalog只接受十二公开业务名、可编译object schema，重复名剔除；保留服务端真实参数而非自造租户字段。Ajv按tool对象缓存且去$id以免跨租户同$id重用；调用前再次discover并按最新schema验证。能力缺失返回tool-unavailable，不捏造结果。\n\n贡献是把组织客户数据、消息/附件执行、OAuth和动态契约接入DSH，并提供明确触达礼仪和受理未知收据。不是新客户模型，也不是3Chat Agent自身的能力实现；运营效果依赖实际数据、渠道和模型。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1374055714-root-source"
+                        "2026-10-22-02-github-1374055714-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +181,16 @@
                             "fingerprint": "d741956969f0adcd523c13d682e9ca8d7b313cb0"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:11:08.529Z",
+                    "reviewed_at": "2026-10-22T08:59:38.755Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "核查工具注册、连接状态、OAuth和写重放约束；未连接3Chat、访问客户或发送消息。",
+                    "text": "固定src OAuth/connection/tools/region/schema和Host选择链、随包Skill，dist关键拒绝/unknown/ask标记核对；不平台登录或客户调用、不运行作者测试。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1374055714-root-source"
+                        "2026-10-22-02-github-1374055714-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +199,16 @@
                             "fingerprint": "d741956969f0adcd523c13d682e9ca8d7b313cb0"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:11:08.529Z",
+                    "reviewed_at": "2026-10-22T08:59:38.755Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "包3chat-customer-growth 2.1.4，DSH web双面插件；打包依赖在dist，业务Skill与渠道实现来源需分别归属。",
+                    "text": "v2.1.4 Apache-2.0，Node>=22，打包MCP client2.3.1/Ajv等，DSH credentials/authorization/工具/Typert/Skill；业务依3Chat组织和渠道。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1374055714-root-source"
+                        "2026-10-22-02-github-1374055714-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +217,16 @@
                             "fingerprint": "d741956969f0adcd523c13d682e9ca8d7b313cb0"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:11:08.529Z",
+                    "reviewed_at": "2026-10-22T08:59:38.755Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "初装需渠道接入、OAuth和业务规则配置；持续有3Chat服务、模型调用、附件上传及人工消息审阅成本。无本轮价格、成交率或ROI数据，不能把草稿/任务创建算收入。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 3Chat组织/渠道/授权与平台订阅 | 必要时配置Agent/知识与接待 | 订阅/渠道资费和配置时间未核，不填价格 |\n| 持续使用 | 客户上下文/模型分析、MCP发现/发送/上传网络 | 维护业务目标与渠道配置 | 网络/模型/平台费用依业务规模，不据源码估金额 |\n| 失败恢复 | 查询原job/重新授权网络，费用未知 | 受理未知时查job、保参数/幂等键和组织区域目标记录 | 无本地持久发送账本，恢复时间未量化 |\n\n",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1374055714-root-source"
+                        "2026-10-22-02-github-1374055714-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +235,16 @@
                             "fingerprint": "d741956969f0adcd523c13d682e9ca8d7b313cb0"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:11:08.529Z",
+                    "reviewed_at": "2026-10-22T08:59:38.755Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "已有3Chat渠道的团队先用测试客户验证查询和确认发送，再启用批量；保留人工处理未知结果和业务回复的流程。",
+                    "text": "有条件试用。已有3Chat组织团队先测试组织只读，再经完整内容/目标确认核极小授权发送、unknown与批次恢复。详见[Q07](#research-q07)。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1374055714-root-source"
+                        "2026-10-22-02-github-1374055714-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +253,16 @@
                             "fingerprint": "d741956969f0adcd523c13d682e9ca8d7b313cb0"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:11:08.529Z",
+                    "reviewed_at": "2026-10-22T08:59:38.755Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "能把客户洞察直接接入可执行跟进，前提是渠道授权和上下文质量；是否提高成交属于未验证业务结果。",
+                    "text": "#### 效果\n\n| 目标 | 源码支持的增量 | 证据边界 |\n| --- | --- | --- |\n| 同对话运营 | 查询→草稿→确认→发送/批次跟踪接线 | 不能证明转化率或节省人工 |\n| 少误重发 | 单执行写dispatch护栏与unknown | 不等于跨调用exactly-once |\n| 少错区域/参数 | 捕获generation与最新schema校验 | 组织数据质量/权限仍由远端承担 |\n| 后续接待 | 可接已有3Chat Agent | 非插件自动创建，效果未核 |\n\n",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1374055714-root-source"
+                        "2026-10-22-02-github-1374055714-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +271,16 @@
                             "fingerprint": "d741956969f0adcd523c13d682e9ca8d7b313cb0"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:11:08.529Z",
+                    "reviewed_at": "2026-10-22T08:59:38.755Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "公开工具allowlist、完整新代际准备后切换注册、写串行和WRITE_REPLAY_BLOCKED值得复用。它们约束插件自动行为，仍需远端幂等/送达语义，不能声称绝对不重复。",
+                    "text": "每connection serial队列把操作/刷新授权按序执行，withSession用AbortController合并调用signal与每request timeout，结束close transport并移除signal监听。dispose使generation失效、abort所有请求、关闭授权listener并等清理，这些是可核的资源退出路径。\n\n工具目录更新先验证新catalog再清旧注册；新注册失败回滚旧definitions，每代注册也局部清理已成功项。但回滚本身失败仍会抛，外部服务突然变更时不能保证总有可用目录。远端工具description和客户内容是模型输入，Skill引导和schema不自动消除提示注入；写门禁/完整确认仍要有效。\n\nreadNames在宿主标isConcurrencySafe，实际connection serial将同连接读也排队，稳定性换吞吐；每次调用discover及新MCP transport增加网络与授权lease持有时间。队列中取消会在执行时检查，但是否立即释放所有等待交互需实际量测。断连受理未知记录只返回调用者，没有本地持久活动/组织/幂等账本，恢复须保留原上下文。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1374055714-root-source"
+                        "2026-10-22-02-github-1374055714-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +289,16 @@
                             "fingerprint": "d741956969f0adcd523c13d682e9ca8d7b313cb0"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:11:08.529Z",
+                    "reviewed_at": "2026-10-22T08:59:38.755Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "interpretation",
-                    "text": "相对人工在CRM筛客并复制发信，贡献是把客户上下文、草稿和渠道执行放进DSH编排，同时显式处理授权、写确认和未知结果。渠道/客服Agent能力归3Chat平台；本插件未实现7×24回复引擎或成交归因。",
+                    "text": "将OAuth组织授权、动态十二工具契约和明确触达礼仪接到DSH，保留unknown受理与单执行不重放，减少裸工具误用。详见[Q02](#research-q02)、[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1374055714-root-source"
+                        "2026-10-22-02-github-1374055714-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +307,16 @@
                             "fingerprint": "d741956969f0adcd523c13d682e9ca8d7b313cb0"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:11:08.529Z",
+                    "reviewed_at": "2026-10-22T08:59:38.755Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
-                    "basis": "interpretation",
-                    "text": "核心假设是模型筛客与自动编排能提高跟进质量而不放大误发。确认提示与串行队列有支持，但用户能否看清批量收件人、远端返回是否代表实际送达仍需端到端验收。未知写结果不能自动重发；原地重试可能产生重复触达。",
+                    "basis": "supported",
+                    "text": "宿主ask与Skill礼仪不等于插件内容hash确认；单次防重放不保证跨调用只发一次。地区选择/凭据按服务共享，批次归属仅内存；送达和成交仍需平台/业务记录。详见[Q03](#research-q03)、[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1374055714-root-source"
+                        "2026-10-22-02-github-1374055714-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +325,16 @@
                             "fingerprint": "d741956969f0adcd523c13d682e9ca8d7b313cb0"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:11:08.529Z",
+                    "reviewed_at": "2026-10-22T08:59:38.755Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "unverified",
-                    "text": "待验证假设：以批次收件人和内容摘要生成一次性确认凭据，再把远端任务id和逐项结果绑定，可减少“批准的是A，发送的是B”及未知结果重试。基于已有动态工具代际、确认与禁止重放推导；服务端去重支持和状态所有权需共同设计。",
+                    "text": "可探索绑定区域/组织/目标/正文附件hash和幂等键的持久确认/操作收据，unknown只追原记录，比较重复与留存成本；未实现。详见[Q07](#research-q07)。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1374055714-root-source"
+                        "2026-10-22-02-github-1374055714-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +343,15 @@
                             "fingerprint": "d741956969f0adcd523c13d682e9ca8d7b313cb0"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:11:08.529Z",
+                    "reviewed_at": "2026-10-22T08:59:38.755Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T02:11:08.529Z",
+            "last_checked_at": "2026-10-22T08:59:38.755Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "d741956969f0adcd523c13d682e9ca8d7b313cb0",
-                "reviewed_at": "2026-10-21T02:11:08.529Z",
+                "reviewed_at": "2026-10-22T08:59:38.755Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -275,61 +363,61 @@
                 "technical": {
                     "criteria": {
                         "novelty": 9,
-                        "mechanism": 15,
-                        "transferability": 10,
+                        "mechanism": 23,
+                        "transferability": 15,
                         "simplification": 8
                     },
-                    "rationale": "novelty：CRM工具桥接常见，增量是DSH授权/连接代际适配。 mechanism：未知写状态与禁止自动重放改变故障处理约束，真实服务待验。 transferability：写确认/串行/代际模式可复用，远端协议需适配。 simplification：查询与发送同会话组织，服务准备和确认仍必要。",
+                    "rationale": "novelty成熟OAuth/MCP小幅组合；mechanism契约发现/授权lease/单次写护栏较强工程组合；transferability unknown收据和代际隔离较强通用价值；simplification免门户切换实质，未来持久收据不计。",
                     "basis": "interpretation",
-                    "score": 42,
+                    "score": 55,
                     "evidence_ids": [
-                        "2026-10-21-01-github-1374055714-root-source"
+                        "2026-10-22-02-github-1374055714-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 18,
+                        "workflow": 26,
                         "delivery": 15,
                         "reach": 10,
                         "economics": 4
                     },
-                    "rationale": "workflow：客户分析到触达在同会话接续，平台回复另行负责。 delivery：交付可执行草稿和发送批次结果，非成交归因。 reach：让自然语言用户操作已有渠道，需组织权限。 economics：减少复制与交接的潜在成本，服务费和人工复核未测。",
+                    "rationale": "workflow查询/拟稿/触达/跟踪较强串联；delivery实际动作接线实质但无渠道结果验收；reach跨渠道接入实质依已有组织；economics省人工潜力小幅未测。",
                     "basis": "interpretation",
-                    "score": 47,
+                    "score": 55,
                     "evidence_ids": [
-                        "2026-10-21-01-github-1374055714-root-source"
+                        "2026-10-22-02-github-1374055714-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "已有3Chat渠道团队可先在测试客户试用查询和确认单发；批量前核对收件人，未知发送结果须人工查证。",
+                "reason": "适合已有3Chat组织团队用测试组织先只读再极小授权发送；动态契约、单次防重放和unknown收据具体，仍须核完整确认/权限和跨调用幂等。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "运营筛客并准备跟进具有明确交付，但成交另验。"
+                        "rationale": "客户洞察到触达场景明确，效果未测。"
                     },
                     "advantage": {
                         "score": 19,
-                        "rationale": "OAuth动态工具及禁止未知写重放比人工复制有可解释增量。"
+                        "rationale": "动态schema/OAuth与受理未知/地区代际有较强集成差异。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "契约校验、串行确认和acceptance unknown路径已查，真实送达未验。"
+                        "rationale": "固定源码关键链，未进行宿主或平台实际验收。"
                     },
                     "cost": {
                         "score": 10,
-                        "rationale": "依赖平台账号渠道与模型，人工消息审阅和未知状态接管不可免。"
+                        "rationale": "依赖平台组织/渠道，授权与业务审阅有负担。"
                     }
                 },
                 "score": 65,
                 "revision": "d741956969f0adcd523c13d682e9ca8d7b313cb0",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T08:59:38.755Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-01-github-1374055714-root-source"
+                    "2026-10-22-02-github-1374055714-root-source"
                 ],
                 "dependencies": [
                     {
@@ -354,33 +442,35 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T01:54:44Z",
-            "analysis_sha256": "3cc7034f6b8a9127ad7e6320553a4c398547f3e621d301435ff0b674f905feb2"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "75cd2defd2a9c583a27fd6a7925a98d8793363c8807b71b6731965da3059c82e"
         },
         "publication.metadata": "data/plugins/3chatai-nct--3chatai-deepseek-harness-plugin/META.json",
         "publication.summaries": {
-            "text": "连接 3Chat 客户和会话，准备跟进消息并经确认发送及查询批次结果。",
+            "text": "连接3Chat组织的客户、会话和群数据，在DSH中拟稿并经确认上传/发送消息，查询批次结果，国内外连接器按语言分流。",
             "revision": "d741956969f0adcd523c13d682e9ca8d7b313cb0",
             "source_url": "https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/blob/d741956969f0adcd523c13d682e9ca8d7b313cb0/README.md"
         },
         "publication.capabilities": {
             "revision": "d741956969f0adcd523c13d682e9ca8d7b313cb0",
             "items": {
-                "模型工具": "客户/会话/群查询、附件上传、单发与批量发送及状态查询，经公开契约过滤。",
-                "界面": "OAuth连接与区域状态面板。"
-            }
+                "Skill": "随包3chat-customer-growth1.0.4操作与重试礼仪",
+                "模型工具": "动态十二业务工具及连接控制",
+                "界面": "OAuth连接/地区状态面板"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 客户/会话/群查询 | 搜索、上下文与分组分析 | 组织权限和数据口径依平台 |\n| 拟稿与确认 | 模型结合上下文生成内容 | 草稿不授权发送，须核完整参数 |\n| 附件/单发/批发 | 远端实际触达 | 宿主ask，单次防重放非全局幂等 |\n| 批次查询 | 原job逐项跟踪 | 受理不等于送达/成交，归属映射内存 |\n| OAuth/动态契约 | 最小声明scope与当前schema | 客户端设计不替代上游安全审计 |\n"
         },
         "publication.advice": {
             "revision": "d741956969f0adcd523c13d682e9ca8d7b313cb0",
-            "text": "已有3Chat渠道的团队先用测试客户验证查询和确认发送，再启用批量；保留人工处理未知结果和业务回复的流程。"
+            "text": "有条件试用。已有3Chat组织团队先测试组织只读，再经完整内容/目标确认核极小授权发送、unknown与批次恢复。详见[Q07](#research-q07)。"
         },
         "registry": "data/plugins/3chatai-nct--3chatai-deepseek-harness-plugin",
-        "reports": "# 3Chat 私域客户运营\n\n> 连接 3Chat 客户和会话，准备跟进消息并经确认发送及查询批次结果。\n\n## 使用建议\n\n已有3Chat渠道的团队先用测试客户验证查询和确认发送，再启用批量；保留人工处理未知结果和业务回复的流程。\n\n核查状态：源码支持本文所述机制与有限集成贡献；效果、宿主兼容和独立采用未验证。未来设计假设仅为推演，未实现、未验证。 只执行研究工程的统计/装配与结构验证，未安装插件、运行目标代码/测试或做真实宿主验收。\n\n- **用途**：已有3Chat组织和渠道的运营人员，按客户沟通上下文准备单发/批量跟进；交付客户筛选、草稿与可核对发送结果，成交仍需业务记录确认。\n- **亮点**：相对人工在CRM筛客并复制发信，贡献是把客户上下文、草稿和渠道执行放进DSH编排，同时显式处理授权、写确认和未知结果。渠道/客服Agent能力归3Chat平台；本插件未实现7×24回复引擎或成交归因。\n- **思考**：核心假设是模型筛客与自动编排能提高跟进质量而不放大误发。确认提示与串行队列有支持，但用户能否看清批量收件人、远端返回是否代表实际送达仍需端到端验收。未知写结果不能自动重发；原地重试可能产生重复触达。\n- **建议**：已有3Chat渠道的团队先用测试客户验证查询和确认发送，再启用批量；保留人工处理未知结果和业务回复的流程。\n\n## 能力与限制\n\n参照人工CRM筛选/发送及原生MCP接入；本次不将3Chat平台自主Agent和广泛产品规划算插件已实现功能。\n\n区域化OAuth连接器获取远端MCP工具，公开工具名/参数契约校验后动态注册；写工具串行并在tools执行决策中要求确认。连接层拦截自动写重放，超时后已dispatch的写返回acceptance unknown。\n\n\nNode>=22、DSH官方0.2.1-rc.2+（作者声明）、3Chat组织/空间/已连接渠道和发送权限；自主接待需平台预先配置Agent、知识与转人工规则。国内外区域各自授权，服务和账号可达性为效果依赖。\n\n准备渠道/组织→浏览器OAuth→查询已知客户及上下文→模型拟稿→用户确认上传/发送→查询批次逐项结果→平台已配置Agent接待回复。授权临时失败不强迫重登；未知发送先查询状态再决定人工处理。\n\n初装需渠道接入、OAuth和业务规则配置；持续有3Chat服务、模型调用、附件上传及人工消息审阅成本。无本轮价格、成交率或ROI数据，不能把草稿/任务创建算收入。\n\n能把客户洞察直接接入可执行跟进，前提是渠道授权和上下文质量；是否提高成交属于未验证业务结果。\n\n## 能力清单\n\n- **模型工具**：客户/会话/群查询、附件上传、单发与批量发送及状态查询，经公开契约过滤。\n- **界面**：OAuth连接与区域状态面板。\n\n## 工程分析\n\n公开工具allowlist、完整新代际准备后切换注册、写串行和WRITE_REPLAY_BLOCKED值得复用。它们约束插件自动行为，仍需远端幂等/送达语义，不能声称绝对不重复。\n\n包3chat-customer-growth 2.1.4，DSH web双面插件；打包依赖在dist，业务Skill与渠道实现来源需分别归属。\n\n固定源码依据：[src/tools.js L81–115](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/blob/d741956969f0adcd523c13d682e9ca8d7b313cb0/src/tools.js#L81-L115)；[src/connection.js L129–137](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/blob/d741956969f0adcd523c13d682e9ca8d7b313cb0/src/connection.js#L129-L137)；[src/connection.js L431–450](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/blob/d741956969f0adcd523c13d682e9ca8d7b313cb0/src/connection.js#L431-L450)。上述贡献与关键质疑均限定于这些固定源码，不把测试文件存在当运行通过。\n\n## 未来设计假设（未验证）\n\n待验证假设：以批次收件人和内容摘要生成一次性确认凭据，再把远端任务id和逐项结果绑定，可减少“批准的是A，发送的是B”及未知结果重试。基于已有动态工具代际、确认与禁止重放推导；服务端去重支持和状态所有权需共同设计。\n\n最小验证与否定条件：在测试空间用同名客户、账号切换、批量部分失败与发送超时样本，对照人工CRM；核查收件人/渠道/正文与确认一致、未知写不自动重放、断连后无跨区旧授权。记录送达与人工纠错，若误发或重复触达增加则不能宣称流程改善。\n\n## 核查说明\n\n- 版本依据：仓库：[3ChatAI-NCT/3chatai-deepseek-harness-plugin](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin)；固定提交：[d7419569](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/tree/d741956969f0adcd523c13d682e9ca8d7b313cb0)；版本号：2.1.4；版本日期：2026-10-19（固定提交日期，北京时间，非包发布日期）。\n- 已检查与未覆盖范围：核查工具注册、连接状态、OAuth和写重放约束；未连接3Chat、访问客户或发送消息。\n- 证据限制：作者功能摘要来自固定版本README；未核实独立用户采用、同条件效果或端到端收益。版本、证据原文与inventory绑定保存在本项JSON；GitHub/npm统计仅作背景，不构成采用证明。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；版本号：2.1.4；版本日期：2026-10-19（固定提交日期，北京时间，非包发布日期）；组件：根；内容摘要：16cd4ba4b7d40a163c0a8152de31469d9eb0a583b2a77114598a04e74f7aee7d。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 13 | 785 | — | — | 12047 |\n| .mjs | source | 6 | 205 | 195 | 6 | — |\n| .js | source | 10 | 1470 | 1247 | 142 | — |\n| .jsx | source | 1 | 228 | 213 | 3 | — |\n| .mjs | test | 4 | 263 | 248 | 3 | — |\n\n排除 6 项；解析错误 0 项。统计为固定Git范围，源码抽读不冒充全面审计；JS/TS与Markdown分别计量。默认排除为启发式，不能从LOC推算原创量或工时。\n\n",
+        "reports": "# 3chat-customer-growth\n\n> 连接3Chat组织的客户、会话和群数据，在DSH中拟稿并经确认上传/发送消息，查询批次结果，国内外连接器按语言分流。\n\n## 研究范围\n\n- **仓库**：[3ChatAI-NCT/3chatai-deepseek-harness-plugin](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin)\n- **版本号**：2.1.4（[固定提交 d741956969f0adcd523c13d682e9ca8d7b313cb0](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/tree/d741956969f0adcd523c13d682e9ca8d7b313cb0)）\n- **版本日期**：2026-10-19（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已检查源码。动态契约/地区代际和单次防重放明确，组织权限/完整参数确认与跨调用幂等仍依宿主/平台和读者流程。\n\n## 洞察短评\n\n- **用途**：面向已有3Chat组织、渠道和客户权限的运营人员。通过DSH查询客户/会话/群上下文，模型生成个性化跟进草稿，经确认上传附件/向单个或批量目标发送，再查批次结果。国内与海外渠道不同，服务跟随DSH语言选择，不能把插件当直接登录任意社交账号的机器人。\n\n合格结果须明确canonical客户/群ID、发送账号/渠道、最终正文附件与范围，区分平台受理、发送、渠道送达/已读和成交。客户回复后24小时接待依赖3Chat里事先配置的Agent，插件没有配置这些Agent或证明购买转化。\n\n基线是人手在3Chat查客户上下文、撰稿发送。增量在模型辅助理解与同对话工具编排，不能把拟稿/分析等同获准触达，也不能将客户记忆和模型推断混为事实。\n- **亮点**：将OAuth组织授权、动态十二工具契约和明确触达礼仪接到DSH，保留unknown受理与单执行不重放，减少裸工具误用。详见[Q02](#research-q02)、[Q04](#research-q04)。\n- **思考**：宿主ask与Skill礼仪不等于插件内容hash确认；单次防重放不保证跨调用只发一次。地区选择/凭据按服务共享，批次归属仅内存；送达和成交仍需平台/业务记录。详见[Q03](#research-q03)、[Q04](#research-q04)。\n- **建议**：可探索绑定区域/组织/目标/正文附件hash和幂等键的持久确认/操作收据，unknown只追原记录，比较重复与留存成本；未实现。详见[Q07](#research-q07)。\n\n采用建议：有条件试用。已有3Chat组织团队先测试组织只读，再经完整内容/目标确认核极小授权发送、unknown与批次恢复。详见[Q07](#research-q07)。\n\n## 核心贡献\n\n将OAuth组织授权、动态十二工具契约和明确触达礼仪接到DSH，保留unknown受理与单执行不重放，减少裸工具误用。详见[Q02](#research-q02)、[Q04](#research-q04)。\n\n## 关键质疑\n\n宿主ask与Skill礼仪不等于插件内容hash确认；单次防重放不保证跨调用只发一次。地区选择/凭据按服务共享，批次归属仅内存；送达和成交仍需平台/业务记录。详见[Q03](#research-q03)、[Q04](#research-q04)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可探索绑定区域/组织/目标/正文附件hash和幂等键的持久确认/操作收据，unknown只追原记录，比较重复与留存成本；未实现。详见[Q07](#research-q07)。\n\n可继续用模拟MCP/测试组织的401、丢响应、双会话/重启重试、切区与撤权，核单dispatch、unknown收敛、目标/内容确认及资源清理。\n\n## 场景与替代办法\n\n面向已有3Chat组织、渠道和客户权限的运营人员。通过DSH查询客户/会话/群上下文，模型生成个性化跟进草稿，经确认上传附件/向单个或批量目标发送，再查批次结果。国内与海外渠道不同，服务跟随DSH语言选择，不能把插件当直接登录任意社交账号的机器人。\n\n合格结果须明确canonical客户/群ID、发送账号/渠道、最终正文附件与范围，区分平台受理、发送、渠道送达/已读和成交。客户回复后24小时接待依赖3Chat里事先配置的Agent，插件没有配置这些Agent或证明购买转化。\n\n基线是人手在3Chat查客户上下文、撰稿发送。增量在模型辅助理解与同对话工具编排，不能把拟稿/分析等同获准触达，也不能将客户记忆和模型推断混为事实。\n\n人工在3Chat搜索客户上下文、拟稿和发送/跟踪；插件增量是模型辅助与DSH编排，不替代组织权限、内容批准和渠道结果核验。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| Node>=22和DSH授权/凭据/Typert/工具/Skill服务 | 必需 | OAuth、接口和模型工具 | 插件UI可见不代表授权完成 |\n| 3Chat组织/空间和渠道查询/发送权限 | 业务必需 | 远端数据与执行 | 动态目录仅暴露可用工具 |\n| 浏览器与本机loopback回调 | 首次交互授权 | state/code/PKCE流程 | 端口/超时可取消重连 |\n| MCP client/Ajv等打包运行资产 | 必需 | 协议和schema验证 | 固定包版本需保留 |\n| 当前模型和客户数据披露许可 | 模型分析前提 | 生成洞察/草稿 | 客户上下文进入模型 |\n| 3Chat Agent知识/渠道转人工规则 | 仅自动接待 | 后续回复服务 | 插件不自动完成配置 |\n\n\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 准备 | 用测试组织配置最小渠道权限 | 数据/账号与地区清楚 |\n| 连接 | 选语言/地区，浏览器审阅scope | 回到DSH查连接与目录 |\n| 查询 | 已知客户ID和少量上下文 | 区分事实/推断及分页遗漏 |\n| 拟稿 | 用户校对正文/附件/目标 | 分析不授权发送 |\n| 触达 | 对完整目标与内容明确确认及宿主ask | 只明确本次操作，保留幂等键 |\n| 跟踪 | 批次只查原job，未知不自动重发 | 区分受理/发送/送达/成交 |\n| 维护 | 权限变更重授权，切区重核目标 | disconnect不等于撤回已发消息 |\n\n本轮未登录、调用客户工具、上传或发送，只研究实现与随包Skill。\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 3Chat组织/渠道/授权与平台订阅 | 必要时配置Agent/知识与接待 | 订阅/渠道资费和配置时间未核，不填价格 |\n| 持续使用 | 客户上下文/模型分析、MCP发现/发送/上传网络 | 维护业务目标与渠道配置 | 网络/模型/平台费用依业务规模，不据源码估金额 |\n| 失败恢复 | 查询原job/重新授权网络，费用未知 | 受理未知时查job、保参数/幂等键和组织区域目标记录 | 无本地持久发送账本，恢复时间未量化 |\n\n\n\n#### 效果\n\n| 目标 | 源码支持的增量 | 证据边界 |\n| --- | --- | --- |\n| 同对话运营 | 查询→草稿→确认→发送/批次跟踪接线 | 不能证明转化率或节省人工 |\n| 少误重发 | 单执行写dispatch护栏与unknown | 不等于跨调用exactly-once |\n| 少错区域/参数 | 捕获generation与最新schema校验 | 组织数据质量/权限仍由远端承担 |\n| 后续接待 | 可接已有3Chat Agent | 非插件自动创建，效果未核 |\n\n\n\n## 研究问题与完整回答\n\n**插件研究总目标：**核固定3Chat插件的洞察到触达链，重点OAuth/动态schema、完整确认、单次防重放与受理未知恢复。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 客户运营任务具体到哪里结束？\n\n**研究主题：**场景与需求\n\n#### 完整回答\n\n面向已有3Chat组织、渠道和客户权限的运营人员。通过DSH查询客户/会话/群上下文，模型生成个性化跟进草稿，经确认上传附件/向单个或批量目标发送，再查批次结果。国内与海外渠道不同，服务跟随DSH语言选择，不能把插件当直接登录任意社交账号的机器人。\n\n合格结果须明确canonical客户/群ID、发送账号/渠道、最终正文附件与范围，区分平台受理、发送、渠道送达/已读和成交。客户回复后24小时接待依赖3Chat里事先配置的Agent，插件没有配置这些Agent或证明购买转化。\n\n基线是人手在3Chat查客户上下文、撰稿发送。增量在模型辅助理解与同对话工具编排，不能把拟稿/分析等同获准触达，也不能将客户记忆和模型推断混为事实。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:9-26](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/blob/d741956969f0adcd523c13d682e9ca8d7b313cb0/README.md#L9-L26)\n\n业务流程和三方职责。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n例如，你想重新联系最近咨询过的客户：\n\n1. **找到客户**：描述时间范围和筛选条件，查看客户名单及最近沟通上下文。\n2. **准备跟进**：让 DeepSeek Harness 总结客户关心的问题，结合你提供的产品资料和活动素材拟定消息。\n3. **确认触达**：核对收件人、发送账号、渠道、正文和附件后发送；批量发送可继续查询任务进度及逐项结果。\n4. **接待回复**：客户回到已连接渠道后，由该渠道已配置的 3Chat Agent 按知识和业务规则接待，必要时转交人工。\n\n你得到的是可继续行动的客户分析、消息草稿和发送结果。成交、预约等业务结果仍需结合实际业务记录判断。\n\n## 三方如何配合\n\n| 角色 | 负责什么 |\n|---|---|\n| DeepSeek Harness | 理解目标、读取客户上下文、分析问题、生成草稿，并编排插件工具。 |\n| 本插件 | 将 3Chat 的客户、会话、群、附件和消息能力接入 DSH，处理授权与调用。 |\n| 3Chat 平台与 Agent | 提供客户数据和渠道执行；在 3Chat 中预先配置的 Agent 负责回复接待。 |\n\n**接通插件前，先在 3Chat 中准备好组织／空间、渠道及 Agent 回复能力。** 插件授权与客户回复接待是两个步骤，详细准备方法见[使用指南](docs/usage.md)。\n```\n\n</details>\n\n**依据 2 · 源码核查**：[references/3chat-customer-growth-1.0.4/skills/3chat-customer-growth/SKILL.md:34-43](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/blob/d741956969f0adcd523c13d682e9ca8d7b313cb0/references/3chat-customer-growth-1.0.4/skills/3chat-customer-growth/SKILL.md#L34-L43)\n\ncanonical ID、明确确认与受理/送达区分。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n## Core Rules\n\n1. Classify the request as customer search, conversation search, full-context retrieval, analysis, drafting, sending, or job-status tracking before selecting a tool.\n2. Use canonical 3Chat IDs returned by search tools. Never substitute display names, external group IDs, `imRoomId`, or `im_bot_id` where a canonical ID is required.\n3. Preserve multiple valid results for lists, statistics, comparisons, and analysis. Ask the user to select only when the next action requires one target and intent is ambiguous.\n4. Drafting, analysis, and audience selection do not authorize sending. Before any send, show the exact recipients, sender account or channel, final content, attachments, and scope, then obtain explicit confirmation.\n5. Use an existing final HTTP/HTTPS download URL only when it needs no authentication or custom headers and is neither a preview page nor redirect-only link. Otherwise call `upload_3chat_attachment` and prefer reusing the complete `data.attachment` object.\n6. After a batch returns `job_id`, call only `get_3chat_batch_send_status` for that job; never recreate the batch.\n7. Follow structured error fields and `aiAction`. Retry a send with identical business parameters and the original idempotency key only for `RETRY_SAME_REQUEST`.\n8. Do not expose raw JSON by default. Separate 3Chat facts from model inference, and never equate `accepted`, `sent`, or `COMPLETED` with channel delivery or read status.\n```\n\n</details>\n\n**依据 3 · 源码核查**：[references/3chat-customer-growth-1.0.4/skills/3chat-customer-growth/SKILL.md:54-56](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/blob/d741956969f0adcd523c13d682e9ca8d7b313cb0/references/3chat-customer-growth-1.0.4/skills/3chat-customer-growth/SKILL.md#L54-L56)\n\n十二工具现有范围。\n\n```text\n## Current Boundary\n\nUse only the twelve public tools listed above. Do not call internal channel lookup tools or claim support for customer-record updates, campaign or scheduling objects, 3Chat Agent configuration, or server-side aggregate analytics that the current tools do not expose.\n```\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 固定插件如何桥接远端能力与模型？\n\n**研究主题：**功能与机制、贡献与相对优势\n\n#### 完整回答\n\nbundle拆为threeChat服务、tools消费者和Skill filesystem。Host建立国内/海外两个固定MCP端点与独立credentialKey，通过OAuth连接组织授权；UI语言激活某端点，切换增加selectionGeneration并清工具。工具注册时捕获region/generation，调用再校验，避免旧注册静默发到新区域。\n\n远端listTools最多20页，prepareCatalog只接受十二公开业务名、可编译object schema，重复名剔除；保留服务端真实参数而非自造租户字段。Ajv按tool对象缓存且去$id以免跨租户同$id重用；调用前再次discover并按最新schema验证。能力缺失返回tool-unavailable，不捏造结果。\n\n贡献是把组织客户数据、消息/附件执行、OAuth和动态契约接入DSH，并提供明确触达礼仪和受理未知收据。不是新客户模型，也不是3Chat Agent自身的能力实现；运营效果依赖实际数据、渠道和模型。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[cordis.patch.yml:1-17](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/blob/d741956969f0adcd523c13d682e9ca8d7b313cb0/cordis.patch.yml#L1-L17)\n\n服务/tools/Skill三部分。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n# One provider, independent consumers. No Agent preset or DSH core is replaced.\n- insert:\n    - id: 3chat-mcp\n      name: '3chat-customer-growth'\n      config:\n        requestTimeoutMs: 30000\n        callbackTimeoutMs: 600000\n        loopbackPort: 43110\n    - id: threechat-tools\n      name: '3chat-customer-growth/tools'\n    - id: threechat-skills\n      name: '@deepseek-ai/dsh-skill-filesystem'\n      inject: [threeChat]\n      config:\n        providerName: 3chat-customer-growth\n        includeDefaultRoots: false\n        customSkillDirs: !!js '[ctx.threeChat.skillRoot]'\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/regions.js:1-34](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/blob/d741956969f0adcd523c13d682e9ca8d7b313cb0/src/regions.js#L1-L34)\n\n固定区域与凭据key。\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\nexport const REGIONS = {\n  \"cn\": {\n    \"id\": \"cn\",\n    \"locale\": \"zh\",\n    \"title\": \"3Chat 私域客户运营\",\n    \"description\": \"通过微信、企业微信、小红书、抖音等已连接渠道查询、筛选客户。向单个或批量客户定向发送个性化消息。客户产生回复后，已配置的 3Chat Agent 可接续上下文，提供 7×24 小时自主接待，持续完成需求沟通、产品答疑、异议处理和购买引导，帮助商家将客户洞察转化为真实触达和成交机会\",\n    \"serverUrl\": \"https://app.3chatai.cn/mcp\",\n    \"website\": \"https://www.3chatai.cn/\",\n    \"credentialKey\": \"threechat-mcp/oauth\",\n    \"examples\": [\n      \"我昨天有哪些新客户？\",\n      \"给林女士拟一条跟进信息\",\n      \"把这张活动图片和介绍，发给张先生\"\n    ]\n  },\n  \"global\": {\n    \"id\": \"global\",\n    \"locale\": \"en\",\n    \"title\": \"3Chat Customer Growth\",\n    \"description\": \"Run customer outreach across Instagram, Facebook Messenger, and WhatsApp from DeepSeek Harness. Review customer context, prepare personalized messages, and send through connected 3Chat channels after your confirmation. When customers reply, your configured 3Chat Agent can continue the conversation 24/7, answer questions, handle objections, and guide the next step or hand off to a person. Access and actions follow your organization’s 3Chat permissions.\",\n    \"serverUrl\": \"https://app.3chat.ai/mcp\",\n    \"website\": \"https://3chat.ai\",\n    \"credentialKey\": \"threechat-global/oauth\",\n    \"examples\": [\n      \"What new clients did I get yesterday?\",\n      \"Draft a follow-up message for Ms. Lin.\",\n      \"Send this event photo and introduction to Mr. Zhang.\"\n    ]\n  }\n};\n\nexport function regionForLocale(locale) {\n  return /^zh(?:[-_]|$)/i.test(String(locale ?? \"\")) ? REGIONS.cn : REGIONS.global;\n}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/index.js:90-103](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/blob/d741956969f0adcd523c13d682e9ca8d7b313cb0/src/index.js#L90-L103)\n\n切region增generation并清目录。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n  async activateLocale(locale) {\n    if (this.closed) throw new Error('Plugin unloaded');\n    const region = regionForLocale(locale);\n    const changed = region.id !== this.activeRegion;\n    if (changed) {\n      this.activeRegion = region.id;\n      this.selectionGeneration++;\n      this.publish([]);\n    }\n    const generation = this.selectionGeneration;\n    const connection = this.connections[region.id];\n    if (changed || !connection.catalog) await connection.refreshTools();\n    if (!this.closed && generation === this.selectionGeneration) this.publish(connection.getToolDefinitions());\n    return { ...await connection.status(), region: region.id, locale: region.locale };\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/index.js:125-139](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/blob/d741956969f0adcd523c13d682e9ca8d7b313cb0/src/index.js#L125-L139)\n\n捕获generation与调用检查。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n  capturedConnector() {\n    const region = this.activeRegion;\n    const generation = this.selectionGeneration;\n    return { region, generation, locale: region ? REGIONS[region].locale : 'en',\n      title: region ? REGIONS[region].title : '',\n      call: (tool, args, signal) => this.call(tool, args, signal, region, generation) };\n  }\n  async call(tool, args, signal, expectedRegion = this.activeRegion, expectedGeneration = this.selectionGeneration) {\n    const isCurrent = () => !this.closed && expectedRegion === this.activeRegion && expectedGeneration === this.selectionGeneration;\n    if (!expectedRegion || !isCurrent()) return { status: 'connection-required', code: 'REGION_CHANGED',\n      message: 'The active connector changed. Restart this request in the selected connector.' };\n    const owners = tool === 'get_3chat_batch_send_status' ? this.jobs.get(args?.job_id) : undefined;\n    if (owners && !owners.has(expectedRegion)) return { status: 'invalid-arguments', code: 'JOB_REGION_MISMATCH',\n      message: 'This batch belongs to the other connector. Switch back to its language to track it.' };\n    const result = await this.connections[expectedRegion].call(tool, args, signal, isCurrent);\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/connection.js:363-377](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/blob/d741956969f0adcd523c13d682e9ca8d7b313cb0/src/connection.js#L363-L377)\n\n分页发现和契约准备。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n  async discover(client) {\n    const generation = this.generation;\n    let cursor;\n    const definitions = [];\n    for (let page = 0; page < 20; page++) {\n      const result = await client.listTools(cursor ? { cursor } : undefined);\n      definitions.push(...result.tools);\n      cursor = result.nextCursor;\n      if (!cursor) break;\n      if (page === 19) throw new ToolContractError('CAPABILITY_CHANGED', '3Chat 工具列表过长，请联系维护者。');\n    }\n    const tools = prepareCatalog(definitions);\n    if (this.closed || generation !== this.generation) throw new ConnectionError('CANCELLED', 'Cancelled');\n    this.publishTools([...tools.values()]);\n    this.catalog = { tools };\n```\n\n</details>\n\n**依据 6 · 源码核查**：[src/tool-schema.js:21-58](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/blob/d741956969f0adcd523c13d682e9ca8d7b313cb0/src/tool-schema.js#L21-L58)\n\nAjv编译/去ID/白名单和重复剔除。\n\n<details>\n<summary>查看原文（38行）</summary>\n\n```text\nconst compilers = [new Ajv({ strict: false }), new Ajv2020({ strict: false })];\nfor (const compiler of compilers) {\n  addFormats(compiler);\n  compiler.addFormat('int32', { type: 'number', validate: n => Number.isInteger(n) && n >= -2147483648 && n <= 2147483647 });\n  compiler.addFormat('int64', { type: 'number', validate: Number.isSafeInteger });\n}\nfunction validatorFor(tool) {\n  let validator = validators.get(tool);\n  if (!validator) {\n    const compiler = tool.inputSchema.$schema?.includes('2020-12') ? compilers[1] : compilers[0];\n    // Remote schemas commonly share an $id. Compile anonymously so tenants\n    // cannot accidentally reuse another tenant's cached schema by that ID.\n    const schema = { ...tool.inputSchema }; delete schema.$id;\n    validator = compiler.compile(schema);\n    validators.set(tool, validator);\n  }\n  return validator;\n}\n\nexport function prepareCatalog(tools) {\n  const catalog = new Map();\n  const duplicates = new Set();\n  for (const tool of tools) {\n    if (!tool || !TOOL_NAMES.includes(tool.name) || duplicates.has(tool.name)) continue;\n    if (catalog.has(tool.name)) {\n      catalog.delete(tool.name);\n      duplicates.add(tool.name);\n      continue;\n    }\n    if (tool.inputSchema?.type !== 'object') continue;\n    // Omit unusable capabilities individually. Keep server schemas unchanged;\n    // never invent arguments or retain a tool removed from the live catalog.\n    const copy = structuredClone(tool);\n    try { validatorFor(copy); }\n    catch { continue; }\n    catalog.set(tool.name, copy);\n  }\n  return new Map(TOOL_NAMES.filter(name => catalog.has(name)).map(name => [name, catalog.get(name)]));\n```\n\n</details>\n\n**依据 7 · 源码核查**：[src/connection.js:416-434](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/blob/d741956969f0adcd523c13d682e9ca8d7b313cb0/src/connection.js#L416-L434)\n\n新目录验证再调用。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n        const result = await this.withSession(async (client, requestSignal) => {\n          await this.discover(client);\n          const tool = this.catalog.tools.get(toolName);\n          if (!tool) return {\n            status: 'tool-unavailable', code: 'TOOL_UNAVAILABLE', isError: true, tool: toolName,\n            message: this.locale === 'en' ? 'This tool is not currently available for this account. Other available tools can still be used.' : '当前账号暂不可用此工具，其余可用工具仍可继续使用。',\n            availableTools: [...this.catalog.tools.keys()],\n            nextAction: this.locale === 'en' ? 'Use an available tool, or explain that this operation is unavailable. Do not invent a result or retry automatically.' : '使用当前可用工具，或说明此操作暂不可用；不要编造结果或自动重试。',\n          };\n          if (write && typeof grant.tokens?.scope === 'string' && !scopesOf(grant).includes('messages:write')) {\n            this.needsAuthorization = true;\n            return { status: 'connection-required', message: this.locale === 'en' ? 'The grant lacks messages:write. Reconnect and review permissions.' : '当前授权缺少 messages:write，请在插件页重新连接并审阅权限。' };\n          }\n          const request = validateArguments(tool, args);\n          dispatched = true;\n          // A single explicit call. Never replay a write after a timeout or\n          // business error; preserve the server's aiAction and idempotency facts.\n          return client.callTool({ name: toolName, arguments: request },\n            { timeout: this.requestTimeoutMs, signal: requestSignal, toolDefinition: tool });\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · OAuth、凭据持久化和地区切换怎样约束风险？\n\n**研究主题：**工程质量与复用、缺陷与关键质疑\n\n#### 完整回答\n\nscope固定customers:read messages:write，授权URL若多出未声明scope拒绝；provider保存codeVerifier与随机state，回调先核state再读code/error，iss交SDK后续验证。临时HTTP listener只绑定127.0.0.1，固定端口被占可用临时端口，close有socket宽限清理。这里可证的是客户端流程，不能替代上游授权服务器安全审计。\n\ncredentials.modifyRecord包一个读/刷新/写lease，SDK操作在staged状态，closed/generation改变不写回过时grant；复杂URL/Headers等显式转JSON，不可表示类型抛字段/原型错误而非静默丢字段。令牌存储保密、文件权限和远程管理权限由宿主credentials/authorization实现承担，插件不额外加密。\n\nregion选择是ThreeChatService单实例activeRegion，客户端切语言会改变该实例共享选择；captured generation让旧工具失败而非跨区误发，但多客户端语言不同会有相互切换/重试成本。凭据按区域而非每session保存，不能宣称多组织多用户隔离。批次job区域映射仅内存，重启后不知旧job归属，仍须人保留地区/组织/原job。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/oauth/flow.js:4-5](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/blob/d741956969f0adcd523c13d682e9ca8d7b313cb0/src/oauth/flow.js#L4-L5)\n\n固定scope。\n\n```text\n/** Scope required by Skill 1.0.4; the SDK must never default to all advertised scopes. */\nexport const OAUTH_SCOPE = 'customers:read messages:write';\n```\n\n**依据 2 · 源码核查**：[src/oauth/flow.js:45-71](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/blob/d741956969f0adcd523c13d682e9ca8d7b313cb0/src/oauth/flow.js#L45-L71)\n\nscope校验与iss/clearState。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\n/** Refuse an authorization URL asking for permissions outside the declared scope. */\nexport function assertRequestedScope(authorizationUrl, requestedScope = OAUTH_SCOPE) {\n  const requested = new URL(String(authorizationUrl)).searchParams.get('scope') ?? '';\n  const asked = requested.split(/\\s+/).filter(Boolean);\n  const expected = new Set(requestedScope.split(/\\s+/).filter(Boolean));\n  const disallowed = asked.filter(scope => !expected.has(scope));\n  if (disallowed.length) {\n    throw new FlowError('SCOPE_ESCALATION', `Authorization requested undeclared scopes: ${disallowed.join(', ')}`);\n  }\n  return asked;\n}\n\n/** Exchange the validated loopback code through the SDK, then discard the nonce and verifier. */\nexport async function completeAuthorization({ serverUrl, redirectUrl, persistFor, seed,\n  authorizationCode, iss, scope = OAUTH_SCOPE, fetchFn, clientName = OAUTH_CLIENT_NAME }) {\n  // The listener already extracted the decoded code. OAuth codes are opaque, including punctuation.\n  if (typeof authorizationCode !== 'string' || authorizationCode.length === 0) {\n    throw new FlowError('NO_CODE', 'Expected a nonempty authorization code from the loopback listener');\n  }\n  const provider = createProvider({ redirectUrl, persistFor, seed, scope, clientName, onRedirect: () => {} });\n  const result = await auth(provider, {\n    serverUrl: new URL(serverUrl), authorizationCode, iss, scope, fetchFn,\n  });\n  if (result !== 'AUTHORIZED') {\n    throw new FlowError('AUTHORIZATION_FAILED', `Token exchange did not return AUTHORIZED (got ${String(result)})`);\n  }\n  await provider.clearState();\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/oauth/provider.js:47-69](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/blob/d741956969f0adcd523c13d682e9ca8d7b313cb0/src/oauth/provider.js#L47-L69)\n\nverifier/state生命周期。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n    async saveCodeVerifier(codeVerifier) {\n      await put('codeVerifier', codeVerifier);\n    },\n    async codeVerifier() {\n      return state.codeVerifier;\n    },\n    /**\n     * CSRF nonce echoed back on the callback; the SDK omits `state` when this is\n     * absent. A nonce is minted once per authorization attempt and cleared when\n     * the callback leg consumes the provider, so a stale nonce can never be\n     * replayed against a later attempt.\n     */\n    async state() {\n      const next = state.oauthState ?? randomUUID();\n      if (state.oauthState !== next) await put('oauthState', next);\n      return next;\n    },\n    /** Consume the nonce after a successful exchange. */\n    async clearState() {\n      if (state.oauthState !== undefined || state.codeVerifier !== undefined) {\n        delete state.oauthState;\n        delete state.codeVerifier;\n        await persist({ ...state });\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/oauth/callback.js:148-168](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/blob/d741956969f0adcd523c13d682e9ca8d7b313cb0/src/oauth/callback.js#L148-L168)\n\nstate优先拒绝。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n    // CSRF first: refuse a response that does not echo the state this attempt issued,\n    // before reading anything else out of it.\n    let expected;\n    try {\n      expected = await expectedState();\n    } catch (cause) {\n      reply(res, 500, 'Cannot verify this callback', 'The pending authorization state could not be read.');\n      settleOnce(settle.reject, new CallbackError('STATE_UNAVAILABLE', `cannot read the pending state: ${String(cause)}`));\n      return;\n    }\n    const state = params.get('state') ?? undefined;\n    if (expected === undefined || state !== expected) {\n      settleOnce(\n        settle.reject,\n        new CallbackError(\n          'STATE_MISMATCH',\n          'the callback did not echo the state issued for this attempt; refused without reading the code',\n        ),\n      );\n      reply(res, 400, 'Callback refused', 'The state parameter did not match this authorization attempt.');\n      return;\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/oauth/callback.js:209-254](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/blob/d741956969f0adcd523c13d682e9ca8d7b313cb0/src/oauth/callback.js#L209-L254)\n\nloopback绑定和清理。\n\n<details>\n<summary>查看原文（46行）</summary>\n\n```text\n  /** Bind, retrying once on an ephemeral port when the preferred one is taken. */\n  const listen = (bindPort) =>\n    new Promise((resolve, reject) => {\n      const onError = (error) => {\n        server.removeListener('listening', onListening);\n        reject(error);\n      };\n      const onListening = () => {\n        server.removeListener('error', onError);\n        resolve(server.address());\n      };\n      server.once('error', onError);\n      server.once('listening', onListening);\n      server.listen(bindPort, '127.0.0.1');\n    });\n\n  let address;\n  try {\n    address = await listen(port);\n  } catch (error) {\n    if (error?.code !== 'EADDRINUSE') throw error;\n    // A dynamic registration binds one port into its redirect_uri, so a taken port\n    // means a fresh registration on the ephemeral port instead.\n    address = await listen(0);\n  }\n\n  const boundPort = typeof address === 'object' && address !== null ? address.port : port;\n\n\n  /**\n   * Release the port. A waiter that is still pending is failed with CLOSED rather than\n   * left unresolved: unloading the plugin must end the in-flight tool call, not hang it\n   * until its timeout.\n   */\n  const close = (reason) => {\n    if (closePromise) return closePromise;\n    closed = true;\n    if (timer !== undefined) clearTimeout(timer);\n    settleOnce(settle.reject, new CallbackError('CLOSED', reason ?? 'the callback listener was closed before a callback arrived'));\n    closePromise = new Promise((resolve) => {\n      // Chrome may open an extra TCP socket without sending a request. Node's\n      // server.close() leaves that socket alive, blocking the token exchange.\n      // Let active callback responses flush, but bound teardown of every socket.\n      const force = setTimeout(() => { for (const socket of sockets) socket.destroy(); }, CALLBACK_CLEANUP_GRACE_MS);\n      server.close(() => {\n        clearTimeout(force);\n```\n\n</details>\n\n**依据 6 · 源码核查**：[src/connection.js:111-125](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/blob/d741956969f0adcd523c13d682e9ca8d7b313cb0/src/connection.js#L111-L125)\n\ncredential lease和代际写入。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n  // The SDK operates on an in-memory snapshot while the credential provider owns\n  // one atomic read/refresh/write lease. No nested record locks or stale snapshot merges.\n  async transaction(operation, generation = this.generation) {\n    let value, failure;\n    await this.credentials.modifyRecord(this.credentialKey, async (record) => {\n      let staged = { ...readGrant(record) };\n      let dirty = false;\n      const persistFor = () => async (next) => { staged = { ...next }; dirty = true; };\n      try { value = await operation(staged, persistFor, (next) => { staged = next; dirty = true; }); }\n      catch (error) { failure = error; }\n      if (this.closed || generation !== this.generation) return undefined;\n      return dirty ? toStorableGrant({ ...staged, updatedAt: new Date(this.clock()).toISOString() }) : undefined;\n    });\n    if (failure) throw failure;\n    return value;\n```\n\n</details>\n\n**依据 7 · 源码核查**：[src/oauth/credentials.js:48-88](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/blob/d741956969f0adcd523c13d682e9ca8d7b313cb0/src/oauth/credentials.js#L48-L88)\n\n显式JSON序列化。\n\n<details>\n<summary>查看原文（41行）</summary>\n\n```text\nfunction toCredentialJson(value, path = '') {\n  if (value === undefined) return undefined;\n  if (value === null) return null;\n  const type = typeof value;\n  if (type === 'string' || type === 'boolean') return value;\n  if (type === 'number') {\n    if (Number.isFinite(value)) return value;\n    throw new UnserializableCredentialValue(path, 'non-finite number');\n  }\n  if (type === 'bigint' || type === 'symbol' || type === 'function') {\n    throw new UnserializableCredentialValue(path, type);\n  }\n\n  if (Array.isArray(value)) return value.map((item, index) => toCredentialJson(item, `${path}[${index}]`));\n  if (value instanceof Date) return value.toISOString();\n  if (value instanceof URL) return value.toString();\n  if (value instanceof Error) return { name: value.name, message: value.message };\n  if (value instanceof Headers) return Object.fromEntries(value.entries());\n  if (value instanceof Map) return toCredentialJson(Object.fromEntries(value), path);\n  if (value instanceof Set) return toCredentialJson([...value], path);\n  if (value instanceof ArrayBuffer) return Buffer.from(value).toString('base64');\n  if (ArrayBuffer.isView(value)) {\n    return Buffer.from(value.buffer, value.byteOffset, value.byteLength).toString('base64');\n  }\n\n  if (isPlainObject(value)) {\n    const out = {};\n    for (const [key, nested] of Object.entries(value)) {\n      const converted = toCredentialJson(nested, path ? `${path}.${key}` : key);\n      if (converted !== undefined) out[key] = converted;\n    }\n    return out;\n  }\n\n  const proto = Object.getPrototypeOf(value);\n  throw new UnserializableCredentialValue(path, proto === null ? 'null' : proto.constructor?.name ?? '<anonymous>');\n}\n\n/** Tag a credential record's payload so nothing unrepresentable can be stored. */\nexport function toStorableGrant(payload) {\n  return { kind: 'grant', payload: toCredentialJson(payload, 'payload') };\n```\n\n</details>\n\n**依据 8 · 源码核查**：[src/index.js:22-31](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/blob/d741956969f0adcd523c13d682e9ca8d7b313cb0/src/index.js#L22-L31)\n\n共享region/jobs与两个凭据槽。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n    this.activeRegion = undefined;\n    this.selectionGeneration = 0;\n    this.clientManaged = false;\n    this.closed = false;\n    this.listeners = new Set();\n    this.jobs = new Map();\n    this.connections = Object.fromEntries(Object.values(REGIONS).map(region => [region.id,\n      new ThreeChatConnection({ ...config, credentials: ctx.credentials, logger: ctx.logger,\n        serverUrl: region.serverUrl, credentialKey: region.credentialKey,\n        locale: region.locale, productTitle: region.title })]));\n```\n\n</details>\n\n#### 缺口\n\n- 宿主credentials/remote授权、实际租户权限及多客户端共享行为没有同版本部署证据。\n  **影响：**不提供组织/会话隔离或令牌保密验收。\n  **进一步探讨：**可继续核宿主秘密存储与远程权限链，受控双语言/双组织分别验证拒绝点和切换提示。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · “确认发送”和“不重复”能保证到什么程度？\n\n**研究主题：**缺陷与关键质疑\n\n#### 完整回答\n\n所有upload/send工具标写且串行队列，pre-execute先尊重上游非allow决定；若allow则返回ask，上传也要求本次确认。Skill要求提前展示准确收件人/账号/内容/附件/范围。审批reason主要列目标并提醒检查，最终正文绑定依赖宿主完整参数展示与用户核对；插件没有自己记录一个草稿hash确认token，不能宣称两层确认均程序强制。\n\n连接器对每显式工具执行的HTTP tools/call维护sentWrites集合，同工具名第二次dispatch拒绝，即使SDK401/头不匹配重试也不自动重放。调用后错误若write&&dispatched返回acceptance unknown并要求保原参数/幂等键、已有job只查询原任务。这比“失败即重发”保守，但dispatched在client.callTool前设置，所以可能把尚未远端收到的失败也保守记未知，而不是证明远端受理。\n\n单次不重放不是跨显式调用的全局exactly-once。用户/模型再次调用、另一会话/重启或远端自身重试仍依靠平台幂等键/批次状态，插件没有本地持久发送账本。取消本地请求不撤回已受理消息，平台accepted/COMPLETED不证明渠道送达/已读，客户运营不能用这些代替业务成效。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/tools.js:88-99](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/blob/d741956969f0adcd523c13d682e9ca8d7b313cb0/src/tools.js#L88-L99)\n\n写串行与signal检查。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n      isConcurrencySafe: () => readNames.has(tool.name),\n      execute(args, execution) {\n        const call = () => {\n          execution?.signal?.throwIfAborted();\n          return connector ? connector.call(tool.name, args, execution?.signal) : ctx.threeChat.call(tool.name, args, execution?.signal);\n        };\n        if (!writeNames.has(tool.name)) return call();\n        // The host scheduler treats writes as exclusive; this queue also covers\n        // callers using tools.execute directly instead of that scheduler.\n        const pending = writeTail.then(call);\n        writeTail = pending.catch(() => {});\n        return pending;\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/tools.js:112-115](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/blob/d741956969f0adcd523c13d682e9ca8d7b313cb0/src/tools.js#L112-L115)\n\n先尊重next再ask。\n\n```text\n  ctx.on('tools/pre-execute', async (execution, next) => {\n    const decision = await next();\n    if (decision.kind !== 'allow' || !writeNames.has(execution.name)) return decision;\n    return { kind: 'ask', reason: approvalReason(execution.name, execution.arguments, ctx.threeChat.capturedConnector?.().locale ?? 'zh') };\n```\n\n**依据 3 · 源码核查**：[references/3chat-customer-growth-1.0.4/skills/3chat-customer-growth/SKILL.md:39-43](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/blob/d741956969f0adcd523c13d682e9ca8d7b313cb0/references/3chat-customer-growth-1.0.4/skills/3chat-customer-growth/SKILL.md#L39-L43)\n\n明确内容确认与状态/重试规则。\n\n```text\n4. Drafting, analysis, and audience selection do not authorize sending. Before any send, show the exact recipients, sender account or channel, final content, attachments, and scope, then obtain explicit confirmation.\n5. Use an existing final HTTP/HTTPS download URL only when it needs no authentication or custom headers and is neither a preview page nor redirect-only link. Otherwise call `upload_3chat_attachment` and prefer reusing the complete `data.attachment` object.\n6. After a batch returns `job_id`, call only `get_3chat_batch_send_status` for that job; never recreate the batch.\n7. Follow structured error fields and `aiAction`. Retry a send with identical business parameters and the original idempotency key only for `RETRY_SAME_REQUEST`.\n8. Do not expose raw JSON by default. Separate 3Chat facts from model inference, and never equate `accepted`, `sent`, or `COMPLETED` with channel delivery or read status.\n```\n\n**依据 4 · 源码核查**：[src/connection.js:128-143](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/blob/d741956969f0adcd523c13d682e9ca8d7b313cb0/src/connection.js#L128-L143)\n\n一次执行内防SDK重放。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n  boundedFetch(controller) {\n    const sentWrites = new Set();\n    return (url, init = {}) => {\n      let rpc;\n      try { if (typeof init.body === 'string') rpc = JSON.parse(init.body); } catch { /* OAuth forms are not RPC. */ }\n      if (rpc?.method === 'tools/call' && WRITE_TOOLS.has(rpc.params?.name)) {\n        // The SDK may retry after 401 or HEADER_MISMATCH. A write gets at most\n        // one HTTP dispatch per explicit tool execution, even on those paths.\n        if (sentWrites.has(rpc.params.name)) throw new ConnectionError('WRITE_REPLAY_BLOCKED', 'Automatic write replay blocked');\n        sentWrites.add(rpc.params.name);\n      }\n      const request = {\n        ...init,\n        signal: AbortSignal.any([controller.signal, AbortSignal.timeout(this.requestTimeoutMs), ...(init.signal ? [init.signal] : [])]),\n      };\n      return this.fetchFn(url, request);\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/connection.js:425-449](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/blob/d741956969f0adcd523c13d682e9ca8d7b313cb0/src/connection.js#L425-L449)\n\nscope、dispatched与受理未知。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n          if (write && typeof grant.tokens?.scope === 'string' && !scopesOf(grant).includes('messages:write')) {\n            this.needsAuthorization = true;\n            return { status: 'connection-required', message: this.locale === 'en' ? 'The grant lacks messages:write. Reconnect and review permissions.' : '当前授权缺少 messages:write，请在插件页重新连接并审阅权限。' };\n          }\n          const request = validateArguments(tool, args);\n          dispatched = true;\n          // A single explicit call. Never replay a write after a timeout or\n          // business error; preserve the server's aiAction and idempotency facts.\n          return client.callTool({ name: toolName, arguments: request },\n            { timeout: this.requestTimeoutMs, signal: requestSignal, toolDefinition: tool });\n        }, signal);\n        this.fault = undefined;\n        this.lastCheckedAt = new Date(this.clock()).toISOString();\n        return result;\n      } catch (error) {\n        const fault = publicError(error, this.locale);\n        if (error instanceof ToolContractError) return {\n          status: error.code === 'INVALID_ARGUMENTS' ? 'invalid-arguments' : 'query-failed',\n          code: fault.code, field: error.field, message: fault.message, nextAction: fault.message,\n        };\n        this.recordFailure(error);\n        return { status: fault.code === 'AUTH_REQUIRED' || fault.code === 'RESOURCE_MISMATCH'\n            ? 'connection-required' : 'unavailable', code: fault.code, message: fault.message,\n          ...(write && dispatched ? { acceptance: 'unknown',\n            nextAction: this.locale === 'en' ? 'Acceptance is unknown. Keep the original parameters and idempotency key; query the original job if available.' : '未确认远端是否已受理；保留原参数与幂等键，不自动重发；若已有 job_id，只查询原任务。' }\n```\n\n</details>\n\n#### 缺口\n\n- 宿主ask展示是否包含最终全部参数及平台幂等/批次送达语义没有实际受控证据。\n  **影响：**不能保证同意绑定内容hash或端到端只发送一次。\n  **进一步探讨：**用测试组织的模拟/沙箱消息与故障代理记录确认参数、dispatch次数、幂等键与查询状态，不能接触真实客户。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 依赖与启动/运营流程是什么？\n\n**研究主题：**依赖、兼容与流程\n\n#### 完整回答\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| Node>=22和DSH授权/凭据/Typert/工具/Skill服务 | 必需 | OAuth、接口和模型工具 | 插件UI可见不代表授权完成 |\n| 3Chat组织/空间和渠道查询/发送权限 | 业务必需 | 远端数据与执行 | 动态目录仅暴露可用工具 |\n| 浏览器与本机loopback回调 | 首次交互授权 | state/code/PKCE流程 | 端口/超时可取消重连 |\n| MCP client/Ajv等打包运行资产 | 必需 | 协议和schema验证 | 固定包版本需保留 |\n| 当前模型和客户数据披露许可 | 模型分析前提 | 生成洞察/草稿 | 客户上下文进入模型 |\n| 3Chat Agent知识/渠道转人工规则 | 仅自动接待 | 后续回复服务 | 插件不自动完成配置 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 准备 | 用测试组织配置最小渠道权限 | 数据/账号与地区清楚 |\n| 连接 | 选语言/地区，浏览器审阅scope | 回到DSH查连接与目录 |\n| 查询 | 已知客户ID和少量上下文 | 区分事实/推断及分页遗漏 |\n| 拟稿 | 用户校对正文/附件/目标 | 分析不授权发送 |\n| 触达 | 对完整目标与内容明确确认及宿主ask | 只明确本次操作，保留幂等键 |\n| 跟踪 | 批次只查原job，未知不自动重发 | 区分受理/发送/送达/成交 |\n| 维护 | 权限变更重授权，切区重核目标 | disconnect不等于撤回已发消息 |\n\n本轮未登录、调用客户工具、上传或发送，只研究实现与随包Skill。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:70-98](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/blob/d741956969f0adcd523c13d682e9ca8d7b313cb0/package.json#L70-L98)\n\n主要依赖/作者脚本与Node。\n\n<details>\n<summary>查看原文（29行）</summary>\n\n```text\n    \"@deepseek-ai/cordis\": \"4.0.4\",\n    \"@deepseek-ai/dsh-typert-protocol\": \"0.2.0-rc.2\",\n    \"@deepseek-ai/schemastery\": \"3.18.4\",\n    \"@modelcontextprotocol/client\": \"2.3.1\",\n    \"ajv\": \"^8.20.0\",\n    \"ajv-formats\": \"^3.0.1\",\n    \"esbuild\": \"^0.25.12\",\n    \"react\": \"19.1.1\",\n    \"zod\": \"^4.6.5\",\n    \"js-yaml\": \"^5.4.3\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin.git\"\n  },\n  \"homepage\": \"https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin\",\n  \"bugs\": {\n    \"url\": \"https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/issues\"\n  },\n  \"scripts\": {\n    \"build\": \"node scripts/build.mjs\",\n    \"pack\": \"npm run build && node scripts/pack.mjs\",\n    \"test\": \"node --test test/*.test.mjs\",\n    \"check:git-install\": \"node scripts/check-git-install.mjs\"\n  },\n  \"engines\": {\n    \"node\": \">=22\"\n  },\n  \"license\": \"Apache-2.0\"\n```\n\n</details>\n\n**依据 2 · 作者声明**：[README.md:40-56](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/blob/d741956969f0adcd523c13d682e9ca8d7b313cb0/README.md#L40-L56)\n\n作者宿主/账号准备与语言分流。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n````text\n需要官方 0.2.1-rc.2 或更新版本 [**DeepSeek Harness**](https://www.deepseek.com/harness/) 和具有客户查询、渠道发送权限的 **3Chat 组织账号**。\n\n1. 在 [3Chat 国内站](https://www.3chatai.cn/) 准备业务空间、连接渠道；需要自主接待时，配置该渠道的 Agent、知识和转人工规则。\n2. 打开 DSH「插件 → 添加插件」，粘贴[仓库完整地址](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin)，安装后启用：\n\n   ```text\n   https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin\n   ```\n3. 打开“3Chat 私域客户运营”，点击“连接 3Chat”，在浏览器登录目标组织账号并授权。\n4. 返回对话，先查询一个已知客户，再准备一条跟进草稿。\n\n在「插件 → 添加插件」中输入上述仓库地址，即可安装 3Chat 插件。启用并完成账号授权后，即可在 DeepSeek Harness 对话中使用客户运营功能。升级时先卸载，再粘贴同一地址安装。也可使用 [Release 安装包](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/releases/latest/download/3chat-customer-growth.tgz)。自行构建见[开发说明](docs/development.md)。\n\n插件随 DSH 界面语言选择服务：中文连接国内服务，其他语言连接海外服务；两端分别授权。上传和发送还需通过 DSH 的本次执行确认。客户与渠道可见范围遵循组织授权。\n\n## 进一步使用\n\n````\n\n</details>\n\n**依据 3 · 源码核查**：[cordis.patch.yml:1-17](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/blob/d741956969f0adcd523c13d682e9ca8d7b313cb0/cordis.patch.yml#L1-L17)\n\n授权/工具/Skill装配。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n# One provider, independent consumers. No Agent preset or DSH core is replaced.\n- insert:\n    - id: 3chat-mcp\n      name: '3chat-customer-growth'\n      config:\n        requestTimeoutMs: 30000\n        callbackTimeoutMs: 600000\n        loopbackPort: 43110\n    - id: threechat-tools\n      name: '3chat-customer-growth/tools'\n    - id: threechat-skills\n      name: '@deepseek-ai/dsh-skill-filesystem'\n      inject: [threeChat]\n      config:\n        providerName: 3chat-customer-growth\n        includeDefaultRoots: false\n        customSkillDirs: !!js '[ctx.threeChat.skillRoot]'\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/oauth/callback.js:209-232](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/blob/d741956969f0adcd523c13d682e9ca8d7b313cb0/src/oauth/callback.js#L209-L232)\n\nloopback端口条件。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n  /** Bind, retrying once on an ephemeral port when the preferred one is taken. */\n  const listen = (bindPort) =>\n    new Promise((resolve, reject) => {\n      const onError = (error) => {\n        server.removeListener('listening', onListening);\n        reject(error);\n      };\n      const onListening = () => {\n        server.removeListener('error', onError);\n        resolve(server.address());\n      };\n      server.once('error', onError);\n      server.once('listening', onListening);\n      server.listen(bindPort, '127.0.0.1');\n    });\n\n  let address;\n  try {\n    address = await listen(port);\n  } catch (error) {\n    if (error?.code !== 'EADDRINUSE') throw error;\n    // A dynamic registration binds one port into its redirect_uri, so a taken port\n    // means a fresh registration on the ephemeral port instead.\n    address = await listen(0);\n```\n\n</details>\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 失败恢复与生命周期有哪些具体设计取舍？\n\n**研究主题：**工程质量与复用\n\n#### 完整回答\n\n每connection serial队列把操作/刷新授权按序执行，withSession用AbortController合并调用signal与每request timeout，结束close transport并移除signal监听。dispose使generation失效、abort所有请求、关闭授权listener并等清理，这些是可核的资源退出路径。\n\n工具目录更新先验证新catalog再清旧注册；新注册失败回滚旧definitions，每代注册也局部清理已成功项。但回滚本身失败仍会抛，外部服务突然变更时不能保证总有可用目录。远端工具description和客户内容是模型输入，Skill引导和schema不自动消除提示注入；写门禁/完整确认仍要有效。\n\nreadNames在宿主标isConcurrencySafe，实际connection serial将同连接读也排队，稳定性换吞吐；每次调用discover及新MCP transport增加网络与授权lease持有时间。队列中取消会在执行时检查，但是否立即释放所有等待交互需实际量测。断连受理未知记录只返回调用者，没有本地持久活动/组织/幂等账本，恢复须保留原上下文。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/connection.js:77-83](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/blob/d741956969f0adcd523c13d682e9ca8d7b313cb0/src/connection.js#L77-L83)\n\nconnection串行。\n\n```text\n  serial(operation) {\n    const task = this.queue.then(() => {\n      if (this.closed) throw new ConnectionError('CLOSED', 'Plugin unloaded');\n      return operation();\n    });\n    this.queue = task.catch(() => {});\n    return task;\n```\n\n**依据 2 · 源码核查**：[src/connection.js:329-360](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/blob/d741956969f0adcd523c13d682e9ca8d7b313cb0/src/connection.js#L329-L360)\n\n请求signal/lease/transport清理。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\n  async withSession(operation, signal) {\n    const generation = this.generation;\n    const controller = new AbortController();\n    const abort = () => controller.abort();\n    if (signal?.aborted) abort();\n    signal?.addEventListener('abort', abort, { once: true });\n    this.requests.add(controller);\n    try {\n      return await this.transaction(async (seed, persistFor) => {\n        if (!hasToken(seed)) throw new ConnectionError('AUTH_REQUIRED', 'No credential');\n        if (!this.matchesResource(seed)) throw new ConnectionError('RESOURCE_MISMATCH', 'Different resource');\n        const redirectUrl = seed.clientInformation?.redirect_uris?.[0] ?? `http://127.0.0.1:${this.loopbackPort}/oauth/3chat-mcp-callback`;\n        const provider = createOAuthClientProvider({\n          redirectUrl, seed, persist: persistFor(seed),\n          clientMetadata: { client_name: OAUTH_CLIENT_NAME, redirect_uris: [redirectUrl],\n            grant_types: ['authorization_code', 'refresh_token'], response_types: ['code'],\n            token_endpoint_auth_method: 'none', scope: OAUTH_SCOPE },\n          onRedirect: () => { throw new ConnectionError('INTERACTIVE_AUTH_REQUIRED', 'Sign in again'); },\n        });\n        const transport = new StreamableHTTPClientTransport(new URL(this.serverUrl), {\n          authProvider: provider, fetch: this.boundedFetch(controller), onInsufficientScope: 'throw',\n        });\n        const client = new Client({ name: PACKAGE_NAME, version: VERSION });\n        try {\n          await client.connect(transport, { timeout: this.requestTimeoutMs });\n          return await operation(client, controller.signal);\n        } finally { await transport.close().catch(() => {}); }\n      }, generation);\n    } finally {\n      signal?.removeEventListener('abort', abort);\n      this.requests.delete(controller);\n    }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/connection.js:456-465](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/blob/d741956969f0adcd523c13d682e9ca8d7b313cb0/src/connection.js#L456-L465)\n\ndispose终止/等待。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n  async dispose() {\n    this.closed = true; this.generation++;\n    this.toolListeners.clear();\n    for (const controller of this.requests) controller.abort();\n    const attempt = this.attempt;\n    this.attempt = undefined;\n    if (attempt) { attempt.controller.abort(); await attempt.listener.close(); }\n    await this.queue.catch(() => {});\n    await Promise.allSettled([...this.cleanups]);\n    this.catalog = undefined;\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/tools.js:63-111](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/blob/d741956969f0adcd523c13d682e9ca8d7b313cb0/src/tools.js#L63-L111)\n\n目录验证/注册局部清理/回滚。\n\n<details>\n<summary>查看原文（49行）</summary>\n\n```text\n  const register = next => {\n    const disposers = [];\n    try {\n      for (const definition of next) disposers.push(ctx.tools.register(definition));\n      return disposers;\n    } catch (error) {\n      clear(disposers);\n      throw error;\n    }\n  };\n  const replace = catalog => {\n    if (disposed) return;\n    if (!Array.isArray(catalog) || (\n        new Set(catalog.map(tool => tool.name)).size !== catalog.length ||\n        catalog.some(tool => !businessNames.has(tool.name) || !tool.inputSchema || typeof tool.inputSchema !== 'object'))) {\n      throw new Error('Invalid 3Chat tool definitions.');\n    }\n    refreshControls();\n    // Build the complete generation before changing the host registry.\n    const connector = ctx.threeChat.capturedConnector?.();\n    const next = catalog.map(tool => ({\n      name: tool.name,\n      description: connector ? `${connector.locale === 'en' ? 'Read skill(3chat-customer-growth) first.' : '先读取 skill(3chat-customer-growth)。'} [${connector.title}] ${tool.description ?? ''}` : `先读取 skill(3chat-customer-growth)。${tool.description ?? ''}`,\n      parameters: tool.inputSchema,\n      output,\n      isConcurrencySafe: () => readNames.has(tool.name),\n      execute(args, execution) {\n        const call = () => {\n          execution?.signal?.throwIfAborted();\n          return connector ? connector.call(tool.name, args, execution?.signal) : ctx.threeChat.call(tool.name, args, execution?.signal);\n        };\n        if (!writeNames.has(tool.name)) return call();\n        // The host scheduler treats writes as exclusive; this queue also covers\n        // callers using tools.execute directly instead of that scheduler.\n        const pending = writeTail.then(call);\n        writeTail = pending.catch(() => {});\n        return pending;\n      },\n    }));\n    clear(generation);\n    generation = [];\n    try {\n      generation = register(next);\n      definitions = next;\n    } catch (error) {\n      generation = register(definitions);\n      throw error;\n    }\n  };\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/connection.js:416-434](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/blob/d741956969f0adcd523c13d682e9ca8d7b313cb0/src/connection.js#L416-L434)\n\n每次发现再call。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n        const result = await this.withSession(async (client, requestSignal) => {\n          await this.discover(client);\n          const tool = this.catalog.tools.get(toolName);\n          if (!tool) return {\n            status: 'tool-unavailable', code: 'TOOL_UNAVAILABLE', isError: true, tool: toolName,\n            message: this.locale === 'en' ? 'This tool is not currently available for this account. Other available tools can still be used.' : '当前账号暂不可用此工具，其余可用工具仍可继续使用。',\n            availableTools: [...this.catalog.tools.keys()],\n            nextAction: this.locale === 'en' ? 'Use an available tool, or explain that this operation is unavailable. Do not invent a result or retry automatically.' : '使用当前可用工具，或说明此操作暂不可用；不要编造结果或自动重试。',\n          };\n          if (write && typeof grant.tokens?.scope === 'string' && !scopesOf(grant).includes('messages:write')) {\n            this.needsAuthorization = true;\n            return { status: 'connection-required', message: this.locale === 'en' ? 'The grant lacks messages:write. Reconnect and review permissions.' : '当前授权缺少 messages:write，请在插件页重新连接并审阅权限。' };\n          }\n          const request = validateArguments(tool, args);\n          dispatched = true;\n          // A single explicit call. Never replay a write after a timeout or\n          // business error; preserve the server's aiAction and idempotency facts.\n          return client.callTool({ name: toolName, arguments: request },\n            { timeout: this.requestTimeoutMs, signal: requestSignal, toolDefinition: tool });\n```\n\n</details>\n\n#### 缺口\n\n- 真实平台断网/过期/撤权、队列取消及注册回滚故障没有本轮事件记录。\n  **影响：**不声称高可用或实际取消时延。\n  **进一步探讨：**受控MCP替身覆盖401、慢响应、未知受理与回滚故障，核单dispatch、清理和可恢复状态。\n\n<a id=\"research-q07\"></a>\n\n### Q07 · 成本效果、推荐与继续探讨的方向是什么？\n\n**研究主题：**效果与总成本、采用判断、新假设与验证\n\n#### 完整回答\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 3Chat组织/渠道/授权与平台订阅 | 必要时配置Agent/知识与接待 | 订阅/渠道资费和配置时间未核，不填价格 |\n| 持续使用 | 客户上下文/模型分析、MCP发现/发送/上传网络 | 维护业务目标与渠道配置 | 网络/模型/平台费用依业务规模，不据源码估金额 |\n| 失败恢复 | 查询原job/重新授权网络，费用未知 | 受理未知时查job、保参数/幂等键和组织区域目标记录 | 无本地持久发送账本，恢复时间未量化 |\n\n#### 效果\n\n| 目标 | 源码支持的增量 | 证据边界 |\n| --- | --- | --- |\n| 同对话运营 | 查询→草稿→确认→发送/批次跟踪接线 | 不能证明转化率或节省人工 |\n| 少误重发 | 单执行写dispatch护栏与unknown | 不等于跨调用exactly-once |\n| 少错区域/参数 | 捕获generation与最新schema校验 | 组织数据质量/权限仍由远端承担 |\n| 后续接待 | 可接已有3Chat Agent | 非插件自动创建，效果未核 |\n\n有条件试用。适合已有3Chat权限且能用测试组织逐项核完整确认、权限/区域、受理未知和批次跟踪的团队。先只读再经授权测试极小发送，不能当全自动触达/成交承诺。源码中的不重放和动态schema设计提供比裸远程工具更明确的操作边界，仍不足以直接给安装级推荐。\n\n可探讨“持久确认与操作收据”。将region/组织/目标/正文附件hash/幂等键绑定确认后记录持久操作ID，未知受理只查询原记录，区分草稿授权、宿主批准、远端受理、渠道送达。相较当前仅单次调用护栏，目标减少重启/多会话重复和错内容；同时必须控制客户数据留存与敏感hash元数据披露。\n\n未实现。最小对照用模拟MCP和测试组织的丢响应/重启/双会话重试/切区，比较重复dispatch、错误目标、未知状态收敛、人工恢复与额外存储；如果新增账本不能更好收敛unknown或增加不必要数据留存，应缩减记录。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/connection.js:128-143](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/blob/d741956969f0adcd523c13d682e9ca8d7b313cb0/src/connection.js#L128-L143)\n\n现有单执行重放护栏。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n  boundedFetch(controller) {\n    const sentWrites = new Set();\n    return (url, init = {}) => {\n      let rpc;\n      try { if (typeof init.body === 'string') rpc = JSON.parse(init.body); } catch { /* OAuth forms are not RPC. */ }\n      if (rpc?.method === 'tools/call' && WRITE_TOOLS.has(rpc.params?.name)) {\n        // The SDK may retry after 401 or HEADER_MISMATCH. A write gets at most\n        // one HTTP dispatch per explicit tool execution, even on those paths.\n        if (sentWrites.has(rpc.params.name)) throw new ConnectionError('WRITE_REPLAY_BLOCKED', 'Automatic write replay blocked');\n        sentWrites.add(rpc.params.name);\n      }\n      const request = {\n        ...init,\n        signal: AbortSignal.any([controller.signal, AbortSignal.timeout(this.requestTimeoutMs), ...(init.signal ? [init.signal] : [])]),\n      };\n      return this.fetchFn(url, request);\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/connection.js:439-449](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/blob/d741956969f0adcd523c13d682e9ca8d7b313cb0/src/connection.js#L439-L449)\n\nunknown恢复建议。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n      } catch (error) {\n        const fault = publicError(error, this.locale);\n        if (error instanceof ToolContractError) return {\n          status: error.code === 'INVALID_ARGUMENTS' ? 'invalid-arguments' : 'query-failed',\n          code: fault.code, field: error.field, message: fault.message, nextAction: fault.message,\n        };\n        this.recordFailure(error);\n        return { status: fault.code === 'AUTH_REQUIRED' || fault.code === 'RESOURCE_MISMATCH'\n            ? 'connection-required' : 'unavailable', code: fault.code, message: fault.message,\n          ...(write && dispatched ? { acceptance: 'unknown',\n            nextAction: this.locale === 'en' ? 'Acceptance is unknown. Keep the original parameters and idempotency key; query the original job if available.' : '未确认远端是否已受理；保留原参数与幂等键，不自动重发；若已有 job_id，只查询原任务。' }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/index.js:136-149](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/blob/d741956969f0adcd523c13d682e9ca8d7b313cb0/src/index.js#L136-L149)\n\n批次region映射仅内存。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n    const owners = tool === 'get_3chat_batch_send_status' ? this.jobs.get(args?.job_id) : undefined;\n    if (owners && !owners.has(expectedRegion)) return { status: 'invalid-arguments', code: 'JOB_REGION_MISMATCH',\n      message: 'This batch belongs to the other connector. Switch back to its language to track it.' };\n    const result = await this.connections[expectedRegion].call(tool, args, signal, isCurrent);\n    if (tool === 'send_3chat_customer_messages' || tool === 'send_3chat_group_messages') {\n      const bodies = [result?.structuredContent];\n      for (const block of result?.content ?? []) {\n        if (block.type === 'text') { try { bodies.push(JSON.parse(block.text)); } catch { /* Plain prose has no job identity. */ } }\n      }\n      for (const body of bodies) {\n        const id = body?.job_id ?? body?.data?.job_id;\n        if (typeof id === 'string') {\n          const jobs = this.jobs.get(id) ?? new Set(); jobs.add(expectedRegion); this.jobs.set(id, jobs);\n        }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[references/3chat-customer-growth-1.0.4/skills/3chat-customer-growth/SKILL.md:39-43](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/blob/d741956969f0adcd523c13d682e9ca8d7b313cb0/references/3chat-customer-growth-1.0.4/skills/3chat-customer-growth/SKILL.md#L39-L43)\n\n确认/幂等与送达状态边界。\n\n```text\n4. Drafting, analysis, and audience selection do not authorize sending. Before any send, show the exact recipients, sender account or channel, final content, attachments, and scope, then obtain explicit confirmation.\n5. Use an existing final HTTP/HTTPS download URL only when it needs no authentication or custom headers and is neither a preview page nor redirect-only link. Otherwise call `upload_3chat_attachment` and prefer reusing the complete `data.attachment` object.\n6. After a batch returns `job_id`, call only `get_3chat_batch_send_status` for that job; never recreate the batch.\n7. Follow structured error fields and `aiAction`. Retry a send with identical business parameters and the original idempotency key only for `RETRY_SAME_REQUEST`.\n8. Do not expose raw JSON by default. Separate 3Chat facts from model inference, and never equate `accepted`, `sent`, or `COMPLETED` with channel delivery or read status.\n```\n\n#### 缺口\n\n- 没有人工3Chat门户与DSH同客户任务的耗时、误发、转化与费用对照。\n  **影响：**不能量化收益或保证商业效果。\n  **进一步探讨：**用授权匿名测试业务集比较目标/内容正确、操作数、请求量和状态恢复，不触达真实客户。\n- 持久内容确认和跨会话操作收据未实现。\n  **影响：**不作为当前exactly-once或提高评分。\n  **进一步探讨：**模拟丢响应/重启对照重复dispatch与unknown收敛。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：16cd4ba4b7d40a163c0a8152de31469d9eb0a583b2a77114598a04e74f7aee7d。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 13 | 785 | — | — | 12047 |\n| .mjs | source | 6 | 205 | 195 | 6 | — |\n| .js | source | 10 | 1470 | 1247 | 142 | — |\n| .jsx | source | 1 | 228 | 213 | 3 | — |\n| .mjs | test | 4 | 263 | 248 | 3 | — |\n\n排除 6 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 客户/会话/群查询 | 搜索、上下文与分组分析 | 组织权限和数据口径依平台 |\n| 拟稿与确认 | 模型结合上下文生成内容 | 草稿不授权发送，须核完整参数 |\n| 附件/单发/批发 | 远端实际触达 | 宿主ask，单次防重放非全局幂等 |\n| 批次查询 | 原job逐项跟踪 | 受理不等于送达/成交，归属映射内存 |\n| OAuth/动态契约 | 最小声明scope与当前schema | 客户端设计不替代上游安全审计 |\n\n\n## 工程亮点\n\n每connection serial队列把操作/刷新授权按序执行，withSession用AbortController合并调用signal与每request timeout，结束close transport并移除signal监听。dispose使generation失效、abort所有请求、关闭授权listener并等清理，这些是可核的资源退出路径。\n\n工具目录更新先验证新catalog再清旧注册；新注册失败回滚旧definitions，每代注册也局部清理已成功项。但回滚本身失败仍会抛，外部服务突然变更时不能保证总有可用目录。远端工具description和客户内容是模型输入，Skill引导和schema不自动消除提示注入；写门禁/完整确认仍要有效。\n\nreadNames在宿主标isConcurrencySafe，实际connection serial将同连接读也排队，稳定性换吞吐；每次调用discover及新MCP transport增加网络与授权lease持有时间。队列中取消会在执行时检查，但是否立即释放所有等待交互需实际量测。断连受理未知记录只返回调用者，没有本地持久活动/组织/幂等账本，恢复须保留原上下文。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、cordis.patch.yml、src/index.js、src/connection.js、src/tools.js、src/regions.js、src/tool-schema.js、src/oauth/flow.js、src/oauth/provider.js、src/oauth/credentials.js、src/oauth/callback.js、references/3chat-customer-growth-1.0.4/skills/3chat-customer-growth/SKILL.md 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定src OAuth/connection/tools/region/schema和Host选择链、随包Skill，dist关键拒绝/unknown/ask标记核对；不平台登录或客户调用、不运行作者测试。\n- 下一步：可继续用模拟MCP/测试组织的401、丢响应、双会话/重启重试、切区与撤权，核单dispatch、unknown收敛、目标/内容确认及资源清理。\n",
         "metadata": {
             "repository": "3ChatAI-NCT/3chatai-deepseek-harness-plugin",
             "repository_id": 1374055714,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T06:27:09.093Z",
+            "window_start": "2026-09-22T06:27:09.093Z",
             "stars": 7,
             "pushed_at": "2026-10-19T07:35:51Z",
             "issues": {
@@ -393,29 +483,21 @@
             "errors": [],
             "npm": {
                 "package_name": "3chat-customer-growth",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T06:27:16.956Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": null,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/3chat-customer-growth",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/3chat-customer-growth",
                 "error": "HTTP 404",
                 "publication": {
                     "first_published_at": null,
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T06:27:16.956Z",
                     "source_url": "https://registry.npmjs.org/3chat-customer-growth",
                     "error": "HTTP 404",
                     "latest_version": null,
                     "latest_published_at": null,
                     "latest_error": "HTTP 404"
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "d741956969f0adcd523c13d682e9ca8d7b313cb0",
-                "current_revision": "d741956969f0adcd523c13d682e9ca8d7b313cb0",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {
@@ -423,14 +505,14 @@
             "repository": "3ChatAI-NCT/3chatai-deepseek-harness-plugin",
             "path": "",
             "revision": "d741956969f0adcd523c13d682e9ca8d7b313cb0",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "a23d39ffb07a8f2ac5f35904fafa2be507b7a32b4ec7689d2383350e2417ad92",
                 "code": "d741956969f0adcd523c13d682e9ca8d7b313cb0",
                 "maintenance": "0f555bc35f44fba60ea0de1d0989bf129ebb1d036fef4875b365fb2503ff4a29"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

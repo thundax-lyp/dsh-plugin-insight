@@ -10,9 +10,9 @@
             "repository": "030611/dsh-verification-receipt",
             "path": "",
             "aliases": [],
-            "name": "DSH Verification Receipt",
+            "name": "dsh-verification-receipt",
             "entry_type": "plugin",
-            "technical_category": "security-governance",
+            "technical_category": "observability-cost",
             "business_category": "software-delivery",
             "tags": [
                 "source-inspected",
@@ -29,43 +29,101 @@
             },
             "sources": [
                 {
-                    "id": "20261020-research40-github-1333370288-root-directory-0",
+                    "id": "2026-10-22-02-github-1333370288-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
-                    "retrieved_at": "2026-10-20T03:03:51.750Z",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-22T08:02:06.969Z",
                     "membership": "present"
                 },
                 {
-                    "id": "20261020-research40-github-1333370288-root-directory-1",
+                    "id": "2026-10-22-02-github-1333370288-root-directory-1",
                     "url": "https://github.com/0xsline/awesome-deepseek-harness",
                     "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
-                    "retrieved_at": "2026-10-20T03:03:51.750Z",
+                    "retrieved_at": "2026-10-22T08:02:06.969Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "20261020-research40-github-1333370288-root-author",
+                    "id": "2026-10-22-02-github-1333370288-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/030611/dsh-verification-receipt/blob/87f3fb0198090f0f26a37a52840db150609db748/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/030611/dsh-verification-receipt",
+                            "commit": "87f3fb0198090f0f26a37a52840db150609db748",
+                            "path": "README.md",
+                            "content_sha256": "c759961b40e397187983dc321a5a3717d1ed67479b5fb51d5ea018a5b74419f4"
+                        }
+                    ],
                     "revision": "87f3fb0198090f0f26a37a52840db150609db748",
-                    "captured_at": "2026-10-20T03:03:51.750Z",
-                    "summary": "在每轮持久化结束时保存工具次数和验证形态信号的本地 JSONL 回执。",
-                    "artifact": "data/runs/2026-10-20-02/snapshots/030611--dsh-verification-receipt/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T08:02:06.969Z",
+                    "summary": "被动读取DSH每轮持久事件，输出不含对话/参数/结果正文的工具计数与词法验证信号JSONL摘要。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/030611--dsh-verification-receipt/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "20261020-research40-github-1333370288-root-source",
+                    "id": "2026-10-22-02-github-1333370288-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/030611/dsh-verification-receipt/blob/87f3fb0198090f0f26a37a52840db150609db748/src/index.ts",
+                    "url": "https://github.com/030611/dsh-verification-receipt/blob/87f3fb0198090f0f26a37a52840db150609db748/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/030611/dsh-verification-receipt",
+                            "commit": "87f3fb0198090f0f26a37a52840db150609db748",
+                            "path": "README.md",
+                            "content_sha256": "c759961b40e397187983dc321a5a3717d1ed67479b5fb51d5ea018a5b74419f4"
+                        },
+                        {
+                            "repository_url": "https://github.com/030611/dsh-verification-receipt",
+                            "commit": "87f3fb0198090f0f26a37a52840db150609db748",
+                            "path": "package.json",
+                            "content_sha256": "30420064810579db7dc94f2f5c681fa1e3c9c616993e0bc6d1e4cdcffa19a816"
+                        },
+                        {
+                            "repository_url": "https://github.com/030611/dsh-verification-receipt",
+                            "commit": "87f3fb0198090f0f26a37a52840db150609db748",
+                            "path": "SECURITY.md",
+                            "content_sha256": "bb5e0f7e40c0908b34880b6ea6729193b669a8c539ffa483bf7867a82051a870"
+                        },
+                        {
+                            "repository_url": "https://github.com/030611/dsh-verification-receipt",
+                            "commit": "87f3fb0198090f0f26a37a52840db150609db748",
+                            "path": "docs/compatibility-0.1.1.md",
+                            "content_sha256": "ce55d07c39050a3f5566dec558973fbfbc24f11008160037574d468b7072b8f4"
+                        },
+                        {
+                            "repository_url": "https://github.com/030611/dsh-verification-receipt",
+                            "commit": "87f3fb0198090f0f26a37a52840db150609db748",
+                            "path": "src/index.ts",
+                            "content_sha256": "46e6d60dde6d404012a1fe15ef8f2c3ce041597f23b982dfef6022908e93986e"
+                        },
+                        {
+                            "repository_url": "https://github.com/030611/dsh-verification-receipt",
+                            "commit": "87f3fb0198090f0f26a37a52840db150609db748",
+                            "path": "src/receipt.ts",
+                            "content_sha256": "05caeae80e221f8edf2bbda5bb0a3595f297804222ec9913b44a717b5799c73f"
+                        },
+                        {
+                            "repository_url": "https://github.com/030611/dsh-verification-receipt",
+                            "commit": "87f3fb0198090f0f26a37a52840db150609db748",
+                            "path": "tests/receipt.spec.ts",
+                            "content_sha256": "b7b22f9c0d5158bd10c995a51433e5d7b3ba2530648b3ef5b0e706076dadef65"
+                        },
+                        {
+                            "repository_url": "https://github.com/030611/dsh-verification-receipt",
+                            "commit": "87f3fb0198090f0f26a37a52840db150609db748",
+                            "path": "tests/composition.spec.ts",
+                            "content_sha256": "70a44273880ef582f5733d584dd7ce823a40c90ac7ef6044e984bb9ee31f9af3"
+                        }
+                    ],
                     "revision": "87f3fb0198090f0f26a37a52840db150609db748",
-                    "captured_at": "2026-10-20T03:03:51.750Z",
-                    "summary": "核查 src/index.ts、src/receipt.ts；监听 turn/end 相关 session 事件，按执行轨迹和词法信号生成摘要并串行追加 JSONL。",
-                    "artifact": "data/runs/2026-10-20-02/snapshots/030611--dsh-verification-receipt/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T08:02:06.969Z",
+                    "summary": "核查 README.md、package.json、SECURITY.md、docs/compatibility-0.1.1.md、src/index.ts、src/receipt.ts、tests/receipt.spec.ts、tests/composition.spec.ts；插件只注入sessions并监听session/event，遇turn/end读取snapshotEvents构造receipt；不注册模型工具/提示/发消息，也不修改session记录。投影先核end.seq索引处有turn/end，再逆找同turn start，若跨另一start或缺边界直接拒绝，避免把不完整轮次静默拼到一起。\n\nobserveCalls分别收集top-level tool/call与Code Mode dispatch-start，按callId/subCallId配最后result，缺结果unresolved，最终计calls/succeeded/failed/unresolved以及topLevel/nested。上层Code Mode调用和内部调用均计入，不能把calls当互不重叠的用户任务数。状态信任宿主记录和有限shell标记，不独立执行。\n\n新意是最小字段投影、显式execution-trace-only、轮次配对和异步有序本地sink组合，不是新验证方法。完整session仍是原始真相；receipt不提供artifact/claim链接、签名或hashchain。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/030611--dsh-verification-receipt/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "验证形态是启发式信号，不证明测试真实执行、断言正确或最终代码可用。",
+                        "两src全链及包/兼容/SECURITY，读组合与词法测试设计；不运行测试、宿主冒烟或读取用户事件。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -76,9 +134,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "代码协作者希望追问某轮究竟记录过哪些执行信号，而不是只看模型完成声明。",
+                    "text": "适合希望回看DSH每轮记录过多少工具调用、出现哪些验证形状信号，却不愿另外持久化对话/参数/输出的个人维护者。turn/end后追加本地JSONL，包含粗粒度计数/状态/类别和会话伪名。它回答“记录中有何执行迹象”，不能回答“测试是否真运行/测试足够/代码正确”。\n\n合格结果应是轮次括号和调用状态准确、未知不当成功、输出遵守字段排除与受控持久化；日志不是模型质量门禁或可信证明。基线是人工打开完整session记录搜索命令，增量在小型可比较摘要和隐私减量，换来丢失原始论据与语义。README主动界定这一限制，比用receipt名暗示验证通过更诚实。",
                     "evidence_ids": [
-                        "20261020-research40-github-1333370288-root-source"
+                        "2026-10-22-02-github-1333370288-root-source"
                     ],
                     "dependencies": [
                         {
@@ -87,16 +145,16 @@
                             "fingerprint": "87f3fb0198090f0f26a37a52840db150609db748"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:03:51.750Z",
+                    "reviewed_at": "2026-10-22T08:02:06.969Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "监听 turn/end 相关 session 事件，按执行轨迹和词法信号生成摘要并串行追加 JSONL。",
+                    "text": "插件只注入sessions并监听session/event，遇turn/end读取snapshotEvents构造receipt；不注册模型工具/提示/发消息，也不修改session记录。投影先核end.seq索引处有turn/end，再逆找同turn start，若跨另一start或缺边界直接拒绝，避免把不完整轮次静默拼到一起。\n\nobserveCalls分别收集top-level tool/call与Code Mode dispatch-start，按callId/subCallId配最后result，缺结果unresolved，最终计calls/succeeded/failed/unresolved以及topLevel/nested。上层Code Mode调用和内部调用均计入，不能把calls当互不重叠的用户任务数。状态信任宿主记录和有限shell标记，不独立执行。\n\n新意是最小字段投影、显式execution-trace-only、轮次配对和异步有序本地sink组合，不是新验证方法。完整session仍是原始真相；receipt不提供artifact/claim链接、签名或hashchain。",
                     "evidence_ids": [
-                        "20261020-research40-github-1333370288-root-source"
+                        "2026-10-22-02-github-1333370288-root-source"
                     ],
                     "dependencies": [
                         {
@@ -105,16 +163,16 @@
                             "fingerprint": "87f3fb0198090f0f26a37a52840db150609db748"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:03:51.750Z",
+                    "reviewed_at": "2026-10-22T08:02:06.969Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "验证形态是启发式信号，不证明测试真实执行、断言正确或最终代码可用。",
+                    "text": "两src全链及包/兼容/SECURITY，读组合与词法测试设计；不运行测试、宿主冒烟或读取用户事件。",
                     "evidence_ids": [
-                        "20261020-research40-github-1333370288-root-source"
+                        "2026-10-22-02-github-1333370288-root-source"
                     ],
                     "dependencies": [
                         {
@@ -123,16 +181,16 @@
                             "fingerprint": "87f3fb0198090f0f26a37a52840db150609db748"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:03:51.750Z",
+                    "reviewed_at": "2026-10-22T08:02:06.969Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "包版本 0.1.1，session peer 明确列出 alpha 版本，部署前须核对实际宿主。",
+                    "text": "v0.1.1 MIT，精确DSH0.1.2-alpha.3/4/5与Node ^22.19或>=24，作者Windows Web acceptance。",
                     "evidence_ids": [
-                        "20261020-research40-github-1333370288-root-source"
+                        "2026-10-22-02-github-1333370288-root-source"
                     ],
                     "dependencies": [
                         {
@@ -141,16 +199,16 @@
                             "fingerprint": "87f3fb0198090f0f26a37a52840db150609db748"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:03:51.750Z",
+                    "reviewed_at": "2026-10-22T08:02:06.969Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "本地日志增加存储和审查负担，不发模型请求；仍未测长期日志增长和审阅收益。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源 | 人工与时间 | 已知与未知 |\n| --- | --- | --- | --- |\n| 首次 | 本地包/磁盘，不自调模型 | 核版本/路径/隐私 | 无安装工时估值 |\n| 持续使用 | 同步投影CPU、JSONL存储和未界定queue | 轮转保留/分类误差解释 | 代码无额外模型请求；时延/空间随事件量未知 |\n| 失败恢复 | 重查源session、隔离尾行/丢弃批 | 对照写失败与漏轮次 | 无自动backfill/强制同步；恢复完整性未知 |\n\n",
                     "evidence_ids": [
-                        "20261020-research40-github-1333370288-root-source"
+                        "2026-10-22-02-github-1333370288-root-source"
                     ],
                     "dependencies": [
                         {
@@ -159,16 +217,16 @@
                             "fingerprint": "87f3fb0198090f0f26a37a52840db150609db748"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:03:51.750Z",
+                    "reviewed_at": "2026-10-22T08:02:06.969Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "先对照一次明确成功和一次失败的测试任务，逐项比对回执与真实命令结果。",
+                    "text": "有条件试用，精确支持宿主+私有一进程一文件，将其当启发式观察摘要，不作验证通过/防篡改审计。详见[Q06](#research-q06)。",
                     "evidence_ids": [
-                        "20261020-research40-github-1333370288-root-source"
+                        "2026-10-22-02-github-1333370288-root-source"
                     ],
                     "dependencies": [
                         {
@@ -177,16 +235,16 @@
                             "fingerprint": "87f3fb0198090f0f26a37a52840db150609db748"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:03:51.750Z",
+                    "reviewed_at": "2026-10-22T08:02:06.969Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "缩小到可检查的执行信号比声称自动验收更可靠；回执本身不能代替失败放行规则。",
+                    "text": "#### 效果\n\n| 目标 | 源码增量 | 限制 |\n| --- | --- | --- |\n| 少查完整对话 | 每轮粗摘要 | 非实际验证证明 |\n| 少持久化内容 | 明确最小字段 | 时序/hash仍敏感且可关联 |\n| 少影响模型 | 无工具/提示/网络请求 | 同步snapshot/投影仍可能增CPU时延 |\n| 写顺序 | 单实例Promise链/卸载drain | 失败/崩溃/跨进程无完整保证 |\n\n作者compatibility记录是可追溯声明，Windows安装/配置/冷启动/卸载不等于验证receipt语义。宿主snapshotEvents自身复制/遍历全历史的成本依宿主实现，插件再slice当轮/投影；不能只按一行JSON大小估全部CPU。",
                     "evidence_ids": [
-                        "20261020-research40-github-1333370288-root-source"
+                        "2026-10-22-02-github-1333370288-root-source"
                     ],
                     "dependencies": [
                         {
@@ -195,16 +253,16 @@
                             "fingerprint": "87f3fb0198090f0f26a37a52840db150609db748"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:03:51.750Z",
+                    "reviewed_at": "2026-10-22T08:02:06.969Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "追加队列、隐私化标识与确定性摘要可复用；接入时要保留事件丢失和写盘失败告警。",
+                    "text": "输出字面构造限定工具计数/类别和时序，不包含参数/原始ID/工具输出或消息文本；投影在内存仍会读取原始参数/结果做判断，不能说从不接触。sessionIdHash加domain但无key，可跨文件关联、低熵ID可猜，不是匿名。receiptHash是固定字段JSON的SHA256，任意能改文件者可重算，不发现删除/插入/回滚/重排；作者SECURITY一致承认。\n\nwriter用Promise链顺序append，mkdir0700/append0600仅请求创建模式，无chmod/realpath/lstat/锁，预存文件权限/路径链接及跨进程写均在可信本地路径边界。写失败warning后队列继续，不向宿主turn反馈“receipt已持久”。排队无容量/背压与rotation，慢盘可积压内存，崩溃丢已接受未写完项/尾行不完整。\n\n生命周期gate→注销listener→drain的逆序effect设计与ctx.fiber.uid同步检查避免卸载再接收，较单纯dispose后flush细致；drain只等Promise settled，失败已catch仍算排队结束，不等于全部行成功。作者有真实Context+SessionStore组合测试设计，本轮只读，不冒认运行通过。",
                     "evidence_ids": [
-                        "20261020-research40-github-1333370288-root-source"
+                        "2026-10-22-02-github-1333370288-root-source"
                     ],
                     "dependencies": [
                         {
@@ -213,40 +271,135 @@
                             "fingerprint": "87f3fb0198090f0f26a37a52840db150609db748"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:03:51.750Z",
+                    "reviewed_at": "2026-10-22T08:02:06.969Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "mechanism",
+                    "basis": "interpretation",
+                    "text": "把持久事件投影成隐私减量的每轮工具状态/词法摘要，显式不冒充测试通过，并用关闭接收/注销/drain管理卸载。详见[Q02](#research-q02)、[Q04](#research-q04)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1333370288-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333370288:root",
+                            "area": "code",
+                            "fingerprint": "87f3fb0198090f0f26a37a52840db150609db748"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T08:02:06.969Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "supported",
+                    "text": "词法信号有误报/漏报且信任宿主结果；无keyhash可重算/关联，队列无界、写失败仅warning，无rotation/锁，路径需可信管理员。详见[Q03](#research-q03)、[Q04](#research-q04)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1333370288-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333370288:root",
+                            "area": "code",
+                            "fingerprint": "87f3fb0198090f0f26a37a52840db150609db748"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T08:02:06.969Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "mechanism",
+                    "basis": "unverified",
+                    "text": "可探索有界队列与accepted/persisted/dropped可见计数，比较内存/延迟/丢失解释，保持摘要非审计证明；未实现。详见[Q06](#research-q06)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1333370288-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333370288:root",
+                            "area": "code",
+                            "fingerprint": "87f3fb0198090f0f26a37a52840db150609db748"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T08:02:06.969Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-20T03:03:51.750Z",
+            "last_checked_at": "2026-10-22T08:02:06.969Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "87f3fb0198090f0f26a37a52840db150609db748",
+                "reviewed_at": "2026-10-22T08:02:06.969Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1333370288:root",
+                        "area": "code",
+                        "fingerprint": "87f3fb0198090f0f26a37a52840db150609db748"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 23,
+                        "transferability": 15,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty以事件日志摘要为参照，新增验证形状/隐私字段组合，小幅而非新算法；mechanism以简单turn回调为参照，增量为边界校验/双层终态/卸载gate，限制为词法/无界sink；transferability以DSH耦合业务为参照，纯投影易迁移，限制为seq/事件协议；simplification以人工查全日志为参照，少持久化/检索，限制是不能替代原始证据。",
+                    "basis": "interpretation",
+                    "score": 55,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1333370288-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 15,
+                        "reach": 10,
+                        "economics": 4
+                    },
+                    "rationale": "workflow以人工检索为参照，每轮粗摘要实质简化，限制是无法验证语义；delivery以完整日志分享为参照，减量结构输出有增量但非审计；reach以特定DSH维护者为参照，私有观察可复用，限制精确alpha宿主；economics以重复模型/人工查询为参照，无额外模型请求有方向，CPU/磁盘/误差成本未量化仅小幅。",
+                    "basis": "interpretation",
+                    "score": 47,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1333370288-root-source"
+                    ]
+                }
+            },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "代码协作者可把回执作为定位线索试用，先对照成功和失败命令，不能据其自动放行。",
+                "reason": "被动最小字段与边界文档清楚，适合精确宿主私有单进程路径观察；词法/可重算hash与无界queue不适合验证门禁或强审计。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "追查模型完成声明对应的执行信号是具体审阅任务。"
+                        "rationale": "隐私减量回看验证迹象明确。"
                     },
                     "advantage": {
-                        "score": 13,
-                        "rationale": "自动回执省查轨迹步骤，但词法信号弱于真实结果核对。"
+                        "score": 19,
+                        "rationale": "轮次/嵌套状态、明确限制与卸载设计具体。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "结束事件、摘要和串行JSONL追加可查，启发式准确性未测。"
+                        "rationale": "固定完整源码及作者测试/验收材料，不冒认本轮运行。"
                     },
                     "cost": {
-                        "score": 15,
-                        "rationale": "本地日志无模型费用，仍需留存和人工审查。"
+                        "score": 10,
+                        "rationale": "无额外模型调用，需磁盘/queue和保留策略维护。"
                     }
                 },
-                "score": 64,
+                "score": 65,
                 "revision": "87f3fb0198090f0f26a37a52840db150609db748",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T08:02:06.969Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "20261020-research40-github-1333370288-root-source"
+                    "2026-10-22-02-github-1333370288-root-source"
                 ],
                 "dependencies": [
                     {
@@ -274,36 +427,38 @@
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "status": "complete",
-            "checked_at": "2026-10-20T02:51:30Z",
-            "analysis_sha256": "f42fbddd0b22a03c6105d13bfca58a38833f95599870ef959536966ec81e56cc"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "03e5ee35b3b97a6126e19f5f0520f54d1075ec1a727da55c1c939bd4baf9bc9f"
         },
         "publication.metadata": "data/plugins/030611--dsh-verification-receipt/META.json",
         "publication.summaries": {
-            "text": "在每轮持久化结束时保存工具次数和验证形态信号的本地 JSONL 回执。",
+            "text": "被动读取DSH每轮持久事件，输出不含对话/参数/结果正文的工具计数与词法验证信号JSONL摘要。",
             "revision": "87f3fb0198090f0f26a37a52840db150609db748",
             "source_url": "https://github.com/030611/dsh-verification-receipt/blob/87f3fb0198090f0f26a37a52840db150609db748/README.md"
         },
         "publication.capabilities": {
             "revision": "87f3fb0198090f0f26a37a52840db150609db748",
             "items": {
-                "事件监听": "回合结束事件驱动本地执行摘要回执。"
-            }
+                "事件监听": "session/event turn/end被动投影",
+                "后台": "有序本地JSONL追加与卸载drain"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 每轮投影 | 工具计数/状态 | 信任宿主记录，非业务正确 |\n| 词法信号 | 寻找疑似验证 | 误报/漏报，非测试通过 |\n| 字段减量 | 不保存消息/参数/结果正文 | 时序和稳定hash仍敏感 |\n| JSONL sink | 单实例顺序与卸载排空 | 无界queue/强耐久/跨进程锁 |\n"
         },
         "publication.advice": {
             "revision": "87f3fb0198090f0f26a37a52840db150609db748",
-            "text": "先对照一次明确成功和一次失败的测试任务，逐项比对回执与真实命令结果。"
+            "text": "有条件试用，精确支持宿主+私有一进程一文件，将其当启发式观察摘要，不作验证通过/防篡改审计。详见[Q06](#research-q06)。"
         },
         "registry": "data/plugins/030611--dsh-verification-receipt",
-        "reports": "# DSH Verification Receipt\n\n> 在每轮持久化结束时保存工具次数和验证形态信号的本地 JSONL 回执。\n\n## 固定范围与依据\n\n固定提交 [87f3fb0198090f0f26a37a52840db150609db748](https://github.com/030611/dsh-verification-receipt/blob/87f3fb0198090f0f26a37a52840db150609db748/src/index.ts)；组件路径：仓库根。核查时间 2026-10-20T03:03:51.750Z；本轮基准 2026-10-20T02:51:30Z。\n源码抽读路径：src/index.ts、src/receipt.ts。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：代码协作者希望追问某轮究竟记录过哪些执行信号，而不是只看模型完成声明。\n- **亮点**：监听 turn/end 相关 session 事件，按执行轨迹和词法信号生成摘要并串行追加 JSONL。\n- **思考**：缩小到可检查的执行信号比声称自动验收更可靠；回执本身不能代替失败放行规则。\n- **建议**：先对照一次明确成功和一次失败的测试任务，逐项比对回执与真实命令结果。\n\n## 场景与替代办法\n\n代码协作者希望追问某轮究竟记录过哪些执行信号，而不是只看模型完成声明。\n\n人工查会话工具轨迹也能核对；自动摘要节省定位步骤但新增启发式误读风险。\n\n## 依赖与流程\n\n需要对应 session 事件和可写的 DSH_HOME，效果依赖执行轨迹是否完整记录。\n\n回合结束后后台写回执，审阅者再与真实执行结果对照；写入失败从日志排查而非补造结果。\n\n## 成本与效果\n\n本地日志增加存储和审查负担，不发模型请求；仍未测长期日志增长和审阅收益。\n\n缩小到可检查的执行信号比声称自动验收更可靠；回执本身不能代替失败放行规则。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：c2d134c7ae0c9606bdac10cb2d42fd3a1bbeac472663f6cc09da05dd301ad9a4。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 482 | — | — | 4515 |\n| .mjs | source | 2 | 131 | 124 | 0 | — |\n| .ts | source | 3 | 424 | 327 | 56 | — |\n| .ts | test | 3 | 391 | 361 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **事件监听**：回合结束事件驱动本地执行摘要回执。\n\n## 工程亮点\n\n追加队列、隐私化标识与确定性摘要可复用；接入时要保留事件丢失和写盘失败告警。\n\n## 分发与兼容\n\n包版本 0.1.1，session peer 明确列出 alpha 版本，部署前须核对实际宿主。\n\n## 历史对照\n\n前次代码指纹为 87f3fb0198090f0f26a37a52840db150609db748；本轮固定为 87f3fb0198090f0f26a37a52840db150609db748。人工查会话工具轨迹也能核对；自动摘要节省定位步骤但新增启发式误读风险。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：验证形态是启发式信号，不证明测试真实执行、断言正确或最终代码可用。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：构造名称像测试但未执行测试的工具调用，观察误标，并检查中断和写盘失败后的记录边界。\n",
+        "reports": "# dsh-verification-receipt\n\n> 被动读取DSH每轮持久事件，输出不含对话/参数/结果正文的工具计数与词法验证信号JSONL摘要。\n\n## 研究范围\n\n- **仓库**：[030611/dsh-verification-receipt](https://github.com/030611/dsh-verification-receipt)\n- **版本号**：0.1.1（[固定提交 87f3fb0198090f0f26a37a52840db150609db748](https://github.com/030611/dsh-verification-receipt/tree/87f3fb0198090f0f26a37a52840db150609db748)）\n- **版本日期**：2026-09-04（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已检查源码。最小字段与事件括号/卸载设计明确，输出仅启发式执行摘要，持久化/关联与资源限制应保留。\n\n## 洞察短评\n\n- **用途**：适合希望回看DSH每轮记录过多少工具调用、出现哪些验证形状信号，却不愿另外持久化对话/参数/输出的个人维护者。turn/end后追加本地JSONL，包含粗粒度计数/状态/类别和会话伪名。它回答“记录中有何执行迹象”，不能回答“测试是否真运行/测试足够/代码正确”。\n\n合格结果应是轮次括号和调用状态准确、未知不当成功、输出遵守字段排除与受控持久化；日志不是模型质量门禁或可信证明。基线是人工打开完整session记录搜索命令，增量在小型可比较摘要和隐私减量，换来丢失原始论据与语义。README主动界定这一限制，比用receipt名暗示验证通过更诚实。\n- **亮点**：把持久事件投影成隐私减量的每轮工具状态/词法摘要，显式不冒充测试通过，并用关闭接收/注销/drain管理卸载。详见[Q02](#research-q02)、[Q04](#research-q04)。\n- **思考**：词法信号有误报/漏报且信任宿主结果；无keyhash可重算/关联，队列无界、写失败仅warning，无rotation/锁，路径需可信管理员。详见[Q03](#research-q03)、[Q04](#research-q04)。\n- **建议**：可探索有界队列与accepted/persisted/dropped可见计数，比较内存/延迟/丢失解释，保持摘要非审计证明；未实现。详见[Q06](#research-q06)。\n\n采用建议：有条件试用，精确支持宿主+私有一进程一文件，将其当启发式观察摘要，不作验证通过/防篡改审计。详见[Q06](#research-q06)。\n\n## 核心贡献\n\n把持久事件投影成隐私减量的每轮工具状态/词法摘要，显式不冒充测试通过，并用关闭接收/注销/drain管理卸载。详见[Q02](#research-q02)、[Q04](#research-q04)。\n\n## 关键质疑\n\n词法信号有误报/漏报且信任宿主结果；无keyhash可重算/关联，队列无界、写失败仅warning，无rotation/锁，路径需可信管理员。详见[Q03](#research-q03)、[Q04](#research-q04)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可探索有界队列与accepted/persisted/dropped可见计数，比较内存/延迟/丢失解释，保持摘要非审计证明；未实现。详见[Q06](#research-q06)。\n\n可继续以合成事件与慢/失败文件sink比较内存、回合延迟、缺行可解释性和隐私，无需模型/真实用户日志。\n\n## 场景与替代办法\n\n适合希望回看DSH每轮记录过多少工具调用、出现哪些验证形状信号，却不愿另外持久化对话/参数/输出的个人维护者。turn/end后追加本地JSONL，包含粗粒度计数/状态/类别和会话伪名。它回答“记录中有何执行迹象”，不能回答“测试是否真运行/测试足够/代码正确”。\n\n合格结果应是轮次括号和调用状态准确、未知不当成功、输出遵守字段排除与受控持久化；日志不是模型质量门禁或可信证明。基线是人工打开完整session记录搜索命令，增量在小型可比较摘要和隐私减量，换来丢失原始论据与语义。README主动界定这一限制，比用receipt名暗示验证通过更诚实。\n\n人工检索完整session执行记录；插件省内容暴露和检索，但不保原始论据/实际验证质量。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 条件 | 用途 | 边界 |\n| --- | --- | --- |\n| DSH0.1.2-alpha.3/4/5与Session | durable event协议 | 作者仅这些版本Windows Web acceptance，不外推0.2 |\n| Node ^22.19或>=24、Schemastery3.18.2 | ESM/配置验证 | Cordis/Session宿主peer，类型省略不等于无需服务 |\n| 私有可信绝对输出路径 | JSONL本地追加 | 默认DSH_HOME或~/.dsh，非防恶意链接边界 |\n| 一进程一文件/外部retention | 写顺序与容量维护 | 无跨进程锁/轮转 |\n\n\n\n#### 使用流程\n\n| 步骤 | 动作 | 判据 |\n| --- | --- | --- |\n| 安装前 | 核宿主精确版本与包 | 不以Windows启动记录推断当前全平台 |\n| 配置 | 指私有非symlink路径，一进程一file | 核旧权限、访问者、保留期 |\n| 读receipt | 对照turn与词法类别/状态 | 不把succeeded当测试通过 |\n| 维护 | 看写错误/磁盘容量/队列迹象 | 缺行不是“无工具” |\n| 卸载 | 正常drain后核完整JSONL尾行 | 崩溃尾行隔离，不伪造补齐 |\n\n\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源 | 人工与时间 | 已知与未知 |\n| --- | --- | --- | --- |\n| 首次 | 本地包/磁盘，不自调模型 | 核版本/路径/隐私 | 无安装工时估值 |\n| 持续使用 | 同步投影CPU、JSONL存储和未界定queue | 轮转保留/分类误差解释 | 代码无额外模型请求；时延/空间随事件量未知 |\n| 失败恢复 | 重查源session、隔离尾行/丢弃批 | 对照写失败与漏轮次 | 无自动backfill/强制同步；恢复完整性未知 |\n\n\n\n#### 效果\n\n| 目标 | 源码增量 | 限制 |\n| --- | --- | --- |\n| 少查完整对话 | 每轮粗摘要 | 非实际验证证明 |\n| 少持久化内容 | 明确最小字段 | 时序/hash仍敏感且可关联 |\n| 少影响模型 | 无工具/提示/网络请求 | 同步snapshot/投影仍可能增CPU时延 |\n| 写顺序 | 单实例Promise链/卸载drain | 失败/崩溃/跨进程无完整保证 |\n\n作者compatibility记录是可追溯声明，Windows安装/配置/冷启动/卸载不等于验证receipt语义。宿主snapshotEvents自身复制/遍历全历史的成本依宿主实现，插件再slice当轮/投影；不能只按一行JSON大小估全部CPU。\n\n## 研究问题与完整回答\n\n**插件研究总目标：**核轮次/调用状态投影、验证信号语义、最小字段隐私与hash、队列/卸载/磁盘边界、兼容成本及采用。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 它解决什么核查问题，什么结果有意义？\n\n**研究主题：**场景与需求\n\n#### 完整回答\n\n适合希望回看DSH每轮记录过多少工具调用、出现哪些验证形状信号，却不愿另外持久化对话/参数/输出的个人维护者。turn/end后追加本地JSONL，包含粗粒度计数/状态/类别和会话伪名。它回答“记录中有何执行迹象”，不能回答“测试是否真运行/测试足够/代码正确”。\n\n合格结果应是轮次括号和调用状态准确、未知不当成功、输出遵守字段排除与受控持久化；日志不是模型质量门禁或可信证明。基线是人工打开完整session记录搜索命令，增量在小型可比较摘要和隐私减量，换来丢失原始论据与语义。README主动界定这一限制，比用receipt名暗示验证通过更诚实。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:13-29](https://github.com/030611/dsh-verification-receipt/blob/87f3fb0198090f0f26a37a52840db150609db748/README.md#L13-L29)\n\n作者缩小可回答问题。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n````text\n> Ask a smaller, checkable question: what verification-shaped execution signals did DSH record this turn?\n\n```sh\ndsh plugin --profile web add dsh-verification-receipt\n```\n\nThe receipt summarizes recorded tool counts and lexical verification-shaped signals. It does **not** prove that tests ran or that code is correct.\n\n> Community-maintained and not an official DeepSeek project. Related trust-layer plugins: [Telemetry Redactor](https://github.com/030611/dsh-telemetry-redactor), [Evidence Audit](https://github.com/030611/qiushi-dsh-evidence-audit), and [Context Provenance](https://github.com/030611/dsh-context-provenance).\n\nDSH Verification Receipt is a small, passive Profile Bundle for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness). After each durable `turn/end`, it appends one privacy-minimal, heuristic execution summary to a local JSONL file.\n\n![Verification Receipt data flow](https://raw.githubusercontent.com/030611/dsh-verification-receipt/main/docs/verification-flow.svg)\n\nIt records execution traces, not semantic correctness. A receipt shows only that DSH logged tool calls and that a lexical heuristic found a possible verification signal. It never proves that a test ran. It cannot show that the right command executed, that assertions were sufficient, that output was truthful, or that the assistant's conclusion was correct.\n\nThis is intentionally not an evidence-audit ledger: rows stay independent and there is no hash chain, artifact capture, claim-evidence linkage, or protocol attestation.\n````\n\n</details>\n\n**依据 2 · 源码核查**：[src/receipt.ts:46-58](https://github.com/030611/dsh-verification-receipt/blob/87f3fb0198090f0f26a37a52840db150609db748/src/receipt.ts#L46-L58)\n\n真实输出结构。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n/** One JSONL record emitted after a durable `turn/end`. */\nexport interface VerificationReceipt {\n  readonly schemaVersion: 1\n  readonly kind: 'dsh-verification-receipt'\n  readonly sessionIdHash: string\n  readonly turn: number\n  readonly turnEndSeq: number\n  readonly endedAt: number\n  readonly outcome: string\n  readonly tools: ToolSummary\n  readonly verificationSignals: readonly VerificationSignal[]\n  readonly claim: 'execution-trace-only'\n  readonly receiptHash: string\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 如何划轮次、配对调用并保护模型上下文？\n\n**研究主题：**功能与机制、贡献与相对优势\n\n#### 完整回答\n\n插件只注入sessions并监听session/event，遇turn/end读取snapshotEvents构造receipt；不注册模型工具/提示/发消息，也不修改session记录。投影先核end.seq索引处有turn/end，再逆找同turn start，若跨另一start或缺边界直接拒绝，避免把不完整轮次静默拼到一起。\n\nobserveCalls分别收集top-level tool/call与Code Mode dispatch-start，按callId/subCallId配最后result，缺结果unresolved，最终计calls/succeeded/failed/unresolved以及topLevel/nested。上层Code Mode调用和内部调用均计入，不能把calls当互不重叠的用户任务数。状态信任宿主记录和有限shell标记，不独立执行。\n\n新意是最小字段投影、显式execution-trace-only、轮次配对和异步有序本地sink组合，不是新验证方法。完整session仍是原始真相；receipt不提供artifact/claim链接、签名或hashchain。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:89-110](https://github.com/030611/dsh-verification-receipt/blob/87f3fb0198090f0f26a37a52840db150609db748/src/index.ts#L89-L110)\n\n被动监听与drain。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\nexport function apply(ctx: Context, config: Config = {}): void {\n  const resolved = resolveConfig(config)\n  const writer = new JsonlWriter(ctx, resolved.outputPath)\n  ctx.effect(function* () {\n    let accepting = true\n    yield async () => writer.drain()\n    yield ctx.on('session/event', (session: Session, event: SessionEvent) => {\n      // Cordis clears the public fiber uid synchronously when explicit disposal\n      // starts, before its async unload checkpoint can unregister this listener.\n      if (!accepting || ctx.fiber.uid === null || event.type !== 'turn/end') return\n      try {\n        writer.enqueue(createReceipt({ id: session.id, events: session.snapshotEvents() }, event))\n      } catch (error: unknown) {\n        ctx.logger.warn(`verification-receipt: could not summarize turn: ${String(error)}`)\n      }\n    })\n    // Yield in drain/listener/gate order: Cordis disposes nested effects in\n    // reverse, so any unload closes the gate, unregisters, then awaits writes.\n    yield () => {\n      accepting = false\n    }\n  }, 'verification-receipt listener and JSONL drain')\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/receipt.ts:87-126](https://github.com/030611/dsh-verification-receipt/blob/87f3fb0198090f0f26a37a52840db150609db748/src/receipt.ts#L87-L126)\n\n边界校验与输出。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\nexport function createReceipt(session: ReceiptSession, end: ReceiptEvent): VerificationReceipt {\n  const storedEnd = session.events[end.seq]\n  if (storedEnd === undefined || storedEnd.seq !== end.seq || storedEnd.type !== 'turn/end') {\n    throw new Error('turn/end is not present at its declared seq')\n  }\n  const endData = record(storedEnd.data)\n  const turn = numberField(endData, 'turn')\n  const startIndex = findTurnStart(session.events, storedEnd.seq, turn)\n  const bracket = session.events.slice(startIndex, storedEnd.seq + 1)\n  const calls = observeCalls(bracket)\n  const tools = summarizeTools(calls)\n  const verificationSignals = calls.flatMap(verificationSignal)\n  const reason = record(endData.reason)\n  const withoutHash = {\n    schemaVersion: 1 as const,\n    kind: 'dsh-verification-receipt' as const,\n    sessionIdHash: digest(`dsh-verification-receipt/session/v1\\n${session.id}`),\n    turn,\n    turnEndSeq: storedEnd.seq,\n    endedAt: storedEnd.time,\n    outcome: stringField(reason, 'kind'),\n    tools,\n    verificationSignals,\n    claim: 'execution-trace-only' as const,\n  }\n  return {\n    ...withoutHash,\n    receiptHash: digest(JSON.stringify(withoutHash)),\n  }\n}\n\n/** Find the matching opening boundary and reject an incomplete event bracket. */\nfunction findTurnStart(events: readonly ReceiptEvent[], endSeq: number, turn: number): number {\n  for (let index = endSeq - 1; index >= 0; index--) {\n    const candidate = events[index]\n    if (candidate?.type !== 'turn/start') continue\n    if (numberField(record(candidate.data), 'turn') === turn) return index\n    throw new Error(`turn ${turn} crosses another turn/start boundary`)\n  }\n  throw new Error(`turn ${turn} has no turn/start boundary`)\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/receipt.ts:130-177](https://github.com/030611/dsh-verification-receipt/blob/87f3fb0198090f0f26a37a52840db150609db748/src/receipt.ts#L130-L177)\n\n双层调用配对。\n\n<details>\n<summary>查看原文（48行）</summary>\n\n```text\nfunction observeCalls(events: readonly ReceiptEvent[]): CallObservation[] {\n  const topLevel: CallObservation[] = []\n  const nested: CallObservation[] = []\n  const topLevelResults = new Map<string, CallObservation['result']>()\n  const nestedResults = new Map<string, CallObservation['result']>()\n\n  for (const event of events) {\n    const data = record(event.data)\n    if (event.type === 'tool/call') {\n      topLevel.push({\n        id: stringField(data, 'callId'),\n        name: stringField(data, 'name'),\n        arguments: data.arguments,\n        source: 'top-level',\n      })\n      continue\n    }\n    if (event.type === 'tool/result') {\n      const block = toolResultBlock(data.message)\n      if (block !== undefined) {\n        topLevelResults.set(stringField(block, 'toolCallId'), {\n          isError: block.isError === true,\n          content: block.content,\n        })\n      }\n      continue\n    }\n    if (event.type === 'tool/code-dispatch-start') {\n      nested.push({\n        id: stringField(data, 'subCallId'),\n        name: stringField(data, 'name'),\n        arguments: data.arguments,\n        source: 'nested',\n      })\n      continue\n    }\n    if (event.type === 'tool/code-dispatch') {\n      nestedResults.set(stringField(data, 'subCallId'), {\n        isError: data.isError === true,\n        content: data.content,\n      })\n    }\n  }\n\n  return [\n    ...topLevel.map(call => ({ ...call, result: topLevelResults.get(call.id) })),\n    ...nested.map(call => ({ ...call, result: nestedResults.get(call.id) })),\n  ]\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/receipt.ts:181-195](https://github.com/030611/dsh-verification-receipt/blob/87f3fb0198090f0f26a37a52840db150609db748/src/receipt.ts#L181-L195)\n\n状态计数。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\nfunction summarizeTools(calls: readonly CallObservation[]): ToolSummary {\n  let succeeded = 0\n  let failed = 0\n  let unresolved = 0\n  let topLevel = 0\n  let nested = 0\n  for (const call of calls) {\n    if (call.source === 'top-level') topLevel++\n    else nested++\n    const status = callStatus(call)\n    if (status === 'succeeded') succeeded++\n    else if (status === 'failed') failed++\n    else unresolved++\n  }\n  return { calls: calls.length, succeeded, failed, unresolved, topLevel, nested }\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 验证信号能证明什么，哪些反例会误导？\n\n**研究主题：**缺陷与关键质疑\n\n#### 完整回答\n\n仅词法提示。优先tool-name命中类别；否则限定bash/pwsh/shell/shell_command/terminal/terminal_exec读字符串command或cmd，按typecheck/test/lint/build/check首个匹配类别。无shell语法解析/别名展开，echo“do not run tests”仍命中test，数组argv/自定义工具名或无可见关键词别名漏掉，这些反例有测试设计明确承认。\n\n状态succeeded只是已见result且无isError/识别的末尾非零退出/超时kill标记。结果文本稍变、工具伪报或命令没做真正验证，都不能由该字段识别。background命令的signal强制unresolved，但tools总计仍按启动调用result为succeeded；两处口径不同有意表达启动与验证结果，不可将总成功数替代验证通过数。byName优先时只输出单类别，也不会完整列出复合命令所有验证步骤。\n\n读取者应使用“疑似验证信号/记录调用状态”，保持未知；不应由匹配类别作CI质量闸门。createReceipt按seq作为数组索引，依赖宿主连续事件布局；缺间隔/不支持的事件结构抛错由监听器警告，可能漏receipt而非产出假的完成。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/receipt.ts:72-79](https://github.com/030611/dsh-verification-receipt/blob/87f3fb0198090f0f26a37a52840db150609db748/src/receipt.ts#L72-L79)\n\n首类别词法正则。\n\n```text\nconst SHELL_TOOL = /^(?:bash|pwsh|shell|shell_command|terminal|terminal_exec)$/iu\nconst CATEGORY_PATTERNS: ReadonlyArray<readonly [VerificationCategory, RegExp]> = [\n  ['typecheck', /(?:^|[^a-z])(?:type[-_ ]?check|tsc)(?:[^a-z]|$)/iu],\n  ['test', /(?:^|[^a-z])(?:test|tests|testing|vitest|jest|pytest|unittest|cargo\\s+test|go\\s+test)(?:[^a-z]|$)/iu],\n  ['lint', /(?:^|[^a-z])(?:lint|eslint|oxlint|ruff)(?:[^a-z]|$)/iu],\n  ['build', /(?:^|[^a-z])(?:build|compile|tsdown|esbuild)(?:[^a-z]|$)/iu],\n  ['check', /(?:^|[^a-z])(?:check|verify|validate)(?:[^a-z]|$)/iu],\n]\n```\n\n**依据 2 · 源码核查**：[src/receipt.ts:198-245](https://github.com/030611/dsh-verification-receipt/blob/87f3fb0198090f0f26a37a52840db150609db748/src/receipt.ts#L198-L245)\n\nbyName优先/background/状态。\n\n<details>\n<summary>查看原文（48行）</summary>\n\n```text\n/** Return one coarse suspected-verification signal, if the call looks relevant. */\nfunction verificationSignal(call: CallObservation): VerificationSignal[] {\n  const byName = categoryFor(call.name)\n  if (byName !== undefined) {\n    return [{ source: 'tool-name', category: byName, status: callStatus(call) }]\n  }\n  if (!SHELL_TOOL.test(call.name)) return []\n  const args = argumentRecord(call.arguments)\n  const command = typeof args?.command === 'string'\n    ? args.command\n    : typeof args?.cmd === 'string'\n      ? args.cmd\n      : undefined\n  if (command === undefined) return []\n  const category = categoryFor(command)\n  if (category === undefined) return []\n  const background = args?.run_in_background === true\n  return [{\n    source: 'command',\n    category,\n    status: background ? 'unresolved' : callStatus(call),\n  }]\n}\n\n/** Parse a tool's raw JSON arguments only for in-memory classification. */\nfunction argumentRecord(value: unknown): Record<string, unknown> | undefined {\n  if (typeof value !== 'string') return recordOrUndefined(value)\n  try {\n    return recordOrUndefined(JSON.parse(value) as unknown)\n  } catch {\n    return undefined\n  }\n}\n\n/** Choose the first, most-specific verification category present in text. */\nfunction categoryFor(text: string): VerificationCategory | undefined {\n  for (const [category, pattern] of CATEGORY_PATTERNS) {\n    if (pattern.test(text)) return category\n  }\n  return undefined\n}\n\n/** Resolve a call's final state, including non-zero shell status markers. */\nfunction callStatus(call: CallObservation): ReceiptStatus {\n  if (call.result === undefined) return 'unresolved'\n  if (call.result.isError) return 'failed'\n  if (SHELL_TOOL.test(call.name) && failedCommandContent(call.result.content)) return 'failed'\n  return 'succeeded'\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/receipt.ts:249-269](https://github.com/030611/dsh-verification-receipt/blob/87f3fb0198090f0f26a37a52840db150609db748/src/receipt.ts#L249-L269)\n\n有限末尾shell标记。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\nfunction failedCommandContent(content: unknown): boolean {\n  if (!Array.isArray(content)) return false\n  for (const block of content) {\n    const item = recordOrUndefined(block)\n    if (item?.type !== 'text' || typeof item.text !== 'string') continue\n    const exit = item.text.match(/\\[exit code: (-?\\d+)\\](?:\\r?\\n)?$/u)\n    if (exit?.[1] !== undefined && Number(exit[1]) !== 0) return true\n    if (/\\[(?:killed by signal|timed out after):?[^\\]]*\\](?:\\r?\\n)?$/iu.test(item.text)) return true\n  }\n  return false\n}\n\n/** Extract the single tool-result block from a DSH tool message. */\nfunction toolResultBlock(message: unknown): Record<string, unknown> | undefined {\n  const content = recordOrUndefined(message)?.content\n  if (!Array.isArray(content)) return undefined\n  for (const block of content) {\n    const item = recordOrUndefined(block)\n    if (item?.type === 'tool-result') return item\n  }\n  return undefined\n```\n\n</details>\n\n**依据 4 · 源码核查**：[tests/receipt.spec.ts:181-227](https://github.com/030611/dsh-verification-receipt/blob/87f3fb0198090f0f26a37a52840db150609db748/tests/receipt.spec.ts#L181-L227)\n\n后台口径/支持与反例设计。\n\n<details>\n<summary>查看原文（47行）</summary>\n\n```text\n  it('keeps missing results and background verification work unresolved', () => {\n    const end = event('turn/end', 4, { turn: 5, reason: { kind: 'completed' } })\n    const fixture = session('unresolved', [\n      event('turn/start', 0, { turn: 5 }),\n      event('tool/call', 1, {\n        turn: 5, step: 1, callId: 'missing', name: 'verify_project', arguments: '{}',\n      }),\n      event('tool/call', 2, {\n        turn: 5, step: 1, callId: 'background', name: 'bash',\n        arguments: '{\"command\":\"pnpm test\",\"run_in_background\":true}',\n      }),\n      result(3, 5, 1, 'background', 'background job started'),\n      end,\n    ])\n\n    const receipt = createReceipt(fixture, end)\n    expect(receipt.tools).toMatchObject({ calls: 2, succeeded: 1, unresolved: 1 })\n    expect(receipt.verificationSignals).toEqual([\n      { source: 'tool-name', category: 'check', status: 'unresolved' },\n      { source: 'command', category: 'test', status: 'unresolved' },\n    ])\n  })\n\n  it.each([\n    ['command JSON string', 'bash', '{\"command\":\"pnpm test\"}', 'test'],\n    ['cmd object field', 'pwsh', { cmd: 'pnpm lint' }, 'lint'],\n    ['case-insensitive quoted wrapper', 'SHELL_COMMAND', { command: 'bash -lc \"PNPM VITEST run\"' }, 'test'],\n    ['PowerShell wrapper and quotes', 'terminal_exec', { command: 'pwsh -Command \"npm run TYPECHECK\"' }, 'typecheck'],\n  ])('supports %s', (_label, name, args, category) => {\n    expect(signalFor(name, args)).toMatchObject({ source: 'command', category })\n  })\n\n  it.each([\n    ['array command', 'bash', { command: ['pnpm', 'test'] }],\n    ['argv-only shape', 'bash', { argv: ['pnpm', 'test'] }],\n    ['custom shell name', 'my_shell', { command: 'pnpm test' }],\n    ['nested command', 'bash', { command: { text: 'pnpm test' } }],\n    ['custom alias without keyword', 'bash', { command: 'pnpm run ci' }],\n  ])('leaves unsupported %s unclassified', (_label, name, args) => {\n    expect(signalFor(name, args)).toBeUndefined()\n  })\n\n  it('documents lexical false positives by classifying quoted non-execution text', () => {\n    expect(signalFor('bash', { command: 'echo \"do not run tests\"' })).toMatchObject({\n      source: 'command',\n      category: 'test',\n    })\n```\n\n</details>\n\n#### 缺口\n\n- 在目标读者真实工具命名/命令语料中的误报漏报率没有标注对照。\n  **影响：**不量化发现质量或作为质量门禁。\n  **进一步探讨：**用去敏合成命令矩阵加人工已知执行结果，分开词法命中、调用成功、实际验证/断言结果。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 隐私、完整性与持久化有哪些真实保证？\n\n**研究主题：**缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\n输出字面构造限定工具计数/类别和时序，不包含参数/原始ID/工具输出或消息文本；投影在内存仍会读取原始参数/结果做判断，不能说从不接触。sessionIdHash加domain但无key，可跨文件关联、低熵ID可猜，不是匿名。receiptHash是固定字段JSON的SHA256，任意能改文件者可重算，不发现删除/插入/回滚/重排；作者SECURITY一致承认。\n\nwriter用Promise链顺序append，mkdir0700/append0600仅请求创建模式，无chmod/realpath/lstat/锁，预存文件权限/路径链接及跨进程写均在可信本地路径边界。写失败warning后队列继续，不向宿主turn反馈“receipt已持久”。排队无容量/背压与rotation，慢盘可积压内存，崩溃丢已接受未写完项/尾行不完整。\n\n生命周期gate→注销listener→drain的逆序effect设计与ctx.fiber.uid同步检查避免卸载再接收，较单纯dispose后flush细致；drain只等Promise settled，失败已catch仍算排队结束，不等于全部行成功。作者有真实Context+SessionStore组合测试设计，本轮只读，不冒认运行通过。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/receipt.ts:100-115](https://github.com/030611/dsh-verification-receipt/blob/87f3fb0198090f0f26a37a52840db150609db748/src/receipt.ts#L100-L115)\n\n输出最小字段/无keyhash。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n  const withoutHash = {\n    schemaVersion: 1 as const,\n    kind: 'dsh-verification-receipt' as const,\n    sessionIdHash: digest(`dsh-verification-receipt/session/v1\\n${session.id}`),\n    turn,\n    turnEndSeq: storedEnd.seq,\n    endedAt: storedEnd.time,\n    outcome: stringField(reason, 'kind'),\n    tools,\n    verificationSignals,\n    claim: 'execution-trace-only' as const,\n  }\n  return {\n    ...withoutHash,\n    receiptHash: digest(JSON.stringify(withoutHash)),\n  }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/index.ts:65-80](https://github.com/030611/dsh-verification-receipt/blob/87f3fb0198090f0f26a37a52840db150609db748/src/index.ts#L65-L80)\n\n有序追加/模式/失败吞入warning。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n  /** Enqueue one complete JSON line without returning work to the session listener. */\n  enqueue(value: unknown): void {\n    const line = `${JSON.stringify(value)}\\n`\n    this.pending = this.pending\n      .then(async () => {\n        await mkdir(dirname(this.outputPath), { recursive: true, mode: 0o700 })\n        await appendFile(this.outputPath, line, { encoding: 'utf8', flag: 'a', mode: 0o600 })\n      })\n      .catch((error: unknown) => {\n        this.ctx.logger.warn(`verification-receipt: could not append receipt: ${String(error)}`)\n      })\n  }\n\n  /** Wait until every append accepted before disposal has settled. */\n  async drain(): Promise<void> {\n    await this.pending\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/index.ts:92-110](https://github.com/030611/dsh-verification-receipt/blob/87f3fb0198090f0f26a37a52840db150609db748/src/index.ts#L92-L110)\n\n关闭接收与drain时序。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n  ctx.effect(function* () {\n    let accepting = true\n    yield async () => writer.drain()\n    yield ctx.on('session/event', (session: Session, event: SessionEvent) => {\n      // Cordis clears the public fiber uid synchronously when explicit disposal\n      // starts, before its async unload checkpoint can unregister this listener.\n      if (!accepting || ctx.fiber.uid === null || event.type !== 'turn/end') return\n      try {\n        writer.enqueue(createReceipt({ id: session.id, events: session.snapshotEvents() }, event))\n      } catch (error: unknown) {\n        ctx.logger.warn(`verification-receipt: could not summarize turn: ${String(error)}`)\n      }\n    })\n    // Yield in drain/listener/gate order: Cordis disposes nested effects in\n    // reverse, so any unload closes the gate, unregisters, then awaits writes.\n    yield () => {\n      accepting = false\n    }\n  }, 'verification-receipt listener and JSONL drain')\n```\n\n</details>\n\n**依据 4 · 作者声明**：[SECURITY.md:7-23](https://github.com/030611/dsh-verification-receipt/blob/87f3fb0198090f0f26a37a52840db150609db748/SECURITY.md#L7-L23)\n\n作者信任/匿名/队列边界。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n## Trust model\n\nDSH Verification Receipt is a local observer, not an enforcement or attestation system. It trusts the DSH Session event stream for tool identity and outcome. It does not independently rerun tools, inspect the workspace, validate assistant claims, sign records, or provide trusted timestamps.\n\nThe JSONL destination should be readable and writable only by the local user who runs DSH. Do not place it in an agent-visible workspace, shared directory, synced public folder, or untrusted mount. The plugin requests owner-only modes when creating its directory and file, but operating systems and pre-existing paths may apply different permissions.\n\nAnyone able to modify the JSONL file can delete, reorder, replace, or recompute receipt rows. `receiptHash` is an integrity checksum, not authentication. Use an external signed, append-only, access-controlled sink if adversarial tamper resistance is required.\n\nBoth `sessionIdHash` and `receiptHash` are unkeyed and recomputable. Low-entropy or predictable Session ids can be guessed offline, and independent receipt rows cannot reveal deletion, insertion, reordering, truncation, rollback, or replacement. This plugin deliberately has no hash chain and is not an evidence-audit ledger.\n\nReceipt rows omit arguments, outputs, messages, and raw Session ids. They still expose timing, turn numbers, outcome counts, coarse verification categories, and a deterministic Session-id hash. Those facts may be sensitive, and the hash allows rows for one Session to be linked.\n\nOne plugin instance serializes its own writes. Separate processes have no shared lock, so writing one path from multiple DSH processes has no guaranteed ordering or row-boundary integrity. A crash can lose queued rows or leave an incomplete tail line. The queue is unbounded under sustained filesystem backpressure.\n\nDirectory/file creation modes are best-effort: existing permissions are unchanged, Windows may ignore POSIX modes, and a pre-existing symbolic link is followed. The configured destination is a trusted-administrator boundary, not a defense against hostile path components.\n\n## Report a vulnerability\n```\n\n</details>\n\n**依据 5 · 源码核查**：[tests/composition.spec.ts:18-64](https://github.com/030611/dsh-verification-receipt/blob/87f3fb0198090f0f26a37a52840db150609db748/tests/composition.spec.ts#L18-L64)\n\n组合/隐私/不改模型history设计。\n\n<details>\n<summary>查看原文（47行）</summary>\n\n```text\n  it('observes SessionStore turn/end, writes JSONL, and changes no model history', async () => {\n    const root = await mkdtemp(join(tmpdir(), 'dsh-verification-receipt-'))\n    roots.push(root)\n    const outputPath = join(root, 'receipts.jsonl')\n    const ctx = new Context()\n    await ctx.plugin(SessionStore)\n    const beforeListeners = [...ctx.events.dispatch('emit', ['session/event'])].length\n    const plugin = await ctx.plugin(apply, { outputPath })\n    const session = ctx.sessions.create()\n    session.append('turn/start', { turn: 1 })\n    session.append('step/start', { turn: 1, step: 1 })\n    session.append('tool/call', {\n      turn: 1,\n      step: 1,\n      callId: ToolCallId('c1'),\n      name: 'read',\n      arguments: '{\"path\":\"private.txt\"}',\n    })\n    session.append('tool/result', {\n      turn: 1,\n      step: 1,\n      message: createToolResultMessage({\n        callId: ToolCallId('c1'),\n        content: [{ type: 'text', text: 'private result' }],\n        isError: false,\n      }),\n    }, { surfaceOp: 'append' })\n    session.append('step/end', { turn: 1, step: 1 })\n    const messagesBeforeEnd = session.deriveMessages()\n    session.append('turn/end', { turn: 1, reason: { kind: 'completed' } })\n    expect(session.deriveMessages()).toEqual(messagesBeforeEnd)\n    await plugin.dispose()\n\n    const raw = await readFile(outputPath, 'utf8')\n    expect(raw.endsWith('\\n')).toBe(true)\n    const lines = raw.trim().split('\\n')\n    expect(lines).toHaveLength(1)\n    const receipt = JSON.parse(lines[0]!) as Record<string, unknown>\n    expect(receipt).toMatchObject({\n      kind: 'dsh-verification-receipt',\n      outcome: 'completed',\n      claim: 'execution-trace-only',\n      tools: { calls: 1, succeeded: 1, failed: 0 },\n    })\n    expect(lines[0]).not.toContain('private')\n    expect([...ctx.events.dispatch('emit', ['session/event'])]).toHaveLength(beforeListeners)\n    await ctx.fiber.dispose()\n```\n\n</details>\n\n**依据 6 · 源码核查**：[tests/composition.spec.ts:85-102](https://github.com/030611/dsh-verification-receipt/blob/87f3fb0198090f0f26a37a52840db150609db748/tests/composition.spec.ts#L85-L102)\n\n卸载拒绝新事件设计。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n  it('stops accepting turn events as soon as disposal begins', async () => {\n    const root = await mkdtemp(join(tmpdir(), 'dsh-verification-receipt-dispose-'))\n    roots.push(root)\n    const outputPath = join(root, 'receipts.jsonl')\n    const ctx = new Context()\n    await ctx.plugin(SessionStore)\n    const plugin = await ctx.plugin(apply, { outputPath })\n    const session = ctx.sessions.create()\n    session.append('turn/start', { turn: 1 })\n    session.append('turn/end', { turn: 1, reason: { kind: 'completed' } })\n\n    const disposing = plugin.dispose()\n    session.append('turn/start', { turn: 2 })\n    session.append('turn/end', { turn: 2, reason: { kind: 'completed' } })\n    await disposing\n\n    expect((await readFile(outputPath, 'utf8')).trim().split('\\n')).toHaveLength(1)\n    await ctx.fiber.dispose()\n```\n\n</details>\n\n#### 缺口\n\n- 持续慢盘/满盘下队列峰值、丢行与恢复表现缺少资源曲线。\n  **影响：**不能承诺有界内存或完整无丢账。\n  **进一步探讨：**mock延迟/拒绝append，以合成高频turn测已接受/持久/丢弃计数和内存，勿用真实对话。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 启动、维护与成本效果怎么判断？\n\n**研究主题：**依赖、兼容与流程、效果与总成本\n\n#### 完整回答\n\n#### 启动与依赖\n\n| 条件 | 用途 | 边界 |\n| --- | --- | --- |\n| DSH0.1.2-alpha.3/4/5与Session | durable event协议 | 作者仅这些版本Windows Web acceptance，不外推0.2 |\n| Node ^22.19或>=24、Schemastery3.18.2 | ESM/配置验证 | Cordis/Session宿主peer，类型省略不等于无需服务 |\n| 私有可信绝对输出路径 | JSONL本地追加 | 默认DSH_HOME或~/.dsh，非防恶意链接边界 |\n| 一进程一文件/外部retention | 写顺序与容量维护 | 无跨进程锁/轮转 |\n\n#### 使用流程\n\n| 步骤 | 动作 | 判据 |\n| --- | --- | --- |\n| 安装前 | 核宿主精确版本与包 | 不以Windows启动记录推断当前全平台 |\n| 配置 | 指私有非symlink路径，一进程一file | 核旧权限、访问者、保留期 |\n| 读receipt | 对照turn与词法类别/状态 | 不把succeeded当测试通过 |\n| 维护 | 看写错误/磁盘容量/队列迹象 | 缺行不是“无工具” |\n| 卸载 | 正常drain后核完整JSONL尾行 | 崩溃尾行隔离，不伪造补齐 |\n\n#### 成本\n\n| 阶段 | 现金与资源 | 人工与时间 | 已知与未知 |\n| --- | --- | --- | --- |\n| 首次 | 本地包/磁盘，不自调模型 | 核版本/路径/隐私 | 无安装工时估值 |\n| 持续使用 | 同步投影CPU、JSONL存储和未界定queue | 轮转保留/分类误差解释 | 代码无额外模型请求；时延/空间随事件量未知 |\n| 失败恢复 | 重查源session、隔离尾行/丢弃批 | 对照写失败与漏轮次 | 无自动backfill/强制同步；恢复完整性未知 |\n\n#### 效果\n\n| 目标 | 源码增量 | 限制 |\n| --- | --- | --- |\n| 少查完整对话 | 每轮粗摘要 | 非实际验证证明 |\n| 少持久化内容 | 明确最小字段 | 时序/hash仍敏感且可关联 |\n| 少影响模型 | 无工具/提示/网络请求 | 同步snapshot/投影仍可能增CPU时延 |\n| 写顺序 | 单实例Promise链/卸载drain | 失败/崩溃/跨进程无完整保证 |\n\n作者compatibility记录是可追溯声明，Windows安装/配置/冷启动/卸载不等于验证receipt语义。宿主snapshotEvents自身复制/遍历全历史的成本依宿主实现，插件再slice当轮/投影；不能只按一行JSON大小估全部CPU。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:52-60](https://github.com/030611/dsh-verification-receipt/blob/87f3fb0198090f0f26a37a52840db150609db748/package.json#L52-L60)\n\n精确宿主范围。\n\n```text\n    \"compatibility\": {\n      \"dsh\": \"0.1.2-alpha.3 || 0.1.2-alpha.4 || 0.1.2-alpha.5\",\n      \"dshReleases\": {\n        \"0.1.2-alpha.3\": \"compatible\",\n        \"0.1.2-alpha.4\": \"compatible\",\n        \"0.1.2-alpha.5\": \"compatible\"\n      },\n      \"profiles\": [\n        \"web\"\n```\n\n**依据 2 · 源码核查**：[package.json:74-88](https://github.com/030611/dsh-verification-receipt/blob/87f3fb0198090f0f26a37a52840db150609db748/package.json#L74-L88)\n\npeer与runtime依赖。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n  \"peerDependencies\": {\n    \"@deepseek-ai/cordis\": \"^4.0.2\",\n    \"@deepseek-ai/dsh-session\": \"0.1.2-alpha.3 || 0.1.2-alpha.4 || 0.1.2-alpha.5\",\n    \"@deepseek-ai/schemastery\": \"^3.18.2\"\n  },\n  \"peerDependenciesMeta\": {\n    \"@deepseek-ai/cordis\": {\n      \"optional\": true\n    },\n    \"@deepseek-ai/dsh-session\": {\n      \"optional\": true\n    }\n  },\n  \"dependencies\": {\n    \"@deepseek-ai/schemastery\": \"3.18.2\"\n```\n\n</details>\n\n**依据 3 · 作者声明**：[docs/compatibility-0.1.1.md:9-36](https://github.com/030611/dsh-verification-receipt/blob/87f3fb0198090f0f26a37a52840db150609db748/docs/compatibility-0.1.1.md#L9-L36)\n\n作者验收范围。\n\n<details>\n<summary>查看原文（28行）</summary>\n\n```text\n| DSH release | Status | Basis |\n| --- | --- | --- |\n| `0.1.2-alpha.3` | `compatible` | Package gates and disposable Web Profile acceptance passed. |\n| `0.1.2-alpha.4` | `compatible` | Package gates and disposable Web Profile acceptance passed. |\n| `0.1.2-alpha.5` | `compatible` | Package gates and disposable Web Profile acceptance passed. |\n\nThe Node.js range is `^22.19.0 || >=24.0.0`. Acceptance used Node.js 24.19.0\nand pnpm 11.19.0 on Windows. macOS and Linux remain untested; the manifest\ndoes not infer system support from the Windows result.\n\n## Disposable Web Profile acceptance\n\nDate: 2026-09-04. Each DSH release used a separate, new `DSH_HOME` and the\nlocally packed `dsh-verification-receipt-0.1.1.tgz`. No real user Profile was\nread or modified.\n\nFor each release in the matrix:\n\n1. `dsh plugin --profile web add <local-0.1.1-tarball>` exited 0.\n2. `dsh --profile web --dump-config` exited 0 and contained the additive\n   plugin-owned `dsh-verification-receipt` entry.\n3. `dsh --profile web --no-open --port 0` emitted a bound loopback URL and\n   remained live until deliberately interrupted.\n4. `dsh plugin --profile web remove dsh-verification-receipt` exited 0, and a\n   subsequent config dump contained no plugin entry.\n\nNo provider or model request was made. This acceptance does not prove the\nsemantic correctness of a receipt, exercise external APIs, or widen the\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/index.ts:47-53](https://github.com/030611/dsh-verification-receipt/blob/87f3fb0198090f0f26a37a52840db150609db748/src/index.ts#L47-L53)\n\n默认/绝对路径。\n\n```text\nfunction resolveConfig(config: Config = {}): ResolvedConfig {\n  const dshHome = resolve(process.env.DSH_HOME ?? join(homedir(), '.dsh'))\n  const outputPath = config.outputPath ?? join(dshHome, 'verification-receipts', 'v1', 'receipts.jsonl')\n  if (!isAbsolute(outputPath)) {\n    throw new Error('verification-receipt: outputPath must be absolute')\n  }\n  return { outputPath }\n```\n\n**依据 5 · 源码核查**：[src/index.ts:98-102](https://github.com/030611/dsh-verification-receipt/blob/87f3fb0198090f0f26a37a52840db150609db748/src/index.ts#L98-L102)\n\n同步snapshot与投影。\n\n```text\n      if (!accepting || ctx.fiber.uid === null || event.type !== 'turn/end') return\n      try {\n        writer.enqueue(createReceipt({ id: session.id, events: session.snapshotEvents() }, event))\n      } catch (error: unknown) {\n        ctx.logger.warn(`verification-receipt: could not summarize turn: ${String(error)}`)\n```\n\n#### 缺口\n\n- 固定版本长会话/大参数的snapshot与投影时延、长期JSONL增长未对照。\n  **影响：**不量化零成本或日常保留规模。\n  **进一步探讨：**合成多轮/不同事件大小，分别统计宿主snapshot、投影、队列和存储，无需模型调用。\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 推荐结论与可继续探讨方向是什么？\n\n**研究主题：**采用判断、新假设与验证\n\n#### 完整回答\n\n有条件试用。适合精确支持的宿主、个人私有本地目录、把它当启发式观察摘要的维护者。字段减量、轮次边界和卸载顺序清楚，且文档主动区分hash/验证信号与真实保证。需要审计证明、全平台实时兼容、强耐久或多进程共写者不应依赖这些摘要替代原始记录。\n\n从“业务turn不应被可选sink阻塞”与“无限队列和失败丢行会让缺记录难解释”的冲突出发，可探讨“有界队列与可见丢失收据”。将accepted/persisted/dropped/error/lastSeq计数隔离成不含内容的本地状态，容量触顶按明确策略拒绝/采样；独立验证器只核字段/序号覆盖，不把它升级成防篡改审计。参照当前无界Promise链，比较内存/turn延迟/丢失可解释性。\n\n反例是进程突然终止且状态未持久，仍无法准确知道所有丢行；若方案声称此时零丢失便被反例证伪。最小对照包含慢盘/满盘、dispose中到达、重复turn/end、尾行半写与长参数，判据是内存有界、缺行可见且不泄露原文/不增加模型上下文。若为保计数阻塞turn或引入敏感内容，净收益不成立。方案未实现，不计当前优势。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:65-80](https://github.com/030611/dsh-verification-receipt/blob/87f3fb0198090f0f26a37a52840db150609db748/src/index.ts#L65-L80)\n\n无界链与失败基线。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n  /** Enqueue one complete JSON line without returning work to the session listener. */\n  enqueue(value: unknown): void {\n    const line = `${JSON.stringify(value)}\\n`\n    this.pending = this.pending\n      .then(async () => {\n        await mkdir(dirname(this.outputPath), { recursive: true, mode: 0o700 })\n        await appendFile(this.outputPath, line, { encoding: 'utf8', flag: 'a', mode: 0o600 })\n      })\n      .catch((error: unknown) => {\n        this.ctx.logger.warn(`verification-receipt: could not append receipt: ${String(error)}`)\n      })\n  }\n\n  /** Wait until every append accepted before disposal has settled. */\n  async drain(): Promise<void> {\n    await this.pending\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/index.ts:92-110](https://github.com/030611/dsh-verification-receipt/blob/87f3fb0198090f0f26a37a52840db150609db748/src/index.ts#L92-L110)\n\n卸载与接收基线。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n  ctx.effect(function* () {\n    let accepting = true\n    yield async () => writer.drain()\n    yield ctx.on('session/event', (session: Session, event: SessionEvent) => {\n      // Cordis clears the public fiber uid synchronously when explicit disposal\n      // starts, before its async unload checkpoint can unregister this listener.\n      if (!accepting || ctx.fiber.uid === null || event.type !== 'turn/end') return\n      try {\n        writer.enqueue(createReceipt({ id: session.id, events: session.snapshotEvents() }, event))\n      } catch (error: unknown) {\n        ctx.logger.warn(`verification-receipt: could not summarize turn: ${String(error)}`)\n      }\n    })\n    // Yield in drain/listener/gate order: Cordis disposes nested effects in\n    // reverse, so any unload closes the gate, unregisters, then awaits writes.\n    yield () => {\n      accepting = false\n    }\n  }, 'verification-receipt listener and JSONL drain')\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/receipt.ts:100-115](https://github.com/030611/dsh-verification-receipt/blob/87f3fb0198090f0f26a37a52840db150609db748/src/receipt.ts#L100-L115)\n\n最小字段基线。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n  const withoutHash = {\n    schemaVersion: 1 as const,\n    kind: 'dsh-verification-receipt' as const,\n    sessionIdHash: digest(`dsh-verification-receipt/session/v1\\n${session.id}`),\n    turn,\n    turnEndSeq: storedEnd.seq,\n    endedAt: storedEnd.time,\n    outcome: stringField(reason, 'kind'),\n    tools,\n    verificationSignals,\n    claim: 'execution-trace-only' as const,\n  }\n  return {\n    ...withoutHash,\n    receiptHash: digest(JSON.stringify(withoutHash)),\n  }\n```\n\n</details>\n\n#### 缺口\n\n- 有界队列/丢失收据方案未实现。\n  **影响：**不计现有资源与耐久优势。\n  **进一步探讨：**合成延迟/失败/崩溃对照内存、延迟与丢失解释，不调用模型。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：c2d134c7ae0c9606bdac10cb2d42fd3a1bbeac472663f6cc09da05dd301ad9a4。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 482 | — | — | 4515 |\n| .mjs | source | 2 | 131 | 124 | 0 | — |\n| .ts | source | 3 | 424 | 327 | 56 | — |\n| .ts | test | 3 | 391 | 361 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 每轮投影 | 工具计数/状态 | 信任宿主记录，非业务正确 |\n| 词法信号 | 寻找疑似验证 | 误报/漏报，非测试通过 |\n| 字段减量 | 不保存消息/参数/结果正文 | 时序和稳定hash仍敏感 |\n| JSONL sink | 单实例顺序与卸载排空 | 无界queue/强耐久/跨进程锁 |\n\n\n## 工程亮点\n\n输出字面构造限定工具计数/类别和时序，不包含参数/原始ID/工具输出或消息文本；投影在内存仍会读取原始参数/结果做判断，不能说从不接触。sessionIdHash加domain但无key，可跨文件关联、低熵ID可猜，不是匿名。receiptHash是固定字段JSON的SHA256，任意能改文件者可重算，不发现删除/插入/回滚/重排；作者SECURITY一致承认。\n\nwriter用Promise链顺序append，mkdir0700/append0600仅请求创建模式，无chmod/realpath/lstat/锁，预存文件权限/路径链接及跨进程写均在可信本地路径边界。写失败warning后队列继续，不向宿主turn反馈“receipt已持久”。排队无容量/背压与rotation，慢盘可积压内存，崩溃丢已接受未写完项/尾行不完整。\n\n生命周期gate→注销listener→drain的逆序effect设计与ctx.fiber.uid同步检查避免卸载再接收，较单纯dispose后flush细致；drain只等Promise settled，失败已catch仍算排队结束，不等于全部行成功。作者有真实Context+SessionStore组合测试设计，本轮只读，不冒认运行通过。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、SECURITY.md、docs/compatibility-0.1.1.md、src/index.ts、src/receipt.ts、tests/receipt.spec.ts、tests/composition.spec.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：两src全链及包/兼容/SECURITY，读组合与词法测试设计；不运行测试、宿主冒烟或读取用户事件。\n- 下一步：可继续以合成事件与慢/失败文件sink比较内存、回合延迟、缺行可解释性和隐私，无需模型/真实用户日志。\n",
         "metadata": {
             "repository": "030611/dsh-verification-receipt",
             "repository_id": 1333370288,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T07:59:01.907Z",
+            "window_start": "2026-09-22T07:59:01.907Z",
             "stars": 4,
             "pushed_at": "2026-09-03T16:29:04Z",
             "issues": {
-                "open": 0,
+                "open": 2,
                 "closed": 0,
                 "created_30d": 0,
                 "closed_30d": 0,
@@ -312,29 +467,21 @@
             "errors": [],
             "npm": {
                 "package_name": "dsh-verification-receipt",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 862,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-verification-receipt",
+                "captured_at": "2026-10-22T07:59:16.078Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 851,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-verification-receipt",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-08-14T05:17:58.624Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T07:59:16.078Z",
                     "source_url": "https://registry.npmjs.org/dsh-verification-receipt",
                     "error": null,
                     "latest_version": "0.1.0",
                     "latest_published_at": "2026-08-14T05:17:59.003Z",
                     "latest_error": null
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "87f3fb0198090f0f26a37a52840db150609db748",
-                "current_revision": "87f3fb0198090f0f26a37a52840db150609db748",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {
@@ -342,15 +489,17 @@
             "repository": "030611/dsh-verification-receipt",
             "path": "",
             "revision": "87f3fb0198090f0f26a37a52840db150609db748",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                "https://github.com/0xsline/awesome-deepseek-harness"
-            ],
             "fingerprints": {
                 "directory": "2719f26a259ba5270a25e71182cf79bd62f0b53a7e879451a9877be960ad9221",
                 "code": "87f3fb0198090f0f26a37a52840db150609db748",
-                "maintenance": "92df825f823e5a0c27febd4eb42684c53f1aa3740ae34127f9405f07812dc346"
-            }
+                "release": "ce4b903c9dd9bac74f8003700253286c97b55dd39d4ad278333d2e28e8c1c16a",
+                "maintenance": "92df825f823e5a0c27febd4eb42684c53f1aa3740ae34127f9405f07812dc346",
+                "compatibility": "a68fb3d222a3ee7a255f70203e64a3fde804b1b5ee4f77d7c86317bbe7af4120"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ]
         }
     }
 }

@@ -12,7 +12,7 @@
             "aliases": [],
             "name": "dsh-LorebookMD",
             "entry_type": "plugin",
-            "technical_category": "memory-knowledge",
+            "technical_category": "agent-workflow",
             "business_category": "content-creation",
             "tags": [],
             "availability": "unknown",
@@ -24,43 +24,107 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-02-github-1334395883-root-directory-0",
+                    "id": "2026-10-22-02-github-1334395883-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T03:16:26.562Z",
+                    "retrieved_at": "2026-10-22T05:16:25.227Z",
                     "membership": "present"
                 },
                 {
-                    "id": "2026-10-21-02-github-1334395883-root-directory-1",
+                    "id": "2026-10-22-02-github-1334395883-root-directory-1",
                     "url": "https://github.com/0xsline/awesome-deepseek-harness",
                     "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
-                    "retrieved_at": "2026-10-21T03:16:26.562Z",
+                    "retrieved_at": "2026-10-22T05:16:25.227Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-02-github-1334395883-root-author",
+                    "id": "2026-10-22-02-github-1334395883-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/609476965/dsh-LorebookMD/blob/4bc4110efbfb4888286b81aaf53191705dade9dd/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/609476965/dsh-LorebookMD",
+                            "commit": "4bc4110efbfb4888286b81aaf53191705dade9dd",
+                            "path": "README.md",
+                            "content_sha256": "a903fb0da0321538ddc7cf38e280dc6df0968c1ef90eccfcc483a398237b2c72"
+                        }
+                    ],
                     "revision": "4bc4110efbfb4888286b81aaf53191705dade9dd",
-                    "captured_at": "2026-10-21T03:16:26.562Z",
-                    "summary": "管理提示词预设并导入酒馆角色卡、世界书及正则资料，按需注入对话上下文。",
-                    "artifact": "data/runs/2026-10-21-02/snapshots/609476965--dsh-lorebookmd/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:16:25.227Z",
+                    "summary": "将Tavern角色卡与世界书导入DSH，生成本地设定文档和世界书、创作提示词，并按关键词追加设定条目。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/609476965--dsh-lorebookmd/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-02-github-1334395883-root-source",
+                    "id": "2026-10-22-02-github-1334395883-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/609476965/dsh-LorebookMD/blob/4bc4110efbfb4888286b81aaf53191705dade9dd/src/index.ts",
+                    "url": "https://github.com/609476965/dsh-LorebookMD/blob/4bc4110efbfb4888286b81aaf53191705dade9dd/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/609476965/dsh-LorebookMD",
+                            "commit": "4bc4110efbfb4888286b81aaf53191705dade9dd",
+                            "path": "README.md",
+                            "content_sha256": "a903fb0da0321538ddc7cf38e280dc6df0968c1ef90eccfcc483a398237b2c72"
+                        },
+                        {
+                            "repository_url": "https://github.com/609476965/dsh-LorebookMD",
+                            "commit": "4bc4110efbfb4888286b81aaf53191705dade9dd",
+                            "path": "package.json",
+                            "content_sha256": "29aee2079f31887ed861c9a291a591d9b5b82194945fc14ff0ce50d0486115cb"
+                        },
+                        {
+                            "repository_url": "https://github.com/609476965/dsh-LorebookMD",
+                            "commit": "4bc4110efbfb4888286b81aaf53191705dade9dd",
+                            "path": "tsdown.config.ts",
+                            "content_sha256": "d92f96373fc69ea88cd1851cc57a0b101144e9edbd0086bb2d4ba5d3ccc95d3b"
+                        },
+                        {
+                            "repository_url": "https://github.com/609476965/dsh-LorebookMD",
+                            "commit": "4bc4110efbfb4888286b81aaf53191705dade9dd",
+                            "path": "cordis.patch.yml",
+                            "content_sha256": "309283f420dfc42dfe4d66df0dac297b3a18051a350c63abb13bfcde31c11c0f"
+                        },
+                        {
+                            "repository_url": "https://github.com/609476965/dsh-LorebookMD",
+                            "commit": "4bc4110efbfb4888286b81aaf53191705dade9dd",
+                            "path": "src/index.ts",
+                            "content_sha256": "dcd58dba29917e0ac8bde2221d589474f5af36efc8473f3b318d4fa09b67f9f9"
+                        },
+                        {
+                            "repository_url": "https://github.com/609476965/dsh-LorebookMD",
+                            "commit": "4bc4110efbfb4888286b81aaf53191705dade9dd",
+                            "path": "src/tavern.ts",
+                            "content_sha256": "f1a8038d85770256e314d49ccb54c80fd97694fdcb1e631bd60d065b3864fa24"
+                        },
+                        {
+                            "repository_url": "https://github.com/609476965/dsh-LorebookMD",
+                            "commit": "4bc4110efbfb4888286b81aaf53191705dade9dd",
+                            "path": "src/preset-repo.ts",
+                            "content_sha256": "fd47028397fcef3088adc016f27e992b2a019779e220ebbdac2dbc2aa70ef998"
+                        },
+                        {
+                            "repository_url": "https://github.com/609476965/dsh-LorebookMD",
+                            "commit": "4bc4110efbfb4888286b81aaf53191705dade9dd",
+                            "path": "src/client/index.ts",
+                            "content_sha256": "62137fa6c6e44786546d165b31bb81d3b2546b3365da267903b9bc84cbe2869e"
+                        },
+                        {
+                            "repository_url": "https://github.com/609476965/dsh-LorebookMD",
+                            "commit": "4bc4110efbfb4888286b81aaf53191705dade9dd",
+                            "path": "src/client/presets-api.ts",
+                            "content_sha256": "231c3331ddbbfda975aa18741b6958f350ea9351d22087cf9d6a98db524c9b60"
+                        }
+                    ],
                     "revision": "4bc4110efbfb4888286b81aaf53191705dade9dd",
-                    "captured_at": "2026-10-21T03:16:26.562Z",
-                    "summary": "核查 src/index.ts、src/tavern.ts、src/preset-repo.ts；src/index.ts以动态systemPrompt.section注入激活预设，提供prompt_preset工具和API，监听JSON变化；tavern.ts解析PNG chara与JSON并按关键词匹配世界条目；PresetRepo隔离存储端口。",
-                    "artifact": "data/runs/2026-10-21-02/snapshots/609476965--dsh-lorebookmd/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:16:25.227Z",
+                    "summary": "核查 README.md、package.json、tsdown.config.ts、cordis.patch.yml、src/index.ts、src/tavern.ts、src/preset-repo.ts、src/client/index.ts、src/client/presets-api.ts；角色卡导入按PNG签名选择chara tEXt块或直接JSON解析，独立世界书支持entries数组/对象。字段筛选后按insertion_order排序。导入一本世界书会先建立“名·世界书”完整设定提示词，再建立“名·创作”指令加完整设定，持久化worldbooks映射，最后写Markdown。设置页与八个模型工具操作同一PresetRepo，激活预设通过systemPrompt.section的求值函数在之后组装提示词时读取。\n\n关键词触发是额外注入，不是只把命中内容送给模型。世界书预设已经包含全部启用条目，pre-step又从messages中所有source.kind=user文本拼接查词，把命中条目追加为plugin来源的user消息。源码没有把它裁成仅最后一条用户消息，也没有token预算或命中数截断。因此不能将它宣传为检索节省上下文，长历史也可能持续命中旧词。\n\nselective和secondary_keys会保存，但matchWorldEntry只检查enabled、constant、主keys，不应用次级选择条件。正则脚本导入明确只是文本参考，DSH没有等价聊天正则执行管线。未知模板变量清空，user/char被替换，这也不是完整酒馆模板解释器。贡献在格式迁移、双使用模式和宿主接线，而不是原创RAG或完全兼容酒馆。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/609476965--dsh-lorebookmd/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "核查固定提交内列明入口、核心实现及相关配置/作者材料的源码子集；未执行插件、其测试、安装、付费请求或真实宿主验收，未核实独立用户采用。",
+                        "固定源码检查角色卡/世界书解析、提示词与触发、管理路由、预设持久化和构建入口；不运行目标，不下载验证npm制品，不作完整Tavern兼容审计。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -71,9 +135,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "适合已有角色卡与世界设定、需要在DSH管理写作或角色扮演上下文的作者。",
+                    "text": "面向已有Tavern/SillyTavern角色卡或世界书、希望在DSH中复用设定写小说或互动推演的用户。输入是自己提供的PNG/JSON和场景要求，输出是可查看的设定文档、可激活提示词以及模型生成的正文。插件不自带小说素材，也没有独立生成模型。\n\n合格任务不只是导入返回成功，还要核对关键人物、组织和世界规则是否完整，当前会话用了正确世界，输出没有违背设定，文风与情节能供作者继续修改。最后一项需要人工阅读或明确评审标准，第三人称和“严格参考”提示词不构成质量保证。\n\n直接参照是手工把设定整理成Markdown并粘进系统提示词。插件减少解析角色卡、保存双模式和重复切换的操作，但没有检索数据库或自动检验小说设定一致性。多人同时使用同一个插件实例、巨大世界书或需要完全兼容SillyTavern触发语义时，应先看状态作用域、全文成本和匹配限制。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1334395883-root-source"
+                        "2026-10-22-02-github-1334395883-root-source"
                     ],
                     "dependencies": [
                         {
@@ -82,16 +146,16 @@
                             "fingerprint": "4bc4110efbfb4888286b81aaf53191705dade9dd"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:26.562Z",
+                    "reviewed_at": "2026-10-22T05:16:25.227Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "src/index.ts以动态systemPrompt.section注入激活预设，提供prompt_preset工具和API，监听JSON变化；tavern.ts解析PNG chara与JSON并按关键词匹配世界条目；PresetRepo隔离存储端口。",
+                    "text": "角色卡导入按PNG签名选择chara tEXt块或直接JSON解析，独立世界书支持entries数组/对象。字段筛选后按insertion_order排序。导入一本世界书会先建立“名·世界书”完整设定提示词，再建立“名·创作”指令加完整设定，持久化worldbooks映射，最后写Markdown。设置页与八个模型工具操作同一PresetRepo，激活预设通过systemPrompt.section的求值函数在之后组装提示词时读取。\n\n关键词触发是额外注入，不是只把命中内容送给模型。世界书预设已经包含全部启用条目，pre-step又从messages中所有source.kind=user文本拼接查词，把命中条目追加为plugin来源的user消息。源码没有把它裁成仅最后一条用户消息，也没有token预算或命中数截断。因此不能将它宣传为检索节省上下文，长历史也可能持续命中旧词。\n\nselective和secondary_keys会保存，但matchWorldEntry只检查enabled、constant、主keys，不应用次级选择条件。正则脚本导入明确只是文本参考，DSH没有等价聊天正则执行管线。未知模板变量清空，user/char被替换，这也不是完整酒馆模板解释器。贡献在格式迁移、双使用模式和宿主接线，而不是原创RAG或完全兼容酒馆。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1334395883-root-source"
+                        "2026-10-22-02-github-1334395883-root-source"
                     ],
                     "dependencies": [
                         {
@@ -100,16 +164,16 @@
                             "fingerprint": "4bc4110efbfb4888286b81aaf53191705dade9dd"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:26.562Z",
+                    "reviewed_at": "2026-10-22T05:16:25.227Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "核查固定提交内列明入口、核心实现及相关配置/作者材料的源码子集；未执行插件、其测试、安装、付费请求或真实宿主验收，未核实独立用户采用。",
+                    "text": "固定源码检查角色卡/世界书解析、提示词与触发、管理路由、预设持久化和构建入口；不运行目标，不下载验证npm制品，不作完整Tavern兼容审计。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1334395883-root-source"
+                        "2026-10-22-02-github-1334395883-root-source"
                     ],
                     "dependencies": [
                         {
@@ -118,16 +182,16 @@
                             "fingerprint": "4bc4110efbfb4888286b81aaf53191705dade9dd"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:26.562Z",
+                    "reviewed_at": "2026-10-22T05:16:25.227Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "发布与依赖以本项固定package.json、README和本轮META为界；npm或仓库统计不是采用证据。",
+                    "text": "v1.0.0 MIT，Node>=22.18，宿主依赖由DSH profile提供；固定Git树只有client产物、缺main指向lib/index.js，npm制品未检查。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1334395883-root-source"
+                        "2026-10-22-02-github-1334395883-root-source"
                     ],
                     "dependencies": [
                         {
@@ -136,16 +200,16 @@
                             "fingerprint": "4bc4110efbfb4888286b81aaf53191705dade9dd"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:26.562Z",
+                    "reviewed_at": "2026-10-22T05:16:25.227Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "首次需整理角色卡、预设名与存储目录；持续成本是提示token、关键词误触发和格式迁移人工复核，模型现金按上下文和生成计费。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 宿主与实际完整包、数据目录 | 复核入口，整理并核对导入材料 | 未测安装耗时和导入峰值 |\n| 持续使用 | 每次模型请求包含全文；世界模式还可重复命中条目 | 手工检查设定一致性，协调共享active | token/价格随材料与模型变化，未测 |\n| 失败恢复 | JSON/MD备份和可能重导入 | 核对内存、预设、关键词与文档是否同版本 | 多步失败可留下部分状态 |\n\n",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1334395883-root-source"
+                        "2026-10-22-02-github-1334395883-root-source"
                     ],
                     "dependencies": [
                         {
@@ -154,16 +218,16 @@
                             "fingerprint": "4bc4110efbfb4888286b81aaf53191705dade9dd"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:26.562Z",
+                    "reviewed_at": "2026-10-22T05:16:25.227Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "已有酒馆资料的写作者可先导入副本。检查占位符、世界书命中与激活预设，别直接把原平台效果视为DSH已复现。",
+                    "text": "先观察。继续研究从完整制品清单、双会话切换、MD编辑传播和部分写入恢复入手，避免将共享提示词当会话私有设定。详见[Q06](#research-q06)。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1334395883-root-source"
+                        "2026-10-22-02-github-1334395883-root-source"
                     ],
                     "dependencies": [
                         {
@@ -172,16 +236,16 @@
                             "fingerprint": "4bc4110efbfb4888286b81aaf53191705dade9dd"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:26.562Z",
+                    "reviewed_at": "2026-10-22T05:16:25.227Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "集中管理与热切换降低资料重复录入，但缺乏长篇一致性或作者工时的独立对照。",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 设定迁移 | PNG/JSON解析和双预设生成 | 全部Tavern导出变体兼容 |\n| 触发 | 主关键词/constant匹配并追加消息 | 次级selective等价语义与上下文净收益 |\n| 创作 | 拼接小说规则与设定全文 | 小说质量、设定遵循和人工返工减少 |\n| 文档 | 导入时写可打开的MD | 编辑后自动生效，源码实际不提供回流 |\n\n",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1334395883-root-source"
+                        "2026-10-22-02-github-1334395883-root-source"
                     ],
                     "dependencies": [
                         {
@@ -190,16 +254,16 @@
                             "fingerprint": "4bc4110efbfb4888286b81aaf53191705dade9dd"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:26.562Z",
+                    "reviewed_at": "2026-10-22T05:16:25.227Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "PresetRepo使用注入式IO便于验证状态；tavern纯解析器与宿主分开，watch有防抖和生命周期清理。可借鉴格式转换层，兼容语义和来源权限仍需人工确认。",
+                    "text": "PresetRepo把纯状态逻辑和文件IO端口分开，简化复用和故障注入；保存JSON用临时文件rename，坏预设JSON尝试改名留存，watcher与防抖计时器有scope清理。这些是可借鉴的基础结构，不等于跨多文件事务或严格崩溃一致性。\n\nuse/off/upsert/remove先替换内存state再io.save，保存抛错不会回滚内存。世界书导入又顺序保存两个预设、worldbooks.json和MD，任一步失败都可能留下前半部分；删除同理。每个JSON自己的rename无法让这组文件原子提交。启动遇损坏presets.json尝试rename，备份失败被忽略后仍从空仓库启动，后续保存可能覆盖原文件；不应把注释所说避免丢失当所有IO失败下的保证。\n\nsafeFileName仅替换保留字符，两个不同名字可能映射到同一个MD文件，重导入会直接覆盖文件。世界书条目和预设独立存储又没有关联版本，人工修改或部分失败后无法仅靠ready日志确认一致。适合继续研究的工程方向是单一权威状态加可重建投影，或带版本的整组写入收据，而非只添加更多热更新watcher。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1334395883-root-source"
+                        "2026-10-22-02-github-1334395883-root-source"
                     ],
                     "dependencies": [
                         {
@@ -208,16 +272,16 @@
                             "fingerprint": "4bc4110efbfb4888286b81aaf53191705dade9dd"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:26.562Z",
+                    "reviewed_at": "2026-10-22T05:16:25.227Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "interpretation",
-                    "text": "作者主张集中预设管理；可确认增量是将SillyTavern资料格式转换、热切换预设与关键词世界书带到DSH。相对复制整份设定到系统提示，可减少重复整理；角色卡格式和世界书思想来自酒馆生态，未证明与原运行时语义等价。",
+                    "text": "将角色卡和世界书解析接入共享预设管理，生成世界书/创作两种提示词及本地MD，减少手工迁移和重复切换；不是完整Tavern引擎或新生成模型。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1334395883-root-source"
+                        "2026-10-22-02-github-1334395883-root-source"
                     ],
                     "dependencies": [
                         {
@@ -226,16 +290,16 @@
                             "fingerprint": "4bc4110efbfb4888286b81aaf53191705dade9dd"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:26.562Z",
+                    "reviewed_at": "2026-10-22T05:16:25.227Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
-                    "basis": "interpretation",
-                    "text": "角色卡占位符被清理后能避免宿主unknown variable，却可能丢失原模板语义；关键词触发也不等价完整SillyTavern规则。外部资料被注入systemPrompt会影响模型行为，应把导入内容当用户选择的配置核对，不能因PNG格式就认为可信。",
+                    "basis": "supported",
+                    "text": "实例共享active可影响其它会话；MD编辑不回流，全文与关键词状态可分叉。固定Git缺声明的host入口，发行包内容仍需核对，未做故障复现。详见[Q03](#research-q03)、[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1334395883-root-source"
+                        "2026-10-22-02-github-1334395883-root-source"
                     ],
                     "dependencies": [
                         {
@@ -244,16 +308,16 @@
                             "fingerprint": "4bc4110efbfb4888286b81aaf53191705dade9dd"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:26.562Z",
+                    "reviewed_at": "2026-10-22T05:16:25.227Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "unverified",
-                    "text": "待验证假设：导入时输出逐字段转换损失清单并允许预览本轮命中世界条目，可减少作者排查角色偏差。用相同角色卡在两种运行时比较触发和占位符覆盖；若仍难解释输出偏差，不宣称兼容。",
+                    "text": "可探索按会话绑定的版本化权威文档与预算注入收据，比较串用、遗漏、token和编辑传播；未实现。详见[Q06](#research-q06)。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1334395883-root-source"
+                        "2026-10-22-02-github-1334395883-root-source"
                     ],
                     "dependencies": [
                         {
@@ -262,15 +326,15 @@
                             "fingerprint": "4bc4110efbfb4888286b81aaf53191705dade9dd"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:26.562Z",
+                    "reviewed_at": "2026-10-22T05:16:25.227Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T03:16:26.562Z",
+            "last_checked_at": "2026-10-22T05:16:25.227Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "4bc4110efbfb4888286b81aaf53191705dade9dd",
-                "reviewed_at": "2026-10-21T03:16:26.562Z",
+                "reviewed_at": "2026-10-22T05:16:25.227Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -282,61 +346,61 @@
                 "technical": {
                     "criteria": {
                         "novelty": 9,
-                        "mechanism": 15,
-                        "transferability": 15,
+                        "mechanism": 8,
+                        "transferability": 10,
                         "simplification": 8
                     },
-                    "rationale": "novelty=9：酒馆格式和世界书来自既有生态。 mechanism=15：导入、预设热切换与关键词触发有整合。 transferability=15：纯解析与IO端口便于复用。 simplification=8：减少复制设定但转换损失需核对。",
+                    "rationale": "novelty为既有解析/提示词管理的小幅组合；mechanism双模式与触发接线小幅变化，不构成完整检索；transferability为格式迁移/IO端口分层的实质可复用价值；simplification为减少手工卡片迁移的实质简化，不计未来预算设计。",
                     "basis": "interpretation",
-                    "score": 47,
+                    "score": 35,
                     "evidence_ids": [
-                        "2026-10-21-02-github-1334395883-root-source"
+                        "2026-10-22-02-github-1334395883-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
                         "workflow": 18,
-                        "delivery": 15,
+                        "delivery": 8,
                         "reach": 10,
                         "economics": 4
                     },
-                    "rationale": "workflow=18：资料导入到激活提示形成写作流程。 delivery=15：预设可保存复用，跨平台语义不保证。 reach=10：已有酒馆资料用户适用，格式兼容有限。 economics=4：无作者工时对照，长设定增加token。",
+                    "rationale": "workflow在已有设定到小说指令有实质衔接；delivery仍依赖原模型与人工质量判断，仅小幅交付增量；reach为Tavern材料复用到DSH的实质接入；economics仅小幅省手工操作潜力，无测量。",
                     "basis": "interpretation",
-                    "score": 47,
+                    "score": 40,
                     "evidence_ids": [
-                        "2026-10-21-02-github-1334395883-root-source"
+                        "2026-10-22-02-github-1334395883-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "trial",
-                "reason": "已有酒馆角色资料的作者可导入副本试用；核对占位符丢语义和世界书命中，外部卡注入前审内容。",
+                "decision": "observe",
+                "reason": "世界书复用任务明确，但固定Git缺host入口、实例共享active和MD/预设/触发分叉需先澄清，先观察。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "写作角色卡及世界设定管理目标具体。"
+                        "rationale": "设定迁移及创作需求明确，质量收益未测。"
                     },
                     "advantage": {
-                        "score": 19,
-                        "rationale": "格式转换与热切换省重复录入，胜过整份复制提示。"
+                        "score": 13,
+                        "rationale": "双模式和格式接线有差异，未完整兼容Tavern。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "PNG chara解析和关键词匹配源码可查，不等价原平台全部语义。"
+                        "rationale": "固定源码核查主链与边界，源码级50%档。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "整理预设和提示token有持续成本，误触发及迁移需人工。"
+                        "score": 5,
+                        "rationale": "发行产物、共享状态及多份持久化增加采用恢复负担。"
                     }
                 },
-                "score": 65,
+                "score": 54,
                 "revision": "4bc4110efbfb4888286b81aaf53191705dade9dd",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T05:16:25.227Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-02-github-1334395883-root-source"
+                    "2026-10-22-02-github-1334395883-root-source"
                 ],
                 "dependencies": [
                     {
@@ -362,90 +426,63 @@
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T03:00:27Z",
-            "analysis_sha256": "c5468a2b5e3ec9b389de6486ea08d14be5ddd49a20c18d50aea862bf931df6fc"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "0736ca0866b10449c75025b662c953a664ebabbe790be259aae1cd2afe199bdc"
         },
         "publication.metadata": "data/plugins/609476965--dsh-lorebookmd/META.json",
         "publication.summaries": {
-            "text": "管理提示词预设并导入酒馆角色卡、世界书及正则资料，按需注入对话上下文。",
+            "text": "将Tavern角色卡与世界书导入DSH，生成本地设定文档和世界书、创作提示词，并按关键词追加设定条目。",
             "revision": "4bc4110efbfb4888286b81aaf53191705dade9dd",
             "source_url": "https://github.com/609476965/dsh-LorebookMD/blob/4bc4110efbfb4888286b81aaf53191705dade9dd/README.md"
         },
         "publication.capabilities": {
             "revision": "4bc4110efbfb4888286b81aaf53191705dade9dd",
             "items": {
-                "模型工具": "prompt_preset_list/use/off/save/delete及角色卡导入",
-                "Host 路由": "/prompt-manager/api预设管理",
-                "事件监听": "本地JSON热载与世界书触发"
-            }
+                "模型工具": "八个prompt预设/角色卡/世界书/正则管理工具",
+                "Host 路由": "POST /prompt-manager/api供设置页操作共享仓库",
+                "界面": "世界书创作设置分区",
+                "事件监听": "agent/pre-step关键词触发和presets.json热载入"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 卡片/世界书导入 | PNG/JSON迁移为提示词和MD | 不是完整Tavern语义 |\n| 双模式 | 世界书对话与小说指令 | 共享active，全文注入 |\n| 关键词追加 | 主keys和constant条目 | 无次级选择，可能重复全文内容 |\n| 预设管理工具 | 列表、激活、停用、保存、删除、三类导入 | 同实例共享状态 |\n| 设置与API | 导入、切换、打开MD和删除 | POST与大小检查不代表独立授权 |\n| 文件热载入 | 外部修改presets.json生效 | 不跟踪MD及worldbooks.json |\n"
         },
         "publication.advice": {
             "revision": "4bc4110efbfb4888286b81aaf53191705dade9dd",
-            "text": "已有酒馆资料的写作者可先导入副本。检查占位符、世界书命中与激活预设，别直接把原平台效果视为DSH已复现。"
+            "text": "先观察。继续研究从完整制品清单、双会话切换、MD编辑传播和部分写入恢复入手，避免将共享提示词当会话私有设定。详见[Q06](#research-q06)。"
         },
         "registry": "data/plugins/609476965--dsh-lorebookmd",
-        "reports": "# dsh-LorebookMD\n\n> 管理提示词预设并导入酒馆角色卡、世界书及正则资料，按需注入对话上下文。\n\n## 使用建议\n\n已有酒馆资料的写作者可先导入副本。检查占位符、世界书命中与激活预设，别直接把原平台效果视为DSH已复现。\n\n**核查状态**：已检查固定版本源码，未安装、执行目标插件或完成真实宿主验收。已有贡献仅由固定版本源码支持，实际宿主和任务效果尚未验证；未来设计假设保持未验证。\n\n## 洞察短评\n\n- **用途**：适合已有角色卡与世界设定、需要在DSH管理写作或角色扮演上下文的作者。\n- **亮点**：作者主张集中预设管理；可确认增量是将SillyTavern资料格式转换、热切换预设与关键词世界书带到DSH。相对复制整份设定到系统提示，可减少重复整理；角色卡格式和世界书思想来自酒馆生态，未证明与原运行时语义等价。\n- **思考**：角色卡占位符被清理后能避免宿主unknown variable，却可能丢失原模板语义；关键词触发也不等价完整SillyTavern规则。外部资料被注入systemPrompt会影响模型行为，应把导入内容当用户选择的配置核对，不能因PNG格式就认为可信。\n- **建议**：待验证假设：导入时输出逐字段转换损失清单并允许预览本轮命中世界条目，可减少作者排查角色偏差。用相同角色卡在两种运行时比较触发和占位符覆盖；若仍难解释输出偏差，不宣称兼容。\n\n## 当前插件分析\n\n### 场景与替代办法\n\n替代是直接系统提示、Markdown设定文件或原SillyTavern；插件增加DSH入口但不保证原平台全量行为。\n\n### 能力、依赖与流程\n\nsrc/index.ts以动态systemPrompt.section注入激活预设，提供prompt_preset工具和API，监听JSON变化；tavern.ts解析PNG chara与JSON并按关键词匹配世界条目；PresetRepo隔离存储端口。\n\n- **模型工具**：prompt_preset_list/use/off/save/delete及角色卡导入\n- **Host 路由**：/prompt-manager/api预设管理\n- **事件监听**：本地JSON热载与世界书触发\n\n宿主tools/systemPrompt/webServer、Schemastery及DSH路径接口；预设和世界书保存本地JSON，外部编辑触发热载。\n\n导入PNG/JSON→转换为预设和世界书→激活→装配提示→关键词触发条目→保存或切换；异常格式应保留原件再修。\n\n### 成本与效果\n\n首次需整理角色卡、预设名与存储目录；持续成本是提示token、关键词误触发和格式迁移人工复核，模型现金按上下文和生成计费。\n\n集中管理与热切换降低资料重复录入，但缺乏长篇一致性或作者工时的独立对照。\n\n### 工程亮点\n\nPresetRepo使用注入式IO便于验证状态；tavern纯解析器与宿主分开，watch有防抖和生命周期清理。可借鉴格式转换层，兼容语义和来源权限仍需人工确认。\n\n源码依据：[src/index.ts](https://github.com/609476965/dsh-LorebookMD/blob/4bc4110efbfb4888286b81aaf53191705dade9dd/src/index.ts)、[src/tavern.ts](https://github.com/609476965/dsh-LorebookMD/blob/4bc4110efbfb4888286b81aaf53191705dade9dd/src/tavern.ts)、[src/preset-repo.ts](https://github.com/609476965/dsh-LorebookMD/blob/4bc4110efbfb4888286b81aaf53191705dade9dd/src/preset-repo.ts)。\n\n## 未来设计假设（未验证）\n\n待验证假设：导入时输出逐字段转换损失清单并允许预览本轮命中世界条目，可减少作者排查角色偏差。用相同角色卡在两种运行时比较触发和占位符覆盖；若仍难解释输出偏差，不宣称兼容。\n\n验证PNG边界、重复预设、无效JSON、占位符损失、选择性关键词及重启持久化；本轮没有运行角色任务。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：5730c17b5ef47753efacc9de4664ec2275c94edc7b1532e0d180b328a96cd643。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .mjs | source | 3 | 174 | 139 | 25 | — |\n| .js | source | 1 | 360 | 338 | 54 | — |\n| .md | source | 1 | 74 | — | — | 1006 |\n| .ts | source | 6 | 1653 | 1353 | 178 | — |\n| .tsx | source | 1 | 196 | 172 | 9 | — |\n| .ts | test | 5 | 1216 | 1018 | 74 | — |\n\n排除 1 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[609476965/dsh-LorebookMD](https://github.com/609476965/dsh-LorebookMD)\n- **版本号**：1.0.0（[固定提交 4bc4110e](https://github.com/609476965/dsh-LorebookMD/tree/4bc4110efbfb4888286b81aaf53191705dade9dd)）\n- **版本日期**：2026-08-15（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：src/index.ts、src/tavern.ts、src/preset-repo.ts、作者README与固定范围inventory；源码抽读不等于完整审计。\n- 未完成：目标插件执行、测试、安装、模型调用和真实宿主验收。\n- 证据限制：核查固定提交内列明入口、核心实现及相关配置/作者材料的源码子集；未执行插件、其测试、安装、付费请求或真实宿主验收，未核实独立用户采用。\n- 下一步：验证PNG边界、重复预设、无效JSON、占位符损失、选择性关键词及重启持久化；本轮没有运行角色任务。\n",
+        "reports": "# dsh-LorebookMD\n\n> 将Tavern角色卡与世界书导入DSH，生成本地设定文档和世界书、创作提示词，并按关键词追加设定条目。\n\n## 研究范围\n\n- **仓库**：[609476965/dsh-LorebookMD](https://github.com/609476965/dsh-LorebookMD)\n- **版本号**：1.0.0（[固定提交 4bc4110efbfb4888286b81aaf53191705dade9dd](https://github.com/609476965/dsh-LorebookMD/tree/4bc4110efbfb4888286b81aaf53191705dade9dd)）\n- **版本日期**：2026-08-15（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n源码支持格式迁移和双模式接线；共享active、派生文档不回流及固定Git缺host入口限制采用；未来设计未验证。\n\n## 洞察短评\n\n- **用途**：面向已有Tavern/SillyTavern角色卡或世界书、希望在DSH中复用设定写小说或互动推演的用户。输入是自己提供的PNG/JSON和场景要求，输出是可查看的设定文档、可激活提示词以及模型生成的正文。插件不自带小说素材，也没有独立生成模型。\n\n合格任务不只是导入返回成功，还要核对关键人物、组织和世界规则是否完整，当前会话用了正确世界，输出没有违背设定，文风与情节能供作者继续修改。最后一项需要人工阅读或明确评审标准，第三人称和“严格参考”提示词不构成质量保证。\n\n直接参照是手工把设定整理成Markdown并粘进系统提示词。插件减少解析角色卡、保存双模式和重复切换的操作，但没有检索数据库或自动检验小说设定一致性。多人同时使用同一个插件实例、巨大世界书或需要完全兼容SillyTavern触发语义时，应先看状态作用域、全文成本和匹配限制。\n- **亮点**：将角色卡和世界书解析接入共享预设管理，生成世界书/创作两种提示词及本地MD，减少手工迁移和重复切换；不是完整Tavern引擎或新生成模型。详见[Q02](#research-q02)。\n- **思考**：实例共享active可影响其它会话；MD编辑不回流，全文与关键词状态可分叉。固定Git缺声明的host入口，发行包内容仍需核对，未做故障复现。详见[Q03](#research-q03)、[Q04](#research-q04)。\n- **建议**：可探索按会话绑定的版本化权威文档与预算注入收据，比较串用、遗漏、token和编辑传播；未实现。详见[Q06](#research-q06)。\n\n采用建议：先观察。继续研究从完整制品清单、双会话切换、MD编辑传播和部分写入恢复入手，避免将共享提示词当会话私有设定。详见[Q06](#research-q06)。\n\n## 核心贡献\n\n将角色卡和世界书解析接入共享预设管理，生成世界书/创作两种提示词及本地MD，减少手工迁移和重复切换；不是完整Tavern引擎或新生成模型。详见[Q02](#research-q02)。\n\n## 关键质疑\n\n实例共享active可影响其它会话；MD编辑不回流，全文与关键词状态可分叉。固定Git缺声明的host入口，发行包内容仍需核对，未做故障复现。详见[Q03](#research-q03)、[Q04](#research-q04)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可探索按会话绑定的版本化权威文档与预算注入收据，比较串用、遗漏、token和编辑传播；未实现。详见[Q06](#research-q06)。\n\n进一步探讨可用双会话与一个小世界书检查active作用域、MD编辑后的真实提示词和失败时三份状态；再做同模型场景的token/设定遵循对照。\n\n## 场景与替代办法\n\n面向已有Tavern/SillyTavern角色卡或世界书、希望在DSH中复用设定写小说或互动推演的用户。输入是自己提供的PNG/JSON和场景要求，输出是可查看的设定文档、可激活提示词以及模型生成的正文。插件不自带小说素材，也没有独立生成模型。\n\n合格任务不只是导入返回成功，还要核对关键人物、组织和世界规则是否完整，当前会话用了正确世界，输出没有违背设定，文风与情节能供作者继续修改。最后一项需要人工阅读或明确评审标准，第三人称和“严格参考”提示词不构成质量保证。\n\n直接参照是手工把设定整理成Markdown并粘进系统提示词。插件减少解析角色卡、保存双模式和重复切换的操作，但没有检索数据库或自动检验小说设定一致性。多人同时使用同一个插件实例、巨大世界书或需要完全兼容SillyTavern触发语义时，应先看状态作用域、全文成本和匹配限制。\n\n手工把世界设定整理成MD并复制到系统提示词，或在原Tavern工具中使用；双模式迁移省接线，未证明小说质量更好。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| Node>=22.18与DSH profile | 包声明/运行必需 | ESM与宿主服务依赖 | 不能按独立Node应用启动 |\n| tools、systemPrompt、webServer | host注入必需 | 管理、提示词和设置接口 | 关闭enableTools不取消接口依赖 |\n| 浏览器slots服务 | 设置页必需 | settings.section注入 | 只有host工具不证明界面可用 |\n| 可读角色卡/世界书与可写dataDir | 导入必需 | 解析与三份持久化 | 文件权限/损坏需明确处理 |\n| 完整lib/index.js发行产物或构建链 | 包主入口必需 | package main/exports指向 | 固定Git树只有lib/client.js与map，无host入口 |\n| 外部DSH源码路径与构建依赖 | 本地bundle需要 | tsdown配置引用相邻DSH预设 | 独立克隆不自动具备构建条件 |\n\n\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 准备 | 读者固定包来源，备份dataDir，选非敏感小世界书 | 核对host入口真实存在及宿主接口 |\n| 安装 | 按实际发行包挂载patch并重启 | 不把README预构建声明当固定Git树事实 |\n| 导入 | 设置页或工具选择文件，检查双预设/文档/条目 | 条目数和关键内容一致，失败检查部分写入 |\n| 激活 | 明确影响实例共享active，选择世界或创作模式 | 不同时在不同会话依赖不同世界 |\n| 编辑与恢复 | 将MD视导出副本，显式重导入并检查三份状态 | 不假设编辑MD热更新；防止覆盖人工修改 |\n\nREADME称发布包内置lib，本轮固定Git的lib树没有声明的lib/index.js；这支持“源码直接按包入口加载缺产物”，不支持“所有npm包不可用”。npm包内容未下载检查，也未执行构建、安装或宿主冒烟。\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 宿主与实际完整包、数据目录 | 复核入口，整理并核对导入材料 | 未测安装耗时和导入峰值 |\n| 持续使用 | 每次模型请求包含全文；世界模式还可重复命中条目 | 手工检查设定一致性，协调共享active | token/价格随材料与模型变化，未测 |\n| 失败恢复 | JSON/MD备份和可能重导入 | 核对内存、预设、关键词与文档是否同版本 | 多步失败可留下部分状态 |\n\n\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 设定迁移 | PNG/JSON解析和双预设生成 | 全部Tavern导出变体兼容 |\n| 触发 | 主关键词/constant匹配并追加消息 | 次级selective等价语义与上下文净收益 |\n| 创作 | 拼接小说规则与设定全文 | 小说质量、设定遵循和人工返工减少 |\n| 文档 | 导入时写可打开的MD | 编辑后自动生效，源码实际不提供回流 |\n\n\n\n## 研究问题与完整回答\n\n**插件研究总目标：**判断固定版本世界书迁移与创作接线的贡献，并核查共享状态、文档一致性与发行入口。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 谁需要世界书导入，什么是合格创作任务？\n\n**研究主题：**场景与需求\n\n#### 完整回答\n\n面向已有Tavern/SillyTavern角色卡或世界书、希望在DSH中复用设定写小说或互动推演的用户。输入是自己提供的PNG/JSON和场景要求，输出是可查看的设定文档、可激活提示词以及模型生成的正文。插件不自带小说素材，也没有独立生成模型。\n\n合格任务不只是导入返回成功，还要核对关键人物、组织和世界规则是否完整，当前会话用了正确世界，输出没有违背设定，文风与情节能供作者继续修改。最后一项需要人工阅读或明确评审标准，第三人称和“严格参考”提示词不构成质量保证。\n\n直接参照是手工把设定整理成Markdown并粘进系统提示词。插件减少解析角色卡、保存双模式和重复切换的操作，但没有检索数据库或自动检验小说设定一致性。多人同时使用同一个插件实例、巨大世界书或需要完全兼容SillyTavern触发语义时，应先看状态作用域、全文成本和匹配限制。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:3-25](https://github.com/609476965/dsh-LorebookMD/blob/4bc4110efbfb4888286b81aaf53191705dade9dd/README.md#L3-L25)\n\n作者定义世界书导入、两种模式与产物。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n一个面向 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)（DSH）的插件：导入酒馆（SillyTavern/TavernAI）角色卡与世界书，落地为**本地 Markdown 设定文档**，激活创作模式后**根据用户输入、参考世界书创作小说**。\n\n> 说明：本插件只管理你自己提供的设定文本；工程内不内置任何\"破限/越狱\"提示词内容。\n\n## 功能\n\n- **导入**：角色卡（PNG 内嵌 / JSON）与独立世界书（`{ entries: [...] }`），兼容 `extensions.world`、SillyTavern `character_book`（角色书）与常见导出变体\n- **落地本地**：每本世界书生成三件产物——\n  - `名·世界书` 预设：设定全文 + **关键词自动触发**（对话中按触发词注入对应条目）\n  - `名·创作` 预设：**创作模式**（创作指令 + 设定全文，激活后输入场景即生成小说正文）\n  - `worldbooks/<名>.md`：本地 Markdown 设定文档，可手工编辑\n- **设置页**（设置 →「世界书创作」）：世界书列表 / 进入创作 / 世界书模式 / **编辑文档**（系统默认程序打开本地 .md）/ 导入 / 删除\n- **对话工具**：`prompt_import_tavern` / `prompt_import_world` 等与设置页共享同一份数据\n\n### 两种模式怎么用\n\n| | 进入创作（激活「·创作」） | 世界书模式（激活「·世界书」） |\n| --- | --- | --- |\n| **输出形态** | **小说正文**：第三人称连贯叙述，细节符合设定风格，直接输出正文、不复述设定 | **对话/角色扮演回应**：以世界内角色身份与你互动、推进剧情 |\n| **设定使用** | 全文注入，模型自觉参考 | 全文注入 + **关键词自动触发**：提到触发词时对应条目当场注入 |\n| **交互方式** | 你给场景/情节/人物，模型创作；继续给 → 续写 | 你以第一人称参与，模型以角色回应 |\n| **典型指令** | \"写一段……\"、\"描写……的过程\" | \"我是……，然后呢？\"、\"把名单给我看看\" |\n| **适合** | 写小说、场景描写、剧情创作 | 沉浸式角色扮演、互动推演 |\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/tavern.ts:245-260](https://github.com/609476965/dsh-LorebookMD/blob/4bc4110efbfb4888286b81aaf53191705dade9dd/src/tavern.ts#L245-L260)\n\n创作能力实质为拼接指令与完整世界文档。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\nexport function composeWritingContent(worldDocument: string, ownerName: string): string {\n  return [\n    '[创作模式]',\n    `你是小说创作助手，正基于世界设定《${ownerName}》进行创作。`,\n    '规则：',\n    '1. 严格参考下文世界设定：其中的规则、组织、人物关系与世界观必须被尊重，不得擅自违背或新增；',\n    '2. 根据用户给出的输入（场景、情节、人物、事件），创作连贯、生动的小说正文，而不是对话式回复；',\n    '3. 采用第三人称叙述，细节描写符合设定的风格基调；',\n    '4. 设定条目带有触发词的，仅在与创作内容相关时参考对应条目；',\n    '5. 直接输出正文：不要复述设定，不要解释创作过程，不要询问确认。',\n    '',\n    '—— 以下为世界设定全文 ——',\n    '',\n    worldDocument,\n  ].join('\\n')\n}\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 导入、双预设与关键词注入怎样工作？\n\n**研究主题：**功能与机制、贡献与相对优势\n\n#### 完整回答\n\n角色卡导入按PNG签名选择chara tEXt块或直接JSON解析，独立世界书支持entries数组/对象。字段筛选后按insertion_order排序。导入一本世界书会先建立“名·世界书”完整设定提示词，再建立“名·创作”指令加完整设定，持久化worldbooks映射，最后写Markdown。设置页与八个模型工具操作同一PresetRepo，激活预设通过systemPrompt.section的求值函数在之后组装提示词时读取。\n\n关键词触发是额外注入，不是只把命中内容送给模型。世界书预设已经包含全部启用条目，pre-step又从messages中所有source.kind=user文本拼接查词，把命中条目追加为plugin来源的user消息。源码没有把它裁成仅最后一条用户消息，也没有token预算或命中数截断。因此不能将它宣传为检索节省上下文，长历史也可能持续命中旧词。\n\nselective和secondary_keys会保存，但matchWorldEntry只检查enabled、constant、主keys，不应用次级选择条件。正则脚本导入明确只是文本参考，DSH没有等价聊天正则执行管线。未知模板变量清空，user/char被替换，这也不是完整酒馆模板解释器。贡献在格式迁移、双使用模式和宿主接线，而不是原创RAG或完全兼容酒馆。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/tavern.ts:80-109](https://github.com/609476965/dsh-LorebookMD/blob/4bc4110efbfb4888286b81aaf53191705dade9dd/src/tavern.ts#L80-L109)\n\nPNG/JSON与独立世界书输入分支。\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\nexport function isPng(buffer: Buffer): boolean {\n  return buffer.length >= 8 && buffer.subarray(0, 8).equals(PNG_SIGNATURE)\n}\n\n/** 解析角色卡文件内容（PNG 或 JSON），含内置世界书与正则。 */\nexport function parseTavernFile(buffer: Buffer): TavernParseResult {\n  if (isPng(buffer)) {\n    const text = readPngCharaText(buffer)\n    if (text === undefined) {\n      throw new Error('PNG 中找不到角色卡数据（无 keyword 为 \"chara\" 的 tEXt chunk）')\n    }\n    return { kind: 'png-embed', ...parseCharaJson(text) }\n  }\n  const raw = buffer.toString('utf8').trim()\n  if (raw === '') throw new Error('文件为空')\n  return { kind: 'json', ...parseCharaJson(raw) }\n}\n\n/** 解析独立世界书 JSON 文本：顶层 `{ entries: [...] }`（兼容 `{ entries: { key: … } }` 与纯数组）。 */\nexport function parseWorldInfoJson(text: string): WorldInfo {\n  let json: unknown\n  try {\n    json = JSON.parse(text)\n  } catch (error) {\n    throw new Error(`无法解析世界书 JSON：${String(error)}`)\n  }\n  if (Array.isArray(json)) return parseWorldObject({ entries: json })\n  return parseWorldObject(json)\n}\n\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/index.ts:726-753](https://github.com/609476965/dsh-LorebookMD/blob/4bc4110efbfb4888286b81aaf53191705dade9dd/src/index.ts#L726-L753)\n\n双预设、worldbooks与Markdown顺序写入。\n\n<details>\n<summary>查看原文（28行）</summary>\n\n```text\n): { worldPreset: string; writingPreset: string; documentPath: string } | undefined {\n  if (world === undefined || world.entries.length === 0) return undefined\n\n  const worldName = worldPresetName(ownerName)\n  const worldDoc = composeWorldDocument(world, ownerName)\n  const worldResult = repo.upsert({\n    name: worldName,\n    content: composeWorldContent(world, ownerName),\n    description: `Imported world info (${world.entries.length} entries${world.name !== undefined ? `, \"${world.name}\"` : ''}); activating it enables keyword-triggered injection`,\n  })\n  if (!worldResult.ok) throw new Error(worldResult.message)\n\n  const writingName = writingPresetName(ownerName)\n  const writingResult = repo.upsert({\n    name: writingName,\n    content: composeWritingContent(worldDoc, ownerName),\n    description: `创作模式：参考《${ownerName}》世界设定创作小说；激活后输入场景即可`,\n  })\n  if (!writingResult.ok) throw new Error(writingResult.message)\n\n  worldbooks.set(worldName, world)\n  saveWorldbooks(worldbooksFile, worldbooks)\n  const documentPath = writeWorldDocument(dataDir, ownerName, worldDoc)\n  return { worldPreset: worldName, writingPreset: writingName, documentPath }\n}\n\n/** 文件名安全化：把路径保留字符替换为下划线。 */\nfunction safeFileName(name: string): string {\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/index.ts:800-824](https://github.com/609476965/dsh-LorebookMD/blob/4bc4110efbfb4888286b81aaf53191705dade9dd/src/index.ts#L800-L824)\n\n遍历所有user来源文本并额外注入命中条目。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\nfunction registerWorldTrigger(ctx: Context, repo: PresetRepo, worldbooks: Map<string, WorldInfo>): void {\n  ctx.on('agent/pre-step', async ({ messages }, next): Promise<PreStepDecision> => {\n    const decision = await next()\n    if (decision.kind === 'reject') return decision\n    const active = repo.active\n    if (active === null) return decision\n    const world = worldbooks.get(active)\n    if (world === undefined) return decision\n    const userText = messages\n      .filter(message => message.source.kind === 'user')\n      .flatMap(message => message.content\n        .filter(block => block.type === 'text')\n        .map(block => block.text))\n      .join('\\n')\n    const matched = world.entries.filter(entry => matchWorldEntry(entry, userText))\n    if (matched.length === 0) return decision\n    const injected = matched.map(entry => createUserMessage({\n      content: [{ type: 'text', text: renderWorldEntry(entry) }],\n      source: { kind: 'plugin', plugin: name, form: 'instructions' },\n    }))\n    return { kind: 'enter', messages: [...decision.messages, ...injected] }\n  })\n}\n\n/**\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/tavern.ts:157-181](https://github.com/609476965/dsh-LorebookMD/blob/4bc4110efbfb4888286b81aaf53191705dade9dd/src/tavern.ts#L157-L181)\n\n全文注入与正则仅文本参考。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n/** 世界书 → 组合预设正文（带触发词说明；constant 条目标 [始终生效]）。 */\nexport function composeWorldContent(world: WorldInfo, ownerName: string): string {\n  const lines = [\n    `[World Info: ${ownerName}]`,\n    '以下为世界设定条目。仅当对话内容涉及条目的触发词时，才应用该条目的设定；标注 [始终生效] 的条目不受触发词限制，始终有效。',\n  ]\n  for (const entry of world.entries) {\n    if (entry.enabled === false) continue\n    const tags: string[] = []\n    if (entry.constant === true) tags.push('始终生效')\n    if (entry.selective === true) tags.push('选择性')\n    const keys = entry.keys\n    const heading = `### ${keys[0] ?? '(无触发词)'}${keys.length > 1 ? `（触发词：${keys.join('、')}）` : ''}${tags.length > 0 ? ` [${tags.join('/')}]` : ''}`\n    lines.push('', heading)\n    if (entry.comment !== undefined && entry.comment !== '') lines.push(`（${entry.comment}）`)\n    lines.push(entry.content === '' ? '（条目无正文）' : entry.content)\n  }\n  return lines.join('\\n')\n}\n\n/** 正则脚本 → 组合预设正文（定义说明；DSH 无聊天正则渲染管线）。 */\nexport function composeRegexContent(scripts: RegexScript[], ownerName: string): string {\n  const lines = [\n    `[Regex Scripts: ${ownerName}]`,\n    '以下为 SillyTavern 正则脚本定义。DSH 没有聊天正则渲染管线，这些定义仅供查看与参考：如需对消息做等价清理/替换，请按定义的 pattern 手动执行。',\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/tavern.ts:263-268](https://github.com/609476965/dsh-LorebookMD/blob/4bc4110efbfb4888286b81aaf53191705dade9dd/src/tavern.ts#L263-L268)\n\n匹配未应用selective/secondaryKeys。\n\n```text\nexport function matchWorldEntry(entry: WorldEntry, text: string): boolean {\n  if (entry.enabled === false) return false\n  if (entry.constant === true) return true\n  if (entry.keys.length === 0) return false\n  return entry.keys.some(key => keyMatches(key, text, entry))\n}\n```\n\n**依据 6 · 源码核查**：[src/tavern.ts:477-494](https://github.com/609476965/dsh-LorebookMD/blob/4bc4110efbfb4888286b81aaf53191705dade9dd/src/tavern.ts#L477-L494)\n\n次级键与selective确被解析保存。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n\nfunction pickWorldEntry(raw: Record<string, unknown>): WorldEntry | undefined {\n  const keys = stringArray(raw.keys)\n  const content = typeof raw.content === 'string' ? raw.content : ''\n  if (keys.length === 0 && content === '') return undefined\n  const entry: WorldEntry = { keys, content }\n  const secondaryKeys = stringArray(raw.secondary_keys)\n  if (secondaryKeys.length > 0) entry.secondaryKeys = secondaryKeys\n  if (typeof raw.comment === 'string' && raw.comment !== '') entry.comment = raw.comment\n  if (raw.constant === true) entry.constant = true\n  if (raw.selective === true) entry.selective = true\n  if (raw.enabled === false) entry.enabled = false\n  if (raw.case_sensitive === true) entry.caseSensitive = true\n  if (raw.match_whole_words === true) entry.matchWholeWords = true\n  if (raw.use_regex === true) entry.useRegex = true\n  if (typeof raw.insertion_order === 'number') entry.order = raw.insertion_order\n  return entry\n}\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 激活、文档编辑与HTTP操作有何限制？\n\n**研究主题：**缺陷与关键质疑\n\n#### 完整回答\n\nactive属于插件实例共享的PresetRepo.state，不带session/agent索引。systemPrompt.section和pre-step都读取同一active；模型工具use/off也直接改它。因此同实例中一个会话切换世界可影响其它会话之后的提示词，不能把界面中的“进入创作”理解成仅当前会话私有。导入设定来自外部用户文件，正文直接进入系统提示词和plugin指令消息，变量替换不是指令可信度校验。\n\nMarkdown是导入时生成的派生副本。系统提示词读取presets.json的content，触发器读取启动时载入的worldbooks Map；watch只响应presets.json，不读取Markdown，也不reload worldbooks.json。设置页“编辑文档”只是用系统默认程序打开文件。修改.md不会自动更新当前设定，直接编辑预设正文又不会同步关键词条目，会出现两套不同内容。不能以“可编辑文档”推断编辑即生效。\n\nHTTP处理器检查POST及10MiB正文上限，但所读代码没有Origin、身份或逐操作授权检查，且enableTools关闭只取消模型工具，路由仍注册。它可按宿主权限读取导入路径、保存/删除共享预设和打开文档；上层webServer可能有访问控制，本轮没有检查对应宿主部署，不能声称已证明远程越权。即使单用户，也应避免把敏感设定当纯本地无外发内容，因为激活后会进入模型请求。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/preset-repo.ts:32-68](https://github.com/609476965/dsh-LorebookMD/blob/4bc4110efbfb4888286b81aaf53191705dade9dd/src/preset-repo.ts#L32-L68)\n\nactive是实例单一状态，use/off无会话键。\n\n<details>\n<summary>查看原文（37行）</summary>\n\n```text\nexport class PresetRepo {\n  private readonly io: PresetIo\n  private state: PresetFile\n\n  constructor(io: PresetIo) {\n    this.io = io\n    this.state = sanitize(this.io.load())\n  }\n\n  get active(): string | null {\n    return this.state.active\n  }\n\n  /** 快照视图（只读）。 */\n  list(): { active: string | null; presets: readonly Preset[] } {\n    return { active: this.state.active, presets: this.state.presets }\n  }\n\n  /** 当前激活预设的正文；未激活或名字失效时返回 undefined。 */\n  contentOf(name: string): string | undefined {\n    return this.state.presets.find(p => p.name === name)?.content\n  }\n\n  /** 激活一个已存在的预设。 */\n  use(name: string): RepoResult {\n    if (!this.state.presets.some(p => p.name === name)) {\n      return { ok: false, message: `preset \"${name}\" does not exist` }\n    }\n    this.state = { ...this.state, active: name }\n    this.commit()\n    return { ok: true }\n  }\n\n  /** 取消激活（系统提示词恢复原样）。 */\n  off(): void {\n    this.state = { ...this.state, active: null }\n    this.commit()\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/index.ts:80-114](https://github.com/609476965/dsh-LorebookMD/blob/4bc4110efbfb4888286b81aaf53191705dade9dd/src/index.ts#L80-L114)\n\nsection读取共享内容，watch仅presets.json。\n\n<details>\n<summary>查看原文（35行）</summary>\n\n```text\n  ctx.systemPrompt.section({\n    name: config.sectionName,\n    order: config.sectionOrder,\n    text: () => {\n      const active = repo.active\n      if (active === null) return ''\n      const content = repo.contentOf(active)\n      return content === undefined ? '' : sanitizePromptVariables(content, active)\n    },\n  })\n\n  // 1b) 世界书关键词自动触发：激活的预设是世界书时，把触发词命中的条目注入本轮\n  if (config.worldTrigger) {\n    registerWorldTrigger(ctx, repo, worldbooks)\n  }\n\n  // 2) 管理工具（对话中随时切换与修改）\n  if (config.enableTools) {\n    registerTools(ctx, repo, worldbooks, worldbooksFile, dataDir)\n  }\n\n  // 2b) 浏览器设置页的数据通道：/prompt-manager/api（JSON RPC，同源 fetch）\n  registerApiRoute(ctx, repo, worldbooks, worldbooksFile, dataDir)\n\n  // 3) 数据文件热载入：直接改 JSON 文件，防抖后自动 reload\n  if (config.watchFile) {\n    let debounce: ReturnType<typeof setTimeout> | undefined\n    const watcher = watch(dataDir, { persistent: false }, (_event, filename) => {\n      if (filename !== basename(dataFile)) return\n      if (debounce !== undefined) clearTimeout(debounce)\n      debounce = setTimeout(() => {\n        repo.reload()\n        ctx.emit('system-prompt/change')\n        console.log(`[prompt-manager] ${basename(dataFile)} changed on disk; reloaded`)\n      }, 200)\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/index.ts:407-426](https://github.com/609476965/dsh-LorebookMD/blob/4bc4110efbfb4888286b81aaf53191705dade9dd/src/index.ts#L407-L426)\n\nHTTP只有POST及读取正文的局部校验。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n  dataDir: string,\n): void {\n  ctx.effect(() => ctx.webServer.register({\n    kind: 'exact',\n    path: API_PATH,\n    handler: async (req, res) => {\n      try {\n        if (req.method !== 'POST') {\n          sendJson(res, 405, { ok: false, error: 'method not allowed' })\n          return\n        }\n        const body = await readJsonBody(req, MAX_API_BODY_BYTES)\n        sendJson(res, 200, handleApiOp(ctx, repo, worldbooks, worldbooksFile, dataDir, body))\n      } catch (error) {\n        sendJson(res, 400, { ok: false, error: (error as Error).message })\n      }\n    },\n  }), 'prompt-manager: api route')\n}\n\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/index.ts:589-607](https://github.com/609476965/dsh-LorebookMD/blob/4bc4110efbfb4888286b81aaf53191705dade9dd/src/index.ts#L589-L607)\n\n打开MD和删除组操作不包含MD回流。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n      const writingResult = repo.remove(writingPresetName(name))\n      if (!writingResult.ok) return { ok: false, error: writingResult.message }\n      try {\n        rmSync(join(dataDir, 'worldbooks', `${safeFileName(name)}.md`), { force: true })\n      } catch {\n        // 文档不存在也视为成功\n      }\n      ctx.emit('system-prompt/change')\n      return { ok: true, data: {} }\n    }\n    case 'openDocument': {\n      // 用系统默认方式打开世界书本地设定文档（供编辑）\n      const name = requireString(body, 'name')\n      const filePath = join(dataDir, 'worldbooks', `${safeFileName(name)}.md`)\n      if (!existsSync(filePath)) return { ok: false, error: `document not found: ${filePath}` }\n      try {\n        openInSystem(filePath)\n      } catch (error) {\n        // 打开动作尽力而为：spawn 失败（如无关联程序/受限环境）不使 API 报错\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/index.ts:835-844](https://github.com/609476965/dsh-LorebookMD/blob/4bc4110efbfb4888286b81aaf53191705dade9dd/src/index.ts#L835-L844)\n\n变量清理仅做占位替换。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n  return text.replace(/\\{\\{\\s*([^}]+?)\\s*\\}\\}/g, (match, rawName: string) => {\n    const name = rawName.trim()\n    if (DSH_PROMPT_VARIABLES.has(name)) return match\n    if (name === 'user') return '用户'\n    if (name === 'char') return charName ?? match\n    return ''\n  })\n}\n\nconst DSH_PROMPT_VARIABLES = new Set(['provider', 'model', 'cwd'])\n```\n\n</details>\n\n#### 缺口\n\n- 上层webServer的身份/来源控制在本插件源码里不可确认。\n  **影响：**局部缺少鉴权不等于已经验证远程可达越权，但不能宣称此路由自己形成授权边界。\n  **进一步探讨：**继续探讨可先沿固定宿主webServer注册链确认认证与CSRF策略，再决定部署可访问范围。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 安装和操作依赖什么？\n\n**研究主题：**依赖、兼容与流程\n\n#### 完整回答\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| Node>=22.18与DSH profile | 包声明/运行必需 | ESM与宿主服务依赖 | 不能按独立Node应用启动 |\n| tools、systemPrompt、webServer | host注入必需 | 管理、提示词和设置接口 | 关闭enableTools不取消接口依赖 |\n| 浏览器slots服务 | 设置页必需 | settings.section注入 | 只有host工具不证明界面可用 |\n| 可读角色卡/世界书与可写dataDir | 导入必需 | 解析与三份持久化 | 文件权限/损坏需明确处理 |\n| 完整lib/index.js发行产物或构建链 | 包主入口必需 | package main/exports指向 | 固定Git树只有lib/client.js与map，无host入口 |\n| 外部DSH源码路径与构建依赖 | 本地bundle需要 | tsdown配置引用相邻DSH预设 | 独立克隆不自动具备构建条件 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 准备 | 读者固定包来源，备份dataDir，选非敏感小世界书 | 核对host入口真实存在及宿主接口 |\n| 安装 | 按实际发行包挂载patch并重启 | 不把README预构建声明当固定Git树事实 |\n| 导入 | 设置页或工具选择文件，检查双预设/文档/条目 | 条目数和关键内容一致，失败检查部分写入 |\n| 激活 | 明确影响实例共享active，选择世界或创作模式 | 不同时在不同会话依赖不同世界 |\n| 编辑与恢复 | 将MD视导出副本，显式重导入并检查三份状态 | 不假设编辑MD热更新；防止覆盖人工修改 |\n\nREADME称发布包内置lib，本轮固定Git的lib树没有声明的lib/index.js；这支持“源码直接按包入口加载缺产物”，不支持“所有npm包不可用”。npm包内容未下载检查，也未执行构建、安装或宿主冒烟。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:18-44](https://github.com/609476965/dsh-LorebookMD/blob/4bc4110efbfb4888286b81aaf53191705dade9dd/package.json#L18-L44)\n\n入口、files、Node和client条件。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\n  \"main\": \"lib/index.js\",\n  \"exports\": {\n    \".\": \"./lib/index.js\",\n    \"./client\": \"./lib/client.js\",\n    \"./package.json\": \"./package.json\"\n  },\n  \"files\": [\n    \"lib\",\n    \"cordis.patch.yml\"\n  ],\n  \"engines\": {\n    \"node\": \">=22.18\"\n  },\n  \"scripts\": {\n    \"bundle\": \"node ./.dsh-tools/tsdown/run.mjs\",\n    \"typecheck\": \"node node_modules/typescript/bin/tsc --noEmit\",\n    \"test\": \"node --test tests/\"\n  },\n  \"dsh\": {\n    \"client\": {\n      \"inject\": [\n        \"slots\"\n      ],\n      \"platform\": \"web\"\n    },\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n```\n\n</details>\n\n**依据 2 · 源码核查**：[tsdown.config.ts:1-25](https://github.com/609476965/dsh-LorebookMD/blob/4bc4110efbfb4888286b81aaf53191705dade9dd/tsdown.config.ts#L1-L25)\n\nhost入口构建与外部相邻DSH源码依赖。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n/**\n * tsdown 构建配置：复用 DSH 仓库的 clientBundle 预设（packages/client/tsdown.client.ts）。\n *\n * 产出：\n * - lib/index.js   —— host 半（node），本工程直接以 src 运行，此产物仅作发布备选\n * - lib/client.js  —— 浏览器半 bundle（closure factory，external 走平台模块表），\n *                     由 dsh-client-modules 经 exports[\"./client\"] 供给到 /plugins/dsh-lorebookmd/client.js\n */\nimport { clientBundle } from '../../deepseek-harness/packages/client/tsdown.client.ts'\n\n// node 半运行时依赖：全部由 DSH profile 运行时提供，必须 external，\n// 避免打包进 lib/index.js 造成重复实例（Service/Context instanceof 冲突）。\nconst HOST_EXTERNALS = [\n  '@deepseek-ai/cordis',\n  '@deepseek-ai/dsh-agent',\n  '@deepseek-ai/dsh-home-paths',\n  '@deepseek-ai/dsh-host-webserver',\n  '@deepseek-ai/dsh-llm',\n  '@deepseek-ai/dsh-tools',\n  '@deepseek-ai/schemastery',\n]\n\nexport default clientBundle('dsh-lorebookmd', ['src/index.ts'], {\n  lib: { external: HOST_EXTERNALS },\n})\n```\n\n</details>\n\n**依据 3 · 作者声明**：[README.md:37-57](https://github.com/609476965/dsh-LorebookMD/blob/4bc4110efbfb4888286b81aaf53191705dade9dd/README.md#L37-L57)\n\n预构建与安装是作者声明。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n````text\n### 从 npm 安装（推荐）\n\n```powershell\ndsh plugin --profile web add dsh-lorebookmd\n```\n\n发布包已内置构建产物（`lib/`）；`dsh plugin` 会自动把本包加入 `dsh.profile.bundles` 并应用 `cordis.patch.yml`，之后用 `start-dsh.cmd` 正常启动即可，无需 `--patch`。\n\n> 本地试装（未发布时）：`npm pack` 生成 `dsh-lorebookmd-1.0.0.tgz`，然后 `dsh plugin --profile web add ./dsh-lorebookmd-1.0.0.tgz`。\n\n### 手动安装\n\n1. **一键安装**：双击 `install.cmd`（或 `powershell -ExecutionPolicy Bypass -File install.ps1`）。脚本把插件复制到 DSH profile 的 `node_modules`（发布包已内置构建产物，无需本地构建环境）。\n\n2. **挂载**（二选一）：\n   - **自动挂载（推荐）**：把 `dsh-lorebookmd` 追加到 `~\\.dsh\\profiles\\web\\package.json` 的 `dsh.profile.bundles` 数组，之后用 `start-dsh.cmd` 正常启动即可（DSH 会自动应用插件的 `cordis.patch.yml`，无需 `--patch`）\n   - **临时挂载**：双击 `start-dsh-plugin.cmd`（以 `--patch` 加载 `cordis.yml`）\n\n> 以上挂载方式任选其一，勿同时使用（会重复挂载）。打开 `http://127.0.0.1:3080`：设置 →「世界书创作」即可使用；终端应打印 `[prompt-manager] ready: …`。\n\n> 安装原理：正常安装 = 把插件包放进 DSH profile 的 `node_modules`。插件源码的 `@deepseek-ai/*` 依赖由 profile 运行时直接解析（DSH 自带完整运行时包），无需额外依赖链。更新插件：升级安装新版本后重启 DSH 即可。\n````\n\n</details>\n\n**依据 4 · 源码核查**：[src/index.ts:40-42](https://github.com/609476965/dsh-LorebookMD/blob/4bc4110efbfb4888286b81aaf53191705dade9dd/src/index.ts#L40-L42)\n\n必需host注入服务。\n\n```text\n\nexport const name = 'prompt-manager'\nexport const inject = ['tools', 'systemPrompt', 'webServer']\n```\n\n**依据 5 · 源码核查**：[src/client/index.ts:17-27](https://github.com/609476965/dsh-LorebookMD/blob/4bc4110efbfb4888286b81aaf53191705dade9dd/src/client/index.ts#L17-L27)\n\nclient的slots注册。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n\nexport const name = 'prompt-manager-client'\nexport const inject = ['slots']\n\nexport function apply(ctx: ClientContext): void {\n  ctx.slots.inject('settings.section', () => ctx.slots.register({\n    name: 'settings.section',\n    id: 'prompt-presets',\n    order: 25,\n    label: () => '世界书创作',\n  }, PresetsSection))\n```\n\n</details>\n\n#### 缺口\n\n- 固定版本对应npm制品是否包含lib/index.js未检查。\n  **影响：**不能把Git树缺产物推广成已验证发行包损坏。\n  **进一步探讨：**可从固定版本tarball文件清单及完整性入手，核对main和external依赖，不必先安装执行。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 持久化和恢复有什么工程问题？\n\n**研究主题：**工程质量与复用\n\n#### 完整回答\n\nPresetRepo把纯状态逻辑和文件IO端口分开，简化复用和故障注入；保存JSON用临时文件rename，坏预设JSON尝试改名留存，watcher与防抖计时器有scope清理。这些是可借鉴的基础结构，不等于跨多文件事务或严格崩溃一致性。\n\nuse/off/upsert/remove先替换内存state再io.save，保存抛错不会回滚内存。世界书导入又顺序保存两个预设、worldbooks.json和MD，任一步失败都可能留下前半部分；删除同理。每个JSON自己的rename无法让这组文件原子提交。启动遇损坏presets.json尝试rename，备份失败被忽略后仍从空仓库启动，后续保存可能覆盖原文件；不应把注释所说避免丢失当所有IO失败下的保证。\n\nsafeFileName仅替换保留字符，两个不同名字可能映射到同一个MD文件，重导入会直接覆盖文件。世界书条目和预设独立存储又没有关联版本，人工修改或部分失败后无法仅靠ready日志确认一致。适合继续研究的工程方向是单一权威状态加可重建投影，或带版本的整组写入收据，而非只添加更多热更新watcher。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/preset-repo.ts:22-38](https://github.com/609476965/dsh-LorebookMD/blob/4bc4110efbfb4888286b81aaf53191705dade9dd/src/preset-repo.ts#L22-L38)\n\nIO端口与纯状态分层。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n/** 仓库的持久化端口：插件注入文件实现，测试注入内存实现。 */\nexport interface PresetIo {\n  load(): PresetFile\n  save(file: PresetFile): void\n}\n\nexport type RepoResult =\n  | { ok: true; created?: boolean }\n  | { ok: false; message: string }\n\nexport class PresetRepo {\n  private readonly io: PresetIo\n  private state: PresetFile\n\n  constructor(io: PresetIo) {\n    this.io = io\n    this.state = sanitize(this.io.load())\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/preset-repo.ts:72-108](https://github.com/609476965/dsh-LorebookMD/blob/4bc4110efbfb4888286b81aaf53191705dade9dd/src/preset-repo.ts#L72-L108)\n\n内存先变更再保存，无回滚。\n\n<details>\n<summary>查看原文（37行）</summary>\n\n```text\n  upsert(input: { name: string; content: string; description?: string }): RepoResult {\n    const name = input.name.trim()\n    if (name === '') return { ok: false, message: 'preset name must not be empty' }\n    if (input.content.trim() === '') return { ok: false, message: 'preset content must not be empty' }\n    const existing = this.state.presets.find(p => p.name === name)\n    const presets = existing === undefined\n      ? [...this.state.presets, { name, content: input.content, description: input.description }]\n      : this.state.presets.map(p => p.name === name\n        ? { name, content: input.content, description: input.description ?? p.description }\n        : p)\n    this.state = { ...this.state, presets }\n    this.commit()\n    return { ok: true, created: existing === undefined }\n  }\n\n  /** 删除预设；若删除的是激活项则同时取消激活。 */\n  remove(name: string): RepoResult {\n    if (!this.state.presets.some(p => p.name === name)) {\n      return { ok: false, message: `preset \"${name}\" does not exist` }\n    }\n    const presets = this.state.presets.filter(p => p.name !== name)\n    this.state = {\n      ...this.state,\n      presets,\n      active: this.state.active === name ? null : this.state.active,\n    }\n    this.commit()\n    return { ok: true }\n  }\n\n  /** 外部修改数据文件后重新载入（热更新）。 */\n  reload(): void {\n    this.state = sanitize(this.io.load())\n  }\n\n  private commit(): void {\n    this.io.save(this.state)\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/index.ts:367-391](https://github.com/609476965/dsh-LorebookMD/blob/4bc4110efbfb4888286b81aaf53191705dade9dd/src/index.ts#L367-L391)\n\n坏JSON备份失败忽略，单文件tmp/rename。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\nfunction createFileIo(dataFile: string): PresetIo {\n  return {\n    load(): PresetFile {\n      try {\n        return JSON.parse(readFileSync(dataFile, 'utf8')) as PresetFile\n      } catch (error) {\n        const code = (error as NodeJS.ErrnoException).code\n        if (code === 'ENOENT') return { active: null, presets: [] }\n        // JSON 损坏：备份原文件再以空库启动，避免后续保存覆盖用户数据\n        try {\n          renameSync(dataFile, `${dataFile}.broken-${Date.now()}`)\n        } catch {\n          // 备份失败也不阻塞启动\n        }\n        console.warn(`[prompt-manager] invalid JSON in ${dataFile}; moved to *.broken-* and started empty`)\n        return { active: null, presets: [] }\n      }\n    },\n    save(file: PresetFile): void {\n      mkdirSync(dirname(dataFile), { recursive: true })\n      const tmp = `${dataFile}.${process.pid}.tmp`\n      writeFileSync(tmp, `${JSON.stringify(file, null, 2)}\\n`, 'utf8')\n      renameSync(tmp, dataFile)\n    },\n  }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/index.ts:726-770](https://github.com/609476965/dsh-LorebookMD/blob/4bc4110efbfb4888286b81aaf53191705dade9dd/src/index.ts#L726-L770)\n\n多步保存和安全化文件名/直接MD写入。\n\n<details>\n<summary>查看原文（45行）</summary>\n\n```text\n): { worldPreset: string; writingPreset: string; documentPath: string } | undefined {\n  if (world === undefined || world.entries.length === 0) return undefined\n\n  const worldName = worldPresetName(ownerName)\n  const worldDoc = composeWorldDocument(world, ownerName)\n  const worldResult = repo.upsert({\n    name: worldName,\n    content: composeWorldContent(world, ownerName),\n    description: `Imported world info (${world.entries.length} entries${world.name !== undefined ? `, \"${world.name}\"` : ''}); activating it enables keyword-triggered injection`,\n  })\n  if (!worldResult.ok) throw new Error(worldResult.message)\n\n  const writingName = writingPresetName(ownerName)\n  const writingResult = repo.upsert({\n    name: writingName,\n    content: composeWritingContent(worldDoc, ownerName),\n    description: `创作模式：参考《${ownerName}》世界设定创作小说；激活后输入场景即可`,\n  })\n  if (!writingResult.ok) throw new Error(writingResult.message)\n\n  worldbooks.set(worldName, world)\n  saveWorldbooks(worldbooksFile, worldbooks)\n  const documentPath = writeWorldDocument(dataDir, ownerName, worldDoc)\n  return { worldPreset: worldName, writingPreset: writingName, documentPath }\n}\n\n/** 文件名安全化：把路径保留字符替换为下划线。 */\nfunction safeFileName(name: string): string {\n  return name.replace(/[\\\\/:*?\"<>|]/g, '_')\n}\n\n/** 把世界书设定文档写到 dataDir/worldbooks/<ownerName>.md，返回文件路径。 */\nfunction writeWorldDocument(dataDir: string, ownerName: string, document: string): string {\n  const dir = join(dataDir, 'worldbooks')\n  mkdirSync(dir, { recursive: true })\n  const file = join(dir, `${safeFileName(ownerName)}.md`)\n  writeFileSync(file, document, 'utf8')\n  return file\n}\n\n/** 把正则脚本导入为 `<ownerName>·正则` 预设。@returns 生成的预设名；无脚本时返回 undefined。 */\nfunction importRegexPreset(\n  repo: PresetRepo,\n  scripts: ReturnType<typeof parseRegexScriptsJson> | undefined,\n  ownerName: string,\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/index.ts:105-121](https://github.com/609476965/dsh-LorebookMD/blob/4bc4110efbfb4888286b81aaf53191705dade9dd/src/index.ts#L105-L121)\n\nwatcher与定时器scope清理。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n  if (config.watchFile) {\n    let debounce: ReturnType<typeof setTimeout> | undefined\n    const watcher = watch(dataDir, { persistent: false }, (_event, filename) => {\n      if (filename !== basename(dataFile)) return\n      if (debounce !== undefined) clearTimeout(debounce)\n      debounce = setTimeout(() => {\n        repo.reload()\n        ctx.emit('system-prompt/change')\n        console.log(`[prompt-manager] ${basename(dataFile)} changed on disk; reloaded`)\n      }, 200)\n    })\n    ctx.effect(() => {\n      return () => {\n        if (debounce !== undefined) clearTimeout(debounce)\n        watcher.close()\n      }\n    })\n```\n\n</details>\n\n#### 缺口\n\n- 不同IO失败点的实际磁盘/内存偏离与恢复行为未复现。\n  **影响：**仅能指出非事务控制流，不能量化损坏概率或断言已发生数据丢失。\n  **进一步探讨：**可用临时数据目录对保存/rename/MD写入分别注入失败，检查重启后组状态和原文件保全。\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 成本、采用与未来设计如何判断？\n\n**研究主题：**效果与总成本、采用判断、新假设与验证\n\n#### 完整回答\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 宿主与实际完整包、数据目录 | 复核入口，整理并核对导入材料 | 未测安装耗时和导入峰值 |\n| 持续使用 | 每次模型请求包含全文；世界模式还可重复命中条目 | 手工检查设定一致性，协调共享active | token/价格随材料与模型变化，未测 |\n| 失败恢复 | JSON/MD备份和可能重导入 | 核对内存、预设、关键词与文档是否同版本 | 多步失败可留下部分状态 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 设定迁移 | PNG/JSON解析和双预设生成 | 全部Tavern导出变体兼容 |\n| 触发 | 主关键词/constant匹配并追加消息 | 次级selective等价语义与上下文净收益 |\n| 创作 | 拼接小说规则与设定全文 | 小说质量、设定遵循和人工返工减少 |\n| 文档 | 导入时写可打开的MD | 编辑后自动生效，源码实际不提供回流 |\n\n建议观察。用户任务明确，双模式迁移有实用价值，但固定Git缺host入口、共享active、MD与触发状态分叉直接影响可用性和理解，不宜凭README推荐默认启用。后续可从完整制品清单、两个会话切世界以及MD修改后的实际提示词差异开始阅读或验证；涉及敏感或长期积累设定先保留独立备份。\n\n未验证假设是把世界书变成按会话绑定的版本化权威文档，仅按预算选择条目并输出引用/省略收据，再从同一版本派生MD和提示词。相较当前全文加命中重复注入，可能减轻上下文成本和跨会话串用，但可能遗漏伏笔、破坏跨条目关联。最小对照应固定同一世界、模型、双会话与场景，比较设定错误、正文人工盲评、输入token和编辑回流一致性；若省token却增加关键设定遗漏，则不成立。当前未实现，不计既有创新。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/tavern.ts:157-173](https://github.com/609476965/dsh-LorebookMD/blob/4bc4110efbfb4888286b81aaf53191705dade9dd/src/tavern.ts#L157-L173)\n\n世界预设包含全部启用内容。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n/** 世界书 → 组合预设正文（带触发词说明；constant 条目标 [始终生效]）。 */\nexport function composeWorldContent(world: WorldInfo, ownerName: string): string {\n  const lines = [\n    `[World Info: ${ownerName}]`,\n    '以下为世界设定条目。仅当对话内容涉及条目的触发词时，才应用该条目的设定；标注 [始终生效] 的条目不受触发词限制，始终有效。',\n  ]\n  for (const entry of world.entries) {\n    if (entry.enabled === false) continue\n    const tags: string[] = []\n    if (entry.constant === true) tags.push('始终生效')\n    if (entry.selective === true) tags.push('选择性')\n    const keys = entry.keys\n    const heading = `### ${keys[0] ?? '(无触发词)'}${keys.length > 1 ? `（触发词：${keys.join('、')}）` : ''}${tags.length > 0 ? ` [${tags.join('/')}]` : ''}`\n    lines.push('', heading)\n    if (entry.comment !== undefined && entry.comment !== '') lines.push(`（${entry.comment}）`)\n    lines.push(entry.content === '' ? '（条目无正文）' : entry.content)\n  }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/index.ts:800-824](https://github.com/609476965/dsh-LorebookMD/blob/4bc4110efbfb4888286b81aaf53191705dade9dd/src/index.ts#L800-L824)\n\n额外关键词注入，未见预算/去重。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\nfunction registerWorldTrigger(ctx: Context, repo: PresetRepo, worldbooks: Map<string, WorldInfo>): void {\n  ctx.on('agent/pre-step', async ({ messages }, next): Promise<PreStepDecision> => {\n    const decision = await next()\n    if (decision.kind === 'reject') return decision\n    const active = repo.active\n    if (active === null) return decision\n    const world = worldbooks.get(active)\n    if (world === undefined) return decision\n    const userText = messages\n      .filter(message => message.source.kind === 'user')\n      .flatMap(message => message.content\n        .filter(block => block.type === 'text')\n        .map(block => block.text))\n      .join('\\n')\n    const matched = world.entries.filter(entry => matchWorldEntry(entry, userText))\n    if (matched.length === 0) return decision\n    const injected = matched.map(entry => createUserMessage({\n      content: [{ type: 'text', text: renderWorldEntry(entry) }],\n      source: { kind: 'plugin', plugin: name, form: 'instructions' },\n    }))\n    return { kind: 'enter', messages: [...decision.messages, ...injected] }\n  })\n}\n\n/**\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/index.ts:80-114](https://github.com/609476965/dsh-LorebookMD/blob/4bc4110efbfb4888286b81aaf53191705dade9dd/src/index.ts#L80-L114)\n\n共享active及仅JSON热载入支撑权威文档假设。\n\n<details>\n<summary>查看原文（35行）</summary>\n\n```text\n  ctx.systemPrompt.section({\n    name: config.sectionName,\n    order: config.sectionOrder,\n    text: () => {\n      const active = repo.active\n      if (active === null) return ''\n      const content = repo.contentOf(active)\n      return content === undefined ? '' : sanitizePromptVariables(content, active)\n    },\n  })\n\n  // 1b) 世界书关键词自动触发：激活的预设是世界书时，把触发词命中的条目注入本轮\n  if (config.worldTrigger) {\n    registerWorldTrigger(ctx, repo, worldbooks)\n  }\n\n  // 2) 管理工具（对话中随时切换与修改）\n  if (config.enableTools) {\n    registerTools(ctx, repo, worldbooks, worldbooksFile, dataDir)\n  }\n\n  // 2b) 浏览器设置页的数据通道：/prompt-manager/api（JSON RPC，同源 fetch）\n  registerApiRoute(ctx, repo, worldbooks, worldbooksFile, dataDir)\n\n  // 3) 数据文件热载入：直接改 JSON 文件，防抖后自动 reload\n  if (config.watchFile) {\n    let debounce: ReturnType<typeof setTimeout> | undefined\n    const watcher = watch(dataDir, { persistent: false }, (_event, filename) => {\n      if (filename !== basename(dataFile)) return\n      if (debounce !== undefined) clearTimeout(debounce)\n      debounce = setTimeout(() => {\n        repo.reload()\n        ctx.emit('system-prompt/change')\n        console.log(`[prompt-manager] ${basename(dataFile)} changed on disk; reloaded`)\n      }, 200)\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/index.ts:726-753](https://github.com/609476965/dsh-LorebookMD/blob/4bc4110efbfb4888286b81aaf53191705dade9dd/src/index.ts#L726-L753)\n\n多份投影顺序生成的现状。\n\n<details>\n<summary>查看原文（28行）</summary>\n\n```text\n): { worldPreset: string; writingPreset: string; documentPath: string } | undefined {\n  if (world === undefined || world.entries.length === 0) return undefined\n\n  const worldName = worldPresetName(ownerName)\n  const worldDoc = composeWorldDocument(world, ownerName)\n  const worldResult = repo.upsert({\n    name: worldName,\n    content: composeWorldContent(world, ownerName),\n    description: `Imported world info (${world.entries.length} entries${world.name !== undefined ? `, \"${world.name}\"` : ''}); activating it enables keyword-triggered injection`,\n  })\n  if (!worldResult.ok) throw new Error(worldResult.message)\n\n  const writingName = writingPresetName(ownerName)\n  const writingResult = repo.upsert({\n    name: writingName,\n    content: composeWritingContent(worldDoc, ownerName),\n    description: `创作模式：参考《${ownerName}》世界设定创作小说；激活后输入场景即可`,\n  })\n  if (!writingResult.ok) throw new Error(writingResult.message)\n\n  worldbooks.set(worldName, world)\n  saveWorldbooks(worldbooksFile, worldbooks)\n  const documentPath = writeWorldDocument(dataDir, ownerName, worldDoc)\n  return { worldPreset: worldName, writingPreset: writingName, documentPath }\n}\n\n/** 文件名安全化：把路径保留字符替换为下划线。 */\nfunction safeFileName(name: string): string {\n```\n\n</details>\n\n#### 缺口\n\n- 缺少相同世界/模型/场景的创作质量、token和人工返工对照。\n  **影响：**不能量化相比手工设定粘贴的净收益。\n  **进一步探讨：**从固定场景、人工设定检查表与token日志入手，同时保留失败和遗漏样本。\n- 版本化会话绑定与预算注入尚无实现和对照。\n  **影响：**只是可证伪设计，不提升当前采用等级。\n  **进一步探讨：**比较双会话世界串用、编辑传播、关键设定遗漏和输入成本。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：5730c17b5ef47753efacc9de4664ec2275c94edc7b1532e0d180b328a96cd643。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .mjs | source | 3 | 174 | 139 | 25 | — |\n| .js | source | 1 | 360 | 338 | 54 | — |\n| .md | source | 1 | 74 | — | — | 1006 |\n| .ts | source | 6 | 1653 | 1353 | 178 | — |\n| .tsx | source | 1 | 196 | 172 | 9 | — |\n| .ts | test | 5 | 1216 | 1018 | 74 | — |\n\n排除 1 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 卡片/世界书导入 | PNG/JSON迁移为提示词和MD | 不是完整Tavern语义 |\n| 双模式 | 世界书对话与小说指令 | 共享active，全文注入 |\n| 关键词追加 | 主keys和constant条目 | 无次级选择，可能重复全文内容 |\n| 预设管理工具 | 列表、激活、停用、保存、删除、三类导入 | 同实例共享状态 |\n| 设置与API | 导入、切换、打开MD和删除 | POST与大小检查不代表独立授权 |\n| 文件热载入 | 外部修改presets.json生效 | 不跟踪MD及worldbooks.json |\n\n\n## 工程亮点\n\nPresetRepo把纯状态逻辑和文件IO端口分开，简化复用和故障注入；保存JSON用临时文件rename，坏预设JSON尝试改名留存，watcher与防抖计时器有scope清理。这些是可借鉴的基础结构，不等于跨多文件事务或严格崩溃一致性。\n\nuse/off/upsert/remove先替换内存state再io.save，保存抛错不会回滚内存。世界书导入又顺序保存两个预设、worldbooks.json和MD，任一步失败都可能留下前半部分；删除同理。每个JSON自己的rename无法让这组文件原子提交。启动遇损坏presets.json尝试rename，备份失败被忽略后仍从空仓库启动，后续保存可能覆盖原文件；不应把注释所说避免丢失当所有IO失败下的保证。\n\nsafeFileName仅替换保留字符，两个不同名字可能映射到同一个MD文件，重导入会直接覆盖文件。世界书条目和预设独立存储又没有关联版本，人工修改或部分失败后无法仅靠ready日志确认一致。适合继续研究的工程方向是单一权威状态加可重建投影，或带版本的整组写入收据，而非只添加更多热更新watcher。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、tsdown.config.ts、cordis.patch.yml、src/index.ts、src/tavern.ts、src/preset-repo.ts、src/client/index.ts、src/client/presets-api.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定源码检查角色卡/世界书解析、提示词与触发、管理路由、预设持久化和构建入口；不运行目标，不下载验证npm制品，不作完整Tavern兼容审计。\n- 下一步：进一步探讨可用双会话与一个小世界书检查active作用域、MD编辑后的真实提示词和失败时三份状态；再做同模型场景的token/设定遵循对照。\n",
         "metadata": {
             "repository": "609476965/dsh-LorebookMD",
             "repository_id": 1334395883,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T05:13:37.051Z",
+            "window_start": "2026-09-22T05:13:37.051Z",
             "stars": 23,
             "pushed_at": "2026-08-14T18:34:21Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 1,
+                "closed": 1,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A609476965%2Fdsh-LorebookMD%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6413:3B024B:1450B7:21F4D9:6AD84A56 and timestamp 2026-10-21 05:15:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A609476965%2Fdsh-LorebookMD%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641A:AF775:145143:21E9ED:6AD84A56 and timestamp 2026-10-21 05:15:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A609476965%2Fdsh-LorebookMD%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641B:250B02:14DA7E:227FC1:6AD84A56 and timestamp 2026-10-21 05:15:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A609476965%2Fdsh-LorebookMD%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641C:64E75:142043:21CBCA:6AD84A56 and timestamp 2026-10-21 05:15:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A609476965%2Fdsh-LorebookMD%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6414:D5CAC:14A758:2238D2:6AD84A57 and timestamp 2026-10-21 05:15:03 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "dsh-lorebookmd",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 705,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-lorebookmd",
+                "captured_at": "2026-10-22T05:13:47.916Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 631,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-lorebookmd",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-08-14T18:33:31.417Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T05:13:47.916Z",
                     "source_url": "https://registry.npmjs.org/dsh-lorebookmd",
                     "error": null,
                     "latest_version": "1.0.0",
                     "latest_published_at": "2026-08-14T18:33:31.629Z",
                     "latest_error": null
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "4bc4110efbfb4888286b81aaf53191705dade9dd",
-                "current_revision": "4bc4110efbfb4888286b81aaf53191705dade9dd",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {
@@ -453,15 +490,15 @@
             "repository": "609476965/dsh-LorebookMD",
             "path": "",
             "revision": "4bc4110efbfb4888286b81aaf53191705dade9dd",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                "https://github.com/0xsline/awesome-deepseek-harness"
-            ],
             "fingerprints": {
                 "directory": "5d4b742eb4cd96ee2dbf062bb365f26ed2ddfc1ede8b41a394f48d6f7ee2c71a",
                 "code": "4bc4110efbfb4888286b81aaf53191705dade9dd",
                 "maintenance": "877e4e26b19cc137b0551742618bd7d0848c67fd4a7ce3943b9f475ea998b9ba"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ]
         }
     }
 }

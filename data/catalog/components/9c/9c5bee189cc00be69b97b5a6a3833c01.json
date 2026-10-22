@@ -24,36 +24,136 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-01-github-1346023250-root-directory-0",
+                    "id": "2026-10-22-02-github-1346023250-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T02:09:40.619Z",
+                    "retrieved_at": "2026-10-22T11:12:27.674Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-01-github-1346023250-root-author",
+                    "id": "2026-10-22-02-github-1346023250-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/452926826/dsh-feishu-bot",
+                            "commit": "f4d521615a9ca7ff7cbe2953a2a84074a7768091",
+                            "path": "README.md",
+                            "content_sha256": "d812b9d27f522781a400a4679a3de3fc52d4067aa98590de4793df862c340d17"
+                        }
+                    ],
                     "revision": "f4d521615a9ca7ff7cbe2953a2a84074a7768091",
-                    "captured_at": "2026-10-21T02:09:40.619Z",
-                    "summary": "通过飞书应用机器人长连接操作 DSH 项目与会话，支持扫码绑定、审批与完成通知。",
-                    "artifact": "data/runs/2026-10-21-01/snapshots/452926826--dsh-feishu-bot/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T11:12:27.674Z",
+                    "summary": "通过飞书WebSocket操作DSH项目与会话，支持扫码绑定、聊天审批和完成通知。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/452926826--dsh-feishu-bot/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-01-github-1346023250-root-source",
+                    "id": "2026-10-22-02-github-1346023250-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/src/index.ts",
+                    "url": "https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/452926826/dsh-feishu-bot",
+                            "commit": "f4d521615a9ca7ff7cbe2953a2a84074a7768091",
+                            "path": "README.md",
+                            "content_sha256": "d812b9d27f522781a400a4679a3de3fc52d4067aa98590de4793df862c340d17"
+                        },
+                        {
+                            "repository_url": "https://github.com/452926826/dsh-feishu-bot",
+                            "commit": "f4d521615a9ca7ff7cbe2953a2a84074a7768091",
+                            "path": "SECURITY.md",
+                            "content_sha256": "c81509fe0c7efd784946276e3f0459b1b0fd5b1cc671ac583daccda60c10e730"
+                        },
+                        {
+                            "repository_url": "https://github.com/452926826/dsh-feishu-bot",
+                            "commit": "f4d521615a9ca7ff7cbe2953a2a84074a7768091",
+                            "path": "package.json",
+                            "content_sha256": "6962da38adf9f27a8ab82e58fe9ed70f2ad57fca23b2e73f0b99f60831369b81"
+                        },
+                        {
+                            "repository_url": "https://github.com/452926826/dsh-feishu-bot",
+                            "commit": "f4d521615a9ca7ff7cbe2953a2a84074a7768091",
+                            "path": "lib/index.js",
+                            "content_sha256": "1c143425ebadec404960580ad2d3a7734e0c32b3d8365ccff12809f4be46db08"
+                        },
+                        {
+                            "repository_url": "https://github.com/452926826/dsh-feishu-bot",
+                            "commit": "f4d521615a9ca7ff7cbe2953a2a84074a7768091",
+                            "path": "lib/approval.js",
+                            "content_sha256": "b1bfc34c6acfbd4faac1d2654c5df074c52aa4d44a8981acbd832e14c6217490"
+                        },
+                        {
+                            "repository_url": "https://github.com/452926826/dsh-feishu-bot",
+                            "commit": "f4d521615a9ca7ff7cbe2953a2a84074a7768091",
+                            "path": "lib/binding-status.js",
+                            "content_sha256": "3ef5e361b80d1fa727fa45850fd3a98fd2c0ddeb495fe31f60b99a5dd37dba9f"
+                        },
+                        {
+                            "repository_url": "https://github.com/452926826/dsh-feishu-bot",
+                            "commit": "f4d521615a9ca7ff7cbe2953a2a84074a7768091",
+                            "path": "lib/client.js",
+                            "content_sha256": "130b0073d73d8c619c4b8c6ad942b4cb767fc0390f9b6f9e63dcb1a58953cecc"
+                        },
+                        {
+                            "repository_url": "https://github.com/452926826/dsh-feishu-bot",
+                            "commit": "f4d521615a9ca7ff7cbe2953a2a84074a7768091",
+                            "path": "lib/controller.js",
+                            "content_sha256": "485c690aaabe3e8aa153f94f3f18690c49287f3a644a94143486274004ffd653"
+                        },
+                        {
+                            "repository_url": "https://github.com/452926826/dsh-feishu-bot",
+                            "commit": "f4d521615a9ca7ff7cbe2953a2a84074a7768091",
+                            "path": "lib/feishu.js",
+                            "content_sha256": "dbb944353e8c4662b59593fa9eab46a5e44c1ea9caaf7bb3f98883685f2e16ad"
+                        },
+                        {
+                            "repository_url": "https://github.com/452926826/dsh-feishu-bot",
+                            "commit": "f4d521615a9ca7ff7cbe2953a2a84074a7768091",
+                            "path": "lib/harness.js",
+                            "content_sha256": "296a92ad669a7900392fdc074b90f5e3b24c3a80f2ddfd8dbce421c3e3938196"
+                        },
+                        {
+                            "repository_url": "https://github.com/452926826/dsh-feishu-bot",
+                            "commit": "f4d521615a9ca7ff7cbe2953a2a84074a7768091",
+                            "path": "lib/notifications.js",
+                            "content_sha256": "a6f2efc0741a64e9792c61d984b754871c9fdad57391a19454f91538d15114ed"
+                        },
+                        {
+                            "repository_url": "https://github.com/452926826/dsh-feishu-bot",
+                            "commit": "f4d521615a9ca7ff7cbe2953a2a84074a7768091",
+                            "path": "lib/registration.js",
+                            "content_sha256": "cb8fddf504ec9451941730a39fd5656bd0546de5a7001b17e4c59e3abd5b4f81"
+                        },
+                        {
+                            "repository_url": "https://github.com/452926826/dsh-feishu-bot",
+                            "commit": "f4d521615a9ca7ff7cbe2953a2a84074a7768091",
+                            "path": "lib/state.js",
+                            "content_sha256": "19351a7d08e338fbd90c9f3036e1dd7290fee2b3d048e7fde20b0ee595265112"
+                        },
+                        {
+                            "repository_url": "https://github.com/452926826/dsh-feishu-bot",
+                            "commit": "f4d521615a9ca7ff7cbe2953a2a84074a7768091",
+                            "path": "test/approval.test.js",
+                            "content_sha256": "53edf6ee26d9047d8729eb7c794f8c8cc78c6ff74eaeb78deae4c7a8642e16a2"
+                        },
+                        {
+                            "repository_url": "https://github.com/452926826/dsh-feishu-bot",
+                            "commit": "f4d521615a9ca7ff7cbe2953a2a84074a7768091",
+                            "path": "test/notifications.test.js",
+                            "content_sha256": "d6ad60410e72555c79872e4250f519a1947ae216147e9d1f85bac6dad0675b86"
+                        }
+                    ],
                     "revision": "f4d521615a9ca7ff7cbe2953a2a84074a7768091",
-                    "captured_at": "2026-10-21T02:09:40.619Z",
-                    "summary": "核查 src/index.ts、src/approval.ts、src/controller.ts、src/state.ts；index.ts创建长连接bot、按chat选择项目会话并绑定ApprovalCoordinator；approval.ts按session到chat路由，pending按chat保存，一次批准/拒绝仅结算当前请求；state.ts串行落盘选择。",
-                    "artifact": "data/runs/2026-10-21-01/snapshots/452926826--dsh-feishu-bot/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T11:12:27.674Z",
+                    "summary": "核查 README.md、SECURITY.md、package.json、lib/index.js、lib/approval.js、lib/binding-status.js、lib/client.js、lib/controller.js、lib/feishu.js、lib/harness.js、lib/notifications.js、lib/registration.js、lib/state.js、test/approval.test.js、test/notifications.test.js；SDK扫码或凭证启动WS，chat选择项目/会话，conversation队列followup，chat级审批，最后文本与通知返回。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/452926826--dsh-feishu-bot/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "抽读指定核心源码与作者说明；未执行目标插件或测试、未安装或做真实宿主验收，未核实独立用户收益。",
+                        "只读发布lib全部host模块及client、作者文档与代表mock测试；不执行目标/宿主/飞书账号。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +164,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "需要离开本机仍在飞书发起或接续DSH任务的个人/团队用户，交付是宿主会话最终回复与审批回路。",
+                    "text": "从飞书远程操作本机DSH，需受信聊天及最低权限Profile。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1346023250-root-source"
+                        "2026-10-22-02-github-1346023250-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +175,16 @@
                             "fingerprint": "f4d521615a9ca7ff7cbe2953a2a84074a7768091"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:09:40.619Z",
+                    "reviewed_at": "2026-10-22T11:12:27.674Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "index.ts创建长连接bot、按chat选择项目会话并绑定ApprovalCoordinator；approval.ts按session到chat路由，pending按chat保存，一次批准/拒绝仅结算当前请求；state.ts串行落盘选择。",
+                    "text": "SDK扫码或凭证启动WS，chat选择项目/会话，conversation队列followup，chat级审批，最后文本与通知返回。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1346023250-root-source"
+                        "2026-10-22-02-github-1346023250-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +193,16 @@
                             "fingerprint": "f4d521615a9ca7ff7cbe2953a2a84074a7768091"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:09:40.619Z",
+                    "reviewed_at": "2026-10-22T11:12:27.674Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "抽读指定核心源码与作者说明；未执行目标插件或测试、未安装或做真实宿主验收，未核实独立用户收益。",
+                    "text": "只读发布lib全部host模块及client、作者文档与代表mock测试；不执行目标/宿主/飞书账号。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1346023250-root-source"
+                        "2026-10-22-02-github-1346023250-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +211,16 @@
                             "fingerprint": "f4d521615a9ca7ff7cbe2953a2a84074a7768091"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:09:40.619Z",
+                    "reviewed_at": "2026-10-22T11:12:27.674Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "固定源码及包清单界定本次组件与分发；作者兼容和效果说明不等于本轮实际执行证据。",
+                    "text": "0.1.4 MIT，Node>=20，Web组合含host/client、Lark SDK与QR依赖。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1346023250-root-source"
+                        "2026-10-22-02-github-1346023250-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +229,16 @@
                             "fingerprint": "f4d521615a9ca7ff7cbe2953a2a84074a7768091"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:09:40.619Z",
+                    "reviewed_at": "2026-10-22T11:12:27.674Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "首次需租户建应用权限、扫码发布及白名单；持续飞书网络和DSH模型调用费用、断连排查与凭据轮换成本，人工审批时间另计。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | Node/DSH、飞书应用和SDK、凭证/QR本地存储 | 有权限者扫码创建授权、发布bot、配置允许聊天及最低宿主权限 | 飞书/模型实际费用与安装工时未知 |\n| 持续使用 | WebSocket与模型请求、历史/selection文件、通知发送额度 | 维护聊天成员/审批职责，核广播收件人与对话目标 | 不提供费用统计，长回复/重复通知增加消息数，净节省未量化 |\n| 失败恢复 | 凭证/selection备份、重连/再绑定、重发可能重复执行 | 核消息是否已入Agent、审批是否过期及回答是否仅投递失败，修磁盘后重启store | 无持久消息收据/幂等重放，工时取决于故障，不填0 |\n",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1346023250-root-source"
+                        "2026-10-22-02-github-1346023250-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +247,16 @@
                             "fingerprint": "f4d521615a9ca7ff7cbe2953a2a84074a7768091"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:09:40.619Z",
+                    "reviewed_at": "2026-10-22T11:12:27.674Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "远程控制需求明确时在专用profile试用，先固定允许chat、验证拒绝/取消/断连恢复；普通消息具有该DSH profile的实际权限。",
+                    "text": "观察，受信owner/允许群与最低权限Profile，审批/广播分别明确，未知投递不重放任务。详见[Q07](#research-q07)。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1346023250-root-source"
+                        "2026-10-22-02-github-1346023250-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +265,16 @@
                             "fingerprint": "f4d521615a9ca7ff7cbe2953a2a84074a7768091"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:09:40.619Z",
+                    "reviewed_at": "2026-10-22T11:12:27.674Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "免公开回调地址降低接入配置负担，移动审批有流程价值；安全授权、通知可靠性与办结率未本轮实测。",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 远程操作 | chat选择与conversation串行 | 项目ACL/并发选择一致性 |\n| 一次审批 | 原chat路由及abort取消 | 原sender/请求nonce/本地超时 |\n| 消息返回 | 占位更新/Unicode分片 | 持久幂等与逐目标投递 |\n",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1346023250-root-source"
+                        "2026-10-22-02-github-1346023250-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +283,16 @@
                             "fingerprint": "f4d521615a9ca7ff7cbe2953a2a84074a7768091"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:09:40.619Z",
+                    "reviewed_at": "2026-10-22T11:12:27.674Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "审批发送失败返回undefined交给其他通道，abort清理pending；选择状态按chat隔离并临时文件rename，写队列缺失败恢复需检验。 [固定源码](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/src/index.ts#L1)。",
+                    "text": "coordinator/bridge/store职责分开和会话队列有价值；连接重连不等任务正好一次。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1346023250-root-source"
+                        "2026-10-22-02-github-1346023250-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,15 +301,69 @@
                             "fingerprint": "f4d521615a9ca7ff7cbe2953a2a84074a7768091"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:09:40.619Z",
+                    "reviewed_at": "2026-10-22T11:12:27.674Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "把扫码创建应用、WebSocket、项目/会话选择和一次审批接到DSH，省手接远程入口；交付仍为原Agent文本。详见[Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1346023250-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1346023250:root",
+                            "area": "code",
+                            "fingerprint": "f4d521615a9ca7ff7cbe2953a2a84074a7768091"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T11:12:27.674Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "授权与审批按chat共享、空ACL放行，晚批准不绑定请求；内存去重、广播与失败写队列不能保证任务/收件人一致。详见[Q04](#research-q04)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1346023250-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1346023250:root",
+                            "area": "code",
+                            "fingerprint": "f4d521615a9ca7ff7cbe2953a2a84074a7768091"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T11:12:27.674Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "持久远程任务身份与callID/nonce/TTL审批、逐收件人投递收据，未知结果不重放，按同群错批/崩溃反例证伪。详见[Q07](#research-q07)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1346023250-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1346023250:root",
+                            "area": "code",
+                            "fingerprint": "f4d521615a9ca7ff7cbe2953a2a84074a7768091"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T11:12:27.674Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T02:09:40.619Z",
+            "last_checked_at": "2026-10-22T11:12:27.674Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "f4d521615a9ca7ff7cbe2953a2a84074a7768091",
-                "reviewed_at": "2026-10-21T02:09:40.619Z",
+                "reviewed_at": "2026-10-22T11:12:27.674Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -220,62 +374,62 @@
                 ],
                 "technical": {
                     "criteria": {
-                        "novelty": 18,
+                        "novelty": 9,
                         "mechanism": 15,
                         "transferability": 10,
-                        "simplification": 8
+                        "simplification": 11
                     },
-                    "rationale": "novelty：扫码与会话审批闭环实质；mechanism：chat隔离和一次结算实质；transferability：IM远程桥接可迁移实质；simplification：免手抄凭据和公开回调实质。",
+                    "rationale": "novelty9，参照IM桥接/设备授权常规模式；mechanism15，扫码/host审批/队列形成实际链，身份与持久投递未闭合；transferability10，coordinator/bridge/store分层可借鉴，DSH/飞书SDK耦合；simplification11，扫码免手抄和统一聊天入口省配置，群权限维护仍需人工。",
                     "basis": "interpretation",
-                    "score": 51,
+                    "score": 45,
                     "evidence_ids": [
-                        "2026-10-21-01-github-1346023250-root-source"
+                        "2026-10-22-02-github-1346023250-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 18,
-                        "delivery": 15,
-                        "reach": 10,
-                        "economics": 4
+                        "workflow": 26,
+                        "delivery": 0,
+                        "reach": 15,
+                        "economics": 0
                     },
-                    "rationale": "workflow：远程发起审批交接实质；delivery：会话回复与通知实质；reach：移动飞书用户可达实质；economics：免回调运维小幅，任务成本未测。",
+                    "rationale": "workflow26，以本地Web操作或手接飞书/DSH为参照，把绑定、选目标、执行、审批与通知连成远程流程，身份和恢复仍有边界；delivery0，以同一Agent任务回复为参照，聊天通知未改变产物、验收责任或价值单位，远程可达性归reach而不重复算交付创新；reach15，以必须打开本机DSH Web的使用者为参照，扫码与飞书文本入口降低远程接入门槛，限受信聊天且不等任意成员已授权；economics0，以同一Agent经Web/手工桥接处理相同任务为参照，固定版未新增模型共享、缓存/批处理或可靠投递重放的资源组织，反有连接/广播/重试维护；省切换计workflow，不重复计经济创新，净模型费/人工收益未知。",
                     "basis": "interpretation",
-                    "score": 47,
+                    "score": 41,
                     "evidence_ids": [
-                        "2026-10-21-01-github-1346023250-root-source"
+                        "2026-10-22-02-github-1346023250-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "observe",
-                "reason": "飞书远控和移动审批有价值，但状态队列拒绝后可能持续失败、手工凭据白名单路径不明；先验证拒绝、断连和持久恢复再采用。",
+                "reason": "远程操作链具体，但chat级审批、空ACL与非持久消息/状态失败边界需先约束，暂限可信单用户继续探讨。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "离开本机发起接续任务及审批交付明确。"
+                        "rationale": "飞书操作DSH明确。"
                     },
                     "advantage": {
                         "score": 19,
-                        "rationale": "长连接免公网回调并按chat审批，比复制消息有流程增量。"
+                        "rationale": "扫码/审批减少接线，群级身份限制。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "approval协调和state写链已查，persist拒绝无catch恢复边界待验。"
+                        "rationale": "完整发布host链与代表mock断言，宿主审批/SDK结果契约另核。"
                     },
                     "cost": {
-                        "score": 5,
-                        "rationale": "应用scopes、凭据和远控profile权限维护重，异常接管不能省。"
+                        "score": 10,
+                        "rationale": "不需公网callback，但权限/凭证/通知恢复需维护。"
                     }
                 },
-                "score": 60,
+                "score": 65,
                 "revision": "f4d521615a9ca7ff7cbe2953a2a84074a7768091",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T11:12:27.674Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-01-github-1346023250-root-source"
+                    "2026-10-22-02-github-1346023250-root-source"
                 ],
                 "dependencies": [
                     {
@@ -300,90 +454,63 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T01:54:44Z",
-            "analysis_sha256": "1c6863cd68464c05919792f7b2ac1331ca2fb562c732df6ec1b80a18e8496b43"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "da86458dc5272349bfc671143f44d3808048c768df363bab73079413090cfad3"
         },
         "publication.metadata": "data/plugins/452926826--dsh-feishu-bot/META.json",
         "publication.summaries": {
-            "text": "通过飞书应用机器人长连接操作 DSH 项目与会话，支持扫码绑定、审批与完成通知。",
+            "text": "通过飞书WebSocket操作DSH项目与会话，支持扫码绑定、聊天审批和完成通知。",
             "revision": "f4d521615a9ca7ff7cbe2953a2a84074a7768091",
             "source_url": "https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/README.md"
         },
         "publication.capabilities": {
             "revision": "f4d521615a9ca7ff7cbe2953a2a84074a7768091",
             "items": {
-                "用户命令": "飞书/lp、/up、/np、/lc、/uc、/nc、/approve、/reject",
-                "后台": "飞书长连接、chat会话选择与审批桥接",
-                "Host 路由": "飞书绑定状态接口"
-            }
+                "Host 路由": "飞书绑定状态HTTP接口",
+                "界面": "绑定QR/脱敏状态设置页",
+                "事件监听": "飞书文本与宿主approval/request",
+                "后台": "SDK长连接、凭证/聊天选择持久化"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 飞书命令/聊天 | 项目会话选择与Agent操作 | 非DSH用户命令，chat共享 |\n| 扫码应用绑定 | 免手抄App Secret | 受权扫码/QR保密 |\n| 宿主审批桥 | 一次approve/reject | chat级、signal依宿主 |\n| 回复与完成广播 | 聊天继续操作 | 全文扩散需独立授权 |\n"
         },
         "publication.advice": {
             "revision": "f4d521615a9ca7ff7cbe2953a2a84074a7768091",
-            "text": "远程控制需求明确时在专用profile试用，先固定允许chat、验证拒绝/取消/断连恢复；普通消息具有该DSH profile的实际权限。"
+            "text": "观察，受信owner/允许群与最低权限Profile，审批/广播分别明确，未知投递不重放任务。详见[Q07](#research-q07)。"
         },
         "registry": "data/plugins/452926826--dsh-feishu-bot",
-        "reports": "# dsh-feishu-bot\n\n> 通过飞书应用机器人长连接操作 DSH 项目与会话，支持扫码绑定、审批与完成通知。\n\n## 研究范围\n\n- **仓库**：[452926826/dsh-feishu-bot](https://github.com/452926826/dsh-feishu-bot)\n- **版本号**：0.1.4（[固定提交 f4d52161](https://github.com/452926826/dsh-feishu-bot/tree/f4d521615a9ca7ff7cbe2953a2a84074a7768091)）\n- **版本日期**：2026-09-01（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已实现机制由固定源码支持；效果未独立实测，未来假设未验证。\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：需要离开本机仍在飞书发起或接续DSH任务的个人/团队用户，交付是宿主会话最终回复与审批回路。\n- **亮点**：相对只转发聊天文本，贡献为扫码建应用、持久化chat上下文和同源chat审批闭环；复用飞书Device Grant和SDK，不把这些上游能力算原创。\n- **思考**：远程入口是否保持正确授权与任务上下文？审批绑定发起chat是强支持；同一chat多个待审只能有一个，其他回退next。手工凭据未含扫码owner时默认允许集合可能为空，必须检查实际白名单；状态写队列在一次persist拒绝后未catch，后续then可能继续拒绝，恢复需另验。\n- **建议**：远程控制需求明确时在专用profile试用，先固定允许chat、验证拒绝/取消/断连恢复；普通消息具有该DSH profile的实际权限。\n\n采用建议：远程控制需求明确时在专用profile试用，先固定允许chat、验证拒绝/取消/断连恢复；普通消息具有该DSH profile的实际权限。\n\n## 核心贡献\n\n相对只转发聊天文本，贡献为扫码建应用、持久化chat上下文和同源chat审批闭环；复用飞书Device Grant和SDK，不把这些上游能力算原创。\n\n## 关键质疑\n\n[核查分支](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/src/state.ts#L23)。\n\n远程入口是否保持正确授权与任务上下文？审批绑定发起chat是强支持；同一chat多个待审只能有一个，其他回退next。手工凭据未含扫码owner时默认允许集合可能为空，必须检查实际白名单；状态写队列在一次persist拒绝后未catch，后续then可能继续拒绝，恢复需另验。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n待验证假设：将chat选择版本与任务审批ID绑定，并让持久化队列从单次失败恢复，可减少并发会话串线和故障后的长期不可写；新增状态机与过期审批处理。\n\n两个chat并发选择不同项目，注入一次state写盘失败并发起两个审批；核对后续状态可保存且只有发起chat批准匹配操作，否则否定假设。\n\n## 场景与替代办法\n\n需要离开本机仍在飞书发起或接续DSH任务的个人/团队用户，交付是宿主会话最终回复与审批回路。\n\n参照本机GUI或简单IM转发；此项目把身份接入、会话选择和审批串成远程流程，不能自动扩大授权。\n\n## 依赖与流程\n\n必要为飞书应用账号与权限、SDK长连接、宿主agents/sessions/approval与持久化；扫码owner权限和手工凭据路径不同。\n\n扫码或读凭据→建立WS→白名单过滤→chat选择会话→提交消息→必要时同chat审批→最终回复与通知；停用abort并断连。\n\n## 成本与效果\n\n首次需租户建应用权限、扫码发布及白名单；持续飞书网络和DSH模型调用费用、断连排查与凭据轮换成本，人工审批时间另计。\n\n免公开回调地址降低接入配置负担，移动审批有流程价值；安全授权、通知可靠性与办结率未本轮实测。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：0c51036b2e01218eddb4fea76a849adc46478232ca6d264f3bd5931e3b0ddaa8。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 6 | 535 | — | — | 7372 |\n| .js | source | 11 | 1192 | 1174 | 10 | — |\n| .mjs | source | 3 | 80 | 72 | 0 | — |\n| .ts | source | 9 | 1218 | 1105 | 1 | — |\n| .js | test | 10 | 560 | 509 | 3 | — |\n\n排除 9 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **用户命令**：飞书/lp、/up、/np、/lc、/uc、/nc、/approve、/reject\n- **后台**：飞书长连接、chat会话选择与审批桥接\n- **Host 路由**：飞书绑定状态接口\n\n## 工程亮点\n\n审批发送失败返回undefined交给其他通道，abort清理pending；选择状态按chat隔离并临时文件rename，写队列缺失败恢复需检验。 [固定源码](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/src/index.ts#L1)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 src/index.ts、src/approval.ts、src/controller.ts、src/state.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读指定核心源码与作者说明；未执行目标插件或测试、未安装或做真实宿主验收，未核实独立用户收益。\n- 下一步：两个chat并发选择不同项目，注入一次state写盘失败并发起两个审批；核对后续状态可保存且只有发起chat批准匹配操作，否则否定假设。\n",
+        "reports": "# dsh-feishu-bot\n\n> 通过飞书WebSocket操作DSH项目与会话，支持扫码绑定、聊天审批和完成通知。\n\n## 研究范围\n\n- **仓库**：[452926826/dsh-feishu-bot](https://github.com/452926826/dsh-feishu-bot)\n- **版本号**：0.1.4（[固定提交 f4d521615a9ca7ff7cbe2953a2a84074a7768091](https://github.com/452926826/dsh-feishu-bot/tree/f4d521615a9ca7ff7cbe2953a2a84074a7768091)）\n- **版本日期**：2026-09-01（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n扫码/远程操作组合有源码增量；群级审批与状态/投递边界限制可信多人使用；身份收据设计未验证。\n\n## 洞察短评\n\n- **用途**：从飞书远程操作本机DSH，需受信聊天及最低权限Profile。详见[Q01](#research-q01)。\n- **亮点**：把扫码创建应用、WebSocket、项目/会话选择和一次审批接到DSH，省手接远程入口；交付仍为原Agent文本。详见[Q01](#research-q01)。\n- **思考**：授权与审批按chat共享、空ACL放行，晚批准不绑定请求；内存去重、广播与失败写队列不能保证任务/收件人一致。详见[Q04](#research-q04)。\n- **建议**：持久远程任务身份与callID/nonce/TTL审批、逐收件人投递收据，未知结果不重放，按同群错批/崩溃反例证伪。详见[Q07](#research-q07)。\n\n采用建议：观察，受信owner/允许群与最低权限Profile，审批/广播分别明确，未知投递不重放任务。详见[Q07](#research-q07)。\n\n## 核心贡献\n\n把扫码创建应用、WebSocket、项目/会话选择和一次审批接到DSH，省手接远程入口；交付仍为原Agent文本。详见[Q01](#research-q01)。\n\n## 关键质疑\n\n授权与审批按chat共享、空ACL放行，晚批准不绑定请求；内存去重、广播与失败写队列不能保证任务/收件人一致。详见[Q04](#research-q04)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n持久远程任务身份与callID/nonce/TTL审批、逐收件人投递收据，未知结果不重放，按同群错批/崩溃反例证伪。详见[Q07](#research-q07)。\n\n以同群异人、旧批准、并发选择/完成、磁盘失败、崩溃接受和分片半投递检查身份与任务收据。\n\n## 场景与替代办法\n\n从飞书远程操作本机DSH，需受信聊天及最低权限Profile。详见[Q01](#research-q01)。\n\nDSH本地Web或手写飞书/DSH桥接；本项把设备绑定、远程选择、审批和回复统一。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 条件 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| Node20+/DSH服务/SDK | Agent、WS与审批 | 固定peer/host契约 |\n| 飞书应用权限与可达网络 | 扫码/发消息/收事件 | 发布及owner字段需成立 |\n| 允许聊天与最低Profile | 控制远程权限 | 空集合开放，群成员共享 |\n| 可写凭证/状态目录 | 重启复用 | 明文秘密、备份与写失败恢复 |\n\n\n#### 启动步骤\n\n| 步骤 | 执行者 | 判断标准 |\n| --- | --- | --- |\n| 最低权限与允许群配置 | 维护者 | 独立广播收件人授权 |\n| 扫码/本地凭证启动 | 有创建权限者 | 身份/连通与bound分别核 |\n| 选项目/会话发文本 | 聊天成员 | 确认目标与共享上下文 |\n| 审批/查看最终回复 | 受信审批人 | 不把旧批准用于新请求 |\n| 故障核接受/投递状态 | 维护者 | 结果未知不盲重发任务 |\n\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | Node/DSH、飞书应用和SDK、凭证/QR本地存储 | 有权限者扫码创建授权、发布bot、配置允许聊天及最低宿主权限 | 飞书/模型实际费用与安装工时未知 |\n| 持续使用 | WebSocket与模型请求、历史/selection文件、通知发送额度 | 维护聊天成员/审批职责，核广播收件人与对话目标 | 不提供费用统计，长回复/重复通知增加消息数，净节省未量化 |\n| 失败恢复 | 凭证/selection备份、重连/再绑定、重发可能重复执行 | 核消息是否已入Agent、审批是否过期及回答是否仅投递失败，修磁盘后重启store | 无持久消息收据/幂等重放，工时取决于故障，不填0 |\n\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 远程操作 | chat选择与conversation串行 | 项目ACL/并发选择一致性 |\n| 一次审批 | 原chat路由及abort取消 | 原sender/请求nonce/本地超时 |\n| 消息返回 | 占位更新/Unicode分片 | 持久幂等与逐目标投递 |\n\n\n## 研究问题与完整回答\n\n**插件研究总目标：**固定版扫码绑定与远程会话/审批/投递能否形成可解释可信流程。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 飞书入口实际完成什么任务，相比手动桥接有何增量？\n\n**研究主题：**场景与需求、功能与机制、贡献与相对优势\n\n#### 完整回答\n\n面向需要从飞书操作本机DSH项目/对话的用户。WebSocket免公网callback，文本被包装成source=user提交到现有Profile权限的Agent，得到最后assistant文本；支持项目/会话选择、两条历史、创建对话、聊天内一次审批与完成提醒。合格结果是目标会话处理输入且回复可返回原聊天，不能把whenIdle等同任务业务验收。原替代为在DSH本地Web操作或手接飞书事件/DSH API，本项的增量是扫码创建应用、保存选择、host审批和回复/通知串起完整远程操作流程，并未创造新Agent推理或新任务产物。\n\n发布入口lib/index.js实际注册approval/request、一个绑定状态HTTP路由及异步bot生命周期。输入只接受飞书text事件，文件/图片/语音不支持；没有注册DSH模型工具、Skill或Host用户命令，/lp等是飞书controller解析文本。项目列表来自全部workspaceRegistry，不只projectsRoot；root仅约束新建项目位置，不是会话访问沙箱。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:5-25](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/README.md#L5-L25)\n\n作者用途/绑定。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n````text\nUse DeepSeek Harness through a Feishu application bot over a WebSocket long connection, without exposing a public callback URL. On first start, the plugin can create and bind a Feishu application through a QR code, so App ID and App Secret do not need to be copied manually.\n\n## QR-code binding\n\nWhen no credentials are available, the plugin starts Feishu's OAuth 2.0 Device Authorization Grant application-creation flow, renders a QR code in the DSH terminal, and writes it to:\n\n```text\n~/.dsh/feishu-bot/feishu-bind-qr.png\n```\n\nScan the code in Feishu and create and authorize the application on the confirmation page. The scanning user must have permission to create a custom application in the tenant. The QR code normally expires after about ten minutes; restart DSH to generate another one.\n\nAfter confirmation, the plugin:\n\n1. Requests the `im:message:send_as_bot` permission.\n2. Subscribes to `im.message.receive_v1` events.\n3. Saves the returned credentials and the scanner's `open_id` to `~/.dsh/feishu-bot/credentials.json` with mode `0600`, then validates them with the tenant token API. A post-creation validation failure is logged but does not discard the credentials or create another bot.\n4. Allows only the scanning user by default. Additional group chats can be allowed through `FEISHU_ALLOWED_CHATS`.\n5. Deletes the consumed QR code and connects to Feishu WebSocket immediately.\n\nPublish the application as instructed by Feishu, then add the bot to a group or start a direct conversation. No public callback URL is required.\n````\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:10-39](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/lib/index.js#L10-L39)\n\n服务及审批监听。\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\nexport const name = 'feishu-bot';\nexport const inject = ['agents', 'sessions', 'sessionPersistence', 'workspaceRegistry', 'webServer', 'approval'];\nfunction csv(value) {\n    return new Set((value ?? '').split(',').map(item => item.trim()).filter(Boolean));\n}\nfunction completionTargets() {\n    return csv(process.env.FEISHU_NOTIFY_CHATS ?? process.env.FEISHU_ALLOWED_CHATS);\n}\nexport function apply(ctx) {\n    const logger = ctx.logger('feishu-bot');\n    const home = process.env.DSH_HOME ?? join(process.env.HOME ?? '.', '.dsh');\n    const pluginHome = join(home, 'feishu-bot');\n    const credentialsPath = process.env.FEISHU_CREDENTIALS_PATH ?? join(pluginHome, 'credentials.json');\n    const qrPath = process.env.FEISHU_QR_PATH ?? join(pluginHome, 'feishu-bind-qr.png');\n    const projectsRoot = resolveProjectsRoot(process.env.FEISHU_PROJECTS_ROOT ?? process.cwd());\n    const statePath = process.env.FEISHU_STATE_PATH ?? join(pluginHome, 'state.json');\n    const abort = new AbortController();\n    let bot;\n    let websocket = 'disconnected';\n    const activeChats = new Set();\n    const approvals = new ApprovalCoordinator(async (chatId, text) => {\n        if (bot === undefined)\n            throw new Error('Feishu bot is not ready');\n        await bot.sendText(chatId, text);\n    });\n    ctx.on('approval/request', (request, next) => {\n        return handleApprovalRequest(approvals, request, next);\n    }, { prepend: true });\n    ctx.effect(() => ctx.webServer.register({\n        kind: 'exact',\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/feishu.js:43-78](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/lib/feishu.js#L43-L78)\n\n只收文本。\n\n<details>\n<summary>查看原文（36行）</summary>\n\n```text\n            return;\n        const senderOpenId = data.sender?.sender_id?.open_id;\n        if (!isSenderAllowed(message.chat_id, senderOpenId, this.options.allowedChats, this.options.allowedUsers))\n            return;\n        if (this.seen.has(message.message_id))\n            return;\n        this.seen.add(message.message_id);\n        if (this.seen.size > 1000)\n            this.seen.delete(this.seen.values().next().value);\n        let text;\n        try {\n            const content = JSON.parse(message.content ?? '{}');\n            text = typeof content.text === 'string' ? content.text.trim() : '';\n        }\n        catch {\n            text = '';\n        }\n        if (text.length === 0)\n            return;\n        await runWithThinkingMessage({\n            onMessage: () => this.options.onMessage({\n                chatId: message.chat_id,\n                messageId: message.message_id,\n                ...(senderOpenId === undefined ? {} : { senderOpenId }),\n                text,\n            }),\n            sendThinking: () => this.sendOne(message.chat_id, '思考中…'),\n            update: (messageId, reply) => this.update(messageId, message.chat_id, reply),\n            send: reply => this.send(message.chat_id, reply),\n            onError: this.options.onError,\n        });\n    }\n    async send(chatId, text) {\n        for (const chunk of splitText(text, 3500))\n            await this.sendOne(chatId, chunk);\n    }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/harness.js:72-96](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/lib/harness.js#L72-L96)\n\n项目/会话来源。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n    async listProjects() {\n        return this.ctx.workspaceRegistry.list().map(workspace => ({\n            id: workspace.id,\n            name: workspace.title,\n            path: workspace.path,\n        }));\n    }\n    async createProject(name) {\n        const safe = this.safeProjectName(name);\n        const path = join(this.projectsRoot, safe);\n        await mkdir(path, { recursive: false });\n        const workspace = await this.ctx.workspaceRegistry.create(path, safe);\n        return { id: workspace.id, name: workspace.title, path: workspace.path };\n    }\n    async listConversations(projectId) {\n        const workspace = this.ctx.workspaceRegistry.list().find(item => item.id === projectId);\n        if (workspace === undefined)\n            throw new Error('当前项目不存在，请重新使用 /up 选择项目。');\n        const rows = [];\n        for (const id of workspace.sessionIds) {\n            const session = this.ctx.agents.get(id)?.session;\n            const events = session?.events ?? (await this.ctx.sessionPersistence.inspect(id)).events;\n            rows.push({ id, name: titleFor(id, events) });\n        }\n        return rows;\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/harness.js:138-154](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/lib/harness.js#L138-L154)\n\n运行/回复。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n    async runConversation(conversationId, text, chatId) {\n        const route = this.approvals.bind(conversationId, chatId);\n        try {\n            const id = asSessionId(conversationId);\n            const agent = await this.ensureAgent(id);\n            const fromSeq = agent.session.seq;\n            agent.followup(userMessage(text));\n            await agent.whenIdle();\n            await this.ctx.sessions.flush(agent.session);\n            const reply = lastAssistantText(agent.session.events, fromSeq);\n            try {\n                await this.onCompleted?.({ conversationId, chatId, reply });\n            }\n            catch {\n                // Completion notifications are best-effort and must not hide a completed answer.\n            }\n            return reply;\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 扫码凭证与状态界面是否形成可信绑定？\n\n**研究主题：**依赖、兼容与流程、缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\n启动优先环境App ID+Secret，再读本地凭证，否则用SDK registerApp createOnly申请发消息权限和接收事件；扫码者需创建应用权限，凭证临时文件0600后rename，QR写后chmod0600，消费后删除QR。tenant token验证失败仅warn并保留凭证，避免重复建bot，但bound是凭证存在/已保存，并非验证成功或连通保证。错误expired_token可无限续发QR，其他错误最多三次、access_denied/abort不重试；QR渲染异步未等待授权完成，存在晚写QR的竞争，不能将删除当确定无残留。绑定完整短时URL也进入logger，日志接触者同样需受信。\n\nGET状态路由未检查method/Origin/peer/调用者，未绑定状态会返回含device authorization的完整QR data URL；宿主webServer的外层访问控制必须成立，不能说本路由自带管理员鉴权，也不据此声称公网已暴露。已绑定只回masked ID不回Secret，这是有益最小展示。\n\nreadBindingView先stored再environment，实际start却environment优先，因此两者同时存在时UI可能展示旧应用/owner；readStored只检查appId不要求Secret，损坏凭证也可呈bound。ownerOpenId缺失而allowedChats为空时允许集合均空，bot放行任何可联系聊天；QR默认扫码者限制成立需SDK确实返回open_id，手动环境凭证不附owner且不会加载旧owner。配置与实际身份应分别核。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:39-76](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/lib/index.js#L39-L76)\n\n状态路由及启动优先级。\n\n<details>\n<summary>查看原文（38行）</summary>\n\n```text\n        kind: 'exact',\n        path: '/api/plugins/feishu-binding/status',\n        handler: async (_request, response) => {\n            try {\n                const environment = environmentCredentials();\n                const view = await readBindingView({\n                    credentialsPath,\n                    qrPath,\n                    websocket,\n                    ...(environment === undefined ? {} : { environmentCredentials: environment }),\n                });\n                response.statusCode = 200;\n                response.setHeader('Content-Type', 'application/json; charset=utf-8');\n                response.setHeader('Cache-Control', 'no-store');\n                response.end(JSON.stringify(view));\n            }\n            catch (error) {\n                logger.error(error instanceof Error ? error.stack ?? error.message : String(error));\n                response.statusCode = 500;\n                response.setHeader('Content-Type', 'application/json; charset=utf-8');\n                response.end(JSON.stringify({ error: 'Failed to read Feishu binding status' }));\n            }\n        },\n    }), 'feishu-bot: binding status route');\n    const start = async () => {\n        const environment = environmentCredentials();\n        if (environment === undefined && process.env.FEISHU_REBIND === 'true') {\n            await removeCredentials(credentialsPath);\n            logger.info('removed saved Feishu credentials; starting a new QR binding');\n        }\n        const credentials = environment ?? await loadCredentials(credentialsPath) ?? await registerUntilComplete({\n            credentialsPath,\n            qrPath,\n            logger,\n            signal: abort.signal,\n        });\n        if (abort.signal.aborted)\n            return;\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/registration.js:9-16](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/lib/registration.js#L9-L16)\n\n重试分类。\n\n```text\n}\nexport function shouldRetryRegistration(error, attempt) {\n    const code = registrationErrorCode(error);\n    if (code === 'access_denied' || code === 'abort')\n        return false;\n    if (code === 'expired_token')\n        return true;\n    return attempt < 3;\n```\n\n**依据 3 · 源码核查**：[lib/registration.js:48-109](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/lib/registration.js#L48-L109)\n\n创建/保存/QR异步及验证。\n\n<details>\n<summary>查看原文（62行）</summary>\n\n```text\n    }\n}\nexport async function saveCredentials(path, credentials, userInfo) {\n    await mkdir(dirname(path), { recursive: true });\n    const temporary = `${path}.tmp`;\n    const stored = {\n        appId: credentials.appId,\n        appSecret: credentials.appSecret,\n        createdAt: new Date().toISOString(),\n        ...(userInfo?.open_id === undefined && credentials.ownerOpenId === undefined\n            ? {}\n            : { userOpenId: userInfo?.open_id ?? credentials.ownerOpenId }),\n        ...(userInfo?.tenant_brand === undefined ? {} : { tenantBrand: userInfo.tenant_brand }),\n    };\n    await writeFile(temporary, `${JSON.stringify(stored, null, 2)}\\n`, { mode: 0o600 });\n    await rename(temporary, path);\n}\nexport async function registerByQrCode(options) {\n    const result = await lark.registerApp({\n        source: 'dsh-feishu-bot',\n        ...(options.signal === undefined ? {} : { signal: options.signal }),\n        createOnly: true,\n        appPreset: {\n            name: 'DeepSeek Harness',\n            desc: '通过飞书与本机 DeepSeek Harness 对话',\n        },\n        addons: {\n            preset: false,\n            scopes: { tenant: ['im:message:send_as_bot'] },\n            events: { items: { tenant: ['im.message.receive_v1'] } },\n        },\n        onQRCodeReady: info => {\n            void Promise.all([\n                writeQrCode(options.qrPath, info.url),\n                process.env.FEISHU_QR_TERMINAL === 'false' ? Promise.resolve(undefined) : renderTerminalQr(info.url),\n            ]).then(([, terminal]) => {\n                options.logger.info(`scan Feishu QR code: ${options.qrPath}`);\n                if (terminal !== undefined)\n                    options.logger.info(`\\n${terminal}`);\n                options.logger.info(`binding link (expires in ${info.expireIn}s): ${info.url}`);\n            }).catch(error => options.logger.warn(`failed to render QR code: ${String(error)}`));\n        },\n        onStatusChange: info => {\n            options.logger.info(`Feishu binding status: ${info.status}`);\n        },\n    });\n    const credentials = {\n        appId: result.client_id,\n        appSecret: result.client_secret,\n        ...(result.user_info?.open_id === undefined ? {} : { ownerOpenId: result.user_info.open_id }),\n    };\n    await saveCredentials(options.credentialsPath, credentials, result.user_info);\n    await rm(options.qrPath, { force: true });\n    options.logger.info(`Feishu binding complete; credentials saved to ${options.credentialsPath}`);\n    try {\n        await validateCredentials(credentials);\n        options.logger.info('Feishu credentials validated with the tenant token API');\n    }\n    catch (error) {\n        options.logger.warn(`Feishu credentials were saved but tenant token validation failed: ${String(error)}`);\n    }\n    return credentials;\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/registration.js:115-122](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/lib/registration.js#L115-L122)\n\nQR权限。\n\n```text\n    await mkdir(dirname(path), { recursive: true });\n    await QRCode.toFile(path, url, {\n        type: 'png',\n        width: 512,\n        margin: 2,\n        errorCorrectionLevel: 'M',\n    });\n    await chmod(path, 0o600);\n```\n\n**依据 5 · 源码核查**：[lib/binding-status.js:8-36](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/lib/binding-status.js#L8-L36)\n\n状态优先级与QR返回。\n\n<details>\n<summary>查看原文（29行）</summary>\n\n```text\n    const stored = await readStoredCredentials(options.credentialsPath);\n    const credentials = stored ?? (options.environmentCredentials === undefined ? undefined : {\n        appId: options.environmentCredentials.appId,\n        userOpenId: options.environmentCredentials.ownerOpenId,\n        createdAt: undefined,\n        tenantBrand: undefined,\n    });\n    if (credentials !== undefined) {\n        return {\n            state: 'bound',\n            appIdMasked: maskIdentifier(credentials.appId),\n            ...(credentials.userOpenId === undefined ? {} : { ownerOpenIdMasked: maskIdentifier(credentials.userOpenId) }),\n            ...(credentials.tenantBrand === undefined ? {} : { tenantBrand: credentials.tenantBrand }),\n            boundAt: credentials.createdAt ?? 'environment',\n            websocket: options.websocket,\n        };\n    }\n    try {\n        const [image, info] = await Promise.all([readFile(options.qrPath), stat(options.qrPath)]);\n        return {\n            state: 'waiting',\n            qrDataUrl: `data:image/png;base64,${image.toString('base64')}`,\n            qrUpdatedAt: info.mtime.toISOString(),\n            websocket: options.websocket,\n        };\n    }\n    catch (error) {\n        if (error.code !== 'ENOENT')\n            throw error;\n```\n\n</details>\n\n**依据 6 · 源码核查**：[lib/binding-status.js:40-53](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/lib/binding-status.js#L40-L53)\n\n只检查appId。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\nasync function readStoredCredentials(path) {\n    try {\n        const parsed = JSON.parse(await readFile(path, 'utf8'));\n        if (typeof parsed.appId !== 'string' || parsed.appId.length === 0)\n            return undefined;\n        return {\n            appId: parsed.appId,\n            ...(typeof parsed.userOpenId === 'string' ? { userOpenId: parsed.userOpenId } : {}),\n            ...(typeof parsed.tenantBrand === 'string' ? { tenantBrand: parsed.tenantBrand } : {}),\n            ...(typeof parsed.createdAt === 'string' ? { createdAt: parsed.createdAt } : {}),\n        };\n    }\n    catch (error) {\n        if (error.code === 'ENOENT')\n```\n\n</details>\n\n**依据 7 · 源码核查**：[lib/feishu.js:137-142](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/lib/feishu.js#L137-L142)\n\n空ACL放行。\n\n```text\nexport function isSenderAllowed(chatId, senderOpenId, allowedChats, allowedUsers) {\n    if (allowedChats.size === 0 && allowedUsers.size === 0)\n        return true;\n    if (allowedChats.has(chatId))\n        return true;\n    return senderOpenId !== undefined && allowedUsers.has(senderOpenId);\n```\n\n#### 缺口\n\n- 宿主webServer访问控制与SDK扫码user_info契约\n  **影响：**未绑定QR的可读人群、默认owner限制与状态展示可信度依赖这两项\n  **进一步探讨：**核固定宿主路由认证及SDK确切返回字段，比较环境/本地凭证并存、缺owner及仅appId损坏文件\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 选择按聊天保存是否意味着项目/会话隔离，并发失败怎样处理？\n\n**研究主题：**工程质量与复用、缺陷与关键质疑\n\n#### 完整回答\n\n选择以chat_id保存，controller无sender维度，群成员共享项目/会话上下文；allowedChats是授权整个群，owner用户可在其他聊天操作，二者是OR不是双重校验。允许聊天可列出所有DSH项目并读选中会话历史，选择隔离只是界面状态隔离，没有每聊天资源ACL。/uc不带参数可进入lastCompleted会话但保留旧projectId，后续/lc和/nc仍用旧项目，当前project与conversation可不一致。索引选择重新列实时数据，不保留/lp或/lc快照，列表变化可能选到不同对象。\n\nconverse按conversation串行并catch前项失败避免毒化，这是同会话执行顺序保护；同chat的选择命令、完成标记和多conversation不串行。JsonSelectionStore.get拿copy后set整份，两个请求可覆盖对方选择/lastCompleted；activeChats只是Set，一条先完成会delete即使同chat另条仍运行，不能准确实现忙中免打扰。\n\nselection内存先更新，再writeTail.then(persist)，若一次persist拒绝，后续then不设rejection恢复，会一直拒绝不再写盘，内存却继续变更；临时文件固定名且无跨进程锁，坏JSONload Promise亦缓存失败。不能把rename原子替换等同业务读改写事务。createProject mkdir成功registry失败会留目录，createConversation在attach失败前存handle，没有补偿dispose。这些是失败恢复/身份条件，不是普通没实测。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/feishu.js:137-142](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/lib/feishu.js#L137-L142)\n\nOR授权。\n\n```text\nexport function isSenderAllowed(chatId, senderOpenId, allowedChats, allowedUsers) {\n    if (allowedChats.size === 0 && allowedUsers.size === 0)\n        return true;\n    if (allowedChats.has(chatId))\n        return true;\n    return senderOpenId !== undefined && allowedUsers.has(senderOpenId);\n```\n\n**依据 2 · 源码核查**：[lib/controller.js:52-60](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/lib/controller.js#L52-L60)\n\n完成标记读改写。\n\n```text\n    async markConversationCompleted(chatId, conversationId) {\n        const selection = await this.selections.get(chatId);\n        await this.selections.set(chatId, { ...selection, lastCompletedConversationId: conversationId });\n    }\n    async handle(chatId, input) {\n        const text = input.trim();\n        if (text.length === 0)\n            return { text: HELP };\n        if (text === '/approve' || text === '/批准') {\n```\n\n**依据 3 · 源码核查**：[lib/controller.js:111-150](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/lib/controller.js#L111-L150)\n\nuc保留project及普通消息目标。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n        if (text.startsWith('/uc')) {\n            const rawIndex = argumentAfter(text, '/uc');\n            if (rawIndex.length === 0) {\n                if (selection.lastCompletedConversationId === undefined)\n                    return { text: '还没有可进入的已完成对话。请使用 /uc + 索引进入对话。' };\n                const conversation = await this.bridge.conversationInfo(selection.lastCompletedConversationId);\n                if (conversation === undefined)\n                    return { text: '最近完成的对话已不存在，请使用 /lc 查看当前项目对话。' };\n                const next = { ...selection, conversationId: conversation.id };\n                delete next.lastCompletedConversationId;\n                await this.selections.set(chatId, next);\n                const history = await this.bridge.recentMessages(conversation.id, 2);\n                const suffix = history.length === 0 ? '\\n暂无历史记录。' : `\\n最近 2 条记录：\\n${history.join('\\n')}`;\n                return { text: `已进入对话：${conversation.name}${suffix}`, selection: next };\n            }\n            if (selection.projectId === undefined)\n                return { text: '请先使用 /up + 项目名或索引 进入项目。' };\n            const index = Number(rawIndex);\n            if (!Number.isSafeInteger(index) || index < 1)\n                return { text: '用法：/uc + 索引，例如 /uc + 1' };\n            const conversations = await this.bridge.listConversations(selection.projectId);\n            const conversation = conversations[index - 1];\n            if (conversation === undefined)\n                return { text: `对话索引超出范围：${rawIndex}` };\n            const next = { ...selection, conversationId: conversation.id };\n            delete next.lastCompletedConversationId;\n            await this.selections.set(chatId, next);\n            const history = await this.bridge.recentMessages(conversation.id, 2);\n            const suffix = history.length === 0 ? '\\n暂无历史记录。' : `\\n最近 2 条记录：\\n${history.join('\\n')}`;\n            return { text: `已进入对话：${conversation.name}${suffix}`, selection: next };\n        }\n        if (text === '/nc') {\n            if (selection.projectId === undefined)\n                return { text: '请先使用 /up + 项目名或索引 进入项目。' };\n            const conversation = await this.bridge.createConversation(selection.projectId);\n            const next = { ...selection, conversationId: conversation.id };\n            await this.selections.set(chatId, next);\n            return { text: `已创建并进入对话：${conversation.name}`, selection: next };\n        }\n        if (text.startsWith('/'))\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/harness.js:72-105](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/lib/harness.js#L72-L105)\n\n全局列表/创建与attach。\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\n    async listProjects() {\n        return this.ctx.workspaceRegistry.list().map(workspace => ({\n            id: workspace.id,\n            name: workspace.title,\n            path: workspace.path,\n        }));\n    }\n    async createProject(name) {\n        const safe = this.safeProjectName(name);\n        const path = join(this.projectsRoot, safe);\n        await mkdir(path, { recursive: false });\n        const workspace = await this.ctx.workspaceRegistry.create(path, safe);\n        return { id: workspace.id, name: workspace.title, path: workspace.path };\n    }\n    async listConversations(projectId) {\n        const workspace = this.ctx.workspaceRegistry.list().find(item => item.id === projectId);\n        if (workspace === undefined)\n            throw new Error('当前项目不存在，请重新使用 /up 选择项目。');\n        const rows = [];\n        for (const id of workspace.sessionIds) {\n            const session = this.ctx.agents.get(id)?.session;\n            const events = session?.events ?? (await this.ctx.sessionPersistence.inspect(id)).events;\n            rows.push({ id, name: titleFor(id, events) });\n        }\n        return rows;\n    }\n    async createConversation(projectId) {\n        const workspace = this.ctx.workspaceRegistry.list().find(item => item.id === projectId);\n        if (workspace === undefined)\n            throw new Error('当前项目不存在，请重新使用 /up 选择项目。');\n        const sessionId = asSessionId(`session-${randomUUID()}`);\n        const handle = await this.ctx.agents.create({ sessionId, meta: { cwd: workspace.path } });\n        this.handles.set(sessionId, handle);\n        await workspace.attachSession(sessionId);\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/harness.js:123-133](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/lib/harness.js#L123-L133)\n\nconversation串行。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n    async converse(conversationId, text, chatId) {\n        const previous = this.queues.get(conversationId) ?? Promise.resolve();\n        const task = previous.catch(() => undefined).then(() => this.runConversation(conversationId, text, chatId));\n        this.queues.set(conversationId, task);\n        try {\n            return await task;\n        }\n        finally {\n            if (this.queues.get(conversationId) === task)\n                this.queues.delete(conversationId);\n        }\n```\n\n</details>\n\n**依据 6 · 源码核查**：[lib/state.js:10-35](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/lib/state.js#L10-L35)\n\n内存/毒化writeTail。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n    async get(chatId) {\n        const state = await this.load();\n        return { ...(state.chats[chatId] ?? {}) };\n    }\n    async set(chatId, selection) {\n        const state = await this.load();\n        state.chats[chatId] = { ...selection };\n        this.writeTail = this.writeTail.then(() => this.persist(state));\n        await this.writeTail;\n    }\n    load() {\n        this.loaded ??= readFile(this.path, 'utf8')\n            .then(text => JSON.parse(text))\n            .catch((error) => {\n            if (error.code === 'ENOENT')\n                return { chats: {} };\n            throw error;\n        });\n        return this.loaded;\n    }\n    async persist(state) {\n        await mkdir(dirname(this.path), { recursive: true });\n        const temporary = `${this.path}.tmp`;\n        await writeFile(temporary, `${JSON.stringify(state, null, 2)}\\n`, { mode: 0o600 });\n        await rename(temporary, this.path);\n    }\n```\n\n</details>\n\n**依据 7 · 源码核查**：[lib/index.js:94-103](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/lib/index.js#L94-L103)\n\nactive Set。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n            allowedChats: csv(process.env.FEISHU_ALLOWED_CHATS),\n            allowedUsers: new Set(credentials.ownerOpenId === undefined ? [] : [credentials.ownerOpenId]),\n            onMessage: async (message) => {\n                activeChats.add(message.chatId);\n                try {\n                    return (await controller.handle(message.chatId, message.text)).text;\n                }\n                finally {\n                    activeChats.delete(message.chatId);\n                }\n```\n\n</details>\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 审批能确认原始发起者批准了正确操作吗？\n\n**研究主题：**缺陷与关键质疑、功能与机制\n\n#### 完整回答\n\n有实质安全流程增量。runConversation期间bind session→chat，第二chat不能抢已绑定session route；pending按chat最多一个，respond只匹配该chat，信号abort会cancel，route dispose也cancel，缺路由/忙/发送抛错返回undefined交下一宿主审批通道。工具参数按callId在event里找并截前2000字符，给读者操作上下文。\n\n但审批授权仅chat不是原始sender；入群白名单后任何群成员可/approve，controller从未把senderOpenId传给coordinator。文本/approve没有callID/nonce/过期时刻，晚到针对旧请求的批准可被当前pending消费。coordinator没有自己的timeout，只依request.signal，README的超时拒绝需宿主提供取消时限，不能当本地定时保证。send成功也只以Promise不抛为依据，Feishu sendOne未检查response.code/缺message_id，业务失败可能不抛导致pending等待。\n\n原始参数可能带秘密且没有脱敏，截断不等完整审查；一chat同时操多个session时第二审批退给其它通道，不是自动拒绝或安全通过。可继续核可信单用户/群内统一管理员场景，但不能宣称只原始发起人能批或所有超时自拒。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/approval.js:8-40](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/lib/approval.js#L8-L40)\n\n路由/信号/发送。\n\n<details>\n<summary>查看原文（33行）</summary>\n\n```text\n    bind(sessionId, chatId) {\n        const existing = this.routes.get(sessionId);\n        if (existing !== undefined && existing !== chatId)\n            return { dispose: () => undefined };\n        this.routes.set(sessionId, chatId);\n        return {\n            dispose: () => {\n                if (this.routes.get(sessionId) !== chatId)\n                    return;\n                this.routes.delete(sessionId);\n                this.settle(chatId, 'cancelled');\n            },\n        };\n    }\n    async request(prompt) {\n        const chatId = this.routes.get(prompt.sessionId);\n        if (chatId === undefined || this.pending.has(chatId))\n            return undefined;\n        if (prompt.signal?.aborted === true)\n            return 'cancelled';\n        let resolve;\n        const answer = new Promise(settle => { resolve = settle; });\n        const pending = { resolve, ...(prompt.signal === undefined ? {} : { signal: prompt.signal }) };\n        const onAbort = () => this.settle(chatId, 'cancelled');\n        pending.onAbort = onAbort;\n        this.pending.set(chatId, pending);\n        prompt.signal?.addEventListener('abort', onAbort, { once: true });\n        try {\n            await this.send(chatId, formatApprovalPrompt(prompt));\n        }\n        catch {\n            this.pending.delete(chatId);\n            prompt.signal?.removeEventListener('abort', onAbort);\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/approval.js:43-59](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/lib/approval.js#L43-L59)\n\nchat级settle。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n        return answer;\n    }\n    respond(chatId, decision) {\n        const pending = this.pending.get(chatId);\n        if (pending === undefined)\n            return '当前没有待审批操作。';\n        this.settle(chatId, decision === 'approve' ? 'allowed-once' : 'rejected');\n        return decision === 'approve' ? '已批准本次操作。' : '已拒绝本次操作。';\n    }\n    settle(chatId, outcome) {\n        const pending = this.pending.get(chatId);\n        if (pending === undefined)\n            return;\n        this.pending.delete(chatId);\n        if (pending.signal !== undefined && pending.onAbort !== undefined) {\n            pending.signal.removeEventListener('abort', pending.onAbort);\n        }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/approval.js:61-92](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/lib/approval.js#L61-L92)\n\ncallId取参/截断。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\n    }\n}\nexport async function handleApprovalRequest(approvals, request, next) {\n    const call = request.callId === undefined ? undefined : request.agent.session.events.find(event => {\n        if (event.type !== 'tool/call')\n            return false;\n        return (event.data ?? {}).callId === request.callId;\n    });\n    const args = (call?.data ?? {});\n    const outcome = await approvals.request({\n        sessionId: request.agent.session.id,\n        toolName: request.toolName,\n        ...(request.reason === undefined ? {} : { reason: request.reason }),\n        ...(typeof args?.arguments === 'string' ? { arguments: args.arguments } : {}),\n        ...(request.signal === undefined ? {} : { signal: request.signal }),\n    });\n    return outcome ?? next();\n}\nexport function formatApprovalPrompt(prompt) {\n    const lines = [\n        'Harness 请求审批',\n        `工具：${prompt.toolName}`,\n    ];\n    if (prompt.reason !== undefined && prompt.reason.trim().length > 0)\n        lines.push(`原因：${prompt.reason.trim()}`);\n    if (prompt.arguments !== undefined && prompt.arguments.trim().length > 0) {\n        const value = Array.from(prompt.arguments.trim()).slice(0, 2000).join('');\n        lines.push(`参数：\\n${value}${Array.from(prompt.arguments.trim()).length > 2000 ? '\\n…' : ''}`);\n    }\n    lines.push('', '回复 /approve 批准本次操作，或 /reject 拒绝。');\n    return lines.join('\\n');\n}\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/controller.js:62-67](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/lib/controller.js#L62-L67)\n\n审批仅chat。\n\n```text\n        }\n        if (text === '/reject' || text === '/拒绝') {\n            return { text: this.bridge.respondToApproval(chatId, 'reject') };\n        }\n        const selection = await this.selections.get(chatId);\n        if (text === '/help')\n```\n\n**依据 5 · 源码核查**：[lib/index.js:94-101](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/lib/index.js#L94-L101)\n\n丢sender身份。\n\n```text\n            allowedChats: csv(process.env.FEISHU_ALLOWED_CHATS),\n            allowedUsers: new Set(credentials.ownerOpenId === undefined ? [] : [credentials.ownerOpenId]),\n            onMessage: async (message) => {\n                activeChats.add(message.chatId);\n                try {\n                    return (await controller.handle(message.chatId, message.text)).text;\n                }\n                finally {\n```\n\n**依据 6 · 源码核查**：[lib/feishu.js:83-95](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/lib/feishu.js#L83-L95)\n\nsend未核code。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n                receive_id: chatId,\n                msg_type: 'text',\n                content: JSON.stringify({ text }),\n            },\n        });\n        return response.data?.message_id;\n    }\n    async update(messageId, chatId, text) {\n        const [first, ...rest] = splitText(text, 3500);\n        await this.client.im.message.update({\n            path: { message_id: messageId },\n            data: { msg_type: 'text', content: JSON.stringify({ text: first ?? '' }) },\n        });\n```\n\n</details>\n\n**依据 7 · 源码核查**：[test/approval.test.js:72-97](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/test/approval.test.js#L72-L97)\n\n跨chat抢路由与fallback断言。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n  assert.equal(await pending, 'allowed-once')\n  assert.equal(nextCalls, 0)\n})\n\ntest('does not let a second chat steal an active session route', async () => {\n  const approvals = new ApprovalCoordinator(async () => undefined)\n  const first = approvals.bind('session-1', 'chat-1')\n  const second = approvals.bind('session-1', 'chat-2')\n  const pending = approvals.request({ sessionId: 'session-1', toolName: 'bash' })\n  await Promise.resolve()\n\n  assert.equal(approvals.respond('chat-2', 'approve'), '当前没有待审批操作。')\n  assert.equal(approvals.respond('chat-1', 'reject'), '已拒绝本次操作。')\n  assert.equal(await pending, 'rejected')\n  second.dispose()\n  first.dispose()\n})\n\ntest('passes approvals without a Feishu route to the next answerer', async () => {\n  const approvals = new ApprovalCoordinator(async () => undefined)\n  const outcome = await handleApprovalRequest(approvals, {\n    agent: { session: { id: 'other-session', events: [] } },\n    toolName: 'edit',\n  }, async () => 'rejected')\n  assert.equal(outcome, 'rejected')\n})\n```\n\n</details>\n\n#### 缺口\n\n- 宿主审批signal的超时/撤回契约和飞书SDK业务失败是否reject\n  **影响：**本地没有超时且不核code，不能保证未投递/过期审批一定退出\n  **进一步探讨：**核固定宿主取消语义及SDK错误形态，按延迟旧批准、同chat两session和返回非0 code反例检验\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 回复、完成广播与重连保证何种交付？\n\n**研究主题：**工程质量与复用、缺陷与关键质疑\n\n#### 完整回答\n\n接收message_id在执行前写内存seen，最多1000个FIFO，重启清空；失败已经消费不能同进程重试，旧ID被挤出/重启则可重做，没有持久事件收据/幂等key。WebSocket SDK autoReconnect及90s ping帮助恢复连接，不证明消息正好一次处理。\n\nthinking占位后运行Agent，update失败回落send完整回复；如果update第一段成功但后续分片失败，fallback可能重复已经发出的内容。API create/update未核业务code，send的message_id只用于占位更新，不是读者收到或业务验收。回复按Unicode code point 3500分片，避免拆代理对但不是字节/平台总大小保证。失败文字含error.message，可能带路径/SDK细节。\n\n完成通知只由本bot runConversation调用onCompleted，不是全局agent completion事件，README“每个对话完成”不能外推本地Web或别插件会话。目标为FEISHU_NOTIFY_CHATS，否则回退FEISHU_ALLOWED_CHATS，加原chat再排除其它活跃chat；会把完整reply广播到其它允许群，是配置层明确的数据扩散。先mark lastCompleted再send，发送失败仍可改选择；Promise.all一个失败由bridge吞，其他发送仍继续，无持久重试或逐收件人投递状态。源chat同时收到完成通知与最终回复，是两个路径，不能视为去重投递。stop仅关WS，不cancel在途Agent/queue或dispose保留handles，reload前必须辨认旧任务是否仍在运行。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/feishu.js:43-78](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/lib/feishu.js#L43-L78)\n\nseen与接收。\n\n<details>\n<summary>查看原文（36行）</summary>\n\n```text\n            return;\n        const senderOpenId = data.sender?.sender_id?.open_id;\n        if (!isSenderAllowed(message.chat_id, senderOpenId, this.options.allowedChats, this.options.allowedUsers))\n            return;\n        if (this.seen.has(message.message_id))\n            return;\n        this.seen.add(message.message_id);\n        if (this.seen.size > 1000)\n            this.seen.delete(this.seen.values().next().value);\n        let text;\n        try {\n            const content = JSON.parse(message.content ?? '{}');\n            text = typeof content.text === 'string' ? content.text.trim() : '';\n        }\n        catch {\n            text = '';\n        }\n        if (text.length === 0)\n            return;\n        await runWithThinkingMessage({\n            onMessage: () => this.options.onMessage({\n                chatId: message.chat_id,\n                messageId: message.message_id,\n                ...(senderOpenId === undefined ? {} : { senderOpenId }),\n                text,\n            }),\n            sendThinking: () => this.sendOne(message.chat_id, '思考中…'),\n            update: (messageId, reply) => this.update(messageId, message.chat_id, reply),\n            send: reply => this.send(message.chat_id, reply),\n            onError: this.options.onError,\n        });\n    }\n    async send(chatId, text) {\n        for (const chunk of splitText(text, 3500))\n            await this.sendOne(chatId, chunk);\n    }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/feishu.js:83-134](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/lib/feishu.js#L83-L134)\n\n发送/更新及fallback。\n\n<details>\n<summary>查看原文（52行）</summary>\n\n```text\n                receive_id: chatId,\n                msg_type: 'text',\n                content: JSON.stringify({ text }),\n            },\n        });\n        return response.data?.message_id;\n    }\n    async update(messageId, chatId, text) {\n        const [first, ...rest] = splitText(text, 3500);\n        await this.client.im.message.update({\n            path: { message_id: messageId },\n            data: { msg_type: 'text', content: JSON.stringify({ text: first ?? '' }) },\n        });\n        for (const chunk of rest)\n            await this.sendOne(chatId, chunk);\n    }\n}\nexport async function runWithThinkingMessage(options) {\n    let thinkingId;\n    try {\n        thinkingId = await options.sendThinking();\n    }\n    catch (error) {\n        options.onError(error);\n    }\n    try {\n        const reply = await options.onMessage();\n        if (thinkingId !== undefined) {\n            try {\n                await options.update(thinkingId, reply);\n                return;\n            }\n            catch (error) {\n                options.onError(error);\n            }\n        }\n        await options.send(reply);\n    }\n    catch (error) {\n        options.onError(error);\n        const detail = error instanceof Error ? error.message : String(error);\n        const failure = `操作失败：${detail}`;\n        if (thinkingId !== undefined) {\n            try {\n                await options.update(thinkingId, failure);\n                return;\n            }\n            catch (updateError) {\n                options.onError(updateError);\n            }\n        }\n        await options.send(failure).catch(options.onError);\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/feishu.js:143-161](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/lib/feishu.js#L143-L161)\n\n分片。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n}\nexport function splitText(text, maxLength) {\n    const characters = Array.from(text);\n    if (characters.length <= maxLength)\n        return [text];\n    const chunks = [];\n    let offset = 0;\n    while (characters.length - offset > maxLength) {\n        const window = characters.slice(offset, offset + maxLength);\n        const newline = window.lastIndexOf('\\n');\n        const length = newline > maxLength / 2 ? newline : maxLength;\n        chunks.push(characters.slice(offset, offset + length).join(''));\n        offset += length;\n        if (characters[offset] === '\\n')\n            offset++;\n    }\n    if (offset < characters.length)\n        chunks.push(characters.slice(offset).join(''));\n    return chunks;\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:15-16](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/lib/index.js#L15-L16)\n\n通知默认。\n\n```text\nfunction completionTargets() {\n    return csv(process.env.FEISHU_NOTIFY_CHATS ?? process.env.FEISHU_ALLOWED_CHATS);\n```\n\n**依据 5 · 源码核查**：[lib/index.js:80-88](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/lib/index.js#L80-L88)\n\n先mark后发完整回复。\n\n```text\n        const notify = async ({ conversationId, chatId, reply }) => {\n            const targets = completionNotificationTargets(completionTargets(), chatId, activeChats);\n            const info = await bridge.conversationInfo(conversationId);\n            const title = info?.name ?? conversationId;\n            const text = `对话已完成：${title}\\n${reply}\\n\\n回复 /uc 可直接进入最近完成的对话。`;\n            await Promise.all([...targets].map(async (target) => {\n                await controller.markConversationCompleted(target, conversationId);\n                await bot?.sendText(target, text);\n            }));\n```\n\n**依据 6 · 源码核查**：[lib/notifications.js:1-8](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/lib/notifications.js#L1-L8)\n\n目标排除。\n\n```text\nexport function completionNotificationTargets(configured, originatingChatId, activeChats) {\n    const targets = new Set(configured);\n    targets.add(originatingChatId);\n    for (const chatId of activeChats) {\n        if (chatId !== originatingChatId)\n            targets.delete(chatId);\n    }\n    return targets;\n```\n\n**依据 7 · 源码核查**：[lib/harness.js:138-166](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/lib/harness.js#L138-L166)\n\ncompletion局部调用与handles。\n\n<details>\n<summary>查看原文（29行）</summary>\n\n```text\n    async runConversation(conversationId, text, chatId) {\n        const route = this.approvals.bind(conversationId, chatId);\n        try {\n            const id = asSessionId(conversationId);\n            const agent = await this.ensureAgent(id);\n            const fromSeq = agent.session.seq;\n            agent.followup(userMessage(text));\n            await agent.whenIdle();\n            await this.ctx.sessions.flush(agent.session);\n            const reply = lastAssistantText(agent.session.events, fromSeq);\n            try {\n                await this.onCompleted?.({ conversationId, chatId, reply });\n            }\n            catch {\n                // Completion notifications are best-effort and must not hide a completed answer.\n            }\n            return reply;\n        }\n        finally {\n            route.dispose();\n        }\n    }\n    async ensureAgent(id) {\n        const live = this.ctx.agents.get(id);\n        if (live !== undefined)\n            return live;\n        const handle = await this.ctx.agents.resume({ resumeSessionId: id });\n        this.handles.set(id, handle);\n        return handle.agent;\n```\n\n</details>\n\n**依据 8 · 源码核查**：[lib/index.js:122-136](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/lib/index.js#L122-L136)\n\nstop范围。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n    ctx.effect(() => {\n        void start().catch(error => {\n            if (!abort.signal.aborted)\n                logger.error(error instanceof Error ? error.stack ?? error.message : String(error));\n        });\n        return async () => {\n            abort.abort();\n            await bot?.stop();\n            websocket = 'disconnected';\n        };\n    }, 'feishu-bot: binding and websocket');\n}\nasync function registerUntilComplete(options) {\n    let attempt = 0;\n    while (true) {\n```\n\n</details>\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 启动与三阶段成本需要哪些真实条件？\n\n**研究主题：**效果与总成本、依赖、兼容与流程、工程质量与复用\n\n#### 完整回答\n\nNode>=20、Cordis/DSH peer区间、Lark SDK和QR库，硬注入agents/sessions/persistence/workspace/webServer/approval，即使只用bot也依赖这些服务。Webclient需要module loader/React/locale/slots，读取状态不自动轮询、需刷新。凭证/selection使用DSH_HOME默认目录，环境配置路径可改；QR/Secret和历史都要求主机文件与日志权限，0600是新建权限并非所有环境上通用加密。飞书应用创建/发布/聊天可达、网络与Profile能力是采用条件，不能按免公网callback误解为本地离线。\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | Node/DSH、飞书应用和SDK、凭证/QR本地存储 | 有权限者扫码创建授权、发布bot、配置允许聊天及最低宿主权限 | 飞书/模型实际费用与安装工时未知 |\n| 持续使用 | WebSocket与模型请求、历史/selection文件、通知发送额度 | 维护聊天成员/审批职责，核广播收件人与对话目标 | 不提供费用统计，长回复/重复通知增加消息数，净节省未量化 |\n| 失败恢复 | 凭证/selection备份、重连/再绑定、重发可能重复执行 | 核消息是否已入Agent、审批是否过期及回答是否仅投递失败，修磁盘后重启store | 无持久消息收据/幂等重放，工时取决于故障，不填0 |\n\n检查发布lib全部host模块及client，代表测试是mock SDK/host/store断言，覆盖路由不能抢、允许聊天、通知排除等，无本轮目标执行。源码分层利于替换fake依赖，Promise队列和Unicode分片可借鉴；但测试成功/源码结构不等端到端身份或投递合同。金额/人时/节省无数据，按减少本地切换和可解释审批判断，不据Star/包存在推效果。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:53-74](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/package.json#L53-L74)\n\n运行/peer/依赖。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n    \"@deepseek-ai/cordis\": \"^4.0.1\",\n    \"@deepseek-ai/dsh-agent\": \">=0.1.0-rc.1 <0.1.0 || >=0.1.1-rc.1 <0.2.0-0\",\n    \"@deepseek-ai/dsh-llm\": \">=0.1.0-rc.1 <0.1.0 || >=0.1.1-rc.1 <0.2.0-0\",\n    \"@deepseek-ai/dsh-session\": \">=0.1.0-rc.1 <0.1.0 || >=0.1.1-rc.1 <0.2.0-0\",\n    \"@deepseek-ai/dsh-session-persistence\": \">=0.1.0-rc.1 <0.1.0 || >=0.1.1-rc.1 <0.2.0-0\",\n    \"@deepseek-ai/dsh-session-title\": \">=0.1.0-rc.1 <0.1.0 || >=0.1.1-rc.1 <0.2.0-0\",\n    \"@deepseek-ai/dsh-workspace\": \">=0.1.0-rc.1 <0.1.0 || >=0.1.1-rc.1 <0.2.0-0\",\n    \"@deepseek-ai/dsh-host-webserver\": \">=0.1.0-rc.1 <0.1.0 || >=0.1.1-rc.1 <0.2.0-0\",\n    \"@deepseek-ai/dsh-user-approval\": \">=0.1.0-rc.1 <0.1.0 || >=0.1.1-rc.1 <0.2.0-0\"\n  },\n  \"dependencies\": {\n    \"@larksuiteoapi/node-sdk\": \"^1.57.0\",\n    \"qrcode\": \"^1.5.4\"\n  },\n  \"devDependencies\": {\n    \"@deepseek-ai/cordis\": \"^4.0.1\",\n    \"@deepseek-ai/dsh-agent\": \"0.1.1-rc.2\",\n    \"@deepseek-ai/dsh-host-webserver\": \"0.1.1-rc.2\",\n    \"@deepseek-ai/dsh-llm\": \"0.1.1-rc.2\",\n    \"@deepseek-ai/dsh-session\": \"0.1.1-rc.2\",\n    \"@deepseek-ai/dsh-session-persistence\": \"0.1.1-rc.2\",\n    \"@deepseek-ai/dsh-session-title\": \"0.1.1-rc.2\",\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:10-24](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/lib/index.js#L10-L24)\n\n服务/路径。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\nexport const name = 'feishu-bot';\nexport const inject = ['agents', 'sessions', 'sessionPersistence', 'workspaceRegistry', 'webServer', 'approval'];\nfunction csv(value) {\n    return new Set((value ?? '').split(',').map(item => item.trim()).filter(Boolean));\n}\nfunction completionTargets() {\n    return csv(process.env.FEISHU_NOTIFY_CHATS ?? process.env.FEISHU_ALLOWED_CHATS);\n}\nexport function apply(ctx) {\n    const logger = ctx.logger('feishu-bot');\n    const home = process.env.DSH_HOME ?? join(process.env.HOME ?? '.', '.dsh');\n    const pluginHome = join(home, 'feishu-bot');\n    const credentialsPath = process.env.FEISHU_CREDENTIALS_PATH ?? join(pluginHome, 'credentials.json');\n    const qrPath = process.env.FEISHU_QR_PATH ?? join(pluginHome, 'feishu-bind-qr.png');\n    const projectsRoot = resolveProjectsRoot(process.env.FEISHU_PROJECTS_ROOT ?? process.cwd());\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/client.js:29-48](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/lib/client.js#L29-L48)\n\n手动加载/刷新。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n\n    let clientContext\n    function FeishuSettingsTab() {\n      const [state, setState] = React.useState({ kind: \"loading\" })\n      const [reload, setReload] = React.useState(0)\n      React.useEffect(() => {\n        let live = true\n        const load = async () => {\n          try {\n            const response = await fetch('/api/plugins/feishu-binding/status', { cache: 'no-store' })\n            if (!response.ok) throw new Error(`HTTP ${response.status}`)\n            const value = await response.json()\n            if (!live) return\n            setState({ kind: \"ready\", value })\n          } catch (error) {\n            if (live) setState({ kind: \"error\", message: String(error) })\n          }\n        }\n        void load()\n        return () => { live = false }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[test/approval.test.js:1-29](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/test/approval.test.js#L1-L29)\n\nmock审批断言。\n\n<details>\n<summary>查看原文（29行）</summary>\n\n```text\nimport test from 'node:test'\nimport assert from 'node:assert/strict'\nimport { ApprovalCoordinator, handleApprovalRequest } from '../lib/approval.js'\n\ntest('routes an approval to the originating chat and allows it once', async () => {\n  const sent = []\n  const approvals = new ApprovalCoordinator(async (chatId, text) => sent.push({ chatId, text }))\n  const route = approvals.bind('session-1', 'chat-1')\n\n  const pending = approvals.request({\n    sessionId: 'session-1',\n    toolName: 'bash',\n    reason: '需要写入工作区',\n    arguments: '{\"command\":\"npm install\"}',\n  })\n  await Promise.resolve()\n\n  assert.equal(sent.length, 1)\n  assert.equal(sent[0].chatId, 'chat-1')\n  assert.match(sent[0].text, /bash/u)\n  assert.match(sent[0].text, /npm install/u)\n  assert.equal(approvals.respond('chat-1', 'approve'), '已批准本次操作。')\n  assert.equal(await pending, 'allowed-once')\n  assert.equal(approvals.respond('chat-1', 'approve'), '当前没有待审批操作。')\n  route.dispose()\n})\n\ntest('rejects only the pending approval for that chat', async () => {\n  const approvals = new ApprovalCoordinator(async () => undefined)\n```\n\n</details>\n\n**依据 5 · 源码核查**：[test/notifications.test.js:1-14](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/test/notifications.test.js#L1-L14)\n\n纯目标计算。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\nimport assert from 'node:assert/strict'\nimport test from 'node:test'\nimport { completionNotificationTargets } from '../lib/notifications.js'\n\ntest('does not notify a chat while another conversation is active there', () => {\n  assert.deepEqual(\n    completionNotificationTargets(new Set(['chat-active', 'chat-idle']), 'chat-source', new Set(['chat-active'])),\n    new Set(['chat-idle', 'chat-source']),\n  )\n})\n\ntest('always keeps the originating chat in completion targets', () => {\n  assert.deepEqual(completionNotificationTargets(new Set(), 'chat-source', new Set()), new Set(['chat-source']))\n})\n```\n\n</details>\n\n<a id=\"research-q07\"></a>\n\n### Q07 · 采用与可证伪改进方向是什么？\n\n**研究主题：**采用判断、贡献与相对优势、新假设与验证\n\n#### 完整回答\n\n建议观察，先限定可信owner与明确允许群、最小权限Profile、无敏感广播的任务。扫码免手抄密钥、私网长连接与项目/会话/审批串联是实际流程增量；最终交付仍是原Agent文本，新增聊天可达性不代表新业务验收物。关键限制是群级而非人级审批、默认空ACL开放、选择/广播跨项目、非持久去重及磁盘写队列毒化，读者需按共享群/多租户风险判断。不是因本轮不冒烟而降级。\n\n可推未验证“远程任务与审批收据”。参照当前chat级pending和内存seen，入口持久化tenant/chat/sender/messageID与目标workspace/session/version，审批绑定callID/nonce/显示摘要与TTL，旧批准只匹配原请求；分别记录Agent已接收/执行结束/API接受/逐目标投递状态，未知投递不自动重放任务。配置改变需显式更新授权集合，broadcast是单独授权而非继承可操作群；selection用版本CAS并让失败队列可恢复。\n\n最小反例包括同群另一人批准、旧批准到达新请求、同chat同时选项目与completion、磁盘失败再恢复、崩溃在Agent接受和发回复之间、分片半成功。若出现身份错批、目标串用或重放重复执行，则否定收据保证；持久/审批维护工时若超过减少的操作成本，则不支持经济性。未实现验证，不把该方向计入现有创新。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/approval.js:21-49](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/lib/approval.js#L21-L49)\n\nchat pending参照。\n\n<details>\n<summary>查看原文（29行）</summary>\n\n```text\n    }\n    async request(prompt) {\n        const chatId = this.routes.get(prompt.sessionId);\n        if (chatId === undefined || this.pending.has(chatId))\n            return undefined;\n        if (prompt.signal?.aborted === true)\n            return 'cancelled';\n        let resolve;\n        const answer = new Promise(settle => { resolve = settle; });\n        const pending = { resolve, ...(prompt.signal === undefined ? {} : { signal: prompt.signal }) };\n        const onAbort = () => this.settle(chatId, 'cancelled');\n        pending.onAbort = onAbort;\n        this.pending.set(chatId, pending);\n        prompt.signal?.addEventListener('abort', onAbort, { once: true });\n        try {\n            await this.send(chatId, formatApprovalPrompt(prompt));\n        }\n        catch {\n            this.pending.delete(chatId);\n            prompt.signal?.removeEventListener('abort', onAbort);\n            return undefined;\n        }\n        return answer;\n    }\n    respond(chatId, decision) {\n        const pending = this.pending.get(chatId);\n        if (pending === undefined)\n            return '当前没有待审批操作。';\n        this.settle(chatId, decision === 'approve' ? 'allowed-once' : 'rejected');\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/feishu.js:43-59](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/lib/feishu.js#L43-L59)\n\n内存去重参照。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n            return;\n        const senderOpenId = data.sender?.sender_id?.open_id;\n        if (!isSenderAllowed(message.chat_id, senderOpenId, this.options.allowedChats, this.options.allowedUsers))\n            return;\n        if (this.seen.has(message.message_id))\n            return;\n        this.seen.add(message.message_id);\n        if (this.seen.size > 1000)\n            this.seen.delete(this.seen.values().next().value);\n        let text;\n        try {\n            const content = JSON.parse(message.content ?? '{}');\n            text = typeof content.text === 'string' ? content.text.trim() : '';\n        }\n        catch {\n            text = '';\n        }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/state.js:14-18](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/lib/state.js#L14-L18)\n\n整份状态写入。\n\n```text\n    async set(chatId, selection) {\n        const state = await this.load();\n        state.chats[chatId] = { ...selection };\n        this.writeTail = this.writeTail.then(() => this.persist(state));\n        await this.writeTail;\n```\n\n**依据 4 · 源码核查**：[lib/index.js:80-103](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/lib/index.js#L80-L103)\n\n广播/共享chat参照。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n        const notify = async ({ conversationId, chatId, reply }) => {\n            const targets = completionNotificationTargets(completionTargets(), chatId, activeChats);\n            const info = await bridge.conversationInfo(conversationId);\n            const title = info?.name ?? conversationId;\n            const text = `对话已完成：${title}\\n${reply}\\n\\n回复 /uc 可直接进入最近完成的对话。`;\n            await Promise.all([...targets].map(async (target) => {\n                await controller.markConversationCompleted(target, conversationId);\n                await bot?.sendText(target, text);\n            }));\n        };\n        bridge = new DshHarnessBridge(ctx, projectsRoot, approvals, notify);\n        controller = new FeishuCommandController(bridge, selections);\n        bot = new FeishuBot({\n            ...credentials,\n            allowedChats: csv(process.env.FEISHU_ALLOWED_CHATS),\n            allowedUsers: new Set(credentials.ownerOpenId === undefined ? [] : [credentials.ownerOpenId]),\n            onMessage: async (message) => {\n                activeChats.add(message.chatId);\n                try {\n                    return (await controller.handle(message.chatId, message.text)).text;\n                }\n                finally {\n                    activeChats.delete(message.chatId);\n                }\n```\n\n</details>\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：0c51036b2e01218eddb4fea76a849adc46478232ca6d264f3bd5931e3b0ddaa8。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 6 | 535 | — | — | 7372 |\n| .js | source | 11 | 1192 | 1174 | 10 | — |\n| .mjs | source | 3 | 80 | 72 | 0 | — |\n| .ts | source | 9 | 1218 | 1105 | 1 | — |\n| .js | test | 10 | 560 | 509 | 3 | — |\n\n排除 9 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 飞书命令/聊天 | 项目会话选择与Agent操作 | 非DSH用户命令，chat共享 |\n| 扫码应用绑定 | 免手抄App Secret | 受权扫码/QR保密 |\n| 宿主审批桥 | 一次approve/reject | chat级、signal依宿主 |\n| 回复与完成广播 | 聊天继续操作 | 全文扩散需独立授权 |\n\n\n## 工程亮点\n\ncoordinator/bridge/store职责分开和会话队列有价值；连接重连不等任务正好一次。详见[Q05](#research-q05)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、SECURITY.md、package.json、lib/index.js、lib/approval.js、lib/binding-status.js、lib/client.js、lib/controller.js、lib/feishu.js、lib/harness.js、lib/notifications.js、lib/registration.js、lib/state.js、test/approval.test.js、test/notifications.test.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：只读发布lib全部host模块及client、作者文档与代表mock测试；不执行目标/宿主/飞书账号。\n- 下一步：以同群异人、旧批准、并发选择/完成、磁盘失败、崩溃接受和分片半投递检查身份与任务收据。\n",
         "metadata": {
             "repository": "452926826/dsh-feishu-bot",
             "repository_id": 1346023250,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T10:29:01.036Z",
+            "window_start": "2026-09-22T10:29:01.036Z",
             "stars": 1,
             "pushed_at": "2026-09-01T04:27:48Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A452926826%2Fdsh-feishu-bot%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640C:17E195:13FD1A:21A06C:6AD84A16 and timestamp 2026-10-21 05:13:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A452926826%2Fdsh-feishu-bot%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640D:12770C:15178F:22B1F2:6AD84A16 and timestamp 2026-10-21 05:13:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A452926826%2Fdsh-feishu-bot%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6415:136889:157442:230F23:6AD84A16 and timestamp 2026-10-21 05:13:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A452926826%2Fdsh-feishu-bot%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6418:EFE19:142EE6:21CF5E:6AD84A16 and timestamp 2026-10-21 05:13:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A452926826%2Fdsh-feishu-bot%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6419:1D2F69:14191D:21BE62:6AD84A16 and timestamp 2026-10-21 05:13:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "dsh-feishu-bot",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 919,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-feishu-bot",
+                "captured_at": "2026-10-22T10:29:12.889Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 884,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-feishu-bot",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-08-13T21:59:28.326Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T10:29:12.889Z",
                     "source_url": "https://registry.npmjs.org/dsh-feishu-bot",
                     "error": null,
                     "latest_version": "0.19.16",
                     "latest_published_at": "2026-08-25T15:59:34.405Z",
                     "latest_error": null
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "f4d521615a9ca7ff7cbe2953a2a84074a7768091",
-                "current_revision": "f4d521615a9ca7ff7cbe2953a2a84074a7768091",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {
@@ -391,14 +518,14 @@
             "repository": "452926826/dsh-feishu-bot",
             "path": "",
             "revision": "f4d521615a9ca7ff7cbe2953a2a84074a7768091",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "098f4a3b45260f6929f333a5a9732870622d2aae93c7c8b09d878aae6c144644",
                 "code": "f4d521615a9ca7ff7cbe2953a2a84074a7768091",
                 "maintenance": "175a582386ef3fb993062761320b16069f9d5a2e2a0a88db5a50cc2de7e77e2b"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

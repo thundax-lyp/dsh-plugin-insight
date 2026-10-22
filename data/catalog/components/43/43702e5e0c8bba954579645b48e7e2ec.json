@@ -13,7 +13,7 @@
             "name": "dock-markdown",
             "entry_type": "plugin",
             "technical_category": "interface-input",
-            "business_category": "research-knowledge",
+            "business_category": "personal-productivity",
             "tags": [],
             "availability": "unknown",
             "research_depth": "source",
@@ -24,36 +24,88 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-06-github-1340492424-root-directory-0",
+                    "id": "2026-10-22-02-github-1340492424-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T05:37:31.253Z",
+                    "retrieved_at": "2026-10-22T08:03:06.886Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-06-github-1340492424-root-author",
+                    "id": "2026-10-22-02-github-1340492424-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/AKS1st/dock-markdown/blob/64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AKS1st/dock-markdown",
+                            "commit": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54",
+                            "path": "README.md",
+                            "content_sha256": "c014595fdb0ce0a6775a4a1e39a49bf18e1cd23c245d411693403dc8575059d9"
+                        }
+                    ],
                     "revision": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54",
-                    "captured_at": "2026-10-21T05:37:31.253Z",
-                    "summary": "将Markdown净化渲染、目录与本地资源解析接入Dock。",
-                    "artifact": "data/runs/2026-10-21-06/snapshots/aks1st--dock-markdown/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T08:03:06.886Z",
+                    "summary": "dock 体系的 Markdown Web 查看器，支持 GFM、消毒 HTML、大纲与相对资源解析/编辑切换。",
+                    "artifact": "data/runs/2026-10-22-02/extra-worker-5-refill-01/revision-batch-01-adjudicated/revised/snapshots/aks1st--dock-markdown/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-06-github-1340492424-root-source",
+                    "id": "2026-10-22-02-github-1340492424-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/AKS1st/dock-markdown/blob/64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54/src/index.ts",
+                    "url": "https://github.com/AKS1st/dock-markdown/blob/64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AKS1st/dock-markdown",
+                            "commit": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54",
+                            "path": "README.md",
+                            "content_sha256": "c014595fdb0ce0a6775a4a1e39a49bf18e1cd23c245d411693403dc8575059d9"
+                        },
+                        {
+                            "repository_url": "https://github.com/AKS1st/dock-markdown",
+                            "commit": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54",
+                            "path": "README.en.md",
+                            "content_sha256": "2977891a2efec92d21306a845d81b52e056d9c1d365733a1550eb5da232ebb02"
+                        },
+                        {
+                            "repository_url": "https://github.com/AKS1st/dock-markdown",
+                            "commit": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54",
+                            "path": "package.json",
+                            "content_sha256": "9de551380ab9c0f7b9ca30deca87d5ea5977db918e956f33518a4b20bc78e0cf"
+                        },
+                        {
+                            "repository_url": "https://github.com/AKS1st/dock-markdown",
+                            "commit": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54",
+                            "path": "src/index.ts",
+                            "content_sha256": "82189470581626290fb87c050823e3d334c22b4e786598802968cca3d2876eb7"
+                        },
+                        {
+                            "repository_url": "https://github.com/AKS1st/dock-markdown",
+                            "commit": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54",
+                            "path": "src/client/MarkdownView.tsx",
+                            "content_sha256": "9c7c6f00ec42a346fec79df5e735aae541afcda816f652c2926bdb622d783457"
+                        },
+                        {
+                            "repository_url": "https://github.com/AKS1st/dock-markdown",
+                            "commit": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54",
+                            "path": "src/client/index.ts",
+                            "content_sha256": "b93b66be3f04d188d9281f0a27e6e188c43b61730fd7af38043c572b0695cc8e"
+                        },
+                        {
+                            "repository_url": "https://github.com/AKS1st/dock-markdown",
+                            "commit": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54",
+                            "path": "src/client/hooks.ts",
+                            "content_sha256": "0bcec46298d4f338e80fab2c77e31d2a13836e5d718cd18d8cf07f62100ebff9"
+                        }
+                    ],
                     "revision": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54",
-                    "captured_at": "2026-10-21T05:37:31.253Z",
-                    "summary": "核查 src/index.ts、src/client/index.ts、src/client/MarkdownView.tsx；MarkdownView调用dock-editor的fs.read，以marked生成HTML再DOMPurify.sanitize；/resolve按文档目录、Git根、会话根查本地资源，图片内联data URL，链接workbench打开。",
-                    "artifact": "data/runs/2026-10-21-06/snapshots/aks1st--dock-markdown/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T08:03:06.886Z",
+                    "summary": "核查 README.md、README.en.md、package.json、src/index.ts、src/client/MarkdownView.tsx、src/client/index.ts、src/client/hooks.ts；Client 用 dock-editor fs.read、marked、DOMPurify 渲染；Host /dock-markdown/resolve 读取相对引用并回传图片 data URL/链接路径。",
+                    "artifact": "data/runs/2026-10-22-02/extra-worker-5-refill-01/revision-batch-01-adjudicated/revised/snapshots/aks1st--dock-markdown/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                        "静态审阅固定提交 README、Host 路由及客户端渲染；未向活宿主发请求或读敏感文件。 普通安装、宿主加载及目标测试属本轮范围边界，具体机制/效果未知仍在逐题缺口保留。 父侧已接受受信调用方的条件性静态路径限制；外层授权未知，未称公网无认证。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +116,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "阅读工作区说明文档并跳转相关文件，必要时切换编辑器。",
+                    "text": "在 DSH dock 工作台阅读 README/文档并跳转编辑或相对资源。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1340492424-root-source"
+                        "2026-10-22-02-github-1340492424-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +127,16 @@
                             "fingerprint": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:37:31.253Z",
+                    "reviewed_at": "2026-10-22T08:03:06.886Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "MarkdownView调用dock-editor的fs.read，以marked生成HTML再DOMPurify.sanitize；/resolve按文档目录、Git根、会话根查本地资源，图片内联data URL，链接workbench打开。",
+                    "text": "Client 用 dock-editor fs.read、marked、DOMPurify 渲染；Host /dock-markdown/resolve 读取相对引用并回传图片 data URL/链接路径。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1340492424-root-source"
+                        "2026-10-22-02-github-1340492424-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +145,16 @@
                             "fingerprint": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:37:31.253Z",
+                    "reviewed_at": "2026-10-22T08:03:06.886Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                    "text": "静态审阅固定提交 README、Host 路由及客户端渲染；未向活宿主发请求或读敏感文件。 普通安装、宿主加载及目标测试属本轮范围边界，具体机制/效果未知仍在逐题缺口保留。 父侧已接受受信调用方的条件性静态路径限制；外层授权未知，未称公网无认证。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1340492424-root-source"
+                        "2026-10-22-02-github-1340492424-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +163,16 @@
                             "fingerprint": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:37:31.253Z",
+                    "reviewed_at": "2026-10-22T08:03:06.886Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "分发以本插件固定package.json、运行依赖与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+                    "text": "MIT；加载外部图片/样式与文件内容的隐私边界需另核。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1340492424-root-source"
+                        "2026-10-22-02-github-1340492424-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +181,16 @@
                             "fingerprint": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:37:31.253Z",
+                    "reviewed_at": "2026-10-22T08:03:06.886Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "三个扩展及git解析维护，全文HTML和base64图片增加内存，无模型token调用。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 需 dock/files/editor 及 Web sessions、marked/DOMPurify；安装与版本成本未知 | 配置插件并审查 Host resolve 路径授权/同源边界；耗时未知 | 路由风险应按受信同源调用方与宿主可读权限界定 |\n| 持续使用 | Markdown 渲染和每图至多20MiB读取/base64占用内存与传输；实际峰值未知 | 用户核图片/链接与大纲，管理员监控资源和外链；工时未知 | 大文档性能及链接安全性未实测 |\n| 失败恢复 | 错误资源解析/越界读取可能带来文件暴露处置与重新加载；金额未知 | 收紧路由、排查可读文件和日志、回归相对资源；耗时未知 | 实际部署授权与受影响文件范围需环境核查 |",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1340492424-root-source"
+                        "2026-10-22-02-github-1340492424-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +199,16 @@
                             "fingerprint": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:37:31.253Z",
+                    "reviewed_at": "2026-10-22T08:03:06.886Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "适合有限Markdown阅读；先确认editor依赖、资源来源与截断提示。",
+                    "text": "当前不要在含敏感文件的 profile 中采用；先修路由文件授权和 traversal，再隔离测试功能。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1340492424-root-source"
+                        "2026-10-22-02-github-1340492424-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +217,16 @@
                             "fingerprint": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:37:31.253Z",
+                    "reviewed_at": "2026-10-22T08:03:06.886Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "可降低文档跳转成本，未有阅读效率与安全独立验证。",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 阅读 | GFM+大纲 | 真实 UX |\n| 资源解析 | 图片/内部链接 | 路径越界风险 |\n| HTML 消毒 | DOMPurify | 外链/CSS 跟踪 |",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1340492424-root-source"
+                        "2026-10-22-02-github-1340492424-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +235,16 @@
                             "fingerprint": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:37:31.253Z",
+                    "reviewed_at": "2026-10-22T08:03:06.886Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "净化在渲染后执行、引用异步更新和目录slug处理有实质实现；资源读取权限须单独说明。",
+                    "text": "Host 注册 POST resolve Web 路由，Client 从 editor API 读文档并在 DOM 中解析资源；无模型工具。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1340492424-root-source"
+                        "2026-10-22-02-github-1340492424-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +253,16 @@
                             "fingerprint": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:37:31.253Z",
+                    "reviewed_at": "2026-10-22T08:03:06.886Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
-                    "topic": "technical_innovation",
-                    "basis": "interpretation",
-                    "text": "把文档目录、锚点、资源优先级和编辑切换整合成阅读工作流；渲染与净化归上游库，不是新Markdown方言。",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "在 dock 文件域提供一体化 Markdown 阅读、大纲、相对资源与编辑切换。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1340492424-root-source"
+                        "2026-10-22-02-github-1340492424-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +271,16 @@
                             "fingerprint": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:37:31.253Z",
+                    "reviewed_at": "2026-10-22T08:03:06.886Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
-                    "basis": "interpretation",
-                    "text": "文件读取实际依赖另一个插件路由，workbench/files注入成功不能证明文档可读。资源解析有意不限工作区，读取外部绝对资源是功能边界；继承editor截断意味着长文可能不完整，不能当全文审阅。",
+                    "basis": "supported",
+                    "text": "受信 Host/Origin 调用方可传任意 basePath+相对 ref，在宿主可读且≤20MiB时取回文件；路由缺文件级授权，详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1340492424-root-source"
+                        "2026-10-22-02-github-1340492424-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +289,16 @@
                             "fingerprint": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:37:31.253Z",
+                    "reviewed_at": "2026-10-22T08:03:06.886Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "unverified",
-                    "text": "未验证假设：为每个资源展示最终来源根并对缺依赖/截断显式告警，可减少错误阅读。用同名资源多根、缺editor、大文档和失效链接核定位正确率及用户误读。",
+                    "text": "将解析授权绑定会话中真实打开文件及允许根、禁止 traversal 并限制资源类型，可保留体验且收紧读权限；待验证。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1340492424-root-source"
+                        "2026-10-22-02-github-1340492424-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +307,15 @@
                             "fingerprint": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:37:31.253Z",
+                    "reviewed_at": "2026-10-22T08:03:06.886Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T05:37:31.253Z",
+            "last_checked_at": "2026-10-22T08:03:06.886Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54",
-                "reviewed_at": "2026-10-21T05:37:31.253Z",
+                "reviewed_at": "2026-10-22T08:03:06.886Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -275,61 +327,61 @@
                 "technical": {
                     "criteria": {
                         "novelty": 9,
-                        "mechanism": 8,
+                        "mechanism": 15,
                         "transferability": 10,
-                        "simplification": 4
+                        "simplification": 8
                     },
-                    "rationale": "novelty=9：基于既有Markdown工具。 mechanism=8：本地引用与宿主跳转集成。 transferability=10：阅读接线可复用但依赖多。 simplification=4：省跳转但故障链更长。",
+                    "rationale": "novelty：参照纯文本 dock 编辑器，增加 Markdown/GFM、大纲和相对资源显示（Q01）；使用现成 marked/DOMPurify，novelty 9。\nmechanism：参照只在 client 渲染，Host resolve 处理图片/链接（Q01/Q02）；路径约束不足，机制分值仅评装配，mechanism 15。\ntransferability：参照硬编码文档路径，dock 的 reader/resolve 模式可用于其他文档类型（Q01）；依赖 dock API 与会话路径，transferability 10。\nsimplification：参照手工打开图片/链接，集成预览减少跳转（Q01）；资源边界与大文件处理仍需维护，simplification 8。",
                     "basis": "interpretation",
-                    "score": 31,
+                    "score": 42,
                     "evidence_ids": [
-                        "2026-10-21-06-github-1340492424-root-source"
+                        "2026-10-22-02-github-1340492424-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
                         "workflow": 18,
-                        "delivery": 8,
+                        "delivery": 15,
                         "reach": 10,
                         "economics": 0
                     },
-                    "rationale": "workflow=18：阅读导航闭环。 delivery=8：完整性和依赖缺失待验。 reach=10：Dock文档读者适用。 economics=0：无时间与维护对照。",
+                    "rationale": "workflow：参照在外部浏览器读 README，dock 内预览/大纲支持阅读流程（Q01）；真实 UX 未测，workflow 18。\ndelivery：参照纯编辑器，图片与相对链接解析可交付更完整阅读（Q01）；路径授权未收紧，delivery 15 仅指功能组合。\nreach：参照只看本地纯文本，面向 DSH dock Markdown 文档（Q01）；依赖一组 dock 组件，reach 10。\neconomics：参照切换应用阅读，可能减少操作；无时耗和资源占用对照，未识别可核经济增量，economics 0。",
                     "basis": "interpretation",
-                    "score": 36,
+                    "score": 43,
                     "evidence_ids": [
-                        "2026-10-21-06-github-1340492424-root-source"
+                        "2026-10-22-02-github-1340492424-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "trial",
-                "reason": "Dock用户可在有限长度Markdown试阅读跳转；先核editor依赖和外部资源，长文会继承截断，不能作全文审阅。",
+                "decision": "not_recommended",
+                "reason": "对受信同源调用方，当前固定源码的资源 API 缺文件级路径授权；修复并隔离验证后再评估安装。未认定公网可无认证调用。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "读工作区说明及关联文件需求明确。"
+                        "rationale": "Markdown 阅读需求明确。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "净化HTML与本地资源桥接减少文档切换。"
+                        "rationale": "大纲/相对资源/编辑切换一体。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "已核marked/DOMPurify及资源解析，依赖editor路由未真实验收。"
+                        "rationale": "源码风险可核，未活宿主复现。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "需三扩展与Git解析维护，HTML/图片内存和外部读取需核。"
+                        "score": 5,
+                        "rationale": "主机文件暴露风险和大图成本。"
                     }
                 },
-                "score": 59,
+                "score": 54,
                 "revision": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T08:03:06.886Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-06-github-1340492424-root-source"
+                    "2026-10-22-02-github-1340492424-root-source"
                 ],
                 "dependencies": [
                     {
@@ -354,75 +406,55 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T05:26:52Z",
-            "analysis_sha256": "3879d3e4c4e3f0ce487f585fd7e32393f53d98da44187c00ea139225f5380597"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "a1d24fe2f0c198c0045ffbc6cfa294d85c979377733001dd77144648e2fb5c1f"
         },
         "publication.metadata": "data/plugins/aks1st--dock-markdown/META.json",
         "publication.summaries": {
-            "text": "将Markdown净化渲染、目录与本地资源解析接入Dock。",
+            "text": "dock 体系的 Markdown Web 查看器，支持 GFM、消毒 HTML、大纲与相对资源解析/编辑切换。",
             "revision": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54",
             "source_url": "https://github.com/AKS1st/dock-markdown/blob/64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54/README.md"
         },
         "publication.capabilities": {
             "revision": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54",
             "items": {
-                "界面": "Markdown预览、目录与编辑切换",
-                "Host 路由": "/dock-markdown/resolve资源查找"
-            }
+                "界面": "dock Markdown 查看器与大纲",
+                "Host 路由": "POST /dock-markdown/resolve"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| Markdown UI | 阅读/编辑 | dock 依赖 |\n| resolve 路由 | 相对资源 | 任意文件读取缺口 |"
         },
         "publication.advice": {
             "revision": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54",
-            "text": "适合有限Markdown阅读；先确认editor依赖、资源来源与截断提示。"
+            "text": "当前不要在含敏感文件的 profile 中采用；先修路由文件授权和 traversal，再隔离测试功能。详见[Q02](#research-q02)。"
         },
         "registry": "data/plugins/aks1st--dock-markdown",
-        "reports": "# dock-markdown\n\n> 将Markdown净化渲染、目录与本地资源解析接入Dock。\n\n## 使用建议\n\n适合有限Markdown阅读；先确认editor依赖、资源来源与截断提示。\n\n**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，插件与依赖流程的实际运行尚未验证；未来假设未验证。\n\n## 洞察短评\n\n- **用途**：阅读工作区说明文档并跳转相关文件，必要时切换编辑器。\n- **亮点**：把文档目录、锚点、资源优先级和编辑切换整合成阅读工作流；渲染与净化归上游库，不是新Markdown方言。\n- **思考**：文件读取实际依赖另一个插件路由，workbench/files注入成功不能证明文档可读。资源解析有意不限工作区，读取外部绝对资源是功能边界；继承editor截断意味着长文可能不完整，不能当全文审阅。\n- **建议**：未验证假设：为每个资源展示最终来源根并对缺依赖/截断显式告警，可减少错误阅读。用同名资源多根、缺editor、大文档和失效链接核定位正确率及用户误读。\n\n## 场景与替代办法\n\n参照marked、DOMPurify和IDE Markdown预览；增量是本地引用查找与Dock跳转。\n\n## 能力清单\n\n- **界面**：Markdown预览、目录与编辑切换\n- **Host 路由**：/dock-markdown/resolve资源查找\n\n## 依赖与流程\n\nMarkdownView调用dock-editor的fs.read，以marked生成HTML再DOMPurify.sanitize；/resolve按文档目录、Git根、会话根查本地资源，图片内联data URL，链接workbench打开。\n\nDock/files、额外dock-editor读路由、宿主webServer/sessions/webRuntime和git可执行程序；marked/DOMPurify打包。\n\n选择md→读取有限文本→净化HTML→异步解析相对图片/链接→目录导航或切编辑；mdx扩展不代表执行React。\n\n## 成本与效果\n\n三个扩展及git解析维护，全文HTML和base64图片增加内存，无模型token调用。\n\n可降低文档跳转成本，未有阅读效率与安全独立验证。\n\n## 核心贡献\n\n把文档目录、锚点、资源优先级和编辑切换整合成阅读工作流；渲染与净化归上游库，不是新Markdown方言。\n\n## 关键质疑\n\n文件读取实际依赖另一个插件路由，workbench/files注入成功不能证明文档可读。资源解析有意不限工作区，读取外部绝对资源是功能边界；继承editor截断意味着长文可能不完整，不能当全文审阅。\n\n## 工程亮点\n\n净化在渲染后执行、引用异步更新和目录slug处理有实质实现；资源读取权限须单独说明。\n\n源码依据：[src/index.ts](https://github.com/AKS1st/dock-markdown/blob/64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54/src/index.ts)、[src/client/index.ts](https://github.com/AKS1st/dock-markdown/blob/64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54/src/client/index.ts)、[src/client/MarkdownView.tsx](https://github.com/AKS1st/dock-markdown/blob/64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54/src/client/MarkdownView.tsx)。\n\n## 未来设计假设（未验证）\n\n未验证假设：为每个资源展示最终来源根并对缺依赖/截断显式告警，可减少错误阅读。用同名资源多根、缺editor、大文档和失效链接核定位正确率及用户误读。\n\n隔离资料核净化样例、相对引用优先级、长文提示、缺依赖及链接打开目标；不把DOMPurify存在等同完整审计。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：da8358ce874f6c8643086fd514b81c1c98d1906b1276bb8251ec7b964245582b。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 4725 | 4179 | 565 | — |\n| .md | source | 2 | 128 | — | — | 1374 |\n| .ts | source | 5 | 849 | 495 | 281 | — |\n| .tsx | source | 1 | 501 | 398 | 70 | — |\n| .mjs | source | 1 | 52 | 38 | 12 | — |\n\n排除 6 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[AKS1st/dock-markdown](https://github.com/AKS1st/dock-markdown)\n- **版本号**：0.1.2（[固定提交 64cbfd89](https://github.com/AKS1st/dock-markdown/tree/64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54)）\n- **版本日期**：2026-09-11（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：src/index.ts、src/client/index.ts、src/client/MarkdownView.tsx、作者README、package与固定范围inventory；源码抽读不等于完整审计。\n- 未验证：插件执行、测试、安装、真实宿主与独立采用。\n- 证据限制：固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。\n- 下一步：隔离资料核净化样例、相对引用优先级、长文提示、缺依赖及链接打开目标；不把DOMPurify存在等同完整审计。\n",
+        "reports": "# dock-markdown\n\n> dock 体系的 Markdown Web 查看器，支持 GFM、消毒 HTML、大纲与相对资源解析/编辑切换。\n\n## 研究范围\n\n- **仓库**：[AKS1st/dock-markdown](https://github.com/AKS1st/dock-markdown)\n- **版本号**：0.1.2（[固定提交 64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54](https://github.com/AKS1st/dock-markdown/tree/64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54)）\n- **版本日期**：2026-09-11（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n静态源码显示：经 Host/Origin 约束的受信调用方可用任意 basePath/相对 ref 解析宿主进程可读且≤20MiB的文件并取回 base64；缺会话文件授权。外层授权依赖部署，未活宿主复现。\n\n## 洞察短评\n\n- **用途**：在 DSH dock 工作台阅读 README/文档并跳转编辑或相对资源。\n- **亮点**：在 dock 文件域提供一体化 Markdown 阅读、大纲、相对资源与编辑切换。详见[Q01](#research-q01)。\n- **思考**：受信 Host/Origin 调用方可传任意 basePath+相对 ref，在宿主可读且≤20MiB时取回文件；路由缺文件级授权，详见[Q02](#research-q02)。\n- **建议**：将解析授权绑定会话中真实打开文件及允许根、禁止 traversal 并限制资源类型，可保留体验且收紧读权限；待验证。详见[Q02](#research-q02)。\n\n采用建议：当前不要在含敏感文件的 profile 中采用；先修路由文件授权和 traversal，再隔离测试功能。详见[Q02](#research-q02)。\n\n## 核心贡献\n\n在 dock 文件域提供一体化 Markdown 阅读、大纲、相对资源与编辑切换。详见[Q01](#research-q01)。\n\n## 关键质疑\n\n受信 Host/Origin 调用方可传任意 basePath+相对 ref，在宿主可读且≤20MiB时取回文件；路由缺文件级授权，详见[Q02](#research-q02)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n将解析授权绑定会话中真实打开文件及允许根、禁止 traversal 并限制资源类型，可保留体验且收紧读权限；待验证。详见[Q02](#research-q02)。\n\n隔离非敏感样例复现 traversal、修复授权后回归；Web UI 验外链与大图资源成本。\n\n## 场景与替代办法\n\n在 DSH dock 工作台阅读 README/文档并跳转编辑或相对资源。\n\ndock-editor 纯文本查看 Markdown；此包增加预览、大纲和资源解析。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| dock/files/editor | 必需 | 打开、读取和编辑文档 | 无法在 dock 预览 |\n| marked 与 DOMPurify | 预览必需 | Markdown 渲染与 HTML 消毒 | 无法按当前实现渲染 |\n| DSH Web sessions | 相对资源路由所需 | 提供会话来源路径 | 源码可能回退 cwd，安全边界需核 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 授权 | 绑定打开文档 | 任意 basePath 拒绝 |\n| 路径 | 拒绝 .. 越界 | 测试文件不可跨读 |\n| UI | 相对图/链接回归 | 功能保留 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 需 dock/files/editor 及 Web sessions、marked/DOMPurify；安装与版本成本未知 | 配置插件并审查 Host resolve 路径授权/同源边界；耗时未知 | 路由风险应按受信同源调用方与宿主可读权限界定 |\n| 持续使用 | Markdown 渲染和每图至多20MiB读取/base64占用内存与传输；实际峰值未知 | 用户核图片/链接与大纲，管理员监控资源和外链；工时未知 | 大文档性能及链接安全性未实测 |\n| 失败恢复 | 错误资源解析/越界读取可能带来文件暴露处置与重新加载；金额未知 | 收紧路由、排查可读文件和日志、回归相对资源；耗时未知 | 实际部署授权与受影响文件范围需环境核查 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 阅读 | GFM+大纲 | 真实 UX |\n| 资源解析 | 图片/内部链接 | 路径越界风险 |\n| HTML 消毒 | DOMPurify | 外链/CSS 跟踪 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**核实 Markdown 查看/相对资源解析的可用性与 /dock-markdown/resolve 任意文件读取边界。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 查看器提供何种阅读体验？\n\n**研究主题：**场景与需求、贡献与相对优势、功能与机制\n\n#### 完整回答\n\n客户端作为 dock-files 的 markdown 文件查看器读取 dock-editor 的 fs.read，marked 将 GFM 转 HTML，再由 DOMPurify.sanitize 后注入视图；它可构建 h1–h6 大纲、解析相对图片为 data URL、把内部链接交 workbench.openPath、切换到 dock-editor 编辑。Host /dock-markdown/resolve 按 Markdown 所在目录、git 根、session cwd 优先级解析。能证明静态实现与依赖链，实际 UI 兼容和大文档性能未测试。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:5-32](https://github.com/AKS1st/dock-markdown/blob/64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54/README.md#L5-L32)\n\n作者列查看器功能和 dock 依赖。\n\n<details>\n<summary>查看原文（28行）</summary>\n\n```text\n> **DSH 生态中最好的 Markdown 查看插件 —— 没有之一。** GFM 渲染、DOMPurify 消毒、文档大纲、相对路径图片/链接解析、一键切编辑，读 README、看文档、审稿子，dock-markdown 让 Markdown 在 DSH 里第一次有了「编辑器级」体验。\n\ndock 系列的 Markdown 查看插件：为 dock-files 文件域注册 `markdown` 文件查看器（md / markdown / mdx）与对应的编辑器区视图。通过 dock-editor 的 `/desk-editor/fs.read` 读取文件内容，用 marked + DOMPurify 渲染为消毒后的 HTML，并提供一键切换到 dock-editor 编辑。\n\n## 效果预览\n\n![dock-markdown Markdown 查看视图](assets/image.png)\n\n## 功能\n\n- **Markdown 渲染**：marked（GFM）+ DOMPurify 消毒，输出纯静态 HTML。\n- **相对路径资源解析**：Markdown 中的相对图片与内部跳转链接按「Markdown 所在目录 → 当前路径所在 git 仓库根目录 → 会话工作区根目录」的优先级解析；图片以内联 data URL 展示，内部链接点击后通过工作台打开目标文件，`#锚点` 链接平滑滚动到对应标题。\n- **文档大纲**：工具栏 ☰ 按钮展开/收起大纲栏，按标题层级缩进列出 h1–h6，点击跳转到对应标题，滚动时高亮当前所在章节。\n- **查看器切换**：工具栏按钮一键在「查看」与「编辑」（dock-editor）之间切换。\n- **主题适配**：排版样式使用 DSH 主题 token，跟随亮/暗主题。\n- **代码块 / 表格 / 引用**等常用 GFM 元素均有排版样式。\n\n## 依赖\n\n| 依赖 | 类型 | 说明 |\n| --- | --- | --- |\n| [dock](https://github.com/AKS1st/dock) >= 0.1.0 | peer（必需） | 工作台外壳：编辑器区视图、浮窗、`ctx.workbench` 由它提供 |\n| [dock-files](https://github.com/AKS1st/dock-files) >= 0.1.0 | peer（必需） | 文件域服务：dock-markdown 作为 `markdown` 查看器被分发打开 |\n| [dock-editor](https://github.com/AKS1st/dock-editor) >= 0.1.0 | peer（必需） | 提供 `/desk-editor/fs.read` 读取文件内容，以及「一键切编辑」的目标编辑器视图 |\n| DSH Web 环境 | 运行时 | 必需，客户端平台为 Web |\n| `cordis` ^4.0.0-rc.7 | peer | 插件框架（DSH 自带） |\n| `react` ^18.2.0 | peer（可选） | 客户端渲染需要；未提供时查看器 UI 不激活 |\n| `marked` / `dompurify` | 内置（构建打包） | GFM 渲染与消毒，随插件打包，无需单独安装 |\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/client/MarkdownView.tsx:229-273](https://github.com/AKS1st/dock-markdown/blob/64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54/src/client/MarkdownView.tsx#L229-L273)\n\nmarked/DOMPurify 和大纲。\n\n<details>\n<summary>查看原文（45行）</summary>\n\n```text\n  // Render Markdown → sanitized HTML once the content is available.\n  useEffect(() => {\n    if (content === null || binary) {\n      setHtml(null)\n      return\n    }\n    try {\n      const raw = marked.parse(content, { async: false, gfm: true, breaks: true }) as string\n      setHtml(DOMPurify.sanitize(raw))\n    } catch (cause) {\n      setError(cause instanceof Error ? cause.message : String(cause))\n      setHtml(null)\n    }\n  }, [content, binary])\n\n  // Resolve relative image/link references through the host and rebuild the\n  // display HTML. Runs once per document plus once per resolution arrival.\n  useEffect(() => {\n    if (html === null || path === undefined) {\n      setDisplayHtml(null)\n      setOutline([])\n      return\n    }\n    const docKey = `${path}\\u0000${sessionId ?? ''}`\n    if (docKeyRef.current !== docKey) {\n      // A different file: drop the previous document's resolution state.\n      docKeyRef.current = docKey\n      requestedRef.current.clear()\n      setResolutions({})\n      setOutline([])\n      setActiveHeading(null)\n    }\n\n    const doc = new DOMParser().parseFromString(`<div class=\"dock-md\">${html}</div>`, 'text/html')\n\n    // Heading ids so `#anchor` links / outline items can scroll; collect the\n    // outline entries once per document (html does not change when image\n    // resolutions arrive).\n    const slugger = makeSlugger()\n    const items: OutlineItem[] = []\n    for (const heading of doc.querySelectorAll('h1, h2, h3, h4, h5, h6')) {\n      const id = slugger(heading.textContent ?? '')\n      heading.id = id\n      items.push({ id, depth: Number(heading.tagName.slice(1)), text: (heading.textContent ?? '').trim() })\n    }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/client/MarkdownView.tsx:279-368](https://github.com/AKS1st/dock-markdown/blob/64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54/src/client/MarkdownView.tsx#L279-L368)\n\n相对资源请求与 HTML 属性改写。\n\n<details>\n<summary>查看原文（90行）</summary>\n\n```text\n    // Collect the relative references used by images and internal links.\n    // A link target like `docs/a.md#section` resolves `docs/a.md` (the\n    // fragment only matters inside the target document, which opens at top).\n    const refs = new Set<string>()\n    for (const img of doc.querySelectorAll('img[src]')) {\n      const src = img.getAttribute('src')\n      if (src !== null && isRelativeRef(src)) refs.add(src)\n    }\n    for (const anchor of doc.querySelectorAll('a[href]')) {\n      const href = anchor.getAttribute('href')\n      if (href !== null && isRelativeRef(href)) {\n        const at = href.indexOf('#')\n        refs.add(at === -1 ? href : href.slice(0, at))\n      }\n    }\n\n    // Ask the host to resolve each new reference (first match wins:\n    // Markdown dir → git repo root → workspace root).\n    for (const ref of refs) {\n      if (requestedRef.current.has(ref)) continue\n      requestedRef.current.add(ref)\n      const kind = refKindOf(ref)\n      void (async () => {\n        const apply = (resolution: Resolution): void => {\n          setResolutions((previous) => ({ ...previous, [ref]: resolution }))\n        }\n        try {\n          const response = await fetch('/dock-markdown/resolve', {\n            method: 'POST',\n            headers: { 'content-type': 'application/json' },\n            body: JSON.stringify({ sessionId, basePath: path, ref, kind }),\n          })\n          const json = (await response.json()) as ResolveResponse\n          // A stale response for a previously open file must not leak in.\n          if (docKeyRef.current !== docKey) return\n          if (json.ok !== true || json.value === undefined) {\n            throw new Error(json.error?.message ?? 'resolve failed')\n          }\n          const value = json.value\n          if (!value.found) {\n            apply({ status: 'missing' })\n          } else if (value.kind === 'image' && value.dataUrl !== undefined) {\n            apply({ status: 'ok', kind: 'image', dataUrl: value.dataUrl, mime: value.mime ?? '', size: value.size ?? 0 })\n          } else if (value.kind === 'image' && value.tooLarge === true) {\n            apply({ status: 'ok', kind: 'image', tooLarge: true, size: value.size ?? 0 })\n          } else if (value.kind === 'link' && value.path !== undefined) {\n            apply({ status: 'ok', kind: 'link', path: value.path })\n          } else {\n            apply({ status: 'missing' })\n          }\n        } catch {\n          if (docKeyRef.current !== docKey) return\n          apply({ status: 'missing' })\n        }\n      })()\n    }\n\n    // Rewrite attributes from the current resolution state, then serialize.\n    for (const img of doc.querySelectorAll('img[src]')) {\n      const src = img.getAttribute('src')\n      if (src === null || !isRelativeRef(src)) continue\n      const resolution = resolutions[src]\n      if (resolution?.status === 'ok' && resolution.kind === 'image' && resolution.dataUrl !== undefined) {\n        img.setAttribute('src', resolution.dataUrl)\n      } else {\n        img.setAttribute('src', PLACEHOLDER_SRC)\n      }\n      if (resolution?.status === 'ok' && resolution.kind === 'image' && resolution.tooLarge === true) {\n        img.setAttribute('title', `image too large (${resolution.size} bytes, over the 20 MiB limit)`)\n      }\n    }\n    for (const anchor of doc.querySelectorAll('a[href]')) {\n      const href = anchor.getAttribute('href')\n      if (href === null) continue\n      if (href.startsWith('#')) {\n        anchor.setAttribute('data-md-anchor', href.slice(1))\n        continue\n      }\n      if (!isRelativeRef(href)) continue\n      anchor.setAttribute('data-md-rel', href)\n      const at = href.indexOf('#')\n      const ref = at === -1 ? href : href.slice(0, at)\n      const resolution = resolutions[ref]\n      if (resolution?.status === 'ok' && resolution.kind === 'link') {\n        anchor.setAttribute('data-md-path', resolution.path)\n      }\n    }\n\n    setDisplayHtml(doc.body.innerHTML)\n  }, [html, resolutions, path, sessionId])\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/index.ts:231-255](https://github.com/AKS1st/dock-markdown/blob/64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54/src/index.ts#L231-L255)\n\n路径候选顺序。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n/**\n * The candidate absolute paths for a relative ref, in priority order:\n * Markdown dir → git repo root of the Markdown file → session workspace\n * root. Each base also tries the URL-decoded spelling of the ref; duplicate\n * candidates are dropped.\n */\nasync function resolveCandidates(cwd: string, baseFile: string, ref: string): Promise<string[]> {\n  const bases = [dirname(baseFile)]\n  const repoRoot = await gitRootOf(dirname(baseFile))\n  if (repoRoot !== null) bases.push(repoRoot)\n  bases.push(cwd)\n  const candidates: string[] = []\n  const seen = new Set<string>()\n  const spellings = decodedRefOf(ref) === ref ? [ref] : [ref, decodedRefOf(ref)]\n  for (const base of bases) {\n    for (const spelling of spellings) {\n      const candidate = resolve(base, spelling)\n      if (!seen.has(candidate)) {\n        seen.add(candidate)\n        candidates.push(candidate)\n      }\n    }\n  }\n  return candidates\n}\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 资源解析 API 能读取哪些主机文件？\n\n**研究主题：**缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\n/dock-markdown/resolve 接受请求体中的任意绝对 basePath 和相对 ref；isValidRef 拒绝绝对路径与 URL scheme，却不拒绝 .. 路径段，resolveCandidates 又直接 path.resolve(base, ref)，不验证候选仍位于 Markdown 目录、git 根或 session cwd。kind=image 时对存在、宿主进程可读且 ≤20 MiB 的文件 readFile 并返回 base64 dataUrl，mime 只按扩展推断；basePath 也没有核对确为当前打开的 Markdown。Host/Origin 检查约束请求来源为受信 Web 源，但本路由未授权到会话已打开文件；部署外层授权未知。因此受信同源页面中的脚本或可操控调用方在宿主可读和大小上限内可构造路径读取工作区外文件；这是源码级数据暴露风险，尚未用活宿主复现。应在服务端限定授权路径、验证 basePath 与会话/已打开文件关系，并禁止 traversal。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:95-111](https://github.com/AKS1st/dock-markdown/blob/64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54/src/index.ts#L95-L111)\n\n绝对 basePath 无工作区 containment。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\nfunction requireAbsolute(path: string): string {\n  if (!path.startsWith('/') && !/^[A-Za-z]:[\\\\/]/.test(path)) {\n    throw new WbError('fs-error', `\"${path}\" is not an absolute path`, 400)\n  }\n  return path\n}\n\n/**\n * Resolve a caller-supplied absolute path for READING: no workspace\n * containment — Markdown files can live anywhere on the host (the\n * conversation context may mention paths outside the session workspace),\n * and their relative assets must be servable wherever the file lives.\n */\nfunction resolveReadPath(raw: string): string {\n  requireAbsolute(raw)\n  return resolve(raw)\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/index.ts:155-169](https://github.com/AKS1st/dock-markdown/blob/64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54/src/index.ts#L155-L169)\n\nHost/Origin 来源检查。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\nfunction isTrustedRequest(request: IncomingMessage, trustedHosts: readonly string[]): boolean {\n  const host = header(request.headers, 'host')\n  if (host === undefined) return false\n  const hostUrl = parseAuthority(host)\n  if (hostUrl === undefined) return false\n  if (!isLoopbackHostname(hostUrl.hostname) && !isTrustedAuthority(hostUrl, trustedHosts)) return false\n  if (header(request.headers, 'sec-fetch-site') === 'cross-site') return false\n  const origin = header(request.headers, 'origin')\n  if (origin === undefined) return true\n  try {\n    return new URL(origin).host === hostUrl.host\n  } catch {\n    return false\n  }\n}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/index.ts:237-265](https://github.com/AKS1st/dock-markdown/blob/64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54/src/index.ts#L237-L265)\n\n候选 path.resolve 与 ref 验证未禁 ..。\n\n<details>\n<summary>查看原文（29行）</summary>\n\n```text\nasync function resolveCandidates(cwd: string, baseFile: string, ref: string): Promise<string[]> {\n  const bases = [dirname(baseFile)]\n  const repoRoot = await gitRootOf(dirname(baseFile))\n  if (repoRoot !== null) bases.push(repoRoot)\n  bases.push(cwd)\n  const candidates: string[] = []\n  const seen = new Set<string>()\n  const spellings = decodedRefOf(ref) === ref ? [ref] : [ref, decodedRefOf(ref)]\n  for (const base of bases) {\n    for (const spelling of spellings) {\n      const candidate = resolve(base, spelling)\n      if (!seen.has(candidate)) {\n        seen.add(candidate)\n        candidates.push(candidate)\n      }\n    }\n  }\n  return candidates\n}\n\n/** A relative filesystem reference from Markdown: no URL scheme, no leading\n *  '/', '\\' or drive letter, no control characters. */\nfunction isValidRef(ref: string): boolean {\n  // eslint-disable-next-line no-control-regex\n  if (/[\\u0000-\\u001f\\u007f]/.test(ref)) return false\n  if (ref.startsWith('/') || ref.startsWith('\\\\') || ref.startsWith('#') || ref.startsWith('~')) return false\n  if (/^[A-Za-z]:[\\\\/]/.test(ref)) return false\n  if (/^[A-Za-z][A-Za-z0-9+.-]*:/.test(ref)) return false\n  return true\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/index.ts:272-310](https://github.com/AKS1st/dock-markdown/blob/64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54/src/index.ts#L272-L310)\n\n请求体/读任意匹配文件并返回 base64。\n\n<details>\n<summary>查看原文（39行）</summary>\n\n```text\nasync function endpointResolve(ctx: WbContext, payload: unknown): Promise<unknown> {\n  const sessionId = stringOrUndefined(payload, 'sessionId')\n  const rawBase = stringOrUndefined(payload, 'basePath')\n  const ref = stringOrUndefined(payload, 'ref')\n  const kind = stringOrUndefined(payload, 'kind')\n  if (rawBase === undefined) throw new WbError('bad-request', 'resolve requires a \"basePath\"')\n  if (ref === undefined) throw new WbError('bad-request', 'resolve requires a \"ref\"')\n  if (kind !== 'image' && kind !== 'link') {\n    throw new WbError('bad-request', 'resolve requires kind \"image\" or \"link\"')\n  }\n  if (!isValidRef(ref)) throw new WbError('bad-request', `invalid relative ref \"${ref}\"`)\n\n  const cwd = sessionCwdOf(ctx, sessionId)\n  // The Markdown file may live anywhere on the host (reads are unconfined).\n  const base = resolveReadPath(rawBase)\n  const candidates = await resolveCandidates(cwd, base, ref)\n\n  for (const candidate of candidates) {\n    const target = resolve(candidate)\n    const info = await stat(target).catch(() => undefined)\n    if (info === undefined || !info.isFile()) continue\n\n    if (kind === 'link') {\n      return { found: true, kind: 'link', path: target }\n    }\n    if (info.size > IMAGE_LIMIT_BYTES) {\n      return { found: true, kind: 'image', tooLarge: true, size: info.size }\n    }\n    const buffer = await readFile(target).catch((error) => {\n      throw new WbError('fs-error', `cannot read \"${target}\": ${messageOf(error)}`, 400)\n    })\n    const mime = mimeOfPath(target)\n    return {\n      found: true,\n      kind: 'image',\n      dataUrl: `data:${mime};base64,${buffer.toString('base64')}`,\n      mime,\n      size: info.size,\n    }\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/index.ts:334-340](https://github.com/AKS1st/dock-markdown/blob/64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54/src/index.ts#L334-L340)\n\n未知 session 回退 process.cwd。\n\n```text\nfunction sessionCwdOf(ctx: WbContext, sessionId: string | undefined): string {\n  if (sessionId !== undefined) {\n    const cwd = ctx.sessions.get(sessionId)?.header.cwd\n    if (cwd !== undefined && cwd !== '') return cwd\n  }\n  return process.cwd()\n}\n```\n\n#### 缺口\n\n- 未向运行中 DSH 发送构造请求。\n  **影响：**实际部署的 Web 认证/同源脚本可达性未知。\n  **进一步探讨：**隔离测试非敏感测试文件的 ../ traversal，修服务端授权后回归。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 消毒后仍有哪些内容/资源边界？\n\n**研究主题：**依赖、兼容与流程、效果与总成本、采用判断、新假设与验证\n\n#### 完整回答\n\nDOMPurify 在 marked 之后调用，为 HTML 标签 XSS 提供一层过滤；随后浏览器 DOMParser 改写相对图片/链接并序列化，没有再次调用 DOMPurify。外部绝对图片 URL 不会走 Host 相对解析，可由浏览器直接请求；README 也承认默认允许 style 属性可能造成 CSS 外联追踪。内联图片单张上限 20 MiB，base64 会加大返回体和浏览器内存，重复引用/文档复杂度可能进一步增加成本。采用前应优先修复 Host 路径越界，之后在隔离环境验证 sanitize/外链策略与大图性能。\n\n成本分期：首次使用涉及需 dock/files/editor 及 Web sessions、marked/DOMPurify；安装与版本成本未知，人工需配置插件并审查 Host resolve 路径授权/同源边界；耗时未知；持续使用涉及Markdown 渲染和每图至多20MiB读取/base64占用内存与传输；实际峰值未知，人工需用户核图片/链接与大纲，管理员监控资源和外链；工时未知；失败恢复涉及错误资源解析/越界读取可能带来文件暴露处置与重新加载；金额未知，人工需收紧路由、排查可读文件和日志、回归相对资源；耗时未知。金额、频次、实际耗时均未有同条件证据，不能填0或推算单位收益。\n\n创新假设推导：Q02 源码允许调用方提供 basePath 与 ref，在宿主进程可读且不超过大小上限时读文件；相对当前同源路由检查，若把 basePath 绑定会话已打开文档和允许根、拒绝 .. 及符号链接逃逸，可保留相对资源而收窄可读集合。代价是授权状态同步、链接兼容与路径规范化。最小证伪：同源模拟打开一份 Markdown，再分别解析合法相对图、../越界文件和指向根外的符号链接；若合法图失效或越界仍回传 base64，假设失败。该试验仅是拟议方案，不能推断公网可调用。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/client/MarkdownView.tsx:229-242](https://github.com/AKS1st/dock-markdown/blob/64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54/src/client/MarkdownView.tsx#L229-L242)\n\nmarked 后 DOMPurify。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n  // Render Markdown → sanitized HTML once the content is available.\n  useEffect(() => {\n    if (content === null || binary) {\n      setHtml(null)\n      return\n    }\n    try {\n      const raw = marked.parse(content, { async: false, gfm: true, breaks: true }) as string\n      setHtml(DOMPurify.sanitize(raw))\n    } catch (cause) {\n      setError(cause instanceof Error ? cause.message : String(cause))\n      setHtml(null)\n    }\n  }, [content, binary])\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/client/MarkdownView.tsx:279-368](https://github.com/AKS1st/dock-markdown/blob/64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54/src/client/MarkdownView.tsx#L279-L368)\n\n只处理相对引用、后续 DOM 改写。\n\n<details>\n<summary>查看原文（90行）</summary>\n\n```text\n    // Collect the relative references used by images and internal links.\n    // A link target like `docs/a.md#section` resolves `docs/a.md` (the\n    // fragment only matters inside the target document, which opens at top).\n    const refs = new Set<string>()\n    for (const img of doc.querySelectorAll('img[src]')) {\n      const src = img.getAttribute('src')\n      if (src !== null && isRelativeRef(src)) refs.add(src)\n    }\n    for (const anchor of doc.querySelectorAll('a[href]')) {\n      const href = anchor.getAttribute('href')\n      if (href !== null && isRelativeRef(href)) {\n        const at = href.indexOf('#')\n        refs.add(at === -1 ? href : href.slice(0, at))\n      }\n    }\n\n    // Ask the host to resolve each new reference (first match wins:\n    // Markdown dir → git repo root → workspace root).\n    for (const ref of refs) {\n      if (requestedRef.current.has(ref)) continue\n      requestedRef.current.add(ref)\n      const kind = refKindOf(ref)\n      void (async () => {\n        const apply = (resolution: Resolution): void => {\n          setResolutions((previous) => ({ ...previous, [ref]: resolution }))\n        }\n        try {\n          const response = await fetch('/dock-markdown/resolve', {\n            method: 'POST',\n            headers: { 'content-type': 'application/json' },\n            body: JSON.stringify({ sessionId, basePath: path, ref, kind }),\n          })\n          const json = (await response.json()) as ResolveResponse\n          // A stale response for a previously open file must not leak in.\n          if (docKeyRef.current !== docKey) return\n          if (json.ok !== true || json.value === undefined) {\n            throw new Error(json.error?.message ?? 'resolve failed')\n          }\n          const value = json.value\n          if (!value.found) {\n            apply({ status: 'missing' })\n          } else if (value.kind === 'image' && value.dataUrl !== undefined) {\n            apply({ status: 'ok', kind: 'image', dataUrl: value.dataUrl, mime: value.mime ?? '', size: value.size ?? 0 })\n          } else if (value.kind === 'image' && value.tooLarge === true) {\n            apply({ status: 'ok', kind: 'image', tooLarge: true, size: value.size ?? 0 })\n          } else if (value.kind === 'link' && value.path !== undefined) {\n            apply({ status: 'ok', kind: 'link', path: value.path })\n          } else {\n            apply({ status: 'missing' })\n          }\n        } catch {\n          if (docKeyRef.current !== docKey) return\n          apply({ status: 'missing' })\n        }\n      })()\n    }\n\n    // Rewrite attributes from the current resolution state, then serialize.\n    for (const img of doc.querySelectorAll('img[src]')) {\n      const src = img.getAttribute('src')\n      if (src === null || !isRelativeRef(src)) continue\n      const resolution = resolutions[src]\n      if (resolution?.status === 'ok' && resolution.kind === 'image' && resolution.dataUrl !== undefined) {\n        img.setAttribute('src', resolution.dataUrl)\n      } else {\n        img.setAttribute('src', PLACEHOLDER_SRC)\n      }\n      if (resolution?.status === 'ok' && resolution.kind === 'image' && resolution.tooLarge === true) {\n        img.setAttribute('title', `image too large (${resolution.size} bytes, over the 20 MiB limit)`)\n      }\n    }\n    for (const anchor of doc.querySelectorAll('a[href]')) {\n      const href = anchor.getAttribute('href')\n      if (href === null) continue\n      if (href.startsWith('#')) {\n        anchor.setAttribute('data-md-anchor', href.slice(1))\n        continue\n      }\n      if (!isRelativeRef(href)) continue\n      anchor.setAttribute('data-md-rel', href)\n      const at = href.indexOf('#')\n      const ref = at === -1 ? href : href.slice(0, at)\n      const resolution = resolutions[ref]\n      if (resolution?.status === 'ok' && resolution.kind === 'link') {\n        anchor.setAttribute('data-md-path', resolution.path)\n      }\n    }\n\n    setDisplayHtml(doc.body.innerHTML)\n  }, [html, resolutions, path, sessionId])\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/index.ts:173-191](https://github.com/AKS1st/dock-markdown/blob/64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54/src/index.ts#L173-L191)\n\n20 MiB 图片限制与 MIME 推断。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n/** Cap for a single image read (same as dock-images): 20 MiB keeps the data URL reasonable. */\nconst IMAGE_LIMIT_BYTES = 20 * 1024 * 1024\n\n/** MIME type inferred from the file extension (lowercased, no dot). */\nfunction mimeOfPath(path: string): string {\n  const at = path.lastIndexOf('.')\n  if (at === -1) return 'application/octet-stream'\n  const ext = path.slice(at + 1).toLowerCase()\n  switch (ext) {\n    case 'png': return 'image/png'\n    case 'jpg':\n    case 'jpeg': return 'image/jpeg'\n    case 'gif': return 'image/gif'\n    case 'webp': return 'image/webp'\n    case 'bmp': return 'image/bmp'\n    case 'svg': return 'image/svg+xml'\n    case 'ico': return 'image/x-icon'\n    case 'avif': return 'image/avif'\n    default: return 'application/octet-stream'\n```\n\n</details>\n\n**依据 4 · 作者声明**：[README.md:56-60](https://github.com/AKS1st/dock-markdown/blob/64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54/README.md#L56-L60)\n\n作者承认 style/非工作区访问取舍。\n\n```text\n## 安全\n\n`marked` 输出的原始 HTML 一律经 `DOMPurify.sanitize()`（默认白名单）消毒后才写入 DOM，`dangerouslySetInnerHTML` 只用于消毒后的结果。已知取舍：DOMPurify 默认允许 `style` 属性，恶意 Markdown 理论上可用 CSS 做外联跟踪——如需更严格可加 `FORBID_ATTR: ['style']`。\n\n相对路径资源不受会话工作区限制：Markdown 文件可能位于主机的任何位置（对话上下文可提及工作区外的文件，如 `~/.dsh/skills/...`），其相对图片 / 内部链接按「Markdown 所在目录 → git 仓库根目录 → 会话工作区根目录」优先级解析，只要候选是存在的文件即可读取。\n```\n\n#### 缺口\n\n- 未用恶意 Markdown 或大图在目标 UI 测试。\n  **影响：**浏览器加载外链/CSS 与内存表现未知。\n  **进一步探讨：**隔离构造外链、样式和大图检查网络/CSP/内存。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：da8358ce874f6c8643086fd514b81c1c98d1906b1276bb8251ec7b964245582b。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 4725 | 4179 | 565 | — |\n| .md | source | 2 | 128 | — | — | 1374 |\n| .ts | source | 5 | 849 | 495 | 281 | — |\n| .tsx | source | 1 | 501 | 398 | 70 | — |\n| .mjs | source | 1 | 52 | 38 | 12 | — |\n\n排除 6 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| Markdown UI | 阅读/编辑 | dock 依赖 |\n| resolve 路由 | 相对资源 | 任意文件读取缺口 |\n\n## 工程亮点\n\nHost 注册 POST resolve Web 路由，Client 从 editor API 读文档并在 DOM 中解析资源；无模型工具。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、README.en.md、package.json、src/index.ts、src/client/MarkdownView.tsx、src/client/index.ts、src/client/hooks.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：静态审阅固定提交 README、Host 路由及客户端渲染；未向活宿主发请求或读敏感文件。 普通安装、宿主加载及目标测试属本轮范围边界，具体机制/效果未知仍在逐题缺口保留。 父侧已接受受信调用方的条件性静态路径限制；外层授权未知，未称公网无认证。\n- 下一步：隔离非敏感样例复现 traversal、修复授权后回归；Web UI 验外链与大图资源成本。\n",
         "metadata": {
             "repository": "AKS1st/dock-markdown",
             "repository_id": 1340492424,
-            "captured_at": "2026-10-21T05:33:35.485Z",
-            "window_start": "2026-09-21T05:33:35.485Z",
+            "captured_at": "2026-10-22T07:05:54.280Z",
+            "window_start": "2026-09-22T07:05:54.280Z",
             "stars": 3,
             "pushed_at": "2026-09-11T08:05:48Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-markdown%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D698:26CA49:54B83B:5AC188:6AD84EB1 and timestamp 2026-10-21 05:33:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-markdown%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D76C:10E8BA:5786B6:5D91E5:6AD84EB2 and timestamp 2026-10-21 05:33:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-markdown%20is%3Aissue%20created%3A2026-09-21T05%3A33%3A35.485Z..2026-10-21T05%3A33%3A35.485Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D84A:4F1F4:5106AA:570F7A:6AD84EB3 and timestamp 2026-10-21 05:33:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-markdown%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A33%3A35.485Z..2026-10-21T05%3A33%3A35.485Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D944:1112D2:5022FB:562CCF:6AD84EB4 and timestamp 2026-10-21 05:33:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-markdown%20is%3Aissue%20updated%3A2026-09-21T05%3A33%3A35.485Z..2026-10-21T05%3A33%3A35.485Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DAC8:110389:553F29:5B480D:6AD84EB5 and timestamp 2026-10-21 05:33:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "dock-markdown",
-                "captured_at": "2026-10-21T05:33:41.614Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 900,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dock-markdown",
+                "captured_at": "2026-10-22T07:06:04.984Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 878,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dock-markdown",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-08-23T06:01:22.424Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T07:06:04.984Z",
                     "source_url": "https://registry.npmjs.org/dock-markdown",
                     "error": null,
                     "latest_version": "0.1.2",
@@ -436,14 +468,14 @@
             "repository": "AKS1st/dock-markdown",
             "path": "",
             "revision": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "2c2334d69874ce1966cf8536b21f3897dfa732c7bac122fa3a89af4a96c3e1eb",
                 "code": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54",
                 "maintenance": "3c435994189e924eccbe87bd7cc9c189e9b5de8f2bf6b29fcf57794952524fe4"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

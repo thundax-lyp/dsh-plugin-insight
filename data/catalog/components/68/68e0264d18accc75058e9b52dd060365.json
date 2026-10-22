@@ -12,7 +12,7 @@
             "aliases": [],
             "name": "dsh-wsl-tmux",
             "entry_type": "plugin",
-            "technical_category": "sessions-messages",
+            "technical_category": "tools-integration",
             "business_category": "software-delivery",
             "tags": [],
             "availability": "unknown",
@@ -24,36 +24,76 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-20-08-github-1381833652-root-directory-0",
+                    "id": "2026-10-22-02-github-1381833652-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
-                    "retrieved_at": "2026-10-20T10:50:35.151Z",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-22T09:27:03.693Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-20-08-github-1381833652-root-author",
+                    "id": "2026-10-22-02-github-1381833652-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/173787247/dsh-wsl-tmux/blob/f6f23727c2959d69559ec26f474d2e871473c224/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-tmux",
+                            "commit": "f6f23727c2959d69559ec26f474d2e871473c224",
+                            "path": "README.md",
+                            "content_sha256": "e1449e2adafd66341f4e0c6d6cd84e4f22e8f9139064560aef2dcb0f7f3a1e75"
+                        }
+                    ],
                     "revision": "f6f23727c2959d69559ec26f474d2e871473c224",
-                    "captured_at": "2026-10-20T10:50:35.151Z",
-                    "summary": "在 DSH 中列出 tmux 会话并读取 pane 输出。",
-                    "artifact": "data/runs/2026-10-20-08/snapshots/173787247--dsh-wsl-tmux/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:27:03.693Z",
+                    "summary": "提供tmux状态、会话列表和pane文字捕获模型工具，不发送按键或终止会话。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-tmux/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-20-08-github-1381833652-root-source",
+                    "id": "2026-10-22-02-github-1381833652-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/173787247/dsh-wsl-tmux/blob/f6f23727c2959d69559ec26f474d2e871473c224/index.js",
+                    "url": "https://github.com/173787247/dsh-wsl-tmux/blob/f6f23727c2959d69559ec26f474d2e871473c224/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-tmux",
+                            "commit": "f6f23727c2959d69559ec26f474d2e871473c224",
+                            "path": "README.md",
+                            "content_sha256": "e1449e2adafd66341f4e0c6d6cd84e4f22e8f9139064560aef2dcb0f7f3a1e75"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-tmux",
+                            "commit": "f6f23727c2959d69559ec26f474d2e871473c224",
+                            "path": "package.json",
+                            "content_sha256": "4c6685e1916aa69cf940e74c8db80ad12f312b7d765ce54dbf0defcecd17b39a"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-tmux",
+                            "commit": "f6f23727c2959d69559ec26f474d2e871473c224",
+                            "path": "index.js",
+                            "content_sha256": "91b9c4d5df85d25eb883f7fdb6f6499cf5d981c23efa7e1eb66da72875ce5afd"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-tmux",
+                            "commit": "f6f23727c2959d69559ec26f474d2e871473c224",
+                            "path": "lib/tmux.js",
+                            "content_sha256": "95b65eda5b4069bdd9a61bed0072b1c2f4febec0051cd845794ace221a578370"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-tmux",
+                            "commit": "f6f23727c2959d69559ec26f474d2e871473c224",
+                            "path": "test/tmux.test.js",
+                            "content_sha256": "1ec87e5da7f03294388d720dcd50781086a7e5cd85118a16fed99a9398e7df04"
+                        }
+                    ],
                     "revision": "f6f23727c2959d69559ec26f474d2e871473c224",
-                    "captured_at": "2026-10-20T10:50:35.151Z",
-                    "summary": "核查 index.js、lib/tmux.js、test/tmux.test.js；lib/tmux.js 固定 list-sessions 与 capture-pane；会话名限制字符，抓取行数限制500并返回 truncated。",
-                    "artifact": "data/runs/2026-10-20-08/snapshots/173787247--dsh-wsl-tmux/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:27:03.693Z",
+                    "summary": "核查 README.md、package.json、index.js、lib/tmux.js、test/tmux.test.js；bash定位tmux后固定argv查询默认server，capture以session目标和有限起始历史参数返回切片。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-tmux/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "固定提交 f6f23727c2959d69559ec26f474d2e871473c224，检查作者说明、入口、所列核心实现与测试内容；未执行测试或插件、未核实外部套件和独立用户效果。",
+                        "完整97行入口/92行核心/8行生产名称测试和README/package；不执行tmux/读取实际pane或验证外部CLI。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +104,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "长时间构建或训练放在 tmux 的开发者，希望由 Agent 读取当前终端尾部辅助排障，而不向任务发送输入。",
+                    "text": "长任务已在tmux运行，用户希望模型查看输出线索。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1381833652-root-source"
+                        "2026-10-22-02-github-1381833652-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +115,16 @@
                             "fingerprint": "f6f23727c2959d69559ec26f474d2e871473c224"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:50:35.151Z",
+                    "reviewed_at": "2026-10-22T09:27:03.693Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "lib/tmux.js 固定 list-sessions 与 capture-pane；会话名限制字符，抓取行数限制500并返回 truncated。",
+                    "text": "bash定位tmux后固定argv查询默认server，capture以session目标和有限起始历史参数返回切片。",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1381833652-root-source"
+                        "2026-10-22-02-github-1381833652-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +133,16 @@
                             "fingerprint": "f6f23727c2959d69559ec26f474d2e871473c224"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:50:35.151Z",
+                    "reviewed_at": "2026-10-22T09:27:03.693Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "固定提交 f6f23727c2959d69559ec26f474d2e871473c224，检查作者说明、入口、所列核心实现与测试内容；未执行测试或插件、未核实外部套件和独立用户效果。",
+                    "text": "完整97行入口/92行核心/8行生产名称测试和README/package；不执行tmux/读取实际pane或验证外部CLI。",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1381833652-root-source"
+                        "2026-10-22-02-github-1381833652-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +151,16 @@
                             "fingerprint": "f6f23727c2959d69559ec26f474d2e871473c224"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:50:35.151Z",
+                    "reviewed_at": "2026-10-22T09:27:03.693Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "固定版本 package.json 与 cordis.patch.yml 提供 DSH bundle 接线；README 为作者安装说明，包存在不等于安装或宿主验收通过。",
+                    "text": "0.1.1 MIT ESM Node>=18，需要bash/tmux和宿主tools/systemPrompt，无WSL门；screen仅检测位置。",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1381833652-root-source"
+                        "2026-10-22-02-github-1381833652-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +169,16 @@
                             "fingerprint": "f6f23727c2959d69559ec26f474d2e871473c224"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:50:35.151Z",
+                    "reviewed_at": "2026-10-22T09:27:03.693Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "无新服务费用；成本在于建立会话和人工确认 pane、补读截断历史，未测少复制日志能省多少时间。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | Node/宿主、bash/tmux与既有用户socket，金额未知 | 核进程账户/server与可分享pane，准备工时未知 | 不安装tmux、不创建任务；screen仅检测位置 |\n| 持续使用 | bash定位与tmux进程、stdout/stderr缓冲、结果模型上下文 | 选择准确目标、核输出时点/完整性 | 无独立模型请求不等宿主费用为零；捕获最大500历史参数非总输出行数，真实延迟未知 |\n| 失败恢复 | 再查询消耗进程/上下文；无任务状态写入 | 分清假空、错pane、截断和模型已读敏感文本 | 停用不撤回已外发文本；恢复金额/工时未知，不用工具timeout推所有子进程已停 |\n",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1381833652-root-source"
+                        "2026-10-22-02-github-1381833652-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +187,16 @@
                             "fingerprint": "f6f23727c2959d69559ec26f474d2e871473c224"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:50:35.151Z",
+                    "reviewed_at": "2026-10-22T09:27:03.693Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "适合单 pane 的长任务观察；多窗口先人工确认目标，关键完成状态应另查产物或退出码，不能只凭终端尾部。",
+                    "text": "明确server/pane、无敏感内容的可控范围试用，真实任务结果另核。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1381833652-root-source"
+                        "2026-10-22-02-github-1381833652-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +205,16 @@
                             "fingerprint": "f6f23727c2959d69559ec26f474d2e871473c224"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:50:35.151Z",
+                    "reviewed_at": "2026-10-22T09:27:03.693Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "高频已有 tmux 的用户较可能受益；不具备任务编排或可靠进度服务的交付保障。",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 观察长任务 | list/capture固定查询 | 输出不等完成状态 |\n| 减少上下文 | capture切片/lines参数 | 文本不标截断且可能漏尾 |\n| 不控制任务 | 无send keys/kill session | 读出敏感文字仍有披露成本 |\n",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1381833652-root-source"
+                        "2026-10-22-02-github-1381833652-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +223,16 @@
                             "fingerprint": "f6f23727c2959d69559ec26f474d2e871473c224"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:50:35.151Z",
+                    "reviewed_at": "2026-10-22T09:27:03.693Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "lib/tmux.js 会话白名单和只读 argv 值得复用；list 的退出码简化及默认 pane 是小实现换来的明确语义损失。 源码：[index.js](https://github.com/173787247/dsh-wsl-tmux/blob/f6f23727c2959d69559ec26f474d2e871473c224/index.js)、[lib/tmux.js](https://github.com/173787247/dsh-wsl-tmux/blob/f6f23727c2959d69559ec26f474d2e871473c224/lib/tmux.js)、[test/tmux.test.js](https://github.com/173787247/dsh-wsl-tmux/blob/f6f23727c2959d69559ec26f474d2e871473c224/test/tmux.test.js)。",
+                    "text": "核心分层/固定argv可复用，补精确target、错误分层和显式部分结果比测试数量更关键。详见[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1381833652-root-source"
+                        "2026-10-22-02-github-1381833652-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,15 +241,69 @@
                             "fingerprint": "f6f23727c2959d69559ec26f474d2e871473c224"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:50:35.151Z",
+                    "reviewed_at": "2026-10-22T09:27:03.693Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "将原生tmux查询包装为受限模型入口，减少手工复制输出。详见[Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1381833652-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381833652:root",
+                            "area": "code",
+                            "fingerprint": "f6f23727c2959d69559ec26f474d2e871473c224"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:27:03.693Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "默认socket不绑定agent工作区，code1一律空与文本隐藏截断可能误读任务，头部切片可漏最新尾部。详见[Q03](#research-q03)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1381833652-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381833652:root",
+                            "area": "code",
+                            "fingerprint": "f6f23727c2959d69559ec26f474d2e871473c224"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:27:03.693Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "研究server/pane精确句柄、带时间的partial尾部回执和统一预算，按错目标/假空/漏尾反例比较，尚未验证。详见[Q05](#research-q05)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1381833652-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381833652:root",
+                            "area": "code",
+                            "fingerprint": "f6f23727c2959d69559ec26f474d2e871473c224"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:27:03.693Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-20T10:50:35.151Z",
+            "last_checked_at": "2026-10-22T09:27:03.693Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "f6f23727c2959d69559ec26f474d2e871473c224",
-                "reviewed_at": "2026-10-20T10:50:35.151Z",
+                "reviewed_at": "2026-10-22T09:27:03.693Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -222,14 +316,14 @@
                     "criteria": {
                         "novelty": 9,
                         "mechanism": 8,
-                        "transferability": 5,
-                        "simplification": 4
+                        "transferability": 10,
+                        "simplification": 8
                     },
-                    "rationale": "novelty 9：tmux现成查询的局部适配；mechanism 8：只读工具面减少任意输入，未解决pane身份；transferability 5：输出截断接口可复用，socket语义依赖tmux；simplification 4：无需手抄日志但仍需人工选pane。",
+                    "rationale": "novelty取9，参照原生tmux CLI只是模型适配；mechanism取8，固定argv/名称白名单/切片常规组合，未解决精确pane；transferability取10，Node终端观察模式可用于普通Linux，默认socket条件明确；simplification取8，把定位/列表/捕获接起来少手动复制，非终端控制新能力。",
                     "basis": "interpretation",
-                    "score": 26,
+                    "score": 35,
                     "evidence_ids": [
-                        "2026-10-20-08-github-1381833652-root-source"
+                        "2026-10-22-02-github-1381833652-root-source"
                     ]
                 },
                 "business": {
@@ -239,43 +333,43 @@
                         "reach": 5,
                         "economics": 4
                     },
-                    "rationale": "workflow 9：减少日志交接一步；delivery 8：终端尾部仍是诊断材料而非任务结果；reach 5：面向已有tmux用户，未新增任务组织方式；economics 4：可少复制日志，但未测总时间。",
+                    "rationale": "workflow取9，相比手动tmux复制只改变信息入口，任务责任不变；delivery取8，将pane文字变成可供模型读取的结构化观察回执，小幅交付格式增量，非任务完成收据；reach取5，已有tmux用户多一模型渠道，不拓展无终端部署人群；economics取4，可能少复制但进程/上下文与复核仍在，节时未测。",
                     "basis": "interpretation",
                     "score": 26,
                     "evidence_ids": [
-                        "2026-10-20-08-github-1381833652-root-source"
+                        "2026-10-22-02-github-1381833652-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "已有tmux长任务者可限单pane试尾部观察，先核session目标，完成状态另查产物或退出码。",
+                "reason": "可信同用户且目标pane明确时可试用只读观察，核最新尾部与真实任务状态；多server或敏感pane先解决目标和分享边界。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "训练构建尾部日志交Agent分析的需求明确。"
+                        "rationale": "已跑长任务的输出观察明确。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "只读capture省复制日志，不是任务编排进度服务。"
+                        "rationale": "模型入口便利，手工tmux可替。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "固定argv与500行可查，多窗口默认pane和退出码简化有限制。"
+                        "rationale": "完整固定链可查，target/错误/截断限制具体。"
                     },
                     "cost": {
-                        "score": 15,
-                        "rationale": "不发送输入且无新服务费，需补读历史和人工核目标。"
+                        "score": 10,
+                        "rationale": "无写任务动作，但错目标/敏感输出与预算复核负担。"
                     }
                 },
-                "score": 64,
+                "score": 59,
                 "revision": "f6f23727c2959d69559ec26f474d2e871473c224",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T09:27:03.693Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-20-08-github-1381833652-root-source"
+                    "2026-10-22-02-github-1381833652-root-source"
                 ],
                 "dependencies": [
                     {
@@ -300,88 +394,60 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-20T10:40:14Z",
-            "analysis_sha256": "1316a3312d388f3507d3fde2062869a6113deda760b54acda0bd587ab274be7b"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "fd1716f685f46af561bb2d05b65da279a32cd55dba075e5c41ee70a8177fd4ad"
         },
         "publication.metadata": "data/plugins/173787247--dsh-wsl-tmux/META.json",
         "publication.summaries": {
-            "text": "在 DSH 中列出 tmux 会话并读取 pane 输出。",
+            "text": "提供tmux状态、会话列表和pane文字捕获模型工具，不发送按键或终止会话。",
             "revision": "f6f23727c2959d69559ec26f474d2e871473c224",
             "source_url": "https://github.com/173787247/dsh-wsl-tmux/blob/f6f23727c2959d69559ec26f474d2e871473c224/README.md"
         },
         "publication.capabilities": {
             "revision": "f6f23727c2959d69559ec26f474d2e871473c224",
             "items": {
-                "模型工具": "tmux_status、tmux_list、tmux_capture"
-            }
+                "模型工具": "tmux_status、tmux_list、tmux_capture三个只读入口"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| `tmux_status` | 查tmux/screen位置、版本和会话数 | screen无操作；ok不保证任务存在/健康 |\n| `tmux_list` | 列默认server会话 | code1可被当空，无agent scope |\n| `tmux_capture` | 捕获默认target pane文字 | 名称/500历史参数限制；文本可能截断漏尾 |\n"
         },
         "publication.advice": {
             "revision": "f6f23727c2959d69559ec26f474d2e871473c224",
-            "text": "适合单 pane 的长任务观察；多窗口先人工确认目标，关键完成状态应另查产物或退出码，不能只凭终端尾部。"
+            "text": "明确server/pane、无敏感内容的可控范围试用，真实任务结果另核。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/173787247--dsh-wsl-tmux",
-        "reports": "# dsh-wsl-tmux\n\n> 在 DSH 中列出 tmux 会话并读取 pane 输出。\n\n## 研究范围\n\n- **仓库**：[173787247/dsh-wsl-tmux](https://github.com/173787247/dsh-wsl-tmux)\n- **版本号**：0.1.1（[固定提交 f6f23727c2959d69559ec26f474d2e871473c224](https://github.com/173787247/dsh-wsl-tmux/tree/f6f23727c2959d69559ec26f474d2e871473c224)）\n- **版本日期**：2026-09-30（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n源码支持所述适配机制；贡献评价属于有固定源码依据的解释。尚未安装或运行，效果与宿主兼容未验证；新设计推演均未实现。\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：长时间构建或训练放在 tmux 的开发者，希望由 Agent 读取当前终端尾部辅助排障，而不向任务发送输入。\n- **亮点**：相对复制终端日志，增量是一个不发送按键的观察入口；tmux 继续拥有会话和滚动缓冲，插件没有任务控制或完成判定机制。\n- **思考**：日志尾部是否足以代表任务完成是关键。capture 仅按会话定位默认 pane，没有精确窗口/pane 身份；list 对任意退出码1都返回空会话，可能把查询故障误解为无任务。\n- **建议**：适合单 pane 的长任务观察；多窗口先人工确认目标，关键完成状态应另查产物或退出码，不能只凭终端尾部。\n\n采用建议：适合单 pane 的长任务观察；多窗口先人工确认目标，关键完成状态应另查产物或退出码，不能只凭终端尾部。\n\n## 核心贡献\n\n相对复制终端日志，增量是一个不发送按键的观察入口；tmux 继续拥有会话和滚动缓冲，插件没有任务控制或完成判定机制。\n\n## 关键质疑\n\n日志尾部是否足以代表任务完成是关键。capture 仅按会话定位默认 pane，没有精确窗口/pane 身份；list 对任意退出码1都返回空会话，可能把查询故障误解为无任务。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n待验证假设：明确 pane_id 和捕获时间、把查询失败与空会话分开，可让多窗口构建观察更可靠；当前接口没有完整实现这些身份与失败状态。\n\n准备两个同会话 pane、一个已结束任务和权限/连接错误，对照原生命令与插件；检查是否误读其他 pane、是否将错误返回空列表。\n\n## 场景与替代办法\n\n长时间构建或训练放在 tmux 的开发者，希望由 Agent 读取当前终端尾部辅助排障，而不向任务发送输入。\n\n本次比较参照为上述人工命令、平台接口或本地脚本；没有独立同任务运行对照，不声称整体收益或首创。\n\n## 依赖与流程\n\nNode≥18、DSH、tmux 及同用户服务器/socket 必要；screen 仅被探测，不提供 screen 捕获。\n\nstatus/list 后指定 session capture；用户交叉核查目标与日志，失败查 socket/权限，不会发送恢复指令。\n\n## 成本与效果\n\n无新服务费用；成本在于建立会话和人工确认 pane、补读截断历史，未测少复制日志能省多少时间。\n\n高频已有 tmux 的用户较可能受益；不具备任务编排或可靠进度服务的交付保障。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：730410a98d2c617dd94af68afc45d63e92788e604bdd80f6cac9df550aad6246。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 4 | 116 | — | — | 448 |\n| .js | source | 2 | 189 | 176 | 0 | — |\n| .js | test | 1 | 8 | 7 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **模型工具**：tmux_status、tmux_list、tmux_capture\n\n## 工程亮点\n\nlib/tmux.js 会话白名单和只读 argv 值得复用；list 的退出码简化及默认 pane 是小实现换来的明确语义损失。 源码：[index.js](https://github.com/173787247/dsh-wsl-tmux/blob/f6f23727c2959d69559ec26f474d2e871473c224/index.js)、[lib/tmux.js](https://github.com/173787247/dsh-wsl-tmux/blob/f6f23727c2959d69559ec26f474d2e871473c224/lib/tmux.js)、[test/tmux.test.js](https://github.com/173787247/dsh-wsl-tmux/blob/f6f23727c2959d69559ec26f474d2e871473c224/test/tmux.test.js)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 index.js、lib/tmux.js、test/tmux.test.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定提交 f6f23727c2959d69559ec26f474d2e871473c224，检查作者说明、入口、所列核心实现与测试内容；未执行测试或插件、未核实外部套件和独立用户效果。\n- 下一步：准备两个同会话 pane、一个已结束任务和权限/连接错误，对照原生命令与插件；检查是否误读其他 pane、是否将错误返回空列表。\n",
+        "reports": "# dsh-wsl-tmux\n\n> 提供tmux状态、会话列表和pane文字捕获模型工具，不发送按键或终止会话。\n\n## 研究范围\n\n- **仓库**：[173787247/dsh-wsl-tmux](https://github.com/173787247/dsh-wsl-tmux)\n- **版本号**：0.1.1（[固定提交 f6f23727c2959d69559ec26f474d2e871473c224](https://github.com/173787247/dsh-wsl-tmux/tree/f6f23727c2959d69559ec26f474d2e871473c224)）\n- **版本日期**：2026-09-30（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n三个只读入口可查；目标scope、code1假空与截断可见性限制观察可靠性，精确观察句柄假设未验证。\n\n## 洞察短评\n\n- **用途**：长任务已在tmux运行，用户希望模型查看输出线索。详见[Q01](#research-q01)。\n- **亮点**：将原生tmux查询包装为受限模型入口，减少手工复制输出。详见[Q01](#research-q01)。\n- **思考**：默认socket不绑定agent工作区，code1一律空与文本隐藏截断可能误读任务，头部切片可漏最新尾部。详见[Q03](#research-q03)。\n- **建议**：研究server/pane精确句柄、带时间的partial尾部回执和统一预算，按错目标/假空/漏尾反例比较，尚未验证。详见[Q05](#research-q05)。\n\n采用建议：明确server/pane、无敏感内容的可控范围试用，真实任务结果另核。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n将原生tmux查询包装为受限模型入口，减少手工复制输出。详见[Q01](#research-q01)。\n\n## 关键质疑\n\n默认socket不绑定agent工作区，code1一律空与文本隐藏截断可能误读任务，头部切片可漏最新尾部。详见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n研究server/pane精确句柄、带时间的partial尾部回执和统一预算，按错目标/假空/漏尾反例比较，尚未验证。详见[Q05](#research-q05)。\n\n从默认server/相似名称/code1错误/超限输出和取消反例证伪精确观察句柄。\n\n## 场景与替代办法\n\n长任务已在tmux运行，用户希望模型查看输出线索。详见[Q01](#research-q01)。\n\n原生tmux查询与手工粘贴，未提供任务启动/控制/验收。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 条件 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| Node>=18/tools/systemPrompt | 注册入口 | 宿主API匹配 |\n| bash/tmux/PATH | 定位与查询 | which无自身预算 |\n| 默认用户socket | 目标server | 非agent工作区隔离 |\n| 可分享pane | 模型读输出 | 不自动过滤秘密 |\n\n\n#### 启动步骤\n\n| 步骤 | 执行者 | 判断标准 |\n| --- | --- | --- |\n| 核账户/server和敏感性 | 用户 | 目标可授权分享 |\n| tmux_status/list | 模型/用户 | 空列表还需区分错误 |\n| 指定session capture | 模型/用户 | 核实际pane/最新尾部 |\n| 对照任务结果 | 用户 | 不按快照代替验收 |\n\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | Node/宿主、bash/tmux与既有用户socket，金额未知 | 核进程账户/server与可分享pane，准备工时未知 | 不安装tmux、不创建任务；screen仅检测位置 |\n| 持续使用 | bash定位与tmux进程、stdout/stderr缓冲、结果模型上下文 | 选择准确目标、核输出时点/完整性 | 无独立模型请求不等宿主费用为零；捕获最大500历史参数非总输出行数，真实延迟未知 |\n| 失败恢复 | 再查询消耗进程/上下文；无任务状态写入 | 分清假空、错pane、截断和模型已读敏感文本 | 停用不撤回已外发文本；恢复金额/工时未知，不用工具timeout推所有子进程已停 |\n\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 观察长任务 | list/capture固定查询 | 输出不等完成状态 |\n| 减少上下文 | capture切片/lines参数 | 文本不标截断且可能漏尾 |\n| 不控制任务 | 无send keys/kill session | 读出敏感文字仍有披露成本 |\n\n\n## 研究问题与完整回答\n\n**插件研究总目标：**模型只读tmux观察是否准确指向预期pane，结果完整性、资源预算和敏感内容边界如何判断？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 只读tmux工具给谁交付什么？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n给已在tmux运行长编译/服务等任务的DSH用户，模型可先查tmux/screen位置、列会话，再捕获pane文字，减少用户手工复制终端输出。不提供send-keys、kill-session、创建或恢复任务；screen只有位置检测，没有screen列表/捕获能力。原任务是否成功仍需业务日志或退出结果，pane快照只是观察材料。\n\n参照原生tmux list-sessions/capture-pane与手工粘贴，本项贡献是固定模型入口和返回长度限制，没有新终端会话持久化技术。README前表0.1.0与package0.1.1冲突，以固定发布入口为准。适合可信同用户环境的观察，不适合把“可读pane”当自动授权或工作区隔离。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:5-34](https://github.com/173787247/dsh-wsl-tmux/blob/f6f23727c2959d69559ec26f474d2e871473c224/README.md#L5-L34)\n\n只读定位与版本/工具表。\n\n<details>\n<summary>查看原文（30行）</summary>\n\n````text\n只读查看 tmux 会话与 pane 输出。\n\n| | |\n|---|---|\n| 版本 | **0.1.0** |\n| 套件 | [dsh-wsl-kit](https://github.com/173787247/dsh-wsl-kit) **可选**，不在 `install.sh` |\n\n## 安装\n\n```sh\ndsh plugin --profile web add github:173787247/dsh-wsl-tmux\n# 或本机 path：\n# dsh plugin --profile web add /mnt/c/Users/YOU/Desktop/AIFullStackDevelopment/dsh-wsl-tmux\n```\n\nkit 批量链接（可选）：`bash dsh-wsl-kit/scripts/link-linux-plugins.sh`\n\n## 工具\n\n| 工具 | 作用 |\n|------|------|\n| `tmux_status` | tmux/screen 是否可用 |\n| `tmux_list` | 列会话 |\n| `tmux_capture` | capture-pane |\n\n## 配置要点\n\n`timeoutMs`\n\n不发送按键、不杀会话。\n````\n\n</details>\n\n**依据 2 · 源码核查**：[index.js:20-86](https://github.com/173787247/dsh-wsl-tmux/blob/f6f23727c2959d69559ec26f474d2e871473c224/index.js#L20-L86)\n\n三个工具。\n\n<details>\n<summary>查看原文（67行）</summary>\n\n```text\n  ctx.tools.register({\n    name: \"tmux_status\",\n    description: \"Whether tmux/screen are on PATH; version + live session count.\",\n    parameters: { type: \"object\", additionalProperties: false, properties: {} },\n    output: { schema: { type: \"object\", additionalProperties: true }, render: (_a, v) => [{ type: \"text\", text: JSON.stringify(v, null, 2) }] },\n    timeoutMs: 8_000,\n    isConcurrencySafe: () => true,\n    async execute() {\n      return tmuxStatus();\n    },\n    presentCall: () => ({ card: \"generic\", title: \"tmux status\" }),\n    presentResult: (_a, r) => ({ card: \"generic\", title: \"tmux status\", content: r.content }),\n  });\n\n  ctx.tools.register({\n    name: \"tmux_list\",\n    description: \"List tmux sessions (name, windows, attached).\",\n    parameters: { type: \"object\", additionalProperties: false, properties: {} },\n    output: {\n      schema: { type: \"object\", additionalProperties: true },\n      render: (_a, v) => [\n        {\n          type: \"text\",\n          text:\n            v.ok === false\n              ? v.error\n              : (v.sessions || []).map((s) => `${s.name}\\twindows=${s.windows}\\tattached=${s.attached}`).join(\"\\n\") ||\n                \"(no sessions)\",\n        },\n      ],\n    },\n    timeoutMs,\n    isConcurrencySafe: () => true,\n    async execute() {\n      try {\n        return await tmuxList({ timeoutMs });\n      } catch (e) {\n        return { ok: false, error: e instanceof Error ? e.message : String(e) };\n      }\n    },\n    presentCall: () => ({ card: \"generic\", title: \"tmux list\" }),\n    presentResult: (_a, r) => ({ card: \"generic\", title: \"tmux list\", content: r.content }),\n  });\n\n  ctx.tools.register({\n    name: \"tmux_capture\",\n    description: \"Capture recent pane text from a tmux session (read-only).\",\n    parameters: {\n      type: \"object\",\n      additionalProperties: false,\n      required: [\"session\"],\n      properties: {\n        session: { type: \"string\" },\n        lines: { type: \"number\", description: \"History lines to capture (default 80)\" },\n      },\n    },\n    output: {\n      schema: { type: \"object\", additionalProperties: true },\n      render: (_a, v) => [{ type: \"text\", text: v.ok === false ? v.error : v.text }],\n    },\n    timeoutMs,\n    isConcurrencySafe: () => true,\n    async execute(args) {\n      try {\n        return await tmuxCapture({ session: args.session, lines: args.lines, timeoutMs });\n      } catch (e) {\n        return { ok: false, error: e instanceof Error ? e.message : String(e) };\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/tmux.js:45-92](https://github.com/173787247/dsh-wsl-tmux/blob/f6f23727c2959d69559ec26f474d2e871473c224/lib/tmux.js#L45-L92)\n\nstatus/list/capture实际能力。\n\n<details>\n<summary>查看原文（48行）</summary>\n\n```text\nexport async function tmuxStatus() {\n  const tmux = (await which(\"tmux\")) || null;\n  const screen = (await which(\"screen\")) || null;\n  let sessionCount = null;\n  let version = null;\n  if (tmux) {\n    try {\n      const ver = await run(tmux, [\"-V\"], 5_000);\n      version = (ver.stdout || ver.stderr || \"\").trim() || null;\n      const list = await tmuxList({ timeoutMs: 5_000 });\n      sessionCount = Array.isArray(list.sessions) ? list.sessions.length : 0;\n    } catch {\n      sessionCount = null;\n    }\n  }\n  return { ok: true, tmux, screen, version, sessionCount };\n}\n\nexport async function tmuxList({ timeoutMs = 10_000 } = {}) {\n  const bin = (await which(\"tmux\")) || \"tmux\";\n  const { code, stdout, stderr } = await run(bin, [\"list-sessions\", \"-F\", \"#{session_name}\\t#{session_windows}\\t#{session_attached}\"], timeoutMs);\n  if (code !== 0) {\n    if (/no server|no sessions/i.test(stderr) || code === 1) return { ok: true, sessions: [] };\n    throw new Error(`tmux list failed: ${stderr || code}`);\n  }\n  const sessions = stdout\n    .split(\"\\n\")\n    .filter(Boolean)\n    .map((line) => {\n      const [name, windows, attached] = line.split(\"\\t\");\n      return { name, windows: Number(windows) || 0, attached: attached === \"1\" };\n    });\n  return { ok: true, sessions };\n}\n\nexport async function tmuxCapture({ session, lines = 80, timeoutMs = 10_000, maxOut = 40_000 } = {}) {\n  const name = assertSessionName(session);\n  const n = Math.min(500, Math.max(1, Number(lines) || 80));\n  const bin = (await which(\"tmux\")) || \"tmux\";\n  const { code, stdout, stderr } = await run(\n    bin,\n    [\"capture-pane\", \"-p\", \"-t\", name, \"-S\", `-${n}`],\n    timeoutMs,\n  );\n  if (code !== 0) throw new Error(`tmux capture failed: ${stderr || code}`);\n  const text = stdout.slice(0, maxOut);\n  return { ok: true, session: name, lines: n, truncated: stdout.length > maxOut, text };\n}\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 选择的是哪个server和pane，名称校验限制什么？\n\n**研究主题：**功能与机制、依赖、兼容与流程\n\n#### 完整回答\n\nwhich用bash -lc command-v找程序，再spawn固定argv；list无用户参数，capture仅session和lines。没有指定tmux -L/-S socket、cwd或agent scope，使用宿主进程账户与继承环境解析默认tmux server，故可能列出同用户其他工作区会话。屏幕内容读出后进入模型工具响应，不做token/密码/终端敏感信息过滤。\n\nsession先trim，再限制ASCII字母数字._@+-和64字符，不插shell；不支持列出的任意Unicode名称，也不能传session:window.pane选择器。capture -t传原名字且无精确等号/独立pane ID，只能让tmux按其target默认规则解析，当前窗口/默认pane和前缀歧义仍依所装tmux版本。lines夹1到500但不取整，-S负数表示起始历史位置，不是只返回N行/精确tail N。\n\nNode>=18、bash/tmux、宿主tools/systemPrompt以及正确账户/socket权限为依赖，无WSL检测门。探到screen不代表它能承担fallback；version/status不测实际任务进展。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/tmux.js:3-16](https://github.com/173787247/dsh-wsl-tmux/blob/f6f23727c2959d69559ec26f474d2e871473c224/lib/tmux.js#L3-L16)\n\n程序定位和继承环境spawn。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\nexport function which(cmd) {\n  const safe = String(cmd || \"\").replace(/[^a-zA-Z0-9._+-]/g, \"\");\n  if (!safe) return Promise.resolve(\"\");\n  return new Promise((resolvePromise) => {\n    const child = spawn(\"bash\", [\"-lc\", `command -v ${safe}`], { stdio: [\"ignore\", \"pipe\", \"ignore\"] });\n    let out = \"\";\n    child.stdout.on(\"data\", (d) => (out += d));\n    child.on(\"close\", (c) => resolvePromise(c === 0 ? out.trim() : \"\"));\n  });\n}\n\nexport function run(bin, args, timeoutMs = 10_000) {\n  return new Promise((resolvePromise, reject) => {\n    const child = spawn(bin, args, { stdio: [\"ignore\", \"pipe\", \"pipe\"] });\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/tmux.js:38-43](https://github.com/173787247/dsh-wsl-tmux/blob/f6f23727c2959d69559ec26f474d2e871473c224/lib/tmux.js#L38-L43)\n\n名称限制。\n\n```text\n\nexport function assertSessionName(name) {\n  const n = String(name || \"\").trim();\n  if (!n || !/^[A-Za-z0-9._@+-]+$/.test(n) || n.length > 64) throw new Error(\"invalid tmux session name\");\n  return n;\n}\n```\n\n**依据 3 · 源码核查**：[lib/tmux.js:45-66](https://github.com/173787247/dsh-wsl-tmux/blob/f6f23727c2959d69559ec26f474d2e871473c224/lib/tmux.js#L45-L66)\n\nstatus和默认list。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\nexport async function tmuxStatus() {\n  const tmux = (await which(\"tmux\")) || null;\n  const screen = (await which(\"screen\")) || null;\n  let sessionCount = null;\n  let version = null;\n  if (tmux) {\n    try {\n      const ver = await run(tmux, [\"-V\"], 5_000);\n      version = (ver.stdout || ver.stderr || \"\").trim() || null;\n      const list = await tmuxList({ timeoutMs: 5_000 });\n      sessionCount = Array.isArray(list.sessions) ? list.sessions.length : 0;\n    } catch {\n      sessionCount = null;\n    }\n  }\n  return { ok: true, tmux, screen, version, sessionCount };\n}\n\nexport async function tmuxList({ timeoutMs = 10_000 } = {}) {\n  const bin = (await which(\"tmux\")) || \"tmux\";\n  const { code, stdout, stderr } = await run(bin, [\"list-sessions\", \"-F\", \"#{session_name}\\t#{session_windows}\\t#{session_attached}\"], timeoutMs);\n  if (code !== 0) {\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/tmux.js:79-92](https://github.com/173787247/dsh-wsl-tmux/blob/f6f23727c2959d69559ec26f474d2e871473c224/lib/tmux.js#L79-L92)\n\ntarget与-S。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n\nexport async function tmuxCapture({ session, lines = 80, timeoutMs = 10_000, maxOut = 40_000 } = {}) {\n  const name = assertSessionName(session);\n  const n = Math.min(500, Math.max(1, Number(lines) || 80));\n  const bin = (await which(\"tmux\")) || \"tmux\";\n  const { code, stdout, stderr } = await run(\n    bin,\n    [\"capture-pane\", \"-p\", \"-t\", name, \"-S\", `-${n}`],\n    timeoutMs,\n  );\n  if (code !== 0) throw new Error(`tmux capture failed: ${stderr || code}`);\n  const text = stdout.slice(0, maxOut);\n  return { ok: true, session: name, lines: n, truncated: stdout.length > maxOut, text };\n}\n```\n\n</details>\n\n**依据 5 · 源码核查**：[package.json:6-10](https://github.com/173787247/dsh-wsl-tmux/blob/f6f23727c2959d69559ec26f474d2e871473c224/package.json#L6-L10)\n\n运行条件。\n\n```text\n  \"repository\": { \"type\": \"git\", \"url\": \"https://github.com/173787247/dsh-wsl-tmux.git\" },\n  \"type\": \"module\",\n  \"main\": \"index.js\",\n  \"engines\": { \"node\": \">=18\" },\n  \"scripts\": { \"test\": \"node --test test/*.test.js\" },\n```\n\n#### 缺口\n\n- 固定部署tmux版本的target前缀/当前窗口与默认socket解析契约\n  **影响：**传session字符串不等绑定用户预期的精确pane\n  **进一步探讨：**只读对应tmux手册/部署配置，并用相似名字与多pane记录核精确身份要求\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 空列表、截断和超时能否按字面理解？\n\n**研究主题：**缺陷与关键质疑\n\n#### 完整回答\n\ntmuxList把任意code=1都当ok空列表，除“no server/no sessions”外的错误也可能被掩盖，不能仅看到(no sessions)就断言没有任务。status取list.sessions长度，若该降级发生也会计0。capture保留前40000字符，若原文本超长会丢靠后的最新输出，结构化truncated存在但render只显示text，读者可能看不到缺尾标记。\n\nrun在stdout超过500000字符后kill，先缓冲而非严格字节预算，stderr无界；超量结束可能非零，也无专门partial原因。run局部timeout有kill/error处理，但前置which没有error监听或timeout；status串行查tmux/screen、版本5秒和list5秒，外层8秒并不覆盖全部总预算。execute不传宿主取消signal，工具返回超时不证明所有后续定位/查询立刻结束。\n\n三个工具都标并发安全只说明本插件未写任务状态，不保证跨调用同一时刻快照；任务仍运行、当前pane可变，list后capture应再核目标及采集时点。只读输出也可能含正在输入的秘密或未经复核日志，不等内容可安全分享。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/tmux.js:3-11](https://github.com/173787247/dsh-wsl-tmux/blob/f6f23727c2959d69559ec26f474d2e871473c224/lib/tmux.js#L3-L11)\n\nwhich无取消/error/timeout。\n\n```text\nexport function which(cmd) {\n  const safe = String(cmd || \"\").replace(/[^a-zA-Z0-9._+-]/g, \"\");\n  if (!safe) return Promise.resolve(\"\");\n  return new Promise((resolvePromise) => {\n    const child = spawn(\"bash\", [\"-lc\", `command -v ${safe}`], { stdio: [\"ignore\", \"pipe\", \"ignore\"] });\n    let out = \"\";\n    child.stdout.on(\"data\", (d) => (out += d));\n    child.on(\"close\", (c) => resolvePromise(c === 0 ? out.trim() : \"\"));\n  });\n```\n\n**依据 2 · 源码核查**：[lib/tmux.js:14-35](https://github.com/173787247/dsh-wsl-tmux/blob/f6f23727c2959d69559ec26f474d2e871473c224/lib/tmux.js#L14-L35)\n\n缓冲/kill/局部超时。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\nexport function run(bin, args, timeoutMs = 10_000) {\n  return new Promise((resolvePromise, reject) => {\n    const child = spawn(bin, args, { stdio: [\"ignore\", \"pipe\", \"pipe\"] });\n    let stdout = \"\";\n    let stderr = \"\";\n    const t = setTimeout(() => {\n      child.kill(\"SIGKILL\");\n      reject(new Error(\"timeout\"));\n    }, timeoutMs);\n    child.stdout.on(\"data\", (d) => {\n      stdout += d;\n      if (stdout.length > 500_000) child.kill(\"SIGKILL\");\n    });\n    child.stderr.on(\"data\", (d) => (stderr += d));\n    child.on(\"close\", (code) => {\n      clearTimeout(t);\n      resolvePromise({ code, stdout, stderr });\n    });\n    child.on(\"error\", (e) => {\n      clearTimeout(t);\n      reject(e);\n    });\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/tmux.js:45-75](https://github.com/173787247/dsh-wsl-tmux/blob/f6f23727c2959d69559ec26f474d2e871473c224/lib/tmux.js#L45-L75)\n\nstatus和code1假空。\n\n<details>\n<summary>查看原文（31行）</summary>\n\n```text\nexport async function tmuxStatus() {\n  const tmux = (await which(\"tmux\")) || null;\n  const screen = (await which(\"screen\")) || null;\n  let sessionCount = null;\n  let version = null;\n  if (tmux) {\n    try {\n      const ver = await run(tmux, [\"-V\"], 5_000);\n      version = (ver.stdout || ver.stderr || \"\").trim() || null;\n      const list = await tmuxList({ timeoutMs: 5_000 });\n      sessionCount = Array.isArray(list.sessions) ? list.sessions.length : 0;\n    } catch {\n      sessionCount = null;\n    }\n  }\n  return { ok: true, tmux, screen, version, sessionCount };\n}\n\nexport async function tmuxList({ timeoutMs = 10_000 } = {}) {\n  const bin = (await which(\"tmux\")) || \"tmux\";\n  const { code, stdout, stderr } = await run(bin, [\"list-sessions\", \"-F\", \"#{session_name}\\t#{session_windows}\\t#{session_attached}\"], timeoutMs);\n  if (code !== 0) {\n    if (/no server|no sessions/i.test(stderr) || code === 1) return { ok: true, sessions: [] };\n    throw new Error(`tmux list failed: ${stderr || code}`);\n  }\n  const sessions = stdout\n    .split(\"\\n\")\n    .filter(Boolean)\n    .map((line) => {\n      const [name, windows, attached] = line.split(\"\\t\");\n      return { name, windows: Number(windows) || 0, attached: attached === \"1\" };\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/tmux.js:79-92](https://github.com/173787247/dsh-wsl-tmux/blob/f6f23727c2959d69559ec26f474d2e871473c224/lib/tmux.js#L79-L92)\n\n头部切片与truncated。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n\nexport async function tmuxCapture({ session, lines = 80, timeoutMs = 10_000, maxOut = 40_000 } = {}) {\n  const name = assertSessionName(session);\n  const n = Math.min(500, Math.max(1, Number(lines) || 80));\n  const bin = (await which(\"tmux\")) || \"tmux\";\n  const { code, stdout, stderr } = await run(\n    bin,\n    [\"capture-pane\", \"-p\", \"-t\", name, \"-S\", `-${n}`],\n    timeoutMs,\n  );\n  if (code !== 0) throw new Error(`tmux capture failed: ${stderr || code}`);\n  const text = stdout.slice(0, maxOut);\n  return { ok: true, session: name, lines: n, truncated: stdout.length > maxOut, text };\n}\n```\n\n</details>\n\n**依据 5 · 源码核查**：[index.js:23-25](https://github.com/173787247/dsh-wsl-tmux/blob/f6f23727c2959d69559ec26f474d2e871473c224/index.js#L23-L25)\n\nstatus外层8秒。\n\n```text\n    parameters: { type: \"object\", additionalProperties: false, properties: {} },\n    output: { schema: { type: \"object\", additionalProperties: true }, render: (_a, v) => [{ type: \"text\", text: JSON.stringify(v, null, 2) }] },\n    timeoutMs: 8_000,\n```\n\n**依据 6 · 源码核查**：[index.js:72-80](https://github.com/173787247/dsh-wsl-tmux/blob/f6f23727c2959d69559ec26f474d2e871473c224/index.js#L72-L80)\n\ncapture render只text。\n\n```text\n        session: { type: \"string\" },\n        lines: { type: \"number\", description: \"History lines to capture (default 80)\" },\n      },\n    },\n    output: {\n      schema: { type: \"object\", additionalProperties: true },\n      render: (_a, v) => [{ type: \"text\", text: v.ok === false ? v.error : v.text }],\n    },\n    timeoutMs,\n```\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 工程与三阶段成本如何评估？\n\n**研究主题：**工程质量与复用、效果与总成本\n\n#### 完整回答\n\n核心与宿主注册分开，固定argv和名称字符白名单减少shell拼接，run监听spawn error并清定时器是正面细节。8行测试只直接检查生产assertSessionName接受build、拒a;b，没有列表错误、真实target、Unicode、截断、which失败或取消预算断言。本次只读测试，不能把有测试等同观察结果正确。\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | Node/宿主、bash/tmux与既有用户socket，金额未知 | 核进程账户/server与可分享pane，准备工时未知 | 不安装tmux、不创建任务；screen仅检测位置 |\n| 持续使用 | bash定位与tmux进程、stdout/stderr缓冲、结果模型上下文 | 选择准确目标、核输出时点/完整性 | 无独立模型请求不等宿主费用为零；捕获最大500历史参数非总输出行数，真实延迟未知 |\n| 失败恢复 | 再查询消耗进程/上下文；无任务状态写入 | 分清假空、错pane、截断和模型已读敏感文本 | 停用不撤回已外发文本；恢复金额/工时未知，不用工具timeout推所有子进程已停 |\n\n可见等待上限是局部进程预算而非实测时延，stdout上限也不是整个宿主内存预算。没有任务同条件手工复制对照，不能编造节时比例；若工具把错pane或截断当成功，人工复核和后续模型误判都应计入合格观察成本。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[test/tmux.test.js:1-8](https://github.com/173787247/dsh-wsl-tmux/blob/f6f23727c2959d69559ec26f474d2e871473c224/test/tmux.test.js#L1-L8)\n\n只测名称。\n\n```text\nimport { describe, it } from \"node:test\";\nimport assert from \"node:assert/strict\";\nimport { assertSessionName } from \"../lib/tmux.js\";\n\ndescribe(\"tmux name\", () => {\n  it(\"accepts simple\", () => assert.equal(assertSessionName(\"build\"), \"build\"));\n  it(\"rejects bad\", () => assert.throws(() => assertSessionName(\"a;b\"), /invalid/));\n});\n```\n\n**依据 2 · 源码核查**：[lib/tmux.js:14-35](https://github.com/173787247/dsh-wsl-tmux/blob/f6f23727c2959d69559ec26f474d2e871473c224/lib/tmux.js#L14-L35)\n\n局部预算机制。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\nexport function run(bin, args, timeoutMs = 10_000) {\n  return new Promise((resolvePromise, reject) => {\n    const child = spawn(bin, args, { stdio: [\"ignore\", \"pipe\", \"pipe\"] });\n    let stdout = \"\";\n    let stderr = \"\";\n    const t = setTimeout(() => {\n      child.kill(\"SIGKILL\");\n      reject(new Error(\"timeout\"));\n    }, timeoutMs);\n    child.stdout.on(\"data\", (d) => {\n      stdout += d;\n      if (stdout.length > 500_000) child.kill(\"SIGKILL\");\n    });\n    child.stderr.on(\"data\", (d) => (stderr += d));\n    child.on(\"close\", (code) => {\n      clearTimeout(t);\n      resolvePromise({ code, stdout, stderr });\n    });\n    child.on(\"error\", (e) => {\n      clearTimeout(t);\n      reject(e);\n    });\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/tmux.js:79-92](https://github.com/173787247/dsh-wsl-tmux/blob/f6f23727c2959d69559ec26f474d2e871473c224/lib/tmux.js#L79-L92)\n\n捕获和回传规模。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n\nexport async function tmuxCapture({ session, lines = 80, timeoutMs = 10_000, maxOut = 40_000 } = {}) {\n  const name = assertSessionName(session);\n  const n = Math.min(500, Math.max(1, Number(lines) || 80));\n  const bin = (await which(\"tmux\")) || \"tmux\";\n  const { code, stdout, stderr } = await run(\n    bin,\n    [\"capture-pane\", \"-p\", \"-t\", name, \"-S\", `-${n}`],\n    timeoutMs,\n  );\n  if (code !== 0) throw new Error(`tmux capture failed: ${stderr || code}`);\n  const text = stdout.slice(0, maxOut);\n  return { ok: true, session: name, lines: n, truncated: stdout.length > maxOut, text };\n}\n```\n\n</details>\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 什么条件适合采用，可证伪的改进方向是什么？\n\n**研究主题：**采用判断、新假设与验证\n\n#### 完整回答\n\n可在可信同用户、单一明确server、pane无敏感内容的范围试用，先list并人工确认目标，再看原终端最新尾部/真实任务结果；不要按no sessions或没有truncated文字就作恢复/终止决策。多server、多窗口和需要强工作区边界的场景先核目标契约，普通工具read-only不能替代授权。\n\n从默认target与部分回执可推“精确观察句柄”方向——列表返回server/socket与pane ID、采集时间/序号，捕获显式绑定，按尾部预算返回并在文本强显partial，错误原因不降级为空，统一deadline和取消。基线为当前session字符串+code1空列表+前段slice。反例包括相似名称、多pane切窗、非ASCII会话、code1权限错误、超40000输出、which卡住及无来源敏感日志；若仍错读pane/漏最新信息或新增选择人工超过复制终端，则否定收益假设。比较错目标率、假空/漏尾、token与人工复核时间，未验证设计不计已有贡献。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/tmux.js:64-92](https://github.com/173787247/dsh-wsl-tmux/blob/f6f23727c2959d69559ec26f474d2e871473c224/lib/tmux.js#L64-L92)\n\n错误/target/切片基线。\n\n<details>\n<summary>查看原文（29行）</summary>\n\n```text\n  const bin = (await which(\"tmux\")) || \"tmux\";\n  const { code, stdout, stderr } = await run(bin, [\"list-sessions\", \"-F\", \"#{session_name}\\t#{session_windows}\\t#{session_attached}\"], timeoutMs);\n  if (code !== 0) {\n    if (/no server|no sessions/i.test(stderr) || code === 1) return { ok: true, sessions: [] };\n    throw new Error(`tmux list failed: ${stderr || code}`);\n  }\n  const sessions = stdout\n    .split(\"\\n\")\n    .filter(Boolean)\n    .map((line) => {\n      const [name, windows, attached] = line.split(\"\\t\");\n      return { name, windows: Number(windows) || 0, attached: attached === \"1\" };\n    });\n  return { ok: true, sessions };\n}\n\nexport async function tmuxCapture({ session, lines = 80, timeoutMs = 10_000, maxOut = 40_000 } = {}) {\n  const name = assertSessionName(session);\n  const n = Math.min(500, Math.max(1, Number(lines) || 80));\n  const bin = (await which(\"tmux\")) || \"tmux\";\n  const { code, stdout, stderr } = await run(\n    bin,\n    [\"capture-pane\", \"-p\", \"-t\", name, \"-S\", `-${n}`],\n    timeoutMs,\n  );\n  if (code !== 0) throw new Error(`tmux capture failed: ${stderr || code}`);\n  const text = stdout.slice(0, maxOut);\n  return { ok: true, session: name, lines: n, truncated: stdout.length > maxOut, text };\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/tmux.js:3-11](https://github.com/173787247/dsh-wsl-tmux/blob/f6f23727c2959d69559ec26f474d2e871473c224/lib/tmux.js#L3-L11)\n\n预算基线。\n\n```text\nexport function which(cmd) {\n  const safe = String(cmd || \"\").replace(/[^a-zA-Z0-9._+-]/g, \"\");\n  if (!safe) return Promise.resolve(\"\");\n  return new Promise((resolvePromise) => {\n    const child = spawn(\"bash\", [\"-lc\", `command -v ${safe}`], { stdio: [\"ignore\", \"pipe\", \"ignore\"] });\n    let out = \"\";\n    child.stdout.on(\"data\", (d) => (out += d));\n    child.on(\"close\", (c) => resolvePromise(c === 0 ? out.trim() : \"\"));\n  });\n```\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：730410a98d2c617dd94af68afc45d63e92788e604bdd80f6cac9df550aad6246。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 4 | 116 | — | — | 448 |\n| .js | source | 2 | 189 | 176 | 0 | — |\n| .js | test | 1 | 8 | 7 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| `tmux_status` | 查tmux/screen位置、版本和会话数 | screen无操作；ok不保证任务存在/健康 |\n| `tmux_list` | 列默认server会话 | code1可被当空，无agent scope |\n| `tmux_capture` | 捕获默认target pane文字 | 名称/500历史参数限制；文本可能截断漏尾 |\n\n\n## 工程亮点\n\n核心分层/固定argv可复用，补精确target、错误分层和显式部分结果比测试数量更关键。详见[Q04](#research-q04)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、index.js、lib/tmux.js、test/tmux.test.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：完整97行入口/92行核心/8行生产名称测试和README/package；不执行tmux/读取实际pane或验证外部CLI。\n- 下一步：从默认server/相似名称/code1错误/超限输出和取消反例证伪精确观察句柄。\n",
         "metadata": {
             "repository": "173787247/dsh-wsl-tmux",
             "repository_id": 1381833652,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T09:25:11.295Z",
+            "window_start": "2026-09-22T09:25:11.295Z",
             "stars": 1,
             "pushed_at": "2026-09-30T03:23:01Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-tmux%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6407:30A0ED:1442B9:21CBDF:6AD849B7 and timestamp 2026-10-21 05:12:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-tmux%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6409:A4F3B:14105D:21AA0E:6AD849B7 and timestamp 2026-10-21 05:12:24 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-tmux%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640A:128E3:14BD31:2249F1:6AD849B8 and timestamp 2026-10-21 05:12:24 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-tmux%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6400:330C23:1447FB:21D18C:6AD849B8 and timestamp 2026-10-21 05:12:24 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-tmux%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6418:EFE19:141B34:21AE36:6AD849B8 and timestamp 2026-10-21 05:12:24 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "dsh-wsl-tmux",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T09:25:26.364Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": null,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-wsl-tmux",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-wsl-tmux",
                 "error": "HTTP 404",
                 "publication": {
                     "first_published_at": null,
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T09:25:26.364Z",
                     "source_url": "https://registry.npmjs.org/dsh-wsl-tmux",
                     "error": "HTTP 404",
                     "latest_version": null,
                     "latest_published_at": null,
                     "latest_error": "HTTP 404"
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "f6f23727c2959d69559ec26f474d2e871473c224",
-                "current_revision": "f6f23727c2959d69559ec26f474d2e871473c224",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {
@@ -389,14 +455,14 @@
             "repository": "173787247/dsh-wsl-tmux",
             "path": "",
             "revision": "f6f23727c2959d69559ec26f474d2e871473c224",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "108a75c53b2266a17bf47fbc548eb40290388caae33563edde288605e2419cb7",
                 "code": "f6f23727c2959d69559ec26f474d2e871473c224",
                 "maintenance": "86f2d8ec004a7192fb06d9f2f1e701bce73f41423ef34ca7c20f71adf9384f60"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

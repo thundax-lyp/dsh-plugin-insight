@@ -12,7 +12,7 @@
             "aliases": [],
             "name": "dsh-codex-guard",
             "entry_type": "plugin",
-            "technical_category": "tools-integration",
+            "technical_category": "security-governance",
             "business_category": "software-delivery",
             "tags": [],
             "availability": "unknown",
@@ -24,36 +24,82 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-07-github-1340906871-dsh-directory-0",
+                    "id": "2026-10-22-02-github-1340906871-dsh-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T08:01:26.025Z",
+                    "retrieved_at": "2026-10-22T05:55:28.709Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-07-github-1340906871-dsh-author",
+                    "id": "2026-10-22-02-github-1340906871-dsh-author",
                     "kind": "author_claim",
                     "url": "https://github.com/Akimiya-z/codex-guard/blob/87e138cdcca2e2929073bb913212dc06769087fc/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/Akimiya-z/codex-guard",
+                            "commit": "87e138cdcca2e2929073bb913212dc06769087fc",
+                            "path": "README.md",
+                            "content_sha256": "0e40db5089e9bdd24ff0a71f27cee4dd35bbd1cc9c68aab365d6b4261adef981"
+                        }
+                    ],
                     "revision": "87e138cdcca2e2929073bb913212dc06769087fc",
-                    "captured_at": "2026-10-21T08:01:26.025Z",
-                    "summary": "在DSH中调用codex-guard CLI，返回提交前卫生检查报告。",
-                    "artifact": "data/runs/2026-10-21-07/snapshots/akimiya-z--codex-guard--dsh/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:55:28.709Z",
+                    "summary": "DSH 单工具包装 codex-guard CLI，执行提交前本地 diff hygiene 扫描。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/akimiya-z--codex-guard--dsh/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-07-github-1340906871-dsh-source",
+                    "id": "2026-10-22-02-github-1340906871-dsh-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/Akimiya-z/codex-guard/blob/87e138cdcca2e2929073bb913212dc06769087fc/dsh/index.js",
+                    "url": "https://github.com/Akimiya-z/codex-guard/blob/87e138cdcca2e2929073bb913212dc06769087fc/dsh/package.json",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/Akimiya-z/codex-guard",
+                            "commit": "87e138cdcca2e2929073bb913212dc06769087fc",
+                            "path": "dsh/package.json",
+                            "content_sha256": "d3d7c5582a566dd52487d569be9343164dd560a647524dfa97a8d6fb2fcafec5"
+                        },
+                        {
+                            "repository_url": "https://github.com/Akimiya-z/codex-guard",
+                            "commit": "87e138cdcca2e2929073bb913212dc06769087fc",
+                            "path": "dsh/index.js",
+                            "content_sha256": "787e26fbaf51dc806faa70e8805b334599d4c7f8572928a7405b54f9f7e45250"
+                        },
+                        {
+                            "repository_url": "https://github.com/Akimiya-z/codex-guard",
+                            "commit": "87e138cdcca2e2929073bb913212dc06769087fc",
+                            "path": "dsh/cordis.patch.yml",
+                            "content_sha256": "effb5b28849ddd867ce499ecc07298b0e587653b30884343aca65a4bd4e69eac"
+                        },
+                        {
+                            "repository_url": "https://github.com/Akimiya-z/codex-guard",
+                            "commit": "87e138cdcca2e2929073bb913212dc06769087fc",
+                            "path": "src/cli.js",
+                            "content_sha256": "8a63c23f19736f2c3f3cc51943928e30aa6b0bdbc15295439ad022765b95d5f0"
+                        },
+                        {
+                            "repository_url": "https://github.com/Akimiya-z/codex-guard",
+                            "commit": "87e138cdcca2e2929073bb913212dc06769087fc",
+                            "path": "src/local-files.js",
+                            "content_sha256": "3e138e9a294fbcd3c385f58986b4d402062a98db13f0f9b4ee1bbe64b7896825"
+                        },
+                        {
+                            "repository_url": "https://github.com/Akimiya-z/codex-guard",
+                            "commit": "87e138cdcca2e2929073bb913212dc06769087fc",
+                            "path": "README.md",
+                            "content_sha256": "0e40db5089e9bdd24ff0a71f27cee4dd35bbd1cc9c68aab365d6b4261adef981"
+                        }
+                    ],
                     "revision": "87e138cdcca2e2929073bb913212dc06769087fc",
-                    "captured_at": "2026-10-21T08:01:26.025Z",
-                    "summary": "核查 dsh/index.js、dsh/cordis.patch.yml；dsh/index.js注册codex_guard，spawnSync npx --yes codex-guard，ref以argv传入；Windows寻找npx-cli.js由Node执行，避免cmd解释。",
-                    "artifact": "data/runs/2026-10-21-07/snapshots/akimiya-z--codex-guard--dsh/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:55:28.709Z",
+                    "summary": "核查 dsh/package.json、dsh/index.js、dsh/cordis.patch.yml、src/cli.js、src/local-files.js、README.md；spawnSync npx --yes codex-guard --git [ref] [--json]，将 stdout/stderr 字符串回给 DSH。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/akimiya-z--codex-guard--dsh/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                        "审阅固定提交 dsh/ 子组件及直接调用的根 CLI 参数/未跟踪文件源码；未运行目标工具。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +110,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "开发者让Agent检查当前仓库的TODO、秘密及提交主题，报告仍需人工判断。",
+                    "text": "Agent 提交前检查未完成标记和密钥候选；不得取代 PR CI/人工审阅。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1340906871-dsh-source"
+                        "2026-10-22-02-github-1340906871-dsh-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +121,16 @@
                             "fingerprint": "87e138cdcca2e2929073bb913212dc06769087fc"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:01:26.025Z",
+                    "reviewed_at": "2026-10-22T05:55:28.709Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "dsh/index.js注册codex_guard，spawnSync npx --yes codex-guard，ref以argv传入；Windows寻找npx-cli.js由Node执行，避免cmd解释。",
+                    "text": "spawnSync npx --yes codex-guard --git [ref] [--json]，将 stdout/stderr 字符串回给 DSH。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1340906871-dsh-source"
+                        "2026-10-22-02-github-1340906871-dsh-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +139,16 @@
                             "fingerprint": "87e138cdcca2e2929073bb913212dc06769087fc"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:01:26.025Z",
+                    "reviewed_at": "2026-10-22T05:55:28.709Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                    "text": "审阅固定提交 dsh/ 子组件及直接调用的根 CLI 参数/未跟踪文件源码；未运行目标工具。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1340906871-dsh-source"
+                        "2026-10-22-02-github-1340906871-dsh-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +157,16 @@
                             "fingerprint": "87e138cdcca2e2929073bb913212dc06769087fc"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:01:26.025Z",
+                    "reviewed_at": "2026-10-22T05:55:28.709Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "分发以本插件固定package.json、运行依赖与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+                    "text": "dsh 子包 1.9.0 MIT；需 Cordis/dsh-tools、Node/npm/npx 和 Git 仓库；CLI 包经 npx 获取。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1340906871-dsh-source"
+                        "2026-10-22-02-github-1340906871-dsh-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +175,16 @@
                             "fingerprint": "87e138cdcca2e2929073bb913212dc06769087fc"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:01:26.025Z",
+                    "reviewed_at": "2026-10-22T05:55:28.709Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "首次下载和后续CLI变化有网络/供应链维护成本，spawnSync阻塞宿主线程且无显式timeout；模型阅读报告另有token和人工复核，未测单位成本。",
+                    "text": "| 阶段 | 投入 | 未知 |\n| --- | --- | --- |\n| 安装 | DSH 子包与 npm/Git | 版本漂移 |\n| 扫描 | 同步 npx/本地 diff | 首次等待/阻塞 |\n| 审阅 | 核 findings 与 skipped | 误报/漏报 |",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1340906871-dsh-source"
+                        "2026-10-22-02-github-1340906871-dsh-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +193,16 @@
                             "fingerprint": "87e138cdcca2e2929073bb913212dc06769087fc"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:01:26.025Z",
+                    "reviewed_at": "2026-10-22T05:55:28.709Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "先在隔离仓库核对实际扫描目录与CLI版本；报告入口不能替代提交前硬性检查。",
+                    "text": "作为提交前提示使用，始终看扫描覆盖和命令状态；CI 保护单独配置。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1340906871-dsh-source"
+                        "2026-10-22-02-github-1340906871-dsh-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +211,16 @@
                             "fingerprint": "87e138cdcca2e2929073bb913212dc06769087fc"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:01:26.025Z",
+                    "reviewed_at": "2026-10-22T05:55:28.709Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "省去手工调用步骤，无误报率、漏报率或交付收益证据。",
+                    "text": "| 结果 | 源码支持 | 不支持/未证实 |\n| --- | --- | --- |\n| 本地扫描 | --git diff | PR CI/评论不在子包 |\n| 提交主题 | 描述提及 | 没传 --commits |\n| 机读 | --json 可选 | 错误仍字符串 |",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1340906871-dsh-source"
+                        "2026-10-22-02-github-1340906871-dsh-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +229,16 @@
                             "fingerprint": "87e138cdcca2e2929073bb913212dc06769087fc"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:01:26.025Z",
+                    "reviewed_at": "2026-10-22T05:55:28.709Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "ref不经shell、Windows原生Node调用npx脚本是具体接线；同步子进程与退出码文本化是关键复用代价。",
+                    "text": "参数数组避免 shell 拼接；spawnSync 无 timeout/maxBuffer 且 npx --yes 未锁 CLI 版本；返回内容不是结构化通过/失败信号。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1340906871-dsh-source"
+                        "2026-10-22-02-github-1340906871-dsh-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +247,16 @@
                             "fingerprint": "87e138cdcca2e2929073bb913212dc06769087fc"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:01:26.025Z",
+                    "reviewed_at": "2026-10-22T05:55:28.709Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
                     "topic": "technical_innovation",
                     "basis": "interpretation",
-                    "text": "本组件的增量是可被模型发现的CLI适配和跨平台argv安全调用。未在此组件实现检测算法，不能将整仓规则、Action流程或CLI迭代计为本组件技术贡献。",
+                    "text": "把已有 codex-guard CLI 作为 DSH 工具暴露，并避免 Windows cmd shell 解析 ref。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1340906871-dsh-source"
+                        "2026-10-22-02-github-1340906871-dsh-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +265,16 @@
                             "fingerprint": "87e138cdcca2e2929073bb913212dc06769087fc"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:01:26.025Z",
+                    "reviewed_at": "2026-10-22T05:55:28.709Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "工作目录固定process.cwd而不是工具会话工作区，可能检查另一个仓库；npx未锁版本，固定dsh提交并不能固定检测语义。退出码1被普通字符串返回，是否允许提交仍由外部流程决定。",
+                    "text": "未传 --commits 却描述会查提交主题；同步 npx 无超时/版本锁，运行失败也只返回字符串。详见[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1340906871-dsh-source"
+                        "2026-10-22-02-github-1340906871-dsh-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +283,16 @@
                             "fingerprint": "87e138cdcca2e2929073bb913212dc06769087fc"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:01:26.025Z",
+                    "reviewed_at": "2026-10-22T05:55:28.709Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
                     "topic": "technical_innovation",
                     "basis": "unverified",
-                    "text": "未验证假设：显式绑定会话仓库和CLI摘要、以结构化findings/exitStatus返回并由独立策略决定提交放行，可减少检查错目标与报告被忽略。用两个cwd仓库、阻断/干净/CLI崩溃样例核目标和状态；若不能稳定区分，不接硬闸门。",
+                    "text": "绑定 CLI 版本、带覆盖率的结构化状态及受限异步执行可把提醒变成可靠本地门槛；尚未实现。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1340906871-dsh-source"
+                        "2026-10-22-02-github-1340906871-dsh-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +301,15 @@
                             "fingerprint": "87e138cdcca2e2929073bb913212dc06769087fc"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:01:26.025Z",
+                    "reviewed_at": "2026-10-22T05:55:28.709Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T08:01:26.025Z",
+            "last_checked_at": "2026-10-22T05:55:28.709Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "87e138cdcca2e2929073bb913212dc06769087fc",
-                "reviewed_at": "2026-10-21T08:01:26.025Z",
+                "reviewed_at": "2026-10-22T05:55:28.709Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -279,57 +325,57 @@
                         "transferability": 5,
                         "simplification": 4
                     },
-                    "rationale": "novelty=0：外部CLI已有检查，本项常规适配。 mechanism=8：argv跨平台接线有限增量，非新扫描机制。 transferability=5：适配可移植但包语义未锁。 simplification=4：省手动入口，阻塞负担仍在。",
+                    "rationale": "现成 CLI 的薄包装，实际检查范围小于描述。",
                     "basis": "interpretation",
                     "score": 17,
                     "evidence_ids": [
-                        "2026-10-21-07-github-1340906871-dsh-source"
+                        "2026-10-22-02-github-1340906871-dsh-source"
                     ]
                 },
                 "business": {
                     "criteria": {
                         "workflow": 9,
-                        "delivery": 0,
+                        "delivery": 8,
                         "reach": 5,
                         "economics": 0
                     },
-                    "rationale": "workflow=9：增加工具入口未改变责任分工。 delivery=0：报告仍属原CLI产物。 reach=5：已有DSH开发者有限便利。 economics=0：无成本结构变化证据。",
+                    "rationale": "提交前提醒有用，但不构成 CI 门槛且同步下载风险。",
                     "basis": "interpretation",
-                    "score": 14,
+                    "score": 22,
                     "evidence_ids": [
-                        "2026-10-21-07-github-1340906871-dsh-source"
+                        "2026-10-22-02-github-1340906871-dsh-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "observe",
-                "reason": "开发者应先固定CLI版本并改为工具会话目录；当前process.cwd与npx未锁版可能查错仓库，修复后再当辅助报告入口。",
+                "reason": "只用作本地候选提醒，核实际 CLI 版本/覆盖率；正式门槛走 CI。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "提交前TODO、秘密与主题检查是明确任务。"
+                        "rationale": "提交前 hygiene 明确。"
                     },
                     "advantage": {
                         "score": 6,
-                        "rationale": "包装CLI省手动调用，但不提供提交门禁。"
+                        "rationale": "一键调用便利，但独立 CLI 可用。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "已核argv及退出码行为，cwd与版本漂移缺口直接影响检查对象。"
+                        "rationale": "固定源码支持参数事实，未运行误报/网络故障。"
                     },
                     "cost": {
                         "score": 5,
-                        "rationale": "npx联网供应链与spawnSync无timeout阻塞增加维护，当前扫描归属不可靠。"
+                        "rationale": "npx 下载、同步阻塞和人工复核成本待测。"
                     }
                 },
                 "score": 47,
                 "revision": "87e138cdcca2e2929073bb913212dc06769087fc",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T05:55:28.709Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-07-github-1340906871-dsh-source"
+                    "2026-10-22-02-github-1340906871-dsh-source"
                 ],
                 "dependencies": [
                     {
@@ -354,95 +400,57 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T07:52:12Z",
-            "analysis_sha256": "f391917f7075ddf9a411a1fd8f81ca5d281d73c78615ba0614d7636f0a10d29f"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "23282531d6435694b057944d2c8d20b3c8b5e91985c8c7f6f5139ab1370ef998"
         },
         "publication.metadata": "data/plugins/akimiya-z--codex-guard--dsh/META.json",
         "publication.summaries": {
-            "text": "在DSH中调用codex-guard CLI，返回提交前卫生检查报告。",
+            "text": "DSH 单工具包装 codex-guard CLI，执行提交前本地 diff hygiene 扫描。",
             "revision": "87e138cdcca2e2929073bb913212dc06769087fc",
             "source_url": "https://github.com/Akimiya-z/codex-guard/blob/87e138cdcca2e2929073bb913212dc06769087fc/README.md"
         },
         "publication.capabilities": {
             "revision": "87e138cdcca2e2929073bb913212dc06769087fc",
             "items": {
-                "模型工具": "codex_guard提交卫生检查CLI适配"
-            }
+                "模型工具": "codex_guard 本地 CLI 扫描适配"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| codex_guard | 提交前扫描 | 不查 CI/PR |\n| --git ref | 比较变更 | 不传 --commits |\n| npx 调用 | 获取 CLI | 未锁版本/同步无超时 |"
         },
         "publication.advice": {
             "revision": "87e138cdcca2e2929073bb913212dc06769087fc",
-            "text": "先在隔离仓库核对实际扫描目录与CLI版本；报告入口不能替代提交前硬性检查。"
+            "text": "作为提交前提示使用，始终看扫描覆盖和命令状态；CI 保护单独配置。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/akimiya-z--codex-guard--dsh",
-        "reports": "# dsh-codex-guard\n\n> 在DSH中调用codex-guard CLI，返回提交前卫生检查报告。\n\n## 使用建议\n\n先在隔离仓库核对实际扫描目录与CLI版本；报告入口不能替代提交前硬性检查。\n\n**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，插件与依赖流程的实际运行尚未验证；未来假设未验证。\n\n## 洞察短评\n\n- **用途**：开发者让Agent检查当前仓库的TODO、秘密及提交主题，报告仍需人工判断。\n- **亮点**：本组件的增量是可被模型发现的CLI适配和跨平台argv安全调用。未在此组件实现检测算法，不能将整仓规则、Action流程或CLI迭代计为本组件技术贡献。\n- **思考**：工作目录固定process.cwd而不是工具会话工作区，可能检查另一个仓库；npx未锁版本，固定dsh提交并不能固定检测语义。退出码1被普通字符串返回，是否允许提交仍由外部流程决定。\n- **建议**：未验证假设：显式绑定会话仓库和CLI摘要、以结构化findings/exitStatus返回并由独立策略决定提交放行，可减少检查错目标与报告被忽略。用两个cwd仓库、阻断/干净/CLI崩溃样例核目标和状态；若不能稳定区分，不接硬闸门。\n\n## 场景与替代办法\n\n参照直接运行codex-guard CLI/GitHub Action；本组件只提供DSH模型工具入口，扫描规则属于外部CLI而非dsh目录原创。\n\n## 能力清单\n\n- **模型工具**：codex_guard提交卫生检查CLI适配\n\n## 依赖与流程\n\ndsh/index.js注册codex_guard，spawnSync npx --yes codex-guard，ref以argv传入；Windows寻找npx-cli.js由Node执行，避免cmd解释。\n\n宿主tools、Node/npm/npx、首次可用网络与外部codex-guard包；CLI未固定版本且不随此组件源码验证。\n\n模型调用ref/json→同步执行CLI→返回stdout或stderr；非零可表示发现阻断项，本适配不抛出该状态，也不拦截提交。\n\n## 成本与效果\n\n首次下载和后续CLI变化有网络/供应链维护成本，spawnSync阻塞宿主线程且无显式timeout；模型阅读报告另有token和人工复核，未测单位成本。\n\n省去手工调用步骤，无误报率、漏报率或交付收益证据。\n\n## 核心贡献\n\n本组件的增量是可被模型发现的CLI适配和跨平台argv安全调用。未在此组件实现检测算法，不能将整仓规则、Action流程或CLI迭代计为本组件技术贡献。\n\n## 关键质疑\n\n工作目录固定process.cwd而不是工具会话工作区，可能检查另一个仓库；npx未锁版本，固定dsh提交并不能固定检测语义。退出码1被普通字符串返回，是否允许提交仍由外部流程决定。\n\n## 工程亮点\n\nref不经shell、Windows原生Node调用npx脚本是具体接线；同步子进程与退出码文本化是关键复用代价。\n\n源码依据：[dsh/index.js](https://github.com/Akimiya-z/codex-guard/blob/87e138cdcca2e2929073bb913212dc06769087fc/dsh/index.js)、[dsh/cordis.patch.yml](https://github.com/Akimiya-z/codex-guard/blob/87e138cdcca2e2929073bb913212dc06769087fc/dsh/cordis.patch.yml)。\n\n## 未来设计假设（未验证）\n\n未验证假设：显式绑定会话仓库和CLI摘要、以结构化findings/exitStatus返回并由独立策略决定提交放行，可减少检查错目标与报告被忽略。用两个cwd仓库、阻断/干净/CLI崩溃样例核目标和状态；若不能稳定区分，不接硬闸门。\n\n只在隔离仓库未来验证会话目标、固定CLI、超时和状态语义；本轮未下载/运行CLI。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：dsh；内容摘要：6bb00abcd95ec095ea9ad7ad23ea6692191cd55dad05a8b8b9d1959d7006fe0e。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 1 | 96 | 75 | 17 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[Akimiya-z/codex-guard](https://github.com/Akimiya-z/codex-guard)\n- **版本号**：适配组件未单独声明；仓库根CLI包为1.9.0（不代表本组件独立版本）（[固定提交 87e138cd](https://github.com/Akimiya-z/codex-guard/tree/87e138cdcca2e2929073bb913212dc06769087fc)）\n- **版本日期**：2026-09-01（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：dsh/index.js、dsh/cordis.patch.yml、作者README、package与固定范围inventory；源码抽读不等于完整审计。\n- 未验证：插件执行、测试、安装、真实宿主与独立采用。\n- 证据限制：固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。\n- 下一步：只在隔离仓库未来验证会话目标、固定CLI、超时和状态语义；本轮未下载/运行CLI。\n",
+        "reports": "# dsh-codex-guard\n\n> DSH 单工具包装 codex-guard CLI，执行提交前本地 diff hygiene 扫描。\n\n## 研究范围\n\n- **仓库**：[Akimiya-z/codex-guard](https://github.com/Akimiya-z/codex-guard)\n- **版本号**：1.9.0（[固定提交 87e138cdcca2e2929073bb913212dc06769087fc](https://github.com/Akimiya-z/codex-guard/tree/87e138cdcca2e2929073bb913212dc06769087fc)）\n- **版本日期**：2026-09-01（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定源码支持本地扫描包装；描述中的提交主题检查未传 --commits，CI/PR 能力不在该组件内。\n\n## 洞察短评\n\n- **用途**：Agent 提交前检查未完成标记和密钥候选；不得取代 PR CI/人工审阅。\n- **亮点**：把已有 codex-guard CLI 作为 DSH 工具暴露，并避免 Windows cmd shell 解析 ref。详见[Q02](#research-q02)。\n- **思考**：未传 --commits 却描述会查提交主题；同步 npx 无超时/版本锁，运行失败也只返回字符串。详见[Q03](#research-q03)。\n- **建议**：绑定 CLI 版本、带覆盖率的结构化状态及受限异步执行可把提醒变成可靠本地门槛；尚未实现。详见[Q05](#research-q05)。\n\n采用建议：作为提交前提示使用，始终看扫描覆盖和命令状态；CI 保护单独配置。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n把已有 codex-guard CLI 作为 DSH 工具暴露，并避免 Windows cmd shell 解析 ref。详见[Q02](#research-q02)。\n\n## 关键质疑\n\n未传 --commits 却描述会查提交主题；同步 npx 无超时/版本锁，运行失败也只返回字符串。详见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n绑定 CLI 版本、带覆盖率的结构化状态及受限异步执行可把提醒变成可靠本地门槛；尚未实现。详见[Q05](#research-q05)。\n\n隔离 Git 样本含 TODO、密钥、坏提交主题和大/二进制未跟踪文件，模拟 npm 缺网/长输出，核错误和覆盖状态。\n\n## 场景与替代办法\n\nAgent 提交前检查未完成标记和密钥候选；不得取代 PR CI/人工审阅。\n\n独立 codex-guard CLI 或 git diff + secret/TODO 扫描；DSH 包仅缩短入口。\n\n## 依赖与流程\n\n| 条件 | 用途 | 失败时 |\n| --- | --- | --- |\n| DSH tools/dsh-tools | 注册 | 工具不可见 |\n| npm/npx/网络或缓存 | CLI 获取 | 阻塞/失败 |\n| Git 仓库/diff | 扫描 | 无效结果 |\n\n| 步骤 | 动作 | 判据 |\n| --- | --- | --- |\n| 调用 | 指定 ref 或未提交变更 | CLI 成功运行 |\n| 审核 | 看 findings/coverage | 无漏扫且候选被核 |\n| CI | 独立远端门槛 | 正式状态为绿 |\n\n## 成本与效果\n\n| 阶段 | 投入 | 未知 |\n| --- | --- | --- |\n| 安装 | DSH 子包与 npm/Git | 版本漂移 |\n| 扫描 | 同步 npx/本地 diff | 首次等待/阻塞 |\n| 审阅 | 核 findings 与 skipped | 误报/漏报 |\n\n| 结果 | 源码支持 | 不支持/未证实 |\n| --- | --- | --- |\n| 本地扫描 | --git diff | PR CI/评论不在子包 |\n| 提交主题 | 描述提及 | 没传 --commits |\n| 机读 | --json 可选 | 错误仍字符串 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**把 DSH 子包的本地 CLI 包装与主仓 GitHub Action 能力清楚分开。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · DSH 子组件能在提交前检查什么，与仓库 GitHub Action 有何不同？\n\n**研究主题：**场景与需求\n\n#### 完整回答\n\n这里的目标是 codex-guard 仓库 dsh/ 子组件，只向 DSH 注册 codex_guard 工具，调用本地 CLI 扫当前仓库未提交改动或相对 ref 的 diff。仓库主 README 讲 GitHub PR Action 的 CI 状态、评论、注释等能力不能迁移给这个 DSH 工具；本组件没有 GitHub API 访问或 PR 评论。合格结果是本地候选报告被人工阅读后决定是否提交，基线是 git diff + secret/TODO 扫描和常规 CI。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[dsh/package.json:1-27](https://github.com/Akimiya-z/codex-guard/blob/87e138cdcca2e2929073bb913212dc06769087fc/dsh/package.json#L1-L27)\n\n子包身份。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\n{\n  \"name\": \"dsh-codex-guard\",\n  \"version\": \"1.9.0\",\n  \"description\": \"DeepSeek Harness tool: pre-submit hygiene checks (TODO leftovers, hardcoded secrets, commit subjects) for agent-authored pull requests.\",\n  \"type\": \"module\",\n  \"main\": \"index.js\",\n  \"files\": [\n    \"index.js\",\n    \"cordis.patch.yml\"\n  ],\n  \"keywords\": [\n    \"dsh\",\n    \"deepseek-harness\",\n    \"codex-guard\",\n    \"code-review\",\n    \"quality-gate\"\n  ],\n  \"license\": \"MIT\",\n  \"peerDependencies\": {\n    \"@deepseek-ai/cordis\": \">=0.1.0-rc.1 <0.2.0 || >=0.2.0\",\n    \"@deepseek-ai/dsh-tools\": \">=0.1.0-rc.1 <0.2.0 || >=0.2.0\"\n  },\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    }\n  }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[dsh/index.js:38-68](https://github.com/Akimiya-z/codex-guard/blob/87e138cdcca2e2929073bb913212dc06769087fc/dsh/index.js#L38-L68)\n\n本地 CLI 调用。\n\n<details>\n<summary>查看原文（31行）</summary>\n\n```text\n/**\n * Run the codex-guard pre-submit checks inside DeepSeek Harness.\n *\n * The tool shells out to the published CLI (`npx --yes codex-guard`) so the\n * harness only needs a network connection on first use; the checks themselves\n * are the same deterministic TODO/secret/commit scans the GitHub Action runs.\n *\n * Note: the CLI exits 1 when *blocking findings exist* — that is a normal\n * report, not a crash — so we never throw on a nonzero exit code.\n */\nfunction runGuard(ref, asJson) {\n  const invocation = npxInvocation()\n  if (!invocation) {\n    return 'codex-guard failed: could not locate npm npx-cli.js next to the active Node installation'\n  }\n  const args = [...invocation.prefix, '--yes', 'codex-guard']\n  if (ref) {\n    args.push('--git', ref)\n  } else {\n    args.push('--git') // default: uncommitted changes in the current repo\n  }\n  if (asJson) args.push('--json')\n  const res = spawnSync(invocation.command, args, {\n    cwd: process.cwd(),\n    encoding: 'utf8',\n  })\n  if (res.error) return `codex-guard failed: ${res.error.message}`\n  const out = (res.stdout || '').trim()\n  if (out) return out\n  return (res.stderr || '').trim() || `codex-guard exited with status ${res.status}`\n}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[dsh/index.js:70-96](https://github.com/Akimiya-z/codex-guard/blob/87e138cdcca2e2929073bb913212dc06769087fc/dsh/index.js#L70-L96)\n\n只注册一个工具。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\nexport function apply(ctx) {\n  ctx.tools.register(\n    defineTool({\n      name: 'codex_guard',\n      description:\n        'Run pre-submit hygiene checks on the current repository: TODO/FIXME leftovers, hardcoded secrets, and non-conventional commit subjects. Exit code 0 means clean; a report is returned either way.',\n      parameters: {\n        ref: {\n          type: 'string',\n          description:\n            'Git ref to diff against, e.g. origin/main. Omit to scan uncommitted changes.',\n        },\n        json: {\n          type: 'boolean',\n          description: 'Return the machine-readable JSON report.',\n        },\n      },\n      output: {\n        schema: { type: 'string' },\n        render: (_args, value) => [{ type: 'text', text: value }],\n      },\n      async execute(args) {\n        return runGuard(args.ref, args.json)\n      },\n    })\n  )\n}\n```\n\n</details>\n\n**依据 4 · 作者声明**：[README.md:42-55](https://github.com/Akimiya-z/codex-guard/blob/87e138cdcca2e2929073bb913212dc06769087fc/README.md#L42-L55)\n\n根仓 Action 功能说明，非 DSH 功能。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n## How it works\n\nCodex Guard runs on `pull_request`, figures out whether the PR looks\nagent-generated (via label, branch prefix, or title), and then:\n\n| Check | What it flags |\n| --- | --- |\n| 🧹 TODO scan | `TODO` / `FIXME` / `XXX` / `HACK` / `WIP` markers on **added lines only** |\n| 🔐 Secret scan | AWS (access + secret keys), GitHub, Google, OpenAI, Anthropic, Slack, Stripe, npm, SendGrid, Telegram, Azure connection strings, JWTs, hardcoded credentials, connection strings (values are redacted in reports) |\n| 💬 Commit hygiene | Subjects that don't match conventional commits, empty subjects |\n| 🧪 CI status | Failing status checks **or** check runs on the PR head commit |\n\nEach finding is posted as a GitHub **check-run annotation at the exact file and\nline**, plus a human-readable summary comment on the PR.\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 工具怎样启动 CLI、传 ref 并返回结果？\n\n**研究主题：**功能与机制、贡献与相对优势\n\n#### 完整回答\n\nrunGuard 在非 Windows 直接调用 npx，在 Windows 定位 npx-cli.js 后用当前 node 运行，避免通过 cmd.exe 解析 ref；使用 spawnSync 参数数组，拼 --yes codex-guard --git [ref] [--json]，cwd 为 DSH 进程当前工作目录。CLI 非零退出不抛异常，而是把 stdout/stderr 文本当工具结果。增量是让 agent 在 DSH 对话中调用现成 CLI；TODO/secret 规则来自主仓 CLI，不是 DSH 子包独有。Windows/其他平台实际安装和 PATH 尚未试。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[dsh/index.js:9-36](https://github.com/Akimiya-z/codex-guard/blob/87e138cdcca2e2929073bb913212dc06769087fc/dsh/index.js#L9-L36)\n\nWindows npx 启动安全设计。\n\n<details>\n<summary>查看原文（28行）</summary>\n\n```text\n/**\n * On Windows, invoke npm's JavaScript entry point through the active Node\n * binary. Calling the npx.cmd shim directly would require cmd.exe, which\n * would turn a user-provided git ref into shell input. Standard Node installs\n * ship this script alongside node.exe; npm_execpath handles managed installs.\n */\nexport function npxInvocation({\n  platform = process.platform,\n  nodePath = process.execPath,\n  env = process.env,\n  fileExists = existsSync,\n} = {}) {\n  if (platform !== 'win32') return { command: 'npx', prefix: [] }\n\n  const pathApi = win32\n  const fromNpm = env.npm_execpath\n    ? pathApi.join(pathApi.dirname(env.npm_execpath), 'npx-cli.js')\n    : null\n  const bundled = pathApi.join(\n    pathApi.dirname(nodePath),\n    'node_modules',\n    'npm',\n    'bin',\n    'npx-cli.js'\n  )\n  const cli = [fromNpm, bundled].find((candidate) => candidate && fileExists(candidate))\n  return cli ? { command: nodePath, prefix: [cli] } : null\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[dsh/index.js:48-68](https://github.com/Akimiya-z/codex-guard/blob/87e138cdcca2e2929073bb913212dc06769087fc/dsh/index.js#L48-L68)\n\n同步 spawn 和输出选择。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\nfunction runGuard(ref, asJson) {\n  const invocation = npxInvocation()\n  if (!invocation) {\n    return 'codex-guard failed: could not locate npm npx-cli.js next to the active Node installation'\n  }\n  const args = [...invocation.prefix, '--yes', 'codex-guard']\n  if (ref) {\n    args.push('--git', ref)\n  } else {\n    args.push('--git') // default: uncommitted changes in the current repo\n  }\n  if (asJson) args.push('--json')\n  const res = spawnSync(invocation.command, args, {\n    cwd: process.cwd(),\n    encoding: 'utf8',\n  })\n  if (res.error) return `codex-guard failed: ${res.error.message}`\n  const out = (res.stdout || '').trim()\n  if (out) return out\n  return (res.stderr || '').trim() || `codex-guard exited with status ${res.status}`\n}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[dsh/index.js:70-96](https://github.com/Akimiya-z/codex-guard/blob/87e138cdcca2e2929073bb913212dc06769087fc/dsh/index.js#L70-L96)\n\n工具注册。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\nexport function apply(ctx) {\n  ctx.tools.register(\n    defineTool({\n      name: 'codex_guard',\n      description:\n        'Run pre-submit hygiene checks on the current repository: TODO/FIXME leftovers, hardcoded secrets, and non-conventional commit subjects. Exit code 0 means clean; a report is returned either way.',\n      parameters: {\n        ref: {\n          type: 'string',\n          description:\n            'Git ref to diff against, e.g. origin/main. Omit to scan uncommitted changes.',\n        },\n        json: {\n          type: 'boolean',\n          description: 'Return the machine-readable JSON report.',\n        },\n      },\n      output: {\n        schema: { type: 'string' },\n        render: (_args, value) => [{ type: 'text', text: value }],\n      },\n      async execute(args) {\n        return runGuard(args.ref, args.json)\n      },\n    })\n  )\n}\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/cli.js:267-331](https://github.com/Akimiya-z/codex-guard/blob/87e138cdcca2e2929073bb913212dc06769087fc/src/cli.js#L267-L331)\n\nCLI 参数语义。\n\n<details>\n<summary>查看原文（65行）</summary>\n\n```text\nfunction parseArgs(argv) {\n  const opts = {\n    diffFile: null,\n    git: false,\n    gitRef: null,\n    patterns: null,\n    exclude: [],\n    excludeExplicit: false,\n    failOn: [],\n    failOnExplicit: false,\n    preset: null,\n    configPath: '.github/codex-guard.yml',\n    configExplicit: false,\n    noConfig: false,\n    checkCommits: false,\n    warnTodos: false,\n    json: false,\n    help: false,\n  };\n  for (let i = 0; i < argv.length; i++) {\n    const arg = argv[i];\n    const next = () => {\n      if (i + 1 >= argv.length) throw new UsageError(`missing value for ${arg}`);\n      return argv[++i];\n    };\n    switch (arg) {\n      case '--diff': opts.diffFile = next(); break;\n      case '--git':\n        // `--git` with no ref scans uncommitted changes (git diff HEAD).\n        opts.git = true;\n        if (i + 1 < argv.length && !argv[i + 1].startsWith('--')) opts.gitRef = argv[++i];\n        break;\n      case '--patterns': opts.patterns = next().split(',').map((s) => s.trim()).filter(Boolean); break;\n      case '--commit-pattern':\n        opts.commitPattern = next();\n        opts.commitPatternExplicit = true;\n        break;\n      case '--exclude':\n        opts.exclude = next().split(',').map((s) => s.trim()).filter(Boolean);\n        opts.excludeExplicit = true;\n        break;\n      case '--fail-on':\n        opts.failOn = next().split(',').map((s) => s.trim()).filter(Boolean);\n        opts.failOnExplicit = true;\n        break;\n      case '--preset':\n        opts.preset = next().toLowerCase();\n        if (!PRESET_NAMES.includes(opts.preset)) {\n          throw new UsageError(`unknown preset: ${opts.preset}`);\n        }\n        break;\n      case '--config':\n        opts.configPath = next();\n        opts.configExplicit = true;\n        break;\n      case '--no-config': opts.noConfig = true; break;\n      case '--commits': opts.checkCommits = true; break;\n      case '--warn-todos': opts.warnTodos = true; break;\n      case '--json': opts.json = true; break;\n      case '-h':\n      case '--help': opts.help = true; break;\n      default: throw new UsageError(`unknown option: ${arg}`);\n    }\n  }\n  if (!opts.help && !opts.diffFile && !opts.git) {\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 工具描述的 commit/CI 保障是否由实际调用提供？\n\n**研究主题：**缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\nDSH 工具描述声称检查非规范提交主题，但 runGuard 没有传 CLI 的 --commits；根 CLI 说明该标志才启用提交主题检查，因此该工具默认只检查本地内容而不会按描述检查 commit 主题。它也不调用 GitHub Action CI 状态检查，不能据此宣称 PR 绿灯。spawnSync 未设超时或 CLI 版本，也未显式配置输出缓冲策略，使用运行时默认设置，npx --yes 首次可能下载最新 CLI，若网络卡住会阻塞宿主线程；失败时返回字符串，用户难从结构上区分“无问题”与运行故障。无 ref 时 CLI 包含 tracked/untracked，但大文件/二进制和超限文件会跳过，报告覆盖率须看清。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[dsh/index.js:38-68](https://github.com/Akimiya-z/codex-guard/blob/87e138cdcca2e2929073bb913212dc06769087fc/dsh/index.js#L38-L68)\n\n调用参数无 --commits 和无 timeout。\n\n<details>\n<summary>查看原文（31行）</summary>\n\n```text\n/**\n * Run the codex-guard pre-submit checks inside DeepSeek Harness.\n *\n * The tool shells out to the published CLI (`npx --yes codex-guard`) so the\n * harness only needs a network connection on first use; the checks themselves\n * are the same deterministic TODO/secret/commit scans the GitHub Action runs.\n *\n * Note: the CLI exits 1 when *blocking findings exist* — that is a normal\n * report, not a crash — so we never throw on a nonzero exit code.\n */\nfunction runGuard(ref, asJson) {\n  const invocation = npxInvocation()\n  if (!invocation) {\n    return 'codex-guard failed: could not locate npm npx-cli.js next to the active Node installation'\n  }\n  const args = [...invocation.prefix, '--yes', 'codex-guard']\n  if (ref) {\n    args.push('--git', ref)\n  } else {\n    args.push('--git') // default: uncommitted changes in the current repo\n  }\n  if (asJson) args.push('--json')\n  const res = spawnSync(invocation.command, args, {\n    cwd: process.cwd(),\n    encoding: 'utf8',\n  })\n  if (res.error) return `codex-guard failed: ${res.error.message}`\n  const out = (res.stdout || '').trim()\n  if (out) return out\n  return (res.stderr || '').trim() || `codex-guard exited with status ${res.status}`\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[dsh/index.js:70-96](https://github.com/Akimiya-z/codex-guard/blob/87e138cdcca2e2929073bb913212dc06769087fc/dsh/index.js#L70-L96)\n\n工具描述包含 commit。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\nexport function apply(ctx) {\n  ctx.tools.register(\n    defineTool({\n      name: 'codex_guard',\n      description:\n        'Run pre-submit hygiene checks on the current repository: TODO/FIXME leftovers, hardcoded secrets, and non-conventional commit subjects. Exit code 0 means clean; a report is returned either way.',\n      parameters: {\n        ref: {\n          type: 'string',\n          description:\n            'Git ref to diff against, e.g. origin/main. Omit to scan uncommitted changes.',\n        },\n        json: {\n          type: 'boolean',\n          description: 'Return the machine-readable JSON report.',\n        },\n      },\n      output: {\n        schema: { type: 'string' },\n        render: (_args, value) => [{ type: 'text', text: value }],\n      },\n      async execute(args) {\n        return runGuard(args.ref, args.json)\n      },\n    })\n  )\n}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/cli.js:13-21](https://github.com/Akimiya-z/codex-guard/blob/87e138cdcca2e2929073bb913212dc06769087fc/src/cli.js#L13-L21)\n\nCLI 说明 --commits 才查主题。\n\n```text\n *   node src/cli.js --git origin/main [--commits] [options]\n *\n * Options:\n *   --patterns TODO,FIXME,XXX   markers to flag (default: TODO,FIXME,XXX,HACK,WIP)\n *   --exclude docs/,test/       file path substrings to skip in the secret scan\n *   --fail-on todos,secrets,... which checks block (default: legacy — todos &\n *                               secrets block, commits block when checked)\n *   --warn-todos                TODO findings are non-blocking\n *   --commits                   with --git: also check commit subjects in range\n```\n\n**依据 4 · 源码核查**：[src/local-files.js:26-82](https://github.com/Akimiya-z/codex-guard/blob/87e138cdcca2e2929073bb913212dc06769087fc/src/local-files.js#L26-L82)\n\nuntracked 跳过边界。\n\n<details>\n<summary>查看原文（57行）</summary>\n\n```text\n/**\n * Read Git-ignored-aware untracked files as all-added patches.\n *\n * `git diff` does not include untracked files, but those are exactly where a\n * newly-created secret or unfinished-work marker often lives before the first\n * commit. NUL output keeps unusual filenames (spaces/newlines) unambiguous.\n */\nfunction collectUntrackedFiles({ execGit, root, readBuffer, statFile } = {}) {\n  const read = readBuffer || ((filename) => fs.readFileSync(filename));\n  const stat = statFile || ((filename) => fs.lstatSync(filename));\n  const output = execGit(['ls-files', '--others', '--exclude-standard', '-z']);\n  const names = String(output).split('\\0').filter(Boolean);\n  const files = [];\n  const skipped = [];\n\n  for (const filename of names) {\n    const absolute = safeRepoPath(root, filename);\n    if (!absolute) {\n      skipped.push({ file: filename, reason: 'path escapes repository root' });\n      continue;\n    }\n\n    let info;\n    try {\n      info = stat(absolute);\n    } catch {\n      skipped.push({ file: filename, reason: 'file became unavailable while scanning' });\n      continue;\n    }\n    if (!info.isFile()) {\n      skipped.push({ file: filename, reason: 'not a regular file' });\n      continue;\n    }\n    if (info.size > MAX_UNTRACKED_BYTES) {\n      skipped.push({\n        file: filename,\n        reason: `larger than ${MAX_UNTRACKED_BYTES / 1024 / 1024} MiB local safety limit`,\n      });\n      continue;\n    }\n\n    let buffer;\n    try {\n      buffer = read(absolute);\n    } catch {\n      skipped.push({ file: filename, reason: 'file could not be read' });\n      continue;\n    }\n    const bytes = Buffer.isBuffer(buffer) ? buffer : Buffer.from(buffer);\n    if (bytes.includes(0)) {\n      skipped.push({ file: filename, reason: 'binary file' });\n      continue;\n    }\n    files.push({ filename, patch: addedFilePatch(bytes.toString('utf8')), untracked: true });\n  }\n\n  return { files, skipped };\n```\n\n</details>\n\n#### 缺口\n\n- 未执行本地 CLI/DSH。\n  **影响：**实际下载、阻塞和输出呈现未知。\n  **进一步探讨：**隔离假 npm/仓库测试缺网、超长输出、提交主题。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 使用本地 guard 的依赖与代价是什么？\n\n**研究主题：**依赖、兼容与流程、效果与总成本\n\n#### 完整回答\n\n子包 1.9.0 MIT，peer 要 Cordis 与 dsh-tools，但 CLI 通过未锁版本的 npx 调用外部 npm 包；需要 Node/npm/npx、可用网络或本地缓存、Git 工作树及可读 diff。首次下载和同步扫描有等待与供应链更新成本；规则扫描误报/漏报、未跟踪文件 8MiB 上限等决定复核成本。与 GitHub Action 的远端 PR 保护是另一部署路径。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[dsh/package.json:1-27](https://github.com/Akimiya-z/codex-guard/blob/87e138cdcca2e2929073bb913212dc06769087fc/dsh/package.json#L1-L27)\n\n子包 peer 和许可。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\n{\n  \"name\": \"dsh-codex-guard\",\n  \"version\": \"1.9.0\",\n  \"description\": \"DeepSeek Harness tool: pre-submit hygiene checks (TODO leftovers, hardcoded secrets, commit subjects) for agent-authored pull requests.\",\n  \"type\": \"module\",\n  \"main\": \"index.js\",\n  \"files\": [\n    \"index.js\",\n    \"cordis.patch.yml\"\n  ],\n  \"keywords\": [\n    \"dsh\",\n    \"deepseek-harness\",\n    \"codex-guard\",\n    \"code-review\",\n    \"quality-gate\"\n  ],\n  \"license\": \"MIT\",\n  \"peerDependencies\": {\n    \"@deepseek-ai/cordis\": \">=0.1.0-rc.1 <0.2.0 || >=0.2.0\",\n    \"@deepseek-ai/dsh-tools\": \">=0.1.0-rc.1 <0.2.0 || >=0.2.0\"\n  },\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    }\n  }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[dsh/index.js:48-68](https://github.com/Akimiya-z/codex-guard/blob/87e138cdcca2e2929073bb913212dc06769087fc/dsh/index.js#L48-L68)\n\nnpx 未锁版本。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\nfunction runGuard(ref, asJson) {\n  const invocation = npxInvocation()\n  if (!invocation) {\n    return 'codex-guard failed: could not locate npm npx-cli.js next to the active Node installation'\n  }\n  const args = [...invocation.prefix, '--yes', 'codex-guard']\n  if (ref) {\n    args.push('--git', ref)\n  } else {\n    args.push('--git') // default: uncommitted changes in the current repo\n  }\n  if (asJson) args.push('--json')\n  const res = spawnSync(invocation.command, args, {\n    cwd: process.cwd(),\n    encoding: 'utf8',\n  })\n  if (res.error) return `codex-guard failed: ${res.error.message}`\n  const out = (res.stdout || '').trim()\n  if (out) return out\n  return (res.stderr || '').trim() || `codex-guard exited with status ${res.status}`\n}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/local-files.js:6-82](https://github.com/Akimiya-z/codex-guard/blob/87e138cdcca2e2929073bb913212dc06769087fc/src/local-files.js#L6-L82)\n\n本地未跟踪文件限制。\n\n<details>\n<summary>查看原文（77行）</summary>\n\n```text\nconst MAX_UNTRACKED_BYTES = 8 * 1024 * 1024;\n\nfunction addedFilePatch(text) {\n  if (!text) return '';\n  const normalized = String(text).replace(/\\r\\n?/g, '\\n');\n  const lines = normalized.endsWith('\\n')\n    ? normalized.slice(0, -1).split('\\n')\n    : normalized.split('\\n');\n  if (!lines.length) return '';\n  return `@@ -0,0 +1,${lines.length} @@\\n${lines.map((line) => `+${line}`).join('\\n')}\\n`;\n}\n\nfunction safeRepoPath(root, filename) {\n  const resolvedRoot = path.resolve(root);\n  const resolved = path.resolve(resolvedRoot, filename);\n  return resolved === resolvedRoot || resolved.startsWith(`${resolvedRoot}${path.sep}`)\n    ? resolved\n    : null;\n}\n\n/**\n * Read Git-ignored-aware untracked files as all-added patches.\n *\n * `git diff` does not include untracked files, but those are exactly where a\n * newly-created secret or unfinished-work marker often lives before the first\n * commit. NUL output keeps unusual filenames (spaces/newlines) unambiguous.\n */\nfunction collectUntrackedFiles({ execGit, root, readBuffer, statFile } = {}) {\n  const read = readBuffer || ((filename) => fs.readFileSync(filename));\n  const stat = statFile || ((filename) => fs.lstatSync(filename));\n  const output = execGit(['ls-files', '--others', '--exclude-standard', '-z']);\n  const names = String(output).split('\\0').filter(Boolean);\n  const files = [];\n  const skipped = [];\n\n  for (const filename of names) {\n    const absolute = safeRepoPath(root, filename);\n    if (!absolute) {\n      skipped.push({ file: filename, reason: 'path escapes repository root' });\n      continue;\n    }\n\n    let info;\n    try {\n      info = stat(absolute);\n    } catch {\n      skipped.push({ file: filename, reason: 'file became unavailable while scanning' });\n      continue;\n    }\n    if (!info.isFile()) {\n      skipped.push({ file: filename, reason: 'not a regular file' });\n      continue;\n    }\n    if (info.size > MAX_UNTRACKED_BYTES) {\n      skipped.push({\n        file: filename,\n        reason: `larger than ${MAX_UNTRACKED_BYTES / 1024 / 1024} MiB local safety limit`,\n      });\n      continue;\n    }\n\n    let buffer;\n    try {\n      buffer = read(absolute);\n    } catch {\n      skipped.push({ file: filename, reason: 'file could not be read' });\n      continue;\n    }\n    const bytes = Buffer.isBuffer(buffer) ? buffer : Buffer.from(buffer);\n    if (bytes.includes(0)) {\n      skipped.push({ file: filename, reason: 'binary file' });\n      continue;\n    }\n    files.push({ filename, patch: addedFilePatch(bytes.toString('utf8')), untracked: true });\n  }\n\n  return { files, skipped };\n```\n\n</details>\n\n**依据 4 · 作者声明**：[README.md:99-165](https://github.com/Akimiya-z/codex-guard/blob/87e138cdcca2e2929073bb913212dc06769087fc/README.md#L99-L165)\n\nAction 安装与保护路径。\n\n<details>\n<summary>查看原文（67行）</summary>\n\n````text\n## Quick start\n\nFrom the root of your Git repository:\n\n```bash\nnpx --yes codex-guard init\ngit add .github/workflows/codex-guard.yml\ngit commit -m \"ci: add Codex Guard\"\n```\n\nThe installer starts in **observe mode**: findings are annotated, but they do\nnot fail the workflow while you tune the policy. Three setup presets keep the\nrollout explicit:\n\n| Preset | Command | Behavior |\n| --- | --- | --- |\n| Observe | `npx --yes codex-guard init` | Report everything without blocking. |\n| Balanced | `npx --yes codex-guard init --preset balanced` | Block secrets, commit hygiene, and red CI; warn on unfinished markers. |\n| Strict | `npx --yes codex-guard init --preset strict` | Block every default finding. `--strict` remains an alias. |\n\nPrefer to add it by hand? The generated workflow is:\n\n```yaml\n# Generated by codex-guard init\nname: Codex Guard\non:\n  pull_request:\n\npermissions:\n  contents: read\n  statuses: read\n  pull-requests: write\n  checks: write\n\njobs:\n  codex-guard:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: Akimiya-z/codex-guard@v1\n        with:\n          preset: 'observe'\n```\n\nThat's it. Codex Guard now reports on matching PRs without blocking them.\n\n> Upgrading an existing workflow? Add `statuses: read` to its `permissions`\n> block. `checks: write` already includes read access for check runs. Without\n> status access, Codex Guard reports incomplete CI visibility and returns a\n> neutral result instead of claiming every check is green.\n\nOne-click from the [GitHub Actions Marketplace](https://github.com/marketplace/actions/codex-guard-pr-quality-gate).\n\n### Turn on enforcement\n\nAfter a few representative PRs, choose how strongly to enforce:\n\n```yaml\n- uses: Akimiya-z/codex-guard@v1\n  with:\n    preset: 'balanced' # or 'strict'\n```\n\n`balanced` warns on unfinished markers while blocking secrets, commit hygiene,\nand red CI. `strict` blocks every default finding. For a custom mix, use\n`fail-on` and the individual inputs. Then require the status check under\n**Settings → Branches → Require status checks → `Codex Guard`**. A blocking\nfinding will prevent the PR from merging until it is resolved (or the PR is\n````\n\n</details>\n\n#### 缺口\n\n- 未测性能和 npm 版本一致性。\n  **影响：**本地检查可重现性未知。\n  **进一步探讨：**固定 CLI 版本及大小矩阵对照结果。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 怎样把这个工具用于可复核的提交前门槛？\n\n**研究主题：**新假设与验证、采用判断\n\n#### 完整回答\n\n适合当提交前提醒：运行后明确核 CLI 是否启动、扫描了哪些文件、遗漏哪些文件，再由人工检查；不要把工具文本当作 CI/PR 放行。未实现的改进是假设子包绑定同版本 CLI、显式传 --commits（仅有 ref 才查）、异步进程设置超时/输出上限，并返回结构化状态/覆盖率/规则结果；比较当前与改进版的误判、阻塞时间、版本漂移和未检文件数。正式保护仍在 CI 侧配置独立 Action。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[dsh/index.js:48-96](https://github.com/Akimiya-z/codex-guard/blob/87e138cdcca2e2929073bb913212dc06769087fc/dsh/index.js#L48-L96)\n\n当前字符串输出/未锁 npx。\n\n<details>\n<summary>查看原文（49行）</summary>\n\n```text\nfunction runGuard(ref, asJson) {\n  const invocation = npxInvocation()\n  if (!invocation) {\n    return 'codex-guard failed: could not locate npm npx-cli.js next to the active Node installation'\n  }\n  const args = [...invocation.prefix, '--yes', 'codex-guard']\n  if (ref) {\n    args.push('--git', ref)\n  } else {\n    args.push('--git') // default: uncommitted changes in the current repo\n  }\n  if (asJson) args.push('--json')\n  const res = spawnSync(invocation.command, args, {\n    cwd: process.cwd(),\n    encoding: 'utf8',\n  })\n  if (res.error) return `codex-guard failed: ${res.error.message}`\n  const out = (res.stdout || '').trim()\n  if (out) return out\n  return (res.stderr || '').trim() || `codex-guard exited with status ${res.status}`\n}\n\nexport function apply(ctx) {\n  ctx.tools.register(\n    defineTool({\n      name: 'codex_guard',\n      description:\n        'Run pre-submit hygiene checks on the current repository: TODO/FIXME leftovers, hardcoded secrets, and non-conventional commit subjects. Exit code 0 means clean; a report is returned either way.',\n      parameters: {\n        ref: {\n          type: 'string',\n          description:\n            'Git ref to diff against, e.g. origin/main. Omit to scan uncommitted changes.',\n        },\n        json: {\n          type: 'boolean',\n          description: 'Return the machine-readable JSON report.',\n        },\n      },\n      output: {\n        schema: { type: 'string' },\n        render: (_args, value) => [{ type: 'text', text: value }],\n      },\n      async execute(args) {\n        return runGuard(args.ref, args.json)\n      },\n    })\n  )\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/cli.js:294-297](https://github.com/Akimiya-z/codex-guard/blob/87e138cdcca2e2929073bb913212dc06769087fc/src/cli.js#L294-L297)\n\n--git 默认。\n\n```text\n      case '--git':\n        // `--git` with no ref scans uncommitted changes (git diff HEAD).\n        opts.git = true;\n        if (i + 1 < argv.length && !argv[i + 1].startsWith('--')) opts.gitRef = argv[++i];\n```\n\n**依据 3 · 源码核查**：[src/local-files.js:26-82](https://github.com/Akimiya-z/codex-guard/blob/87e138cdcca2e2929073bb913212dc06769087fc/src/local-files.js#L26-L82)\n\n覆盖边界。\n\n<details>\n<summary>查看原文（57行）</summary>\n\n```text\n/**\n * Read Git-ignored-aware untracked files as all-added patches.\n *\n * `git diff` does not include untracked files, but those are exactly where a\n * newly-created secret or unfinished-work marker often lives before the first\n * commit. NUL output keeps unusual filenames (spaces/newlines) unambiguous.\n */\nfunction collectUntrackedFiles({ execGit, root, readBuffer, statFile } = {}) {\n  const read = readBuffer || ((filename) => fs.readFileSync(filename));\n  const stat = statFile || ((filename) => fs.lstatSync(filename));\n  const output = execGit(['ls-files', '--others', '--exclude-standard', '-z']);\n  const names = String(output).split('\\0').filter(Boolean);\n  const files = [];\n  const skipped = [];\n\n  for (const filename of names) {\n    const absolute = safeRepoPath(root, filename);\n    if (!absolute) {\n      skipped.push({ file: filename, reason: 'path escapes repository root' });\n      continue;\n    }\n\n    let info;\n    try {\n      info = stat(absolute);\n    } catch {\n      skipped.push({ file: filename, reason: 'file became unavailable while scanning' });\n      continue;\n    }\n    if (!info.isFile()) {\n      skipped.push({ file: filename, reason: 'not a regular file' });\n      continue;\n    }\n    if (info.size > MAX_UNTRACKED_BYTES) {\n      skipped.push({\n        file: filename,\n        reason: `larger than ${MAX_UNTRACKED_BYTES / 1024 / 1024} MiB local safety limit`,\n      });\n      continue;\n    }\n\n    let buffer;\n    try {\n      buffer = read(absolute);\n    } catch {\n      skipped.push({ file: filename, reason: 'file could not be read' });\n      continue;\n    }\n    const bytes = Buffer.isBuffer(buffer) ? buffer : Buffer.from(buffer);\n    if (bytes.includes(0)) {\n      skipped.push({ file: filename, reason: 'binary file' });\n      continue;\n    }\n    files.push({ filename, patch: addedFilePatch(bytes.toString('utf8')), untracked: true });\n  }\n\n  return { files, skipped };\n```\n\n</details>\n\n**依据 4 · 作者声明**：[README.md:99-165](https://github.com/Akimiya-z/codex-guard/blob/87e138cdcca2e2929073bb913212dc06769087fc/README.md#L99-L165)\n\nCI 侧部署说明。\n\n<details>\n<summary>查看原文（67行）</summary>\n\n````text\n## Quick start\n\nFrom the root of your Git repository:\n\n```bash\nnpx --yes codex-guard init\ngit add .github/workflows/codex-guard.yml\ngit commit -m \"ci: add Codex Guard\"\n```\n\nThe installer starts in **observe mode**: findings are annotated, but they do\nnot fail the workflow while you tune the policy. Three setup presets keep the\nrollout explicit:\n\n| Preset | Command | Behavior |\n| --- | --- | --- |\n| Observe | `npx --yes codex-guard init` | Report everything without blocking. |\n| Balanced | `npx --yes codex-guard init --preset balanced` | Block secrets, commit hygiene, and red CI; warn on unfinished markers. |\n| Strict | `npx --yes codex-guard init --preset strict` | Block every default finding. `--strict` remains an alias. |\n\nPrefer to add it by hand? The generated workflow is:\n\n```yaml\n# Generated by codex-guard init\nname: Codex Guard\non:\n  pull_request:\n\npermissions:\n  contents: read\n  statuses: read\n  pull-requests: write\n  checks: write\n\njobs:\n  codex-guard:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: Akimiya-z/codex-guard@v1\n        with:\n          preset: 'observe'\n```\n\nThat's it. Codex Guard now reports on matching PRs without blocking them.\n\n> Upgrading an existing workflow? Add `statuses: read` to its `permissions`\n> block. `checks: write` already includes read access for check runs. Without\n> status access, Codex Guard reports incomplete CI visibility and returns a\n> neutral result instead of claiming every check is green.\n\nOne-click from the [GitHub Actions Marketplace](https://github.com/marketplace/actions/codex-guard-pr-quality-gate).\n\n### Turn on enforcement\n\nAfter a few representative PRs, choose how strongly to enforce:\n\n```yaml\n- uses: Akimiya-z/codex-guard@v1\n  with:\n    preset: 'balanced' # or 'strict'\n```\n\n`balanced` warns on unfinished markers while blocking secrets, commit hygiene,\nand red CI. `strict` blocks every default finding. For a custom mix, use\n`fail-on` and the individual inputs. Then require the status check under\n**Settings → Branches → Require status checks → `Codex Guard`**. A blocking\nfinding will prevent the PR from merging until it is resolved (or the PR is\n````\n\n</details>\n\n#### 缺口\n\n- 版本锁/结构化状态/超时未实现。\n  **影响：**不能视为当前能力。\n  **进一步探讨：**隔离实现后与基线比较。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：dsh；内容摘要：6bb00abcd95ec095ea9ad7ad23ea6692191cd55dad05a8b8b9d1959d7006fe0e。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 1 | 96 | 75 | 17 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| codex_guard | 提交前扫描 | 不查 CI/PR |\n| --git ref | 比较变更 | 不传 --commits |\n| npx 调用 | 获取 CLI | 未锁版本/同步无超时 |\n\n## 工程亮点\n\n参数数组避免 shell 拼接；spawnSync 无 timeout/maxBuffer 且 npx --yes 未锁 CLI 版本；返回内容不是结构化通过/失败信号。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 dsh/package.json、dsh/index.js、dsh/cordis.patch.yml、src/cli.js、src/local-files.js、README.md 及固定范围 inventory；组件：dsh。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：审阅固定提交 dsh/ 子组件及直接调用的根 CLI 参数/未跟踪文件源码；未运行目标工具。\n- 下一步：隔离 Git 样本含 TODO、密钥、坏提交主题和大/二进制未跟踪文件，模拟 npm 缺网/长输出，核错误和覆盖状态。\n",
         "metadata": {
             "repository": "Akimiya-z/codex-guard",
             "repository_id": 1340906871,
-            "captured_at": "2026-10-21T07:59:36.171Z",
-            "window_start": "2026-09-21T07:59:36.171Z",
-            "stars": 136,
+            "captured_at": "2026-10-22T05:52:26.306Z",
+            "window_start": "2026-09-22T05:52:26.306Z",
+            "stars": 133,
             "pushed_at": "2026-10-15T20:24:45Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 1,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAkimiya-z%2Fcodex-guard%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E28E:273FF5:6AB7AA:72A0AD:6AD870EB and timestamp 2026-10-21 07:59:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAkimiya-z%2Fcodex-guard%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E43E:50F71:698C3E:7174C6:6AD870EC and timestamp 2026-10-21 07:59:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAkimiya-z%2Fcodex-guard%20is%3Aissue%20created%3A2026-09-21T07%3A59%3A36.171Z..2026-10-21T07%3A59%3A36.171Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E85C:272681:67BA5A:6FA4CE:6AD870EF and timestamp 2026-10-21 07:59:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAkimiya-z%2Fcodex-guard%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T07%3A59%3A36.171Z..2026-10-21T07%3A59%3A36.171Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID EC1A:4DAEE:67ED5A:6FDA45:6AD870F2 and timestamp 2026-10-21 07:59:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAkimiya-z%2Fcodex-guard%20is%3Aissue%20updated%3A2026-09-21T07%3A59%3A36.171Z..2026-10-21T07%3A59%3A36.171Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID EDC6:1FE8E6:73291D:7B15DE:6AD870F3 and timestamp 2026-10-21 07:59:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
-            "npm": {
-                "package_name": "dsh-codex-guard",
-                "captured_at": "2026-10-21T07:59:47.899Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": null,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-codex-guard",
-                "error": "HTTP 404",
-                "publication": {
-                    "first_published_at": null,
-                    "captured_at": "2026-10-21T07:59:47.899Z",
-                    "source_url": "https://registry.npmjs.org/dsh-codex-guard",
-                    "error": "HTTP 404",
-                    "latest_version": null,
-                    "latest_published_at": null,
-                    "latest_error": "HTTP 404"
-                }
-            }
+            "errors": []
         },
         "discovery.plugins": {
             "id": "github:1340906871:dsh",
             "repository": "Akimiya-z/codex-guard",
             "path": "dsh",
             "revision": "87e138cdcca2e2929073bb913212dc06769087fc",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "85b83f7ce26e363c4f4b2849ba15edc9734a1c3c43f22c2fdaea8d8c135f48f2",
                 "code": "87e138cdcca2e2929073bb913212dc06769087fc",
                 "maintenance": "7202b661eed029af699546116db2d42ce82dec5601fb2f4c26ff65191c52ba77"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

@@ -10,7 +10,7 @@
             "repository": "11zld22/dsh-model-info-fill",
             "path": "",
             "aliases": [],
-            "name": "模型信息补全",
+            "name": "dsh-model-info-fill",
             "entry_type": "plugin",
             "technical_category": "model-provider",
             "business_category": "infrastructure",
@@ -27,36 +27,88 @@
             },
             "sources": [
                 {
-                    "id": "20261020-research40-github-1358816037-root-directory-0",
+                    "id": "2026-10-22-02-github-1358816037-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
-                    "retrieved_at": "2026-10-20T03:13:14.863Z",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-22T09:34:52.416Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "20261020-research40-github-1358816037-root-author",
+                    "id": "2026-10-22-02-github-1358816037-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/11zld22/dsh-model-info-fill/blob/d377291f5ef8ad2bccbd54e26e641b9d89016bba/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/11zld22/dsh-model-info-fill",
+                            "commit": "d377291f5ef8ad2bccbd54e26e641b9d89016bba",
+                            "path": "README.md",
+                            "content_sha256": "c4aeb396dad4d2c8bf7ef4a2faa83b93ba775938b3e688fd9797fe83e60af699"
+                        }
+                    ],
                     "revision": "d377291f5ef8ad2bccbd54e26e641b9d89016bba",
-                    "captured_at": "2026-10-20T03:13:14.863Z",
-                    "summary": "从 models.dev 为自定义模型补齐缺失能力，并保留人工确认与未声明状态。",
-                    "artifact": "data/runs/2026-10-20-02/snapshots/11zld22--dsh-model-info-fill/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:34:52.416Z",
+                    "summary": "从models.dev按模型名补自定义供应商缺失容量、图片和思考声明，展示冲突、未匹配与旧猜档待确认。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/11zld22--dsh-model-info-fill/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "20261020-research40-github-1358816037-root-source",
+                    "id": "2026-10-22-02-github-1358816037-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/11zld22/dsh-model-info-fill/blob/d377291f5ef8ad2bccbd54e26e641b9d89016bba/src/index.js",
+                    "url": "https://github.com/11zld22/dsh-model-info-fill/blob/d377291f5ef8ad2bccbd54e26e641b9d89016bba/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/11zld22/dsh-model-info-fill",
+                            "commit": "d377291f5ef8ad2bccbd54e26e641b9d89016bba",
+                            "path": "README.md",
+                            "content_sha256": "c4aeb396dad4d2c8bf7ef4a2faa83b93ba775938b3e688fd9797fe83e60af699"
+                        },
+                        {
+                            "repository_url": "https://github.com/11zld22/dsh-model-info-fill",
+                            "commit": "d377291f5ef8ad2bccbd54e26e641b9d89016bba",
+                            "path": "package.json",
+                            "content_sha256": "af244e8ed03aea8b518b9ac5191b0c25d54707e1a13c1aa33a34abdfe2f44a6a"
+                        },
+                        {
+                            "repository_url": "https://github.com/11zld22/dsh-model-info-fill",
+                            "commit": "d377291f5ef8ad2bccbd54e26e641b9d89016bba",
+                            "path": "src/index.js",
+                            "content_sha256": "b085ad3e1121c71430e3f97b409ab7d3f45863dbccd1cc96096d554dcef2fd2b"
+                        },
+                        {
+                            "repository_url": "https://github.com/11zld22/dsh-model-info-fill",
+                            "commit": "d377291f5ef8ad2bccbd54e26e641b9d89016bba",
+                            "path": "src/catalog.js",
+                            "content_sha256": "d9931442685750b575f50d70ab7e0d390a2e084be39948ec94904ebc495a571f"
+                        },
+                        {
+                            "repository_url": "https://github.com/11zld22/dsh-model-info-fill",
+                            "commit": "d377291f5ef8ad2bccbd54e26e641b9d89016bba",
+                            "path": "src/client.js",
+                            "content_sha256": "2eb9c5733e84290e37d4f3d096c83dd79590a3fa5386cc43bfb72fcda2026adf"
+                        },
+                        {
+                            "repository_url": "https://github.com/11zld22/dsh-model-info-fill",
+                            "commit": "d377291f5ef8ad2bccbd54e26e641b9d89016bba",
+                            "path": "test/catalog.test.mjs",
+                            "content_sha256": "6f7e83b61bf221eb4f3a5f5ed989e9ffd258a3df06a45e619f534a20ff7dfde6"
+                        },
+                        {
+                            "repository_url": "https://github.com/11zld22/dsh-model-info-fill",
+                            "commit": "d377291f5ef8ad2bccbd54e26e641b9d89016bba",
+                            "path": "test/settings-compat.test.mjs",
+                            "content_sha256": "d2e4738c673c3fd0b03bb63fba39c055128fce63185f0121438cffede9eec3f9"
+                        }
+                    ],
                     "revision": "d377291f5ef8ad2bccbd54e26e641b9d89016bba",
-                    "captured_at": "2026-10-20T03:13:14.863Z",
-                    "summary": "核查 src/index.js；Host 拉取并缓存能力目录，构造缺失字段操作，通过 settings.mutate 带版本写入；模型保存可单独调整。",
-                    "artifact": "data/runs/2026-10-20-02/snapshots/11zld22--dsh-model-info-fill/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:34:52.416Z",
+                    "summary": "核查 README.md、package.json、src/index.js、src/catalog.js、src/client.js、test/catalog.test.mjs、test/settings-compat.test.mjs；目录缓存/归一匹配与逐字段一致性，settings revision mutation补缺，事件驱动自动fill，GUI确认未声明/默认档。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/11zld22--dsh-model-info-fill/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "模型名字匹配和百科数据不保证实际端点一致；未验证请求兼容与输出边界。",
+                        "固定全部宿主入口及catalog匹配/补缺关键段、客户端slots定位和两测试样本；不运行目标，不把目录声明作当前模型真值。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -67,9 +119,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "维护多个自定义模型的用户需要减少重复填写上下文、输出上限与推理声明。",
+                    "text": "DSH自定义模型维护者希望减少手查能力字段，仍以实际供应商能力为准。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "20261020-research40-github-1358816037-root-source"
+                        "2026-10-22-02-github-1358816037-root-source"
                     ],
                     "dependencies": [
                         {
@@ -78,16 +130,16 @@
                             "fingerprint": "d377291f5ef8ad2bccbd54e26e641b9d89016bba"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:13:14.863Z",
+                    "reviewed_at": "2026-10-22T09:34:52.416Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "Host 拉取并缓存能力目录，构造缺失字段操作，通过 settings.mutate 带版本写入；模型保存可单独调整。",
+                    "text": "目录缓存/归一匹配与逐字段一致性，settings revision mutation补缺，事件驱动自动fill，GUI确认未声明/默认档。",
                     "evidence_ids": [
-                        "20261020-research40-github-1358816037-root-source"
+                        "2026-10-22-02-github-1358816037-root-source"
                     ],
                     "dependencies": [
                         {
@@ -96,16 +148,16 @@
                             "fingerprint": "d377291f5ef8ad2bccbd54e26e641b9d89016bba"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:13:14.863Z",
+                    "reviewed_at": "2026-10-22T09:34:52.416Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "不凭会思考就编造离散档位是合理边界；默认值仍是用户假设而非外部事实。",
+                    "text": "#### 效果\n\n| 目标 | 源码支持 | 边界 |\n| --- | --- | --- |\n| 少手查字段 | 目录补缺 | 默认不是能力真值 |\n| 少猜思考档 | 未声明与冲突留空 | 变体/供应商仍可能错配 |\n| 保存衔接 | settings revision | 偏好双存储非事务 |",
                     "evidence_ids": [
-                        "20261020-research40-github-1358816037-root-source"
+                        "2026-10-22-02-github-1358816037-root-source"
                     ],
                     "dependencies": [
                         {
@@ -114,16 +166,16 @@
                             "fingerprint": "d377291f5ef8ad2bccbd54e26e641b9d89016bba"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:13:14.863Z",
+                    "reviewed_at": "2026-10-22T09:34:52.416Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "批量维护节省与错误默认值带来的排查成本都需计入，没有测量净收益。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | DSH_HOME备份/目录网络 | 审阅默认及供应商文档 | 先备份模型设置；文档核对工时未知 |\n| 持续使用 | 目录过期刷新/设置计算 | 纠错和能力核对，节时未知 | 无独立模型调用；目录刷新网络和错误配置损失未量化 |\n| 失败恢复 | 原设置/缓存备份 | 清错值、处理宿主迁移 | 插件回退不等宿主迁移回滚；恢复时间未知 |\n",
                     "evidence_ids": [
-                        "20261020-research40-github-1358816037-root-source"
+                        "2026-10-22-02-github-1358816037-root-source"
                     ],
                     "dependencies": [
                         {
@@ -132,16 +184,16 @@
                             "fingerprint": "d377291f5ef8ad2bccbd54e26e641b9d89016bba"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:13:14.863Z",
+                    "reviewed_at": "2026-10-22T09:34:52.416Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "目录缓存、填充计划与版本写入分离可借鉴；与其他补全插件并用可能争写相同字段。",
+                    "text": "纯catalog与新旧settings适配易核查；需catalog-ready、原子cache和身份/来源契约。详见[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "20261020-research40-github-1358816037-root-source"
+                        "2026-10-22-02-github-1358816037-root-source"
                     ],
                     "dependencies": [
                         {
@@ -150,16 +202,16 @@
                             "fingerprint": "d377291f5ef8ad2bccbd54e26e641b9d89016bba"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:13:14.863Z",
+                    "reviewed_at": "2026-10-22T09:34:52.416Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "先核对一个提供商的官方能力，备份配置再补齐，未匹配模型保持显式人工确认。",
+                    "text": "先观察；个人有备份profile关自动补，目录同步完成后逐项手动审阅再补，实际供应商优先。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "20261020-research40-github-1358816037-root-source"
+                        "2026-10-22-02-github-1358816037-root-source"
                     ],
                     "dependencies": [
                         {
@@ -168,16 +220,16 @@
                             "fingerprint": "d377291f5ef8ad2bccbd54e26e641b9d89016bba"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:13:14.863Z",
+                    "reviewed_at": "2026-10-22T09:34:52.416Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "模型名字匹配和百科数据不保证实际端点一致；未验证请求兼容与输出边界。",
+                    "text": "固定全部宿主入口及catalog匹配/补缺关键段、客户端slots定位和两测试样本；不运行目标，不把目录声明作当前模型真值。",
                     "evidence_ids": [
-                        "20261020-research40-github-1358816037-root-source"
+                        "2026-10-22-02-github-1358816037-root-source"
                     ],
                     "dependencies": [
                         {
@@ -186,16 +238,16 @@
                             "fingerprint": "d377291f5ef8ad2bccbd54e26e641b9d89016bba"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:13:14.863Z",
+                    "reviewed_at": "2026-10-22T09:34:52.416Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "版本 0.2.4，入口 src/index.js，依赖 settings 和 Web 路由，外部 models.dev 是数据依赖。",
+                    "text": "0.2.4、MIT，React peer；依赖DSH settings/timer及特定模型slots，无明确Node范围。",
                     "evidence_ids": [
-                        "20261020-research40-github-1358816037-root-source"
+                        "2026-10-22-02-github-1358816037-root-source"
                     ],
                     "dependencies": [
                         {
@@ -204,40 +256,135 @@
                             "fingerprint": "d377291f5ef8ad2bccbd54e26e641b9d89016bba"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:13:14.863Z",
+                    "reviewed_at": "2026-10-22T09:34:52.416Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "将模型目录、冲突/未知档区分与宿主补缺保存联结，降低重复能力配置。详见[Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1358816037-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1358816037:root",
+                            "area": "code",
+                            "fingerprint": "d377291f5ef8ad2bccbd54e26e641b9d89016bba"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:34:52.416Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "supported",
+                    "text": "目录未到即自动填默认且以后不覆盖；命中缺容量也fallback，配置/遗漏偏好非事务，HTTP自检不等身份认证。详见[Q03](#research-q03)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1358816037-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1358816037:root",
+                            "area": "code",
+                            "fingerprint": "d377291f5ef8ad2bccbd54e26e641b9d89016bba"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:34:52.416Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "engineering",
+                    "basis": "unverified",
+                    "text": "可研究逐字段exact/归一/默认来源收据与catalog-ready确认计划，用慢目录和受限变体反例比较错误填值。当前未验证。详见[Q05](#research-q05)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1358816037-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1358816037:root",
+                            "area": "code",
+                            "fingerprint": "d377291f5ef8ad2bccbd54e26e641b9d89016bba"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:34:52.416Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-20T03:13:14.863Z",
+            "last_checked_at": "2026-10-22T09:34:52.416Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "d377291f5ef8ad2bccbd54e26e641b9d89016bba",
+                "reviewed_at": "2026-10-22T09:34:52.416Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1358816037:root",
+                        "area": "code",
+                        "fingerprint": "d377291f5ef8ad2bccbd54e26e641b9d89016bba"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty小幅，目录映射已有；mechanism小幅，保守档位与冲突补缺；transferability实质，纯转换规则可复用；simplification实质，设置一体补全。",
+                    "basis": "interpretation",
+                    "score": 35,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1358816037-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 0,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow实质，查目录到配置联结；delivery无新交付单元；reach小幅，GUI减少手工字段；economics小幅，节时未量化且需核对。",
+                    "basis": "interpretation",
+                    "score": 27,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1358816037-root-source"
+                    ]
+                }
+            },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "trial",
-                "reason": "维护多模型者可备份后试单供应商填充，核对官方能力及同名端点，未匹配项保留人工确认。",
+                "decision": "observe",
+                "reason": "先观察，启动默认抢先补值和缺字段fallback、偏好/设置非事务会固化猜测；个人备份profile先同步目录并手动审阅有研究价值。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "批量维护上下文与输出上限是明确重复工作。"
+                        "rationale": "自定义模型缺元信息问题明确。"
                     },
                     "advantage": {
-                        "score": 19,
-                        "rationale": "缓存能力目录和带版本写入省手填且避免部分争写。"
+                        "score": 13,
+                        "rationale": "冲突/未声明处理便利，手填和宿主目录已有替代。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "填充计划源码可查，百科匹配及真实请求兼容未验。"
+                        "rationale": "固定转换/接线和mock可查，真实供应商准确性未知。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "目录漂移和其他补全插件争写需持续核对。"
+                        "score": 5,
+                        "rationale": "写配置需备份审阅，错值恢复和宿主迁移有负担。"
                     }
                 },
-                "score": 65,
+                "score": 54,
                 "revision": "d377291f5ef8ad2bccbd54e26e641b9d89016bba",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T09:34:52.416Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "20261020-research40-github-1358816037-root-source"
+                    "2026-10-22-02-github-1358816037-root-source"
                 ],
                 "dependencies": [
                     {
@@ -262,89 +409,63 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-20T02:51:30Z",
-            "analysis_sha256": "b522067912e06aead1fc71a87cc356b6fb73f17f666efc91ada7fed660325511"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "4bfe0d15bcb176fbb0607e6a7cfcb74dd0e459282b70fd1ef332d71cbf60012f"
         },
         "publication.metadata": "data/plugins/11zld22--dsh-model-info-fill/META.json",
         "publication.summaries": {
-            "text": "从 models.dev 为自定义模型补齐缺失能力，并保留人工确认与未声明状态。",
+            "text": "从models.dev按模型名补自定义供应商缺失容量、图片和思考声明，展示冲突、未匹配与旧猜档待确认。",
             "revision": "d377291f5ef8ad2bccbd54e26e641b9d89016bba",
             "source_url": "https://github.com/11zld22/dsh-model-info-fill/blob/d377291f5ef8ad2bccbd54e26e641b9d89016bba/README.md"
         },
         "publication.capabilities": {
             "revision": "d377291f5ef8ad2bccbd54e26e641b9d89016bba",
             "items": {
-                "后台": "模型目录同步与缺失字段补齐。",
-                "Host 路由": "补全、确认及模型保存端点。"
-            }
+                "界面": "模型设置footer和provider补全卡片",
+                "事件监听": "模型设置变更后自动补缺",
+                "后台": "models.dev缓存与设置mutation",
+                "Host 路由": "models-dev-catalog状态/刷新/偏好/模型保存"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 目录匹配 | 候选能力字段 | 变体/默认需核 |\n| 补缺与默认档 | 少手工配置 | 启动竞态/全模型交集 |\n| 未声明/冲突确认 | 减少猜档 | 偏好保存非事务 |"
         },
         "publication.advice": {
             "revision": "d377291f5ef8ad2bccbd54e26e641b9d89016bba",
-            "text": "先核对一个提供商的官方能力，备份配置再补齐，未匹配模型保持显式人工确认。"
+            "text": "先观察；个人有备份profile关自动补，目录同步完成后逐项手动审阅再补，实际供应商优先。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/11zld22--dsh-model-info-fill",
-        "reports": "# 模型信息补全\n\n> 从 models.dev 为自定义模型补齐缺失能力，并保留人工确认与未声明状态。\n\n## 固定范围与依据\n\n固定提交 [d377291f5ef8ad2bccbd54e26e641b9d89016bba](https://github.com/11zld22/dsh-model-info-fill/blob/d377291f5ef8ad2bccbd54e26e641b9d89016bba/src/index.js)；组件路径：仓库根。核查时间 2026-10-20T03:13:14.863Z；本轮基准 2026-10-20T02:51:30Z。\n源码抽读路径：src/index.js。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：维护多个自定义模型的用户需要减少重复填写上下文、输出上限与推理声明。\n- **亮点**：Host 拉取并缓存能力目录，构造缺失字段操作，通过 settings.mutate 带版本写入；模型保存可单独调整。\n- **思考**：不凭会思考就编造离散档位是合理边界；默认值仍是用户假设而非外部事实。\n- **建议**：先核对一个提供商的官方能力，备份配置再补齐，未匹配模型保持显式人工确认。\n\n## 场景与替代办法\n\n维护多个自定义模型的用户需要减少重复填写上下文、输出上限与推理声明。\n\n手填官方参数更慢但可追源；目录同步适合模型较多且接受逐项核对的用户。\n\n## 依赖与流程\n\n依赖 models.dev 可用性、名称映射、宿主模型设置契约；没有 API Key 或 Base URL 时不会自动创造提供商。\n\n更新百科、查看待确认项、补齐缺失并核对真实调用；异常恢复备份并调整匹配或默认值。\n\n## 成本与效果\n\n批量维护节省与错误默认值带来的排查成本都需计入，没有测量净收益。\n\n不凭会思考就编造离散档位是合理边界；默认值仍是用户假设而非外部事实。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：56e4a09cf358bdec736968593e5cbde037dba029633eb7a8bffa5aace259f1fd。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 1 | 127 | — | — | 2350 |\n| .js | source | 3 | 2058 | 1835 | 88 | — |\n| .mjs | test | 2 | 1038 | 974 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **后台**：模型目录同步与缺失字段补齐。\n- **Host 路由**：补全、确认及模型保存端点。\n\n## 工程亮点\n\n目录缓存、填充计划与版本写入分离可借鉴；与其他补全插件并用可能争写相同字段。\n\n## 分发与兼容\n\n版本 0.2.4，入口 src/index.js，依赖 settings 和 Web 路由，外部 models.dev 是数据依赖。\n\n## 历史对照\n\n前次代码指纹为 d377291f5ef8ad2bccbd54e26e641b9d89016bba；本轮固定为 d377291f5ef8ad2bccbd54e26e641b9d89016bba。手填官方参数更慢但可追源；目录同步适合模型较多且接受逐项核对的用户。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：模型名字匹配和百科数据不保证实际端点一致；未验证请求兼容与输出边界。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：测试同名异端点、缺档位、已有配置、并发编辑、目录离线和旧版误填撤销。\n",
+        "reports": "# dsh-model-info-fill\n\n> 从models.dev按模型名补自定义供应商缺失容量、图片和思考声明，展示冲突、未匹配与旧猜档待确认。\n\n## 研究范围\n\n- **仓库**：[11zld22/dsh-model-info-fill](https://github.com/11zld22/dsh-model-info-fill)\n- **版本号**：0.2.4（[固定提交 d377291f5ef8ad2bccbd54e26e641b9d89016bba](https://github.com/11zld22/dsh-model-info-fill/tree/d377291f5ef8ad2bccbd54e26e641b9d89016bba)）\n- **版本日期**：2026-10-14（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n匹配和缺项策略源码可查；大容量默认与启动竞态/双存储、结构HTTP信任限制采用，来源计划为未验证方向。\n\n## 洞察短评\n\n- **用途**：DSH自定义模型维护者希望减少手查能力字段，仍以实际供应商能力为准。详见[Q01](#research-q01)。\n- **亮点**：将模型目录、冲突/未知档区分与宿主补缺保存联结，降低重复能力配置。详见[Q01](#research-q01)。\n- **思考**：目录未到即自动填默认且以后不覆盖；命中缺容量也fallback，配置/遗漏偏好非事务，HTTP自检不等身份认证。详见[Q03](#research-q03)。\n- **建议**：可研究逐字段exact/归一/默认来源收据与catalog-ready确认计划，用慢目录和受限变体反例比较错误填值。当前未验证。详见[Q05](#research-q05)。\n\n采用建议：先观察；个人有备份profile关自动补，目录同步完成后逐项手动审阅再补，实际供应商优先。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n将模型目录、冲突/未知档区分与宿主补缺保存联结，降低重复能力配置。详见[Q01](#research-q01)。\n\n## 关键质疑\n\n目录未到即自动填默认且以后不覆盖；命中缺容量也fallback，配置/遗漏偏好非事务，HTTP自检不等身份认证。详见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可研究逐字段exact/归一/默认来源收据与catalog-ready确认计划，用慢目录和受限变体反例比较错误填值。当前未验证。详见[Q05](#research-q05)。\n\n进一步从慢目录、缺容量命中、受限变体、偏好写失败和并发设置探讨来源收据。\n\n## 场景与替代办法\n\nDSH自定义模型维护者希望减少手查能力字段，仍以实际供应商能力为准。详见[Q01](#research-q01)。\n\n供应商文档手填、宿主模型目录是替代，自动补减少接线但不检测真实能力。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 条件 | 用途 | 失效影响 |\n| --- | --- | --- |\n| settings/timer与模型slots | 自动补/GUI | ABI需匹配 |\n| models.dev目录 | 能力候选 | 非供应商真值 |\n| 受控HTTP准入 | 修改配置 | 结构同源非身份 |\n| 设置与cache备份 | 恢复 | 迁移不能只降版本 |\n\n#### 启动步骤\n\n| 步骤 | 执行者 | 判断标准 |\n| --- | --- | --- |\n| 备份并关自动补 | 用户 | 不抢先写默认 |\n| 同步目录看冲突 | 用户 | 版本和模型对应 |\n| 按供应商核准再补 | 用户 | 缺证据不猜 |\n| 保存后比对配置 | 用户 | reasoning默认全模型支持 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | DSH_HOME备份/目录网络 | 审阅默认及供应商文档 | 先备份模型设置；文档核对工时未知 |\n| 持续使用 | 目录过期刷新/设置计算 | 纠错和能力核对，节时未知 | 无独立模型调用；目录刷新网络和错误配置损失未量化 |\n| 失败恢复 | 原设置/缓存备份 | 清错值、处理宿主迁移 | 插件回退不等宿主迁移回滚；恢复时间未知 |\n\n\n#### 效果\n\n| 目标 | 源码支持 | 边界 |\n| --- | --- | --- |\n| 少手查字段 | 目录补缺 | 默认不是能力真值 |\n| 少猜思考档 | 未声明与冲突留空 | 变体/供应商仍可能错配 |\n| 保存衔接 | settings revision | 偏好双存储非事务 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**固定版本目录辅助补全如何避免猜档，默认填值/启动/保存和HTTP信任边界如何影响采用？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 模型信息补全减少哪类配置劳动？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n面向在DSH llm-pi-ai中维护自定义供应商模型的用户，把模型名对应的上下文、输出、图片和离散思考档填写从手查改为目录辅助。合格变更应来源和匹配对象明确、保留手填字段、缺失与冲突不冒充已验证能力。它不创建供应商、不提供baseURL/key，也不证明中转实际支持上游全部能力。\n\n简单替代是按实际供应商文档手工填写或宿主自带模型目录。贡献是models.dev数据转换、模型归一匹配、逐字段一致性/缺项策略与设置保存界面的组合。明确“reasoning=true不等离散档”、旧猜档人工确认值得借鉴，不是新模型能力检测技术；未调用模型做真实能力探测。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:3-12](https://github.com/11zld22/dsh-model-info-fill/blob/d377291f5ef8ad2bccbd54e26e641b9d89016bba/README.md#L3-L12)\n\n作者范围。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\nDeepSeek Harness 插件。给自定义供应商里的模型，按名字从 [models.dev](https://models.dev) 补全缺失字段：\n\n- 上下文窗口 `contextWindow`\n- 输出上限 `maxTokens`\n- 思考档位 `reasoningEfforts`\n- 图片声明 `input`\n\n百科里没有的模型会套你设的默认值；已经手填过的字段不会覆盖；百科写不清楚的字段宁可留空 —— 只标明「会思考」而没有离散档位时**不会**替你编出 `minimal` / `low` / `medium` / `high`（见 [档位未写明](#档位未写明)）。\n\n不会根据 models.dev 创建供应商（没有 Base URL / API Key）。百科只用来查模型能力。\n```\n\n</details>\n\n**依据 2 · 作者声明**：[README.md:54-62](https://github.com/11zld22/dsh-model-info-fill/blob/d377291f5ef8ad2bccbd54e26e641b9d89016bba/README.md#L54-L62)\n\n未写档和旧猜测区分。\n\n```text\n### 档位未写明\n\n百科能对上名字，也标明模型会思考，但没有离散档位时，会出现在这里。四种情况：只写了 `reasoning: true`、只有思考开关（`toggle`）、只有 token 预算（`budget_tokens`）、档位名 DSH 不认（比如 `none` / `default`）。插件不会替它们编造 `minimal` / `low` / `medium` / `high`。\n\n这些模型「保持未声明」保存就完全不写 `reasoningEfforts`：自定义模型不会在会话里提供思考档，也不会因为一个并不存在的档位被拒绝。按供应商文档选「指定档位」勾好再保存，才会写入；确认不会思考就选「不会思考」。已经写过的 `reasoningEfforts` 不会被覆盖。\n\n### 疑似旧版本代填，请确认\n\n0.2.0 之前的版本对「百科只标明会思考」的模型会代填 `minimal` / `low` / `medium` / `high`。已经写进配置的值不会被自动改写，所以这些模型（配置里正好是那四档、百科却写明没有档位）会单独列出来。点「确认保留」留下这四档，并记下确认，这条离开待确认；点「清掉档位」删掉这些档位；勾成别的档位后点「确认档位」。\n```\n\n**依据 3 · 源码核查**：[src/catalog.js:319-347](https://github.com/11zld22/dsh-model-info-fill/blob/d377291f5ef8ad2bccbd54e26e641b9d89016bba/src/catalog.js#L319-L347)\n\n多候选逐字段一致。\n\n<details>\n<summary>查看原文（29行）</summary>\n\n```text\nexport function lookupCatalogModel(models, id) {\n  const rows = catalogCandidates(models, id)\n  if (rows.length === 0) return undefined\n  if (rows.length === 1) return rows[0]\n  const context = agreedField(rows, (row) => row.contextWindow ?? null)\n  const output = agreedField(rows, (row) => row.maxOutput ?? null)\n  const input = agreedField(rows, (row) => row.input ?? null)\n  const thinking = agreedField(rows, (row) => row.thinkingLevels ?? null)\n  const gap = agreedField(rows, (row) => row.thinkingGap ?? null)\n  const name = agreedField(rows, (row) => row.name ?? null)\n  const conflicts = {\n    context: context.conflict,\n    output: output.conflict,\n    input: input.conflict,\n    thinking: thinking.conflict,\n  }\n  if (!conflicts.context && !conflicts.output && !conflicts.input && !conflicts.thinking) return rows[0]\n  return {\n    id: rows[0].id,\n    name: name.conflict ? undefined : name.value,\n    provider: '',\n    contextWindow: context.conflict ? null : context.value,\n    maxOutput: output.conflict ? null : output.value,\n    input: input.conflict ? null : input.value,\n    thinkingLevels: thinking.conflict ? null : thinking.value,\n    thinkingGap: thinking.conflict ? 'conflict' : gap.value,\n    ambiguous: true,\n    candidateCount: rows.length,\n    conflicts,\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 远程目录、补全与保存如何衔接？\n\n**研究主题：**功能与机制、依赖、兼容与流程\n\n#### 完整回答\n\n入口硬依赖settings/timer，读旧settings.get或新describe行；models.dev/api.json拉取后解析各provider模型limit/modalities/reasoning，保存在DSH_HOME/models-dev.json。模型名先大小写无关精确ID，后去provider前缀与冒号变体匹配，多个候选冲突字段null并不自动填。fill只补缺容量/输入/思考与name，buildFillOps后按当前revision settings.mutate，监听配置事件再自动补缺，store.filling挡本实例递归。\n\n供应商默认reasoning只在未设时写，strict要求所有nextModels支持wanted，不满足显示blocked；模型保存还维护保持未声明等偏好。前端slots显示footer和provider卡片，新旧配置API、schema枚举与provider命名限制需匹配；peer只列React不代表不依赖宿主。远程models.dev是第三方能力目录，不应当成当前供应商合同。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.js:26-38](https://github.com/11zld22/dsh-model-info-fill/blob/d377291f5ef8ad2bccbd54e26e641b9d89016bba/src/index.js#L26-L38)\n\n服务和缓存路径。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\nexport const name = 'dsh-model-info-fill'\nexport const inject = ['settings', 'timer']\n\nconst FETCH_TIMEOUT_MS = 60_000\nconst PREFIX = '/plugins/models-dev-catalog'\n\nfunction dataDir() {\n  const configured = process.env.DSH_HOME?.trim()\n  return configured || join(homedir(), '.dsh')\n}\n\nfunction catalogPath() {\n  return join(dataDir(), 'models-dev.json')\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/index.js:81-88](https://github.com/11zld22/dsh-model-info-fill/blob/d377291f5ef8ad2bccbd54e26e641b9d89016bba/src/index.js#L81-L88)\n\n旧/新settings读取。\n\n```text\n  const readConfig = () => {\n    const settings = ctx.settings\n    if (typeof settings.get === 'function') return settings.get(LLM_PI_AI_NS)\n    const row = settings.describe().find((item) => String(item.ns) === LLM_PI_AI_NS)\n    if (!row || !row.value || typeof row.value !== 'object') {\n      throw new Error(`Settings for ${LLM_PI_AI_NS} are unavailable`)\n    }\n    return row.value\n```\n\n**依据 3 · 源码核查**：[src/index.js:133-152](https://github.com/11zld22/dsh-model-info-fill/blob/d377291f5ef8ad2bccbd54e26e641b9d89016bba/src/index.js#L133-L152)\n\n拉取解析缓存。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n  const refreshCatalog = async () => {\n    if (store.refreshing) return store.file\n    store.refreshing = true\n    try {\n      const response = await fetch(MODELS_DEV_URL, {\n        signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),\n        headers: { accept: 'application/json' },\n      })\n      if (!response.ok) throw new Error(`HTTP ${response.status}`)\n      const data = await response.json()\n      store.file = {\n        version: CATALOG_VERSION,\n        updatedAt: new Date().toISOString(),\n        autoFill: store.file.autoFill !== false,\n        defaults: parseDefaults(store.file.defaults),\n        confirmedLegacy: store.file.confirmedLegacy ?? [],\n        omittedReasoning: store.file.omittedReasoning ?? [],\n        models: parseModelsDev(data),\n      }\n      await persist()\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/index.js:165-205](https://github.com/11zld22/dsh-model-info-fill/blob/d377291f5ef8ad2bccbd54e26e641b9d89016bba/src/index.js#L165-L205)\n\nmutation/revision/事件。\n\n<details>\n<summary>查看原文（41行）</summary>\n\n```text\n  const fillSettings = async (onlyProvider) => {\n    const settings = ctx.settings\n    const config = readConfig()\n    const { ops, filledProviders, reasoning } = buildFillOps(\n      config,\n      store.file.models,\n      onlyProvider,\n      store.file.defaults,\n      store.file.omittedReasoning,\n    )\n    if (ops.length === 0) {\n      return { ok: true, filled: 0, providers: [], reasoning, skipped: true }\n    }\n    if (store.filling) {\n      return { ok: true, filled: 0, providers: [], reasoning, skipped: true }\n    }\n    store.filling = true\n    try {\n      await settings.mutate(LLM_PI_AI_NS, ops, llmRevision())\n      return { ok: true, filled: filledProviders.length, providers: filledProviders, reasoning }\n    } finally {\n      store.filling = false\n    }\n  }\n\n  const maybeAutoFill = () => {\n    if (store.file.autoFill === false) return\n    ctx.timeout(() => {\n      fillSettings().catch((error) => {\n        ctx.logger?.warn?.(`[models-dev-catalog] auto-fill failed: ${messageOf(error)}`)\n      })\n    }, 0)\n  }\n\n  const settingsEvent = typeof ctx.settings.get === 'function'\n    ? 'settings/updated'\n    : 'settings/document-updated'\n  ctx.on(settingsEvent, (ns) => {\n    if (String(ns) !== LLM_PI_AI_NS) return\n    if (store.filling) return\n    maybeAutoFill()\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/catalog.js:288-302](https://github.com/11zld22/dsh-model-info-fill/blob/d377291f5ef8ad2bccbd54e26e641b9d89016bba/src/catalog.js#L288-L302)\n\n模型匹配。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\nfunction catalogKey(id) {\n  const raw = String(id ?? '').trim().toLowerCase()\n  if (!raw) return ''\n  const tail = raw.split('/').filter(Boolean).pop() ?? raw\n  return tail.split(':')[0].trim()\n}\n\nfunction catalogCandidates(models, id) {\n  const raw = String(id ?? '').trim().toLowerCase()\n  if (!raw || !Array.isArray(models)) return []\n  const exact = models.filter((item) => item?.id?.toLowerCase() === raw)\n  if (exact.length > 0) return exact\n  const key = catalogKey(raw)\n  if (!key) return []\n  return models.filter((item) => catalogKey(item?.id) === key)\n```\n\n</details>\n\n**依据 6 · 源码核查**：[src/catalog.js:105-115](https://github.com/11zld22/dsh-model-info-fill/blob/d377291f5ef8ad2bccbd54e26e641b9d89016bba/src/catalog.js#L105-L115)\n\n严格默认档交集。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\nexport function planProviderReasoning(profile, nextModels, configured, strict = true) {\n  const wanted = THINKING_LEVELS.includes(configured) ? configured : null\n  const declared = typeof profile?.reasoning === 'string' ? profile.reasoning.trim() : ''\n  const current = THINKING_LEVELS.includes(declared) ? declared : null\n  if (wanted === null || current !== null) return { wanted, current, level: null, blocked: [] }\n  const blocked = []\n  for (const entry of nextModels) {\n    if (supportedThinkingLevels(entry).includes(wanted)) continue\n    blocked.push(typeof entry?.id === 'string' ? entry.id.trim() : '')\n  }\n  return { wanted, current, level: blocked.length === 0 || strict === false ? wanted : null, blocked }\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 缺失默认、启动与信任有哪些风险？\n\n**研究主题：**缺陷与关键质疑\n\n#### 完整回答\n\n匹配到模型但容量缺失且无冲突时也会用fallback，而不只“完全未匹配才默认”；初始默认上下文262144/output32768是配置假定，不能当模型实测上限。去前缀/变体能提高命中，但可能把供应商定制/量化/受限变体视为同模型；若只有一个候选，逐字段一致性无法发现此误认。已有字段不覆盖会保留旧错误，升级目录不会自动修正原先默认填值，变更出处需另核对。\n\n启动start调用refreshCatalog而不await，随即maybeAutoFill。空缓存/旧缓存配慢网络时，默认值可能先入设置，后远程数据到达因字段非缺失而不替换。cache persist直接writeFile无原子替换/队列，保存偏好、刷新及模型设置+omitted标记跨两存储非事务，写失败可能留下配置已变但“保持未声明”未记住。HTTP信任函数直接loopback放行，其余只比较Origin.host与Host，不验证cookie/用户；不能单靠同源证明身份。无body大小上限的readJsonBody也扩大可访问入口资源面，实际外部可达仍依宿主/反代。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/catalog.js:381-417](https://github.com/11zld22/dsh-model-info-fill/blob/d377291f5ef8ad2bccbd54e26e641b9d89016bba/src/catalog.js#L381-L417)\n\n命中缺字段仍用fallback且只补缺。\n\n<details>\n<summary>查看原文（37行）</summary>\n\n```text\n  const conflicts = hit?.conflicts ?? {}\n  if (missingCapacity(next.contextWindow)) {\n    // Disagreeing copies: leave the field missing instead of copying one gateway.\n    if (!conflicts.context) {\n      next.contextWindow = hit?.contextWindow ?? fallback.contextWindow\n      changed = true\n    }\n  }\n  if (missingCapacity(next.maxTokens)) {\n    if (!conflicts.output) {\n      next.maxTokens = hit?.maxOutput ?? fallback.maxTokens\n      changed = true\n    }\n  }\n  if (missingInput(next.input)) {\n    if (!conflicts.input) {\n      next.input = hit ? sanitizeInput(hit.input) : defaultsInput(fallback)\n      changed = true\n    }\n  }\n  if (missingReasoning(next.reasoningEfforts)) {\n    // A catalog hit that states no discrete level declares nothing, and an\n    // off-only level set is invalid DSH config. Both leave the field unset: an\n    // empty object would be refused, so drop it and let a missing field stay missing.\n    // An explicit 「保持未声明」 is the same: do not invent the unmatched defaults.\n    const omit = options?.omitReasoning === true\n    const value = omit || (hit && hit.thinkingLevels === null)\n      ? undefined\n      : reasoningEffortsFromLevels(hit ? hit.thinkingLevels : fallback.thinkingLevels)\n    if (value === undefined) {\n      if (next.reasoningEfforts !== undefined) {\n        delete next.reasoningEfforts\n        changed = true\n      }\n    } else {\n      next.reasoningEfforts = value\n      changed = true\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/index.js:317-334](https://github.com/11zld22/dsh-model-info-fill/blob/d377291f5ef8ad2bccbd54e26e641b9d89016bba/src/index.js#L317-L334)\n\n启动刷新不await就自动补。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n  ctx.effect(() => {\n    let disposed = false\n    const start = async () => {\n      try {\n        await loadCache()\n      } catch (error) {\n        ctx.logger?.warn?.(`[models-dev-catalog] failed to load cache: ${messageOf(error)}`)\n        store.file = emptyCatalogFile()\n      }\n      if (disposed) return\n      if (catalogIsStale(store.file.updatedAt)) {\n        refreshCatalog().catch((error) => {\n          ctx.logger?.warn?.(`[models-dev-catalog] refresh failed: ${messageOf(error)}`)\n        })\n      }\n      maybeAutoFill()\n    }\n    start()\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/index.js:114-118](https://github.com/11zld22/dsh-model-info-fill/blob/d377291f5ef8ad2bccbd54e26e641b9d89016bba/src/index.js#L114-L118)\n\n直接覆盖缓存。\n\n```text\n  const persist = async () => {\n    const path = catalogPath()\n    await mkdir(dirname(path), { recursive: true })\n    await writeFile(path, `${JSON.stringify(store.file)}\\n`, 'utf8')\n  }\n```\n\n**依据 4 · 源码核查**：[src/index.js:296-307](https://github.com/11zld22/dsh-model-info-fill/blob/d377291f5ef8ad2bccbd54e26e641b9d89016bba/src/index.js#L296-L307)\n\n配置与偏好两次持久化。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n        const ops = buildModelSaveOps(readConfig(), body, store.file.defaults, store.file.models)\n        await ctx.settings.mutate(LLM_PI_AI_NS, ops, llmRevision())\n        const reasoningCleared = ops.some((op) => op.op === 'unset' && op.path.at(-1) === 'reasoning')\n        const mode = typeof body.thinkingMode === 'string' ? body.thinkingMode : ''\n        if (mode === 'unset' || mode === 'levels' || mode === 'none') {\n          const current = store.file.omittedReasoning\n          const next = mode === 'unset'\n            ? rememberLegacyConfirmation(current, body.provider, body.id)\n            : forgetLegacyConfirmation(current, body.provider, body.id)\n          if (next.join('\\0') !== parseConfirmedLegacy(current).join('\\0')) {\n            store.file.omittedReasoning = next\n            await persist()\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/index.js:53-71](https://github.com/11zld22/dsh-model-info-fill/blob/d377291f5ef8ad2bccbd54e26e641b9d89016bba/src/index.js#L53-L71)\n\nloopback/同host判断与无上限body。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\nfunction isTrustedRequest(req) {\n  const address = req.socket?.remoteAddress || ''\n  if (address === '127.0.0.1' || address === '::1' || address === '::ffff:127.0.0.1') return true\n  const host = req.headers?.host || ''\n  const origin = req.headers?.origin || ''\n  if (!origin) return false\n  try {\n    return new URL(origin).host === host\n  } catch {\n    return false\n  }\n}\n\nasync function readJsonBody(req) {\n  const chunks = []\n  for await (const chunk of req) chunks.push(chunk)\n  const text = Buffer.concat(chunks).toString('utf8').trim()\n  if (!text) return {}\n  return JSON.parse(text)\n```\n\n</details>\n\n#### 缺口\n\n- 当前部署宿主是否额外鉴权这些exact插件路由未在源码内闭合\n  **影响：**不能把Origin/Host自检说成访问者认证\n  **进一步探讨：**核对宿主连接准入和反代拓扑，限制非受信访问者\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 测试、工程和成本证据能说明什么？\n\n**研究主题：**工程质量与复用、效果与总成本\n\n#### 完整回答\n\n纯catalog层与宿主接线分离，模型冲突和保持未声明可独立复核；settings-compat mock以revision递增并断言mutate收到期望值，支持新旧接线分支的可检查性，但不是实际宿主升级兼容或目录真实准确率。目录请求60秒signal超时但JSON解析/响应体没有专门体积限额；刷新失败保留已有内存，损坏本地cache在start warn后reset空，默认补全风险需与恢复一起看。\n\n首次是备份DSH_HOME/模型设置、核对当前供应商能力和默认值，再同步目录；持续有过期七天刷新/手动更新网络和设置事件计算，无独立模型调用费，但错误context/maxTokens会造成请求失败或截断等业务成本。恢复要比对原配置、清掉错误补值再补，宿主迁移不能只降级插件回滚；缓存偏好也要备份。节省查文档工时和错误率无同任务对照，不能填百分比。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[test/settings-compat.test.mjs:5-38](https://github.com/11zld22/dsh-model-info-fill/blob/d377291f5ef8ad2bccbd54e26e641b9d89016bba/test/settings-compat.test.mjs#L5-L38)\n\nmock revision与新旧settings。\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\nfunction harness(legacy, missing = false, options = {}) {\n  const routes = new Map()\n  const events = new Map()\n  const timers = []\n  const writes = []\n  let revision = 4\n  const config = { providers: { custom: { models: [{ id: 'unknown-x' }] } } }\n  const settings = {\n    describe() {\n      return missing ? [] : [{ ns: 'llm-pi-ai', revision, value: config }]\n    },\n    async mutate(ns, ops, expectedRevision) {\n      assert.equal(ns, 'llm-pi-ai')\n      assert.equal(expectedRevision, revision)\n      writes.push(ops)\n      for (const op of ops) {\n        assert.equal(op.op, 'set')\n        let parent = config\n        for (const key of op.path.slice(0, -1)) parent = parent[key]\n        parent[op.path.at(-1)] = op.value\n      }\n      revision++\n    },\n  }\n  if (legacy) settings.get = () => config\n  const webServer = { register({ path, handler }) { routes.set(path, handler) } }\n  apply({\n    settings,\n    get(name) { return name === 'webServer' ? webServer : undefined },\n    on(name, handler) { events.set(name, handler) },\n    effect(fn, label) {\n      if (label?.startsWith('models-dev-catalog: /')) fn()\n      if (options.cache && label === 'models-dev-catalog: cache') fn()\n    },\n```\n\n</details>\n\n**依据 2 · 源码核查**：[test/catalog.test.mjs:29-54](https://github.com/11zld22/dsh-model-info-fill/blob/d377291f5ef8ad2bccbd54e26e641b9d89016bba/test/catalog.test.mjs#L29-L54)\n\n合成目录样本。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\nconst SAMPLE = {\n  openai: {\n    id: 'openai',\n    name: 'OpenAI',\n    models: {\n      'gpt-4o': {\n        id: 'gpt-4o',\n        name: 'GPT-4o',\n        limit: { context: 128000, output: 16384 },\n        modalities: { input: ['text', 'image'], output: ['text'] },\n        reasoning: false,\n      },\n    },\n  },\n  zhipuai: {\n    id: 'zhipuai',\n    name: 'Zhipu AI',\n    models: {\n      'glm-5.2': {\n        id: 'glm-5.2',\n        name: 'GLM-5.2',\n        limit: { context: 1048576, output: 131072 },\n        modalities: { input: ['text'] },\n        reasoning: true,\n        reasoning_options: [{ type: 'effort', values: ['off', 'low', 'high', 'max'] }],\n      },\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/index.js:133-152](https://github.com/11zld22/dsh-model-info-fill/blob/d377291f5ef8ad2bccbd54e26e641b9d89016bba/src/index.js#L133-L152)\n\n目录网络和解析。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n  const refreshCatalog = async () => {\n    if (store.refreshing) return store.file\n    store.refreshing = true\n    try {\n      const response = await fetch(MODELS_DEV_URL, {\n        signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),\n        headers: { accept: 'application/json' },\n      })\n      if (!response.ok) throw new Error(`HTTP ${response.status}`)\n      const data = await response.json()\n      store.file = {\n        version: CATALOG_VERSION,\n        updatedAt: new Date().toISOString(),\n        autoFill: store.file.autoFill !== false,\n        defaults: parseDefaults(store.file.defaults),\n        confirmedLegacy: store.file.confirmedLegacy ?? [],\n        omittedReasoning: store.file.omittedReasoning ?? [],\n        models: parseModelsDev(data),\n      }\n      await persist()\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/index.js:319-332](https://github.com/11zld22/dsh-model-info-fill/blob/d377291f5ef8ad2bccbd54e26e641b9d89016bba/src/index.js#L319-L332)\n\n缓存坏后默认路径。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n    const start = async () => {\n      try {\n        await loadCache()\n      } catch (error) {\n        ctx.logger?.warn?.(`[models-dev-catalog] failed to load cache: ${messageOf(error)}`)\n        store.file = emptyCatalogFile()\n      }\n      if (disposed) return\n      if (catalogIsStale(store.file.updatedAt)) {\n        refreshCatalog().catch((error) => {\n          ctx.logger?.warn?.(`[models-dev-catalog] refresh failed: ${messageOf(error)}`)\n        })\n      }\n      maybeAutoFill()\n```\n\n</details>\n\n**依据 5 · 作者声明**：[README.md:99-107](https://github.com/11zld22/dsh-model-info-fill/blob/d377291f5ef8ad2bccbd54e26e641b9d89016bba/README.md#L99-L107)\n\n存储迁移/过期作者说明。\n\n```text\n| `~/.dsh/models-dev.json` | 百科缓存、自动补全开关、未匹配默认值（含默认档位与「严格」开关），以及记下的「保持未声明」 |\n| DSH 0.1.6：`~/.dsh/settings.yaml` 的 `llm-pi-ai` | 被补全或手改的模型字段 |\n| DSH 0.1.7：当前 profile 的插件配置 | 被补全或手改的模型字段 |\n\n若设置了 `DSH_HOME`，缓存写到 `$DSH_HOME/models-dev.json`。\n\n插件同时支持 DSH 0.1.6 的旧设置接口和 0.1.7 的配置表单接口。升级宿主前请备份整个 `DSH_HOME`；新版宿主会迁移旧设置，不能仅靠降级程序回滚数据。\n\n无缓存或超过 7 天会在启动后后台刷新。缓存结构版本（`version`）变更时，旧缓存也会被当作过期并自动重拉，不需要手动点「更新」。拉取失败沿用旧缓存；没有缓存时用默认值，不阻断保存。\n```\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 当前采用和进一步探讨从何入手？\n\n**研究主题：**新假设与验证、采用判断\n\n#### 完整回答\n\n先观察，核心是缺证据时仍填大容量默认、启动自动补全与目录到达竞态、配置与遗漏偏好非事务，以及本地路由鉴权仅结构判断。维护者可在有备份个人profile中关自动补全、先等目录同步再看匹配/冲突/未声明后手动补，实际供应商文档优先；不宜对未知变体整库无审阅默认启用。错误匹配/填值、供应商默认档不支持或恢复后自动回写时停止批量补并从备份比较。\n\n可继续研究逐字段来源收据与待确认补全计划，把exact/归一/默认、目录hash/版本、供应商/变体和用户手填来源分开；启动前明确catalog-ready或用户允许默认，不将猜测直接持久化。基线为当前直接补缺与手工文档，固定反例含慢目录启动、无容量命中、同名不同provider、变体受限、偏好写失败与并发设置变化，比较错误字段、恢复步骤及核对工时。它是未验证方向，不称现有插件已具备能力真值。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/catalog.js:369-417](https://github.com/11zld22/dsh-model-info-fill/blob/d377291f5ef8ad2bccbd54e26e641b9d89016bba/src/catalog.js#L369-L417)\n\n当前缺字段填充。\n\n<details>\n<summary>查看原文（49行）</summary>\n\n```text\nexport function fillModelEntry(entry, models, defaults = emptyDefaults(), options = {}) {\n  if (!entry || typeof entry !== 'object') return { model: entry, changed: false, matched: false }\n  const id = typeof entry.id === 'string' ? entry.id.trim() : ''\n  if (!id) return { model: entry, changed: false, matched: false }\n\n  const next = clonePlain(entry)\n  next.id = id\n  const hit = lookupCatalogModel(models, id)\n  const matched = Boolean(hit)\n  let changed = false\n  const fallback = parseDefaults(defaults)\n\n  const conflicts = hit?.conflicts ?? {}\n  if (missingCapacity(next.contextWindow)) {\n    // Disagreeing copies: leave the field missing instead of copying one gateway.\n    if (!conflicts.context) {\n      next.contextWindow = hit?.contextWindow ?? fallback.contextWindow\n      changed = true\n    }\n  }\n  if (missingCapacity(next.maxTokens)) {\n    if (!conflicts.output) {\n      next.maxTokens = hit?.maxOutput ?? fallback.maxTokens\n      changed = true\n    }\n  }\n  if (missingInput(next.input)) {\n    if (!conflicts.input) {\n      next.input = hit ? sanitizeInput(hit.input) : defaultsInput(fallback)\n      changed = true\n    }\n  }\n  if (missingReasoning(next.reasoningEfforts)) {\n    // A catalog hit that states no discrete level declares nothing, and an\n    // off-only level set is invalid DSH config. Both leave the field unset: an\n    // empty object would be refused, so drop it and let a missing field stay missing.\n    // An explicit 「保持未声明」 is the same: do not invent the unmatched defaults.\n    const omit = options?.omitReasoning === true\n    const value = omit || (hit && hit.thinkingLevels === null)\n      ? undefined\n      : reasoningEffortsFromLevels(hit ? hit.thinkingLevels : fallback.thinkingLevels)\n    if (value === undefined) {\n      if (next.reasoningEfforts !== undefined) {\n        delete next.reasoningEfforts\n        changed = true\n      }\n    } else {\n      next.reasoningEfforts = value\n      changed = true\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/index.js:317-334](https://github.com/11zld22/dsh-model-info-fill/blob/d377291f5ef8ad2bccbd54e26e641b9d89016bba/src/index.js#L317-L334)\n\n启动先后。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n  ctx.effect(() => {\n    let disposed = false\n    const start = async () => {\n      try {\n        await loadCache()\n      } catch (error) {\n        ctx.logger?.warn?.(`[models-dev-catalog] failed to load cache: ${messageOf(error)}`)\n        store.file = emptyCatalogFile()\n      }\n      if (disposed) return\n      if (catalogIsStale(store.file.updatedAt)) {\n        refreshCatalog().catch((error) => {\n          ctx.logger?.warn?.(`[models-dev-catalog] refresh failed: ${messageOf(error)}`)\n        })\n      }\n      maybeAutoFill()\n    }\n    start()\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/index.js:296-307](https://github.com/11zld22/dsh-model-info-fill/blob/d377291f5ef8ad2bccbd54e26e641b9d89016bba/src/index.js#L296-L307)\n\n双存储保存。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n        const ops = buildModelSaveOps(readConfig(), body, store.file.defaults, store.file.models)\n        await ctx.settings.mutate(LLM_PI_AI_NS, ops, llmRevision())\n        const reasoningCleared = ops.some((op) => op.op === 'unset' && op.path.at(-1) === 'reasoning')\n        const mode = typeof body.thinkingMode === 'string' ? body.thinkingMode : ''\n        if (mode === 'unset' || mode === 'levels' || mode === 'none') {\n          const current = store.file.omittedReasoning\n          const next = mode === 'unset'\n            ? rememberLegacyConfirmation(current, body.provider, body.id)\n            : forgetLegacyConfirmation(current, body.provider, body.id)\n          if (next.join('\\0') !== parseConfirmedLegacy(current).join('\\0')) {\n            store.file.omittedReasoning = next\n            await persist()\n```\n\n</details>\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：56e4a09cf358bdec736968593e5cbde037dba029633eb7a8bffa5aace259f1fd。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 1 | 127 | — | — | 2350 |\n| .js | source | 3 | 2058 | 1835 | 88 | — |\n| .mjs | test | 2 | 1038 | 974 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 目录匹配 | 候选能力字段 | 变体/默认需核 |\n| 补缺与默认档 | 少手工配置 | 启动竞态/全模型交集 |\n| 未声明/冲突确认 | 减少猜档 | 偏好保存非事务 |\n\n## 工程亮点\n\n纯catalog与新旧settings适配易核查；需catalog-ready、原子cache和身份/来源契约。详见[Q04](#research-q04)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、src/index.js、src/catalog.js、src/client.js、test/catalog.test.mjs、test/settings-compat.test.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定全部宿主入口及catalog匹配/补缺关键段、客户端slots定位和两测试样本；不运行目标，不把目录声明作当前模型真值。\n- 下一步：进一步从慢目录、缺容量命中、受限变体、偏好写失败和并发设置探讨来源收据。\n",
         "metadata": {
             "repository": "11zld22/dsh-model-info-fill",
             "repository_id": 1358816037,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T05:44:11.980Z",
+            "window_start": "2026-09-22T05:44:11.980Z",
             "stars": 5,
             "pushed_at": "2026-10-14T10:01:08Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 1,
+                "created_30d": 1,
+                "closed_30d": 1,
+                "updated_30d": 1
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A11zld22%2Fdsh-model-info-fill%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6404:10742:13F6F7:216D20:6AD8490F and timestamp 2026-10-21 05:09:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A11zld22%2Fdsh-model-info-fill%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6406:157B26:14B0A4:222B5F:6AD8490F and timestamp 2026-10-21 05:09:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A11zld22%2Fdsh-model-info-fill%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6407:1CA5E4:14C77C:2249B9:6AD8490F and timestamp 2026-10-21 05:09:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A11zld22%2Fdsh-model-info-fill%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640F:12F9BB:13AA08:212146:6AD8490F and timestamp 2026-10-21 05:09:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A11zld22%2Fdsh-model-info-fill%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6416:1E49B1:1447FA:21AF03:6AD84910 and timestamp 2026-10-21 05:09:36 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "dsh-model-info-fill",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T05:44:21.292Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": null,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-model-info-fill",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-model-info-fill",
                 "error": "HTTP 404",
                 "publication": {
                     "first_published_at": null,
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T05:44:21.292Z",
                     "source_url": "https://registry.npmjs.org/dsh-model-info-fill",
                     "error": "HTTP 404",
                     "latest_version": null,
                     "latest_published_at": null,
                     "latest_error": "HTTP 404"
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "d377291f5ef8ad2bccbd54e26e641b9d89016bba",
-                "current_revision": "d377291f5ef8ad2bccbd54e26e641b9d89016bba",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {
@@ -352,14 +473,14 @@
             "repository": "11zld22/dsh-model-info-fill",
             "path": "",
             "revision": "d377291f5ef8ad2bccbd54e26e641b9d89016bba",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "ace5c9b2ea72f7a354a636b32cf89736ebe106c62150d512a65eb54f11384360",
                 "code": "d377291f5ef8ad2bccbd54e26e641b9d89016bba",
                 "maintenance": "4d51a786db412058c54922d6af08bc829478c49c70340605ff570a2ee9ef191e"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

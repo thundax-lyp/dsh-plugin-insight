@@ -68,6 +68,7 @@ GitHub 来源与固定版本读取使用当前可用的 GitHub 插件或已认�
    ```sh
    npm run snapshot -- stage --work data/runs/<round>/WORK.json --plugin <id> --observations <observations.json> --report <insight.md> --display <DISPLAY.json>
    ```
+   同一固定基线的多个已验收条目可用 `snapshot stage-batch --work <WORK.json> --input <entries.json>` 批量暂存；输入为含 id、observations、report、display 文件路径的数组。批内复用候选目录，全部条目及最终候选校验通过后才保存检查点；任何失败不保存该批。
    失败保存部分材料与 reason JSON（稳定 `reason_code`、可读 `reason` 和自包含问题详情，结构见数据契约），再用 `snapshot block --work ... --plugin ... --input <reason.json>` 登记；block先写本轮、最终合并进正式 `research_blocks`。继续其余所选项，不补位、不重复应用。
 6. **形成合并候选。** 从已完成的贡献、质疑及假设论证归纳四标签短评；有共同问题时比较跨插件机制与业务取舍、尝试推导新假设，论证保存在现有报告中。每项研究由执行AI按研究规范的adoption-v1明确推荐结论、理由及四项评分，写入组件档案；不以创新分、Star或下载量推断。父Agent核对全部当前有效研究的推荐有效性，保留有效旧结论；从全量有效组件按采用分排序生成推荐，不限于本轮，不单独维护名单。结论、证据门槛与输出上限分别遵循数据契约、研究规范和输出标准，不为数量凑推荐。
    使用 META 采集器保存本轮采集结果，npm 包名必须由源码核实；未知值不填0。
@@ -82,6 +83,10 @@ GitHub 来源与固定版本读取使用当前可用的 GitHub 插件或已认�
    npm run check
    ```
    检查 plan 的基线、合并范围与保留项后才 apply；再按输出标准人工核对贡献、质疑和假设论证、引用、成立条件和覆盖范围。
+批量登记受阻原因可用 `snapshot block-batch --work <WORK.json> --input <entries.json>`，输入为 `{ id, input }` 数组，input 与单项 block 相同；整批校验后保存，不写正式快照。
+
+仅在用户明确要求丢弃研究、重新作为未研究组件处理时，使用 `snapshot forget --input <input.json>` 预览，确认对象后加 `--apply`。输入绑定 base_digest 和 plugin_ids；清除这些对象的研究、发布、身份映射和发现条目，以及依赖这些对象的交叉 finding，再校验并事务写入。保留组件的原文证据不作推断性改写；独立评分若仍依赖被删对象则校验失败，不自动重评分。生成后删除预览清单中对应的详情目录，原目录来源可由后续 Skill 重新扫描。此命令不因 pending/blocked 自动触发。
+
 8. **确认与清理。** 回读合并结果，确认本轮成功记录已落位、引用可解析、页面可由当前快照独立生成；写入合并结果后才清理本轮临时材料。
    使用 `snapshot clean --work ...` 预览，明确执行时加 `--apply`。仅清理已确认合并且全部完成的已知材料；受阻、未完成和未知文件保留，不删除活动锁。
    来源准备失败或仍有 blocked 时如实报告，并单列正式同版本受阻跳过数；不把跳过算完成或本轮失败。所选上限内完成只代表所选范围完成，不代表全生态研究完成。

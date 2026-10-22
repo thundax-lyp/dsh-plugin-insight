@@ -12,7 +12,7 @@
             "aliases": [],
             "name": "dsh-asciinema",
             "entry_type": "plugin",
-            "technical_category": "observability-cost",
+            "technical_category": "sessions-messages",
             "business_category": "software-delivery",
             "tags": [],
             "availability": "unknown",
@@ -24,36 +24,124 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-03-github-1344714509-root-directory-0",
+                    "id": "2026-10-22-02-github-1344714509-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T03:49:13.260Z",
+                    "retrieved_at": "2026-10-22T09:41:07.365Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-03-github-1344714509-root-author",
+                    "id": "2026-10-22-02-github-1344714509-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/988hj7tczd-oss/dsh-asciinema/blob/c47863413886ffac9b66ee13a9ab276ab195d5d9/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-asciinema",
+                            "commit": "c47863413886ffac9b66ee13a9ab276ab195d5d9",
+                            "path": "README.md",
+                            "content_sha256": "3e468d3541d17f47e6ab68d351c55791af7abd4408f883dda110b417ca8ed1da"
+                        }
+                    ],
                     "revision": "c47863413886ffac9b66ee13a9ab276ab195d5d9",
-                    "captured_at": "2026-10-21T03:49:13.260Z",
-                    "summary": "录制DSH工具输出为带时间轴的数据文件，提供文本提取和自包含离线HTML回放。",
-                    "artifact": "data/runs/2026-10-21-03/snapshots/988hj7tczd-oss--dsh-asciinema/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:41:07.365Z",
+                    "summary": "把DSH会话工具结果文字缓冲为自有cast对象文件，提供会话录制/标记、HTML回看与纯文本转换。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/988hj7tczd-oss--dsh-asciinema/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-03-github-1344714509-root-source",
+                    "id": "2026-10-22-02-github-1344714509-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/988hj7tczd-oss/dsh-asciinema/blob/c47863413886ffac9b66ee13a9ab276ab195d5d9/src/index.ts",
+                    "url": "https://github.com/988hj7tczd-oss/dsh-asciinema/blob/c47863413886ffac9b66ee13a9ab276ab195d5d9/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-asciinema",
+                            "commit": "c47863413886ffac9b66ee13a9ab276ab195d5d9",
+                            "path": "README.md",
+                            "content_sha256": "3e468d3541d17f47e6ab68d351c55791af7abd4408f883dda110b417ca8ed1da"
+                        },
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-asciinema",
+                            "commit": "c47863413886ffac9b66ee13a9ab276ab195d5d9",
+                            "path": "package.json",
+                            "content_sha256": "02549a3ea09b451b5b81418ed3e104214bda5658b7c986a2271a6b15a700eafc"
+                        },
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-asciinema",
+                            "commit": "c47863413886ffac9b66ee13a9ab276ab195d5d9",
+                            "path": "src/index.ts",
+                            "content_sha256": "e1ff3f457819ed8fd4656d06dc754eac74f9f7e71fcfa9ad915cbdf7dc5f0b0a"
+                        },
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-asciinema",
+                            "commit": "c47863413886ffac9b66ee13a9ab276ab195d5d9",
+                            "path": "src/recorder.ts",
+                            "content_sha256": "df9fd3f3a0c9d44d31fb3fe69fad39a70c75d57cce56ac3ff04e1e0b0adc4529"
+                        },
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-asciinema",
+                            "commit": "c47863413886ffac9b66ee13a9ab276ab195d5d9",
+                            "path": "src/cast-core.ts",
+                            "content_sha256": "3f9fdfd0dc942be11f8932e7915cfcafd05015fdfb4d1b09b2524b2fa75f9d80"
+                        },
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-asciinema",
+                            "commit": "c47863413886ffac9b66ee13a9ab276ab195d5d9",
+                            "path": "src/cast-io.ts",
+                            "content_sha256": "e8a6d919904cbd58a3f2d2f67df9539b3723fca47a8653c3dda0189f429390e0"
+                        },
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-asciinema",
+                            "commit": "c47863413886ffac9b66ee13a9ab276ab195d5d9",
+                            "path": "src/tools/rec.ts",
+                            "content_sha256": "a3993d4b1acfaa7f878076cc42cf02cfb7baa59248b66392c538e18405f7d915"
+                        },
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-asciinema",
+                            "commit": "c47863413886ffac9b66ee13a9ab276ab195d5d9",
+                            "path": "src/tools/play.ts",
+                            "content_sha256": "75e3f819f921b7add1d240564b17a133dfe392e3e1265b13bb10dcce9869270a"
+                        },
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-asciinema",
+                            "commit": "c47863413886ffac9b66ee13a9ab276ab195d5d9",
+                            "path": "src/tools/cat.ts",
+                            "content_sha256": "4f01ff8cd9854025cd566002a4498812becc0ea0175c606e2556dda7b20624a7"
+                        },
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-asciinema",
+                            "commit": "c47863413886ffac9b66ee13a9ab276ab195d5d9",
+                            "path": "assets/player.html",
+                            "content_sha256": "4be3ebcc2bd896d9cc0ba78358a5597862f64542319b7f9c80061bea6c1eb77b"
+                        },
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-asciinema",
+                            "commit": "c47863413886ffac9b66ee13a9ab276ab195d5d9",
+                            "path": "docs/store-evidence.md",
+                            "content_sha256": "e6fd3bec125c3064a28c9d0e33f5bf561d91facd83497d8cd4461136e36400d2"
+                        },
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-asciinema",
+                            "commit": "c47863413886ffac9b66ee13a9ab276ab195d5d9",
+                            "path": "tsconfig.build.json",
+                            "content_sha256": "a3de41c9df477ee0b7c4f66ecbc6e7b6c95c40f7b75a46c9c362cebb8e2b670e"
+                        },
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-asciinema",
+                            "commit": "c47863413886ffac9b66ee13a9ab276ab195d5d9",
+                            "path": "cordis.yml",
+                            "content_sha256": "bf6d662e03f6298b27dc8f2a468c5939488d6c76e61e744ef47691b61c9a9cd9"
+                        }
+                    ],
                     "revision": "c47863413886ffac9b66ee13a9ab276ab195d5d9",
-                    "captured_at": "2026-10-21T03:49:13.260Z",
-                    "summary": "核查 src/index.ts、src/recorder.ts、src/cast-core.ts、src/cast-io.ts、src/tools/play.ts；recorder.ts订阅session/event中的tool/result并提取文本，按会话隔离与容量封存；cast-core.ts维护时间轴和自有JSON对象，cast-io.ts保存并内嵌离线播放器，注册term_rec/play/cat。",
-                    "artifact": "data/runs/2026-10-21-03/snapshots/988hj7tczd-oss--dsh-asciinema/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:41:07.365Z",
+                    "summary": "核查 README.md、package.json、src/index.ts、src/recorder.ts、src/cast-core.ts、src/cast-io.ts、src/tools/rec.ts、src/tools/play.ts、src/tools/cat.ts、assets/player.html、docs/store-evidence.md、tsconfig.build.json、cordis.yml；每次start取exec.agent.session，注册表按session.id:name隔离，事件监听另用Session对象恒等校验，避免正常跨会话结果混录。command scope在当前step/end停止，不是某个shell进程退出；若step含多工具，范围仍整个步骤。无session启动拒绝，status却在该判断前调用active(undefined)，会列全registry活动项，不能宣称缺会话状态也隔离。\n\nwriter按事件数/文本UTF8字节预检，超限封存拒绝后续内容，保truncationCause供stop回执，合理限制单录制增长。但上限只算data字符串而非JSON/对象/HTML占用，没全局录制数量/内存上限。writer seal后SessionRecorder.active仍true直到finish，仍监听/提取后续大结果，mark可返true但writer不再收事件，不等全部处理停止。\n\n落盘是JSON.stringify整个{version,width,height,events,...}对象，reader JSON.parse同结构。其自写reader/writer闭环有实用自包含性，不等外部格式互通。具体贡献在会话对象/身份隔离、录制上限、文本/HTML双出口，而非新的终端协议或审计机制。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/988hj7tczd-oss--dsh-asciinema/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+                        "七运行TS关键链和播放器/包/构建/作者材料；不执行目标测试/构建/录制/文件写/浏览器或命令重放。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +152,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "开发者需要保存Agent工具输出用于演示或排错，合格记录应忠实反映收到的文本与范围；工具结果记录不等于真实终端逐字节会话。",
+                    "text": "适合把DSH会话中工具结果的可见文字留成可回看/分享的本地材料。term_rec开始/停止/标记/状态，term_play生成HTML或文本，term_cat拼接输出。不是终端PTY逐字节录像、视频录屏、命令重放或可验证执行审计。\n\n录制监听tool/result完成块而非实时终端流，contentToText只取text并递归tool-result，图像/reasoning/tool-call不入文件。record_input默认false只是不录user/message输入，工具输出仍可能含原始秘密/文件内容；不能叫录制匿名。合格结果需准确说明采集范围、时序/截断、落盘成功和分享披露，不将回放当重现真实终端或任务成功。\n\n基线是保存工具文本/手工终端录制。增量为会话事件到本地回放/文本统一工具，官方asciinema CLI/player互操作作者明确未宣称，不能凭.cast后缀/version2升级为已验证兼容。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1344714509-root-source"
+                        "2026-10-22-02-github-1344714509-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +163,16 @@
                             "fingerprint": "c47863413886ffac9b66ee13a9ab276ab195d5d9"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:13.260Z",
+                    "reviewed_at": "2026-10-22T09:41:07.365Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "recorder.ts订阅session/event中的tool/result并提取文本，按会话隔离与容量封存；cast-core.ts维护时间轴和自有JSON对象，cast-io.ts保存并内嵌离线播放器，注册term_rec/play/cat。",
+                    "text": "每次start取exec.agent.session，注册表按session.id:name隔离，事件监听另用Session对象恒等校验，避免正常跨会话结果混录。command scope在当前step/end停止，不是某个shell进程退出；若step含多工具，范围仍整个步骤。无session启动拒绝，status却在该判断前调用active(undefined)，会列全registry活动项，不能宣称缺会话状态也隔离。\n\nwriter按事件数/文本UTF8字节预检，超限封存拒绝后续内容，保truncationCause供stop回执，合理限制单录制增长。但上限只算data字符串而非JSON/对象/HTML占用，没全局录制数量/内存上限。writer seal后SessionRecorder.active仍true直到finish，仍监听/提取后续大结果，mark可返true但writer不再收事件，不等全部处理停止。\n\n落盘是JSON.stringify整个{version,width,height,events,...}对象，reader JSON.parse同结构。其自写reader/writer闭环有实用自包含性，不等外部格式互通。具体贡献在会话对象/身份隔离、录制上限、文本/HTML双出口，而非新的终端协议或审计机制。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1344714509-root-source"
+                        "2026-10-22-02-github-1344714509-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +181,16 @@
                             "fingerprint": "c47863413886ffac9b66ee13a9ab276ab195d5d9"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:13.260Z",
+                    "reviewed_at": "2026-10-22T09:41:07.365Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+                    "text": "七运行TS关键链和播放器/包/构建/作者材料；不执行目标测试/构建/录制/文件写/浏览器或命令重放。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1344714509-root-source"
+                        "2026-10-22-02-github-1344714509-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +199,16 @@
                             "fingerprint": "c47863413886ffac9b66ee13a9ab276ab195d5d9"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:13.260Z",
+                    "reviewed_at": "2026-10-22T09:41:07.365Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "当前源码形态main/types指lib，须构建且开发依赖相邻dsh-src；离线播放器为自带实现，官方播放器未捆绑，预留playerUrl未实现。",
+                    "text": "v0.1.1 MIT，源码Git无预构建lib，Node>=23.6与DSH依赖；自有离线渲染/对象格式，未官方互操作。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1344714509-root-source"
+                        "2026-10-22-02-github-1344714509-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +217,16 @@
                             "fingerprint": "c47863413886ffac9b66ee13a9ab276ab195d5d9"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:13.260Z",
+                    "reviewed_at": "2026-10-22T09:41:07.365Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "首次配置构建与输出目录，持续内存/磁盘随容量限制增长，HTML可含敏感工具输出；没有带宽或排错效率实测。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | TS构建/宿主依赖与模板资源 | 核源码入口、路径、私有输出目录 | 构建/适配时间金额未知 |\n| 持续使用 | 结果文本提取/UTF8编码、每录制默认5000事件/1MiB数据、JSON/HTML复制 | 查看截断与内容分享审查 | 无独立模型请求不等下游cat进上下文费用0；多录制/导入不受单writer总额限制 |\n| 失败恢复 | 重录/手动保原件、失败写/导入/HTML重生资源 | 核丢失句柄、时间偏差、覆盖/模板失败或fallback | 无durable pending/drain，恢复时间费用未知 |\n\n",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1344714509-root-source"
+                        "2026-10-22-02-github-1344714509-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +235,16 @@
                             "fingerprint": "c47863413886ffac9b66ee13a9ab276ab195d5d9"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:13.260Z",
+                    "reviewed_at": "2026-10-22T09:41:07.365Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "适合记录普通非敏感工具文本供本插件回放。先检查输出内容和截断，分享HTML前脱敏；需要真实终端保真或官方.cast互操作时先做独立验收。",
+                    "text": "观察，先修模板路径/时间与保存pending恢复，非秘密小样也须核采集/分享范围。详见[Q07](#research-q07)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1344714509-root-source"
+                        "2026-10-22-02-github-1344714509-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +253,16 @@
                             "fingerprint": "c47863413886ffac9b66ee13a9ab276ab195d5d9"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:13.260Z",
+                    "reviewed_at": "2026-10-22T09:41:07.365Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "便于复看工具结果与演示，但不构成执行环境复现、审计不可篡改记录或完整命令历史。",
+                    "text": "#### 效果\n\n| 目标 | 源码增量 | 限制 |\n| --- | --- | --- |\n| 会话复盘 | 工具输出到文件/HTML | 不是PTY原始/官方互操作 |\n| 规模控制 | 单writer数据/事件封存 | 整体内存/导入/后续提取未界定 |\n| 可分享 | 自包含文字回看 | 明文含工具秘密，需审 |\n| 恢复/可追溯 | 明确saved与部分issues | 先移除后写失败、cat丢告警 |\n\n作者16项离线单元材料是设计覆盖，未实际加载host或浏览器的限定在README写明；本轮只检查源码，不据测试数推业务效果。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1344714509-root-source"
+                        "2026-10-22-02-github-1344714509-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +271,16 @@
                             "fingerprint": "c47863413886ffac9b66ee13a9ab276ab195d5d9"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:13.260Z",
+                    "reviewed_at": "2026-10-22T09:41:07.365Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "会话注册表、生命周期解绑、容量封存、输入默认关闭与脚本转义可借鉴。录制时钟按事件到达而非执行实时，命令scope实际step/end；移植需明确范围，FS输出仍依赖宿主策略。 源码依据：[src/index.ts](https://github.com/988hj7tczd-oss/dsh-asciinema/blob/c47863413886ffac9b66ee13a9ab276ab195d5d9/src/index.ts)、[src/recorder.ts](https://github.com/988hj7tczd-oss/dsh-asciinema/blob/c47863413886ffac9b66ee13a9ab276ab195d5d9/src/recorder.ts)、[src/cast-core.ts](https://github.com/988hj7tczd-oss/dsh-asciinema/blob/c47863413886ffac9b66ee13a9ab276ab195d5d9/src/cast-core.ts)、[src/cast-io.ts](https://github.com/988hj7tczd-oss/dsh-asciinema/blob/c47863413886ffac9b66ee13a9ab276ab195d5d9/src/cast-io.ts)、[src/tools/play.ts](https://github.com/988hj7tczd-oss/dsh-asciinema/blob/c47863413886ffac9b66ee13a9ab276ab195d5d9/src/tools/play.ts)。",
+                    "text": "nextDelay每次算now-lastMs的单帧间隔，又取max(该间隔,上次delay)强制不减；castDuration和播放器按各delay求和。于是1/2/1秒三个间隔被表示为1/2/2，和5秒而非4秒，是内部时序算法就可推导的偏差，未执行目标。elapsed却用lastMs-startMs，总时间与文件duration也可分歧。不能把单调不减校验通过当真实时间轴保真。\n\n默认timestamp在toCast/停止时生成，而非保存startTime的开始epoch；env来自宿主process.SHELL/TERM非实际工具shell。宽高是配置默认100x40，未订阅终端resize，所以不是捕获真实终端几何。工具结果本身通常已有截断/包装，此处只录可见字符串，不能恢复上游未记录字节。\n\n播放器是剥ANSI+行缓冲textContent，去\\r而非终端光标覆盖，不完整解释颜色/光标/屏幕控制；cat也是简单拼接去控制序列，不模拟终端最后屏幕。parser遇坏事件可跳过并保issues，term_play显示告警，但term_cat只拒绝cast=null，丢弃其余issues，文本“成功”可能是有损解析。\n\nplayerTemplatePath用new URL('../../assets/player.html',import.meta.url)。src/cast-io.ts或编译后的lib/cast-io.js都在仓库下一层，../../会跳到仓库父目录assets，而实际模板在仓库assets；正常布局会指向错误模板位置；若ctx.fs.resolve拒绝或本地同步异常被catch接住，返回null才触发最小模板fallback。第81行直接return ctx.fs.readText的Promise没有await，其异步拒绝不被该catch捕获，会经term_play第183行await传播为失败；实际缺文件在哪个阶段报错取决于宿主fs。不能一概声称静默fallback，也不把丰富seek/marker界面当每次实际加载。decodeURIComponent(url.pathname)也非平台fileURLToPath转换，Windows路径另需核。\n\nrenderPlayerHtml先转义JSON中的</并对title做HTML转义、播放器用textContent，这是有用的内容边界。但replaceAll的replacement传字符串，输出含$&/$`/$'等替换符时可能被当替换语法扩展而非原文字面；后续全局替换__TITLE__/__CAST_URL__也可改嵌入内容同名片段。需要用固定含这些串的材料对照，不能仅</script>测试就称任意输出逐字保真。\n\nstop先registry.take移除并停止，再await saveCastFile；写失败时活动注册表已无该录制，缺重试句柄/持久待保存队列。session/disposed也先dropSession后fire-and-forget保存，用新signal不等卸载drain，失败只warn。正常不同session同name虽registry隔离，但castsDir与工作区同一物理路径时文件名相同，可覆盖；sanitize减少路径字符不构成全局唯一或安全权限保证。\n\n读写经ctx.fs和session cwd，真正物理/权限/覆盖策略交给宿主；castsDir/path用户可配并非插件自行围栏。整文件readText/JSON/HTML输出无导入大小上限，录制上限不限制外部.cast。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1344714509-root-source"
+                        "2026-10-22-02-github-1344714509-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +289,16 @@
                             "fingerprint": "c47863413886ffac9b66ee13a9ab276ab195d5d9"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:13.260Z",
+                    "reviewed_at": "2026-10-22T09:41:07.365Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "interpretation",
-                    "text": "相对复制工具日志，增量是将会话内文本、标记、时间和离线回放组织成可分享材料；默认不录输入且有容量限制。自写格式核心与播放器不依赖外部CLI，但不能据自解析往返证明官方互操作。",
+                    "text": "结合Session对象/ID隔离、单writer事件字节护栏及cast/HTML/文本三入口，减少手工保存工具文字。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1344714509-root-source"
+                        "2026-10-22-02-github-1344714509-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +307,16 @@
                             "fingerprint": "c47863413886ffac9b66ee13a9ab276ab195d5d9"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:13.260Z",
+                    "reviewed_at": "2026-10-22T09:41:07.365Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
-                    "basis": "interpretation",
-                    "text": "asciinema命名是否暗示超过实现的保真？来源是完成后的tool/result文本，丢失工具执行中真实终端流与光标状态；cast-io保存一个含events数组的JSON对象，由自身parseCast读取。README主动排除官方播放器互操作，故回放仅应承诺本插件文本时间轴，不能承诺PTY录屏或通用.cast兼容。",
+                    "basis": "supported",
+                    "text": "模板../../定位错误、帧间隔max再求和导致计时偏差，stop先移除再保存无重试句柄/卸载drain；输出含秘密/内容替换与导入上限需核，非官方互通。详见[Q03](#research-q03)、[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1344714509-root-source"
+                        "2026-10-22-02-github-1344714509-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +325,16 @@
                             "fingerprint": "c47863413886ffac9b66ee13a9ab276ab195d5d9"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:13.260Z",
+                    "reviewed_at": "2026-10-22T09:41:07.365Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "unverified",
-                    "text": "由文本事件来源与自有序列化推导，可将“工具结果记录”和“终端字节流记录”分成明确类型，并为标准格式导出做独立官方解析验收；输出中显示缺失/截断。未验证假设是减少误用且使分享更可靠。用控制序列、连续工具流及官方工具解析对照，若事件含义或导出仍不一致则否定。",
+                    "text": "可探索统一时间语义与范围/模板版本/保存pending收据，字面嵌入与失败可恢复，比较完整率/资源；未实现。详见[Q07](#research-q07)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1344714509-root-source"
+                        "2026-10-22-02-github-1344714509-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +343,15 @@
                             "fingerprint": "c47863413886ffac9b66ee13a9ab276ab195d5d9"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:13.260Z",
+                    "reviewed_at": "2026-10-22T09:41:07.365Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T03:49:13.260Z",
+            "last_checked_at": "2026-10-22T09:41:07.365Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "c47863413886ffac9b66ee13a9ab276ab195d5d9",
-                "reviewed_at": "2026-10-21T03:49:13.260Z",
+                "reviewed_at": "2026-10-22T09:41:07.365Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -275,61 +363,61 @@
                 "technical": {
                     "criteria": {
                         "novelty": 9,
-                        "mechanism": 8,
+                        "mechanism": 15,
                         "transferability": 10,
                         "simplification": 8
                     },
-                    "rationale": "novelty文本记录回放适配小档；mechanism事件流与容量封存小档；transferability纯事件核心半档；simplification离线自包含半档，不为官方兼容加分。",
+                    "rationale": "novelty以文本录制为参照，DSH输出/回放组合小幅；mechanism以手存日志为参照，隔离/护栏/回看实质，限制计时/保存；transferability以host耦合为参照，纯writer/parser可迁移，限制自有格式/ctx.fs；simplification以人工整理为参照，统一入口省步骤，限制模板/恢复需人工。",
                     "basis": "interpretation",
-                    "score": 35,
+                    "score": 42,
                     "evidence_ids": [
-                        "2026-10-21-03-github-1344714509-root-source"
+                        "2026-10-22-02-github-1344714509-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 9,
+                        "workflow": 18,
                         "delivery": 15,
-                        "reach": 5,
+                        "reach": 10,
                         "economics": 4
                     },
-                    "rationale": "workflow记录便利小档；delivery可分享回放半档；reach Agent开发者小档；economics排错成本改善未测小档。",
+                    "rationale": "workflow以手复制输出为参照，会话复盘实质；delivery以Q01手工保存工具文字日志为参照，当前交付带事件/几何元数据的cast对象、可独立打开的内嵌HTML与cat文本三个可移交产物，价值单元从一段日志扩展为可回看/标记/分享的录制件，属实质交付形式增量取15；未改变真实终端/官方格式验收，也不计Q07未来保存收据。路径/时间/持久失败另留采用/成本。；reach以DSH内部文本为参照，HTML分享有增量但非匿名；economics以手存日志为参照，可能省整理，恢复/资源/披露成本未测仅小幅。",
                     "basis": "interpretation",
-                    "score": 33,
+                    "score": 47,
                     "evidence_ids": [
-                        "2026-10-21-03-github-1344714509-root-source"
+                        "2026-10-22-02-github-1344714509-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "trial",
-                "reason": "需演示排错的开发者可录非敏感工具文本；看截断并分享前脱敏，本插件时间轴非PTY和官方cast互操作。",
+                "decision": "observe",
+                "reason": "本地工具输出复盘有用，但模板定位/计时与保存失败恢复影响基本交付，先修再试，不凭cast后缀当完整终端/官方互通。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "保存Agent工具输出供回看演示任务清晰。"
+                        "rationale": "输出分享/复盘明确。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "标记时间与离线HTML比复制日志便于展示，但不复现终端状态。"
+                        "rationale": "会话隔离/护栏/三出口实用组合。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "tool/result抽文本及自有events JSON源码明确，官方互操作主动排除。"
+                        "rationale": "固定完整关键链，内部缺口可定位而非宿主验收。"
                     },
                     "cost": {
-                        "score": 15,
-                        "rationale": "容量限制控制内存盘占用，构建宿主依赖和敏感输出清理仍需管理。"
+                        "score": 5,
+                        "rationale": "源码构建/明文审查与丢记录/错时序恢复成本。"
                     }
                 },
-                "score": 64,
+                "score": 54,
                 "revision": "c47863413886ffac9b66ee13a9ab276ab195d5d9",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T09:41:07.365Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-03-github-1344714509-root-source"
+                    "2026-10-22-02-github-1344714509-root-source"
                 ],
                 "dependencies": [
                     {
@@ -354,89 +442,61 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T03:36:14Z",
-            "analysis_sha256": "36b70c0196ce11902cf58e821857c53f29c3d050ee41321ca87a2f4f3f06b9cc"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "d7203ff2b20661380d0df53ad1a7c1163da9fa165d1b2be9c2ae51bd34ca09ee"
         },
         "publication.metadata": "data/plugins/988hj7tczd-oss--dsh-asciinema/META.json",
         "publication.summaries": {
-            "text": "录制DSH工具输出为带时间轴的数据文件，提供文本提取和自包含离线HTML回放。",
+            "text": "把DSH会话工具结果文字缓冲为自有cast对象文件，提供会话录制/标记、HTML回看与纯文本转换。",
             "revision": "c47863413886ffac9b66ee13a9ab276ab195d5d9",
             "source_url": "https://github.com/988hj7tczd-oss/dsh-asciinema/blob/c47863413886ffac9b66ee13a9ab276ab195d5d9/README.md"
         },
         "publication.capabilities": {
             "revision": "c47863413886ffac9b66ee13a9ab276ab195d5d9",
             "items": {
-                "模型工具": "term_rec、term_play、term_cat录制/回放/文本提取。",
-                "事件监听": "按会话捕获tool/result及可选输入并处理生命周期。"
-            }
+                "模型工具": "term_rec/term_play/term_cat",
+                "事件监听": "session/event/disposed收集与自动收尾"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| rec | 工具文字/可选输入录制 | 非PTY，输出也可含秘密 |\n| scope/上限 | step停止/单writer封存 | 非某进程退出/全局预算 |\n| play | 内嵌HTML或文字 | 模板路径/时间有缺口，非官方player |\n| cat | 拼接去ANSI | 部分解析告警不回传 |\n| autosave | 命名结束时保存 | fire-and-forget无drain/重试队列 |\n"
         },
         "publication.advice": {
             "revision": "c47863413886ffac9b66ee13a9ab276ab195d5d9",
-            "text": "适合记录普通非敏感工具文本供本插件回放。先检查输出内容和截断，分享HTML前脱敏；需要真实终端保真或官方.cast互操作时先做独立验收。"
+            "text": "观察，先修模板路径/时间与保存pending恢复，非秘密小样也须核采集/分享范围。详见[Q07](#research-q07)。"
         },
         "registry": "data/plugins/988hj7tczd-oss--dsh-asciinema",
-        "reports": "# dsh-asciinema\n\n> 录制DSH工具输出为带时间轴的数据文件，提供文本提取和自包含离线HTML回放。\n\n## 使用建议\n\n适合记录普通非敏感工具文本供本插件回放。先检查输出内容和截断，分享HTML前脱敏；需要真实终端保真或官方.cast互操作时先做独立验收。\n\n核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。\n\n源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。\n\n## 洞察短评\n\n- **用途**：开发者需要保存Agent工具输出用于演示或排错，合格记录应忠实反映收到的文本与范围；工具结果记录不等于真实终端逐字节会话。\n- **亮点**：相对复制工具日志，增量是将会话内文本、标记、时间和离线回放组织成可分享材料；默认不录输入且有容量限制。自写格式核心与播放器不依赖外部CLI，但不能据自解析往返证明官方互操作。\n- **思考**：asciinema命名是否暗示超过实现的保真？来源是完成后的tool/result文本，丢失工具执行中真实终端流与光标状态；cast-io保存一个含events数组的JSON对象，由自身parseCast读取。README主动排除官方播放器互操作，故回放仅应承诺本插件文本时间轴，不能承诺PTY录屏或通用.cast兼容。\n- **建议**：由文本事件来源与自有序列化推导，可将“工具结果记录”和“终端字节流记录”分成明确类型，并为标准格式导出做独立官方解析验收；输出中显示缺失/截断。未验证假设是减少误用且使分享更可靠。用控制序列、连续工具流及官方工具解析对照，若事件含义或导出仍不一致则否定。\n\n## 场景与替代办法\n\n开发者需要保存Agent工具输出用于演示或排错，合格记录应忠实反映收到的文本与范围；工具结果记录不等于真实终端逐字节会话。\n\n宿主会话日志包含更完整结构，真实asciinema CLI针对终端；插件便于工具文本回放，但不是两者完整替代。\n\n## 能力清单\n\n- **模型工具**：term_rec、term_play、term_cat录制/回放/文本提取。\n- **事件监听**：按会话捕获tool/result及可选输入并处理生命周期。\n\n## 依赖与流程\n\nDSH tools/fs与session事件，编译依赖相邻宿主源码；HTML回放依赖浏览器，外部互操作未验证，工具输出本身可能包含凭据。\n\nstart绑定当前会话，收集后续tool/result文本，可插标记，stop写文件或step结束封存；play生成离线HTML，cat提取文本，最后人工检查范围与敏感内容。\n\n## 成本与效果\n\n首次配置构建与输出目录，持续内存/磁盘随容量限制增长，HTML可含敏感工具输出；没有带宽或排错效率实测。\n\n便于复看工具结果与演示，但不构成执行环境复现、审计不可篡改记录或完整命令历史。\n\n## 核心贡献\n\n相对复制工具日志，增量是将会话内文本、标记、时间和离线回放组织成可分享材料；默认不录输入且有容量限制。自写格式核心与播放器不依赖外部CLI，但不能据自解析往返证明官方互操作。\n\n## 关键质疑\n\nasciinema命名是否暗示超过实现的保真？来源是完成后的tool/result文本，丢失工具执行中真实终端流与光标状态；cast-io保存一个含events数组的JSON对象，由自身parseCast读取。README主动排除官方播放器互操作，故回放仅应承诺本插件文本时间轴，不能承诺PTY录屏或通用.cast兼容。\n\n\n## 工程亮点\n\n会话注册表、生命周期解绑、容量封存、输入默认关闭与脚本转义可借鉴。录制时钟按事件到达而非执行实时，命令scope实际step/end；移植需明确范围，FS输出仍依赖宿主策略。 源码依据：[src/index.ts](https://github.com/988hj7tczd-oss/dsh-asciinema/blob/c47863413886ffac9b66ee13a9ab276ab195d5d9/src/index.ts)、[src/recorder.ts](https://github.com/988hj7tczd-oss/dsh-asciinema/blob/c47863413886ffac9b66ee13a9ab276ab195d5d9/src/recorder.ts)、[src/cast-core.ts](https://github.com/988hj7tczd-oss/dsh-asciinema/blob/c47863413886ffac9b66ee13a9ab276ab195d5d9/src/cast-core.ts)、[src/cast-io.ts](https://github.com/988hj7tczd-oss/dsh-asciinema/blob/c47863413886ffac9b66ee13a9ab276ab195d5d9/src/cast-io.ts)、[src/tools/play.ts](https://github.com/988hj7tczd-oss/dsh-asciinema/blob/c47863413886ffac9b66ee13a9ab276ab195d5d9/src/tools/play.ts)。\n\n## 未来设计假设（未验证）\n\n由文本事件来源与自有序列化推导，可将“工具结果记录”和“终端字节流记录”分成明确类型，并为标准格式导出做独立官方解析验收；输出中显示缺失/截断。未验证假设是减少误用且使分享更可靠。用控制序列、连续工具流及官方工具解析对照，若事件含义或导出仍不一致则否定。\n\n隔离会话验证跨会话隔离、文本/非文本、容量封存、step结束、命名/未命名dispose保存，以及HTML转义；另用官方工具验证导出，不用自parser自证兼容。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：699f9c12e86620aaa9916e7e4c4dab4d7b8b5e4117d5b609322f1152cf082d96。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 3 | 246 | — | — | 2884 |\n| .ts | source | 7 | 1478 | 1136 | 201 | — |\n| .ts | test | 1 | 449 | 352 | 44 | — |\n\n排除 2 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[988hj7tczd-oss/dsh-asciinema](https://github.com/988hj7tczd-oss/dsh-asciinema)\n- **版本号**：0.1.1（[固定提交 c4786341](https://github.com/988hj7tczd-oss/dsh-asciinema/tree/c47863413886ffac9b66ee13a9ab276ab195d5d9)）\n- **版本日期**：2026-08-24（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：作者 README、包清单、源码路径 src/index.ts、src/recorder.ts、src/cast-core.ts、src/cast-io.ts、src/tools/play.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。\n- 下一步：隔离会话验证跨会话隔离、文本/非文本、容量封存、step结束、命名/未命名dispose保存，以及HTML转义；另用官方工具验证导出，不用自parser自证兼容。\n",
+        "reports": "# dsh-asciinema\n\n> 把DSH会话工具结果文字缓冲为自有cast对象文件，提供会话录制/标记、HTML回看与纯文本转换。\n\n## 研究范围\n\n- **仓库**：[988hj7tczd-oss/dsh-asciinema](https://github.com/988hj7tczd-oss/dsh-asciinema)\n- **版本号**：0.1.1（[固定提交 c47863413886ffac9b66ee13a9ab276ab195d5d9](https://github.com/988hj7tczd-oss/dsh-asciinema/tree/c47863413886ffac9b66ee13a9ab276ab195d5d9)）\n- **版本日期**：2026-08-24（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已检查源码。输出复盘与单录制护栏明确，模板/计时/持久恢复基础缺口需先修。\n\n## 洞察短评\n\n- **用途**：适合把DSH会话中工具结果的可见文字留成可回看/分享的本地材料。term_rec开始/停止/标记/状态，term_play生成HTML或文本，term_cat拼接输出。不是终端PTY逐字节录像、视频录屏、命令重放或可验证执行审计。\n\n录制监听tool/result完成块而非实时终端流，contentToText只取text并递归tool-result，图像/reasoning/tool-call不入文件。record_input默认false只是不录user/message输入，工具输出仍可能含原始秘密/文件内容；不能叫录制匿名。合格结果需准确说明采集范围、时序/截断、落盘成功和分享披露，不将回放当重现真实终端或任务成功。\n\n基线是保存工具文本/手工终端录制。增量为会话事件到本地回放/文本统一工具，官方asciinema CLI/player互操作作者明确未宣称，不能凭.cast后缀/version2升级为已验证兼容。\n- **亮点**：结合Session对象/ID隔离、单writer事件字节护栏及cast/HTML/文本三入口，减少手工保存工具文字。详见[Q02](#research-q02)。\n- **思考**：模板../../定位错误、帧间隔max再求和导致计时偏差，stop先移除再保存无重试句柄/卸载drain；输出含秘密/内容替换与导入上限需核，非官方互通。详见[Q03](#research-q03)、[Q04](#research-q04)。\n- **建议**：可探索统一时间语义与范围/模板版本/保存pending收据，字面嵌入与失败可恢复，比较完整率/资源；未实现。详见[Q07](#research-q07)。\n\n采用建议：观察，先修模板路径/时间与保存pending恢复，非秘密小样也须核采集/分享范围。详见[Q07](#research-q07)。\n\n## 核心贡献\n\n结合Session对象/ID隔离、单writer事件字节护栏及cast/HTML/文本三入口，减少手工保存工具文字。详见[Q02](#research-q02)。\n\n## 关键质疑\n\n模板../../定位错误、帧间隔max再求和导致计时偏差，stop先移除再保存无重试句柄/卸载drain；输出含秘密/内容替换与导入上限需核，非官方互通。详见[Q03](#research-q03)、[Q04](#research-q04)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可探索统一时间语义与范围/模板版本/保存pending收据，字面嵌入与失败可恢复，比较完整率/资源；未实现。详见[Q07](#research-q07)。\n\n可继续固定时序/特殊串/多会话与失败文件mock核内容hash/时间/保存状态和资源，不运行真实工具或重放命令。\n\n## 场景与替代办法\n\n适合把DSH会话中工具结果的可见文字留成可回看/分享的本地材料。term_rec开始/停止/标记/状态，term_play生成HTML或文本，term_cat拼接输出。不是终端PTY逐字节录像、视频录屏、命令重放或可验证执行审计。\n\n录制监听tool/result完成块而非实时终端流，contentToText只取text并递归tool-result，图像/reasoning/tool-call不入文件。record_input默认false只是不录user/message输入，工具输出仍可能含原始秘密/文件内容；不能叫录制匿名。合格结果需准确说明采集范围、时序/截断、落盘成功和分享披露，不将回放当重现真实终端或任务成功。\n\n基线是保存工具文本/手工终端录制。增量为会话事件到本地回放/文本统一工具，官方asciinema CLI/player互操作作者明确未宣称，不能凭.cast后缀/version2升级为已验证兼容。\n\n手工保存工具文本或PTY录制；插件统一入口，但采样文字不等原终端，效果与恢复需对照。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 条件 | 用途 | 边界 |\n| --- | --- | --- |\n| 编译lib或按说明加载源码 | main/types入口 | 固定Git不预置lib，先build并核资产相对路径 |\n| Node>=23.6或对应strip支持 | 直接TS测试/源码形态 | 发布ESM与宿主版本仍需精确核 |\n| DSH tools/fs与session事件 | 工具/文件/录制 | inject无sessions但监听依事件契约 |\n| 可写私有castsDir和分享许可 | 明文cast/内嵌HTML | 输出也可有秘密，输入默认false非脱敏 |\n| 模板/浏览器 | 离线回看 | 当前路径有误；被catch接住才fallback，readText异步拒绝可令play失败；独立模板可?url fetch |\n\n\n\n#### 使用流程\n\n| 步骤 | 动作 | 判据 |\n| --- | --- | --- |\n| 核包 | 明确源码/已构建，核实际宿主依赖 | README邻dsh-src是作者开发布局，当前package列registry版本 |\n| 选范围 | 只在可信会话小录制，定maxEvents/Bytes | scope=command为step边界 |\n| 停并存 | 指name，核saved/路径/截断 | 错误不丢内存后再决定重试 |\n| 转/回放 | 看issues与模板能力/时间 | cat可能丢告警，不等完整原屏幕 |\n| 分享 | 审工具输出/环境/输入及HTML内嵌内容 | 生成HTML不等已匿名或可公开 |\n| 收尾 | 明确停/保存，备份原件 | 不能靠崩溃/卸载自动保全 |\n\ndocs/store-evidence既保留“真实宿主待执行”旧说明又追加作者CLI add/dump/remove rc0，最多是作者声明的配置生命周期材料，不等本轮运行、录制完整性或官方互操作。package宽compatibility>=0.1.0也不能替代精确代际验收。\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | TS构建/宿主依赖与模板资源 | 核源码入口、路径、私有输出目录 | 构建/适配时间金额未知 |\n| 持续使用 | 结果文本提取/UTF8编码、每录制默认5000事件/1MiB数据、JSON/HTML复制 | 查看截断与内容分享审查 | 无独立模型请求不等下游cat进上下文费用0；多录制/导入不受单writer总额限制 |\n| 失败恢复 | 重录/手动保原件、失败写/导入/HTML重生资源 | 核丢失句柄、时间偏差、覆盖/模板失败或fallback | 无durable pending/drain，恢复时间费用未知 |\n\n\n\n#### 效果\n\n| 目标 | 源码增量 | 限制 |\n| --- | --- | --- |\n| 会话复盘 | 工具输出到文件/HTML | 不是PTY原始/官方互操作 |\n| 规模控制 | 单writer数据/事件封存 | 整体内存/导入/后续提取未界定 |\n| 可分享 | 自包含文字回看 | 明文含工具秘密，需审 |\n| 恢复/可追溯 | 明确saved与部分issues | 先移除后写失败、cat丢告警 |\n\n作者16项离线单元材料是设计覆盖，未实际加载host或浏览器的限定在README写明；本轮只检查源码，不据测试数推业务效果。\n\n## 研究问题与完整回答\n\n**插件研究总目标：**核输出采集/终端区别、会话身份和上限、内部时间轴/模板/保存恢复、明文分享与依赖成本。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 录的到底是什么，适合何种复盘？\n\n**研究主题：**场景与需求\n\n#### 完整回答\n\n适合把DSH会话中工具结果的可见文字留成可回看/分享的本地材料。term_rec开始/停止/标记/状态，term_play生成HTML或文本，term_cat拼接输出。不是终端PTY逐字节录像、视频录屏、命令重放或可验证执行审计。\n\n录制监听tool/result完成块而非实时终端流，contentToText只取text并递归tool-result，图像/reasoning/tool-call不入文件。record_input默认false只是不录user/message输入，工具输出仍可能含原始秘密/文件内容；不能叫录制匿名。合格结果需准确说明采集范围、时序/截断、落盘成功和分享披露，不将回放当重现真实终端或任务成功。\n\n基线是保存工具文本/手工终端录制。增量为会话事件到本地回放/文本统一工具，官方asciinema CLI/player互操作作者明确未宣称，不能凭.cast后缀/version2升级为已验证兼容。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:12-18](https://github.com/988hj7tczd-oss/dsh-asciinema/blob/c47863413886ffac9b66ee13a9ab276ab195d5d9/README.md#L12-L18)\n\n作者录制/离线/互操作限制。\n\n```text\nDSH 插件:把会话中的终端/工具输出录制为 **asciinema v2（`.cast`）** 文件,提供内嵌播放器\n（**自带离线渲染器**,标签结构对齐 asciinema-player 数据模型）回放与 HTML 导出。\n\n- 语义对齐官方 asciinema CLI 三动作:**rec（录制）/ play（回放）/ cat（转文本）**。\n- 录制来源低侵入:订阅 `session/event` 事件流中的 `tool/result` 输出(无需依赖 terminals 服务)。\n- 独立实现 cast-core,不依赖 asciinema CLI;播放器数据内嵌,**完全离线渲染,无外部请求**。\n  (未与官方 asciinema play/player 做互操作验证 —— \".cast 可被官方工具解析\"不在本交付宣称内)\n```\n\n**依据 2 · 源码核查**：[src/recorder.ts:51-68](https://github.com/988hj7tczd-oss/dsh-asciinema/blob/c47863413886ffac9b66ee13a9ab276ab195d5d9/src/recorder.ts#L51-L68)\n\n内容类型提取。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n/** 从 ContentBlock 数组提取可见文本(递归进 tool-result 内层)。 */\nexport function contentToText(blocks: readonly ContentBlock[] | undefined): string {\n  if (blocks === undefined) return ''\n  let text = ''\n  for (const block of blocks) {\n    switch (block.type) {\n      case 'text':\n        text += block.text\n        break\n      case 'tool-result':\n        text += contentToText(block.content)\n        break\n      default:\n        // reasoning/image/tool-call 不入录制文本\n        break\n    }\n  }\n  return text\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/recorder.ts:125-143](https://github.com/988hj7tczd-oss/dsh-asciinema/blob/c47863413886ffac9b66ee13a9ab276ab195d5d9/src/recorder.ts#L125-L143)\n\ntool结果/可选user/step边界。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n  private handleEvent(event: SessionEvent): void {\n    // 注意延迟以事件到达顺序计算,而非事件时间戳 —— 与 v2 相对时间轴一致。\n    switch (event.type) {\n      case 'tool/result': {\n        const blocks = event.data.message.content[0]?.content\n        const text = contentToText(blocks)\n        if (text !== '') this.writer.write(text)\n        break\n      }\n      case 'user/message': {\n        if (!this.recordInput) break\n        const text = contentToText(event.data.content)\n        if (text !== '') this.writer.push('i', text)\n        break\n      }\n      case 'step/end': {\n        // command 范围:当前 agent 步骤结束即封存。\n        if (this.scope === 'command') this.finish('step/end')\n        break\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 会话隔离、有界录制和格式如何连接？\n\n**研究主题：**功能与机制、贡献与相对优势\n\n#### 完整回答\n\n每次start取exec.agent.session，注册表按session.id:name隔离，事件监听另用Session对象恒等校验，避免正常跨会话结果混录。command scope在当前step/end停止，不是某个shell进程退出；若step含多工具，范围仍整个步骤。无session启动拒绝，status却在该判断前调用active(undefined)，会列全registry活动项，不能宣称缺会话状态也隔离。\n\nwriter按事件数/文本UTF8字节预检，超限封存拒绝后续内容，保truncationCause供stop回执，合理限制单录制增长。但上限只算data字符串而非JSON/对象/HTML占用，没全局录制数量/内存上限。writer seal后SessionRecorder.active仍true直到finish，仍监听/提取后续大结果，mark可返true但writer不再收事件，不等全部处理停止。\n\n落盘是JSON.stringify整个{version,width,height,events,...}对象，reader JSON.parse同结构。其自写reader/writer闭环有实用自包含性，不等外部格式互通。具体贡献在会话对象/身份隔离、录制上限、文本/HTML双出口，而非新的终端协议或审计机制。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/tools/rec.ts:135-174](https://github.com/988hj7tczd-oss/dsh-asciinema/blob/c47863413886ffac9b66ee13a9ab276ab195d5d9/src/tools/rec.ts#L135-L174)\n\nsession/status顺序。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n    async execute(args: TermRecArgs, exec: ToolRunContext) {\n      const action = args.action ?? 'start'\n      const session = exec.agent?.session\n\n      if (action === 'status') {\n        // 只列出当前会话的活动录制(跨会话隔离)。\n        const active = deps.registry.active(session)\n        const list = active.map((rec) => `「${rec.name}」(${rec.scope},${rec.eventCount} 事件)`)\n        return {\n          status: 'ok',\n          message: list.length > 0 ? `录制中:${list.join(', ')}` : '当前没有活动录制',\n          events: active.reduce((sum, rec) => sum + rec.eventCount, 0),\n        }\n      }\n\n      if (session === undefined) {\n        return {\n          status: 'error',\n          message: 'term_rec 只能在会话内调用(缺少 agent 会话上下文)',\n        }\n      }\n\n      if (action === 'start') {\n        const scope = args.scope ?? 'session'\n        const { name, autoNamed } = defaultName(scope, args.name)\n        if (deps.registry.get(name, session) !== undefined) {\n          return { status: 'error', message: `本会话已有同名录制「${name}」,请先 term_rec action=stop` }\n        }\n        const recorder = deps.registry.start(deps.ctx, session, {\n          name,\n          scope,\n          autoNamed,\n          recordInput: args.record_input ?? deps.config.recordInput,\n          writerOptions: {\n            width: deps.config.width,\n            height: deps.config.height,\n            maxEvents: deps.config.maxEvents,\n            maxBytes: deps.config.maxBytes,\n          },\n        })\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/recorder.ts:108-143](https://github.com/988hj7tczd-oss/dsh-asciinema/blob/c47863413886ffac9b66ee13a9ab276ab195d5d9/src/recorder.ts#L108-L143)\n\n对象隔离/步骤停止。\n\n<details>\n<summary>查看原文（36行）</summary>\n\n```text\n  private readonly onSessionEvent = (subject: Session, event: SessionEvent): void => {\n    if (subject !== this.session || !this.active) return\n    this.handleEvent(event)\n  }\n\n  private readonly onSessionDisposed = (subject: Session): void => {\n    if (subject !== this.session) return\n    this.finish('session/disposed')\n  }\n\n  /** 开始监听(幂等);句柄通过 ctx.on 返回的 disposer 管理,生命周期随 ctx。 */\n  start(): this {\n    this.disposers.push(this.ctx.on('session/event', this.onSessionEvent))\n    this.disposers.push(this.ctx.on('session/disposed', this.onSessionDisposed))\n    return this\n  }\n\n  private handleEvent(event: SessionEvent): void {\n    // 注意延迟以事件到达顺序计算,而非事件时间戳 —— 与 v2 相对时间轴一致。\n    switch (event.type) {\n      case 'tool/result': {\n        const blocks = event.data.message.content[0]?.content\n        const text = contentToText(blocks)\n        if (text !== '') this.writer.write(text)\n        break\n      }\n      case 'user/message': {\n        if (!this.recordInput) break\n        const text = contentToText(event.data.content)\n        if (text !== '') this.writer.push('i', text)\n        break\n      }\n      case 'step/end': {\n        // command 范围:当前 agent 步骤结束即封存。\n        if (this.scope === 'command') this.finish('step/end')\n        break\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/recorder.ts:235-269](https://github.com/988hj7tczd-oss/dsh-asciinema/blob/c47863413886ffac9b66ee13a9ab276ab195d5d9/src/recorder.ts#L235-L269)\n\nID/name及无session活动全列。\n\n<details>\n<summary>查看原文（35行）</summary>\n\n```text\n  private keyFor(session: Session | undefined, name: string): string {\n    return `${sessionKeyOf(session)}:${name}`\n  }\n\n  /** 开始一个新录制;同会话同名冲突时抛错(调用方转成工具错误返回)。 */\n  start(ctx: Context, session: Session, options: RecorderStartOptions): SessionRecorder {\n    const key = this.keyFor(session, options.name)\n    if (this.byKey.has(key)) {\n      throw new Error(`同会话已存在同名录制「${options.name}」,请先 term_rec action=stop`)\n    }\n    const recorder = new SessionRecorder(ctx, session, options).start()\n    this.byKey.set(key, recorder)\n    const list = this.bySession.get(session) ?? []\n    list.push(recorder)\n    this.bySession.set(session, list)\n    return recorder\n  }\n\n  /** 按会话范围取录制:会话 A 只能取到自己会话的录制。 */\n  get(name: string, session?: Session): SessionRecorder | undefined {\n    return this.byKey.get(this.keyFor(session, name))\n  }\n\n  getNameOf(recorder: SessionRecorder): string | undefined {\n    for (const [key, rec] of this.byKey) {\n      if (rec === recorder) return key.slice(key.indexOf(':') + 1)\n    }\n    return undefined\n  }\n\n  /** 当前活动(未封存)的录制,按时间顺序;给会话则只列该会话的。 */\n  active(session?: Session): SessionRecorder[] {\n    const active = [...this.byKey.values()].filter((rec) => rec.isActive)\n    if (session === undefined) return active\n    return active.filter((rec) => rec.sessionOf === session)\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/cast-core.ts:179-217](https://github.com/988hj7tczd-oss/dsh-asciinema/blob/c47863413886ffac9b66ee13a9ab276ab195d5d9/src/cast-core.ts#L179-L217)\n\n文本字节/事件封存。\n\n<details>\n<summary>查看原文（39行）</summary>\n\n```text\n  /** 预检:封存后或任一容量上限将超限时拒绝。 */\n  private canAccept(dataLength: number): boolean {\n    if (this.sealed) return false\n    const maxEvents = this.options.maxEvents\n    const maxBytes = this.options.maxBytes\n    if (maxEvents !== undefined && this.events.length >= maxEvents) {\n      this.sealBy('events')\n      return false\n    }\n    if (maxBytes !== undefined && this.bytes + dataLength > maxBytes) {\n      this.sealBy('bytes')\n      return false\n    }\n    return true\n  }\n\n  private sealBy(reason: 'events' | 'bytes'): void {\n    if (!this.sealed) {\n      this.sealed = true\n      this.truncationReason = reason\n    }\n  }\n\n  private nextDelay(nowMs: number): number {\n    const rawMs = Math.max(0, nowMs - this.lastMs)\n    this.lastMs = nowMs\n    const delay = roundDelay(rawMs)\n    // 单调不减:四舍五入可能让相邻帧相等,不允许回退。\n    this.lastDelay = delay >= this.lastDelay ? delay : this.lastDelay\n    return this.lastDelay\n  }\n\n  /** 追加一个事件并按 v2 语义计算 delay。封存或超限后静默丢弃。 */\n  push(type: CastEventType, data: string): void {\n    const byteLength = utf8ByteLength(data)\n    if (!this.canAccept(byteLength)) return\n    const delay = this.nextDelay(monotonicMs())\n    this.events.push([delay, type, data])\n    this.bytes += byteLength\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/cast-io.ts:51-55](https://github.com/988hj7tczd-oss/dsh-asciinema/blob/c47863413886ffac9b66ee13a9ab276ab195d5d9/src/cast-io.ts#L51-L55)\n\n整对象JSON落盘。\n\n```text\n  const fileName = `${sanitizeName(name)}.cast`\n  const relPath = `${castsDir}/${fileName}`\n  const target = await resolveTarget(ctx, session, relPath, signal)\n  const content = JSON.stringify(cast)\n  await ctx.fs.writeText(target, content, undefined, signal)\n```\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 时序与终端显示保真有什么实际问题？\n\n**研究主题：**缺陷与关键质疑\n\n#### 完整回答\n\nnextDelay每次算now-lastMs的单帧间隔，又取max(该间隔,上次delay)强制不减；castDuration和播放器按各delay求和。于是1/2/1秒三个间隔被表示为1/2/2，和5秒而非4秒，是内部时序算法就可推导的偏差，未执行目标。elapsed却用lastMs-startMs，总时间与文件duration也可分歧。不能把单调不减校验通过当真实时间轴保真。\n\n默认timestamp在toCast/停止时生成，而非保存startTime的开始epoch；env来自宿主process.SHELL/TERM非实际工具shell。宽高是配置默认100x40，未订阅终端resize，所以不是捕获真实终端几何。工具结果本身通常已有截断/包装，此处只录可见字符串，不能恢复上游未记录字节。\n\n播放器是剥ANSI+行缓冲textContent，去\\r而非终端光标覆盖，不完整解释颜色/光标/屏幕控制；cat也是简单拼接去控制序列，不模拟终端最后屏幕。parser遇坏事件可跳过并保issues，term_play显示告警，但term_cat只拒绝cast=null，丢弃其余issues，文本“成功”可能是有损解析。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/cast-core.ts:174-208](https://github.com/988hj7tczd-oss/dsh-asciinema/blob/c47863413886ffac9b66ee13a9ab276ab195d5d9/src/cast-core.ts#L174-L208)\n\nelapsed和max帧间隔。\n\n<details>\n<summary>查看原文（35行）</summary>\n\n```text\n  /** 距录制开始的相对秒数(截至最后一次 push)。 */\n  get elapsed(): number {\n    return roundDelay(Math.max(0, this.lastMs - this.startMs))\n  }\n\n  /** 预检:封存后或任一容量上限将超限时拒绝。 */\n  private canAccept(dataLength: number): boolean {\n    if (this.sealed) return false\n    const maxEvents = this.options.maxEvents\n    const maxBytes = this.options.maxBytes\n    if (maxEvents !== undefined && this.events.length >= maxEvents) {\n      this.sealBy('events')\n      return false\n    }\n    if (maxBytes !== undefined && this.bytes + dataLength > maxBytes) {\n      this.sealBy('bytes')\n      return false\n    }\n    return true\n  }\n\n  private sealBy(reason: 'events' | 'bytes'): void {\n    if (!this.sealed) {\n      this.sealed = true\n      this.truncationReason = reason\n    }\n  }\n\n  private nextDelay(nowMs: number): number {\n    const rawMs = Math.max(0, nowMs - this.lastMs)\n    this.lastMs = nowMs\n    const delay = roundDelay(rawMs)\n    // 单调不减:四舍五入可能让相邻帧相等,不允许回退。\n    this.lastDelay = delay >= this.lastDelay ? delay : this.lastDelay\n    return this.lastDelay\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/cast-core.ts:242-258](https://github.com/988hj7tczd-oss/dsh-asciinema/blob/c47863413886ffac9b66ee13a9ab276ab195d5d9/src/cast-core.ts#L242-L258)\n\n停止timestamp/env/几何。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n  /** 生成完整 CastFile(含 header 与事件快照)。 */\n  toCast(meta: CastWriterMeta = {}): CastFile {\n    const cast: CastFile = {\n      version: 2,\n      width: this.width,\n      height: this.height,\n      timestamp: meta.timestamp ?? castTimestamp(),\n      events: this.events.map((event) => [event[0], event[1], event[2]] as CastEvent),\n    }\n    if (meta.title !== undefined) cast.title = meta.title\n    if (meta.env !== undefined) cast.env = { ...meta.env }\n    else cast.env = defaultCastEnv()\n    if (meta.idle_time_limit !== undefined) cast.idle_time_limit = meta.idle_time_limit\n    else if (this.options.idleTimeLimit !== undefined) cast.idle_time_limit = this.options.idleTimeLimit\n    if (meta.command !== undefined) cast.command = meta.command\n    else if (this.options.command !== undefined) cast.command = this.options.command\n    return cast\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/cast-core.ts:442-458](https://github.com/988hj7tczd-oss/dsh-asciinema/blob/c47863413886ffac9b66ee13a9ab276ab195d5d9/src/cast-core.ts#L442-L458)\n\n文本/求和duration。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\nexport function castToText(cast: CastFile, options: CastToTextOptions = {}): string {\n  const strip = options.stripAnsi ?? true\n  const includeInput = options.includeInput ?? false\n  let output = ''\n  for (const event of cast.events) {\n    if (event[1] === 'o' || (includeInput && event[1] === 'i')) {\n      output += event[2]\n    }\n  }\n  return strip ? stripAnsi(output) : output\n}\n\n/** 播放时长(秒)= 各帧 delay 之和(近似)。 */\nexport function castDuration(cast: CastFile): number {\n  let total = 0\n  for (const event of cast.events) total += event[0]\n  return Math.round(total * 1000) / 1000\n```\n\n</details>\n\n**依据 4 · 源码核查**：[assets/player.html:135-145](https://github.com/988hj7tczd-oss/dsh-asciinema/blob/c47863413886ffac9b66ee13a9ab276ab195d5d9/assets/player.html#L135-L145)\n\n行缓冲去回车/ANSI。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n  function clearStage() { lines = []; stage.textContent = ''; }\n\n  function appendOutput(chunk) {\n    var text = stripAnsi(String(chunk))\n    var parts = text.split('\\n')\n    for (var i = 0; i < parts.length; i++) {\n      if (i > 0) lines.push('')\n      lines[lines.length - 1] = (lines[lines.length - 1] !== undefined ? lines[lines.length - 1] : '') + parts[i].replace(/\\r/g, '')\n    }\n    if (lines.length > height * 4) lines = lines.slice(-height * 4)\n    stage.textContent = lines.slice(-height).join('\\n')\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/tools/cat.ts:44-55](https://github.com/988hj7tczd-oss/dsh-asciinema/blob/c47863413886ffac9b66ee13a9ab276ab195d5d9/src/tools/cat.ts#L44-L55)\n\n丢解析告警。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n    async execute(args: TermCatArgs, exec: ToolRunContext) {\n      const session = exec.agent?.session\n      const raw = await readCastText(deps.ctx, session, args.path, exec.signal)\n      const parsed = parseCast(raw)\n      if (parsed.cast === null) {\n        const first = parsed.issues[0]\n        throw new Error(`无法解析 .cast 文件:${first !== undefined ? first.message : 'unknown error'}(path=${args.path})`)\n      }\n      return castToText(parsed.cast, {\n        stripAnsi: !(args.raw ?? false),\n        includeInput: args.include_input ?? false,\n      })\n```\n\n</details>\n\n#### 缺口\n\n- 不规则事件间隔、终端控制序列与上游结果截断的真实复盘偏差未标注对照。\n  **影响：**不保证时间/屏幕保真或完整终端记录。\n  **进一步探讨：**用人工已知1/2/1间隔及CR/光标/ANSI固定数据核模型时序与显示，区分采集/格式/播放器误差。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · HTML生成、文件保存与失败恢复是否可靠？\n\n**研究主题：**缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\nplayerTemplatePath用new URL('../../assets/player.html',import.meta.url)。src/cast-io.ts或编译后的lib/cast-io.js都在仓库下一层，../../会跳到仓库父目录assets，而实际模板在仓库assets；正常布局会指向错误模板位置；若ctx.fs.resolve拒绝或本地同步异常被catch接住，返回null才触发最小模板fallback。第81行直接return ctx.fs.readText的Promise没有await，其异步拒绝不被该catch捕获，会经term_play第183行await传播为失败；实际缺文件在哪个阶段报错取决于宿主fs。不能一概声称静默fallback，也不把丰富seek/marker界面当每次实际加载。decodeURIComponent(url.pathname)也非平台fileURLToPath转换，Windows路径另需核。\n\nrenderPlayerHtml先转义JSON中的</并对title做HTML转义、播放器用textContent，这是有用的内容边界。但replaceAll的replacement传字符串，输出含$&/$`/$'等替换符时可能被当替换语法扩展而非原文字面；后续全局替换__TITLE__/__CAST_URL__也可改嵌入内容同名片段。需要用固定含这些串的材料对照，不能仅</script>测试就称任意输出逐字保真。\n\nstop先registry.take移除并停止，再await saveCastFile；写失败时活动注册表已无该录制，缺重试句柄/持久待保存队列。session/disposed也先dropSession后fire-and-forget保存，用新signal不等卸载drain，失败只warn。正常不同session同name虽registry隔离，但castsDir与工作区同一物理路径时文件名相同，可覆盖；sanitize减少路径字符不构成全局唯一或安全权限保证。\n\n读写经ctx.fs和session cwd，真正物理/权限/覆盖策略交给宿主；castsDir/path用户可配并非插件自行围栏。整文件readText/JSON/HTML输出无导入大小上限，录制上限不限制外部.cast。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/cast-io.ts:65-96](https://github.com/988hj7tczd-oss/dsh-asciinema/blob/c47863413886ffac9b66ee13a9ab276ab195d5d9/src/cast-io.ts#L65-L96)\n\n模板路径/fallback/替换。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\n/** 播放器内嵌页模板文件(package 内 assets/player.html)的绝对路径。 */\nexport function playerTemplatePath(): string | undefined {\n  try {\n    const url = new URL('../../assets/player.html', import.meta.url)\n    return decodeURIComponent(url.pathname)\n  } catch {\n    return undefined\n  }\n}\n\n/** 读取播放器模板;缺失时返回 null(调用方回退内嵌最小模板)。 */\nexport async function loadPlayerTemplate(ctx: Context, signal: AbortSignal): Promise<string | null> {\n  const path = playerTemplatePath()\n  if (path === undefined) return null\n  try {\n    const target = await ctx.fs.resolve(path, { signal })\n    return ctx.fs.readText(target, signal)\n  } catch {\n    return null\n  }\n}\n\n/**\n * 用模板 + 内嵌 cast JSON 生成自包含回放 HTML(离线可播:无任何外部请求)。\n * 占位符:__CAST_JSON__ / __TITLE__ / __CAST_URL__。\n */\nexport function renderPlayerHtml(template: string, cast: CastFile, title: string): string {\n  const json = JSON.stringify(cast).replace(/<\\//g, '<\\\\/')\n  return template\n    .replaceAll('__CAST_JSON__', json)\n    .replaceAll('__TITLE__', escapeHtml(title))\n    .replaceAll('__CAST_URL__', '')\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/tools/rec.ts:195-226](https://github.com/988hj7tczd-oss/dsh-asciinema/blob/c47863413886ffac9b66ee13a9ab276ab195d5d9/src/tools/rec.ts#L195-L226)\n\n先take后保存。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\n      // action === 'stop':只按当前会话找到并停止录制(跨会话隔离)。\n      const requested = args.name !== undefined ? sanitizeName(args.name) : undefined\n      const recorder = requested !== undefined ? deps.registry.take(requested, session) : (() => {\n        const solo = deps.registry.soloActiveOf(session)\n        return solo !== undefined ? deps.registry.take(solo.name, session) : undefined\n      })()\n      if (recorder === undefined) {\n        return { status: 'error', message: '本会话没有可停止的录制(先 term_rec action=start 或指定存在 name)' }\n      }\n\n      const cast = recorder.finalCast ?? recorder.stop()\n      if (cast === undefined) {\n        return { status: 'error', message: `录制「${recorder.name}」没有可保存的内容` }\n      }\n\n      // 未命名且无内容 → 丢弃\n      if (recorder.autoNamed && cast.events.length === 0) {\n        return {\n          status: 'discarded',\n          name: recorder.name,\n          message: '未命名录制没有任何输出,已自动丢弃(命名录制后即可保存)',\n        }\n      }\n\n      const saved = await saveCastFile(\n        deps.ctx,\n        session,\n        deps.config.castsDir,\n        recorder.name,\n        cast,\n        exec.signal,\n      )\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/recorder.ts:283-304](https://github.com/988hj7tczd-oss/dsh-asciinema/blob/c47863413886ffac9b66ee13a9ab276ab195d5d9/src/recorder.ts#L283-L304)\n\ntake/drop移除。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n  /** 按会话范围取出并移除注册项(同时停止录制),供写盘保存。 */\n  take(name: string, session?: Session): SessionRecorder | undefined {\n    const key = this.keyFor(session, name)\n    const recorder = this.byKey.get(key)\n    if (recorder === undefined) return undefined\n    this.byKey.delete(key)\n    const list = this.bySession.get(recorder.sessionOf) ?? []\n    const index = list.indexOf(recorder)\n    if (index >= 0) list.splice(index, 1)\n    if (list.length === 0) this.bySession.delete(recorder.sessionOf)\n    recorder.stop()\n    return recorder\n  }\n\n  /** 按会话移除(不返回,供丢弃路径)。 */\n  dropSession(session: Session): SessionRecorder[] {\n    const list = this.bySession.get(session) ?? []\n    for (const recorder of list) {\n      this.byKey.delete(this.keyFor(recorder.sessionOf, recorder.name))\n      recorder.stop()\n    }\n    this.bySession.delete(session)\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/index.ts:58-76](https://github.com/988hj7tczd-oss/dsh-asciinema/blob/c47863413886ffac9b66ee13a9ab276ab195d5d9/src/index.ts#L58-L76)\n\nautosave无drain。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n  // 会话结束策略(验收标准 4):命名录制自动保存,未命名录制自动丢弃。\n  ctx.on('session/disposed', (session: Session) => {\n    const recorders = registry.forSession(session)\n    if (recorders.length === 0) return\n    registry.dropSession(session)\n    for (const recorder of recorders) {\n      if (recorder.autoNamed) {\n        console.warn(`[dsh-asciinema] 未命名录制「${recorder.name}」随会话结束自动丢弃`)\n        continue\n      }\n      const cast = recorder.finalCast\n      if (cast === undefined || cast.events.length === 0) continue\n      void saveCastFile(ctx, session, config.castsDir, recorder.name, cast, new AbortController().signal)\n        .then((saved) => {\n          console.info(`[dsh-asciinema] 会话结束,录制已保存:${saved.relPath}(${cast.events.length} 事件)`)\n        })\n        .catch((error: unknown) => {\n          console.warn(`[dsh-asciinema] 会话结束自动保存失败:${error instanceof Error ? error.message : String(error)}`)\n        })\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/cast-io.ts:25-62](https://github.com/988hj7tczd-oss/dsh-asciinema/blob/c47863413886ffac9b66ee13a9ab276ab195d5d9/src/cast-io.ts#L25-L62)\n\nctx.fs解析/写/读。\n\n<details>\n<summary>查看原文（38行）</summary>\n\n```text\nexport async function resolveTarget(\n  ctx: Context,\n  session: Session | undefined,\n  path: string,\n  signal: AbortSignal,\n): Promise<FsTarget> {\n  const cwd = sessionCwd(session)\n  return ctx.fs.resolve(path, cwd !== undefined ? { cwd, signal } : { signal })\n}\n\nexport interface SaveCastResult {\n  /** 相对会话工作区的路径,如 `.casts/demo.cast`。 */\n  relPath: string\n  /** 后端返回的绝对进程路径。 */\n  absPath: string\n}\n\n/** 把 CastFile 序列化并写入 `<castsDir>/<name>.cast`(父目录自动创建)。 */\nexport async function saveCastFile(\n  ctx: Context,\n  session: Session | undefined,\n  castsDir: string,\n  name: string,\n  cast: CastFile,\n  signal: AbortSignal,\n): Promise<SaveCastResult> {\n  const fileName = `${sanitizeName(name)}.cast`\n  const relPath = `${castsDir}/${fileName}`\n  const target = await resolveTarget(ctx, session, relPath, signal)\n  const content = JSON.stringify(cast)\n  await ctx.fs.writeText(target, content, undefined, signal)\n  return { relPath, absPath: ctx.fs.processPath(target) }\n}\n\n/** 读取并解析一个 .cast 文件文本。 */\nexport async function readCastText(ctx: Context, session: Session | undefined, path: string, signal: AbortSignal): Promise<string> {\n  const target = await resolveTarget(ctx, session, path, signal)\n  return ctx.fs.readText(target, signal)\n```\n\n</details>\n\n#### 缺口\n\n- 替换符内容、模板路径/Windows转换、写失败/同目录覆盖的完整恢复结果未受控模拟。\n  **影响：**不保证字节保真/丰富播放器实际到达/保存失败可重试。\n  **进一步探讨：**mock文件sink拒绝/路径/重复名，核待保存句柄与内容hash；用无秘密固定HTML数据核替换，避免覆盖用户文件。\n- 宿主fs对模板缺文件在resolve还是readText阶段报错未知。\n  **影响：**同一错路径可能降级或传播失败，不能一概保证fallback。\n  **进一步探讨：**固定mock分别令resolve拒绝/readText异步拒绝，核term_play返回状态，不执行真实宿主。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 启动与交付形态怎么核？\n\n**研究主题：**依赖、兼容与流程\n\n#### 完整回答\n\n#### 启动与依赖\n\n| 条件 | 用途 | 边界 |\n| --- | --- | --- |\n| 编译lib或按说明加载源码 | main/types入口 | 固定Git不预置lib，先build并核资产相对路径 |\n| Node>=23.6或对应strip支持 | 直接TS测试/源码形态 | 发布ESM与宿主版本仍需精确核 |\n| DSH tools/fs与session事件 | 工具/文件/录制 | inject无sessions但监听依事件契约 |\n| 可写私有castsDir和分享许可 | 明文cast/内嵌HTML | 输出也可有秘密，输入默认false非脱敏 |\n| 模板/浏览器 | 离线回看 | 当前路径有误；被catch接住才fallback，readText异步拒绝可令play失败；独立模板可?url fetch |\n\n#### 使用流程\n\n| 步骤 | 动作 | 判据 |\n| --- | --- | --- |\n| 核包 | 明确源码/已构建，核实际宿主依赖 | README邻dsh-src是作者开发布局，当前package列registry版本 |\n| 选范围 | 只在可信会话小录制，定maxEvents/Bytes | scope=command为step边界 |\n| 停并存 | 指name，核saved/路径/截断 | 错误不丢内存后再决定重试 |\n| 转/回放 | 看issues与模板能力/时间 | cat可能丢告警，不等完整原屏幕 |\n| 分享 | 审工具输出/环境/输入及HTML内嵌内容 | 生成HTML不等已匿名或可公开 |\n| 收尾 | 明确停/保存，备份原件 | 不能靠崩溃/卸载自动保全 |\n\ndocs/store-evidence既保留“真实宿主待执行”旧说明又追加作者CLI add/dump/remove rc0，最多是作者声明的配置生命周期材料，不等本轮运行、录制完整性或官方互操作。package宽compatibility>=0.1.0也不能替代精确代际验收。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:5-16](https://github.com/988hj7tczd-oss/dsh-asciinema/blob/c47863413886ffac9b66ee13a9ab276ab195d5d9/package.json#L5-L16)\n\nmain/types/source形态。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n  \"type\": \"module\",\n  \"main\": \"lib/index.js\",\n  \"types\": \"lib/index.d.ts\",\n  \"exports\": {\n    \".\": {\n      \"types\": \"./lib/index.d.ts\",\n      \"default\": \"./lib/index.js\"\n    },\n    \"./src/*\": \"./src/*\",\n    \"./assets/*\": \"./assets/*\",\n    \"./cordis.yml\": \"./cordis.yml\",\n    \"./package.json\": \"./package.json\"\n```\n\n</details>\n\n**依据 2 · 源码核查**：[package.json:28-45](https://github.com/988hj7tczd-oss/dsh-asciinema/blob/c47863413886ffac9b66ee13a9ab276ab195d5d9/package.json#L28-L45)\n\nNode/build/patch。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n    \"node\": \">=23.6.0\"\n  },\n  \"scripts\": {\n    \"build\": \"tsc -p tsconfig.build.json\",\n    \"typecheck\": \"tsc -p tsconfig.json\",\n    \"test\": \"node --no-warnings tests/smoke.e2e.ts\",\n    \"test:debug\": \"node --trace-warnings tests/smoke.e2e.ts\",\n    \"prepublishOnly\": \"npm run build\"\n  },\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.yml\"\n    },\n    \"compatibility\": {\n      \"node\": \">=23.6.0\",\n      \"dsh\": \">=0.1.0\"\n    },\n    \"permissions\": {\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/index.ts:42-53](https://github.com/988hj7tczd-oss/dsh-asciinema/blob/c47863413886ffac9b66ee13a9ab276ab195d5d9/src/index.ts#L42-L53)\n\n上限/config/inject。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\nexport const Config: Schema<AsciinemaConfig> = Schema.object({\n  width: Schema.number().step(1).min(1).max(1000).default(100),\n  height: Schema.number().step(1).min(1).max(1000).default(40),\n  maxEvents: Schema.number().step(1).min(1).default(5000),\n  maxBytes: Schema.number().step(1).min(1024).default(1024 * 1024),\n  recordInput: Schema.boolean().default(false),\n  castsDir: Schema.string().default('.casts'),\n  playerUrl: Schema.string().default(''),\n})\n\n/** 依赖:工具注册表 + 文件系统(会话工作区)。 */\nexport const inject = ['tools', 'fs']\n```\n\n</details>\n\n**依据 4 · 作者声明**：[docs/store-evidence.md:1-38](https://github.com/988hj7tczd-oss/dsh-asciinema/blob/c47863413886ffac9b66ee13a9ab276ab195d5d9/docs/store-evidence.md#L1-L38)\n\n作者前后生命周期记录。\n\n<details>\n<summary>查看原文（38行）</summary>\n\n````text\n# store-evidence — dsh-asciinema 一次性 Profile 安装 / 启动 / 卸载证据\n\n本文件记录 DSH STORE 要求的一次性 Profile 安装、启动、卸载验证的证据与执行步骤。\n**真实 Profile 运行**需在装有 DSH CLI 的宿主上执行（本仓库离线环境无法完成该步骤）；\n以下同时记录已完成的离线等价证据，保证可复现、可审计。\n\n## 1. 一次性 Profile 安装 / 启动 / 卸载步骤（在 DSH 宿主执行）\n```bash\ngit clone https://github.com/988hj7tczd-oss/dsh-asciinema.git\ncd dsh-asciinema\npnpm install --offline && pnpm build\nexport DSH_HOME=$(mktemp -d /tmp/dsh-asciinema-profile-XXXXXX)\ndsh plugin --profile asciinema-demo add /path/to/dsh-asciinema\n# 启动冒烟：Profile 正常启动；工具注册表出现 asciinema_rec / asciinema_play / asciinema_cat\ndsh plugin --profile asciinema-demo remove dsh-asciinema\nrm -rf \"$DSH_HOME\"\n```\n\n## 2. 已完成的离线等价证据（本仓库内可复现，2026-08-24）\n| 检查 | 命令 | 结果 |\n|---|---|---|\n| 构建 | `pnpm build`（tsc -p tsconfig.build.json） | 0 错误，产出 `lib/index.js` 等 |\n| 入口可加载 | `node -e \"import('./lib/index.js')\"` | `ENTRY_OK` |\n| 冒烟测试 | `pnpm test`（node --no-warnings tests/smoke.e2e.ts） | **16/16 通过 / 0 失败** |\n| 权限面 | `PERMISSIONS.md` | 无子进程命令面、无网络、无外部服务；录制上限受控 |\n\n## 3. 仍未补全（待宿主环境）\n\n## 3. 真实 Profile 运行记录（本机 dsh CLI 实测，2026-08-24 补充）\n在隔离 `DSH_HOME`（mktemp）下用真实 DSH CLI 完成完整生命周期，命令与结果：\n\n```bash\n# 安装（npm 包或本地路径）\ndsh plugin --profile ev-demo add dsh-asciinema@0.1.1\n# 启动：Profile 正常 boot 无 fatal；插件层出现在组装配置树\ndsh --profile ev-demo --dump-config   # → `# == dsh-asciinema` 行可见\n# 卸载：移除后插件层消失\ndsh plugin --profile ev-demo remove dsh-asciinema\n````\n\n</details>\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 首次持续失败成本与效果如何？\n\n**研究主题：**效果与总成本\n\n#### 完整回答\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | TS构建/宿主依赖与模板资源 | 核源码入口、路径、私有输出目录 | 构建/适配时间金额未知 |\n| 持续使用 | 结果文本提取/UTF8编码、每录制默认5000事件/1MiB数据、JSON/HTML复制 | 查看截断与内容分享审查 | 无独立模型请求不等下游cat进上下文费用0；多录制/导入不受单writer总额限制 |\n| 失败恢复 | 重录/手动保原件、失败写/导入/HTML重生资源 | 核丢失句柄、时间偏差、覆盖/模板失败或fallback | 无durable pending/drain，恢复时间费用未知 |\n\n#### 效果\n\n| 目标 | 源码增量 | 限制 |\n| --- | --- | --- |\n| 会话复盘 | 工具输出到文件/HTML | 不是PTY原始/官方互操作 |\n| 规模控制 | 单writer数据/事件封存 | 整体内存/导入/后续提取未界定 |\n| 可分享 | 自包含文字回看 | 明文含工具秘密，需审 |\n| 恢复/可追溯 | 明确saved与部分issues | 先移除后写失败、cat丢告警 |\n\n作者16项离线单元材料是设计覆盖，未实际加载host或浏览器的限定在README写明；本轮只检查源码，不据测试数推业务效果。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/cast-core.ts:179-217](https://github.com/988hj7tczd-oss/dsh-asciinema/blob/c47863413886ffac9b66ee13a9ab276ab195d5d9/src/cast-core.ts#L179-L217)\n\n单录制资源。\n\n<details>\n<summary>查看原文（39行）</summary>\n\n```text\n  /** 预检:封存后或任一容量上限将超限时拒绝。 */\n  private canAccept(dataLength: number): boolean {\n    if (this.sealed) return false\n    const maxEvents = this.options.maxEvents\n    const maxBytes = this.options.maxBytes\n    if (maxEvents !== undefined && this.events.length >= maxEvents) {\n      this.sealBy('events')\n      return false\n    }\n    if (maxBytes !== undefined && this.bytes + dataLength > maxBytes) {\n      this.sealBy('bytes')\n      return false\n    }\n    return true\n  }\n\n  private sealBy(reason: 'events' | 'bytes'): void {\n    if (!this.sealed) {\n      this.sealed = true\n      this.truncationReason = reason\n    }\n  }\n\n  private nextDelay(nowMs: number): number {\n    const rawMs = Math.max(0, nowMs - this.lastMs)\n    this.lastMs = nowMs\n    const delay = roundDelay(rawMs)\n    // 单调不减:四舍五入可能让相邻帧相等,不允许回退。\n    this.lastDelay = delay >= this.lastDelay ? delay : this.lastDelay\n    return this.lastDelay\n  }\n\n  /** 追加一个事件并按 v2 语义计算 delay。封存或超限后静默丢弃。 */\n  push(type: CastEventType, data: string): void {\n    const byteLength = utf8ByteLength(data)\n    if (!this.canAccept(byteLength)) return\n    const delay = this.nextDelay(monotonicMs())\n    this.events.push([delay, type, data])\n    this.bytes += byteLength\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/tools/play.ts:150-187](https://github.com/988hj7tczd-oss/dsh-asciinema/blob/c47863413886ffac9b66ee13a9ab276ab195d5d9/src/tools/play.ts#L150-L187)\n\n全读/HTML复制。\n\n<details>\n<summary>查看原文（38行）</summary>\n\n```text\n    async execute(args: TermPlayArgs, exec: ToolRunContext) {\n      const session = exec.agent?.session\n      const raw = await readCastText(deps.ctx, session, args.path, exec.signal)\n      const parsed = parseCast(raw)\n      if (parsed.cast === null) {\n        const first = parsed.issues[0]\n        throw new Error(`无法解析 .cast 文件:${first !== undefined ? first.message : 'unknown error'}(path=${args.path})`)\n      }\n      const cast = parsed.cast\n      const seen = new Set(parsed.issues.map((issue) => issue.message))\n      const warnings = validateCast(cast).filter((issue) => {\n        if (seen.has(issue.message)) return false\n        seen.add(issue.message)\n        return true\n      })\n      const issues = [...seen]\n\n      const mode = args.mode ?? 'auto'\n      if (mode === 'text') {\n        return {\n          mode: 'text',\n          path: args.path,\n          events: cast.events.length,\n          duration: castDuration(cast),\n          width: cast.width,\n          height: cast.height,\n          title: cast.title,\n          text: castToText(cast),\n          issues,\n        }\n      }\n\n      // html(默认)/auto:生成自包含回放页\n      const template = (await loadPlayerTemplate(deps.ctx, exec.signal)) ?? FALLBACK_TEMPLATE\n      const html = renderPlayerHtml(template, cast, cast.title ?? args.path)\n      const htmlPath = htmlPathForCast(args.path)\n      const target = await resolveTarget(deps.ctx, session, htmlPath, exec.signal)\n      await deps.ctx.fs.writeText(target, html, undefined, exec.signal)\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/tools/rec.ts:195-226](https://github.com/988hj7tczd-oss/dsh-asciinema/blob/c47863413886ffac9b66ee13a9ab276ab195d5d9/src/tools/rec.ts#L195-L226)\n\n恢复成本。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\n      // action === 'stop':只按当前会话找到并停止录制(跨会话隔离)。\n      const requested = args.name !== undefined ? sanitizeName(args.name) : undefined\n      const recorder = requested !== undefined ? deps.registry.take(requested, session) : (() => {\n        const solo = deps.registry.soloActiveOf(session)\n        return solo !== undefined ? deps.registry.take(solo.name, session) : undefined\n      })()\n      if (recorder === undefined) {\n        return { status: 'error', message: '本会话没有可停止的录制(先 term_rec action=start 或指定存在 name)' }\n      }\n\n      const cast = recorder.finalCast ?? recorder.stop()\n      if (cast === undefined) {\n        return { status: 'error', message: `录制「${recorder.name}」没有可保存的内容` }\n      }\n\n      // 未命名且无内容 → 丢弃\n      if (recorder.autoNamed && cast.events.length === 0) {\n        return {\n          status: 'discarded',\n          name: recorder.name,\n          message: '未命名录制没有任何输出,已自动丢弃(命名录制后即可保存)',\n        }\n      }\n\n      const saved = await saveCastFile(\n        deps.ctx,\n        session,\n        deps.config.castsDir,\n        recorder.name,\n        cast,\n        exec.signal,\n      )\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/recorder.ts:125-143](https://github.com/988hj7tczd-oss/dsh-asciinema/blob/c47863413886ffac9b66ee13a9ab276ab195d5d9/src/recorder.ts#L125-L143)\n\n持续提取。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n  private handleEvent(event: SessionEvent): void {\n    // 注意延迟以事件到达顺序计算,而非事件时间戳 —— 与 v2 相对时间轴一致。\n    switch (event.type) {\n      case 'tool/result': {\n        const blocks = event.data.message.content[0]?.content\n        const text = contentToText(blocks)\n        if (text !== '') this.writer.write(text)\n        break\n      }\n      case 'user/message': {\n        if (!this.recordInput) break\n        const text = contentToText(event.data.content)\n        if (text !== '') this.writer.push('i', text)\n        break\n      }\n      case 'step/end': {\n        // command 范围:当前 agent 步骤结束即封存。\n        if (this.scope === 'command') this.finish('step/end')\n        break\n```\n\n</details>\n\n#### 缺口\n\n- 多录制/大导入的内存与复盘效率、失败恢复率无对照。\n  **影响：**不能量化轻量/保真与节省时间。\n  **进一步探讨：**固定无秘密文本比较手存日志/插件回放，测完整率、时间误差、峰值内存/人工修复。\n\n<a id=\"research-q07\"></a>\n\n### Q07 · 推荐和可继续探讨方向是什么？\n\n**研究主题：**采用判断、新假设与验证\n\n#### 完整回答\n\n观察。会话输出到本地回看有需求，session对象隔离/单writer上限与输入默认关闭值得保留；但模板路径、内部计时、保存失败移除/无drain和内容替换影响基本交付。先修路径/计时/保存恢复，再讨论小型非秘密会话试用，不以.cast名称承诺终端/官方互通。\n\n由“单writer护栏≠完整持久交付”推导“采集范围和保存状态的版本收据”。计时明确从start累计或帧间隔一种语义、writer/reader/player统一；stop先封存保pending直到写成功，失败保句柄/原件，卸载drain。模板按包根定位并用函数replacement逐字嵌入；收据标源session/范围、截断、hash、模板版本与写/播放状态，不保更多秘密。\n\n反例是宿主tool/result本来缺PTY字节，再正确的格式与收据也无法恢复；官方互通需独立固定样例，不能自写reader成功当真值。最小对照含1/2/1间隔、畸形事件、$&/__TITLE__/</script>、模板缺失、写拒绝/取消、同cwd同name、session缺失status。若仍丢pending、时序偏差/原文hash错或跨会话状态可见，核心假设被反证；比较恢复完整率与新增内存/IO，不以多保存副本无限增长换保证。方案未实现。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/cast-core.ts:202-217](https://github.com/988hj7tczd-oss/dsh-asciinema/blob/c47863413886ffac9b66ee13a9ab276ab195d5d9/src/cast-core.ts#L202-L217)\n\n时间方案基线。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n  private nextDelay(nowMs: number): number {\n    const rawMs = Math.max(0, nowMs - this.lastMs)\n    this.lastMs = nowMs\n    const delay = roundDelay(rawMs)\n    // 单调不减:四舍五入可能让相邻帧相等,不允许回退。\n    this.lastDelay = delay >= this.lastDelay ? delay : this.lastDelay\n    return this.lastDelay\n  }\n\n  /** 追加一个事件并按 v2 语义计算 delay。封存或超限后静默丢弃。 */\n  push(type: CastEventType, data: string): void {\n    const byteLength = utf8ByteLength(data)\n    if (!this.canAccept(byteLength)) return\n    const delay = this.nextDelay(monotonicMs())\n    this.events.push([delay, type, data])\n    this.bytes += byteLength\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/tools/rec.ts:195-226](https://github.com/988hj7tczd-oss/dsh-asciinema/blob/c47863413886ffac9b66ee13a9ab276ab195d5d9/src/tools/rec.ts#L195-L226)\n\npending方案基线。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\n      // action === 'stop':只按当前会话找到并停止录制(跨会话隔离)。\n      const requested = args.name !== undefined ? sanitizeName(args.name) : undefined\n      const recorder = requested !== undefined ? deps.registry.take(requested, session) : (() => {\n        const solo = deps.registry.soloActiveOf(session)\n        return solo !== undefined ? deps.registry.take(solo.name, session) : undefined\n      })()\n      if (recorder === undefined) {\n        return { status: 'error', message: '本会话没有可停止的录制(先 term_rec action=start 或指定存在 name)' }\n      }\n\n      const cast = recorder.finalCast ?? recorder.stop()\n      if (cast === undefined) {\n        return { status: 'error', message: `录制「${recorder.name}」没有可保存的内容` }\n      }\n\n      // 未命名且无内容 → 丢弃\n      if (recorder.autoNamed && cast.events.length === 0) {\n        return {\n          status: 'discarded',\n          name: recorder.name,\n          message: '未命名录制没有任何输出,已自动丢弃(命名录制后即可保存)',\n        }\n      }\n\n      const saved = await saveCastFile(\n        deps.ctx,\n        session,\n        deps.config.castsDir,\n        recorder.name,\n        cast,\n        exec.signal,\n      )\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/cast-io.ts:65-96](https://github.com/988hj7tczd-oss/dsh-asciinema/blob/c47863413886ffac9b66ee13a9ab276ab195d5d9/src/cast-io.ts#L65-L96)\n\n模板/字面嵌入基线。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\n/** 播放器内嵌页模板文件(package 内 assets/player.html)的绝对路径。 */\nexport function playerTemplatePath(): string | undefined {\n  try {\n    const url = new URL('../../assets/player.html', import.meta.url)\n    return decodeURIComponent(url.pathname)\n  } catch {\n    return undefined\n  }\n}\n\n/** 读取播放器模板;缺失时返回 null(调用方回退内嵌最小模板)。 */\nexport async function loadPlayerTemplate(ctx: Context, signal: AbortSignal): Promise<string | null> {\n  const path = playerTemplatePath()\n  if (path === undefined) return null\n  try {\n    const target = await ctx.fs.resolve(path, { signal })\n    return ctx.fs.readText(target, signal)\n  } catch {\n    return null\n  }\n}\n\n/**\n * 用模板 + 内嵌 cast JSON 生成自包含回放 HTML(离线可播:无任何外部请求)。\n * 占位符:__CAST_JSON__ / __TITLE__ / __CAST_URL__。\n */\nexport function renderPlayerHtml(template: string, cast: CastFile, title: string): string {\n  const json = JSON.stringify(cast).replace(/<\\//g, '<\\\\/')\n  return template\n    .replaceAll('__CAST_JSON__', json)\n    .replaceAll('__TITLE__', escapeHtml(title))\n    .replaceAll('__CAST_URL__', '')\n```\n\n</details>\n\n#### 缺口\n\n- 统一时间/可恢复保存与包根模板方案未实现。\n  **影响：**不计现有保真/可靠保存优势。\n  **进一步探讨：**先无秘密固定样例/mock失败对照，再谈官方互操作；不重放真实工具/命令。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：699f9c12e86620aaa9916e7e4c4dab4d7b8b5e4117d5b609322f1152cf082d96。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 3 | 246 | — | — | 2884 |\n| .ts | source | 7 | 1478 | 1136 | 201 | — |\n| .ts | test | 1 | 449 | 352 | 44 | — |\n\n排除 2 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| rec | 工具文字/可选输入录制 | 非PTY，输出也可含秘密 |\n| scope/上限 | step停止/单writer封存 | 非某进程退出/全局预算 |\n| play | 内嵌HTML或文字 | 模板路径/时间有缺口，非官方player |\n| cat | 拼接去ANSI | 部分解析告警不回传 |\n| autosave | 命名结束时保存 | fire-and-forget无drain/重试队列 |\n\n\n## 工程亮点\n\nnextDelay每次算now-lastMs的单帧间隔，又取max(该间隔,上次delay)强制不减；castDuration和播放器按各delay求和。于是1/2/1秒三个间隔被表示为1/2/2，和5秒而非4秒，是内部时序算法就可推导的偏差，未执行目标。elapsed却用lastMs-startMs，总时间与文件duration也可分歧。不能把单调不减校验通过当真实时间轴保真。\n\n默认timestamp在toCast/停止时生成，而非保存startTime的开始epoch；env来自宿主process.SHELL/TERM非实际工具shell。宽高是配置默认100x40，未订阅终端resize，所以不是捕获真实终端几何。工具结果本身通常已有截断/包装，此处只录可见字符串，不能恢复上游未记录字节。\n\n播放器是剥ANSI+行缓冲textContent，去\\r而非终端光标覆盖，不完整解释颜色/光标/屏幕控制；cat也是简单拼接去控制序列，不模拟终端最后屏幕。parser遇坏事件可跳过并保issues，term_play显示告警，但term_cat只拒绝cast=null，丢弃其余issues，文本“成功”可能是有损解析。\n\nplayerTemplatePath用new URL('../../assets/player.html',import.meta.url)。src/cast-io.ts或编译后的lib/cast-io.js都在仓库下一层，../../会跳到仓库父目录assets，而实际模板在仓库assets；正常布局会指向错误模板位置；若ctx.fs.resolve拒绝或本地同步异常被catch接住，返回null才触发最小模板fallback。第81行直接return ctx.fs.readText的Promise没有await，其异步拒绝不被该catch捕获，会经term_play第183行await传播为失败；实际缺文件在哪个阶段报错取决于宿主fs。不能一概声称静默fallback，也不把丰富seek/marker界面当每次实际加载。decodeURIComponent(url.pathname)也非平台fileURLToPath转换，Windows路径另需核。\n\nrenderPlayerHtml先转义JSON中的</并对title做HTML转义、播放器用textContent，这是有用的内容边界。但replaceAll的replacement传字符串，输出含$&/$`/$'等替换符时可能被当替换语法扩展而非原文字面；后续全局替换__TITLE__/__CAST_URL__也可改嵌入内容同名片段。需要用固定含这些串的材料对照，不能仅</script>测试就称任意输出逐字保真。\n\nstop先registry.take移除并停止，再await saveCastFile；写失败时活动注册表已无该录制，缺重试句柄/持久待保存队列。session/disposed也先dropSession后fire-and-forget保存，用新signal不等卸载drain，失败只warn。正常不同session同name虽registry隔离，但castsDir与工作区同一物理路径时文件名相同，可覆盖；sanitize减少路径字符不构成全局唯一或安全权限保证。\n\n读写经ctx.fs和session cwd，真正物理/权限/覆盖策略交给宿主；castsDir/path用户可配并非插件自行围栏。整文件readText/JSON/HTML输出无导入大小上限，录制上限不限制外部.cast。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、src/index.ts、src/recorder.ts、src/cast-core.ts、src/cast-io.ts、src/tools/rec.ts、src/tools/play.ts、src/tools/cat.ts、assets/player.html、docs/store-evidence.md、tsconfig.build.json、cordis.yml 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：七运行TS关键链和播放器/包/构建/作者材料；不执行目标测试/构建/录制/文件写/浏览器或命令重放。\n- 下一步：可继续固定时序/特殊串/多会话与失败文件mock核内容hash/时间/保存状态和资源，不运行真实工具或重放命令。\n",
         "metadata": {
             "repository": "988hj7tczd-oss/dsh-asciinema",
             "repository_id": 1344714509,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T09:19:14.555Z",
+            "window_start": "2026-09-22T09:19:14.555Z",
             "stars": 0,
             "pushed_at": "2026-08-24T14:53:41Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-asciinema%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640D:11B6:14C818:228239:6AD84ABF and timestamp 2026-10-21 05:16:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-asciinema%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6406:157B26:150D29:22C5F8:6AD84ABF and timestamp 2026-10-21 05:16:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-asciinema%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6411:3E6BCD:15393D:22F0FA:6AD84ABF and timestamp 2026-10-21 05:16:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-asciinema%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6404:10742:1451DB:220594:6AD84ABF and timestamp 2026-10-21 05:16:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-asciinema%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6409:11EA2C:140CDA:21C71F:6AD84ABF and timestamp 2026-10-21 05:16:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "dsh-asciinema",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 401,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-asciinema",
+                "captured_at": "2026-10-22T09:19:21.212Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 384,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-asciinema",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-08-24T10:54:25.038Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T09:19:21.212Z",
                     "source_url": "https://registry.npmjs.org/dsh-asciinema",
                     "error": null,
                     "latest_version": "0.1.1",
                     "latest_published_at": "2026-08-24T11:11:06.066Z",
                     "latest_error": null
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "c47863413886ffac9b66ee13a9ab276ab195d5d9",
-                "current_revision": "c47863413886ffac9b66ee13a9ab276ab195d5d9",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {
@@ -444,14 +504,14 @@
             "repository": "988hj7tczd-oss/dsh-asciinema",
             "path": "",
             "revision": "c47863413886ffac9b66ee13a9ab276ab195d5d9",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "686bcc79b9f701f62feefbdfef261d2730fab3843533e143354c413feb02e2e2",
                 "code": "c47863413886ffac9b66ee13a9ab276ab195d5d9",
                 "maintenance": "7a7c024295cfdd3a9900fe3ae6925f2a8cec849cf99147c950a8b4a8448b0ed5"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

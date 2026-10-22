@@ -13,7 +13,7 @@
             "name": "dsh-openviking-enhance",
             "entry_type": "plugin",
             "technical_category": "memory-knowledge",
-            "business_category": "research-knowledge",
+            "business_category": "infrastructure",
             "tags": [],
             "availability": "unknown",
             "research_depth": "source",
@@ -24,36 +24,94 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-04-github-1401255267-root-directory-0",
+                    "id": "2026-10-22-02-github-1401255267-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T04:13:21.488Z",
+                    "retrieved_at": "2026-10-22T09:40:58.538Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-04-github-1401255267-root-author",
+                    "id": "2026-10-22-02-github-1401255267-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/A2chitect/dsh-openviking-enhance/blob/72a24cc6755010df25b4cef39f3710290c911ec0/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/A2chitect/dsh-openviking-enhance",
+                            "commit": "72a24cc6755010df25b4cef39f3710290c911ec0",
+                            "path": "README.md",
+                            "content_sha256": "76d699f854ed7522c4c36aa468d1fe262b7891d367bcfd4696697d1197d92bae"
+                        }
+                    ],
                     "revision": "72a24cc6755010df25b4cef39f3710290c911ec0",
-                    "captured_at": "2026-10-21T04:13:21.488Z",
-                    "summary": "在DSH显示OpenViking Studio、会话记忆提交状态及按会话查询的召回内容。",
-                    "artifact": "data/runs/2026-10-21-04/snapshots/a2chitect--dsh-openviking-enhance/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:40:58.538Z",
+                    "summary": "把本地 OpenViking Studio、会话提交状态与记忆召回详情接入 DSH 的只读观察插件。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/a2chitect--dsh-openviking-enhance/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-04-github-1401255267-root-source",
+                    "id": "2026-10-22-02-github-1401255267-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/A2chitect/dsh-openviking-enhance/blob/72a24cc6755010df25b4cef39f3710290c911ec0/src/host/recall-service.ts",
+                    "url": "https://github.com/A2chitect/dsh-openviking-enhance/blob/72a24cc6755010df25b4cef39f3710290c911ec0/README.zh.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/A2chitect/dsh-openviking-enhance",
+                            "commit": "72a24cc6755010df25b4cef39f3710290c911ec0",
+                            "path": "README.zh.md",
+                            "content_sha256": "c418e271c77094c84b4b355c452c35ff3f66c4c2d1668df9fc9d7cbf616e3d58"
+                        },
+                        {
+                            "repository_url": "https://github.com/A2chitect/dsh-openviking-enhance",
+                            "commit": "72a24cc6755010df25b4cef39f3710290c911ec0",
+                            "path": "src/host/index.ts",
+                            "content_sha256": "5925074bd74acddf719783e958b7ac1fdaabf366f12930062a1473e64bc72bde"
+                        },
+                        {
+                            "repository_url": "https://github.com/A2chitect/dsh-openviking-enhance",
+                            "commit": "72a24cc6755010df25b4cef39f3710290c911ec0",
+                            "path": "src/host/trust-fence.ts",
+                            "content_sha256": "381c5fdf8dc813457854c564c48dd09f94656fb03e94e1a0ceba234e1e316e54"
+                        },
+                        {
+                            "repository_url": "https://github.com/A2chitect/dsh-openviking-enhance",
+                            "commit": "72a24cc6755010df25b4cef39f3710290c911ec0",
+                            "path": "src/host/config.ts",
+                            "content_sha256": "5ea9108f7c9002d4dbba290f0c308581ba86aa52f72114ca519f7faf0faf1099"
+                        },
+                        {
+                            "repository_url": "https://github.com/A2chitect/dsh-openviking-enhance",
+                            "commit": "72a24cc6755010df25b4cef39f3710290c911ec0",
+                            "path": "src/host/commit-service.ts",
+                            "content_sha256": "c4aeb729a9c9cdf14fb66832680b997cbd3a8dd7f4aa47d299a18530ddd68b08"
+                        },
+                        {
+                            "repository_url": "https://github.com/A2chitect/dsh-openviking-enhance",
+                            "commit": "72a24cc6755010df25b4cef39f3710290c911ec0",
+                            "path": "src/host/recall-service.ts",
+                            "content_sha256": "8fa2cd148055e117fec80bb4b1605f601cac3a8c875264b31f8f1b5136206cac"
+                        },
+                        {
+                            "repository_url": "https://github.com/A2chitect/dsh-openviking-enhance",
+                            "commit": "72a24cc6755010df25b4cef39f3710290c911ec0",
+                            "path": "src/host/openviking-api.ts",
+                            "content_sha256": "773659bbf8fee48661ee75923e36b3c3933c55fdca1feb4e5dbe6aa555eb3b59"
+                        },
+                        {
+                            "repository_url": "https://github.com/A2chitect/dsh-openviking-enhance",
+                            "commit": "72a24cc6755010df25b4cef39f3710290c911ec0",
+                            "path": "src/client/config-page.tsx",
+                            "content_sha256": "455c8ed6374ad1c6247a9056898fbd96b151356e21c84573283c191be08ae617"
+                        }
+                    ],
                     "revision": "72a24cc6755010df25b4cef39f3710290c911ec0",
-                    "captured_at": "2026-10-21T04:13:21.488Z",
-                    "summary": "核查 src/host/recall-service.ts、src/host/trust-fence.ts；host接口代理OpenViking读取，recall-service按session身份和最近用户文本重新搜索memories/resources/skills并缓存，trust-fence要求loopback socket/Host及同源Origin。",
-                    "artifact": "data/runs/2026-10-21-04/snapshots/a2chitect--dsh-openviking-enhance/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:40:58.538Z",
+                    "summary": "核查 README.zh.md、src/host/index.ts、src/host/trust-fence.ts、src/host/config.ts、src/host/commit-service.ts、src/host/recall-service.ts、src/host/openviking-api.ts、src/client/config-page.tsx；按服务端 session/history/tasks/diff 与 session-aware 搜索重组 UI，辅以可选记忆插件 runtime。详见[Q02](#research-q02)。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/a2chitect--dsh-openviking-enhance/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+                        "只读核固定提交 README.zh.md、src/host 与 src/client 的关键实现；不运行目标插件或外部服务。旧 META 仅复用。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +122,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "使用OpenViking记忆服务的用户需要知道会话何时入库和能检索什么；合格结果是提交/失败状态可追溯，不能把可检索内容当模型实际采用内容。",
+                    "text": "适合可信单机的 OpenViking 记忆调试与会话解释。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1401255267-root-source"
+                        "2026-10-22-02-github-1401255267-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +133,16 @@
                             "fingerprint": "72a24cc6755010df25b4cef39f3710290c911ec0"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:13:21.488Z",
+                    "reviewed_at": "2026-10-22T09:40:58.538Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "host接口代理OpenViking读取，recall-service按session身份和最近用户文本重新搜索memories/resources/skills并缓存，trust-fence要求loopback socket/Host及同源Origin。",
+                    "text": "按服务端 session/history/tasks/diff 与 session-aware 搜索重组 UI，辅以可选记忆插件 runtime。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1401255267-root-source"
+                        "2026-10-22-02-github-1401255267-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +151,16 @@
                             "fingerprint": "72a24cc6755010df25b4cef39f3710290c911ec0"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:13:21.488Z",
+                    "reviewed_at": "2026-10-22T09:40:58.538Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+                    "text": "只读核固定提交 README.zh.md、src/host 与 src/client 的关键实现；不运行目标插件或外部服务。旧 META 仅复用。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1401255267-root-source"
+                        "2026-10-22-02-github-1401255267-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +169,16 @@
                             "fingerprint": "72a24cc6755010df25b4cef39f3710290c911ec0"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:13:21.488Z",
+                    "reviewed_at": "2026-10-22T09:40:58.538Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "普通bundle，需本地OpenViking，记忆插件可选但决定commit阈值；MIT实现不覆盖外部服务运行与许可。",
+                    "text": "作者提供 npm/tarball 安装，Git 源安装的构建限制由 README 陈述；目标分发未核。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1401255267-root-source"
+                        "2026-10-22-02-github-1401255267-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +187,16 @@
                             "fingerprint": "72a24cc6755010df25b4cef39f3710290c911ec0"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:13:21.488Z",
+                    "reviewed_at": "2026-10-22T09:40:58.538Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "初始需部署OpenViking与身份配置，持续轮询/重检增加服务负担和排查成本；不新增翻译或模型逻辑，不声称端到端收益。",
+                    "text": "#### 成本\n\n| 阶段 | 本插件动作 | 现金/资源 | 人工/时间 | 未知与失败恢复 |\n| --- | --- | --- | --- | --- |\n| 首次 | 部署 DSH/OV、配置 endpoint/key/peer 与可选 memoryRuntime | 本机服务/存储与安装资源；许可或订阅金额未见，未知 | 身份、版本和隔离网络设置工时未知 | 配错需核 /config、重启/重载与回退 |\n| 持续 | 加载 Studio、session/history/search、缓存刷新 | API 请求/本机 CPU/缓存；现金和实际延迟未知 | 核当前召回和历史注入差别，工时未知 | 多会话/多 peer 的负载未知 |\n| 失败恢复 | 处理旧 key/endpoint、跨会话内容泄露或错误解释 | 重新检索/日志与潜在隐私损失，现金未知 | 轮换 key、核同机进程、纠正审查记录，工时未知 | 同机多用户暴露范围及恢复频率未测 |",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1401255267-root-source"
+                        "2026-10-22-02-github-1401255267-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +205,16 @@
                             "fingerprint": "72a24cc6755010df25b4cef39f3710290c911ec0"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:13:21.488Z",
+                    "reviewed_at": "2026-10-22T09:40:58.538Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "适合已有OpenViking的本机用户先观察。核对session映射和失败状态，把召回页当当前查询；远程反代会被本地信任围栏拒绝，先确认访问路径。",
+                    "text": "仅在可信单机试用；核服务、身份、会话与原生 API 一致性，配置保存后重查实际连接。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1401255267-root-source"
+                        "2026-10-22-02-github-1401255267-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +223,16 @@
                             "fingerprint": "72a24cc6755010df25b4cef39f3710290c911ec0"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:13:21.488Z",
+                    "reviewed_at": "2026-10-22T09:40:58.538Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "降低查看提交与检索的窗口切换，但记忆正确率与任务效果未验证。",
+                    "text": "#### 效果\n\n| 效果项 | 源码支持 | 未证实 |\n| --- | --- | --- |\n| 会话状态 | 元数据与 archive | 目标服务准确性 |\n| 召回解释 | 当前 session-aware 搜索 | 历史注入一致性 |\n| Studio | iframe URL | 浏览器权限/认证 |",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1401255267-root-source"
+                        "2026-10-22-02-github-1401255267-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +241,16 @@
                             "fingerprint": "72a24cc6755010df25b4cef39f3710290c911ec0"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:13:21.488Z",
+                    "reviewed_at": "2026-10-22T09:40:58.538Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "显式本地HTTP围栏和查询/提交服务分离值得借鉴；同源检查是访问限制，不是独立用户身份系统。重检与实际召回应保留不同证据标签。 源码依据：[src/host/recall-service.ts](https://github.com/A2chitect/dsh-openviking-enhance/blob/72a24cc6755010df25b4cef39f3710290c911ec0/src/host/recall-service.ts)、[src/host/trust-fence.ts](https://github.com/A2chitect/dsh-openviking-enhance/blob/72a24cc6755010df25b4cef39f3710290c911ec0/src/host/trust-fence.ts)。",
+                    "text": "异步 API 包装、失败 envelope、缓存和本地路由 fence 值得参考；会话授权与热配置需补验证。详见[Q02](#research-q02)至[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1401255267-root-source"
+                        "2026-10-22-02-github-1401255267-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +259,16 @@
                             "fingerprint": "72a24cc6755010df25b4cef39f3710290c911ec0"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:13:21.488Z",
+                    "reviewed_at": "2026-10-22T09:40:58.538Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
                     "topic": "technical_innovation",
                     "basis": "interpretation",
-                    "text": "相比切到独立Studio，增量是在会话旁汇总记忆写入与查询状态，保留失败和具体viking路径；不实现OpenViking提取算法，也不负责记忆写入。",
+                    "text": "在 DSH UI 直接追踪 commit 进度、archive diff 和当前召回证据，减少跨应用诊断。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1401255267-root-source"
+                        "2026-10-22-02-github-1401255267-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +277,16 @@
                             "fingerprint": "72a24cc6755010df25b4cef39f3710290c911ec0"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:13:21.488Z",
+                    "reviewed_at": "2026-10-22T09:40:58.538Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "Memory recall是否就是该轮真实用过的证据？代码基于最近消息重新search，结果受查询截断、缓存和服务当前状态影响，且加入resources来源；它是可重做的查询观察，不是历史召回收据。分数颜色也不代表事实可信度或模型采用。",
+                    "text": "当前召回不是历史注入记录；HTTP 防线是 loopback 而非用户身份授权；volatile 保存后的 host 重构需验证。详见[Q02](#research-q02)至[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1401255267-root-source"
+                        "2026-10-22-02-github-1401255267-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +295,16 @@
                             "fingerprint": "72a24cc6755010df25b4cef39f3710290c911ec0"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:13:21.488Z",
+                    "reviewed_at": "2026-10-22T09:40:58.538Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
                     "topic": "technical_innovation",
                     "basis": "unverified",
-                    "text": "由重新查询与真实使用差异推导，可由原记忆插件输出不可变召回收据，绑定查询、结果版本及注入状态，面板分别展示历史实际召回与当前重新检索。未验证；以记忆更新前后同会话检查是否仍能还原原轮证据，若不能则否定。",
+                    "text": "未验证改进是路由授权/会话绑定、历史注入痕迹与配置热重建。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1401255267-root-source"
+                        "2026-10-22-02-github-1401255267-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +313,15 @@
                             "fingerprint": "72a24cc6755010df25b4cef39f3710290c911ec0"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:13:21.488Z",
+                    "reviewed_at": "2026-10-22T09:40:58.538Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T04:13:21.488Z",
+            "last_checked_at": "2026-10-22T09:40:58.538Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "72a24cc6755010df25b4cef39f3710290c911ec0",
-                "reviewed_at": "2026-10-21T04:13:21.488Z",
+                "reviewed_at": "2026-10-22T09:40:58.538Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -275,61 +333,61 @@
                 "technical": {
                     "criteria": {
                         "novelty": 9,
-                        "mechanism": 8,
-                        "transferability": 10,
+                        "mechanism": 15,
+                        "transferability": 15,
                         "simplification": 8
                     },
-                    "rationale": "novelty现有服务UI集成小档；mechanism会话身份读取小档；transferability观察模式半档；simplification近场诊断半档。",
+                    "rationale": "novelty 9：相对独立打开 OpenViking Studio/调用 API，DSH 内联会话视角有集成增量，但未创造新检索算法（Q01/Q02）。mechanism 15：session/history/search 聚合、身份回退与缓存可核；当前检索被误当历史、content 未绑会话限制可解释性（Q02/Q03）。transferability 15：观察层/来源解释思路可用于别的记忆系统，具体实现依 OpenViking URI/API 和 DSH 插件路由（Q01/Q03）。simplification 8：相对跨应用查看，侧栏/状态与详情减少切换；仍要核 peer、权限和配置热重载（Q04/Q05）。",
                     "basis": "interpretation",
-                    "score": 35,
+                    "score": 47,
                     "evidence_ids": [
-                        "2026-10-21-04-github-1401255267-root-source"
+                        "2026-10-22-02-github-1401255267-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 9,
+                        "workflow": 26,
                         "delivery": 8,
                         "reach": 5,
                         "economics": 4
                     },
-                    "rationale": "workflow减少切换小档；delivery观察回执小档；reach既有记忆用户小档；economics排查便利未测小档。",
+                    "rationale": "workflow 26：相对原生 OV 多处查询，在会话中查看 commit/diff/当前召回缩短调试链；不等于当轮模型注入记录（Q01/Q02）。delivery以分别查询OV档案、commit与search为参照，将历史差异和当前召回组织为同会话可读观察面板，新增材料组织与人工比对入口，取小幅8（Q01/Q02）；当前重检索不是历史注入凭证，也未引入新的记忆正确性验收标准。\nreach 5：局限可信本机 DSH+OV 用户，同机读权限阻止直接多用户扩展（Q03）。economics 4：可省手查时间，但服务请求/缓存、权限审查和泄露恢复负担未知，净节省无证据（Q03-Q05）。",
                     "basis": "interpretation",
-                    "score": 26,
+                    "score": 43,
                     "evidence_ids": [
-                        "2026-10-21-04-github-1401255267-root-source"
+                        "2026-10-22-02-github-1401255267-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "已有本地OpenViking者可试提交状态与当前查询面板；核session映射、失败状态与loopback访问，勿当历史实际召回收据。",
+                "reason": "可信单机的会话记忆调试用途可试用；先确认宿主外层准入与OpenViking内容授权，再考虑多用户或远程部署。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "现有OpenViking用户查看写入和检索有明确需求。"
+                        "rationale": "OV 记忆调试场景明确。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "会话旁汇总状态及路径减少切Studio窗口。"
+                        "rationale": "UI 集成带来便利。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "已核重搜缓存和本地信任围栏，未证任务效果或历史采用。"
+                        "rationale": "固定源码可核，目标系统未测。"
                     },
                     "cost": {
                         "score": 10,
-                        "rationale": "已有服务时增量有限，轮询、身份配置和反代限制仍要维护。"
+                        "rationale": "接入成本有限，但私有记忆读权限需控制。"
                     }
                 },
                 "score": 59,
                 "revision": "72a24cc6755010df25b4cef39f3710290c911ec0",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T09:40:58.538Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-04-github-1401255267-root-source"
+                    "2026-10-22-02-github-1401255267-root-source"
                 ],
                 "dependencies": [
                     {
@@ -354,28 +412,29 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T04:06:46Z",
-            "analysis_sha256": "e61262a29867a82ef879f363d4d553105d575a9e0f6cde4a9395f75a7b5cbd37"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "4782d304cffc9979545cf7f24f56c7c350a2cde95f868d92a7bd79ae303534fd"
         },
         "publication.metadata": "data/plugins/a2chitect--dsh-openviking-enhance/META.json",
         "publication.summaries": {
-            "text": "在DSH显示OpenViking Studio、会话记忆提交状态及按会话查询的召回内容。",
+            "text": "把本地 OpenViking Studio、会话提交状态与记忆召回详情接入 DSH 的只读观察插件。",
             "revision": "72a24cc6755010df25b4cef39f3710290c911ec0",
             "source_url": "https://github.com/A2chitect/dsh-openviking-enhance/blob/72a24cc6755010df25b4cef39f3710290c911ec0/README.md"
         },
         "publication.capabilities": {
             "revision": "72a24cc6755010df25b4cef39f3710290c911ec0",
             "items": {
-                "界面": "Studio、提交状态和召回侧栏。",
-                "Host 路由": "本地受限的OpenViking读取接口。"
-            }
+                "界面": "Studio/commit/recall面板",
+                "Host 路由": "/api/openviking-enhance/*只读路由"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| Studio | 查看 OV | 目标认证未测 |\n| Commit | 追踪 archive | 服务状态依赖 |\n| Recall | 展示来源 | 当前重新检索 |"
         },
         "publication.advice": {
             "revision": "72a24cc6755010df25b4cef39f3710290c911ec0",
-            "text": "适合已有OpenViking的本机用户先观察。核对session映射和失败状态，把召回页当当前查询；远程反代会被本地信任围栏拒绝，先确认访问路径。"
+            "text": "仅在可信单机试用；核服务、身份、会话与原生 API 一致性，配置保存后重查实际连接。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/a2chitect--dsh-openviking-enhance",
-        "reports": "# dsh-openviking-enhance\n\n> 在DSH显示OpenViking Studio、会话记忆提交状态及按会话查询的召回内容。\n\n## 使用建议\n\n适合已有OpenViking的本机用户先观察。核对session映射和失败状态，把召回页当当前查询；远程反代会被本地信任围栏拒绝，先确认访问路径。\n\n核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。\n\n源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。\n\n## 洞察短评\n\n- **用途**：使用OpenViking记忆服务的用户需要知道会话何时入库和能检索什么；合格结果是提交/失败状态可追溯，不能把可检索内容当模型实际采用内容。\n- **亮点**：相比切到独立Studio，增量是在会话旁汇总记忆写入与查询状态，保留失败和具体viking路径；不实现OpenViking提取算法，也不负责记忆写入。\n- **思考**：Memory recall是否就是该轮真实用过的证据？代码基于最近消息重新search，结果受查询截断、缓存和服务当前状态影响，且加入resources来源；它是可重做的查询观察，不是历史召回收据。分数颜色也不代表事实可信度或模型采用。\n- **建议**：由重新查询与真实使用差异推导，可由原记忆插件输出不可变召回收据，绑定查询、结果版本及注入状态，面板分别展示历史实际召回与当前重新检索。未验证；以记忆更新前后同会话检查是否仍能还原原轮证据，若不能则否定。\n\n## 场景与替代办法\n\n使用OpenViking记忆服务的用户需要知道会话何时入库和能检索什么；合格结果是提交/失败状态可追溯，不能把可检索内容当模型实际采用内容。\n\n直接用OpenViking Studio/API信息更原始；插件补会话关联，不替代服务本身。\n\n## 能力清单\n\n- **界面**：Studio、提交状态和召回侧栏。\n- **Host 路由**：本地受限的OpenViking读取接口。\n\n## 依赖与流程\n\nOpenVikingAPI与Studio、DSH界面席位，效果依赖session身份和原记忆插件；外部服务失败时面板只能报告不能修复。\n\n打开Studio或会话状态pill，查看commit详情；召回页取最近消息或手输query，分别查询来源，再看文本与警告。\n\n## 成本与效果\n\n初始需部署OpenViking与身份配置，持续轮询/重检增加服务负担和排查成本；不新增翻译或模型逻辑，不声称端到端收益。\n\n降低查看提交与检索的窗口切换，但记忆正确率与任务效果未验证。\n\n## 核心贡献\n\n相比切到独立Studio，增量是在会话旁汇总记忆写入与查询状态，保留失败和具体viking路径；不实现OpenViking提取算法，也不负责记忆写入。\n\n## 关键质疑\n\nMemory recall是否就是该轮真实用过的证据？代码基于最近消息重新search，结果受查询截断、缓存和服务当前状态影响，且加入resources来源；它是可重做的查询观察，不是历史召回收据。分数颜色也不代表事实可信度或模型采用。\n\n\n## 工程亮点\n\n显式本地HTTP围栏和查询/提交服务分离值得借鉴；同源检查是访问限制，不是独立用户身份系统。重检与实际召回应保留不同证据标签。 源码依据：[src/host/recall-service.ts](https://github.com/A2chitect/dsh-openviking-enhance/blob/72a24cc6755010df25b4cef39f3710290c911ec0/src/host/recall-service.ts)、[src/host/trust-fence.ts](https://github.com/A2chitect/dsh-openviking-enhance/blob/72a24cc6755010df25b4cef39f3710290c911ec0/src/host/trust-fence.ts)。\n\n## 未来设计假设（未验证）\n\n由重新查询与真实使用差异推导，可由原记忆插件输出不可变召回收据，绑定查询、结果版本及注入状态，面板分别展示历史实际召回与当前重新检索。未验证；以记忆更新前后同会话检查是否仍能还原原轮证据，若不能则否定。\n\n固定服务版本比对session映射、commit失败、缓存刷新、记忆变更前后重查差异与反代拒绝；另核对真实注入收据。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：8c62e7f93acea9ea6eb28a92a2e50d5c6edc1896b2aadb886e3d0f4165298639。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .mjs | source | 7 | 1488 | 1102 | 303 | — |\n| .md | source | 4 | 634 | — | — | 6559 |\n| .tsx | source | 6 | 1391 | 1015 | 291 | — |\n| .ts | source | 14 | 3085 | 2026 | 856 | — |\n| .mjs | test | 6 | 1312 | 1045 | 203 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[A2chitect/dsh-openviking-enhance](https://github.com/A2chitect/dsh-openviking-enhance)\n- **版本号**：0.2.1（[固定提交 72a24cc6](https://github.com/A2chitect/dsh-openviking-enhance/tree/72a24cc6755010df25b4cef39f3710290c911ec0)）\n- **版本日期**：2026-10-18（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：作者 README、包清单、源码路径 src/host/recall-service.ts、src/host/trust-fence.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。\n- 下一步：固定服务版本比对session映射、commit失败、缓存刷新、记忆变更前后重查差异与反代拒绝；另核对真实注入收据。\n",
+        "reports": "# dsh-openviking-enhance\n\n> 把本地 OpenViking Studio、会话提交状态与记忆召回详情接入 DSH 的只读观察插件。\n\n## 研究范围\n\n- **仓库**：[A2chitect/dsh-openviking-enhance](https://github.com/A2chitect/dsh-openviking-enhance)\n- **版本号**：0.2.1（[固定提交 72a24cc6755010df25b4cef39f3710290c911ec0](https://github.com/A2chitect/dsh-openviking-enhance/tree/72a24cc6755010df25b4cef39f3710290c911ec0)）\n- **版本日期**：2026-10-18（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定源码支持只读展示；本机 curl 可访问未受 DSH 文档认证覆盖的路由，内容读取未绑会话；配置即时生效取决宿主重激活。目标系统未测。\n\n## 洞察短评\n\n- **用途**：适合可信单机的 OpenViking 记忆调试与会话解释。详见[Q01](#research-q01)。\n- **亮点**：在 DSH UI 直接追踪 commit 进度、archive diff 和当前召回证据，减少跨应用诊断。详见[Q01](#research-q01)。\n- **思考**：当前召回不是历史注入记录；HTTP 防线是 loopback 而非用户身份授权；volatile 保存后的 host 重构需验证。详见[Q02](#research-q02)至[Q04](#research-q04)。\n- **建议**：未验证改进是路由授权/会话绑定、历史注入痕迹与配置热重建。详见[Q05](#research-q05)。\n\n采用建议：仅在可信单机试用；核服务、身份、会话与原生 API 一致性，配置保存后重查实际连接。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n在 DSH UI 直接追踪 commit 进度、archive diff 和当前召回证据，减少跨应用诊断。详见[Q01](#research-q01)。\n\n## 关键质疑\n\n当前召回不是历史注入记录；HTTP 防线是 loopback 而非用户身份授权；volatile 保存后的 host 重构需验证。详见[Q02](#research-q02)至[Q04](#research-q04)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n未验证改进是路由授权/会话绑定、历史注入痕迹与配置热重建。详见[Q05](#research-q05)。\n\n在目标 DSH/OV 版本核配置保存/重载、跨会话内容读取、同机 curl、代理访问与历史注入对照。\n\n## 场景与替代办法\n\n适合可信单机的 OpenViking 记忆调试与会话解释。详见[Q01](#research-q01)。\n\n直接打开 OpenViking Studio 或调用原生 API 可获取数据；本插件将会话解释整合在 DSH，但增加本机读权限面。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖 | 必需 | 用途 | 缺失后果 |\n| --- | --- | --- | --- |\n| DSH 0.2.0-rc.2+ | 作者声明 | UI/路由宿主 | 未验兼容 |\n| OpenViking 服务 | 必需 | 记忆 API | 展示失败 |\n| memory-plugin runtime | 可选 | 准确 ID/peer/阈值 | 使用回退或缺进度 |\n\n#### 使用步骤\n\n| 步骤 | 动作 | 判据/恢复 |\n| --- | --- | --- |\n| 配置 | 指向本机 OV | /config 健康 |\n| 对照 | session/history/search | 核来源与 peer |\n| 查看 | Studio/状态/recall | 解释当前检索 |\n| 复核 | 保存配置后重新查 | 警惕旧连接 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 本插件动作 | 现金/资源 | 人工/时间 | 未知与失败恢复 |\n| --- | --- | --- | --- | --- |\n| 首次 | 部署 DSH/OV、配置 endpoint/key/peer 与可选 memoryRuntime | 本机服务/存储与安装资源；许可或订阅金额未见，未知 | 身份、版本和隔离网络设置工时未知 | 配错需核 /config、重启/重载与回退 |\n| 持续 | 加载 Studio、session/history/search、缓存刷新 | API 请求/本机 CPU/缓存；现金和实际延迟未知 | 核当前召回和历史注入差别，工时未知 | 多会话/多 peer 的负载未知 |\n| 失败恢复 | 处理旧 key/endpoint、跨会话内容泄露或错误解释 | 重新检索/日志与潜在隐私损失，现金未知 | 轮换 key、核同机进程、纠正审查记录，工时未知 | 同机多用户暴露范围及恢复频率未测 |\n\n#### 效果\n\n| 效果项 | 源码支持 | 未证实 |\n| --- | --- | --- |\n| 会话状态 | 元数据与 archive | 目标服务准确性 |\n| 召回解释 | 当前 session-aware 搜索 | 历史注入一致性 |\n| Studio | iframe URL | 浏览器权限/认证 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**OpenViking 记忆可见性在会话解释、配置生命周期和本地读权限上的真实边界是什么？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 插件实际补充了 OpenViking 的什么可见性？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n这是 DSH 内的只读观察层：侧栏嵌入 OpenViking Studio，按会话显示 commit 状态、历史 archive/diff 和召回结果。状态通过服务端 session 元数据与 history 构建，而不是监听记忆插件内部事件；缺失 @openviking/dsh-memory-plugin 时仍可打开 Studio，但会话 ID 与 peer 回退可能影响展示。作者称在 DSH 0.2.0-rc.2/OpenViking 0.4.22 验证，本文未重放。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.zh.md:1-62](https://github.com/A2chitect/dsh-openviking-enhance/blob/72a24cc6755010df25b4cef39f3710290c911ec0/README.zh.md#L1-L62)\n\n作者功能与兼容声明\n\n<details>\n<summary>查看原文（62行）</summary>\n\n````text\n# dsh-openviking-enhance\n\n[English](README.md) | 中文\n\n**v0.2.1** · [更新记录](CHANGELOG.md)\n\n把本地 [OpenViking](https://docs.openviking.ai) 记忆服务接进 DeepSeek Harness\n（DSH）的 Web 界面：左侧边栏多一个 OpenViking Studio 面板，输入框下方多一个\ncommit 状态胶囊，随时能看到每次提交对本会话记忆做了什么。\n\n不需要给 DSH 或 OpenViking 插件打补丁——它就是一个普通的 DSH bundle。\n\n## 功能\n\n**在 DSH 里用 OpenViking Studio。** 左侧边栏最后一行点开，主区域直接加载\nOpenViking 服务自带的 Studio 界面，浏览记忆、会话、检索都不用离开 DSH 或另开浏览器。\n\n**每个会话的 commit 状态。** OpenViking 是按「提交（commit）」写入记忆的：会话的\n对话轮次累积到 token 阈值（或会话结束）时归档一次，并抽取其中的记忆。输入框下方的\n胶囊告诉你当前会话处在哪一步：\n\n| 胶囊 | 含义 |\n| --- | --- |\n| `OV · 未提交` | 本会话还没有内容被提交 |\n| `OV · 12.3k/20k` | 正在累积，接近提交阈值 |\n| `OV · 抽取中…` | 正在归档并抽取记忆 |\n| `OV · 3 次提交` | 已提交 3 次 |\n| `OV · 抽取失败` | 归档了，但记忆抽取失败 |\n| `OV · 不可用` | 连不上本地 OpenViking 服务 |\n\n点开胶囊可以看到：\n\n- **时间线**：最近 3 次提交分别发生在什么时候、各新增/更新/删除了多少条记忆\n  （其余一次点击展开）；\n- 点某一次提交，列出它**具体改了哪些记忆**，含 `viking://` 路径；\n- **抽取失败**的时间、耗时，以及服务端给出的原因。\n\n面板和胶囊都只读——本插件不会向 OpenViking 提交、写入或删除任何东西。\n\n**这个会话检索到了什么。** 右侧边栏多一个「记忆召回」tab：显示当前会话会被\nOpenViking 拉进上下文的记忆——检索用的那句话（默认是本会话最近一次提问，也可以自己输入）、\n三个来源（记忆 / 资源 / 技能）里每条命中的分数（按高低从红到橙到绿分级）、文件名、\n类型（`entity`、`event` 等）与摘要——完整 `viking://` 路径悬停可见，点开任意一条可看全文——\n以及服务端给出的检索计划。从右侧边栏的 `+` 引导页打开，和该栏本身一样是按会话的。\n\n![嵌在 DSH 界面里的 OpenViking Studio 面板](assets/studio-panel.png)\n\nStudio 面板、打开它的侧边栏行，以及输入框下方的提交状态胶囊。\n\n## 前置条件\n\n| | |\n| --- | --- |\n| DSH | 0.2.0-rc.2 或更新（desktop / web profile 均可；已在 0.2.1-rc.2 实测） |\n| OpenViking | 需要一个本地服务，实测 0.4.22。Studio 由同一端口的 `/studio/` 提供 |\n| 记忆插件 | 建议装 `@openviking/dsh-memory-plugin`——会话提交由它完成。不装也能用，只是看不到提交阈值进度 |\n\n## 安装\n\n从 Plugins 页安装（Add plugin → 填包名或 tarball），或：\n\n```bash\n````\n\n</details>\n\n**依据 2 · 源码核查**：[src/host/commit-service.ts:1-16](https://github.com/A2chitect/dsh-openviking-enhance/blob/72a24cc6755010df25b4cef39f3710290c911ec0/src/host/commit-service.ts#L1-L16)\n\n服务端数据与可选 memoryRuntime\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n/**\n * Per-session commit state, assembled from OpenViking rather than from DSH.\n *\n * Why not read the state from `@openviking/dsh-memory-plugin`? It exposes\n * `openvikingMemory` (a plain `ctx.provide` value), but that object carries no\n * commit status, no history and no emitter, and the plugin drops the commit\n * response's `task_id`/`archive_uri` while logging only at `debug` — which the\n * desktop app filters out. Every fact below therefore comes from the server,\n * which also makes this half immune to plugin upgrades.\n *\n * Two seams into the plugin are still used, both optional:\n *   - `states.get(sessionId).ovSessionId` — the authoritative OpenViking\n *     session key (falls back to `dsh-<sessionId>`);\n *   - `states.get(sessionId).config.peerId` — the actor peer, required for\n *     peer-scoped (git-repo) workspaces, else the memory listing comes back\n *     empty.\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/host/index.ts:200-237](https://github.com/A2chitect/dsh-openviking-enhance/blob/72a24cc6755010df25b4cef39f3710290c911ec0/src/host/index.ts#L200-L237)\n\n服务创建与健康警告\n\n<details>\n<summary>查看原文（38行）</summary>\n\n```text\n  const memoryRuntime = (): OpenVikingMemoryRuntime | null => {\n    try {\n      const value = host.get('openvikingMemory')\n      return value && typeof value === 'object' ? (value as OpenVikingMemoryRuntime) : null\n    } catch {\n      return null\n    }\n  }\n\n  const service = new CommitService({\n    api,\n    memoryRuntime,\n    cacheTtlMs: configNumber(config.cacheTtlMs, 2500),\n  })\n\n  const recall = new RecallService({\n    api,\n    commit: service,\n    cacheTtlMs: configNumber(config.recallCacheTtlMs, 15000),\n  })\n\n  const configPayload = async (): Promise<ApiResult<EnhanceConfig>> => {\n    const health = await api.health()\n    const warnings: PluginNotice[] = []\n    if (!health.ok) warnings.push({ code: 'unreachable', params: { endpoint: connection.endpoint, error: health.error ?? 'unknown' } })\n    if (!memoryRuntime()) {\n      warnings.push({ code: 'noMemoryPlugin' })\n    }\n    return {\n      ok: true,\n      endpoint: connection.endpoint,\n      studioUrl: `${connection.endpoint}${studioPath}`,\n      version: health.version,\n      healthy: health.ok,\n      account: connection.account,\n      user: connection.user,\n      warnings,\n    }\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · commit 与 recall 怎样形成会话解释？\n\n**研究主题：**功能与机制、工程质量与复用\n\n#### 完整回答\n\nCommitService 以 memoryRuntime 的 ovSessionId/peer 或 dsh-<sessionId> 回退，先读 session 再按服务返回 URI 查 history；archive 是持久依据，任务表仅辅助标注。RecallService 读取会话 messages.jsonl 最后用户 prompt 或显式 query，分别对 memory/skills/resources target_uri 发 session-aware 搜索，按桶去重最高分并截断；会话状态缓存与召回缓存分别由配置 TTL 驱动。汇总是当前重新检索的结果，不等同历史那一轮模型实际注入的上下文。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/host/commit-service.ts:90-125](https://github.com/A2chitect/dsh-openviking-enhance/blob/72a24cc6755010df25b4cef39f3710290c911ec0/src/host/commit-service.ts#L90-L125)\n\n身份回退与 history\n\n<details>\n<summary>查看原文（36行）</summary>\n\n```text\n  /** OpenViking session key for a DSH session. */\n  ovSessionId(sessionId: string): string {\n    const fromPlugin = this.options.memoryRuntime()?.states?.get(sessionId)?.ovSessionId\n    return typeof fromPlugin === 'string' && fromPlugin.length > 0 ? fromPlugin : `dsh-${sessionId}`\n  }\n\n  /**\n   * Actor peer, when the OpenViking plugin knows it.\n   *\n   * Public because peer-scoped routing is not a commit concern: the recall\n   * service needs the same identity to search the same peer's memories.\n   */\n  actorPeer(sessionId: string): string | undefined {\n    const peer = this.options.memoryRuntime()?.states?.get(sessionId)?.config?.peerId\n    return typeof peer === 'string' && peer.length > 0 ? peer : undefined\n  }\n\n  /** Effective commit threshold; null when the OpenViking plugin is not mounted. */\n  private threshold(sessionId: string): number | null {\n    const value = this.options.memoryRuntime()?.states?.get(sessionId)?.config?.commitTokenThreshold\n    return typeof value === 'number' && Number.isFinite(value) ? value : null\n  }\n\n  async status(sessionId: string, options: { fresh?: boolean } = {}): Promise<CommitStatus> {\n    const cached = this.cache.get(sessionId)\n    if (!options.fresh && cached && Date.now() - cached.at < this.cacheTtlMs) return cached.value\n\n    const ovSessionId = this.ovSessionId(sessionId)\n    const request = { actorPeerId: this.actorPeer(sessionId) }\n    // Sequential, not parallel: the history path must be derived from the\n    // session's own `uri`, which only the first call can answer. It costs one\n    // round trip (~7 ms) and removes a whole class of \"never committed\" lies for\n    // sessions owned by another user or peer.\n    const meta = await this.options.api.getSession(ovSessionId, request)\n    const historyUri = resolveSessionUri(meta.result, ovSessionId, this.options.api.user)\n    const history = await this.options.api.listHistory(historyUri, request)\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/host/commit-service.ts:166-181](https://github.com/A2chitect/dsh-openviking-enhance/blob/72a24cc6755010df25b4cef39f3710290c911ec0/src/host/commit-service.ts#L166-L181)\n\narchive 与 tasks\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n  /**\n   * Commit records for a session: one per archive, oldest first.\n   *\n   * Archives are the durable record — task records are pruned by the server, so\n   * they are only consulted to label a commit that is still being extracted.\n   */\n  async commits(\n    sessionId: string,\n    summaryLimit: number,\n  ): Promise<{ status: CommitStatus; tasks: OvCommitTask[]; summaries: ArchiveSummary[] }> {\n    const status = await this.status(sessionId)\n    const tasks = await this.options.api.listCommitTasks(status.ovSessionId, {\n      actorPeerId: this.actorPeer(sessionId),\n    })\n    const summaries = await this.summaries(sessionId, status.archives, summaryLimit)\n    return { status, tasks: tasks.result ?? [], summaries }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/host/recall-service.ts:59-109](https://github.com/A2chitect/dsh-openviking-enhance/blob/72a24cc6755010df25b4cef39f3710290c911ec0/src/host/recall-service.ts#L59-L109)\n\nquery 来源与 cache\n\n<details>\n<summary>查看原文（51行）</summary>\n\n```text\n  /**\n   * Retrieve for one session.\n   *\n   * `query` overrides the session's own last prompt: an empty string asks the\n   * session, whitespace-only is treated as absent.\n   */\n  async recall(\n    sessionId: string,\n    query?: string,\n    limit = RECALL_DEFAULT_LIMIT,\n    options: { fresh?: boolean } = {},\n  ): Promise<RecallPayload> {\n    const capped = Math.min(Math.max(Math.trunc(limit) || RECALL_DEFAULT_LIMIT, 1), RECALL_MAX_LIMIT)\n    const explicit = (query ?? '').trim().slice(0, MAX_QUERY_CHARS)\n    const cacheKey = `${sessionId}\\u0000${explicit}\\u0000${capped}`\n    const cached = this.cache.get(cacheKey)\n    if (!options.fresh && cached && this.now() - cached.at < this.cacheTtlMs) return cached.value\n\n    const value = await this.collect(sessionId, explicit, capped)\n    // Only successful, non-empty answers are worth reusing: an error is cheap to\n    // retry and caching it would pin a dead server into the panel.\n    if (value.query.text.length > 0) this.cache.set(cacheKey, { at: this.now(), value })\n    return value\n  }\n\n  private async collect(sessionId: string, explicitQuery: string, limit: number): Promise<RecallPayload> {\n    const started = this.now()\n    const warnings: PluginNotice[] = []\n    const { api, commit } = this.options\n\n    const ovSessionId = commit.ovSessionId(sessionId)\n    const peer = commit.actorPeer(sessionId) ?? null\n    const request = peer === null ? {} : { actorPeerId: peer }\n\n    const meta = await api.getSession(ovSessionId, request)\n    const sessionUri = meta.ok && meta.result ? resolveSessionUri(meta.result, ovSessionId, api.user) : null\n    if (!meta.ok) warnings.push({ code: 'sessionFailed', params: { error: meta.error ?? `HTTP ${meta.status}` } })\n\n    let queryText = explicitQuery\n    let querySource: RecallQuerySource = 'manual'\n    if (queryText.length === 0 && sessionUri !== null) {\n      const prompt = await this.sessionPrompt(sessionUri, request)\n      if (prompt === null) warnings.push({ code: 'noPrompt' })\n      else {\n        queryText = prompt\n        querySource = 'session'\n      }\n    }\n\n    const targets = searchTargets(sessionUri, api.user, peer)\n    if (queryText.length === 0) {\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/host/recall-service.ts:126-190](https://github.com/A2chitect/dsh-openviking-enhance/blob/72a24cc6755010df25b4cef39f3710290c911ec0/src/host/recall-service.ts#L126-L190)\n\n分桶搜索与去重\n\n<details>\n<summary>查看原文（65行）</summary>\n\n```text\n    const replies = await Promise.all(\n      targets.map((target) =>\n        api\n          .search(\n            {\n              query: queryText,\n              target_uri: target.uri,\n              limit,\n              score_threshold: 0,\n              session_id: ovSessionId,\n            },\n            request,\n          )\n          .then((reply) => ({ target, reply })),\n      ),\n    )\n\n    const merged = new Map<string, Map<string, RecallItem>>(\n      RECALL_BUCKETS.map((bucket) => [bucket, new Map<string, RecallItem>()] as const),\n    )\n    let plan: string | null = null\n    let total = 0\n    for (const { target, reply } of replies) {\n      if (!reply.ok || reply.result === null) {\n        warnings.push({ code: 'targetFailed', params: { target: target.uri, error: reply.error ?? `HTTP ${reply.status}` } })\n        continue\n      }\n      plan ??= reasoningOf(reply.result)\n      for (const bucket of RECALL_BUCKETS) {\n        const items = reply.result[bucket]\n        if (!Array.isArray(items)) continue\n        const into = merged.get(bucket)\n        if (into === undefined) continue\n        for (const item of items) {\n          if (typeof item?.uri !== 'string' || item.uri.length === 0) continue\n          total += 1\n          // The same memory can be reached from two targets; keep the better\n          // score rather than showing it twice.\n          const existing = into.get(item.uri)\n          if (existing === undefined || item.score > existing.score) into.set(item.uri, toRecallItem(item))\n        }\n      }\n    }\n\n    const buckets: RecallBucket[] = RECALL_BUCKETS.map((bucket) => ({\n      bucket,\n      items: [...(merged.get(bucket)?.values() ?? [])]\n        .sort((left, right) => right.score - left.score)\n        .slice(0, limit),\n    }))\n\n    return {\n      sessionId,\n      ovSessionId,\n      sessionUri,\n      peer,\n      query: { text: queryText, source: querySource },\n      buckets,\n      plan,\n      targets: targets.map((target) => target.uri),\n      total,\n      latencyMs: this.now() - started,\n      searchedAt: new Date().toISOString(),\n      warnings,\n    }\n```\n\n</details>\n\n#### 缺口\n\n- 回放历史原始注入上下文未见\n  **影响：**可能误把当前检索解释成历史执行事实\n  **进一步探讨：**对照原记忆插件调用记录和 UI\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 本地 HTTP 防线与会话/内容边界是什么？\n\n**研究主题：**缺陷与关键质疑、依赖、兼容与流程\n\n#### 完整回答\n\n插件路由只允许GET，直接核到的代码会检查socket远端和Host为loopback、拒cross-site标记、比较可选Origin，无Origin请求可通过插件自己的这一层围栏。作者注释报告其所查宿主中主文档认证不覆盖插件路由，本轮没有独立核对相应宿主鉴权实现，不能推广为所有DSH版本或部署事实。\n\n因此插件自身围栏是本机来源限制，不提供用户身份鉴别。只有同时通过宿主外层准入且OpenViking授权允许时，本机调用方才可取得diff/recall内容；是否已发生未授权读取未验证。/recall/content只检viking://前缀，没有绑定当前session或peer，实际可读范围还取决于OpenViking授权。部署前需明确本机进程信任、宿主外层准入与内容作用域，不能据插件注释推断实际公网开放。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/host/index.ts:240-253](https://github.com/A2chitect/dsh-openviking-enhance/blob/72a24cc6755010df25b4cef39f3710290c911ec0/src/host/index.ts#L240-L253)\n\n插件路由未受主认证 gate\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n  /**\n   * Refuse anything that is not a same-origin request from the loopback\n   * interface. These routes are not covered by the DSH web auth gate, and\n   * `/diff` returns memory bodies — see `trust-fence.ts` for what each check\n   * buys. Read-only is not a reason to skip this: the payload is private.\n   */\n  const guard = (req: IncomingMessage, res: ServerResponse): boolean => {\n    if (req.method !== 'GET') {\n      writeJson(res, 405, { ok: false, error: 'method-not-allowed' } satisfies ApiResult<never>)\n      return false\n    }\n    if (isTrustedLocalRequest(req)) return true\n    writeJson(res, 403, { ok: false, error: 'forbidden' } satisfies ApiResult<never>)\n    return false\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/host/trust-fence.ts:1-39](https://github.com/A2chitect/dsh-openviking-enhance/blob/72a24cc6755010df25b4cef39f3710290c911ec0/src/host/trust-fence.ts#L1-L39)\n\n防线与 curl 例外\n\n<details>\n<summary>查看原文（39行）</summary>\n\n```text\n/**\n * Trust fence for this plugin's HTTP routes.\n *\n * ## Why this exists\n *\n * The DSH web server's authentication gate covers the application document, not\n * plugin routes: `GET /` answers 401 without the launch token, while\n * `GET /api/openviking-enhance/config` answers 200 to a bare `curl`. That is fine\n * while the UI is only reachable on loopback — anything on the machine can read\n * `~/.openviking` directly anyway — but the whole point of these routes is that\n * they return memory metadata, and `/diff` returns memory *bodies*. The moment\n * this UI is bound to a non-loopback interface or reached through a tunnel or\n * reverse proxy, they become an unauthenticated read API over a personal memory\n * store.\n *\n * So every route requires the request to look like what it actually is: a\n * same-origin document on the loopback interface. There is no token to leak and\n * nothing to configure.\n *\n * ## What each check buys\n *\n * | Check | Blocks |\n * | --- | --- |\n * | socket remote address is loopback | any off-machine connection, including through a proxy on another host |\n * | `Host` header names loopback | a proxy or tunnel that reaches us over loopback but fronts a public name |\n * | `sec-fetch-site` is not `cross-site` | a page on another site issuing a cross-site request to a loopback port (DNS-rebinding class) |\n * | `Origin`, when present, equals `Host` | a same-site-but-different-port caller, and any cross-origin browser fetch |\n *\n * `X-Forwarded-For` is deliberately never consulted: this service is not behind a\n * trusted proxy, so a client-settable header must not be able to assert its own\n * trustworthiness. A reverse proxy that needs to reach these routes has to be\n * allowlisted explicitly, which is a deliberate code change rather than a config\n * toggle.\n *\n * Deliberately *not* enforced: the browser-presence marker some plugins add (a\n * custom header). It would block `curl` too, and a forged `Origin` slips past that\n * kind of tripwire regardless — while the socket/Host/origin checks above carry\n * the authority. Keeping plain `curl` working on loopback is worth more here: the\n * documented smoke harness depends on it.\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/host/trust-fence.ts:81-100](https://github.com/A2chitect/dsh-openviking-enhance/blob/72a24cc6755010df25b4cef39f3710290c911ec0/src/host/trust-fence.ts#L81-L100)\n\n实际条件\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\nexport function isTrustedLocalRequest(request: IncomingMessage): boolean {\n  if (!isLoopbackAddress(request.socket?.remoteAddress)) return false\n\n  const authority = hostUrl(request.headers.host)\n  if (authority === null) return false\n  if (!isLoopbackHostname(authority.hostname)) return false\n\n  if (request.headers['sec-fetch-site'] === 'cross-site') return false\n\n  const origin = request.headers.origin\n  if (origin === undefined) return true\n  try {\n    const parsed = new URL(origin)\n    // A sandboxed iframe sends the literal `null`; it is not this document's\n    // origin, so it fails here rather than falling through to trust.\n    return parsed.host === authority.host\n  } catch {\n    return false\n  }\n}\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/host/index.ts:390-408](https://github.com/A2chitect/dsh-openviking-enhance/blob/72a24cc6755010df25b4cef39f3710290c911ec0/src/host/index.ts#L390-L408)\n\ncontent 不绑定 session\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n      kind: 'exact',\n      path: `${API_PREFIX}/recall/content`,\n      handler: async (req, res) => {\n        if (!guard(req, res)) return\n        const uri = query(req).get('uri') ?? ''\n        if (!uri) {\n          writeJson(res, 400, { ok: false, error: 'uri is required' } satisfies ApiResult<never>)\n          return\n        }\n        try {\n          // The reader refuses anything that is not a `viking://` path, so this\n          // route cannot be turned into a file read of the host.\n          const content = await recall.content(uri)\n          if ('error' in content) {\n            writeJson(res, 200, { ok: false, error: content.error })\n            return\n          }\n          writeJson(res, 200, { ok: true, content })\n        } catch (error) {\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/host/recall-service.ts:203-217](https://github.com/A2chitect/dsh-openviking-enhance/blob/72a24cc6755010df25b4cef39f3710290c911ec0/src/host/recall-service.ts#L203-L217)\n\n只限制 scheme\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n  /** One entry's full text, for the panel's detail view. */\n  async content(uri: string): Promise<RecallContent | { error: string }> {\n    if (!uri.startsWith('viking://')) {\n      return { error: 'not-a-viking-path' }\n    }\n    const read = await this.options.api.readText(uri, { timeoutMs: 10000 })\n    if (!read.ok || read.result === null) {\n      return { error: read.error ?? `HTTP ${read.status}` }\n    }\n    const text = read.result\n    return {\n      uri,\n      text: text.slice(0, RECALL_CONTENT_MAX_CHARS),\n      truncated: text.length > RECALL_CONTENT_MAX_CHARS,\n    }\n```\n\n</details>\n\n**依据 6 · 作者声明**：[src/host/trust-fence.ts:6-14](https://github.com/A2chitect/dsh-openviking-enhance/blob/72a24cc6755010df25b4cef39f3710290c911ec0/src/host/trust-fence.ts#L6-L14)\n\n作者关于特定宿主鉴权范围的注释，不作为本轮独立核实的宿主事实。\n\n```text\n * The DSH web server's authentication gate covers the application document, not\n * plugin routes: `GET /` answers 401 without the launch token, while\n * `GET /api/openviking-enhance/config` answers 200 to a bare `curl`. That is fine\n * while the UI is only reachable on loopback — anything on the machine can read\n * `~/.openviking` directly anyway — but the whole point of these routes is that\n * they return memory metadata, and `/diff` returns memory *bodies*. The moment\n * this UI is bound to a non-loopback interface or reached through a tunnel or\n * reverse proxy, they become an unauthenticated read API over a personal memory\n * store.\n```\n\n#### 缺口\n\n- 本机多用户进程和 OV 授权配置未测\n  **影响：**私有记忆可能被同机调用者读取\n  **进一步探讨：**在目标环境核登录/同机权限模型\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 设置和密钥更改是否即时生效？\n\n**研究主题：**缺陷与关键质疑、效果与总成本\n\n#### 完整回答\n\n七个字段标 volatile 并可在插件页修改，配置界面把 apiKey 显示为 password；但 host.start 只在激活时解析连接和 Studio URL，构造持有该连接的 API 客户端、状态/召回缓存和路由。源码没有设置订阅或重新构造路径。若宿主不重新激活插件，保存 volatile 值只改变引用，现有服务仍用旧 endpoint/key/TTL；其即时生效依赖 DSH 插件生命周期，需实测。apiKey 字段未标 secret 角色；前端只在 user override 存在时显示占位符，设置服务如何投影基础密钥未核。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/host/index.ts:51-65](https://github.com/A2chitect/dsh-openviking-enhance/blob/72a24cc6755010df25b4cef39f3710290c911ec0/src/host/index.ts#L51-L65)\n\n七个 volatile，apiKey 无 secret role\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\nexport const Config = z.object({\n  /** Override the OpenViking base URL; default comes from `~/.openviking/ovcli.conf`. */\n  endpoint: z.string().default('').volatile(),\n  /** Override the API key (prefer the config file; this is for unusual setups). */\n  apiKey: z.string().default('').volatile(),\n  /** Override the identity the panel reads under. */\n  account: z.string().default('').volatile(),\n  user: z.string().default('').volatile(),\n  /** Studio path appended to the endpoint when building the iframe URL. */\n  studioPath: z.string().default('/studio/').volatile(),\n  /** Status cache TTL in milliseconds. */\n  cacheTtlMs: z.number().default(2500).volatile(),\n  /** How long one retrieval answer is reused, in milliseconds. */\n  recallCacheTtlMs: z.number().default(15000).volatile(),\n})\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/client/config-page.tsx:41-56](https://github.com/A2chitect/dsh-openviking-enhance/blob/72a24cc6755010df25b4cef39f3710290c911ec0/src/client/config-page.tsx#L41-L56)\n\nUI password 字段\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\nconst FIELDS: readonly FieldSpec[] = [\n  {\n    key: 'endpoint',\n    label: 'config.endpoint',\n    hint: 'config.endpointHint',\n    placeholder: 'http://127.0.0.1:1933',\n  },\n  { key: 'apiKey', label: 'config.apiKey', hint: 'config.apiKeyHint', secret: true },\n  { key: 'account', label: 'config.account', hint: 'config.accountHint' },\n  { key: 'user', label: 'config.user', hint: 'config.userHint' },\n  { key: 'studioPath', label: 'config.studioPath', hint: 'config.studioPathHint', placeholder: '/studio/' },\n  { key: 'cacheTtlMs', label: 'config.cacheTtl', hint: 'config.cacheTtlHint', numeric: true, placeholder: '2500' },\n  { key: 'recallCacheTtlMs', label: 'config.recallCacheTtl', hint: 'config.recallCacheTtlHint', numeric: true, placeholder: '15000' },\n]\n\nconst SECRET_PLACEHOLDER = '••••••••'\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/client/config-page.tsx:87-95](https://github.com/A2chitect/dsh-openviking-enhance/blob/72a24cc6755010df25b4cef39f3710290c911ec0/src/client/config-page.tsx#L87-L95)\n\n仅 override 时显示占位符\n\n```text\n  const state = form?.state\n  const resolved = (state?.value ?? {}) as Record<string, unknown>\n  const overrides = (state?.user ?? {}) as Record<string, unknown>\n  const base = (state?.base ?? {}) as Record<string, unknown>\n  const writable = state?.writable === true\n\n  const valueOf = useCallback(\n    (field: FieldSpec): string => draft[field.key] ?? (field.secret && field.key in overrides ? SECRET_PLACEHOLDER : asText(resolved[field.key])),\n    [draft, overrides, resolved],\n```\n\n**依据 4 · 源码核查**：[src/host/index.ts:186-219](https://github.com/A2chitect/dsh-openviking-enhance/blob/72a24cc6755010df25b4cef39f3710290c911ec0/src/host/index.ts#L186-L219)\n\n激活时解析与构造\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\nfunction start(ctx: Context, config: EnhanceConfigInput): void {\n  const host = ctx as unknown as HostContext\n  const connection = resolveConnection({\n    endpoint: configText(config.endpoint),\n    apiKey: configText(config.apiKey),\n    account: configText(config.account),\n    user: configText(config.user),\n  })\n  const logger = host.logger\n  logger?.info?.(`[openviking-enhance] ${JSON.stringify(describeConnection(connection))}`)\n\n  const api = new OpenVikingApi(connection)\n  const studioPath = normalizeStudioPath(configText(config.studioPath))\n\n  const memoryRuntime = (): OpenVikingMemoryRuntime | null => {\n    try {\n      const value = host.get('openvikingMemory')\n      return value && typeof value === 'object' ? (value as OpenVikingMemoryRuntime) : null\n    } catch {\n      return null\n    }\n  }\n\n  const service = new CommitService({\n    api,\n    memoryRuntime,\n    cacheTtlMs: configNumber(config.cacheTtlMs, 2500),\n  })\n\n  const recall = new RecallService({\n    api,\n    commit: service,\n    cacheTtlMs: configNumber(config.recallCacheTtlMs, 15000),\n  })\n```\n\n</details>\n\n#### 缺口\n\n- DSH volatile 更新是否重启插件未验证\n  **影响：**可能保存后仍访问旧端点或密钥\n  **进一步探讨：**目标宿主编辑配置后检查 /config 与抓包\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 适用场景与接入边界如何验证？\n\n**研究主题：**采用判断、新假设与验证、效果与总成本\n\n#### 完整回答\n\n适合受信任单机上调试 OpenViking 会话记忆：先确认服务/账号/用户、memoryRuntime 挂载及 peer 作用域，再对照原生 OpenViking API 的 session/history/search 输出，最后验证 Studio、diff、召回详情。只读接口降低写入风险，却返回私有记忆全文；投产需确认宿主监听地址、同机信任边界和内容授权。未知安装/维护与隐私代价应在目标 DSH、OV 版本实测。可考虑在宿主层为路由增加身份授权并绑定 session，但这尚未实现。 假设推导：当前源码把 session/history/search 投影成只读 UI，但 /recall/content 只检 viking://，允许同机无 Origin 请求且不绑定 session；当前重检索也不等于历史注入事实。相对固定版，宿主身份校验加 session/peer 作用域绑定、并显示“当前重检索”标签和可审计的历史注入痕迹，可能在保留单机诊断便利时减少跨会话误读与私有记忆泄露。条件是 DSH 能向插件路由传可验证身份、OpenViking 能按 session/peer 授权且历史注入记录可取得；代价是授权映射/日志存储与更复杂的缓存失效。最小对照用两个账号、两个 peer、两个 session 的受控记忆，比较固定版/原型对本机无 Origin curl、跨 session URI、前端普通读取以及历史与当前召回差异的结果和延迟。若无身份请求仍读到内容、跨作用域未拒绝，或历史标签仍让人误判当轮注入，则假设被推翻；该方案未在固定版实现。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.zh.md:35-110](https://github.com/A2chitect/dsh-openviking-enhance/blob/72a24cc6755010df25b4cef39f3710290c911ec0/README.zh.md#L35-L110)\n\n作者安装与配置\n\n<details>\n<summary>查看原文（76行）</summary>\n\n````text\n- 点某一次提交，列出它**具体改了哪些记忆**，含 `viking://` 路径；\n- **抽取失败**的时间、耗时，以及服务端给出的原因。\n\n面板和胶囊都只读——本插件不会向 OpenViking 提交、写入或删除任何东西。\n\n**这个会话检索到了什么。** 右侧边栏多一个「记忆召回」tab：显示当前会话会被\nOpenViking 拉进上下文的记忆——检索用的那句话（默认是本会话最近一次提问，也可以自己输入）、\n三个来源（记忆 / 资源 / 技能）里每条命中的分数（按高低从红到橙到绿分级）、文件名、\n类型（`entity`、`event` 等）与摘要——完整 `viking://` 路径悬停可见，点开任意一条可看全文——\n以及服务端给出的检索计划。从右侧边栏的 `+` 引导页打开，和该栏本身一样是按会话的。\n\n![嵌在 DSH 界面里的 OpenViking Studio 面板](assets/studio-panel.png)\n\nStudio 面板、打开它的侧边栏行，以及输入框下方的提交状态胶囊。\n\n## 前置条件\n\n| | |\n| --- | --- |\n| DSH | 0.2.0-rc.2 或更新（desktop / web profile 均可；已在 0.2.1-rc.2 实测） |\n| OpenViking | 需要一个本地服务，实测 0.4.22。Studio 由同一端口的 `/studio/` 提供 |\n| 记忆插件 | 建议装 `@openviking/dsh-memory-plugin`——会话提交由它完成。不装也能用，只是看不到提交阈值进度 |\n\n## 安装\n\n从 Plugins 页安装（Add plugin → 填包名或 tarball），或：\n\n```bash\n# 从 npm 装\ndsh plugin --profile desktop add dsh-openviking-enhance\n\n# 或从最新 release 装预构建 tarball\ndsh plugin --profile desktop add https://github.com/A2chitect/dsh-openviking-enhance/releases/latest/download/dsh-openviking-enhance.tgz\n```\n\n直接用 Git 地址安装会被 pnpm 拒绝（这个包声明了构建脚本，pnpm 在得到允许前一律不放行），\n所以源码目录要打成 tarball 再装——客户端半部分是**预构建产物**，源码安装等于装了个没东西可加载的壳：\n\n```bash\npnpm pack && dsh plugin --profile desktop add ./dsh-openviking-enhance-<版本>.tgz\n```\n\n安装后**重启一次 DSH 应用**（宿主部分在启动时加载）。卸载：\n\n```bash\ndsh plugin --profile desktop remove dsh-openviking-enhance\n```\n\n## 配置\n\n默认值适配标准本地环境，**开箱无需配置**。要改的话，打开侧边栏的 **Plugins** 页，找到本插件，\n点它那一行的 **Configure**：表单包含下表的全部字段，地址旁边有 **检测** 按钮可以在保存前先试连，\n每个字段还有 **默认** 按钮——它是清除覆盖、恢复继承，而不是写入一个空值。\n\n同样的设置也仍然可以手写在 profile 的 patch 文件\n（`~/.dsh/profiles/desktop/cordis.patch.yml`）里 `openviking-enhance` 这一行下面：\n\n```yaml\n- id: openviking-enhance\n  name: 'dsh-openviking-enhance'\n  config:\n    endpoint: http://127.0.0.1:1933\n```\n\n| 字段 | 默认值 | 说明 |\n| --- | --- | --- |\n| `endpoint` | 读 `~/.openviking/ovcli.conf`，否则 `http://127.0.0.1:1933` | OpenViking 地址 |\n| `apiKey` | 读 `ovcli.conf` | 仅在服务端开启鉴权时需要 |\n| `account` / `user` | `default` / `default` | 读取记忆所用的身份 |\n| `studioPath` | `/studio/` | Studio 在该地址下的路径 |\n| `cacheTtlMs` | `2500` | 状态结果的缓存时长 |\n\n## 常见问题\n\n**侧边栏没有 OpenViking 行，或输入框下方没有胶囊。**\n客户端部分是页面加载时取用的资源文件，重载窗口（⌘R）即可。仍然没有就重启应用。\n````\n\n</details>\n\n**依据 2 · 源码核查**：[src/host/config.ts:77-124](https://github.com/A2chitect/dsh-openviking-enhance/blob/72a24cc6755010df25b4cef39f3710290c911ec0/src/host/config.ts#L77-L124)\n\n连接解析与 key 不入日志\n\n<details>\n<summary>查看原文（48行）</summary>\n\n```text\nexport function resolveConnection(\n  overrides: ConnectionOverrides = {},\n  env: NodeJS.ProcessEnv = process.env,\n): OvConnection {\n  const cli = readJsonFile(join(ovHome(), 'ovcli.conf'))\n  const cliLocal = readJsonFile(join(ovHome(), 'ovcli.conf.local'))\n\n  const endpoint = normalizeEndpoint(\n    firstNonEmpty(\n      overrides.endpoint,\n      str(env.OPENVIKING_URL),\n      str(env.OPENVIKING_BASE_URL),\n      str(cli.url),\n      DEFAULT_ENDPOINT,\n    ),\n  )\n  const apiKey = firstNonEmpty(\n    overrides.apiKey,\n    str(env.OPENVIKING_BEARER_TOKEN),\n    str(env.OPENVIKING_API_KEY),\n    str(cli.api_key),\n  )\n  const account = firstNonEmpty(\n    overrides.account,\n    str(env.OPENVIKING_ACCOUNT),\n    str(cliLocal.account),\n    str(cli.account),\n    DEFAULT_ACCOUNT,\n  )\n  const user = firstNonEmpty(\n    overrides.user,\n    str(env.OPENVIKING_USER),\n    str(cliLocal.user),\n    str(cli.user),\n    DEFAULT_USER,\n  )\n\n  return { endpoint, apiKey, account, user }\n}\n\n/** Diagnostic view: everything except the key. */\nexport function describeConnection(connection: OvConnection): Record<string, string> {\n  return {\n    endpoint: connection.endpoint,\n    account: connection.account,\n    user: connection.user,\n    auth: connection.apiKey ? 'bearer' : 'none',\n  }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/host/openviking-api.ts:80-124](https://github.com/A2chitect/dsh-openviking-enhance/blob/72a24cc6755010df25b4cef39f3710290c911ec0/src/host/openviking-api.ts#L80-L124)\n\n授权头与超时\n\n<details>\n<summary>查看原文（45行）</summary>\n\n```text\n  private headers(options: RequestOptions): Record<string, string> {\n    const headers: Record<string, string> = { 'Content-Type': 'application/json' }\n    if (this.connection.apiKey) headers.Authorization = `Bearer ${this.connection.apiKey}`\n    if (this.connection.account) headers['X-OpenViking-Account'] = this.connection.account\n    if (this.connection.user) headers['X-OpenViking-User'] = this.connection.user\n    if (options.actorPeerId) headers['X-OpenViking-Actor-Peer'] = options.actorPeerId\n    return headers\n  }\n\n  /** One request; resolves to a result envelope and never throws. */\n  private async request<T>(\n    path: string,\n    options: RequestOptions = {},\n    init: { method?: string; body?: unknown } = {},\n  ): Promise<OvResult<T>> {\n    const controller = new AbortController()\n    const timer = setTimeout(() => controller.abort(), options.timeoutMs ?? DEFAULT_TIMEOUT_MS)\n    try {\n      const response = await fetch(`${this.connection.endpoint}${path}`, {\n        method: init.method ?? 'GET',\n        headers: this.headers(options),\n        signal: controller.signal,\n        ...(init.body === undefined ? {} : { body: JSON.stringify(init.body) }),\n      })\n      const body: unknown = await response.json().catch(() => null)\n      if (!response.ok) {\n        return {\n          ok: false,\n          status: response.status,\n          result: null,\n          error: extractError(body) ?? `HTTP ${response.status}`,\n        }\n      }\n      return { ok: true, status: response.status, result: unwrap<T>(body), error: null }\n    } catch (error) {\n      return {\n        ok: false,\n        status: 0,\n        result: null,\n        error: error instanceof Error ? error.message : String(error),\n      }\n    } finally {\n      clearTimeout(timer)\n    }\n  }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/host/index.ts:240-253](https://github.com/A2chitect/dsh-openviking-enhance/blob/72a24cc6755010df25b4cef39f3710290c911ec0/src/host/index.ts#L240-L253)\n\n路由读取隐私内容\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n  /**\n   * Refuse anything that is not a same-origin request from the loopback\n   * interface. These routes are not covered by the DSH web auth gate, and\n   * `/diff` returns memory bodies — see `trust-fence.ts` for what each check\n   * buys. Read-only is not a reason to skip this: the payload is private.\n   */\n  const guard = (req: IncomingMessage, res: ServerResponse): boolean => {\n    if (req.method !== 'GET') {\n      writeJson(res, 405, { ok: false, error: 'method-not-allowed' } satisfies ApiResult<never>)\n      return false\n    }\n    if (isTrustedLocalRequest(req)) return true\n    writeJson(res, 403, { ok: false, error: 'forbidden' } satisfies ApiResult<never>)\n    return false\n```\n\n</details>\n\n#### 缺口\n\n- 目标延迟、兼容性和权限未测\n  **影响：**不能直接视为多用户安全服务\n  **进一步探讨：**单机隔离试用和权限矩阵\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：8c62e7f93acea9ea6eb28a92a2e50d5c6edc1896b2aadb886e3d0f4165298639。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .mjs | source | 7 | 1488 | 1102 | 303 | — |\n| .md | source | 4 | 634 | — | — | 6559 |\n| .tsx | source | 6 | 1391 | 1015 | 291 | — |\n| .ts | source | 14 | 3085 | 2026 | 856 | — |\n| .mjs | test | 6 | 1312 | 1045 | 203 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| Studio | 查看 OV | 目标认证未测 |\n| Commit | 追踪 archive | 服务状态依赖 |\n| Recall | 展示来源 | 当前重新检索 |\n\n## 工程亮点\n\n异步 API 包装、失败 envelope、缓存和本地路由 fence 值得参考；会话授权与热配置需补验证。详见[Q02](#research-q02)至[Q04](#research-q04)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.zh.md、src/host/index.ts、src/host/trust-fence.ts、src/host/config.ts、src/host/commit-service.ts、src/host/recall-service.ts、src/host/openviking-api.ts、src/client/config-page.tsx 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：只读核固定提交 README.zh.md、src/host 与 src/client 的关键实现；不运行目标插件或外部服务。旧 META 仅复用。\n- 下一步：在目标 DSH/OV 版本核配置保存/重载、跨会话内容读取、同机 curl、代理访问与历史注入对照。\n",
         "metadata": {
             "repository": "A2chitect/dsh-openviking-enhance",
             "repository_id": 1401255267,
@@ -444,14 +503,14 @@
             "repository": "A2chitect/dsh-openviking-enhance",
             "path": "",
             "revision": "72a24cc6755010df25b4cef39f3710290c911ec0",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "ba30de0d33dfe54db1a9fb0de7005d9316cafb35abe6c9082acbc54c5bdbbd16",
                 "code": "72a24cc6755010df25b4cef39f3710290c911ec0",
                 "maintenance": "207c8384392a4429ed0d0eecd225743fb0bfdc9642c1980c07758b5c65747dd0"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

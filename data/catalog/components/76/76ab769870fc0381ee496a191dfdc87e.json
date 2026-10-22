@@ -24,36 +24,88 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-07-github-1341694685-root-directory-0",
+                    "id": "2026-10-22-02-github-1341694685-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T08:01:27.475Z",
+                    "retrieved_at": "2026-10-22T04:48:27.163Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-07-github-1341694685-root-author",
+                    "id": "2026-10-22-02-github-1341694685-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/AliceLJY/dsh-thumb/blob/cde135922e5fdd8729b163c634dd811294555d36/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AliceLJY/dsh-thumb",
+                            "commit": "cde135922e5fdd8729b163c634dd811294555d36",
+                            "path": "README.md",
+                            "content_sha256": "d4ff61ccfe055053e77c91b0f990f3f48e4a17fb2f715abc40ecc91b1a304410"
+                        }
+                    ],
                     "revision": "cde135922e5fdd8729b163c634dd811294555d36",
-                    "captured_at": "2026-10-21T08:01:27.475Z",
-                    "summary": "为窄屏DSH提供覆盖式会话抽屉、单列设置与紧凑阅读样式。",
-                    "artifact": "data/runs/2026-10-21-07/snapshots/aliceljy--dsh-thumb/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T04:48:27.163Z",
+                    "summary": "将DSH窄屏侧栏改为覆盖式抽屉，切换会话后关闭，并调整设置布局和对话密度。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/aliceljy--dsh-thumb/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-07-github-1341694685-root-source",
+                    "id": "2026-10-22-02-github-1341694685-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/AliceLJY/dsh-thumb/blob/cde135922e5fdd8729b163c634dd811294555d36/src/index.js",
+                    "url": "https://github.com/AliceLJY/dsh-thumb/blob/cde135922e5fdd8729b163c634dd811294555d36/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AliceLJY/dsh-thumb",
+                            "commit": "cde135922e5fdd8729b163c634dd811294555d36",
+                            "path": "README.md",
+                            "content_sha256": "d4ff61ccfe055053e77c91b0f990f3f48e4a17fb2f715abc40ecc91b1a304410"
+                        },
+                        {
+                            "repository_url": "https://github.com/AliceLJY/dsh-thumb",
+                            "commit": "cde135922e5fdd8729b163c634dd811294555d36",
+                            "path": "package.json",
+                            "content_sha256": "2076d169ab76ac488534c9299c4c55b2231784cf2441ad2b50b96af734c74618"
+                        },
+                        {
+                            "repository_url": "https://github.com/AliceLJY/dsh-thumb",
+                            "commit": "cde135922e5fdd8729b163c634dd811294555d36",
+                            "path": "src/index.js",
+                            "content_sha256": "d18dbe68f815c06d817f3544cb120749c9ebb862b604b712ab631c7d4a587b95"
+                        },
+                        {
+                            "repository_url": "https://github.com/AliceLJY/dsh-thumb",
+                            "commit": "cde135922e5fdd8729b163c634dd811294555d36",
+                            "path": "src/client.js",
+                            "content_sha256": "381c0c7dcb1d4a967bc871a06837cac564d3dc278fdf2885edcb6d02a7fc2b0b"
+                        },
+                        {
+                            "repository_url": "https://github.com/AliceLJY/dsh-thumb",
+                            "commit": "cde135922e5fdd8729b163c634dd811294555d36",
+                            "path": "cordis.patch.yml",
+                            "content_sha256": "fd7d832e11618d940090309afcaeb47fe9b885c1bd212d8caeacd13cda08c4e1"
+                        },
+                        {
+                            "repository_url": "https://github.com/AliceLJY/dsh-thumb",
+                            "commit": "cde135922e5fdd8729b163c634dd811294555d36",
+                            "path": "test/smoke.mjs",
+                            "content_sha256": "fa2b88ed3e7fa348eababe62412b4527d55675c9501c7ce6b0af73b4569da737"
+                        },
+                        {
+                            "repository_url": "https://github.com/AliceLJY/dsh-thumb",
+                            "commit": "cde135922e5fdd8729b163c634dd811294555d36",
+                            "path": "test/measure-widths.mjs",
+                            "content_sha256": "bd1b3796ba5eda18eaae1781f943cf1399c1a09d860e0929d568430bc5b94580"
+                        }
+                    ],
                     "revision": "cde135922e5fdd8729b163c634dd811294555d36",
-                    "captured_at": "2026-10-21T08:01:27.475Z",
-                    "summary": "核查 src/index.js、src/client.js；客户端按语义CSS后缀唯一定位列并打data-thumb属性，窄屏CSS作用于自有属性；MutationObserver/resize维护标记，overlay遮罩调用官方layout.toggleSidebar，点击会话后收起。",
-                    "artifact": "data/runs/2026-10-21-07/snapshots/aliceljy--dsh-thumb/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T04:48:27.163Z",
+                    "summary": "核查 README.md、package.json、src/index.js、src/client.js、cordis.patch.yml、test/smoke.mjs、test/measure-widths.mjs；客户端overlay用语义后缀打data-thumb标记，通过窄屏CSS覆盖布局，读取上游内联第一轨判断展开，用layout接口关闭并经rAF合并DOM观察。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/aliceljy--dsh-thumb/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                        "固定源码阅读客户端主链路、空宿主入口、包清单、README及测量/冒烟脚本；作者运行数据不转写为本轮执行，未运行目标代码。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +116,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "手机或窄平板切换会话后阅读聊天，避免侧栏持续挤压正文。",
+                    "text": "个人手机或平板用户在窄屏DSH web切会话、阅读与改设置；需要抽屉能关且轨迹与桌面不受误伤。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1341694685-root-source"
+                        "2026-10-22-02-github-1341694685-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +127,16 @@
                             "fingerprint": "cde135922e5fdd8729b163c634dd811294555d36"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:01:27.475Z",
+                    "reviewed_at": "2026-10-22T04:48:27.163Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "客户端按语义CSS后缀唯一定位列并打data-thumb属性，窄屏CSS作用于自有属性；MutationObserver/resize维护标记，overlay遮罩调用官方layout.toggleSidebar，点击会话后收起。",
+                    "text": "客户端overlay用语义后缀打data-thumb标记，通过窄屏CSS覆盖布局，读取上游内联第一轨判断展开，用layout接口关闭并经rAF合并DOM观察。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1341694685-root-source"
+                        "2026-10-22-02-github-1341694685-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +145,16 @@
                             "fingerprint": "cde135922e5fdd8729b163c634dd811294555d36"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:01:27.475Z",
+                    "reviewed_at": "2026-10-22T04:48:27.163Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                    "text": "固定源码阅读客户端主链路、空宿主入口、包清单、README及测量/冒烟脚本；作者运行数据不转写为本轮执行，未运行目标代码。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1341694685-root-source"
+                        "2026-10-22-02-github-1341694685-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +163,16 @@
                             "fingerprint": "cde135922e5fdd8729b163c634dd811294555d36"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:01:27.475Z",
+                    "reviewed_at": "2026-10-22T04:48:27.163Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "分发以本插件固定package.json、运行依赖与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+                    "text": "private v0.1.0 MIT包，作者指向GitHub直接分发；dsh.client为web并声明runtime与layout包顺序，未声明Node引擎范围。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1341694685-root-source"
+                        "2026-10-22-02-github-1341694685-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +181,16 @@
                             "fingerprint": "cde135922e5fdd8729b163c634dd811294555d36"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:01:27.475Z",
+                    "reviewed_at": "2026-10-22T04:48:27.163Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "无模型/API费用；DOM监听和CSS兼容需随宿主维护，作者不承诺维护；缩小字体和按钮有可读性/触达取舍。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 本地宿主和浏览器资源，现金未知 | 安装、重启、确认bundle与目标布局 | 作者8.9秒冷安装不是本轮测量，也非通用耗时 |\n| 持续使用 | 全body观察及设置扫描的CPU/布局开销未测 | 适应密度和24px按钮，检查误触 | 没有真实用户任务成本数据 |\n| 失败恢复 | 重新加载和安装链接修复的资源未知 | 用开关退回原生、核对定位器或移除 | 作者不承诺长期维护，耗时未知 |\n\n",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1341694685-root-source"
+                        "2026-10-22-02-github-1341694685-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +199,16 @@
                             "fingerprint": "cde135922e5fdd8729b163c634dd811294555d36"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:01:27.475Z",
+                    "reviewed_at": "2026-10-22T04:48:27.163Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "手机用户可先核会话切换、设置和相邻trace视图；需要更大点击目标时调整密度。",
+                    "text": "个人窄屏用户可受控试用，先检查会话切换、设置与轨迹，保留?thumb=0后重载的退出路径；定位或触控出现影响任务的问题就停用。详见[Q06](#research-q06)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1341694685-root-source"
+                        "2026-10-22-02-github-1341694685-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +217,16 @@
                             "fingerprint": "cde135922e5fdd8729b163c634dd811294555d36"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:01:27.475Z",
+                    "reviewed_at": "2026-10-22T04:48:27.163Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "作者报告393px视口原生正文113px，属于固定环境材料；本轮未复测宽度、触达或阅读效率。",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 抽屉及自动关闭 | CSS和公共layout调用可查；作者报告窄屏宽度收益 | 本次没有独立复测或任务正确率 |\n| 更紧凑正文 | CSS设14px/21px与10px间距；作者报告高度610降至490px | 阅读速度、疲劳和触控错误代价 |\n| 桌面范围 | 样式在max-width 1023px内；作者报告1440px回归 | 所有桌面缩放/浏览器下兼容性 |\n\nsmoke源码有具体布局断言及开关对照，但若没有现有会话会跳过密度断言，脚本存在也不是完整通过证据。本轮只读脚本，既没有将作者报告转成host_acceptance，也没有执行宿主冒烟。不能用列宽增幅替代端到端效率或收益率。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1341694685-root-source"
+                        "2026-10-22-02-github-1341694685-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +235,16 @@
                             "fingerprint": "cde135922e5fdd8729b163c634dd811294555d36"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:01:27.475Z",
+                    "reviewed_at": "2026-10-22T04:48:27.163Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "语义后缀集中定位和自有data属性将易变选择器收束，官方toggle优于模拟点击；语义改名仍会失效，不是稳定宿主契约。",
+                    "text": "免完整hash没有消除DOM契约风险。LOCATORS仍依赖class子串，stampFrame用querySelector取得第一个匹配，没有注释所说的唯一性判定，也没有歧义时停止或报警。缺少某个匹配只是不打标；若部分frame/sidebar匹配成功、其他列未匹配，可能只应用一部分布局规则。因此不能把“集中定位”提升成“升级失败会可靠暴露”的保证。作者已记录detailsCol变为rightbarCol的适配，说明语义后缀也会改名。\n\n设置定位每次遍历div/section/dialog，计算样式和几何，再选全视口fixed flex且含_nav的第一个容器。这个启发式比全局_nav更窄，但仍可能遇到另一个满足条件的叠层。观察器监听整个body的子树、style和class变化，rAF合并避免同帧重复调度，却不证明长对话下没有明显开销。\n\n值得借鉴的是意图与渲染值解耦、FLOW把密度规则限制在包含消息的列、观察器和resize/rAF在React cleanup中释放。边界是全局style和data-thumb标记在所读清理路径中没有删除，运行中卸载后是否残留密度样式不能仅凭cleanup推定；完整刷新和加载前关闭开关更明确。按钮缩到24px、提示溢出与设置导航不完全横排是作者明确承认的取舍。这里未复现误匹配或卸载残留。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1341694685-root-source"
+                        "2026-10-22-02-github-1341694685-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +253,16 @@
                             "fingerprint": "cde135922e5fdd8729b163c634dd811294555d36"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:01:27.475Z",
+                    "reviewed_at": "2026-10-22T04:48:27.163Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "interpretation",
-                    "text": "针对窄屏侧栏挤占的明确失败路径，将覆盖抽屉、关闭动作与阅读密度组合，改善的是同一界面任务的可用空间。常见响应式设计，不构成新布局算法或业务分工。",
+                    "text": "集中语义定位、自有样式标记和公共layout关闭接口，把成熟抽屉模式接到DSH；以未被自身CSS覆盖的上游意图判断展开是可借鉴处，免hash不等于免DOM耦合。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1341694685-root-source"
+                        "2026-10-22-02-github-1341694685-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +271,16 @@
                             "fingerprint": "cde135922e5fdd8729b163c634dd811294555d36"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:01:27.475Z",
+                    "reviewed_at": "2026-10-22T04:48:27.163Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
-                    "basis": "interpretation",
-                    "text": "定位依赖宿主内部语义类名，唯一匹配校验避免误写但不能保证升级兼容；紧凑按钮24px牺牲触达尺寸，更多正文空间不自动等于更好移动可用性。作者单设备测量不能外推所有手机。",
+                    "basis": "supported",
+                    "text": "定位只取首个匹配且逐节点打标，没有唯一性和整体健康门控；语义后缀会改名，热卸载清理还存在静态边界。未复现误匹配或残留，不能据此称升级安全。详见[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1341694685-root-source"
+                        "2026-10-22-02-github-1341694685-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +289,16 @@
                             "fingerprint": "cde135922e5fdd8729b163c634dd811294555d36"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:01:27.475Z",
+                    "reviewed_at": "2026-10-22T04:48:27.163Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "unverified",
-                    "text": "未验证假设：以官方布局槽位承载抽屉，并按触控目标与正文空间双预算调密度，可减少兼容修补和误触。用多个窄屏、trace/设置、触屏任务比较误触、阅读与切会话耗时；空间增益若伴误触上升则停止缩小按钮。",
+                    "text": "可探索定位器组合完整性与唯一性检查，通过故障输入比较部分样式污染、误伤和探测开销；当前未实现，不把这个设想计入现有贡献。详见[Q06](#research-q06)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1341694685-root-source"
+                        "2026-10-22-02-github-1341694685-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +307,15 @@
                             "fingerprint": "cde135922e5fdd8729b163c634dd811294555d36"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:01:27.475Z",
+                    "reviewed_at": "2026-10-22T04:48:27.163Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T08:01:27.475Z",
+            "last_checked_at": "2026-10-22T04:48:27.163Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "cde135922e5fdd8729b163c634dd811294555d36",
-                "reviewed_at": "2026-10-21T08:01:27.475Z",
+                "reviewed_at": "2026-10-22T04:48:27.163Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -275,61 +327,61 @@
                 "technical": {
                     "criteria": {
                         "novelty": 9,
-                        "mechanism": 8,
-                        "transferability": 5,
-                        "simplification": 4
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
                     },
-                    "rationale": "novelty=9：常规响应式布局的特定故障适配。 mechanism=8：定位与官方关闭有限机制。 transferability=5：内部DOM耦合限制迁移。 simplification=4：合并抽屉和阅读空间有局部简化。",
+                    "rationale": "novelty为成熟抽屉的DSH适配小幅增量；mechanism在读取未被自身CSS污染的意图信号上有实质增量；transferability为集中定位与属性样式边界的实质可复用性，但依赖DOM约定；simplification是公共layout调用和统一观察器的小型实质组合，未包含门控假设。",
                     "basis": "interpretation",
-                    "score": 26,
+                    "score": 42,
                     "evidence_ids": [
-                        "2026-10-21-07-github-1341694685-root-source"
+                        "2026-10-22-02-github-1341694685-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 9,
-                        "delivery": 0,
+                        "workflow": 18,
+                        "delivery": 8,
                         "reach": 10,
                         "economics": 0
                     },
-                    "rationale": "workflow=9：入口可用性改善非新组织。 delivery=0：输出仍为原会话内容。 reach=10：明确窄屏人群，收益未复测。 economics=0：未改变费用与责任。",
+                    "rationale": "workflow改变选会话后手工折叠，属实质步骤调整；delivery仍为既有会话内容，只是小幅呈现增量；reach让窄屏操作更可行有实质机制依据但真实效果未独立验证；economics没有成本结构或支出模型变化，取0而非编造节省。",
                     "basis": "interpretation",
-                    "score": 19,
+                    "score": 36,
                     "evidence_ids": [
-                        "2026-10-21-07-github-1341694685-root-source"
+                        "2026-10-22-02-github-1341694685-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "手机窄屏用户可试自动收侧栏；先核设置和相邻trace视图，24px按钮较小，重视触达者调密度或停用。",
+                "reason": "适合愿意自行维护的个人窄屏DSH用户受控试用，先核对列定位、设置与轨迹交互并保留关闭重载路径；不把免hash当免维护。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "手机切会话后正文受挤压有明确需求。"
+                        "rationale": "窄屏切会话和阅读问题清楚，有作者具体测量但样本范围有限。"
                     },
                     "advantage": {
                         "score": 19,
-                        "rationale": "唯一定位和自有属性CSS减少正文空间障碍。"
+                        "rationale": "覆盖侧栏和自动关闭对比手工折叠有较明确机制优势；真实阅读效果未知。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "已核语义类匹配，393px作者测量未独立复测。"
+                        "rationale": "源码与测试脚本实际阅读，作者结果分开记录，未执行，封顶50%档。"
                     },
                     "cost": {
-                        "score": 15,
-                        "rationale": "无API费，主要为DOM兼容和字体点击目标取舍。"
+                        "score": 10,
+                        "rationale": "客户端无额外业务服务且有开关，但DOM适配、触控取舍和维护承诺有限。"
                     }
                 },
-                "score": 70,
+                "score": 65,
                 "revision": "cde135922e5fdd8729b163c634dd811294555d36",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T04:48:27.163Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-07-github-1341694685-root-source"
+                    "2026-10-22-02-github-1341694685-root-source"
                 ],
                 "dependencies": [
                     {
@@ -354,61 +406,58 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T07:52:12Z",
-            "analysis_sha256": "9d7de88db0f08db0df59b2d0ec72611265278f7fb8ace25edd7ccd3f519ab060"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "6970494f21ce67d6006b4510ee56813d70edf9eb2d504ad3e9d934c1fe5d9bae"
         },
         "publication.metadata": "data/plugins/aliceljy--dsh-thumb/META.json",
         "publication.summaries": {
-            "text": "为窄屏DSH提供覆盖式会话抽屉、单列设置与紧凑阅读样式。",
+            "text": "将DSH窄屏侧栏改为覆盖式抽屉，切换会话后关闭，并调整设置布局和对话密度。",
             "revision": "cde135922e5fdd8729b163c634dd811294555d36",
             "source_url": "https://github.com/AliceLJY/dsh-thumb/blob/cde135922e5fdd8729b163c634dd811294555d36/README.md"
         },
         "publication.capabilities": {
             "revision": "cde135922e5fdd8729b163c634dd811294555d36",
             "items": {
-                "界面": "手机抽屉、单列设置和阅读密度"
-            }
+                "界面": "shell.overlay抽屉遮罩、窄屏设置与对话密度样式",
+                "事件监听": "DOM变化、resize及捕获阶段会话点击驱动状态同步"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 覆盖式侧栏 | 展开时避免挤压聊天列 | max-width 1023px与展开状态，依赖列定位 |\n| 遮罩和自动关闭 | 点遮罩或会话后收起侧栏 | 调layout.toggleSidebar，依赖行语义识别 |\n| 手机设置布局 | 单列全屏设置并限制溢出 | 设置叠层启发式匹配，导航不完全横排 |\n| 对话密度 | 缩文字、间距和动作按钮 | 仅窄屏FLOW范围，24px触控目标是取舍 |\n| 加载前关闭 | URL或localStorage停用并重载 | 不是实时撤销已有全局样式 |\n"
         },
         "publication.advice": {
             "revision": "cde135922e5fdd8729b163c634dd811294555d36",
-            "text": "手机用户可先核会话切换、设置和相邻trace视图；需要更大点击目标时调整密度。"
+            "text": "个人窄屏用户可受控试用，先检查会话切换、设置与轨迹，保留?thumb=0后重载的退出路径；定位或触控出现影响任务的问题就停用。详见[Q06](#research-q06)。"
         },
         "registry": "data/plugins/aliceljy--dsh-thumb",
-        "reports": "# dsh-thumb\n\n> 为窄屏DSH提供覆盖式会话抽屉、单列设置与紧凑阅读样式。\n\n## 使用建议\n\n手机用户可先核会话切换、设置和相邻trace视图；需要更大点击目标时调整密度。\n\n**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，插件与依赖流程的实际运行尚未验证；未来假设未验证。\n\n## 洞察短评\n\n- **用途**：手机或窄平板切换会话后阅读聊天，避免侧栏持续挤压正文。\n- **亮点**：针对窄屏侧栏挤占的明确失败路径，将覆盖抽屉、关闭动作与阅读密度组合，改善的是同一界面任务的可用空间。常见响应式设计，不构成新布局算法或业务分工。\n- **思考**：定位依赖宿主内部语义类名，唯一匹配校验避免误写但不能保证升级兼容；紧凑按钮24px牺牲触达尺寸，更多正文空间不自动等于更好移动可用性。作者单设备测量不能外推所有手机。\n- **建议**：未验证假设：以官方布局槽位承载抽屉，并按触控目标与正文空间双预算调密度，可减少兼容修补和误触。用多个窄屏、trace/设置、触屏任务比较误触、阅读与切会话耗时；空间增益若伴误触上升则停止缩小按钮。\n\n## 场景与替代办法\n\n参照作者固定DSH版本列求解器与原生窄屏布局；增量是抽屉覆盖和选会话后自动收起，作者宽度测量不是本轮运行结果。\n\n## 能力清单\n\n- **界面**：手机抽屉、单列设置和阅读密度\n\n## 依赖与流程\n\n客户端按语义CSS后缀唯一定位列并打data-thumb属性，窄屏CSS作用于自有属性；MutationObserver/resize维护标记，overlay遮罩调用官方layout.toggleSidebar，点击会话后收起。\n\n宿主slots/layout和React、CSS Modules语义后缀/DOM结构；作者声明rc.6及0.2.1-rc.2检查，本轮未验。\n\n≤1023px展开侧栏→覆盖聊天并显示遮罩→点会话或遮罩关闭→正文恢复；设置窄屏单列；URL/localStorage开关可停用。\n\n## 成本与效果\n\n无模型/API费用；DOM监听和CSS兼容需随宿主维护，作者不承诺维护；缩小字体和按钮有可读性/触达取舍。\n\n作者报告393px视口原生正文113px，属于固定环境材料；本轮未复测宽度、触达或阅读效率。\n\n## 核心贡献\n\n针对窄屏侧栏挤占的明确失败路径，将覆盖抽屉、关闭动作与阅读密度组合，改善的是同一界面任务的可用空间。常见响应式设计，不构成新布局算法或业务分工。\n\n## 关键质疑\n\n定位依赖宿主内部语义类名，唯一匹配校验避免误写但不能保证升级兼容；紧凑按钮24px牺牲触达尺寸，更多正文空间不自动等于更好移动可用性。作者单设备测量不能外推所有手机。\n\n## 工程亮点\n\n语义后缀集中定位和自有data属性将易变选择器收束，官方toggle优于模拟点击；语义改名仍会失效，不是稳定宿主契约。\n\n源码依据：[src/index.js](https://github.com/AliceLJY/dsh-thumb/blob/cde135922e5fdd8729b163c634dd811294555d36/src/index.js)、[src/client.js](https://github.com/AliceLJY/dsh-thumb/blob/cde135922e5fdd8729b163c634dd811294555d36/src/client.js)。\n\n## 未来设计假设（未验证）\n\n未验证假设：以官方布局槽位承载抽屉，并按触控目标与正文空间双预算调密度，可减少兼容修补和误触。用多个窄屏、trace/设置、触屏任务比较误触、阅读与切会话耗时；空间增益若伴误触上升则停止缩小按钮。\n\n未来固定宿主/设备矩阵核定位、开关、trace隔离、键盘与触达；本轮未运行作者Playwright。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：61628f228209bc39bd85bf9dc5b3e22074dbc5ea93eb31eb66e576cc1701d853。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 2 | 276 | — | — | 4922 |\n| .js | source | 2 | 483 | 262 | 190 | — |\n| .mjs | test | 2 | 335 | 236 | 82 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[AliceLJY/dsh-thumb](https://github.com/AliceLJY/dsh-thumb)\n- **版本号**：0.1.0（[固定提交 cde13592](https://github.com/AliceLJY/dsh-thumb/tree/cde135922e5fdd8729b163c634dd811294555d36)）\n- **版本日期**：2026-10-21（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：src/index.js、src/client.js、作者README、package与固定范围inventory；源码抽读不等于完整审计。\n- 未验证：插件执行、测试、安装、真实宿主与独立采用。\n- 证据限制：固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。\n- 下一步：未来固定宿主/设备矩阵核定位、开关、trace隔离、键盘与触达；本轮未运行作者Playwright。\n",
+        "reports": "# dsh-thumb\n\n> 将DSH窄屏侧栏改为覆盖式抽屉，切换会话后关闭，并调整设置布局和对话密度。\n\n## 研究范围\n\n- **仓库**：[AliceLJY/dsh-thumb](https://github.com/AliceLJY/dsh-thumb)\n- **版本号**：0.1.0（[固定提交 cde135922e5fdd8729b163c634dd811294555d36](https://github.com/AliceLJY/dsh-thumb/tree/cde135922e5fdd8729b163c634dd811294555d36)）\n- **版本日期**：2026-10-21（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n现有贡献为源码支持的布局与状态接线；作者像素测量未独立复测；健康门控为未实现假设。\n\n## 洞察短评\n\n- **用途**：个人手机或平板用户在窄屏DSH web切会话、阅读与改设置；需要抽屉能关且轨迹与桌面不受误伤。\n- **亮点**：集中语义定位、自有样式标记和公共layout关闭接口，把成熟抽屉模式接到DSH；以未被自身CSS覆盖的上游意图判断展开是可借鉴处，免hash不等于免DOM耦合。详见[Q02](#research-q02)。\n- **思考**：定位只取首个匹配且逐节点打标，没有唯一性和整体健康门控；语义后缀会改名，热卸载清理还存在静态边界。未复现误匹配或残留，不能据此称升级安全。详见[Q03](#research-q03)。\n- **建议**：可探索定位器组合完整性与唯一性检查，通过故障输入比较部分样式污染、误伤和探测开销；当前未实现，不把这个设想计入现有贡献。详见[Q06](#research-q06)。\n\n采用建议：个人窄屏用户可受控试用，先检查会话切换、设置与轨迹，保留?thumb=0后重载的退出路径；定位或触控出现影响任务的问题就停用。详见[Q06](#research-q06)。\n\n## 核心贡献\n\n集中语义定位、自有样式标记和公共layout关闭接口，把成熟抽屉模式接到DSH；以未被自身CSS覆盖的上游意图判断展开是可借鉴处，免hash不等于免DOM耦合。详见[Q02](#research-q02)。\n\n## 关键质疑\n\n定位只取首个匹配且逐节点打标，没有唯一性和整体健康门控；语义后缀会改名，热卸载清理还存在静态边界。未复现误匹配或残留，不能据此称升级安全。详见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可探索定位器组合完整性与唯一性检查，通过故障输入比较部分样式污染、误伤和探测开销；当前未实现，不把这个设想计入现有贡献。详见[Q06](#research-q06)。\n\n进一步探讨可从重复/缺失DOM节点和开关恢复的故障输入入手，再用同文本真实阅读任务比较误触、理解与主线程成本。\n\n## 场景与替代办法\n\n个人手机或平板用户在窄屏DSH web切会话、阅读与改设置；需要抽屉能关且轨迹与桌面不受误伤。\n\n手动折叠侧栏、使用宽屏或调整原生宿主布局是直接替代；插件增加会话切换后的自动收起和集中手机样式。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| DSH web客户端模块加载器、React | 启动必需 | 注册客户端与渲染overlay | 纯宿主/CLI不会得到界面功能 |\n| client-runtime、client-ui-layout包 | 包清单声明必需 | 模块加载顺序 | 与服务注入名称不可混用 |\n| slots、layout服务 | 客户端注入必需 | 挂overlay和关闭侧栏 | 入口可能等待服务，关闭接口不可用 |\n| 语义后缀、frame内联网格 | 效果必需 | 标记节点和检测展开 | 上游结构变化需调整定位器 |\n| matchMedia、MutationObserver、rAF、CSS :has | 分支需要 | 窄屏监听、DOM同步和密度范围 | :has不可用时对应密度规则不生效；其他兼容未核实 |\n| GitHub来源 | 作者分发路径 | 获取private包的仓库版本 | 不按npm包存在推断可用性 |\n\n\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 安装 | 用户按固定GitHub来源加入web profile并重启 | bundle存在且客户端服务激活 |\n| 使用 | 窄屏展开侧栏、点目标会话或遮罩 | 会话正确切换、抽屉可关、聊天可读 |\n| 临时关闭 | 加?thumb=0或localStorage置0后重载 | CSS与打标在加载前检查disabled |\n| 退出恢复 | 移除bundle并重启，必要时核对node_modules链接 | 只还原package.json可能留下链接状态 |\n\n作者不承诺维护或Issue响应，适配责任需由用户考虑。不能把“改四个定位器只需几分钟”的作者估计写成保证。开关是在URL/存储读取并重新加载时生效，没有专门的实时设置订阅。\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 本地宿主和浏览器资源，现金未知 | 安装、重启、确认bundle与目标布局 | 作者8.9秒冷安装不是本轮测量，也非通用耗时 |\n| 持续使用 | 全body观察及设置扫描的CPU/布局开销未测 | 适应密度和24px按钮，检查误触 | 没有真实用户任务成本数据 |\n| 失败恢复 | 重新加载和安装链接修复的资源未知 | 用开关退回原生、核对定位器或移除 | 作者不承诺长期维护，耗时未知 |\n\n\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 抽屉及自动关闭 | CSS和公共layout调用可查；作者报告窄屏宽度收益 | 本次没有独立复测或任务正确率 |\n| 更紧凑正文 | CSS设14px/21px与10px间距；作者报告高度610降至490px | 阅读速度、疲劳和触控错误代价 |\n| 桌面范围 | 样式在max-width 1023px内；作者报告1440px回归 | 所有桌面缩放/浏览器下兼容性 |\n\nsmoke源码有具体布局断言及开关对照，但若没有现有会话会跳过密度断言，脚本存在也不是完整通过证据。本轮只读脚本，既没有将作者报告转成host_acceptance，也没有执行宿主冒烟。不能用列宽增幅替代端到端效率或收益率。\n\n## 研究问题与完整回答\n\n**插件研究总目标：**判断固定版本移动侧栏壳的集成贡献、兼容边界与个人采用条件。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 手机使用者实际获得什么，合格结果是什么？\n\n**研究主题：**场景与需求\n\n#### 完整回答\n\n面向用手机浏览器访问DSH web、需要切换会话和读长对话的人。作者描述原侧栏展开后占用固定宽度，导致中心聊天列狭窄；插件把它改成覆盖式抽屉，选择会话后自动关闭，同时把设置面板改成手机单列并压缩正文密度。合格结果不是抽屉出现，而是能切到目标会话、关闭侧栏、继续阅读和使用设置，且相邻轨迹页面和桌面布局不被破坏。\n\n原有办法是手工折叠侧栏、换用宽屏或调整宿主本身布局。插件的实际增量是减少切会话后再手工关侧栏的步骤，并避免抽屉展开时挤压中心列。它没有新增Agent、模型或任务执行能力。1023px以下视口才应用CSS，抽屉布局又要求侧栏展开；密度规则则在窄屏、抽屉关闭时也生效，不能把所有样式都说成只影响展开状态。\n\nREADME中的393px、113px和337px有具体测量情境，但属于作者数据。抽屉打开时保留完整中心列与切会话后保留56px图标轨是两个不同测量阶段，不应混用为同一指标。对需要更大触控目标、辅助阅读或其他宿主布局的人，紧凑密度未必有净收益。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:13-31](https://github.com/AliceLJY/dsh-thumb/blob/cde135922e5fdd8729b163c634dd811294555d36/README.md#L13-L31)\n\n作者给出手机场景、展开侧栏和测量条件。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\nOn a phone, dsh's **first screen is fine** — the sidebar auto-collapses to a 56px icon rail and the composer fits. Everything breaks only after the sidebar is expanded, which happens to be the one path you must take to switch sessions.\n\nMeasured on an iPhone 14 Pro viewport (393×660), dsh `0.1.0-rc.6`, before this plugin:\n\n| Situation | Before | After |\n|---|---|---|\n| Collapsed rail | fine | **untouched** |\n| Sidebar expanded | takes 71% of the screen and **squeezes** chat to 113px | overlays; chat keeps its full **393px** |\n| After tapping a session | stays open, so you read in the 113px slot | closes itself |\n| Dismissing it | only via the collapse button | tap anywhere on the scrim |\n| Settings sheet | 800px two-column layout crammed into 393px; every English word wraps; value pickers fall off-screen | full-screen single column, text wraps normally, pickers on-screen |\n| Clipped elements in settings | 7 | 1 |\n| Transcript height (3-turn session) | 610px — sized for a desktop reading distance | **490px**, a fifth shorter |\n\nThis is not a bug upstream — it is a stated contract. From the column solver in `@deepseek-ai/dsh-client-ui-layout`:\n\n> The sidebar never concedes: its rendered width is always the drag preference (or the collapsed rail), and **center absorbs any remaining deficit as the last resort**.\n\nWith `SIDEBAR_DEFAULT = 280`, a 393px viewport gives exactly `393 − 280 = 113`. The concession chain shrinks the details panel, then closes it, and then the center column eats whatever is left. Reasonable in a narrow desktop window with a few hundred pixels to spare; not on a phone.\n```\n\n</details>\n\n**依据 2 · 作者声明**：[README.md:78-95](https://github.com/AliceLJY/dsh-thumb/blob/cde135922e5fdd8729b163c634dd811294555d36/README.md#L78-L95)\n\n明确到达会话后的宽度与密度例外，作者数据不冒充独立测量。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\nWhat matters is the state you are left in *after tapping a session*, since that is the path you have to take to switch sessions. Stock leaves the sidebar open, so the transcript stays at `width − 280`. The shell closes it, leaving the 56px rail and `width − 56`:\n\n| viewport | stock | with the shell | gain |\n|---:|---:|---:|---:|\n| 393px | 113px | 337px | **+198%** |\n| 480px | 200px | 424px | +112% |\n| 604px | 324px | 548px | +69% |\n| 768px | 488px | 712px | **+46%** |\n| 900px | 620px | 844px | +36% |\n| 1023px | 743px | 967px | **+30%** |\n\nRegenerate that table with `node test/measure-widths.mjs`; the file also explains why it measures the width you are left with rather than the width the drawer covers, which is what the first attempt got wrong.\n\nThe gain shrinks with width, as expected — but it never inverts anywhere inside the supported range. Lowering the breakpoint would switch off something still worth 30–46% at the sizes it was supposed to help. The 1023px breakpoint stays.\n\n**The density rules are the one deliberate exception**: they apply at ≤1023px with the drawer shut, because that is the state you read a transcript in. On the measured session that is 610px of column down to 490px — 60px of it from the gap between turns alone (16px → 10px), which costs nothing to interact with. Body text goes 16px/28px → 14px/21px and the action buttons 28px → 24px; the buttons were already under the 44px iOS touch target, so that last one is a trade, and `--thumb-hit` at the top of the stylesheet puts it back.\n\nDesktop is verified unchanged: sidebar 280px, center 1160px, `position: static`, no scrim, settings still an 800px two-column sheet.\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/client.js:217-240](https://github.com/AliceLJY/dsh-thumb/blob/cde135922e5fdd8729b163c634dd811294555d36/src/client.js#L217-L240)\n\n14px正文和窄屏密度规则并不依赖drawer open属性。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n  :root {\n    --thumb-text: 14px;\n    --thumb-leading: 1.5;\n    --thumb-meta: 12px;\n    --thumb-turn-gap: 10px;\n    /* Action buttons ship at 28px, already under the 44px iOS touch target.\n       24px is the deliberate trade: it buys 6px on every assistant turn at the\n       cost of a slightly smaller tap area. Raise it back to 28px here if the\n       buttons start getting missed. */\n    --thumb-hit: 24px;\n  }\n\n  /* The single biggest win, and the one with no interaction cost: the gap\n     between turns. 16px -> 10px is 60px back on a three-turn session.\n     Scoped through FLOW like everything else here; if :has() is ever\n     unavailable the whole block drops out and the transcript returns to\n     upstream sizing, which is the right way for it to fail. */\n  ${FLOW} {\n    gap: var(--thumb-turn-gap) !important;\n  }\n\n  ${FLOW} [class*=\"_markdown\"] {\n    font-size: var(--thumb-text) !important;\n    line-height: var(--thumb-leading) !important;\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 语义定位、状态检测、抽屉和关闭如何实现？\n\n**研究主题：**功能与机制、贡献与相对优势\n\n#### 完整回答\n\n插件由空宿主入口确保客户端模块被扫描，实际逻辑在__ModuleLoader__注册的客户端工厂。apply注入shell.overlay，等待slots和layout服务，加载CSS并挂载ThumbShell。运行时按LOCATORS寻找frame/sidebar/center/details，打data-thumb标记；CSS只针对自己的标记和窄屏媒体查询。\n\n侧栏是否展开读取frame内联grid-template-columns的第一轨，而非已经被插件CSS改成固定宽度的sidebar盒子。这样判断输入与自身样式副作用分离，避免“覆盖成320px后永远判断展开”的自锁。MutationObserver与resize事件经requestAnimationFrame合并，刷新标记和展开状态，再把data-thumb-drawer反映到html。遮罩按钮以及会话行点击都调用layout.toggleSidebar，后者延迟160ms并排除项目分组行。\n\n贡献是对成熟响应式抽屉模式的局部集成。用语义后缀集中定位、再以自有属性写CSS，减少依赖完整CSS Modules hash；读取上游意图而非自身改写的渲染值是一项可复用设计。关闭行为使用公共layout接口，比模拟点击按钮更少依赖控件结构。但CSS后缀、frame内联布局和会话行类名仍耦合上游，不构成完全公开API适配。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.js:1-2](https://github.com/AliceLJY/dsh-thumb/blob/cde135922e5fdd8729b163c634dd811294555d36/src/index.js#L1-L2)\n\n宿主入口为空，实际能力是客户端界面。\n\n```text\n/** Host loader entry. Client-only plugin — the shell lives in src/client.js. */\nexport function apply() {}\n```\n\n**依据 2 · 源码核查**：[src/client.js:60-89](https://github.com/AliceLJY/dsh-thumb/blob/cde135922e5fdd8729b163c634dd811294555d36/src/client.js#L60-L89)\n\n集中定位器及限定对话流的FLOW选择器。\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\n\t\tconst LOCATORS = {\n\t\t\tframe: '[class*=\"_frame\"]',\n\t\t\tsidebar: '[class*=\"sidebarCol\"]',\n\t\t\tcenter: '[class*=\"centerCol\"]',\n\t\t\tdetails: '[class*=\"rightbarCol\"], [class*=\"detailsCol\"]',\n\t\t};\n\n\t\t/** Settings sheet parts, resolved only while the sheet is mounted. */\n\t\tconst SETTINGS_LOCATORS = {\n\t\t\t'settings-panel': '[class*=\"_panel\"]',\n\t\t\t'settings-nav': '[class*=\"_nav\"]',\n\t\t\t'settings-content': '[class*=\"_content\"]',\n\t\t};\n\n\t\t/**\n\t\t * Scope for every density rule below.\n\t\t *\n\t\t * The center pane mounts more than the transcript — the trace view lives\n\t\t * there too, with its own toolbar of buttons. Selectors written against\n\t\t * message parts therefore have to say so, or they reach the trace view as\n\t\t * well. That is not hypothetical: a first cut of these rules sized\n\t\t * `[class*=\"_actions\"] > button` to 24px square, which is right for the\n\t\t * icon buttons under a reply and wrong for the trace toolbar's text\n\t\t * buttons, which collapsed into an unreadable overlap. Reported from a\n\t\t * phone, and only then reproduced here.\n\t\t *\n\t\t * The column is identified by the message items it holds rather than by\n\t\t * its own class, since `_column` alone is not unique to it.\n\t\t */\n\t\tconst FLOW = '[data-thumb=\"center\"] [class*=\"_column\"]:has([class*=\"_flowItem\"])';\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/client.js:359-377](https://github.com/AliceLJY/dsh-thumb/blob/cde135922e5fdd8729b163c634dd811294555d36/src/client.js#L359-L377)\n\n内联第一轨检测及媒体查询生命周期。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n\t\tfunction sidebarIsExpanded() {\n\t\t\tconst frame = document.querySelector('[data-thumb=\"frame\"]') || document.querySelector(LOCATORS.frame);\n\t\t\tif (!frame) return false;\n\t\t\tconst firstTrack = String(frame.style.gridTemplateColumns || '').trim().split(/\\s+/)[0];\n\t\t\tconst px = Number.parseFloat(firstTrack);\n\t\t\treturn Number.isFinite(px) && px > RAIL_PX + 4;\n\t\t}\n\n\t\tfunction useIsPhone() {\n\t\t\tconst [phone, setPhone] = React.useState(\n\t\t\t\t() => typeof window !== 'undefined' && window.matchMedia(PHONE_MQ).matches && !disabled(),\n\t\t\t);\n\t\t\tReact.useEffect(() => {\n\t\t\t\tif (typeof window === 'undefined') return undefined;\n\t\t\t\tconst mq = window.matchMedia(PHONE_MQ);\n\t\t\t\tconst update = () => setPhone(mq.matches && !disabled());\n\t\t\t\tupdate();\n\t\t\t\tmq.addEventListener('change', update);\n\t\t\t\treturn () => mq.removeEventListener('change', update);\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/client.js:432-475](https://github.com/AliceLJY/dsh-thumb/blob/cde135922e5fdd8729b163c634dd811294555d36/src/client.js#L432-L475)\n\n会话自动关闭、shell overlay注册及服务注入。\n\n<details>\n<summary>查看原文（44行）</summary>\n\n```text\n\t\t\tReact.useEffect(() => {\n\t\t\t\tif (!phone) return undefined;\n\t\t\t\tconst onTap = (e) => {\n\t\t\t\t\tconst target = e.target;\n\t\t\t\t\tif (!(target instanceof Element)) return;\n\t\t\t\t\tconst row = target.closest('[role=\"treeitem\"]');\n\t\t\t\t\tif (!row) return;\n\t\t\t\t\tconst cls = typeof row.className === 'string' ? row.className : '';\n\t\t\t\t\tif (!/sessionRow|searchResultRow/.test(cls)) return;   // project/group rows: leave open\n\t\t\t\t\tif (row.closest('[data-thumb=\"sidebar\"]') === null) return;\n\t\t\t\t\tsetTimeout(() => { if (sidebarIsExpanded()) closeDrawer?.(); }, 160);\n\t\t\t\t};\n\t\t\t\tdocument.addEventListener('click', onTap, true);\n\t\t\t\treturn () => document.removeEventListener('click', onTap, true);\n\t\t\t}, [phone, closeDrawer]);\n\n\t\t\tif (!phone || !open) return null;\n\t\t\treturn jsx('button', {\n\t\t\t\ttype: 'button',\n\t\t\t\tclassName: 'dsh-thumb-scrim',\n\t\t\t\t'aria-label': 'Close sidebar',\n\t\t\t\tonClick: () => closeDrawer?.(),\n\t\t\t});\n\t\t}\n\n\t\tfunction apply(ctx) {\n\t\t\tensureStyle();\n\t\t\tctx.slots.inject('shell.overlay', () => ctx.slots.register({\n\t\t\t\tname: 'shell.overlay',\n\t\t\t\tid: 'dsh-thumb',\n\t\t\t\tinject: () => ({ closeDrawer: () => ctx.layout?.toggleSidebar?.() }),\n\t\t\t}, ThumbShell));\n\t\t}\n\n\t\t/**\n\t\t * Cordis SERVICE names — not package names. The two `inject` fields in this\n\t\t * plugin look alike and mean different things: package.json's\n\t\t * `dsh.client.inject` lists packages (module load order), while this one\n\t\t * lists services the apply world waits for. Getting it wrong does not fail\n\t\t * loudly at the plugin level: the entry just never activates, and the shell\n\t\t * reports \"web boot: 1 entry did not activate\" while the whole page stays\n\t\t * blank. Mirrors what ui-sidebar injects to reach the same layout face.\n\t\t */\n\t\tconst inject = ['slots', 'layout'];\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 免hash是否消除兼容风险，可借鉴什么？\n\n**研究主题：**缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\n免完整hash没有消除DOM契约风险。LOCATORS仍依赖class子串，stampFrame用querySelector取得第一个匹配，没有注释所说的唯一性判定，也没有歧义时停止或报警。缺少某个匹配只是不打标；若部分frame/sidebar匹配成功、其他列未匹配，可能只应用一部分布局规则。因此不能把“集中定位”提升成“升级失败会可靠暴露”的保证。作者已记录detailsCol变为rightbarCol的适配，说明语义后缀也会改名。\n\n设置定位每次遍历div/section/dialog，计算样式和几何，再选全视口fixed flex且含_nav的第一个容器。这个启发式比全局_nav更窄，但仍可能遇到另一个满足条件的叠层。观察器监听整个body的子树、style和class变化，rAF合并避免同帧重复调度，却不证明长对话下没有明显开销。\n\n值得借鉴的是意图与渲染值解耦、FLOW把密度规则限制在包含消息的列、观察器和resize/rAF在React cleanup中释放。边界是全局style和data-thumb标记在所读清理路径中没有删除，运行中卸载后是否残留密度样式不能仅凭cleanup推定；完整刷新和加载前关闭开关更明确。按钮缩到24px、提示溢出与设置导航不完全横排是作者明确承认的取舍。这里未复现误匹配或卸载残留。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/client.js:50-65](https://github.com/AliceLJY/dsh-thumb/blob/cde135922e5fdd8729b163c634dd811294555d36/src/client.js#L50-L65)\n\n定位器注释期待唯一节点，但本段只声明子串规则。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n\t\t/**\n\t\t * Runtime locators. Key is the data-thumb value we stamp; value is the\n\t\t * selector used to find the node once. Selectors use the semantic suffix\n\t\t * that survives CSS-Modules hashing (`pI_x6G_sidebarCol` -> `sidebarCol`),\n\t\t * never a full hashed class.\n\t\t *\n\t\t * Each of these resolved to exactly one node when probed on rc.6, so an\n\t\t * ambiguous match means upstream restructured and we should stop rather\n\t\t * than style the wrong element.\n\t\t */\n\t\tconst LOCATORS = {\n\t\t\tframe: '[class*=\"_frame\"]',\n\t\t\tsidebar: '[class*=\"sidebarCol\"]',\n\t\t\tcenter: '[class*=\"centerCol\"]',\n\t\t\tdetails: '[class*=\"rightbarCol\"], [class*=\"detailsCol\"]',\n\t\t};\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/client.js:303-337](https://github.com/AliceLJY/dsh-thumb/blob/cde135922e5fdd8729b163c634dd811294555d36/src/client.js#L303-L337)\n\nquerySelector首匹配与设置启发式，没有唯一性校验。\n\n<details>\n<summary>查看原文（35行）</summary>\n\n```text\n\t\t/**\n\t\t * Stamp data-thumb on the nodes we style.\n\t\t *\n\t\t * Re-run on DOM mutations because the shell remounts columns across route\n\t\t * changes; stamping is idempotent and cheap (four querySelector calls).\n\t\t * A locator that matches nothing is left unstamped and its rules simply\n\t\t * never apply — degrading to stock behaviour rather than to a broken one.\n\t\t */\n\t\tfunction stampFrame() {\n\t\t\tif (disabled()) return;\n\t\t\tfor (const [name, selector] of Object.entries(LOCATORS)) {\n\t\t\t\tconst el = document.querySelector(selector);\n\t\t\t\tif (el && el.getAttribute('data-thumb') !== name) el.setAttribute('data-thumb', name);\n\t\t\t}\n\t\t}\n\n\t\t/**\n\t\t * The settings sheet is transient, and its parts are only unambiguous\n\t\t * *inside* the sheet's own overlay — `[class*=\"_nav\"]` would collide with\n\t\t * unrelated nodes if queried against the whole document. So we find the\n\t\t * sheet first (a fixed, full-viewport flex-row layer) and scope from there.\n\t\t */\n\t\tfunction stampSettings() {\n\t\t\tconst sheet = Array.from(document.querySelectorAll('div,section,dialog')).find((el) => {\n\t\t\t\tconst cs = getComputedStyle(el);\n\t\t\t\tif (cs.position !== 'fixed' || cs.display !== 'flex') return false;\n\t\t\t\tconst r = el.getBoundingClientRect();\n\t\t\t\treturn r.width >= window.innerWidth - 2 && r.height >= window.innerHeight - 2\n\t\t\t\t\t&& el.querySelector('[class*=\"_nav\"]') !== null;\n\t\t\t});\n\t\t\tif (!sheet) return;\n\t\t\tfor (const [name, selector] of Object.entries(SETTINGS_LOCATORS)) {\n\t\t\t\tconst el = sheet.querySelector(selector);\n\t\t\t\tif (el && el.getAttribute('data-thumb') !== name) el.setAttribute('data-thumb', name);\n\t\t\t}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/client.js:392-420](https://github.com/AliceLJY/dsh-thumb/blob/cde135922e5fdd8729b163c634dd811294555d36/src/client.js#L392-L420)\n\n全body观察和cleanup释放事件/rAF，未删除style与data标记。\n\n<details>\n<summary>查看原文（29行）</summary>\n\n```text\n\t\t\t// Stamp + track. One rAF-coalesced observer drives both.\n\t\t\tReact.useEffect(() => {\n\t\t\t\tif (typeof document === 'undefined') return undefined;\n\t\t\t\tensureStyle();\n\t\t\t\tlet raf = 0;\n\t\t\t\tconst tick = () => {\n\t\t\t\t\traf = 0;\n\t\t\t\t\tstampFrame();\n\t\t\t\t\tstampSettings();\n\t\t\t\t\tsetOpen(phone && sidebarIsExpanded());\n\t\t\t\t};\n\t\t\t\tconst schedule = () => { if (!raf) raf = requestAnimationFrame(tick); };\n\t\t\t\ttick();\n\t\t\t\tconst obs = new MutationObserver(schedule);\n\t\t\t\tobs.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['style', 'class'] });\n\t\t\t\twindow.addEventListener('resize', schedule);\n\t\t\t\treturn () => {\n\t\t\t\t\tobs.disconnect();\n\t\t\t\t\twindow.removeEventListener('resize', schedule);\n\t\t\t\t\tif (raf) cancelAnimationFrame(raf);\n\t\t\t\t};\n\t\t\t}, [phone]);\n\n\t\t\t// Reflect state onto <html> so the CSS above can key off it.\n\t\t\tReact.useEffect(() => {\n\t\t\t\tconst de = document.documentElement;\n\t\t\t\tif (phone && open) de.setAttribute(DRAWER_ATTR, 'open');\n\t\t\t\telse de.removeAttribute(DRAWER_ATTR);\n\t\t\t\treturn () => de.removeAttribute(DRAWER_ATTR);\n```\n\n</details>\n\n**依据 4 · 作者声明**：[README.md:97-103](https://github.com/AliceLJY/dsh-thumb/blob/cde135922e5fdd8729b163c634dd811294555d36/README.md#L97-L103)\n\n作者列出触控/导航及布局维护限制。\n\n```text\n## Known limitations\n\n- **Hover tooltips can still overflow the right edge** (the dark card when hovering a workspace row). Deliberately not fixed: its classes (`_card` / `_copyable`) are too generic to target safely, and doing it properly would mean scanning every `position: fixed` layer each frame and clamping them back into the viewport — an unclear blast radius for what is a cosmetic issue that blocks nothing. The right fix belongs upstream, in the tooltip's own touch handling.\n- **Measured at 393, 480, 560, 604, 640, 700, 768, 900 and 1023px, plus desktop 1440×900** — see the table under [Scope](#scope). Phone sizes are the ones used daily; the rest were measured once, not lived in.\n- **The settings nav still stacks vertically** instead of scrolling horizontally. The `flex-direction: row` rule lands on a wrapper that is not the one actually laying those items out, so it costs some vertical space at the top of the sheet. Left as is: the sheet went from unusable to usable, and chasing the exact nav container is polish, not repair.\n- **The action rows under assistant replies keep their 28px** while the ones under user messages shrink to 24px. They sit in a second flex wrapper and moved for none of `height`, `align-self` or `min-height`, and no rule naming those classes sets a height at all — so whatever sizes them needs a wider probe than a class-name scan. Left alone deliberately: it is 12px on a three-turn session, roughly 2% of the column.\n- **A change to how upstream lays out its columns means updating this.** The locators are the four entries in `LOCATORS` at the top of `src/client.js` — a minutes-long edit.\n```\n\n#### 缺口\n\n- 没有在DOM歧义、局部匹配和宿主热禁用场景中的行为材料。\n  **影响：**无法承诺升级后只会完整退回原生布局，或禁用即清除所有样式。\n  **进一步探讨：**继续探讨可从构造重复后缀节点、部分缺列和热禁用序列入手，检查是否局部污染和是否可恢复。\n- 没有长对话与多叠层下全body观察和样式探测的性能数据。\n  **影响：**rAF合并只说明调度控制，不能证明低资源成本。\n  **进一步探讨：**可对同一长会话比较开关前后的布局计算次数、主线程占用和交互延迟。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 安装、关闭、恢复的条件及负担是什么？\n\n**研究主题：**依赖、兼容与流程\n\n#### 完整回答\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| DSH web客户端模块加载器、React | 启动必需 | 注册客户端与渲染overlay | 纯宿主/CLI不会得到界面功能 |\n| client-runtime、client-ui-layout包 | 包清单声明必需 | 模块加载顺序 | 与服务注入名称不可混用 |\n| slots、layout服务 | 客户端注入必需 | 挂overlay和关闭侧栏 | 入口可能等待服务，关闭接口不可用 |\n| 语义后缀、frame内联网格 | 效果必需 | 标记节点和检测展开 | 上游结构变化需调整定位器 |\n| matchMedia、MutationObserver、rAF、CSS :has | 分支需要 | 窄屏监听、DOM同步和密度范围 | :has不可用时对应密度规则不生效；其他兼容未核实 |\n| GitHub来源 | 作者分发路径 | 获取private包的仓库版本 | 不按npm包存在推断可用性 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 安装 | 用户按固定GitHub来源加入web profile并重启 | bundle存在且客户端服务激活 |\n| 使用 | 窄屏展开侧栏、点目标会话或遮罩 | 会话正确切换、抽屉可关、聊天可读 |\n| 临时关闭 | 加?thumb=0或localStorage置0后重载 | CSS与打标在加载前检查disabled |\n| 退出恢复 | 移除bundle并重启，必要时核对node_modules链接 | 只还原package.json可能留下链接状态 |\n\n作者不承诺维护或Issue响应，适配责任需由用户考虑。不能把“改四个定位器只需几分钟”的作者估计写成保证。开关是在URL/存储读取并重新加载时生效，没有专门的实时设置订阅。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:23-33](https://github.com/AliceLJY/dsh-thumb/blob/cde135922e5fdd8729b163c634dd811294555d36/package.json#L23-L33)\n\nweb平台和包级注入条件。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    },\n    \"client\": {\n      \"platform\": \"web\",\n      \"inject\": [\n        \"@deepseek-ai/dsh-client-runtime\",\n        \"@deepseek-ai/dsh-client-ui-layout\"\n      ]\n    }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/client.js:91-98](https://github.com/AliceLJY/dsh-thumb/blob/cde135922e5fdd8729b163c634dd811294555d36/src/client.js#L91-L98)\n\nURL及localStorage关闭逻辑，存储异常时维持开启。\n\n```text\n\t\tfunction disabled() {\n\t\t\ttry {\n\t\t\t\tif (typeof location !== 'undefined'\n\t\t\t\t\t&& new URLSearchParams(location.search).get('thumb') === '0') return true;\n\t\t\t\tif (localStorage.getItem('dsh-thumb') === '0') return true;\n\t\t\t} catch (_) { /* private mode / blocked storage: stay enabled */ }\n\t\t\treturn false;\n\t\t}\n```\n\n**依据 3 · 源码核查**：[src/client.js:285-317](https://github.com/AliceLJY/dsh-thumb/blob/cde135922e5fdd8729b163c634dd811294555d36/src/client.js#L285-L317)\n\n插CSS与打标都检查disabled，但不是实时移除已有样式。\n\n<details>\n<summary>查看原文（33行）</summary>\n\n```text\n\t\tfunction ensureStyle() {\n\t\t\tif (typeof document === 'undefined') return;\n\t\t\t/* The off switch has to be checked here, not only in useIsPhone.\n\t\t\t   Until the density rules landed, every rule was gated on the drawer\n\t\t\t   attribute, which only a live component ever sets — so disabling the\n\t\t\t   component was enough to neutralise the stylesheet. The density rules\n\t\t\t   apply with the drawer shut, by design, which means an injected\n\t\t\t   stylesheet is now load-bearing on its own and the switch has to\n\t\t\t   reach it directly. Caught by test/smoke.mjs on its first run. */\n\t\t\tif (disabled()) return;\n\t\t\tif (document.getElementById(STYLE_ID)) return;\n\t\t\tconst tag = document.createElement('style');\n\t\t\ttag.id = STYLE_ID;\n\t\t\ttag.dataset.plugin = 'dsh-thumb';\n\t\t\ttag.textContent = CSS;\n\t\t\tdocument.head.appendChild(tag);\n\t\t}\n\n\t\t/**\n\t\t * Stamp data-thumb on the nodes we style.\n\t\t *\n\t\t * Re-run on DOM mutations because the shell remounts columns across route\n\t\t * changes; stamping is idempotent and cheap (four querySelector calls).\n\t\t * A locator that matches nothing is left unstamped and its rules simply\n\t\t * never apply — degrading to stock behaviour rather than to a broken one.\n\t\t */\n\t\tfunction stampFrame() {\n\t\t\tif (disabled()) return;\n\t\t\tfor (const [name, selector] of Object.entries(LOCATORS)) {\n\t\t\t\tconst el = document.querySelector(selector);\n\t\t\t\tif (el && el.getAttribute('data-thumb') !== name) el.setAttribute('data-thumb', name);\n\t\t\t}\n\t\t}\n```\n\n</details>\n\n**依据 4 · 作者声明**：[README.md:33-60](https://github.com/AliceLJY/dsh-thumb/blob/cde135922e5fdd8729b163c634dd811294555d36/README.md#L33-L60)\n\n作者给出安装、移除、链接回退与重载开关。\n\n<details>\n<summary>查看原文（28行）</summary>\n\n````text\n## Install / remove / switch off\n\n```bash\n# install\ndsh plugin --profile web add github:AliceLJY/dsh-thumb\n# confirm \"dsh-thumb\" is in dsh.profile.bundles in ~/.dsh/profiles/web/package.json, then restart the service\n\n# remove\ndsh plugin --profile web remove dsh-thumb\n# again, confirm it is gone from the bundles array, then restart\n```\n\nThere is no npm package: `dsh plugin add` hands its arguments to pnpm, so a\n`github:` specifier installs the repository directly. Measured at 8.9s on a\ncold store, and dsh appends it to `dsh.profile.bundles` on its own.\n\nWorking on it locally instead? Point the same command at a path:\n\n```bash\ndsh plugin --profile web add link:/absolute/path/to/dsh-thumb\n```\n\n⚠️ **Rolling back means undoing two things**: `package.json` *and* the link in `node_modules`. Restore only the former and the next `pnpm add` sees the link still present, decides \"Already up to date\", and **writes nothing while reporting success** — it looks installed but isn't.\n\nTo switch off without restarting anything:\n\n- append `?thumb=0` to the URL, or\n- run `localStorage.setItem('dsh-thumb','0')` in the console and reload\n````\n\n</details>\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 布局收益和全程成本有什么证据？\n\n**研究主题：**效果与总成本\n\n#### 完整回答\n\n本插件的合格任务是用户在窄屏切换到目标会话后能读内容并操作必要设置，而不是只量中心列宽。README给出多视口宽度和同会话高度数据；test/measure-widths按打开会话后的落点测量，避免把抽屉遮挡面积当作最终阅读收益。这个口径本身值得借鉴，但更宽、更密并不自动等于更易阅读或更少误触。\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 本地宿主和浏览器资源，现金未知 | 安装、重启、确认bundle与目标布局 | 作者8.9秒冷安装不是本轮测量，也非通用耗时 |\n| 持续使用 | 全body观察及设置扫描的CPU/布局开销未测 | 适应密度和24px按钮，检查误触 | 没有真实用户任务成本数据 |\n| 失败恢复 | 重新加载和安装链接修复的资源未知 | 用开关退回原生、核对定位器或移除 | 作者不承诺长期维护，耗时未知 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 抽屉及自动关闭 | CSS和公共layout调用可查；作者报告窄屏宽度收益 | 本次没有独立复测或任务正确率 |\n| 更紧凑正文 | CSS设14px/21px与10px间距；作者报告高度610降至490px | 阅读速度、疲劳和触控错误代价 |\n| 桌面范围 | 样式在max-width 1023px内；作者报告1440px回归 | 所有桌面缩放/浏览器下兼容性 |\n\nsmoke源码有具体布局断言及开关对照，但若没有现有会话会跳过密度断言，脚本存在也不是完整通过证据。本轮只读脚本，既没有将作者报告转成host_acceptance，也没有执行宿主冒烟。不能用列宽增幅替代端到端效率或收益率。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:78-95](https://github.com/AliceLJY/dsh-thumb/blob/cde135922e5fdd8729b163c634dd811294555d36/README.md#L78-L95)\n\n作者测量最终会话阅读宽度及密度取舍，不是本次执行。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\nWhat matters is the state you are left in *after tapping a session*, since that is the path you have to take to switch sessions. Stock leaves the sidebar open, so the transcript stays at `width − 280`. The shell closes it, leaving the 56px rail and `width − 56`:\n\n| viewport | stock | with the shell | gain |\n|---:|---:|---:|---:|\n| 393px | 113px | 337px | **+198%** |\n| 480px | 200px | 424px | +112% |\n| 604px | 324px | 548px | +69% |\n| 768px | 488px | 712px | **+46%** |\n| 900px | 620px | 844px | +36% |\n| 1023px | 743px | 967px | **+30%** |\n\nRegenerate that table with `node test/measure-widths.mjs`; the file also explains why it measures the width you are left with rather than the width the drawer covers, which is what the first attempt got wrong.\n\nThe gain shrinks with width, as expected — but it never inverts anywhere inside the supported range. Lowering the breakpoint would switch off something still worth 30–46% at the sizes it was supposed to help. The 1023px breakpoint stays.\n\n**The density rules are the one deliberate exception**: they apply at ≤1023px with the drawer shut, because that is the state you read a transcript in. On the measured session that is 610px of column down to 490px — 60px of it from the gap between turns alone (16px → 10px), which costs nothing to interact with. Body text goes 16px/28px → 14px/21px and the action buttons 28px → 24px; the buttons were already under the 44px iOS touch target, so that last one is a trade, and `--thumb-hit` at the top of the stylesheet puts it back.\n\nDesktop is verified unchanged: sidebar 280px, center 1160px, `position: static`, no scrim, settings still an 800px two-column sheet.\n```\n\n</details>\n\n**依据 2 · 源码核查**：[test/measure-widths.mjs:35-53](https://github.com/AliceLJY/dsh-thumb/blob/cde135922e5fdd8729b163c634dd811294555d36/test/measure-widths.mjs#L35-L53)\n\n脚本按展开和选择会话后的状态读取中心宽度。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n/** Walk the path a user has to take to switch sessions, then measure. */\nasync function transcriptWidthAfterOpeningASession(width, { stock }) {\n  const ctx = await browser.newContext({ viewport: { width, height: 900 } });\n  const page = await ctx.newPage();\n  await page.goto(URL_BASE + (stock ? '?thumb=0' : ''), { waitUntil: 'domcontentloaded' });\n  await page.waitForTimeout(6000);\n  const toggle = await page.$('[class*=\"_toggle\"]');\n  if (toggle) { await toggle.click().catch(() => {}); await page.waitForTimeout(1200); }\n  for (const row of await page.$$('[class*=\"_sessionRow\"]')) {\n    const t = (await row.textContent() || '').trim();\n    if (t && t !== '新会话' && t !== 'New session') { await row.click().catch(() => {}); break; }\n  }\n  await page.waitForTimeout(3000);\n  const w = await page.evaluate(() => {\n    const c = document.querySelector('[class*=\"centerCol\"]');\n    return c ? Math.round(c.getBoundingClientRect().width) : null;\n  });\n  await ctx.close();\n  return w;\n```\n\n</details>\n\n**依据 3 · 源码核查**：[test/smoke.mjs:108-143](https://github.com/AliceLJY/dsh-thumb/blob/cde135922e5fdd8729b163c634dd811294555d36/test/smoke.mjs#L108-L143)\n\n没有会话时跳过密度断言，存在有具体对照但需真实运行。\n\n<details>\n<summary>查看原文（36行）</summary>\n\n```text\n// ----------------------------------------------------------------- density\n{\n  console.log('\\nreading density (phone viewport)');\n  const ctx = await browser.newContext({ viewport: PHONE });\n  const page = await ctx.newPage();\n  const opened = await openSession(page);\n  if (!opened) {\n    console.log('  skip  no existing session to read — density not asserted');\n  } else {\n    const m = await page.evaluate(() => {\n      const cs = (sel, p) => { const e = document.querySelector(sel); return e ? getComputedStyle(e)[p] : null; };\n      const col = document.querySelector('[class*=\"_column\"]');\n      return {\n        font: cs('[data-thumb=\"center\"] [class*=\"_markdown\"]', 'fontSize'),\n        lh: cs('[data-thumb=\"center\"] [class*=\"_markdown\"]', 'lineHeight'),\n        bubblePad: cs('[data-thumb=\"center\"] [class*=\"_bubble\"]', 'padding'),\n        colGap: col ? getComputedStyle(col).gap : null,\n        scroll: col ? col.scrollHeight : null,\n      };\n    });\n    ok('body text is 14px', m.font === '14px', m.font);\n    ok('body leading is 21px', m.lh === '21px', m.lh);\n    ok('bubble padding tightened', m.bubblePad === '7px 12px', m.bubblePad);\n    ok('turn gap tightened to 10px', m.colGap === '10px', m.colGap);\n\n    // End-to-end: the same transcript with the shell off must be taller.\n    const off = await browser.newContext({ viewport: PHONE });\n    const offPage = await off.newPage();\n    await openSession(offPage, { thumbOff: true });\n    const stock = await offPage.evaluate(() => {\n      const col = document.querySelector('[class*=\"_column\"]');\n      return col ? col.scrollHeight : null;\n    });\n    const saved = stock && m.scroll ? (stock - m.scroll) / stock : 0;\n    ok('transcript is at least 15% shorter than stock',\n       saved >= 0.15, 'stock=' + stock + ' thumb=' + m.scroll + ' saved=' + (saved * 100).toFixed(1) + '%');\n```\n\n</details>\n\n#### 缺口\n\n- 没有独立阅读任务、触控错误及浏览器资源对照。\n  **影响：**不能把像素收益解释成用户效率提升或成本净降低。\n  **进一步探讨：**可在相同文本和设备上比较切会话时间、阅读理解、误触和布局计算开销，避免只看列宽。\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 后续可探索什么，以及适合谁采用？\n\n**研究主题：**新假设与验证、采用判断\n\n#### 完整回答\n\n当前建议为试用，限于愿意自行维护的个人窄屏DSH web用户。功能定位明确，源码有开关与公开layout关闭路径，因而存在可撤回试用方式；但语义后缀与DOM布局耦合、首匹配及清理边界不能忽略。先核对自己的宿主版本、手机视口、会话选择、设置、轨迹页面和关闭开关，出现错误节点被样式命中、抽屉不能关或关键按钮误触即停用并重载。\n\n可以提出未验证的定位器健康门控。当前集中定位器方便修订，但没有唯一性与父子关系检查。若在完整且一致的frame/sidebar/center组合被识别后才整体启用，并展示兼容诊断，或许能降低升级后部分应用CSS的风险。它会增加探测与诊断复杂度，也可能对合法多窗口误判，不能直接算已有能力。\n\n最小对照可把同一宿主页面的后缀改名、重复节点、局部缺列和设置叠层作为故障输入，比较当前首匹配与门控版本是否误污染、是否明确退出以及恢复是否可解释。若误伤合法布局或性能开销高于避免的失效，则否定净价值。现有作者测试报告不等于本轮同版本安装、功能与卸载验收，因此不足以给值得安装结论。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/client.js:303-337](https://github.com/AliceLJY/dsh-thumb/blob/cde135922e5fdd8729b163c634dd811294555d36/src/client.js#L303-L337)\n\n首匹配且逐节点打标，是整体门控假设的具体起点。\n\n<details>\n<summary>查看原文（35行）</summary>\n\n```text\n\t\t/**\n\t\t * Stamp data-thumb on the nodes we style.\n\t\t *\n\t\t * Re-run on DOM mutations because the shell remounts columns across route\n\t\t * changes; stamping is idempotent and cheap (four querySelector calls).\n\t\t * A locator that matches nothing is left unstamped and its rules simply\n\t\t * never apply — degrading to stock behaviour rather than to a broken one.\n\t\t */\n\t\tfunction stampFrame() {\n\t\t\tif (disabled()) return;\n\t\t\tfor (const [name, selector] of Object.entries(LOCATORS)) {\n\t\t\t\tconst el = document.querySelector(selector);\n\t\t\t\tif (el && el.getAttribute('data-thumb') !== name) el.setAttribute('data-thumb', name);\n\t\t\t}\n\t\t}\n\n\t\t/**\n\t\t * The settings sheet is transient, and its parts are only unambiguous\n\t\t * *inside* the sheet's own overlay — `[class*=\"_nav\"]` would collide with\n\t\t * unrelated nodes if queried against the whole document. So we find the\n\t\t * sheet first (a fixed, full-viewport flex-row layer) and scope from there.\n\t\t */\n\t\tfunction stampSettings() {\n\t\t\tconst sheet = Array.from(document.querySelectorAll('div,section,dialog')).find((el) => {\n\t\t\t\tconst cs = getComputedStyle(el);\n\t\t\t\tif (cs.position !== 'fixed' || cs.display !== 'flex') return false;\n\t\t\t\tconst r = el.getBoundingClientRect();\n\t\t\t\treturn r.width >= window.innerWidth - 2 && r.height >= window.innerHeight - 2\n\t\t\t\t\t&& el.querySelector('[class*=\"_nav\"]') !== null;\n\t\t\t});\n\t\t\tif (!sheet) return;\n\t\t\tfor (const [name, selector] of Object.entries(SETTINGS_LOCATORS)) {\n\t\t\t\tconst el = sheet.querySelector(selector);\n\t\t\t\tif (el && el.getAttribute('data-thumb') !== name) el.setAttribute('data-thumb', name);\n\t\t\t}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/client.js:285-300](https://github.com/AliceLJY/dsh-thumb/blob/cde135922e5fdd8729b163c634dd811294555d36/src/client.js#L285-L300)\n\n加载前开关提供退回路径，未证明热禁用完整清理。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n\t\tfunction ensureStyle() {\n\t\t\tif (typeof document === 'undefined') return;\n\t\t\t/* The off switch has to be checked here, not only in useIsPhone.\n\t\t\t   Until the density rules landed, every rule was gated on the drawer\n\t\t\t   attribute, which only a live component ever sets — so disabling the\n\t\t\t   component was enough to neutralise the stylesheet. The density rules\n\t\t\t   apply with the drawer shut, by design, which means an injected\n\t\t\t   stylesheet is now load-bearing on its own and the switch has to\n\t\t\t   reach it directly. Caught by test/smoke.mjs on its first run. */\n\t\t\tif (disabled()) return;\n\t\t\tif (document.getElementById(STYLE_ID)) return;\n\t\t\tconst tag = document.createElement('style');\n\t\t\ttag.id = STYLE_ID;\n\t\t\ttag.dataset.plugin = 'dsh-thumb';\n\t\t\ttag.textContent = CSS;\n\t\t\tdocument.head.appendChild(tag);\n```\n\n</details>\n\n**依据 3 · 作者声明**：[README.md:7-9](https://github.com/AliceLJY/dsh-thumb/blob/cde135922e5fdd8729b163c634dd811294555d36/README.md#L7-L9)\n\n作者明确个人工具与维护责任，并报告一次上游改名。\n\n```text\n> **Personal tool, published as-is.** Written for one person's phone and one dsh version (`0.1.0-rc.6`). No maintenance and no issue response are promised. If a dsh upgrade breaks it, the four entries in `LOCATORS` at the top of `src/client.js` are where to look — that is a minutes-long edit.\n>\n> Re-checked 2026-10-21 against dsh `0.2.1-rc.2` (same 393×660 viewport, Playwright): the drawer and the scrim still work, and stock still squeezes the chat to 113px. The one thing that had broken was the right-panel locator — upstream renamed `detailsCol` to `rightbarCol` — so `LOCATORS.details` now matches both names.\n```\n\n#### 缺口\n\n- 定位器健康门控能否减少部分样式失效尚无结果。\n  **影响：**仍属设计假设，不计现有创新或增加采用成熟度。\n  **进一步探讨：**可从具体DOM故障输入与合法多窗口对照入手，同时记录误伤和探测成本。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：61628f228209bc39bd85bf9dc5b3e22074dbc5ea93eb31eb66e576cc1701d853。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 2 | 276 | — | — | 4922 |\n| .js | source | 2 | 483 | 262 | 190 | — |\n| .mjs | test | 2 | 335 | 236 | 82 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 覆盖式侧栏 | 展开时避免挤压聊天列 | max-width 1023px与展开状态，依赖列定位 |\n| 遮罩和自动关闭 | 点遮罩或会话后收起侧栏 | 调layout.toggleSidebar，依赖行语义识别 |\n| 手机设置布局 | 单列全屏设置并限制溢出 | 设置叠层启发式匹配，导航不完全横排 |\n| 对话密度 | 缩文字、间距和动作按钮 | 仅窄屏FLOW范围，24px触控目标是取舍 |\n| 加载前关闭 | URL或localStorage停用并重载 | 不是实时撤销已有全局样式 |\n\n\n## 工程亮点\n\n免完整hash没有消除DOM契约风险。LOCATORS仍依赖class子串，stampFrame用querySelector取得第一个匹配，没有注释所说的唯一性判定，也没有歧义时停止或报警。缺少某个匹配只是不打标；若部分frame/sidebar匹配成功、其他列未匹配，可能只应用一部分布局规则。因此不能把“集中定位”提升成“升级失败会可靠暴露”的保证。作者已记录detailsCol变为rightbarCol的适配，说明语义后缀也会改名。\n\n设置定位每次遍历div/section/dialog，计算样式和几何，再选全视口fixed flex且含_nav的第一个容器。这个启发式比全局_nav更窄，但仍可能遇到另一个满足条件的叠层。观察器监听整个body的子树、style和class变化，rAF合并避免同帧重复调度，却不证明长对话下没有明显开销。\n\n值得借鉴的是意图与渲染值解耦、FLOW把密度规则限制在包含消息的列、观察器和resize/rAF在React cleanup中释放。边界是全局style和data-thumb标记在所读清理路径中没有删除，运行中卸载后是否残留密度样式不能仅凭cleanup推定；完整刷新和加载前关闭开关更明确。按钮缩到24px、提示溢出与设置导航不完全横排是作者明确承认的取舍。这里未复现误匹配或卸载残留。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、src/index.js、src/client.js、cordis.patch.yml、test/smoke.mjs、test/measure-widths.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定源码阅读客户端主链路、空宿主入口、包清单、README及测量/冒烟脚本；作者运行数据不转写为本轮执行，未运行目标代码。\n- 下一步：进一步探讨可从重复/缺失DOM节点和开关恢复的故障输入入手，再用同文本真实阅读任务比较误触、理解与主线程成本。\n",
         "metadata": {
             "repository": "AliceLJY/dsh-thumb",
             "repository_id": 1341694685,
-            "captured_at": "2026-10-21T08:00:12.882Z",
-            "window_start": "2026-09-21T08:00:12.882Z",
+            "captured_at": "2026-10-22T04:45:48.993Z",
+            "window_start": "2026-09-22T04:45:48.993Z",
             "stars": 1,
             "pushed_at": "2026-10-21T05:33:38Z",
             "issues": {
-                "open": null,
+                "open": 0,
                 "closed": 0,
                 "created_30d": 0,
                 "closed_30d": 0,
                 "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAliceLJY%2Fdsh-thumb%20is%3Aissue%20is%3Aopen&per_page=1: Get \"https://api.github.com/search/issues?q=repo%3AAliceLJY%2Fdsh-thumb%20is%3Aissue%20is%3Aopen&per_page=1\": net/http: TLS handshake timeout"
-                }
-            ]
+            "errors": []
         },
         "discovery.plugins": {
             "id": "github:1341694685:root",
             "repository": "AliceLJY/dsh-thumb",
             "path": "",
             "revision": "cde135922e5fdd8729b163c634dd811294555d36",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "781d0c581dc5de0fda468e08f4df167729b05f8253ca14bfc8af12fa6742a90e",
                 "code": "cde135922e5fdd8729b163c634dd811294555d36",
                 "maintenance": "3768b9507875bdc0f788f1448b6e20ec3d29b0f82167413b25d730d43b181844"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

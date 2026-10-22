@@ -24,36 +24,70 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-20-08-github-1334023305-root-directory-0",
+                    "id": "2026-10-22-02-github-1334023305-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
-                    "retrieved_at": "2026-10-20T10:48:31.612Z",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-22T09:35:20.125Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-20-08-github-1334023305-root-author",
+                    "id": "2026-10-22-02-github-1334023305-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/1HelloMan1/dsh-usage-dashboard-plus/blob/ee53a4d07d212f02fe64ec64eb8a9a84163bd439/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/1HelloMan1/dsh-usage-dashboard-plus",
+                            "commit": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439",
+                            "path": "README.md",
+                            "content_sha256": "61878be037bdf66ed5d3218ff173429e01d59597a7545a431b9eb5490880f281"
+                        }
+                    ],
                     "revision": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439",
-                    "captured_at": "2026-10-20T10:48:31.612Z",
-                    "summary": "在 DSH 侧栏和设置页展示账户余额、调用用量与分模型费用统计。",
-                    "artifact": "data/runs/2026-10-20-08/snapshots/1helloman1--dsh-usage-dashboard-plus/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:35:20.125Z",
+                    "summary": "在DSH侧栏显示DeepSeek余额和日志估算消费，并汇总外部视觉调用与每会话模型/延迟统计。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/1helloman1--dsh-usage-dashboard-plus/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-20-08-github-1334023305-root-source",
+                    "id": "2026-10-22-02-github-1334023305-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/1HelloMan1/dsh-usage-dashboard-plus/blob/ee53a4d07d212f02fe64ec64eb8a9a84163bd439/lib/index.js",
+                    "url": "https://github.com/1HelloMan1/dsh-usage-dashboard-plus/blob/ee53a4d07d212f02fe64ec64eb8a9a84163bd439/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/1HelloMan1/dsh-usage-dashboard-plus",
+                            "commit": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439",
+                            "path": "README.md",
+                            "content_sha256": "61878be037bdf66ed5d3218ff173429e01d59597a7545a431b9eb5490880f281"
+                        },
+                        {
+                            "repository_url": "https://github.com/1HelloMan1/dsh-usage-dashboard-plus",
+                            "commit": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439",
+                            "path": "package.json",
+                            "content_sha256": "e811101200a0f84ff21922ee2e9b2e3ca32dc4c2da54efbda5bbef9abdda98d8"
+                        },
+                        {
+                            "repository_url": "https://github.com/1HelloMan1/dsh-usage-dashboard-plus",
+                            "commit": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439",
+                            "path": "lib/index.js",
+                            "content_sha256": "b805b9fc2dfc65021f6a814752b1df239d78e6051bd97e74b6bcd4453873dca2"
+                        },
+                        {
+                            "repository_url": "https://github.com/1HelloMan1/dsh-usage-dashboard-plus",
+                            "commit": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439",
+                            "path": "test/isTokenDelta.test.mjs",
+                            "content_sha256": "05fd33fce3525f5bfecfea81a2a6e6437e31ba9f374787821a290c32a25771d8"
+                        }
+                    ],
                     "revision": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439",
-                    "captured_at": "2026-10-20T10:48:31.612Z",
-                    "summary": "核查 lib/index.js、lib/client.js；宿主读取会话压缩日志及外部 vision usage.jsonl，按模型/时间价格表聚合，并提供 usageDashboard 会话投影和浏览器看板。",
-                    "artifact": "data/runs/2026-10-20-08/snapshots/1helloman1--dsh-usage-dashboard-plus/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:35:20.125Z",
+                    "summary": "核查 README.md、package.json、lib/index.js、test/isTokenDelta.test.mjs；API缓存余额/同步扫日志估费，usageDashboard投影按step折叠调用与延迟，客户端卡片/设置页和CSV。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/1helloman1--dsh-usage-dashboard-plus/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "核查固定提交的所列核心实现与作者材料；未运行插件、安装、测试或真实宿主验收，未确认独立用户效果。",
+                        "固定完整侧栏日志/余额/route链、投影事件与计价、token副本测试和README；客户端仅功能契约不穷尽交互。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +98,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "多模型 DSH 用户希望知道账户余额及当天花费；合格交付是带价格口径的估算与可追查调用记录。",
+                    "text": "个人用户查看会话内外调用趋势、余额和缓存表现。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1334023305-root-source"
+                        "2026-10-22-02-github-1334023305-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +109,16 @@
                             "fingerprint": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:48:31.612Z",
+                    "reviewed_at": "2026-10-22T09:35:20.125Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "宿主读取会话压缩日志及外部 vision usage.jsonl，按模型/时间价格表聚合，并提供 usageDashboard 会话投影和浏览器看板。",
+                    "text": "API缓存余额/同步扫日志估费，usageDashboard投影按step折叠调用与延迟，客户端卡片/设置页和CSV。",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1334023305-root-source"
+                        "2026-10-22-02-github-1334023305-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +127,16 @@
                             "fingerprint": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:48:31.612Z",
+                    "reviewed_at": "2026-10-22T09:35:20.125Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "核查固定提交的所列核心实现与作者材料；未运行插件、安装、测试或真实宿主验收，未确认独立用户效果。",
+                    "text": "固定完整侧栏日志/余额/route链、投影事件与计价、token副本测试和README；客户端仅功能契约不穷尽交互。",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1334023305-root-source"
+                        "2026-10-22-02-github-1334023305-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +145,16 @@
                             "fingerprint": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:48:31.612Z",
+                    "reviewed_at": "2026-10-22T09:35:20.125Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "包清单与组件入口按固定提交核查；发布与宿主适配声明属于作者材料，不作为本次实际安装结果。",
+                    "text": "0.2.5 MIT，旧rc.6系列宿主peer，Node需zstdDecompressSync而package未声明engines。",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1334023305-root-source"
+                        "2026-10-22-02-github-1334023305-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +163,16 @@
                             "fingerprint": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:48:31.612Z",
+                    "reviewed_at": "2026-10-22T09:35:20.125Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "看板自身主要占日志扫描、解压与存储资源；人工要校准模型名、价格和日志来源。没有因此节省模型费的因果证据。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 兼容宿主/原日志/价表 | 核账户、格式和单位 | 日志格式/价表/单位需对齐；准备工时未知 |\n| 持续使用 | 同步扫描解压/余额查询 | 对照原日志、账号账单与价格单位 | 无插件LLM调用；扫描/查询延迟和账单误差未量化 |\n| 失败恢复 | 原日志和账单 | 查漏计/双记/价格与清缓存 | 原日志/账单复核和缓存恢复时间未知 |\n",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1334023305-root-source"
+                        "2026-10-22-02-github-1334023305-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +181,16 @@
                             "fingerprint": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:48:31.612Z",
+                    "reviewed_at": "2026-10-22T09:35:20.125Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "适合用量观察；先用自己账单核对一天数据，并为未知模型补价，再据此设预算。",
+                    "text": "先观察，可信单用户只作趋势对照。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1334023305-root-source"
+                        "2026-10-22-02-github-1334023305-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +199,16 @@
                             "fingerprint": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:48:31.612Z",
+                    "reviewed_at": "2026-10-22T09:35:20.125Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "将辅助视觉成本纳入观察是明确便利；费用仅估算，不可自动视为财务结算。",
+                    "text": "#### 效果\n\n| 目标 | 源码支持 | 边界 |\n| --- | --- | --- |\n| 余额与消费联看 | API+日志 | 不同主体/时间 |\n| 外部视觉纳入 | JSONL追加读 | 重复/无覆盖回执 |\n| 性能/调用统计 | 会话投影500日志 | TTFT含思考，计价独立 |",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1334023305-root-source"
+                        "2026-10-22-02-github-1334023305-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +217,16 @@
                             "fingerprint": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:48:31.612Z",
+                    "reviewed_at": "2026-10-22T09:35:20.125Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "lib/index.js 把 zstd 解码、模型计费、外部日志和投影集中在宿主；token delta 过滤减少非文本块干扰。价格时间线可借鉴，但与当前业务日期的同步及庞大日志扫描成本需实测。 源码：[lib/index.js](https://github.com/1HelloMan1/dsh-usage-dashboard-plus/blob/ee53a4d07d212f02fe64ec64eb8a9a84163bd439/lib/index.js)、[lib/client.js](https://github.com/1HelloMan1/dsh-usage-dashboard-plus/blob/ee53a4d07d212f02fe64ec64eb8a9a84163bd439/lib/client.js)。",
+                    "text": "投影与余额汇总有可读结构，副本测试不守生产逻辑，需统一计量内核。详见[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1334023305-root-source"
+                        "2026-10-22-02-github-1334023305-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,15 +235,69 @@
                             "fingerprint": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:48:31.612Z",
+                    "reviewed_at": "2026-10-22T09:35:20.125Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "把外部视觉用量和原会话统计接到余额/消费看板。详见[Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1334023305-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334023305:root",
+                            "area": "code",
+                            "fingerprint": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:35:20.125Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "supported",
+                    "text": "明文session.jsonl被仅zstd解码成空，cacheWrite侧栏按input而投影按output，未知价仍套默认金额。详见[Q03](#research-q03)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1334023305-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334023305:root",
+                            "area": "code",
+                            "fingerprint": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:35:20.125Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "engineering",
+                    "basis": "unverified",
+                    "text": "研究统一版本化计量核、明确格式/覆盖/去重回执与账户cache，比较漏计/金额差。当前未验证。详见[Q05](#research-q05)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1334023305-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334023305:root",
+                            "area": "code",
+                            "fingerprint": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:35:20.125Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-20T10:48:31.612Z",
+            "last_checked_at": "2026-10-22T09:35:20.125Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439",
-                "reviewed_at": "2026-10-20T10:48:31.612Z",
+                "reviewed_at": "2026-10-22T09:35:20.125Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -223,59 +311,59 @@
                         "novelty": 9,
                         "mechanism": 8,
                         "transferability": 5,
-                        "simplification": 4
+                        "simplification": 8
                     },
-                    "rationale": "novelty：常规观测集成；mechanism：旁路日志补统计盲区为局部增量；transferability：时间线价格可复用；simplification：统一入口但仍要对价。",
+                    "rationale": "novelty小幅，余额/日志面板已有；mechanism小幅，多源组合；transferability小幅，旧日志契约绑定；simplification实质，集中查看。",
                     "basis": "interpretation",
-                    "score": 26,
+                    "score": 30,
                     "evidence_ids": [
-                        "2026-10-20-08-github-1334023305-root-source"
+                        "2026-10-22-02-github-1334023305-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 9,
-                        "delivery": 15,
-                        "reach": 5,
+                        "workflow": 18,
+                        "delivery": 0,
+                        "reach": 10,
                         "economics": 4
                     },
-                    "rationale": "workflow：减少分散查账；delivery：提供跨调用统计；reach：降低看日志门槛；economics：看见成本不等于降低成本。",
+                    "rationale": "workflow实质，用量联看；delivery无账单保证；reach实质，卡片/统计/CSV；economics小幅，查账便利但误差未知。",
                     "basis": "interpretation",
-                    "score": 33,
+                    "score": 32,
                     "evidence_ids": [
-                        "2026-10-20-08-github-1334023305-root-source"
+                        "2026-10-22-02-github-1334023305-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "trial",
-                "reason": "多模型用户可试用统一用量观察；先对账一天主调用与视觉日志并补未知模型价，不能当财务账本。",
+                "decision": "observe",
+                "reason": "先观察，明文漏读与两套计价口径先对账；可信单用户仅趋势参考，不将估算当财务结算。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "多模型余额及当天花费是明确重复需求。"
+                        "rationale": "用量/余额查看明确。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "把主日志与视觉旁路费用整合，仍与供应商余额用途重叠。"
+                        "rationale": "外部调用和投影汇总方便，原日志可替代。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "已查zstd日志聚合与价格表，去重和日界线未对账。"
+                        "rationale": "固定链可查，生产计量测试/真实账单对应不足。"
                     },
                     "cost": {
-                        "score": 15,
-                        "rationale": "无需新增模型调用，仍需维护价格、模型映射和外部日志格式。"
+                        "score": 5,
+                        "rationale": "覆盖/价格/准入与同步扫描维护高。"
                     }
                 },
-                "score": 64,
+                "score": 54,
                 "revision": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T09:35:20.125Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-20-08-github-1334023305-root-source"
+                    "2026-10-22-02-github-1334023305-root-source"
                 ],
                 "dependencies": [
                     {
@@ -300,89 +388,62 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-20T10:40:14Z",
-            "analysis_sha256": "58afa90a647f12f98a624cf1c25c48e16fab9c49b0b1f2edb164c8857486fb76"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "e51caa355f2e8b0da32d18d47de97bc21cafad1c516426deaa0138331387bca7"
         },
         "publication.metadata": "data/plugins/1helloman1--dsh-usage-dashboard-plus/META.json",
         "publication.summaries": {
-            "text": "在 DSH 侧栏和设置页展示账户余额、调用用量与分模型费用统计。",
+            "text": "在DSH侧栏显示DeepSeek余额和日志估算消费，并汇总外部视觉调用与每会话模型/延迟统计。",
             "revision": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439",
             "source_url": "https://github.com/1HelloMan1/dsh-usage-dashboard-plus/blob/ee53a4d07d212f02fe64ec64eb8a9a84163bd439/README.md"
         },
         "publication.capabilities": {
             "revision": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439",
             "items": {
-                "界面": "侧栏余额与费用、设置页用量看板",
-                "后台": "主会话与外部视觉调用聚合"
-            }
+                "界面": "余额侧栏/消费详情/会话统计与CSV",
+                "Host 路由": "GET/HEAD /api/dsh-usage",
+                "后台": "日志扫描缓存与usageDashboard投影"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 余额查询 | DeepSeek账户 | TTL主体未分区 |\n| 日志估算 | 内外用量 | 格式/价格差异 |\n| 会话投影 | 延迟缓存/调用 | 500行日志与独立算式 |"
         },
         "publication.advice": {
             "revision": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439",
-            "text": "适合用量观察；先用自己账单核对一天数据，并为未知模型补价，再据此设预算。"
+            "text": "先观察，可信单用户只作趋势对照。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/1helloman1--dsh-usage-dashboard-plus",
-        "reports": "# dsh-usage-dashboard-plus\n\n> 在 DSH 侧栏和设置页展示账户余额、调用用量与分模型费用统计。\n\n## 研究范围\n\n- **仓库**：[1HelloMan1/dsh-usage-dashboard-plus](https://github.com/1HelloMan1/dsh-usage-dashboard-plus)\n- **版本号**：0.2.5（[固定提交 ee53a4d](https://github.com/1HelloMan1/dsh-usage-dashboard-plus/tree/ee53a4d07d212f02fe64ec64eb8a9a84163bd439)）\n- **版本日期**：2026-09-14（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n贡献机制有固定源码支持；效果与采用收益为条件性解释，后续设计假设尚未验证。\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：多模型 DSH 用户希望知道账户余额及当天花费；合格交付是带价格口径的估算与可追查调用记录。\n- **亮点**：相对只看服务商余额，插件将会话用量、视觉旁路调用和模型分组放到一个入口，补足主模型账单看不到辅助调用的观察盲区；余额与日志费用来自不同路径，属于观测整合而非精确账务系统。\n- **思考**：同一条调用能否恰好计一次以及价格是否匹配路由最影响费用可信度。源码有默认与日期价格表，也给未识别模型 fallback 价格；未知模型被赋通用价不能当实际账单，外部日志格式/重复输入及本地日界线仍需对账。\n- **建议**：适合用量观察；先用自己账单核对一天数据，并为未知模型补价，再据此设预算。\n\n采用建议：适合用量观察；先用自己账单核对一天数据，并为未知模型补价，再据此设预算。\n\n## 核心贡献\n\n相对只看服务商余额，插件将会话用量、视觉旁路调用和模型分组放到一个入口，补足主模型账单看不到辅助调用的观察盲区；余额与日志费用来自不同路径，属于观测整合而非精确账务系统。\n\n## 关键质疑\n\n同一条调用能否恰好计一次以及价格是否匹配路由最影响费用可信度。源码有默认与日期价格表，也给未识别模型 fallback 价格；未知模型被赋通用价不能当实际账单，外部日志格式/重复输入及本地日界线仍需对账。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n待验证假设：在用量行保留 provider、请求身份与价格版本，并将未知价列成独立金额区间，可降低“看起来精确”的错账。推导自 fallback 与外部辅助调用合并；跨日志去重需要双方共享身份而非猜时间。\n\n以同一批含主调用、失败、视觉旁路和未知模型的请求，与服务商账单及原始 usage 对账；测漏记、重复与未知价覆盖率，若无法从日志稳定关联请求则只报告用量不报精确钱数。\n\n## 场景与替代办法\n\n多模型 DSH 用户希望知道账户余额及当天花费；合格交付是带价格口径的估算与可追查调用记录。\n\n参照服务商余额页和单会话 usage；未执行跨供应商真实账单对账。\n\n## 依赖与流程\n\n需要可读 DSH 日志、credentials/余额服务与客户端设置接口；视觉聚合依赖外部日志格式。价格表由维护者或用户更新，不能据内置日期判断仍是当前官网价。\n\n配置模型价格及可选外部日志，打开侧栏/设置看板；后台解压日志按日聚合并缓存余额；未知模型、读取失败与额度差异需回查原始记录。\n\n## 成本与效果\n\n看板自身主要占日志扫描、解压与存储资源；人工要校准模型名、价格和日志来源。没有因此节省模型费的因果证据。\n\n将辅助视觉成本纳入观察是明确便利；费用仅估算，不可自动视为财务结算。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：f3900e75f80635b663324e429a58147d67e5854d7b92b485f0aae05d6bdeef58。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 3 | 194 | — | — | 1531 |\n| .js | source | 2 | 1600 | 1441 | 109 | — |\n| .mjs | test | 2 | 44 | 40 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **界面**：侧栏余额与费用、设置页用量看板\n- **后台**：主会话与外部视觉调用聚合\n\n## 工程亮点\n\nlib/index.js 把 zstd 解码、模型计费、外部日志和投影集中在宿主；token delta 过滤减少非文本块干扰。价格时间线可借鉴，但与当前业务日期的同步及庞大日志扫描成本需实测。 源码：[lib/index.js](https://github.com/1HelloMan1/dsh-usage-dashboard-plus/blob/ee53a4d07d212f02fe64ec64eb8a9a84163bd439/lib/index.js)、[lib/client.js](https://github.com/1HelloMan1/dsh-usage-dashboard-plus/blob/ee53a4d07d212f02fe64ec64eb8a9a84163bd439/lib/client.js)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 lib/index.js、lib/client.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：核查固定提交的所列核心实现与作者材料；未运行插件、安装、测试或真实宿主验收，未确认独立用户效果。\n- 下一步：以同一批含主调用、失败、视觉旁路和未知模型的请求，与服务商账单及原始 usage 对账；测漏记、重复与未知价覆盖率，若无法从日志稳定关联请求则只报告用量不报精确钱数。\n",
+        "reports": "# dsh-usage-dashboard-plus\n\n> 在DSH侧栏显示DeepSeek余额和日志估算消费，并汇总外部视觉调用与每会话模型/延迟统计。\n\n## 研究范围\n\n- **仓库**：[1HelloMan1/dsh-usage-dashboard-plus](https://github.com/1HelloMan1/dsh-usage-dashboard-plus)\n- **版本号**：0.2.5（[固定提交 ee53a4d07d212f02fe64ec64eb8a9a84163bd439](https://github.com/1HelloMan1/dsh-usage-dashboard-plus/tree/ee53a4d07d212f02fe64ec64eb8a9a84163bd439)）\n- **版本日期**：2026-09-14（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n多源汇总源码可查，但明文静默漏读、两套cacheWrite计价及未知模型默认价影响核心口径。\n\n## 洞察短评\n\n- **用途**：个人用户查看会话内外调用趋势、余额和缓存表现。详见[Q01](#research-q01)。\n- **亮点**：把外部视觉用量和原会话统计接到余额/消费看板。详见[Q01](#research-q01)。\n- **思考**：明文session.jsonl被仅zstd解码成空，cacheWrite侧栏按input而投影按output，未知价仍套默认金额。详见[Q03](#research-q03)。\n- **建议**：研究统一版本化计量核、明确格式/覆盖/去重回执与账户cache，比较漏计/金额差。当前未验证。详见[Q05](#research-q05)。\n\n采用建议：先观察，可信单用户只作趋势对照。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n把外部视觉用量和原会话统计接到余额/消费看板。详见[Q01](#research-q01)。\n\n## 关键质疑\n\n明文session.jsonl被仅zstd解码成空，cacheWrite侧栏按input而投影按output，未知价仍套默认金额。详见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n研究统一版本化计量核、明确格式/覆盖/去重回执与账户cache，比较漏计/金额差。当前未验证。详见[Q05](#research-q05)。\n\n进一步从明文/坏帧、双计、未知价和跨时区研究覆盖回执。\n\n## 场景与替代办法\n\n个人用户查看会话内外调用趋势、余额和缓存表现。详见[Q01](#research-q01)。\n\n平台余额页与手工日志统计，汇总便利不等真实账单。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 条件 | 用途 | 失效影响 |\n| --- | --- | --- |\n| 旧宿主projection/settings | 看板折叠 | ABI匹配 |\n| Node zstd API | 压缩日志 | 无engines提示 |\n| 可信余额端点/key | 账户读取 | 缓存/接收方需核 |\n| 正确格式日志和价表 | 消费估算 | 静默漏失/未知价 |\n\n#### 启动步骤\n\n| 步骤 | 执行者 | 判断标准 |\n| --- | --- | --- |\n| 核格式价格账户 | 用户 | 原日志/账单可对 |\n| 小样例看两页面 | 用户 | cacheWrite口径一致 |\n| 追加外部日志 | 用户 | 避免重复记录 |\n| 异常回原账 | 用户 | 0不等无调用 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 兼容宿主/原日志/价表 | 核账户、格式和单位 | 日志格式/价表/单位需对齐；准备工时未知 |\n| 持续使用 | 同步扫描解压/余额查询 | 对照原日志、账号账单与价格单位 | 无插件LLM调用；扫描/查询延迟和账单误差未量化 |\n| 失败恢复 | 原日志和账单 | 查漏计/双记/价格与清缓存 | 原日志/账单复核和缓存恢复时间未知 |\n\n\n#### 效果\n\n| 目标 | 源码支持 | 边界 |\n| --- | --- | --- |\n| 余额与消费联看 | API+日志 | 不同主体/时间 |\n| 外部视觉纳入 | JSONL追加读 | 重复/无覆盖回执 |\n| 性能/调用统计 | 会话投影500日志 | TTFT含思考，计价独立 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**余额、日志估算和投影统计是否口径一致，完整性与准入如何影响采用？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · Plus把哪些用量信息汇到一起？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n面向DSH个人用户，在侧栏看DeepSeek余额和按本地token估算的今日消费，设置看板再按会话/供应商/模型看调用日志、延迟/TTFT/缓存和CSV。Plus新增外部视觉调用JSONL并合并原stats投影，减少会话内外用量分散；贡献是现有余额接口、本地日志扫描与投影界面的组合，不是新计费协议。\n\n余额是指定账户API返回，消费是本地价格表估算，二者时间范围/主体不同，不能直接做充值差额对账。作者“唯一维护仓库”等说法未独立核实，不作推荐依据。合格输出需能说明日志覆盖、未知模型价格、日期时区和缓存旧值，否则漂亮数字可能不完整。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:5-22](https://github.com/1HelloMan1/dsh-usage-dashboard-plus/blob/ee53a4d07d212f02fe64ec64eb8a9a84163bd439/README.md#L5-L22)\n\n作者功能与合并定位。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\nA fork of [dsh-usage-dashboard](https://www.npmjs.com/package/dsh-usage-dashboard) with **external vision-call accounting**: a sidebar-footer widget for [DeepSeek Harness (dsh)](https://github.com/deepseek-ai/deepseek-harness) showing your **DeepSeek API balance** and **today's spend**, estimated from session logs.\n\nThis is now the only actively maintained usage-dashboard repository. The former `dsh-stats-dashboard` implementation has been fully merged into Plus; do not install both statistics plugins in the same profile.\n\n## What \"Plus\" adds\n\n- **Counts external vision-model calls** (e.g. `dsh-vision-fallback`'s Mimo V2.5 requests) into the today-spend stats via an optional JSONL usage log — the base package only counts calls recorded in DSH session logs.\n- Bundles a **pricing entry for `mimo-v2.5`** (opencode Zen GO rates) so those calls get a cost estimate out of the box (override via `prices`).\n\n## Features\n\n- **API balance** — resolves the DeepSeek key through the DSH credentials service and queries the balance endpoint (cached).\n- **Today's spend (est.)** — scans session logs (and the external usage log) for today's token usage × price table.\n- **Sidebar footer widget** — `余额 ¥xx · 今日 ¥xx`, click to open a detail card (calls, tokens, per-model breakdown, pricing notes).\n- **Peak/off-peak pricing schedule** — date-gated DeepSeek rate tables (2026-08-17 onward).\n- **Full usage dashboard** — per-provider/per-model calls, latency, TTFT, throughput, input/output/cache tokens, cache rate, and estimated cost.\n- **Call-log analysis** — filter and search by session, provider, and model; inspect recent calls and export filtered rows as CSV.\n- **Inherited Stats implementation** — the `usageDashboard` session projection, 500-row call-log cap, whole-session model aggregates, and replay-safe historical statistics are included in Plus.\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:433-467](https://github.com/1HelloMan1/dsh-usage-dashboard-plus/blob/ee53a4d07d212f02fe64ec64eb8a9a84163bd439/lib/index.js#L433-L467)\n\n余额返回。\n\n<details>\n<summary>查看原文（35行）</summary>\n\n```text\n  const fetchBalance = async () => {\n    const now = Date.now();\n    if (balanceCache.value !== null && now - balanceCache.at < config.balanceCacheMs) return balanceCache.value;\n    const key = await resolveApiKey();\n    if (key === void 0) {\n      const value = { available: false, error: `未配置 API Key（${config.apiKeyRef}）` };\n      balanceCache = { at: now, value };\n      return value;\n    }\n    try {\n      const res = await fetch(`${balanceBase()}/user/balance`, {\n        headers: { authorization: `Bearer ${key}` },\n        signal: AbortSignal.timeout(10000)\n      });\n      if (!res.ok) {\n        let detail = \"\";\n        try {\n          detail = (await res.text()).slice(0, 200);\n        } catch { /* ignore */ }\n        const value = { available: false, error: `balance API ${res.status}: ${detail}` };\n        balanceCache = { at: now, value };\n        return value;\n      }\n      const data = await res.json();\n      const info = Array.isArray(data?.balance_infos) ? data.balance_infos[0] : void 0;\n      const value = {\n        available: data?.is_available === true,\n        currency: info?.currency ?? \"CNY\",\n        totalBalance: Number(info?.total_balance),\n        grantedBalance: Number(info?.granted_balance),\n        toppedUpBalance: Number(info?.topped_up_balance),\n        fetchedAt: now\n      };\n      balanceCache = { at: now, value };\n      return value;\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:494-503](https://github.com/1HelloMan1/dsh-usage-dashboard-plus/blob/ee53a4d07d212f02fe64ec64eb8a9a84163bd439/lib/index.js#L494-L503)\n\n估算标记/价格。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n        const [balance, usage] = await Promise.all([fetchBalance(), Promise.resolve(todayUsage())]);\n        body = JSON.stringify({\n          ok: true,\n          estimated: true,\n          timezone: Intl.DateTimeFormat().resolvedOptions().timeZone ?? \"local\",\n          generatedAt: Date.now(),\n          balance,\n          ...usage,\n          externalCalls: readExternalCalls(config.externalUsageLog ?? \"\"),\n          prices: { ...prices, ...schedule.length > 0 ? { _schedule: schedule } : {} }\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 侧栏和会话投影如何计算？\n\n**研究主题：**功能与机制、依赖、兼容与流程\n\n#### 完整回答\n\nhost注册usageDashboard投影，同时GET/HEAD /api/dsh-usage并行取余额和同步算使用。key先credentials.resolve再同名环境变量，baseURL可配置；余额缓存TTL默认60秒，usage缓存2秒。扫描sessionsRoot收session.jsonl.zstd或session.jsonl，按文件mtime窗口筛，再从request/header跟model、assistant/message usage逐条归本地日期；外部JSONL没有相同窗口筛，按ts或缺失时now累计。\n\n投影从request/header/context记provider/model，step/start记时间，text/reasoning/tool-call任一有效增量作firstTokenTime，assistant/message归同turn/step算延迟和费用，最多500条调用日志但整会话模型聚合继续累积。TTFT是首任意token活动含思考/工具，不等首可见正文；无openStep或不匹配的message会忽略。依赖旧rc.6系列会话/投影/settings API与Node zstdDecompressSync，package无Node engines，实际宿主Node须支持该函数。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:405-430](https://github.com/1HelloMan1/dsh-usage-dashboard-plus/blob/ee53a4d07d212f02fe64ec64eb8a9a84163bd439/lib/index.js#L405-L430)\n\n装配/凭据。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\nfunction apply(ctx, config) {\n  // 注册 usageDashboard 会话投影（合并自 dsh-stats-dashboard）：设置页统计看板的数据源。\n  ctx.effect(() => ctx.sessionProjections.register(usageDashboardProjectionDefinition),\n    \"usage-dashboard: usageDashboard projection unit\");\n  const prices = { ...DEFAULT_PRICES, ...(config.prices ?? {}) };\n  const schedule = [...DEFAULT_PRICE_SCHEDULE, ...(config.priceSchedule ?? [])].sort((a, b) => a.from.localeCompare(b.from));\n  let balanceCache = { at: 0, value: null };\n  let usageCache = { at: 0, value: null };\n  const sessionsRoot = config.sessionsRoot !== \"\"\n    ? config.sessionsRoot\n    : join(resolveDshHome(), \"sessions\");\n\n  const resolveApiKey = async () => {\n    const credentials = ctx.get(\"credentials\");\n    if (credentials !== void 0) {\n      const hit = await credentials.resolve(credentialRef(config.apiKeyRef));\n      if (hit !== void 0 && typeof hit.value === \"string\" && hit.value.trim() !== \"\") return hit.value.trim();\n    }\n    const ambient = process.env[config.apiKeyRef];\n    if (ambient !== void 0 && ambient.trim() !== \"\") return ambient.trim();\n    return void 0;\n  };\n\n  const balanceBase = () => {\n    if (config.baseURL !== \"\") return config.baseURL.replace(/\\/+$/, \"\");\n    return (process.env.DEEPSEEK_BASE_URL ?? \"https://api.deepseek.com\").replace(/\\/+$/, \"\");\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:223-318](https://github.com/1HelloMan1/dsh-usage-dashboard-plus/blob/ee53a4d07d212f02fe64ec64eb8a9a84163bd439/lib/index.js#L223-L318)\n\n侧栏扫描与外部调用。\n\n<details>\n<summary>查看原文（96行）</summary>\n\n```text\nfunction computeUsage(sessionsRoot, prices, schedule, scanWindowMs, externalUsageLog) {\n  const now = Date.now();\n  const todayKey = localDayKey(now);\n  const days = /* @__PURE__ */ new Map();\n  const today = emptyDayRec();\n  days.set(todayKey, today);\n  const accumulate = (rec, model, u, time) => {\n    rec.files += 1;\n    rec.events += 1;\n    rec.tokens.input += u.inputTokens ?? 0;\n    rec.tokens.output += u.outputTokens ?? 0;\n    rec.tokens.cacheRead += u.cacheReadTokens ?? 0;\n    rec.tokens.cacheWrite += u.cacheWriteTokens ?? 0;\n    rec.calls += 1;\n    const { price: p } = priceFor(model, time, prices, schedule);\n    // cacheWrite tokens are billed as ordinary (cache-miss) input.\n    const cost = ((u.inputTokens ?? 0) + (u.cacheWriteTokens ?? 0)) / 1e6 * p.input\n      + ((u.cacheReadTokens ?? 0) / 1e6) * p.cacheRead\n      + ((u.outputTokens ?? 0) / 1e6) * p.output;\n    rec.cost += cost;\n    let m = rec.byModel.get(model);\n    if (m === void 0) {\n      m = emptyModelRec();\n      rec.byModel.set(model, m);\n    }\n    m.cost += cost;\n    m.calls += 1;\n    m.tokens.input += u.inputTokens ?? 0;\n    m.tokens.output += u.outputTokens ?? 0;\n    m.tokens.cacheRead += u.cacheReadTokens ?? 0;\n    m.tokens.cacheWrite += u.cacheWriteTokens ?? 0;\n  };\n  const dayFor = (time) => {\n    const key = localDayKey(time);\n    let rec = days.get(key);\n    if (rec === void 0) {\n      rec = emptyDayRec();\n      days.set(key, rec);\n    }\n    return rec;\n  };\n  const logs = collectLogs(sessionsRoot);\n  for (const { path, mtimeMs } of logs) {\n    if (now - mtimeMs > scanWindowMs) continue;\n    let data;\n    try {\n      data = readFileSync(path);\n    } catch {\n      continue;\n    }\n    let text;\n    try {\n      text = decodeSessionLog(data);\n    } catch {\n      continue;\n    }\n    let currentModel = \"(unknown)\";\n    for (const line of text.split(\"\\n\")) {\n      if (line === \"\") continue;\n      let ev;\n      try {\n        ev = JSON.parse(line);\n      } catch {\n        continue;\n      }\n      if (ev.type === \"request/header\" && ev.data?.header?.config?.model) {\n        currentModel = ev.data.header.config.model;\n        continue;\n      }\n      if (ev.type !== \"assistant/message\" || ev.data?.usage == null) continue;\n      const time = typeof ev.time === \"number\" ? ev.time : now;\n      accumulate(dayFor(time), currentModel, ev.data.usage, time);\n    }\n  }\n  // 外部调用用量日志（如 vision-fallback 的视觉模型调用）。\n  // \"off\" 关闭；空字符串走默认路径 <dsh home>/vision-fallback/usage.jsonl。\n  if (externalUsageLog !== \"off\") {\n    let externalPath = externalUsageLog;\n    try {\n      if (externalPath === \"\") externalPath = join(resolveDshHome(), \"vision-fallback\", \"usage.jsonl\");\n      const data = readFileSync(externalPath, \"utf8\");\n      for (const line of data.split(\"\\n\")) {\n        if (line === \"\") continue;\n        let rec;\n        try {\n          rec = JSON.parse(line);\n        } catch {\n          continue;\n        }\n        if (typeof rec?.model !== \"string\" || rec.model === \"\") continue;\n        const time = typeof rec.ts === \"number\" ? rec.ts : now;\n        accumulate(dayFor(time), rec.model, rec, time);\n      }\n    } catch {\n      /* 日志不存在或不可读时忽略 */\n    }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:618-674](https://github.com/1HelloMan1/dsh-usage-dashboard-plus/blob/ee53a4d07d212f02fe64ec64eb8a9a84163bd439/lib/index.js#L618-L674)\n\n投影事件。\n\n<details>\n<summary>查看原文（57行）</summary>\n\n```text\nconst usageDashboardProjectionDefinition = {\n  key: \"usageDashboard\",\n  schema: projectionUsageSchema,\n  init: () => ({\n    current: null,\n    openStep: null,\n    models: {},\n    logs: [],\n    truncatedLogs: false\n  }),\n  apply: (state, event) => {\n    switch (event.type) {\n      case \"request/header\": {\n        const config = event.data?.header?.config;\n        if (typeof config !== \"object\" || config === null) return state;\n        const provider = typeof config.provider === \"string\" ? config.provider : \"unknown\";\n        const model = typeof config.model === \"string\" ? config.model : \"unknown\";\n        return { ...state, current: { provider, model } };\n      }\n      case \"request/context\": {\n        const data = event.data;\n        if (typeof data !== \"object\" || data === null) return state;\n        const provider = typeof data.provider === \"string\" ? data.provider : \"unknown\";\n        const model = typeof data.model === \"string\" ? data.model : \"unknown\";\n        return { ...state, current: { provider, model } };\n      }\n      case \"step/start\": {\n        const current = state.current ?? { provider: \"unknown\", model: \"unknown\" };\n        return {\n          ...state,\n          openStep: {\n            provider: current.provider,\n            model: current.model,\n            turn: event.data.turn,\n            step: event.data.step,\n            startTime: event.time,\n            firstTokenTime: null\n          }\n        };\n      }\n      case \"assistant/chunk\": {\n        const open = state.openStep;\n        if (open === null || open.turn !== event.data.turn || open.step !== event.data.step) return state;\n        if (open.firstTokenTime !== null || !isTokenDelta(event.data.chunk)) return state;\n        return {\n          ...state,\n          openStep: { ...open, firstTokenTime: event.time }\n        };\n      }\n      case \"assistant/message\": {\n        const open = state.openStep;\n        if (open === null || open.turn !== event.data.turn || open.step !== event.data.step) return state;\n        const usage = event.data.usage;\n        const llmMs = Math.max(0, event.time - open.startTime);\n        const ttftMs = open.firstTokenTime === null ? null : Math.max(0, open.firstTokenTime - open.startTime);\n        const outputTokens = projectionUsageField(usage, \"outputTokens\");\n        const decodeMs = open.firstTokenTime !== null && outputTokens > 0 ? Math.max(0, event.time - open.firstTokenTime) : null;\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:26-35](https://github.com/1HelloMan1/dsh-usage-dashboard-plus/blob/ee53a4d07d212f02fe64ec64eb8a9a84163bd439/lib/index.js#L26-L35)\n\ntoken定义。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\nfunction isTokenDelta(chunk) {\n  if (!chunk || typeof chunk !== \"object\") return false;\n  switch (chunk.type) {\n    case \"text-delta\":\n    case \"reasoning-delta\":\n      return Boolean(chunk.text);\n    case \"tool-call-delta\":\n      return Boolean(chunk.argumentsDelta) || chunk.name !== undefined;\n    default:\n      return false;\n```\n\n</details>\n\n**依据 5 · 源码核查**：[package.json:52-74](https://github.com/1HelloMan1/dsh-usage-dashboard-plus/blob/ee53a4d07d212f02fe64ec64eb8a9a84163bd439/package.json#L52-L74)\n\n旧宿主peer。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n  \"dependencies\": {\n    \"@deepseek-ai/schemastery\": \"^3.18.1\",\n    \"@deepseek-ai/dsh-home-paths\": \"^0.1.0-rc.6\",\n    \"@deepseek-ai/dsh-credentials\": \"^0.1.0-rc.6\",\n    \"zod\": \"^4.4.3\"\n  },\n  \"peerDependencies\": {\n    \"@deepseek-ai/dsh-client-ui-primitives\": \"^0.1.0-rc.6\",\n    \"@deepseek-ai/cordis\": \"^4.0.1\",\n    \"@deepseek-ai/dsh-llm\": \"^0.1.0-rc.6\",\n    \"@deepseek-ai/dsh-session\": \"^0.1.0-rc.6\",\n    \"@deepseek-ai/dsh-session-projection\": \"^0.1.0-rc.6\",\n    \"@deepseek-ai/dsh-settings\": \"^0.1.0-rc.6\",\n    \"@deepseek-ai/dsh-credentials\": \"^0.1.0-rc.6\",\n    \"@deepseek-ai/dsh-home-paths\": \"^0.1.0-rc.6\",\n    \"@deepseek-ai/schemastery\": \"^3.18.1\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/1HelloMan1/dsh-usage-dashboard-plus.git\"\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/1HelloMan1/dsh-usage-dashboard-plus/issues\"\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 哪些路径可能静默少算或错价？\n\n**研究主题：**缺陷与关键质疑\n\n#### 完整回答\n\ncollectLogs同时收明文session.jsonl，但decodeSessionLog只找zstd magic帧再解压，没有无magic时返回原UTF8分支；普通明文日志因此返回空串。坏压缩帧/读失败/JSON行解析错误都静默跳过，未在API报告覆盖损失；目录用stat递归无visited/深度/总字节限制，链接环或巨型日志可阻塞事件循环，不能把scanWindow当扫描成本硬界限。外部日志无ID去重/与会话对应去重，重复写或双记同调用会多算。\n\n侧栏未知模型套FALLBACK_PRICE且按模型名无provider，不能据有金额认价格已知。投影却未知价null、静态provider+model表，并且projectionCostOf把cacheWrite按output价，侧栏按input价，注释都说cacheWrite按输入计，两个页面可口径冲突；配置prices/schedule只传侧栏，投影不复用。日期localDayKey用系统本地而峰谷用Shanghai，部署跨时区的“今日”与价格时段不是同一时区。所有价仅固定源码口径，未验证当前官方账单价格。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:113-155](https://github.com/1HelloMan1/dsh-usage-dashboard-plus/blob/ee53a4d07d212f02fe64ec64eb8a9a84163bd439/lib/index.js#L113-L155)\n\n明文被收但只解zstd。\n\n<details>\n<summary>查看原文（43行）</summary>\n\n```text\nfunction zstdFrames(data) {\n  const starts = [];\n  let idx = data.indexOf(ZSTD_MAGIC);\n  while (idx !== -1) {\n    starts.push(idx);\n    idx = data.indexOf(ZSTD_MAGIC, idx + 1);\n  }\n  return starts;\n}\n\nfunction decodeSessionLog(data) {\n  const starts = zstdFrames(data);\n  let text = \"\";\n  for (let i = 0; i < starts.length; i++) {\n    const end = i + 1 < starts.length ? starts[i + 1] : data.length;\n    try {\n      text += zstdDecompressSync(data.subarray(starts[i], end)).toString(\"utf8\");\n    } catch {\n      // torn/incomplete final frame (live append) — skip\n    }\n  }\n  return text;\n}\n\nfunction collectLogs(root, out = []) {\n  let entries;\n  try {\n    entries = readdirSync(root);\n  } catch {\n    return out;\n  }\n  for (const entry of entries) {\n    const full = join(root, entry);\n    let st;\n    try {\n      st = statSync(full);\n    } catch {\n      continue;\n    }\n    if (st.isDirectory()) collectLogs(full, out);\n    else if ((entry === \"session.jsonl.zstd\" || entry === \"session.jsonl\") && st.size > 0) out.push({ path: full, mtimeMs: st.mtimeMs });\n  }\n  return out;\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:264-318](https://github.com/1HelloMan1/dsh-usage-dashboard-plus/blob/ee53a4d07d212f02fe64ec64eb8a9a84163bd439/lib/index.js#L264-L318)\n\n静默跳过和外部未去重。\n\n<details>\n<summary>查看原文（55行）</summary>\n\n```text\n  const logs = collectLogs(sessionsRoot);\n  for (const { path, mtimeMs } of logs) {\n    if (now - mtimeMs > scanWindowMs) continue;\n    let data;\n    try {\n      data = readFileSync(path);\n    } catch {\n      continue;\n    }\n    let text;\n    try {\n      text = decodeSessionLog(data);\n    } catch {\n      continue;\n    }\n    let currentModel = \"(unknown)\";\n    for (const line of text.split(\"\\n\")) {\n      if (line === \"\") continue;\n      let ev;\n      try {\n        ev = JSON.parse(line);\n      } catch {\n        continue;\n      }\n      if (ev.type === \"request/header\" && ev.data?.header?.config?.model) {\n        currentModel = ev.data.header.config.model;\n        continue;\n      }\n      if (ev.type !== \"assistant/message\" || ev.data?.usage == null) continue;\n      const time = typeof ev.time === \"number\" ? ev.time : now;\n      accumulate(dayFor(time), currentModel, ev.data.usage, time);\n    }\n  }\n  // 外部调用用量日志（如 vision-fallback 的视觉模型调用）。\n  // \"off\" 关闭；空字符串走默认路径 <dsh home>/vision-fallback/usage.jsonl。\n  if (externalUsageLog !== \"off\") {\n    let externalPath = externalUsageLog;\n    try {\n      if (externalPath === \"\") externalPath = join(resolveDshHome(), \"vision-fallback\", \"usage.jsonl\");\n      const data = readFileSync(externalPath, \"utf8\");\n      for (const line of data.split(\"\\n\")) {\n        if (line === \"\") continue;\n        let rec;\n        try {\n          rec = JSON.parse(line);\n        } catch {\n          continue;\n        }\n        if (typeof rec?.model !== \"string\" || rec.model === \"\") continue;\n        const time = typeof rec.ts === \"number\" ? rec.ts : now;\n        accumulate(dayFor(time), rec.model, rec, time);\n      }\n    } catch {\n      /* 日志不存在或不可读时忽略 */\n    }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:197-211](https://github.com/1HelloMan1/dsh-usage-dashboard-plus/blob/ee53a4d07d212f02fe64ec64eb8a9a84163bd439/lib/index.js#L197-L211)\n\n未知价fallback。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\nfunction priceFor(model, timeMs, prices, schedule) {\n  const key = localDayKey(timeMs);\n  let entry = null;\n  for (const candidate of schedule) {\n    if (candidate.from <= key) entry = candidate;\n  }\n  if (entry !== null) {\n    const peak = isPeakHour(timeMs);\n    const table = peak ? entry.peak : entry.idle;\n    return {\n      price: table[model] ?? FALLBACK_PRICE,\n      label: `${entry.from} 起 · ${peak ? \"高峰\" : \"空闲\"}`\n    };\n  }\n  return { price: prices[model] ?? FALLBACK_PRICE, label: \"现行价格\" };\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:238-241](https://github.com/1HelloMan1/dsh-usage-dashboard-plus/blob/ee53a4d07d212f02fe64ec64eb8a9a84163bd439/lib/index.js#L238-L241)\n\n侧栏cacheWrite输入价。\n\n```text\n    // cacheWrite tokens are billed as ordinary (cache-miss) input.\n    const cost = ((u.inputTokens ?? 0) + (u.cacheWriteTokens ?? 0)) / 1e6 * p.input\n      + ((u.cacheReadTokens ?? 0) / 1e6) * p.cacheRead\n      + ((u.outputTokens ?? 0) / 1e6) * p.output;\n```\n\n**依据 5 · 源码核查**：[lib/index.js:540-554](https://github.com/1HelloMan1/dsh-usage-dashboard-plus/blob/ee53a4d07d212f02fe64ec64eb8a9a84163bd439/lib/index.js#L540-L554)\n\n投影cacheWrite输出价。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\nfunction projectionPriceOf(provider, model) {\n  return PROJECTION_PRICING[`${provider}\\u0000${model}`] ?? null;\n}\n\n/**\n * 估算一次调用的费用（CNY）。缓存写入按未命中输入价计费；\n * 无计价条目返回 null。\n */\nfunction projectionCostOf(price, usage) {\n  if (price === null || typeof usage !== \"object\" || usage === null) return null;\n  const input = typeof usage.inputTokens === \"number\" && Number.isFinite(usage.inputTokens) && usage.inputTokens > 0 ? usage.inputTokens : 0;\n  const output = typeof usage.outputTokens === \"number\" && Number.isFinite(usage.outputTokens) && usage.outputTokens > 0 ? usage.outputTokens : 0;\n  const cacheRead = typeof usage.cacheReadTokens === \"number\" && Number.isFinite(usage.cacheReadTokens) && usage.cacheReadTokens > 0 ? usage.cacheReadTokens : 0;\n  const cacheWrite = typeof usage.cacheWriteTokens === \"number\" && Number.isFinite(usage.cacheWriteTokens) && usage.cacheWriteTokens > 0 ? usage.cacheWriteTokens : 0;\n  return (input * price.inputUncachedCny + cacheRead * price.cacheReadCny + (cacheWrite + output) * price.outputCny) / 1e6;\n```\n\n</details>\n\n**依据 6 · 源码核查**：[lib/index.js:409-410](https://github.com/1HelloMan1/dsh-usage-dashboard-plus/blob/ee53a4d07d212f02fe64ec64eb8a9a84163bd439/lib/index.js#L409-L410)\n\n配置仅侧栏。\n\n```text\n  const prices = { ...DEFAULT_PRICES, ...(config.prices ?? {}) };\n  const schedule = [...DEFAULT_PRICE_SCHEDULE, ...(config.priceSchedule ?? [])].sort((a, b) => a.from.localeCompare(b.from));\n```\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 准入、缓存和工程验证有什么边界？\n\n**研究主题：**缺陷与关键质疑、工程质量与复用、效果与总成本\n\n#### 完整回答\n\nexact API仅检查GET/HEAD，没有本地connection.requestRejection/Origin/身份，远程部署必须宿主/反代另闭合；不据此直接断言所有部署匿名可达。余额请求可向配置或环境baseURL发Bearer，可信管理员需核接收者；错误正文取前200字符不是秘密脱敏保证。缓存先返回后才解析key，没有账户/endpoint指纹，TTL内换key可能短暂旧账户余额，多次并发请求也无inFlight合流。\n\n测试isTokenDelta文件复制了一份函数再测试，未导入生产实现，只能证明副本，不足以防生产逻辑漂移；另一marketplace测试不等计量对账。本次只读。首次需旧版宿主匹配、价格/外部日志schema和账户核对；持续本地同步解压/扫描和余额查询，无插件额外LLM调用，浏览器看板/CSV还暴露模型与调用时间；恢复需原日志/账单对照和清缓存重算，静默缺失无法从正常ok识别。节省查账时间和真实费用误差未量化。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:433-470](https://github.com/1HelloMan1/dsh-usage-dashboard-plus/blob/ee53a4d07d212f02fe64ec64eb8a9a84163bd439/lib/index.js#L433-L470)\n\n余额cache/端点/错误。\n\n<details>\n<summary>查看原文（38行）</summary>\n\n```text\n  const fetchBalance = async () => {\n    const now = Date.now();\n    if (balanceCache.value !== null && now - balanceCache.at < config.balanceCacheMs) return balanceCache.value;\n    const key = await resolveApiKey();\n    if (key === void 0) {\n      const value = { available: false, error: `未配置 API Key（${config.apiKeyRef}）` };\n      balanceCache = { at: now, value };\n      return value;\n    }\n    try {\n      const res = await fetch(`${balanceBase()}/user/balance`, {\n        headers: { authorization: `Bearer ${key}` },\n        signal: AbortSignal.timeout(10000)\n      });\n      if (!res.ok) {\n        let detail = \"\";\n        try {\n          detail = (await res.text()).slice(0, 200);\n        } catch { /* ignore */ }\n        const value = { available: false, error: `balance API ${res.status}: ${detail}` };\n        balanceCache = { at: now, value };\n        return value;\n      }\n      const data = await res.json();\n      const info = Array.isArray(data?.balance_infos) ? data.balance_infos[0] : void 0;\n      const value = {\n        available: data?.is_available === true,\n        currency: info?.currency ?? \"CNY\",\n        totalBalance: Number(info?.total_balance),\n        grantedBalance: Number(info?.granted_balance),\n        toppedUpBalance: Number(info?.topped_up_balance),\n        fetchedAt: now\n      };\n      balanceCache = { at: now, value };\n      return value;\n    } catch (error) {\n      const value = { available: false, error: error instanceof Error ? error.message : String(error) };\n      balanceCache = { at: now, value };\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:483-503](https://github.com/1HelloMan1/dsh-usage-dashboard-plus/blob/ee53a4d07d212f02fe64ec64eb8a9a84163bd439/lib/index.js#L483-L503)\n\nroute仅方法检查。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n  ctx.effect(() => ctx.webServer.register({\n    kind: \"exact\",\n    path: \"/api/dsh-usage\",\n    handler: async (req, res) => {\n      if (req.method !== \"GET\" && req.method !== \"HEAD\") {\n        res.writeHead(405);\n        res.end();\n        return;\n      }\n      let body;\n      try {\n        const [balance, usage] = await Promise.all([fetchBalance(), Promise.resolve(todayUsage())]);\n        body = JSON.stringify({\n          ok: true,\n          estimated: true,\n          timezone: Intl.DateTimeFormat().resolvedOptions().timeZone ?? \"local\",\n          generatedAt: Date.now(),\n          balance,\n          ...usage,\n          externalCalls: readExternalCalls(config.externalUsageLog ?? \"\"),\n          prices: { ...prices, ...schedule.length > 0 ? { _schedule: schedule } : {} }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[test/isTokenDelta.test.mjs:4-27](https://github.com/1HelloMan1/dsh-usage-dashboard-plus/blob/ee53a4d07d212f02fe64ec64eb8a9a84163bd439/test/isTokenDelta.test.mjs#L4-L27)\n\n函数副本测试。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\nfunction isTokenDelta(chunk) {\n  if (!chunk || typeof chunk !== \"object\") return false;\n  switch (chunk.type) {\n    case \"text-delta\":\n    case \"reasoning-delta\":\n      return Boolean(chunk.text);\n    case \"tool-call-delta\":\n      return Boolean(chunk.argumentsDelta) || chunk.name !== undefined;\n    default:\n      return false;\n  }\n}\n\ntest(\"isTokenDelta correctly detects delta tokens\", () => {\n  assert.equal(isTokenDelta({ type: \"text-delta\", text: \"hello\" }), true);\n  assert.equal(isTokenDelta({ type: \"text-delta\", text: \"\" }), false);\n  assert.equal(isTokenDelta({ type: \"reasoning-delta\", text: \"thinking\" }), true);\n  assert.equal(isTokenDelta({ type: \"reasoning-delta\", text: \"\" }), false);\n  assert.equal(isTokenDelta({ type: \"tool-call-delta\", argumentsDelta: '{\"a\":1}' }), true);\n  assert.equal(isTokenDelta({ type: \"tool-call-delta\", name: \"tool\" }), true);\n  assert.equal(isTokenDelta({ type: \"tool-call-delta\", argumentsDelta: \"\" }), false);\n  assert.equal(isTokenDelta({ type: \"other\" }), false);\n  assert.equal(isTokenDelta(null), false);\n});\n```\n\n</details>\n\n#### 缺口\n\n- 部署宿主对exact API的准入、真实日志格式覆盖与上游账单口径\n  **影响：**接口可读范围和估算完整性不能由GET或固定价推断\n  **进一步探讨：**核宿主分派，明文/压缩/外部重复样例与原账单逐项对照\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 采用结论和继续探讨方向是什么？\n\n**研究主题：**新假设与验证、采用判断\n\n#### 完整回答\n\n先观察，明文日志静默丢失、未知模型默认价与cacheWrite两套口径影响核心数字可信度。可信单用户、已核日志格式/价格且只作趋势参考可对照，不用于预算扣款/财务结算；先限定余额端点、禁未对账外部日志并明确估算与余额不同主体。出现侧栏/会话看板金额不一致、普通jsonl无数或切key旧余额时回原材料，不把0解释成无调用。\n\n继续可研究统一带provider/模型/时区/价格版本的计量内核，未知价null、覆盖/坏行/去重回执，明文和压缩显式格式分支；流式有预算扫描与账户指纹cache/inFlight。基线为当前两条独立算式/静默跳过，反例包括同token不同cacheWrite价、未知模型、明文日志、坏zstd帧、双记录外部调用、跨时区午夜和TTL换账号。比较漏计/重复、金额差、扫描峰值及恢复工时，方向尚未验证。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:123-134](https://github.com/1HelloMan1/dsh-usage-dashboard-plus/blob/ee53a4d07d212f02fe64ec64eb8a9a84163bd439/lib/index.js#L123-L134)\n\n格式基线。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\nfunction decodeSessionLog(data) {\n  const starts = zstdFrames(data);\n  let text = \"\";\n  for (let i = 0; i < starts.length; i++) {\n    const end = i + 1 < starts.length ? starts[i + 1] : data.length;\n    try {\n      text += zstdDecompressSync(data.subarray(starts[i], end)).toString(\"utf8\");\n    } catch {\n      // torn/incomplete final frame (live append) — skip\n    }\n  }\n  return text;\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:238-241](https://github.com/1HelloMan1/dsh-usage-dashboard-plus/blob/ee53a4d07d212f02fe64ec64eb8a9a84163bd439/lib/index.js#L238-L241)\n\n侧栏算式。\n\n```text\n    // cacheWrite tokens are billed as ordinary (cache-miss) input.\n    const cost = ((u.inputTokens ?? 0) + (u.cacheWriteTokens ?? 0)) / 1e6 * p.input\n      + ((u.cacheReadTokens ?? 0) / 1e6) * p.cacheRead\n      + ((u.outputTokens ?? 0) / 1e6) * p.output;\n```\n\n**依据 3 · 源码核查**：[lib/index.js:548-554](https://github.com/1HelloMan1/dsh-usage-dashboard-plus/blob/ee53a4d07d212f02fe64ec64eb8a9a84163bd439/lib/index.js#L548-L554)\n\n投影算式。\n\n```text\nfunction projectionCostOf(price, usage) {\n  if (price === null || typeof usage !== \"object\" || usage === null) return null;\n  const input = typeof usage.inputTokens === \"number\" && Number.isFinite(usage.inputTokens) && usage.inputTokens > 0 ? usage.inputTokens : 0;\n  const output = typeof usage.outputTokens === \"number\" && Number.isFinite(usage.outputTokens) && usage.outputTokens > 0 ? usage.outputTokens : 0;\n  const cacheRead = typeof usage.cacheReadTokens === \"number\" && Number.isFinite(usage.cacheReadTokens) && usage.cacheReadTokens > 0 ? usage.cacheReadTokens : 0;\n  const cacheWrite = typeof usage.cacheWriteTokens === \"number\" && Number.isFinite(usage.cacheWriteTokens) && usage.cacheWriteTokens > 0 ? usage.cacheWriteTokens : 0;\n  return (input * price.inputUncachedCny + cacheRead * price.cacheReadCny + (cacheWrite + output) * price.outputCny) / 1e6;\n```\n\n**依据 4 · 源码核查**：[lib/index.js:433-467](https://github.com/1HelloMan1/dsh-usage-dashboard-plus/blob/ee53a4d07d212f02fe64ec64eb8a9a84163bd439/lib/index.js#L433-L467)\n\n账户cache。\n\n<details>\n<summary>查看原文（35行）</summary>\n\n```text\n  const fetchBalance = async () => {\n    const now = Date.now();\n    if (balanceCache.value !== null && now - balanceCache.at < config.balanceCacheMs) return balanceCache.value;\n    const key = await resolveApiKey();\n    if (key === void 0) {\n      const value = { available: false, error: `未配置 API Key（${config.apiKeyRef}）` };\n      balanceCache = { at: now, value };\n      return value;\n    }\n    try {\n      const res = await fetch(`${balanceBase()}/user/balance`, {\n        headers: { authorization: `Bearer ${key}` },\n        signal: AbortSignal.timeout(10000)\n      });\n      if (!res.ok) {\n        let detail = \"\";\n        try {\n          detail = (await res.text()).slice(0, 200);\n        } catch { /* ignore */ }\n        const value = { available: false, error: `balance API ${res.status}: ${detail}` };\n        balanceCache = { at: now, value };\n        return value;\n      }\n      const data = await res.json();\n      const info = Array.isArray(data?.balance_infos) ? data.balance_infos[0] : void 0;\n      const value = {\n        available: data?.is_available === true,\n        currency: info?.currency ?? \"CNY\",\n        totalBalance: Number(info?.total_balance),\n        grantedBalance: Number(info?.granted_balance),\n        toppedUpBalance: Number(info?.topped_up_balance),\n        fetchedAt: now\n      };\n      balanceCache = { at: now, value };\n      return value;\n```\n\n</details>\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：f3900e75f80635b663324e429a58147d67e5854d7b92b485f0aae05d6bdeef58。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 3 | 194 | — | — | 1531 |\n| .js | source | 2 | 1600 | 1441 | 109 | — |\n| .mjs | test | 2 | 44 | 40 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 余额查询 | DeepSeek账户 | TTL主体未分区 |\n| 日志估算 | 内外用量 | 格式/价格差异 |\n| 会话投影 | 延迟缓存/调用 | 500行日志与独立算式 |\n\n## 工程亮点\n\n投影与余额汇总有可读结构，副本测试不守生产逻辑，需统一计量内核。详见[Q04](#research-q04)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、test/isTokenDelta.test.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定完整侧栏日志/余额/route链、投影事件与计价、token副本测试和README；客户端仅功能契约不穷尽交互。\n- 下一步：进一步从明文/坏帧、双计、未知价和跨时区研究覆盖回执。\n",
         "metadata": {
             "repository": "1HelloMan1/dsh-usage-dashboard-plus",
             "repository_id": 1334023305,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T06:38:42.151Z",
+            "window_start": "2026-09-22T06:38:42.151Z",
             "stars": 3,
             "pushed_at": "2026-09-14T08:15:12Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 1,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1HelloMan1%2Fdsh-usage-dashboard-plus%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C3:C61AA:153A03:22E313:6AD849D6 and timestamp 2026-10-21 05:12:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1HelloMan1%2Fdsh-usage-dashboard-plus%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640B:D1FDD:149947:223D98:6AD849D6 and timestamp 2026-10-21 05:12:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1HelloMan1%2Fdsh-usage-dashboard-plus%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640F:1EF33:13DB04:216EC9:6AD849D6 and timestamp 2026-10-21 05:12:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1HelloMan1%2Fdsh-usage-dashboard-plus%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6406:0C5F:62F3D:A8EFA:6AD849D6 and timestamp 2026-10-21 05:12:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1HelloMan1%2Fdsh-usage-dashboard-plus%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640E:1DEEF7:14A895:223EBC:6AD849D7 and timestamp 2026-10-21 05:12:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "dsh-usage-dashboard-plus",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 1049,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-usage-dashboard-plus",
+                "captured_at": "2026-10-22T06:38:51.110Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 1036,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-usage-dashboard-plus",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-08-14T09:38:39.270Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T06:38:51.110Z",
                     "source_url": "https://registry.npmjs.org/dsh-usage-dashboard-plus",
                     "error": null,
                     "latest_version": "0.2.4",
                     "latest_published_at": "2026-08-18T08:16:56.078Z",
                     "latest_error": null
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439",
-                "current_revision": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {
@@ -390,14 +451,14 @@
             "repository": "1HelloMan1/dsh-usage-dashboard-plus",
             "path": "",
             "revision": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "33246bc293f916923614c1b758506f8492ee21bcb6cbf2416a59a338fb74dea8",
                 "code": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439",
                 "maintenance": "12dfe9df02f45090f517a1a8a4a31da57de9fb5a8989452c15c18f65b26388aa"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

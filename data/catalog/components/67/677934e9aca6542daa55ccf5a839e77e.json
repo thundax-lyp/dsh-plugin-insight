@@ -12,7 +12,7 @@
             "aliases": [],
             "name": "dsh-obsidian-board",
             "entry_type": "plugin",
-            "technical_category": "memory-knowledge",
+            "technical_category": "context-search",
             "business_category": "research-knowledge",
             "tags": [],
             "availability": "unknown",
@@ -24,36 +24,88 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-20-08-github-1415116420-root-directory-0",
+                    "id": "2026-10-22-02-github-1415116420-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
-                    "retrieved_at": "2026-10-20T10:51:06.823Z",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-22T09:35:24.503Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-20-08-github-1415116420-root-author",
+                    "id": "2026-10-22-02-github-1415116420-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/2026heshao/dsh-obsidian-board",
+                            "commit": "072612e0245565cee12cbfd07a421f2029d35c4e",
+                            "path": "README.md",
+                            "content_sha256": "cf4943f4ceb21fb875d5fd8c40b85d333c41efb4bf4220ecb98ea281ee3465f4"
+                        }
+                    ],
                     "revision": "072612e0245565cee12cbfd07a421f2029d35c4e",
-                    "captured_at": "2026-10-20T10:51:06.823Z",
-                    "summary": "将本地 Obsidian 笔记库接入 DSH 三栏问答面板，提供本地关键词检索和可点击引用。",
-                    "artifact": "data/runs/2026-10-20-08/snapshots/2026heshao--dsh-obsidian-board/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:35:24.503Z",
+                    "summary": "在DSH三栏面板以本地BM25检索Obsidian笔记，复用宿主模型流式回答、点引用读源并保存回答。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/2026heshao--dsh-obsidian-board/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-20-08-github-1415116420-root-source",
+                    "id": "2026-10-22-02-github-1415116420-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/vault.js",
+                    "url": "https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/2026heshao/dsh-obsidian-board",
+                            "commit": "072612e0245565cee12cbfd07a421f2029d35c4e",
+                            "path": "README.md",
+                            "content_sha256": "cf4943f4ceb21fb875d5fd8c40b85d333c41efb4bf4220ecb98ea281ee3465f4"
+                        },
+                        {
+                            "repository_url": "https://github.com/2026heshao/dsh-obsidian-board",
+                            "commit": "072612e0245565cee12cbfd07a421f2029d35c4e",
+                            "path": "package.json",
+                            "content_sha256": "5c7f7a9360b8a2b3d6a8e9ac00c239c1f2f4f24226f9d41fbef13645be7ce845"
+                        },
+                        {
+                            "repository_url": "https://github.com/2026heshao/dsh-obsidian-board",
+                            "commit": "072612e0245565cee12cbfd07a421f2029d35c4e",
+                            "path": "lib/index.js",
+                            "content_sha256": "9d70d0639f3206052f81d8fcfb96e7b341305b26e1a9801eddc2e58abf2ead35"
+                        },
+                        {
+                            "repository_url": "https://github.com/2026heshao/dsh-obsidian-board",
+                            "commit": "072612e0245565cee12cbfd07a421f2029d35c4e",
+                            "path": "lib/vault.js",
+                            "content_sha256": "205d4fb1e364b6c5b9ecbf42336df2fbca4ddf222e4e380558c65f9a13b28bb0"
+                        },
+                        {
+                            "repository_url": "https://github.com/2026heshao/dsh-obsidian-board",
+                            "commit": "072612e0245565cee12cbfd07a421f2029d35c4e",
+                            "path": "lib/typert.js",
+                            "content_sha256": "65ec12e389c044e5fe1cf9d49e4e841e4076eaf164a6cdb0c98fb701f542c84b"
+                        },
+                        {
+                            "repository_url": "https://github.com/2026heshao/dsh-obsidian-board",
+                            "commit": "072612e0245565cee12cbfd07a421f2029d35c4e",
+                            "path": "lib/client.js",
+                            "content_sha256": "85e40ba0e3f245d2b092a1960e12245b6e52edafa78069fa60a7f8d46449cf70"
+                        },
+                        {
+                            "repository_url": "https://github.com/2026heshao/dsh-obsidian-board",
+                            "commit": "072612e0245565cee12cbfd07a421f2029d35c4e",
+                            "path": "test/stop-cycle.test.mjs",
+                            "content_sha256": "9f600c65246707f9d5c92552f772b85d5baf135844099f3bf40faf6759fa4d66"
+                        }
+                    ],
                     "revision": "072612e0245565cee12cbfd07a421f2029d35c4e",
-                    "captured_at": "2026-10-20T10:51:06.823Z",
-                    "summary": "核查 lib/vault.js、lib/index.js；lib/vault.js 对Markdown切块，以BM25、CJK bigram、标题及标签加权检索，并对收集语料降权；lib/index.js 将检索片段交给宿主llm，chatStart/Poll/Stop通过attempt代次处理模型回退。",
-                    "artifact": "data/runs/2026-10-20-08/snapshots/2026heshao--dsh-obsidian-board/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:35:24.503Z",
+                    "summary": "核查 README.md、package.json、lib/index.js、lib/vault.js、lib/typert.js、lib/client.js、test/stop-cycle.test.mjs；Markdown切片/分词/BM25与可选多query融合，typert RPC驱动模型stream/poll/stop，浏览器面板显示并保存。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/2026heshao--dsh-obsidian-board/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "抽读索引、扫描/增量更新和host问答/回退路径，未检验全部客户端交互、未运行万条库性能或真实模型；作者兼容声明未独立复现。",
+                        "固定VaultIndex扫描/构建/读源、gateway检索规划/上下文/流式/历史/保存、typert契约和停止源码测试；不穷尽客户端渲染。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +116,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "适合已有Markdown笔记库、希望边问边查出处的知识工作者；合格答案应引用实际支持结论的笔记，而不是仅能打开一个文件。",
+                    "text": "个人笔记库问答、找原文并回存知识。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1415116420-root-source"
+                        "2026-10-22-02-github-1415116420-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +127,16 @@
                             "fingerprint": "072612e0245565cee12cbfd07a421f2029d35c4e"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:51:06.823Z",
+                    "reviewed_at": "2026-10-22T09:35:24.503Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "lib/vault.js 对Markdown切块，以BM25、CJK bigram、标题及标签加权检索，并对收集语料降权；lib/index.js 将检索片段交给宿主llm，chatStart/Poll/Stop通过attempt代次处理模型回退。",
+                    "text": "Markdown切片/分词/BM25与可选多query融合，typert RPC驱动模型stream/poll/stop，浏览器面板显示并保存。",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1415116420-root-source"
+                        "2026-10-22-02-github-1415116420-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +145,16 @@
                             "fingerprint": "072612e0245565cee12cbfd07a421f2029d35c4e"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:51:06.823Z",
+                    "reviewed_at": "2026-10-22T09:35:24.503Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "抽读索引、扫描/增量更新和host问答/回退路径，未检验全部客户端交互、未运行万条库性能或真实模型；作者兼容声明未独立复现。",
+                    "text": "固定VaultIndex扫描/构建/读源、gateway检索规划/上下文/流式/历史/保存、typert契约和停止源码测试；不穷尽客户端渲染。",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1415116420-root-source"
+                        "2026-10-22-02-github-1415116420-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +163,16 @@
                             "fingerprint": "072612e0245565cee12cbfd07a421f2029d35c4e"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:51:06.823Z",
+                    "reviewed_at": "2026-10-22T09:35:24.503Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "双半插件使用Typert与main页面、侧栏入口，不是Obsidian扩展；面板历史host内存配localStorage兜底，不应将它当DSH正式会话持久历史。",
+                    "text": "0.2.4 MIT，zod和宿主typert/llm/loader；package无Node engines需随宿主对齐。",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1415116420-root-source"
+                        "2026-10-22-02-github-1415116420-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +181,16 @@
                             "fingerprint": "072612e0245565cee12cbfd07a421f2029d35c4e"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:51:06.823Z",
+                    "reviewed_at": "2026-10-22T09:35:24.503Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "无需embedding服务减少一类配置与向量成本，但索引扫描占本地资源，问答与可选规划/模型回退消耗现有模型额度；迁移vault路径和复核引用需人工。未将作者秒级扫描声明转为实测单位成本。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | vault全读/内存索引 | 查链接、体积、模型政策 | 整库读取/索引依规模；隐私和模型路线核查工时未知 |\n| 持续使用 | 元数据扫描+模型/规划/回退 | 审阅召回和规划结果，处理漏项与冲突 | 规划/回退增加模型调用；费用与召回效果未量化 |\n| 失败恢复 | 原库备份/partial/历史 | 核保存、重建与实际上游停止 | 要分保存、partial与上游真正停止；恢复工时未知 |\n",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1415116420-root-source"
+                        "2026-10-22-02-github-1415116420-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +199,16 @@
                             "fingerprint": "072612e0245565cee12cbfd07a421f2029d35c4e"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:51:06.823Z",
+                    "reviewed_at": "2026-10-22T09:35:24.503Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "已有结构清楚的Markdown笔记库可先用已知答案测试原词、同义改写和外部资料问题，逐条点引用核对；涉及敏感笔记时先确认所选模型通道允许发送检索片段。",
+                    "text": "先观察，非敏感可信个人库和限定模型通道对照。详见[Q06](#research-q06)。",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1415116420-root-source"
+                        "2026-10-22-02-github-1415116420-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +217,16 @@
                             "fingerprint": "072612e0245565cee12cbfd07a421f2029d35c4e"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:51:06.823Z",
+                    "reviewed_at": "2026-10-22T09:35:24.503Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "三栏减少切换与复制的机制可见；检索排名、片段截断和模型归纳仍影响合格答案率，是否优于直接搜索要以同题引用支持率和人工纠错时间判断。",
+                    "text": "#### 效果\n\n| 目标 | 源码支持 | 边界 |\n| --- | --- | --- |\n| 无embedding检索 | BM25+CJK | 语义漏召回/限额 |\n| 可点来源 | 引用与readNote | 引用不证明忠实 |\n| 可停/回退 | abortrace/attempt | 上游取消和数据接收方 |",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1415116420-root-source"
+                        "2026-10-22-02-github-1415116420-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +235,16 @@
                             "fingerprint": "072612e0245565cee12cbfd07a421f2029d35c4e"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:51:06.823Z",
+                    "reviewed_at": "2026-10-22T09:35:24.503Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "vault.js 将并发构建笔记与提交索引分开，并压实旧chunk，值得用于增量索引。index.js 使用attempt重置正文/思考/usage和客户端偏移，防止回退拼接旧回答；移植需要客户端同代次协议。扫描失败跳过与关键词检索边界应可观察，不能把没搜到当库中不存在。",
+                    "text": "attempt隔离、思考分流与统一契约有价值，源码正则测试不能代替阻塞资源行为。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1415116420-root-source"
+                        "2026-10-22-02-github-1415116420-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,15 +253,69 @@
                             "fingerprint": "072612e0245565cee12cbfd07a421f2029d35c4e"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:51:06.823Z",
+                    "reviewed_at": "2026-10-22T09:35:24.503Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "把搜索、来源阅读、流式问答与保存放进同页闭环。详见[Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1415116420-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1415116420:root",
+                            "area": "code",
+                            "fingerprint": "072612e0245565cee12cbfd07a421f2029d35c4e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:35:24.503Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "supported",
+                    "text": "索引直接读可含外链md而读源另有realpath，自动回退可能更换资料接收者，同名保存非独占。详见[Q03](#research-q03)、[Q04](#research-q04)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1415116420-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1415116420:root",
+                            "area": "code",
+                            "fingerprint": "072612e0245565cee12cbfd07a421f2029d35c4e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:35:24.503Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "engineering",
+                    "basis": "unverified",
+                    "text": "研究统一索引/读源物理限额、取消预算与provider白名单、独占保存和历史CAS，比较召回/停止/恢复。当前未验证。详见[Q06](#research-q06)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1415116420-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1415116420:root",
+                            "area": "code",
+                            "fingerprint": "072612e0245565cee12cbfd07a421f2029d35c4e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:35:24.503Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-20T10:51:06.823Z",
+            "last_checked_at": "2026-10-22T09:35:24.503Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "072612e0245565cee12cbfd07a421f2029d35c4e",
-                "reviewed_at": "2026-10-20T10:51:06.823Z",
+                "reviewed_at": "2026-10-22T09:35:24.503Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -225,57 +331,57 @@
                         "transferability": 10,
                         "simplification": 8
                     },
-                    "rationale": "novelty：成熟RAG适配笔记库，小幅；mechanism：语料权重及attempt隔离改变实际取舍，实质；transferability：增量索引/代次协议可复用但需适配，实质；simplification：免embedding和三栏核对有实质简化，性能未证。",
+                    "rationale": "novelty小幅，BM25/RAG已有；mechanism实质，多query/流式回退接线；transferability实质，独立索引与契约；simplification实质，问答读源同页。",
                     "basis": "interpretation",
                     "score": 42,
                     "evidence_ids": [
-                        "2026-10-20-08-github-1415116420-root-source"
+                        "2026-10-22-02-github-1415116420-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
                         "workflow": 18,
-                        "delivery": 15,
-                        "reach": 5,
+                        "delivery": 0,
+                        "reach": 10,
                         "economics": 4
                     },
-                    "rationale": "workflow：查找、提问、回看出处有实质整合；delivery：引用问答相对手工复制实质改变交付物，真实性未测；reach：已有vault用户接入更方便，小幅；economics：免embedding减少配置，小幅，模型总成本未知。",
+                    "rationale": "workflow实质，笔记问答回存；delivery无新增模式；reach实质，面板和引用；economics小幅，无embedding但规划/回退收费未量化。",
                     "basis": "interpretation",
-                    "score": 42,
+                    "score": 32,
                     "evidence_ids": [
-                        "2026-10-20-08-github-1415116420-root-source"
+                        "2026-10-22-02-github-1415116420-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "trial",
-                "reason": "已有Markdown库者可先用已知答案试用三栏检索问答；比较同义题和外部资料召回并核对引用及外发片段。",
+                "decision": "observe",
+                "reason": "先观察，索引/读源边界不一致和跨provider回退需处理；可信非敏感库、限制模型通道并备份可做对照。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "笔记库边读边问有明确用户和可核查答案。"
+                        "rationale": "个人笔记问答明确。"
                     },
                     "advantage": {
                         "score": 19,
-                        "rationale": "BM25、CJK与引用面板减少复制切换，无需embedding服务。"
+                        "rationale": "读源/回答/保存集中比复制方便。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "切块权重与attempt回退已查，召回与引用支持率未测。"
+                        "rationale": "关键固定源码可查，召回/取消仍有具体缺口。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "本地扫描加模型调用，路径迁移和引用复核仍需人工。"
+                        "score": 5,
+                        "rationale": "索引/模型数据政策、并发保存恢复负担较大。"
                     }
                 },
-                "score": 65,
+                "score": 60,
                 "revision": "072612e0245565cee12cbfd07a421f2029d35c4e",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T09:35:24.503Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-20-08-github-1415116420-root-source"
+                    "2026-10-22-02-github-1415116420-root-source"
                 ],
                 "dependencies": [
                     {
@@ -300,89 +406,62 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-20T10:40:14Z",
-            "analysis_sha256": "34b60ef32ecfa642d1f65bec10deea1b842fdbcb5a6eb53475c185164be6868c"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "52ab347bd561f880e4cdfc122f73b4366c1caea2d4b194ec4d0df2f9dc1699c8"
         },
         "publication.metadata": "data/plugins/2026heshao--dsh-obsidian-board/META.json",
         "publication.summaries": {
-            "text": "将本地 Obsidian 笔记库接入 DSH 三栏问答面板，提供本地关键词检索和可点击引用。",
+            "text": "在DSH三栏面板以本地BM25检索Obsidian笔记，复用宿主模型流式回答、点引用读源并保存回答。",
             "revision": "072612e0245565cee12cbfd07a421f2029d35c4e",
             "source_url": "https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/README.md"
         },
         "publication.capabilities": {
             "revision": "072612e0245565cee12cbfd07a421f2029d35c4e",
             "items": {
-                "Host 路由": "Typert提供本地笔记检索、读原文与chatStart/Poll/Stop",
-                "后台": "BM25/CJK bigram索引和增量更新"
-            }
+                "界面": "三栏笔记问答/引用/来源面板",
+                "Host 路由": "typert obsidianBoard direct RPC",
+                "后台": "内存索引、可选文件watch与流式会话池"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 本地BM25 | 搜个人笔记 | 索引仍可读链接 |\n| 模型问答 | 生成/规划 | 远程与回退政策 |\n| 点源/回存 | 查证与积累 | 读源不同限额/保存竞争 |"
         },
         "publication.advice": {
             "revision": "072612e0245565cee12cbfd07a421f2029d35c4e",
-            "text": "已有结构清楚的Markdown笔记库可先用已知答案测试原词、同义改写和外部资料问题，逐条点引用核对；涉及敏感笔记时先确认所选模型通道允许发送检索片段。"
+            "text": "先观察，非敏感可信个人库和限定模型通道对照。详见[Q06](#research-q06)。"
         },
         "registry": "data/plugins/2026heshao--dsh-obsidian-board",
-        "reports": "# dsh-obsidian-board\n\n> 将本地 Obsidian 笔记库接入 DSH 三栏问答面板，提供本地关键词检索和可点击引用。\n\n## 研究范围\n\n- **仓库**：[2026heshao/dsh-obsidian-board](https://github.com/2026heshao/dsh-obsidian-board)\n- **版本号**：0.2.4（[固定提交 072612e0](https://github.com/2026heshao/dsh-obsidian-board/tree/072612e0245565cee12cbfd07a421f2029d35c4e)）\n- **版本日期**：2026-10-20（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已确认本地检索与引用面板、按尝试隔离流式输出的设计；未复现性能和回答正确率。检索本地不代表发送给模型的片段不出本机，未来证据覆盖提示假设未验证。\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：适合已有Markdown笔记库、希望边问边查出处的知识工作者；合格答案应引用实际支持结论的笔记，而不是仅能打开一个文件。\n- **亮点**：相对在Obsidian关键词搜索后复制到聊天，插件把查找、回答和原文核对放在三栏；BM25和中文bigram是成熟方法，具体增量是笔记标题/标签/别名、收集语料降权以及attempt切换时重置输出偏移，减少来源库与模型回退造成的使用断点。不能将算法名称或作者万条笔记耗时认作本次实测。\n- **思考**：最影响价值的是引用能否覆盖真正支持结论的笔记。BM25更适合词面匹配，固定0.45收集语料降权能让自有笔记优先，却可能压低用户此刻正要找的外部材料。可点击[n]只证明可回看，不证明检索召回或引用蕴含关系；同义改写与外部资料问题是最强反例。\n- **建议**：已有结构清楚的Markdown笔记库可先用已知答案测试原词、同义改写和外部资料问题，逐条点引用核对；涉及敏感笔记时先确认所选模型通道允许发送检索片段。\n\n采用建议：已有结构清楚的Markdown笔记库可先用已知答案测试原词、同义改写和外部资料问题，逐条点引用核对；涉及敏感笔记时先确认所选模型通道允许发送检索片段。\n\n## 核心贡献\n\n相对在Obsidian关键词搜索后复制到聊天，插件把查找、回答和原文核对放在三栏；BM25和中文bigram是成熟方法，具体增量是笔记标题/标签/别名、收集语料降权以及attempt切换时重置输出偏移，减少来源库与模型回退造成的使用断点。不能将算法名称或作者万条笔记耗时认作本次实测。\n\n## 关键质疑\n\n最影响价值的是引用能否覆盖真正支持结论的笔记。BM25更适合词面匹配，固定0.45收集语料降权能让自有笔记优先，却可能压低用户此刻正要找的外部材料。可点击[n]只证明可回看，不证明检索召回或引用蕴含关系；同义改写与外部资料问题是最强反例。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n待验证假设：在答案旁显式显示检索来源构成与未覆盖主题，并允许按问题选择“自有经验/全部资料”权重。它从固定vendored降权和可回看引用推导，改变的是检索意图控制而非增加另一个模型；额外负担是解释权重和建立小型带标注问题集。\n\n在固定库人工标注20个原词、同义改写和外部材料问题，对比普通BM25、当前加权及用户可选权重；记录topK召回、引用支持率、人工纠错时间和全部模型调用。选择权重若只增加操作而不改善外部资料题，则否定假设。\n\n## 场景与替代办法\n\n适合已有Markdown笔记库、希望边问边查出处的知识工作者；合格答案应引用实际支持结论的笔记，而不是仅能打开一个文件。\n\n参照Obsidian原生词面搜索加手工复制，以及常见embedding RAG；本项选择无需向量服务的轻部署方案，牺牲部分语义召回，未证明普遍优于embedding。\n\n## 依赖与流程\n\n需要可访问的本地vault目录、DSH llm/loader/Typert和浏览器；索引不联网，但问答通过已配置模型发送上下文，隐私随模型渠道变化。笔记结构、别名质量、库规模及模型能力决定效果。\n\n选择vault→扫描切块建索引→输入问题→检索及可选规划→模型生成→按300ms轮询取增量→点引用回看；停止通过AbortController，失败回退新attempt并重置输出，重启后历史需客户端存储兜底。\n\n## 成本与效果\n\n无需embedding服务减少一类配置与向量成本，但索引扫描占本地资源，问答与可选规划/模型回退消耗现有模型额度；迁移vault路径和复核引用需人工。未将作者秒级扫描声明转为实测单位成本。\n\n三栏减少切换与复制的机制可见；检索排名、片段截断和模型归纳仍影响合格答案率，是否优于直接搜索要以同题引用支持率和人工纠错时间判断。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：8322b56fde9ffc9b320835e35b32ddc11a771052ad9bd1dfb98ec28523f99c5c。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 23 | 1699 | — | — | 24131 |\n| .mjs | source | 25 | 1519 | 1196 | 151 | — |\n| .js | source | 4 | 4593 | 3590 | 880 | — |\n| .mjs | test | 22 | 1782 | 1355 | 233 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **Host 路由**：Typert提供本地笔记检索、读原文与chatStart/Poll/Stop\n- **后台**：BM25/CJK bigram索引和增量更新\n\n## 工程亮点\n\nvault.js 将并发构建笔记与提交索引分开，并压实旧chunk，值得用于增量索引。index.js 使用attempt重置正文/思考/usage和客户端偏移，防止回退拼接旧回答；移植需要客户端同代次协议。扫描失败跳过与关键词检索边界应可观察，不能把没搜到当库中不存在。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 lib/vault.js、lib/index.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读索引、扫描/增量更新和host问答/回退路径，未检验全部客户端交互、未运行万条库性能或真实模型；作者兼容声明未独立复现。\n- 下一步：在固定库人工标注20个原词、同义改写和外部材料问题，对比普通BM25、当前加权及用户可选权重；记录topK召回、引用支持率、人工纠错时间和全部模型调用。选择权重若只增加操作而不改善外部资料题，则否定假设。\n\n## 源码索引\n\n- [lib/vault.js](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/vault.js)\n- [lib/index.js](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/index.js)\n",
+        "reports": "# dsh-obsidian-board\n\n> 在DSH三栏面板以本地BM25检索Obsidian笔记，复用宿主模型流式回答、点引用读源并保存回答。\n\n## 研究范围\n\n- **仓库**：[2026heshao/dsh-obsidian-board](https://github.com/2026heshao/dsh-obsidian-board)\n- **版本号**：0.2.4（[固定提交 072612e0245565cee12cbfd07a421f2029d35c4e](https://github.com/2026heshao/dsh-obsidian-board/tree/072612e0245565cee12cbfd07a421f2029d35c4e)）\n- **版本日期**：2026-10-20（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n本地检索与attempt恢复设计可查，索引路径/大小、自动回退和写入/历史隔离边界限制采用。\n\n## 洞察短评\n\n- **用途**：个人笔记库问答、找原文并回存知识。详见[Q01](#research-q01)。\n- **亮点**：把搜索、来源阅读、流式问答与保存放进同页闭环。详见[Q01](#research-q01)。\n- **思考**：索引直接读可含外链md而读源另有realpath，自动回退可能更换资料接收者，同名保存非独占。详见[Q03](#research-q03)、[Q04](#research-q04)。\n- **建议**：研究统一索引/读源物理限额、取消预算与provider白名单、独占保存和历史CAS，比较召回/停止/恢复。当前未验证。详见[Q06](#research-q06)。\n\n采用建议：先观察，非敏感可信个人库和限定模型通道对照。详见[Q06](#research-q06)。\n\n## 核心贡献\n\n把搜索、来源阅读、流式问答与保存放进同页闭环。详见[Q01](#research-q01)。\n\n## 关键质疑\n\n索引直接读可含外链md而读源另有realpath，自动回退可能更换资料接收者，同名保存非独占。详见[Q03](#research-q03)、[Q04](#research-q04)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n研究统一索引/读源物理限额、取消预算与provider白名单、独占保存和历史CAS，比较召回/停止/恢复。当前未验证。详见[Q06](#research-q06)。\n\n进一步从外链/大文件、双vault、阻塞planner/return和双同名保存探讨统一边界。\n\n## 场景与替代办法\n\n个人笔记库问答、找原文并回存知识。详见[Q01](#research-q01)。\n\n原Obsidian搜索复制到聊天，集中RAG便利不等已证召回可靠。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 条件 | 用途 | 失效影响 |\n| --- | --- | --- |\n| 宿主typert/llm/loader | RPC与模型 | ABI与准入 |\n| Markdown vault | 索引/读源 | 链接/大小约束不一致 |\n| 授权模型通道 | 生成与规划 | 内容离机/回退费用 |\n| 可写AI回答目录 | 保存 | 并发/外链需核 |\n\n#### 启动步骤\n\n| 步骤 | 执行者 | 判断标准 |\n| --- | --- | --- |\n| 选可信非敏感库 | 用户 | 外链与大小可控 |\n| 核允许模型 | 用户 | 包括回退接收者 |\n| 对照提问读源 | 用户 | 不把未召回当不存在 |\n| 保存核文件 | 用户 | 独立备份/YAML正确 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | vault全读/内存索引 | 查链接、体积、模型政策 | 整库读取/索引依规模；隐私和模型路线核查工时未知 |\n| 持续使用 | 元数据扫描+模型/规划/回退 | 审阅召回和规划结果，处理漏项与冲突 | 规划/回退增加模型调用；费用与召回效果未量化 |\n| 失败恢复 | 原库备份/partial/历史 | 核保存、重建与实际上游停止 | 要分保存、partial与上游真正停止；恢复工时未知 |\n\n\n#### 效果\n\n| 目标 | 源码支持 | 边界 |\n| --- | --- | --- |\n| 无embedding检索 | BM25+CJK | 语义漏召回/限额 |\n| 可点来源 | 引用与readNote | 引用不证明忠实 |\n| 可停/回退 | abortrace/attempt | 上游取消和数据接收方 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**本地BM25问答如何处理笔记/模型/流式与保存，哪些边界限制可信采用？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 本地笔记问答的实际目标是什么？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n在DSH专用三栏页面浏览Obsidian库、提问并点引用看笔记原文，回答可存成AI回答笔记。检索不需embedding服务，BM25和CJK bigram在宿主本地算，回答复用宿主模型通道。相较手工搜库复制到聊天，主要贡献是搜索、来源阅读、流式对话和保存形成同页闭环；不是Obsidian插件或新检索算法。\n\nREADME“no data leaves your machine”只能收窄到本地索引/检索计算，问句、历史和命中正文明确进入llm.stream，对远程模型就会离机。引用代表被检索的来源，不自动证明模型每个主张被支持。成功需相关笔记真能召回、回答忠实且引用定位可靠，不能由界面可点或自带演示得出准确率结论。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:5-18](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/README.md#L5-L18)\n\n作者RAG与本地主张。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\nA [DeepSeek Harness (DSH)](https://github.com/deepseek-ai/deepseek-harness) plugin that turns your local **Obsidian vault** into a **dedicated RAG chat panel** inside the DSH GUI — a sidebar entry leading to a full three-pane page: note browser on the left, retrieval-augmented chat in the middle, cited note source on the right. The desktop app and the Web GUI ship the same browser-rendered client, so the panel behaves identically in both. All retrieval and indexing run **100% locally** (BM25 + CJK bigram); answers go through the model channel you already configured in DSH.\n\n> **Not an MCP integration, not an Obsidian plugin** — this is a dual-half DSH plugin (host + browser client). The UI is injected into the DSH main window as a `main` slot page (same mechanism as switching conversations); model calls reuse the host `ctx.llm`; the knowledge base points at your local vault directory (Obsidian doesn't even need to be running).\n\n> **Compatibility**: fully tested on DeepSeek Harness 44.7.0 (host ships `@deepseek-ai/dsh-typert-protocol@0.2.1-rc.2` / cordis 4.0.5); the declared peer range `>=0.1.5-rc.1` still covers it — no code changes needed in v0.2.3.\n\n## Features\n\n- 🔍 **Local-first retrieval** — BM25 with CJK bigram tokenization, title/path boosting, Obsidian tag & alias awareness. No embedding model, no network, no data leaves your machine.\n- 🎯 **Finds what you actually wrote** — your own notes outrank collected third-party material (public skill libraries are down-weighted), long identifiers such as `github_pat_…` are matched literally, and meaningful hidden folders (e.g. `.workbuddy/`) are indexed instead of silently skipped.\n- 🛑 **Stop that actually stops** — the stop button takes effect at any stage, including the retrieval/planning phase and the model's silent period before its first token. Stopped replies are shown as a neutral \"stopped\" state, not a red error.\n- 🧵 **Output that never garbles or hangs** — the stream pipeline is keyed per attempt, so switching provider fallbacks can't splice two answers together or silently swallow a reply; each answer shows the model that actually produced it. Replies left mid-stream by a panel refresh are marked \"interrupted\" with a retry button instead of spinning forever.\n- 📖 **Clickable citations** — every `[n]` in the answer and the citation chips below it open the exact note in the right-hand source pane.\n- 📊 **Rich Markdown answers** — tables, headings, links, italics and task lists render in answers and the source pane, sandboxed (no executable links).\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:161-214](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/index.js#L161-L214)\n\n正文历史构造模型上下文。\n\n<details>\n<summary>查看原文（54行）</summary>\n\n```text\nfunction buildMessages({ system, context, history, question, historyLimit = 24, route }) {\n\tconst messages = [];\n\tconst modelSource = () => ({ kind: \"model\", provider: String(route?.provider || \"\"), model: String(route?.model || \"\") });\n\tmessages.push({\n\t\tid: randomUUID(),\n\t\trole: \"system\",\n\t\tcontent: [{ type: \"text\", text: system + (context ? \"\\n\\n<context>\\n\" + context + \"\\n</context>\" : \"\") }],\n\t\tsource: { kind: \"system-prompt\" },\n\t});\n\t// 面板会话历史（截断到最近 N 条，防止上下文膨胀）\n\tconst limit = Math.max(2, Math.min(60, Number(historyLimit) || 24));\n\tconst tail = history.slice(-limit);\n\t// OPT-2.9 历史预算：多轮追问（「再详细说说第 2 点」）时，指代对象常落在前一轮长回答的后半段，\n\t// 一刀切 4000 字会把它腰斩成「上一轮没说过」。给最近 2 条 assistant 消息 8000 字，更早的仍 4000 字。\n\tconst RECENT_BUDGET = 8000;\n\tconst OLD_BUDGET = 4000;\n\tconst assistantCount = tail.filter((m) => m && m.role === \"assistant\" && typeof m.content === \"string\" && m.content.trim()).length;\n\tlet assistantSeen = 0;\n\tfor (const m of tail) {\n\t\tif (!m || typeof m.content !== \"string\" || !m.content.trim()) continue;\n\t\tconst isAssistant = m.role === \"assistant\";\n\t\tlet budget = OLD_BUDGET;\n\t\tif (isAssistant) {\n\t\t\tassistantSeen += 1;\n\t\t\tif (assistantCount - assistantSeen < 2) budget = RECENT_BUDGET;\n\t\t}\n\t\tmessages.push({\n\t\t\tid: randomUUID(),\n\t\t\trole: isAssistant ? \"assistant\" : \"user\",\n\t\t\tcontent: [{ type: \"text\", text: m.content.slice(0, budget) }],\n\t\t\tsource: isAssistant ? modelSource() : { kind: \"user\" },\n\t\t});\n\t}\n\tmessages.push({ id: randomUUID(), role: \"user\", content: [{ type: \"text\", text: question }], source: { kind: \"user\" } });\n\treturn messages;\n}\n\nfunction contextBlock(hits, chunkLimit) {\n\tif (!hits.length) return \"\";\n\tconst isIndexLike = (title, text) => {\n\t\tconst t = (title || \"\").toLowerCase();\n\t\tif (/目录|索引|moc|index|导航|sitemap/.test(t)) return true;\n\t\tconst links = (text.match(/\\[\\[/g) || []).length + (text.match(/\\.md/g) || []).length;\n\t\treturn text.length > 0 && links / (text.length / 30) > 0.8;\n\t};\n\treturn hits\n\t\t.map((hit, i) => {\n\t\t\tconst body = hit.text.length > chunkLimit ? hit.text.slice(0, chunkLimit) + \"…\" : hit.text;\n\t\t\tconst tag = isIndexLike(hit.noteTitle, hit.text)\n\t\t\t\t? \"\\n⚠️ 这是目录/索引类材料：它只说明库里**有哪些**笔记，不含具体内容。绝不依据它组织回答——只可用来了解知识库覆盖范围。\"\n\t\t\t\t: \"\";\n\t\t\treturn `[${i + 1}] 笔记「${hit.noteTitle}」${hit.heading ? \" · \" + hit.heading : \"\"}${tag}\\n${body}`;\n\t\t})\n\t\t.join(\"\\n\\n---\\n\\n\");\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:1177-1177](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/index.js#L1177-L1177)\n\nbuildMessages实际入口。\n\n```text\n\t\tconst messages = buildMessages({ system, context, history, question, historyLimit: this.config.historyLimit, route });\n```\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 检索和规划的机制是什么？\n\n**研究主题：**功能与机制、依赖、兼容与流程\n\n#### 完整回答\n\nVaultIndex扫描Markdown、按标题切片与长段拆分，标题/面包屑参与词频，拉丁词和CJK二元词形成索引；BM25另加标题/别名/标签及目录惩罚、收集语料降权以优先自己的笔记。全文内存索引通过mtime增量更新，有界并发读文件和可选watch；mtime未变内容变化不会主动识别。复杂问题可多调用一次模型生成最多三条搜索query，融合原与扩展结果，简单问题可跳规划。\n\n这是一组启发式排序，不是语义向量召回或有保证的个人笔记归属分类。planner失败静默退单路，extra为空时返回primary而其为2*topK，和简单分支slice(topK)不同，引用/上下文预算可能翻倍。typert gateway依赖llm/loader，zod+宿主typert protocol，浏览器RPC用direct descriptor；package未声明Node engines，需结合宿主API核对。模型/路径选择和保存配置依赖可选服务，不能从peer范围推出任意新版兼容。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/vault.js:19-36](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/vault.js#L19-L36)\n\n分词。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\nexport function tokenize(text) {\n\tconst tokens = [];\n\tconst lowered = String(text).toLowerCase();\n\t// 拉丁/数字词\n\tfor (const m of lowered.matchAll(/[a-z0-9_][a-z0-9_'+.-]*/g)) {\n\t\tlet w = m[0].replace(/^['+.-]+|['+.-]+$/g, \"\");\n\t\tif (w.length >= 2 && !/^\\d+$/.test(w)) {\n\t\t\tif (w.length > 4 && w.endsWith(\"s\") && !w.endsWith(\"ss\")) w = w.slice(0, -1);\n\t\t\ttokens.push(w);\n\t\t}\n\t}\n\t// CJK bigram（单字也保留，权重低——用于单字专有名词）\n\tfor (const m of lowered.matchAll(/[\\u2E80-\\u9FFF\\uF900-\\uFAFF]{1,}/g)) {\n\t\tconst run = m[0];\n\t\tif (run.length === 1) { tokens.push(run); continue; }\n\t\tfor (let i = 0; i < run.length - 1; i++) tokens.push(run.slice(i, i + 2));\n\t}\n\treturn tokens;\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/vault.js:289-349](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/vault.js#L289-L349)\n\n增量与并发。\n\n<details>\n<summary>查看原文（61行）</summary>\n\n```text\n\tasync ensureIndexed(vaultPath, { force = false } = {}) {\n\t\tif (this.scanning) return { queued: true };\n\t\tif (!force && this.builtAt && this.vaultPath === vaultPath) {\n\t\t\t// 轻量增量：只对 mtime 变化的笔记重建 chunk。\n\t\t\treturn this._incremental(vaultPath);\n\t\t}\n\t\tthis.scanning = true;\n\t\ttry {\n\t\t\tif (force || this.vaultPath !== vaultPath) await this._full(vaultPath);\n\t\t\telse await this._incremental(vaultPath);\n\t\t} finally {\n\t\t\tthis.scanning = false;\n\t\t}\n\t\treturn { queued: false };\n\t}\n\n\t_scan(vaultPath) {\n\t\treturn scanVault(vaultPath, {\n\t\t\tskipDirs: this.skipDirs,\n\t\t\tallowDotDirs: this.allowDotDirs,\n\t\t\tmaxDepth: this.maxDepth,\n\t\t});\n\t}\n\n\tasync _full(vaultPath) {\n\t\tthis.vaultPath = vaultPath;\n\t\tthis.chunks = [];\n\t\tthis.byNote = new Map();\n\t\tthis.df = new Map();\n\t\tconst files = await this._scan(vaultPath);\n\t\t// OPT-1.7：有界并发读文件；提交严格按 files 顺序，chunk 顺序与串行实现逐字节一致。\n\t\tconst built = await mapPool(files, this.readConcurrency, (file) => this._safeBuild(file, vaultPath));\n\t\tfor (let i = 0; i < files.length; i++) if (built[i]) this._commitNote(built[i]);\n\t\tthis._recomputeStats();\n\t\tthis.builtAt = Date.now();\n\t}\n\n\tasync _incremental(vaultPath) {\n\t\tconst files = await this._scan(vaultPath);\n\t\tconst seen = new Set();\n\t\tconst mtimes = await mapPool(files, this.readConcurrency, async (file) => {\n\t\t\ttry { return (await stat(file)).mtimeMs; } catch { return null; }\n\t\t});\n\t\tconst dirty = [];\n\t\tfor (let i = 0; i < files.length; i++) {\n\t\t\tseen.add(files[i]);\n\t\t\tif (mtimes[i] === null) continue;\n\t\t\tconst rec = this.byNote.get(files[i]);\n\t\t\tif (!rec || rec.mtimeMs !== mtimes[i]) dirty.push(files[i]);\n\t\t}\n\t\tconst built = await mapPool(dirty, this.readConcurrency, (file) => this._safeBuild(file, vaultPath));\n\t\tfor (let i = 0; i < dirty.length; i++) {\n\t\t\t// 先标记旧 chunk 为孤儿再提交新 chunk：与基线的「drop+index 逐文件交替」等价\n\t\t\t// （孤儿只在 _recomputeStats 里压实，追加顺序不受影响）。\n\t\t\tthis._dropNote(dirty[i]);\n\t\t\tif (built[i]) this._commitNote(built[i]);\n\t\t}\n\t\tlet dirtyAny = dirty.length > 0;\n\t\tfor (const path of [...this.byNote.keys()]) {\n\t\t\tif (!seen.has(path)) { this._dropNote(path); dirtyAny = true; }\n\t\t}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/vault.js:354-374](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/vault.js#L354-L374)\n\n切片计权。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n\tasync _buildNote(file, vaultPath) {\n\t\tconst raw = await readFile(file, \"utf8\");\n\t\tconst { frontmatter, body } = parseFrontmatter(raw);\n\t\tconst rel = relative(vaultPath, file).split(sep).join(\"/\");\n\t\tconst title = basename(file).replace(/\\.(md|markdown)$/i, \"\");\n\t\tconst mtimeMs = (await stat(file)).mtimeMs;\n\t\tconst note = {\n\t\t\tpath: rel,\n\t\t\ttitle,\n\t\t\tmtimeMs,\n\t\t\taliases: extractAliases(frontmatter),\n\t\t\ttags: extractTags(frontmatter, body),\n\t\t\tchunkIdx: [],\n\t\t};\n\t\tconst chunks = chunkNote({ path: rel, title, body }).map((chunk) => {\n\t\t\t// 标题面包屑重复进正文计权：标题词在检索里更重。\n\t\t\tconst boost = note.title + \"\\n\" + chunk.crumbs + \"\\n\" + chunk.heading;\n\t\t\tconst tokenList = tokenize(boost + \"\\n\" + chunk.text);\n\t\t\tconst tokens = new Map();\n\t\t\tfor (const t of tokenList) tokens.set(t, (tokens.get(t) || 0) + 1);\n\t\t\treturn { ...chunk, tokens, len: tokenList.length };\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:784-845](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/index.js#L784-L845)\n\n多query与extra空分支。\n\n<details>\n<summary>查看原文（62行）</summary>\n\n```text\n\tasync _multiHits(question, llm, route) {\n\t\tconst vaultPath = await this._vaultPath();\n\t\tawait this.index.ensureIndexed(vaultPath);\n\t\tconst topK = Math.max(1, Math.min(20, Number(this.config.topK) || 8));\n\t\tconst primary = this.index.search(question, { topK: topK * 2 }).hits;\n\n\t\t// 简单问题不规划。注意：primary 取的是 2×topK（给融合留冗余），\n\t\t// 但返回给调用方的 citations 必须收敛到 topK——否则引用 chips 会翻倍。\n\t\t// OPT-Config 规划开关：plannerEnabled=false 时整跳短路（少一次 LLM 往返，首字更快）。\n\t\tif (this.config.plannerEnabled === false || !needsPlanning(question)) return primary.slice(0, topK);\n\n\t\t// 规划跳：非流式、短输出、失败静默（规划失败 = 退回单路）\n\t\tlet extra = [];\n\t\ttry {\n\t\t\tconst planMessages = [\n\t\t\t\t{ role: \"system\", content: [{ type: \"text\", text: PLANNER_PROMPT }] },\n\t\t\t\t{ role: \"user\", content: [{ type: \"text\", text: question.slice(0, 500) }] },\n\t\t\t];\n\t\t\tconst options = { messages: planMessages };\n\t\t\tif (route?.provider) options.provider = route.provider;\n\t\t\tif (route?.model) options.model = route.model;\n\t\t\t// OPT-2.4 规划跳比主生成便宜一档即可，别再额外砍到 low（见 PLAN_EFFORT_MAP 注释）。\n\t\t\tconst planEffort = String(this.config.reasoningEffort ?? \"high\").trim();\n\t\t\tif (planEffort) options.reasoningEffort = PLAN_EFFORT_MAP[planEffort] || planEffort;\n\t\t\tlet planText = \"\";\n\t\t\t// 规划跳必须有超时：某些路由/无路由下 llm.stream 永不 settle，会挂死整个请求。\n\t\t\tconst planStream = (async () => {\n\t\t\t\tfor await (const chunk of llm.stream(options)) {\n\t\t\t\t\tconst failure = terminalFailure(chunk);\n\t\t\t\t\tif (failure) break;\n\t\t\t\t\tplanText += visibleDelta(chunk);\n\t\t\t\t}\n\t\t\t})();\n\t\t\tawait withTimeout(planStream, 20000, \"检索规划\");\n\t\t\tconst queries = parseQueryList(planText).filter((q) => q !== question.trim());\n\t\t\t// 各路检索（串行即可：BM25 是内存毫秒级）\n\t\t\tconst perQuery = [];\n\t\t\tfor (const q of queries.slice(0, 3)) {\n\t\t\t\tconst r = this.index.search(q, { topK });\n\t\t\t\tif (r.hits.length) perQuery.push(r.hits);\n\t\t\t}\n\t\t\textra = perQuery;\n\t\t} catch { /* 规划失败退回单路 */ }\n\n\t\tif (!extra.length) return primary;\n\n\t\t// RRF 融合：score(chunk) = Σ 1/(RRF_K + rank_i)；同 chunk 以 notePath+heading 归并\n\t\tconst fused = new Map();\n\t\tconst lists = [primary, ...extra];\n\t\tfor (const hits of lists) {\n\t\t\thits.forEach((hit, rank) => {\n\t\t\t\tconst key = hit.notePath + \"::\" + (hit.heading || \"\") + \"::\" + hit.text.slice(0, 60);\n\t\t\t\tconst cur = fused.get(key) || { hit, rrf: 0, rankSum: 0, count: 0 };\n\t\t\t\tcur.rrf += 1 / (ObsidianBoardGateway.RRF_K + rank + 1);\n\t\t\t\tcur.rankSum += rank + 1;\n\t\t\t\tcur.count += 1;\n\t\t\t\tfused.set(key, cur);\n\t\t\t});\n\t\t}\n\t\tconst merged = [...fused.values()]\n\t\t\t.sort((a, b) => b.count - a.count || b.rrf - a.rrf) // 多路共同命中优先，再按 RRF\n\t\t\t.map((v) => ({ ...v.hit, multiHit: v.count > 1, score: Math.round(v.rrf * 100) / 100 }));\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/index.js:405-432](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/index.js#L405-L432)\n\nGateway依赖。\n\n<details>\n<summary>查看原文（28行）</summary>\n\n```text\nexport class ObsidianBoardGateway extends TypertRemoteService {\n\t// 只写必然存在的服务。可选依赖一律在方法内用 ctx.get 探测——loader 不认 \"?\"\n\t// 后缀语法（实测 0.2.0-rc.2：带 ? 的条目会让注入解析失败 → 服务整体不激活）。\n\t// loader 是 cordis 核心服务（读 agent-default-model 的配置解析默认路由）。\n\tstatic inject = [\"llm\", \"loader\"];\n\tconstructor(ctx, config) {\n\t\tsuper(ctx, \"obsidianBoard\");\n\t\tthis.config = config || {};\n\t\t// OPT-1.4 GAP-1：I1 在 Config 里声明了 5 个扫描参数，vault.js 也把它们做成了\n\t\t// VaultIndex 构造选项，但这里历史上一律 new VaultIndex() 不传参 —— 用户配\n\t\t// scanMaxDepth / vendoredWeight / extra*Dirs 全是死字段，永远不生效。\n\t\t// 语义分两类：\n\t\t//   数值项（scanMaxDepth / vendoredWeight）—— 有值才传，非法值不传（让库用缺省）；\n\t\t//   追加项（extraVendoredDirs / extraSkipDirs / extraDotDirs）—— 基线 + 额外项。\n\t\t// 追加项在额外项为空时**完全不传**：保持「库自决缺省」这一条路径，避免宿主镜像的\n\t\t// 基线表跟库里的漂移时无声改变默认扫描范围。\n\t\tconst indexOptions = {};\n\t\tconst maxDepth = configNumberOrUndefined(this.config.scanMaxDepth);\n\t\tif (maxDepth !== undefined) indexOptions.maxDepth = maxDepth;\n\t\tconst vendoredWeight = configNumberOrUndefined(this.config.vendoredWeight);\n\t\tif (vendoredWeight !== undefined) indexOptions.vendoredWeight = vendoredWeight;\n\t\tconst extraVendored = configList(this.config.extraVendoredDirs);\n\t\tif (extraVendored.length) indexOptions.vendoredDirHints = [...BASELINE_VENDORED_DIR_HINTS, ...extraVendored];\n\t\tconst extraSkip = configList(this.config.extraSkipDirs);\n\t\tif (extraSkip.length) indexOptions.skipDirs = [...BASELINE_SKIP_DIRS, ...extraSkip];\n\t\tconst extraDot = configList(this.config.extraDotDirs);\n\t\tif (extraDot.length) indexOptions.allowDotDirs = [...BASELINE_ALLOW_DOT_DIRS, ...extraDot];\n\t\tthis.index = new VaultIndex(indexOptions);\n```\n\n</details>\n\n**依据 6 · 源码核查**：[lib/typert.js:5-43](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/typert.js#L5-L43)\n\nRPC描述符。\n\n<details>\n<summary>查看原文（39行）</summary>\n\n```text\n\n// strict codec 的双键形状（schema + create 工厂）是 0.1.5-rc.x 与 0.1.6+ 同时兼容的\n// 唯一形状，原理见 dsh-skill-mcp-board/lib/typert.js 的注释——两处同源。\nconst codec = (symbol, schema) => ({\n\tmode: 'strict',\n\ttypeSymbol: `dsh-obsidian-board/typert#${symbol}`,\n\tschema,\n\tcreate: () => schema,\n})\n\nconst mv = (method, params, resultSym) => ({\n\tid: `dsh-obsidian-board#obsidianBoard/${method}`,\n\tservice: 'obsidianBoard',\n\tnamespace: 'obsidianBoard',\n\tmethod,\n\tinvocation: { kind: 'direct' },\n\tparameters: params,\n\tresult: codec(resultSym, z.unknown()),\n\tsourceLocation: { file: 'dsh-obsidian-board/lib/typert.js', line: 7, column: 1 },\n})\n\nconst $any = z.unknown()\n\n// 所有方法统一「payload 进、结果出」信封，params 全部走单一 payload 参数（与\n// mcp-board 的 payloadParam 同构），避免逐字段编解码的形状漂移。\nconst payloadParam = { name: 'payload', wire: 'payload', source: 'json', codec: codec('Payload', $any) }\nconst noParams = []\n\nexport const TYPERT = {\n\tpackage: 'dsh-obsidian-board',\n\tface: 'host',\n\tschemas: [],\n\tinvocations: [\n\t\tmv('status', [], 'StatusResult'),\n\t\tmv('configure', [payloadParam], 'StatusResult'),\n\t\tmv('listNotes', [payloadParam], 'NotesResult'),\n\t\tmv('readNote', [payloadParam], 'NoteResult'),\n\t\tmv('search', [payloadParam], 'SearchResult'),\n\t\tmv('chat', [payloadParam], 'ChatResult'), // deprecated: 非流式管线已下线（OPT-2.6）\n```\n\n</details>\n\n**依据 7 · 源码核查**：[package.json:29-34](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/package.json#L29-L34)\n\n分发依赖。\n\n```text\n  },\n  \"peerDependencies\": {\n    \"@deepseek-ai/dsh-typert-protocol\": \">=0.1.5-rc.1\"\n  },\n  \"dsh\": {\n    \"bundle\": {\n```\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 索引、读源和保存的路径保护一致吗？\n\n**研究主题：**缺陷与关键质疑\n\n#### 完整回答\n\nreadNote有扩展名/体积限制，realpath同时核vault和目标防外链读，是积极设计；但索引scanVault把非目录且扩展名匹配的项加入，符号链接文件也会进来，_buildNote直接readFile且无realpath/体积检查。结果可能把vault外链接Markdown或超大文件读进内存并用于模型上下文，即使之后点来源readNote会拒绝，两个入口不一致。maxNoteBytes只看读源路径不能当全库索引大小上限。起始目录和文件在检查后替换也没有稳定句柄身份保证。\n\nsaveNote清理标题、同名追加序号后普通writeFile，但access再写不是独占创建；并发保存同名可能覆盖，序号循环到上限仍写最终路径。AI回答目录没有realpath链接约束，预置链接可把写入落外部。refs YAML字符串未逃逸引号/换行等任意笔记名，列表键只出现一次不等任何名字都产生合法YAML。存笔记是明确写能力，不把整个插件叫只读。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/vault.js:191-205](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/vault.js#L191-L205)\n\n非目录md加入。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n\tasync function walk(dir, depth) {\n\t\tif (depth > maxDepth) return;\n\t\tlet entries;\n\t\ttry { entries = await readdir(dir, { withFileTypes: true }); } catch { return; }\n\t\tfor (const e of entries) {\n\t\t\tif (skipDirs.has(e.name)) continue;\n\t\t\tconst isDot = e.name.startsWith(\".\") && e.name !== \".\";\n\t\t\tif (isDot) {\n\t\t\t\t// 点目录：默认跳过；但白名单目录（.workbuddy）在开启时放行\n\t\t\t\tif (!includeDotDirs || !ALLOW_DOT_DIRS.has(e.name)) continue;\n\t\t\t}\n\t\t\tconst full = join(dir, e.name);\n\t\t\tif (e.isDirectory()) await walk(full, depth + 1);\n\t\t\telse if (MD_EXT.has(e.name.slice(e.name.lastIndexOf(\".\")).toLowerCase())) files.push(full);\n\t\t}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/vault.js:354-380](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/vault.js#L354-L380)\n\n直接读索引与静默失败。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\n\tasync _buildNote(file, vaultPath) {\n\t\tconst raw = await readFile(file, \"utf8\");\n\t\tconst { frontmatter, body } = parseFrontmatter(raw);\n\t\tconst rel = relative(vaultPath, file).split(sep).join(\"/\");\n\t\tconst title = basename(file).replace(/\\.(md|markdown)$/i, \"\");\n\t\tconst mtimeMs = (await stat(file)).mtimeMs;\n\t\tconst note = {\n\t\t\tpath: rel,\n\t\t\ttitle,\n\t\t\tmtimeMs,\n\t\t\taliases: extractAliases(frontmatter),\n\t\t\ttags: extractTags(frontmatter, body),\n\t\t\tchunkIdx: [],\n\t\t};\n\t\tconst chunks = chunkNote({ path: rel, title, body }).map((chunk) => {\n\t\t\t// 标题面包屑重复进正文计权：标题词在检索里更重。\n\t\t\tconst boost = note.title + \"\\n\" + chunk.crumbs + \"\\n\" + chunk.heading;\n\t\t\tconst tokenList = tokenize(boost + \"\\n\" + chunk.text);\n\t\t\tconst tokens = new Map();\n\t\t\tfor (const t of tokenList) tokens.set(t, (tokens.get(t) || 0) + 1);\n\t\t\treturn { ...chunk, tokens, len: tokenList.length };\n\t\t});\n\t\treturn { file, note, chunks };\n\t}\n\n\tasync _safeBuild(file, vaultPath) {\n\t\ttry { return await this._buildNote(file, vaultPath); } catch { return null; /* 单文件失败不拖垮全量 */ }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/vault.js:646-690](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/vault.js#L646-L690)\n\n读源realpath与大小检查。\n\n<details>\n<summary>查看原文（45行）</summary>\n\n```text\n\tasync readNote(vaultPath, relPath) {\n\t\tconst safe = String(relPath ?? \"\").split(\"/\").join(sep);\n\t\tif (safe.includes(\"..\")) throw new Error(\"路径不允许包含 ..\");\n\t\t// 先归一化 vault 根（去掉尾部分隔符、相对路径转绝对），否则 `D:\\vault\\` 这种配置\n\t\t// 会让 `vaultPath + sep` 变成双分隔符，把合法笔记误判成越界。\n\t\tconst rootAbs = resolve(String(vaultPath ?? \"\"));\n\t\tconst full = join(rootAbs, safe);\n\t\t// 快筛 1：字符串层面必须仍在 vault 内（低成本，先挡畸形输入）\n\t\tif (!full.startsWith(rootAbs + sep) && full !== rootAbs) throw new Error(\"路径越出 vault 范围\");\n\t\tconst ext = full.slice(full.lastIndexOf(\".\")).toLowerCase();\n\t\tif (!MD_EXT.has(ext)) throw new Error(`只允许读取 Markdown 笔记（${[...MD_EXT].join(\" / \")}），收到：${relPath}`);\n\n\t\t// 终判 1：vault 根自身必须可解析。用户把仓库位置配错时给可诊断错误，而不是原始 ENOENT。\n\t\tlet realVault;\n\t\ttry {\n\t\t\trealVault = await realpath(rootAbs);\n\t\t} catch (err) {\n\t\t\tconst code = (err && err.code) || \"UNKNOWN\";\n\t\t\tthrow new Error(`vault 路径不可用：${vaultPath}（${code}）——请检查配置的仓库位置是否存在且可读`);\n\t\t}\n\n\t\t// 终判 2：目标必须真实存在。不存在要报「笔记不存在」，绝不能把 ENOENT 吞成成功。\n\t\tlet realTarget;\n\t\ttry {\n\t\t\trealTarget = await realpath(full);\n\t\t} catch (err) {\n\t\t\tif (err && err.code === \"ENOENT\") throw new Error(`笔记不存在：${relPath}`);\n\t\t\tconst code = (err && err.code) || \"UNKNOWN\";\n\t\t\tthrow new Error(`无法解析笔记路径：${relPath}（${code}）`);\n\t\t}\n\n\t\t// 终判 3：归一化后的真实路径仍必须落在 vault 根内——这才是挡 junction / 符号链接逃逸的那道闸。\n\t\tif (realTarget !== realVault && !realTarget.startsWith(realVault + sep)) {\n\t\t\tthrow new Error(`路径越出 vault 范围（真实路径解析后）：${relPath}`);\n\t\t}\n\n\t\tconst info = await stat(realTarget);\n\t\tif (!info.isFile()) throw new Error(`不是普通文件：${relPath}`);\n\t\tif (info.size > this.maxNoteBytes) {\n\t\t\tthrow new Error(`笔记过大：${info.size} 字节，超过上限 ${this.maxNoteBytes} 字节（可调整 VaultIndex 的 maxNoteBytes）`);\n\t\t}\n\t\tconst raw = await readFile(realTarget, \"utf8\");\n\t\treturn { path: relPath, content: raw, mtimeMs: Math.round(info.mtimeMs) };\n\t}\n\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:1409-1442](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/index.js#L1409-L1442)\n\n保存路径、access写与YAML。\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\n\tasync saveNote(payload) {\n\t\tawait this._restorePersisted();\n\t\tconst vaultPath = await this._vaultPath();\n\t\tconst title = String(payload?.title || \"\").trim() || \"知识库回答 \" + new Date().toISOString().slice(0, 16).replace(\"T\", \" \");\n\t\tconst content = String(payload?.content || \"\");\n\t\tif (!content.trim()) throw new Error(\"内容为空，没有可保存的回答\");\n\t\t// 文件名消毒：Windows 非法字符 + 长度上限\n\t\tconst safe = title.replace(/[\\\\/:*?\"<>|]/g, \" \").replace(/\\s+/g, \" \").trim().slice(0, 80) || \"知识库回答\";\n\t\tconst dir = join(vaultPath, \"AI 回答\");\n\t\tconst { mkdir, writeFile, access } = await import(\"node:fs/promises\");\n\t\tawait mkdir(dir, { recursive: true });\n\t\tlet path = join(dir, safe + \".md\");\n\t\t// 同名追加序号\n\t\tfor (let i = 2; i < 200; i++) {\n\t\t\ttry { await access(path); path = join(dir, `${safe} ${i}.md`); } catch { break; }\n\t\t}\n\t\tconst header = [\n\t\t\t\"---\",\n\t\t\t\"tags: [ai-answer]\",\n\t\t\t`created: ${new Date().toISOString()}`,\n\t\t\t`source: dsh-obsidian-board`,\n\t\t];\n\t\t// OPT-2.1 YAML 列表写法：每个文件只出现一次 refs: 键（重复 key 是非法 YAML，\n\t\t// Obsidian 会丢字段）；零引用时不写 refs 键。\n\t\tconst cites = Array.isArray(payload?.citations) ? payload.citations : [];\n\t\tconst refs = cites.filter((c) => c?.notePath).slice(0, 20).map((c) => `  - \"[[${c.notePath.replace(/\\.md$/i, \"\")}|${c.noteTitle || c.notePath}]]\"`);\n\t\tif (refs.length) header.push(\"refs:\", ...refs);\n\t\theader.push(\"---\", \"\");\n\t\tconst body = header.join(\"\\n\") + content.trim() + \"\\n\";\n\t\tawait writeFile(path, body, \"utf8\");\n\t\t// OPT-2.10 保存一条笔记后不再全量重建索引：万级笔记的库 force 一次要卡好几秒，\n\t\t// 而 ensureIndexed 的增量分支按 mtime 就能捡到刚写的这个文件。\n\t\tawait this.index.ensureIndexed(vaultPath);\n\t\treturn { saved: true, path: \"AI 回答/\" + path.split(/[\\\\/]/).pop(), title: path.split(/[\\\\/]/).pop().replace(/\\.md$/i, \"\") };\n```\n\n</details>\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 停止、回退和历史隔离有哪些边界？\n\n**研究主题：**缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\nstream先注册状态，再以abortable包装检索，生成时race iterator.next和abort，attempt递增时清buffer避免回退重复拼接，是清楚的失败恢复设计。但检索/规划promise外层被中止不等内部文件扫描/规划stream被取消；planner options未带signal，20秒withTimeout只限制等待。总deadline在检索之后才启动，不能把配置timeout当整轮上限。runOne finally await iterator.return若适配器卡住，UI停止可见也不等上游资源已释放。\n\n首路无正文时自动枚举其他provider/model继续发送同一上下文，没有逐候选同意；实际接收者/费用可能变化，fallback仅成功后提示且不改用户持久配置。笔记隐私政策应覆盖所有可回退通道。静态_streams为所有实例共用sessionId池最多6个，poll/stop只按ID无vault/主体核对，另实例可驱逐最老流；RPC身份依赖宿主不在此闭合。historyStore按调用者提供vaultId/default，全局内存每项40条但key无限，无版本比较，更新时间不做冲突判定，晚到旧值可覆盖新值；客户端localStorage兜底不等持久同步保证。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:798-817](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/index.js#L798-L817)\n\nplanner无signal。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n\t\t\tconst planMessages = [\n\t\t\t\t{ role: \"system\", content: [{ type: \"text\", text: PLANNER_PROMPT }] },\n\t\t\t\t{ role: \"user\", content: [{ type: \"text\", text: question.slice(0, 500) }] },\n\t\t\t];\n\t\t\tconst options = { messages: planMessages };\n\t\t\tif (route?.provider) options.provider = route.provider;\n\t\t\tif (route?.model) options.model = route.model;\n\t\t\t// OPT-2.4 规划跳比主生成便宜一档即可，别再额外砍到 low（见 PLAN_EFFORT_MAP 注释）。\n\t\t\tconst planEffort = String(this.config.reasoningEffort ?? \"high\").trim();\n\t\t\tif (planEffort) options.reasoningEffort = PLAN_EFFORT_MAP[planEffort] || planEffort;\n\t\t\tlet planText = \"\";\n\t\t\t// 规划跳必须有超时：某些路由/无路由下 llm.stream 永不 settle，会挂死整个请求。\n\t\t\tconst planStream = (async () => {\n\t\t\t\tfor await (const chunk of llm.stream(options)) {\n\t\t\t\t\tconst failure = terminalFailure(chunk);\n\t\t\t\t\tif (failure) break;\n\t\t\t\t\tplanText += visibleDelta(chunk);\n\t\t\t\t}\n\t\t\t})();\n\t\t\tawait withTimeout(planStream, 20000, \"检索规划\");\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:1090-1148](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/index.js#L1090-L1148)\n\n共享流池与驱逐。\n\n<details>\n<summary>查看原文（59行）</summary>\n\n```text\n\tstatic _streams = new Map(); // sessionId -> {text, done, error, controller, provider, model, ts}\n\tstatic _historyStore = new Map(); // OPT-4.2 vaultId -> { items, updatedAt }，纯内存（服务重启即丢，客户端 localStorage 另有本地兜底）\n\n\tasync chatStart(payload) {\n\t\tconst question = String(payload?.question || \"\").trim();\n\t\tconst history = Array.isArray(payload?.history) ? payload.history : [];\n\t\tif (!question) throw new Error(\"问题不能为空\");\n\t\tawait this._restorePersisted();\n\t\tconst llm = this._llm();\n\t\t// 路由解析：消息级覆盖（选择器选定）> 显式配置 > DSH 默认模型 > 空则目录回退。\n\t\t// 「不带 provider」在实测里必定空转，所以这里必须拿到具体 provider 再发起流。\n\t\tconst baseRoute = await this._resolveRoute(llm);\n\t\tconst route = {\n\t\t\tprovider: String(payload?.provider || \"\").trim() || baseRoute.provider,\n\t\t\tmodel: String(payload?.model || \"\").trim() || baseRoute.model,\n\t\t};\n\t\t// 推理档位：消息级选择（选择器选定，可传 \"\" 表示跟随上游默认）> resolveEffort 规则。\n\t\tconst effortExplicit = payload?.effort !== undefined ? String(payload.effort || \"\").trim() : undefined;\n\t\tconst effortRow = readCatalogModels().find((m) => m.id === route.model);\n\t\tconst effort = effortExplicit !== undefined\n\t\t\t? effortExplicit\n\t\t\t: resolveEffort({ configDefault: this.config.reasoningEffort, row: effortRow });\n\t\t// OPT-2.12 单次生成超时：走配置（钳制逻辑见 _timeoutMs），文案按实际秒数生成。\n\t\tconst timeoutMs = this._timeoutMs();\n\t\tconst timeoutSec = Math.round(timeoutMs / 1000);\n\n\t\t// 会话状态先建、先注册：检索/规划也是这几秒的耗时（复杂问题还会多打一次\n\t\t// planner 模型调用），历史版本把它们放在 sessionId 之前，这段窗口里客户端\n\t\t// 还没有 sessionId 可停——点停止完全空转，气泡卡在「检索知识库并生成回答…」。\n\t\tconst sessionId = \"s\" + Date.now().toString(36) + Math.random().toString(36).slice(2, 7);\n\t\t// OPT-2.8 阶段可见：检索+规划要好几秒（复杂问题还多打一次 planner 调用），\n\t\t// 这段窗口客户端轮询只看到空白。phase 让面板能显示「正在检索 / 正在生成」，\n\t\t// hitCount 在检索完成后回填——只在内存里，不影响任何既有字段。\n\t\t// ⚠️ test/stop-cycle.test.mjs 按字符下标断言：本行 `_streams.set` 必须出现在\n\t\t// 检索那行 abortable 调用之前（会话状态先注册才能被 chatStop 找到）。\n\t\t// 两者可以一起后移，但相对顺序不能反。\n\t\tconst state = { text: \"\", think: \"\", done: false, error: \"\", controller: new AbortController(), provider: route.provider, model: route.model, effort, usage: null, ts: Date.now(), attempt: 1, stopping: false, phase: \"retrieval\", hitCount: 0, fallback: null };\n\t\tObsidianBoardGateway._streams.set(sessionId, state);\n\t\t// 只保留最近 6 个会话，防泄漏\n\t\tfor (const [k, v] of ObsidianBoardGateway._streams) {\n\t\t\t// OPT-2.7 两级清理：先删全部过期会话（done 且超 60s），再按 ts 驱逐最老会话直到 size ≤ 6。\n\t\t// 未 done 的会话先 abort 再删，保证其 awaiting 侧能立刻收到 AbortError 而不是永久悬挂。\n\t\tif (ObsidianBoardGateway._streams.size > 6) {\n\t\t\tfor (const [k, v] of ObsidianBoardGateway._streams) {\n\t\t\t\tif (v.done && Date.now() - v.ts > 60000) ObsidianBoardGateway._streams.delete(k);\n\t\t\t}\n\t\t}\n\t\twhile (ObsidianBoardGateway._streams.size > 6) {\n\t\t\tlet oldestKey = null;\n\t\t\tlet oldestTs = Infinity;\n\t\t\tfor (const [k, v] of ObsidianBoardGateway._streams) {\n\t\t\t\tif (v.ts < oldestTs) {\n\t\t\t\t\toldestTs = v.ts;\n\t\t\t\t\toldestKey = k;\n\t\t\t\t}\n\t\t\t}\n\t\t\tconst oldest = ObsidianBoardGateway._streams.get(oldestKey);\n\t\t\tif (oldest && oldest.controller && !oldest.done) oldest.controller.abort();\n\t\t\tObsidianBoardGateway._streams.delete(oldestKey);\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:1183-1229](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/index.js#L1183-L1229)\n\ndeadline/abort/return。\n\n<details>\n<summary>查看原文（47行）</summary>\n\n```text\n\t\t(async () => {\n\t\t\tlet timedOut = false;\n\t\t\tconst deadline = setTimeout(() => {\n\t\t\t\ttimedOut = true;\n\t\t\t\ttry { state.controller.abort(); } catch { /* ignore */ }\n\t\t\t}, timeoutMs);\n\t\t\tconst runOne = async (options) => {\n\t\t\t\tconst signal = state.controller.signal;\n\t\t\t\tconst iterator = llm.stream({ ...options, signal })[Symbol.asyncIterator]();\n\t\t\t\t// abort 与「等下一个 chunk」赛跑：模型静默期（首字等待、上游缓冲、\n\t\t\t\t// 适配器卡住）根本没有 chunk 到达，只在循环顶部检查 aborted 永远读不到\n\t\t\t\t// 停止指令——实测表现就是「停止按钮只有思考增量在流的时候才生效」。\n\t\t\t\tlet abortResolve = () => {};\n\t\t\t\tconst abortPromise = new Promise((resolve) => {\n\t\t\t\t\tabortResolve = () => resolve({ __abort: true });\n\t\t\t\t\tif (signal.aborted) abortResolve();\n\t\t\t\t\telse signal.addEventListener(\"abort\", abortResolve, { once: true });\n\t\t\t\t});\n\t\t\t\ttry {\n\t\t\t\t\twhile (true) {\n\t\t\t\t\t\tif (signal.aborted) return true;\n\t\t\t\t\t\tconst pending = iterator.next();\n\t\t\t\t\t\t// 竞速落败方的 rejection 不该成为 unhandled rejection（原始 promise\n\t\t\t\t\t\t// 仍会把错误交给 race 抛出，这里只是挂一个吞掉的派生分支）\n\t\t\t\t\t\tpending.catch(() => {});\n\t\t\t\t\t\tconst next = await Promise.race([pending, abortPromise]);\n\t\t\t\t\t\tif (next && next.__abort) return true;\n\t\t\t\t\t\tif (next.done) break;\n\t\t\t\t\t\tconst chunk = next.value;\n\t\t\t\t\t\tconst failure = terminalFailure(chunk);\n\t\t\t\t\t\tif (failure) { state.error = \"模型调用失败：\" + failure; return false; }\n\t\t\t\t\t\t// usage chunk：token 计量（协议：{type:'usage', usage:{inputTokens,...}}，\n\t\t\t\t\t\t// 先于 finish；usageOf 统一 camelCase/snake_case/旧形状）\n\t\t\t\t\t\tconst usage = usageOf(chunk);\n\t\t\t\t\t\tif (usage) state.usage = usage;\n\t\t\t\t\t\t// 思考增量：单独通道攒给面板展示（onlyReasoning 模型的思考期可达分钟级，\n\t\t\t\t\t\t// 不展示就是「只转圈」；正文与思考互不混入）\n\t\t\t\t\t\tconst think = thinkingDelta(chunk);\n\t\t\t\t\t\tif (think) state.think += think;\n\t\t\t\t\t\tconst delta = visibleDelta(chunk);\n\t\t\t\t\t\tif (delta) state.text += delta;\n\t\t\t\t\t}\n\t\t\t\t\treturn true;\n\t\t\t\t} finally {\n\t\t\t\t\tsignal.removeEventListener(\"abort\", abortResolve);\n\t\t\t\t\t// 提前退出（停止/失败）时释放上游迭代器，让适配器尽快收尾\n\t\t\t\t\ttry { await iterator.return?.(); } catch { /* ignore */ }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:1284-1305](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/index.js#L1284-L1305)\n\n自动回退上下文与提示。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n\t\t\t\t\tfor (const pair of pairs) {\n\t\t\t\t\t\tif (state.controller.signal.aborted) break;\n\t\t\t\t\t\ttry {\n\t\t\t\t\t\t\t// 新一次尝试：清空宿主缓冲，并且**递增 attempt**。\n\t\t\t\t\t\t\t// 关键：客户端按「绝对偏移 received」取增量，宿主一旦重置 text\n\t\t\t\t\t\t\t// 而偏移不重置，切片就错位——轻则新回答永远不出现（length 没超过\n\t\t\t\t\t\t\t// 旧偏移），重则把上一轮的残文和这一轮的正文拼成重复/错乱的输出\n\t\t\t\t\t\t\t// （这正是「总是输出异常」的一类来源）。客户端看到 attempt 变化\n\t\t\t\t\t\t\t// 会同步重置偏移并清掉气泡里上一轮的残文。\n\t\t\t\t\t\t\tstate.text = \"\";\n\t\t\t\t\t\t\tstate.think = \"\";\n\t\t\t\t\t\t\tstate.error = \"\"; // 清残留：上一对的失败不能吞掉这一对的结果\n\t\t\t\t\t\t\tstate.usage = null; // 用量也是上一轮的，别混算\n\t\t\t\t\t\t\tstate.attempt += 1;\n\t\t\t\t\t\t\tok = await runOne(withEffort({ messages, provider: pair.provider, ...(pair.model ? { model: pair.model } : {}) }));\n\t\t\t\t\t\t\tattempts.push(pair.provider + \"/\" + (pair.model || \"?\") + (state.error ? \"：\" + state.error : (state.text.trim() ? \"有输出\" : \"零文本\")));\n\t\t\t\t\t\t\tif (state.text.trim()) {\n\t\t\t\t\t\t\t\tstate.provider = pair.provider;\n\t\t\t\t\t\t\t\tstate.model = pair.model || state.model;\n\t\t\t\t\t\t\t\t// OPT-2.2 回退成功不再写 config / _saveState：持久层保持用户显式配置，\n\t\t\t\t\t\t\t\t// 只在会话内存里记 fallback，客户端经 chatPoll.fallback 一次性提示。\n\t\t\t\t\t\t\t\tstate.fallback = { provider: pair.provider, model: pair.model || state.model };\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/index.js:1378-1405](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/index.js#L1378-L1405)\n\n停止与历史存储。\n\n<details>\n<summary>查看原文（28行）</summary>\n\n```text\n\tasync chatStop(payload) {\n\t\tconst state = ObsidianBoardGateway._streams.get(String(payload?.sessionId || \"\"));\n\t\tif (!state) return { stopped: false };\n\t\t// 幂等：重复点停止 / 已自然结束都不会改变终态\n\t\ttry { state.controller.abort(); } catch { /* ignore */ }\n\t\t// 立刻标记停止：后台段可能正卡在没有 chunk 的 await 上（上游静默期），\n\t\t// 轮询不该等它自己收敛——先把中性终态写给客户端（不冒充错误，也没有\n\t\t// 半截正文时不留空气泡）。\n\t\tstate.stopping = true;\n\t\tif (!state.text.trim() && !state.error) state.error = \"已停止\";\n\t\treturn { stopped: true };\n\t}\n\n\t// ── RPC：对话历史云同步（OPT-4.2 宿主半；typert descriptor 由 B7 批次生成，当前 direct 调用可达）──\n\tasync historyGet(payload) {\n\t\tconst key = String(payload?.vaultId || \"\").trim() || \"default\";\n\t\tconst entry = ObsidianBoardGateway._historyStore.get(key);\n\t\treturn entry ? { items: entry.items, updatedAt: entry.updatedAt } : { items: [], updatedAt: 0 };\n\t}\n\n\tasync historySet(payload) {\n\t\tconst key = String(payload?.vaultId || \"\").trim() || \"default\";\n\t\tconst raw = Array.isArray(payload?.items) ? payload.items : [];\n\t\t// 与客户端 sanitizeHistory(-40) 对齐：只保留最近 40 条\n\t\tconst items = raw.slice(-40);\n\t\tconst updatedAt = Number(payload?.updatedAt) || Date.now();\n\t\tObsidianBoardGateway._historyStore.set(key, { items, updatedAt });\n\t\treturn { ok: true };\n```\n\n</details>\n\n#### 缺口\n\n- 宿主typert对这些direct RPC的身份/客户端隔离与可用provider数据策略\n  **影响：**插件局部池键和vaultId不能单独提供多用户权限保证\n  **进一步探讨：**对照部署宿主admission与远端模型授权范围，明确允许回退的通道\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 工程证据与三阶段成本如何评价？\n\n**研究主题：**效果与总成本、工程质量与复用\n\n#### 完整回答\n\nvault纯函数/索引、gateway与client分离，统一typert描述符生成可减少接口漂移，专门处理attempt/思考增量/旧轮finally，工程关注失败路径。测试目录广泛，但stop-cycle多是includes/正则断言源码存在，不执行真实阻塞iterator与取消生命周期；源码形状通过不等静默期真实资源及时停止。本次只读关键测试，不运行。\n\n首次选可信vault、确认哪些隐藏/收集目录会索引以及实际模型接收者；首次全量读切片占CPU/内存，单文件索引未套读源体积上限。持续每轮仍扫文件元数据，复杂题多一次规划、回退可增加多次收费，历史按条/字符截断而非统一token预算；thinking全文和最多六流也占内存。失败恢复包括重建索引、保留partial回复/原note、确认保存是否发生与历史是否仅内存；README召回可靠和停止保证没有同库基线量化，不硬报节省时间/准确率。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/vault.js:313-349](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/vault.js#L313-L349)\n\n全量/增量工作。\n\n<details>\n<summary>查看原文（37行）</summary>\n\n```text\n\tasync _full(vaultPath) {\n\t\tthis.vaultPath = vaultPath;\n\t\tthis.chunks = [];\n\t\tthis.byNote = new Map();\n\t\tthis.df = new Map();\n\t\tconst files = await this._scan(vaultPath);\n\t\t// OPT-1.7：有界并发读文件；提交严格按 files 顺序，chunk 顺序与串行实现逐字节一致。\n\t\tconst built = await mapPool(files, this.readConcurrency, (file) => this._safeBuild(file, vaultPath));\n\t\tfor (let i = 0; i < files.length; i++) if (built[i]) this._commitNote(built[i]);\n\t\tthis._recomputeStats();\n\t\tthis.builtAt = Date.now();\n\t}\n\n\tasync _incremental(vaultPath) {\n\t\tconst files = await this._scan(vaultPath);\n\t\tconst seen = new Set();\n\t\tconst mtimes = await mapPool(files, this.readConcurrency, async (file) => {\n\t\t\ttry { return (await stat(file)).mtimeMs; } catch { return null; }\n\t\t});\n\t\tconst dirty = [];\n\t\tfor (let i = 0; i < files.length; i++) {\n\t\t\tseen.add(files[i]);\n\t\t\tif (mtimes[i] === null) continue;\n\t\t\tconst rec = this.byNote.get(files[i]);\n\t\t\tif (!rec || rec.mtimeMs !== mtimes[i]) dirty.push(files[i]);\n\t\t}\n\t\tconst built = await mapPool(dirty, this.readConcurrency, (file) => this._safeBuild(file, vaultPath));\n\t\tfor (let i = 0; i < dirty.length; i++) {\n\t\t\t// 先标记旧 chunk 为孤儿再提交新 chunk：与基线的「drop+index 逐文件交替」等价\n\t\t\t// （孤儿只在 _recomputeStats 里压实，追加顺序不受影响）。\n\t\t\tthis._dropNote(dirty[i]);\n\t\t\tif (built[i]) this._commitNote(built[i]);\n\t\t}\n\t\tlet dirtyAny = dirty.length > 0;\n\t\tfor (const path of [...this.byNote.keys()]) {\n\t\t\tif (!seen.has(path)) { this._dropNote(path); dirtyAny = true; }\n\t\t}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:170-190](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/index.js#L170-L190)\n\n历史字符预算。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n\t// 面板会话历史（截断到最近 N 条，防止上下文膨胀）\n\tconst limit = Math.max(2, Math.min(60, Number(historyLimit) || 24));\n\tconst tail = history.slice(-limit);\n\t// OPT-2.9 历史预算：多轮追问（「再详细说说第 2 点」）时，指代对象常落在前一轮长回答的后半段，\n\t// 一刀切 4000 字会把它腰斩成「上一轮没说过」。给最近 2 条 assistant 消息 8000 字，更早的仍 4000 字。\n\tconst RECENT_BUDGET = 8000;\n\tconst OLD_BUDGET = 4000;\n\tconst assistantCount = tail.filter((m) => m && m.role === \"assistant\" && typeof m.content === \"string\" && m.content.trim()).length;\n\tlet assistantSeen = 0;\n\tfor (const m of tail) {\n\t\tif (!m || typeof m.content !== \"string\" || !m.content.trim()) continue;\n\t\tconst isAssistant = m.role === \"assistant\";\n\t\tlet budget = OLD_BUDGET;\n\t\tif (isAssistant) {\n\t\t\tassistantSeen += 1;\n\t\t\tif (assistantCount - assistantSeen < 2) budget = RECENT_BUDGET;\n\t\t}\n\t\tmessages.push({\n\t\t\tid: randomUUID(),\n\t\t\trole: isAssistant ? \"assistant\" : \"user\",\n\t\t\tcontent: [{ type: \"text\", text: m.content.slice(0, budget) }],\n```\n\n</details>\n\n**依据 3 · 源码核查**：[test/stop-cycle.test.mjs:17-38](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/test/stop-cycle.test.mjs#L17-L38)\n\n源码字符串测试。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\nconst host = readFileSync(new URL(\"../lib/index.js\", import.meta.url), \"utf8\");\nconst client = readFileSync(new URL(\"../lib/client.js\", import.meta.url), \"utf8\");\n\n// ── 1. 宿主：abort 与等 chunk 竞速 ──────────────────────────────────\nt(\"runOne 用 asyncIterator 手动驱动（可与 abort 竞速）\", host.includes(\"llm.stream({ ...options, signal })[Symbol.asyncIterator]()\"));\nt(\"abort 与 iterator.next() 走 Promise.race\", /Promise\\.race\\(\\[pending, abortPromise\\]\\)/.test(host));\nt(\"race 落败分支挂 catch（不留 unhandled rejection）\", /pending\\.catch\\(\\(\\) => \\{\\}\\)/.test(host));\nt(\"竞速胜出立即返回（静默期也能停）\", /if \\(next && next\\.__abort\\) return true;/.test(host));\nt(\"提前退出释放上游迭代器\", /await iterator\\.return\\?\\.\\(\\)/.test(host));\nt(\"abort 监听器在 finally 里摘除（不泄漏）\", /signal\\.removeEventListener\\(\"abort\", abortResolve\\)/.test(host));\n\n// ── 2. 宿主：检索/规划阶段可中止 ────────────────────────────────────\nt(\"会话状态在检索之前创建并注册\", host.indexOf(\"ObsidianBoardGateway._streams.set(sessionId, state)\") < host.indexOf(\"await abortable(this._multiHits(\"));\nt(\"检索用 abortable 包装\", /const retrieval = await abortable\\(this\\._multiHits\\(/.test(host));\nt(\"检索被中止时直接落定终态并返回空 citations\", /if \\(retrieval && retrieval\\.__aborted\\) \\{[\\s\\S]{0,200}state\\.done = true/.test(host));\nt(\"abortable 同时监听 abort 与 resolve/reject 并摘除监听\", /signal\\.addEventListener\\(\"abort\", onAbort, \\{ once: true \\}\\)/.test(host) && /signal\\.removeEventListener\\(\"abort\", onAbort\\)/.test(host));\n\n// ── 3. 宿主：chatStop 立即可见 + 幂等 ───────────────────────────────\nt(\"chatStop 立刻给空正文会话写入中性终态\", /state\\.stopping = true;/.test(host) && /if \\(!state\\.text\\.trim\\(\\) && !state\\.error\\) state\\.error = \"已停止\";/.test(host));\nt(\"chatStop 对 abort 抛错免疫（幂等）\", /try \\{ state\\.controller\\.abort\\(\\); \\} catch/.test(host));\nt(\"停止引发的迭代器异常收敛为中性终态\", /state\\.controller\\.signal\\.aborted\\s*\\?\\s*\"已停止\"\\s*:\\s*\"模型调用失败：\"/.test(host));\nt(\"已有正文的停止保留正文（不写 error）\", /if \\(state\\.controller\\.signal\\.aborted && state\\.text\\.trim\\(\\)\\) state\\.error = \"\";/.test(host));\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/typert.js:1-3](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/typert.js#L1-L3)\n\n统一契约源。\n\n```text\n/* Generated for dsh-obsidian-board — do not edit. */\n// OPT-6.1：本文件的 TYPERT 导出是全链契约的单一来源；客户端 descriptor 区\n// 由 scripts/gen-client-contract.mjs 从它生成（lib/client.js 的 <gen:contract> 区）。\n```\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 如何采用及继续探讨？\n\n**研究主题：**新假设与验证、采用判断\n\n#### 完整回答\n\n先观察，关键原因是索引/读源物理边界不一致、自动跨provider回退带数据政策变化以及保存非独占。可信个人非敏感库、受限模型通道、备份后可做同库对照；先排除外链/超大md与AI回答目录链接，保存后核文件和YAML，不用于唯一重要资料或严格多用户隔离。没有召回不等笔记不存在，答案需对着原文核对。\n\n继续可研究扫描/读源统一物理句柄与大小限制、单飞等待正确索引版本、受预算且传signal的规划与候选provider白名单，保存用独占创建、历史加vault主体和版本CAS。基线为当前词法枚举+直接读、外层abortrace和access写，反例含外链md、大文件、双vault并发索引、规划阻塞/return不收敛、双同名保存、旧历史晚到和不准离机笔记触发回退。比较越界内容、召回对账、真实停止耗时/费用与恢复工时，方向尚未验证。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/vault.js:289-301](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/vault.js#L289-L301)\n\n扫描已进行时仅queued返回。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n\tasync ensureIndexed(vaultPath, { force = false } = {}) {\n\t\tif (this.scanning) return { queued: true };\n\t\tif (!force && this.builtAt && this.vaultPath === vaultPath) {\n\t\t\t// 轻量增量：只对 mtime 变化的笔记重建 chunk。\n\t\t\treturn this._incremental(vaultPath);\n\t\t}\n\t\tthis.scanning = true;\n\t\ttry {\n\t\t\tif (force || this.vaultPath !== vaultPath) await this._full(vaultPath);\n\t\t\telse await this._incremental(vaultPath);\n\t\t} finally {\n\t\t\tthis.scanning = false;\n\t\t}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/vault.js:354-380](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/vault.js#L354-L380)\n\n索引基线。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\n\tasync _buildNote(file, vaultPath) {\n\t\tconst raw = await readFile(file, \"utf8\");\n\t\tconst { frontmatter, body } = parseFrontmatter(raw);\n\t\tconst rel = relative(vaultPath, file).split(sep).join(\"/\");\n\t\tconst title = basename(file).replace(/\\.(md|markdown)$/i, \"\");\n\t\tconst mtimeMs = (await stat(file)).mtimeMs;\n\t\tconst note = {\n\t\t\tpath: rel,\n\t\t\ttitle,\n\t\t\tmtimeMs,\n\t\t\taliases: extractAliases(frontmatter),\n\t\t\ttags: extractTags(frontmatter, body),\n\t\t\tchunkIdx: [],\n\t\t};\n\t\tconst chunks = chunkNote({ path: rel, title, body }).map((chunk) => {\n\t\t\t// 标题面包屑重复进正文计权：标题词在检索里更重。\n\t\t\tconst boost = note.title + \"\\n\" + chunk.crumbs + \"\\n\" + chunk.heading;\n\t\t\tconst tokenList = tokenize(boost + \"\\n\" + chunk.text);\n\t\t\tconst tokens = new Map();\n\t\t\tfor (const t of tokenList) tokens.set(t, (tokens.get(t) || 0) + 1);\n\t\t\treturn { ...chunk, tokens, len: tokenList.length };\n\t\t});\n\t\treturn { file, note, chunks };\n\t}\n\n\tasync _safeBuild(file, vaultPath) {\n\t\ttry { return await this._buildNote(file, vaultPath); } catch { return null; /* 单文件失败不拖垮全量 */ }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:798-817](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/index.js#L798-L817)\n\n规划基线。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n\t\t\tconst planMessages = [\n\t\t\t\t{ role: \"system\", content: [{ type: \"text\", text: PLANNER_PROMPT }] },\n\t\t\t\t{ role: \"user\", content: [{ type: \"text\", text: question.slice(0, 500) }] },\n\t\t\t];\n\t\t\tconst options = { messages: planMessages };\n\t\t\tif (route?.provider) options.provider = route.provider;\n\t\t\tif (route?.model) options.model = route.model;\n\t\t\t// OPT-2.4 规划跳比主生成便宜一档即可，别再额外砍到 low（见 PLAN_EFFORT_MAP 注释）。\n\t\t\tconst planEffort = String(this.config.reasoningEffort ?? \"high\").trim();\n\t\t\tif (planEffort) options.reasoningEffort = PLAN_EFFORT_MAP[planEffort] || planEffort;\n\t\t\tlet planText = \"\";\n\t\t\t// 规划跳必须有超时：某些路由/无路由下 llm.stream 永不 settle，会挂死整个请求。\n\t\t\tconst planStream = (async () => {\n\t\t\t\tfor await (const chunk of llm.stream(options)) {\n\t\t\t\t\tconst failure = terminalFailure(chunk);\n\t\t\t\t\tif (failure) break;\n\t\t\t\t\tplanText += visibleDelta(chunk);\n\t\t\t\t}\n\t\t\t})();\n\t\t\tawait withTimeout(planStream, 20000, \"检索规划\");\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:1409-1442](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/index.js#L1409-L1442)\n\n保存基线。\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\n\tasync saveNote(payload) {\n\t\tawait this._restorePersisted();\n\t\tconst vaultPath = await this._vaultPath();\n\t\tconst title = String(payload?.title || \"\").trim() || \"知识库回答 \" + new Date().toISOString().slice(0, 16).replace(\"T\", \" \");\n\t\tconst content = String(payload?.content || \"\");\n\t\tif (!content.trim()) throw new Error(\"内容为空，没有可保存的回答\");\n\t\t// 文件名消毒：Windows 非法字符 + 长度上限\n\t\tconst safe = title.replace(/[\\\\/:*?\"<>|]/g, \" \").replace(/\\s+/g, \" \").trim().slice(0, 80) || \"知识库回答\";\n\t\tconst dir = join(vaultPath, \"AI 回答\");\n\t\tconst { mkdir, writeFile, access } = await import(\"node:fs/promises\");\n\t\tawait mkdir(dir, { recursive: true });\n\t\tlet path = join(dir, safe + \".md\");\n\t\t// 同名追加序号\n\t\tfor (let i = 2; i < 200; i++) {\n\t\t\ttry { await access(path); path = join(dir, `${safe} ${i}.md`); } catch { break; }\n\t\t}\n\t\tconst header = [\n\t\t\t\"---\",\n\t\t\t\"tags: [ai-answer]\",\n\t\t\t`created: ${new Date().toISOString()}`,\n\t\t\t`source: dsh-obsidian-board`,\n\t\t];\n\t\t// OPT-2.1 YAML 列表写法：每个文件只出现一次 refs: 键（重复 key 是非法 YAML，\n\t\t// Obsidian 会丢字段）；零引用时不写 refs 键。\n\t\tconst cites = Array.isArray(payload?.citations) ? payload.citations : [];\n\t\tconst refs = cites.filter((c) => c?.notePath).slice(0, 20).map((c) => `  - \"[[${c.notePath.replace(/\\.md$/i, \"\")}|${c.noteTitle || c.notePath}]]\"`);\n\t\tif (refs.length) header.push(\"refs:\", ...refs);\n\t\theader.push(\"---\", \"\");\n\t\tconst body = header.join(\"\\n\") + content.trim() + \"\\n\";\n\t\tawait writeFile(path, body, \"utf8\");\n\t\t// OPT-2.10 保存一条笔记后不再全量重建索引：万级笔记的库 force 一次要卡好几秒，\n\t\t// 而 ensureIndexed 的增量分支按 mtime 就能捡到刚写的这个文件。\n\t\tawait this.index.ensureIndexed(vaultPath);\n\t\treturn { saved: true, path: \"AI 回答/\" + path.split(/[\\\\/]/).pop(), title: path.split(/[\\\\/]/).pop().replace(/\\.md$/i, \"\") };\n```\n\n</details>\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：8322b56fde9ffc9b320835e35b32ddc11a771052ad9bd1dfb98ec28523f99c5c。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 23 | 1699 | — | — | 24131 |\n| .mjs | source | 25 | 1519 | 1196 | 151 | — |\n| .js | source | 4 | 4593 | 3590 | 880 | — |\n| .mjs | test | 22 | 1782 | 1355 | 233 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 本地BM25 | 搜个人笔记 | 索引仍可读链接 |\n| 模型问答 | 生成/规划 | 远程与回退政策 |\n| 点源/回存 | 查证与积累 | 读源不同限额/保存竞争 |\n\n## 工程亮点\n\nattempt隔离、思考分流与统一契约有价值，源码正则测试不能代替阻塞资源行为。详见[Q05](#research-q05)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、lib/vault.js、lib/typert.js、lib/client.js、test/stop-cycle.test.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定VaultIndex扫描/构建/读源、gateway检索规划/上下文/流式/历史/保存、typert契约和停止源码测试；不穷尽客户端渲染。\n- 下一步：进一步从外链/大文件、双vault、阻塞planner/return和双同名保存探讨统一边界。\n",
         "metadata": {
             "repository": "2026heshao/dsh-obsidian-board",
             "repository_id": 1415116420,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T06:19:18.896Z",
+            "window_start": "2026-09-22T06:19:18.896Z",
             "stars": 3,
-            "pushed_at": "2026-10-20T01:28:47Z",
+            "pushed_at": "2026-10-21T14:23:29Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A2026heshao%2Fdsh-obsidian-board%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640E:1DEEF7:14A75F:223C84:6AD849CF and timestamp 2026-10-21 05:12:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A2026heshao%2Fdsh-obsidian-board%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6412:15F2FE:14870C:220CF4:6AD849CF and timestamp 2026-10-21 05:12:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A2026heshao%2Fdsh-obsidian-board%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641D:F50F:14ABF8:22377F:6AD849CF and timestamp 2026-10-21 05:12:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A2026heshao%2Fdsh-obsidian-board%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6415:136889:156627:22F6F6:6AD849CF and timestamp 2026-10-21 05:12:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A2026heshao%2Fdsh-obsidian-board%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641A:AF775:1436E0:21BC1F:6AD849CF and timestamp 2026-10-21 05:12:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "dsh-obsidian-board",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T06:19:26.737Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": 133,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-obsidian-board",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-obsidian-board",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-10-13T02:37:20.877Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T06:19:26.737Z",
                     "source_url": "https://registry.npmjs.org/dsh-obsidian-board",
                     "error": null,
-                    "latest_version": "0.2.4",
-                    "latest_published_at": "2026-10-20T01:30:32.365Z",
+                    "latest_version": "0.2.5",
+                    "latest_published_at": "2026-10-21T14:28:35.340Z",
                     "latest_error": null
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "072612e0245565cee12cbfd07a421f2029d35c4e",
-                "current_revision": "072612e0245565cee12cbfd07a421f2029d35c4e",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {
@@ -390,14 +469,14 @@
             "repository": "2026heshao/dsh-obsidian-board",
             "path": "",
             "revision": "072612e0245565cee12cbfd07a421f2029d35c4e",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "daca67a2d01f7b6302eaff6f4942884baa27772bfaeff3060c63421d7403cf6a",
                 "code": "072612e0245565cee12cbfd07a421f2029d35c4e",
                 "maintenance": "3dce70df9e35e48d94dd35a5457133415299bdb52f28a41a22e6471d9204750e"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

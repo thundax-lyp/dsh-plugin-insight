@@ -1,0 +1,4 @@
+{
+    "content": "{\n    \"captured_at\": \"2026-10-22T07:06:10.755Z\",\n    \"method\": \"web tool extracted page passages; not original HTML\",\n    \"pages\": [\n        {\n            \"url\": \"https://www.postgresql.org/docs/18/sql-selectinto.html\",\n            \"text\": \"SELECT INTO creates a new table and fills it with data computed by a query.\"\n        },\n        {\n            \"url\": \"https://www.postgresql.org/docs/18/sql-explain.html\",\n            \"summary\": \"ANALYZE causes the supplied statement to execute; statement side effects can occur.\"\n        }\n    ]\n}\n",
+    "sha256": "8ea86b323201884c1b30fe784add3bd184a8cb1a5499a9bc41daa98f61b704d9"
+}

@@ -24,36 +24,70 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-04-github-1335332435-root-directory-0",
+                    "id": "2026-10-22-02-github-1335332435-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T04:19:23.910Z",
+                    "retrieved_at": "2026-10-22T08:59:05.954Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-04-github-1335332435-root-author",
+                    "id": "2026-10-22-02-github-1335332435-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/AI-Galaxy-GPU/dsh-sound/blob/aa7be415ee34570bd1c834da9d8a500e85401583/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AI-Galaxy-GPU/dsh-sound",
+                            "commit": "aa7be415ee34570bd1c834da9d8a500e85401583",
+                            "path": "README.md",
+                            "content_sha256": "06d48729866ddbaa9b4566878a767e5c6b4c28f94d9bd6fb1b71226f8e6ab1eb"
+                        }
+                    ],
                     "revision": "aa7be415ee34570bd1c834da9d8a500e85401583",
-                    "captured_at": "2026-10-21T04:19:23.910Z",
-                    "summary": "在DSH网页中按任务完成、审批、提问、阻塞和失败事件播放可定制提示音。",
-                    "artifact": "data/runs/2026-10-21-04/snapshots/ai-galaxy-gpu--dsh-sound/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T08:59:05.954Z",
+                    "summary": "按完成、审批、提问、计划评审、受阻和失败播放独立声音，并区分主Agent/子Agent来源。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/ai-galaxy-gpu--dsh-sound/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-04-github-1335332435-root-source",
+                    "id": "2026-10-22-02-github-1335332435-root-source",
                     "kind": "source_inspection",
                     "url": "https://github.com/AI-Galaxy-GPU/dsh-sound/blob/aa7be415ee34570bd1c834da9d8a500e85401583/lib/index.js",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AI-Galaxy-GPU/dsh-sound",
+                            "commit": "aa7be415ee34570bd1c834da9d8a500e85401583",
+                            "path": "lib/index.js",
+                            "content_sha256": "7c63ac17f9c65865b07b1bee94d19f33280dde34b29d1e807f8939a5fb442ea8"
+                        },
+                        {
+                            "repository_url": "https://github.com/AI-Galaxy-GPU/dsh-sound",
+                            "commit": "aa7be415ee34570bd1c834da9d8a500e85401583",
+                            "path": "lib/client.js",
+                            "content_sha256": "74216b82ff2262b2469b2c5bde4de4ad960b5477f7646811410d7ecc43fe0a8a"
+                        },
+                        {
+                            "repository_url": "https://github.com/AI-Galaxy-GPU/dsh-sound",
+                            "commit": "aa7be415ee34570bd1c834da9d8a500e85401583",
+                            "path": "README.md",
+                            "content_sha256": "06d48729866ddbaa9b4566878a767e5c6b4c28f94d9bd6fb1b71226f8e6ab1eb"
+                        },
+                        {
+                            "repository_url": "https://github.com/AI-Galaxy-GPU/dsh-sound",
+                            "commit": "aa7be415ee34570bd1c834da9d8a500e85401583",
+                            "path": "package.json",
+                            "content_sha256": "1288e4eba83df0cec9ec24bceee2c0033b00f0ebb7a3f10bbf10cc0cafa7ac7d"
+                        }
+                    ],
                     "revision": "aa7be415ee34570bd1c834da9d8a500e85401583",
-                    "captured_at": "2026-10-21T04:19:23.910Z",
-                    "summary": "核查 lib/index.js、lib/client.js；client.js监听mux/host事件并回退快照差分，按rpcId/sourceKey去重，BroadcastChannel以40ms随机nonce协商单标签播放；音频本地IndexedDB、配置localStorage。",
-                    "artifact": "data/runs/2026-10-21-04/snapshots/ai-galaxy-gpu--dsh-sound/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T08:59:05.954Z",
+                    "summary": "核查 lib/index.js、lib/client.js、README.md、package.json；Client mux/host事件分类和snapshot降级，本地配置、source去抖/跨tab意图，WebAudio/本地音频。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/ai-galaxy-gpu--dsh-sound/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "抽读lib/index.js、lib/client.js；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+                        "固定Host schema、Client配置/音频/去重/事件与快照/挂卸载；未全面审全部设置导入导出UI或证明真实浏览器输出。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +98,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "用户离开当前聊天视线时需要知道何时介入，合格通知应少漏报/重复且区分子Agent，声音响不代表业务成功。",
+                    "text": "离开聊天视线时辅助感知进展/待办，仍以原UI状态为准。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1335332435-root-source"
+                        "2026-10-22-02-github-1335332435-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +109,16 @@
                             "fingerprint": "aa7be415ee34570bd1c834da9d8a500e85401583"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:19:23.910Z",
+                    "reviewed_at": "2026-10-22T08:59:05.954Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "client.js监听mux/host事件并回退快照差分，按rpcId/sourceKey去重，BroadcastChannel以40ms随机nonce协商单标签播放；音频本地IndexedDB、配置localStorage。",
+                    "text": "Client mux/host事件分类和snapshot降级，本地配置、source去抖/跨tab意图，WebAudio/本地音频。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1335332435-root-source"
+                        "2026-10-22-02-github-1335332435-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +127,16 @@
                             "fingerprint": "aa7be415ee34570bd1c834da9d8a500e85401583"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:19:23.910Z",
+                    "reviewed_at": "2026-10-22T08:59:05.954Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "抽读lib/index.js、lib/client.js；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+                    "text": "固定Host schema、Client配置/音频/去重/事件与快照/挂卸载；未全面审全部设置导入导出UI或证明真实浏览器输出。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1335332435-root-source"
+                        "2026-10-22-02-github-1335332435-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +145,16 @@
                             "fingerprint": "aa7be415ee34570bd1c834da9d8a500e85401583"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:19:23.910Z",
+                    "reviewed_at": "2026-10-22T08:59:05.954Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "MIT网页音频插件，host设置预留但当前浏览器本地配置，跨设备不自动同步。",
+                    "text": "@ai-galaxy/dsh-sound0.4.1/Node>=20，Web服务与浏览器存储/音频策略需匹配。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1335332435-root-source"
+                        "2026-10-22-02-github-1335332435-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +163,16 @@
                             "fingerprint": "aa7be415ee34570bd1c834da9d8a500e85401583"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:19:23.910Z",
+                    "reviewed_at": "2026-10-22T08:59:05.954Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "无模型或网络音频费；首次选音和浏览器音频授权，持续通知噪声与本地音频存储成本，未测节省等待时间。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 浏览器音频环境，金额未知 | 试听、权限和事件分类核对 | 内置无需外部TTS/API |\n| 持续使用 | 事件流/状态图、音频解码/本地存储 | 调噪声/音量和子代理规则 | 提醒可能打扰，不等效率增益 |\n| 失败恢复 | 配置/文件重选、权限/重连核查 | 对照原始UI待办，避免漏提醒 | 无播放ack、恢复重放边界不同 |\n",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1335332435-root-source"
+                        "2026-10-22-02-github-1335332435-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +181,16 @@
                             "fingerprint": "aa7be415ee34570bd1c834da9d8a500e85401583"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:19:23.910Z",
+                    "reviewed_at": "2026-10-22T08:59:05.954Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "适合多任务用户先以主Agent事件试用。验证背景标签、重载和静音行为，审批与问题仍回界面查看，别靠铃声判断任务已验收。",
+                    "text": "可试用作辅助通知，先内置低音量核主子频道/原UI，保留视觉提醒，不当唯一可靠通道。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1335332435-root-source"
+                        "2026-10-22-02-github-1335332435-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +199,16 @@
                             "fingerprint": "aa7be415ee34570bd1c834da9d8a500e85401583"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:19:23.910Z",
+                    "reviewed_at": "2026-10-22T08:59:05.954Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "可减少盯屏，但漏通知/告警疲劳需真实工作负载评估。",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 提醒区分 | 六类型/主子Agent路由 | 实际听到率/反应时间改善 |\n| 降重复 | 400ms来源去抖/40ms跨tab意图 | 跨tab恰好一次或持久可靠 |\n| 兼容降级 | 流重连和快照diff | 结束reason/重放语义等价 |\n",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1335332435-root-source"
+                        "2026-10-22-02-github-1335332435-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +217,16 @@
                             "fingerprint": "aa7be415ee34570bd1c834da9d8a500e85401583"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:19:23.910Z",
+                    "reviewed_at": "2026-10-22T08:59:05.954Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "事件分类、回放抑制与音频存储分离可借鉴；固定40ms协商及浏览器后台限制应作为尽力而为边界。 源码依据：[lib/index.js](https://github.com/AI-Galaxy-GPU/dsh-sound/blob/aa7be415ee34570bd1c834da9d8a500e85401583/lib/index.js)、[lib/client.js](https://github.com/AI-Galaxy-GPU/dsh-sound/blob/aa7be415ee34570bd1c834da9d8a500e85401583/lib/client.js)。",
+                    "text": "事件分类/声音源/配置分离、明确子Agent频道、指数重连、AbortController和watcher清理、音量sanitize及IDB避localStorage大音频是可复用点。snapshot是降级而非同语义副本，模块资源/全局仲裁仍需生命周期治理。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1335332435-root-source"
+                        "2026-10-22-02-github-1335332435-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +235,16 @@
                             "fingerprint": "aa7be415ee34570bd1c834da9d8a500e85401583"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:19:23.910Z",
+                    "reviewed_at": "2026-10-22T08:59:05.954Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "interpretation",
-                    "text": "相对仅完成铃，增量是人类介入事件分类、子Agent分流与跨标签抑制噪声；不改变后台任务执行或审批结果。",
+                    "text": "将多事件/来源/音源与回放和跨tab干扰处理接成配置流程，非可靠通知队列或业务确认。详见[Q01](#research-q01)与[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1335332435-root-source"
+                        "2026-10-22-02-github-1335332435-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +253,16 @@
                             "fingerprint": "aa7be415ee34570bd1c834da9d8a500e85401583"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:19:23.910Z",
+                    "reviewed_at": "2026-10-22T08:59:05.954Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "跨标签“只响一次”是否无条件？协商依赖BroadcastChannel及时到达和已发现peer，未发现时立即播放；多个新标签同时收到事件仍需真实调度验证。浏览器音频策略/静音也可能导致未响，不能把脚本调用当用户听见。",
+                    "text": "snapshot无结束reason可误响完成，跨tab与静默播放失败不保证恰好一次/实际听到，子Agent默认和文档不一致。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1335332435-root-source"
+                        "2026-10-22-02-github-1335332435-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +271,16 @@
                             "fingerprint": "aa7be415ee34570bd1c834da9d8a500e85401583"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:19:23.910Z",
+                    "reviewed_at": "2026-10-22T08:59:05.954Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "unverified",
-                    "text": "由事件ID与协商推导，可增加用户可见通知收据和声音自检，明确重播恢复/未播放原因；跨标签用租约而非短时随机窗口。未验证；后台节流/同时开标签/权限拒绝时测漏重报，若不改善则否定。",
+                    "text": "可探讨事件/播放状态收据和短租约、弱语义提示与模块清理，仍不能以API证明用户听到。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1335332435-root-source"
+                        "2026-10-22-02-github-1335332435-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +289,15 @@
                             "fingerprint": "aa7be415ee34570bd1c834da9d8a500e85401583"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:19:23.910Z",
+                    "reviewed_at": "2026-10-22T08:59:05.954Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T04:19:23.910Z",
+            "last_checked_at": "2026-10-22T08:59:05.954Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "aa7be415ee34570bd1c834da9d8a500e85401583",
-                "reviewed_at": "2026-10-21T04:19:23.910Z",
+                "reviewed_at": "2026-10-22T08:59:05.954Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -275,61 +309,61 @@
                 "technical": {
                     "criteria": {
                         "novelty": 9,
-                        "mechanism": 8,
+                        "mechanism": 15,
                         "transferability": 10,
-                        "simplification": 8
+                        "simplification": 11
                     },
-                    "rationale": "novelty通知适配小档；mechanism分类去重小档；transferability事件通知模式半档；simplification音频聚合半档。",
+                    "rationale": "novelty成熟音频通知取小幅；mechanism事件/来源/回放整合取实质；transferability降级/源配置取实质；simplification集中提醒设置取较强。",
                     "basis": "interpretation",
-                    "score": 35,
+                    "score": 45,
                     "evidence_ids": [
-                        "2026-10-21-04-github-1335332435-root-source"
+                        "2026-10-22-02-github-1335332435-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 9,
-                        "delivery": 8,
-                        "reach": 5,
-                        "economics": 0
+                        "workflow": 18,
+                        "delivery": 15,
+                        "reach": 10,
+                        "economics": 4
                     },
-                    "rationale": "workflow介入提醒小档；delivery声音反馈小档；reach离屏用户小档；economics未改成本结构0。",
+                    "rationale": "workflow等待/介入取实质；delivery可听提醒取实质；reachWeb用户取实质；economics无感知/打扰收益对照取小幅。",
                     "basis": "interpretation",
-                    "score": 22,
+                    "score": 47,
                     "evidence_ids": [
-                        "2026-10-21-04-github-1335332435-root-source"
+                        "2026-10-22-02-github-1335332435-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "多任务用户可先用主Agent事件试本地声音提醒；验背景标签、重载和静音，问题审批仍回界面核对。",
+                "reason": "辅助声音提醒边界可理解，低音量内置先试并保留原UI；漏误响/多tab不能作可靠唯一通道。详见[Q05](#research-q05)。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "离开聊天视线后及时介入的任务明确。"
+                        "rationale": "离开视线时关注进展/待办明确。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "事件去重及跨标签协商比每页各自响铃更有针对性。"
+                        "rationale": "六类/子Agent配置整合有增量。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "已核随机协商、快照回退和本地存储，未测实际漏响重复。"
+                        "rationale": "固定事件/播放分支可核，仅源码证据。"
                     },
                     "cost": {
-                        "score": 15,
-                        "rationale": "无模型与网络音频费，主要是授权、噪声及本地存储成本。"
+                        "score": 10,
+                        "rationale": "无额外模型调用，浏览器策略/打扰维护。"
                     }
                 },
-                "score": 64,
+                "score": 59,
                 "revision": "aa7be415ee34570bd1c834da9d8a500e85401583",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T08:59:05.954Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-04-github-1335332435-root-source"
+                    "2026-10-22-02-github-1335332435-root-source"
                 ],
                 "dependencies": [
                     {
@@ -354,68 +388,61 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T04:06:46Z",
-            "analysis_sha256": "a226e956f2cbdf7181b4ca881e10bdaae8afe28b89d90bc82bd5478d750172fd"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "a82db4ceb1ed7a3e5695518afa2fc24b403e1a0ae23c5333c22a76b9e65a025f"
         },
         "publication.metadata": "data/plugins/ai-galaxy-gpu--dsh-sound/META.json",
         "publication.summaries": {
-            "text": "在DSH网页中按任务完成、审批、提问、阻塞和失败事件播放可定制提示音。",
+            "text": "按完成、审批、提问、计划评审、受阻和失败播放独立声音，并区分主Agent/子Agent来源。",
             "revision": "aa7be415ee34570bd1c834da9d8a500e85401583",
             "source_url": "https://github.com/AI-Galaxy-GPU/dsh-sound/blob/aa7be415ee34570bd1c834da9d8a500e85401583/README.md"
         },
         "publication.capabilities": {
             "revision": "aa7be415ee34570bd1c834da9d8a500e85401583",
             "items": {
-                "界面": "声音配置、本地音频选择与事件提示。",
-                "事件监听": "mux/host及快照变化检测。"
-            }
+                "界面": "声音设置页",
+                "事件监听": "mux/host/会话快照提醒"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 六类声音 | 区分完成/注意 | snapshot无reason保证较弱 |\n| 子Agent频道 | 单独配置/忽略 | 来源依会话行，非全默认静音 |\n| 本地音源 | 合成/IDB/dataURL | 自动播放/解码可能静默失败 |\n| 多tab去重 | 意图仲裁减少重复 | best-effort非恰好一次 |"
         },
         "publication.advice": {
             "revision": "aa7be415ee34570bd1c834da9d8a500e85401583",
-            "text": "适合多任务用户先以主Agent事件试用。验证背景标签、重载和静音行为，审批与问题仍回界面查看，别靠铃声判断任务已验收。"
+            "text": "可试用作辅助通知，先内置低音量核主子频道/原UI，保留视觉提醒，不当唯一可靠通道。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/ai-galaxy-gpu--dsh-sound",
-        "reports": "# dsh-sound\n\n> 在DSH网页中按任务完成、审批、提问、阻塞和失败事件播放可定制提示音。\n\n## 使用建议\n\n适合多任务用户先以主Agent事件试用。验证背景标签、重载和静音行为，审批与问题仍回界面查看，别靠铃声判断任务已验收。\n\n核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。\n\n源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。\n\n## 洞察短评\n\n- **用途**：用户离开当前聊天视线时需要知道何时介入，合格通知应少漏报/重复且区分子Agent，声音响不代表业务成功。\n- **亮点**：相对仅完成铃，增量是人类介入事件分类、子Agent分流与跨标签抑制噪声；不改变后台任务执行或审批结果。\n- **思考**：跨标签“只响一次”是否无条件？协商依赖BroadcastChannel及时到达和已发现peer，未发现时立即播放；多个新标签同时收到事件仍需真实调度验证。浏览器音频策略/静音也可能导致未响，不能把脚本调用当用户听见。\n- **建议**：由事件ID与协商推导，可增加用户可见通知收据和声音自检，明确重播恢复/未播放原因；跨标签用租约而非短时随机窗口。未验证；后台节流/同时开标签/权限拒绝时测漏重报，若不改善则否定。\n\n## 场景与替代办法\n\n用户离开当前聊天视线时需要知道何时介入，合格通知应少漏报/重复且区分子Agent，声音响不代表业务成功。\n\n宿主可见状态/系统通知可提示介入；此插件补声音与细分通道，无任务能力增量。\n\n## 能力清单\n\n- **界面**：声音配置、本地音频选择与事件提示。\n- **事件监听**：mux/host及快照变化检测。\n\n## 依赖与流程\n\nDSH事件接口、Web Audio/IndexedDB与可选BroadcastChannel；音频设备、浏览器策略和用户设置决定实际可听性。\n\n配置每类声音，监听事件并判主/子Agent和重复，跨标签协商后播放，用户回到会话处理请求；配置或音频存储失败可降为内存。\n\n## 成本与效果\n\n无模型或网络音频费；首次选音和浏览器音频授权，持续通知噪声与本地音频存储成本，未测节省等待时间。\n\n可减少盯屏，但漏通知/告警疲劳需真实工作负载评估。\n\n## 核心贡献\n\n相对仅完成铃，增量是人类介入事件分类、子Agent分流与跨标签抑制噪声；不改变后台任务执行或审批结果。\n\n## 关键质疑\n\n跨标签“只响一次”是否无条件？协商依赖BroadcastChannel及时到达和已发现peer，未发现时立即播放；多个新标签同时收到事件仍需真实调度验证。浏览器音频策略/静音也可能导致未响，不能把脚本调用当用户听见。\n\n\n## 工程亮点\n\n事件分类、回放抑制与音频存储分离可借鉴；固定40ms协商及浏览器后台限制应作为尽力而为边界。 源码依据：[lib/index.js](https://github.com/AI-Galaxy-GPU/dsh-sound/blob/aa7be415ee34570bd1c834da9d8a500e85401583/lib/index.js)、[lib/client.js](https://github.com/AI-Galaxy-GPU/dsh-sound/blob/aa7be415ee34570bd1c834da9d8a500e85401583/lib/client.js)。\n\n## 未来设计假设（未验证）\n\n由事件ID与协商推导，可增加用户可见通知收据和声音自检，明确重播恢复/未播放原因；跨标签用租约而非短时随机窗口。未验证；后台节流/同时开标签/权限拒绝时测漏重报，若不改善则否定。\n\n固定事件回放测试刷新恢复、同时标签、后台节流、音频拒绝与子Agent分流；记录实际听到次数和误报。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：83410795efbfba70ab37fd8edb86c9f2176b3ff923cd7cb7f31eb4763d08fd5e。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 3 | 510 | — | — | 5315 |\n| .js | source | 2 | 1716 | 1468 | 171 | — |\n| .mjs | source | 2 | 1201 | 1084 | 35 | — |\n\n排除 1 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[AI-Galaxy-GPU/dsh-sound](https://github.com/AI-Galaxy-GPU/dsh-sound)\n- **版本号**：0.4.1（[固定提交 aa7be415](https://github.com/AI-Galaxy-GPU/dsh-sound/tree/aa7be415ee34570bd1c834da9d8a500e85401583)）\n- **版本日期**：2026-09-16（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：作者 README、包清单、源码路径 lib/index.js、lib/client.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读lib/index.js、lib/client.js；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。\n- 下一步：固定事件回放测试刷新恢复、同时标签、后台节流、音频拒绝与子Agent分流；记录实际听到次数和误报。\n",
+        "reports": "# dsh-sound\n\n> 按完成、审批、提问、计划评审、受阻和失败播放独立声音，并区分主Agent/子Agent来源。\n\n## 研究范围\n\n- **仓库**：[AI-Galaxy-GPU/dsh-sound](https://github.com/AI-Galaxy-GPU/dsh-sound)\n- **版本号**：0.4.1（[固定提交 aa7be415ee34570bd1c834da9d8a500e85401583](https://github.com/AI-Galaxy-GPU/dsh-sound/tree/aa7be415ee34570bd1c834da9d8a500e85401583)）\n- **版本日期**：2026-09-16（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n源码支持六类事件与主/子Agent音源配置、重连和辅助去重；快照缺结束原因、跨tab意图和静默播放失败不能保证不漏不重或人已听到。事件/播放状态与短租约方案尚未验证。\n\n## 洞察短评\n\n- **用途**：离开聊天视线时辅助感知进展/待办，仍以原UI状态为准。\n- **亮点**：将多事件/来源/音源与回放和跨tab干扰处理接成配置流程，非可靠通知队列或业务确认。详见[Q01](#research-q01)与[Q02](#research-q02)。\n- **思考**：snapshot无结束reason可误响完成，跨tab与静默播放失败不保证恰好一次/实际听到，子Agent默认和文档不一致。详见[Q02](#research-q02)。\n- **建议**：可探讨事件/播放状态收据和短租约、弱语义提示与模块清理，仍不能以API证明用户听到。详见[Q05](#research-q05)。\n\n采用建议：可试用作辅助通知，先内置低音量核主子频道/原UI，保留视觉提醒，不当唯一可靠通道。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n将多事件/来源/音源与回放和跨tab干扰处理接成配置流程，非可靠通知队列或业务确认。详见[Q01](#research-q01)与[Q02](#research-q02)。\n\n## 关键质疑\n\nsnapshot无结束reason可误响完成，跨tab与静默播放失败不保证恰好一次/实际听到，子Agent默认和文档不一致。详见[Q02](#research-q02)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可探讨事件/播放状态收据和短租约、弱语义提示与模块清理，仍不能以API证明用户听到。详见[Q05](#research-q05)。\n\n进一步探讨以结束reason/播放失败/迟到tab/连续事件/初始pending/卸载夹具核弱语义，再测感知与打扰。\n\n## 场景与替代办法\n\n离开聊天视线时辅助感知进展/待办，仍以原UI状态为准。\n\n持续看原UI或系统提醒可替代，本包增加可听区分也引入打扰/漏误响与浏览器维护。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| DSH Web slots/sessions/connection/locale | Client必需 | 设置页和事件流 | 硬注入版本需匹配；流失败后快照较弱 |\n| 浏览器音频权限/可用输出 | 必需 | WebAudio/HTMLAudio播放 | resume/play失败静默，不等已听到 |\n| localStorage | 配置可选 | 浏览器固定origin配置键 | 写失败仅内存，不用Host配置替代 |\n| IndexedDB/本地音频 | 自定义可选 | Blob和audio引用 | 不可用回dataURL，可受quota/解码限制 |\n| BroadcastChannel | 多标签去重可选 | 同origin意图握手 | 无全局持久确认，异步延迟可重复/漏响 |\n\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 准备 | 固定Web/插件，低音量先内置试听 | 浏览器允许且实际听到，不仅按过播放 |\n| 配置 | 明确主/子Agent六类音量/静音 | 子代理并非六类默认全静音，以实际配置为准 |\n| 使用 | 受控事件对照原UI，保留视觉提示 | 铃声仅辅助，不作为任务成功/待办可靠队列 |\n| 恢复 | 无声/多响查权限、频道和事件路径 | 不因无声重复业务操作，重要待办看原UI |\n\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 浏览器音频环境，金额未知 | 试听、权限和事件分类核对 | 内置无需外部TTS/API |\n| 持续使用 | 事件流/状态图、音频解码/本地存储 | 调噪声/音量和子代理规则 | 提醒可能打扰，不等效率增益 |\n| 失败恢复 | 配置/文件重选、权限/重连核查 | 对照原始UI待办，避免漏提醒 | 无播放ack、恢复重放边界不同 |\n\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 提醒区分 | 六类型/主子Agent路由 | 实际听到率/反应时间改善 |\n| 降重复 | 400ms来源去抖/40ms跨tab意图 | 跨tab恰好一次或持久可靠 |\n| 兼容降级 | 流重连和快照diff | 结束reason/重放语义等价 |\n\n\n## 研究问题与完整回答\n\n**插件研究总目标：**核Web事件到可配置声音，区分分类/重放/跨tab和实际播放、辅助提醒保证。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 面向谁，事件到声音怎样工作？\n\n**研究主题：**场景与需求、功能与机制\n\n#### 完整回答\n\n面向离开当前聊天视线、希望在回合结束或审批/提问/计划评审/受阻/失败时听到不同提示的人。输入DSH事件与浏览器配置，输出内置合成或自选音频；成功需事件分类正确且读者实际听到，声音不是业务完成或可靠待办收据。\n\nHost只迟绑定注册settings schema；Client实际用固定localStorage键独立配置，slots设置页。主路径mux及host流，按turn/end reason、requested、job终态和goal投影分类，来源行origin/parentId识别子Agent；quietCurrent只抑制完成，注意类仍响。初开流openBurst抑制requested回放、rpcId去重，坏帧累积可切snapshot diff，流断指数重开。播放按source400ms去抖，BroadcastChannel同key意图40ms随机仲裁；内置WebAudio、IDB blob或dataURL/HTMLAudio回退。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:57-66](https://github.com/AI-Galaxy-GPU/dsh-sound/blob/aa7be415ee34570bd1c834da9d8a500e85401583/lib/index.js#L57-L66)\n\nHost settings迟绑定。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n})\n\nexport function apply(ctx) {\n  // settings 服务（dsh-settings-file）在启动时异步加载文档后才可用；\n  // 用 ctx.inject 迟绑定：settings 就绪后（或早已就绪时立即）再注册；\n  // 完全没有 settings 服务的 profile 中则静默不注册。\n  ctx.inject(['settings'], (sctx) => {\n    sctx.settings.register('dsh-sound', Config, { applies: 'live' })\n  })\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/client.js:297-332](https://github.com/AI-Galaxy-GPU/dsh-sound/blob/aa7be415ee34570bd1c834da9d8a500e85401583/lib/client.js#L297-L332)\n\nClient实际配置。\n\n<details>\n<summary>查看原文（36行）</summary>\n\n```text\n    function readLocal() {\n      try {\n        var raw = window.localStorage.getItem(LOCAL_KEY)\n        return raw ? JSON.parse(raw) : null\n      } catch (err) { return null }\n    }\n\n    function createConfigStore() {\n      var snapshot = { status: 'ready', value: sanitize(readLocal()) }\n      var listeners = []\n      function commit(next) {\n        snapshot = { status: 'ready', value: next }\n        try { window.localStorage.setItem(LOCAL_KEY, JSON.stringify(next)) } catch (err) { /* 隐私模式等：仅内存生效 */ }\n        var list = listeners.slice()\n        for (var i = 0; i < list.length; i++) list[i]()\n      }\n      return {\n        getSnapshot: function () { return snapshot },\n        subscribe: function (fn) {\n          listeners.push(fn)\n          return function () {\n            var i = listeners.indexOf(fn)\n            if (i >= 0) listeners.splice(i, 1)\n          }\n        },\n        set: function (field, value) {\n          var next = {}\n          next[field] = value\n          return this.patch(next)\n        },\n        patch: function (partial) {\n          commit(sanitize(Object.assign({}, snapshot.value, partial)))\n          return Promise.resolve()\n        },\n        replace: function (next) { commit(sanitize(next)) },\n      }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/client.js:846-920](https://github.com/AI-Galaxy-GPU/dsh-sound/blob/aa7be415ee34570bd1c834da9d8a500e85401583/lib/client.js#L846-L920)\n\nmux分类/重放。\n\n<details>\n<summary>查看原文（75行）</summary>\n\n```text\n      function handleFrame(envelope) {\n        var frame = unwrapFrame(envelope)\n        if (frame === null) {\n          badFrames++\n          if (badFrames >= BAD_FRAME_FALLBACK && typeof onGiveUp === 'function') {\n            if (typeof console !== 'undefined' && console.warn) {\n              console.warn('dsh-sound: mux frames have no type after unwrap; falling back to session snapshots')\n            }\n            onGiveUp()\n          }\n          return\n        }\n        badFrames = 0\n        reopenDelay = REOPEN_BASE\n        var cfg = configOf(store.getSnapshot())\n        if (!cfg) return\n        pruneDisposed()\n        var sid = frame.sessionId\n\n        if (frame.type === 'session/subscribed' || frame.type === 'session/queue') {\n          return\n        }\n        if (frame.type === 'approval/resolved' || frame.type === 'question/resolved') {\n          openBurst = false\n          if (frame.type === 'question/resolved' && frame.questionRpcId != null) {\n            seenRpcIds.delete(String(frame.questionRpcId))\n          }\n          return\n        }\n        if (frame.type === 'approval/requested' || frame.type === 'question/requested') {\n          var noted = noteRequestId(envelope)\n          if (noted.seen || openBurst) return\n          var isSub = isSubagentSession(ctx, sid)\n          if (frame.type === 'approval/requested') {\n            playFor(cfg, 'approval', 'pending:' + sid + ':approval', isSub)\n            return\n          }\n          var kind = resolveQuestionKind(ctx, sid, frame.questions)\n          playFor(cfg, kind, 'pending:' + sid + ':' + kind, isSub)\n          return\n        }\n        if (frame.type === 'session/jobs') {\n          handleJobs(cfg, sid, frame.jobs || [])\n          return\n        }\n\n        openBurst = false\n        if (frame.type === 'session/event') {\n          var ev = frame.event\n          var endKind = turnEndKind(ev)\n          var isSubEvent = isSubagentSession(ctx, sid)\n          if (endKind === 'completed' && !skipCurrentSession(cfg, sid)) {\n            playFor(cfg, 'completion', 'session:' + sid, isSubEvent)\n          } else if (endKind === 'error') {\n            playFor(cfg, 'failure', 'session:' + sid + ':failure', isSubEvent)\n          }\n        } else if (frame.type === 'session/projection') {\n          if (frame.key === 'goal' && frame.value && typeof frame.value === 'object' && typeof frame.value.phase === 'string') {\n            var phase = frame.value.phase\n            var prev = prevGoalPhase.get(sid)\n            if (phase === 'blocked' && prev !== 'blocked') {\n              playFor(cfg, 'goal-blocked', 'goal:' + sid, isSubagentSession(ctx, sid))\n            }\n            prevGoalPhase.set(sid, phase)\n          }\n        }\n      }\n\n      function beginBurst() {\n        openBurst = true\n        if (burstTimer !== null) cancelSchedule(burstTimer)\n        burstTimer = schedule(function () {\n          burstTimer = null\n          openBurst = false\n        }, 0)\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/client.js:925-958](https://github.com/AI-Galaxy-GPU/dsh-sound/blob/aa7be415ee34570bd1c834da9d8a500e85401583/lib/client.js#L925-L958)\n\n重连/清理。\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\n        var ac = new AbortController()\n        loopAbort = ac\n        beginBurst()\n        var iterable\n        try {\n          iterable = ctx.connection.api.events.mux({}, ac.signal)\n        } catch (err) { scheduleReopen(); return }\n        if (!iterable || typeof iterable[Symbol.asyncIterator] !== 'function') { scheduleReopen(); return }\n        ;(async function () {\n          try {\n            for await (var frame of iterable) {\n              if (disposed) break\n              handleFrame(frame)\n            }\n          } catch (err) { /* 流中断：连接重连或插件卸载，走重开逻辑 */ }\n          scheduleReopen()\n        })()\n      }\n\n      function scheduleReopen() {\n        if (disposed) return\n        if (loopAbort) { try { loopAbort.abort() } catch (e) {} loopAbort = null }\n        var delay = reopenDelay\n        reopenDelay = Math.min(reopenDelay * 2, REOPEN_MAX)\n        reopenTimer = schedule(function () { runLoop() }, delay)\n      }\n\n      runLoop()\n      return function () {\n        disposed = true\n        if (reopenTimer !== null) cancelSchedule(reopenTimer)\n        if (burstTimer !== null) cancelSchedule(burstTimer)\n        if (loopAbort) { try { loopAbort.abort() } catch (e) {} }\n      }\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/client.js:696-724](https://github.com/AI-Galaxy-GPU/dsh-sound/blob/aa7be415ee34570bd1c834da9d8a500e85401583/lib/client.js#L696-L724)\n\n路由/跨tab。\n\n<details>\n<summary>查看原文（29行）</summary>\n\n```text\n    function playFor(cfg, kind, sourceKey, isSubagent) {\n      if (!cfg || cfg.enabled === false) return\n      if (isSubagent && cfg.ignoreSubagent === true) return\n      var sound = soundFor(cfg, kind, isSubagent)\n      if (!sound || sound === 'none' || sound === 'local') return\n      if (crossTab && sourceKey) {\n        playWithCrossTabDedupe(sound, sourceKey, cfg, volFor(cfg, kind, isSubagent))\n        return\n      }\n      playSound(sound, sourceKey, cfg, volFor(cfg, kind, isSubagent))\n    }\n\n    /**\n     * 多标签页去重：已确认有同伴时先广播「播放意图」，40ms 内同 key 的另一标签\n     * 抢先则让位（随机 nonce 决出唯一播放者）。单标签页直接播放，不做握手。\n     */\n    function playWithCrossTabDedupe(key, sourceKey, cfg, vol) {\n      if (!peerSeen) {\n        try { crossTab.postMessage({ t: 'intent', key: sourceKey, nonce: Math.random() }) } catch (err) { /* 频道已关 */ }\n        playSound(key, sourceKey, cfg, vol)\n        return\n      }\n      var nonce = Math.random()\n      var timer = schedule(function () {\n        crossTabPending.delete(sourceKey)\n        playSound(key, sourceKey, cfg, vol)\n      }, 40)\n      crossTabPending.set(sourceKey, { nonce: nonce, timer: timer })\n      try { crossTab.postMessage({ t: 'intent', key: sourceKey, nonce: nonce }) } catch (err) { /* 频道已关 */ }\n```\n\n</details>\n\n**依据 6 · 源码核查**：[lib/client.js:424-454](https://github.com/AI-Galaxy-GPU/dsh-sound/blob/aa7be415ee34570bd1c834da9d8a500e85401583/lib/client.js#L424-L454)\n\n自定义与音频fallback。\n\n<details>\n<summary>查看原文（31行）</summary>\n\n```text\n    /** 播放 data URL 音频：优先 XHR + decodeAudioData 走 Web Audio（无需每次手势）；失败回退 Audio 元素。 */\n    function playCustom(dataUrl, vol) {\n      var ctx = ensureContext()\n      if (!ctx || typeof ctx.decodeAudioData !== 'function') { fallbackAudio(dataUrl, vol); return }\n      var xhr = null\n      try {\n        xhr = new window.XMLHttpRequest()\n        xhr.open('GET', dataUrl, true)\n        xhr.responseType = 'arraybuffer'\n        xhr.onload = function () {\n          if ((xhr.status === 200 || xhr.status === 0) && xhr.response) {\n            ctx.decodeAudioData(xhr.response, function (decoded) {\n              playBuffer(ctx, decoded, vol)\n            }, function () { fallbackAudio(dataUrl, vol) })\n          } else {\n            fallbackAudio(dataUrl, vol)\n          }\n        }\n        xhr.onerror = function () { fallbackAudio(dataUrl, vol) }\n        xhr.send()\n      } catch (err) { fallbackAudio(dataUrl, vol) }\n    }\n\n    /** 兜底：HTMLAudioElement 播放（可能被自动播放策略拦截）。 */\n    function fallbackAudio(dataUrl, vol) {\n      try {\n        var audio = new window.Audio(dataUrl)\n        if (typeof vol === 'number' && vol >= 0 && vol <= 1) audio.volume = vol\n        var p = audio.play()\n        if (p && p.catch) p.catch(function () {})\n      } catch (err) { /* 自动播放被浏览器拦截时静默 */ }\n```\n\n</details>\n\n**依据 7 · 源码核查**：[lib/client.js:1111-1135](https://github.com/AI-Galaxy-GPU/dsh-sound/blob/aa7be415ee34570bd1c834da9d8a500e85401583/lib/client.js#L1111-L1135)\n\n流/快照选择。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n    function startWatcher(ctx, store) {\n      var disposeMux = null\n      var disposeHost = null\n      var disposeSnap = null\n      var gaveUp = false\n      function useSnapshot() {\n        if (gaveUp) return\n        gaveUp = true\n        if (disposeMux) { disposeMux(); disposeMux = null }\n        if (disposeSnap) return\n        disposeSnap = startSnapshotWatcher(ctx, store)\n      }\n      if (ctx.connection && ctx.connection.api && ctx.connection.api.events && typeof ctx.connection.api.events.mux === 'function') {\n        disposeMux = startMuxWatcher(ctx, store, useSnapshot)\n        if (typeof ctx.connection.api.events.host === 'function') {\n          disposeHost = startHostWatcher(ctx, store)\n        }\n      } else {\n        disposeSnap = startSnapshotWatcher(ctx, store)\n      }\n      return function () {\n        if (disposeMux) disposeMux()\n        if (disposeHost) disposeHost()\n        if (disposeSnap) disposeSnap()\n      }\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 增量与误判、重复和漏响边界是什么？\n\n**研究主题：**贡献与相对优势、缺陷与关键质疑\n\n#### 完整回答\n\n价值是把多种需要注意的事件按类别/来源可配置声音，并为回放、重连、子Agent与多标签干扰提供具体处理，非新通知协议。它不执行审批或替代视觉任务状态。\n\n快照fallback只见running true→false就播放completion，不能区分abort/max-tokens/error；初次pending/blocked也可响，和mux启动回放抑制不同。没有看过running的瞬时完成job在快照可漏，而事件路径可捕捉。两条路径不能统一说所有用户中断静音/所有恢复回放不响。子Agent判定依会话行是否及时出现，缺行默认主频道。README六类子代理默认mute与实际DEFAULTS及Host schema不同，实际只有completion none，注意类ding/bell。\n\n400ms key以session或事件种类而非持久事件ID，既可能压掉同会话紧邻真实事件，也不能永久防重复。跨tab无played持久ack，peer未发现时立即播放、意图晚于40ms或不同到达时间可多响，仲裁者音频失败则其他tab已让位；不能保证恰好一次。playSound先写lastPlayed再异步播放，resume/decode/play失败静默，因此尝试不等实际有声。Host配置不自动成为Client真相，store无storage监听，另一tab设置未即时同步。模块级BroadcastChannel/pending timers/AudioContext/样式未见dispose释放，watcher清理不能概括成全部模块资源清理。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/client.js:1042-1065](https://github.com/AI-Galaxy-GPU/dsh-sound/blob/aa7be415ee34570bd1c834da9d8a500e85401583/lib/client.js#L1042-L1065)\n\n快照无reason及初始pending/goal。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n          // 会话回合结束：running true -> false（完成铃声，尊重 quietCurrent）\n          var was = prevRunning.get(id)\n          if (was === true && row.running === false && !(quietCurrent && snap.current === id)) {\n            playFor(cfg, 'completion', 'session:' + id, rowSub)\n          }\n          prevRunning.set(id, row.running === true)\n\n          // 需要人介入：pendingInteraction 出现（approval / question / plan-review）\n          var pi = row.pendingInteraction\n          var prevPi = prevPending.get(id)\n          if (pi !== undefined && pi !== prevPi) {\n            var kind = SOUND_FIELD[pi] ? pi : 'question'\n            playFor(cfg, kind, 'pending:' + id + ':' + pi, rowSub)\n          }\n          prevPending.set(id, pi)\n\n          // 目标受阻：goal 投影进入 blocked\n          var pv = row.projectionValues\n          var goal = pv && typeof pv === 'object' ? pv.goal : undefined\n          var phase = goal && typeof goal === 'object' ? goal.phase : undefined\n          var prevPhase = prevGoalPhase.get(id)\n          if (phase === 'blocked' && prevPhase !== 'blocked') {\n            playFor(cfg, 'goal-blocked', 'goal:' + id, rowSub)\n          }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/client.js:1078-1088](https://github.com/AI-Galaxy-GPU/dsh-sound/blob/aa7be415ee34570bd1c834da9d8a500e85401583/lib/client.js#L1078-L1088)\n\n快照job要前态。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n            var key = sid + ':' + job.id\n            var prev = prevJobStatus.get(key)\n            var terminal = job.status === 'completed' || job.status === 'failed' || job.status === 'killed'\n            var isSub = job.kind === 'subagent' || subagentSession\n            if ((prev === 'running' || prev === 'stopping') && terminal) {\n              if (job.status === 'failed') {\n                playFor(cfg, 'failure', 'job:' + key, isSub)\n              } else if (job.status === 'killed') {\n                /* 用户杀掉的任务不响完成音 */\n              } else if (!(quietCurrent && snap.current === sid)) {\n                playFor(cfg, 'completion', 'job:' + key, isSub)\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/client.js:212-224](https://github.com/AI-Galaxy-GPU/dsh-sound/blob/aa7be415ee34570bd1c834da9d8a500e85401583/lib/client.js#L212-L224)\n\n子Agent依行。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n    /** 列表行判定：DSH SessionSummary 的 origin/parentId（兼容 parentSessionId 命名）。 */\n    function isSubagentRow(row) {\n      return !!(row && (row.origin === 'subagent' || row.parentId !== undefined || row.parentSessionId !== undefined))\n    }\n\n    /** 事件帧与任务帧的来源判定：会话行已列出且标记为子代理时视为子代理来源。 */\n    function isSubagentSession(ctx, sid) {\n      if (!ctx || !ctx.sessions || !ctx.sessions.list || !sid) return false\n      try {\n        var snap = ctx.sessions.list.getSnapshot()\n        var row = snap && snap.byId ? snap.byId[sid] : undefined\n        return isSubagentRow(row)\n      } catch (err) { return false }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/client.js:123-134](https://github.com/AI-Galaxy-GPU/dsh-sound/blob/aa7be415ee34570bd1c834da9d8a500e85401583/lib/client.js#L123-L134)\n\n子Agent实际默认。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n      subagentCompletionSound: 'none',\n      subagentApprovalSound: 'ding',\n      subagentQuestionSound: 'ding',\n      subagentPlanReviewSound: 'ding',\n      subagentGoalBlockedSound: 'bell',\n      subagentFailureSound: 'bell',\n      subagentCompletionVolume: 1,\n      subagentApprovalVolume: 1,\n      subagentQuestionVolume: 1,\n      subagentPlanReviewVolume: 1,\n      subagentGoalBlockedVolume: 1,\n      subagentFailureVolume: 1,\n```\n\n</details>\n\n**依据 5 · 作者声明**：[README.md:43-54](https://github.com/AI-Galaxy-GPU/dsh-sound/blob/aa7be415ee34570bd1c834da9d8a500e85401583/README.md#L43-L54)\n\n作者子Agent默认声明。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n- **One-shot subagent jobs** — a `session/jobs` entry with `kind === 'subagent'` (each\n  parallel delegation completing used to ring the main completion sound; now it does not).\n- **Subagent sessions** — events whose session row is marked `origin: 'subagent'` /\n  `parentId` (continuable subagents), including child-session turn ends, approvals,\n  questions, goal projections, and failures.\n\nThe settings panel adds a **子代理事件 / Subagent Events** section with six rows (same sound\nsources and per-row volume as the main events) plus an **ignore all subagent events** master\nswitch. All six subagent sounds default to **mute**; main-agent events are unchanged.\n\n### Sound sources\n\n```\n\n</details>\n\n**依据 6 · 源码核查**：[lib/client.js:661-674](https://github.com/AI-Galaxy-GPU/dsh-sound/blob/aa7be415ee34570bd1c834da9d8a500e85401583/lib/client.js#L661-L674)\n\n先标后播放。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n    function playSound(key, sourceKey, cfg, vol) {\n      if (!key || key === 'none' || key === 'local') return\n      var volume = typeof vol === 'number' && vol >= 0 && vol <= 1 ? vol : 1\n      if (sourceKey) {\n        var now = Date.now()\n        var last = lastPlayed.get(sourceKey)\n        if (last !== undefined && now - last < DEDUPE_MS) return\n        lastPlayed.set(sourceKey, now)\n      }\n      playCount++\n      if (playCount % 32 === 0) pruneLastPlayed()\n      if (key.indexOf('data:') === 0) playCustom(key, volume)\n      else if (key.indexOf('audio:') === 0) playAudioRef(key.slice(6), volume)\n      else playBuiltin(key, volume)\n```\n\n</details>\n\n**依据 7 · 源码核查**：[lib/client.js:615-644](https://github.com/AI-Galaxy-GPU/dsh-sound/blob/aa7be415ee34570bd1c834da9d8a500e85401583/lib/client.js#L615-L644)\n\n模块频道仲裁。\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\n    /* ---------------- 多标签页去重（BroadcastChannel） ---------------- */\n    var crossTab = null\n    var peerSeen = false // 只有确认存在另一标签时才做 40ms 握手\n    var crossTabPending = new Map() // sourceKey -> { nonce, timer }\n    try {\n      if (typeof window !== 'undefined' && typeof window.BroadcastChannel === 'function') {\n        crossTab = new window.BroadcastChannel('dsh-sound')\n        crossTab.onmessage = function (ev) {\n          var msg = ev && ev.data\n          if (!msg || typeof msg !== 'object') return\n          if (msg.t === 'hello') {\n            peerSeen = true\n            try { crossTab.postMessage({ t: 'hello-ack' }) } catch (err) { /* 频道已关 */ }\n            return\n          }\n          if (msg.t === 'hello-ack') {\n            peerSeen = true\n            return\n          }\n          if (msg.t !== 'intent' || typeof msg.key !== 'string') return\n          peerSeen = true\n          var mine = crossTabPending.get(msg.key)\n          // nonce 较大的一方让位：两个标签同时收到对方意图时，恰有一个播放\n          if (mine && mine.nonce > msg.nonce) {\n            cancelSchedule(mine.timer)\n            crossTabPending.delete(msg.key)\n          }\n        }\n        try { crossTab.postMessage({ t: 'hello' }) } catch (err) { /* 频道已关 */ }\n      }\n```\n\n</details>\n\n**依据 8 · 源码核查**：[lib/client.js:712-724](https://github.com/AI-Galaxy-GPU/dsh-sound/blob/aa7be415ee34570bd1c834da9d8a500e85401583/lib/client.js#L712-L724)\n\n无ack与40ms。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n    function playWithCrossTabDedupe(key, sourceKey, cfg, vol) {\n      if (!peerSeen) {\n        try { crossTab.postMessage({ t: 'intent', key: sourceKey, nonce: Math.random() }) } catch (err) { /* 频道已关 */ }\n        playSound(key, sourceKey, cfg, vol)\n        return\n      }\n      var nonce = Math.random()\n      var timer = schedule(function () {\n        crossTabPending.delete(sourceKey)\n        playSound(key, sourceKey, cfg, vol)\n      }, 40)\n      crossTabPending.set(sourceKey, { nonce: nonce, timer: timer })\n      try { crossTab.postMessage({ t: 'intent', key: sourceKey, nonce: nonce }) } catch (err) { /* 频道已关 */ }\n```\n\n</details>\n\n**依据 9 · 源码核查**：[lib/client.js:297-332](https://github.com/AI-Galaxy-GPU/dsh-sound/blob/aa7be415ee34570bd1c834da9d8a500e85401583/lib/client.js#L297-L332)\n\n无跨tab设置同步。\n\n<details>\n<summary>查看原文（36行）</summary>\n\n```text\n    function readLocal() {\n      try {\n        var raw = window.localStorage.getItem(LOCAL_KEY)\n        return raw ? JSON.parse(raw) : null\n      } catch (err) { return null }\n    }\n\n    function createConfigStore() {\n      var snapshot = { status: 'ready', value: sanitize(readLocal()) }\n      var listeners = []\n      function commit(next) {\n        snapshot = { status: 'ready', value: next }\n        try { window.localStorage.setItem(LOCAL_KEY, JSON.stringify(next)) } catch (err) { /* 隐私模式等：仅内存生效 */ }\n        var list = listeners.slice()\n        for (var i = 0; i < list.length; i++) list[i]()\n      }\n      return {\n        getSnapshot: function () { return snapshot },\n        subscribe: function (fn) {\n          listeners.push(fn)\n          return function () {\n            var i = listeners.indexOf(fn)\n            if (i >= 0) listeners.splice(i, 1)\n          }\n        },\n        set: function (field, value) {\n          var next = {}\n          next[field] = value\n          return this.patch(next)\n        },\n        patch: function (partial) {\n          commit(sanitize(Object.assign({}, snapshot.value, partial)))\n          return Promise.resolve()\n        },\n        replace: function (next) { commit(sanitize(next)) },\n      }\n```\n\n</details>\n\n**依据 10 · 源码核查**：[lib/client.js:1631-1634](https://github.com/AI-Galaxy-GPU/dsh-sound/blob/aa7be415ee34570bd1c834da9d8a500e85401583/lib/client.js#L1631-L1634)\n\n清理仅watcher。\n\n```text\n      var t = ctx.locale.bind(LOCALE_NS)\n      var store = createConfigStore()\n      var disposeWatcher = startWatcher(ctx, store)\n      ctx.effect(function () { return disposeWatcher })\n```\n\n#### 缺口\n\n- 浏览器实际输出/自动播放和后台tab调度不由事件消费证明。\n  **影响：**不能据响铃尝试推断用户已获知；漏响会影响重要提醒。\n  **进一步探讨：**可从可见播放失败状态和本机实际输出设置核对，关键待办始终回原UI。\n- 跨标签和重连的恰好一次/不漏语义未成立。\n  **影响：**不能作唯一提醒通道或可靠通知队列。\n  **进一步探讨：**可用迟到intent、仲裁者播放失败、初始快照和快速连续事件夹具研究，并明确best-effort。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 依赖、本地保存和读者步骤是什么？\n\n**研究主题：**依赖、兼容与流程\n\n#### 完整回答\n\n包@ai-galaxy/dsh-sound0.4.1声明Node>=20和DSH0.1.5兼容记录；Client硬注入slots/sessions/connection/locale，实际API版本仍需固定。Host注释明确settings白名单下Client用localStorage，不能靠Host profile行配置期待浏览器设置同步。\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| DSH Web slots/sessions/connection/locale | Client必需 | 设置页和事件流 | 硬注入版本需匹配；流失败后快照较弱 |\n| 浏览器音频权限/可用输出 | 必需 | WebAudio/HTMLAudio播放 | resume/play失败静默，不等已听到 |\n| localStorage | 配置可选 | 浏览器固定origin配置键 | 写失败仅内存，不用Host配置替代 |\n| IndexedDB/本地音频 | 自定义可选 | Blob和audio引用 | 不可用回dataURL，可受quota/解码限制 |\n| BroadcastChannel | 多标签去重可选 | 同origin意图握手 | 无全局持久确认，异步延迟可重复/漏响 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 准备 | 固定Web/插件，低音量先内置试听 | 浏览器允许且实际听到，不仅按过播放 |\n| 配置 | 明确主/子Agent六类音量/静音 | 子代理并非六类默认全静音，以实际配置为准 |\n| 使用 | 受控事件对照原UI，保留视觉提示 | 铃声仅辅助，不作为任务成功/待办可靠队列 |\n| 恢复 | 无声/多响查权限、频道和事件路径 | 不因无声重复业务操作，重要待办看原UI |\n\n文件存到同origin IDB，本地不是自动上云；IDB不可用回dataURL并可能进入配置，导出/分享配置需核是否含声音文件内容。换域/浏览器不能假定原引用存在。功能不调用TTS模型，本轮未独立检查所有导出UI/迁移格式。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:1-4](https://github.com/AI-Galaxy-GPU/dsh-sound/blob/aa7be415ee34570bd1c834da9d8a500e85401583/package.json#L1-L4)\n\n包版本。\n\n```text\n{\n  \"name\": \"@ai-galaxy/dsh-sound\",\n  \"version\": \"0.4.1\",\n  \"description\": \"DeepSeek Harness plugin: per-event task-completion and attention sounds for turn-end / approval / question / plan-review / goal-blocked / task-failure, each with its own sound (built-in synth, local audio file) and volume, with a separate subagent channel (Web UI)\",\n```\n\n**依据 2 · 作者声明**：[lib/index.js:1-7](https://github.com/AI-Galaxy-GPU/dsh-sound/blob/aa7be415ee34570bd1c834da9d8a500e85401583/lib/index.js#L1-L7)\n\n作者配置通道说明。\n\n```text\n/**\n * dsh-sound — Host 半体\n *\n * 注册 `dsh-sound` 设置命名空间（schema 见 Config），为将来平台\n * 开放第三方命名空间暴露机制预留配置通道。当前 rc.6 的 settings API\n * 白名单（dsh-host-apiproxy）不会把该命名空间暴露给浏览器，因此客户端\n * 使用 localStorage 持久化配置；本注册保持无害且兼容未来版本。\n```\n\n**依据 3 · 源码核查**：[lib/client.js:1607-1634](https://github.com/AI-Galaxy-GPU/dsh-sound/blob/aa7be415ee34570bd1c834da9d8a500e85401583/lib/client.js#L1607-L1634)\n\nClient依赖/生效。\n\n<details>\n<summary>查看原文（28行）</summary>\n\n```text\n    var inject = ['slots', 'sessions', 'connection', 'locale']\n\n    function apply(ctx) {\n      if (crossTab) {\n        try { crossTab.postMessage({ t: 'hello' }) } catch (err) { /* 频道已关 */ }\n      }\n      ctx.effect(function () {\n        var locales = ctx.locale.getLocale().locales\n        var hasLocale = function (id) {\n          var target = id.toLowerCase()\n          return locales.some(function (locale) { return String(locale.id).toLowerCase() === target })\n        }\n        var disposers = [\n          hasLocale('pt-BR') ? function () {} : ctx.locale.addLanguage({ id: 'pt-BR', label: 'Português (Brasil)', fallback: 'en' }),\n          hasLocale('es') ? function () {} : ctx.locale.addLanguage({ id: 'es', label: 'Español', fallback: 'en' }),\n          ctx.locale.register(LOCALE_NS, 'zh', DICTS.zh),\n          ctx.locale.register(LOCALE_NS, 'en', DICTS.en),\n          ctx.locale.register(LOCALE_NS, 'pt-BR', DICTS['pt-BR']),\n          ctx.locale.register(LOCALE_NS, 'es', DICTS.es),\n        ]\n        return function () {\n          for (var i = disposers.length - 1; i >= 0; i--) disposers[i]()\n        }\n      }, 'dsh-sound: locale dictionaries')\n      var t = ctx.locale.bind(LOCALE_NS)\n      var store = createConfigStore()\n      var disposeWatcher = startWatcher(ctx, store)\n      ctx.effect(function () { return disposeWatcher })\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/client.js:487-507](https://github.com/AI-Galaxy-GPU/dsh-sound/blob/aa7be415ee34570bd1c834da9d8a500e85401583/lib/client.js#L487-L507)\n\n本地文件/回dataURL。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n    /** 保存一个音频文件到 IndexedDB，返回 `audio:<id>` 引用；存储不可用时返回 data URL。 */\n    function storeUploaded(file) {\n      if (typeof window.indexedDB !== 'undefined') {\n        return saveAudio(file).then(function (id) {\n          return id ? 'audio:' + id : readAsDataUrl(file)\n        })\n      }\n      return readAsDataUrl(file)\n    }\n\n    function saveAudio(file) {\n      return audioStore().then(function (db) {\n        if (!db) return null\n        var id = 'a' + Date.now().toString(36) + Math.random().toString(36).slice(2, 8)\n        return new Promise(function (resolve) {\n          var tx = db.transaction('files', 'readwrite')\n          tx.objectStore('files').put({ blob: file, name: (file && typeof file.name === 'string' && file.name) || '' }, id)\n          tx.oncomplete = function () { resolve(id) }\n          tx.onerror = function () { resolve(null) }\n          tx.onabort = function () { resolve(null) }\n        })\n```\n\n</details>\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 三阶段成本和效果如何评价？\n\n**研究主题：**效果与总成本\n\n#### 完整回答\n\n内置合成没有独立网络TTS/模型费用，仍有事件流、状态表、音频解码/播放和浏览器存储。音频按引用cache，换文件/大文件可增加内存/IDB；文件路径没有在已检查存储函数里限制大小/解码成本，不应说任意大文件低开销。\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 浏览器音频环境，金额未知 | 试听、权限和事件分类核对 | 内置无需外部TTS/API |\n| 持续使用 | 事件流/状态图、音频解码/本地存储 | 调噪声/音量和子代理规则 | 提醒可能打扰，不等效率增益 |\n| 失败恢复 | 配置/文件重选、权限/重连核查 | 对照原始UI待办，避免漏提醒 | 无播放ack、恢复重放边界不同 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 提醒区分 | 六类型/主子Agent路由 | 实际听到率/反应时间改善 |\n| 降重复 | 400ms来源去抖/40ms跨tab意图 | 跨tab恰好一次或持久可靠 |\n| 兼容降级 | 流重连和快照diff | 结束reason/重放语义等价 |\n\nseenRpcIds页生命周期集合不按会话统一清理，question resolved会删特定ID而approval不见同等删除；长期会话/审批量需关注。quietCurrent减少部分声音但注意类仍响，不代表免打扰；有效性应比较实际漏提醒/误提醒、响应时间与打扰人时，而非播放次数。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/client.js:487-507](https://github.com/AI-Galaxy-GPU/dsh-sound/blob/aa7be415ee34570bd1c834da9d8a500e85401583/lib/client.js#L487-L507)\n\n音频存储。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n    /** 保存一个音频文件到 IndexedDB，返回 `audio:<id>` 引用；存储不可用时返回 data URL。 */\n    function storeUploaded(file) {\n      if (typeof window.indexedDB !== 'undefined') {\n        return saveAudio(file).then(function (id) {\n          return id ? 'audio:' + id : readAsDataUrl(file)\n        })\n      }\n      return readAsDataUrl(file)\n    }\n\n    function saveAudio(file) {\n      return audioStore().then(function (db) {\n        if (!db) return null\n        var id = 'a' + Date.now().toString(36) + Math.random().toString(36).slice(2, 8)\n        return new Promise(function (resolve) {\n          var tx = db.transaction('files', 'readwrite')\n          tx.objectStore('files').put({ blob: file, name: (file && typeof file.name === 'string' && file.name) || '' }, id)\n          tx.oncomplete = function () { resolve(id) }\n          tx.onerror = function () { resolve(null) }\n          tx.onabort = function () { resolve(null) }\n        })\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/client.js:511-527](https://github.com/AI-Galaxy-GPU/dsh-sound/blob/aa7be415ee34570bd1c834da9d8a500e85401583/lib/client.js#L511-L527)\n\n缓存dataURL。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n    function loadAudio(id) {\n      if (audioCache.has(id)) return Promise.resolve(audioCache.get(id))\n      return audioStore().then(function (db) {\n        if (!db) return null\n        return new Promise(function (resolve) {\n          var req = db.transaction('files', 'readonly').objectStore('files').get(id)\n          req.onsuccess = function () {\n            var blob = blobOf(req.result)\n            if (!blob) { resolve(null); return }\n            var reader = new window.FileReader()\n            reader.onload = function () {\n              var url = String(reader.result)\n              audioCache.set(id, url)\n              resolve(url)\n            }\n            reader.onerror = function () { resolve(null) }\n            reader.readAsDataURL(blob)\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/client.js:791-826](https://github.com/AI-Galaxy-GPU/dsh-sound/blob/aa7be415ee34570bd1c834da9d8a500e85401583/lib/client.js#L791-L826)\n\nseenRpc集合。\n\n<details>\n<summary>查看原文（36行）</summary>\n\n```text\n      var seenRpcIds = new Set() // 页生命周期：刷新恢复回放的 requested 与重连同 id 不响\n      var openBurst = false // 本轮流打开后、首批握手帧尚未结束\n      var badFrames = 0\n      var reopenDelay = REOPEN_BASE // 指数退避：成功收到帧即复位\n\n      function skipCurrentSession(cfg, sid) {\n        if (!cfg || cfg.quietCurrent !== true) return false\n        try {\n          var snap = ctx.sessions.list.getSnapshot()\n          return snap.current === sid\n        } catch (err) { return false }\n      }\n\n      /** 清理已销毁会话的状态表（防 session key 无限增长）。 */\n      function pruneDisposed() {\n        var ids = null\n        try {\n          var snap = ctx.sessions.list.getSnapshot()\n          ids = snap ? snap.ids : null\n        } catch (err) { ids = null }\n        if (!Array.isArray(ids)) return\n        var active = {}\n        for (var i = 0; i < ids.length; i++) active[ids[i]] = true\n        prevGoalPhase.forEach(function (phase, sid) { if (!active[sid]) prevGoalPhase.delete(sid) })\n        prevJobStatus.forEach(function (status, key) {\n          var sep = key.indexOf(':')\n          if (sep >= 0 && !active[key.slice(0, sep)]) prevJobStatus.delete(key)\n        })\n      }\n\n      function noteRequestId(envelope) {\n        var rid = envelope && envelope.rpcId != null ? String(envelope.rpcId) : ''\n        if (!rid) return { seen: false, id: '' }\n        if (seenRpcIds.has(rid)) return { seen: true, id: rid }\n        seenRpcIds.add(rid)\n        return { seen: false, id: rid }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/client.js:868-884](https://github.com/AI-Galaxy-GPU/dsh-sound/blob/aa7be415ee34570bd1c834da9d8a500e85401583/lib/client.js#L868-L884)\n\n请求ID/播放。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n        if (frame.type === 'approval/resolved' || frame.type === 'question/resolved') {\n          openBurst = false\n          if (frame.type === 'question/resolved' && frame.questionRpcId != null) {\n            seenRpcIds.delete(String(frame.questionRpcId))\n          }\n          return\n        }\n        if (frame.type === 'approval/requested' || frame.type === 'question/requested') {\n          var noted = noteRequestId(envelope)\n          if (noted.seen || openBurst) return\n          var isSub = isSubagentSession(ctx, sid)\n          if (frame.type === 'approval/requested') {\n            playFor(cfg, 'approval', 'pending:' + sid + ':approval', isSub)\n            return\n          }\n          var kind = resolveQuestionKind(ctx, sid, frame.questions)\n          playFor(cfg, kind, 'pending:' + sid + ':' + kind, isSub)\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/client.js:796-801](https://github.com/AI-Galaxy-GPU/dsh-sound/blob/aa7be415ee34570bd1c834da9d8a500e85401583/lib/client.js#L796-L801)\n\nquiet判当前。\n\n```text\n      function skipCurrentSession(cfg, sid) {\n        if (!cfg || cfg.quietCurrent !== true) return false\n        try {\n          var snap = ctx.sessions.list.getSnapshot()\n          return snap.current === sid\n        } catch (err) { return false }\n```\n\n#### 缺口\n\n- 无长期资源/漏误提醒率、实际听到率及响应时间对照。\n  **影响：**不能承诺减少等待或可靠提醒所有阻塞。\n  **进一步探讨：**可用受控事件序列与真实音频设置记录尝试/输出/人工感知及打扰，对比原UI。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 工程点、播放收据假设与采用建议是什么？\n\n**研究主题：**工程质量与复用、新假设与验证、采用判断\n\n#### 完整回答\n\n事件分类/声音源/配置分离、明确子Agent频道、指数重连、AbortController和watcher清理、音量sanitize及IDB避localStorage大音频是可复用点。snapshot是降级而非同语义副本，模块资源/全局仲裁仍需生命周期治理。\n\n可探讨未验证的“事件与播放状态收据”。给源事件稳定ID/结束reason，快照缺reason显示弱提示不冒充完成；跨tab用短租约和播放started/failed状态，失败可让位但不盲重放，明确best-effort而非恰好一次。配置按origin/profile隔离并同步版本，dispose关闭频道/定时器和AudioContext，缓存/文件有上限和清理。代价是额外状态/隐私和浏览器兼容，不可能仅靠API证明用户听到。可用延迟tab、禁用音频、快速两轮、abort/错误、初始pending及卸载重装夹具比较。\n\n推荐trial，可作为辅助通知，先低音量内置试听、核主子频道/quiet和原UI对照，不作唯一审批/故障提醒。继续从fallback结束原因、播放失败可见性、多tab/生命周期和默认文档一致性入手。发现误报完成、漏重要待办、多响打扰或设置不一致时暂停声音并回视觉状态，不能因没有铃声重做业务动作。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/client.js:241-259](https://github.com/AI-Galaxy-GPU/dsh-sound/blob/aa7be415ee34570bd1c834da9d8a500e85401583/lib/client.js#L241-L259)\n\n配置sanitize。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n    function sanitize(value) {\n      var out = {}\n      var f\n      out.enabled = CONFIG_DEFAULTS.enabled\n      out.quietCurrent = CONFIG_DEFAULTS.quietCurrent\n      out.ignoreSubagent = CONFIG_DEFAULTS.ignoreSubagent\n      var fields = ['completionSound', 'approvalSound', 'questionSound', 'planReviewSound', 'goalBlockedSound', 'failureSound']\n      var vols = ['completionVolume', 'approvalVolume', 'questionVolume', 'planReviewVolume', 'goalBlockedVolume', 'failureVolume']\n      var subFields = ['subagentCompletionSound', 'subagentApprovalSound', 'subagentQuestionSound', 'subagentPlanReviewSound', 'subagentGoalBlockedSound', 'subagentFailureSound']\n      var subVols = ['subagentCompletionVolume', 'subagentApprovalVolume', 'subagentQuestionVolume', 'subagentPlanReviewVolume', 'subagentGoalBlockedVolume', 'subagentFailureVolume']\n      for (f = 0; f < fields.length; f++) out[fields[f]] = CONFIG_DEFAULTS[fields[f]]\n      for (f = 0; f < vols.length; f++) out[vols[f]] = CONFIG_DEFAULTS[vols[f]]\n      for (f = 0; f < subFields.length; f++) out[subFields[f]] = CONFIG_DEFAULTS[subFields[f]]\n      for (f = 0; f < subVols.length; f++) out[subVols[f]] = CONFIG_DEFAULTS[subVols[f]]\n      out.localFiles = {}\n      if (value && typeof value === 'object') {\n        if (typeof value.enabled === 'boolean') out.enabled = value.enabled\n        if (typeof value.quietCurrent === 'boolean') out.quietCurrent = value.quietCurrent\n        if (typeof value.ignoreSubagent === 'boolean') out.ignoreSubagent = value.ignoreSubagent\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/client.js:925-958](https://github.com/AI-Galaxy-GPU/dsh-sound/blob/aa7be415ee34570bd1c834da9d8a500e85401583/lib/client.js#L925-L958)\n\n重连/清理。\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\n        var ac = new AbortController()\n        loopAbort = ac\n        beginBurst()\n        var iterable\n        try {\n          iterable = ctx.connection.api.events.mux({}, ac.signal)\n        } catch (err) { scheduleReopen(); return }\n        if (!iterable || typeof iterable[Symbol.asyncIterator] !== 'function') { scheduleReopen(); return }\n        ;(async function () {\n          try {\n            for await (var frame of iterable) {\n              if (disposed) break\n              handleFrame(frame)\n            }\n          } catch (err) { /* 流中断：连接重连或插件卸载，走重开逻辑 */ }\n          scheduleReopen()\n        })()\n      }\n\n      function scheduleReopen() {\n        if (disposed) return\n        if (loopAbort) { try { loopAbort.abort() } catch (e) {} loopAbort = null }\n        var delay = reopenDelay\n        reopenDelay = Math.min(reopenDelay * 2, REOPEN_MAX)\n        reopenTimer = schedule(function () { runLoop() }, delay)\n      }\n\n      runLoop()\n      return function () {\n        disposed = true\n        if (reopenTimer !== null) cancelSchedule(reopenTimer)\n        if (burstTimer !== null) cancelSchedule(burstTimer)\n        if (loopAbort) { try { loopAbort.abort() } catch (e) {} }\n      }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/client.js:1042-1065](https://github.com/AI-Galaxy-GPU/dsh-sound/blob/aa7be415ee34570bd1c834da9d8a500e85401583/lib/client.js#L1042-L1065)\n\n弱语义起点。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n          // 会话回合结束：running true -> false（完成铃声，尊重 quietCurrent）\n          var was = prevRunning.get(id)\n          if (was === true && row.running === false && !(quietCurrent && snap.current === id)) {\n            playFor(cfg, 'completion', 'session:' + id, rowSub)\n          }\n          prevRunning.set(id, row.running === true)\n\n          // 需要人介入：pendingInteraction 出现（approval / question / plan-review）\n          var pi = row.pendingInteraction\n          var prevPi = prevPending.get(id)\n          if (pi !== undefined && pi !== prevPi) {\n            var kind = SOUND_FIELD[pi] ? pi : 'question'\n            playFor(cfg, kind, 'pending:' + id + ':' + pi, rowSub)\n          }\n          prevPending.set(id, pi)\n\n          // 目标受阻：goal 投影进入 blocked\n          var pv = row.projectionValues\n          var goal = pv && typeof pv === 'object' ? pv.goal : undefined\n          var phase = goal && typeof goal === 'object' ? goal.phase : undefined\n          var prevPhase = prevGoalPhase.get(id)\n          if (phase === 'blocked' && prevPhase !== 'blocked') {\n            playFor(cfg, 'goal-blocked', 'goal:' + id, rowSub)\n          }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/client.js:661-674](https://github.com/AI-Galaxy-GPU/dsh-sound/blob/aa7be415ee34570bd1c834da9d8a500e85401583/lib/client.js#L661-L674)\n\n播放收据起点。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n    function playSound(key, sourceKey, cfg, vol) {\n      if (!key || key === 'none' || key === 'local') return\n      var volume = typeof vol === 'number' && vol >= 0 && vol <= 1 ? vol : 1\n      if (sourceKey) {\n        var now = Date.now()\n        var last = lastPlayed.get(sourceKey)\n        if (last !== undefined && now - last < DEDUPE_MS) return\n        lastPlayed.set(sourceKey, now)\n      }\n      playCount++\n      if (playCount % 32 === 0) pruneLastPlayed()\n      if (key.indexOf('data:') === 0) playCustom(key, volume)\n      else if (key.indexOf('audio:') === 0) playAudioRef(key.slice(6), volume)\n      else playBuiltin(key, volume)\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/client.js:712-724](https://github.com/AI-Galaxy-GPU/dsh-sound/blob/aa7be415ee34570bd1c834da9d8a500e85401583/lib/client.js#L712-L724)\n\n仲裁租约假设。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n    function playWithCrossTabDedupe(key, sourceKey, cfg, vol) {\n      if (!peerSeen) {\n        try { crossTab.postMessage({ t: 'intent', key: sourceKey, nonce: Math.random() }) } catch (err) { /* 频道已关 */ }\n        playSound(key, sourceKey, cfg, vol)\n        return\n      }\n      var nonce = Math.random()\n      var timer = schedule(function () {\n        crossTabPending.delete(sourceKey)\n        playSound(key, sourceKey, cfg, vol)\n      }, 40)\n      crossTabPending.set(sourceKey, { nonce: nonce, timer: timer })\n      try { crossTab.postMessage({ t: 'intent', key: sourceKey, nonce: nonce }) } catch (err) { /* 频道已关 */ }\n```\n\n</details>\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：83410795efbfba70ab37fd8edb86c9f2176b3ff923cd7cb7f31eb4763d08fd5e。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 3 | 510 | — | — | 5315 |\n| .js | source | 2 | 1716 | 1468 | 171 | — |\n| .mjs | source | 2 | 1201 | 1084 | 35 | — |\n\n排除 1 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 六类声音 | 区分完成/注意 | snapshot无reason保证较弱 |\n| 子Agent频道 | 单独配置/忽略 | 来源依会话行，非全默认静音 |\n| 本地音源 | 合成/IDB/dataURL | 自动播放/解码可能静默失败 |\n| 多tab去重 | 意图仲裁减少重复 | best-effort非恰好一次 |\n\n## 工程亮点\n\n事件分类/声音源/配置分离、明确子Agent频道、指数重连、AbortController和watcher清理、音量sanitize及IDB避localStorage大音频是可复用点。snapshot是降级而非同语义副本，模块资源/全局仲裁仍需生命周期治理。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 lib/index.js、lib/client.js、README.md、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定Host schema、Client配置/音频/去重/事件与快照/挂卸载；未全面审全部设置导入导出UI或证明真实浏览器输出。\n- 下一步：进一步探讨以结束reason/播放失败/迟到tab/连续事件/初始pending/卸载夹具核弱语义，再测感知与打扰。\n",
         "metadata": {
             "repository": "AI-Galaxy-GPU/dsh-sound",
             "repository_id": 1335332435,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T07:07:14.733Z",
+            "window_start": "2026-09-22T07:07:14.733Z",
             "stars": 14,
             "pushed_at": "2026-09-15T16:35:44Z",
             "issues": {
-                "open": 1,
-                "closed": 2,
-                "created_30d": 1,
-                "closed_30d": 0,
+                "open": 0,
+                "closed": 4,
+                "created_30d": 0,
+                "closed_30d": 1,
                 "updated_30d": 1
             },
             "errors": [],
             "npm": {
                 "package_name": "@ai-galaxy/dsh-sound",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 948,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40ai-galaxy%2Fdsh-sound",
+                "captured_at": "2026-10-22T07:07:25.777Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 920,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/%40ai-galaxy%2Fdsh-sound",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-09-13T04:12:06.937Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T07:07:25.777Z",
                     "source_url": "https://registry.npmjs.org/%40ai-galaxy%2Fdsh-sound",
                     "error": null,
                     "latest_version": "0.4.1",
                     "latest_published_at": "2026-09-14T02:43:55.411Z",
                     "latest_error": null
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "aa7be415ee34570bd1c834da9d8a500e85401583",
-                "current_revision": "aa7be415ee34570bd1c834da9d8a500e85401583",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {
@@ -423,14 +450,14 @@
             "repository": "AI-Galaxy-GPU/dsh-sound",
             "path": "",
             "revision": "aa7be415ee34570bd1c834da9d8a500e85401583",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "e1ae4bf9a55eb1d6778a91ae81cb1fdf5acb0c45bcc765f04a460d87fd28d660",
                 "code": "aa7be415ee34570bd1c834da9d8a500e85401583",
                 "maintenance": "d29947e1d8c7e36d6126eb437ff4cf8e3c36a731d99254a49b19cc7f675e7863"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

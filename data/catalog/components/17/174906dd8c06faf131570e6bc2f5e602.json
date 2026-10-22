@@ -24,43 +24,89 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-07-github-1343679449-root-directory-0",
+                    "id": "2026-10-22-02-github-1343679449-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T08:08:51.502Z",
+                    "retrieved_at": "2026-10-22T06:10:03.591Z",
                     "membership": "present"
                 },
                 {
-                    "id": "2026-10-21-07-github-1343679449-root-directory-1",
+                    "id": "2026-10-22-02-github-1343679449-root-directory-1",
                     "url": "https://github.com/0xsline/awesome-deepseek-harness",
                     "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
-                    "retrieved_at": "2026-10-21T08:08:51.502Z",
+                    "retrieved_at": "2026-10-22T06:10:03.591Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-07-github-1343679449-root-author",
+                    "id": "2026-10-22-02-github-1343679449-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite/blob/1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite",
+                            "commit": "1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818",
+                            "path": "README.md",
+                            "content_sha256": "2c1cc9ede7f2579bac6ebf9deb2859cb6571d36f4a88276df46098df8342505b"
+                        }
+                    ],
                     "revision": "1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818",
-                    "captured_at": "2026-10-21T08:08:51.502Z",
-                    "summary": "为DSH提供粉色Hello Kitty皮肤资源，并在轮次结束时显示卡片、声音或系统提醒。",
-                    "artifact": "data/runs/2026-10-21-07/snapshots/angel2518975237--deepseek-harness-hello-kitty-suite/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T06:10:03.591Z",
+                    "summary": "粉色 Hello Kitty 皮肤加每轮结束/提问提醒插件，皮肤独立安装。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/angel2518975237--deepseek-harness-hello-kitty-suite/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-07-github-1343679449-root-source",
+                    "id": "2026-10-22-02-github-1343679449-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite/blob/1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818/lib/index.js",
+                    "url": "https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite/blob/1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite",
+                            "commit": "1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818",
+                            "path": "README.md",
+                            "content_sha256": "2c1cc9ede7f2579bac6ebf9deb2859cb6571d36f4a88276df46098df8342505b"
+                        },
+                        {
+                            "repository_url": "https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite",
+                            "commit": "1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818",
+                            "path": "package.json",
+                            "content_sha256": "c81110354ca286220483bc39d403e4596b67b24b18835a0482b1553b744a7449"
+                        },
+                        {
+                            "repository_url": "https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite",
+                            "commit": "1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818",
+                            "path": "lib/index.js",
+                            "content_sha256": "f410bc9a4618357913026da62b979799fb32804eb3ee330de72ac29aba41e334"
+                        },
+                        {
+                            "repository_url": "https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite",
+                            "commit": "1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818",
+                            "path": "lib/client.js",
+                            "content_sha256": "e98dbe0af390e1db9e3f9f2e19ae9585bd0b32a485c0360a59ebe7c41c7725c5"
+                        },
+                        {
+                            "repository_url": "https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite",
+                            "commit": "1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818",
+                            "path": "skin/scripts/install.mjs",
+                            "content_sha256": "3bee46b862819f63afcd6bd010d1e96605761db5232984b40808952d9c92e6bc"
+                        },
+                        {
+                            "repository_url": "https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite",
+                            "commit": "1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818",
+                            "path": "skin/skin/hello-kitty-expressive/NOTICE.md",
+                            "content_sha256": "1a23a572c34117d8f12bbdb022720b14a30ab325bea0ddee79f1f049f598214b"
+                        }
+                    ],
                     "revision": "1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818",
-                    "captured_at": "2026-10-21T08:08:51.502Z",
-                    "summary": "核查 lib/index.js、lib/client.js、skin/scripts/install.mjs、package.json；host任意agent/turn-stopping令全局seq递增，client每700ms轮询后看当前DOM最后消息问号判断question/done；皮肤脚本分步复制/备份到DSH skins并启用skin center。",
-                    "artifact": "data/runs/2026-10-21-07/snapshots/angel2518975237--deepseek-harness-hello-kitty-suite/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T06:10:03.591Z",
+                    "summary": "核查 README.md、package.json、lib/index.js、lib/client.js、skin/scripts/install.mjs、skin/skin/hello-kitty-expressive/NOTICE.md；宿主 turn-stopping 递增全局 seq，客户端 700ms 轮询并读当前 DOM 判问号；皮肤脚本复制资产。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/angel2518975237--deepseek-harness-hello-kitty-suite/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "抽读lib/index.js、lib/client.js、skin/scripts/install.mjs、package.json；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+                        "固定提交静态审阅 README、根插件、皮肤安装脚本和 NOTICE；未安装目标。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -71,9 +117,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "喜欢角色主题且希望离屏提醒的用户；轮次停止与任务成功、等待人答是不同事实。",
+                    "text": "个人 DSH 用户希望个性化 UI 并在回合结束时获提醒。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1343679449-root-source"
+                        "2026-10-22-02-github-1343679449-root-source"
                     ],
                     "dependencies": [
                         {
@@ -82,16 +128,16 @@
                             "fingerprint": "1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:08:51.502Z",
+                    "reviewed_at": "2026-10-22T06:10:03.591Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "host任意agent/turn-stopping令全局seq递增，client每700ms轮询后看当前DOM最后消息问号判断question/done；皮肤脚本分步复制/备份到DSH skins并启用skin center。",
+                    "text": "宿主 turn-stopping 递增全局 seq，客户端 700ms 轮询并读当前 DOM 判问号；皮肤脚本复制资产。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1343679449-root-source"
+                        "2026-10-22-02-github-1343679449-root-source"
                     ],
                     "dependencies": [
                         {
@@ -100,16 +146,16 @@
                             "fingerprint": "1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:08:51.502Z",
+                    "reviewed_at": "2026-10-22T06:10:03.591Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "抽读lib/index.js、lib/client.js、skin/scripts/install.mjs、package.json；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+                    "text": "固定提交静态审阅 README、根插件、皮肤安装脚本和 NOTICE；未安装目标。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1343679449-root-source"
+                        "2026-10-22-02-github-1343679449-root-source"
                     ],
                     "dependencies": [
                         {
@@ -118,16 +164,16 @@
                             "fingerprint": "1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:08:51.502Z",
+                    "reviewed_at": "2026-10-22T06:10:03.591Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "通知代码与独立Skin Center v2资源，两者安装流程不同；未核实角色美术/商标商业授权，包元数据不能替代。",
+                    "text": "1.0.1 MIT 代码；皮肤角色资产 NOTICE 不代表官方授权，公开商业再分发前换原创许可素材。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1343679449-root-source"
+                        "2026-10-22-02-github-1343679449-root-source"
                     ],
                     "dependencies": [
                         {
@@ -136,16 +182,16 @@
                             "fingerprint": "1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:08:51.502Z",
+                    "reviewed_at": "2026-10-22T06:10:03.591Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "无模型费；首次皮肤复制/通知权限，持续轮询、视觉负担和浏览器资源，未测可读性/通知收益。",
+                    "text": "| 阶段 | 投入 | 未知 |\n| --- | --- | --- |\n| 安装 | 根插件+皮肤脚本/Skin Center | 兼容 |\n| 使用 | 每页 700ms HTTP/通知授权 | 误提醒 |\n| 发布 | 角色素材替换 | 权利证明 |",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1343679449-root-source"
+                        "2026-10-22-02-github-1343679449-root-source"
                     ],
                     "dependencies": [
                         {
@@ -154,16 +200,16 @@
                             "fingerprint": "1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:08:51.502Z",
+                    "reviewed_at": "2026-10-22T06:10:03.591Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "偏好主题时先查素材授权并验证对比度；提醒只作回看提示，不当作成功或当前会话等待你的保证。",
+                    "text": "个人测试 profile 分开安装两组件，先跑多会话/失败故障矩阵。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1343679449-root-source"
+                        "2026-10-22-02-github-1343679449-root-source"
                     ],
                     "dependencies": [
                         {
@@ -172,16 +218,16 @@
                             "fingerprint": "1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:08:51.502Z",
+                    "reviewed_at": "2026-10-22T06:10:03.591Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "个性化和提醒便利，未改变任务组织或交付质量。",
+                    "text": "| 结果 | 源码支持 | 未证实/偏差 |\n| --- | --- | --- |\n| 皮肤 | 资产复制 | 实机效果 |\n| 回合提醒 | seq 增长 | 任务成功 |\n| 提问 | 当前 DOM 问号 | 当前事件会话 |",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1343679449-root-source"
+                        "2026-10-22-02-github-1343679449-root-source"
                     ],
                     "dependencies": [
                         {
@@ -190,16 +236,16 @@
                             "fingerprint": "1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:08:51.502Z",
+                    "reviewed_at": "2026-10-22T06:10:03.591Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "皮肤安装staging/备份和语义锚点可借鉴；全局计数及DOM问号应升级为结构化事件。 源码依据：[lib/index.js](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite/blob/1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818/lib/index.js)、[lib/client.js](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite/blob/1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818/lib/client.js)、[skin/scripts/install.mjs](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite/blob/1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818/skin/scripts/install.mjs)、[package.json](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite/blob/1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818/package.json)。",
+                    "text": "host route 只传 seq；客户端轮询与当前 DOM 关联，hidden 分支只通知无声音；安装器会改 profile patch。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1343679449-root-source"
+                        "2026-10-22-02-github-1343679449-root-source"
                     ],
                     "dependencies": [
                         {
@@ -208,16 +254,16 @@
                             "fingerprint": "1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:08:51.502Z",
+                    "reviewed_at": "2026-10-22T06:10:03.591Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
                     "topic": "technical_innovation",
                     "basis": "interpretation",
-                    "text": "相对单独皮肤，增量是主题化通知组合和适配语义锚点；底层皮肤中心/浏览器通知属于宿主与平台。角色商标/美术权利不应由代码license替代。",
+                    "text": "将皮肤和轻量结束提醒打包；提醒无需外部服务。详见[Q01](#research-q01)、[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1343679449-root-source"
+                        "2026-10-22-02-github-1343679449-root-source"
                     ],
                     "dependencies": [
                         {
@@ -226,16 +272,16 @@
                             "fingerprint": "1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:08:51.502Z",
+                    "reviewed_at": "2026-10-22T06:10:03.591Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "全局结束事件能否说明当前会话完成？seq无session/result归属，其他Agent停止也可能触发当前DOM判断；问号只是文本启发，非ask_user_question或成功验收。多个浏览器标签可各响，后台轮询/音频权限还会漏提醒。",
+                    "text": "全局 seq 无会话/结果，当前 DOM 问号判提问；隐藏页没有提示音，README 与实现不一致。素材公开再分发需权利审查。详见[Q02](#research-q02)、[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1343679449-root-source"
+                        "2026-10-22-02-github-1343679449-root-source"
                     ],
                     "dependencies": [
                         {
@@ -244,16 +290,16 @@
                             "fingerprint": "1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:08:51.502Z",
+                    "reviewed_at": "2026-10-22T06:10:03.591Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
                     "topic": "technical_innovation",
                     "basis": "unverified",
-                    "text": "由全局seq与DOM启发推导，可用session/turn/callId事件分类，明确完成/提问/失败并跨标签选单一通知者。未验证；并行会话、非问号提问和失败停止时测误报/重复，正确事件归属应改善。",
+                    "text": "带会话/结果 ID 的事件推送可减少误提醒与轮询；尚未实现。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1343679449-root-source"
+                        "2026-10-22-02-github-1343679449-root-source"
                     ],
                     "dependencies": [
                         {
@@ -262,15 +308,15 @@
                             "fingerprint": "1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:08:51.502Z",
+                    "reviewed_at": "2026-10-22T06:10:03.591Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T08:08:51.502Z",
+            "last_checked_at": "2026-10-22T06:10:03.591Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818",
-                "reviewed_at": "2026-10-21T08:08:51.502Z",
+                "reviewed_at": "2026-10-22T06:10:03.591Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -281,16 +327,16 @@
                 ],
                 "technical": {
                     "criteria": {
-                        "novelty": 9,
+                        "novelty": 0,
                         "mechanism": 8,
                         "transferability": 5,
-                        "simplification": 4
+                        "simplification": 8
                     },
-                    "rationale": "novelty主题通知组合小档；mechanism全局计数轮询小档；transferability事件归属不足小档；simplification视觉入口小档。",
+                    "rationale": "全局序号桥简单，但未绑定会话/结果。",
                     "basis": "interpretation",
-                    "score": 26,
+                    "score": 21,
                     "evidence_ids": [
-                        "2026-10-21-07-github-1343679449-root-source"
+                        "2026-10-22-02-github-1343679449-root-source"
                     ]
                 },
                 "business": {
@@ -298,45 +344,45 @@
                         "workflow": 9,
                         "delivery": 8,
                         "reach": 5,
-                        "economics": 0
+                        "economics": 4
                     },
-                    "rationale": "workflow提醒便利小档；delivery装饰反馈小档；reach主题偏好用户小档；economics未识别成本结构变化0。",
+                    "rationale": "个人装饰需求清晰，但素材权利与高频轮询影响分发。",
                     "basis": "interpretation",
-                    "score": 22,
+                    "score": 26,
                     "evidence_ids": [
-                        "2026-10-21-07-github-1343679449-root-source"
+                        "2026-10-22-02-github-1343679449-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "trial",
-                "reason": "明确偏好Hello Kitty外观者可仅按主题试用；先核素材授权和对比度，全局停止加问号启发会错判当前会话，提醒只作回看信号。",
+                "decision": "observe",
+                "reason": "可在个人隔离 profile 看皮肤；提醒先核并行会话/失败事件，公开分发先换有权素材。",
                 "criteria": {
                     "scenario": {
-                        "score": 15,
-                        "rationale": "角色外观偏好受众明确。"
+                        "score": 8,
+                        "rationale": "个人审美与提醒偏好较窄。"
                     },
                     "advantage": {
                         "score": 6,
-                        "rationale": "主题复制和轻提醒提供娱乐便利，状态可靠性有限。"
+                        "rationale": "组合安装，但皮肤/提醒需分开配置。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "已核无session归属的seq和700ms轮询，未验实际通知收益。"
+                        "rationale": "固定源码与作者截图，未实机。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "无模型费，媒体授权、视觉负担及重复漏提醒需接受。"
+                        "score": 5,
+                        "rationale": "Skin Center 依赖、profile 修改、700ms 轮询和素材权利。"
                     }
                 },
-                "score": 44,
+                "score": 32,
                 "revision": "1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T06:10:03.591Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-07-github-1343679449-root-source"
+                    "2026-10-22-02-github-1343679449-root-source"
                 ],
                 "dependencies": [
                     {
@@ -362,82 +408,60 @@
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T07:52:12Z",
-            "analysis_sha256": "46027e6bc6fe5f02e31fe4bbd2cf7b930383057407fbf9ab8867f15a2a54169e"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "7b87e412395a9cab70015a294c57cb0bd7a4250f42d012596716c7106bb8a3a4"
         },
         "publication.metadata": "data/plugins/angel2518975237--deepseek-harness-hello-kitty-suite/META.json",
         "publication.summaries": {
-            "text": "为DSH提供粉色Hello Kitty皮肤资源，并在轮次结束时显示卡片、声音或系统提醒。",
+            "text": "粉色 Hello Kitty 皮肤加每轮结束/提问提醒插件，皮肤独立安装。",
             "revision": "1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818",
             "source_url": "https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite/blob/1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818/README.md"
         },
         "publication.capabilities": {
             "revision": "1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818",
             "items": {
-                "界面": "皮肤资源和卡片/声音/系统通知。",
-                "事件监听": "Agent轮次停止计数。",
-                "Host 路由": "只读通知序号接口。"
-            }
+                "界面": "回合结束与问号提示、浏览器通知和可见页面提示音",
+                "事件监听": "回合停止后更新全局序号",
+                "Host 路由": "通知序号轮询端点"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| skin | 个性外观 | 需 Skin Center |\n| seq | 回合变化 | 无会话/结果 |\n| question | 提问提示 | 末条问号 |"
         },
         "publication.advice": {
             "revision": "1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818",
-            "text": "偏好主题时先查素材授权并验证对比度；提醒只作回看提示，不当作成功或当前会话等待你的保证。"
+            "text": "个人测试 profile 分开安装两组件，先跑多会话/失败故障矩阵。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/angel2518975237--deepseek-harness-hello-kitty-suite",
-        "reports": "# deepseek-harness-hello-kitty-suite\n\n> 为DSH提供粉色Hello Kitty皮肤资源，并在轮次结束时显示卡片、声音或系统提醒。\n\n## 使用建议\n\n偏好主题时先查素材授权并验证对比度；提醒只作回看提示，不当作成功或当前会话等待你的保证。\n\n核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。\n\n源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。\n\n## 洞察短评\n\n- **用途**：喜欢角色主题且希望离屏提醒的用户；轮次停止与任务成功、等待人答是不同事实。\n- **亮点**：相对单独皮肤，增量是主题化通知组合和适配语义锚点；底层皮肤中心/浏览器通知属于宿主与平台。角色商标/美术权利不应由代码license替代。\n- **思考**：全局结束事件能否说明当前会话完成？seq无session/result归属，其他Agent停止也可能触发当前DOM判断；问号只是文本启发，非ask_user_question或成功验收。多个浏览器标签可各响，后台轮询/音频权限还会漏提醒。\n- **建议**：由全局seq与DOM启发推导，可用session/turn/callId事件分类，明确完成/提问/失败并跨标签选单一通知者。未验证；并行会话、非问号提问和失败停止时测误报/重复，正确事件归属应改善。\n\n## 场景与替代办法\n\n喜欢角色主题且希望离屏提醒的用户；轮次停止与任务成功、等待人答是不同事实。\n\n宿主状态/系统通知更语义明确，主题插件补视觉偏好。\n\n## 能力清单\n\n- **界面**：皮肤资源和卡片/声音/系统通知。\n- **事件监听**：Agent轮次停止计数。\n- **Host 路由**：只读通知序号接口。\n\n## 依赖与流程\n\nDSH webServer/turn事件、客户端slots/timer、Skin Center v2、浏览器Notification/AudioContext权限。\n\n单独安装皮肤并应用→挂通知host/client→轮询seq→DOM分类→卡片/声音/系统通知；卸载皮肤与通知分别处理。\n\n## 成本与效果\n\n无模型费；首次皮肤复制/通知权限，持续轮询、视觉负担和浏览器资源，未测可读性/通知收益。\n\n个性化和提醒便利，未改变任务组织或交付质量。\n\n## 核心贡献\n\n相对单独皮肤，增量是主题化通知组合和适配语义锚点；底层皮肤中心/浏览器通知属于宿主与平台。角色商标/美术权利不应由代码license替代。\n\n## 关键质疑\n\n全局结束事件能否说明当前会话完成？seq无session/result归属，其他Agent停止也可能触发当前DOM判断；问号只是文本启发，非ask_user_question或成功验收。多个浏览器标签可各响，后台轮询/音频权限还会漏提醒。\n\n\n## 工程亮点\n\n皮肤安装staging/备份和语义锚点可借鉴；全局计数及DOM问号应升级为结构化事件。 源码依据：[lib/index.js](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite/blob/1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818/lib/index.js)、[lib/client.js](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite/blob/1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818/lib/client.js)、[skin/scripts/install.mjs](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite/blob/1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818/skin/scripts/install.mjs)、[package.json](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite/blob/1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818/package.json)。\n\n## 未来设计假设（未验证）\n\n由全局seq与DOM启发推导，可用session/turn/callId事件分类，明确完成/提问/失败并跨标签选单一通知者。未验证；并行会话、非问号提问和失败停止时测误报/重复，正确事件归属应改善。\n\n并行会话/子Agent/失败/问句不带问号/多标签测试归属与漏重报；验证亮暗对比和皮肤脚本回滚，不执行本轮脚本。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：f0935a266a96cd068e13aa6e077a7f95e90b52b12d77dc3b693859154b7b2b71。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 221 | 193 | 15 | — |\n| .md | source | 3 | 164 | — | — | 1578 |\n| .mjs | source | 3 | 210 | 185 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[Angel2518975237/deepseek-harness-hello-kitty-suite](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite)\n- **版本号**：1.0.1（[固定提交 1b8cd7e7](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite/tree/1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818)）\n- **版本日期**：2026-09-10（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：作者 README、包清单、源码路径 lib/index.js、lib/client.js、skin/scripts/install.mjs、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读lib/index.js、lib/client.js、skin/scripts/install.mjs、package.json；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。\n- 下一步：并行会话/子Agent/失败/问句不带问号/多标签测试归属与漏重报；验证亮暗对比和皮肤脚本回滚，不执行本轮脚本。\n",
+        "reports": "# deepseek-harness-hello-kitty-suite\n\n> 粉色 Hello Kitty 皮肤加每轮结束/提问提醒插件，皮肤独立安装。\n\n## 研究范围\n\n- **仓库**：[Angel2518975237/deepseek-harness-hello-kitty-suite](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite)\n- **版本号**：1.0.1（[固定提交 1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite/tree/1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818)）\n- **版本日期**：2026-09-10（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n两组件静态可见；提醒称“任务完成”超出事件事实，跨会话关联与隐藏页提示音存在偏差。\n\n## 洞察短评\n\n- **用途**：个人 DSH 用户希望个性化 UI 并在回合结束时获提醒。\n- **亮点**：将皮肤和轻量结束提醒打包；提醒无需外部服务。详见[Q01](#research-q01)、[Q02](#research-q02)。\n- **思考**：全局 seq 无会话/结果，当前 DOM 问号判提问；隐藏页没有提示音，README 与实现不一致。素材公开再分发需权利审查。详见[Q02](#research-q02)、[Q03](#research-q03)。\n- **建议**：带会话/结果 ID 的事件推送可减少误提醒与轮询；尚未实现。详见[Q05](#research-q05)。\n\n采用建议：个人测试 profile 分开安装两组件，先跑多会话/失败故障矩阵。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n将皮肤和轻量结束提醒打包；提醒无需外部服务。详见[Q01](#research-q01)、[Q02](#research-q02)。\n\n## 关键质疑\n\n全局 seq 无会话/结果，当前 DOM 问号判提问；隐藏页没有提示音，README 与实现不一致。素材公开再分发需权利审查。详见[Q02](#research-q02)、[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n带会话/结果 ID 的事件推送可减少误提醒与轮询；尚未实现。详见[Q05](#research-q05)。\n\n隔离 profile 触发并行会话、取消/失败、页面隐藏、通知拒绝；核轮询与恢复。\n\n## 场景与替代办法\n\n个人 DSH 用户希望个性化 UI 并在回合结束时获提醒。\n\nDSH 原生界面/页面通知；本包增加粉色装饰与结束事件提示。\n\n## 依赖与流程\n\n| 条件 | 用途 | 失败时 |\n| --- | --- | --- |\n| webServer/slots/timer | 提醒 | 无弹窗 |\n| Notification/Audio | 系统提示/音 | 权限限制 |\n| Skin Center | 皮肤 | 仅提醒 |\n\n| 步骤 | 动作 | 判据 |\n| --- | --- | --- |\n| 装皮肤 | 隔离 profile | 可还原 |\n| 装提醒 | 多会话矩阵 | 无误提醒 |\n| 分享 | 换素材 | 授权可追溯 |\n\n## 成本与效果\n\n| 阶段 | 投入 | 未知 |\n| --- | --- | --- |\n| 安装 | 根插件+皮肤脚本/Skin Center | 兼容 |\n| 使用 | 每页 700ms HTTP/通知授权 | 误提醒 |\n| 发布 | 角色素材替换 | 权利证明 |\n\n| 结果 | 源码支持 | 未证实/偏差 |\n| --- | --- | --- |\n| 皮肤 | 资产复制 | 实机效果 |\n| 回合提醒 | seq 增长 | 任务成功 |\n| 提问 | 当前 DOM 问号 | 当前事件会话 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**分辨皮肤与提醒安装面，并核完成语义、多会话和素材边界。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 套件的皮肤与提醒分别解决什么需求？\n\n**研究主题：**场景与需求\n\n#### 完整回答\n\n根包是 DSH 提醒插件，另有 skin 子目录要独立执行安装脚本以复制皮肤并开启 Skin Center。皮肤给浅/暗粉色 UI 与角色装饰；提醒在 agent/turn-stopping 后显示卡片或系统通知。两者安装、宿主依赖和卸载面不同，不应把安装根插件理解为自动装皮肤。截图是作者展示，未独立目视/实机验证。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:12-20](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite/blob/1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818/README.md#L12-L20)\n\n两部分定位。\n\n```text\n## ✨ 这是什么\n\n一套给 [DeepSeek Harness](https://github.com/deepseek-ai) Web GUI 的 **Hello Kitty 主题套件**，包含两样东西：\n\n| 部件 | 说明 |\n| --- | --- |\n| 🎀 **甜心工作台皮肤** | Skin Center v2 用户皮肤（`hello-kitty-expressive`）：奶油白/贝壳粉浅色 + 深莓果暗色双主题；会话头字标、输入框蝴蝶结、侧栏坐姿 Kitty、对话区菱格爱心纹样…… |\n| 🔔 **Hello Kitty Task-Done Notifier** | 一轮对话收尾时右上角弹粉色卡片 + 「叮咚」音；页面切走则发系统通知。**大模型以提问收尾时同样提醒你回来回答。** |\n\n```\n\n**依据 2 · 作者声明**：[README.md:45-72](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite/blob/1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818/README.md#L45-L72)\n\n两条安装路径。\n\n<details>\n<summary>查看原文（28行）</summary>\n\n````text\n## 📦 安装\n\n### 皮肤\n\n```sh\ncd skin\nnode scripts/install.mjs      # 复制到 ~/.dsh/skins/ 并启用皮肤中心\n```\n\n重启 Harness → **设置 → 皮肤中心 → 甜心工作台·强化版 → 应用**。\n\n- 卸载：`node scripts/uninstall.mjs`（可恢复移动，不删源码、不停用皮肤中心）\n- 校验：`node scripts/validate.mjs`（用本机皮肤中心真实 v2 校验器）\n\n### 提醒插件（编译型 DSH 插件，本仓库根即插件）\n\n本仓库**根**就是一个可直接安装的 DSH 插件包（`package.json` + `cordis.patch.yml` + `lib/`）。安装：\n\n```sh\n# 在 Harness 的插件页粘贴仓库地址，或命令行：\ndsh plugin --profile web add https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite.git\n```\n\n重新加载/重启 Harness 后，`hello-kitty-notifier` 注册并开始监听：\n- 宿主端：`agent/turn-stopping` 每轮自增 `seq`，暴露 `GET /api/hellokitty-notify`；\n- 客户端：每 700ms `fetch` 该接口，`seq` 增长后弹粉色卡片 + 声音；提问时显示「有个问题等你回答」。\n\n> 提问检测依赖皮肤中心语义锚点 `[data-dsh-surface=\"conversation\"]` / `[data-dsh-part=\"message-body\"]`，建议与皮肤一起使用。\n````\n\n</details>\n\n**依据 3 · 源码核查**：[package.json:1-25](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite/blob/1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818/package.json#L1-L25)\n\n根插件 manifest。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n{\n  \"name\": \"deepseek-harness-hello-kitty-suite\",\n  \"version\": \"1.0.1\",\n  \"description\": \"💗 一套给 DeepSeek Harness 的粉色 Hello Kitty 主题皮肤 + 任务完成/提问提醒插件（Sweetheart Workspace Expressive skin & Hello Kitty Task-Done Notifier）\",\n  \"type\": \"module\",\n  \"main\": \"lib/index.js\",\n  \"exports\": {\n    \".\": \"./lib/index.js\",\n    \"./client\": \"./lib/client.js\",\n    \"./package.json\": \"./package.json\"\n  },\n  \"files\": [\n    \"lib\",\n    \"skin\",\n    \"docs\",\n    \"cordis.patch.yml\",\n    \"README.md\",\n    \"LICENSE\"\n  ],\n  \"license\": \"MIT\",\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    },\n    \"client\": {\n```\n\n</details>\n\n**依据 4 · 源码核查**：[skin/scripts/install.mjs:15-30](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite/blob/1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818/skin/scripts/install.mjs#L15-L30)\n\n皮肤复制。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\nconst packageRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..')\nconst source = join(packageRoot, 'skin', 'hello-kitty-expressive')\nconst dshHome = process.env.DSH_HOME || join(homedir(), '.dsh')\nconst profile = process.env.DSH_PROFILE || 'web'\nconst skinsDir = join(dshHome, 'skins')\nconst target = join(skinsDir, 'hello-kitty-expressive')\nconst stamp = new Date().toISOString().replace(/[:.]/g, '-')\n\nif (!existsSync(join(source, 'skin.json'))) {\n  throw new Error(`Skin source is incomplete: ${source}`)\n}\n\nmkdirSync(skinsDir, { recursive: true })\nconst stagingRoot = mkdtempSync(join(skinsDir, '.hello-kitty-expressive-'))\nconst staging = join(stagingRoot, basename(target))\ncpSync(source, staging, { recursive: true, errorOnExist: true })\n```\n\n</details>\n\n#### 缺口\n\n- 未安装 Skin Center 或目标插件。\n  **影响：**真实视觉与版本匹配未知。\n  **进一步探讨：**隔离 profile 分别安装验证。\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 完成/提问提醒如何从宿主事件传到页面？\n\n**研究主题：**功能与机制、贡献与相对优势\n\n#### 完整回答\n\nhost 监听 agent/turn-stopping，把进程内 seq 自增，并在 /api/hellokitty-notify 返回该全局序号。客户端每 700ms 轮询，首个结果仅设基线，后续 seq 增加才提示；若当前页面最后 message-body 文本以问号结尾就判“提问”，否则称“任务完成”。这是轻量事件桥，但 seq 不含会话/任务 ID，不保证当前页面就是触发事件的会话；turn-stopping 也并非交付成功证据。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:10-26](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite/blob/1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818/lib/index.js#L10-L26)\n\n全局 seq 与端点。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\nexport function apply(ctx) {\n  let seq = 0;\n\n  // A turn is about to close (model owes no response): one tick.\n  ctx.on('agent/turn-stopping', () => {\n    seq += 1;\n  });\n\n  // Client polls this endpoint every 700ms.\n  ctx.effect(() => ctx.webServer.register({\n    kind: 'exact',\n    path: '/api/hellokitty-notify',\n    handler: (req, res) => {\n      res.writeHead(200, { 'content-type': 'application/json', 'cache-control': 'no-store' });\n      res.end(JSON.stringify({ seq }));\n    },\n  }));\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/client.js:83-95](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite/blob/1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818/lib/client.js#L83-L95)\n\n末条 DOM 问号规则。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n// Last assistant message body ends with ? / ？ -> the model asked a question.\nfunction detectQuestion() {\n  try {\n    if (typeof document === 'undefined') return false;\n    var conv = document.querySelector('[data-dsh-surface=\"conversation\"]');\n    if (!conv) return false;\n    var bodies = conv.querySelectorAll('[data-dsh-part=\"message-body\"]');\n    if (!bodies.length) return false;\n    var text = (bodies[bodies.length - 1].textContent || '').trim();\n    if (!text) return false;\n    return /[?？]\\s*$/.test(text);\n  } catch (e) { return false; }\n}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/client.js:125-155](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite/blob/1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818/lib/client.js#L125-L155)\n\n基线与轮询判断。\n\n<details>\n<summary>查看原文（31行）</summary>\n\n```text\n    React.useEffect(function () {\n      var stopped = false;\n      var baseline = -1;\n      var leaveTimer = null;\n      var hideTimer = null;\n\n      var undoTimer = ctx.interval(async function () {\n        if (stopped) return;\n        try {\n          var res = await fetch('/api/hellokitty-notify', { cache: 'no-store' });\n          if (!res.ok) return;\n          var data = await res.json();\n          if (!data || typeof data.seq !== 'number') return;\n          if (baseline < 0) { baseline = data.seq; return; }\n          if (data.seq > baseline) {\n            baseline = data.seq;\n            var kind = detectQuestion() ? 'question' : 'done';\n            if (isPageVisible()) {\n              setToast({ kind: kind });\n              setLeaving(false);\n              playDingDong();\n              if (leaveTimer) leaveTimer();\n              if (hideTimer) hideTimer();\n              leaveTimer = ctx.timeout(function () { setLeaving(true); }, 1600);\n              hideTimer = ctx.timeout(function () { setToast(null); setLeaving(false); }, 2000);\n            } else {\n              notifySystem(kind);\n            }\n          }\n        } catch (e) { /* ignore */ }\n      }, 700);\n```\n\n</details>\n\n#### 缺口\n\n- 未验证事件对多会话映射。\n  **影响：**跨会话误提醒概率未知。\n  **进一步探讨：**并行会话触发、前后台窗口对照。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 提醒语义、音频和浏览器权限有哪些偏差？\n\n**研究主题：**缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\nREADME 称页面切走会“系统通知 + 提示音”，但 hidden 分支只调用 notifySystem，不调用 playDingDong；声音只在可见页面触发。浏览器 Notification 权限可能拒绝，隐藏分支便无通知；新挂载时把 seq 设基线，会漏掉挂载前结束的回合。提问检测依赖当前 DOM 末条消息尾字符，标点/代码块/其他会话可误判，亦不代表模型真的等待用户输入。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:36-42](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite/blob/1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818/README.md#L36-L42)\n\n作者声称隐藏页提示音/任务完成。\n\n```text\n## 🔔 提醒插件 · Hello Kitty Task-Done Notifier\n\n- 每轮对话收尾（`agent/turn-stopping`）右上角弹粉色卡片 + 「叮咚」音\n- 页面切走 → 系统通知 + 提示音（需授权）\n- **提问检测**：最后一条助手消息以 `?` / `？` 结尾时，提示 **「有个问题等你回答」** —— 提醒你回到当前对话回答\n- 7×24 轮询（700ms），触发即提醒，绝不打扰其它任务\n\n```\n\n**依据 2 · 源码核查**：[lib/client.js:57-76](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite/blob/1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818/lib/client.js#L57-L76)\n\n通知授权请求。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\nfunction requestPermission() {\n  try {\n    if (typeof Notification === 'undefined') return;\n    if (Notification.permission === 'default' && typeof Notification.requestPermission === 'function') {\n      Notification.requestPermission().catch(function () {});\n    }\n  } catch (e) {}\n}\nfunction bindPermissionOnGesture() {\n  try {\n    if (typeof document === 'undefined' || typeof Notification === 'undefined') return;\n    if (Notification.permission !== 'default') return;\n    var evs = ['pointerdown', 'keydown', 'click'];\n    function once() {\n      try { requestPermission(); } catch (e) {}\n      for (var i = 0; i < evs.length; i++) { try { document.removeEventListener(evs[i], once, true); } catch (e) {} }\n    }\n    for (var i = 0; i < evs.length; i++) { try { document.addEventListener(evs[i], once, true); } catch (e) {} }\n  } catch (e) {}\n}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/client.js:83-95](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite/blob/1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818/lib/client.js#L83-L95)\n\n问号启发式。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n// Last assistant message body ends with ? / ？ -> the model asked a question.\nfunction detectQuestion() {\n  try {\n    if (typeof document === 'undefined') return false;\n    var conv = document.querySelector('[data-dsh-surface=\"conversation\"]');\n    if (!conv) return false;\n    var bodies = conv.querySelectorAll('[data-dsh-part=\"message-body\"]');\n    if (!bodies.length) return false;\n    var text = (bodies[bodies.length - 1].textContent || '').trim();\n    if (!text) return false;\n    return /[?？]\\s*$/.test(text);\n  } catch (e) { return false; }\n}\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/client.js:125-155](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite/blob/1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818/lib/client.js#L125-L155)\n\n可见与隐藏分支差异。\n\n<details>\n<summary>查看原文（31行）</summary>\n\n```text\n    React.useEffect(function () {\n      var stopped = false;\n      var baseline = -1;\n      var leaveTimer = null;\n      var hideTimer = null;\n\n      var undoTimer = ctx.interval(async function () {\n        if (stopped) return;\n        try {\n          var res = await fetch('/api/hellokitty-notify', { cache: 'no-store' });\n          if (!res.ok) return;\n          var data = await res.json();\n          if (!data || typeof data.seq !== 'number') return;\n          if (baseline < 0) { baseline = data.seq; return; }\n          if (data.seq > baseline) {\n            baseline = data.seq;\n            var kind = detectQuestion() ? 'question' : 'done';\n            if (isPageVisible()) {\n              setToast({ kind: kind });\n              setLeaving(false);\n              playDingDong();\n              if (leaveTimer) leaveTimer();\n              if (hideTimer) hideTimer();\n              leaveTimer = ctx.timeout(function () { setLeaving(true); }, 1600);\n              hideTimer = ctx.timeout(function () { setToast(null); setLeaving(false); }, 2000);\n            } else {\n              notifySystem(kind);\n            }\n          }\n        } catch (e) { /* ignore */ }\n      }, 700);\n```\n\n</details>\n\n#### 缺口\n\n- 未运行浏览器通知/音频策略。\n  **影响：**实际权限提示和声音可达性未知。\n  **进一步探讨：**逐权限/标签可见性矩阵测试。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 皮肤安装、维护及素材再分发有什么约束？\n\n**研究主题：**依赖、兼容与流程、效果与总成本\n\n#### 完整回答\n\n安装脚本把皮肤复制到 $DSH_HOME/skins/hello-kitty-expressive，旧目录先 rename 备份，并在找到 Skin Center 和 profile patch 时把该服务 disabled:false；会改用户 profile 文件并留时间戳备份。根插件还依赖 webServer、slots/timer 和浏览器 Notification/Audio API；700ms 每页轮询带来持续 HTTP 流量。素材 NOTICE 明确称非官方授权，公开或商业分发前须换具明确许可的原创素材。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[skin/scripts/install.mjs:15-44](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite/blob/1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818/skin/scripts/install.mjs#L15-L44)\n\n复制与旧皮肤备份。\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\nconst packageRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..')\nconst source = join(packageRoot, 'skin', 'hello-kitty-expressive')\nconst dshHome = process.env.DSH_HOME || join(homedir(), '.dsh')\nconst profile = process.env.DSH_PROFILE || 'web'\nconst skinsDir = join(dshHome, 'skins')\nconst target = join(skinsDir, 'hello-kitty-expressive')\nconst stamp = new Date().toISOString().replace(/[:.]/g, '-')\n\nif (!existsSync(join(source, 'skin.json'))) {\n  throw new Error(`Skin source is incomplete: ${source}`)\n}\n\nmkdirSync(skinsDir, { recursive: true })\nconst stagingRoot = mkdtempSync(join(skinsDir, '.hello-kitty-expressive-'))\nconst staging = join(stagingRoot, basename(target))\ncpSync(source, staging, { recursive: true, errorOnExist: true })\n\nlet backup = null\ntry {\n  if (existsSync(target)) {\n    backup = `${target}.backup-${stamp}`\n    renameSync(target, backup)\n  }\n  renameSync(staging, target)\n  rmSync(stagingRoot, { recursive: true, force: true })\n} catch (error) {\n  if (existsSync(stagingRoot)) rmSync(stagingRoot, { recursive: true, force: true })\n  if (backup && !existsSync(target) && existsSync(backup)) renameSync(backup, target)\n  throw error\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[skin/scripts/install.mjs:46-86](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite/blob/1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818/skin/scripts/install.mjs#L46-L86)\n\nProfile patch 开启及备份。\n\n<details>\n<summary>查看原文（41行）</summary>\n\n```text\nconst profileRoot = join(dshHome, 'profiles', profile)\nconst skinCenterModule = join(\n  profileRoot,\n  'node_modules',\n  '@linxin666',\n  'dsh-client-ui-skin-center',\n)\nconst patchPath = join(profileRoot, 'cordis.patch.yml')\n\nlet enabledSkinCenter = false\nif (existsSync(skinCenterModule) && existsSync(patchPath)) {\n  const original = readFileSync(patchPath, 'utf8')\n  const lines = original.split('\\n')\n  let inside = false\n  let found = false\n  let changed = false\n\n  for (let index = 0; index < lines.length; index += 1) {\n    const line = lines[index]\n    if (/^\\s*-\\s+id:\\s*['\"]?web-ui-skin-center['\"]?\\s*$/.test(line)) {\n      inside = true\n      found = true\n      continue\n    }\n    if (inside && /^\\s*-\\s+id:/.test(line)) inside = false\n    if (inside && /^\\s+disabled:\\s*true\\s*$/.test(line)) {\n      lines[index] = line.replace(/true\\s*$/, 'false')\n      changed = true\n    }\n  }\n\n  if (!found) {\n    lines.push('- id: web-ui-skin-center', '  disabled: false')\n    changed = true\n  }\n\n  if (changed) {\n    writeFileSync(`${patchPath}.backup-${stamp}`, original)\n    writeFileSync(patchPath, lines.join('\\n'))\n  }\n  enabledSkinCenter = true\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/client.js:125-155](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite/blob/1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818/lib/client.js#L125-L155)\n\n700ms 轮询。\n\n<details>\n<summary>查看原文（31行）</summary>\n\n```text\n    React.useEffect(function () {\n      var stopped = false;\n      var baseline = -1;\n      var leaveTimer = null;\n      var hideTimer = null;\n\n      var undoTimer = ctx.interval(async function () {\n        if (stopped) return;\n        try {\n          var res = await fetch('/api/hellokitty-notify', { cache: 'no-store' });\n          if (!res.ok) return;\n          var data = await res.json();\n          if (!data || typeof data.seq !== 'number') return;\n          if (baseline < 0) { baseline = data.seq; return; }\n          if (data.seq > baseline) {\n            baseline = data.seq;\n            var kind = detectQuestion() ? 'question' : 'done';\n            if (isPageVisible()) {\n              setToast({ kind: kind });\n              setLeaving(false);\n              playDingDong();\n              if (leaveTimer) leaveTimer();\n              if (hideTimer) hideTimer();\n              leaveTimer = ctx.timeout(function () { setLeaving(true); }, 1600);\n              hideTimer = ctx.timeout(function () { setToast(null); setLeaving(false); }, 2000);\n            } else {\n              notifySystem(kind);\n            }\n          }\n        } catch (e) { /* ignore */ }\n      }, 700);\n```\n\n</details>\n\n**依据 4 · 源码核查**：[skin/skin/hello-kitty-expressive/NOTICE.md:1-5](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite/blob/1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818/skin/skin/hello-kitty-expressive/NOTICE.md#L1-L5)\n\n素材权利说明。\n\n```text\n# 素材与使用说明\n\n本皮肤由用户提供的角色参考图片制作，默认按个人使用场景交付。角色名称、形象与相关商标归各自权利人所有；本皮肤包不代表权利人的官方授权、合作或背书。\n\n如果你准备公开发布、商业分发或上架插件市场，请先替换为拥有明确再分发许可的原创素材，并同步更新 `skin.json` 中的名称、许可和署名信息。\n```\n\n#### 缺口\n\n- 未核素材实际授权或运行资源消耗。\n  **影响：**可分发性与多页负担未知。\n  **进一步探讨：**获得权利凭据并测多标签轮询。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 怎样在个人使用场景下验证并降低误提醒？\n\n**研究主题：**新假设与验证、采用判断\n\n#### 完整回答\n\n只在个人测试 profile 启用，先确认皮肤组件与根插件分别可安装/卸载；模拟两个并行会话和任务失败/取消，记录提醒是否对应正确会话与真实结果。若要可信“完成”提醒，宿主事件需携带会话/turn ID 与结果状态，客户端按当前会话过滤；减少 700ms 轮询可改事件推送，这是改进假设而非现有能力。对公开分享先替换角色资产。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:10-26](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite/blob/1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818/lib/index.js#L10-L26)\n\n当前只传全局 seq。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\nexport function apply(ctx) {\n  let seq = 0;\n\n  // A turn is about to close (model owes no response): one tick.\n  ctx.on('agent/turn-stopping', () => {\n    seq += 1;\n  });\n\n  // Client polls this endpoint every 700ms.\n  ctx.effect(() => ctx.webServer.register({\n    kind: 'exact',\n    path: '/api/hellokitty-notify',\n    handler: (req, res) => {\n      res.writeHead(200, { 'content-type': 'application/json', 'cache-control': 'no-store' });\n      res.end(JSON.stringify({ seq }));\n    },\n  }));\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/client.js:83-95](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite/blob/1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818/lib/client.js#L83-L95)\n\n当前问号启发式。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n// Last assistant message body ends with ? / ？ -> the model asked a question.\nfunction detectQuestion() {\n  try {\n    if (typeof document === 'undefined') return false;\n    var conv = document.querySelector('[data-dsh-surface=\"conversation\"]');\n    if (!conv) return false;\n    var bodies = conv.querySelectorAll('[data-dsh-part=\"message-body\"]');\n    if (!bodies.length) return false;\n    var text = (bodies[bodies.length - 1].textContent || '').trim();\n    if (!text) return false;\n    return /[?？]\\s*$/.test(text);\n  } catch (e) { return false; }\n}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/client.js:125-155](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite/blob/1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818/lib/client.js#L125-L155)\n\n700ms 判断。\n\n<details>\n<summary>查看原文（31行）</summary>\n\n```text\n    React.useEffect(function () {\n      var stopped = false;\n      var baseline = -1;\n      var leaveTimer = null;\n      var hideTimer = null;\n\n      var undoTimer = ctx.interval(async function () {\n        if (stopped) return;\n        try {\n          var res = await fetch('/api/hellokitty-notify', { cache: 'no-store' });\n          if (!res.ok) return;\n          var data = await res.json();\n          if (!data || typeof data.seq !== 'number') return;\n          if (baseline < 0) { baseline = data.seq; return; }\n          if (data.seq > baseline) {\n            baseline = data.seq;\n            var kind = detectQuestion() ? 'question' : 'done';\n            if (isPageVisible()) {\n              setToast({ kind: kind });\n              setLeaving(false);\n              playDingDong();\n              if (leaveTimer) leaveTimer();\n              if (hideTimer) hideTimer();\n              leaveTimer = ctx.timeout(function () { setLeaving(true); }, 1600);\n              hideTimer = ctx.timeout(function () { setToast(null); setLeaving(false); }, 2000);\n            } else {\n              notifySystem(kind);\n            }\n          }\n        } catch (e) { /* ignore */ }\n      }, 700);\n```\n\n</details>\n\n**依据 4 · 源码核查**：[skin/skin/hello-kitty-expressive/NOTICE.md:1-5](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite/blob/1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818/skin/skin/hello-kitty-expressive/NOTICE.md#L1-L5)\n\n再分发限制。\n\n```text\n# 素材与使用说明\n\n本皮肤由用户提供的角色参考图片制作，默认按个人使用场景交付。角色名称、形象与相关商标归各自权利人所有；本皮肤包不代表权利人的官方授权、合作或背书。\n\n如果你准备公开发布、商业分发或上架插件市场，请先替换为拥有明确再分发许可的原创素材，并同步更新 `skin.json` 中的名称、许可和署名信息。\n```\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：f0935a266a96cd068e13aa6e077a7f95e90b52b12d77dc3b693859154b7b2b71。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 221 | 193 | 15 | — |\n| .md | source | 3 | 164 | — | — | 1578 |\n| .mjs | source | 3 | 210 | 185 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| skin | 个性外观 | 需 Skin Center |\n| seq | 回合变化 | 无会话/结果 |\n| question | 提问提示 | 末条问号 |\n\n## 工程亮点\n\nhost route 只传 seq；客户端轮询与当前 DOM 关联，hidden 分支只通知无声音；安装器会改 profile patch。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、lib/client.js、skin/scripts/install.mjs、skin/skin/hello-kitty-expressive/NOTICE.md 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定提交静态审阅 README、根插件、皮肤安装脚本和 NOTICE；未安装目标。\n- 下一步：隔离 profile 触发并行会话、取消/失败、页面隐藏、通知拒绝；核轮询与恢复。\n",
         "metadata": {
             "repository": "Angel2518975237/deepseek-harness-hello-kitty-suite",
             "repository_id": 1343679449,
-            "captured_at": "2026-10-21T08:02:48.133Z",
-            "window_start": "2026-09-21T08:02:48.133Z",
-            "stars": 19,
+            "captured_at": "2026-10-22T06:04:07.441Z",
+            "window_start": "2026-09-22T06:04:07.441Z",
+            "stars": 20,
             "pushed_at": "2026-09-10T11:05:12Z",
             "issues": {
-                "open": null,
+                "open": 0,
                 "closed": 1,
                 "created_30d": 0,
                 "closed_30d": 0,
                 "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAngel2518975237%2Fdeepseek-harness-hello-kitty-suite%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5B0E:3FE178:E26013:145DBB8:6AD871AC and timestamp 2026-10-21 08:02:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
-            "npm": {
-                "package_name": "deepseek-harness-hello-kitty-suite",
-                "captured_at": "2026-10-21T08:03:05.355Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": null,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/deepseek-harness-hello-kitty-suite",
-                "error": "HTTP 404",
-                "publication": {
-                    "first_published_at": null,
-                    "captured_at": "2026-10-21T08:03:05.355Z",
-                    "source_url": "https://registry.npmjs.org/deepseek-harness-hello-kitty-suite",
-                    "error": "HTTP 404",
-                    "latest_version": null,
-                    "latest_published_at": null,
-                    "latest_error": "HTTP 404"
-                }
-            }
+            "errors": []
         },
         "discovery.plugins": {
             "id": "github:1343679449:root",
             "repository": "Angel2518975237/deepseek-harness-hello-kitty-suite",
             "path": "",
             "revision": "1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                "https://github.com/0xsline/awesome-deepseek-harness"
-            ],
             "fingerprints": {
                 "directory": "9d405c39fa436ab56eefe93a012b4a704f4dd696136dc6ce5e04715e3b4f91ee",
                 "code": "1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818",
                 "maintenance": "79995f752d80fcd575d18e1b6a111f442e1dc152c6074378254fa0335ce71df9"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ]
         }
     }
 }

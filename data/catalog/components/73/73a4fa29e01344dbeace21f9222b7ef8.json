@@ -24,36 +24,100 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-06-github-1359145352-root-directory-0",
+                    "id": "2026-10-22-02-github-1359145352-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T05:42:34.264Z",
+                    "retrieved_at": "2026-10-22T09:46:21.358Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-06-github-1359145352-root-author",
+                    "id": "2026-10-22-02-github-1359145352-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/Aafff623/dsh-callout/blob/0e92c135644be8d84601ea846098f2799ef4dcf7/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/Aafff623/dsh-callout",
+                            "commit": "0e92c135644be8d84601ea846098f2799ef4dcf7",
+                            "path": "README.md",
+                            "content_sha256": "07f6469edb7727a719b39fc3bc2af0712966d1a278fd5bb9954cb4c05749a378"
+                        }
+                    ],
                     "revision": "0e92c135644be8d84601ea846098f2799ef4dcf7",
-                    "captured_at": "2026-10-21T05:42:34.264Z",
-                    "summary": "将助手 Markdown 的 GitHub 风格提示标记呈现为语义卡片。",
-                    "artifact": "data/runs/2026-10-21-06/snapshots/aafff623--dsh-callout/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:46:21.358Z",
+                    "summary": "在DSH Web将首行五类GitHub式提示标记呈现为主题卡片，监听流式DOM更新并在卸载时有条件恢复标记。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/aafff623--dsh-callout/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-06-github-1359145352-root-source",
+                    "id": "2026-10-22-02-github-1359145352-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/Aafff623/dsh-callout/blob/0e92c135644be8d84601ea846098f2799ef4dcf7/src/index.ts",
+                    "url": "https://github.com/Aafff623/dsh-callout/blob/0e92c135644be8d84601ea846098f2799ef4dcf7/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/Aafff623/dsh-callout",
+                            "commit": "0e92c135644be8d84601ea846098f2799ef4dcf7",
+                            "path": "README.md",
+                            "content_sha256": "07f6469edb7727a719b39fc3bc2af0712966d1a278fd5bb9954cb4c05749a378"
+                        },
+                        {
+                            "repository_url": "https://github.com/Aafff623/dsh-callout",
+                            "commit": "0e92c135644be8d84601ea846098f2799ef4dcf7",
+                            "path": "package.json",
+                            "content_sha256": "a6386cfc297b5d1c66e80039464cd1cd053ebde88aab28c4151f3fca9e05a5e4"
+                        },
+                        {
+                            "repository_url": "https://github.com/Aafff623/dsh-callout",
+                            "commit": "0e92c135644be8d84601ea846098f2799ef4dcf7",
+                            "path": "src/index.ts",
+                            "content_sha256": "014107683921965b792c5146b1c56480fe65759e08813fbf2a51135338903a71"
+                        },
+                        {
+                            "repository_url": "https://github.com/Aafff623/dsh-callout",
+                            "commit": "0e92c135644be8d84601ea846098f2799ef4dcf7",
+                            "path": "src/client/index.ts",
+                            "content_sha256": "1b28744a122c679c0c87885e578deceb6ac41663c419701160e80034677b37c1"
+                        },
+                        {
+                            "repository_url": "https://github.com/Aafff623/dsh-callout",
+                            "commit": "0e92c135644be8d84601ea846098f2799ef4dcf7",
+                            "path": "lib/index.js",
+                            "content_sha256": "48596ea0827ca141e84d1106bee39bc95b75f2d897a6eb47a7c726f41684a9d1"
+                        },
+                        {
+                            "repository_url": "https://github.com/Aafff623/dsh-callout",
+                            "commit": "0e92c135644be8d84601ea846098f2799ef4dcf7",
+                            "path": "lib/client.js",
+                            "content_sha256": "aaa7385717d78d86719902b37099791101ea0744dc96dc1b490332fbd4c36426"
+                        },
+                        {
+                            "repository_url": "https://github.com/Aafff623/dsh-callout",
+                            "commit": "0e92c135644be8d84601ea846098f2799ef4dcf7",
+                            "path": "test/callout.test.mjs",
+                            "content_sha256": "24a4dc2e85ffeeeccdf780ee752ddb36808177b2555975ab3f6b4c69493bf70b"
+                        },
+                        {
+                            "repository_url": "https://github.com/Aafff623/dsh-callout",
+                            "commit": "0e92c135644be8d84601ea846098f2799ef4dcf7",
+                            "path": "build.mjs",
+                            "content_sha256": "b947df60c0831d80b92983f471eed348199e5d15d7475e3d3ebb127ad1a46334"
+                        },
+                        {
+                            "repository_url": "https://github.com/Aafff623/dsh-callout",
+                            "commit": "0e92c135644be8d84601ea846098f2799ef4dcf7",
+                            "path": "cordis.patch.yml",
+                            "content_sha256": "67ee916f2a346c10dba4fbaca57983750cf8c6a1c0134a2a6836d53c707cc0b3"
+                        }
+                    ],
                     "revision": "0e92c135644be8d84601ea846098f2799ef4dcf7",
-                    "captured_at": "2026-10-21T05:42:34.264Z",
-                    "summary": "核查 src/index.ts、src/client/index.ts、package.json、cordis.patch.yml；Host注入五类标记的输出约定，浏览器MutationObserver在助手Markdown中识别引用首段的直接文本标记，设置插件自有data属性和CSS；窄范围兼容裸标记。初次全扫后只处理脏根，流式修改撤回样式，卸载尝试恢复拥有的原标记。",
-                    "artifact": "data/runs/2026-10-21-06/snapshots/aafff623--dsh-callout/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:46:21.358Z",
+                    "summary": "核查 README.md、package.json、src/index.ts、src/client/index.ts、lib/index.js、lib/client.js、test/callout.test.mjs、build.mjs、cordis.patch.yml；host延迟inject systemPrompt，提供canonical多行/同行写法与使用指引，属于模型输出建议而非渲染器强制次数/安全规则；client不注册模型工具。首blockquote子元素须P、P首子节点须直接Text，开头类型后需空白/结尾，拒绝未知/粘连标记；嵌套blockquote不升级。另有直父class含markdown的裸P兼容fallback。\n\n升级只截去该首Text节点的marker，给容器加自有data属性，CSS伪元素显示标题/图标/颜色，保正文/链接/强调节点。WeakMap保存所剥文本/prefix，自己的Text变更计数避免observer echo误当真实编辑；外部领先文字改变则clear卡片。dirty roots合并祖先/子树，200ms调度一次增量扫描，而非每个token扫整个document。\n\n卸载disconnect observer/清timer/dirty与自有样式，只有领先文字仍等于自己产物才还原prefix，避免覆写React/用户新文本；HMR先调上一dispose、旧fiber晚销毁不移新style。贡献是谨慎DOM状态/生命周期与易读Markdown约定结合，不是新Markdown AST或安全验证技术。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/aafff623--dsh-callout/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "根组件src Host格式section、client标记识别/observer/清理与README，未运行构建或页面；lib与src一致性未证明。",
+                        "host与client关键完整匹配/状态/卸载、built关键路径及package/作者测试设计；不运行build/VM测试/真实浏览器或改对话。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +128,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "长技术回答中让警告、前提和关键结论更容易被读到；交付物是展示增强，原会话Markdown保持可读。",
+                    "text": "面向在DSH Web阅读长回复、想更快看到前提/要点/建议/风险的用户。插件把符合首行[!NOTE/TIP/IMPORTANT/WARNING/CAUTION]的blockquote升级成五类主题卡片，源消息仍是可读Markdown，不改存储session内容。\n\n合格结果是正确识别而不过度改普通文本/代码、保留正文交互、流式编辑不留下错卡片，收起/卸载能恢复安全的源标记。颜色/标题只是表达类型，不证明内容是真实警告、正确决策或安全审查。基线普通blockquote与手工加粗标题，增量是固定语义呈现/主题一致，不增加模型事实正确性。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1359145352-root-source"
+                        "2026-10-22-02-github-1359145352-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +139,16 @@
                             "fingerprint": "0e92c135644be8d84601ea846098f2799ef4dcf7"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:42:34.264Z",
+                    "reviewed_at": "2026-10-22T09:46:21.358Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "Host注入五类标记的输出约定，浏览器MutationObserver在助手Markdown中识别引用首段的直接文本标记，设置插件自有data属性和CSS；窄范围兼容裸标记。初次全扫后只处理脏根，流式修改撤回样式，卸载尝试恢复拥有的原标记。",
+                    "text": "host延迟inject systemPrompt，提供canonical多行/同行写法与使用指引，属于模型输出建议而非渲染器强制次数/安全规则；client不注册模型工具。首blockquote子元素须P、P首子节点须直接Text，开头类型后需空白/结尾，拒绝未知/粘连标记；嵌套blockquote不升级。另有直父class含markdown的裸P兼容fallback。\n\n升级只截去该首Text节点的marker，给容器加自有data属性，CSS伪元素显示标题/图标/颜色，保正文/链接/强调节点。WeakMap保存所剥文本/prefix，自己的Text变更计数避免observer echo误当真实编辑；外部领先文字改变则clear卡片。dirty roots合并祖先/子树，200ms调度一次增量扫描，而非每个token扫整个document。\n\n卸载disconnect observer/清timer/dirty与自有样式，只有领先文字仍等于自己产物才还原prefix，避免覆写React/用户新文本；HMR先调上一dispose、旧fiber晚销毁不移新style。贡献是谨慎DOM状态/生命周期与易读Markdown约定结合，不是新Markdown AST或安全验证技术。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1359145352-root-source"
+                        "2026-10-22-02-github-1359145352-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +157,16 @@
                             "fingerprint": "0e92c135644be8d84601ea846098f2799ef4dcf7"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:42:34.264Z",
+                    "reviewed_at": "2026-10-22T09:46:21.358Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "根组件src Host格式section、client标记识别/observer/清理与README，未运行构建或页面；lib与src一致性未证明。",
+                    "text": "host与client关键完整匹配/状态/卸载、built关键路径及package/作者测试设计；不运行build/VM测试/真实浏览器或改对话。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1359145352-root-source"
+                        "2026-10-22-02-github-1359145352-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +175,16 @@
                             "fingerprint": "0e92c135644be8d84601ea846098f2799ef4dcf7"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:42:34.264Z",
+                    "reviewed_at": "2026-10-22T09:46:21.358Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "MIT双面bundle，仓库提交lib用于Git安装；依赖DSH systemPrompt/Web DOM，不修改核心renderer或持久会话。",
+                    "text": "v0.2.0 MIT，Node>=20/Cordis，Git含lib，作者基线DSH0.1.2-rc.1，非所有未来DOM保证。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1359145352-root-source"
+                        "2026-10-22-02-github-1359145352-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +193,16 @@
                             "fingerprint": "0e92c135644be8d84601ea846098f2799ef4dcf7"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:42:34.264Z",
+                    "reviewed_at": "2026-10-22T09:46:21.358Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "现金为额外格式提示token，无独立API；人工需理解卡片只是模型标注并维护宿主DOM兼容，长流式输出有观察处理开销。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 本地预构建包/样式，无外部服务 | 安装刷新/核标记形状与DOM | 工时/金额未知 |\n| 持续使用 | prompt契约token、body observer/200ms增量扫描、state集合 | 选择少量恰当卡片/阅读 | 无独立模型API不等总上下文费用0，大会话CPU未知 |\n| 失败恢复 | 清DOM属性/style与重载资源 | 查误卡片/外部edit与插件冲突 | 不改持久源利恢复，但复杂React恢复时序未知 |\n\n",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1359145352-root-source"
+                        "2026-10-22-02-github-1359145352-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +211,16 @@
                             "fingerprint": "0e92c135644be8d84601ea846098f2799ef4dcf7"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:42:34.264Z",
+                    "reviewed_at": "2026-10-22T09:46:21.358Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "希望技术回答更易扫描者可作为展示插件候选；不能将是否出现警告卡片作为执行高影响操作的批准依据。",
+                    "text": "有条件试用，兼容Web/偏好重点卡片用户先核流式/主题/卸载与非标记拒绝；不将视觉类型当内容审查。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1359145352-root-source"
+                        "2026-10-22-02-github-1359145352-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +229,16 @@
                             "fingerprint": "0e92c135644be8d84601ea846098f2799ef4dcf7"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:42:34.264Z",
+                    "reviewed_at": "2026-10-22T09:46:21.358Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "保持原文可移植同时改善视觉层次；不保证语义类型正确、风险完整覆盖或行动安全。",
+                    "text": "#### 效果\n\n| 目标 | 增量 | 边界 |\n| --- | --- | --- |\n| 重点可见 | 五类标题/颜色/图标 | 不证明内容可靠/无障碍通知 |\n| 保源可读 | canonical Markdown+呈现升级 | 源转义信息已丢无法重建 |\n| 少破坏正文 | 仅首Text改动保子树 | 依DOM/role约定 |\n| 流式/卸载 | own mutation/dirty/精确恢复 | 实际renderer需核 |\n\n测试设计用GFM形状与VM fake DOM状态机，直接读built bundle的测试面；能支撑规则和状态路径覆盖，不替代当前宿主浏览器验证。本轮仅源码核查。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1359145352-root-source"
+                        "2026-10-22-02-github-1359145352-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +247,16 @@
                             "fingerprint": "0e92c135644be8d84601ea846098f2799ef4dcf7"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:42:34.264Z",
+                    "reviewed_at": "2026-10-22T09:46:21.358Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "插件data/CSS命名空间、脏根扫描和自写mutation抑制减少互扰；HMR先dispose旧实例，迟到teardown不删新样式，恢复文本只在仍等于本插件产物时发生。",
+                    "text": "实现按data-chat-flow范围扫blockquote/p，不显式检查消息role=assistant；没有chat-flow时退整个document，blockquote分支也不核markdown根。因此“仅助手”依赖当前DSH把human当纯文本和DOM布局约定，未来渲染变化/别处同形blockquote可能被升级。裸P只看直接父class包含markdown，不是消息来源鉴别。\n\nDOM解析后真实marker与源码反斜线转义marker可能变相同Text，无法回推出原Markdown转义意图。它还原的是自己保存的DOM前缀，不是读session原文再编译；持久源不改是代码范围结论，不能说每次DOM回退精确恢复所有源码。未知/非首/代码等形状有明确拒绝路径，但零误判仍需按实际renderer核。\n\n属性observer只在source属性不等插件值时重applyAlert，若仅type/title/kind被移除而source仍相等会continue不修；外部样式冲突也不在文本状态机范围。样式选择[data-md-alert][data-md-alert-source]不核source具体值，依插件命名不冲突的信任前提。其伪元素标题/颜色有助视觉提示，但无alert role/实时朗读策略，不应当无障碍送达保证。每次mutation依范围查询/dirty合并仍有成本，大会话性能无数据。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1359145352-root-source"
+                        "2026-10-22-02-github-1359145352-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +265,16 @@
                             "fingerprint": "0e92c135644be8d84601ea846098f2799ef4dcf7"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:42:34.264Z",
+                    "reviewed_at": "2026-10-22T09:46:21.358Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "interpretation",
-                    "text": "使用可移植Markdown标记而非修改存储格式，补上宿主普通引用块的语义可见性；Host格式约定与展示识别对齐。核心是受控展示升级与可逆DOM所有权，不能视为风险检测或业务安全能力。",
+                    "text": "结合规范Markdown/首Text保正文、own mutation与增量dirty树、条件卸载恢复，提供五类主题重点卡片而不改session存储。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1359145352-root-source"
+                        "2026-10-22-02-github-1359145352-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +283,16 @@
                             "fingerprint": "0e92c135644be8d84601ea846098f2799ef4dcf7"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:42:34.264Z",
+                    "reviewed_at": "2026-10-22T09:46:21.358Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
-                    "basis": "interpretation",
-                    "text": "彩色warning来自谁的判断？类型由模型输出，渲染器不判断命令危险性，也不强制每回复最多一个卡片；漏标危险操作仍普通显示。DOM识别依赖助手/Markdown结构，重渲染或其他插件共同改文本时必须避免恢复旧内容；源码做所有权条件判断但未真实宿主验证。",
+                    "basis": "supported",
+                    "text": "assistant范围依chat-flow/markdown DOM而非role，无flow退document；解析后转义歧义，属性恢复只核source，视觉/伪元素不等内容或可达认证。详见[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1359145352-root-source"
+                        "2026-10-22-02-github-1359145352-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +301,16 @@
                             "fingerprint": "0e92c135644be8d84601ea846098f2799ef4dcf7"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:42:34.264Z",
+                    "reviewed_at": "2026-10-22T09:46:21.358Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "unverified",
-                    "text": "为高影响提示附可展开的“触发依据/影响对象”而保持原Markdown可读，可能比仅颜色提高读者定位损失对象的正确率。用相同危险命令说明做盲测，比较理解正确率与阅读时间；若只增加醒目程度而未减少误解，不成立。",
+                    "text": "可探索来源作用域/AST或role适配与完整属性恢复，保未知源语法原文，对照误改/漏标/CPU；未实现。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1359145352-root-source"
+                        "2026-10-22-02-github-1359145352-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +319,15 @@
                             "fingerprint": "0e92c135644be8d84601ea846098f2799ef4dcf7"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:42:34.264Z",
+                    "reviewed_at": "2026-10-22T09:46:21.358Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T05:42:34.264Z",
+            "last_checked_at": "2026-10-22T09:46:21.358Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "0e92c135644be8d84601ea846098f2799ef4dcf7",
-                "reviewed_at": "2026-10-21T05:42:34.264Z",
+                "reviewed_at": "2026-10-22T09:46:21.358Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -275,61 +339,61 @@
                 "technical": {
                     "criteria": {
                         "novelty": 9,
-                        "mechanism": 15,
-                        "transferability": 10,
+                        "mechanism": 23,
+                        "transferability": 15,
                         "simplification": 8
                     },
-                    "rationale": "新颖性9：GitHub提示卡片为既有格式；机制15：流式文本/自有变更标记/卸载恢复处理具体；迁移性10：展示所有权模式可复用；简化8：复用Markdown不改存储。",
+                    "rationale": "novelty以GitHub式提示卡为参照，DSH适配小幅；mechanism以一次CSS转换为参照，首Text/own mutation/dirty/精确恢复较强工程增量，限制DOM来源；transferability以hash类修改为参照，规则/状态分离和自有属性较易迁移，仍依宿主根；simplification以手工标记/样式为参照，自动主题/流式实质简化，限制使用者判断类型。",
                     "basis": "interpretation",
-                    "score": 42,
+                    "score": 55,
                     "evidence_ids": [
-                        "2026-10-21-06-github-1359145352-root-source"
+                        "2026-10-22-02-github-1359145352-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 0,
+                        "workflow": 18,
                         "delivery": 8,
-                        "reach": 10,
+                        "reach": 5,
                         "economics": 4
                     },
-                    "rationale": "工作流0：不改变业务任务和验收流程；交付8：呈现语义层次，未提供新的业务结果；覆盖10：技术阅读场景广但限Web结构；经济4：阅读收益未测且Host提示增加少量token。",
+                    "rationale": "workflow以普通长回复找重点为参照，固定语义入口实质；delivery以普通blockquote/加粗文本为参照，现有产物是同Markdown的主题语义卡片呈现，交付形式小幅增量取8，未改变验证真值或价值单元，不计未来来源适配；reach以既有Web读者为参照，小幅便利无新渠道；economics以阅读搜索为参照，可能少查找但阅读/DOM成本无对照仅小幅。",
                     "basis": "interpretation",
-                    "score": 22,
+                    "score": 35,
                     "evidence_ids": [
-                        "2026-10-21-06-github-1359145352-root-source"
+                        "2026-10-22-02-github-1359145352-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "长技术回答阅读者可试callout展示；核流式和卸载恢复，不将模型标色的warning当安全判断或操作批准。",
+                "reason": "重点卡片与保正文/精确卸载路径实用，兼容Web可控试用；先核来源/转义/主题和编辑，颜色不替代判断。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "扫描长回答中的前提和警告是清楚的阅读任务。"
+                        "rationale": "长回答重点/风险可见场景明确。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "保留Markdown可移植性并加视觉层次，增量具体。"
+                        "rationale": "主题/状态/保正文组合实用，替代加粗简单。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "已核脏根扫描、所有权恢复和标记识别，无宿主视觉验收。"
+                        "rationale": "固定关键源码/built与测试设计，未宿主验收。"
                     },
                     "cost": {
                         "score": 15,
-                        "rationale": "仅格式提示token与DOM维护，展示试用可控制且原文保留。"
+                        "rationale": "无外部数据面/持久源写，仍有prompt/DOM与升级核查成本。"
                     }
                 },
                 "score": 64,
                 "revision": "0e92c135644be8d84601ea846098f2799ef4dcf7",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T09:46:21.358Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-06-github-1359145352-root-source"
+                    "2026-10-22-02-github-1359145352-root-source"
                 ],
                 "dependencies": [
                     {
@@ -354,75 +418,54 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T05:26:52Z",
-            "analysis_sha256": "f761b39364da21954fa8d2309f938f402d2560b49ffc6b5098feffb5607bbd6b"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "708ba7df6dc1ad3a11fbfc55d3d67f6675f1018f53be9ffca909ac4dfa7005b4"
         },
         "publication.metadata": "data/plugins/aafff623--dsh-callout/META.json",
         "publication.summaries": {
-            "text": "将助手 Markdown 的 GitHub 风格提示标记呈现为语义卡片。",
+            "text": "在DSH Web将首行五类GitHub式提示标记呈现为主题卡片，监听流式DOM更新并在卸载时有条件恢复标记。",
             "revision": "0e92c135644be8d84601ea846098f2799ef4dcf7",
             "source_url": "https://github.com/Aafff623/dsh-callout/blob/0e92c135644be8d84601ea846098f2799ef4dcf7/README.md"
         },
         "publication.capabilities": {
             "revision": "0e92c135644be8d84601ea846098f2799ef4dcf7",
             "items": {
-                "界面": "五种Markdown提示卡片与主题样式。",
-                "事件监听": "MutationObserver处理流式DOM变化，Host注入输出格式section。"
-            }
+                "界面": "五类Markdown提示卡/主题/流式DOM观察与卸载"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 五类卡片 | 重点语义视觉呈现 | 非内容真实性/安全认证 |\n| 严格首Text匹配 | 少改代码/链接/未知标记 | 依Markdown DOM，源转义未知 |\n| 增量observer | 流式重建/自mutation | assistant来源靠DOM约定 |\n| 卸载/HMR | 条件恢复/清样式 | 不覆写外部新文本，非源码重编译 |\n"
         },
         "publication.advice": {
             "revision": "0e92c135644be8d84601ea846098f2799ef4dcf7",
-            "text": "希望技术回答更易扫描者可作为展示插件候选；不能将是否出现警告卡片作为执行高影响操作的批准依据。"
+            "text": "有条件试用，兼容Web/偏好重点卡片用户先核流式/主题/卸载与非标记拒绝；不将视觉类型当内容审查。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/aafff623--dsh-callout",
-        "reports": "# dsh-callout\n\n> 将助手 Markdown 的 GitHub 风格提示标记呈现为语义卡片。\n\n## 使用建议\n\n希望技术回答更易扫描者可作为展示插件候选；不能将是否出现警告卡片作为执行高影响操作的批准依据。\n\n核查状态：标记识别、样式升级与卸载清理源码支持；读者理解和警告遵守率未验证。 本轮只检查源码，未安装、执行目标代码/测试或真实宿主验收。\n\n## 洞察短评\n\n- **用途**：长技术回答中让警告、前提和关键结论更容易被读到；交付物是展示增强，原会话Markdown保持可读。\n- **亮点**：使用可移植Markdown标记而非修改存储格式，补上宿主普通引用块的语义可见性；Host格式约定与展示识别对齐。核心是受控展示升级与可逆DOM所有权，不能视为风险检测或业务安全能力。\n- **思考**：彩色warning来自谁的判断？类型由模型输出，渲染器不判断命令危险性，也不强制每回复最多一个卡片；漏标危险操作仍普通显示。DOM识别依赖助手/Markdown结构，重渲染或其他插件共同改文本时必须避免恢复旧内容；源码做所有权条件判断但未真实宿主验证。\n- **建议**：为高影响提示附可展开的“触发依据/影响对象”而保持原Markdown可读，可能比仅颜色提高读者定位损失对象的正确率。用相同危险命令说明做盲测，比较理解正确率与阅读时间；若只增加醒目程度而未减少误解，不成立。\n\n## 场景与替代办法\n\n长技术回答中让警告、前提和关键结论更容易被读到；交付物是展示增强，原会话Markdown保持可读。\n\n普通Markdown粗体/引用或宿主原生alert renderer均可表达重点；本项补展示适配，不做内容审核。\n\n## 能力清单\n\n- **界面**：五种Markdown提示卡片与主题样式。\n- **事件监听**：MutationObserver处理流式DOM变化，Host注入输出格式section。\n\n## 依赖与流程\n\nHost注入五类标记的输出约定，浏览器MutationObserver在助手Markdown中识别引用首段的直接文本标记，设置插件自有data属性和CSS；窄范围兼容裸标记。初次全扫后只处理脏根，流式修改撤回样式，卸载尝试恢复拥有的原标记。\n\nDSH systemPrompt、Web Markdown DOM、MutationObserver与主题CSS；依赖模型遵循标记格式。\n\n模型按约定输出→宿主渲染普通Markdown→observer升级合规标记→编辑/流式改变时重评→卸载按所有权恢复；未知标记保留文本。\n\nMIT双面bundle，仓库提交lib用于Git安装；依赖DSH systemPrompt/Web DOM，不修改核心renderer或持久会话。\n\n## 成本与效果\n\n现金为额外格式提示token，无独立API；人工需理解卡片只是模型标注并维护宿主DOM兼容，长流式输出有观察处理开销。\n\n保持原文可移植同时改善视觉层次；不保证语义类型正确、风险完整覆盖或行动安全。\n\n## 核心贡献\n\n使用可移植Markdown标记而非修改存储格式，补上宿主普通引用块的语义可见性；Host格式约定与展示识别对齐。核心是受控展示升级与可逆DOM所有权，不能视为风险检测或业务安全能力。\n\n## 关键质疑\n\n彩色warning来自谁的判断？类型由模型输出，渲染器不判断命令危险性，也不强制每回复最多一个卡片；漏标危险操作仍普通显示。DOM识别依赖助手/Markdown结构，重渲染或其他插件共同改文本时必须避免恢复旧内容；源码做所有权条件判断但未真实宿主验证。\n\n## 工程亮点\n\n插件data/CSS命名空间、脏根扫描和自写mutation抑制减少互扰；HMR先dispose旧实例，迟到teardown不删新样式，恢复文本只在仍等于本插件产物时发生。\n\n固定源码依据：[src/index.ts](https://github.com/Aafff623/dsh-callout/blob/0e92c135644be8d84601ea846098f2799ef4dcf7/src/index.ts)、[src/client/index.ts](https://github.com/Aafff623/dsh-callout/blob/0e92c135644be8d84601ea846098f2799ef4dcf7/src/client/index.ts)、[package.json](https://github.com/Aafff623/dsh-callout/blob/0e92c135644be8d84601ea846098f2799ef4dcf7/package.json)、[cordis.patch.yml](https://github.com/Aafff623/dsh-callout/blob/0e92c135644be8d84601ea846098f2799ef4dcf7/cordis.patch.yml)。\n\n## 未来设计假设（未验证）\n\n为高影响提示附可展开的“触发依据/影响对象”而保持原Markdown可读，可能比仅颜色提高读者定位损失对象的正确率。用相同危险命令说明做盲测，比较理解正确率与阅读时间；若只增加醒目程度而未减少误解，不成立。\n\n未运行目标；最小验证应覆盖流式标记被删、复杂嵌套、用户引用、HMR与其他插件共同修改，再独立测阅读理解。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：eec05b8cfd55d496c4b1cfe949ef910367802e67a620efff3f0c4ad81ce9f3ba。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 3 | 405 | — | — | 3189 |\n| .mjs | source | 1 | 54 | 35 | 13 | — |\n| .js | source | 2 | 473 | 460 | 9 | — |\n| .ts | source | 2 | 626 | 450 | 125 | — |\n| .mjs | test | 1 | 297 | 219 | 42 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n\n## 核查说明\n\n- 版本号：0.2.0；版本日期：2026-09-09（固定提交日期，北京时间，非包发布日期）。\n- 固定提交：[0e92c135](https://github.com/Aafff623/dsh-callout/tree/0e92c135644be8d84601ea846098f2799ef4dcf7)；本轮基准：2026-10-21T05:26:52Z。\n- 已检查：上述源码路径、README、包清单及组件inventory。\n- 范围：根组件src Host格式section、client标记识别/observer/清理与README，未运行构建或页面；lib与src一致性未证明。\n- 未执行：目标安装、代码/测试、真实宿主和第三方服务。作者说明与源码不等于独立效果验证。\n",
+        "reports": "# dsh-callout\n\n> 在DSH Web将首行五类GitHub式提示标记呈现为主题卡片，监听流式DOM更新并在卸载时有条件恢复标记。\n\n## 研究范围\n\n- **仓库**：[Aafff623/dsh-callout](https://github.com/Aafff623/dsh-callout)\n- **版本号**：0.2.0（[固定提交 0e92c135644be8d84601ea846098f2799ef4dcf7](https://github.com/Aafff623/dsh-callout/tree/0e92c135644be8d84601ea846098f2799ef4dcf7)）\n- **版本日期**：2026-09-09（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已检查源码。首Text/自身mutation/编辑与卸载路径细致，来源/DOM契约和转义可见性需保持边界。\n\n## 洞察短评\n\n- **用途**：面向在DSH Web阅读长回复、想更快看到前提/要点/建议/风险的用户。插件把符合首行[!NOTE/TIP/IMPORTANT/WARNING/CAUTION]的blockquote升级成五类主题卡片，源消息仍是可读Markdown，不改存储session内容。\n\n合格结果是正确识别而不过度改普通文本/代码、保留正文交互、流式编辑不留下错卡片，收起/卸载能恢复安全的源标记。颜色/标题只是表达类型，不证明内容是真实警告、正确决策或安全审查。基线普通blockquote与手工加粗标题，增量是固定语义呈现/主题一致，不增加模型事实正确性。\n- **亮点**：结合规范Markdown/首Text保正文、own mutation与增量dirty树、条件卸载恢复，提供五类主题重点卡片而不改session存储。详见[Q02](#research-q02)。\n- **思考**：assistant范围依chat-flow/markdown DOM而非role，无flow退document；解析后转义歧义，属性恢复只核source，视觉/伪元素不等内容或可达认证。详见[Q03](#research-q03)。\n- **建议**：可探索来源作用域/AST或role适配与完整属性恢复，保未知源语法原文，对照误改/漏标/CPU；未实现。详见[Q05](#research-q05)。\n\n采用建议：有条件试用，兼容Web/偏好重点卡片用户先核流式/主题/卸载与非标记拒绝；不将视觉类型当内容审查。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n结合规范Markdown/首Text保正文、own mutation与增量dirty树、条件卸载恢复，提供五类主题重点卡片而不改session存储。详见[Q02](#research-q02)。\n\n## 关键质疑\n\nassistant范围依chat-flow/markdown DOM而非role，无flow退document；解析后转义歧义，属性恢复只核source，视觉/伪元素不等内容或可达认证。详见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可探索来源作用域/AST或role适配与完整属性恢复，保未知源语法原文，对照误改/漏标/CPU；未实现。详见[Q05](#research-q05)。\n\n可继续固定Markdown/role/属性/edit/HMR矩阵比较误改/漏标、精确回退与阅读/CPU，无真实对话。\n\n## 场景与替代办法\n\n面向在DSH Web阅读长回复、想更快看到前提/要点/建议/风险的用户。插件把符合首行[!NOTE/TIP/IMPORTANT/WARNING/CAUTION]的blockquote升级成五类主题卡片，源消息仍是可读Markdown，不改存储session内容。\n\n合格结果是正确识别而不过度改普通文本/代码、保留正文交互、流式编辑不留下错卡片，收起/卸载能恢复安全的源标记。颜色/标题只是表达类型，不证明内容是真实警告、正确决策或安全审查。基线普通blockquote与手工加粗标题，增量是固定语义呈现/主题一致，不增加模型事实正确性。\n\n普通blockquote/手工加粗标题；插件改变呈现样式与流式管理，不改变内容真值/任务验收。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 条件 | 用途 | 边界 |\n| --- | --- | --- |\n| DSH Web client loader/Cordis | 加载预构建client/生命周期 | package作者基线0.1.2-rc.1，不外推未来DOM |\n| systemPrompt WEB_SURFACE order接口 | 输出规范提示 | host层会占上下文但不强制模型遵循 |\n| chat-flow/MarkdownText DOM与CSS主题属性 | 匹配/亮暗色 | 无flow退document，不是真实role鉴别 |\n| Node>=20与包lib | host/client入口 | Git有预构建，更新src应同步lib |\n\n\n\n#### 使用流程\n\n| 步骤 | 动作 | 判据 |\n| --- | --- | --- |\n| 固定安装 | 核host/client/DOM代际并刷新Web | 无配置，npm作者称未发布需核归档 |\n| 写标记 | 用blockquote首直接文本类型 | 不把颜色当安全认证 |\n| 看流式 | 核正文/链接、code/非首标记不变 | observer不把自己的strip当编辑 |\n| 切换/卸载 | 主题/会话/HMR/卸载 | 样式/observer清理且不覆写已编辑文本 |\n| 升级 | 固定样例重新核DOM契约 | 不因测试数自动宣全host兼容 |\n\n\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 本地预构建包/样式，无外部服务 | 安装刷新/核标记形状与DOM | 工时/金额未知 |\n| 持续使用 | prompt契约token、body observer/200ms增量扫描、state集合 | 选择少量恰当卡片/阅读 | 无独立模型API不等总上下文费用0，大会话CPU未知 |\n| 失败恢复 | 清DOM属性/style与重载资源 | 查误卡片/外部edit与插件冲突 | 不改持久源利恢复，但复杂React恢复时序未知 |\n\n\n\n#### 效果\n\n| 目标 | 增量 | 边界 |\n| --- | --- | --- |\n| 重点可见 | 五类标题/颜色/图标 | 不证明内容可靠/无障碍通知 |\n| 保源可读 | canonical Markdown+呈现升级 | 源转义信息已丢无法重建 |\n| 少破坏正文 | 仅首Text改动保子树 | 依DOM/role约定 |\n| 流式/卸载 | own mutation/dirty/精确恢复 | 实际renderer需核 |\n\n测试设计用GFM形状与VM fake DOM状态机，直接读built bundle的测试面；能支撑规则和状态路径覆盖，不替代当前宿主浏览器验证。本轮仅源码核查。\n\n## 研究问题与完整回答\n\n**插件研究总目标：**核视觉语义/内容真值区别、严格Text匹配/observer/卸载、assistant来源/转义边界、上下文与DOM成本。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 适合什么阅读任务，卡片意味着什么？\n\n**研究主题：**场景与需求\n\n#### 完整回答\n\n面向在DSH Web阅读长回复、想更快看到前提/要点/建议/风险的用户。插件把符合首行[!NOTE/TIP/IMPORTANT/WARNING/CAUTION]的blockquote升级成五类主题卡片，源消息仍是可读Markdown，不改存储session内容。\n\n合格结果是正确识别而不过度改普通文本/代码、保留正文交互、流式编辑不留下错卡片，收起/卸载能恢复安全的源标记。颜色/标题只是表达类型，不证明内容是真实警告、正确决策或安全审查。基线普通blockquote与手工加粗标题，增量是固定语义呈现/主题一致，不增加模型事实正确性。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:19-42](https://github.com/Aafff623/dsh-callout/blob/0e92c135644be8d84601ea846098f2799ef4dcf7/README.md#L19-L42)\n\n作者呈现定位/源不变。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n````text\n\n## See it first\n\n```markdown\n> [!WARNING]\n> This operation may overwrite existing configuration.\n```\n\nInstall the plugin, refresh DSH Web, then send that assistant Markdown. A qualifying leading marker becomes a warning card; malformed or unknown markers remain ordinary text.\n\n## Why this plugin exists\n\nA warning should look like a warning before the reader reaches the command. A key decision should be easy to find without wrapping the entire answer in a colored box.\n\n`dsh-callout` keeps the source format readable Markdown and upgrades it only at presentation time:\n\n```text\nassistant Markdown → DSH MarkdownText → ordinary blockquote → callout card\n```\n\nIt does not modify stored session content, providers, permissions, tools, or the DSH core renderer.\n\n## Supported types\n\n````\n\n</details>\n\n**依据 2 · 源码核查**：[src/client/index.ts:71-73](https://github.com/Aafff623/dsh-callout/blob/0e92c135644be8d84601ea846098f2799ef4dcf7/src/client/index.ts#L71-L73)\n\n五类标记规则。\n\n```text\nconst ALERT_RE = /^\\s*\\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\\](?=\\s|$)/i\n// Strip the marker plus at most one following line ending; never touch the body.\nconst ALERT_STRIP_RE = /^\\s*\\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\\][ \\t]*(?:\\r?\\n[ \\t]*)?/i\n```\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 标记匹配、流式更新与卸载如何实现？\n\n**研究主题：**功能与机制、贡献与相对优势\n\n#### 完整回答\n\nhost延迟inject systemPrompt，提供canonical多行/同行写法与使用指引，属于模型输出建议而非渲染器强制次数/安全规则；client不注册模型工具。首blockquote子元素须P、P首子节点须直接Text，开头类型后需空白/结尾，拒绝未知/粘连标记；嵌套blockquote不升级。另有直父class含markdown的裸P兼容fallback。\n\n升级只截去该首Text节点的marker，给容器加自有data属性，CSS伪元素显示标题/图标/颜色，保正文/链接/强调节点。WeakMap保存所剥文本/prefix，自己的Text变更计数避免observer echo误当真实编辑；外部领先文字改变则clear卡片。dirty roots合并祖先/子树，200ms调度一次增量扫描，而非每个token扫整个document。\n\n卸载disconnect observer/清timer/dirty与自有样式，只有领先文字仍等于自己产物才还原prefix，避免覆写React/用户新文本；HMR先调上一dispose、旧fiber晚销毁不移新style。贡献是谨慎DOM状态/生命周期与易读Markdown约定结合，不是新Markdown AST或安全验证技术。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:58-65](https://github.com/Aafff623/dsh-callout/blob/0e92c135644be8d84601ea846098f2799ef4dcf7/src/index.ts#L58-L65)\n\nhost输出契约。\n\n```text\nexport function apply(ctx: Context): void {\n\tctx.inject(['systemPrompt'], (injected) => {\n\t\tconst { systemPrompt } = injected as PromptContext\n\t\tsystemPrompt.section({\n\t\t\tname: 'dsh-callout:github-alerts',\n\t\t\torder: systemPrompt.getSectionOrder('WEB_SURFACE'),\n\t\t\ttext: () => ALERTS_SECTION,\n\t\t})\n```\n\n**依据 2 · 源码核查**：[src/client/index.ts:292-333](https://github.com/Aafff623/dsh-callout/blob/0e92c135644be8d84601ea846098f2799ef4dcf7/src/client/index.ts#L292-L333)\n\n首Text/blockquote/裸P匹配。\n\n<details>\n<summary>查看原文（42行）</summary>\n\n```text\nfunction firstDirectTextChild(el: Element): Text | null {\n\tconst first = el.firstChild\n\treturn first && first.nodeType === TEXT_NODE ? (first as Text) : null\n}\n\n/** Extract the callout type when `nodeValue` starts with `[!TYPE]`, else null. */\nfunction matchMarker(nodeValue: string): AlertType | null {\n\tconst m = nodeValue.match(ALERT_RE)\n\treturn m ? (m[1].toLowerCase() as AlertType) : null\n}\n\n/** Strip the leading marker (and one following line ending). Returns a\n *  STRING — the DOM requires strings; assigning anything else corrupts\n *  the text node (the historical `[object Object]` bug). */\nfunction stripMarker(nodeValue: string): string {\n\treturn nodeValue.replace(ALERT_STRIP_RE, '')\n}\n\n/** A blockquote is a callout only when its first block is a bare paragraph\n *  whose first child is plain text starting with `[!TYPE]`. Lists, nested\n *  blockquotes, fenced/inline code, emphasis, links and images as a leading\n *  node all disqualify, so ordinary content is never rewritten. */\nfunction blockquoteType(bq: Element): { type: AlertType; text: Text } | null {\n\tconst firstBlock = bq.firstElementChild\n\tif (!firstBlock || firstBlock.tagName !== 'P') return null\n\tconst text = firstDirectTextChild(firstBlock)\n\tif (!text) return null\n\tconst type = matchMarker(text.nodeValue ?? '')\n\tif (!type) return null\n\treturn { type, text }\n}\n\n/** A bare paragraph is only upgraded when its direct parent is the\n *  MarkdownText render root (CSS-module class containing \"markdown\"),\n *  so ordinary prose, human bodies and other UI text are never touched. */\nfunction inMarkdownTextRoot(p: Element): boolean {\n\tconst parent = p.parentElement\n\tif (!parent) return false\n\t// Guard for test environment where document.body may not exist.\n\tif (typeof document !== 'undefined' && parent === document.body) return false\n\tconst cls = typeof parent.className === 'string' ? parent.className : ''\n\treturn /markdown/i.test(cls)\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/client/index.ts:362-421](https://github.com/Aafff623/dsh-callout/blob/0e92c135644be8d84601ea846098f2799ef4dcf7/src/client/index.ts#L362-L421)\n\nText变更/外部edit。\n\n<details>\n<summary>查看原文（60行）</summary>\n\n```text\nfunction upgradeBlockquote(el: Element): void {\n\tif (hasBlockquoteAncestor(el)) return\n\tconst hit = blockquoteType(el)\n\tconst owned = state.get(el)\n\tif (hit) {\n\t\tconst original = hit.text.nodeValue ?? ''\n\t\tconst stripped = stripMarker(original)\n\t\tconst prefix = original.slice(0, original.length - stripped.length)\n\t\t// A positive hit means the marker is present in the current DOM (for\n\t\t// example React restored it during streaming), so always strip this\n\t\t// fresh text node. Mark the write before assigning so the observer can\n\t\t// distinguish our mutation from a React/user mutation.\n\t\tmarkOwnTextMutation(hit.text)\n\t\thit.text.nodeValue = stripped\n\t\tclaim(el, stripped, hit.type, 'blockquote', prefix)\n\t\tapplyAlert(el, hit.type, 'blockquote')\n\t\texternallyChanged.delete(el)\n\t\treturn\n\t}\n\tif (!owned) return\n\tconst currentText = el.firstElementChild?.firstChild\n\tif (!externallyChanged.has(el) || currentText?.nodeType === TEXT_NODE && currentText.nodeValue === owned.text) {\n\t\t// No external change, or React rebuilt the surrounding nodes while\n\t\t// preserving the exact text produced by our strip: keep the card.\n\t\texternallyChanged.delete(el)\n\t\treturn\n\t}\n\t// The leading text changed without a marker: treat it as a real edit.\n\texternallyChanged.delete(el)\n\tclearAlert(el)\n}\n\nfunction upgradeBareParagraph(el: Element): void {\n\tconst owned = state.get(el)\n\tif (!inMarkdownTextRoot(el)) return\n\tconst text = firstDirectTextChild(el)\n\tif (!text) {\n\t\tif (owned && externallyChanged.has(el)) {\n\t\t\texternallyChanged.delete(el)\n\t\t\tclearAlert(el)\n\t\t}\n\t\treturn\n\t}\n\tconst type = matchMarker(text.nodeValue ?? '')\n\tif (type) {\n\t\tconst original = text.nodeValue ?? ''\n\t\tconst stripped = stripMarker(original)\n\t\tconst prefix = original.slice(0, original.length - stripped.length)\n\t\t// The marker is present in this current DOM text, so normalize it\n\t\t// again if React rebuilt the text node during streaming.\n\t\tmarkOwnTextMutation(text)\n\t\ttext.nodeValue = stripped\n\t\tclaim(el, stripped, type, 'bare', prefix)\n\t\tapplyAlert(el, type, 'bare')\n\t\texternallyChanged.delete(el)\n\t\treturn\n\t}\n\tif (owned && externallyChanged.has(el)) {\n\t\texternallyChanged.delete(el)\n\t\tclearAlert(el)\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/client/index.ts:151-211](https://github.com/Aafff623/dsh-callout/blob/0e92c135644be8d84601ea846098f2799ef4dcf7/src/client/index.ts#L151-L211)\n\ndirty合并/自身mutation。\n\n<details>\n<summary>查看原文（61行）</summary>\n\n```text\nfunction collectDirty(node: Node | null | undefined): void {\n\tconst root = nearestScanRoot(node)\n\tif (!root || !isInsideChatFlow(root)) return\n\t// Keep the dirty set minimal: an ancestor scan already covers every\n\t// descendant, while a descendant adds no value once its ancestor is queued.\n\tfor (const queued of dirtyRoots) {\n\t\tif (queued === root || queued.contains?.(root)) return\n\t}\n\tfor (const queued of [...dirtyRoots]) {\n\t\tif (root.contains?.(queued)) dirtyRoots.delete(queued)\n\t}\n\tdirtyRoots.add(root)\n}\n\nfunction isAttached(node: Element): boolean {\n\tif ('isConnected' in node && (node as Element & { isConnected?: boolean }).isConnected) return true\n\tif (node.parentElement) return true\n\tif (typeof document !== 'undefined' && typeof document.contains === 'function') return document.contains(node)\n\treturn false\n}\n\nfunction releaseRemovedNode(node: Node | null | undefined): void {\n\tif (!node || node.nodeType !== 1) return\n\tconst removed = node as Element\n\t// React may report a remove and an add for the same moved subtree in one\n\t// observer batch. A node with a new parent is still live; release only\n\t// genuinely detached roots.\n\tif (isAttached(removed)) return\n\tdirtyRoots.delete(removed)\n\tfor (const dirty of [...dirtyRoots]) {\n\t\tif (removed.contains?.(dirty)) dirtyRoots.delete(dirty)\n\t}\n\tfor (const el of [...ownedElements]) {\n\t\tif (el === removed || removed.contains?.(el)) release(el)\n\t}\n}\n\nfunction handleMutations(records: MutationRecord[]): void {\n\tfor (const record of records) {\n\t\tif (record.type === 'characterData' && consumeOwnTextMutation(record.target)) {\n\t\t\t// Own strip: the card is already applied. Do not dirty or treat as an edit.\n\t\t\tcontinue\n\t\t}\n\t\tconst owner = ownerForNode(record.target)\n\t\tif (record.type === 'attributes' && owner) {\n\t\t\t// External code removed or altered one of our card attributes.\n\t\t\t// Re-assert our chrome only when it is actually wrong — our own\n\t\t\t// no-op writes (same values) must not re-enter as records.\n\t\t\tif (owner.getAttribute('data-md-alert-source') !== PLUGIN_SOURCE) {\n\t\t\t\tconst owned = state.get(owner)\n\t\t\t\tif (owned) applyAlert(owner, owned.type, owned.kind)\n\t\t\t}\n\t\t\tcontinue\n\t\t}\n\t\tif (owner) externallyChanged.add(owner)\n\t\tcollectDirty(record.target)\n\t\tfor (const added of record.addedNodes ?? []) collectDirty(added)\n\t\tfor (const removed of record.removedNodes ?? []) releaseRemovedNode(removed)\n\t}\n\tif (dirtyRoots.size === 0) return\n\tscheduleScan()\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/client/index.ts:479-541](https://github.com/Aafff623/dsh-callout/blob/0e92c135644be8d84601ea846098f2799ef4dcf7/src/client/index.ts#L479-L541)\n\nHMR/清理/条件恢复。\n\n<details>\n<summary>查看原文（63行）</summary>\n\n```text\nexport function apply(ctx: Context): void {\n\t// HMR / re-inject guard: a replacement instance takes over. Dispose the\n\t// previous one first so observers never stack. Disposal is synchronous\n\t// here, which also closes the case where Cordis later tears down the old\n\t// fiber (that late call will see it is no longer the current instance).\n\tif (typeof window.__dshCalloutDispose === 'function') window.__dshCalloutDispose()\n\tconst style = injectCss()\n\tlet disposed = false\n\tconst observer = new MutationObserver((records) => {\n\t\tif (!disposed) handleMutations(records)\n\t})\n\tobserver.observe(document.body, {\n\t\tchildList: true,\n\t\tsubtree: true,\n\t\tcharacterData: true,\n\t\tattributes: true,\n\t\tattributeFilter: ['data-md-alert', 'data-md-alert-title', 'data-md-alert-source', 'data-md-alert-kind'],\n\t})\n\t// Attach the observer before the first scan so the initial marker strip is\n\t// classified as our own mutation rather than leaking into the next edit.\n\t// The first pass is a full scan; later observer ticks only walk dirty roots.\n\tscanAll()\n\tconst dispose = (): void => {\n\t\tif (disposed) return\n\t\tdisposed = true\n\t\tif (scheduled) {\n\t\t\tclearTimeout(scheduled)\n\t\t\tscheduled = 0\n\t\t}\n\t\tdirtyRoots.clear()\n\t\tobserver.disconnect()\n\t\tconst isCurrent = window.__dshCalloutDispose === dispose\n\t\t// Shared resources (the <style> node and the global handle) are only\n\t\t// released by the live instance; a late teardown from an old fiber must\n\t\t// not remove the stylesheet the new instance is rendering with.\n\t\tif (isCurrent) {\n\t\t\tif (style && document.getElementById('dsh-callout-css') === style) style.remove()\n\t\t\twindow.__dshCalloutDispose = null\n\t\t}\n\t\t// Element chrome is per-instance: always restore the source marker when\n\t\t// the leading text node still holds exactly the value this plugin\n\t\t// produced (never overwrite a React/user edit), then clear the card.\n\t\tfor (const el of [...ownedElements]) {\n\t\t\tconst owned = state.get(el)\n\t\t\tconst paragraph = el.tagName === 'BLOCKQUOTE' ? el.firstElementChild : el\n\t\t\tconst text = paragraph?.tagName === 'P' ? firstDirectTextChild(paragraph) : null\n\t\t\tif (owned && owned.prefix && text && text.nodeValue === owned.text) {\n\t\t\t\t// No markOwnTextMutation: the observer is already detached, so a\n\t\t\t\t// mark would never be consumed and would leak into the next\n\t\t\t\t// instance, swallowing one future real-edit classification.\n\t\t\t\ttext.nodeValue = owned.prefix + owned.text\n\t\t\t}\n\t\t\tclearAlert(el)\n\t\t}\n\t\t// Drop pending own-write markers so a re-injected instance cannot\n\t\t// mistake an old observer echo for its first real edit.\n\t\tfor (const node of ownedTextNodes) ownTextMutations.delete(node)\n\t\townedTextNodes.clear()\n\t}\n\twindow.__dshCalloutDispose = dispose\n\t// Cordis fiber teardown disposes us automatically (same pattern as\n\t// dsh-client-hmr), instead of relying only on the manual global.\n\tctx.effect(() => () => dispose(), 'dsh-callout: observer + styles')\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 渲染范围/原文与状态边界有什么不足？\n\n**研究主题：**缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\n实现按data-chat-flow范围扫blockquote/p，不显式检查消息role=assistant；没有chat-flow时退整个document，blockquote分支也不核markdown根。因此“仅助手”依赖当前DSH把human当纯文本和DOM布局约定，未来渲染变化/别处同形blockquote可能被升级。裸P只看直接父class包含markdown，不是消息来源鉴别。\n\nDOM解析后真实marker与源码反斜线转义marker可能变相同Text，无法回推出原Markdown转义意图。它还原的是自己保存的DOM前缀，不是读session原文再编译；持久源不改是代码范围结论，不能说每次DOM回退精确恢复所有源码。未知/非首/代码等形状有明确拒绝路径，但零误判仍需按实际renderer核。\n\n属性observer只在source属性不等插件值时重applyAlert，若仅type/title/kind被移除而source仍相等会continue不修；外部样式冲突也不在文本状态机范围。样式选择[data-md-alert][data-md-alert-source]不核source具体值，依插件命名不冲突的信任前提。其伪元素标题/颜色有助视觉提示，但无alert role/实时朗读策略，不应当无障碍送达保证。每次mutation依范围查询/dirty合并仍有成本，大会话性能无数据。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/client/index.ts:141-148](https://github.com/Aafff623/dsh-callout/blob/0e92c135644be8d84601ea846098f2799ef4dcf7/src/client/index.ts#L141-L148)\n\n无flow退宽范围。\n\n```text\nfunction isInsideChatFlow(root: Element): boolean {\n\tif (typeof document === 'undefined') return true\n\tconst flows = document.querySelectorAll('[data-chat-flow]')\n\tif (flows.length === 0) return true\n\tfor (const flow of flows) {\n\t\tif (flow === root || flow.contains?.(root)) return true\n\t}\n\treturn false\n```\n\n**依据 2 · 源码核查**：[src/client/index.ts:327-333](https://github.com/Aafff623/dsh-callout/blob/0e92c135644be8d84601ea846098f2799ef4dcf7/src/client/index.ts#L327-L333)\n\n裸P仅class。\n\n```text\nfunction inMarkdownTextRoot(p: Element): boolean {\n\tconst parent = p.parentElement\n\tif (!parent) return false\n\t// Guard for test environment where document.body may not exist.\n\tif (typeof document !== 'undefined' && parent === document.body) return false\n\tconst cls = typeof parent.className === 'string' ? parent.className : ''\n\treturn /markdown/i.test(cls)\n```\n\n**依据 3 · 源码核查**：[src/client/index.ts:188-203](https://github.com/Aafff623/dsh-callout/blob/0e92c135644be8d84601ea846098f2799ef4dcf7/src/client/index.ts#L188-L203)\n\n属性只核source。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\nfunction handleMutations(records: MutationRecord[]): void {\n\tfor (const record of records) {\n\t\tif (record.type === 'characterData' && consumeOwnTextMutation(record.target)) {\n\t\t\t// Own strip: the card is already applied. Do not dirty or treat as an edit.\n\t\t\tcontinue\n\t\t}\n\t\tconst owner = ownerForNode(record.target)\n\t\tif (record.type === 'attributes' && owner) {\n\t\t\t// External code removed or altered one of our card attributes.\n\t\t\t// Re-assert our chrome only when it is actually wrong — our own\n\t\t\t// no-op writes (same values) must not re-enter as records.\n\t\t\tif (owner.getAttribute('data-md-alert-source') !== PLUGIN_SOURCE) {\n\t\t\t\tconst owned = state.get(owner)\n\t\t\t\tif (owned) applyAlert(owner, owned.type, owned.kind)\n\t\t\t}\n\t\t\tcontinue\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/client/index.ts:436-473](https://github.com/Aafff623/dsh-callout/blob/0e92c135644be8d84601ea846098f2799ef4dcf7/src/client/index.ts#L436-L473)\n\n全扫/增量与200ms。\n\n<details>\n<summary>查看原文（38行）</summary>\n\n```text\nfunction scanRoots(): Iterable<ParentNode> {\n\tconst flows = document.querySelectorAll('[data-chat-flow]')\n\treturn flows.length > 0 ? flows : [document]\n}\n\n/** Upgrade `root` when it is a blockquote/p, then every matching descendant.\n *  `querySelectorAll` is optional so the vm fake DOM can omit it. */\nfunction upgradeTree(root: ParentNode): void {\n\tif ('tagName' in root) upgrade(root as Element)\n\tif (typeof root.querySelectorAll !== 'function') return\n\tfor (const el of root.querySelectorAll('blockquote, p')) {\n\t\tupgrade(el)\n\t}\n}\n\nlet scheduled: ReturnType<typeof setTimeout> | 0 = 0\n\n/** Full-document scan. Used once on apply() so the initial render is complete. */\nfunction scanAll(): void {\n\tdirtyRoots.clear()\n\tfor (const root of scanRoots()) upgradeTree(root)\n}\n\n/** Incremental scan: only the subtrees collected by handleMutations. */\nfunction scanDirty(): void {\n\tif (dirtyRoots.size === 0) return\n\tconst roots = [...dirtyRoots]\n\tdirtyRoots.clear()\n\tfor (const root of roots) upgradeTree(root)\n}\n\nfunction scan(): void {\n\tscheduled = 0\n\tscanDirty()\n}\nfunction scheduleScan(): void {\n\tif (scheduled) return\n\tscheduled = setTimeout(scan, 200)\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/client/index.ts:518-535](https://github.com/Aafff623/dsh-callout/blob/0e92c135644be8d84601ea846098f2799ef4dcf7/src/client/index.ts#L518-L535)\n\n精确条件还原。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n\t\t// Element chrome is per-instance: always restore the source marker when\n\t\t// the leading text node still holds exactly the value this plugin\n\t\t// produced (never overwrite a React/user edit), then clear the card.\n\t\tfor (const el of [...ownedElements]) {\n\t\t\tconst owned = state.get(el)\n\t\t\tconst paragraph = el.tagName === 'BLOCKQUOTE' ? el.firstElementChild : el\n\t\t\tconst text = paragraph?.tagName === 'P' ? firstDirectTextChild(paragraph) : null\n\t\t\tif (owned && owned.prefix && text && text.nodeValue === owned.text) {\n\t\t\t\t// No markOwnTextMutation: the observer is already detached, so a\n\t\t\t\t// mark would never be consumed and would leak into the next\n\t\t\t\t// instance, swallowing one future real-edit classification.\n\t\t\t\ttext.nodeValue = owned.prefix + owned.text\n\t\t\t}\n\t\t\tclearAlert(el)\n\t\t}\n\t\t// Drop pending own-write markers so a re-injected instance cannot\n\t\t// mistake an old observer echo for its first real edit.\n\t\tfor (const node of ownedTextNodes) ownTextMutations.delete(node)\n```\n\n</details>\n\n#### 缺口\n\n- 真实DSH流式/主题/会话切换、转义marker和屏幕阅读器的交互未独立核。\n  **影响：**不能承诺全版本无误判或所有读者可达。\n  **进一步探讨：**用无秘密固定Markdown/DOM及role/flow变更、仅type丢失/全clear/HMR/辅助技术检查，区分拒绝/恢复/呈现。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 启动步骤与三阶段成本效果是什么？\n\n**研究主题：**依赖、兼容与流程、效果与总成本\n\n#### 完整回答\n\n#### 启动与依赖\n\n| 条件 | 用途 | 边界 |\n| --- | --- | --- |\n| DSH Web client loader/Cordis | 加载预构建client/生命周期 | package作者基线0.1.2-rc.1，不外推未来DOM |\n| systemPrompt WEB_SURFACE order接口 | 输出规范提示 | host层会占上下文但不强制模型遵循 |\n| chat-flow/MarkdownText DOM与CSS主题属性 | 匹配/亮暗色 | 无flow退document，不是真实role鉴别 |\n| Node>=20与包lib | host/client入口 | Git有预构建，更新src应同步lib |\n\n#### 使用流程\n\n| 步骤 | 动作 | 判据 |\n| --- | --- | --- |\n| 固定安装 | 核host/client/DOM代际并刷新Web | 无配置，npm作者称未发布需核归档 |\n| 写标记 | 用blockquote首直接文本类型 | 不把颜色当安全认证 |\n| 看流式 | 核正文/链接、code/非首标记不变 | observer不把自己的strip当编辑 |\n| 切换/卸载 | 主题/会话/HMR/卸载 | 样式/observer清理且不覆写已编辑文本 |\n| 升级 | 固定样例重新核DOM契约 | 不因测试数自动宣全host兼容 |\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 本地预构建包/样式，无外部服务 | 安装刷新/核标记形状与DOM | 工时/金额未知 |\n| 持续使用 | prompt契约token、body observer/200ms增量扫描、state集合 | 选择少量恰当卡片/阅读 | 无独立模型API不等总上下文费用0，大会话CPU未知 |\n| 失败恢复 | 清DOM属性/style与重载资源 | 查误卡片/外部edit与插件冲突 | 不改持久源利恢复，但复杂React恢复时序未知 |\n\n#### 效果\n\n| 目标 | 增量 | 边界 |\n| --- | --- | --- |\n| 重点可见 | 五类标题/颜色/图标 | 不证明内容可靠/无障碍通知 |\n| 保源可读 | canonical Markdown+呈现升级 | 源转义信息已丢无法重建 |\n| 少破坏正文 | 仅首Text改动保子树 | 依DOM/role约定 |\n| 流式/卸载 | own mutation/dirty/精确恢复 | 实际renderer需核 |\n\n测试设计用GFM形状与VM fake DOM状态机，直接读built bundle的测试面；能支撑规则和状态路径覆盖，不替代当前宿主浏览器验证。本轮仅源码核查。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:13-23](https://github.com/Aafff623/dsh-callout/blob/0e92c135644be8d84601ea846098f2799ef4dcf7/package.json#L13-L23)\n\nhost/client声明。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n    \"engines\": {\n      \"dsh\": \">=0.1.2-rc.1\"\n    },\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    },\n    \"client\": {\n      \"platform\": \"web\",\n      \"inject\": []\n    }\n  },\n```\n\n</details>\n\n**依据 2 · 源码核查**：[package.json:31-38](https://github.com/Aafff623/dsh-callout/blob/0e92c135644be8d84601ea846098f2799ef4dcf7/package.json#L31-L38)\n\nCordis与分发。\n\n```text\n  },\n  \"files\": [\n    \"lib\",\n    \"src\",\n    \"cordis.patch.yml\",\n    \"README.md\"\n  ],\n  \"keywords\": [\n```\n\n**依据 3 · 源码核查**：[src/index.ts:58-65](https://github.com/Aafff623/dsh-callout/blob/0e92c135644be8d84601ea846098f2799ef4dcf7/src/index.ts#L58-L65)\n\n提示依赖。\n\n```text\nexport function apply(ctx: Context): void {\n\tctx.inject(['systemPrompt'], (injected) => {\n\t\tconst { systemPrompt } = injected as PromptContext\n\t\tsystemPrompt.section({\n\t\t\tname: 'dsh-callout:github-alerts',\n\t\t\torder: systemPrompt.getSectionOrder('WEB_SURFACE'),\n\t\t\ttext: () => ALERTS_SECTION,\n\t\t})\n```\n\n**依据 4 · 源码核查**：[src/client/index.ts:471-473](https://github.com/Aafff623/dsh-callout/blob/0e92c135644be8d84601ea846098f2799ef4dcf7/src/client/index.ts#L471-L473)\n\n增量调度。\n\n```text\nfunction scheduleScan(): void {\n\tif (scheduled) return\n\tscheduled = setTimeout(scan, 200)\n```\n\n**依据 5 · 源码核查**：[test/callout.test.mjs:150-173](https://github.com/Aafff623/dsh-callout/blob/0e92c135644be8d84601ea846098f2799ef4dcf7/test/callout.test.mjs#L150-L173)\n\n作者状态测试设计。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\ntest('state: the first pass strips the marker and applies the card', () => {\n\tconst plugin = loadPlugin()\n\tconst { blockquote, text } = makeCallout()\n\n\tplugin.upgrade(blockquote)\n\n\tassert.equal(text.nodeValue, 'body')\n\tassert.equal(blockquote.getAttribute('data-md-alert'), 'note')\n\tassert.equal(blockquote.getAttribute('data-md-alert-title'), 'NOTE')\n\tassert.equal(blockquote.getAttribute('data-md-alert-source'), 'dsh-callout')\n\tassert.equal(blockquote.getAttribute('data-md-alert-kind'), 'blockquote')\n})\n\ntest('state: nested blockquotes never activate an inner card', () => {\n\tconst plugin = loadPlugin()\n\tconst outer = fakeElement('BLOCKQUOTE')\n\tconst inner = makeCallout('[!NOTE]\\\\ninner')\n\tinner.blockquote.parentElement = outer\n\tplugin.upgrade(inner.blockquote)\n\tassert.equal(inner.blockquote.getAttribute('data-md-alert'), null)\n\tassert.equal(plugin.hasState(inner.blockquote), false)\n})\n\ntest('state: the observer echo of our own strip keeps the card', () => {\n```\n\n</details>\n\n#### 缺口\n\n- 与普通blockquote/加粗的查找时间、误读率和大会话开销没有对照。\n  **影响：**不量化阅读效率或安全改善。\n  **进一步探讨：**固定等长无秘密回答，比较找结论/风险的时间与误读，并记录DOM扫描/状态回收开销。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 推荐与继续探讨入口是什么？\n\n**研究主题：**采用判断、新假设与验证\n\n#### 完整回答\n\n有条件试用。对使用当前兼容Web DOM、偏好重点卡片的个人用户，保正文/不改session源和精确卸载路径是实际优点。先核流式/主题/编辑与普通文本拒绝，严格assistant来源/辅助技术通知需求另评估，不让视觉类型代替内容判断。\n\n由DOM范围推断来源、属性恢复只核source与源转义丢失可推导“来源作用域明确的渲染适配”。优先宿主提供的助手Markdown渲染扩展/AST标志；无正式接口则以消息role/root显式限定，marker源语法未知时保原文而不猜。属性恢复核完整自有四属性，记录来源版本与拒绝原因供调试，不持久化对话。\n\n未实现。反例是宿主没有稳定role/AST接口，过度严格会漏流式尚未成形标记；不能为了全匹配重新扫整个页面或改存储源。最小对照含human/assistant同形DOM、escaped/bare/code、分块流式、仅type/title丢失、真实edit/节点移除/HMR晚销毁。若仍改错来源、覆写编辑或无法卸载原样，核心假设被反证；同时测漏标记/CPU/阅读负担，不以卡片数量多为成功。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/client/index.ts:141-148](https://github.com/Aafff623/dsh-callout/blob/0e92c135644be8d84601ea846098f2799ef4dcf7/src/client/index.ts#L141-L148)\n\n来源范围基线。\n\n```text\nfunction isInsideChatFlow(root: Element): boolean {\n\tif (typeof document === 'undefined') return true\n\tconst flows = document.querySelectorAll('[data-chat-flow]')\n\tif (flows.length === 0) return true\n\tfor (const flow of flows) {\n\t\tif (flow === root || flow.contains?.(root)) return true\n\t}\n\treturn false\n```\n\n**依据 2 · 源码核查**：[src/client/index.ts:188-203](https://github.com/Aafff623/dsh-callout/blob/0e92c135644be8d84601ea846098f2799ef4dcf7/src/client/index.ts#L188-L203)\n\n属性基线。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\nfunction handleMutations(records: MutationRecord[]): void {\n\tfor (const record of records) {\n\t\tif (record.type === 'characterData' && consumeOwnTextMutation(record.target)) {\n\t\t\t// Own strip: the card is already applied. Do not dirty or treat as an edit.\n\t\t\tcontinue\n\t\t}\n\t\tconst owner = ownerForNode(record.target)\n\t\tif (record.type === 'attributes' && owner) {\n\t\t\t// External code removed or altered one of our card attributes.\n\t\t\t// Re-assert our chrome only when it is actually wrong — our own\n\t\t\t// no-op writes (same values) must not re-enter as records.\n\t\t\tif (owner.getAttribute('data-md-alert-source') !== PLUGIN_SOURCE) {\n\t\t\t\tconst owned = state.get(owner)\n\t\t\t\tif (owned) applyAlert(owner, owned.type, owned.kind)\n\t\t\t}\n\t\t\tcontinue\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/client/index.ts:518-535](https://github.com/Aafff623/dsh-callout/blob/0e92c135644be8d84601ea846098f2799ef4dcf7/src/client/index.ts#L518-L535)\n\n编辑/卸载基线。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n\t\t// Element chrome is per-instance: always restore the source marker when\n\t\t// the leading text node still holds exactly the value this plugin\n\t\t// produced (never overwrite a React/user edit), then clear the card.\n\t\tfor (const el of [...ownedElements]) {\n\t\t\tconst owned = state.get(el)\n\t\t\tconst paragraph = el.tagName === 'BLOCKQUOTE' ? el.firstElementChild : el\n\t\t\tconst text = paragraph?.tagName === 'P' ? firstDirectTextChild(paragraph) : null\n\t\t\tif (owned && owned.prefix && text && text.nodeValue === owned.text) {\n\t\t\t\t// No markOwnTextMutation: the observer is already detached, so a\n\t\t\t\t// mark would never be consumed and would leak into the next\n\t\t\t\t// instance, swallowing one future real-edit classification.\n\t\t\t\ttext.nodeValue = owned.prefix + owned.text\n\t\t\t}\n\t\t\tclearAlert(el)\n\t\t}\n\t\t// Drop pending own-write markers so a re-injected instance cannot\n\t\t// mistake an old observer echo for its first real edit.\n\t\tfor (const node of ownedTextNodes) ownTextMutations.delete(node)\n```\n\n</details>\n\n#### 缺口\n\n- 来源适配/AST或role约束与完整属性恢复方案未实现。\n  **影响：**不计现有来源保证/创新优势。\n  **进一步探讨：**固定DOM矩阵/状态转换模拟比较误改/漏标/回收，无真实对话材料。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：eec05b8cfd55d496c4b1cfe949ef910367802e67a620efff3f0c4ad81ce9f3ba。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 3 | 405 | — | — | 3189 |\n| .mjs | source | 1 | 54 | 35 | 13 | — |\n| .js | source | 2 | 473 | 460 | 9 | — |\n| .ts | source | 2 | 626 | 450 | 125 | — |\n| .mjs | test | 1 | 297 | 219 | 42 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 五类卡片 | 重点语义视觉呈现 | 非内容真实性/安全认证 |\n| 严格首Text匹配 | 少改代码/链接/未知标记 | 依Markdown DOM，源转义未知 |\n| 增量observer | 流式重建/自mutation | assistant来源靠DOM约定 |\n| 卸载/HMR | 条件恢复/清样式 | 不覆写外部新文本，非源码重编译 |\n\n\n## 工程亮点\n\n实现按data-chat-flow范围扫blockquote/p，不显式检查消息role=assistant；没有chat-flow时退整个document，blockquote分支也不核markdown根。因此“仅助手”依赖当前DSH把human当纯文本和DOM布局约定，未来渲染变化/别处同形blockquote可能被升级。裸P只看直接父class包含markdown，不是消息来源鉴别。\n\nDOM解析后真实marker与源码反斜线转义marker可能变相同Text，无法回推出原Markdown转义意图。它还原的是自己保存的DOM前缀，不是读session原文再编译；持久源不改是代码范围结论，不能说每次DOM回退精确恢复所有源码。未知/非首/代码等形状有明确拒绝路径，但零误判仍需按实际renderer核。\n\n属性observer只在source属性不等插件值时重applyAlert，若仅type/title/kind被移除而source仍相等会continue不修；外部样式冲突也不在文本状态机范围。样式选择[data-md-alert][data-md-alert-source]不核source具体值，依插件命名不冲突的信任前提。其伪元素标题/颜色有助视觉提示，但无alert role/实时朗读策略，不应当无障碍送达保证。每次mutation依范围查询/dirty合并仍有成本，大会话性能无数据。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、src/index.ts、src/client/index.ts、lib/index.js、lib/client.js、test/callout.test.mjs、build.mjs、cordis.patch.yml 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：host与client关键完整匹配/状态/卸载、built关键路径及package/作者测试设计；不运行build/VM测试/真实浏览器或改对话。\n- 下一步：可继续固定Markdown/role/属性/edit/HMR矩阵比较误改/漏标、精确回退与阅读/CPU，无真实对话。\n",
         "metadata": {
             "repository": "Aafff623/dsh-callout",
             "repository_id": 1359145352,
-            "captured_at": "2026-10-21T05:34:08.090Z",
-            "window_start": "2026-09-21T05:34:08.090Z",
+            "captured_at": "2026-10-22T09:43:43.184Z",
+            "window_start": "2026-09-22T09:43:43.184Z",
             "stars": 0,
             "pushed_at": "2026-09-09T12:34:40Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAafff623%2Fdsh-callout%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID FCD4:26E54B:51EB05:57F28C:6AD84ED1 and timestamp 2026-10-21 05:34:09 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAafff623%2Fdsh-callout%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID FDE4:16071B:53FC9D:5A0826:6AD84ED2 and timestamp 2026-10-21 05:34:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAafff623%2Fdsh-callout%20is%3Aissue%20created%3A2026-09-21T05%3A34%3A08.090Z..2026-10-21T05%3A34%3A08.090Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7304:360622:A98294:F4469E:6AD84ED3 and timestamp 2026-10-21 05:34:11 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAafff623%2Fdsh-callout%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A34%3A08.090Z..2026-10-21T05%3A34%3A08.090Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7446:1ADA16:A9EC4C:F4488D:6AD84ED4 and timestamp 2026-10-21 05:34:12 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAafff623%2Fdsh-callout%20is%3Aissue%20updated%3A2026-09-21T05%3A34%3A08.090Z..2026-10-21T05%3A34%3A08.090Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7596:1ADA16:A9EE33:F44B5F:6AD84ED5 and timestamp 2026-10-21 05:34:13 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "dsh-callout",
-                "captured_at": "2026-10-21T05:34:13.660Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T09:43:49.906Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": null,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-callout",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-callout",
                 "error": "HTTP 404",
                 "publication": {
                     "first_published_at": null,
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T09:43:49.906Z",
                     "source_url": "https://registry.npmjs.org/dsh-callout",
                     "error": "HTTP 404",
                     "latest_version": null,
@@ -436,14 +479,14 @@
             "repository": "Aafff623/dsh-callout",
             "path": "",
             "revision": "0e92c135644be8d84601ea846098f2799ef4dcf7",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "4adc62bb1188125406dbacfed45c57d49745732175255903b4733dc3f594bced",
                 "code": "0e92c135644be8d84601ea846098f2799ef4dcf7",
                 "maintenance": "27fbacc31f40611e1d7efba6ad48ee8cd8d1093187076c9705a56ead805086fe"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

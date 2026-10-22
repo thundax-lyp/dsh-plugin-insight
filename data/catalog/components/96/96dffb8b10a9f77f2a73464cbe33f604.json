@@ -10,7 +10,7 @@
             "repository": "AKIRACOD/dsh-drag-and-drop",
             "path": "",
             "aliases": [],
-            "name": "drag-and-drop（AKIRACOD fork）",
+            "name": "dsh-drag-and-drop",
             "entry_type": "plugin",
             "technical_category": "interface-input",
             "business_category": "personal-productivity",
@@ -24,36 +24,106 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-06-github-1333975935-root-directory-0",
+                    "id": "2026-10-22-02-github-1333975935-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T05:35:06.977Z",
+                    "retrieved_at": "2026-10-22T10:16:06.535Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-06-github-1333975935-root-author",
+                    "id": "2026-10-22-02-github-1333975935-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/AKIRACOD/dsh-drag-and-drop/blob/c20646ad6d4ee4c4a0ef12163a074716e17a7ba5/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AKIRACOD/dsh-drag-and-drop",
+                            "commit": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5",
+                            "path": "README.md",
+                            "content_sha256": "f3587921bb2c295eab324e15e46195d62d78302f1ad0e25945d211a4485324a8"
+                        }
+                    ],
                     "revision": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5",
-                    "captured_at": "2026-10-21T05:35:06.977Z",
-                    "summary": "将拖入的本地文件/目录定位为真实路径，以可删除芯片送入会话。",
-                    "artifact": "data/runs/2026-10-21-06/snapshots/akiracod--dsh-drag-and-drop/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T10:16:06.535Z",
+                    "summary": "为 DSH Web 拖入文件/文件夹生成可删除路径 chip，并在发送时插入会话草稿。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/akiracod--dsh-drag-and-drop/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-06-github-1333975935-root-source",
+                    "id": "2026-10-22-02-github-1333975935-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/AKIRACOD/dsh-drag-and-drop/blob/c20646ad6d4ee4c4a0ef12163a074716e17a7ba5/src/index.ts",
+                    "url": "https://github.com/AKIRACOD/dsh-drag-and-drop/blob/c20646ad6d4ee4c4a0ef12163a074716e17a7ba5/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AKIRACOD/dsh-drag-and-drop",
+                            "commit": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5",
+                            "path": "README.md",
+                            "content_sha256": "f3587921bb2c295eab324e15e46195d62d78302f1ad0e25945d211a4485324a8"
+                        },
+                        {
+                            "repository_url": "https://github.com/AKIRACOD/dsh-drag-and-drop",
+                            "commit": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5",
+                            "path": "package.json",
+                            "content_sha256": "0ce4a004d2300f432b4e70a11d528556258d1c2f6476ac1a552c8831db979599"
+                        },
+                        {
+                            "repository_url": "https://github.com/AKIRACOD/dsh-drag-and-drop",
+                            "commit": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5",
+                            "path": "src/index.ts",
+                            "content_sha256": "d5a8665fc7db46e80638a8a3bf1ca8b23966a64efad4166da04ac0b0ea013a71"
+                        },
+                        {
+                            "repository_url": "https://github.com/AKIRACOD/dsh-drag-and-drop",
+                            "commit": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5",
+                            "path": "src/locator.ts",
+                            "content_sha256": "689f3c0a65ab622d82b4d4612a354abf22551836e73a6a3d5146ec9f905bbd3e"
+                        },
+                        {
+                            "repository_url": "https://github.com/AKIRACOD/dsh-drag-and-drop",
+                            "commit": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5",
+                            "path": "src/client/index.ts",
+                            "content_sha256": "e287e12fa4b89017b953f63b2fb5d4dda37abda51c048624d59d795c5c4bac80"
+                        },
+                        {
+                            "repository_url": "https://github.com/AKIRACOD/dsh-drag-and-drop",
+                            "commit": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5",
+                            "path": "src/client/drop-items.ts",
+                            "content_sha256": "95c002f221f18981f045112e316120b99782de4c3237125a0485698cfb849929"
+                        },
+                        {
+                            "repository_url": "https://github.com/AKIRACOD/dsh-drag-and-drop",
+                            "commit": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5",
+                            "path": "src/client/locator.ts",
+                            "content_sha256": "6fd561206f136ee06334835c568d610fcb949f3525be4b634cd1d77aa9d717b6"
+                        },
+                        {
+                            "repository_url": "https://github.com/AKIRACOD/dsh-drag-and-drop",
+                            "commit": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5",
+                            "path": "src/fingerprint.ts",
+                            "content_sha256": "c9f96857f272a469b16bfe66bb4a41f65e10ef43723b7929b02020fade9ba386"
+                        },
+                        {
+                            "repository_url": "https://github.com/AKIRACOD/dsh-drag-and-drop",
+                            "commit": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5",
+                            "path": "tests/locator.spec.ts",
+                            "content_sha256": "41322471ce5e39299679879d711a14943f0a3762a3e178cc872d1e43bdbf5a07"
+                        },
+                        {
+                            "repository_url": "https://github.com/AKIRACOD/dsh-drag-and-drop",
+                            "commit": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5",
+                            "path": "src/platform-search.ts",
+                            "content_sha256": "b372567cada9ce14dee5563a043803abc276a9703418e4882ecc1413cc16fd2d"
+                        }
+                    ],
                     "revision": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5",
-                    "captured_at": "2026-10-21T05:35:06.977Z",
-                    "summary": "核查 src/index.ts、src/locator.ts、src/platform-search.ts、src/protocol.ts、src/client/index.ts、src/client/locator.ts、package.json；先解析拖放URI，缺失路径时向/file-drop/locate提交名字、大小和时间等元数据；Host依次查工作区、常用目录与系统索引。多候选再比较抽样/完整文件摘要或目录结构/内容摘要，最终无法区分时由用户选择。浏览器把路径暂存为芯片，在发送前写入当前会话input服务。",
-                    "artifact": "data/runs/2026-10-21-06/snapshots/akiracod--dsh-drag-and-drop/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T10:16:06.535Z",
+                    "summary": "核查 README.md、package.json、src/index.ts、src/locator.ts、src/client/index.ts、src/client/drop-items.ts、src/client/locator.ts、src/fingerprint.ts、tests/locator.spec.ts、src/platform-search.ts；浏览器路径可见时直取，不可见时 Host 按名称/大小/指纹搜索；client 暂存 chip 并发送路径。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/akiracod--dsh-drag-and-drop/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "根组件src Host路由、定位、平台搜索、浏览器拖放与输入代码、协议、包清单及fork说明。统计根组件，未核定与上游逐行差异，不将所有机制归属fork原创。",
+                        "固定提交静态审阅；未在浏览器拖放、运行 Host 或探测外部部署鉴权。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +134,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "同机运行浏览器与DSH的用户把现有文档或源码目录交给Agent，无需上传副本或手敲绝对路径；合格交付是指向用户原件的正确路径。",
+                    "text": "在 DSH Web 拖入本地文件或目录，以原路径交给后续 Agent 工具。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1333975935-root-source"
+                        "2026-10-22-02-github-1333975935-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +145,16 @@
                             "fingerprint": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:35:06.977Z",
+                    "reviewed_at": "2026-10-22T10:16:06.535Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "先解析拖放URI，缺失路径时向/file-drop/locate提交名字、大小和时间等元数据；Host依次查工作区、常用目录与系统索引。多候选再比较抽样/完整文件摘要或目录结构/内容摘要，最终无法区分时由用户选择。浏览器把路径暂存为芯片，在发送前写入当前会话input服务。",
+                    "text": "浏览器路径可见时直取，不可见时 Host 按名称/大小/指纹搜索；client 暂存 chip 并发送路径。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1333975935-root-source"
+                        "2026-10-22-02-github-1333975935-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +163,16 @@
                             "fingerprint": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:35:06.977Z",
+                    "reviewed_at": "2026-10-22T10:16:06.535Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "根组件src Host路由、定位、平台搜索、浏览器拖放与输入代码、协议、包清单及fork说明。统计根组件，未核定与上游逐行差异，不将所有机制归属fork原创。",
+                    "text": "固定提交静态审阅；未在浏览器拖放、运行 Host 或探测外部部署鉴权。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1333975935-root-source"
+                        "2026-10-22-02-github-1333975935-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +181,16 @@
                             "fingerprint": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:35:06.977Z",
+                    "reviewed_at": "2026-10-22T10:16:06.535Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "DSH Web双面bundle，包导出lib而源码在src；README称含构建物，本轮未构建或证明src与lib完全对应。",
+                    "text": "BSD-3-Clause；当前 fork 包名为 @omdsh-dev/dsh-drag-and-drop，按固定提交核。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1333975935-root-source"
+                        "2026-10-22-02-github-1333975935-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +199,16 @@
                             "fingerprint": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:35:06.977Z",
+                    "reviewed_at": "2026-10-22T10:16:06.535Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "现金：无新增模型API；人工：构建物/宿主输入接口维护，定位失败需手选或手抄路径。摘要会读取内容，广域目录搜索、系统索引与大目录扫描消耗IO和等待时间。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | DSH Web bundle 与可选系统索引；费用未知 | 安装刷新、核权限与搜索根；工时未知 | 原路径不一定由浏览器给出 |\n| 持续使用 | 歧义候选指纹、索引命令和有界遍历耗 CPU/IO；数值未知 | 核 chip/选择复本；耗时未知 | 单候选不核内容 |\n| 失败恢复 | 错路径需重搜/重发，可能增加资源；金额未知 | 撤回消息、确认下游是否读错文件；耗时未知 | 实际错配率未测 |",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1333975935-root-source"
+                        "2026-10-22-02-github-1333975935-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +217,16 @@
                             "fingerprint": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:35:06.977Z",
+                    "reviewed_at": "2026-10-22T10:16:06.535Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "可作为同机本地文件输入方案候选；需跨会话频繁操作、远程Host或敏感目录访问控制的场景，先解决会话归属和搜索授权边界。",
+                    "text": "建议观察，继续可从可信本机Host、明确session归属及合成同名/异步切换场景研究来源匹配；不作原件身份保证或远端文件上传工具。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1333975935-root-source"
+                        "2026-10-22-02-github-1333975935-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +235,16 @@
                             "fingerprint": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:35:06.977Z",
+                    "reviewed_at": "2026-10-22T10:16:06.535Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "相较上传副本保留邻接文件关系，减少路径输入；原文件仍可能由Agent随后修改，拖放并不提供只读保证。",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 文件/目录路径 chip | Q01 UI 源码实现 | 真实浏览器兼容 |\n| 定位原件 | Q02 分级搜索/摘要 | 唯一候选错配频率 |\n| 搜索界限 | Q03 体积/候选/遍历上限 | 实际 IO/延迟 |",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1333975935-root-source"
+                        "2026-10-22-02-github-1333975935-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +253,16 @@
                             "fingerprint": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:35:06.977Z",
+                    "reviewed_at": "2026-10-22T10:16:06.535Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "请求体上限4MiB，搜索有候选数/深度/遍历数上限，execFile平台命令有限时；多候选逐级摘要控制IO，最终歧义不强行选一。副作用路由的输入是类型断言而非完整运行时schema，限流和范围检查仍需宿主保障。",
+                    "text": "三阶段定位与浏览器chip提供清楚分层，但单候选免内容核对、全局pending跨当前会话、请求自带搜索根/候选会影响路径身份。4MiB请求及部分候选/单根遍历上限是局部限制，完整指纹和多根总IO并未统一限时。详见[Q02](#research-q02)、[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1333975935-root-source"
+                        "2026-10-22-02-github-1333975935-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +271,16 @@
                             "fingerprint": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:35:06.977Z",
+                    "reviewed_at": "2026-10-22T10:16:06.535Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
-                    "topic": "technical_innovation",
-                    "basis": "interpretation",
-                    "text": "这是README明确承认的omdsh-dev/bill9109上游fork，不能把路径定位全算本fork原创。本项可辨认的增量是把路径文本暂存改成可删芯片、独立发送按钮并保留纯图片原生路径；底层分阶段识别降低大文件每次全量摘要的开销。价值是输入操作改进，未改变Agent对文件的权限。",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "兼顾非图片路径 chip 和图片原生附件，免手输路径；详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1333975935-root-source"
+                        "2026-10-22-02-github-1333975935-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +289,16 @@
                             "fingerprint": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:35:06.977Z",
+                    "reviewed_at": "2026-10-22T10:16:06.535Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
-                    "basis": "interpretation",
-                    "text": "芯片是否与拖放时的会话绑定？pending是apply级数组，flushPending才读取当前会话；切换会话后可能送入另一会话。定位的唯一元数据候选会直接found而不核内容，因此同名同大小的错误候选仍可能被接受；Host后续摘要阶段接受客户端candidates，未见插件内工作区授权校验，不能将搜索范围当权限隔离。",
+                    "basis": "supported",
+                    "text": "隐藏路径唯一元数据候选可静默选错；pending不绑定拖入session，切会话可能把路径放入新会话；Host搜索根/候选需外围授权而局部遍历上限不是总IO预算。均为静态控制流核查，未作越权或错投复现。详见[Q02](#research-q02)、[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1333975935-root-source"
+                        "2026-10-22-02-github-1333975935-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +307,16 @@
                             "fingerprint": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:35:06.977Z",
+                    "reviewed_at": "2026-10-22T10:16:06.535Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
-                    "topic": "technical_innovation",
+                    "topic": "engineering",
                     "basis": "unverified",
-                    "text": "把待发送项绑定到拖入时的session及文件标识，并在唯一候选也验证小摘要，可能同时降低跨会话误发与误识别。用两个同名同大小不同内容文件、搜索索引过时和拖后切会话的固定案例，要求全部拒绝错误归属；若仅改善外观而误发率不变则假设失败。",
+                    "text": "可探索绑定拖入session与Host授权根的来源确认交接，统一候选/摘要IO预算；同名诱饵、异步切换与取消反例若仍错路径/错会话则反证。未实现。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1333975935-root-source"
+                        "2026-10-22-02-github-1333975935-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +325,15 @@
                             "fingerprint": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:35:06.977Z",
+                    "reviewed_at": "2026-10-22T10:16:06.535Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T05:35:06.977Z",
+            "last_checked_at": "2026-10-22T10:16:06.535Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5",
-                "reviewed_at": "2026-10-21T05:35:06.977Z",
+                "reviewed_at": "2026-10-22T10:16:06.535Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -277,59 +347,59 @@
                         "novelty": 9,
                         "mechanism": 15,
                         "transferability": 10,
-                        "simplification": 8
+                        "simplification": 11
                     },
-                    "rationale": "新颖性9：上游已有路径恢复，fork主要输入改进；机制15：元数据/抽样/完整及目录多阶段配合明确；迁移性10：渐进匹配可复用但依赖本机搜索；简化8：芯片减少手抄路径，新增匹配复杂性。",
+                    "rationale": "novelty以上传副本或手贴绝对路径为参照，浏览器隐藏路径时反查+chip是DSH组合适配，非新身份算法，9；mechanism以全树逐一全量hash为参照，先元数据再抽样/完整摘要改变IO与辨别力取舍，取实质15，单候选跳过证明且局部预算不覆盖全链，复杂度本身不计分；transferability以DSH专用拖放为参照，纯定位/chooser模块可迁本机Web文件输入，仍依平台索引/同一文件系统，10；simplification以手贴与上传双流程为参照，纯图原生回退和路径chip并存降低接线，受元数据歧义/会话归属限制，11。",
                     "basis": "interpretation",
-                    "score": 42,
+                    "score": 45,
                     "evidence_ids": [
-                        "2026-10-21-06-github-1333975935-root-source"
+                        "2026-10-22-02-github-1333975935-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 9,
-                        "delivery": 8,
+                        "workflow": 26,
+                        "delivery": 0,
                         "reach": 10,
-                        "economics": 4
+                        "economics": 0
                     },
-                    "rationale": "工作流9：保持文件原位的上下文输入仍是原任务流程；交付8：可删芯片和无文字发送完善入口；覆盖10：文件/目录多系统但仅同机合理；经济4：省操作时间无实测，扫描成本需计入。",
+                    "rationale": "workflow以手抄/上传并重新指定文件为参照，拖放→chip→原地发送改变来源定位和交接流程，26，仍需人工核路径；delivery以手动粘贴绝对路径为参照，当前仍交同一路径文本，没有新业务产物、验收规则或价值计量单位，故0，按钮/Host可运行不是本项依据；reach以能手查路径的桌面用户为参照，让浏览器隐藏路径时也可用拖放输入，取10，限Host同一文件系统并非远端用户可直用；economics已核对定位阶段CPU/IO及人工核对替代，未识别改变资源组织或服务成本结构的机制，0，不以缺测量代替未研究。",
                     "basis": "interpretation",
-                    "score": 31,
+                    "score": 36,
                     "evidence_ids": [
-                        "2026-10-21-06-github-1333975935-root-source"
+                        "2026-10-22-02-github-1333975935-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "observe",
-                "reason": "同机拖放原文件者可关注路径定位；先解决pending跨会话、唯一元数据误配及候选读取授权，再用于敏感原件。",
+                "reason": "路径chip与分阶段反查便利明确，但隐藏路径唯一候选免证明、全实例pending跨会话和Host候选授权边界影响核心正确性，先解决来源/会话绑定再评估试用。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "免上传副本和手抄路径的本地输入需求明确。"
+                        "rationale": "本地文件路径输入常见。"
                     },
                     "advantage": {
                         "score": 19,
-                        "rationale": "元数据、摘要及用户选候选保留邻接文件关系。"
+                        "rationale": "chip、分层定位与纯图回退。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "已核匹配阶段与apply级pending，目标会话和读边界有明确缺口。"
+                        "rationale": "源码/测试材料可查，未活浏览器验证。"
                     },
                     "cost": {
                         "score": 5,
-                        "rationale": "广域IO与错会话原件交付成本高，当前敏感范围难控。"
+                        "rationale": "搜索资源与错配复核成本。"
                     }
                 },
                 "score": 60,
                 "revision": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T10:16:06.535Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-06-github-1333975935-root-source"
+                    "2026-10-22-02-github-1333975935-root-source"
                 ],
                 "dependencies": [
                     {
@@ -354,72 +424,55 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T05:26:52Z",
-            "analysis_sha256": "0868289278a3a3842f92c045231183c5ce837e3d36ee75e7771ca2a2cdba40c7"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "3e74c971742964b0480562eb4ba101c5e7f8bd2c4687b3a0dac4903c631f4884"
         },
         "publication.metadata": "data/plugins/akiracod--dsh-drag-and-drop/META.json",
         "publication.summaries": {
-            "text": "将拖入的本地文件/目录定位为真实路径，以可删除芯片送入会话。",
+            "text": "为 DSH Web 拖入文件/文件夹生成可删除路径 chip，并在发送时插入会话草稿。",
             "revision": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5",
             "source_url": "https://github.com/AKIRACOD/dsh-drag-and-drop/blob/c20646ad6d4ee4c4a0ef12163a074716e17a7ba5/README.md"
         },
         "publication.capabilities": {
             "revision": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5",
             "items": {
-                "Host 路由": "POST /file-drop/locate执行本地路径定位与摘要比对。",
-                "界面": "全局拖放覆盖层、路径芯片、发送/移除按钮和错误提示。",
-                "事件监听": "浏览器drag/drop、Enter与pointerdown，在提交前把路径写入input服务。"
-            }
+                "Host 路由": "POST文件/目录定位与指纹候选查询",
+                "界面": "全页拖放、路径chip、复本选择与发送草稿"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 拖放 chip UI | 缓存/删除文件路径并发送 | 本机 DSH Web，路径入会话 |\n| Host locator route | 按元数据/指纹定位 | 本路由未显式会话授权；资源预算有限 |\n| 复本选择器 | 多个候选时用户选路 | 单候选无选择/内容核对 |\n| 原生图片保留 | 纯图交 composer 原通道 | 混合 drop 需另测 |"
         },
         "publication.advice": {
             "revision": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5",
-            "text": "可作为同机本地文件输入方案候选；需跨会话频繁操作、远程Host或敏感目录访问控制的场景，先解决会话归属和搜索授权边界。"
+            "text": "建议观察，继续可从可信本机Host、明确session归属及合成同名/异步切换场景研究来源匹配；不作原件身份保证或远端文件上传工具。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/akiracod--dsh-drag-and-drop",
-        "reports": "# drag-and-drop（AKIRACOD fork）\n\n> 将拖入的本地文件/目录定位为真实路径，以可删除芯片送入会话。\n\n## 使用建议\n\n可作为同机本地文件输入方案候选；需跨会话频繁操作、远程Host或敏感目录访问控制的场景，先解决会话归属和搜索授权边界。\n\n核查状态：分阶段定位与芯片输入路径可由源码确认；原件识别准确率、跨平台兼容和发送会话正确性未验证。 本轮只检查源码，未安装、执行目标代码/测试或真实宿主验收。\n\n## 洞察短评\n\n- **用途**：同机运行浏览器与DSH的用户把现有文档或源码目录交给Agent，无需上传副本或手敲绝对路径；合格交付是指向用户原件的正确路径。\n- **亮点**：这是README明确承认的omdsh-dev/bill9109上游fork，不能把路径定位全算本fork原创。本项可辨认的增量是把路径文本暂存改成可删芯片、独立发送按钮并保留纯图片原生路径；底层分阶段识别降低大文件每次全量摘要的开销。价值是输入操作改进，未改变Agent对文件的权限。\n- **思考**：芯片是否与拖放时的会话绑定？pending是apply级数组，flushPending才读取当前会话；切换会话后可能送入另一会话。定位的唯一元数据候选会直接found而不核内容，因此同名同大小的错误候选仍可能被接受；Host后续摘要阶段接受客户端candidates，未见插件内工作区授权校验，不能将搜索范围当权限隔离。\n- **建议**：把待发送项绑定到拖入时的session及文件标识，并在唯一候选也验证小摘要，可能同时降低跨会话误发与误识别。用两个同名同大小不同内容文件、搜索索引过时和拖后切会话的固定案例，要求全部拒绝错误归属；若仅改善外观而误发率不变则假设失败。\n\n## 场景与替代办法\n\n同机运行浏览器与DSH的用户把现有文档或源码目录交给Agent，无需上传副本或手敲绝对路径；合格交付是指向用户原件的正确路径。\n\n原生图片附件、复制文件路径或上游拖放插件均可完成部分任务；本fork主要减少文档输入和发送摩擦。\n\n## 能力清单\n\n- **Host 路由**：POST /file-drop/locate执行本地路径定位与摘要比对。\n- **界面**：全局拖放覆盖层、路径芯片、发送/移除按钮和错误提示。\n- **事件监听**：浏览器drag/drop、Enter与pointerdown，在提交前把路径写入input服务。\n\n## 依赖与流程\n\n先解析拖放URI，缺失路径时向/file-drop/locate提交名字、大小和时间等元数据；Host依次查工作区、常用目录与系统索引。多候选再比较抽样/完整文件摘要或目录结构/内容摘要，最终无法区分时由用户选择。浏览器把路径暂存为芯片，在发送前写入当前会话input服务。\n\nDSH webServer、sessions/workspaces/conversation服务，浏览器File API；定位回退依赖mdfind/plocate/Everything或PowerShell及Host文件可读性。\n\n拖放非纯图片→异步定位→成功进入全局pending芯片→发送时合并路径与草稿并清空；失败toast，歧义选择，dispose删除窗口监听和覆盖层。\n\nDSH Web双面bundle，包导出lib而源码在src；README称含构建物，本轮未构建或证明src与lib完全对应。\n\n## 成本与效果\n\n现金：无新增模型API；人工：构建物/宿主输入接口维护，定位失败需手选或手抄路径。摘要会读取内容，广域目录搜索、系统索引与大目录扫描消耗IO和等待时间。\n\n相较上传副本保留邻接文件关系，减少路径输入；原文件仍可能由Agent随后修改，拖放并不提供只读保证。\n\n## 核心贡献\n\n这是README明确承认的omdsh-dev/bill9109上游fork，不能把路径定位全算本fork原创。本项可辨认的增量是把路径文本暂存改成可删芯片、独立发送按钮并保留纯图片原生路径；底层分阶段识别降低大文件每次全量摘要的开销。价值是输入操作改进，未改变Agent对文件的权限。\n\n## 关键质疑\n\n芯片是否与拖放时的会话绑定？pending是apply级数组，flushPending才读取当前会话；切换会话后可能送入另一会话。定位的唯一元数据候选会直接found而不核内容，因此同名同大小的错误候选仍可能被接受；Host后续摘要阶段接受客户端candidates，未见插件内工作区授权校验，不能将搜索范围当权限隔离。\n\n## 工程亮点\n\n请求体上限4MiB，搜索有候选数/深度/遍历数上限，execFile平台命令有限时；多候选逐级摘要控制IO，最终歧义不强行选一。副作用路由的输入是类型断言而非完整运行时schema，限流和范围检查仍需宿主保障。\n\n固定源码依据：[src/index.ts](https://github.com/AKIRACOD/dsh-drag-and-drop/blob/c20646ad6d4ee4c4a0ef12163a074716e17a7ba5/src/index.ts)、[src/locator.ts](https://github.com/AKIRACOD/dsh-drag-and-drop/blob/c20646ad6d4ee4c4a0ef12163a074716e17a7ba5/src/locator.ts)、[src/platform-search.ts](https://github.com/AKIRACOD/dsh-drag-and-drop/blob/c20646ad6d4ee4c4a0ef12163a074716e17a7ba5/src/platform-search.ts)、[src/protocol.ts](https://github.com/AKIRACOD/dsh-drag-and-drop/blob/c20646ad6d4ee4c4a0ef12163a074716e17a7ba5/src/protocol.ts)、[src/client/index.ts](https://github.com/AKIRACOD/dsh-drag-and-drop/blob/c20646ad6d4ee4c4a0ef12163a074716e17a7ba5/src/client/index.ts)、[src/client/locator.ts](https://github.com/AKIRACOD/dsh-drag-and-drop/blob/c20646ad6d4ee4c4a0ef12163a074716e17a7ba5/src/client/locator.ts)、[package.json](https://github.com/AKIRACOD/dsh-drag-and-drop/blob/c20646ad6d4ee4c4a0ef12163a074716e17a7ba5/package.json)。\n\n## 未来设计假设（未验证）\n\n把待发送项绑定到拖入时的session及文件标识，并在唯一候选也验证小摘要，可能同时降低跨会话误发与误识别。用两个同名同大小不同内容文件、搜索索引过时和拖后切会话的固定案例，要求全部拒绝错误归属；若仅改善外观而误发率不变则假设失败。\n\n提出而未执行：切换会话、同名不同内容、重复副本、远程Host以及索引缺失案例，分别记录误识别与IO耗时；不把仓库测试文件当通过记录。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：04e9dee7f81559705abad7a2a549a199f8e3fa1e2d5e77cd3d67e36d884ff665。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 7 | 603 | — | — | 5921 |\n| .js | source | 21 | 2541 | 2416 | 108 | — |\n| .mjs | source | 3 | 149 | 127 | 8 | — |\n| .ts | source | 19 | 1357 | 1200 | 29 | — |\n| .ts | test | 9 | 420 | 378 | 11 | — |\n\n排除 19 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n\n## 核查说明\n\n- 版本号：0.2.0；版本日期：2026-08-14（固定提交日期，北京时间，非包发布日期）。\n- 固定提交：[c20646ad](https://github.com/AKIRACOD/dsh-drag-and-drop/tree/c20646ad6d4ee4c4a0ef12163a074716e17a7ba5)；本轮基准：2026-10-21T05:26:52Z。\n- 已检查：上述源码路径、README、包清单及组件inventory。\n- 范围：根组件src Host路由、定位、平台搜索、浏览器拖放与输入代码、协议、包清单及fork说明。统计根组件，未核定与上游逐行差异，不将所有机制归属fork原创。\n- 未执行：目标安装、代码/测试、真实宿主和第三方服务。作者说明与源码不等于独立效果验证。\n",
+        "reports": "# dsh-drag-and-drop\n\n> 为 DSH Web 拖入文件/文件夹生成可删除路径 chip，并在发送时插入会话草稿。\n\n## 研究范围\n\n- **仓库**：[AKIRACOD/dsh-drag-and-drop](https://github.com/AKIRACOD/dsh-drag-and-drop)\n- **版本号**：0.2.0（[固定提交 c20646ad6d4ee4c4a0ef12163a074716e17a7ba5](https://github.com/AKIRACOD/dsh-drag-and-drop/tree/c20646ad6d4ee4c4a0ef12163a074716e17a7ba5)）\n- **版本日期**：2026-08-14（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已检查源码。定位/路径chip增量成立，唯一候选来源证明、会话归属与总IO预算存在具体静态边界，来源会话绑定假设未验证。\n\n## 洞察短评\n\n- **用途**：在 DSH Web 拖入本地文件或目录，以原路径交给后续 Agent 工具。\n- **亮点**：兼顾非图片路径 chip 和图片原生附件，免手输路径；详见[Q01](#research-q01)。\n- **思考**：隐藏路径唯一元数据候选可静默选错；pending不绑定拖入session，切会话可能把路径放入新会话；Host搜索根/候选需外围授权而局部遍历上限不是总IO预算。均为静态控制流核查，未作越权或错投复现。详见[Q02](#research-q02)、[Q03](#research-q03)。\n- **建议**：可探索绑定拖入session与Host授权根的来源确认交接，统一候选/摘要IO预算；同名诱饵、异步切换与取消反例若仍错路径/错会话则反证。未实现。详见[Q05](#research-q05)。\n\n采用建议：建议观察，继续可从可信本机Host、明确session归属及合成同名/异步切换场景研究来源匹配；不作原件身份保证或远端文件上传工具。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n兼顾非图片路径 chip 和图片原生附件，免手输路径；详见[Q01](#research-q01)。\n\n## 关键质疑\n\n隐藏路径唯一元数据候选可静默选错；pending不绑定拖入session，切会话可能把路径放入新会话；Host搜索根/候选需外围授权而局部遍历上限不是总IO预算。均为静态控制流核查，未作越权或错投复现。详见[Q02](#research-q02)、[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可探索绑定拖入session与Host授权根的来源确认交接，统一候选/摘要IO预算；同名诱饵、异步切换与取消反例若仍错路径/错会话则反证。未实现。详见[Q05](#research-q05)。\n\n隔离构造同名同尺寸诱饵与多副本，核来源/选择；测 Host 非法根、外层鉴权和 IO。\n\n## 场景与替代办法\n\n在 DSH Web 拖入本地文件或目录，以原路径交给后续 Agent 工具。\n\n手工复制/键入绝对路径，或上传文件副本进入聊天。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| DSH Web runtime/conversation/webServer | 必需 | UI 和 Host 定位路由 | 插件无法按声明工作 |\n| 本机文件/目录可读权限 | 定位必需 | stat/摘要/搜索 | 找不到或不可匹配 |\n| 系统索引命令 | 可选 | 扩大与加速搜索 | 回退有界遍历 |\n| 用户对路径的确认 | 歧义/高风险时必要 | 防错文件进入会话 | 单候选自动选可能错 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 准备 | 管理员安装 Web bundle、核会话搜索根 | 插件/client 与 route 可见 |\n| 拖入 | 用户拖文件/目录，纯图由原生 composer 处理 | 路径 chip 可删除 |\n| 核对发送 | 用户核 chip 全路径，点击 Send 或正常发送 | 消息含期望路径 |\n| 恢复 | 错配时撤回并核下游是否访问错误文件 | 重新定位/手工输入 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | DSH Web bundle 与可选系统索引；费用未知 | 安装刷新、核权限与搜索根；工时未知 | 原路径不一定由浏览器给出 |\n| 持续使用 | 歧义候选指纹、索引命令和有界遍历耗 CPU/IO；数值未知 | 核 chip/选择复本；耗时未知 | 单候选不核内容 |\n| 失败恢复 | 错路径需重搜/重发，可能增加资源；金额未知 | 撤回消息、确认下游是否读错文件；耗时未知 | 实际错配率未测 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 文件/目录路径 chip | Q01 UI 源码实现 | 真实浏览器兼容 |\n| 定位原件 | Q02 分级搜索/摘要 | 唯一候选错配频率 |\n| 搜索界限 | Q03 体积/候选/遍历上限 | 实际 IO/延迟 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**核实拖放本地路径的三阶段定位、错误匹配与 Host 文件探测边界。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 拖放如何转成待发送的绝对路径？\n\n**研究主题：**场景与需求、贡献与相对优势、功能与机制\n\n#### 完整回答\n\nclient 全页捕获非纯图片 drop；若浏览器给 file URI 直接转换，否则按 workspace/常用目录/系统索引/有界遍历向 Host locator 查找。结果作为可删除 chip 暂存，发送时把路径逐行前置到草稿并 submit；纯图片继续由 DSH 原生 composer 接收。插件不上传或复制原文件，但路径文本进入会话，文件后续读取取决于 DSH 工具。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:14-55](https://github.com/AKIRACOD/dsh-drag-and-drop/blob/c20646ad6d4ee4c4a0ef12163a074716e17a7ba5/README.md#L14-L55)\n\nchip、新 Send、图片保留与定位设计。\n\n<details>\n<summary>查看原文（42行）</summary>\n\n```text\n## What's new in this fork (v0.2.0)\n\nThis is a maintained fork of [omdsh-dev/dsh-drag-and-drop](https://github.com/omdsh-dev/dsh-drag-and-drop) (formerly bill9109/dsh-drag-and-drop) with a different drop experience:\n\n- **File chips, not path text.** Dropped documents and folders now appear as removable chips in a bar right above the composer — the input box stays empty and free for typing (no more `C:\\...\\file.docx` pasted into your message).\n- **Send without typing.** The chip bar has its own **Send** button: drop a file, click it, and the resolved paths are prepended to the outgoing message automatically. Enter and the normal send button still work when you type alongside files.\n- **No more \"images only\" toast.** Dropping a document no longer triggers the composer's misleading \"仅支持 PNG、JPG、WebP、GIF\" error.\n- **Images stay native.** Image-only drops keep the original behavior (thumbnail attachments through the composer).\n\n## Why this exists\n\nA browser never hands a web page the real filesystem path of a dropped file — it exposes only a local file URI when it feels like it, and often nothing at all, for security. DSH, though, operates on real files: its tools read, run, and patch actual paths on the machine. Drop a file into an ordinary web input and you get either an upload (a copy that silently breaks the file's relationship with its neighboring dependencies) or a hand-typed path that is easy to get wrong.\n\nThis plugin closes that gap on the machine running DSH. It converts the browser's local file URI into the native absolute path, and when the browser hides the path entirely it resolves the file back to its real location — through the current Workspace, registered Workspaces, the OS file index, and a bounded directory search — then writes that path into the current conversation input. The file never leaves its directory.\n\n## Features\n\n- Drag files onto any part of the Web UI to attach their original absolute paths as chips above the composer\n- Full-page dim + blur hint while dragging\n- Supports files and folders; drag multiple items at once — one chip per item\n- Dropped documents render as removable chips; the input box stays clean for typing\n- Send just the dropped files with the chip bar's **Send** button — no typing required\n- Document drops never trigger the composer's \"images only\" toast; image-only drops keep native thumbnails\n- Native paths on macOS, Linux, and Windows\n- POSIX paths, Windows drive-letter paths, and UNC network paths\n- No uploading, moving, or copying of files\n- Locates files in the current Workspace and registered Workspaces first\n- When the browser hides the original path, uses the local file index and bounded directory search\n- Computes content fingerprints only when multiple candidates exist\n- When several byte-identical copies cannot be told apart automatically, lets the user pick the path\n- Failed lookups surface as a dismissible plugin toast (auto-dismisses after 8s; hovering pauses the timer)\n- Writes the draft via DSH's input-state service instead of touching the input DOM\n\n## Usage\n\nDrag files or folders from Finder, a Linux file manager, or Windows Explorer onto any part of the DSH Web UI.\n\nRelease the mouse when the full-page drag hint appears; each dropped item becomes a removable chip in the bar above the composer (hover a chip to see the full resolved path, click × to remove it).\n\nTo send just the dropped files, click **Send** in the chip bar — the resolved paths are prepended to the message automatically. If you also type a message, the paths are prepended when you press Enter or click the normal send button.\n\nImage-only drops keep the native behavior (image attachments).\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/client/index.ts:226-255](https://github.com/AKIRACOD/dsh-drag-and-drop/blob/c20646ad6d4ee4c4a0ef12163a074716e17a7ba5/src/client/index.ts#L226-L255)\n\n直取路径/Host 定位与失败 toast。\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\nasync function resolveDrop(ctx: ClientContext, dataTransfer: DataTransfer, toast: FileDropToast, addPending: (paths: readonly string[]) => void): Promise<void> {\n  const direct = pathsFromDrop(dataTransfer)\n  if (direct.length > 0) { addPending(direct); return }\n\n  const { directories, files } = droppedItems(dataTransfer)\n  const entries = [\n    ...directories.map(directory => ({ name: directory.name, locate: () => locateDroppedDirectory(directory, ctx.workspaces, currentWorkspacePath(ctx)) })),\n    ...files.map(file => ({ name: file.name, locate: () => locateDroppedFile(file, ctx.workspaces, currentWorkspacePath(ctx)) })),\n  ]\n  const found: string[] = []\n  const failures: string[] = []\n  for (const entry of entries) {\n    try {\n      const result = await entry.locate()\n      if (result.status === 'found') found.push(result.path)\n      else if (result.status === 'choose') {\n        const selected = await choosePath(entry.name, result.candidates)\n        if (selected === undefined) failures.push(entry.name)\n        else found.push(selected)\n      } else if (result.status === 'error') {\n        failures.push(`${entry.name}（${result.message}）`)\n      } else {\n        failures.push(entry.name)\n      }\n    } catch (error) {\n      failures.push(`${entry.name}（${error instanceof Error ? error.message : String(error)}）`)\n    }\n  }\n  if (found.length > 0) addPending(found)\n  if (failures.length > 0) toast.showError(`未能定位原始路径：${failures.join('、')}`)\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/client/index.ts:258-340](https://github.com/AKIRACOD/dsh-drag-and-drop/blob/c20646ad6d4ee4c4a0ef12163a074716e17a7ba5/src/client/index.ts#L258-L340)\n\nchip 缓存、草稿插入、纯图片回退。\n\n<details>\n<summary>查看原文（83行）</summary>\n\n```text\nexport function apply(ctx: ClientContext): void {\n  let dragDepth = 0\n  let nextId = 0\n  const pending: PendingItem[] = []\n  const overlay = createOverlay()\n  const toast = createFileDropToast()\n  const suppressToast = suppressImageFormatToast()\n\n  const bar = createFileBar((id) => {\n    const index = pending.findIndex(item => item.id === id)\n    if (index !== -1) pending.splice(index, 1)\n    bar.render(pending)\n  }, () => {\n    const input = flushPending()\n    if (input !== undefined) input.submit('queue')\n  })\n\n  const addPending = (paths: readonly string[]): void => {\n    for (const path of paths) {\n      if (pending.some(item => item.path === path)) continue\n      pending.push({ id: nextId++, name: fileNameOf(path), path })\n    }\n    bar.render(pending)\n  }\n\n  const flushPending = (): SessionInput | undefined => {\n    if (pending.length === 0) return undefined\n    const input = currentInput(ctx)\n    if (input === undefined) return undefined\n    const text = pending.map(item => item.path).join('\\n')\n    const draft = input.state.getSnapshot().draft\n    input.setDraft(draft.trim() === '' ? text : `${text}\\n${draft}`)\n    pending.length = 0\n    bar.render([])\n    return input\n  }\n\n  const onDragEnter = (event: DragEvent): void => {\n    if (!hasFilePayload(event)) return\n    dragDepth += 1\n    overlay.setActive(true)\n  }\n  const onDragOver = (event: DragEvent): void => {\n    if (!hasFilePayload(event)) return\n    event.preventDefault()\n    if (event.dataTransfer !== null) event.dataTransfer.dropEffect = 'copy'\n    overlay.setActive(true)\n  }\n  const onDragLeave = (event: DragEvent): void => {\n    if (!hasFilePayload(event)) return\n    dragDepth = Math.max(0, dragDepth - 1)\n    if (dragDepth === 0) overlay.setActive(false)\n  }\n  const onDrop = (event: DragEvent): void => {\n    if (!hasFilePayload(event)) return\n    event.preventDefault()\n    const dataTransfer = event.dataTransfer\n    dragDepth = 0\n    overlay.setActive(false)\n    if (dataTransfer === null) return\n    if (isImageOnlyDrop(dataTransfer)) return\n    event.stopPropagation()\n    // OS file drags do not fire a DOM `dragend`, and stopPropagation skips the\n    // composer's own drop handler, so reset the composer's drop overlay by\n    // dispatching the event its reset listener listens for.\n    window.dispatchEvent(new Event('dragend'))\n    void resolveDrop(ctx, dataTransfer, toast, addPending)\n  }\n  const onKeyDown = (event: KeyboardEvent): void => {\n    if (pending.length === 0) return\n    if (event.key !== 'Enter' || event.shiftKey) return\n    if (event.isComposing || event.keyCode === 229) return\n    flushPending()\n  }\n  const onPointerDown = (event: PointerEvent): void => {\n    if (pending.length === 0) return\n    const target = event.target\n    if (!(target instanceof Element)) return\n    const button = target.closest('button')\n    if (button === null || button.disabled) return\n    if (button.closest('[data-composer-card]') === null) return\n    if (button.getAttribute('aria-haspopup') === 'listbox') return\n    flushPending()\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 浏览器隐藏路径时，定位可保证是被拖入的原文件吗？\n\n**研究主题：**工程质量与复用、缺陷与关键质疑\n\n#### 完整回答\n\nHost 在元数据阶段以文件名和大小匹配候选；若恰有一个候选直接返回，不读取内容作证明。多个候选才进行抽样/全 SHA-256 或目录结构/内容摘要，最终多份相同内容可弹选择器。因此浏览器隐藏真实路径且搜索范围漏掉原件、或仅找到同名同尺寸其他文件时，单候选会被当成“原路径”，可能将错误文件路径插入会话。索引/递归有时间、候选和深度上限，属于速度/覆盖折中。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/locator.ts:46-98](https://github.com/AKIRACOD/dsh-drag-and-drop/blob/c20646ad6d4ee4c4a0ef12163a074716e17a7ba5/src/locator.ts#L46-L98)\n\n候选过滤、排序和搜索优先级。\n\n<details>\n<summary>查看原文（53行）</summary>\n\n```text\nasync function validateCandidates(item: DroppedEntryMeta, paths: readonly string[]): Promise<Candidate[]> {\n  const candidates: Candidate[] = []\n  for (const path of [...new Set(paths)].slice(0, MAX_CANDIDATES)) {\n    try {\n      const info = await stat(path)\n      const kindMatches = item.kind === 'file' ? info.isFile() && info.size === item.size : info.isDirectory()\n      if (kindMatches && basename(path) === item.name) candidates.push({ path: normalize(path), mtimeMs: info.mtimeMs })\n    } catch { /* Candidate disappeared between lookup and validation. */ }\n  }\n  return candidates.sort((a, b) => item.kind === 'file'\n    ? Math.abs(a.mtimeMs - item.lastModified) - Math.abs(b.mtimeMs - item.lastModified) || a.path.localeCompare(b.path)\n    : a.path.localeCompare(b.path))\n}\n\nasync function directCandidates(item: DroppedEntryMeta, roots: readonly string[]): Promise<Candidate[]> {\n  const paths = await Promise.all(roots.map(root => directCandidate(root, item.name, item.kind)))\n  return validateCandidates(item, paths.filter(path => path !== undefined))\n}\n\nasync function recursiveCandidates(item: DroppedEntryMeta, roots: readonly string[]): Promise<Candidate[]> {\n  const paths: string[] = []\n  for (const root of roots) paths.push(...await walkByName(root, item.name, item.kind))\n  return validateCandidates(item, paths)\n}\n\nfunction pathsInside(paths: readonly string[], roots: readonly string[]): string[] {\n  const canonicalRoots = roots.map(root => resolve(root))\n  return paths.filter(path => {\n    const candidate = resolve(path)\n    return canonicalRoots.some(root => candidate === root || candidate.startsWith(`${root}${sep}`))\n  })\n}\n\nasync function metadataCandidates(item: DroppedEntryMeta, request: LocateRequest): Promise<Candidate[]> {\n  const current = request.currentWorkspacePath\n  const workspaceRoots = [...new Set(request.workspacePaths ?? [])].filter(root => typeof root === 'string' && root !== '')\n  const otherWorkspaces = workspaceRoots.filter(root => root !== current)\n  const commonRoots = [join(homedir(), 'Desktop'), join(homedir(), 'Documents'), join(homedir(), 'Downloads')]\n\n  const rootGroups = [current === undefined ? [] : [current], otherWorkspaces, commonRoots]\n  const indexedPaths = await indexedSearch(item.name)\n  for (const roots of rootGroups) {\n    const direct = await directCandidates(item, roots)\n    if (direct.length > 0) return direct\n    const indexed = await validateCandidates(item, pathsInside(indexedPaths, roots))\n    if (indexed.length > 0) return indexed\n    const recursive = await recursiveCandidates(item, roots)\n    if (recursive.length > 0) return recursive\n  }\n  const globalIndexed = await validateCandidates(item, indexedPaths)\n  if (globalIndexed.length > 0) return globalIndexed\n  return recursiveCandidates(item, await broadSearchRoots())\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/locator.ts:131-174](https://github.com/AKIRACOD/dsh-drag-and-drop/blob/c20646ad6d4ee4c4a0ef12163a074716e17a7ba5/src/locator.ts#L131-L174)\n\n单候选直接 found，多候选才摘要。\n\n<details>\n<summary>查看原文（44行）</summary>\n\n```text\nexport async function locate(request: LocateRequest): Promise<LocateResponse> {\n  if (request.file.name === '') return { status: 'error', message: 'invalid dropped entry metadata' }\n  if ((request.file as { kind?: string }).kind === undefined) {\n    request = { ...request, file: { ...request.file, kind: 'file' } as DroppedFileMeta }\n  }\n\n  if (request.file.kind === 'directory') {\n    if (request.phase === 'metadata') {\n      const candidates = await metadataCandidates(request.file, request)\n      if (candidates.length === 0) return { status: 'not-found' }\n      if (candidates.length === 1) return { status: 'found', path: candidates[0].path }\n      return { status: 'directory-structure-required', candidates: candidates.map(candidate => candidate.path) }\n    }\n    if (request.phase === 'directory-structure') return locateDirectoryStructure(request)\n    if (request.phase !== 'directory-content' || request.candidates === undefined || request.directorySamples === undefined) {\n      return { status: 'error', message: 'invalid directory phase' }\n    }\n    const expected = directoryContentDigest(request.directorySamples)\n    const paths = request.directorySamples.map(sample => sample.path)\n    const matched: string[] = []\n    for (const path of request.candidates.slice(0, MAX_CANDIDATES)) {\n      try { if (await nodeDirectoryContentDigest(path, paths) === expected) matched.push(path) } catch { /* Ignore unreadable directories. */ }\n    }\n    if (matched.length === 0) return { status: 'not-found' }\n    if (matched.length === 1) return { status: 'found', path: matched[0] }\n    return { status: 'choose', candidates: matched }\n  }\n\n  if (!Number.isSafeInteger(request.file.size) || request.file.size < 0) return { status: 'error', message: 'invalid dropped-file metadata' }\n  if (request.phase === 'metadata') {\n    const candidates = await metadataCandidates(request.file, request)\n    if (candidates.length === 0) return { status: 'not-found' }\n    if (candidates.length === 1) return { status: 'found', path: candidates[0].path }\n    return { status: 'sample-required', candidates: candidates.map(candidate => candidate.path) }\n  }\n  if ((request.phase !== 'sample' && request.phase !== 'full') || request.digest === undefined || request.candidates === undefined) {\n    return { status: 'error', message: 'digest phase requires candidates and digest' }\n  }\n  const matched = await matchingFileDigest(request.candidates, request.digest, request.phase, request.file)\n  if (matched.length === 0) return { status: 'not-found' }\n  if (matched.length === 1) return { status: 'found', path: matched[0] }\n  if (request.phase === 'sample' && request.file.size <= SMALL_FILE_BYTES) return { status: 'choose', candidates: matched }\n  if (request.phase === 'sample') return { status: 'full-required', candidates: matched }\n  return { status: 'choose', candidates: matched }\n```\n\n</details>\n\n**依据 3 · 作者声明**：[README.md:128-145](https://github.com/AKIRACOD/dsh-drag-and-drop/blob/c20646ad6d4ee4c4a0ef12163a074716e17a7ba5/README.md#L128-L145)\n\n作者明述单候选不读内容、复本 chooser。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n## Candidate confirmation\n\nCandidates are first filtered by:\n\n- the full file name\n- the file size\n\nModification time is used only for ranking candidates, never as identity.\n\nIf only one candidate remains, the plugin uses that path directly without reading the file's content.\n\nIf multiple candidates remain, the plugin compares sampled fingerprints from the beginning, middle, and end of the files. Only when sampled fingerprints of large files still collide does it compute a full SHA-256.\n\nIf several paths correspond to byte-identical files, the plugin shows the list of paths and lets the user choose which one to insert.\n\nFolders are first searched by name only. A unique candidate is returned directly without traversing the browser directory; multiple same-name candidates are compared by sorted relative path, project type, and file size. For directories that are structurally identical, content samples of up to 24 deterministically chosen files are computed; if still identical, the user picks the path. Directory traversal processes at most 10,000 entries and 32 levels deep, and never follows symlinks or Windows junctions.\n\nEach search level first checks the direct children of the search root, then queries the OS index within that scope, and only then recurses into directories. The priority of the current Workspace, other Workspaces, and common directories is preserved.\n```\n\n</details>\n\n#### 缺口\n\n- 未以同名同尺寸诱饵/搜索范围外原件复现错配\n  **影响：**错路径频率和下游误读文件影响未知\n  **进一步探讨：**隔离构造唯一诱饵与被拖原件，核返回路径与用户选择\n\n<a id=\"research-q03\"></a>\n\n### Q03 · Host授权、跨会话暂存与读取资源边界是什么？\n\n**研究主题：**依赖、兼容与流程、缺陷与关键质疑\n\n#### 完整回答\n\nHost exact POST路由只检查请求体4MiB和方法，未见路由内身份/工作区授权。metadata的currentWorkspacePath/workspacePaths来自客户端，sample/full的candidates也可由请求携带，Host据此stat、遍历或读指纹。外层webServer准入需由具体宿主确认；仅在可达且Host服务身份有相应文件权限等条件下形成路径/资源探测面，不据此断言公网开放或已发生未授权读取。\n\nclient的pending数组由整个apply实例持有，没有绑定拖入时的session。resolveDrop异步完成后才addPending；flushPending又读取那一刻的currentInput。因此拖入后定位期间或发送前切会话，旧路径可能进入新当前会话。清空pending发生于setDraft之后，额外Send再submit；这不是逐会话草稿隔离。路径不会被此插件上传为文件，但会成为模型可见的路径文字，下游文件访问责任仍需核。\n\n遍历上限20000项/深12只约束一次walkByName，各root分别重置，根数及多阶段不构成统一请求预算。系统索引命令有3秒/1MiB局部限制，完整文件指纹读到EOF，无总字节或取消deadline；directory-structure候选循环也未先slice到100，不能将4MiB请求上限和候选上限推广为所有阶段IO有界。源码只保证局部限制与失败忽略，不保证超大文件/恶意目录可及时停止。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:8-47](https://github.com/AKIRACOD/dsh-drag-and-drop/blob/c20646ad6d4ee4c4a0ef12163a074716e17a7ba5/src/index.ts#L8-L47)\n\n4MiB 限制、POST 与 route；无本路由身份字段。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\nexport const MAX_BODY_BYTES = 4 * 1024 * 1024\n\nasync function readJson(req: IncomingMessage): Promise<LocateRequest> {\n  const chunks: Buffer[] = []\n  let size = 0\n  for await (const chunk of req) {\n    const buffer = Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk)\n    size += buffer.length\n    if (size > MAX_BODY_BYTES) throw new Error('request body too large')\n    chunks.push(buffer)\n  }\n  return JSON.parse(Buffer.concat(chunks).toString('utf8')) as LocateRequest\n}\n\nfunction sendJson(res: ServerResponse, status: number, body: LocateResponse): void {\n  res.writeHead(status, {\n    'content-type': 'application/json; charset=utf-8',\n    'cache-control': 'no-store',\n    'x-content-type-options': 'nosniff',\n  })\n  res.end(JSON.stringify(body))\n}\n\nexport function apply(ctx: Context): void {\n  ctx.effect(() => ctx.webServer.register({\n    kind: 'exact',\n    path: FILE_DROP_ROUTE,\n    handler: async (req, res) => {\n      if (req.method !== 'POST') {\n        sendJson(res, 405, { status: 'error', message: 'method not allowed' })\n        return\n      }\n      try {\n        sendJson(res, 200, await locate(await readJson(req)))\n      } catch (error) {\n        const message = error instanceof Error ? error.message : String(error)\n        sendJson(res, 400, { status: 'error', message })\n      }\n    },\n  }), 'file-drop: locator route')\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/locator.ts:79-109](https://github.com/AKIRACOD/dsh-drag-and-drop/blob/c20646ad6d4ee4c4a0ef12163a074716e17a7ba5/src/locator.ts#L79-L109)\n\nclient 提供 workspace 根及指纹路径。\n\n<details>\n<summary>查看原文（31行）</summary>\n\n```text\nasync function metadataCandidates(item: DroppedEntryMeta, request: LocateRequest): Promise<Candidate[]> {\n  const current = request.currentWorkspacePath\n  const workspaceRoots = [...new Set(request.workspacePaths ?? [])].filter(root => typeof root === 'string' && root !== '')\n  const otherWorkspaces = workspaceRoots.filter(root => root !== current)\n  const commonRoots = [join(homedir(), 'Desktop'), join(homedir(), 'Documents'), join(homedir(), 'Downloads')]\n\n  const rootGroups = [current === undefined ? [] : [current], otherWorkspaces, commonRoots]\n  const indexedPaths = await indexedSearch(item.name)\n  for (const roots of rootGroups) {\n    const direct = await directCandidates(item, roots)\n    if (direct.length > 0) return direct\n    const indexed = await validateCandidates(item, pathsInside(indexedPaths, roots))\n    if (indexed.length > 0) return indexed\n    const recursive = await recursiveCandidates(item, roots)\n    if (recursive.length > 0) return recursive\n  }\n  const globalIndexed = await validateCandidates(item, indexedPaths)\n  if (globalIndexed.length > 0) return globalIndexed\n  return recursiveCandidates(item, await broadSearchRoots())\n}\n\nasync function matchingFileDigest(candidates: readonly string[], digest: string, phase: 'sample' | 'full', file: DroppedFileMeta): Promise<string[]> {\n  const matched: string[] = []\n  for (const path of candidates.slice(0, MAX_CANDIDATES)) {\n    try {\n      const actual = phase === 'sample' ? await sampleFingerprint(path, file.size) : await fullFingerprint(path)\n      if (actual === digest) matched.push(path)\n    } catch { /* Unreadable candidates are not matches. */ }\n  }\n  return matched\n}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/locator.ts:159-174](https://github.com/AKIRACOD/dsh-drag-and-drop/blob/c20646ad6d4ee4c4a0ef12163a074716e17a7ba5/src/locator.ts#L159-L174)\n\n请求携带候选用于 sample/full。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n  if (!Number.isSafeInteger(request.file.size) || request.file.size < 0) return { status: 'error', message: 'invalid dropped-file metadata' }\n  if (request.phase === 'metadata') {\n    const candidates = await metadataCandidates(request.file, request)\n    if (candidates.length === 0) return { status: 'not-found' }\n    if (candidates.length === 1) return { status: 'found', path: candidates[0].path }\n    return { status: 'sample-required', candidates: candidates.map(candidate => candidate.path) }\n  }\n  if ((request.phase !== 'sample' && request.phase !== 'full') || request.digest === undefined || request.candidates === undefined) {\n    return { status: 'error', message: 'digest phase requires candidates and digest' }\n  }\n  const matched = await matchingFileDigest(request.candidates, request.digest, request.phase, request.file)\n  if (matched.length === 0) return { status: 'not-found' }\n  if (matched.length === 1) return { status: 'found', path: matched[0] }\n  if (request.phase === 'sample' && request.file.size <= SMALL_FILE_BYTES) return { status: 'choose', candidates: matched }\n  if (request.phase === 'sample') return { status: 'full-required', candidates: matched }\n  return { status: 'choose', candidates: matched }\n```\n\n</details>\n\n**依据 4 · 作者声明**：[README.md:89-161](https://github.com/AKIRACOD/dsh-drag-and-drop/blob/c20646ad6d4ee4c4a0ef12163a074716e17a7ba5/README.md#L89-L161)\n\n搜索上限与隐私宣称。\n\n<details>\n<summary>查看原文（73行）</summary>\n\n```text\n## Troubleshooting\n\n| Symptom | Resolution |\n| --- | --- |\n| Dropping a file inserts nothing | Drag again and confirm the full-page hint appears. Verify the bundle is in the profile (`dsh --profile web --dump-config | grep drag-and-drop`) and that the Web UI was restarted + hard-refreshed after installing |\n| Wrong path inserted when several copies share a name | Candidates are filtered by full file name and size, then content-sampled only among the survivors. If byte-identical copies remain, the plugin shows a chooser — pick the correct path there |\n| Path resolution is slow on a large disk | Install the platform index (Linux: `plocate`; Windows: Everything CLI) and keep files inside a Workspace or a common directory. Every search is bounded: 3s per index command, at most 100 candidates, at most 20,000 directory entries per root |\n| macOS/Linux: dropping a folder resolves nothing | Folders are matched by name against Workspaces and common directories; a folder outside every searchable root cannot be located when the browser hides the path — move it into a Workspace or install the OS index |\n| Plugin does not load after install | Restart the Web UI and hard-refresh the browser — the client bundle only loads on a fresh page load with the plugin in `__DSH_BOOT__` |\n\n## Path resolution\n\nIf the browser exposes a local file URI, the plugin converts it directly into the operating system's native path.\n\nIf the browser hides the original path for security reasons, the plugin locates the file in this order:\n\n1. The current Workspace\n2. Other registered Workspaces\n3. Desktop, Documents, and Downloads\n4. The operating system's file index\n5. A bounded, platform-specific directory search\n\nSystem indexes used per platform:\n\n- macOS: Spotlight\n- Linux: `plocate` first, then `locate`\n- Windows: Everything CLI first, then PowerShell\n\nOn Linux, when the system index returns no candidates, the plugin also searches the user home directory and mount points under `/mnt` and `/media`.\n\nOn Windows, when the system index returns no candidates, the plugin also searches the user directory and available fixed disks.\n\nTo keep searches bounded:\n\n- a single external index command times out after 3 seconds\n- at most 100 candidate paths are kept\n- each recursive search root visits at most 20,000 directory entries\n- unreadable directories and files are ignored\n\n## Candidate confirmation\n\nCandidates are first filtered by:\n\n- the full file name\n- the file size\n\nModification time is used only for ranking candidates, never as identity.\n\nIf only one candidate remains, the plugin uses that path directly without reading the file's content.\n\nIf multiple candidates remain, the plugin compares sampled fingerprints from the beginning, middle, and end of the files. Only when sampled fingerprints of large files still collide does it compute a full SHA-256.\n\nIf several paths correspond to byte-identical files, the plugin shows the list of paths and lets the user choose which one to insert.\n\nFolders are first searched by name only. A unique candidate is returned directly without traversing the browser directory; multiple same-name candidates are compared by sorted relative path, project type, and file size. For directories that are structurally identical, content samples of up to 24 deterministically chosen files are computed; if still identical, the user picks the path. Directory traversal processes at most 10,000 entries and 32 levels deep, and never follows symlinks or Windows junctions.\n\nEach search level first checks the direct children of the search root, then queries the OS index within that scope, and only then recurses into directories. The priority of the current Workspace, other Workspaces, and common directories is preserved.\n\n## Privacy & file access\n\nThe plugin never:\n\n- uploads files\n- copies files\n- moves files\n- modifies files\n- deletes files\n\nIn most cases the plugin only reads file metadata.\n\nOnly when multiple candidates share the same name and size does it read a small amount of content to compute sampled fingerprints, and only when large files cannot be told apart by sampling does it read the full content to compute SHA-256.\n\nAll resolution and fingerprinting happens locally on the machine running DSH.\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/client/index.ts:211-300](https://github.com/AKIRACOD/dsh-drag-and-drop/blob/c20646ad6d4ee4c4a0ef12163a074716e17a7ba5/src/client/index.ts#L211-L300)\n\n当前会话动态读取与全实例pending/异步定位发送，未绑定拖入时session。\n\n<details>\n<summary>查看原文（90行）</summary>\n\n```text\ntype SessionInput = ReturnType<IConversation['input']['for']>\n\nfunction currentInput(ctx: ClientContext): SessionInput | undefined {\n  const sessionId = ctx.sessions.list.getSnapshot().current\n  if (sessionId === undefined) return undefined\n  const scope = ctx.sessions.scope(sessionId)\n  const conversation = ctx.get('conversation')\n  return scope === undefined || conversation === undefined ? undefined : conversation.input.for(scope)\n}\n\nfunction currentWorkspacePath(ctx: ClientContext): string | undefined {\n  const sessionId = ctx.sessions.list.getSnapshot().current\n  return sessionId === undefined ? undefined : ctx.sessions.list.getSnapshot().byId[sessionId]?.cwd\n}\n\nasync function resolveDrop(ctx: ClientContext, dataTransfer: DataTransfer, toast: FileDropToast, addPending: (paths: readonly string[]) => void): Promise<void> {\n  const direct = pathsFromDrop(dataTransfer)\n  if (direct.length > 0) { addPending(direct); return }\n\n  const { directories, files } = droppedItems(dataTransfer)\n  const entries = [\n    ...directories.map(directory => ({ name: directory.name, locate: () => locateDroppedDirectory(directory, ctx.workspaces, currentWorkspacePath(ctx)) })),\n    ...files.map(file => ({ name: file.name, locate: () => locateDroppedFile(file, ctx.workspaces, currentWorkspacePath(ctx)) })),\n  ]\n  const found: string[] = []\n  const failures: string[] = []\n  for (const entry of entries) {\n    try {\n      const result = await entry.locate()\n      if (result.status === 'found') found.push(result.path)\n      else if (result.status === 'choose') {\n        const selected = await choosePath(entry.name, result.candidates)\n        if (selected === undefined) failures.push(entry.name)\n        else found.push(selected)\n      } else if (result.status === 'error') {\n        failures.push(`${entry.name}（${result.message}）`)\n      } else {\n        failures.push(entry.name)\n      }\n    } catch (error) {\n      failures.push(`${entry.name}（${error instanceof Error ? error.message : String(error)}）`)\n    }\n  }\n  if (found.length > 0) addPending(found)\n  if (failures.length > 0) toast.showError(`未能定位原始路径：${failures.join('、')}`)\n}\n\nexport function apply(ctx: ClientContext): void {\n  let dragDepth = 0\n  let nextId = 0\n  const pending: PendingItem[] = []\n  const overlay = createOverlay()\n  const toast = createFileDropToast()\n  const suppressToast = suppressImageFormatToast()\n\n  const bar = createFileBar((id) => {\n    const index = pending.findIndex(item => item.id === id)\n    if (index !== -1) pending.splice(index, 1)\n    bar.render(pending)\n  }, () => {\n    const input = flushPending()\n    if (input !== undefined) input.submit('queue')\n  })\n\n  const addPending = (paths: readonly string[]): void => {\n    for (const path of paths) {\n      if (pending.some(item => item.path === path)) continue\n      pending.push({ id: nextId++, name: fileNameOf(path), path })\n    }\n    bar.render(pending)\n  }\n\n  const flushPending = (): SessionInput | undefined => {\n    if (pending.length === 0) return undefined\n    const input = currentInput(ctx)\n    if (input === undefined) return undefined\n    const text = pending.map(item => item.path).join('\\n')\n    const draft = input.state.getSnapshot().draft\n    input.setDraft(draft.trim() === '' ? text : `${text}\\n${draft}`)\n    pending.length = 0\n    bar.render([])\n    return input\n  }\n\n  const onDragEnter = (event: DragEvent): void => {\n    if (!hasFilePayload(event)) return\n    dragDepth += 1\n    overlay.setActive(true)\n  }\n  const onDragOver = (event: DragEvent): void => {\n```\n\n</details>\n\n**依据 6 · 源码核查**：[src/fingerprint.ts:36-52](https://github.com/AKIRACOD/dsh-drag-and-drop/blob/c20646ad6d4ee4c4a0ef12163a074716e17a7ba5/src/fingerprint.ts#L36-L52)\n\nfullFingerprint读取到EOF，无字节总量或deadline。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\nexport async function fullFingerprint(path: string): Promise<string> {\n  const handle = await open(path, 'r')\n  try {\n    const hash = createHash('sha256')\n    const buffer = Buffer.allocUnsafe(256 * 1024)\n    let position = 0\n    while (true) {\n      const { bytesRead } = await handle.read(buffer, 0, buffer.length, position)\n      if (bytesRead === 0) break\n      hash.update(buffer.subarray(0, bytesRead))\n      position += bytesRead\n    }\n    return hash.digest('hex')\n  } finally {\n    await handle.close()\n  }\n}\n```\n\n</details>\n\n**依据 7 · 源码核查**：[src/platform-search.ts:7-39](https://github.com/AKIRACOD/dsh-drag-and-drop/blob/c20646ad6d4ee4c4a0ef12163a074716e17a7ba5/src/platform-search.ts#L7-L39)\n\n系统命令局部超时和输出限制，不是整个定位请求预算。\n\n<details>\n<summary>查看原文（33行）</summary>\n\n```text\nconst execFileAsync = promisify(execFile)\nconst COMMAND_TIMEOUT_MS = 3000\nexport const PLATFORM_MAX_CANDIDATES = 100\n\nexport interface PlatformSearchHost {\n  readonly platform: NodeJS.Platform\n  readonly home: string\n  commandExists(command: string): Promise<boolean>\n  exec(command: string, args: readonly string[]): Promise<string>\n  windowsDrives(): Promise<readonly string[]>\n}\n\nconst host: PlatformSearchHost = {\n  platform: platform(),\n  home: homedir(),\n  async commandExists(command) {\n    if (command.includes('/') || command.includes('\\\\')) {\n      try { await access(command, constants.X_OK); return true } catch { return false }\n    }\n    const probe = platform() === 'win32' ? 'where.exe' : '/usr/bin/env'\n    const args = platform() === 'win32' ? [command] : ['sh', '-c', 'command -v \"$1\" >/dev/null 2>&1', 'sh', command]\n    try { await execFileAsync(probe, args, { timeout: 1000 }); return true } catch { return false }\n  },\n  async exec(command, args) {\n    const { stdout } = await execFileAsync(command, [...args], {\n      timeout: COMMAND_TIMEOUT_MS,\n      maxBuffer: 1024 * 1024,\n      windowsHide: true,\n    })\n    return stdout\n  },\n  async windowsDrives() {\n    try {\n```\n\n</details>\n\n#### 缺口\n\n- 外围Host准入与共享实例多会话条件取决具体宿主，跨会话路径误投的实际发生频率未知。\n  **影响：**不能把客户端当前会话或本路由方法检查当身份授权/逐会话隔离。\n  **进一步探讨：**可先从明确宿主访问策略、固定session归属和合成异步切换事件序列研究。\n- 多根与完整摘要的实际总IO/取消代价未量化。\n  **影响：**局部上限不能承诺总请求资源。\n  **进一步探讨：**可用合成大目录/文件与取消记录比较总预算和正确来源匹配，不读取私人文件。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 首次、持续与失败恢复成本和效果怎样？\n\n**研究主题：**效果与总成本\n\n#### 完整回答\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | DSH Web bundle 与可选系统索引；费用未知 | 安装刷新、核权限与搜索根；工时未知 | 原路径不一定由浏览器给出 |\n| 持续使用 | 歧义候选指纹、索引命令和有界遍历耗 CPU/IO；数值未知 | 核 chip/选择复本；耗时未知 | 单候选不核内容 |\n| 失败恢复 | 错路径需重搜/重发，可能增加资源；金额未知 | 撤回消息、确认下游是否读错文件；耗时未知 | 实际错配率未测 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 文件/目录路径 chip | Q01 UI 源码实现 | 真实浏览器兼容 |\n| 定位原件 | Q02 分级搜索/摘要 | 唯一候选错配频率 |\n| 搜索界限 | Q03 体积/候选/遍历上限 | 实际 IO/延迟 |\n\n相对手贴路径的收益是少手工定位，不能从chip出现推导文件身份正确或任务已完成。每轮索引、指纹与错误路径的人工恢复都应计入。同名/范围漏原件及切会话是必要反例，金额、延迟与错投频率未知，不能填零或承诺节省。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/locator.ts:79-174](https://github.com/AKIRACOD/dsh-drag-and-drop/blob/c20646ad6d4ee4c4a0ef12163a074716e17a7ba5/src/locator.ts#L79-L174)\n\n多阶段定位、单候选与摘要读取成本。\n\n<details>\n<summary>查看原文（96行）</summary>\n\n```text\nasync function metadataCandidates(item: DroppedEntryMeta, request: LocateRequest): Promise<Candidate[]> {\n  const current = request.currentWorkspacePath\n  const workspaceRoots = [...new Set(request.workspacePaths ?? [])].filter(root => typeof root === 'string' && root !== '')\n  const otherWorkspaces = workspaceRoots.filter(root => root !== current)\n  const commonRoots = [join(homedir(), 'Desktop'), join(homedir(), 'Documents'), join(homedir(), 'Downloads')]\n\n  const rootGroups = [current === undefined ? [] : [current], otherWorkspaces, commonRoots]\n  const indexedPaths = await indexedSearch(item.name)\n  for (const roots of rootGroups) {\n    const direct = await directCandidates(item, roots)\n    if (direct.length > 0) return direct\n    const indexed = await validateCandidates(item, pathsInside(indexedPaths, roots))\n    if (indexed.length > 0) return indexed\n    const recursive = await recursiveCandidates(item, roots)\n    if (recursive.length > 0) return recursive\n  }\n  const globalIndexed = await validateCandidates(item, indexedPaths)\n  if (globalIndexed.length > 0) return globalIndexed\n  return recursiveCandidates(item, await broadSearchRoots())\n}\n\nasync function matchingFileDigest(candidates: readonly string[], digest: string, phase: 'sample' | 'full', file: DroppedFileMeta): Promise<string[]> {\n  const matched: string[] = []\n  for (const path of candidates.slice(0, MAX_CANDIDATES)) {\n    try {\n      const actual = phase === 'sample' ? await sampleFingerprint(path, file.size) : await fullFingerprint(path)\n      if (actual === digest) matched.push(path)\n    } catch { /* Unreadable candidates are not matches. */ }\n  }\n  return matched\n}\n\nasync function locateDirectoryStructure(request: LocateRequest): Promise<LocateResponse> {\n  if (request.file.kind !== 'directory' || request.file.structure === undefined || request.candidates === undefined) {\n    return { status: 'error', message: 'directory structure phase requires candidates and structure' }\n  }\n  const candidates = request.candidates\n  const expected = directoryStructureDigest(request.file.structure)\n  const matched: string[] = []\n  let samplePaths = selectDirectorySamplePaths(request.file.structure.entries)\n  for (const path of candidates) {\n    try {\n      const actual = await nodeDirectoryStructureDigest(path)\n      if (actual.digest === expected) { matched.push(path); samplePaths = actual.paths }\n    } catch { /* Ignore unreadable directories. */ }\n  }\n  if (matched.length === 0) return { status: 'not-found' }\n  if (matched.length === 1) return { status: 'found', path: matched[0] }\n  if (samplePaths.length === 0) return { status: 'choose', candidates: matched }\n  return { status: 'directory-content-required', candidates: matched, paths: samplePaths }\n}\n\nexport async function locate(request: LocateRequest): Promise<LocateResponse> {\n  if (request.file.name === '') return { status: 'error', message: 'invalid dropped entry metadata' }\n  if ((request.file as { kind?: string }).kind === undefined) {\n    request = { ...request, file: { ...request.file, kind: 'file' } as DroppedFileMeta }\n  }\n\n  if (request.file.kind === 'directory') {\n    if (request.phase === 'metadata') {\n      const candidates = await metadataCandidates(request.file, request)\n      if (candidates.length === 0) return { status: 'not-found' }\n      if (candidates.length === 1) return { status: 'found', path: candidates[0].path }\n      return { status: 'directory-structure-required', candidates: candidates.map(candidate => candidate.path) }\n    }\n    if (request.phase === 'directory-structure') return locateDirectoryStructure(request)\n    if (request.phase !== 'directory-content' || request.candidates === undefined || request.directorySamples === undefined) {\n      return { status: 'error', message: 'invalid directory phase' }\n    }\n    const expected = directoryContentDigest(request.directorySamples)\n    const paths = request.directorySamples.map(sample => sample.path)\n    const matched: string[] = []\n    for (const path of request.candidates.slice(0, MAX_CANDIDATES)) {\n      try { if (await nodeDirectoryContentDigest(path, paths) === expected) matched.push(path) } catch { /* Ignore unreadable directories. */ }\n    }\n    if (matched.length === 0) return { status: 'not-found' }\n    if (matched.length === 1) return { status: 'found', path: matched[0] }\n    return { status: 'choose', candidates: matched }\n  }\n\n  if (!Number.isSafeInteger(request.file.size) || request.file.size < 0) return { status: 'error', message: 'invalid dropped-file metadata' }\n  if (request.phase === 'metadata') {\n    const candidates = await metadataCandidates(request.file, request)\n    if (candidates.length === 0) return { status: 'not-found' }\n    if (candidates.length === 1) return { status: 'found', path: candidates[0].path }\n    return { status: 'sample-required', candidates: candidates.map(candidate => candidate.path) }\n  }\n  if ((request.phase !== 'sample' && request.phase !== 'full') || request.digest === undefined || request.candidates === undefined) {\n    return { status: 'error', message: 'digest phase requires candidates and digest' }\n  }\n  const matched = await matchingFileDigest(request.candidates, request.digest, request.phase, request.file)\n  if (matched.length === 0) return { status: 'not-found' }\n  if (matched.length === 1) return { status: 'found', path: matched[0] }\n  if (request.phase === 'sample' && request.file.size <= SMALL_FILE_BYTES) return { status: 'choose', candidates: matched }\n  if (request.phase === 'sample') return { status: 'full-required', candidates: matched }\n  return { status: 'choose', candidates: matched }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/client/index.ts:258-300](https://github.com/AKIRACOD/dsh-drag-and-drop/blob/c20646ad6d4ee4c4a0ef12163a074716e17a7ba5/src/client/index.ts#L258-L300)\n\n暂存、人工删除与当前会话草稿交接。\n\n<details>\n<summary>查看原文（43行）</summary>\n\n```text\nexport function apply(ctx: ClientContext): void {\n  let dragDepth = 0\n  let nextId = 0\n  const pending: PendingItem[] = []\n  const overlay = createOverlay()\n  const toast = createFileDropToast()\n  const suppressToast = suppressImageFormatToast()\n\n  const bar = createFileBar((id) => {\n    const index = pending.findIndex(item => item.id === id)\n    if (index !== -1) pending.splice(index, 1)\n    bar.render(pending)\n  }, () => {\n    const input = flushPending()\n    if (input !== undefined) input.submit('queue')\n  })\n\n  const addPending = (paths: readonly string[]): void => {\n    for (const path of paths) {\n      if (pending.some(item => item.path === path)) continue\n      pending.push({ id: nextId++, name: fileNameOf(path), path })\n    }\n    bar.render(pending)\n  }\n\n  const flushPending = (): SessionInput | undefined => {\n    if (pending.length === 0) return undefined\n    const input = currentInput(ctx)\n    if (input === undefined) return undefined\n    const text = pending.map(item => item.path).join('\\n')\n    const draft = input.state.getSnapshot().draft\n    input.setDraft(draft.trim() === '' ? text : `${text}\\n${draft}`)\n    pending.length = 0\n    bar.render([])\n    return input\n  }\n\n  const onDragEnter = (event: DragEvent): void => {\n    if (!hasFilePayload(event)) return\n    dragDepth += 1\n    overlay.setActive(true)\n  }\n  const onDragOver = (event: DragEvent): void => {\n```\n\n</details>\n\n#### 缺口\n\n- 没有同条件输入效率、总IO及错路径恢复人时对照。\n  **影响：**不量化生产力或成本收益。\n  **进一步探讨：**可从固定合成文件、多副本和会话切换序列比较正确路径交付及恢复总成本。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 推荐条件和可继续探讨的来源绑定方案是什么？\n\n**研究主题：**采用判断、新假设与验证\n\n#### 完整回答\n\n建议观察。拖放与分阶段指纹有真实便利，但隐藏来源单候选自动采纳、全实例pending缺session归属和Host候选路径授权会影响交付正确性。继续探讨可先锁定可信本机Host和明确当前会话，用用户可逐条核对的合成文件比较，不能将其当唯一来源证明或远端浏览器上传工具。\n\n相对当前全局pending/单候选自动接受，可推导“来源与会话绑定的路径交接”。drop开始即保存session/root能力，完成时若当前会话变化则留原会话待确认而不自动发送；隐藏路径时单候选也比浏览器可读样本或明确向用户确认，Host根与摘要候选绑定真实会话授权和统一IO/取消预算。代价是多一次交互或读取，无法拿到可靠样本的目录必须标未知。该方案未实现，不计现有贡献。\n\n最小反例包括同名同尺寸诱饵、原件不在搜索范围、路径换代、多份相同内容、定位中切session、非法根和超大完整hash。若仍静默错选或向别的会话发路径，来源/会话假设被反证；若预算过早截断令匹配质量或人工负担更差，则资源改进假设不成立。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/locator.ts:46-98](https://github.com/AKIRACOD/dsh-drag-and-drop/blob/c20646ad6d4ee4c4a0ef12163a074716e17a7ba5/src/locator.ts#L46-L98)\n\n候选过滤、排序和搜索优先级。\n\n<details>\n<summary>查看原文（53行）</summary>\n\n```text\nasync function validateCandidates(item: DroppedEntryMeta, paths: readonly string[]): Promise<Candidate[]> {\n  const candidates: Candidate[] = []\n  for (const path of [...new Set(paths)].slice(0, MAX_CANDIDATES)) {\n    try {\n      const info = await stat(path)\n      const kindMatches = item.kind === 'file' ? info.isFile() && info.size === item.size : info.isDirectory()\n      if (kindMatches && basename(path) === item.name) candidates.push({ path: normalize(path), mtimeMs: info.mtimeMs })\n    } catch { /* Candidate disappeared between lookup and validation. */ }\n  }\n  return candidates.sort((a, b) => item.kind === 'file'\n    ? Math.abs(a.mtimeMs - item.lastModified) - Math.abs(b.mtimeMs - item.lastModified) || a.path.localeCompare(b.path)\n    : a.path.localeCompare(b.path))\n}\n\nasync function directCandidates(item: DroppedEntryMeta, roots: readonly string[]): Promise<Candidate[]> {\n  const paths = await Promise.all(roots.map(root => directCandidate(root, item.name, item.kind)))\n  return validateCandidates(item, paths.filter(path => path !== undefined))\n}\n\nasync function recursiveCandidates(item: DroppedEntryMeta, roots: readonly string[]): Promise<Candidate[]> {\n  const paths: string[] = []\n  for (const root of roots) paths.push(...await walkByName(root, item.name, item.kind))\n  return validateCandidates(item, paths)\n}\n\nfunction pathsInside(paths: readonly string[], roots: readonly string[]): string[] {\n  const canonicalRoots = roots.map(root => resolve(root))\n  return paths.filter(path => {\n    const candidate = resolve(path)\n    return canonicalRoots.some(root => candidate === root || candidate.startsWith(`${root}${sep}`))\n  })\n}\n\nasync function metadataCandidates(item: DroppedEntryMeta, request: LocateRequest): Promise<Candidate[]> {\n  const current = request.currentWorkspacePath\n  const workspaceRoots = [...new Set(request.workspacePaths ?? [])].filter(root => typeof root === 'string' && root !== '')\n  const otherWorkspaces = workspaceRoots.filter(root => root !== current)\n  const commonRoots = [join(homedir(), 'Desktop'), join(homedir(), 'Documents'), join(homedir(), 'Downloads')]\n\n  const rootGroups = [current === undefined ? [] : [current], otherWorkspaces, commonRoots]\n  const indexedPaths = await indexedSearch(item.name)\n  for (const roots of rootGroups) {\n    const direct = await directCandidates(item, roots)\n    if (direct.length > 0) return direct\n    const indexed = await validateCandidates(item, pathsInside(indexedPaths, roots))\n    if (indexed.length > 0) return indexed\n    const recursive = await recursiveCandidates(item, roots)\n    if (recursive.length > 0) return recursive\n  }\n  const globalIndexed = await validateCandidates(item, indexedPaths)\n  if (globalIndexed.length > 0) return globalIndexed\n  return recursiveCandidates(item, await broadSearchRoots())\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/locator.ts:131-174](https://github.com/AKIRACOD/dsh-drag-and-drop/blob/c20646ad6d4ee4c4a0ef12163a074716e17a7ba5/src/locator.ts#L131-L174)\n\n单候选直接 found，多候选才摘要。\n\n<details>\n<summary>查看原文（44行）</summary>\n\n```text\nexport async function locate(request: LocateRequest): Promise<LocateResponse> {\n  if (request.file.name === '') return { status: 'error', message: 'invalid dropped entry metadata' }\n  if ((request.file as { kind?: string }).kind === undefined) {\n    request = { ...request, file: { ...request.file, kind: 'file' } as DroppedFileMeta }\n  }\n\n  if (request.file.kind === 'directory') {\n    if (request.phase === 'metadata') {\n      const candidates = await metadataCandidates(request.file, request)\n      if (candidates.length === 0) return { status: 'not-found' }\n      if (candidates.length === 1) return { status: 'found', path: candidates[0].path }\n      return { status: 'directory-structure-required', candidates: candidates.map(candidate => candidate.path) }\n    }\n    if (request.phase === 'directory-structure') return locateDirectoryStructure(request)\n    if (request.phase !== 'directory-content' || request.candidates === undefined || request.directorySamples === undefined) {\n      return { status: 'error', message: 'invalid directory phase' }\n    }\n    const expected = directoryContentDigest(request.directorySamples)\n    const paths = request.directorySamples.map(sample => sample.path)\n    const matched: string[] = []\n    for (const path of request.candidates.slice(0, MAX_CANDIDATES)) {\n      try { if (await nodeDirectoryContentDigest(path, paths) === expected) matched.push(path) } catch { /* Ignore unreadable directories. */ }\n    }\n    if (matched.length === 0) return { status: 'not-found' }\n    if (matched.length === 1) return { status: 'found', path: matched[0] }\n    return { status: 'choose', candidates: matched }\n  }\n\n  if (!Number.isSafeInteger(request.file.size) || request.file.size < 0) return { status: 'error', message: 'invalid dropped-file metadata' }\n  if (request.phase === 'metadata') {\n    const candidates = await metadataCandidates(request.file, request)\n    if (candidates.length === 0) return { status: 'not-found' }\n    if (candidates.length === 1) return { status: 'found', path: candidates[0].path }\n    return { status: 'sample-required', candidates: candidates.map(candidate => candidate.path) }\n  }\n  if ((request.phase !== 'sample' && request.phase !== 'full') || request.digest === undefined || request.candidates === undefined) {\n    return { status: 'error', message: 'digest phase requires candidates and digest' }\n  }\n  const matched = await matchingFileDigest(request.candidates, request.digest, request.phase, request.file)\n  if (matched.length === 0) return { status: 'not-found' }\n  if (matched.length === 1) return { status: 'found', path: matched[0] }\n  if (request.phase === 'sample' && request.file.size <= SMALL_FILE_BYTES) return { status: 'choose', candidates: matched }\n  if (request.phase === 'sample') return { status: 'full-required', candidates: matched }\n  return { status: 'choose', candidates: matched }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/client/index.ts:258-300](https://github.com/AKIRACOD/dsh-drag-and-drop/blob/c20646ad6d4ee4c4a0ef12163a074716e17a7ba5/src/client/index.ts#L258-L300)\n\n会话绑定方案的当前全局pending/动态currentInput基线。\n\n<details>\n<summary>查看原文（43行）</summary>\n\n```text\nexport function apply(ctx: ClientContext): void {\n  let dragDepth = 0\n  let nextId = 0\n  const pending: PendingItem[] = []\n  const overlay = createOverlay()\n  const toast = createFileDropToast()\n  const suppressToast = suppressImageFormatToast()\n\n  const bar = createFileBar((id) => {\n    const index = pending.findIndex(item => item.id === id)\n    if (index !== -1) pending.splice(index, 1)\n    bar.render(pending)\n  }, () => {\n    const input = flushPending()\n    if (input !== undefined) input.submit('queue')\n  })\n\n  const addPending = (paths: readonly string[]): void => {\n    for (const path of paths) {\n      if (pending.some(item => item.path === path)) continue\n      pending.push({ id: nextId++, name: fileNameOf(path), path })\n    }\n    bar.render(pending)\n  }\n\n  const flushPending = (): SessionInput | undefined => {\n    if (pending.length === 0) return undefined\n    const input = currentInput(ctx)\n    if (input === undefined) return undefined\n    const text = pending.map(item => item.path).join('\\n')\n    const draft = input.state.getSnapshot().draft\n    input.setDraft(draft.trim() === '' ? text : `${text}\\n${draft}`)\n    pending.length = 0\n    bar.render([])\n    return input\n  }\n\n  const onDragEnter = (event: DragEvent): void => {\n    if (!hasFilePayload(event)) return\n    dragDepth += 1\n    overlay.setActive(true)\n  }\n  const onDragOver = (event: DragEvent): void => {\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/locator.ts:79-109](https://github.com/AKIRACOD/dsh-drag-and-drop/blob/c20646ad6d4ee4c4a0ef12163a074716e17a7ba5/src/locator.ts#L79-L109)\n\n来源根与摘要请求的授权基线。\n\n<details>\n<summary>查看原文（31行）</summary>\n\n```text\nasync function metadataCandidates(item: DroppedEntryMeta, request: LocateRequest): Promise<Candidate[]> {\n  const current = request.currentWorkspacePath\n  const workspaceRoots = [...new Set(request.workspacePaths ?? [])].filter(root => typeof root === 'string' && root !== '')\n  const otherWorkspaces = workspaceRoots.filter(root => root !== current)\n  const commonRoots = [join(homedir(), 'Desktop'), join(homedir(), 'Documents'), join(homedir(), 'Downloads')]\n\n  const rootGroups = [current === undefined ? [] : [current], otherWorkspaces, commonRoots]\n  const indexedPaths = await indexedSearch(item.name)\n  for (const roots of rootGroups) {\n    const direct = await directCandidates(item, roots)\n    if (direct.length > 0) return direct\n    const indexed = await validateCandidates(item, pathsInside(indexedPaths, roots))\n    if (indexed.length > 0) return indexed\n    const recursive = await recursiveCandidates(item, roots)\n    if (recursive.length > 0) return recursive\n  }\n  const globalIndexed = await validateCandidates(item, indexedPaths)\n  if (globalIndexed.length > 0) return globalIndexed\n  return recursiveCandidates(item, await broadSearchRoots())\n}\n\nasync function matchingFileDigest(candidates: readonly string[], digest: string, phase: 'sample' | 'full', file: DroppedFileMeta): Promise<string[]> {\n  const matched: string[] = []\n  for (const path of candidates.slice(0, MAX_CANDIDATES)) {\n    try {\n      const actual = phase === 'sample' ? await sampleFingerprint(path, file.size) : await fullFingerprint(path)\n      if (actual === digest) matched.push(path)\n    } catch { /* Unreadable candidates are not matches. */ }\n  }\n  return matched\n}\n```\n\n</details>\n\n#### 缺口\n\n- 来源/会话能力与统一预算方案未实现。\n  **影响：**不将预期正确性改进计入当前插件。\n  **进一步探讨：**可按合成反例分别核来源一致、session一致与资源代价。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：04e9dee7f81559705abad7a2a549a199f8e3fa1e2d5e77cd3d67e36d884ff665。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 7 | 603 | — | — | 5921 |\n| .js | source | 21 | 2541 | 2416 | 108 | — |\n| .mjs | source | 3 | 149 | 127 | 8 | — |\n| .ts | source | 19 | 1357 | 1200 | 29 | — |\n| .ts | test | 9 | 420 | 378 | 11 | — |\n\n排除 19 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 拖放 chip UI | 缓存/删除文件路径并发送 | 本机 DSH Web，路径入会话 |\n| Host locator route | 按元数据/指纹定位 | 本路由未显式会话授权；资源预算有限 |\n| 复本选择器 | 多个候选时用户选路 | 单候选无选择/内容核对 |\n| 原生图片保留 | 纯图交 composer 原通道 | 混合 drop 需另测 |\n\n## 工程亮点\n\n三阶段定位与浏览器chip提供清楚分层，但单候选免内容核对、全局pending跨当前会话、请求自带搜索根/候选会影响路径身份。4MiB请求及部分候选/单根遍历上限是局部限制，完整指纹和多根总IO并未统一限时。详见[Q02](#research-q02)、[Q03](#research-q03)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、src/index.ts、src/locator.ts、src/client/index.ts、src/client/drop-items.ts、src/client/locator.ts、src/fingerprint.ts、tests/locator.spec.ts、src/platform-search.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定提交静态审阅；未在浏览器拖放、运行 Host 或探测外部部署鉴权。\n- 下一步：隔离构造同名同尺寸诱饵与多副本，核来源/选择；测 Host 非法根、外层鉴权和 IO。\n",
         "metadata": {
             "repository": "AKIRACOD/dsh-drag-and-drop",
             "repository_id": 1333975935,
-            "captured_at": "2026-10-21T05:33:25.853Z",
-            "window_start": "2026-09-21T05:33:25.853Z",
+            "captured_at": "2026-10-22T08:39:25.300Z",
+            "window_start": "2026-09-22T08:39:25.300Z",
             "stars": 5,
             "pushed_at": "2026-08-14T08:44:04Z",
             "issues": {
                 "open": 0,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAKIRACOD%2Fdsh-drag-and-drop%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CB28:27305C:528A0B:5892C3:6AD84EA8 and timestamp 2026-10-21 05:33:28 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAKIRACOD%2Fdsh-drag-and-drop%20is%3Aissue%20created%3A2026-09-21T05%3A33%3A25.853Z..2026-10-21T05%3A33%3A25.853Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CC60:103F14:504BE2:5655CB:6AD84EA9 and timestamp 2026-10-21 05:33:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAKIRACOD%2Fdsh-drag-and-drop%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A33%3A25.853Z..2026-10-21T05%3A33%3A25.853Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CD48:27069F:52FB5E:590640:6AD84EAA and timestamp 2026-10-21 05:33:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAKIRACOD%2Fdsh-drag-and-drop%20is%3Aissue%20updated%3A2026-09-21T05%3A33%3A25.853Z..2026-10-21T05%3A33%3A25.853Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CE60:44870:53CB0D:59D2BF:6AD84EAB and timestamp 2026-10-21 05:33:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "@omdsh-dev/dsh-drag-and-drop",
-                "captured_at": "2026-10-21T05:33:31.316Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T08:39:41.178Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": null,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40omdsh-dev%2Fdsh-drag-and-drop",
-                "error": "HTTP 404",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/%40omdsh-dev%2Fdsh-drag-and-drop",
+                "error": "fetch failed",
                 "publication": {
                     "first_published_at": null,
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T08:39:41.178Z",
                     "source_url": "https://registry.npmjs.org/%40omdsh-dev%2Fdsh-drag-and-drop",
                     "error": "HTTP 404",
                     "latest_version": null,
@@ -433,14 +486,14 @@
             "repository": "AKIRACOD/dsh-drag-and-drop",
             "path": "",
             "revision": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "e2d0ced465eb43bce6bd51af406bf9216bb7075aceb200316d4c9a3509ba88e2",
                 "code": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5",
                 "maintenance": "094e04dea0623119044245b3ca96c5e2d3b10a77d9d6e8c95adaf5c99600194c"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

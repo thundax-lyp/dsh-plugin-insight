@@ -10,9 +10,9 @@
             "repository": "0x7A7A6572/dsh-forge-studio",
             "path": "packages/plugin-notes",
             "aliases": [],
-            "name": "Forge 便签",
+            "name": "dsh-plugin-notes",
             "entry_type": "plugin",
-            "technical_category": "tools-integration",
+            "technical_category": "agent-workflow",
             "business_category": "personal-productivity",
             "tags": [
                 "便签",
@@ -28,36 +28,94 @@
             },
             "sources": [
                 {
-                    "id": "20261020-research40-github-1363429979-plugin-notes-directory-0",
+                    "id": "2026-10-22-02-github-1363429979-plugin-notes-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
-                    "retrieved_at": "2026-10-20T03:05:44.256Z",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-22T09:41:08.121Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "20261020-research40-github-1363429979-plugin-notes-author",
+                    "id": "2026-10-22-02-github-1363429979-plugin-notes-author",
                     "kind": "author_claim",
                     "url": "https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/0x7A7A6572/dsh-forge-studio",
+                            "commit": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+                            "path": "packages/plugin-notes/README.md",
+                            "content_sha256": "d0cc345b8caf256907a8bdd00103b9721f3754dfb73f185ebfc07051a8d6bf7b"
+                        }
+                    ],
                     "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
-                    "captured_at": "2026-10-20T03:05:44.256Z",
-                    "summary": "提供 Markdown 便签板、搜索归档和任务泳道，可把便签交给智能体或定时执行。",
-                    "artifact": "data/runs/2026-10-20-02/snapshots/0x7a7a6572--dsh-forge-studio--plugin-notes/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:41:08.121Z",
+                    "summary": "把 Markdown 便签、任务泳道、新会话执行、定时调度与 WebDAV 备份组合在 DSH 中。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/0x7a7a6572--dsh-forge-studio--plugin-notes/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "20261020-research40-github-1363429979-plugin-notes-source",
+                    "id": "2026-10-22-02-github-1363429979-plugin-notes-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/src/index.ts",
+                    "url": "https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/0x7A7A6572/dsh-forge-studio",
+                            "commit": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+                            "path": "packages/plugin-notes/README.md",
+                            "content_sha256": "d0cc345b8caf256907a8bdd00103b9721f3754dfb73f185ebfc07051a8d6bf7b"
+                        },
+                        {
+                            "repository_url": "https://github.com/0x7A7A6572/dsh-forge-studio",
+                            "commit": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+                            "path": "packages/plugin-notes/src/service.ts",
+                            "content_sha256": "f033992a9d26b49955573cab24a29246daa6fe456fa00347c13611401e026ae9"
+                        },
+                        {
+                            "repository_url": "https://github.com/0x7A7A6572/dsh-forge-studio",
+                            "commit": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+                            "path": "packages/plugin-notes/src/agent/tools.ts",
+                            "content_sha256": "7eb8a7e2a02173d919fe7782ee5c5500eca63e17260cb646fbb2fdb894577fc0"
+                        },
+                        {
+                            "repository_url": "https://github.com/0x7A7A6572/dsh-forge-studio",
+                            "commit": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+                            "path": "packages/plugin-notes/src/scheduler.ts",
+                            "content_sha256": "ca7ac41bbfcfac5c49a92341c940c90bafc04d35e2da631fe0ce890957e51c3a"
+                        },
+                        {
+                            "repository_url": "https://github.com/0x7A7A6572/dsh-forge-studio",
+                            "commit": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+                            "path": "packages/plugin-notes/src/schedule.ts",
+                            "content_sha256": "572898cae166c39d770e93d082945f78dfde33b6d5f33d2644a0aadcb287d110"
+                        },
+                        {
+                            "repository_url": "https://github.com/0x7A7A6572/dsh-forge-studio",
+                            "commit": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+                            "path": "packages/plugin-notes/src/webdav-core.ts",
+                            "content_sha256": "0fba4cb9bcbf0aa6bb8016d56a87a8c9bce29f3c612aa3bc043b4a7a621962d7"
+                        },
+                        {
+                            "repository_url": "https://github.com/0x7A7A6572/dsh-forge-studio",
+                            "commit": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+                            "path": "packages/plugin-notes/src/webdav-backup.ts",
+                            "content_sha256": "bf4b354df6a9f9e08d51e203e33c1d0fed92e2ede80491b3f6c1f08f8afe058c"
+                        },
+                        {
+                            "repository_url": "https://github.com/0x7A7A6572/dsh-forge-studio",
+                            "commit": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+                            "path": "packages/plugin-notes/src/domain.ts",
+                            "content_sha256": "7c94b2b9e01eb0096d5dd026db6512c63bcf89fe6bb9a8a557b961035fa892af"
+                        }
+                    ],
                     "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
-                    "captured_at": "2026-10-20T03:05:44.256Z",
-                    "summary": "核查 packages/plugin-notes/src/index.ts、packages/plugin-notes/src/service.ts、packages/plugin-notes/src/scheduler.ts；便签 CRUD 通过 storage-domain 持久化；日程与任务泳道状态关联，工具就绪后再挂 agent 桥。",
-                    "artifact": "data/runs/2026-10-20-02/snapshots/0x7a7a6572--dsh-forge-studio--plugin-notes/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:41:08.121Z",
+                    "summary": "核查 packages/plugin-notes/README.md、packages/plugin-notes/src/service.ts、packages/plugin-notes/src/agent/tools.ts、packages/plugin-notes/src/scheduler.ts、packages/plugin-notes/src/schedule.ts、packages/plugin-notes/src/webdav-core.ts、packages/plugin-notes/src/webdav-backup.ts、packages/plugin-notes/src/domain.ts；storageDomain 持久便签/租约，服务层派发新会话，调度器周期扫描，WebDAV 快照备份。详见[Q02](#research-q02)至[Q04](#research-q04)。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/0x7a7a6572--dsh-forge-studio--plugin-notes/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "未验证调度幂等、失败重试、WebDAV 恢复或真实任务完成，定时入口不等于可靠执行保证。",
+                        "只读核固定提交 packages/plugin-notes 范围 README、service、agent/tools、scheduler、schedule、webdav；未执行目标 DSH 或 WebDAV。旧 META 复用。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -68,9 +126,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "需要从临时想法转为任务的用户，希望在聊天旁管理笔记及执行状态。",
+                    "text": "个人记录、待办和可派发 Agent 任务的统一面板；需要明确自动执行与备份恢复成本。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "20261020-research40-github-1363429979-plugin-notes-source"
+                        "2026-10-22-02-github-1363429979-plugin-notes-source"
                     ],
                     "dependencies": [
                         {
@@ -79,16 +137,16 @@
                             "fingerprint": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:05:44.256Z",
+                    "reviewed_at": "2026-10-22T09:41:08.121Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "便签 CRUD 通过 storage-domain 持久化；日程与任务泳道状态关联，工具就绪后再挂 agent 桥。",
+                    "text": "storageDomain 持久便签/租约，服务层派发新会话，调度器周期扫描，WebDAV 快照备份。详见[Q02](#research-q02)至[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "20261020-research40-github-1363429979-plugin-notes-source"
+                        "2026-10-22-02-github-1363429979-plugin-notes-source"
                     ],
                     "dependencies": [
                         {
@@ -97,16 +155,16 @@
                             "fingerprint": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:05:44.256Z",
+                    "reviewed_at": "2026-10-22T09:41:08.121Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "把输入、任务和状态放在同一处可减少转录；自动执行却会引入授权和重复副作用风险。",
+                    "text": "#### 效果\n\n| 效果项 | 源码支持 | 未证实 |\n| --- | --- | --- |\n| 便签/任务 | 存储与派发 | UI 体验/完成率 |\n| 自动日程 | 30秒扫描 | 长任务停止 |\n| WebDAV | 快照与恢复 | 删除同步/故障原子性 |",
                     "evidence_ids": [
-                        "20261020-research40-github-1363429979-plugin-notes-source"
+                        "2026-10-22-02-github-1363429979-plugin-notes-source"
                     ],
                     "dependencies": [
                         {
@@ -115,16 +173,16 @@
                             "fingerprint": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:05:44.256Z",
+                    "reviewed_at": "2026-10-22T09:41:08.121Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "手工笔记成本较低，自动任务另有模型、调度运维和验收负担；未测量总体收益。",
+                    "text": "#### 成本\n\n| 阶段 | 本插件动作 | 现金/资源 | 人工/时间 | 未知与失败恢复 |\n| --- | --- | --- | --- | --- |\n| 首次 | 安装、建便签存储/工作区、配置 WebDAV 与审批边界 | DSH/远端存储资源；包价/订阅金额未知 | 选绝对工作区、权限/备份验证工时未知 | 不兼容需回退便签/配置 |\n| 持续 | 自动保存、定时扫描、新 Agent 会话与 WebDAV 上传 | 模型 token/会话、存储/网络；金额和频次未知 | 监控租约、执行结果与删除后备份，工时未知 | 定时过期/模型失败率未知 |\n| 失败恢复 | 清孤儿会话、从安全快照恢复、核删除遗漏 | 额外会话/重试模型与快照存储，现金影响未知 | 查 session/lease、手动备份/恢复、重做任务，工时未知 | replaceAll 非事务、长任务状态不保停止 |",
                     "evidence_ids": [
-                        "20261020-research40-github-1363429979-plugin-notes-source"
+                        "2026-10-22-02-github-1363429979-plugin-notes-source"
                     ],
                     "dependencies": [
                         {
@@ -133,16 +191,16 @@
                             "fingerprint": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:05:44.256Z",
+                    "reviewed_at": "2026-10-22T09:41:08.121Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "日程仅随任务状态落位、存储写入后可见的边界清晰；复用调度要独立核查重启恢复。",
+                    "text": "租约限定 Agent 任务工具会话、独立 userQuestions 同意；WebDAV 删除水位与恢复事务、会话失败清理需改进。详见[Q02](#research-q02)至[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "20261020-research40-github-1363429979-plugin-notes-source"
+                        "2026-10-22-02-github-1363429979-plugin-notes-source"
                     ],
                     "dependencies": [
                         {
@@ -151,16 +209,16 @@
                             "fingerprint": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:05:44.256Z",
+                    "reviewed_at": "2026-10-22T09:41:08.121Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "先只用便签与归档，再用无副作用任务检查定时运行和失败恢复。",
+                    "text": "先小规模个人便签试用；任务派发用隔离工作区，定时执行须监控；删除后手动备份并验证远端。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "20261020-research40-github-1363429979-plugin-notes-source"
+                        "2026-10-22-02-github-1363429979-plugin-notes-source"
                     ],
                     "dependencies": [
                         {
@@ -169,16 +227,16 @@
                             "fingerprint": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:05:44.256Z",
+                    "reviewed_at": "2026-10-22T09:41:08.121Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "未验证调度幂等、失败重试、WebDAV 恢复或真实任务完成，定时入口不等于可靠执行保证。",
+                    "text": "只读核固定提交 packages/plugin-notes 范围 README、service、agent/tools、scheduler、schedule、webdav；未执行目标 DSH 或 WebDAV。旧 META 复用。",
                     "evidence_ids": [
-                        "20261020-research40-github-1363429979-plugin-notes-source"
+                        "2026-10-22-02-github-1363429979-plugin-notes-source"
                     ],
                     "dependencies": [
                         {
@@ -187,16 +245,16 @@
                             "fingerprint": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:05:44.256Z",
+                    "reviewed_at": "2026-10-22T09:41:08.121Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "组件 @zzerx/dsh-plugin-notes 0.4.3，依赖存储、agent、工具及用户确认服务。",
+                    "text": "作者提供 @zzerx/dsh-plugin-notes 包安装命令，真实发布/宿主兼容未核。",
                     "evidence_ids": [
-                        "20261020-research40-github-1363429979-plugin-notes-source"
+                        "2026-10-22-02-github-1363429979-plugin-notes-source"
                     ],
                     "dependencies": [
                         {
@@ -205,40 +263,135 @@
                             "fingerprint": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:05:44.256Z",
+                    "reviewed_at": "2026-10-22T09:41:08.121Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "将便签编辑、任务 AI 执行和日程以及远端备份整合为 DSH 用户工作流。详见[Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1363429979-plugin-notes-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1363429979:plugin-notes",
+                            "area": "code",
+                            "fingerprint": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:41:08.121Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "删除后远端快照不更新是明确的判定缺口；恢复和任务派发有部分副作用，需故障验证。详见[Q02](#research-q02)至[Q04](#research-q04)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1363429979-plugin-notes-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1363429979:plugin-notes",
+                            "area": "code",
+                            "fingerprint": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:41:08.121Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "改进可用持久变更序号/墓碑判备份、事务恢复、派发失败清理会话。详见[Q03](#research-q03)和[Q05](#research-q05)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1363429979-plugin-notes-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1363429979:plugin-notes",
+                            "area": "code",
+                            "fingerprint": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:41:08.121Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-20T03:05:44.256Z",
+            "last_checked_at": "2026-10-22T09:41:08.121Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+                "reviewed_at": "2026-10-22T09:41:08.121Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1363429979:plugin-notes",
+                        "area": "code",
+                        "fingerprint": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 18,
+                        "mechanism": 23,
+                        "transferability": 15,
+                        "simplification": 11
+                    },
+                    "rationale": "novelty 18：相对分离便签/任务工具，把同一条记录转换为租约化 Agent 任务和日程有组合增量（Q01/Q02）。mechanism 23：存储 domain、调度、会话租约和 WebDAV 快照构成具体实现，删除水位/非事务恢复限制一致性（Q02-Q04）。transferability 15：便签到代理任务/备份模型可借鉴，代码依 DSH session/storageDomain/WebDAV（Q01/Q04）。simplification 11：相对跨多应用记录/派发，一面板完成链路，但失败清理与删除后手动备份仍需人工（Q03/Q05）。",
+                    "basis": "interpretation",
+                    "score": 67,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1363429979-plugin-notes-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 26,
+                        "delivery": 15,
+                        "reach": 10,
+                        "economics": 4
+                    },
+                    "rationale": "workflow 26：相对普通便签，记录直接变成新 Agent 会话与日程，有明确流程增量；需监控任务副作用（Q01/Q02）。delivery以孤立便签和人工分发任务为参照，便签可成为带执行会话、任务状态和回报记录的持久任务条目，并保留笔记备份，形成可追踪任务交付单元，取15（Q01/Q02/Q04）；不把设想中的事务恢复、自动任务成功或备份完整性计为当前增量。\nreach 10：适用于个人 DSH 工作流，团队权限/规模证据缺失（Q01/Q05）。economics 4：可能省任务抄写/切换时间，却新增模型会话、WebDAV 与故障恢复成本，净收益未知（Q02-Q05）。",
+                    "basis": "interpretation",
+                    "score": 55,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1363429979-plugin-notes-source"
+                    ]
+                }
+            },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "想法转任务的用户可先试便签归档，再用无副作用任务检查调度与失败恢复。",
+                "reason": "先个人隔离试用，删除后手动备份，定时任务加强监控。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "聊天旁维护笔记和任务状态的流程明确。"
+                        "rationale": "便签到任务需求明确。"
                     },
                     "advantage": {
-                        "score": 13,
-                        "rationale": "一处输入与任务联动省转录，独立笔记是简单替代。"
+                        "score": 19,
+                        "rationale": "同一面板直接派发会话。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "CRUD与状态落位可查，调度幂等及恢复未验。"
+                        "rationale": "固定源码可核，目标运行未测。"
                     },
                     "cost": {
                         "score": 10,
-                        "rationale": "便签成本低，自动任务另增调度运维和验收成本。"
+                        "rationale": "模型会话/WebDAV 成本和故障恢复未知。"
                     }
                 },
-                "score": 59,
+                "score": 65,
                 "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T09:41:08.121Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "20261020-research40-github-1363429979-plugin-notes-source"
+                    "2026-10-22-02-github-1363429979-plugin-notes-source"
                 ],
                 "dependencies": [
                     {
@@ -263,28 +416,30 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-20T02:51:30Z",
-            "analysis_sha256": "7c9cdba5f3b6574ead6effb96003a03b7ebcca9e291e093896f7d93fd4b17398"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "1429d2404eb119dfc1065b6ed0360b6f6ac271cb90b22d872d3a5f83d2cd780b"
         },
         "publication.metadata": "data/plugins/0x7a7a6572--dsh-forge-studio--plugin-notes/META.json",
         "publication.summaries": {
-            "text": "提供 Markdown 便签板、搜索归档和任务泳道，可把便签交给智能体或定时执行。",
+            "text": "把 Markdown 便签、任务泳道、新会话执行、定时调度与 WebDAV 备份组合在 DSH 中。",
             "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
             "source_url": "https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/README.md"
         },
         "publication.capabilities": {
             "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
             "items": {
-                "界面": "便签板和任务泳道。",
-                "后台": "任务便签日程调度。"
-            }
+                "模型工具": "notes_list/get/create/update/set_pinned/delete/task_set_status/task_report",
+                "界面": "便签板/任务泳道/设置",
+                "后台": "定时任务扫描及WebDAV自动检查"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 便签 | 记录 | UI 未测 |\n| 任务 | AI 派发 | 失败残留会话 |\n| 备份 | 远端快照 | 删除可漏备 |"
         },
         "publication.advice": {
             "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
-            "text": "先只用便签与归档，再用无副作用任务检查定时运行和失败恢复。"
+            "text": "先小规模个人便签试用；任务派发用隔离工作区，定时执行须监控；删除后手动备份并验证远端。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/0x7a7a6572--dsh-forge-studio--plugin-notes",
-        "reports": "# Forge 便签\n\n> 提供 Markdown 便签板、搜索归档和任务泳道，可把便签交给智能体或定时执行。\n\n## 固定范围与依据\n\n固定提交 [acb136c0dbbf8e984bdffea9de48b6ed73d0103e](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/src/index.ts)；组件路径：packages/plugin-notes。核查时间 2026-10-20T03:05:44.256Z；本轮基准 2026-10-20T02:51:30Z。\n源码抽读路径：packages/plugin-notes/src/index.ts、packages/plugin-notes/src/service.ts、packages/plugin-notes/src/scheduler.ts。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：需要从临时想法转为任务的用户，希望在聊天旁管理笔记及执行状态。\n- **亮点**：便签 CRUD 通过 storage-domain 持久化；日程与任务泳道状态关联，工具就绪后再挂 agent 桥。\n- **思考**：把输入、任务和状态放在同一处可减少转录；自动执行却会引入授权和重复副作用风险。\n- **建议**：先只用便签与归档，再用无副作用任务检查定时运行和失败恢复。\n\n## 场景与替代办法\n\n需要从临时想法转为任务的用户，希望在聊天旁管理笔记及执行状态。\n\nMarkdown 任务清单更易迁移；本组件的额外价值是界面和 agent 交接，代价是宿主耦合。\n\n## 依赖与流程\n\n需要 DSH storageDomain 与客户端入口；执行任务依赖 agent 和模型，远端备份另需服务配置。\n\n先写便签、整理归档，需要时转入泳道并配置执行条件；失败后核对任务结果再重试。\n\n## 成本与效果\n\n手工笔记成本较低，自动任务另有模型、调度运维和验收负担；未测量总体收益。\n\n把输入、任务和状态放在同一处可减少转录；自动执行却会引入授权和重复副作用风险。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：packages/plugin-notes；内容摘要：9fa48426006131fa8f8f76994cd181dbfaab9cf1b06a82f82735cfd0a8f529e7。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 1 | 97 | — | — | 1847 |\n| .mjs | source | 2 | 101 | 67 | 23 | — |\n| .ts | source | 48 | 7623 | 5660 | 1343 | — |\n| .tsx | source | 31 | 5650 | 4905 | 554 | — |\n\n排除 3 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **界面**：便签板和任务泳道。\n- **后台**：任务便签日程调度。\n\n## 工程亮点\n\n日程仅随任务状态落位、存储写入后可见的边界清晰；复用调度要独立核查重启恢复。\n\n## 分发与兼容\n\n组件 @zzerx/dsh-plugin-notes 0.4.3，依赖存储、agent、工具及用户确认服务。\n\n## 历史对照\n\n前次代码指纹为 acb136c0dbbf8e984bdffea9de48b6ed73d0103e；本轮固定为 acb136c0dbbf8e984bdffea9de48b6ed73d0103e。Markdown 任务清单更易迁移；本组件的额外价值是界面和 agent 交接，代价是宿主耦合。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：未验证调度幂等、失败重试、WebDAV 恢复或真实任务完成，定时入口不等于可靠执行保证。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：比较重启前后任务状态、一次性和定时触发、失败重试及是否发生重复写回。\n",
+        "reports": "# dsh-plugin-notes\n\n> 把 Markdown 便签、任务泳道、新会话执行、定时调度与 WebDAV 备份组合在 DSH 中。\n\n## 研究范围\n\n- **仓库**：[0x7A7A6572/dsh-forge-studio](https://github.com/0x7A7A6572/dsh-forge-studio)\n- **版本号**：0.4.3（[固定提交 acb136c0dbbf8e984bdffea9de48b6ed73d0103e](https://github.com/0x7A7A6572/dsh-forge-studio/tree/acb136c0dbbf8e984bdffea9de48b6ed73d0103e)）\n- **版本日期**：2026-10-16（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定源码可核功能与批准守卫；删除不会推动 maxUpdatedAt 水位，自动备份可遗漏删除；派发失败可能留空会话，恢复非事务。目标宿主未测。\n\n## 洞察短评\n\n- **用途**：个人记录、待办和可派发 Agent 任务的统一面板；需要明确自动执行与备份恢复成本。详见[Q01](#research-q01)。\n- **亮点**：将便签编辑、任务 AI 执行和日程以及远端备份整合为 DSH 用户工作流。详见[Q01](#research-q01)。\n- **思考**：删除后远端快照不更新是明确的判定缺口；恢复和任务派发有部分副作用，需故障验证。详见[Q02](#research-q02)至[Q04](#research-q04)。\n- **建议**：改进可用持久变更序号/墓碑判备份、事务恢复、派发失败清理会话。详见[Q03](#research-q03)和[Q05](#research-q05)。\n\n采用建议：先小规模个人便签试用；任务派发用隔离工作区，定时执行须监控；删除后手动备份并验证远端。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n将便签编辑、任务 AI 执行和日程以及远端备份整合为 DSH 用户工作流。详见[Q01](#research-q01)。\n\n## 关键质疑\n\n删除后远端快照不更新是明确的判定缺口；恢复和任务派发有部分副作用，需故障验证。详见[Q02](#research-q02)至[Q04](#research-q04)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n改进可用持久变更序号/墓碑判备份、事务恢复、派发失败清理会话。详见[Q03](#research-q03)和[Q05](#research-q05)。\n\n目标 DSH 验用户提问、租约撤销、模型选择失败、删除后自动备份、恢复中断与超时任务。\n\n## 场景与替代办法\n\n个人记录、待办和可派发 Agent 任务的统一面板；需要明确自动执行与备份恢复成本。详见[Q01](#research-q01)。\n\n一般便签板与任务管理可分别完成记录和计划；本插件的区别是同一便签直接派发 Agent 会话。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖 | 必需 | 用途 | 缺失后果 |\n| --- | --- | --- | --- |\n| DSH storageDomain | 必需 | 持久便签 | 插件不可用 |\n| 任务 runtime | 执行时必需 | 新会话 | 只能记便签 |\n| WebDAV | 备份时必需 | 远端快照 | 无远端备份 |\n\n#### 使用步骤\n\n| 步骤 | 动作 | 判据/恢复 |\n| --- | --- | --- |\n| 记录 | 便签编辑 | 核自动保存 |\n| 任务 | 设工作区/执行 | 核新会话/租约 |\n| 备份 | WebDAV 手动/自动 | 核快照 |\n| 恢复 | 先安全备份再覆盖 | 隔离环境验 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 本插件动作 | 现金/资源 | 人工/时间 | 未知与失败恢复 |\n| --- | --- | --- | --- | --- |\n| 首次 | 安装、建便签存储/工作区、配置 WebDAV 与审批边界 | DSH/远端存储资源；包价/订阅金额未知 | 选绝对工作区、权限/备份验证工时未知 | 不兼容需回退便签/配置 |\n| 持续 | 自动保存、定时扫描、新 Agent 会话与 WebDAV 上传 | 模型 token/会话、存储/网络；金额和频次未知 | 监控租约、执行结果与删除后备份，工时未知 | 定时过期/模型失败率未知 |\n| 失败恢复 | 清孤儿会话、从安全快照恢复、核删除遗漏 | 额外会话/重试模型与快照存储，现金影响未知 | 查 session/lease、手动备份/恢复、重做任务，工时未知 | replaceAll 非事务、长任务状态不保停止 |\n\n#### 效果\n\n| 效果项 | 源码支持 | 未证实 |\n| --- | --- | --- |\n| 便签/任务 | 存储与派发 | UI 体验/完成率 |\n| 自动日程 | 30秒扫描 | 长任务停止 |\n| WebDAV | 快照与恢复 | 删除同步/故障原子性 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**便签到任务、Agent 写入和 WebDAV 备份在失败与删除情形下是否可靠？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 便签板从记录到 AI 任务覆盖哪些步骤？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n作者给四处入口、纸卡/列表/泳道、Markdown 与自动保存；便签转任务后必须选绝对工作区，用户可手动或按 once/interval/daily/weekly/monthly 日程派发到新会话。固定源码可见存储 domain、任务执行、调度与八个 agent 工具；界面体验只据作者 README/图片，未在 DSH 操作验证。此插件既是个人便签，也会触发新 Agent 会话，采用前须按任务执行权限评估。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[packages/plugin-notes/README.md:19-44](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/README.md#L19-L44)\n\n作者入口与功能\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n## 入口\n\n便签板本体在**中间列**（侧栏那个字形就是它的开关），也能开在**右侧栏**（导引页那张卡片）。以下入口都能在 **dsh 设置 → 便签 → 入口** 里单独开关，默认全开：\n\n| 入口 | 在哪 |\n|---|---|\n| 侧栏顶部入口 | 侧栏顶部那一整行，点行打开便签板，点 (＋) 只开快捷新建；关掉即整行消失 |\n| 输入栏入口 | 输入框左下角那一个字形，点开是三行菜单：新增便签 \\| 便签板 \\| 任务泳道（待办数挂在「任务泳道」那一行，点它开板并直接落到泳道页签） |\n| 存成便签 | 每条助手回复下方的按钮，把该条回答**带进快捷新建浮层**（预填标题与正文） |\n| 右侧栏导引卡片 | 右侧栏导引页里的便签卡片，点一下就在右侧栏以标签页打开便签板 |\n\n「打开方式」决定便签板开在**中间列**还是**右侧栏**（宿主没装右侧栏时自动回退中间列）。四个入口至少会留一个：全关掉就没有打开便签板的地方了，设置页会锁住最后一个开着的入口。\n\n## 能做什么\n\n- **三种显示模式**：纸卡墙 / 行式列表 / 任务泳道，随时切换，选择会被记住。\n- **六色纸卡 + 置顶**：配色与 Win11 便签一致，置顶优先；颜色可多选筛选。\n- **搜索与归档**：标题 + 正文实时搜索；归档便签收进列表底部折叠区，可恢复 / 编辑 / 删除。\n- **Markdown 正文**：格式工具栏（加粗 / 标题 / 列表 / 任务清单 / 引用 / 代码 / 链接 / 表格 / 撤销重做）；任务清单 `- [ ]` 在纸卡与列表上显示完成度徽标（如 `2/5`，全勾变 ✓）。\n- **粘贴图片**：编辑器里 `Ctrl+V` 直接把剪贴板里的图片内联进正文。\n- **便签变任务**：写入泳道状态即成为任务，五列看板（待规划 → 待办 → 进行中 → 已完成 → 已失败）拖拽换状态；普通便签不进泳道。编辑器底部是一块**折纸式可折叠面板**——合上只占一行摘要（状态 · 工作区 · 模型 · 预设），点「设置」才折出全部字段。\n- **交给 AI 执行**：任务卡 hover「执行」→ 按该任务的工作区**新开一个会话**跑，便签板所在会话不被占用；完成后摘要回到卡片首行，全文进编辑器的「任务与结果」区（已完成/已失败的任务打开编辑器即展开）。跑太久可「重置为待办」。\n- **执行目标可选**：任务折纸面板里能选**模型**与 **agent 预设**（留空 = 宿主默认），只影响该任务派发出来的新会话。\n- **定时执行**：一次性 / 间隔 N 分钟 / 每天 / 每周（可多选星期）/ 每月；卡片显示「周期 · 下次时刻」，编辑器显示「下次 / 上次」。宿主停机期间错过的时点**超 2 小时不补跑**（循环型顺延到下一周期，一次性停用并写明原因），2 小时以内的补跑一次；上一轮未结束则本轮跳过。\n- **自动保存**：编辑既有便签时停顿约 1 秒落盘，页脚有保存指示灯。\n- **关闭前先问一句**：X /「取消」/ `Esc` / 点弹窗外，只要还有没保存的改动就弹「便签有改动」——保存并关闭（回车即选）、放弃改动、继续编辑三选一；没改动直接关。新建便签写一半就关也不会再丢。\n```\n\n</details>\n\n**依据 2 · 作者声明**：[packages/plugin-notes/README.md:61-86](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/README.md#L61-L86)\n\n工作区/备份/工具\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n## 工作区（执行目录）\n\n任务便签必须带一个**工作区**（绝对路径），决定交给 AI 执行时在哪个目录跑：编辑器折纸面板里从下拉框选（候选 = 最近会话用过的目录，只选不手填）。**没有默认值也没有兜底**——没选工作区就存不成任务（摘要行变红、保存被挡下），泳道里没设工作区的任务卡显红字「未设工作区」且「执行」按钮禁用。\n\n## 设置\n\n设置界面是 **dsh 设置面板里的一级「便签」分区**，分三个 tab：**基础**（默认标题）、**入口**（打开方式 + 各入口开关）、**备份**（WebDAV）。\n\n## 备份（WebDAV）\n\n填服务器地址、远端目录、账号与**应用密码**（凭据只存本机设置，建议用服务商提供的应用密码而非主密码）。按**检查间隔**定时比对，**只在便签有变更时**上传快照，远端只留最近**保留份数**份。想立刻验证连通可以点「保存并立即备份」；恢复前会先自动备份当前状态，选中的那份**整体覆盖**现有便签。\n\n## agent 工具\n\n宿主装配了 `tools` 服务时注册 8 个工具（纯 UI 宿主不注册，照常使用）：\n\n| 工具 | 用途 |\n|---|---|\n| `notes_list` / `notes_get` | 列摘要 / 读全文 |\n| `notes_create` / `notes_update` / `notes_set_pinned` / `notes_delete` | 新建、修改、置顶、删除 |\n| `notes_task_set_status` / `notes_task_report` | 任务置状态 / 收尾写结果 |\n\n- 新建便签、置顶 / 归档**不问**——agent 新建的便签恒为它自己的。\n- 改或删**你手写的便签**时，工具会向你发起一次「同意 / 拒绝」（与提问通道同一套，与权限模式无关），同意才落笔。\n- 宿主没有审批通道时，agent 只能删它自己创建的便签。\n- 任务工具只在「执行」授权的那次会话内可用；你手动改状态或取消任务即收回授权。\n```\n\n</details>\n\n**依据 3 · 源码核查**：[packages/plugin-notes/src/service.ts:424-470](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/src/service.ts#L424-L470)\n\n实际任务派发\n\n<details>\n<summary>查看原文（47行）</summary>\n\n```text\n  private async runTaskExecute(id: NoteId, by: 'user' | 'schedule'): Promise<TaskExecuteResult> {\n    const current = this.table.get(id)\n    if (!current) return { ok: false, reason: 'missing' }\n    // 归档便签不得执行。\n    if (current.archived || !current.lane || this.leases.get(id)) {\n      return { ok: false, reason: 'busy' }\n    }\n    // 先于工作区解析判定：没有运行时就该报 no-dispatch。\n    if (this.task === undefined) return { ok: false, reason: 'no-dispatch' }\n    const workspace = (current.workspace ?? '').trim()\n    if (workspace === '') return { ok: false, reason: 'missing-workspace' }\n    const snapshot = current\n\n    let sessionId: string\n    try {\n      sessionId = await this.task.createSession({\n        workspace,\n        ...(current.lane.agentPreset !== undefined ? { agentPreset: current.lane.agentPreset } : {}),\n      })\n    } catch {\n      return { ok: false, reason: 'dispatch-failed' }\n    }\n\n    // 必须在投递前选好，第一个 turn 才用得上。\n    if (current.lane.model !== undefined) {\n      try {\n        await this.task.selectModel({ sessionId, model: current.lane.model })\n      } catch {\n        return { ok: false, reason: 'dispatch-failed' }\n      }\n    }\n\n    const granted = await this.grantTaskLease(id, sessionId, by)\n    if (granted !== 'granted') {\n      return { ok: false, reason: granted === 'missing' ? 'missing' : 'busy' }\n    }\n\n    try {\n      await this.task.prompt({ noteId: id, title: current.title, sessionId, workspace })\n    } catch {\n      await this.rollbackTaskExecute(id, snapshot)\n      return { ok: false, reason: 'dispatch-failed' }\n    }\n\n    const fresh = this.table.get(id)\n    if (!fresh) return { ok: false, reason: 'missing' }\n    return { ok: true, note: fresh }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[packages/plugin-notes/src/scheduler.ts:63-110](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/src/scheduler.ts#L63-L110)\n\n定时执行\n\n<details>\n<summary>查看原文（48行）</summary>\n\n```text\n/** 装配调度执行器（纯依赖注入，无定时器；定时器见 installNotesScheduler）。 */\nexport function createScheduleRunner(deps: ScheduleRunnerDeps): ScheduleRunner {\n  /** 在途标记：tick 重入直接跳过（派发是异步的，30s 可能不够）。 */\n  let running = false\n  return {\n    async run(now: number = Date.now()): Promise<readonly NoteId[]> {\n      if (running) return []\n      running = true\n      const fired: NoteId[] = []\n      try {\n        for (const note of deps.list()) {\n          try {\n            // 超时兜底先跑：卡住的定时 run 由 host 收尾（否则这张便签会永久「进行中」）。\n            if (isRunTimeout(note, now)) {\n              await deps.settle(note.id, RUN_TIMEOUT_SUMMARY)\n              continue\n            }\n            if (!isNoteScheduleDue(note, now)) continue\n            const schedule = note.schedule\n            if (schedule === undefined) continue\n            // 过期太久（宿主停机超过 2 小时）：不补跑，once 停用、循环型顺延。\n            // 先于状态闸门——否则躺在「待规划」里的过期 once 日程永远不会被收掉。\n            if (isScheduleOverdue(schedule, now)) {\n              await deps.write(note.id, applyScheduleOverdue(schedule, now))\n              continue\n            }\n            // 状态闸门（软）：待规划 / 已完成 / 已失败不自动派发——只顺延并记下原因，\n            // 日程保持 enabled，用户把卡片拖回「待办」即自动恢复。\n            const blocked = scheduleBlockReason(note)\n            if (blocked !== undefined) {\n              const skipped = applyScheduleSkip(schedule, blocked, now)\n              if (skipped !== undefined) await deps.write(note.id, skipped)\n              continue\n            }\n            const result = await deps.execute(note.id)\n            if (result.ok) {\n              await deps.write(note.id, applyScheduleDispatch(schedule, 'dispatched', now))\n              fired.push(note.id)\n              continue\n            }\n            // 便签已被删：无对象可写回，静默跳过。\n            if (result.reason === 'missing') continue\n            const outcome: ScheduleDispatchOutcome = result.reason\n            await deps.write(note.id, applyScheduleDispatch(schedule, outcome, now))\n          } catch (error) {\n            // 单张便签出错（写回失败等）只丢该张：不让一张坏日程卡住整轮派发。\n            deps.warn(`[plugin-notes] schedule tick failed for note ${note.id}:`, error)\n          }\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 任务会话的授权与失败边界是什么？\n\n**研究主题：**功能与机制、工程质量与复用\n\n#### 完整回答\n\nrunTaskExecute 拒归档、无 lane、已有租约、无工作区；创建新 session 后先选模型、再授予 lease、最后投递 prompt。notes_task_* 要求 exec.agent.id 等于租约 sessionId，手工改状态会撤销授权。若 createSession 成功但 selectModel 失败，代码直接返回 dispatch-failed，没有关闭新 session；若授租约失败也一样，可能留下空会话。prompt 失败则回滚便签 lane/lease，但新 session 仍存在。需把新会话副作用纳入恢复。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/plugin-notes/src/service.ts:424-470](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/src/service.ts#L424-L470)\n\n创建会话/模型/租约/投递顺序\n\n<details>\n<summary>查看原文（47行）</summary>\n\n```text\n  private async runTaskExecute(id: NoteId, by: 'user' | 'schedule'): Promise<TaskExecuteResult> {\n    const current = this.table.get(id)\n    if (!current) return { ok: false, reason: 'missing' }\n    // 归档便签不得执行。\n    if (current.archived || !current.lane || this.leases.get(id)) {\n      return { ok: false, reason: 'busy' }\n    }\n    // 先于工作区解析判定：没有运行时就该报 no-dispatch。\n    if (this.task === undefined) return { ok: false, reason: 'no-dispatch' }\n    const workspace = (current.workspace ?? '').trim()\n    if (workspace === '') return { ok: false, reason: 'missing-workspace' }\n    const snapshot = current\n\n    let sessionId: string\n    try {\n      sessionId = await this.task.createSession({\n        workspace,\n        ...(current.lane.agentPreset !== undefined ? { agentPreset: current.lane.agentPreset } : {}),\n      })\n    } catch {\n      return { ok: false, reason: 'dispatch-failed' }\n    }\n\n    // 必须在投递前选好，第一个 turn 才用得上。\n    if (current.lane.model !== undefined) {\n      try {\n        await this.task.selectModel({ sessionId, model: current.lane.model })\n      } catch {\n        return { ok: false, reason: 'dispatch-failed' }\n      }\n    }\n\n    const granted = await this.grantTaskLease(id, sessionId, by)\n    if (granted !== 'granted') {\n      return { ok: false, reason: granted === 'missing' ? 'missing' : 'busy' }\n    }\n\n    try {\n      await this.task.prompt({ noteId: id, title: current.title, sessionId, workspace })\n    } catch {\n      await this.rollbackTaskExecute(id, snapshot)\n      return { ok: false, reason: 'dispatch-failed' }\n    }\n\n    const fresh = this.table.get(id)\n    if (!fresh) return { ok: false, reason: 'missing' }\n    return { ok: true, note: fresh }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[packages/plugin-notes/src/agent/tools.ts:201-222](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/src/agent/tools.ts#L201-L222)\n\n任务工具按会话 lease\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n/**\n * 租约归属按 exec.agent.id 与会话比对（fail-closed：agent 缺省即拒）。\n * 便签不存在 / 无 lane / 无租约 / 会话不符都拒绝。\n */\nexport function notesTaskGuard(ctx: Context, exec: ToolExecution): string | undefined {\n  if (!isNotesTaskTool(exec.name)) return undefined\n  const args = exec.arguments as { note_id?: unknown } | undefined\n  const id = args?.note_id\n  if (typeof id !== 'string') return undefined\n  const note = ctx.notes.list().find((n) => n.id === id)\n  if (note === undefined) return `任务便签 ${id} 不存在`\n  if (note.lane === undefined) return `便签 ${id} 不是任务（无 lane），notes_task_* 只能操作任务便签`\n  const lease = ctx.notes.getTaskLease(id as NoteId)\n  if (lease === undefined) {\n    return `便签 ${id} 无有效执行租约：任务可能已被手动接管或已收尾，如需继续请重新执行`\n  }\n  const caller = exec.agent?.id\n  if (caller !== lease.sessionId) {\n    return `便签 ${id} 的执行租约属于会话 ${lease.sessionId}，与当前调用会话不符`\n  }\n  return undefined\n}\n```\n\n</details>\n\n**依据 3 · 作者声明**：[packages/plugin-notes/README.md:39-42](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/README.md#L39-L42)\n\n作者任务功能\n\n```text\n- **便签变任务**：写入泳道状态即成为任务，五列看板（待规划 → 待办 → 进行中 → 已完成 → 已失败）拖拽换状态；普通便签不进泳道。编辑器底部是一块**折纸式可折叠面板**——合上只占一行摘要（状态 · 工作区 · 模型 · 预设），点「设置」才折出全部字段。\n- **交给 AI 执行**：任务卡 hover「执行」→ 按该任务的工作区**新开一个会话**跑，便签板所在会话不被占用；完成后摘要回到卡片首行，全文进编辑器的「任务与结果」区（已完成/已失败的任务打开编辑器即展开）。跑太久可「重置为待办」。\n- **执行目标可选**：任务折纸面板里能选**模型**与 **agent 预设**（留空 = 宿主默认），只影响该任务派发出来的新会话。\n- **定时执行**：一次性 / 间隔 N 分钟 / 每天 / 每周（可多选星期）/ 每月；卡片显示「周期 · 下次时刻」，编辑器显示「下次 / 上次」。宿主停机期间错过的时点**超 2 小时不补跑**（循环型顺延到下一周期，一次性停用并写明原因），2 小时以内的补跑一次；上一轮未结束则本轮跳过。\n```\n\n#### 缺口\n\n- 目标 host session 清理行为未知\n  **影响：**失败后可能留下孤儿会话\n  **进一步探讨：**模拟模型选择/授租约/prompt 失败检查会话\n\n<a id=\"research-q03\"></a>\n\n### Q03 · WebDAV 只在有变更时自动备份是否包括删除？\n\n**研究主题：**缺陷与关键质疑、效果与总成本\n\n#### 完整回答\n\n自动检查用 maxUpdatedAt(当前存活便签) > watermark 判定。删除便签只是从表删去，不会更新剩余便签 updatedAt；若删的不是最新修改项，最大时间不变；删唯一便签时最大值归 0，也不会大于水位。因而删除操作可以一直不触发自动快照，远端保留已删除内容；README 的“只在便签有变更时上传”对删除不成立。手动 backupNow 会上传，恢复前也会先备份当前。需改用变更序号/删除墓碑或内容摘要。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[packages/plugin-notes/README.md:69-71](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/README.md#L69-L71)\n\n作者仅变更时上传主张\n\n```text\n## 备份（WebDAV）\n\n填服务器地址、远端目录、账号与**应用密码**（凭据只存本机设置，建议用服务商提供的应用密码而非主密码）。按**检查间隔**定时比对，**只在便签有变更时**上传快照，远端只留最近**保留份数**份。想立刻验证连通可以点「保存并立即备份」；恢复前会先自动备份当前状态，选中的那份**整体覆盖**现有便签。\n```\n\n**依据 2 · 源码核查**：[packages/plugin-notes/src/webdav-core.ts:87-102](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/src/webdav-core.ts#L87-L102)\n\n只比较存活便签 maxUpdatedAt\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n/** 便签中最大的 updatedAt；无便签返回 0（用于 watermark 判断）。 */\nexport function maxUpdatedAt(notes: readonly NoteRecord[]): number {\n  let max = 0\n  for (const note of notes) {\n    if (note.updatedAt > max) max = note.updatedAt\n  }\n  return max\n}\n\n/**\n * 是否需要上推：最新便签 updatedAt 高于已传水位才传（无便签或未变化跳过，\n * 省 WebDAV 流量）。watermark 为 null（从未传过）视作 0。\n */\nexport function shouldUpload(latest: number, watermark: number | null): boolean {\n  return latest > (watermark ?? 0)\n}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[packages/plugin-notes/src/webdav-backup.ts:233-245](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/src/webdav-backup.ts#L233-L245)\n\n自动判定\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n  /** 定时自动检查：启用 + 到期（距上次成功 ≥ intervalMin）+ 确有变更才传。 */\n  async function checkAutomatic(): Promise<void> {\n    const webdav = await currentConfig()\n    if (webdav === null || configError(webdav) !== null) return\n    const meta = await metaGet()\n    const now = Date.now()\n    const due =\n      meta.lastBackupAt === null ||\n      now - meta.lastBackupAt >= Math.max(1, webdav.intervalMin) * 60_000\n    if (!due) return\n    const notes = options.listNotes()\n    if (!shouldUpload(maxUpdatedAt(notes), meta.watermark)) return\n    await backupNow()\n```\n\n</details>\n\n**依据 4 · 源码核查**：[packages/plugin-notes/src/service.ts:315-319](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/src/service.ts#L315-L319)\n\n删除直接删表\n\n```text\n  async delete(id: NoteId): Promise<boolean> {\n    await this.revokeTaskLease(id)\n    const deleted = await this.table.delete(id)\n    if (deleted) this.broadcastChanged()\n    return deleted\n```\n\n#### 缺口\n\n- 目标 WebDAV 定时路径未运行\n  **影响：**删除后远端备份可过期\n  **进一步探讨：**删除最后一条便签后等待检查并核远端\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 恢复与调度有哪些不可忽略的副作用？\n\n**研究主题：**缺陷与关键质疑、依赖、兼容与流程\n\n#### 完整回答\n\n恢复先解析目标、再上传当前安全副本、下载校验后 replaceAll；replaceAll 逐条删除所有旧便签及租约，再逐条写入，非事务式替换，若存储写入中断，局部状态可能残留，虽远端安全副本可再次恢复。调度每 30 秒扫描，过期超过 2 小时不补跑，定时 run 30 分钟未收尾按失败处理；这是失败状态记账，不保证底层 Agent 实际停止。运行前需知悉 WebDAV 凭据、恢复覆盖与长任务超时策略。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/plugin-notes/src/webdav-backup.ts:262-301](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/src/webdav-backup.ts#L262-L301)\n\n恢复前备份和整体覆盖\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n  /** 恢复：先自动备份当前 → 拉取校验 → 全量重建。target='latest' 取最新一份。 */\n  async function restore(target: string): Promise<WebdavRestoreResult> {\n    const webdav = await currentConfig()\n    if (webdav === null) return { ok: false, reason: '无法读取 WebDAV 配置（settings 服务不可用）' }\n    const invalid = configError(webdav)\n    if (invalid !== null) return { ok: false, reason: invalid }\n    try {\n      // 先解析目标文件名，再做安全备份：'latest' 取的是「恢复动作发生前」的\n      // 最近一份——若先备份再解析，latest 会指向刚生成的安全副本（=当前状态）。\n      const files = await remoteSnapshotNames(webdav)\n      if (files.length === 0) return { ok: false, reason: '远端没有可用快照' }\n      const name = target === 'latest' ? files[0]! : files.find((f) => f === target)\n      if (name === undefined) return { ok: false, reason: `找不到快照 ${target}` }\n\n      // 保险：先把当前便签推一份，失败即中止（避免覆盖后无备份）。\n      const safety = await backupNow()\n      if (!safety.ok) return { ok: false, reason: `恢复前自动备份失败：${safety.reason}` }\n\n      const dir = normalizeDir(webdav.path)\n      const res = await dav(webdav, 'GET', dir + name)\n      if (!res.ok) throw new Error(`下载快照失败（HTTP ${res.status}）`)\n      const raw = JSON.parse(await res.text()) as unknown\n      const payload = validateBackupPayload(raw)\n      const restoredNotes = payload.notes\n      await options.replaceAll(restoredNotes)\n\n      const meta = await metaGet()\n      await metaPut({\n        ...meta,\n        lastRestoreAt: Date.now(),\n        lastRestoreName: name,\n        lastRestoreOk: true,\n        watermark: maxUpdatedAt(restoredNotes),\n      })\n      return { ok: true, restored: restoredNotes.length, from: name }\n    } catch (error) {\n      const message = error instanceof Error ? error.message : String(error)\n      const meta = await metaGet()\n      await metaPut({ ...meta, lastRestoreAt: Date.now(), lastRestoreName: null, lastRestoreOk: false })\n      return { ok: false, reason: message }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[packages/plugin-notes/src/service.ts:546-551](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/src/service.ts#L546-L551)\n\n非事务 replaceAll\n\n```text\n  /** 清空便签与租约两表后按 payload 逐条写入，只给 host 的 WebDAV 恢复流程用。 */\n  async replaceAll(notes: readonly NoteRecord[]): Promise<void> {\n    for (const [id] of this.table.entries()) await this.table.delete(id)\n    for (const [leaseId] of this.leases.entries()) await this.leases.delete(leaseId)\n    for (const note of notes) await this.table.put(note.id, note)\n    this.broadcastChanged()\n```\n\n**依据 3 · 源码核查**：[packages/plugin-notes/src/scheduler.ts:23-33](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/src/scheduler.ts#L23-L33)\n\n扫描/超时\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\nexport const SCHEDULE_TICK_MS = 30_000\n\n/** 超时兜底写进 run.summary / 日程失败原因的中文说明。 */\nexport const RUN_TIMEOUT_SUMMARY = '超时未收尾'\n\n/** 该便签的 run 是否已超时（只认定时发起的、尚未收尾的 run）。 */\nexport function isRunTimeout(note: NoteRecord, now: number): boolean {\n  if (note.lane?.status !== 'running') return false\n  const run = note.lane.run\n  if (run === undefined || run.finishedAt !== undefined || run.by !== 'schedule') return false\n  return now - run.startedAt >= SCHEDULE_RUN_TIMEOUT_MS\n```\n\n</details>\n\n**依据 4 · 源码核查**：[packages/plugin-notes/src/scheduler.ts:73-106](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/src/scheduler.ts#L73-L106)\n\n过期与派发\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\n        for (const note of deps.list()) {\n          try {\n            // 超时兜底先跑：卡住的定时 run 由 host 收尾（否则这张便签会永久「进行中」）。\n            if (isRunTimeout(note, now)) {\n              await deps.settle(note.id, RUN_TIMEOUT_SUMMARY)\n              continue\n            }\n            if (!isNoteScheduleDue(note, now)) continue\n            const schedule = note.schedule\n            if (schedule === undefined) continue\n            // 过期太久（宿主停机超过 2 小时）：不补跑，once 停用、循环型顺延。\n            // 先于状态闸门——否则躺在「待规划」里的过期 once 日程永远不会被收掉。\n            if (isScheduleOverdue(schedule, now)) {\n              await deps.write(note.id, applyScheduleOverdue(schedule, now))\n              continue\n            }\n            // 状态闸门（软）：待规划 / 已完成 / 已失败不自动派发——只顺延并记下原因，\n            // 日程保持 enabled，用户把卡片拖回「待办」即自动恢复。\n            const blocked = scheduleBlockReason(note)\n            if (blocked !== undefined) {\n              const skipped = applyScheduleSkip(schedule, blocked, now)\n              if (skipped !== undefined) await deps.write(note.id, skipped)\n              continue\n            }\n            const result = await deps.execute(note.id)\n            if (result.ok) {\n              await deps.write(note.id, applyScheduleDispatch(schedule, 'dispatched', now))\n              fired.push(note.id)\n              continue\n            }\n            // 便签已被删：无对象可写回，静默跳过。\n            if (result.reason === 'missing') continue\n            const outcome: ScheduleDispatchOutcome = result.reason\n            await deps.write(note.id, applyScheduleDispatch(schedule, outcome, now))\n```\n\n</details>\n\n#### 缺口\n\n- 宿主停止/写入原子性未测\n  **影响：**恢复失败或超时可能产生状态不一致\n  **进一步探讨：**隔离副本故障注入与长任务核查\n\n<a id=\"research-q05\"></a>\n\n### Q05 · Agent 对手写便签的修改和定时任务应如何治理？\n\n**研究主题：**采用判断、新假设与验证、效果与总成本\n\n#### 完整回答\n\nnotes_update/delete 对 origin=user 经 userQuestions 询问；无提问通道时删除拒绝。notes_set_pinned 单独直接调用 service，不询问，符合 README 对置顶不问的声明；归档可经 update 路径，手写便签仍询问。任务工具按租约限派发会话。适合个人知识/待办融合试用，先确认工作区和 WebDAV 备份，关键自动执行应设外部监控；改进方向是显式标识 side-effect 会话、删除也触发备份。未知任务成功率和成本不能凭静态源码量化。 假设的来源是自动备份只比较存活便签最大 updatedAt、删除可不推动水位，同时任务派发在 createSession 后多个后续失败分支可能留孤儿会话。相对固定版，给所有便签增/改/删统一持久递增 revision（含删除墓碑），备份以 revision/内容摘要判变更；任务派发把新会话 ID 与租约结果写 durable operation record，在模型选择/投递失败后作幂等清理或显式恢复。条件是 storageDomain 支持原子 revision/操作记录和宿主可安全关闭会话；代价是迁移、墓碑保留与故障恢复逻辑。最小对照用仅一条便签删除、删非最新便签、备份中断、replaceAll 中断、selectModel/prompt 失败，比较固定版与原型的远端快照一致性、孤儿会话数、重复执行数和恢复工时。若删除后远端仍留旧记录、派发失败仍无可追踪/可回收会话，或迁移破坏原便签，假设被证伪。现有源码没有此事务或统一 revision。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[packages/plugin-notes/README.md:73-86](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/README.md#L73-L86)\n\n作者 agent 工具与批准边界\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n## agent 工具\n\n宿主装配了 `tools` 服务时注册 8 个工具（纯 UI 宿主不注册，照常使用）：\n\n| 工具 | 用途 |\n|---|---|\n| `notes_list` / `notes_get` | 列摘要 / 读全文 |\n| `notes_create` / `notes_update` / `notes_set_pinned` / `notes_delete` | 新建、修改、置顶、删除 |\n| `notes_task_set_status` / `notes_task_report` | 任务置状态 / 收尾写结果 |\n\n- 新建便签、置顶 / 归档**不问**——agent 新建的便签恒为它自己的。\n- 改或删**你手写的便签**时，工具会向你发起一次「同意 / 拒绝」（与提问通道同一套，与权限模式无关），同意才落笔。\n- 宿主没有审批通道时，agent 只能删它自己创建的便签。\n- 任务工具只在「执行」授权的那次会话内可用；你手动改状态或取消任务即收回授权。\n```\n\n</details>\n\n**依据 2 · 源码核查**：[packages/plugin-notes/src/agent/tools.ts:50-78](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/src/agent/tools.ts#L50-L78)\n\n提问授权\n\n<details>\n<summary>查看原文（29行）</summary>\n\n```text\nconst CONSENT_DENY = '不要'\n\n/**\n * 由工具自身走 user-questions 问一次同意，不经 approval seam，\n * 故与会话审批策略无关；没有该 seam 或未选中「允许一次」一律抛错。\n */\nexport async function requestNoteConsent(ctx: Context, exec: ToolExecution, action: string): Promise<void> {\n  const questions = ctx.get('userQuestions')\n  if (questions === undefined) {\n    throw new Error(`cannot ${action}: this host has no way to ask you for consent`)\n  }\n  let answer: Awaited<ReturnType<typeof questions.ask>>\n  try {\n    answer = await questions.ask({\n      questions: [{\n        id: 'notes-consent',\n        question: `The agent wants to ${action}. Allow?`,\n        options: [{ label: CONSENT_ALLOW }, { label: CONSENT_DENY }],\n      }],\n      ...exec.agent !== undefined ? { agent: exec.agent } : {},\n      ...exec.signal !== undefined ? { signal: exec.signal } : {},\n    })\n  } catch (error) {\n    throw new Error(`cannot ${action}: the confirmation could not be shown`, { cause: error })\n  }\n  const selected = answer.answers.find(a => a.id === 'notes-consent')?.selected ?? []\n  if (selected.includes(CONSENT_ALLOW)) return\n  throw new Error(`cannot ${action}: not allowed`)\n}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[packages/plugin-notes/src/agent/tools.ts:310-388](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/src/agent/tools.ts#L310-L388)\n\nupdate/pin/delete 不同路径\n\n<details>\n<summary>查看原文（79行）</summary>\n\n```text\n\n  ctx.tools.register(defineTool({\n    name: TOOL_UPDATE,\n    description: 'Update an existing sticky note (title / text / color / pinned / archived). Only fields provided are changed; origin can never be changed. Updating a note the user wrote themselves asks them for confirmation first.',\n    parameters: {\n      note_id: { type: 'string', required: true, description: 'The note id from notes_list.' },\n      title: { type: 'string', description: 'New title.' },\n      text: { type: 'string', description: 'New body.' },\n      color: { type: 'string', enum: [...NOTE_COLORS], description: 'New color.' },\n      pinned: { type: 'boolean', description: 'Pin or unpin.' },\n      archived: { type: 'boolean', description: 'Archive or restore.' },\n    },\n    output: {\n      schema: NOTE_OUTPUT_SCHEMA,\n      render: (_args, value) => [{ type: 'text', text: noteText(value as NoteRecord) }],\n    },\n    async execute(args, exec) {\n      const id = args.note_id as NoteId\n      const target = noteById(ctx, id)\n      if (target?.origin === 'user') await requestNoteConsent(ctx, exec, `update your note \"${noteLabel(target)}\"`)\n      const note = await notes.update(id, {\n        ...args.title !== undefined ? { title: args.title } : {},\n        ...args.text !== undefined ? { text: args.text } : {},\n        ...args.color !== undefined ? { color: args.color as NoteRecord['color'] } : {},\n        ...args.pinned !== undefined ? { pinned: args.pinned } : {},\n        ...args.archived !== undefined ? { archived: args.archived } : {},\n      })\n      if (note === undefined) throw new Error(`note ${id} not found`)\n      return note\n    },\n  }))\n\n  ctx.tools.register(defineTool({\n    name: TOOL_SET_PINNED,\n    description: 'Pin or unpin one sticky note (equivalent to notes_update with only the pinned field).',\n    parameters: {\n      note_id: { type: 'string', required: true, description: 'The note id from notes_list.' },\n      pinned: { type: 'boolean', required: true, description: 'true pins, false unpins.' },\n    },\n    output: {\n      schema: NOTE_OUTPUT_SCHEMA,\n      render: (_args, value) => [{ type: 'text', text: noteText(value as NoteRecord) }],\n    },\n    async execute(args, _exec) {\n      const id = args.note_id as NoteId\n      const note = await notes.setPinned(id, args.pinned)\n      if (note === undefined) throw new Error(`note ${id} not found`)\n      return note\n    },\n  }))\n\n  ctx.tools.register(defineTool({\n    name: TOOL_DELETE,\n    description: 'Delete one sticky note. Deleting a note the user wrote themselves asks them for confirmation first; without an approval channel only the agent\\'s own notes can be deleted.',\n    parameters: {\n      note_id: { type: 'string', required: true, description: 'The note id from notes_list.' },\n    },\n    output: {\n      schema: {\n        type: 'object',\n        additionalProperties: false,\n        properties: {\n          deleted: { type: 'boolean', required: true },\n          id: { type: 'string', required: true },\n        },\n      },\n      render: (_args, value) => [{\n        type: 'text',\n        text: value.deleted ? `note ${value.id} deleted` : `note ${value.id} not found`,\n      }],\n    },\n    async execute(args, exec) {\n      const id = args.note_id as NoteId\n      const target = noteById(ctx, id)\n      if (target?.origin === 'user') await requestNoteConsent(ctx, exec, `delete your note \"${noteLabel(target)}\"`)\n      const deleted = await notes.delete(id)\n      return { deleted, id }\n    },\n  }))\n```\n\n</details>\n\n**依据 4 · 源码核查**：[packages/plugin-notes/src/agent/tools.ts:201-222](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/src/agent/tools.ts#L201-L222)\n\n任务租约守卫\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n/**\n * 租约归属按 exec.agent.id 与会话比对（fail-closed：agent 缺省即拒）。\n * 便签不存在 / 无 lane / 无租约 / 会话不符都拒绝。\n */\nexport function notesTaskGuard(ctx: Context, exec: ToolExecution): string | undefined {\n  if (!isNotesTaskTool(exec.name)) return undefined\n  const args = exec.arguments as { note_id?: unknown } | undefined\n  const id = args?.note_id\n  if (typeof id !== 'string') return undefined\n  const note = ctx.notes.list().find((n) => n.id === id)\n  if (note === undefined) return `任务便签 ${id} 不存在`\n  if (note.lane === undefined) return `便签 ${id} 不是任务（无 lane），notes_task_* 只能操作任务便签`\n  const lease = ctx.notes.getTaskLease(id as NoteId)\n  if (lease === undefined) {\n    return `便签 ${id} 无有效执行租约：任务可能已被手动接管或已收尾，如需继续请重新执行`\n  }\n  const caller = exec.agent?.id\n  if (caller !== lease.sessionId) {\n    return `便签 ${id} 的执行租约属于会话 ${lease.sessionId}，与当前调用会话不符`\n  }\n  return undefined\n}\n```\n\n</details>\n\n**依据 5 · 源码核查**：[packages/plugin-notes/src/webdav-core.ts:87-102](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/src/webdav-core.ts#L87-L102)\n\n当前备份水位只看存活便签\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n/** 便签中最大的 updatedAt；无便签返回 0（用于 watermark 判断）。 */\nexport function maxUpdatedAt(notes: readonly NoteRecord[]): number {\n  let max = 0\n  for (const note of notes) {\n    if (note.updatedAt > max) max = note.updatedAt\n  }\n  return max\n}\n\n/**\n * 是否需要上推：最新便签 updatedAt 高于已传水位才传（无便签或未变化跳过，\n * 省 WebDAV 流量）。watermark 为 null（从未传过）视作 0。\n */\nexport function shouldUpload(latest: number, watermark: number | null): boolean {\n  return latest > (watermark ?? 0)\n}\n```\n\n</details>\n\n**依据 6 · 源码核查**：[packages/plugin-notes/src/service.ts:424-470](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/src/service.ts#L424-L470)\n\n会话创建后模型/租约/投递失败分支\n\n<details>\n<summary>查看原文（47行）</summary>\n\n```text\n  private async runTaskExecute(id: NoteId, by: 'user' | 'schedule'): Promise<TaskExecuteResult> {\n    const current = this.table.get(id)\n    if (!current) return { ok: false, reason: 'missing' }\n    // 归档便签不得执行。\n    if (current.archived || !current.lane || this.leases.get(id)) {\n      return { ok: false, reason: 'busy' }\n    }\n    // 先于工作区解析判定：没有运行时就该报 no-dispatch。\n    if (this.task === undefined) return { ok: false, reason: 'no-dispatch' }\n    const workspace = (current.workspace ?? '').trim()\n    if (workspace === '') return { ok: false, reason: 'missing-workspace' }\n    const snapshot = current\n\n    let sessionId: string\n    try {\n      sessionId = await this.task.createSession({\n        workspace,\n        ...(current.lane.agentPreset !== undefined ? { agentPreset: current.lane.agentPreset } : {}),\n      })\n    } catch {\n      return { ok: false, reason: 'dispatch-failed' }\n    }\n\n    // 必须在投递前选好，第一个 turn 才用得上。\n    if (current.lane.model !== undefined) {\n      try {\n        await this.task.selectModel({ sessionId, model: current.lane.model })\n      } catch {\n        return { ok: false, reason: 'dispatch-failed' }\n      }\n    }\n\n    const granted = await this.grantTaskLease(id, sessionId, by)\n    if (granted !== 'granted') {\n      return { ok: false, reason: granted === 'missing' ? 'missing' : 'busy' }\n    }\n\n    try {\n      await this.task.prompt({ noteId: id, title: current.title, sessionId, workspace })\n    } catch {\n      await this.rollbackTaskExecute(id, snapshot)\n      return { ok: false, reason: 'dispatch-failed' }\n    }\n\n    const fresh = this.table.get(id)\n    if (!fresh) return { ok: false, reason: 'missing' }\n    return { ok: true, note: fresh }\n```\n\n</details>\n\n#### 缺口\n\n- 真实提问/用户授权流程未测\n  **影响：**agent 写入与定时执行需用户可追踪\n  **进一步探讨：**目标宿主按来源和租约逐动作验证\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：packages/plugin-notes；内容摘要：9fa48426006131fa8f8f76994cd181dbfaab9cf1b06a82f82735cfd0a8f529e7。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 1 | 97 | — | — | 1847 |\n| .mjs | source | 2 | 101 | 67 | 23 | — |\n| .ts | source | 48 | 7623 | 5660 | 1343 | — |\n| .tsx | source | 31 | 5650 | 4905 | 554 | — |\n\n排除 3 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 便签 | 记录 | UI 未测 |\n| 任务 | AI 派发 | 失败残留会话 |\n| 备份 | 远端快照 | 删除可漏备 |\n\n## 工程亮点\n\n租约限定 Agent 任务工具会话、独立 userQuestions 同意；WebDAV 删除水位与恢复事务、会话失败清理需改进。详见[Q02](#research-q02)至[Q05](#research-q05)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 packages/plugin-notes/README.md、packages/plugin-notes/src/service.ts、packages/plugin-notes/src/agent/tools.ts、packages/plugin-notes/src/scheduler.ts、packages/plugin-notes/src/schedule.ts、packages/plugin-notes/src/webdav-core.ts、packages/plugin-notes/src/webdav-backup.ts、packages/plugin-notes/src/domain.ts 及固定范围 inventory；组件：packages/plugin-notes。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：只读核固定提交 packages/plugin-notes 范围 README、service、agent/tools、scheduler、schedule、webdav；未执行目标 DSH 或 WebDAV。旧 META 复用。\n- 下一步：目标 DSH 验用户提问、租约撤销、模型选择失败、删除后自动备份、恢复中断与超时任务。\n",
         "metadata": {
             "repository": "0x7A7A6572/dsh-forge-studio",
             "repository_id": 1363429979,
@@ -332,14 +487,14 @@
             "repository": "0x7A7A6572/dsh-forge-studio",
             "path": "packages/plugin-notes",
             "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "c3af87b164fcda3642b0e6fbcfe22150dc043aec1ae559685f115f671a45611b",
                 "code": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
                 "maintenance": "3b8db7c619c4fb07bdc46fc33b60ebd53c612c483654be23b7c416d9ea35c3ba"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

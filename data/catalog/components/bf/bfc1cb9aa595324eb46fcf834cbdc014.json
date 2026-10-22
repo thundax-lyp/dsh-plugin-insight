@@ -24,36 +24,70 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-20-07-github-1350379268-root-directory-0",
+                    "id": "2026-10-22-02-github-1350379268-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
-                    "retrieved_at": "2026-10-20T10:01:53.350Z",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-22T08:04:25.646Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-20-07-github-1350379268-root-author",
+                    "id": "2026-10-22-02-github-1350379268-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/173787247/dsh-wsl-notify/blob/3c83e8964ff6a639b58d4a36bbbb5b784c4453b9/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-notify",
+                            "commit": "3c83e8964ff6a639b58d4a36bbbb5b784c4453b9",
+                            "path": "README.md",
+                            "content_sha256": "3cd04356c331acf87ebaa260fd5009c752a92bf0939781c494f43f167aaec2b6"
+                        }
+                    ],
                     "revision": "3c83e8964ff6a639b58d4a36bbbb5b784c4453b9",
-                    "captured_at": "2026-10-20T10:01:53.350Z",
-                    "summary": "从WSL向Windows显示消息框或托盘气泡通知。",
-                    "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-notify/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T08:04:25.646Z",
+                    "summary": "从WSL调用Windows MessageBox或NotifyIcon气泡显示短文本，气泡抛错时回退阻塞消息框。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-notify/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-20-07-github-1350379268-root-source",
+                    "id": "2026-10-22-02-github-1350379268-root-source",
                     "kind": "source_inspection",
                     "url": "https://github.com/173787247/dsh-wsl-notify/blob/3c83e8964ff6a639b58d4a36bbbb5b784c4453b9/index.js",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-notify",
+                            "commit": "3c83e8964ff6a639b58d4a36bbbb5b784c4453b9",
+                            "path": "index.js",
+                            "content_sha256": "80c9740faa051e7c894c6416b414d175090f5a9cfccf78889a8c8a23d6dab1f2"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-notify",
+                            "commit": "3c83e8964ff6a639b58d4a36bbbb5b784c4453b9",
+                            "path": "lib/notify.js",
+                            "content_sha256": "717e274b192b7b1d0536f3d6c32a06f98a407ed0bea5b8e919d361c2156fbb13"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-notify",
+                            "commit": "3c83e8964ff6a639b58d4a36bbbb5b784c4453b9",
+                            "path": "lib/wsl-host.js",
+                            "content_sha256": "c3213de3af83f68b4b12fe977890b170958229db6278b39115e8fb097d9d8801"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-notify",
+                            "commit": "3c83e8964ff6a639b58d4a36bbbb5b784c4453b9",
+                            "path": "package.json",
+                            "content_sha256": "9f76adca333e505b96da3d6486d5ebeaff4dd8d9d1bc55d5a823242254210d62"
+                        }
+                    ],
                     "revision": "3c83e8964ff6a639b58d4a36bbbb5b784c4453b9",
-                    "captured_at": "2026-10-20T10:01:53.350Z",
-                    "summary": "核查 index.js、lib/notify.js；win_notify把标题正文编码为Base64，经PowerShell构造MessageBox或NotifyIcon气泡。",
-                    "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-notify/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T08:04:25.646Z",
+                    "summary": "核查 index.js、lib/notify.js、lib/wsl-host.js、package.json；WSL检测、UTF8 base64固定脚本，PowerShell Forms MessageBox或BalloonTip等待4.5秒，结构结果。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-notify/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "检查编码和通知脚本，未弹出桌面通知。 固定checkout的注册候选与关键主张定向抽读；未逐行完整审阅全部源码、测试、依赖及外部参照，未运行目标代码。评分仅针对文中明确的CLI/API/人工流程参照；跨场景迁移为解释性判断。",
+                        "固定index/notify完整实现及同hash公共wsl-host，未运行PowerShell/通知/目标测试，不保证各Windows桌面显示。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +98,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "长任务结束后，需要让离开聊天界面的用户看到简短提醒。",
+                    "text": "明确允许在Windows桌面显示非敏感任务提示，真实业务状态另核。",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1350379268-root-source"
+                        "2026-10-22-02-github-1350379268-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +109,16 @@
                             "fingerprint": "3c83e8964ff6a639b58d4a36bbbb5b784c4453b9"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:53.350Z",
+                    "reviewed_at": "2026-10-22T08:04:25.646Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "win_notify把标题正文编码为Base64，经PowerShell构造MessageBox或NotifyIcon气泡。",
+                    "text": "WSL检测、UTF8 base64固定脚本，PowerShell Forms MessageBox或BalloonTip等待4.5秒，结构结果。",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1350379268-root-source"
+                        "2026-10-22-02-github-1350379268-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +127,16 @@
                             "fingerprint": "3c83e8964ff6a639b58d4a36bbbb5b784c4453b9"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:53.350Z",
+                    "reviewed_at": "2026-10-22T08:04:25.646Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "检查编码和通知脚本，未弹出桌面通知。 固定checkout的注册候选与关键主张定向抽读；未逐行完整审阅全部源码、测试、依赖及外部参照，未运行目标代码。评分仅针对文中明确的CLI/API/人工流程参照；跨场景迁移为解释性判断。",
+                    "text": "固定index/notify完整实现及同hash公共wsl-host，未运行PowerShell/通知/目标测试，不保证各Windows桌面显示。",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1350379268-root-source"
+                        "2026-10-22-02-github-1350379268-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +145,16 @@
                             "fingerprint": "3c83e8964ff6a639b58d4a36bbbb5b784c4453b9"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:53.350Z",
+                    "reviewed_at": "2026-10-22T08:04:25.646Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "固定版本包清单与作者说明已核对；需要WSL互操作、交互式Windows桌面与Forms组件；通知策略受系统配置影响。",
+                    "text": "dsh-wsl-notify0.1.1/Node>=18，DSH tools/prompt、WSL interop/Forms/Drawing和交互桌面另需。",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1350379268-root-source"
+                        "2026-10-22-02-github-1350379268-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +163,16 @@
                             "fingerprint": "3c83e8964ff6a639b58d4a36bbbb5b784c4453b9"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:53.350Z",
+                    "reviewed_at": "2026-10-22T08:04:25.646Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "跨进程启动和桌面干扰是主要成本，消息框等待可能占用工具时间，无响应收益实测。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | Windows桌面/interop，金额未知 | 权限/策略和无敏感短消息核对 | 无独立推送或模型API服务 |\n| 持续使用 | 每次spawn PowerShell；toast脚本睡4.5秒 | 消息打扰与MessageBox人工关闭 | toast不等工具立即返回 |\n| 失败恢复 | timeout/fallback再spawn/核桌面 | 区分显示未知/被拦/用户未看 | 无幂等/收到ack，重复可打扰 |\n",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1350379268-root-source"
+                        "2026-10-22-02-github-1350379268-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +181,16 @@
                             "fingerprint": "3c83e8964ff6a639b58d4a36bbbb5b784c4453b9"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:53.350Z",
+                    "reviewed_at": "2026-10-22T08:04:25.646Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "优先短消息与低频提醒，确认锁屏和消息框超时表现，不发送秘密内容。",
+                    "text": "明确授权非敏感短消息可试用，接受阻塞/fallback并保留原UI，不当唯一可靠通道。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1350379268-root-source"
+                        "2026-10-22-02-github-1350379268-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +199,16 @@
                             "fingerprint": "3c83e8964ff6a639b58d4a36bbbb5b784c4453b9"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:53.350Z",
+                    "reviewed_at": "2026-10-22T08:04:25.646Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "为Agent输出增加桌面提醒通道，减少手动盯聊天；通知到达和用户理解并没有由返回成功证明。 MessageBox会等待交互，气泡依赖桌面策略且未提供用户已读回执；重试可能造成重复或阻塞提醒。",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 桌面桥 | Forms两种显示脚本 | 消息实际可见/用户知晓 |\n| fallback | toast抛错后MessageBox | 非终止错被识别与总等待 |\n| 简短提醒 | 文本截断/工具调用 | 真实反应时间或漏提醒改善 |\n",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1350379268-root-source"
+                        "2026-10-22-02-github-1350379268-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +217,16 @@
                             "fingerprint": "3c83e8964ff6a639b58d4a36bbbb5b784c4453b9"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:53.350Z",
+                    "reviewed_at": "2026-10-22T08:04:25.646Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "Base64传文本减少跨Shell编码歧义；禁并发声明与通知副作用相符。",
+                    "text": "纯编码/脚本/格式函数与Host注册分开、execFile固定argv、子进程timeout和气泡dispose可复用；编码防语法混入不等argv保密，脚本结束也不等可靠通知收据。",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1350379268-root-source"
+                        "2026-10-22-02-github-1350379268-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,15 +235,69 @@
                             "fingerprint": "3c83e8964ff6a639b58d4a36bbbb5b784c4453b9"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:53.350Z",
+                    "reviewed_at": "2026-10-22T08:04:25.646Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "mechanism",
+                    "basis": "interpretation",
+                    "text": "把跨WSL桌面脚本接成工具/两分支，非自动事件通知或可靠投递。详见[Q01](#research-q01)与[Q02](#research-q02)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1350379268-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1350379268:root",
+                            "area": "code",
+                            "fingerprint": "3c83e8964ff6a639b58d4a36bbbb5b784c4453b9"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T08:04:25.646Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "进程ok非实际显示，非终止错误可能不fallback；默认阻塞与分支总等待/取消未统一，裁剪不明且argv不保密。详见[Q02](#research-q02)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1350379268-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1350379268:root",
+                            "area": "code",
+                            "fingerprint": "3c83e8964ff6a639b58d4a36bbbb5b784c4453b9"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T08:04:25.646Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "mechanism",
+                    "basis": "unverified",
+                    "text": "可探讨明确通知状态/稳定ID与总deadline、错误/取消协议和截断说明，仍不证明人已阅读。详见[Q05](#research-q05)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1350379268-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1350379268:root",
+                            "area": "code",
+                            "fingerprint": "3c83e8964ff6a639b58d4a36bbbb5b784c4453b9"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T08:04:25.646Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-20T10:01:53.350Z",
+            "last_checked_at": "2026-10-22T08:04:25.646Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "3c83e8964ff6a639b58d4a36bbbb5b784c4453b9",
-                "reviewed_at": "2026-10-20T10:01:53.350Z",
+                "reviewed_at": "2026-10-22T08:04:25.646Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -220,62 +308,62 @@
                 ],
                 "technical": {
                     "criteria": {
-                        "novelty": 9,
+                        "novelty": 0,
                         "mechanism": 8,
                         "transferability": 5,
-                        "simplification": 4
+                        "simplification": 11
                     },
-                    "rationale": "novelty：Windows Forms通知适配；mechanism：Base64跨Shell传文为常规实现；transferability：编码/构造分离可局部迁移；simplification：减少手工盯聊天但有阻塞与重复成本。",
+                    "rationale": "novelty以手写PowerShell Forms为参照，封装无新算法/协议，0；mechanism以单MessageBox脚本为参照增加气泡/fallback与结构输出，但未有显示ack/统一deadline，8；transferability以各自复制命令为参照分开编码/脚本/执行，可复用小幅但依WSL/Windows桌面，5；simplification以用户手写interop命令为参照一工具调用较简化，仍有阻塞/错误核对且未测人时，11。",
                     "basis": "interpretation",
-                    "score": 26,
+                    "score": 24,
                     "evidence_ids": [
-                        "2026-10-20-07-github-1350379268-root-source"
+                        "2026-10-22-02-github-1350379268-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
                         "workflow": 9,
-                        "delivery": 0,
+                        "delivery": 8,
                         "reach": 5,
-                        "economics": null
+                        "economics": 4
                     },
-                    "rationale": "workflow：增加任务后桌面提醒；delivery：提醒不是新的任务交付；reach：离开聊天的用户可获提示，实际到达未测；economics：缺漏看减少与打扰成本测量。",
+                    "rationale": "workflow以看原UI/手工脚本为参照，增加明确调用后桌面提示但无自动事件工作流，9；delivery以终端输出为参照增加MessageBox/气泡显示请求，未证明用户看到，8；reach以普通Web用户为参照仅覆盖WSL+Windows交互桌面，跨环境拓展有限，5；economics以手工通知为参照省脚本接线但有进程/等待/打扰，未有净收益对照，4。",
                     "basis": "interpretation",
-                    "score": null,
+                    "score": 26,
                     "evidence_ids": [
-                        "2026-10-20-07-github-1350379268-root-source"
+                        "2026-10-22-02-github-1350379268-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "离开屏幕的WSL用户可先试低频非敏感气泡，核锁屏和消息框超时，避免失败后重复通知。",
+                "reason": "短通知工具边界清楚，可授权试用并保留原UI；实际显示/阻塞/fallback/未知结果不能当可靠收据。详见[Q05](#research-q05)。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "长任务结束桌面提醒的需求明确。"
+                        "rationale": "WSL长任务后桌面提示明确。"
                     },
                     "advantage": {
-                        "score": 13,
-                        "rationale": "Agent触发减少盯聊天，系统通知也可替代。"
+                        "score": 6,
+                        "rationale": "手动脚本易替代，主要接线便利。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "Base64和通知脚本可查，消息框阻塞且无已读回执。"
+                        "rationale": "固定代码可核，仅源码证据。"
                     },
                     "cost": {
-                        "score": 15,
-                        "rationale": "无独立云服务，进程启动与桌面打断为主要负担。"
+                        "score": 10,
+                        "rationale": "本地无独立推送API，桌面/打扰和失败协议需维护。"
                     }
                 },
-                "score": 64,
+                "score": 52,
                 "revision": "3c83e8964ff6a639b58d4a36bbbb5b784c4453b9",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T08:04:25.646Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-20-07-github-1350379268-root-source"
+                    "2026-10-22-02-github-1350379268-root-source"
                 ],
                 "dependencies": [
                     {
@@ -300,88 +388,60 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-20T09:36:48.824Z",
-            "analysis_sha256": "7a6615ad7b764d2fdfb55cdb341531102e30e52a72f7ddf502ef64da92d969f6"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "c5be8662d5b0e06c3d5c0c09918aa33827431c9d773e8b987f12b5925ba001c2"
         },
         "publication.metadata": "data/plugins/173787247--dsh-wsl-notify/META.json",
         "publication.summaries": {
-            "text": "从WSL向Windows显示消息框或托盘气泡通知。",
+            "text": "从WSL调用Windows MessageBox或NotifyIcon气泡显示短文本，气泡抛错时回退阻塞消息框。",
             "revision": "3c83e8964ff6a639b58d4a36bbbb5b784c4453b9",
             "source_url": "https://github.com/173787247/dsh-wsl-notify/blob/3c83e8964ff6a639b58d4a36bbbb5b784c4453b9/README.md"
         },
         "publication.capabilities": {
             "revision": "3c83e8964ff6a639b58d4a36bbbb5b784c4453b9",
             "items": {
-                "模型工具": "win_notify：Windows消息框或气泡提醒。"
-            }
+                "模型工具": "win_notify"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| MessageBox | 默认桌面弹框 | 阻塞到关闭，timeout非收据 |\n| 气泡 | NotifyIcon显示请求 | 脚本等4.5秒，策略可拦 |\n| fallback | 抛错后MessageBox | 非终止错不一定触发，可能再阻塞 |\n| 编码 | UTF8 base64脚本参数 | 不保密/不自动证明任务完成 |"
         },
         "publication.advice": {
             "revision": "3c83e8964ff6a639b58d4a36bbbb5b784c4453b9",
-            "text": "优先短消息与低频提醒，确认锁屏和消息框超时表现，不发送秘密内容。"
+            "text": "明确授权非敏感短消息可试用，接受阻塞/fallback并保留原UI，不当唯一可靠通道。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/173787247--dsh-wsl-notify",
-        "reports": "# dsh-wsl-notify\n\n> 从WSL向Windows显示消息框或托盘气泡通知。\n\n## 研究范围\n\n- **仓库**：[173787247/dsh-wsl-notify](https://github.com/173787247/dsh-wsl-notify)\n- **版本号**：0.1.1（[固定提交 3c83e8964ff6a639b58d4a36bbbb5b784c4453b9](https://github.com/173787247/dsh-wsl-notify/tree/3c83e8964ff6a639b58d4a36bbbb5b784c4453b9)）\n- **版本日期**：2026-09-29（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已有贡献：为Agent输出增加桌面提醒通道，减少手动盯聊天；通知到达和用户理解并没有由返回成功证明。\n\n结论边界：本次为固定版本源码核查，未执行目标代码或真实宿主验收，未核实独立使用效果。下文设计假设均未验证。\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：长任务结束后，需要让离开聊天界面的用户看到简短提醒。\n- **亮点**：为Agent输出增加桌面提醒通道，减少手动盯聊天；通知到达和用户理解并没有由返回成功证明。\n- **思考**：MessageBox会等待交互，气泡依赖桌面策略且未提供用户已读回执；重试可能造成重复或阻塞提醒。\n- **建议**：本次未形成新创新假设；先明确展示、关闭和用户确认三种状态，比较提醒是否降低漏看而不增加打扰。\n\n采用建议：优先短消息与低频提醒，确认锁屏和消息框超时表现，不发送秘密内容。\n\n## 核心贡献\n\n为Agent输出增加桌面提醒通道，减少手动盯聊天；通知到达和用户理解并没有由返回成功证明。\n\n## 关键质疑\n\nMessageBox会等待交互，气泡依赖桌面策略且未提供用户已读回执；重试可能造成重复或阻塞提醒。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n本次未形成新创新假设；先明确展示、关闭和用户确认三种状态，比较提醒是否降低漏看而不增加打扰。\n\n测试无人确认、锁屏、中文长文和连续通知，记录超时、重复及实际可见性；不给出未测到达率。\n\n## 场景与替代办法\n\n长任务结束后，需要让离开聊天界面的用户看到简短提醒。\n\n系统通知或人工查看聊天；插件增加Agent触发入口。\n\n## 依赖与流程\n\n需要WSL互操作、交互式Windows桌面与Forms组件；通知策略受系统配置影响。\n\n先发送一条非敏感测试通知，选择气泡或阻塞消息框，用户自行确认内容。\n\n## 成本与效果\n\n跨进程启动和桌面干扰是主要成本，消息框等待可能占用工具时间，无响应收益实测。\n\n为Agent输出增加桌面提醒通道，减少手动盯聊天；通知到达和用户理解并没有由返回成功证明。 MessageBox会等待交互，气泡依赖桌面策略且未提供用户已读回执；重试可能造成重复或阻塞提醒。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：b5695b9f6a54b50d67db09242f75bace9cf846942749a9d99f46ba03efa003de。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 171 | — | — | 839 |\n| .js | source | 3 | 207 | 181 | 8 | — |\n| .js | test | 1 | 33 | 29 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **模型工具**：win_notify：Windows消息框或气泡提醒。\n\n## 工程亮点\n\nBase64传文本减少跨Shell编码歧义；禁并发声明与通知副作用相符。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 index.js、lib/notify.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：检查编码和通知脚本，未弹出桌面通知。 固定checkout的注册候选与关键主张定向抽读；未逐行完整审阅全部源码、测试、依赖及外部参照，未运行目标代码。评分仅针对文中明确的CLI/API/人工流程参照；跨场景迁移为解释性判断。\n- 下一步：测试无人确认、锁屏、中文长文和连续通知，记录超时、重复及实际可见性；不给出未测到达率。\n",
+        "reports": "# dsh-wsl-notify\n\n> 从WSL调用Windows MessageBox或NotifyIcon气泡显示短文本，气泡抛错时回退阻塞消息框。\n\n## 研究范围\n\n- **仓库**：[173787247/dsh-wsl-notify](https://github.com/173787247/dsh-wsl-notify)\n- **版本号**：0.1.1（[固定提交 3c83e8964ff6a639b58d4a36bbbb5b784c4453b9](https://github.com/173787247/dsh-wsl-notify/tree/3c83e8964ff6a639b58d4a36bbbb5b784c4453b9)）\n- **版本日期**：2026-09-29（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已检查源码。WSL到Windows桌面的固定脚本封装贡献可核；进程成功不证明显示或读者知晓，状态收据与统一取消/时限方案尚未验证。\n\n## 洞察短评\n\n- **用途**：明确允许在Windows桌面显示非敏感任务提示，真实业务状态另核。\n- **亮点**：把跨WSL桌面脚本接成工具/两分支，非自动事件通知或可靠投递。详见[Q01](#research-q01)与[Q02](#research-q02)。\n- **思考**：进程ok非实际显示，非终止错误可能不fallback；默认阻塞与分支总等待/取消未统一，裁剪不明且argv不保密。详见[Q02](#research-q02)。\n- **建议**：可探讨明确通知状态/稳定ID与总deadline、错误/取消协议和截断说明，仍不证明人已阅读。详见[Q05](#research-q05)。\n\n采用建议：明确授权非敏感短消息可试用，接受阻塞/fallback并保留原UI，不当唯一可靠通道。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n把跨WSL桌面脚本接成工具/两分支，非自动事件通知或可靠投递。详见[Q01](#research-q01)与[Q02](#research-q02)。\n\n## 关键质疑\n\n进程ok非实际显示，非终止错误可能不fallback；默认阻塞与分支总等待/取消未统一，裁剪不明且argv不保密。详见[Q02](#research-q02)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可探讨明确通知状态/稳定ID与总deadline、错误/取消协议和截断说明，仍不证明人已阅读。详见[Q05](#research-q05)。\n\n进一步探讨以受控桌面/被拦/非终止错/超时/取消/Unicode夹具核状态，再比较实际感知与打扰。\n\n## 场景与替代办法\n\n明确允许在Windows桌面显示非敏感任务提示，真实业务状态另核。\n\n原UI/系统通知或手工PowerShell可替代；工具省接线，也增加阻塞/打扰和未知重复风险。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| Node>=18与DSH tools/systemPrompt | 必需 | win_notify工具/指引 | 需匹配真实schema，非自动完成事件订阅 |\n| WSL/Windows interop/PowerShell | 必需 | 从Linux执行桌面脚本 | env检测不证明interop可用 |\n| Forms/可见交互桌面 | 必需 | MessageBox或NotifyIcon | 后台/锁屏/策略可不显示，退出不等人看到 |\n| System.Drawing/通知策略 | BalloonTip必需 | 图标和气泡 | 失败可能触发阻塞MessageBox或静默未被识别 |\n| 无敏感短标题/正文授权 | 必需 | Windows可见消息 | base64 argv不保密，旁人可见 |\n\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 准备 | 固定宿主/WSL/桌面，明确允许弹窗 | 用无敏感短文本，考虑打扰/锁屏 |\n| 选择 | 显式messagebox或toast | toast失败可能变阻塞，不当纯异步保证 |\n| 调用 | 仅在明确任务状态后请求提醒 | 通知文案非任务成功证据，结果只是尝试 |\n| 恢复 | 无显示/超时先核桌面/策略和原业务状态 | 不盲重弹/重做业务，重要待办回原UI |\n\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | Windows桌面/interop，金额未知 | 权限/策略和无敏感短消息核对 | 无独立推送或模型API服务 |\n| 持续使用 | 每次spawn PowerShell；toast脚本睡4.5秒 | 消息打扰与MessageBox人工关闭 | toast不等工具立即返回 |\n| 失败恢复 | timeout/fallback再spawn/核桌面 | 区分显示未知/被拦/用户未看 | 无幂等/收到ack，重复可打扰 |\n\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 桌面桥 | Forms两种显示脚本 | 消息实际可见/用户知晓 |\n| fallback | toast抛错后MessageBox | 非终止错被识别与总等待 |\n| 简短提醒 | 文本截断/工具调用 | 真实反应时间或漏提醒改善 |\n\n\n## 研究问题与完整回答\n\n**插件研究总目标：**核WSL桌面消息工具的阻塞/fallback与实际显示保证，区分尝试、进程完成和用户知晓。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 面向谁，通知主链是什么？\n\n**研究主题：**场景与需求、功能与机制\n\n#### 完整回答\n\n面向在WSL跑DSH、想在Windows桌面获得一条短提示的人。输入title/body与mode，输出ok/title/实际分支mode或错误。合格结果需正确桌面可见并且文案对应真实任务状态；工具不验证任务完成，也未订阅任务事件，必须由模型/读者调用。\n\n加载时detectWsl，注册win_notify和提示。标题/正文默认各500个JS字符裁剪，UTF8 base64放固定PowerShell脚本；默认MessageBox阻塞直到用户按OK，toast为Forms NotifyIcon BalloonTip，保图标4.5秒后dispose。toast runPowerShell reject才再调MessageBox。执行带默认30秒timeout、非并发安全声明；公共wsl-host副本hash与已读实现一致，原生execFile运行。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:13-26](https://github.com/173787247/dsh-wsl-notify/blob/3c83e8964ff6a639b58d4a36bbbb5b784c4453b9/index.js#L13-L26)\n\n注册/提示。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\nexport function apply(ctx, config = {}) {\n  const timeoutMs = positive(config.timeoutMs, 30_000);\n  const maxLen = positive(config.maxLen, 500);\n  const wsl = detectWsl();\n\n  ctx.systemPrompt.section({\n    name: \"tool:win_notify\",\n    order: 123,\n    text: \"Use win_notify to show a short Windows notification when a long WSL task finishes. mode=messagebox (default, blocking) or mode=toast (BalloonTip, non-blocking; falls back to MessageBox). Keep title/body brief; no secrets.\",\n  });\n\n  ctx.tools.register({\n    name: \"win_notify\",\n    description: \"Show a Windows notification from WSL: MessageBox (default, blocking) or toast BalloonTip (non-blocking).\",\n```\n\n</details>\n\n**依据 2 · 源码核查**：[index.js:53-75](https://github.com/173787247/dsh-wsl-notify/blob/3c83e8964ff6a639b58d4a36bbbb5b784c4453b9/index.js#L53-L75)\n\n执行/裁剪/fallback。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n    timeoutMs,\n    isConcurrencySafe: () => false,\n    async execute(args) {\n      if (!wsl) return { ok: false, error: \"not running in WSL\" };\n      const title = String(args?.title ?? \"DSH\").slice(0, maxLen);\n      const body = String(args?.body ?? \"Task finished.\").slice(0, maxLen);\n      const mode = normalizeMode(args?.mode);\n      const { titleB64, bodyB64 } = encodeTitleBody(title, body);\n      try {\n        if (mode === \"toast\") {\n          try {\n            await runPowerShell(buildToastScript(titleB64, bodyB64), { timeoutMs });\n            return { ok: true, title, mode: \"toast\" };\n          } catch {\n            await runPowerShell(buildNotifyScript(titleB64, bodyB64), { timeoutMs });\n            return { ok: true, title, mode: \"messagebox\" };\n          }\n        }\n        await runPowerShell(buildNotifyScript(titleB64, bodyB64), { timeoutMs });\n        return { ok: true, title, mode: \"messagebox\" };\n      } catch (err) {\n        return { ok: false, title, mode, error: err instanceof Error ? err.message : String(err) };\n      }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/notify.js:1-24](https://github.com/173787247/dsh-wsl-notify/blob/3c83e8964ff6a639b58d4a36bbbb5b784c4453b9/lib/notify.js#L1-L24)\n\n编码/MessageBox。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\nexport function encodeTitleBody(title, body) {\n  return {\n    titleB64: Buffer.from(String(title ?? \"DSH\"), \"utf8\").toString(\"base64\"),\n    bodyB64: Buffer.from(String(body ?? \"\"), \"utf8\").toString(\"base64\"),\n  };\n}\n\nfunction decodeVars(titleB64, bodyB64) {\n  const t = String(titleB64).replace(/'/g, \"''\");\n  const b = String(bodyB64).replace(/'/g, \"''\");\n  return [\n    `$title = [Text.Encoding]::UTF8.GetString([Convert]::FromBase64String('${t}'))`,\n    `$body = [Text.Encoding]::UTF8.GetString([Convert]::FromBase64String('${b}'))`,\n  ];\n}\n\n/** Blocking MessageBox (reliable fallback). */\nexport function buildNotifyScript(titleB64, bodyB64) {\n  return [\n    \"Add-Type -AssemblyName System.Windows.Forms\",\n    ...decodeVars(titleB64, bodyB64),\n    \"[Windows.Forms.MessageBox]::Show($body, $title, 'OK', 'Information') | Out-Null\",\n    \"'ok'\",\n  ].join(\"; \");\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/notify.js:32-48](https://github.com/173787247/dsh-wsl-notify/blob/3c83e8964ff6a639b58d4a36bbbb5b784c4453b9/lib/notify.js#L32-L48)\n\n气泡脚本。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\nexport function buildToastScript(titleB64, bodyB64) {\n  return [\n    \"Add-Type -AssemblyName System.Windows.Forms\",\n    \"Add-Type -AssemblyName System.Drawing\",\n    ...decodeVars(titleB64, bodyB64),\n    \"$ni = New-Object System.Windows.Forms.NotifyIcon\",\n    \"$ni.Icon = [System.Drawing.SystemIcons]::Information\",\n    \"$ni.Visible = $true\",\n    \"$ni.BalloonTipTitle = $title\",\n    \"$ni.BalloonTipText = $(if ([string]::IsNullOrEmpty($body)) { ' ' } else { $body })\",\n    \"$ni.BalloonTipIcon = [System.Windows.Forms.ToolTipIcon]::Info\",\n    \"$ni.ShowBalloonTip(4000)\",\n    \"Start-Sleep -Milliseconds 4500\",\n    \"$ni.Visible = $false\",\n    \"$ni.Dispose()\",\n    \"'ok'\",\n  ].join(\"; \");\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/wsl-host.js:34-41](https://github.com/173787247/dsh-wsl-notify/blob/3c83e8964ff6a639b58d4a36bbbb5b784c4453b9/lib/wsl-host.js#L34-L41)\n\n执行上限。\n\n```text\nexport async function runPowerShell(script, { timeoutMs = 15_000 } = {}) {\n  const bin = windowsBin(\"powershell.exe\");\n  const { stdout, stderr } = await execFileAsync(\n    bin,\n    [\"-NoProfile\", \"-NonInteractive\", \"-Command\", script],\n    { timeout: timeoutMs, windowsHide: true, encoding: \"utf8\", maxBuffer: 4 * 1024 * 1024 },\n  );\n  return { stdout: String(stdout ?? \"\"), stderr: String(stderr ?? \"\") };\n```\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 增量和显示/失败/阻塞关键边界是什么？\n\n**研究主题：**贡献与相对优势、缺陷与关键质疑\n\n#### 完整回答\n\n增量是把WSL到Windows消息显示封装为短文本工具和两分支，固定脚本/base64减少文字混入命令语法的机会，不是新通知或可靠投递协议。\n\n成功只按PowerShell进程Promise，未检查stderr/stdout、NotifyIcon事件或用户看见；脚本无ErrorActionPreference Stop/显式try/catch退出码，非终止错误可能继续输出ok并退出，toast就不会fallback。注释“BurntToast优先”实际无该实现，只是BalloonTip，不应叫现代通知中心持久toast。气泡请求本身也不证明策略/免打扰/桌面会显示。\n\nmessagebox默认阻塞，30秒无人关闭可能timeout；toast脚本仍等4.5秒，失败后MessageBox可再等同一个timeout，外层工具timeout不保证覆盖整个fallback总时长。execute未收exec.signal，所以取消不直接传播到子进程。错误/超时可能已显示过，重试可再打扰，工具没有稳定通知ID/查询或撤销。\n\nmaxLen静默UTF16slice未返回truncated，可能裁掉关键文本/代理对，配置无上限和整数约束；完整文字以base64 argv存在、不是加密，Windows弹窗也有旁观泄露。模型提示no secrets不是强制授权。isConcurrencySafefalse仅宿主参考，不保证其他进程不同时弹窗。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:57-74](https://github.com/173787247/dsh-wsl-notify/blob/3c83e8964ff6a639b58d4a36bbbb5b784c4453b9/index.js#L57-L74)\n\n裁剪/结果/fallback。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n      const title = String(args?.title ?? \"DSH\").slice(0, maxLen);\n      const body = String(args?.body ?? \"Task finished.\").slice(0, maxLen);\n      const mode = normalizeMode(args?.mode);\n      const { titleB64, bodyB64 } = encodeTitleBody(title, body);\n      try {\n        if (mode === \"toast\") {\n          try {\n            await runPowerShell(buildToastScript(titleB64, bodyB64), { timeoutMs });\n            return { ok: true, title, mode: \"toast\" };\n          } catch {\n            await runPowerShell(buildNotifyScript(titleB64, bodyB64), { timeoutMs });\n            return { ok: true, title, mode: \"messagebox\" };\n          }\n        }\n        await runPowerShell(buildNotifyScript(titleB64, bodyB64), { timeoutMs });\n        return { ok: true, title, mode: \"messagebox\" };\n      } catch (err) {\n        return { ok: false, title, mode, error: err instanceof Error ? err.message : String(err) };\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/notify.js:18-24](https://github.com/173787247/dsh-wsl-notify/blob/3c83e8964ff6a639b58d4a36bbbb5b784c4453b9/lib/notify.js#L18-L24)\n\n无错误协议/阻塞。\n\n```text\nexport function buildNotifyScript(titleB64, bodyB64) {\n  return [\n    \"Add-Type -AssemblyName System.Windows.Forms\",\n    ...decodeVars(titleB64, bodyB64),\n    \"[Windows.Forms.MessageBox]::Show($body, $title, 'OK', 'Information') | Out-Null\",\n    \"'ok'\",\n  ].join(\"; \");\n```\n\n**依据 3 · 源码核查**：[lib/notify.js:32-55](https://github.com/173787247/dsh-wsl-notify/blob/3c83e8964ff6a639b58d4a36bbbb5b784c4453b9/lib/notify.js#L32-L55)\n\n气泡和文案。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\nexport function buildToastScript(titleB64, bodyB64) {\n  return [\n    \"Add-Type -AssemblyName System.Windows.Forms\",\n    \"Add-Type -AssemblyName System.Drawing\",\n    ...decodeVars(titleB64, bodyB64),\n    \"$ni = New-Object System.Windows.Forms.NotifyIcon\",\n    \"$ni.Icon = [System.Drawing.SystemIcons]::Information\",\n    \"$ni.Visible = $true\",\n    \"$ni.BalloonTipTitle = $title\",\n    \"$ni.BalloonTipText = $(if ([string]::IsNullOrEmpty($body)) { ' ' } else { $body })\",\n    \"$ni.BalloonTipIcon = [System.Windows.Forms.ToolTipIcon]::Info\",\n    \"$ni.ShowBalloonTip(4000)\",\n    \"Start-Sleep -Milliseconds 4500\",\n    \"$ni.Visible = $false\",\n    \"$ni.Dispose()\",\n    \"'ok'\",\n  ].join(\"; \");\n}\n\n/** Prefer toast via BurntToast if present; MessageBox is the reliable fallback we ship. */\nexport function formatNotifyResult(value) {\n  if (!value.ok) return `win_notify failed: ${value.error}`;\n  const mode = value.mode ? ` mode=${value.mode}` : \"\";\n  return `notified: ${value.title}${mode}`;\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/wsl-host.js:34-41](https://github.com/173787247/dsh-wsl-notify/blob/3c83e8964ff6a639b58d4a36bbbb5b784c4453b9/lib/wsl-host.js#L34-L41)\n\ntimeout/argv。\n\n```text\nexport async function runPowerShell(script, { timeoutMs = 15_000 } = {}) {\n  const bin = windowsBin(\"powershell.exe\");\n  const { stdout, stderr } = await execFileAsync(\n    bin,\n    [\"-NoProfile\", \"-NonInteractive\", \"-Command\", script],\n    { timeout: timeoutMs, windowsHide: true, encoding: \"utf8\", maxBuffer: 4 * 1024 * 1024 },\n  );\n  return { stdout: String(stdout ?? \"\"), stderr: String(stderr ?? \"\") };\n```\n\n**依据 5 · 源码核查**：[index.js:86-88](https://github.com/173787247/dsh-wsl-notify/blob/3c83e8964ff6a639b58d4a36bbbb5b784c4453b9/index.js#L86-L88)\n\n配置仅正数。\n\n```text\nfunction positive(value, fallback) {\n  const n = Number(value);\n  return Number.isFinite(n) && n > 0 ? n : fallback;\n```\n\n#### 缺口\n\n- 具体桌面/锁屏/免打扰下实际显示和用户知晓未由进程退出证明。\n  **影响：**ok/notified不能作可靠完成或收到确认。\n  **进一步探讨：**可先把attempted/display_requested/failed/unknown分开，核允许的桌面事件与原UI状态，不自动重复。\n- PowerShell非终止错误/超时/fallback总体与取消副作用边界需真实运行契约。\n  **影响：**可能静默未显示或超时后重复弹窗。\n  **进一步探讨：**可先统一终止错误和总deadline/取消，再用无敏感受控桌面研究显示/失败状态。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 依赖、隐私和读者步骤是什么？\n\n**研究主题：**依赖、兼容与流程\n\n#### 完整回答\n\n包0.1.1/Node>=18需WSL env/内核检测、PowerShell和Forms/Drawing。窗口属于当前Windows用户桌面，不是Web浏览器通知，也不会在没有交互桌面的所有环境可靠显示。没有自动后台任务/事件监听，属于模型工具。\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| Node>=18与DSH tools/systemPrompt | 必需 | win_notify工具/指引 | 需匹配真实schema，非自动完成事件订阅 |\n| WSL/Windows interop/PowerShell | 必需 | 从Linux执行桌面脚本 | env检测不证明interop可用 |\n| Forms/可见交互桌面 | 必需 | MessageBox或NotifyIcon | 后台/锁屏/策略可不显示，退出不等人看到 |\n| System.Drawing/通知策略 | BalloonTip必需 | 图标和气泡 | 失败可能触发阻塞MessageBox或静默未被识别 |\n| 无敏感短标题/正文授权 | 必需 | Windows可见消息 | base64 argv不保密，旁人可见 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 准备 | 固定宿主/WSL/桌面，明确允许弹窗 | 用无敏感短文本，考虑打扰/锁屏 |\n| 选择 | 显式messagebox或toast | toast失败可能变阻塞，不当纯异步保证 |\n| 调用 | 仅在明确任务状态后请求提醒 | 通知文案非任务成功证据，结果只是尝试 |\n| 恢复 | 无显示/超时先核桌面/策略和原业务状态 | 不盲重弹/重做业务，重要待办回原UI |\n\n默认文案Task finished只是默认文本，用户不应据收到通知反推任务已验收。桥接不调用第三方推送API，但文本会进入Windows进程参数/桌面，敏感内容仍不适用。本轮不弹窗/发送。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:1-4](https://github.com/173787247/dsh-wsl-notify/blob/3c83e8964ff6a639b58d4a36bbbb5b784c4453b9/package.json#L1-L4)\n\n版本。\n\n```text\n{\n  \"name\": \"dsh-wsl-notify\",\n  \"version\": \"0.1.1\",\n  \"description\": \"DeepSeek Harness tool: Windows MessageBox notification from WSL.\",\n```\n\n**依据 2 · 源码核查**：[package.json:16-18](https://github.com/173787247/dsh-wsl-notify/blob/3c83e8964ff6a639b58d4a36bbbb5b784c4453b9/package.json#L16-L18)\n\nNode。\n\n```text\n  \"engines\": { \"node\": \">=18\" },\n  \"scripts\": { \"test\": \"node --test test/notify.test.js\" },\n  \"files\": [\"index.js\", \"lib\", \"cordis.patch.yml\", \"README.md\", \"README.zh.md\", \"LICENSE\",\n```\n\n**依据 3 · 源码核查**：[lib/wsl-host.js:21-27](https://github.com/173787247/dsh-wsl-notify/blob/3c83e8964ff6a639b58d4a36bbbb5b784c4453b9/lib/wsl-host.js#L21-L27)\n\nWSL判定。\n\n```text\nexport function detectWsl({ env = process.env, readRelease = readOsRelease } = {}) {\n  if (env.WSL_DISTRO_NAME || env.WSL_INTEROP) return true;\n  try {\n    return /microsoft/i.test(readRelease());\n  } catch {\n    return false;\n  }\n```\n\n**依据 4 · 源码核查**：[lib/notify.js:20-22](https://github.com/173787247/dsh-wsl-notify/blob/3c83e8964ff6a639b58d4a36bbbb5b784c4453b9/lib/notify.js#L20-L22)\n\nForms桌面。\n\n```text\n    \"Add-Type -AssemblyName System.Windows.Forms\",\n    ...decodeVars(titleB64, bodyB64),\n    \"[Windows.Forms.MessageBox]::Show($body, $title, 'OK', 'Information') | Out-Null\",\n```\n\n**依据 5 · 源码核查**：[lib/notify.js:34-43](https://github.com/173787247/dsh-wsl-notify/blob/3c83e8964ff6a639b58d4a36bbbb5b784c4453b9/lib/notify.js#L34-L43)\n\nDrawing/NotifyIcon。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n    \"Add-Type -AssemblyName System.Windows.Forms\",\n    \"Add-Type -AssemblyName System.Drawing\",\n    ...decodeVars(titleB64, bodyB64),\n    \"$ni = New-Object System.Windows.Forms.NotifyIcon\",\n    \"$ni.Icon = [System.Drawing.SystemIcons]::Information\",\n    \"$ni.Visible = $true\",\n    \"$ni.BalloonTipTitle = $title\",\n    \"$ni.BalloonTipText = $(if ([string]::IsNullOrEmpty($body)) { ' ' } else { $body })\",\n    \"$ni.BalloonTipIcon = [System.Windows.Forms.ToolTipIcon]::Info\",\n    \"$ni.ShowBalloonTip(4000)\",\n```\n\n</details>\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 三阶段成本和效果如何衡量？\n\n**研究主题：**效果与总成本\n\n#### 完整回答\n\n本地桥无需独立推送账号/服务费用，仍有模型工具回合、PowerShell进程、4.5秒图标维持或人工关MessageBox。阻塞通知可以更醒目也更打扰，不等提高效率；toast也非后台调度服务。\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | Windows桌面/interop，金额未知 | 权限/策略和无敏感短消息核对 | 无独立推送或模型API服务 |\n| 持续使用 | 每次spawn PowerShell；toast脚本睡4.5秒 | 消息打扰与MessageBox人工关闭 | toast不等工具立即返回 |\n| 失败恢复 | timeout/fallback再spawn/核桌面 | 区分显示未知/被拦/用户未看 | 无幂等/收到ack，重复可打扰 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 桌面桥 | Forms两种显示脚本 | 消息实际可见/用户知晓 |\n| fallback | toast抛错后MessageBox | 非终止错被识别与总等待 |\n| 简短提醒 | 文本截断/工具调用 | 真实反应时间或漏提醒改善 |\n\n失败恢复要区分原任务状态与显示状态，重复弹窗不是补业务验收。与看原UI/手工通知比较应计漏提醒、反应时间、打扰和全部fallback等待，而不是工具ok比率。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/notify.js:22-23](https://github.com/173787247/dsh-wsl-notify/blob/3c83e8964ff6a639b58d4a36bbbb5b784c4453b9/lib/notify.js#L22-L23)\n\nMessageBox阻塞。\n\n```text\n    \"[Windows.Forms.MessageBox]::Show($body, $title, 'OK', 'Information') | Out-Null\",\n    \"'ok'\",\n```\n\n**依据 2 · 源码核查**：[lib/notify.js:43-47](https://github.com/173787247/dsh-wsl-notify/blob/3c83e8964ff6a639b58d4a36bbbb5b784c4453b9/lib/notify.js#L43-L47)\n\n4.5秒等待。\n\n```text\n    \"$ni.ShowBalloonTip(4000)\",\n    \"Start-Sleep -Milliseconds 4500\",\n    \"$ni.Visible = $false\",\n    \"$ni.Dispose()\",\n    \"'ok'\",\n```\n\n**依据 3 · 源码核查**：[index.js:62-74](https://github.com/173787247/dsh-wsl-notify/blob/3c83e8964ff6a639b58d4a36bbbb5b784c4453b9/index.js#L62-L74)\n\nfallback链。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n        if (mode === \"toast\") {\n          try {\n            await runPowerShell(buildToastScript(titleB64, bodyB64), { timeoutMs });\n            return { ok: true, title, mode: \"toast\" };\n          } catch {\n            await runPowerShell(buildNotifyScript(titleB64, bodyB64), { timeoutMs });\n            return { ok: true, title, mode: \"messagebox\" };\n          }\n        }\n        await runPowerShell(buildNotifyScript(titleB64, bodyB64), { timeoutMs });\n        return { ok: true, title, mode: \"messagebox\" };\n      } catch (err) {\n        return { ok: false, title, mode, error: err instanceof Error ? err.message : String(err) };\n```\n\n</details>\n\n#### 缺口\n\n- 无各桌面实际显示率、反应时间、打扰和总等待对照。\n  **影响：**不能承诺可靠非阻塞提醒或固定省时。\n  **进一步探讨：**可用明确授权无敏感短消息比较MessageBox/气泡/原UI，记实际感知和恢复。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 工程点、通知状态收据假设和采用建议？\n\n**研究主题：**工程质量与复用、新假设与验证、采用判断\n\n#### 完整回答\n\n纯编码/脚本/格式函数与Host注册分开、execFile固定argv、子进程timeout和气泡dispose可复用；编码防语法混入不等argv保密，脚本结束也不等可靠通知收据。\n\n可探讨未验证的“通知状态收据”。统一终止错误/明确JSON结果和实际分支，保持总deadline/exec.signal；stable ID去重且超时保unknown，不在状态未知时自动换阻塞模式。UI明确气泡与MessageBox的阻塞/策略差异，截断先拒绝或显式返回，文字通过stdin等减少argv暴露。可见/关闭事件可辅助但不能证明读者理解，重要待办仍保留视觉状态。代价是跨桌面事件/interop/隐私和状态维护。可用无交互桌面、被拦气泡、非终止错、超时前已显示、取消和长Unicode文本夹具研究。\n\n推荐trial，限明确允许的非敏感短提示并保留原UI；需接受默认MessageBox阻塞与toast fallback，不用作唯一故障/待办通道。继续从错误协议、总deadline/取消和状态措辞入手；显示未知、乱码/裁剪或打扰超预期就停，不重复业务或盲重弹。\n\n推导基于Q02的进程成功、显示请求和读者知晓三种状态混同，以及失败后再弹阻塞框的重复风险。相对当前二值ok+fallback，新方案若在相同授权夹具中减少“已显示却记失败后重弹”和“进程ok却误称已收到”，同时总等待受限且无需记录敏感正文，可支持状态透明度增量；若仍把非终止错当显示成功、取消后继续弹框、未知结果重试造成重复，或为追踪收据增加超过收益的人工/隐私负担，则不能支持该设计优势。即使通过，也只证明显示状态管理，不能证明人已阅读理解或原业务完成。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/notify.js:1-24](https://github.com/173787247/dsh-wsl-notify/blob/3c83e8964ff6a639b58d4a36bbbb5b784c4453b9/lib/notify.js#L1-L24)\n\n纯编码/脚本。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\nexport function encodeTitleBody(title, body) {\n  return {\n    titleB64: Buffer.from(String(title ?? \"DSH\"), \"utf8\").toString(\"base64\"),\n    bodyB64: Buffer.from(String(body ?? \"\"), \"utf8\").toString(\"base64\"),\n  };\n}\n\nfunction decodeVars(titleB64, bodyB64) {\n  const t = String(titleB64).replace(/'/g, \"''\");\n  const b = String(bodyB64).replace(/'/g, \"''\");\n  return [\n    `$title = [Text.Encoding]::UTF8.GetString([Convert]::FromBase64String('${t}'))`,\n    `$body = [Text.Encoding]::UTF8.GetString([Convert]::FromBase64String('${b}'))`,\n  ];\n}\n\n/** Blocking MessageBox (reliable fallback). */\nexport function buildNotifyScript(titleB64, bodyB64) {\n  return [\n    \"Add-Type -AssemblyName System.Windows.Forms\",\n    ...decodeVars(titleB64, bodyB64),\n    \"[Windows.Forms.MessageBox]::Show($body, $title, 'OK', 'Information') | Out-Null\",\n    \"'ok'\",\n  ].join(\"; \");\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/notify.js:32-48](https://github.com/173787247/dsh-wsl-notify/blob/3c83e8964ff6a639b58d4a36bbbb5b784c4453b9/lib/notify.js#L32-L48)\n\ndispose/收据起点。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\nexport function buildToastScript(titleB64, bodyB64) {\n  return [\n    \"Add-Type -AssemblyName System.Windows.Forms\",\n    \"Add-Type -AssemblyName System.Drawing\",\n    ...decodeVars(titleB64, bodyB64),\n    \"$ni = New-Object System.Windows.Forms.NotifyIcon\",\n    \"$ni.Icon = [System.Drawing.SystemIcons]::Information\",\n    \"$ni.Visible = $true\",\n    \"$ni.BalloonTipTitle = $title\",\n    \"$ni.BalloonTipText = $(if ([string]::IsNullOrEmpty($body)) { ' ' } else { $body })\",\n    \"$ni.BalloonTipIcon = [System.Windows.Forms.ToolTipIcon]::Info\",\n    \"$ni.ShowBalloonTip(4000)\",\n    \"Start-Sleep -Milliseconds 4500\",\n    \"$ni.Visible = $false\",\n    \"$ni.Dispose()\",\n    \"'ok'\",\n  ].join(\"; \");\n```\n\n</details>\n\n**依据 3 · 源码核查**：[index.js:62-74](https://github.com/173787247/dsh-wsl-notify/blob/3c83e8964ff6a639b58d4a36bbbb5b784c4453b9/index.js#L62-L74)\n\n状态/fallback起点。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n        if (mode === \"toast\") {\n          try {\n            await runPowerShell(buildToastScript(titleB64, bodyB64), { timeoutMs });\n            return { ok: true, title, mode: \"toast\" };\n          } catch {\n            await runPowerShell(buildNotifyScript(titleB64, bodyB64), { timeoutMs });\n            return { ok: true, title, mode: \"messagebox\" };\n          }\n        }\n        await runPowerShell(buildNotifyScript(titleB64, bodyB64), { timeoutMs });\n        return { ok: true, title, mode: \"messagebox\" };\n      } catch (err) {\n        return { ok: false, title, mode, error: err instanceof Error ? err.message : String(err) };\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/wsl-host.js:34-41](https://github.com/173787247/dsh-wsl-notify/blob/3c83e8964ff6a639b58d4a36bbbb5b784c4453b9/lib/wsl-host.js#L34-L41)\n\ndeadline/输入通道起点。\n\n```text\nexport async function runPowerShell(script, { timeoutMs = 15_000 } = {}) {\n  const bin = windowsBin(\"powershell.exe\");\n  const { stdout, stderr } = await execFileAsync(\n    bin,\n    [\"-NoProfile\", \"-NonInteractive\", \"-Command\", script],\n    { timeout: timeoutMs, windowsHide: true, encoding: \"utf8\", maxBuffer: 4 * 1024 * 1024 },\n  );\n  return { stdout: String(stdout ?? \"\"), stderr: String(stderr ?? \"\") };\n```\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：b5695b9f6a54b50d67db09242f75bace9cf846942749a9d99f46ba03efa003de。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 171 | — | — | 839 |\n| .js | source | 3 | 207 | 181 | 8 | — |\n| .js | test | 1 | 33 | 29 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| MessageBox | 默认桌面弹框 | 阻塞到关闭，timeout非收据 |\n| 气泡 | NotifyIcon显示请求 | 脚本等4.5秒，策略可拦 |\n| fallback | 抛错后MessageBox | 非终止错不一定触发，可能再阻塞 |\n| 编码 | UTF8 base64脚本参数 | 不保密/不自动证明任务完成 |\n\n## 工程亮点\n\n纯编码/脚本/格式函数与Host注册分开、execFile固定argv、子进程timeout和气泡dispose可复用；编码防语法混入不等argv保密，脚本结束也不等可靠通知收据。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 index.js、lib/notify.js、lib/wsl-host.js、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定index/notify完整实现及同hash公共wsl-host，未运行PowerShell/通知/目标测试，不保证各Windows桌面显示。\n- 下一步：进一步探讨以受控桌面/被拦/非终止错/超时/取消/Unicode夹具核状态，再比较实际感知与打扰。\n",
         "metadata": {
             "repository": "173787247/dsh-wsl-notify",
             "repository_id": 1350379268,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T07:47:33.776Z",
+            "window_start": "2026-09-22T07:47:33.776Z",
             "stars": 1,
             "pushed_at": "2026-09-29T15:29:32Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-notify%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6409:A4F3B:14051A:219999:6AD84992 and timestamp 2026-10-21 05:11:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-notify%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641E:37D83B:145E12:21DEAC:6AD84992 and timestamp 2026-10-21 05:11:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-notify%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641D:F50F:149FBB:2222F5:6AD84992 and timestamp 2026-10-21 05:11:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-notify%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C2:2EEE9E:13C00F:214364:6AD84992 and timestamp 2026-10-21 05:11:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-notify%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C3:C61AA:15294C:22C92A:6AD84992 and timestamp 2026-10-21 05:11:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "dsh-wsl-notify",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T07:47:42.143Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": null,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-wsl-notify",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-wsl-notify",
                 "error": "HTTP 404",
                 "publication": {
                     "first_published_at": null,
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T07:47:42.143Z",
                     "source_url": "https://registry.npmjs.org/dsh-wsl-notify",
                     "error": "HTTP 404",
                     "latest_version": null,
                     "latest_published_at": null,
                     "latest_error": "HTTP 404"
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "3c83e8964ff6a639b58d4a36bbbb5b784c4453b9",
-                "current_revision": "3c83e8964ff6a639b58d4a36bbbb5b784c4453b9",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {
@@ -389,14 +449,14 @@
             "repository": "173787247/dsh-wsl-notify",
             "path": "",
             "revision": "3c83e8964ff6a639b58d4a36bbbb5b784c4453b9",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "ce7e1c03a727cb05d4d4c53c5d840f8fd34b389eab4532623d8d5853e3335dcd",
                 "code": "3c83e8964ff6a639b58d4a36bbbb5b784c4453b9",
                 "maintenance": "00d2aac9c4a2b790dc2fc8266bdfa69c4c2118c03ec35bea2210b12c9c69076e"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

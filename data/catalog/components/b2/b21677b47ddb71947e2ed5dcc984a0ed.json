@@ -10,10 +10,10 @@
             "repository": "AlienGene/dsh-llm-balance-siderbar",
             "path": "",
             "aliases": [],
-            "name": "dsh-llm-balance-siderbar",
+            "name": "dsh-llm-balance",
             "entry_type": "plugin",
             "technical_category": "observability-cost",
-            "business_category": "personal-productivity",
+            "business_category": "infrastructure",
             "tags": [],
             "availability": "unknown",
             "research_depth": "source",
@@ -24,36 +24,124 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-07-github-1366370702-root-directory-0",
+                    "id": "2026-10-22-02-github-1366370702-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T08:06:02.286Z",
+                    "retrieved_at": "2026-10-22T09:36:18.174Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-07-github-1366370702-root-author",
+                    "id": "2026-10-22-02-github-1366370702-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/AlienGene/dsh-llm-balance-siderbar/blob/b35aa1e8501051ab3541cea2f43f0609b214f9a1/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AlienGene/dsh-llm-balance-siderbar",
+                            "commit": "b35aa1e8501051ab3541cea2f43f0609b214f9a1",
+                            "path": "README.md",
+                            "content_sha256": "e876ac9102b7ea210a1cbd15b2caf3040fa2f4cb5396c09bac1639e8c3456d53"
+                        }
+                    ],
                     "revision": "b35aa1e8501051ab3541cea2f43f0609b214f9a1",
-                    "captured_at": "2026-10-21T08:06:02.286Z",
-                    "summary": "按已挂载模型路由查询余额或套餐额度，并在侧栏保留独立错误和陈旧状态。",
-                    "artifact": "data/runs/2026-10-21-07/snapshots/aliengene--dsh-llm-balance-siderbar/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:36:18.174Z",
+                    "summary": "在DSH常驻卡片显示DeepSeek/Moonshot余额与Kimi/OpenCode订阅窗口，按源缓存并保留失败旧值。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/aliengene--dsh-llm-balance-siderbar/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-07-github-1366370702-root-source",
+                    "id": "2026-10-22-02-github-1366370702-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/AlienGene/dsh-llm-balance-siderbar/blob/b35aa1e8501051ab3541cea2f43f0609b214f9a1/src/index.ts",
+                    "url": "https://github.com/AlienGene/dsh-llm-balance-siderbar/blob/b35aa1e8501051ab3541cea2f43f0609b214f9a1/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AlienGene/dsh-llm-balance-siderbar",
+                            "commit": "b35aa1e8501051ab3541cea2f43f0609b214f9a1",
+                            "path": "README.md",
+                            "content_sha256": "e876ac9102b7ea210a1cbd15b2caf3040fa2f4cb5396c09bac1639e8c3456d53"
+                        },
+                        {
+                            "repository_url": "https://github.com/AlienGene/dsh-llm-balance-siderbar",
+                            "commit": "b35aa1e8501051ab3541cea2f43f0609b214f9a1",
+                            "path": "package.json",
+                            "content_sha256": "3a09f5dacf98e50a8428dbbf5885e2a59ed794ce59908b0f5780fd36ba4e3306"
+                        },
+                        {
+                            "repository_url": "https://github.com/AlienGene/dsh-llm-balance-siderbar",
+                            "commit": "b35aa1e8501051ab3541cea2f43f0609b214f9a1",
+                            "path": "src/index.ts",
+                            "content_sha256": "4cc64c0f873cb530c7cab970a41995eb4611c612ea7a76ef2cfd1d6955b8de5c"
+                        },
+                        {
+                            "repository_url": "https://github.com/AlienGene/dsh-llm-balance-siderbar",
+                            "commit": "b35aa1e8501051ab3541cea2f43f0609b214f9a1",
+                            "path": "src/route.ts",
+                            "content_sha256": "d85234ef491402bda64d6a5b52c3e029dbd8089e3d5ea13fb749e09ce3fed16f"
+                        },
+                        {
+                            "repository_url": "https://github.com/AlienGene/dsh-llm-balance-siderbar",
+                            "commit": "b35aa1e8501051ab3541cea2f43f0609b214f9a1",
+                            "path": "src/state.ts",
+                            "content_sha256": "7d39a45e4d5e6a0f55267b1b4cca825b1f7864f73656e2148517f87bf65b9334"
+                        },
+                        {
+                            "repository_url": "https://github.com/AlienGene/dsh-llm-balance-siderbar",
+                            "commit": "b35aa1e8501051ab3541cea2f43f0609b214f9a1",
+                            "path": "src/http.ts",
+                            "content_sha256": "0522c9c509546e4e07f452488739f3a5ea38421b1bdb9e9d5133b74e3bf13644"
+                        },
+                        {
+                            "repository_url": "https://github.com/AlienGene/dsh-llm-balance-siderbar",
+                            "commit": "b35aa1e8501051ab3541cea2f43f0609b214f9a1",
+                            "path": "src/config.ts",
+                            "content_sha256": "a8cf75fdc0dd0779d927d98882cd0210753e5025ec5d1034f8556345477f867e"
+                        },
+                        {
+                            "repository_url": "https://github.com/AlienGene/dsh-llm-balance-siderbar",
+                            "commit": "b35aa1e8501051ab3541cea2f43f0609b214f9a1",
+                            "path": "src/format.ts",
+                            "content_sha256": "d805c1d7cad42f2905911a344ea185ee80bbf3efe46401c46c305af90a63f752"
+                        },
+                        {
+                            "repository_url": "https://github.com/AlienGene/dsh-llm-balance-siderbar",
+                            "commit": "b35aa1e8501051ab3541cea2f43f0609b214f9a1",
+                            "path": "src/providers/deepseek.ts",
+                            "content_sha256": "b48a73fd7912ab972e50cb290390856986b752e9099446808620e73da12abd7a"
+                        },
+                        {
+                            "repository_url": "https://github.com/AlienGene/dsh-llm-balance-siderbar",
+                            "commit": "b35aa1e8501051ab3541cea2f43f0609b214f9a1",
+                            "path": "src/providers/kimi-code.ts",
+                            "content_sha256": "6f7c044d94aa63f83eb2dd9c9e6ff5a562f9a89c9394b405e28a1f0543e7c153"
+                        },
+                        {
+                            "repository_url": "https://github.com/AlienGene/dsh-llm-balance-siderbar",
+                            "commit": "b35aa1e8501051ab3541cea2f43f0609b214f9a1",
+                            "path": "src/providers/index.ts",
+                            "content_sha256": "57e86bf97cae3e5f9f266245d871e52684431b4d84daddcd23de47c88222a998"
+                        },
+                        {
+                            "repository_url": "https://github.com/AlienGene/dsh-llm-balance-siderbar",
+                            "commit": "b35aa1e8501051ab3541cea2f43f0609b214f9a1",
+                            "path": "client/client.js",
+                            "content_sha256": "b0d83f6be813f5904fcd0e74d76e93b7b82262a63a757b9ca391cf46cd520f99"
+                        },
+                        {
+                            "repository_url": "https://github.com/AlienGene/dsh-llm-balance-siderbar",
+                            "commit": "b35aa1e8501051ab3541cea2f43f0609b214f9a1",
+                            "path": "test/state.test.mjs",
+                            "content_sha256": "a97ec9f447cb61e906cd1a4d95b9c353a5c327f35d1e2d104effcc890e4df59b"
+                        }
+                    ],
                     "revision": "b35aa1e8501051ab3541cea2f43f0609b214f9a1",
-                    "captured_at": "2026-10-21T08:06:02.286Z",
-                    "summary": "核查 src/index.ts、src/state.ts、src/route.ts、src/providers/deepseek.ts；自动仅探测已注册route匹配的provider；每source独立cache/inFlight/error，失败保留最后成功值并stale；GET/HEAD状态路由触发到期探测，客户端轮询展示。",
-                    "artifact": "data/runs/2026-10-21-07/snapshots/aliengene--dsh-llm-balance-siderbar/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:36:18.174Z",
+                    "summary": "核查 README.md、package.json、src/index.ts、src/route.ts、src/state.ts、src/http.ts、src/config.ts、src/format.ts、src/providers/deepseek.ts、src/providers/kimi-code.ts、src/providers/index.ts、client/client.js、test/state.test.mjs；GUI轮询单state route，aggregator按已注册route选probe/首凭据，逐源TTL/inFlight查询并输出stale，Kimi可OAuth刷新写回。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/aliengene--dsh-llm-balance-siderbar/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                        "固定host/state/route/http、DeepSeek与Kimi凭据关键链、config、format、客户端轮询和state测试；未穷尽全部provider/GUI，不执行目标。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +152,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "多供应商用户判断当前模型路由的余额/额度状态，不能据此核算账单。",
+                    "text": "多LLM账号用户希望少切控制台并清楚余额/套餐剩余。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1366370702-root-source"
+                        "2026-10-22-02-github-1366370702-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +163,16 @@
                             "fingerprint": "b35aa1e8501051ab3541cea2f43f0609b214f9a1"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:06:02.286Z",
+                    "reviewed_at": "2026-10-22T09:36:18.174Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "自动仅探测已注册route匹配的provider；每source独立cache/inFlight/error，失败保留最后成功值并stale；GET/HEAD状态路由触发到期探测，客户端轮询展示。",
+                    "text": "GUI轮询单state route，aggregator按已注册route选probe/首凭据，逐源TTL/inFlight查询并输出stale，Kimi可OAuth刷新写回。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1366370702-root-source"
+                        "2026-10-22-02-github-1366370702-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +181,16 @@
                             "fingerprint": "b35aa1e8501051ab3541cea2f43f0609b214f9a1"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:06:02.286Z",
+                    "reviewed_at": "2026-10-22T09:36:18.174Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                    "text": "固定host/state/route/http、DeepSeek与Kimi凭据关键链、config、format、客户端轮询和state测试；未穷尽全部provider/GUI，不执行目标。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1366370702-root-source"
+                        "2026-10-22-02-github-1366370702-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +199,16 @@
                             "fingerprint": "b35aa1e8501051ab3541cea2f43f0609b214f9a1"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:06:02.286Z",
+                    "reviewed_at": "2026-10-22T09:36:18.174Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "分发以本插件固定package.json、运行依赖与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+                    "text": "0.7.1、MIT，结构宿主API仍需匹配，未声明Node engines但用fetch与AbortSignal组合。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1366370702-root-source"
+                        "2026-10-22-02-github-1366370702-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +217,16 @@
                             "fingerprint": "b35aa1e8501051ab3541cea2f43f0609b214f9a1"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:06:02.286Z",
+                    "reviewed_at": "2026-10-22T09:36:18.174Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "各供应商网络与账号权限、轮询延迟和接口维护；无模型生成调用，人工仍分清货币余额与周期quota。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 已配账号与可信端点 | 路由归属/OAuth写回核对 | 路由主体/可信端点/OAuth写回先核；初配工时未知 |\n| 持续使用 | 查询/轮询，无LLM调用 | stale和主体核查，节时未知 | 无插件LLM调用；查询/轮询依服务、节时与费用未量化 |\n| 失败恢复 | 原token/配置备份 | 重新登录/缓存账号纠错 | stale/错主体/token轮换需区分；重新登录/配置纠正工时未知 |\n",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1366370702-root-source"
+                        "2026-10-22-02-github-1366370702-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +235,16 @@
                             "fingerprint": "b35aa1e8501051ab3541cea2f43f0609b214f9a1"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:06:02.286Z",
+                    "reviewed_at": "2026-10-22T09:36:18.174Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "适合路由较多且有额度查询接口者；先核账户匹配、来源新鲜度和外层路由授权。",
+                    "text": "先观察；可信个人单账号route对照，限定sources并明确OAuth写回，默认先禁token持久化。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1366370702-root-source"
+                        "2026-10-22-02-github-1366370702-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +253,16 @@
                             "fingerprint": "b35aa1e8501051ab3541cea2f43f0609b214f9a1"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:06:02.286Z",
+                    "reviewed_at": "2026-10-22T09:36:18.174Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "异构数据的可见性和失败隔离明确，无实际预算改善或账单一致性验证。",
+                    "text": "#### 效果\n\n| 目标 | 源码支持 | 边界 |\n| --- | --- | --- |\n| 余额/额度可读 | 金额与窗口不同语义 | 非账单 |\n| 故障不丢旧数 | 每源stale/TTL | 类别缓存非账号 |\n| 少手工认证 | Kimi续期 | CLI token写副作用 |",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1366370702-root-source"
+                        "2026-10-22-02-github-1366370702-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +271,16 @@
                             "fingerprint": "b35aa1e8501051ab3541cea2f43f0609b214f9a1"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:06:02.286Z",
+                    "reviewed_at": "2026-10-22T09:36:18.174Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "每源缓存/单飞、缺凭据与失败分开、unsupported占位避免静默消失；route仅限制方法，无本包请求授权，需宿主确认。",
+                    "text": "provider和纯format/state分离、inFlight容错可借鉴；需账号cache、请求准入与真正版本守卫续期。详见[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1366370702-root-source"
+                        "2026-10-22-02-github-1366370702-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +289,16 @@
                             "fingerprint": "b35aa1e8501051ab3541cea2f43f0609b214f9a1"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:06:02.286Z",
+                    "reviewed_at": "2026-10-22T09:36:18.174Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
-                    "topic": "technical_innovation",
+                    "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "把异构余额/额度统一成可解释状态，并按宿主实际路由而非所有机器凭据探测，减少无关查询。不是通用计费或消费限制器。",
+                    "text": "将余额/配额语义分开并接入逐源缓存和常驻GUI，减少控制台切换。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1366370702-root-source"
+                        "2026-10-22-02-github-1366370702-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +307,16 @@
                             "fingerprint": "b35aa1e8501051ab3541cea2f43f0609b214f9a1"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:06:02.286Z",
+                    "reviewed_at": "2026-10-22T09:36:18.174Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
-                    "basis": "interpretation",
-                    "text": "cache按probe.id而非route/credential身份，hostFor只选首个匹配route；多个相同provider不同key可能被同一快照标成都覆盖。凭据或route改动后TTL内还可显示旧账户值，影响“当前账户”判断。",
+                    "basis": "supported",
+                    "text": "同类route共用首账号和probe缓存；Kimi默认刷新写CLI token、读比较rename非原子CAS，HTTP handler未本地认证。详见[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1366370702-root-source"
+                        "2026-10-22-02-github-1366370702-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +325,16 @@
                             "fingerprint": "b35aa1e8501051ab3541cea2f43f0609b214f9a1"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:06:02.286Z",
+                    "reviewed_at": "2026-10-22T09:36:18.174Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
-                    "topic": "technical_innovation",
+                    "topic": "engineering",
                     "basis": "unverified",
-                    "text": "未验证假设：缓存键绑定route与非秘密账户指纹，凭据变更使快照失效，可避免多账户误归属。以两条同厂商不同key、换key、失败重试核每行来源与新鲜度；无法区分时明确单账户合并。",
+                    "text": "可研究账号/端点/revision缓存和显式续期能力，逐route归属与CLI统一版本写，比较错账号及恢复工时。当前未验证。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1366370702-root-source"
+                        "2026-10-22-02-github-1366370702-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +343,15 @@
                             "fingerprint": "b35aa1e8501051ab3541cea2f43f0609b214f9a1"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:06:02.286Z",
+                    "reviewed_at": "2026-10-22T09:36:18.174Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T08:06:02.286Z",
+            "last_checked_at": "2026-10-22T09:36:18.174Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "b35aa1e8501051ab3541cea2f43f0609b214f9a1",
-                "reviewed_at": "2026-10-21T08:06:02.286Z",
+                "reviewed_at": "2026-10-22T09:36:18.174Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -275,61 +363,61 @@
                 "technical": {
                     "criteria": {
                         "novelty": 9,
-                        "mechanism": 15,
+                        "mechanism": 8,
                         "transferability": 10,
-                        "simplification": 4
+                        "simplification": 8
                     },
-                    "rationale": "novelty=9：多源聚合常见但路由关联有增量。 mechanism=15：状态隔离和来源门具体。 transferability=10：可迁移probe但厂商协议需维护。 simplification=4：集中观察，凭据匹配仍复杂。",
+                    "rationale": "novelty小幅，余额查询已有；mechanism小幅，逐源缓存/语义显示；transferability实质，adapter/纯format拆分；simplification实质，常驻卡片少切换。",
                     "basis": "interpretation",
-                    "score": 38,
+                    "score": 35,
                     "evidence_ids": [
-                        "2026-10-21-07-github-1366370702-root-source"
+                        "2026-10-22-02-github-1366370702-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 9,
-                        "delivery": 8,
-                        "reach": 10,
-                        "economics": 0
+                        "workflow": 18,
+                        "delivery": 0,
+                        "reach": 5,
+                        "economics": 4
                     },
-                    "rationale": "workflow=9：观察入口无新任务分工。 delivery=8：提供解释状态，非财务交付。 reach=10：明确多provider用户。 economics=0：不直接改变消费结构。",
+                    "rationale": "workflow实质，账号状态联结开发界面；delivery无新商业交付；reach小幅，GUI方便；economics小幅，节省查找无量化且有维护。",
                     "basis": "interpretation",
                     "score": 27,
                     "evidence_ids": [
-                        "2026-10-21-07-github-1366370702-root-source"
+                        "2026-10-22-02-github-1366370702-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "trial",
-                "reason": "多provider用户可在每类仅一个账户路由时试额度面板；同provider多key会共用首路由缓存，不能当当前各账户余额。",
+                "decision": "observe",
+                "reason": "先观察，账号缓存/准入与Kimi token写回边界未闭合；单用户单类单账号、限定sources端点并禁写回可作隔离对照。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "异构供应商余额quota可见性任务明确。"
+                        "rationale": "余额/订阅状态查看清楚。"
                     },
                     "advantage": {
-                        "score": 19,
-                        "rationale": "独立错误和stale缓存比单来源面板更可解释。"
+                        "score": 13,
+                        "rationale": "语义显示和逐源容错便利，官方页面/面板可替代。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "已核probe.id缓存与首route选择，账户覆盖误标限制明确。"
+                        "rationale": "固定关键链和mock可查，账号切换/真实接口效果未知。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "无模型生成费但供应商接口、凭据更新和账户新鲜度需人工核。"
+                        "score": 5,
+                        "rationale": "凭据续期/覆盖恢复和部署准入需额外管理。"
                     }
                 },
-                "score": 65,
+                "score": 54,
                 "revision": "b35aa1e8501051ab3541cea2f43f0609b214f9a1",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T09:36:18.174Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-07-github-1366370702-root-source"
+                    "2026-10-22-02-github-1366370702-root-source"
                 ],
                 "dependencies": [
                     {
@@ -354,34 +442,35 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T07:52:12Z",
-            "analysis_sha256": "c3536fd03a95e8e93f2920378767a9fa640fe9a2f2de7b8620fac90054ea5fa8"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "5df86208e22ad3c60e860fdf5dc918c6881a37c39be5050baea2f0503e0174d8"
         },
         "publication.metadata": "data/plugins/aliengene--dsh-llm-balance-siderbar/META.json",
         "publication.summaries": {
-            "text": "按已挂载模型路由查询余额或套餐额度，并在侧栏保留独立错误和陈旧状态。",
+            "text": "在DSH常驻卡片显示DeepSeek/Moonshot余额与Kimi/OpenCode订阅窗口，按源缓存并保留失败旧值。",
             "revision": "b35aa1e8501051ab3541cea2f43f0609b214f9a1",
             "source_url": "https://github.com/AlienGene/dsh-llm-balance-siderbar/blob/b35aa1e8501051ab3541cea2f43f0609b214f9a1/README.md"
         },
         "publication.capabilities": {
             "revision": "b35aa1e8501051ab3541cea2f43f0609b214f9a1",
             "items": {
-                "后台": "多来源余额/额度缓存探测",
-                "Host 路由": "/dsh-llm-balance/state",
-                "界面": "路由相关余额和额度侧栏"
-            }
+                "界面": "常驻卡片/模式/拖动与本地偏好",
+                "Host 路由": "GET/HEAD dsh-llm-balance/state",
+                "后台": "逐源余额缓存及可选Kimi OAuth续期写回"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| provider探测 | 已接入账号余额/套餐 | 同类首route身份 |\n| 卡片/容错缓存 | 少切控制台 | 旧值与账号需核 |\n| Kimi续期 | 延长读取登录态 | 默认写CLI凭据 |"
         },
         "publication.advice": {
             "revision": "b35aa1e8501051ab3541cea2f43f0609b214f9a1",
-            "text": "适合路由较多且有额度查询接口者；先核账户匹配、来源新鲜度和外层路由授权。"
+            "text": "先观察；可信个人单账号route对照，限定sources并明确OAuth写回，默认先禁token持久化。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/aliengene--dsh-llm-balance-siderbar",
-        "reports": "# dsh-llm-balance-siderbar\n\n> 按已挂载模型路由查询余额或套餐额度，并在侧栏保留独立错误和陈旧状态。\n\n## 使用建议\n\n适合路由较多且有额度查询接口者；先核账户匹配、来源新鲜度和外层路由授权。\n\n**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，插件与依赖流程的实际运行尚未验证；未来假设未验证。\n\n## 洞察短评\n\n- **用途**：多供应商用户判断当前模型路由的余额/额度状态，不能据此核算账单。\n- **亮点**：把异构余额/额度统一成可解释状态，并按宿主实际路由而非所有机器凭据探测，减少无关查询。不是通用计费或消费限制器。\n- **思考**：cache按probe.id而非route/credential身份，hostFor只选首个匹配route；多个相同provider不同key可能被同一快照标成都覆盖。凭据或route改动后TTL内还可显示旧账户值，影响“当前账户”判断。\n- **建议**：未验证假设：缓存键绑定route与非秘密账户指纹，凭据变更使快照失效，可避免多账户误归属。以两条同厂商不同key、换key、失败重试核每行来源与新鲜度；无法区分时明确单账户合并。\n\n## 场景与替代办法\n\n参照供应商控制台与单账户余额卡；增量是路由发现、分源缓存和明确unsupported占位。\n\n## 能力清单\n\n- **后台**：多来源余额/额度缓存探测\n- **Host 路由**：/dsh-llm-balance/state\n- **界面**：路由相关余额和额度侧栏\n\n## 依赖与流程\n\n自动仅探测已注册route匹配的provider；每source独立cache/inFlight/error，失败保留最后成功值并stale；GET/HEAD状态路由触发到期探测，客户端轮询展示。\n\nwebServer、llm路由/settings/credentials及DeepSeek/Moonshot/Kimi/OpenCode各查询协议；可显式sources绕过自动门。\n\n枚举路由→匹配source/凭据→并行探测→成功缓存/失败标记→侧栏按当前选择展示→到期重试；无接口者不伪造0。\n\n## 成本与效果\n\n各供应商网络与账号权限、轮询延迟和接口维护；无模型生成调用，人工仍分清货币余额与周期quota。\n\n异构数据的可见性和失败隔离明确，无实际预算改善或账单一致性验证。\n\n## 核心贡献\n\n把异构余额/额度统一成可解释状态，并按宿主实际路由而非所有机器凭据探测，减少无关查询。不是通用计费或消费限制器。\n\n## 关键质疑\n\ncache按probe.id而非route/credential身份，hostFor只选首个匹配route；多个相同provider不同key可能被同一快照标成都覆盖。凭据或route改动后TTL内还可显示旧账户值，影响“当前账户”判断。\n\n## 工程亮点\n\n每源缓存/单飞、缺凭据与失败分开、unsupported占位避免静默消失；route仅限制方法，无本包请求授权，需宿主确认。\n\n源码依据：[src/index.ts](https://github.com/AlienGene/dsh-llm-balance-siderbar/blob/b35aa1e8501051ab3541cea2f43f0609b214f9a1/src/index.ts)、[src/state.ts](https://github.com/AlienGene/dsh-llm-balance-siderbar/blob/b35aa1e8501051ab3541cea2f43f0609b214f9a1/src/state.ts)、[src/route.ts](https://github.com/AlienGene/dsh-llm-balance-siderbar/blob/b35aa1e8501051ab3541cea2f43f0609b214f9a1/src/route.ts)、[src/providers/deepseek.ts](https://github.com/AlienGene/dsh-llm-balance-siderbar/blob/b35aa1e8501051ab3541cea2f43f0609b214f9a1/src/providers/deepseek.ts)。\n\n## 未来设计假设（未验证）\n\n未验证假设：缓存键绑定route与非秘密账户指纹，凭据变更使快照失效，可避免多账户误归属。以两条同厂商不同key、换key、失败重试核每行来源与新鲜度；无法区分时明确单账户合并。\n\n未来mock供应商核多路由凭据、stale/skip与超时，另核宿主信任栅栏；本轮未查真实余额。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：7f58de24f5df20171a706553cfdbe730f2b52f1a33048c49a6dc7604c38f17b8。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 10 | 3532 | 2908 | 668 | — |\n| .md | source | 3 | 194 | — | — | 2188 |\n| .mjs | source | 2 | 230 | 189 | 24 | — |\n| .ts | source | 18 | 3033 | 2089 | 712 | — |\n| .tsx | source | 2 | 835 | 714 | 62 | — |\n| .mjs | test | 7 | 1624 | 1417 | 92 | — |\n\n排除 10 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[AlienGene/dsh-llm-balance-siderbar](https://github.com/AlienGene/dsh-llm-balance-siderbar)\n- **版本号**：0.7.1（[固定提交 b35aa1e8](https://github.com/AlienGene/dsh-llm-balance-siderbar/tree/b35aa1e8501051ab3541cea2f43f0609b214f9a1)）\n- **版本日期**：2026-09-12（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：src/index.ts、src/state.ts、src/route.ts、src/providers/deepseek.ts、作者README、package与固定范围inventory；源码抽读不等于完整审计。\n- 未验证：插件执行、测试、安装、真实宿主与独立采用。\n- 证据限制：固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。\n- 下一步：未来mock供应商核多路由凭据、stale/skip与超时，另核宿主信任栅栏；本轮未查真实余额。\n",
+        "reports": "# dsh-llm-balance\n\n> 在DSH常驻卡片显示DeepSeek/Moonshot余额与Kimi/OpenCode订阅窗口，按源缓存并保留失败旧值。\n\n## 研究范围\n\n- **仓库**：[AlienGene/dsh-llm-balance-siderbar](https://github.com/AlienGene/dsh-llm-balance-siderbar)\n- **版本号**：0.7.1（[固定提交 b35aa1e8501051ab3541cea2f43f0609b214f9a1](https://github.com/AlienGene/dsh-llm-balance-siderbar/tree/b35aa1e8501051ab3541cea2f43f0609b214f9a1)）\n- **版本日期**：2026-09-12（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n显示和容错源码可查；账号粒度、route准入依赖和OAuth副作用限制只读主张，账号分区/显式续期为未验证方向。\n\n## 洞察短评\n\n- **用途**：多LLM账号用户希望少切控制台并清楚余额/套餐剩余。详见[Q01](#research-q01)。\n- **亮点**：将余额/配额语义分开并接入逐源缓存和常驻GUI，减少控制台切换。详见[Q01](#research-q01)。\n- **思考**：同类route共用首账号和probe缓存；Kimi默认刷新写CLI token、读比较rename非原子CAS，HTTP handler未本地认证。详见[Q03](#research-q03)。\n- **建议**：可研究账号/端点/revision缓存和显式续期能力，逐route归属与CLI统一版本写，比较错账号及恢复工时。当前未验证。详见[Q05](#research-q05)。\n\n采用建议：先观察；可信个人单账号route对照，限定sources并明确OAuth写回，默认先禁token持久化。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n将余额/配额语义分开并接入逐源缓存和常驻GUI，减少控制台切换。详见[Q01](#research-q01)。\n\n## 关键质疑\n\n同类route共用首账号和probe缓存；Kimi默认刷新写CLI token、读比较rename非原子CAS，HTTP handler未本地认证。详见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可研究账号/端点/revision缓存和显式续期能力，逐route归属与CLI统一版本写，比较错账号及恢复工时。当前未验证。详见[Q05](#research-q05)。\n\n进一步从双账号、TTL换key、CLI并发续期、匿名route和慢body探讨分区缓存与显式更新。\n\n## 场景与替代办法\n\n多LLM账号用户希望少切控制台并清楚余额/套餐剩余。详见[Q01](#research-q01)。\n\n平台控制台和已有余额面板是替代，常驻显示便利不等账号/权限正确。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 条件 | 用途 | 失效影响 |\n| --- | --- | --- |\n| webServer/llm/settings/credentials | route与账号定位 | 结构ABI需匹配 |\n| 上游余额/套餐接口 | 真实数字 | schema/网络变化 |\n| Kimi CLI登录态可选 | OAuth续期 | 默认可能写回 |\n| GUI slots/React | 卡片和偏好 | 版本/localStorage限制 |\n\n#### 启动步骤\n\n| 步骤 | 执行者 | 判断标准 |\n| --- | --- | --- |\n| 限定单账号来源 | 用户 | 首route不误标 |\n| 审阅端点与续期 | 用户 | 写token意图明确 |\n| 看源时间/stale/错误 | 用户 | 不作实时账单 |\n| 切账号清理核对 | 用户 | 不复用旧主体缓存 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 已配账号与可信端点 | 路由归属/OAuth写回核对 | 路由主体/可信端点/OAuth写回先核；初配工时未知 |\n| 持续使用 | 查询/轮询，无LLM调用 | stale和主体核查，节时未知 | 无插件LLM调用；查询/轮询依服务、节时与费用未量化 |\n| 失败恢复 | 原token/配置备份 | 重新登录/缓存账号纠错 | stale/错主体/token轮换需区分；重新登录/配置纠正工时未知 |\n\n\n#### 效果\n\n| 目标 | 源码支持 | 边界 |\n| --- | --- | --- |\n| 余额/额度可读 | 金额与窗口不同语义 | 非账单 |\n| 故障不丢旧数 | 每源stale/TTL | 类别缓存非账号 |\n| 少手工认证 | Kimi续期 | CLI token写副作用 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**固定版本余额/订阅卡片如何选账号与缓存，OAuth写回/准入和使用成本如何影响采用？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 余额卡片服务什么使用场景？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n面向已在DSH接入多个账号的用户，在常驻卡片查看充值余额或订阅窗口剩余额度，减少逐平台控制台查询。合格结果需区分货币金额、已用/剩余百分比、reset时间、旧快照与错误；不提供会话价格估算，也不是账单/付款能力。充值金额没有分母所以不硬造百分比，quota显示已用但颜色看剩余，这一语义分离有实际可读性价值。\n\n简单替代是官方余额/订阅页面或已有用量面板。贡献是四类provider探测、逐源容错缓存和GUI模式/定位的组合，不是新计量协议。自动模式只看已注册route，显式sources可越过该筛选；README“不会读其他凭证”需结合Kimi CLI回退路径理解，不能只凭卡片只读推出插件无凭据写入。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:9-22](https://github.com/AlienGene/dsh-llm-balance-siderbar/blob/b35aa1e8501051ab3541cea2f43f0609b214f9a1/README.md#L9-L22)\n\n充值/套餐和显示范围。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n## 它显示什么\n\n- **充值的账号**（DeepSeek、Moonshot）→ 一行**余额金额**，不硬凑百分比\n- **订阅 / 套餐账号**（Kimi For Coding、OpenCode Go）→ 每个窗口一行**已用百分比**和**多久后重置**，比如 `频限（47%） 3d0h0m重置`\n- **颜色替你判断**：剩余不足 **20% 变红**、不足 **40% 变黄**，其余蓝色；当前正在用的那个提供商带一个**绿点**\n\n| 服务商 | 类型 | 显示 |\n|---|---|---|\n| DeepSeek | 充值 | 余额 |\n| Moonshot（Kimi 开放平台） | 充值 | 余额 |\n| Kimi For Coding | 订阅 | 频限 + 周窗口 |\n| OpenCode Go | 订阅 | 频限 / 周 / 月 |\n\n只接入其中几个，就只显示这几个；全部接入，就全部显示，不会莫名少一个。\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/format.ts:32-53](https://github.com/AlienGene/dsh-llm-balance-siderbar/blob/b35aa1e8501051ab3541cea2f43f0609b214f9a1/src/format.ts#L32-L53)\n\n剩余阈值。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\nexport function levelOf(\n  remainingPercent: number | null | undefined,\n  thresholds: Thresholds = DEFAULT_THRESHOLDS,\n): Level {\n  if (remainingPercent === null || remainingPercent === undefined) return 'normal'\n  if (!Number.isFinite(remainingPercent)) return 'normal'\n  if (remainingPercent < thresholds.error) return 'error'\n  if (remainingPercent < thresholds.warn) return 'warn'\n  return 'normal'\n}\n\n/** The most severe tier among the given ones (error > warn > normal). */\nexport function worstLevel(levels: readonly Level[]): Level {\n  if (levels.includes('error')) return 'error'\n  if (levels.includes('warn')) return 'warn'\n  return 'normal'\n}\n\n/** Remaining share of one window in percent, or `null` for a degenerate limit. */\nexport function remainingPercentOf(remaining: number, limit: number): number | null {\n  if (!Number.isFinite(remaining) || !Number.isFinite(limit) || limit <= 0) return null\n  return clampPercent((remaining / limit) * 100)\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/format.ts:90-95](https://github.com/AlienGene/dsh-llm-balance-siderbar/blob/b35aa1e8501051ab3541cea2f43f0609b214f9a1/src/format.ts#L90-L95)\n\n显示已用与颜色分离。\n\n```text\n/** The share a row prints, honouring `percentMode`; colour always uses the remaining share. */\nexport function displayPercent(window: QuotaWindow, mode: PercentMode): number | null {\n  if (mode === 'used') {\n    return window.limit > 0 ? clampPercent((window.used / window.limit) * 100) : null\n  }\n  return window.remainingPercent\n```\n\n**依据 4 · 源码核查**：[src/state.ts:114-122](https://github.com/AlienGene/dsh-llm-balance-siderbar/blob/b35aa1e8501051ab3541cea2f43f0609b214f9a1/src/state.ts#L114-L122)\n\nauto与explicit sources。\n\n```text\n  function enabledProbes(): Probe[] {\n    const explicit = input.config.explicitSources\n    if (explicit !== null) {\n      const wanted = new Set(explicit)\n      return input.probes.filter((probe) => wanted.has(probe.id))\n    }\n    const routes = input.listRoutes?.() ?? []\n    if (routes.length === 0) return []\n    return input.probes.filter((probe) => routes.some((route) => probe.match(route.id)))\n```\n\n<a id=\"research-q02\"></a>\n\n### Q02 · route、凭据与缓存如何工作？\n\n**研究主题：**功能与机制、依赖、兼容与流程\n\n#### 完整回答\n\n入口等webServer就绪后创建aggregator并挂单state GET/HEAD路由；浏览器同源轮询，host每源独立snapshot/error/inFlight/nextAttemptAt，due时并行刷新并等全部，失败留上次快照标stale。凭据先宿主credentials.resolve再环境，llm-pi-ai key引用每次读取；自动probe按route名match挑选，hostFor取第一个匹配route的credential reference，同一source对所有匹配route回报该snapshot。\n\nDeepSeek向配置/adapter/环境baseURL的user/balance携Bearer查询，Kimi可从API key或CLI OAuth文件路径读取/续期，Moonshot/OpenCode各独立adapter。结构接口不导入宿主runtime减少重复依赖，但仍需要兼容webServer/llm/settings/credentials和React客户端slots；settings读取只支持get形状，声明无bare依赖不等跨所有新版宿主接口。节点需支持fetch与AbortSignal.any/timeout，package没有明确Node engines，安装前需对齐实际宿主。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:41-64](https://github.com/AlienGene/dsh-llm-balance-siderbar/blob/b35aa1e8501051ab3541cea2f43f0609b214f9a1/src/index.ts#L41-L64)\n\n装配。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\nexport function apply(ctx: HostContext, rawConfig?: unknown): void {\n  const config = normalizeConfig(rawConfig)\n  const warn = (message: string): void => ctx.logger?.warn?.(`[dsh-llm-balance] ${message}`)\n  for (const warning of config.warnings) warn(warning)\n\n  ctx.inject(['webServer'], (host) => {\n    host.effect(() => {\n      const webServer = host.get<WebServerLike>('webServer')\n      if (webServer?.register === undefined) {\n        warn('webServer is not available; the balance route was not mounted')\n        return () => {}\n      }\n      const aggregator = createAggregator({\n        config,\n        probes: PROBES,\n        resolveSecret: (envName) => resolveSecret(host, envName, warn),\n        listRoutes: () => listRoutes(host),\n        llmDeepseek: () => llmDeepseekFacts(host),\n        piAiApiKeyEnv: piAiApiKeyEnv(host),\n        defaultSelection: () => defaultSelection(host),\n        warn,\n      })\n      return registerStateRoute(webServer, aggregator)\n    }, 'dsh-llm-balance: state route')\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/index.ts:72-92](https://github.com/AlienGene/dsh-llm-balance-siderbar/blob/b35aa1e8501051ab3541cea2f43f0609b214f9a1/src/index.ts#L72-L92)\n\n凭据解析。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\nasync function resolveSecret(\n  ctx: HostContext,\n  envName: string,\n  warn: (message: string) => void,\n): Promise<string | null> {\n  if (!CREDENTIAL_REF.test(envName)) {\n    warn(`ignoring credential reference ${JSON.stringify(envName)}: not an environment-variable name`)\n    return null\n  }\n  const credentials = ctx.get<{ resolve?(ref: string): Promise<unknown> }>('credentials')\n  if (credentials?.resolve !== undefined) {\n    try {\n      const resolved = (await credentials.resolve(envName)) as { value?: unknown } | undefined\n      const value = resolved?.value\n      if (typeof value === 'string' && value.length > 0) return value\n    } catch (error) {\n      warn(`credential lookup for ${envName} failed: ${String(error)}`)\n    }\n  }\n  const fromEnv = process.env[envName]\n  return typeof fromEnv === 'string' && fromEnv.length > 0 ? fromEnv : null\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/index.ts:139-149](https://github.com/AlienGene/dsh-llm-balance-siderbar/blob/b35aa1e8501051ab3541cea2f43f0609b214f9a1/src/index.ts#L139-L149)\n\nlive引用。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\nexport function piAiApiKeyEnv(ctx: HostContext): (routeId: string) => string | undefined {\n  return (routeId) => {\n    const settings = ctx.get<{ get?(namespace: string): unknown }>('settings')\n    const section = settings?.get?.('llm-pi-ai')\n    if (typeof section !== 'object' || section === null) return undefined\n    const providers = (section as Record<string, unknown>)['providers']\n    if (typeof providers !== 'object' || providers === null) return undefined\n    const entry = (providers as Record<string, unknown>)[routeId]\n    if (typeof entry !== 'object' || entry === null) return undefined\n    const value = (entry as Record<string, unknown>)['apiKeyEnv']\n    return typeof value === 'string' && value.length > 0 ? value : undefined\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/state.ts:125-162](https://github.com/AlienGene/dsh-llm-balance-siderbar/blob/b35aa1e8501051ab3541cea2f43f0609b214f9a1/src/state.ts#L125-L162)\n\n首route与cache TTL。\n\n<details>\n<summary>查看原文（38行）</summary>\n\n```text\n  function hostFor(probe: Probe, routes: readonly string[]): ProbeHost {\n    const override = input.config.sourceOverrides[probe.id]\n    // The first registered route this source answers for: the credential the\n    // routed adapter would use belongs to that route, not to the plugin.\n    const route = routes.find((candidate) => probe.match(candidate))\n    const routeApiKeyEnv = route === undefined ? undefined : input.piAiApiKeyEnv?.(route)\n    return {\n      config: input.config,\n      timeoutMs: input.config.timeoutMs,\n      fetchImpl,\n      ...(route === undefined ? {} : { routeId: route }),\n      ...(routeApiKeyEnv === undefined ? {} : { routeApiKeyEnv }),\n      ...(input.llmDeepseek === undefined ? {} : { llmDeepseek: input.llmDeepseek() }),\n      now,\n      resolveSecret: input.resolveSecret,\n      warn,\n    }\n  }\n\n  async function refresh(probe: Probe, routes: readonly string[], signal: AbortSignal | undefined): Promise<void> {\n    const cache = cacheFor(probe.id)\n    const current = now()\n    if (cache.inFlight !== null) return cache.inFlight\n\n    const fresh = cache.fetchedAt !== null && cache.error === null && current < cache.fetchedAt + input.config.refreshMs\n    // `nextAttemptAt` carries both cadences: the TTL after a success, the shorter\n    // retry delay after a failure or a skip.\n    if (fresh || current < cache.nextAttemptAt) return\n\n    cache.inFlight = (async () => {\n      try {\n        const snapshot = await probe.probe(hostFor(probe, routes), signal ?? new AbortController().signal)\n        cache.snapshot = snapshot\n        cache.fetchedAt = now()\n        cache.error = null\n        cache.skipped = false\n        cache.skipDetail = null\n        cache.nextAttemptAt = cache.fetchedAt + input.config.refreshMs\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/state.ts:187-209](https://github.com/AlienGene/dsh-llm-balance-siderbar/blob/b35aa1e8501051ab3541cea2f43f0609b214f9a1/src/state.ts#L187-L209)\n\n并行与每源输出。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n    async state(signal) {\n      const probes = enabledProbes()\n      const routes = input.listRoutes?.() ?? []\n      await Promise.all(probes.map((probe) => refresh(probe, routes.map((route) => route.id), signal)))\n      const at = now()\n      const sources: SourceState[] = []\n\n      for (const probe of probes) {\n        const cache = cacheFor(probe.id)\n        if (cache.skipped || (cache.snapshot === null && cache.error === null)) continue\n        const override = input.config.sourceOverrides[probe.id]\n        const providers = routes.filter((route) => probe.match(route.id)).map((route) => route.id)\n        sources.push({\n          id: probe.id,\n          label: override?.label ?? probe.label,\n          ok: cache.error === null && cache.snapshot !== null,\n          providers,\n          ...(cache.fetchedAt === null\n            ? {}\n            : { fetchedAt: cache.fetchedAt, ageMs: Math.max(0, at - cache.fetchedAt) }),\n          ...(cache.error !== null && cache.snapshot !== null ? { stale: true } : {}),\n          ...(cache.snapshot === null ? {} : { snapshot: cache.snapshot }),\n          ...(cache.error === null ? {} : { error: cache.error }),\n```\n\n</details>\n\n**依据 6 · 源码核查**：[src/providers/deepseek.ts:53-85](https://github.com/AlienGene/dsh-llm-balance-siderbar/blob/b35aa1e8501051ab3541cea2f43f0609b214f9a1/src/providers/deepseek.ts#L53-L85)\n\nendpoint与Bearer。\n\n<details>\n<summary>查看原文（33行）</summary>\n\n```text\nexport function deepseekBaseURL(host: ProbeHost): string {\n  const configured = host.config.deepseek.baseURL ?? host.llmDeepseek?.baseURL ?? process.env['DEEPSEEK_BASE_URL'] ?? null\n  return (configured ?? 'https://api.deepseek.com').replace(/\\/+$/, '')\n}\n\n/**\n * Resolve the credential reference the routed adapter would use: the route's own\n * configured reference first, then the `llm-deepseek` settings section, then the\n * plugin's default.\n */\nexport function deepseekApiKeyEnv(host: ProbeHost): string {\n  if (host.routeApiKeyEnv !== undefined) return host.routeApiKeyEnv\n  return host.config.deepseek.apiKeyEnv === 'DEEPSEEK_API_KEY' && host.llmDeepseek?.apiKeyEnv !== undefined\n    ? host.llmDeepseek.apiKeyEnv\n    : host.config.deepseek.apiKeyEnv\n}\n\n/** DeepSeek balance probe. */\nexport const deepseekProbe: Probe = {\n  id: DEEPSEEK_SOURCE_ID,\n  label: 'DeepSeek',\n  match: (routeId) => /^deepseek/i.test(routeId),\n  async probe(host, signal) {\n    const envName = deepseekApiKeyEnv(host)\n    const secret = await host.resolveSecret(envName)\n    if (secret === null) throw new SkipSource('NO_CREDENTIAL', `${envName} is not configured`)\n\n    const payload = await fetchJson({\n      url: `${deepseekBaseURL(host)}/user/balance`,\n      headers: { authorization: `Bearer ${secret}` },\n      timeoutMs: host.timeoutMs,\n      signal,\n      fetchImpl: host.fetchImpl,\n```\n\n</details>\n\n**依据 7 · 源码核查**：[src/http.ts:45-55](https://github.com/AlienGene/dsh-llm-balance-siderbar/blob/b35aa1e8501051ab3541cea2f43f0609b214f9a1/src/http.ts#L45-L55)\n\n运行API要求。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\nexport async function fetchJson(request: JsonRequest): Promise<unknown> {\n  const timeout = AbortSignal.timeout(request.timeoutMs)\n  const signal = request.signal === undefined ? timeout : AbortSignal.any([request.signal, timeout])\n  let response: Response\n  try {\n    response = await request.fetchImpl(request.url, {\n      method: request.method ?? 'GET',\n      headers: { accept: 'application/json', ...(request.headers ?? {}) },\n      ...(request.body === undefined ? {} : { body: request.body }),\n      signal,\n    })\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 只读声明与身份/缓存有哪些边界？\n\n**研究主题：**缺陷与关键质疑\n\n#### 完整回答\n\nHTTP handler只检查GET/HEAD后aggregator.state，没有调用宿主connection admission或独立身份校验；浏览器带same-origin cookie不代表服务器验证了cookie，具体远程访问面需由匹配宿主/反代闭合。即使接口不改配置，查询可触发上游请求和OAuth刷新，不能将GET当无副作用。Kimi按候选.kimi-code/.kimi文件读登录态，token过期POST刷新，persistRefreshedToken默认true会tmp+rename写CLI凭据。它读取前后比较raw可避免已发生的外部改变，但比较与rename间无文件版本锁，不是原子CAS，CLI并发刷新仍有覆盖窗口。\n\n缓存键仅probe.id，不含route/credential主体/endpoint，hostFor又取首匹配route；同类多个账号会被合并标给多个providers，TTL内切账号/密钥仍可能显示旧账号余额。HTTP no-store只是浏览器缓存策略，源码确有host内存缓存，与README“接口不缓存”需区别。旧snapshot携错误和fetchedAt可见是良好设计，但不能据此恢复账号归属；Key发往可配置baseURL/oauthHost，设置者须确认接收方。错误响应正文最多显示160字符，并不自动保证第三方echo的秘密被脱敏。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/route.ts:44-62](https://github.com/AlienGene/dsh-llm-balance-siderbar/blob/b35aa1e8501051ab3541cea2f43f0609b214f9a1/src/route.ts#L44-L62)\n\nroute无本地准入。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\nexport function registerStateRoute(webServer: WebServerLike, aggregator: Aggregator): () => void {\n  return webServer.register({\n    kind: 'exact',\n    path: STATE_ROUTE_PATH,\n    handler: async (request, response) => {\n      if (request.method !== 'GET' && request.method !== 'HEAD') {\n        response.writeHead(405, { allow: 'GET' })\n        response.end()\n        return\n      }\n      try {\n        sendJson(response, 200, await aggregator.state())\n      } catch (error) {\n        // `state()` is written not to reject; this is the belt to that suspenders,\n        // because an unhandled rejection here would leave the socket hanging.\n        sendJson(response, 500, {\n          ok: false,\n          error: { code: 'NETWORK', message: error instanceof Error ? error.message : String(error) },\n        })\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/providers/kimi-code.ts:142-155](https://github.com/AlienGene/dsh-llm-balance-siderbar/blob/b35aa1e8501051ab3541cea2f43f0609b214f9a1/src/providers/kimi-code.ts#L142-L155)\n\nCLI文件候选读取。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n/** First existing credential candidate. */\nasync function existingTokenFile(host: ProbeHost): Promise<string | null> {\n  const candidates = [\n    ...(host.config.kimiCode.tokenFile === null ? [] : [host.config.kimiCode.tokenFile]),\n    ...host.config.kimiCode.tokenFileFallbacks,\n  ]\n  for (const candidate of candidates) {\n    try {\n      const text = await readFile(candidate, 'utf8')\n      if (text.trim().length > 0) return candidate\n    } catch {\n      /* try the next candidate */\n    }\n  }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/config.ts:225-232](https://github.com/AlienGene/dsh-llm-balance-siderbar/blob/b35aa1e8501051ab3541cea2f43f0609b214f9a1/src/config.ts#L225-L232)\n\n默认写回开。\n\n```text\n    kimiCode: {\n      apiKeyEnv: asString(kimi['apiKeyEnv']) ?? 'KIMI_API_KEY',\n      tokenFile: tokenFile ?? (candidates[0] ?? null),\n      tokenFileFallbacks: candidates.filter((candidate) => candidate !== tokenFile),\n      oauthHost: asString(kimi['oauthHost']) ?? 'https://auth.kimi.com',\n      baseURL: asString(kimi['baseURL']) ?? 'https://api.kimi.com/coding/v1',\n      clientId: asString(kimi['clientId']) ?? KIMI_CLIENT_ID,\n      persistRefreshedToken: asBoolean(kimi['persistRefreshedToken'], true),\n```\n\n**依据 4 · 源码核查**：[src/providers/kimi-code.ts:166-208](https://github.com/AlienGene/dsh-llm-balance-siderbar/blob/b35aa1e8501051ab3541cea2f43f0609b214f9a1/src/providers/kimi-code.ts#L166-L208)\n\n刷新POST。\n\n<details>\n<summary>查看原文（43行）</summary>\n\n```text\nasync function refreshTokens(\n  host: ProbeHost,\n  file: string,\n  rawBefore: string,\n  previous: KimiTokens,\n  signal: AbortSignal,\n): Promise<RefreshOutcome> {\n  if (previous.refreshToken === null) {\n    throw new HttpFailure('TOKEN_EXPIRED', 'the Kimi credential has no refresh token')\n  }\n  const body = new URLSearchParams({\n    client_id: host.config.kimiCode.clientId,\n    grant_type: 'refresh_token',\n    refresh_token: previous.refreshToken,\n  })\n  let payload: unknown\n  try {\n    payload = await fetchJson({\n      url: `${host.config.kimiCode.oauthHost.replace(/\\/+$/, '')}/api/oauth/token`,\n      method: 'POST',\n      headers: { 'content-type': 'application/x-www-form-urlencoded' },\n      body: body.toString(),\n      timeoutMs: host.timeoutMs,\n      signal,\n      fetchImpl: host.fetchImpl,\n    })\n  } catch (error) {\n    if (error instanceof HttpFailure && (error.status === 401 || error.status === 403)) {\n      throw new HttpFailure('TOKEN_EXPIRED', 'the Kimi refresh token was rejected')\n    }\n    throw error\n  }\n  const record = recordOf(payload)\n  const accessToken = typeof record['access_token'] === 'string' ? record['access_token'] : null\n  if (accessToken === null) throw new HttpFailure('BAD_RESPONSE', 'the refresh response carried no access_token')\n  const expiresIn = numberOf(record['expires_in'])\n  const tokens: KimiTokens = {\n    accessToken,\n    refreshToken: typeof record['refresh_token'] === 'string' ? record['refresh_token'] : previous.refreshToken,\n    expiresAtMs: expiresIn === null ? null : Date.now() + expiresIn * 1000,\n  }\n  const persisted = await persistRefreshed(host, file, rawBefore, tokens, record)\n  return { tokens, persisted }\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/providers/kimi-code.ts:226-257](https://github.com/AlienGene/dsh-llm-balance-siderbar/blob/b35aa1e8501051ab3541cea2f43f0609b214f9a1/src/providers/kimi-code.ts#L226-L257)\n\n读比较与rename分离。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\n  if (!host.config.kimiCode.persistRefreshedToken) return false\n  let current: string | null = null\n  try {\n    current = await readFile(file, 'utf8')\n  } catch {\n    current = null\n  }\n  if (current === null || current !== rawBefore) {\n    host.warn('kimi credential changed while refreshing; the new token stays in memory')\n    return false\n  }\n  let document: Record<string, unknown>\n  try {\n    document = recordOf(JSON.parse(current) as unknown)\n  } catch {\n    document = {}\n  }\n  const expiresIn = numberOf(response['expires_in'])\n  const merged: Record<string, unknown> = {\n    ...document,\n    access_token: tokens.accessToken,\n    refresh_token: tokens.refreshToken,\n    scope: typeof document['scope'] === 'string' ? document['scope'] : 'kimi-code',\n    token_type: typeof document['token_type'] === 'string' ? document['token_type'] : 'Bearer',\n    expires_at: Math.floor((tokens.expiresAtMs ?? Date.now() + 900_000) / 1000),\n  }\n  if (expiresIn !== null) merged['expires_in'] = expiresIn\n  const temporary = `${file}.tmp-${process.pid}`\n  try {\n    await mkdir(dirname(file), { recursive: true })\n    await writeFile(temporary, `${JSON.stringify(merged, null, 2)}\\n`, { encoding: 'utf8', mode: 0o600 })\n    await rename(temporary, file)\n```\n\n</details>\n\n**依据 6 · 源码核查**：[src/state.ts:87-101](https://github.com/AlienGene/dsh-llm-balance-siderbar/blob/b35aa1e8501051ab3541cea2f43f0609b214f9a1/src/state.ts#L87-L101)\n\ncache仅id。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n  const caches = new Map<string, SourceCache>()\n\n  function cacheFor(id: string): SourceCache {\n    const existing = caches.get(id)\n    if (existing !== undefined) return existing\n    const created: SourceCache = {\n      snapshot: null,\n      fetchedAt: null,\n      error: null,\n      skipped: false,\n      skipDetail: null,\n      nextAttemptAt: 0,\n      inFlight: null,\n    }\n    caches.set(id, created)\n```\n\n</details>\n\n**依据 7 · 源码核查**：[src/state.ts:125-136](https://github.com/AlienGene/dsh-llm-balance-siderbar/blob/b35aa1e8501051ab3541cea2f43f0609b214f9a1/src/state.ts#L125-L136)\n\n首route身份。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n  function hostFor(probe: Probe, routes: readonly string[]): ProbeHost {\n    const override = input.config.sourceOverrides[probe.id]\n    // The first registered route this source answers for: the credential the\n    // routed adapter would use belongs to that route, not to the plugin.\n    const route = routes.find((candidate) => probe.match(candidate))\n    const routeApiKeyEnv = route === undefined ? undefined : input.piAiApiKeyEnv?.(route)\n    return {\n      config: input.config,\n      timeoutMs: input.config.timeoutMs,\n      fetchImpl,\n      ...(route === undefined ? {} : { routeId: route }),\n      ...(routeApiKeyEnv === undefined ? {} : { routeApiKeyEnv }),\n```\n\n</details>\n\n**依据 8 · 源码核查**：[src/http.ts:75-79](https://github.com/AlienGene/dsh-llm-balance-siderbar/blob/b35aa1e8501051ab3541cea2f43f0609b214f9a1/src/http.ts#L75-L79)\n\n原始错误片段。\n\n```text\nasync function readErrorDetail(response: Response): Promise<string> {\n  try {\n    const text = await response.text()\n    const trimmed = text.trim().replace(/\\s+/g, ' ')\n    return trimmed.length > 160 ? `${trimmed.slice(0, 160)}…` : trimmed\n```\n\n#### 缺口\n\n- 宿主对exact route的真实准入和多用户账号隔离未由目标组件闭合\n  **影响：**不能把同源cookie或只读看板解释为用户认证/账户隔离\n  **进一步探讨：**阅读部署宿主dispatch和credential作用域，先只用可信单用户环境\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 容错、测试和运行成本有什么证据？\n\n**研究主题：**工程质量与复用、效果与总成本\n\n#### 完整回答\n\nprovider/state/http/format/modes分离，单源inFlight和TTL避免重复网络，SkipSource可隐藏并给未支持route占位原因，错误不抹旧数据；state mock使用脚本probe和时钟，能检查TTL与失败隔离，不证明真实服务持续返回相同字段。本次只读测试，没有执行。fetchJson超时signal覆盖取body，但成功response.json和失败response.text均无专门字节上限，畸形响应可能耗内存。\n\n首次要核对账号到route、配置端点和Kimi OAuth写回意图。持续卡片不调用LLM，付出上游查询、浏览器轮询与本地状态计算；客户端setInterval即使页面hidden仍运行，只在变visible时额外刷新，卸载清timer但未取消正在load的fetch，也无前端inFlight去重，慢请求可重叠而服务器按源合并。恢复要区分stale、账号映射错误和token续期失败，若CLI凭据轮换冲突可能需重新登录；GUI位置/模式在localStorage，不等账号数据被落浏览器。节省控制台时间与服务费用没有同任务量化。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[test/state.test.mjs:13-60](https://github.com/AlienGene/dsh-llm-balance-siderbar/blob/b35aa1e8501051ab3541cea2f43f0609b214f9a1/test/state.test.mjs#L13-L60)\n\n脚本probe和TTL测试。\n\n<details>\n<summary>查看原文（48行）</summary>\n\n```text\n/** A scripted probe: each call consumes the next step, and it answers for its own id. */\nfunction scriptedProbe(id, steps, { match = (route) => route === id } = {}) {\n  const state = { calls: 0 }\n  return {\n    state,\n    probe: {\n      id,\n      label: id,\n      match,\n      async probe() {\n        const step = steps[Math.min(state.calls, steps.length - 1)]\n        state.calls += 1\n        if (typeof step === 'function') return step()\n        if (step instanceof Error) throw step\n        return step\n      },\n    },\n  }\n}\n\nconst BALANCE = { kind: 'balance', entries: [{ currency: 'CNY', total: 50 }] }\n\nfunction makeAggregator({ probes, listRoutes, now = () => 1_000_000, defaultSelection }) {\n  return createAggregator({\n    config: CONFIG,\n    probes,\n    fetchImpl: async () => new Response('{}'),\n    now,\n    resolveSecret: async () => null,\n    // Auto mode is gated on registered routes, so every scripted probe is\n    // registered unless a test says otherwise.\n    listRoutes: listRoutes ?? (() => probes.map((probe) => ({ id: probe.id, name: probe.id }))),\n    ...(defaultSelection === undefined ? {} : { defaultSelection }),\n    warn: () => {},\n  })\n}\n\ntest('a fresh source is not refetched inside the TTL', async () => {\n  let clock = 1_000_000\n  const scripted = scriptedProbe('a', [BALANCE])\n  const aggregator = makeAggregator({ probes: [scripted.probe], now: () => clock })\n  await aggregator.state()\n  clock += 30_000\n  await aggregator.state()\n  assert.equal(scripted.state.calls, 1)\n\n  clock += 31_000\n  await aggregator.state()\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/state.ts:164-178](https://github.com/AlienGene/dsh-llm-balance-siderbar/blob/b35aa1e8501051ab3541cea2f43f0609b214f9a1/src/state.ts#L164-L178)\n\nskip/error重试分支。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n        if (error instanceof SkipSource) {\n          // A skip is silent by design, but it must still be explainable:\n          // log it once per distinct reason and keep it for the placeholder.\n          if (cache.skipDetail !== error.message) warn(`${probe.id}: skipped — ${error.message}`)\n          cache.skipped = true\n          cache.skipDetail = error.message\n          cache.nextAttemptAt = now() + RETRY_MS\n          return\n        }\n        const failure = toFailure(error)\n        cache.error = failure\n        cache.skipped = false\n        cache.skipDetail = null\n        cache.nextAttemptAt = now() + Math.min(input.config.refreshMs, RETRY_MS)\n        warn(`${probe.id}: ${failure.code} ${failure.message}`)\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/http.ts:62-79](https://github.com/AlienGene/dsh-llm-balance-siderbar/blob/b35aa1e8501051ab3541cea2f43f0609b214f9a1/src/http.ts#L62-L79)\n\nbody读取未限字节。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n  if (!response.ok) {\n    const detail = await readErrorDetail(response)\n    throw new HttpFailure(mapStatus(response.status), detail, response.status)\n  }\n\n  try {\n    return (await response.json()) as unknown\n  } catch (error) {\n    throw new HttpFailure('BAD_RESPONSE', `not JSON: ${error instanceof Error ? error.message : String(error)}`, response.status)\n  }\n}\n\n/** Preview a failed response body without ever echoing more than a line. */\nasync function readErrorDetail(response: Response): Promise<string> {\n  try {\n    const text = await response.text()\n    const trimmed = text.trim().replace(/\\s+/g, ' ')\n    return trimmed.length > 160 ? `${trimmed.slice(0, 160)}…` : trimmed\n```\n\n</details>\n\n**依据 4 · 源码核查**：[client/client.js:946-975](https://github.com/AlienGene/dsh-llm-balance-siderbar/blob/b35aa1e8501051ab3541cea2f43f0609b214f9a1/client/client.js#L946-L975)\n\nload与interval生命周期。\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\n\t\t\tconst useSessions = props.useSessions;\n\t\t\tconst currentProvider = useSessions === void 0 ? null : useSessions(selectCurrentProvider);\n\t\t\tconst load = (0, react.useCallback)(async () => {\n\t\t\t\ttry {\n\t\t\t\t\tconst next = await fetchState();\n\t\t\t\t\tsetLoaded({\n\t\t\t\t\t\tresponse: next,\n\t\t\t\t\t\tat: Date.now()\n\t\t\t\t\t});\n\t\t\t\t\tsetFailure(null);\n\t\t\t\t\tsetNow(Date.now());\n\t\t\t\t} catch (error) {\n\t\t\t\t\tsetFailure(error instanceof Error ? error.message : String(error));\n\t\t\t\t}\n\t\t\t}, []);\n\t\t\t(0, react.useEffect)(() => {\n\t\t\t\tlet cancelled = false;\n\t\t\t\tconst run = () => {\n\t\t\t\t\tif (!cancelled) load();\n\t\t\t\t};\n\t\t\t\trun();\n\t\t\t\tconst timer = window.setInterval(run, refreshMs);\n\t\t\t\tconst onVisible = () => {\n\t\t\t\t\tif (document.visibilityState === \"visible\") run();\n\t\t\t\t};\n\t\t\t\tdocument.addEventListener(\"visibilitychange\", onVisible);\n\t\t\t\treturn () => {\n\t\t\t\t\tcancelled = true;\n\t\t\t\t\twindow.clearInterval(timer);\n\t\t\t\t\tdocument.removeEventListener(\"visibilitychange\", onVisible);\n```\n\n</details>\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 采用条件和继续探讨方向是什么？\n\n**研究主题：**新假设与验证、采用判断\n\n#### 完整回答\n\n先观察，主要是route认证依赖、source按类别而非账号分区、Kimi默认写回登录态及非原子CAS，实际权限面大于“只读余额”。可信单用户、单route对应单账号且明确接受OAuth续期的隔离环境可做对照；可先禁Kimi写回、限定sources和可信端点，不把旧余额用于自动财务决策。出现切账号仍旧值、共享route标错、token文件被意外改变或未授权能取数时停用并保留原凭据备份。\n\n值得进一步研究账号指纹与endpoint/revision分区cache，多个同类route分别取数并显式标主体；读取接口与OAuth续期拆成需确认的能力，真正跨进程版本守卫写或交CLI服务统一刷新。基线为当前probe-id缓存与读比较rename，反例包含两个同类账号、TTL内换key、CLI同步刷新、slow body/重叠轮询和匿名route访问，比较错账号、覆盖、恢复工时与请求量。当前未验证，不把源码guard当已经端到端安全。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/state.ts:87-101](https://github.com/AlienGene/dsh-llm-balance-siderbar/blob/b35aa1e8501051ab3541cea2f43f0609b214f9a1/src/state.ts#L87-L101)\n\n缓存粒度。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n  const caches = new Map<string, SourceCache>()\n\n  function cacheFor(id: string): SourceCache {\n    const existing = caches.get(id)\n    if (existing !== undefined) return existing\n    const created: SourceCache = {\n      snapshot: null,\n      fetchedAt: null,\n      error: null,\n      skipped: false,\n      skipDetail: null,\n      nextAttemptAt: 0,\n      inFlight: null,\n    }\n    caches.set(id, created)\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/state.ts:125-136](https://github.com/AlienGene/dsh-llm-balance-siderbar/blob/b35aa1e8501051ab3541cea2f43f0609b214f9a1/src/state.ts#L125-L136)\n\n主体选择。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n  function hostFor(probe: Probe, routes: readonly string[]): ProbeHost {\n    const override = input.config.sourceOverrides[probe.id]\n    // The first registered route this source answers for: the credential the\n    // routed adapter would use belongs to that route, not to the plugin.\n    const route = routes.find((candidate) => probe.match(candidate))\n    const routeApiKeyEnv = route === undefined ? undefined : input.piAiApiKeyEnv?.(route)\n    return {\n      config: input.config,\n      timeoutMs: input.config.timeoutMs,\n      fetchImpl,\n      ...(route === undefined ? {} : { routeId: route }),\n      ...(routeApiKeyEnv === undefined ? {} : { routeApiKeyEnv }),\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/providers/kimi-code.ts:226-257](https://github.com/AlienGene/dsh-llm-balance-siderbar/blob/b35aa1e8501051ab3541cea2f43f0609b214f9a1/src/providers/kimi-code.ts#L226-L257)\n\n续期写回窗口。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\n  if (!host.config.kimiCode.persistRefreshedToken) return false\n  let current: string | null = null\n  try {\n    current = await readFile(file, 'utf8')\n  } catch {\n    current = null\n  }\n  if (current === null || current !== rawBefore) {\n    host.warn('kimi credential changed while refreshing; the new token stays in memory')\n    return false\n  }\n  let document: Record<string, unknown>\n  try {\n    document = recordOf(JSON.parse(current) as unknown)\n  } catch {\n    document = {}\n  }\n  const expiresIn = numberOf(response['expires_in'])\n  const merged: Record<string, unknown> = {\n    ...document,\n    access_token: tokens.accessToken,\n    refresh_token: tokens.refreshToken,\n    scope: typeof document['scope'] === 'string' ? document['scope'] : 'kimi-code',\n    token_type: typeof document['token_type'] === 'string' ? document['token_type'] : 'Bearer',\n    expires_at: Math.floor((tokens.expiresAtMs ?? Date.now() + 900_000) / 1000),\n  }\n  if (expiresIn !== null) merged['expires_in'] = expiresIn\n  const temporary = `${file}.tmp-${process.pid}`\n  try {\n    await mkdir(dirname(file), { recursive: true })\n    await writeFile(temporary, `${JSON.stringify(merged, null, 2)}\\n`, { encoding: 'utf8', mode: 0o600 })\n    await rename(temporary, file)\n```\n\n</details>\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：7f58de24f5df20171a706553cfdbe730f2b52f1a33048c49a6dc7604c38f17b8。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 10 | 3532 | 2908 | 668 | — |\n| .md | source | 3 | 194 | — | — | 2188 |\n| .mjs | source | 2 | 230 | 189 | 24 | — |\n| .ts | source | 18 | 3033 | 2089 | 712 | — |\n| .tsx | source | 2 | 835 | 714 | 62 | — |\n| .mjs | test | 7 | 1624 | 1417 | 92 | — |\n\n排除 10 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| provider探测 | 已接入账号余额/套餐 | 同类首route身份 |\n| 卡片/容错缓存 | 少切控制台 | 旧值与账号需核 |\n| Kimi续期 | 延长读取登录态 | 默认写CLI凭据 |\n\n## 工程亮点\n\nprovider和纯format/state分离、inFlight容错可借鉴；需账号cache、请求准入与真正版本守卫续期。详见[Q04](#research-q04)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、src/index.ts、src/route.ts、src/state.ts、src/http.ts、src/config.ts、src/format.ts、src/providers/deepseek.ts、src/providers/kimi-code.ts、src/providers/index.ts、client/client.js、test/state.test.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定host/state/route/http、DeepSeek与Kimi凭据关键链、config、format、客户端轮询和state测试；未穷尽全部provider/GUI，不执行目标。\n- 下一步：进一步从双账号、TTL换key、CLI并发续期、匿名route和慢body探讨分区缓存与显式更新。\n",
         "metadata": {
             "repository": "AlienGene/dsh-llm-balance-siderbar",
             "repository_id": 1366370702,
-            "captured_at": "2026-10-21T08:00:19.627Z",
-            "window_start": "2026-09-21T08:00:19.627Z",
+            "captured_at": "2026-10-22T05:50:43.862Z",
+            "window_start": "2026-09-22T05:50:43.862Z",
             "stars": 0,
             "pushed_at": "2026-09-12T03:45:41Z",
             "issues": {
@@ -394,15 +483,15 @@
             "errors": [],
             "npm": {
                 "package_name": "dsh-llm-balance",
-                "captured_at": "2026-10-21T08:00:38.037Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 859,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-llm-balance",
+                "captured_at": "2026-10-22T05:50:55.760Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 847,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-llm-balance",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-09-12T02:49:00.785Z",
-                    "captured_at": "2026-10-21T08:00:38.037Z",
+                    "captured_at": "2026-10-22T05:50:55.760Z",
                     "source_url": "https://registry.npmjs.org/dsh-llm-balance",
                     "error": null,
                     "latest_version": "0.7.1",
@@ -416,14 +505,14 @@
             "repository": "AlienGene/dsh-llm-balance-siderbar",
             "path": "",
             "revision": "b35aa1e8501051ab3541cea2f43f0609b214f9a1",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "ad28f9ebd94789ab2feea223a1d912d2f2c176a5d5c34f660efb3e17860748da",
                 "code": "b35aa1e8501051ab3541cea2f43f0609b214f9a1",
                 "maintenance": "279ee6ead00bc770641b74e31d328dc745c3894e8ad7165eabebe4641efd52c9"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

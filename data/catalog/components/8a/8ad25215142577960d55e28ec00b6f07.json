@@ -24,36 +24,94 @@
             },
             "sources": [
                 {
-                    "id": "20261020-incremental40-r2-github-1374274469-root-directory-0",
+                    "id": "2026-10-22-02-github-1374274469-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
-                    "retrieved_at": "2026-10-20T04:34:32.047Z",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-22T05:30:02.641Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "20261020-incremental40-r2-github-1374274469-root-author",
+                    "id": "2026-10-22-02-github-1374274469-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/1624318455/dsh-plugin-adapter/blob/db7f273bd7caf2bb87c2428dcb8bd883eb338d1c/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/1624318455/dsh-plugin-adapter",
+                            "commit": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c",
+                            "path": "README.md",
+                            "content_sha256": "fc5a67a32cc9c91bb2ca461d32665b7ddfe00137edcc3c6a7b475fe066c0e40e"
+                        }
+                    ],
                     "revision": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c",
-                    "captured_at": "2026-10-20T04:34:32.047Z",
-                    "summary": "把OpenCode Zen模型接入DSH模型目录，提供原生流式适配与可选网络路由管理。",
-                    "artifact": "data/runs/2026-10-20-04/snapshots/1624318455--dsh-plugin-adapter/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:30:02.641Z",
+                    "summary": "把匿名 Zen 模型通道接为 DSH 原生 LlmAdapter，附目录回退和可选 IP 池。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/1624318455--dsh-plugin-adapter/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "20261020-incremental40-r2-github-1374274469-root-source",
+                    "id": "2026-10-22-02-github-1374274469-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/1624318455/dsh-plugin-adapter/blob/db7f273bd7caf2bb87c2428dcb8bd883eb338d1c/packages/plugin/package.json",
+                    "url": "https://github.com/1624318455/dsh-plugin-adapter/blob/db7f273bd7caf2bb87c2428dcb8bd883eb338d1c/README.zh-CN.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/1624318455/dsh-plugin-adapter",
+                            "commit": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c",
+                            "path": "README.zh-CN.md",
+                            "content_sha256": "648c8a8ca269bbbb107f8ebc4a853324dab7343a4d783ba9eb423228029ac507"
+                        },
+                        {
+                            "repository_url": "https://github.com/1624318455/dsh-plugin-adapter",
+                            "commit": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c",
+                            "path": "packages/plugin/package.json",
+                            "content_sha256": "b1f3dadf02afb41405a402a3d4b0bdb416366bffa00e55becc45cd9fb27bc7fb"
+                        },
+                        {
+                            "repository_url": "https://github.com/1624318455/dsh-plugin-adapter",
+                            "commit": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c",
+                            "path": "packages/plugin/src/index.ts",
+                            "content_sha256": "db84938c37885257e19ba2f0f2e45f7eaf3261f2776a0a190b9157ea166afaf3"
+                        },
+                        {
+                            "repository_url": "https://github.com/1624318455/dsh-plugin-adapter",
+                            "commit": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c",
+                            "path": "packages/plugin/src/adapter/catalog.ts",
+                            "content_sha256": "969b0c70835f3781968f73540670fc1271b77c082b3eb97651de7ed5ef62065b"
+                        },
+                        {
+                            "repository_url": "https://github.com/1624318455/dsh-plugin-adapter",
+                            "commit": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c",
+                            "path": "packages/plugin/src/adapter/zen-adapter.ts",
+                            "content_sha256": "9afcb722ff8919264e0ceb187e7f2807ff9330e2dc85ab15b4601c12fed47a58"
+                        },
+                        {
+                            "repository_url": "https://github.com/1624318455/dsh-plugin-adapter",
+                            "commit": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c",
+                            "path": "packages/plugin/src/pool/dispatcher.ts",
+                            "content_sha256": "08742adf308fc8f66a3147b725194c84ae99c17e920a8eddd408652be31e2bc4"
+                        },
+                        {
+                            "repository_url": "https://github.com/1624318455/dsh-plugin-adapter",
+                            "commit": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c",
+                            "path": "packages/plugin/src/pool/admission.ts",
+                            "content_sha256": "34041662f12532edd35b7210fbff8893e646eaf4641e4aa7ca8884b90faee369"
+                        },
+                        {
+                            "repository_url": "https://github.com/1624318455/dsh-plugin-adapter",
+                            "commit": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c",
+                            "path": "packages/plugin/src/pool/pool.ts",
+                            "content_sha256": "b1ef0bcedf3d31ea9c881ceaa8d7f0e6623cc8919ed50f6d144c9e0828a3b8e2"
+                        }
+                    ],
                     "revision": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c",
-                    "captured_at": "2026-10-20T04:34:32.047Z",
-                    "summary": "核查 packages/plugin/package.json、packages/plugin/src/index.ts、packages/plugin/src/provider.ts、packages/plugin/src/adapter/catalog.ts；packages/plugin/src/index.ts默认注册zen-free及旧别名LlmAdapter，后台预热模型目录；另保留sidecar和可选IP池/代理配置。",
-                    "artifact": "data/runs/2026-10-20-04/snapshots/1624318455--dsh-plugin-adapter/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:30:02.641Z",
+                    "summary": "核查 README.zh-CN.md、packages/plugin/package.json、packages/plugin/src/index.ts、packages/plugin/src/adapter/catalog.ts、packages/plugin/src/adapter/zen-adapter.ts、packages/plugin/src/pool/dispatcher.ts、packages/plugin/src/pool/admission.ts、packages/plugin/src/pool/pool.ts；默认注册 ZenAdapter，后台合并 Zen 列表与 models.dev 元数据/静态候选；用 pi-ai 流式转换协议，IP 池按需接线。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/1624318455--dsh-plugin-adapter/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "匿名免费通道是否可用取决于上游，仿CLI请求不构成稳定服务承诺；未验证模型目录、工具语义或网络路由。",
+                        "审阅固定提交 0.3.9 的 README、包与现行 TS adapter/目录/IP 池核心源码，legacy Go 仅判定为可选旧模式；未运行目标插件、测试或外部模型请求。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +122,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "希望在DSH尝试Zen模型的用户需要原生会话和工具调用接口，验收需包括流式文本、工具结果与失败恢复。",
+                    "text": "DSH 用户希望在模型选择器直接使用上游匿名通道；合格结果须当前可用且符合上游接入条件。",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1374274469-root-source"
+                        "2026-10-22-02-github-1374274469-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +133,16 @@
                             "fingerprint": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:34:32.047Z",
+                    "reviewed_at": "2026-10-22T05:30:02.641Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "packages/plugin/src/index.ts默认注册zen-free及旧别名LlmAdapter，后台预热模型目录；另保留sidecar和可选IP池/代理配置。",
+                    "text": "默认注册 ZenAdapter，后台合并 Zen 列表与 models.dev 元数据/静态候选；用 pi-ai 流式转换协议，IP 池按需接线。",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1374274469-root-source"
+                        "2026-10-22-02-github-1374274469-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +151,16 @@
                             "fingerprint": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:34:32.047Z",
+                    "reviewed_at": "2026-10-22T05:30:02.641Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "匿名免费通道是否可用取决于上游，仿CLI请求不构成稳定服务承诺；未验证模型目录、工具语义或网络路由。",
+                    "text": "审阅固定提交 0.3.9 的 README、包与现行 TS adapter/目录/IP 池核心源码，legacy Go 仅判定为可选旧模式；未运行目标插件、测试或外部模型请求。",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1374274469-root-source"
+                        "2026-10-22-02-github-1374274469-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +169,16 @@
                             "fingerprint": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:34:32.047Z",
+                    "reviewed_at": "2026-10-22T05:30:02.641Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "根是private包装包，依赖^0.3.4；仓库内插件子包0.3.9，Node>=20。根安装可解析外部版本，不能把本轮源码SHA当成实际npm产物。",
+                    "text": "固定源码包 0.3.9 MIT、Node>=20；查询时 npm latest 0.4.0、近 30 天下载 473，数字只作当时元数据，不代表 0.3.9 用户效果。",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1374274469-root-source"
+                        "2026-10-22-02-github-1374274469-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +187,16 @@
                             "fingerprint": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:34:32.047Z",
+                    "reviewed_at": "2026-10-22T05:30:02.641Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "无key是作者描述的接入方式，不等于无流量或运维成本；重试、上游限流及可选代理池有额外负担，未测可用性或单位任务成本。",
+                    "text": "| 阶段 | 投入 | 未知 |\n| --- | --- | --- |\n| 初次 | DSH/Node、网络与模型准入核验 | 兼容时间 |\n| 持续 | 目录刷新、请求流、可选代理探测 | 配额、延迟、网络/代理成本 |\n| 恢复 | 区分上游拒绝、模型失效、代理故障 | 人工工时与误路由 |",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1374274469-root-source"
+                        "2026-10-22-02-github-1374274469-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +205,16 @@
                             "fingerprint": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:34:32.047Z",
+                    "reviewed_at": "2026-10-22T05:30:02.641Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "适合非关键试验，先用原生adapter模式验证小任务，保留可用供应商回退；不要把免费通道当生产容量保证。",
+                    "text": "确认当前上游允许的接入和模型，固定版本先直连试用；只有可信代理和明确出口需求才开启池。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1374274469-root-source"
+                        "2026-10-22-02-github-1374274469-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +223,16 @@
                             "fingerprint": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:34:32.047Z",
+                    "reviewed_at": "2026-10-22T05:30:02.641Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "原生适配减少单独进程与UI切换；上游匿名接口变化可能让全部便利失效，需与直接使用原CLI比较维护负担。",
+                    "text": "| 效果 | 源码证据 | 未证实 |\n| --- | --- | --- |\n| 选择器集成 | 立即注册 zen-free，目录后台更新 | 当前网关可用率 |\n| 流错误处理 | 首事件/中途 watchdog、仅首内容前轮换 | 故障恢复成功率 |\n| 免费候选 | 元数据及静态回退 | 当前免费额度与准入 |",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1374274469-root-source"
+                        "2026-10-22-02-github-1374274469-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +241,16 @@
                             "fingerprint": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:34:32.047Z",
+                    "reviewed_at": "2026-10-22T05:30:02.641Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "默认adapter与legacy sidecar分开，缺llm时显式报错；网络池、安装器与代理管理扩大接入面的维护复杂度。",
+                    "text": "adapter 分支无额外进程，sidecar 单独旧模式；目录缓存和健康快照确实写盘。流式前内容失败至多三次出口轮换，部分内容后不重放。可选代理池增加网络、信任与故障归因复杂性。",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1374274469-root-source"
+                        "2026-10-22-02-github-1374274469-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,40 +259,135 @@
                             "fingerprint": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:34:32.047Z",
+                    "reviewed_at": "2026-10-22T05:30:02.641Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "在 DSH 提供原生 LlmAdapter、动态目录和流错误处理；沿用 OpenCode 通道及上游项目和 pi-ai，贡献重点是宿主接线与韧性修正。详见[Q02](#research-q02)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1374274469-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1374274469:root",
+                            "area": "code",
+                            "fingerprint": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T05:30:02.641Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "静态目录可在实时列表缺席时暴露模型，选择器可见不保证可用；伪装请求头及可选代理池还依赖上游准入和信任。详见[Q03](#research-q03)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1374274469-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1374274469:root",
+                            "area": "code",
+                            "fingerprint": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T05:30:02.641Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "可把目录来源、模型请求结果和出口健康联成每模型可信度闸门；通过目录变更与故障注入对照误展示、误归因及成本，尚未实现。详见[Q05](#research-q05)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1374274469-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1374274469:root",
+                            "area": "code",
+                            "fingerprint": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T05:30:02.641Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-20T04:34:32.047Z",
+            "last_checked_at": "2026-10-22T05:30:02.641Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c",
+                "reviewed_at": "2026-10-22T05:30:02.641Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1374274469:root",
+                        "area": "code",
+                        "fingerprint": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "rationale": "原生 adapter 和目录/错误接线有机制增量，但匿名网关与 pi-ai 非本包原创，跨层假设未计。",
+                    "basis": "interpretation",
+                    "score": 33,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1374274469-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 0
+                    },
+                    "rationale": "选择器接入方便；上游准入、配额和成功请求成本不确定。",
+                    "basis": "interpretation",
+                    "score": 22,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1374274469-root-source"
+                    ]
+                }
+            },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "observe",
-                "reason": "Zen原生适配有试验价值，但根安装外部版本与固定源码不一致，先固定实际子包并核对流与工具终态。",
+                "reason": "网关准入与真实模型可用性未核；先固定版本直连小规模验收，代理池需单独信任评估。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "已有Zen用户在宿主原生会话接入的任务具体。"
+                        "rationale": "DSH 使用可选模型入口的场景清楚。"
                     },
                     "advantage": {
-                        "score": 13,
-                        "rationale": "原生adapter省进程切换，但原CLI可直接替代。"
+                        "score": 6,
+                        "rationale": "原生入口便利，但官方客户端和获授权 API 可替代。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "适配和目录预热可查，根包装依赖与仓库子包版本不同。"
+                        "rationale": "固定源码支持路径；无本轮网关或宿主运行。"
                     },
                     "cost": {
                         "score": 5,
-                        "rationale": "匿名上游容量、代理池及实际安装版本漂移增加维护。"
+                        "rationale": "零现金声称不等于配额、代理和失败恢复成本已知。"
                     }
                 },
-                "score": 54,
+                "score": 47,
                 "revision": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T05:30:02.641Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "20261020-incremental40-r2-github-1374274469-root-source"
+                    "2026-10-22-02-github-1374274469-root-source"
                 ],
                 "dependencies": [
                     {
@@ -259,86 +412,57 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-20T04:25:27.514Z",
-            "analysis_sha256": "4b6b7061509dd7d7a637b84a708a682773b109cc65689b5e7388a92e0a901459"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "63f540cc1c435c8b5b9baf8a74b64b5d68e25acc380245afed461b974add9135"
         },
         "publication.metadata": "data/plugins/1624318455--dsh-plugin-adapter/META.json",
         "publication.summaries": {
-            "text": "把OpenCode Zen模型接入DSH模型目录，提供原生流式适配与可选网络路由管理。",
+            "text": "把匿名 Zen 模型通道接为 DSH 原生 LlmAdapter，附目录回退和可选 IP 池。",
             "revision": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c",
             "source_url": "https://github.com/1624318455/dsh-plugin-adapter/blob/db7f273bd7caf2bb87c2428dcb8bd883eb338d1c/README.md"
         },
         "publication.capabilities": {
             "revision": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c",
             "items": {
-                "后台": "原生Zen LlmAdapter、模型目录预热及legacy入口。",
-                "界面": "可选IP池设置界面。"
-            }
+                "后台": "zen-free 原生 LlmAdapter 及目录刷新、协议流转换和可选 IP 池"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| zen-free adapter | DSH 流式选模 | 当前上游准入须另核 |\n| 动态目录 | 列表和免费判定 | 静态回退可暴露失效模型 |\n| 流 watchdog | 中断静默流 | 真实恢复率未测 |\n| IP 池 | 可选出口调度 | 代理可信度与探测成本 |"
         },
         "publication.advice": {
             "revision": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c",
-            "text": "适合非关键试验，先用原生adapter模式验证小任务，保留可用供应商回退；不要把免费通道当生产容量保证。"
+            "text": "确认当前上游允许的接入和模型，固定版本先直连试用；只有可信代理和明确出口需求才开启池。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/1624318455--dsh-plugin-adapter",
-        "reports": "# dsh-plugin-adapter\n\n> 把OpenCode Zen模型接入DSH模型目录，提供原生流式适配与可选网络路由管理。\n\n## 固定范围与依据\n\n固定提交 [db7f273bd7caf2bb87c2428dcb8bd883eb338d1c](https://github.com/1624318455/dsh-plugin-adapter/blob/db7f273bd7caf2bb87c2428dcb8bd883eb338d1c/packages/plugin/package.json)；组件路径：仓库根。核查时间 2026-10-20T04:34:32.047Z；本轮基准 2026-10-20T04:25:27.514Z。\n源码抽读路径：packages/plugin/package.json、packages/plugin/src/index.ts、packages/plugin/src/provider.ts、packages/plugin/src/adapter/catalog.ts。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：希望在DSH尝试Zen模型的用户需要原生会话和工具调用接口，验收需包括流式文本、工具结果与失败恢复。\n- **亮点**：packages/plugin/src/index.ts默认注册zen-free及旧别名LlmAdapter，后台预热模型目录；另保留sidecar和可选IP池/代理配置。\n- **思考**：原生适配减少单独进程与UI切换；上游匿名接口变化可能让全部便利失效，需与直接使用原CLI比较维护负担。\n- **建议**：适合非关键试验，先用原生adapter模式验证小任务，保留可用供应商回退；不要把免费通道当生产容量保证。\n\n## 场景与替代办法\n\n希望在DSH尝试Zen模型的用户需要原生会话和工具调用接口，验收需包括流式文本、工具结果与失败恢复。\n\n此前未入档；原生付费供应商与OpenCode CLI为替代，本轮只支持机制判断，不排名模型质量或稳定性。\n\n## 依赖与流程\n\n依赖宿主llm、credentials、settings及Zen网络端点；根包装的外部依赖版本与仓库源码还需分别固定，可选sidecar另需进程与端口。\n\n选adapter模式并加载目录，发起小请求，核对流与工具结果；目录未就绪先等预热状态，失败退回已验证的模型供应商。\n\n## 成本与效果\n\n无key是作者描述的接入方式，不等于无流量或运维成本；重试、上游限流及可选代理池有额外负担，未测可用性或单位任务成本。\n\n原生适配减少单独进程与UI切换；上游匿名接口变化可能让全部便利失效，需与直接使用原CLI比较维护负担。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：94d3914cc5fb55cb5db0b88a9dd853e974b9895e4ae6d720897918554af73ba4。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 10 | 2102 | — | — | 33390 |\n| .ts | source | 27 | 7192 | 5246 | 1536 | — |\n| .tsx | source | 1 | 951 | 860 | 52 | — |\n| .ts | test | 21 | 4282 | 3604 | 485 | — |\n| .mts | test | 3 | 311 | 223 | 64 | — |\n| .mjs | source | 1 | 21 | 10 | 9 | — |\n\n排除 1 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **后台**：原生Zen LlmAdapter、模型目录预热及legacy入口。\n- **界面**：可选IP池设置界面。\n\n## 工程亮点\n\n默认adapter与legacy sidecar分开，缺llm时显式报错；网络池、安装器与代理管理扩大接入面的维护复杂度。\n\n## 分发与兼容\n\n根是private包装包，依赖^0.3.4；仓库内插件子包0.3.9，Node>=20。根安装可解析外部版本，不能把本轮源码SHA当成实际npm产物。\n\n## 历史对照\n\n当前快照此前没有该稳定身份的研究档案。此前未入档；原生付费供应商与OpenCode CLI为替代，本轮只支持机制判断，不排名模型质量或稳定性。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：匿名免费通道是否可用取决于上游，仿CLI请求不构成稳定服务承诺；未验证模型目录、工具语义或网络路由。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：固定模型和小任务测试取消、429、工具参数及空目录；同时核对安装实际解析版本，记录失败重试与人工时间。\n",
+        "reports": "# dsh-plugin-adapter\n\n> 把匿名 Zen 模型通道接为 DSH 原生 LlmAdapter，附目录回退和可选 IP 池。\n\n## 研究范围\n\n- **仓库**：[1624318455/dsh-plugin-adapter](https://github.com/1624318455/dsh-plugin-adapter)\n- **版本号**：未声明（[固定提交 db7f273bd7caf2bb87c2428dcb8bd883eb338d1c](https://github.com/1624318455/dsh-plugin-adapter/tree/db7f273bd7caf2bb87c2428dcb8bd883eb338d1c)）\n- **版本日期**：2026-09-21（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定 0.3.9 源码证实适配/目录/轮换路径；当前上游准入、模型成功率和代理隐私未独立验收。\n\n## 洞察短评\n\n- **用途**：DSH 用户希望在模型选择器直接使用上游匿名通道；合格结果须当前可用且符合上游接入条件。\n- **亮点**：在 DSH 提供原生 LlmAdapter、动态目录和流错误处理；沿用 OpenCode 通道及上游项目和 pi-ai，贡献重点是宿主接线与韧性修正。详见[Q02](#research-q02)。\n- **思考**：静态目录可在实时列表缺席时暴露模型，选择器可见不保证可用；伪装请求头及可选代理池还依赖上游准入和信任。详见[Q03](#research-q03)。\n- **建议**：可把目录来源、模型请求结果和出口健康联成每模型可信度闸门；通过目录变更与故障注入对照误展示、误归因及成本，尚未实现。详见[Q05](#research-q05)。\n\n采用建议：确认当前上游允许的接入和模型，固定版本先直连试用；只有可信代理和明确出口需求才开启池。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n在 DSH 提供原生 LlmAdapter、动态目录和流错误处理；沿用 OpenCode 通道及上游项目和 pi-ai，贡献重点是宿主接线与韧性修正。详见[Q02](#research-q02)。\n\n## 关键质疑\n\n静态目录可在实时列表缺席时暴露模型，选择器可见不保证可用；伪装请求头及可选代理池还依赖上游准入和信任。详见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可把目录来源、模型请求结果和出口健康联成每模型可信度闸门；通过目录变更与故障注入对照误展示、误归因及成本，尚未实现。详见[Q05](#research-q05)。\n\n在允许的测试条件下，以固定模型分别验目录、首事件/中途故障、403/429/5xx 与可信出口切换，并计成功请求率、延迟、探测量和人工恢复。\n\n## 场景与替代办法\n\nDSH 用户希望在模型选择器直接使用上游匿名通道；合格结果须当前可用且符合上游接入条件。\n\n基线是官方客户端或获授权模型 API，再经 DSH 标准 provider 使用；本包降低 DSH 接入步骤，但依赖匿名通道的变化。\n\n## 依赖与流程\n\n| 条件 | 用途 | 失败时 |\n| --- | --- | --- |\n| DSH LLM、Node>=20、pi-ai、undici | 原生注册和流 | 路由不可用 |\n| opencode.ai/models.dev 与当前准入 | 目录和模型 | 静态列表可能可见但请求失败 |\n| 可选可信代理 | IP 池 | 维持直连 |\n| 本地目录写权限 | 缓存和健康快照 | 诊断/回退变弱 |\n\n| 步骤 | 动作 | 判据 |\n| --- | --- | --- |\n| 准备 | 核当前准入、固定包版本 | 许可与版本清晰 |\n| 直连 | 看目录来源、发小规模请求 | 完整流与错误可解释 |\n| 扩展 | 按需接可信出口池 | 记录额外请求和故障 |\n| 恢复 | 分上游、目录和出口排障 | 不把选择器可见当可用 |\n\n## 成本与效果\n\n| 阶段 | 投入 | 未知 |\n| --- | --- | --- |\n| 初次 | DSH/Node、网络与模型准入核验 | 兼容时间 |\n| 持续 | 目录刷新、请求流、可选代理探测 | 配额、延迟、网络/代理成本 |\n| 恢复 | 区分上游拒绝、模型失效、代理故障 | 人工工时与误路由 |\n\n| 效果 | 源码证据 | 未证实 |\n| --- | --- | --- |\n| 选择器集成 | 立即注册 zen-free，目录后台更新 | 当前网关可用率 |\n| 流错误处理 | 首事件/中途 watchdog、仅首内容前轮换 | 故障恢复成功率 |\n| 免费候选 | 元数据及静态回退 | 当前免费额度与准入 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**判断现行原生模型适配器的实际运行路径、上游准入与可验证价值。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 用户需要怎样的模型入口，免费可用应如何验证？\n\n**研究主题：**场景与需求\n\n#### 完整回答\n\n项目目标是在 DSH 模型选择器提供 zen-free 匿名模型路由，旧 opencode2dsh 仅保留分发别名。合格结果要能选到目前真实可用且政策允许的模型，成功流式完成请求并正确呈现失败。README 声称无需 Key、注册和 sidecar；这是作者对特定上游通道的声明，固定源码仅证明发送 public 字面量和 CLI 形状请求，不证明 OpenCode 当前准入、免费额度或稳定可用。直接使用官方客户端/获授权 API 是基线。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.zh-CN.md:25-45](https://github.com/1624318455/dsh-plugin-adapter/blob/db7f273bd7caf2bb87c2428dcb8bd883eb338d1c/README.zh-CN.md#L25-L45)\n\n作者用途和零凭据声称。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n---\n\ndsh-plugin-adapter 会向 DSH 注册一个原生的 `LlmAdapter`，直接流式对接\n[OpenCode Zen](https://opencode.ai/zen) 的**匿名免费通道**——也就是\nOpenCode 官方 CLI 无需登录即可使用的那批免费模型，它们会以 `zen-free`\n这个常规 provider 出现在你的 DSH 模型选择器里（`opencode2dsh` 保留为\n旧会话的兼容别名）。\n\n插件发出的请求与 OpenCode CLI 的流量完全同形（相同的 User-Agent、相同的\n关联请求头），模型目录通过三级回退链保持新鲜。不用登录任何账号，也不用\n自己部署任何东西。\n\n## 特性\n\n- **零凭据、零配置**——匿名通道不需要任何 Key；装好、重启、开聊\n- **原生 adapter，无 sidecar**——一个 npm 包，没有子进程、没有二进制、没有本地端口（旧版 Go sidecar 不随包发行，见 `legacy/`）\n- **CLI 同形伪装**——请求携带 OpenCode CLI 的 User-Agent 和整套会话/请求/项目关联头，按会话派生\n- **思考等级可选**——带推理的免费模型在 DSH 模型选择器里出现思考等级选项（模型声明档位的按声明展示，其余提供 Off/Minimal/Low/Medium/High）；Off 向上游发送 `reasoning_effort: \"none\"` 真正停思考，不选则保持上游默认\n- **实时目录 + 三级回退**——上游实时列表 ∩ 元数据判定免费，断网时依次回退到磁盘缓存与已验证的静态名单\n- **自愈能力**——启动期快速重试、周期刷新，并落盘健康快照便于排查\n- **规范的错误呈现**——上游故障（限流、鉴权、超时、传输）以分类的 finish 原因送达 DSH，重试策略始终由 DSH 掌控\n```\n\n</details>\n\n**依据 2 · 源码核查**：[packages/plugin/src/index.ts:53-73](https://github.com/1624318455/dsh-plugin-adapter/blob/db7f273bd7caf2bb87c2428dcb8bd883eb338d1c/packages/plugin/src/index.ts#L53-L73)\n\n默认 adapter 分支。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n/** Cordis plugin id. INTENTIONALLY NOT renamed: must match cordis.patch.yml and existing installs. */\nexport const name = 'opencode2dsh'\nexport const inject = ['llm', 'credentials', 'settings'] as const\nexport function apply(ctx: PluginContext, config: DshPluginAdapterConfig = {}): { ready: Promise<ReadyInfo> } {\n  if (resolveConfig(config).mode === 'sidecar') return applySidecar(ctx, config)\n  return applyAdapter(ctx, config)\n}\n\n/**\n * Adapter mode: catalog + LlmAdapter registration. The adapter registration\n * is disposed with the plugin fiber (registerAdapter uses ctx.effect\n * internally); we only own the catalog refresh loop here.\n */\nfunction applyAdapter(ctx: PluginContext, config: DshPluginAdapterConfig): { ready: Promise<{ port: number; version: string }> } {\n  const logger = ctx.logger\n  const cfg = resolveConfig(config)\n  const ready = Promise.resolve({ port: 0, version: 'adapter' })\n\n  if (!ctx.llm || typeof ctx.llm.registerAdapter !== 'function') {\n    logger.error('dsh-plugin-adapter: llm service unavailable; adapter mode cannot register')\n    return { ready }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[packages/plugin/src/adapter/zen-adapter.ts:246-258](https://github.com/1624318455/dsh-plugin-adapter/blob/db7f273bd7caf2bb87c2428dcb8bd883eb338d1c/packages/plugin/src/adapter/zen-adapter.ts#L246-L258)\n\n只展示 zen-free 组，保留旧别名。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n  /** Advisory catalog for the DSH model picker (deduped; dsh-llm rejects duplicates). */\n  listModels(provider: string): Array<{ provider: string; id: string; name: string; inputModalities: string[] }> {\n    // The legacy alias stays dispatchable for old sessions but must not\n    // render a second picker group.\n    if (provider !== PROVIDER_ID) return []\n    const seen = new Set<string>()\n    const models: Array<{ provider: string; id: string; name: string; inputModalities: string[] }> = []\n    for (const id of this.#catalog.list()) {\n      if (seen.has(id)) continue\n      seen.add(id)\n      models.push({ provider, id, name: id, inputModalities: ['text'] })\n    }\n    return models\n```\n\n</details>\n\n**依据 4 · 源码核查**：[packages/plugin/src/adapter/zen-adapter.ts:500-535](https://github.com/1624318455/dsh-plugin-adapter/blob/db7f273bd7caf2bb87c2428dcb8bd883eb338d1c/packages/plugin/src/adapter/zen-adapter.ts#L500-L535)\n\n匿名 key 和请求头落在实际协议调用。\n\n<details>\n<summary>查看原文（36行）</summary>\n\n```text\n    if (isResponsesModel(model.id) && this.#responsesProvider) {\n      return this.#responsesProvider.streamSimple(model, context as unknown as Context, {\n        apiKey: ANONYMOUS_KEY,\n        sessionId: ids.session,\n        headers: disguiseHeaders(ids),\n        onPayload: ensureFreeLaneShapeResponses,\n        signal: options.signal,\n        maxRetries: 0,\n        temperature: options.temperature,\n        maxTokens: options.maxTokens,\n      })\n    }\n    // onPayload injects the free-lane gate tools (adapter/messages.ts) into the\n    // serialized body right before dispatch — plain-chat contexts carry no\n    // tools and the anonymous lane 403s every body without bash+read. The same\n    // seam carries the selected reasoning effort: pi-ai has no option with the\n    // wire semantics this lane needs (selected off must SEND `none`, not omit),\n    // so the effort rides the payload rewrite instead.\n    const effortWire = reasoningEffortWire(options.reasoningEffort)\n    const onPayload =\n      effortWire === undefined\n        ? ensureFreeLaneShape\n        : (payload: unknown): unknown => {\n            const shaped = ensureFreeLaneShape(payload)\n            if (typeof payload !== 'object' || payload === null || Array.isArray(payload)) return shaped\n            return { ...((shaped ?? payload) as Record<string, unknown>), reasoning_effort: effortWire }\n          }\n    return this.#provider.streamSimple(model, context as unknown as Context, {\n      apiKey: ANONYMOUS_KEY,\n      sessionId: ids.session,\n      headers: disguiseHeaders(ids),\n      onPayload,\n      signal: options.signal,\n      maxRetries: 0,\n      temperature: options.temperature,\n      maxTokens: options.maxTokens,\n```\n\n</details>\n\n#### 缺口\n\n- 未核官方当前准入、条款和网关实测。\n  **影响：**不能称所有列出的模型永久免费或可用。\n  **进一步探讨：**采用前以官方文档和合法账户条件核对，再隔离做小额模型请求。\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 现行 adapter 怎样把目录、DSH 与流式协议接起来，增量归谁？\n\n**研究主题：**功能与机制、贡献与相对优势\n\n#### 完整回答\n\napply 默认分支立即注册 ZenAdapter，再后台启动目录刷新；目录取 Zen /v1/models，与 models.dev 价格/能力元数据及静态候选作判定，缓存可离线兜底。ZenAdapter 转换 DSH 上下文与 pi-ai 事件，为 Responses-only 模型选 /responses，其余走 chat completions，并提供思考档位。README 明说源自 FishBottle7/opencode2dsh 与 opencode2api；本 fork 可见增量包括 DSH host 注册、目录顺序修正、错误/空流看门狗和 IP 池接线，不将免费模型服务或 pi-ai 协议归作原创。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/plugin/src/index.ts:66-140](https://github.com/1624318455/dsh-plugin-adapter/blob/db7f273bd7caf2bb87c2428dcb8bd883eb338d1c/packages/plugin/src/index.ts#L66-L140)\n\n立即注册和后台目录生命周期。\n\n<details>\n<summary>查看原文（75行）</summary>\n\n```text\nfunction applyAdapter(ctx: PluginContext, config: DshPluginAdapterConfig): { ready: Promise<{ port: number; version: string }> } {\n  const logger = ctx.logger\n  const cfg = resolveConfig(config)\n  const ready = Promise.resolve({ port: 0, version: 'adapter' })\n\n  if (!ctx.llm || typeof ctx.llm.registerAdapter !== 'function') {\n    logger.error('dsh-plugin-adapter: llm service unavailable; adapter mode cannot register')\n    return { ready }\n  }\n\n  // IP-pool exit routing (docs/ip-pool.md IP-1..IP-5): manual proxies,\n  // pinned, free sources, subscriptions, and (IP-5) the settings namespace\n  // with live apply + the /status /probe bridge. Opt-in via settings page or\n  // cordis.patch.yml; disabled keeps the process byte-for-byte on direct.\n  // Lifecycle (assembly on first enable, live reconfigure, dispose) is owned\n  // by applyIpPoolSettings through the plugin fiber.\n  const dataDir = join(homedir(), '.opencode2dsh')\n  const statusPath = join(dataDir, 'adapter-status.json')\n  const writeStatus = (status: CatalogSnapshot, lastError: string): void => {\n    void writeFile(\n      statusPath,\n      JSON.stringify({ ...status, lastError, writtenAt: new Date().toISOString() }, null, 2),\n      'utf8',\n    ).catch(() => {})\n  }\n\n  const catalog = new ModelCatalog({\n    refreshSeconds: cfg.refreshSeconds,\n    cachePath: defaultCachePath(dataDir),\n    onRefresh: (status, lastError) => {\n      writeStatus(status, lastError)\n      if (lastError) logger.warn(`dsh-plugin-adapter: catalog refresh issue: ${lastError}`)\n    },\n  })\n  const adapter = new ZenAdapter(catalog, { sessionOverride: cfg.gatewaySession })\n\n  // IP-pool exit routing (docs/ip-pool.md IP-1..IP-5): manual proxies,\n  // pinned, free sources, subscriptions, and (IP-5) the settings namespace\n  // with live apply + the /status /models /probe bridge. Opt-in via settings\n  // page or cordis.patch.yml; disabled keeps the process byte-for-byte on\n  // direct. Lifecycle (assembly on first enable, live reconfigure, dispose) is\n  // owned by applyIpPoolSettings through the plugin fiber. The probe-model\n  // dropdown rows include the live catalog, so this must run after the\n  // catalog instance exists.\n  applyIpPoolSettings(ctx, config, logger, { listLiveModels: () => catalog.list() })\n\n  // Register immediately: the provider must appear in the selector right\n  // away, even while the catalog is still warming up (listModels is read\n  // live at selector time, so models appear as refreshes land).\n  ctx.llm.registerAdapter([PROVIDER_ID, LEGACY_PROVIDER_ID], adapter)\n  logger.info(`dsh-plugin-adapter: adapter registered for \"${PROVIDER_ID}\" (legacy alias \"${LEGACY_PROVIDER_ID}\", catalog warms up in background)`)\n  void catalog.start().catch((err) => {\n    logger.error(`dsh-plugin-adapter: catalog start failed: ${err instanceof Error ? err.message : String(err)}`)\n  })\n\n  // A sidecar leftover (llm-pi-ai.providers.opencode2dsh pointing at a dead\n  // local port) would shadow the adapter registration and fail every dispatch\n  // with a connection error. Remove it before the route can be used.\n  if (ctx.settings) {\n    removeProviderRoute({ settings: ctx.settings }, cfg.providerId)\n      .then((removed) => {\n        if (removed) logger.info(`dsh-plugin-adapter: removed stale sidecar route for \"${cfg.providerId}\" from llm-pi-ai settings`)\n      })\n      .catch((err) => {\n        logger.warn(`dsh-plugin-adapter: stale route cleanup failed: ${err instanceof Error ? err.message : String(err)}`)\n      })\n  }\n\n  const maybeEffect = (ctx as { effect?: PluginContext['effect'] }).effect\n  if (typeof maybeEffect === 'function') {\n    maybeEffect.call(ctx, () => () => {\n      catalog.stop()\n    })\n  }\n  return { ready }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[packages/plugin/src/adapter/catalog.ts:96-114](https://github.com/1624318455/dsh-plugin-adapter/blob/db7f273bd7caf2bb87c2428dcb8bd883eb338d1c/packages/plugin/src/adapter/catalog.ts#L96-L114)\n\n免费判定优先元数据。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\nexport function decide(model: string, prices: Map<string, ModelPrice>, ready: boolean): AnonymousDecision {\n  const nameFree = isFreeModel(model)\n  const fallback = (source: string): AnonymousDecision => {\n    if (nameFree) return { allowed: true, source: 'name_free', known: false }\n    return { allowed: false, source, known: false }\n  }\n  if (!ready || prices.size === 0) return fallback('metadata_pending')\n  const price = prices.get(model)\n  if (!price) return fallback('metadata_model_missing')\n  if (price.deprecated) return { allowed: false, source: 'metadata_deprecated', known: true }\n  const metadataFree = price.input === 0 && price.output === 0\n  if (metadataFree) {\n    return { allowed: true, source: nameFree ? 'name_and_metadata_free' : 'metadata_free', known: true }\n  }\n  if (price.input === undefined || price.output === undefined) {\n    return { allowed: false, source: 'metadata_cost_unknown', known: false }\n  }\n  return { allowed: false, source: 'metadata_paid', known: true }\n}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[packages/plugin/src/adapter/catalog.ts:280-378](https://github.com/1624318455/dsh-plugin-adapter/blob/db7f273bd7caf2bb87c2428dcb8bd883eb338d1c/packages/plugin/src/adapter/catalog.ts#L280-L378)\n\n目录刷新及静态回退。\n\n<details>\n<summary>查看原文（99行）</summary>\n\n```text\n  /**\n   * Start the refresh loop: immediate S1+S2, fast retries while the live\n   * catalog is still empty (the first fetch often races the machine's network\n   * coming up — VPN/TUN reconnect, DNS), then the normal cadence (S2 24h).\n   */\n  async start(): Promise<void> {\n    await this.refreshOnce()\n    let attempts = 0\n    while (this.#zen.size === 0 && attempts < 4 && !this.#stopped) {\n      attempts += 1\n      await new Promise((resolve) => setTimeout(resolve, this.#startupRetryMs))\n      if (this.#stopped) return\n      await this.refreshOnce()\n    }\n    if (this.#stopped) return\n    this.#timer = setInterval(() => {\n      void this.refreshOnce()\n    }, this.#refreshSeconds * 1000)\n    this.#timer.unref?.()\n  }\n\n  stop(): void {\n    this.#stopped = true\n    if (this.#timer) {\n      clearInterval(this.#timer)\n      this.#timer = null\n    }\n  }\n\n  async refreshOnce(): Promise<void> {\n    await Promise.allSettled([this.refreshZen(), this.refreshMetadata()])\n    if (this.#onRefresh) {\n      try {\n        this.#onRefresh(this.snapshot(), this.#lastError)\n      } catch {\n        // observers must never break the refresh loop\n      }\n    }\n  }\n\n  async refreshZen(): Promise<void> {\n    try {\n      const ids = await fetchZenModels(this.#zenBaseUrl, this.#fetch, opencodeUserAgent())\n      this.#zen = new Set(ids)\n      this.#updatedAt = this.#now()\n      this.#lastError = ''\n    } catch (err) {\n      this.#lastError = err instanceof Error ? err.message : String(err)\n    }\n  }\n\n  async refreshMetadata(): Promise<void> {\n    try {\n      const response = await withTimeout(this.#fetch(this.#metadataUrl, { headers: { accept: 'application/json' } }))\n      if (!response.ok) throw new Error(`models.dev returned HTTP ${response.status}`)\n      const data = (await response.json()) as unknown\n      const prices = decodeModelsDev(data)\n      if (prices.size === 0) throw new Error('models.dev contains no OpenCode model metadata')\n      this.#prices = prices\n      this.#pricesReady = true\n      if (this.#cachePath) await saveMetadataCache(this.#cachePath, prices, this.#now())\n    } catch (err) {\n      // Network failure with a cached copy is not fatal: load the cache.\n      if (this.#cachePath && !this.#pricesReady) {\n        const cached = await loadMetadataCache(this.#cachePath).catch(() => null)\n        if (cached && cached.size > 0) {\n          this.#prices = cached\n          this.#pricesReady = true\n          return\n        }\n      }\n      this.#lastError = err instanceof Error ? err.message : String(err)\n    }\n  }\n\n  decision(model: string): AnonymousDecision {\n    const metadata = decide(model, this.#prices, this.#pricesReady)\n    // The S3 vouch only covers ids metadata cannot speak for. A metadata\n    // verdict of deprecated is Known, but S3 entries are compile-time verified\n    // against the live lane, so an S3 id stays vouched even when stale\n    // metadata claims deprecation (hy3-free case: works after models.dev\n    // flags it, dies only when it leaves the Zen catalog).\n    if (!metadata.allowed && metadata.source === 'metadata_deprecated' && staticFreeModels.includes(model)) {\n      return { allowed: true, source: 'static_verified', known: false }\n    }\n    if (!metadata.allowed && !metadata.known && staticFreeModels.includes(model)) {\n      return { allowed: true, source: 'static_verified', known: false }\n    }\n    return metadata\n  }\n\n  /** ids exposed to DSH: S1 ∩ allowed, or S3 while the live catalog is pending. */\n  list(): string[] {\n    if (this.#zen.size === 0) return [...staticFreeModels]\n    const out: string[] = []\n    for (const model of this.#zen) {\n      if (this.decision(model).allowed) out.push(model)\n    }\n    return out.sort()\n```\n\n</details>\n\n**依据 4 · 源码核查**：[packages/plugin/src/adapter/zen-adapter.ts:490-535](https://github.com/1624318455/dsh-plugin-adapter/blob/db7f273bd7caf2bb87c2428dcb8bd883eb338d1c/packages/plugin/src/adapter/zen-adapter.ts#L490-L535)\n\nResponses/chat 两条协议路径。\n\n<details>\n<summary>查看原文（46行）</summary>\n\n```text\n  #eventsFor(\n    options: HarnessGenerateOptions,\n    context: ReturnType<typeof toPiContext>,\n    ids: ReturnType<typeof deriveRequestIDs>,\n    model: ReturnType<typeof toPiModel>,\n  ): unknown {\n    // Structural boundary: PiContext (own types, unit-tested) -> pi-ai Context.\n    // Responses-only models (muse-spark-*) must hit /responses, not\n    // /chat/completions. The responses path is verified live without payload\n    // shaping; the chat path keeps upstream's gate-tools/effort rewrite.\n    if (isResponsesModel(model.id) && this.#responsesProvider) {\n      return this.#responsesProvider.streamSimple(model, context as unknown as Context, {\n        apiKey: ANONYMOUS_KEY,\n        sessionId: ids.session,\n        headers: disguiseHeaders(ids),\n        onPayload: ensureFreeLaneShapeResponses,\n        signal: options.signal,\n        maxRetries: 0,\n        temperature: options.temperature,\n        maxTokens: options.maxTokens,\n      })\n    }\n    // onPayload injects the free-lane gate tools (adapter/messages.ts) into the\n    // serialized body right before dispatch — plain-chat contexts carry no\n    // tools and the anonymous lane 403s every body without bash+read. The same\n    // seam carries the selected reasoning effort: pi-ai has no option with the\n    // wire semantics this lane needs (selected off must SEND `none`, not omit),\n    // so the effort rides the payload rewrite instead.\n    const effortWire = reasoningEffortWire(options.reasoningEffort)\n    const onPayload =\n      effortWire === undefined\n        ? ensureFreeLaneShape\n        : (payload: unknown): unknown => {\n            const shaped = ensureFreeLaneShape(payload)\n            if (typeof payload !== 'object' || payload === null || Array.isArray(payload)) return shaped\n            return { ...((shaped ?? payload) as Record<string, unknown>), reasoning_effort: effortWire }\n          }\n    return this.#provider.streamSimple(model, context as unknown as Context, {\n      apiKey: ANONYMOUS_KEY,\n      sessionId: ids.session,\n      headers: disguiseHeaders(ids),\n      onPayload,\n      signal: options.signal,\n      maxRetries: 0,\n      temperature: options.temperature,\n      maxTokens: options.maxTokens,\n```\n\n</details>\n\n**依据 5 · 作者声明**：[README.zh-CN.md:200-209](https://github.com/1624318455/dsh-plugin-adapter/blob/db7f273bd7caf2bb87c2428dcb8bd883eb338d1c/README.zh-CN.md#L200-L209)\n\n作者致谢上游。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n## 致谢\n\n- [opencode2dsh](https://github.com/FishBottle7/opencode2dsh)（[FishBottle7](https://github.com/FishBottle7)）——\n  本项目是它的维护分支，adapter、目录与 IP 池设计源自该项目。\n- [**opencode2api**](https://github.com/jasonxu114514/opencode2api)，作者\n  [@jasonxu114514](https://github.com/jasonxu114514)——`legacy/agent` 里的旧版\n  Go sidecar 是其匿名通道实现的移植版，目录回退链与请求伪装细节同样源自它。\n  本项目能成立，全靠它踩过的路。\n- [OpenCode](https://opencode.ai)——运营免费匿名 Zen 通道。\n- [@earendil-works/pi-ai](https://www.npmjs.com/package/@earendil-works/pi-ai)——adapter 模式使用的线上协议层。\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 目录、流和 IP 轮换有哪些运行边界？\n\n**研究主题：**缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\n实时 Zen 列表尚空时 list() 直接给 staticFreeModels，因此模型出现在选择器不等于当前能请求。README 所称“无需额外进程”仅默认 adapter；sidecar 是单独旧模式。流式路径在首事件/中途静默设 watchdog，首内容前符合出口故障且池同意时最多旋转三次；已有任何内容就不重放，以免重复生成。IP 池 opt-in，并通过 AsyncLocalStorage 和 dispatcher 将特定上游域名分流；免费代理入池还做探测。它增加额外网络、信任和故障归因边界，代理引入额外出口、连接元数据与传输信任边界，正文保密还取决于 TLS 和代理配置。源码支持这些条件分支，但没有本轮真实网关故障/代理隐私验收。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/plugin/src/adapter/catalog.ts:371-378](https://github.com/1624318455/dsh-plugin-adapter/blob/db7f273bd7caf2bb87c2428dcb8bd883eb338d1c/packages/plugin/src/adapter/catalog.ts#L371-L378)\n\n静态列表可在 live 缺席时暴露。\n\n```text\n  /** ids exposed to DSH: S1 ∩ allowed, or S3 while the live catalog is pending. */\n  list(): string[] {\n    if (this.#zen.size === 0) return [...staticFreeModels]\n    const out: string[] = []\n    for (const model of this.#zen) {\n      if (this.decision(model).allowed) out.push(model)\n    }\n    return out.sort()\n```\n\n**依据 2 · 源码核查**：[packages/plugin/src/adapter/zen-adapter.ts:296-370](https://github.com/1624318455/dsh-plugin-adapter/blob/db7f273bd7caf2bb87c2428dcb8bd883eb338d1c/packages/plugin/src/adapter/zen-adapter.ts#L296-L370)\n\n首事件和 body idle watchdog、旋转条件。\n\n<details>\n<summary>查看原文（75行）</summary>\n\n```text\n  /** Stream one Chat turn from the Zen anonymous lane.\n   *\n   * IP-7 rotate loop (docs/ip-pool.md §3.4 / §8.1): a stream that dies\n   * BEFORE any content landed restarts on a fresh exit — the pool's health\n   * marks already degraded the failed exit, so the restarted pick routes\n   * elsewhere, and the host's retry budget never sees the intermediate\n   * error. Once ANY content event has flowed, rotation stops (§3.4: a\n   * partially delivered stream is never replayed). No pool running (or the\n   * failure is not exit-shaped) = the original stream surface untouched.\n   */\n  async *stream(options: HarnessGenerateOptions): AsyncGenerator<HarnessChunk> {\n    const context = toPiContext(options)\n    const ids = deriveRequestIDs(options.messages)\n    // Replica escape hatch (config.gatewaySession): a poisoned derived id\n    // fails deterministically while fresh ones stream — override reroutes.\n    if (this.#sessionOverride) ids.session = this.#sessionOverride\n    const model = toPiModel(options.model, this.#catalog.reasoningCapability(options.model)?.reasoning === true, options.provider ?? PROVIDER_ID, limitsFor(this.#catalog, options.model))\n    // IP-pool routing context (docs/ip-pool.md 3.3): pi-ai builds the request\n    // body and dispatches it on separate layers with no channel for \"which\n    // model is this fetch for\", so the per-request context rides AsyncLocalStorage.\n    const contextStore: RoutingContext = { model: options.model, session: ids.session }\n    const self = this\n    const MAX_ROTATES = 3\n    // Watchdog windows (live-observed 2026-09-07): the OpenAI SDK timeout\n    // only covers time-to-response-headers — once headers arrive it clears\n    // its timer and NOTHING on any layer owns body silence. FIRST_EVENT: no\n    // pi-ai event at all (not even `start`, which only arrives after\n    // response headers). BODY_IDLE: content flowing, then a long gap (LLM\n    // streams may pace slowly, but minutes of nothing mid-stream is a dead\n    // tunnel, not pacing). The race fires the watchdog INTO the pending\n    // next() — a background return() could never cancel one (it queues\n    // behind the pending request), so timeout-promise racing is the only\n    // mechanism that actually interrupts a hung stream.\n    const firstEventMs = this.#firstEventMs\n    // Responses models (muse-spark-*) stream chain-of-thought in bursts with\n    // long mid-stream pauses (issue #7); give them a wider idle window so\n    // slow reasoning is not misread as a dead tunnel. Chat models keep the\n    // live-tuned default.\n    const bodyIdleMs = isResponsesModel(options.model)\n      ? Math.max(this.#bodyIdleMs, 300_000)\n      : this.#bodyIdleMs\n    const rotateStory: string[] = []\n    for (let attempt = 0; ; attempt += 1) {\n      const events = routingContext.run(contextStore, () =>\n        self.#eventsFor(options, context, ids, model),\n      ) as AsyncIterable<PiEvent>\n      let deliveredContent = false\n      let preContentFailure: { message: string } | null = null\n      const buffered: PiEvent[] = []\n      const source = events[Symbol.asyncIterator]()\n      // Peek events until the stream proves itself one way or the other:\n      // content -> flush and stream through; error before content -> maybe\n      // rotate. Content flushes IMMEDIATELY (only the pre-content events are\n      // buffered): holding every token hostage to a failure that may never\n      // come would also kill streaming for the UI.\n      let flushed = false\n      let sawAnyEvent = false\n      let lastEventAt = Date.now()\n      // One deadline timer at a time, re-armed per pull (a timer per pull\n      // would accumulate thousands over a long token stream). While no event\n      // has arrived at all, the FIRST-EVENT window applies (stricter — the\n      // tunnel/connect stage should answer within seconds); once ANY event\n      // has landed (start, or content directly), the looser BODY-IDLE\n      // window applies so slow TTFT pacing on healthy exits is not misread\n      // as a dead tunnel.\n      let deadlineTimer: NodeJS.Timeout | undefined\n      const raceDeadline = (): Promise<never> => {\n        clearTimeout(deadlineTimer)\n        const idleWindow = sawAnyEvent ? bodyIdleMs : firstEventMs\n        const message = sawAnyEvent ? WATCHDOG_IDLE_MESSAGE : WATCHDOG_FIRST_MESSAGE\n        const ms = Math.max(0, idleWindow - (Date.now() - lastEventAt))\n        return new Promise<never>((_, reject) => {\n          deadlineTimer = setTimeout(() => reject(new Error(message)), ms)\n          deadlineTimer.unref?.()\n        })\n```\n\n</details>\n\n**依据 3 · 源码核查**：[packages/plugin/src/adapter/zen-adapter.ts:403-487](https://github.com/1624318455/dsh-plugin-adapter/blob/db7f273bd7caf2bb87c2428dcb8bd883eb338d1c/packages/plugin/src/adapter/zen-adapter.ts#L403-L487)\n\n仅首内容前旋转，最多三次。\n\n<details>\n<summary>查看原文（85行）</summary>\n\n```text\n      // Peek phase (pre-content): pull with the first-event deadline armed.\n      for (;;) {\n        let next: IteratorResult<PiEvent>\n        try {\n          next = await Promise.race([source.next(), raceDeadline()])\n        } catch (err) {\n          // pre-content silence: synthesize the terminal error pi-ai never\n          // delivered so the rotate decision sees a transport failure\n          preContentFailure = { message: err instanceof Error ? err.message : String(err) }\n          buffered.push(terminalErrorEvent(preContentFailure.message, model))\n          break\n        }\n        if (next.done) break\n        const event = next.value as PiEvent\n        lastEventAt = Date.now()\n        sawAnyEvent = true\n        if (event.type === 'error') {\n          preContentFailure = { message: event.error.errorMessage ?? 'pi-ai stream error' }\n          // the event still flows to the consumer unless we rotate\n          buffered.push(event)\n          break\n        }\n        if (event.type === 'done') {\n          // pi-ai can also deliver the failure on done (stopReason: error)\n          if (event.message.stopReason === 'error' && !deliveredContent) {\n            preContentFailure = { message: event.message.errorMessage ?? 'pi-ai stream error' }\n          }\n          buffered.push(event)\n          break\n        }\n        buffered.push(event)\n        if (event.type !== 'start') deliveredContent = true\n        if (deliveredContent) {\n          // first content event: flush everything buffered and go live\n          flushed = true\n          break\n        }\n      }\n      // peek phase over: whatever path exited the loop, this attempt's\n      // deadline timer is spent (pumpLive re-arms its own per pull)\n      clearTimeout(deadlineTimer)\n      if (preContentFailure === null && deliveredContent) {\n        yield* toStreamChunks(pumpLive(), model.contextWindow)\n        return\n      }\n      if (preContentFailure === null && !deliveredContent) {\n        // stream ended cleanly with no content and no error: pass through\n        // (pi-ai's empty-response classification owns this case)\n        yield* toStreamChunks((async function* pumped() { for (const e of buffered) yield e })(), model.contextWindow)\n        return\n      }\n      // Exit-shaped failure before content: ask the pool whether rotating is\n      // worth another attempt; otherwise surface the buffered events as-is.\n      const failureMessage = (preContentFailure as { message: string }).message\n      const failure = classifyStreamFailure(failureMessage)\n      const deterministic = isRegionBlocked(failureMessage)\n      const rotate = failure !== null\n        && attempt < MAX_ROTATES\n        && shouldRotate(failure, options.model, ids.session, attempt + 1, deterministic)\n      rotateStory.push(`#${attempt + 1} ${failure ?? 'unknown'}: ${failureMessage.slice(0, 80)}`)\n      if (!rotate) {\n        // last resort: rewrite the terminal error to tell the whole story\n        // (the user saw minutes of silence — the surfaced error must say\n        // what was tried, not just the last attempt's failure)\n        for (let i = 0; i < buffered.length; i += 1) {\n          const e = buffered[i] as PiEvent & { error?: { errorMessage?: string }; message?: { errorMessage?: string; stopReason?: string } }\n          if (e.type === 'error' && e.error) {\n            e.error.errorMessage = rotateStory.length > 1\n              ? `${e.error.errorMessage} (dsh-plugin-adapter 轮换 ${rotateStory.length - 1} 次后放弃: ${rotateStory.join(' -> ')})`\n              : e.error.errorMessage\n            break\n          }\n          if (e.type === 'done' && e.message?.stopReason === 'error') {\n            e.message.errorMessage = rotateStory.length > 1\n              ? `${e.message.errorMessage} (dsh-plugin-adapter 轮换 ${rotateStory.length - 1} 次后放弃: ${rotateStory.join(' -> ')})`\n              : e.message.errorMessage!\n            break\n          }\n        }\n        yield* toStreamChunks((async function* pumped() { for (const e of buffered) yield e })(), model.contextWindow)\n        return\n      }\n      // rotate: loop re-runs #eventsFor inside the same ALS store; the pool\n      // has already degraded the failed exit, so pick lands elsewhere.\n    }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[packages/plugin/src/index.ts:76-115](https://github.com/1624318455/dsh-plugin-adapter/blob/db7f273bd7caf2bb87c2428dcb8bd883eb338d1c/packages/plugin/src/index.ts#L76-L115)\n\nIP 池为可选接线。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n  // IP-pool exit routing (docs/ip-pool.md IP-1..IP-5): manual proxies,\n  // pinned, free sources, subscriptions, and (IP-5) the settings namespace\n  // with live apply + the /status /probe bridge. Opt-in via settings page or\n  // cordis.patch.yml; disabled keeps the process byte-for-byte on direct.\n  // Lifecycle (assembly on first enable, live reconfigure, dispose) is owned\n  // by applyIpPoolSettings through the plugin fiber.\n  const dataDir = join(homedir(), '.opencode2dsh')\n  const statusPath = join(dataDir, 'adapter-status.json')\n  const writeStatus = (status: CatalogSnapshot, lastError: string): void => {\n    void writeFile(\n      statusPath,\n      JSON.stringify({ ...status, lastError, writtenAt: new Date().toISOString() }, null, 2),\n      'utf8',\n    ).catch(() => {})\n  }\n\n  const catalog = new ModelCatalog({\n    refreshSeconds: cfg.refreshSeconds,\n    cachePath: defaultCachePath(dataDir),\n    onRefresh: (status, lastError) => {\n      writeStatus(status, lastError)\n      if (lastError) logger.warn(`dsh-plugin-adapter: catalog refresh issue: ${lastError}`)\n    },\n  })\n  const adapter = new ZenAdapter(catalog, { sessionOverride: cfg.gatewaySession })\n\n  // IP-pool exit routing (docs/ip-pool.md IP-1..IP-5): manual proxies,\n  // pinned, free sources, subscriptions, and (IP-5) the settings namespace\n  // with live apply + the /status /models /probe bridge. Opt-in via settings\n  // page or cordis.patch.yml; disabled keeps the process byte-for-byte on\n  // direct. Lifecycle (assembly on first enable, live reconfigure, dispose) is\n  // owned by applyIpPoolSettings through the plugin fiber. The probe-model\n  // dropdown rows include the live catalog, so this must run after the\n  // catalog instance exists.\n  applyIpPoolSettings(ctx, config, logger, { listLiveModels: () => catalog.list() })\n\n  // Register immediately: the provider must appear in the selector right\n  // away, even while the catalog is still warming up (listModels is read\n  // live at selector time, so models appear as refreshes land).\n  ctx.llm.registerAdapter([PROVIDER_ID, LEGACY_PROVIDER_ID], adapter)\n```\n\n</details>\n\n**依据 5 · 源码核查**：[packages/plugin/src/pool/dispatcher.ts:185-222](https://github.com/1624318455/dsh-plugin-adapter/blob/db7f273bd7caf2bb87c2428dcb8bd883eb338d1c/packages/plugin/src/pool/dispatcher.ts#L185-L222)\n\n指定域名路由和直连回退。\n\n<details>\n<summary>查看原文（38行）</summary>\n\n```text\n      this.#logger?.warn(`dsh-plugin-adapter: failed to build proxy agent for ${exitId}: ${err instanceof Error ? err.message : String(err)}`)\n      return null\n    }\n  }\n\n  dispatch(options: Dispatcher.DispatchOptions, handler: Dispatcher.DispatchHandler): boolean {\n    if (this.#closed) {\n      handler.onResponseError?.({} as Dispatcher.DispatchController, new Error('dsh-plugin-adapter: routing dispatcher closed'))\n      return false\n    }\n    const origin = String(options.origin ?? '')\n    const host = normalizeHost(origin)\n    if (isLoopback(host) || !this.#proxyHosts.has(host)) {\n      return this.#direct.dispatch(options, handler)\n    }\n    const context = routingContext.getStore() ?? {}\n    const model = context.model ?? 'default'\n    const session = context.session ?? 'default'\n    const exitId = this.#pool.pick(session, model)\n    if (exitId === null) {\n      // Pool unusable (empty / all cooling): direct, never fail closed (3.3).\n      return this.#direct.dispatch(options, handler)\n    }\n    const agent = this.#agentFor(exitId)\n    if (!agent) {\n      return this.#direct.dispatch(options, handler)\n    }\n    return agent.dispatch(options, this.#observe(exitId, model, session, handler))\n  }\n\n  /**\n   * Wrap the downstream handler with the passive-signal observer\n   * (docs/ip-pool.md §4.2 rule table, §4.3 被动): the real request's own\n   * outcome feeds the two-tier health — free liveness data no probe spends\n   * quota on. Body bytes stream through untouched; only the response start\n   * line and terminal transport errors are read.\n   *\n   * Forwarding discipline (measured against undici 8.10 on this host): the\n```\n\n</details>\n\n**依据 6 · 源码核查**：[packages/plugin/src/pool/admission.ts:179-292](https://github.com/1624318455/dsh-plugin-adapter/blob/db7f273bd7caf2bb87c2428dcb8bd883eb338d1c/packages/plugin/src/pool/admission.ts#L179-L292)\n\n候选代理入池探测。\n\n<details>\n<summary>查看原文（114行）</summary>\n\n```text\nexport async function admitCandidate(\n  deps: AdmissionDeps,\n  candidate: { address: string; protocol: 'http' | 'socks5'; source: ExitNode['source'] },\n  options: {\n    relaxed?: boolean\n    pinned?: boolean\n    timeoutMs?: number\n    /** Pre-screened echo facts (coarseScreen output): skips steps 1-2. */\n    echoFacts?: EchoFacts\n  } = {},\n): Promise<AdmissionResult> {\n  const zenBase = deps.zenBaseUrl ?? ZEN_BASE_URL\n  const timeout = options.timeoutMs ?? DEFAULT_TIMEOUT_MS\n  const smokeModel = deps.smokeModel ?? 'big-pickle'\n  // Live-observed 2026-09-09: zen now REJECTS anonymous-lane chat without\n  // the CLI session headers (400 MissingSessionID \"can only be used in\n  // OpenCode\") — the smoke request must carry the same disguise set the\n  // adapter sends, or every candidate fails step 4 regardless of exit\n  // quality (a full refill round admitted 0 of 701 tunnel-OK survivors).\n  // Per-candidate ids: the upstream correlates sessions with exits, so a\n  // probe session must not collide with real adapter sessions. The canonical\n  // mapping (ids.ts) is mandatory here too — the old 24-hex probe sessions\n  // drew 403 FreeTierError on the free lane like every other foreign shape.\n  const probeHeaders = disguiseHeaders({\n    session: canonicalSessionID(`admission:${candidate.address}`),\n    request: randomID('req', 16),\n    project: stableID('prj', 'opencode2dsh:default-project'),\n    parentSession: '',\n  })\n\n  let agent: Dispatcher | null = null\n  try {\n    agent = new deps.undici.ProxyAgent({\n      uri: candidate.protocol === 'socks5' ? `socks5://${candidate.address}` : `http://${candidate.address}`,\n    })\n  } catch (err) {\n    return { admitted: false, reason: `agent-build: ${err instanceof Error ? err.message : String(err)}` }\n  }\n\n  const request = (url: string, init: { method?: string; headers?: Record<string, string>; body?: string } = {}) =>\n    withTimeout(\n      deps.undici.request(url, { dispatcher: agent!, ...init }),\n      timeout,\n      init.method === 'POST' ? 'smoke' : 'probe',\n    )\n\n  try {\n    // Steps 1+2 run inline only when the caller has not pre-screened the\n    // candidate (coarseScreen/batch output = echoFacts; the refill loop\n    // always pre-screens free candidates at high fan-out).\n    let facts: EchoFacts\n    if (options.echoFacts) {\n      facts = options.echoFacts\n    } else {\n      const verdict = await coarseScreen(deps, candidate, options)\n      if ('rejected' in verdict) return { admitted: false, reason: verdict.rejected }\n      facts = verdict\n    }\n\n    // Step 3: HTTPS tunnel to the real upstream (models list, Bearer public).\n    const models = await request(`${zenBase.replace(/\\/+$/, '')}/v1/models`, {\n      headers: { authorization: 'Bearer public', 'user-agent': opencodeUserAgent(), 'x-opencode-client': 'cli', accept: 'application/json', ...probeHeaders },\n    })\n    if (models.statusCode !== 200) {\n      return { admitted: false, reason: `zen models HTTP ${models.statusCode}` }\n    }\n\n    // Step 4: anonymous-lane smoke (streaming, 1 token). The free lane\n    // rejects non-streaming bodies outright and wants the agent-shape gate\n    // tools in the body (adapter/messages.ts, live-probed 2026-09-18) — a\n    // bare 1-token probe 403s like every toolless chat.\n    const smoke = await request(`${zenBase.replace(/\\/+$/, '')}/v1/chat/completions`, {\n      method: 'POST',\n      headers: {\n        authorization: 'Bearer public',\n        'content-type': 'application/json',\n        'user-agent': opencodeUserAgent(),\n        'x-opencode-client': 'cli',\n        ...probeHeaders,\n      },\n      body: JSON.stringify({\n        model: smokeModel,\n        messages: [{ role: 'user', content: 'ping' }],\n        max_tokens: 1,\n        stream: true,\n        stream_options: { include_usage: true },\n        tools: FREE_LANE_GATE_TOOL_NAMES.map((name) => freeLaneGateTool(name)),\n        tool_choice: 'none',\n      }),\n    })\n    if (smoke.statusCode !== 200) {\n      // 429 = the exit is good (alive + tunnel verified) but its anonymous\n      // quota is currently consumed. Admit with limited: the caller cools it\n      // and the periodic probe retries later (measured 2026-09-05: 429 is\n      // the single largest smoke failure among tunnel-OK survivors).\n      if (smoke.statusCode === 429) {\n        return {\n          admitted: true,\n          limited: true,\n          reason: `zen smoke HTTP 429`,\n          node: {\n            id: candidate.address,\n            protocol: candidate.protocol,\n            source: candidate.source,\n            pinned: options.pinned ?? false,\n            exitIP: facts.exitIP,\n            exitLocation: facts.exitLocation,\n            latencyMs: facts.latencyMs,\n            quality: gradeOf(facts.latencyMs),\n            addedAt: Date.now(),\n          },\n        }\n      }\n      return { admitted: false, reason: `zen smoke HTTP ${smoke.statusCode}` }\n```\n\n</details>\n\n#### 缺口\n\n- 未做真实上游流式及代理故障注入。\n  **影响：**不能确认恢复率、隐私或失败类别是否稳定。\n  **进一步探讨：**分别用直连和可信代理故障矩阵测首内容前后、429/403/5xx及中途断流。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 安装与持续使用成本、发布状态和数据声明如何界定？\n\n**研究主题：**依赖、兼容与流程、效果与总成本\n\n#### 完整回答\n\n固定提交包是 0.3.9、Node>=20，依赖 pi-ai、undici、yaml 和 DSH 宿主，要求能访问 opencode.ai/models.dev；npm 元信息单独显示查询时 latest 0.4.0，因此不可把固定提交结论扩展到最新包。目录每 300 秒刷新，元数据缓存与 adapter-status.json 写到本机；README “不存储任何东西”与这两个文件至少在字面上不一致，应区分不存凭据/会话与会写健康及缓存。IP 池一旦打开还带探测流量和代理信任成本。模型现金价格可能为零，但配额、网络、失败重试、人工排障及上游可用性都未知。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/plugin/package.json:1-75](https://github.com/1624318455/dsh-plugin-adapter/blob/db7f273bd7caf2bb87c2428dcb8bd883eb338d1c/packages/plugin/package.json#L1-L75)\n\n固定提交版本、引擎与依赖。\n\n<details>\n<summary>查看原文（75行）</summary>\n\n```text\n{\n  \"name\": \"@memef1f1y/dsh-plugin-adapter\",\n  \"version\": \"0.3.9\",\n  \"description\": \"Free OpenCode Zen models for DeepSeek Harness (DSH): native dsh-llm adapter plugin, no API key.\",\n  \"type\": \"module\",\n  \"main\": \"lib/index.js\",\n  \"exports\": {\n    \".\": \"./lib/index.js\",\n    \"./cordis.patch.yml\": \"./cordis.patch.yml\",\n    \"./package.json\": \"./package.json\",\n    \"./client\": \"./lib/client.js\"\n  },\n  \"files\": [\n    \"lib\",\n    \"cordis.patch.yml\",\n    \"README.md\",\n    \"README.zh-CN.md\",\n    \"LICENSE\",\n    \"tsdown.client.config.ts\"\n  ],\n  \"repository\": {\n      \"type\": \"git\",\n      \"url\": \"git+https://github.com/1624318455/dsh-plugin-adapter.git\"\n  },\n  \"homepage\": \"https://github.com/1624318455/dsh-plugin-adapter#readme\",\n  \"bugs\": \"https://github.com/1624318455/dsh-plugin-adapter/issues\",\n  \"author\": \"1624318455 (fork of FishBottle7/opencode2dsh)\",\n  \"engines\": {\n    \"node\": \">=20\"\n  },\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    },\n    \"client\": {\n      \"inject\": [\n        \"slots\",\n        \"locale\",\n        \"settingsScope\"\n      ],\n      \"platform\": \"web\"\n    }\n  },\n  \"scripts\": {\n    \"build\": \"tsdown src/index.ts --format esm --dts --out-dir lib --no-clean\",\n    \"prepack\": \"node -e \\\"require('fs').rmSync('lib',{recursive:true,force:true})\\\" && pnpm build && pnpm build:client && node ../../scripts/prepare-package.mjs\",\n    \"typecheck\": \"tsc --noEmit\",\n    \"test\": \"node --test \\\"test/*.test.ts\\\"\",\n    \"build:client\": \"tsdown -c tsdown.client.config.ts\"\n  },\n  \"keywords\": [\n    \"dsh\",\n    \"dsh-plugin\",\n    \"deepseek-harness\",\n    \"opencode\",\n    \"opencode-zen\",\n    \"cordis\",\n    \"cordis-plugin\",\n    \"llm-adapter\",\n    \"llm-provider\",\n    \"free-models\",\n    \"free-llm\",\n    \"llm\",\n    \"ai-models\",\n    \"typescript\",\n    \"nodejs\"\n  ],\n  \"license\": \"MIT\",\n  \"dependencies\": {\n    \"@deepseek-ai/schemastery\": \"^3.18.1\",\n    \"@earendil-works/pi-ai\": \"^0.82.1\",\n    \"undici\": \"^8.10.1\",\n    \"yaml\": \"^2.9.0\"\n  },\n  \"pnpm\": {\n```\n\n</details>\n\n**依据 2 · 作者声明**：[README.zh-CN.md:73-99](https://github.com/1624318455/dsh-plugin-adapter/blob/db7f273bd7caf2bb87c2428dcb8bd883eb338d1c/README.zh-CN.md#L73-L99)\n\n作者部署和刷新说明。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n````text\n**验证**：重启 `dsh web`，打开模型选择器，在 **zen-free** 分组里选模型即可。\n\n需要带 web profile 的 DSH（DeepSeek Harness）；Node.js ≥ 20（DSH 能跑就满足）；\n出站 HTTPS 需可达 `opencode.ai` 与 `models.dev`。\n\n## 配置\n\n默认配置开箱即用。需要覆盖时，编辑 profile 的 `cordis.patch.yml`：\n\n```yaml\n- id: opencode2dsh\n  name: '@memef1f1y/dsh-plugin-adapter'\n  config:\n    mode: adapter        # adapter（默认）| sidecar\n    providerId: zen-free\n    refreshSeconds: 300  # 目录刷新周期（秒）\n```\n\n| 配置项 | 默认值 | 说明 |\n| --- | --- | --- |\n| `mode` | `adapter` | `adapter`：原生 LlmAdapter 直连 Zen。`sidecar`：旧版本地 agent 模式，不随包发行——请从 `legacy/agent` 自行构建并通过 `agentPath` 指定。 |\n| `providerId` | `zen-free` | 在 DSH 中显示的 provider 名称（`opencode2dsh` 保留为兼容别名）。 |\n| `refreshSeconds` | `300` | 实时目录刷新间隔；定价元数据每 24 小时刷新。 |\n| `gatewaySession` | — | 每轮固定发送的 session id。逃生口：某会话派生 id 被钉在坏副本上、固定报错时，填一个 canonical 形状的新 id，重启即复活旧会话。 |\n| `agentPath` | 自动解析 | 仅 sidecar：agent 二进制路径。 |\n| `agentArgs` | — | 仅 sidecar：传给 agent 的额外 CLI 参数。 |\n| `restartDelayMs` / `restartMaxDelayMs` / `maxConsecutiveCrashes` | `1000` / `60000` / `5` | 仅 sidecar：重启退避与熔断阈值。 |\n````\n\n</details>\n\n**依据 3 · 作者声明**：[README.zh-CN.md:180-184](https://github.com/1624318455/dsh-plugin-adapter/blob/db7f273bd7caf2bb87c2428dcb8bd883eb338d1c/README.zh-CN.md#L180-L184)\n\n作者无存储和遥测说法。\n\n```text\n## 安全性\n\n- 不涉及任何机密：匿名通道的 Key 就是字面量 `public`；插件不存储任何东西，也没有任何遥测。\n- 安装产物仅限 `lib/`；不执行任何依赖的构建脚本。\n- 所有请求均从你的机器直连 `opencode.ai` / `models.dev`。\n```\n\n**依据 4 · 源码核查**：[packages/plugin/src/index.ts:82-99](https://github.com/1624318455/dsh-plugin-adapter/blob/db7f273bd7caf2bb87c2428dcb8bd883eb338d1c/packages/plugin/src/index.ts#L82-L99)\n\n本地健康快照写盘。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n  const dataDir = join(homedir(), '.opencode2dsh')\n  const statusPath = join(dataDir, 'adapter-status.json')\n  const writeStatus = (status: CatalogSnapshot, lastError: string): void => {\n    void writeFile(\n      statusPath,\n      JSON.stringify({ ...status, lastError, writtenAt: new Date().toISOString() }, null, 2),\n      'utf8',\n    ).catch(() => {})\n  }\n\n  const catalog = new ModelCatalog({\n    refreshSeconds: cfg.refreshSeconds,\n    cachePath: defaultCachePath(dataDir),\n    onRefresh: (status, lastError) => {\n      writeStatus(status, lastError)\n      if (lastError) logger.warn(`dsh-plugin-adapter: catalog refresh issue: ${lastError}`)\n    },\n  })\n```\n\n</details>\n\n**依据 5 · 源码核查**：[packages/plugin/src/adapter/catalog.ts:295-353](https://github.com/1624318455/dsh-plugin-adapter/blob/db7f273bd7caf2bb87c2428dcb8bd883eb338d1c/packages/plugin/src/adapter/catalog.ts#L295-L353)\n\n目录周期与元数据缓存。\n\n<details>\n<summary>查看原文（59行）</summary>\n\n```text\n    this.#timer = setInterval(() => {\n      void this.refreshOnce()\n    }, this.#refreshSeconds * 1000)\n    this.#timer.unref?.()\n  }\n\n  stop(): void {\n    this.#stopped = true\n    if (this.#timer) {\n      clearInterval(this.#timer)\n      this.#timer = null\n    }\n  }\n\n  async refreshOnce(): Promise<void> {\n    await Promise.allSettled([this.refreshZen(), this.refreshMetadata()])\n    if (this.#onRefresh) {\n      try {\n        this.#onRefresh(this.snapshot(), this.#lastError)\n      } catch {\n        // observers must never break the refresh loop\n      }\n    }\n  }\n\n  async refreshZen(): Promise<void> {\n    try {\n      const ids = await fetchZenModels(this.#zenBaseUrl, this.#fetch, opencodeUserAgent())\n      this.#zen = new Set(ids)\n      this.#updatedAt = this.#now()\n      this.#lastError = ''\n    } catch (err) {\n      this.#lastError = err instanceof Error ? err.message : String(err)\n    }\n  }\n\n  async refreshMetadata(): Promise<void> {\n    try {\n      const response = await withTimeout(this.#fetch(this.#metadataUrl, { headers: { accept: 'application/json' } }))\n      if (!response.ok) throw new Error(`models.dev returned HTTP ${response.status}`)\n      const data = (await response.json()) as unknown\n      const prices = decodeModelsDev(data)\n      if (prices.size === 0) throw new Error('models.dev contains no OpenCode model metadata')\n      this.#prices = prices\n      this.#pricesReady = true\n      if (this.#cachePath) await saveMetadataCache(this.#cachePath, prices, this.#now())\n    } catch (err) {\n      // Network failure with a cached copy is not fatal: load the cache.\n      if (this.#cachePath && !this.#pricesReady) {\n        const cached = await loadMetadataCache(this.#cachePath).catch(() => null)\n        if (cached && cached.size > 0) {\n          this.#prices = cached\n          this.#pricesReady = true\n          return\n        }\n      }\n      this.#lastError = err instanceof Error ? err.message : String(err)\n    }\n  }\n```\n\n</details>\n\n#### 缺口\n\n- 未测真实额度、延迟、token 与人工恢复工时。\n  **影响：**无法算单位成功请求成本。\n  **进一步探讨：**同一模型与提示记录成功率、首 token、网络用量和人工恢复。\n- 固定提交 0.3.9，npm 查询 latest 0.4.0。\n  **影响：**最新包行为可能不同。\n  **进一步探讨：**若采用最新版本，另锁包哈希和源码再核。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 在可控场景怎么试用，哪种新设计假设值得验证？\n\n**研究主题：**新假设与验证、采用判断\n\n#### 完整回答\n\n建议先确认上游允许的接入方式，固定版本和模型，以默认直连 adapter 做小规模试用；只在确需出口调度且代理可信时打开 IP 池，观察目录真实来源、空流和错误。此 fork 的有价值假设是把“目录准入事实/请求结果/出口健康”绑定成每模型可信度，避免静态回退显示但不可用或错误地把模型拒绝判为出口失败。该跨层可靠性闸门尚未完整实现；可与现行目录+轮换对照模型选择后成功率、误报/漏报、额外探测流量及恢复时间。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/plugin/src/adapter/catalog.ts:355-378](https://github.com/1624318455/dsh-plugin-adapter/blob/db7f273bd7caf2bb87c2428dcb8bd883eb338d1c/packages/plugin/src/adapter/catalog.ts#L355-L378)\n\n目录决策与静态回退来源。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n  decision(model: string): AnonymousDecision {\n    const metadata = decide(model, this.#prices, this.#pricesReady)\n    // The S3 vouch only covers ids metadata cannot speak for. A metadata\n    // verdict of deprecated is Known, but S3 entries are compile-time verified\n    // against the live lane, so an S3 id stays vouched even when stale\n    // metadata claims deprecation (hy3-free case: works after models.dev\n    // flags it, dies only when it leaves the Zen catalog).\n    if (!metadata.allowed && metadata.source === 'metadata_deprecated' && staticFreeModels.includes(model)) {\n      return { allowed: true, source: 'static_verified', known: false }\n    }\n    if (!metadata.allowed && !metadata.known && staticFreeModels.includes(model)) {\n      return { allowed: true, source: 'static_verified', known: false }\n    }\n    return metadata\n  }\n\n  /** ids exposed to DSH: S1 ∩ allowed, or S3 while the live catalog is pending. */\n  list(): string[] {\n    if (this.#zen.size === 0) return [...staticFreeModels]\n    const out: string[] = []\n    for (const model of this.#zen) {\n      if (this.decision(model).allowed) out.push(model)\n    }\n    return out.sort()\n```\n\n</details>\n\n**依据 2 · 源码核查**：[packages/plugin/src/pool/pool.ts:287-322](https://github.com/1624318455/dsh-plugin-adapter/blob/db7f273bd7caf2bb87c2428dcb8bd883eb338d1c/packages/plugin/src/pool/pool.ts#L287-L322)\n\n被动结果把 429、403 等影响健康。\n\n<details>\n<summary>查看原文（36行）</summary>\n\n```text\n   * applied to the two-tier health exactly like a probe would. Returns the\n   * classification for diagnostics.\n   */\n  recordPassive(id: string, statusCode: number, model: string, regionBlocked = false): 'ok' | 'limited' | 'refused' | 'dead' {\n    if (!this.#nodes.has(id)) return 'ok'\n    if (statusCode >= 200 && statusCode < 300) {\n      this.markOk(id, model)\n      this.#countPassive(id, 'ok')\n      return 'ok'\n    }\n    if (statusCode === 429) {\n      this.markLimited(id)\n      this.#countPassive(id, 'limited')\n      return 'limited'\n    }\n    if (statusCode === 401 || statusCode === 403) {\n      // RegionError bodies are deterministic region blocks — a second sample\n      // adds nothing, so ban the (exit, model) pairing immediately (docs 4.2).\n      if (regionBlocked) this.markModelBanned(id, model)\n      else this.markModelSignal(id, model)\n      this.#countPassive(id, 'refused')\n      return 'refused'\n    }\n    // 5xx: count into the dead bucket for diagnostics, but DO NOT strike the\n    // exit dead. Live-observed 2026-09-09: upstream 500s are often the MODEL\n    // failing behind a healthy exit (muse without contributor access answers\n    // 500 through every exit) — one strike used to mark the exit dead, the\n    // single-exit pool then picked null, and ALL traffic silently fell back\n    // direct while the pool looked enabled. Exit liveness stays the\n    // transport layer's call (sentinel/onResponseError); recovery for a\n    // 5xx-flapping exit is the adapter rotate loop (5xx is in its set).\n    this.#countPassive(id, 'dead')\n    return 'dead'\n  }\n\n  /** Transport-level failure of a real request (connection died mid-flight). */\n```\n\n</details>\n\n**依据 3 · 源码核查**：[packages/plugin/src/adapter/zen-adapter.ts:454-487](https://github.com/1624318455/dsh-plugin-adapter/blob/db7f273bd7caf2bb87c2428dcb8bd883eb338d1c/packages/plugin/src/adapter/zen-adapter.ts#L454-L487)\n\n首内容前旋转判据。\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\n      // Exit-shaped failure before content: ask the pool whether rotating is\n      // worth another attempt; otherwise surface the buffered events as-is.\n      const failureMessage = (preContentFailure as { message: string }).message\n      const failure = classifyStreamFailure(failureMessage)\n      const deterministic = isRegionBlocked(failureMessage)\n      const rotate = failure !== null\n        && attempt < MAX_ROTATES\n        && shouldRotate(failure, options.model, ids.session, attempt + 1, deterministic)\n      rotateStory.push(`#${attempt + 1} ${failure ?? 'unknown'}: ${failureMessage.slice(0, 80)}`)\n      if (!rotate) {\n        // last resort: rewrite the terminal error to tell the whole story\n        // (the user saw minutes of silence — the surfaced error must say\n        // what was tried, not just the last attempt's failure)\n        for (let i = 0; i < buffered.length; i += 1) {\n          const e = buffered[i] as PiEvent & { error?: { errorMessage?: string }; message?: { errorMessage?: string; stopReason?: string } }\n          if (e.type === 'error' && e.error) {\n            e.error.errorMessage = rotateStory.length > 1\n              ? `${e.error.errorMessage} (dsh-plugin-adapter 轮换 ${rotateStory.length - 1} 次后放弃: ${rotateStory.join(' -> ')})`\n              : e.error.errorMessage\n            break\n          }\n          if (e.type === 'done' && e.message?.stopReason === 'error') {\n            e.message.errorMessage = rotateStory.length > 1\n              ? `${e.message.errorMessage} (dsh-plugin-adapter 轮换 ${rotateStory.length - 1} 次后放弃: ${rotateStory.join(' -> ')})`\n              : e.message.errorMessage!\n            break\n          }\n        }\n        yield* toStreamChunks((async function* pumped() { for (const e of buffered) yield e })(), model.contextWindow)\n        return\n      }\n      // rotate: loop re-runs #eventsFor inside the same ALS store; the pool\n      // has already degraded the failed exit, so pick lands elsewhere.\n    }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[packages/plugin/src/index.ts:102-115](https://github.com/1624318455/dsh-plugin-adapter/blob/db7f273bd7caf2bb87c2428dcb8bd883eb338d1c/packages/plugin/src/index.ts#L102-L115)\n\n池可选，默认 adapter 立即注册。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n  // IP-pool exit routing (docs/ip-pool.md IP-1..IP-5): manual proxies,\n  // pinned, free sources, subscriptions, and (IP-5) the settings namespace\n  // with live apply + the /status /models /probe bridge. Opt-in via settings\n  // page or cordis.patch.yml; disabled keeps the process byte-for-byte on\n  // direct. Lifecycle (assembly on first enable, live reconfigure, dispose) is\n  // owned by applyIpPoolSettings through the plugin fiber. The probe-model\n  // dropdown rows include the live catalog, so this must run after the\n  // catalog instance exists.\n  applyIpPoolSettings(ctx, config, logger, { listLiveModels: () => catalog.list() })\n\n  // Register immediately: the provider must appear in the selector right\n  // away, even while the catalog is still warming up (listModels is read\n  // live at selector time, so models appear as refreshes land).\n  ctx.llm.registerAdapter([PROVIDER_ID, LEGACY_PROVIDER_ID], adapter)\n```\n\n</details>\n\n#### 缺口\n\n- 跨目录、请求与出口的可信度闸门未形成对照。\n  **影响：**不能当现行效果或创新分数。\n  **进一步探讨：**故障注入加真实模型目录变更，比较可选但失败率、误归因和恢复成本。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：94d3914cc5fb55cb5db0b88a9dd853e974b9895e4ae6d720897918554af73ba4。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 10 | 2102 | — | — | 33390 |\n| .ts | source | 27 | 7192 | 5246 | 1536 | — |\n| .tsx | source | 1 | 951 | 860 | 52 | — |\n| .ts | test | 21 | 4282 | 3604 | 485 | — |\n| .mts | test | 3 | 311 | 223 | 64 | — |\n| .mjs | source | 1 | 21 | 10 | 9 | — |\n\n排除 1 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| zen-free adapter | DSH 流式选模 | 当前上游准入须另核 |\n| 动态目录 | 列表和免费判定 | 静态回退可暴露失效模型 |\n| 流 watchdog | 中断静默流 | 真实恢复率未测 |\n| IP 池 | 可选出口调度 | 代理可信度与探测成本 |\n\n## 工程亮点\n\nadapter 分支无额外进程，sidecar 单独旧模式；目录缓存和健康快照确实写盘。流式前内容失败至多三次出口轮换，部分内容后不重放。可选代理池增加网络、信任与故障归因复杂性。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.zh-CN.md、packages/plugin/package.json、packages/plugin/src/index.ts、packages/plugin/src/adapter/catalog.ts、packages/plugin/src/adapter/zen-adapter.ts、packages/plugin/src/pool/dispatcher.ts、packages/plugin/src/pool/admission.ts、packages/plugin/src/pool/pool.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：审阅固定提交 0.3.9 的 README、包与现行 TS adapter/目录/IP 池核心源码，legacy Go 仅判定为可选旧模式；未运行目标插件、测试或外部模型请求。\n- 下一步：在允许的测试条件下，以固定模型分别验目录、首事件/中途故障、403/429/5xx 与可信出口切换，并计成功请求率、延迟、探测量和人工恢复。\n",
         "metadata": {
             "repository": "1624318455/dsh-plugin-adapter",
             "repository_id": 1374274469,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T05:23:46.320Z",
+            "window_start": "2026-09-22T05:23:46.320Z",
             "stars": 5,
-            "pushed_at": "2026-09-20T23:35:21Z",
+            "pushed_at": "2026-10-21T18:17:20Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 1,
+                "closed": 0,
+                "created_30d": 1,
+                "closed_30d": 0,
+                "updated_30d": 1
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1624318455%2Fdsh-plugin-adapter%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640F:12F9BB:13B570:2134D3:6AD84948 and timestamp 2026-10-21 05:10:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1624318455%2Fdsh-plugin-adapter%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6405:2EA514:14AA54:22294E:6AD84949 and timestamp 2026-10-21 05:10:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1624318455%2Fdsh-plugin-adapter%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6413:B65AE:137019:20E2F6:6AD84949 and timestamp 2026-10-21 05:10:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1624318455%2Fdsh-plugin-adapter%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6418:1DEEF7:14913F:22136D:6AD84949 and timestamp 2026-10-21 05:10:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1624318455%2Fdsh-plugin-adapter%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6419:D1FDD:147E1D:220E89:6AD84949 and timestamp 2026-10-21 05:10:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c",
-                "current_revision": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
-            }
+            "errors": []
         },
         "discovery.plugins": {
             "id": "github:1374274469:root",
             "repository": "1624318455/dsh-plugin-adapter",
             "path": "",
             "revision": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "5d62d0c9d37bce39b67e8678dc3f7d741e3be03361facaa806d2f4a65839209c",
                 "code": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c",
                 "maintenance": "0072b899cd18256801eb7ccc1c35acbad35372605fa8486d4e6d21dcf1b4d9b1"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

@@ -13,7 +13,7 @@
             "name": "dsh-codefall",
             "entry_type": "plugin",
             "technical_category": "interface-input",
-            "business_category": "other",
+            "business_category": "personal-productivity",
             "tags": [],
             "availability": "unknown",
             "research_depth": "source",
@@ -24,36 +24,88 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-01-github-1409889533-root-directory-0",
+                    "id": "2026-10-22-02-github-1409889533-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T02:09:39.559Z",
+                    "retrieved_at": "2026-10-22T05:54:22.898Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-01-github-1409889533-root-author",
+                    "id": "2026-10-22-02-github-1409889533-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/4444Hao/dsh-codefall/blob/68159fcced1d65c7ea356821859ea80d365c523a/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/4444Hao/dsh-codefall",
+                            "commit": "68159fcced1d65c7ea356821859ea80d365c523a",
+                            "path": "README.md",
+                            "content_sha256": "28ed5f034a9006a2aa254ee304b69fb94551d8e586798e6787a181193fa267bb"
+                        }
+                    ],
                     "revision": "68159fcced1d65c7ea356821859ea80d365c523a",
-                    "captured_at": "2026-10-21T02:09:39.559Z",
-                    "summary": "为 DSH 添加数字雨启动动画、矩形光门转场和可调绿色主题。",
-                    "artifact": "data/runs/2026-10-21-01/snapshots/4444hao--dsh-codefall/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:54:22.898Z",
+                    "summary": "DSH Web/桌面首帧数字雨与绿色主题插件，支持光门、画质和播放时机设置。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/4444hao--dsh-codefall/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-01-github-1409889533-root-source",
+                    "id": "2026-10-22-02-github-1409889533-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/4444Hao/dsh-codefall/blob/68159fcced1d65c7ea356821859ea80d365c523a/lib/index.js",
+                    "url": "https://github.com/4444Hao/dsh-codefall/blob/68159fcced1d65c7ea356821859ea80d365c523a/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/4444Hao/dsh-codefall",
+                            "commit": "68159fcced1d65c7ea356821859ea80d365c523a",
+                            "path": "README.md",
+                            "content_sha256": "28ed5f034a9006a2aa254ee304b69fb94551d8e586798e6787a181193fa267bb"
+                        },
+                        {
+                            "repository_url": "https://github.com/4444Hao/dsh-codefall",
+                            "commit": "68159fcced1d65c7ea356821859ea80d365c523a",
+                            "path": "package.json",
+                            "content_sha256": "6e7002c3232b1e4931957a17dcf480a8e78043da1b34dc8086bec2be09a8ce78"
+                        },
+                        {
+                            "repository_url": "https://github.com/4444Hao/dsh-codefall",
+                            "commit": "68159fcced1d65c7ea356821859ea80d365c523a",
+                            "path": "lib/index.js",
+                            "content_sha256": "9aca0c5c47bdddb143c8c10b7d8781d9118c07badec26c8a4ac9bde8b4bfacb2"
+                        },
+                        {
+                            "repository_url": "https://github.com/4444Hao/dsh-codefall",
+                            "commit": "68159fcced1d65c7ea356821859ea80d365c523a",
+                            "path": "lib/boot.js",
+                            "content_sha256": "65a3433d0ddd744e36a4c3f2352ae12e7512564c39820ce75a1f7e932902eaec"
+                        },
+                        {
+                            "repository_url": "https://github.com/4444Hao/dsh-codefall",
+                            "commit": "68159fcced1d65c7ea356821859ea80d365c523a",
+                            "path": "lib/renderer.js",
+                            "content_sha256": "1dfcfaffd6718ad2e36767b4dbba5bca20d9c416526be840930819cdeca1d7bd"
+                        },
+                        {
+                            "repository_url": "https://github.com/4444Hao/dsh-codefall",
+                            "commit": "68159fcced1d65c7ea356821859ea80d365c523a",
+                            "path": "lib/client.js",
+                            "content_sha256": "f5dc60cb9577f69287f07fd47ff8ac15a9bdefd8a3ebb233ea5b720fe08d88d3"
+                        },
+                        {
+                            "repository_url": "https://github.com/4444Hao/dsh-codefall",
+                            "commit": "68159fcced1d65c7ea356821859ea80d365c523a",
+                            "path": "docs/PORTAL.md",
+                            "content_sha256": "22d4a54b6c4699d415a09b8aaee6c27712165b9725f336cc4e12fffd86f0913a"
+                        }
+                    ],
                     "revision": "68159fcced1d65c7ea356821859ea80d365c523a",
-                    "captured_at": "2026-10-21T02:09:39.559Z",
-                    "summary": "核查 lib/index.js、lib/boot.js、lib/renderer.js；host将renderer和boot内联注入index，使用mtime缓存读取资源与sentinel去重；boot等待宿主就绪和交互条件，再执行光门或淡出，设置独立落盘。",
-                    "artifact": "data/runs/2026-10-21-01/snapshots/4444hao--dsh-codefall/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:54:22.898Z",
+                    "summary": "核查 README.md、package.json、lib/index.js、lib/boot.js、lib/renderer.js、lib/client.js、docs/PORTAL.md；结构化 index 脚本注入与 tapIndex 后备，Canvas overlay、宿主就绪/交互退出、主题变量映射。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/4444hao--dsh-codefall/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "抽读指定核心源码与作者说明；未执行目标插件或测试、未安装或做真实宿主验收，未核实独立用户收益。",
+                        "审阅固定提交 README、包、Host、boot、Client/渲染结构；未运行应用或视觉实测。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +116,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "喜欢视觉个性化的桌面用户，需动画在界面就绪后退出而不阻挡实际操作。",
+                    "text": "用户个性化开屏与主题，仍需快速可靠地进入可交互界面。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1409889533-root-source"
+                        "2026-10-22-02-github-1409889533-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +127,16 @@
                             "fingerprint": "68159fcced1d65c7ea356821859ea80d365c523a"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:09:39.559Z",
+                    "reviewed_at": "2026-10-22T05:54:22.898Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "host将renderer和boot内联注入index，使用mtime缓存读取资源与sentinel去重；boot等待宿主就绪和交互条件，再执行光门或淡出，设置独立落盘。",
+                    "text": "结构化 index 脚本注入与 tapIndex 后备，Canvas overlay、宿主就绪/交互退出、主题变量映射。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1409889533-root-source"
+                        "2026-10-22-02-github-1409889533-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +145,16 @@
                             "fingerprint": "68159fcced1d65c7ea356821859ea80d365c523a"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:09:39.559Z",
+                    "reviewed_at": "2026-10-22T05:54:22.898Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "抽读指定核心源码与作者说明；未执行目标插件或测试、未安装或做真实宿主验收，未核实独立用户收益。",
+                    "text": "审阅固定提交 README、包、Host、boot、Client/渲染结构；未运行应用或视觉实测。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1409889533-root-source"
+                        "2026-10-22-02-github-1409889533-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +163,16 @@
                             "fingerprint": "68159fcced1d65c7ea356821859ea80d365c523a"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:09:39.559Z",
+                    "reviewed_at": "2026-10-22T05:54:22.898Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "固定源码及包清单界定本次组件与分发；作者兼容和效果说明不等于本轮实际执行证据。",
+                    "text": "0.2.0 MIT；Node>=18、声明 DSH>=0.2.0-rc.1，Web client 多服务。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1409889533-root-source"
+                        "2026-10-22-02-github-1409889533-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +181,16 @@
                             "fingerprint": "68159fcced1d65c7ea356821859ea80d365c523a"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:09:39.559Z",
+                    "reviewed_at": "2026-10-22T05:54:22.898Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "无模型或外部服务账单；动画渲染占CPU/GPU及启动等待，首次安装、主题冲突和跨平台验证需人工。",
+                    "text": "| 阶段 | 投入 | 未知 |\n| --- | --- | --- |\n| 安装 | Web/桌面 profile 与重启 | 平台兼容 |\n| 首帧 | 内联脚本与 Canvas | 可交互延迟/功耗 |\n| 维护 | 主题 token/窗口事件 | 新版 UI 覆盖 |",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1409889533-root-source"
+                        "2026-10-22-02-github-1409889533-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +199,16 @@
                             "fingerprint": "68159fcced1d65c7ea356821859ea80d365c523a"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:09:39.559Z",
+                    "reviewed_at": "2026-10-22T05:54:22.898Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "只在愿意接受启动动画的个人环境试用；先验证禁用、减少动态效果和窗口恢复，工作效率场景不因动画安装而预期提速。",
+                    "text": "非关键 profile 先试，实机核启动/窗口恢复/减少动态/卸载；卡顿时先关闭动画。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1409889533-root-source"
+                        "2026-10-22-02-github-1409889533-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +217,16 @@
                             "fingerprint": "68159fcced1d65c7ea356821859ea80d365c523a"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:09:39.559Z",
+                    "reviewed_at": "2026-10-22T05:54:22.898Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "离线Canvas无需视频下载有机制依据；资源消耗与主观体验未本轮实测，macOS/Linux不继承作者Windows截图验收。",
+                    "text": "| 结果 | 源码支持 | 未证实 |\n| --- | --- | --- |\n| 动画 | Canvas、watchdog、退出 | 各设备流畅 |\n| 主题 | token 映射 | 第三方 UI 覆盖 |\n| 重播 | 可见性事件 | 真实托盘/跨平台 |",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1409889533-root-source"
+                        "2026-10-22-02-github-1409889533-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +235,16 @@
                             "fingerprint": "68159fcced1d65c7ea356821859ea80d365c523a"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:09:39.559Z",
+                    "reviewed_at": "2026-10-22T05:54:22.898Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "normalize白名单与范围钳制处理设置，buildScript转义script结束标签；资源失败返回空脚本，尽量让装饰故障不阻断宿主。 [固定源码](https://github.com/4444Hao/dsh-codefall/blob/68159fcced1d65c7ea356821859ea80d365c523a/lib/index.js#L1)。",
+                    "text": "Host 双注入机制以 sentinel 去重并热读脚本；设置只归一化白名单字段，但 loopback 地址判断受反代拓扑影响，diag 返回绝对路径。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1409889533-root-source"
+                        "2026-10-22-02-github-1409889533-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,15 +253,69 @@
                             "fingerprint": "68159fcced1d65c7ea356821859ea80d365c523a"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:09:39.559Z",
+                    "reviewed_at": "2026-10-22T05:54:22.898Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "将视觉动画嵌进 DSH 首帧并避免重复注入，提供设置与主题映射。详见[Q02](#research-q02)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1409889533-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1409889533:root",
+                            "area": "code",
+                            "fingerprint": "68159fcced1d65c7ea356821859ea80d365c523a"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T05:54:22.898Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "恢复重播/跨平台实机未验，主题只覆盖宿主 token；loopback 诊断路由返回本机路径，外层代理访问边界待核。详见[Q03](#research-q03)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1409889533-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1409889533:root",
+                            "area": "code",
+                            "fingerprint": "68159fcced1d65c7ea356821859ea80d365c523a"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T05:54:22.898Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "增加首帧进出时延预算、可用性验收与按权限裁剪诊断，可提高视觉定制的可靠性；尚未实现。详见[Q05](#research-q05)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1409889533-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1409889533:root",
+                            "area": "code",
+                            "fingerprint": "68159fcced1d65c7ea356821859ea80d365c523a"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T05:54:22.898Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T02:09:39.559Z",
+            "last_checked_at": "2026-10-22T05:54:22.898Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "68159fcced1d65c7ea356821859ea80d365c523a",
-                "reviewed_at": "2026-10-21T02:09:39.559Z",
+                "reviewed_at": "2026-10-22T05:54:22.898Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -220,62 +326,62 @@
                 ],
                 "technical": {
                     "criteria": {
-                        "novelty": 9,
-                        "mechanism": 8,
+                        "novelty": 0,
+                        "mechanism": 15,
                         "transferability": 5,
-                        "simplification": 8
+                        "simplification": 4
                     },
-                    "rationale": "novelty：常规动画宿主适配小幅；mechanism：就绪和重播容错小幅；transferability：桌面壳耦合小幅；simplification：首帧内联与资源缓存实质。",
+                    "rationale": "双注入首帧和生命周期处理有工程细节，视觉范式常见。",
                     "basis": "interpretation",
-                    "score": 30,
+                    "score": 24,
                     "evidence_ids": [
-                        "2026-10-21-01-github-1409889533-root-source"
+                        "2026-10-22-02-github-1409889533-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 0,
+                        "workflow": 9,
                         "delivery": 8,
                         "reach": 5,
                         "economics": 0
                     },
-                    "rationale": "workflow：未识别任务流程增量；delivery：视觉体验小幅；reach：配置降低定制门槛小幅；economics：未识别成本结构改善。",
+                    "rationale": "个性化体验明确但非必需，启动/资源成本待测。",
                     "basis": "interpretation",
-                    "score": 13,
+                    "score": 22,
                     "evidence_ids": [
-                        "2026-10-21-01-github-1409889533-root-source"
+                        "2026-10-22-02-github-1409889533-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "偏好启动视觉者可在个人环境试用；先验禁用、减少动态效果和恢复退出，不预期动画提高工作效率。",
+                "reason": "适合非关键 profile 试用，先验启动时延、减少动态和真实窗口恢复。",
                 "criteria": {
                     "scenario": {
                         "score": 15,
-                        "rationale": "个性化启动审美需求成立但较主观。"
+                        "rationale": "界面个性化场景明确。"
                     },
                     "advantage": {
-                        "score": 6,
-                        "rationale": "离线Canvas与就绪转场少视频下载，任务结果增益有限。"
+                        "score": 13,
+                        "rationale": "DSH 首帧与主题整合优于手工改 CSS。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "index注入、sentinel及超时保护源码可查，跨平台恢复未验。"
+                        "rationale": "固定源码和预览，缺真实跨平台验收。"
                     },
                     "cost": {
-                        "score": 15,
-                        "rationale": "无模型账单，CPU/GPU与交互等待是持续代价。"
+                        "score": 5,
+                        "rationale": "Canvas 和 HTML 注入性能待测。"
                     }
                 },
-                "score": 49,
+                "score": 46,
                 "revision": "68159fcced1d65c7ea356821859ea80d365c523a",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T05:54:22.898Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-01-github-1409889533-root-source"
+                    "2026-10-22-02-github-1409889533-root-source"
                 ],
                 "dependencies": [
                     {
@@ -300,89 +406,61 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T01:54:44Z",
-            "analysis_sha256": "fb954ca768015a1da73372c4e1240ce4568a505c774edcd7626e2e4801dcef89"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "5178a8382e3ab6df6794119d7de77289200ac562567737fb87ada608fc41dd7e"
         },
         "publication.metadata": "data/plugins/4444hao--dsh-codefall/META.json",
         "publication.summaries": {
-            "text": "为 DSH 添加数字雨启动动画、矩形光门转场和可调绿色主题。",
+            "text": "DSH Web/桌面首帧数字雨与绿色主题插件，支持光门、画质和播放时机设置。",
             "revision": "68159fcced1d65c7ea356821859ea80d365c523a",
             "source_url": "https://github.com/4444Hao/dsh-codefall/blob/68159fcced1d65c7ea356821859ea80d365c523a/README.md"
         },
         "publication.capabilities": {
             "revision": "68159fcced1d65c7ea356821859ea80d365c523a",
             "items": {
-                "界面": "数字雨开屏、光门转场、绿色主题与设置",
-                "Host 路由": "codefall设置与诊断接口"
-            }
+                "界面": "数字雨开屏、转场、绿色主题与设置",
+                "Host 路由": "首帧脚本注入、配置与诊断查询"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 首帧注入 | 开屏显示 | 需宿主接口 |\n| Canvas 转场 | 视觉个性化 | 设备性能/交互 |\n| 主题 | 色相可调 | 第三方组件覆盖有限 |\n| 设置/诊断 | 调参与排查 | loopback/反代边界 |"
         },
         "publication.advice": {
             "revision": "68159fcced1d65c7ea356821859ea80d365c523a",
-            "text": "只在愿意接受启动动画的个人环境试用；先验证禁用、减少动态效果和窗口恢复，工作效率场景不因动画安装而预期提速。"
+            "text": "非关键 profile 先试，实机核启动/窗口恢复/减少动态/卸载；卡顿时先关闭动画。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/4444hao--dsh-codefall",
-        "reports": "# dsh-codefall\n\n> 为 DSH 添加数字雨启动动画、矩形光门转场和可调绿色主题。\n\n## 研究范围\n\n- **仓库**：[4444Hao/dsh-codefall](https://github.com/4444Hao/dsh-codefall)\n- **版本号**：0.2.0（[固定提交 68159fcc](https://github.com/4444Hao/dsh-codefall/tree/68159fcced1d65c7ea356821859ea80d365c523a)）\n- **版本日期**：2026-10-20（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已实现机制由固定源码支持；效果未独立实测，未来假设未验证。\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：喜欢视觉个性化的桌面用户，需动画在界面就绪后退出而不阻挡实际操作。\n- **亮点**：相对普通静态主题，首帧动画、就绪握手与桌面恢复重播的组合改变启动体验；Canvas数字雨与主题色映射是常见技术，价值主要为视觉定制而非生产效率。\n- **思考**：装饰层能否保证不延迟工作？默认交互退出且还要宿主就绪，存在用户等待和误判就绪的可能；源码有超时、失败保护及减少动态效果分支，支持容错设计，真实托盘恢复仍需平台验收。\n- **建议**：只在愿意接受启动动画的个人环境试用；先验证禁用、减少动态效果和窗口恢复，工作效率场景不因动画安装而预期提速。\n\n采用建议：只在愿意接受启动动画的个人环境试用；先验证禁用、减少动态效果和窗口恢复，工作效率场景不因动画安装而预期提速。\n\n## 核心贡献\n\n相对普通静态主题，首帧动画、就绪握手与桌面恢复重播的组合改变启动体验；Canvas数字雨与主题色映射是常见技术，价值主要为视觉定制而非生产效率。\n\n## 关键质疑\n\n[核查分支](https://github.com/4444Hao/dsh-codefall/blob/68159fcced1d65c7ea356821859ea80d365c523a/lib/boot.js#L1057)。\n\n装饰层能否保证不延迟工作？默认交互退出且还要宿主就绪，存在用户等待和误判就绪的可能；源码有超时、失败保护及减少动态效果分支，支持容错设计，真实托盘恢复仍需平台验收。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n待验证假设：按用户最近启动等待偏好自动建议关闭重播，可保留首次视觉体验并减少重复阻挡；需显式选择且新增偏好状态，不能替用户默认改变。\n\n对启动、最小化恢复、GPU失败、减少动态效果逐项测量首个可交互时间；若建议机制不能降低重复等待或错误关闭首次偏好则否定。\n\n## 场景与替代办法\n\n喜欢视觉个性化的桌面用户，需动画在界面就绪后退出而不阻挡实际操作。\n\n参照静态主题和普通开屏动画；本项目通过就绪与生命周期对齐增强整合，非业务交付工具。\n\n## 依赖与流程\n\n需要支持index注入和客户端主题变量的宿主；恢复重播面向dsh-app桌面壳，其他壳和平台需另验。\n\nindex注入→Canvas雨场→宿主就绪及交互→转场清理→可选窗口恢复重播；设置保存用于下次播放。\n\n## 成本与效果\n\n无模型或外部服务账单；动画渲染占CPU/GPU及启动等待，首次安装、主题冲突和跨平台验证需人工。\n\n离线Canvas无需视频下载有机制依据；资源消耗与主观体验未本轮实测，macOS/Linux不继承作者Windows截图验收。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：11ede560bb3db83df92373fd8b580a5e9972d9c69e0451f14bb09b96f5365454。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 4 | 1002 | — | — | 17242 |\n| .js | source | 4 | 3329 | 2492 | 686 | — |\n| .mjs | source | 14 | 3144 | 2457 | 501 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **界面**：数字雨开屏、光门转场、绿色主题与设置\n- **Host 路由**：codefall设置与诊断接口\n\n## 工程亮点\n\nnormalize白名单与范围钳制处理设置，buildScript转义script结束标签；资源失败返回空脚本，尽量让装饰故障不阻断宿主。 [固定源码](https://github.com/4444Hao/dsh-codefall/blob/68159fcced1d65c7ea356821859ea80d365c523a/lib/index.js#L1)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 lib/index.js、lib/boot.js、lib/renderer.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读指定核心源码与作者说明；未执行目标插件或测试、未安装或做真实宿主验收，未核实独立用户收益。\n- 下一步：对启动、最小化恢复、GPU失败、减少动态效果逐项测量首个可交互时间；若建议机制不能降低重复等待或错误关闭首次偏好则否定。\n",
+        "reports": "# dsh-codefall\n\n> DSH Web/桌面首帧数字雨与绿色主题插件，支持光门、画质和播放时机设置。\n\n## 研究范围\n\n- **仓库**：[4444Hao/dsh-codefall](https://github.com/4444Hao/dsh-codefall)\n- **版本号**：0.2.0（[固定提交 68159fcced1d65c7ea356821859ea80d365c523a](https://github.com/4444Hao/dsh-codefall/tree/68159fcced1d65c7ea356821859ea80d365c523a)）\n- **版本日期**：2026-10-20（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定源码支持动画/主题机制；真实窗口恢复与部分平台未验，路由诊断暴露需核外层访问。\n\n## 洞察短评\n\n- **用途**：用户个性化开屏与主题，仍需快速可靠地进入可交互界面。\n- **亮点**：将视觉动画嵌进 DSH 首帧并避免重复注入，提供设置与主题映射。详见[Q02](#research-q02)。\n- **思考**：恢复重播/跨平台实机未验，主题只覆盖宿主 token；loopback 诊断路由返回本机路径，外层代理访问边界待核。详见[Q03](#research-q03)。\n- **建议**：增加首帧进出时延预算、可用性验收与按权限裁剪诊断，可提高视觉定制的可靠性；尚未实现。详见[Q05](#research-q05)。\n\n采用建议：非关键 profile 先试，实机核启动/窗口恢复/减少动态/卸载；卡顿时先关闭动画。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n将视觉动画嵌进 DSH 首帧并避免重复注入，提供设置与主题映射。详见[Q02](#research-q02)。\n\n## 关键质疑\n\n恢复重播/跨平台实机未验，主题只覆盖宿主 token；loopback 诊断路由返回本机路径，外层代理访问边界待核。详见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n增加首帧进出时延预算、可用性验收与按权限裁剪诊断，可提高视觉定制的可靠性；尚未实现。详见[Q05](#research-q05)。\n\n跨 Windows/macOS/Linux 桌面与 Web，测启动可交互时间、帧率/功耗、减少动态、反代访问诊断和卸载恢复。\n\n## 场景与替代办法\n\n用户个性化开屏与主题，仍需快速可靠地进入可交互界面。\n\n宿主默认开屏与主题或手工 CSS；本包提供设置化动画和颜色映射。\n\n## 依赖与流程\n\n| 条件 | 用途 | 失败时 |\n| --- | --- | --- |\n| DSH Web 注入和 Client slots | 开屏/设置 | 功能缺失 |\n| Canvas2D/RAF | 绘制 | 失败退场 |\n| 宿主主题 token/桌面事件 | 主题/重播 | 部分覆盖或不重播 |\n\n| 步骤 | 动作 | 判据 |\n| --- | --- | --- |\n| 安装 | 非关键 profile 重启 | 首帧可见 |\n| 验收 | 交互、迟到、减少动态、恢复 | 不阻断界面 |\n| 调整 | 画质/关闭/卸载 | 性能可接受 |\n\n## 成本与效果\n\n| 阶段 | 投入 | 未知 |\n| --- | --- | --- |\n| 安装 | Web/桌面 profile 与重启 | 平台兼容 |\n| 首帧 | 内联脚本与 Canvas | 可交互延迟/功耗 |\n| 维护 | 主题 token/窗口事件 | 新版 UI 覆盖 |\n\n| 结果 | 源码支持 | 未证实 |\n| --- | --- | --- |\n| 动画 | Canvas、watchdog、退出 | 各设备流畅 |\n| 主题 | token 映射 | 第三方 UI 覆盖 |\n| 重播 | 可见性事件 | 真实托盘/跨平台 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**分离数字雨视觉价值、首帧注入机制与真实桌面可用性。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 开屏动画与绿色主题给用户什么，何时会阻断进入？\n\n**研究主题：**场景与需求\n\n#### 完整回答\n\n插件在 DSH Web/桌面启动首帧显示 Canvas 数字雨和光门转场，另提供绿色主题；价值是个性化视觉，而非生产能力。默认等宿主就绪并有用户交互才退出；宿主未就绪有约 15 秒 watchdog，用户若没交互可继续停留，属预期体验但会延迟进入。合格结果是不卡住界面、符合减少动态效果、设置可恢复且覆盖范围明确。基线是原生开屏/主题或静态 CSS。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:20-28](https://github.com/4444Hao/dsh-codefall/blob/68159fcced1d65c7ea356821859ea80d365c523a/README.md#L20-L28)\n\n作者功能与范围。\n\n```text\n## 使用效果\n\n- **数字雨开屏**：默认无标题、无提示文字，启动时进入绿色字符瀑布。\n- **矩阵光门**：界面就绪并收到进入交互后，中央细长矩形光门向左右展开，逐渐露出 Harness 界面；也可选择淡出。\n- **按需重播**：可选择仅应用启动时播放，或桌面窗口从后台、最小化状态恢复时重播。Web 标签切换不重播。\n- **绿色主题**：将界面的蓝色强调色映射到绿色，支持雨绿、经典、青碧预设与色相调节；主题可单独关闭。\n- **画面调节**：雨密度、雨速、画质与明暗模式均可设置。浅色模式呈现白底深绿的“墨迹雨”。\n\n动画使用 Canvas2D 绘制，无需加载视频或在线动画素材；退出后清理雨场和动画帧。系统开启“减少动态效果”时，光门改用淡出。\n```\n\n**依据 2 · 作者声明**：[README.md:79-91](https://github.com/4444Hao/dsh-codefall/blob/68159fcced1d65c7ea356821859ea80d365c523a/README.md#L79-L91)\n\n默认交互/动画设置。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n| 设置 | 可选项 | 默认值 |\n| --- | --- | --- |\n| 播放时机 | 仅应用启动时 / 每次打开窗口 | 仅应用启动时 |\n| 结束方式 | 交互后结束 / 3 秒后自动继续 | 交互后结束 |\n| 退出转场 | 矩阵光门 / 淡出 | 矩阵光门 |\n| 雨密度 | 滑块调节 | 85% |\n| 雨速 | 滑块调节 | ×1.00 |\n| 画质 | 高 / 标准 / 省电 | 标准 |\n| 明暗 | 跟随 / 深色 / 浅色 | 跟随 |\n| 绿色主题 | 开 / 关 | 开 |\n| 绿色色调 | 滑块调节；雨绿 / 经典 / 青碧 | 雨绿 145° |\n\n播放时机与转场保存后用于后续播放，调整后无需再次重启；绿色主题与色相立即生效。“3 秒后自动继续”仍需等待宿主界面就绪。\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:65-127](https://github.com/4444Hao/dsh-codefall/blob/68159fcced1d65c7ea356821859ea80d365c523a/lib/index.js#L65-L127)\n\n默认值。\n\n<details>\n<summary>查看原文（63行）</summary>\n\n```text\n/** Everything the boot needs, with the deployment defaults. */\nconst DEFAULTS = {\n  animation: true,\n  playback: 'startup', // 'startup' | 'every-open'; preserve existing playback on upgrade\n  transition: 'portal', // 'portal' | 'fade'\n  theme: true,\n  appearance: 'auto', // 'auto' follows the host's resolved theme\n  quality: 'standard', // 'high' | 'standard' | 'economy'\n  density: 0.85,\n  ghostShare: 0.15,\n  speed: 1,\n  fontSize: 18,\n  columnSpacing: 1.35,\n  glyphs: 'code', // 'code' | 'katakana' | 'mixed'\n  charset: '',\n  /**\n   * Empty by default: the product is PURE digital rain — no title, no status\n   * line, no hint. Both stay configurable: set `titleText` for the converging\n   * title treatment, or `hintReady` for an affordance line.\n   */\n  titleText: '',\n  titleScale: 3.3,\n  /**\n   * Dismissal policy.\n   *   'interaction' — the rain stays until the user moves the pointer, clicks,\n   *                   scrolls or presses a key (a boot screen you acknowledge).\n   *   'ready'       — the rain leaves once the host is ready and the display\n   *                   floor has passed. `'ready'` + `minDisplayMs: 3000` is\n   *                   exactly the \"3 秒\" choice.\n   */\n  dismiss: 'interaction',\n  /** Floor on the visible time. */\n  minDisplayMs: 900,\n  /** Optional status line once the host is ready — empty, so only rain shows. */\n  hintReady: '',\n  /** Optional status line for an early interaction — empty by default. */\n  hintWaitingAcknowledged: '',\n  /** Idle power tiers: slow the rain past this age, then stop drawing at all. */\n  idleSlowMs: 20000,\n  idleStaticMs: 60000,\n  /** Fires only when the host never reports ready — never a display cap. */\n  timeoutMs: 15000,\n  readyElementThreshold: 80,\n  /**\n   * Windows desktop only: hide the caption glyphs (minimize / maximize / close)\n   * while the boot overlay is up. They are Chromium's title-bar overlay, drawn\n   * ABOVE the page, so this works by painting them in the caption fill color —\n   * invisible but still clickable. See the caption notes in lib/boot.js.\n   */\n  hideWindowControls: true,\n  /**\n   * Green theme: replace the blue brand ramps with green at this hue. The\n   * browser half remaps the shipped source colours at runtime, so changing this\n   * takes effect immediately rather than at the next launch.\n   */\n  greenHue: 145,\n  /**\n   * Page-side self-check. Off by default; when on, the injected script POSTs a\n   * small report back to this plugin's own route on the first painted frame and\n   * again at hand-off. It is the only way to observe real-browser execution from\n   * the host side, and it costs one loopback request.\n   */\n  beacon: false\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/boot.js:135-149](https://github.com/4444Hao/dsh-codefall/blob/68159fcced1d65c7ea356821859ea80d365c523a/lib/boot.js#L135-L149)\n\n宿主就绪与交互状态。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n    // Dismissal state. `dismiss: 'interaction'` keeps the rain up until the user\n    // does something, which is the whole point of a boot screen — but it must\n    // never become a trap, hence hostReady/interacted and the grace timer below.\n    // NOTE: readiness is a BOOLEAN, not the timestamp: `now()` is 0 at t=0, so\n    // testing the timestamp for truthiness silently misreads a ready-at-zero host.\n    var hostReady = false\n    var interacted = false\n    var readyAt = 0\n    var interactedAt = 0\n    var moveAccum = 0\n    var lastX = null\n    var lastY = null\n    var minTimer = 0\n    var graceTimer = 0\n    var idleStopped = false\n```\n\n</details>\n\n#### 缺口\n\n- 未在真实桌面/移动端体验。\n  **影响：**可用性和负担未知。\n  **进一步探讨：**实机观察启动、休眠恢复、键盘与减少动态设置。\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 怎样在首帧注入且避免双重动画？\n\n**研究主题：**功能与机制、贡献与相对优势\n\n#### 完整回答\n\nHost 既监听 webserver/index-inject 结构化脚本行，又注册 tapIndex 原始 HTML 转换作后备，脚本含 sentinel 以防两路叠加；每次请求从 mtime 缓存读取 renderer/boot 并内联约数十 KB。boot.js 创建 Canvas overlay、宿主就绪/交互、转场、watchdog 和清理；Client 负责主题变量映射与设置 UI。增量是对 DSH 首帧注入和主题 token 的适配，数字雨渲染是常见视觉模式。README 中 GIF/截图仅展示作者准备的预览，不是独立实机验收。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:316-380](https://github.com/4444Hao/dsh-codefall/blob/68159fcced1d65c7ea356821859ea80d365c523a/lib/index.js#L316-L380)\n\n结构化和 tapIndex 双机制。\n\n<details>\n<summary>查看原文（65行）</summary>\n\n```text\n  /** The current boot script, or '' when the animation is off or unreadable. */\n  function currentScript() {\n    try {\n      const options = readSettings(cache)\n      if (!options.animation) return ''\n      return buildScript(options, cache)\n    } catch (error) {\n      diag.lastError = String((error && error.message) || error)\n      return ''\n    }\n  }\n\n  // Mechanism 1 — the structured injection table. Registered on the plugin's own\n  // context (the event needs no service) and APPENDED, not prepended: see the\n  // module header. `ctx.on(name, listener, options?)` takes an options object;\n  // it has no label parameter.\n  ctx.on(\n    'webserver/index-inject',\n    (table) => {\n      const script = currentScript()\n      if (!script || !table || typeof table.push !== 'function') return\n      table.push({ kind: 'script', placement: 'body', text: script })\n      diag.structuredRows++\n      diag.lastInjectAt = new Date().toISOString()\n      diag.lastScriptBytes = script.length\n    },\n    { prepend: false }\n  )\n\n  ctx.inject(['webServer'], (http) => {\n    // Mechanism 2 — the raw index transform, kept as a fallback for a build\n    // where the structured table is not rendered. The sentinel makes it a no-op\n    // whenever mechanism 1 already carried the response.\n    http.effect(\n      () =>\n        http.webServer.tapIndex((html) => {\n          try {\n            if (typeof html === 'string' && html.indexOf(SENTINEL) !== -1) {\n              diag.tapSkipped++\n              return html\n            }\n            const script = currentScript()\n            if (!script) return html\n            diag.tapRenders++\n            diag.lastInjectAt = new Date().toISOString()\n            diag.lastScriptBytes = script.length\n            return injectIntoHtml(html, script)\n          } catch (error) {\n            diag.lastError = String((error && error.message) || error)\n            return html\n          }\n        }),\n      'dsh-codefall: first-frame boot (tap fallback)'\n    )\n\n    http.effect(\n      () =>\n        http.webServer.register({\n          kind: 'exact',\n          path: API_PATH,\n          handler: createSettingsHandler(cache)\n        }),\n      'dsh-codefall: settings route'\n    )\n  })\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/boot.js:105-206](https://github.com/4444Hao/dsh-codefall/blob/68159fcced1d65c7ea356821859ea80d365c523a/lib/boot.js#L105-L206)\n\noverlay 和 Canvas 初始化。\n\n<details>\n<summary>查看原文（102行）</summary>\n\n```text\n  function boot(options) {\n    var o = options || {}\n    var doc = root.document\n\n    // Idempotent: a second boot (hot reload, duplicate injection) attaches to\n    // the live controller instead of stacking a second overlay.\n    if (root.__codefallController) return root.__codefallController\n    if (!doc || !root.CodefallRenderer) return null\n\n    var appearance = o.appearance === 'light' || o.appearance === 'dark' ? o.appearance : autoAppearance(doc, root)\n    var start = now()\n    var phase = 'playing' // playing -> portal/draining -> closing -> done\n    var portalAt = 0\n    var portalRing = null\n    var reason = null\n    var paused = false\n    var frames = 0\n    var fps = 0\n    var fpsAt = start\n    var raf = 0\n    var lastFrame = 0\n    var fadeTimer = 0\n    var drainTimer = 0\n    var watchdog = 0\n    var resizeTimer = 0\n    var observer = null\n    var heuristicTimer = 0\n    var beaconed = false\n    var HEURISTIC_MIN_MS = 500\n\n    // Dismissal state. `dismiss: 'interaction'` keeps the rain up until the user\n    // does something, which is the whole point of a boot screen — but it must\n    // never become a trap, hence hostReady/interacted and the grace timer below.\n    // NOTE: readiness is a BOOLEAN, not the timestamp: `now()` is 0 at t=0, so\n    // testing the timestamp for truthiness silently misreads a ready-at-zero host.\n    var hostReady = false\n    var interacted = false\n    var readyAt = 0\n    var interactedAt = 0\n    var moveAccum = 0\n    var lastX = null\n    var lastY = null\n    var minTimer = 0\n    var graceTimer = 0\n    var idleStopped = false\n\n    // The overlay styles itself inline and depends on no stylesheet row: an\n    // earlier version relied on a separate <style> injection, and when that was\n    // dropped the overlay silently lost position:fixed (and with it its size),\n    // rendering a 155px strip in normal document flow.\n    var mount = o.host && o.host.nodeType === 1 ? o.host : doc.body || doc.documentElement\n    var fixed = mount === doc.body || mount === doc.documentElement\n\n    var wrap = doc.createElement('div')\n    wrap.id = ID\n    wrap.setAttribute('aria-hidden', 'true')\n    var ws = wrap.style\n    ws.position = fixed ? 'fixed' : 'absolute'\n    if (fixed) {\n      ws.top = '0'\n      ws.right = '0'\n      ws.bottom = '0'\n      ws.left = '0'\n      ws.zIndex = '2147483000'\n    } else {\n      ws.top = '0'\n      ws.left = '0'\n      ws.width = '100%'\n      ws.height = '100%'\n    }\n    ws.background = bgFor(appearance)\n    ws.opacity = '1'\n    ws.transition = 'opacity ' + FADE_MS + 'ms linear'\n    ws.touchAction = 'none'\n    ws.contain = 'layout paint'\n    ws.willChange = 'opacity'\n\n    var canvas = doc.createElement('canvas')\n    canvas.style.display = 'block'\n    canvas.style.width = '100%'\n    canvas.style.height = '100%'\n    wrap.appendChild(canvas)\n\n    var renderer = root.CodefallRenderer.create(canvas, {\n      appearance: appearance,\n      quality: o.quality || 'standard',\n      seed: o.seed || 0,\n      glyphs: o.glyphs || 'code',\n      charset: o.charset || '',\n      density: o.density == null ? undefined : o.density,\n      ghostShare: o.ghostShare == null ? undefined : o.ghostShare,\n      speed: o.speed == null ? undefined : o.speed,\n      fontSize: o.fontSize || undefined,\n      fontFamily: o.fontFamily || undefined,\n      columnSpacing: o.columnSpacing || undefined,\n      titleText: o.titleText == null ? undefined : o.titleText,\n      titleY: o.titleY == null ? undefined : o.titleY,\n      statusText: o.statusText || ''\n    })\n    // Atlas/context creation can fail (for example after a GPU reset). Keep the\n    // overlay detached until it succeeds so a failed restore cannot block the UI.\n    mount.appendChild(wrap)\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:173-197](https://github.com/4444Hao/dsh-codefall/blob/68159fcced1d65c7ea356821859ea80d365c523a/lib/index.js#L173-L197)\n\nmtime 缓存。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n/**\n * mtime-keyed file cache. Keeps the per-request cost of inlining ~37 KB of\n * source at roughly one stat() per file, while still picking up an edit on the\n * very next render (which is what makes the refresh-only dev loop work).\n */\nfunction createCache() {\n  const files = new Map()\n  return {\n    read(file) {\n      try {\n        const st = statSync(file)\n        const hit = files.get(file)\n        if (hit && hit.mtimeMs === st.mtimeMs && hit.size === st.size) return hit.text\n        const text = readFileSync(file, 'utf8')\n        files.set(file, { mtimeMs: st.mtimeMs, size: st.size, text })\n        return text\n      } catch {\n        return ''\n      }\n    },\n    invalidate(file) {\n      files.delete(file)\n    }\n  }\n}\n```\n\n</details>\n\n**依据 4 · 作者声明**：[README.md:14-18](https://github.com/4444Hao/dsh-codefall/blob/68159fcced1d65c7ea356821859ea80d365c523a/README.md#L14-L18)\n\n预览边界。\n\n```text\n[安装与使用](#安装与使用) · [设置](#设置) · [GitHub](https://github.com/4444Hao/dsh-codefall) · [npm](https://www.npmjs.com/package/dsh-codefall)\n\n![数字瀑布效果预览：黑底绿色数字雨循环动图](docs/images/boot-waterfall-v2.gif)\n\n*数字雨由插件自带渲染器生成；此动图展示雨场，不包含光门转场。*\n```\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 主题覆盖、窗口恢复和设置接口有哪些边界？\n\n**研究主题：**缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\n绿色主题只重映射宿主已采用的颜色 token，第三方自绘组件可能不覆盖；窗口恢复重播依赖桌面可见性事件，作者承认真实托盘/最小化恢复与 macOS/Linux 未验。设置 JSON 写到 DSH_HOME/codefall.json，POST 只按可写键归一化，响应可诊断；路由以 socket remoteAddress 是否 loopback 决定访问，若 Web 由本机反代转发外部请求，组件只能看到反代地址，外层鉴权仍需核。诊断 GET 带 diag 返回源码绝对路径、加载时间和 beacon，可能泄露宿主布局给所有能到路由的本地/代理客户端。没有形式化的视觉可用性证明。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:106-112](https://github.com/4444Hao/dsh-codefall/blob/68159fcced1d65c7ea356821859ea80d365c523a/README.md#L106-L112)\n\n作者跨平台/主题限制。\n\n```text\n## 兼容与说明\n\n- 建议使用 Harness **0.2.0-rc.2 或更高版本**。安装或更新插件后，请完整退出并重启应用。\n- 窗口恢复重播依赖桌面环境的可见性事件；当前实现针对 `dsh-app:` 桌面页面，其他桌面壳需单独验证。\n- Windows 设置截图见上文链接。光门已通过浏览器预览及离线测试；真实托盘 / 最小化恢复仍需按[实机验收步骤](docs/PORTAL.md#实机验收)验证。macOS / Linux 尚未实机验证，macOS 完全遮挡窗口也可能产生可见性事件。\n- 不同宿主版本及第三方插件可能使用自己的配色；绿色主题的覆盖范围取决于它们是否采用宿主主题变量。\n- 在应用的插件管理中停用或卸载即可移除主题层。CLI 管理环境可运行 `dsh plugin --profile web remove dsh-codefall`，profile 按实际环境调整。\n```\n\n**依据 2 · 源码核查**：[lib/index.js:205-223](https://github.com/4444Hao/dsh-codefall/blob/68159fcced1d65c7ea356821859ea80d365c523a/lib/index.js#L205-L223)\n\n可写键归一化。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n/** Whitelist, coerce and clamp an untrusted settings object. */\nexport function normalize(input) {\n  const src = input && typeof input === 'object' ? input : {}\n  const out = {}\n  for (const key of WRITABLE) {\n    const raw = src[key]\n    const fallback = DEFAULTS[key]\n    if (typeof fallback === 'boolean') {\n      out[key] = typeof raw === 'boolean' ? raw : fallback\n    } else if (typeof fallback === 'number') {\n      out[key] = raw === undefined ? fallback : clampNumber(raw, fallback, RANGE[key] || [0, 1])\n    } else if (ENUM[key]) {\n      out[key] = ENUM[key].includes(raw) ? raw : fallback\n    } else {\n      out[key] = typeof raw === 'string' ? raw.slice(0, 400) : fallback\n    }\n  }\n  return out\n}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:386-475](https://github.com/4444Hao/dsh-codefall/blob/68159fcced1d65c7ea356821859ea80d365c523a/lib/index.js#L386-L475)\n\nloopback、诊断及 POST 设置。\n\n<details>\n<summary>查看原文（90行）</summary>\n\n```text\nfunction isLoopback(address) {\n  if (!address) return true // no socket info: the server itself is loopback-bound\n  return (\n    address === '127.0.0.1' ||\n    address === '::1' ||\n    address === '::ffff:127.0.0.1' ||\n    address.startsWith('127.')\n  )\n}\n\nfunction createSettingsHandler(cache) {\n  return async function handler(req, res) {\n    const send = (code, body) => {\n      const text = JSON.stringify(body)\n      res.writeHead(code, {\n        'content-type': 'application/json; charset=utf-8',\n        'cache-control': 'no-store',\n        'content-length': Buffer.byteLength(text)\n      })\n      res.end(text)\n    }\n\n    const remote = req.socket && req.socket.remoteAddress\n    if (!isLoopback(remote)) return send(403, { ok: false, error: 'loopback-only' })\n\n    // Self-report: which injection mechanism is actually carrying the page.\n    try {\n      const url = new URL(req.url || '/', 'http://codefall.local')\n      if (url.searchParams.has('diag')) {\n        return send(200, {\n          ok: true,\n          diag,\n          files: { renderer: RENDERER_FILE, boot: BOOT_FILE, bootReadable: !!cache.read(BOOT_FILE) }\n        })\n      }\n    } catch {\n      /* a malformed URL is not worth failing over */\n    }\n\n    if (req.method === 'GET' || req.method === 'HEAD') {\n      return send(200, { ok: true, value: readSettings(cache), defaults: DEFAULTS })\n    }\n    if (req.method !== 'POST') return send(405, { ok: false, error: 'method-not-allowed' })\n\n    const contentType = String(req.headers['content-type'] || '')\n    if (!contentType.includes('application/json')) return send(415, { ok: false, error: 'json-required' })\n\n    let raw = ''\n    try {\n      for await (const chunk of req) {\n        raw += chunk\n        if (raw.length > MAX_BODY_BYTES) {\n          send(413, { ok: false, error: 'payload-too-large' })\n          req.destroy()\n          return\n        }\n      }\n    } catch {\n      return send(400, { ok: false, error: 'unreadable-body' })\n    }\n\n    let patch\n    try {\n      patch = JSON.parse(raw || '{}')\n    } catch {\n      return send(400, { ok: false, error: 'bad-json' })\n    }\n\n    // `{patch:{...}}` mirrors the shape other DSH plugins use; a bare object\n    // is accepted too so the route is easy to poke by hand.\n    const delta = patch && typeof patch === 'object' && patch.patch ? patch.patch : patch\n\n    // Page-side self-check reports are recorded, never persisted.\n    if (patch && typeof patch === 'object' && patch.beacon && typeof patch.beacon === 'object') {\n      const report = { ...patch.beacon, receivedAt: new Date().toISOString() }\n      diag.beacons.push(report)\n      if (diag.beacons.length > 20) diag.beacons.shift()\n      return send(200, { ok: true, diag: { beacons: diag.beacons.length } })\n    }\n\n    const next = normalize({ ...readSettings(cache), ...(delta && typeof delta === 'object' ? delta : {}) })\n\n    try {\n      writeSettings(next)\n      cache.invalidate(settingsFile())\n    } catch {\n      return send(500, { ok: false, error: 'write-failed' })\n    }\n    return send(200, { ok: true, value: next })\n  }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/boot.js:1127-1187](https://github.com/4444Hao/dsh-codefall/blob/68159fcced1d65c7ea356821859ea80d365c523a/lib/boot.js#L1127-L1187)\n\n可见性恢复监听。\n\n<details>\n<summary>查看原文（61行）</summary>\n\n```text\n  /** One lightweight visibility listener survives each individual animation. */\n  function install(options) {\n    if (root.__codefallSession) {\n      root.__codefallSession.configure(options)\n      return root.__codefallSession\n    }\n    var doc = root.document\n    if (!doc || !doc.addEventListener) return null\n    var latest = Object.assign({}, options || {})\n    var appReady = false\n    var disposed = false\n    var wasHidden = !!doc.hidden\n    // Do not mistake browser-tab switching for opening the desktop window.\n    // Electron hide/minimize publishes visibilitychange on Windows/Linux.\n    var desktop = !!(root.location && root.location.protocol === 'dsh-app:')\n\n    function configure(next) {\n      if (disposed || !next) return\n      latest = Object.assign({}, latest, next)\n      var ctl = root.__codefallController\n      if (ctl && ctl.configure) ctl.configure(next)\n    }\n    function onVisibility() {\n      if (disposed) return\n      if (doc.hidden) {\n        wasHidden = true\n        // Discard a hidden splash so restore starts a fresh scene and input guard.\n        if (desktop && latest.playback === 'every-open' && root.__codefallController) {\n          root.__codefallController.destroy()\n        }\n        return\n      }\n      if (!wasHidden) return\n      wasHidden = false\n      if (!desktop || !appReady || latest.animation === false || latest.playback !== 'every-open') return\n      if (root.__codefallController) return\n      var ctl\n      try {\n        ctl = boot(Object.assign({}, latest, { readyHeuristic: false }))\n        if (ctl) ctl.ready() // the existing UI is already mounted\n      } catch (error) {\n        if (root.__codefallController) root.__codefallController.destroy()\n      }\n    }\n    var session = {\n      configure: configure,\n      ready: function () {\n        if (disposed) return\n        appReady = true\n        if (root.__codefallController) root.__codefallController.ready()\n      },\n      destroy: function () {\n        if (disposed) return\n        disposed = true\n        doc.removeEventListener('visibilitychange', onVisibility)\n        if (root.__codefallController) root.__codefallController.destroy()\n        if (root.__codefallSession === session) delete root.__codefallSession\n      },\n      state: function () { return { ready: appReady, desktop: desktop, playback: latest.playback || 'startup' } }\n    }\n    doc.addEventListener('visibilitychange', onVisibility)\n```\n\n</details>\n\n#### 缺口\n\n- 未核真实反代/宿主鉴权。\n  **影响：**外部访问设置和诊断的可达性未知。\n  **进一步探讨：**隔离反代与非本机客户端测试。\n- 未测真实桌面恢复。\n  **影响：**跨平台重播可靠性未知。\n  **进一步探讨：**Windows/macOS/Linux 实机矩阵。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 安装与视觉渲染成本如何控制？\n\n**研究主题：**依赖、兼容与流程、效果与总成本\n\n#### 完整回答\n\n包 0.2.0 MIT、Node>=18、DSH>=0.2.0-rc.1 声明，Web client 依赖 runtime/slots/theme/settings。首次注入脚本增加首帧 HTML 体积，Canvas 每帧绘制有 GPU/CPU 开销；源码提供 high/standard/economy 画质、空闲减速/停画、关闭动画/主题和 watchdog，但本轮未测设备耗电或帧率。图片预览/离线测试不是实际应用性能数据。设置路由本机写配置、开发时 mtime 热读带来每次 index stat 成本。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:1-80](https://github.com/4444Hao/dsh-codefall/blob/68159fcced1d65c7ea356821859ea80d365c523a/package.json#L1-L80)\n\n版本和客户端依赖。\n\n<details>\n<summary>查看原文（80行）</summary>\n\n```text\n{\n  \"name\": \"dsh-codefall\",\n  \"version\": \"0.2.0\",\n  \"description\": \"dsh-codefall — green digital-rain boot animation plus a green semantic theme for the DeepSeek Harness client.\",\n  \"license\": \"MIT\",\n  \"author\": \"4444Hao\",\n  \"type\": \"module\",\n  \"main\": \"lib/index.js\",\n  \"publishConfig\": {\n    \"registry\": \"https://registry.npmjs.org\",\n    \"access\": \"public\"\n  },\n  \"exports\": {\n    \".\": \"./lib/index.js\",\n    \"./client\": \"./lib/client.js\",\n    \"./package.json\": \"./package.json\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/4444Hao/dsh-codefall.git\"\n  },\n  \"homepage\": \"https://github.com/4444Hao/dsh-codefall#readme\",\n  \"bugs\": {\n    \"url\": \"https://github.com/4444Hao/dsh-codefall/issues\"\n  },\n  \"files\": [\n    \"lib\",\n    \"cordis.patch.yml\",\n    \"README.md\",\n    \"docs\",\n    \"LICENSE\"\n  ],\n  \"keywords\": [\n    \"deepseek-harness\",\n    \"dsh\",\n    \"dsh-plugin\",\n    \"boot\",\n    \"startup-animation\",\n    \"digital-rain\",\n    \"theme\"\n  ],\n  \"engines\": {\n    \"node\": \">=18\"\n  },\n  \"scripts\": {\n    \"test\": \"node tools/host-test.mjs && node tools/client-test.mjs && node tools/smoke.mjs\",\n    \"test:fast\": \"node tools/host-test.mjs && node tools/client-test.mjs\",\n    \"prepublishOnly\": \"node tools/host-test.mjs && node tools/client-test.mjs\",\n    \"check\": \"node --check lib/renderer.js && node --check lib/boot.js && node --check lib/client.js && node --check lib/index.js\",\n    \"frames\": \"node tools/render-frames.mjs\",\n    \"docs:images\": \"node tools/make-docs-images.mjs\",\n    \"docs:animation\": \"node tools/make-docs-animation.mjs\",\n    \"theme\": \"node tools/extract-app-assets.mjs && node tools/extract-theme-css.mjs && node tools/green-map.mjs --emit\"\n  },\n  \"devDependencies\": {\n    \"@napi-rs/canvas\": \"^0.1.80\",\n    \"gifenc\": \"^1.0.3\"\n  },\n  \"peerDependencies\": {\n    \"@deepseek-ai/cordis\": \"^4.0.1\",\n    \"react\": \"^18.2.0\"\n  },\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    },\n    \"client\": {\n      \"platform\": \"web\",\n      \"immediately\": true,\n      \"inject\": [\n        \"@deepseek-ai/dsh-client-runtime\",\n        \"@deepseek-ai/dsh-client-ui-slots\",\n        \"@deepseek-ai/dsh-client-ui-theme\",\n        \"@deepseek-ai/dsh-client-ui-settings\"\n      ]\n    },\n    \"engines\": {\n      \"dsh\": \">=0.2.0-rc.1\"\n    }\n  }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:97-127](https://github.com/4444Hao/dsh-codefall/blob/68159fcced1d65c7ea356821859ea80d365c523a/lib/index.js#L97-L127)\n\n空闲、超时与 beacon。\n\n<details>\n<summary>查看原文（31行）</summary>\n\n```text\n  minDisplayMs: 900,\n  /** Optional status line once the host is ready — empty, so only rain shows. */\n  hintReady: '',\n  /** Optional status line for an early interaction — empty by default. */\n  hintWaitingAcknowledged: '',\n  /** Idle power tiers: slow the rain past this age, then stop drawing at all. */\n  idleSlowMs: 20000,\n  idleStaticMs: 60000,\n  /** Fires only when the host never reports ready — never a display cap. */\n  timeoutMs: 15000,\n  readyElementThreshold: 80,\n  /**\n   * Windows desktop only: hide the caption glyphs (minimize / maximize / close)\n   * while the boot overlay is up. They are Chromium's title-bar overlay, drawn\n   * ABOVE the page, so this works by painting them in the caption fill color —\n   * invisible but still clickable. See the caption notes in lib/boot.js.\n   */\n  hideWindowControls: true,\n  /**\n   * Green theme: replace the blue brand ramps with green at this hue. The\n   * browser half remaps the shipped source colours at runtime, so changing this\n   * takes effect immediately rather than at the next launch.\n   */\n  greenHue: 145,\n  /**\n   * Page-side self-check. Off by default; when on, the injected script POSTs a\n   * small report back to this plugin's own route on the first painted frame and\n   * again at hand-off. It is the only way to observe real-browser execution from\n   * the host side, and it costs one loopback request.\n   */\n  beacon: false\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:173-197](https://github.com/4444Hao/dsh-codefall/blob/68159fcced1d65c7ea356821859ea80d365c523a/lib/index.js#L173-L197)\n\n缓存每次 stat。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n/**\n * mtime-keyed file cache. Keeps the per-request cost of inlining ~37 KB of\n * source at roughly one stat() per file, while still picking up an edit on the\n * very next render (which is what makes the refresh-only dev loop work).\n */\nfunction createCache() {\n  const files = new Map()\n  return {\n    read(file) {\n      try {\n        const st = statSync(file)\n        const hit = files.get(file)\n        if (hit && hit.mtimeMs === st.mtimeMs && hit.size === st.size) return hit.text\n        const text = readFileSync(file, 'utf8')\n        files.set(file, { mtimeMs: st.mtimeMs, size: st.size, text })\n        return text\n      } catch {\n        return ''\n      }\n    },\n    invalidate(file) {\n      files.delete(file)\n    }\n  }\n}\n```\n\n</details>\n\n**依据 4 · 作者声明**：[README.md:106-116](https://github.com/4444Hao/dsh-codefall/blob/68159fcced1d65c7ea356821859ea80d365c523a/README.md#L106-L116)\n\n作者验收边界。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n## 兼容与说明\n\n- 建议使用 Harness **0.2.0-rc.2 或更高版本**。安装或更新插件后，请完整退出并重启应用。\n- 窗口恢复重播依赖桌面环境的可见性事件；当前实现针对 `dsh-app:` 桌面页面，其他桌面壳需单独验证。\n- Windows 设置截图见上文链接。光门已通过浏览器预览及离线测试；真实托盘 / 最小化恢复仍需按[实机验收步骤](docs/PORTAL.md#实机验收)验证。macOS / Linux 尚未实机验证，macOS 完全遮挡窗口也可能产生可见性事件。\n- 不同宿主版本及第三方插件可能使用自己的配色；绿色主题的覆盖范围取决于它们是否采用宿主主题变量。\n- 在应用的插件管理中停用或卸载即可移除主题层。CLI 管理环境可运行 `dsh plugin --profile web remove dsh-codefall`，profile 按实际环境调整。\n\n## 开发与预览\n\n光门实现、窗口恢复逻辑与验收记录见[矩阵光门与窗口恢复播放](docs/PORTAL.md)。打开本地 `preview/index.html`，先点“就绪”，再点“交互”观察光门；该页面为离线演示，不是实际 Harness 窗口。\n```\n\n</details>\n\n#### 缺口\n\n- 未测首帧延迟、帧率和功耗。\n  **影响：**净体验与电池成本未知。\n  **进一步探讨：**按画质在多设备记录 Web Vitals/CPU/GPU。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 怎样验证这种视觉插件不损害基本可用性？\n\n**研究主题：**新假设与验证、采用判断\n\n#### 完整回答\n\n先在非关键 DSH profile 试点，验证键盘/鼠标能进入、宿主迟到或失败时自动退、减少动态模式、恢复重播与卸载回退。未实现的改进是假设首帧注入提供可观察的进出状态与持续时间预算，并将诊断路径字段按权限裁剪；与无插件、静态主题对照启动可交互时间、帧率、操作误触、用户偏好和故障恢复。真实桌面验收不能由离线预览代替。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/boot.js:1032-1056](https://github.com/4444Hao/dsh-codefall/blob/68159fcced1d65c7ea356821859ea80d365c523a/lib/boot.js#L1032-L1056)\n\n减少动态和 watchdog。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n      if (reduced) {\n        // Honour the user's system setting: no loop at all, one settled frame.\n        // The interaction wait still applies — it is a dismissal rule, not motion.\n        renderer.frameAt(renderer.state().titleCompleteAt + 60)\n        addListeners()\n        emit('reduced-motion', {})\n        beacon({ phase: 'reduced-motion', elapsed: 0 })\n      } else {\n        addListeners()\n        startHeuristic()\n        lastFrame = 0\n        raf = root.requestAnimationFrame(loop)\n      }\n\n      // The caption glyphs are painted above the page, so they cannot be covered:\n      // repaint them in the caption fill color instead. Independently of the\n      // frame loop, and a no-op wherever the probe does not exist.\n      scheduleCaptionHide()\n      beacon({ phase: 'caption', elapsed: Math.round(now() - start), caption: captionReport() })\n\n      // This watchdog covers exactly one thing: the host never reported ready.\n      // Once it has, waiting for the user IS the intended state, not a timeout.\n      watchdog = root.setTimeout(function () {\n        watchdog = 0\n        if (phase === 'playing' && !hostReady) fail('host-not-ready')\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:411-475](https://github.com/4444Hao/dsh-codefall/blob/68159fcced1d65c7ea356821859ea80d365c523a/lib/index.js#L411-L475)\n\n诊断接口和设置。\n\n<details>\n<summary>查看原文（65行）</summary>\n\n```text\n    // Self-report: which injection mechanism is actually carrying the page.\n    try {\n      const url = new URL(req.url || '/', 'http://codefall.local')\n      if (url.searchParams.has('diag')) {\n        return send(200, {\n          ok: true,\n          diag,\n          files: { renderer: RENDERER_FILE, boot: BOOT_FILE, bootReadable: !!cache.read(BOOT_FILE) }\n        })\n      }\n    } catch {\n      /* a malformed URL is not worth failing over */\n    }\n\n    if (req.method === 'GET' || req.method === 'HEAD') {\n      return send(200, { ok: true, value: readSettings(cache), defaults: DEFAULTS })\n    }\n    if (req.method !== 'POST') return send(405, { ok: false, error: 'method-not-allowed' })\n\n    const contentType = String(req.headers['content-type'] || '')\n    if (!contentType.includes('application/json')) return send(415, { ok: false, error: 'json-required' })\n\n    let raw = ''\n    try {\n      for await (const chunk of req) {\n        raw += chunk\n        if (raw.length > MAX_BODY_BYTES) {\n          send(413, { ok: false, error: 'payload-too-large' })\n          req.destroy()\n          return\n        }\n      }\n    } catch {\n      return send(400, { ok: false, error: 'unreadable-body' })\n    }\n\n    let patch\n    try {\n      patch = JSON.parse(raw || '{}')\n    } catch {\n      return send(400, { ok: false, error: 'bad-json' })\n    }\n\n    // `{patch:{...}}` mirrors the shape other DSH plugins use; a bare object\n    // is accepted too so the route is easy to poke by hand.\n    const delta = patch && typeof patch === 'object' && patch.patch ? patch.patch : patch\n\n    // Page-side self-check reports are recorded, never persisted.\n    if (patch && typeof patch === 'object' && patch.beacon && typeof patch.beacon === 'object') {\n      const report = { ...patch.beacon, receivedAt: new Date().toISOString() }\n      diag.beacons.push(report)\n      if (diag.beacons.length > 20) diag.beacons.shift()\n      return send(200, { ok: true, diag: { beacons: diag.beacons.length } })\n    }\n\n    const next = normalize({ ...readSettings(cache), ...(delta && typeof delta === 'object' ? delta : {}) })\n\n    try {\n      writeSettings(next)\n      cache.invalidate(settingsFile())\n    } catch {\n      return send(500, { ok: false, error: 'write-failed' })\n    }\n    return send(200, { ok: true, value: next })\n  }\n```\n\n</details>\n\n**依据 3 · 作者声明**：[README.md:106-116](https://github.com/4444Hao/dsh-codefall/blob/68159fcced1d65c7ea356821859ea80d365c523a/README.md#L106-L116)\n\n作者真实设备验收限制。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n## 兼容与说明\n\n- 建议使用 Harness **0.2.0-rc.2 或更高版本**。安装或更新插件后，请完整退出并重启应用。\n- 窗口恢复重播依赖桌面环境的可见性事件；当前实现针对 `dsh-app:` 桌面页面，其他桌面壳需单独验证。\n- Windows 设置截图见上文链接。光门已通过浏览器预览及离线测试；真实托盘 / 最小化恢复仍需按[实机验收步骤](docs/PORTAL.md#实机验收)验证。macOS / Linux 尚未实机验证，macOS 完全遮挡窗口也可能产生可见性事件。\n- 不同宿主版本及第三方插件可能使用自己的配色；绿色主题的覆盖范围取决于它们是否采用宿主主题变量。\n- 在应用的插件管理中停用或卸载即可移除主题层。CLI 管理环境可运行 `dsh plugin --profile web remove dsh-codefall`，profile 按实际环境调整。\n\n## 开发与预览\n\n光门实现、窗口恢复逻辑与验收记录见[矩阵光门与窗口恢复播放](docs/PORTAL.md)。打开本地 `preview/index.html`，先点“就绪”，再点“交互”观察光门；该页面为离线演示，不是实际 Harness 窗口。\n```\n\n</details>\n\n#### 缺口\n\n- 时延预算/诊断裁剪未实现。\n  **影响：**不能算当前价值。\n  **进一步探讨：**加入遥测后做 A/B 实机评估。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：11ede560bb3db83df92373fd8b580a5e9972d9c69e0451f14bb09b96f5365454。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 4 | 1002 | — | — | 17242 |\n| .js | source | 4 | 3329 | 2492 | 686 | — |\n| .mjs | source | 14 | 3144 | 2457 | 501 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 首帧注入 | 开屏显示 | 需宿主接口 |\n| Canvas 转场 | 视觉个性化 | 设备性能/交互 |\n| 主题 | 色相可调 | 第三方组件覆盖有限 |\n| 设置/诊断 | 调参与排查 | loopback/反代边界 |\n\n## 工程亮点\n\nHost 双注入机制以 sentinel 去重并热读脚本；设置只归一化白名单字段，但 loopback 地址判断受反代拓扑影响，diag 返回绝对路径。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、lib/boot.js、lib/renderer.js、lib/client.js、docs/PORTAL.md 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：审阅固定提交 README、包、Host、boot、Client/渲染结构；未运行应用或视觉实测。\n- 下一步：跨 Windows/macOS/Linux 桌面与 Web，测启动可交互时间、帧率/功耗、减少动态、反代访问诊断和卸载恢复。\n",
         "metadata": {
             "repository": "4444Hao/dsh-codefall",
             "repository_id": 1409889533,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T05:50:44.301Z",
+            "window_start": "2026-09-22T05:50:44.301Z",
             "stars": 1,
             "pushed_at": "2026-10-20T03:22:32Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A4444Hao%2Fdsh-codefall%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640B:D1FDD:14A5B9:2252D3:6AD84A14 and timestamp 2026-10-21 05:13:56 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A4444Hao%2Fdsh-codefall%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640E:1DEEF7:14B3A6:2252ED:6AD84A14 and timestamp 2026-10-21 05:13:56 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A4444Hao%2Fdsh-codefall%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6405:E4386:15225D:22B613:6AD84A14 and timestamp 2026-10-21 05:13:57 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A4444Hao%2Fdsh-codefall%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6410:0BD3:A1429:10B4D4:6AD84A15 and timestamp 2026-10-21 05:13:57 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A4444Hao%2Fdsh-codefall%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6414:D5CAC:149B6B:2223B3:6AD84A15 and timestamp 2026-10-21 05:13:57 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "dsh-codefall",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T05:50:56.006Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": 407,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-codefall",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-codefall",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-10-08T12:44:17.147Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T05:50:56.006Z",
                     "source_url": "https://registry.npmjs.org/dsh-codefall",
                     "error": null,
                     "latest_version": "0.2.0",
                     "latest_published_at": "2026-10-13T14:00:13.761Z",
                     "latest_error": null
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "68159fcced1d65c7ea356821859ea80d365c523a",
-                "current_revision": "68159fcced1d65c7ea356821859ea80d365c523a",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {
@@ -390,14 +468,14 @@
             "repository": "4444Hao/dsh-codefall",
             "path": "",
             "revision": "68159fcced1d65c7ea356821859ea80d365c523a",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "4940a550d40648e15123bd1e9bb44cfcc82d20ef3f5952ce72aec1f2a86980a7",
                 "code": "68159fcced1d65c7ea356821859ea80d365c523a",
                 "maintenance": "8004905c158ea7d84a4b7f69855008777464ae89c418984ae6eff09a54912ec2"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

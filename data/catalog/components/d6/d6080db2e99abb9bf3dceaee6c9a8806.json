@@ -24,36 +24,82 @@
             },
             "sources": [
                 {
-                    "id": "20261020-incremental40-r2-github-1336538202-root-directory-0",
+                    "id": "2026-10-22-02-github-1336538202-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
-                    "retrieved_at": "2026-10-20T04:30:01.105Z",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-22T07:36:29.834Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "20261020-incremental40-r2-github-1336538202-root-author",
+                    "id": "2026-10-22-02-github-1336538202-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/1321928757/dsh-prompt-polish/blob/c894ae3de6590542f8353b76e314656a4a3fe3a0/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/1321928757/dsh-prompt-polish",
+                            "commit": "c894ae3de6590542f8353b76e314656a4a3fe3a0",
+                            "path": "README.md",
+                            "content_sha256": "b28c6bc3a92d428285cbc85c7392cd4e8657bc3487b76d376d06d1b3ed39e7ea"
+                        }
+                    ],
                     "revision": "c894ae3de6590542f8353b76e314656a4a3fe3a0",
-                    "captured_at": "2026-10-20T04:30:01.105Z",
-                    "summary": "在输入栏调用宿主模型重写草稿，支持策略、语言、上下文与人工确认采纳。",
-                    "artifact": "data/runs/2026-10-20-04/snapshots/1321928757--dsh-prompt-polish/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T07:36:29.834Z",
+                    "summary": "DSH Web 输入栏提示词重写 UI；经 Typert RPC 调用宿主已配置模型，先展示结果再人工采用。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/1321928757--dsh-prompt-polish/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "20261020-incremental40-r2-github-1336538202-root-source",
+                    "id": "2026-10-22-02-github-1336538202-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/1321928757/dsh-prompt-polish/blob/c894ae3de6590542f8353b76e314656a4a3fe3a0/lib/index.js",
+                    "url": "https://github.com/1321928757/dsh-prompt-polish/blob/c894ae3de6590542f8353b76e314656a4a3fe3a0/README.zh-CN.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/1321928757/dsh-prompt-polish",
+                            "commit": "c894ae3de6590542f8353b76e314656a4a3fe3a0",
+                            "path": "README.zh-CN.md",
+                            "content_sha256": "236c20d2ab4b76b462ad8d2abe06bf1419510cb559e2db332eee6b7eea1377c4"
+                        },
+                        {
+                            "repository_url": "https://github.com/1321928757/dsh-prompt-polish",
+                            "commit": "c894ae3de6590542f8353b76e314656a4a3fe3a0",
+                            "path": "package.json",
+                            "content_sha256": "1bedb011066e2d7c6710248b5094a89b94d7d5efc7350d12ae48158bfd90810b"
+                        },
+                        {
+                            "repository_url": "https://github.com/1321928757/dsh-prompt-polish",
+                            "commit": "c894ae3de6590542f8353b76e314656a4a3fe3a0",
+                            "path": "lib/index.js",
+                            "content_sha256": "6999dd132f7a5032d1297b237b0660d4bc7f395e105243d66a400ab0d8398439"
+                        },
+                        {
+                            "repository_url": "https://github.com/1321928757/dsh-prompt-polish",
+                            "commit": "c894ae3de6590542f8353b76e314656a4a3fe3a0",
+                            "path": "lib/client.js",
+                            "content_sha256": "03141c2c1afc9ef3c8ea08ebfb2827af2eb67e51b239a88c0e7b82c96dd7de66"
+                        },
+                        {
+                            "repository_url": "https://github.com/1321928757/dsh-prompt-polish",
+                            "commit": "c894ae3de6590542f8353b76e314656a4a3fe3a0",
+                            "path": "lib/shared.js",
+                            "content_sha256": "31475f0e6bad64d1cfa0b75057b788ef9ff3fe6fda23fde33dbd76a32a78248e"
+                        },
+                        {
+                            "repository_url": "https://github.com/1321928757/dsh-prompt-polish",
+                            "commit": "c894ae3de6590542f8353b76e314656a4a3fe3a0",
+                            "path": "lib/typert.host.js",
+                            "content_sha256": "9f68087677f0cf2f287d984658e0dd44f0c69e60ba8703a9f84e780a81ad9c80"
+                        }
+                    ],
                     "revision": "c894ae3de6590542f8353b76e314656a4a3fe3a0",
-                    "captured_at": "2026-10-20T04:30:01.105Z",
-                    "summary": "核查 lib/index.js、lib/shared.js、lib/client.js；lib/index.js 收集启用的目标、任务和历史，在字符预算内构建请求，调用宿主llm.stream；客户端展示结果，采纳由用户决定。",
-                    "artifact": "data/runs/2026-10-20-04/snapshots/1321928757--dsh-prompt-polish/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T07:36:29.834Z",
+                    "summary": "核查 README.zh-CN.md、package.json、lib/index.js、lib/client.js、lib/shared.js、lib/typert.host.js；客户端采集草稿和可选上下文，经 promptPolish RPC 交 Host LLM 流式重写；设置在 localStorage 与工作区文件之间异步同步。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/1321928757--dsh-prompt-polish/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "未证实改写改善下游任务；上下文可能带入无关信息，超时停止等待不应直接当成服务端计费已停止。",
+                        "静态审阅固定提交的 README、Host/Client 源码；未运行插件、Web profile 或真实模型。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +110,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "用户反复组织复杂请求，希望提交前改善表达并保留原意；验收标准是约束无遗漏，而非文字更长。",
+                    "text": "已有 DSH Web 模型配置、希望改写草稿且保留人工审阅的用户。",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1336538202-root-source"
+                        "2026-10-22-02-github-1336538202-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +121,16 @@
                             "fingerprint": "c894ae3de6590542f8353b76e314656a4a3fe3a0"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:30:01.105Z",
+                    "reviewed_at": "2026-10-22T07:36:29.834Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "lib/index.js 收集启用的目标、任务和历史，在字符预算内构建请求，调用宿主llm.stream；客户端展示结果，采纳由用户决定。",
+                    "text": "客户端采集草稿和可选上下文，经 promptPolish RPC 交 Host LLM 流式重写；设置在 localStorage 与工作区文件之间异步同步。",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1336538202-root-source"
+                        "2026-10-22-02-github-1336538202-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +139,16 @@
                             "fingerprint": "c894ae3de6590542f8353b76e314656a4a3fe3a0"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:30:01.105Z",
+                    "reviewed_at": "2026-10-22T07:36:29.834Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "未证实改写改善下游任务；上下文可能带入无关信息，超时停止等待不应直接当成服务端计费已停止。",
+                    "text": "静态审阅固定提交的 README、Host/Client 源码；未运行插件、Web profile 或真实模型。",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1336538202-root-source"
+                        "2026-10-22-02-github-1336538202-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +157,16 @@
                             "fingerprint": "c894ae3de6590542f8353b76e314656a4a3fe3a0"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:30:01.105Z",
+                    "reviewed_at": "2026-10-22T07:36:29.834Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "0.4.1，声明DSH 0.2.0-rc.2到0.3.0前；多项宿主服务及typert/UI适配构成效果前提，不能因peer可选就理解为功能无依赖。",
+                    "text": "包内 LICENSE/NOTICE 应按固定提交核对；本次未核外部分发许可链。",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1336538202-root-source"
+                        "2026-10-22-02-github-1336538202-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +175,16 @@
                             "fingerprint": "c894ae3de6590542f8353b76e314656a4a3fe3a0"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:30:01.105Z",
+                    "reviewed_at": "2026-10-22T07:36:29.834Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "每次优化额外调用模型，携带历史扩大输入；核对语义、重试和放弃结果都应计入成本，没有实测节省时间。",
+                    "text": "#### 成本\n\n| 项 | 来源 | 边界 |\n| --- | --- | --- |\n| 模型调用 | 每次优化一次流式请求 | provider 定价未知 |\n| 上下文 | 额外输入字符 | 敏感信息可能发出 |\n| 运维 | Web/Host 版本适配 | DSH 0.2 契约 |",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1336538202-root-source"
+                        "2026-10-22-02-github-1336538202-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +193,16 @@
                             "fingerprint": "c894ae3de6590542f8353b76e314656a4a3fe3a0"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:30:01.105Z",
+                    "reviewed_at": "2026-10-22T07:36:29.834Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "先不带历史改写普通草稿，对照检查否定、数字和交付限制；需要上下文时再开启，并人工决定是否采用。",
+                    "text": "先在隔离 Web profile 用非敏感草稿、关闭历史试用；再按需开上下文并确认 provider 与工作区路径。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1336538202-root-source"
+                        "2026-10-22-02-github-1336538202-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +211,16 @@
                             "fingerprint": "c894ae3de6590542f8353b76e314656a4a3fe3a0"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:30:01.105Z",
+                    "reviewed_at": "2026-10-22T07:36:29.834Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "确认式采纳比自动替换更可控；同一模型改写并不保证比直接发送原请求更好。",
+                    "text": "#### 效果\n\n| 项 | 代码支持 | 待验证 |\n| --- | --- | --- |\n| 人工采用 | 原稿比较/确认 | 真实 UI 行为 |\n| 上下文 | 目标/消息/工具摘要裁剪 | 质量增益 |\n| 取消 | runId + AbortController | provider 资源释放 |",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1336538202-root-source"
+                        "2026-10-22-02-github-1336538202-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +229,16 @@
                             "fingerprint": "c894ae3de6590542f8353b76e314656a4a3fe3a0"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:30:01.105Z",
+                    "reviewed_at": "2026-10-22T07:36:29.834Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "runId到AbortController的映射与finally清理便于取消，区分截断、取消和错误；超时分支是否终止底层流需宿主实测。",
+                    "text": "Host 提供 Typert 服务，按当前默认模型或首个 provider 组装请求；Client 注入输入栏与设置行。",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1336538202-root-source"
+                        "2026-10-22-02-github-1336538202-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,40 +247,135 @@
                             "fingerprint": "c894ae3de6590542f8353b76e314656a4a3fe3a0"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:30:01.105Z",
+                    "reviewed_at": "2026-10-22T07:36:29.834Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "在输入栏直接提供六模式重写、上下文与人工采用保护；详见[Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1336538202-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336538202:root",
+                            "area": "code",
+                            "fingerprint": "c894ae3de6590542f8353b76e314656a4a3fe3a0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T07:36:29.834Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "supported",
+                    "text": "上下文发往选定 provider；工作区映射缺失时设置回退到最近/首个工作区，且超时未显式 abort 流。详见[Q02](#research-q02)、[Q03](#research-q03)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1336538202-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336538202:root",
+                            "area": "code",
+                            "fingerprint": "c894ae3de6590542f8353b76e314656a4a3fe3a0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T07:36:29.834Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "mechanism",
+                    "basis": "unverified",
+                    "text": "增加发送前 provider/上下文预览、只写确定关联工作区、超时主动 abort，可降低隐私与资源风险；待运行验证。详见[Q02](#research-q02)、[Q03](#research-q03)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1336538202-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336538202:root",
+                            "area": "code",
+                            "fingerprint": "c894ae3de6590542f8353b76e314656a4a3fe3a0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T07:36:29.834Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-20T04:30:01.105Z",
+            "last_checked_at": "2026-10-22T07:36:29.834Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "c894ae3de6590542f8353b76e314656a4a3fe3a0",
+                "reviewed_at": "2026-10-22T07:36:29.834Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1336538202:root",
+                        "area": "code",
+                        "fingerprint": "c894ae3de6590542f8353b76e314656a4a3fe3a0"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "输入栏 UI、Typert RPC 和采用保护形成完整链路；模型重写本身常见。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1336538202-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 15,
+                        "reach": 10,
+                        "economics": 0
+                    },
+                    "rationale": "减少提示词编辑往返，提供人工控制；实际收益和调用成本未测。",
+                    "basis": "interpretation",
+                    "score": 43,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1336538202-root-source"
+                    ]
+                }
+            },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "复杂请求作者可先不带历史试改草稿，对照数字否定和交付限制，再人工决定采纳。",
+                "reason": "在隔离 Web profile 先用非敏感草稿试用，确认 provider、工作区设置和超时行为。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "提交前整理复杂请求且保留约束的需求清楚。"
+                        "rationale": "输入栏草稿改写场景具体。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "确认取消入口较直接润色便利，但下游质量增益未知。"
+                        "rationale": "上下文与人工采用合一。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "字符预算、流取消映射可查，超时是否停计费未验。"
+                        "rationale": "静态实现可查，端到端未验。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "每次额外模型调用及语义核对可能抵消节省。"
+                        "score": 5,
+                        "rationale": "依赖模型调用和 DSH Web 兼容版本。"
                     }
                 },
-                "score": 59,
+                "score": 54,
                 "revision": "c894ae3de6590542f8353b76e314656a4a3fe3a0",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T07:36:29.834Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "20261020-incremental40-r2-github-1336538202-root-source"
+                    "2026-10-22-02-github-1336538202-root-source"
                 ],
                 "dependencies": [
                     {
@@ -259,89 +400,61 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-20T04:25:27.514Z",
-            "analysis_sha256": "8fb74659c6e3fe47cbf84540d2c42917d4bf1dfc0d7a41212aef4cdf4efc737c"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "844e7add76a9b3eedcbb8511b69750504abdcfd6c69573fb02cd3bc7fd1253eb"
         },
         "publication.metadata": "data/plugins/1321928757--dsh-prompt-polish/META.json",
         "publication.summaries": {
-            "text": "在输入栏调用宿主模型重写草稿，支持策略、语言、上下文与人工确认采纳。",
+            "text": "DSH Web 输入栏提示词重写 UI；经 Typert RPC 调用宿主已配置模型，先展示结果再人工采用。",
             "revision": "c894ae3de6590542f8353b76e314656a4a3fe3a0",
             "source_url": "https://github.com/1321928757/dsh-prompt-polish/blob/c894ae3de6590542f8353b76e314656a4a3fe3a0/README.md"
         },
         "publication.capabilities": {
             "revision": "c894ae3de6590542f8353b76e314656a4a3fe3a0",
             "items": {
-                "界面": "优化按钮、设置、结果确认与近期历史。",
-                "后台": "当前模型流式优化及取消请求。"
-            }
+                "界面": "输入栏优化按钮、设置弹窗与结果确认",
+                "Host 路由": "promptPolish Typert 优化/取消与工作区设置 RPC"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| UI | 草稿优化/确认 | 需 Web profile |\n| Host RPC | 调用已配置模型 | provider 接收输入 |\n| 设置同步 | localStorage/工作区文件 | 映射和沙箱影响 |"
         },
         "publication.advice": {
             "revision": "c894ae3de6590542f8353b76e314656a4a3fe3a0",
-            "text": "先不带历史改写普通草稿，对照检查否定、数字和交付限制；需要上下文时再开启，并人工决定是否采用。"
+            "text": "先在隔离 Web profile 用非敏感草稿、关闭历史试用；再按需开上下文并确认 provider 与工作区路径。详见[Q02](#research-q02)。"
         },
         "registry": "data/plugins/1321928757--dsh-prompt-polish",
-        "reports": "# dsh-prompt-polish\n\n> 在输入栏调用宿主模型重写草稿，支持策略、语言、上下文与人工确认采纳。\n\n## 固定范围与依据\n\n固定提交 [c894ae3de6590542f8353b76e314656a4a3fe3a0](https://github.com/1321928757/dsh-prompt-polish/blob/c894ae3de6590542f8353b76e314656a4a3fe3a0/lib/index.js)；组件路径：仓库根。核查时间 2026-10-20T04:30:01.105Z；本轮基准 2026-10-20T04:25:27.514Z。\n源码抽读路径：lib/index.js、lib/shared.js、lib/client.js。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：用户反复组织复杂请求，希望提交前改善表达并保留原意；验收标准是约束无遗漏，而非文字更长。\n- **亮点**：lib/index.js 收集启用的目标、任务和历史，在字符预算内构建请求，调用宿主llm.stream；客户端展示结果，采纳由用户决定。\n- **思考**：确认式采纳比自动替换更可控；同一模型改写并不保证比直接发送原请求更好。\n- **建议**：先不带历史改写普通草稿，对照检查否定、数字和交付限制；需要上下文时再开启，并人工决定是否采用。\n\n## 场景与替代办法\n\n用户反复组织复杂请求，希望提交前改善表达并保留原意；验收标准是约束无遗漏，而非文字更长。\n\n此前未入档；直接编辑或要求当前会话润色是较低配置的替代，本项增量在输入栏确认、取消与历史管理。\n\n## 依赖与流程\n\n需要宿主模型、计费账号和UI/会话服务；敏感草稿及启用的上下文会发送至当前模型供应方。模型质量决定语义忠实度。\n\n输入草稿，选择策略和语言，等待优化，比较原稿后采纳或保留；超时先检查是否仍有请求，避免连续发起重试。\n\n## 成本与效果\n\n每次优化额外调用模型，携带历史扩大输入；核对语义、重试和放弃结果都应计入成本，没有实测节省时间。\n\n确认式采纳比自动替换更可控；同一模型改写并不保证比直接发送原请求更好。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：b801a6937fbb1f46e9edad51d1f7a2f6c2e435f09949aca932be0747b036c5cc。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 4 | 1827 | — | — | 16263 |\n| .js | source | 4 | 2333 | 2032 | 193 | — |\n| .mjs | source | 1 | 115 | 112 | 2 | — |\n| .mjs | test | 4 | 474 | 432 | 3 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **界面**：优化按钮、设置、结果确认与近期历史。\n- **后台**：当前模型流式优化及取消请求。\n\n## 工程亮点\n\nrunId到AbortController的映射与finally清理便于取消，区分截断、取消和错误；超时分支是否终止底层流需宿主实测。\n\n## 分发与兼容\n\n0.4.1，声明DSH 0.2.0-rc.2到0.3.0前；多项宿主服务及typert/UI适配构成效果前提，不能因peer可选就理解为功能无依赖。\n\n## 历史对照\n\n当前快照此前没有该稳定身份的研究档案。此前未入档；直接编辑或要求当前会话润色是较低配置的替代，本项增量在输入栏确认、取消与历史管理。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：未证实改写改善下游任务；上下文可能带入无关信息，超时停止等待不应直接当成服务端计费已停止。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：固定一批含否定与数值的请求，盲评语义保留和后续交付率，记录优化调用、失败和人工复核总耗时。\n",
+        "reports": "# dsh-prompt-polish\n\n> DSH Web 输入栏提示词重写 UI；经 Typert RPC 调用宿主已配置模型，先展示结果再人工采用。\n\n## 研究范围\n\n- **仓库**：[1321928757/dsh-prompt-polish](https://github.com/1321928757/dsh-prompt-polish)\n- **版本号**：0.4.1（[固定提交 c894ae3de6590542f8353b76e314656a4a3fe3a0](https://github.com/1321928757/dsh-prompt-polish/tree/c894ae3de6590542f8353b76e314656a4a3fe3a0)）\n- **版本日期**：2026-10-16（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n源码支持 UI、RPC、确认与上下文裁剪；真实模型质量/兼容性未验，设置工作区回退与超时资源释放有边界。\n\n## 洞察短评\n\n- **用途**：已有 DSH Web 模型配置、希望改写草稿且保留人工审阅的用户。\n- **亮点**：在输入栏直接提供六模式重写、上下文与人工采用保护；详见[Q01](#research-q01)。\n- **思考**：上下文发往选定 provider；工作区映射缺失时设置回退到最近/首个工作区，且超时未显式 abort 流。详见[Q02](#research-q02)、[Q03](#research-q03)。\n- **建议**：增加发送前 provider/上下文预览、只写确定关联工作区、超时主动 abort，可降低隐私与资源风险；待运行验证。详见[Q02](#research-q02)、[Q03](#research-q03)。\n\n采用建议：先在隔离 Web profile 用非敏感草稿、关闭历史试用；再按需开上下文并确认 provider 与工作区路径。详见[Q02](#research-q02)。\n\n## 核心贡献\n\n在输入栏直接提供六模式重写、上下文与人工采用保护；详见[Q01](#research-q01)。\n\n## 关键质疑\n\n上下文发往选定 provider；工作区映射缺失时设置回退到最近/首个工作区，且超时未显式 abort 流。详见[Q02](#research-q02)、[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n增加发送前 provider/上下文预览、只写确定关联工作区、超时主动 abort，可降低隐私与资源风险；待运行验证。详见[Q02](#research-q02)、[Q03](#research-q03)。\n\n隔离 DSH Web profile 检查 UI/服务兼容、provider 请求内容、工作区选择、低上限/慢流模型与超时取消。\n\n## 场景与替代办法\n\n已有 DSH Web 模型配置、希望改写草稿且保留人工审阅的用户。\n\n手工将草稿复制到模型会话改写，再复制回输入栏；本插件内嵌相同步骤。\n\n## 依赖与流程\n\n#### 条件\n\n| 条件 | 用途 | 缺失时 |\n| --- | --- | --- |\n| DSH Web 0.2.x | Slot/Typert | UI/RPC 不兼容 |\n| 已配置 LLM provider | 重写 | 无法优化 |\n| 工作区文件服务 | L3 设置 | 降级 localStorage |\n\n#### 试用\n\n| 步骤 | 动作 | 判据 |\n| --- | --- | --- |\n| 输入 | 非敏感草稿 | 原稿不自动改变 |\n| 优化 | 看 provider/结果 | 人工可拒绝 |\n| 设置 | 查看工作区路径 | 只写目标工作区 |\n\n## 成本与效果\n\n#### 成本\n\n| 项 | 来源 | 边界 |\n| --- | --- | --- |\n| 模型调用 | 每次优化一次流式请求 | provider 定价未知 |\n| 上下文 | 额外输入字符 | 敏感信息可能发出 |\n| 运维 | Web/Host 版本适配 | DSH 0.2 契约 |\n\n#### 效果\n\n| 项 | 代码支持 | 待验证 |\n| --- | --- | --- |\n| 人工采用 | 原稿比较/确认 | 真实 UI 行为 |\n| 上下文 | 目标/消息/工具摘要裁剪 | 质量增益 |\n| 取消 | runId + AbortController | provider 资源释放 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**核实输入栏优化的模型/上下文数据边界、人工采用保护与失败/超时行为。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 用户如何优化并采用提示词？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n插件在 DSH Web 输入栏注入优化按钮、设置齿轮和结果弹窗，提供六种模式与语言选项。浏览器将草稿通过 Typert RPC 发给 Host 的 promptPolish 服务，由宿主已配置的 LLM provider/model 流式重写；不会自行发送草稿或自动采用。成功后原稿与结果并列，只有草稿未变化时采用按钮有效，用户也可保留原稿。这里的“更好提示词”是模型生成结果，源码能证明调用与交互设计，无法证明生成质量。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.zh-CN.md:5-27](https://github.com/1321928757/dsh-prompt-polish/blob/c894ae3de6590542f8353b76e314656a4a3fe3a0/README.zh-CN.md#L5-L27)\n\n作者描述入口、六模式与确认。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\nDeepSeek Harness（DSH）输入栏提示词优化插件。点击 **优化**，将当前草稿交给 DSH 中配置的模型提供商处理，并在决定是否使用前先查看结果。\n\n> **数据边界：** 插件不新增独立 API 端点；优化请求通过 DSH 已配置的模型提供商和模型完成。开启上下文后，请求可能包含最近消息、当前目标与任务清单、压缩摘要以及可选的工具调用结果摘要。因此，草稿和已开启的上下文对该模型提供商可见；将插件用于敏感会话前，请先查看提供商的隐私和数据留存政策。\n\n## 功能入口\n\n| 入口 | 提供的功能 |\n| --- | --- |\n| **输入栏 → 优化** | 重写当前草稿，展示结果供确认，或停止正在进行的优化。 |\n| **输入栏 → 设置齿轮** | 配置上下文、工具摘要、模式和语言，并打开完整设置弹窗。 |\n| **DSH 设置 → 通用** | 注册在 `settings.general.item` 的关联设置行，用于切换「参考聊天记录上下文」。其他选项仍在输入栏设置中。 |\n\n## 功能特性\n\n- 六种提示词重写模式：**默认**、**压缩精简**、**结构化**、**创意扩展**、**翻译并优化**、**代码请求**。\n- 三种语言选择：**跟随原文**、**中文**、**英文**。显式语言选择会在自定义偏好之后生效；在「翻译并优化」模式中，**跟随原文**表示只优化、不翻译。\n- 可选携带当前会话上下文：目标、任务清单、压缩摘要、最近消息，以及在两个上下文开关同时开启时的简短工具结果摘要。\n- 结果弹窗会展示原稿和优化结果，并提供 **采用优化结果**、**保留原稿**、**稍后再看**。结果不会自动采用。\n- 模型流式输出期间可以停止；当 DSH 会话 block API 可用时，输入栏阻塞会立即解除，迟到的取消结果会被丢弃。\n- 失败结果会保留原稿并显示失败原因，支持 **重试**。\n- 当前挂载组件内保存最近五次优化尝试。成功记录可查看或显式回填到输入栏；失败记录也会保留为失败记录。\n- 设置会保存到本地，并尽力同步到工作区文件。\n- 浏览器 UI 使用 DSH 主题令牌，跟随亮/暗主题，并支持键盘焦点、Escape/点击外部关闭、减少动效和高对比度边框。输入栏控件保持低噪声：**优化**按钮静止时透明，仅在悬浮、聚焦或按下时显示宿主交互背景，文字颜色也会贴近相邻 DSH 控件并降低强调度。\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/client.js:1127-1157](https://github.com/1321928757/dsh-prompt-polish/blob/c894ae3de6590542f8353b76e314656a4a3fe3a0/lib/client.js#L1127-L1157)\n\n客户端构造 payload 并调用优化 RPC。\n\n<details>\n<summary>查看原文（31行）</summary>\n\n```text\n          try {\n            const payload = {\n              draft: snapshot,\n              withHistory: settings.withHistory,\n              options: {\n                mode: settings.mode,\n                language: settings.language,\n                custom: settings.custom,\n              },\n              runId,\n            }\n            if (settings.withHistory) payload.history = ctxInfo.items\n            const res = await host.call('optimizePrompt', payload)\n            // 用户已点「停止」：迟到结果一律丢弃（宿主 abort 后正常返回 cancelled）\n            if (cancelledRef.current === true) return\n            // 已被取消或已有新一次优化取代本次：丢弃迟到结果，绝不串扰\n            const cur = activeRunRef.current\n            if (cur === null || cur.runId !== runId) return\n            if (res && res.cancelled === true) {\n              setInfo('已取消')\n              return\n            }\n            if (res && res.ok === true && typeof res.text === 'string' && res.text.trim()) {\n              const entry = { id: makeId(), time: Date.now(), draft: snapshot, result: res.text, failed: false, error: '', truncated: res.truncated === true }\n              pushHistory(entry)\n              setPending(entry)\n            } else {\n              const msg = (res && res.error) || '优化失败'\n              const entry = { id: makeId(), time: Date.now(), draft: snapshot, result: '', failed: true, error: msg, truncated: false }\n              pushHistory(entry)\n              setPending(entry)\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/client.js:1211-1215](https://github.com/1321928757/dsh-prompt-polish/blob/c894ae3de6590542f8353b76e314656a4a3fe3a0/lib/client.js#L1211-L1215)\n\n采用前比对草稿快照。\n\n```text\n        // 结果弹窗动作\n        const canAdopt = pending !== null && pending.failed !== true\n          && typeof pending.result === 'string' && pending.result.trim() !== ''\n          && mirror.currentDraft === pending.draft\n\n```\n\n**依据 4 · 源码核查**：[lib/index.js:358-366](https://github.com/1321928757/dsh-prompt-polish/blob/c894ae3de6590542f8353b76e314656a4a3fe3a0/lib/index.js#L358-L366)\n\nHost 暴露 promptPolish Typert 服务。\n\n```text\n  // ---- 服务提供（Typert 网关经 ./typert 清单暴露给客户端）----\n  const service = { getSettings, setSettings, optimizePrompt, cancelOptimize }\n  Object.defineProperty(service, 'typertRemote', {\n    configurable: false,\n    enumerable: false,\n    writable: false,\n    value: { service, serviceKey: 'promptPolish', namespace: 'promptPolish' },\n  })\n  ctx.provide('promptPolish', service)\n```\n\n#### 缺口\n\n- 未连接目标 DSH Web 与实际模型进行端到端试用。\n  **影响：**UI 兼容性及结果质量尚无独立验证。\n  **进一步探讨：**在隔离 Web profile 输入不同草稿，核对重写和采用保护。\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 上下文与设置如何跨越隐私和持久化边界？\n\n**研究主题：**功能与机制、工程质量与复用、缺陷与关键质疑\n\n#### 完整回答\n\n默认不携带历史；开启后客户端提取当前目标、任务清单、压缩摘要、最近消息以及可选工具结果摘要，并对长度做裁剪，再发送给宿主模型 provider。草稿及开启的上下文因此可被该 provider 接收。设置先写浏览器 localStorage，找到工作区后异步浅合并写入 .dsh/prompt-optimizer/settings.json，沙箱拒绝时标记 _hostBlocked 降级本地；下次拉取工作区设置可能覆盖本地值。工作区根目录由当前 session 关联工作区、最近工作区、首个工作区顺序回退，若会话映射缺失，设置可能写到并非用户意图的工作区。没有见到明示的 provider/上下文逐项预览确认门禁。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/client.js:615-734](https://github.com/1321928757/dsh-prompt-polish/blob/c894ae3de6590542f8353b76e314656a4a3fe3a0/lib/client.js#L615-L734)\n\nlocalStorage、工作区选择、异步同步与拉取。\n\n<details>\n<summary>查看原文（120行）</summary>\n\n```text\n      function loadSettings() {\n        try {\n          const raw = window.localStorage.getItem(SETTINGS_KEY)\n          const parsed = raw ? JSON.parse(raw) : null\n          if (parsed && typeof parsed === 'object' && !Array.isArray(parsed)) return parsed\n        } catch (err) { /* ignore */ }\n        return {}\n      }\n\n      function normalizeSettings(s) {\n        return {\n          withHistory: !!(s && s.withHistory === true),\n          withToolResults: !!(s && s.withToolResults === true),\n          mode: (s && hasValue(MODE_OPTIONS, s.mode)) ? s.mode : 'precise',\n          language: (s && hasValue(LANGUAGE_OPTIONS, s.language)) ? s.language : 'follow',\n          custom: (s && typeof s.custom === 'string') ? s.custom.slice(0, 500) : '',\n        }\n      }\n\n      function currentSessionId() {\n        try {\n          if (sessionsService && sessionsService.list && typeof sessionsService.list.getSnapshot === 'function') {\n            const s = sessionsService.list.getSnapshot()\n            return typeof s.current === 'string' ? s.current : undefined\n          }\n        } catch (err) { /* ignore */ }\n        return undefined\n      }\n\n      function currentWorkspaceRoot() {\n        try {\n          const ws = workspacesService\n          if (!ws || !ws.list || typeof ws.list.getSnapshot !== 'function') return null\n          const snap = ws.list.getSnapshot()\n          const items = Array.isArray(snap && snap.items) ? snap.items : []\n          const sessionId = currentSessionId()\n          let item\n          if (typeof sessionId === 'string') {\n            item = items.find((it) => it && Array.isArray(it.sessionIds) && it.sessionIds.includes(sessionId))\n          }\n          if (item === undefined && snap && snap.recentWorkspaceId !== undefined) {\n            item = items.find((it) => it && it.workspaceId === snap.recentWorkspaceId)\n          }\n          if (item === undefined) item = items[0]\n          return item && typeof item.path === 'string' && item.path.length > 0 ? item.path : null\n        } catch (err) {\n          return null\n        }\n      }\n\n      function markHostBlocked(on) {\n        try {\n          const cur = loadSettings()\n          if (on) cur._hostBlocked = true\n          else delete cur._hostBlocked\n          window.localStorage.setItem(SETTINGS_KEY, JSON.stringify(cur))\n        } catch (err) { /* ignore */ }\n      }\n\n      function saveSettings(patch) {\n        const base = loadSettings()\n        const next = { ...base, ...patch }\n        const view = normalizeSettings(next)\n        next.withHistory = view.withHistory\n        next.withToolResults = view.withToolResults\n        next.mode = view.mode\n        next.language = view.language\n        next.custom = view.custom\n        try {\n          window.localStorage.setItem(SETTINGS_KEY, JSON.stringify(next))\n        } catch (err) { /* 存储被拒：降级为页面内存态 */ }\n        for (const fn of listeners) { try { fn(view) } catch (e) { /* ignore */ } }\n        try { window.dispatchEvent(new CustomEvent('ptopt:settings-changed', { detail: view })) } catch (e) { /* ignore */ }\n        const root = currentWorkspaceRoot()\n        if (root) {\n          const sessionId = currentSessionId()\n          host.call('setSettings', {\n            root,\n            sessionId,\n            patch: {\n              withHistory: view.withHistory,\n              withToolResults: view.withToolResults,\n              mode: view.mode,\n              language: view.language,\n              custom: view.custom,\n            },\n          }).then((res) => {\n            if (res && res.ok === true) {\n              if (next._hostBlocked === true) markHostBlocked(false)\n            } else if (res && res.reason === 'sandbox') {\n              // L3 写入被沙箱拒绝：标记后，启动拉取不再让旧文件覆盖本地（静默降级 L1）\n              markHostBlocked(true)\n            }\n          }).catch(() => { /* 静默：L3 失败不影响 L1 */ })\n        }\n        return view\n      }\n\n      function pullHostSettings(root, sessionId) {\n        host.call('getSettings', { root, sessionId }).then((res) => {\n          if (!res || res.ok !== true) return\n          const s = res.settings\n          if (!s || typeof s !== 'object' || Array.isArray(s)) return\n          const local = loadSettings()\n          if (local._hostBlocked === true) return\n          const hostView = normalizeSettings(s)\n          const patch = {}\n          let changed = false\n          const keys = ['withHistory', 'withToolResults', 'mode', 'language', 'custom']\n          for (let i = 0; i < keys.length; i++) {\n            const key = keys[i]\n            if (!Object.prototype.hasOwnProperty.call(s, key)) continue\n            const hostVal = hostView[key]\n            if (!Object.prototype.hasOwnProperty.call(local, key) || local[key] !== hostVal) {\n              patch[key] = hostVal\n              changed = true\n            }\n          }\n          if (changed) saveSettings(patch)\n        }).catch(() => { /* 拉取失败：只用 localStorage */ })\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/client.js:810-858](https://github.com/1321928757/dsh-prompt-polish/blob/c894ae3de6590542f8353b76e314656a4a3fe3a0/lib/client.js#L810-L858)\n\n上下文收集代码。\n\n<details>\n<summary>查看原文（49行）</summary>\n\n```text\n      function extractContext(session, settings, goalSnapshot) {\n        const nodes = session && Array.isArray(session.nodes) ? session.nodes : []\n        const items = []\n        const stats = { messages: 0, hasGoal: false, hasTodo: false, chars: 0, toolSummaries: 0, hasCompaction: false }\n\n        // goal：背景最前\n        if (goalSnapshot && typeof goalSnapshot.objective === 'string') {\n          let text = '当前任务目标（' + (GOAL_PHASE_LABEL[goalSnapshot.phase] || '进行中') + '）：' + goalSnapshot.objective\n          if (goalSnapshot.phase === 'blocked' && goalSnapshot.blockedReason && goalSnapshot.blockedReason.message) {\n            text += '（受阻原因：' + goalSnapshot.blockedReason.message + '）'\n          }\n          items.push({ kind: 'goal', text })\n          stats.hasGoal = true\n          stats.chars += text.length\n        }\n\n        // todo：当前任务清单\n        const todoText = readTodoLines(session && session.sessionId, nodes)\n        if (todoText) {\n          const text = '当前任务清单：\\n' + todoText\n          items.push({ kind: 'todo', text })\n          stats.hasTodo = true\n          stats.chars += text.length\n        }\n\n        // tool-result 索引（仅开关开启时构建）\n        const withTools = settings.withToolResults === true\n        let resultByCallId = null\n        if (withTools) {\n          resultByCallId = new Map()\n          for (let i = 0; i < nodes.length; i++) {\n            const n = nodes[i]\n            if (n && n.kind === 'tool-result' && typeof n.callId === 'string' && !resultByCallId.has(n.callId)) {\n              resultByCallId.set(n.callId, n)\n            }\n          }\n        }\n\n        // 消息回合（倒序 + 消息边界 + 预算早停）\n        const turns = []\n        let total = 0\n        for (let i = nodes.length - 1; i >= 0 && turns.length < MAX_HISTORY_TURNS; i--) {\n          const node = nodes[i]\n          if (!node) continue\n          // 压缩标记——注入摘要作为背景，并停止采集更旧的原始消息\n          if (node.kind === 'compaction') {\n            if (typeof node.summary === 'string' && node.summary.trim()) {\n              const text = '更早对话的压缩摘要：\\n' + node.summary.trim().slice(0, 2000)\n              items.push({ kind: 'compaction-summary', text })\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:74-134](https://github.com/1321928757/dsh-prompt-polish/blob/c894ae3de6590542f8353b76e314656a4a3fe3a0/lib/index.js#L74-L134)\n\nHost 读取/浅合并写入工作区设置。\n\n<details>\n<summary>查看原文（61行）</summary>\n\n```text\n  // ---- L3 设置读取 ----\n  async function getSettings(args) {\n    if (!fs || typeof fs.resolve !== 'function') return { ok: false, error: '文件服务不可用' }\n    const root = args && typeof args.root === 'string' ? args.root : ''\n    if (!root) return { ok: false, error: '缺少工作区根目录' }\n    try {\n      const target = await fs.resolve(root + SETTINGS_SUFFIX)\n      let text\n      try {\n        text = await fs.readText(target)\n      } catch (err) {\n        if (err && err.code === 'FS_NOT_FOUND') return { ok: true, settings: {} }\n        throw err\n      }\n      let parsed\n      try {\n        parsed = JSON.parse(text)\n      } catch (err) {\n        return { ok: true, settings: {} }\n      }\n      if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) return { ok: true, settings: {} }\n      return { ok: true, settings: parsed }\n    } catch (err) {\n      return { ok: false, error: String((err && err.message) || err) }\n    }\n  }\n\n  // ---- L3 设置写入（浅合并）----\n  async function setSettings(args) {\n    if (!fs || typeof fs.resolve !== 'function') return { ok: false, error: '文件服务不可用' }\n    const root = args && typeof args.root === 'string' ? args.root : ''\n    const sessionId = args && typeof args.sessionId === 'string' ? args.sessionId : undefined\n    const patch = args && args.patch && typeof args.patch === 'object' && !Array.isArray(args.patch) ? args.patch : null\n    if (!root) return { ok: false, error: '缺少工作区根目录' }\n    if (!patch) return { ok: false, error: '缺少设置补丁' }\n    try {\n      const target = await fs.resolve(root + SETTINGS_SUFFIX)\n      let merged = {}\n      try {\n        const text = await fs.readText(target)\n        const parsed = JSON.parse(text)\n        if (parsed && typeof parsed === 'object' && !Array.isArray(parsed)) merged = parsed\n      } catch (err) {\n        // 旧文件不存在/损坏：以空配置为基底\n      }\n      merged = { ...merged, ...patch }\n      await fs.writeText(target, JSON.stringify(merged, null, 2), undefined, undefined, resolveCallPolicy(sessionId))\n      return { ok: true }\n    } catch (err) {\n      const code = err && err.code\n      console.error('[dsh-prompt-polish] setSettings failed', {\n        root,\n        sessionId: sessionId || null,\n        code: code || null,\n        message: (err && err.message) || String(err),\n      })\n      if (code === 'FS_SANDBOX_DENIED' || code === 'FS_PERMISSION_DENIED') {\n        return { ok: false, reason: 'sandbox' }\n      }\n      return { ok: false, error: String((err && err.message) || err) }\n    }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:150-214](https://github.com/1321928757/dsh-prompt-polish/blob/c894ae3de6590542f8353b76e314656a4a3fe3a0/lib/index.js#L150-L214)\n\nHost 再裁剪上下文并选 provider。\n\n<details>\n<summary>查看原文（65行）</summary>\n\n```text\n    const withHistory = !!(args && args.withHistory === true)\n\n    // 按 kind 分类收集（兼容旧 payload：无 kind 视为消息项）\n    const { goalItem, todoItem, compactionItem, summaryItems, messageItems } = classifyHistoryItems(\n      withHistory && Array.isArray(args.history) ? args.history : [],\n    )\n    const message30 = messageItems.slice(-30)\n    const summary60 = summaryItems.slice(-60)\n\n    // 策略选项解析与归一\n    const options = normalizeOptions(args && args.options)\n\n    let provider = null\n    let model = null\n    const selection = defaultModel ? defaultModel.currentSelection() : undefined\n    if (selection && typeof selection.provider === 'string' && typeof selection.model === 'string') {\n      provider = selection.provider\n      model = selection.model\n    } else {\n      const providers = llm.listProviders()\n      if (providers.length === 0) return { ok: false, error: '没有可用的模型服务' }\n      provider = providers[0].id\n      const models = await llm.listModels(provider)\n      if (models.length === 0) return { ok: false, error: '没有可用的模型' }\n      model = models[0].id\n    }\n\n    // 模型能力探测：能拿到上下文/输出上限就用，拿不到按保守默认（65536 / 4000）\n    let ctxLen = 65536\n    let modelMaxOut = MAX_OUTPUT_TOKENS\n    try {\n      const modelsMeta = await llm.listModels(provider)\n      const meta = Array.isArray(modelsMeta) ? modelsMeta.find((m) => m && m.id === model) : null\n      if (meta) {\n        if (typeof meta.contextLength === 'number' && meta.contextLength > 0) ctxLen = meta.contextLength\n        const outCap = typeof meta.maxTokens === 'number' ? meta.maxTokens : meta.maxOutputTokens\n        if (typeof outCap === 'number' && outCap > 0) modelMaxOut = outCap\n      }\n    } catch (err) { /* 元数据不可用：按保守默认 */ }\n\n    // 输入预算（字符→token 启发式：字符/2，中文偏保守）：\n    // 按可用上下文倒推输入上限，超预算时丢弃最旧/最不重要的背景与消息轮\n    const inputCapChars = Math.max(4000, (ctxLen - MIN_OUTPUT_TOKENS - INPUT_BUDGET_MARGIN) * 2)\n    const estimateSystem = buildSystem({\n      withHistory: withHistory && (goalItem !== null || todoItem !== null || compactionItem !== null || summary60.length > 0 || message30.length > 0),\n      mode: options.mode,\n      language: options.language,\n      custom: options.custom,\n    })\n    let usedChars = draft.length + estimateSystem.length + 400\n    const bg = []\n    if (goalItem !== null && usedChars + goalItem.length <= inputCapChars) { bg.push({ kind: 'goal', text: goalItem }); usedChars += goalItem.length }\n    if (todoItem !== null && usedChars + todoItem.length <= inputCapChars) { bg.push({ kind: 'todo', text: todoItem }); usedChars += todoItem.length }\n    if (compactionItem !== null && usedChars + compactionItem.length <= inputCapChars) { bg.push({ kind: 'compaction-summary', text: compactionItem }); usedChars += compactionItem.length }\n    for (const s of summary60) {\n      if (usedChars + s.length > inputCapChars) continue\n      bg.push({ kind: 'tool-summary', text: s })\n      usedChars += s.length\n    }\n    const msgs = []\n    for (const m of message30) {\n      if (usedChars + m.text.length > inputCapChars) break\n      msgs.push(m)\n      usedChars += m.text.length\n    }\n```\n\n</details>\n\n**依据 5 · 作者声明**：[README.zh-CN.md:5-7](https://github.com/1321928757/dsh-prompt-polish/blob/c894ae3de6590542f8353b76e314656a4a3fe3a0/README.zh-CN.md#L5-L7)\n\n作者披露 provider 可见性。\n\n```text\nDeepSeek Harness（DSH）输入栏提示词优化插件。点击 **优化**，将当前草稿交给 DSH 中配置的模型提供商处理，并在决定是否使用前先查看结果。\n\n> **数据边界：** 插件不新增独立 API 端点；优化请求通过 DSH 已配置的模型提供商和模型完成。开启上下文后，请求可能包含最近消息、当前目标与任务清单、压缩摘要以及可选的工具调用结果摘要。因此，草稿和已开启的上下文对该模型提供商可见；将插件用于敏感会话前，请先查看提供商的隐私和数据留存政策。\n```\n\n#### 缺口\n\n- 没有实际 profile 的工作区映射/沙箱策略。\n  **影响：**误选工作区风险及真实数据暴露范围未量测。\n  **进一步探讨：**分别在单/多工作区与沙箱拒绝场景观察设置文件路径和请求内容。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 失败、截断和取消的控制边界是什么？\n\n**研究主题：**效果与总成本、依赖、兼容与流程、采用判断、新假设与验证\n\n#### 完整回答\n\nHost 限空白/2 万字符草稿，设置 30 秒 chunk 空闲和 120 秒总耗时；客户端点击停止会调用 cancelOptimize 并立即解除输入阻塞。输出达 max-tokens 且已有文本时返回 truncated，并在结果弹窗提示可能不完整；仍可人工采用。源码中输出预算以 1200 token 为下限，即便模型元数据 maxTokens 或剩余上下文低于 1200，也会请求 1200，可能被 provider 拒绝。流式 Promise.race 超时仅停止等待并返回错误，超时路径没有显式 controller.abort 或 iterator.return；底层模型流能否及时终止取决于宿主实现。建议隔离试用不同模型上限、慢流和取消，观察实际调用成本与资源释放。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:137-148](https://github.com/1321928757/dsh-prompt-polish/blob/c894ae3de6590542f8353b76e314656a4a3fe3a0/lib/index.js#L137-L148)\n\n输入校验与 runId。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n  // ---- 提示词优化 ----\n  async function optimizePrompt(args) {\n    const raw = (args && typeof args.draft === 'string') ? args.draft : ''\n    const draft = raw.trim()\n    if (!draft) return { ok: false, error: '输入为空' }\n    if (draft.length > 20000) return { ok: false, error: '提示词过长' }\n    if (llm === undefined) return { ok: false, error: '没有可用的模型服务' }\n\n    // 取消通道：客户端带 runId，可经 cancelOptimize 中止；无 runId 请求不受影响\n    const runId = (args && typeof args.runId === 'string' && args.runId) ? args.runId : undefined\n    const controller = new AbortController()\n    if (runId) activeRuns.set(runId, controller)\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:216-219](https://github.com/1321928757/dsh-prompt-polish/blob/c894ae3de6590542f8353b76e314656a4a3fe3a0/lib/index.js#L216-L219)\n\n输出预算最低 1200。\n\n```text\n    // 输出上限：模型上限、请求上限与剩余上下文三者取小，且不低于 1200\n    const estInputTokens = Math.ceil(usedChars / 2)\n    const available = Math.max(MIN_OUTPUT_TOKENS, ctxLen - estInputTokens - INPUT_BUDGET_MARGIN)\n    const maxTokens = Math.max(MIN_OUTPUT_TOKENS, Math.floor(Math.min(MAX_OUTPUT_TOKENS, modelMaxOut, available)))\n```\n\n**依据 3 · 源码核查**：[lib/index.js:284-344](https://github.com/1321928757/dsh-prompt-polish/blob/c894ae3de6590542f8353b76e314656a4a3fe3a0/lib/index.js#L284-L344)\n\n流式超时/截断/错误路径。\n\n<details>\n<summary>查看原文（61行）</summary>\n\n````text\n    try {\n      const iterator = llm.stream({\n        provider, model, messages, system: requestSystem,\n        temperature: options.mode === 'creative' ? 0.7 : 0.3,\n        maxTokens,\n        signal: controller.signal,\n      })[Symbol.asyncIterator]()\n      const deadline = Date.now() + TOTAL_TIMEOUT_MS\n      let text = ''\n      let truncated = false\n      while (true) {\n        if (controller.signal.aborted) {\n          return { ok: false, cancelled: true, error: '已取消' }\n        }\n        const outcome = await Promise.race([\n          iterator.next(),\n          ctx.timeout(IDLE_TIMEOUT_MS).then(() => ({ __timedOut: true })),\n        ])\n        if (controller.signal.aborted) {\n          return { ok: false, cancelled: true, error: '已取消' }\n        }\n        if (outcome && outcome.__timedOut === true) {\n          return { ok: false, error: '优化超时：模型长时间无响应，已停止等待（请重试）' }\n        }\n        if (Date.now() > deadline) {\n          return { ok: false, error: '优化超时：整体耗时过长，已停止等待（请重试）' }\n        }\n        if (outcome.done) break\n        const chunk = outcome.value\n        if (chunk.type === 'text-delta') text += chunk.text\n        else if (chunk.type === 'finish') {\n          // 用户取消：中止后流以 aborted 收尾，走独立语义（不计失败）\n          if (controller.signal.aborted) {\n            return { ok: false, cancelled: true, error: '已取消' }\n          }\n          // stop：正常完成；max-tokens/length：输出达上限被截断——有文本按截断\n          // 结果采纳（truncated 标记，界面提示），无文本视为错误；\n          // content-filter 等其他 reason 保持原“模型调用异常”语义\n          const cls = classifyFinishReason(chunk.reason && chunk.reason.kind, text.length > 0)\n          if (cls.type === 'ok') continue\n          if (cls.type === 'truncated') { truncated = true; break }\n          return { ok: false, error: cls.message }\n        }\n      }\n      let result = text.trim()\n      const fenced = result.match(/^```[^\\n]*\\n([\\s\\S]*?)\\n?```$/)\n      if (fenced) result = fenced[1].trim()\n      if (!result) return { ok: false, error: '模型返回为空' }\n      const out = { ok: true, text: result }\n      if (truncated) out.truncated = true\n      return out\n    } catch (err) {\n      if (controller.signal.aborted) {\n        return { ok: false, cancelled: true, error: '已取消' }\n      }\n      console.error('[dsh-prompt-polish] optimize failed', err)\n      return { ok: false, error: String((err && err.message) || err) }\n    } finally {\n      // 无论成功/失败/取消，清理 runId 注册，避免泄漏\n      if (runId !== undefined) activeRuns.delete(runId)\n    }\n````\n\n</details>\n\n**依据 4 · 源码核查**：[lib/client.js:1181-1195](https://github.com/1321928757/dsh-prompt-polish/blob/c894ae3de6590542f8353b76e314656a4a3fe3a0/lib/client.js#L1181-L1195)\n\n客户端取消与丢弃迟到结果。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n        // 停止优化：本地即刻解除冻结，取消 RPC 负责中止宿主侧流\n        const cancelRun = () => {\n          if (!busy) return\n          cancelledRef.current = true\n          const runId = activeRunRef.current ? activeRunRef.current.runId : null\n          activeRunRef.current = null\n          if (conversation && typeof sessionId === 'string') {\n            conversation.blocks.set(sessionId, undefined)\n          }\n          setBusy(false)\n          setInfo('已取消')\n          if (runId !== null) {\n            host.call('cancelOptimize', { runId }).catch(() => { /* 竞态：忽略 */ })\n          }\n        }\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/client.js:1555-1586](https://github.com/1321928757/dsh-prompt-polish/blob/c894ae3de6590542f8353b76e314656a4a3fe3a0/lib/client.js#L1555-L1586)\n\n截断提示但可采用。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\n                  pending.truncated === true\n                    ? React.createElement('p', { className: 'dyn-opt-result-hint' }, '已达输出上限，结果可能不完整')\n                    : null,\n                ),\n            (!pending.failed && !canAdopt)\n              ? React.createElement('p', { className: 'dyn-opt-result-hint' }, '输入已变化，未回填结果')\n              : null,\n            pending.failed\n              ? React.createElement('div', { className: 'dyn-opt-result-actions' },\n                  React.createElement('button', {\n                    type: 'button',\n                    className: 'dyn-opt-btn dyn-opt-btn-primary',\n                    onClick: retry,\n                  }, '重试'),\n                  React.createElement('button', {\n                    type: 'button',\n                    className: 'dyn-opt-btn dyn-opt-btn-ghost',\n                    onClick: () => setPending(null),\n                  }, '关闭'),\n                )\n              : React.createElement('div', { className: 'dyn-opt-result-actions' },\n                  React.createElement('button', {\n                    type: 'button',\n                    className: 'dyn-opt-btn dyn-opt-btn-primary',\n                    disabled: !canAdopt,\n                    onClick: adopt,\n                  }, '采用优化结果'),\n                  React.createElement('button', {\n                    type: 'button',\n                    className: 'dyn-opt-btn dyn-opt-btn-ghost',\n                    onClick: () => setPending(null),\n                  }, '保留原稿'),\n```\n\n</details>\n\n#### 缺口\n\n- 未调用真实 provider 且未追踪超时后的流生命周期。\n  **影响：**实际费用、失败模式和取消效果未知。\n  **进一步探讨：**用隔离模型 stub/小上限模型测试 maxTokens、超时和 abort 后流释放。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：b801a6937fbb1f46e9edad51d1f7a2f6c2e435f09949aca932be0747b036c5cc。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 4 | 1827 | — | — | 16263 |\n| .js | source | 4 | 2333 | 2032 | 193 | — |\n| .mjs | source | 1 | 115 | 112 | 2 | — |\n| .mjs | test | 4 | 474 | 432 | 3 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| UI | 草稿优化/确认 | 需 Web profile |\n| Host RPC | 调用已配置模型 | provider 接收输入 |\n| 设置同步 | localStorage/工作区文件 | 映射和沙箱影响 |\n\n## 工程亮点\n\nHost 提供 Typert 服务，按当前默认模型或首个 provider 组装请求；Client 注入输入栏与设置行。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.zh-CN.md、package.json、lib/index.js、lib/client.js、lib/shared.js、lib/typert.host.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：静态审阅固定提交的 README、Host/Client 源码；未运行插件、Web profile 或真实模型。\n- 下一步：隔离 DSH Web profile 检查 UI/服务兼容、provider 请求内容、工作区选择、低上限/慢流模型与超时取消。\n",
         "metadata": {
             "repository": "1321928757/dsh-prompt-polish",
             "repository_id": 1336538202,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T06:31:04.362Z",
+            "window_start": "2026-09-22T06:31:04.362Z",
             "stars": 3,
             "pushed_at": "2026-10-16T02:06:47Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 1,
+                "closed": 0,
+                "created_30d": 1,
+                "closed_30d": 0,
+                "updated_30d": 1
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1321928757%2Fdsh-prompt-polish%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6403:3FE872:13A236:21166A:6AD84936 and timestamp 2026-10-21 05:10:14 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1321928757%2Fdsh-prompt-polish%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6417:2401FE:14A7B7:221BF5:6AD84936 and timestamp 2026-10-21 05:10:14 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1321928757%2Fdsh-prompt-polish%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6401:1541C9:13EDDD:215FC5:6AD84936 and timestamp 2026-10-21 05:10:14 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1321928757%2Fdsh-prompt-polish%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640F:12F9BB:13B1C2:212E78:6AD84936 and timestamp 2026-10-21 05:10:14 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1321928757%2Fdsh-prompt-polish%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6418:1DEEF7:148DEA:220D23:6AD84936 and timestamp 2026-10-21 05:10:14 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "dsh-prompt-polish",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 358,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-prompt-polish",
+                "captured_at": "2026-10-22T06:31:12.536Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 347,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-prompt-polish",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-08-26T04:47:29.654Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T06:31:12.536Z",
                     "source_url": "https://registry.npmjs.org/dsh-prompt-polish",
                     "error": null,
                     "latest_version": "0.1.0",
                     "latest_published_at": "2026-08-26T04:47:29.926Z",
                     "latest_error": null
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "c894ae3de6590542f8353b76e314656a4a3fe3a0",
-                "current_revision": "c894ae3de6590542f8353b76e314656a4a3fe3a0",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {
@@ -349,14 +462,14 @@
             "repository": "1321928757/dsh-prompt-polish",
             "path": "",
             "revision": "c894ae3de6590542f8353b76e314656a4a3fe3a0",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "8a635e01390501793829e1d48345d38657f4a0a8853e58bc4b9514e895e690e0",
                 "code": "c894ae3de6590542f8353b76e314656a4a3fe3a0",
                 "maintenance": "ef876331b4443cb3a23ff5d59301e495a05fbd2b4b41830f4e2a51d54ec2d401"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

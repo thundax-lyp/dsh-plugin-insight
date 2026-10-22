@@ -24,36 +24,70 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-02-github-1391040578-root-directory-0",
+                    "id": "2026-10-22-02-github-1391040578-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T03:16:27.373Z",
+                    "retrieved_at": "2026-10-22T08:58:48.716Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-02-github-1391040578-root-author",
+                    "id": "2026-10-22-02-github-1391040578-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/643048695/dsh-compaction-route/blob/6039b260d96652ce4af606f850cd1a179cd9d4f7/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/643048695/dsh-compaction-route",
+                            "commit": "6039b260d96652ce4af606f850cd1a179cd9d4f7",
+                            "path": "README.md",
+                            "content_sha256": "6278e1d87ffe6ba92094824f9013e2813c743142e2b259a3760874e92e1f36d2"
+                        }
+                    ],
                     "revision": "6039b260d96652ce4af606f850cd1a179cd9d4f7",
-                    "captured_at": "2026-10-21T03:16:27.373Z",
-                    "summary": "为会话压缩请求指定主模型和备用模型，在失败时切换摘要路由。",
-                    "artifact": "data/runs/2026-10-21-02/snapshots/643048695--dsh-compaction-route/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T08:58:48.716Z",
+                    "summary": "仅对DSH压缩摘要调用选择主模型，并在终止error时用备援路线重试相同历史。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/643048695--dsh-compaction-route/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-02-github-1391040578-root-source",
+                    "id": "2026-10-22-02-github-1391040578-root-source",
                     "kind": "source_inspection",
                     "url": "https://github.com/643048695/dsh-compaction-route/blob/6039b260d96652ce4af606f850cd1a179cd9d4f7/lib/index.js",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/643048695/dsh-compaction-route",
+                            "commit": "6039b260d96652ce4af606f850cd1a179cd9d4f7",
+                            "path": "lib/index.js",
+                            "content_sha256": "361318e4b089870a9c19993d1d31af6519b21dd9cd3b4c50b060fd3ae2770517"
+                        },
+                        {
+                            "repository_url": "https://github.com/643048695/dsh-compaction-route",
+                            "commit": "6039b260d96652ce4af606f850cd1a179cd9d4f7",
+                            "path": "README.md",
+                            "content_sha256": "6278e1d87ffe6ba92094824f9013e2813c743142e2b259a3760874e92e1f36d2"
+                        },
+                        {
+                            "repository_url": "https://github.com/643048695/dsh-compaction-route",
+                            "commit": "6039b260d96652ce4af606f850cd1a179cd9d4f7",
+                            "path": "package.json",
+                            "content_sha256": "a4dd6d6d736ee959a9675961133c0c2d1a9c789b90a276aff64c77f79fe9a58f"
+                        },
+                        {
+                            "repository_url": "https://github.com/643048695/dsh-compaction-route",
+                            "commit": "6039b260d96652ce4af606f850cd1a179cd9d4f7",
+                            "path": "client/client.js",
+                            "content_sha256": "9d4329054e7aabccbb2e65913436f8a1b03b696179ba5142db7a825e665127d2"
+                        }
+                    ],
                     "revision": "6039b260d96652ce4af606f850cd1a179cd9d4f7",
-                    "captured_at": "2026-10-21T03:16:27.373Z",
-                    "summary": "核查 lib/index.js；lib/index.js仅拦截purpose=compaction的llm/stream；重新进入ctx.llm.stream传修改路由，以WeakSet避免递归，收集单次流块后按终止状态切换fallback。",
-                    "artifact": "data/runs/2026-10-21-02/snapshots/643048695--dsh-compaction-route/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T08:58:48.716Z",
+                    "summary": "核查 lib/index.js、README.md、package.json、client/client.js；purpose限定/WeakSet重入，克隆options选主备并完整缓存，error备援，其他结果/最后流交回原引擎。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/643048695--dsh-compaction-route/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "核查固定提交内列明入口、核心实现及相关配置/作者材料的源码子集；未执行插件、其测试、安装、付费请求或真实宿主验收，未核实独立用户采用。",
+                        "固定完整Host选路/缓存/失败主链及Client配置线索、作者测量；未运行宿主/模型，不校准真实tokenizer。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +98,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "适合主聊天模型可用但压缩模型额度或窗口不足的长会话用户。",
+                    "text": "长会话维护者选择压缩模型并恢复终止错误，需摘要保真和完整尝试收据。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1391040578-root-source"
+                        "2026-10-22-02-github-1391040578-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +109,16 @@
                             "fingerprint": "6039b260d96652ce4af606f850cd1a179cd9d4f7"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:27.373Z",
+                    "reviewed_at": "2026-10-22T08:58:48.716Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "lib/index.js仅拦截purpose=compaction的llm/stream；重新进入ctx.llm.stream传修改路由，以WeakSet避免递归，收集单次流块后按终止状态切换fallback。",
+                    "text": "purpose限定/WeakSet重入，克隆options选主备并完整缓存，error备援，其他结果/最后流交回原引擎。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1391040578-root-source"
+                        "2026-10-22-02-github-1391040578-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +127,16 @@
                             "fingerprint": "6039b260d96652ce4af606f850cd1a179cd9d4f7"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:27.373Z",
+                    "reviewed_at": "2026-10-22T08:58:48.716Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "核查固定提交内列明入口、核心实现及相关配置/作者材料的源码子集；未执行插件、其测试、安装、付费请求或真实宿主验收，未核实独立用户采用。",
+                    "text": "固定完整Host选路/缓存/失败主链及Client配置线索、作者测量；未运行宿主/模型，不校准真实tokenizer。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1391040578-root-source"
+                        "2026-10-22-02-github-1391040578-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +145,16 @@
                             "fingerprint": "6039b260d96652ce4af606f850cd1a179cd9d4f7"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:27.373Z",
+                    "reviewed_at": "2026-10-22T08:58:48.716Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "发布与依赖以本项固定package.json、README和本轮META为界；npm或仓库统计不是采用证据。",
+                    "text": "npm0.1.0、MIT、无构建，Schema依赖；Web设置与llm瀑布契约。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1391040578-root-source"
+                        "2026-10-22-02-github-1391040578-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +163,16 @@
                             "fingerprint": "6039b260d96652ce4af606f850cd1a179cd9d4f7"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:27.373Z",
+                    "reviewed_at": "2026-10-22T08:58:48.716Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "首次配置有效主备provider/model；失败会多一次摘要请求并增加延迟，现金可能含失败调用，人工需核对压缩后事实和备用路由权限。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | provider/模型环境，金额未知 | 隐私、tokenizer/窗口和配置核对 | 作者大窗口测量非本轮验证 |\n| 持续使用 | 成功主调用或失败后完整备援，chunk全缓存 | 核对摘要保真与effort/窗口 | 失败调用也可能已耗资源，不能当免费 |\n| 失败恢复 | 再压缩/换路线、保留原历史与任务重做 | 分清终止error、aborted、throw和无finish | 插件不修复无用但无error摘要 |\n",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1391040578-root-source"
+                        "2026-10-22-02-github-1391040578-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +181,16 @@
                             "fingerprint": "6039b260d96652ce4af606f850cd1a179cd9d4f7"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:27.373Z",
+                    "reviewed_at": "2026-10-22T08:58:48.716Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "已遇到压缩路由失败时可试。先检查主备都支持实际输入量和推理档位，再测取消、失败及摘要完整性。",
+                    "text": "明确主备provider/原历史恢复的维护者可限范围试用，先核失败分类、全部成本和摘要保真。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1391040578-root-source"
+                        "2026-10-22-02-github-1391040578-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +199,16 @@
                             "fingerprint": "6039b260d96652ce4af606f850cd1a179cd9d4f7"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:27.373Z",
+                    "reviewed_at": "2026-10-22T08:58:48.716Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "可改善单点故障可恢复性，但无真实宿主故障率或长会话成功率数据。",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 定向路由 | 仅purpose=compaction进入重路由 | 宿主purpose与其他中间件组合行为 |\n| 备援 | terminal error后可再试一次 | 输入实际适配/费用与成功率 |\n| 任务连续性 | 成功流交回原压缩引擎 | 摘要关键信息保留及后续任务完成率 |\n",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1391040578-root-source"
+                        "2026-10-22-02-github-1391040578-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +217,16 @@
                             "fingerprint": "6039b260d96652ce4af606f850cd1a179cd9d4f7"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:27.373Z",
+                    "reviewed_at": "2026-10-22T08:58:48.716Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "WeakSet处理Cordis next闭包不能改参的约束，未配置primary时透明放行；按purpose隔离易复用。全流缓冲及结束标记语义需要与宿主协议保持一致。",
+                    "text": "可复用的是purpose窄匹配、空配置透明、volatile每次取值、WeakSet避免自身递归及遵守abort不再备援。缓冲尝试避免失败内容污染最终摘要，但当前无界缓存/缺finish无错误和只给最终流需要明确。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1391040578-root-source"
+                        "2026-10-22-02-github-1391040578-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +235,16 @@
                             "fingerprint": "6039b260d96652ce4af606f850cd1a179cd9d4f7"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:27.373Z",
+                    "reviewed_at": "2026-10-22T08:58:48.716Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "interpretation",
-                    "text": "作者针对压缩无备用路由的问题；可确认贡献是在请求瀑布层限定purpose，给摘要加入显式主备，而不影响聊天、标题等请求。相对手动改配置重试，故障路径更集中；摘要质量仍取决于实际后端与模型。",
+                    "text": "补可编辑摘要主备与purpose窄路由，减少手工失败切换，非新压缩算法。详见[Q01](#research-q01)与[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1391040578-root-source"
+                        "2026-10-22-02-github-1391040578-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +253,16 @@
                             "fingerprint": "6039b260d96652ce4af606f850cd1a179cd9d4f7"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:27.373Z",
+                    "reviewed_at": "2026-10-22T08:58:48.716Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "切换同一长请求到备用模型不保证窗口适配，fallback也可能同样溢出。collectAttempt缓冲整个流，outcomeOf没找到finish会视作无failure，这使异常截断边界值得重点验证；兼容provider的reasoning effort也需检查。",
+                    "text": "缺finish被当无failure、无用摘要不备援、throw直抛且完整流缓存；备援重发历史并产生额外成本，窗口提示非成功保证。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1391040578-root-source"
+                        "2026-10-22-02-github-1391040578-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +271,16 @@
                             "fingerprint": "6039b260d96652ce4af606f850cd1a179cd9d4f7"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:27.373Z",
+                    "reviewed_at": "2026-10-22T08:58:48.716Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "unverified",
-                    "text": "待验证假设：主备选择同时核对请求估算与目标模型窗口，可降低盲目重试。用不同窗口和限流故障矩阵比较有效摘要率、请求次数与费用；若估算不准导致误跳过健康路由，则保持显式选择。",
+                    "text": "可探讨每尝试压缩收据，保留route/usage/终止与预算，缺finish标不完整并核数据范围；隐私/缓存维护成本未验证。详见[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1391040578-root-source"
+                        "2026-10-22-02-github-1391040578-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +289,15 @@
                             "fingerprint": "6039b260d96652ce4af606f850cd1a179cd9d4f7"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:27.373Z",
+                    "reviewed_at": "2026-10-22T08:58:48.716Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T03:16:27.373Z",
+            "last_checked_at": "2026-10-22T08:58:48.716Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "6039b260d96652ce4af606f850cd1a179cd9d4f7",
-                "reviewed_at": "2026-10-21T03:16:27.373Z",
+                "reviewed_at": "2026-10-22T08:58:48.716Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -279,57 +313,57 @@
                         "transferability": 10,
                         "simplification": 8
                     },
-                    "rationale": "novelty=9：主备路由是常规可靠性模式。 mechanism=15：purpose隔离及WeakSet重入处理有具体难点。 transferability=10：可复用瀑布包装，依赖宿主协议。 simplification=8：避免手工改摘要路由，但故障仍需排查。",
+                    "rationale": "novelty成熟主备路由取小幅；mechanismpurpose/WeakSet接线取实质；transferability窄路由/取消模式可迁移取实质；simplification省手工切换取实质，未计摘要效果。",
                     "basis": "interpretation",
                     "score": 42,
                     "evidence_ids": [
-                        "2026-10-21-02-github-1391040578-root-source"
+                        "2026-10-22-02-github-1391040578-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
                         "workflow": 18,
-                        "delivery": 15,
-                        "reach": 10,
+                        "delivery": 8,
+                        "reach": 5,
                         "economics": 4
                     },
-                    "rationale": "workflow=18：摘要失败可尝试备用以延续会话。 delivery=15：有终止状态分发，缺finish等边界待验。 reach=10：需要多个可用且窗口足够的模型。 economics=4：可能多花一次失败费用，缺真实成本对照。",
+                    "rationale": "workflow压缩失败恢复取实质；delivery仍摘要交付取小幅；reach限DSH长会话取小幅；economics缺全部尝试对照取小幅。",
                     "basis": "interpretation",
-                    "score": 47,
+                    "score": 35,
                     "evidence_ids": [
-                        "2026-10-21-02-github-1391040578-root-source"
+                        "2026-10-22-02-github-1391040578-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "observe",
-                "reason": "压缩专用主备有恢复价值，但流无finish会被视为无failure；先验证截断、取消与摘要完整性，再依赖自动备用。",
+                "decision": "trial",
+                "reason": "默认透明且范围仅压缩，主备配置实用；需明确历史外发、全部成本、缺finish及摘要保真再扩大。详见[Q05](#research-q05)。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "主聊天可用而压缩路由额度不足场景清楚。"
+                        "rationale": "长会话压缩失败任务明确，独立频率未知。"
                     },
                     "advantage": {
-                        "score": 19,
-                        "rationale": "只拦purpose=compaction减少手动重配且隔离其他请求。"
+                        "score": 13,
+                        "rationale": "自动purpose备援有增量，手工换route可替代。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "WeakSet和终止判定已查，无finish边界可能吞截断，未运行复现。"
+                        "rationale": "固定Host主链支持，作者测量非本轮复现。"
                     },
                     "cost": {
                         "score": 10,
-                        "rationale": "主备窗口权限配置与失败额外摘要费用、事实复核需承担。"
+                        "rationale": "配置简单但历史外发/多次调用和摘要恢复有责任。"
                     }
                 },
-                "score": 65,
+                "score": 59,
                 "revision": "6039b260d96652ce4af606f850cd1a179cd9d4f7",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T08:58:48.716Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-02-github-1391040578-root-source"
+                    "2026-10-22-02-github-1391040578-root-source"
                 ],
                 "dependencies": [
                     {
@@ -354,33 +388,34 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T03:00:27Z",
-            "analysis_sha256": "4edbea51e2058d8ee00c85f867b61f9e764d04a98986fb4dd4f3360c6c50e1e0"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "6af338d37014bb4a53eaa0d384e1ae6f2f5c99dd9ccd79b4f8e760c762adb159"
         },
         "publication.metadata": "data/plugins/643048695--dsh-compaction-route/META.json",
         "publication.summaries": {
-            "text": "为会话压缩请求指定主模型和备用模型，在失败时切换摘要路由。",
+            "text": "仅对DSH压缩摘要调用选择主模型，并在终止error时用备援路线重试相同历史。",
             "revision": "6039b260d96652ce4af606f850cd1a179cd9d4f7",
             "source_url": "https://github.com/643048695/dsh-compaction-route/blob/6039b260d96652ce4af606f850cd1a179cd9d4f7/README.md"
         },
         "publication.capabilities": {
             "revision": "6039b260d96652ce4af606f850cd1a179cd9d4f7",
             "items": {
-                "事件监听": "purpose=compaction的llm/stream主备路由",
-                "界面": "压缩路由配置"
-            }
+                "界面": "压缩route设置卡",
+                "事件监听": "llm/stream压缩purpose路由"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 主路线 | 选定摘要模型 | 默认空透明，effort默认high |\n| 备援 | terminal error后重试 | throw/abort/无用摘要不涵盖 |\n| 完整缓存 | 不交付失败内容 | 无界缓存/最后流成本需核 |\n| 窗口提示 | 帮助挑选候选 | 仅声明值非tokenizer保证 |"
         },
         "publication.advice": {
             "revision": "6039b260d96652ce4af606f850cd1a179cd9d4f7",
-            "text": "已遇到压缩路由失败时可试。先检查主备都支持实际输入量和推理档位，再测取消、失败及摘要完整性。"
+            "text": "明确主备provider/原历史恢复的维护者可限范围试用，先核失败分类、全部成本和摘要保真。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/643048695--dsh-compaction-route",
-        "reports": "# dsh-compaction-route\n\n> 为会话压缩请求指定主模型和备用模型，在失败时切换摘要路由。\n\n## 使用建议\n\n已遇到压缩路由失败时可试。先检查主备都支持实际输入量和推理档位，再测取消、失败及摘要完整性。\n\n**核查状态**：已检查固定版本源码，未安装、执行目标插件或完成真实宿主验收。已有贡献仅由固定版本源码支持，实际宿主和任务效果尚未验证；未来设计假设保持未验证。\n\n## 洞察短评\n\n- **用途**：适合主聊天模型可用但压缩模型额度或窗口不足的长会话用户。\n- **亮点**：作者针对压缩无备用路由的问题；可确认贡献是在请求瀑布层限定purpose，给摘要加入显式主备，而不影响聊天、标题等请求。相对手动改配置重试，故障路径更集中；摘要质量仍取决于实际后端与模型。\n- **思考**：切换同一长请求到备用模型不保证窗口适配，fallback也可能同样溢出。collectAttempt缓冲整个流，outcomeOf没找到finish会视作无failure，这使异常截断边界值得重点验证；兼容provider的reasoning effort也需检查。\n- **建议**：待验证假设：主备选择同时核对请求估算与目标模型窗口，可降低盲目重试。用不同窗口和限流故障矩阵比较有效摘要率、请求次数与费用；若估算不准导致误跳过健康路由，则保持显式选择。\n\n## 当前插件分析\n\n### 场景与替代办法\n\n替代是手工更换摘要模型或宿主原生单路由；项目提供请求级主备而非更好的压缩算法。\n\n### 能力、依赖与流程\n\nlib/index.js仅拦截purpose=compaction的llm/stream；重新进入ctx.llm.stream传修改路由，以WeakSet避免递归，收集单次流块后按终止状态切换fallback。\n\n- **事件监听**：purpose=compaction的llm/stream主备路由\n- **界面**：压缩路由配置\n\nSchemastery、可用llm服务及宿主purpose=compaction约定，主备模型需凭据和足够输入窗口。\n\n压缩请求→读取热配置→primary→检查终止状态→失败尝试fallback→返回选定尝试；用户取消应停止而非继续切换。\n\n### 成本与效果\n\n首次配置有效主备provider/model；失败会多一次摘要请求并增加延迟，现金可能含失败调用，人工需核对压缩后事实和备用路由权限。\n\n可改善单点故障可恢复性，但无真实宿主故障率或长会话成功率数据。\n\n### 工程亮点\n\nWeakSet处理Cordis next闭包不能改参的约束，未配置primary时透明放行；按purpose隔离易复用。全流缓冲及结束标记语义需要与宿主协议保持一致。\n\n源码依据：[lib/index.js](https://github.com/643048695/dsh-compaction-route/blob/6039b260d96652ce4af606f850cd1a179cd9d4f7/lib/index.js)。\n\n## 未来设计假设（未验证）\n\n待验证假设：主备选择同时核对请求估算与目标模型窗口，可降低盲目重试。用不同窗口和限流故障矩阵比较有效摘要率、请求次数与费用；若估算不准导致误跳过健康路由，则保持显式选择。\n\n覆盖错误finish、缺finish、迭代器抛错、取消、超窗口与不支持effort；本轮未执行目标代码。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：2646bafa9b771a282f5d80d3e721ffa35ef3bf94078176401ef19cb034b2da76。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 4 | 308 | — | — | 3291 |\n| .js | source | 2 | 685 | 482 | 157 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[643048695/dsh-compaction-route](https://github.com/643048695/dsh-compaction-route)\n- **版本号**：0.1.0（[固定提交 6039b260](https://github.com/643048695/dsh-compaction-route/tree/6039b260d96652ce4af606f850cd1a179cd9d4f7)）\n- **版本日期**：2026-09-28（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：lib/index.js、作者README与固定范围inventory；源码抽读不等于完整审计。\n- 未完成：目标插件执行、测试、安装、模型调用和真实宿主验收。\n- 证据限制：核查固定提交内列明入口、核心实现及相关配置/作者材料的源码子集；未执行插件、其测试、安装、付费请求或真实宿主验收，未核实独立用户采用。\n- 下一步：覆盖错误finish、缺finish、迭代器抛错、取消、超窗口与不支持effort；本轮未执行目标代码。\n",
+        "reports": "# dsh-compaction-route\n\n> 仅对DSH压缩摘要调用选择主模型，并在终止error时用备援路线重试相同历史。\n\n## 研究范围\n\n- **仓库**：[643048695/dsh-compaction-route](https://github.com/643048695/dsh-compaction-route)\n- **版本号**：0.1.0（[固定提交 6039b260d96652ce4af606f850cd1a179cd9d4f7](https://github.com/643048695/dsh-compaction-route/tree/6039b260d96652ce4af606f850cd1a179cd9d4f7)）\n- **版本日期**：2026-09-28（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n源码支持purpose限定的压缩模型主备路由与重入防护；终止缺失、抛错备援和所有尝试的成本/外发范围仍需明确，不能承诺更优压缩。逐尝试终止/预算收据尚未验证。\n\n## 洞察短评\n\n- **用途**：长会话维护者选择压缩模型并恢复终止错误，需摘要保真和完整尝试收据。\n- **亮点**：补可编辑摘要主备与purpose窄路由，减少手工失败切换，非新压缩算法。详见[Q01](#research-q01)与[Q02](#research-q02)。\n- **思考**：缺finish被当无failure、无用摘要不备援、throw直抛且完整流缓存；备援重发历史并产生额外成本，窗口提示非成功保证。详见[Q02](#research-q02)。\n- **建议**：可探讨每尝试压缩收据，保留route/usage/终止与预算，缺finish标不完整并核数据范围；隐私/缓存维护成本未验证。详见[Q04](#research-q04)。\n\n采用建议：明确主备provider/原历史恢复的维护者可限范围试用，先核失败分类、全部成本和摘要保真。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n补可编辑摘要主备与purpose窄路由，减少手工失败切换，非新压缩算法。详见[Q01](#research-q01)与[Q02](#research-q02)。\n\n## 关键质疑\n\n缺finish被当无failure、无用摘要不备援、throw直抛且完整流缓存；备援重发历史并产生额外成本，窗口提示非成功保证。详见[Q02](#research-q02)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可探讨每尝试压缩收据，保留route/usage/终止与预算，缺finish标不完整并核数据范围；隐私/缓存维护成本未验证。详见[Q04](#research-q04)。\n\n进一步探讨可用error/throw/abort/缺finish/超大chunk流，再用固定历史后续任务比较信息保留与全部成本。\n\n## 场景与替代办法\n\n长会话维护者选择压缩模型并恢复终止错误，需摘要保真和完整尝试收据。\n\n固定单summarizer加手工换路线可替代；自动备援省切换，但不解决输入/摘要语义或省去失败成本。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| DSH llm/stream瀑布与llm服务 | 重路由必需 | 指定purpose并重入 | 无服务不启用，需接口兼容 |\n| 已安装primary及凭据 | 开启路由必需 | 真正生成摘要 | 默认空值不改变原流程 |\n| fallback及相应数据发送许可 | 失败备援可选 | 再发相同历史 | 不配置则不备援，不能自动扩大信任域 |\n| Client设置及pi-ai模型描述 | 下拉UI必需 | 选择路线/显示上下文 | 声明窗口非实际token校准 |\n\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 准备 | 维护者核对可信主/备provider和历史发送范围 | 保存原压缩设置与可恢复会话 |\n| 加载 | 安装后默认primary/fallback为空 | 未选择时透明，不无感重路由 |\n| 配置 | 明确选择主/备、effort并核窗口/预算 | high默认不等成本最优 |\n| 压缩/退出 | 检查实际摘要和后续任务，停路由可关enabled/清primary | 关插件不撤销已发历史或已生成摘要 |\n\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | provider/模型环境，金额未知 | 隐私、tokenizer/窗口和配置核对 | 作者大窗口测量非本轮验证 |\n| 持续使用 | 成功主调用或失败后完整备援，chunk全缓存 | 核对摘要保真与effort/窗口 | 失败调用也可能已耗资源，不能当免费 |\n| 失败恢复 | 再压缩/换路线、保留原历史与任务重做 | 分清终止error、aborted、throw和无finish | 插件不修复无用但无error摘要 |\n\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 定向路由 | 仅purpose=compaction进入重路由 | 宿主purpose与其他中间件组合行为 |\n| 备援 | terminal error后可再试一次 | 输入实际适配/费用与成功率 |\n| 任务连续性 | 成功流交回原压缩引擎 | 摘要关键信息保留及后续任务完成率 |\n\n\n## 研究问题与完整回答\n\n**插件研究总目标：**核查压缩主/备路由、终止失败与完整摘要任务成本/隐私边界。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 谁需要压缩路由，主备尝试如何运行？\n\n**研究主题：**场景与需求、功能与机制\n\n#### 完整回答\n\n面向DSH长会话维护者，希望压缩摘要模型与主聊天模型分开且失败时换一条路线。输入为purpose=compaction的原始options与用户选择的主/备provider/model，输出一个尝试的chunk流供原引擎继续。合格任务需摘要有效、后续工作不丢关键约束，并清楚历史向哪些服务发送。\n\nhandler先排除非compaction和自己WeakSet标记的call，无primary透明。对每条路线克隆options改provider/model和可选effort，重入llm.stream，完整收集到finish。若finish error则且未取消时试fallback，成功/aborted或最后错误交回chunks；throw直接抛出不重试。原压缩引擎仍负责接收摘要和写会话，不由插件实现。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:183-198](https://github.com/643048695/dsh-compaction-route/blob/6039b260d96652ce4af606f850cd1a179cd9d4f7/lib/index.js#L183-L198)\n\n每次读取primary/fallback，空primary透明。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n  /** Read the routing plan. Called per compaction so a settings edit applies at once. */\n  const plan = () => {\n    if (plain(settings.enabled, true) !== true) return undefined\n    const primary = parseTarget(plain(settings.primary, NO_TARGET))\n    // A fallback without a primary is meaningless — there is nothing to fail — and\n    // treating it as the primary would silently route compaction somewhere the\n    // person never chose. No primary means this plugin stays transparent.\n    if (primary === undefined) return undefined\n    const chain = [primary]\n    const fallback = parseTarget(plain(settings.fallback, NO_TARGET))\n    if (fallback !== undefined) chain.push(fallback)\n    return {\n      chain,\n      effort: plain(settings.effort, 'high'),\n      log: plain(settings.log, true) === true\n    }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:212-241](https://github.com/643048695/dsh-compaction-route/blob/6039b260d96652ce4af606f850cd1a179cd9d4f7/lib/index.js#L212-L241)\n\npurpose/重入/选路与throw。\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\n    const handler = async function * (options, next) {\n      if (options === null || typeof options !== 'object') return yield * next()\n      if (options.purpose !== COMPACTION_PURPOSE) return yield * next()\n      // Our own retry re-enters the waterfall; hand it straight to the adapter.\n      if (OWN_CALLS.has(options)) return yield * next()\n\n      const route = plan()\n      if (route === undefined) return yield * next()\n\n      const signal = options.signal\n      const chain = route.chain\n      const effort = route.effort === '' ? undefined : route.effort\n\n      for (let index = 0; index < chain.length; index += 1) {\n        const target = chain[index]\n        const isLast = index === chain.length - 1\n        const call = {\n          ...options,\n          ...target,\n          ...effort === undefined ? {} : { reasoningEffort: effort }\n        }\n        OWN_CALLS.add(call)\n\n        let chunks\n        try {\n          chunks = await collectAttempt(llm.stream(call))\n        } catch (error) {\n          // A thrown middleware or consumer failure is not a provider outcome\n          // this seam can retry; surface it exactly as the unpatched runtime would.\n          throw error\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:244-268](https://github.com/643048695/dsh-compaction-route/blob/6039b260d96652ce4af606f850cd1a179cd9d4f7/lib/index.js#L244-L268)\n\nerror/取消/最后尝试。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n        const { aborted, failure } = outcomeOf(chunks)\n        if (aborted || failure === undefined) {\n          if (index > 0 && route.log) {\n            ctx.logger?.info('[compaction-route] summarized with fallback ' + labelOf(target))\n          }\n          yield * chunks\n          return\n        }\n\n        if (signal !== undefined && signal.aborted === true) {\n          yield * chunks\n          return\n        }\n\n        if (isLast) {\n          if (route.log) {\n            ctx.logger?.info('[compaction-route] ' + labelOf(target) + ' failed (' + describeFailure(failure) + '); no candidate left')\n          }\n          yield * chunks\n          return\n        }\n\n        if (route.log) {\n          ctx.logger?.info('[compaction-route] ' + labelOf(target) + ' failed (' + describeFailure(failure) + '); retrying on ' + labelOf(chain[index + 1]))\n        }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:148-171](https://github.com/643048695/dsh-compaction-route/blob/6039b260d96652ce4af606f850cd1a179cd9d4f7/lib/index.js#L148-L171)\n\n收集与终止判定。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n/** Collect one attempt's chunks, stopping at its terminal finish chunk. */\nasync function collectAttempt (stream) {\n  const chunks = []\n  for await (const chunk of stream) {\n    chunks.push(chunk)\n    if (chunk !== null && typeof chunk === 'object' && chunk.type === 'finish') break\n  }\n  return chunks\n}\n\n/**\n * Interpret collected chunks.\n *\n * @returns the terminal failure, or undefined when the attempt succeeded.\n */\nfunction outcomeOf (chunks) {\n  for (const chunk of chunks) {\n    if (chunk === null || typeof chunk !== 'object' || chunk.type !== 'finish') continue\n    const reason = chunk.reason === undefined ? {} : chunk.reason\n    if (reason.kind === 'aborted') return { aborted: true, failure: reason.failure }\n    if (reason.kind === 'error') return { aborted: false, failure: reason.failure === undefined ? { code: 'UNKNOWN' } : reason.failure }\n    return { aborted: false, failure: undefined }\n  }\n  return { aborted: false, failure: undefined }\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 相对固定summarizer贡献和关键边界是什么？\n\n**研究主题：**贡献与相对优势、缺陷与关键质疑\n\n#### 完整回答\n\n贡献是补上用户可编辑主/备摘要路由、purpose限定和终止错误备援，不接管所有模型调用。用WeakSet重入而非next改参数是具体接线经验；自动缩小输入/切分或改善摘要算法不在实现内。作者同payload跨模型token测量可说明其场景，未被本轮复现。\n\n限制在失败定义和完整副作用。outcomeOf未见finish也返回failure undefined，语义无用/空摘要但无error也不触发备援；throw不备援、aborted不备援是明确边界。所有chunks全存在内存再yield，主失败内容不交消费者，取消仍依赖provider遵守signal。尝试成本/usage若只看最后流可能不完整，实际计量还需宿主事件确认。\n\nfallback收到同一历史，跨provider意味着额外数据接收者；更大声明窗口只是线索，tokenizer、输出预算和实际上限共同决定输入是否可接受。不能把“同窗口必失败/更大窗口必成功”当普遍结论。默认effort high在启用后传给两路线，未核每provider是否接受，也不证明摘要更好。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:21-37](https://github.com/643048695/dsh-compaction-route/blob/6039b260d96652ce4af606f850cd1a179cd9d4f7/README.md#L21-L37)\n\n作者跨模型测量及窗口结论。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\nMeasured on a real 950k-window session:\n\n| | |\n|---|---|\n| DSH estimate for the replay | 743,536 tokens |\n| What the chat model actually read | 744,184 tokens |\n| What the chosen summarizer needed | **over its input ceiling** → HTTP 400 |\n\nThe meter was calibrated on the chat model's tokenizer (0.1% off), so it reported \"fits\" while the summarizer was already over. Three routes measured against one identical payload:\n\n| Route | Tokens for the same bytes |\n|---|---|\n| gemini-3.8-flash | 1,027,843 |\n| opencode-go/deepseek-v4.1-flash | 939,469 |\n| surplan/deepseek-v4.1-flash | 939,003 |\n\nThe tokenizers differ by **~10%**; the ceilings are the **same** (1,048,576). So \"just pick a different model\" is not enough on its own: **a fallback only rescues an oversized replay when its window is larger than the primary's.** The settings card says so when your pick cannot help.\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:148-171](https://github.com/643048695/dsh-compaction-route/blob/6039b260d96652ce4af606f850cd1a179cd9d4f7/lib/index.js#L148-L171)\n\n无finish按无failure与全缓存。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n/** Collect one attempt's chunks, stopping at its terminal finish chunk. */\nasync function collectAttempt (stream) {\n  const chunks = []\n  for await (const chunk of stream) {\n    chunks.push(chunk)\n    if (chunk !== null && typeof chunk === 'object' && chunk.type === 'finish') break\n  }\n  return chunks\n}\n\n/**\n * Interpret collected chunks.\n *\n * @returns the terminal failure, or undefined when the attempt succeeded.\n */\nfunction outcomeOf (chunks) {\n  for (const chunk of chunks) {\n    if (chunk === null || typeof chunk !== 'object' || chunk.type !== 'finish') continue\n    const reason = chunk.reason === undefined ? {} : chunk.reason\n    if (reason.kind === 'aborted') return { aborted: true, failure: reason.failure }\n    if (reason.kind === 'error') return { aborted: false, failure: reason.failure === undefined ? { code: 'UNKNOWN' } : reason.failure }\n    return { aborted: false, failure: undefined }\n  }\n  return { aborted: false, failure: undefined }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:228-241](https://github.com/643048695/dsh-compaction-route/blob/6039b260d96652ce4af606f850cd1a179cd9d4f7/lib/index.js#L228-L241)\n\n同options改路线/effort，throw直接上抛。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n        const call = {\n          ...options,\n          ...target,\n          ...effort === undefined ? {} : { reasoningEffort: effort }\n        }\n        OWN_CALLS.add(call)\n\n        let chunks\n        try {\n          chunks = await collectAttempt(llm.stream(call))\n        } catch (error) {\n          // A thrown middleware or consumer failure is not a provider outcome\n          // this seam can retry; surface it exactly as the unpatched runtime would.\n          throw error\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:244-268](https://github.com/643048695/dsh-compaction-route/blob/6039b260d96652ce4af606f850cd1a179cd9d4f7/lib/index.js#L244-L268)\n\n仅terminal error备援。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n        const { aborted, failure } = outcomeOf(chunks)\n        if (aborted || failure === undefined) {\n          if (index > 0 && route.log) {\n            ctx.logger?.info('[compaction-route] summarized with fallback ' + labelOf(target))\n          }\n          yield * chunks\n          return\n        }\n\n        if (signal !== undefined && signal.aborted === true) {\n          yield * chunks\n          return\n        }\n\n        if (isLast) {\n          if (route.log) {\n            ctx.logger?.info('[compaction-route] ' + labelOf(target) + ' failed (' + describeFailure(failure) + '); no candidate left')\n          }\n          yield * chunks\n          return\n        }\n\n        if (route.log) {\n          ctx.logger?.info('[compaction-route] ' + labelOf(target) + ' failed (' + describeFailure(failure) + '); retrying on ' + labelOf(chain[index + 1]))\n        }\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/index.js:89-92](https://github.com/643048695/dsh-compaction-route/blob/6039b260d96652ce4af606f850cd1a179cd9d4f7/lib/index.js#L89-L92)\n\n默认high。\n\n```text\n  effort: Schema.string()\n    .default('high')\n    .description('Reasoning effort for compaction calls. Empty keeps the provider default.')\n    .volatile(),\n```\n\n#### 缺口\n\n- 各provider实际tokenizer/窗口、effort和摘要质量未独立验证。\n  **影响：**不能仅按下拉窗口选出可靠压缩路线或断言备援成功。\n  **进一步探讨：**可用固定无敏感长历史分别核实际输入/输出与关键信息保留，统计后续任务而非只HTTP成功。\n- 其他中间件重入组合、无finish流和失败尝试usage记录未确定。\n  **影响：**不能把只yield最后流当全部成本/错误可见。\n  **进一步探讨：**可用模拟流和宿主事件观察点检查每尝试收据、throw/abort/缺finish，不发送真实历史。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 依赖、退出和三阶段成本效果怎样判断？\n\n**研究主题：**依赖、兼容与流程、效果与总成本\n\n#### 完整回答\n\n包0.1.0无构建流程、仅Schema运行依赖；真正可用仍依赖llm/stream契约、provider凭据和Client配置服务。primary/fallback默认空是积极边界，没有选路线不改变现有压缩。设置实时读取适用于下一次压缩，不应改变在途尝试计划。\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| DSH llm/stream瀑布与llm服务 | 重路由必需 | 指定purpose并重入 | 无服务不启用，需接口兼容 |\n| 已安装primary及凭据 | 开启路由必需 | 真正生成摘要 | 默认空值不改变原流程 |\n| fallback及相应数据发送许可 | 失败备援可选 | 再发相同历史 | 不配置则不备援，不能自动扩大信任域 |\n| Client设置及pi-ai模型描述 | 下拉UI必需 | 选择路线/显示上下文 | 声明窗口非实际token校准 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 准备 | 维护者核对可信主/备provider和历史发送范围 | 保存原压缩设置与可恢复会话 |\n| 加载 | 安装后默认primary/fallback为空 | 未选择时透明，不无感重路由 |\n| 配置 | 明确选择主/备、effort并核窗口/预算 | high默认不等成本最优 |\n| 压缩/退出 | 检查实际摘要和后续任务，停路由可关enabled/清primary | 关插件不撤销已发历史或已生成摘要 |\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | provider/模型环境，金额未知 | 隐私、tokenizer/窗口和配置核对 | 作者大窗口测量非本轮验证 |\n| 持续使用 | 成功主调用或失败后完整备援，chunk全缓存 | 核对摘要保真与effort/窗口 | 失败调用也可能已耗资源，不能当免费 |\n| 失败恢复 | 再压缩/换路线、保留原历史与任务重做 | 分清终止error、aborted、throw和无finish | 插件不修复无用但无error摘要 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 定向路由 | 仅purpose=compaction进入重路由 | 宿主purpose与其他中间件组合行为 |\n| 备援 | terminal error后可再试一次 | 输入实际适配/费用与成功率 |\n| 任务连续性 | 成功流交回原压缩引擎 | 摘要关键信息保留及后续任务完成率 |\n\n完整对照需相同历史、相同后续任务，计主失败/备援全部调用、人工重做及摘要丢约束，不以fallback日志成功代替业务结果。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:76-96](https://github.com/643048695/dsh-compaction-route/blob/6039b260d96652ce4af606f850cd1a179cd9d4f7/lib/index.js#L76-L96)\n\n空路线与实时配置默认。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\nexport const Config = Schema.object({\n  enabled: Schema.boolean()\n    .default(true)\n    .description('Route compaction calls through the models below. Off leaves the engine exactly as it was.')\n    .volatile(),\n  primary: Schema.string()\n    .default(NO_TARGET)\n    .description('The summarizer used first, as \"provider|model\". Empty leaves compaction untouched.')\n    .volatile(),\n  fallback: Schema.string()\n    .default(NO_TARGET)\n    .description('Tried when the primary ends in an error. Empty disables the fallback.')\n    .volatile(),\n  effort: Schema.string()\n    .default('high')\n    .description('Reasoning effort for compaction calls. Empty keeps the provider default.')\n    .volatile(),\n  log: Schema.boolean()\n    .default(true)\n    .description('Write one info line when a fallback is used.')\n    .volatile()\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:183-198](https://github.com/643048695/dsh-compaction-route/blob/6039b260d96652ce4af606f850cd1a179cd9d4f7/lib/index.js#L183-L198)\n\n每调用固定计划。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n  /** Read the routing plan. Called per compaction so a settings edit applies at once. */\n  const plan = () => {\n    if (plain(settings.enabled, true) !== true) return undefined\n    const primary = parseTarget(plain(settings.primary, NO_TARGET))\n    // A fallback without a primary is meaningless — there is nothing to fail — and\n    // treating it as the primary would silently route compaction somewhere the\n    // person never chose. No primary means this plugin stays transparent.\n    if (primary === undefined) return undefined\n    const chain = [primary]\n    const fallback = parseTarget(plain(settings.fallback, NO_TARGET))\n    if (fallback !== undefined) chain.push(fallback)\n    return {\n      chain,\n      effort: plain(settings.effort, 'high'),\n      log: plain(settings.log, true) === true\n    }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[package.json:39-60](https://github.com/643048695/dsh-compaction-route/blob/6039b260d96652ce4af606f850cd1a179cd9d4f7/package.json#L39-L60)\n\nweb分发与Schema依赖。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n      \"patch\": \"./cordis.patch.yml\"\n    },\n    \"client\": {\n      \"platform\": \"web\"\n    }\n  },\n  \"keywords\": [\n    \"dsh\",\n    \"deepseek-harness\",\n    \"dsh-plugin\",\n    \"dsh-plugin-bundle\",\n    \"compaction\",\n    \"compaction-model\",\n    \"context\",\n    \"context-window\",\n    \"fallback\",\n    \"summarizer\"\n  ],\n  \"dependencies\": {\n    \"@deepseek-ai/schemastery\": \"^3.18.2\"\n  }\n}\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:228-249](https://github.com/643048695/dsh-compaction-route/blob/6039b260d96652ce4af606f850cd1a179cd9d4f7/lib/index.js#L228-L249)\n\n完整尝试后交付。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n        const call = {\n          ...options,\n          ...target,\n          ...effort === undefined ? {} : { reasoningEffort: effort }\n        }\n        OWN_CALLS.add(call)\n\n        let chunks\n        try {\n          chunks = await collectAttempt(llm.stream(call))\n        } catch (error) {\n          // A thrown middleware or consumer failure is not a provider outcome\n          // this seam can retry; surface it exactly as the unpatched runtime would.\n          throw error\n        }\n\n        const { aborted, failure } = outcomeOf(chunks)\n        if (aborted || failure === undefined) {\n          if (index > 0 && route.log) {\n            ctx.logger?.info('[compaction-route] summarized with fallback ' + labelOf(target))\n          }\n          yield * chunks\n```\n\n</details>\n\n#### 缺口\n\n- 缺少同历史/后续任务的成功率、摘要保真、总tokens/耗时与恢复对照。\n  **影响：**不能量化更稳、更省或较好摘要。\n  **进一步探讨：**可比较原单route、手工换route与本插件，记录每次失败/备援收费和任务完成质量。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 工程复用和压缩尝试收据假设怎么检验？\n\n**研究主题：**工程质量与复用、新假设与验证\n\n#### 完整回答\n\n可复用的是purpose窄匹配、空配置透明、volatile每次取值、WeakSet避免自身递归及遵守abort不再备援。缓冲尝试避免失败内容污染最终摘要，但当前无界缓存/缺finish无错误和只给最终流需要明确。\n\n可探讨未验证的“压缩尝试收据”。每次主/备记录route、输入估算与实际usage、开始/finish/throw/abort、缓存预算和摘要验收状态，缺finish视不完整而非成功；失败尝试保留成本/错误元数据，跨provider数据范围在配置时可读。可选按已核provider预算选择路线，而不是只按声明窗口。相对现有info日志，它使失败与成本可复核，代价是日志隐私、tokenizer维护和缓存策略。可用部分输出后error、throw、abort、缺finish、超大chunk与同窗口不同tokenizer夹具比较误成功、峰值内存和总成本；若只能看最后成功应修设计。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:212-241](https://github.com/643048695/dsh-compaction-route/blob/6039b260d96652ce4af606f850cd1a179cd9d4f7/lib/index.js#L212-L241)\n\npurpose、WeakSet重入和throw。\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\n    const handler = async function * (options, next) {\n      if (options === null || typeof options !== 'object') return yield * next()\n      if (options.purpose !== COMPACTION_PURPOSE) return yield * next()\n      // Our own retry re-enters the waterfall; hand it straight to the adapter.\n      if (OWN_CALLS.has(options)) return yield * next()\n\n      const route = plan()\n      if (route === undefined) return yield * next()\n\n      const signal = options.signal\n      const chain = route.chain\n      const effort = route.effort === '' ? undefined : route.effort\n\n      for (let index = 0; index < chain.length; index += 1) {\n        const target = chain[index]\n        const isLast = index === chain.length - 1\n        const call = {\n          ...options,\n          ...target,\n          ...effort === undefined ? {} : { reasoningEffort: effort }\n        }\n        OWN_CALLS.add(call)\n\n        let chunks\n        try {\n          chunks = await collectAttempt(llm.stream(call))\n        } catch (error) {\n          // A thrown middleware or consumer failure is not a provider outcome\n          // this seam can retry; surface it exactly as the unpatched runtime would.\n          throw error\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:148-171](https://github.com/643048695/dsh-compaction-route/blob/6039b260d96652ce4af606f850cd1a179cd9d4f7/lib/index.js#L148-L171)\n\n缓冲与缺finish起点。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n/** Collect one attempt's chunks, stopping at its terminal finish chunk. */\nasync function collectAttempt (stream) {\n  const chunks = []\n  for await (const chunk of stream) {\n    chunks.push(chunk)\n    if (chunk !== null && typeof chunk === 'object' && chunk.type === 'finish') break\n  }\n  return chunks\n}\n\n/**\n * Interpret collected chunks.\n *\n * @returns the terminal failure, or undefined when the attempt succeeded.\n */\nfunction outcomeOf (chunks) {\n  for (const chunk of chunks) {\n    if (chunk === null || typeof chunk !== 'object' || chunk.type !== 'finish') continue\n    const reason = chunk.reason === undefined ? {} : chunk.reason\n    if (reason.kind === 'aborted') return { aborted: true, failure: reason.failure }\n    if (reason.kind === 'error') return { aborted: false, failure: reason.failure === undefined ? { code: 'UNKNOWN' } : reason.failure }\n    return { aborted: false, failure: undefined }\n  }\n  return { aborted: false, failure: undefined }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:244-268](https://github.com/643048695/dsh-compaction-route/blob/6039b260d96652ce4af606f850cd1a179cd9d4f7/lib/index.js#L244-L268)\n\n失败尝试被替换的流与info日志。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n        const { aborted, failure } = outcomeOf(chunks)\n        if (aborted || failure === undefined) {\n          if (index > 0 && route.log) {\n            ctx.logger?.info('[compaction-route] summarized with fallback ' + labelOf(target))\n          }\n          yield * chunks\n          return\n        }\n\n        if (signal !== undefined && signal.aborted === true) {\n          yield * chunks\n          return\n        }\n\n        if (isLast) {\n          if (route.log) {\n            ctx.logger?.info('[compaction-route] ' + labelOf(target) + ' failed (' + describeFailure(failure) + '); no candidate left')\n          }\n          yield * chunks\n          return\n        }\n\n        if (route.log) {\n          ctx.logger?.info('[compaction-route] ' + labelOf(target) + ' failed (' + describeFailure(failure) + '); retrying on ' + labelOf(chain[index + 1]))\n        }\n```\n\n</details>\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 目前推荐和停止条件是什么？\n\n**研究主题：**采用判断\n\n#### 完整回答\n\n推荐trial，面向已明确主备数据接收者且能保存原历史的长会话维护者。默认不重路由、只限压缩、取消不再备援使范围可控；仍需把fallback当额外调用/隐私面，而非自动零成本恢复。\n\n继续探讨可先用模拟流核失败分类和成本收据，再固定无敏感历史评估摘要与后续任务。若无finish被当成功、关键约束丢失、备援provider数据许可不清、调用成本只见最后一次、effort不受支持或缓存异常，应停止对应route并保留原历史恢复。Q02和Q03结果决定扩大采用，本轮未调用模型。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:183-198](https://github.com/643048695/dsh-compaction-route/blob/6039b260d96652ce4af606f850cd1a179cd9d4f7/lib/index.js#L183-L198)\n\n空primary和范围可配置。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n  /** Read the routing plan. Called per compaction so a settings edit applies at once. */\n  const plan = () => {\n    if (plain(settings.enabled, true) !== true) return undefined\n    const primary = parseTarget(plain(settings.primary, NO_TARGET))\n    // A fallback without a primary is meaningless — there is nothing to fail — and\n    // treating it as the primary would silently route compaction somewhere the\n    // person never chose. No primary means this plugin stays transparent.\n    if (primary === undefined) return undefined\n    const chain = [primary]\n    const fallback = parseTarget(plain(settings.fallback, NO_TARGET))\n    if (fallback !== undefined) chain.push(fallback)\n    return {\n      chain,\n      effort: plain(settings.effort, 'high'),\n      log: plain(settings.log, true) === true\n    }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:244-268](https://github.com/643048695/dsh-compaction-route/blob/6039b260d96652ce4af606f850cd1a179cd9d4f7/lib/index.js#L244-L268)\n\n取消/终止处理。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n        const { aborted, failure } = outcomeOf(chunks)\n        if (aborted || failure === undefined) {\n          if (index > 0 && route.log) {\n            ctx.logger?.info('[compaction-route] summarized with fallback ' + labelOf(target))\n          }\n          yield * chunks\n          return\n        }\n\n        if (signal !== undefined && signal.aborted === true) {\n          yield * chunks\n          return\n        }\n\n        if (isLast) {\n          if (route.log) {\n            ctx.logger?.info('[compaction-route] ' + labelOf(target) + ' failed (' + describeFailure(failure) + '); no candidate left')\n          }\n          yield * chunks\n          return\n        }\n\n        if (route.log) {\n          ctx.logger?.info('[compaction-route] ' + labelOf(target) + ' failed (' + describeFailure(failure) + '); retrying on ' + labelOf(chain[index + 1]))\n        }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:148-171](https://github.com/643048695/dsh-compaction-route/blob/6039b260d96652ce4af606f850cd1a179cd9d4f7/lib/index.js#L148-L171)\n\n缺finish边界。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n/** Collect one attempt's chunks, stopping at its terminal finish chunk. */\nasync function collectAttempt (stream) {\n  const chunks = []\n  for await (const chunk of stream) {\n    chunks.push(chunk)\n    if (chunk !== null && typeof chunk === 'object' && chunk.type === 'finish') break\n  }\n  return chunks\n}\n\n/**\n * Interpret collected chunks.\n *\n * @returns the terminal failure, or undefined when the attempt succeeded.\n */\nfunction outcomeOf (chunks) {\n  for (const chunk of chunks) {\n    if (chunk === null || typeof chunk !== 'object' || chunk.type !== 'finish') continue\n    const reason = chunk.reason === undefined ? {} : chunk.reason\n    if (reason.kind === 'aborted') return { aborted: true, failure: reason.failure }\n    if (reason.kind === 'error') return { aborted: false, failure: reason.failure === undefined ? { code: 'UNKNOWN' } : reason.failure }\n    return { aborted: false, failure: undefined }\n  }\n  return { aborted: false, failure: undefined }\n```\n\n</details>\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：2646bafa9b771a282f5d80d3e721ffa35ef3bf94078176401ef19cb034b2da76。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 4 | 308 | — | — | 3291 |\n| .js | source | 2 | 685 | 482 | 157 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 主路线 | 选定摘要模型 | 默认空透明，effort默认high |\n| 备援 | terminal error后重试 | throw/abort/无用摘要不涵盖 |\n| 完整缓存 | 不交付失败内容 | 无界缓存/最后流成本需核 |\n| 窗口提示 | 帮助挑选候选 | 仅声明值非tokenizer保证 |\n\n## 工程亮点\n\n可复用的是purpose窄匹配、空配置透明、volatile每次取值、WeakSet避免自身递归及遵守abort不再备援。缓冲尝试避免失败内容污染最终摘要，但当前无界缓存/缺finish无错误和只给最终流需要明确。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 lib/index.js、README.md、package.json、client/client.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定完整Host选路/缓存/失败主链及Client配置线索、作者测量；未运行宿主/模型，不校准真实tokenizer。\n- 下一步：进一步探讨可用error/throw/abort/缺finish/超大chunk流，再用固定历史后续任务比较信息保留与全部成本。\n",
         "metadata": {
             "repository": "643048695/dsh-compaction-route",
             "repository_id": 1391040578,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T06:09:10.165Z",
+            "window_start": "2026-09-22T06:09:10.165Z",
             "stars": 0,
             "pushed_at": "2026-09-27T19:45:45Z",
             "issues": {
@@ -393,29 +428,21 @@
             "errors": [],
             "npm": {
                 "package_name": "dsh-compaction-route",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T06:09:18.853Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": null,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-compaction-route",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-compaction-route",
                 "error": "HTTP 404",
                 "publication": {
                     "first_published_at": null,
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T06:09:18.853Z",
                     "source_url": "https://registry.npmjs.org/dsh-compaction-route",
                     "error": "HTTP 404",
                     "latest_version": null,
                     "latest_published_at": null,
                     "latest_error": "HTTP 404"
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "6039b260d96652ce4af606f850cd1a179cd9d4f7",
-                "current_revision": "6039b260d96652ce4af606f850cd1a179cd9d4f7",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {
@@ -423,14 +450,14 @@
             "repository": "643048695/dsh-compaction-route",
             "path": "",
             "revision": "6039b260d96652ce4af606f850cd1a179cd9d4f7",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "2f4fa1878d3db6411797082ec101d016200bc52d3df20c48e16f0be3abb06908",
                 "code": "6039b260d96652ce4af606f850cd1a179cd9d4f7",
                 "maintenance": "d58ce7ccc2000f6bb976aacdfb185b6756e85f6fc039ba67218da9ba276fb4bb"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

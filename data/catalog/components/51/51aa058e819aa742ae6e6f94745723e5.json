@@ -10,7 +10,7 @@
             "repository": "Alnita-M/dsh-Almost_Full_Access",
             "path": "",
             "aliases": [],
-            "name": "Almost Full Access",
+            "name": "dsh-almost-full-access",
             "entry_type": "plugin",
             "technical_category": "security-governance",
             "business_category": "infrastructure",
@@ -24,80 +24,186 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-07-github-1336031182-root-directory-0",
+                    "id": "2026-10-22-02-github-1336031182-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T08:11:36.693Z",
+                    "retrieved_at": "2026-10-22T06:29:12.511Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-07-github-1336031182-root-author",
+                    "id": "2026-10-22-02-github-1336031182-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/Alnita-M/dsh-Almost_Full_Access/blob/269ab865fd02a4dded171eaecc40b1255f5df227/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/Alnita-M/dsh-Almost_Full_Access",
+                            "commit": "269ab865fd02a4dded171eaecc40b1255f5df227",
+                            "path": "README.md",
+                            "content_sha256": "a43a0f03ff7d186e2dacc33fb14d5cf866a461fcb05e3cb3bf1946263c97328d"
+                        }
+                    ],
                     "revision": "269ab865fd02a4dded171eaecc40b1255f5df227",
-                    "captured_at": "2026-10-21T08:11:36.693Z",
-                    "summary": "为 DSH Shell 执行增加规则/模型审查和人工审批的中间权限模式。",
-                    "artifact": "data/runs/2026-10-21-07/snapshots/alnita-m--dsh-almost_full_access/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T06:29:12.511Z",
+                    "summary": "为 DSH 增加近全权限预设，以命令规则、子代理和用户审批门控部分 shell 执行。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/alnita-m--dsh-almost_full_access/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-07-github-1336031182-root-source",
+                    "id": "2026-10-22-02-github-1336031182-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/Alnita-M/dsh-Almost_Full_Access/blob/269ab865fd02a4dded171eaecc40b1255f5df227/lib/index.js",
+                    "url": "https://github.com/Alnita-M/dsh-Almost_Full_Access/blob/269ab865fd02a4dded171eaecc40b1255f5df227/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/Alnita-M/dsh-Almost_Full_Access",
+                            "commit": "269ab865fd02a4dded171eaecc40b1255f5df227",
+                            "path": "README.md",
+                            "content_sha256": "a43a0f03ff7d186e2dacc33fb14d5cf866a461fcb05e3cb3bf1946263c97328d"
+                        },
+                        {
+                            "repository_url": "https://github.com/Alnita-M/dsh-Almost_Full_Access",
+                            "commit": "269ab865fd02a4dded171eaecc40b1255f5df227",
+                            "path": "SECURITY.md",
+                            "content_sha256": "80a08d40312130992a2bcb52b6ecf4d037ccec20c7821de3985ba40073c5f253"
+                        },
+                        {
+                            "repository_url": "https://github.com/Alnita-M/dsh-Almost_Full_Access",
+                            "commit": "269ab865fd02a4dded171eaecc40b1255f5df227",
+                            "path": "package.json",
+                            "content_sha256": "86f72dc8d9df9705719d4bff39f847882a0293922d539689858c441f4bd6fdfb"
+                        },
+                        {
+                            "repository_url": "https://github.com/Alnita-M/dsh-Almost_Full_Access",
+                            "commit": "269ab865fd02a4dded171eaecc40b1255f5df227",
+                            "path": "lib/index.js",
+                            "content_sha256": "7a31ce3704b330f059b91b0b4f7b28c92d5ee814f0ba89b081817b3cb40b63ed"
+                        },
+                        {
+                            "repository_url": "https://github.com/Alnita-M/dsh-Almost_Full_Access",
+                            "commit": "269ab865fd02a4dded171eaecc40b1255f5df227",
+                            "path": "lib/analyze.js",
+                            "content_sha256": "6f25d823fa9e511feacf2eba838af2ab6039a53cd88a16c971fe45824d69a808"
+                        },
+                        {
+                            "repository_url": "https://github.com/Alnita-M/dsh-Almost_Full_Access",
+                            "commit": "269ab865fd02a4dded171eaecc40b1255f5df227",
+                            "path": "lib/client.js",
+                            "content_sha256": "96a4abb94ef6d98191c7fd13377a4558e6c335429b8254f7aec41c73a3f14c18"
+                        },
+                        {
+                            "repository_url": "https://github.com/Alnita-M/dsh-Almost_Full_Access",
+                            "commit": "269ab865fd02a4dded171eaecc40b1255f5df227",
+                            "path": "scripts/install.mjs",
+                            "content_sha256": "48b0762c012e7219fcac7f955957f3677b5aed89ce9835bcc19612e0a4d7dd33"
+                        },
+                        {
+                            "repository_url": "https://github.com/Alnita-M/dsh-Almost_Full_Access",
+                            "commit": "269ab865fd02a4dded171eaecc40b1255f5df227",
+                            "path": "scripts/patch-lib.mjs",
+                            "content_sha256": "548b424ea3d2d36ef6edc5504e1cb9d114f643dfda0606e113e3f99629b6d619"
+                        }
+                    ],
                     "revision": "269ab865fd02a4dded171eaecc40b1255f5df227",
-                    "captured_at": "2026-10-21T08:11:36.693Z",
-                    "summary": "核查 lib/index.js、lib/analyze.js、cordis.patch.yml、package.json；仅almost-full-access preset下拦指定shell工具pre-execute，先analyzeCommand确定性规则，模糊命令再交子代理审查；风险进入UUID审批队列，client或文本问题决定，超时/abort拒绝。命令哈希用于五分钟LLM结果缓存及记住决定，审计写DSH_HOME。",
-                    "artifact": "data/runs/2026-10-21-07/snapshots/alnita-m--dsh-almost_full_access/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T06:29:12.511Z",
+                    "summary": "核查 README.md、SECURITY.md、package.json、lib/index.js、lib/analyze.js、lib/client.js、scripts/install.mjs、scripts/patch-lib.mjs；preset 本身为 danger-full-access/approval never；Host 仅在命名 shell 工具的 pre-execute 中做规则、子代理、面板或文本审批。详见[Q02](#research-q02)。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/alnita-m--dsh-almost_full_access/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "根Host pre-execute/审批/缓存、analyze规则及README，未执行Shell或审查模型、不完整审计全部命令语法。",
+                        "只读核固定提交 README、SECURITY、Host/Client、规则分析、安装器与 patch；未执行目标测试、真实宿主/攻击链或安装；旧 META 仅复用。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-07-github-1336031182-root-compare-18",
+                    "id": "2026-10-22-02-manual-almost-context-1336031182",
                     "kind": "source_inspection",
-                    "url": "https://github.com/AlienGene/dsh-llm-balance-siderbar/blob/b35aa1e8501051ab3541cea2f43f0609b214f9a1/src/state.ts",
+                    "url": "https://github.com/Alnita-M/dsh-Almost_Full_Access/blob/269ab865fd02a4dded171eaecc40b1255f5df227/lib/index.js#L276-L291",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/Alnita-M/dsh-Almost_Full_Access",
+                            "commit": "269ab865fd02a4dded171eaecc40b1255f5df227",
+                            "path": "lib/index.js",
+                            "content_sha256": "7a31ce3704b330f059b91b0b4f7b28c92d5ee814f0ba89b081817b3cb40b63ed"
+                        },
+                        {
+                            "repository_url": "https://github.com/Alnita-M/dsh-Almost_Full_Access",
+                            "commit": "269ab865fd02a4dded171eaecc40b1255f5df227",
+                            "path": "lib/analyze.js",
+                            "content_sha256": "6f25d823fa9e511feacf2eba838af2ab6039a53cd88a16c971fe45824d69a808"
+                        }
+                    ],
+                    "revision": "269ab865fd02a4dded171eaecc40b1255f5df227",
+                    "captured_at": "2026-10-22T06:23:47.895304+00:00",
+                    "summary": "批准记忆与五分钟LLM裁决复用仅键入32位命令哈希，未绑定cwd/会话/脚本内容；确定性风险锁定为审批。",
+                    "artifact": "data/runs/2026-10-22-02/manual-finding-reviews/ALMOST-MULTI-SOURCE.json",
+                    "limitations": [
+                        "本轮只读固定Git原文，未运行目标、真实账户、shell或组合；旧artifact路径当前工作区不存在，不能声称旧副本逐字一致。",
+                        "四类上下文问题分别影响授权、账户归属、历史范围和凭据目的地，统一信封是设计假设而非现有互操作协议或已验证安全保证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-22-02-manual-almost-context-1366370702",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/AlienGene/dsh-llm-balance-siderbar/blob/b35aa1e8501051ab3541cea2f43f0609b214f9a1/src/state.ts#L87-L101",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AlienGene/dsh-llm-balance-siderbar",
+                            "commit": "b35aa1e8501051ab3541cea2f43f0609b214f9a1",
+                            "path": "src/state.ts",
+                            "content_sha256": "7d39a45e4d5e6a0f55267b1b4cca825b1f7864f73656e2148517f87bf65b9334"
+                        }
+                    ],
                     "revision": "b35aa1e8501051ab3541cea2f43f0609b214f9a1",
-                    "captured_at": "2026-10-21T08:11:36.693Z",
-                    "summary": "父侧核对来源身份、缓存键与凭据目标绑定的机制差异。",
-                    "artifact": "data/runs/2026-10-21-07/snapshots/aliengene--dsh-llm-balance-siderbar/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T06:23:47.895304+00:00",
+                    "summary": "余额源缓存以probe.id分区，凭据取首匹配route，输出可标多个provider，非每账户主体分区。",
+                    "artifact": "data/runs/2026-10-22-02/manual-finding-reviews/ALMOST-MULTI-SOURCE.json",
                     "limitations": [
-                        "根Host pre-execute/审批/缓存、analyze规则及README，未执行Shell或审查模型、不完整审计全部命令语法。",
-                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
-                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                        "本轮只读固定Git原文，未运行目标、真实账户、shell或组合；旧artifact路径当前工作区不存在，不能声称旧副本逐字一致。",
+                        "四类上下文问题分别影响授权、账户归属、历史范围和凭据目的地，统一信封是设计假设而非现有互操作协议或已验证安全保证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-07-github-1336031182-root-compare-32",
+                    "id": "2026-10-22-02-manual-almost-context-1368192539",
                     "kind": "source_inspection",
-                    "url": "https://github.com/Amer-CN/zcode-usage-stats/blob/9a4381658e754515dac50611da461970462032ec/lib/index.mjs",
+                    "url": "https://github.com/Amer-CN/zcode-usage-stats/blob/9a4381658e754515dac50611da461970462032ec/lib/index.mjs#L280-L308",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/Amer-CN/zcode-usage-stats",
+                            "commit": "9a4381658e754515dac50611da461970462032ec",
+                            "path": "lib/index.mjs",
+                            "content_sha256": "372df1fa4c642a172f96b705ff6e0d5e1d17bd12584eb67fef65930c78d33096"
+                        }
+                    ],
                     "revision": "9a4381658e754515dac50611da461970462032ec",
-                    "captured_at": "2026-10-21T08:11:36.693Z",
-                    "summary": "父侧核对来源身份、缓存键与凭据目标绑定的机制差异。",
-                    "artifact": "data/runs/2026-10-21-07/snapshots/amer-cn--zcode-usage-stats/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T06:23:47.895304+00:00",
+                    "summary": "缓存固定homedir/.dsh/profiles/web，模块级cache/inflight共用，实际扫描当前sessionPersistence；入口有connection.requestRejection失败关闭，不把范围混用等同匿名可读。",
+                    "artifact": "data/runs/2026-10-22-02/manual-finding-reviews/ALMOST-MULTI-SOURCE.json",
                     "limitations": [
-                        "根Host pre-execute/审批/缓存、analyze规则及README，未执行Shell或审查模型、不完整审计全部命令语法。",
-                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
-                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                        "本轮只读固定Git原文，未运行目标、真实账户、shell或组合；旧artifact路径当前工作区不存在，不能声称旧副本逐字一致。",
+                        "四类上下文问题分别影响授权、账户归属、历史范围和凭据目的地，统一信封是设计假设而非现有互操作协议或已验证安全保证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-07-github-1336031182-root-compare-42",
+                    "id": "2026-10-22-02-manual-almost-context-1340280087",
                     "kind": "source_inspection",
-                    "url": "https://github.com/Andrew111888/dsh-plugin-balance/blob/96bb1592c949456aa37ccc3a296085f59df2ee9c/lib/index.js",
+                    "url": "https://github.com/Andrew111888/dsh-plugin-balance/blob/96bb1592c949456aa37ccc3a296085f59df2ee9c/lib/index.js#L726-L759",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/Andrew111888/dsh-plugin-balance",
+                            "commit": "96bb1592c949456aa37ccc3a296085f59df2ee9c",
+                            "path": "lib/index.js",
+                            "content_sha256": "6ff42cded86820fb2ec3cb699b24f07cc1bc072b6358f72fca7ea07256538223"
+                        }
+                    ],
                     "revision": "96bb1592c949456aa37ccc3a296085f59df2ee9c",
-                    "captured_at": "2026-10-21T08:11:36.693Z",
-                    "summary": "父侧核对来源身份、缓存键与凭据目标绑定的机制差异。",
-                    "artifact": "data/runs/2026-10-21-07/snapshots/andrew111888--dsh-plugin-balance/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T06:23:47.895304+00:00",
+                    "summary": "custom目标baseUrl/path来自请求，key可来自header或服务端settings/credentials，Bearer发送到拼接目标；缓存provider/url/kind未含账户。",
+                    "artifact": "data/runs/2026-10-22-02/manual-finding-reviews/ALMOST-MULTI-SOURCE.json",
                     "limitations": [
-                        "根Host pre-execute/审批/缓存、analyze规则及README，未执行Shell或审查模型、不完整审计全部命令语法。",
-                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
-                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                        "本轮只读固定Git原文，未运行目标、真实账户、shell或组合；旧artifact路径当前工作区不存在，不能声称旧副本逐字一致。",
+                        "四类上下文问题分别影响授权、账户归属、历史范围和凭据目的地，统一信封是设计假设而非现有互操作协议或已验证安全保证。"
                     ]
                 }
             ],
@@ -106,9 +212,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "操作者希望普通操作少打断、不可逆/系统操作仍需确认；合格交付必须是在正确会话、目录和权限上下文对具体命令作决定。",
+                    "text": "想减少工作区外可逆操作审批、保留危险命令确认的 Windows DSH 用户；安全交付须覆盖所有实际执行路径。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1336031182-root-source"
+                        "2026-10-22-02-github-1336031182-root-source"
                     ],
                     "dependencies": [
                         {
@@ -117,16 +223,16 @@
                             "fingerprint": "269ab865fd02a4dded171eaecc40b1255f5df227"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:11:36.693Z",
+                    "reviewed_at": "2026-10-22T06:29:12.511Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "仅almost-full-access preset下拦指定shell工具pre-execute，先analyzeCommand确定性规则，模糊命令再交子代理审查；风险进入UUID审批队列，client或文本问题决定，超时/abort拒绝。命令哈希用于五分钟LLM结果缓存及记住决定，审计写DSH_HOME。",
+                    "text": "preset 本身为 danger-full-access/approval never；Host 仅在命名 shell 工具的 pre-execute 中做规则、子代理、面板或文本审批。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1336031182-root-source"
+                        "2026-10-22-02-github-1336031182-root-source"
                     ],
                     "dependencies": [
                         {
@@ -135,16 +241,16 @@
                             "fingerprint": "269ab865fd02a4dded171eaecc40b1255f5df227"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:11:36.693Z",
+                    "reviewed_at": "2026-10-22T06:29:12.511Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "根Host pre-execute/审批/缓存、analyze规则及README，未执行Shell或审查模型、不完整审计全部命令语法。",
+                    "text": "只读核固定提交 README、SECURITY、Host/Client、规则分析、安装器与 patch；未执行目标测试、真实宿主/攻击链或安装；旧 META 仅复用。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1336031182-root-source"
+                        "2026-10-22-02-github-1336031182-root-source"
                     ],
                     "dependencies": [
                         {
@@ -153,16 +259,16 @@
                             "fingerprint": "269ab865fd02a4dded171eaecc40b1255f5df227"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:11:36.693Z",
+                    "reviewed_at": "2026-10-22T06:29:12.511Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "DSH preset patch和Host/client组合，安装器可能改多个profile；仅指定preset启用，不能把包CLI当DSH命令。",
+                    "text": "包声明 1.2.0、MIT、Node>=16；作者兼容版本和 npm/GitHub 安装可达性未本轮验证。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1336031182-root-source"
+                        "2026-10-22-02-github-1336031182-root-source"
                     ],
                     "dependencies": [
                         {
@@ -171,16 +277,16 @@
                             "fingerprint": "269ab865fd02a4dded171eaecc40b1255f5df227"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:11:36.693Z",
+                    "reviewed_at": "2026-10-22T06:29:12.511Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "现金是模糊命令审查模型调用；人工包括风险审批、误报/漏报与缓存失效管理，审计脱敏是规则覆盖而非保密保证。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | DSH/模型子代理环境；金额未知 | 备份/审查 profile permission 整块替换；耗时未知 | 宿主接口兼容未核 |\n| 持续使用 | 子代理调用与日志、审批等待；数值未知 | 审批逐条审看、维护规则与工具名单 | 新工具可越过门控 |\n| 失败恢复 | 未授权操作可能不可逆；损失未知 | 恢复预设、审计和系统状态；耗时未知 | 日志 best-effort |",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1336031182-root-source"
+                        "2026-10-22-02-github-1336031182-root-source"
                     ],
                     "dependencies": [
                         {
@@ -189,16 +295,16 @@
                             "fingerprint": "269ab865fd02a4dded171eaecc40b1255f5df227"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:11:36.693Z",
+                    "reviewed_at": "2026-10-22T06:29:12.511Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "仅在可接受启发式审查且能核对上下文时评估；不要以“Almost”名称当越过沙箱的安全许可，跨工作区缓存应先解决。",
+                    "text": "重要环境不推荐；仅隔离虚拟机作安全研究原型，修补强制边界并经独立验证后重评。详见[Q06](#research-q06)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1336031182-root-source"
+                        "2026-10-22-02-github-1336031182-root-source"
                     ],
                     "dependencies": [
                         {
@@ -207,16 +313,16 @@
                             "fingerprint": "269ab865fd02a4dded171eaecc40b1255f5df227"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:11:36.693Z",
+                    "reviewed_at": "2026-10-22T06:29:12.511Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "可减少低风险打断并明确高风险人工决定；无同条件打断率、安全覆盖或误判数据。",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 命令分流 | 确定性规则/子代理/审批源码 | 真实宿主的工具覆盖 |\n| 审批复用 | 会话内命令哈希记忆 | 碰撞及跨上下文安全性 |\n| 失败拒绝 | abort、超时、子代理异常路径 | session/preset 不可用时会直通 |",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1336031182-root-source"
+                        "2026-10-22-02-github-1336031182-root-source"
                     ],
                     "dependencies": [
                         {
@@ -225,16 +331,16 @@
                             "fingerprint": "269ab865fd02a4dded171eaecc40b1255f5df227"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:11:36.693Z",
+                    "reviewed_at": "2026-10-22T06:29:12.511Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "UUID审批、服务端绑定commandHash、决定GC、超时与abort拒绝、审计异步追加有明确实现；状态Map作用域与文案“本会话记住”不一致需修正。",
+                    "text": "确定性风险先于 LLM、工具禁用子代理及审批超时可借鉴；安全门控必须放在统一执行边界。详见[Q05](#research-q05)。\n\n固定版本跨插件比较保留为未验证设计推演。跨插件固定源码比较中，本项记住审批与LLM裁决仅用32位命令文本短哈希，未绑定会话、cwd和脚本版本；余额侧栏按probe缓存并取首匹配route凭据；zcode-usage-stats把磁盘缓存固定到HOME下web profile且模块缓存未按当前sessionPersistence分区；plugin-balance把请求给出的目标URL/path与header或服务端凭据组合，Bearer随目标发送。四者分别是权限决定、账户归属、历史范围及凭据目的地问题，不能用同一种缓存优化替代各自边界。zcode入口已有宿主requestRejection，不能把缓存范围问题扩写为匿名可访问。由此保留未验证假设，为操作声明必要上下文身份与版本（会话、规范工作区/脚本摘要、route与非秘密账户指纹、目标origin、采样范围和时间），缺身份拒复用，变化即使旧结论失效；凭据目的地还必须独立验证允许接收方。最小对照用两个工作区同名异内容脚本、双route账户切换、双profile同HOME缓存以及伪造custom目标，要求不误批、不混数、不误发秘密，同时测维护与恢复工时。若绑定后仍误归属/误授权，或维护成本超过收益则否定；本轮未执行这些对照。\n\n比较依据见[Alnita-M/dsh-Almost_Full_Access](https://github.com/Alnita-M/dsh-Almost_Full_Access/blob/269ab865fd02a4dded171eaecc40b1255f5df227/lib/index.js#L276-L291)、[AlienGene/dsh-llm-balance-siderbar](https://github.com/AlienGene/dsh-llm-balance-siderbar/blob/b35aa1e8501051ab3541cea2f43f0609b214f9a1/src/state.ts#L87-L101)、[Amer-CN/zcode-usage-stats](https://github.com/Amer-CN/zcode-usage-stats/blob/9a4381658e754515dac50611da461970462032ec/lib/index.mjs#L280-L308)、[Andrew111888/dsh-plugin-balance](https://github.com/Andrew111888/dsh-plugin-balance/blob/96bb1592c949456aa37ccc3a296085f59df2ee9c/lib/index.js#L726-L759)。旧原文副本缺失，本轮重新保存固定 Git 原文，不声称旧副本逐字一致。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1336031182-root-source"
+                        "2026-10-22-02-github-1336031182-root-source"
                     ],
                     "dependencies": [
                         {
@@ -243,16 +349,16 @@
                             "fingerprint": "269ab865fd02a4dded171eaecc40b1255f5df227"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:11:36.693Z",
+                    "reviewed_at": "2026-10-22T06:29:12.511Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
                     "topic": "technical_innovation",
                     "basis": "interpretation",
-                    "text": "把高频可逆动作和系统风险分层，确定性风险不能被LLM降成safe，审查失败转人工、abort拒绝，比完全依靠提示审命令有明确控制路径。增量是权限中间策略，仍是工具名和文本启发式，不能替代OS沙箱。",
+                    "text": "将确定性命令分析、无工具子代理审查和会话审批 UI 接成低摩擦权限原型；但这种应用层组合不能替代宿主的统一执行授权。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1336031182-root-source"
+                        "2026-10-22-02-github-1336031182-root-source"
                     ],
                     "dependencies": [
                         {
@@ -261,16 +367,16 @@
                             "fingerprint": "269ab865fd02a4dded171eaecc40b1255f5df227"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:11:36.693Z",
+                    "reviewed_at": "2026-10-22T06:29:12.511Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "同命令是否在不同上下文仍同风险？llmVerdictCache与remembered均以commandHash为键，未含session/workspace/workdir；同一相对脚本命令在另项目指向不同文件，缓存safe或记住批准可能跨场景复用。规则判风险可先拦，但仅模糊分支复用仍缺上下文。并且非列名工具、工具内执行与审查子代理不在同一门控保证内。",
+                    "text": "几处条件未满足时直接 next，而 preset 底层是 danger-full-access/approval never；remembered/LLM 缓存仅按 32 位命令哈希，GET queue 和 POST decide 无独立登录绑定。详见[Q02](#research-q02)、[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1336031182-root-source"
+                        "2026-10-22-02-github-1336031182-root-source"
                     ],
                     "dependencies": [
                         {
@@ -279,16 +385,16 @@
                             "fingerprint": "269ab865fd02a4dded171eaecc40b1255f5df227"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:11:36.693Z",
+                    "reviewed_at": "2026-10-22T06:29:12.511Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
                     "topic": "technical_innovation",
                     "basis": "unverified",
-                    "text": "将决定键绑定会话、规范cwd/workspace、工具和脚本内容摘要，并在环境/内容改变时失效，可能减少同文本异副作用的复用。两个工作区同名脚本一安全一写系统路径，交替执行并更改脚本内容，要求重新审查；若缓存仍命中则否定上下文绑定。",
+                    "text": "未验证方向是宿主统一强制授权、失败默认拒绝，强摘要+原文/会话/目录绑定审批记忆，路由绑定真实认证会话；以新工具、碰撞和服务故障夹具核未授权执行。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1336031182-root-source"
+                        "2026-10-22-02-github-1336031182-root-source"
                     ],
                     "dependencies": [
                         {
@@ -297,19 +403,19 @@
                             "fingerprint": "269ab865fd02a4dded171eaecc40b1255f5df227"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:11:36.693Z",
+                    "reviewed_at": "2026-10-22T06:29:12.511Z",
                     "status": "current"
                 },
                 {
                     "id": "cross-plugin-context-contract",
                     "topic": "technical_innovation",
                     "basis": "unverified",
-                    "text": "跨插件比较：本项批准/审查缓存以命令文本为键；dsh-llm-balance-siderbar以probe聚合并取首个匹配账户；zcode-usage-stats把磁盘缓存固定在web profile；dsh-plugin-balance组合浏览器给出的目标和服务端凭据。问题分别发生在权限决定、账户额度、历史范围及凭据目的地，不能用同一种“缓存优化”解决。由此提出未验证假设：为每种操作声明所需的上下文身份（会话、规范工作区、route与非秘密账户指纹、目标origin、采样时间/口径），身份变化即使结果失效，身份缺失不默默套用旧值。用同文本异脚本、双profile/双账户和伪造目标样例要求不误批、不混数、不误发凭据，并测额外维护负担；目前没有运行证据。",
+                    "text": "跨插件固定源码比较中，本项记住审批与LLM裁决仅用32位命令文本短哈希，未绑定会话、cwd和脚本版本；余额侧栏按probe缓存并取首匹配route凭据；zcode-usage-stats把磁盘缓存固定到HOME下web profile且模块缓存未按当前sessionPersistence分区；plugin-balance把请求给出的目标URL/path与header或服务端凭据组合，Bearer随目标发送。四者分别是权限决定、账户归属、历史范围及凭据目的地问题，不能用同一种缓存优化替代各自边界。zcode入口已有宿主requestRejection，不能把缓存范围问题扩写为匿名可访问。由此保留未验证假设，为操作声明必要上下文身份与版本（会话、规范工作区/脚本摘要、route与非秘密账户指纹、目标origin、采样范围和时间），缺身份拒复用，变化即使旧结论失效；凭据目的地还必须独立验证允许接收方。最小对照用两个工作区同名异内容脚本、双route账户切换、双profile同HOME缓存以及伪造custom目标，要求不误批、不混数、不误发秘密，同时测维护与恢复工时。若绑定后仍误归属/误授权，或维护成本超过收益则否定；本轮未执行这些对照。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1336031182-root-source",
-                        "2026-10-21-07-github-1336031182-root-compare-18",
-                        "2026-10-21-07-github-1336031182-root-compare-32",
-                        "2026-10-21-07-github-1336031182-root-compare-42"
+                        "2026-10-22-02-manual-almost-context-1336031182",
+                        "2026-10-22-02-manual-almost-context-1366370702",
+                        "2026-10-22-02-manual-almost-context-1368192539",
+                        "2026-10-22-02-manual-almost-context-1340280087"
                     ],
                     "dependencies": [
                         {
@@ -333,15 +439,15 @@
                             "fingerprint": "96bb1592c949456aa37ccc3a296085f59df2ee9c"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:11:36.693Z",
+                    "reviewed_at": "2026-10-22T06:23:47.895304+00:00",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T08:11:36.693Z",
+            "last_checked_at": "2026-10-22T06:29:12.511Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "269ab865fd02a4dded171eaecc40b1255f5df227",
-                "reviewed_at": "2026-10-21T08:11:36.693Z",
+                "reviewed_at": "2026-10-22T06:29:12.511Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -354,14 +460,14 @@
                     "criteria": {
                         "novelty": 9,
                         "mechanism": 15,
-                        "transferability": 10,
+                        "transferability": 5,
                         "simplification": 4
                     },
-                    "rationale": "新颖性9：规则+模型+人工分层已有；机制15：确定性锁风险与失败关闭是具体控制取舍；迁移性10：分层门控可复用但文本规则绑定shell；简化4：减少部分审批，缓存上下文与策略维护新增负担。",
+                    "rationale": "novelty 是规则+LLM+审批组合；mechanism 有优先级和 UI 回退但强制执行边界不完整；transferability 深依赖 DSH hooks；simplification 减审批同时扩大风险面。",
                     "basis": "interpretation",
-                    "score": 38,
+                    "score": 33,
                     "evidence_ids": [
-                        "2026-10-21-07-github-1336031182-root-source"
+                        "2026-10-22-02-github-1336031182-root-source"
                     ]
                 },
                 "business": {
@@ -369,45 +475,45 @@
                         "workflow": 9,
                         "delivery": 8,
                         "reach": 5,
-                        "economics": 4
+                        "economics": 0
                     },
-                    "rationale": "工作流9：调节人机批准频率，任务责任未变；交付8：给决定与审计线索，非安全交付保证；覆盖5：指定DSH/preset与Windows命令场景；经济4：可能少人工打断但子代理调用未测。",
+                    "rationale": "workflow 能减轻某些命令审批；delivery 未满足安全控制主承诺；reach 限 Windows DSH 特定模式；无风险/成本实测收益。",
                     "basis": "interpretation",
-                    "score": 26,
+                    "score": 22,
                     "evidence_ids": [
-                        "2026-10-21-07-github-1336031182-root-source"
+                        "2026-10-22-02-github-1336031182-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "observe",
-                "reason": "想减少审批打断者应先将缓存与记住决定绑定会话、工作区和目录；当前仅命令哈希会跨项目复用批准，不能作安全许可。",
+                "decision": "not_recommended",
+                "reason": "不适合作为安全权限控制默认档；底层无沙箱且应用层有限门控/记忆绑定不足。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "低风险少打断而高风险逐次决定的目标明确。"
+                        "rationale": "减少重复审批与保留危险确认的诉求明确。"
                     },
                     "advantage": {
-                        "score": 13,
-                        "rationale": "规则、子代理和审批队列结合降低模糊命令确认摩擦。"
+                        "score": 6,
+                        "rationale": "审批体验存在，但不能覆盖所有执行入口。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "已核UUID与拒绝超时，确认命令哈希缓存缺少上下文。"
+                        "rationale": "固定源码显示边界，尚未在真实宿主做绕过/故障实测。"
                     },
                     "cost": {
                         "score": 0,
-                        "rationale": "跨工作区同名脚本可复用safe或批准，核心授权上下文不足。"
+                        "rationale": "误放行损失与恢复成本潜在很高且不可量化。"
                     }
                 },
-                "score": 49,
+                "score": 42,
                 "revision": "269ab865fd02a4dded171eaecc40b1255f5df227",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T06:29:12.511Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-07-github-1336031182-root-source"
+                    "2026-10-22-02-github-1336031182-root-source"
                 ],
                 "dependencies": [
                     {
@@ -432,30 +538,32 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T07:52:12Z",
-            "analysis_sha256": "c7b7d25088814e1b35e74b2c876148ec2f82c548e442a402c5b0fb4930b78769"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "2edc28826384a7a9e6812f10a5b7e0081b9913159627604dc40f404ac715e505"
         },
         "publication.metadata": "data/plugins/alnita-m--dsh-almost_full_access/META.json",
         "publication.summaries": {
-            "text": "为 DSH Shell 执行增加规则/模型审查和人工审批的中间权限模式。",
+            "text": "为 DSH 增加近全权限预设，以命令规则、子代理和用户审批门控部分 shell 执行。",
             "revision": "269ab865fd02a4dded171eaecc40b1255f5df227",
             "source_url": "https://github.com/Alnita-M/dsh-Almost_Full_Access/blob/269ab865fd02a4dded171eaecc40b1255f5df227/README.md"
         },
         "publication.capabilities": {
             "revision": "269ab865fd02a4dded171eaecc40b1255f5df227",
             "items": {
-                "模型工具": "afaccess_status诊断门控状态。",
-                "事件监听": "tools/pre-execute按preset审查指定shell工具。",
-                "Host 路由": "审批queue/decide桥。",
-                "界面": "风险审批面板。"
-            }
+                "模型工具": "afaccess_status 诊断",
+                "Host 路由": "审批队列与决策接口",
+                "界面": "客户端审批面板",
+                "事件监听": "tools/pre-execute 中的有限 shell 命令门控",
+                "后台": "审批超时、已决记录清理与审计追加"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 预设安装 | 增加近全权限档 | 基础为 danger-full-access/never |\n| shell 审查 | 拦部分命名 shell 工具 | 新工具/无 session/无 command 可直通 |\n| 审批记忆 | 减少重复确认 | 仅 32 位哈希绑定 |\n| 审批面板 | 展示并处理命令 | 独立身份/Origin 绑定依赖 Host |"
         },
         "publication.advice": {
             "revision": "269ab865fd02a4dded171eaecc40b1255f5df227",
-            "text": "仅在可接受启发式审查且能核对上下文时评估；不要以“Almost”名称当越过沙箱的安全许可，跨工作区缓存应先解决。"
+            "text": "重要环境不推荐；仅隔离虚拟机作安全研究原型，修补强制边界并经独立验证后重评。详见[Q06](#research-q06)。"
         },
         "registry": "data/plugins/alnita-m--dsh-almost_full_access",
-        "reports": "# Almost Full Access\n\n> 为 DSH Shell 执行增加规则/模型审查和人工审批的中间权限模式。\n\n## 使用建议\n\n仅在可接受启发式审查且能核对上下文时评估；不要以“Almost”名称当越过沙箱的安全许可，跨工作区缓存应先解决。\n\n核查状态：门控/降级/审批机制源码可确认；命令安全覆盖、真实宿主与隔离未验证。 本轮只检查源码，未安装、执行目标代码/测试或真实宿主验收。\n\n## 洞察短评\n\n- **用途**：操作者希望普通操作少打断、不可逆/系统操作仍需确认；合格交付必须是在正确会话、目录和权限上下文对具体命令作决定。\n- **亮点**：把高频可逆动作和系统风险分层，确定性风险不能被LLM降成safe，审查失败转人工、abort拒绝，比完全依靠提示审命令有明确控制路径。增量是权限中间策略，仍是工具名和文本启发式，不能替代OS沙箱。\n- **思考**：同命令是否在不同上下文仍同风险？llmVerdictCache与remembered均以commandHash为键，未含session/workspace/workdir；同一相对脚本命令在另项目指向不同文件，缓存safe或记住批准可能跨场景复用。规则判风险可先拦，但仅模糊分支复用仍缺上下文。并且非列名工具、工具内执行与审查子代理不在同一门控保证内。\n- **建议**：将决定键绑定会话、规范cwd/workspace、工具和脚本内容摘要，并在环境/内容改变时失效，可能减少同文本异副作用的复用。两个工作区同名脚本一安全一写系统路径，交替执行并更改脚本内容，要求重新审查；若缓存仍命中则否定上下文绑定。\n\n## 场景与替代办法\n\n操作者希望普通操作少打断、不可逆/系统操作仍需确认；合格交付必须是在正确会话、目录和权限上下文对具体命令作决定。\n\nworkspace-write、full access或每次人工批准；本项增加中间风险策略但不具全工具OS隔离。\n\n## 能力清单\n\n- **模型工具**：afaccess_status诊断门控状态。\n- **事件监听**：tools/pre-execute按preset审查指定shell工具。\n- **Host 路由**：审批queue/decide桥。\n- **界面**：风险审批面板。\n\n## 依赖与流程\n\n仅almost-full-access preset下拦指定shell工具pre-execute，先analyzeCommand确定性规则，模糊命令再交子代理审查；风险进入UUID审批队列，client或文本问题决定，超时/abort拒绝。命令哈希用于五分钟LLM结果缓存及记住决定，审计写DSH_HOME。\n\nDSH tools/subagents/userQuestions/permissionPresets/sandboxPolicy/webServer/sessions与可写home；审查provider从现有子代理中选择。\n\nshell调用→核preset/工具名→规则→必要模型→缓存/人工审批→允许才next；拒绝/abort不下游执行，面板失联转文本卡。\n\nDSH preset patch和Host/client组合，安装器可能改多个profile；仅指定preset启用，不能把包CLI当DSH命令。\n\n## 成本与效果\n\n现金是模糊命令审查模型调用；人工包括风险审批、误报/漏报与缓存失效管理，审计脱敏是规则覆盖而非保密保证。\n\n可减少低风险打断并明确高风险人工决定；无同条件打断率、安全覆盖或误判数据。\n\n## 核心贡献\n\n把高频可逆动作和系统风险分层，确定性风险不能被LLM降成safe，审查失败转人工、abort拒绝，比完全依靠提示审命令有明确控制路径。增量是权限中间策略，仍是工具名和文本启发式，不能替代OS沙箱。\n\n## 关键质疑\n\n同命令是否在不同上下文仍同风险？llmVerdictCache与remembered均以commandHash为键，未含session/workspace/workdir；同一相对脚本命令在另项目指向不同文件，缓存safe或记住批准可能跨场景复用。规则判风险可先拦，但仅模糊分支复用仍缺上下文。并且非列名工具、工具内执行与审查子代理不在同一门控保证内。\n\n## 工程亮点\n\nUUID审批、服务端绑定commandHash、决定GC、超时与abort拒绝、审计异步追加有明确实现；状态Map作用域与文案“本会话记住”不一致需修正。\n\n固定源码依据：[lib/index.js](https://github.com/Alnita-M/dsh-Almost_Full_Access/blob/269ab865fd02a4dded171eaecc40b1255f5df227/lib/index.js)、[lib/analyze.js](https://github.com/Alnita-M/dsh-Almost_Full_Access/blob/269ab865fd02a4dded171eaecc40b1255f5df227/lib/analyze.js)、[cordis.patch.yml](https://github.com/Alnita-M/dsh-Almost_Full_Access/blob/269ab865fd02a4dded171eaecc40b1255f5df227/cordis.patch.yml)、[package.json](https://github.com/Alnita-M/dsh-Almost_Full_Access/blob/269ab865fd02a4dded171eaecc40b1255f5df227/package.json)。\n\n## 未来设计假设（未验证）\n\n将决定键绑定会话、规范cwd/workspace、工具和脚本内容摘要，并在环境/内容改变时失效，可能减少同文本异副作用的复用。两个工作区同名脚本一安全一写系统路径，交替执行并更改脚本内容，要求重新审查；若缓存仍命中则否定上下文绑定。\n\n未执行；拟用同命令不同cwd/脚本内容、审查失败/取消、非门控工具和面板缺失样例，分别测决策归属与实际副作用。\n\n## 跨插件比较与设计假设（未验证）\n\n跨插件比较：本项批准/审查缓存以命令文本为键；dsh-llm-balance-siderbar以probe聚合并取首个匹配账户；zcode-usage-stats把磁盘缓存固定在web profile；dsh-plugin-balance组合浏览器给出的目标和服务端凭据。问题分别发生在权限决定、账户额度、历史范围及凭据目的地，不能用同一种“缓存优化”解决。由此提出未验证假设：为每种操作声明所需的上下文身份（会话、规范工作区、route与非秘密账户指纹、目标origin、采样时间/口径），身份变化即使结果失效，身份缺失不默默套用旧值。用同文本异脚本、双profile/双账户和伪造目标样例要求不误批、不混数、不误发凭据，并测额外维护负担；目前没有运行证据。\n\n[AlienGene/dsh-llm-balance-siderbar固定源码](https://github.com/AlienGene/dsh-llm-balance-siderbar/blob/b35aa1e8501051ab3541cea2f43f0609b214f9a1/src/state.ts)、[Amer-CN/zcode-usage-stats固定源码](https://github.com/Amer-CN/zcode-usage-stats/blob/9a4381658e754515dac50611da461970462032ec/lib/index.mjs)、[Andrew111888/dsh-plugin-balance固定源码](https://github.com/Andrew111888/dsh-plugin-balance/blob/96bb1592c949456aa37ccc3a296085f59df2ee9c/lib/index.js)。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：9ad55ba2bc9c892503741b3539f4eddda634adb29ec5835ecc59f8070cba8fc2。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 4 | 390 | — | — | 4770 |\n| .js | source | 3 | 1255 | 1052 | 154 | — |\n| .mjs | source | 3 | 1098 | 881 | 137 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n\n## 核查说明\n\n- 版本号：1.2.0；版本日期：2026-10-14（固定提交日期，北京时间，非包发布日期）。\n- 固定提交：[269ab865](https://github.com/Alnita-M/dsh-Almost_Full_Access/tree/269ab865fd02a4dded171eaecc40b1255f5df227)；本轮基准：2026-10-21T07:52:12Z。\n- 已检查：上述源码路径、README、包清单及组件inventory。\n- 范围：根Host pre-execute/审批/缓存、analyze规则及README，未执行Shell或审查模型、不完整审计全部命令语法。\n- 未执行：目标安装、代码/测试、真实宿主和第三方服务。作者说明与源码不等于独立效果验证。\n",
+        "reports": "# dsh-almost-full-access\n\n> 为 DSH 增加近全权限预设，以命令规则、子代理和用户审批门控部分 shell 执行。\n\n## 研究范围\n\n- **仓库**：[Alnita-M/dsh-Almost_Full_Access](https://github.com/Alnita-M/dsh-Almost_Full_Access)\n- **版本号**：1.2.0（[固定提交 269ab865fd02a4dded171eaecc40b1255f5df227](https://github.com/Alnita-M/dsh-Almost_Full_Access/tree/269ab865fd02a4dded171eaecc40b1255f5df227)）\n- **版本日期**：2026-10-14（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定源码确认审批流程存在，但底层无沙箱、门控有限、服务解析失败直通、短哈希记忆和路由授权依赖宿主；未实测真实绕过。安全增强假设未实现。\n\n## 洞察短评\n\n- **用途**：想减少工作区外可逆操作审批、保留危险命令确认的 Windows DSH 用户；安全交付须覆盖所有实际执行路径。详见[Q01](#research-q01)。\n- **亮点**：将确定性命令分析、无工具子代理审查和会话审批 UI 接成低摩擦权限原型；但这种应用层组合不能替代宿主的统一执行授权。详见[Q01](#research-q01)。\n- **思考**：几处条件未满足时直接 next，而 preset 底层是 danger-full-access/approval never；remembered/LLM 缓存仅按 32 位命令哈希，GET queue 和 POST decide 无独立登录绑定。详见[Q02](#research-q02)、[Q03](#research-q03)。\n- **建议**：未验证方向是宿主统一强制授权、失败默认拒绝，强摘要+原文/会话/目录绑定审批记忆，路由绑定真实认证会话；以新工具、碰撞和服务故障夹具核未授权执行。详见[Q05](#research-q05)。\n\n采用建议：重要环境不推荐；仅隔离虚拟机作安全研究原型，修补强制边界并经独立验证后重评。详见[Q06](#research-q06)。\n\n## 核心贡献\n\n将确定性命令分析、无工具子代理审查和会话审批 UI 接成低摩擦权限原型；但这种应用层组合不能替代宿主的统一执行授权。详见[Q01](#research-q01)。\n\n## 关键质疑\n\n几处条件未满足时直接 next，而 preset 底层是 danger-full-access/approval never；remembered/LLM 缓存仅按 32 位命令哈希，GET queue 和 POST decide 无独立登录绑定。详见[Q02](#research-q02)、[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n未验证方向是宿主统一强制授权、失败默认拒绝，强摘要+原文/会话/目录绑定审批记忆，路由绑定真实认证会话；以新工具、碰撞和服务故障夹具核未授权执行。详见[Q05](#research-q05)。\n\n隔离 VM 中枚举执行工具/参数、session 故障、哈希碰撞、跨会话审批和路由认证，核未授权副作用为零并比较审批延迟。\n\n## 场景与替代办法\n\n想减少工作区外可逆操作审批、保留危险命令确认的 Windows DSH 用户；安全交付须覆盖所有实际执行路径。详见[Q01](#research-q01)。\n\n宿主 workspace-write 和原生逐项审批有统一权限边界；本预设若放宽底层权限，应证明所有执行入口同样受强制保护，目前不足。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| DSH tools/subagents/permissionPresets 等 | 必需 | 审查与预设查询 | 部分缺失会不加载或门控直通 |\n| webServer/userQuestions/客户端面板 | 审批必需 | 用户决策 | 回退文本或超时拒绝 |\n| profile patch 写权限 | 安装必需 | 注册预设与插件 | 不生效或覆盖其他预设 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 准备 | 仅隔离虚拟机备份 profile | 可回滚，工具清单已枚举 |\n| 安装 | dry-run 核差异后手工装配 | preset/插件均加载 |\n| 审查 | 对危险命令核原文/目录/工具/影响 | 用户明确决策，未授权不执行 |\n| 复盘 | 注入新工具、服务失败与碰撞情形 | 任一风险不得直通 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | DSH/模型子代理环境；金额未知 | 备份/审查 profile permission 整块替换；耗时未知 | 宿主接口兼容未核 |\n| 持续使用 | 子代理调用与日志、审批等待；数值未知 | 审批逐条审看、维护规则与工具名单 | 新工具可越过门控 |\n| 失败恢复 | 未授权操作可能不可逆；损失未知 | 恢复预设、审计和系统状态；耗时未知 | 日志 best-effort |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 命令分流 | 确定性规则/子代理/审批源码 | 真实宿主的工具覆盖 |\n| 审批复用 | 会话内命令哈希记忆 | 碰撞及跨上下文安全性 |\n| 失败拒绝 | abort、超时、子代理异常路径 | session/preset 不可用时会直通 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**Almost Full Access 的审批保护是否覆盖实际执行通道、缓存与端点授权边界，能否作为安全权限模式？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 该预设解决什么权限体验，相对宿主原生模式新增什么？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n面向 Windows DSH Web/Desktop 用户，希望比 workspace-write 更易做工作区外可逆操作，同时对删除、系统变更和动态命令保留人工审批。合格交付需要所有可能改变目标环境的执行路径都受与宣传一致的门控，审批与命令精确绑定，默认拒绝在故障时真正阻止执行。作者把预设、文本规则、LLM 子代理审查、面板、审计与安装器组合；原生 sandbox/approval 和工具拦截接口属于宿主。该包的 permission 预设实际给 danger-full-access/approval never，保护完全依赖插件对 tools/pre-execute 的覆盖。作者已声明只覆盖命名 shell 工具，其他执行工具不受保护；因此不能称其为完整安全边界。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-32](https://github.com/Alnita-M/dsh-Almost_Full_Access/blob/269ab865fd02a4dded171eaecc40b1255f5df227/README.md#L1-L32)\n\n作者的权限定位和审查承诺。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\n# 🛡️ dsh-Almost Full Access\n\n介于 **workspace-write** 与 **Full access** 之间的权限模式，专为 [DeepSeek Harness](https://github.com/deepseek-ai) (dsh) Web 版设计。\n\n## 一种权限预设 · 轻量规则 + 动态命令子代理审查\n\n切换到 **🛡️ Almost Full Access**（位于 workspace-write 与 Full access 之间）后：\n\n**确定性规则（毫秒级，命中即弹审批面板）** 只拦两类：\n1. **不可逆损失**：删除/清空/覆写粉碎（rm、ri、Remove-Item、shred、truncate…）、卸载（winget/pip/npm uninstall、msiexec /x…）、格式化/分区；\n2. **影响系统正确运行**：引导、服务、驱动、系统注册表（HKLM）、账户、策略、防火墙、计划任务、卷影副本、`setx /M`，以及**写系统关键路径**（C:\\Windows、Program Files、ProgramData、/etc、/usr、`\\\\.\\PhysicalDriveN` 等）。\n\n**动态/间接命令（交 LLM 子代理快审）**：`iex`、`curl`/下载执行、`Start-Process`、`ssh`、`sudo`、脚本调用、`.NET` 写类调用、拼接构造等——子代理判 safe 直接放行，判 risky 才弹面板；同命令 5 分钟内复用审查结果。\n\n**直接放行（可逆、用户级）**：工作区外新建/复制/解压到普通路径、HKCU 用户注册表、安装软件（winget/pip/msiexec /i）、`setx`（无 /M）、工作区内一切操作。\n\n## Safe Mode 的两层审查\n\n1. **确定性快路径（毫秒级）**：危险动词表（`bcdedit` / `diskpart` / `Stop-Service` / `pnputil` / `takeown` / `reg add HKLM` / `winget` / PowerShell 别名 `ri` `ni` `sc` `sp` …）+ 工作区外写路径包含判断（支持 `C:\\`、`%TEMP%`、`$env:`、UNC、注册表路径、`..\\` 相对路径穿越、`/etc` 等 POSIX 路径）+ .NET 静态调用/动态拼接/反引号等间接构造一律交子代理。\n2. **LLM 子代理兜底**：只有动态/间接命令（`iex`、`Invoke-WebRequest`、下载、`.NET` 调用、调用运算符、字符串拼接、`$(…)`、外部程序调用等）才起子代理审查；**确定性命中的风险锁定为必审批，子代理无法改判放行**。\n\n命中风险 → 弹出**风格 A 简约审批面板**（悬浮于输入框上方，蓝色品牌盾牌 logo）：\n\n- 风险徽章（高风险/中风险/需确认）+ 判定来源\n- 命令单行摘要（点击展开全文、一键复制）\n- 逐条影响列表（高风险首条红色强调）\n- 工作区/工作目录上下文\n- **允许执行**（左，次按钮）/ **拒绝执行**（右，主按钮）· `Esc` = 拒绝\n- **记住本次会话的此命令**：以命令哈希为键，仅内容完全相同的命令免重复审批（同类不同命令仍需确认）；高风险（引导类）命令不可记忆\n- 10 分钟未决自动拒绝；Client 面板不可用时自动降级为文本审批卡\n\n安全命令毫秒放行、零开销；切回其它权限模式（只读/工作区/Full access）时门控自动关闭。\n```\n\n</details>\n\n**依据 2 · 源码核查**：[scripts/patch-lib.mjs:22-48](https://github.com/Alnita-M/dsh-Almost_Full_Access/blob/269ab865fd02a4dded171eaecc40b1255f5df227/scripts/patch-lib.mjs#L22-L48)\n\nalmost-full-access 预设实际为 danger-full-access/approval never。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\nexport const PERMISSION_BLOCK = `# dsh-Almost Full Access: 权限模式预设（🛡️ Almost Full Access）\n- id: permission\n  config:\n    presets:\n      read-only:\n        sandbox: read-only\n        approval: ask\n      workspace-write:\n        sandbox: workspace-write\n        approval: ask\n      almost-full-access:\n        sandbox: danger-full-access\n        approval: never\n        name: 🛡️ Almost Full Access\n        description: Full file access with lightweight checks — only irreversible actions (deletes, uninstalls, formatting) and changes that affect normal boot or system/drivers require approval; dynamic/indirect commands are reviewed by a subagent before execution.\n      danger-full-access:\n        sandbox: danger-full-access\n        approval: never\n\n`;\n\nexport const INSERT_BLOCK = `# dsh-Almost Full Access: 插件本体挂载\n- insert:\n    - id: afaccess\n      name: dsh-almost-full-access\n\n`;\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:120-125](https://github.com/Alnita-M/dsh-Almost_Full_Access/blob/269ab865fd02a4dded171eaecc40b1255f5df227/lib/index.js#L120-L125)\n\n只列出有限 shell 工具名。\n\n```text\n  // A3：门控覆盖的 shell 执行工具名（可扩展；描述与文档按此边界声明）\n  const GATED_TOOLS = new Set(['pwsh', 'bash', 'powershell', 'cmd', 'sh', 'zsh', 'fish', 'shell'])\n  // v1.2.0：Almost Full Access 单一审查模式 —— 确定性规则只拦不可逆/系统级；\n  // 动态/间接命令由 LLM 子代理审查兜底（同命令 5 分钟结果缓存，避免繁琐）\n  const GATED_PRESETS = new Set(['almost-full-access'])\n  const llmVerdictCache = new Map() // commandHash -> { verdict, impacts, ts }\n```\n\n**依据 4 · 源码核查**：[lib/index.js:453-467](https://github.com/Alnita-M/dsh-Almost_Full_Access/blob/269ab865fd02a4dded171eaecc40b1255f5df227/lib/index.js#L453-L467)\n\n非列名工具、无 agent/预设/命令字符串时直接 next。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n  // ============ 门控 ============\n  ctx.on('tools/pre-execute', async (exec, next) => {\n    if (!GATED_TOOLS.has(exec.name)) return next()\n    const agent = exec.agent\n    if (agent === undefined || reviewChildren.has(agent.id)) return next()\n\n    const preset = currentPreset(agent)\n    if (preset !== '') state.lastPreset = preset\n    if (!GATED_PRESETS.has(preset)) return next()\n\n    const args = exec.arguments\n    const command = (args !== null && typeof args === 'object' && typeof args.command === 'string')\n      ? args.command\n      : (typeof args === 'string' ? args : '')\n    if (command.trim() === '') return next()\n```\n\n</details>\n\n**依据 5 · 作者声明**：[SECURITY.md:19-27](https://github.com/Alnita-M/dsh-Almost_Full_Access/blob/269ab865fd02a4dded171eaecc40b1255f5df227/SECURITY.md#L19-L27)\n\n作者声明其他命令类工具不覆盖。\n\n````text\n- 会话记忆仅存在于 Host 进程内存，键为命令哈希（同命令免重复审批），高风险\n  （引导类）命令不可记忆；\n- 确定性规则命中的命令锁定为必审批，LLM 子代理无法将其改判为 safe 放行；\n- 审查提示词声明命令文本不可信（防提示注入），代码围栏对 ``` 做了转义；\n- 命令在执行前被中断（abort）一律按拒绝处理（fail-closed）；\n- 超时/降级一律按拒绝处理（fail-closed）；\n- 审计日志写入 `$DSH_HOME/afaccess/afaccess.log`，常见密钥模式已脱敏；\n- 门控覆盖 pwsh/bash/powershell/cmd 等 shell 执行工具；其他命令执行类工具\n  （若宿主注册）不在审查范围，请在文档声明的边界内使用该预设。\n````\n\n#### 缺口\n\n- 目标宿主的全部执行工具、事件顺序和内建保护未核\n  **影响：**不能枚举真实绕过范围或断言宿主无其他独立限制\n  **进一步探讨：**目标版本列出所有执行/文件写入工具，逐条核是否经过门控与底层权限\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 确定性规则、子代理、审批与失败回退如何流转？\n\n**研究主题：**功能与机制\n\n#### 完整回答\n\n仅在当前 preset 为 almost-full-access 且工具名在 GATED_TOOLS、arguments.command 为字符串时进入 analyzeCommand。确定性 impacts 非空直接 risky；否则 ambiguous 启无工具子代理返回结构化 safe/risky，并按命令哈希缓存 5 分钟；其余确定性 safe 直接 next。risky 建 pending 审批，浏览器 GET queue 轮询并 POST decide；面板不活跃 20 秒后尝试 userQuestions 文本卡，10 分钟未决拒绝，abort 也拒绝。审批通过才 next。这个流程对所拦路径有明确 fail-closed 意图；不过读取当前 session/preset 失败时返回空字符串并直接 next，因而宿主服务出错并非统一拒绝。审计是异步 best-effort，日志失败不阻止执行。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:161-199](https://github.com/Alnita-M/dsh-Almost_Full_Access/blob/269ab865fd02a4dded171eaecc40b1255f5df227/lib/index.js#L161-L199)\n\nsession/preset 失败回退到空字符串。\n\n<details>\n<summary>查看原文（39行）</summary>\n\n```text\n  // v1.1.1（dsh 0.1.1-rc.2 适配）：Agent 接口不再暴露 session，\n  // 经 sessions 服务按 agent.id 回退获取 Session（兼容旧运行时仍保留 agent.session）\n  function sessionOf(agent) {\n    try {\n      if (agent === undefined || agent === null) return undefined\n      if (agent.session !== undefined && agent.session !== null) return agent.session\n      if (sessions !== undefined && agent.id !== undefined && typeof agent.id === 'string') {\n        return sessions.get(agent.id)\n      }\n    } catch (err) { }\n    return undefined\n  }\n\n  function sessionWorkspace(agent) {\n    try {\n      const session = sessionOf(agent)\n      if (sandboxPolicy !== undefined && session !== undefined) {\n        const policy = sandboxPolicy.resolve({ session })\n        // v1.2.0：resolve() 返回的字段是 workspaceRoot（不是 root）；\n        // 旧代码恒为 undefined，只能靠下面的 session.header.cwd 兜底。\n        if (typeof policy?.workspaceRoot === 'string' && policy.workspaceRoot !== '') return policy.workspaceRoot\n      }\n      if (session !== undefined && session.header !== undefined && typeof session.header.cwd === 'string') {\n        return session.header.cwd\n      }\n    } catch (err) { }\n    return state.workspace\n  }\n\n  // v1.1.1（dsh 0.1.1-rc.2 适配）：permissionPresets.current 签名由 (events) 变为 (session)\n  function currentPreset(agent) {\n    try {\n      if (permissionPresets !== undefined) {\n        const session = sessionOf(agent)\n        if (session !== undefined) return permissionPresets.current(session) || ''\n      }\n    } catch (err) { }\n    return ''\n  }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:223-291](https://github.com/Alnita-M/dsh-Almost_Full_Access/blob/269ab865fd02a4dded171eaecc40b1255f5df227/lib/index.js#L223-L291)\n\n审批队列、超时和记忆。\n\n<details>\n<summary>查看原文（69行）</summary>\n\n````text\n  function createApproval(rec) {\n    return new Promise((resolve) => {\n      let settled = false\n      const settle = (d) => {\n        if (settled) return\n        settled = true\n        rec.decision = d\n        rec.decidedAt = Date.now()\n        rec.expiresAt = Date.now() + 10000\n        clearTimeout(rec.timeoutTimer)\n        clearTimeout(rec.fallbackTimer)\n        if (rec.abortHandler !== undefined) { try { rec.signal.removeEventListener('abort', rec.abortHandler) } catch (err) { } }\n        pending.delete(rec.approvalId)\n        decidedCache.set(rec.approvalId, rec)\n        resolve(d)\n      }\n      rec.settle = settle\n      pending.set(rec.approvalId, rec)\n      rec.timeoutTimer = setTimeout(() => {\n        audit('TIMEOUT ' + rec.approvalId + ' auto-denied after 10min')\n        settle('timeout-denied')\n      }, 600000)\n      rec.abortHandler = () => { settle('aborted') }\n      try { rec.signal.addEventListener('abort', rec.abortHandler, { once: true }) } catch (err) { }\n      // A9：仅当面板最近 30s 内未轮询（面板关闭/浏览器不可达）才降级文本审批卡\n      rec.fallbackTimer = setTimeout(async () => {\n        if (settled) return\n        if (lastPollAt !== 0 && Date.now() - lastPollAt < 30000) return\n        audit('FALLBACK ' + rec.approvalId + ' no client panel; falling back to text card')\n        try {\n          const answer = await userQuestions.ask({\n            agent: rec.agent,\n            signal: rec.signal,\n            questions: [{\n              id: 'afaccess-approve',\n              header: '🛡️ Almost Full Access · 命令审批',\n              question: '审查认为该命令可能影响系统，是否允许执行？',\n              detail: ['命令：', '```', rec.command.slice(0, 3000), '```', '', '审查发现的具体影响：', rec.impacts.map((x, i) => (i + 1) + '. ' + x).join('\\n'), '', '工作区目录：' + (rec.workspaceRoot || '（未知）')].join('\\n'),\n              options: [\n                { label: '拒绝执行', description: '阻止该命令运行。' },\n                { label: '允许执行', description: '放行该命令，由你承担影响。' }\n              ]\n            }]\n          })\n          const chosen = answer.answers.find((item) => item.id === 'afaccess-approve')\n          settle(chosen !== undefined && chosen.selected.includes('允许执行') ? 'approved' : 'denied')\n        } catch (err) {\n          settle('denied')\n        }\n      }, 20000)\n    })\n  }\n\n  function requestApproval(rec) {\n    // A5：随机 approvalId，避免顺序 ID 可枚举\n    rec.approvalId = 'afacc-apr-' + randomUUID().replace(/-/g, '').slice(0, 12)\n    // A6：记忆键 = 命令哈希（同命令免重复审批）；高风险（引导类）不可记忆\n    if (rec.severity !== 'high' && (rec.category || '').indexOf('boot:') !== 0) {\n      const mem = remembered.get(rec.commandHash)\n      if (mem !== undefined) {\n        rec.decision = mem\n        rec.auto = true\n        state.counters.autoDecided += 1\n        audit('AUTO ' + rec.approvalId + ' key=' + rec.commandHash + ' category=' + rec.category + ' -> ' + mem)\n        return Promise.resolve(mem)\n      }\n    }\n    audit('APPROVAL ' + rec.approvalId + ' source=' + rec.source + ' severity=' + rec.severity + ' category=' + rec.category + ' cmd=' + rec.command.slice(0, 120).replace(/\\n/g, ' '))\n    return createApproval(rec)\n````\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:294-340](https://github.com/Alnita-M/dsh-Almost_Full_Access/blob/269ab865fd02a4dded171eaecc40b1255f5df227/lib/index.js#L294-L340)\n\n子代理无工具审查。\n\n<details>\n<summary>查看原文（47行）</summary>\n\n````text\n  async function runReview(command, toolName, workdir, parent, signal, workspace, analysis) {\n    const lines = [REVIEW_PROMPT.replace('{workspace}', workspace || '（未知）')]\n    if (analysis !== undefined && Array.isArray(analysis.impacts) && analysis.impacts.length > 0) {\n      lines.push('确定性预分析已发现以下风险（请逐条核对，并在 impacts 中补充更具体的描述，不得遗漏）：')\n      analysis.impacts.forEach((x, i) => lines.push((i + 1) + '. ' + x))\n      lines.push('')\n    } else if (analysis !== undefined && analysis.ambiguous === true) {\n      lines.push('该命令包含动态执行/网络下载/外部程序调用/拼接构造等间接行为，确定性分析无法判定，请重点审查其真实效果。')\n      lines.push('')\n    }\n    lines.push('即将执行的命令（工具：' + toolName + '）：')\n    lines.push('```')\n    // A4：代码围栏转义，防止命令内含 ``` 逃逸围栏注入伪系统指令\n    lines.push(String(command).replace(/```/g, \"'''\"))\n    lines.push('```')\n    if (workdir) lines.push('工作目录：' + workdir)\n    lines.push('')\n    lines.push('输出要求：你的最终结论必须通过 structured_output 工具以 JSON 返回：')\n    lines.push('- verdict：\"safe\" 表示不存在上述三类风险；\"risky\" 表示存在至少一类风险')\n    lines.push('- impacts：字符串数组，逐条用中文说明可能造成的具体影响；verdict 为 \"safe\" 时为空数组')\n    const prompt = [{ type: 'text', text: lines.join('\\n') }]\n    const run = await subagents.start(providerName(), {\n      label: 'almost-full-access-review',\n      prompt,\n      parent,\n      signal,\n      outputSchema: REVIEW_SCHEMA,\n      toolFilter: { allow: [] }\n    })\n    reviewChildren.add(run.id)\n    if (run.localAgent !== undefined) reviewChildren.add(run.localAgent.id)\n    try {\n      const result = await run.result\n      if (result.stopReason !== 'completed' || result.structured === undefined) {\n        return { verdict: 'risky', impacts: ['审查子代理未能正常完成（' + result.stopReason + '），无法确认命令安全性，需人工审批。'], source: 'degraded' }\n      }\n      const value = result.structured\n      return {\n        verdict: value.verdict === 'safe' ? 'safe' : 'risky',\n        impacts: Array.isArray(value.impacts) ? value.impacts.map(String) : [],\n        source: 'llm'\n      }\n    } finally {\n      reviewChildren.delete(run.id)\n      if (run.localAgent !== undefined) reviewChildren.delete(run.localAgent.id)\n      await run.dispose().catch(() => { })\n    }\n````\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:453-549](https://github.com/Alnita-M/dsh-Almost_Full_Access/blob/269ab865fd02a4dded171eaecc40b1255f5df227/lib/index.js#L453-L549)\n\n门控条件、判定和 next/deny。\n\n<details>\n<summary>查看原文（97行）</summary>\n\n```text\n  // ============ 门控 ============\n  ctx.on('tools/pre-execute', async (exec, next) => {\n    if (!GATED_TOOLS.has(exec.name)) return next()\n    const agent = exec.agent\n    if (agent === undefined || reviewChildren.has(agent.id)) return next()\n\n    const preset = currentPreset(agent)\n    if (preset !== '') state.lastPreset = preset\n    if (!GATED_PRESETS.has(preset)) return next()\n\n    const args = exec.arguments\n    const command = (args !== null && typeof args === 'object' && typeof args.command === 'string')\n      ? args.command\n      : (typeof args === 'string' ? args : '')\n    if (command.trim() === '') return next()\n    const workdir = (args !== null && typeof args === 'object' && typeof args.workdir === 'string')\n      ? args.workdir : ''\n    const workspace = sessionWorkspace(agent)\n    if (workspace !== '' && workspace !== state.workspace) state.workspace = workspace\n    audit('GATE ' + exec.name + ' preset=' + preset + ' cmd=' + command.slice(0, 200).replace(/\\n/g, ' '))\n\n    const analysis = analyzeCommand(command, workspace, workdir)\n    audit('ANALYZE ambiguous=' + String(analysis.ambiguous) + ' impacts=' + JSON.stringify(analysis.impacts))\n\n    // A4：确定性命中优先且锁定为必审批——LLM 只能裁决「仅模糊」的命令，不能把\n    // 确定性风险改判为 safe 免审批（防止命令文本注入审查员改口）。\n    let review\n    if (analysis.impacts.length > 0) {\n      state.counters.detRisky += 1\n      review = { verdict: 'risky', impacts: analysis.impacts, source: 'deterministic' }\n    } else if (analysis.ambiguous) {\n      state.counters.llmReviewed += 1\n      // v1.1.1：同命令 LLM 审查结果 5 分钟内复用（Safe 模式去繁琐；命令文本不变则结论不变）\n      const cmdHash = hashCommand(command)\n      const cached = llmVerdictCache.get(cmdHash)\n      if (cached !== undefined && Date.now() - cached.ts < LLM_CACHE_TTL) {\n        review = { verdict: cached.verdict, impacts: cached.impacts, source: 'llm' }\n        audit('LLM-CACHE hit ' + cmdHash + ' -> ' + cached.verdict)\n      } else {\n        try {\n          review = await runReview(command, exec.name, workdir, agent, exec.signal, workspace, analysis)\n        } catch (err) {\n          // A7：abort 不再 fail-open\n          if (exec.signal.aborted) return abortDeny()\n          review = { verdict: 'risky', impacts: ['命令审查子代理启动失败（' + String(err?.message ?? err) + '），无法自动判定安全性，需人工审批。'], source: 'degraded' }\n        }\n        if (review.source === 'llm') {\n          if (llmVerdictCache.size >= LLM_CACHE_MAX) {\n            const oldest = llmVerdictCache.keys().next().value\n            if (oldest !== undefined) llmVerdictCache.delete(oldest)\n          }\n          llmVerdictCache.set(cmdHash, { verdict: review.verdict, impacts: review.impacts, ts: Date.now() })\n        }\n      }\n    } else {\n      state.counters.detSafe += 1\n      review = { verdict: 'safe', impacts: [], source: 'deterministic' }\n    }\n    // A7：abort 一律拒绝，不进入下游执行链\n    if (exec.signal.aborted) return abortDeny()\n    if (review.verdict === 'safe') return next()\n\n    const source = review.source === 'llm' ? 'llm' : review.source === 'degraded' ? 'degraded' : 'deterministic'\n    const ruleIds = source === 'deterministic' ? (analysis.ruleIds || []) : []\n    const severity = source === 'degraded' ? 'low' : ruleIds.some((id) => HIGH_RULE_PREFIXES.some((pre) => id.indexOf(pre) === 0)) ? 'high' : 'medium'\n    const category = ruleIds.length > 0 ? ruleIds[0] : source === 'llm' ? 'llm-risky' : 'degraded'\n    const record = {\n      toolName: exec.name,\n      command: command.length > 8000 ? command.slice(0, 8000) : command,\n      truncated: command.length > 8000,\n      commandHash: hashCommand(command),\n      workdir,\n      workspaceRoot: workspace,\n      preset,\n      source,\n      severity,\n      ruleIds,\n      impacts: Array.isArray(review.impacts) && review.impacts.length > 0 ? review.impacts : ['（审查未给出具体影响描述）'],\n      category,\n      rememberable: severity !== 'high' && (category || '').indexOf('boot:') !== 0,\n      ts: new Date().toISOString(),\n      decision: null,\n      auto: false,\n      signal: exec.signal,\n      agent\n    }\n    const decision = await requestApproval(record)\n    state.counters.pending = pending.size\n    if (decision === 'approved') {\n      state.counters.approved += 1\n      audit('DECISION ' + record.approvalId + ' approved' + (record.auto ? ' (remembered)' : ''))\n      return next()\n    }\n    state.counters.denied += 1\n    audit('DECISION ' + record.approvalId + ' ' + decision + (record.auto ? ' (remembered)' : ''))\n    const impactText = (record.impacts || []).map((line, i) => (i + 1) + '. ' + line).join('\\n')\n    return { kind: 'deny', reason: 'Almost Full Access：用户拒绝执行该命令。' + impactText.slice(0, 400) }\n```\n\n</details>\n\n#### 缺口\n\n- 宿主 tools/pre-execute 的错误处理、session 可用性和并发行为未测\n  **影响：**无法量化真实 fail-open 路径触发率\n  **进一步探讨：**注入 session/preset 查找失败、取消信号和各工具参数形态\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 同命令记忆是否精确绑定，审批端点是否独立确认操作者？\n\n**研究主题：**缺陷与关键质疑\n\n#### 完整回答\n\nhashCommand 是 32 位 DJB2 风格字符串哈希，remembered 和 LLM verdict cache 都仅按该短哈希查找，未二次核对完整命令；若攻击者构造不同命令同哈希且两个命令都落入可记忆/模糊分支，已批准命令的决定可被碰撞命令复用。风险不需假设随机 UUID 被猜中，而是缓存键的碰撞边界；本轮未构造可利用命令实证。GET /api/afaccess/queue 无本插件身份检查，暴露待审批原命令与 approvalId；POST decide 只查可伪造的自定义头以及可缺省的 Origin/Referer（存在时仅判 hostname 是否 localhost，未核与实际请求源同源），不绑定用户会话或审批者。真实外部可达性取决于宿主 webServer 的认证和端口绑定，不能仅凭代码断言公网可利用。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/analyze.js:325-329](https://github.com/Alnita-M/dsh-Almost_Full_Access/blob/269ab865fd02a4dded171eaecc40b1255f5df227/lib/analyze.js#L325-L329)\n\n32 位命令哈希实现。\n\n```text\nexport function hashCommand(cmd) {\n  let h = 5381\n  for (let i = 0; i < cmd.length; i++) h = ((h << 5) + h + cmd.charCodeAt(i)) | 0\n  return 'h' + (h >>> 0).toString(16)\n}\n```\n\n**依据 2 · 源码核查**：[lib/index.js:276-291](https://github.com/Alnita-M/dsh-Almost_Full_Access/blob/269ab865fd02a4dded171eaecc40b1255f5df227/lib/index.js#L276-L291)\n\n记忆仅按 commandHash 查找。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n  function requestApproval(rec) {\n    // A5：随机 approvalId，避免顺序 ID 可枚举\n    rec.approvalId = 'afacc-apr-' + randomUUID().replace(/-/g, '').slice(0, 12)\n    // A6：记忆键 = 命令哈希（同命令免重复审批）；高风险（引导类）不可记忆\n    if (rec.severity !== 'high' && (rec.category || '').indexOf('boot:') !== 0) {\n      const mem = remembered.get(rec.commandHash)\n      if (mem !== undefined) {\n        rec.decision = mem\n        rec.auto = true\n        state.counters.autoDecided += 1\n        audit('AUTO ' + rec.approvalId + ' key=' + rec.commandHash + ' category=' + rec.category + ' -> ' + mem)\n        return Promise.resolve(mem)\n      }\n    }\n    audit('APPROVAL ' + rec.approvalId + ' source=' + rec.source + ' severity=' + rec.severity + ' category=' + rec.category + ' cmd=' + rec.command.slice(0, 120).replace(/\\n/g, ' '))\n    return createApproval(rec)\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:483-505](https://github.com/Alnita-M/dsh-Almost_Full_Access/blob/269ab865fd02a4dded171eaecc40b1255f5df227/lib/index.js#L483-L505)\n\nLLM 结论也按 hash 缓存。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n    } else if (analysis.ambiguous) {\n      state.counters.llmReviewed += 1\n      // v1.1.1：同命令 LLM 审查结果 5 分钟内复用（Safe 模式去繁琐；命令文本不变则结论不变）\n      const cmdHash = hashCommand(command)\n      const cached = llmVerdictCache.get(cmdHash)\n      if (cached !== undefined && Date.now() - cached.ts < LLM_CACHE_TTL) {\n        review = { verdict: cached.verdict, impacts: cached.impacts, source: 'llm' }\n        audit('LLM-CACHE hit ' + cmdHash + ' -> ' + cached.verdict)\n      } else {\n        try {\n          review = await runReview(command, exec.name, workdir, agent, exec.signal, workspace, analysis)\n        } catch (err) {\n          // A7：abort 不再 fail-open\n          if (exec.signal.aborted) return abortDeny()\n          review = { verdict: 'risky', impacts: ['命令审查子代理启动失败（' + String(err?.message ?? err) + '），无法自动判定安全性，需人工审批。'], source: 'degraded' }\n        }\n        if (review.source === 'llm') {\n          if (llmVerdictCache.size >= LLM_CACHE_MAX) {\n            const oldest = llmVerdictCache.keys().next().value\n            if (oldest !== undefined) llmVerdictCache.delete(oldest)\n          }\n          llmVerdictCache.set(cmdHash, { verdict: review.verdict, impacts: review.impacts, ts: Date.now() })\n        }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:350-399](https://github.com/Alnita-M/dsh-Almost_Full_Access/blob/269ab865fd02a4dded171eaecc40b1255f5df227/lib/index.js#L350-L399)\n\nqueue/decide 路由及请求头/Origin 校验。\n\n<details>\n<summary>查看原文（50行）</summary>\n\n```text\n  // ============ HTTP 端点（浏览器审批面板数据通道） ============\n  ctx.effect(() => webServer.register({\n    kind: 'exact',\n    path: '/api/afaccess/queue',\n    handler: (req, res) => {\n      lastPollAt = Date.now()\n      const now = Date.now()\n      const items = []\n      for (const rec of pending.values()) items.push(recordToWire(rec))\n      for (const rec of decidedCache.values()) {\n        if (rec.expiresAt > now) items.push(recordToWire(rec))\n        else decidedCache.delete(rec.approvalId)\n      }\n      json(res, 200, { ok: true, items })\n    }\n  }), 'afaccess: queue route')\n\n  ctx.effect(() => webServer.register({\n    kind: 'exact',\n    path: '/api/afaccess/decide',\n    handler: async (req, res) => {\n      if (req.method !== 'POST') return json(res, 405, { ok: false, reason: 'method' })\n      // A5：CSRF 防护——要求同源面板携带的自定义请求头；若有 Origin/Referer 则必须是回环地址\n      if (req.headers['x-afaccess-client'] !== '1') return json(res, 403, { ok: false, reason: 'origin' })\n      const origin = req.headers['origin'] || req.headers['referer'] || ''\n      if (origin !== '') {\n        try {\n          const hostname = new URL(origin).hostname\n          if (!['127.0.0.1', 'localhost', '::1'].includes(hostname)) return json(res, 403, { ok: false, reason: 'origin' })\n        } catch (err) {\n          return json(res, 403, { ok: false, reason: 'origin' })\n        }\n      }\n      const args = await readBody(req)\n      if (args === null || typeof args !== 'object') return json(res, 400, { ok: false, reason: 'body' })\n      const id = typeof args.approvalId === 'string' ? args.approvalId : ''\n      const rec = pending.get(id)\n      if (rec === undefined) return json(res, 200, { ok: false, reason: 'unknown' })\n      if (rec.decision !== null) return json(res, 200, { ok: false, reason: 'already-decided' })\n      const decision = args.decision === 'approved' ? 'approved' : 'denied'\n      // A5/A6：记忆写入强制绑定服务端 rec.commandHash（忽略客户端提供的任意键）；\n      // 高风险（引导类/高严重度）命令一律不可记忆\n      if (args.remember === true && rec.severity !== 'high' && (rec.category || '').indexOf('boot:') !== 0) {\n        remembered.set(rec.commandHash, decision)\n        audit('REMEMBER key=' + rec.commandHash + ' category=' + rec.category + ' -> ' + decision)\n      }\n      rec.settle(decision)\n      json(res, 200, { ok: true })\n    }\n  }), 'afaccess: decide route')\n```\n\n</details>\n\n#### 缺口\n\n- 碰撞命令构造、宿主路由认证与远程绑定尚未验证\n  **影响：**无法证明可达攻击链和损害概率\n  **进一步探讨：**隔离夹具生成不同同哈希命令并验证复用；测 Host 路由身份/绑定策略\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 安装覆盖、日常审查与失败恢复的成本是什么？\n\n**研究主题：**依赖、兼容与流程、效果与总成本\n\n#### 完整回答\n\n首次需要 DSH profile 可写、Node>=16、tools/subagents/userQuestions/permissionPresets/sandboxPolicy/webServer/sessions 服务与客户端面板；安装器把包复制到 profiles/node_modules，并替换或追加顶层 permission 块和插件 insert 块。这是对 profile 权限预设的整体覆盖，可能与其它自定义 permission 预设冲突，需事先审查差异并备份。持续成本是模糊命令的子代理调用/等待、危险命令逐次审批、日志与会话记忆；模型调用现金成本、误判率和时间未测。失败恢复包括恢复原预设、撤销误放行操作、审计失败时另找宿主记录；权限层失效可能已越过恢复点。作者测试和自述版本兼容不是本轮独立验证。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:1-63](https://github.com/Alnita-M/dsh-Almost_Full_Access/blob/269ab865fd02a4dded171eaecc40b1255f5df227/package.json#L1-L63)\n\n包和环境声明。\n\n<details>\n<summary>查看原文（63行）</summary>\n\n```text\n{\n  \"name\": \"dsh-almost-full-access\",\n  \"version\": \"1.2.0\",\n  \"description\": \"dsh-Almost Full Access - 介于 workspace-write 与 Full access 之间的权限模式：每条命令先经确定性规则 + 子代理审查，危险命令弹出风格A简约审批面板（允许/拒绝/记住本次会话），支持会话记忆自动放行与审计日志。静态插件包，支持桌面版（Electron）与 Web 版 profile，重启后自动加载。\",\n  \"private\": false,\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/Alnita-M/dsh-Almost_Full_Access.git\"\n  },\n  \"homepage\": \"https://github.com/Alnita-M/dsh-Almost_Full_Access#readme\",\n  \"bugs\": \"https://github.com/Alnita-M/dsh-Almost_Full_Access/issues\",\n  \"keywords\": [\n    \"deepseek\",\n    \"deepseek-harness\",\n    \"dsh\",\n    \"permission\",\n    \"approval\",\n    \"security\",\n    \"almost-full-access\",\n    \"命令审批\"\n  ],\n  \"bin\": {\n    \"dsh-afaccess-install\": \"scripts/install.mjs\"\n  },\n  \"files\": [\n    \"lib/\",\n    \"cordis.patch.yml\",\n    \"scripts/install.mjs\",\n    \"scripts/patch-lib.mjs\",\n    \"assets/afaccess-logo.svg\",\n    \"docs/\",\n    \"CHANGELOG.md\",\n    \"README.md\",\n    \"LICENSE\",\n    \"SECURITY.md\"\n  ],\n  \"engines\": {\n    \"node\": \">=16\"\n  },\n  \"type\": \"module\",\n  \"main\": \"lib/index.js\",\n  \"exports\": {\n    \".\": \"./lib/index.js\",\n    \"./client\": \"./lib/client.js\",\n    \"./package.json\": \"./package.json\"\n  },\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    },\n    \"client\": {\n      \"platform\": \"web\",\n      \"inject\": [\n        \"@deepseek-ai/dsh-client-locale\",\n        \"@deepseek-ai/dsh-client-ui-primitives\"\n      ]\n    }\n  },\n  \"scripts\": {\n    \"check\": \"node --check lib/index.js && node --check lib/analyze.js && node --check lib/client.js && node --check scripts/install.mjs && node --check scripts/patch-lib.mjs && node --check scripts/test.mjs\",\n    \"test\": \"node scripts/test.mjs\"\n  },\n  \"license\": \"MIT\"\n```\n\n</details>\n\n**依据 2 · 源码核查**：[scripts/install.mjs:172-211](https://github.com/Alnita-M/dsh-Almost_Full_Access/blob/269ab865fd02a4dded171eaecc40b1255f5df227/scripts/install.mjs#L172-L211)\n\n复制文件并写 profile patch。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n// v1.0.3：未安装 DSH 时给出明确警告，避免\"安装成功但无效\"\nif (!existsSync(join(dshHome, \"profiles\"))) {\n\tconsole.warn(\"⚠️  未检测到 DSH 配置目录：\" + join(dshHome, \"profiles\"));\n\tconsole.warn(\"   请确认这台电脑已安装 DeepSeek Harness 且 DSH_HOME 指向正确；\");\n\tconsole.warn(\"   否则本插件虽然会复制到 \" + dshHome + \"，但 dsh 不会加载它。\");\n} else if (enable && profiles.length === 0) {\n\tconsole.warn(\"⚠️  未检测到客户端 profile（desktop / web），因此没有写入任何 cordis.patch.yml。\");\n\tconsole.warn(\"   已存在的 profile：\" + (existingProfiles(dshHome).join(\", \") || \"（无）\"));\n\tconsole.warn(\"   用 --profile <name> 或 --all-profiles 指定要启用插件的 profile。\");\n}\n\nawait mkdir(target, { recursive: true });\nfor (const entry of [\"lib\", \"cordis.patch.yml\", \"package.json\", \"README.md\", \"LICENSE\", \"SECURITY.md\", \"assets\"]) {\n\tawait cp(join(sourceRoot, entry), join(target, entry), { recursive: true, force: true });\n}\nawait mkdir(join(target, \"scripts\"), { recursive: true });\nawait cp(fileURLToPath(import.meta.url), join(target, \"scripts\", \"install.mjs\"), { force: true });\n// v1.0.3：patch-lib 必须随包复制，否则全局安装后 install.mjs 的 import 会失败\nawait cp(join(sourceRoot, \"scripts\", \"patch-lib.mjs\"), join(target, \"scripts\", \"patch-lib.mjs\"), { force: true });\n\nif (enable) {\n\tfor (const name of profiles) {\n\t\tconst patchPath = patchPathOf(name);\n\t\tconst existed = existsSync(patchPath);\n\t\tif (!existed && !existsSync(join(dshHome, \"profiles\", name))) {\n\t\t\tconsole.warn(`⚠️  profile \"${name}\" 不存在，跳过：` + patchPath);\n\t\t\tcontinue;\n\t\t}\n\t\tawait mkdir(dirname(patchPath), { recursive: true });\n\t\tconst current = await readOptional(patchPath) ?? \"\";\n\t\tlet next = replacePermissionBlock(current).text;\n\t\tnext = ensurePermissionBlock(next); // 无顶层 permission 块的干净 patch：追加预设（否则模式缺失）\n\t\tnext = ensureInsertBlock(next);\n\t\tif (next !== current) await writeFile(patchPath, next, \"utf8\");\n\t\tconsole.log(`Patched ${name}: ${patchPath}`);\n\t}\n}\n\nawait verify(enable);\nconsole.log(\"Installation complete.\");\n```\n\n</details>\n\n**依据 3 · 源码核查**：[scripts/patch-lib.mjs:79-148](https://github.com/Alnita-M/dsh-Almost_Full_Access/blob/269ab865fd02a4dded171eaecc40b1255f5df227/scripts/patch-lib.mjs#L79-L148)\n\n替换整个 permission 预设块。\n\n<details>\n<summary>查看原文（70行）</summary>\n\n```text\n/**\n * 替换/追加 permission 预设块（config 为整体替换，必须完整覆盖 dsh-base 的预设表）。\n * 若已有顶层 `- id: permission`（缩进 0）条目，则从该行替换到下一个顶层条目之前。\n * 找不到顶层块时返回 { replaced:false }（由调用方 ensurePermissionBlock 兜底追加）。\n *\n * 幂等性（v1.2.0 修复）：替换范围要**连同该条目自己的注释行**一起吃掉，\n * 否则每重跑一次安装器就会多累积一行注释；同时替换区间的右边界要回退到\n * 下一个顶层条目的注释之前，否则那条注释会被误删。文件头部注释块永不吞噬。\n */\nexport function replacePermissionBlock(text) {\n\tconst txt = stripBom(text);\n\tconst lines = txt.split(/\\r?\\n/);\n\tconst meaningful = meaningfulPatchLines(txt);\n\tconst start = meaningful.find(({ indent, content }) => indent === 0 && (content === \"- id: permission\" || /^-?\\s*id:\\s*permission\\s*$/.test(content)));\n\tif (start === void 0) return { text: withoutEmptySequenceRoot(txt), replaced: false };\n\t// 左边界：连同该条目自己的注释行一起替换（但不吃文件头部注释块，也不吃第 0 行）。\n\t// 只吞噬**本插件自有标记**的注释行（可跨其间的空行），这样历史版本累积的\n\t// 重复注释会在下次安装时收敛为一行，且绝不会误伤文件头或其它插件的注释。\n\tlet headEnd = start.index;\n\tlet cursor = headEnd - 1;\n\tlet from = headEnd;\n\tlet sawOwnComment = false;\n\twhile (cursor >= 0) {\n\t\tconst line = lines[cursor];\n\t\tif (/^[ \\t]*#/.test(line)) {\n\t\t\tif (!line.includes(OWN_COMMENT_MARK)) break;\n\t\t\tsawOwnComment = true;\n\t\t\tfrom = cursor;\n\t\t\tcursor -= 1;\n\t\t\tcontinue;\n\t\t}\n\t\tif (sawOwnComment && /^[ \\t]*$/.test(line)) {\n\t\t\tfrom = cursor;\n\t\t\tcursor -= 1;\n\t\t\tcontinue;\n\t\t}\n\t\tbreak;\n\t}\n\tif (sawOwnComment && from > 0) headEnd = from;\n\t// 右边界：下一个顶层条目（缩进 0 且以 \"- \" 开头，且不是该块自身的延续）\n\tlet end = lines.length;\n\tfor (let i = start.index + 1; i < lines.length; i++) {\n\t\tconst line = lines[i];\n\t\tif (/^[ \\t]*$/.test(line) || /^\\s*#/.test(line)) continue;\n\t\tconst indent = line.match(/^[ \\t]*/)[0].length;\n\t\tif (indent === 0 && line.trim().startsWith(\"- \")) {\n\t\t\tend = i;\n\t\t\tbreak;\n\t\t}\n\t}\n\t// 右边界回退：保留下一个顶层条目自己的注释行\n\twhile (end - 1 > start.index && /^[ \\t]*#/.test(lines[end - 1])) end -= 1;\n\tconst head = lines.slice(0, headEnd).join(\"\\n\").trimEnd();\n\tconst tail = lines.slice(end).join(\"\\n\").trimStart();\n\tlet out = head;\n\tif (head !== \"\") out += \"\\n\\n\";\n\tout += PERMISSION_BLOCK.trimEnd();\n\tif (tail !== \"\") out += \"\\n\\n\" + tail;\n\treturn { text: out, replaced: true };\n}\n\n/** 确保顶层 permission 预设块存在（无则追加到末尾）——全新电脑空 patch 的关键兜底。 */\nexport function ensurePermissionBlock(text) {\n\tconst txt = stripBom(text);\n\tconst meaningful = meaningfulPatchLines(txt);\n\tconst hasTop = meaningful.some(({ indent, content }) => indent === 0 && (content === \"- id: permission\" || /^-?\\s*id:\\s*permission\\s*$/.test(content)));\n\tif (hasTop) return txt;\n\tconst base = withoutEmptySequenceRoot(txt).trimEnd();\n\treturn base === \"\" ? PERMISSION_BLOCK.trimEnd() : `${base}\\n\\n${PERMISSION_BLOCK.trimEnd()}`;\n}\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:154-159](https://github.com/Alnita-M/dsh-Almost_Full_Access/blob/269ab865fd02a4dded171eaecc40b1255f5df227/lib/index.js#L154-L159)\n\n审计 best-effort。\n\n```text\n  // A8/A10：异步追加 + 脱敏\n  function audit(line) {\n    try {\n      appendFile(join(auditDir, 'afaccess.log'), '[' + new Date().toISOString() + '] ' + redact(line) + '\\n', 'utf8').catch(() => { })\n    } catch (err) { /* audit is best-effort */ }\n  }\n```\n\n**依据 5 · 作者声明**：[README.md:60-89](https://github.com/Alnita-M/dsh-Almost_Full_Access/blob/269ab865fd02a4dded171eaecc40b1255f5df227/README.md#L60-L89)\n\n安装与作者兼容说明。\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\n> 安装器会把插件复制到 `~/.dsh/profiles/node_modules/dsh-almost-full-access/`，\n> 并幂等更新**客户端 profile** 的 `cordis.patch.yml`（权限预设表 + 插件挂载）：\n> 默认写入已存在的 `desktop`（桌面版 Electron）与 `web`，可用\n> `--profile <name>` / `--all-profiles` 精确指定。\n> **全新电脑**（`cordis.patch.yml` 为空或不存在）也会自动写入完整的预设块与挂载块；\n> 若未检测到 DSH 配置目录会打印警告（请先安装 DeepSeek Harness 再装本插件）。\n> 其他安装器选项：`--check` / `--dry-run` / `--no-enable` / `--help`。\n>\n> 要求 **Node.js ≥ 16**（安装器与插件使用 ESM / top-level await）。\n\n### 安装后\n\n1. **硬刷新浏览器**（Ctrl+Shift+R）；`profiles/*/cordis.patch.yml` 由 `dsh-hmr` 监听并**热重载**，\n   通常**无需重启 dsh**（若未生效再重启）；\n2. 在会话权限选择器中切换到 **🛡️ Almost Full Access**；\n3. 输入命令即可体验：安全命令毫秒放行，危险命令弹出审批面板。\n\n卸载：删除 `~/.dsh/profiles/node_modules/dsh-almost-full-access/` 并从\n`~/.dsh/profiles/<desktop|web>/cordis.patch.yml` 移除对应两块（或重装后 `--no-enable` 对照还原）。\n\n---\n\n## 🖥️ 兼容性\n\n| 项 | 要求 |\n|---|---|\n| DSH | **桌面版（Electron，`profiles/desktop`）** 或 **Web 版（`profiles/web`）**，静态插件机制 |\n| 平台 | Windows（命令审查目标为 PowerShell，`pwsh` 工具） |\n| 权限模式 | 仅 `almost-full-access` 模式启用门控，其余模式零开销 |\n| 已验证版本 | dsh **0.2.0-rc.2**（桌面版内嵌运行时）与 dsh 0.1.7-rc.1 |\n```\n\n</details>\n\n#### 缺口\n\n- 真实子代理费用、误判/恢复时间与宿主版本适配未测\n  **影响：**不能量化安全收益或部署成本\n  **进一步探讨：**隔离 profile 差异比较与审查延迟/错误统计，并核真实宿主接口\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 怎样让审批绑定、工具覆盖和故障默认值满足安全模式要求？\n\n**研究主题：**工程质量与复用、新假设与验证\n\n#### 完整回答\n\n代码中确定性命中优先于 LLM、子代理 toolFilter 为空、abort 阻断、随机 approvalId 和文本回退可借鉴；但关键风险是将无沙箱预设交给有限命名工具的应用层门控。未验证方向是底层执行授权由宿主统一强制，未识别工具/参数或 session/preset 解析失败时默认拒绝；审批记忆用强碰撞抗性的完整命令摘要并复核原文/工作目录/会话/工具，decide 绑定真实认证会话和 CSRF token，保留原 permission 块的其他预设。最小验证覆盖新工具、缺参数、服务故障、哈希碰撞、跨会话审批、远程路由与热重载，检查未经显式批准的副作用数为零。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:315-340](https://github.com/Alnita-M/dsh-Almost_Full_Access/blob/269ab865fd02a4dded171eaecc40b1255f5df227/lib/index.js#L315-L340)\n\n子代理无工具且错误转 risky。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n    const run = await subagents.start(providerName(), {\n      label: 'almost-full-access-review',\n      prompt,\n      parent,\n      signal,\n      outputSchema: REVIEW_SCHEMA,\n      toolFilter: { allow: [] }\n    })\n    reviewChildren.add(run.id)\n    if (run.localAgent !== undefined) reviewChildren.add(run.localAgent.id)\n    try {\n      const result = await run.result\n      if (result.stopReason !== 'completed' || result.structured === undefined) {\n        return { verdict: 'risky', impacts: ['审查子代理未能正常完成（' + result.stopReason + '），无法确认命令安全性，需人工审批。'], source: 'degraded' }\n      }\n      const value = result.structured\n      return {\n        verdict: value.verdict === 'safe' ? 'safe' : 'risky',\n        impacts: Array.isArray(value.impacts) ? value.impacts.map(String) : [],\n        source: 'llm'\n      }\n    } finally {\n      reviewChildren.delete(run.id)\n      if (run.localAgent !== undefined) reviewChildren.delete(run.localAgent.id)\n      await run.dispose().catch(() => { })\n    }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:453-549](https://github.com/Alnita-M/dsh-Almost_Full_Access/blob/269ab865fd02a4dded171eaecc40b1255f5df227/lib/index.js#L453-L549)\n\n当前门控缺省直通条件。\n\n<details>\n<summary>查看原文（97行）</summary>\n\n```text\n  // ============ 门控 ============\n  ctx.on('tools/pre-execute', async (exec, next) => {\n    if (!GATED_TOOLS.has(exec.name)) return next()\n    const agent = exec.agent\n    if (agent === undefined || reviewChildren.has(agent.id)) return next()\n\n    const preset = currentPreset(agent)\n    if (preset !== '') state.lastPreset = preset\n    if (!GATED_PRESETS.has(preset)) return next()\n\n    const args = exec.arguments\n    const command = (args !== null && typeof args === 'object' && typeof args.command === 'string')\n      ? args.command\n      : (typeof args === 'string' ? args : '')\n    if (command.trim() === '') return next()\n    const workdir = (args !== null && typeof args === 'object' && typeof args.workdir === 'string')\n      ? args.workdir : ''\n    const workspace = sessionWorkspace(agent)\n    if (workspace !== '' && workspace !== state.workspace) state.workspace = workspace\n    audit('GATE ' + exec.name + ' preset=' + preset + ' cmd=' + command.slice(0, 200).replace(/\\n/g, ' '))\n\n    const analysis = analyzeCommand(command, workspace, workdir)\n    audit('ANALYZE ambiguous=' + String(analysis.ambiguous) + ' impacts=' + JSON.stringify(analysis.impacts))\n\n    // A4：确定性命中优先且锁定为必审批——LLM 只能裁决「仅模糊」的命令，不能把\n    // 确定性风险改判为 safe 免审批（防止命令文本注入审查员改口）。\n    let review\n    if (analysis.impacts.length > 0) {\n      state.counters.detRisky += 1\n      review = { verdict: 'risky', impacts: analysis.impacts, source: 'deterministic' }\n    } else if (analysis.ambiguous) {\n      state.counters.llmReviewed += 1\n      // v1.1.1：同命令 LLM 审查结果 5 分钟内复用（Safe 模式去繁琐；命令文本不变则结论不变）\n      const cmdHash = hashCommand(command)\n      const cached = llmVerdictCache.get(cmdHash)\n      if (cached !== undefined && Date.now() - cached.ts < LLM_CACHE_TTL) {\n        review = { verdict: cached.verdict, impacts: cached.impacts, source: 'llm' }\n        audit('LLM-CACHE hit ' + cmdHash + ' -> ' + cached.verdict)\n      } else {\n        try {\n          review = await runReview(command, exec.name, workdir, agent, exec.signal, workspace, analysis)\n        } catch (err) {\n          // A7：abort 不再 fail-open\n          if (exec.signal.aborted) return abortDeny()\n          review = { verdict: 'risky', impacts: ['命令审查子代理启动失败（' + String(err?.message ?? err) + '），无法自动判定安全性，需人工审批。'], source: 'degraded' }\n        }\n        if (review.source === 'llm') {\n          if (llmVerdictCache.size >= LLM_CACHE_MAX) {\n            const oldest = llmVerdictCache.keys().next().value\n            if (oldest !== undefined) llmVerdictCache.delete(oldest)\n          }\n          llmVerdictCache.set(cmdHash, { verdict: review.verdict, impacts: review.impacts, ts: Date.now() })\n        }\n      }\n    } else {\n      state.counters.detSafe += 1\n      review = { verdict: 'safe', impacts: [], source: 'deterministic' }\n    }\n    // A7：abort 一律拒绝，不进入下游执行链\n    if (exec.signal.aborted) return abortDeny()\n    if (review.verdict === 'safe') return next()\n\n    const source = review.source === 'llm' ? 'llm' : review.source === 'degraded' ? 'degraded' : 'deterministic'\n    const ruleIds = source === 'deterministic' ? (analysis.ruleIds || []) : []\n    const severity = source === 'degraded' ? 'low' : ruleIds.some((id) => HIGH_RULE_PREFIXES.some((pre) => id.indexOf(pre) === 0)) ? 'high' : 'medium'\n    const category = ruleIds.length > 0 ? ruleIds[0] : source === 'llm' ? 'llm-risky' : 'degraded'\n    const record = {\n      toolName: exec.name,\n      command: command.length > 8000 ? command.slice(0, 8000) : command,\n      truncated: command.length > 8000,\n      commandHash: hashCommand(command),\n      workdir,\n      workspaceRoot: workspace,\n      preset,\n      source,\n      severity,\n      ruleIds,\n      impacts: Array.isArray(review.impacts) && review.impacts.length > 0 ? review.impacts : ['（审查未给出具体影响描述）'],\n      category,\n      rememberable: severity !== 'high' && (category || '').indexOf('boot:') !== 0,\n      ts: new Date().toISOString(),\n      decision: null,\n      auto: false,\n      signal: exec.signal,\n      agent\n    }\n    const decision = await requestApproval(record)\n    state.counters.pending = pending.size\n    if (decision === 'approved') {\n      state.counters.approved += 1\n      audit('DECISION ' + record.approvalId + ' approved' + (record.auto ? ' (remembered)' : ''))\n      return next()\n    }\n    state.counters.denied += 1\n    audit('DECISION ' + record.approvalId + ' ' + decision + (record.auto ? ' (remembered)' : ''))\n    const impactText = (record.impacts || []).map((line, i) => (i + 1) + '. ' + line).join('\\n')\n    return { kind: 'deny', reason: 'Almost Full Access：用户拒绝执行该命令。' + impactText.slice(0, 400) }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:350-399](https://github.com/Alnita-M/dsh-Almost_Full_Access/blob/269ab865fd02a4dded171eaecc40b1255f5df227/lib/index.js#L350-L399)\n\n当前审批路由。\n\n<details>\n<summary>查看原文（50行）</summary>\n\n```text\n  // ============ HTTP 端点（浏览器审批面板数据通道） ============\n  ctx.effect(() => webServer.register({\n    kind: 'exact',\n    path: '/api/afaccess/queue',\n    handler: (req, res) => {\n      lastPollAt = Date.now()\n      const now = Date.now()\n      const items = []\n      for (const rec of pending.values()) items.push(recordToWire(rec))\n      for (const rec of decidedCache.values()) {\n        if (rec.expiresAt > now) items.push(recordToWire(rec))\n        else decidedCache.delete(rec.approvalId)\n      }\n      json(res, 200, { ok: true, items })\n    }\n  }), 'afaccess: queue route')\n\n  ctx.effect(() => webServer.register({\n    kind: 'exact',\n    path: '/api/afaccess/decide',\n    handler: async (req, res) => {\n      if (req.method !== 'POST') return json(res, 405, { ok: false, reason: 'method' })\n      // A5：CSRF 防护——要求同源面板携带的自定义请求头；若有 Origin/Referer 则必须是回环地址\n      if (req.headers['x-afaccess-client'] !== '1') return json(res, 403, { ok: false, reason: 'origin' })\n      const origin = req.headers['origin'] || req.headers['referer'] || ''\n      if (origin !== '') {\n        try {\n          const hostname = new URL(origin).hostname\n          if (!['127.0.0.1', 'localhost', '::1'].includes(hostname)) return json(res, 403, { ok: false, reason: 'origin' })\n        } catch (err) {\n          return json(res, 403, { ok: false, reason: 'origin' })\n        }\n      }\n      const args = await readBody(req)\n      if (args === null || typeof args !== 'object') return json(res, 400, { ok: false, reason: 'body' })\n      const id = typeof args.approvalId === 'string' ? args.approvalId : ''\n      const rec = pending.get(id)\n      if (rec === undefined) return json(res, 200, { ok: false, reason: 'unknown' })\n      if (rec.decision !== null) return json(res, 200, { ok: false, reason: 'already-decided' })\n      const decision = args.decision === 'approved' ? 'approved' : 'denied'\n      // A5/A6：记忆写入强制绑定服务端 rec.commandHash（忽略客户端提供的任意键）；\n      // 高风险（引导类/高严重度）命令一律不可记忆\n      if (args.remember === true && rec.severity !== 'high' && (rec.category || '').indexOf('boot:') !== 0) {\n        remembered.set(rec.commandHash, decision)\n        audit('REMEMBER key=' + rec.commandHash + ' category=' + rec.category + ' -> ' + decision)\n      }\n      rec.settle(decision)\n      json(res, 200, { ok: true })\n    }\n  }), 'afaccess: decide route')\n```\n\n</details>\n\n**依据 4 · 源码核查**：[scripts/patch-lib.mjs:22-48](https://github.com/Alnita-M/dsh-Almost_Full_Access/blob/269ab865fd02a4dded171eaecc40b1255f5df227/scripts/patch-lib.mjs#L22-L48)\n\n无沙箱预设的底层配置。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\nexport const PERMISSION_BLOCK = `# dsh-Almost Full Access: 权限模式预设（🛡️ Almost Full Access）\n- id: permission\n  config:\n    presets:\n      read-only:\n        sandbox: read-only\n        approval: ask\n      workspace-write:\n        sandbox: workspace-write\n        approval: ask\n      almost-full-access:\n        sandbox: danger-full-access\n        approval: never\n        name: 🛡️ Almost Full Access\n        description: Full file access with lightweight checks — only irreversible actions (deletes, uninstalls, formatting) and changes that affect normal boot or system/drivers require approval; dynamic/indirect commands are reviewed by a subagent before execution.\n      danger-full-access:\n        sandbox: danger-full-access\n        approval: never\n\n`;\n\nexport const INSERT_BLOCK = `# dsh-Almost Full Access: 插件本体挂载\n- insert:\n    - id: afaccess\n      name: dsh-almost-full-access\n\n`;\n```\n\n</details>\n\n#### 缺口\n\n- 统一强制授权和会话绑定未实现/测试\n  **影响：**不能将设想算作现有安全保证\n  **进一步探讨：**原型与真实宿主故障注入对照未授权执行次数和恢复成本\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 此固定版本能否作为用户的默认安全权限档？\n\n**研究主题：**采用判断\n\n#### 完整回答\n\n不推荐作为保护重要机器、敏感文件或多用户环境的默认权限档。底层 danger-full-access/approval never 加有限工具门控、session/preset 故障直通、32 位命令哈希共用批准结果与端点身份依赖宿主，均与“危险命令必须审批”的核心承诺存在未封闭边界。可在隔离虚拟机、无重要数据且禁用真实敏感权限的环境做研究原型，并逐条测试所有执行入口和审批链。当前建议 not_recommended 用于安全权限控制；测试也不等于生产保证。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[scripts/patch-lib.mjs:22-40](https://github.com/Alnita-M/dsh-Almost_Full_Access/blob/269ab865fd02a4dded171eaecc40b1255f5df227/scripts/patch-lib.mjs#L22-L40)\n\n预设无沙箱/内建审批。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\nexport const PERMISSION_BLOCK = `# dsh-Almost Full Access: 权限模式预设（🛡️ Almost Full Access）\n- id: permission\n  config:\n    presets:\n      read-only:\n        sandbox: read-only\n        approval: ask\n      workspace-write:\n        sandbox: workspace-write\n        approval: ask\n      almost-full-access:\n        sandbox: danger-full-access\n        approval: never\n        name: 🛡️ Almost Full Access\n        description: Full file access with lightweight checks — only irreversible actions (deletes, uninstalls, formatting) and changes that affect normal boot or system/drivers require approval; dynamic/indirect commands are reviewed by a subagent before execution.\n      danger-full-access:\n        sandbox: danger-full-access\n        approval: never\n\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:453-467](https://github.com/Alnita-M/dsh-Almost_Full_Access/blob/269ab865fd02a4dded171eaecc40b1255f5df227/lib/index.js#L453-L467)\n\n有限门控且缺信息直通。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n  // ============ 门控 ============\n  ctx.on('tools/pre-execute', async (exec, next) => {\n    if (!GATED_TOOLS.has(exec.name)) return next()\n    const agent = exec.agent\n    if (agent === undefined || reviewChildren.has(agent.id)) return next()\n\n    const preset = currentPreset(agent)\n    if (preset !== '') state.lastPreset = preset\n    if (!GATED_PRESETS.has(preset)) return next()\n\n    const args = exec.arguments\n    const command = (args !== null && typeof args === 'object' && typeof args.command === 'string')\n      ? args.command\n      : (typeof args === 'string' ? args : '')\n    if (command.trim() === '') return next()\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/analyze.js:325-329](https://github.com/Alnita-M/dsh-Almost_Full_Access/blob/269ab865fd02a4dded171eaecc40b1255f5df227/lib/analyze.js#L325-L329)\n\n32 位哈希。\n\n```text\nexport function hashCommand(cmd) {\n  let h = 5381\n  for (let i = 0; i < cmd.length; i++) h = ((h << 5) + h + cmd.charCodeAt(i)) | 0\n  return 'h' + (h >>> 0).toString(16)\n}\n```\n\n**依据 4 · 源码核查**：[lib/index.js:350-399](https://github.com/Alnita-M/dsh-Almost_Full_Access/blob/269ab865fd02a4dded171eaecc40b1255f5df227/lib/index.js#L350-L399)\n\n路由独立身份检查边界。\n\n<details>\n<summary>查看原文（50行）</summary>\n\n```text\n  // ============ HTTP 端点（浏览器审批面板数据通道） ============\n  ctx.effect(() => webServer.register({\n    kind: 'exact',\n    path: '/api/afaccess/queue',\n    handler: (req, res) => {\n      lastPollAt = Date.now()\n      const now = Date.now()\n      const items = []\n      for (const rec of pending.values()) items.push(recordToWire(rec))\n      for (const rec of decidedCache.values()) {\n        if (rec.expiresAt > now) items.push(recordToWire(rec))\n        else decidedCache.delete(rec.approvalId)\n      }\n      json(res, 200, { ok: true, items })\n    }\n  }), 'afaccess: queue route')\n\n  ctx.effect(() => webServer.register({\n    kind: 'exact',\n    path: '/api/afaccess/decide',\n    handler: async (req, res) => {\n      if (req.method !== 'POST') return json(res, 405, { ok: false, reason: 'method' })\n      // A5：CSRF 防护——要求同源面板携带的自定义请求头；若有 Origin/Referer 则必须是回环地址\n      if (req.headers['x-afaccess-client'] !== '1') return json(res, 403, { ok: false, reason: 'origin' })\n      const origin = req.headers['origin'] || req.headers['referer'] || ''\n      if (origin !== '') {\n        try {\n          const hostname = new URL(origin).hostname\n          if (!['127.0.0.1', 'localhost', '::1'].includes(hostname)) return json(res, 403, { ok: false, reason: 'origin' })\n        } catch (err) {\n          return json(res, 403, { ok: false, reason: 'origin' })\n        }\n      }\n      const args = await readBody(req)\n      if (args === null || typeof args !== 'object') return json(res, 400, { ok: false, reason: 'body' })\n      const id = typeof args.approvalId === 'string' ? args.approvalId : ''\n      const rec = pending.get(id)\n      if (rec === undefined) return json(res, 200, { ok: false, reason: 'unknown' })\n      if (rec.decision !== null) return json(res, 200, { ok: false, reason: 'already-decided' })\n      const decision = args.decision === 'approved' ? 'approved' : 'denied'\n      // A5/A6：记忆写入强制绑定服务端 rec.commandHash（忽略客户端提供的任意键）；\n      // 高风险（引导类/高严重度）命令一律不可记忆\n      if (args.remember === true && rec.severity !== 'high' && (rec.category || '').indexOf('boot:') !== 0) {\n        remembered.set(rec.commandHash, decision)\n        audit('REMEMBER key=' + rec.commandHash + ' category=' + rec.category + ' -> ' + decision)\n      }\n      rec.settle(decision)\n      json(res, 200, { ok: true })\n    }\n  }), 'afaccess: decide route')\n```\n\n</details>\n\n#### 缺口\n\n- 真实宿主额外保护和可利用攻击链未完整核查\n  **影响：**不宜宣称已实测绕过，但也不能以此推荐为安全控制\n  **进一步探讨：**先修复强制边界，再做独立红队/故障注入与宿主验收\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：9ad55ba2bc9c892503741b3539f4eddda634adb29ec5835ecc59f8070cba8fc2。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 4 | 390 | — | — | 4770 |\n| .js | source | 3 | 1255 | 1052 | 154 | — |\n| .mjs | source | 3 | 1098 | 881 | 137 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 预设安装 | 增加近全权限档 | 基础为 danger-full-access/never |\n| shell 审查 | 拦部分命名 shell 工具 | 新工具/无 session/无 command 可直通 |\n| 审批记忆 | 减少重复确认 | 仅 32 位哈希绑定 |\n| 审批面板 | 展示并处理命令 | 独立身份/Origin 绑定依赖 Host |\n\n## 工程亮点\n\n确定性风险先于 LLM、工具禁用子代理及审批超时可借鉴；安全门控必须放在统一执行边界。详见[Q05](#research-q05)。\n\n固定版本跨插件比较保留为未验证设计推演。跨插件固定源码比较中，本项记住审批与LLM裁决仅用32位命令文本短哈希，未绑定会话、cwd和脚本版本；余额侧栏按probe缓存并取首匹配route凭据；zcode-usage-stats把磁盘缓存固定到HOME下web profile且模块缓存未按当前sessionPersistence分区；plugin-balance把请求给出的目标URL/path与header或服务端凭据组合，Bearer随目标发送。四者分别是权限决定、账户归属、历史范围及凭据目的地问题，不能用同一种缓存优化替代各自边界。zcode入口已有宿主requestRejection，不能把缓存范围问题扩写为匿名可访问。由此保留未验证假设，为操作声明必要上下文身份与版本（会话、规范工作区/脚本摘要、route与非秘密账户指纹、目标origin、采样范围和时间），缺身份拒复用，变化即使旧结论失效；凭据目的地还必须独立验证允许接收方。最小对照用两个工作区同名异内容脚本、双route账户切换、双profile同HOME缓存以及伪造custom目标，要求不误批、不混数、不误发秘密，同时测维护与恢复工时。若绑定后仍误归属/误授权，或维护成本超过收益则否定；本轮未执行这些对照。\n\n比较依据见[Alnita-M/dsh-Almost_Full_Access](https://github.com/Alnita-M/dsh-Almost_Full_Access/blob/269ab865fd02a4dded171eaecc40b1255f5df227/lib/index.js#L276-L291)、[AlienGene/dsh-llm-balance-siderbar](https://github.com/AlienGene/dsh-llm-balance-siderbar/blob/b35aa1e8501051ab3541cea2f43f0609b214f9a1/src/state.ts#L87-L101)、[Amer-CN/zcode-usage-stats](https://github.com/Amer-CN/zcode-usage-stats/blob/9a4381658e754515dac50611da461970462032ec/lib/index.mjs#L280-L308)、[Andrew111888/dsh-plugin-balance](https://github.com/Andrew111888/dsh-plugin-balance/blob/96bb1592c949456aa37ccc3a296085f59df2ee9c/lib/index.js#L726-L759)。旧原文副本缺失，本轮重新保存固定 Git 原文，不声称旧副本逐字一致。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、SECURITY.md、package.json、lib/index.js、lib/analyze.js、lib/client.js、scripts/install.mjs、scripts/patch-lib.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：只读核固定提交 README、SECURITY、Host/Client、规则分析、安装器与 patch；未执行目标测试、真实宿主/攻击链或安装；旧 META 仅复用。\n- 下一步：隔离 VM 中枚举执行工具/参数、session 故障、哈希碰撞、跨会话审批和路由认证，核未授权副作用为零并比较审批延迟。\n",
         "metadata": {
             "repository": "Alnita-M/dsh-Almost_Full_Access",
             "repository_id": 1336031182,
@@ -495,14 +603,14 @@
             "repository": "Alnita-M/dsh-Almost_Full_Access",
             "path": "",
             "revision": "269ab865fd02a4dded171eaecc40b1255f5df227",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "bbd06b3c1f327b55cd69bf2bbe46dee62dcedbf3c7942567da6adffb3b075038",
                 "code": "269ab865fd02a4dded171eaecc40b1255f5df227",
                 "maintenance": "3943076d82f102182629ea05f02514d25efa780643993cadcf4ff1bf8127ebef"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

@@ -13,7 +13,7 @@
             "name": "chicheng-stats",
             "entry_type": "plugin",
             "technical_category": "observability-cost",
-            "business_category": "infrastructure",
+            "business_category": "office-operations",
             "tags": [],
             "availability": "unknown",
             "research_depth": "source",
@@ -24,36 +24,82 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-02-github-1335725068-root-directory-0",
+                    "id": "2026-10-22-02-github-1335725068-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T03:17:00.309Z",
+                    "retrieved_at": "2026-10-22T11:05:12.269Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-02-github-1335725068-root-author",
+                    "id": "2026-10-22-02-github-1335725068-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/534119219/chicheng-stats/blob/53ee7d9bc356b16f7f461caeb89b85bd79c9a608/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/534119219/chicheng-stats",
+                            "commit": "53ee7d9bc356b16f7f461caeb89b85bd79c9a608",
+                            "path": "README.md",
+                            "content_sha256": "ca02ca74f28ce25f6339283f4fc13b7a2ed60a3732552586ce8d1cd9380b140a"
+                        }
+                    ],
                     "revision": "53ee7d9bc356b16f7f461caeb89b85bd79c9a608",
-                    "captured_at": "2026-10-21T03:17:00.309Z",
-                    "summary": "在 DSH 汇总请求用量、展示趋势和模型明细，并支持历史会话扫描。",
-                    "artifact": "data/runs/2026-10-21-02/snapshots/534119219--chicheng-stats/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T11:05:12.269Z",
+                    "summary": "DSH Web 全局用量统计、历史会话回填和可配置侧栏面板，附 DeepSeek 平台余额提示。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/534119219--chicheng-stats/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-02-github-1335725068-root-source",
+                    "id": "2026-10-22-02-github-1335725068-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/534119219/chicheng-stats/blob/53ee7d9bc356b16f7f461caeb89b85bd79c9a608/lib/index.js",
+                    "url": "https://github.com/534119219/chicheng-stats/blob/53ee7d9bc356b16f7f461caeb89b85bd79c9a608/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/534119219/chicheng-stats",
+                            "commit": "53ee7d9bc356b16f7f461caeb89b85bd79c9a608",
+                            "path": "README.md",
+                            "content_sha256": "ca02ca74f28ce25f6339283f4fc13b7a2ed60a3732552586ce8d1cd9380b140a"
+                        },
+                        {
+                            "repository_url": "https://github.com/534119219/chicheng-stats",
+                            "commit": "53ee7d9bc356b16f7f461caeb89b85bd79c9a608",
+                            "path": "lib/index.js",
+                            "content_sha256": "97c469a7738b65f2871aebdba7570f2cf7ea137d064fe7b8422e6390c41c88df"
+                        },
+                        {
+                            "repository_url": "https://github.com/534119219/chicheng-stats",
+                            "commit": "53ee7d9bc356b16f7f461caeb89b85bd79c9a608",
+                            "path": "lib/client.js",
+                            "content_sha256": "484d0d421a7988ec5679eb42f03371dd9a47e83b08bb1a101428e2fb11132f0d"
+                        },
+                        {
+                            "repository_url": "https://github.com/534119219/chicheng-stats",
+                            "commit": "53ee7d9bc356b16f7f461caeb89b85bd79c9a608",
+                            "path": "test-backfill.mjs",
+                            "content_sha256": "afe50e3a0fcef24b8b7d78fb1630da1f02f3a5f151db6b2bb0a76c2a90ed1883"
+                        },
+                        {
+                            "repository_url": "https://github.com/534119219/chicheng-stats",
+                            "commit": "53ee7d9bc356b16f7f461caeb89b85bd79c9a608",
+                            "path": "package.json",
+                            "content_sha256": "23b847b29a7afa272f5fa490f521ac2c3abb8dd7182199d52a766a784af731a2"
+                        },
+                        {
+                            "repository_url": "https://github.com/534119219/chicheng-stats",
+                            "commit": "53ee7d9bc356b16f7f461caeb89b85bd79c9a608",
+                            "path": "cordis.patch.yml",
+                            "content_sha256": "4a463f21f2ce207a77c60dfbaae91fdc69b0876e96413a4b057366a01de33a3a"
+                        }
+                    ],
                     "revision": "53ee7d9bc356b16f7f461caeb89b85bd79c9a608",
-                    "captured_at": "2026-10-21T03:17:00.309Z",
-                    "summary": "核查 lib/index.js、lib/client.js、test-backfill.mjs、package.json；lib/index.js createFold按session seq水位消费事件，用turn/step替换近期重复usage并从request/header识别模型/提供方；扫描zstd会话补充事件、持久化聚合与明细，client展示筛选趋势。",
-                    "artifact": "data/runs/2026-10-21-02/snapshots/534119219--chicheng-stats/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T11:05:12.269Z",
+                    "summary": "核查 README.md、lib/index.js、lib/client.js、test-backfill.mjs、package.json、cordis.patch.yml；订阅 session/event，扫描会话日志、seq 水位去重并持久化；Web API 驱动 UI。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/534119219--chicheng-stats/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "抽读fold、水位/替换、zstd与Electron分支、持久化及平台凭据入口；未扫描真实日志、未读取本机浏览器token或调用平台。",
+                        "静态审阅固定提交；未运行真实会话/浏览器或导入 token。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +110,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "想了解不同会话和模型资源消耗的用户查看用量趋势与请求明细；用于排查资源分布，账单应与平台实际计费分别核对。",
+                    "text": "跨 Web/headless 会话查看 token 请求趋势、模型/提供方分布。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1335725068-root-source"
+                        "2026-10-22-02-github-1335725068-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +121,16 @@
                             "fingerprint": "53ee7d9bc356b16f7f461caeb89b85bd79c9a608"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:17:00.309Z",
+                    "reviewed_at": "2026-10-22T11:05:12.269Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "lib/index.js createFold按session seq水位消费事件，用turn/step替换近期重复usage并从request/header识别模型/提供方；扫描zstd会话补充事件、持久化聚合与明细，client展示筛选趋势。",
+                    "text": "订阅 session/event，扫描会话日志、seq 水位去重并持久化；Web API 驱动 UI。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1335725068-root-source"
+                        "2026-10-22-02-github-1335725068-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +139,16 @@
                             "fingerprint": "53ee7d9bc356b16f7f461caeb89b85bd79c9a608"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:17:00.309Z",
+                    "reviewed_at": "2026-10-22T11:05:12.269Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "抽读fold、水位/替换、zstd与Electron分支、持久化及平台凭据入口；未扫描真实日志、未读取本机浏览器token或调用平台。",
+                    "text": "静态审阅固定提交；未运行真实会话/浏览器或导入 token。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1335725068-root-source"
+                        "2026-10-22-02-github-1335725068-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +157,16 @@
                             "fingerprint": "53ee7d9bc356b16f7f461caeb89b85bd79c9a608"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:17:00.309Z",
+                    "reviewed_at": "2026-10-22T11:05:12.269Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "web bundle，依赖Node zstd支持；Desktop默认跳过历史解压，可显式开扫描但作者指出native崩溃风险，不能隐去该条件。",
+                    "text": "MIT；leveldown 原生依赖可能影响跨平台安装。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1335725068-root-source"
+                        "2026-10-22-02-github-1335725068-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +175,16 @@
                             "fingerprint": "53ee7d9bc356b16f7f461caeb89b85bd79c9a608"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:17:00.309Z",
+                    "reviewed_at": "2026-10-22T11:05:12.269Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "首次核对Node/宿主、日志规模与统计定义；持续写聚合/明细并周期扫日志，API和浏览器凭据导入还需单独管理。实际CPU/内存、现金和节约额度均未测。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | Node/leveldown原生依赖、首次历史读取解压与统计磁盘；价格未知 | 安装Web profile、核统计目录/日志格式与凭证授权，工时未知 | Electron默认跳过zstd；安装和覆盖率需按环境检查 |\n| 持续使用 | 实时折叠、每5分钟扫描变化日志、聚合及最多3万明细持久化；可选平台API访问 | 检口径与统计新鲜度，工时未知 | 水位上限5000；净CPU/IO与平台API配额费用未知 |\n| 失败恢复 | 重扫/重建、备份恢复及可能的凭证轮换资源，金额未知 | 核漏计重计、同名目录与桌面历史缺口；核临时副本/凭证访问，工时未知 | 不能据当前聚合自行推回完整明细；停用/重启不自动证明对账恢复 |",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1335725068-root-source"
+                        "2026-10-22-02-github-1335725068-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +193,16 @@
                             "fingerprint": "53ee7d9bc356b16f7f461caeb89b85bd79c9a608"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:17:00.309Z",
+                    "reviewed_at": "2026-10-22T11:05:12.269Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "想查看DSH资源分布的人可先对一个已知会话核对请求数和token；Desktop先确认是否有历史回填，平台余额和本地统计分开看，不用它直接结算费用。",
+                    "text": "先禁用平台 token 导入，仅测本地统计并对账；再评估同源 API 和浏览器凭据边界；详见[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1335725068-root-source"
+                        "2026-10-22-02-github-1335725068-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +211,16 @@
                             "fingerprint": "53ee7d9bc356b16f7f461caeb89b85bd79c9a608"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:17:00.309Z",
+                    "reviewed_at": "2026-10-22T11:05:12.269Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "能把消费集中到模型/时间维度辅助定位；总量正确性、计费价目及其他进程覆盖仍受事件、扫描与运行时限制。",
+                    "text": "可视化本地用量趋势，不代表官方准确账单。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1335725068-root-source"
+                        "2026-10-22-02-github-1335725068-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +229,16 @@
                             "fingerprint": "53ee7d9bc356b16f7f461caeb89b85bd79c9a608"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:17:00.309Z",
+                    "reviewed_at": "2026-10-22T11:05:12.269Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "纯fold、可替换用量样本与逐帧zstd处理值得借鉴；watermark剪枝、lastUsage内存状态和聚合/明细分开持久化需要在恢复语义中一起验证。",
+                    "text": "seq 水位、(turn,step) last-wins、zstd 多帧解码、定时扫描和 JSON 持久化。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1335725068-root-source"
+                        "2026-10-22-02-github-1335725068-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +247,16 @@
                             "fingerprint": "53ee7d9bc356b16f7f461caeb89b85bd79c9a608"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:17:00.309Z",
+                    "reviewed_at": "2026-10-22T11:05:12.269Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
-                    "topic": "technical_innovation",
-                    "basis": "interpretation",
-                    "text": "相对只看当前对话用量，增量是共享fold同时接实时事件和日志扫描，以水位降低重复摄取，并提供跨会话模型/提供方明细。token计量沿用宿主事件语义，平台余额来自外部API；本插件贡献在归集、呈现和回填工程。",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "把实时/历史用量与 Web 面板结合，详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1335725068-root-source"
+                        "2026-10-22-02-github-1335725068-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +265,16 @@
                             "fingerprint": "53ee7d9bc356b16f7f461caeb89b85bd79c9a608"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:17:00.309Z",
+                    "reviewed_at": "2026-10-22T11:05:12.269Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
-                    "basis": "interpretation",
-                    "text": "累计量能否在重启与跨进程场景保持可核对？lastUsage仅内存保存，重启后同turn/step的更高seq补报可能无法替换旧计数；watermarks超过5000会剪掉旧会话，重新扫描可能再计。decodeSessionLog在Electron默认返回空数组以避免zstd崩溃，因此README“包括其他进程”不能无条件适用于Desktop。余额差估算也可能受充值和外部请求影响。",
+                    "basis": "supported",
+                    "text": "桌面 zstd 历史默认跳过、水位淘汰可重计，自动导入平台 token 经同源 API 返回给浏览器；详见[Q02](#research-q02)、[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1335725068-root-source"
+                        "2026-10-22-02-github-1335725068-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +283,16 @@
                             "fingerprint": "53ee7d9bc356b16f7f461caeb89b85bd79c9a608"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:17:00.309Z",
+                    "reviewed_at": "2026-10-22T11:05:12.269Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
-                    "topic": "technical_innovation",
+                    "topic": "engineering",
                     "basis": "unverified",
-                    "text": "待验证假设：用持久请求键保存最后用量版本，将扫描水位与聚合更新做同一可恢复提交，可使重启后补报替换与历史重扫可核对。依据是当前持久水位与内存lastUsage不对称，未实现。对照实时chunk后重启再final、超过5000会话重扫和异常中断，比较总量与独立事件账本；权衡是台账体积与迁移维护成本。",
+                    "text": "以稳定会话复合键和持久去重索引提升准确度，并将 token 导入限定到明确授权流程且不向浏览器返回原值；待验证，详见[Q02](#research-q02)、[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1335725068-root-source"
+                        "2026-10-22-02-github-1335725068-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +301,15 @@
                             "fingerprint": "53ee7d9bc356b16f7f461caeb89b85bd79c9a608"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:17:00.309Z",
+                    "reviewed_at": "2026-10-22T11:05:12.269Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T03:17:00.309Z",
+            "last_checked_at": "2026-10-22T11:05:12.269Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "53ee7d9bc356b16f7f461caeb89b85bd79c9a608",
-                "reviewed_at": "2026-10-21T03:17:00.309Z",
+                "reviewed_at": "2026-10-22T11:05:12.269Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -277,59 +323,59 @@
                         "novelty": 9,
                         "mechanism": 15,
                         "transferability": 10,
-                        "simplification": 4
+                        "simplification": 8
                     },
-                    "rationale": "novelty 小幅：事件计量在DSH适配；mechanism 实质：实时/扫描共享fold与水位，但重启替换需验证；transferability 实质：日志归集模式可复用；simplification 小幅：统一展示但多存储维护复杂。",
+                    "rationale": "novelty以独立日志统计脚本/厂商用量页为参照，实时与历史汇入本地视图属于常见遥测集成，9（Q01）。mechanism以简单累加为参照，seq水位、相邻turn/step替换、变化文件扫描构成具体汇合机制15；复杂代码本身不算创新，淘汰与身份缺口仍在（Q01/Q02）。transferability以单会话统计为参照，模型/提供方和日聚合可供多视图复用10，但DSH事件/日志、Node zstd和leveldown约束迁移（Q01/Q03）。simplification以人工拼接实时和历史数据为参照，一个面板减少组装步骤8；门禁、原生依赖和对账负担不消失（Q03/Q04）。",
                     "basis": "interpretation",
-                    "score": 38,
+                    "score": 42,
                     "evidence_ids": [
-                        "2026-10-21-02-github-1335725068-root-source"
+                        "2026-10-22-02-github-1335725068-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 9,
-                        "delivery": 15,
-                        "reach": 10,
+                        "workflow": 26,
+                        "delivery": 8,
+                        "reach": 5,
                         "economics": 4
                     },
-                    "rationale": "workflow 小幅：辅助观察，未重组执行；delivery 实质：跨会话明细和趋势可用于核对；reach 实质：界面降低读日志门槛；economics 小幅：帮助找消耗但不直接改变计费。",
+                    "rationale": "workflow以逐会话日志加厂商用量页手工汇总为参照，实时和历史归集后按模型/提供方/日/请求查看，改变跨会话调查交接26；厂商账单准确性未证（Q01/Q02）。delivery以分散会话日志为参照，新增可复用的本地跨会话聚合及请求明细视图8，价值单位从单日志变成范围统计；不是官方账单或硬预算验收，明细最多3万（Q01/Q02）。reach以需要理解日志格式并写统计脚本的DSH操作者为参照，UI/API降低查询门槛5；浏览器token自动读取不当作拓客增量，桌面历史受限（Q02/Q03）。economics以每次人工/脚本全量读取历史为参照，mtime:size跳过未变文件和水位复用已处理事件改变重复计算组织，有限增量4；变化文件整读、周期扫描/写盘与有界去重代价仍在，净节省未知，不能凭用量可视化声称账单下降（Q01/Q04）。",
                     "basis": "interpretation",
-                    "score": 38,
+                    "score": 43,
                     "evidence_ids": [
-                        "2026-10-21-02-github-1335725068-root-source"
+                        "2026-10-22-02-github-1335725068-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "trial",
-                "reason": "想看资源分布者可用一个已知会话试用对账；Desktop先确认历史回填，重启补报与旧水位重复需核查，勿结算费用。",
+                "decision": "observe",
+                "reason": "先在隔离 Web Profile 对账并审阅 token 导入/路由访问控制；只使用本地用量视图时可不配置平台 token。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "跨会话模型时间用量趋势任务明确。"
+                        "rationale": "用量统计需求明确。"
                     },
                     "advantage": {
-                        "score": 13,
-                        "rationale": "共享fold实时加扫描方便归集，但统计并非供应商账单。"
+                        "score": 19,
+                        "rationale": "实时与历史聚合。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "seq水位和内存lastUsage可查，Desktop默认跳过zstd解码边界明确。"
+                        "rationale": "源码与测试文件可查，未独立对账。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "持续日志IO与运行时兼容，凭据导入和重复计数需人工管理。"
+                        "score": 5,
+                        "rationale": "日志扫描、持久化和平台 token 风险。"
                     }
                 },
-                "score": 59,
+                "score": 60,
                 "revision": "53ee7d9bc356b16f7f461caeb89b85bd79c9a608",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T11:05:12.269Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-02-github-1335725068-root-source"
+                    "2026-10-22-02-github-1335725068-root-source"
                 ],
                 "dependencies": [
                     {
@@ -354,91 +400,63 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T03:00:27Z",
-            "analysis_sha256": "5d2c25f033536c7907579a52b2361eac0a1e223f8c888c0c28567dd0d068064c"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "89c83073cc2a0bb28716a183ea58ed9f1085adfd1b4be07b56e95be95f6263d1"
         },
         "publication.metadata": "data/plugins/534119219--chicheng-stats/META.json",
         "publication.summaries": {
-            "text": "在 DSH 汇总请求用量、展示趋势和模型明细，并支持历史会话扫描。",
+            "text": "DSH Web 全局用量统计、历史会话回填和可配置侧栏面板，附 DeepSeek 平台余额提示。",
             "revision": "53ee7d9bc356b16f7f461caeb89b85bd79c9a608",
             "source_url": "https://github.com/534119219/chicheng-stats/blob/53ee7d9bc356b16f7f461caeb89b85bd79c9a608/README.md"
         },
         "publication.capabilities": {
             "revision": "53ee7d9bc356b16f7f461caeb89b85bd79c9a608",
             "items": {
-                "事件监听": "实时请求usage与模型头信息归集。",
-                "后台": "条件性历史日志回填与周期扫描。",
-                "Host 路由": "用量查询与可选平台数据接口。",
-                "界面": "侧栏统计、趋势与请求筛选。"
-            }
+                "Host 路由": "POST /stats/api/*，有Host/Origin/Fetch Metadata门禁，外层身份未知",
+                "界面": "用量侧栏和统计弹窗",
+                "事件监听": "session/event实时折叠",
+                "后台": "启动回填及5分钟变化日志扫描，退出清理定时器并请求flush"
+            },
+            "table": "| 能力 | 实现 | 边界 |\n| --- | --- | --- |\n| 用量聚合 | 事件+历史扫描 | 非官方账单 |\n| 平台悬停 | 余额/Token API | token 权限 |\n| 历史回填 | zstd/JSONL | 桌面默认跳过 zstd |"
         },
         "publication.advice": {
             "revision": "53ee7d9bc356b16f7f461caeb89b85bd79c9a608",
-            "text": "想查看DSH资源分布的人可先对一个已知会话核对请求数和token；Desktop先确认是否有历史回填，平台余额和本地统计分开看，不用它直接结算费用。"
+            "text": "先禁用平台 token 导入，仅测本地统计并对账；再评估同源 API 和浏览器凭据边界；详见[Q03](#research-q03)。"
         },
         "registry": "data/plugins/534119219--chicheng-stats",
-        "reports": "# chicheng-stats\n\n> 在 DSH 汇总请求用量、展示趋势和模型明细，并支持历史会话扫描。\n\n## 使用建议\n\n想查看DSH资源分布的人可先对一个已知会话核对请求数和token；Desktop先确认是否有历史回填，平台余额和本地统计分开看，不用它直接结算费用。\n\n**核查状态**：已抽读固定版本源码，未安装、运行目标插件或真实宿主验收。源码确认事件归集与回填分支；未跑日志回填或核对平台账单，Electron默认回填被禁用，跨进程覆盖有条件。未来可恢复请求台账是假设。\n\n- **用途**：想了解不同会话和模型资源消耗的用户查看用量趋势与请求明细；用于排查资源分布，账单应与平台实际计费分别核对。\n- **亮点**：相对只看当前对话用量，增量是共享fold同时接实时事件和日志扫描，以水位降低重复摄取，并提供跨会话模型/提供方明细。token计量沿用宿主事件语义，平台余额来自外部API；本插件贡献在归集、呈现和回填工程。\n- **思考**：累计量能否在重启与跨进程场景保持可核对？lastUsage仅内存保存，重启后同turn/step的更高seq补报可能无法替换旧计数；watermarks超过5000会剪掉旧会话，重新扫描可能再计。decodeSessionLog在Electron默认返回空数组以避免zstd崩溃，因此README“包括其他进程”不能无条件适用于Desktop。余额差估算也可能受充值和外部请求影响。\n- **建议**：待验证假设：用持久请求键保存最后用量版本，将扫描水位与聚合更新做同一可恢复提交，可使重启后补报替换与历史重扫可核对。依据是当前持久水位与内存lastUsage不对称，未实现。对照实时chunk后重启再final、超过5000会话重扫和异常中断，比较总量与独立事件账本；权衡是台账体积与迁移维护成本。\n\n## 当前插件分析\n\n### 场景与替代办法\n\n想了解不同会话和模型资源消耗的用户查看用量趋势与请求明细；用于排查资源分布，账单应与平台实际计费分别核对。\n\n参照当前会话token显示、读日志脚本与外部平台账单；不把平台实际计费能力归于本插件。\n\n### 能力、流程与依赖\n\nlib/index.js createFold按session seq水位消费事件，用turn/step替换近期重复usage并从request/header识别模型/提供方；扫描zstd会话补充事件、持久化聚合与明细，client展示筛选趋势。\n\n- **事件监听**：实时请求usage与模型头信息归集。\n- **后台**：条件性历史日志回填与周期扫描。\n- **Host 路由**：用量查询与可选平台数据接口。\n- **界面**：侧栏统计、趋势与请求筛选。\n\nDSH session/event和会话日志格式、Node zstd、客户端图表；DeepSeek余额/平台明细为可选凭据路径，浏览器token导入不是统计核心必需。\n\n实时事件或历史扫描→顺序水位过滤→usage归集与近期重复替换→写聚合/明细→UI按时间/提供方筛选；平台API另取余额或估算，不与本地计数等同。\n\nweb bundle，依赖Node zstd支持；Desktop默认跳过历史解压，可显式开扫描但作者指出native崩溃风险，不能隐去该条件。\n\n### 效果、成本与限制\n\n能把消费集中到模型/时间维度辅助定位；总量正确性、计费价目及其他进程覆盖仍受事件、扫描与运行时限制。\n\n首次核对Node/宿主、日志规模与统计定义；持续写聚合/明细并周期扫日志，API和浏览器凭据导入还需单独管理。实际CPU/内存、现金和节约额度均未测。\n\n累计量能否在重启与跨进程场景保持可核对？lastUsage仅内存保存，重启后同turn/step的更高seq补报可能无法替换旧计数；watermarks超过5000会剪掉旧会话，重新扫描可能再计。decodeSessionLog在Electron默认返回空数组以避免zstd崩溃，因此README“包括其他进程”不能无条件适用于Desktop。余额差估算也可能受充值和外部请求影响。\n\n### 核心贡献与工程亮点\n\n相对只看当前对话用量，增量是共享fold同时接实时事件和日志扫描，以水位降低重复摄取，并提供跨会话模型/提供方明细。token计量沿用宿主事件语义，平台余额来自外部API；本插件贡献在归集、呈现和回填工程。\n\n纯fold、可替换用量样本与逐帧zstd处理值得借鉴；watermark剪枝、lastUsage内存状态和聚合/明细分开持久化需要在恢复语义中一起验证。\n\n源码依据：[lib/index.js](https://github.com/534119219/chicheng-stats/blob/53ee7d9bc356b16f7f461caeb89b85bd79c9a608/lib/index.js)、[lib/client.js](https://github.com/534119219/chicheng-stats/blob/53ee7d9bc356b16f7f461caeb89b85bd79c9a608/lib/client.js)、[test-backfill.mjs](https://github.com/534119219/chicheng-stats/blob/53ee7d9bc356b16f7f461caeb89b85bd79c9a608/test-backfill.mjs)、[package.json](https://github.com/534119219/chicheng-stats/blob/53ee7d9bc356b16f7f461caeb89b85bd79c9a608/package.json)。\n\n## 未来设计假设（未验证）\n\n待验证假设：用持久请求键保存最后用量版本，将扫描水位与聚合更新做同一可恢复提交，可使重启后补报替换与历史重扫可核对。依据是当前持久水位与内存lastUsage不对称，未实现。对照实时chunk后重启再final、超过5000会话重扫和异常中断，比较总量与独立事件账本；权衡是台账体积与迁移维护成本。\n\n隔离合成日志核对chunk/final替换、重启、乱序、更换模型、跨日和水位剪枝，分别测试Node与Electron；本轮无目标执行或账单校验。\n\n## 核查说明\n\n- 版本号：0.10.4；版本日期：2026-08-26（固定提交日期，北京时间；不是包发布日期）。\n- 固定版本：[53ee7d9b](https://github.com/534119219/chicheng-stats/tree/53ee7d9bc356b16f7f461caeb89b85bd79c9a608)；本次截止 2026-10-21T03:00:27Z。\n- 已检查：README、package与以上源码路径及固定组件统计。\n- 未执行：目标代码、目标测试、安装、真实宿主或第三方服务验证。\n- 范围限制：抽读fold、水位/替换、zstd与Electron分支、持久化及平台凭据入口；未扫描真实日志、未读取本机浏览器token或调用平台。\n- 证据边界：源码与作者说明不等于独立效果验证；GitHub/npm指标不证明采用或收益。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：4636ee551a1f5e5b1a4e24c48dc312faed2aec62ecd64e9506a7b51f9728907b。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 3853 | 3392 | 265 | — |\n| .md | source | 1 | 194 | — | — | 1722 |\n| .mjs | source | 1 | 60 | 50 | 5 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n",
+        "reports": "# chicheng-stats\n\n> DSH Web 全局用量统计、历史会话回填和可配置侧栏面板，附 DeepSeek 平台余额提示。\n\n## 研究范围\n\n- **仓库**：[534119219/chicheng-stats](https://github.com/534119219/chicheng-stats)\n- **版本号**：0.10.4（[固定提交 53ee7d9bc356b16f7f461caeb89b85bd79c9a608](https://github.com/534119219/chicheng-stats/tree/53ee7d9bc356b16f7f461caeb89b85bd79c9a608)）\n- **版本日期**：2026-08-26（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n源码支持事件统计与浏览器 token 导入；全量准确度和门禁实效未验证。\n\n## 洞察短评\n\n- **用途**：跨 Web/headless 会话查看 token 请求趋势、模型/提供方分布。\n- **亮点**：把实时/历史用量与 Web 面板结合，详见[Q01](#research-q01)。\n- **思考**：桌面 zstd 历史默认跳过、水位淘汰可重计，自动导入平台 token 经同源 API 返回给浏览器；详见[Q02](#research-q02)、[Q03](#research-q03)。\n- **建议**：以稳定会话复合键和持久去重索引提升准确度，并将 token 导入限定到明确授权流程且不向浏览器返回原值；待验证，详见[Q02](#research-q02)、[Q03](#research-q03)。\n\n采用建议：先禁用平台 token 导入，仅测本地统计并对账；再评估同源 API 和浏览器凭据边界；详见[Q03](#research-q03)。\n\n## 核心贡献\n\n把实时/历史用量与 Web 面板结合，详见[Q01](#research-q01)。\n\n## 关键质疑\n\n桌面 zstd 历史默认跳过、水位淘汰可重计，自动导入平台 token 经同源 API 返回给浏览器；详见[Q02](#research-q02)、[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n以稳定会话复合键和持久去重索引提升准确度，并将 token 导入限定到明确授权流程且不向浏览器返回原值；待验证，详见[Q02](#research-q02)、[Q03](#research-q03)。\n\n对账、同名目录/5000 会话、桌面回填、路由授权与 token 导入测试。\n\n## 场景与替代办法\n\n跨 Web/headless 会话查看 token 请求趋势、模型/提供方分布。\n\n手工查会话日志或厂商用量页。\n\n## 依赖与流程\n\nDSH session/event、webServer/webRuntime/credentials、Node zstd、leveldown；浏览器 Profile 可选。\n\n启动回填→实时采集/周期扫描→UI/API 查看；可选平台数据悬停。\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | Node/leveldown原生依赖、首次历史读取解压与统计磁盘；价格未知 | 安装Web profile、核统计目录/日志格式与凭证授权，工时未知 | Electron默认跳过zstd；安装和覆盖率需按环境检查 |\n| 持续使用 | 实时折叠、每5分钟扫描变化日志、聚合及最多3万明细持久化；可选平台API访问 | 检口径与统计新鲜度，工时未知 | 水位上限5000；净CPU/IO与平台API配额费用未知 |\n| 失败恢复 | 重扫/重建、备份恢复及可能的凭证轮换资源，金额未知 | 核漏计重计、同名目录与桌面历史缺口；核临时副本/凭证访问，工时未知 | 不能据当前聚合自行推回完整明细；停用/重启不自动证明对账恢复 |\n\n可视化本地用量趋势，不代表官方准确账单。\n\n## 研究问题与完整回答\n\n**插件研究总目标：**核实本地事件统计的覆盖率与平台 token 自动导入边界。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 全局用量是如何累计并回填的？\n\n**研究主题：**场景与需求、贡献与相对优势、功能与机制\n\n#### 完整回答\n\nHost 端监听 session/event 并按 session 的 seq 水位去重，按 turn/step 对相邻重复 usage 样本 last-wins；记录日聚合、请求明细、模型/提供方和时延。启动后扫描 $DSH_HOME/sessions 的 JSONL/zstd 日志并每 5 分钟按 mtime:size 轻扫，写入 stats 下 store/requests/settings。浏览器侧栏组件与统计弹窗经 /stats/api 读数据。此为本地事件统计，不等于厂商账单；README 中“所有会话”取决于日志可读、格式兼容和水位未丢。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:138-269](https://github.com/534119219/chicheng-stats/blob/53ee7d9bc356b16f7f461caeb89b85bd79c9a608/lib/index.js#L138-L269)\n\n事件 fold/水位/请求样本。\n\n<details>\n<summary>查看原文（132行）</summary>\n\n```text\n/**\n * The counting engine. Events must be fed in ascending seq order per session\n * (live events arrive in order; scans replay logs in order); the fold is\n * synchronous, so live and scan ingestion share one instance without races.\n */\nfunction createFold(initial = {}) {\n  const days = new Map(Object.entries(initial.days ?? {}));\n  const watermarks = new Map(Object.entries(initial.watermarks ?? {}));\n  // In-memory only: a replace (same turn/step re-report) is always adjacent\n  // in seq order, and the watermark makes replay impossible after restart.\n  const lastUsage = new Map();\n  // Provider model in force per session (from request/header snapshots).\n  const sessionModels = new Map();\n  // Provider in force per session (from request/header snapshots).\n  const sessionProviders = new Map();\n  // Per-request detail records (bounded ring; persisted to a separate file).\n  const records = [];\n  // Per-step timing: step/start → first content chunk (TTFT) and → usage\n  // sample (total duration). Keyed `${sessionId}|${turn}|${step}`; entries are\n  // removed on step/end so the maps stay bounded by in-flight steps.\n  const stepStarts = new Map();\n  const stepFirstChunks = new Map();\n\n  /** @returns true when the event contributed a usage sample. */\n  function ingest(sessionId, event) {\n    // Track the model and provider each request was built under.\n    if (event?.type === \"request/header\") {\n      const model = modelOfEvent(event);\n      if (model !== null) sessionModels.set(sessionId, model);\n      const provider = providerOfEvent(event);\n      if (provider !== null) sessionProviders.set(sessionId, provider);\n    }\n    const turn = event?.data?.turn;\n    const step = event?.data?.step;\n    const ts = Number.isFinite(event?.time) ? event.time : Date.now();\n    if (turn !== undefined && step !== undefined) {\n      const stepKey = `${sessionId}|${turn}|${step}`;\n      if (event?.type === \"step/start\") {\n        stepStarts.set(stepKey, ts);\n        stepFirstChunks.delete(stepKey);\n      } else if (event?.type === \"step/end\") {\n        stepStarts.delete(stepKey);\n        stepFirstChunks.delete(stepKey);\n      } else if (event?.type === \"assistant/chunk\" && !stepFirstChunks.has(stepKey)) {\n        const chunk = event?.data?.chunk;\n        if (chunk !== null && typeof chunk === \"object\" && CONTENT_CHUNK_TYPES.has(chunk.type)) {\n          stepFirstChunks.set(stepKey, ts);\n        }\n      }\n    }\n    const usage = usageOfEvent(event);\n    if (usage === undefined) return false;\n    const seq = event?.seq;\n    if (Number.isFinite(seq)) {\n      const seen = watermarks.get(sessionId) ?? -1;\n      if (seq <= seen) return false;\n      watermarks.set(sessionId, seq);\n      if (watermarks.size > 5000) {\n        // prune oldest-inserted watermarks; lost entries only risk re-counting\n        // after a restart, and their sessions are re-scanned from scratch\n        const firstKey = watermarks.keys().next().value;\n        if (firstKey !== undefined) watermarks.delete(firstKey);\n      }\n    }\n    const day = dayKey(ts);\n    const tokens = usageTokens(usage);\n    const input = usage.inputTokens ?? 0;\n    const cacheRead = usage.cacheReadTokens ?? 0;\n    const cacheWrite = usage.cacheWriteTokens ?? 0;\n    const output = usage.outputTokens ?? 0;\n    const model = sessionModels.get(sessionId) ?? \"unknown\";\n    const provider = sessionProviders.get(sessionId) ?? \"unknown\";\n    const stepKey = turn !== undefined && step !== undefined ? `${sessionId}|${turn}|${step}` : null;\n    const start = stepKey !== null ? stepStarts.get(stepKey) : undefined;\n    const firstChunk = stepKey !== null ? stepFirstChunks.get(stepKey) : undefined;\n    const ttft = start !== undefined && firstChunk !== undefined ? firstChunk - start : null;\n    const duration = start !== undefined ? ts - start : null;\n    let bucket = days.get(day);\n    if (bucket === undefined) {\n      bucket = { requests: 0, tokens: 0, input: 0, output: 0, cacheRead: 0, cacheWrite: 0 };\n      days.set(day, bucket);\n    }\n    const last = lastUsage.get(sessionId);\n    if (last !== undefined && last.turn === turn && last.step === step) {\n      // same request re-reported (usage chunk → final message): replace\n      const previousDay = days.get(last.day);\n      if (previousDay !== undefined) {\n        previousDay.tokens = Math.max(0, previousDay.tokens - last.tokens);\n        previousDay.input = Math.max(0, (previousDay.input ?? 0) - last.input);\n        previousDay.output = Math.max(0, (previousDay.output ?? 0) - last.output);\n        previousDay.cacheRead = Math.max(0, (previousDay.cacheRead ?? 0) - last.cacheRead);\n        previousDay.cacheWrite = Math.max(0, (previousDay.cacheWrite ?? 0) - last.cacheWrite);\n      }\n      bucket.tokens += tokens;\n      bucket.input = (bucket.input ?? 0) + input;\n      bucket.output = (bucket.output ?? 0) + output;\n      bucket.cacheRead = (bucket.cacheRead ?? 0) + cacheRead;\n      bucket.cacheWrite = (bucket.cacheWrite ?? 0) + cacheWrite;\n      const record = records[last.recordIndex];\n      if (record !== undefined) {\n        record.t = ts;\n        record.model = model;\n        record.provider = provider;\n        record.input = input;\n        record.cacheRead = cacheRead;\n        record.cacheWrite = cacheWrite;\n        record.output = output;\n        record.ttft = ttft;\n        record.duration = duration;\n      }\n    } else {\n      bucket.requests += 1;\n      bucket.tokens += tokens;\n      bucket.input = (bucket.input ?? 0) + input;\n      bucket.output = (bucket.output ?? 0) + output;\n      bucket.cacheRead = (bucket.cacheRead ?? 0) + cacheRead;\n      bucket.cacheWrite = (bucket.cacheWrite ?? 0) + cacheWrite;\n      records.push({ t: ts, model, provider, session: sessionId, turn, step, input, cacheRead, cacheWrite, output, ttft, duration });\n      while (records.length > MAX_RECORDS) records.shift();\n    }\n    lastUsage.set(sessionId, { turn, step, day, tokens, input, output, cacheRead, cacheWrite, recordIndex: records.length - 1 });\n    return true;\n  }\n\n  /** Legacy day buckets lack the split fields; backfill them from records. */\n  function ensureSplits(day, bucket) {\n    if (typeof bucket.input === \"number\") return;\n    let input = 0;\n    let output = 0;\n    let cacheRead = 0;\n    let cacheWrite = 0;\n    for (const record of records) {\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:813-889](https://github.com/534119219/chicheng-stats/blob/53ee7d9bc356b16f7f461caeb89b85bd79c9a608/lib/index.js#L813-L889)\n\n增量回填扫描。\n\n<details>\n<summary>查看原文（77行）</summary>\n\n```text\n/**\n * Incremental scan of the shared sessions root. Skips sessions whose file\n * identity (mtime:size) is unchanged since the last sweep; replays only\n * events past each session's seq watermark, so it is safe to run while live\n * counting is active and to run repeatedly (every sweep + once at startup\n * for backfill).\n */\nasync function scanOnce() {\n  if (scanInFlight) return;\n  scanInFlight = true;\n  if (store.scan.startedAt === null) store.scan.startedAt = new Date().toISOString();\n  try {\n    const root = sessionsRoot();\n    const projects = await readdir(root, { withFileTypes: true }).catch(() => []);\n    let scanned = 0;\n    let counted = 0;\n    for (const project of projects) {\n      if (!project.isDirectory() || !project.name.startsWith(\"--\")) continue;\n      const projectDir = join(root, project.name);\n      const sessionDirs = await readdir(projectDir, { withFileTypes: true }).catch(() => []);\n      for (const entry of sessionDirs) {\n        if (!entry.isDirectory()) continue;\n        const sessionDir = join(projectDir, entry.name);\n        const zstdPath = join(sessionDir, \"session.jsonl.zstd\");\n        const rawPath = join(sessionDir, \"session.jsonl\");\n        let path = null;\n        try {\n          if (existsSync(zstdPath)) path = zstdPath;\n          else if (existsSync(rawPath)) path = rawPath;\n        } catch {\n          // fall through\n        }\n        if (path === null) continue;\n        let info;\n        try {\n          info = await stat(path);\n        } catch {\n          continue;\n        }\n        const metaKey = `${info.mtimeMs}:${info.size}`;\n        if (store.scanMeta[entry.name] === metaKey) continue;\n        try {\n          const buffer = await readFile(path);\n          const events = path.endsWith(\".zstd\") ? decodeSessionLog(buffer) : parseEventLines(buffer.toString(\"utf8\"));\n          const sessionId = headerId(events) ?? entry.name;\n          for (const event of events) {\n            if (event?.type === \"session/title\" && typeof event?.data?.title === \"string\" && event.data.title.trim() !== \"\") {\n              sessionTitles.set(sessionId, event.data.title);\n              scheduleSessionTitlesSave();\n            }\n            if (fold.ingest(sessionId, event)) counted += 1;\n          }\n          store.scanMeta[entry.name] = metaKey;\n          scanned += 1;\n        } catch (error) {\n          console.warn(`[chicheng-stats] scan failed for ${path}:`, error instanceof Error ? error.message : String(error));\n          // scanMeta intentionally not recorded → retried on the next sweep\n        }\n        if (scanned % 20 === 0) scheduleSave();\n        // yield to the event loop between sessions so startup is not blocked\n        await new Promise((resolve) => setTimeout(resolve, 0));\n      }\n    }\n    if (store.scan.finishedAt === null) store.scan.finishedAt = new Date().toISOString();\n    store.scan.scannedSessions += scanned;\n    store.scan.scannedEvents += counted;\n    store.scan.lastScanAt = new Date().toISOString();\n    if (counted > 0) scheduleRecordsSave();\n    if (scanned > 0 || counted > 0) {\n      console.info(`[chicheng-stats] scan: ${scanned} session(s), ${counted} usage sample(s) ingested`);\n    }\n    scheduleSave();\n  } catch (error) {\n    console.warn(`[chicheng-stats] scan failed:`, error instanceof Error ? error.message : String(error));\n  } finally {\n    scanInFlight = false;\n  }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:1742-1816](https://github.com/534119219/chicheng-stats/blob/53ee7d9bc356b16f7f461caeb89b85bd79c9a608/lib/index.js#L1742-L1816)\n\n实时监听与定时扫描。\n\n<details>\n<summary>查看原文（75行）</summary>\n\n```text\n  // Live counting: every session event in this process (web-profile sessions;\n  // headless sessions are covered by the periodic sweep instead).\n  ctx.on(\"session/event\", (session, event) => {\n    const sessionId = session?.id ?? \"?\";\n    try {\n      if (event?.type === \"session/title\" && typeof event?.data?.title === \"string\" && event.data.title.trim() !== \"\") {\n        sessionTitles.set(sessionId, event.data.title);\n        scheduleSessionTitlesSave();\n      }\n      if (fold.ingest(sessionId, event)) {\n        scheduleSave();\n        scheduleRecordsSave();\n      }\n    } catch (error) {\n      console.warn(`[chicheng-stats] live ingest failed:`, error instanceof Error ? error.message : String(error));\n    }\n  });\n\n  ctx.effect(() => ctx.webServer.register({\n    kind: \"prefix\",\n    path: \"/stats/api\",\n    handler: async (req, res) => {\n      if (!fence(req)) {\n        writeJson(res, 403, { ok: false, error: { code: \"forbidden\", message: \"forbidden\" } });\n        return;\n      }\n      if (req.method !== \"POST\") {\n        writeJson(res, 405, { ok: false, error: { code: \"method-error\", message: \"method not allowed\" } });\n        return;\n      }\n      const pathname = new URL(req.url ?? \"/\", \"http://stats.invalid\").pathname;\n      const method = pathname.startsWith(\"/stats/api/\") ? pathname.slice(11) : undefined;\n      if (method === undefined || method.includes(\"/\") || method === \"\") {\n        writeError(res, new StatsError(\"not-found\", \"unknown stats API method\", 404));\n        return;\n      }\n      try {\n        const payload = await readJsonBody(req);\n        const handler = api[method];\n        if (typeof handler !== \"function\") throw new StatsError(\"not-found\", `unknown stats API method \"${method}\"`, 404);\n        writeOk(res, await handler(payload));\n      } catch (error) {\n        writeError(res, error);\n      }\n    },\n  }), \"chicheng-stats: /stats/api routes\");\n\n  ctx.effect(() => () => {\n    tornDown = true;\n    currentCtx = null;\n    if (sweepTimer !== null) clearInterval(sweepTimer);\n    sweepTimer = null;\n    if (startupTimer !== null) clearTimeout(startupTimer);\n    startupTimer = null;\n    void flushStore();\n    void flushRecords();\n    void flushSettings();\n    void flushSessionTitles();\n  }, \"chicheng-stats: teardown\");\n\n  // Backfill history shortly after startup, then sweep periodically for\n  // sessions written by other processes (headless cron agents, etc.).\n  startupTimer = setTimeout(() => {\n    startupTimer = null;\n    if (tornDown) return;\n    void (async () => {\n      await rebuildRecordsIfNeeded();\n      await refreshSessionTitlesIfNeeded();\n      if (!tornDown) await scanOnce();\n    })();\n  }, 1500);\n  startupTimer.unref?.();\n  sweepTimer = setInterval(() => {\n    if (!tornDown) void scanOnce();\n  }, SWEEP_INTERVAL_MS);\n```\n\n</details>\n\n**依据 4 · 作者声明**：[README.md:3-18](https://github.com/534119219/chicheng-stats/blob/53ee7d9bc356b16f7f461caeb89b85bd79c9a608/README.md#L3-L18)\n\n作者功能说明。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\ndsh Web 全局用量统计插件：在左侧栏\"设置\"按钮旁显示用量组件（一行小字或卡片，**可在 设置 → 用量统计 中自由配置**），点击打开完整的用量统计面板（Sub2API 风格的使用记录）。跨所有会话统计，包括 headless 定时任务等其他进程产生的会话。\n\n## 功能特性\n\n- **实时累计**：订阅 `session/event`，按 `(turn, step)` 去重计数每次 provider 请求的用量样本，并记录逐请求明细（时间 / 模型 / 会话 / 输入 / 缓存读 / 缓存写 / 输出）；\n- **模型归属**：从 `request/header` 快照追踪每个请求使用的模型，支撑模型分布统计；\n- **可配置侧边栏组件**：设置 → 用量统计 中可调整——\n  - **通用**：显示模式（文字 / 卡片）、位置（设置按钮上方 / 下方）；\n  - **文字模式**：自定义模板 + 12 个占位符、字号、文字颜色、粗细、对齐、背景填充（含背景颜色）、圆角、内边距；\n  - **卡片模式**：卡片大小、每行列数（1/2/4）、显示项目（勾选）、标题字号与颜色、数值字号与颜色、间隔、圆角、边框粗细与颜色、背景颜色（默认 `#43454A`）；\n  - 修改实时生效（约 5 秒内），无需重启；\n- **统计面板**：点击组件弹出面板——时间范围选择（今日 / 近7天 / 近30天 / 本月 / 全部）、**提供方筛选**（全部 / 各提供方，可查看单一提供方用量）、概览、模型分布、Token 使用趋势图（SVG）、用量明细表（含首字节 / 总耗时）；\n- **DeepSeek 平台悬停提示**：鼠标悬停侧边栏组件（文字/卡片/收起图标）时浮动显示 DeepSeek 开放平台数据——剩余金额、今日消费、今日 Token、今日请求。余额来自官方 `/user/balance`（读取 `DEEPSEEK_API_KEY`）；配置 `DEEPSEEK_PLATFORM_TOKEN` 后今日消费/Token 使用平台官方明细，否则今日消费为余额差估算（带 `≈`），Token 回退为本地统计。数据只在悬停时展示，**不进统计弹窗**；\n- **历史回填 + 增量扫描**：启动后扫描 `$DSH_HOME/sessions` 下全部会话日志（zstd 多帧拼接，按帧切分后逐帧解压），只处理越过持久化 seq 水位的事件，与实时计数天然去重；此后每 5 分钟轻扫一次，覆盖其他进程写入的会话；\n- **持久化**：聚合写入 `$DSH_HOME/stats/store.json`，明细写入 `$DSH_HOME/stats/requests.json`，组件设置写入 `$DSH_HOME/stats/settings.json`（均防抖原子写入），重启不丢；\n- **只读安全**：不修改任何会话数据，对模型体验 / KV Cache 零影响。\n```\n\n</details>\n\n#### 缺口\n\n- 未用真实历史会话对账\n  **影响：**跨进程覆盖率与账单一致性未知\n  **进一步探讨：**与独立请求日志/厂商用量样本对账\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 统计完整性与桌面端边界在哪里？\n\n**研究主题：**工程质量与复用、缺陷与关键质疑\n\n#### 完整回答\n\n水位 Map 超过 5000 会删最早项，源码注释也承认重启后可能重复计数；scanMeta 以 session 目录 entry.name 为键而不含项目路径，若不同项目同名目录且 mtime:size 相同，第二个可能被跳过。zstd 解码在 Electron/Desktop 默认直接返回空数组以避免 native zstd CHECK-trap，因此桌面端默认不回填这些历史日志。聚合与请求明细分别持久化，明细上限 30000 条，统计全量与明细列表范围不同。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:143-200](https://github.com/534119219/chicheng-stats/blob/53ee7d9bc356b16f7f461caeb89b85bd79c9a608/lib/index.js#L143-L200)\n\n水位淘汰。\n\n<details>\n<summary>查看原文（58行）</summary>\n\n```text\nfunction createFold(initial = {}) {\n  const days = new Map(Object.entries(initial.days ?? {}));\n  const watermarks = new Map(Object.entries(initial.watermarks ?? {}));\n  // In-memory only: a replace (same turn/step re-report) is always adjacent\n  // in seq order, and the watermark makes replay impossible after restart.\n  const lastUsage = new Map();\n  // Provider model in force per session (from request/header snapshots).\n  const sessionModels = new Map();\n  // Provider in force per session (from request/header snapshots).\n  const sessionProviders = new Map();\n  // Per-request detail records (bounded ring; persisted to a separate file).\n  const records = [];\n  // Per-step timing: step/start → first content chunk (TTFT) and → usage\n  // sample (total duration). Keyed `${sessionId}|${turn}|${step}`; entries are\n  // removed on step/end so the maps stay bounded by in-flight steps.\n  const stepStarts = new Map();\n  const stepFirstChunks = new Map();\n\n  /** @returns true when the event contributed a usage sample. */\n  function ingest(sessionId, event) {\n    // Track the model and provider each request was built under.\n    if (event?.type === \"request/header\") {\n      const model = modelOfEvent(event);\n      if (model !== null) sessionModels.set(sessionId, model);\n      const provider = providerOfEvent(event);\n      if (provider !== null) sessionProviders.set(sessionId, provider);\n    }\n    const turn = event?.data?.turn;\n    const step = event?.data?.step;\n    const ts = Number.isFinite(event?.time) ? event.time : Date.now();\n    if (turn !== undefined && step !== undefined) {\n      const stepKey = `${sessionId}|${turn}|${step}`;\n      if (event?.type === \"step/start\") {\n        stepStarts.set(stepKey, ts);\n        stepFirstChunks.delete(stepKey);\n      } else if (event?.type === \"step/end\") {\n        stepStarts.delete(stepKey);\n        stepFirstChunks.delete(stepKey);\n      } else if (event?.type === \"assistant/chunk\" && !stepFirstChunks.has(stepKey)) {\n        const chunk = event?.data?.chunk;\n        if (chunk !== null && typeof chunk === \"object\" && CONTENT_CHUNK_TYPES.has(chunk.type)) {\n          stepFirstChunks.set(stepKey, ts);\n        }\n      }\n    }\n    const usage = usageOfEvent(event);\n    if (usage === undefined) return false;\n    const seq = event?.seq;\n    if (Number.isFinite(seq)) {\n      const seen = watermarks.get(sessionId) ?? -1;\n      if (seq <= seen) return false;\n      watermarks.set(sessionId, seq);\n      if (watermarks.size > 5000) {\n        // prune oldest-inserted watermarks; lost entries only risk re-counting\n        // after a restart, and their sessions are re-scanned from scratch\n        const firstKey = watermarks.keys().next().value;\n        if (firstKey !== undefined) watermarks.delete(firstKey);\n      }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:457-473](https://github.com/534119219/chicheng-stats/blob/53ee7d9bc356b16f7f461caeb89b85bd79c9a608/lib/index.js#L457-L473)\n\n桌面跳过 zstd 历史。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n/** Decode a concatenated-frame `.jsonl.zstd` artifact into event objects. */\nfunction decodeSessionLog(buffer) {\n  // DeepSeek Harness Desktop bundles a Node runtime whose zlib native zstd\n  // binding can CHECK-trap (SIGTRAP) on valid streaming zstd frames without\n  // Frame_Content_Size — the exact shape the harness session-log writer\n  // emits. The trap happens on a uv callback path, so try/catch cannot\n  // contain it. Skip history backfill on Electron/Desktop runtimes by\n  // default; set CHICHENG_ENABLE_SCAN=1 to opt back in.\n  if (typeof process.versions?.electron === \"string\" && process.env.CHICHENG_ENABLE_SCAN !== \"1\") {\n    return [];\n  }\n  const { frames, tornStart } = scanZstdFrames(buffer);\n  const parts = [];\n  for (const frame of frames) {\n    parts.push(zlib.zstdDecompressSync(buffer.subarray(frame.start, frame.end)));\n  }\n  return parseEventLines(Buffer.concat(parts).toString(\"utf8\"));\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:132-154](https://github.com/534119219/chicheng-stats/blob/53ee7d9bc356b16f7f461caeb89b85bd79c9a608/lib/index.js#L132-L154)\n\n明细上限与聚合。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n/** Max detail records kept in memory / on disk (oldest dropped beyond this). */\nconst MAX_RECORDS = 30000;\n\n/** Content-delta chunk types — the first one marks the time-to-first-byte. */\nconst CONTENT_CHUNK_TYPES = new Set([\"text-delta\", \"reasoning-delta\", \"tool-call-delta\"]);\n\n/**\n * The counting engine. Events must be fed in ascending seq order per session\n * (live events arrive in order; scans replay logs in order); the fold is\n * synchronous, so live and scan ingestion share one instance without races.\n */\nfunction createFold(initial = {}) {\n  const days = new Map(Object.entries(initial.days ?? {}));\n  const watermarks = new Map(Object.entries(initial.watermarks ?? {}));\n  // In-memory only: a replace (same turn/step re-report) is always adjacent\n  // in seq order, and the watermark makes replay impossible after restart.\n  const lastUsage = new Map();\n  // Provider model in force per session (from request/header snapshots).\n  const sessionModels = new Map();\n  // Provider in force per session (from request/header snapshots).\n  const sessionProviders = new Map();\n  // Per-request detail records (bounded ring; persisted to a separate file).\n  const records = [];\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:829-866](https://github.com/534119219/chicheng-stats/blob/53ee7d9bc356b16f7f461caeb89b85bd79c9a608/lib/index.js#L829-L866)\n\nscanMeta 键与文件元数据。\n\n<details>\n<summary>查看原文（38行）</summary>\n\n```text\n    for (const project of projects) {\n      if (!project.isDirectory() || !project.name.startsWith(\"--\")) continue;\n      const projectDir = join(root, project.name);\n      const sessionDirs = await readdir(projectDir, { withFileTypes: true }).catch(() => []);\n      for (const entry of sessionDirs) {\n        if (!entry.isDirectory()) continue;\n        const sessionDir = join(projectDir, entry.name);\n        const zstdPath = join(sessionDir, \"session.jsonl.zstd\");\n        const rawPath = join(sessionDir, \"session.jsonl\");\n        let path = null;\n        try {\n          if (existsSync(zstdPath)) path = zstdPath;\n          else if (existsSync(rawPath)) path = rawPath;\n        } catch {\n          // fall through\n        }\n        if (path === null) continue;\n        let info;\n        try {\n          info = await stat(path);\n        } catch {\n          continue;\n        }\n        const metaKey = `${info.mtimeMs}:${info.size}`;\n        if (store.scanMeta[entry.name] === metaKey) continue;\n        try {\n          const buffer = await readFile(path);\n          const events = path.endsWith(\".zstd\") ? decodeSessionLog(buffer) : parseEventLines(buffer.toString(\"utf8\"));\n          const sessionId = headerId(events) ?? entry.name;\n          for (const event of events) {\n            if (event?.type === \"session/title\" && typeof event?.data?.title === \"string\" && event.data.title.trim() !== \"\") {\n              sessionTitles.set(sessionId, event.data.title);\n              scheduleSessionTitlesSave();\n            }\n            if (fold.ingest(sessionId, event)) counted += 1;\n          }\n          store.scanMeta[entry.name] = metaKey;\n          scanned += 1;\n```\n\n</details>\n\n#### 缺口\n\n- 未造 5000+ 会话或同名项目目录\n  **影响：**实际重复/漏计触发率未知\n  **进一步探讨：**隔离构造同名目录、水位淘汰与桌面回填对照\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 平台 token 导入及 API 安全边界是什么？\n\n**研究主题：**依赖、兼容与流程、采用判断、缺陷与关键质疑\n\n#### 完整回答\n\n“自动获取”会扫描 Chrome/Edge/360 浏览器 Profile 的 Local Storage LevelDB，若锁住则复制整个 LevelDB 到临时目录再读 DeepSeek userToken；importPlatformToken API 把 {token, source} 返回浏览器，随后客户端再调用 savePlatformToken 存 credentials。/stats/api 的门禁检查 Host、Origin、sec-fetch-site，但没有可见的会话级身份授权；同源脚本或可伪造 HTTP 头的本地进程可触达敏感 token 路由的条件需由宿主网络边界决定。启用前应明确用户知情与访问范围。DeepSeek 余额通过官方端点，今日消费缺平台 token 时用余额差估算，不能与官方账单等同。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:1021-1041](https://github.com/534119219/chicheng-stats/blob/53ee7d9bc356b16f7f461caeb89b85bd79c9a608/lib/index.js#L1021-L1041)\n\nHost/Origin/Fetch Metadata 门禁。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\nfunction isTrustedApiRequest(request, trustedHosts) {\n  const host = header(request.headers, \"host\");\n  if (host === undefined) return false;\n  const hostUrl = parseAuthority(host);\n  if (hostUrl === undefined) return false;\n  const hosts = Array.isArray(trustedHosts) ? trustedHosts : [];\n  const trusted = hosts.some((entry) => {\n    const entryUrl = parseAuthority(entry);\n    if (entryUrl === undefined) return false;\n    return entryUrl.hostname === hostUrl.hostname && (entryUrl.port === \"\" || entryUrl.port === hostUrl.port);\n  });\n  if (!isLoopbackHostname(hostUrl.hostname) && !trusted) return false;\n  if (header(request.headers, \"sec-fetch-site\") === \"cross-site\") return false;\n  const origin = header(request.headers, \"origin\");\n  if (origin === undefined) return true;\n  try {\n    return new URL(origin).host === hostUrl.host;\n  } catch {\n    return false;\n  }\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:1359-1468](https://github.com/534119219/chicheng-stats/blob/53ee7d9bc356b16f7f461caeb89b85bd79c9a608/lib/index.js#L1359-L1468)\n\n浏览器 LevelDB 扫描、拷贝与 token 返回。\n\n<details>\n<summary>查看原文（110行）</summary>\n\n```text\n// ---------------------------------------------------------------- DeepSeek platform token (browser import)\n\nasync function browserProfileLeveldbDirs() {\n  const local = process.env.LOCALAPPDATA ?? join(homedir(), \"AppData\", \"Local\");\n  const roots = [\n    join(local, \"Google\", \"Chrome\", \"User Data\"),\n    join(local, \"Microsoft\", \"Edge\", \"User Data\"),\n    join(local, \"360ChromeX\", \"Chrome\", \"User Data\"),\n    join(local, \"360Chrome\", \"Chrome\", \"User Data\"),\n    join(\"D:\", \"360ChromeX\", \"Chrome\", \"User Data\"),\n    join(\"D:\", \"360Chrome\", \"Chrome\", \"User Data\"),\n  ];\n  const dirs = [];\n  for (const root of roots) {\n    if (!existsSync(root)) continue;\n    const entries = await readdir(root, { withFileTypes: true }).catch(() => []);\n    for (const entry of entries) {\n      if (!entry.isDirectory()) continue;\n      if (entry.name !== \"Default\" && !/^Profile \\d+$/.test(entry.name) && !entry.name.startsWith(\"user-\")) continue;\n      const dir = join(root, entry.name, \"Local Storage\", \"leveldb\");\n      if (existsSync(dir)) dirs.push(dir);\n    }\n  }\n  return dirs;\n}\n\nconst DEEPSEEK_STORAGE_KEY = Buffer.from(\"_https://platform.deepseek.com\\u0000\\u0001userToken\");\n\n/** Chromium localStorage stores `userToken` as a JSON object string like `{\"value\":\"...\"}`. */\nfunction decodeLocalStorageValue(value) {\n  if (value == null) return null;\n  const raw = value.toString().slice(1);\n  try {\n    const parsed = JSON.parse(raw);\n    if (parsed !== null && typeof parsed === \"object\" && typeof parsed.value === \"string\" && parsed.value.trim() !== \"\") {\n      return parsed.value;\n    }\n  } catch {}\n  return raw.trim() !== \"\" ? raw : null;\n}\n\nfunction readTokenFromLeveldbDir(leveldbDir) {\n  return new Promise((resolve) => {\n    let settled = false;\n    const done = (token) => {\n      if (settled) return;\n      settled = true;\n      resolve(token);\n    };\n    let db;\n    try {\n      db = leveldown(leveldbDir);\n      // Use the low-level callback API directly: levelup wraps open errors in\n      // an unhandled 'error' event, which crashes the host when a live browser\n      // holds the DB. leveldown reports the same failure through open()'s\n      // callback instead.\n      db.open((openErr) => {\n        if (openErr) return done(null);\n        db.get(DEEPSEEK_STORAGE_KEY, (getErr, value) => {\n          const token = getErr ? null : decodeLocalStorageValue(value);\n          try { db.close(() => {}); } catch {}\n          done(token);\n        });\n      });\n    } catch {\n      done(null);\n    }\n  });\n}\n\nasync function copyLeveldbToTemp(srcDir) {\n  const tmpDir = await mkdtemp(join(tmpdir(), \"chicheng-ds-\"));\n  const entries = await readdir(srcDir, { withFileTypes: true }).catch(() => []);\n  for (const entry of entries) {\n    if (entry.name === \"LOCK\") continue;\n    const src = join(srcDir, entry.name);\n    const dest = join(tmpDir, entry.name);\n    if (entry.isDirectory()) {\n      await mkdir(dest, { recursive: true }).catch(() => {});\n      const children = await readdir(src, { withFileTypes: true }).catch(() => []);\n      for (const child of children) {\n        await copyFile(join(src, child.name), join(dest, child.name)).catch(() => {});\n      }\n    } else {\n      await copyFile(src, dest).catch(() => {});\n    }\n  }\n  return tmpDir;\n}\n\nasync function readPlatformTokenFromLeveldb(dir) {\n  const direct = await readTokenFromLeveldbDir(dir);\n  if (direct !== null) return direct;\n  // If the browser is running and holds the LevelDB lock, read a temporary copy.\n  const tmpDir = await copyLeveldbToTemp(dir).catch(() => null);\n  if (tmpDir === null) return null;\n  try {\n    return await readTokenFromLeveldbDir(tmpDir);\n  } finally {\n    await rm(tmpDir, { recursive: true, force: true }).catch(() => {});\n  }\n}\n\nasync function importDeepseekPlatformToken() {\n  const dirs = await browserProfileLeveldbDirs();\n  for (const dir of dirs) {\n    const token = await readPlatformTokenFromLeveldb(dir);\n    if (token !== null) return { token, found: true, source: dir };\n  }\n  return { token: null, found: false };\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:1532-1551](https://github.com/534119219/chicheng-stats/blob/53ee7d9bc356b16f7f461caeb89b85bd79c9a608/lib/index.js#L1532-L1551)\n\n导入/保存 API。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n    /** Whether DEEPSEEK_PLATFORM_TOKEN is currently configured (no value). */\n    platformTokenStatus: async () => {\n      const ctx = currentCtx;\n      if (ctx?.credentials?.describe == null) return { configured: false, writable: false };\n      const desc = await ctx.credentials.describe(\"DEEPSEEK_PLATFORM_TOKEN\");\n      return { configured: desc?.configured === true, writable: desc?.writable === true };\n    },\n\n    /** Scan local Chrome/Edge profiles for a stored DeepSeek platform userToken. */\n    importPlatformToken: async () => importDeepseekPlatformToken(),\n\n    /** Persist a DeepSeek platform userToken via the credentials seam. */\n    savePlatformToken: async (payload) => {\n      const token = typeof payload?.token === \"string\" ? payload.token.trim() : \"\";\n      if (token === \"\") throw new StatsError(\"invalid-token\", \"UserToken 不能为空\", 400);\n      const ctx = currentCtx;\n      if (ctx?.credentials?.set == null) throw new StatsError(\"credentials-unavailable\", \"credentials service unavailable\", 500);\n      await ctx.credentials.set(\"DEEPSEEK_PLATFORM_TOKEN\", token);\n      deepseekCache = { at: 0, data: null };\n      return { saved: true };\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:1760-1786](https://github.com/534119219/chicheng-stats/blob/53ee7d9bc356b16f7f461caeb89b85bd79c9a608/lib/index.js#L1760-L1786)\n\n统一 API 路由。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\n  ctx.effect(() => ctx.webServer.register({\n    kind: \"prefix\",\n    path: \"/stats/api\",\n    handler: async (req, res) => {\n      if (!fence(req)) {\n        writeJson(res, 403, { ok: false, error: { code: \"forbidden\", message: \"forbidden\" } });\n        return;\n      }\n      if (req.method !== \"POST\") {\n        writeJson(res, 405, { ok: false, error: { code: \"method-error\", message: \"method not allowed\" } });\n        return;\n      }\n      const pathname = new URL(req.url ?? \"/\", \"http://stats.invalid\").pathname;\n      const method = pathname.startsWith(\"/stats/api/\") ? pathname.slice(11) : undefined;\n      if (method === undefined || method.includes(\"/\") || method === \"\") {\n        writeError(res, new StatsError(\"not-found\", \"unknown stats API method\", 404));\n        return;\n      }\n      try {\n        const payload = await readJsonBody(req);\n        const handler = api[method];\n        if (typeof handler !== \"function\") throw new StatsError(\"not-found\", `unknown stats API method \"${method}\"`, 404);\n        writeOk(res, await handler(payload));\n      } catch (error) {\n        writeError(res, error);\n      }\n    },\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/client.js:1495-1503](https://github.com/534119219/chicheng-stats/blob/53ee7d9bc356b16f7f461caeb89b85bd79c9a608/lib/client.js#L1495-L1503)\n\n客户端取 token 并再保存。\n\n```text\n\t\t\t\tif (platformBusy) return;\n\t\t\t\tsetPlatformBusy(true);\n\t\t\t\tsetPlatformTokenMessage(\"\");\n\t\t\t\ttry {\n\t\t\t\t\tconst res = await call(\"importPlatformToken\");\n\t\t\t\t\tif (res?.found === true && typeof res.token === \"string\" && res.token.trim() !== \"\") {\n\t\t\t\t\t\tsetPlatformToken(res.token);\n\t\t\t\t\t\tawait call(\"savePlatformToken\", { token: res.token });\n\t\t\t\t\t\tconst st = await call(\"platformTokenStatus\");\n```\n\n**依据 6 · 作者声明**：[README.md:48-65](https://github.com/534119219/chicheng-stats/blob/53ee7d9bc356b16f7f461caeb89b85bd79c9a608/README.md#L48-L65)\n\n平台用量和自动获取说明。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n````text\n## DeepSeek 平台数据（悬停提示）\n\n鼠标悬停侧边栏组件时，会显示 DeepSeek 开放平台的剩余金额 / 今日消费 / 今日 Token / 今日请求；此数据不会出现在统计弹窗里。\n\n- **余额**：读取 `DEEPSEEK_API_KEY`（设置 → 模型，或 `~/.dsh/.credentials.yaml`）。\n- **今日消费 / Token（官方）**：可选配置 `DEEPSEEK_PLATFORM_TOKEN`。\n  - 推荐：在 **设置 → 用量统计 → DeepSeek 平台 UserToken** 中点击「自动获取」，插件会扫描本机 Chrome / Edge 浏览器里已登录的 `userToken` 并自动保存；找不到时提示先登录 platform.deepseek.com 再试。\n  - 也可手动：登录 platform.deepseek.com → DevTools Console → `JSON.parse(localStorage.getItem('userToken')).value`，写入 `~/.dsh/.credentials.yaml`：\n\n  ```yaml\n  version: 1\n  refs:\n    DEEPSEEK_API_KEY: sk-...\n    DEEPSEEK_PLATFORM_TOKEN: <platform userToken>\n  ```\n\n- **未配置平台 token 时**：今日消费按余额差估算（显示 `≈`），今日 Token / 请求回退为本地统计。\n- Host 端接口 `POST /stats/api/deepseek` 有 60 秒缓存；API Key 与平台 token 不出本机。\n````\n\n</details>\n\n#### 缺口\n\n- 未在真实浏览器/DSH Host 试门禁\n  **影响：**跨源/同源权限与 token 暴露范围未验证\n  **进一步探讨：**隔离宿主测未登录请求、跨源、同源客户端和本地进程访问\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 首次、持续与失败恢复分别消耗什么，如何判断成本效果？\n\n**研究主题：**效果与总成本、采用判断\n\n#### 完整回答\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | Node/leveldown原生依赖、首次历史读取解压与统计磁盘；价格未知 | 安装Web profile、核统计目录/日志格式与凭证授权，工时未知 | Electron默认跳过zstd；安装和覆盖率需按环境检查 |\n| 持续使用 | 实时折叠、每5分钟扫描变化日志、聚合及最多3万明细持久化；可选平台API访问 | 检口径与统计新鲜度，工时未知 | 水位上限5000；净CPU/IO与平台API配额费用未知 |\n| 失败恢复 | 重扫/重建、备份恢复及可能的凭证轮换资源，金额未知 | 核漏计重计、同名目录与桌面历史缺口；核临时副本/凭证访问，工时未知 | 不能据当前聚合自行推回完整明细；停用/重启不自动证明对账恢复 |\n\n核算单位是正确覆盖约定会话范围且可与原事件核对的统计视图，不是面板能打开。相比人工逐日志统计，增量扫描可复用已处理元数据和聚合，但变动日志仍需读取、桌面默认缺历史，3万明细与日聚合保留范围不同；未测安装工时、扫描吞吐、官方账单误差和恢复时间，不填零也不推出净省费。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:813-889](https://github.com/534119219/chicheng-stats/blob/53ee7d9bc356b16f7f461caeb89b85bd79c9a608/lib/index.js#L813-L889)\n\n变化日志扫描和保存\n\n<details>\n<summary>查看原文（77行）</summary>\n\n```text\n/**\n * Incremental scan of the shared sessions root. Skips sessions whose file\n * identity (mtime:size) is unchanged since the last sweep; replays only\n * events past each session's seq watermark, so it is safe to run while live\n * counting is active and to run repeatedly (every sweep + once at startup\n * for backfill).\n */\nasync function scanOnce() {\n  if (scanInFlight) return;\n  scanInFlight = true;\n  if (store.scan.startedAt === null) store.scan.startedAt = new Date().toISOString();\n  try {\n    const root = sessionsRoot();\n    const projects = await readdir(root, { withFileTypes: true }).catch(() => []);\n    let scanned = 0;\n    let counted = 0;\n    for (const project of projects) {\n      if (!project.isDirectory() || !project.name.startsWith(\"--\")) continue;\n      const projectDir = join(root, project.name);\n      const sessionDirs = await readdir(projectDir, { withFileTypes: true }).catch(() => []);\n      for (const entry of sessionDirs) {\n        if (!entry.isDirectory()) continue;\n        const sessionDir = join(projectDir, entry.name);\n        const zstdPath = join(sessionDir, \"session.jsonl.zstd\");\n        const rawPath = join(sessionDir, \"session.jsonl\");\n        let path = null;\n        try {\n          if (existsSync(zstdPath)) path = zstdPath;\n          else if (existsSync(rawPath)) path = rawPath;\n        } catch {\n          // fall through\n        }\n        if (path === null) continue;\n        let info;\n        try {\n          info = await stat(path);\n        } catch {\n          continue;\n        }\n        const metaKey = `${info.mtimeMs}:${info.size}`;\n        if (store.scanMeta[entry.name] === metaKey) continue;\n        try {\n          const buffer = await readFile(path);\n          const events = path.endsWith(\".zstd\") ? decodeSessionLog(buffer) : parseEventLines(buffer.toString(\"utf8\"));\n          const sessionId = headerId(events) ?? entry.name;\n          for (const event of events) {\n            if (event?.type === \"session/title\" && typeof event?.data?.title === \"string\" && event.data.title.trim() !== \"\") {\n              sessionTitles.set(sessionId, event.data.title);\n              scheduleSessionTitlesSave();\n            }\n            if (fold.ingest(sessionId, event)) counted += 1;\n          }\n          store.scanMeta[entry.name] = metaKey;\n          scanned += 1;\n        } catch (error) {\n          console.warn(`[chicheng-stats] scan failed for ${path}:`, error instanceof Error ? error.message : String(error));\n          // scanMeta intentionally not recorded → retried on the next sweep\n        }\n        if (scanned % 20 === 0) scheduleSave();\n        // yield to the event loop between sessions so startup is not blocked\n        await new Promise((resolve) => setTimeout(resolve, 0));\n      }\n    }\n    if (store.scan.finishedAt === null) store.scan.finishedAt = new Date().toISOString();\n    store.scan.scannedSessions += scanned;\n    store.scan.scannedEvents += counted;\n    store.scan.lastScanAt = new Date().toISOString();\n    if (counted > 0) scheduleRecordsSave();\n    if (scanned > 0 || counted > 0) {\n      console.info(`[chicheng-stats] scan: ${scanned} session(s), ${counted} usage sample(s) ingested`);\n    }\n    scheduleSave();\n  } catch (error) {\n    console.warn(`[chicheng-stats] scan failed:`, error instanceof Error ? error.message : String(error));\n  } finally {\n    scanInFlight = false;\n  }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:1722-1817](https://github.com/534119219/chicheng-stats/blob/53ee7d9bc356b16f7f461caeb89b85bd79c9a608/lib/index.js#L1722-L1817)\n\n实时采集、周期和退出持久化\n\n<details>\n<summary>查看原文（96行）</summary>\n\n```text\nconst SWEEP_INTERVAL_MS = 5 * 60 * 1000;\nlet sweepTimer = null;\nlet startupTimer = null;\nlet tornDown = false;\n\nasync function apply(ctx) {\n  await loadStore();\n  await loadRecords();\n  await loadSettings();\n  await loadSessionTitles();\n  currentCtx = ctx;\n  const fence = (req) => {\n    try {\n      return isTrustedApiRequest(req, ctx.webRuntime?.trustedHosts ?? []);\n    } catch {\n      return false;\n    }\n  };\n  const api = buildApi();\n\n  // Live counting: every session event in this process (web-profile sessions;\n  // headless sessions are covered by the periodic sweep instead).\n  ctx.on(\"session/event\", (session, event) => {\n    const sessionId = session?.id ?? \"?\";\n    try {\n      if (event?.type === \"session/title\" && typeof event?.data?.title === \"string\" && event.data.title.trim() !== \"\") {\n        sessionTitles.set(sessionId, event.data.title);\n        scheduleSessionTitlesSave();\n      }\n      if (fold.ingest(sessionId, event)) {\n        scheduleSave();\n        scheduleRecordsSave();\n      }\n    } catch (error) {\n      console.warn(`[chicheng-stats] live ingest failed:`, error instanceof Error ? error.message : String(error));\n    }\n  });\n\n  ctx.effect(() => ctx.webServer.register({\n    kind: \"prefix\",\n    path: \"/stats/api\",\n    handler: async (req, res) => {\n      if (!fence(req)) {\n        writeJson(res, 403, { ok: false, error: { code: \"forbidden\", message: \"forbidden\" } });\n        return;\n      }\n      if (req.method !== \"POST\") {\n        writeJson(res, 405, { ok: false, error: { code: \"method-error\", message: \"method not allowed\" } });\n        return;\n      }\n      const pathname = new URL(req.url ?? \"/\", \"http://stats.invalid\").pathname;\n      const method = pathname.startsWith(\"/stats/api/\") ? pathname.slice(11) : undefined;\n      if (method === undefined || method.includes(\"/\") || method === \"\") {\n        writeError(res, new StatsError(\"not-found\", \"unknown stats API method\", 404));\n        return;\n      }\n      try {\n        const payload = await readJsonBody(req);\n        const handler = api[method];\n        if (typeof handler !== \"function\") throw new StatsError(\"not-found\", `unknown stats API method \"${method}\"`, 404);\n        writeOk(res, await handler(payload));\n      } catch (error) {\n        writeError(res, error);\n      }\n    },\n  }), \"chicheng-stats: /stats/api routes\");\n\n  ctx.effect(() => () => {\n    tornDown = true;\n    currentCtx = null;\n    if (sweepTimer !== null) clearInterval(sweepTimer);\n    sweepTimer = null;\n    if (startupTimer !== null) clearTimeout(startupTimer);\n    startupTimer = null;\n    void flushStore();\n    void flushRecords();\n    void flushSettings();\n    void flushSessionTitles();\n  }, \"chicheng-stats: teardown\");\n\n  // Backfill history shortly after startup, then sweep periodically for\n  // sessions written by other processes (headless cron agents, etc.).\n  startupTimer = setTimeout(() => {\n    startupTimer = null;\n    if (tornDown) return;\n    void (async () => {\n      await rebuildRecordsIfNeeded();\n      await refreshSessionTitlesIfNeeded();\n      if (!tornDown) await scanOnce();\n    })();\n  }, 1500);\n  startupTimer.unref?.();\n  sweepTimer = setInterval(() => {\n    if (!tornDown) void scanOnce();\n  }, SWEEP_INTERVAL_MS);\n  sweepTimer.unref?.();\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:1429-1458](https://github.com/534119219/chicheng-stats/blob/53ee7d9bc356b16f7f461caeb89b85bd79c9a608/lib/index.js#L1429-L1458)\n\n临时LevelDB复制和清理\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\nasync function copyLeveldbToTemp(srcDir) {\n  const tmpDir = await mkdtemp(join(tmpdir(), \"chicheng-ds-\"));\n  const entries = await readdir(srcDir, { withFileTypes: true }).catch(() => []);\n  for (const entry of entries) {\n    if (entry.name === \"LOCK\") continue;\n    const src = join(srcDir, entry.name);\n    const dest = join(tmpDir, entry.name);\n    if (entry.isDirectory()) {\n      await mkdir(dest, { recursive: true }).catch(() => {});\n      const children = await readdir(src, { withFileTypes: true }).catch(() => []);\n      for (const child of children) {\n        await copyFile(join(src, child.name), join(dest, child.name)).catch(() => {});\n      }\n    } else {\n      await copyFile(src, dest).catch(() => {});\n    }\n  }\n  return tmpDir;\n}\n\nasync function readPlatformTokenFromLeveldb(dir) {\n  const direct = await readTokenFromLeveldbDir(dir);\n  if (direct !== null) return direct;\n  // If the browser is running and holds the LevelDB lock, read a temporary copy.\n  const tmpDir = await copyLeveldbToTemp(dir).catch(() => null);\n  if (tmpDir === null) return null;\n  try {\n    return await readTokenFromLeveldbDir(tmpDir);\n  } finally {\n    await rm(tmpDir, { recursive: true, force: true }).catch(() => {});\n```\n\n</details>\n\n#### 缺口\n\n- 真实日志规模、变动频率与依赖安装/恢复工时未知\n  **影响：**无法给出总拥有成本或净资源收益\n  **进一步探讨：**读者可从固定规模日志对账、扫描字节与恢复记录入手\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 怎样证伪复合身份与持久去重能改善统计完整性的假设？\n\n**研究主题：**新假设与验证、工程质量与复用、采用判断\n\n#### 完整回答\n\n固定源码以entry.name缓存扫描元数据、水位最多保留5000项且lastUsage只在内存；桌面默认跳过zstd。这些分别限制跨项目身份、长历史去重和平台覆盖。相对当前增量扫描，设计假设是以规范项目路径加真实session ID/日志身份作复合键，并持久保存已核usage请求键和替换状态，能降低同名目录漏计与水位淘汰后重计，同时保留实时/扫描汇合。它不自动解决桌面解压或厂商计费口径。条件是可稳定提取身份、事务性更新去重和聚合、可维护旧数据迁移；代价是索引磁盘、写放大和恢复复杂度。最小对照用同一匿名事件语料覆盖两个同名目录/相同mtime:size、超过5000会话、实时后回填、chunk到final替换与重启，在原版和隔离原型按事件真值比较漏计、重计、聚合/明细偏差、扫描字节、索引大小和恢复耗时。若误差不下降或新增索引成本超过预定可接受预算，假设被证伪。本轮未实现或执行该对照；token导入不回传浏览器是独立访问边界改造，不能据此声称统计准确度提高。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:143-200](https://github.com/534119219/chicheng-stats/blob/53ee7d9bc356b16f7f461caeb89b85bd79c9a608/lib/index.js#L143-L200)\n\n内存替换和有界水位\n\n<details>\n<summary>查看原文（58行）</summary>\n\n```text\nfunction createFold(initial = {}) {\n  const days = new Map(Object.entries(initial.days ?? {}));\n  const watermarks = new Map(Object.entries(initial.watermarks ?? {}));\n  // In-memory only: a replace (same turn/step re-report) is always adjacent\n  // in seq order, and the watermark makes replay impossible after restart.\n  const lastUsage = new Map();\n  // Provider model in force per session (from request/header snapshots).\n  const sessionModels = new Map();\n  // Provider in force per session (from request/header snapshots).\n  const sessionProviders = new Map();\n  // Per-request detail records (bounded ring; persisted to a separate file).\n  const records = [];\n  // Per-step timing: step/start → first content chunk (TTFT) and → usage\n  // sample (total duration). Keyed `${sessionId}|${turn}|${step}`; entries are\n  // removed on step/end so the maps stay bounded by in-flight steps.\n  const stepStarts = new Map();\n  const stepFirstChunks = new Map();\n\n  /** @returns true when the event contributed a usage sample. */\n  function ingest(sessionId, event) {\n    // Track the model and provider each request was built under.\n    if (event?.type === \"request/header\") {\n      const model = modelOfEvent(event);\n      if (model !== null) sessionModels.set(sessionId, model);\n      const provider = providerOfEvent(event);\n      if (provider !== null) sessionProviders.set(sessionId, provider);\n    }\n    const turn = event?.data?.turn;\n    const step = event?.data?.step;\n    const ts = Number.isFinite(event?.time) ? event.time : Date.now();\n    if (turn !== undefined && step !== undefined) {\n      const stepKey = `${sessionId}|${turn}|${step}`;\n      if (event?.type === \"step/start\") {\n        stepStarts.set(stepKey, ts);\n        stepFirstChunks.delete(stepKey);\n      } else if (event?.type === \"step/end\") {\n        stepStarts.delete(stepKey);\n        stepFirstChunks.delete(stepKey);\n      } else if (event?.type === \"assistant/chunk\" && !stepFirstChunks.has(stepKey)) {\n        const chunk = event?.data?.chunk;\n        if (chunk !== null && typeof chunk === \"object\" && CONTENT_CHUNK_TYPES.has(chunk.type)) {\n          stepFirstChunks.set(stepKey, ts);\n        }\n      }\n    }\n    const usage = usageOfEvent(event);\n    if (usage === undefined) return false;\n    const seq = event?.seq;\n    if (Number.isFinite(seq)) {\n      const seen = watermarks.get(sessionId) ?? -1;\n      if (seq <= seen) return false;\n      watermarks.set(sessionId, seq);\n      if (watermarks.size > 5000) {\n        // prune oldest-inserted watermarks; lost entries only risk re-counting\n        // after a restart, and their sessions are re-scanned from scratch\n        const firstKey = watermarks.keys().next().value;\n        if (firstKey !== undefined) watermarks.delete(firstKey);\n      }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:220-258](https://github.com/534119219/chicheng-stats/blob/53ee7d9bc356b16f7f461caeb89b85bd79c9a608/lib/index.js#L220-L258)\n\n请求替换和明细维护\n\n<details>\n<summary>查看原文（39行）</summary>\n\n```text\n    const last = lastUsage.get(sessionId);\n    if (last !== undefined && last.turn === turn && last.step === step) {\n      // same request re-reported (usage chunk → final message): replace\n      const previousDay = days.get(last.day);\n      if (previousDay !== undefined) {\n        previousDay.tokens = Math.max(0, previousDay.tokens - last.tokens);\n        previousDay.input = Math.max(0, (previousDay.input ?? 0) - last.input);\n        previousDay.output = Math.max(0, (previousDay.output ?? 0) - last.output);\n        previousDay.cacheRead = Math.max(0, (previousDay.cacheRead ?? 0) - last.cacheRead);\n        previousDay.cacheWrite = Math.max(0, (previousDay.cacheWrite ?? 0) - last.cacheWrite);\n      }\n      bucket.tokens += tokens;\n      bucket.input = (bucket.input ?? 0) + input;\n      bucket.output = (bucket.output ?? 0) + output;\n      bucket.cacheRead = (bucket.cacheRead ?? 0) + cacheRead;\n      bucket.cacheWrite = (bucket.cacheWrite ?? 0) + cacheWrite;\n      const record = records[last.recordIndex];\n      if (record !== undefined) {\n        record.t = ts;\n        record.model = model;\n        record.provider = provider;\n        record.input = input;\n        record.cacheRead = cacheRead;\n        record.cacheWrite = cacheWrite;\n        record.output = output;\n        record.ttft = ttft;\n        record.duration = duration;\n      }\n    } else {\n      bucket.requests += 1;\n      bucket.tokens += tokens;\n      bucket.input = (bucket.input ?? 0) + input;\n      bucket.output = (bucket.output ?? 0) + output;\n      bucket.cacheRead = (bucket.cacheRead ?? 0) + cacheRead;\n      bucket.cacheWrite = (bucket.cacheWrite ?? 0) + cacheWrite;\n      records.push({ t: ts, model, provider, session: sessionId, turn, step, input, cacheRead, cacheWrite, output, ttft, duration });\n      while (records.length > MAX_RECORDS) records.shift();\n    }\n    lastUsage.set(sessionId, { turn, step, day, tokens, input, output, cacheRead, cacheWrite, recordIndex: records.length - 1 });\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:829-866](https://github.com/534119219/chicheng-stats/blob/53ee7d9bc356b16f7f461caeb89b85bd79c9a608/lib/index.js#L829-L866)\n\n同名扫描缓存键\n\n<details>\n<summary>查看原文（38行）</summary>\n\n```text\n    for (const project of projects) {\n      if (!project.isDirectory() || !project.name.startsWith(\"--\")) continue;\n      const projectDir = join(root, project.name);\n      const sessionDirs = await readdir(projectDir, { withFileTypes: true }).catch(() => []);\n      for (const entry of sessionDirs) {\n        if (!entry.isDirectory()) continue;\n        const sessionDir = join(projectDir, entry.name);\n        const zstdPath = join(sessionDir, \"session.jsonl.zstd\");\n        const rawPath = join(sessionDir, \"session.jsonl\");\n        let path = null;\n        try {\n          if (existsSync(zstdPath)) path = zstdPath;\n          else if (existsSync(rawPath)) path = rawPath;\n        } catch {\n          // fall through\n        }\n        if (path === null) continue;\n        let info;\n        try {\n          info = await stat(path);\n        } catch {\n          continue;\n        }\n        const metaKey = `${info.mtimeMs}:${info.size}`;\n        if (store.scanMeta[entry.name] === metaKey) continue;\n        try {\n          const buffer = await readFile(path);\n          const events = path.endsWith(\".zstd\") ? decodeSessionLog(buffer) : parseEventLines(buffer.toString(\"utf8\"));\n          const sessionId = headerId(events) ?? entry.name;\n          for (const event of events) {\n            if (event?.type === \"session/title\" && typeof event?.data?.title === \"string\" && event.data.title.trim() !== \"\") {\n              sessionTitles.set(sessionId, event.data.title);\n              scheduleSessionTitlesSave();\n            }\n            if (fold.ingest(sessionId, event)) counted += 1;\n          }\n          store.scanMeta[entry.name] = metaKey;\n          scanned += 1;\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:457-473](https://github.com/534119219/chicheng-stats/blob/53ee7d9bc356b16f7f461caeb89b85bd79c9a608/lib/index.js#L457-L473)\n\n桌面默认跳过\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n/** Decode a concatenated-frame `.jsonl.zstd` artifact into event objects. */\nfunction decodeSessionLog(buffer) {\n  // DeepSeek Harness Desktop bundles a Node runtime whose zlib native zstd\n  // binding can CHECK-trap (SIGTRAP) on valid streaming zstd frames without\n  // Frame_Content_Size — the exact shape the harness session-log writer\n  // emits. The trap happens on a uv callback path, so try/catch cannot\n  // contain it. Skip history backfill on Electron/Desktop runtimes by\n  // default; set CHICHENG_ENABLE_SCAN=1 to opt back in.\n  if (typeof process.versions?.electron === \"string\" && process.env.CHICHENG_ENABLE_SCAN !== \"1\") {\n    return [];\n  }\n  const { frames, tornStart } = scanZstdFrames(buffer);\n  const parts = [];\n  for (const frame of frames) {\n    parts.push(zlib.zstdDecompressSync(buffer.subarray(frame.start, frame.end)));\n  }\n  return parseEventLines(Buffer.concat(parts).toString(\"utf8\"));\n```\n\n</details>\n\n#### 缺口\n\n- 复合键/持久索引方案未实现，稳定身份与迁移开销未知\n  **影响：**统计收益和运维代价尚无对照证据\n  **进一步探讨：**从可复核匿名语料及失败重启的独立期望值入手\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：4636ee551a1f5e5b1a4e24c48dc312faed2aec62ecd64e9506a7b51f9728907b。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 3853 | 3392 | 265 | — |\n| .md | source | 1 | 194 | — | — | 1722 |\n| .mjs | source | 1 | 60 | 50 | 5 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 实现 | 边界 |\n| --- | --- | --- |\n| 用量聚合 | 事件+历史扫描 | 非官方账单 |\n| 平台悬停 | 余额/Token API | token 权限 |\n| 历史回填 | zstd/JSONL | 桌面默认跳过 zstd |\n\n## 工程亮点\n\nseq 水位、(turn,step) last-wins、zstd 多帧解码、定时扫描和 JSON 持久化。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、lib/index.js、lib/client.js、test-backfill.mjs、package.json、cordis.patch.yml 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：静态审阅固定提交；未运行真实会话/浏览器或导入 token。\n- 下一步：对账、同名目录/5000 会话、桌面回填、路由授权与 token 导入测试。\n",
         "metadata": {
             "repository": "534119219/chicheng-stats",
             "repository_id": 1335725068,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T07:38:25.109Z",
+            "window_start": "2026-09-22T07:38:25.109Z",
             "stars": 7,
             "pushed_at": "2026-08-26T15:05:24Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 1,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A534119219%2Fchicheng-stats%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6404:F5D0E:A9DAC9:F2ECC9:6AD84A40 and timestamp 2026-10-21 05:14:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A534119219%2Fchicheng-stats%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6416:208D3:AA64BE:F38F79:6AD84A41 and timestamp 2026-10-21 05:14:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A534119219%2Fchicheng-stats%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640A:208D3:AA64FB:F38FD4:6AD84A41 and timestamp 2026-10-21 05:14:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A534119219%2Fchicheng-stats%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6417:1B0790:A5556F:EE45B1:6AD84A41 and timestamp 2026-10-21 05:14:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A534119219%2Fchicheng-stats%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6418:28E3E1:A80850:F10990:6AD84A41 and timestamp 2026-10-21 05:14:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "chicheng-stats",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T07:38:33.311Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": null,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/chicheng-stats",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/chicheng-stats",
                 "error": "HTTP 404",
                 "publication": {
                     "first_published_at": null,
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T07:38:33.311Z",
                     "source_url": "https://registry.npmjs.org/chicheng-stats",
                     "error": "HTTP 404",
                     "latest_version": null,
                     "latest_published_at": null,
                     "latest_error": "HTTP 404"
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "53ee7d9bc356b16f7f461caeb89b85bd79c9a608",
-                "current_revision": "53ee7d9bc356b16f7f461caeb89b85bd79c9a608",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {
@@ -446,14 +464,14 @@
             "repository": "534119219/chicheng-stats",
             "path": "",
             "revision": "53ee7d9bc356b16f7f461caeb89b85bd79c9a608",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "9364e399efe87fdea60dd7896b6ef43a693da63c1f9d2533a7bdc4d2c9953764",
                 "code": "53ee7d9bc356b16f7f461caeb89b85bd79c9a608",
                 "maintenance": "101f1a0ce3af54ddd2bd6ae831f92224a6331c60111ea7f4673a27a99b62e750"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

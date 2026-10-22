@@ -12,8 +12,8 @@
             "aliases": [],
             "name": "dsh-ai-arcade",
             "entry_type": "plugin",
-            "technical_category": "interface-input",
-            "business_category": "other",
+            "technical_category": "agent-workflow",
+            "business_category": "personal-productivity",
             "tags": [],
             "availability": "unknown",
             "research_depth": "source",
@@ -24,36 +24,100 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-01-github-1413897334-root-directory-0",
+                    "id": "2026-10-22-02-github-1413897334-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T02:09:38.532Z",
+                    "retrieved_at": "2026-10-22T06:10:06.529Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-01-github-1413897334-root-author",
+                    "id": "2026-10-22-02-github-1413897334-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/439436269-ctrl/dsh-ai-arcade/blob/877d80ccce081eb76343ddacfb591f6c404b8ddd/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/439436269-ctrl/dsh-ai-arcade",
+                            "commit": "877d80ccce081eb76343ddacfb591f6c404b8ddd",
+                            "path": "README.md",
+                            "content_sha256": "9d37ffbb69cd2e2acf4f936aadde161bdd040c7bb6f2964d6ab2045a6b0e47be"
+                        }
+                    ],
                     "revision": "877d80ccce081eb76343ddacfb591f6c404b8ddd",
-                    "captured_at": "2026-10-21T02:09:38.532Z",
-                    "summary": "在 DSH 中提供双脑贪吃蛇和中国象棋，结合本地规则引擎与模型策略解说。",
-                    "artifact": "data/runs/2026-10-21-01/snapshots/439436269-ctrl--dsh-ai-arcade/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T06:10:06.529Z",
+                    "summary": "DSH 内的双脑贪吃蛇和中国象棋，游戏规则本地运行，模型提供策略或解说。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/439436269-ctrl--dsh-ai-arcade/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-01-github-1413897334-root-source",
+                    "id": "2026-10-22-02-github-1413897334-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/439436269-ctrl/dsh-ai-arcade/blob/877d80ccce081eb76343ddacfb591f6c404b8ddd/lib/brain.js",
+                    "url": "https://github.com/439436269-ctrl/dsh-ai-arcade/blob/877d80ccce081eb76343ddacfb591f6c404b8ddd/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/439436269-ctrl/dsh-ai-arcade",
+                            "commit": "877d80ccce081eb76343ddacfb591f6c404b8ddd",
+                            "path": "README.md",
+                            "content_sha256": "9d37ffbb69cd2e2acf4f936aadde161bdd040c7bb6f2964d6ab2045a6b0e47be"
+                        },
+                        {
+                            "repository_url": "https://github.com/439436269-ctrl/dsh-ai-arcade",
+                            "commit": "877d80ccce081eb76343ddacfb591f6c404b8ddd",
+                            "path": "package.json",
+                            "content_sha256": "e55c6f420cd085196c923d1c32f2b740d2ce21d6766f41e1784d42edc28de2a8"
+                        },
+                        {
+                            "repository_url": "https://github.com/439436269-ctrl/dsh-ai-arcade",
+                            "commit": "877d80ccce081eb76343ddacfb591f6c404b8ddd",
+                            "path": "lib/index.js",
+                            "content_sha256": "f63a2081a7efa89ed70f2777c14a9ce3daab914d48c3524c91315728e0e1e736"
+                        },
+                        {
+                            "repository_url": "https://github.com/439436269-ctrl/dsh-ai-arcade",
+                            "commit": "877d80ccce081eb76343ddacfb591f6c404b8ddd",
+                            "path": "lib/play.js",
+                            "content_sha256": "54d5e283012e9d599f0412c47e8f6d9bcc32b901533aa8f3bf10b2f50d764558"
+                        },
+                        {
+                            "repository_url": "https://github.com/439436269-ctrl/dsh-ai-arcade",
+                            "commit": "877d80ccce081eb76343ddacfb591f6c404b8ddd",
+                            "path": "lib/brain.js",
+                            "content_sha256": "1c902a561172c35fb40e9582a6cc7862b3d2ac903408fe99c52601a084a67938"
+                        },
+                        {
+                            "repository_url": "https://github.com/439436269-ctrl/dsh-ai-arcade",
+                            "commit": "877d80ccce081eb76343ddacfb591f6c404b8ddd",
+                            "path": "lib/trust.js",
+                            "content_sha256": "e0619417b4e03709525f173ffba15f4a37479ca3ec8569794088ef017b83e32d"
+                        },
+                        {
+                            "repository_url": "https://github.com/439436269-ctrl/dsh-ai-arcade",
+                            "commit": "877d80ccce081eb76343ddacfb591f6c404b8ddd",
+                            "path": "lib/config.js",
+                            "content_sha256": "7325cd1283f4d843753a24dad84f12385ca3e6755568943daba35a543d2ab00b"
+                        },
+                        {
+                            "repository_url": "https://github.com/439436269-ctrl/dsh-ai-arcade",
+                            "commit": "877d80ccce081eb76343ddacfb591f6c404b8ddd",
+                            "path": "src/client/games/snake.js",
+                            "content_sha256": "f9607266ac091375d1966760ff5efc4a49537a075e5a74991997d310430ff3b8"
+                        },
+                        {
+                            "repository_url": "https://github.com/439436269-ctrl/dsh-ai-arcade",
+                            "commit": "877d80ccce081eb76343ddacfb591f6c404b8ddd",
+                            "path": "src/client/games/xiangqi/ai.js",
+                            "content_sha256": "1456bbb2400fdc227cce9ddd1389a6b07870dc34dde8ec810c8275dd8e49bbf2"
+                        }
+                    ],
                     "revision": "877d80ccce081eb76343ddacfb591f6c404b8ddd",
-                    "captured_at": "2026-10-21T02:09:38.532Z",
-                    "summary": "核查 lib/brain.js、src/client/games/xiangqi/ai.js、src/client/games/snake.js、lib/trust.js；brain.js通过宿主llm.stream调用模型并解析正文/思考，provider缺省自动发现；客户端本地规则与搜索执行走法，模型在候选约束内表达策略和解说。",
-                    "artifact": "data/runs/2026-10-21-01/snapshots/439436269-ctrl--dsh-ai-arcade/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T06:10:06.529Z",
+                    "summary": "核查 README.md、package.json、lib/index.js、lib/play.js、lib/brain.js、lib/trust.js、lib/config.js、src/client/games/snake.js、src/client/games/xiangqi/ai.js；同源 iframe 游戏页、本地规则引擎、host brain 路由 ctx.llm.stream 和 SSE。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/439436269-ctrl--dsh-ai-arcade/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "抽读指定核心源码与作者说明；未执行目标插件或测试、未安装或做真实宿主验收，未核实独立用户收益。",
+                        "固定提交静态审阅 README、package、路由、信任、模型和本地规则源码；未运行目标游戏/模型。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +128,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "希望在DSH内娱乐或观察模型策略表达的用户；合格结果是合法、流畅游戏而不是模型棋力基准。",
+                    "text": "用户在 DSH 界面玩游戏并希望 AI 对手有策略/台词且不阻塞帧率。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1413897334-root-source"
+                        "2026-10-22-02-github-1413897334-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +139,16 @@
                             "fingerprint": "877d80ccce081eb76343ddacfb591f6c404b8ddd"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:09:38.532Z",
+                    "reviewed_at": "2026-10-22T06:10:06.529Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "brain.js通过宿主llm.stream调用模型并解析正文/思考，provider缺省自动发现；客户端本地规则与搜索执行走法，模型在候选约束内表达策略和解说。",
+                    "text": "同源 iframe 游戏页、本地规则引擎、host brain 路由 ctx.llm.stream 和 SSE。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1413897334-root-source"
+                        "2026-10-22-02-github-1413897334-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +157,16 @@
                             "fingerprint": "877d80ccce081eb76343ddacfb591f6c404b8ddd"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:09:38.532Z",
+                    "reviewed_at": "2026-10-22T06:10:06.529Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "抽读指定核心源码与作者说明；未执行目标插件或测试、未安装或做真实宿主验收，未核实独立用户收益。",
+                    "text": "固定提交静态审阅 README、package、路由、信任、模型和本地规则源码；未运行目标游戏/模型。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1413897334-root-source"
+                        "2026-10-22-02-github-1413897334-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +175,16 @@
                             "fingerprint": "877d80ccce081eb76343ddacfb591f6c404b8ddd"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:09:38.532Z",
+                    "reviewed_at": "2026-10-22T06:10:06.529Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "固定源码及包清单界定本次组件与分发；作者兼容和效果说明不等于本轮实际执行证据。",
+                    "text": "0.1.0 MIT，Node>=22，Cordis 与 dsh-llm peer，作者声明 DSH 0.2.0-rc.2。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1413897334-root-source"
+                        "2026-10-22-02-github-1413897334-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +193,16 @@
                             "fingerprint": "877d80ccce081eb76343ddacfb591f6c404b8ddd"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:09:38.532Z",
+                    "reviewed_at": "2026-10-22T06:10:06.529Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "首次构建并配置可用模型；模型调用消耗token且可能因reasoning参数失败重试，持续游戏频率决定费用；本地渲染另占CPU。",
+                    "text": "| 阶段 | 投入 | 未知 |\n| --- | --- | --- |\n| 安装 | DSH/Node/llm peer | 宿主兼容 |\n| 使用 | 频繁模型调用/2048 token 上限 | 每局积分 |\n| 治理 | 路由身份/预算 | 外网可达 |",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1413897334-root-source"
+                        "2026-10-22-02-github-1413897334-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +211,16 @@
                             "fingerprint": "877d80ccce081eb76343ddacfb591f6c404b8ddd"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:09:38.532Z",
+                    "reviewed_at": "2026-10-22T06:10:06.529Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "娱乐用途可隔离试用并设调用预算；不要用游戏胜率或作者单机延迟数字选择生产模型。",
+                    "text": "假 LLM 先验规则/性能；授权少额试用前封住付费路由的身份与预算。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1413897334-root-source"
+                        "2026-10-22-02-github-1413897334-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +229,16 @@
                             "fingerprint": "877d80ccce081eb76343ddacfb591f6c404b8ddd"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:09:38.532Z",
+                    "reviewed_at": "2026-10-22T06:10:06.529Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "本地规则与模型慢请求分离有助于体验稳定；娱乐满意度与模型增益未本轮实测。",
+                    "text": "| 结果 | 源码支持 | 未证实 |\n| --- | --- | --- |\n| 游戏规则 | 本地蛇/象棋引擎 | 实际乐趣 |\n| AI 台词 | ctx.llm.stream | 费用/时延 |\n| 页面刷新 | no-store 热读 | 反代缓存 |",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1413897334-root-source"
+                        "2026-10-22-02-github-1413897334-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +247,16 @@
                             "fingerprint": "877d80ccce081eb76343ddacfb591f6c404b8ddd"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:09:38.532Z",
+                    "reviewed_at": "2026-10-22T06:10:06.529Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "resolveTarget先核实配置再发现可用provider；streamBrain区分finish错误并在reasoning参数拒绝时去掉参数重试一次。注释low与README off表述应由实际设置为准。 [固定源码](https://github.com/439436269-ctrl/dsh-ai-arcade/blob/877d80ccce081eb76343ddacfb591f6c404b8ddd/lib/brain.js#L1)。",
+                    "text": "模型在宿主，游戏在浏览器；付费路由 GET/POST 均可触发，信任栅栏缺账户鉴权与频控；默认 low。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1413897334-root-source"
+                        "2026-10-22-02-github-1413897334-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,15 +265,69 @@
                             "fingerprint": "877d80ccce081eb76343ddacfb591f6c404b8ddd"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:09:38.532Z",
+                    "reviewed_at": "2026-10-22T06:10:06.529Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "用本地规则兜底并仅让模型做高层意图，游戏页与长期缓存壳分开。详见[Q01](#research-q01)、[Q02](#research-q02)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1413897334-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1413897334:root",
+                            "area": "code",
+                            "fingerprint": "877d80ccce081eb76343ddacfb591f6c404b8ddd"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T06:10:06.529Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "模型付费路由仅 Host/Origin 栅栏，接受 GET 和自定义 system，未见独立鉴权或频控；README 推理 effort 说明与默认代码不符。详见[Q03](#research-q03)、[Q04](#research-q04)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1413897334-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1413897334:root",
+                            "area": "code",
+                            "fingerprint": "877d80ccce081eb76343ddacfb591f6c404b8ddd"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T06:10:06.529Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "给付费路由加入认证/预算与 POST-only 后，可把游戏与模型建议分离用于更广娱乐场景；尚未实现。详见[Q05](#research-q05)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1413897334-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1413897334:root",
+                            "area": "code",
+                            "fingerprint": "877d80ccce081eb76343ddacfb591f6c404b8ddd"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T06:10:06.529Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T02:09:38.532Z",
+            "last_checked_at": "2026-10-22T06:10:06.529Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "877d80ccce081eb76343ddacfb591f6c404b8ddd",
-                "reviewed_at": "2026-10-21T02:09:38.532Z",
+                "reviewed_at": "2026-10-22T06:10:06.529Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -220,62 +338,62 @@
                 ],
                 "technical": {
                     "criteria": {
-                        "novelty": 18,
-                        "mechanism": 15,
+                        "novelty": 9,
+                        "mechanism": 23,
                         "transferability": 10,
                         "simplification": 8
                     },
-                    "rationale": "novelty：快慢循环分离在该宿主实质；mechanism：合法候选与本地兜底实质；transferability：意图执行分层实质可复用；simplification：避免模型实时控制实质。",
+                    "rationale": "本地规则与模型策略分工、SSE 页面分离清晰；安全边界不足。",
                     "basis": "interpretation",
-                    "score": 51,
+                    "score": 50,
                     "evidence_ids": [
-                        "2026-10-21-01-github-1413897334-root-source"
+                        "2026-10-22-02-github-1413897334-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
                         "workflow": 9,
-                        "delivery": 8,
+                        "delivery": 15,
                         "reach": 5,
                         "economics": 4
                     },
-                    "rationale": "workflow：娱乐交互小幅；delivery：已有游戏附加解说小幅；reach：宿主内可玩小幅；economics：减少逐步模型调用小幅，收益未测。",
+                    "rationale": "娱乐应用完成度可观，但模型额度与宿主依赖限制普及。",
                     "basis": "interpretation",
-                    "score": 26,
+                    "score": 33,
                     "evidence_ids": [
-                        "2026-10-21-01-github-1413897334-root-source"
+                        "2026-10-22-02-github-1413897334-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "trial",
-                "reason": "希望DSH内娱乐者可设调用预算后试用；模型文本不等于棋力，不以胜率或作者延迟数字选生产模型。",
+                "decision": "observe",
+                "reason": "玩法可在隔离假 LLM 试；付费 brain 路由在部署边界与预算核实前不对外开放。",
                 "criteria": {
                     "scenario": {
-                        "score": 15,
-                        "rationale": "轻量娱乐需求成立，但非生产交付或模型评测。"
+                        "score": 8,
+                        "rationale": "DSH 内游戏是非核心但明确的娱乐需求。"
                     },
                     "advantage": {
-                        "score": 6,
-                        "rationale": "整合游戏与解说减少切换，本地引擎承担棋力，模型额外价值有限。"
+                        "score": 13,
+                        "rationale": "规则/策略分工和离线降级有优势。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "brain文本与本地规则分工源码可见，娱乐满意度未测。"
+                        "rationale": "固定源码及仓库测试/作者性能记录，未独立运行。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "游戏调用及失败重试会耗token，本地CPU和配置也有成本。"
+                        "score": 5,
+                        "rationale": "模型 token、60fps UI 与认证治理成本。"
                     }
                 },
-                "score": 44,
+                "score": 39,
                 "revision": "877d80ccce081eb76343ddacfb591f6c404b8ddd",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T06:10:06.529Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-01-github-1413897334-root-source"
+                    "2026-10-22-02-github-1413897334-root-source"
                 ],
                 "dependencies": [
                     {
@@ -300,89 +418,61 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T01:54:44Z",
-            "analysis_sha256": "c621e13c6748222bd06ce690f239f660ba27876043ccd541d84ea35c0a41b270"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "70dfdfd12045306c984740290f69028eb29132d7f798f9b5f1f09d57945ad009"
         },
         "publication.metadata": "data/plugins/439436269-ctrl--dsh-ai-arcade/META.json",
         "publication.summaries": {
-            "text": "在 DSH 中提供双脑贪吃蛇和中国象棋，结合本地规则引擎与模型策略解说。",
+            "text": "DSH 内的双脑贪吃蛇和中国象棋，游戏规则本地运行，模型提供策略或解说。",
             "revision": "877d80ccce081eb76343ddacfb591f6c404b8ddd",
             "source_url": "https://github.com/439436269-ctrl/dsh-ai-arcade/blob/877d80ccce081eb76343ddacfb591f6c404b8ddd/README.md"
         },
         "publication.capabilities": {
             "revision": "877d80ccce081eb76343ddacfb591f6c404b8ddd",
             "items": {
-                "界面": "贪吃蛇和中国象棋街机面板",
-                "后台": "宿主模型流调用及本地规则搜索"
-            }
+                "界面": "本地规则贪吃蛇与象棋游戏页",
+                "Host 路由": "游戏页面与模型策略、解说 SSE"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 本地游戏 | 规则/帧率 | 浏览器负载 |\n| brain | 模型回复 | 额度路由 |\n| play | 页面热更新 | 宿主 no-store |"
         },
         "publication.advice": {
             "revision": "877d80ccce081eb76343ddacfb591f6c404b8ddd",
-            "text": "娱乐用途可隔离试用并设调用预算；不要用游戏胜率或作者单机延迟数字选择生产模型。"
+            "text": "假 LLM 先验规则/性能；授权少额试用前封住付费路由的身份与预算。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/439436269-ctrl--dsh-ai-arcade",
-        "reports": "# dsh-ai-arcade\n\n> 在 DSH 中提供双脑贪吃蛇和中国象棋，结合本地规则引擎与模型策略解说。\n\n## 研究范围\n\n- **仓库**：[439436269-ctrl/dsh-ai-arcade](https://github.com/439436269-ctrl/dsh-ai-arcade)\n- **版本号**：0.1.0（[固定提交 877d80cc](https://github.com/439436269-ctrl/dsh-ai-arcade/tree/877d80ccce081eb76343ddacfb591f6c404b8ddd)）\n- **版本日期**：2026-10-11（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已实现机制由固定源码支持；效果未独立实测，未来假设未验证。\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：希望在DSH内娱乐或观察模型策略表达的用户；合格结果是合法、流畅游戏而不是模型棋力基准。\n- **亮点**：相对让LLM逐帧直接控制游戏，贡献在快循环本地规则与慢循环模型意图分离；模型失联时保留可运行游戏。中国象棋棋力主要来自本地搜索，不能归为模型推理增强。\n- **思考**：模型真的影响胜负还是只增加拟人说明？作者明确本地引擎承担棋力，brain调用仅返回文本，合法性与具体行动还需客户端约束；模型延迟与失败时兜底让游戏可玩，却使胜率不能作为模型能力证据。\n- **建议**：娱乐用途可隔离试用并设调用预算；不要用游戏胜率或作者单机延迟数字选择生产模型。\n\n采用建议：娱乐用途可隔离试用并设调用预算；不要用游戏胜率或作者单机延迟数字选择生产模型。\n\n## 核心贡献\n\n相对让LLM逐帧直接控制游戏，贡献在快循环本地规则与慢循环模型意图分离；模型失联时保留可运行游戏。中国象棋棋力主要来自本地搜索，不能归为模型推理增强。\n\n## 关键质疑\n\n[核查分支](https://github.com/439436269-ctrl/dsh-ai-arcade/blob/877d80ccce081eb76343ddacfb591f6c404b8ddd/lib/brain.js#L196)。\n\n模型真的影响胜负还是只增加拟人说明？作者明确本地引擎承担棋力，brain调用仅返回文本，合法性与具体行动还需客户端约束；模型延迟与失败时兜底让游戏可玩，却使胜率不能作为模型能力证据。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n待验证假设：把策略卡可执行字段与解说分离，记录实际采纳比例，能检验模型是否提供超越本地默认策略的价值；代价是字段验证与策略回放记录。\n\n固定随机种子和对手，比较无模型、本地默认、模型策略三组的合法率/胜率/时延/费用；若采纳策略不改善结果则否定模型贡献假设。\n\n## 场景与替代办法\n\n希望在DSH内娱乐或观察模型策略表达的用户；合格结果是合法、流畅游戏而不是模型棋力基准。\n\n参照纯本地游戏与LLM直接出走法；本项目是拟人娱乐组合，不是新棋类搜索算法。\n\n## 依赖与流程\n\n依赖宿主llm和Web路由、游戏页面及浏览器；模型可选，失败时本地规则仍承担玩法。\n\n打开iframe游戏→本地回合推进→按需请求brain→消费策略/说明→超时或错误显示并兜底；暂停交由本地游戏。\n\n## 成本与效果\n\n首次构建并配置可用模型；模型调用消耗token且可能因reasoning参数失败重试，持续游戏频率决定费用；本地渲染另占CPU。\n\n本地规则与模型慢请求分离有助于体验稳定；娱乐满意度与模型增益未本轮实测。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：9ec63ae656f8f39195f5858bb67b2bd10311a436597ed182e610f4a1806c1c94。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 2 | 115 | — | — | 1460 |\n| .js | source | 18 | 3429 | 2234 | 948 | — |\n| .mjs | test | 2 | 387 | 295 | 61 | — |\n| .mjs | source | 2 | 194 | 145 | 35 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **界面**：贪吃蛇和中国象棋街机面板\n- **后台**：宿主模型流调用及本地规则搜索\n\n## 工程亮点\n\nresolveTarget先核实配置再发现可用provider；streamBrain区分finish错误并在reasoning参数拒绝时去掉参数重试一次。注释low与README off表述应由实际设置为准。 [固定源码](https://github.com/439436269-ctrl/dsh-ai-arcade/blob/877d80ccce081eb76343ddacfb591f6c404b8ddd/lib/brain.js#L1)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 lib/brain.js、src/client/games/xiangqi/ai.js、src/client/games/snake.js、lib/trust.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读指定核心源码与作者说明；未执行目标插件或测试、未安装或做真实宿主验收，未核实独立用户收益。\n- 下一步：固定随机种子和对手，比较无模型、本地默认、模型策略三组的合法率/胜率/时延/费用；若采纳策略不改善结果则否定模型贡献假设。\n",
+        "reports": "# dsh-ai-arcade\n\n> DSH 内的双脑贪吃蛇和中国象棋，游戏规则本地运行，模型提供策略或解说。\n\n## 研究范围\n\n- **仓库**：[439436269-ctrl/dsh-ai-arcade](https://github.com/439436269-ctrl/dsh-ai-arcade)\n- **版本号**：0.1.0（[固定提交 877d80ccce081eb76343ddacfb591f6c404b8ddd](https://github.com/439436269-ctrl/dsh-ai-arcade/tree/877d80ccce081eb76343ddacfb591f6c404b8ddd)）\n- **版本日期**：2026-10-11（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n模型/规则分工成立；brain 路由 GET/query 可花额度，默认 low 与 README off 不一致。\n\n## 洞察短评\n\n- **用途**：用户在 DSH 界面玩游戏并希望 AI 对手有策略/台词且不阻塞帧率。\n- **亮点**：用本地规则兜底并仅让模型做高层意图，游戏页与长期缓存壳分开。详见[Q01](#research-q01)、[Q02](#research-q02)。\n- **思考**：模型付费路由仅 Host/Origin 栅栏，接受 GET 和自定义 system，未见独立鉴权或频控；README 推理 effort 说明与默认代码不符。详见[Q03](#research-q03)、[Q04](#research-q04)。\n- **建议**：给付费路由加入认证/预算与 POST-only 后，可把游戏与模型建议分离用于更广娱乐场景；尚未实现。详见[Q05](#research-q05)。\n\n采用建议：假 LLM 先验规则/性能；授权少额试用前封住付费路由的身份与预算。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n用本地规则兜底并仅让模型做高层意图，游戏页与长期缓存壳分开。详见[Q01](#research-q01)、[Q02](#research-q02)。\n\n## 关键质疑\n\n模型付费路由仅 Host/Origin 栅栏，接受 GET 和自定义 system，未见独立鉴权或频控；README 推理 effort 说明与默认代码不符。详见[Q03](#research-q03)、[Q04](#research-q04)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n给付费路由加入认证/预算与 POST-only 后，可把游戏与模型建议分离用于更广娱乐场景；尚未实现。详见[Q05](#research-q05)。\n\n隔离假 LLM 测 GET/POST/Origin/Host、规则/离线，再授权小额测时延与 usage。\n\n## 场景与替代办法\n\n用户在 DSH 界面玩游戏并希望 AI 对手有策略/台词且不阻塞帧率。\n\n纯本地贪吃蛇/象棋；插件增加 AI 话术与策略卡。\n\n## 依赖与流程\n\n| 条件 | 用途 | 失败时 |\n| --- | --- | --- |\n| DSH llm/webServer | 模型/SSE | 离线游戏 |\n| 浏览器 iframe | 游戏 UI | 不显示 |\n| provider 额度 | 台词策略 | 默认策略 |\n\n| 步骤 | 动作 | 判据 |\n| --- | --- | --- |\n| 假模型 | 规则/离线 | 帧率和合法性 |\n| 安全 | 路由认证/限额 | 无越权费用 |\n| 小额试用 | 对账 usage | 预算内 |\n\n## 成本与效果\n\n| 阶段 | 投入 | 未知 |\n| --- | --- | --- |\n| 安装 | DSH/Node/llm peer | 宿主兼容 |\n| 使用 | 频繁模型调用/2048 token 上限 | 每局积分 |\n| 治理 | 路由身份/预算 | 外网可达 |\n\n| 结果 | 源码支持 | 未证实 |\n| --- | --- | --- |\n| 游戏规则 | 本地蛇/象棋引擎 | 实际乐趣 |\n| AI 台词 | ctx.llm.stream | 费用/时延 |\n| 页面刷新 | no-store 热读 | 反代缓存 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**审查游戏与模型职责分离、热更新及额度路由边界。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 两款游戏为何把模型与本地规则分工？\n\n**研究主题：**场景与需求\n\n#### 完整回答\n\n双脑贪吃蛇的模型周期性给策略意图和台词，20x20 本地规则每 tick 选方向，模型慢时继续旧/默认策略；中国象棋的本地合法着法与搜索给出候选，模型只选择/解说，不直接决定规则。此分工使动画不依赖模型每帧响应，但棋力及模型台词的体验质量只由作者代码和测试声称，本轮未玩游戏或独立评估。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:7-20](https://github.com/439436269-ctrl/dsh-ai-arcade/blob/877d80ccce081eb76343ddacfb591f6c404b8ddd/README.md#L7-L20)\n\n作者分工与性能记录。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n| 游戏 | 模型做什么 | 本地做什么 |\n|---|---|---|\n| 🐍 **双脑贪吃蛇** | 每 1.7 秒出一张**策略卡**（目标 / 激进程度 / 风险偏好）+ 一句挑衅 | 按 60fps 跑规则、按策略卡决定每一步、模型慢或挂了自动兜底 |\n| ♟ **中国象棋** | 只**解说**（从引擎给的候选里挑一个 + 说一句心理活动） | 走法生成、合法性校验、alpha-beta 搜索 —— **全部棋力** |\n\n## 为什么模型不直接下棋 / 不直接控制蛇\n\n因为它做不到，而且实测数据很清楚：\n\n- **象棋**：马腿、象眼、炮架、将帅照面这些规则一旦交给模型，非法棋是常态；就算合法，几百行的搜索也轻松赢它。所以模型只被允许**从本地给出的合法候选里挑一个**——非法棋因此不可能出现。\n- **贪吃蛇**：单次模型往返 **0.8–2 秒**，而游戏一步只要 140 毫秒。所以模型只出**意图**，具体走法由本地引擎算。\n- **还有一个坑**：宿主默认的 `reasoningEffort` 是 `high`，实测一次游戏规模的提问会**烧掉 2048 个输出 token 全在思考块里、耗时 17 秒、正文为空**。这个插件显式要 `off`，同样的提问变成 **0.78 秒、37 个 token、回答完整**。\n\n断网、模型超时、额度用尽 —— 两个游戏都照常运行，只是少了那张嘴。\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/client/games/snake.js:1-35](https://github.com/439436269-ctrl/dsh-ai-arcade/blob/877d80ccce081eb76343ddacfb591f6c404b8ddd/src/client/games/snake.js#L1-L35)\n\n默认策略和非阻塞约束。\n\n<details>\n<summary>查看原文（35行）</summary>\n\n```text\n/**\n * 双脑贪吃蛇 —— 游戏引擎（纯规则，不碰 DOM、不碰网络）。\n *\n * 三条设计约束，都是从实测里逼出来的：\n *\n *  1. **每一步必须是毫秒级的**。模型单次往返 0.8–2 秒，所以模型永远不决定\n *     \"这一步怎么走\"——它只出一张**策略卡**（目标/激进程度/风险偏好），\n *     具体走法由这里的 `chooseDirection` 每 tick 算一次。\n *  2. **宁可平庸也不能卡**。模型没回复就用上一张卡；一直没回复就用默认策略。\n *     引擎在任何情况下都不会等待网络。\n *  3. **规则要可复现**。`step()` 是确定性的，随机只出现在食物落点和低难度\n *     的失误率上，且都走同一个注入的 `rand`，方便测试时固定种子。\n *\n * @module src/client/games/snake\n */\n\n/** Board is square; `GRID × GRID` cells. */\nexport const GRID = 20;\n\n/** Direction name → `[dx, dy]` in grid cells (`y` grows downward). */\nexport const DIRS = Object.freeze({\n\tup: Object.freeze([0, -1]),\n\tdown: Object.freeze([0, 1]),\n\tleft: Object.freeze([-1, 0]),\n\tright: Object.freeze([1, 0]),\n});\n\nconst OPPOSITE = { up: \"down\", down: \"up\", left: \"right\", right: \"left\" };\n\n/** A策略卡 that makes a snake behave reasonably before the model says anything. */\nexport const DEFAULT_POLICY = Object.freeze({\n\ttarget: \"food\",\n\taggression: 0.6,\n\trisk: 0.3,\n\treason: \"\",\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/client/games/xiangqi/ai.js:1-29](https://github.com/439436269-ctrl/dsh-ai-arcade/blob/877d80ccce081eb76343ddacfb591f6c404b8ddd/src/client/games/xiangqi/ai.js#L1-L29)\n\n本地搜索与合法走法依赖。\n\n<details>\n<summary>查看原文（29行）</summary>\n\n```text\n/**\n * 象棋引擎的\"棋力\"部分：局面评估 + alpha-beta 搜索。\n *\n * 一个刻意的分工：**棋力全部来自这里，模型不参与算棋**。原因很直接——让\n * LLM 直接给走法，它会走出马蹩腿、炮翻空、将帅照面这类非法棋；就算合法，\n * 一个几百行的 alpha-beta 也能轻松赢它。所以模型的作用被限制在\"从本地给出的\n * 候选里挑一个 + 说理由\"，见 `brain` 那一侧。\n *\n * 搜索是 negamax + alpha-beta，内部走**伪合法**走法（不做自将过滤，靠\"吃到将\n * 就返回绝杀分\"剪枝，这是标准做法，比每步都做合法性检查快一个数量级）。根节点\n * 与界面才用真正的合法走法。\n *\n * @module src/client/games/xiangqi/ai\n */\n\nimport {\n\tBLACK,\n\tHEIGHT,\n\tRED,\n\tTYPES,\n\tVALUES,\n\tWIDTH,\n\tfindKing,\n\tgenerateMoves,\n\tisInCheck,\n\tlegalMoves,\n\tmakeMove,\n\tundoMove,\n} from \"./rules.js\";\n```\n\n</details>\n\n#### 缺口\n\n- 未运行目标游戏或模型。\n  **影响：**流畅度、棋力与台词质量未知。\n  **进一步探讨：**无模型和授权模型两组实机对照。\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 浏览器游戏、宿主路由和模型凭证怎样隔离？\n\n**研究主题：**功能与机制、贡献与相对优势\n\n#### 完整回答\n\n插件客户端只提供入口/iframe，游戏页经同源 /play 路由每次从磁盘读且 no-store，改变页面可刷新看；/brain 路由由宿主 ctx.llm.stream 执行，凭证留宿主，SSE 返回增量和结束/错误。客户端游戏引擎纯规则，模型只提供高层信息。这个分离避免模型慢调用卡 60fps，但页面热读不代表宿主/壳改动可热更。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:1-12](https://github.com/439436269-ctrl/dsh-ai-arcade/blob/877d80ccce081eb76343ddacfb591f6c404b8ddd/lib/index.js#L1-L12)\n\n模型调用与浏览器边界。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n/**\n * dsh-ai-arcade — host half.\n *\n * One read-only-by-nature HTTP route that turns a game situation into one\n * streamed model reply. The browser half (declared through `package.json` →\n * `dsh.client`, `platform: \"web\"`) owns the 60fps game loop and never talks to\n * a model directly — it cannot, because the browser bundle has no access to the\n * host's `llm` service.\n *\n * The split is deliberate: credentials and provider adapters stay in the host\n * process, the game stays in the browser, and a slow model can never stall a\n * frame.\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:100-185](https://github.com/439436269-ctrl/dsh-ai-arcade/blob/877d80ccce081eb76343ddacfb591f6c404b8ddd/lib/index.js#L100-L185)\n\nbrain SSE/ctx.llm。\n\n<details>\n<summary>查看原文（86行）</summary>\n\n```text\nasync function handleBrain(ctx, settings, trustedHosts, req, res) {\n\tif (!isTrustedRequest(req, trustedHosts)) {\n\t\twriteJson(res, 403, { ok: false, error: { code: \"forbidden\", message: \"forbidden\" } });\n\t\treturn;\n\t}\n\n\tlet payload;\n\tif (req.method === \"POST\") {\n\t\ttry {\n\t\t\tpayload = await readJsonBody(req, settings.maxBodyBytes);\n\t\t} catch (error) {\n\t\t\twriteJson(res, 400, {\n\t\t\t\tok: false,\n\t\t\t\terror: { code: \"bad-body\", message: error instanceof Error ? error.message : \"malformed body\" },\n\t\t\t});\n\t\t\treturn;\n\t\t}\n\t} else {\n\t\tlet params;\n\t\ttry {\n\t\t\tparams = new URL(req.url ?? BRAIN_ROUTE, \"http://localhost\").searchParams;\n\t\t} catch {\n\t\t\twriteJson(res, 400, { ok: false, error: { code: \"bad-request\", message: \"malformed request url\" } });\n\t\t\treturn;\n\t\t}\n\t\tpayload = { prompt: params.get(\"prompt\") ?? \"\", system: params.get(\"system\") ?? undefined };\n\t}\n\n\tconst prompt = typeof payload?.prompt === \"string\" ? payload.prompt.trim() : \"\";\n\tif (prompt === \"\") {\n\t\twriteJson(res, 400, { ok: false, error: { code: \"empty-prompt\", message: \"prompt is required\" } });\n\t\treturn;\n\t}\n\tconst system = typeof payload?.system === \"string\" && payload.system.trim() !== \"\" ? payload.system : BRAIN_SYSTEM;\n\n\tres.writeHead(200, SSE_HEADERS);\n\tres.flushHeaders?.();\n\n\tconst controller = new AbortController();\n\tconst onClientGone = () => controller.abort();\n\tres.on(\"close\", onClientGone);\n\tconst timer = setTimeout(() => controller.abort(), settings.timeoutMs);\n\n\t/**\n\t * Write one SSE frame; a write after the client vanished is not an error.\n\t *\n\t * @param event - event name.\n\t * @param data - JSON-serialisable payload.\n\t */\n\tconst send = (event, data) => {\n\t\ttry {\n\t\t\tres.write(`event: ${event}\\ndata: ${JSON.stringify(data)}\\n\\n`);\n\t\t} catch {\n\t\t\t// Client disappeared mid-write; the close handler already aborted the call.\n\t\t}\n\t};\n\n\ttry {\n\t\tconst target = await resolveTarget(ctx, settings);\n\t\tif (target === null) {\n\t\t\tsend(\"error\", {\n\t\t\t\tcode: \"no-model\",\n\t\t\t\tmessage: \"no usable provider/model is registered in this harness\",\n\t\t\t});\n\t\t\treturn;\n\t\t}\n\t\tsend(\"start\", {\n\t\t\tprovider: target.provider,\n\t\t\tmodel: target.model,\n\t\t\tsource: target.source,\n\t\t\treasoningEffort: settings.reasoningEffort,\n\t\t});\n\n\t\tconst started = Date.now();\n\t\tconst result = await streamBrain(ctx, {\n\t\t\tsystem,\n\t\t\tprompt,\n\t\t\tprovider: target.provider,\n\t\t\tmodel: target.model,\n\t\t\treasoningEffort: settings.reasoningEffort,\n\t\t\tmaxTokens: settings.maxTokens,\n\t\t\ttemperature: settings.temperature,\n\t\t\tsignal: controller.signal,\n\t\t\tonDelta: (text) => send(\"delta\", { text }),\n\t\t\tonThought: (text) => send(\"thinking\", { text }),\n\t\t});\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/play.js:4-18](https://github.com/439436269-ctrl/dsh-ai-arcade/blob/877d80ccce081eb76343ddacfb591f6c404b8ddd/lib/play.js#L4-L18)\n\n页面 no-store 动机。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n * Serves the self-contained game HTML on a same-origin path; the overlay panel\n * embeds it in an iframe.\n *\n * Three details matter, and all three exist because of one measured fact: DSH\n * serves plugin client bundles as `immutable` for a year AND caches the\n * aggregate server-side, so anything inside the plugin's browser bundle can only\n * be updated by restarting the harness. This page therefore lives outside that\n * bundle — and to stay iterable it must not be captured at import time either:\n *\n *  - the HTML is **read from disk on every request** (not imported as a module\n *    constant, which would be frozen in the ESM cache exactly like the bundle);\n *  - the response is `no-store`, so the browser re-asks every time;\n *  - the same trust fence as the brain route guards it, because this page can\n *    spend the user's model credits and the DSH web UI may be reachable through\n *    a LAN bind, a reverse proxy or a tunnel.\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/play.js:54-87](https://github.com/439436269-ctrl/dsh-ai-arcade/blob/877d80ccce081eb76343ddacfb591f6c404b8ddd/lib/play.js#L54-L87)\n\n每次读 play.html。\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\nexport function registerPlayRoute(ctx) {\n\tconst server = ctx.get(\"webServer\");\n\tif (server === undefined || typeof server.register !== \"function\") {\n\t\tconsole.warn(\"[dsh-ai-arcade] no webServer service — play route not registered\");\n\t\treturn () => {};\n\t}\n\tconst trustedHosts = ctx.get(\"webRuntime\")?.trustedHosts ?? [];\n\tconst dispose = server.register({\n\t\tkind: \"exact\",\n\t\tpath: PLAY_ROUTE,\n\t\thandler: (req, res) => {\n\t\t\tif (!isTrustedRequest(req, trustedHosts)) {\n\t\t\t\tres.writeHead(403, { \"content-type\": \"text/plain; charset=utf-8\" });\n\t\t\t\tres.end(\"forbidden\");\n\t\t\t\treturn;\n\t\t\t}\n\t\t\tconst page = readPage();\n\t\t\tif (page === null) {\n\t\t\t\tres.writeHead(500, { \"content-type\": \"text/plain; charset=utf-8\", \"cache-control\": \"no-store\" });\n\t\t\t\tres.end(\"play.html is missing — run `node tools/build-play.mjs`\");\n\t\t\t\treturn;\n\t\t\t}\n\t\t\tres.writeHead(200, {\n\t\t\t\t\"content-type\": \"text/html; charset=utf-8\",\n\t\t\t\t\"cache-control\": \"no-store, must-revalidate\",\n\t\t\t});\n\t\t\tres.end(page);\n\t\t},\n\t});\n\tconsole.log(`[dsh-ai-arcade] play page ready at ${PLAY_ROUTE} (served from ${PAGE_FILE})`);\n\treturn () => {\n\t\tif (typeof dispose === \"function\") dispose();\n\t};\n}\n```\n\n</details>\n\n**依据 5 · 作者声明**：[README.md:47-59](https://github.com/439436269-ctrl/dsh-ai-arcade/blob/877d80ccce081eb76343ddacfb591f6c404b8ddd/README.md#L47-L59)\n\n作者架构。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n````text\n## 架构\n\n```\n🎮 按钮（插件客户端 bundle：一枚按钮 + 一个 iframe）\n  └─ <iframe src=\"/api/dsh-ai-arcade/play\">\n        └─ 游戏页面（宿主路由，每次现读磁盘，no-store）\n              └─ fetch /api/dsh-ai-arcade/brain\n                    └─ ctx.llm.stream()  ← 凭证留在主进程\n```\n\n**游戏本体为什么不在插件的客户端 bundle 里**：DSH 把所有插件的浏览器半边聚合成一个响应，带一年 `immutable` 强缓存，服务端也缓存这份聚合；改客户端代码必须重启 DSH。把游戏放到宿主路由提供的页面上（`no-store`）之后，改玩法只要刷新页面 —— 这个插件在加入象棋、暂停功能的整个过程中没有重启过。\n\n反过来，插件那一半只当\"壳\"，几乎不需要改。\n````\n\n</details>\n\n#### 缺口\n\n- 未验证生产包缓存与重载。\n  **影响：**实际刷新路径是否被代理覆盖未知。\n  **进一步探讨：**固定 DSH/反代 profile 下验证。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 哪些请求会消耗模型额度，信任栅栏够吗？\n\n**研究主题：**缺陷与关键质疑、工程质量与复用、效果与总成本\n\n#### 完整回答\n\nbrain route 不只接受 POST：任何非 POST 都从 URL query 读取 prompt/system，非空便调用模型；且允许调用者自定 system。isTrustedRequest 检查 Host 是否 loopback/可信、拒绝显式 cross-site、Origin 存在时只比 hostname；缺 Origin 可通过，代码未见账户认证、请求频控或单独的额度上限。因这条路由会花用户模型额度，不能把“只读 HTTP 路由”理解为无副作用。实际外部可达性受宿主绑定与反代影响，未独立复现攻击。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:100-136](https://github.com/439436269-ctrl/dsh-ai-arcade/blob/877d80ccce081eb76343ddacfb591f6c404b8ddd/lib/index.js#L100-L136)\n\n信任判断和 GET query 模型输入。\n\n<details>\n<summary>查看原文（37行）</summary>\n\n```text\nasync function handleBrain(ctx, settings, trustedHosts, req, res) {\n\tif (!isTrustedRequest(req, trustedHosts)) {\n\t\twriteJson(res, 403, { ok: false, error: { code: \"forbidden\", message: \"forbidden\" } });\n\t\treturn;\n\t}\n\n\tlet payload;\n\tif (req.method === \"POST\") {\n\t\ttry {\n\t\t\tpayload = await readJsonBody(req, settings.maxBodyBytes);\n\t\t} catch (error) {\n\t\t\twriteJson(res, 400, {\n\t\t\t\tok: false,\n\t\t\t\terror: { code: \"bad-body\", message: error instanceof Error ? error.message : \"malformed body\" },\n\t\t\t});\n\t\t\treturn;\n\t\t}\n\t} else {\n\t\tlet params;\n\t\ttry {\n\t\t\tparams = new URL(req.url ?? BRAIN_ROUTE, \"http://localhost\").searchParams;\n\t\t} catch {\n\t\t\twriteJson(res, 400, { ok: false, error: { code: \"bad-request\", message: \"malformed request url\" } });\n\t\t\treturn;\n\t\t}\n\t\tpayload = { prompt: params.get(\"prompt\") ?? \"\", system: params.get(\"system\") ?? undefined };\n\t}\n\n\tconst prompt = typeof payload?.prompt === \"string\" ? payload.prompt.trim() : \"\";\n\tif (prompt === \"\") {\n\t\twriteJson(res, 400, { ok: false, error: { code: \"empty-prompt\", message: \"prompt is required\" } });\n\t\treturn;\n\t}\n\tconst system = typeof payload?.system === \"string\" && payload.system.trim() !== \"\" ? payload.system : BRAIN_SYSTEM;\n\n\tres.writeHead(200, SSE_HEADERS);\n\tres.flushHeaders?.();\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:173-205](https://github.com/439436269-ctrl/dsh-ai-arcade/blob/877d80ccce081eb76343ddacfb591f6c404b8ddd/lib/index.js#L173-L205)\n\n调用模型并返回。\n\n<details>\n<summary>查看原文（33行）</summary>\n\n```text\n\t\tconst started = Date.now();\n\t\tconst result = await streamBrain(ctx, {\n\t\t\tsystem,\n\t\t\tprompt,\n\t\t\tprovider: target.provider,\n\t\t\tmodel: target.model,\n\t\t\treasoningEffort: settings.reasoningEffort,\n\t\t\tmaxTokens: settings.maxTokens,\n\t\t\ttemperature: settings.temperature,\n\t\t\tsignal: controller.signal,\n\t\t\tonDelta: (text) => send(\"delta\", { text }),\n\t\t\tonThought: (text) => send(\"thinking\", { text }),\n\t\t});\n\t\tconst elapsedMs = Date.now() - started;\n\n\t\tif (result.ok) {\n\t\t\tsend(\"done\", {\n\t\t\t\ttext: result.text,\n\t\t\t\treasoningChars: typeof result.reasoning === \"string\" ? result.reasoning.length : 0,\n\t\t\t\telapsedMs,\n\t\t\t\tprovider: target.provider,\n\t\t\t\tmodel: target.model,\n\t\t\t\t...(result.usage === undefined ? {} : { usage: result.usage }),\n\t\t\t});\n\t\t} else {\n\t\t\tsend(\"error\", {\n\t\t\t\tcode: result.code,\n\t\t\t\tmessage: result.detail,\n\t\t\t\t...(typeof result.reasoning === \"string\" && result.reasoning !== \"\"\n\t\t\t\t\t? { reasoningChars: result.reasoning.length }\n\t\t\t\t\t: {}),\n\t\t\t\telapsedMs,\n\t\t\t});\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/trust.js:67-81](https://github.com/439436269-ctrl/dsh-ai-arcade/blob/877d80ccce081eb76343ddacfb591f6c404b8ddd/lib/trust.js#L67-L81)\n\nHost/Origin 检查。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\nexport function isTrustedRequest(request, trustedHosts) {\n\tconst host = headerOf(request?.headers, \"host\");\n\tif (host === undefined) return false;\n\tconst hostname = authorityHostname(host);\n\tif (hostname === null) return false;\n\tif (!isLoopbackHostname(hostname) && !isTrustedAuthority(host, trustedHosts)) return false;\n\tif (headerOf(request?.headers, \"sec-fetch-site\") === \"cross-site\") return false;\n\tconst origin = headerOf(request?.headers, \"origin\");\n\tif (origin === undefined) return true;\n\ttry {\n\t\treturn new URL(origin).hostname.toLowerCase() === hostname;\n\t} catch {\n\t\treturn false;\n\t}\n}\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:1-12](https://github.com/439436269-ctrl/dsh-ai-arcade/blob/877d80ccce081eb76343ddacfb591f6c404b8ddd/lib/index.js#L1-L12)\n\n源码注释称 read-only。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n/**\n * dsh-ai-arcade — host half.\n *\n * One read-only-by-nature HTTP route that turns a game situation into one\n * streamed model reply. The browser half (declared through `package.json` →\n * `dsh.client`, `platform: \"web\"`) owns the 60fps game loop and never talks to\n * a model directly — it cannot, because the browser bundle has no access to the\n * host's `llm` service.\n *\n * The split is deliberate: credentials and provider adapters stay in the host\n * process, the game stays in the browser, and a slow model can never stall a\n * frame.\n```\n\n</details>\n\n#### 缺口\n\n- 未看真实 DSH 路由外层鉴权/绑定。\n  **影响：**未经授权消耗额度的可达性待验证。\n  **进一步探讨：**隔离假 LLM/反代矩阵核认证与频率。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 模型选择、推理预算和安装要求有何成本？\n\n**研究主题：**依赖、兼容与流程、效果与总成本\n\n#### 完整回答\n\n包要求 Node>=22、Cordis 与 dsh-llm peer，package 只宣称 DSH 0.2.0-rc.2 兼容。resolveTarget 优先配置 provider/model，失败自动选第一个可用；每次 brain 调用可用 maxTokens 2048、timeout 45s。README 示例/叙述强调 reasoningEffort=off 与测得 0.78s，但固定源码默认是 low；若模型拒绝此参数，会再试一次不带参数，可能形成额外调用。作者延迟/token 数据不是独立基准。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:35-70](https://github.com/439436269-ctrl/dsh-ai-arcade/blob/877d80ccce081eb76343ddacfb591f6c404b8ddd/package.json#L35-L70)\n\n引擎/peer/兼容。\n\n<details>\n<summary>查看原文（36行）</summary>\n\n```text\n    \"README.md\",\n    \"LICENSE\"\n  ],\n  \"engines\": {\n    \"node\": \">=22\"\n  },\n  \"scripts\": {\n    \"build\": \"node tools/build-client.mjs && node tools/build-play.mjs\",\n    \"build:client\": \"node tools/build-client.mjs\",\n    \"build:play\": \"node tools/build-play.mjs\",\n    \"test\": \"node test/bundle-check.mjs && node --test test/xiangqi.test.mjs\"\n  },\n  \"peerDependencies\": {\n    \"@deepseek-ai/cordis\": \"^4.0.1\",\n    \"@deepseek-ai/dsh-llm\": \"^0.2.0-rc.2\"\n  },\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    },\n    \"client\": {\n      \"inject\": [\n        \"@deepseek-ai/dsh-client-ui-slots\"\n      ],\n      \"platform\": \"web\"\n    },\n    \"compatibility\": {\n      \"dshReleases\": {\n        \"0.2.0-rc.2\": \"compatible\"\n      }\n    }\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/439436269-ctrl/dsh-ai-arcade.git\"\n  },\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/config.js:18-35](https://github.com/439436269-ctrl/dsh-ai-arcade/blob/877d80ccce081eb76343ddacfb591f6c404b8ddd/lib/config.js#L18-L35)\n\n实际 low 默认。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n/** Code-side defaults, mirrored by the `Config` schema below. */\nexport const DEFAULTS = Object.freeze({\n\tenabled: true,\n\tprovider: \"deepseek-account\",\n\tmodel: \"deepseek-flash\",\n\t// Measured on this box: at the host default (high) a game-sized prompt spends\n\t// the whole output budget on the reasoning block and returns an EMPTY text\n\t// block after ~9s; at `low` the same prompt answers in ~1-2s with text.\n\treasoningEffort: \"low\",\n\tmaxTokens: 2048,\n\ttimeoutMs: 45_000,\n\ttemperature: 0.7,\n\tmaxBodyBytes: 65_536,\n\t// Not a feature: changing this string is what makes the loader re-read this\n\t// plugin row, which is how a host-half edit (and the client bundle served\n\t// from it) is picked up without restarting DSH. `tools/dev-sync.sh` bumps it.\n\tdevStamp: \"\",\n});\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/brain.js:73-105](https://github.com/439436269-ctrl/dsh-ai-arcade/blob/877d80ccce081eb76343ddacfb591f6c404b8ddd/lib/brain.js#L73-L105)\n\n自动选模型。\n\n<details>\n<summary>查看原文（33行）</summary>\n\n```text\n/**\n * Resolve the provider/model pair this plugin should call.\n *\n * @param ctx - host plugin context (needs the `llm` service).\n * @param settings - resolved plugin settings.\n * @returns the pair, or null when the host advertises no usable model.\n */\nexport async function resolveTarget(ctx, settings) {\n\tconst provider = settings.provider;\n\tconst model = settings.model;\n\tif (provider !== \"\" && model !== \"\") {\n\t\ttry {\n\t\t\tawait ctx.llm.resolveModelInfo(provider, model);\n\t\t\treturn { provider, model, source: \"config\" };\n\t\t} catch {\n\t\t\t// Fall through to discovery: a profile without this provider is not an error.\n\t\t}\n\t}\n\ttry {\n\t\tconst providers = ctx.llm.listProviders() ?? [];\n\t\tfor (const entry of providers) {\n\t\t\tconst id = typeof entry === \"string\" ? entry : entry?.id;\n\t\t\tif (typeof id !== \"string\" || id === \"\") continue;\n\t\t\tconst models = await ctx.llm.listModels(id);\n\t\t\tif (!Array.isArray(models)) continue;\n\t\t\tconst first = models.find((candidate) => typeof candidate === \"string\" && candidate !== \"\");\n\t\t\tif (first !== undefined) return { provider: id, model: first, source: \"auto\" };\n\t\t}\n\t} catch {\n\t\t// No discovery either — report the absence instead of guessing.\n\t}\n\treturn null;\n}\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/brain.js:190-210](https://github.com/439436269-ctrl/dsh-ai-arcade/blob/877d80ccce081eb76343ddacfb591f6c404b8ddd/lib/brain.js#L190-L210)\n\nreasoning 参数失败重试。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n\ttry {\n\t\treturn await attempt(reasoningEffort);\n\t} catch (error) {\n\t\tconst detail = error instanceof Error ? error.message : String(error);\n\t\t// A model that advertises no reasoning support rejects the knob outright;\n\t\t// the call itself is still fine, so retry once without it.\n\t\tif (typeof reasoningEffort === \"string\" && reasoningEffort !== \"\" && /reasoning/i.test(detail)) {\n\t\t\ttry {\n\t\t\t\treturn await attempt(\"\");\n\t\t\t} catch (retryError) {\n\t\t\t\treturn {\n\t\t\t\t\tok: false,\n\t\t\t\t\ttext: \"\",\n\t\t\t\t\treasoning: \"\",\n\t\t\t\t\tcode: \"stream-failed\",\n\t\t\t\t\tdetail: retryError instanceof Error ? retryError.message : String(retryError),\n\t\t\t\t};\n\t\t\t}\n\t\t}\n\t\treturn { ok: false, text: \"\", reasoning: \"\", code: \"stream-failed\", detail };\n\t}\n```\n\n</details>\n\n**依据 5 · 作者声明**：[README.md:12-18](https://github.com/439436269-ctrl/dsh-ai-arcade/blob/877d80ccce081eb76343ddacfb591f6c404b8ddd/README.md#L12-L18)\n\n作者 off 及性能声称。\n\n```text\n## 为什么模型不直接下棋 / 不直接控制蛇\n\n因为它做不到，而且实测数据很清楚：\n\n- **象棋**：马腿、象眼、炮架、将帅照面这些规则一旦交给模型，非法棋是常态；就算合法，几百行的搜索也轻松赢它。所以模型只被允许**从本地给出的合法候选里挑一个**——非法棋因此不可能出现。\n- **贪吃蛇**：单次模型往返 **0.8–2 秒**，而游戏一步只要 140 毫秒。所以模型只出**意图**，具体走法由本地引擎算。\n- **还有一个坑**：宿主默认的 `reasoningEffort` 是 `high`，实测一次游戏规模的提问会**烧掉 2048 个输出 token 全在思考块里、耗时 17 秒、正文为空**。这个插件显式要 `off`，同样的提问变成 **0.78 秒、37 个 token、回答完整**。\n```\n\n#### 缺口\n\n- 未用目标模型测实际 token/延迟。\n  **影响：**费用与重试次数未知。\n  **进一步探讨：**受控模型账号记录 usage。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 如何在不暴露额度的情况下验证玩法？\n\n**研究主题：**新假设与验证、采用判断\n\n#### 完整回答\n\n先禁用或替换模型为假 llm，在本地测试蛇与象棋规则、无模型降级、暂停与 UI；再用授权少量额度测策略频率和每局 usage。对部署在 LAN/隧道的宿主，先给 /brain 外层身份认证、限制 GET/自定 system 与频率/预算，之后才考虑开放他人访问。把规则引擎与模型建议分离可复用，但额度边界需额外实现。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/client/games/snake.js:1-35](https://github.com/439436269-ctrl/dsh-ai-arcade/blob/877d80ccce081eb76343ddacfb591f6c404b8ddd/src/client/games/snake.js#L1-L35)\n\n无模型默认策略。\n\n<details>\n<summary>查看原文（35行）</summary>\n\n```text\n/**\n * 双脑贪吃蛇 —— 游戏引擎（纯规则，不碰 DOM、不碰网络）。\n *\n * 三条设计约束，都是从实测里逼出来的：\n *\n *  1. **每一步必须是毫秒级的**。模型单次往返 0.8–2 秒，所以模型永远不决定\n *     \"这一步怎么走\"——它只出一张**策略卡**（目标/激进程度/风险偏好），\n *     具体走法由这里的 `chooseDirection` 每 tick 算一次。\n *  2. **宁可平庸也不能卡**。模型没回复就用上一张卡；一直没回复就用默认策略。\n *     引擎在任何情况下都不会等待网络。\n *  3. **规则要可复现**。`step()` 是确定性的，随机只出现在食物落点和低难度\n *     的失误率上，且都走同一个注入的 `rand`，方便测试时固定种子。\n *\n * @module src/client/games/snake\n */\n\n/** Board is square; `GRID × GRID` cells. */\nexport const GRID = 20;\n\n/** Direction name → `[dx, dy]` in grid cells (`y` grows downward). */\nexport const DIRS = Object.freeze({\n\tup: Object.freeze([0, -1]),\n\tdown: Object.freeze([0, 1]),\n\tleft: Object.freeze([-1, 0]),\n\tright: Object.freeze([1, 0]),\n});\n\nconst OPPOSITE = { up: \"down\", down: \"up\", left: \"right\", right: \"left\" };\n\n/** A策略卡 that makes a snake behave reasonably before the model says anything. */\nexport const DEFAULT_POLICY = Object.freeze({\n\ttarget: \"food\",\n\taggression: 0.6,\n\trisk: 0.3,\n\treason: \"\",\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/client/games/xiangqi/ai.js:1-29](https://github.com/439436269-ctrl/dsh-ai-arcade/blob/877d80ccce081eb76343ddacfb591f6c404b8ddd/src/client/games/xiangqi/ai.js#L1-L29)\n\n本地规则。\n\n<details>\n<summary>查看原文（29行）</summary>\n\n```text\n/**\n * 象棋引擎的\"棋力\"部分：局面评估 + alpha-beta 搜索。\n *\n * 一个刻意的分工：**棋力全部来自这里，模型不参与算棋**。原因很直接——让\n * LLM 直接给走法，它会走出马蹩腿、炮翻空、将帅照面这类非法棋；就算合法，\n * 一个几百行的 alpha-beta 也能轻松赢它。所以模型的作用被限制在\"从本地给出的\n * 候选里挑一个 + 说理由\"，见 `brain` 那一侧。\n *\n * 搜索是 negamax + alpha-beta，内部走**伪合法**走法（不做自将过滤，靠\"吃到将\n * 就返回绝杀分\"剪枝，这是标准做法，比每步都做合法性检查快一个数量级）。根节点\n * 与界面才用真正的合法走法。\n *\n * @module src/client/games/xiangqi/ai\n */\n\nimport {\n\tBLACK,\n\tHEIGHT,\n\tRED,\n\tTYPES,\n\tVALUES,\n\tWIDTH,\n\tfindKing,\n\tgenerateMoves,\n\tisInCheck,\n\tlegalMoves,\n\tmakeMove,\n\tundoMove,\n} from \"./rules.js\";\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:100-136](https://github.com/439436269-ctrl/dsh-ai-arcade/blob/877d80ccce081eb76343ddacfb591f6c404b8ddd/lib/index.js#L100-L136)\n\n现有输入面。\n\n<details>\n<summary>查看原文（37行）</summary>\n\n```text\nasync function handleBrain(ctx, settings, trustedHosts, req, res) {\n\tif (!isTrustedRequest(req, trustedHosts)) {\n\t\twriteJson(res, 403, { ok: false, error: { code: \"forbidden\", message: \"forbidden\" } });\n\t\treturn;\n\t}\n\n\tlet payload;\n\tif (req.method === \"POST\") {\n\t\ttry {\n\t\t\tpayload = await readJsonBody(req, settings.maxBodyBytes);\n\t\t} catch (error) {\n\t\t\twriteJson(res, 400, {\n\t\t\t\tok: false,\n\t\t\t\terror: { code: \"bad-body\", message: error instanceof Error ? error.message : \"malformed body\" },\n\t\t\t});\n\t\t\treturn;\n\t\t}\n\t} else {\n\t\tlet params;\n\t\ttry {\n\t\t\tparams = new URL(req.url ?? BRAIN_ROUTE, \"http://localhost\").searchParams;\n\t\t} catch {\n\t\t\twriteJson(res, 400, { ok: false, error: { code: \"bad-request\", message: \"malformed request url\" } });\n\t\t\treturn;\n\t\t}\n\t\tpayload = { prompt: params.get(\"prompt\") ?? \"\", system: params.get(\"system\") ?? undefined };\n\t}\n\n\tconst prompt = typeof payload?.prompt === \"string\" ? payload.prompt.trim() : \"\";\n\tif (prompt === \"\") {\n\t\twriteJson(res, 400, { ok: false, error: { code: \"empty-prompt\", message: \"prompt is required\" } });\n\t\treturn;\n\t}\n\tconst system = typeof payload?.system === \"string\" && payload.system.trim() !== \"\" ? payload.system : BRAIN_SYSTEM;\n\n\tres.writeHead(200, SSE_HEADERS);\n\tres.flushHeaders?.();\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/trust.js:67-81](https://github.com/439436269-ctrl/dsh-ai-arcade/blob/877d80ccce081eb76343ddacfb591f6c404b8ddd/lib/trust.js#L67-L81)\n\n现有信任判定。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\nexport function isTrustedRequest(request, trustedHosts) {\n\tconst host = headerOf(request?.headers, \"host\");\n\tif (host === undefined) return false;\n\tconst hostname = authorityHostname(host);\n\tif (hostname === null) return false;\n\tif (!isLoopbackHostname(hostname) && !isTrustedAuthority(host, trustedHosts)) return false;\n\tif (headerOf(request?.headers, \"sec-fetch-site\") === \"cross-site\") return false;\n\tconst origin = headerOf(request?.headers, \"origin\");\n\tif (origin === undefined) return true;\n\ttry {\n\t\treturn new URL(origin).hostname.toLowerCase() === hostname;\n\t} catch {\n\t\treturn false;\n\t}\n}\n```\n\n</details>\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：9ec63ae656f8f39195f5858bb67b2bd10311a436597ed182e610f4a1806c1c94。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 2 | 115 | — | — | 1460 |\n| .js | source | 18 | 3429 | 2234 | 948 | — |\n| .mjs | test | 2 | 387 | 295 | 61 | — |\n| .mjs | source | 2 | 194 | 145 | 35 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 本地游戏 | 规则/帧率 | 浏览器负载 |\n| brain | 模型回复 | 额度路由 |\n| play | 页面热更新 | 宿主 no-store |\n\n## 工程亮点\n\n模型在宿主，游戏在浏览器；付费路由 GET/POST 均可触发，信任栅栏缺账户鉴权与频控；默认 low。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、lib/play.js、lib/brain.js、lib/trust.js、lib/config.js、src/client/games/snake.js、src/client/games/xiangqi/ai.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定提交静态审阅 README、package、路由、信任、模型和本地规则源码；未运行目标游戏/模型。\n- 下一步：隔离假 LLM 测 GET/POST/Origin/Host、规则/离线，再授权小额测时延与 usage。\n",
         "metadata": {
             "repository": "439436269-ctrl/dsh-ai-arcade",
             "repository_id": 1413897334,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T06:06:18.310Z",
+            "window_start": "2026-09-22T06:06:18.310Z",
             "stars": 0,
             "pushed_at": "2026-10-11T05:37:15Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-ai-arcade%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6413:3B024B:14404F:21DAD9:6AD84A13 and timestamp 2026-10-21 05:13:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-ai-arcade%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6416:12AB5A:13BBC3:2156B8:6AD84A13 and timestamp 2026-10-21 05:13:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-ai-arcade%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6417:33975D:14763C:21FBB0:6AD84A13 and timestamp 2026-10-21 05:13:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-ai-arcade%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641A:AF775:144446:21D301:6AD84A13 and timestamp 2026-10-21 05:13:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-ai-arcade%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641B:250B02:14CC18:2267A1:6AD84A13 and timestamp 2026-10-21 05:13:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "dsh-ai-arcade",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T06:06:28.938Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": 299,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-ai-arcade",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-ai-arcade",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-10-11T05:31:31.226Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T06:06:28.938Z",
                     "source_url": "https://registry.npmjs.org/dsh-ai-arcade",
                     "error": null,
                     "latest_version": "0.1.0",
                     "latest_published_at": "2026-10-11T05:32:27.336Z",
                     "latest_error": null
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "877d80ccce081eb76343ddacfb591f6c404b8ddd",
-                "current_revision": "877d80ccce081eb76343ddacfb591f6c404b8ddd",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {
@@ -390,14 +480,14 @@
             "repository": "439436269-ctrl/dsh-ai-arcade",
             "path": "",
             "revision": "877d80ccce081eb76343ddacfb591f6c404b8ddd",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "b0f68c9c65ec125d8dd92fe19ada8644354d4ed563f45de1c99890ff546eaa8d",
                 "code": "877d80ccce081eb76343ddacfb591f6c404b8ddd",
                 "maintenance": "8817222f71e1a1525ca0c44c956bdfb7e461299b50e4c6417652e91c94d64091"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

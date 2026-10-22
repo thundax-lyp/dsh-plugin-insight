@@ -10,7 +10,7 @@
             "repository": "AgentDebugX/AgentDebugX",
             "path": "integrations/dsh-agentdebugx",
             "aliases": [],
-            "name": "AgentDebugX",
+            "name": "dsh-agentdebugx",
             "entry_type": "plugin",
             "technical_category": "observability-cost",
             "business_category": "software-delivery",
@@ -24,36 +24,76 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-06-github-1296792947-integrations-dsh-agentdebugx-directory-0",
+                    "id": "2026-10-22-02-github-1296792947-integrations-dsh-agentdebugx-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T05:40:01.691Z",
+                    "retrieved_at": "2026-10-22T09:36:08.821Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-06-github-1296792947-integrations-dsh-agentdebugx-author",
+                    "id": "2026-10-22-02-github-1296792947-integrations-dsh-agentdebugx-author",
                     "kind": "author_claim",
                     "url": "https://github.com/AgentDebugX/AgentDebugX/blob/2437c73c3183e6b6495259dfbb12464a7f07f6b8/integrations/dsh-agentdebugx/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AgentDebugX/AgentDebugX",
+                            "commit": "2437c73c3183e6b6495259dfbb12464a7f07f6b8",
+                            "path": "integrations/dsh-agentdebugx/README.md",
+                            "content_sha256": "8b390a8794506a81e0f711542554fbdfa91195e791fa0cb1c0b67bb4bf97e56c"
+                        }
+                    ],
                     "revision": "2437c73c3183e6b6495259dfbb12464a7f07f6b8",
-                    "captured_at": "2026-10-21T05:40:01.691Z",
-                    "summary": "按需将DSH当前或选定历史会话接入AgentDebugX诊断，并保存可关联的轨迹与报告。",
-                    "artifact": "data/runs/2026-10-21-06/snapshots/agentdebugx--agentdebugx--integrations-dsh-agentdebugx/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:36:08.821Z",
+                    "summary": "连接 DSH 会话与 AgentDebugX，支持保存会话发现、当前或历史轨迹诊断和本地查看。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/agentdebugx--agentdebugx--integrations-dsh-agentdebugx/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-06-github-1296792947-integrations-dsh-agentdebugx-source",
+                    "id": "2026-10-22-02-github-1296792947-integrations-dsh-agentdebugx-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/AgentDebugX/AgentDebugX/blob/2437c73c3183e6b6495259dfbb12464a7f07f6b8/integrations/dsh-agentdebugx/index.js",
+                    "url": "https://github.com/AgentDebugX/AgentDebugX/blob/2437c73c3183e6b6495259dfbb12464a7f07f6b8/integrations/dsh-agentdebugx/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AgentDebugX/AgentDebugX",
+                            "commit": "2437c73c3183e6b6495259dfbb12464a7f07f6b8",
+                            "path": "integrations/dsh-agentdebugx/README.md",
+                            "content_sha256": "8b390a8794506a81e0f711542554fbdfa91195e791fa0cb1c0b67bb4bf97e56c"
+                        },
+                        {
+                            "repository_url": "https://github.com/AgentDebugX/AgentDebugX",
+                            "commit": "2437c73c3183e6b6495259dfbb12464a7f07f6b8",
+                            "path": "integrations/dsh-agentdebugx/package.json",
+                            "content_sha256": "e640b50ca8270662739e18b56e693c456e972933fba06aa12468b06def7b1210"
+                        },
+                        {
+                            "repository_url": "https://github.com/AgentDebugX/AgentDebugX",
+                            "commit": "2437c73c3183e6b6495259dfbb12464a7f07f6b8",
+                            "path": "integrations/dsh-agentdebugx/index.js",
+                            "content_sha256": "a4369fb47a0ea2e3d3bdd491b28c6936fc661ce1e33de84a84b1438aee4ebb6f"
+                        },
+                        {
+                            "repository_url": "https://github.com/AgentDebugX/AgentDebugX",
+                            "commit": "2437c73c3183e6b6495259dfbb12464a7f07f6b8",
+                            "path": "integrations/dsh-agentdebugx/bridge/agentdebug_bridge.py",
+                            "content_sha256": "a668c065188ece08980db2deb93a3cac285d4ab70cdbb0fbe854f2c9a0be4fff"
+                        },
+                        {
+                            "repository_url": "https://github.com/AgentDebugX/AgentDebugX",
+                            "commit": "2437c73c3183e6b6495259dfbb12464a7f07f6b8",
+                            "path": "integrations/dsh-agentdebugx/test/plugin.test.js",
+                            "content_sha256": "67697802ba68ba20dddf13c9c9f0652307ef68a507bd3d8092d2eb860196f454"
+                        }
+                    ],
                     "revision": "2437c73c3183e6b6495259dfbb12464a7f07f6b8",
-                    "captured_at": "2026-10-21T05:40:01.691Z",
-                    "summary": "核查 integrations/dsh-agentdebugx/index.js、integrations/dsh-agentdebugx/bridge/agentdebug_bridge.py、integrations/dsh-agentdebugx/package.json；DSH commands/tools显式触发Python JSON桥接；读取完整Zstd帧并丢弃末尾撕裂帧，以已完成轮次为边界建trajectory；诊断start/result写入会话，heuristic和调用宿主模型的deep区分。",
-                    "artifact": "data/runs/2026-10-21-06/snapshots/agentdebugx--agentdebugx--integrations-dsh-agentdebugx/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:36:08.821Z",
+                    "summary": "核查 integrations/dsh-agentdebugx/README.md、integrations/dsh-agentdebugx/package.json、integrations/dsh-agentdebugx/index.js、integrations/dsh-agentdebugx/bridge/agentdebug_bridge.py、integrations/dsh-agentdebugx/test/plugin.test.js；取完成边界snapshot或保存日志，经lazy JSONL Python桥调用既有pipeline，deep回调宿主模型并可降级，轨迹和报告保存SQLite。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/agentdebugx--agentdebugx--integrations-dsh-agentdebugx/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "抽读integrations/dsh-agentdebugx/index.js、integrations/dsh-agentdebugx/bridge/agentdebug_bridge.py、integrations/dsh-agentdebugx/package.json；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+                        "固定组件源码核查，涉及JS桥/路径/完成边界与Python降级，不审计AgentDebugX全部核心算法，不运行诊断或模型。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +104,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "开发者追查Agent失败需要将原始会话与诊断结论对应，不能把诊断者意见当真实根因。",
+                    "text": "开发者解释Agent失败/重试，需要把已完成会话变成可回指事件的诊断报告；不以无finding当任务成功。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1296792947-integrations-dsh-agentdebugx-source"
+                        "2026-10-22-02-github-1296792947-integrations-dsh-agentdebugx-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +115,16 @@
                             "fingerprint": "2437c73c3183e6b6495259dfbb12464a7f07f6b8"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:40:01.691Z",
+                    "reviewed_at": "2026-10-22T09:36:08.821Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "DSH commands/tools显式触发Python JSON桥接；读取完整Zstd帧并丢弃末尾撕裂帧，以已完成轮次为边界建trajectory；诊断start/result写入会话，heuristic和调用宿主模型的deep区分。",
+                    "text": "取完成边界snapshot或保存日志，经lazy JSONL Python桥调用既有pipeline，deep回调宿主模型并可降级，轨迹和报告保存SQLite。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1296792947-integrations-dsh-agentdebugx-source"
+                        "2026-10-22-02-github-1296792947-integrations-dsh-agentdebugx-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +133,16 @@
                             "fingerprint": "2437c73c3183e6b6495259dfbb12464a7f07f6b8"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:40:01.691Z",
+                    "reviewed_at": "2026-10-22T09:36:08.821Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "抽读integrations/dsh-agentdebugx/index.js、integrations/dsh-agentdebugx/bridge/agentdebug_bridge.py、integrations/dsh-agentdebugx/package.json；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+                    "text": "固定组件源码核查，涉及JS桥/路径/完成边界与Python降级，不审计AgentDebugX全部核心算法，不运行诊断或模型。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1296792947-integrations-dsh-agentdebugx-source"
+                        "2026-10-22-02-github-1296792947-integrations-dsh-agentdebugx-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +151,16 @@
                             "fingerprint": "2437c73c3183e6b6495259dfbb12464a7f07f6b8"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:40:01.691Z",
+                    "reviewed_at": "2026-10-22T09:36:08.821Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "独立MIT集成包，Python AgentDebugX运行时另装、版本分别维护；组件不在安装时启动Python。",
+                    "text": "组件0.1.0、MIT；Node ^22.19.0或>=24，独立Python及AgentDebugX 0.3.x UI依赖，早期DSH目标需复核。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1296792947-integrations-dsh-agentdebugx-source"
+                        "2026-10-22-02-github-1296792947-integrations-dsh-agentdebugx-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +169,16 @@
                             "fingerprint": "2437c73c3183e6b6495259dfbb12464a7f07f6b8"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:40:01.691Z",
+                    "reviewed_at": "2026-10-22T09:36:08.821Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "首次Python环境、轨迹存储和可选viewer，heuristic不额外调用模型；deep额外模型回合和判读成本，未测诊断收益。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | Python/依赖、SQLite与本地端口 | 独立环境和root配置 | 需Python/SQLite/端口与root配置；初始化费用/时间未知 |\n| 持续使用 | heuristic CPU/I/O；deep复用模型仍收费 | 选择轨迹、检查诊断与根因 | deep复用宿主模型仍计费；长日志解压CPU/IO与等待未知 |\n| 失败恢复 | 后台可能继续，重试可能重复费用/记录 | 核对超时状态、已写报告和敏感输入 | 超时后台可继续且重试可重复收费；诊断有效率/恢复工时未知 |\n",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1296792947-integrations-dsh-agentdebugx-source"
+                        "2026-10-22-02-github-1296792947-integrations-dsh-agentdebugx-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +187,16 @@
                             "fingerprint": "2437c73c3183e6b6495259dfbb12464a7f07f6b8"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:40:01.691Z",
+                    "reviewed_at": "2026-10-22T09:36:08.821Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "先在脱敏历史会话验证映射和诊断准确性；保留原始轨迹并审查持久化范围，deep结论需独立证据。",
+                    "text": "建议观察，先修明物理路径与取消契约，缩窄历史root，之后再考虑不敏感当前工作区轨迹；同模型自诊断不作为独立效果证明。详见[Q06](#research-q06)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1296792947-integrations-dsh-agentdebugx-source"
+                        "2026-10-22-02-github-1296792947-integrations-dsh-agentdebugx-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +205,16 @@
                             "fingerprint": "2437c73c3183e6b6495259dfbb12464a7f07f6b8"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:40:01.691Z",
+                    "reviewed_at": "2026-10-22T09:36:08.821Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "减少会话导出和分析入口摩擦，实际定位速度/修复有效性未验。",
+                    "text": "#### 效果\n\n| 目标 | 源码支持 | 边界 |\n| --- | --- | --- |\n| DSH轨迹接入 | 完成seq和原生日志映射 | 长日志同步解压开销未知 |\n| deep降级 | 失败保留heuristic及deepError | 诊断正确率未测 |\n| 本地报告 | SQLite和dashboard | 含敏感提示及工具数据 |",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1296792947-integrations-dsh-agentdebugx-source"
+                        "2026-10-22-02-github-1296792947-integrations-dsh-agentdebugx-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +223,16 @@
                             "fingerprint": "2437c73c3183e6b6495259dfbb12464a7f07f6b8"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:40:01.691Z",
+                    "reviewed_at": "2026-10-22T09:36:08.821Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "完整帧扫描、完成前缀、按需进程与分析ID关联值得借鉴；协议和压缩格式变更需回归。 源码依据：[integrations/dsh-agentdebugx/index.js](https://github.com/AgentDebugX/AgentDebugX/blob/2437c73c3183e6b6495259dfbb12464a7f07f6b8/integrations/dsh-agentdebugx/index.js)、[integrations/dsh-agentdebugx/bridge/agentdebug_bridge.py](https://github.com/AgentDebugX/AgentDebugX/blob/2437c73c3183e6b6495259dfbb12464a7f07f6b8/integrations/dsh-agentdebugx/bridge/agentdebug_bridge.py)、[integrations/dsh-agentdebugx/package.json](https://github.com/AgentDebugX/AgentDebugX/blob/2437c73c3183e6b6495259dfbb12464a7f07f6b8/integrations/dsh-agentdebugx/package.json)。",
+                    "text": "lazy桥、请求id/route lease、完成边界和模式降级可借鉴；根路径与取消状态仍需统一，跨语言协议成功不代表根因有效。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1296792947-integrations-dsh-agentdebugx-source"
+                        "2026-10-22-02-github-1296792947-integrations-dsh-agentdebugx-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +241,16 @@
                             "fingerprint": "2437c73c3183e6b6495259dfbb12464a7f07f6b8"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:40:01.691Z",
+                    "reviewed_at": "2026-10-22T09:36:08.821Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "interpretation",
-                    "text": "组件贡献是DSH持久会话映射、按需桥接和诊断事件可追溯；Detect-Attribute-Recover与DeepDebug算法归AgentDebugX核心，本组件不包含全部上游CLI能力。",
+                    "text": "将DSH完成边界、Zstandard日志、模型工具和Python诊断接成一条本地流程，保留deep失败与原任务结果；核心诊断算法仍归AgentDebugX。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1296792947-integrations-dsh-agentdebugx-source"
+                        "2026-10-22-02-github-1296792947-integrations-dsh-agentdebugx-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +259,16 @@
                             "fingerprint": "2437c73c3183e6b6495259dfbb12464a7f07f6b8"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:40:01.691Z",
+                    "reviewed_at": "2026-10-22T09:36:08.821Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
-                    "basis": "interpretation",
-                    "text": "映射成功能否保证根因正确？丢弃不完整末帧和只取完成边界会排除正在失败的信息；deep默认可由产生轨迹的同模型判断，非独立验证。保存轨迹也引入敏感上下文持久化。",
+                    "basis": "supported",
+                    "text": "持久DSH日志分支只作词法root核对后读取，和Python通用轨迹真实路径检查不一致；超时也未见终止后台诊断。静态风险未复现，足以收窄当前采用。详见[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1296792947-integrations-dsh-agentdebugx-source"
+                        "2026-10-22-02-github-1296792947-integrations-dsh-agentdebugx-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +277,16 @@
                             "fingerprint": "2437c73c3183e6b6495259dfbb12464a7f07f6b8"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:40:01.691Z",
+                    "reviewed_at": "2026-10-22T09:36:08.821Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
-                    "topic": "technical_innovation",
+                    "topic": "engineering",
                     "basis": "unverified",
-                    "text": "由稳定边界和诊断事件推导，可附映射覆盖率/被排除事件清单，配独立模型与人工标签对照，区分观察与归因置信度。未验证；带已知故障的轨迹比较漏诊/误归因，覆盖率提升应改善准确率才成立。",
+                    "text": "可研究绑定确认对象、真实路径/hash、完成边界与取消状态的输入/任务收据，用保存会话及symlink/超时反例验证是否减少错对象诊断与重复执行。当前未验证。详见[Q06](#research-q06)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1296792947-integrations-dsh-agentdebugx-source"
+                        "2026-10-22-02-github-1296792947-integrations-dsh-agentdebugx-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +295,15 @@
                             "fingerprint": "2437c73c3183e6b6495259dfbb12464a7f07f6b8"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:40:01.691Z",
+                    "reviewed_at": "2026-10-22T09:36:08.821Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T05:40:01.691Z",
+            "last_checked_at": "2026-10-22T09:36:08.821Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "2437c73c3183e6b6495259dfbb12464a7f07f6b8",
-                "reviewed_at": "2026-10-21T05:40:01.691Z",
+                "reviewed_at": "2026-10-22T09:36:08.821Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -279,57 +319,57 @@
                         "transferability": 10,
                         "simplification": 8
                     },
-                    "rationale": "novelty已有诊断框架接线小档；mechanism帧扫描/事件映射半档；transferability按需诊断桥接半档；simplification素材导入半档，上游算法不重复计。",
+                    "rationale": "novelty小幅，跨语言与诊断既有机制适配；mechanism实质，DSH完成边界和事件映射保留归因信息；transferability实质，lazy协议和降级可迁移但依赖宿主；simplification实质，工具到存储/查看减少交接，不含核心算法原创。",
                     "basis": "interpretation",
                     "score": 42,
                     "evidence_ids": [
-                        "2026-10-21-06-github-1296792947-integrations-dsh-agentdebugx-source"
+                        "2026-10-22-02-github-1296792947-integrations-dsh-agentdebugx-source"
                     ]
                 },
                 "business": {
                     "criteria": {
                         "workflow": 18,
-                        "delivery": 15,
+                        "delivery": 8,
                         "reach": 5,
-                        "economics": 0
+                        "economics": 4
                     },
-                    "rationale": "workflow会话到归因链半档；delivery诊断记录半档；reach开发调试用户小档；economics未证额外诊断费换来收益为0。",
+                    "rationale": "workflow实质，导出CLI流程接到会话工具；delivery小幅，报告与事件坐标合并；reach小幅，模型可调用而仍需Python维护；economics小幅，少手工交接但deep费用与诊断收益未测。",
                     "basis": "interpretation",
-                    "score": 38,
+                    "score": 35,
                     "evidence_ids": [
-                        "2026-10-21-06-github-1296792947-integrations-dsh-agentdebugx-source"
+                        "2026-10-22-02-github-1296792947-integrations-dsh-agentdebugx-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "trial",
-                "reason": "Agent开发者可在脱敏历史会话试诊断；先核轨迹映射并保留原文，deep意见须用独立事实确认根因。",
+                "decision": "observe",
+                "reason": "适合Agent调试维护者观察；先补保存DSH日志真实路径边界并确认超时任务状态，再限定不敏感轨迹试用。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "失败轨迹与诊断结论对应是明确排障任务。"
+                        "rationale": "会话故障诊断任务明确，根因有效性未测。"
                     },
                     "advantage": {
                         "score": 19,
-                        "rationale": "DSH入口、完成边界与诊断写回减少导出分析摩擦。"
+                        "rationale": "DSH原生事件映射和工具桥降低CLI交接，算法非本组件新增。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "已核Python桥及撕裂帧处理，未测定位或修复收益。"
+                        "rationale": "固定组件关键源码和测试已读，无执行证据。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "需Python与轨迹存储，deep模型费用和敏感上下文审阅不可省。"
+                        "score": 5,
+                        "rationale": "独立Python、SQLite、dashboard、敏感历史与deep模型费用较重。"
                     }
                 },
-                "score": 65,
+                "score": 60,
                 "revision": "2437c73c3183e6b6495259dfbb12464a7f07f6b8",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T09:36:08.821Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-06-github-1296792947-integrations-dsh-agentdebugx-source"
+                    "2026-10-22-02-github-1296792947-integrations-dsh-agentdebugx-source"
                 ],
                 "dependencies": [
                     {
@@ -354,76 +394,56 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T05:26:52Z",
-            "analysis_sha256": "aca84573e33dafd1db90e7a7bb043b81e984a6ad81a9e5d83d0c43957cb99493"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "784777e78ec6753c8c1243270da596ec482a2806c21617e9598d8db851960660"
         },
         "publication.metadata": "data/plugins/agentdebugx--agentdebugx--integrations-dsh-agentdebugx/META.json",
         "publication.summaries": {
-            "text": "按需将DSH当前或选定历史会话接入AgentDebugX诊断，并保存可关联的轨迹与报告。",
+            "text": "连接 DSH 会话与 AgentDebugX，支持保存会话发现、当前或历史轨迹诊断和本地查看。",
             "revision": "2437c73c3183e6b6495259dfbb12464a7f07f6b8",
             "source_url": "https://github.com/AgentDebugX/AgentDebugX/blob/2437c73c3183e6b6495259dfbb12464a7f07f6b8/integrations/dsh-agentdebugx/README.md"
         },
         "publication.capabilities": {
             "revision": "2437c73c3183e6b6495259dfbb12464a7f07f6b8",
             "items": {
-                "模型工具": "会话发现、当前/保存轨迹诊断与能力查询。",
-                "用户命令": "/agentdebug状态、诊断及显式viewer入口。",
-                "后台": "按需Python桥接和轨迹存储。"
-            }
+                "模型工具": "agentdebug_list_sessions、agentdebug_diagnose、agentdebug_analyze_trace、agentdebug_capabilities",
+                "用户命令": "/agentdebug提供状态、能力、诊断和打开",
+                "后台": "按需Python桥/dashboard及可选autoCapture"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 保存会话发现 | 找到待诊断对象 | root及候选确认重要 |\n| heuristic/deep诊断 | 形成报告 | deep非独立验证且消耗模型 |\n| 本地查看与记录 | 回指事件和结果 | SQLite含敏感数据，dashboard需边界 |"
         },
         "publication.advice": {
             "revision": "2437c73c3183e6b6495259dfbb12464a7f07f6b8",
-            "text": "先在脱敏历史会话验证映射和诊断准确性；保留原始轨迹并审查持久化范围，deep结论需独立证据。"
+            "text": "建议观察，先修明物理路径与取消契约，缩窄历史root，之后再考虑不敏感当前工作区轨迹；同模型自诊断不作为独立效果证明。详见[Q06](#research-q06)。"
         },
         "registry": "data/plugins/agentdebugx--agentdebugx--integrations-dsh-agentdebugx",
-        "reports": "# AgentDebugX\n\n> 按需将DSH当前或选定历史会话接入AgentDebugX诊断，并保存可关联的轨迹与报告。\n\n## 使用建议\n\n先在脱敏历史会话验证映射和诊断准确性；保留原始轨迹并审查持久化范围，deep结论需独立证据。\n\n核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。\n\n源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。\n\n## 洞察短评\n\n- **用途**：开发者追查Agent失败需要将原始会话与诊断结论对应，不能把诊断者意见当真实根因。\n- **亮点**：组件贡献是DSH持久会话映射、按需桥接和诊断事件可追溯；Detect-Attribute-Recover与DeepDebug算法归AgentDebugX核心，本组件不包含全部上游CLI能力。\n- **思考**：映射成功能否保证根因正确？丢弃不完整末帧和只取完成边界会排除正在失败的信息；deep默认可由产生轨迹的同模型判断，非独立验证。保存轨迹也引入敏感上下文持久化。\n- **建议**：由稳定边界和诊断事件推导，可附映射覆盖率/被排除事件清单，配独立模型与人工标签对照，区分观察与归因置信度。未验证；带已知故障的轨迹比较漏诊/误归因，覆盖率提升应改善准确率才成立。\n\n## 场景与替代办法\n\n开发者追查Agent失败需要将原始会话与诊断结论对应，不能把诊断者意见当真实根因。\n\n上游CLI支持更广诊断/重跑；本组件将DSH素材映射进去，不自动执行修复。\n\n## 能力清单\n\n- **模型工具**：会话发现、当前/保存轨迹诊断与能力查询。\n- **用户命令**：/agentdebug状态、诊断及显式viewer入口。\n- **后台**：按需Python桥接和轨迹存储。\n\n## 依赖与流程\n\nDSH sessions/tools/commands/llm，Node zstd支持、Python及AgentDebugX SQLite/viewer；deep另依赖模型能力。\n\n发现历史会话并确认目标或诊断当前完成轮次，映射trajectory，启动桥接并存储诊断，回写报告ID，可显式打开viewer。\n\n## 成本与效果\n\n首次Python环境、轨迹存储和可选viewer，heuristic不额外调用模型；deep额外模型回合和判读成本，未测诊断收益。\n\n减少会话导出和分析入口摩擦，实际定位速度/修复有效性未验。\n\n## 核心贡献\n\n组件贡献是DSH持久会话映射、按需桥接和诊断事件可追溯；Detect-Attribute-Recover与DeepDebug算法归AgentDebugX核心，本组件不包含全部上游CLI能力。\n\n## 关键质疑\n\n映射成功能否保证根因正确？丢弃不完整末帧和只取完成边界会排除正在失败的信息；deep默认可由产生轨迹的同模型判断，非独立验证。保存轨迹也引入敏感上下文持久化。\n\n\n## 工程亮点\n\n完整帧扫描、完成前缀、按需进程与分析ID关联值得借鉴；协议和压缩格式变更需回归。 源码依据：[integrations/dsh-agentdebugx/index.js](https://github.com/AgentDebugX/AgentDebugX/blob/2437c73c3183e6b6495259dfbb12464a7f07f6b8/integrations/dsh-agentdebugx/index.js)、[integrations/dsh-agentdebugx/bridge/agentdebug_bridge.py](https://github.com/AgentDebugX/AgentDebugX/blob/2437c73c3183e6b6495259dfbb12464a7f07f6b8/integrations/dsh-agentdebugx/bridge/agentdebug_bridge.py)、[integrations/dsh-agentdebugx/package.json](https://github.com/AgentDebugX/AgentDebugX/blob/2437c73c3183e6b6495259dfbb12464a7f07f6b8/integrations/dsh-agentdebugx/package.json)。\n\n## 未来设计假设（未验证）\n\n由稳定边界和诊断事件推导，可附映射覆盖率/被排除事件清单，配独立模型与人工标签对照，区分观察与归因置信度。未验证；带已知故障的轨迹比较漏诊/误归因，覆盖率提升应改善准确率才成立。\n\n用已知边界的多帧/末帧截断会话核对事件数，检查选中session归属、取消、桥接异常和deep降级字段；以人工故障标签评诊断。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：integrations/dsh-agentdebugx；内容摘要：1ecee703d17adb44ef1ab6bbfa1d148eff3bab17ab6c9681b28af4643dc0074f。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 1 | 1526 | 1339 | 94 | — |\n| .md | source | 2 | 346 | — | — | 2161 |\n| .js | test | 1 | 747 | 672 | 24 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[AgentDebugX/AgentDebugX](https://github.com/AgentDebugX/AgentDebugX)\n- **版本号**：0.1.0（[固定提交 2437c73c](https://github.com/AgentDebugX/AgentDebugX/tree/2437c73c3183e6b6495259dfbb12464a7f07f6b8)）\n- **版本日期**：2026-09-20（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：作者 README、包清单、源码路径 integrations/dsh-agentdebugx/index.js、integrations/dsh-agentdebugx/bridge/agentdebug_bridge.py、integrations/dsh-agentdebugx/package.json 及固定范围 inventory；组件：integrations/dsh-agentdebugx。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读integrations/dsh-agentdebugx/index.js、integrations/dsh-agentdebugx/bridge/agentdebug_bridge.py、integrations/dsh-agentdebugx/package.json；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。\n- 下一步：用已知边界的多帧/末帧截断会话核对事件数，检查选中session归属、取消、桥接异常和deep降级字段；以人工故障标签评诊断。\n",
+        "reports": "# dsh-agentdebugx\n\n> 连接 DSH 会话与 AgentDebugX，支持保存会话发现、当前或历史轨迹诊断和本地查看。\n\n## 研究范围\n\n- **仓库**：[AgentDebugX/AgentDebugX](https://github.com/AgentDebugX/AgentDebugX)\n- **版本号**：0.1.0（[固定提交 2437c73c3183e6b6495259dfbb12464a7f07f6b8](https://github.com/AgentDebugX/AgentDebugX/tree/2437c73c3183e6b6495259dfbb12464a7f07f6b8)）\n- **版本日期**：2026-09-20（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\nDSH事件映射、按需桥和模式降级有源码支持；路径物理边界及取消状态有缺口。输入/任务收据为未验证方向。\n\n## 洞察短评\n\n- **用途**：开发者解释Agent失败/重试，需要把已完成会话变成可回指事件的诊断报告；不以无finding当任务成功。详见[Q01](#research-q01)。\n- **亮点**：将DSH完成边界、Zstandard日志、模型工具和Python诊断接成一条本地流程，保留deep失败与原任务结果；核心诊断算法仍归AgentDebugX。详见[Q01](#research-q01)。\n- **思考**：持久DSH日志分支只作词法root核对后读取，和Python通用轨迹真实路径检查不一致；超时也未见终止后台诊断。静态风险未复现，足以收窄当前采用。详见[Q03](#research-q03)。\n- **建议**：可研究绑定确认对象、真实路径/hash、完成边界与取消状态的输入/任务收据，用保存会话及symlink/超时反例验证是否减少错对象诊断与重复执行。当前未验证。详见[Q06](#research-q06)。\n\n采用建议：建议观察，先修明物理路径与取消契约，缩窄历史root，之后再考虑不敏感当前工作区轨迹；同模型自诊断不作为独立效果证明。详见[Q06](#research-q06)。\n\n## 核心贡献\n\n将DSH完成边界、Zstandard日志、模型工具和Python诊断接成一条本地流程，保留deep失败与原任务结果；核心诊断算法仍归AgentDebugX。详见[Q01](#research-q01)。\n\n## 关键质疑\n\n持久DSH日志分支只作词法root核对后读取，和Python通用轨迹真实路径检查不一致；超时也未见终止后台诊断。静态风险未复现，足以收窄当前采用。详见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可研究绑定确认对象、真实路径/hash、完成边界与取消状态的输入/任务收据，用保存会话及symlink/超时反例验证是否减少错对象诊断与重复执行。当前未验证。详见[Q06](#research-q06)。\n\n进一步探讨可先核对持久日志symlink和超时取消，再用有独立标签的固定故障轨迹比较手工CLI、heuristic与deep的正确率、费用和复核投入。\n\n## 场景与替代办法\n\n开发者解释Agent失败/重试，需要把已完成会话变成可回指事件的诊断报告；不以无finding当任务成功。详见[Q01](#research-q01)。\n\n手工导出DSH日志并用AgentDebugX CLI归一化/诊断/打开为简单替代，适配器减少交接但扩大模型可读历史和运行环境责任。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 条件 | 用途 | 失效影响 |\n| --- | --- | --- |\n| DSH sessions/tools/commands/systemPrompt/llm | 工具与模型回调 | API/事件变更影响接线 |\n| Python和AgentDebugX UI | 诊断及viewer | npm不自动准备 |\n| SQLite/本地dashboard | 保存与查看 | 敏感数据和端口需管理 |\n| 可选模型route | deep诊断 | 失败降级，费用仍适用 |\n\n#### 启动步骤\n\n| 步骤 | 执行者 | 判断标准 |\n| --- | --- | --- |\n| 分别准备Python和DSH包 | 维护者 | 环境/模块可达 |\n| 缩窄roots并选模式 | 用户 | 历史访问与费用明确 |\n| 先列保存候选再确认 | 用户/Agent | 确定目标而非猜测会话 |\n| 诊断并复核结果 | Agent/用户 | 区分mode/deepError/recordedOutcome |\n| 超时先核对状态再重试 | 用户 | 不假定后台已停止 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | Python/依赖、SQLite与本地端口 | 独立环境和root配置 | 需Python/SQLite/端口与root配置；初始化费用/时间未知 |\n| 持续使用 | heuristic CPU/I/O；deep复用模型仍收费 | 选择轨迹、检查诊断与根因 | deep复用宿主模型仍计费；长日志解压CPU/IO与等待未知 |\n| 失败恢复 | 后台可能继续，重试可能重复费用/记录 | 核对超时状态、已写报告和敏感输入 | 超时后台可继续且重试可重复收费；诊断有效率/恢复工时未知 |\n\n\n#### 效果\n\n| 目标 | 源码支持 | 边界 |\n| --- | --- | --- |\n| DSH轨迹接入 | 完成seq和原生日志映射 | 长日志同步解压开销未知 |\n| deep降级 | 失败保留heuristic及deepError | 诊断正确率未测 |\n| 本地报告 | SQLite和dashboard | 含敏感提示及工具数据 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**固定DSH适配器如何把当前与保存会话变为AgentDebugX诊断，输入边界、结果可信度和采用成本是什么？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 适配器解决什么任务，相对CLI多了什么？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n面向想解释DSH Agent失败、重试或异常工具序列的开发者，输入是当前已完成轮次或明确选中的保存轨迹，交付是可回指事件的诊断报告及本地查看入口，而不是自动修复成功。简单替代是导出会话再手工用AgentDebugX CLI归一化、诊断和打开viewer；适配器把这些交接接入模型工具和/agentdebug。\n\n已有增量是保留DSH turn/step/tool关联、原生串联Zstandard日志读取、按需启动桥和模型回调，以及在诊断失败时不丢确定性报告。核心Detect-Attribute-Recover和DeepDebug来自AgentDebugX，不归作DSH适配器原创。没有findings只说明启发式未命中，不意味着任务成功；桥保留recordedOutcome可帮助区分输入任务结果与诊断发现。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[integrations/dsh-agentdebugx/README.md:1-18](https://github.com/AgentDebugX/AgentDebugX/blob/2437c73c3183e6b6495259dfbb12464a7f07f6b8/integrations/dsh-agentdebugx/README.md#L1-L18)\n\n作者定义适配器职责与隔离目录。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n# dsh-agentdebugx\n\nA separately packaged DeepSeek Harness plugin kept under the AgentDebugX\nrepository. It connects Harness sessions to AgentDebugX without coupling\nHarness-specific code into the `agentdebug` Python package.\n\nThe plugin:\n\n- starts no AgentDebugX process when Harness loads the plugin;\n- captures and diagnoses Harness turns only when an AgentDebugX tool or command\n  is explicitly used;\n- stores trajectories in AgentDebugX SQLite storage;\n- exposes `/agentdebug status|capabilities|diagnose|open`;\n- exposes model-facing saved-session discovery, session diagnosis, saved-trace\n  analysis, and capability-discovery tools;\n- reads Harness's own persisted sessions, including the concatenated-Zstandard\n  `session.jsonl.zstd` container;\n- opens the AgentDebugX viewer only when explicitly requested or configured;\n```\n\n</details>\n\n**依据 2 · 源码核查**：[integrations/dsh-agentdebugx/index.js:318-355](https://github.com/AgentDebugX/AgentDebugX/blob/2437c73c3183e6b6495259dfbb12464a7f07f6b8/integrations/dsh-agentdebugx/index.js#L318-L355)\n\nDSH日志转同shape，保留事件而非通用扁平转换。\n\n<details>\n<summary>查看原文（38行）</summary>\n\n```text\n/**\n * Read a persisted Harness session log into the same snapshot shape the live\n * `session/event` feed produces, so on-disk sessions reuse the bridge's\n * Harness-aware event mapping instead of generic trace auto-detection.\n */\nexport function readSessionLog(target) {\n  const file = resolveSessionLog(target)\n  const raw = readFileSync(file)\n  const text = file.endsWith('.zstd')\n    ? scanZstdFrames(raw)\n      .map(frame => zstdDecompressSync(raw.subarray(frame.start, frame.end)).toString('utf8'))\n      .join('')\n    : raw.toString('utf8')\n\n  let header = {}\n  let id\n  const events = []\n  for (const line of text.split('\\n')) {\n    if (line.trim() === '') continue\n    let record\n    try {\n      record = JSON.parse(line)\n    } catch {\n      // A crashed writer can leave a partial trailing line; keep the events\n      // that were already durable.\n      continue\n    }\n    if (record.type === 'session') {\n      header = record\n      id = record.id\n      continue\n    }\n    events.push(record)\n  }\n  if (events.length === 0) {\n    throw new Error(`session log has no events: ${file}`)\n  }\n  return { id: id ?? path.basename(path.dirname(file)), header, events }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[integrations/dsh-agentdebugx/bridge/agentdebug_bridge.py:388-397](https://github.com/AgentDebugX/AgentDebugX/blob/2437c73c3183e6b6495259dfbb12464a7f07f6b8/integrations/dsh-agentdebugx/bridge/agentdebug_bridge.py#L388-L397)\n\n存轨迹和报告并返回原记录outcome。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n    store = _store(store_path)\n    store.save_trajectory(trajectory)\n    store.save_report(report)\n    summary = _summary(report, dashboard_url)\n    summary['mode'] = 'deep' if deep_ran else 'heuristic'\n    if deep_error is not None:\n        summary['deepError'] = deep_error\n    outcome = _recorded_outcome(trajectory)\n    if outcome is not None:\n        summary['recordedOutcome'] = outcome\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 完成边界、桥协议及降级如何工作？\n\n**研究主题：**功能与机制\n\n#### 完整回答\n\n入口注入sessions/tools/commands/systemPrompt/llm，注册四个工具和用户命令。当前会话诊断先寻找最新completed turn并snapshot到该seq，没有完成边界即报错，防止对尚未稳定的当前轮给最终诊断。它向会话追加agentdebug/start，桥请求完成或失败后追加result，包含analysisId和坐标。\n\nPythonBridge第一次request才start，按JSONL id关联pending、超时和响应；Python将snapshot归一化成AgentTrajectory并交给已有pipeline。heuristic不调用模型，deep通过租借route让桥回调宿主llm，结束finally释放lease。deep异常或没有任何模型调用成功时回到local_default并标记deepError，仍保存trajectory/report。Dashboard独立按需准备，外部健康实例可复用。上述是源码流程，不证明根因诊断准确。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[integrations/dsh-agentdebugx/index.js:1066-1073](https://github.com/AgentDebugX/AgentDebugX/blob/2437c73c3183e6b6495259dfbb12464a7f07f6b8/integrations/dsh-agentdebugx/index.js#L1066-L1073)\n\n只取已完成边界。\n\n```text\nfunction requireStableSnapshot(session) {\n  const throughSeq = latestCompletedSeq(session)\n  if (throughSeq === undefined) {\n    throw new Error(\n      'AgentDebugX requires at least one completed turn; finish the current turn and retry.',\n    )\n  }\n  return snapshot(session, throughSeq)\n```\n\n**依据 2 · 源码核查**：[integrations/dsh-agentdebugx/index.js:1114-1165](https://github.com/AgentDebugX/AgentDebugX/blob/2437c73c3183e6b6495259dfbb12464a7f07f6b8/integrations/dsh-agentdebugx/index.js#L1114-L1165)\n\n模式租约、事件和错误记录。\n\n<details>\n<summary>查看原文（52行）</summary>\n\n```text\nasync function withMode(bridge, config, session, mode, run) {\n  if (mode !== 'deep') return run({ mode: 'heuristic' }, config.timeoutMs)\n  const route = resolveRoute(config, session)\n  const lease = bridge.lend(route)\n  try {\n    return await run(\n      { mode: 'deep', llm: { token: lease.token, model: route.model } },\n      config.deepTimeoutMs,\n    )\n  } finally {\n    lease.release()\n  }\n}\n\nasync function diagnoseSession(bridge, config, session, signal, mode = 'heuristic') {\n  const stable = requireStableSnapshot(session)\n  const analysisId = `analysis-${randomUUID()}`\n  const boundary = stable.events.at(-1)\n  const coordinates = {\n    analysisId,\n    turn: boundary?.data?.turn ?? 0,\n    step: boundary?.data?.step ?? 0,\n  }\n  appendAnalysisEvent(session, 'agentdebug/start', { ...coordinates, mode })\n  try {\n    const result = await withMode(bridge, config, session, mode, (modeParams, timeoutMs) =>\n      bridge.request(\n        'diagnose',\n        {\n          session: stable,\n          store: config.store,\n          dashboardUrl: config.dashboardUrl,\n          ...modeParams,\n        },\n        signal,\n        { timeoutMs },\n      ))\n    appendAnalysisEvent(session, 'agentdebug/result', {\n      ...coordinates,\n      mode,\n      traceId: result.summary.traceId,\n      reportId: result.summary.reportId,\n      summary: result.summary.summary,\n    })\n    return result.summary\n  } catch (error) {\n    appendAnalysisEvent(session, 'agentdebug/result', {\n      ...coordinates,\n      mode,\n      error: error instanceof Error ? error.message : String(error),\n    })\n    throw error\n```\n\n</details>\n\n**依据 3 · 源码核查**：[integrations/dsh-agentdebugx/index.js:947-968](https://github.com/AgentDebugX/AgentDebugX/blob/2437c73c3183e6b6495259dfbb12464a7f07f6b8/integrations/dsh-agentdebugx/index.js#L947-L968)\n\nlazy请求、pending和计时器。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n  request(method, params = {}, signal, { timeoutMs = this.timeoutMs } = {}) {\n    this.start()\n    if (signal?.aborted) return Promise.reject(abortError(signal))\n    const id = `agentdebugx-${++this.sequence}`\n    return new Promise((resolve, reject) => {\n      const onAbort = () => {\n        this.finish(id)\n        reject(abortError(signal))\n      }\n      const timer = setTimeout(() => {\n        this.finish(id)\n        reject(new Error(`AgentDebugX ${method} timed out after ${timeoutMs}ms`))\n      }, timeoutMs)\n      this.pending.set(id, { resolve, reject, timer, signal, onAbort })\n      signal?.addEventListener('abort', onAbort, { once: true })\n      const payload = `${JSON.stringify({ id, method, params })}\\n`\n      this.process.stdin.write(payload, error => {\n        if (error === null || error === undefined) return\n        this.finish(id)\n        reject(error)\n      })\n    })\n```\n\n</details>\n\n**依据 4 · 源码核查**：[integrations/dsh-agentdebugx/bridge/agentdebug_bridge.py:349-397](https://github.com/AgentDebugX/AgentDebugX/blob/2437c73c3183e6b6495259dfbb12464a7f07f6b8/integrations/dsh-agentdebugx/bridge/agentdebug_bridge.py#L349-L397)\n\ndeep失败和无成功模型调用降级，保存结果。\n\n<details>\n<summary>查看原文（49行）</summary>\n\n```text\ndef _diagnose_trajectory(\n    trajectory: AgentTrajectory,\n    *,\n    store_path: str,\n    dashboard_url: Optional[str],\n    llm: Any = None,\n) -> JsonObject:\n    deep_error: Optional[str] = None\n    deep_ran = False\n    if llm is None:\n        report = DiagnosePipeline.local_default().run(trajectory).report\n    else:\n        try:\n            report = _diagnose_deep(trajectory, llm)\n            deep_ran = True\n        except Exception as exc:\n            # DeepDebug refuses to answer when it cannot ground a root cause in\n            # a real event, and the host model can be unavailable. Neither is a\n            # reason to throw away the deterministic result the caller would\n            # otherwise have received.\n            host_error = getattr(llm, 'first_error', None)\n            deep_error = (\n                f'host model call failed: {host_error}' if host_error\n                else f'{type(exc).__name__}: {_safe_text(str(exc))}'\n            )\n        if getattr(llm, 'completed', 0) == 0:\n            # DeepDebug's tiers absorb failed calls and can still assemble a\n            # verdict from their fallbacks. A verdict no model ever saw must\n            # not be presented as a model-backed diagnosis.\n            deep_ran = False\n            deep_error = (\n                f'no host model call succeeded: {llm.first_error}'\n                if getattr(llm, 'first_error', None)\n                else 'no host model call succeeded'\n            )\n        elif deep_ran and getattr(llm, 'first_error', None):\n            deep_error = f'some host model calls failed: {llm.first_error}'\n        if not deep_ran:\n            report = DiagnosePipeline.local_default().run(trajectory).report\n    store = _store(store_path)\n    store.save_trajectory(trajectory)\n    store.save_report(report)\n    summary = _summary(report, dashboard_url)\n    summary['mode'] = 'deep' if deep_ran else 'heuristic'\n    if deep_error is not None:\n        summary['deepError'] = deep_error\n    outcome = _recorded_outcome(trajectory)\n    if outcome is not None:\n        summary['recordedOutcome'] = outcome\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 路径、历史选择和超时的边界是什么？\n\n**研究主题：**缺陷与关键质疑\n\n#### 完整回答\n\n历史会话发现被设计成先列候选再请用户确认，tool描述和SYSTEM_PROMPT承载这一行为规则，不能视为工具内部强制人类批准。默认会把DSH_HOME/sessions附加到traceRoots，意味着模型可能读到当前工作区之外的历史提示和工具结果，应由用户明确决定是否关闭历史根。候选列表有数量和摘要限制，但可读取的诊断内容仍敏感，SQLite和dashboard需要本地信任边界。\n\n路径限制还有具体不一致。Python通用轨迹路径先Path.resolve核对真实路径，Node持久DSH日志分支却先用path.resolve/path.relative作词法检查，再readSessionLog，stat/read会跟随符号链接；目录里session.jsonl符号链接也可能指向根外。列表发现拒绝symlink不等于直接analyze_trace同样受保护。这是静态可见的越界读取条件风险，本轮不创建反例或读取敏感文件。request超时仅finish pending并reject，片段没有向Python发送取消诊断，因此超时后是否仍在计算/写库不能假定停止。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[integrations/dsh-agentdebugx/index.js:358-368](https://github.com/AgentDebugX/AgentDebugX/blob/2437c73c3183e6b6495259dfbb12464a7f07f6b8/integrations/dsh-agentdebugx/index.js#L358-L368)\n\nNode根判断为词法规范化。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\nfunction assertInsideRoots(target, roots) {\n  const resolved = path.resolve(target)\n  const allowed = roots.some(root => {\n    const base = path.resolve(root)\n    const relative = path.relative(base, resolved)\n    return relative === '' || (!relative.startsWith('..') && !path.isAbsolute(relative))\n  })\n  if (!allowed) {\n    throw new Error(`trace path is outside configured traceRoots: ${resolved}`)\n  }\n  return resolved\n```\n\n</details>\n\n**依据 2 · 源码核查**：[integrations/dsh-agentdebugx/index.js:1169-1189](https://github.com/AgentDebugX/AgentDebugX/blob/2437c73c3183e6b6495259dfbb12464a7f07f6b8/integrations/dsh-agentdebugx/index.js#L1169-L1189)\n\nDSH日志分支检查后直接读snapshot。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\nasync function diagnosePath(bridge, config, roots, args, signal, session = undefined) {\n  const mode = args.mode === 'deep' ? 'deep' : 'heuristic'\n  const format = args.format ?? 'auto'\n  // A persisted Harness session is read here rather than in Python: the log is\n  // a concatenated-Zstandard container Node decodes natively, and routing it\n  // through the session mapper preserves turn, step, and tool-call linkage\n  // that generic trace detection would flatten.\n  if (format === 'dsh_session' || (format === 'auto' && isSessionLogPath(args.path))) {\n    assertInsideRoots(args.path, roots)\n    const result = await withMode(bridge, config, session, mode, (modeParams, timeoutMs) =>\n      bridge.request(\n        'diagnose',\n        {\n          session: readSessionLog(args.path),\n          store: config.store,\n          dashboardUrl: config.dashboardUrl,\n          ...modeParams,\n        },\n        signal,\n        { timeoutMs },\n      ))\n```\n\n</details>\n\n**依据 3 · 源码核查**：[integrations/dsh-agentdebugx/bridge/agentdebug_bridge.py:284-292](https://github.com/AgentDebugX/AgentDebugX/blob/2437c73c3183e6b6495259dfbb12464a7f07f6b8/integrations/dsh-agentdebugx/bridge/agentdebug_bridge.py#L284-L292)\n\n通用Python路径使用真实resolve。\n\n```text\ndef _allowed_path(raw_path: Any, raw_roots: Any) -> Path:\n    path = Path(str(raw_path)).expanduser().resolve()\n    roots = raw_roots if isinstance(raw_roots, list) else []\n    for raw_root in roots:\n        root = Path(str(raw_root)).expanduser().resolve()\n        if path == root or root in path.parents:\n            return path\n    raise PermissionError(\n        f'trace path is outside configured traceRoots: {path}'\n```\n\n**依据 4 · 源码核查**：[integrations/dsh-agentdebugx/index.js:453-480](https://github.com/AgentDebugX/AgentDebugX/blob/2437c73c3183e6b6495259dfbb12464a7f07f6b8/integrations/dsh-agentdebugx/index.js#L453-L480)\n\n发现列表拒绝symlink根。\n\n<details>\n<summary>查看原文（28行）</summary>\n\n```text\nexport function listPersistedSessions(sessionsRoot, options = {}) {\n  const query = normalizedQuery(options?.query)\n  const limit = effectiveSessionLimit(options?.limit)\n  const root = sessionsRoot === undefined || sessionsRoot === null || sessionsRoot === ''\n    ? ''\n    : path.resolve(sessionsRoot)\n  const result = {\n    sessions: [],\n    scanned: 0,\n    skipped: 0,\n    query,\n    limit,\n    root,\n    available: false,\n    warnings: [],\n  }\n  const warn = text => {\n    if (result.warnings.length < 5) result.warnings.push(boundedText(text, 300))\n  }\n  if (root === '') {\n    warn('DSH persisted-session discovery is disabled because no sessions root is configured.')\n    return result\n  }\n  try {\n    const rootStats = lstatSync(root)\n    if (!rootStats.isDirectory() || rootStats.isSymbolicLink()) {\n      warn('The configured DSH sessions root is unavailable or is a symbolic link.')\n      return result\n```\n\n</details>\n\n**依据 5 · 源码核查**：[integrations/dsh-agentdebugx/index.js:947-958](https://github.com/AgentDebugX/AgentDebugX/blob/2437c73c3183e6b6495259dfbb12464a7f07f6b8/integrations/dsh-agentdebugx/index.js#L947-L958)\n\n超时只结束调用者pending。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n  request(method, params = {}, signal, { timeoutMs = this.timeoutMs } = {}) {\n    this.start()\n    if (signal?.aborted) return Promise.reject(abortError(signal))\n    const id = `agentdebugx-${++this.sequence}`\n    return new Promise((resolve, reject) => {\n      const onAbort = () => {\n        this.finish(id)\n        reject(abortError(signal))\n      }\n      const timer = setTimeout(() => {\n        this.finish(id)\n        reject(new Error(`AgentDebugX ${method} timed out after ${timeoutMs}ms`))\n```\n\n</details>\n\n#### 缺口\n\n- 持久日志分支的真实路径限制与bridge取消协议未形成完整核查。\n  **影响：**影响可读取边界和失败后的重复诊断/费用。\n  **进一步探讨：**逐层核对文件与目录realpath及协议取消，先用非敏感固定样例确认根外symlink与超时后任务状态。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 安装与长期诊断依赖什么？\n\n**研究主题：**依赖、兼容与流程\n\n#### 完整回答\n\n组件与Python AgentDebugX分开安装，Node清单要求^22.19.0或>=24，README要求Python3.9+和agentdebugx[ui]0.3.x；组件导入的宿主工具、llm与schema包及session事件shape也必须匹配。安装npm不自动准备Python，配置python应指向装有所需包的环境，失败需由维护者处理，而非假设宿主SDK内置Python可复用。\n\n持久存储是可配置SQLite，默认.agentdebug/agentdebug.sqlite；dashboard默认127.0.0.1:7777，外网暴露要另设认证和TLS。autoCapture和autoOpen默认关闭，显式诊断会准备viewer但不必弹浏览器；开启自动采集则扩大数据和资源范围。ctx.effect关闭插件拥有的bridge/dashboard，不能替用户删除已保存轨迹或退出外部复用服务。宿主目标为早期0.1.1-rc.2，当前部署其它版本需单独核查，不以peer optional当可用保证。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[integrations/dsh-agentdebugx/index.js:13-23](https://github.com/AgentDebugX/AgentDebugX/blob/2437c73c3183e6b6495259dfbb12464a7f07f6b8/integrations/dsh-agentdebugx/index.js#L13-L23)\n\n注入和默认配置。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\nexport const name = 'agentdebugx'\nexport const inject = ['sessions', 'tools', 'commands', 'systemPrompt', 'llm']\n\nexport const Config = Schema.object({\n  python: Schema.string().default(process.platform === 'win32' ? 'python' : 'python3'),\n  store: Schema.string().default('.agentdebug/agentdebug.sqlite'),\n  dashboardUrl: Schema.string().default('http://127.0.0.1:7777'),\n  timeoutMs: Schema.number().default(120000),\n  autoCapture: Schema.boolean().default(false),\n  traceRoots: Schema.array(Schema.string()).default([process.cwd()]),\n  dshSessionsRoot: Schema.string(),\n```\n\n</details>\n\n**依据 2 · 源码核查**：[integrations/dsh-agentdebugx/index.js:1209-1252](https://github.com/AgentDebugX/AgentDebugX/blob/2437c73c3183e6b6495259dfbb12464a7f07f6b8/integrations/dsh-agentdebugx/index.js#L1209-L1252)\n\n历史root自动追加、桥回调与进程清理。\n\n<details>\n<summary>查看原文（44行）</summary>\n\n```text\nexport function apply(ctx, config) {\n  // Harness keeps its own persisted sessions under $DSH_HOME/sessions, so that\n  // directory is readable by default; without it the model could not debug the\n  // very traces this plugin talks about.\n  const sessionsRoot = config.dshSessionsRoot === ''\n    ? undefined\n    : config.dshSessionsRoot\n      ?? (process.env.DSH_HOME === undefined\n        ? undefined\n        : path.join(process.env.DSH_HOME, 'sessions'))\n  const traceRoots = sessionsRoot === undefined\n    ? config.traceRoots\n    : [...config.traceRoots, sessionsRoot]\n\n  const bridge = new PythonBridge({\n    python: config.python,\n    timeoutMs: config.timeoutMs,\n    onStderr: text => {\n      if (text.length > 0) ctx.logger.warn(`[agentdebugx] ${text}`)\n    },\n  })\n\n  // AgentDebugX's LLM tiers run on the model this session already uses, so the\n  // bridge calls back through here instead of needing its own API credentials.\n  bridge.serve('llm.complete', (route, params) => completeWithHost(ctx, route, params))\n\n  const viewer = new TraceViewer({\n    dashboardUrl: config.dashboardUrl,\n    mode: config.autoOpen,\n    onWarn: text => ctx.logger.warn(`[agentdebugx] ${text}`),\n  })\n\n  const dashboard = new DashboardProcess({\n    python: config.python,\n    store: config.store,\n    dashboardUrl: config.dashboardUrl,\n    onStderr: text => {\n      if (text.length > 0) ctx.logger.warn(`[agentdebugx dashboard] ${text}`)\n    },\n  })\n\n  ctx.effect(() => {\n    return () => Promise.all([bridge.close(), dashboard.close()])\n  }, 'agentdebugx: lazy runtime cleanup')\n```\n\n</details>\n\n**依据 3 · 作者声明**：[integrations/dsh-agentdebugx/README.md:31-49](https://github.com/AgentDebugX/AgentDebugX/blob/2437c73c3183e6b6495259dfbb12464a7f07f6b8/integrations/dsh-agentdebugx/README.md#L31-L49)\n\n作者独立Node/Python安装前提。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n````text\n\n## Install from npm\n\nPrerequisites:\n\n- Node.js 22.19+ or 24+;\n- a Node-installed DeepSeek Harness profile;\n- Python 3.9+;\n- AgentDebugX with the optional dashboard dependencies.\n\nInstall the Python runtime and the DSH bundle independently:\n\n```powershell\npython -m pip install \"agentdebugx[ui]>=0.3.1,<0.4\"\ndsh plugin --profile web add dsh-agentdebugx\ndsh --profile web --dump-config\ndsh web\n```\n\n````\n\n</details>\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 首次、持续、恢复成本及工程设计如何？\n\n**研究主题：**效果与总成本、工程质量与复用\n\n#### 完整回答\n\n按需启动避免纯加载就开Python/dashboard，桥与viewer独立且effect清理，诊断请求id和模式lease适合跨语言集成借鉴。记录已完成边界、保留失败事件、deep退回heuristic不伪装模型结果，也比单纯抛错更便于审计。测试源码专门断言构造bridge不启动Python；本轮只阅读测试，不执行Python或模型。\n\n首次成本包括独立Python依赖、profile配置、SQLite目录和dashboard端口；持续heuristic消耗CPU/I/O和轨迹存储，deep还调用宿主模型。没有额外API Key只表示复用已有路由，不表示免模型费用，同一模型自诊断也不构成独立评价。保存日志同步读全文件并解压全部帧，长日志内存/等待未知。失败恢复要检查是否已写报告、超时后台是否继续及是否重复捕获，再决定重试；不能把工具超时当原子回滚。单位合格诊断的费用、正确根因率和人工收益没有本轮结果。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[integrations/dsh-agentdebugx/test/plugin.test.js:37-45](https://github.com/AgentDebugX/AgentDebugX/blob/2437c73c3183e6b6495259dfbb12464a7f07f6b8/integrations/dsh-agentdebugx/test/plugin.test.js#L37-L45)\n\nlazy构造的测试预期。\n\n```text\ntest('Python bridge reports AgentDebugX availability', async () => {\n  const bridge = new PythonBridge({\n    python,\n    timeoutMs: 10_000,\n  })\n  assert.equal(bridge.process, undefined, 'constructing the plugin must not start Python')\n  try {\n    const status = await bridge.request('status')\n    assert.equal(status.ok, true)\n```\n\n**依据 2 · 源码核查**：[integrations/dsh-agentdebugx/index.js:323-330](https://github.com/AgentDebugX/AgentDebugX/blob/2437c73c3183e6b6495259dfbb12464a7f07f6b8/integrations/dsh-agentdebugx/index.js#L323-L330)\n\n同步读取和全帧解压。\n\n```text\nexport function readSessionLog(target) {\n  const file = resolveSessionLog(target)\n  const raw = readFileSync(file)\n  const text = file.endsWith('.zstd')\n    ? scanZstdFrames(raw)\n      .map(frame => zstdDecompressSync(raw.subarray(frame.start, frame.end)).toString('utf8'))\n      .join('')\n    : raw.toString('utf8')\n```\n\n**依据 3 · 源码核查**：[integrations/dsh-agentdebugx/index.js:1114-1125](https://github.com/AgentDebugX/AgentDebugX/blob/2437c73c3183e6b6495259dfbb12464a7f07f6b8/integrations/dsh-agentdebugx/index.js#L1114-L1125)\n\n模型路由lease和finally释放。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\nasync function withMode(bridge, config, session, mode, run) {\n  if (mode !== 'deep') return run({ mode: 'heuristic' }, config.timeoutMs)\n  const route = resolveRoute(config, session)\n  const lease = bridge.lend(route)\n  try {\n    return await run(\n      { mode: 'deep', llm: { token: lease.token, model: route.model } },\n      config.deepTimeoutMs,\n    )\n  } finally {\n    lease.release()\n  }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[integrations/dsh-agentdebugx/bridge/agentdebug_bridge.py:388-394](https://github.com/AgentDebugX/AgentDebugX/blob/2437c73c3183e6b6495259dfbb12464a7f07f6b8/integrations/dsh-agentdebugx/bridge/agentdebug_bridge.py#L388-L394)\n\n写轨迹报告并明确模式。\n\n```text\n    store = _store(store_path)\n    store.save_trajectory(trajectory)\n    store.save_report(report)\n    summary = _summary(report, dashboard_url)\n    summary['mode'] = 'deep' if deep_ran else 'heuristic'\n    if deep_error is not None:\n        summary['deepError'] = deep_error\n```\n\n#### 缺口\n\n- 缺少代表性故障集的根因正确率、长日志开销和deep总成本。\n  **影响：**无法比较手工CLI、heuristic和deep何者更划算。\n  **进一步探讨：**固定已知故障轨迹与独立结果标签，对比准确诊断、总调用费、人工复核和超时后状态。\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 可提出何种假设，当前该怎样采用？\n\n**研究主题：**新假设与验证、采用判断\n\n#### 完整回答\n\n未验证方向是给诊断增加可核对的“输入授权和任务状态收据”，同时绑定用户确认的会话候选、真实路径/hash、完成边界、正在运行或取消状态以及报告id。推导来自提示层确认与路径实现不同步、超时后后台状态不明的问题。最小验证用同一批保存会话和symlink/超时反例，比较用户能否确认“读了谁、是否还运行、结果对应哪里”；若收据不绑定实际读取或增加负担却未减少误诊断对象，就否定方案。\n\n本轮建议观察。适配器的流程整合有价值，但先补持久DSH日志的物理路径边界，再确认超时和敏感历史root，才能为当前工作区不敏感轨迹制定可控试用。独立模型或人工标签应作为根因效果依据，不能让同一模型自评自动成为有效。对于不愿让模型访问历史内容或不愿维护Python的用户，手工CLI导出更易控制。没有同版本安装/核心功能/卸载验收，不能给值得安装。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[integrations/dsh-agentdebugx/index.js:358-368](https://github.com/AgentDebugX/AgentDebugX/blob/2437c73c3183e6b6495259dfbb12464a7f07f6b8/integrations/dsh-agentdebugx/index.js#L358-L368)\n\n物理路径绑定缺口是推导依据。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\nfunction assertInsideRoots(target, roots) {\n  const resolved = path.resolve(target)\n  const allowed = roots.some(root => {\n    const base = path.resolve(root)\n    const relative = path.relative(base, resolved)\n    return relative === '' || (!relative.startsWith('..') && !path.isAbsolute(relative))\n  })\n  if (!allowed) {\n    throw new Error(`trace path is outside configured traceRoots: ${resolved}`)\n  }\n  return resolved\n```\n\n</details>\n\n**依据 2 · 源码核查**：[integrations/dsh-agentdebugx/index.js:1169-1189](https://github.com/AgentDebugX/AgentDebugX/blob/2437c73c3183e6b6495259dfbb12464a7f07f6b8/integrations/dsh-agentdebugx/index.js#L1169-L1189)\n\n诊断对象真实读取链。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\nasync function diagnosePath(bridge, config, roots, args, signal, session = undefined) {\n  const mode = args.mode === 'deep' ? 'deep' : 'heuristic'\n  const format = args.format ?? 'auto'\n  // A persisted Harness session is read here rather than in Python: the log is\n  // a concatenated-Zstandard container Node decodes natively, and routing it\n  // through the session mapper preserves turn, step, and tool-call linkage\n  // that generic trace detection would flatten.\n  if (format === 'dsh_session' || (format === 'auto' && isSessionLogPath(args.path))) {\n    assertInsideRoots(args.path, roots)\n    const result = await withMode(bridge, config, session, mode, (modeParams, timeoutMs) =>\n      bridge.request(\n        'diagnose',\n        {\n          session: readSessionLog(args.path),\n          store: config.store,\n          dashboardUrl: config.dashboardUrl,\n          ...modeParams,\n        },\n        signal,\n        { timeoutMs },\n      ))\n```\n\n</details>\n\n**依据 3 · 源码核查**：[integrations/dsh-agentdebugx/index.js:947-958](https://github.com/AgentDebugX/AgentDebugX/blob/2437c73c3183e6b6495259dfbb12464a7f07f6b8/integrations/dsh-agentdebugx/index.js#L947-L958)\n\n状态/取消收据需要覆盖超时。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n  request(method, params = {}, signal, { timeoutMs = this.timeoutMs } = {}) {\n    this.start()\n    if (signal?.aborted) return Promise.reject(abortError(signal))\n    const id = `agentdebugx-${++this.sequence}`\n    return new Promise((resolve, reject) => {\n      const onAbort = () => {\n        this.finish(id)\n        reject(abortError(signal))\n      }\n      const timer = setTimeout(() => {\n        this.finish(id)\n        reject(new Error(`AgentDebugX ${method} timed out after ${timeoutMs}ms`))\n```\n\n</details>\n\n#### 缺口\n\n- 根外symlink限制、请求取消和诊断输入确认没有统一协议。\n  **影响：**阻碍当前直接升级为可控常规试用。\n  **进一步探讨：**先在非敏感固定数据核对这三个契约，再比较诊断收益。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：integrations/dsh-agentdebugx；内容摘要：1ecee703d17adb44ef1ab6bbfa1d148eff3bab17ab6c9681b28af4643dc0074f。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 1 | 1526 | 1339 | 94 | — |\n| .md | source | 2 | 346 | — | — | 2161 |\n| .js | test | 1 | 747 | 672 | 24 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 保存会话发现 | 找到待诊断对象 | root及候选确认重要 |\n| heuristic/deep诊断 | 形成报告 | deep非独立验证且消耗模型 |\n| 本地查看与记录 | 回指事件和结果 | SQLite含敏感数据，dashboard需边界 |\n\n## 工程亮点\n\nlazy桥、请求id/route lease、完成边界和模式降级可借鉴；根路径与取消状态仍需统一，跨语言协议成功不代表根因有效。详见[Q05](#research-q05)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 integrations/dsh-agentdebugx/README.md、integrations/dsh-agentdebugx/package.json、integrations/dsh-agentdebugx/index.js、integrations/dsh-agentdebugx/bridge/agentdebug_bridge.py、integrations/dsh-agentdebugx/test/plugin.test.js 及固定范围 inventory；组件：integrations/dsh-agentdebugx。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定组件源码核查，涉及JS桥/路径/完成边界与Python降级，不审计AgentDebugX全部核心算法，不运行诊断或模型。\n- 下一步：进一步探讨可先核对持久日志symlink和超时取消，再用有独立标签的固定故障轨迹比较手工CLI、heuristic与deep的正确率、费用和复核投入。\n",
         "metadata": {
             "repository": "AgentDebugX/AgentDebugX",
             "repository_id": 1296792947,
-            "captured_at": "2026-10-21T05:34:46.788Z",
-            "window_start": "2026-09-21T05:34:46.788Z",
-            "stars": 66,
+            "captured_at": "2026-10-22T04:58:06.313Z",
+            "window_start": "2026-09-22T04:58:06.313Z",
+            "stars": 67,
             "pushed_at": "2026-10-20T16:58:57Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 1,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAgentDebugX%2FAgentDebugX%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9F8E:28E3E1:AF0025:FB1AD2:6AD84EF8 and timestamp 2026-10-21 05:34:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAgentDebugX%2FAgentDebugX%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A086:1F14A0:AE4E9B:FAB00E:6AD84EF9 and timestamp 2026-10-21 05:34:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAgentDebugX%2FAgentDebugX%20is%3Aissue%20created%3A2026-09-21T05%3A34%3A46.788Z..2026-10-21T05%3A34%3A46.788Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 316C:26A83F:51350E:5743E1:6AD84EFA and timestamp 2026-10-21 05:34:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAgentDebugX%2FAgentDebugX%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A34%3A46.788Z..2026-10-21T05%3A34%3A46.788Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3260:271056:53D86E:59E634:6AD84EFB and timestamp 2026-10-21 05:34:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAgentDebugX%2FAgentDebugX%20is%3Aissue%20updated%3A2026-09-21T05%3A34%3A46.788Z..2026-10-21T05%3A34%3A46.788Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3366:4AA35:55F5BC:5C03A0:6AD84EFC and timestamp 2026-10-21 05:34:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "dsh-agentdebugx",
-                "captured_at": "2026-10-21T05:34:52.695Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 792,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-agentdebugx",
+                "captured_at": "2026-10-22T04:58:15.203Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 784,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-agentdebugx",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-08-25T13:09:31.687Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T04:58:15.203Z",
                     "source_url": "https://registry.npmjs.org/dsh-agentdebugx",
                     "error": null,
                     "latest_version": "0.1.0",
@@ -437,14 +457,14 @@
             "repository": "AgentDebugX/AgentDebugX",
             "path": "integrations/dsh-agentdebugx",
             "revision": "2437c73c3183e6b6495259dfbb12464a7f07f6b8",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "7c50b90f0eb0fe5742f5959d6a25d4efc769370104d3c3e8aa4ee4fd54b8daf3",
                 "code": "2437c73c3183e6b6495259dfbb12464a7f07f6b8",
                 "maintenance": "5faa62256e92200bf18e0e62831dbf24b02d7a6b93a96b1a28e1db34a56fb607"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

@@ -12,8 +12,8 @@
             "aliases": [],
             "name": "dsh-cua-pre",
             "entry_type": "plugin",
-            "technical_category": "tools-integration",
-            "business_category": "office-operations",
+            "technical_category": "interface-input",
+            "business_category": "personal-productivity",
             "tags": [],
             "availability": "unknown",
             "research_depth": "source",
@@ -24,36 +24,94 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-06-github-1346533795-root-directory-0",
+                    "id": "2026-10-22-02-github-1346533795-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T05:42:01.980Z",
+                    "retrieved_at": "2026-10-22T10:52:00.950Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-06-github-1346533795-root-author",
+                    "id": "2026-10-22-02-github-1346533795-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/Aik358/dsh-cua-pre",
+                            "commit": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb",
+                            "path": "README.md",
+                            "content_sha256": "83ac02bf55bd72788f187ef93f11ab5c6fd87fbcedb98a34f375a44ae01fdb69"
+                        }
+                    ],
                     "revision": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb",
-                    "captured_at": "2026-10-21T05:42:01.980Z",
-                    "summary": "以Windows无障碍树优先的工具、Python worker和可视面板，为DSH提供桌面观察与操作。",
-                    "artifact": "data/runs/2026-10-21-06/snapshots/aik358--dsh-cua-pre/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T10:52:00.950Z",
+                    "summary": "Windows UI Automation 优先的 DSH 桌面控制插件，包含 Python worker、30 工具和 Web 面板。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/aik358--dsh-cua-pre/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-06-github-1346533795-root-source",
+                    "id": "2026-10-22-02-github-1346533795-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/lib/index.js",
+                    "url": "https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/Aik358/dsh-cua-pre",
+                            "commit": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb",
+                            "path": "README.md",
+                            "content_sha256": "83ac02bf55bd72788f187ef93f11ab5c6fd87fbcedb98a34f375a44ae01fdb69"
+                        },
+                        {
+                            "repository_url": "https://github.com/Aik358/dsh-cua-pre",
+                            "commit": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb",
+                            "path": "package.json",
+                            "content_sha256": "6e5aeb10b3942ee128eccfa4c5c4524be6dfbd7ac5f2a82bc7f0d93f29b641a5"
+                        },
+                        {
+                            "repository_url": "https://github.com/Aik358/dsh-cua-pre",
+                            "commit": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb",
+                            "path": "lib/index.js",
+                            "content_sha256": "78f4044c0ffefbb5d2a6a9e2820738397a39313a9dd895fba19a365c9a7b8c38"
+                        },
+                        {
+                            "repository_url": "https://github.com/Aik358/dsh-cua-pre",
+                            "commit": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb",
+                            "path": "lib/cua-tools-pre.js",
+                            "content_sha256": "460490cf47f6e9840d0f561659d311dbd9ee925c32b3c84a46f546446a0fc419"
+                        },
+                        {
+                            "repository_url": "https://github.com/Aik358/dsh-cua-pre",
+                            "commit": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb",
+                            "path": "lib/cua-sidecar-client-pre.js",
+                            "content_sha256": "8b8c379367cae0939a9c26d943b54e529b9c9a93e477d610f827710c968060ed"
+                        },
+                        {
+                            "repository_url": "https://github.com/Aik358/dsh-cua-pre",
+                            "commit": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb",
+                            "path": "lib/cua-session-pre.js",
+                            "content_sha256": "c2c590c1af7e262d6565640806e6f6b3d5ad57202598dcbef2ed71a7f01767bd"
+                        },
+                        {
+                            "repository_url": "https://github.com/Aik358/dsh-cua-pre",
+                            "commit": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb",
+                            "path": "python/worker_cua_v2.py",
+                            "content_sha256": "d7212e951113d203343f69a6abecd1108df2d2ce9be19fbf5fe0ba9e5cb87448"
+                        },
+                        {
+                            "repository_url": "https://github.com/Aik358/dsh-cua-pre",
+                            "commit": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb",
+                            "path": "lib/client.js",
+                            "content_sha256": "a312782fd7a600a8b58cd78f4fdd66c336d983a63e57431d71936f3b7da5fe57"
+                        }
+                    ],
                     "revision": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb",
-                    "captured_at": "2026-10-21T05:42:01.980Z",
-                    "summary": "核查 lib/index.js、lib/cua-tools-pre.js、lib/cua-session-pre.js、lib/cua-sidecar-client-pre.js、python/worker_cua_v2.py；host注册工具/loopback配置与帧接口，session在变更后supersede旧state；sidecar用epoch/requestId JSONL桥接；worker重走元素路径，校验RuntimeId（可用时）、type/name及矩形漂移，UIA语义优先、坐标回退。",
-                    "artifact": "data/runs/2026-10-21-06/snapshots/aik358--dsh-cua-pre/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T10:52:00.950Z",
+                    "summary": "核查 README.md、package.json、lib/index.js、lib/cua-tools-pre.js、lib/cua-sidecar-client-pre.js、lib/cua-session-pre.js、python/worker_cua_v2.py、lib/client.js；Host 工具经 JSONL sidecar 调用 Python UIA/SendInput worker；state_id 绑定观察、写后作废、可选白名单和审计。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/aik358--dsh-cua-pre/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "抽读lib/index.js、lib/cua-tools-pre.js、lib/cua-session-pre.js、lib/cua-sidecar-client-pre.js、python/worker_cua_v2.py；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+                        "固定 SHA 静态审阅 README、package、lib Host/工具/sidecar；未运行插件、目标脚本或 Windows 桌面。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +122,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "Windows桌面任务需先观察、定位后动作，并区分未执行与可能已执行，尤其不能重复发送/支付等副作用。",
+                    "text": "让 DSH 在 Windows 桌面观察 UI 元素并执行有状态的鼠标键盘操作。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1346533795-root-source"
+                        "2026-10-22-02-github-1346533795-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +133,16 @@
                             "fingerprint": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:42:01.980Z",
+                    "reviewed_at": "2026-10-22T10:52:00.950Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "host注册工具/loopback配置与帧接口，session在变更后supersede旧state；sidecar用epoch/requestId JSONL桥接；worker重走元素路径，校验RuntimeId（可用时）、type/name及矩形漂移，UIA语义优先、坐标回退。",
+                    "text": "Host 工具经 JSONL sidecar 调用 Python UIA/SendInput worker；state_id 绑定观察、写后作废、可选白名单和审计。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1346533795-root-source"
+                        "2026-10-22-02-github-1346533795-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +151,16 @@
                             "fingerprint": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:42:01.980Z",
+                    "reviewed_at": "2026-10-22T10:52:00.950Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "抽读lib/index.js、lib/cua-tools-pre.js、lib/cua-session-pre.js、lib/cua-sidecar-client-pre.js、python/worker_cua_v2.py；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+                    "text": "固定 SHA 静态审阅 README、package、lib Host/工具/sidecar；未运行插件、目标脚本或 Windows 桌面。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1346533795-root-source"
+                        "2026-10-22-02-github-1346533795-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +169,16 @@
                             "fingerprint": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:42:01.980Z",
+                    "reviewed_at": "2026-10-22T10:52:00.950Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "MIT标示的Windows预览插件，需Python/Windows UIA依赖；提供的远程安装脚本本轮未执行，非跨平台验收。",
+                    "text": "GitHub/npm @a9i5k4/dsh-cua-pre v0.6.2，MIT；Windows 10+、DSH web、Python 3.9+。README 提供远端 PowerShell 管道安装，仅作为作者说明。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1346533795-root-source"
+                        "2026-10-22-02-github-1346533795-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +187,16 @@
                             "fingerprint": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:42:01.980Z",
+                    "reviewed_at": "2026-10-22T10:52:00.950Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "首次解释器/依赖与权限、允许PID设置，持续UI变动回归、截图存储和可选视觉模型调用；分块缓存节费无本轮测量。",
+                    "text": "| 阶段 | 现金/计算/外部资源 | 人工/时间 | 未知与恢复 |\n| --- | --- | --- | --- |\n| 首次 | 包 MIT；Windows/DSH/Python 和依赖资源，金额未知 | 核安装脚本、配置 venv/目标应用、重启，工时未知 | 兼容性/依赖下载耗时未知 |\n| 持续 | worker、屏幕帧/附件、可选视觉模型 token 和存储，费用未知 | 逐动作观察、核验与授权，工时未知 | 单任务调用次数/成功率未知 |\n| 失败恢复 | 重启 worker、重观测/重试和日志存储，费用未知 | 处理 stale/timeout、核是否已动作、急停恢复，工时未知 | 故障率、误操作损失和审计缺口未知 |",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1346533795-root-source"
+                        "2026-10-22-02-github-1346533795-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +205,16 @@
                             "fingerprint": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:42:01.980Z",
+                    "reviewed_at": "2026-10-22T10:52:00.950Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "先在可丢弃窗口、明确PID范围验证观察/动作/停止；高影响任务保留人工确认和结果核对，不能将提示纪律当已实现审批。",
+                    "text": "隔离 Windows profile 开始，以最小目标 PID 配白名单并检查日志可写；非幂等动作结果不明时先重观察/人工核，避免自动重放。详见[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1346533795-root-source"
+                        "2026-10-22-02-github-1346533795-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +223,16 @@
                             "fingerprint": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:42:01.980Z",
+                    "reviewed_at": "2026-10-22T10:52:00.950Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "可减少坐标猜测、提高动作可追踪性，实际任务成功率和跨应用稳定性未测。",
+                    "text": "| 已实现 | 潜在收益 | 边界 |\n| --- | --- | --- |\n| UIA+坐标工具 | 自动桌面操作 | 未实测成功率 |\n| state/epoch | 降低旧观察误点 | 模型仍须守流程 |\n| 审计/急停 | 运维可控 | 写盘失败非强制 |",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1346533795-root-source"
+                        "2026-10-22-02-github-1346533795-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +241,16 @@
                             "fingerprint": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:42:01.980Z",
+                    "reviewed_at": "2026-10-22T10:52:00.950Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "旧观察失权、epoch隔离、未知结果提示和持久kill switch可借鉴；默认空PID列表、UIA降级与原生动作不可取消须明确。 源码依据：[lib/index.js](https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/lib/index.js)、[lib/cua-tools-pre.js](https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/lib/cua-tools-pre.js)、[lib/cua-session-pre.js](https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/lib/cua-session-pre.js)、[lib/cua-sidecar-client-pre.js](https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/lib/cua-sidecar-client-pre.js)、[python/worker_cua_v2.py](https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/python/worker_cua_v2.py)。",
+                    "text": "Host注入工具并管理Python sidecar，动作按state_id/PID预检，先发帧后立即作废旧状态；timeout文字提示可能已发生，但无统一可见ambiguous字段，timer/noop不取消原生动作。日志异步追加失败静默。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1346533795-root-source"
+                        "2026-10-22-02-github-1346533795-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +259,16 @@
                             "fingerprint": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:42:01.980Z",
+                    "reviewed_at": "2026-10-22T10:52:00.950Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
                     "topic": "technical_innovation",
                     "basis": "interpretation",
-                    "text": "将观察失效、目标校验、未知动作结果和持久停止纳入同一工具协议，比裸pyautogui坐标脚本更可治理；UIA/SendInput及视觉模型本身来自系统与上游。",
+                    "text": "把UIA元素目标/坐标后备、状态失效及部分未知效果提示封装为DSH工具，并附可视面板；未知效果提示不等统一收据或硬重放阻断。详见[Q01](#research-q01)、[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1346533795-root-source"
+                        "2026-10-22-02-github-1346533795-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +277,16 @@
                             "fingerprint": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:42:01.980Z",
+                    "reviewed_at": "2026-10-22T10:52:00.950Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "安全语义是否等于实际动作保证？RuntimeId不支持时会降级，矩形容差也不能保证同语义控件；timeout只是等待结果结束，noop不能撤销已发原生动作。付款/删除/外发确认主要是GUIDANCE措辞，不是通用Host硬审批。",
+                    "text": "作者强调完整安全治理，但默认 allowedPids 空、审计落盘失败静默、急停写盘失败不保证重启后持续；真实安全性须在配置与故障下验收。详见[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1346533795-root-source"
+                        "2026-10-22-02-github-1346533795-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +295,16 @@
                             "fingerprint": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:42:01.980Z",
+                    "reviewed_at": "2026-10-22T10:52:00.950Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
                     "topic": "technical_innovation",
                     "basis": "unverified",
-                    "text": "由epoch和观察状态推导，可对高影响动作增加Host授权令牌和动作后可核查收据，未知结果冻结同业务动作直到人工或只读对账。未验证；注入worker迟响应/崩溃与UI漂移时应不重放、不误点，确认不可仅靠模型守提示。",
+                    "text": "既有默认范围开放和审计/急停故障分支，若启用时强制绑定目标并使审计与急停持久化 fail-closed，可减少越界/无记录动作；依赖稳定 PID 与可写存储，会增加阻断与延迟。比较越界、漏审计、重启恢复和正常任务，若缺口不降或阻断超阈值则证伪。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1346533795-root-source"
+                        "2026-10-22-02-github-1346533795-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +313,15 @@
                             "fingerprint": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:42:01.980Z",
+                    "reviewed_at": "2026-10-22T10:52:00.950Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T05:42:01.980Z",
+            "last_checked_at": "2026-10-22T10:52:00.950Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb",
-                "reviewed_at": "2026-10-21T05:42:01.980Z",
+                "reviewed_at": "2026-10-22T10:52:00.950Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -274,62 +332,62 @@
                 ],
                 "technical": {
                     "criteria": {
-                        "novelty": 9,
-                        "mechanism": 15,
-                        "transferability": 15,
+                        "novelty": 18,
+                        "mechanism": 23,
+                        "transferability": 10,
                         "simplification": 8
                     },
-                    "rationale": "novelty标准CUA工具语义重实现小档；mechanism观察失效/epoch/校验半档；transferability未知结果协议可迁移较高；simplification集成面板半档。",
+                    "rationale": "novelty 18/35：参照纯截图坐标 CUA，增量是 UIA 元素及状态绑定，但 UIA 概念成熟；mechanism 23/30：参照无状态 click/type，源码有 superseded、epoch、断路器和分层目标，真实 worker 故障率未测；transferability 10/20：观察-动作协议可迁桌面工具，当前 Windows/Python/DSH 耦合；simplification 8/15：30 工具和设置页减轻接线，依赖安装、白名单及恢复操作复杂。",
                     "basis": "interpretation",
-                    "score": 47,
+                    "score": 59,
                     "evidence_ids": [
-                        "2026-10-21-06-github-1346533795-root-source"
+                        "2026-10-22-02-github-1346533795-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 18,
-                        "delivery": 15,
+                        "workflow": 26,
+                        "delivery": 0,
                         "reach": 5,
                         "economics": 4
                     },
-                    "rationale": "workflow观察动作核对半档；delivery工具与持久产物半档；reachWindows预览范围小档；economics可能减少误操作但无成功任务成本验证小档。",
+                    "rationale": "workflow以人工或普通坐标桌面自动化为参照，UIA/状态与观察动作闭环改变执行组织，仍需核业务完成；delivery以相同桌面任务的业务结果为参照，当前仍交付同一界面状态/文件/业务效果，没有新增可验收交付对象或价值单位，取0，卡片/帧/日志是操作观察记录而非新业务交付；reach以必须自己操作或会编写UIA/坐标脚本的Windows DSH用户为参照，模型语义工具/设置降低调用脚本门槛有小幅准入增量，仍需Windows/权限与人员核验，非跨平台扩大；economics以每次编写坐标定位/独立观察脚本为参照，复用常驻worker、结构化UIA观察与语义动作小幅节省重复进程/定位接线资源，截图/模型和错误恢复可能抵消，净费用/工时未知，不用活动记录或未实测本身当经济创新。",
                     "basis": "interpretation",
-                    "score": 42,
+                    "score": 35,
                     "evidence_ids": [
-                        "2026-10-21-06-github-1346533795-root-source"
+                        "2026-10-22-02-github-1346533795-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "Windows桌面自动化用户可在可丢弃窗口和明确PID试观察后动作；验停止与未知结果，高影响外发付款保留人工确认。",
+                "reason": "仅在隔离 Windows 桌面、明确目标应用、保留人工确认的低风险任务试点；故障后重观察。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "UI定位、动作与结果归属明确，尤其需避免重复副作用。"
+                        "rationale": "桌面自动化需求具体。"
                     },
                     "advantage": {
                         "score": 19,
-                        "rationale": "UIA优先、元素重校和state失效减少坐标盲猜。"
+                        "rationale": "UIA/状态和 sidecar 组合可见。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "已核epoch桥及多重定位校验，实际跨应用成功率未测。"
+                        "rationale": "源码静态证据，未 Windows 实测。"
                     },
                     "cost": {
                         "score": 5,
-                        "rationale": "解释器权限、UI回归与截图/视觉费用较高，审批主要靠指导纪律。"
+                        "rationale": "环境安装/视觉/回退及治理缺口。"
                     }
                 },
                 "score": 60,
                 "revision": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T10:52:00.950Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-06-github-1346533795-root-source"
+                    "2026-10-22-02-github-1346533795-root-source"
                 ],
                 "dependencies": [
                     {
@@ -354,98 +412,60 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T05:26:52Z",
-            "analysis_sha256": "11887094471674870bcf8fc87db6e814b57bd81728ff3339c40c5500d14987c0"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "8e812641d0c069d8071b3fd5367cd8895b7f414c734f3313238373d8fc631d43"
         },
         "publication.metadata": "data/plugins/aik358--dsh-cua-pre/META.json",
         "publication.summaries": {
-            "text": "以Windows无障碍树优先的工具、Python worker和可视面板，为DSH提供桌面观察与操作。",
+            "text": "Windows UI Automation 优先的 DSH 桌面控制插件，包含 Python worker、30 工具和 Web 面板。",
             "revision": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb",
             "source_url": "https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/README.md"
         },
         "publication.capabilities": {
             "revision": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb",
             "items": {
-                "模型工具": "桌面观察、点击、键盘、截图与停止控制。",
-                "后台": "Windows Python UIA worker与协议桥接。",
-                "Host 路由": "loopback配置、状态和帧接口。",
-                "界面": "操作记录、帧墙与设置。"
-            }
+                "模型工具": "30个观察、指针、键盘、语义和运行控制工具",
+                "界面": "设置页、卡片、实况/帧面板",
+                "后台": "常驻Python worker",
+                "Host 路由": "loopback的状态/配置/帧/依赖安装/bootstrap等入口，包含配置写入与安装进程副作用"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 模型工具 | Windows观察/指针/键盘/语义动作 | confirm参数不等人类审批 |\n| 界面 | 设置、状态卡片与实况/帧 | 状态/日志不等业务完成 |\n| Python worker | 驻留执行原生动作 | 请求timeout不等取消原生动作 |\n| Host路由 | 状态/配置/帧与安装/bootstrap | socket loopback过滤非用户身份/Origin绑定，外层Host准入另核 |\n"
         },
         "publication.advice": {
             "revision": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb",
-            "text": "先在可丢弃窗口、明确PID范围验证观察/动作/停止；高影响任务保留人工确认和结果核对，不能将提示纪律当已实现审批。"
+            "text": "隔离 Windows profile 开始，以最小目标 PID 配白名单并检查日志可写；非幂等动作结果不明时先重观察/人工核，避免自动重放。详见[Q04](#research-q04)。"
         },
         "registry": "data/plugins/aik358--dsh-cua-pre",
-        "reports": "# dsh-cua-pre\n\n> 以Windows无障碍树优先的工具、Python worker和可视面板，为DSH提供桌面观察与操作。\n\n## 使用建议\n\n先在可丢弃窗口、明确PID范围验证观察/动作/停止；高影响任务保留人工确认和结果核对，不能将提示纪律当已实现审批。\n\n核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。\n\n源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。\n\n## 洞察短评\n\n- **用途**：Windows桌面任务需先观察、定位后动作，并区分未执行与可能已执行，尤其不能重复发送/支付等副作用。\n- **亮点**：将观察失效、目标校验、未知动作结果和持久停止纳入同一工具协议，比裸pyautogui坐标脚本更可治理；UIA/SendInput及视觉模型本身来自系统与上游。\n- **思考**：安全语义是否等于实际动作保证？RuntimeId不支持时会降级，矩形容差也不能保证同语义控件；timeout只是等待结果结束，noop不能撤销已发原生动作。付款/删除/外发确认主要是GUIDANCE措辞，不是通用Host硬审批。\n- **建议**：由epoch和观察状态推导，可对高影响动作增加Host授权令牌和动作后可核查收据，未知结果冻结同业务动作直到人工或只读对账。未验证；注入worker迟响应/崩溃与UI漂移时应不重放、不误点，确认不可仅靠模型守提示。\n\n## 场景与替代办法\n\nWindows桌面任务需先观察、定位后动作，并区分未执行与可能已执行，尤其不能重复发送/支付等副作用。\n\n裸坐标自动化更少状态开销但易点错；无障碍优先保留语义信息，仍须真实应用验证。\n\n## 能力清单\n\n- **模型工具**：桌面观察、点击、键盘、截图与停止控制。\n- **后台**：Windows Python UIA worker与协议桥接。\n- **Host 路由**：loopback配置、状态和帧接口。\n- **界面**：操作记录、帧墙与设置。\n\n## 依赖与流程\n\nDSH tools/attachments/llm/webServer、Windows UIA/SendInput、Python worker，视觉可选模型；屏幕与应用权限影响观察覆盖。\n\n启用并配置目标→观察树得state/index→校验并执行最小动作→旧观察失效→重新观察；timeout先核实当前UI，停止后人工恢复。\n\n## 成本与效果\n\n首次解释器/依赖与权限、允许PID设置，持续UI变动回归、截图存储和可选视觉模型调用；分块缓存节费无本轮测量。\n\n可减少坐标猜测、提高动作可追踪性，实际任务成功率和跨应用稳定性未测。\n\n## 核心贡献\n\n将观察失效、目标校验、未知动作结果和持久停止纳入同一工具协议，比裸pyautogui坐标脚本更可治理；UIA/SendInput及视觉模型本身来自系统与上游。\n\n## 关键质疑\n\n安全语义是否等于实际动作保证？RuntimeId不支持时会降级，矩形容差也不能保证同语义控件；timeout只是等待结果结束，noop不能撤销已发原生动作。付款/删除/外发确认主要是GUIDANCE措辞，不是通用Host硬审批。\n\n\n## 工程亮点\n\n旧观察失权、epoch隔离、未知结果提示和持久kill switch可借鉴；默认空PID列表、UIA降级与原生动作不可取消须明确。 源码依据：[lib/index.js](https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/lib/index.js)、[lib/cua-tools-pre.js](https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/lib/cua-tools-pre.js)、[lib/cua-session-pre.js](https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/lib/cua-session-pre.js)、[lib/cua-sidecar-client-pre.js](https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/lib/cua-sidecar-client-pre.js)、[python/worker_cua_v2.py](https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/python/worker_cua_v2.py)。\n\n## 未来设计假设（未验证）\n\n由epoch和观察状态推导，可对高影响动作增加Host授权令牌和动作后可核查收据，未知结果冻结同业务动作直到人工或只读对账。未验证；注入worker迟响应/崩溃与UI漂移时应不重放、不误点，确认不可仅靠模型守提示。\n\n测试RuntimeId缺失、同名控件、窗口移动、worker迟到/崩溃和重复请求，核对stop跨重启、PID拒绝及敏感动作确认边界；不用真实账户外发。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：5fe7dd5b243a8bda3d3b6881b89ee43f12fe14d24a25e9b87284a6dab4618891。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 3 | 303 | — | — | 4104 |\n| .js | source | 6 | 3372 | 2990 | 220 | — |\n| .mjs | source | 4 | 514 | 382 | 74 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[Aik358/dsh-cua-pre](https://github.com/Aik358/dsh-cua-pre)\n- **版本号**：0.6.2（[固定提交 6b64708e](https://github.com/Aik358/dsh-cua-pre/tree/6b64708e2514ef4a1b9cb6004adb4838d4b114bb)）\n- **版本日期**：2026-09-08（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：作者 README、包清单、源码路径 lib/index.js、lib/cua-tools-pre.js、lib/cua-session-pre.js、lib/cua-sidecar-client-pre.js、python/worker_cua_v2.py 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读lib/index.js、lib/cua-tools-pre.js、lib/cua-session-pre.js、lib/cua-sidecar-client-pre.js、python/worker_cua_v2.py；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。\n- 下一步：测试RuntimeId缺失、同名控件、窗口移动、worker迟到/崩溃和重复请求，核对stop跨重启、PID拒绝及敏感动作确认边界；不用真实账户外发。\n",
+        "reports": "# dsh-cua-pre\n\n> Windows UI Automation 优先的 DSH 桌面控制插件，包含 Python worker、30 工具和 Web 面板。\n\n## 研究范围\n\n- **仓库**：[Aik358/dsh-cua-pre](https://github.com/Aik358/dsh-cua-pre)\n- **版本号**：0.6.2（[固定提交 6b64708e2514ef4a1b9cb6004adb4838d4b114bb](https://github.com/Aik358/dsh-cua-pre/tree/6b64708e2514ef4a1b9cb6004adb4838d4b114bb)）\n- **版本日期**：2026-09-08（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定源码显示多层动作门禁；默认白名单空、审计 fail-open、急停持久化失败可降为进程内停止；未实测 Windows。\n\n## 洞察短评\n\n- **用途**：让 DSH 在 Windows 桌面观察 UI 元素并执行有状态的鼠标键盘操作。\n- **亮点**：把UIA元素目标/坐标后备、状态失效及部分未知效果提示封装为DSH工具，并附可视面板；未知效果提示不等统一收据或硬重放阻断。详见[Q01](#research-q01)、[Q02](#research-q02)。\n- **思考**：作者强调完整安全治理，但默认 allowedPids 空、审计落盘失败静默、急停写盘失败不保证重启后持续；真实安全性须在配置与故障下验收。详见[Q03](#research-q03)。\n- **建议**：既有默认范围开放和审计/急停故障分支，若启用时强制绑定目标并使审计与急停持久化 fail-closed，可减少越界/无记录动作；依赖稳定 PID 与可写存储，会增加阻断与延迟。比较越界、漏审计、重启恢复和正常任务，若缺口不降或阻断超阈值则证伪。详见[Q05](#research-q05)。\n\n采用建议：隔离 Windows profile 开始，以最小目标 PID 配白名单并检查日志可写；非幂等动作结果不明时先重观察/人工核，避免自动重放。详见[Q04](#research-q04)。\n\n## 核心贡献\n\n把UIA元素目标/坐标后备、状态失效及部分未知效果提示封装为DSH工具，并附可视面板；未知效果提示不等统一收据或硬重放阻断。详见[Q01](#research-q01)、[Q02](#research-q02)。\n\n## 关键质疑\n\n作者强调完整安全治理，但默认 allowedPids 空、审计落盘失败静默、急停写盘失败不保证重启后持续；真实安全性须在配置与故障下验收。详见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n既有默认范围开放和审计/急停故障分支，若启用时强制绑定目标并使审计与急停持久化 fail-closed，可减少越界/无记录动作；依赖稳定 PID 与可写存储，会增加阻断与延迟。比较越界、漏审计、重启恢复和正常任务，若缺口不降或阻断超阈值则证伪。详见[Q05](#research-q05)。\n\nWindows 隔离环境以等任务比较坐标基线与 UIA 策略的成功/误操作率；故障注入 timeout、日志只读、急停重启并核状态。\n\n## 场景与替代办法\n\n让 DSH 在 Windows 桌面观察 UI 元素并执行有状态的鼠标键盘操作。\n\n常见截图/坐标桌面自动化也可点按；此项在 UIA 目标、状态失效及可选治理上增量，但不能由源码推出更低误操作率。\n\n## 依赖与流程\n\n| 类型 | 条件 | 限制 |\n| --- | --- | --- |\n| 必需 | Windows、DSH/Cordis、Python UIA/Pillow | 跨平台不可用 |\n| 可选 | 视觉模型/附件服务 | 截图描述与帧卡 |\n| 治理 | 可写配置与审计目录、目标 PID | 未配置默认广域 |\n\n| 步骤 | 动作 | 验收 |\n| --- | --- | --- |\n| 准备 | 安装依赖/隔离配置并选择目标 | worker、白名单/日志可用 |\n| 观察 | list_apps/get_app_state | state_id/元素准确 |\n| 操作 | 元素优先、动作后重观察 | 目标变化确认，故障勿盲重放 |\n\n## 成本与效果\n\n| 阶段 | 现金/计算/外部资源 | 人工/时间 | 未知与恢复 |\n| --- | --- | --- | --- |\n| 首次 | 包 MIT；Windows/DSH/Python 和依赖资源，金额未知 | 核安装脚本、配置 venv/目标应用、重启，工时未知 | 兼容性/依赖下载耗时未知 |\n| 持续 | worker、屏幕帧/附件、可选视觉模型 token 和存储，费用未知 | 逐动作观察、核验与授权，工时未知 | 单任务调用次数/成功率未知 |\n| 失败恢复 | 重启 worker、重观测/重试和日志存储，费用未知 | 处理 stale/timeout、核是否已动作、急停恢复，工时未知 | 故障率、误操作损失和审计缺口未知 |\n\n| 已实现 | 潜在收益 | 边界 |\n| --- | --- | --- |\n| UIA+坐标工具 | 自动桌面操作 | 未实测成功率 |\n| state/epoch | 降低旧观察误点 | 模型仍须守流程 |\n| 审计/急停 | 运维可控 | 写盘失败非强制 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**核 Windows CUA 工具实现、默认治理边界和运行/恢复成本。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 桌面控制的交付入口和适用边界是什么？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n面向 Windows DSH 的 UI Automation 优先桌面控制，包入口 lib/index.js 注册观察、鼠标/键盘、语义动作、截图/视觉与急停等 30 工具，并以 Python worker 执行；Web 客户端呈现卡片/面板。README 对“同业标准、安全完整、可靠”的说法是作者表述；本轮只核固定源码，未运行 Windows 桌面。macOS/Linux 不支持，截图不是唯一控制基础。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:29-47](https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/README.md#L29-L47)\n\n作者功能/安全陈述。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n## What is this\n\nA self-built computer-use plugin for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness): an **accessibility-first** observe → act → verify loop with 30 desktop-automation tools (the same names you'd expect from an industry-standard Computer Use toolset), full safety semantics, reimplemented on a Windows Python worker.\n\nThe agent operates your desktop the way a careful human would: it **reads the UI Automation tree first** (exact, focus-free, resolution-independent) and only falls back to pixel coordinates when the tree cannot express a target. Screenshots are a describing aid, never the operating premise.\n\n<p align=\"center\">\n  <img src=\"docs/images/panel-live-tight.png\" width=\"300\" alt=\"control panel — live ops tab\" />\n  <img src=\"docs/images/panel-frames-tight.png\" width=\"300\" alt=\"control panel — frames tab\" />\n</p>\n<p align=\"center\"><sub>The floating panel: live operation feed (left) and captured frame wall (right). FAB sits at the bottom-right corner, decoupled from any sidebar layout.</sub></p>\n\n## Highlights\n\n- **30 tools, standard names** — `get_app_state` / `left_click` / `type` / `key` / `scroll` / `screenshot` / `zoom` / `clipboard` … with `element`/`coordinate` dual targets, `auto`/`a11y`/`event` strategy routing, and `return_state`.\n- **Safety semantics ported, not improvised** — observations are invalidated after every mutation (`superseded` + refresh lock); timeouts mean *\"may have happened\"* and are never replayed blindly; `stop_computer_control` is a **persistent** kill switch; element addressing validates RuntimeId / type+name / rect drift and fails closed (`stale_tree`) instead of clicking the wrong thing.\n- **Presentation layer** — tool calls render as chat cards; a fixed floating panel shows the live operation feed and a wall of captured frames; a dedicated settings page with **environment auto-detection** (Python candidates probed for real, one-click dependency install, bundled worker auto-resolve, vision-model dropdown with heuristic vision flags).\n- **Tiled vision for small-resolution models** — screenshots are grid-tiled (≤768 px per tile, overlap, capped count) so DeepSeek-flash-class models can still read the screen; full-frame and per-tile caches make repeated looks nearly free; images travel as durable attachment refs, never base64 in text.\n- **Governance** — append-only JSONL audit trail of every tool call; pid allowlist (strict/relaxed) with instant effect; loopback-only HTTP surface.\n```\n\n</details>\n\n**依据 2 · 作者声明**：[README.md:99-107](https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/README.md#L99-L107)\n\n30 工具分类。\n\n```text\n## Tools — 30 desktop-automation tools\n\n| Group | Tools |\n|---|---|\n| Observe & resolve | `request_access` `list_apps` `open_application` `list_windows` `get_app_state` `screenshot` `zoom` `list_displays` `switch_display` `cursor_position` |\n| Pointer | `left_click` `double_click` `triple_click` `right_click` `middle_click` `scroll` `left_click_drag` `mouse_move` `left_mouse_down` `left_mouse_up` |\n| Keyboard | `type` `set_value` `select_text` `key` `hold_key` |\n| Semantic | `perform_action` |\n| Runtime | `stop_computer_control` `wait` `read_clipboard` `write_clipboard` |\n```\n\n**依据 3 · 源码核查**：[package.json:2-35](https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/package.json#L2-L35)\n\n打包入口/客户端。\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\n  \"name\": \"@a9i5k4/dsh-cua-pre\",\n  \"description\": \"DSH 桌面自动化插件：无障碍树优先的观察-动作回路，30 个标准电脑控制工具（元素/坐标双目标、auto/a11y/event 策略），写后作废/禁重放/持久急停等安全语义，对话卡片+悬浮面板+环境自检设置页，分块识图，JSONL 审计与 pid 白名单。默认关闭。\",\n  \"version\": \"0.6.2\",\n  \"private\": false,\n  \"type\": \"module\",\n  \"main\": \"lib/index.js\",\n  \"exports\": {\n    \".\": \"./lib/index.js\",\n    \"./client\": \"./lib/client.js\",\n    \"./package.json\": \"./package.json\"\n  },\n  \"files\": [\n    \"lib\",\n    \"python\",\n    \"!python/__pycache__\",\n    \"!python/*.pyc\",\n    \"!python/worker_cua_v1.py\",\n    \"cordis.patch.yml\",\n    \"LICENSE\",\n    \"README.md\"\n  ],\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    },\n    \"client\": {\n      \"inject\": [\n        \"@deepseek-ai/dsh-client-runtime\",\n        \"@deepseek-ai/dsh-client-ui-slots\",\n        \"@deepseek-ai/dsh-client-ui-settings\",\n        \"@deepseek-ai/dsh-client-ui-sidebar\"\n      ],\n      \"platform\": \"web\"\n    }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:320-390](https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/lib/index.js#L320-L390)\n\n工具注册和执行包装。\n\n<details>\n<summary>查看原文（71行）</summary>\n\n```text\n  /** cordis 注册；撞名时回退前缀名（默认 cua_）。 */\n  function registerWithFallback() {\n    const registeredNames = []\n    for (const t of tools) {\n      const schema = toToolParameters(t.inputSchema)\n      const def = {\n        name: (config.toolNamePrefix || '') + t.name,\n        description: t.description,\n        parameters: schema,\n        output: {\n          schema: { type: 'string' },\n          render(_args, value) { return [{ type: 'text', text: String(value) }] },\n          // 纯投影：从返回文本解析卡片附件标记 att=<id>|b=<bytes>|w=<w>|h=<h>，随会话日志持久化。\n          // 只挂在会产生 att= 的工具上——宿主要求 presentationMeta 返回 lossless JSON，\n          // 无标记时返回 undefined 会让所有工具输出被判 invalid。\n          ...(t.name === 'screenshot' || t.name === 'get_app_state' ? {\n            presentationMeta: (_args, value) => {\n              const m = String(value).match(/att=(sha256:[0-9a-f]+)\\|b=(\\d+)\\|w=(\\d+)\\|h=(\\d+)/)\n              // null 是合法 JsonValue 兜底（如截图失败无 att= 时）；undefined 会被宿主判 non-lossless\n              if (!m) return null\n              return { image: { attachmentId: m[1], mediaType: 'image/jpeg', bytes: Number(m[2]), width: Number(m[3]), height: Number(m[4]) } }\n            },\n          } : {}),\n        },\n        // 会话卡片（provider-neutral render intent）：标题来自 args（纯函数，replay 安全）\n        presentCall: (args) => ({\n          card: 'generic',\n          title: callTitleFor(t.name, args),\n          kind: ['get_app_state', 'screenshot', 'zoom', 'read_clipboard', 'cursor_position', 'list_apps', 'list_windows', 'list_displays'].includes(t.name) ? 'read' : 'other',\n          rawInput: undefined,\n        }),\n        presentResult: (args, result) => {\n          try {\n            const text = (result.content || []).filter((b) => b && b.type === 'text').map((b) => b.text).join('\\n')\n            const firstLine = text.split('\\n').find((l) => l.trim()) || ''\n            const content = []\n            // 卡片嵌图：meta 由 presentationMeta 持久化投影而来（replay 安全）。UI-facing，\n            // 不进模型上下文——模型侧仍只读 render() 的纯文本。\n            const img = result && result.meta && result.meta.image\n            if (img && !result.isError && img.attachmentId) {\n              content.push({ type: 'image', attachment: { attachmentId: img.attachmentId, mediaType: img.mediaType || 'image/jpeg', bytes: img.bytes || 0, width: img.width || 0, height: img.height || 0 } })\n            }\n            content.push({ type: 'text', text: (result.isError ? '✗ ' : '✓ ') + firstLine.slice(0, 220) })\n            return { card: 'generic', title: callTitleFor(t.name, args), content }\n          } catch (_) { return undefined }\n        },\n        async execute(args, exec) {\n          const started = Date.now()\n          try {\n            if (exec && exec.agent) lastAgent = exec.agent\n            const out = await t.handler(args || {})\n            recordOp({\n              ts: started, tool: t.name,\n              title: callTitleFor(t.name, args || {}),\n              ok: !/\\berror\\]/.test(String(out).slice(0, 80)),\n              brief: String(out).split('\\n')[0].slice(0, 220),\n              ms: Date.now() - started,\n            })\n            return out\n          } catch (e) {\n            recordOp({ ts: started, tool: t.name, title: callTitleFor(t.name, args || {}), ok: false, brief: (e.message || String(e)).slice(0, 200), ms: Date.now() - started })\n            const msg = e && e.message ? e.message : String(e)\n            const sentFalse = e && e.extra && e.extra.action_sent === false\n            return '[' + t.name + ' error] code=' + (e.code || 'internal') + ': ' + msg + (sentFalse ? ' (action_sent=false)' : '')\n          }\n        },\n      }\n      try {\n        ctx.tools.register(def)\n        registeredNames.push(def.name)\n      } catch (_) {\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/cua-sidecar-client-pre.js:75-99](https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/lib/cua-sidecar-client-pre.js#L75-L99)\n\nPython worker 启动。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n    if (child) return { ok: true }\n    const scriptPath = String(opt('scriptPath') || '')\n    const command = String(opt('command') || 'python')\n    if (!scriptPath) return { ok: false, code: 'unavailable' }\n    epoch = 'cua_pre_' + randomBytes(16).toString('hex')\n    let proc\n    try {\n      proc = spawn(command, [scriptPath, '--expect-epoch', epoch], {\n        shell: false, windowsHide: true, stdio: ['pipe', 'pipe', 'pipe'],\n      })\n    } catch (_) {\n      epoch = null\n      noteFailure('unavailable')\n      return { ok: false, code: 'unavailable' }\n    }\n    child = proc\n    stats.starts++\n    if (!exitHookInstalled) {\n      // 兜底保险：宿主进程退出而 dispose 未被调用时（如崩溃/遗漏），同步杀树防孤儿。\n      exitHookInstalled = true\n      process.on('exit', () => {\n        if (!child) return\n        try { spawnSync('taskkill', ['/pid', String(child.pid), '/T', '/F'], { timeout: 3000 }) } catch (_) {}\n      })\n    }\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 观察-动作门禁和不确定结果如何实现？\n\n**研究主题：**功能与机制、工程质量与复用\n\n#### 完整回答\n\n元素动作要求state_id/index，过期或superseded拒绝并要求重观察；指针元素分支先call(element_action)，sidecar.request在Promise构造器同步writeFrame，随后markDispatched作废旧状态，再await响应。因此是派发后立即作废，不能说进入worker前作废。坐标路径同样先call再mark；坐标帧为软绑定，过期在frame_note显示，不等所有旧坐标都拒绝。坐标a11y未命中明确action_sent=false，event走原始输入，element目标反而拒event。\n\nsidecar有no-shell spawn、epoch、JSONL帧/断路器。timeout后settle本地请求、移pending并发送另一noop帧，未携原动作取消标识/原生中断机制，不能推停止原动作；迟到响应会失去pending接收者。timeout的workerMsg文字提醒动作可能已发生、先重观察勿盲重放；crashed仅提示worker退出/下次重生，不证明旧动作没发生。\n\n多处ToolError.extra.ambiguous只对timeout置true，另有部分分支置true，但wrapErr及最终index错误输出都不投影该字段，返回模型的是错误字符串，含可选action_sent=false，非统一可见ambiguous收据。现实现也不按未知结果硬阻止后续重放。保守核实际效果是使用流程要求，须外围模型/人员约束；worker真实UIA漂移与注入成功率仍无本轮独立结果。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/cua-tools-pre.js:160-183](https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/lib/cua-tools-pre.js#L160-L183)\n\n元素刷新门禁与坐标帧软绑定。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n  function resolveElementTarget(target) {\n    if (!target || target.type !== 'element') throw new ToolError('bad_target', '此工具的 target 必须是 element 形态 {type:\"element\",state_id,index}', { action_sent: false })\n    const st = session.get(target.state_id)\n    if (!st) {\n      const why = session.isSuperseded(target.state_id) ? '已被后续变更作废(superseded)' : '无效或已过期'\n      throw new ToolError('element_stale', 'state_id ' + target.state_id + ' ' + why + '。请重新 get_app_state。', { action_sent: false })\n    }\n    if (session.requiresRefresh(st.sel.pid)) {\n      throw new ToolError('refresh_required', '该应用存在未确认的变更，写入被锁定(refresh_required)。先 get_app_state 完成完整观察后再操作。', { action_sent: false, state_sync_status: 'refresh_required' })\n    }\n    const el = st.elements[target.index]\n    if (!el) throw new ToolError('index_oob', 'index 越界（该 state 共 ' + st.elements.length + ' 个元素）', { action_sent: false })\n    return { st, el }\n  }\n\n  function resolveCoordinateTarget(target, field = 'target') {\n    if (!target || target.type !== 'coordinate') {\n      throw new ToolError('bad_target', field + ' 必须是 coordinate 形态 {type:\"coordinate\",x,y}', { action_sent: false })\n    }\n    const x = Math.round(Number(target.x)); const y = Math.round(Number(target.y))\n    if (!Number.isFinite(x) || !Number.isFinite(y)) throw new ToolError('bad_target', '坐标必须是有限数字', { action_sent: false })\n    const latest = session.latestFrame()\n    const stale = latest && Date.now() > latest.expires_at_ms\n    return { x, y, frame: latest, frame_stale: stale }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/cua-tools-pre.js:186-203](https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/lib/cua-tools-pre.js#L186-L203)\n\ncall与错误字符串不投影ambiguous。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n  /** 变更派发标记：除\"确定未发出\"的结果外一律按已派发处理。 */\n  function markDispatched(pid, result) {\n    const notSentCodes = new Set(['unavailable', 'backpressure', 'disposed', 'circuit-open'])\n    if (!result || !notSentCodes.has(result.code)) session.markMutationDispatched(pid)\n  }\n\n  async function call(op, payload, opts) {\n    return sidecar.request(op, payload, opts)\n  }\n\n  function wrapErr(e, toolName) {\n    if (e instanceof ToolError) {\n      let s = '[' + toolName + ' error] code=' + e.code + ': ' + e.message +\n        (e.extra.action_sent === false ? ' (action_sent=false)' : '')\n      if (e.extra.state_sync_status) s += ' state_sync_status=' + e.extra.state_sync_status\n      return s\n    }\n    return '[' + toolName + ' 失败] ' + (e.message || String(e))\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/cua-tools-pre.js:470-522](https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/lib/cua-tools-pre.js#L470-L522)\n\n先call再mark及坐标/元素分支。\n\n<details>\n<summary>查看原文（53行）</summary>\n\n```text\n      if (args.target.type === 'element') {\n        if (args.strategy === 'event') throw new ToolError('strategy_conflict', 'element 目标不支持 strategy=event', { action_sent: false })\n        const { st, el } = resolveElementTarget(args.target)\n        checkPid(st.sel.pid)\n        scopeSel = st.sel\n        const req = call('element_action', {\n          sel: st.sel, path: el.p, action: 'click', button: spec.button || 'left',\n          double: !!spec.double, triple: !!spec.triple, modifiers: mods,\n          expectT: el.k, expectN: el.n || null,\n          expectRid: el.rid || null, expectRect: el.r || null,\n          allowFocus: !!(args.allowFocus || !config().preferBackground),\n        }, {})\n        checkPid(st.sel.pid)\n        markDispatched(st.sel.pid, null) // 进入原生调用前冻结\n        const r = await req\n        markDispatched(st.sel.pid, r)\n        if (!r.ok && r.reason === 'needs_foreground') {\n          throw new ToolError('needs_foreground',\n            '语义动作不可用且目标窗口不在前台。重试传 allowFocus:true（会置前窗口），或改用 set_value 等后台语义工具。',\n            { action_sent: false })\n        }\n        if (!r.ok) throw new ToolError(r.code === 'worker-error' ? r.reason : r.code, workerMsg(r), { ambiguous: r.code === 'timeout' })\n        resultPayload = r.payload\n      } else {\n        if (args.target.type === 'coordinate') requireUnscopedAllowed('坐标' + name)\n        const c = resolveCoordinateTarget(args.target)\n        const mode = args.strategy === 'a11y' ? 'semantic_only' : (args.strategy === 'event' ? 'raw' : 'auto')\n        const req = call('hit_click', {\n          x: c.x, y: c.y, button: spec.button || 'left', double: !!spec.double,\n          triple: !!spec.triple, modifiers: mods, mode,\n        }, {})\n        markDispatched(-1, null)\n        const r = await req\n        markDispatched(-1, r)\n        if (!r.ok && r.reason === 'needs_foreground') {\n          throw new ToolError('needs_foreground',\n            '目标窗口不在前台且语义动作不可用。选项：(1) 重试并传 allowFocus:true（会把窗口带到前台）；'\n            + '(2) 改用键盘/Value 语义工具。', { action_sent: false })\n        }\n        if (!r.ok) throw new ToolError(r.code === 'worker-error' ? r.reason : r.code, workerMsg(r), { ambiguous: r.code === 'timeout' })\n        if (mode === 'semantic_only' && r.payload.clicked === false) {\n          throw new ToolError('a11y_miss', 'strategy=a11y：坐标处无可按压元素，已 fail-closed 未注入任何输入。改用 auto/event 或重新观察。', { action_sent: false })\n        }\n        resultPayload = r.payload\n        resultPayload.frame_note = c.frame ? ('bound_frame=' + c.frame.frame_id + (c.frame_stale ? ' (stale!)' : '')) : ''\n      }\n      let out = name + ' 完成: strategy=' + (resultPayload.strategy || []).join('→') +\n        (resultPayload.hit ? ' hit=' + JSON.stringify(resultPayload.hit) : '') +\n        (resultPayload.point ? ' point=' + JSON.stringify(resultPayload.point) : '') +\n        (resultPayload.frame_note ? ' ' + resultPayload.frame_note : '')\n      out += '\\n旧观察已全部作废（superseded）。'\n      out += await postStateBlock(args, scopeSel, scopeSel ? 'compact' : 'none')\n      return out\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/cua-sidecar-client-pre.js:180-220](https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/lib/cua-sidecar-client-pre.js#L180-L220)\n\n同步发帧与timeout settle/noop，非原生取消。\n\n<details>\n<summary>查看原文（41行）</summary>\n\n```text\n  function writeFrame(frame) {\n    if (!child || !child.stdin || child.stdin.destroyed) return false\n    const line = Buffer.from(JSON.stringify(frame) + '\\n', 'utf8')\n    child.stdin.write(line)\n    return true\n  }\n\n  /**\n   * 结构化请求：resolve({ok:true,payload}) 或 resolve({ok:false,code,...})；永不 reject。\n   * worker-error 时附带 code='worker-error', reason=业务错误码, reasonText=可读信息。\n   */\n  function request(op, payload, rOpts = {}) {\n    if (disposed) return Promise.resolve({ ok: false, code: 'disposed' })\n    if (breakerOpen()) {\n      stats.failed.circuitopen++\n      return Promise.resolve({ ok: false, code: 'circuit-open', retryInMs: breaker.openUntil - Date.now() })\n    }\n    const started = ensureStarted()\n    if (!started.ok) {\n      stats.failed[started.code] = (stats.failed[started.code] || 0) + 1\n      return Promise.resolve({ ok: false, code: started.code })\n    }\n    if (pending.size >= Number(opt('maxPendingRequests') ?? DEFAULTS.maxPendingRequests)) {\n      stats.failed.backpressure++\n      return Promise.resolve({ ok: false, code: 'backpressure' })\n    }\n    const requestId = 'cq_' + randomBytes(9).toString('hex') + (++reqCounter).toString(36)\n    const frame = { v: 1, dir: 'req', requestId, epoch, op, payload: payload ?? {} }\n    return new Promise((resolve) => {\n      const entry = { requestId, expectedOp: op, resolve, settled: false, timer: null }\n      pending.set(requestId, entry)\n      stats.requests++\n      const written = writeFrame(frame)\n      if (!written) { settle(entry, { ok: false, code: 'unavailable' }); return }\n      const timeoutMs = Math.max(1, Number(rOpts.timeoutMs) || Number(opt('requestTimeoutMs') ?? DEFAULTS.requestTimeoutMs))\n      entry.timer = setTimeout(() => {\n        settle(entry, { ok: false, code: 'timeout', timeoutMs })\n        // cancel 通知：同 requestId 的 no-op 请求让 worker 跳过慢操作的结果写入\n        writeFrame({ v: 1, dir: 'req', requestId: 'cx_' + randomBytes(8).toString('hex'), epoch, op: 'noop', payload: {} })\n      }, timeoutMs)\n    })\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/cua-tools-pre.js:100-114](https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/lib/cua-tools-pre.js#L100-L114)\n\ntimeout提醒与crashed重生文案。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n  function workerMsg(r) {\n    if (r.code === 'worker-error') {\n      let m = String(r.reasonText || r.reason)\n      if (r.reason === 'stale_tree') m += ' —— 立即重新 get_app_state 获取新 state_id。'\n      if (r.reason === 'CUA_DEP_MISSING') m += ' （.venv 缺依赖：pip install -r python/requirements.txt）'\n      if (r.reason === 'needs_foreground') m = '后台优先：语义动作不可用且窗口非前台。重试传 allowFocus:true，或改用 set_value 等后台语义。'\n      if (r.reason === 'needs_foreground') m += ' （后台优先模式；重试传 allowFocus:true 可置前操作）'\n      return m\n    }\n    if (r.code === 'timeout') return 'timeout(' + r.timeoutMs + 'ms)。若是变更类操作，动作可能已发生：先重新观察确认，勿盲目重放。'\n    if (r.code === 'crashed') return 'Python worker 崩溃退出，下次调用自动重生。'\n    if (r.code === 'unavailable') return '无法启动 Python worker（检查 config.pythonExecutable）。'\n    if (r.code === 'circuit-open') return '断路器熔断中，' + Math.ceil((r.retryInMs || 0) / 1000) + 's 后自动半开。'\n    return r.code || 'unknown'\n  }\n```\n\n</details>\n\n**依据 6 · 源码核查**：[lib/index.js:379-383](https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/lib/index.js#L379-L383)\n\n最终字符串只附action_sent=false。\n\n```text\n          } catch (e) {\n            recordOp({ ts: started, tool: t.name, title: callTitleFor(t.name, args || {}), ok: false, brief: (e.message || String(e)).slice(0, 200), ms: Date.now() - started })\n            const msg = e && e.message ? e.message : String(e)\n            const sentFalse = e && e.extra && e.extra.action_sent === false\n            return '[' + t.name + ' error] code=' + (e.code || 'internal') + ': ' + msg + (sentFalse ? ' (action_sent=false)' : '')\n```\n\n**依据 7 · 源码核查**：[lib/cua-sidecar-client-pre.js:75-99](https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/lib/cua-sidecar-client-pre.js#L75-L99)\n\nworker启动。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n    if (child) return { ok: true }\n    const scriptPath = String(opt('scriptPath') || '')\n    const command = String(opt('command') || 'python')\n    if (!scriptPath) return { ok: false, code: 'unavailable' }\n    epoch = 'cua_pre_' + randomBytes(16).toString('hex')\n    let proc\n    try {\n      proc = spawn(command, [scriptPath, '--expect-epoch', epoch], {\n        shell: false, windowsHide: true, stdio: ['pipe', 'pipe', 'pipe'],\n      })\n    } catch (_) {\n      epoch = null\n      noteFailure('unavailable')\n      return { ok: false, code: 'unavailable' }\n    }\n    child = proc\n    stats.starts++\n    if (!exitHookInstalled) {\n      // 兜底保险：宿主进程退出而 dispose 未被调用时（如崩溃/遗漏），同步杀树防孤儿。\n      exitHookInstalled = true\n      process.on('exit', () => {\n        if (!child) return\n        try { spawnSync('taskkill', ['/pid', String(child.pid), '/T', '/F'], { timeout: 3000 }) } catch (_) {}\n      })\n    }\n```\n\n</details>\n\n**依据 8 · 源码核查**：[lib/index.js:35-40](https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/lib/index.js#L35-L40)\n\n模型使用指令并非重放门禁。\n\n```text\nexport const GUIDANCE = [\n  '[dsh-cua-pre 电脑控制] 已启用桌面自动化工具面。核心循环=观察一次→动作一次→验证：',\n  '1. request_access 探测就绪；list_apps 找应用；get_app_state 读无障碍树获得 state_id（主路径，语义精确、不抢焦点、无需截图）。目标一律用 {type:\"element\",state_id,index}。',\n  '2. 仅当无障碍表达不了目标才截图（screenshot / get_app_state include_screenshot），坐标只能取自最近返回帧的整数像素 {type:\"coordinate\",x,y}；zoom 裁剪放大不重截。坐标动作 strategy 默认 auto（先无障碍命中）；a11y=够不到即拒绝；event=强制裸输入，仅限无障碍不可用时。',\n  '3. 动作后旧 state 全部作废(superseded)+写入锁(refresh_required)：必须重新 get_app_state 才能再写。响应可能自带重观察结果(return_state)。',\n  '4. action_sent 纪律：预检失败=未发生可安全重试；timeout/crashed=可能已发生——先重新观察确认实际状态，绝不原样重放非幂等操作（发送/删除/支付）。',\n```\n\n#### 缺口\n\n- 未测 worker 实际 UIA/注入。\n  **影响：**失败后是否误重试、漂移误点率未知。\n  **进一步探讨：**故障注入及状态变化后重试对照。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 白名单、急停和审计能提供怎样的治理保证？\n\n**研究主题：**缺陷与关键质疑、依赖、兼容与流程\n\n#### 完整回答\n\n默认 enabled 关闭且仅 Windows 过 gate；killSwitch 尝试把 stoppedByUser 写配置并关 worker，但配置写失败时只保持本进程内停用，重启持久性不保证。allowedPids 默认空，等于未开启范围约束；启用非空且 strict 时才拒绝无 pid 作用域的坐标/剪贴板等。审计 JSONL 追加失败被静默吞掉，主调用继续，所以“每次工具调用都有持久审计”并非 fail-closed。loopback过滤实际检查socket.remoteAddress，state/config/安装deps/bootstrap等入口没有本层用户身份或Origin绑定；外层Host准入未核，不宣称公网可达或已越权。confirm字段及付款/外发先问的GUIDANCE都是工具参数/提示纪律，不是人类授权事实。timeout本地settle/noop不停止原生动作，不确定结果后停止/取消须外围约束，不能用重生提示当可安全重放。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:55-69](https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/lib/index.js#L55-L69)\n\n白名单默认空。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n  maxStates: 16,\n  frameTtlMs: 60000,\n  toolNamePrefix: '',\n  // ---- vision ----\n  visionEnabled: false,\n  visionModel: '',\n  visionAutoDescribe: true,\n  tileMaxPx: 768,\n  tileOverlapPx: 64,\n  visionMaxTiles: 4,\n  visionTimeoutMs: 90000,\n  // ---- pid 白名单 ----\n  allowedPids: [],\n  whitelistRelaxed: false,\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:195-225](https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/lib/index.js#L195-L225)\n\n启用、急停/持久化失败处理。\n\n<details>\n<summary>查看原文（31行）</summary>\n\n```text\n  function gate() {\n    if (!config) return '插件配置尚未加载完成，请稍后重试。'\n    if (platform() !== 'win32') return '本插件原型仅支持 Windows（UIA/SendInput）。'\n    if (!effConfig().enabled) return '电脑控制当前未启用。请在 ' + config._file + ' 写入 {\"enabled\": true} 后重启 dsh web（默认关闭是安全设计）。'\n    if (stoppedByUserPersisted) return '电脑控制已被 stop_computer_control 紧急停止且持久生效（防循环失控）。恢复：删除 ' + config._file + ' 的 stoppedByUser 字段并重启 dsh web。'\n    return null\n  }\n\n  async function killSwitch(reason) {\n    if (!config || !config._file) return '电脑控制尚未完成初始化，无需停止。'\n    try {\n      const raw = await readFile(config._file, 'utf8').catch(() => '{}')\n      const obj = JSON.parse(raw)\n      obj.stoppedByUser = true\n      await writeFile(config._file, JSON.stringify(obj, null, 2), 'utf8')\n    } catch (_) { /* 配置不可写也照停（内存态已停） */ }\n    stoppedByUserPersisted = true\n    sidecar.restart('stop_computer_control' + (reason ? ': ' + reason : ''))\n    session.clearAll()\n    return '电脑控制已紧急停止并持久化' + (reason ? '（原因: ' + reason + '）' : '') +\n      '。所有工具现在拒绝执行。恢复方法：删除 ' + config._file + ' 中 stoppedByUser 字段并重启 dsh web。'\n  }\n\n  // ---------- pid 白名单门禁 ----------\n  function pidGate(pid) {\n    const c = effConfig()\n    const list = Array.isArray(c.allowedPids) ? c.allowedPids.map(Number).filter(Number.isFinite) : []\n    if (!list.length) return null\n    if (pid === null || pid === undefined || !Number.isFinite(Number(pid))) return null\n    return list.includes(Number(pid))\n      ? null\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/cua-tools-pre.js:50-67](https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/lib/cua-tools-pre.js#L50-L67)\n\nstrict 白名单作用域门禁。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n  function whitelistActive() {\n    const list = config().allowedPids || []\n    return Array.isArray(list) && list.length > 0\n  }\n\n  /** 作用域化操作的 pid 门禁。 */\n  function checkPid(pid) {\n    const reason = pidGate(pid)\n    if (reason) throw new ToolError('pid_blocked', reason, { action_sent: false })\n  }\n\n  /** 无作用域可查的全局效果操作（坐标/剪贴板/全屏截图/open）在白名单下的默认拒绝。 */\n  function requireUnscopedAllowed(kind) {\n    if (!whitelistActive()) return\n    if (config().whitelistRelaxed) return\n    throw new ToolError('pid_scope_required',\n      'PID 白名单启用中（strict 模式）：' + kind + ' 无法确认目标归属，已被拒绝。' +\n      '改用元素目标(element target)，在设置页添加对应 pid，或开启「白名单宽松模式」。', { action_sent: false })\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:291-303](https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/lib/index.js#L291-L303)\n\n审计失败静默。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n  const auditChain = { p: Promise.resolve() }\n  function recordOp(entry) {\n    opLog.push(entry)\n    while (opLog.length > OP_LOG_CAP) opLog.shift()\n    // 审计落盘：JSONL 按天追加，失败静默不影响主链路\n    auditChain.p = auditChain.p.then(async () => {\n      try {\n        const dir = path.join(effConfig()._artifactsDir || expandHome(DEFAULT_CONFIG.artifactsDir), 'audit')\n        await mkdir(dir, { recursive: true })\n        const day = new Date(entry.ts).toISOString().slice(0, 10)\n        await appendFile(path.join(dir, day + '.jsonl'), JSON.stringify(entry) + '\\n', 'utf8')\n      } catch (_) {}\n    })\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/index.js:102-105](https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/lib/index.js#L102-L105)\n\nloopback 判定。\n\n```text\nfunction isLoopbackRequest(req) {\n  const address = req.socket && req.socket.remoteAddress\n  return address === '127.0.0.1' || address === '::1' || address === 'ffff:127.0.0.1' ||\n    address === '::ffff:127.0.0.1'\n```\n\n**依据 6 · 源码核查**：[lib/index.js:510-550](https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/lib/index.js#L510-L550)\n\n状态/配置loopback控制面。\n\n<details>\n<summary>查看原文（41行）</summary>\n\n```text\n    {\n      kind: 'exact', path: API.state, handler: async (req, res) => {\n        if (!isLoopbackRequest(req)) return writeJson(res, 403, { error: 'loopback-only' })\n        const everEnabled = !!(effConfig().enabled)\n        writeJson(res, 200, {\n          plugin: 'dsh-cua-pre', version: 3,\n          enabled: everEnabled,\n          firstRun: !everEnabled && !stoppedByUserPersisted,\n          stoppedByUser: stoppedByUserPersisted,\n          visionEnabled: !!(config && config.visionEnabled),\n          whitelist: { active: (effConfig().allowedPids || []).length > 0, size: (effConfig().allowedPids || []).length, relaxed: !!effConfig().whitelistRelaxed },\n          platform: platform(),\n          worker: sidecar.debugView(),\n          session: { states: session.stateCount(), refreshLocks: session.refreshLockCount(), busyVision: vision.busy() },\n          lastOps: opLog.slice(-20).reverse(),\n          pendingUrl: pendingUrls.length ? pendingUrls[pendingUrls.length - 1] : null,\n          lastOperated: lastOperated,\n        })\n      },\n    },\n    {\n      kind: 'exact', path: API.config, handler: async (req, res) => {\n        if (!isLoopbackRequest(req)) return writeJson(res, 403, { error: 'loopback-only' })\n        if ((req.method || 'GET') === 'GET') {\n          if (!config) return writeJson(res, 503, { error: 'loading' })\n          const pub = {}\n          for (const k of Object.keys(DEFAULT_CONFIG)) pub[k] = config[k]\n          return writeJson(res, 200, { config: pub, file: config._file, needsRestartNote: '修改保存后需重启 dsh web 生效' })\n        }\n        if (req.method !== 'POST') return writeJson(res, 405, { error: 'method not allowed' })\n        if (!config || !config._file) return writeJson(res, 503, { error: 'config not loaded yet' })\n        const body = await readJsonBody(req).catch(() => null)\n        if (!body || typeof body !== 'object') return writeJson(res, 400, { error: 'invalid json' })\n        try {\n          const raw = await readFile(config._file, 'utf8').catch(() => '{}')\n          const obj = JSON.parse(raw)\n          for (const k of Object.keys(DEFAULT_CONFIG)) {\n            if (body[k] !== undefined) {\n              obj[k] = body[k]\n              overrides[k] = body[k] // 白名单等即时生效；pythonExecutable 等进程级项重启完全生效\n            }\n```\n\n</details>\n\n**依据 7 · 源码核查**：[lib/index.js:625-668](https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/lib/index.js#L625-L668)\n\n安装与bootstrap的进程副作用。\n\n<details>\n<summary>查看原文（44行）</summary>\n\n```text\n      kind: 'exact', path: API['install-deps'], handler: async (req, res) => {\n        if (!isLoopbackRequest(req)) return writeJson(res, 403, { error: 'loopback-only' })\n        if (req.method !== 'POST') return writeJson(res, 405, { error: 'method not allowed' })\n        const body = await readJsonBody(req).catch(() => ({}))\n        const py = String(body.python || '').trim()\n        if (!py) return writeJson(res, 400, { error: 'missing python' })\n        const runPip = async (extra) => {\n          try {\n            const r = await execFileP(py, ['-m', 'pip', 'install', '--quiet', 'uiautomation', 'pillow'].concat(extra || []),\n              { timeout: 240000, windowsHide: true, maxBuffer: 4 * 1024 * 1024 })\n            return { ok: true, tail: String(r.stdout || '').slice(-400) }\n          } catch (e) {\n            return { ok: false, tail: String((e && (e.stderr || e.message)) || e).slice(-400) }\n          }\n        }\n        let r = await runPip()\n        if (!r.ok) r = await runPip(['-i', 'https://pypi.tuna.tsinghua.edu.cn/simple'])\n        detectCache.pythons = null // 依赖装完失效缓存，下次 detect 重新探测\n        writeJson(res, 200, r)\n      },\n    },\n    {\n      kind: 'exact', path: API.bootstrap, handler: async (req, res) => {\n        if (!isLoopbackRequest(req)) return writeJson(res, 403, { error: 'loopback-only' })\n        if (req.method !== 'POST') return writeJson(res, 405, { error: 'method not allowed' })\n        const body = await readJsonBody(req).catch(() => ({}))\n        // 探测可用 Python：优先显式指定的；否则取第一个 ready 的候选\n        let py = String(body.python || '').trim()\n        if (!py) {\n          const pythons = await detectPythons().catch(() => [])\n          const ready = pythons.find((x) => x.status === 'ready') || pythons.find((x) => x.status === 'no-deps')\n          if (ready) py = ready.path\n        }\n        if (!py) return writeJson(res, 400, { error: '未检测到可用 Python。请先在系统安装 Python 3.9+，或手动填写 pythonExecutable。' })\n        // 若该 Python 缺依赖，自动尝试安装（默认源失败切清华镜像）\n        const probe = await probePython(py, ['-c', 'import uiautomation, PIL; print(\"deps-ok\")'])\n        let installedDeps = false\n        if (!probe.ok || probe.out.indexOf('deps-ok') === -1) {\n          const runPip = async (extra) => {\n            try {\n              const r = await execFileP(py, ['-m', 'pip', 'install', '--quiet', 'uiautomation', 'pillow'].concat(extra || []),\n                { timeout: 240000, windowsHide: true, maxBuffer: 4 * 1024 * 1024 })\n              return { ok: true, tail: String(r.stdout || '').slice(-300) }\n            } catch (e) { return { ok: false, tail: String((e && (e.stderr || e.message)) || e).slice(-300) } }\n```\n\n</details>\n\n#### 缺口\n\n- 未测试本机 HTTP 访问及配置不可写/重启。\n  **影响：**本地边界、急停持久性和审计缺口频率未知。\n  **进一步探讨：**隔离 Windows profile 故障注入与本机请求测试。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 安装运行与故障恢复要消耗什么？\n\n**研究主题：**效果与总成本、采用判断\n\n#### 完整回答\n\n首次需 Windows 10+、DSH web、Python 3.9+ 和 uiautomation/pillow，安装脚本/配置/重启，现金价格未见，人工检查自动安装远端脚本和依赖环境。持续使用要 worker 常驻/屏幕帧与附件存储、可选视觉模型 token，以及逐动作观察/复核人工；耗量无实测。失败恢复包括 Python 不可用、stale_tree/refresh_required、timeout 不可盲重放、审计/急停写盘失败，须重观察和人工核验已发生效果；重试时间/费用未知。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:69-95](https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/README.md#L69-L95)\n\n作者安装与依赖说明。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n````text\n## Quick start\n\n> Prerequisites: Windows 10+, [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (`dsh web`), Python 3.9+ on PATH.\n\n```powershell\n# 1) install into the web profile + patch the bundle roster\nirm https://raw.githubusercontent.com/Aik358/dsh-cua-pre/main/install.ps1 | iex\n\n# 2) restart `dsh web` (port 3080 stays a manual, user-owned step)\n\n# 3) enable + (recommended) point the plugin at a venv with worker deps\n#    ~/.dsh/cua-pre.json\n{ \"enabled\": true, \"pythonExecutable\": \"C:/path/to/venv/Scripts/python.exe\" }\n```\n\nOr pick the interpreter visually: after restart, open **Settings → 电脑控制** — the page auto-probes every candidate Python, shows which ones have `uiautomation`+`pillow` ready, installs missing deps in one click (official PyPI, Tsinghua mirror fallback), and lets you switch with one click (takes effect immediately, no restart).\n\n<details>\n<summary><b>Enable vision (optional) / 开启识图（可选）</b></summary>\n\n```json\n{ \"visionEnabled\": true, \"visionModel\": \"\" }\n```\n\n`visionModel` left empty follows the harness default route; the settings dropdown lists every configured provider's models with a heuristic ✔ on likely-vision names (you can override manually). Every `screenshot` / `get_app_state(include_screenshot)` then appends a `[vision]` description built from grid tiles — each tile small enough for low-resolution models to read faithfully.\n\nInstall worker deps for the chosen interpreter: `pip install uiautomation pillow` (or use the settings page button).\n````\n\n</details>\n\n**依据 2 · 源码核查**：[package.json:2-49](https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/package.json#L2-L49)\n\n包结构/许可。\n\n<details>\n<summary>查看原文（48行）</summary>\n\n```text\n  \"name\": \"@a9i5k4/dsh-cua-pre\",\n  \"description\": \"DSH 桌面自动化插件：无障碍树优先的观察-动作回路，30 个标准电脑控制工具（元素/坐标双目标、auto/a11y/event 策略），写后作废/禁重放/持久急停等安全语义，对话卡片+悬浮面板+环境自检设置页，分块识图，JSONL 审计与 pid 白名单。默认关闭。\",\n  \"version\": \"0.6.2\",\n  \"private\": false,\n  \"type\": \"module\",\n  \"main\": \"lib/index.js\",\n  \"exports\": {\n    \".\": \"./lib/index.js\",\n    \"./client\": \"./lib/client.js\",\n    \"./package.json\": \"./package.json\"\n  },\n  \"files\": [\n    \"lib\",\n    \"python\",\n    \"!python/__pycache__\",\n    \"!python/*.pyc\",\n    \"!python/worker_cua_v1.py\",\n    \"cordis.patch.yml\",\n    \"LICENSE\",\n    \"README.md\"\n  ],\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    },\n    \"client\": {\n      \"inject\": [\n        \"@deepseek-ai/dsh-client-runtime\",\n        \"@deepseek-ai/dsh-client-ui-slots\",\n        \"@deepseek-ai/dsh-client-ui-settings\",\n        \"@deepseek-ai/dsh-client-ui-sidebar\"\n      ],\n      \"platform\": \"web\"\n    }\n  },\n  \"keywords\": [\n    \"dsh\",\n    \"deepseek-harness\",\n    \"cua\",\n    \"computer-use\",\n    \"uia\",\n    \"vision\"\n  ],\n  \"peerDependencies\": {\n    \"@deepseek-ai/cordis\": \"^4.0.1\"\n  },\n  \"license\": \"MIT\"\n}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/cua-sidecar-client-pre.js:18-33](https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/lib/cua-sidecar-client-pre.js#L18-L33)\n\n请求/断路器参数。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\nconst DEFAULTS = {\n  requestTimeoutMs: 20000,\n  maxLineBytes: 256 * 1024,\n  breakerFailureThreshold: 3,\n  breakerCooldownMs: 30000,\n  maxPendingRequests: 4,\n}\n\n/** 捆绑 worker 的默认绝对路径（python/worker_cua_v2.py）。 */\nexport function defaultWorkerScriptPathPre() {\n  try {\n    return path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'python', 'worker_cua_v2.py')\n  } catch (_) { return '' }\n}\n\nconst FAILURE_CODES = new Set(['timeout', 'crashed', 'unavailable', 'protocol', 'line-oversize'])\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/cua-tools-pre.js:160-171](https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/lib/cua-tools-pre.js#L160-L171)\n\n刷新要求。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n  function resolveElementTarget(target) {\n    if (!target || target.type !== 'element') throw new ToolError('bad_target', '此工具的 target 必须是 element 形态 {type:\"element\",state_id,index}', { action_sent: false })\n    const st = session.get(target.state_id)\n    if (!st) {\n      const why = session.isSuperseded(target.state_id) ? '已被后续变更作废(superseded)' : '无效或已过期'\n      throw new ToolError('element_stale', 'state_id ' + target.state_id + ' ' + why + '。请重新 get_app_state。', { action_sent: false })\n    }\n    if (session.requiresRefresh(st.sel.pid)) {\n      throw new ToolError('refresh_required', '该应用存在未确认的变更，写入被锁定(refresh_required)。先 get_app_state 完成完整观察后再操作。', { action_sent: false, state_sync_status: 'refresh_required' })\n    }\n    const el = st.elements[target.index]\n    if (!el) throw new ToolError('index_oob', 'index 越界（该 state 共 ' + st.elements.length + ' 个元素）', { action_sent: false })\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/index.js:203-215](https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/lib/index.js#L203-L215)\n\n急停恢复。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n  async function killSwitch(reason) {\n    if (!config || !config._file) return '电脑控制尚未完成初始化，无需停止。'\n    try {\n      const raw = await readFile(config._file, 'utf8').catch(() => '{}')\n      const obj = JSON.parse(raw)\n      obj.stoppedByUser = true\n      await writeFile(config._file, JSON.stringify(obj, null, 2), 'utf8')\n    } catch (_) { /* 配置不可写也照停（内存态已停） */ }\n    stoppedByUserPersisted = true\n    sidecar.restart('stop_computer_control' + (reason ? ': ' + reason : ''))\n    session.clearAll()\n    return '电脑控制已紧急停止并持久化' + (reason ? '（原因: ' + reason + '）' : '') +\n      '。所有工具现在拒绝执行。恢复方法：删除 ' + config._file + ' 中 stoppedByUser 字段并重启 dsh web。'\n```\n\n</details>\n\n#### 缺口\n\n- 无实测安装/任务账单与工时。\n  **影响：**整体拥有成本未知。\n  **进一步探讨：**固定 Windows 环境记录安装、任务、失败恢复耗时/模型费。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 怎样把默认治理提升到可验证安全边界？\n\n**研究主题：**新假设与验证、采用判断\n\n#### 完整回答\n\n已知：默认白名单空、审计失败可继续、急停写盘失败仅进程有效；对照已有明确允许的单应用 CUA 流程，当前广域默认更易越界。假设增量是首次启用必须绑定目标 PID/窗口，变更动作前审计预写失败即停，并把急停状态原子持久化/启动时验证；可能减少越界与无记录动作。条件是稳定目标归属、可写安全存储和用户明确授权；代价是多次范围选择、日志 I/O、跨应用合法任务受阻与故障修复。最小对照：同一 Windows 用例在现版与强制配置版执行越界、日志目录只读、kill 后重启、正常跨应用任务，比较越界动作数、漏审计数、正常阻断率、延迟；若缺口未下降或正常阻断/时延超预注册阈值则证伪。目前这属于未实现改造，不能把现有 strict 可选配置当默认保障。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:55-69](https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/lib/index.js#L55-L69)\n\n白名单缺省。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n  maxStates: 16,\n  frameTtlMs: 60000,\n  toolNamePrefix: '',\n  // ---- vision ----\n  visionEnabled: false,\n  visionModel: '',\n  visionAutoDescribe: true,\n  tileMaxPx: 768,\n  tileOverlapPx: 64,\n  visionMaxTiles: 4,\n  visionTimeoutMs: 90000,\n  // ---- pid 白名单 ----\n  allowedPids: [],\n  whitelistRelaxed: false,\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:203-215](https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/lib/index.js#L203-L215)\n\n急停写盘失败分支。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n  async function killSwitch(reason) {\n    if (!config || !config._file) return '电脑控制尚未完成初始化，无需停止。'\n    try {\n      const raw = await readFile(config._file, 'utf8').catch(() => '{}')\n      const obj = JSON.parse(raw)\n      obj.stoppedByUser = true\n      await writeFile(config._file, JSON.stringify(obj, null, 2), 'utf8')\n    } catch (_) { /* 配置不可写也照停（内存态已停） */ }\n    stoppedByUserPersisted = true\n    sidecar.restart('stop_computer_control' + (reason ? ': ' + reason : ''))\n    session.clearAll()\n    return '电脑控制已紧急停止并持久化' + (reason ? '（原因: ' + reason + '）' : '') +\n      '。所有工具现在拒绝执行。恢复方法：删除 ' + config._file + ' 中 stoppedByUser 字段并重启 dsh web。'\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:291-303](https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/lib/index.js#L291-L303)\n\n审计失败分支。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n  const auditChain = { p: Promise.resolve() }\n  function recordOp(entry) {\n    opLog.push(entry)\n    while (opLog.length > OP_LOG_CAP) opLog.shift()\n    // 审计落盘：JSONL 按天追加，失败静默不影响主链路\n    auditChain.p = auditChain.p.then(async () => {\n      try {\n        const dir = path.join(effConfig()._artifactsDir || expandHome(DEFAULT_CONFIG.artifactsDir), 'audit')\n        await mkdir(dir, { recursive: true })\n        const day = new Date(entry.ts).toISOString().slice(0, 10)\n        await appendFile(path.join(dir, day + '.jsonl'), JSON.stringify(entry) + '\\n', 'utf8')\n      } catch (_) {}\n    })\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/cua-tools-pre.js:61-67](https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/lib/cua-tools-pre.js#L61-L67)\n\nstrict 仅启用后生效。\n\n```text\n  /** 无作用域可查的全局效果操作（坐标/剪贴板/全屏截图/open）在白名单下的默认拒绝。 */\n  function requireUnscopedAllowed(kind) {\n    if (!whitelistActive()) return\n    if (config().whitelistRelaxed) return\n    throw new ToolError('pid_scope_required',\n      'PID 白名单启用中（strict 模式）：' + kind + ' 无法确认目标归属，已被拒绝。' +\n      '改用元素目标(element target)，在设置页添加对应 pid，或开启「白名单宽松模式」。', { action_sent: false })\n```\n\n#### 缺口\n\n- 强制策略未实现且未做对照。\n  **影响：**安全收益/可用性代价未知。\n  **进一步探讨：**预注册缺口和正常阻断阈值后故障注入。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：5fe7dd5b243a8bda3d3b6881b89ee43f12fe14d24a25e9b87284a6dab4618891。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 3 | 303 | — | — | 4104 |\n| .js | source | 6 | 3372 | 2990 | 220 | — |\n| .mjs | source | 4 | 514 | 382 | 74 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 模型工具 | Windows观察/指针/键盘/语义动作 | confirm参数不等人类审批 |\n| 界面 | 设置、状态卡片与实况/帧 | 状态/日志不等业务完成 |\n| Python worker | 驻留执行原生动作 | 请求timeout不等取消原生动作 |\n| Host路由 | 状态/配置/帧与安装/bootstrap | socket loopback过滤非用户身份/Origin绑定，外层Host准入另核 |\n\n\n## 工程亮点\n\nHost注入工具并管理Python sidecar，动作按state_id/PID预检，先发帧后立即作废旧状态；timeout文字提示可能已发生，但无统一可见ambiguous字段，timer/noop不取消原生动作。日志异步追加失败静默。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、lib/cua-tools-pre.js、lib/cua-sidecar-client-pre.js、lib/cua-session-pre.js、python/worker_cua_v2.py、lib/client.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定 SHA 静态审阅 README、package、lib Host/工具/sidecar；未运行插件、目标脚本或 Windows 桌面。\n- 下一步：Windows 隔离环境以等任务比较坐标基线与 UIA 策略的成功/误操作率；故障注入 timeout、日志只读、急停重启并核状态。\n",
         "metadata": {
             "repository": "Aik358/dsh-cua-pre",
             "repository_id": 1346533795,
-            "captured_at": "2026-10-21T05:35:03.853Z",
-            "window_start": "2026-09-21T05:35:03.853Z",
+            "captured_at": "2026-10-22T08:06:33.222Z",
+            "window_start": "2026-09-22T08:06:33.222Z",
             "stars": 2,
             "pushed_at": "2026-09-08T05:54:00Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 1,
+                "closed": 1,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAik358%2Fdsh-cua-pre%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4384:E6488:67177A:6D29A9:6AD84F09 and timestamp 2026-10-21 05:35:05 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAik358%2Fdsh-cua-pre%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4466:10F8F5:54BEDD:5ACE61:6AD84F0A and timestamp 2026-10-21 05:35:06 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAik358%2Fdsh-cua-pre%20is%3Aissue%20created%3A2026-09-21T05%3A35%3A03.853Z..2026-10-21T05%3A35%3A03.853Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 457E:1889E9:6D5B2E:736B93:6AD84F0B and timestamp 2026-10-21 05:35:07 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAik358%2Fdsh-cua-pre%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A35%3A03.853Z..2026-10-21T05%3A35%3A03.853Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 465E:3AE7C0:52C7C5:58D6AB:6AD84F0C and timestamp 2026-10-21 05:35:08 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAik358%2Fdsh-cua-pre%20is%3Aissue%20updated%3A2026-09-21T05%3A35%3A03.853Z..2026-10-21T05%3A35%3A03.853Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 472E:1BBF60:54B788:5AC8FC:6AD84F0C and timestamp 2026-10-21 05:35:09 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
-            "npm": {
-                "package_name": "@a9i5k4/dsh-cua-pre",
-                "captured_at": "2026-10-21T05:35:09.045Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 381,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40a9i5k4%2Fdsh-cua-pre",
-                "error": null,
-                "publication": {
-                    "first_published_at": "2026-08-25T19:14:20.680Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
-                    "source_url": "https://registry.npmjs.org/%40a9i5k4%2Fdsh-cua-pre",
-                    "error": null,
-                    "latest_version": "0.6.2",
-                    "latest_published_at": "2026-09-06T15:53:50.138Z",
-                    "latest_error": null
-                }
-            }
+            "errors": []
         },
         "discovery.plugins": {
             "id": "github:1346533795:root",
             "repository": "Aik358/dsh-cua-pre",
             "path": "",
             "revision": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "d0c7b6bbd52199346c8f9dabffea64eab81266744336f8ebfd43bfa7a1713f23",
                 "code": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb",
                 "maintenance": "f4c2f71e8314030babe6582480ddf2f8b1ad7455973d7a618490dbb8f62bacc1"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

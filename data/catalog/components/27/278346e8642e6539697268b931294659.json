@@ -13,7 +13,7 @@
             "name": "dsh-jev-guard",
             "entry_type": "plugin",
             "technical_category": "security-governance",
-            "business_category": "software-delivery",
+            "business_category": "infrastructure",
             "tags": [],
             "availability": "unknown",
             "research_depth": "source",
@@ -24,36 +24,130 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-03-github-1378138611-root-directory-0",
+                    "id": "2026-10-22-02-github-1378138611-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T03:48:25.745Z",
+                    "retrieved_at": "2026-10-22T11:21:28.677Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-03-github-1378138611-root-author",
+                    "id": "2026-10-22-02-github-1378138611-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/7starsseeker/dsh-jev-guard",
+                            "commit": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312",
+                            "path": "README.md",
+                            "content_sha256": "d9c868b710c4063bf3e203472e3c1e9de82c5a66aa29a3474ab557ba265147f5"
+                        }
+                    ],
                     "revision": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312",
-                    "captured_at": "2026-10-21T03:48:25.745Z",
-                    "summary": "在 DSH 命令执行前结合静态规则与 Jev 判定，返回放行、改写、拒绝或人工升级。",
-                    "artifact": "data/runs/2026-10-21-03/snapshots/7starsseeker--dsh-jev-guard/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T11:21:28.677Z",
+                    "summary": "在DSH shell执行前组合静态规则与Jev语义风险判定，提供人工出口、降级与审计。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/7starsseeker--dsh-jev-guard/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-03-github-1378138611-root-source",
+                    "id": "2026-10-22-02-github-1378138611-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/adapters/dsh/index.js",
+                    "url": "https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/7starsseeker/dsh-jev-guard",
+                            "commit": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312",
+                            "path": "README.md",
+                            "content_sha256": "d9c868b710c4063bf3e203472e3c1e9de82c5a66aa29a3474ab557ba265147f5"
+                        },
+                        {
+                            "repository_url": "https://github.com/7starsseeker/dsh-jev-guard",
+                            "commit": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312",
+                            "path": "package.json",
+                            "content_sha256": "add9dccd524d674145d7c9098d1946e39dda4b8abf0de45092a923e22c569d35"
+                        },
+                        {
+                            "repository_url": "https://github.com/7starsseeker/dsh-jev-guard",
+                            "commit": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312",
+                            "path": "cordis.patch.yml",
+                            "content_sha256": "b930bb38fa79dace216c018ba2bdb9ab310a940efd143e30dc1163a7f287e0f4"
+                        },
+                        {
+                            "repository_url": "https://github.com/7starsseeker/dsh-jev-guard",
+                            "commit": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312",
+                            "path": "lib/gate.js",
+                            "content_sha256": "c8b29e49dc4d3baff5e4fca4803cc173bab30fc909f921742b78991096aaef0e"
+                        },
+                        {
+                            "repository_url": "https://github.com/7starsseeker/dsh-jev-guard",
+                            "commit": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312",
+                            "path": "lib/rules.js",
+                            "content_sha256": "4bb19f1f64934538deaf70c03a783f38f43ae79b566e2c45ce31916fcf6e529d"
+                        },
+                        {
+                            "repository_url": "https://github.com/7starsseeker/dsh-jev-guard",
+                            "commit": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312",
+                            "path": "lib/verdict.js",
+                            "content_sha256": "d74a2b07b47aa031be34f500960569a6f4536591d6e5dfa4f0a21a6fa1e3c9a3"
+                        },
+                        {
+                            "repository_url": "https://github.com/7starsseeker/dsh-jev-guard",
+                            "commit": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312",
+                            "path": "lib/token.js",
+                            "content_sha256": "5810de29c3afe63c196366e71511352494bdc7b906214554e42380ecb33251c6"
+                        },
+                        {
+                            "repository_url": "https://github.com/7starsseeker/dsh-jev-guard",
+                            "commit": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312",
+                            "path": "lib/audit.js",
+                            "content_sha256": "839bb6e97a6d4f96b3a7da4e5a49425f0f76d7d310cbdf56e9d5488b5576b200"
+                        },
+                        {
+                            "repository_url": "https://github.com/7starsseeker/dsh-jev-guard",
+                            "commit": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312",
+                            "path": "lib/quota.js",
+                            "content_sha256": "fbbe579d87a79b000bf0b4aea932c7e1ccbd2731baa2f70164ff98e643a054fd"
+                        },
+                        {
+                            "repository_url": "https://github.com/7starsseeker/dsh-jev-guard",
+                            "commit": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312",
+                            "path": "adapters/dsh/index.js",
+                            "content_sha256": "6d605b6dfe4577d875d075040f333dfda962a5f3fc20d9ff992bd63a2327fdba"
+                        },
+                        {
+                            "repository_url": "https://github.com/7starsseeker/dsh-jev-guard",
+                            "commit": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312",
+                            "path": "docs/MEASUREMENTS.md",
+                            "content_sha256": "bdd1e13aeb979643aad1d1f948d2929b485009311343b2f02ea0b80a9d4e07b2"
+                        },
+                        {
+                            "repository_url": "https://github.com/7starsseeker/dsh-jev-guard",
+                            "commit": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312",
+                            "path": "measurements/README.md",
+                            "content_sha256": "b920f8ba493ce75ad63f8936aa4f6ce830817e537a7b1326fe0ec7137ffcd352"
+                        },
+                        {
+                            "repository_url": "https://github.com/7starsseeker/dsh-jev-guard",
+                            "commit": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312",
+                            "path": "measurements/calibration-114/report.md",
+                            "content_sha256": "3c10659425cc7064af040b3f3ec33efbf419bc151835d7341f980e9ea21f05c4"
+                        },
+                        {
+                            "repository_url": "https://github.com/7starsseeker/dsh-jev-guard",
+                            "commit": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312",
+                            "path": "verification-results/SUMMARY.md",
+                            "content_sha256": "f2888c61205db9e5e2902232acb3602878f8b7cdc0dc54034cb76f067b49517f"
+                        }
+                    ],
                     "revision": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312",
-                    "captured_at": "2026-10-21T03:48:25.745Z",
-                    "summary": "核查 adapters/dsh/index.js、lib/gate.js、lib/rules.js、lib/quota.js、lib/token.js、lib/audit.js、package.json；adapters/dsh/index.js挂tools/pre-execute提取command，gate先L0再只读/可重建预筛，再调用Jev按阈值判定；额度/认证故障进入持久降级，按宿主ask/never映射typed决策，token提供一次授权路径。",
-                    "artifact": "data/runs/2026-10-21-03/snapshots/7starsseeker--dsh-jev-guard/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T11:21:28.677Z",
+                    "summary": "核查 README.md、package.json、cordis.patch.yml、lib/gate.js、lib/rules.js、lib/verdict.js、lib/token.js、lib/audit.js、lib/quota.js、adapters/dsh/index.js、docs/MEASUREMENTS.md、measurements/README.md、measurements/calibration-114/report.md、verification-results/SUMMARY.md；bash/pwsh command经L0/预筛/cwd命令cache与外部Jev，非allow映射ask/deny，令牌与持久降级/JSONL帮助操作。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/7starsseeker--dsh-jev-guard/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "抽读DSH adapter、gate缓存/状态/API、rules/quota/token；未运行危险命令、校准集或外部Jev，不宣称生产准确率。",
+                        "固定核心gate、token、adapter及verdict/rules/audit/quota关键链和作者测量原报告有界检查，不执行目标/服务/测试；非全语法安全审计。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +158,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "开发Agent在bash/pwsh执行前补一道误删/覆盖事故检查，交付拦截或人工升级决定及审计；不是完整安全沙箱。",
+                    "text": "希望减少Agent误删/覆盖风险，需保留宿主权限与备份。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1378138611-root-source"
+                        "2026-10-22-02-github-1378138611-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +169,16 @@
                             "fingerprint": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:48:25.745Z",
+                    "reviewed_at": "2026-10-22T11:21:28.677Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "adapters/dsh/index.js挂tools/pre-execute提取command，gate先L0再只读/可重建预筛，再调用Jev按阈值判定；额度/认证故障进入持久降级，按宿主ask/never映射typed决策，token提供一次授权路径。",
+                    "text": "bash/pwsh command经L0/预筛/cwd命令cache与外部Jev，非allow映射ask/deny，令牌与持久降级/JSONL帮助操作。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1378138611-root-source"
+                        "2026-10-22-02-github-1378138611-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +187,16 @@
                             "fingerprint": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:48:25.745Z",
+                    "reviewed_at": "2026-10-22T11:21:28.677Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "抽读DSH adapter、gate缓存/状态/API、rules/quota/token；未运行危险命令、校准集或外部Jev，不宣称生产准确率。",
+                    "text": "固定核心gate、token、adapter及verdict/rules/audit/quota关键链和作者测量原报告有界检查，不执行目标/服务/测试；非全语法安全审计。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1378138611-root-source"
+                        "2026-10-22-02-github-1378138611-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +205,16 @@
                             "fingerprint": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:48:25.745Z",
+                    "reviewed_at": "2026-10-22T11:21:28.677Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "DSH执行管线适配与独立CLI，零运行依赖、Node>=20；支持平台由命令语法与宿主实际hook决定。",
+                    "text": "0.5.6 MIT、Node20+零运行依赖，DSH host入口及独立jev-guard CLI，第三方语义API。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1378138611-root-source"
+                        "2026-10-22-02-github-1378138611-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +223,16 @@
                             "fingerprint": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:48:25.745Z",
+                    "reviewed_at": "2026-10-22T11:21:28.677Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "首次配置密钥、阈值、覆盖工具与审批政策；持续承担判据API、人工升级、误拦改写与审计存储。作者延迟/费用仅其测量，无本轮成本复现。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | Node20、DSH工具/凭据服务和TypeSafe key | 固定模型/语言/阈值，审查发送脚本与allow文件权限 | 历史作者单价非当前报价，安装/校准工时未知 |\n| 持续使用 | 未预筛/缓存命令的外部判断请求、日志/降级状态IO | 处理灰区审批、误放/误拒与授权目标，保护秘密 | 缓存/预筛省请求却有漏判，实际输入量和价格由服务账单核 |\n| 失败恢复 | 冷却后重探、日志与许可文件备份 | 区分停语义层/停全阀门，核命令是否已执行和已消费许可 | fail-open不自动撤销副作用，跨进程一次性/缓存失效需另核，恢复人时未知 |\n",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1378138611-root-source"
+                        "2026-10-22-02-github-1378138611-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +241,16 @@
                             "fingerprint": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:48:25.745Z",
+                    "reviewed_at": "2026-10-22T11:21:28.677Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "作为已有沙箱和审批的补充先在隔离项目试；检查实际覆盖的工具、网络故障和降级提示，核对脚本变更后是否重新判断，不把allow当无风险。",
+                    "text": "观察，仅在保有宿主权限和备份时继续研究，不当全权限唯一保护。详见[Q08](#research-q08)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1378138611-root-source"
+                        "2026-10-22-02-github-1378138611-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +259,16 @@
                             "fingerprint": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:48:25.745Z",
+                    "reviewed_at": "2026-10-22T11:21:28.677Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "有机会拦下明显破坏命令并让灰区交人；默认可用性优先的fail-open意味着它不承担不可绕过的安全边界。",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 执行前分流 | 实hook与ask/deny映射 | 所有工具/参数覆盖 |\n| 语义风险信号 | 固定Jev请求/作者小样本 | 新分布漏判与阈值保证 |\n| 成本可见性 | cache不回放usage、冷却 | 真实账单/净维护收益 |\n",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1378138611-root-source"
+                        "2026-10-22-02-github-1378138611-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +277,16 @@
                             "fingerprint": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:48:25.745Z",
+                    "reviewed_at": "2026-10-22T11:21:28.677Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "判据语言独立UI、静态规则先于token、降级状态分scope与global可借鉴；缓存需绑定内容，审计含命令应避免保存敏感参数。",
+                    "text": "判定与宿主分层、cache字段白名单和可追溯作者实验值得借鉴；启发式不用“可证明只读”作安全结论。详见[Q06](#research-q06)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1378138611-root-source"
+                        "2026-10-22-02-github-1378138611-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +295,16 @@
                             "fingerprint": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:48:25.745Z",
+                    "reviewed_at": "2026-10-22T11:21:28.677Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
                     "topic": "technical_innovation",
                     "basis": "interpretation",
-                    "text": "相对仅提示模型小心，贡献是执行管线前真实typed拦截，并将免费规则、语义灰区改写/人工升级和额度故障可见化组合。Jev是外部模型、宿主审批是上游能力；插件增量是命令状态构造、决策映射和降级生命周期。",
+                    "text": "在真实执行hook把便宜规则/预筛与语义信号、人工和降级接线，语言与问法可追溯；模型及安全证明不属本插件新增。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1378138611-root-source"
+                        "2026-10-22-02-github-1378138611-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +313,16 @@
                             "fingerprint": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:48:25.745Z",
+                    "reviewed_at": "2026-10-22T11:21:28.677Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
-                    "topic": "limitations",
+                    "topic": "technical_innovation",
                     "basis": "interpretation",
-                    "text": "事故阀门能否当安全边界？默认只覆盖bash/pwsh，网络/超时错误fail-open，降级仅L0+预筛；绕过工具或未知语法不受全面保障。cache键为cwd+command，在buildState读取脚本前命中，脚本内容变了但命令没变可能复用旧判定。作者小样本校准也不能保证任意生产命令召回。",
+                    "text": "抹引号/只读头预筛可省略真实副作用，同命令cache未绑定脚本内容，一次许可不绑定cwd/用户；异常允许依赖宿主兜底。详见[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1378138611-root-source"
+                        "2026-10-22-02-github-1378138611-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +331,16 @@
                             "fingerprint": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:48:25.745Z",
+                    "reviewed_at": "2026-10-22T11:21:28.677Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
                     "topic": "technical_innovation",
                     "basis": "unverified",
-                    "text": "待验证假设：判定缓存绑定实际被执行脚本/包脚本摘要与规则/模型版本，遇到无法固定输入时不用旧allow，可减少内容变化后的陈旧放行。由cache先于buildState及同命令复用推导，未实现。对照先安全后危险同名脚本、package.json脚本变更和模型故障，测陈旧命中、误拦与延迟；不能以缓存节省牺牲未检查内容。",
+                    "text": "固定执行对象摘要、版本化可失效cache与独立签发原子消费许可，按变脚本/跨目录/并发和未知语法反例证伪，未验证。详见[Q08](#research-q08)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1378138611-root-source"
+                        "2026-10-22-02-github-1378138611-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +349,15 @@
                             "fingerprint": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:48:25.745Z",
+                    "reviewed_at": "2026-10-22T11:21:28.677Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T03:48:25.745Z",
+            "last_checked_at": "2026-10-22T11:21:28.677Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312",
-                "reviewed_at": "2026-10-21T03:48:25.745Z",
+                "reviewed_at": "2026-10-22T11:21:28.677Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -275,15 +369,15 @@
                 "technical": {
                     "criteria": {
                         "novelty": 9,
-                        "mechanism": 15,
-                        "transferability": 10,
+                        "mechanism": 23,
+                        "transferability": 15,
                         "simplification": 8
                     },
-                    "rationale": "novelty 小幅：执行前规则/模型分类已有先例；mechanism 实质：typed拦截与额度显式降级；transferability 实质：宿主无关gate可复用但审批语义需适配；simplification 实质：多层判断统一四态。",
+                    "rationale": "novelty9，参照规则+语义风险分类+审批；mechanism23，真实hook/阈值/人工/降级与cache记费隔离形成组合，语法对象边界不足；transferability15，宿主无关judge/token/quota分层与测量记录可借鉴，需重核执行ABI；simplification8，省逐条人审与请求，但密钥/误判/许可/阈值维护未省掉。",
                     "basis": "interpretation",
-                    "score": 42,
+                    "score": 55,
                     "evidence_ids": [
-                        "2026-10-21-03-github-1378138611-root-source"
+                        "2026-10-22-02-github-1378138611-root-source"
                     ]
                 },
                 "business": {
@@ -291,45 +385,45 @@
                         "workflow": 18,
                         "delivery": 8,
                         "reach": 5,
-                        "economics": 4
+                        "economics": 8
                     },
-                    "rationale": "workflow 实质：执行前改写/人工升级改变交接；delivery 小幅：命令决定与审计非业务结果；reach 小幅：为Agent提供附加事故检查；economics 小幅：预筛缓存少API，漏报和延迟未独立测量。",
+                    "rationale": "workflow18，命令执行前自动分流、改写/人工/告警，比纯提示主动检查少步骤；delivery8，新增带source/规则/概率/有效决策的JSONL风险记录供运维复盘，非执行收据/验收；reach5，双语CLI和shell适配服务DSH操作者，覆盖工具有限；economics8，L0/预筛/cache替代重复付费判定、持久冷却抑制确定失败请求，有具体资源组织，漏判/审批和外发成本限制净收益。",
                     "basis": "interpretation",
-                    "score": 35,
+                    "score": 39,
                     "evidence_ids": [
-                        "2026-10-21-03-github-1378138611-root-source"
+                        "2026-10-22-02-github-1378138611-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "observe",
-                "reason": "执行前事故阀有价值，但脚本内容变化可能复用cwd+command旧判定且网络默认放行；先修缓存失效并验降级，再作为补充采用。",
+                "reason": "组合判据与测量记录有用，但预筛/缓存/许可对象绑定不足且失败放行，不应当唯一安全阀。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "bash/pwsh误删覆盖事故控制目标具体。"
+                        "rationale": "误删/覆盖风险具体。"
                     },
                     "advantage": {
-                        "score": 19,
-                        "rationale": "typed拦截加L0和语义升级比纯提示有实际控制点。"
+                        "score": 13,
+                        "rationale": "语义与规则组合有增量，实际安全对象缺口大。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "pre-execute和cache先于读脚本源码已查，非完整沙箱且召回未验。"
+                        "rationale": "固定源码和作者原报告支持机制，作者校准非独立泛化证明。"
                     },
                     "cost": {
-                        "score": 5,
-                        "rationale": "外部API与人工升级开销，错误allow和覆盖缺口需要现有沙箱兜底。"
+                        "score": 10,
+                        "rationale": "零包依赖但外部API/审批/误判治理持续。"
                     }
                 },
-                "score": 60,
+                "score": 59,
                 "revision": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T11:21:28.677Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-03-github-1378138611-root-source"
+                    "2026-10-22-02-github-1378138611-root-source"
                 ],
                 "dependencies": [
                     {
@@ -354,89 +448,62 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T03:36:14Z",
-            "analysis_sha256": "3b28f9d991d69f7d65419c7b8f5f2f8d4f7597d09a239f66e81d4465f127f0a4"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "c5bef4ebd2117815e2887f63391de66f0f031bbc11f2a8c5eb906d6f33a26b16"
         },
         "publication.metadata": "data/plugins/7starsseeker--dsh-jev-guard/META.json",
         "publication.summaries": {
-            "text": "在 DSH 命令执行前结合静态规则与 Jev 判定，返回放行、改写、拒绝或人工升级。",
+            "text": "在DSH shell执行前组合静态规则与Jev语义风险判定，提供人工出口、降级与审计。",
             "revision": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312",
             "source_url": "https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/README.md"
         },
         "publication.capabilities": {
             "revision": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312",
             "items": {
-                "事件监听": "tools/pre-execute命令审查及会话降级告知。",
-                "后台": "规则/Jev判断、缓存和持久降级状态。"
-            }
+                "用户命令": "独立jev-guard CLI判定/状态/日志及许可管理，非DSH slash",
+                "事件监听": "tools/pre-execute与agent/pre-step降级提示",
+                "后台": "判定后fire-and-forget审计Promise队列追加/轮转JSONL；降级与许可文件是持久状态而非独立后台任务"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| shell执行前阀门 | 规则/预筛/Jev分流 | bash/pwsh command限定 |\n| 人工/一次许可 | 合法清理出口 | 文本绑定、不越默认L0硬规则 |\n| 降级/审计 | 可见失效与记录 | 默认新命令语义停审仍allow |\n| 独立CLI | 维护key/规则/状态/许可 | 真实权限由主机控制 |\n"
         },
         "publication.advice": {
             "revision": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312",
-            "text": "作为已有沙箱和审批的补充先在隔离项目试；检查实际覆盖的工具、网络故障和降级提示，核对脚本变更后是否重新判断，不把allow当无风险。"
+            "text": "观察，仅在保有宿主权限和备份时继续研究，不当全权限唯一保护。详见[Q08](#research-q08)。"
         },
         "registry": "data/plugins/7starsseeker--dsh-jev-guard",
-        "reports": "# dsh-jev-guard\n\n> 在 DSH 命令执行前结合静态规则与 Jev 判定，返回放行、改写、拒绝或人工升级。\n\n## 使用建议\n\n作为已有沙箱和审批的补充先在隔离项目试；检查实际覆盖的工具、网络故障和降级提示，核对脚本变更后是否重新判断，不把allow当无风险。\n\n**核查状态**：已抽读固定版本源码，未安装、运行目标插件或真实宿主验收。源码确认执行前挂钩、分层规则和显式降级；作者校准/真实宿主记录未复现，外部模型效果与新命令覆盖未知。\n\n- **用途**：开发Agent在bash/pwsh执行前补一道误删/覆盖事故检查，交付拦截或人工升级决定及审计；不是完整安全沙箱。\n- **亮点**：相对仅提示模型小心，贡献是执行管线前真实typed拦截，并将免费规则、语义灰区改写/人工升级和额度故障可见化组合。Jev是外部模型、宿主审批是上游能力；插件增量是命令状态构造、决策映射和降级生命周期。\n- **思考**：事故阀门能否当安全边界？默认只覆盖bash/pwsh，网络/超时错误fail-open，降级仅L0+预筛；绕过工具或未知语法不受全面保障。cache键为cwd+command，在buildState读取脚本前命中，脚本内容变了但命令没变可能复用旧判定。作者小样本校准也不能保证任意生产命令召回。\n- **建议**：待验证假设：判定缓存绑定实际被执行脚本/包脚本摘要与规则/模型版本，遇到无法固定输入时不用旧allow，可减少内容变化后的陈旧放行。由cache先于buildState及同命令复用推导，未实现。对照先安全后危险同名脚本、package.json脚本变更和模型故障，测陈旧命中、误拦与延迟；不能以缓存节省牺牲未检查内容。\n\n## 当前插件分析\n\n### 场景与替代办法\n\n开发Agent在bash/pwsh执行前补一道误删/覆盖事故检查，交付拦截或人工升级决定及审计；不是完整安全沙箱。\n\n参照静态危险规则、宿主审批与模型风险分类；不把Jev作者校准当独立对照。\n\n### 能力、流程与依赖\n\nadapters/dsh/index.js挂tools/pre-execute提取command，gate先L0再只读/可重建预筛，再调用Jev按阈值判定；额度/认证故障进入持久降级，按宿主ask/never映射typed决策，token提供一次授权路径。\n\n- **事件监听**：tools/pre-execute命令审查及会话降级告知。\n- **后台**：规则/Jev判断、缓存和持久降级状态。\n\nDSH tools/pre-execute、审批/userQuestions及凭据服务，Jev端点与额度；被调用脚本最多读取有限字节，真实文件状态可能变化。\n\n提取命令→L0→预筛→缓存/脚本状态→Jev→四态→宿主审批或执行→审计/降级通知；网络错误可能放行，需让使用者知情。\n\nDSH执行管线适配与独立CLI，零运行依赖、Node>=20；支持平台由命令语法与宿主实际hook决定。\n\n### 效果、成本与限制\n\n有机会拦下明显破坏命令并让灰区交人；默认可用性优先的fail-open意味着它不承担不可绕过的安全边界。\n\n首次配置密钥、阈值、覆盖工具与审批政策；持续承担判据API、人工升级、误拦改写与审计存储。作者延迟/费用仅其测量，无本轮成本复现。\n\n事故阀门能否当安全边界？默认只覆盖bash/pwsh，网络/超时错误fail-open，降级仅L0+预筛；绕过工具或未知语法不受全面保障。cache键为cwd+command，在buildState读取脚本前命中，脚本内容变了但命令没变可能复用旧判定。作者小样本校准也不能保证任意生产命令召回。\n\n### 核心贡献与工程亮点\n\n相对仅提示模型小心，贡献是执行管线前真实typed拦截，并将免费规则、语义灰区改写/人工升级和额度故障可见化组合。Jev是外部模型、宿主审批是上游能力；插件增量是命令状态构造、决策映射和降级生命周期。\n\n判据语言独立UI、静态规则先于token、降级状态分scope与global可借鉴；缓存需绑定内容，审计含命令应避免保存敏感参数。\n\n源码依据：[adapters/dsh/index.js](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/adapters/dsh/index.js)、[lib/gate.js](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/lib/gate.js)、[lib/rules.js](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/lib/rules.js)、[lib/quota.js](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/lib/quota.js)、[lib/token.js](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/lib/token.js)、[lib/audit.js](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/lib/audit.js)、[package.json](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/package.json)。\n\n## 未来设计假设（未验证）\n\n待验证假设：判定缓存绑定实际被执行脚本/包脚本摘要与规则/模型版本，遇到无法固定输入时不用旧allow，可减少内容变化后的陈旧放行。由cache先于buildState及同命令复用推导，未实现。对照先安全后危险同名脚本、package.json脚本变更和模型故障，测陈旧命中、误拦与延迟；不能以缓存节省牺牲未检查内容。\n\n隔离合成命令验证工具绕过、缓存内容变更、网络fail-open、额度粘性和ask/never映射，再独立盲评；本轮无执行。\n\n## 核查说明\n\n- 版本号：0.5.6；版本日期：2026-10-17（固定提交日期，北京时间；不是包发布日期）。\n- 固定版本：[89eb6995](https://github.com/7starsseeker/dsh-jev-guard/tree/89eb6995cc2ccd3f49b7c12ae74ad2464354c312)；本次截止 2026-10-21T03:36:14Z。\n- 已检查：README、package与以上源码路径及固定组件统计。\n- 未执行：目标代码、目标测试、安装、真实宿主或第三方服务验证。\n- 范围限制：抽读DSH adapter、gate缓存/状态/API、rules/quota/token；未运行危险命令、校准集或外部Jev，不宣称生产准确率。\n- 证据边界：源码与作者说明不等于独立效果验证；GitHub/npm指标不证明采用或收益。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：80909323d11a3ddb0e48cd5758b19457d5a6d48800fa1aaff68bb9beec975d0e。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 40 | 6719 | — | — | 101622 |\n| .js | source | 8 | 3258 | 1509 | 1575 | — |\n| .mjs | source | 16 | 3680 | 2390 | 998 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n",
+        "reports": "# dsh-jev-guard\n\n> 在DSH shell执行前组合静态规则与Jev语义风险判定，提供人工出口、降级与审计。\n\n## 研究范围\n\n- **仓库**：[7starsseeker/dsh-jev-guard](https://github.com/7starsseeker/dsh-jev-guard)\n- **版本号**：0.5.6（[固定提交 89eb6995cc2ccd3f49b7c12ae74ad2464354c312](https://github.com/7starsseeker/dsh-jev-guard/tree/89eb6995cc2ccd3f49b7c12ae74ad2464354c312)）\n- **版本日期**：2026-10-17（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n执行前组合与降级可见性有贡献；词法预筛、可变脚本cache和文本许可限制安全保证；对象绑定判据为未验证设计。\n\n## 洞察短评\n\n- **用途**：希望减少Agent误删/覆盖风险，需保留宿主权限与备份。详见[Q01](#research-q01)。\n- **亮点**：在真实执行hook把便宜规则/预筛与语义信号、人工和降级接线，语言与问法可追溯；模型及安全证明不属本插件新增。详见[Q01](#research-q01)。\n- **思考**：抹引号/只读头预筛可省略真实副作用，同命令cache未绑定脚本内容，一次许可不绑定cwd/用户；异常允许依赖宿主兜底。详见[Q03](#research-q03)。\n- **建议**：固定执行对象摘要、版本化可失效cache与独立签发原子消费许可，按变脚本/跨目录/并发和未知语法反例证伪，未验证。详见[Q08](#research-q08)。\n\n采用建议：观察，仅在保有宿主权限和备份时继续研究，不当全权限唯一保护。详见[Q08](#research-q08)。\n\n## 核心贡献\n\n在真实执行hook把便宜规则/预筛与语义信号、人工和降级接线，语言与问法可追溯；模型及安全证明不属本插件新增。详见[Q01](#research-q01)。\n\n## 关键质疑\n\n抹引号/只读头预筛可省略真实副作用，同命令cache未绑定脚本内容，一次许可不绑定cwd/用户；异常允许依赖宿主兜底。详见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n固定执行对象摘要、版本化可失效cache与独立签发原子消费许可，按变脚本/跨目录/并发和未知语法反例证伪，未验证。详见[Q08](#research-q08)。\n\n以脚本漂移、双引号替换、写flag、跨目录/进程token和API异常核执行对象绑定/失败策略。\n\n## 场景与替代办法\n\n希望减少Agent误删/覆盖风险，需保留宿主权限与备份。详见[Q01](#research-q01)。\n\n宿主权限/人工审批或纯规则风险提示；本项组合语义信号与分流运维记录。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 条件 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| Node20+/DSH tools/credentials | hook与key | 核真实参数/cwd/审批ABI |\n| TypeSafe key/网络 | 语义判断 | 命令/脚本外发，失败allow |\n| 受权许可/审计目录 | 人工出口与可见性 | 文本token非身份/跨进程原子 |\n| 宿主沙箱/备份 | 限制不可逆副作用 | 本项不能替代 |\n\n\n#### 启动步骤\n\n| 步骤 | 执行者 | 判断标准 |\n| --- | --- | --- |\n| 保留权限/备份并审外发 | 用户 | 不作唯一防线 |\n| 固定模型/问法/阈值和key | 维护者 | 状态与凭据来源可解释 |\n| 按有效ask/deny处理命令 | 用户/host | block不等一定拒绝 |\n| 许可前核当前对象 | 受权用户 | 脚本/cwd未漂移 |\n| 降级/日志失败另处置 | 维护者 | 未审不当无害 |\n\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | Node20、DSH工具/凭据服务和TypeSafe key | 固定模型/语言/阈值，审查发送脚本与allow文件权限 | 历史作者单价非当前报价，安装/校准工时未知 |\n| 持续使用 | 未预筛/缓存命令的外部判断请求、日志/降级状态IO | 处理灰区审批、误放/误拒与授权目标，保护秘密 | 缓存/预筛省请求却有漏判，实际输入量和价格由服务账单核 |\n| 失败恢复 | 冷却后重探、日志与许可文件备份 | 区分停语义层/停全阀门，核命令是否已执行和已消费许可 | fail-open不自动撤销副作用，跨进程一次性/缓存失效需另核，恢复人时未知 |\n\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 执行前分流 | 实hook与ask/deny映射 | 所有工具/参数覆盖 |\n| 语义风险信号 | 固定Jev请求/作者小样本 | 新分布漏判与阈值保证 |\n| 成本可见性 | cache不回放usage、冷却 | 真实账单/净维护收益 |\n\n\n## 研究问题与完整回答\n\n**插件研究总目标：**确认命令风险阀门的覆盖、语义判断增量与对象/授权/失败合同。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 这是什么保护，已有参照与核心增量是什么？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n面向担心Agent shell命令不可逆删除/覆盖真实数据的DSH用户。已有替代为宿主沙箱/人工审批或纯规则扫描；本项在真实tools/pre-execute组合免费L0、词法预筛、外部Jev概率问题、灰区修改/人工出口和降级可见性，增加自然语言命令/脚本语义风险信号，附CLI和JSONL判定记录。不是新沙箱、shell解释器或通用安全证明。合格结果是覆盖工具在执行前按当前策略拒绝/询问/交宿主继续，不能将allow视无害认证。\n\n中文noul问“是否不可逆破坏数据”与阈值独立于UI语言，这是可识别方法设计；来源为第三方Jev服务与作者规则/校准，不能把模型本体归属为插件原创。插件对安全目标聚焦有利，但网络/未知/模型误判仍回宿主，不能替代备份和最小权限。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-26](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/README.md#L1-L26)\n\n作者定位。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n````text\n# dsh-jev-guard\n\n[![Awesome DSH Plugin](https://awesome-dsh-plugin.com/badge.svg)](https://awesome-dsh-plugin.com)\n[![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)\n[![node](https://img.shields.io/badge/node-%E2%89%A520-brightgreen.svg)](https://nodejs.org)\n[![DSH plugin](https://img.shields.io/badge/DeepSeek%20Harness-plugin-4B6BFB.svg)](https://github.com/deepseek-ai/deepseek-harness)\n[![topic: dsh-plugin](https://img.shields.io/badge/topic-dsh--plugin-4B6BFB.svg)](https://github.com/topics/dsh-plugin)\n[![platform](https://img.shields.io/badge/platform-WSL%20%7C%20Windows-2f2f2f.svg)](#platform-support)\n[![version](https://img.shields.io/github/v/tag/7starsseeker/dsh-jev-guard?label=version&style=flat)](https://github.com/7starsseeker/dsh-jev-guard/tags)\n[![npm](https://img.shields.io/npm/v/dsh-jev-guard?label=npm&style=flat)](https://www.npmjs.com/package/dsh-jev-guard)\n[![downloads](https://img.shields.io/npm/dm/dsh-jev-guard?label=downloads&style=flat)](https://www.npmjs.com/package/dsh-jev-guard)\n[![selftest](https://img.shields.io/github/actions/workflow/status/7starsseeker/dsh-jev-guard/selftest.yml?label=selftest)](https://github.com/7starsseeker/dsh-jev-guard/actions/workflows/selftest.yml)\n[![last commit](https://img.shields.io/github/last-commit/7starsseeker/dsh-jev-guard)](https://github.com/7starsseeker/dsh-jev-guard/commits/main)\n[![stars](https://img.shields.io/github/stars/7starsseeker/dsh-jev-guard?style=flat)](https://github.com/7starsseeker/dsh-jev-guard/stargazers)\n[![](https://img.shields.io/badge/powered_by-dsh-4D6BFE?style=flat-square&logo=deepseek&logoColor=white)](https://github.com/deepseek-ai/deepseek-harness)\n\n> **English** | [简体中文](README.zh-CN.md) | [Changelog](CHANGELOG.md) | [Design decisions](docs/DECISIONS.md) | [Measurements](docs/MEASUREMENTS.md)\n\n**A pre-execution safety valve for [DeepSeek Harness (DSH)](https://github.com/deepseek-ai/deepseek-harness): before a command actually runs, it asks one question — \"will this irreversibly delete or overwrite your real data?\"**\n\nIt judges with [TypeSafe Jev](https://typesafe.ai/blog/introducing-system-one-models-and-jev) — a \"System One\" model that produces no prose, only a **structured decision**. Yes/no questions are what this kind of judgment measures most accurately (114-case calibration, 90.4% with the Chinese text sent as-is). It hooks into DSH's native `tools/pre-execute`, so it is a **hard interception**, not a \"please be careful\" nudge to the model.\n\n```\ncommand text ──▶ L0 static hard rules (offline · cannot be overridden) ──▶ pre-screen (read-only / rebuildable) ──▶ Jev semantic judgment (~300ms)\n                        │                       │                        │\n                        └───────────────┬───────┴────────────────────────┘\n````\n\n</details>\n\n**依据 2 · 源码核查**：[lib/gate.js:8-25](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/lib/gate.js#L8-L25)\n\n组合pipeline。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n *\n * Pipeline, in order:\n *   0. L0 static rules    -> block / escalate, no network, cannot be overridden\n *   1. deterministic prefilter -> allow, no network (read-only + rebuildable paths)\n *   2. Jev, ONE factual noul question -> allow / revise / block by two thresholds\n *   3. timeout, network error, aborted caller -> ALLOW (fail-open; the host's own\n *      sandbox and approval pipeline still sit in front of execution)\n *\n * 另外一层:**额度耗尽后的降级**(见 `./quota.js`)。这是收费 API,额度用完是必然事件。\n * 旧行为是\"每次调用各自 fail-open\" —— 功能没错,但会一直打注定失败的请求、日志被淹没、\n * 而且没有任何人会发现阀门已经瞎了。现在改成:持久性失败(quota / auth / no-key)写一份\n * 状态文件、在冷却窗口内不再发请求、窗口到期放**一次**探测;降级期间默认**只跑免费的\n * L0 + 预筛**(`degradePolicy: 'l0-only'`),并把这个事实写进理由、审计与 `guard status`。\n *\n * The question form is not arbitrary: a 114-item calibration run (2026-09-20)\n * measured this exact noul phrasing at 12/12 on destructive-command cases in\n * Chinese, while judgement-style forms were far weaker (action choice 75%,\n * risk band 50%). See docs/MEASUREMENTS.md.\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/gate.js:55-68](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/lib/gate.js#L55-L68)\n\n问题形式。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\nexport function judgeQuestion(promptLang = FALLBACK_LANG) {\n  const lang = normalizeLang(promptLang) ?? FALLBACK_LANG\n  return Object.freeze({\n    type: 'noul',\n    instructions: tIn(lang, 'gate.question.instructions'),\n    criteria: Object.freeze({\n      true: tIn(lang, 'gate.question.true'),\n      false: tIn(lang, 'gate.question.false'),\n    }),\n  })\n}\n\n/** The calibrated default question, kept as a convenience for probes and docs. */\nexport const QUESTION = judgeQuestion('zh-CN')\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/verdict.js:189-209](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/lib/verdict.js#L189-L209)\n\n宿主决策映射。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\nexport function toHostDecision(command, verdict, approvalPolicy = 'ask', opts = {}) {\n  const reviseInAskMode = opts.reviseInAskMode ?? 'ask'\n  const blockInAskMode = opts.blockInAskMode ?? 'ask'\n  const hardRule = verdict.rule?.kind === 'deny'\n  const toHuman = approvalPolicy === 'ask' && hardRule !== true\n    && (verdict.action === 'escalate'\n      || (verdict.action === 'revise' && reviseInAskMode === 'ask')\n      || (verdict.action === 'block' && blockInAskMode === 'ask'))\n  const reason = explain(command, verdict, {\n    policy: approvalPolicy,\n    token: opts.token ?? verdict.token,\n    cliPath: opts.cliPath,\n    routedToHuman: toHuman,\n  })\n  if (verdict.action === 'allow') return { kind: 'allow' }\n  // revise and block are model-facing denials when nobody can be asked; revise additionally teaches.\n  return toHuman ? { kind: 'ask', reason } : { kind: 'deny', reason }\n}\n\n/**\n * The full text handed to a model on `revise`, including the templates.\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · hook真实覆盖什么工具/参数，block一定拒绝吗？\n\n**研究主题：**功能与机制、缺陷与关键质疑\n\n#### 完整回答\n\n默认仅bash/pwsh，extract只取arguments.command，支持object或JSON字符串。别的工具、cmd/script字段或抽不到文本直接next，不拦文件写工具/其它执行器；配置tools只扩大名字，不自动适配参数。cwd取object arguments.workdir，再agent.session.cwd，再process.cwd，没有读session.header.cwd，JSON arguments里的workdir亦不会被读取。若宿主实际cwd在不同字段，脚本与cache目标会偏，需核固定ABI。\n\nallow调用next，非allow由toHostDecision转typed ask/deny；approval=ask时默认语义revise/block都转人工，hard L0 deny才始终deny。never时非allow直接deny，不能把block统计一概解释为阻止执行。retryLimit默认2，同session+规范fingerprint超过预算会escalate，hard L0不被升级越过；变体指纹仍文本启发式，不等同一底层动作识别。adapter任意意外异常catch next，API异常allow，实际兜底取决宿主沙箱/审批。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[adapters/dsh/index.js:64-83](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/adapters/dsh/index.js#L64-L83)\n\n工具及提取。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n/** Tool names gated by default. */\nconst DEFAULT_TOOLS = ['bash', 'pwsh']\n\n/**\n * Read the command out of a tool call, tolerating a string or object argument bag.\n * @param exec - the pre-execute pipeline view of the call.\n * @returns the command text, or undefined when this call carries none.\n */\nfunction extractCommand(exec) {\n  const args = exec?.arguments\n  const pick = bag => (typeof bag?.command === 'string' ? bag.command : undefined)\n  if (args && typeof args === 'object') return pick(args)\n  if (typeof args === 'string') {\n    try {\n      return pick(JSON.parse(args))\n    } catch {\n      return undefined\n    }\n  }\n  return undefined\n```\n\n</details>\n\n**依据 2 · 源码核查**：[adapters/dsh/index.js:350-364](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/adapters/dsh/index.js#L350-L364)\n\ncwd及调用。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n  ctx.on('tools/pre-execute', async (exec, next) => {\n    try {\n      if (!cfg.tools.includes(exec.name)) return next()\n      const command = extractCommand(exec)\n      if (command === undefined) return next()\n\n      const apiKey = await resolveKey(ctx, cfg.apiKeyEnv, cfg)\n      const policy = effectivePolicy(ctx, exec.agent)\n      // 沙箱档位:只进审计,不参与判定(阈值不随档位偷偷变;见 effectivePreset 的说明)。\n      const preset = effectivePreset(ctx, exec.agent)\n      const cwd = typeof exec.arguments?.workdir === 'string'\n        ? exec.arguments.workdir\n        : (exec.agent?.session?.cwd ?? process.cwd())\n      const verdict = await evaluateCommand(command, { ...cfg, cwd, cache, apiKey, signal: exec.signal })\n\n```\n\n</details>\n\n**依据 3 · 源码核查**：[adapters/dsh/index.js:406-435](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/adapters/dsh/index.js#L406-L435)\n\nnext与升级。\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\n      if (verdict.action === 'allow') {\n        stats.allowed += 1\n        budget.clear(sessionKey)\n        ctx.logger?.debug?.('jev-guard: allow via %s (p=%s, %sms)', verdict.source, verdict.p, verdict.ms)\n        // 审计:DSH 的 logger 会过滤 info 级,所以真实凭据落在 guard.log 里。\n        void record({\n          tool: exec.name, action: 'allow', decision: 'allow', source: verdict.source,\n          p: verdict.p, model: verdict.model, ms: verdict.ms, rule: verdict.rule?.id,\n          enriched: verdict.enriched, cwd, error: verdict.error, errorKind: verdict.errorKind,\n          policy, preset,\n          degraded: verdict.degraded, usage: verdict.usage, probe: verdict.probe,\n          recovered: verdict.recovered, command,\n          overridden: verdict.overridden, token: verdict.token,\n          session: exec.agent?.session?.id,\n        }, cfg)\n        return next()\n      }\n\n      // Blocked or merely uncertain: count attempts so a model that keeps\n      // rephrasing the same destruction eventually reaches a human instead of\n      // looping forever.\n      const { attempts, exhausted } = budget.hit(sessionKey)\n      // 例外:带 L0 `deny` 规则的硬命中**不能**借重试预算转人工 —— 那会让弹窗里的\"允许\"\n      // 越过硬地板(令牌不能越过 L0,审批同样不能,见 D5/D13)。硬命中照旧记 attempts 供审计。\n      const hardRule = verdict.rule?.kind === 'deny'\n      if (exhausted && verdict.action !== 'escalate' && hardRule !== true) {\n        effective = { ...verdict, action: 'escalate', source: `${verdict.source}+retry-budget` }\n      }\n      if (effective.action === 'revise') stats.revised += 1\n      else if (effective.action === 'block') stats.blocked += 1\n```\n\n</details>\n\n**依据 4 · 源码核查**：[adapters/dsh/index.js:470-479](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/adapters/dsh/index.js#L470-L479)\n\n异常委托。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n      }\n      return decision\n    } catch (error) {\n      // Never let the valve break a turn: an unexpected failure delegates to the\n      // normal pipeline, where the sandbox and approval policy still apply.\n      stats.errors += 1\n      ctx.logger?.warn?.('jev-guard: unexpected failure, delegating: %s', String(error?.stack ?? error))\n      void record({ action: 'allow', decision: 'allow', source: 'adapter-error', error: String(error?.message ?? error), cwd: process.cwd() }, cfg)\n      return next()\n    }\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/verdict.js:189-209](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/lib/verdict.js#L189-L209)\n\nblock/revise默认ask。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\nexport function toHostDecision(command, verdict, approvalPolicy = 'ask', opts = {}) {\n  const reviseInAskMode = opts.reviseInAskMode ?? 'ask'\n  const blockInAskMode = opts.blockInAskMode ?? 'ask'\n  const hardRule = verdict.rule?.kind === 'deny'\n  const toHuman = approvalPolicy === 'ask' && hardRule !== true\n    && (verdict.action === 'escalate'\n      || (verdict.action === 'revise' && reviseInAskMode === 'ask')\n      || (verdict.action === 'block' && blockInAskMode === 'ask'))\n  const reason = explain(command, verdict, {\n    policy: approvalPolicy,\n    token: opts.token ?? verdict.token,\n    cliPath: opts.cliPath,\n    routedToHuman: toHuman,\n  })\n  if (verdict.action === 'allow') return { kind: 'allow' }\n  // revise and block are model-facing denials when nobody can be asked; revise additionally teaches.\n  return toHuman ? { kind: 'ask', reason } : { kind: 'deny', reason }\n}\n\n/**\n * The full text handed to a model on `revise`, including the templates.\n```\n\n</details>\n\n**依据 6 · 源码核查**：[lib/verdict.js:231-285](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/lib/verdict.js#L231-L285)\n\n指纹/预算。\n\n<details>\n<summary>查看原文（55行）</summary>\n\n```text\nexport function fingerprint(command) {\n  return String(command)\n    .replace(/\\s+/g, ' ')\n    .trim()\n    .replace(/^(sudo|env|command|nohup)\\s+/, '')\n    .replace(/\\d+/g, '#')\n    .slice(0, 400)\n}\n\n/**\n * Bounded per-key attempt counter.\n *\n * Why it exists: denying a destructive command is not the end of the story — with\n * no human in the loop the model simply rephrases and tries again (`rm -rf` ->\n * `find -delete` -> `python -c shutil.rmtree`). After a couple of attempts the\n * right move is to stop the loop and surface it to a human instead of playing\n * whack-a-mole forever.\n */\nexport class RetryBudget {\n  /**\n   * @param limit - attempts allowed before the caller should escalate.\n   * @param maxKeys - bound on tracked keys, so a long session cannot grow forever.\n   */\n  constructor(limit = 2, maxKeys = 512) {\n    this.limit = limit\n    this.maxKeys = maxKeys\n    this.map = new Map()\n  }\n\n  /**\n   * Record one attempt and report whether the budget is spent.\n   * @param key - session-scoped key (see {@link fingerprint}).\n   * @returns `{ attempts, exhausted }`.\n   */\n  hit(key) {\n    const attempts = (this.map.get(key) ?? 0) + 1\n    this.map.delete(key)\n    this.map.set(key, attempts)\n    while (this.map.size > this.maxKeys) this.map.delete(this.map.keys().next().value)\n    return { attempts, exhausted: attempts > this.limit }\n  }\n\n  /**\n   * Forget a key (call it when the command was allowed, so a later repeat starts fresh).\n   * @param key - session-scoped key.\n   */\n  clear(key) {\n    this.map.delete(key)\n  }\n\n  /** @returns the number of tracked keys. */\n  get size() {\n    return this.map.size\n  }\n}\n```\n\n</details>\n\n#### 缺口\n\n- 对应宿主工具参数/cwd与typed ask/deny管线的固定契约\n  **影响：**提取错位会跳过检查或读错脚本，无法用工具名覆盖声明证明实际执行覆盖\n  **进一步探讨：**比对固定bash/pwsh和session字段及审批服务源码，列出每类参数的真实被审查对象\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 规则、预筛和脚本补全文本有哪些静态盲区？\n\n**研究主题：**缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\nL0先对原命令正则deny/ask，hard deny在默认降级仍有效，包装器/多行锚定减少只找危险子串的误报；但正则不解析完整bash/PowerShell，不能覆盖所有等效命令。预筛声称只读却按头命令/宽regex，不核每个flag，例如xxd可反解写文件、sort可用-o，git fetch也列在readOnly shape。stripQuoted整段抹单双引号再查META，双引号中的命令替换与真正执行被抹去；未命中L0的脚本替换可只剩echo头而直接allow。这是源码推得的反例方向，本轮没有执行。\n\nsafeDelete只按tmp/cache/build/dist等路径段判可重建，无实际文件价值/realpath/软链接核对；同名dist里放手工数据也可能省略语义判断。inline脚本只支持有限命令形态/首段，默认maxScriptBytes=8192和敏感路径启发式会跳过过大/敏感的单文件补全，但不限制原命令或package scripts条目body总长，跳过后仍按不完整文本判。stat/read跟随链接，未限定workspace；package script向上找package.json后，内脚本却按原cwd解析而非找到的package目录，可能补错文件。补全文本增加证据但不保证执行时同字节、不追全部import/子脚本/环境。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/rules.js:62-95](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/lib/rules.js#L62-L95)\n\n命令锚定。\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\n */\nconst SHELL_C = String.raw`(?:bash|sh|zsh|dash|ksh|pwsh|powershell|cmd)(?:\\.exe)?(?:\\s+(?:-{1,2}[\\w-]+|/[\\w-]+))*?\\s+(?:-[a-z]*c|-command|/[a-z]*c)\\s*[\"']`\n\n/**\n * 包装器:`sudo mkfs`、`timeout 30 mkfs`、`xargs -0 mkfs`、`nice -n 5 mkfs`、`find … -exec mkfs`。\n * 吞掉的\"参数\"只允许 ASCII 词/flag/路径字符 —— 刻意的:中文散文里出现 `xargs … mkfs`\n * 这种句子不该命中(散文交给 Jev,p 只有 0.02–0.08)。\n */\nconst WRAPPERS = String.raw`(?:sudo|doas|env|command|nohup|time|nice|ionice|setsid|stdbuf|watch|timeout|xargs|parallel|find)\\b\\s*(?:[-\\w./=:$~]+\\s+)*`\n\n/** 命令位置前缀:行首(`m` 标志下即每行行首)、分隔符之后、`$(` 之后、`-c \"` 之后,再加可选包装器。 */\nconst COMMAND_POSITION = String.raw`(?:^|[;&|(` + '`' + String.raw`]\\s*|\\$\\(\\s*|` + SHELL_C + String.raw`)(?:` + WRAPPERS + String.raw`)?`\n\n/** 缓存:同一条规则只构造一次\"命令位置\"版本的正则。 */\nconst anchoredCache = new WeakMap()\n\n/**\n * 取一条规则实际用于匹配的正则。\n * @param rule - 规则对象。\n * @returns 用于测试的正则。\n */\nfunction ruleRegex(rule) {\n  if (rule.where !== 'command') return rule.re\n  let re = anchoredCache.get(rule)\n  if (re === undefined) {\n    // `m` 必须加:否则 `^` 只匹配整串开头,多行命令里第二行起的命令位置全部失效。\n    const flags = rule.re.flags.includes('m') ? rule.re.flags : `${rule.re.flags}m`\n    re = new RegExp(COMMAND_POSITION + rule.re.source, flags)\n    anchoredCache.set(rule, re)\n  }\n  return re\n}\n\n/** Operations with no legitimate \"oops I meant that\" story. */\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/rules.js:186-195](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/lib/rules.js#L186-L195)\n\n规则顺序。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\nexport function staticRule(command) {\n  const text = String(command ?? '')\n  for (const rule of DENY_RULES) {\n    if (ruleRegex(rule).test(text)) return { kind: 'deny', id: rule.id, why: ruleWhy(rule) }\n  }\n  for (const rule of ASK_RULES) {\n    if (ruleRegex(rule).test(text)) return { kind: 'ask', id: rule.id, why: ruleWhy(rule) }\n  }\n  return undefined\n}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/gate.js:145-170](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/lib/gate.js#L145-L170)\n\n只读白名单。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n  'whoami', 'pwd', 'echo', 'printf', 'date', 'which', 'type', 'printenv', 'stat', 'file',\n  'md5sum', 'sha256sum', 'shasum', 'tree', 'jq', 'sort', 'uniq', 'cut', 'tr', 'basename',\n  'dirname', 'realpath', 'readlink', 'id', 'hostname', 'uname', 'lscpu', 'nproc', 'ss',\n  'netstat', 'lsblk', 'lsof', 'timedatectl', 'who', 'groups', 'true', 'false', 'test',\n  'diff', 'cmp', 'column', 'paste', 'fold', 'nl', 'od', 'xxd', 'strings', 'less', 'more',\n  'man', 'info', 'es', 'codegraph', 'vol',\n])\n\n/** Read-only shapes for tools that are only sometimes read-only. */\nconst READONLY_SHAPE = [\n  /^sed\\s+-n\\b(?!.*\\s-i\\b)/, // sed -n without -i\n  /^find\\s+(?![^|]*-(delete|exec|execdir|ok|okdir|fprint|fprint0|fls)\\b)/,\n  /^journalctl\\s+(?!.*--vacuum)/,\n  /^git\\s+(-C\\s+\\S+\\s+)?(status|log|diff|show|blame|shortlog|rev-parse|rev-list|ls-files|ls-tree|cat-file|describe|reflog|count-objects|whatchanged|grep|fetch)\\b/,\n  /^git\\s+(-C\\s+\\S+\\s+)?branch\\s*(--list|-a|-r|-v|--show-current|--contains)?\\s*$/,\n  /^git\\s+(-C\\s+\\S+\\s+)?(remote\\s+(-v|show)|config\\s+--(get|list)|stash\\s+list|tag\\s+-l\\b|tag\\s+--list|worktree\\s+list)\\b/,\n  /^docker\\s+(ps|images|logs|inspect|version|info|stats|top|diff|port|history)\\b/,\n  /^docker\\s+compose\\s+(ps|logs|config|top)\\b/,\n  /^kubectl\\s+(get|describe|logs|version|explain|api-resources|top)\\b/,\n  /^kubectl\\s+config\\s+(view|current-context)\\b/,\n  /^systemctl\\s+(status|is-active|is-enabled|is-failed|list-units|list-unit-files|show|cat|--version)\\b/,\n  /^(npm|pnpm|yarn)\\s+(ls|list|why|view|outdated|config\\s+get|--version|-v)\\b/,\n  /^(node|python3?|pip3?|deno|bun|rustc|go|cargo|tsc)\\s+(--version|-v|list|show|freeze)\\s*$/,\n  /^cargo\\s+(tree|metadata)\\b/,\n  /^go\\s+(version|env|list)\\b/,\n]\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/gate.js:182-250](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/lib/gate.js#L182-L250)\n\n抹引号/删除预筛。\n\n<details>\n<summary>查看原文（69行）</summary>\n\n```text\nexport function stripQuoted(command) {\n  return command.replace(/'[^']*'/g, \"''\").replace(/\"[^\"]*\"/g, '\"\"')\n}\n\n/**\n * Whether a command is provably read-only (safe to allow without asking Jev).\n * Deliberately conservative: anything ambiguous falls through to Jev.\n * @param command - raw command text.\n * @returns a human-readable reason when read-only, otherwise undefined.\n */\nexport function readOnlyReason(command) {\n  const raw = command.trim()\n  if (raw.length === 0) return 'empty command'\n  const s = stripQuoted(raw)\n  if (META.test(s)) return undefined\n  const head = s.split(/\\s+/)[0]\n  if (PURE_READONLY.has(head)) {\n    // `cat`-style readers cannot mutate; `es`/`codegraph` are index readers.\n    if (head === 'printenv' || head === 'type' || head === 'command') return `read-only (${head})`\n    return `read-only (${head})`\n  }\n  for (const re of READONLY_SHAPE) if (re.test(s)) return `read-only shape (${head})`\n  return undefined\n}\n\n/**\n * Whether a `rm` command only targets rebuildable locations.\n * @param command - raw command text.\n * @returns a reason when every target is rebuildable, otherwise undefined.\n */\nexport function safeDeleteReason(command) {\n  const raw = command.trim()\n  if (!/^rm\\s/.test(raw)) return undefined\n  const s = stripQuoted(raw)\n  if (META.test(s)) return undefined\n  const parts = s.split(/\\s+/).slice(1)\n  const targets = []\n  for (const p of parts) {\n    if (p === 'rm') continue\n    if (p.startsWith('-')) continue\n    targets.push(p)\n  }\n  if (targets.length === 0) return undefined\n  for (const t of targets) {\n    if (NEVER_SAFE.has(t)) return undefined\n    if (t.includes('..')) return undefined\n    if (SAFE_ROOT.test(t) || SAFE_SEGMENT.test(t)) continue\n    return undefined\n  }\n  return `rm on rebuildable path(s): ${targets.join(' ')}`\n}\n\n/**\n * Run both deterministic prefilter rules, including compound commands: when a\n * command is a sequence of `;` / `&&` / `||` / `|` segments and *every* segment\n * is provably harmless on its own, the whole command is harmless. One unsafe\n * segment makes the whole command go to Jev.\n * @param command - raw command text.\n * @returns a reason string when the command is provably harmless, else undefined.\n */\nexport function prefilter(command) {\n  const direct = readOnlyReason(command) ?? safeDeleteReason(command)\n  if (direct) return direct\n  const segments = stripQuoted(command.trim()).split(/\\s*(?:;|&&|\\|\\||\\||\\n)\\s*/).filter(Boolean)\n  if (segments.length < 2) return undefined\n  const reasons = segments.map(s => readOnlyReason(s) ?? safeDeleteReason(s))\n  if (reasons.some(r => r === undefined)) return undefined\n  return `compound of ${segments.length} harmless segments`\n}\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/gate.js:402-438](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/lib/gate.js#L402-L438)\n\nstat/向上找package。\n\n<details>\n<summary>查看原文（37行）</summary>\n\n```text\nasync function readSmallText(path, maxBytes, promptLang = FALLBACK_LANG) {\n  if (SENSITIVE_PATH.test(path)) return { skipped: tIn(promptLang, 'gate.skip.sensitive') }\n  try {\n    const info = await stat(path)\n    if (!info.isFile()) return { skipped: tIn(promptLang, 'gate.skip.notFile') }\n    if (info.size > maxBytes) return { skipped: tIn(promptLang, 'gate.skip.tooLarge', { bytes: info.size }) }\n    const text = await readFile(path, 'utf8')\n    if (text.includes('\\u0000')) return { skipped: tIn(promptLang, 'gate.skip.binary') }\n    return { text }\n  } catch (error) {\n    return { skipped: tIn(promptLang, 'gate.skip.readError', { error: error?.code ?? error?.message ?? error }) }\n  }\n}\n\n/**\n * Resolve the nearest `package.json` scripts entry by walking up from a directory.\n * @param name - script name.\n * @param cwd - starting directory.\n * @returns the script body, or undefined.\n */\nasync function lookupPackageScript(name, cwd) {\n  let dir = cwd\n  for (let depth = 0; depth < 8; depth += 1) {\n    try {\n      const raw = await readFile(joinPath(dir, 'package.json'), 'utf8')\n      const body = JSON.parse(raw)?.scripts?.[name]\n      if (typeof body === 'string') return body\n    } catch {\n      // keep walking up\n    }\n    const parent = dirname_(dir)\n    if (parent === dir) break\n    dir = parent\n  }\n  return undefined\n}\n\n```\n\n</details>\n\n**依据 6 · 源码核查**：[lib/gate.js:449-480](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/lib/gate.js#L449-L480)\n\n补全文本的解析路径。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\nexport async function buildState(command, cfg = {}) {\n  // 状态是**发给判定服务的载荷**,所以它的语言是 promptLang 而不是界面语言 lang。\n  const promptLang = normalizeLang(cfg.promptLang) ?? FALLBACK_LANG\n  const state = { [tIn(promptLang, 'gate.state.command')]: command }\n  if (cfg.inlineScripts === false) return state\n  const cwd = cfg.cwd ?? process.cwd()\n  const maxBytes = cfg.maxScriptBytes ?? 8192\n\n  const pkgName = packageScriptName(command)\n  if (pkgName !== undefined) {\n    const body = await lookupPackageScript(pkgName, cwd)\n    if (body !== undefined) {\n      state[tIn(promptLang, 'gate.state.pkgScript')] = `\"${pkgName}\": ${body}`\n      const inner = scriptTarget(body)\n      if (inner !== undefined) {\n        const innerPath = isAbsolute(inner) ? inner : resolvePath(cwd, inner)\n        const read = await readSmallText(innerPath, maxBytes, promptLang)\n        if (read.text !== undefined) {\n          state[tIn(promptLang, 'gate.state.pkgScriptBody')] = truncate(read.text, maxBytes, promptLang)\n        }\n      }\n    }\n  }\n\n  const target = scriptTarget(command)\n  if (target !== undefined) {\n    const path = isAbsolute(target) ? target : resolvePath(cwd, target)\n    const read = await readSmallText(path, maxBytes, promptLang)\n    const scriptKey = tIn(promptLang, 'gate.state.script')\n    if (read.text !== undefined) state[scriptKey] = truncate(read.text, maxBytes, promptLang)\n    else if (read.skipped !== undefined) state[scriptKey] = tIn(promptLang, 'gate.state.notRead', { why: read.skipped })\n  }\n```\n\n</details>\n\n<a id=\"research-q04\"></a>\n\n### Q04 · Jev、缓存和外发数据如何影响判断？\n\n**研究主题：**功能与机制、缺陷与关键质疑\n\n#### 完整回答\n\nnormal bundle将模型pin jev-1.13.0，core DEFAULTS仍jev-latest；patch>config文件>默认，不能把两入口默认混同。阈值0.5/0.7、prompt中文，语义概率不是破坏风险的实证校准保证。API POST包含原始完整命令与补全文本state，鉴权Bearer。默认maxScriptBytes=8192只约束readSmallText读取的单个脚本文件并对其truncate；package.json的scripts条目body在459–461直接整段进入state，原command也没有这个总上限，不能把8KiB当整个外发载荷上限；敏感文件名只限制补全文本，不脱敏原命令或源码中的秘密，endpoint可配置，信任与数据出境范围需读者明确。audit掩码不作用于请求body。\n\ncache在buildState之前查cwd+原命令，无TTL/脚本内容hash。相同python cleanup.py改内容/依赖或不同执行环境会重用旧allow，补全文本并没有解决缓存失效。API只检typeof noul number，不要求finite或0..1，异常数值可能比较后落allow。timeout与调用signal只覆盖fetch/body，脚本读/凭据/状态IO无统一总预算；网络/取消/shape失败allow，不是failclosed。缓存白名单不存usage/probe/recovery，避免把历史调用重新计价是好设计，但命令语义可变必须独立处理。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[cordis.patch.yml:39-44](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/cordis.patch.yml#L39-L44)\n\n阈值。\n\n```text\n        #   p <  lowThreshold            → allow\n        #   lowThreshold ≤ p < high      → revise(中间带:证据不足)\n        #   p ≥  highThreshold           → block\n        # 实测依据:737 条真实命令上 0.5/0.7 = 98.51% / 0.81% / 0.68% 三分。\n        lowThreshold: 0.5\n        highThreshold: 0.7\n```\n\n**依据 2 · 源码核查**：[cordis.patch.yml:81-85](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/cordis.patch.yml#L81-L85)\n\n模型固定。\n\n```text\n        # 1.14(10-14 发布、预览期)挂在 jev-preview 上。**不跟进它的理由有两条**:①本插件每次\n        # 判定只发一个文本问题(questions.destroys_data、type=noul)、只读回一个概率,整条路径上\n        # 没有图片/多模态输入可喂;②上游自己说它当前不适合进生产。换模型 = 重标定事件\n        # (重新拟合阈值 + 重跑 737 条记录命令),不是改字符串。详见 docs/DECISIONS.md D18。\n        model: jev-1.13.0\n```\n\n**依据 3 · 源码核查**：[lib/gate.js:449-480](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/lib/gate.js#L449-L480)\n\n外发state。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\nexport async function buildState(command, cfg = {}) {\n  // 状态是**发给判定服务的载荷**,所以它的语言是 promptLang 而不是界面语言 lang。\n  const promptLang = normalizeLang(cfg.promptLang) ?? FALLBACK_LANG\n  const state = { [tIn(promptLang, 'gate.state.command')]: command }\n  if (cfg.inlineScripts === false) return state\n  const cwd = cfg.cwd ?? process.cwd()\n  const maxBytes = cfg.maxScriptBytes ?? 8192\n\n  const pkgName = packageScriptName(command)\n  if (pkgName !== undefined) {\n    const body = await lookupPackageScript(pkgName, cwd)\n    if (body !== undefined) {\n      state[tIn(promptLang, 'gate.state.pkgScript')] = `\"${pkgName}\": ${body}`\n      const inner = scriptTarget(body)\n      if (inner !== undefined) {\n        const innerPath = isAbsolute(inner) ? inner : resolvePath(cwd, inner)\n        const read = await readSmallText(innerPath, maxBytes, promptLang)\n        if (read.text !== undefined) {\n          state[tIn(promptLang, 'gate.state.pkgScriptBody')] = truncate(read.text, maxBytes, promptLang)\n        }\n      }\n    }\n  }\n\n  const target = scriptTarget(command)\n  if (target !== undefined) {\n    const path = isAbsolute(target) ? target : resolvePath(cwd, target)\n    const read = await readSmallText(path, maxBytes, promptLang)\n    const scriptKey = tIn(promptLang, 'gate.state.script')\n    if (read.text !== undefined) state[scriptKey] = truncate(read.text, maxBytes, promptLang)\n    else if (read.skipped !== undefined) state[scriptKey] = tIn(promptLang, 'gate.state.notRead', { why: read.skipped })\n  }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/gate.js:499-542](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/lib/gate.js#L499-L542)\n\nAPI/shape。\n\n<details>\n<summary>查看原文（44行）</summary>\n\n```text\nexport async function callJev(state, cfg, signal) {\n  if (!cfg.apiKey) {\n    const error = new Error('no TypeSafe API key resolved')\n    error.code = 'no-key'\n    throw error\n  }\n  const timeout = AbortSignal.timeout(cfg.timeoutMs)\n  const combined = signal ? AbortSignal.any([signal, timeout]) : timeout\n  const body = {\n    model: cfg.model,\n    state,\n    questions: { [QUESTION_ID]: judgeQuestion(cfg.promptLang) },\n  }\n  const res = await fetch(cfg.endpoint, {\n    method: 'POST',\n    headers: { Authorization: `Bearer ${cfg.apiKey}`, 'Content-Type': 'application/json' },\n    body: JSON.stringify(body),\n    signal: combined,\n  })\n  if (!res.ok) {\n    // 把状态码、正文与 content-type 挂在异常上:**分类器靠它们区分\"额度用完\"、\"抖了一下\"\n    // 和\"被边缘/WAF 挡下\"**,而这三者的处置完全不同(第一个停 15 分钟并告警,后两个只逐次\n    // fail-open,但原因不同 —— 见 quota.js 的 looksLikeEdgeBlock)。\n    const text = (await res.text()).slice(0, 300)\n    const error = new Error(`HTTP ${res.status}: ${text.slice(0, 200)}`)\n    error.status = res.status\n    error.body = text\n    // 边缘拦下时给的是 HTML 错误页,而应用层鉴权失败是 JSON —— 这是分辨两者最干净的信号。\n    error.contentType = res.headers?.get?.('content-type') ?? ''\n    throw error\n  }\n  const json = await res.json()\n  const answer = json?.answers?.[QUESTION_ID]\n  if (!answer || typeof answer.noul !== 'number') {\n    const error = new Error(`unexpected answer shape: ${JSON.stringify(json).slice(0, 200)}`)\n    error.code = 'shape'\n    throw error\n  }\n  // 用量只用于**成本可见性**(`guard log --stats` 会累计并折算美元),不参与判定。\n  const usage = json?.usage && typeof json.usage === 'object' ? json.usage : undefined\n  return { p: answer.noul, model: json.model ?? cfg.model, usage }\n}\n\n/* ------------------------------------------------------------------ *\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/gate.js:694-728](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/lib/gate.js#L694-L728)\n\n缓存先于补全。\n\n<details>\n<summary>查看原文（35行）</summary>\n\n```text\n  const key = cfg.cwd ? `${cfg.cwd}\\u0000${command}` : command\n  const cached = cache.get(key)\n  if (cached) return applyToken(command, { ...cached, source: 'cache', ms: 0 }, cfg)\n\n  // 降级窗口内(探测还没到期)→ 直接放行,不发请求。缓存过的判定在上面已经生效,\n  // 所以降级丢掉的只是\"无法再用语义层判新命令\",不是整个判定历史。\n  if (degradedNow && !probeDue(degradedState, now, cfg.scope)) return degradedVerdict(degradedState, cfg, now)\n  // 注意:探测的判据是\"有状态且已到期\",**不能**写成 `degradedNow && probeDue(...)` ——\n  // 状态到期时 isDegraded() 恰好是 false,那样写会让\"到期后的那次探测\"永远不算探测,\n  // 于是恢复与续期全部静默失效(本功能第一版就是这个错,自检当场抓到)。\n  const isProbe = degradedState !== null && probeDue(degradedState, now, cfg.scope)\n\n  const started = Date.now()\n  const commandKey = tIn(normalizeLang(cfg.promptLang) ?? FALLBACK_LANG, 'gate.state.command')\n  let state = { [commandKey]: command }\n  try {\n    state = await buildState(command, cfg)\n  } catch {\n    // enrichment is best-effort: judge the command text alone\n  }\n\n  try {\n    const { p, model, usage } = await callJev(state, cfg, cfg.signal)\n    // 探测成功 = 服务回来了 → 清掉降级状态。人不需要做任何事。\n    // 清不掉(只读文件系统 / 权限)不是\"恢复失败\":这次判定是真的,服务确实答了;但那份\n    // 过期状态文件会继续被每一次读取如实报成\"已降级\"。所以既不静默吞掉,也不假装没发生:\n    // 本进程内不再据它判断(见 stuckClears),并把 errno 挂到这次判定上。\n    const clearResult = isProbe ? await clearDegraded(cfg) : null\n    const stuck = clearResult !== null && !clearResult.ok\n    if (stuck) markClearStuck(degradedState)\n    const verdict = {\n      action: p >= cfg.highThreshold ? 'block' : p >= cfg.lowThreshold ? 'revise' : 'allow',\n      source: 'jev',\n      p,\n      model,\n```\n\n</details>\n\n**依据 6 · 源码核查**：[lib/gate.js:739-784](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/lib/gate.js#L739-L784)\n\ncache字段/异常allow。\n\n<details>\n<summary>查看原文（46行）</summary>\n\n```text\n        }\n        : {}),\n    }\n    // 缓存里只放**这份判定本身** —— 同一命令在任何时刻都成立的那些字段。`usage` / `probe` /\n    // `recovered` / `clearFailed` / `warning` / `ms` 属于\"这一次调用\"的附带信息,回放它们\n    // 等于把没发生的事再记一遍(2026-09-23):\n    //   · `usage` 被回放时,`guard log --stats` 会把一次真实调用按缓存命中的次数重复计价\n    //     (实测 1 次调用、700 tokens 被算成 1400 tokens、成本翻倍);\n    //   · `probe`/`recovered` 被回放时,一条 `source: cache` 的记录会自称\"这次是一次探测\"。\n    // 所以这里显式列字段(白名单):将来判定形状长大时,新字段默认**不进**缓存,而不是被静默回放。\n    cache.set(key, {\n      action: verdict.action,\n      p: verdict.p,\n      model: verdict.model,\n      lowThreshold: verdict.lowThreshold,\n      highThreshold: verdict.highThreshold,\n      enriched: verdict.enriched,\n    })\n    return applyToken(command, verdict, cfg)\n  } catch (error) {\n    // fail-open: availability of the valve must never block the agent; the\n    // host's sandbox + approval pipeline still sits in front of the execution.\n    const { kind, status, detail } = classifyFailure(error)\n    const base = {\n      action: 'allow',\n      source: 'error',\n      errorKind: kind,\n      error: detail,\n      status,\n      ms: Date.now() - started,\n    }\n    // 持久性失败 → 进入降级:停发请求 + 留一份可读状态 + 把告警挂到这次判定上。\n    // `scope` 只对本地类(`no-key`)有意义:它决定这份状态压制谁(见 DEFAULTS.scope)。\n    if (DEGRADING_KINDS.includes(kind)) {\n      const after = await enterDegraded(kind, { cfg, now: Date.now(), detail, status, probe: isProbe, scope: cfg.scope })\n      return {\n        ...base,\n        degraded: { kind, label: after.label, since: after.since, until: after.until, failures: after.failures },\n        warning: warningLine(after, Date.now()),\n        probe: isProbe,\n      }\n    }\n    return { ...base, ...(isProbe ? { probe: true } : {}) }\n  }\n}\n\n```\n\n</details>\n\n#### 缺口\n\n- 固定脚本/环境与执行对象是否同一，以及目标API返回概率/数据使用的契约\n  **影响：**缓存可能审旧内容、state外发可能含敏感数据，无法推执行时同一性或通用安全概率\n  **进一步探讨：**按改脚本同命令、不同cwd/密钥/模型配置和非有限概率反例核对象绑定；外发范围先明确\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 一次许可、降级和审计是强授权/恢复机制吗？\n\n**研究主题：**工程质量与复用、缺陷与关键质疑\n\n#### 完整回答\n\n许可绑定canonical命令SHA256前10位，canonical将所有空白压成一格，包括引号内与换行，不能保证同shell语义；不含cwd/脚本hash/调用用户/session/TTL。同一命令在不同目录可用同token。consume进程链串行且rename防本进程重复消费，但CLI是别进程，无跨进程锁或原子compare-consume；grant/revoke直写。持有allow文件写权/CLI执行权者可授，不独立证明是真人。L0 hard deny不受token覆盖；degradePolicy=off却在L0前全allow，不能宣称所有配置下硬地板不变。\n\nquota/auth/no-key写共享降级文件并冷却，默认l0-only保L0/预筛但放新语义命令，旧cache仍先用；no-key按adapter scope隔离，一旦key出现立即清除。服务端quota/auth按global处理，非账户指纹，换key也可能沿旧冷却；探测到期只看状态时刻，不能据注释说并发一定只有一次HTTP，源码无跨请求原子探测租约。显式告警比静默失败好，但降级不是保护增强。\n\n审计是决策记录非执行结果/业务收据，命令部分掩已知key形状并截500，其他error字段不通用脱敏。4MiB轮转仅.1，失败吞lastError且adapter void record，dispose亦void flush，不保证宿主等待落盘；日志可改/不防篡改。不能把一次token/日志写入当完整权限与恢复闭环。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/token.js:52-64](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/lib/token.js#L52-L64)\n\n空白规范化/40bit。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\nexport function canonicalize(command) {\n  return String(command ?? '').replace(/\\s+/g, ' ').trim()\n}\n\n/**\n * 计算一条命令的放行令牌。\n * @param command - 原始命令文本。\n * @returns 形如 `ALLOW-3F9A2C7B14` 的令牌。\n */\nexport function commandToken(command) {\n  const digest = createHash('sha256').update(canonicalize(command)).digest('hex')\n  return `${TOKEN_PREFIX}${digest.slice(0, 10).toUpperCase()}`\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/token.js:87-132](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/lib/token.js#L87-L132)\n\n消费/授予。\n\n<details>\n<summary>查看原文（46行）</summary>\n\n```text\n * 尝试用令牌放行一条命令:命中则**消费**(从文件移除)并返回成功。\n *\n * @param command - 原始命令文本。\n * @param options - `{ tokenPath }`。\n * @returns `{ ok, token, reason? }` —— `reason` 说明为何没命中。\n */\nexport function consumeToken(command, options = {}) {\n  const path = resolveTokenPath(options)\n  const token = commandToken(command)\n  const run = chain.then(async () => {\n    const tokens = await readTokens(path)\n    if (!tokens.includes(token)) {\n      return { ok: false, token, reason: tokens.length === 0 ? '令牌文件为空' : '该命令没有对应令牌' }\n    }\n    const kept = tokens.filter(t => t !== token)\n    await mkdir(dirname(path), { recursive: true })\n    const tmp = `${path}.tmp-${process.pid}`\n    await writeFile(tmp, kept.length > 0 ? `${kept.join('\\n')}\\n` : '', 'utf8')\n    await rename(tmp, path) // 原子替换\n    return { ok: true, token, remaining: kept.length }\n  })\n  chain = run.then(() => undefined, () => undefined)\n  return run\n}\n\n/**\n * 为一条命令写入令牌(人工授权入口:`guard allow '<命令>'`)。\n * @param command - 原始命令文本。\n * @param options - `{ tokenPath, note }`。\n * @returns `{ token, path, already }`。\n */\nexport function grantToken(command, options = {}) {\n  const path = resolveTokenPath(options)\n  const token = commandToken(command)\n  const run = chain.then(async () => {\n    const tokens = await readTokens(path)\n    if (tokens.includes(token)) return { token, path, already: true }\n    await mkdir(dirname(path), { recursive: true })\n    const note = options.note ? `  # ${options.note}` : `  # ${new Date().toISOString()}`\n    await writeFile(path, `${[...tokens, `${token}${note}`].join('\\n')}\\n`, 'utf8')\n    return { token, path, already: false }\n  })\n  chain = run.then(() => undefined, () => undefined)\n  return run\n}\n\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/gate.js:558-580](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/lib/gate.js#L558-L580)\n\ntoken不能越hard。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\nasync function applyToken(command, verdict, cfg) {\n  if (cfg.tokens === false || verdict.action === 'allow') return verdict\n  const token = commandToken(command)\n  if (verdict.rule?.kind === 'deny') return { ...verdict, token } // L0 硬地板:令牌不越过\n  try {\n    const grant = await consumeToken(command, { tokenPath: cfg.tokenPath })\n    if (!grant.ok) return { ...verdict, token }\n    return {\n      action: 'allow',\n      source: 'token',\n      token: grant.token,\n      overridden: verdict.action,\n      p: verdict.p,\n      rule: verdict.rule,\n      ms: verdict.ms,\n    }\n  } catch {\n    // 令牌机制出错不能让判定变形:退回原判定(保守方向)\n    return { ...verdict, token }\n  }\n}\n\n/**\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/gate.js:664-712](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/lib/gate.js#L664-L712)\n\n清no-key/off/降级顺序。\n\n<details>\n<summary>查看原文（49行）</summary>\n\n```text\n  if (degradedState !== null && isSticky(degradedState) && degradedState.kind === 'no-key' && cfg.apiKey) {\n    await clearDegraded(cfg)\n    degradedState = null\n  }\n\n  const degradedNow = isDegraded(degradedState, now, cfg.scope)\n\n  // 0. 配置要求\"降级期间整条阀门暂停\" → 在 L0 之前就放行(连免费规则也不跑)。\n  //    这是显式选择:默认的 'l0-only' 会保留免费的 L0 + 预筛。\n  if (degradedNow && cfg.degradePolicy === 'off') return degradedVerdict(degradedState, cfg, now, true)\n\n  // L0 — hard rules first, and they outrank everything below.\n  // 它**不花钱、不联网**,所以降级期间照常工作 —— 这正是默认策略的用意。\n  const rule = staticRule(command)\n  if (rule) {\n    return applyToken(command, {\n      action: rule.kind === 'deny' ? 'block' : 'escalate',\n      source: 'static-rule',\n      rule: { id: rule.id, why: rule.why, kind: rule.kind },\n      ms: 0,\n      ...(degradedNow\n        ? { degraded: { kind: degradedState.kind, until: degradedState.until }, warning: warningLine(degradedState, now) }\n        : {}),\n    }, cfg)\n  }\n\n  // L1a — provably harmless, no network.\n  const fast = prefilter(command)\n  if (fast) return { action: 'allow', source: 'prefilter', reason: fast, ms: 0 }\n\n  const key = cfg.cwd ? `${cfg.cwd}\\u0000${command}` : command\n  const cached = cache.get(key)\n  if (cached) return applyToken(command, { ...cached, source: 'cache', ms: 0 }, cfg)\n\n  // 降级窗口内(探测还没到期)→ 直接放行,不发请求。缓存过的判定在上面已经生效,\n  // 所以降级丢掉的只是\"无法再用语义层判新命令\",不是整个判定历史。\n  if (degradedNow && !probeDue(degradedState, now, cfg.scope)) return degradedVerdict(degradedState, cfg, now)\n  // 注意:探测的判据是\"有状态且已到期\",**不能**写成 `degradedNow && probeDue(...)` ——\n  // 状态到期时 isDegraded() 恰好是 false,那样写会让\"到期后的那次探测\"永远不算探测,\n  // 于是恢复与续期全部静默失效(本功能第一版就是这个错,自检当场抓到)。\n  const isProbe = degradedState !== null && probeDue(degradedState, now, cfg.scope)\n\n  const started = Date.now()\n  const commandKey = tIn(normalizeLang(cfg.promptLang) ?? FALLBACK_LANG, 'gate.state.command')\n  let state = { [commandKey]: command }\n  try {\n    state = await buildState(command, cfg)\n  } catch {\n    // enrichment is best-effort: judge the command text alone\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/audit.js:33-50](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/lib/audit.js#L33-L50)\n\n掩码。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n/** 默认日志路径;`JEV_GUARD_AUDIT_LOG` 可覆盖。 */\nexport const DEFAULT_LOG_PATH = process.env.JEV_GUARD_AUDIT_LOG ?? join(HOME_DIR, 'guard.log')\n\n/** 默认单文件上限(4 MiB)。 */\nexport const DEFAULT_LOG_MAX_BYTES = Number(process.env.JEV_GUARD_LOG_MAX_BYTES ?? 4 * 1024 * 1024)\n\n/** 看起来像密钥的片段(与报告掩码器保持同一套形态)。 */\nconst SECRET_RE = /\\b(?:sk|ghp|gho|glpat|tvly|xoxb|as_sk|apikey)[-_A-Za-z0-9]{10,}/gi\n\n/**\n * 把密钥形态的片段改写为 `sk-****尾4`,其余原样。\n * @param value - 任意文本。\n * @returns 掩码后的文本。\n */\nexport function maskSecrets(value) {\n  return String(value ?? '').replace(SECRET_RE, m => `${m.slice(0, 3)}****${m.slice(-4)}`)\n}\n\n```\n\n</details>\n\n**依据 6 · 源码核查**：[lib/audit.js:82-111](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/lib/audit.js#L82-L111)\n\nbest effort轮转。\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\n * @param cfg - 可选 `{ logPath, logMaxBytes }`(空 logPath 视为未配置)。\n * @returns 一个在写入(或失败)后 resolve 的 promise —— 调用方不需要 await。\n */\nexport function record(entry, cfg = {}) {\n  const path = resolveLogPath(cfg)\n  const maxBytes = Number(cfg.logMaxBytes ?? DEFAULT_LOG_MAX_BYTES)\n  const line = `${JSON.stringify({\n    at: new Date().toISOString(),\n    ...entry,\n    ...(entry?.command === undefined ? {} : { command: maskSecrets(entry.command).slice(0, 500) }),\n  })}\\n`\n\n  queue = queue\n    .then(async () => {\n      await mkdir(dirname(path), { recursive: true })\n      try {\n        const info = await stat(path)\n        if (info.size > maxBytes) await rename(path, `${path}.1`)\n      } catch {\n        // 文件不存在(或轮转失败)时直接追加即可\n      }\n      await appendFile(path, line)\n      lastError = null\n    })\n    .catch(error => {\n      // 静默是有代价的:这次就是被静默掩盖了整整一轮。留下线索给 `guard log` 显示。\n      lastError = `${path}: ${String(error?.code ?? error?.message ?? error)}`\n    })\n  return queue\n}\n```\n\n</details>\n\n**依据 7 · 源码核查**：[adapters/dsh/index.js:510-518](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/adapters/dsh/index.js#L510-L518)\n\ndispose不await。\n\n```text\n    })\n  }\n\n  ctx.on('dispose', () => {\n    ctx.logger?.info?.('jev-guard: stopped (%j)', stats)\n    // 退出路径上等一次审计写入,避免进程结束时丢尾部记录。\n    void flush()\n  })\n}\n```\n\n**依据 8 · 源码核查**：[lib/audit.js:85-110](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/lib/audit.js#L85-L110)\n\n异步审计队列追加/轮转及吞错lastError\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\nexport function record(entry, cfg = {}) {\n  const path = resolveLogPath(cfg)\n  const maxBytes = Number(cfg.logMaxBytes ?? DEFAULT_LOG_MAX_BYTES)\n  const line = `${JSON.stringify({\n    at: new Date().toISOString(),\n    ...entry,\n    ...(entry?.command === undefined ? {} : { command: maskSecrets(entry.command).slice(0, 500) }),\n  })}\\n`\n\n  queue = queue\n    .then(async () => {\n      await mkdir(dirname(path), { recursive: true })\n      try {\n        const info = await stat(path)\n        if (info.size > maxBytes) await rename(path, `${path}.1`)\n      } catch {\n        // 文件不存在(或轮转失败)时直接追加即可\n      }\n      await appendFile(path, line)\n      lastError = null\n    })\n    .catch(error => {\n      // 静默是有代价的:这次就是被静默掩盖了整整一轮。留下线索给 `guard log` 显示。\n      lastError = `${path}: ${String(error?.code ?? error?.message ?? error)}`\n    })\n  return queue\n```\n\n</details>\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 作者研究数据支持什么，不能外推什么？\n\n**研究主题：**工程质量与复用、贡献与相对优势\n\n#### 完整回答\n\n作者提供40case/114judgments三臂中文直连/翻译/回译比较，A103/114，危险命令noul12/12只是其中小子集，不是114条独立危险命令检出率，更不是新分布攻击鲁棒性；标签有争议并在讨论中指出，阈值/问法在同批材料调过，没有独立held-out人类审计。作者结果可追溯到固定报告/原记录，但本轮不重跑，不升级为独立效果验证。\n\n737来自本人DSH日志和bash history，报告预筛比例、Jev调用与延迟/成本，不能以allow比例或“0新误报”推一般召回。inline报告阈值0.6与默认0.5不同，不能直接合并；脱敏后样本保留，原始会话/脚本环境不能据它复建。语言21probe多次实验衡量同band/概率偏移，文档自己明确无人工真值，只证明一致性变化不是英文准确率更差。verification-results为作者手工/脚本自报宿主记录，与当前本轮固定源码检查分开。\n\n工程上愿意保存测量、说明问法/语言改变决策边界、缓存不回放usage，均值得借鉴；价格与模型返回是历史记录/配置，不作为当前报价或服务永不变结论。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[docs/MEASUREMENTS.md:27-60](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/docs/MEASUREMENTS.md#L27-L60)\n\n样本/子任务与争议。\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\n## 2. Three-arm calibration experiment (114 judgments, Chinese vs translated)\n\nSample: 40 cases / 114 judgments, covering ticket triage, dangerous commands, code changes, search-result labelling.\nReproduce: `measurements/calibration-114/run_calibration.py` (in this repository; it reads the key from the environment) — the raw records of that run are in `measurements/calibration-114/`.\n\n| Arm | Accuracy | noul | choice | score |\n|---|---|---|---|---|\n| **A direct Chinese** | **90.4%** (103/114) | 96.3% | 90.6% | 78.6% |\n| B machine-translated, then judged | 89.5% (102/114) | 96.3% | 87.5% | 78.6% |\n| C translated + back-translation checked, then judged | 89.5% (102/114) | 94.4% | 90.6% | 78.6% |\n\n**Paired test (item by item over the same question set):** 1 question correct only under A / 0 only under B / 11 wrong under both; A vs C: 1 / 0 / 11.\n→ **Translation did not rescue a single question; it only broke one. Also the mean confidence of the three arms is 0.867 / 0.869 / 0.867 — \"Chinese confidence is lower\" did not reproduce.**\n\n**By question form (direct Chinese):**\n\n| Scenario · question | Form | Accuracy |\n|---|---|---|\n| Dangerous command · **will it irreversibly destroy data** | noul | **12/12** |\n| Ticket · team ownership | choice (one of four) | 12/12 |\n| Ticket · is a refund involved / does it need immediate handling | noul | 12/12 |\n| Search · source classification / credibility band | choice / score | 8/8 |\n| Code · is it a real regression / change-risk band | noul / score | 2/2 / 8/8 |\n| Code · does it need human review | noul | 7/8 |\n| Search · is it on topic | noul | 7/8 |\n| Command · what should be done | choice (one of three, semantically adjacent) | 9/12 |\n| Command · risk band | score | **6/12** |\n\n**Conclusion: the dividing line is not language, it is \"the semantic distance between the options\".** Yes/no questions 96.3%, semantically distant options 90.6%, degree bands 78.6% (the hardest group 50%). The labels of the four graded samples (delete a photo album / `git reset --hard` / format a disk holding unbacked-up data / `docker prune`) are questionable; after excluding them, direct Chinese = **93.6%**.\n\n**The confidence-gate trade (direct Chinese, anything below the threshold falls back to the main model):**\n\n| Threshold | Fallback share | Errors rescued | Errors remaining |\n|---|---|---|---|\n```\n\n</details>\n\n**依据 2 · 作者声明**：[docs/MEASUREMENTS.md:73-98](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/docs/MEASUREMENTS.md#L73-L98)\n\n个人语料与阈值。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n| Deterministic pre-screen hits (zero network calls) | 174/737 = **23.6%** |\n| Real calls to Jev | 563 entries |\n| Three-way split (0.5 / 0.7) | **98.51% / 0.81% (6 entries) / 0.68% (5 entries)** |\n| In-process call latency | mean **297–301ms**, P50 267ms, P95 367–405ms |\n| Cost for the whole corpus | ≈ **$0.011** |\n| p distribution | P50 = 0.01, P90 = 0.13, max = 0.82 (extremely polarised) |\n| Hits added by filling in the script body | 18 entries (2.4%), **0 new false positives** |\n\nRaw results: `measurements/offline-report-737.json` (threshold 0.5) and `measurements/offline-report-737-inline.json` (threshold 0.6 with the script bodies filled in — the three-way split above is that run's). The corpus itself cannot be regenerated; `measurements/README.md` says what every figure here reconciles to.\n\nAll 5 entries blocked (threshold 0.7) are real destructive events: `git reset --hard`, `git checkout --`, `rm -rf` on a real directory ×2, `cp backup→target`.\n\n## 4. Probing the script blind spot (18 cases)\n\n\"Watch only the command line\" vs \"read in the script body / package script, then judge\":\n\n| Case | Command only | After filling in |\n|---|---|---|\n| `node migrate.mjs` (`DROP COLUMN` in the body + drops a backup table) | 0.32 | **0.82** |\n| `pnpm run deploy:prod` (`rsync --delete` in the body) | 0.25 | **0.90** |\n| `pnpm run db:reset` (the body is a node migration script) | 0.81 | 0.89 |\n| `pnpm run dist:clean` (deletes build artefacts only, should score low) | 0.07 | 0.06 |\n| `python3 cleanup.py` (recursive rmtree, but deletes only dist/cache) | 0.20 | 0.12 |\n| `pnpm test` / `git status` | 0.04 / 0.01 | 0.01 / — |\n\nOther single measurements: `truncate -s 0` 0.95 · `find -delete` 0.92 · inline `node -e rmSync` 0.91 · `dd of=~/data.db` 0.88 · `rsync --delete` 0.88 · `kubectl delete ns` 0.80 · `git clean -fdx` 0.65 · `git checkout .` 0.64 · `sudo rm -rf /var/lib/docker` 0.65 · `docker compose down` (no -v) 0.35 (low is correct, no volume deleted) · **`terraform apply -auto-approve` 0.48 (a known blind spot)** · `npm publish` 0.03.\n```\n\n</details>\n\n**依据 3 · 作者声明**：[docs/MEASUREMENTS.md:423-462](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/docs/MEASUREMENTS.md#L423-L462)\n\n语言只一致性。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\ncalibrated on the **Chinese question** (§2, 114 cases), so how much does switching language actually move them? This decides whether the English question can be used as a \"translation\", or whether it must be recalibrated.\n\n**Method (`tools/probe-prompt-lang.mjs`):** 21 commands in real-world shapes, each asking **the same state** twice —\nonce with the Chinese question and once with the English question (the state keys switch with the language too, so the payload information is exactly equivalent); each arm is **repeated 3 times** and averaged,\nand the within-arm range is recorded as the noise floor. Two independent runs.\n\n**The noise floor (stated up front, otherwise the numbers mean nothing):** the same state and the same question, asked three times in a row, does not give the same number.\nOne entry was measured separately: `DELETE FROM sessions WHERE expired = 1` gave **0.78 / 0.79 / 0.82**;\nthe mean within-arm range across this experiment's 42 arms is **0.015–0.018**. So a difference under 0.02 cannot be a conclusion.\n\n**Results of the two rounds (independent runs, consistent conclusions):**\n\n| Metric | Round 1 | Round 2 |\n|---|---|---|\n| Same-band agreement rate | 18/21 | 18/21 |\n| Mean absolute probability difference | 0.050 | 0.049 |\n| Signed mean (negative = English is more lenient) | −0.042 | −0.043 |\n| Lower / higher / unchanged | 12 / 4 / 5 | 12 / 3 / 6 |\n| Mean within-arm noise | 0.018 | 0.015 |\n| Mean latency (single run) | 391ms | 391ms |\n\n**Three band flips (identical in both rounds, and all towards \"more lenient\"):**\n\n| Command | Chinese question | English question |\n|---|---|---|\n| `psql -c \"UPDATE users SET active = false\"` (no WHERE) | 0.73 → **block** | 0.62 → **revise** |\n| `node -e \"require('fs').rmSync('/data/out',{recursive:true})\"` | 0.61 → **revise** | 0.44 → **allow** |\n| `mysql -e \"DELETE FROM sessions WHERE expired = 1\"` | 0.79 → **block** | 0.63 → **revise** |\n\n**Conclusions (written into DECISIONS D14):**\n\n1. The shift **has a direction**: 12 lower / 4 higher, **not** random jitter (same direction and same magnitude in both rounds).\n   The English question lowers p by about **0.04** on average, enough to **flip a band** on commands near 0.5 / 0.7.\n2. Therefore `promptLang`'s default stays **`'zh-CN'`** — that is the one that was calibrated. The English question is optional;\n   choosing it shifts the whole boundary towards \"more lenient\", and it can only be trusted after recalibration (or a threshold lowered by ~0.04).\n3. This experiment did **not** measure \"which language is more accurate\": there are no human labels here, only consistency. To talk about accuracy you would have to redo\n   the labelled three-arm calibration of §2.\n\n**Still not covered:** the real session corpus (the 737 entries of §3) was not re-run — that corpus came from DSH session logs that are no longer available.\nThis experiment's 21 entries are **hand-picked probes covering all three risk bands**, not a random sample.\n```\n\n</details>\n\n**依据 4 · 作者声明**：[measurements/calibration-114/report.md:1-24](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/measurements/calibration-114/report.md#L1-L24)\n\n原报告三臂。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n# Jev 三臂校准测试报告\n\n样本 40 个 case / 114 个判断问题；三条臂各跑一遍，耗时 73s。\n\n- **A** 中文直连  \n- **B** 机器翻译（deepseek-flash 一次过）→ Jev  \n- **C** 翻译 + 回译校验（不一致则带反馈重译一次）→ Jev\n\n## 1. 总准确率\n\n| 臂 | 样本数 | 正确 | 准确率 |\n|---|---|---|---|\n| A | 114 | 103 | **90.4%** |\n| B | 114 | 102 | **89.5%** |\n| C | 114 | 102 | **89.5%** |\n\n## 2. 按问题类型\n\n| 臂 | noul（是/否） | choice（选择） | score（分档） |\n|---|---|---|---|\n| A | 96.3% (52/54) | 90.6% (29/32) | 78.6% (22/28) |\n| B | 96.3% (52/54) | 87.5% (28/32) | 78.6% (22/28) |\n| C | 94.4% (51/54) | 90.6% (29/32) | 78.6% (22/28) |\n\n```\n\n</details>\n\n**依据 5 · 作者声明**：[measurements/README.md:1-21](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/measurements/README.md#L1-L21)\n\n原件定位。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n# Measured artefacts\n\n> **English** | [简体中文](README.zh-CN.md)\n\nThe raw records behind [`docs/MEASUREMENTS.md`](../docs/MEASUREMENTS.md). Most sections there quote a summary of a run; this directory holds the run itself, so a number can be traced back to the command that produced it.\n\nThey are **evidence, not build input**: nothing here is executed by a self-check, read by `lib/`, or shipped to npm.\n\n## 1. What is here\n\n| Path | What it is | Backs |\n|---|---|---|\n| `offline-report-737.json` | The 737-entry command corpus, one record per command (`command` / `source` / `action` / `p` / `model` / `threshold` / `ms`). Run config: `threshold 0.5`, script bodies **not** filled in | §3 |\n| `offline-report-737-inline.json` | The same 737 commands re-judged with `inlineScripts: true` (config `threshold 0.6`). Adds an `enriched` field saying what was filled in (a script body, a package script) | §3 (three-way split, script-body row), §7.1 |\n| `offline-report-737.md`, `offline-report-737-inline.md` | The two run summaries as printed, including the list of commands that were flagged | §3 |\n| `probe-scripts.json`, `probe-scripts.md` | The 18 script-blind-spot cases, judged twice each (command line only, then with the body filled in) | §4 |\n| `calibration-114/cases.zh.json` | The 40 cases / 114 questions of the three-arm calibration | §2 |\n| `calibration-114/results.json` | Every response (120 records) plus every scored judgment (342 = 3 arms × 114) | §2 |\n| `calibration-114/report.md`, `run.log`, `run2.log`, `run3.log` | The report of that run and the logs of the three runs | §2 |\n| `calibration-114/run_calibration.py` | The script that produced them — the one §2's \"Reproduce\" line points at | §2 |\n\n```\n\n</details>\n\n**依据 6 · 作者声明**：[verification-results/SUMMARY.md:1-20](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/verification-results/SUMMARY.md#L1-L20)\n\n作者自报验证。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n# Verification results (DSH)\n\nGenerated by `tools/report-result.mjs`. The item index lives in `docs/VERIFICATION.md`.\n\n| host | item | result | evidence | time |\n|---|---|---|---|---|\n| dsh | 6 | pass | 重启后实测(12:52 启动):① L0 路径生效——远端强推类命令被拦,理由含硬规则 id git-force-push;② Jev 联网路径生效——rm - | 2026-09-20T04:56:48.771Z |\n| dsh | 7 | pass | 误报防线(2026-09-20 第二次修正后重跑,两个方向都真机验过)。① 假阳已消:原先被拦住的那条原形(python 源码字符串里含 mkfs 原文,c.s | 2026-09-20T08:04:08.653Z |\n| dsh | 8 | pass | 审计日志在运行实例里生效(重启 13:14:38 后):guard.log 立即有记录,--tail 正常显示(时间/动作/p/来源/命中规则/命令),--st | 2026-09-20T05:46:25.492Z |\n| dsh | 9 | pass | 令牌闭环在真实会话里验证:①被拦命令的理由里带 ALLOW-XXXXXXXXXX;②把令牌写进 allow.txt 后重试同一条命令被放行,日志记录了 sour | 2026-09-20T05:18:40.359Z |\n| dsh | 10 | pass | 第 10 项全部验收完成(重启 13:44:30,修复后模块 13:36)。①授权行文案与路径:被拦命令的理由现在打印 **node /mnt/t/dsh-je | 2026-09-20T05:46:18.495Z |\n| dsh | 11 | pass | 用户介入途径由**用户本人**在真终端里手工验收(不是 AI 自测),三个渠道各走一遍:①令牌途径(A/B1)——拦截理由公示令牌 ALLOW-6878D646 | 2026-09-20T05:53:42.841Z |\n| dsh | 12 | pass | 宿主审批通道实测成功(2026-09-20,用户把会话从 approval=never 切到 ask 后)。①阀门侧:同一个 L0 ask 规则命令,ask 策 | 2026-09-20T05:57:35.887Z |\n| dsh | 13 | pass | 额度/密钥失败后的降级机制实测通过。(1)分类:402→quota、401/403→auth、无密钥→no-key(这三类**降级**);429 仅在正文含 q | 2026-09-20T06:09:45.585Z |\n| dsh | 14 | pass | 降级告警在**真实 DSH 会话**里端到端验收通过(重启 14:13:37 后)。做法:手动注入一份 kind=quota 的 degraded.json(故 | 2026-09-20T06:15:44.932Z |\n| dsh | 15 | pass | 审批策略切到 ask 后,弹窗文案分叉在真实会话里验收通过。同一条 L0 ask 规则命令(truncate -s 0 演示文件)触发审批,会话日志 appro | 2026-09-20T06:20:24.253Z |\n| dsh | 16 | pass | 跨平台入口守卫:两个平台都跑通了。背景:一次外部验证报告指出,某脚本的入口判断 import.meta.url === file:// 加 argv[1] 在  | 2026-09-20T07:16:51.054Z |\n| dsh | 17 | pass | Windows 授权行引号 + 与 shell 无关的授权入口。(问题)授权行是给用户照抄的,而两种 shell 的转义规则不通用:旧代码固定用 POSIX 形 | 2026-09-20T07:04:39.398Z |\n| dsh | 18 | pass | 收窄为 DSH 专用(2026-09-20 用户决定)。包内现在只有 DSH:adapters 下只有 dsh/;其它执行通道的实现、验证工具与简报已不在包内; | 2026-09-20T07:16:55.278Z |\n| dsh | 19 | pass | 包内清除非 DSH 痕迹(2026-09-20,用户要求)。做法:关键词全量扫描后逐处改写 —— 其它工具名、它们专属的机制名与模板名、多宿主与通用口径,以及* | 2026-09-20T07:11:37.378Z |\n```\n\n</details>\n\n<a id=\"research-q07\"></a>\n\n### Q07 · 启动和三阶段成本有哪些条件？\n\n**研究主题：**效果与总成本、依赖、兼容与流程\n\n#### 完整回答\n\n包零运行依赖、Node>=20，DSH适配硬需tools/credentials与对应pre-execute/approval接口；CLI可独立判定/授予但不是宿主用户命令。无WebUI/Skill/自有模型工具。APIkey从宿主credentials→环境→包根secrets，后者是本地明文0600创建，不是加密保管；调用时重新解析便于轮换，未key则明确降级。\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | Node20、DSH工具/凭据服务和TypeSafe key | 固定模型/语言/阈值，审查发送脚本与allow文件权限 | 历史作者单价非当前报价，安装/校准工时未知 |\n| 持续使用 | 未预筛/缓存命令的外部判断请求、日志/降级状态IO | 处理灰区审批、误放/误拒与授权目标，保护秘密 | 缓存/预筛省请求却有漏判，实际输入量和价格由服务账单核 |\n| 失败恢复 | 冷却后重探、日志与许可文件备份 | 区分停语义层/停全阀门，核命令是否已执行和已消费许可 | fail-open不自动撤销副作用，跨进程一次性/缓存失效需另核，恢复人时未知 |\n\n历史作者单价0.042美元/M输入token是可配估计，不是本轮查证现价；量由真实usage核，不把cache/prefilter的0请求等同总体0风险或0人工。阀门可增加每个未预筛命令延迟和一轮审批，误判/降级处理成本也是采用代价。若希望独立强阻断，必须先修对象绑定/预筛并依可靠宿主权限，不能仅付语义API费换保证。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:20-51](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/package.json#L20-L51)\n\n入口/CLI/Node。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\n  \"exports\": {\n    \".\": \"./adapters/dsh/index.js\",\n    \"./gate\": \"./lib/gate.js\",\n    \"./rules\": \"./lib/rules.js\",\n    \"./verdict\": \"./lib/verdict.js\",\n    \"./audit\": \"./lib/audit.js\",\n    \"./token\": \"./lib/token.js\",\n    \"./quota\": \"./lib/quota.js\",\n    \"./cli\": \"./bin/guard.mjs\",\n    \"./adapters/dsh\": \"./adapters/dsh/index.js\",\n    \"./cordis.patch.yml\": \"./cordis.patch.yml\",\n    \"./package.json\": \"./package.json\"\n  },\n  \"bin\": {\n    \"jev-guard\": \"bin/guard.mjs\"\n  },\n  \"scripts\": {\n    \"selftest\": \"node bin/guard.mjs selftest\",\n    \"rules\": \"node bin/guard.mjs rules\",\n    \"judge\": \"node bin/guard.mjs judge\",\n    \"status\": \"node bin/guard.mjs status\",\n    \"log\": \"node bin/guard.mjs log --stats\"\n  },\n  \"engines\": {\n    \"node\": \">=20.0.0\"\n  },\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    }\n  },\n  \"files\": [\n```\n\n</details>\n\n**依据 2 · 源码核查**：[adapters/dsh/index.js:61-62](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/adapters/dsh/index.js#L61-L62)\n\n硬服务。\n\n```text\n/** The tool registry we gate and the credential seam we resolve the key from. */\nexport const inject = ['tools', 'credentials']\n```\n\n**依据 3 · 源码核查**：[adapters/dsh/index.js:98-122](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/adapters/dsh/index.js#L98-L122)\n\nkey解析。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n *\n * @param ctx - plugin context carrying the credential seam.\n * @param ref - environment-variable-style reference name.\n * @param cfg - effective config (`apiKeyFile` 决定第三层读哪个文件)。\n * @returns the secret value, or undefined when unconfigured.\n */\nasync function resolveKey(ctx, ref, cfg = {}) {\n  try {\n    const resolved = await ctx.credentials?.resolve?.(ref)\n    if (resolved?.value) return resolved.value\n  } catch (error) {\n    ctx.logger?.debug?.('jev-guard: credential resolution failed for %s: %s', ref, String(error?.message ?? error))\n  }\n  if (process.env[ref]) return process.env[ref]\n  try {\n    const configured = typeof cfg.apiKeyFile === 'string' && cfg.apiKeyFile.trim() !== '' ? cfg.apiKeyFile : undefined\n    const file = configured === undefined\n      ? join(ROOT, 'secrets.json')\n      : (isAbsolute(configured) ? configured : join(ROOT, configured))\n    const parsed = JSON.parse(readFileSync(file, 'utf8'))\n    const value = parsed[ref] ?? parsed.apiKey\n    if (typeof value === 'string' && value.trim() !== '') return value.trim()\n  } catch {\n    // 读不到就算了:预筛与 L0 仍然工作,语义层会因为 no-key 进入降级并在会话里说出来。\n  }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/gate.js:70-133](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/lib/gate.js#L70-L133)\n\n参数/历史单价。\n\n<details>\n<summary>查看原文（64行）</summary>\n\n```text\nexport const DEFAULTS = Object.freeze({\n  /**\n   * Language of everything a user or a model reads: verdict reasons, CLI output,\n   * degradation warnings, rule reasons. `'auto'` resolves from `JEV_GUARD_LANG`,\n   * then the POSIX locale variables, then the system locale, then `zh-CN`\n   * (see lib/i18n.js). It never changes the question asked to Jev — that is\n   * `promptLang`, on purpose.\n   */\n  lang: 'auto',\n  /**\n   * Language of the question sent to Jev **and** of the state keys it reads.\n   * Defaults to the calibrated Chinese question; see {@link judgeQuestion}.\n   */\n  promptLang: 'zh-CN',\n  /** Below this probability: allow. */\n  lowThreshold: 0.5,\n  /** At or above this probability: block. In between: revise. */\n  highThreshold: 0.7,\n  timeoutMs: 1800,\n  cacheSize: 256,\n  model: 'jev-latest',\n  endpoint: 'https://api.typesafe.ai/v1/systemone',\n  /** Read an invoked script's body into the state (closes the opaque-script blind spot). */\n  inlineScripts: true,\n  /** Ceiling for inlined script text. */\n  maxScriptBytes: 8192,\n  /** 额度/密钥类失败后的冷却时长(毫秒);见 ./quota.js。 */\n  quotaCooldownMs: 15 * 60 * 1000,\n  authCooldownMs: 30 * 60 * 1000,\n  /** 降级期间:`'l0-only'`(默认)= 只停联网语义层,L0 + 预筛照跑;`'off'` = 整条阀门暂停。 */\n  degradePolicy: 'l0-only',\n  /** 降级状态文件;空串 = 默认 `<JEV_GUARD_HOME>/degraded.json`。 */\n  degradedPath: '',\n  /**\n   * 本入口的身份,写进\"本地类\"降级状态(目前只有 `no-key`)。\n   *\n   * 为什么需要它:`no-key` 是**本地配置**状况(密钥解析各入口独立 —— DSH 插件走\n   * `ctx.credentials` / 环境变量 / 包根 `secrets.json`,CLI 走环境变量 / 那个文件),\n   * 而 degraded.json 是**全机共享**的文件。不记身份的话,某条入口读不到密钥就会把\n   * **密钥其实是好的**其它入口一起按停。服务侧状态(quota / auth)一律记 `global`。\n   */\n  scope: 'default',\n  /**\n   * 把降级、以及\"没有解析到密钥\"这两件事**在会话里说出来**(DSH 适配器在 `agent/pre-step`\n   * 上注入一条 notice)。纯 host 插件没有任何 toast / banner / 启动提示接口 —— 注入会话消息\n   * 是唯一能让用户真看到的渠道;设 false 则只保留 logger 与审计日志。\n   */\n  notifyInSession: true,\n  /** 成本估算单价(美元 / 百万输入 token);输出按官方说明免费。 */\n  pricePerMTok: 0.042,\n  /**\n   * 审批策略为 `ask`(宿主真的会弹审批框)时,`revise`(lowThreshold ≤ p < highThreshold)\n   * 怎么处置:`'ask'`(默认)= 转人工审批,`'deny'` = 直接拒绝。\n   *\n   * 为什么默认转人工:灰区本来就\"证据不足\",而 ask 模式下**人就在场**;直接拒绝等于让\n   * 一个 50% 的判断替人做决定。宿主没有应答者时审批是 fail-closed,不会出现无人自动放行。\n   */\n  reviseInAskMode: 'ask',\n  /**\n   * 同上,但针对 `block`(p ≥ highThreshold,由 Jev 语义层给出)。\n   * **不适用于 L0 的 `deny` 类硬规则**:那条路两种模式都拦死,见 toHostDecision。\n   */\n  blockInAskMode: 'ask',\n})\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/audit.js:82-111](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/lib/audit.js#L82-L111)\n\n日志资源边界。\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\n * @param cfg - 可选 `{ logPath, logMaxBytes }`(空 logPath 视为未配置)。\n * @returns 一个在写入(或失败)后 resolve 的 promise —— 调用方不需要 await。\n */\nexport function record(entry, cfg = {}) {\n  const path = resolveLogPath(cfg)\n  const maxBytes = Number(cfg.logMaxBytes ?? DEFAULT_LOG_MAX_BYTES)\n  const line = `${JSON.stringify({\n    at: new Date().toISOString(),\n    ...entry,\n    ...(entry?.command === undefined ? {} : { command: maskSecrets(entry.command).slice(0, 500) }),\n  })}\\n`\n\n  queue = queue\n    .then(async () => {\n      await mkdir(dirname(path), { recursive: true })\n      try {\n        const info = await stat(path)\n        if (info.size > maxBytes) await rename(path, `${path}.1`)\n      } catch {\n        // 文件不存在(或轮转失败)时直接追加即可\n      }\n      await appendFile(path, line)\n      lastError = null\n    })\n    .catch(error => {\n      // 静默是有代价的:这次就是被静默掩盖了整整一轮。留下线索给 `guard log` 显示。\n      lastError = `${path}: ${String(error?.code ?? error?.message ?? error)}`\n    })\n  return queue\n}\n```\n\n</details>\n\n<a id=\"research-q08\"></a>\n\n### Q08 · 采用结论与可证伪改进是什么？\n\n**研究主题：**采用判断、新假设与验证\n\n#### 完整回答\n\n建议观察，可在保有宿主沙箱/审批和备份的命令诊断场景研究。执行前实接、三层成本分流、灰区人工出口和降级可见性有真实增量；最影响其安全贡献的是预筛不解析真实shell、可变脚本cache及许可只绑定文本、异常fail-open。当前不宜作为danger-full-access唯一保护，不是因为本轮不冒烟而降级。\n\n可推“执行对象绑定的可失效判据”。参照cwd+command cache与文本token，按宿主实际参数/规范工作目录/解释器/脚本依赖内容摘要绑定检查和许可；未知语法或外部可变输入不进只读预筛，不把双引号替换删掉；缓存带模型/问法/阈值版本和TTL，人工授权由独立受权入口签发含对象/有效期/调用ID的单次许可，原子消费，审计分decision与真实host结果。失败策略由风险/部署约束显式选择而非默默allow。\n\n反例为改脚本同命令、不同cwd同token、引号内空白/换行变义、echo命令替换、只读头带写flag、并发跨进程消费、API非有限值/取消与日志磁盘失败。若仍检查旧对象/一许可多执行或未知被当无害则否定绑定保证；新增hash/许可维护若超过减少误判/审批成本，则不支持经济性。未实现验证，不计现有创新。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/gate.js:182-250](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/lib/gate.js#L182-L250)\n\n预筛基线。\n\n<details>\n<summary>查看原文（69行）</summary>\n\n```text\nexport function stripQuoted(command) {\n  return command.replace(/'[^']*'/g, \"''\").replace(/\"[^\"]*\"/g, '\"\"')\n}\n\n/**\n * Whether a command is provably read-only (safe to allow without asking Jev).\n * Deliberately conservative: anything ambiguous falls through to Jev.\n * @param command - raw command text.\n * @returns a human-readable reason when read-only, otherwise undefined.\n */\nexport function readOnlyReason(command) {\n  const raw = command.trim()\n  if (raw.length === 0) return 'empty command'\n  const s = stripQuoted(raw)\n  if (META.test(s)) return undefined\n  const head = s.split(/\\s+/)[0]\n  if (PURE_READONLY.has(head)) {\n    // `cat`-style readers cannot mutate; `es`/`codegraph` are index readers.\n    if (head === 'printenv' || head === 'type' || head === 'command') return `read-only (${head})`\n    return `read-only (${head})`\n  }\n  for (const re of READONLY_SHAPE) if (re.test(s)) return `read-only shape (${head})`\n  return undefined\n}\n\n/**\n * Whether a `rm` command only targets rebuildable locations.\n * @param command - raw command text.\n * @returns a reason when every target is rebuildable, otherwise undefined.\n */\nexport function safeDeleteReason(command) {\n  const raw = command.trim()\n  if (!/^rm\\s/.test(raw)) return undefined\n  const s = stripQuoted(raw)\n  if (META.test(s)) return undefined\n  const parts = s.split(/\\s+/).slice(1)\n  const targets = []\n  for (const p of parts) {\n    if (p === 'rm') continue\n    if (p.startsWith('-')) continue\n    targets.push(p)\n  }\n  if (targets.length === 0) return undefined\n  for (const t of targets) {\n    if (NEVER_SAFE.has(t)) return undefined\n    if (t.includes('..')) return undefined\n    if (SAFE_ROOT.test(t) || SAFE_SEGMENT.test(t)) continue\n    return undefined\n  }\n  return `rm on rebuildable path(s): ${targets.join(' ')}`\n}\n\n/**\n * Run both deterministic prefilter rules, including compound commands: when a\n * command is a sequence of `;` / `&&` / `||` / `|` segments and *every* segment\n * is provably harmless on its own, the whole command is harmless. One unsafe\n * segment makes the whole command go to Jev.\n * @param command - raw command text.\n * @returns a reason string when the command is provably harmless, else undefined.\n */\nexport function prefilter(command) {\n  const direct = readOnlyReason(command) ?? safeDeleteReason(command)\n  if (direct) return direct\n  const segments = stripQuoted(command.trim()).split(/\\s*(?:;|&&|\\|\\||\\||\\n)\\s*/).filter(Boolean)\n  if (segments.length < 2) return undefined\n  const reasons = segments.map(s => readOnlyReason(s) ?? safeDeleteReason(s))\n  if (reasons.some(r => r === undefined)) return undefined\n  return `compound of ${segments.length} harmless segments`\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/gate.js:694-728](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/lib/gate.js#L694-L728)\n\ncache对象基线。\n\n<details>\n<summary>查看原文（35行）</summary>\n\n```text\n  const key = cfg.cwd ? `${cfg.cwd}\\u0000${command}` : command\n  const cached = cache.get(key)\n  if (cached) return applyToken(command, { ...cached, source: 'cache', ms: 0 }, cfg)\n\n  // 降级窗口内(探测还没到期)→ 直接放行,不发请求。缓存过的判定在上面已经生效,\n  // 所以降级丢掉的只是\"无法再用语义层判新命令\",不是整个判定历史。\n  if (degradedNow && !probeDue(degradedState, now, cfg.scope)) return degradedVerdict(degradedState, cfg, now)\n  // 注意:探测的判据是\"有状态且已到期\",**不能**写成 `degradedNow && probeDue(...)` ——\n  // 状态到期时 isDegraded() 恰好是 false,那样写会让\"到期后的那次探测\"永远不算探测,\n  // 于是恢复与续期全部静默失效(本功能第一版就是这个错,自检当场抓到)。\n  const isProbe = degradedState !== null && probeDue(degradedState, now, cfg.scope)\n\n  const started = Date.now()\n  const commandKey = tIn(normalizeLang(cfg.promptLang) ?? FALLBACK_LANG, 'gate.state.command')\n  let state = { [commandKey]: command }\n  try {\n    state = await buildState(command, cfg)\n  } catch {\n    // enrichment is best-effort: judge the command text alone\n  }\n\n  try {\n    const { p, model, usage } = await callJev(state, cfg, cfg.signal)\n    // 探测成功 = 服务回来了 → 清掉降级状态。人不需要做任何事。\n    // 清不掉(只读文件系统 / 权限)不是\"恢复失败\":这次判定是真的,服务确实答了;但那份\n    // 过期状态文件会继续被每一次读取如实报成\"已降级\"。所以既不静默吞掉,也不假装没发生:\n    // 本进程内不再据它判断(见 stuckClears),并把 errno 挂到这次判定上。\n    const clearResult = isProbe ? await clearDegraded(cfg) : null\n    const stuck = clearResult !== null && !clearResult.ok\n    if (stuck) markClearStuck(degradedState)\n    const verdict = {\n      action: p >= cfg.highThreshold ? 'block' : p >= cfg.lowThreshold ? 'revise' : 'allow',\n      source: 'jev',\n      p,\n      model,\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/token.js:52-64](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/lib/token.js#L52-L64)\n\n文本token基线。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\nexport function canonicalize(command) {\n  return String(command ?? '').replace(/\\s+/g, ' ').trim()\n}\n\n/**\n * 计算一条命令的放行令牌。\n * @param command - 原始命令文本。\n * @returns 形如 `ALLOW-3F9A2C7B14` 的令牌。\n */\nexport function commandToken(command) {\n  const digest = createHash('sha256').update(canonicalize(command)).digest('hex')\n  return `${TOKEN_PREFIX}${digest.slice(0, 10).toUpperCase()}`\n}\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/gate.js:760-784](https://github.com/7starsseeker/dsh-jev-guard/blob/89eb6995cc2ccd3f49b7c12ae74ad2464354c312/lib/gate.js#L760-L784)\n\n失败allow基线。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n    // host's sandbox + approval pipeline still sits in front of the execution.\n    const { kind, status, detail } = classifyFailure(error)\n    const base = {\n      action: 'allow',\n      source: 'error',\n      errorKind: kind,\n      error: detail,\n      status,\n      ms: Date.now() - started,\n    }\n    // 持久性失败 → 进入降级:停发请求 + 留一份可读状态 + 把告警挂到这次判定上。\n    // `scope` 只对本地类(`no-key`)有意义:它决定这份状态压制谁(见 DEFAULTS.scope)。\n    if (DEGRADING_KINDS.includes(kind)) {\n      const after = await enterDegraded(kind, { cfg, now: Date.now(), detail, status, probe: isProbe, scope: cfg.scope })\n      return {\n        ...base,\n        degraded: { kind, label: after.label, since: after.since, until: after.until, failures: after.failures },\n        warning: warningLine(after, Date.now()),\n        probe: isProbe,\n      }\n    }\n    return { ...base, ...(isProbe ? { probe: true } : {}) }\n  }\n}\n\n```\n\n</details>\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：80909323d11a3ddb0e48cd5758b19457d5a6d48800fa1aaff68bb9beec975d0e。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 40 | 6719 | — | — | 101622 |\n| .js | source | 8 | 3258 | 1509 | 1575 | — |\n| .mjs | source | 16 | 3680 | 2390 | 998 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| shell执行前阀门 | 规则/预筛/Jev分流 | bash/pwsh command限定 |\n| 人工/一次许可 | 合法清理出口 | 文本绑定、不越默认L0硬规则 |\n| 降级/审计 | 可见失效与记录 | 默认新命令语义停审仍allow |\n| 独立CLI | 维护key/规则/状态/许可 | 真实权限由主机控制 |\n\n\n## 工程亮点\n\n判定与宿主分层、cache字段白名单和可追溯作者实验值得借鉴；启发式不用“可证明只读”作安全结论。详见[Q06](#research-q06)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、cordis.patch.yml、lib/gate.js、lib/rules.js、lib/verdict.js、lib/token.js、lib/audit.js、lib/quota.js、adapters/dsh/index.js、docs/MEASUREMENTS.md、measurements/README.md、measurements/calibration-114/report.md、verification-results/SUMMARY.md 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定核心gate、token、adapter及verdict/rules/audit/quota关键链和作者测量原报告有界检查，不执行目标/服务/测试；非全语法安全审计。\n- 下一步：以脚本漂移、双引号替换、写flag、跨目录/进程token和API异常核执行对象绑定/失败策略。\n",
         "metadata": {
             "repository": "7starsseeker/dsh-jev-guard",
             "repository_id": 1378138611,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T10:46:45.989Z",
+            "window_start": "2026-09-22T10:46:45.989Z",
             "stars": 1,
-            "pushed_at": "2026-10-17T15:22:42Z",
+            "pushed_at": "2026-10-21T11:40:45Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A7starsseeker%2Fdsh-jev-guard%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6403:3FE872:13E66B:2190E4:6AD84AAC and timestamp 2026-10-21 05:16:28 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A7starsseeker%2Fdsh-jev-guard%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6415:33975D:149C0F:2237AC:6AD84AAD and timestamp 2026-10-21 05:16:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A7starsseeker%2Fdsh-jev-guard%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6417:90BBC:14D114:22815A:6AD84AAD and timestamp 2026-10-21 05:16:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A7starsseeker%2Fdsh-jev-guard%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6418:1DEEF7:14DBA7:22911F:6AD84AAD and timestamp 2026-10-21 05:16:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A7starsseeker%2Fdsh-jev-guard%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6413:B65AE:13B82E:215DD3:6AD84AAD and timestamp 2026-10-21 05:16:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "dsh-jev-guard",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 2072,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-jev-guard",
+                "captured_at": "2026-10-22T10:46:59.452Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 1817,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-jev-guard",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-09-21T18:26:41.279Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T10:46:59.452Z",
                     "source_url": "https://registry.npmjs.org/dsh-jev-guard",
                     "error": null,
-                    "latest_version": "0.5.6",
-                    "latest_published_at": "2026-10-17T10:36:02.174Z",
+                    "latest_version": "0.5.7",
+                    "latest_published_at": "2026-10-21T11:45:21.550Z",
                     "latest_error": null
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312",
-                "current_revision": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {
@@ -444,14 +511,14 @@
             "repository": "7starsseeker/dsh-jev-guard",
             "path": "",
             "revision": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "743895657ca9db7dc2e1a620cc84b78208a81711edc55f73ca0a7e8e62edaac6",
                 "code": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312",
                 "maintenance": "e4392940500466f4c718d5cb41afacf78fb7b9a713a22c6146015054ddd57d19"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

@@ -24,43 +24,95 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-01-github-1335766616-root-directory-0",
+                    "id": "2026-10-22-02-github-1335766616-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T02:06:34.673Z",
+                    "retrieved_at": "2026-10-22T09:35:30.984Z",
                     "membership": "present"
                 },
                 {
-                    "id": "2026-10-21-01-github-1335766616-root-directory-1",
+                    "id": "2026-10-22-02-github-1335766616-root-directory-1",
                     "url": "https://github.com/0xsline/awesome-deepseek-harness",
                     "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
-                    "retrieved_at": "2026-10-21T02:06:34.673Z",
+                    "retrieved_at": "2026-10-22T09:35:30.984Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-01-github-1335766616-root-author",
+                    "id": "2026-10-22-02-github-1335766616-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/2768651338/dsh-effort-slider/blob/97bf5c1e5881ea0fcfb543844346fe86b87ff620/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/2768651338/dsh-effort-slider",
+                            "commit": "97bf5c1e5881ea0fcfb543844346fe86b87ff620",
+                            "path": "README.md",
+                            "content_sha256": "bd6d8f295b6da043ffe5a92e2a8072aaa640e30562c4cbb338b46b78a2ac8b13"
+                        }
+                    ],
                     "revision": "97bf5c1e5881ea0fcfb543844346fe86b87ff620",
-                    "captured_at": "2026-10-21T02:06:34.673Z",
-                    "summary": "为 DSH 模型菜单增加推理强度滑块，并向第三方模型供给方言配置。",
-                    "artifact": "data/runs/2026-10-21-01/snapshots/2768651338--dsh-effort-slider/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:35:30.984Z",
+                    "summary": "给DSH模型思考档位提供滑块反馈，并向pi-ai缺失声明的模型补写reasoningEfforts与方言配置。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/2768651338--dsh-effort-slider/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-01-github-1335766616-root-source",
+                    "id": "2026-10-22-02-github-1335766616-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/2768651338/dsh-effort-slider/blob/97bf5c1e5881ea0fcfb543844346fe86b87ff620/src/effort-core.ts",
+                    "url": "https://github.com/2768651338/dsh-effort-slider/blob/97bf5c1e5881ea0fcfb543844346fe86b87ff620/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/2768651338/dsh-effort-slider",
+                            "commit": "97bf5c1e5881ea0fcfb543844346fe86b87ff620",
+                            "path": "README.md",
+                            "content_sha256": "bd6d8f295b6da043ffe5a92e2a8072aaa640e30562c4cbb338b46b78a2ac8b13"
+                        },
+                        {
+                            "repository_url": "https://github.com/2768651338/dsh-effort-slider",
+                            "commit": "97bf5c1e5881ea0fcfb543844346fe86b87ff620",
+                            "path": "package.json",
+                            "content_sha256": "635af2257153c13fdbf7983a99e0beedb96d54af4e7a6f354245a516b0184b89"
+                        },
+                        {
+                            "repository_url": "https://github.com/2768651338/dsh-effort-slider",
+                            "commit": "97bf5c1e5881ea0fcfb543844346fe86b87ff620",
+                            "path": "src/index.ts",
+                            "content_sha256": "de2a7d611f51150cefc2380bf9ca66537ac3c362066af03354b785a51f58d9af"
+                        },
+                        {
+                            "repository_url": "https://github.com/2768651338/dsh-effort-slider",
+                            "commit": "97bf5c1e5881ea0fcfb543844346fe86b87ff620",
+                            "path": "src/effort-core.ts",
+                            "content_sha256": "65f7e05822638f3bd6064a267f651b04ee885097e91b823b54dd67dd5f8d50c0"
+                        },
+                        {
+                            "repository_url": "https://github.com/2768651338/dsh-effort-slider",
+                            "commit": "97bf5c1e5881ea0fcfb543844346fe86b87ff620",
+                            "path": "src/client/effort/EffortPanel.tsx",
+                            "content_sha256": "678809b9add6e064b5dd970e97854b5595d2dd207a00034885fb9a4f9be5fcca"
+                        },
+                        {
+                            "repository_url": "https://github.com/2768651338/dsh-effort-slider",
+                            "commit": "97bf5c1e5881ea0fcfb543844346fe86b87ff620",
+                            "path": "src/client/effort/directory.ts",
+                            "content_sha256": "298199015f6b9548a62d22fe844b23dccd42a4c7870ae8702768cbd16b7393c0"
+                        },
+                        {
+                            "repository_url": "https://github.com/2768651338/dsh-effort-slider",
+                            "commit": "97bf5c1e5881ea0fcfb543844346fe86b87ff620",
+                            "path": "test/host.spec.mjs",
+                            "content_sha256": "5687126f7e23692fcd1d60dc771755dfa93f4e81d40a7f8113b573c9a4cd5b61"
+                        }
+                    ],
                     "revision": "97bf5c1e5881ea0fcfb543844346fe86b87ff620",
-                    "captured_at": "2026-10-21T02:06:34.673Z",
-                    "summary": "核查 src/effort-core.ts、src/index.ts、src/client/effort/EffortPanel.tsx；effort-core生成五档reasoning元数据和各协议compat映射；宿主读取settings并在revision核对后mutate，客户端滑块写入会话模型设置。",
-                    "artifact": "data/runs/2026-10-21-01/snapshots/2768651338--dsh-effort-slider/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:35:30.984Z",
+                    "summary": "核查 README.md、package.json、src/index.ts、src/effort-core.ts、src/client/effort/EffortPanel.tsx、src/client/effort/directory.ts、test/host.spec.mjs；SettingsForms定位/快照校验后供给pi-ai，客户端directory.select写会话选择并显示离散档。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/2768651338--dsh-effort-slider/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "固定提交源码抽读与作者材料核查；没有执行目标代码、测试、安装或真实宿主验收，没有确认独立用户效果。",
+                        "固定host供给/快照/卸载、effort-core映射/归属/合并、client选择错误与节流、代表生产纯逻辑测试；未穷尽WebGL与菜单DOM。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -71,9 +123,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "使用第三方模型路由的用户在发送前调整推理档位，希望请求参数与所选档位一致。",
+                    "text": "频繁调档且需要自定义模型在目录显示思考选项。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1335766616-root-source"
+                        "2026-10-22-02-github-1335766616-root-source"
                     ],
                     "dependencies": [
                         {
@@ -82,16 +134,16 @@
                             "fingerprint": "97bf5c1e5881ea0fcfb543844346fe86b87ff620"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:06:34.673Z",
+                    "reviewed_at": "2026-10-22T09:35:30.984Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "effort-core生成五档reasoning元数据和各协议compat映射；宿主读取settings并在revision核对后mutate，客户端滑块写入会话模型设置。",
+                    "text": "SettingsForms定位/快照校验后供给pi-ai，客户端directory.select写会话选择并显示离散档。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1335766616-root-source"
+                        "2026-10-22-02-github-1335766616-root-source"
                     ],
                     "dependencies": [
                         {
@@ -100,16 +152,16 @@
                             "fingerprint": "97bf5c1e5881ea0fcfb543844346fe86b87ff620"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:06:34.673Z",
+                    "reviewed_at": "2026-10-22T09:35:30.984Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "固定提交源码抽读与作者材料核查；没有执行目标代码、测试、安装或真实宿主验收，没有确认独立用户效果。",
+                    "text": "固定host供给/快照/卸载、effort-core映射/归属/合并、client选择错误与节流、代表生产纯逻辑测试；未穷尽WebGL与菜单DOM。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1335766616-root-source"
+                        "2026-10-22-02-github-1335766616-root-source"
                     ],
                     "dependencies": [
                         {
@@ -118,16 +170,16 @@
                             "fingerprint": "97bf5c1e5881ea0fcfb543844346fe86b87ff620"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:06:34.673Z",
+                    "reviewed_at": "2026-10-22T09:35:30.984Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "检查固定提交包清单与入口；安装说明属于作者主张，本次未验证分发产物与宿主兼容。",
+                    "text": "0.5.1 BSD-3-Clause，开发锁DSH0.2.1rc2，package未声明engines，依宿主运行ABI。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1335766616-root-source"
+                        "2026-10-22-02-github-1335766616-root-source"
                     ],
                     "dependencies": [
                         {
@@ -136,16 +188,16 @@
                             "fingerprint": "97bf5c1e5881ea0fcfb543844346fe86b87ff620"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:06:34.673Z",
+                    "reviewed_at": "2026-10-22T09:35:30.984Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "无单独外部服务成本依据；人工需确认方言、端点支持及宿主版本，模型推理开销可能随档位变化；未测延迟或费用。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 匹配宿主/原配置备份 | 核route端点方言 | 先备份pi-ai与核方言；初配工时未知 |\n| 持续使用 | UI/WebGL与选择请求；所选模型档位另计 | 核最后档位/请求与错误态 | 插件不新增模型调用；所选档位的供应商费用/时延另计且未知 |\n| 失败恢复 | 原pi-ai设置 | 人工撤注入/残compat | 卸载不还原持久供给；人工撤字段/残compat工时未知 |\n",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1335766616-root-source"
+                        "2026-10-22-02-github-1335766616-root-source"
                     ],
                     "dependencies": [
                         {
@@ -154,16 +206,16 @@
                             "fingerprint": "97bf5c1e5881ea0fcfb543844346fe86b87ff620"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:06:34.673Z",
+                    "reviewed_at": "2026-10-22T09:35:30.984Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "适合了解自定义路由协议的用户；用实际请求日志确认档位参数与服务端行为后再据此控制成本。",
+                    "text": "备份后单route试用，核实际请求及最后选择。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1335766616-root-source"
+                        "2026-10-22-02-github-1335766616-root-source"
                     ],
                     "dependencies": [
                         {
@@ -172,16 +224,16 @@
                             "fingerprint": "97bf5c1e5881ea0fcfb543844346fe86b87ff620"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:06:34.673Z",
+                    "reviewed_at": "2026-10-22T09:35:30.984Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "减少配置字段手改，但端点支持决定价值，视觉档位不提供效果保证。",
+                    "text": "#### 效果\n\n| 目标 | 源码支持 | 边界 |\n| --- | --- | --- |\n| 调档可见 | 滑块/颜色/错误态 | 显示不等选择成功 |\n| 自定义供给 | reasoningEfforts/compat | 端点可忽略/拒绝 |\n| 降配置覆盖 | revision重核 | 旧宿主无CAS窗口 |",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1335766616-root-source"
+                        "2026-10-22-02-github-1335766616-root-source"
                     ],
                     "dependencies": [
                         {
@@ -190,16 +242,16 @@
                             "fingerprint": "97bf5c1e5881ea0fcfb543844346fe86b87ff620"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:06:34.673Z",
+                    "reviewed_at": "2026-10-22T09:35:30.984Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "纯effort-core与宿主服务分离，deepEqualJson、注入识别和revision重读支撑幂等更新；复用时须保留用户自定义配置跳过条件。 源码依据：[src/effort-core.ts](https://github.com/2768651338/dsh-effort-slider/blob/97bf5c1e5881ea0fcfb543844346fe86b87ff620/src/effort-core.ts#L24)、[src/index.ts](https://github.com/2768651338/dsh-effort-slider/blob/97bf5c1e5881ea0fcfb543844346fe86b87ff620/src/index.ts#L114)、[src/client/effort/EffortPanel.tsx](https://github.com/2768651338/dsh-effort-slider/blob/97bf5c1e5881ea0fcfb543844346fe86b87ff620/src/client/effort/EffortPanel.tsx#L85)。",
+                    "text": "生产纯逻辑测试与revision防旧轮可借鉴，需真实所有权/可恢复配置。详见[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1335766616-root-source"
+                        "2026-10-22-02-github-1335766616-root-source"
                     ],
                     "dependencies": [
                         {
@@ -208,15 +260,69 @@
                             "fingerprint": "97bf5c1e5881ea0fcfb543844346fe86b87ff620"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:06:34.673Z",
+                    "reviewed_at": "2026-10-22T09:35:30.984Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "把可视滑块和宿主模型方言声明接合，少手动改配置。详见[Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1335766616-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335766616:root",
+                            "area": "code",
+                            "fingerprint": "97bf5c1e5881ea0fcfb543844346fe86b87ff620"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:35:30.984Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "supported",
+                    "text": "显示五档不证明端点支持，供给持久配置无卸载恢复，值等推归属与快速选择乱序需核。详见[Q03](#research-q03)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1335766616-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335766616:root",
+                            "area": "code",
+                            "fingerprint": "97bf5c1e5881ea0fcfb543844346fe86b87ff620"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:35:30.984Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "engineering",
+                    "basis": "unverified",
+                    "text": "研究注入所有权/原值比较恢复、端点能力契约及最后意图选择队列，比较错档与恢复成本。当前未验证。详见[Q05](#research-q05)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1335766616-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335766616:root",
+                            "area": "code",
+                            "fingerprint": "97bf5c1e5881ea0fcfb543844346fe86b87ff620"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:35:30.984Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T02:06:34.673Z",
+            "last_checked_at": "2026-10-22T09:35:30.984Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "97bf5c1e5881ea0fcfb543844346fe86b87ff620",
-                "reviewed_at": "2026-10-21T02:06:34.673Z",
+                "reviewed_at": "2026-10-22T09:35:30.984Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -228,61 +334,61 @@
                 "technical": {
                     "criteria": {
                         "novelty": 9,
-                        "mechanism": 15,
-                        "transferability": 10,
-                        "simplification": 4
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 8
                     },
-                    "rationale": "novelty：滑块属常见交互的宿主适配；mechanism：方言供给与revision保护改变配置可靠性；transferability：映射可移植但依赖协议；simplification：统一入口便利，协议差异仍在。",
+                    "rationale": "novelty小幅，滑块/方言已有；mechanism小幅，配置接线；transferability小幅，宿主pi-ai绑定；simplification实质，减少档位/配置步骤。",
                     "basis": "interpretation",
-                    "score": 38,
+                    "score": 30,
                     "evidence_ids": [
-                        "2026-10-21-01-github-1335766616-root-source"
+                        "2026-10-22-02-github-1335766616-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
                         "workflow": 9,
-                        "delivery": 8,
-                        "reach": 5,
+                        "delivery": 0,
+                        "reach": 10,
                         "economics": 4
                     },
-                    "rationale": "workflow：只改变发送前选档；delivery：请求参数可控但不改变交付物；reach：降低第三方路由配置门槛；economics：可调预算但未证明节省。",
+                    "rationale": "workflow小幅，选择方式；delivery无模型效果保证；reach实质，可视控件；economics小幅，效率未知且高档可能更贵。",
                     "basis": "interpretation",
-                    "score": 26,
+                    "score": 23,
                     "evidence_ids": [
-                        "2026-10-21-01-github-1335766616-root-source"
+                        "2026-10-22-02-github-1335766616-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "熟悉第三方协议的用户可试用推理滑块；先从实际请求确认五档字段及端点响应，再用它调整预算。",
+                "reason": "匹配宿主并能备份恢复pi-ai者可单route试用，先确认端点方言；不把通用五档和OFF显示当真实效果保证。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "发送前切换推理强度具体，主要适用自定义路由。"
+                        "rationale": "频繁档位选择明确。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "滑块省手改协议元数据，服务端未支持时没有额外效果。"
+                        "rationale": "滑块与供给便利，官方菜单/手配替代。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "effort-core映射和revision核对有源码，请求效果未实测。"
+                        "rationale": "固定链/纯逻辑测试可查，端点与选择时序具体未知。"
                     },
                     "cost": {
-                        "score": 15,
-                        "rationale": "无额外服务，但需维护协议兼容且高档可能增加推理费用。"
+                        "score": 10,
+                        "rationale": "持久配置恢复和方言维护需人工。"
                     }
                 },
-                "score": 64,
+                "score": 59,
                 "revision": "97bf5c1e5881ea0fcfb543844346fe86b87ff620",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T09:35:30.984Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-01-github-1335766616-root-source"
+                    "2026-10-22-02-github-1335766616-root-source"
                 ],
                 "dependencies": [
                     {
@@ -308,89 +414,62 @@
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T01:54:44Z",
-            "analysis_sha256": "307800259b73e6c4bf4669d62d7994a6ef8252bbd395ff6d43f64d05bfdfba60"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "283df593f5a50ff9a4737cabc28b77907217b1199be3abea4c8cb40376ec2568"
         },
         "publication.metadata": "data/plugins/2768651338--dsh-effort-slider/META.json",
         "publication.summaries": {
-            "text": "为 DSH 模型菜单增加推理强度滑块，并向第三方模型供给方言配置。",
+            "text": "给DSH模型思考档位提供滑块反馈，并向pi-ai缺失声明的模型补写reasoningEfforts与方言配置。",
             "revision": "97bf5c1e5881ea0fcfb543844346fe86b87ff620",
             "source_url": "https://github.com/2768651338/dsh-effort-slider/blob/97bf5c1e5881ea0fcfb543844346fe86b87ff620/README.md"
         },
         "publication.capabilities": {
             "revision": "97bf5c1e5881ea0fcfb543844346fe86b87ff620",
             "items": {
-                "后台": "推理档位元数据和多方言compat供给",
-                "界面": "模型菜单推理强度滑块"
-            }
+                "界面": "推理档滑块/颜色/火焰反馈",
+                "事件监听": "settings/adapter/volatile更新及可选llm trace",
+                "后台": "pi-ai reasoningEfforts/compat持久供给"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 滑块 | 会话调档 | 宿主选择成功需核 |\n| 方言供给 | 自定义目录/参数 | 非所有端点保证 |\n| 快照防护 | 降覆盖 | 值等归属与恢复缺口 |"
         },
         "publication.advice": {
             "revision": "97bf5c1e5881ea0fcfb543844346fe86b87ff620",
-            "text": "适合了解自定义路由协议的用户；用实际请求日志确认档位参数与服务端行为后再据此控制成本。"
+            "text": "备份后单route试用，核实际请求及最后选择。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/2768651338--dsh-effort-slider",
-        "reports": "# dsh-effort-slider\n\n> 为 DSH 模型菜单增加推理强度滑块，并向第三方模型供给方言配置。\n\n## 使用建议\n\n适合了解自定义路由协议的用户；用实际请求日志确认档位参数与服务端行为后再据此控制成本。\n\n**核查状态**：已实现机制有源码支持；贡献价值为条件性解释，未来设计假设未验证。本轮仅作固定版本源码核查，未安装、运行目标代码或验收宿主。\n\n- **用途**：使用第三方模型路由的用户在发送前调整推理档位，希望请求参数与所选档位一致。\n- **亮点**：相对内置档位菜单，主要增量不是火焰视觉，而是为缺少推理元数据的第三方路由补齐映射，并在写前重读防止覆盖并发用户编辑；将界面控制和线上协议适配联结。\n- **思考**：界面存在五档不证明端点接受或区别处理五档。wireFor仅在openai-completions注入compat，其余依赖pi-ai；off多数映射null即不发参数，不能保证服务端关闭思考。resolveModelInfo失败视为无原生推理也可能造成不必要供给。\n- **建议**：适合了解自定义路由协议的用户；用实际请求日志确认档位参数与服务端行为后再据此控制成本。\n\n## 能力与限制\n\n参照DSH内置档位菜单和手工pi-ai配置，未比较其他滑块插件实现。\n\neffort-core生成五档reasoning元数据和各协议compat映射；宿主读取settings并在revision核对后mutate，客户端滑块写入会话模型设置。\n\n\nDSH llm/settings和客户端模型目录服务、pi-ai映射及兼容端点；README声明0.2.1-rc.2适配未由本次运行确认。\n\n读取模型目录，跳过原生推理与用户自定义项，供给缺失映射；用户拖动释放吸附档位，写入后下一请求使用所选设置，错误显示状态。\n\n无单独外部服务成本依据；人工需确认方言、端点支持及宿主版本，模型推理开销可能随档位变化；未测延迟或费用。\n\n减少配置字段手改，但端点支持决定价值，视觉档位不提供效果保证。\n\n## 能力清单\n\n- **后台**：推理档位元数据和多方言compat供给\n- **界面**：模型菜单推理强度滑块\n\n## 工程分析\n\n纯effort-core与宿主服务分离，deepEqualJson、注入识别和revision重读支撑幂等更新；复用时须保留用户自定义配置跳过条件。 源码依据：[src/effort-core.ts](https://github.com/2768651338/dsh-effort-slider/blob/97bf5c1e5881ea0fcfb543844346fe86b87ff620/src/effort-core.ts#L24)、[src/index.ts](https://github.com/2768651338/dsh-effort-slider/blob/97bf5c1e5881ea0fcfb543844346fe86b87ff620/src/index.ts#L114)、[src/client/effort/EffortPanel.tsx](https://github.com/2768651338/dsh-effort-slider/blob/97bf5c1e5881ea0fcfb543844346fe86b87ff620/src/client/effort/EffortPanel.tsx#L85)。\n\n## 未来设计假设（未验证）\n\n待验证假设：以端点能力探测结果约束滑块档位，并区分关闭与未发送参数，可减少显示成功而实际无效的控制。由统一档位和协议差异推导，探测会产生请求成本且不能依靠模型自述。\n\n最小验证：使用记录请求体的不同方言端点，逐档检查字段与响应usage；注入不支持字段及配置并发编辑，比较误报有效控制率。若探测不能可靠区分端点支持则不发布能力结论。\n\n## 核查说明\n\n- **仓库**：[2768651338/dsh-effort-slider](https://github.com/2768651338/dsh-effort-slider)\n- **版本号**：0.5.1（[固定提交 97bf5c1](https://github.com/2768651338/dsh-effort-slider/tree/97bf5c1e5881ea0fcfb543844346fe86b87ff620)）\n- **版本日期**：2026-10-20（固定提交日期，北京时间；不是包发布日期）\n- **实际范围**：固定提交源码抽读与作者材料核查；没有执行目标代码、测试、安装或真实宿主验收，没有确认独立用户效果。\n- **来源**：作者README与上述固定版本源码；未确认独立采用效果，目录收录与下载统计不作效果证据。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：41f48b9b602738d7b16864e7ced25592a149047ba2eb89ecc5dfe5d4abe7034a。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 10 | 2697 | — | — | 36270 |\n| .js | source | 2 | 1760 | 1562 | 223 | — |\n| .ts | source | 9 | 1938 | 1450 | 351 | — |\n| .tsx | source | 1 | 426 | 321 | 85 | — |\n| .mjs | test | 8 | 1416 | 1167 | 156 | — |\n| .ts | test | 1 | 8 | 6 | 1 | — |\n\n排除 1 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n",
+        "reports": "# dsh-effort-slider\n\n> 给DSH模型思考档位提供滑块反馈，并向pi-ai缺失声明的模型补写reasoningEfforts与方言配置。\n\n## 研究范围\n\n- **仓库**：[2768651338/dsh-effort-slider](https://github.com/2768651338/dsh-effort-slider)\n- **版本号**：0.5.1（[固定提交 97bf5c1e5881ea0fcfb543844346fe86b87ff620](https://github.com/2768651338/dsh-effort-slider/tree/97bf5c1e5881ea0fcfb543844346fe86b87ff620)）\n- **版本日期**：2026-10-20（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n配置供给/revision与UI错误处理可查；端点真实效果、持久回滚和并发最终选择有限制。\n\n## 洞察短评\n\n- **用途**：频繁调档且需要自定义模型在目录显示思考选项。详见[Q01](#research-q01)。\n- **亮点**：把可视滑块和宿主模型方言声明接合，少手动改配置。详见[Q01](#research-q01)。\n- **思考**：显示五档不证明端点支持，供给持久配置无卸载恢复，值等推归属与快速选择乱序需核。详见[Q03](#research-q03)。\n- **建议**：研究注入所有权/原值比较恢复、端点能力契约及最后意图选择队列，比较错档与恢复成本。当前未验证。详见[Q05](#research-q05)。\n\n采用建议：备份后单route试用，核实际请求及最后选择。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n把可视滑块和宿主模型方言声明接合，少手动改配置。详见[Q01](#research-q01)。\n\n## 关键质疑\n\n显示五档不证明端点支持，供给持久配置无卸载恢复，值等推归属与快速选择乱序需核。详见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n研究注入所有权/原值比较恢复、端点能力契约及最后意图选择队列，比较错档与恢复成本。当前未验证。详见[Q05](#research-q05)。\n\n进一步从同值手配/残键/无CAS与select乱序核所有权和最后意图。\n\n## 场景与替代办法\n\n频繁调档且需要自定义模型在目录显示思考选项。详见[Q01](#research-q01)。\n\n官方思考菜单与手配pi-ai方言，视觉便利不等提升推理能力。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 条件 | 用途 | 失效影响 |\n| --- | --- | --- |\n| DSH SettingsForms/llm | 供给 | 版本契约 |\n| pi-ai方言与端点 | 真请求 | 显示不证明支持 |\n| directory.select | 会话选择 | 并发顺序依宿主 |\n| 原配置备份 | 恢复 | 卸载不还原 |\n\n#### 启动步骤\n\n| 步骤 | 执行者 | 判断标准 |\n| --- | --- | --- |\n| 备份并选单route | 用户 | 方言可核 |\n| 看供给日志 | 用户 | 不覆盖自定义 |\n| 拖档核目录/请求 | 用户 | 最后值与端点一致 |\n| 停用后查配置 | 用户 | 注入仍可能保留 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 匹配宿主/原配置备份 | 核route端点方言 | 先备份pi-ai与核方言；初配工时未知 |\n| 持续使用 | UI/WebGL与选择请求；所选模型档位另计 | 核最后档位/请求与错误态 | 插件不新增模型调用；所选档位的供应商费用/时延另计且未知 |\n| 失败恢复 | 原pi-ai设置 | 人工撤注入/残compat | 卸载不还原持久供给；人工撤字段/残compat工时未知 |\n\n\n#### 效果\n\n| 目标 | 源码支持 | 边界 |\n| --- | --- | --- |\n| 调档可见 | 滑块/颜色/错误态 | 显示不等选择成功 |\n| 自定义供给 | reasoningEfforts/compat | 端点可忽略/拒绝 |\n| 降配置覆盖 | revision重核 | 旧宿主无CAS窗口 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**推理滑块怎样供给真实配置，显示/请求/模型行为和恢复责任如何区分？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 滑块只是外观吗？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n面向经常切模型思考档位的DSH用户，滑块连续拖动、松手吸附离散档，菜单/模型座位颜色和火焰反馈提高档位可见性。host另会对pi-ai配置中缺reasoning声明的自定义模型写reasoningEfforts/compat或目录modelOverrides，使宿主目录显示档位并交适配器翻译线上参数。贡献是UI加配置供给，不是增强模型本身推理能力。\n\n“任何第三方模型真实生效”不能由能显示滑块或请求options含reasoningEffort推出，端点可能忽略/拒绝参数，off多数方言为null即不发参数而不一定关闭服务默认思考。Ultracode仅max显示名，不是新推理算法。成功应分别核UI选中、宿主选择保存、实际请求参数和目标端点行为，效率/正确率增益需要独立任务对照。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:33-37](https://github.com/2768651338/dsh-effort-slider/blob/97bf5c1e5881ea0fcfb543844346fe86b87ff620/README.md#L33-L37)\n\n作者版本与效果主张。\n\n```text\n> 🔧 **v0.5.1** — DSH **0.2.1-rc.2** compatibility: volatile settings with live updates, revision-checked provisioning, resolved `RemoteResult` failures, nested model-label slots, menu focus/blur integration, and safe handling of unavailable models and Session changes. The bundle patch and client registration now use the same scoped package name. Live provisioning queues settings writes outside the active HMR transaction; CSS names and source maps stay stable across checkout paths. Includes real DSH browser validation.\n>\n> 🆕 **v0.5.0** — Evaluation-fix batch. Reliability: the panel splits loading / load-failed / unsupported into three states with a retry button; failed slider writes surface a transient red status instead of failing silently; user config edits made mid-provision are detected (the entry is re-read before `mutate`, conflicting rounds defer); every host provisioning failure path now logs a warning, and an unrecognized Effort row produces a one-time diagnostic. Panel UX: re-anchors on scroll/resize, closes on Esc / outside click / anchor unmount, and clicking the Effort row toggles it; tick dots and labels align with the real snap points; the slider carries `aria-label` / `aria-valuetext`; UI text is bilingual (zh/en, follows `<html lang>`). New `debugReport` option: per-route/per-model provisioning detail plus an optional read-only `llm/stream` tracer logging route/model/effort per request; a `?` help hint in the panel header points at `enabled` / dialect / `debugReport`. Also: GitHub Actions CI (typecheck + tests + build + stale-artifact gate), the WebGL fire no longer burns at 60 fps while invisible, and the npm package is renamed to `@txc2768651338/dsh-effort-slider` (the old unscoped `dsh-effort-slider` name is retired).\n>\n> 🆕 **v0.4.0** — Ported to DSH **0.2.0**: DSH replaced its settings service with `SettingsForms` (settings are now profile entry configs; `installSection` / `settings.get` / `settings/updated` are gone). The host half now locates the pi-ai profile entry (`llm-pi-ai`), reads it via `settings.describe()`, writes via `settings.mutate()`, and listens to `settings/document-updated`. The client half derives the current session from `retainedBy.mainView` (`SessionListState.current` was removed). Plugin options (`enabled` / `defaultDialect` / `routes`) live in the plugin's entry config, editable in the DSH settings page. DSH ≤ 0.1.5 is no longer supported (use v0.3.0 there).\n```\n\n**依据 2 · 源码核查**：[src/effort-core.ts:20-49](https://github.com/2768651338/dsh-effort-slider/blob/97bf5c1e5881ea0fcfb543844346fe86b87ff620/src/effort-core.ts#L20-L49)\n\n通用档与off映射。\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\n/** 通用 5 档刻度 id（与客户端兜底刻度一致；pi-ai 原生词汇的子集）。 */\nexport const UNIVERSAL_EFFORT_IDS = ['off', 'low', 'medium', 'high', 'max'] as const\n\n/** 通用 reasoning 元数据（注入给未声明 reasoning 的适配器模型）。 */\nexport function universalReasoning(defaultEffort: string = 'off'): {\n  efforts: Array<{ id: string; name: string }>\n  defaultEffort: string\n} {\n  return {\n    efforts: [\n      { id: 'off', name: 'OFF' },\n      { id: 'low', name: 'Low' },\n      { id: 'medium', name: 'Medium' },\n      { id: 'high', name: 'High' },\n      { id: 'max', name: 'Ultracode' },\n    ],\n    defaultEffort,\n  }\n}\n\n/**\n * 每个线方言的线级映射：reasoningEfforts 字典（pi-ai THINKING_LEVELS 词汇），\n * off 恒为 null（pi-ai 语义：声明支持、不发参数），其余档位为线上拼写。\n */\nconst WIRE: Record<string, string | null> = {\n  off: null,\n  low: 'low',\n  medium: 'medium',\n  high: 'high',\n  max: 'max',\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/index.ts:391-403](https://github.com/2768651338/dsh-effort-slider/blob/97bf5c1e5881ea0fcfb543844346fe86b87ff620/src/index.ts#L391-L403)\n\n只能追踪options非线上请求。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n  // ——档位是否随请求下发（llm/stream 瀑布，只读透传）。线上翻译发生在\n  // pi-ai 适配器内部、请求体不可见，因此只记录事实、不推断方言对错：\n  // 追踪能证明「档位已下发」，剩下的嫌疑才收敛到线上翻译层。\n  let traceInstalled = false\n  const installRequestTrace = (): void => {\n    if (!readConfig().debugReport || traceInstalled) return\n    traceInstalled = true\n    ctx.on('llm/stream', (options, next) => {\n      if (readConfig().debugReport) {\n        const purpose = options.purpose === undefined ? '' : ` purpose=${options.purpose}`\n        ctx.logger.info(`effort-slider: [debug] request route=${options.provider} model=${options.model} effort=${options.reasoningEffort ?? '(none)'}${purpose}`)\n      }\n      return next()\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 配置供给怎样避免覆盖用户？\n\n**研究主题：**功能与机制、依赖、兼容与流程\n\n#### 完整回答\n\nhost用settings.describe定位llm-pi-ai条目，失配时以listConfigurableProviders的settingsNs交叉找；目录能力解析用于避原生reasoning，失败不缓存为无能力。纯逻辑对false/自定义字典跳过，缺失或“与任一插件方言字典完全相等”则当可供给，openai-completions才补compat。显式models必须整个数组set以适应宿主path规则，目录路由则按modelOverrides写。\n\n提交前重读revision或deepEqual快照，配置/停用变化也放弃旧轮；mutate带expected revision，队列与HMR外执行用于避自触发重挂。支持八方言不代表所有端点语义均测。依赖DSH0.2.1系SettingsForms mutate/volatile、llm目录和pi-ai协议翻译；package只有开发依赖/无engines提示，实际运行来自打包和宿主，安装应按固定匹配版本。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:130-156](https://github.com/2768651338/dsh-effort-slider/blob/97bf5c1e5881ea0fcfb543844346fe86b87ff620/src/index.ts#L130-L156)\n\n条目定位。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\n  const forms = (): SettingsForm[] => {\n    try {\n      return (settings.describe() ?? []) as SettingsForm[]\n    } catch {\n      return []\n    }\n  }\n\n  /**\n   * 定位 pi-ai 条目 id。优先按约定 id 直配；失配（条目被改名）时用 llm 的\n   * 可配置提供方目录交叉定位——pi-ai 目录条目携带它自己的 settingsNs。\n   */\n  let piAiNs: string | undefined\n  const findPiAiNs = (): string | undefined => {\n    const all = forms()\n    const direct = all.find((form) => form.ns === PI_AI_DEFAULT_NS)\n    if (direct !== undefined && isPiAiValue(direct.value)) return direct.ns\n    let directoryNs: Set<string> | undefined\n    try {\n      directoryNs = new Set(llm.listConfigurableProviders().map((entry) => entry.settingsNs))\n    } catch {\n      directoryNs = undefined\n    }\n    for (const form of all) {\n      if (directoryNs?.has(form.ns) === true && isPiAiValue(form.value)) return form.ns\n    }\n    return undefined\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/index.ts:191-206](https://github.com/2768651338/dsh-effort-slider/blob/97bf5c1e5881ea0fcfb543844346fe86b87ff620/src/index.ts#L191-L206)\n\n能力判定。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n  // ---- 1. 线级供给：为 pi-ai 自定义模型补写 reasoningEfforts / compat ----\n  const nativeReasoning = new Map<string, boolean>()\n  const hasNativeReasoning = async (route: string, modelId: string): Promise<boolean> => {\n    const key = `${route}\\u0000${modelId}`\n    const memo = nativeReasoning.get(key)\n    if (memo !== undefined) return memo\n    try {\n      const info = await llm.resolveModelInfo(route, modelId)\n      const result = info?.reasoning !== undefined\n      nativeReasoning.set(key, result)\n      return result\n    } catch (error) {\n      // 解析异常 ≠ 确认无原生 reasoning：异常不进缓存（否则网络抖动期间会把\n      // 原生 reasoning 模型永久误判，进而向它写 modelOverrides），只记日志并\n      // 按「本轮未知」处理。\n      ctx.logger.warn(`effort-slider: resolveModelInfo(${route}, ${modelId}) failed — treated as no native reasoning for this round`)\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/effort-core.ts:192-234](https://github.com/2768651338/dsh-effort-slider/blob/97bf5c1e5881ea0fcfb543844346fe86b87ff620/src/effort-core.ts#L192-L234)\n\n用户声明/整数组。\n\n<details>\n<summary>查看原文（43行）</summary>\n\n```text\nexport function injectedModels(\n  profile: PiAiProfile,\n  dialect: WireDialect,\n  apiOf: (modelId: string) => string | undefined,\n  onDecision?: InjectedModelDecision,\n): { models: Array<Record<string, unknown>>; changed: boolean } {\n  const models = profile.models ?? []\n  let changed = false\n  const next = models.map((entry) => {\n    const result: Record<string, unknown> = { ...(entry as Record<string, unknown>) }\n    // 用户显式声明（false 或自定义字典）一律尊重，原样保留。\n    if (entry.reasoningEfforts === false) {\n      onDecision?.(entry.id, 'skip-user-false')\n      return result\n    }\n    if (entry.reasoningEfforts !== undefined && !isOurInjection(entry.reasoningEfforts)) {\n      onDecision?.(entry.id, 'skip-user-custom')\n      return result\n    }\n    const api = apiOf(entry.id) ?? profile.api\n    const injection = wireFor(dialect, api === 'openai-completions')\n    const fields: Array<'reasoningEfforts' | 'compat'> = []\n    if (!deepEqualJson(entry.reasoningEfforts, injection.reasoningEfforts)) {\n      result.reasoningEfforts = injection.reasoningEfforts\n      changed = true\n      fields.push('reasoningEfforts')\n    }\n    if (injection.compat !== undefined) {\n      const compat = (entry.compat ?? {}) as Record<string, unknown>\n      const patch: Record<string, unknown> = {}\n      for (const [key, value] of Object.entries(injection.compat)) {\n        if (compat[key] !== value) patch[key] = value\n      }\n      if (Object.keys(patch).length > 0) {\n        result.compat = { ...compat, ...patch }\n        changed = true\n        fields.push('compat')\n      }\n    }\n    onDecision?.(entry.id, fields.length > 0 ? 'write' : 'skip-current', fields.length > 0 ? fields : undefined, api)\n    return result\n  })\n  return { models: next, changed }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/index.ts:316-342](https://github.com/2768651338/dsh-effort-slider/blob/97bf5c1e5881ea0fcfb543844346fe86b87ff620/src/index.ts#L316-L342)\n\nrevision提交。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\n    // 竞态防御：上面的 ops 基于先前快照计算，而 models 只能整数组替换——\n    // 若快照读取后用户恰好在设置页编辑了 pi-ai 条目，这次写入会覆盖用户的\n    // 修改，且写入后的幂等回声会掩盖丢失。mutate 前重读一次，快照已前移\n    // （revision 变化或值不再一致）就放弃本轮：用户的编辑会触发\n    // document-updated，下一轮供给基于新快照自然重来。\n    const reread = forms().find((form) => form.ns === targetNs)\n    const unchanged = entry !== undefined && reread !== undefined && (\n      (typeof entry.revision === 'number' && typeof reread.revision === 'number')\n        ? reread.revision === entry.revision\n        : deepEqualJson(entry.value, reread.value)\n    )\n    if (!unchanged) {\n      ctx.logger.info('effort-slider: pi-ai entry changed during provisioning — deferring to the newer edit')\n      return true\n    }\n    // volatile 配置可在等待模型目录期间原地更新；停用/切换方言后不提交旧轮次。\n    if (disposed || !deepEqualJson(cfg, readConfig())) return true\n    if (cfg.debugReport) {\n      // 明细替代单行计数（P3-1）：逐路由逐模型报告写入了什么、为何跳过。\n      emitDebugReport(report, ops.length)\n    } else {\n      ctx.logger.info(`effort-slider: provisioning ${ops.length} field(s) across pi-ai models`)\n    }\n    try {\n      await settings.mutate(targetNs, ops, typeof entry.revision === 'number' ? entry.revision : undefined)\n      // 目录模型的原生 reasoning 判定可能因刚写入的声明而过期，下次重新解析。\n      nativeReasoning.clear()\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/effort-core.ts:8-17](https://github.com/2768651338/dsh-effort-slider/blob/97bf5c1e5881ea0fcfb543844346fe86b87ff620/src/effort-core.ts#L8-L17)\n\n八方言。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\nexport const DIALECT_KEYS = [\n  'effort',\n  'deepseek',\n  'openrouter',\n  'together',\n  'zai',\n  'qwen',\n  'string-thinking',\n  'ant-ling',\n] as const\n```\n\n</details>\n\n**依据 6 · 源码核查**：[package.json:39-65](https://github.com/2768651338/dsh-effort-slider/blob/97bf5c1e5881ea0fcfb543844346fe86b87ff620/package.json#L39-L65)\n\n宿主开发版本。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\n  },\n  \"devDependencies\": {\n    \"@deepseek-ai/cordis\": \"^4.0.5\",\n    \"@deepseek-ai/cordis-plugin-group\": \"1.0.5\",\n    \"@deepseek-ai/cordis-plugin-include\": \"1.0.10\",\n    \"@deepseek-ai/cordis-plugin-loader\": \"1.0.6\",\n    \"@deepseek-ai/dsh-api-session-controller\": \"0.2.1-rc.2\",\n    \"@deepseek-ai/dsh-client-store\": \"0.2.1-rc.2\",\n    \"@deepseek-ai/dsh-client-ui-model-selection\": \"0.2.1-rc.2\",\n    \"@deepseek-ai/dsh-llm\": \"0.2.1-rc.2\",\n    \"@deepseek-ai/dsh-settings\": \"0.2.1-rc.2\",\n    \"@deepseek-ai/schemastery\": \"^3.18.5\",\n    \"@types/node\": \"^24.13.4\",\n    \"@types/react\": \"^18.3.31\",\n    \"@types/react-dom\": \"^18.3.7\",\n    \"immer\": \"^10.2.0\",\n    \"jsdom\": \"^30.0.1\",\n    \"lightningcss\": \"^1.33.0\",\n    \"playwright\": \"^1.64.1\",\n    \"react\": \"18.3.1\",\n    \"react-dom\": \"18.3.1\",\n    \"tsdown\": \"^0.22.14\",\n    \"typescript\": \"^5.9.3\",\n    \"yaml\": \"^2.9.1\",\n    \"zustand\": \"~4.5.7\"\n  },\n  \"repository\": {\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 持久变更和滑块写入有哪些边界？\n\n**研究主题：**缺陷与关键质疑\n\n#### 完整回答\n\n供给直接持久改其他pi-ai条目，dispose只停retry/disposed，不回滚已写reasoningEfforts/compat；enabled=false停止新供给不恢复旧配置。isOurInjection靠值相等推归属，用户手工写了恰好相同字典也会被当插件注入而随方言更新，缺明确所有权/原值备份。compat按当前注入合并，方言切换时旧方言额外键不一定删除，不能把换路由方言当干净配置替换。无revision时重读deepEqual到mutate之间仍有窗口，强CAS要宿主支持。\n\n客户端每16ms最多写一次但不串行等待，pointerup/blur再补发；writeSeq只压旧错误显示，不取消旧select或防服务端乱序落地。失败时不回退滑块，header短暂红色提示，所以显示位置不等实际选择成功。共享directory.select返回RemoteResult有显式错误转换，是积极改进；快速拖动/切会话的真实最终排序仍依宿主。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/effort-core.ts:146-150](https://github.com/2768651338/dsh-effort-slider/blob/97bf5c1e5881ea0fcfb543844346fe86b87ff620/src/effort-core.ts#L146-L150)\n\n值等推归属。\n\n```text\n/** 判断一个 reasoningEfforts 值是否与我们任一方言的注入一致（即由本插件写入）。 */\nexport function isOurInjection(reasoningEfforts: unknown): boolean {\n  if (reasoningEfforts === null || typeof reasoningEfforts !== 'object') return false\n  return DIALECT_KEYS.some((dialect) =>\n    deepEqualJson(reasoningEfforts, wireFor(dialect, true).reasoningEfforts)\n```\n\n**依据 2 · 源码核查**：[src/effort-core.ts:219-228](https://github.com/2768651338/dsh-effort-slider/blob/97bf5c1e5881ea0fcfb543844346fe86b87ff620/src/effort-core.ts#L219-L228)\n\ncompat合并。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n    if (injection.compat !== undefined) {\n      const compat = (entry.compat ?? {}) as Record<string, unknown>\n      const patch: Record<string, unknown> = {}\n      for (const [key, value] of Object.entries(injection.compat)) {\n        if (compat[key] !== value) patch[key] = value\n      }\n      if (Object.keys(patch).length > 0) {\n        result.compat = { ...compat, ...patch }\n        changed = true\n        fields.push('compat')\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/index.ts:316-342](https://github.com/2768651338/dsh-effort-slider/blob/97bf5c1e5881ea0fcfb543844346fe86b87ff620/src/index.ts#L316-L342)\n\n弱快照与强revision。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\n    // 竞态防御：上面的 ops 基于先前快照计算，而 models 只能整数组替换——\n    // 若快照读取后用户恰好在设置页编辑了 pi-ai 条目，这次写入会覆盖用户的\n    // 修改，且写入后的幂等回声会掩盖丢失。mutate 前重读一次，快照已前移\n    // （revision 变化或值不再一致）就放弃本轮：用户的编辑会触发\n    // document-updated，下一轮供给基于新快照自然重来。\n    const reread = forms().find((form) => form.ns === targetNs)\n    const unchanged = entry !== undefined && reread !== undefined && (\n      (typeof entry.revision === 'number' && typeof reread.revision === 'number')\n        ? reread.revision === entry.revision\n        : deepEqualJson(entry.value, reread.value)\n    )\n    if (!unchanged) {\n      ctx.logger.info('effort-slider: pi-ai entry changed during provisioning — deferring to the newer edit')\n      return true\n    }\n    // volatile 配置可在等待模型目录期间原地更新；停用/切换方言后不提交旧轮次。\n    if (disposed || !deepEqualJson(cfg, readConfig())) return true\n    if (cfg.debugReport) {\n      // 明细替代单行计数（P3-1）：逐路由逐模型报告写入了什么、为何跳过。\n      emitDebugReport(report, ops.length)\n    } else {\n      ctx.logger.info(`effort-slider: provisioning ${ops.length} field(s) across pi-ai models`)\n    }\n    try {\n      await settings.mutate(targetNs, ops, typeof entry.revision === 'number' ? entry.revision : undefined)\n      // 目录模型的原生 reasoning 判定可能因刚写入的声明而过期，下次重新解析。\n      nativeReasoning.clear()\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/index.ts:415-422](https://github.com/2768651338/dsh-effort-slider/blob/97bf5c1e5881ea0fcfb543844346fe86b87ff620/src/index.ts#L415-L422)\n\n卸载不撤持久字段。\n\n```text\n  ctx.effect(\n    () => () => {\n      disposed = true\n      if (retryTimer !== null) clearTimeout(retryTimer)\n      retryTimer = null\n    },\n    'ui-effort-slider: provisioning retry cleanup',\n  )\n```\n\n**依据 5 · 源码核查**：[src/client/effort/EffortPanel.tsx:250-294](https://github.com/2768651338/dsh-effort-slider/blob/97bf5c1e5881ea0fcfb543844346fe86b87ff620/src/client/effort/EffortPanel.tsx#L250-L294)\n\n并发写/错误/commit。\n\n<details>\n<summary>查看原文（45行）</summary>\n\n```text\n    // 新一笔写入开始：上一笔的失败态就此过时。\n    setWriteError(false)\n    if (writeErrorTimerRef.current !== null) {\n      clearTimeout(writeErrorTimerRef.current)\n      writeErrorTimerRef.current = null\n    }\n    void selectEffort(directory, {\n      provider: current.provider,\n      model: current.model,\n      reasoningEffort: effort.id,\n    }).catch((error: unknown) => {\n      console.warn('[effort-slider] selectModel failed:', error)\n      // 已被更新的写入取代：旧写入的迟到拒绝不再显示。\n      if (seq !== writeSeqRef.current) return\n      // 不回退滑块位置（用户可直接重拖）；header 状态文字短暂切换为错误态。\n      setWriteError(true)\n      writeErrorTimerRef.current = setTimeout(() => {\n        writeErrorTimerRef.current = null\n        setWriteError(false)\n      }, WRITE_ERROR_VISIBLE_MS)\n    })\n  }\n  const lastWriteRef = useRef(0)\n\n  const onInput = (event: React.FormEvent<HTMLInputElement>): void => {\n    if (!usable) return\n    const v = Number((event.target as HTMLInputElement).value)\n    setRawValue(v)\n    // 每帧最多一次写入，避免拖动中请求堆积造成尾部延迟。\n    const now = performance.now()\n    if (now - lastWriteRef.current >= 16) {\n      lastWriteRef.current = now\n      writeEffort(v)\n    }\n  }\n\n  /** 松手/失焦/键盘结束时吸附到最近档位并补发一次确认。 */\n  const commit = (event: React.SyntheticEvent<HTMLInputElement>): void => {\n    if (!usable) return\n    const v = Number((event.target as HTMLInputElement).value)\n    const idx = Math.round(v / step100)\n    setRawValue(idx * step100)\n    setDragging(false)\n    writeEffort(v)\n  }\n```\n\n</details>\n\n**依据 6 · 源码核查**：[src/client/effort/directory.ts:106-109](https://github.com/2768651338/dsh-effort-slider/blob/97bf5c1e5881ea0fcfb543844346fe86b87ff620/src/client/effort/directory.ts#L106-L109)\n\nRemoteResult拒绝。\n\n```text\n/** 兼容旧版 rejection 与 0.2.1 的 RemoteResult，且接住同步抛错。 */\nexport async function selectEffort(directory: ModelDirectoryLike, selection: DirectorySelection): Promise<void> {\n  const result = await directory.select(selection)\n  if (result?.ok === false) throw new Error(`${result.error.code}: ${result.error.message}`)\n```\n\n#### 缺口\n\n- 真实宿主对并发select的排序/最后一次意图与端点档位语义\n  **影响：**滑块显示和请求选项不能单独证明实际最后档位与模型效果\n  **进一步探讨：**用延迟乱序select和固定端点请求样例对照，核最终目录与实际请求\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 工程与分阶段成本有什么证据？\n\n**研究主题：**效果与总成本、工程质量与复用\n\n#### 完整回答\n\n纯effort-core、host provisioning和client directory分离，测试直接导入纯逻辑检查false/custom跳过与整数组补丁，比复制实现更能守契约。宿主revision快照检查、配置旧轮失效和错误显示是值得复用的工程细节；README真实浏览器验证为作者声称，本次只读关键测试不执行。\n\n首次需备份pi-ai配置、按route明确方言并确认端点支持，不只是改外观。持续拖动频繁select调用及WebGL渲染占客户端资源，host目录枚举/能力解析和配置更新亦有开销；开启debug记录route/model/effort，不记录请求正文但可能包含项目服务名。插件不新增模型请求，所选高档位可能改变真实延迟/token与供应商收费，未提供统一效果/成本对照。失败恢复需比对原配置/当前字段并人工撤销注入，卸载不会还原；错误方言可能使模型调用失败。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[test/host.spec.mjs:1-40](https://github.com/2768651338/dsh-effort-slider/blob/97bf5c1e5881ea0fcfb543844346fe86b87ff620/test/host.spec.mjs#L1-L40)\n\n导入生产纯逻辑测试。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n/**\n * 宿主侧纯逻辑单测（node 原生类型剥离直接导入 TS 源码）。\n * 运行：node test/host.spec.mjs\n */\nimport {\n  DIALECT_KEYS,\n  buildProvisionOps,\n  dialectAppliesNote,\n  isOurInjection,\n  universalReasoning,\n  wireFor,\n} from '../src/effort-core.ts'\n\nlet failures = 0\nfunction assert(cond, msg) {\n  if (!cond) { failures++; console.error('FAIL:', msg) }\n  else console.log('ok:', msg)\n}\nconst json = (v) => JSON.stringify(v)\n\n// ---- universalReasoning ----\nconst u = universalReasoning('off')\nassert(json(u.efforts.map((e) => e.id)) === json(['off', 'low', 'medium', 'high', 'max']), 'universal ids are off/low/medium/high/max')\nassert(u.efforts[u.efforts.length - 1].name === 'Ultracode', 'max level is named Ultracode')\nassert(u.defaultEffort === 'off', 'default effort off')\n\n// ---- wireFor dialects ----\nassert(json(wireFor('effort', true)) === json({ reasoningEfforts: { off: null, low: 'low', medium: 'medium', high: 'high', max: 'max' }, compat: { supportsReasoningEffort: true } }), 'effort dialect: verbatim levels + supportsReasoningEffort')\nassert(wireFor('effort', false).compat === undefined, 'effort dialect: no compat on non-openai-completions')\nassert(json(wireFor('deepseek', true).compat) === json({ thinkingFormat: 'deepseek', supportsReasoningEffort: true }), 'deepseek dialect compat')\nassert(wireFor('openrouter', true).reasoningEfforts.off === 'none', 'openrouter off maps to none')\nassert(json(wireFor('qwen', true).compat) === json({ thinkingFormat: 'qwen' }), 'qwen dialect compat')\nassert(DIALECT_KEYS.length === 8, '8 dialects')\n\n// ---- buildProvisionOps: models array ----\nconst profile = { models: [{ id: 'm1' }, { id: 'm2', reasoningEfforts: false }, { id: 'm3', reasoningEfforts: { off: null, low: 'x' } }] }\nconst ops = await buildProvisionOps('rt', profile, 'effort', (id) => id === 'm1' ? 'openai-completions' : undefined)\nconst paths = ops.map((o) => o.path.join('/'))\nassert(paths.length === 1 && paths[0] === 'providers/rt/models', 'models branch emits ONE whole-array set op (path has no array index)')\nconst injected = ops[0].value\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/index.ts:398-403](https://github.com/2768651338/dsh-effort-slider/blob/97bf5c1e5881ea0fcfb543844346fe86b87ff620/src/index.ts#L398-L403)\n\ndebug日志字段。\n\n```text\n    ctx.on('llm/stream', (options, next) => {\n      if (readConfig().debugReport) {\n        const purpose = options.purpose === undefined ? '' : ` purpose=${options.purpose}`\n        ctx.logger.info(`effort-slider: [debug] request route=${options.provider} model=${options.model} effort=${options.reasoningEffort ?? '(none)'}${purpose}`)\n      }\n      return next()\n```\n\n**依据 3 · 源码核查**：[src/index.ts:415-422](https://github.com/2768651338/dsh-effort-slider/blob/97bf5c1e5881ea0fcfb543844346fe86b87ff620/src/index.ts#L415-L422)\n\n恢复责任。\n\n```text\n  ctx.effect(\n    () => () => {\n      disposed = true\n      if (retryTimer !== null) clearTimeout(retryTimer)\n      retryTimer = null\n    },\n    'ui-effort-slider: provisioning retry cleanup',\n  )\n```\n\n**依据 4 · 作者声明**：[README.md:33-35](https://github.com/2768651338/dsh-effort-slider/blob/97bf5c1e5881ea0fcfb543844346fe86b87ff620/README.md#L33-L35)\n\n作者验证与UI工程说明。\n\n```text\n> 🔧 **v0.5.1** — DSH **0.2.1-rc.2** compatibility: volatile settings with live updates, revision-checked provisioning, resolved `RemoteResult` failures, nested model-label slots, menu focus/blur integration, and safe handling of unavailable models and Session changes. The bundle patch and client registration now use the same scoped package name. Live provisioning queues settings writes outside the active HMR transaction; CSS names and source maps stay stable across checkout paths. Includes real DSH browser validation.\n>\n> 🆕 **v0.5.0** — Evaluation-fix batch. Reliability: the panel splits loading / load-failed / unsupported into three states with a retry button; failed slider writes surface a transient red status instead of failing silently; user config edits made mid-provision are detected (the entry is re-read before `mutate`, conflicting rounds defer); every host provisioning failure path now logs a warning, and an unrecognized Effort row produces a one-time diagnostic. Panel UX: re-anchors on scroll/resize, closes on Esc / outside click / anchor unmount, and clicking the Effort row toggles it; tick dots and labels align with the real snap points; the slider carries `aria-label` / `aria-valuetext`; UI text is bilingual (zh/en, follows `<html lang>`). New `debugReport` option: per-route/per-model provisioning detail plus an optional read-only `llm/stream` tracer logging route/model/effort per request; a `?` help hint in the panel header points at `enabled` / dialect / `debugReport`. Also: GitHub Actions CI (typecheck + tests + build + stale-artifact gate), the WebGL fire no longer burns at 60 fps while invisible, and the npm package is renamed to `@txc2768651338/dsh-effort-slider` (the old unscoped `dsh-effort-slider` name is retired).\n```\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 采用和继续探讨方向是什么？\n\n**研究主题：**新假设与验证、采用判断\n\n#### 完整回答\n\n熟悉模型provider配置且匹配宿主者可试用，先备份并只给已确认方言的单route用，不把未声明reasoning等同实际支持五档。OFF核真实请求/端点默认；快速拖动后回官方模型目录看最终值，失败红色提示不能忽略。重要稳定profile、无法手工恢复配置或要求所有第三方保证生效时暂缓。\n\n进一步可研究明确注入所有权与原值快照、停用/卸载compare-before-restore，route能力先经端点契约而非显示声明；客户端last-intent队列/取消或服务端revision选择。基线为当前值等归属/merge和多并发select，反例包括手工同值字典、切方言残键、供给时外部编辑、无CAS宿主、select乱序与OFF端点默认思考。比较配置覆盖/恢复工时、最终错档率、请求参数与同任务质量/耗时，方向尚未验证。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/effort-core.ts:146-150](https://github.com/2768651338/dsh-effort-slider/blob/97bf5c1e5881ea0fcfb543844346fe86b87ff620/src/effort-core.ts#L146-L150)\n\n归属基线。\n\n```text\n/** 判断一个 reasoningEfforts 值是否与我们任一方言的注入一致（即由本插件写入）。 */\nexport function isOurInjection(reasoningEfforts: unknown): boolean {\n  if (reasoningEfforts === null || typeof reasoningEfforts !== 'object') return false\n  return DIALECT_KEYS.some((dialect) =>\n    deepEqualJson(reasoningEfforts, wireFor(dialect, true).reasoningEfforts)\n```\n\n**依据 2 · 源码核查**：[src/effort-core.ts:219-228](https://github.com/2768651338/dsh-effort-slider/blob/97bf5c1e5881ea0fcfb543844346fe86b87ff620/src/effort-core.ts#L219-L228)\n\n合并基线。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n    if (injection.compat !== undefined) {\n      const compat = (entry.compat ?? {}) as Record<string, unknown>\n      const patch: Record<string, unknown> = {}\n      for (const [key, value] of Object.entries(injection.compat)) {\n        if (compat[key] !== value) patch[key] = value\n      }\n      if (Object.keys(patch).length > 0) {\n        result.compat = { ...compat, ...patch }\n        changed = true\n        fields.push('compat')\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/client/effort/EffortPanel.tsx:250-294](https://github.com/2768651338/dsh-effort-slider/blob/97bf5c1e5881ea0fcfb543844346fe86b87ff620/src/client/effort/EffortPanel.tsx#L250-L294)\n\n选择基线。\n\n<details>\n<summary>查看原文（45行）</summary>\n\n```text\n    // 新一笔写入开始：上一笔的失败态就此过时。\n    setWriteError(false)\n    if (writeErrorTimerRef.current !== null) {\n      clearTimeout(writeErrorTimerRef.current)\n      writeErrorTimerRef.current = null\n    }\n    void selectEffort(directory, {\n      provider: current.provider,\n      model: current.model,\n      reasoningEffort: effort.id,\n    }).catch((error: unknown) => {\n      console.warn('[effort-slider] selectModel failed:', error)\n      // 已被更新的写入取代：旧写入的迟到拒绝不再显示。\n      if (seq !== writeSeqRef.current) return\n      // 不回退滑块位置（用户可直接重拖）；header 状态文字短暂切换为错误态。\n      setWriteError(true)\n      writeErrorTimerRef.current = setTimeout(() => {\n        writeErrorTimerRef.current = null\n        setWriteError(false)\n      }, WRITE_ERROR_VISIBLE_MS)\n    })\n  }\n  const lastWriteRef = useRef(0)\n\n  const onInput = (event: React.FormEvent<HTMLInputElement>): void => {\n    if (!usable) return\n    const v = Number((event.target as HTMLInputElement).value)\n    setRawValue(v)\n    // 每帧最多一次写入，避免拖动中请求堆积造成尾部延迟。\n    const now = performance.now()\n    if (now - lastWriteRef.current >= 16) {\n      lastWriteRef.current = now\n      writeEffort(v)\n    }\n  }\n\n  /** 松手/失焦/键盘结束时吸附到最近档位并补发一次确认。 */\n  const commit = (event: React.SyntheticEvent<HTMLInputElement>): void => {\n    if (!usable) return\n    const v = Number((event.target as HTMLInputElement).value)\n    const idx = Math.round(v / step100)\n    setRawValue(idx * step100)\n    setDragging(false)\n    writeEffort(v)\n  }\n```\n\n</details>\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：41f48b9b602738d7b16864e7ced25592a149047ba2eb89ecc5dfe5d4abe7034a。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 10 | 2697 | — | — | 36270 |\n| .js | source | 2 | 1760 | 1562 | 223 | — |\n| .ts | source | 9 | 1938 | 1450 | 351 | — |\n| .tsx | source | 1 | 426 | 321 | 85 | — |\n| .mjs | test | 8 | 1416 | 1167 | 156 | — |\n| .ts | test | 1 | 8 | 6 | 1 | — |\n\n排除 1 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 滑块 | 会话调档 | 宿主选择成功需核 |\n| 方言供给 | 自定义目录/参数 | 非所有端点保证 |\n| 快照防护 | 降覆盖 | 值等归属与恢复缺口 |\n\n## 工程亮点\n\n生产纯逻辑测试与revision防旧轮可借鉴，需真实所有权/可恢复配置。详见[Q04](#research-q04)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、src/index.ts、src/effort-core.ts、src/client/effort/EffortPanel.tsx、src/client/effort/directory.ts、test/host.spec.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定host供给/快照/卸载、effort-core映射/归属/合并、client选择错误与节流、代表生产纯逻辑测试；未穷尽WebGL与菜单DOM。\n- 下一步：进一步从同值手配/残键/无CAS与select乱序核所有权和最后意图。\n",
         "metadata": {
             "repository": "2768651338/dsh-effort-slider",
             "repository_id": 1335766616,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T06:49:58.749Z",
+            "window_start": "2026-09-22T06:49:58.749Z",
             "stars": 20,
             "pushed_at": "2026-10-20T14:21:40Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 2,
+                "created_30d": 2,
+                "closed_30d": 2,
+                "updated_30d": 2
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A2768651338%2Fdsh-effort-slider%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C2:2EEE9E:13D311:216569:6AD849FD and timestamp 2026-10-21 05:13:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A2768651338%2Fdsh-effort-slider%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6400:330C23:1455C0:21E8FD:6AD849FD and timestamp 2026-10-21 05:13:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A2768651338%2Fdsh-effort-slider%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6407:30A0ED:14509A:21E3AD:6AD849FD and timestamp 2026-10-21 05:13:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A2768651338%2Fdsh-effort-slider%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6406:0C5F:637A4:A9D39:6AD849FD and timestamp 2026-10-21 05:13:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A2768651338%2Fdsh-effort-slider%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640B:D1FDD:14A130:224B46:6AD849FE and timestamp 2026-10-21 05:13:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "@txc2768651338/dsh-effort-slider",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T06:50:07.817Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": 1403,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40txc2768651338%2Fdsh-effort-slider",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/%40txc2768651338%2Fdsh-effort-slider",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-10-01T08:03:51.076Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T06:50:07.817Z",
                     "source_url": "https://registry.npmjs.org/%40txc2768651338%2Fdsh-effort-slider",
                     "error": null,
                     "latest_version": "0.5.1",
                     "latest_published_at": "2026-10-20T11:42:25.940Z",
                     "latest_error": null
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "97bf5c1e5881ea0fcfb543844346fe86b87ff620",
-                "current_revision": "97bf5c1e5881ea0fcfb543844346fe86b87ff620",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {
@@ -398,15 +477,15 @@
             "repository": "2768651338/dsh-effort-slider",
             "path": "",
             "revision": "97bf5c1e5881ea0fcfb543844346fe86b87ff620",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                "https://github.com/0xsline/awesome-deepseek-harness"
-            ],
             "fingerprints": {
                 "directory": "c46b972e439152e0a6332ef6f67b900b063c027dec668c512c8e4b7957f77f95",
                 "code": "97bf5c1e5881ea0fcfb543844346fe86b87ff620",
                 "maintenance": "46d4c096b55c82bc9119251e08c71d6cfbf47c3702af17da66ff5072522070df"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ]
         }
     }
 }

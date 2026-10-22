@@ -24,36 +24,70 @@
             },
             "sources": [
                 {
-                    "id": "20261020-incremental40-r2-github-1384810201-root-directory-0",
+                    "id": "2026-10-22-02-github-1384810201-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
-                    "retrieved_at": "2026-10-20T04:36:26.487Z",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-22T09:41:18.972Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "20261020-incremental40-r2-github-1384810201-root-author",
+                    "id": "2026-10-22-02-github-1384810201-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/173787247/dsh-remote-ssh/blob/d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-remote-ssh",
+                            "commit": "d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd",
+                            "path": "README.md",
+                            "content_sha256": "33f8cc7672f903580d3c92cf5714613bc5ad7bfacd393667a9045ee347d47180"
+                        }
+                    ],
                     "revision": "d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd",
-                    "captured_at": "2026-10-20T04:36:26.487Z",
-                    "summary": "通过SSH对配置主机执行允许命令，提供状态查询、固定探针与受限远程运行工具。",
-                    "artifact": "data/runs/2026-10-20-04/snapshots/173787247--dsh-remote-ssh/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:41:18.972Z",
+                    "summary": "以 SSH 将远程 Unix/AIX/macOS 的白名单诊断命令接入 DSH Agent 工具。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/173787247--dsh-remote-ssh/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "20261020-incremental40-r2-github-1384810201-root-source",
+                    "id": "2026-10-22-02-github-1384810201-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/173787247/dsh-remote-ssh/blob/d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd/index.js",
+                    "url": "https://github.com/173787247/dsh-remote-ssh/blob/d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-remote-ssh",
+                            "commit": "d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd",
+                            "path": "README.md",
+                            "content_sha256": "33f8cc7672f903580d3c92cf5714613bc5ad7bfacd393667a9045ee347d47180"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-remote-ssh",
+                            "commit": "d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd",
+                            "path": "index.js",
+                            "content_sha256": "f0aa24402ab8379a691a021485bd8288204a0fcf29bfec36d199f9849cae5abe"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-remote-ssh",
+                            "commit": "d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd",
+                            "path": "lib/ssh.js",
+                            "content_sha256": "5e51aaceeeb822d1fc65554f66de05080cbfd41a366a34741c644629b9e2f169"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-remote-ssh",
+                            "commit": "d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd",
+                            "path": "package.json",
+                            "content_sha256": "8ea853c41cd3f4bdfa374330517493a1aabd3ee4b55328267fdf5a44fc158ab2"
+                        }
+                    ],
                     "revision": "d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd",
-                    "captured_at": "2026-10-20T04:36:26.487Z",
-                    "summary": "核查 index.js、lib/ssh.js；index.js注册状态、运行及固定探针工具，lib/ssh.js过滤argv、检查命令白名单，以BatchMode调用ssh并限制超时和输出。",
-                    "artifact": "data/runs/2026-10-20-04/snapshots/173787247--dsh-remote-ssh/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:41:18.972Z",
+                    "summary": "核查 README.md、index.js、lib/ssh.js、package.json；本地 spawn ssh，按命令名过滤，支持单命令 run 与 OS-specific probe suite。详见[Q02](#research-q02)。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/173787247--dsh-remote-ssh/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "本地spawn未开shell不表示SSH远端不经shell解释；有限变更命令名单不能覆盖所有程序写入模式，参数confirm也不是独立人工审批。",
+                        "只读核固定提交 README.md、index.js、lib/ssh.js；未连接目标 SSH 主机。旧 META 复用。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +98,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "维护Unix、AIX或Mac主机的人希望在DSH排障，合格结果是主机明确、输出可信且操作范围可控。",
+                    "text": "对配置好的旧系统主机执行诊断，前提是只读 SSH 账号与明确命令白名单。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1384810201-root-source"
+                        "2026-10-22-02-github-1384810201-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +109,16 @@
                             "fingerprint": "d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:36:26.487Z",
+                    "reviewed_at": "2026-10-22T09:41:18.972Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "index.js注册状态、运行及固定探针工具，lib/ssh.js过滤argv、检查命令白名单，以BatchMode调用ssh并限制超时和输出。",
+                    "text": "本地 spawn ssh，按命令名过滤，支持单命令 run 与 OS-specific probe suite。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1384810201-root-source"
+                        "2026-10-22-02-github-1384810201-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +127,16 @@
                             "fingerprint": "d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:36:26.487Z",
+                    "reviewed_at": "2026-10-22T09:41:18.972Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "本地spawn未开shell不表示SSH远端不经shell解释；有限变更命令名单不能覆盖所有程序写入模式，参数confirm也不是独立人工审批。",
+                    "text": "只读核固定提交 README.md、index.js、lib/ssh.js；未连接目标 SSH 主机。旧 META 复用。",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1384810201-root-source"
+                        "2026-10-22-02-github-1384810201-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +145,16 @@
                             "fingerprint": "d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:36:26.487Z",
+                    "reviewed_at": "2026-10-22T09:41:18.972Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "0.1.1，包名实际为dsh-remote-ssh-run，Node>=18；需本机SSH和凭据，跨系统命令可用性由远端决定。",
+                    "text": "套件可选远程桥，作者给 GitHub 安装；目标版本兼容未核。",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1384810201-root-source"
+                        "2026-10-22-02-github-1384810201-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +163,16 @@
                             "fingerprint": "d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:36:26.487Z",
+                    "reviewed_at": "2026-10-22T09:41:18.972Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "账号、主机密钥和白名单配置有首次成本，远程延迟与失败重试有持续负担；误写恢复与审计需人工，未测收益。",
+                    "text": "#### 成本\n\n| 阶段 | 本插件动作 | 现金/资源 | 人工/时间 | 未知与失败恢复 |\n| --- | --- | --- | --- | --- |\n| 首次 | 配 SSH 账号、密钥、已核指纹主机与固定白名单 | 本地密钥存储、远端账户与测试主机资源；新增现金金额未知 | 管理员核指纹、限权、逐命令审计和旧 OS 兼容调试，工时未知 | 远端 shell 分词不符需回退配置并重测 |\n| 持续 | status/run/probe 逐项诊断 | 网络流量、远端 CPU/进程与日志存储；按量费用未知 | 值班人员核每项 code/stderr、维护白名单与密钥，工时未知 | 外层 ok 不能替代子项健康监控 |\n| 失败恢复 | 处理误执行、密钥异常、误报健康或超时 | 隔离主机、凭据轮换、重试命令及可能业务损失，金额未知 | 调查远端日志、撤销权限、修复主机和重测审批，耗时未知 | 实际事故概率、恢复时间与旧主机兼容性未测 |",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1384810201-root-source"
+                        "2026-10-22-02-github-1384810201-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +181,16 @@
                             "fingerprint": "d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:36:26.487Z",
+                    "reviewed_at": "2026-10-22T09:41:18.972Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "先使用远端低权限账号和固定只读探针，严格限定命令及参数，确认超时后的远端进程状态；不要把插件白名单当完整沙箱。",
+                    "text": "用最小权限只读账号与固定命令，测试远端参数解释；变更另走人工审批。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1384810201-root-source"
+                        "2026-10-22-02-github-1384810201-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +199,16 @@
                             "fingerprint": "d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:36:26.487Z",
+                    "reviewed_at": "2026-10-22T09:41:18.972Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "固定探针能降低重复取诊断信息的步骤；通用命令允许列表如果过宽，会把权限负担转回操作者。",
+                    "text": "#### 效果\n\n| 效果项 | 源码支持 | 未证实 |\n| --- | --- | --- |\n| 诊断 | 预设 probe 命令 | 目标旧系统兼容 |\n| 白名单 | 命令名检查 | 完整只读 |\n| 身份 | ssh-agent/密钥 | 指纹已确认 |",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1384810201-root-source"
+                        "2026-10-22-02-github-1384810201-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +217,16 @@
                             "fingerprint": "d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:36:26.487Z",
+                    "reviewed_at": "2026-10-22T09:41:18.972Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "探针按OS拆分、输出截断和BatchMode避免口令进入聊天值得复用；accept-new主机策略和简单元字符过滤需要结合远端限制审阅。",
+                    "text": "主机配置/OS probe 便于迁移；远端 shell 语义、有限 mutate 正则与外层 ok 需注意。详见[Q02](#research-q02)至[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1384810201-root-source"
+                        "2026-10-22-02-github-1384810201-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,40 +235,135 @@
                             "fingerprint": "d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:36:26.487Z",
+                    "reviewed_at": "2026-10-22T09:41:18.972Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "把跨平台旧主机诊断从 SSH CLI 接入 Agent 并附白名单与探测组。详见[Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1384810201-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1384810201:root",
+                            "area": "code",
+                            "fingerprint": "d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:41:18.972Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "远端命令参数解释和模型自填 confirm 不能替代安全 shell quoting/人工授权；只读依赖白名单与远端账号。详见[Q02](#research-q02)和[Q03](#research-q03)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1384810201-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1384810201:root",
+                            "area": "code",
+                            "fingerprint": "d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:41:18.972Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "未实现改进为固定远端 wrapper、host key pinning 和真实批准通道。详见[Q05](#research-q05)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1384810201-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1384810201:root",
+                            "area": "code",
+                            "fingerprint": "d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:41:18.972Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-20T04:36:26.487Z",
+            "last_checked_at": "2026-10-22T09:41:18.972Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd",
+                "reviewed_at": "2026-10-22T09:41:18.972Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1384810201:root",
+                        "area": "code",
+                        "fingerprint": "d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty 9：相对人工 SSH/现成 SSH CLI，新增 Agent 的 status/run/probe 接口和 OS 诊断组，但无新远程协议或安全机制（Q01）。mechanism 8：本地 spawn 与 basename 白名单是常规门槛；远端参数解释、有限 mutateRe、模型 confirm 使端到端保障不成立（Q02/Q03）。transferability 10：固定命令探测可迁到 Unix/AIX/macOS，实际依 ssh CLI、密钥、目标 shell 和 OS 命令兼容（Q01/Q04）。simplification 8：降低人工逐条 SSH 诊断步骤，但仍须配置账号/指纹/白名单并逐项看子结果（Q04/Q05）。",
+                    "basis": "interpretation",
+                    "score": 35,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1384810201-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow 18：相对管理员手动登录执行诊断，Agent 可统一入口查询和探测；远端写操作仍需外部治理（Q01/Q03）。delivery以管理员逐条运行SSH诊断并手工汇总为参照，probe将多项诊断组织为带子项结果的机器可读观察回执，新增小幅诊断交接形式，取8（Q01/Q04）；不是新的修复产物或机器健康验收证明，外层ok与授权风险另行评价。\nreach 5：面向已有 SSH 可达的旧系统维护场景，目标权限/OS 差异限制复制（Q01/Q05）。economics 4：可能减少重复诊断工时，但账号治理、审批、远端 wrapper、误操作恢复和网络资源成本未量测，不能主张净节省（Q03/Q05）。",
+                    "basis": "interpretation",
+                    "score": 35,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1384810201-root-source"
+                    ]
+                }
+            },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "trial",
-                "reason": "远端排障者可用低权限账号仅试固定只读探针，先核主机指纹、远端argv与超时后进程。",
+                "decision": "observe",
+                "reason": "只在隔离/只读账号试用；生产需确认远端参数与人工授权。",
                 "criteria": {
                     "scenario": {
-                        "score": 23,
-                        "rationale": "多类Unix主机诊断的任务明确。"
+                        "score": 15,
+                        "rationale": "旧系统诊断明确。"
                     },
                     "advantage": {
-                        "score": 13,
-                        "rationale": "OS探针和截断省拼命令，直接SSH更透明。"
+                        "score": 6,
+                        "rationale": "原生 SSH 可替代。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "BatchMode和过滤可查，本地无shell不代表远端无解释。"
+                        "rationale": "源码可核，目标远端未测。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "账号、主机密钥和远端权限需独立限制，误写恢复不可省。"
+                        "score": 5,
+                        "rationale": "安全治理与兼容成本未知。"
                     }
                 },
-                "score": 59,
+                "score": 39,
                 "revision": "d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T09:41:18.972Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "20261020-incremental40-r2-github-1384810201-root-source"
+                    "2026-10-22-02-github-1384810201-root-source"
                 ],
                 "dependencies": [
                     {
@@ -259,32 +388,33 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-20T04:25:27.514Z",
-            "analysis_sha256": "a15e132f9f625bbdbb3f40a24191a6a0a6aeb300bd007121c0a774df57fa67c0"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "b6fd577c7bda57399b9158f1a7885f7440e5406c1b0c0cfe9f8b8552359d10cb"
         },
         "publication.metadata": "data/plugins/173787247--dsh-remote-ssh/META.json",
         "publication.summaries": {
-            "text": "通过SSH对配置主机执行允许命令，提供状态查询、固定探针与受限远程运行工具。",
+            "text": "以 SSH 将远程 Unix/AIX/macOS 的白名单诊断命令接入 DSH Agent 工具。",
             "revision": "d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd",
             "source_url": "https://github.com/173787247/dsh-remote-ssh/blob/d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd/README.md"
         },
         "publication.capabilities": {
             "revision": "d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd",
             "items": {
-                "模型工具": "remote_ssh_status、remote_ssh_run、remote_ssh_probe。"
-            }
+                "模型工具": "remote_ssh_status、remote_ssh_run、remote_ssh_probe（confirm不是用户命令）"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| status | 主机列表 | probe 可失败 |\n| run | 执行白名单 | 远端解释未知 |\n| probe | 批量诊断 | 外层 ok 非全成功 |"
         },
         "publication.advice": {
             "revision": "d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd",
-            "text": "先使用远端低权限账号和固定只读探针，严格限定命令及参数，确认超时后的远端进程状态；不要把插件白名单当完整沙箱。"
+            "text": "用最小权限只读账号与固定命令，测试远端参数解释；变更另走人工审批。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/173787247--dsh-remote-ssh",
-        "reports": "# dsh-remote-ssh\n\n> 通过SSH对配置主机执行允许命令，提供状态查询、固定探针与受限远程运行工具。\n\n## 固定范围与依据\n\n固定提交 [d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd](https://github.com/173787247/dsh-remote-ssh/blob/d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd/index.js)；组件路径：仓库根。核查时间 2026-10-20T04:36:26.487Z；本轮基准 2026-10-20T04:25:27.514Z。\n源码抽读路径：index.js、lib/ssh.js。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：维护Unix、AIX或Mac主机的人希望在DSH排障，合格结果是主机明确、输出可信且操作范围可控。\n- **亮点**：index.js注册状态、运行及固定探针工具，lib/ssh.js过滤argv、检查命令白名单，以BatchMode调用ssh并限制超时和输出。\n- **思考**：固定探针能降低重复取诊断信息的步骤；通用命令允许列表如果过宽，会把权限负担转回操作者。\n- **建议**：先使用远端低权限账号和固定只读探针，严格限定命令及参数，确认超时后的远端进程状态；不要把插件白名单当完整沙箱。\n\n## 场景与替代办法\n\n维护Unix、AIX或Mac主机的人希望在DSH排障，合格结果是主机明确、输出可信且操作范围可控。\n\n此前未入档；直接SSH和固定运维脚本更透明，本项减少会话里手工拼接诊断，但未证实更可靠。\n\n## 依赖与流程\n\n需要可达SSH、ssh-agent或身份文件及远端授权；账户权限、主机指纹和远端shell行为是实际边界。\n\n列主机并探测，选hostId与允许argv，复核输出；本地SSH超时先确认远端是否仍运行再重试，写操作需额外人工核对。\n\n## 成本与效果\n\n账号、主机密钥和白名单配置有首次成本，远程延迟与失败重试有持续负担；误写恢复与审计需人工，未测收益。\n\n固定探针能降低重复取诊断信息的步骤；通用命令允许列表如果过宽，会把权限负担转回操作者。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：118a96c3783f1e91504ce15de4a40d29ac7629df0a885b2449c4e89f3113e183。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 4 | 99 | — | — | 468 |\n| .md | example | 1 | 73 | — | — | 317 |\n| .js | source | 2 | 272 | 259 | 1 | — |\n| .js | test | 1 | 34 | 33 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **模型工具**：remote_ssh_status、remote_ssh_run、remote_ssh_probe。\n\n## 工程亮点\n\n探针按OS拆分、输出截断和BatchMode避免口令进入聊天值得复用；accept-new主机策略和简单元字符过滤需要结合远端限制审阅。\n\n## 分发与兼容\n\n0.1.1，包名实际为dsh-remote-ssh-run，Node>=18；需本机SSH和凭据，跨系统命令可用性由远端决定。\n\n## 历史对照\n\n当前快照此前没有该稳定身份的研究档案。此前未入档；直接SSH和固定运维脚本更透明，本项减少会话里手工拼接诊断，但未证实更可靠。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：本地spawn未开shell不表示SSH远端不经shell解释；有限变更命令名单不能覆盖所有程序写入模式，参数confirm也不是独立人工审批。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：在临时远端测试空白参数、路径、选项及超时，核对实际远端命令；用拒绝写入的账号确认白名单之外还有独立约束。\n",
+        "reports": "# dsh-remote-ssh\n\n> 以 SSH 将远程 Unix/AIX/macOS 的白名单诊断命令接入 DSH Agent 工具。\n\n## 研究范围\n\n- **仓库**：[173787247/dsh-remote-ssh](https://github.com/173787247/dsh-remote-ssh)\n- **版本号**：0.1.1（[固定提交 d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd](https://github.com/173787247/dsh-remote-ssh/tree/d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd)）\n- **版本日期**：2026-10-09（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定源码可核三工具；本地 argv 不等于远端无 shell，confirm 是模型布尔参数，首连 host key accept-new。目标 SSH 未测。\n\n## 洞察短评\n\n- **用途**：对配置好的旧系统主机执行诊断，前提是只读 SSH 账号与明确命令白名单。详见[Q01](#research-q01)。\n- **亮点**：把跨平台旧主机诊断从 SSH CLI 接入 Agent 并附白名单与探测组。详见[Q01](#research-q01)。\n- **思考**：远端命令参数解释和模型自填 confirm 不能替代安全 shell quoting/人工授权；只读依赖白名单与远端账号。详见[Q02](#research-q02)和[Q03](#research-q03)。\n- **建议**：未实现改进为固定远端 wrapper、host key pinning 和真实批准通道。详见[Q05](#research-q05)。\n\n采用建议：用最小权限只读账号与固定命令，测试远端参数解释；变更另走人工审批。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n把跨平台旧主机诊断从 SSH CLI 接入 Agent 并附白名单与探测组。详见[Q01](#research-q01)。\n\n## 关键质疑\n\n远端命令参数解释和模型自填 confirm 不能替代安全 shell quoting/人工授权；只读依赖白名单与远端账号。详见[Q02](#research-q02)和[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n未实现改进为固定远端 wrapper、host key pinning 和真实批准通道。详见[Q05](#research-q05)。\n\n隔离 SSH 主机测 host key、空格/引号/通配 argv、未列写命令、模型 confirm 和多命令超时。\n\n## 场景与替代办法\n\n对配置好的旧系统主机执行诊断，前提是只读 SSH 账号与明确命令白名单。详见[Q01](#research-q01)。\n\n人工 SSH 到主机可做相同诊断，插件加 Agent 接口与初级命令名门槛。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖 | 必需 | 用途 | 缺失后果 |\n| --- | --- | --- | --- |\n| ssh CLI/密钥 | 必需 | 连接 | 失败 |\n| 远端账号 | 必需 | 执行 | 无权限 |\n| DSH tools | 必需 | Agent 入口 | 无工具 |\n\n#### 使用步骤\n\n| 步骤 | 动作 | 判据/恢复 |\n| --- | --- | --- |\n| 配置 | host/白名单/账号 | 最小权限 |\n| 状态 | status/probe | 逐项 code/stderr |\n| 执行 | 固定 argv run | 目标结果/审计 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 本插件动作 | 现金/资源 | 人工/时间 | 未知与失败恢复 |\n| --- | --- | --- | --- | --- |\n| 首次 | 配 SSH 账号、密钥、已核指纹主机与固定白名单 | 本地密钥存储、远端账户与测试主机资源；新增现金金额未知 | 管理员核指纹、限权、逐命令审计和旧 OS 兼容调试，工时未知 | 远端 shell 分词不符需回退配置并重测 |\n| 持续 | status/run/probe 逐项诊断 | 网络流量、远端 CPU/进程与日志存储；按量费用未知 | 值班人员核每项 code/stderr、维护白名单与密钥，工时未知 | 外层 ok 不能替代子项健康监控 |\n| 失败恢复 | 处理误执行、密钥异常、误报健康或超时 | 隔离主机、凭据轮换、重试命令及可能业务损失，金额未知 | 调查远端日志、撤销权限、修复主机和重测审批，耗时未知 | 实际事故概率、恢复时间与旧主机兼容性未测 |\n\n#### 效果\n\n| 效果项 | 源码支持 | 未证实 |\n| --- | --- | --- |\n| 诊断 | 预设 probe 命令 | 目标旧系统兼容 |\n| 白名单 | 命令名检查 | 完整只读 |\n| 身份 | ssh-agent/密钥 | 指纹已确认 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**远程 SSH 的命令白名单、远端解释与人工授权边界是什么？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 远程 SSH 插件提供哪些实际诊断工具？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n源码注册 remote_ssh_status、remote_ssh_run、remote_ssh_probe 三个工具；README 表只列 status/run。status 可列配置主机并对单主机尝试 uname；probe 依 OS hint 运行固定诊断组，逐命令核白名单，不许可的标为 skipped。适合已通过 ssh-agent/密钥管理 Unix/AIX/macOS 主机的诊断；只读取决于 allowCommands 内容与远程命令行为，插件并不理解每个可执行程序的副作用。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:18-39](https://github.com/173787247/dsh-remote-ssh/blob/d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd/README.md#L18-L39)\n\n作者两工具与安全说明\n\n<details>\n<summary>查看原文（22行）</summary>\n\n````text\n## 工具\n\n| 工具 | 作用 |\n|------|------|\n| `remote_ssh_status` | 列出配置主机；可选 uname 探测 |\n| `remote_ssh_run` | 在指定 hostId 上跑白名单 argv（不走 shell） |\n\n## 安装\n\n```sh\ndsh plugin --profile web add github:173787247/dsh-remote-ssh\n```\n\n在 profile 的 `cordis.patch.yml` 配置 `hosts` / `allowCommands`（见 `examples/hosts.cordis.snippet.yml`）。凭据走本机 ssh-agent（可与 [dsh-wsl-ssh-agent](https://github.com/173787247/dsh-wsl-ssh-agent) 配合）。\n\n## 安全\n\n- BatchMode SSH，禁止交互口令进聊天\n- argv 禁止 shell 元字符与换行\n- 破坏性命令需 allowMutate + confirm\n- AIX 默认白名单含 oslevel / errpt / lsps / lparstat\n\n````\n\n</details>\n\n**依据 2 · 源码核查**：[index.js:35-68](https://github.com/173787247/dsh-remote-ssh/blob/d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd/index.js#L35-L68)\n\nstatus\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\n  ctx.tools.register({\n    name: \"remote_ssh_status\",\n    description: \"List configured SSH hosts and optionally probe one with uname.\",\n    parameters: {\n      type: \"object\",\n      additionalProperties: false,\n      properties: {\n        hostId: { type: \"string\", description: \"Probe this host; omit to only list\" },\n        probe: { type: \"boolean\", description: \"default true when hostId set\" },\n      },\n    },\n    output: {\n      schema: { type: \"object\", additionalProperties: true },\n      render: (_a, v) => [{ type: \"text\", text: JSON.stringify(v, null, 2) }],\n    },\n    timeoutMs,\n    isConcurrencySafe: () => true,\n    async execute(args) {\n      try {\n        const out = { ok: true, hosts, allowCommands, allowMutate };\n        if (args.hostId || (hosts.length === 1 && args.probe !== false)) {\n          const host = resolveHost(hosts, args.hostId);\n          if (args.probe === false) {\n            out.selected = host;\n          } else {\n            const argv = assertAllowedCommand([\"uname\", \"-a\"], allowCommands);\n            const r = await runSsh(host, argv, { timeoutMs, maxOutputChars });\n            out.probe = { host: host.id, ...r };\n          }\n        }\n        return out;\n      } catch (e) {\n        return { ok: false, error: e instanceof Error ? e.message : String(e), hosts };\n      }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[index.js:74-112](https://github.com/173787247/dsh-remote-ssh/blob/d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd/index.js#L74-L112)\n\nrun\n\n<details>\n<summary>查看原文（39行）</summary>\n\n```text\n  ctx.tools.register({\n    name: \"remote_ssh_run\",\n    description: \"Run an allowlisted argv on a configured SSH host (no shell). AIX/macOS/Linux.\",\n    parameters: {\n      type: \"object\",\n      additionalProperties: false,\n      required: [\"argv\"],\n      properties: {\n        hostId: { type: \"string\" },\n        argv: {\n          type: \"array\",\n          items: { type: \"string\" },\n          description: \"Executable + args, e.g. [\\\"df\\\",\\\"-h\\\"] or AIX [\\\"oslevel\\\",\\\"-s\\\"]\",\n        },\n        confirm: { type: \"boolean\", description: \"required with allowMutate for mutating cmds\" },\n      },\n    },\n    output: {\n      schema: { type: \"object\", additionalProperties: true },\n      render: (_a, v) => [{ type: \"text\", text: v.ok === false ? v.error : v.stdout || JSON.stringify(v, null, 2) }],\n    },\n    timeoutMs,\n    isConcurrencySafe: () => true,\n    async execute(args) {\n      try {\n        const host = resolveHost(hosts, args.hostId);\n        const argv = assertAllowedCommand(args.argv, allowCommands, {\n          allowMutate,\n          confirm: args.confirm === true,\n        });\n        const r = await runSsh(host, argv, { timeoutMs, maxOutputChars });\n        return { ok: r.code === 0, hostId: host.id, os: host.os, ...r };\n      } catch (e) {\n        return { ok: false, error: e instanceof Error ? e.message : String(e) };\n      }\n    },\n    presentCall: () => ({ card: \"generic\", title: \"remote ssh run\" }),\n    presentResult: (_a, r) => ({ card: \"generic\", title: \"remote ssh run\", content: r.content }),\n  });\n```\n\n</details>\n\n**依据 4 · 源码核查**：[index.js:114-157](https://github.com/173787247/dsh-remote-ssh/blob/d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd/index.js#L114-L157)\n\n第三个 probe\n\n<details>\n<summary>查看原文（44行）</summary>\n\n```text\n  ctx.tools.register({\n    name: \"remote_ssh_probe\",\n    description:\n      \"Run a fixed read-only probe suite (uname/uptime/df/…) on a host. Skips commands not in allowCommands.\",\n    parameters: {\n      type: \"object\",\n      additionalProperties: false,\n      properties: {\n        hostId: { type: \"string\" },\n      },\n    },\n    output: {\n      schema: { type: \"object\", additionalProperties: true },\n      render: (_a, v) => [{ type: \"text\", text: JSON.stringify(v, null, 2) }],\n    },\n    timeoutMs: timeoutMs * 4,\n    isConcurrencySafe: () => true,\n    async execute(args) {\n      try {\n        const host = resolveHost(hosts, args.hostId);\n        const suite = probeSuite(host.os);\n        const results = [];\n        for (const argv of suite) {\n          try {\n            const allowed = assertAllowedCommand(argv, allowCommands);\n            const r = await runSsh(host, allowed, { timeoutMs, maxOutputChars });\n            results.push({ argv: allowed, ok: r.code === 0, stdout: r.stdout, stderr: r.stderr });\n          } catch (e) {\n            results.push({\n              argv,\n              ok: false,\n              skipped: true,\n              error: e instanceof Error ? e.message : String(e),\n            });\n          }\n        }\n        return { ok: true, hostId: host.id, os: host.os, results };\n      } catch (e) {\n        return { ok: false, error: e instanceof Error ? e.message : String(e) };\n      }\n    },\n    presentCall: () => ({ card: \"generic\", title: \"remote ssh probe\" }),\n    presentResult: (_a, r) => ({ card: \"generic\", title: \"remote ssh probe\", content: r.content }),\n  });\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/ssh.js:48-64](https://github.com/173787247/dsh-remote-ssh/blob/d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd/lib/ssh.js#L48-L64)\n\nOS 诊断组\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n/** Read-only probe argv lists; skip entries whose cmd is not allowlisted. */\nexport function probeSuite(osHint = \"unix\") {\n  const os = String(osHint || \"unix\").toLowerCase();\n  const common = [\n    [\"uname\", \"-a\"],\n    [\"hostname\"],\n    [\"uptime\"],\n    [\"df\", \"-h\"],\n  ];\n  if (os === \"aix\") {\n    return [...common, [\"oslevel\", \"-s\"], [\"errpt\", \"-a\"], [\"lsps\", \"-a\"]];\n  }\n  if (os === \"darwin\" || os === \"macos\" || os === \"mac\") {\n    return [...common, [\"sw_vers\"], [\"vm_stat\"]];\n  }\n  return [...common, [\"free\", \"-m\"], [\"ps\", \"-eo\", \"pid,comm\", \"--sort=-pcpu\"]];\n}\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 白名单与“argv 不走 shell”在何处生效？\n\n**研究主题：**功能与机制、工程质量与复用\n\n#### 完整回答\n\n本地 Node 用 spawn(\"ssh\", sshArgs) 而非 shell 字符串，禁止换行和若干元字符，按 basename 或完整 argv[0] 比白名单。但 SSH 客户端会将目标后命令参数传给远端命令解释层；源码未为每个 argv 做远端 shell quoting，也把 `--` 放在目标 host 后当远端命令一部分。带空格、引号、通配等参数的真实语义需通过目标 SSH 测，不可把本地 spawn argv 直接等同端到端无 shell。安全配置应只允许固定、无用户可控复杂参数的命令。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:22-37](https://github.com/173787247/dsh-remote-ssh/blob/d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd/README.md#L22-L37)\n\n作者不走 shell 主张\n\n<details>\n<summary>查看原文（16行）</summary>\n\n````text\n| `remote_ssh_status` | 列出配置主机；可选 uname 探测 |\n| `remote_ssh_run` | 在指定 hostId 上跑白名单 argv（不走 shell） |\n\n## 安装\n\n```sh\ndsh plugin --profile web add github:173787247/dsh-remote-ssh\n```\n\n在 profile 的 `cordis.patch.yml` 配置 `hosts` / `allowCommands`（见 `examples/hosts.cordis.snippet.yml`）。凭据走本机 ssh-agent（可与 [dsh-wsl-ssh-agent](https://github.com/173787247/dsh-wsl-ssh-agent) 配合）。\n\n## 安全\n\n- BatchMode SSH，禁止交互口令进聊天\n- argv 禁止 shell 元字符与换行\n- 破坏性命令需 allowMutate + confirm\n````\n\n</details>\n\n**依据 2 · 源码核查**：[lib/ssh.js:29-46](https://github.com/173787247/dsh-remote-ssh/blob/d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd/lib/ssh.js#L29-L46)\n\n本地过滤/白名单\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\nexport function assertAllowedCommand(argv, allowCommands, { allowMutate = false, confirm = false } = {}) {\n  const args = Array.isArray(argv) ? argv.map(String) : [];\n  if (!args.length) throw new Error(\"argv required\");\n  if (args.some((a) => a.includes(\"\\n\") || a.includes(\"\\r\"))) throw new Error(\"newlines in argv blocked\");\n  for (const a of args) {\n    if (/[;&|`$<>]/.test(a)) throw new Error(`shell metacharacter blocked in arg: ${a}`);\n  }\n  const cmd = basename(args[0]);\n  const allow = new Set((allowCommands || []).map(String));\n  if (!allow.has(cmd) && !allow.has(args[0])) {\n    throw new Error(`command not in allowCommands: ${cmd}`);\n  }\n  const mutateRe = /^(rm|mv|cp|chmod|chown|kill|reboot|shutdown|mkfs|dd|crontab|useradd|passwd)$/;\n  if (mutateRe.test(cmd) && !(allowMutate && confirm)) {\n    throw new Error(`mutating command blocked without allowMutate+confirm: ${cmd}`);\n  }\n  return args;\n}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/ssh.js:66-84](https://github.com/173787247/dsh-remote-ssh/blob/d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd/lib/ssh.js#L66-L84)\n\nSSH argv 构建与 spawn\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\nexport function runSsh(host, argv, { timeoutMs = 60_000, maxOutputChars = 40_000 } = {}) {\n  const target = host.user ? `${host.user}@${host.host}` : host.host;\n  const sshArgs = [\n    \"-o\",\n    \"BatchMode=yes\",\n    \"-o\",\n    \"ConnectTimeout=10\",\n    \"-o\",\n    \"StrictHostKeyChecking=accept-new\",\n    \"-p\",\n    String(host.port || 22),\n  ];\n  if (host.identityFile) {\n    sshArgs.push(\"-i\", String(host.identityFile));\n    sshArgs.push(\"-o\", \"IdentitiesOnly=yes\");\n  }\n  sshArgs.push(target, \"--\", ...argv);\n  return new Promise((resolve, reject) => {\n    const child = spawn(\"ssh\", sshArgs, { stdio: [\"ignore\", \"pipe\", \"pipe\"] });\n```\n\n</details>\n\n#### 缺口\n\n- 目标 OpenSSH/远端 shell 对 `--` 和空格的行为未测\n  **影响：**参数可能被错误分词或解释\n  **进一步探讨：**隔离主机测空格/引号/通配/实际 argv\n\n<a id=\"research-q03\"></a>\n\n### Q03 · allowMutate+confirm 是真实人工审批吗？\n\n**研究主题：**缺陷与关键质疑、效果与总成本\n\n#### 完整回答\n\nmutateRe 仅识别 rm/mv/cp/chmod/chown/kill/reboot/shutdown/mkfs/dd/crontab/useradd/passwd 这些 basename；若配置允许其他可写程序或危险选项，无法据此保证只读。confirm 是 remote_ssh_run 的模型工具布尔参数，并未调用宿主审批/用户提问，因此 allowMutate=true 时模型可自行填 confirm=true，不能视为人工批准。真正防写需远端账号权限、固定命令和独立审批策略。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:80-104](https://github.com/173787247/dsh-remote-ssh/blob/d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd/index.js#L80-L104)\n\nconfirm 模型参数进入 guard\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n      required: [\"argv\"],\n      properties: {\n        hostId: { type: \"string\" },\n        argv: {\n          type: \"array\",\n          items: { type: \"string\" },\n          description: \"Executable + args, e.g. [\\\"df\\\",\\\"-h\\\"] or AIX [\\\"oslevel\\\",\\\"-s\\\"]\",\n        },\n        confirm: { type: \"boolean\", description: \"required with allowMutate for mutating cmds\" },\n      },\n    },\n    output: {\n      schema: { type: \"object\", additionalProperties: true },\n      render: (_a, v) => [{ type: \"text\", text: v.ok === false ? v.error : v.stdout || JSON.stringify(v, null, 2) }],\n    },\n    timeoutMs,\n    isConcurrencySafe: () => true,\n    async execute(args) {\n      try {\n        const host = resolveHost(hosts, args.hostId);\n        const argv = assertAllowedCommand(args.argv, allowCommands, {\n          allowMutate,\n          confirm: args.confirm === true,\n        });\n        const r = await runSsh(host, argv, { timeoutMs, maxOutputChars });\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/ssh.js:36-46](https://github.com/173787247/dsh-remote-ssh/blob/d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd/lib/ssh.js#L36-L46)\n\n有限 mutating 命令正则\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n  const cmd = basename(args[0]);\n  const allow = new Set((allowCommands || []).map(String));\n  if (!allow.has(cmd) && !allow.has(args[0])) {\n    throw new Error(`command not in allowCommands: ${cmd}`);\n  }\n  const mutateRe = /^(rm|mv|cp|chmod|chown|kill|reboot|shutdown|mkfs|dd|crontab|useradd|passwd)$/;\n  if (mutateRe.test(cmd) && !(allowMutate && confirm)) {\n    throw new Error(`mutating command blocked without allowMutate+confirm: ${cmd}`);\n  }\n  return args;\n}\n```\n\n</details>\n\n**依据 3 · 作者声明**：[README.md:33-39](https://github.com/173787247/dsh-remote-ssh/blob/d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd/README.md#L33-L39)\n\n作者破坏性命令条件\n\n```text\n## 安全\n\n- BatchMode SSH，禁止交互口令进聊天\n- argv 禁止 shell 元字符与换行\n- 破坏性命令需 allowMutate + confirm\n- AIX 默认白名单含 oslevel / errpt / lsps / lparstat\n\n```\n\n#### 缺口\n\n- 实际宿主工具审批设置未知\n  **影响：**误将参数当人类确认可导致远端写入\n  **进一步探讨：**用只读测试账号核未列 mutating 命令与审批\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 连接身份与探测状态可能误导什么？\n\n**研究主题：**缺陷与关键质疑、依赖、兼容与流程\n\n#### 完整回答\n\nSSH 连接用 BatchMode=yes、ConnectTimeout=10、StrictHostKeyChecking=accept-new；首次主机密钥按 TOFU 接受，源码没有固定 known_hosts 指纹。未给 hostId 时单主机自动选取，多主机要求明确。status 的外层 ok:true 表示列出配置成功，probe 子结果可能非零；probe 工具逐项失败/跳过但外层仍 ok:true。仅看外层 ok 会漏掉远端不可达或诊断项失败。probe 连续运行多命令，最大工具 timeoutMs 为单命令的 4 倍，若 suite 多于四项、每项接近 timeout，可能先被宿主终止。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/ssh.js:17-27](https://github.com/173787247/dsh-remote-ssh/blob/d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd/lib/ssh.js#L17-L27)\n\nhost 选择\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\nexport function resolveHost(hosts, id) {\n  const list = listHosts(hosts);\n  if (!list.length) throw new Error(\"no hosts configured — set config.hosts in cordis.patch.yml\");\n  if (!id) {\n    if (list.length === 1) return list[0];\n    throw new Error(`hostId required; known: ${list.map((h) => h.id).join(\", \")}`);\n  }\n  const hit = list.find((h) => h.id === id);\n  if (!hit) throw new Error(`unknown hostId=${id}; known: ${list.map((h) => h.id).join(\", \")}`);\n  return hit;\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/ssh.js:66-82](https://github.com/173787247/dsh-remote-ssh/blob/d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd/lib/ssh.js#L66-L82)\n\nBatchMode 与 accept-new\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\nexport function runSsh(host, argv, { timeoutMs = 60_000, maxOutputChars = 40_000 } = {}) {\n  const target = host.user ? `${host.user}@${host.host}` : host.host;\n  const sshArgs = [\n    \"-o\",\n    \"BatchMode=yes\",\n    \"-o\",\n    \"ConnectTimeout=10\",\n    \"-o\",\n    \"StrictHostKeyChecking=accept-new\",\n    \"-p\",\n    String(host.port || 22),\n  ];\n  if (host.identityFile) {\n    sshArgs.push(\"-i\", String(host.identityFile));\n    sshArgs.push(\"-o\", \"IdentitiesOnly=yes\");\n  }\n  sshArgs.push(target, \"--\", ...argv);\n```\n\n</details>\n\n**依据 3 · 源码核查**：[index.js:52-68](https://github.com/173787247/dsh-remote-ssh/blob/d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd/index.js#L52-L68)\n\nstatus 外层 ok\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n    async execute(args) {\n      try {\n        const out = { ok: true, hosts, allowCommands, allowMutate };\n        if (args.hostId || (hosts.length === 1 && args.probe !== false)) {\n          const host = resolveHost(hosts, args.hostId);\n          if (args.probe === false) {\n            out.selected = host;\n          } else {\n            const argv = assertAllowedCommand([\"uname\", \"-a\"], allowCommands);\n            const r = await runSsh(host, argv, { timeoutMs, maxOutputChars });\n            out.probe = { host: host.id, ...r };\n          }\n        }\n        return out;\n      } catch (e) {\n        return { ok: false, error: e instanceof Error ? e.message : String(e), hosts };\n      }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[index.js:129-151](https://github.com/173787247/dsh-remote-ssh/blob/d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd/index.js#L129-L151)\n\nprobe 多命令/外层 ok\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n    timeoutMs: timeoutMs * 4,\n    isConcurrencySafe: () => true,\n    async execute(args) {\n      try {\n        const host = resolveHost(hosts, args.hostId);\n        const suite = probeSuite(host.os);\n        const results = [];\n        for (const argv of suite) {\n          try {\n            const allowed = assertAllowedCommand(argv, allowCommands);\n            const r = await runSsh(host, allowed, { timeoutMs, maxOutputChars });\n            results.push({ argv: allowed, ok: r.code === 0, stdout: r.stdout, stderr: r.stderr });\n          } catch (e) {\n            results.push({\n              argv,\n              ok: false,\n              skipped: true,\n              error: e instanceof Error ? e.message : String(e),\n            });\n          }\n        }\n        return { ok: true, hostId: host.id, os: host.os, results };\n      } catch (e) {\n```\n\n</details>\n\n#### 缺口\n\n- 目标主机/宿主超时未测\n  **影响：**健康和身份信号可能被高估\n  **进一步探讨：**已知主机指纹/故障探测矩阵\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 怎样在旧主机诊断中安全采用？\n\n**研究主题：**采用判断、新假设与验证、效果与总成本\n\n#### 完整回答\n\n先用隔离、最小权限的 SSH 账号与已核指纹的 known_hosts，白名单只留业务允许的固定命令；status/probe 仅用于诊断，检查每项 code/stderr；任何变更命令必须走独立用户审批，不依赖 confirm=true 参数。对 AIX 等老系统需验证 argv 分词、环境路径、输出编码和超时。改进可用远端固定 wrapper 接收结构化参数、明确 host key pinning 和真实审批。实际兼容性与人力成本未知。 假设推导：现有本地 spawn argv/命令名白名单只约束本地进程参数，SSH 目标后的参数可能经远端解释；有限 mutateRe 也漏掉其他写程序，而 confirm 可由模型自填，accept-new 首连不校已知指纹，status/probe 外层 ok 不能代表所有子项成功。若换为远端受限账号下的固定 wrapper 接结构化参数、预置并核对 host key、变更走宿主独立人工审批，能在保留诊断入口的同时收紧远端解释、身份和授权边界。前提是能部署 wrapper、限制账号命令与取得审批通道；代价是运维部署、审批延迟及旧系统兼容调试。最小对照在隔离主机固定同一允许诊断，分别用原版/原型测试空格与元字符参数、未列写程序、模型自行传 confirm=true、首次/更换主机密钥、子诊断失败；比较实际执行命令、写入、主机身份判定和子项失败告警。若原型仍执行未授权写入、接受更换的密钥、绕过人工审批，或仍把失败 probe 报为健康，则证伪。wrapper、pinning 和独立审批均为未实现建议。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:25-39](https://github.com/173787247/dsh-remote-ssh/blob/d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd/README.md#L25-L39)\n\n作者安装与安全\n\n<details>\n<summary>查看原文（15行）</summary>\n\n````text\n## 安装\n\n```sh\ndsh plugin --profile web add github:173787247/dsh-remote-ssh\n```\n\n在 profile 的 `cordis.patch.yml` 配置 `hosts` / `allowCommands`（见 `examples/hosts.cordis.snippet.yml`）。凭据走本机 ssh-agent（可与 [dsh-wsl-ssh-agent](https://github.com/173787247/dsh-wsl-ssh-agent) 配合）。\n\n## 安全\n\n- BatchMode SSH，禁止交互口令进聊天\n- argv 禁止 shell 元字符与换行\n- 破坏性命令需 allowMutate + confirm\n- AIX 默认白名单含 oslevel / errpt / lsps / lparstat\n\n````\n\n</details>\n\n**依据 2 · 源码核查**：[lib/ssh.js:29-46](https://github.com/173787247/dsh-remote-ssh/blob/d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd/lib/ssh.js#L29-L46)\n\n白名单\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\nexport function assertAllowedCommand(argv, allowCommands, { allowMutate = false, confirm = false } = {}) {\n  const args = Array.isArray(argv) ? argv.map(String) : [];\n  if (!args.length) throw new Error(\"argv required\");\n  if (args.some((a) => a.includes(\"\\n\") || a.includes(\"\\r\"))) throw new Error(\"newlines in argv blocked\");\n  for (const a of args) {\n    if (/[;&|`$<>]/.test(a)) throw new Error(`shell metacharacter blocked in arg: ${a}`);\n  }\n  const cmd = basename(args[0]);\n  const allow = new Set((allowCommands || []).map(String));\n  if (!allow.has(cmd) && !allow.has(args[0])) {\n    throw new Error(`command not in allowCommands: ${cmd}`);\n  }\n  const mutateRe = /^(rm|mv|cp|chmod|chown|kill|reboot|shutdown|mkfs|dd|crontab|useradd|passwd)$/;\n  if (mutateRe.test(cmd) && !(allowMutate && confirm)) {\n    throw new Error(`mutating command blocked without allowMutate+confirm: ${cmd}`);\n  }\n  return args;\n}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/ssh.js:66-113](https://github.com/173787247/dsh-remote-ssh/blob/d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd/lib/ssh.js#L66-L113)\n\n执行与输出边界\n\n<details>\n<summary>查看原文（48行）</summary>\n\n```text\nexport function runSsh(host, argv, { timeoutMs = 60_000, maxOutputChars = 40_000 } = {}) {\n  const target = host.user ? `${host.user}@${host.host}` : host.host;\n  const sshArgs = [\n    \"-o\",\n    \"BatchMode=yes\",\n    \"-o\",\n    \"ConnectTimeout=10\",\n    \"-o\",\n    \"StrictHostKeyChecking=accept-new\",\n    \"-p\",\n    String(host.port || 22),\n  ];\n  if (host.identityFile) {\n    sshArgs.push(\"-i\", String(host.identityFile));\n    sshArgs.push(\"-o\", \"IdentitiesOnly=yes\");\n  }\n  sshArgs.push(target, \"--\", ...argv);\n  return new Promise((resolve, reject) => {\n    const child = spawn(\"ssh\", sshArgs, { stdio: [\"ignore\", \"pipe\", \"pipe\"] });\n    let stdout = \"\";\n    let stderr = \"\";\n    const t = setTimeout(() => {\n      child.kill(\"SIGKILL\");\n      reject(new Error(\"ssh timeout\"));\n    }, timeoutMs);\n    child.stdout.on(\"data\", (chunk) => {\n      stdout += chunk;\n      if (stdout.length > maxOutputChars * 2) child.kill(\"SIGKILL\");\n    });\n    child.stderr.on(\"data\", (chunk) => {\n      stderr += chunk;\n    });\n    child.on(\"error\", (e) => {\n      clearTimeout(t);\n      reject(e);\n    });\n    child.on(\"close\", (code) => {\n      clearTimeout(t);\n      resolve({\n        code,\n        stdout: stdout.slice(0, maxOutputChars),\n        stderr: stderr.slice(0, 4000),\n        truncated: stdout.length > maxOutputChars,\n        target,\n        argv,\n      });\n    });\n  });\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/ssh.js:29-46](https://github.com/173787247/dsh-remote-ssh/blob/d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd/lib/ssh.js#L29-L46)\n\n本地过滤/白名单\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\nexport function assertAllowedCommand(argv, allowCommands, { allowMutate = false, confirm = false } = {}) {\n  const args = Array.isArray(argv) ? argv.map(String) : [];\n  if (!args.length) throw new Error(\"argv required\");\n  if (args.some((a) => a.includes(\"\\n\") || a.includes(\"\\r\"))) throw new Error(\"newlines in argv blocked\");\n  for (const a of args) {\n    if (/[;&|`$<>]/.test(a)) throw new Error(`shell metacharacter blocked in arg: ${a}`);\n  }\n  const cmd = basename(args[0]);\n  const allow = new Set((allowCommands || []).map(String));\n  if (!allow.has(cmd) && !allow.has(args[0])) {\n    throw new Error(`command not in allowCommands: ${cmd}`);\n  }\n  const mutateRe = /^(rm|mv|cp|chmod|chown|kill|reboot|shutdown|mkfs|dd|crontab|useradd|passwd)$/;\n  if (mutateRe.test(cmd) && !(allowMutate && confirm)) {\n    throw new Error(`mutating command blocked without allowMutate+confirm: ${cmd}`);\n  }\n  return args;\n}\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/ssh.js:66-84](https://github.com/173787247/dsh-remote-ssh/blob/d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd/lib/ssh.js#L66-L84)\n\nSSH argv 构建与 spawn\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\nexport function runSsh(host, argv, { timeoutMs = 60_000, maxOutputChars = 40_000 } = {}) {\n  const target = host.user ? `${host.user}@${host.host}` : host.host;\n  const sshArgs = [\n    \"-o\",\n    \"BatchMode=yes\",\n    \"-o\",\n    \"ConnectTimeout=10\",\n    \"-o\",\n    \"StrictHostKeyChecking=accept-new\",\n    \"-p\",\n    String(host.port || 22),\n  ];\n  if (host.identityFile) {\n    sshArgs.push(\"-i\", String(host.identityFile));\n    sshArgs.push(\"-o\", \"IdentitiesOnly=yes\");\n  }\n  sshArgs.push(target, \"--\", ...argv);\n  return new Promise((resolve, reject) => {\n    const child = spawn(\"ssh\", sshArgs, { stdio: [\"ignore\", \"pipe\", \"pipe\"] });\n```\n\n</details>\n\n**依据 6 · 源码核查**：[index.js:80-104](https://github.com/173787247/dsh-remote-ssh/blob/d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd/index.js#L80-L104)\n\nconfirm 模型参数进入 guard\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n      required: [\"argv\"],\n      properties: {\n        hostId: { type: \"string\" },\n        argv: {\n          type: \"array\",\n          items: { type: \"string\" },\n          description: \"Executable + args, e.g. [\\\"df\\\",\\\"-h\\\"] or AIX [\\\"oslevel\\\",\\\"-s\\\"]\",\n        },\n        confirm: { type: \"boolean\", description: \"required with allowMutate for mutating cmds\" },\n      },\n    },\n    output: {\n      schema: { type: \"object\", additionalProperties: true },\n      render: (_a, v) => [{ type: \"text\", text: v.ok === false ? v.error : v.stdout || JSON.stringify(v, null, 2) }],\n    },\n    timeoutMs,\n    isConcurrencySafe: () => true,\n    async execute(args) {\n      try {\n        const host = resolveHost(hosts, args.hostId);\n        const argv = assertAllowedCommand(args.argv, allowCommands, {\n          allowMutate,\n          confirm: args.confirm === true,\n        });\n        const r = await runSsh(host, argv, { timeoutMs, maxOutputChars });\n```\n\n</details>\n\n**依据 7 · 源码核查**：[lib/ssh.js:36-46](https://github.com/173787247/dsh-remote-ssh/blob/d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd/lib/ssh.js#L36-L46)\n\n有限 mutating 命令正则\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n  const cmd = basename(args[0]);\n  const allow = new Set((allowCommands || []).map(String));\n  if (!allow.has(cmd) && !allow.has(args[0])) {\n    throw new Error(`command not in allowCommands: ${cmd}`);\n  }\n  const mutateRe = /^(rm|mv|cp|chmod|chown|kill|reboot|shutdown|mkfs|dd|crontab|useradd|passwd)$/;\n  if (mutateRe.test(cmd) && !(allowMutate && confirm)) {\n    throw new Error(`mutating command blocked without allowMutate+confirm: ${cmd}`);\n  }\n  return args;\n}\n```\n\n</details>\n\n**依据 8 · 源码核查**：[lib/ssh.js:17-27](https://github.com/173787247/dsh-remote-ssh/blob/d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd/lib/ssh.js#L17-L27)\n\nhost 选择\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\nexport function resolveHost(hosts, id) {\n  const list = listHosts(hosts);\n  if (!list.length) throw new Error(\"no hosts configured — set config.hosts in cordis.patch.yml\");\n  if (!id) {\n    if (list.length === 1) return list[0];\n    throw new Error(`hostId required; known: ${list.map((h) => h.id).join(\", \")}`);\n  }\n  const hit = list.find((h) => h.id === id);\n  if (!hit) throw new Error(`unknown hostId=${id}; known: ${list.map((h) => h.id).join(\", \")}`);\n  return hit;\n}\n```\n\n</details>\n\n**依据 9 · 源码核查**：[lib/ssh.js:66-82](https://github.com/173787247/dsh-remote-ssh/blob/d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd/lib/ssh.js#L66-L82)\n\nBatchMode 与 accept-new\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\nexport function runSsh(host, argv, { timeoutMs = 60_000, maxOutputChars = 40_000 } = {}) {\n  const target = host.user ? `${host.user}@${host.host}` : host.host;\n  const sshArgs = [\n    \"-o\",\n    \"BatchMode=yes\",\n    \"-o\",\n    \"ConnectTimeout=10\",\n    \"-o\",\n    \"StrictHostKeyChecking=accept-new\",\n    \"-p\",\n    String(host.port || 22),\n  ];\n  if (host.identityFile) {\n    sshArgs.push(\"-i\", String(host.identityFile));\n    sshArgs.push(\"-o\", \"IdentitiesOnly=yes\");\n  }\n  sshArgs.push(target, \"--\", ...argv);\n```\n\n</details>\n\n**依据 10 · 源码核查**：[index.js:52-68](https://github.com/173787247/dsh-remote-ssh/blob/d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd/index.js#L52-L68)\n\nstatus 外层 ok\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n    async execute(args) {\n      try {\n        const out = { ok: true, hosts, allowCommands, allowMutate };\n        if (args.hostId || (hosts.length === 1 && args.probe !== false)) {\n          const host = resolveHost(hosts, args.hostId);\n          if (args.probe === false) {\n            out.selected = host;\n          } else {\n            const argv = assertAllowedCommand([\"uname\", \"-a\"], allowCommands);\n            const r = await runSsh(host, argv, { timeoutMs, maxOutputChars });\n            out.probe = { host: host.id, ...r };\n          }\n        }\n        return out;\n      } catch (e) {\n        return { ok: false, error: e instanceof Error ? e.message : String(e), hosts };\n      }\n```\n\n</details>\n\n**依据 11 · 源码核查**：[index.js:129-151](https://github.com/173787247/dsh-remote-ssh/blob/d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd/index.js#L129-L151)\n\nprobe 多命令/外层 ok\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n    timeoutMs: timeoutMs * 4,\n    isConcurrencySafe: () => true,\n    async execute(args) {\n      try {\n        const host = resolveHost(hosts, args.hostId);\n        const suite = probeSuite(host.os);\n        const results = [];\n        for (const argv of suite) {\n          try {\n            const allowed = assertAllowedCommand(argv, allowCommands);\n            const r = await runSsh(host, allowed, { timeoutMs, maxOutputChars });\n            results.push({ argv: allowed, ok: r.code === 0, stdout: r.stdout, stderr: r.stderr });\n          } catch (e) {\n            results.push({\n              argv,\n              ok: false,\n              skipped: true,\n              error: e instanceof Error ? e.message : String(e),\n            });\n          }\n        }\n        return { ok: true, hostId: host.id, os: host.os, results };\n      } catch (e) {\n```\n\n</details>\n\n#### 缺口\n\n- 目标旧系统环境/权限未测\n  **影响：**不宜直接给生产管理员账号\n  **进一步探讨：**隔离实验机的命令/身份/超时矩阵\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：118a96c3783f1e91504ce15de4a40d29ac7629df0a885b2449c4e89f3113e183。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 4 | 99 | — | — | 468 |\n| .md | example | 1 | 73 | — | — | 317 |\n| .js | source | 2 | 272 | 259 | 1 | — |\n| .js | test | 1 | 34 | 33 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| status | 主机列表 | probe 可失败 |\n| run | 执行白名单 | 远端解释未知 |\n| probe | 批量诊断 | 外层 ok 非全成功 |\n\n## 工程亮点\n\n主机配置/OS probe 便于迁移；远端 shell 语义、有限 mutate 正则与外层 ok 需注意。详见[Q02](#research-q02)至[Q04](#research-q04)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、index.js、lib/ssh.js、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：只读核固定提交 README.md、index.js、lib/ssh.js；未连接目标 SSH 主机。旧 META 复用。\n- 下一步：隔离 SSH 主机测 host key、空格/引号/通配 argv、未列写命令、模型 confirm 和多命令超时。\n",
         "metadata": {
             "repository": "173787247/dsh-remote-ssh",
             "repository_id": 1384810201,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-20T04:26:40.279Z",
+            "window_start": "2026-09-20T04:26:40.279Z",
             "stars": 2,
             "pushed_at": "2026-10-09T09:01:06Z",
             "issues": {
@@ -297,50 +427,39 @@
             "errors": [
                 {
                     "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-remote-ssh%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6409:194586:14A69C:223880:6AD84955 and timestamp 2026-10-21 05:10:45 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-remote-ssh%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E3EA:3BB216:1A514E:1C1382:6AD6ED81 and timestamp 2026-10-20 04:26:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-remote-ssh%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6411:3E6BCD:14EDF2:227217:6AD84955 and timestamp 2026-10-21 05:10:45 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-remote-ssh%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E45C:3BAC47:196F42:1B3090:6AD6ED82 and timestamp 2026-10-20 04:26:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-remote-ssh%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640D:11B6:146A68:21F0FF:6AD84955 and timestamp 2026-10-21 05:10:45 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-remote-ssh%20is%3Aissue%20created%3A2026-09-20T04%3A26%3A40.279Z..2026-10-20T04%3A26%3A40.279Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E50C:CCD53:177F7E:1940DC:6AD6ED83 and timestamp 2026-10-20 04:26:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-remote-ssh%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641D:1F2B1B:147CBC:21F512:6AD84955 and timestamp 2026-10-21 05:10:45 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-remote-ssh%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T04%3A26%3A40.279Z..2026-10-20T04%3A26%3A40.279Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E600:10D786:184D86:1A0F53:6AD6ED84 and timestamp 2026-10-20 04:26:44 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-remote-ssh%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641E:1E8271:144B57:21C761:6AD84955 and timestamp 2026-10-21 05:10:45 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-remote-ssh%20is%3Aissue%20updated%3A2026-09-20T04%3A26%3A40.279Z..2026-10-20T04%3A26%3A40.279Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E6D4:76213:1848B2:1A0B2F:6AD6ED85 and timestamp 2026-10-20 04:26:45 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 }
             ],
             "npm": {
                 "package_name": "dsh-remote-ssh-run",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-20T04:26:45.443Z",
+                "window_start": "2026-09-20",
+                "window_end": "2026-10-19",
                 "downloads_30d": null,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-remote-ssh-run",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-20:2026-10-19/dsh-remote-ssh-run",
                 "error": "HTTP 404",
                 "publication": {
                     "first_published_at": null,
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-20T04:26:45.443Z",
                     "source_url": "https://registry.npmjs.org/dsh-remote-ssh-run",
-                    "error": "HTTP 404",
-                    "latest_version": null,
-                    "latest_published_at": null,
-                    "latest_error": "HTTP 404"
+                    "error": "HTTP 404"
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd",
-                "current_revision": "d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {
@@ -348,14 +467,14 @@
             "repository": "173787247/dsh-remote-ssh",
             "path": "",
             "revision": "d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "77f9bf85fb4d930ed7d91c1ec23156e795d698b946c85c4c112b7d1cb09b2770",
                 "code": "d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd",
                 "maintenance": "744f4da30cf0f20c3bbaa7fc17f2082883fe606d9f772087c656dfd1237500c8"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

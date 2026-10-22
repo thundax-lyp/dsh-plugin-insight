@@ -10,9 +10,9 @@
             "repository": "240xu/verdict-engine",
             "path": "packages/dsh-tech-lead",
             "aliases": [],
-            "name": "dsh-tech-lead（旧组件）",
+            "name": "@240xu/dsh-tech-lead",
             "entry_type": "plugin",
-            "technical_category": "security-governance",
+            "technical_category": "agent-workflow",
             "business_category": "software-delivery",
             "tags": [],
             "availability": "unknown",
@@ -24,36 +24,100 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-20-08-github-1345209661-packages-dsh-tech-lead-directory-0",
+                    "id": "2026-10-22-02-github-1345209661-packages-dsh-tech-lead-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
-                    "retrieved_at": "2026-10-20T10:53:40.729Z",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-22T05:51:07.641Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-20-08-github-1345209661-packages-dsh-tech-lead-author",
+                    "id": "2026-10-22-02-github-1345209661-packages-dsh-tech-lead-author",
                     "kind": "author_claim",
                     "url": "https://github.com/240xu/verdict-engine/blob/c7e23f9e131694af6dbd9f3ed11301602a514864/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/240xu/verdict-engine",
+                            "commit": "c7e23f9e131694af6dbd9f3ed11301602a514864",
+                            "path": "README.md",
+                            "content_sha256": "b28341549b0833b710d19eacfbc25484771a6defadf872141d0ff76eab3cce65"
+                        }
+                    ],
                     "revision": "c7e23f9e131694af6dbd9f3ed11301602a514864",
-                    "captured_at": "2026-10-20T10:53:40.729Z",
-                    "summary": "为 DSH 提供只读工程治理工具，检查任务分级、计划、证据、门禁、上下文及变更预览。",
-                    "artifact": "data/runs/2026-10-20-08/snapshots/240xu--verdict-engine--packages-dsh-tech-lead/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:51:07.641Z",
+                    "summary": "面向 DSH 的旧版只读工程治理工具集，对调用方提交的结构化事实做分级、审计、Gate 与变更预览。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/240xu--verdict-engine--packages-dsh-tech-lead/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-20-08-github-1345209661-packages-dsh-tech-lead-source",
+                    "id": "2026-10-22-02-github-1345209661-packages-dsh-tech-lead-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/240xu/verdict-engine/blob/c7e23f9e131694af6dbd9f3ed11301602a514864/packages/dsh-tech-lead/package.json",
+                    "url": "https://github.com/240xu/verdict-engine/blob/c7e23f9e131694af6dbd9f3ed11301602a514864/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/240xu/verdict-engine",
+                            "commit": "c7e23f9e131694af6dbd9f3ed11301602a514864",
+                            "path": "README.md",
+                            "content_sha256": "b28341549b0833b710d19eacfbc25484771a6defadf872141d0ff76eab3cce65"
+                        },
+                        {
+                            "repository_url": "https://github.com/240xu/verdict-engine",
+                            "commit": "c7e23f9e131694af6dbd9f3ed11301602a514864",
+                            "path": "packages/dsh-tech-lead/package.json",
+                            "content_sha256": "014d151818d0608c6dd37be3ccbd9d6983ca6b0e6ec25e69b8b05bd3ca466ae1"
+                        },
+                        {
+                            "repository_url": "https://github.com/240xu/verdict-engine",
+                            "commit": "c7e23f9e131694af6dbd9f3ed11301602a514864",
+                            "path": "packages/dsh-tech-lead/src/index.js",
+                            "content_sha256": "94999eda7fafbd9ae5f15a009cfe1624d6d40341d6ae47d8a8b511288cb7c24c"
+                        },
+                        {
+                            "repository_url": "https://github.com/240xu/verdict-engine",
+                            "commit": "c7e23f9e131694af6dbd9f3ed11301602a514864",
+                            "path": "packages/dsh-tech-lead/src/tools.js",
+                            "content_sha256": "8550d9c5d20cf3d4de18086404d243c34394cd77511c1b66ce3c6a653cf1a1a5"
+                        },
+                        {
+                            "repository_url": "https://github.com/240xu/verdict-engine",
+                            "commit": "c7e23f9e131694af6dbd9f3ed11301602a514864",
+                            "path": "packages/dsh-tech-lead/src/core/classify.js",
+                            "content_sha256": "459da419dd27242efee5ff5d9e94d1b42362028b5d5a44855241b9ab2093acbc"
+                        },
+                        {
+                            "repository_url": "https://github.com/240xu/verdict-engine",
+                            "commit": "c7e23f9e131694af6dbd9f3ed11301602a514864",
+                            "path": "packages/dsh-tech-lead/src/core/gate.js",
+                            "content_sha256": "2216bb8e3fe46c7feda049d45794a4c3e947f6827e109d114179d6dca5089a0c"
+                        },
+                        {
+                            "repository_url": "https://github.com/240xu/verdict-engine",
+                            "commit": "c7e23f9e131694af6dbd9f3ed11301602a514864",
+                            "path": "packages/dsh-tech-lead/src/core/gates.js",
+                            "content_sha256": "39ddb37edfc945e28f75f703093e5ba92927861097123c9339e05102b27179ba"
+                        },
+                        {
+                            "repository_url": "https://github.com/240xu/verdict-engine",
+                            "commit": "c7e23f9e131694af6dbd9f3ed11301602a514864",
+                            "path": "packages/dsh-tech-lead/src/core/mutation.js",
+                            "content_sha256": "491dbea5ea77afad894b65591b95d62d1cfc3b8efd70fe8b9d49dcf1f88e151c"
+                        },
+                        {
+                            "repository_url": "https://github.com/240xu/verdict-engine",
+                            "commit": "c7e23f9e131694af6dbd9f3ed11301602a514864",
+                            "path": "packages/dsh-tech-lead/src/protocol.js",
+                            "content_sha256": "1a01fe73c3a87b964db7e3b3193f13927e247e786fff8556749dec55453eabcd"
+                        }
+                    ],
                     "revision": "c7e23f9e131694af6dbd9f3ed11301602a514864",
-                    "captured_at": "2026-10-20T10:53:40.729Z",
-                    "summary": "核查 packages/dsh-tech-lead/package.json、packages/dsh-tech-lead/src/index.js、packages/dsh-tech-lead/src/tools.js、packages/dsh-tech-lead/src/tools/mutation.js、packages/dsh-tech-lead/src/core/gate.js、packages/dsh-tech-lead/src/protocol.js；packages/dsh-tech-lead/src/index.js注册只读工具，tools.js及分域模块把传入JSON交给纯core函数；gate.js核对角色/锚点/盲评人数，mutation工具只预览并拒绝执行型标记。protocol统一截断输出。",
-                    "artifact": "data/runs/2026-10-20-08/snapshots/240xu--verdict-engine--packages-dsh-tech-lead/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:51:07.641Z",
+                    "summary": "核查 README.md、packages/dsh-tech-lead/package.json、packages/dsh-tech-lead/src/index.js、packages/dsh-tech-lead/src/tools.js、packages/dsh-tech-lead/src/core/classify.js、packages/dsh-tech-lead/src/core/gate.js、packages/dsh-tech-lead/src/core/gates.js、packages/dsh-tech-lead/src/core/mutation.js、packages/dsh-tech-lead/src/protocol.js；Cordis 注册工具，将 JSON 字符串/CSV 映射到纯函数，输出结构化结果；无仓库读取或执行权限。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/240xu--verdict-engine--packages-dsh-tech-lead/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "仅研究packages/dsh-tech-lead固定旧组件，抽读入口、工具定义、gate及protocol，不将同仓dsh-themis和nomos的新功能迁入；未执行工具/目标测试或真实门禁。",
+                        "只审固定提交的 packages/dsh-tech-lead 组件及根 README 的产品定位；未运行目标插件/宿主或执行治理动作。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +128,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "面向需要让Agent工程规范可机械复核的团队；合格结果是指出调用者输入中违反规则的字段，而非证明真实代码或环境已经满足发布标准。",
+                    "text": "已有 DSH 工程代理希望对状态、证据、计划和评审材料做重复、可复核的规则检查。",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1345209661-packages-dsh-tech-lead-source"
+                        "2026-10-22-02-github-1345209661-packages-dsh-tech-lead-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +139,16 @@
                             "fingerprint": "c7e23f9e131694af6dbd9f3ed11301602a514864"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:53:40.729Z",
+                    "reviewed_at": "2026-10-22T05:51:07.641Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "packages/dsh-tech-lead/src/index.js注册只读工具，tools.js及分域模块把传入JSON交给纯core函数；gate.js核对角色/锚点/盲评人数，mutation工具只预览并拒绝执行型标记。protocol统一截断输出。",
+                    "text": "Cordis 注册工具，将 JSON 字符串/CSV 映射到纯函数，输出结构化结果；无仓库读取或执行权限。",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1345209661-packages-dsh-tech-lead-source"
+                        "2026-10-22-02-github-1345209661-packages-dsh-tech-lead-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +157,16 @@
                             "fingerprint": "c7e23f9e131694af6dbd9f3ed11301602a514864"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:53:40.729Z",
+                    "reviewed_at": "2026-10-22T05:51:07.641Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "仅研究packages/dsh-tech-lead固定旧组件，抽读入口、工具定义、gate及protocol，不将同仓dsh-themis和nomos的新功能迁入；未执行工具/目标测试或真实门禁。",
+                    "text": "只审固定提交的 packages/dsh-tech-lead 组件及根 README 的产品定位；未运行目标插件/宿主或执行治理动作。",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1345209661-packages-dsh-tech-lead-source"
+                        "2026-10-22-02-github-1345209661-packages-dsh-tech-lead-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +175,16 @@
                             "fingerprint": "c7e23f9e131694af6dbd9f3ed11301602a514864"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:53:40.729Z",
+                    "reviewed_at": "2026-10-22T05:51:07.641Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "package为@240xu/dsh-tech-lead 1.0.0，绑定@deepseek-ai/dsh-tools 0.1.0-rc.7；根README面向新单包dsh-themis，当前条目存在维护/迁移边界，不能凭根文档直接安装旧组件。",
+                    "text": "组件 package 1.0.0、Node >=16、MIT；根 README 表述旧组件已弃用而主线为 dsh-themis，实际安装状态未验。",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1345209661-packages-dsh-tech-lead-source"
+                        "2026-10-22-02-github-1345209661-packages-dsh-tech-lead-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +193,16 @@
                             "fingerprint": "c7e23f9e131694af6dbd9f3ed11301602a514864"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:53:40.729Z",
+                    "reviewed_at": "2026-10-22T05:51:07.641Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "首次需把工程事实整理成JSON与角色/证据账本，持续维护指纹、时间和规则版本；本组件无网络/子进程的路径可见，但生成输入仍消耗模型和人工，未测是否比简洁检查表省时间。",
+                    "text": "#### 成本\n\n| 阶段 | 资源与人工 | 边界 |\n| --- | --- | --- |\n| 首次 | DSH/Cordis 工具兼容与 JSON 输入 | 旧包可能弃用 |\n| 每次 | 整理状态、证据、评审身份与锚点 | 事实不由插件核验 |\n| 复核 | 核对 pass 与完整发现数 | 裸数组可能截断 |",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1345209661-packages-dsh-tech-lead-source"
+                        "2026-10-22-02-github-1345209661-packages-dsh-tech-lead-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +211,16 @@
                             "fingerprint": "c7e23f9e131694af6dbd9f3ed11301602a514864"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:53:40.729Z",
+                    "reviewed_at": "2026-10-22T05:51:07.641Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "新采用者先核对根项目推荐的dsh-themis迁移路线，不优先安装这个旧组件；已有使用者可把它作为输入一致性检查，并保留真实测试和人工评审，先验证旧协议返回与现有调用方兼容。",
+                    "text": "现有旧包用户可用于辅助 lint；新部署先比较 dsh-themis。高风险审批需真人与原始证据对账。详见[Q02](#research-q02)、[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1345209661-packages-dsh-tech-lead-source"
+                        "2026-10-22-02-github-1345209661-packages-dsh-tech-lead-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +229,16 @@
                             "fingerprint": "c7e23f9e131694af6dbd9f3ed11301602a514864"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:53:40.729Z",
+                    "reviewed_at": "2026-10-22T05:51:07.641Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "能让规则违例更稳定地被呈现，对重复治理有潜在价值；实际交付质量取决于事实包和执行责任，不能将只读判定升级为自动阻止发布或已完成验收。",
+                    "text": "#### 效果\n\n| 项 | 源码支持 | 未知 |\n| --- | --- | --- |\n| 分级/Gate | 纯函数规则 | 输入真实性 |\n| 变更预览 | 不执行写操作 | 真正修改安全性 |\n| 输出裁剪 | 设上限避免膨胀 | 消费端能否发现 legacy 截断 |",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1345209661-packages-dsh-tech-lead-source"
+                        "2026-10-22-02-github-1345209661-packages-dsh-tech-lead-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +247,16 @@
                             "fingerprint": "c7e23f9e131694af6dbd9f3ed11301602a514864"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:53:40.729Z",
+                    "reviewed_at": "2026-10-22T05:51:07.641Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "纯core与tools分离便于单独复用判据，mutation preview把命令作为惰性字符串有清晰副作用边界。protocol.js会将超500条裸finding数组直接slice而无法附warning，可能使调用方误读完整性；复用时应约定截断标志并注意本组件与新包协议不同。",
+                    "text": "工具入口只计算来参；mutation 仅预览。协议渲染对信封提示截断，对旧裸数组静默截断。无文件/进程/网络读写。",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1345209661-packages-dsh-tech-lead-source"
+                        "2026-10-22-02-github-1345209661-packages-dsh-tech-lead-source"
                     ],
                     "dependencies": [
                         {
@@ -201,15 +265,69 @@
                             "fingerprint": "c7e23f9e131694af6dbd9f3ed11301602a514864"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:53:40.729Z",
+                    "reviewed_at": "2026-10-22T05:51:07.641Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "将工程治理规则变为可反复调用的只读函数，辅助发现已提供材料的不一致。详见[Q01](#research-q01)、[Q02](#research-q02)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1345209661-packages-dsh-tech-lead-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1345209661:packages-dsh-tech-lead",
+                            "area": "code",
+                            "fingerprint": "c7e23f9e131694af6dbd9f3ed11301602a514864"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T05:51:07.641Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "supported",
+                    "text": "调用方控制事实与身份，空分类输入默认 T0；旧式裸结果超过 500 条静默截断。Gate 的 pass 不是实际授权或独立评审。详见[Q02](#research-q02)、[Q03](#research-q03)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1345209661-packages-dsh-tech-lead-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1345209661:packages-dsh-tech-lead",
+                            "area": "code",
+                            "fingerprint": "c7e23f9e131694af6dbd9f3ed11301602a514864"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T05:51:07.641Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "mechanism",
+                    "basis": "unverified",
+                    "text": "对缺失高风险输入 fail-closed、所有输出加完整性元数据，并接入锚点/身份对账后才能进一步承担强治理角色；现版未实现。详见[Q04](#research-q04)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1345209661-packages-dsh-tech-lead-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1345209661:packages-dsh-tech-lead",
+                            "area": "code",
+                            "fingerprint": "c7e23f9e131694af6dbd9f3ed11301602a514864"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T05:51:07.641Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-20T10:53:40.729Z",
+            "last_checked_at": "2026-10-22T05:51:07.641Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "c7e23f9e131694af6dbd9f3ed11301602a514864",
-                "reviewed_at": "2026-10-20T10:53:40.729Z",
+                "reviewed_at": "2026-10-22T05:51:07.641Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -223,13 +341,13 @@
                         "novelty": 9,
                         "mechanism": 15,
                         "transferability": 10,
-                        "simplification": 8
+                        "simplification": 4
                     },
-                    "rationale": "novelty：成熟lint/schema用于工程治理的小幅新接线；mechanism：确定性规则和只读预览改变执行约束，实质，但不验事实；transferability：纯函数判据可实质跨工具迁移；simplification：统一计算检查实质简化，旧协议及复制core增加维护。",
+                    "rationale": "规则函数化和多工具覆盖有工程化价值；同类 lint/审计常见，输入真实性和 legacy 输出完整性有限制；规则可迁移但 DSH 包较旧。",
                     "basis": "interpretation",
-                    "score": 42,
+                    "score": 38,
                     "evidence_ids": [
-                        "2026-10-20-08-github-1345209661-packages-dsh-tech-lead-source"
+                        "2026-10-22-02-github-1345209661-packages-dsh-tech-lead-source"
                     ]
                 },
                 "business": {
@@ -237,45 +355,45 @@
                         "workflow": 18,
                         "delivery": 8,
                         "reach": 5,
-                        "economics": 4
+                        "economics": 0
                     },
-                    "rationale": "workflow：口头规范转机器检查实质改变分工；delivery：得到结构判断但非真实验收，小幅；reach：有JSON调用能力团队的小幅入口；economics：可少重复人工检查但输入账本有成本，小幅且未实测。",
+                    "rationale": "重复检查有明确负担，数据整理仍由用户承担；旧组件定位窄，缺少节省时间与风险降低的对照。",
                     "basis": "interpretation",
-                    "score": 35,
+                    "score": 31,
                     "evidence_ids": [
-                        "2026-10-20-08-github-1345209661-packages-dsh-tech-lead-source"
+                        "2026-10-22-02-github-1345209661-packages-dsh-tech-lead-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "not_recommended",
-                "reason": "新采用者不优先选旧dsh-tech-lead组件，应先核对dsh-themis迁移；存量仅作输入一致性检查，真实证据与截断需另审。",
+                "decision": "observe",
+                "reason": "仅将它作为旧 DSH 工作流中的只读辅助检查；高风险 Gate/发布结论必须核对真实证据，并优先评估较新 dsh-themis。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "团队规范机械复核场景明确，但事实由调用方整理。"
+                        "rationale": "结构化工程治理检查有明确场景。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "确定性规则胜过纯提示，旧路径较新单包无明确新增采用优势。"
+                        "rationale": "规则可重复，但不查真实仓库。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "已查gate字符串判据及裸数组500条截断，无法验真锚点。"
+                        "rationale": "固定源码可静态核查，宿主与业务成效未验。"
                     },
                     "cost": {
                         "score": 5,
-                        "rationale": "固定旧工具依赖、迁移与事实JSON维护成本，难支持新安装。"
+                        "rationale": "维护输入 schema/锚点与防误读的复核成本较高。"
                     }
                 },
                 "score": 54,
                 "revision": "c7e23f9e131694af6dbd9f3ed11301602a514864",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T05:51:07.641Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-20-08-github-1345209661-packages-dsh-tech-lead-source"
+                    "2026-10-22-02-github-1345209661-packages-dsh-tech-lead-source"
                 ],
                 "dependencies": [
                     {
@@ -300,103 +418,57 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-20T10:40:14Z",
-            "analysis_sha256": "ab8889ce406b1f4fa476921af9f67984c46f8f32ae5b8bf2d047b80aa257730f"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "322dde6fd03cae03d0f9904f4255539b841849dc8a11cb11e02a71cf3b331022"
         },
         "publication.metadata": "data/plugins/240xu--verdict-engine--packages-dsh-tech-lead/META.json",
         "publication.summaries": {
-            "text": "为 DSH 提供只读工程治理工具，检查任务分级、计划、证据、门禁、上下文及变更预览。",
+            "text": "面向 DSH 的旧版只读工程治理工具集，对调用方提交的结构化事实做分级、审计、Gate 与变更预览。",
             "revision": "c7e23f9e131694af6dbd9f3ed11301602a514864",
             "source_url": "https://github.com/240xu/verdict-engine/blob/c7e23f9e131694af6dbd9f3ed11301602a514864/README.md"
         },
         "publication.capabilities": {
             "revision": "c7e23f9e131694af6dbd9f3ed11301602a514864",
             "items": {
-                "模型工具": "只读任务分级、状态/计划/证据/门禁检查、上下文分析及变更预览工具定义"
-            }
+                "模型工具": "任务分级、状态/证据/Gate 等只读规则与变更预览"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 分级/Gate | 重复规则检查 | 调用方自报事实 |\n| 审计 | 发现已输入材料问题 | 不读取真实工程 |\n| 预览 | 说明拟议变更 | 不执行也不保证安全 |"
         },
         "publication.advice": {
             "revision": "c7e23f9e131694af6dbd9f3ed11301602a514864",
-            "text": "新采用者先核对根项目推荐的dsh-themis迁移路线，不优先安装这个旧组件；已有使用者可把它作为输入一致性检查，并保留真实测试和人工评审，先验证旧协议返回与现有调用方兼容。"
+            "text": "现有旧包用户可用于辅助 lint；新部署先比较 dsh-themis。高风险审批需真人与原始证据对账。详见[Q02](#research-q02)、[Q04](#research-q04)。"
         },
         "registry": "data/plugins/240xu--verdict-engine--packages-dsh-tech-lead",
-        "reports": "# dsh-tech-lead（旧组件）\n\n> 为 DSH 提供只读工程治理工具，检查任务分级、计划、证据、门禁、上下文及变更预览。\n\n## 研究范围\n\n- **仓库**：[240xu/verdict-engine](https://github.com/240xu/verdict-engine)\n- **版本号**：1.0.0（[固定提交 c7e23f9e](https://github.com/240xu/verdict-engine/tree/c7e23f9e131694af6dbd9f3ed11301602a514864)）\n- **版本日期**：2026-09-21（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n目标固定组件支持只读治理判定，当前根README主推dsh-themis并明确旧拆分包弃用；不能将新包24入口或v2协议承诺归给本组件。未运行工具或检验实际工程结果，证据真实性绑定假设未验证。\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：面向需要让Agent工程规范可机械复核的团队；合格结果是指出调用者输入中违反规则的字段，而非证明真实代码或环境已经满足发布标准。\n- **亮点**：相对纯文本规范靠模型自觉，本项把任务分级、证据字段和门禁条件做成确定性的只读计算，减少遗漏格式与角色分工检查；原创增量在规则可执行化和一致输出，而非证明输入事实为真。组件内复制core、固定旧工具依赖，必须按所选路径评价。\n- **思考**：“机械门禁通过”能否等于真实独立评审完成？gate.js比较字符串身份、非空锚点和报告数量，不读取文件、执行命令或验证评审身份，空输入在部分判据缺省时也不表达外部环境合格。最强支持是能精确检出输入矛盾，最强反例是构造格式完整但虚假的证据仍可能过机械子集。\n- **建议**：新采用者先核对根项目推荐的dsh-themis迁移路线，不优先安装这个旧组件；已有使用者可把它作为输入一致性检查，并保留真实测试和人工评审，先验证旧协议返回与现有调用方兼容。\n\n采用建议：新采用者先核对根项目推荐的dsh-themis迁移路线，不优先安装这个旧组件；已有使用者可把它作为输入一致性检查，并保留真实测试和人工评审，先验证旧协议返回与现有调用方兼容。\n\n## 核心贡献\n\n相对纯文本规范靠模型自觉，本项把任务分级、证据字段和门禁条件做成确定性的只读计算，减少遗漏格式与角色分工检查；原创增量在规则可执行化和一致输出，而非证明输入事实为真。组件内复制core、固定旧工具依赖，必须按所选路径评价。\n\n## 关键质疑\n\n“机械门禁通过”能否等于真实独立评审完成？gate.js比较字符串身份、非空锚点和报告数量，不读取文件、执行命令或验证评审身份，空输入在部分判据缺省时也不表达外部环境合格。最强支持是能精确检出输入矛盾，最强反例是构造格式完整但虚假的证据仍可能过机械子集。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n待验证假设：由外部只读证据采集器产生签名/摘要绑定的事实包，工具只检验来源与当前revision匹配，并将自报字段与已采集事实分开。来源是纯计算边界与虚假锚点问题；代价是信任根、版本更新和证据采集维护，不能把模型自报签名当真实性。\n\n对同一组真实工程事实注入缺锚点、重叠身份、虚构证据、陈旧revision和超500finding，对比本组件/手工检查表及外部事实绑定；观察漏报、误放行和输入整理时间。若采集绑定不能识别虚构/过期事实或成本过高，则否定假设。\n\n## 场景与替代办法\n\n面向需要让Agent工程规范可机械复核的团队；合格结果是指出调用者输入中违反规则的字段，而非证明真实代码或环境已经满足发布标准。\n\n参照同仓纯文本Skill和常规schema/lint：增量是工程治理规则计算化；当前新单包与旧组件同时存在，采用判断须以目标路径和实际协议为准。\n\n## 依赖与流程\n\n必需DSH tools注册服务和固定旧版dsh-tools，输入事实/角色/证据由调用者提供；目标没有自动读取仓库或验真服务，效果依赖账本质量。向新单包迁移需核对工具名、输入模式与输出协议。\n\n调用者收集事实→序列化JSON→选分级/计划/证据/门禁工具→解析结果与截断边界→人工或外部流程决定改动/发布；非法输入返回结构错误，工具自身不执行修复或放行外部系统。\n\n## 成本与效果\n\n首次需把工程事实整理成JSON与角色/证据账本，持续维护指纹、时间和规则版本；本组件无网络/子进程的路径可见，但生成输入仍消耗模型和人工，未测是否比简洁检查表省时间。\n\n能让规则违例更稳定地被呈现，对重复治理有潜在价值；实际交付质量取决于事实包和执行责任，不能将只读判定升级为自动阻止发布或已完成验收。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：packages/dsh-tech-lead；内容摘要：540e2b8ee060e39d1ed16960bae2eaa130228912d9477397bd29b60a6fd2f329。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 26 | 1711 | 1479 | 140 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **模型工具**：只读任务分级、状态/计划/证据/门禁检查、上下文分析及变更预览工具定义\n\n## 工程亮点\n\n纯core与tools分离便于单独复用判据，mutation preview把命令作为惰性字符串有清晰副作用边界。protocol.js会将超500条裸finding数组直接slice而无法附warning，可能使调用方误读完整性；复用时应约定截断标志并注意本组件与新包协议不同。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 packages/dsh-tech-lead/package.json、packages/dsh-tech-lead/src/index.js、packages/dsh-tech-lead/src/tools.js、packages/dsh-tech-lead/src/tools/mutation.js、packages/dsh-tech-lead/src/core/gate.js、packages/dsh-tech-lead/src/protocol.js 及固定范围 inventory；组件：packages/dsh-tech-lead。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：仅研究packages/dsh-tech-lead固定旧组件，抽读入口、工具定义、gate及protocol，不将同仓dsh-themis和nomos的新功能迁入；未执行工具/目标测试或真实门禁。\n- 下一步：对同一组真实工程事实注入缺锚点、重叠身份、虚构证据、陈旧revision和超500finding，对比本组件/手工检查表及外部事实绑定；观察漏报、误放行和输入整理时间。若采集绑定不能识别虚构/过期事实或成本过高，则否定假设。\n\n## 源码索引\n\n- [packages/dsh-tech-lead/package.json](https://github.com/240xu/verdict-engine/blob/c7e23f9e131694af6dbd9f3ed11301602a514864/packages/dsh-tech-lead/package.json)\n- [packages/dsh-tech-lead/src/index.js](https://github.com/240xu/verdict-engine/blob/c7e23f9e131694af6dbd9f3ed11301602a514864/packages/dsh-tech-lead/src/index.js)\n- [packages/dsh-tech-lead/src/tools.js](https://github.com/240xu/verdict-engine/blob/c7e23f9e131694af6dbd9f3ed11301602a514864/packages/dsh-tech-lead/src/tools.js)\n- [packages/dsh-tech-lead/src/tools/mutation.js](https://github.com/240xu/verdict-engine/blob/c7e23f9e131694af6dbd9f3ed11301602a514864/packages/dsh-tech-lead/src/tools/mutation.js)\n- [packages/dsh-tech-lead/src/core/gate.js](https://github.com/240xu/verdict-engine/blob/c7e23f9e131694af6dbd9f3ed11301602a514864/packages/dsh-tech-lead/src/core/gate.js)\n- [packages/dsh-tech-lead/src/protocol.js](https://github.com/240xu/verdict-engine/blob/c7e23f9e131694af6dbd9f3ed11301602a514864/packages/dsh-tech-lead/src/protocol.js)\n",
+        "reports": "# @240xu/dsh-tech-lead\n\n> 面向 DSH 的旧版只读工程治理工具集，对调用方提交的结构化事实做分级、审计、Gate 与变更预览。\n\n## 研究范围\n\n- **仓库**：[240xu/verdict-engine](https://github.com/240xu/verdict-engine)\n- **版本号**：1.0.0（[固定提交 c7e23f9e131694af6dbd9f3ed11301602a514864](https://github.com/240xu/verdict-engine/tree/c7e23f9e131694af6dbd9f3ed11301602a514864)）\n- **版本日期**：2026-09-21（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n源码支持只读规则计算；输入真实性、评审身份和锚点不由插件核验，legacy 裸数组截断还有完整性缺口。\n\n## 洞察短评\n\n- **用途**：已有 DSH 工程代理希望对状态、证据、计划和评审材料做重复、可复核的规则检查。\n- **亮点**：将工程治理规则变为可反复调用的只读函数，辅助发现已提供材料的不一致。详见[Q01](#research-q01)、[Q02](#research-q02)。\n- **思考**：调用方控制事实与身份，空分类输入默认 T0；旧式裸结果超过 500 条静默截断。Gate 的 pass 不是实际授权或独立评审。详见[Q02](#research-q02)、[Q03](#research-q03)。\n- **建议**：对缺失高风险输入 fail-closed、所有输出加完整性元数据，并接入锚点/身份对账后才能进一步承担强治理角色；现版未实现。详见[Q04](#research-q04)。\n\n采用建议：现有旧包用户可用于辅助 lint；新部署先比较 dsh-themis。高风险审批需真人与原始证据对账。详见[Q02](#research-q02)、[Q04](#research-q04)。\n\n## 核心贡献\n\n将工程治理规则变为可反复调用的只读函数，辅助发现已提供材料的不一致。详见[Q01](#research-q01)、[Q02](#research-q02)。\n\n## 关键质疑\n\n调用方控制事实与身份，空分类输入默认 T0；旧式裸结果超过 500 条静默截断。Gate 的 pass 不是实际授权或独立评审。详见[Q02](#research-q02)、[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n对缺失高风险输入 fail-closed、所有输出加完整性元数据，并接入锚点/身份对账后才能进一步承担强治理角色；现版未实现。详见[Q04](#research-q04)。\n\n对空输入、伪造锚点、身份重叠、超过 500 发现的旧工具以及真实宿主注册进行隔离验证；比较新 dsh-themis。\n\n## 场景与替代办法\n\n已有 DSH 工程代理希望对状态、证据、计划和评审材料做重复、可复核的规则检查。\n\n人工阅读 Skill、状态与证据清单；组件把部分判断规则函数化，仍依赖人工事实收集。\n\n## 依赖与流程\n\n#### 条件\n\n| 条件 | 用途 | 缺失时 |\n| --- | --- | --- |\n| DSH tools 宿主 | 注册工具 | 无法调用 |\n| 真实结构化状态/计划/证据 | 判据输入 | pass 失去意义 |\n| 独立评审与锚点核验 | 高风险 Gate | 自报身份可能冒充 |\n\n#### 审慎使用\n\n| 步骤 | 动作 | 判据 |\n| --- | --- | --- |\n| 确认 | 先核包是否仍适用 | 与宿主版本兼容 |\n| 输入 | 从原始材料填 JSON | 锚点可追踪 |\n| 运行 | 只读工具逐项检查 | 错误/截断显式看见 |\n| 复核 | 人工对账 pass | 不把自报结果当授权 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 资源与人工 | 边界 |\n| --- | --- | --- |\n| 首次 | DSH/Cordis 工具兼容与 JSON 输入 | 旧包可能弃用 |\n| 每次 | 整理状态、证据、评审身份与锚点 | 事实不由插件核验 |\n| 复核 | 核对 pass 与完整发现数 | 裸数组可能截断 |\n\n#### 效果\n\n| 项 | 源码支持 | 未知 |\n| --- | --- | --- |\n| 分级/Gate | 纯函数规则 | 输入真实性 |\n| 变更预览 | 不执行写操作 | 真正修改安全性 |\n| 输出裁剪 | 设上限避免膨胀 | 消费端能否发现 legacy 截断 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**核实此旧版 dsh-tech-lead 组件的只读治理工具边界、输出语义与较新项目产品定位的差异。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 它替哪些工程治理判断提供机械检查？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n组件通过 Cordis 注册一组只读工具，覆盖任务分级、状态/计划/证据检查、Gate、发布和安装审计、上下文与进度分析以及变更预览。调用者需要自己把真实工程事实序列化成 JSON 或 CSV 提供；工具没有读取仓库或验证外部证据的通路。因此它把规则判断转成可重复的函数，但“pass”仅表示所给输入满足规则，不是实际项目已经安全或真实评审已发生。仓库根 README 表示当前主线已转为 dsh-themis，旧 dsh-tech-lead 拆分/组件已弃用；本条只评估固定提交中该路径。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/dsh-tech-lead/src/index.js:1-33](https://github.com/240xu/verdict-engine/blob/c7e23f9e131694af6dbd9f3ed11301602a514864/packages/dsh-tech-lead/src/index.js#L1-L33)\n\napply 注册工具，注释声明仅计算调用方 JSON，无文件/子进程/网络。\n\n<details>\n<summary>查看原文（33行）</summary>\n\n```text\nimport { defineTool } from '@deepseek-ai/dsh-tools';\nimport {\n  classify, validateState, transitionCheck,\n  evidenceLint, planLint, gatePrecheck,\n  releaseAudit, installAudit, resumeCard,\n  getCapabilities,\n  validateContext, evidenceGraphLint, evidenceFreshness,\n  progressDecide, criticalPath, changeImpact,\n  gatePlan, gateAggregate, gateReopen, previewMutation,\n} from './core/index.js';\nimport { registerTools } from './tools.js';\n\nexport const name = 'tech-lead-tools';\nexport const inject = ['tools'];\nexport { getCapabilities };\n\n/**\n * Registers the read-only tech-lead tool surface. Every tool computes over\n * caller-supplied JSON — no filesystem writes, no subprocesses, no network.\n * @param {import('@deepseek-ai/cordis').Context} ctx\n */\nexport function apply(ctx) {\n  for (const tool of registerTools(defineTool, {\n    classify, validateState, transitionCheck,\n    evidenceLint, planLint, gatePrecheck,\n    releaseAudit, installAudit, resumeCard,\n    validateContext, evidenceGraphLint, evidenceFreshness,\n    progressDecide, criticalPath, changeImpact,\n    gatePlan, gateAggregate, gateReopen, previewMutation,\n  })) {\n    ctx.tools.register(tool);\n  }\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[packages/dsh-tech-lead/src/tools.js:22-112](https://github.com/240xu/verdict-engine/blob/c7e23f9e131694af6dbd9f3ed11301602a514864/packages/dsh-tech-lead/src/tools.js#L22-L112)\n\n工具以 JSON 字符串/CSV 参数调用纯函数。\n\n<details>\n<summary>查看原文（91行）</summary>\n\n```text\nexport function registerTools(defineTool, core) {\n  const json = (str) => {\n    try {\n      return { ok: true, value: JSON.parse(str) };\n    } catch (err) {\n      return { ok: false, error: 'invalid JSON: ' + err.message };\n    }\n  };\n  const csv = (str) =>\n    String(str ?? '').split(',').map((s) => s.trim()).filter(Boolean);\n  const out = (value) => renderEnvelope(value);\n\n  /** @type {ReturnType<defineTool>[]} */\n  const tools = [];\n\n  tools.push(defineTool({\n    name: 'tech_lead_classify',\n    description:\n      'Classify a task into tech-lead tiers T0/T1/T2 with reasons. T2 involves multi-module work, irreversible ops, protected assets (user data/secrets/runtime), or public interfaces. Use before planning.',\n    parameters: {\n      touchesMultipleModules: { type: 'boolean', description: 'change spans ≥2 modules' },\n      estimatedDays: { type: 'number', description: 'rough duration in days' },\n      irreversibleOps: { type: 'string', description: 'comma-separated irreversible operations' },\n      protectedAssetTypes: { type: 'string', description: 'comma-separated among SOURCE,USER_DATA,CONFIG,SECRET,RUNTIME,GENERATED' },\n      publicInterfaceChange: { type: 'boolean', description: 'changes public API/contract' },\n      uncertainRisk: { type: 'boolean', description: 'risk level cannot be determined yet' },\n    },\n    output: { schema: { type: 'string' }, render: (_a, v) => [{ type: 'text', text: v }] },\n    async execute(args) {\n      const provided = [args.touchesMultipleModules, args.estimatedDays, args.irreversibleOps, args.protectedAssetTypes, args.publicInterfaceChange, args.uncertainRisk];\n      const input = provided.every((v) => v === undefined || v === '')\n        ? {}\n        : {\n            touchesMultipleModules: args.touchesMultipleModules,\n            estimatedDays: args.estimatedDays,\n            irreversibleOps: csv(args.irreversibleOps),\n            protectedAssetTypes: csv(args.protectedAssetTypes),\n            publicInterfaceChange: args.publicInterfaceChange,\n            uncertainRisk: args.uncertainRisk,\n          };\n      return out(core.classify(input));\n    },\n  }));\n\n  tools.push(defineTool({\n    name: 'tech_lead_state_validate',\n    description:\n      'Validate a tech-lead project state.json (schema v1): enum fields, non-empty anchors on done items, full evidence provenance (id/level E0-E4/source/time/scope/repro). Unknown fields preserved as warnings. Returns pretty-printed JSON string.',\n    parameters: {\n      stateJson: { type: 'string', required: true, description: 'state.json SERIALIZED AS A STRING — pass the JSON text itself, never a nested object' },\n    },\n    output: { schema: { type: 'string' }, render: (_a, v) => [{ type: 'text', text: v }] },\n    async execute(args) {\n      const parsed = json(args.stateJson);\n      if (!parsed.ok) return out({ valid: false, errors: [{ path: 'stateJson', message: parsed.error }], warnings: [], unknownFields: [] });\n      return out(core.validateState(parsed.value));\n    },\n  }));\n\n  tools.push(defineTool({\n    name: 'tech_lead_transition_check',\n    description:\n      'Check whether a proposed outcome transition (CONTINUE/PAUSE/SCOPE-DOWN/PIVOT/STOP) is mechanically justified by the given state. PIVOT needs recorded decisions; SCOPE-DOWN needs goal ledger + risks; STOP needs anchored done items or degraded_reason. Returns pretty-printed JSON string.',\n    parameters: {\n      stateJson: { type: 'string', required: true, description: 'current state object SERIALIZED AS A STRING (JSON text, not an object)' },\n      proposed: { type: 'string', required: true, description: 'one of CONTINUE,PAUSE,SCOPE-DOWN,PIVOT,STOP' },\n    },\n    output: { schema: { type: 'string' }, render: (_a, v) => [{ type: 'text', text: v }] },\n    async execute(args) {\n      const parsed = json(args.stateJson);\n      if (!parsed.ok) return out({ allowed: false, reason: parsed.error });\n      return out(core.transitionCheck(parsed.value, args.proposed));\n    },\n  }));\n\n  tools.push(defineTool({\n    name: 'tech_lead_plan_lint',\n    description:\n      'Lint a plan for the tech-lead minimum contracts: goal+metric+target ledger, assumption verification methods, decision alternatives+reasons, risk impacts+mitigations, dependency blockers, rollback for irreversible ops. Returns pretty-printed JSON array of findings.',\n    parameters: {\n      planJson: { type: 'string', required: true, description: 'plan object SERIALIZED AS A STRING (JSON text, not an object)' },\n    },\n    output: { schema: { type: 'string' }, render: (_a, v) => [{ type: 'text', text: v }] },\n    async execute(args) {\n      const parsed = json(args.planJson);\n      if (!parsed.ok) return out([{ severity: 'error', path: 'planJson', message: parsed.error }]);\n      return out(core.planLint(parsed.value));\n    },\n  }));\n\n  tools.push(defineTool({\n```\n\n</details>\n\n**依据 3 · 作者声明**：[README.md:84-101](https://github.com/240xu/verdict-engine/blob/c7e23f9e131694af6dbd9f3ed11301602a514864/README.md#L84-L101)\n\n仓库作者指出主线 dsh-themis 与旧包弃用关系。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n````text\n```\n\n单包注册 24 个入口：23 个只读治理工具（原九项审计＋上下文校验、证据图/新鲜度分析、推进决策、关键路径/影响分析、续跑对账、Gate 计划/聚合/重开、变更预览、会话退出五条件检查、循环 tick 判定）＋能力发现工具 `tech_lead_capabilities`（只列出本包实际注册的工具）。仅对调用方传入的 JSON 做计算——无文件写入、无子进程、无网络访问。旧拆分包（`dsh-tech-lead-{core,plugin,bundle}`）已弃用并指向本包。源码安装：`node scripts/build-market-package.mjs` 装配后 `dsh plugin add packages/dsh-themis`。根 npm 包只发布技能与安装器。\n\n**两个产物，同一套规范：** `nomos-skill`（Verdict Engine 纯文本版）是保守、广泛兼容的纯文本规范——装进任何 agent 环境（opencode/Claude Code/Codex）即可，无其他依赖。**`dsh-themis` 是 DSH 插件专项优化版**：同样的判断层外加机器可校验的只读运行时——全部 22 工具在 schema 中声明 `protocolJson`（legacy 默认裸形态、显式请求 v1/v2 信封、未知取值 fail-closed）、state→context-v2 单向投影（身份与来源永不虚构）、strict/compat 输入兼容模式，以及稳定的 v2 信封（`findings`/`guidance`/`meta.complete`/`meta.outputProtocol`）。\n\n```bash\ndsh plugin --profile headless add /path/to/tech-lead-skill/packages/dsh-themis\ndsh --profile headless --dump-config   # 确认 tech-lead-tools 行已注入\n```\n\n\n输出家族与限制：\n\n- 十二个强化工具返回 `tech-lead.result.v1` 信封（判别字段：`meta.schema`）；原有九个工具为向后兼容保留裸领域形状。\n- 渲染输出有上限：finding/error 数组每字段最多 500 条并附 `FINDINGS_TRUNCATED` 警告；超限调用方回显数组折叠为 `{truncated,total}` 摘要；超过 256KB 自动切换紧凑序列化。\n\n架构与权限矩阵见 [spec](https://github.com/240xu/verdict-engine/blob/main/docs/superpowers/specs/2026-08-25-dsh-tech-lead-system.md)。\n````\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 分级与 Gate 的判据如何工作，有哪些信任边界？\n\n**研究主题：**功能与机制、工程质量与复用\n\n#### 完整回答\n\nclassify 把多模块、不可逆操作、敏感资产或公共接口变动归 T2，工期和不确定性可继续升级；但无任何输入时默认 T0。gatePrecheck 检查提案/执行/评审 ID 重叠、报告锚点和盲审人数，gateAggregate 按角色/锚点/结论聚合。所有身份、锚点和 verdict 都由调用者提供；函数没有读取 Git、验证锚点存在或核实评审人实际独立。因此空/伪造输入可能得到形式上通过，不能当授权机制。它的价值在于发现已输入材料中的不一致。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/dsh-tech-lead/src/core/classify.js:16-66](https://github.com/240xu/verdict-engine/blob/c7e23f9e131694af6dbd9f3ed11301602a514864/packages/dsh-tech-lead/src/core/classify.js#L16-L66)\n\n分级规则及无输入默认 T0。\n\n<details>\n<summary>查看原文（51行）</summary>\n\n```text\n  const reasons = [];\n  let tier = 'T0';\n  const provided = ['touchesMultipleModules', 'estimatedDays', 'irreversibleOps', 'protectedAssetTypes', 'publicInterfaceChange', 'uncertainRisk'];\n  if (provided.every((key) => input[key] === undefined)) {\n    reasons.unshift('no classification inputs provided; defaulting to T0');\n  }\n\n  const t2 =\n    input.touchesMultipleModules === true ||\n    (Array.isArray(input.irreversibleOps) && input.irreversibleOps.length > 0) ||\n    (Array.isArray(input.protectedAssetTypes) &&\n      input.protectedAssetTypes.some((t) =>\n        ['USER_DATA', 'SECRET', 'RUNTIME'].includes(t)\n      )) ||\n    input.publicInterfaceChange === true;\n\n  if (input.touchesMultipleModules === true) reasons.push('multi-module change → T2');\n  if (Array.isArray(input.irreversibleOps) && input.irreversibleOps.length) {\n    reasons.push(`irreversible ops (${input.irreversibleOps.slice(0, 10).join(', ')}${input.irreversibleOps.length > 10 ? ' …' : ''}) → T2`);\n  }\n  if (Array.isArray(input.protectedAssetTypes)) {\n    for (const t of input.protectedAssetTypes) {\n      if (['USER_DATA', 'SECRET', 'RUNTIME'].includes(t)) {\n        reasons.push(`protected asset ${t} → T2`);\n      }\n    }\n  }\n  if (input.publicInterfaceChange === true) reasons.push('public interface change → T2');\n\n  const days = Number(input.estimatedDays) || 0;\n  if (t2) {\n    tier = 'T2';\n  } else if (days >= 7) {\n    tier = 'T2';\n    reasons.push(`estimated ${days}d crosses a week boundary → T2`);\n  } else if (days >= 1) {\n    tier = 'T1';\n    reasons.push(`estimated ${days}d single-module work → T1`);\n  } else {\n    reasons.push('trivial, single-file, discardable → T0');\n  }\n\n  let escalated = false;\n  if (input.uncertainRisk === true && tier !== 'T2') {\n    tier = tier === 'T0' ? 'T1' : 'T2';\n    reasons.push('risk uncertain: escalated one tier');\n    escalated = true;\n  }\n\n  return { tier, reasons, escalated };\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[packages/dsh-tech-lead/src/core/gate.js:16-79](https://github.com/240xu/verdict-engine/blob/c7e23f9e131694af6dbd9f3ed11301602a514864/packages/dsh-tech-lead/src/core/gate.js#L16-L79)\n\nGate precheck 基于调用方 ID/报告字段检查。\n\n<details>\n<summary>查看原文（64行）</summary>\n\n```text\n * @returns {{ pass: boolean, violations: Array<{type:string, detail:string}> }}\n */\nexport function gatePrecheck(input = {}) {\n  if (input === null || typeof input !== 'object') {\n    return { pass: false, violations: [{ type: 'BAD_INPUT', detail: 'gate precheck input must be an object' }] };\n  }\n  const reviewerIds = Array.isArray(input.reviewerIds) ? input.reviewerIds : [];\n  const reports = Array.isArray(input.reports) ? input.reports : [];\n  if (input.reports !== undefined && !Array.isArray(input.reports)) {\n    // fall through with empty reports; violation recorded below for parity\n  }\n  /** @type {Array<{type:string, detail:string}>} */\n  const v = [];\n\n  if (input.proposalAuthorId && input.proposalAuthorId === input.executorId) {\n    v.push({ type: 'PROPOSER_IS_EXECUTOR', detail: 'referee separation requires proposalAuthorId != executorId' });\n  }\n\n  for (const who of ['proposalAuthorId', 'executorId']) {\n    const id = input[who];\n    if (id && reviewerIds.includes(id)) {\n      v.push({ type: 'IDENTITY_OVERLAP', detail: `${who} \"${id}\" may not also review` });\n    }\n  }\n\n  for (const [i, r] of reports.entries()) {\n    if (r === null || typeof r !== 'object') {\n      v.push({ type: 'BAD_REPORT', detail: `report[${i}] must be an object` });\n      continue;\n    }\n    if (!VERDICTS.has(r.verdict)) {\n      v.push({ type: 'BAD_VERDICT', detail: `report[${i}] verdict must be pass|conditional|reject` });\n    }\n    const anchors = Array.isArray(r.anchors) ? r.anchors.filter((a) => typeof a === 'string' && a.trim()) : [];\n    if (anchors.length === 0) {\n      v.push({ type: 'ANCHOR_MISSING', detail: `report[${i}] needs at least one file:line or command anchor` });\n    }\n  }\n\n  const destructiveScope = Array.isArray(input.destructiveScope) ? input.destructiveScope : [];\n  if (input.destructiveScope !== undefined && !Array.isArray(input.destructiveScope)) {\n    v.push({ type: 'BAD_DESTRUCTIVE_SCOPE', detail: 'destructiveScope must be an array of strings when provided' });\n  }\n  if (input.solo && destructiveScope.length > 0) {\n    v.push({\n      type: 'SOLO_FORBIDDEN',\n      detail: `solo:true cannot clear destructive scope (${destructiveScope.slice(0, 8).join(', ')}${destructiveScope.length > 8 ? ' …' : ''})`,\n    });\n  }\n\n  if (input.blindRequired) {\n    const distinctAnchored = new Set(\n      reports\n        .filter((r) => VERDICTS.has(r.verdict) &&\n          Array.isArray(r.anchors) && r.anchors.some((a) => typeof a === 'string' && a.trim()))\n        .map((r) => r.reviewerId)\n    ).size;\n    if (distinctAnchored < 3) {\n      v.push({ type: 'BLIND_QUORUM', detail: `blind gate needs ≥3 distinct anchored reviewers, got ${distinctAnchored}` });\n    }\n  }\n\n  return { pass: v.length === 0, violations: v };\n}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[packages/dsh-tech-lead/src/core/gates.js:18-68](https://github.com/240xu/verdict-engine/blob/c7e23f9e131694af6dbd9f3ed11301602a514864/packages/dsh-tech-lead/src/core/gates.js#L18-L68)\n\nGate 聚合基于传入角色、锚点和结论。\n\n<details>\n<summary>查看原文（51行）</summary>\n\n```text\nexport function gateAggregate(reports, plan = {}) {\n  plan = object(plan) ? plan : {};\n  const findings = [];\n  const seen = new Set();\n  const rolesSeen = new Set();\n  const validReports = [];\n  const rejects = [];\n  const conditionals = [];\n  list(reports).forEach((report, index) => {\n    const collect = () => {\n      for (const item of list(report.findings)) {\n        const id = String(item?.id ?? `${report.role}:${item?.message ?? ''}`);\n        if (!seen.has(id)) { seen.add(id); findings.push(item); }\n      }\n      if (report.verdict === 'reject') rejects.push(report);\n      if (report.verdict === 'conditional') conditionals.push(report);\n    };\n    if (!object(report) || typeof report.role !== 'string' || !report.role || !Array.isArray(report.anchors) || report.anchors.length === 0) {\n      findings.push({ code: 'INVALID_REPORT', path: `/reports/${index}`, message: 'report needs role and anchors' });\n      return;\n    }\n    if (report.verdict !== 'pass' && report.verdict !== 'reject' && report.verdict !== 'conditional') {\n      findings.push({ code: 'INVALID_VERDICT', path: `/reports/${index}/verdict`, message: 'invalid report verdict' });\n      collect();\n      return;\n    }\n    if (rolesSeen.has(report.role)) {\n      findings.push({ code: 'DUPLICATE_ROLE', path: `/reports/${index}/role`, message: `duplicate reviewer role: ${report.role}` });\n      collect();\n      return;\n    }\n    if (!report.anchors.every((anchor) => typeof anchor === 'string' && anchor.trim().length > 0)) {\n      findings.push({ code: 'INVALID_REPORT', path: `/reports/${index}/anchors`, message: 'anchors must be non-empty strings' });\n      collect();\n      return;\n    }\n    rolesSeen.add(report.role);\n    validReports.push(report);\n    collect();\n  });\n  const required = [...new Set(list(plan.requiredRoles).filter((role) => typeof role === 'string' && role))];\n  const quorum = Number.isInteger(plan.quorum) && plan.quorum > 0 ? plan.quorum : required.length;\n  if (!required.length || quorum > required.length) findings.push({ code: 'INVALID_PLAN', message: 'plan needs non-empty requiredRoles and a valid quorum' });\n  const satisfiedRoles = new Set(validReports.map((report) => report.role));\n  const missing = required.filter((role) => !satisfiedRoles.has(role));\n  const pass = findings.length === 0 && missing.length === 0 && validReports.length >= quorum && rejects.length === 0 && conditionals.length === 0;\n  const verdict = rejects.length ? 'reject' : pass ? 'pass' : 'conditional';\n  return { pass, verdict, findings, missingRoles: missing, unresolved: missing.length > 0 || rejects.length > 0 || conditionals.length > 0 || findings.length > 0 };\n}\n\nexport function gateReopen(previous = {}, current = {}) {\n```\n\n</details>\n\n#### 缺口\n\n- 输入事实与真实仓库/人员身份之间无校验。\n  **影响：**机器通过可被误当成独立评审或真实风险解除。\n  **进一步探讨：**将锚点与受控工作区/评审系统对账，人工复核高风险结论。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 只读和输出协议的保障是否完整？\n\n**研究主题：**缺陷与关键质疑、依赖、兼容与流程\n\n#### 完整回答\n\n插件入口不调用文件系统、子进程或网络，mutation_preview 明确拒绝执行模式，只返回预期 diff 等数据。输出渲染对信封中的 finding/error 做 500 条上限并发警告，对回显数组和深度也裁剪；然而 legacy 的裸顶层数组超过 500 条时直接 slice，没有完整性标记，依赖完整发现集的消费者可能低估问题。协议注释也承认旧九工具仍用裸结构。不能仅凭包描述中的“21 tools”认定固定版精确工具数量和全部新协议语义。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/dsh-tech-lead/src/core/mutation.js:19-53](https://github.com/240xu/verdict-engine/blob/c7e23f9e131694af6dbd9f3ed11301602a514864/packages/dsh-tech-lead/src/core/mutation.js#L19-L53)\n\n变更预览仅允许 read-only-preview，未执行写入。\n\n<details>\n<summary>查看原文（35行）</summary>\n\n```text\n\nexport function validateMutationIntent(raw) {\n  const errors = [];\n  if (!object(raw)) return { valid: false, errors: [{ path: '/', message: 'intent must be an object' }], warnings: [] };\n  if (raw.schema !== 'tech-lead.mutation-intent.v1') errors.push({ path: '/schema', message: 'invalid schema' });\n  if (raw.mode !== 'read-only-preview') errors.push({ path: '/mode', code: 'CAPABILITY_DENIED', message: 'only read-only-preview is available' });\n  if (!list(raw.target).length) errors.push({ path: '/target', message: 'at least one target is required' });\n  for (const [index, target] of list(raw.target).entries()) if (EXECUTABLE_OPERATIONS.has(target?.operation)) errors.push({ path: `/target/${index}/operation`, code: 'CAPABILITY_DENIED', message: 'executable target operations are unavailable' });\n  if (!list(raw.expectedDiff).length) errors.push({ path: '/expectedDiff', message: 'expectedDiff is required' });\n  if (!object(raw.recoveryPoint) || raw.recoveryPoint.required !== true) errors.push({ path: '/recoveryPoint', message: 'recovery point is required' });\n  if (!list(raw.verification).length) errors.push({ path: '/verification', message: 'verification is required' });\n  if (!object(raw.authorization) || raw.authorization.required !== true) errors.push({ path: '/authorization', message: 'authorization declaration is required' });\n  return { valid: errors.length === 0, errors, warnings: [] };\n}\n\nexport function previewMutation(raw) {\n  if (!object(raw) || raw.mode !== 'read-only-preview') return errorEnvelope('mutation_preview', 'CAPABILITY_DENIED', [{ code: 'CAPABILITY_DENIED', message: 'mutation execution is not enabled' }]);\n  const validation = validateMutationIntent(raw);\n  if (!validation.valid) return errorEnvelope('mutation_preview', 'SCHEMA_INVALID', validation.errors, validation);\n  const markers = [];\n  for (const field of ['target', 'expectedDiff', 'verification', 'recoveryPoint', 'authorization']) scanMarkers(raw[field], `/${field}`, 0, markers);\n  if (markers.length) return errorEnvelope('mutation_preview', 'CAPABILITY_DENIED', markers);\n  try {\n    return okEnvelope('mutation_preview', {\n      execution: 'not performed',\n      mode: 'read-only-preview',\n      targets: clone(list(raw.target)),\n      expectedDiff: clone(list(raw.expectedDiff)),\n      verification: clone(list(raw.verification)),\n      authorization: clone(raw.authorization),\n    });\n  } catch {\n    return errorEnvelope('mutation_preview', 'SERIALIZATION_FAILED', [{ code: 'SERIALIZATION_FAILED', path: '/', message: 'intent payload is not serializable for preview' }]);\n  }\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[packages/dsh-tech-lead/src/protocol.js:27-91](https://github.com/240xu/verdict-engine/blob/c7e23f9e131694af6dbd9f3ed11301602a514864/packages/dsh-tech-lead/src/protocol.js#L27-L91)\n\nlegacy 顶层数组截断无标记，信封和嵌套输出有裁剪。\n\n<details>\n<summary>查看原文（65行）</summary>\n\n```text\nconst RESULT_ARRAY_LIMIT = 1000;\nconst WALK_DEPTH_LIMIT = 64;\nconst COMPACT_THRESHOLD = 262144;\nconst ECHO_KEYS = new Set(['evidence', 'targets', 'expectedDiff', 'verification', 'items']);\n\nexport function clampEnvelope(envelope) {\n  if (Array.isArray(envelope)) return envelope.length > FINDINGS_LIMIT ? envelope.slice(0, FINDINGS_LIMIT) : envelope;\n  if (envelope === null || typeof envelope !== 'object') return envelope;\n  const out = { ...envelope };\n  let truncatedTotal = 0;\n  for (const field of ['errors', 'warnings']) {\n    if (Array.isArray(out[field]) && out[field].length > FINDINGS_LIMIT) {\n      truncatedTotal = Math.max(truncatedTotal, out[field].length);\n      out[field] = out[field].slice(0, FINDINGS_LIMIT);\n    }\n  }\n  if (truncatedTotal > 0) {\n    out.warnings = [...(out.warnings ?? []), { code: 'FINDINGS_TRUNCATED', total: truncatedTotal, message: `output truncated to first ${FINDINGS_LIMIT} entries per findings field` }];\n  }\n  if (out.data !== null && typeof out.data === 'object') {\n    out.data = clampNode(out.data, 0);\n  }\n  return out;\n}\n\n// Iterative walk with a hard depth cap: subtrees deeper than WALK_DEPTH_LIMIT are\n// passed through untouched (native JSON serialization handles arbitrary depth),\n// so hostile nesting can no longer turn the renderer into an INTERNAL error.\nfunction clampNode(root, rootDepth) {\n  const result = Array.isArray(root) ? [...root] : { ...root };\n  const stack = [[result, rootDepth]];\n  while (stack.length) {\n    const [node, depth] = stack.pop();\n    const entries = Object.keys(node);\n    for (const key of entries) {\n      const value = node[key];\n      if (!value || typeof value !== 'object') continue;\n      if (depth + 1 > WALK_DEPTH_LIMIT) {\n        node[key] = { truncated: true, reason: 'DEPTH_LIMIT', depth: WALK_DEPTH_LIMIT };\n        continue;\n      }\n      if (Array.isArray(value)) {\n        if (ECHO_KEYS.has(key) && value.length > ECHO_LIMIT) {\n          node[key] = { truncated: true, total: value.length };\n        } else if (value.length > RESULT_ARRAY_LIMIT) {\n          node[key] = value.slice(0, RESULT_ARRAY_LIMIT);\n        } else {\n          node[key] = [...value];\n          stack.push([node[key], depth + 1]);\n        }\n      } else {\n        node[key] = { ...value };\n        stack.push([node[key], depth + 1]);\n      }\n    }\n  }\n  return result;\n}\n\nexport function canonicalStringify(value) {\n  return canonicalize(value, 0);\n}\n\nfunction canonicalize(value, depth) {\n  if (depth > WALK_DEPTH_LIMIT) return null; // deep subtrees compare as equal; drift beyond the cap is unreported by design\n```\n\n</details>\n\n**依据 3 · 源码核查**：[packages/dsh-tech-lead/src/tools.js:7-17](https://github.com/240xu/verdict-engine/blob/c7e23f9e131694af6dbd9f3ed11301602a514864/packages/dsh-tech-lead/src/tools.js#L7-L17)\n\n源码注释明确旧工具裸输出与 500 条静默裁剪。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n/**\n * Tool definitions for the tech-lead read-only surface.\n *\n * Every tool computes over caller-supplied primitives/JSON strings:\n * - composite inputs arrive as JSON strings (parsed defensively),\n * - list inputs arrive as comma-separated values,\n * - outputs are pretty-printed JSON strings (uniform string schema); malformed inputs yield structured BAD_INPUT/invalid results instead of throws.\n * - Legacy nine tools return BARE domain shapes (not wrapped in a tech-lead.result.v1 envelope); consumers can discriminate via the absence of meta.schema. Bare top-level finding arrays slice silently at 500 entries (shape preserved, no warning field exists).\n * - All rendered output is clamped: finding/error arrays are capped at 500 entries (FINDINGS_TRUNCATED warning appended), oversized caller-echo arrays collapse into {truncated,total}, and payloads above 256KB switch to compact serialization.\n *\n * No tool touches the filesystem, spawns processes, or performs network I/O.\n```\n\n</details>\n\n#### 缺口\n\n- 未用超过 500 项的真实输入在宿主端测输出。\n  **影响：**具体工具渲染与消费端能否感知截断尚未实测。\n  **进一步探讨：**构造超过上限的清单，比较 core/工具/宿主显示项数及完整性信号。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 何时采用此组件，如何避免误用？\n\n**研究主题：**效果与总成本、采用判断、新假设与验证\n\n#### 完整回答\n\n若已有 DSH 旧版本且需要对结构化状态、计划与评审输入做重复机械检查，可在只读条件下试用；先确认目标是否应迁移到仓库当前的 dsh-themis。使用者需维护 state/evidence schema、填真实锚点，调用后对源材料复核，特别是 Gate、发布和大量发现项。建议高风险场景默认缺失输入 fail-closed、所有裁剪输出标完整性标记，并接入可追溯的锚点验证；这是后续假设而非现版能力。衡量价值应看遗漏发现与复核时间，而不是工具输出“pass”次数。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:84-101](https://github.com/240xu/verdict-engine/blob/c7e23f9e131694af6dbd9f3ed11301602a514864/README.md#L84-L101)\n\n作者声明较新 dsh-themis 和旧包定位。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n````text\n```\n\n单包注册 24 个入口：23 个只读治理工具（原九项审计＋上下文校验、证据图/新鲜度分析、推进决策、关键路径/影响分析、续跑对账、Gate 计划/聚合/重开、变更预览、会话退出五条件检查、循环 tick 判定）＋能力发现工具 `tech_lead_capabilities`（只列出本包实际注册的工具）。仅对调用方传入的 JSON 做计算——无文件写入、无子进程、无网络访问。旧拆分包（`dsh-tech-lead-{core,plugin,bundle}`）已弃用并指向本包。源码安装：`node scripts/build-market-package.mjs` 装配后 `dsh plugin add packages/dsh-themis`。根 npm 包只发布技能与安装器。\n\n**两个产物，同一套规范：** `nomos-skill`（Verdict Engine 纯文本版）是保守、广泛兼容的纯文本规范——装进任何 agent 环境（opencode/Claude Code/Codex）即可，无其他依赖。**`dsh-themis` 是 DSH 插件专项优化版**：同样的判断层外加机器可校验的只读运行时——全部 22 工具在 schema 中声明 `protocolJson`（legacy 默认裸形态、显式请求 v1/v2 信封、未知取值 fail-closed）、state→context-v2 单向投影（身份与来源永不虚构）、strict/compat 输入兼容模式，以及稳定的 v2 信封（`findings`/`guidance`/`meta.complete`/`meta.outputProtocol`）。\n\n```bash\ndsh plugin --profile headless add /path/to/tech-lead-skill/packages/dsh-themis\ndsh --profile headless --dump-config   # 确认 tech-lead-tools 行已注入\n```\n\n\n输出家族与限制：\n\n- 十二个强化工具返回 `tech-lead.result.v1` 信封（判别字段：`meta.schema`）；原有九个工具为向后兼容保留裸领域形状。\n- 渲染输出有上限：finding/error 数组每字段最多 500 条并附 `FINDINGS_TRUNCATED` 警告；超限调用方回显数组折叠为 `{truncated,total}` 摘要；超过 256KB 自动切换紧凑序列化。\n\n架构与权限矩阵见 [spec](https://github.com/240xu/verdict-engine/blob/main/docs/superpowers/specs/2026-08-25-dsh-tech-lead-system.md)。\n````\n\n</details>\n\n**依据 2 · 源码核查**：[packages/dsh-tech-lead/src/core/classify.js:16-28](https://github.com/240xu/verdict-engine/blob/c7e23f9e131694af6dbd9f3ed11301602a514864/packages/dsh-tech-lead/src/core/classify.js#L16-L28)\n\n未传入分类字段时返回默认 T0。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n  const reasons = [];\n  let tier = 'T0';\n  const provided = ['touchesMultipleModules', 'estimatedDays', 'irreversibleOps', 'protectedAssetTypes', 'publicInterfaceChange', 'uncertainRisk'];\n  if (provided.every((key) => input[key] === undefined)) {\n    reasons.unshift('no classification inputs provided; defaulting to T0');\n  }\n\n  const t2 =\n    input.touchesMultipleModules === true ||\n    (Array.isArray(input.irreversibleOps) && input.irreversibleOps.length > 0) ||\n    (Array.isArray(input.protectedAssetTypes) &&\n      input.protectedAssetTypes.some((t) =>\n        ['USER_DATA', 'SECRET', 'RUNTIME'].includes(t)\n```\n\n</details>\n\n**依据 3 · 源码核查**：[packages/dsh-tech-lead/src/protocol.js:27-36](https://github.com/240xu/verdict-engine/blob/c7e23f9e131694af6dbd9f3ed11301602a514864/packages/dsh-tech-lead/src/protocol.js#L27-L36)\n\n裸数组静默裁剪路径。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\nconst RESULT_ARRAY_LIMIT = 1000;\nconst WALK_DEPTH_LIMIT = 64;\nconst COMPACT_THRESHOLD = 262144;\nconst ECHO_KEYS = new Set(['evidence', 'targets', 'expectedDiff', 'verification', 'items']);\n\nexport function clampEnvelope(envelope) {\n  if (Array.isArray(envelope)) return envelope.length > FINDINGS_LIMIT ? envelope.slice(0, FINDINGS_LIMIT) : envelope;\n  if (envelope === null || typeof envelope !== 'object') return envelope;\n  const out = { ...envelope };\n  let truncatedTotal = 0;\n```\n\n</details>\n\n#### 缺口\n\n- 无真实项目对照、误放行率或采用成本数据。\n  **影响：**无法量化相对文本 Skill/新 dsh-themis 的收益。\n  **进一步探讨：**在相同工程案例中比较漏检、误检、复核用时和升级成本。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：packages/dsh-tech-lead；内容摘要：540e2b8ee060e39d1ed16960bae2eaa130228912d9477397bd29b60a6fd2f329。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 26 | 1711 | 1479 | 140 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 分级/Gate | 重复规则检查 | 调用方自报事实 |\n| 审计 | 发现已输入材料问题 | 不读取真实工程 |\n| 预览 | 说明拟议变更 | 不执行也不保证安全 |\n\n## 工程亮点\n\n工具入口只计算来参；mutation 仅预览。协议渲染对信封提示截断，对旧裸数组静默截断。无文件/进程/网络读写。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、packages/dsh-tech-lead/package.json、packages/dsh-tech-lead/src/index.js、packages/dsh-tech-lead/src/tools.js、packages/dsh-tech-lead/src/core/classify.js、packages/dsh-tech-lead/src/core/gate.js、packages/dsh-tech-lead/src/core/gates.js、packages/dsh-tech-lead/src/core/mutation.js、packages/dsh-tech-lead/src/protocol.js 及固定范围 inventory；组件：packages/dsh-tech-lead。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：只审固定提交的 packages/dsh-tech-lead 组件及根 README 的产品定位；未运行目标插件/宿主或执行治理动作。\n- 下一步：对空输入、伪造锚点、身份重叠、超过 500 发现的旧工具以及真实宿主注册进行隔离验证；比较新 dsh-themis。\n",
         "metadata": {
             "repository": "240xu/verdict-engine",
             "repository_id": 1345209661,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T05:47:18.886Z",
+            "window_start": "2026-09-22T05:47:18.886Z",
             "stars": 1,
             "pushed_at": "2026-09-21T15:59:35Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A240xu%2Fverdict-engine%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6410:0BD3:A0E1B:10A9D4:6AD849F2 and timestamp 2026-10-21 05:13:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A240xu%2Fverdict-engine%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6415:136889:156DB2:230385:6AD849F3 and timestamp 2026-10-21 05:13:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A240xu%2Fverdict-engine%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6418:EFE19:142769:21C2B2:6AD849F3 and timestamp 2026-10-21 05:13:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A240xu%2Fverdict-engine%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6419:1D2F69:14123B:21B255:6AD849F3 and timestamp 2026-10-21 05:13:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A240xu%2Fverdict-engine%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641A:AF775:143DDD:21C822:6AD849F3 and timestamp 2026-10-21 05:13:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
-            "npm": {
-                "package_name": "@240xu/dsh-tech-lead",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 67,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40240xu%2Fdsh-tech-lead",
-                "error": null,
-                "publication": {
-                    "first_published_at": "2026-08-26T05:28:43.935Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
-                    "source_url": "https://registry.npmjs.org/%40240xu%2Fdsh-tech-lead",
-                    "error": null,
-                    "latest_version": "1.0.0",
-                    "latest_published_at": "2026-08-26T05:28:44.235Z",
-                    "latest_error": null
-                }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "c7e23f9e131694af6dbd9f3ed11301602a514864",
-                "current_revision": "c7e23f9e131694af6dbd9f3ed11301602a514864",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
-            }
+            "errors": []
         },
         "discovery.plugins": {
             "id": "github:1345209661:packages-dsh-tech-lead",
             "repository": "240xu/verdict-engine",
             "path": "packages/dsh-tech-lead",
             "revision": "c7e23f9e131694af6dbd9f3ed11301602a514864",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "96cc1a5138aadcc7a9fd1d41606050585e8c44ad8cc3e4c606c269f778476089",
                 "code": "c7e23f9e131694af6dbd9f3ed11301602a514864",
                 "maintenance": "de05162b4a408e6ecbb9af824df2df62f3ad71dc79f8626d698feb4e1239d402"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

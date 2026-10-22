@@ -27,36 +27,112 @@
             },
             "sources": [
                 {
-                    "id": "20261020-research40-github-1423215448-root-directory-0",
+                    "id": "2026-10-22-02-github-1423215448-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
-                    "retrieved_at": "2026-10-20T03:13:07.446Z",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-22T08:02:14.241Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "20261020-research40-github-1423215448-root-author",
+                    "id": "2026-10-22-02-github-1423215448-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/11111353535/dsh-folderwatch/blob/c11125d12738945d291b6067fb5fa03ea48c1c08/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/11111353535/dsh-folderwatch",
+                            "commit": "c11125d12738945d291b6067fb5fa03ea48c1c08",
+                            "path": "README.md",
+                            "content_sha256": "2c68ed3e93b58b1cee6cc1632c6738319cee649a5d51faa5e8e41339b6ccc56a"
+                        }
+                    ],
                     "revision": "c11125d12738945d291b6067fb5fa03ea48c1c08",
-                    "captured_at": "2026-10-20T03:13:07.446Z",
-                    "summary": "监测目录快照差异，把外部文件变化批量排队或唤醒原会话处理。",
-                    "artifact": "data/runs/2026-10-20-02/snapshots/11111353535--dsh-folderwatch/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T08:02:14.241Z",
+                    "summary": "监控目录元数据快照变化，经批处理与路径回声过滤后唤醒或排队通知DSH Agent，提供挂载、检查、触发和移除工具。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/11111353535--dsh-folderwatch/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "20261020-research40-github-1423215448-root-source",
+                    "id": "2026-10-22-02-github-1423215448-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/11111353535/dsh-folderwatch/blob/c11125d12738945d291b6067fb5fa03ea48c1c08/lib/index.js",
+                    "url": "https://github.com/11111353535/dsh-folderwatch/blob/c11125d12738945d291b6067fb5fa03ea48c1c08/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/11111353535/dsh-folderwatch",
+                            "commit": "c11125d12738945d291b6067fb5fa03ea48c1c08",
+                            "path": "README.md",
+                            "content_sha256": "2c68ed3e93b58b1cee6cc1632c6738319cee649a5d51faa5e8e41339b6ccc56a"
+                        },
+                        {
+                            "repository_url": "https://github.com/11111353535/dsh-folderwatch",
+                            "commit": "c11125d12738945d291b6067fb5fa03ea48c1c08",
+                            "path": "package.json",
+                            "content_sha256": "4a2b0042c2e3dd6c424558eb421122a1bab05d1c15e755a6e88f5f96783c2055"
+                        },
+                        {
+                            "repository_url": "https://github.com/11111353535/dsh-folderwatch",
+                            "commit": "c11125d12738945d291b6067fb5fa03ea48c1c08",
+                            "path": "lib/index.js",
+                            "content_sha256": "2cccf10248cb6cb05a0927530cb14bcbdb94674f2951515a7446290403008e56"
+                        },
+                        {
+                            "repository_url": "https://github.com/11111353535/dsh-folderwatch",
+                            "commit": "c11125d12738945d291b6067fb5fa03ea48c1c08",
+                            "path": "lib/watch.js",
+                            "content_sha256": "224e69a6f33954da675adb1dd8d9f792e385c4c507f0a3b4e05b89ab9869b513"
+                        },
+                        {
+                            "repository_url": "https://github.com/11111353535/dsh-folderwatch",
+                            "commit": "c11125d12738945d291b6067fb5fa03ea48c1c08",
+                            "path": "lib/snapshot.js",
+                            "content_sha256": "44ccfc665fe429c68484fff5952a58dc13491470c9c52edec57ed5bc35ff9dd3"
+                        },
+                        {
+                            "repository_url": "https://github.com/11111353535/dsh-folderwatch",
+                            "commit": "c11125d12738945d291b6067fb5fa03ea48c1c08",
+                            "path": "lib/diff.js",
+                            "content_sha256": "07b387b81020618a077499215f4c5ba6b3d0422beed76ad5e8a3242b8601230e"
+                        },
+                        {
+                            "repository_url": "https://github.com/11111353535/dsh-folderwatch",
+                            "commit": "c11125d12738945d291b6067fb5fa03ea48c1c08",
+                            "path": "lib/batch.js",
+                            "content_sha256": "a8bbb445bab6694d6ab8e8d8ffd6e784008cdba777506eced20aea4d740eacbd"
+                        },
+                        {
+                            "repository_url": "https://github.com/11111353535/dsh-folderwatch",
+                            "commit": "c11125d12738945d291b6067fb5fa03ea48c1c08",
+                            "path": "lib/echo.js",
+                            "content_sha256": "f2ce38d509acc3636f9cf6c50a25726d91828a59a7d0b53df8a44cb8f200aa06"
+                        },
+                        {
+                            "repository_url": "https://github.com/11111353535/dsh-folderwatch",
+                            "commit": "c11125d12738945d291b6067fb5fa03ea48c1c08",
+                            "path": "lib/match.js",
+                            "content_sha256": "7e18701bf666a47214ac29456b3a75ea597ea85f492377b242cc067979a5a82d"
+                        },
+                        {
+                            "repository_url": "https://github.com/11111353535/dsh-folderwatch",
+                            "commit": "c11125d12738945d291b6067fb5fa03ea48c1c08",
+                            "path": "lib/format.js",
+                            "content_sha256": "8718c4bfca8db511bcefe8c2872e6c8642f1ac86d4775abed6792846d92c032d"
+                        },
+                        {
+                            "repository_url": "https://github.com/11111353535/dsh-folderwatch",
+                            "commit": "c11125d12738945d291b6067fb5fa03ea48c1c08",
+                            "path": "test/plugin.test.mjs",
+                            "content_sha256": "a5ac43f5430b60e0019341eec3e9467bd13546a6c00f79651e71acb9b6c6ef98"
+                        }
+                    ],
                     "revision": "c11125d12738945d291b6067fb5fa03ea48c1c08",
-                    "captured_at": "2026-10-20T03:13:07.446Z",
-                    "summary": "核查 lib/index.js、lib/watch.js；周期扫描与快照差分作为主路径，fs.watch 只提示加速；批量去抖、冷却和短时自身写入账本抑制回声。",
-                    "artifact": "data/runs/2026-10-20-02/snapshots/11111353535--dsh-folderwatch/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T08:02:14.241Z",
+                    "summary": "核查 README.md、package.json、lib/index.js、lib/watch.js、lib/snapshot.js、lib/diff.js、lib/batch.js、lib/echo.js、lib/match.js、lib/format.js、test/plugin.test.mjs；每个watch初始递归快照，fs.watch仅提示120ms后提前tick；另每1.5秒轮询，busy跳过重叠tick。快照按相对路径记录kind/size/mtime，差分产生created/changed/deleted，再应用glob与echo，批处理按quiet/maxWait/cooldown发一条消息。watch句柄失败可降poll，timer unref及卸载清理是合理资源设计。\n\n纯差分/批处理与宿主送达分离，有利测试。合并同路径按最后观察类别覆盖，重命名表现删除+新增，不能识别同一文件身份；相同size/mtime内容改变可能漏掉，两扫描间创建又删除也不可见。README“exact account/every platform”应收窄为采样元数据变化，不是完整文件事件审计。\n\n贡献是把有界扫描、降级轮询、批处理和Agent跟进接在一起，减少人查目录。全部为成熟机制组合，不能从存在单测推导所有OS目录通知/宿主送达已验证。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/11111353535--dsh-folderwatch/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "未验证跨平台事件完整性、截断目录漏报或长期运行；短时路径抑制也可能隐藏同时发生的外部写入。",
+                        "八lib关键扫描/差分/批/echo/注册与格式路径，test seam仅作为作者验证设计；不运行watch/目标测试或发送Agent消息。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -67,9 +143,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "等待构建报告、下载或共享目录交接的智能体需要发现外部变化，减少反复手工查询。",
+                    "text": "面向开发会话等待构建报告、下载或共享目录交接的用户。插件提供五个folderwatch工具与/watch命令，按目录元数据变化生成消息，可wake新回合或queue到后续步骤。它不直接理解报告内容，不保证构建/测试业务成功，也不是文件内容备份或可靠事件日志。\n\n合格交付应是许可范围内变化送给正确Agent、抑制自身写入不漏真正外部变化，明确扫描/消息截断，失败仍可恢复。基线是手动list/stat或定时任务反复查目录，增量是文件变化驱动与批量通知/回声抑制。README的Windows四场景/110单测是作者报告，本轮仅检查实现和测试设计。",
                     "evidence_ids": [
-                        "20261020-research40-github-1423215448-root-source"
+                        "2026-10-22-02-github-1423215448-root-source"
                     ],
                     "dependencies": [
                         {
@@ -78,16 +154,16 @@
                             "fingerprint": "c11125d12738945d291b6067fb5fa03ea48c1c08"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:13:07.446Z",
+                    "reviewed_at": "2026-10-22T08:02:14.241Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "周期扫描与快照差分作为主路径，fs.watch 只提示加速；批量去抖、冷却和短时自身写入账本抑制回声。",
+                    "text": "每个watch初始递归快照，fs.watch仅提示120ms后提前tick；另每1.5秒轮询，busy跳过重叠tick。快照按相对路径记录kind/size/mtime，差分产生created/changed/deleted，再应用glob与echo，批处理按quiet/maxWait/cooldown发一条消息。watch句柄失败可降poll，timer unref及卸载清理是合理资源设计。\n\n纯差分/批处理与宿主送达分离，有利测试。合并同路径按最后观察类别覆盖，重命名表现删除+新增，不能识别同一文件身份；相同size/mtime内容改变可能漏掉，两扫描间创建又删除也不可见。README“exact account/every platform”应收窄为采样元数据变化，不是完整文件事件审计。\n\n贡献是把有界扫描、降级轮询、批处理和Agent跟进接在一起，减少人查目录。全部为成熟机制组合，不能从存在单测推导所有OS目录通知/宿主送达已验证。",
                     "evidence_ids": [
-                        "20261020-research40-github-1423215448-root-source"
+                        "2026-10-22-02-github-1423215448-root-source"
                     ],
                     "dependencies": [
                         {
@@ -96,16 +172,16 @@
                             "fingerprint": "c11125d12738945d291b6067fb5fa03ea48c1c08"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:13:07.446Z",
+                    "reviewed_at": "2026-10-22T08:02:14.241Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "准确变化摘要比轮询提示更利于交接；通知到达并不保证后续任务成功。",
+                    "text": "#### 效果\n\n| 目标 | 实现增量 | 限制 |\n| --- | --- | --- |\n| 少手动查询 | 事件提示+轮询批通知 | 非瞬时/完整事件日志 |\n| 降重复唤醒 | echo/quiet/cooldown | 误抑制/共享来源待修 |\n| 稳定交付 | 降poll与错误status | drain先于确认，无durable ack |\n\n最关键的恢复缺口是deliver先drain，再await onBatch，异常只记录不回队；index deliver调用followup/inject没有await返回Promise，异步拒绝未必在当前try捕获。工具fire随后返回ok/delivered原pending，不能据此当宿主受理甚至任务完成。once只在onBatch返回后stop，但“返回”也未必等异步投递成功。",
                     "evidence_ids": [
-                        "20261020-research40-github-1423215448-root-source"
+                        "2026-10-22-02-github-1423215448-root-source"
                     ],
                     "dependencies": [
                         {
@@ -114,16 +190,16 @@
                             "fingerprint": "c11125d12738945d291b6067fb5fa03ea48c1c08"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:13:07.446Z",
+                    "reviewed_at": "2026-10-22T08:02:14.241Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "周期遍历消耗文件系统资源，wake 模式额外启动模型回合；收益需对照扫描规模与通知频率。",
+                    "text": "\n\n| 阶段 | 现金与资源 | 人工与时间 | 已知与未知 |\n| --- | --- | --- | --- |\n| 首次 | 复用宿主与文件系统，无独立服务 | 配目录/目标、过滤与回声 | 配置工时未知，宿主使用费用依环境 |\n| 持续使用 | 默认每watch默认1.5秒扫描、快照最多收录2万条，最多16watch；跟进产生模型用量 | queue/wake与噪声维护 | 已知规模默认值，不知总token/金额，不内置总预算 |\n| 失败恢复 | 重扫/重建内存批，模型重复处理可能消耗 | 查partial/lastError/目标、补丢失变化 | 无持久事件历史，未知完整恢复时间 |\n\n",
                     "evidence_ids": [
-                        "20261020-research40-github-1423215448-root-source"
+                        "2026-10-22-02-github-1423215448-root-source"
                     ],
                     "dependencies": [
                         {
@@ -132,16 +208,16 @@
                             "fingerprint": "c11125d12738945d291b6067fb5fa03ea48c1c08"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:13:07.446Z",
+                    "reviewed_at": "2026-10-22T08:02:14.241Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "通知节流、扫描上限和监测提示分离可借鉴；目录超限与无法读取必须作为覆盖缺口看待。",
+                    "text": "snapshot注释声称不跟随symlink，实际statEntry调用stat而非lstat，然后只按info.kind=directory递归，未检查dirent.isSymbolicLink或物理路径。链接到根外目录时可能继续采集外部文件名/元数据；深度12限制防无限走，但不等于不跟随链接。这里只检查元数据，不称读取了外部文件内容或已复现越界。\n\nmaxEntries置truncated可报告，但深度达到maxDepth停止未置truncated。readdir失败记录unreadable后返回空子树，stat失败直接略过；tick仍将partial作为新快照并对旧完整快照差分，可能把不可读/容量边界移动误当删除或新增。status保截断/不可读，通知正文只带batch.truncated，不绑定本轮扫描质量，因此不能把收到的删除清单当完整可靠事实。\n\n路径支持绝对路径和workspace相对路径，未限定必须在工作区。它是有意可选目录能力，不能叫工作区围栏。check没有tick的busy互斥，可与tick同时扫描/推进snapshot；stop不等待正在scan/deliver，已有tick可在stop后继续stage/通知，需时序检查。\n\n不是严格按会话。registry只有一个echo ledger和lastAgent；tools/result任何带file_path/path等参数的工具都记账，未限定write/edit或检查工具成功，连读文件工具也可被认为certain。shell参数提取标certain=false，但isEcho并不读certain标记，仍抑制；来源不是因果证明，短窗内真正外部写同路径也可能被吞。\n\nobserver把相对路径用undefined workspace解析到进程cwd，可能与watch按调用会话workspace解析不同；共享ledger也让A会话记录影响B会话watch。纯echo注释称“this session”不能当隔离证明。\n\n接收人优先boundAgent，仅看session.id存在不确认活跃/一致；显式sessionId查失败后fallback lastAgent，可将原定接收失败降级到另会话。工具list/check/fire/remove共享整个registry且不检查调用者所有权。可信个人单profile与多用户/多项目共享场景应分开，不能据源码直接断言真实已跨租户暴露。文件名/label/prompt进入user message，模型后续行动仍须当外部变化数据而非任意命令授权。",
                     "evidence_ids": [
-                        "20261020-research40-github-1423215448-root-source"
+                        "2026-10-22-02-github-1423215448-root-source"
                     ],
                     "dependencies": [
                         {
@@ -150,16 +226,16 @@
                             "fingerprint": "c11125d12738945d291b6067fb5fa03ea48c1c08"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:13:07.446Z",
+                    "reviewed_at": "2026-10-22T08:02:14.241Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "先以 queue 模式监听小目录，统计漏报、重复和自身写入抑制，再开放自动唤醒。",
+                    "text": "观察，先可信单profile窄目录queue核扫描/接收/恢复，不作为可靠生产触发或多用户隔离。详见[Q06](#research-q06)。",
                     "evidence_ids": [
-                        "20261020-research40-github-1423215448-root-source"
+                        "2026-10-22-02-github-1423215448-root-source"
                     ],
                     "dependencies": [
                         {
@@ -168,16 +244,16 @@
                             "fingerprint": "c11125d12738945d291b6067fb5fa03ea48c1c08"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:13:07.446Z",
+                    "reviewed_at": "2026-10-22T08:02:14.241Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "未验证跨平台事件完整性、截断目录漏报或长期运行；短时路径抑制也可能隐藏同时发生的外部写入。",
+                    "text": "八lib关键扫描/差分/批/echo/注册与格式路径，test seam仅作为作者验证设计；不运行watch/目标测试或发送Agent消息。",
                     "evidence_ids": [
-                        "20261020-research40-github-1423215448-root-source"
+                        "2026-10-22-02-github-1423215448-root-source"
                     ],
                     "dependencies": [
                         {
@@ -186,16 +262,16 @@
                             "fingerprint": "c11125d12738945d291b6067fb5fa03ea48c1c08"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:13:07.446Z",
+                    "reviewed_at": "2026-10-22T08:02:14.241Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "版本 0.1.0，纯 Host 工具，通知需要原会话可解析和 agent 的 inject/followup。",
+                    "text": "v0.1.0 MIT，Node ^22.19或>=24；宿主解析tools/llm/schemastery，声明无DSH peer不等于跨版本验证。",
                     "evidence_ids": [
-                        "20261020-research40-github-1423215448-root-source"
+                        "2026-10-22-02-github-1423215448-root-source"
                     ],
                     "dependencies": [
                         {
@@ -204,40 +280,135 @@
                             "fingerprint": "c11125d12738945d291b6067fb5fa03ea48c1c08"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:13:07.446Z",
+                    "reviewed_at": "2026-10-22T08:02:14.241Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "mechanism",
+                    "basis": "interpretation",
+                    "text": "以快照差分为主、fs.watch提示为辅，结合quiet/上限/冷却与Agent消息入口减少主动查目录。详见[Q02](#research-q02)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1423215448-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1423215448:root",
+                            "area": "code",
+                            "fingerprint": "c11125d12738945d291b6067fb5fa03ea48c1c08"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T08:02:14.241Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "supported",
+                    "text": "stat递归会跟随目录链接，partial/不可读仍作差分；共享echo不区分成功写或会话，目标失效可fallback别Agent；批次先drain且送达Promise未await。详见[Q03](#research-q03)至[Q05](#research-q05)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1423215448-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1423215448:root",
+                            "area": "code",
+                            "fingerprint": "c11125d12738945d291b6067fb5fa03ea48c1c08"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T08:02:14.241Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "mechanism",
+                    "basis": "unverified",
+                    "text": "可探索扫描质量/物理root与owner绑定、成功写echo和批次受理ack，比较误报/漏报/错收件和恢复成本；未实现。详见[Q06](#research-q06)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1423215448-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1423215448:root",
+                            "area": "code",
+                            "fingerprint": "c11125d12738945d291b6067fb5fa03ea48c1c08"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T08:02:14.241Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-20T03:13:07.446Z",
+            "last_checked_at": "2026-10-22T08:02:14.241Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "c11125d12738945d291b6067fb5fa03ea48c1c08",
+                "reviewed_at": "2026-10-22T08:02:14.241Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1423215448:root",
+                        "area": "code",
+                        "fingerprint": "c11125d12738945d291b6067fb5fa03ea48c1c08"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty以fs.watch/人工轮询为参照，新增快照+批+Agent组合，小幅新颖而非新算法；mechanism以原始事件回调为参照，增量是poll校验/降级/quiet与echo，限制是partial误差和因果不准；transferability以宿主耦合watch为参照，纯模块/时钟注入可迁移，限制是DSH投递契约未知；simplification以定时手查目录为参照，减少重复查询，限制是错误通知/恢复增加人工。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1423215448-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 8,
+                        "reach": 10,
+                        "economics": 4
+                    },
+                    "rationale": "workflow以人工等报告为参照，增量是变化驱动任务接续，限制是采样非完整事件；delivery以定时提醒为参照，增量为具体变化批，但无ack/错收件使价值受限；reach以DSH已有会话为参照，新增构建/下载/共享交接入口，限制是可信单profile和私有权限；economics以手查/反复轮询模型为参照，可能减少调用，限制是全树poll/错误wake成本未测，不能声称省钱。",
+                    "basis": "interpretation",
+                    "score": 40,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1423215448-root-source"
+                    ]
+                }
+            },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "trial",
-                "reason": "适合外部文件交接频繁的任务，先以queue模式监听小目录，核对漏报、重复和自身写入抑制，再开放自动唤醒；尚未进行真实宿主验证。",
+                "decision": "observe",
+                "reason": "外部文件变化驱动实用，但物理链接/partial差分、共享echo与收件fallback、无ack先drain影响可信交付，宜先窄目录queue研究。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "构建报告、下载及共享目录交接的需求具体，但收益取决于外部变更频率。"
+                        "rationale": "构建/报告外部变化等待明确。"
                     },
                     "advantage": {
-                        "score": 19,
-                        "rationale": "快照差分、批量去抖与自写抑制比手工定时查询有明确机制增量。"
+                        "score": 13,
+                        "rationale": "快照+批处理+Agent接线实质组合。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "固定源码支持扫描与投递机制，未执行目标代码、宿主验收或长期漏报测试。"
+                        "rationale": "固定关键链完整核查，未宿主送达验证。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "持续遍历和自动唤醒有资源与模型成本，超限目录及会话断开仍需人工排查。"
+                        "score": 5,
+                        "rationale": "轮询/唤醒和误抑制丢批恢复成本。"
                     }
                 },
-                "score": 65,
+                "score": 54,
                 "revision": "c11125d12738945d291b6067fb5fa03ea48c1c08",
-                "reviewed_at": "2026-10-21T09:16:52.633Z",
+                "reviewed_at": "2026-10-22T08:02:14.241Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "20261020-research40-github-1423215448-root-source"
+                    "2026-10-22-02-github-1423215448-root-source"
                 ],
                 "dependencies": [
                     {
@@ -262,89 +433,63 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-20T02:51:30Z",
-            "analysis_sha256": "5edb7bf47c0858a01b9d68ed9a615be954d3263b41a103251abc8baa5826d98f"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "e28050b32edc81fbcaae313bc91434f37517c89d749db6c6453b98e819e09ad2"
         },
         "publication.metadata": "data/plugins/11111353535--dsh-folderwatch/META.json",
         "publication.summaries": {
-            "text": "监测目录快照差异，把外部文件变化批量排队或唤醒原会话处理。",
+            "text": "监控目录元数据快照变化，经批处理与路径回声过滤后唤醒或排队通知DSH Agent，提供挂载、检查、触发和移除工具。",
             "revision": "c11125d12738945d291b6067fb5fa03ea48c1c08",
             "source_url": "https://github.com/11111353535/dsh-folderwatch/blob/c11125d12738945d291b6067fb5fa03ea48c1c08/README.md"
         },
         "publication.capabilities": {
             "revision": "c11125d12738945d291b6067fb5fa03ea48c1c08",
             "items": {
-                "模型工具": "创建、检查和移除目录监测。",
-                "后台": "快照扫描与批量消息交付。"
-            }
+                "模型工具": "五个folderwatch工具",
+                "用户命令": "/watch",
+                "事件监听": "tools/result记录路径",
+                "后台": "fs.watch+定时快照与批通知"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| add/list/remove | 管理目录watch | profile共享，需owner约束 |\n| check/fire | 主动扫描/发待处理批 | fire计数不等于受理 |\n| 快照差分 | 分类元数据变化 | 短命/同size与mtime可漏 |\n| echo | 短窗降回声 | 不证明成功写或自身会话 |\n| wake/queue | Agent消息入口 | fallback/异步确认需核 |\n"
         },
         "publication.advice": {
             "revision": "c11125d12738945d291b6067fb5fa03ea48c1c08",
-            "text": "先以 queue 模式监听小目录，统计漏报、重复和自身写入抑制，再开放自动唤醒。"
+            "text": "观察，先可信单profile窄目录queue核扫描/接收/恢复，不作为可靠生产触发或多用户隔离。详见[Q06](#research-q06)。"
         },
         "registry": "data/plugins/11111353535--dsh-folderwatch",
-        "reports": "# dsh-folderwatch\n\n> 监测目录快照差异，把外部文件变化批量排队或唤醒原会话处理。\n\n## 固定范围与依据\n\n固定提交 [c11125d12738945d291b6067fb5fa03ea48c1c08](https://github.com/11111353535/dsh-folderwatch/blob/c11125d12738945d291b6067fb5fa03ea48c1c08/lib/index.js)；组件路径：仓库根。核查时间 2026-10-20T03:13:07.446Z；本轮基准 2026-10-20T02:51:30Z。\n源码抽读路径：lib/index.js、lib/watch.js。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：等待构建报告、下载或共享目录交接的智能体需要发现外部变化，减少反复手工查询。\n- **亮点**：周期扫描与快照差分作为主路径，fs.watch 只提示加速；批量去抖、冷却和短时自身写入账本抑制回声。\n- **思考**：准确变化摘要比轮询提示更利于交接；通知到达并不保证后续任务成功。\n- **建议**：先以 queue 模式监听小目录，统计漏报、重复和自身写入抑制，再开放自动唤醒。\n\n## 场景与替代办法\n\n等待构建报告、下载或共享目录交接的智能体需要发现外部变化，减少反复手工查询。\n\n定时检查实现更简单但延迟高；仅在外部异步交接频繁时值得引入持续监控。\n\n## 依赖与流程\n\n依赖 tools、commands、可读文件系统及活跃会话；不能把本机扫描当成远程共享文件系统强一致保证。\n\n明确目录和过滤后布置监听，检查通知再读取实际文件，任务结束解除监听；漏报时手动检查并看扫描错误。\n\n## 成本与效果\n\n周期遍历消耗文件系统资源，wake 模式额外启动模型回合；收益需对照扫描规模与通知频率。\n\n准确变化摘要比轮询提示更利于交接；通知到达并不保证后续任务成功。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：c87d1102451f431c02c2a4cf0a88a1effe958c93ebb76e8aff2edfa55075f4d0。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 8 | 2246 | 1048 | 1073 | — |\n| .md | source | 2 | 414 | — | — | 3707 |\n| .mjs | source | 1 | 155 | 88 | 51 | — |\n| .mjs | test | 4 | 1228 | 488 | 689 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **模型工具**：创建、检查和移除目录监测。\n- **后台**：快照扫描与批量消息交付。\n\n## 工程亮点\n\n通知节流、扫描上限和监测提示分离可借鉴；目录超限与无法读取必须作为覆盖缺口看待。\n\n## 分发与兼容\n\n版本 0.1.0，纯 Host 工具，通知需要原会话可解析和 agent 的 inject/followup。\n\n## 历史对照\n\n前次代码指纹为 c11125d12738945d291b6067fb5fa03ea48c1c08；本轮固定为 c11125d12738945d291b6067fb5fa03ea48c1c08。定时检查实现更简单但延迟高；仅在外部异步交接频繁时值得引入持续监控。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：未验证跨平台事件完整性、截断目录漏报或长期运行；短时路径抑制也可能隐藏同时发生的外部写入。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：测试突发改写、删除重建、断开会话、超限目录和与自身写入同时发生的外部修改。\n",
+        "reports": "# dsh-folderwatch\n\n> 监控目录元数据快照变化，经批处理与路径回声过滤后唤醒或排队通知DSH Agent，提供挂载、检查、触发和移除工具。\n\n## 研究范围\n\n- **仓库**：[11111353535/dsh-folderwatch](https://github.com/11111353535/dsh-folderwatch)\n- **版本号**：0.1.0（[固定提交 c11125d12738945d291b6067fb5fa03ea48c1c08](https://github.com/11111353535/dsh-folderwatch/tree/c11125d12738945d291b6067fb5fa03ea48c1c08)）\n- **版本日期**：2026-10-17（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已检查源码。采样/批处理链明确，但物理范围、partial差分、会话回声/接收人和送达确认缺口需收紧。\n\n## 洞察短评\n\n- **用途**：面向开发会话等待构建报告、下载或共享目录交接的用户。插件提供五个folderwatch工具与/watch命令，按目录元数据变化生成消息，可wake新回合或queue到后续步骤。它不直接理解报告内容，不保证构建/测试业务成功，也不是文件内容备份或可靠事件日志。\n\n合格交付应是许可范围内变化送给正确Agent、抑制自身写入不漏真正外部变化，明确扫描/消息截断，失败仍可恢复。基线是手动list/stat或定时任务反复查目录，增量是文件变化驱动与批量通知/回声抑制。README的Windows四场景/110单测是作者报告，本轮仅检查实现和测试设计。\n- **亮点**：以快照差分为主、fs.watch提示为辅，结合quiet/上限/冷却与Agent消息入口减少主动查目录。详见[Q02](#research-q02)。\n- **思考**：stat递归会跟随目录链接，partial/不可读仍作差分；共享echo不区分成功写或会话，目标失效可fallback别Agent；批次先drain且送达Promise未await。详见[Q03](#research-q03)至[Q05](#research-q05)。\n- **建议**：可探索扫描质量/物理root与owner绑定、成功写echo和批次受理ack，比较误报/漏报/错收件和恢复成本；未实现。详见[Q06](#research-q06)。\n\n采用建议：观察，先可信单profile窄目录queue核扫描/接收/恢复，不作为可靠生产触发或多用户隔离。详见[Q06](#research-q06)。\n\n## 核心贡献\n\n以快照差分为主、fs.watch提示为辅，结合quiet/上限/冷却与Agent消息入口减少主动查目录。详见[Q02](#research-q02)。\n\n## 关键质疑\n\nstat递归会跟随目录链接，partial/不可读仍作差分；共享echo不区分成功写或会话，目标失效可fallback别Agent；批次先drain且送达Promise未await。详见[Q03](#research-q03)至[Q05](#research-q05)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可探索扫描质量/物理root与owner绑定、成功写echo和批次受理ack，比较误报/漏报/错收件和恢复成本；未实现。详见[Q06](#research-q06)。\n\n可继续用临时目录/mock覆盖链接/partial/读写来源/A-B身份/异步拒绝与stop时序，核误报漏报与恢复。\n\n## 场景与替代办法\n\n面向开发会话等待构建报告、下载或共享目录交接的用户。插件提供五个folderwatch工具与/watch命令，按目录元数据变化生成消息，可wake新回合或queue到后续步骤。它不直接理解报告内容，不保证构建/测试业务成功，也不是文件内容备份或可靠事件日志。\n\n合格交付应是许可范围内变化送给正确Agent、抑制自身写入不漏真正外部变化，明确扫描/消息截断，失败仍可恢复。基线是手动list/stat或定时任务反复查目录，增量是文件变化驱动与批量通知/回声抑制。README的Windows四场景/110单测是作者报告，本轮仅检查实现和测试设计。\n\n人工list/stat或定时查目录；文件驱动减少主动检查，通知质量和总模型成本需对照。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 条件 | 用途 | 边界 |\n| --- | --- | --- |\n| Node ^22.19或>=24与DSH tools/commands | 注册工具/命令 | 依宿主解析tools/llm/schemastery，无peer锁定 |\n| 可读目录和watch/poll权限 | 只读取名/元数据 | 绝对目录不限workspace，链接需额外核 |\n| 明确存活Agent/目标会话 | followup或inject | sessionId失败会fallback最后Agent |\n| 窄pattern/ignore与小规模 | 控扫描/消息 | pattern只过滤事件，不避免全树快照 |\n\n\n\n#### 启动步骤\n\n| 步骤 | 动作 | 成功判据 |\n| --- | --- | --- |\n| 配置 | 可信单profile，小目录先queue | 核收件Agent/物理root/权限 |\n| 挂载 | folderwatch_add指定path/pattern | arm回执核partial/unreadable |\n| 看变化 | check或等待批量 | 知check推进快照而不发新消息 |\n| 提醒 | 必要时fire | 不把返回delivered当受理确认 |\n| 收尾 | remove/卸载 | 核正在运行扫描/送达边界 |\n\n\n\n## 成本与效果\n\n\n\n| 阶段 | 现金与资源 | 人工与时间 | 已知与未知 |\n| --- | --- | --- | --- |\n| 首次 | 复用宿主与文件系统，无独立服务 | 配目录/目标、过滤与回声 | 配置工时未知，宿主使用费用依环境 |\n| 持续使用 | 默认每watch默认1.5秒扫描、快照最多收录2万条，最多16watch；跟进产生模型用量 | queue/wake与噪声维护 | 已知规模默认值，不知总token/金额，不内置总预算 |\n| 失败恢复 | 重扫/重建内存批，模型重复处理可能消耗 | 查partial/lastError/目标、补丢失变化 | 无持久事件历史，未知完整恢复时间 |\n\n\n\n#### 效果\n\n| 目标 | 实现增量 | 限制 |\n| --- | --- | --- |\n| 少手动查询 | 事件提示+轮询批通知 | 非瞬时/完整事件日志 |\n| 降重复唤醒 | echo/quiet/cooldown | 误抑制/共享来源待修 |\n| 稳定交付 | 降poll与错误status | drain先于确认，无durable ack |\n\n最关键的恢复缺口是deliver先drain，再await onBatch，异常只记录不回队；index deliver调用followup/inject没有await返回Promise，异步拒绝未必在当前try捕获。工具fire随后返回ok/delivered原pending，不能据此当宿主受理甚至任务完成。once只在onBatch返回后stop，但“返回”也未必等异步投递成功。\n\n## 研究问题与完整回答\n\n**插件研究总目标：**核文件变化采样/物理范围、回声因果与会话身份、批次送达/失败恢复、资源成本及推荐边界。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 适合什么外部变化任务，交付目标是什么？\n\n**研究主题：**场景与需求\n\n#### 完整回答\n\n面向开发会话等待构建报告、下载或共享目录交接的用户。插件提供五个folderwatch工具与/watch命令，按目录元数据变化生成消息，可wake新回合或queue到后续步骤。它不直接理解报告内容，不保证构建/测试业务成功，也不是文件内容备份或可靠事件日志。\n\n合格交付应是许可范围内变化送给正确Agent、抑制自身写入不漏真正外部变化，明确扫描/消息截断，失败仍可恢复。基线是手动list/stat或定时任务反复查目录，增量是文件变化驱动与批量通知/回声抑制。README的Windows四场景/110单测是作者报告，本轮仅检查实现和测试设计。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:3-9](https://github.com/11111353535/dsh-folderwatch/blob/c11125d12738945d291b6067fb5fa03ea48c1c08/README.md#L3-L9)\n\n文件变化驱动定位。\n\n````text\n**Wake the agent when the filesystem changes — not when you remember to look.**\n\nAn agent can already be woken on a clock (scheduled tasks) and on an HTTP request (webhooks). Neither covers the case that actually matters mid-session: something *outside* the conversation touches a file. A build finishes. A formatter rewrites the tree. A test runner drops a report. A download lands. A colleague pushes into a shared folder. Today the agent finds out only if it happens to look.\n\n`dsh-folderwatch` arms a directory against the agent that armed it. When the tree changes, the agent receives an exact account of what changed — and can either be woken to act on it or simply find it waiting at its next step.\n\n```\n````\n\n**依据 2 · 源码核查**：[lib/index.js:423-445](https://github.com/11111353535/dsh-folderwatch/blob/c11125d12738945d291b6067fb5fa03ea48c1c08/lib/index.js#L423-L445)\n\n目录/模式/session工具参数。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n  ctx.tools.register(\n    defineTool({\n      name: 'folderwatch_add',\n      description:\n        'Watch a directory and wake this agent when its contents change. Use it when work depends on something outside the conversation that you cannot poll: a build output directory, a test report location, a shared hand-off folder, a download target. Changes are batched after the tree goes quiet, and this session\\'s own writes are filtered out so the watch never reports the agent back to itself. Delivery defaults to waking the agent with a new turn; pass mode: \"queue\" to have the report wait until the agent\\'s next step instead.',\n      parameters: {\n        path: { type: 'string', required: true, description: 'Directory to watch. Absolute, or relative to the workspace.' },\n        label: { type: 'string', description: 'Short name for this watch, shown in listings and notifications.' },\n        prompt: { type: 'string', description: 'Instruction appended to each notification, e.g. \"re-run the failing test\".' },\n        pattern: { type: 'string', description: 'Glob selecting which paths are reported, e.g. \"**/*.log\" or \"src/**\".' },\n        ignore: {\n          type: 'array',\n          description: 'Extra ignore patterns for this watch. A bare name like \"tmp\" matches that name at any depth.',\n          items: { type: 'string' },\n        },\n        recursive: { type: 'boolean', description: 'Descend into subdirectories. Defaults to true.' },\n        once: { type: 'boolean', description: 'Disarm after the first delivery. Defaults to false.' },\n        mode: {\n          type: 'string',\n          description: 'Delivery mode: \"wake\" (default) starts a turn; \"queue\" waits for the next step.',\n          enum: ['wake', 'queue'],\n        },\n        sessionId: { type: 'string', description: 'Session to notify, when it is not the calling one.' },\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:571-606](https://github.com/11111353535/dsh-folderwatch/blob/c11125d12738945d291b6067fb5fa03ea48c1c08/lib/index.js#L571-L606)\n\nslash入口。\n\n<details>\n<summary>查看原文（36行）</summary>\n\n```text\n  ctx.commands.register({\n    name: 'watch',\n    description: 'Arm a directory watch, list the armed ones, or check and disarm them.',\n    input: { hint: '[add <path> [--pattern GLOB] [--queue] [--once]] [rm <id>] [check <id>] [fire <id>]' },\n    async handler(invocation) {\n      const agent = invocation.agent\n      registry.rememberAgent(agent)\n      const raw = typeof invocation.rawInput === 'string' ? invocation.rawInput.trim() : ''\n      const tokens = raw === '' ? [] : raw.split(/\\s+/u)\n      const subcommand = tokens[0] ?? 'list'\n      const flags = new Set(tokens.filter((token) => token.startsWith('--')))\n      const positional = tokens.slice(1).filter((token) => !token.startsWith('--'))\n      const valueOf = (name) => {\n        const index = tokens.indexOf(`--${name}`)\n        return index === -1 ? undefined : tokens[index + 1]\n      }\n\n      try {\n        if (subcommand === 'list') {\n          return { kind: 'success', text: renderList(registry.statuses(), { now: Date.now() }) }\n        }\n        if (subcommand === 'add') {\n          if (positional.length === 0) return { kind: 'error', text: 'usage: /watch add <path> [--pattern GLOB] [--queue] [--once]' }\n          const workspace = workspaceRootFor(ctx, { agent })\n          const outcome = await registry.arm(\n            {\n              path: positional.join(' '),\n              workspace,\n              pattern: valueOf('pattern'),\n              label: valueOf('label'),\n              prompt: valueOf('prompt'),\n              mode: flags.has('--queue') ? 'queue' : 'wake',\n              once: flags.has('--once'),\n              sessionId: agent?.session?.id,\n            },\n            { agent, signal: invocation.signal },\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 快照、批处理和通知如何连接？\n\n**研究主题：**功能与机制、贡献与相对优势\n\n#### 完整回答\n\n每个watch初始递归快照，fs.watch仅提示120ms后提前tick；另每1.5秒轮询，busy跳过重叠tick。快照按相对路径记录kind/size/mtime，差分产生created/changed/deleted，再应用glob与echo，批处理按quiet/maxWait/cooldown发一条消息。watch句柄失败可降poll，timer unref及卸载清理是合理资源设计。\n\n纯差分/批处理与宿主送达分离，有利测试。合并同路径按最后观察类别覆盖，重命名表现删除+新增，不能识别同一文件身份；相同size/mtime内容改变可能漏掉，两扫描间创建又删除也不可见。README“exact account/every platform”应收窄为采样元数据变化，不是完整文件事件审计。\n\n贡献是把有界扫描、降级轮询、批处理和Agent跟进接在一起，减少人查目录。全部为成熟机制组合，不能从存在单测推导所有OS目录通知/宿主送达已验证。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/watch.js:161-174](https://github.com/11111353535/dsh-folderwatch/blob/c11125d12738945d291b6067fb5fa03ea48c1c08/lib/watch.js#L161-L174)\n\n初始快照。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n  async start(signal) {\n    if (this.state !== 'idle') return\n    this.state = 'armed'\n    const initial = await this.scan()\n    this.snapshot = initial.entries\n    this.truncatedSnapshot = initial.truncated\n    this.unreadable = initial.unreadable\n    if (signal?.aborted === true) {\n      this.state = 'stopped'\n      return\n    }\n    this.armFastPath()\n    this.armTimer()\n  }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/watch.js:185-246](https://github.com/11111353535/dsh-folderwatch/blob/c11125d12738945d291b6067fb5fa03ea48c1c08/lib/watch.js#L185-L246)\n\nfs提示/poll/busy降级。\n\n<details>\n<summary>查看原文（62行）</summary>\n\n```text\n  armFastPath() {\n    try {\n      this.handle = this.watchFactory(this.root, { recursive: this.recursive, persistent: false }, () => {\n        this.dirty = true\n        if (this.hintTimer !== undefined) return\n        this.hintTimer = setTimeout(() => {\n          this.hintTimer = undefined\n          void this.tick()\n        }, HINT_DEBOUNCE_MS)\n        this.hintTimer.unref?.()\n      })\n      this.handle.on?.('error', (error) => {\n        this.lastError = error instanceof Error ? error.message : String(error)\n        this.handle?.close?.()\n        this.handle = undefined\n        this.watchKind = 'poll'\n      })\n      this.watchKind = 'watch+poll'\n    } catch (error) {\n      this.lastError = error instanceof Error ? error.message : String(error)\n      this.handle = undefined\n      this.watchKind = 'poll'\n    }\n  }\n\n  /**\n   * Start the periodic rescan.\n   *\n   * The timer is unref'd so a watch never keeps the harness process alive, and\n   * overlapping ticks are skipped: a slow walk must not queue up behind itself.\n   *\n   * @returns {void}\n   */\n  armTimer() {\n    this.timer = setInterval(() => {\n      void this.tick()\n    }, this.pollIntervalMs)\n    this.timer.unref?.()\n  }\n\n  /**\n   * One rescan cycle: snapshot, diff, feed the batcher, deliver when due.\n   *\n   * @returns {Promise<void>} resolves when the cycle finishes.\n   */\n  async tick() {\n    if (this.state !== 'armed' || this.busy) return\n    this.busy = true\n    try {\n      const next = await this.scan()\n      const diff = diffSnapshots(this.snapshot, next.entries)\n      this.snapshot = next.entries\n      this.truncatedSnapshot = next.truncated\n      this.unreadable = next.unreadable\n      this.dirty = false\n      if (!isEmptyDiff(diff)) this.stage(diff)\n      if (this.batcher.due()) await this.deliver()\n    } catch (error) {\n      this.report(error)\n    } finally {\n      this.busy = false\n    }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/diff.js:49-84](https://github.com/11111353535/dsh-folderwatch/blob/c11125d12738945d291b6067fb5fa03ea48c1c08/lib/diff.js#L49-L84)\n\nsize/mtime采样差分。\n\n<details>\n<summary>查看原文（36行）</summary>\n\n```text\n  const created = []\n  const changed = []\n  const deleted = []\n\n  for (const [path, entry] of next) {\n    const before = previous.get(path)\n    if (before === undefined) {\n      created.push({ path, kind: entry.kind, size: entry.size, mtimeMs: entry.mtimeMs })\n      continue\n    }\n    if (entry.kind === 'directory' || before.kind === 'directory') continue\n    if (before.size !== entry.size || before.mtimeMs !== entry.mtimeMs) {\n      changed.push({\n        path,\n        kind: entry.kind,\n        size: entry.size,\n        mtimeMs: entry.mtimeMs,\n        previous: { size: before.size, mtimeMs: before.mtimeMs },\n      })\n    }\n  }\n\n  for (const [path, entry] of previous) {\n    if (next.has(path)) continue\n    deleted.push({ path, kind: entry.kind, size: entry.size, mtimeMs: entry.mtimeMs })\n  }\n\n  created.sort(byPath)\n  changed.sort(byPath)\n  deleted.sort(byPath)\n  return { created, changed, deleted }\n}\n\n/**\n * Whether a change set contains nothing at all.\n *\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/batch.js:71-104](https://github.com/11111353535/dsh-folderwatch/blob/c11125d12738945d291b6067fb5fa03ea48c1c08/lib/batch.js#L71-L104)\n\n路径最后状态与批上限。\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\n    /** @type {Map<string, object>} */\n    const byPath = new Map()\n    for (const event of created) byPath.set(event.path, { action: 'created', event })\n    for (const event of changed) byPath.set(event.path, { action: 'changed', event })\n    for (const event of deleted) byPath.set(event.path, { action: 'deleted', event })\n    for (const event of diff.created) byPath.set(event.path, { action: 'created', event })\n    for (const event of diff.changed) byPath.set(event.path, { action: 'changed', event })\n    for (const event of diff.deleted) byPath.set(event.path, { action: 'deleted', event })\n\n    created = []\n    changed = []\n    deleted = []\n    for (const row of byPath.values()) {\n      if (row.action === 'created') created.push(row.event)\n      else if (row.action === 'changed') changed.push(row.event)\n      else deleted.push(row.event)\n    }\n\n    if (countEvents({ created, changed, deleted }) > maxEvents) {\n      truncated = true\n      created = created.slice(0, maxEvents)\n      changed = changed.slice(0, maxEvents)\n      deleted = deleted.slice(0, maxEvents)\n    }\n  }\n\n  /**\n   * Record that some events were dropped as echoes.\n   *\n   * @param {number} count - how many were dropped.\n   * @returns {void}\n   */\n  function noteSuppressed(count) {\n    if (Number.isFinite(count) && count > 0) suppressedCount += count\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 范围和扫描完整性有哪些缺口？\n\n**研究主题：**缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\nsnapshot注释声称不跟随symlink，实际statEntry调用stat而非lstat，然后只按info.kind=directory递归，未检查dirent.isSymbolicLink或物理路径。链接到根外目录时可能继续采集外部文件名/元数据；深度12限制防无限走，但不等于不跟随链接。这里只检查元数据，不称读取了外部文件内容或已复现越界。\n\nmaxEntries置truncated可报告，但深度达到maxDepth停止未置truncated。readdir失败记录unreadable后返回空子树，stat失败直接略过；tick仍将partial作为新快照并对旧完整快照差分，可能把不可读/容量边界移动误当删除或新增。status保截断/不可读，通知正文只带batch.truncated，不绑定本轮扫描质量，因此不能把收到的删除清单当完整可靠事实。\n\n路径支持绝对路径和workspace相对路径，未限定必须在工作区。它是有意可选目录能力，不能叫工作区围栏。check没有tick的busy互斥，可与tick同时扫描/推进snapshot；stop不等待正在scan/deliver，已有tick可在stop后继续stage/通知，需时序检查。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/snapshot.js:32-43](https://github.com/11111353535/dsh-folderwatch/blob/c11125d12738945d291b6067fb5fa03ea48c1c08/lib/snapshot.js#L32-L43)\n\nstat跟随链接。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n * @returns {Promise<{ size: number, mtimeMs: number, kind: 'file' | 'directory' } | undefined>} metadata, or undefined.\n */\nasync function statEntry(absolute) {\n  try {\n    const info = await stat(absolute)\n    if (info.isDirectory()) return { size: 0, mtimeMs: info.mtimeMs, kind: 'directory' }\n    if (info.isFile()) return { size: info.size, mtimeMs: info.mtimeMs, kind: 'file' }\n    /* Sockets, FIFOs, device nodes: present but not something to report. */\n    return { size: 0, mtimeMs: info.mtimeMs, kind: 'file' }\n  } catch {\n    return undefined\n  }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/snapshot.js:75-113](https://github.com/11111353535/dsh-folderwatch/blob/c11125d12738945d291b6067fb5fa03ea48c1c08/lib/snapshot.js#L75-L113)\n\n忽略/上限/递归与不可读。\n\n<details>\n<summary>查看原文（39行）</summary>\n\n```text\n  async function walk(absolute, relative, depth) {\n    if (truncated || signal?.aborted === true) return\n    let dirents\n    try {\n      dirents = await readdir(absolute, { withFileTypes: true })\n    } catch {\n      unreadable.push(relative === '' ? '.' : relative)\n      return\n    }\n    /* Deterministic order keeps snapshots comparable and reports stable. */\n    dirents.sort((left, right) => (left.name < right.name ? -1 : left.name > right.name ? 1 : 0))\n\n    for (const dirent of dirents) {\n      if (truncated || signal?.aborted === true) return\n      const child = relative === '' ? dirent.name : `${relative}/${dirent.name}`\n      if (isIgnored(child, ignore)) continue\n      if (entries.size >= maxEntries) {\n        truncated = true\n        return\n      }\n      const childAbsolute = join(absolute, dirent.name)\n      const info = await statEntry(childAbsolute)\n      if (info === undefined) continue\n      entries.set(child, info)\n      if (info.kind === 'directory' && recursive && depth < maxDepth) {\n        await walk(childAbsolute, child, depth + 1)\n      }\n    }\n  }\n\n  await walk(root, '', 0)\n  return { entries, truncated, unreadable }\n}\n\n/**\n * Whether two snapshots describe the same tree state.\n *\n * @param {{ entries: Map<string, unknown> }} left - first snapshot.\n * @param {{ entries: Map<string, unknown> }} right - second snapshot.\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/watch.js:230-241](https://github.com/11111353535/dsh-folderwatch/blob/c11125d12738945d291b6067fb5fa03ea48c1c08/lib/watch.js#L230-L241)\n\npartial推进并差分。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n  async tick() {\n    if (this.state !== 'armed' || this.busy) return\n    this.busy = true\n    try {\n      const next = await this.scan()\n      const diff = diffSnapshots(this.snapshot, next.entries)\n      this.snapshot = next.entries\n      this.truncatedSnapshot = next.truncated\n      this.unreadable = next.unreadable\n      this.dirty = false\n      if (!isEmptyDiff(diff)) this.stage(diff)\n      if (this.batcher.due()) await this.deliver()\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/watch.js:277-285](https://github.com/11111353535/dsh-folderwatch/blob/c11125d12738945d291b6067fb5fa03ea48c1c08/lib/watch.js#L277-L285)\n\n手动check无busy互斥。\n\n```text\n  async check() {\n    const next = await this.scan()\n    const diff = diffSnapshots(this.snapshot, next.entries)\n    const selected = applyWatchRules(diff, this)\n    const { diff: filtered, suppressed } = this.suppressEchoes(selected)\n    this.snapshot = next.entries\n    this.truncatedSnapshot = next.truncated\n    this.unreadable = next.unreadable\n    return { diff: filtered, events: countEvents(filtered), suppressed }\n```\n\n**依据 5 · 源码核查**：[lib/watch.js:343-360](https://github.com/11111353535/dsh-folderwatch/blob/c11125d12738945d291b6067fb5fa03ea48c1c08/lib/watch.js#L343-L360)\n\nstop仅清timer/批。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n  async stop() {\n    if (this.state === 'stopped') return\n    this.state = 'stopped'\n    if (this.timer !== undefined) {\n      clearInterval(this.timer)\n      this.timer = undefined\n    }\n    if (this.hintTimer !== undefined) {\n      clearTimeout(this.hintTimer)\n      this.hintTimer = undefined\n    }\n    try {\n      this.handle?.close?.()\n    } catch {\n      /* Already closed. */\n    }\n    this.handle = undefined\n    this.batcher.reset()\n```\n\n</details>\n\n**依据 6 · 源码核查**：[lib/match.js:225-230](https://github.com/11111353535/dsh-folderwatch/blob/c11125d12738945d291b6067fb5fa03ea48c1c08/lib/match.js#L225-L230)\n\n路径解析非范围限制。\n\n```text\nexport function resolveWatchPath(value, root, resolve) {\n  const raw = typeof value === 'string' ? value.trim() : ''\n  if (raw === '') throw new Error('a watch needs a path')\n  const isAbsolute = /^([a-zA-Z]:[\\\\/]|[\\\\/]{1,2})/u.test(raw)\n  const base = isAbsolute || typeof root !== 'string' || root === '' ? undefined : root\n  return normalizePath(base === undefined ? resolve(raw) : resolve(base, raw))\n```\n\n#### 缺口\n\n- 链接/深度/不可读/容量波动及stop与scan并发的实际通知序列未受控复现。\n  **影响：**不能给全量无误报或卸载后绝无通知保证。\n  **进一步探讨：**用可丢弃目录与mock stat/readdir/延迟，核扫描质量和消息绑定，避免真实私密目录。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 自身写入抑制和接收人是否真按会话隔离？\n\n**研究主题：**缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\n不是严格按会话。registry只有一个echo ledger和lastAgent；tools/result任何带file_path/path等参数的工具都记账，未限定write/edit或检查工具成功，连读文件工具也可被认为certain。shell参数提取标certain=false，但isEcho并不读certain标记，仍抑制；来源不是因果证明，短窗内真正外部写同路径也可能被吞。\n\nobserver把相对路径用undefined workspace解析到进程cwd，可能与watch按调用会话workspace解析不同；共享ledger也让A会话记录影响B会话watch。纯echo注释称“this session”不能当隔离证明。\n\n接收人优先boundAgent，仅看session.id存在不确认活跃/一致；显式sessionId查失败后fallback lastAgent，可将原定接收失败降级到另会话。工具list/check/fire/remove共享整个registry且不检查调用者所有权。可信个人单profile与多用户/多项目共享场景应分开，不能据源码直接断言真实已跨租户暴露。文件名/label/prompt进入user message，模型后续行动仍须当外部变化数据而非任意命令授权。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:205-223](https://github.com/11111353535/dsh-folderwatch/blob/c11125d12738945d291b6067fb5fa03ea48c1c08/lib/index.js#L205-L223)\n\n共享ledger与lastAgent。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\nfunction createRegistry(ctx, config) {\n  /** @type {Map<string, FolderWatch>} */\n  const watches = new Map()\n  const echo = createEchoLedger({\n    windowMs: config.echoWindowMs,\n    caseInsensitive: caseInsensitive(),\n  })\n  let lastAgent\n\n  /**\n   * Remember the most recent agent seen, so a watch declared in configuration\n   * (with no arming tool call) still has somewhere to deliver.\n   *\n   * @param {unknown} agent - candidate agent.\n   * @returns {void}\n   */\n  function rememberAgent(agent) {\n    if (agent !== undefined && agent !== null) lastAgent = agent\n  }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:235-288](https://github.com/11111353535/dsh-folderwatch/blob/c11125d12738945d291b6067fb5fa03ea48c1c08/lib/index.js#L235-L288)\n\n接收人fallback/消息来源/方法。\n\n<details>\n<summary>查看原文（54行）</summary>\n\n```text\n  async function resolveAgent(watch) {\n    if (watch.boundAgent !== undefined) {\n      try {\n        if (watch.boundAgent.session?.id !== undefined) return watch.boundAgent\n      } catch {\n        /* Disposed agents can throw on property access; fall through. */\n      }\n    }\n    if (watch.sessionId !== undefined) {\n      try {\n        const controller = typeof ctx.get === 'function' ? ctx.get('sessionController') : undefined\n        if (controller !== undefined && typeof controller.resolveAgent === 'function') {\n          const found = await controller.resolveAgent(watch.sessionId)\n          if (found?.agent !== undefined) return found.agent\n        }\n      } catch {\n        /* Fall through to the session registry. */\n      }\n      try {\n        const sessions = typeof ctx.get === 'function' ? ctx.get('sessions') : undefined\n        const session = sessions?.get?.(watch.sessionId)\n        if (session?.agent !== undefined) return session.agent\n      } catch {\n        /* Fall through to the last-seen agent. */\n      }\n    }\n    return lastAgent\n  }\n\n  /**\n   * Deliver one batch to the agent behind a watch.\n   *\n   * @param {{ diff: object, suppressed: number, truncated: boolean }} batch - the batch to deliver.\n   * @param {FolderWatch} watch - the watch that fired.\n   * @returns {Promise<void>} resolves after the message is handed over.\n   */\n  async function deliver(batch, watch) {\n    const agent = await resolveAgent(watch)\n    if (agent === undefined) {\n      throw new Error('no live agent to notify; arm the watch from a session or set sessionId')\n    }\n    const text = renderNotification(\n      { id: watch.id, root: watch.root, label: watch.label, prompt: watch.prompt },\n      batch,\n      { limit: config.maxEventsPerMessage, at: new Date().toISOString() },\n    )\n    const message = createUserMessage({\n      content: [{ type: 'text', text }],\n      source: { kind: 'folderwatch' },\n    })\n    if (watch.mode === 'queue' && typeof agent.inject === 'function') agent.inject(message)\n    else if (typeof agent.followup === 'function') agent.followup(message)\n    else if (typeof agent.inject === 'function') agent.inject(message)\n    else throw new Error('the resolved agent exposes neither followup nor inject')\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:414-420](https://github.com/11111353535/dsh-folderwatch/blob/c11125d12738945d291b6067fb5fa03ea48c1c08/lib/index.js#L414-L420)\n\n任意工具参数记账/未用workspace。\n\n```text\n  ctx.on('tools/result', (exec) => {\n    registry.rememberAgent(exec?.agent)\n    if (typeof exec?.name !== 'string') return\n    const { paths, certain } = pathsFromToolCall(exec.name, exec.arguments)\n    if (paths.length === 0) return\n    const absolute = paths.map((path) => resolveWatchPath(path, undefined, resolve))\n    registry.echo.record(absolute, { certain })\n```\n\n**依据 4 · 源码核查**：[lib/echo.js:91-102](https://github.com/11111353535/dsh-folderwatch/blob/c11125d12738945d291b6067fb5fa03ea48c1c08/lib/echo.js#L91-L102)\n\n不分写读与certain。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\nexport function pathsFromToolCall(toolName, args) {\n  if (typeof toolName !== 'string' || args === null || typeof args !== 'object') {\n    return { paths: [], certain: false }\n  }\n  for (const key of PATH_ARGUMENTS) {\n    const value = args[key]\n    if (typeof value === 'string' && value !== '') return { paths: [value], certain: true }\n  }\n  if (SHELL_TOOLS.has(toolName) && typeof args.command === 'string') {\n    return { paths: pathsFromCommand(args.command), certain: false }\n  }\n  return { paths: [], certain: false }\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/echo.js:155-185](https://github.com/11111353535/dsh-folderwatch/blob/c11125d12738945d291b6067fb5fa03ea48c1c08/lib/echo.js#L155-L185)\n\ncertain不参与抑制。\n\n<details>\n<summary>查看原文（31行）</summary>\n\n```text\n  function record(paths, flags = {}) {\n    const at = now()\n    prune(at)\n    for (const path of Array.isArray(paths) ? paths : []) {\n      if (typeof path !== 'string' || path === '') continue\n      ledger.set(keyOf(path), { at, certain: flags.certain !== false })\n    }\n    /* Bound the map so a long session cannot grow it without limit. */\n    while (ledger.size > limit) {\n      const oldest = ledger.keys().next()\n      if (oldest.done === true) break\n      ledger.delete(oldest.value)\n    }\n    return ledger.size\n  }\n\n  /**\n   * Whether a path was recently written by the agent.\n   *\n   * @param {string} path - path to test.\n   * @returns {boolean} true when the change is an echo.\n   */\n  function isEcho(path) {\n    const at = now()\n    const entry = ledger.get(keyOf(path))\n    if (entry === undefined) return false\n    if (at - entry.at > windowMs) {\n      ledger.delete(keyOf(path))\n      return false\n    }\n    return true\n```\n\n</details>\n\n**依据 6 · 源码核查**：[lib/index.js:475-501](https://github.com/11111353535/dsh-folderwatch/blob/c11125d12738945d291b6067fb5fa03ea48c1c08/lib/index.js#L475-L501)\n\n共享list/check。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\n      async execute() {\n        return { watches: registry.statuses() }\n      },\n    }),\n  )\n\n  ctx.tools.register(\n    defineTool({\n      name: 'folderwatch_check',\n      description:\n        'Rescan a watched directory right now and report what changed since the last scan, without delivering a message. Use it to answer \"has anything happened yet\" during a turn, instead of waiting for the watch to wake you.',\n      parameters: {\n        id: { type: 'string', required: true, description: 'Watch id, as returned by folderwatch_add or folderwatch_list.' },\n      },\n      output: {\n        schema: { type: 'json' },\n        render: (_args, value) =>\n          value.ok === true\n            ? [{ type: 'text', text: renderCheck(value.watch, { diff: value.diff, events: value.events, suppressed: value.suppressed }) }]\n            : [{ type: 'text', text: renderProblem(value.id, value.error) }],\n      },\n      timeoutMs: 60_000,\n      async execute(args) {\n        const watch = registry.get(args.id)\n        if (watch === undefined) return { ok: false, id: args.id, error: 'no such watch' }\n        const result = await watch.check()\n        return { ok: true, watch: watch.status(), diff: result.diff, events: result.events, suppressed: result.suppressed }\n```\n\n</details>\n\n#### 缺口\n\n- 宿主多会话权限与接收人失效时实际路由未核。\n  **影响：**不能宣称按调用者隔离或部署越权。\n  **进一步探讨：**mock A/B agent与resolve失败，核目标不可fallback、工具owner检查和echo分桶。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 启动步骤与首次、持续、恢复成本是什么？\n\n**研究主题：**依赖、兼容与流程、效果与总成本\n\n#### 完整回答\n\n#### 启动与依赖\n\n| 条件 | 用途 | 边界 |\n| --- | --- | --- |\n| Node ^22.19或>=24与DSH tools/commands | 注册工具/命令 | 依宿主解析tools/llm/schemastery，无peer锁定 |\n| 可读目录和watch/poll权限 | 只读取名/元数据 | 绝对目录不限workspace，链接需额外核 |\n| 明确存活Agent/目标会话 | followup或inject | sessionId失败会fallback最后Agent |\n| 窄pattern/ignore与小规模 | 控扫描/消息 | pattern只过滤事件，不避免全树快照 |\n\n#### 启动步骤\n\n| 步骤 | 动作 | 成功判据 |\n| --- | --- | --- |\n| 配置 | 可信单profile，小目录先queue | 核收件Agent/物理root/权限 |\n| 挂载 | folderwatch_add指定path/pattern | arm回执核partial/unreadable |\n| 看变化 | check或等待批量 | 知check推进快照而不发新消息 |\n| 提醒 | 必要时fire | 不把返回delivered当受理确认 |\n| 收尾 | remove/卸载 | 核正在运行扫描/送达边界 |\n\n#### 成本\n\n| 阶段 | 现金与资源 | 人工与时间 | 已知与未知 |\n| --- | --- | --- | --- |\n| 首次 | 复用宿主与文件系统，无独立服务 | 配目录/目标、过滤与回声 | 配置工时未知，宿主使用费用依环境 |\n| 持续使用 | 默认每watch默认1.5秒扫描、快照最多收录2万条，最多16watch；跟进产生模型用量 | queue/wake与噪声维护 | 已知规模默认值，不知总token/金额，不内置总预算 |\n| 失败恢复 | 重扫/重建内存批，模型重复处理可能消耗 | 查partial/lastError/目标、补丢失变化 | 无持久事件历史，未知完整恢复时间 |\n\n#### 效果\n\n| 目标 | 实现增量 | 限制 |\n| --- | --- | --- |\n| 少手动查询 | 事件提示+轮询批通知 | 非瞬时/完整事件日志 |\n| 降重复唤醒 | echo/quiet/cooldown | 误抑制/共享来源待修 |\n| 稳定交付 | 降poll与错误status | drain先于确认，无durable ack |\n\n最关键的恢复缺口是deliver先drain，再await onBatch，异常只记录不回队；index deliver调用followup/inject没有await返回Promise，异步拒绝未必在当前try捕获。工具fire随后返回ok/delivered原pending，不能据此当宿主受理甚至任务完成。once只在onBatch返回后stop，但“返回”也未必等异步投递成功。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:57-60](https://github.com/11111353535/dsh-folderwatch/blob/c11125d12738945d291b6067fb5fa03ea48c1c08/package.json#L57-L60)\n\nNode版本。\n\n```text\n  \"engines\": {\n    \"node\": \"^22.19.0 || >=24.0.0\"\n  },\n  \"license\": \"MIT\"\n```\n\n**依据 2 · 源码核查**：[lib/index.js:40-42](https://github.com/11111353535/dsh-folderwatch/blob/c11125d12738945d291b6067fb5fa03ea48c1c08/lib/index.js#L40-L42)\n\n宿主依赖导入。\n\n```text\nimport { createUserMessage } from '@deepseek-ai/dsh-llm'\nimport { defineTool } from '@deepseek-ai/dsh-tools'\nimport Schema from '@deepseek-ai/schemastery'\n```\n\n**依据 3 · 源码核查**：[lib/index.js:119-126](https://github.com/11111353535/dsh-folderwatch/blob/c11125d12738945d291b6067fb5fa03ea48c1c08/lib/index.js#L119-L126)\n\n扫描/唤醒默认规模。\n\n```text\n  quietMs: Schema.number().description('Quiet period before a batch is delivered.').default(400),\n  maxWaitMs: Schema.number().description('Ceiling on how long changes may wait for quiet.').default(5000),\n  cooldownMs: Schema.number().description('Minimum gap between deliveries for one watch.').default(5000),\n  pollIntervalMs: Schema.number().description('How often the tree is rescanned.').default(1500),\n  maxWatches: Schema.number().description('Maximum number of simultaneously armed watches.').default(16),\n  maxEntries: Schema.number().description('Snapshot entry cap, guarding against a runaway tree.').default(20000),\n  echoWindowMs: Schema.number().description('How long a path stays suppressed after this session writes it.').default(2500),\n  maxEventsPerMessage: Schema.number().description('Events listed in one notification before truncation.').default(60),\n```\n\n**依据 4 · 源码核查**：[lib/watch.js:293-307](https://github.com/11111353535/dsh-folderwatch/blob/c11125d12738945d291b6067fb5fa03ea48c1c08/lib/watch.js#L293-L307)\n\n先drain失败不回队。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n  async deliver() {\n    const batch = this.batcher.drain()\n    if (batch === undefined) return\n    const events = countEvents(batch.diff)\n    if (events === 0 && batch.suppressed === 0) return\n    this.suppressedEvents += batch.suppressed\n    try {\n      await this.onBatch(batch, this)\n      this.deliveries += 1\n      this.deliveredEvents += events\n      this.lastDeliveryAt = this.now()\n      if (this.once) await this.stop()\n    } catch (error) {\n      this.report(error)\n    }\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/index.js:281-288](https://github.com/11111353535/dsh-folderwatch/blob/c11125d12738945d291b6067fb5fa03ea48c1c08/lib/index.js#L281-L288)\n\n异步调用未await。\n\n```text\n    const message = createUserMessage({\n      content: [{ type: 'text', text }],\n      source: { kind: 'folderwatch' },\n    })\n    if (watch.mode === 'queue' && typeof agent.inject === 'function') agent.inject(message)\n    else if (typeof agent.followup === 'function') agent.followup(message)\n    else if (typeof agent.inject === 'function') agent.inject(message)\n    else throw new Error('the resolved agent exposes neither followup nor inject')\n```\n\n**依据 6 · 源码核查**：[lib/index.js:527-537](https://github.com/11111353535/dsh-folderwatch/blob/c11125d12738945d291b6067fb5fa03ea48c1c08/lib/index.js#L527-L537)\n\nfire的返回。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n      async execute(args) {\n        const watch = registry.get(args.id)\n        if (watch === undefined) return { ok: false, id: args.id, error: 'no such watch' }\n        const observed = await watch.check()\n        if (observed.events > 0) watch.batcher.push(observed.diff)\n        const pending = watch.batcher.pending()\n        if (pending === 0) return { ok: true, id: args.id, delivered: 0, diff: { created: [], changed: [], deleted: [] } }\n        const before = watch.deliveries\n        await watch.deliver()\n        return {\n          ok: true,\n```\n\n</details>\n\n#### 缺口\n\n- followup/inject宿主实际同步/异步契约和失败恢复成本未确认。\n  **影响：**无法把本地返回当可靠受理。\n  **进一步探讨：**mock同步throw/异步reject/未知结果，分离受理/完成收据并避免无依据自动重发。\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 推荐与继续探讨入口是什么？\n\n**研究主题：**采用判断、新假设与验证\n\n#### 完整回答\n\n观察。外部报告/构建完成后少轮询的场景明确，快照差分、批处理和quiet模式值得保留，但链接范围与partial差分、共享echo/接收人fallback、无确认先drain直接影响可信通知。先可信单profile窄目录queue研究，不能把它当生产可靠事件触发器或多用户隔离能力。\n\n可探讨“有扫描质量和收件人身份的批次收据”。对扫描保存完整/截断/不可读/深度边界，只比较可确定区域；lstat与物理root拒绝链接越界，owner+session固定不fallback，echo只记录已知成功写并按owner桶分。batch先持有稳定ID，宿主受理明确后ack，未知结果留待核对而不是盲重发。\n\n未实现。最小对照包括同size/mtime写、短命文件、链接环/根外、容量/权限突变、A读后B外部写、失效session、异步拒绝、stop中scan。核误报/漏报/错误收件、重复投递和资源/磁盘成本。反例是短命文件在两轮间消失，即使增加ack也不能补采样盲区；若新方案仍误投另一Agent、将不完整扫描当删除，或重试未知结果造成双投，核心假设被证伪。若收益不超过新增扫描/人工成本也不支持推广。不能为增强可靠性反而保存文件内容或秘密。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/snapshot.js:75-113](https://github.com/11111353535/dsh-folderwatch/blob/c11125d12738945d291b6067fb5fa03ea48c1c08/lib/snapshot.js#L75-L113)\n\n扫描质量/物理范围基线。\n\n<details>\n<summary>查看原文（39行）</summary>\n\n```text\n  async function walk(absolute, relative, depth) {\n    if (truncated || signal?.aborted === true) return\n    let dirents\n    try {\n      dirents = await readdir(absolute, { withFileTypes: true })\n    } catch {\n      unreadable.push(relative === '' ? '.' : relative)\n      return\n    }\n    /* Deterministic order keeps snapshots comparable and reports stable. */\n    dirents.sort((left, right) => (left.name < right.name ? -1 : left.name > right.name ? 1 : 0))\n\n    for (const dirent of dirents) {\n      if (truncated || signal?.aborted === true) return\n      const child = relative === '' ? dirent.name : `${relative}/${dirent.name}`\n      if (isIgnored(child, ignore)) continue\n      if (entries.size >= maxEntries) {\n        truncated = true\n        return\n      }\n      const childAbsolute = join(absolute, dirent.name)\n      const info = await statEntry(childAbsolute)\n      if (info === undefined) continue\n      entries.set(child, info)\n      if (info.kind === 'directory' && recursive && depth < maxDepth) {\n        await walk(childAbsolute, child, depth + 1)\n      }\n    }\n  }\n\n  await walk(root, '', 0)\n  return { entries, truncated, unreadable }\n}\n\n/**\n * Whether two snapshots describe the same tree state.\n *\n * @param {{ entries: Map<string, unknown> }} left - first snapshot.\n * @param {{ entries: Map<string, unknown> }} right - second snapshot.\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:235-288](https://github.com/11111353535/dsh-folderwatch/blob/c11125d12738945d291b6067fb5fa03ea48c1c08/lib/index.js#L235-L288)\n\n收件与受理基线。\n\n<details>\n<summary>查看原文（54行）</summary>\n\n```text\n  async function resolveAgent(watch) {\n    if (watch.boundAgent !== undefined) {\n      try {\n        if (watch.boundAgent.session?.id !== undefined) return watch.boundAgent\n      } catch {\n        /* Disposed agents can throw on property access; fall through. */\n      }\n    }\n    if (watch.sessionId !== undefined) {\n      try {\n        const controller = typeof ctx.get === 'function' ? ctx.get('sessionController') : undefined\n        if (controller !== undefined && typeof controller.resolveAgent === 'function') {\n          const found = await controller.resolveAgent(watch.sessionId)\n          if (found?.agent !== undefined) return found.agent\n        }\n      } catch {\n        /* Fall through to the session registry. */\n      }\n      try {\n        const sessions = typeof ctx.get === 'function' ? ctx.get('sessions') : undefined\n        const session = sessions?.get?.(watch.sessionId)\n        if (session?.agent !== undefined) return session.agent\n      } catch {\n        /* Fall through to the last-seen agent. */\n      }\n    }\n    return lastAgent\n  }\n\n  /**\n   * Deliver one batch to the agent behind a watch.\n   *\n   * @param {{ diff: object, suppressed: number, truncated: boolean }} batch - the batch to deliver.\n   * @param {FolderWatch} watch - the watch that fired.\n   * @returns {Promise<void>} resolves after the message is handed over.\n   */\n  async function deliver(batch, watch) {\n    const agent = await resolveAgent(watch)\n    if (agent === undefined) {\n      throw new Error('no live agent to notify; arm the watch from a session or set sessionId')\n    }\n    const text = renderNotification(\n      { id: watch.id, root: watch.root, label: watch.label, prompt: watch.prompt },\n      batch,\n      { limit: config.maxEventsPerMessage, at: new Date().toISOString() },\n    )\n    const message = createUserMessage({\n      content: [{ type: 'text', text }],\n      source: { kind: 'folderwatch' },\n    })\n    if (watch.mode === 'queue' && typeof agent.inject === 'function') agent.inject(message)\n    else if (typeof agent.followup === 'function') agent.followup(message)\n    else if (typeof agent.inject === 'function') agent.inject(message)\n    else throw new Error('the resolved agent exposes neither followup nor inject')\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/watch.js:293-307](https://github.com/11111353535/dsh-folderwatch/blob/c11125d12738945d291b6067fb5fa03ea48c1c08/lib/watch.js#L293-L307)\n\n批次ack基线。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n  async deliver() {\n    const batch = this.batcher.drain()\n    if (batch === undefined) return\n    const events = countEvents(batch.diff)\n    if (events === 0 && batch.suppressed === 0) return\n    this.suppressedEvents += batch.suppressed\n    try {\n      await this.onBatch(batch, this)\n      this.deliveries += 1\n      this.deliveredEvents += events\n      this.lastDeliveryAt = this.now()\n      if (this.once) await this.stop()\n    } catch (error) {\n      this.report(error)\n    }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/echo.js:155-185](https://github.com/11111353535/dsh-folderwatch/blob/c11125d12738945d291b6067fb5fa03ea48c1c08/lib/echo.js#L155-L185)\n\necho因果基线。\n\n<details>\n<summary>查看原文（31行）</summary>\n\n```text\n  function record(paths, flags = {}) {\n    const at = now()\n    prune(at)\n    for (const path of Array.isArray(paths) ? paths : []) {\n      if (typeof path !== 'string' || path === '') continue\n      ledger.set(keyOf(path), { at, certain: flags.certain !== false })\n    }\n    /* Bound the map so a long session cannot grow it without limit. */\n    while (ledger.size > limit) {\n      const oldest = ledger.keys().next()\n      if (oldest.done === true) break\n      ledger.delete(oldest.value)\n    }\n    return ledger.size\n  }\n\n  /**\n   * Whether a path was recently written by the agent.\n   *\n   * @param {string} path - path to test.\n   * @returns {boolean} true when the change is an echo.\n   */\n  function isEcho(path) {\n    const at = now()\n    const entry = ledger.get(keyOf(path))\n    if (entry === undefined) return false\n    if (at - entry.at > windowMs) {\n      ledger.delete(keyOf(path))\n      return false\n    }\n    return true\n```\n\n</details>\n\n#### 缺口\n\n- 扫描质量/owner/ack新方案未实现。\n  **影响：**不计当前可靠性或创新优势。\n  **进一步探讨：**mock故障序列并对照完整任务通知身份/重复与恢复成本。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：c87d1102451f431c02c2a4cf0a88a1effe958c93ebb76e8aff2edfa55075f4d0。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 8 | 2246 | 1048 | 1073 | — |\n| .md | source | 2 | 414 | — | — | 3707 |\n| .mjs | source | 1 | 155 | 88 | 51 | — |\n| .mjs | test | 4 | 1228 | 488 | 689 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| add/list/remove | 管理目录watch | profile共享，需owner约束 |\n| check/fire | 主动扫描/发待处理批 | fire计数不等于受理 |\n| 快照差分 | 分类元数据变化 | 短命/同size与mtime可漏 |\n| echo | 短窗降回声 | 不证明成功写或自身会话 |\n| wake/queue | Agent消息入口 | fallback/异步确认需核 |\n\n\n## 工程亮点\n\nsnapshot注释声称不跟随symlink，实际statEntry调用stat而非lstat，然后只按info.kind=directory递归，未检查dirent.isSymbolicLink或物理路径。链接到根外目录时可能继续采集外部文件名/元数据；深度12限制防无限走，但不等于不跟随链接。这里只检查元数据，不称读取了外部文件内容或已复现越界。\n\nmaxEntries置truncated可报告，但深度达到maxDepth停止未置truncated。readdir失败记录unreadable后返回空子树，stat失败直接略过；tick仍将partial作为新快照并对旧完整快照差分，可能把不可读/容量边界移动误当删除或新增。status保截断/不可读，通知正文只带batch.truncated，不绑定本轮扫描质量，因此不能把收到的删除清单当完整可靠事实。\n\n路径支持绝对路径和workspace相对路径，未限定必须在工作区。它是有意可选目录能力，不能叫工作区围栏。check没有tick的busy互斥，可与tick同时扫描/推进snapshot；stop不等待正在scan/deliver，已有tick可在stop后继续stage/通知，需时序检查。\n\n不是严格按会话。registry只有一个echo ledger和lastAgent；tools/result任何带file_path/path等参数的工具都记账，未限定write/edit或检查工具成功，连读文件工具也可被认为certain。shell参数提取标certain=false，但isEcho并不读certain标记，仍抑制；来源不是因果证明，短窗内真正外部写同路径也可能被吞。\n\nobserver把相对路径用undefined workspace解析到进程cwd，可能与watch按调用会话workspace解析不同；共享ledger也让A会话记录影响B会话watch。纯echo注释称“this session”不能当隔离证明。\n\n接收人优先boundAgent，仅看session.id存在不确认活跃/一致；显式sessionId查失败后fallback lastAgent，可将原定接收失败降级到另会话。工具list/check/fire/remove共享整个registry且不检查调用者所有权。可信个人单profile与多用户/多项目共享场景应分开，不能据源码直接断言真实已跨租户暴露。文件名/label/prompt进入user message，模型后续行动仍须当外部变化数据而非任意命令授权。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、lib/watch.js、lib/snapshot.js、lib/diff.js、lib/batch.js、lib/echo.js、lib/match.js、lib/format.js、test/plugin.test.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：八lib关键扫描/差分/批/echo/注册与格式路径，test seam仅作为作者验证设计；不运行watch/目标测试或发送Agent消息。\n- 下一步：可继续用临时目录/mock覆盖链接/partial/读写来源/A-B身份/异步拒绝与stop时序，核误报漏报与恢复。\n",
         "metadata": {
             "repository": "11111353535/dsh-folderwatch",
             "repository_id": 1423215448,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T07:45:50.365Z",
+            "window_start": "2026-09-22T07:45:50.365Z",
             "stars": 0,
             "pushed_at": "2026-10-17T11:00:39Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A11111353535%2Fdsh-folderwatch%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6400:20AC7E:144587:21BA26:6AD84907 and timestamp 2026-10-21 05:09:27 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A11111353535%2Fdsh-folderwatch%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6409:194586:149489:221B06:6AD84908 and timestamp 2026-10-21 05:09:28 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A11111353535%2Fdsh-folderwatch%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640A:1FA705:13C0EA:2130F5:6AD84908 and timestamp 2026-10-21 05:09:28 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A11111353535%2Fdsh-folderwatch%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640B:13810:1466C7:21E366:6AD84908 and timestamp 2026-10-21 05:09:28 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A11111353535%2Fdsh-folderwatch%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6412:9ED8B:14445D:21B330:6AD84908 and timestamp 2026-10-21 05:09:28 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "dsh-folderwatch",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T07:46:01.437Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": null,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-folderwatch",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-folderwatch",
                 "error": "HTTP 404",
                 "publication": {
                     "first_published_at": null,
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T07:46:01.437Z",
                     "source_url": "https://registry.npmjs.org/dsh-folderwatch",
                     "error": "HTTP 404",
                     "latest_version": null,
                     "latest_published_at": null,
                     "latest_error": "HTTP 404"
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "c11125d12738945d291b6067fb5fa03ea48c1c08",
-                "current_revision": "c11125d12738945d291b6067fb5fa03ea48c1c08",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {
@@ -352,14 +497,14 @@
             "repository": "11111353535/dsh-folderwatch",
             "path": "",
             "revision": "c11125d12738945d291b6067fb5fa03ea48c1c08",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "5895c44d65283eeeec82f5505277a217a26ed391d9265a1abe6502e267aebbfe",
                 "code": "c11125d12738945d291b6067fb5fa03ea48c1c08",
                 "maintenance": "c4e415eb7273b37c72d43bc8ddedd54bfca399474dd206ce2a15864bfce10a91"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

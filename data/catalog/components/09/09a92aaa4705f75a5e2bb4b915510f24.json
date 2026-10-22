@@ -28,36 +28,70 @@
             },
             "sources": [
                 {
-                    "id": "20261020-incremental40-r2-github-1418691015-root-directory-0",
+                    "id": "2026-10-22-02-github-1418691015-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
-                    "retrieved_at": "2026-10-20T04:29:58.046Z",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-22T06:37:15.649Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "20261020-incremental40-r2-github-1418691015-root-author",
+                    "id": "2026-10-22-02-github-1418691015-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/1015677515/dsh-prompt-ErrorNotes-desk/blob/fab9373ac396e430316b09693b654051583e9713/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/1015677515/dsh-prompt-ErrorNotes-desk",
+                            "commit": "fab9373ac396e430316b09693b654051583e9713",
+                            "path": "README.md",
+                            "content_sha256": "774893f973c1dca8cc7a8400ea5a405c73eb192512c9df9f9f9331fa1944a641"
+                        }
+                    ],
                     "revision": "fab9373ac396e430316b09693b654051583e9713",
-                    "captured_at": "2026-10-20T04:29:58.046Z",
-                    "summary": "在对话标题栏编辑全局与会话提示词，并把模型自报错误收为待确认经验草稿。",
-                    "artifact": "data/runs/2026-10-20-04/snapshots/1015677515--dsh-prompt-errornotes-desk/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T06:37:15.649Z",
+                    "summary": "在对话标题栏编辑全局及共享会话提示，并管理可注入的错误教训库。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/1015677515--dsh-prompt-errornotes-desk/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "20261020-incremental40-r2-github-1418691015-root-source",
+                    "id": "2026-10-22-02-github-1418691015-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/1015677515/dsh-prompt-ErrorNotes-desk/blob/fab9373ac396e430316b09693b654051583e9713/index.js",
+                    "url": "https://github.com/1015677515/dsh-prompt-ErrorNotes-desk/blob/fab9373ac396e430316b09693b654051583e9713/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/1015677515/dsh-prompt-ErrorNotes-desk",
+                            "commit": "fab9373ac396e430316b09693b654051583e9713",
+                            "path": "README.md",
+                            "content_sha256": "774893f973c1dca8cc7a8400ea5a405c73eb192512c9df9f9f9331fa1944a641"
+                        },
+                        {
+                            "repository_url": "https://github.com/1015677515/dsh-prompt-ErrorNotes-desk",
+                            "commit": "fab9373ac396e430316b09693b654051583e9713",
+                            "path": "package.json",
+                            "content_sha256": "63ae51137a72d7d1e479230f07eeb3dc4f5dd15048b1af734d6999036fa8ce3e"
+                        },
+                        {
+                            "repository_url": "https://github.com/1015677515/dsh-prompt-ErrorNotes-desk",
+                            "commit": "fab9373ac396e430316b09693b654051583e9713",
+                            "path": "index.js",
+                            "content_sha256": "2ed3df243f2a2c1f227c7fba360461a2584a91e3135491abda415aaf74fad950"
+                        },
+                        {
+                            "repository_url": "https://github.com/1015677515/dsh-prompt-ErrorNotes-desk",
+                            "commit": "fab9373ac396e430316b09693b654051583e9713",
+                            "path": "client.js",
+                            "content_sha256": "e2c37376b31deb9722d98062daa6ebefd03d239e999e75772560027ca5c904c3"
+                        }
+                    ],
                     "revision": "fab9373ac396e430316b09693b654051583e9713",
-                    "captured_at": "2026-10-20T04:29:58.046Z",
-                    "summary": "核查 index.js、client.js、CHANGELOG.md；index.js 逐个尝试认错标记，跳过不合法的首次出现，要求同一行按错误经过、教训顺序解析；结果先入待确认队列，采纳后才注入。",
-                    "artifact": "data/runs/2026-10-20-04/snapshots/1015677515--dsh-prompt-errornotes-desk/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T06:37:15.649Z",
+                    "summary": "核查 README.md、package.json、index.js、client.js；浏览器面板经宿主 HTTP 修改 AGENTS.md 和 state.json；systemPrompt.section 每轮取最近教训；assistant 流自述转待确认草稿。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/1015677515--dsh-prompt-errornotes-desk/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "格式匹配不能判定错误是否真实或教训是否可迁移；未执行流式事件、并发面板编辑和宿主验证。",
+                        "固定提交静态审阅 README、package、index.js；未运行宿主/模型。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -68,9 +102,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "经常纠正同类行为的用户需要维护少量可复用教训，合格结果是正确经验被下轮读取且可撤回。",
+                    "text": "个人 DSH 使用中维护全局指令与人工确认的错误教训。",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1418691015-root-source"
+                        "2026-10-22-02-github-1418691015-root-source"
                     ],
                     "dependencies": [
                         {
@@ -79,16 +113,16 @@
                             "fingerprint": "fab9373ac396e430316b09693b654051583e9713"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:29:58.046Z",
+                    "reviewed_at": "2026-10-22T06:37:15.649Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "index.js 逐个尝试认错标记，跳过不合法的首次出现，要求同一行按错误经过、教训顺序解析；结果先入待确认队列，采纳后才注入。",
+                    "text": "浏览器面板经宿主 HTTP 修改 AGENTS.md 和 state.json；systemPrompt.section 每轮取最近教训；assistant 流自述转待确认草稿。",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1418691015-root-source"
+                        "2026-10-22-02-github-1418691015-root-source"
                     ],
                     "dependencies": [
                         {
@@ -97,16 +131,16 @@
                             "fingerprint": "fab9373ac396e430316b09693b654051583e9713"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:29:58.046Z",
+                    "reviewed_at": "2026-10-22T06:37:15.649Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "跳过无效早期标记能修正漏采路径，但采集更多草稿未必改善后续任务；经验质量仍依赖人工取舍。",
+                    "text": "| 能力 | 源码状态 |\n| --- | --- |\n| 动态提示 | 已实现，共享 sessionPrompt |\n| 错误教训 | 过滤后取最近 N 条 |\n| 自动草稿 | 订阅可靠性未证实 |",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1418691015-root-source"
+                        "2026-10-22-02-github-1418691015-root-source"
                     ],
                     "dependencies": [
                         {
@@ -115,16 +149,16 @@
                             "fingerprint": "fab9373ac396e430316b09693b654051583e9713"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:29:58.046Z",
+                    "reviewed_at": "2026-10-22T06:37:15.649Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "模型每轮接收近期经验会增加输入量；人工确认、归类和消除冲突是持续成本。没有实测费用或重复错误下降比例。",
+                    "text": "| 项目 | 代价/边界 |\n| --- | --- |\n| 注入 | 每轮重发最近最多200条教训 |\n| 配置 | 改写全局 AGENTS 与共享 JSON |\n| 审核 | 自动自述需人工确认 |",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1418691015-root-source"
+                        "2026-10-22-02-github-1418691015-root-source"
                     ],
                     "dependencies": [
                         {
@@ -133,16 +167,16 @@
                             "fingerprint": "fab9373ac396e430316b09693b654051583e9713"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:29:58.046Z",
+                    "reviewed_at": "2026-10-22T06:37:15.649Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "parseConfession 与 parseConfessionAt 分离定位与校验，队列按内容去重并限长；Host 写入与 Client 展示分开，原子文件替换不等于并发编辑无冲突。",
+                    "text": "动态 systemPrompt.section；可选 webServer 暴露 state/pending；状态 JSON 临时写改名；assistant-stream 最佳努力订阅。",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1418691015-root-source"
+                        "2026-10-22-02-github-1418691015-root-source"
                     ],
                     "dependencies": [
                         {
@@ -151,16 +185,16 @@
                             "fingerprint": "fab9373ac396e430316b09693b654051583e9713"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:29:58.046Z",
+                    "reviewed_at": "2026-10-22T06:37:15.649Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "已有用户应重点检查先引用标记再真正认错的消息，先只保留少量能复现的教训，并确认禁用或删除后的注入变化。",
+                    "text": "个人隔离 profile 验证路由权限和多会话行为；只采纳人工核实的教训。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1418691015-root-source"
+                        "2026-10-22-02-github-1418691015-root-source"
                     ],
                     "dependencies": [
                         {
@@ -169,16 +203,16 @@
                             "fingerprint": "fab9373ac396e430316b09693b654051583e9713"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:29:58.046Z",
+                    "reviewed_at": "2026-10-22T06:37:15.649Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "格式匹配不能判定错误是否真实或教训是否可迁移；未执行流式事件、并发面板编辑和宿主验证。",
+                    "text": "固定提交静态审阅 README、package、index.js；未运行宿主/模型。",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1418691015-root-source"
+                        "2026-10-22-02-github-1418691015-root-source"
                     ],
                     "dependencies": [
                         {
@@ -187,16 +221,16 @@
                             "fingerprint": "fab9373ac396e430316b09693b654051583e9713"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:29:58.046Z",
+                    "reviewed_at": "2026-10-22T06:37:15.649Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "包版本仍为1.2.1，GitHub-only 分发；新提交不能由版本号未变推断无变化。Host 路由和浏览器端均须加载。",
+                    "text": "GitHub 安装，包声明 1.2.1/MIT，Node 22.19+或24+；README 称未上 npm，capture:meta 未验证 npm。",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1418691015-root-source"
+                        "2026-10-22-02-github-1418691015-root-source"
                     ],
                     "dependencies": [
                         {
@@ -205,40 +239,135 @@
                             "fingerprint": "fab9373ac396e430316b09693b654051583e9713"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:29:58.046Z",
+                    "reviewed_at": "2026-10-22T06:37:15.649Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "把提示编辑、教训条目、注入预览和自述草稿审核整合到对话标题栏。详见[Q01](#research-q01)、[Q02](#research-q02)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1418691015-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1418691015:root",
+                            "area": "code",
+                            "fingerprint": "fab9373ac396e430316b09693b654051583e9713"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T06:37:15.649Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "sessionPrompt 存于单个全局状态文件，且 POST 路由可改全局 AGENTS；宿主授权未证实。详见[Q01](#research-q01)、[Q04](#research-q04)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1418691015-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1418691015:root",
+                            "area": "code",
+                            "fingerprint": "fab9373ac396e430316b09693b654051583e9713"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T06:37:15.649Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "按会话隔离状态并验证路由权限、采集流，可降低跨会话串扰和误采；尚未实现。详见[Q05](#research-q05)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1418691015-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1418691015:root",
+                            "area": "code",
+                            "fingerprint": "fab9373ac396e430316b09693b654051583e9713"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T06:37:15.649Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-20T04:29:58.046Z",
+            "last_checked_at": "2026-10-22T06:37:15.649Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "fab9373ac396e430316b09693b654051583e9713",
+                "reviewed_at": "2026-10-22T06:37:15.649Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1418691015:root",
+                        "area": "code",
+                        "fingerprint": "fab9373ac396e430316b09693b654051583e9713"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "rationale": "面板与提示注入整合直接，但共享状态作用域含混、自动采集未证实。",
+                    "basis": "interpretation",
+                    "score": 33,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1418691015-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 0
+                    },
+                    "rationale": "个人工作流可省提示维护时间；跨会话与权限核验增添治理成本。",
+                    "basis": "interpretation",
+                    "score": 22,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1418691015-root-source"
+                    ]
+                }
+            },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "反复纠正同类行为者可少量采纳候选教训，先检查合法后续标记与删除禁用后的注入。",
+                "reason": "可在个人隔离 profile 试用，先验证共享作用域、路由授权及采集；不按会话私有记忆部署。",
                 "criteria": {
                     "scenario": {
-                        "score": 23,
-                        "rationale": "把可复现教训跨轮复用的任务明确。"
+                        "score": 15,
+                        "rationale": "个人提示与复盘场景清晰。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "待确认队列省整理步骤，直接维护AGENTS.md更简单。"
+                        "rationale": "即时面板和动态注入便利。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "逐标记解析与队列去重可查，不证明教训真实可迁移。"
+                        "rationale": "固定源码支持核心链路，未运行 DSH。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "每轮经验增加输入量，确认归类和冲突清理持续耗时。"
+                        "score": 5,
+                        "rationale": "每轮教训 token、共享状态和高权限写入。"
                     }
                 },
-                "score": 59,
+                "score": 46,
                 "revision": "fab9373ac396e430316b09693b654051583e9713",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T06:37:15.649Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "20261020-incremental40-r2-github-1418691015-root-source"
+                    "2026-10-22-02-github-1418691015-root-source"
                 ],
                 "dependencies": [
                     {
@@ -263,86 +392,60 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-20T04:25:27.514Z",
-            "analysis_sha256": "e1b0cad79bd1b660e149e2588dd516047f874f4355e074458cf753d60d47a8e5"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "8f154e4c4fecc1bd331591e4df873da5dc03e86ded8c97651a9ceaccc1c2dd6e"
         },
         "publication.metadata": "data/plugins/1015677515--dsh-prompt-errornotes-desk/META.json",
         "publication.summaries": {
-            "text": "在对话标题栏编辑全局与会话提示词，并把模型自报错误收为待确认经验草稿。",
+            "text": "在对话标题栏编辑全局及共享会话提示，并管理可注入的错误教训库。",
             "revision": "fab9373ac396e430316b09693b654051583e9713",
             "source_url": "https://github.com/1015677515/dsh-prompt-ErrorNotes-desk/blob/fab9373ac396e430316b09693b654051583e9713/README.md"
         },
         "publication.capabilities": {
             "revision": "fab9373ac396e430316b09693b654051583e9713",
             "items": {
-                "界面": "提示词与错误经验编辑、候选采纳。",
-                "后台": "有界近期经验与会话提示进入系统提示。"
-            }
+                "界面": "标题栏双面板与注入预览",
+                "事件监听": "assistant-stream 自述草稿",
+                "用户命令": "/lessons 全局暂停",
+                "Host 路由": "GET/POST /prompt-desk/state 提示与经验管理"
+            },
+            "table": "| 能力 | 作用 | 边界 |\n| --- | --- | --- |\n| 界面 | 编辑提示/教训 | 共享状态 |\n| 模型工具 | 动态注入 | token 成本 |\n| 事件监听 | 草稿捕获 | 不等于事实 |"
         },
         "publication.advice": {
             "revision": "fab9373ac396e430316b09693b654051583e9713",
-            "text": "已有用户应重点检查先引用标记再真正认错的消息，先只保留少量能复现的教训，并确认禁用或删除后的注入变化。"
+            "text": "个人隔离 profile 验证路由权限和多会话行为；只采纳人工核实的教训。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/1015677515--dsh-prompt-errornotes-desk",
-        "reports": "# Prompt Desk\n\n> 在对话标题栏编辑全局与会话提示词，并把模型自报错误收为待确认经验草稿。\n\n## 固定范围与依据\n\n固定提交 [fab9373ac396e430316b09693b654051583e9713](https://github.com/1015677515/dsh-prompt-ErrorNotes-desk/blob/fab9373ac396e430316b09693b654051583e9713/index.js)；组件路径：仓库根。核查时间 2026-10-20T04:29:58.046Z；本轮基准 2026-10-20T04:25:27.514Z。\n源码抽读路径：index.js、client.js、CHANGELOG.md。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：经常纠正同类行为的用户需要维护少量可复用教训，合格结果是正确经验被下轮读取且可撤回。\n- **亮点**：index.js 逐个尝试认错标记，跳过不合法的首次出现，要求同一行按错误经过、教训顺序解析；结果先入待确认队列，采纳后才注入。\n- **思考**：跳过无效早期标记能修正漏采路径，但采集更多草稿未必改善后续任务；经验质量仍依赖人工取舍。\n- **建议**：已有用户应重点检查先引用标记再真正认错的消息，先只保留少量能复现的教训，并确认禁用或删除后的注入变化。\n\n## 场景与替代办法\n\n经常纠正同类行为的用户需要维护少量可复用教训，合格结果是正确经验被下轮读取且可撤回。\n\n相比前次 c76ffa0 提交，本轮确认解析器会继续扫描后续标记；维持人工确认建议。普通 AGENTS.md 编辑更简单，候选队列主要减少整理步骤。\n\n## 依赖与流程\n\n需要 systemPrompt 与 webServer 服务、浏览器 UI 及可写 DSH_HOME；全局提示保存会影响其他会话，效果依赖模型遵循经过确认的经验。\n\n面板编辑提示，模型输出产生候选，用户修改并采纳，下轮函数式构建注入；漏采时先检查同一行双标签，不反复重写全局文件。\n\n## 成本与效果\n\n模型每轮接收近期经验会增加输入量；人工确认、归类和消除冲突是持续成本。没有实测费用或重复错误下降比例。\n\n跳过无效早期标记能修正漏采路径，但采集更多草稿未必改善后续任务；经验质量仍依赖人工取舍。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：5784bef0f6cb171d03a92c120bd1610ea179201a2bec66990f9f93e40cbd71da。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 4 | 1046 | — | — | 14231 |\n| .js | source | 2 | 2703 | 1347 | 1167 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **界面**：提示词与错误经验编辑、候选采纳。\n- **后台**：有界近期经验与会话提示进入系统提示。\n\n## 工程亮点\n\nparseConfession 与 parseConfessionAt 分离定位与校验，队列按内容去重并限长；Host 写入与 Client 展示分开，原子文件替换不等于并发编辑无冲突。\n\n## 分发与兼容\n\n包版本仍为1.2.1，GitHub-only 分发；新提交不能由版本号未变推断无变化。Host 路由和浏览器端均须加载。\n\n## 历史对照\n\n前次代码指纹为 c76ffa0cb3f4f8de4b914ab64f3580f7aefab78f；本轮固定为 fab9373ac396e430316b09693b654051583e9713。相比前次 c76ffa0 提交，本轮确认解析器会继续扫描后续标记；维持人工确认建议。普通 AGENTS.md 编辑更简单，候选队列主要减少整理步骤。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：格式匹配不能判定错误是否真实或教训是否可迁移；未执行流式事件、并发面板编辑和宿主验证。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：以句中引用、合法第二标记、换行教训、模板回显与重复消息组成样本，统计候选准确率，并比较开启前后的真实重复错误。\n",
+        "reports": "# Prompt Desk\n\n> 在对话标题栏编辑全局及共享会话提示，并管理可注入的错误教训库。\n\n## 研究范围\n\n- **仓库**：[1015677515/dsh-prompt-ErrorNotes-desk](https://github.com/1015677515/dsh-prompt-ErrorNotes-desk)\n- **版本号**：1.2.1（[固定提交 fab9373ac396e430316b09693b654051583e9713](https://github.com/1015677515/dsh-prompt-ErrorNotes-desk/tree/fab9373ac396e430316b09693b654051583e9713)）\n- **版本日期**：2026-10-20（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n源码实现了可编辑和注入，但“本次对话”提示实际共享，自动采集事件作用域未验证，写指令的 HTTP 权限依赖宿主。\n\n## 洞察短评\n\n- **用途**：个人 DSH 使用中维护全局指令与人工确认的错误教训。\n- **亮点**：把提示编辑、教训条目、注入预览和自述草稿审核整合到对话标题栏。详见[Q01](#research-q01)、[Q02](#research-q02)。\n- **思考**：sessionPrompt 存于单个全局状态文件，且 POST 路由可改全局 AGENTS；宿主授权未证实。详见[Q01](#research-q01)、[Q04](#research-q04)。\n- **建议**：按会话隔离状态并验证路由权限、采集流，可降低跨会话串扰和误采；尚未实现。详见[Q05](#research-q05)。\n\n采用建议：个人隔离 profile 验证路由权限和多会话行为；只采纳人工核实的教训。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n把提示编辑、教训条目、注入预览和自述草稿审核整合到对话标题栏。详见[Q01](#research-q01)、[Q02](#research-q02)。\n\n## 关键质疑\n\nsessionPrompt 存于单个全局状态文件，且 POST 路由可改全局 AGENTS；宿主授权未证实。详见[Q01](#research-q01)、[Q04](#research-q04)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n按会话隔离状态并验证路由权限、采集流，可降低跨会话串扰和误采；尚未实现。详见[Q05](#research-q05)。\n\n多会话隔离与写入权限试验、伪流采集准确率、不同教训长度 token 测量。\n\n## 场景与替代办法\n\n个人 DSH 使用中维护全局指令与人工确认的错误教训。\n\n通常手工编辑 AGENTS.md；此插件加面板和结构化复盘注入。\n\n## 依赖与流程\n\n| 条件 | 用途 | 边界 |\n| --- | --- | --- |\n| DSH systemPrompt | 注入 | 宿主兼容性 |\n| webServer | 面板读写 | 权限未知 |\n| assistant-stream | 草稿捕获 | scoped 事件未证实 |\n\n| 步骤 | 动作 | 判据 |\n| --- | --- | --- |\n| 隔离 | 安装固定 SHA | 版本可查 |\n| 验证 | 双会话/权限测试 | 无意外串扰 |\n| 采纳 | 人工审草稿 | 教训有事实依据 |\n\n## 成本与效果\n\n| 项目 | 代价/边界 |\n| --- | --- |\n| 注入 | 每轮重发最近最多200条教训 |\n| 配置 | 改写全局 AGENTS 与共享 JSON |\n| 审核 | 自动自述需人工确认 |\n\n| 能力 | 源码状态 |\n| --- | --- |\n| 动态提示 | 已实现，共享 sessionPrompt |\n| 错误教训 | 过滤后取最近 N 条 |\n| 自动草稿 | 订阅可靠性未证实 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**核提示词作用域、经验注入与自动采集/HTTP 边界。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 两个提示词面板的实际作用域和存储是什么？\n\n**研究主题：**场景与需求、功能与机制\n\n#### 完整回答\n\n全局框直接读写 $DSH_HOME/AGENTS.md；另一个 sessionPrompt 与错误库、设置共存在单个 $DSH_HOME/prompt-desk/state.json。源码没有用会话 ID 为 sessionPrompt 分区，注入函数每轮读取同一状态。因此界面所称“本次对话”会跨新对话延续，属于持久共享提示而非会话隔离指令。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:89-98](https://github.com/1015677515/dsh-prompt-ErrorNotes-desk/blob/fab9373ac396e430316b09693b654051583e9713/README.md#L89-L98)\n\n作者列出的文件位置。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n## 它会动你的哪些文件\n\n全局提示词**就是** DSH 自己那个 `$DSH_HOME/AGENTS.md` —— 也就是官方 `dsh-agent-instructions` 插件本来就会读的同一个文件。本插件**不另存副本**：两个都自称「全局提示词」的文件必然会漂移，而且只有一个真正会送达模型。\n\n| 数据 | 位置 |\n|---|---|\n| 全局提示词 | `$DSH_HOME/AGENTS.md` |\n| 本次对话提示词、错误库、面板开关 | `$DSH_HOME/prompt-desk/state.json` |\n\n写入是**原子**的（先写 `.tmp` 再改名），崩溃不会截断你的提示词。浏览器半边完全不碰文件系统——所有读写都在宿主半边，所以不会写到 `$DSH_HOME` 之外。\n```\n\n</details>\n\n**依据 2 · 源码核查**：[index.js:669-689](https://github.com/1015677515/dsh-prompt-ErrorNotes-desk/blob/fab9373ac396e430316b09693b654051583e9713/index.js#L669-L689)\n\n状态对象含单个 sessionPrompt。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\nfunction currentState(configLimit, { migrating = false } = {}) {\n  const state = migrating ? readStateMigrating() : readState();\n  const hasSession = state.sessionPrompt.trim() !== '';\n  const globalPrompt = readTextFile(globalPromptPath(), '');\n  const built = buildSectionText(state, configLimit, { lessonsEnabled: globalLessonsEnabled });\n\n  return {\n    // The build handshake: the panel compares this with its own constant and warns\n    // when a stale bundle is talking to a newer Host (or the reverse).\n    pluginVersion: PLUGIN_VERSION,\n    stateVersion: STATE_VERSION,\n    categories: CATEGORIES,\n\n    // The global prompt is the harness's own AGENTS.md, read fresh every time so\n    // an edit made in a text editor shows up on the next panel open.\n    globalPrompt,\n    globalPromptPath: globalPromptPath(),\n    sessionPrompt: state.sessionPrompt,\n    errors: state.errors,\n    pending: state.pending,\n    ui: state.ui,\n```\n\n</details>\n\n**依据 3 · 源码核查**：[index.js:821-828](https://github.com/1015677515/dsh-prompt-ErrorNotes-desk/blob/fab9373ac396e430316b09693b654051583e9713/index.js#L821-L828)\n\n补丁直接修改同一状态字段。\n\n```text\nfunction applyPatch(patch, configLimit) {\n  const state = readState();\n  if (patch !== null && typeof patch === 'object') {\n    const sessionPrompt = patchText(patch.sessionPrompt);\n    if (sessionPrompt !== undefined) state.sessionPrompt = sessionPrompt;\n\n    if (typeof patch.globalPrompt === 'string') writeTextFile(globalPromptPath(), patch.globalPrompt);\n\n```\n\n**依据 4 · 源码核查**：[index.js:1142-1155](https://github.com/1015677515/dsh-prompt-ErrorNotes-desk/blob/fab9373ac396e430316b09693b654051583e9713/index.js#L1142-L1155)\n\n系统提示段从共享状态读取。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n  ctx.inject(['systemPrompt'], (scope) => {\n    scope.systemPrompt.section({\n      name: 'prompt-desk:mistakes-and-instructions',\n      order: 10200,\n      text: () => {\n        try {\n          return buildSectionText(readState(), configLimit, {\n            lessonsEnabled: globalLessonsEnabled,\n          }).text;\n        } catch {\n          return '';\n        }\n      },\n    });\n```\n\n</details>\n\n#### 缺口\n\n- 未在实际多会话环境运行。\n  **影响：**宿主可能额外隔离进程，但源码未实现。\n  **进一步探讨：**隔离 profile 中用两个对话验证提示词串扰。\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 错误经验怎么被选择并注入，成本上限是什么？\n\n**研究主题：**贡献与相对优势、效果与总成本\n\n#### 完整回答\n\n仅带非空 lesson 的条目进入候选，先过滤后取最新 N 条并逆序，仅把教训文本加入系统提示词，不注入事件细节。默认 N=10、最大200、0可停经验注入；会话提示和自我认错提示不受 N=0 影响。每轮重建并重发提示段，实际 token 成本取决于教训总长度；源码对教训长度只建议、不硬限。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:120-137](https://github.com/1015677515/dsh-prompt-ErrorNotes-desk/blob/fab9373ac396e430316b09693b654051583e9713/README.md#L120-L137)\n\n作者描述注入规则。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n## 注入是怎么工作的\n\n本次对话提示词、以及**最近 10 条**错误经验，通过 `ctx.systemPrompt.section()` 注入，顺序值 `10200`（`DEPLOYMENT_PERSONA_SUFFIX`），即排在工具文档之后。\n\n- `text` 传的是**函数**，所以改完**下一轮对话就生效**——不用重启，也不用重新注册。\n- 只注入**教训**。`detail` 解释了事情经过，`type` 是这次的事故标题——两者描述的都是**某一个瞬间**，只有碰上长得像的下一次任务才有用；而教训是一条能迁移的规则。`detail` 同时是 token 最贵的一项，所以两者都只留在面板里。\n- **没有教训的条目不注入**，面板里会标出来让你补。它不占注入条数的额度——上限数的是\"真正注入的条数\"，所以先筛掉再取最近 N 条。\n- 条数上限是为了不让经验库变成 token 黑洞：完整列表始终在面板里可读，提示词里也会说明当前只显示了其中一部分。\n\n### 注入条数可以自己设\n\n**在错误库面板里直接填**（最方便）：面板里有一个「注入条数上限」输入框，填好点「保存」即可，下一轮对话生效。\n\n| 字段 | 默认 | 含义 |\n|---|---|---|\n| `injectLimit` | `10` | 注入系统提示词的错误经验条数上限。`0` = 一条都不注入（会话提示词不受影响）；最大 `200`，填更大也会被夹到 200 |\n\n**优先级**：面板里填的值优先；清空输入框并保存（或点「恢复默认」）就回到\"跟随插件配置\"。\n```\n\n</details>\n\n**依据 2 · 源码核查**：[index.js:597-657](https://github.com/1015677515/dsh-prompt-ErrorNotes-desk/blob/fab9373ac396e430316b09693b654051583e9713/index.js#L597-L657)\n\n候选过滤、取最近、构造提示块。\n\n<details>\n<summary>查看原文（61行）</summary>\n\n```text\nfunction buildSectionText(state, configLimit, { lessonsEnabled = true } = {}) {\n  const limit = effectiveInjectLimit(state, configLimit);\n\n  const sessionBlock = state.sessionPrompt.trim() === ''\n    ? ''\n    : `## Session instructions (from the user, this conversation)\\n${state.sessionPrompt.trim()}`;\n\n  let errorBlock = '';\n  let injectedCount = 0;\n\n  /*\n   * Entries that carry a lesson are the only ones that can be injected; everything\n   * else is a story with no rule extracted from it yet.\n   *\n   * Computed unconditionally, before the export switch is consulted: the panel\n   * reports \"N of M injectable entries\" even while injection is paused, and a\n   * number that only exists while the switch is on would read as zero the moment\n   * the user turns it off — exactly when they are looking at it to decide.\n   */\n  const injectable = state.errors.filter((entry) => (entry.lesson || '').trim() !== '');\n\n  if (state.exportToPrompt && lessonsEnabled && injectable.length > 0 && limit > 0) {\n    /*\n     * Only the lesson is injected — not the incident that produced it.\n     *\n     * The incident is a story about one moment (\"上次改 package.json 时用了\n     * PowerShell\"), and a story is only actionable if the next task happens to look\n     * like that moment. The lesson is the rule the story was supposed to teach, and\n     * a rule travels. Entries without a lesson therefore carry nothing transferable\n     * and are skipped rather than injected as a bare incident; the panel marks them\n     * so the user can fill the lesson in.\n     *\n     * The filter runs BEFORE the limit, so the limit counts entries that are\n     * actually injected. Slicing first would let a few lesson-less entries silently\n     * consume the budget and quietly shrink the block.\n     */\n    const recent = injectable.slice(-limit).reverse();\n    injectedCount = recent.length;\n    const lines = recent.map((entry) => `- ${(entry.lesson || '').trim()}`);\n    /*\n     * Title and trailer are Chinese and short on purpose: this block is re-sent on\n     * every request, so every character is a per-turn cost. The English title\n     * (\"Mistakes you have made before — do not repeat them\") and the English\n     * truncation note cost roughly 3x their Chinese equivalents for the same\n     * meaning, and the entries themselves are already Chinese.\n     *\n     * The denominator is the injectable count, not `state.errors.length`: saying\n     * \"共 8 条\" while two of them cannot be injected would misdescribe what the\n     * number is counting.\n     */\n    errorBlock = '## 别重犯以下错误\\n'\n      + lines.join('\\n')\n      + (injectable.length > limit\n        ? `\\n（仅显示最近 ${limit} 条，共 ${injectable.length} 条。）`\n        : '');\n  }\n\n  const cueBlock = state.exportToPrompt ? `${CUE_TITLE}\\n${CUE_BODY}` : '';\n\n  const text = [sessionBlock, errorBlock, cueBlock].filter((part) => part !== '').join('\\n\\n');\n  return { text, sessionBlock, errorBlock, cueBlock, injectedCount, injectableCount: injectable.length, limit };\n```\n\n</details>\n\n**依据 3 · 源码核查**：[index.js:699-705](https://github.com/1015677515/dsh-prompt-ErrorNotes-desk/blob/fab9373ac396e430316b09693b654051583e9713/index.js#L699-L705)\n\nlessonMax 是建议而非硬限制。\n\n```text\n     */\n    advice: {\n      // Recommended ceiling for a lesson; longer is stored and injected anyway.\n      lessonMax: LESSON_ADVICE_MAX,\n      // Hard ceiling for the incident, enforced by the parser.\n      incidentMax: MAX_INCIDENT_CHARS,\n    },\n```\n\n**依据 4 · 源码核查**：[index.js:1142-1155](https://github.com/1015677515/dsh-prompt-ErrorNotes-desk/blob/fab9373ac396e430316b09693b654051583e9713/index.js#L1142-L1155)\n\n每轮动态取状态。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n  ctx.inject(['systemPrompt'], (scope) => {\n    scope.systemPrompt.section({\n      name: 'prompt-desk:mistakes-and-instructions',\n      order: 10200,\n      text: () => {\n        try {\n          return buildSectionText(readState(), configLimit, {\n            lessonsEnabled: globalLessonsEnabled,\n          }).text;\n        } catch {\n          return '';\n        }\n      },\n    });\n```\n\n</details>\n\n#### 缺口\n\n- 未测实际 token/延迟。\n  **影响：**极长教训仍可推高每轮成本。\n  **进一步探讨：**用不同条目长度做提示 token 测量。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 自动认错采集能否当成已验证的纠错事实？\n\n**研究主题：**功能与机制、缺陷与关键质疑\n\n#### 完整回答\n\n宿主监听 assistant-stream，按 agent 缓冲 text-delta，仅 committed 输出会解析；格式要在一行同时包含“错误经过”和“教训”，通过长度/占位符等过滤后加入最多20个待确认草稿。确认操作才转成错误库，说明采集只是模型自述候选，并非外部判定。代码自身承认全局 ctx 对 scoped 事件能否收到尚未证明，订阅失败被静默处理，因此自动捕获可靠性亦待验证。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:987-1024](https://github.com/1015677515/dsh-prompt-ErrorNotes-desk/blob/fab9373ac396e430316b09693b654051583e9713/index.js#L987-L1024)\n\n多处标记逐个解析。\n\n<details>\n<summary>查看原文（38行）</summary>\n\n```text\nfunction parseConfession(text) {\n  if (typeof text !== 'string') return null;\n\n  /*\n   * Try **every** marker occurrence, earliest first, instead of only the first.\n   *\n   * This used to read the first occurrence, reject it if it did not open its line,\n   * and give up on the message. That silently lost the real confession in the single\n   * most common shape there is: a message that first *mentions* the marker (quoting\n   * it, showing the format, discussing this feature) and then confesses. Measured\n   * case: \"先说 `我犯了个错误` 这个词，然后\\n我犯了个错误：错误经过：真实错误 教训：真实教训\"\n   * returned null — the quotation consumed the whole message.\n   *\n   * Now a rejected occurrence is simply skipped, and the search continues to the\n   * next one. Every rejection rule below is unchanged and still applied to each\n   * candidate in turn; only the give-up-on-first-failure behaviour is gone. The\n   * earliest occurrence that parses cleanly still wins, so a message with several\n   * genuine confessions yields one draft — the documented maximum.\n   */\n  const positions = [];\n  for (const marker of CONFESSION_MARKERS) {\n    let from = 0;\n    for (;;) {\n      const found = text.indexOf(marker, from);\n      if (found < 0) break;\n      positions.push(found);\n      from = found + marker.length; // + length: a stale match cannot repeat forever\n    }\n  }\n  if (positions.length === 0) return null;\n  positions.sort((a, b) => a - b);\n\n  for (const at of positions) {\n    const draft = parseConfessionAt(text, at);\n    if (draft !== null) return draft;\n  }\n  return null;\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[index.js:1032-1084](https://github.com/1015677515/dsh-prompt-ErrorNotes-desk/blob/fab9373ac396e430316b09693b654051583e9713/index.js#L1032-L1084)\n\n格式和占位符过滤。\n\n<details>\n<summary>查看原文（53行）</summary>\n\n```text\nfunction parseConfessionAt(text, at) {\n  /*\n   * The marker must open its line.\n   *\n   * Quoting the marker mid-sentence is the normal way a discussion of this feature\n   * reads, and every such sentence used to become a draft. Only whitespace, list\n   * bullets, ordered-list numbers and blockquote markers may precede it.\n   */\n  const lineStart = text.lastIndexOf('\\n', at) + 1;\n  if (!/^[\\s\\-*+>\\d.]*$/.test(text.slice(lineStart, at))) return null;\n\n  // Both labels must sit on the marker's own line; a confession is one line.\n  const line = text.slice(at).split(/\\r?\\n/, 1)[0];\n\n  const incidentMatch = INCIDENT_LABEL.exec(line);\n  if (incidentMatch === null) return null;\n  const lessonMatch = LESSON_LABEL.exec(line);\n  if (lessonMatch === null) return null;\n  // Order is fixed: a lesson before the incident is not the documented format.\n  if (lessonMatch.index <= incidentMatch.index) return null;\n\n  const incident = line\n    .slice(incidentMatch.index + incidentMatch[0].length, lessonMatch.index)\n    .trim();\n  const rule = line.slice(lessonMatch.index + lessonMatch[0].length).trim();\n  if (incident === '' || rule === '') return null;\n\n  /*\n   * Reject an echo of the instruction itself.\n   *\n   * The cue lives in the system prompt and spells the template out in full, so a\n   * model that quotes the format back — \"错误经过：<当时实际发生了什么> 教训：<…>\" — would\n   * otherwise be captured verbatim as a confession whose incident is \"<当时实际发生了什么>\".\n   * Angle brackets are the tell: a genuine confession describes an incident and does\n   * not wrap it in placeholders. Dropping the line is the right failure here; a\n   * false draft costs the user a review round for nothing.\n   */\n  if (/[<>]/.test(incident) || /[<>]/.test(rule)) return null;\n\n  // A quoted code fragment, not a description of what went wrong.\n  if (CODE_START.test(incident)) return null;\n\n  // Too short to describe anything, or so long it is clearly swept-up prose.\n  if (incident.length < 4 || incident.length > MAX_INCIDENT_CHARS) return null;\n\n  return {\n    date: today(),\n    category: OTHER,\n    type: incident,\n    lesson: rule,\n    detail: '',\n    source: 'auto',\n  };\n```\n\n</details>\n\n**依据 3 · 源码核查**：[index.js:1095-1102](https://github.com/1015677515/dsh-prompt-ErrorNotes-desk/blob/fab9373ac396e430316b09693b654051583e9713/index.js#L1095-L1102)\n\n待确认队列和去重。\n\n```text\nfunction queuePending(draft) {\n  const state = readState();\n  const key = (entry) => `${entry.type}\\u0000${entry.lesson}`;\n  if (state.pending.some((entry) => key(entry) === key(draft))) return false;\n  state.pending.push(sanitizeEntry(draft));\n  state.pending = state.pending.slice(-MAX_PENDING);\n  saveState(state);\n  return true;\n```\n\n**依据 4 · 源码核查**：[index.js:899-915](https://github.com/1015677515/dsh-prompt-ErrorNotes-desk/blob/fab9373ac396e430316b09693b654051583e9713/index.js#L899-L915)\n\n用户确认后入库。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n    // Move a confirmed draft into the library, carrying whatever the user edited.\n    if (patch.pendingAccept !== null && typeof patch.pendingAccept === 'object') {\n      const id = patchText(patch.pendingAccept.id);\n      const index = id === undefined ? -1 : state.pending.findIndex((item) => item.id === id);\n      if (index >= 0) {\n        const draft = state.pending[index];\n        state.pending.splice(index, 1);\n        const entry = sanitizeEntry({\n          date: draft.date,\n          category: patchText(patch.pendingAccept.category) ?? draft.category,\n          type: patchText(patch.pendingAccept.type) ?? draft.type,\n          lesson: patchText(patch.pendingAccept.lesson) ?? draft.lesson,\n          detail: patchText(patch.pendingAccept.detail) ?? draft.detail,\n          source: 'auto',\n        });\n        if (entry !== null) state.errors.push(entry);\n      }\n```\n\n</details>\n\n**依据 5 · 源码核查**：[index.js:1267-1319](https://github.com/1015677515/dsh-prompt-ErrorNotes-desk/blob/fab9373ac396e430316b09693b654051583e9713/index.js#L1267-L1319)\n\n流订阅及未证实的作用域。\n\n<details>\n<summary>查看原文（53行）</summary>\n\n```text\n  const streamBuffers = new Map();\n\n  const onAssistantStream = (payload) => {\n    try {\n      const agentKey = payload.agent.id;\n\n      if (payload.frame.type === 'start') {\n        // Reset buffer for this stream attempt. Multiple starts before an end\n        // shouldn't happen, but if they do, the latest start wins.\n        streamBuffers.set(agentKey, []);\n        return;\n      }\n\n      if (payload.frame.type === 'chunk' && payload.frame.chunk.type === 'text-delta') {\n        const buf = streamBuffers.get(agentKey);\n        if (buf !== undefined) buf.push(payload.frame.chunk.text);\n        return;\n      }\n\n      if (payload.frame.type === 'end') {\n        const buf = streamBuffers.get(agentKey);\n        streamBuffers.delete(agentKey);\n        if (buf === undefined || buf.length === 0) return;\n\n        // Abandoned — the output never reached the conversation, skip it.\n        if (payload.frame.outcome.kind === 'abandoned') return;\n\n        const fullText = buf.join('');\n        const draft = parseConfession(fullText);\n        if (draft !== null) queuePending(draft);\n      }\n    } catch {\n      // A listener failure must not break the event dispatch.\n    }\n  };\n\n  /*\n   * Subscribing is best-effort on purpose.\n   *\n   * Whether a listener registered on this plugin's global `ctx` actually receives\n   * `agent/assistant-stream` — dispatched as `Scoped<Agent>` — could not be settled\n   * from the API catalog, and it can go wrong in two different ways. The benign one\n   * is that the event never arrives and capture stays inert. The dangerous one is\n   * that the subscription call itself throws while the plugin is loading: DSH\n   * startup is all-or-nothing, so a throw here would take the whole harness down\n   * with it. Wrapping costs nothing and turns the worst case into \"no automatic\n   * capture\" instead of \"no harness\".\n   */\n  try {\n    ctx.on('agent/assistant-stream', onAssistantStream);\n  } catch {\n    // Leave capture inert; every other feature is unaffected.\n  }\n```\n\n</details>\n\n#### 缺口\n\n- 无真实事件流或人工标注验证。\n  **影响：**漏采、误采率未知。\n  **进一步探讨：**伪造 committed/abandoned 流和人工审阅样本。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 面板 HTTP 路由及全局 AGENTS 写入有哪些信任边界？\n\n**研究主题：**工程质量与复用、依赖、兼容与流程\n\n#### 完整回答\n\n可选 webServer 注册 GET/POST /prompt-desk/state，POST JSON patch 可改全局 AGENTS.md 与共享 sessionPrompt、经验库。插件路由未显示自己的鉴权、CSRF 或请求来源校验，是否由宿主统一保护未查证。状态与全局提示均调用 writeTextFile，先写带 pid 与递增计数的独占调用名 .tmp 再 rename；这只提供单文件替换，不是两个文件的事务，也没有并发版本比较；面板写入的是高优先级指令，部署前须验证宿主路由授权和跨源限制。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:821-829](https://github.com/1015677515/dsh-prompt-ErrorNotes-desk/blob/fab9373ac396e430316b09693b654051583e9713/index.js#L821-L829)\n\npatch.globalPrompt 直接写 AGENTS。\n\n```text\nfunction applyPatch(patch, configLimit) {\n  const state = readState();\n  if (patch !== null && typeof patch === 'object') {\n    const sessionPrompt = patchText(patch.sessionPrompt);\n    if (sessionPrompt !== undefined) state.sessionPrompt = sessionPrompt;\n\n    if (typeof patch.globalPrompt === 'string') writeTextFile(globalPromptPath(), patch.globalPrompt);\n\n    if (typeof patch.exportToPrompt === 'boolean') state.exportToPrompt = patch.exportToPrompt;\n```\n\n**依据 2 · 源码核查**：[index.js:1161-1214](https://github.com/1015677515/dsh-prompt-ErrorNotes-desk/blob/fab9373ac396e430316b09693b654051583e9713/index.js#L1161-L1214)\n\nGET/POST 注册与 JSON 写入路径。\n\n<details>\n<summary>查看原文（54行）</summary>\n\n```text\n  ctx.inject(['webServer'], (scope) => {\n    const webServer = scope.webServer;\n\n    scope.effect(() => {\n      const dispose = webServer.register({\n        kind: 'exact',\n        path: `${BASE}/state`,\n        handler: (req, res) => {\n          const method = (req.method || 'GET').toUpperCase();\n\n          if (method === 'GET') {\n            try {\n              // The GET route is the one place a repair write is allowed: it is a\n              // user-driven read with no assembly in flight, and persisting migrated\n              // ids once is what makes them stable for the edits that follow.\n              sendJson(res, 200, currentState(configLimit, { migrating: true }));\n            } catch (error) {\n              sendJson(res, 500, { error: String(error && error.message ? error.message : error) });\n            }\n            return;\n          }\n\n          if (method !== 'POST') {\n            res.statusCode = 405;\n            res.end('method not allowed');\n            return;\n          }\n\n          readBody(req).then(\n            (text) => {\n              let patch = null;\n              try {\n                patch = JSON.parse(text || '{}');\n              } catch {\n                sendJson(res, 400, { error: 'invalid JSON body' });\n                return;\n              }\n              try {\n                sendJson(res, 200, applyPatch(patch, configLimit));\n              } catch (error) {\n                sendJson(res, 500, { error: String(error && error.message ? error.message : error) });\n              }\n            },\n            (error) => {\n              sendJson(res, 400, { error: String(error && error.message ? error.message : error) });\n            },\n          );\n        },\n      });\n\n      // `register` returns a disposer; hand it back so the route is removed when\n      // this plugin unloads or reloads.\n      return typeof dispose === 'function' ? dispose : undefined;\n    });\n```\n\n</details>\n\n**依据 3 · 作者声明**：[README.md:89-106](https://github.com/1015677515/dsh-prompt-ErrorNotes-desk/blob/fab9373ac396e430316b09693b654051583e9713/README.md#L89-L106)\n\n作者说明全局 AGENTS 与手工保存。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n## 它会动你的哪些文件\n\n全局提示词**就是** DSH 自己那个 `$DSH_HOME/AGENTS.md` —— 也就是官方 `dsh-agent-instructions` 插件本来就会读的同一个文件。本插件**不另存副本**：两个都自称「全局提示词」的文件必然会漂移，而且只有一个真正会送达模型。\n\n| 数据 | 位置 |\n|---|---|\n| 全局提示词 | `$DSH_HOME/AGENTS.md` |\n| 本次对话提示词、错误库、面板开关 | `$DSH_HOME/prompt-desk/state.json` |\n\n写入是**原子**的（先写 `.tmp` 再改名），崩溃不会截断你的提示词。浏览器半边完全不碰文件系统——所有读写都在宿主半边，所以不会写到 `$DSH_HOME` 之外。\n\n### 作者自用的提示词（仅供参考，不会被套用）\n\n仓库根目录有一份 [`AGENTS.example.md`](AGENTS.example.md)，是插件作者自己正在用的全局提示词原文，公开出来纯粹当**写法参考**：你可以看看别人怎么分节组织、怎么把\"先自检再交付\"\"删除前报范围\"这类要求写成一条能照着执行的话，然后照自己的习惯改。\n\n**它不会覆盖你的提示词，装插件也不会。** 说清楚以免误会：\n\n- 安装插件不会写入你的 `AGENTS.md`。代码里唯一会写这个文件的地方是你在面板里点「保存」的那一刻，写的是**你自己输入框里的内容**，不是这个样例。\n```\n\n</details>\n\n**依据 4 · 源码核查**：[index.js:390-403](https://github.com/1015677515/dsh-prompt-ErrorNotes-desk/blob/fab9373ac396e430316b09693b654051583e9713/index.js#L390-L403)\n\n状态临时文件写入。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n * Atomic write: a `.tmp` sibling then a rename, so a reader never observes a\n * half-written file and a crash cannot truncate the user's prompt.\n *\n * The temporary name is unique per call. It used to be a fixed `${path}.tmp`, which\n * was safe only because every write came from a user action; the Host now also\n * writes on its own (the pending queue), so two writers can overlap and a shared\n * temporary name would let them clobber each other's bytes before the rename.\n */\nfunction writeTextFile(path, text) {\n  mkdirSync(dirname(path), { recursive: true });\n  const tmp = `${path}.${process.pid.toString(36)}${idCounter.toString(36)}.tmp`;\n  idCounter += 1;\n  writeFileSync(tmp, text, 'utf8');\n  renameSync(tmp, path);\n```\n\n</details>\n\n#### 缺口\n\n- 宿主 webServer 的鉴权/CSRF 未在插件仓库证明。\n  **影响：**跨源或未授权修改风险不能定性为可利用漏洞。\n  **进一步探讨：**在隔离实例审查宿主中间件并做无害请求测试。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 适合怎样试用，什么情形不宜当会话私有记忆？\n\n**研究主题：**采用判断、新假设与验证\n\n#### 完整回答\n\n适合信任本机宿主的个人工作流，在隔离 profile 先验证 route 权限、跨对话共享行为和 committed 流采集，再手动确认每条教训。团队多用户、敏感全局 AGENTS 或需会话隔离的场景不宜直接按“本次对话”标签理解。若真正需要隔离，可按 agent/session ID 存取状态并在提示注入时按作用域选择；此为改进设想，不是现有功能。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:13-18](https://github.com/1015677515/dsh-prompt-ErrorNotes-desk/blob/fab9373ac396e430316b09693b654051583e9713/README.md#L13-L18)\n\n作者面板用途。\n\n```text\n| 面板 | 作用 |\n|---|---|\n| **提示词** | 编辑**跨对话**的全局提示词，以及**本次对话**的提示词（新对话会延续）。面板顶部显示哪一半当前正在生效。 |\n| **错误库** | **按分类**归纳反复犯的错误：每条一个简短类型 + 一句教训，归入三档分类之一。**最近 10 条（条数可自己设）会被注入系统提示词**，让后续对话以极低的 token 成本吸取教训。agent 按格式汇报「我犯了个错误：错误经过：… 教训：…」时会被自动捕获成待确认草稿。 |\n\n第二个面板的意义：一个反复犯同类错误的 agent，会在自己的上下文里收到一份简短的、按分类归好的提醒，成本远低于重新踩一遍坑再发现。\n```\n\n**依据 2 · 源码核查**：[index.js:669-689](https://github.com/1015677515/dsh-prompt-ErrorNotes-desk/blob/fab9373ac396e430316b09693b654051583e9713/index.js#L669-L689)\n\n单一共享状态。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\nfunction currentState(configLimit, { migrating = false } = {}) {\n  const state = migrating ? readStateMigrating() : readState();\n  const hasSession = state.sessionPrompt.trim() !== '';\n  const globalPrompt = readTextFile(globalPromptPath(), '');\n  const built = buildSectionText(state, configLimit, { lessonsEnabled: globalLessonsEnabled });\n\n  return {\n    // The build handshake: the panel compares this with its own constant and warns\n    // when a stale bundle is talking to a newer Host (or the reverse).\n    pluginVersion: PLUGIN_VERSION,\n    stateVersion: STATE_VERSION,\n    categories: CATEGORIES,\n\n    // The global prompt is the harness's own AGENTS.md, read fresh every time so\n    // an edit made in a text editor shows up on the next panel open.\n    globalPrompt,\n    globalPromptPath: globalPromptPath(),\n    sessionPrompt: state.sessionPrompt,\n    errors: state.errors,\n    pending: state.pending,\n    ui: state.ui,\n```\n\n</details>\n\n**依据 3 · 源码核查**：[index.js:1330-1350](https://github.com/1015677515/dsh-prompt-ErrorNotes-desk/blob/fab9373ac396e430316b09693b654051583e9713/index.js#L1330-L1350)\n\n/lessons 明确跨会话生效。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n   * The `text()` function for the prompt section only receives an opaque\n   * `AssembleContext.scope` object — not the Agent id string that the command\n   * handler sees on `invocation.agent.id`. Until the scope → id mapping is\n   * proven by runtime inspection, the toggle is *global*: `/lessons off`\n   * affects all agents. The user types it in one conversation and every\n   * session stops receiving library injections. That's a safe simplification.\n   */\n  const lessonsCommand = {\n    name: 'lessons',\n    description: '临时开关：/lessons off 关闭错误经验注入，/lessons on 恢复。全局生效（跨对话）。',\n    input: { hint: 'on 或 off' },\n    handler(invocation) {\n      const raw = invocation.rawInput.trim().toLowerCase();\n\n      if (raw === 'off') {\n        globalLessonsEnabled = false;\n        return { kind: 'success', text: '已全局关闭错误经验注入。' };\n      }\n      if (raw === 'on') {\n        globalLessonsEnabled = true;\n        return { kind: 'success', text: '已全局恢复错误经验注入。' };\n```\n\n</details>\n\n**依据 4 · 源码核查**：[index.js:1304-1319](https://github.com/1015677515/dsh-prompt-ErrorNotes-desk/blob/fab9373ac396e430316b09693b654051583e9713/index.js#L1304-L1319)\n\n采集订阅可靠性边界。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n   * Subscribing is best-effort on purpose.\n   *\n   * Whether a listener registered on this plugin's global `ctx` actually receives\n   * `agent/assistant-stream` — dispatched as `Scoped<Agent>` — could not be settled\n   * from the API catalog, and it can go wrong in two different ways. The benign one\n   * is that the event never arrives and capture stays inert. The dangerous one is\n   * that the subscription call itself throws while the plugin is loading: DSH\n   * startup is all-or-nothing, so a throw here would take the whole harness down\n   * with it. Wrapping costs nothing and turns the worst case into \"no automatic\n   * capture\" instead of \"no harness\".\n   */\n  try {\n    ctx.on('agent/assistant-stream', onAssistantStream);\n  } catch {\n    // Leave capture inert; every other feature is unaffected.\n  }\n```\n\n</details>\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：5784bef0f6cb171d03a92c120bd1610ea179201a2bec66990f9f93e40cbd71da。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 4 | 1046 | — | — | 14231 |\n| .js | source | 2 | 2703 | 1347 | 1167 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 作用 | 边界 |\n| --- | --- | --- |\n| 界面 | 编辑提示/教训 | 共享状态 |\n| 模型工具 | 动态注入 | token 成本 |\n| 事件监听 | 草稿捕获 | 不等于事实 |\n\n## 工程亮点\n\n动态 systemPrompt.section；可选 webServer 暴露 state/pending；状态 JSON 临时写改名；assistant-stream 最佳努力订阅。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、index.js、client.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定提交静态审阅 README、package、index.js；未运行宿主/模型。\n- 下一步：多会话隔离与写入权限试验、伪流采集准确率、不同教训长度 token 测量。\n",
         "metadata": {
             "repository": "1015677515/dsh-prompt-ErrorNotes-desk",
             "repository_id": 1418691015,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T06:20:47.322Z",
+            "window_start": "2026-09-22T06:20:47.322Z",
             "stars": 4,
             "pushed_at": "2026-10-20T03:39:08Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1015677515%2Fdsh-prompt-ErrorNotes-desk%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640F:12F9BB:13A762:211C7D:6AD84900 and timestamp 2026-10-21 05:09:20 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1015677515%2Fdsh-prompt-ErrorNotes-desk%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6413:B65AE:13626B:20CAF6:6AD84900 and timestamp 2026-10-21 05:09:20 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1015677515%2Fdsh-prompt-ErrorNotes-desk%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6414:265AC:14603F:21B8FB:6AD84901 and timestamp 2026-10-21 05:09:21 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1015677515%2Fdsh-prompt-ErrorNotes-desk%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6419:D1FDD:146E49:21F40D:6AD84901 and timestamp 2026-10-21 05:09:21 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1015677515%2Fdsh-prompt-ErrorNotes-desk%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640C:C23BB:141D21:219A0F:6AD84901 and timestamp 2026-10-21 05:09:21 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "fab9373ac396e430316b09693b654051583e9713",
-                "current_revision": "fab9373ac396e430316b09693b654051583e9713",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
-            }
+            "errors": []
         },
         "discovery.plugins": {
             "id": "github:1418691015:root",
             "repository": "1015677515/dsh-prompt-ErrorNotes-desk",
             "path": "",
             "revision": "fab9373ac396e430316b09693b654051583e9713",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "8aa2354cf0818d08dac347c0cae59740434388b1d7eb250811169eb9953afdfe",
                 "code": "fab9373ac396e430316b09693b654051583e9713",
                 "maintenance": "18693c0a4260106167f9efcfc588642d7ac0094afbb0f2c719d4e349d3d6ab04"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

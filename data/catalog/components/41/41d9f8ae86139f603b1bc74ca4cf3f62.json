@@ -13,7 +13,7 @@
             "name": "dsh-plugin-console",
             "entry_type": "plugin",
             "technical_category": "runtime-deployment",
-            "business_category": "infrastructure",
+            "business_category": "software-delivery",
             "tags": [],
             "availability": "unknown",
             "research_depth": "source",
@@ -24,36 +24,94 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-07-github-1336720864-root-directory-0",
+                    "id": "2026-10-22-02-github-1336720864-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T08:08:47.941Z",
+                    "retrieved_at": "2026-10-22T08:59:11.360Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-07-github-1336720864-root-author",
+                    "id": "2026-10-22-02-github-1336720864-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/AlexYin-Tongji/dsh-plugin-console/blob/224e53959c1b03f83993b80f8438b49b17d820d6/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AlexYin-Tongji/dsh-plugin-console",
+                            "commit": "224e53959c1b03f83993b80f8438b49b17d820d6",
+                            "path": "README.md",
+                            "content_sha256": "29ae86a62c740b4ecba9086a05e0bc510712ca81f61d8605228b42859d1bedda"
+                        }
+                    ],
                     "revision": "224e53959c1b03f83993b80f8438b49b17d820d6",
-                    "captured_at": "2026-10-21T08:08:47.941Z",
-                    "summary": "在设置页浏览目录与已装插件，规划变更并执行官方CLI和隔离profile启动检查。",
-                    "artifact": "data/runs/2026-10-21-07/snapshots/alexyin-tongji--dsh-plugin-console/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T08:59:11.360Z",
+                    "summary": "在DSH web核对社区插件、管理活动profile并通过确认计划执行安装、更新、暂停和Harness升级。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/alexyin-tongji--dsh-plugin-console/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-07-github-1336720864-root-source",
+                    "id": "2026-10-22-02-github-1336720864-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/AlexYin-Tongji/dsh-plugin-console/blob/224e53959c1b03f83993b80f8438b49b17d820d6/src/index.ts",
+                    "url": "https://github.com/AlexYin-Tongji/dsh-plugin-console/blob/224e53959c1b03f83993b80f8438b49b17d820d6/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AlexYin-Tongji/dsh-plugin-console",
+                            "commit": "224e53959c1b03f83993b80f8438b49b17d820d6",
+                            "path": "README.md",
+                            "content_sha256": "29ae86a62c740b4ecba9086a05e0bc510712ca81f61d8605228b42859d1bedda"
+                        },
+                        {
+                            "repository_url": "https://github.com/AlexYin-Tongji/dsh-plugin-console",
+                            "commit": "224e53959c1b03f83993b80f8438b49b17d820d6",
+                            "path": "src/index.ts",
+                            "content_sha256": "43a23ebdb386a66eda960f949e75ecae649390b3d0e4647dccd4254788e0f338"
+                        },
+                        {
+                            "repository_url": "https://github.com/AlexYin-Tongji/dsh-plugin-console",
+                            "commit": "224e53959c1b03f83993b80f8438b49b17d820d6",
+                            "path": "src/catalog.ts",
+                            "content_sha256": "7926c796cb08fba1edf639035beff4502b40f5934e17f2bfe404574a8c7b46ba"
+                        },
+                        {
+                            "repository_url": "https://github.com/AlexYin-Tongji/dsh-plugin-console",
+                            "commit": "224e53959c1b03f83993b80f8438b49b17d820d6",
+                            "path": "src/operations.ts",
+                            "content_sha256": "0c079bc390c92b53fdd921c2559b4ae109e7c8238784b8d64155439e61aaff6f"
+                        },
+                        {
+                            "repository_url": "https://github.com/AlexYin-Tongji/dsh-plugin-console",
+                            "commit": "224e53959c1b03f83993b80f8438b49b17d820d6",
+                            "path": "src/canary.ts",
+                            "content_sha256": "21f362e1d1ab2a4b1531ced7ee6e5e179f5def9defa0b1c9e4a7702f33d38396"
+                        },
+                        {
+                            "repository_url": "https://github.com/AlexYin-Tongji/dsh-plugin-console",
+                            "commit": "224e53959c1b03f83993b80f8438b49b17d820d6",
+                            "path": "src/harness-operations.ts",
+                            "content_sha256": "27ade9ab90908d32f2c18296ffe5a90c35ef341f6264d4729122a2a42201ee13"
+                        },
+                        {
+                            "repository_url": "https://github.com/AlexYin-Tongji/dsh-plugin-console",
+                            "commit": "224e53959c1b03f83993b80f8438b49b17d820d6",
+                            "path": "package.json",
+                            "content_sha256": "6cf805899dbc4646d7d6ff02af2ad18e6bb6f96ab17d8511d40fcc7de7ccacfb"
+                        },
+                        {
+                            "repository_url": "https://github.com/AlexYin-Tongji/dsh-plugin-console",
+                            "commit": "224e53959c1b03f83993b80f8438b49b17d820d6",
+                            "path": "src/lock.ts",
+                            "content_sha256": "8e650ce9f93e95c4f01720250b0b06be328ae51dc869ca318a0597990cd9fee0"
+                        }
+                    ],
                     "revision": "224e53959c1b03f83993b80f8438b49b17d820d6",
-                    "captured_at": "2026-10-21T08:08:47.941Z",
-                    "summary": "核查 src/index.ts、src/operations.ts、src/canary.ts；目录验证npm integrity/patch或固定Git SHA；操作plan绑定5分钟期限/profile指纹，执行重验并锁profile、备份文件和依赖，调用官方CLI；新包通过临时HOME/DSH_HOME canary初始化与客户端加载检查，否则尝试回滚。",
-                    "artifact": "data/runs/2026-10-21-07/snapshots/alexyin-tongji--dsh-plugin-console/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T08:59:11.360Z",
+                    "summary": "核查 README.md、src/index.ts、src/catalog.ts、src/operations.ts、src/canary.ts、src/harness-operations.ts、package.json、src/lock.ts；目录元数据核验后生成限时指纹绑定计划，取profile锁并调用官方CLI，精确检查和完整profile canary，失败分类恢复。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/alexyin-tongji--dsh-plugin-console/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                        "固定index/catalog、profile操作计划与执行恢复、锁及canary环境/启动，另核Harness升级回滚关键路径；未运行CLI/canary，不全面审计客户端和全部依赖。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +122,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "维护DSH Web profile插件，安装更新前确认目标和回退路径。",
+                    "text": "本地维护者集中核对目录来源、精确版本及活动profile，需区分已装与运行中状态。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1336720864-root-source"
+                        "2026-10-22-02-github-1336720864-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +133,16 @@
                             "fingerprint": "224e53959c1b03f83993b80f8438b49b17d820d6"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:08:47.941Z",
+                    "reviewed_at": "2026-10-22T08:59:11.360Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "目录验证npm integrity/patch或固定Git SHA；操作plan绑定5分钟期限/profile指纹，执行重验并锁profile、备份文件和依赖，调用官方CLI；新包通过临时HOME/DSH_HOME canary初始化与客户端加载检查，否则尝试回滚。",
+                    "text": "目录元数据核验后生成限时指纹绑定计划，取profile锁并调用官方CLI，精确检查和完整profile canary，失败分类恢复。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1336720864-root-source"
+                        "2026-10-22-02-github-1336720864-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +151,16 @@
                             "fingerprint": "224e53959c1b03f83993b80f8438b49b17d820d6"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:08:47.941Z",
+                    "reviewed_at": "2026-10-22T08:59:11.360Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                    "text": "固定index/catalog、profile操作计划与执行恢复、锁及canary环境/启动，另核Harness升级回滚关键路径；未运行CLI/canary，不全面审计客户端和全部依赖。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1336720864-root-source"
+                        "2026-10-22-02-github-1336720864-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +169,16 @@
                             "fingerprint": "224e53959c1b03f83993b80f8438b49b17d820d6"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:08:47.941Z",
+                    "reviewed_at": "2026-10-22T08:59:11.360Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "分发以本插件固定package.json、运行依赖与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+                    "text": "npm包0.3.2，MIT，Node ^22.19或>=24；多项DSH rc.6精确peer。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1336720864-root-source"
+                        "2026-10-22-02-github-1336720864-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +187,16 @@
                             "fingerprint": "224e53959c1b03f83993b80f8438b49b17d820d6"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:08:47.941Z",
+                    "reviewed_at": "2026-10-22T08:59:11.360Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "下载/拷贝node_modules、完整profile启动、磁盘和等待成本；失败恢复可能需人工修复，第三方初始化仍可能联网/写外部路径。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 固定DSH/Node环境与网络，金额未知 | 源码信任、profile盘点与备份 | 硬件与真实初始化耗时未测 |\n| 持续使用 | 元数据请求、依赖树复制、安装及完整profile canary | 核对每次来源/版本/确认及重启 | 多插件profile会增加存储与启动开销 |\n| 失败恢复 | 保留依赖备份、重装旧版、再次canary | 判断部分变更、进程清理和人工修复 | 回滚失败有独立状态，恢复时长未知 |\n",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1336720864-root-source"
+                        "2026-10-22-02-github-1336720864-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +205,16 @@
                             "fingerprint": "224e53959c1b03f83993b80f8438b49b17d820d6"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:08:47.941Z",
+                    "reviewed_at": "2026-10-22T08:59:11.360Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "适合维护测试profile；先核备份空间、canary与回滚，生产环境重启后的UI必须另验。",
+                    "text": "本地单人维护者可试用，先核对可信代码、精确宿主和备份；canary仅作为兼容线索，异常先盘点实际状态。详见[Q06](#research-q06)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1336720864-root-source"
+                        "2026-10-22-02-github-1336720864-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +223,16 @@
                             "fingerprint": "224e53959c1b03f83993b80f8438b49b17d820d6"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:08:47.941Z",
+                    "reviewed_at": "2026-10-22T08:59:11.360Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "变更前后状态和回滚机制有源码支持，无真实安装失败率或恢复时间对照。",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 安装确定性 | plan绑定来源、精确版本、integrity与profile指纹 | 元数据与供应链本身可信程度 |\n| 运行兼容 | 设计包含完整profile启动与client资源检查 | 实际UI/业务任务可用性 |\n| 恢复 | 元数据/依赖备份和失败结果分类明确 | 断电、外部非协作写及任意插件副作用恢复 |\n",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1336720864-root-source"
+                        "2026-10-22-02-github-1336720864-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +241,16 @@
                             "fingerprint": "224e53959c1b03f83993b80f8438b49b17d820d6"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:08:47.941Z",
+                    "reviewed_at": "2026-10-22T08:59:11.360Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "同步busy预留、单次plan消耗、指纹复验/独占锁和依赖快照是可借鉴事务设计；仅canary passed不代表完整业务验收。",
+                    "text": "工程亮点是先plan后execute、短TTL/一次消费/指纹重检、来源和integrity绑定、profile锁目录的nonce拥有权与原子改名回收，及安装结果/进程清理/回滚分别报告。命令使用参数数组shell:false，避免把目标直接拼shell；但普通执行本身继承父环境，不能凭此称安全沙箱。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1336720864-root-source"
+                        "2026-10-22-02-github-1336720864-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +259,16 @@
                             "fingerprint": "224e53959c1b03f83993b80f8438b49b17d820d6"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:08:47.941Z",
+                    "reviewed_at": "2026-10-22T08:59:11.360Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "interpretation",
-                    "text": "把来源确认、目标冻结和失败恢复带入插件管理流程，而非只是包装安装按钮。初始化/客户端资源探针扩大了检查范围，但不能把代码验证描述为安全认证。",
+                    "text": "把来源核验、明确确认、精确安装、完整profile兼容检查及恢复串为管理闭环，增量在流程而非新包管理算法。详见[Q01](#research-q01)与[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1336720864-root-source"
+                        "2026-10-22-02-github-1336720864-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +277,16 @@
                             "fingerprint": "224e53959c1b03f83993b80f8438b49b17d820d6"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:08:47.941Z",
+                    "reviewed_at": "2026-10-22T08:59:11.360Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "canaryEnvironment先展开process.env再删除少数变量，HOME/TMP隔离不等于OS沙箱，任意插件仍可读绝对路径和联网，其他API密钥也未全部清除。其价值是兼容冲突检测，不能证明恶意或高权限代码安全；回滚profile不自动回滚插件外部副作用。",
+                    "text": "canary改临时HOME但仍普通用户进程并继承多项环境变量，不是OS沙箱；真实profile变更与外部初始化副作用也非原子回滚。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1336720864-root-source"
+                        "2026-10-22-02-github-1336720864-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +295,16 @@
                             "fingerprint": "224e53959c1b03f83993b80f8438b49b17d820d6"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:08:47.941Z",
+                    "reviewed_at": "2026-10-22T08:59:11.360Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "unverified",
-                    "text": "未验证假设：将canary明确分为兼容探针与可选OS级最小权限运行，并记录外部副作用，可降低对“隔离试运行”的误解。用写绝对路径、读环境、网络请求和初始化冲突样例分别核边界；若无法隔离就只声明兼容验证。",
+                    "text": "可探讨最小能力变更收据，列环境/目录/网络与恢复覆盖，再以白名单或OS约束缩小canary能力；兼容与隐私成本未验证。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1336720864-root-source"
+                        "2026-10-22-02-github-1336720864-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +313,15 @@
                             "fingerprint": "224e53959c1b03f83993b80f8438b49b17d820d6"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:08:47.941Z",
+                    "reviewed_at": "2026-10-22T08:59:11.360Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T08:08:47.941Z",
+            "last_checked_at": "2026-10-22T08:59:11.360Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "224e53959c1b03f83993b80f8438b49b17d820d6",
-                "reviewed_at": "2026-10-21T08:08:47.941Z",
+                "reviewed_at": "2026-10-22T08:59:11.360Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -275,61 +333,61 @@
                 "technical": {
                     "criteria": {
                         "novelty": 9,
-                        "mechanism": 15,
+                        "mechanism": 23,
                         "transferability": 10,
                         "simplification": 8
                     },
-                    "rationale": "novelty=9：安装器和canary已有先例。 mechanism=15：版本计划与恢复约束实质集成。 transferability=10：可迁移变更方法，profile实现耦合。 simplification=8：单流程组合确认/检查/回滚有意义。",
+                    "rationale": "novelty成熟管理与canary组合取小幅；mechanism计划/指纹/恢复闭环清楚取较强；transferability锁和结果分类可迁移取实质；simplification集中管理取实质，隔离未实现不加分。",
                     "basis": "interpretation",
-                    "score": 42,
+                    "score": 50,
                     "evidence_ids": [
-                        "2026-10-21-07-github-1336720864-root-source"
+                        "2026-10-22-02-github-1336720864-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 18,
-                        "delivery": 15,
-                        "reach": 10,
+                        "workflow": 26,
+                        "delivery": 8,
+                        "reach": 5,
                         "economics": 4
                     },
-                    "rationale": "workflow=18：改变确认与失败交接责任。 delivery=15：新增兼容证据而非安全认证。 reach=10：降低Web profile维护门槛。 economics=4：增加检查成本换风险降低未量化。",
+                    "rationale": "workflow覆盖目录到恢复的完整维护任务取较强；delivery仍安装交付取小幅；reach限固定DSH本地用户取小幅；economics缺人时对照取小幅。",
                     "basis": "interpretation",
-                    "score": 47,
+                    "score": 43,
                     "evidence_ids": [
-                        "2026-10-21-07-github-1336720864-root-source"
+                        "2026-10-22-02-github-1336720864-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "Web profile维护者可在测试profile试安装计划与回滚；核空间和canary结果，临时HOME非OS沙箱，只用可信插件并另验重启UI。",
+                "reason": "维护闭环清楚且确认/恢复有实际源码，但真实代码执行、环境继承和全局升级需限可信本地范围。详见[Q06](#research-q06)。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "版本维护前确认目标与回退的任务明确。"
+                        "rationale": "多插件profile维护任务明确，实际使用完成率未知。"
                     },
                     "advantage": {
                         "score": 19,
-                        "rationale": "固定来源、plan指纹、锁和canary比直接安装多控制。"
+                        "rationale": "比手工CLI多来源/指纹绑定、canary和恢复闭环，尚无实测对照。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "已核备份回滚和环境继承，未测真实失败恢复时间。"
+                        "rationale": "固定主链源码支持，未运行安装或宿主。"
                     },
                     "cost": {
                         "score": 10,
-                        "rationale": "node_modules复制与完整启动代价高，但可信测试profile可控。"
+                        "rationale": "多阶段流程减少手工但有备份、启动和高权限信任成本。"
                     }
                 },
                 "score": 65,
                 "revision": "224e53959c1b03f83993b80f8438b49b17d820d6",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T08:59:11.360Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-07-github-1336720864-root-source"
+                    "2026-10-22-02-github-1336720864-root-source"
                 ],
                 "dependencies": [
                     {
@@ -354,60 +412,55 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T07:52:12Z",
-            "analysis_sha256": "10a385ce5044069e226e3b645c001549d2c49e1c63ae57d1f524213ce1270946"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "d63ec28afe743d72385c9cf47ba41feb4573aa88e390599b83a407ffaa329ba1"
         },
         "publication.metadata": "data/plugins/alexyin-tongji--dsh-plugin-console/META.json",
         "publication.summaries": {
-            "text": "在设置页浏览目录与已装插件，规划变更并执行官方CLI和隔离profile启动检查。",
+            "text": "在DSH web核对社区插件、管理活动profile并通过确认计划执行安装、更新、暂停和Harness升级。",
             "revision": "224e53959c1b03f83993b80f8438b49b17d820d6",
             "source_url": "https://github.com/AlexYin-Tongji/dsh-plugin-console/blob/224e53959c1b03f83993b80f8438b49b17d820d6/README.md"
         },
         "publication.capabilities": {
             "revision": "224e53959c1b03f83993b80f8438b49b17d820d6",
             "items": {
-                "界面": "插件目录和已装管理",
-                "Host 路由": "插件计划、执行和状态",
-                "后台": "CLI变更、备份回滚和canary生命周期"
-            }
+                "界面": "插件管理与Harness升级入口",
+                "Host 路由": "同源及loopback受限管理API"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 社区目录 | 来源/版本与文档核对 | 元数据验证非代码背书 |\n| profile变更 | 安装/更新/删除/暂停 | 精确宿主、人工plan确认、真实写入 |\n| canary/恢复 | 兼容检查与失败状态 | 临时目录不等OS隔离 |\n| Harness升级 | npm全局精确升级与恢复 | 受安装方式/权限/网络约束 |"
         },
         "publication.advice": {
             "revision": "224e53959c1b03f83993b80f8438b49b17d820d6",
-            "text": "适合维护测试profile；先核备份空间、canary与回滚，生产环境重启后的UI必须另验。"
+            "text": "本地单人维护者可试用，先核对可信代码、精确宿主和备份；canary仅作为兼容线索，异常先盘点实际状态。详见[Q06](#research-q06)。"
         },
         "registry": "data/plugins/alexyin-tongji--dsh-plugin-console",
-        "reports": "# dsh-plugin-console\n\n> 在设置页浏览目录与已装插件，规划变更并执行官方CLI和隔离profile启动检查。\n\n## 使用建议\n\n适合维护测试profile；先核备份空间、canary与回滚，生产环境重启后的UI必须另验。\n\n**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，插件与依赖流程的实际运行尚未验证；未来假设未验证。\n\n## 洞察短评\n\n- **用途**：维护DSH Web profile插件，安装更新前确认目标和回退路径。\n- **亮点**：把来源确认、目标冻结和失败恢复带入插件管理流程，而非只是包装安装按钮。初始化/客户端资源探针扩大了检查范围，但不能把代码验证描述为安全认证。\n- **思考**：canaryEnvironment先展开process.env再删除少数变量，HOME/TMP隔离不等于OS沙箱，任意插件仍可读绝对路径和联网，其他API密钥也未全部清除。其价值是兼容冲突检测，不能证明恶意或高权限代码安全；回滚profile不自动回滚插件外部副作用。\n- **建议**：未验证假设：将canary明确分为兼容探针与可选OS级最小权限运行，并记录外部副作用，可降低对“隔离试运行”的误解。用写绝对路径、读环境、网络请求和初始化冲突样例分别核边界；若无法隔离就只声明兼容验证。\n\n## 场景与替代办法\n\n参照手工目录浏览、dsh plugin CLI和复制profile测试；增量是artifact校验、短期plan、锁/备份和canary组合。\n\n## 能力清单\n\n- **界面**：插件目录和已装管理\n- **Host 路由**：插件计划、执行和状态\n- **后台**：CLI变更、备份回滚和canary生命周期\n\n## 依赖与流程\n\n目录验证npm integrity/patch或固定Git SHA；操作plan绑定5分钟期限/profile指纹，执行重验并锁profile、备份文件和依赖，调用官方CLI；新包通过临时HOME/DSH_HOME canary初始化与客户端加载检查，否则尝试回滚。\n\n宿主webServer/connection/loader、官方dsh/pnpm、网络目录/registry/GitHub及可启动完整Web profile环境；UI交互仍用户重启后验收。\n\n浏览→生成plan→人工确认→重验锁→备份→包变更→canary→成功待重启或失败回滚→用户重启验界面。\n\n## 成本与效果\n\n下载/拷贝node_modules、完整profile启动、磁盘和等待成本；失败恢复可能需人工修复，第三方初始化仍可能联网/写外部路径。\n\n变更前后状态和回滚机制有源码支持，无真实安装失败率或恢复时间对照。\n\n## 核心贡献\n\n把来源确认、目标冻结和失败恢复带入插件管理流程，而非只是包装安装按钮。初始化/客户端资源探针扩大了检查范围，但不能把代码验证描述为安全认证。\n\n## 关键质疑\n\ncanaryEnvironment先展开process.env再删除少数变量，HOME/TMP隔离不等于OS沙箱，任意插件仍可读绝对路径和联网，其他API密钥也未全部清除。其价值是兼容冲突检测，不能证明恶意或高权限代码安全；回滚profile不自动回滚插件外部副作用。\n\n## 工程亮点\n\n同步busy预留、单次plan消耗、指纹复验/独占锁和依赖快照是可借鉴事务设计；仅canary passed不代表完整业务验收。\n\n源码依据：[src/index.ts](https://github.com/AlexYin-Tongji/dsh-plugin-console/blob/224e53959c1b03f83993b80f8438b49b17d820d6/src/index.ts)、[src/operations.ts](https://github.com/AlexYin-Tongji/dsh-plugin-console/blob/224e53959c1b03f83993b80f8438b49b17d820d6/src/operations.ts)、[src/canary.ts](https://github.com/AlexYin-Tongji/dsh-plugin-console/blob/224e53959c1b03f83993b80f8438b49b17d820d6/src/canary.ts)。\n\n## 未来设计假设（未验证）\n\n未验证假设：将canary明确分为兼容探针与可选OS级最小权限运行，并记录外部副作用，可降低对“隔离试运行”的误解。用写绝对路径、读环境、网络请求和初始化冲突样例分别核边界；若无法隔离就只声明兼容验证。\n\n未来隔离测试环境核变更漂移、回滚失败、子进程清理及副作用边界；本轮未安装或启动目标插件。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：6fabe9d878f4aec7813377c042789c5f919455950541c4a6f730edfef2025915。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 8 | 575 | — | — | 6287 |\n| .js | source | 3 | 37319 | 26808 | 10660 | — |\n| .ts | source | 20 | 6182 | 5643 | 198 | — |\n| .tsx | source | 3 | 1236 | 1145 | 17 | — |\n| .ts | test | 12 | 2689 | 2536 | 58 | — |\n| .tsx | test | 3 | 481 | 448 | 15 | — |\n\n排除 4 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[AlexYin-Tongji/dsh-plugin-console](https://github.com/AlexYin-Tongji/dsh-plugin-console)\n- **版本号**：0.3.2（[固定提交 224e5395](https://github.com/AlexYin-Tongji/dsh-plugin-console/tree/224e53959c1b03f83993b80f8438b49b17d820d6)）\n- **版本日期**：2026-08-24（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：src/index.ts、src/operations.ts、src/canary.ts、作者README、package与固定范围inventory；源码抽读不等于完整审计。\n- 未验证：插件执行、测试、安装、真实宿主与独立采用。\n- 证据限制：固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。\n- 下一步：未来隔离测试环境核变更漂移、回滚失败、子进程清理及副作用边界；本轮未安装或启动目标插件。\n",
+        "reports": "# dsh-plugin-console\n\n> 在DSH web核对社区插件、管理活动profile并通过确认计划执行安装、更新、暂停和Harness升级。\n\n## 研究范围\n\n- **仓库**：[AlexYin-Tongji/dsh-plugin-console](https://github.com/AlexYin-Tongji/dsh-plugin-console)\n- **版本号**：0.3.2（[固定提交 224e53959c1b03f83993b80f8438b49b17d820d6](https://github.com/AlexYin-Tongji/dsh-plugin-console/tree/224e53959c1b03f83993b80f8438b49b17d820d6)）\n- **版本日期**：2026-08-24（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n源码支持限时指纹计划、官方CLI变更与canary/recovery组织；临时HOME并非OS隔离，真实安装初始化的外部副作用不由恢复覆盖。最小能力变更与恢复边界收据尚未验证。\n\n## 洞察短评\n\n- **用途**：本地维护者集中核对目录来源、精确版本及活动profile，需区分已装与运行中状态。\n- **亮点**：把来源核验、明确确认、精确安装、完整profile兼容检查及恢复串为管理闭环，增量在流程而非新包管理算法。详见[Q01](#research-q01)与[Q02](#research-q02)。\n- **思考**：canary改临时HOME但仍普通用户进程并继承多项环境变量，不是OS沙箱；真实profile变更与外部初始化副作用也非原子回滚。详见[Q02](#research-q02)。\n- **建议**：可探讨最小能力变更收据，列环境/目录/网络与恢复覆盖，再以白名单或OS约束缩小canary能力；兼容与隐私成本未验证。详见[Q05](#research-q05)。\n\n采用建议：本地单人维护者可试用，先核对可信代码、精确宿主和备份；canary仅作为兼容线索，异常先盘点实际状态。详见[Q06](#research-q06)。\n\n## 核心贡献\n\n把来源核验、明确确认、精确安装、完整profile兼容检查及恢复串为管理闭环，增量在流程而非新包管理算法。详见[Q01](#research-q01)与[Q02](#research-q02)。\n\n## 关键质疑\n\ncanary改临时HOME但仍普通用户进程并继承多项环境变量，不是OS沙箱；真实profile变更与外部初始化副作用也非原子回滚。详见[Q02](#research-q02)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可探讨最小能力变更收据，列环境/目录/网络与恢复覆盖，再以白名单或OS约束缩小canary能力；兼容与隐私成本未验证。详见[Q05](#research-q05)。\n\n进一步探讨可从假密钥、外目录写、分阶段失败与回滚网络中断的受控夹具入手，比较能力范围和真实恢复。\n\n## 场景与替代办法\n\n本地维护者集中核对目录来源、精确版本及活动profile，需区分已装与运行中状态。\n\n官方CLI加手工来源/lockfile/Loader核对及备份；控制台集中步骤，但额外复制依赖树和完整profile启动也有成本。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| Node ^22.19或>=24，DSH rc.6及固定Cordis/Loader peers | 主流程必需 | Host、profile和客户端接线 | 不能仅以Node能运行判断兼容 |\n| 活动web profile及可写DSH_HOME | 管理必需 | manifest、lockfile、暂停配置和备份 | 非文件Loader或profile目录外拒绝 |\n| HTTPS目录、npm/GitHub网络 | 商店验证必需 | 元数据、固定artifact和README | 可显示旧缓存，不能等同当前验证 |\n| dsh/pnpm命令及完整profile canary可启动 | 安装/升级必需 | 真正包变更与验证 | 超时/失败进入恢复，非只改列表 |\n| npm全局安装prefix | Harness升级必需 | 全局二进制重装 | 其他安装方式不提供升级 |\n\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 准备 | 维护者备份profile与插件数据并固定宿主 | 只选择信任代码，临时HOME非安全沙箱 |\n| 加载 | 安装管理器到web profile并重启刷新 | 目录、已装与运行中状态分别可见 |\n| 变更 | 人工核对plan来源、精确版本、警告再执行 | TTL、指纹、锁和artifact重检均通过 |\n| 验收 | 检查安装、canary、回滚和重启提示 | canary通过仍需重启后实际功能判断 |\n| 退出 | 卸载管理器，单独治理缓存/备份/目标插件数据 | 卸载不回退历史Harness升级或删除他包数据 |\n\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 固定DSH/Node环境与网络，金额未知 | 源码信任、profile盘点与备份 | 硬件与真实初始化耗时未测 |\n| 持续使用 | 元数据请求、依赖树复制、安装及完整profile canary | 核对每次来源/版本/确认及重启 | 多插件profile会增加存储与启动开销 |\n| 失败恢复 | 保留依赖备份、重装旧版、再次canary | 判断部分变更、进程清理和人工修复 | 回滚失败有独立状态，恢复时长未知 |\n\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 安装确定性 | plan绑定来源、精确版本、integrity与profile指纹 | 元数据与供应链本身可信程度 |\n| 运行兼容 | 设计包含完整profile启动与client资源检查 | 实际UI/业务任务可用性 |\n| 恢复 | 元数据/依赖备份和失败结果分类明确 | 断电、外部非协作写及任意插件副作用恢复 |\n\n\n## 研究问题与完整回答\n\n**插件研究总目标：**核查插件目录验证、计划到真实profile变更、canary信任及恢复边界。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 谁需要控制台，目录到真实安装如何连接？\n\n**研究主题：**场景与需求、功能与机制\n\n#### 完整回答\n\n面向维护自己DSH web profile、需要在多个社区插件间核对来源和版本的人。输入是HTTPS社区目录、活动profile和Loader运行态，输出是已核对的变更计划及真实包管理/配置变更。合格任务不仅显示已安装，还要精确版本、组合、canary结果及重启后的实际可用状态一致。\n\nHost只从Loader baseUrl定位DSH_HOME/profiles内活动profile，不由客户端传任意路径；API要求POST，同源校验及写操作loopback限制。目录详情核对npm身份、repo、HTTPS tarball和integrity，GitHub路径固定commit。plan保存目标和profile指纹，有TTL；execute消耗plan，再取锁/重检，调用官方dsh CLI，验证安装、配置组合和canary，失败走恢复。这些步骤降低误装，不等代码经过安全审计。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:7-20](https://github.com/AlexYin-Tongji/dsh-plugin-console/blob/224e53959c1b03f83993b80f8438b49b17d820d6/README.md#L7-L20)\n\n作者目标和plan/canary工作流。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n`dsh-plugin-console` 是一个可安装到 DeepSeek Harness Web profile 的插件管理器：它把社区目录、当前 profile 的包清单和 Loader 运行态放在 Settings 的一级“插件管理”页面里，并通过官方 `dsh plugin` 命令完成安装、更新和删除。\n\n## 已实现\n\n- **插件商店**：默认同步 [awesome-dsh-plugin](https://awesome-dsh-plugin.com/plugins.json)，支持搜索、分类、分页和本地 last-known-good 缓存。\n- **安装前验证**：npm 包检查合法 SemVer、repository、HTTPS tarball、SHA-512 integrity、`dsh.bundle.patch` 和生命周期脚本；GitHub 包固定到 40 位 commit，并确认 `package.json` 与声明的 patch 文件存在。\n- **已安装清单**：读取当前 profile 的 direct dependencies、bundle 顺序、解析后的 package manifest、Loader entry/Fiber phase 和 Web client 能力。\n- **使用说明**：读取 Markdown、MDX、RST、TXT 和无扩展名 README；Markdown 使用 README 专用的 GFM + 安全 HTML renderer，支持常见段落、链接、徽章和相对图片，所有文档都可切换到保留原文的源码视图。\n- **快捷更新**：不会自动安装或更新。发现新版本后只显示更新按钮；用户点击后仍需复核目标版本和来源、勾选确认并再次点击“确认执行”。社区目录中的包按已验证 artifact 更新；目录外 npm 包只有在同名、同 repository、合法升级版本和 integrity 都成立时才可更新，并在确认页单独警告。\n- **快捷删除**：只允许删除 direct dependency，系统 bundle 受保护；删除会同时清理 `dsh.profile.bundles` 中的对应层，确保下次启动不再加载已删除插件；删除包不会擅自删除包创建的数据。\n- **暂停使用**：保留已安装依赖，通过 profile 的结构化 Loader patch 持久化 `disabled` 状态；可随时恢复，管理器自身不会允许自暂停。\n- **隔离试运行**：安装或更新后，在临时 `DSH_HOME`、随机本地端口和隔离 HOME/TMP 中启动完整 Web profile；已安装的其他第三方 bundle 也会一起启动，因此插件间、插件与 DSH/Cordis 的初始化冲突会在新版本写入前被发现。目标 bundle 的 Loader 条目、精确包版本、客户端 bundle 的语法／执行／唯一包名注册／模块依赖和 HTTP 资源全部通过后才保留新版，否则自动恢复旧版本。浏览器内 UI 交互仍由用户在重启刷新后人工确认。\n- **变更确认**：所有写操作先生成 5 分钟有效的 plan；执行前重新校验 profile 指纹、当前包状态和 artifact integrity，同一时间只允许一个变更。元数据实际变化后才按恢复后的 lockfile 做 frozen reinstall，不会先删除整个 `node_modules`；供应链策略在命令开始前拒绝时不会破坏现有依赖。\n- **重启提示**：变更由 pnpm/profile manifest 持久化，当前 Loader 不会被伪装成已更新，页面会明确显示隔离试运行结果和重启后生效状态。\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/index.ts:139-165](https://github.com/AlexYin-Tongji/dsh-plugin-console/blob/224e53959c1b03f83993b80f8438b49b17d820d6/src/index.ts#L139-L165)\n\n同源与loopback校验。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\nfunction verifySameOrigin(req: IncomingMessage): void {\n  const host = req.headers.host\n  const origin = req.headers.origin\n  const fetchSite = req.headers['sec-fetch-site']\n  if (fetchSite !== undefined && fetchSite !== 'same-origin' && fetchSite !== 'same-site' && fetchSite !== 'none') {\n    throw new ApiFailure(403, 'origin-denied', 'Only same-origin WebUI requests are accepted.')\n  }\n  if (host === undefined || origin === undefined) throw new ApiFailure(403, 'origin-denied', 'Only same-origin WebUI requests are accepted.')\n  let url: URL\n  try {\n    url = new URL(origin)\n  } catch {\n    throw new ApiFailure(403, 'origin-denied', 'Only same-origin WebUI requests are accepted.')\n  }\n  if ((url.protocol !== 'http:' && url.protocol !== 'https:') || url.host !== host) {\n    throw new ApiFailure(403, 'origin-denied', 'Only same-origin WebUI requests are accepted.')\n  }\n}\n\nfunction verifyLoopback(req: IncomingMessage): void {\n  const address = req.socket.remoteAddress ?? ''\n  if (address !== '127.0.0.1' && address !== '::1' && !address.startsWith('::ffff:127.')) {\n    throw new ApiFailure(403, 'mutation-local-only', 'Plugin mutations are available only from the loopback WebUI.')\n  }\n}\n\nfunction sendJson(res: ServerResponse, status: number, value: unknown): void {\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/index.ts:175-190](https://github.com/AlexYin-Tongji/dsh-plugin-console/blob/224e53959c1b03f83993b80f8438b49b17d820d6/src/index.ts#L175-L190)\n\n活动profile路径限制。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n\n/** Resolve the profile path from the Loader's own base URL, never from client input. */\nfunction profileDir(ctx: Context): string {\n  if (ctx.baseUrl === undefined || !ctx.baseUrl.startsWith('file:')) {\n    throw new Error('dsh-plugin-console requires a file-backed profile Loader baseUrl.')\n  }\n  const profilesRoot = resolve(dshHomePath('profiles'))\n  const dir = resolve(fileURLToPath(ctx.baseUrl))\n  const child = relative(profilesRoot, dir)\n  if (child.length === 0 || child.startsWith('..') || isAbsolute(child)) {\n    throw new Error('dsh-plugin-console can manage only the active profile under $DSH_HOME/profiles.')\n  }\n  return dir\n}\n\n/** Mount the manager against only the active profile. */\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/catalog.ts:544-579](https://github.com/AlexYin-Tongji/dsh-plugin-console/blob/224e53959c1b03f83993b80f8438b49b17d820d6/src/catalog.ts#L544-L579)\n\nnpm身份、repository和integrity核对。\n\n<details>\n<summary>查看原文（36行）</summary>\n\n```text\n  private async inspectNpm(item: CatalogPluginSummary, locale: UiLocale): Promise<CatalogPluginDetail> {\n    const packageName = item.packageName\n    if (packageName === null || !validNpmPackageName(packageName)) return invalidDetail(item, 'Catalog npm package name is invalid.')\n    const encoded = encodeURIComponent(packageName)\n    const signal = this.operationSignal()\n    const { value } = await fetchJson(\n      this.fetchImpl,\n      `https://registry.npmjs.org/${encoded}/latest`,\n      signal,\n      Math.min(this.options.maxCatalogBytes, 1_000_000),\n    )\n    if (!isRecord(value)) return invalidDetail(item, 'npm metadata is invalid.')\n    const manifest = manifestSummary(value)\n    if (manifest === null || manifest.packageName !== packageName) return invalidDetail(item, 'npm package identity does not match the catalog.')\n    const warnings = inspectionWarnings(manifest, value)\n    if (!manifest.bundle) return invalidDetail(item, 'Published package does not declare an installable DSH bundle.', manifest, warnings)\n    const dist = isRecord(value.dist) ? value.dist : {}\n    const integrity = stringValue(dist.integrity)\n    if (integrity === null || !validNpmIntegrity(integrity) || !validNpmTarball(dist.tarball)) {\n      return invalidDetail(item, 'npm metadata has no valid HTTPS tarball and immutable integrity hash.', manifest, [...warnings, 'integrity-missing'])\n    }\n    const repository = normalizeGithubRepository(value.repository)\n    if (repository === null || repository.toLocaleLowerCase() !== item.id) {\n      return invalidDetail(item, 'npm package repository does not match the catalog repository.', manifest, [...warnings, 'repository-mismatch'])\n    }\n    const gitHead = typeof value.gitHead === 'string' && /^[0-9a-f]{40}$/i.test(value.gitHead) ? value.gitHead : null\n    const readme = gitHead === null\n      ? { text: null, source: null }\n      : await fetchReadme(this.fetchImpl, repository, gitHead, locale, signal, this.options.maxReadmeBytes)\n    return {\n      ...item,\n      verification: 'verified',\n      verificationMessage: null,\n      installSpec: `${packageName}@${manifest.version}`,\n      commitSha: gitHead,\n      integrity,\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/operations.ts:709-746](https://github.com/AlexYin-Tongji/dsh-plugin-console/blob/224e53959c1b03f83993b80f8438b49b17d820d6/src/operations.ts#L709-L746)\n\nplan TTL、指纹和一次消费。\n\n<details>\n<summary>查看原文（38行）</summary>\n\n```text\n    const expiresAt = new Date(this.now() + PLAN_TTL_MS).toISOString()\n    const plan: OperationPlan & { readonly status: 'ready'; readonly planId: string } = {\n      status: 'ready',\n      planId,\n      blockReason: null,\n      profileName: this.options.profile.runtime.profileName,\n      catalogId: input.catalogId,\n      packageName: input.packageName,\n      currentVersion: input.currentVersion,\n      currentSpec: input.currentSpec,\n      targetVersion: input.targetVersion,\n      sourceSpec: input.sourceSpec,\n      artifactIntegrity: input.artifactIntegrity,\n      lifecycleScripts: [...input.lifecycleScripts],\n      warnings: [...input.warnings],\n      expiresAt,\n      action: input.action,\n    }\n    this.plans.set(planId, { plan, fingerprint: this.options.profile.fingerprint() })\n    return plan\n  }\n\n  async execute(planId: string): Promise<OperationResult> {\n    this.prunePlans()\n    if (this.disposed) return snapshotResult(this.options.profile, null, 'manager-disposed', null, false, 'not-needed', null)\n    if (this.operation !== null || this.busy) return snapshotResult(this.options.profile, null, 'operation-busy', null, false, 'not-needed', null)\n    const stored = this.plans.get(planId)\n    this.plans.delete(planId)\n    if (stored === undefined) return snapshotResult(this.options.profile, null, 'plan-invalid-or-expired', null, false, 'not-needed', null)\n    if (Date.parse(stored.plan.expiresAt ?? '') <= this.now()) return snapshotResult(this.options.profile, stored.plan.action, 'plan-expired', stored.plan.packageName, false, 'not-needed', null)\n    if (stored.fingerprint !== this.options.profile.fingerprint()) return snapshotResult(this.options.profile, stored.plan.action, 'profile-changed', stored.plan.packageName, false, 'not-needed', null)\n    const plan = stored.plan\n    if (plan.packageName === null) return snapshotResult(this.options.profile, plan.action, 'plan-invalid', null, false, 'not-needed', null)\n\n    // Reserve synchronously before any filesystem or process await. A second\n    // request in the same turn therefore cannot enter the mutation path.\n    this.options.profile.setBusy(true)\n    const operation = this.prepareAndRun(plan, stored.fingerprint)\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 相对手工CLI贡献在哪里，canary隔离到什么程度？\n\n**研究主题：**贡献与相对优势、缺陷与关键质疑\n\n#### 完整回答\n\n贡献是把目录结构核验、明确确认、精确安装、完整profile启动检查、备份和恢复状态组织成闭环，减少维护者手工穿梭。它使用官方CLI和现有Loader，不是新包管理器；其已验证主要表示artifact/启动约定符合，不表示插件业务正确或安全背书。\n\n关键限制是canary的“隔离”是临时数据目录与loopback启动，不是操作系统权限沙箱。环境从process.env复制后仅删除若干Node/npm变量，其他provider API key等仍可能继承；完整profile包含已有第三方bundle并会执行其初始化，进程仍以当前OS用户权限运行，代码可访问绝对路径或网络。修改HOME并不能撤销这些能力。本轮只静态核查，未让任何第三方代码实际读取凭据。\n\n真实profile安装先发生，随后在副本验证，失败再恢复；备份覆盖metadata与依赖树，不可能撤销任意插件初始化的外部请求/其他路径写入。全局Harness更新会重装二进制，恢复旧版依赖网络与权限；不能把恢复分支称为跨资源原子事务。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/canary.ts:308-331](https://github.com/AlexYin-Tongji/dsh-plugin-console/blob/224e53959c1b03f83993b80f8438b49b17d820d6/src/canary.ts#L308-L331)\n\n复制父环境并仅清理列举变量。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\nfunction canaryEnvironment(root: string, nonce: string): NodeJS.ProcessEnv {\n  const env: NodeJS.ProcessEnv = {\n    ...process.env,\n    DSH_HOME: root,\n    HOME: root,\n    USERPROFILE: root,\n    XDG_CONFIG_HOME: join(root, 'config'),\n    XDG_CACHE_HOME: join(root, 'cache'),\n    TMPDIR: join(root, 'tmp'),\n    TMP: join(root, 'tmp'),\n    TEMP: join(root, 'tmp'),\n    DSH_PLUGIN_CONSOLE_CANARY_NONCE: nonce,\n  }\n  for (const name of [\n    'CORDIS_SHARED',\n    'DSH_SNAPSHOT',\n    'DSH_WEB_URL',\n    'NODE_PATH',\n    'NODE_AUTH_TOKEN',\n    'NPM_TOKEN',\n    'NPM_CONFIG_USERCONFIG',\n    'npm_config_userconfig',\n  ]) delete env[name]\n  return env\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/canary.ts:348-363](https://github.com/AlexYin-Tongji/dsh-plugin-console/blob/224e53959c1b03f83993b80f8438b49b17d820d6/src/canary.ts#L348-L363)\n\n普通child_process以临时cwd/env启动，无OS隔离。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n  const child = spawn(dshBin, [\n    '--profile',\n    profileName,\n    '--patch',\n    prepared.patchPath,\n    '--host',\n    '127.0.0.1',\n    '--port',\n    '0',\n  ], {\n    cwd: prepared.cwd,\n    detached: process.platform !== 'win32',\n    env: canaryEnvironment(prepared.root, nonce),\n    shell: false,\n    stdio: ['ignore', 'pipe', 'pipe'],\n  })\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/operations.ts:878-909](https://github.com/AlexYin-Tongji/dsh-plugin-console/blob/224e53959c1b03f83993b80f8438b49b17d820d6/src/operations.ts#L878-L909)\n\n真实profile调用安装后才验证。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\n          'plugin', '--profile', this.options.profile.runtime.profileName, 'add',\n          '--save-exact', '--ignore-scripts', plan.sourceSpec as string,\n        ]\n    let removalTargets: readonly PluginActivationTarget[] = []\n    if (plan.action === 'remove') {\n      try {\n        removalTargets = (await this.options.profile.activationDescriptor(plan.packageName as string)).targets\n      } catch {\n        // A malformed bundle cannot provide safe target names. The package\n        // removal still proceeds, while manifest and dependency cleanup below\n        // remain authoritative.\n      }\n    }\n    let result: CommandResult\n    try {\n      result = await this.runCommand(args, this.options.profile.runtime.dir, this.timeoutMs)\n    } catch (error) {\n      preserveDependencyBackup(dependencies)\n      return snapshotResult(\n        this.options.profile,\n        plan.action,\n        'dsh-command-indeterminate',\n        plan.packageName,\n        false,\n        'failed',\n        errorMessage(error),\n        'not-run',\n        'failed',\n      )\n    }\n    let mutationState: readonly FileBackup[]\n    try {\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/operations.ts:1012-1033](https://github.com/AlexYin-Tongji/dsh-plugin-console/blob/224e53959c1b03f83993b80f8438b49b17d820d6/src/operations.ts#L1012-L1033)\n\n后续canary失败回滚。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n      let canary: ActivationCanaryResult\n      try {\n        canary = await this.runIsolatedActivation(plan.packageName as string, plan.targetVersion as string)\n      } catch (error) {\n        const rollback = await this.rollback(backups, true, plan, mutationState, dependencies)\n        return snapshotResult(this.options.profile, plan.action, 'canary-preparation-failed', plan.packageName, false, rollback, errorMessage(error), 'failed')\n      }\n      if (canary.status !== 'passed') {\n        const rollback = await this.rollback(backups, true, plan, mutationState, dependencies)\n        const detail = canary.detail === null ? null : redactProcessOutput(canary.detail)\n        const cleanup = canary.code === 'canary-shutdown-failed' ? 'failed' : 'succeeded'\n        return snapshotResult(this.options.profile, plan.action, canary.code, plan.packageName, false, rollback, detail, 'failed', cleanup)\n      }\n      if (await backupFilesChanged(mutationState)) {\n        preserveDependencyBackup(dependencies)\n        return snapshotResult(\n          this.options.profile,\n          plan.action,\n          'profile-changed-during-canary',\n          plan.packageName,\n          false,\n          'failed',\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/harness-operations.ts:407-459](https://github.com/AlexYin-Tongji/dsh-plugin-console/blob/224e53959c1b03f83993b80f8438b49b17d820d6/src/harness-operations.ts#L407-L459)\n\nHarness旧版重装与再次canary可失败。\n\n<details>\n<summary>查看原文（53行）</summary>\n\n```text\n  private async rollbackFrom(\n    plan: HarnessUpdatePlan,\n    expectedEntries: readonly ComposedEntry[],\n    expectedClientPackages: readonly string[],\n    failedUpdate: CommandResult | null,\n    profileDir: string,\n    profileName: string,\n    detail: string | null,\n    mutationSuspected: boolean,\n    failedProcessCleanup: HarnessUpdateResult['processCleanup'] = failedUpdate?.timedOut === true\n      ? failedUpdate.processCleanup === false ? 'failed' : 'succeeded'\n      : 'not-needed',\n  ): Promise<HarnessUpdateResult> {\n    if (!mutationSuspected) {\n      return this.snapshot('failed', 'harness-update-command-failed', plan, false, 'not-needed', detail, 'not-run', failedProcessCleanup)\n    }\n    // The previous version may already be intact even after a failed command.\n    const current = await this.options.harness.resolve()\n    if (current.status === 'managed' && current.version === plan.currentVersion) {\n      return this.snapshot('failed', 'harness-update-command-failed', plan, false, 'not-needed', detail, 'not-run', failedProcessCleanup)\n    }\n    try {\n      const args = ['install', '--global', '--prefix', plan.prefix as string, `@deepseek-ai/dsh@${plan.currentVersion as string}`]\n      const restore = await this.runCommand(this.options.npmBin, args, profileDir, this.timeoutMs)\n      if (restore.unavailable || restore.timedOut || restore.code !== 0) {\n        return this.snapshot('failed', 'harness-update-command-failed', plan, false, 'failed', `${detail ?? ''} ${restore.output ?? 'Rollback reinstall failed.'}`.trim(), 'not-run', failedProcessCleanup)\n      }\n      const restored = await verifyInstalledVersion(\n        this.options.harness,\n        this.runCommand,\n        profileDir,\n        this.timeoutMs,\n        plan.currentVersion as string,\n        plan.installRoot,\n      )\n      if (!restored.ok) {\n        return this.snapshot('failed', 'harness-update-command-failed', plan, false, 'failed', `${detail ?? ''} ${restored.detail ?? 'Rollback verification failed.'}`.trim(), 'not-run', failedProcessCleanup)\n      }\n      let canary: HarnessCanaryResult\n      try {\n        canary = await this.probeActivation({\n          profileDir,\n          profileName,\n          dshBin: restored.installation?.executablePath ?? '',\n          expectedEntries,\n          expectedClientPackages,\n          timeoutMs: this.canaryTimeoutMs,\n        })\n      } catch (error) {\n        return this.snapshot('failed', 'harness-update-command-failed', plan, false, 'failed', `${detail ?? ''} ${errorMessage(error)}`.trim(), 'failed', failedProcessCleanup)\n      }\n      if (canary.status !== 'passed') {\n        return this.snapshot('failed', 'harness-update-command-failed', plan, false, 'failed', `${detail ?? ''} ${canary.detail ?? 'Rollback canary failed.'}`.trim(), 'failed', failedProcessCleanup)\n```\n\n</details>\n\n#### 缺口\n\n- 未全面审计完整profile中每个第三方bundle的初始化副作用。\n  **影响：**即使canary结构通过也不能保证密钥/文件/网络隔离。\n  **进一步探讨：**可先列最小环境白名单与各bundle初始化I/O，按明确授权另用受限容器研究执行，不能以临时HOME代替。\n- 断电、回滚中断、非协作外部CLI并发修改的最终恢复未验证。\n  **影响：**有锁和备份不能保证所有故障下自动回到旧状态。\n  **进一步探讨：**可从不同阶段故障注入与实际磁盘/进程状态盘点入手，核查哪些副作用受恢复覆盖。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 安装和退出有哪些强依赖？\n\n**研究主题：**依赖、兼容与流程\n\n#### 完整回答\n\npackage固定多项rc.6 peers、Node最低范围和客户端注入，表明Host/Client契约较紧。管理器需webServer和loader以及文件型活动profile。目录可用last-known-good缓存，但写入计划仍需真实artifact、CLI与网络依赖。npm全局Harness升级是另外一类更广副作用，不适用所有安装方式。\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| Node ^22.19或>=24，DSH rc.6及固定Cordis/Loader peers | 主流程必需 | Host、profile和客户端接线 | 不能仅以Node能运行判断兼容 |\n| 活动web profile及可写DSH_HOME | 管理必需 | manifest、lockfile、暂停配置和备份 | 非文件Loader或profile目录外拒绝 |\n| HTTPS目录、npm/GitHub网络 | 商店验证必需 | 元数据、固定artifact和README | 可显示旧缓存，不能等同当前验证 |\n| dsh/pnpm命令及完整profile canary可启动 | 安装/升级必需 | 真正包变更与验证 | 超时/失败进入恢复，非只改列表 |\n| npm全局安装prefix | Harness升级必需 | 全局二进制重装 | 其他安装方式不提供升级 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 准备 | 维护者备份profile与插件数据并固定宿主 | 只选择信任代码，临时HOME非安全沙箱 |\n| 加载 | 安装管理器到web profile并重启刷新 | 目录、已装与运行中状态分别可见 |\n| 变更 | 人工核对plan来源、精确版本、警告再执行 | TTL、指纹、锁和artifact重检均通过 |\n| 验收 | 检查安装、canary、回滚和重启提示 | canary通过仍需重启后实际功能判断 |\n| 退出 | 卸载管理器，单独治理缓存/备份/目标插件数据 | 卸载不回退历史Harness升级或删除他包数据 |\n\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:18-22](https://github.com/AlexYin-Tongji/dsh-plugin-console/blob/224e53959c1b03f83993b80f8438b49b17d820d6/package.json#L18-L22)\n\nNode/pnpm版本。\n\n```text\n  \"engines\": {\n    \"node\": \"^22.19.0 || >=24.0.0\",\n    \"pnpm\": \">=10\"\n  },\n  \"packageManager\": \"pnpm@11.22.0\",\n```\n\n**依据 2 · 源码核查**：[package.json:64-79](https://github.com/AlexYin-Tongji/dsh-plugin-console/blob/224e53959c1b03f83993b80f8438b49b17d820d6/package.json#L64-L79)\n\nweb客户端注入。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n        \"@deepseek-ai/dsh-client-ui-slots\",\n        \"@deepseek-ai/dsh-client-locale\",\n        \"@deepseek-ai/dsh-client-ui-sidebar\"\n      ]\n    }\n  },\n  \"scripts\": {\n    \"build\": \"tsdown\",\n    \"typecheck\": \"tsc --noEmit\",\n    \"test\": \"vitest run\",\n    \"release:verify\": \"pnpm run typecheck && pnpm run build && pnpm run test\",\n    \"check\": \"pnpm run release:verify\",\n    \"prepack\": \"pnpm run release:verify\",\n    \"watch\": \"tsdown --watch\"\n  },\n  \"dependencies\": {\n```\n\n</details>\n\n**依据 3 · 源码核查**：[package.json:95-113](https://github.com/AlexYin-Tongji/dsh-plugin-console/blob/224e53959c1b03f83993b80f8438b49b17d820d6/package.json#L95-L113)\n\n精确rc.6 peer及Cordis。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n    \"@deepseek-ai/schemastery\": \"3.18.1\",\n    \"react\": \">=18.2.0 <20.0.0\",\n    \"@deepseek-ai/dsh-client-ui-sidebar\": \"0.1.0-rc.6\"\n  },\n  \"publishConfig\": {\n    \"access\": \"public\",\n    \"registry\": \"https://registry.npmjs.org/\",\n    \"provenance\": true\n  },\n  \"devDependencies\": {\n    \"@deepseek-ai/cordis\": \"^4.0.1\",\n    \"@deepseek-ai/cordis-plugin-group\": \"^1.0.1\",\n    \"@deepseek-ai/cordis-plugin-include\": \"^1.0.6\",\n    \"@deepseek-ai/cordis-plugin-loader\": \"^1.0.2\",\n    \"@deepseek-ai/dsh-app-boot\": \"^0.1.0-rc.6\",\n    \"@deepseek-ai/dsh-client-locale\": \"^0.1.0-rc.6\",\n    \"@deepseek-ai/dsh-client-runtime\": \"^0.1.0-rc.6\",\n    \"@deepseek-ai/dsh-client-ui-primitives\": \"^0.1.0-rc.6\",\n    \"@deepseek-ai/dsh-client-ui-settings\": \"^0.1.0-rc.6\",\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/index.ts:34-35](https://github.com/AlexYin-Tongji/dsh-plugin-console/blob/224e53959c1b03f83993b80f8438b49b17d820d6/src/index.ts#L34-L35)\n\nhost服务。\n\n```text\n\nexport const name = 'plugin-console'\n```\n\n**依据 5 · 源码核查**：[src/index.ts:175-190](https://github.com/AlexYin-Tongji/dsh-plugin-console/blob/224e53959c1b03f83993b80f8438b49b17d820d6/src/index.ts#L175-L190)\n\nprofile限定。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n\n/** Resolve the profile path from the Loader's own base URL, never from client input. */\nfunction profileDir(ctx: Context): string {\n  if (ctx.baseUrl === undefined || !ctx.baseUrl.startsWith('file:')) {\n    throw new Error('dsh-plugin-console requires a file-backed profile Loader baseUrl.')\n  }\n  const profilesRoot = resolve(dshHomePath('profiles'))\n  const dir = resolve(fileURLToPath(ctx.baseUrl))\n  const child = relative(profilesRoot, dir)\n  if (child.length === 0 || child.startsWith('..') || isAbsolute(child)) {\n    throw new Error('dsh-plugin-console can manage only the active profile under $DSH_HOME/profiles.')\n  }\n  return dir\n}\n\n/** Mount the manager against only the active profile. */\n```\n\n</details>\n\n**依据 6 · 作者声明**：[README.md:27-49](https://github.com/AlexYin-Tongji/dsh-plugin-console/blob/224e53959c1b03f83993b80f8438b49b17d820d6/README.md#L27-L49)\n\n作者安装/重启说明。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n````text\n```sh\n# npm 发布版（显式 @latest，重复执行即可升级到最新版）\ndsh plugin --profile web add dsh-plugin-console@latest\n\n# 本地源码检出目录\ndsh plugin --profile web add .\n```\n\n### 升级到新版本\n\n已安装旧版时，重新执行不带版本号的 `add <包名>` **不会升级**：pnpm 会保留 profile 中已有的 `^x.y.z` 版本范围并报告 \"Already up to date\"。升级方式任选其一：\n\n```sh\n# 方式一：显式 @latest 重新解析最新版\ndsh plugin --profile web add dsh-plugin-console@latest\n```\n\n方式二：在插件管理页面一键自更新（0.2.2 起内置）——Settings → 插件管理 → 已安装 → dsh-plugin-console → 更新。\n\n无论哪种方式，更新完成后都需要重启 `dsh web` 并刷新浏览器：Web client module roster 在进程启动时扫描 profile 包，运行中的 Host 与已打开的页面仍持有旧的启动模块图。\n\n### 没有拿到最新版？\n\n````\n\n</details>\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 首次、持续与失败恢复成本和效果怎么判断？\n\n**研究主题：**效果与总成本\n\n#### 完整回答\n\n共同任务应是同一profile完成同一精确插件变更并恢复工作，不以按钮点击少或canary成功等同净收益。复制依赖树、完整profile启动、客户端图检查及恢复旧版都有CPU/磁盘、下载和等待成本；正常只读浏览无强制模型调用，某些被加载插件自身仍可有外部成本。金额与耗时不能从默认timeout直接反推。\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 固定DSH/Node环境与网络，金额未知 | 源码信任、profile盘点与备份 | 硬件与真实初始化耗时未测 |\n| 持续使用 | 元数据请求、依赖树复制、安装及完整profile canary | 核对每次来源/版本/确认及重启 | 多插件profile会增加存储与启动开销 |\n| 失败恢复 | 保留依赖备份、重装旧版、再次canary | 判断部分变更、进程清理和人工修复 | 回滚失败有独立状态，恢复时长未知 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 安装确定性 | plan绑定来源、精确版本、integrity与profile指纹 | 元数据与供应链本身可信程度 |\n| 运行兼容 | 设计包含完整profile启动与client资源检查 | 实际UI/业务任务可用性 |\n| 恢复 | 元数据/依赖备份和失败结果分类明确 | 断电、外部非协作写及任意插件副作用恢复 |\n\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/operations.ts:354-365](https://github.com/AlexYin-Tongji/dsh-plugin-console/blob/224e53959c1b03f83993b80f8438b49b17d820d6/src/operations.ts#L354-L365)\n\n备份node_modules依赖树。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\nasync function backupDependencies(profileDir: string): Promise<DependencyBackup> {\n  const root = await mkdtemp(join(profileDir, '.dsh-plugin-console-recovery-'))\n  const source = join(profileDir, 'node_modules')\n  const snapshot = join(root, 'node_modules')\n  try {\n    if (!(await pathExists(source))) return { root, snapshot: null, preserve: false }\n    await copyDependencyTree(source, snapshot)\n    return { root, snapshot, preserve: false }\n  } catch (error) {\n    await rm(root, { recursive: true, force: true, maxRetries: 3, retryDelay: 100 }).catch(() => undefined)\n    throw error\n  }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/operations.ts:154-213](https://github.com/AlexYin-Tongji/dsh-plugin-console/blob/224e53959c1b03f83993b80f8438b49b17d820d6/src/operations.ts#L154-L213)\n\n外部命令、输出与超时清理。\n\n<details>\n<summary>查看原文（60行）</summary>\n\n```text\nexport async function command(\n  executable: string,\n  args: readonly string[],\n  cwd: string,\n  timeoutMs: number,\n): Promise<CommandResult> {\n  let stdout = ''\n  let stderr = ''\n  let stdoutTruncated = false\n  let startError: Error | null = null\n  const child = spawn(executable, [...args], {\n    cwd,\n    detached: process.platform !== 'win32',\n    shell: false,\n    env: { ...process.env },\n    stdio: ['ignore', 'pipe', 'pipe'],\n  })\n  child.stdout?.on('data', (chunk: Buffer) => {\n    stdout += chunk.toString('utf8')\n    if (stdout.length > MAX_STDOUT_CHARS) {\n      stdout = stdout.slice(-MAX_STDOUT_CHARS)\n      stdoutTruncated = true\n    }\n  })\n  child.stderr?.on('data', (chunk: Buffer) => {\n    stderr += chunk.toString('utf8')\n    if (stderr.length > MAX_OUTPUT_CHARS) stderr = stderr.slice(-MAX_OUTPUT_CHARS)\n  })\n  const exited = processExit(child, error => { startError = error })\n  let timeoutHandle: ReturnType<typeof setTimeout> | undefined\n  const timeout = new Promise<null>(resolve => {\n    timeoutHandle = setTimeout(() => resolve(null), timeoutMs)\n  })\n  const exit = await Promise.race([exited, timeout])\n  if (timeoutHandle !== undefined) clearTimeout(timeoutHandle)\n  let timedOut = false\n  let processCleanup = true\n  if (exit === null) {\n    timedOut = true\n    processCleanup = await terminateProcessTree(child, exited)\n    if (!processCleanup) stderr += '\\nThe timed-out command process tree could not be terminated completely.'\n  }\n  const output = redactProcessOutput(`${stdout}\\n${stderr}`)\n  if (startError !== null) {\n    return {\n      code: 1,\n      unavailable: (startError as NodeJS.ErrnoException).code === 'ENOENT',\n      timedOut,\n      output: output ?? errorMessage(startError),\n      stdout: stdout.trim().length === 0 ? null : stdout,\n      stdoutTruncated,\n      processCleanup,\n    }\n  }\n  return {\n    code: exit?.code ?? null,\n    unavailable: false,\n    timedOut,\n    output,\n    stdout: stdout.trim().length === 0 ? null : stdout,\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/operations.ts:1012-1040](https://github.com/AlexYin-Tongji/dsh-plugin-console/blob/224e53959c1b03f83993b80f8438b49b17d820d6/src/operations.ts#L1012-L1040)\n\n完整canary与外部变更拒绝。\n\n<details>\n<summary>查看原文（29行）</summary>\n\n```text\n      let canary: ActivationCanaryResult\n      try {\n        canary = await this.runIsolatedActivation(plan.packageName as string, plan.targetVersion as string)\n      } catch (error) {\n        const rollback = await this.rollback(backups, true, plan, mutationState, dependencies)\n        return snapshotResult(this.options.profile, plan.action, 'canary-preparation-failed', plan.packageName, false, rollback, errorMessage(error), 'failed')\n      }\n      if (canary.status !== 'passed') {\n        const rollback = await this.rollback(backups, true, plan, mutationState, dependencies)\n        const detail = canary.detail === null ? null : redactProcessOutput(canary.detail)\n        const cleanup = canary.code === 'canary-shutdown-failed' ? 'failed' : 'succeeded'\n        return snapshotResult(this.options.profile, plan.action, canary.code, plan.packageName, false, rollback, detail, 'failed', cleanup)\n      }\n      if (await backupFilesChanged(mutationState)) {\n        preserveDependencyBackup(dependencies)\n        return snapshotResult(\n          this.options.profile,\n          plan.action,\n          'profile-changed-during-canary',\n          plan.packageName,\n          false,\n          'failed',\n          'The profile changed outside this operation while the isolated canary was running; the tested snapshot was not accepted.',\n          'failed',\n          'succeeded',\n        )\n      }\n      const finalRow = (await this.options.profile.list('zh', false)).find(row => row.packageName === plan.packageName)\n      if (finalRow === undefined || finalRow.version !== plan.targetVersion || !requestedSpecMatchesPlan(finalRow.requestedSpec, plan)) {\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/harness-operations.ts:407-459](https://github.com/AlexYin-Tongji/dsh-plugin-console/blob/224e53959c1b03f83993b80f8438b49b17d820d6/src/harness-operations.ts#L407-L459)\n\n恢复旧Harness及复验再次承担成本。\n\n<details>\n<summary>查看原文（53行）</summary>\n\n```text\n  private async rollbackFrom(\n    plan: HarnessUpdatePlan,\n    expectedEntries: readonly ComposedEntry[],\n    expectedClientPackages: readonly string[],\n    failedUpdate: CommandResult | null,\n    profileDir: string,\n    profileName: string,\n    detail: string | null,\n    mutationSuspected: boolean,\n    failedProcessCleanup: HarnessUpdateResult['processCleanup'] = failedUpdate?.timedOut === true\n      ? failedUpdate.processCleanup === false ? 'failed' : 'succeeded'\n      : 'not-needed',\n  ): Promise<HarnessUpdateResult> {\n    if (!mutationSuspected) {\n      return this.snapshot('failed', 'harness-update-command-failed', plan, false, 'not-needed', detail, 'not-run', failedProcessCleanup)\n    }\n    // The previous version may already be intact even after a failed command.\n    const current = await this.options.harness.resolve()\n    if (current.status === 'managed' && current.version === plan.currentVersion) {\n      return this.snapshot('failed', 'harness-update-command-failed', plan, false, 'not-needed', detail, 'not-run', failedProcessCleanup)\n    }\n    try {\n      const args = ['install', '--global', '--prefix', plan.prefix as string, `@deepseek-ai/dsh@${plan.currentVersion as string}`]\n      const restore = await this.runCommand(this.options.npmBin, args, profileDir, this.timeoutMs)\n      if (restore.unavailable || restore.timedOut || restore.code !== 0) {\n        return this.snapshot('failed', 'harness-update-command-failed', plan, false, 'failed', `${detail ?? ''} ${restore.output ?? 'Rollback reinstall failed.'}`.trim(), 'not-run', failedProcessCleanup)\n      }\n      const restored = await verifyInstalledVersion(\n        this.options.harness,\n        this.runCommand,\n        profileDir,\n        this.timeoutMs,\n        plan.currentVersion as string,\n        plan.installRoot,\n      )\n      if (!restored.ok) {\n        return this.snapshot('failed', 'harness-update-command-failed', plan, false, 'failed', `${detail ?? ''} ${restored.detail ?? 'Rollback verification failed.'}`.trim(), 'not-run', failedProcessCleanup)\n      }\n      let canary: HarnessCanaryResult\n      try {\n        canary = await this.probeActivation({\n          profileDir,\n          profileName,\n          dshBin: restored.installation?.executablePath ?? '',\n          expectedEntries,\n          expectedClientPackages,\n          timeoutMs: this.canaryTimeoutMs,\n        })\n      } catch (error) {\n        return this.snapshot('failed', 'harness-update-command-failed', plan, false, 'failed', `${detail ?? ''} ${errorMessage(error)}`.trim(), 'failed', failedProcessCleanup)\n      }\n      if (canary.status !== 'passed') {\n        return this.snapshot('failed', 'harness-update-command-failed', plan, false, 'failed', `${detail ?? ''} ${canary.detail ?? 'Rollback canary failed.'}`.trim(), 'failed', failedProcessCleanup)\n```\n\n</details>\n\n#### 缺口\n\n- 缺少同profile手工CLI与控制台在成功/失败变更的完整时间、磁盘及修复人时对照。\n  **影响：**不能给出更省时间/更可靠的量化承诺。\n  **进一步探讨：**可用固定依赖集合比较精确安装、版本冲突及恢复任务，分别记录下载、复制、canary和人工判断。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 哪些机制可复用，可恢复变更收据怎么验证？\n\n**研究主题：**工程质量与复用、新假设与验证\n\n#### 完整回答\n\n工程亮点是先plan后execute、短TTL/一次消费/指纹重检、来源和integrity绑定、profile锁目录的nonce拥有权与原子改名回收，及安装结果/进程清理/回滚分别报告。命令使用参数数组shell:false，避免把目标直接拼shell；但普通执行本身继承父环境，不能凭此称安全沙箱。\n\n可继续探讨“最小能力变更收据”。plan记录待执行代码、允许环境键、数据目录/网络预期与回滚覆盖资源，canary使用环境白名单和可选OS约束；执行后保留可读的精确版本、验证、未知副作用和恢复位置。相对现有快照恢复，新增的是信任/副作用边界可审阅，而非更多通过标记。假设未验证，代价是适配多插件依赖、兼容失败和收据隐私治理。可用读取不应继承的假密钥、外目录写、启动失败及回滚网络失败夹具，比较泄露、不可恢复变更与人工修复时间；若白名单破坏正常插件且无可靠替代，应修正方案。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/lock.ts:39-86](https://github.com/AlexYin-Tongji/dsh-plugin-console/blob/224e53959c1b03f83993b80f8438b49b17d820d6/src/lock.ts#L39-L86)\n\nnonce锁拥有权与stale目录原子回收。\n\n<details>\n<summary>查看原文（48行）</summary>\n\n```text\nexport async function acquireProfileLock(profileDir: string): Promise<() => Promise<void>> {\n  await mkdir(profileDir, { recursive: true })\n  const lockDir = join(profileDir, LOCK_DIR)\n  const ownerPath = join(lockDir, OWNER_FILE)\n  const nonce = randomUUID()\n\n  for (let attempt = 0; attempt < 3; attempt += 1) {\n    try {\n      await mkdir(lockDir, { mode: 0o700 })\n      await writeFile(ownerPath, `${JSON.stringify({ pid: process.pid, nonce, createdAt: new Date().toISOString() })}\\n`, {\n        encoding: 'utf8',\n        flag: 'wx',\n        mode: 0o600,\n      })\n      return async () => {\n        const current = await owner(ownerPath)\n        if (current?.nonce !== nonce || current.pid !== process.pid) return\n        await rm(lockDir, { recursive: true, force: true })\n      }\n    } catch (error) {\n      if ((error as NodeJS.ErrnoException).code !== 'EEXIST') throw error\n      await delay(OWNER_WRITE_GRACE_MS)\n      const current = await owner(ownerPath)\n      if (current !== null && pidAlive(current.pid)) throw new ProfileLockedError()\n      if (current === null) {\n        let info\n        try {\n          info = await stat(lockDir)\n        } catch (statError) {\n          if ((statError as NodeJS.ErrnoException).code === 'ENOENT') continue\n          throw statError\n        }\n        if (Date.now() - info.mtimeMs < OWNERLESS_STALE_MS) throw new ProfileLockedError()\n      }\n      // Claim the exact stale directory before removing it. Deleting lockDir\n      // directly would let two reclaimers race and remove a new owner's lock.\n      const staleDir = join(profileDir, `${LOCK_DIR}.stale-${nonce}-${String(attempt)}`)\n      try {\n        await rename(lockDir, staleDir)\n      } catch (renameError) {\n        if ((renameError as NodeJS.ErrnoException).code === 'ENOENT') continue\n        throw renameError\n      }\n      await rm(staleDir, { recursive: true, force: true })\n    }\n  }\n  throw new ProfileLockedError()\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/operations.ts:731-746](https://github.com/AlexYin-Tongji/dsh-plugin-console/blob/224e53959c1b03f83993b80f8438b49b17d820d6/src/operations.ts#L731-L746)\n\n一次消费与运行并发拒绝。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n  async execute(planId: string): Promise<OperationResult> {\n    this.prunePlans()\n    if (this.disposed) return snapshotResult(this.options.profile, null, 'manager-disposed', null, false, 'not-needed', null)\n    if (this.operation !== null || this.busy) return snapshotResult(this.options.profile, null, 'operation-busy', null, false, 'not-needed', null)\n    const stored = this.plans.get(planId)\n    this.plans.delete(planId)\n    if (stored === undefined) return snapshotResult(this.options.profile, null, 'plan-invalid-or-expired', null, false, 'not-needed', null)\n    if (Date.parse(stored.plan.expiresAt ?? '') <= this.now()) return snapshotResult(this.options.profile, stored.plan.action, 'plan-expired', stored.plan.packageName, false, 'not-needed', null)\n    if (stored.fingerprint !== this.options.profile.fingerprint()) return snapshotResult(this.options.profile, stored.plan.action, 'profile-changed', stored.plan.packageName, false, 'not-needed', null)\n    const plan = stored.plan\n    if (plan.packageName === null) return snapshotResult(this.options.profile, plan.action, 'plan-invalid', null, false, 'not-needed', null)\n\n    // Reserve synchronously before any filesystem or process await. A second\n    // request in the same turn therefore cannot enter the mutation path.\n    this.options.profile.setBusy(true)\n    const operation = this.prepareAndRun(plan, stored.fingerprint)\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/operations.ts:154-170](https://github.com/AlexYin-Tongji/dsh-plugin-console/blob/224e53959c1b03f83993b80f8438b49b17d820d6/src/operations.ts#L154-L170)\n\n参数数组shell:false仍继承环境。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\nexport async function command(\n  executable: string,\n  args: readonly string[],\n  cwd: string,\n  timeoutMs: number,\n): Promise<CommandResult> {\n  let stdout = ''\n  let stderr = ''\n  let stdoutTruncated = false\n  let startError: Error | null = null\n  const child = spawn(executable, [...args], {\n    cwd,\n    detached: process.platform !== 'win32',\n    shell: false,\n    env: { ...process.env },\n    stdio: ['ignore', 'pipe', 'pipe'],\n  })\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/canary.ts:308-331](https://github.com/AlexYin-Tongji/dsh-plugin-console/blob/224e53959c1b03f83993b80f8438b49b17d820d6/src/canary.ts#L308-L331)\n\n白名单假设的源代码起点。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\nfunction canaryEnvironment(root: string, nonce: string): NodeJS.ProcessEnv {\n  const env: NodeJS.ProcessEnv = {\n    ...process.env,\n    DSH_HOME: root,\n    HOME: root,\n    USERPROFILE: root,\n    XDG_CONFIG_HOME: join(root, 'config'),\n    XDG_CACHE_HOME: join(root, 'cache'),\n    TMPDIR: join(root, 'tmp'),\n    TMP: join(root, 'tmp'),\n    TEMP: join(root, 'tmp'),\n    DSH_PLUGIN_CONSOLE_CANARY_NONCE: nonce,\n  }\n  for (const name of [\n    'CORDIS_SHARED',\n    'DSH_SNAPSHOT',\n    'DSH_WEB_URL',\n    'NODE_PATH',\n    'NODE_AUTH_TOKEN',\n    'NPM_TOKEN',\n    'NPM_CONFIG_USERCONFIG',\n    'npm_config_userconfig',\n  ]) delete env[name]\n  return env\n```\n\n</details>\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 谁适合当前采用，什么时候停止？\n\n**研究主题：**采用判断\n\n#### 完整回答\n\n推荐trial，限本地单人维护、能盘点信任代码和恢复profile的使用者。控制台整合安装前核对和失败处理有实用价值，但只把canary当兼容线索，不能将未知社区包作为沙箱中可随意启动的对象。不要把Harness升级和普通插件浏览的风险混为一谈。\n\n继续探讨可先只读目录/已装清单，核对精确宿主契约与备份，然后在无真实密钥的可丢弃副本按明确授权研究单个可信包变更。来源/版本变化、锁冲突、进程未清理、rollback failed或canary运行时profile被外部改动都应停止追加写入，保留备份与收据后盘点实际状态。扩大使用需补Q02的能力隔离与Q04成本结果，本轮不执行安装或canary。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/operations.ts:1012-1040](https://github.com/AlexYin-Tongji/dsh-plugin-console/blob/224e53959c1b03f83993b80f8438b49b17d820d6/src/operations.ts#L1012-L1040)\n\ncanary/外部profile变化的失败分支。\n\n<details>\n<summary>查看原文（29行）</summary>\n\n```text\n      let canary: ActivationCanaryResult\n      try {\n        canary = await this.runIsolatedActivation(plan.packageName as string, plan.targetVersion as string)\n      } catch (error) {\n        const rollback = await this.rollback(backups, true, plan, mutationState, dependencies)\n        return snapshotResult(this.options.profile, plan.action, 'canary-preparation-failed', plan.packageName, false, rollback, errorMessage(error), 'failed')\n      }\n      if (canary.status !== 'passed') {\n        const rollback = await this.rollback(backups, true, plan, mutationState, dependencies)\n        const detail = canary.detail === null ? null : redactProcessOutput(canary.detail)\n        const cleanup = canary.code === 'canary-shutdown-failed' ? 'failed' : 'succeeded'\n        return snapshotResult(this.options.profile, plan.action, canary.code, plan.packageName, false, rollback, detail, 'failed', cleanup)\n      }\n      if (await backupFilesChanged(mutationState)) {\n        preserveDependencyBackup(dependencies)\n        return snapshotResult(\n          this.options.profile,\n          plan.action,\n          'profile-changed-during-canary',\n          plan.packageName,\n          false,\n          'failed',\n          'The profile changed outside this operation while the isolated canary was running; the tested snapshot was not accepted.',\n          'failed',\n          'succeeded',\n        )\n      }\n      const finalRow = (await this.options.profile.list('zh', false)).find(row => row.packageName === plan.packageName)\n      if (finalRow === undefined || finalRow.version !== plan.targetVersion || !requestedSpecMatchesPlan(finalRow.requestedSpec, plan)) {\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/canary.ts:308-331](https://github.com/AlexYin-Tongji/dsh-plugin-console/blob/224e53959c1b03f83993b80f8438b49b17d820d6/src/canary.ts#L308-L331)\n\n继承环境影响信任范围。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\nfunction canaryEnvironment(root: string, nonce: string): NodeJS.ProcessEnv {\n  const env: NodeJS.ProcessEnv = {\n    ...process.env,\n    DSH_HOME: root,\n    HOME: root,\n    USERPROFILE: root,\n    XDG_CONFIG_HOME: join(root, 'config'),\n    XDG_CACHE_HOME: join(root, 'cache'),\n    TMPDIR: join(root, 'tmp'),\n    TMP: join(root, 'tmp'),\n    TEMP: join(root, 'tmp'),\n    DSH_PLUGIN_CONSOLE_CANARY_NONCE: nonce,\n  }\n  for (const name of [\n    'CORDIS_SHARED',\n    'DSH_SNAPSHOT',\n    'DSH_WEB_URL',\n    'NODE_PATH',\n    'NODE_AUTH_TOKEN',\n    'NPM_TOKEN',\n    'NPM_CONFIG_USERCONFIG',\n    'npm_config_userconfig',\n  ]) delete env[name]\n  return env\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/harness-operations.ts:407-459](https://github.com/AlexYin-Tongji/dsh-plugin-console/blob/224e53959c1b03f83993b80f8438b49b17d820d6/src/harness-operations.ts#L407-L459)\n\n全局升级恢复可失败。\n\n<details>\n<summary>查看原文（53行）</summary>\n\n```text\n  private async rollbackFrom(\n    plan: HarnessUpdatePlan,\n    expectedEntries: readonly ComposedEntry[],\n    expectedClientPackages: readonly string[],\n    failedUpdate: CommandResult | null,\n    profileDir: string,\n    profileName: string,\n    detail: string | null,\n    mutationSuspected: boolean,\n    failedProcessCleanup: HarnessUpdateResult['processCleanup'] = failedUpdate?.timedOut === true\n      ? failedUpdate.processCleanup === false ? 'failed' : 'succeeded'\n      : 'not-needed',\n  ): Promise<HarnessUpdateResult> {\n    if (!mutationSuspected) {\n      return this.snapshot('failed', 'harness-update-command-failed', plan, false, 'not-needed', detail, 'not-run', failedProcessCleanup)\n    }\n    // The previous version may already be intact even after a failed command.\n    const current = await this.options.harness.resolve()\n    if (current.status === 'managed' && current.version === plan.currentVersion) {\n      return this.snapshot('failed', 'harness-update-command-failed', plan, false, 'not-needed', detail, 'not-run', failedProcessCleanup)\n    }\n    try {\n      const args = ['install', '--global', '--prefix', plan.prefix as string, `@deepseek-ai/dsh@${plan.currentVersion as string}`]\n      const restore = await this.runCommand(this.options.npmBin, args, profileDir, this.timeoutMs)\n      if (restore.unavailable || restore.timedOut || restore.code !== 0) {\n        return this.snapshot('failed', 'harness-update-command-failed', plan, false, 'failed', `${detail ?? ''} ${restore.output ?? 'Rollback reinstall failed.'}`.trim(), 'not-run', failedProcessCleanup)\n      }\n      const restored = await verifyInstalledVersion(\n        this.options.harness,\n        this.runCommand,\n        profileDir,\n        this.timeoutMs,\n        plan.currentVersion as string,\n        plan.installRoot,\n      )\n      if (!restored.ok) {\n        return this.snapshot('failed', 'harness-update-command-failed', plan, false, 'failed', `${detail ?? ''} ${restored.detail ?? 'Rollback verification failed.'}`.trim(), 'not-run', failedProcessCleanup)\n      }\n      let canary: HarnessCanaryResult\n      try {\n        canary = await this.probeActivation({\n          profileDir,\n          profileName,\n          dshBin: restored.installation?.executablePath ?? '',\n          expectedEntries,\n          expectedClientPackages,\n          timeoutMs: this.canaryTimeoutMs,\n        })\n      } catch (error) {\n        return this.snapshot('failed', 'harness-update-command-failed', plan, false, 'failed', `${detail ?? ''} ${errorMessage(error)}`.trim(), 'failed', failedProcessCleanup)\n      }\n      if (canary.status !== 'passed') {\n        return this.snapshot('failed', 'harness-update-command-failed', plan, false, 'failed', `${detail ?? ''} ${canary.detail ?? 'Rollback canary failed.'}`.trim(), 'failed', failedProcessCleanup)\n```\n\n</details>\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：6fabe9d878f4aec7813377c042789c5f919455950541c4a6f730edfef2025915。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 8 | 575 | — | — | 6287 |\n| .js | source | 3 | 37319 | 26808 | 10660 | — |\n| .ts | source | 20 | 6182 | 5643 | 198 | — |\n| .tsx | source | 3 | 1236 | 1145 | 17 | — |\n| .ts | test | 12 | 2689 | 2536 | 58 | — |\n| .tsx | test | 3 | 481 | 448 | 15 | — |\n\n排除 4 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 社区目录 | 来源/版本与文档核对 | 元数据验证非代码背书 |\n| profile变更 | 安装/更新/删除/暂停 | 精确宿主、人工plan确认、真实写入 |\n| canary/恢复 | 兼容检查与失败状态 | 临时目录不等OS隔离 |\n| Harness升级 | npm全局精确升级与恢复 | 受安装方式/权限/网络约束 |\n\n## 工程亮点\n\n工程亮点是先plan后execute、短TTL/一次消费/指纹重检、来源和integrity绑定、profile锁目录的nonce拥有权与原子改名回收，及安装结果/进程清理/回滚分别报告。命令使用参数数组shell:false，避免把目标直接拼shell；但普通执行本身继承父环境，不能凭此称安全沙箱。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、src/index.ts、src/catalog.ts、src/operations.ts、src/canary.ts、src/harness-operations.ts、package.json、src/lock.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定index/catalog、profile操作计划与执行恢复、锁及canary环境/启动，另核Harness升级回滚关键路径；未运行CLI/canary，不全面审计客户端和全部依赖。\n- 下一步：进一步探讨可从假密钥、外目录写、分阶段失败与回滚网络中断的受控夹具入手，比较能力范围和真实恢复。\n",
         "metadata": {
             "repository": "AlexYin-Tongji/dsh-plugin-console",
             "repository_id": 1336720864,
-            "captured_at": "2026-10-21T07:59:55.451Z",
-            "window_start": "2026-09-21T07:59:55.451Z",
+            "captured_at": "2026-10-22T05:22:21.270Z",
+            "window_start": "2026-09-22T05:22:21.270Z",
             "stars": 1,
             "pushed_at": "2026-09-07T04:51:53Z",
             "issues": {
                 "open": 1,
                 "closed": 0,
                 "created_30d": 0,
-                "closed_30d": null,
+                "closed_30d": 0,
                 "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAlexYin-Tongji%2Fdsh-plugin-console%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T07%3A59%3A55.451Z..2026-10-21T07%3A59%3A55.451Z&per_page=1: Get \"https://api.github.com/search/issues?q=repo%3AAlexYin-Tongji%2Fdsh-plugin-console%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T07%3A59%3A55.451Z..2026-10-21T07%3A59%3A55.451Z&per_page=1\": net/http: TLS handshake timeout"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "dsh-plugin-console",
-                "captured_at": "2026-10-21T08:00:27.885Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 1126,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-plugin-console",
+                "captured_at": "2026-10-22T05:22:33.555Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 1111,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-plugin-console",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-08-17T08:24:19.828Z",
-                    "captured_at": "2026-10-21T08:00:27.885Z",
+                    "captured_at": "2026-10-22T05:22:33.555Z",
                     "source_url": "https://registry.npmjs.org/dsh-plugin-console",
                     "error": null,
                     "latest_version": "0.3.2",
@@ -421,14 +474,14 @@
             "repository": "AlexYin-Tongji/dsh-plugin-console",
             "path": "",
             "revision": "224e53959c1b03f83993b80f8438b49b17d820d6",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "2be2ccc8216e982dda96d6b393e1380f64f62e8687692a12bb33293a1da02a7b",
                 "code": "224e53959c1b03f83993b80f8438b49b17d820d6",
                 "maintenance": "8784f1ef84f98ff2957ab184a5f74c5d42377abc73d6c5ae097bd464c07095db"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

@@ -24,36 +24,94 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-03-github-1336582509-root-directory-0",
+                    "id": "2026-10-22-02-github-1336582509-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T03:44:25.251Z",
+                    "retrieved_at": "2026-10-22T08:03:01.864Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-03-github-1336582509-root-author",
+                    "id": "2026-10-22-02-github-1336582509-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/863683348/dsh-trend-radar/blob/238ccd97948617fe8dd92f9ee5c5c05360592026/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/863683348/dsh-trend-radar",
+                            "commit": "238ccd97948617fe8dd92f9ee5c5c05360592026",
+                            "path": "README.md",
+                            "content_sha256": "f6f3e03fe5fcfd726a18a29ed3da006d19fd2e218d6f4f9426d9f268e2fcb56e"
+                        }
+                    ],
                     "revision": "238ccd97948617fe8dd92f9ee5c5c05360592026",
-                    "captured_at": "2026-10-21T03:44:25.251Z",
-                    "summary": "采集插件目录与GitHub主题快照，分析新增、Star变化和分类分布，并输出趋势面板。",
-                    "artifact": "data/runs/2026-10-21-03/snapshots/863683348--dsh-trend-radar/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T08:03:01.864Z",
+                    "summary": "按需采集 GitHub dsh-plugin topic/awesome 快照并生成趋势报告、关键词雷达和实验性 Web 面板。",
+                    "artifact": "data/runs/2026-10-22-02/extra-worker-5-refill-01/revision-batch-01-adjudicated/revised/snapshots/863683348--dsh-trend-radar/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-03-github-1336582509-root-source",
+                    "id": "2026-10-22-02-github-1336582509-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/863683348/dsh-trend-radar/blob/238ccd97948617fe8dd92f9ee5c5c05360592026/lib/github.js",
+                    "url": "https://github.com/863683348/dsh-trend-radar/blob/238ccd97948617fe8dd92f9ee5c5c05360592026/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/863683348/dsh-trend-radar",
+                            "commit": "238ccd97948617fe8dd92f9ee5c5c05360592026",
+                            "path": "README.md",
+                            "content_sha256": "f6f3e03fe5fcfd726a18a29ed3da006d19fd2e218d6f4f9426d9f268e2fcb56e"
+                        },
+                        {
+                            "repository_url": "https://github.com/863683348/dsh-trend-radar",
+                            "commit": "238ccd97948617fe8dd92f9ee5c5c05360592026",
+                            "path": "README.zh.md",
+                            "content_sha256": "1fc5f02fe7242f2d3be841cbb84ab6ee1c989b9e32058890f7b0bd6fafc5d3c9"
+                        },
+                        {
+                            "repository_url": "https://github.com/863683348/dsh-trend-radar",
+                            "commit": "238ccd97948617fe8dd92f9ee5c5c05360592026",
+                            "path": "package.json",
+                            "content_sha256": "42a2df5d5c1f0e2f6a1ca825dcc60278a8ce9252e11899a45cb2562433d87f2b"
+                        },
+                        {
+                            "repository_url": "https://github.com/863683348/dsh-trend-radar",
+                            "commit": "238ccd97948617fe8dd92f9ee5c5c05360592026",
+                            "path": "lib/index.js",
+                            "content_sha256": "d9bb7c45825ff61953ba70d2c03c9ab72a3678ad365c109eef825cf825df367d"
+                        },
+                        {
+                            "repository_url": "https://github.com/863683348/dsh-trend-radar",
+                            "commit": "238ccd97948617fe8dd92f9ee5c5c05360592026",
+                            "path": "lib/github.js",
+                            "content_sha256": "b1f728e81f8ebd7290f830721ac645cf4b974b6dad4d4188f86bd61213473a03"
+                        },
+                        {
+                            "repository_url": "https://github.com/863683348/dsh-trend-radar",
+                            "commit": "238ccd97948617fe8dd92f9ee5c5c05360592026",
+                            "path": "lib/trends.js",
+                            "content_sha256": "a0baad51c02e8741c927e11b0466e7382b131063f1c4cf7a0834c54dd94264e1"
+                        },
+                        {
+                            "repository_url": "https://github.com/863683348/dsh-trend-radar",
+                            "commit": "238ccd97948617fe8dd92f9ee5c5c05360592026",
+                            "path": "lib/storage.js",
+                            "content_sha256": "d88d6bfbd6822448b7362d349579f34223e2b04a20270b55c09f6d9e31269254"
+                        },
+                        {
+                            "repository_url": "https://github.com/863683348/dsh-trend-radar",
+                            "commit": "238ccd97948617fe8dd92f9ee5c5c05360592026",
+                            "path": "lib/client.js",
+                            "content_sha256": "9a0274589e2936a90b0eaac774a2c272f84297165613dbf9dc646c12264d6050"
+                        }
+                    ],
                     "revision": "238ccd97948617fe8dd92f9ee5c5c05360592026",
-                    "captured_at": "2026-10-21T03:44:25.251Z",
-                    "summary": "核查 lib/github.js、lib/trends.js、lib/storage.js、lib/index.js；github.js只请求updated排序前100个topic仓库并读取awesome递归tree；storage.js追加JSONL，trends.js比较快照并汇总，index.js在工具调用且过期时采集。",
-                    "artifact": "data/runs/2026-10-21-03/snapshots/863683348--dsh-trend-radar/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T08:03:01.864Z",
+                    "summary": "核查 README.md、README.zh.md、package.json、lib/index.js、lib/github.js、lib/trends.js、lib/storage.js、lib/client.js；三个模型工具在调用时读/写本地 JSONL，计算快照差并向 session projection 发 dashboard；无后台定时。",
+                    "artifact": "data/runs/2026-10-22-02/extra-worker-5-refill-01/revision-batch-01-adjudicated/revised/snapshots/863683348--dsh-trend-radar/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+                        "静态审阅固定提交 README、Host、GitHub 采集、趋势/存储；未调用外部 API、目标插件或 Web。 普通安装、宿主加载及目标测试属本轮范围边界，具体机制/效果未知仍在逐题缺口保留。 父侧已接受条件性目录故障判断与 observe 建议；未执行目标复现。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +122,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "生态研究者想追踪插件供给变化，合格结果须有稳定样本范围和时间基线，不能把被搜索返回的条目数当完整生态规模。",
+                    "text": "想观察 DSH 插件新增、stars 变化和 awesome 收录趋势。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336582509-root-source"
+                        "2026-10-22-02-github-1336582509-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +133,16 @@
                             "fingerprint": "238ccd97948617fe8dd92f9ee5c5c05360592026"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:44:25.251Z",
+                    "reviewed_at": "2026-10-22T08:03:01.864Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "github.js只请求updated排序前100个topic仓库并读取awesome递归tree；storage.js追加JSONL，trends.js比较快照并汇总，index.js在工具调用且过期时采集。",
+                    "text": "三个模型工具在调用时读/写本地 JSONL，计算快照差并向 session projection 发 dashboard；无后台定时。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336582509-root-source"
+                        "2026-10-22-02-github-1336582509-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +151,16 @@
                             "fingerprint": "238ccd97948617fe8dd92f9ee5c5c05360592026"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:44:25.251Z",
+                    "reviewed_at": "2026-10-22T08:03:01.864Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+                    "text": "静态审阅固定提交 README、Host、GitHub 采集、趋势/存储；未调用外部 API、目标插件或 Web。 普通安装、宿主加载及目标测试属本轮范围边界，具体机制/效果未知仍在逐题缺口保留。 父侧已接受条件性目录故障判断与 observe 建议；未执行目标复现。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336582509-root-source"
+                        "2026-10-22-02-github-1336582509-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +169,16 @@
                             "fingerprint": "238ccd97948617fe8dd92f9ee5c5c05360592026"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:44:25.251Z",
+                    "reviewed_at": "2026-10-22T08:03:01.864Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "快照/订阅写本地dataDir，网络使用GitHub公开API，可选token；面板作者标experimental且待运行验证。",
+                    "text": "MIT；GitHub API 使用与速率需按服务规则，当前未实时核验。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336582509-root-source"
+                        "2026-10-22-02-github-1336582509-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +187,16 @@
                             "fingerprint": "238ccd97948617fe8dd92f9ee5c5c05360592026"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:44:25.251Z",
+                    "reviewed_at": "2026-10-22T08:03:01.864Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "首次需积累足够历史，日常API配额、JSONL存储和范围核对消耗时间；没有任务级研究收益实测，token凭据若配置需按部署管理。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | GitHub API 网络及可写 JSONL dataDir；API 配额/存储价格未知 | 先建数据目录，配置 awesome 源并记录榜单口径；耗时未知 | 新目录首轮 readSnapshots 可 ENOENT，需先处理 |\n| 持续使用 | 显式快照请求受 API 配额影响，JSONL 随批次增长；数值未知 | 定期调用并核新增/移除、类别映射和前100抽样；工时未知 | 没有后台自动采集或提醒 |\n| 失败恢复 | 限流/网络失败与重复采样可能追加请求和磁盘备份；成本未知 | 修复目录/回填快照、去重 watch 提醒、纠正误判；耗时未知 | 排序抖动和重复通知影响未做真实时间序列对照 |",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336582509-root-source"
+                        "2026-10-22-02-github-1336582509-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +205,16 @@
                             "fingerprint": "238ccd97948617fe8dd92f9ee5c5c05360592026"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:44:25.251Z",
+                    "reviewed_at": "2026-10-22T08:03:01.864Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "适合对限定样本做探索性观察。先核对采集范围、缺页和时间间隔，再解释差分；不要用前100滚动榜推断生态总量、移除或真实需求。",
+                    "text": "先隔离建立空目录并复核首轮成功，再核查报告采样分母与类别映射；勿把 top100 榜当全生态。详见[Q02](#research-q02)、[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336582509-root-source"
+                        "2026-10-22-02-github-1336582509-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +223,16 @@
                             "fingerprint": "238ccd97948617fe8dd92f9ee5c5c05360592026"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:44:25.251Z",
+                    "reviewed_at": "2026-10-22T08:03:01.864Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "让已采样条目的变化容易复看，但需要研究者补覆盖与因果解释，不能用仪表盘形式提升证据等级。",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 快照 | 按需采集 | 首轮失败 |\n| 报告 | 差分/排名 | 生态覆盖 |\n| 面板 | session projection | Web 兼容 |",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336582509-root-source"
+                        "2026-10-22-02-github-1336582509-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +241,16 @@
                             "fingerprint": "238ccd97948617fe8dd92f9ee5c5c05360592026"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:44:25.251Z",
+                    "reviewed_at": "2026-10-22T08:03:01.864Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "采集/解析/存储/分析分离便于补范围元数据；JSONL简单可审计。当前按仓库名称比较及缺少覆盖声明增加改名和滚动样本误判成本，复用应优先补身份与完整性。 源码依据：[lib/github.js](https://github.com/863683348/dsh-trend-radar/blob/238ccd97948617fe8dd92f9ee5c5c05360592026/lib/github.js)、[lib/trends.js](https://github.com/863683348/dsh-trend-radar/blob/238ccd97948617fe8dd92f9ee5c5c05360592026/lib/trends.js)、[lib/storage.js](https://github.com/863683348/dsh-trend-radar/blob/238ccd97948617fe8dd92f9ee5c5c05360592026/lib/storage.js)、[lib/index.js](https://github.com/863683348/dsh-trend-radar/blob/238ccd97948617fe8dd92f9ee5c5c05360592026/lib/index.js)。",
+                    "text": "Host 三工具读写 JSONL/订阅文件；GitHub API 查询 topic top100 与 awesome tree；projection 推给实验客户端。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336582509-root-source"
+                        "2026-10-22-02-github-1336582509-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +259,16 @@
                             "fingerprint": "238ccd97948617fe8dd92f9ee5c5c05360592026"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:44:25.251Z",
+                    "reviewed_at": "2026-10-22T08:03:01.864Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
-                    "topic": "technical_innovation",
-                    "basis": "interpretation",
-                    "text": "相对单次静态目录，增量是本地时间序列与可追溯差分，把新增和关注变化变成重复分析流程；不是完整生态监测，也不是用户需求测量。",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "把 GitHub/awesome 快照历史转成可查询趋势与 session 面板起点。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336582509-root-source"
+                        "2026-10-22-02-github-1336582509-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +277,16 @@
                             "fingerprint": "238ccd97948617fe8dd92f9ee5c5c05360592026"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:44:25.251Z",
+                    "reviewed_at": "2026-10-22T08:03:01.864Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
-                    "basis": "interpretation",
-                    "text": "“新增/移除/热度”是否可由这套快照推断？搜索限前100且按updated滚动，排名退出可能被当移除，新进入可能早已存在；awesome tree也未证明完整无截断。README开头说每小时但FAQ与源码为按工具触发，无后台timer，不能承诺连续观测。Star增速不等于采用增长。",
+                    "basis": "supported",
+                    "text": "数据目录不存在且首次直接 collect 时，先读后建目录可使快照受 ENOENT 阻断；top100 更新排序不是全生态，详见[Q02](#research-q02)、[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336582509-root-source"
+                        "2026-10-22-02-github-1336582509-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +295,16 @@
                             "fingerprint": "238ccd97948617fe8dd92f9ee5c5c05360592026"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:44:25.251Z",
+                    "reviewed_at": "2026-10-22T08:03:01.864Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "unverified",
-                    "text": "由滚动样本与时间差分推导，可保存total_count、incomplete/truncated状态和稳定repo ID，只对完整已覆盖样本判移除，新增区分首次发现与首次发布。未验证假设是显著减少伪趋势。用固定集合交换搜索顺序的样本检验，若新增/移除仍随排序变化则否定。",
+                    "text": "修复空目录初始化、稳定 cohort/分页及类别映射和 watch 游标，才能形成可靠趋势雷达；待验证。详见[Q02](#research-q02)、[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336582509-root-source"
+                        "2026-10-22-02-github-1336582509-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +313,15 @@
                             "fingerprint": "238ccd97948617fe8dd92f9ee5c5c05360592026"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:44:25.251Z",
+                    "reviewed_at": "2026-10-22T08:03:01.864Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T03:44:25.251Z",
+            "last_checked_at": "2026-10-22T08:03:01.864Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "238ccd97948617fe8dd92f9ee5c5c05360592026",
-                "reviewed_at": "2026-10-21T03:44:25.251Z",
+                "reviewed_at": "2026-10-22T08:03:01.864Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -275,61 +333,61 @@
                 "technical": {
                     "criteria": {
                         "novelty": 9,
-                        "mechanism": 8,
+                        "mechanism": 15,
                         "transferability": 10,
-                        "simplification": 8
+                        "simplification": 4
                     },
-                    "rationale": "novelty快照趋势常规适配小档；mechanism简单差分小档；transferability分层分析半档；simplification本地重复分析半档。",
+                    "rationale": "novelty：参照一次性 GitHub 搜索，历史快照/差分与 projection 组合（Q01）带来有限集成增量，novelty 9。\nmechanism：参照直接列表，三个工具、JSONL 与差分计算形成机制（Q01/Q03）；初次读目录错误和 top100 口径限制，mechanism 15。\ntransferability：参照 DSH 专用面板，快照/差分模式可迁移至其他目录雷达（Q01）；类别映射和游标缺口使直接复用有限，transferability 10。\nsimplification：参照人工抓取并对比，工具封装读写与报告（Q01）；首轮仍需手建目录，simplification 4。",
                     "basis": "interpretation",
-                    "score": 35,
+                    "score": 38,
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336582509-root-source"
+                        "2026-10-22-02-github-1336582509-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
                         "workflow": 18,
                         "delivery": 8,
-                        "reach": 5,
-                        "economics": 4
+                        "reach": 10,
+                        "economics": 0
                     },
-                    "rationale": "workflow持续研究记录半档；delivery趋势报告小档；reach生态研究者小档；economics本地复用未实测小档。",
+                    "rationale": "workflow：参照人工保存 GitHub 检索，按需快照和趋势报告整合流程（Q01）；非自动监测，workflow 18。\ndelivery：参照临时手工榜单，JSONL 可保留历史（Q01）；首轮缺口与口径限制交付，delivery 8。\nreach：参照单仓库监视，GitHub topic 与 awesome 两源组合（Q01）；前100且缺 topic 不覆盖全生态，reach 10。\neconomics：参照人工定期检索，可能减少差分操作（Q01）；没有同条件工时/API 消耗对照，未识别可核经济增量，economics 0。",
                     "basis": "interpretation",
-                    "score": 35,
+                    "score": 36,
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336582509-root-source"
+                        "2026-10-22-02-github-1336582509-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "observe",
-                "reason": "限定样本时间序列有价值，但updated前100滚动集合会伪造新增移除且按调用采集；先稳定分页和基线再采用趋势结论。",
+                "reason": "先修复空目录首轮启动及 top100/类别口径，再作正式趋势依据；当前仅隔离体验。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "生态供给变化研究需要稳定样本与时点交付。"
+                        "rationale": "生态趋势需求清晰。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "本地JSONL差分比单次目录可追踪，但当前窗口不稳定。"
+                        "rationale": "快照历史/报告/面板一体。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "GitHub前100与无后台timer源码明确，不能支撑连续全生态观测。"
+                        "rationale": "源码可核，真实面板未验。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "需历史积累和API配额，补覆盖与错误趋势解释增加人力。"
+                        "score": 5,
+                        "rationale": "GitHub API、历史存储和口径修正。"
                     }
                 },
-                "score": 59,
+                "score": 54,
                 "revision": "238ccd97948617fe8dd92f9ee5c5c05360592026",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T08:03:01.864Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-03-github-1336582509-root-source"
+                    "2026-10-22-02-github-1336582509-root-source"
                 ],
                 "dependencies": [
                     {
@@ -354,89 +412,61 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T03:36:14Z",
-            "analysis_sha256": "5c9269e57d998422b45912cf96a31495f17e761053b7f2d7fd5b39737c30e4e9"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "85dcd65791339c42d326e81d6971298473454456c1bf4e643468abd310e0b2ef"
         },
         "publication.metadata": "data/plugins/863683348--dsh-trend-radar/META.json",
         "publication.summaries": {
-            "text": "采集插件目录与GitHub主题快照，分析新增、Star变化和分类分布，并输出趋势面板。",
+            "text": "按需采集 GitHub dsh-plugin topic/awesome 快照并生成趋势报告、关键词雷达和实验性 Web 面板。",
             "revision": "238ccd97948617fe8dd92f9ee5c5c05360592026",
             "source_url": "https://github.com/863683348/dsh-trend-radar/blob/238ccd97948617fe8dd92f9ee5c5c05360592026/README.md"
         },
         "publication.capabilities": {
             "revision": "238ccd97948617fe8dd92f9ee5c5c05360592026",
             "items": {
-                "模型工具": "trend_snapshot、trend_report、trend_watch采样与分析。",
-                "界面": "实验性会话投影趋势面板。"
-            }
+                "模型工具": "trend_snapshot、trend_report、trend_watch",
+                "界面": "experimental trendBoard Web 面板"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 快照 | 历史数据 | 首轮空目录失败 |\n| 报告/雷达 | 差分分析 | top100/重复提醒 |\n| Web 投影 | 只读面板 | 未运行验证 |"
         },
         "publication.advice": {
             "revision": "238ccd97948617fe8dd92f9ee5c5c05360592026",
-            "text": "适合对限定样本做探索性观察。先核对采集范围、缺页和时间间隔，再解释差分；不要用前100滚动榜推断生态总量、移除或真实需求。"
+            "text": "先隔离建立空目录并复核首轮成功，再核查报告采样分母与类别映射；勿把 top100 榜当全生态。详见[Q02](#research-q02)、[Q03](#research-q03)。"
         },
         "registry": "data/plugins/863683348--dsh-trend-radar",
-        "reports": "# dsh-trend-radar\n\n> 采集插件目录与GitHub主题快照，分析新增、Star变化和分类分布，并输出趋势面板。\n\n## 使用建议\n\n适合对限定样本做探索性观察。先核对采集范围、缺页和时间间隔，再解释差分；不要用前100滚动榜推断生态总量、移除或真实需求。\n\n核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。\n\n源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。\n\n## 洞察短评\n\n- **用途**：生态研究者想追踪插件供给变化，合格结果须有稳定样本范围和时间基线，不能把被搜索返回的条目数当完整生态规模。\n- **亮点**：相对单次静态目录，增量是本地时间序列与可追溯差分，把新增和关注变化变成重复分析流程；不是完整生态监测，也不是用户需求测量。\n- **思考**：“新增/移除/热度”是否可由这套快照推断？搜索限前100且按updated滚动，排名退出可能被当移除，新进入可能早已存在；awesome tree也未证明完整无截断。README开头说每小时但FAQ与源码为按工具触发，无后台timer，不能承诺连续观测。Star增速不等于采用增长。\n- **建议**：由滚动样本与时间差分推导，可保存total_count、incomplete/truncated状态和稳定repo ID，只对完整已覆盖样本判移除，新增区分首次发现与首次发布。未验证假设是显著减少伪趋势。用固定集合交换搜索顺序的样本检验，若新增/移除仍随排序变化则否定。\n\n## 场景与替代办法\n\n生态研究者想追踪插件供给变化，合格结果须有稳定样本范围和时间基线，不能把被搜索返回的条目数当完整生态规模。\n\n手动保存目录与GitHub数据同样可研究；插件便于重复分析但不会自动消除采样偏差。\n\n## 能力清单\n\n- **模型工具**：trend_snapshot、trend_report、trend_watch采样与分析。\n- **界面**：实验性会话投影趋势面板。\n\n## 依赖与流程\n\n必要为GitHubAPI与本地FS，效果依赖稳定采集窗口、完整分页、目录结构和足够历史；实验UI依赖宿主projection。\n\n手动调用snapshot或report，过期时采集并追加，比较历史后出报告/订阅命中；未调用时不自动补观测。\n\n## 成本与效果\n\n首次需积累足够历史，日常API配额、JSONL存储和范围核对消耗时间；没有任务级研究收益实测，token凭据若配置需按部署管理。\n\n让已采样条目的变化容易复看，但需要研究者补覆盖与因果解释，不能用仪表盘形式提升证据等级。\n\n## 核心贡献\n\n相对单次静态目录，增量是本地时间序列与可追溯差分，把新增和关注变化变成重复分析流程；不是完整生态监测，也不是用户需求测量。\n\n## 关键质疑\n\n“新增/移除/热度”是否可由这套快照推断？搜索限前100且按updated滚动，排名退出可能被当移除，新进入可能早已存在；awesome tree也未证明完整无截断。README开头说每小时但FAQ与源码为按工具触发，无后台timer，不能承诺连续观测。Star增速不等于采用增长。\n\n\n## 工程亮点\n\n采集/解析/存储/分析分离便于补范围元数据；JSONL简单可审计。当前按仓库名称比较及缺少覆盖声明增加改名和滚动样本误判成本，复用应优先补身份与完整性。 源码依据：[lib/github.js](https://github.com/863683348/dsh-trend-radar/blob/238ccd97948617fe8dd92f9ee5c5c05360592026/lib/github.js)、[lib/trends.js](https://github.com/863683348/dsh-trend-radar/blob/238ccd97948617fe8dd92f9ee5c5c05360592026/lib/trends.js)、[lib/storage.js](https://github.com/863683348/dsh-trend-radar/blob/238ccd97948617fe8dd92f9ee5c5c05360592026/lib/storage.js)、[lib/index.js](https://github.com/863683348/dsh-trend-radar/blob/238ccd97948617fe8dd92f9ee5c5c05360592026/lib/index.js)。\n\n## 未来设计假设（未验证）\n\n由滚动样本与时间差分推导，可保存total_count、incomplete/truncated状态和稳定repo ID，只对完整已覆盖样本判移除，新增区分首次发现与首次发布。未验证假设是显著减少伪趋势。用固定集合交换搜索顺序的样本检验，若新增/移除仍随排序变化则否定。\n\n构造相同仓库集合不同搜索排序、改名、目录tree截断与间隔缺失，检查报告是否区分真实变化与观测变化；对完整分页基线核对误差。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：35cf711e95e15e5e6287c3124f20c3a3649f811b43c84aa368544baffe72d8bc。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 148 | — | — | 1532 |\n| .js | source | 5 | 719 | 565 | 114 | — |\n| .mjs | source | 1 | 19 | 14 | 4 | — |\n| .mjs | test | 1 | 149 | 131 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[863683348/dsh-trend-radar](https://github.com/863683348/dsh-trend-radar)\n- **版本号**：0.2.1（[固定提交 238ccd97](https://github.com/863683348/dsh-trend-radar/tree/238ccd97948617fe8dd92f9ee5c5c05360592026)）\n- **版本日期**：2026-09-11（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：作者 README、包清单、源码路径 lib/github.js、lib/trends.js、lib/storage.js、lib/index.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。\n- 下一步：构造相同仓库集合不同搜索排序、改名、目录tree截断与间隔缺失，检查报告是否区分真实变化与观测变化；对完整分页基线核对误差。\n",
+        "reports": "# dsh-trend-radar\n\n> 按需采集 GitHub dsh-plugin topic/awesome 快照并生成趋势报告、关键词雷达和实验性 Web 面板。\n\n## 研究范围\n\n- **仓库**：[863683348/dsh-trend-radar](https://github.com/863683348/dsh-trend-radar)\n- **版本号**：0.2.1（[固定提交 238ccd97948617fe8dd92f9ee5c5c05360592026](https://github.com/863683348/dsh-trend-radar/tree/238ccd97948617fe8dd92f9ee5c5c05360592026)）\n- **版本日期**：2026-09-11（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n源码支持按需趋势分析；仅在数据目录不存在且首次直接调用 collect/快照、先 readSnapshots 后 appendSnapshot 的路径下会受 ENOENT 阻断。已有目录或先写 watch 时未必触发；未执行复现。top100/类别默认值限制报告口径。\n\n## 洞察短评\n\n- **用途**：想观察 DSH 插件新增、stars 变化和 awesome 收录趋势。\n- **亮点**：把 GitHub/awesome 快照历史转成可查询趋势与 session 面板起点。详见[Q01](#research-q01)。\n- **思考**：数据目录不存在且首次直接 collect 时，先读后建目录可使快照受 ENOENT 阻断；top100 更新排序不是全生态，详见[Q02](#research-q02)、[Q03](#research-q03)。\n- **建议**：修复空目录初始化、稳定 cohort/分页及类别映射和 watch 游标，才能形成可靠趋势雷达；待验证。详见[Q02](#research-q02)、[Q03](#research-q03)。\n\n采用建议：先隔离建立空目录并复核首轮成功，再核查报告采样分母与类别映射；勿把 top100 榜当全生态。详见[Q02](#research-q02)、[Q03](#research-q03)。\n\n## 核心贡献\n\n把 GitHub/awesome 快照历史转成可查询趋势与 session 面板起点。详见[Q01](#research-q01)。\n\n## 关键质疑\n\n数据目录不存在且首次直接 collect 时，先读后建目录可使快照受 ENOENT 阻断；top100 更新排序不是全生态，详见[Q02](#research-q02)、[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n修复空目录初始化、稳定 cohort/分页及类别映射和 watch 游标，才能形成可靠趋势雷达；待验证。详见[Q02](#research-q02)、[Q03](#research-q03)。\n\n空目录首次调用、top100 排序波动、类别映射与重复 watch check 的隔离测试；Web 面板另验。\n\n## 场景与替代办法\n\n想观察 DSH 插件新增、stars 变化和 awesome 收录趋势。\n\n人工定时抓 GitHub 搜索并保存快照；插件提供按需读写与差分。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| GitHub API 网络与配额 | 新快照必需 | 检索 topic 与 awesome | 只能读旧数据 |\n| 可写 dataDir | 历史/首轮必需 | JSONL 快照与 watch 状态 | 新目录首轮会 ENOENT |\n| DSH Web projection | 仅面板必需 | 可视化最近快照 | 工具文字仍可能可用 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 初始化 | 建空 dataDir | 首轮可采集 |\n| 快照 | 间隔采两次 | 差分可查 |\n| 核对 | 对照 GitHub/awesome | 口径清晰 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | GitHub API 网络及可写 JSONL dataDir；API 配额/存储价格未知 | 先建数据目录，配置 awesome 源并记录榜单口径；耗时未知 | 新目录首轮 readSnapshots 可 ENOENT，需先处理 |\n| 持续使用 | 显式快照请求受 API 配额影响，JSONL 随批次增长；数值未知 | 定期调用并核新增/移除、类别映射和前100抽样；工时未知 | 没有后台自动采集或提醒 |\n| 失败恢复 | 限流/网络失败与重复采样可能追加请求和磁盘备份；成本未知 | 修复目录/回填快照、去重 watch 提醒、纠正误判；耗时未知 | 排序抖动和重复通知影响未做真实时间序列对照 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 快照 | 按需采集 | 首轮失败 |\n| 报告 | 差分/排名 | 生态覆盖 |\n| 面板 | session projection | Web 兼容 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**核实首轮快照是否可用、趋势口径、订阅是否自动推送及 experimental 面板边界。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 三个工具和面板实际如何工作？\n\n**研究主题：**场景与需求、贡献与相对优势、功能与机制\n\n#### 完整回答\n\n插件注册 trend_snapshot、trend_report、trend_watch；快照工具按 staleHours 窗口在显式调用时采 GitHub topic 搜索与 awesome 列表，写 JSONL；报告基于本地历史计算 star 变化和新收录，watch 持久化关键词并在 check 时比较最新两次快照。session projection 可把最近一次快照/报告映射到实验性 Web 面板，并在新 turn 清空。README 开头的“每小时快照”是新鲜度阈值，并无后台定时器；watch 也不是持续自动通知。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-16](https://github.com/863683348/dsh-trend-radar/blob/238ccd97948617fe8dd92f9ee5c5c05360592026/README.md#L1-L16)\n\n作者列三工具和趋势目标。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n# dsh-trend-radar — 生态行情面板 (Ecosystem trend dashboard)\n\n**别人是目录，你是仪表盘。** 每小时对 `dsh-plugin` topic 与 awesome-dsh-plugin 收录列表做一次快照（本地 JSONL 历史），然后从**时间维度**分析趋势：周报、新插件雷达、star 增速榜、类别热度、收录覆盖率 —— 并带一个 experimental 的 **Web 面板**（增长曲线、类别热度、Top 榜单）直接叠在会话输入框上方。\n\n## 为什么需要它\n\n- 现有市场/目录都是\"当前时刻\"的静态视图；**趋势是空白**——没有人在看\"这周新增了什么、谁在涨、哪个类别在热\"。\n- 快照只占本地磁盘（每条约几十 KB JSONL），分析全部本地完成。\n\n## 工具\n\n| 工具 | 作用 |\n| --- | --- |\n| `trend_snapshot` | 立即采集一次快照（GitHub `topic:dsh-plugin` 搜索 + awesome 收录树），追加到本地历史；窗口期内自动跳过（`force: true` 强制） |\n| `trend_report` | 分析历史 → 周报：新增插件、star 增速榜、类别热度、awesome 覆盖率；支持 `days` 窗口与 `keywords` 过滤 |\n| `trend_watch` | 关键词订阅雷达：`add`/`remove`/`list`/`check`——新品命中或 star 突增（≥`surgeStars`）即报 |\n```\n\n</details>\n\n**依据 2 · 作者声明**：[README.md:65-70](https://github.com/863683348/dsh-trend-radar/blob/238ccd97948617fe8dd92f9ee5c5c05360592026/README.md#L65-L70)\n\nFAQ 明言无后台 timer。\n\n```text\n## FAQ\n\n- **How often should I snapshot?** The `trend_snapshot` tool auto-skips inside the `staleHours` window (default 1h). There is no background timer; collection happens when a tool runs and the history is stale.\n- **Rate limits?** Anonymous GitHub search is 10 req/min / 60 req/h — plenty for hourly snapshots. Set `githubTokenEnv` (e.g. `GH_T`) to a token for 5000 req/h.\n- **Where is the data?** `dataDir` (default `.dsh/trends`): append-only `snapshots-YYYY-MM-DD.jsonl` plus `watch.json`. Delete files to reset history.\n- **The Web UI dashboard?** On the roadmap — same experimental client-panel path as dsh-plugin-focus.\n```\n\n**依据 3 · 源码核查**：[lib/index.js:74-124](https://github.com/863683348/dsh-trend-radar/blob/238ccd97948617fe8dd92f9ee5c5c05360592026/lib/index.js#L74-L124)\n\n快照只在工具执行时采集。\n\n<details>\n<summary>查看原文（51行）</summary>\n\n```text\n  ctx.tools.register(defineTool({\n    name: \"trend_snapshot\",\n    description: \"Collect a fresh ecosystem snapshot of the dsh-plugin topic (GitHub search, top 100 repos) plus the awesome-dsh-plugin listing, append it to the local trend history, and report what changed since the previous snapshot. Run when the user asks for current ecosystem state or when trend data may be stale.\",\n    parameters: {\n      force: { type: \"boolean\", description: \"Collect even when a fresh snapshot already exists (default false — auto-skip within the stale window).\" },\n    },\n    output: {\n      schema: {\n        type: \"object\",\n        additionalProperties: false,\n        properties: {\n          ts: { type: \"integer\", required: true },\n          total: { type: \"integer\", required: true },\n          awesome: { type: \"integer\", required: true },\n          added: { type: \"array\", required: true, items: { type: \"string\" } },\n          removed: { type: \"array\", required: true, items: { type: \"string\" } },\n          text: { type: \"string\", required: true },\n        },\n      },\n      render: (_args, value) => [{ type: \"text\", text: value.text }],\n    },\n    execute: async (args, exec) => {\n      const dir = await dirFor(exec);\n      const history = readSnapshots(dir);\n      const latest = history[history.length - 1];\n      const fresh = !args.force && latest !== undefined && Date.now() - latest.ts < staleHours * 3600_000;\n      let added = [];\n      let removed = [];\n      let total = 0;\n      let awesomeCount = 0;\n      let ts = latest?.ts ?? 0;\n      let text;\n      if (fresh) {\n        total = (latest.repos ?? []).length;\n        awesomeCount = (latest.awesome ?? []).length;\n        text = \"Snapshot is fresh (\" + new Date(latest.ts).toISOString() + \", \" + total + \" repos) — use force:true to re-collect.\";\n      } else {\n        const snap = await collectSnapshot(token);\n        appendSnapshot(dir, snap);\n        history.push(snap);\n        const delta = history.length >= 2 ? deltaBetween(history[history.length - 2], snap) : { added: snap.repos, removed: [] };\n        added = delta.added.map((r) => r.name);\n        removed = delta.removed.map((r) => r.name);\n        total = snap.repos.length;\n        awesomeCount = snap.awesome.length;\n        ts = snap.ts;\n        text = \"Collected snapshot \" + new Date(snap.ts).toISOString() + \": \" + total + \" repos (\" + added.length + \" new), \" + awesomeCount + \" listed on awesome-dsh-plugin.\";\n      }\n      await emitDashboard(exec, 7);\n      return { ts, total, awesome: awesomeCount, added, removed, text };\n    },\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:179-229](https://github.com/863683348/dsh-trend-radar/blob/238ccd97948617fe8dd92f9ee5c5c05360592026/lib/index.js#L179-L229)\n\nwatch list/add/remove/check。\n\n<details>\n<summary>查看原文（51行）</summary>\n\n```text\n  ctx.tools.register(defineTool({\n    name: \"trend_watch\",\n    description: \"Manage keyword subscriptions and check them against the newest snapshot delta: new plugins matching a keyword, and star surges (>= configurable threshold). Use to alert on new plugins or rising stars in a specific area (e.g. wechat, notification, security).\",\n    parameters: {\n      action: { type: \"string\", required: true, enum: [\"list\", \"add\", \"remove\", \"check\"], description: \"list subscriptions, add a keyword, remove a keyword, or check the latest delta against all subscriptions.\" },\n      keyword: { type: \"string\", description: \"Keyword for add/remove (lowercased, trimmed).\" },\n    },\n    output: {\n      schema: {\n        type: \"object\",\n        additionalProperties: false,\n        properties: {\n          keywords: { type: \"array\", required: true, items: { type: \"string\" } },\n          matches: { type: \"array\", required: true, items: { type: \"object\", additionalProperties: false, properties: { name: { type: \"string\", required: true }, keyword: { type: \"string\", required: true }, stars: { type: \"integer\", required: true }, created: { oneOf: [{ type: \"integer\" }, { type: \"null\" }], required: true }, desc: { type: \"string\", required: true } } } },\n          text: { type: \"string\", required: true },\n        },\n      },\n      render: (_args, value) => [{ type: \"text\", text: value.text }],\n    },\n    execute: async (args, exec) => {\n      const dir = await dirFor(exec);\n      let keywords = readWatch(dir);\n      const action = args.action;\n      if (action === \"add\" || action === \"remove\") {\n        const k = normalizeKeyword(args.keyword ?? \"\");\n        if (k.length === 0) throw new Error(\"trend_watch: keyword required for \" + action);\n        if (action === \"add\" && !keywords.includes(k)) keywords.push(k);\n        if (action === \"remove\") keywords = keywords.filter((x) => x !== k);\n        writeWatch(dir, keywords);\n        return { keywords, matches: [], text: \"Watch keywords (\" + action + \" \" + (args.keyword ?? \"\") + \"): \" + keywords.join(\", \") };\n      }\n      const history = readSnapshots(dir);\n      let matches = [];\n      let text;\n      if (action === \"list\") {\n        text = \"Watch keywords: \" + (keywords.length === 0 ? \"(none)\" : keywords.join(\", \"));\n      } else {\n        if (history.length < 2) {\n          text = \"Need at least 2 snapshots to check — run trend_snapshot first.\";\n        } else {\n          const delta = deltaBetween(history[history.length - 2], history[history.length - 1]);\n          const newMatches = filterByKeywords(delta.added, keywords);\n          const surgeMatches = filterByKeywords(delta.starDeltas.filter((d) => d.delta >= surgeStars).map((d) => ({ name: d.name, desc: \"+\" + d.delta + \" stars\", topics: [] })), keywords);\n          matches = [...newMatches, ...surgeMatches];\n          text = \"Checked \" + keywords.length + \" keyword\" + (keywords.length === 1 ? \"\" : \"s\") + \": \" + matches.length + \" match\" + (matches.length === 1 ? \"\" : \"es\") + \" in the latest delta.\";\n        }\n      }\n      return { keywords, matches, text };\n    },\n    presentCall: (args) => ({ card: \"generic\", title: \"Trend watch: \" + (args.action ?? \"\"), kind: \"other\", rawInput: args }),\n  }));\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/index.js:231-259](https://github.com/863683348/dsh-trend-radar/blob/238ccd97948617fe8dd92f9ee5c5c05360592026/lib/index.js#L231-L259)\n\nsession projection 面板。\n\n<details>\n<summary>查看原文（29行）</summary>\n\n```text\n  // Session projection: the latest dashboard payload, for the web panel\n  // (useProjection('trendBoard')). Emitted by trend_report / trend_snapshot;\n  // reset at each turn start so stale snapshots never linger.\n  ctx.inject([\"sessionProjections\"], (projectionCtx) => {\n    projectionCtx.sessionProjections.register({\n      key: \"trendBoard\",\n      schema: zod.union([\n        zod.object({\n          ts: zod.number(),\n          snapshots: zod.number(),\n          total: zod.number(),\n          awesomeCoverage: zod.number(),\n          series: zod.array(zod.object({ ts: zod.number(), count: zod.number() })),\n          newPlugins: zod.array(zod.object({ name: zod.string(), stars: zod.number(), desc: zod.string(), category: zod.string() })),\n          starGainers: zod.array(zod.object({ name: zod.string(), delta: zod.number(), stars: zod.number() })),\n          categoryHeat: zod.array(zod.object({ category: zod.string(), count: zod.number() })),\n        }),\n        zod.null(),\n      ]),\n      init: () => null,\n      apply: (state, event) => {\n        if (event.type === \"trend/update\") return event.data;\n        if (event.type === \"turn/start\") return null;\n        return state;\n      },\n      view: (state) => state,\n      stateVersion: 1,\n    });\n  });\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 首次使用能否生成快照？\n\n**研究主题：**工程质量与复用、缺陷与关键质疑\n\n#### 完整回答\n\ndirFor 只解析路径；在数据目录不存在、首次直接调用 trend_snapshot 的 collect 路径时，先执行 readSnapshots(dir) 的 readdirSync，appendSnapshot 的 mkdirSync 还未运行，因此可在外部请求前遭 ENOENT 阻断。若目录已存在，或先通过 watch 写入目录，此条件未必成立；这是固定源码的条件性判断，未执行首轮复现。修复可在 readSnapshots 处理 ENOENT 或在首次读前初始化目录。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:95-113](https://github.com/863683348/dsh-trend-radar/blob/238ccd97948617fe8dd92f9ee5c5c05360592026/lib/index.js#L95-L113)\n\n快照先读历史再追加。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n    execute: async (args, exec) => {\n      const dir = await dirFor(exec);\n      const history = readSnapshots(dir);\n      const latest = history[history.length - 1];\n      const fresh = !args.force && latest !== undefined && Date.now() - latest.ts < staleHours * 3600_000;\n      let added = [];\n      let removed = [];\n      let total = 0;\n      let awesomeCount = 0;\n      let ts = latest?.ts ?? 0;\n      let text;\n      if (fresh) {\n        total = (latest.repos ?? []).length;\n        awesomeCount = (latest.awesome ?? []).length;\n        text = \"Snapshot is fresh (\" + new Date(latest.ts).toISOString() + \", \" + total + \" repos) — use force:true to re-collect.\";\n      } else {\n        const snap = await collectSnapshot(token);\n        appendSnapshot(dir, snap);\n        history.push(snap);\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/storage.js:9-32](https://github.com/863683348/dsh-trend-radar/blob/238ccd97948617fe8dd92f9ee5c5c05360592026/lib/storage.js#L9-L32)\n\nreadSnapshots 直接 readdirSync，mkdir 只在 append。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n/** Read all snapshots (oldest first), tolerating a missing/corrupt tail. */\nexport function readSnapshots(dir) {\n  const files = readdirSync(dir).filter((f) => f.endsWith(\".jsonl\")).sort();\n  const out = [];\n  for (const f of files) {\n    for (const line of readFileSync(join(dir, f), \"utf8\").split(/\\r?\\n/)) {\n      if (line.trim().length === 0) continue;\n      try {\n        out.push(JSON.parse(line));\n      } catch {\n        /* skip corrupt line */\n      }\n    }\n  }\n  return out;\n}\n\n/** Append one snapshot to today's jsonl file (created on demand). */\nexport function appendSnapshot(dir, snapshot) {\n  mkdirSync(dir, { recursive: true });\n  const date = new Date(snapshot.ts).toISOString().slice(0, 10);\n  const file = join(dir, \"snapshots-\" + date + \".jsonl\");\n  writeFileSync(file, JSON.stringify(snapshot) + \"\\n\", { flag: \"a\" });\n  return file;\n```\n\n</details>\n\n**依据 3 · 作者声明**：[README.md:24-29](https://github.com/863683348/dsh-trend-radar/blob/238ccd97948617fe8dd92f9ee5c5c05360592026/README.md#L24-L29)\n\n默认 dataDir。\n\n```text\n## 配置\n\n| 键 | 默认 | 说明 |\n| --- | --- | --- |\n| `dataDir` | `.dsh/trends` | 快照与订阅的存储目录（相对宿主 fs cwd） |\n| `staleHours` | `1` | 快照新鲜度窗口（小时） |\n```\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 榜单/类别热度能否反映整个生态？\n\n**研究主题：**效果与总成本、依赖、兼容与流程、采用判断、新假设与验证\n\n#### 完整回答\n\n采集只取 GitHub search 按 updated 排序的前 100 个 topic:dsh-plugin 仓库；超过 100 或排序波动会让老仓库进出集合，deltaBetween 可把它们误当新增/移除，也遗漏不带 topic 的插件。computeReport 的 categoryByName 默认空映射，调用方未传类别表，故类别热度基本全落在 unlisted；awesomeCoverage 的分母是这 100 个搜索结果，而非全生态。watch check 只看最新两条快照，无已报告游标，多次 check 可重复同一提醒。采用时应明示采样口径、固定覆盖源与去重游标，且先确保数据目录存在。\n\n成本分期：首次使用涉及GitHub API 网络及可写 JSONL dataDir；API 配额/存储价格未知，人工需先建数据目录，配置 awesome 源并记录榜单口径；耗时未知；持续使用涉及显式快照请求受 API 配额影响，JSONL 随批次增长；数值未知，人工需定期调用并核新增/移除、类别映射和前100抽样；工时未知；失败恢复涉及限流/网络失败与重复采样可能追加请求和磁盘备份；成本未知，人工需修复目录/回填快照、去重 watch 提醒、纠正误判；耗时未知。金额、频次、实际耗时均未有同条件证据，不能填0或推算单位收益。\n\n创新假设推导：Q02 读目录在创建前执行，Q03 只取按 updated 排序的前100且 watch 无已报告游标；相对当前按需快照，先做空目录初始化、稳定分页/cohort 与通知游标，可提高首轮成功率和趋势解释稳定性。代价是分页 API 配额、状态迁移与持续维护，不等于覆盖全生态。最小证伪：用空 dataDir、超过100条的两批重排假数据和重复 check，要求首轮可写、恒定集合不伪造新增且相同事件只报一次；任一失败则假设不成立。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/github.js:32-37](https://github.com/863683348/dsh-trend-radar/blob/238ccd97948617fe8dd92f9ee5c5c05360592026/lib/github.js#L32-L37)\n\ntop 100 updated 排序。\n\n```text\n/** Fetch the newest 100 `topic:dsh-plugin` repos. */\nexport async function fetchTopicRepos(token) {\n  const url = BASE + \"/search/repositories?q=topic:dsh-plugin&sort=updated&order=desc&per_page=100\";\n  const res = await fetch(url, { headers: ghHeaders(token) });\n  if (!res.ok) throw new Error(\"GitHub search failed: HTTP \" + res.status);\n  return parseSearchItems(await res.json());\n```\n\n**依据 2 · 源码核查**：[lib/trends.js:11-23](https://github.com/863683348/dsh-trend-radar/blob/238ccd97948617fe8dd92f9ee5c5c05360592026/lib/trends.js#L11-L23)\n\n集合差与 star 变化。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n/** Diff two consecutive snapshots. */\nexport function deltaBetween(prev, cur) {\n  const prevStars = new Map((prev.repos ?? []).map((r) => [r.name, r.stars ?? 0]));\n  const curRepos = new Map((cur.repos ?? []).map((r) => [r.name, r]));\n  const added = (cur.repos ?? []).filter((r) => !prevStars.has(r.name));\n  const removed = (prev.repos ?? []).filter((r) => !curRepos.has(r.name));\n  const starDeltas = (cur.repos ?? [])\n    .filter((r) => prevStars.has(r.name))\n    .map((r) => ({ name: r.name, delta: (r.stars ?? 0) - (prevStars.get(r.name) ?? 0), stars: r.stars ?? 0 }))\n    .filter((d) => d.delta !== 0)\n    .sort((a, b) => b.delta - a.delta);\n  return { added, removed, starDeltas };\n}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/trends.js:42-95](https://github.com/863683348/dsh-trend-radar/blob/238ccd97948617fe8dd92f9ee5c5c05360592026/lib/trends.js#L42-L95)\n\n类别默认 unlisted、覆盖率分母。\n\n<details>\n<summary>查看原文（54行）</summary>\n\n```text\nexport function computeReport(snapshots, opts = {}) {\n  const periodDays = opts.periodDays ?? 7;\n  const now = opts.now ?? Date.now();\n  const maxGainers = opts.maxGainers ?? 10;\n  const maxNew = opts.maxNew ?? 10;\n  const categoryByName = opts.categoryByName ?? {};\n  if (snapshots.length === 0) {\n    return { snapshots: 0, periodDays, newPlugins: [], starGainers: [], categoryHeat: [], awesomeCoverage: 0, total: 0 };\n  }\n  const latest = snapshots[snapshots.length - 1];\n  const windowStart = cutoffMs(periodDays, now);\n  const inWindow = snapshots.filter((s) => s.ts >= windowStart);\n  const base = inWindow.length > 1 ? inWindow[0] : snapshots[0];\n  const delta = deltaBetween(base, latest);\n\n  const newPlugins = delta.added\n    .filter((r) => (r.created ?? 0) >= windowStart || (r.created === undefined))\n    .slice(0, maxNew)\n    .map((r) => ({\n      name: r.name,\n      stars: r.stars ?? 0,\n      created: r.created ?? null,\n      desc: (r.desc ?? \"\").slice(0, 140),\n      category: categoryOf(r, categoryByName),\n    }));\n\n  const starGainers = delta.starDeltas.slice(0, maxGainers).map((d) => ({\n    name: d.name,\n    delta: d.delta,\n    stars: d.stars,\n  }));\n\n  const catCount = new Map();\n  for (const r of delta.added) {\n    const c = categoryOf(r, categoryByName);\n    catCount.set(c, (catCount.get(c) ?? 0) + 1);\n  }\n  const categoryHeat = [...catCount.entries()]\n    .map(([category, count]) => ({ category, count }))\n    .sort((a, b) => b.count - a.count);\n\n  const total = (latest.repos ?? []).length;\n  const awesomeCoverage = total === 0 ? 0 : (latest.awesome ?? []).filter((n) => (latest.repos ?? []).some((r) => r.name === n)).length / total;\n  return {\n    snapshots: snapshots.length,\n    periodDays,\n    windowStart,\n    latestTs: latest.ts,\n    total,\n    awesomeCoverage,\n    newPlugins,\n    starGainers,\n    categoryHeat,\n  };\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:152-173](https://github.com/863683348/dsh-trend-radar/blob/238ccd97948617fe8dd92f9ee5c5c05360592026/lib/index.js#L152-L173)\n\nreport 未传类别映射。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n    execute: async (_args, exec) => {\n      const dir = await dirFor(exec);\n      const history = readSnapshots(dir);\n      const days = Number.isInteger(_args.days) && _args.days > 0 ? _args.days : 7;\n      const report = computeReport(history, { periodDays: days });\n      const keywords = Array.isArray(_args.keywords) ? _args.keywords.filter((k) => typeof k === \"string\") : [];\n      let newPlugins = report.newPlugins;\n      if (keywords.length > 0) {\n        const matches = filterByKeywords(report.newPlugins.map((p) => ({ name: p.name, desc: p.desc, topics: [p.category] })), keywords);\n        newPlugins = report.newPlugins.filter((p) => matches.some((m) => m.name === p.name));\n      }\n      const withFiltered = { ...report, newPlugins };\n      await emitDashboard(exec, days);\n      return {\n        snapshots: report.snapshots,\n        periodDays: report.periodDays,\n        total: report.total,\n        awesomeCoverage: report.awesomeCoverage,\n        newPlugins,\n        starGainers: report.starGainers,\n        categoryHeat: report.categoryHeat,\n        text: renderReport(withFiltered),\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/index.js:210-226](https://github.com/863683348/dsh-trend-radar/blob/238ccd97948617fe8dd92f9ee5c5c05360592026/lib/index.js#L210-L226)\n\nwatch 无游标只看末两条。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n      const history = readSnapshots(dir);\n      let matches = [];\n      let text;\n      if (action === \"list\") {\n        text = \"Watch keywords: \" + (keywords.length === 0 ? \"(none)\" : keywords.join(\", \"));\n      } else {\n        if (history.length < 2) {\n          text = \"Need at least 2 snapshots to check — run trend_snapshot first.\";\n        } else {\n          const delta = deltaBetween(history[history.length - 2], history[history.length - 1]);\n          const newMatches = filterByKeywords(delta.added, keywords);\n          const surgeMatches = filterByKeywords(delta.starDeltas.filter((d) => d.delta >= surgeStars).map((d) => ({ name: d.name, desc: \"+\" + d.delta + \" stars\", topics: [] })), keywords);\n          matches = [...newMatches, ...surgeMatches];\n          text = \"Checked \" + keywords.length + \" keyword\" + (keywords.length === 1 ? \"\" : \"s\") + \": \" + matches.length + \" match\" + (matches.length === 1 ? \"\" : \"es\") + \" in the latest delta.\";\n        }\n      }\n      return { keywords, matches, text };\n```\n\n</details>\n\n#### 缺口\n\n- 未对真实 GitHub 搜索结果做时间序列对照。\n  **影响：**漏检/误报程度随生态规模和排序变化。\n  **进一步探讨：**多页/固定 cohort 采集对照，加入类别映射与 watch 已报告游标。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：35cf711e95e15e5e6287c3124f20c3a3649f811b43c84aa368544baffe72d8bc。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 148 | — | — | 1532 |\n| .js | source | 5 | 719 | 565 | 114 | — |\n| .mjs | source | 1 | 19 | 14 | 4 | — |\n| .mjs | test | 1 | 149 | 131 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 快照 | 历史数据 | 首轮空目录失败 |\n| 报告/雷达 | 差分分析 | top100/重复提醒 |\n| Web 投影 | 只读面板 | 未运行验证 |\n\n## 工程亮点\n\nHost 三工具读写 JSONL/订阅文件；GitHub API 查询 topic top100 与 awesome tree；projection 推给实验客户端。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、README.zh.md、package.json、lib/index.js、lib/github.js、lib/trends.js、lib/storage.js、lib/client.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：静态审阅固定提交 README、Host、GitHub 采集、趋势/存储；未调用外部 API、目标插件或 Web。 普通安装、宿主加载及目标测试属本轮范围边界，具体机制/效果未知仍在逐题缺口保留。 父侧已接受条件性目录故障判断与 observe 建议；未执行目标复现。\n- 下一步：空目录首次调用、top100 排序波动、类别映射与重复 watch check 的隔离测试；Web 面板另验。\n",
         "metadata": {
             "repository": "863683348/dsh-trend-radar",
             "repository_id": 1336582509,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T06:58:00.182Z",
+            "window_start": "2026-09-22T06:58:00.182Z",
             "stars": 0,
             "pushed_at": "2026-09-11T03:26:49Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-trend-radar%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641B:1ADA16:A4098E:EBAA55:6AD84A93 and timestamp 2026-10-21 05:16:03 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-trend-radar%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640A:208D3:AADFB2:F43DC3:6AD84A93 and timestamp 2026-10-21 05:16:04 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-trend-radar%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641C:39E13C:A322E0:EB1B36:6AD84A94 and timestamp 2026-10-21 05:16:04 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-trend-radar%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641D:383860:A8F271:F27CD3:6AD84A94 and timestamp 2026-10-21 05:16:04 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-trend-radar%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641E:360622:A3C09D:EBC659:6AD84A94 and timestamp 2026-10-21 05:16:04 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "dsh-trend-radar",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 117,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-trend-radar",
+                "captured_at": "2026-10-22T06:58:09.664Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 111,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-trend-radar",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-08-17T02:41:51.997Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T06:58:09.664Z",
                     "source_url": "https://registry.npmjs.org/dsh-trend-radar",
                     "error": null,
                     "latest_version": "0.2.1",
                     "latest_published_at": "2026-08-17T04:32:33.199Z",
                     "latest_error": null
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "238ccd97948617fe8dd92f9ee5c5c05360592026",
-                "current_revision": "238ccd97948617fe8dd92f9ee5c5c05360592026",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {
@@ -444,14 +474,14 @@
             "repository": "863683348/dsh-trend-radar",
             "path": "",
             "revision": "238ccd97948617fe8dd92f9ee5c5c05360592026",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "f9cfbe6b02e951046470ee684964f9262da0c4e6319acec45da7a0bb18a6b34e",
                 "code": "238ccd97948617fe8dd92f9ee5c5c05360592026",
                 "maintenance": "a7948127ce200e44f29e8a5db3dd3654eb9a0d5e77d2ae36ea5707bd38bc9bb5"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

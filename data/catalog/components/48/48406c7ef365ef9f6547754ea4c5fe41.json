@@ -10,7 +10,7 @@
             "repository": "12we21/cute-fat-fish-pet",
             "path": "src",
             "aliases": [],
-            "name": "蓝毛小女仆桌宠",
+            "name": "cute-fat-fish-pet / src",
             "entry_type": "plugin",
             "technical_category": "interface-input",
             "business_category": "personal-productivity",
@@ -28,36 +28,94 @@
             },
             "sources": [
                 {
-                    "id": "20261020-research40-github-1409724830-src-directory-0",
+                    "id": "2026-10-22-02-github-1409724830-src-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
-                    "retrieved_at": "2026-10-20T03:15:12.893Z",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-22T07:07:48.098Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "20261020-research40-github-1409724830-src-author",
+                    "id": "2026-10-22-02-github-1409724830-src-author",
                     "kind": "author_claim",
                     "url": "https://github.com/12we21/cute-fat-fish-pet/blob/e53f63e67227671aca092e3334c8611e29b880b6/src/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/12we21/cute-fat-fish-pet",
+                            "commit": "e53f63e67227671aca092e3334c8611e29b880b6",
+                            "path": "src/README.md",
+                            "content_sha256": "7325e03e9168f674bc87c70394d8798c187b0d3570cf902b74a41a77ef07f1ce"
+                        }
+                    ],
                     "revision": "e53f63e67227671aca092e3334c8611e29b880b6",
-                    "captured_at": "2026-10-20T03:15:12.893Z",
-                    "summary": "以透明动画桌宠提供陪伴聊天，可选本地模型、在线模型与屏幕观察。",
-                    "artifact": "data/runs/2026-10-20-02/snapshots/12we21--cute-fat-fish-pet--src/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T07:07:48.098Z",
+                    "summary": "DSH 插件半侧的动画桌宠，提供 Web/桌面宠物、文字对话和可选屏幕能力；独立 Windows 版另有语音等功能。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/12we21--cute-fat-fish-pet--src/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "20261020-research40-github-1409724830-src-source",
+                    "id": "2026-10-22-02-github-1409724830-src-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/12we21/cute-fat-fish-pet/blob/e53f63e67227671aca092e3334c8611e29b880b6/src/lib/index.js",
+                    "url": "https://github.com/12we21/cute-fat-fish-pet/blob/e53f63e67227671aca092e3334c8611e29b880b6/src/README.zh-CN.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/12we21/cute-fat-fish-pet",
+                            "commit": "e53f63e67227671aca092e3334c8611e29b880b6",
+                            "path": "src/README.zh-CN.md",
+                            "content_sha256": "09fe33a642302a309b101f7a1608699ead32385e5ab6c84d9e08f4d273c4b7e2"
+                        },
+                        {
+                            "repository_url": "https://github.com/12we21/cute-fat-fish-pet",
+                            "commit": "e53f63e67227671aca092e3334c8611e29b880b6",
+                            "path": "src/package.json",
+                            "content_sha256": "aaf554f796b567c9fc35d96c35dc5163482568448f778a720e78981f952adcd7"
+                        },
+                        {
+                            "repository_url": "https://github.com/12we21/cute-fat-fish-pet",
+                            "commit": "e53f63e67227671aca092e3334c8611e29b880b6",
+                            "path": "src/src/host/index.ts",
+                            "content_sha256": "5511cb4866703a479ddeb78984512bfb5df1d2e373fc4eab0102de4f8101b561"
+                        },
+                        {
+                            "repository_url": "https://github.com/12we21/cute-fat-fish-pet",
+                            "commit": "e53f63e67227671aca092e3334c8611e29b880b6",
+                            "path": "src/src/host/chat.ts",
+                            "content_sha256": "a34ab5464dad7ac040c16bb7ffba436f616ab799c4ab6555c7ba8b40e1e15f8b"
+                        },
+                        {
+                            "repository_url": "https://github.com/12we21/cute-fat-fish-pet",
+                            "commit": "e53f63e67227671aca092e3334c8611e29b880b6",
+                            "path": "src/src/host/helper-process.ts",
+                            "content_sha256": "9dc53a7475acd6087a2461154f40fb799221f693adaea59404daeb11a24ee67f"
+                        },
+                        {
+                            "repository_url": "https://github.com/12we21/cute-fat-fish-pet",
+                            "commit": "e53f63e67227671aca092e3334c8611e29b880b6",
+                            "path": "src/runtime/electron-helper/main.js",
+                            "content_sha256": "c17403f089b5fa322e8ae3dfa4adb0f2583940d89dbac4d90a9d43b2f963386e"
+                        },
+                        {
+                            "repository_url": "https://github.com/12we21/cute-fat-fish-pet",
+                            "commit": "e53f63e67227671aca092e3334c8611e29b880b6",
+                            "path": "src/lib/index.js",
+                            "content_sha256": "ee20d60703df6c28c64d57dfc97b0d9ec6e9e88dc1c57b0b61dd0751c755c92d"
+                        },
+                        {
+                            "repository_url": "https://github.com/12we21/cute-fat-fish-pet",
+                            "commit": "e53f63e67227671aca092e3334c8611e29b880b6",
+                            "path": "README.md",
+                            "content_sha256": "9a91aa301b74c9457817c5c49bfb35169922736654c76bb8cc5076b954d57ff0"
+                        }
+                    ],
                     "revision": "e53f63e67227671aca092e3334c8611e29b880b6",
-                    "captured_at": "2026-10-20T03:15:12.893Z",
-                    "summary": "核查 src/lib/index.js；插件 Host 调用本地 Ollama 或 DSH 模型，管理辅助进程与事件；资源和浏览器交互由 src 下的已构建 bundle 提供。",
-                    "artifact": "data/runs/2026-10-20-02/snapshots/12we21--cute-fat-fish-pet--src/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T07:07:48.098Z",
+                    "summary": "核查 src/README.zh-CN.md、src/package.json、src/src/host/index.ts、src/src/host/chat.ts、src/src/host/helper-process.ts、src/runtime/electron-helper/main.js、src/lib/index.js、README.md；Host/client 双半区管理配置、记忆/对话；Electron helper 呈桌面窗口并可调用本地 Ollama，缺 Electron 时自动下载。 实际发布 lib 另有屏幕观察闭包，不能仅以 TS 推断运行能力。详见[Q04](#research-q04)。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/12we21--cute-fat-fish-pet--src/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "只核查插件半区，不把独立 Windows 版离线语音和 TTS 算入；未验证辅助程序、资源许可或屏幕隐私。",
+                        "静态审阅 src 插件组件 README、package、Host 对话/Helper；不运行宠物、下载 Electron 或抓屏。 父侧追加审阅实际发布 src/lib/index.js 的屏幕观察与路由，TS 不覆盖该发布专属补丁。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -68,9 +126,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "个人桌面用户希望用角色动画和轻量聊天增加陪伴感，而非完成标准化办公任务。",
+                    "text": "想在 DSH Web 或桌面显示动画宠物，并与当前模型或本地桌面模型互动。",
                     "evidence_ids": [
-                        "20261020-research40-github-1409724830-src-source"
+                        "2026-10-22-02-github-1409724830-src-source"
                     ],
                     "dependencies": [
                         {
@@ -79,16 +137,16 @@
                             "fingerprint": "e53f63e67227671aca092e3334c8611e29b880b6"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:15:12.893Z",
+                    "reviewed_at": "2026-10-22T07:07:48.098Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "插件 Host 调用本地 Ollama 或 DSH 模型，管理辅助进程与事件；资源和浏览器交互由 src 下的已构建 bundle 提供。",
+                    "text": "Host/client 双半区管理配置、记忆/对话；Electron helper 呈桌面窗口并可调用本地 Ollama，缺 Electron 时自动下载。 实际发布 lib 另有屏幕观察闭包，不能仅以 TS 推断运行能力。详见[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "20261020-research40-github-1409724830-src-source"
+                        "2026-10-22-02-github-1409724830-src-source"
                     ],
                     "dependencies": [
                         {
@@ -97,16 +155,16 @@
                             "fingerprint": "e53f63e67227671aca092e3334c8611e29b880b6"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:15:12.893Z",
+                    "reviewed_at": "2026-10-22T07:07:48.098Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "角色交互价值高度主观；本地优先不是任何配置下都离线，在线模型可能接收聊天及选定观察内容。",
+                    "text": "#### 效果\n\n| 项 | 代码支持 | 未知 |\n| --- | --- | --- |\n| 动画桌宠 | WebM/helper | 真实视觉/性能 |\n| 对话 | DSH llm + helper Ollama | UI 路由清晰度 |\n| 看屏幕 | 作者声明可选 | 端到端权限/出站 |",
                     "evidence_ids": [
-                        "20261020-research40-github-1409724830-src-source"
+                        "2026-10-22-02-github-1409724830-src-source"
                     ],
                     "dependencies": [
                         {
@@ -115,16 +173,16 @@
                             "fingerprint": "e53f63e67227671aca092e3334c8611e29b880b6"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:15:12.893Z",
+                    "reviewed_at": "2026-10-22T07:07:48.098Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "资源下载、辅助进程和模型调用会占网络、内存与额度；没有量化陪伴效果或资源占用。",
+                    "text": "#### 成本\n\n| 阶段 | 资源 | 边界 |\n| --- | --- | --- |\n| 安装 | 整仓约 68MB | 慢网超时 |\n| 运行 | VP9-alpha/GPU、Electron | 性能未知 |\n| 聊天 | Ollama 或 DSH provider | 模式需核对 |",
                     "evidence_ids": [
-                        "20261020-research40-github-1409724830-src-source"
+                        "2026-10-22-02-github-1409724830-src-source"
                     ],
                     "dependencies": [
                         {
@@ -133,16 +191,16 @@
                             "fingerprint": "e53f63e67227671aca092e3334c8611e29b880b6"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:15:12.893Z",
+                    "reviewed_at": "2026-10-22T07:07:48.098Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "配置与聊天数据放在包外利于升级，但保留旧数据根与路由标识，重命名和卸载需按实际路径处理。",
+                    "text": "Host 路由、记忆/LLM 与 Electron helper 通过 bridge 共用配置；helper 缺 Electron 时自动下载。",
                     "evidence_ids": [
-                        "20261020-research40-github-1409724830-src-source"
+                        "2026-10-22-02-github-1409724830-src-source"
                     ],
                     "dependencies": [
                         {
@@ -151,16 +209,16 @@
                             "fingerprint": "e53f63e67227671aca092e3334c8611e29b880b6"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:15:12.893Z",
+                    "reviewed_at": "2026-10-22T07:07:48.098Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "先关闭屏幕观察和在线回退，确认数据路径、模型路由与卸载，再按个人偏好试用。",
+                    "text": "先观察；仅可信本机、明确模型及附件目的地的无敏感环境可小样评估，屏幕观察与自动 Electron 下载需分别明确配置及残留清理。详见[Q05](#research-q05)、[Q06](#research-q06)。",
                     "evidence_ids": [
-                        "20261020-research40-github-1409724830-src-source"
+                        "2026-10-22-02-github-1409724830-src-source"
                     ],
                     "dependencies": [
                         {
@@ -169,16 +227,16 @@
                             "fingerprint": "e53f63e67227671aca092e3334c8611e29b880b6"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:15:12.893Z",
+                    "reviewed_at": "2026-10-22T07:07:48.098Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "只核查插件半区，不把独立 Windows 版离线语音和 TTS 算入；未验证辅助程序、资源许可或屏幕隐私。",
+                    "text": "静态审阅 src 插件组件 README、package、Host 对话/Helper；不运行宠物、下载 Electron 或抓屏。 父侧追加审阅实际发布 src/lib/index.js 的屏幕观察与路由，TS 不覆盖该发布专属补丁。",
                     "evidence_ids": [
-                        "20261020-research40-github-1409724830-src-source"
+                        "2026-10-22-02-github-1409724830-src-source"
                     ],
                     "dependencies": [
                         {
@@ -187,16 +245,16 @@
                             "fingerprint": "e53f63e67227671aca092e3334c8611e29b880b6"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:15:12.893Z",
+                    "reviewed_at": "2026-10-22T07:07:48.098Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "组件 src 的 cute-fat-fish-pet 1.2.3，仓库含大量动画与打包依赖，不能把总体行数当原创代码规模。",
+                    "text": "组件 package 1.2.3、MIT，作者说明派生上游 dsh-pet；素材/独立版授权未独立审查。",
                     "evidence_ids": [
-                        "20261020-research40-github-1409724830-src-source"
+                        "2026-10-22-02-github-1409724830-src-source"
                     ],
                     "dependencies": [
                         {
@@ -205,40 +263,135 @@
                             "fingerprint": "e53f63e67227671aca092e3334c8611e29b880b6"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:15:12.893Z",
+                    "reviewed_at": "2026-10-22T07:07:48.098Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "把 VP9-alpha 动画、桌面交互和 DSH 会话模型对话组合成宠物插件。详见[Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1409724830-src-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1409724830:src",
+                            "area": "code",
+                            "fingerprint": "e53f63e67227671aca092e3334c8611e29b880b6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T07:07:48.098Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "supported",
+                    "text": "发布 lib 与 TS 的能力不同；可选屏幕观察会保存截图/附件并交宿主模型，local 标签不单独保证目的地，关闭不取消在途且路由准入依外层。详见[Q04](#research-q04)、[Q05](#research-q05)、[Q06](#research-q06)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1409724830-src-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1409724830:src",
+                            "area": "code",
+                            "fingerprint": "e53f63e67227671aca092e3334c8611e29b880b6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T07:07:48.098Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "mechanism",
+                    "basis": "unverified",
+                    "text": "首次外部下载、在线记忆发送与屏幕能力单独显式提示并作出站测试，可提高可理解性；待实机。详见[Q03](#research-q03)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1409724830-src-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1409724830:src",
+                            "area": "code",
+                            "fingerprint": "e53f63e67227671aca092e3334c8611e29b880b6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T07:07:48.098Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-20T03:15:12.893Z",
+            "last_checked_at": "2026-10-22T07:07:48.098Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "e53f63e67227671aca092e3334c8611e29b880b6",
+                "reviewed_at": "2026-10-22T07:07:48.098Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1409724830:src",
+                        "area": "code",
+                        "fingerprint": "e53f63e67227671aca092e3334c8611e29b880b6"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 23,
+                        "transferability": 5,
+                        "simplification": 0
+                    },
+                    "rationale": "动画、Web/Host、Electron helper、模型/记忆集成复杂；依赖和网络路径较多。",
+                    "basis": "interpretation",
+                    "score": 37,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1409724830-src-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 15,
+                        "reach": 5,
+                        "economics": 0
+                    },
+                    "rationale": "陪伴/提醒价值主观，资产大且缺性能/使用效果数据。",
+                    "basis": "interpretation",
+                    "score": 29,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1409724830-src-source"
+                    ]
+                }
+            },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "observe",
-                "reason": "角色陪伴有主观价值，但辅助程序、资源许可与数据路由未核，先关闭屏幕和在线回退核对这些关键前提。",
+                "reason": "动画与双端陪伴有价值，但实际发布版屏幕链、外层路由授权、模型目的地和图像保留需先核清，先观察。",
                 "criteria": {
                     "scenario": {
                         "score": 15,
-                        "rationale": "个人陪伴动画聊天有明确小众需求。"
+                        "rationale": "动画陪伴场景明确。"
                     },
                     "advantage": {
-                        "score": 6,
-                        "rationale": "相对纯动画增量是模型互动，未证明更有价值。"
+                        "score": 13,
+                        "rationale": "多动画与 Web/桌面双入口。"
                     },
                     "evidence": {
-                        "score": 6,
-                        "rationale": "仅核查插件Host半区，辅助程序和资源隐私未验。"
+                        "score": 13,
+                        "rationale": "源代码可核，视觉/出站未独立实测。"
                     },
                     "cost": {
                         "score": 5,
-                        "rationale": "较大资源、模型与helper占内存网络且退出清理需维护。"
+                        "rationale": "68MB 仓库、Electron、动画解码与模型开销。"
                     }
                 },
-                "score": 32,
+                "score": 46,
                 "revision": "e53f63e67227671aca092e3334c8611e29b880b6",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T07:07:48.098Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "20261020-research40-github-1409724830-src-source"
+                    "2026-10-22-02-github-1409724830-src-source"
                 ],
                 "dependencies": [
                     {
@@ -263,104 +416,59 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-20T02:51:30Z",
-            "analysis_sha256": "c4aa2c6de4865432fcd061a4bf88cd8bc4bb7b256460b74a459d2cdc61a91216"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "cab55dd2b22fbfa72d869d5cd4924a2b3cead2f67a6a39b08134469ff75bcd69"
         },
         "publication.metadata": "data/plugins/12we21--cute-fat-fish-pet--src/META.json",
         "publication.summaries": {
-            "text": "以透明动画桌宠提供陪伴聊天，可选本地模型、在线模型与屏幕观察。",
+            "text": "DSH 插件半侧的动画桌宠，提供 Web/桌面宠物、文字对话和可选屏幕能力；独立 Windows 版另有语音等功能。",
             "revision": "e53f63e67227671aca092e3334c8611e29b880b6",
             "source_url": "https://github.com/12we21/cute-fat-fish-pet/blob/e53f63e67227671aca092e3334c8611e29b880b6/src/README.md"
         },
         "publication.capabilities": {
             "revision": "e53f63e67227671aca092e3334c8611e29b880b6",
             "items": {
-                "界面": "动画桌宠和聊天交互。",
-                "后台": "模型路由与可选桌面辅助进程。"
-            }
+                "界面": "Web 动画宠物与 Electron 桌面窗口",
+                "后台": "桌面 helper、模型聊天、可选屏幕观察与本地记忆",
+                "Host 路由": "宠物配置、聊天与资产前缀接口"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 动画/漫步 | 陪伴 | 资源/性能 |\n| 聊天 | 与宠物对话 | Web/桌面后端不同 |\n| 桌面 | helper 窗口 | Electron 可自动下载 |"
         },
         "publication.advice": {
             "revision": "e53f63e67227671aca092e3334c8611e29b880b6",
-            "text": "先关闭屏幕观察和在线回退，确认数据路径、模型路由与卸载，再按个人偏好试用。"
+            "text": "先观察；仅可信本机、明确模型及附件目的地的无敏感环境可小样评估，屏幕观察与自动 Electron 下载需分别明确配置及残留清理。详见[Q05](#research-q05)、[Q06](#research-q06)。"
         },
         "registry": "data/plugins/12we21--cute-fat-fish-pet--src",
-        "reports": "# 蓝毛小女仆桌宠\n\n> 以透明动画桌宠提供陪伴聊天，可选本地模型、在线模型与屏幕观察。\n\n## 固定范围与依据\n\n固定提交 [e53f63e67227671aca092e3334c8611e29b880b6](https://github.com/12we21/cute-fat-fish-pet/blob/e53f63e67227671aca092e3334c8611e29b880b6/src/lib/index.js)；组件路径：src。核查时间 2026-10-20T03:15:12.893Z；本轮基准 2026-10-20T02:51:30Z。\n源码抽读路径：src/lib/index.js。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：个人桌面用户希望用角色动画和轻量聊天增加陪伴感，而非完成标准化办公任务。\n- **亮点**：插件 Host 调用本地 Ollama 或 DSH 模型，管理辅助进程与事件；资源和浏览器交互由 src 下的已构建 bundle 提供。\n- **思考**：角色交互价值高度主观；本地优先不是任何配置下都离线，在线模型可能接收聊天及选定观察内容。\n- **建议**：先关闭屏幕观察和在线回退，确认数据路径、模型路由与卸载，再按个人偏好试用。\n\n## 场景与替代办法\n\n个人桌面用户希望用角色动画和轻量聊天增加陪伴感，而非完成标准化办公任务。\n\n纯动画桌宠成本更低且少网络依赖；加入模型仅适合愿意管理角色、路由与隐私配置的人群。\n\n## 依赖与流程\n\n依赖 DSH 模型或 Ollama、动画解码和可选原生辅助进程；完整仓库安装还有较大下载体积。\n\n选模型与交互设置后聊天，观察屏幕能力明确启用；异常时分别检查 helper、模型和资源。\n\n## 成本与效果\n\n资源下载、辅助进程和模型调用会占网络、内存与额度；没有量化陪伴效果或资源占用。\n\n角色交互价值高度主观；本地优先不是任何配置下都离线，在线模型可能接收聊天及选定观察内容。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：src；内容摘要：7ebfc18ec4c79fb8e7b63ae3b4370bc0c14b950253280c6dd07d72da50e8cb22。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 13 | 17928 | 15530 | 2258 | — |\n| .md | source | 3 | 418 | — | — | 7243 |\n| .mjs | source | 2 | 454 | 329 | 102 | — |\n| .ts | source | 33 | 8986 | 6565 | 2013 | — |\n| .ts | test | 17 | 3130 | 2499 | 349 | — |\n\n排除 381 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **界面**：动画桌宠和聊天交互。\n- **后台**：模型路由与可选桌面辅助进程。\n\n## 工程亮点\n\n配置与聊天数据放在包外利于升级，但保留旧数据根与路由标识，重命名和卸载需按实际路径处理。\n\n## 分发与兼容\n\n组件 src 的 cute-fat-fish-pet 1.2.3，仓库含大量动画与打包依赖，不能把总体行数当原创代码规模。\n\n## 历史对照\n\n前次代码指纹为 e53f63e67227671aca092e3334c8611e29b880b6；本轮固定为 e53f63e67227671aca092e3334c8611e29b880b6。纯动画桌宠成本更低且少网络依赖；加入模型仅适合愿意管理角色、路由与隐私配置的人群。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：只核查插件半区，不把独立 Windows 版离线语音和 TTS 算入；未验证辅助程序、资源许可或屏幕隐私。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：检查本地/在线路由、无模型降级、屏幕开关、helper 退出和数据清理，并实测内存与下载。\n",
+        "reports": "# cute-fat-fish-pet / src\n\n> DSH 插件半侧的动画桌宠，提供 Web/桌面宠物、文字对话和可选屏幕能力；独立 Windows 版另有语音等功能。\n\n## 研究范围\n\n- **仓库**：[12we21/cute-fat-fish-pet](https://github.com/12we21/cute-fat-fish-pet)\n- **版本号**：1.2.3（[固定提交 e53f63e67227671aca092e3334c8611e29b880b6](https://github.com/12we21/cute-fat-fish-pet/tree/e53f63e67227671aca092e3334c8611e29b880b6)）\n- **版本日期**：2026-10-18（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n组件边界与 Host/Helper 路径可核；网页对话直接用 DSH 当前模型，README 的本地/在线与“仅在线模型才离机”说法需限定，桌面 Helper 可自动下载 Electron。\n\n## 洞察短评\n\n- **用途**：想在 DSH Web 或桌面显示动画宠物，并与当前模型或本地桌面模型互动。\n- **亮点**：把 VP9-alpha 动画、桌面交互和 DSH 会话模型对话组合成宠物插件。详见[Q01](#research-q01)。\n- **思考**：发布 lib 与 TS 的能力不同；可选屏幕观察会保存截图/附件并交宿主模型，local 标签不单独保证目的地，关闭不取消在途且路由准入依外层。详见[Q04](#research-q04)、[Q05](#research-q05)、[Q06](#research-q06)。\n- **建议**：首次外部下载、在线记忆发送与屏幕能力单独显式提示并作出站测试，可提高可理解性；待实机。详见[Q03](#research-q03)。\n\n采用建议：先观察；仅可信本机、明确模型及附件目的地的无敏感环境可小样评估，屏幕观察与自动 Electron 下载需分别明确配置及残留清理。详见[Q05](#research-q05)、[Q06](#research-q06)。\n\n## 核心贡献\n\n把 VP9-alpha 动画、桌面交互和 DSH 会话模型对话组合成宠物插件。详见[Q01](#research-q01)。\n\n## 关键质疑\n\n发布 lib 与 TS 的能力不同；可选屏幕观察会保存截图/附件并交宿主模型，local 标签不单独保证目的地，关闭不取消在途且路由准入依外层。详见[Q04](#research-q04)、[Q05](#research-q05)、[Q06](#research-q06)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n首次外部下载、在线记忆发送与屏幕能力单独显式提示并作出站测试，可提高可理解性；待实机。详见[Q03](#research-q03)。\n\n目标 DSH Web/桌面真实动画、模型模式、Electron 下载、屏幕可选性和网络/性能监测。\n\n## 场景与替代办法\n\n想在 DSH Web 或桌面显示动画宠物，并与当前模型或本地桌面模型互动。\n\nDSH 原生状态展示或独立 Windows 桌宠；本组件嵌入 DSH，并非独立版全功能。\n\n## 依赖与流程\n\n#### 条件\n\n| 条件 | 用途 | 缺失时 |\n| --- | --- | --- |\n| DSH 0.2.0-rc.1+ | Host/client API | 兼容未知 |\n| VP9-alpha 浏览器 | 动画 | 降级未知 |\n| Electron/Ollama/在线 provider | 桌面/对话 | 按模式降级 |\n\n#### 隔离试用\n\n| 步骤 | 动作 | 判据 |\n| --- | --- | --- |\n| Web | 观察动画/聊天 | 模型路径清楚 |\n| 桌面 | 核 Electron 来源 | 下载可见/可控 |\n| 隐私 | 切屏幕/在线模式 | 出站符合选择 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 资源 | 边界 |\n| --- | --- | --- |\n| 安装 | 整仓约 68MB | 慢网超时 |\n| 运行 | VP9-alpha/GPU、Electron | 性能未知 |\n| 聊天 | Ollama 或 DSH provider | 模式需核对 |\n\n#### 效果\n\n| 项 | 代码支持 | 未知 |\n| --- | --- | --- |\n| 动画桌宠 | WebM/helper | 真实视觉/性能 |\n| 对话 | DSH llm + helper Ollama | UI 路由清晰度 |\n| 看屏幕 | 作者声明可选 | 端到端权限/出站 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**核实子目录插件的 Web/桌面宠物、对话后端和网络/安装边界，避免混入独立 Windows 版。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 这个 src 子目录插件提供什么？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n这是 cute-fat-fish-pet 仓库的 DSH 插件组件，而非根目录独立 Windows 产品。它含 106 个透明 VP9 WebM 动画、Web/桌面宠物、漫步交互、文字对话和碎碎念；README 明确排除独立版的离线语音识别、Edge TTS 与控制台。包有 Host/client 双入口和 Electron helper，数据根为 DSH_HOME/dsh-pet，包名改为 cute-fat-fish-pet 后路径/路由保留旧前缀。动画数量和视觉效果是作者陈述，本轮未逐帧/实机核验；组件材料不能外推独立版功能。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[src/README.zh-CN.md:1-45](https://github.com/12we21/cute-fat-fish-pet/blob/e53f63e67227671aca092e3334c8611e29b880b6/src/README.zh-CN.md#L1-L45)\n\n作者说明插件能力、与独立版区别及数据根。\n\n<details>\n<summary>查看原文（45行）</summary>\n\n````text\n# 蓝毛小女仆\n\n一个 **DeepSeek Harness** 桌宠插件：**106 个手绘透明动画**、桌面漫步、点击反应，可以接\n本地 **Ollama** 或 DSH 会话自带的在线模型聊天，可选看屏幕吐槽。\n\n这个目录是本项目的**插件半侧**。独立 Windows 版（同一个角色，另含离线语音识别、Edge TTS、\n控制台和安装包）在仓库根目录，见[根 README](https://github.com/12we21/cute-fat-fish-pet/blob/main/README.zh-CN.md)。\n\n## 安装\n\n```bash\ndsh plugin --profile web add github:12we21/cute-fat-fish-pet#path:/src\n```\n\n不需要构建：`lib/` 里已经是编好的宿主与客户端产物。\n\n> **注意：这条命令会拉整个仓库的 tarball，约 68 MB。** 106 个动画占了绝大部分。慢网下可能\n> 超时，超时就先克隆再用本地路径装：\n\n```bash\ngit clone --depth 1 https://github.com/12we21/cute-fat-fish-pet\ndsh plugin --profile web add ./cute-fat-fish-pet/src\n```\n\n## 你会得到什么\n\n- **106 个手绘动画** —— 带真实 alpha 通道的 VP9-alpha `webm`，叠在你的壁纸上。待机呼吸、\n  打瞌睡又被惊醒、跳舞、撸猫、吃东西、过节，点一下就有对应的反应。\n- **桌面漫步** —— 她自己走来走去，也会看鼠标：拖她、点她，她都会有反应。\n- **聊天** —— 在 DSH 网页界面里跟她说话。可以指向本机 **Ollama** 模型，也可以走你当前\n  DSH 会话已经在用的在线模型；有一个全局开关切「只用本地 / 只用 DSH / 本地优先」。\n- **碎碎念** —— 她能冒一句由你当前会话模型生成的一句话。\n- **可选看屏幕** —— 配合内置的原生抓屏组件，她可以看看你屏幕上是什么并吐槽。不开就是不开。\n\n## 这一半**没有**什么\n\n插件是独立版的子集。下面这些只在独立 Windows 版里，插件里没有：\n\n- 离线语音识别（sherpa-onnx + SenseVoice）\n- Edge TTS 朗读\n- 单页控制台\n\n## 数据放在哪\n\n聊天记忆和你的配置覆盖都在 `$DSH_HOME/dsh-pet/` 下。除非你把聊天指向在线模型，否则没有\n````\n\n</details>\n\n**依据 2 · 源码核查**：[src/package.json:1-81](https://github.com/12we21/cute-fat-fish-pet/blob/e53f63e67227671aca092e3334c8611e29b880b6/src/package.json#L1-L81)\n\nHost/client exports、运行时目录和组件包。\n\n<details>\n<summary>查看原文（81行）</summary>\n\n```text\n{\n  \"name\": \"cute-fat-fish-pet\",\n  \"version\": \"1.2.3\",\n  \"description\": \"「可爱大肥鱼桌宠」的桌宠本体（宿主半侧入口）：待机动画、随机动作、桌面漫步、陪聊与看屏幕。由 Mikolu 独立开发和维护；早期基础架构来自上游 dsh-pet 0.3.0（MIT，作者 PC2005-cloud）。\",\n  \"keywords\": [\n    \"dsh\",\n    \"dsh-plugin\",\n    \"deepseek-harness\",\n    \"desktop-pet\",\n    \"pet\",\n    \"floating-widget\",\n    \"web-ui\",\n    \"cordis\",\n    \"react\"\n  ],\n  \"homepage\": \"https://github.com/12we21/cute-fat-fish-pet#readme\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/12we21/cute-fat-fish-pet.git\"\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/12we21/cute-fat-fish-pet/issues\"\n  },\n  \"_comment\": [\n    \"=============== 包清单说明（1.1.0 独立仓库） ===============\",\n    \"type: module —— 本包是 ESM\",\n    \"main: lib/index.js —— 宿主半侧入口（Cordis 插件：name/inject/apply）\",\n    \"exports['./client'] —— 浏览器半侧入口，DSH 模块系统按它提供 /plugins/cute-fat-fish-pet/client.js\",\n    \"★ 硬约束：lib/client.js 里 window.__ModuleLoader__.load({ id }) 的 id 必须等于本清单的 name（见 src/src/client/index.ts 的注释）。不符时宿主侧毫无报错，只是 Web 半边永远不注册（loader 提示 loaded without registering \\\"<name>\\\" via __ModuleLoader__.load）——2026-10-10 从 dsh-pet 改名时漏改，已修。\",\n    \"dsh.bundle.patch —— 声明本包是 bundle，patch 文件是 cordis.patch.yml（安装后自动进层栈）\",\n    \"dsh.client —— 声明浏览器半侧的注入依赖和平台（web）\",\n    \"files —— npm publish 只发这些目录/文件（assets/webm 播放资源（VP9-alpha，浏览器 Chrome/Edge/Firefox 与桌面模式共用））\",\n    \"scripts.ensure:electron —— 自动下载 Electron（装到没预装 Electron 的机器时用）\",\n    \"scripts.test —— 单元素测试（用 node 自带的类型擦除，不需要额外依赖）。已知：上游的 routes / work-status-lifecycle / displays 三个文件要 DSH 宿主包（@deepseek-ai/*），本仓库不带，会报 ERR_MODULE_NOT_FOUND；host-liveness 里有 2 条断言查上游构建脚本（scripts/start-desktop.mjs、scripts/prepack-check.js），本仓库没有这两个文件。其余文件应全绿。\",\n    \"peerDependencies —— 运行时由宿主（DSH）提供的模块，本包不打包它们\",\n    \"上游的构建/发布流水线（tsdown、prepare、prepack、typecheck、lint）不随本仓库分发：本仓库的构建入口在仓库根的 package.json（build/build.mjs 等）\",\n    \"================================================\"\n  ],\n  \"type\": \"module\",\n  \"main\": \"lib/index.js\",\n  \"exports\": {\n    \".\": {\n      \"types\": \"./lib/types/index.d.ts\",\n      \"default\": \"./lib/index.js\"\n    },\n    \"./client\": {\n      \"types\": \"./lib/types/client/index.d.ts\",\n      \"default\": \"./lib/client.js\"\n    },\n    \"./src/*\": \"./src/*\",\n    \"./cordis.patch.yml\": \"./cordis.patch.yml\",\n    \"./package.json\": \"./package.json\"\n  },\n  \"files\": [\n    \"lib\",\n    \"src\",\n    \"assets/webm\",\n    \"runtime/electron-helper\",\n    \"assets/fonts\",\n    \"assets/pic\",\n    \"assets/memes\",\n    \"assets/config.jsonc\",\n    \"scripts/ensure-electron.mjs\",\n    \"cordis.patch.yml\"\n  ],\n  \"scripts\": {\n    \"ensure:electron\": \"node scripts/ensure-electron.mjs\",\n    \"test\": \"node --test \\\"src/**/*.test.ts\\\"\"\n  },\n  \"license\": \"MIT\",\n  \"author\": \"Mikolu\",\n  \"dependencies\": {\n    \"@electron-internal/extract-zip\": \"^1.0.5\",\n    \"@electron/get\": \"^5.1.0\"\n  },\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    },\n    \"client\": {\n      \"inject\": [\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/src/host/index.ts:474-535](https://github.com/12we21/cute-fat-fish-pet/blob/e53f63e67227671aca092e3334c8611e29b880b6/src/src/host/index.ts#L474-L535)\n\ndesktop helper 由 Host 管理。\n\n<details>\n<summary>查看原文（62行）</summary>\n\n```text\n  let helper: HelperProcess | undefined;\n  let startRetryTimer: NodeJS.Timeout | undefined;\n  let electronEnsure: Promise<void> | undefined;\n  let disposed = false;\n  /** 「无图形环境」提示只在进程生命周期内打一次，避免守护循环刷屏 */\n  let displayWarned = false;\n\n  /** 用已确认存在的 Electron 路径拉起桌面 Helper（每只桌面宠物一个局部小窗口）。 */\n  const launchHelper = (electronPath: string | undefined): void => {\n    if (helper || disposed) return;\n    if (!hasDesktopPet) return; // 无宠物显示在桌面（display 含 desktop/both）：不启动\n    const port = typeof ctx.webServer?.port === 'number' ? ctx.webServer.port : 0;\n    if (!port || port <= 0) {\n      // webServer 可能尚未完成监听（OS 分配端口时 port 短暂为 0）：延迟重试。\n      if (!startRetryTimer) {\n        startRetryTimer = setTimeout(() => {\n          startRetryTimer = undefined;\n          launchHelper(electronPath);\n        }, 500);\n        startRetryTimer.unref?.();\n      }\n      return;\n    }\n    const origin = `http://127.0.0.1:${port}`;\n    // 桌面渲染端也从同一份 handlePetRoute 拿成品配置（每只宠物一个局部小窗口；经管道，不走 HTTP——\n    // DSH Desktop 2.0.3+ 会拦插件自拉进程的裸 HTTP 请求，浏览器访问闸门只放行带令牌的请求）\n    const configUrl = `${origin}${ROUTE_PREFIX}/config`;\n    helper = new HelperProcess(\n      {\n        electronPath,\n        env: {\n          DSH_PET_CONFIG_URL: configUrl,\n          DSH_PET_SCALE: '1',\n          // 打开 bridge 协议：main.js 注册 dsh-pet-bridge scheme，把渲染端请求经管道转给宿主\n          DSH_PET_BRIDGE: '1',\n          // 每只桌面宠物一个局部小窗口：透传宠物列表（[{id,size}]）\n          DSH_PET_PETS: JSON.stringify(desktopPetList()),\n        },\n        // bridge 协议处理器 = HTTP 路由同一份 handlePetRoute（业务逻辑唯一，两端天然一致）；\n        // 素材过文件路径（main.js 自行读盘），json/text 过 body\n        bridgeHandler: async (req) => {\n          const result = await handlePetRoute(req.url ?? '/', req.method ?? 'GET', req.body);\n          if (result.kind === 'file') {\n            // file 分支恒 200（404/400 已由 text 分支表达）\n            return { id: req.id, status: 200, contentType: result.contentType, file: result.file };\n          }\n          if (result.kind === 'text') {\n            return { id: req.id, status: result.status, contentType: 'text/plain; charset=utf-8', body: result.body };\n          }\n          return {\n            id: req.id,\n            status: result.status,\n            contentType: 'application/json; charset=utf-8',\n            body: JSON.stringify(result.obj),\n          };\n        },\n      },\n      ctx.logger ?? console,\n    );\n    try {\n      helper.start();\n      ctx.logger?.info?.(`dsh-pet desktop helper started (config: ${configUrl})`);\n```\n\n</details>\n\n#### 缺口\n\n- 未运行 Web/桌面宠物或核 106 动画全量质量。\n  **影响：**视觉、性能和语音/聊天体验未知。\n  **进一步探讨：**在目标 DSH 分别验证 Web/桌面模式和资产解码，限定只评插件半侧。\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 对话后端与桌面 Helper 如何分工？\n\n**研究主题：**功能与机制、工程质量与复用、缺陷与关键质疑\n\n#### 完整回答\n\nWeb/Host 的 /chat 路径调用 generateChat，直接使用 agentDefaultModel.currentSelection 与 ctx.llm，拼上用户输入和本地记忆；因此当前代码中的网页对话由 DSH 选中模型驱动。Ollama 调用路径位于 Electron helper 的 main.js，服务桌面宠物本地文本模型；README 一句“在 DSH 网页界面可以指向本机 Ollama 或当前在线模型”未由 Host Web/chat 路径直接证明，需目标 UI 实测配置流。桌面 helper 先找本机 Electron，无则若有图形环境自动异步下载 43.3.0（默认 npmmirror，可配置镜像）到 DSH_HOME/electron；此行为与 README“除非在线模型，否则没有任何东西离开电脑”不完全一致，至少会有外部下载请求。helper 的配置变更重启有等待与队列、崩溃重启/熔断路径，但本轮未做实机。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/src/host/chat.ts:68-109](https://github.com/12we21/cute-fat-fish-pet/blob/e53f63e67227671aca092e3334c8611e29b880b6/src/src/host/chat.ts#L68-L109)\n\nWeb/Host 对话取当前 DSH 模型并调用 llm。\n\n<details>\n<summary>查看原文（42行）</summary>\n\n```text\n): Promise<ChatGenerateResult> {\n  let sel: { provider: string; model: string };\n  try {\n    sel = ctx.agentDefaultModel.currentSelection();\n  } catch {\n    return { ok: false, reason: 'provider-missing', message: '当前对话未配置模型' };\n  }\n  if (!sel?.provider || !sel?.model) {\n    return { ok: false, reason: 'provider-missing', message: '当前对话未配置模型' };\n  }\n  const llm = (ctx as { llm?: { stream(o: unknown): AsyncIterable<unknown> } }).llm;\n  if (!llm || typeof llm.stream !== 'function') {\n    return { ok: false, reason: 'generate-error', message: 'LLM 服务不可用' };\n  }\n\n  // 历史 → dsh-llm 消息：user 经 createUserMessage（plugin 来源），assistant 经 createAssistantMessage\n  const historyMessages = history.map((m) =>\n    m.role === 'user'\n      ? createUserMessage({\n          content: [{ type: 'text', text: m.content }],\n          source: { kind: 'user' },\n        })\n      : createAssistantMessage({\n          content: [{ type: 'text', text: m.content }],\n          source: { provider: sel.provider, model: sel.model },\n        }),\n  );\n\n  const deadline = AbortSignal.timeout(TIMEOUT_MS);\n  // 仅当模型声明支持 reasoning effort（含 \"off\"）时才传，否则省略：\n  // 无 reasoning 元数据的模型（如 reasoningEfforts: false）显式传 off 会被\n  // dsh-llm 判为 UNSUPPORTED_REASONING_EFFORT 并折叠成空流（表现为\"模型未返回文本\"）。\n  const supportsOff = await supportsReasoningOff(ctx, sel.provider, sel.model);\n  // 配图：池非空才把清单与指令附进 user 正文（空池 = 关闭配图，正文与旧行为逐字一致）\n  const wantImage = pool.length > 0;\n  const options = {\n    provider: sel.provider,\n    model: sel.model,\n    messages: [\n      ...historyMessages,\n      createUserMessage({\n        content: [{ type: 'text', text: wantImage ? userText + imageInstruction(pool) : userText }],\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/runtime/electron-helper/main.js:1002-1039](https://github.com/12we21/cute-fat-fish-pet/blob/e53f63e67227671aca092e3334c8611e29b880b6/src/runtime/electron-helper/main.js#L1002-L1039)\n\n桌面 helper Ollama 本地 HTTP 路径。\n\n<details>\n<summary>查看原文（38行）</summary>\n\n```text\nconst PET_OLLAMA_BASE = String(process.env.DSH_PET_OLLAMA || 'http://127.0.0.1:11434').replace(/\\/+$/, '');\r\nfunction petOllamaCall(pathname, opts) {\r\n  const http = require('node:http');\r\n  const o = opts && typeof opts === 'object' ? opts : {};\r\n  return new Promise((resolve) => {\r\n    let data = null;\r\n    if (o.body !== null && o.body !== undefined) {\r\n      try { data = JSON.stringify(o.body); } catch (e) { return resolve({ ok: false, error: 'bad-body' }); }\r\n    }\r\n    const headers = data === null ? {} : { 'content-type': 'application/json', 'content-length': Buffer.byteLength(data) };\r\n    const req = http.request(PET_OLLAMA_BASE + pathname, { method: o.method || 'GET', headers, timeout: Number(o.timeoutMs) || 4000 }, (res) => {\r\n      let d = '';\r\n      res.setEncoding('utf8');\r\n      res.on('data', (c) => (d += c));\r\n      res.on('end', () => {\r\n        try {\r\n          const j = JSON.parse(d || '{}');\r\n          const good = res.statusCode >= 200 && res.statusCode < 300;\r\n          resolve(good ? { ok: true, json: j } : { ok: false, error: 'http-' + res.statusCode, json: j });\r\n        } catch (e) { resolve({ ok: false, error: 'bad-json' }); }\r\n      });\r\n    });\r\n    req.on('timeout', () => req.destroy(new Error('timeout')));\r\n    req.on('error', (e) => resolve({ ok: false, error: String((e && e.message) || e) }));\r\n    if (data !== null) req.write(data);\r\n    req.end();\r\n  });\r\n}\r\n\r\n// 本机装了哪些模型 / 现在常驻哪些（右键菜单用它列选项；**只读**，不改任何东西）\r\nipcMain.handle('pet:list-models', async () => {\r\n  const [tags, ps] = await Promise.all([petOllamaCall('/api/tags'), petOllamaCall('/api/ps')]);\r\n  const models = ((tags.json && tags.json.models) || [])\r\n    .map((m) => ({ name: String((m && m.name) || ''), size: Number(m && m.size) || 0 }))\r\n    .filter((m) => m.name);\r\n  const loaded = ((ps.json && ps.json.models) || []).map((m) => String((m && m.name) || '')).filter(Boolean);\r\n  if (!models.length) return { ok: false, error: tags.error || 'ollama-unreachable' };\r\n  return { ok: true, models, loaded };\r\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/src/host/index.ts:543-575](https://github.com/12we21/cute-fat-fish-pet/blob/e53f63e67227671aca092e3334c8611e29b880b6/src/src/host/index.ts#L543-L575)\n\n桌面模式缺 Electron 时自动下载。\n\n<details>\n<summary>查看原文（33行）</summary>\n\n```text\n   *  （不 spawn 子进程，CLI node 与 DSH Desktop 均适用），下载完成后自动拉起。 */\n  const startHelper = (): void => {\n    if (helper || electronEnsure || disposed) return;\n    if (!hasDesktopPet) return; // 无宠物显示在桌面（display 含 desktop/both）：不启动\n    // 无图形显示环境（Linux 服务器 / 容器）：直接放弃，不探测、不下载、不拉起。\n    // 否则 Electron 会「拉起即崩」，被守护循环反复重启并刷满 core dump。\n    if (!hasGraphicalDisplay()) {\n      if (!displayWarned) {\n        displayWarned = true;\n        ctx.logger?.warn?.(\n          '[dsh-pet] 未检测到图形显示环境（DISPLAY/WAYLAND_DISPLAY 均为空），已跳过桌面宠物。' +\n            '浏览器内宠物不受影响；如需在服务器上启用桌面模式，请配置 Xvfb 后设置 DSH_PET_DESKTOP_FORCE=1。',\n        );\n      }\n      return;\n    }\n    const found = resolveElectronPath();\n    if (found) {\n      launchHelper(found);\n      return;\n    }\n    console.warn(`[dsh-pet] Electron not found, downloading to ${defaultElectronExe()} ...`);\n    electronEnsure = ensureElectronDownload()\n      .then((path) => {\n        if (path) {\n          launchHelper(path);\n        } else {\n          console.warn(\n            '[dsh-pet] Electron download failed; desktop pet unavailable. Set DSH_PET_ELECTRON_PATH and restart, or retry later.',\n          );\n        }\n      })\n      .finally(() => {\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/src/host/helper-process.ts:163-249](https://github.com/12we21/cute-fat-fish-pet/blob/e53f63e67227671aca092e3334c8611e29b880b6/src/src/host/helper-process.ts#L163-L249)\n\n默认 npmmirror、下载/解压 Electron。\n\n<details>\n<summary>查看原文（87行）</summary>\n\n```text\n  /** Electron 版本号（默认 43.3.0，可被 DSH_PET_ELECTRON_VERSION 覆盖）。 */\n  version?: string;\n  /** 下载镜像（默认 npmmirror，可被 DSH_PET_ELECTRON_MIRROR 覆盖）。 */\n  mirror?: string;\n  /** 单次下载超时（默认 10 分钟）。 */\n  timeoutMs?: number;\n}\n\n/**\n * 进程内下载并解压 Electron 到 $DSH_HOME/electron。\n * 不 spawn 子进程：在 CLI node 与 Electron 宿主（DSH Desktop）里都可用，\n * 修复原 ensure-electron.mjs 用 process.execPath 调脚本导致宿主重复拉起的问题。\n * 已存在则原样返回；失败返回 undefined（不影响 DSH 与浏览器 overlay）。\n */\nexport async function ensureElectronDownload(options: EnsureElectronOptions = {}): Promise<string | undefined> {\n  const version = options.version || process.env.DSH_PET_ELECTRON_VERSION || '43.3.0';\n  const mirror = options.mirror || process.env.DSH_PET_ELECTRON_MIRROR || 'https://npmmirror.com/mirrors/electron/';\n  const timeoutMs = options.timeoutMs ?? 10 * 60 * 1000;\n  const targetDir = electronLandingDir();\n  const exe = defaultElectronExe();\n  if (existsSync(exe)) return exe;\n\n  // 下载日志用 console 直出（ctx.logger 在部分宿主不映射到终端，排障时看不到）。\n  const log = (message: string): void => console.log(`[dsh-pet] ${message}`);\n  const warn = (message: string): void => console.warn(`[dsh-pet] ${message}`);\n  const startedAt = Date.now();\n\n  log(`Electron not found, downloading v${version} (${PLAT}-${process.arch}) ...`);\n  mkdirSync(targetDir, { recursive: true });\n\n  try {\n    // 官方 @electron/get 下载：负责 URL 拼装、镜像、SHA256 校验（sumchecker）、下载缓存\n    // （同一版本只下载一次，之后命中缓存秒回）。超时用 AbortController 传给 fetch。\n    const controller = new AbortController();\n    const timer = setTimeout(\n      () => controller.abort(new Error(`Electron download timed out after ${timeoutMs}ms`)),\n      timeoutMs,\n    );\n    timer.unref?.();\n    let nextLogAt = Date.now() + 3000;\n    try {\n      const zipPath = await downloadArtifact({\n        version: `v${version}`,\n        artifactName: 'electron',\n        // platform/arch 不传：@electron/get 用宿主平台与架构自动推断\n        // （getHostArch 还处理 arm → armv7l 特例，比显式传 process.arch 更准）\n        mirrorOptions: { mirror: mirror.replace(/\\/$/, '') + '/' },\n        downloadOptions: {\n          signal: controller.signal,\n          quiet: true, // 关掉 @electron/get 自己的进度条（stdout 走宿主日志，不进 bridge 协议）\n          getProgressCallback: async (progress: { transferred: number; total: number | null }) => {\n            const now = Date.now();\n            if (!progress.total || now < nextLogAt) return;\n            nextLogAt = now + 3000;\n            log(\n              `downloading ${(progress.transferred / 1024 / 1024).toFixed(1)}MB / ${(progress.total / 1024 / 1024).toFixed(1)}MB`,\n            );\n          },\n        },\n      });\n      const seconds = ((Date.now() - startedAt) / 1000).toFixed(1);\n      log(`download complete (${seconds}s), extracting to ${targetDir} ...`);\n      // 官方 @electron-internal/extract-zip 解压（electron 43 官方安装同款）：\n      // 纯 Node + native binding，跨平台一致，正确处理 symlink 与文件权限，\n      // 不需要系统 unzip/tar/powershell，也没有我们手写的平台适配链。\n      await extract(zipPath, { dir: targetDir });\n      if (!existsSync(exe)) {\n        throw new Error(`Electron zip extracted, but ${ELECTRON_REL} not found`);\n      }\n      const readySeconds = ((Date.now() - startedAt) / 1000).toFixed(1);\n      log(`ready in ${readySeconds}s: ${exe}`);\n      return exe;\n    } finally {\n      clearTimeout(timer);\n    }\n  } catch (error) {\n    warn(`ensure failed: ${error instanceof Error ? error.message : String(error)}`);\n    warn('desktop pet unavailable. Set DSH_PET_ELECTRON_PATH to an existing Electron, or retry later.');\n    return undefined;\n  }\n}\n\nexport function defaultLaunch(options: HelperOptions = {}): { command: string; args: string[] } {\n  const electronPath = resolveElectronPath([options.electronPath]);\n  if (!electronPath) {\n    throw new Error('dsh-pet: cannot resolve Electron executable. Set DSH_PET_ELECTRON_PATH or install electron.');\n  }\n```\n\n</details>\n\n**依据 5 · 作者声明**：[src/README.zh-CN.md:24-43](https://github.com/12we21/cute-fat-fish-pet/blob/e53f63e67227671aca092e3334c8611e29b880b6/src/README.zh-CN.md#L24-L43)\n\n作者描述 Web/Ollama 与本地数据。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n\n## 你会得到什么\n\n- **106 个手绘动画** —— 带真实 alpha 通道的 VP9-alpha `webm`，叠在你的壁纸上。待机呼吸、\n  打瞌睡又被惊醒、跳舞、撸猫、吃东西、过节，点一下就有对应的反应。\n- **桌面漫步** —— 她自己走来走去，也会看鼠标：拖她、点她，她都会有反应。\n- **聊天** —— 在 DSH 网页界面里跟她说话。可以指向本机 **Ollama** 模型，也可以走你当前\n  DSH 会话已经在用的在线模型；有一个全局开关切「只用本地 / 只用 DSH / 本地优先」。\n- **碎碎念** —— 她能冒一句由你当前会话模型生成的一句话。\n- **可选看屏幕** —— 配合内置的原生抓屏组件，她可以看看你屏幕上是什么并吐槽。不开就是不开。\n\n## 这一半**没有**什么\n\n插件是独立版的子集。下面这些只在独立 Windows 版里，插件里没有：\n\n- 离线语音识别（sherpa-onnx + SenseVoice）\n- Edge TTS 朗读\n- 单页控制台\n\n## 数据放在哪\n```\n\n</details>\n\n#### 缺口\n\n- 未在目标环境验证 Web 的 Ollama 切换与下载真实请求。\n  **影响：**不能确认 UI 是否有额外代理路径，也无法估算下载频率。\n  **进一步探讨：**隔离 profile 分别选 Web/桌面、本地/在线，监测目标地址与模型路由。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 隐私、性能和安装成本怎样评估？\n\n**研究主题：**依赖、兼容与流程、效果与总成本、采用判断、新假设与验证\n\n#### 完整回答\n\nREADME 给出的 GitHub 子目录安装需下载整个约 68MB 仓库，资产播放另需浏览器 VP9-alpha 解码；桌面显示还需要 Electron，缺失时可能自动下载并启动 helper。在线 DSH 模型对话会传送用户输入和最近记忆给所选 provider；本机 Ollama 路径仅在相应模式下应本地化，不能笼统说数据永远留本地。可选“看屏幕”属于高隐私能力，配置/抓取与出站的实际端到端链本轮未验，不应仅凭 README 承诺。先在隔离 profile 明确选择 display/web、模型模式和屏幕开关，观察网络/权限/CPU-GPU/磁盘，再决定采用；建议把首次 Electron 下载和在线发送范围明确前置提示。\n\n父侧已补读实际发布版屏幕链，具体开关、出站与保留边界见[Q04](#research-q04)至[Q06](#research-q06)，不再仅以“未实测”留空。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[src/README.zh-CN.md:8-45](https://github.com/12we21/cute-fat-fish-pet/blob/e53f63e67227671aca092e3334c8611e29b880b6/src/README.zh-CN.md#L8-L45)\n\n作者说明 68MB 安装、动画、聊天与可选看屏幕。\n\n<details>\n<summary>查看原文（38行）</summary>\n\n````text\n\n## 安装\n\n```bash\ndsh plugin --profile web add github:12we21/cute-fat-fish-pet#path:/src\n```\n\n不需要构建：`lib/` 里已经是编好的宿主与客户端产物。\n\n> **注意：这条命令会拉整个仓库的 tarball，约 68 MB。** 106 个动画占了绝大部分。慢网下可能\n> 超时，超时就先克隆再用本地路径装：\n\n```bash\ngit clone --depth 1 https://github.com/12we21/cute-fat-fish-pet\ndsh plugin --profile web add ./cute-fat-fish-pet/src\n```\n\n## 你会得到什么\n\n- **106 个手绘动画** —— 带真实 alpha 通道的 VP9-alpha `webm`，叠在你的壁纸上。待机呼吸、\n  打瞌睡又被惊醒、跳舞、撸猫、吃东西、过节，点一下就有对应的反应。\n- **桌面漫步** —— 她自己走来走去，也会看鼠标：拖她、点她，她都会有反应。\n- **聊天** —— 在 DSH 网页界面里跟她说话。可以指向本机 **Ollama** 模型，也可以走你当前\n  DSH 会话已经在用的在线模型；有一个全局开关切「只用本地 / 只用 DSH / 本地优先」。\n- **碎碎念** —— 她能冒一句由你当前会话模型生成的一句话。\n- **可选看屏幕** —— 配合内置的原生抓屏组件，她可以看看你屏幕上是什么并吐槽。不开就是不开。\n\n## 这一半**没有**什么\n\n插件是独立版的子集。下面这些只在独立 Windows 版里，插件里没有：\n\n- 离线语音识别（sherpa-onnx + SenseVoice）\n- Edge TTS 朗读\n- 单页控制台\n\n## 数据放在哪\n\n聊天记忆和你的配置覆盖都在 `$DSH_HOME/dsh-pet/` 下。除非你把聊天指向在线模型，否则没有\n````\n\n</details>\n\n**依据 2 · 源码核查**：[src/package.json:53-100](https://github.com/12we21/cute-fat-fish-pet/blob/e53f63e67227671aca092e3334c8611e29b880b6/src/package.json#L53-L100)\n\n资源目录、Electron 获取依赖和宿主 peer。\n\n<details>\n<summary>查看原文（48行）</summary>\n\n```text\n  },\n  \"files\": [\n    \"lib\",\n    \"src\",\n    \"assets/webm\",\n    \"runtime/electron-helper\",\n    \"assets/fonts\",\n    \"assets/pic\",\n    \"assets/memes\",\n    \"assets/config.jsonc\",\n    \"scripts/ensure-electron.mjs\",\n    \"cordis.patch.yml\"\n  ],\n  \"scripts\": {\n    \"ensure:electron\": \"node scripts/ensure-electron.mjs\",\n    \"test\": \"node --test \\\"src/**/*.test.ts\\\"\"\n  },\n  \"license\": \"MIT\",\n  \"author\": \"Mikolu\",\n  \"dependencies\": {\n    \"@electron-internal/extract-zip\": \"^1.0.5\",\n    \"@electron/get\": \"^5.1.0\"\n  },\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    },\n    \"client\": {\n      \"inject\": [\n        \"@deepseek-ai/dsh-client-connection\"\n      ],\n      \"platform\": \"web\"\n    }\n  },\n  \"engines\": {\n    \"node\": \">=20\",\n    \"dsh\": \">=0.2.0-rc.1\"\n  },\n  \"peerDependencies\": {\n    \"@deepseek-ai/cordis\": \"^4.0.4\",\n    \"@deepseek-ai/dsh-agent-default-model\": \"^0.2.0-rc.1\",\n    \"@deepseek-ai/dsh-client-connection\": \"^0.2.0-rc.1\",\n    \"@deepseek-ai/dsh-client-ui-slots\": \"^0.2.0-rc.1\",\n    \"@deepseek-ai/dsh-commands\": \"^0.2.0-rc.1\",\n    \"@deepseek-ai/dsh-credentials\": \"^0.2.0-rc.1\",\n    \"@deepseek-ai/dsh-home-paths\": \"^0.2.0-rc.1\",\n    \"@deepseek-ai/dsh-host-webserver\": \"^0.2.0-rc.1\",\n    \"@deepseek-ai/dsh-llm\": \"^0.2.0-rc.1\",\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/src/host/chat.ts:87-115](https://github.com/12we21/cute-fat-fish-pet/blob/e53f63e67227671aca092e3334c8611e29b880b6/src/src/host/chat.ts#L87-L115)\n\n记忆和用户输入进入模型消息。\n\n<details>\n<summary>查看原文（29行）</summary>\n\n```text\n          content: [{ type: 'text', text: m.content }],\n          source: { kind: 'user' },\n        })\n      : createAssistantMessage({\n          content: [{ type: 'text', text: m.content }],\n          source: { provider: sel.provider, model: sel.model },\n        }),\n  );\n\n  const deadline = AbortSignal.timeout(TIMEOUT_MS);\n  // 仅当模型声明支持 reasoning effort（含 \"off\"）时才传，否则省略：\n  // 无 reasoning 元数据的模型（如 reasoningEfforts: false）显式传 off 会被\n  // dsh-llm 判为 UNSUPPORTED_REASONING_EFFORT 并折叠成空流（表现为\"模型未返回文本\"）。\n  const supportsOff = await supportsReasoningOff(ctx, sel.provider, sel.model);\n  // 配图：池非空才把清单与指令附进 user 正文（空池 = 关闭配图，正文与旧行为逐字一致）\n  const wantImage = pool.length > 0;\n  const options = {\n    provider: sel.provider,\n    model: sel.model,\n    messages: [\n      ...historyMessages,\n      createUserMessage({\n        content: [{ type: 'text', text: wantImage ? userText + imageInstruction(pool) : userText }],\n        source: { kind: 'user' },\n      }),\n    ],\n    system,\n    // 不显式限 maxTokens：与碎碎念同因——推理模型把思考计入预算，显式小上限会截断正文；\n    // 不传由 dsh-llm 按适配器 defaultMaxTokens 兜底，对话短回复输出仍短。\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/src/host/helper-process.ts:176-249](https://github.com/12we21/cute-fat-fish-pet/blob/e53f63e67227671aca092e3334c8611e29b880b6/src/src/host/helper-process.ts#L176-L249)\n\nElectron 下载来源和落地路径。\n\n<details>\n<summary>查看原文（74行）</summary>\n\n```text\n */\nexport async function ensureElectronDownload(options: EnsureElectronOptions = {}): Promise<string | undefined> {\n  const version = options.version || process.env.DSH_PET_ELECTRON_VERSION || '43.3.0';\n  const mirror = options.mirror || process.env.DSH_PET_ELECTRON_MIRROR || 'https://npmmirror.com/mirrors/electron/';\n  const timeoutMs = options.timeoutMs ?? 10 * 60 * 1000;\n  const targetDir = electronLandingDir();\n  const exe = defaultElectronExe();\n  if (existsSync(exe)) return exe;\n\n  // 下载日志用 console 直出（ctx.logger 在部分宿主不映射到终端，排障时看不到）。\n  const log = (message: string): void => console.log(`[dsh-pet] ${message}`);\n  const warn = (message: string): void => console.warn(`[dsh-pet] ${message}`);\n  const startedAt = Date.now();\n\n  log(`Electron not found, downloading v${version} (${PLAT}-${process.arch}) ...`);\n  mkdirSync(targetDir, { recursive: true });\n\n  try {\n    // 官方 @electron/get 下载：负责 URL 拼装、镜像、SHA256 校验（sumchecker）、下载缓存\n    // （同一版本只下载一次，之后命中缓存秒回）。超时用 AbortController 传给 fetch。\n    const controller = new AbortController();\n    const timer = setTimeout(\n      () => controller.abort(new Error(`Electron download timed out after ${timeoutMs}ms`)),\n      timeoutMs,\n    );\n    timer.unref?.();\n    let nextLogAt = Date.now() + 3000;\n    try {\n      const zipPath = await downloadArtifact({\n        version: `v${version}`,\n        artifactName: 'electron',\n        // platform/arch 不传：@electron/get 用宿主平台与架构自动推断\n        // （getHostArch 还处理 arm → armv7l 特例，比显式传 process.arch 更准）\n        mirrorOptions: { mirror: mirror.replace(/\\/$/, '') + '/' },\n        downloadOptions: {\n          signal: controller.signal,\n          quiet: true, // 关掉 @electron/get 自己的进度条（stdout 走宿主日志，不进 bridge 协议）\n          getProgressCallback: async (progress: { transferred: number; total: number | null }) => {\n            const now = Date.now();\n            if (!progress.total || now < nextLogAt) return;\n            nextLogAt = now + 3000;\n            log(\n              `downloading ${(progress.transferred / 1024 / 1024).toFixed(1)}MB / ${(progress.total / 1024 / 1024).toFixed(1)}MB`,\n            );\n          },\n        },\n      });\n      const seconds = ((Date.now() - startedAt) / 1000).toFixed(1);\n      log(`download complete (${seconds}s), extracting to ${targetDir} ...`);\n      // 官方 @electron-internal/extract-zip 解压（electron 43 官方安装同款）：\n      // 纯 Node + native binding，跨平台一致，正确处理 symlink 与文件权限，\n      // 不需要系统 unzip/tar/powershell，也没有我们手写的平台适配链。\n      await extract(zipPath, { dir: targetDir });\n      if (!existsSync(exe)) {\n        throw new Error(`Electron zip extracted, but ${ELECTRON_REL} not found`);\n      }\n      const readySeconds = ((Date.now() - startedAt) / 1000).toFixed(1);\n      log(`ready in ${readySeconds}s: ${exe}`);\n      return exe;\n    } finally {\n      clearTimeout(timer);\n    }\n  } catch (error) {\n    warn(`ensure failed: ${error instanceof Error ? error.message : String(error)}`);\n    warn('desktop pet unavailable. Set DSH_PET_ELECTRON_PATH to an existing Electron, or retry later.');\n    return undefined;\n  }\n}\n\nexport function defaultLaunch(options: HelperOptions = {}): { command: string; args: string[] } {\n  const electronPath = resolveElectronPath([options.electronPath]);\n  if (!electronPath) {\n    throw new Error('dsh-pet: cannot resolve Electron executable. Set DSH_PET_ELECTRON_PATH or install electron.');\n  }\n```\n\n</details>\n\n#### 缺口\n\n- 未执行屏幕抓取、数据出站或高负载动画测试。\n  **影响：**隐私和资源成本难以定量，推荐限隔离试用。\n  **进一步探讨：**在不同开关组合做网络日志/权限、缓存、帧率和内存监测。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 发布入口是否等同TS，看屏幕链实际上在哪里？\n\n**研究主题：**功能与机制、依赖、兼容与流程、工程质量与复用\n\n#### 完整回答\n\nsrc/package.json的main/default export是lib/index.js，发布包显式包含lib和src。固定发布lib有独立local patch 3看屏幕闭包、定时器、聊天控制词和模型附件调用；src/src/host/index.ts的现有宿主路由实现没有该段（搜索swRun/screen-watch未命中），因此只审TS不足以描述当前发布插件。README明确插件子集也含可选看屏幕，不应因TS没有就判承诺未闭合。\n\n发布lib默认running=false、brain=dsh、trigger=manual，5秒timer按intervalSec默认12秒节流。非force先判断running才抓屏；用户说“点评一下”等会force单次，即使自动监测关闭也可抓屏，这是主动单次语义。说“看着点”等写running=true，停止词写false。开关不是宿主独立权限弹窗，而是聊天文字控制；写配置失败被吞，控制回复先返回，不能以气泡文字保证状态已经落盘。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/package.json:45-67](https://github.com/12we21/cute-fat-fish-pet/blob/e53f63e67227671aca092e3334c8611e29b880b6/src/package.json#L45-L67)\n\n发布入口/文件。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n    },\n    \"./client\": {\n      \"types\": \"./lib/types/client/index.d.ts\",\n      \"default\": \"./lib/client.js\"\n    },\n    \"./src/*\": \"./src/*\",\n    \"./cordis.patch.yml\": \"./cordis.patch.yml\",\n    \"./package.json\": \"./package.json\"\n  },\n  \"files\": [\n    \"lib\",\n    \"src\",\n    \"assets/webm\",\n    \"runtime/electron-helper\",\n    \"assets/fonts\",\n    \"assets/pic\",\n    \"assets/memes\",\n    \"assets/config.jsonc\",\n    \"scripts/ensure-electron.mjs\",\n    \"cordis.patch.yml\"\n  ],\n  \"scripts\": {\n    \"ensure:electron\": \"node scripts/ensure-electron.mjs\",\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/lib/index.js:1966-2027](https://github.com/12we21/cute-fat-fish-pet/blob/e53f63e67227671aca092e3334c8611e29b880b6/src/lib/index.js#L1966-L2027)\n\n发布专属默认状态与写盘。\n\n<details>\n<summary>查看原文（62行）</summary>\n\n```text\n\tconst SW_DIR = join(userRoot, \"screen-watch\");\r\n\tconst SW_STATE = join(SW_DIR, \"state.json\");\r\n\tconst SW_PS1 = join(SW_DIR, \"capture.ps1\");\r\n\t// [local patch 5] 抓屏提速：优先用同目录下的原生 SwCapture.exe（单次 90~180ms），\r\n\t// 缺了它才退回 PowerShell 版 capture.ps1（单次 900~1140ms——纯 powershell.exe 冷启动就要 349ms，\r\n\t// 这正是\"开着监测就卡\"的固定开销大头）。两个实现产出同样的 512 位十六进制签名。\r\n\tconst SW_EXE = join(SW_DIR, \"SwCapture.exe\");\r\n\tconst SW_SHOT = join(SW_DIR, \"shot.jpg\");\r\n\tconst SW_SID = \"screen-watch\";\r\n\tconst SW_PWSH = (process.env.SystemRoot || \"C:/Windows\") + \"/System32/WindowsPowerShell/v1.0/powershell.exe\";\r\n\tconst SW_PS1_TEXT = Buffer.from(\"IyBkc2gtcGV0IHNjcmVlbiB3YXRjaDogY2FwdHVyZSBvbmUgZnJhbWUgKyBwcmludCBhIDE2eDE2IGdyYXlzY2FsZSBzaWduYXR1cmUgKDUxMiBoZXggY2hhcnMpLgojCiMgVXNhZ2U6IHBvd2Vyc2hlbGwuZXhlIC1Ob1Byb2ZpbGUgLU5vbkludGVyYWN0aXZlIC1FeGVjdXRpb25Qb2xpY3kgQnlwYXNzIC1GaWxlIGNhcHR1cmUucHMxCiMgICBUaGUgb3V0cHV0IEpQRUcgcGF0aCBjb21lcyBmcm9tIHRoZSBlbnZpcm9ubWVudCB2YXJpYWJsZSBEU0hfUEVUX1NIT1QuCiMgICBzdGRvdXQgPSA1MTIgaGV4IGNoYXJzICgyNTYgYnl0ZXMgb2YgZ3JheXNjYWxlIHNhbXBsZXMpLCB1c2VkIGZvciBjaGVhcCBjaGFuZ2UgZGV0ZWN0aW9uLgojICAgT24gZmFpbHVyZTogbm90aGluZyBvbiBzdGRvdXQgYW5kIGEgbm9uLXplcm8gZXhpdC4KIwojIERlbGliZXJhdGUgY2hvaWNlcyAoYm90aCB3ZXJlIHJlYWwgYnVncyBmb3VuZCB0aGUgaGFyZCB3YXkpOgojICAgMS4gQVNDSUktb25seSBjb21tZW50cy4gV2luZG93cyBQb3dlclNoZWxsIDUuMSByZWFkcyBhIEJPTS1sZXNzIGZpbGUgYXMgQU5TSTsgbm9uLUFTQ0lJCiMgICAgICBjb21tZW50IGJ5dGVzIGdvdCBtaXMtZGVjb2RlZCBhbmQgc3dhbGxvd2VkIHRoZSBuZXh0IGNvZGUgbGluZS4KIyAgIDIuIE5vIHBhcmFtKCkgYmxvY2suIFBvd2VyU2hlbGwgdmFyaWFibGUgbmFtZXMgYXJlIGNhc2UtaW5zZW5zaXRpdmUgKCRPdXQgdnMgJG91dCBjbG9iYmVyZWQKIyAgICAgIGVhY2ggb3RoZXIpLCBhbmQgYW4gYWR2YW5jZWQtZnVuY3Rpb24gcGFyYW1ldGVyIHdpdGhvdXQgUG9zaXRpb24gYmluZHMgb25seSBieSBuYW1lLgojICAgICAgUmVhZGluZyBhbiBlbnYgdmFyIGF2b2lkcyBwYXJhbWV0ZXIgYmluZGluZyBlbnRpcmVseS4KCiRUYXJnZXRQYXRoID0gJGVudjpEU0hfUEVUX1NIT1QKaWYgKC1ub3QgJFRhcmdldFBhdGgpIHsKICAgIFtDb25zb2xlXTo6RXJyb3IuV3JpdGVMaW5lKCdkc2gtcGV0IGNhcHR1cmU6IERTSF9QRVRfU0hPVCBpcyBub3Qgc2V0JykKICAgIGV4aXQgMgp9Cgp0cnkgewogICAgQWRkLVR5cGUgLUFzc2VtYmx5TmFtZSBTeXN0ZW0uRHJhd2luZwogICAgQWRkLVR5cGUgLUFzc2VtYmx5TmFtZSBTeXN0ZW0uV2luZG93cy5Gb3JtcwoKICAgICR2cyA9IFtTeXN0ZW0uV2luZG93cy5Gb3Jtcy5TeXN0ZW1JbmZvcm1hdGlvbl06OlZpcnR1YWxTY3JlZW4KICAgIGlmICgkdnMuV2lkdGggLWxlIDAgLW9yICR2cy5IZWlnaHQgLWxlIDApIHsgZXhpdCAxIH0KCiAgICAkZnVsbCA9IE5ldy1PYmplY3QgU3lzdGVtLkRyYXdpbmcuQml0bWFwKCR2cy5XaWR0aCwgJHZzLkhlaWdodCkKICAgICRnZnggPSBbU3lzdGVtLkRyYXdpbmcuR3JhcGhpY3NdOjpGcm9tSW1hZ2UoJGZ1bGwpCiAgICAkZ2Z4LkNvcHlGcm9tU2NyZWVuKCR2cy5YLCAkdnMuWSwgMCwgMCwgJGZ1bGwuU2l6ZSkKICAgICRnZnguRGlzcG9zZSgpCgogICAgIyAxNngxNiBncmF5c2NhbGUgc2lnbmF0dXJlIChsb2NhbCBjaGFuZ2UgZGV0ZWN0aW9uIG9ubHk7IG5ldmVyIHNlbnQgdG8gYSBtb2RlbCkKICAgICRzaWcgPSBOZXctT2JqZWN0IFN5c3RlbS5EcmF3aW5nLkJpdG1hcCgxNiwgMTYpCiAgICAkc2lnR2Z4ID0gW1N5c3RlbS5EcmF3aW5nLkdyYXBoaWNzXTo6RnJvbUltYWdlKCRzaWcpCiAgICAkc2lnR2Z4LkludGVycG9sYXRpb25Nb2RlID0gW1N5c3RlbS5EcmF3aW5nLkRyYXdpbmcyRC5JbnRlcnBvbGF0aW9uTW9kZV06OkhpZ2hRdWFsaXR5QmljdWJpYwogICAgJHNpZ0dmeC5EcmF3SW1hZ2UoJGZ1bGwsIDAsIDAsIDE2LCAxNikKICAgICRzaWdHZnguRGlzcG9zZSgpCiAgICAkc2IgPSBOZXctT2JqZWN0IFN5c3RlbS5UZXh0LlN0cmluZ0J1aWxkZXIKICAgIGZvciAoJHkgPSAwOyAkeSAtbHQgMTY7ICR5KyspIHsKICAgICAgICBmb3IgKCR4ID0gMDsgJHggLWx0IDE2OyAkeCsrKSB7CiAgICAgICAgICAgICRjID0gJHNpZy5HZXRQaXhlbCgkeCwgJHkpCiAgICAgICAgICAgICRsdW0gPSBbaW50XSgwLjI5OSAqICRjLlIgKyAwLjU4NyAqICRjLkcgKyAwLjExNCAqICRjLkIpCiAgICAgICAgICAgIFt2b2lkXSRzYi5BcHBlbmQoJGx1bS5Ub1N0cmluZygneDInKSkKICAgICAgICB9CiAgICB9CiAgICAkc2lnLkRpc3Bvc2UoKQoKICAgICMgVGhlIGZyYW1lIHRoYXQgZ29lcyB0byB0aGUgbW9kZWw6IHdpZHRoLWNhcHBlZCBKUEVHIChzbWFsbCBieXRlcywgbG93IHRva2VuIGNvc3QpCiAgICAkbWF4VyA9IDEyODAKICAgICRzY2FsZSA9IFtNYXRoXTo6TWluKDEuMCwgJG1heFcgLyAkZnVsbC5XaWR0aCkKICAgICRvdyA9IFtpbnRdKCRmdWxsLldpZHRoICogJHNjYWxlKTsgaWYgKCRvdyAtbHQgMSkgeyAkb3cgPSAxIH0KICAgICRvaCA9IFtpbnRdKCRmdWxsLkhlaWdodCAqICRzY2FsZSk7IGlmICgkb2ggLWx0IDEpIHsgJG9oID0gMSB9CiAgICAkc2NhbGVkID0gTmV3LU9iamVjdCBTeXN0ZW0uRHJhd2luZy5CaXRtYXAoJG93LCAkb2gpCiAgICAkc2NhbGVHZnggPSBbU3lzdGVtLkRyYXdpbmcuR3JhcGhpY3NdOjpGcm9tSW1hZ2UoJHNjYWxlZCkKICAgICRzY2FsZUdmeC5JbnRlcnBvbGF0aW9uTW9kZSA9IFtTeXN0ZW0uRHJhd2luZy5EcmF3aW5nMkQuSW50ZXJwb2xhdGlvbk1vZGVdOjpIaWdoUXVhbGl0eUJpY3ViaWMKICAgICRzY2FsZUdmeC5EcmF3SW1hZ2UoJGZ1bGwsIDAsIDAsICRvdywgJG9oKQogICAgJHNjYWxlR2Z4LkRpc3Bvc2UoKQogICAgJGZ1bGwuRGlzcG9zZSgpCgogICAgJHN0cmVhbSA9IFtTeXN0ZW0uSU8uRmlsZV06OkNyZWF0ZSgkVGFyZ2V0UGF0aCkKICAgIHRyeSB7CiAgICAgICAgJHNjYWxlZC5TYXZlKCRzdHJlYW0sIFtTeXN0ZW0uRHJhd2luZy5JbWFnaW5nLkltYWdlRm9ybWF0XTo6SnBlZykKICAgIH0KICAgIGZpbmFsbHkgewogICAgICAgICRzdHJlYW0uRGlzcG9zZSgpCiAgICB9CiAgICAkc2NhbGVkLkRpc3Bvc2UoKQoKICAgIFdyaXRlLU91dHB1dCAkc2IuVG9TdHJpbmcoKQogICAgZXhpdCAwCn0KY2F0Y2ggewogICAgW0NvbnNvbGVdOjpFcnJvci5Xcml0ZUxpbmUoJ2RzaC1wZXQgY2FwdHVyZTogJyArICRfLkV4Y2VwdGlvbi5NZXNzYWdlKQogICAgZXhpdCAxCn0K\", \"base64\").toString(\"utf8\");\r\n\tconst SW_DEFAULT = {\r\n\t\tbrain: \"dsh\",\r\n\t\ttrigger: \"manual\",\r\n\t\tverbosity: \"auto\",\r\n\t\trunning: false,\r\n\t\tintervalSec: 12,\r\n\t\tminGapSec: 20,\r\n\t\tchangeThreshold: 10,\r\n\t\tmaxCallsPerHour: 60,\r\n\t\tlocalProvider: \"ollama\",\r\n\t\tlocalModel: \"\",\r\n\t\tlocalApi: \"http://127.0.0.1:11434\"\r\n\t};\r\n\tconst SW_RT = {\r\n\t\tsig: null,\r\n\t\tseq: 0,\r\n\t\tlastCall: 0,\r\n\t\tlastTick: 0,\r\n\t\tonce: false,\r\n\t\tcalls: [],\r\n\t\tbusy: false,\r\n\t\tlastResult: null\r\n\t};\r\n\tconst swCfg = () => {\r\n\t\ttry {\r\n\t\t\treturn Object.assign({}, SW_DEFAULT, JSON.parse(readFileSync(SW_STATE, \"utf8\")));\r\n\t\t} catch (e) {\r\n\t\t\treturn Object.assign({}, SW_DEFAULT);\r\n\t\t}\r\n\t};\r\n\t// [local patch 4] 把监测配置的读取口子交给模块级生成函数：全局大脑与屏幕监测读同一份 state.json\r\n\tPET_BRAIN_READ = () => swCfg();\r\n\tconst swSave = async (patch) => {\r\n\t\tconst next = Object.assign({}, swCfg(), patch);\r\n\t\ttry {\r\n\t\t\tmkdirSync(SW_DIR, { recursive: true });\r\n\t\t\tawait writeFile(SW_STATE, JSON.stringify(next, null, 2), \"utf8\");\r\n\t\t} catch (e) {\r\n\t\t\tvoid e;\r\n\t\t}\r\n\t\treturn next;\r\n\t};\r\n\tconst swEnsurePs1 = async () => {\r\n\t\ttry {\r\n\t\t\tmkdirSync(SW_DIR, { recursive: true });\r\n\t\t\tif (!existsSync(SW_PS1) || readFileSync(SW_PS1, \"utf8\") !== SW_PS1_TEXT) await writeFile(SW_PS1, SW_PS1_TEXT, \"utf8\");\r\n\t\t\treturn true;\r\n\t\t} catch (e) {\r\n\t\t\treturn false;\r\n\t\t}\r\n\t};\r\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/lib/index.js:2225-2267](https://github.com/12we21/cute-fat-fish-pet/blob/e53f63e67227671aca092e3334c8611e29b880b6/src/lib/index.js#L2225-L2267)\n\n开关先于capture，force例外。\n\n<details>\n<summary>查看原文（43行）</summary>\n\n```text\n\tconst swRun = async (opts) => {\r\n\t\tconst force = Boolean(opts && opts.force);\r\n\t\tconst cfg = swCfg();\r\n\t\tif (SW_RT.busy) return { ok: false, reason: \"busy\" };\r\n\t\t// 关着又不是手动强制 → 连屏都不抓。抓屏必须发生在开关判断之后：\r\n\t\t// 否则\"关着\"的时候每 5 秒还是会拍一张存到本地（用户以为关了却还在拍，不可接受）。\r\n\t\tif (!force && !cfg.running) return { ok: false, reason: \"not-running\" };\r\n\t\tSW_RT.busy = true;\r\n\t\ttry {\r\n\t\t\tif (!(await swEnsurePs1())) return await swRecord({ ok: false, reason: \"no-script\" });\r\n\t\t\tconst sig = await swCapture();\r\n\t\t\tif (!sig) return await swRecord({ ok: false, reason: \"capture-failed\" });\r\n\t\t\tconst mad = swMad(SW_RT.sig, sig);\r\n\t\t\tSW_RT.sig = sig;\r\n\t\t\tconst changed = mad >= (Number(cfg.changeThreshold) || 10);\r\n\t\t\tif (!force && !changed) return { ok: true, spoke: false, reason: \"no-change\", mad };\r\n\t\t\tif (!force && cfg.verbosity === \"manual\") return { ok: true, spoke: false, reason: \"manual-mode\", mad };\r\n\t\t\tconst now = Date.now();\r\n\t\t\tif (!force && now - SW_RT.lastCall < Math.max(5, Number(cfg.minGapSec) || 20) * 1000) return { ok: true, spoke: false, reason: \"throttled\", mad };\r\n\t\t\tif (!swBudget(now, cfg)) return await swRecord({ ok: false, reason: \"budget\" });\r\n\t\t\tSW_RT.lastCall = now;\r\n\t\t\tSW_RT.calls.push(now);\r\n\t\t\t// [local patch 5] 到这里才真的需要那帧图：原生抓屏分两步，签名不落盘，JPEG 现拍现用。\r\n\t\t\t// [发布版补丁 V5] 抓屏之前先确认「这条路的模型看得懂图」：没有就直说，\r\n\t\t\t//  省下一次 SwCapture，也免得多花一次视觉额度。\r\n\t\t\tif (cfg.brain === \"dsh\" && !(await swSelection(cfg))) {\r\n\t\t\t\tconst why = \"还没配看屏幕的模型：去控制台「联网模型」里填「视觉模型」（比如 deepseek-flash），或者把大脑切成「本地模型」。\";\r\n\t\t\t\tswSpeak(\"waiting\", why);\r\n\t\t\t\treturn await swRecord({ ok: false, reason: \"no-vision-model\", message: why });\r\n\t\t\t}\r\n\t\t\tif (!(await swShot())) return await swRecord({ ok: false, reason: \"capture-failed\" });\r\n\t\t\tconst verdict = await swJudge(cfg, force);\r\n\t\t\tif (verdict.error) return await swRecord({ ok: false, reason: \"judge-failed\", message: verdict.error });\r\n\t\t\tconst speak = force || cfg.verbosity === \"chatty\" ? verdict.say.length > 0 : verdict.react === true && verdict.say.length > 0;\r\n\t\t\tif (!speak) return await swRecord({ ok: true, spoke: false, reason: \"nothing-notable\", mad, react: verdict.react, say: verdict.say });\r\n\t\t\tconst how = swSpeak(verdict.emotion, verdict.say);\r\n\t\t\treturn await swRecord({ ok: true, spoke: true, emotion: verdict.emotion, say: verdict.say, how, mad });\r\n\t\t} finally {\r\n\t\t\tSW_RT.busy = false;\r\n\t\t}\r\n\t};\r\n\t/* [互动@2] 联网模型的实际配置（独立模式下是 <app>/../standalone/online.json）。\r\n\t *  只用来**如实报名字**，读不到就当没配。 */\r\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/lib/index.js:2310-2367](https://github.com/12we21/cute-fat-fish-pet/blob/e53f63e67227671aca092e3334c8611e29b880b6/src/lib/index.js#L2310-L2367)\n\n文字控制与timer。\n\n<details>\n<summary>查看原文（58行）</summary>\n\n```text\n\t\tconst t = String(raw || \"\").trim();\r\n\t\tif (!t) return null;\r\n\t\t/* [互动@2] 先认「问句 + 档位词」，由代码如实回答（放在长度闸门和「换本地 / 换在线」\r\n\t\t *  之前：以前「你现在是本地模型吗」会被当成切换命令，直接把人家的档位改掉）。 */\r\n\t\tif (t.length <= 60 && /还是|吗|呢|是不是|什么|哪个|哪一|？|\\?/.test(t) && /在线|离线|联网|本机|本地|自动择优|模型|大脑|上网|网上/.test(t) && !/^(换|用|切|改|开始|停止|别|帮|给|把|让)/.test(t)) return swModeText();\r\n\t\tif (t.length > 24) return null;\r\n\t\tconst has = (list) => list.some((k) => t.indexOf(k) >= 0);\r\n\t\tif (has([\"监测状态\", \"什么模式\", \"当前模式\", \"监测模式\"])) return swStatusText();\r\n\t\tif (has([\"别看了\", \"停下\", \"关闭监测\", \"停止监测\", \"别盯着\"])) {\r\n\t\t\tvoid swSave({ running: false });\r\n\t\t\treturn \"好，我不看了～\";\r\n\t\t}\r\n\t\tif (has([\"看着点\", \"开始监测\", \"盯着\", \"开始看\", \"帮我看着\", \"看着我玩\"])) {\r\n\t\t\tvoid swSave({ running: true, trigger: \"watch\" });\r\n\t\t\treturn \"好嘞，我盯着啦，有高光我就喊你～\";\r\n\t\t}\r\n\t\tif (has([\"点评一下\", \"看看现在\", \"现在什么情况\", \"帮我看一下\"])) {\r\n\t\t\tvoid swRun({ force: true }).then((r) => {\r\n\t\t\t\tif (r && !r.ok) void swSpeak(\"thinking\", \"呜……我现在看不了屏幕（\" + String(r.reason) + \"）\");\r\n\t\t\t});\r\n\t\t\treturn \"让我看看屏幕…马上给你点评～\";\r\n\t\t}\r\n\t\tif (has([\"换本地\", \"用本地\", \"本地模型\"])) {\r\n\t\t\tvoid swSave({ brain: \"local\" });\r\n\t\t\treturn \"好，改用本地模型看（它没起服务的话我会告诉你）～\";\r\n\t\t}\r\n\t\tif (has([\"自动择优\", \"自动选\", \"自动模式\", \"自己选\"])) {\r\n\t\t\tvoid swSave({ brain: \"auto\" });\r\n\t\t\treturn \"好，本地能看就用本地，不行我自己换在线～\";\r\n\t\t}\r\n\t\tif (has([\"换在线\", \"用在线\", \"换回默认\", \"用默认模型\"])) {\r\n\t\t\tvoid swSave({ brain: \"dsh\" });\r\n\t\t\treturn \"好，换回默认模型～\";\r\n\t\t}\r\n\t\tif (has([\"碎碎念模式\", \"多说点\", \"话多一点\"])) {\r\n\t\t\tvoid swSave({ verbosity: \"chatty\" });\r\n\t\t\treturn \"那我话就多一点咯～\";\r\n\t\t}\r\n\t\tif (has([\"只说高光\", \"只说重点\", \"少说点\"])) {\r\n\t\t\tvoid swSave({ verbosity: \"auto\" });\r\n\t\t\treturn \"好，我只在关键时候出声～\";\r\n\t\t}\r\n\t\tif (has([\"只听我的\", \"别自动说\", \"安静模式\"])) {\r\n\t\t\tvoid swSave({ verbosity: \"manual\" });\r\n\t\t\treturn \"好，你不叫我我就不说话～\";\r\n\t\t}\r\n\t\treturn null;\r\n\t};\r\n\tctx.effect(() => {\r\n\t\tconst id = setInterval(() => {\r\n\t\t\tconst cfg = swCfg();\r\n\t\t\tconst now = Date.now();\r\n\t\t\tif (now - SW_RT.lastTick < Math.max(5, Number(cfg.intervalSec) || 12) * 1000) return;\r\n\t\t\tSW_RT.lastTick = now;\r\n\t\t\tvoid swRun().catch(() => {});\r\n\t\t}, 5000);\r\n\t\treturn () => clearInterval(id);\r\n\t}, \"dsh-pet: screen watch (local patch 3)\");\r\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/src/host/index.ts:635-645](https://github.com/12we21/cute-fat-fish-pet/blob/e53f63e67227671aca092e3334c8611e29b880b6/src/src/host/index.ts#L635-L645)\n\nTS直接进入业务路由无同段闭包。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n  const handlePetRoute = async (rawUrl: string, method: string, body?: string): Promise<RouteResult> => {\n    const url = new URL(rawUrl, 'http://localhost');\n    const rest = decodeURIComponent(url.pathname.slice(ROUTE_PREFIX.length + 1));\n\n    // 成品配置：/dsh-pet-7340/config（GET 读取合并成品 / PUT 保存用户层 / DELETE 恢复默认）\n    if (rest === 'config') {\n      if (method === 'GET') {\n        // 唯一配置入口：readAllConfig 返回绝对正确的完成品聚合（{ main:{...}, test1:{...} }），\n        // 浏览器/桌面/设置页直接消费，无需任何校验/兜底\n        try {\n          return { kind: 'json', status: 200, obj: readAllConfig(configPaths) };\n```\n\n</details>\n\n**依据 6 · 源码核查**：[README.md:125-125](https://github.com/12we21/cute-fat-fish-pet/blob/e53f63e67227671aca092e3334c8611e29b880b6/README.md#L125-L125)\n\n插件子集承诺。\n\n```text\nThis half of the project is a **subset** of the standalone build: all 106 animations, wandering, click reactions, chat through local **Ollama** or the DSH online models, and optional screen watching are in it. The offline speech recognition, the Edge TTS voice and the console window are **not** — those come with the installer and the zip above.\r\n```\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 屏幕送往哪里，关掉监测和卸载清理的边界是什么？\n\n**研究主题：**缺陷与关键质疑、效果与总成本、新假设与验证\n\n#### 完整回答\n\n抓屏路径是userRoot/screen-watch，原生SwCapture.exe存在则先--sig、真需推理再--shot；否则写内嵌PowerShell并CopyFromScreen抓整个VirtualScreen，缩到宽1280的JPEG存shot.jpg，签名阶段就已落盘。平均亮度差/minGap/每小时默认60次预算能减少推理，但不能称“不说话就不截图”。manual表达模式在抓签名之后返回，PowerShell分支此时仍留图。\n\nswJudge把shot.jpg读入attachments.saveImages，再向ctx.llm.stream传image附件。local/auto通过localApi/api/tags确认名称基部存在，实际选择provider/localModel仍走宿主llm，不能仅凭local标签承诺绝不外发；auto本地不可用会落到宿主默认选择。dsh若ctx提供onlineVisionReady则要求ready并选online，否则取agentDefaultModel.currentSelection，未见这里检查该默认模型视觉能力。因此“没配视觉模型不启用”是特定适配器条件下的保护，不能覆盖所有宿主路径。\n\n关闭running可阻止新的非force轮；已开始swRun没有运行中取消信号，90秒LLM timeout独立，不会因后来关开关或dispose立刻撤销。截图spawn未设超时/持有句柄用于清理，busy可被挂住；dispose清timer和helper不等同撤销在途截图/LLM。当前未见shot.jpg和保存的附件在该链被删除，state还存lastResult，保留期由用户/宿主存储决定。建议只对已确认数据目的地启用，关监测后也核在途和残留。进一步研究带授权来源/数据目的地/取消与保留期的观察会话，对比关闭中途、无视觉默认模型、local provider映射错误、capture卡死等反例，尚未验证。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/lib/index.js:2036-2083](https://github.com/12we21/cute-fat-fish-pet/blob/e53f63e67227671aca092e3334c8611e29b880b6/src/lib/index.js#L2036-L2083)\n\ncapture/shot无超时。\n\n<details>\n<summary>查看原文（48行）</summary>\n\n```text\n\tconst swCapture = () => new Promise((done) => {\r\n\t\ttry {\r\n\t\t\tconst native = swHasExe();\r\n\t\t\tconst child = spawn(native ? SW_EXE : SW_PWSH, native ? [\"--sig\"] : [\"-NoProfile\", \"-NonInteractive\", \"-ExecutionPolicy\", \"Bypass\", \"-File\", SW_PS1], {\r\n\t\t\t\twindowsHide: true,\r\n\t\t\t\tenv: Object.assign({}, process.env, { DSH_PET_SHOT: SW_SHOT })\r\n\t\t\t});\r\n\t\t\tlet out = \"\";\r\n\t\t\tchild.stdout.on(\"data\", (d) => { out += String(d); });\r\n\t\t\tchild.stderr.on(\"data\", () => {});\r\n\t\t\tchild.on(\"error\", () => done(null));\r\n\t\t\tchild.on(\"close\", (code) => {\r\n\t\t\t\tconst hex = String(out).trim().split(/\\s+/).pop() || \"\";\r\n\t\t\t\tdone(code === 0 && /^[0-9a-f]{512}$/.test(hex) ? hex : null);\r\n\t\t\t});\r\n\t\t} catch (e) {\r\n\t\t\tdone(null);\r\n\t\t}\r\n\t});\r\n\t/**\r\n\t * 只在真要送模型时才把当前帧落盘成 JPEG。\r\n\t * PowerShell 版是\"抓签名那一趟顺手写盘\"；原生版拆成两趟：签名（约 90ms，每 intervalSec 一次）\r\n\t * 不落盘，只有判定\"画面真的变了\"才再跑一次 --shot（约 180ms）写 shot.jpg。\r\n\t * 拿不到 JPEG 就当作抓屏失败，绝不让模型看上一帧的旧图。\r\n\t */\r\n\tconst swShot = async () => {\r\n\t\tif (!swHasExe()) return true; // PowerShell 版在 --sig 那一趟已经写过 shot.jpg\r\n\t\ttry {\r\n\t\t\tconst ok = await new Promise((done) => {\r\n\t\t\t\ttry {\r\n\t\t\t\t\tconst child = spawn(SW_EXE, [\"--shot\"], {\r\n\t\t\t\t\t\twindowsHide: true,\r\n\t\t\t\t\t\tenv: Object.assign({}, process.env, { DSH_PET_SHOT: SW_SHOT })\r\n\t\t\t\t\t});\r\n\t\t\t\t\tchild.stdout.on(\"data\", () => {});\r\n\t\t\t\t\tchild.stderr.on(\"data\", () => {});\r\n\t\t\t\t\tchild.on(\"error\", () => done(false));\r\n\t\t\t\t\tchild.on(\"close\", (code) => done(code === 0));\r\n\t\t\t\t} catch (e) {\r\n\t\t\t\t\tdone(false);\r\n\t\t\t\t}\r\n\t\t\t});\r\n\t\t\treturn ok && existsSync(SW_SHOT);\r\n\t\t} catch (e) {\r\n\t\t\treturn false;\r\n\t\t}\r\n\t};\r\n\t/** 平均绝对亮度差（0~255）。用均值而不是\"差异字节个数\"：她自己那扇窗一直在动，\r\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/lib/index.js:2100-2168](https://github.com/12we21/cute-fat-fish-pet/blob/e53f63e67227671aca092e3334c8611e29b880b6/src/lib/index.js#L2100-L2168)\n\n选择和附件模型路径。\n\n<details>\n<summary>查看原文（69行）</summary>\n\n```text\n\tconst swOllamaUp = async (cfg) => {\r\n\t\ttry {\r\n\t\t\tconst want = String(cfg.localModel || \"\").split(\":\")[0];\r\n\t\t\tif (!want) return false;\r\n\t\t\tconst res = await fetch(String(cfg.localApi || \"http://127.0.0.1:11434\") + \"/api/tags\", { signal: AbortSignal.timeout(2500) });\r\n\t\t\tif (!res.ok) return false;\r\n\t\t\tconst j = await res.json();\r\n\t\t\tconst list = Array.isArray(j && j.models) ? j.models : [];\r\n\t\t\treturn list.some((m) => String(m && m.name || \"\").split(\":\")[0] === want);\r\n\t\t} catch (e) {\r\n\t\t\treturn false;\r\n\t\t}\r\n\t};\r\n\tconst swSelection = async (cfg) => {\r\n\t\ttry {\r\n\t\t\tif (cfg.brain === \"local\" || cfg.brain === \"auto\") {\r\n\t\t\t\tconst model = String(cfg.localModel || \"\");\r\n\t\t\t\tif (model && await swOllamaUp(cfg)) return { provider: String(cfg.localProvider || \"ollama\"), model };\r\n\t\t\t\tif (cfg.brain === \"local\") return null;\r\n\t\t\t}\r\n\t\t\t// [发布版补丁 V4] 在线档：只有视觉（看图那个模型）真的配齐了才走在线；\r\n\t\t\t//  没配就返回 null，让 swRun 明说「还没配」，绝不把 JPEG 塞给纯文本模型瞎编。\r\n\t\t\t//  ctx 里没有这个能力（真跑在 DSH 插件里）⇒ 保持原样走下面那条老路。\r\n\t\t\tif (cfg.brain === \"dsh\") {\r\n\t\t\t\tconst ready = typeof ctx.get === \"function\" ? ctx.get(\"onlineVisionReady\") : void 0;\r\n\t\t\t\tif (typeof ready === \"function\") {\r\n\t\t\t\t\tif (!ready()) return null;\r\n\t\t\t\t\treturn { provider: \"online\", model: \"\" }; // 具体模型名由 online.mjs 的视觉目标决定\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t\tconst s = ctx.agentDefaultModel.currentSelection();\r\n\t\t\treturn s && s.provider && s.model ? { provider: s.provider, model: s.model } : null;\r\n\t\t} catch (e) {\r\n\t\t\treturn null;\r\n\t\t}\r\n\t};\r\n\tconst SW_SYSTEM = \"你是主人桌面上形影不离的 Q 版蓝发小女仆，此刻正看着主人的屏幕。你说话自然、短短一句、带点俏皮；不说教、不解释自己、不提 AI。\";\r\n\tconst swJudge = async (cfg, force) => {\r\n\t\tconst llm = ctx.llm;\r\n\t\tconst att = typeof ctx.get === \"function\" ? ctx.get(\"attachments\") : void 0;\r\n\t\tconst sel = await swSelection(cfg);\r\n\t\tif (!llm || typeof llm.stream !== \"function\" || !att || !sel) return { error: cfg.brain === \"local\" ? \"本地模型不可用：Ollama 没在跑，或还没拉下 \" + String(cfg.localModel || \"(未配置 localModel)\") : \"模型或附件服务不可用\" };\r\n\t\tlet ref;\r\n\t\ttry {\r\n\t\t\tconst saved = await att.saveImages([{ data: new Uint8Array(readFileSync(SW_SHOT)), mediaType: \"image/jpeg\", name: \"screen.jpg\" }]);\r\n\t\t\tref = saved && saved[0];\r\n\t\t} catch (e) {\r\n\t\t\treturn { error: \"截图入附件失败：\" + (e instanceof Error ? e.message : String(e)) };\r\n\t\t}\r\n\t\tif (!ref) return { error: \"截图入附件失败\" };\r\n\t\tconst ask = force ? \"主人让你现在点评一下屏幕上的情况。\" : \"这是主人此刻的屏幕。判断有没有值得点评的高光时刻、失误，或者卡住受挫。\";\r\n\t\tconst prompt = ask + '只回一行 JSON：{\"react\":true|false,\"emotion\":\"success|error|thinking|waiting|result|working\",\"say\":\"不超过40字的中文点评\"}。没什么可说的就 react=false、say 留空。';\r\n\t\tconst assembler = new BlockAssembler();\r\n\t\ttry {\r\n\t\t\tfor await (const chunk of llm.stream({\r\n\t\t\t\tprovider: sel.provider,\r\n\t\t\t\tmodel: sel.model,\r\n\t\t\t\tmessages: [createUserMessage({\r\n\t\t\t\t\tcontent: [{ type: \"image\", attachment: ref }, { type: \"text\", text: prompt }],\r\n\t\t\t\t\tsource: { kind: \"user\" }\r\n\t\t\t\t})],\r\n\t\t\t\tsystem: SW_SYSTEM,\r\n\t\t\t\ttemperature: 1,\r\n\t\t\t\tsignal: AbortSignal.timeout(90000)\r\n\t\t\t})) assembler.push(chunk);\r\n\t\t} catch (e) {\r\n\t\t\treturn { error: e instanceof Error ? e.message : String(e) };\r\n\t\t}\r\n\t\tconst text = assembler.blocks().filter((b) => b.type === \"text\").map((b) => b && typeof b.text === \"string\" ? b.text : \"\").join(\"\").trim();\r\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/lib/index.js:2225-2267](https://github.com/12we21/cute-fat-fish-pet/blob/e53f63e67227671aca092e3334c8611e29b880b6/src/lib/index.js#L2225-L2267)\n\n调用时序与预算。\n\n<details>\n<summary>查看原文（43行）</summary>\n\n```text\n\tconst swRun = async (opts) => {\r\n\t\tconst force = Boolean(opts && opts.force);\r\n\t\tconst cfg = swCfg();\r\n\t\tif (SW_RT.busy) return { ok: false, reason: \"busy\" };\r\n\t\t// 关着又不是手动强制 → 连屏都不抓。抓屏必须发生在开关判断之后：\r\n\t\t// 否则\"关着\"的时候每 5 秒还是会拍一张存到本地（用户以为关了却还在拍，不可接受）。\r\n\t\tif (!force && !cfg.running) return { ok: false, reason: \"not-running\" };\r\n\t\tSW_RT.busy = true;\r\n\t\ttry {\r\n\t\t\tif (!(await swEnsurePs1())) return await swRecord({ ok: false, reason: \"no-script\" });\r\n\t\t\tconst sig = await swCapture();\r\n\t\t\tif (!sig) return await swRecord({ ok: false, reason: \"capture-failed\" });\r\n\t\t\tconst mad = swMad(SW_RT.sig, sig);\r\n\t\t\tSW_RT.sig = sig;\r\n\t\t\tconst changed = mad >= (Number(cfg.changeThreshold) || 10);\r\n\t\t\tif (!force && !changed) return { ok: true, spoke: false, reason: \"no-change\", mad };\r\n\t\t\tif (!force && cfg.verbosity === \"manual\") return { ok: true, spoke: false, reason: \"manual-mode\", mad };\r\n\t\t\tconst now = Date.now();\r\n\t\t\tif (!force && now - SW_RT.lastCall < Math.max(5, Number(cfg.minGapSec) || 20) * 1000) return { ok: true, spoke: false, reason: \"throttled\", mad };\r\n\t\t\tif (!swBudget(now, cfg)) return await swRecord({ ok: false, reason: \"budget\" });\r\n\t\t\tSW_RT.lastCall = now;\r\n\t\t\tSW_RT.calls.push(now);\r\n\t\t\t// [local patch 5] 到这里才真的需要那帧图：原生抓屏分两步，签名不落盘，JPEG 现拍现用。\r\n\t\t\t// [发布版补丁 V5] 抓屏之前先确认「这条路的模型看得懂图」：没有就直说，\r\n\t\t\t//  省下一次 SwCapture，也免得多花一次视觉额度。\r\n\t\t\tif (cfg.brain === \"dsh\" && !(await swSelection(cfg))) {\r\n\t\t\t\tconst why = \"还没配看屏幕的模型：去控制台「联网模型」里填「视觉模型」（比如 deepseek-flash），或者把大脑切成「本地模型」。\";\r\n\t\t\t\tswSpeak(\"waiting\", why);\r\n\t\t\t\treturn await swRecord({ ok: false, reason: \"no-vision-model\", message: why });\r\n\t\t\t}\r\n\t\t\tif (!(await swShot())) return await swRecord({ ok: false, reason: \"capture-failed\" });\r\n\t\t\tconst verdict = await swJudge(cfg, force);\r\n\t\t\tif (verdict.error) return await swRecord({ ok: false, reason: \"judge-failed\", message: verdict.error });\r\n\t\t\tconst speak = force || cfg.verbosity === \"chatty\" ? verdict.say.length > 0 : verdict.react === true && verdict.say.length > 0;\r\n\t\t\tif (!speak) return await swRecord({ ok: true, spoke: false, reason: \"nothing-notable\", mad, react: verdict.react, say: verdict.say });\r\n\t\t\tconst how = swSpeak(verdict.emotion, verdict.say);\r\n\t\t\treturn await swRecord({ ok: true, spoke: true, emotion: verdict.emotion, say: verdict.say, how, mad });\r\n\t\t} finally {\r\n\t\t\tSW_RT.busy = false;\r\n\t\t}\r\n\t};\r\n\t/* [互动@2] 联网模型的实际配置（独立模式下是 <app>/../standalone/online.json）。\r\n\t *  只用来**如实报名字**，读不到就当没配。 */\r\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/lib/index.js:2356-2367](https://github.com/12we21/cute-fat-fish-pet/blob/e53f63e67227671aca092e3334c8611e29b880b6/src/lib/index.js#L2356-L2367)\n\ntimer disposer只clearInterval。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n\t\treturn null;\r\n\t};\r\n\tctx.effect(() => {\r\n\t\tconst id = setInterval(() => {\r\n\t\t\tconst cfg = swCfg();\r\n\t\t\tconst now = Date.now();\r\n\t\t\tif (now - SW_RT.lastTick < Math.max(5, Number(cfg.intervalSec) || 12) * 1000) return;\r\n\t\t\tSW_RT.lastTick = now;\r\n\t\t\tvoid swRun().catch(() => {});\r\n\t\t}, 5000);\r\n\t\treturn () => clearInterval(id);\r\n\t}, \"dsh-pet: screen watch (local patch 3)\");\r\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/lib/index.js:3015-3021](https://github.com/12we21/cute-fat-fish-pet/blob/e53f63e67227671aca092e3334c8611e29b880b6/src/lib/index.js#L3015-L3021)\n\n最终卸载只stopHelper。\n\n```text\n\tctx.effect(() => () => {\r\n\t\tdisposed = true;\r\n\t\tstopHelper(\"dsh-host-stop\");\r\n\t});\r\n\tstartHelper();\r\n}\r\n\r\n```\n\n#### 缺口\n\n- 宿主attachments保存策略与localProvider实际解析后的网络目的地\n  **影响：**无法从本插件local标签保证数据只在本机/定期删除\n  **进一步探讨：**只读同版本宿主provider/附件契约并核明确保留期及目标映射\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 路由、自动下载和进程停止有哪些采用条件？\n\n**研究主题：**缺陷与关键质疑、依赖、兼容与流程、效果与总成本、采用判断\n\n#### 完整回答\n\nHTTP前缀注册将req.url/method/body直接交handlePetRoute，发布插件这一层未见peer/Host/Origin或令牌身份检查。config GET/PUT/DELETE和chat GET/POST因此依赖宿主外层访问控制；chatWithPet开头就swControl，若可达POST/chat可用文字开启监测或强制抓一帧。不能把它只称资产只读路由，也不能在未核宿主可达性时宣称远程已可利用。桌面helper管道复用业务函数另有本地通道边界，不能拿管道隔离替HTTP授权。\n\n缺Electron会自动下载默认43.3.0，默认镜像npmmirror，可由环境变量覆盖，10分钟AbortController后解压到DSH_HOME/electron；已存在exe直接复用，此处不核版本或文件摘要。downloadArtifact依赖的校验行为需另核，不能说这里完全无上游校验。下载失败保留可能部分目录，后续若只以exe存在判断可产生恢复问题；不执行下载核查。\n\nhelper stopAndWait用于需重启路径，有3秒等待/升级kill，最终卸载stop只发kill不等退出，依赖helper宿主存活检测等兜底。适合可信本机宿主、能确认模型/附件目的地并接受Electron和截图持久数据的读者；对外暴露宿主需先核上层鉴权和路由权限，关闭并清理数据需区分停止新轮、在途请求、文件保留三个层面。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/lib/index.js:1738-1750](https://github.com/12we21/cute-fat-fish-pet/blob/e53f63e67227671aca092e3334c8611e29b880b6/src/lib/index.js#L1738-L1750)\n\n聊天先走控制词。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n\t/** 与某只宠物对话：截取最近记忆 → 生成回复 → 写入记忆 → 返回 {reply,ts}。\r\n\t*  供 /chat 端点（POST）与 /chat 命令共用同一条路径（锁内读写，防两端交错写盘）。\r\n\t*  配图（chatImageEnabled 开启时）：把表情包清单交给模型按语境选一张，命中池内才随回复带回。 */\r\n\tconst chatWithPet = async (petId, text) => withMemoryLock(async () => {\r\n\t\tconst petCtlReply = swControl(text);\r\n\t\tif (petCtlReply) return {\r\n\t\t\tok: true,\r\n\t\t\treply: petCtlReply,\r\n\t\t\tts: Date.now()\r\n\t\t};\r\n\t\tconst cfg = readAllConfig(configPaths);\r\n\t\tconst rounds = memoryRounds(petId, cfg);\r\n\t\tconst conf = (findPetInstance(cfg, petId) ?? { conf: cfg.main ?? {} }).conf;\r\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/lib/index.js:2372-2410](https://github.com/12we21/cute-fat-fish-pet/blob/e53f63e67227671aca092e3334c8611e29b880b6/src/lib/index.js#L2372-L2410)\n\n可写配置路由。\n\n<details>\n<summary>查看原文（39行）</summary>\n\n```text\n\tconst handlePetRoute = async (rawUrl, method, body) => {\r\n\t\tconst url = new URL(rawUrl, \"http://localhost\");\r\n\t\tconst rest = decodeURIComponent(url.pathname.slice(ROUTE_PREFIX.length + 1));\r\n\t\tif (rest === \"config\") {\r\n\t\t\tif (method === \"GET\") try {\r\n\t\t\t\treturn {\r\n\t\t\t\t\tkind: \"json\",\r\n\t\t\t\t\tstatus: 200,\r\n\t\t\t\t\tobj: readAllConfig(configPaths)\r\n\t\t\t\t};\r\n\t\t\t} catch (e) {\r\n\t\t\t\treturn {\r\n\t\t\t\t\tkind: \"json\",\r\n\t\t\t\t\tstatus: 500,\r\n\t\t\t\t\tobj: { error: e instanceof Error ? e.message : String(e) }\r\n\t\t\t\t};\r\n\t\t\t}\r\n\t\t\tif (method === \"PUT\") try {\r\n\t\t\t\tconst parsed = JSON.parse(body ?? \"\");\r\n\t\t\t\tlet existing;\r\n\t\t\t\ttry {\r\n\t\t\t\t\texisting = JSON.parse(await readFile(userConfigPath, \"utf8\"));\r\n\t\t\t\t} catch {}\r\n\t\t\t\tconst clean = saveUserConfig(parsed, existing);\r\n\t\t\t\tif (!clean) return {\r\n\t\t\t\t\tkind: \"json\",\r\n\t\t\t\t\tstatus: 400,\r\n\t\t\t\t\tobj: { error: \"invalid pet config: expected { pets:[{name?,id,size,balanceEnabled,display,position:{corner,marginX,marginY}}] }（display 为 web/desktop/both/none 之一；可选顶层 notificationsEnabled / whisperImageEnabled / chatImageEnabled 布尔）\" }\r\n\t\t\t\t};\r\n\t\t\t\tawait mkdir(userRoot, { recursive: true });\r\n\t\t\t\tawait writeFile(userConfigPath, JSON.stringify(clean, null, 2), \"utf8\");\r\n\t\t\t\tsyncDesktop();\r\n\t\t\t\treturn {\r\n\t\t\t\t\tkind: \"json\",\r\n\t\t\t\t\tstatus: 200,\r\n\t\t\t\t\tobj: readAllConfig(configPaths)\r\n\t\t\t\t};\r\n\t\t\t} catch {\r\n\t\t\t\treturn {\r\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/lib/index.js:2538-2580](https://github.com/12we21/cute-fat-fish-pet/blob/e53f63e67227671aca092e3334c8611e29b880b6/src/lib/index.js#L2538-L2580)\n\nchat读写。\n\n<details>\n<summary>查看原文（43行）</summary>\n\n```text\n\t\tif (rest === \"chat\") {\r\n\t\t\tconst petId$1 = String(url.searchParams.get(\"pet\") ?? \"\");\r\n\t\t\ttry {\r\n\t\t\t\tif (method === \"GET\") {\r\n\t\t\t\t\tconst cfg = readAllConfig(configPaths);\r\n\t\t\t\t\tconst mem = await readMemory();\r\n\t\t\t\t\tconst bucket = mem[findPetInstance(cfg, petId$1)?.entry ?? petId$1] ?? {};\r\n\t\t\t\t\tconst list = (bucket[petId$1]?.messages ?? []).slice();\r\n\t\t\t\t\tconst rounds = memoryRounds(petId$1, cfg);\r\n\t\t\t\t\treturn {\r\n\t\t\t\t\t\tkind: \"json\",\r\n\t\t\t\t\t\tstatus: 200,\r\n\t\t\t\t\t\tobj: {\r\n\t\t\t\t\t\t\tok: true,\r\n\t\t\t\t\t\t\tmessages: list.slice(-rounds * 2),\r\n\t\t\t\t\t\t\trounds\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t};\r\n\t\t\t\t}\r\n\t\t\t\tif (method === \"POST\") {\r\n\t\t\t\t\tconst parsed = JSON.parse(body ?? \"null\") ?? {};\r\n\t\t\t\t\tconst text = typeof parsed.text === \"string\" ? parsed.text.trim() : \"\";\r\n\t\t\t\t\tif (!text) return {\r\n\t\t\t\t\t\tkind: \"json\",\r\n\t\t\t\t\t\tstatus: 200,\r\n\t\t\t\t\t\tobj: {\r\n\t\t\t\t\t\t\tok: false,\r\n\t\t\t\t\t\t\treason: \"bad-request\",\r\n\t\t\t\t\t\t\tmessage: \"消息为空\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t};\r\n\t\t\t\t\tif (text.length > 2e3) return {\r\n\t\t\t\t\t\tkind: \"json\",\r\n\t\t\t\t\t\tstatus: 200,\r\n\t\t\t\t\t\tobj: {\r\n\t\t\t\t\t\t\tok: false,\r\n\t\t\t\t\t\t\treason: \"bad-request\",\r\n\t\t\t\t\t\t\tmessage: \"消息过长（限 2000 字）\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t};\r\n\t\t\t\t\tconst result = await chatWithPet(petId$1, text);\r\n\t\t\t\t\treturn {\r\n\t\t\t\t\t\tkind: \"json\",\r\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/lib/index.js:2809-2824](https://github.com/12we21/cute-fat-fish-pet/blob/e53f63e67227671aca092e3334c8611e29b880b6/src/lib/index.js#L2809-L2824)\n\nHTTP无本地准入直接分派。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n\t};\r\n\tctx.effect(() => ctx.webServer.register({\r\n\t\tkind: \"prefix\",\r\n\t\tpath: ROUTE_PREFIX,\r\n\t\thandler: async (req, res) => {\r\n\t\t\ttry {\r\n\t\t\t\tconst body = req.method === \"PUT\" || req.method === \"POST\" ? await readBody(req) : void 0;\r\n\t\t\t\tconst result = await handlePetRoute(req.url ?? \"/\", req.method ?? \"GET\", body);\r\n\t\t\t\tif (result.kind === \"json\") sendJson(res, result.status, result.obj, result.headers);\r\n\t\t\t\telse if (result.kind === \"text\") sendText(res, result.status, result.body);\r\n\t\t\t\telse sendFile(res, result.file, result.contentType);\r\n\t\t\t} catch (e) {\r\n\t\t\t\tsendJson(res, 500, { error: e instanceof Error ? e.message : String(e) });\r\n\t\t\t}\r\n\t\t}\r\n\t}), \"dsh-pet: /dsh-pet-7340 asset route\");\r\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/lib/index.js:1208-1257](https://github.com/12we21/cute-fat-fish-pet/blob/e53f63e67227671aca092e3334c8611e29b880b6/src/lib/index.js#L1208-L1257)\n\n自动下载/解压。\n\n<details>\n<summary>查看原文（50行）</summary>\n\n```text\nasync function ensureElectronDownload(options = {}) {\r\n\tconst version = options.version || process.env.DSH_PET_ELECTRON_VERSION || \"43.3.0\";\r\n\tconst mirror = options.mirror || process.env.DSH_PET_ELECTRON_MIRROR || \"https://npmmirror.com/mirrors/electron/\";\r\n\tconst timeoutMs = options.timeoutMs ?? 10 * 60 * 1e3;\r\n\tconst targetDir = electronLandingDir();\r\n\tconst exe = defaultElectronExe();\r\n\tif (existsSync(exe)) return exe;\r\n\tconst log = (message) => console.log(`[dsh-pet] ${message}`);\r\n\tconst warn = (message) => console.warn(`[dsh-pet] ${message}`);\r\n\tconst startedAt = Date.now();\r\n\tlog(`Electron not found, downloading v${version} (${PLAT}-${process.arch}) ...`);\r\n\tmkdirSync(targetDir, { recursive: true });\r\n\ttry {\r\n\t\tconst controller = new AbortController();\r\n\t\tconst timer = setTimeout(() => controller.abort(new Error(`Electron download timed out after ${timeoutMs}ms`)), timeoutMs);\r\n\t\ttimer.unref?.();\r\n\t\tlet nextLogAt = Date.now() + 3e3;\r\n\t\ttry {\r\n\t\t\tconst zipPath = await downloadArtifact({\r\n\t\t\t\tversion: `v${version}`,\r\n\t\t\t\tartifactName: \"electron\",\r\n\t\t\t\tmirrorOptions: { mirror: mirror.replace(/\\/$/, \"\") + \"/\" },\r\n\t\t\t\tdownloadOptions: {\r\n\t\t\t\t\tsignal: controller.signal,\r\n\t\t\t\t\tquiet: true,\r\n\t\t\t\t\tgetProgressCallback: async (progress) => {\r\n\t\t\t\t\t\tconst now = Date.now();\r\n\t\t\t\t\t\tif (!progress.total || now < nextLogAt) return;\r\n\t\t\t\t\t\tnextLogAt = now + 3e3;\r\n\t\t\t\t\t\tlog(`downloading ${(progress.transferred / 1024 / 1024).toFixed(1)}MB / ${(progress.total / 1024 / 1024).toFixed(1)}MB`);\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t});\r\n\t\t\tconst seconds = ((Date.now() - startedAt) / 1e3).toFixed(1);\r\n\t\t\tlog(`download complete (${seconds}s), extracting to ${targetDir} ...`);\r\n\t\t\tawait extract(zipPath, { dir: targetDir });\r\n\t\t\tif (!existsSync(exe)) throw new Error(`Electron zip extracted, but ${ELECTRON_REL} not found`);\r\n\t\t\tconst readySeconds = ((Date.now() - startedAt) / 1e3).toFixed(1);\r\n\t\t\tlog(`ready in ${readySeconds}s: ${exe}`);\r\n\t\t\treturn exe;\r\n\t\t} finally {\r\n\t\t\tclearTimeout(timer);\r\n\t\t}\r\n\t} catch (error) {\r\n\t\twarn(`ensure failed: ${error instanceof Error ? error.message : String(error)}`);\r\n\t\twarn(\"desktop pet unavailable. Set DSH_PET_ELECTRON_PATH to an existing Electron, or retry later.\");\r\n\t\treturn void 0;\r\n\t}\r\n}\r\nfunction defaultLaunch(options = {}) {\r\n```\n\n</details>\n\n**依据 6 · 源码核查**：[src/lib/index.js:1388-1418](https://github.com/12we21/cute-fat-fish-pet/blob/e53f63e67227671aca092e3334c8611e29b880b6/src/lib/index.js#L1388-L1418)\n\n两种停止方式。\n\n<details>\n<summary>查看原文（31行）</summary>\n\n```text\n\t/** 停止 helper：发 SIGTERM 即返回，**不等它退出**。宿主退出/插件卸载路径用它——\r\n\t*  宿主马上就没了（Windows 有 job 对象、POSIX 有 helper 自己的 host-liveness 兜底，见 issue #56）。\r\n\t*  **停止后要立刻重启的场景必须用 stopAndWait()**，否则新旧进程会短暂重叠（issue #64）。 */\r\n\tstop(reason = \"plugin-disposed\") {\r\n\t\tthis.stopping = true;\r\n\t\tif (this.restartTimer) clearTimeout(this.restartTimer);\r\n\t\tthis.restartTimer = void 0;\r\n\t\tthis.logger.debug?.(`dsh-pet desktop helper stopping (${reason})`);\r\n\t\tconst child = this.child;\r\n\t\tif (!child) return;\r\n\t\tchild.kill();\r\n\t}\r\n\t/**\r\n\t* 停止 helper 并**等它真正退出**（issue #64）：原实现只发一次 SIGTERM 就返回、紧接着 spawn 新进程，\r\n\t* 而 Electron 收到 SIGTERM 后关窗、销毁 GPU/动画合成器是异步的（几百 ms 起）——旧窗口（旧大小）\r\n\t* 还没消失、新窗口（新大小）已经画出来，桌面上就短暂出现\"两只宠物\"。\r\n\t*   ① 先置 `stopping`（由 stop() 完成）：守护逻辑不得把这次主动停止误判成崩溃去自动重启；\r\n\t*   ② 只等 `exit`，**不等 `close`**：stdio 管道关闭远早于进程真正退出（实测 SIGTERM 后 ~10ms 就触发）；\r\n\t*   ③ 超时（默认 3s）升级 SIGKILL；SIGKILL 后再给 1s 宽限，仍未退出就放弃等待——\r\n\t*      配置保存绝不能因为一个退不掉的子进程而被无限挂住。\r\n\t*/\r\n\tasync stopAndWait(reason = \"plugin-disposed\", timeoutMs = HELPER_STOP_TIMEOUT_MS) {\r\n\t\tthis.stop(reason);\r\n\t\tconst child = this.child;\r\n\t\tif (!child) return;\r\n\t\tawait waitForChildExit(child, timeoutMs, () => {\r\n\t\t\tthis.logger.warn?.(`dsh-pet desktop helper 未在 ${timeoutMs}ms 内退出，升级 SIGKILL（${reason}）`);\r\n\t\t\ttry {\r\n\t\t\t\tchild.kill(\"SIGKILL\");\r\n\t\t\t} catch {}\r\n\t\t});\r\n```\n\n</details>\n\n**依据 7 · 源码核查**：[src/lib/index.js:3015-3021](https://github.com/12we21/cute-fat-fish-pet/blob/e53f63e67227671aca092e3334c8611e29b880b6/src/lib/index.js#L3015-L3021)\n\n卸载stop。\n\n```text\n\tctx.effect(() => () => {\r\n\t\tdisposed = true;\r\n\t\tstopHelper(\"dsh-host-stop\");\r\n\t});\r\n\tstartHelper();\r\n}\r\n\r\n```\n\n#### 缺口\n\n- 同版本宿主前缀路由的外层鉴权/监听范围与Electron依赖下载校验\n  **影响：**决定实际攻击可达性与供应链保证，插件层缺检查不等已证实外部攻击\n  **进一步探讨：**只读宿主webServer准入和锁定依赖下载实现，分别核权限与校验责任\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：src；内容摘要：7ebfc18ec4c79fb8e7b63ae3b4370bc0c14b950253280c6dd07d72da50e8cb22。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 13 | 17928 | 15530 | 2258 | — |\n| .md | source | 3 | 418 | — | — | 7243 |\n| .mjs | source | 2 | 454 | 329 | 102 | — |\n| .ts | source | 33 | 8986 | 6565 | 2013 | — |\n| .ts | test | 17 | 3130 | 2499 | 349 | — |\n\n排除 381 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 动画/漫步 | 陪伴 | 资源/性能 |\n| 聊天 | 与宠物对话 | Web/桌面后端不同 |\n| 桌面 | helper 窗口 | Electron 可自动下载 |\n\n## 工程亮点\n\nHost 路由、记忆/LLM 与 Electron helper 通过 bridge 共用配置；helper 缺 Electron 时自动下载。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 src/README.zh-CN.md、src/package.json、src/src/host/index.ts、src/src/host/chat.ts、src/src/host/helper-process.ts、src/runtime/electron-helper/main.js、src/lib/index.js、README.md 及固定范围 inventory；组件：src。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：静态审阅 src 插件组件 README、package、Host 对话/Helper；不运行宠物、下载 Electron 或抓屏。 父侧追加审阅实际发布 src/lib/index.js 的屏幕观察与路由，TS 不覆盖该发布专属补丁。\n- 下一步：目标 DSH Web/桌面真实动画、模型模式、Electron 下载、屏幕可选性和网络/性能监测。\n",
         "metadata": {
             "repository": "12we21/cute-fat-fish-pet",
             "repository_id": 1409724830,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T06:20:14.777Z",
+            "window_start": "2026-09-22T06:20:14.777Z",
             "stars": 12,
             "pushed_at": "2026-10-18T06:46:43Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 1,
+                "closed": 0,
+                "created_30d": 1,
+                "closed_30d": 0,
+                "updated_30d": 1
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A12we21%2Fcute-fat-fish-pet%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6414:265AC:14677E:21C40D:6AD8491B and timestamp 2026-10-21 05:09:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A12we21%2Fcute-fat-fish-pet%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6402:23DB53:153C60:22BBBD:6AD8491B and timestamp 2026-10-21 05:09:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A12we21%2Fcute-fat-fish-pet%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6401:1541C9:13E902:215713:6AD8491B and timestamp 2026-10-21 05:09:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A12we21%2Fcute-fat-fish-pet%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641C:1CA4C8:1491B1:220DED:6AD8491B and timestamp 2026-10-21 05:09:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A12we21%2Fcute-fat-fish-pet%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641D:1F2B1B:147005:21E005:6AD8491B and timestamp 2026-10-21 05:09:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
-            "npm": {
-                "package_name": "cute-fat-fish-pet",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": null,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/cute-fat-fish-pet",
-                "error": "HTTP 404",
-                "publication": {
-                    "first_published_at": null,
-                    "captured_at": "2026-10-21T07:15:57.121Z",
-                    "source_url": "https://registry.npmjs.org/cute-fat-fish-pet",
-                    "error": "HTTP 404",
-                    "latest_version": null,
-                    "latest_published_at": null,
-                    "latest_error": "HTTP 404"
-                }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "e53f63e67227671aca092e3334c8611e29b880b6",
-                "current_revision": "e53f63e67227671aca092e3334c8611e29b880b6",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
-            }
+            "errors": []
         },
         "discovery.plugins": {
             "id": "github:1409724830:src",
             "repository": "12we21/cute-fat-fish-pet",
             "path": "src",
             "revision": "e53f63e67227671aca092e3334c8611e29b880b6",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "3fd6461052211f4b0fdd053bce371492b99b63044fc41b6c35c54a682a35c5b5",
                 "code": "e53f63e67227671aca092e3334c8611e29b880b6",
                 "maintenance": "0481cbbc951e64d846e6fd3a6ddf9702b4a284bf16ff206c0a0de604cd6718af"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

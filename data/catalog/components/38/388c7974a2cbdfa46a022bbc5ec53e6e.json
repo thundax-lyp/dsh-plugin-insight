@@ -24,36 +24,76 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-03-github-1336663652-root-directory-0",
+                    "id": "2026-10-22-02-github-1336663652-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T03:49:43.690Z",
+                    "retrieved_at": "2026-10-22T05:45:56.335Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-03-github-1336663652-root-author",
+                    "id": "2026-10-22-02-github-1336663652-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/863683348/dsh-plugin-local-life/blob/c7abe0935ceab43d784019fb42caf600b3aaadc5/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/863683348/dsh-plugin-local-life",
+                            "commit": "c7abe0935ceab43d784019fb42caf600b3aaadc5",
+                            "path": "README.md",
+                            "content_sha256": "216b4837db8bec70ab240668863c563c39e572a19ac296e1ca2e2e158893d894"
+                        }
+                    ],
                     "revision": "c7abe0935ceab43d784019fb42caf600b3aaadc5",
-                    "captured_at": "2026-10-21T03:49:43.690Z",
-                    "summary": "提供预算、分账、单价、折扣、单位、账本和分期等日常计算辅助。",
-                    "artifact": "data/runs/2026-10-21-03/snapshots/863683348--dsh-plugin-local-life/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:45:56.335Z",
+                    "summary": "提供本地生活算术工具，含预算、分摊、比价、折扣、换算、贷款与清单。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/863683348--dsh-plugin-local-life/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-03-github-1336663652-root-source",
+                    "id": "2026-10-22-02-github-1336663652-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/863683348/dsh-plugin-local-life/blob/c7abe0935ceab43d784019fb42caf600b3aaadc5/lib/index.js",
+                    "url": "https://github.com/863683348/dsh-plugin-local-life/blob/c7abe0935ceab43d784019fb42caf600b3aaadc5/README.zh.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/863683348/dsh-plugin-local-life",
+                            "commit": "c7abe0935ceab43d784019fb42caf600b3aaadc5",
+                            "path": "README.zh.md",
+                            "content_sha256": "59d2e5393ed58cf9097c75ce1c9aae78a393acdceb77ffb202a9b4a7186ea442"
+                        },
+                        {
+                            "repository_url": "https://github.com/863683348/dsh-plugin-local-life",
+                            "commit": "c7abe0935ceab43d784019fb42caf600b3aaadc5",
+                            "path": "package.json",
+                            "content_sha256": "29311db0267dd3bacd5e56751253f41a3bee794db3fd38a129063ae5b2bd16ce"
+                        },
+                        {
+                            "repository_url": "https://github.com/863683348/dsh-plugin-local-life",
+                            "commit": "c7abe0935ceab43d784019fb42caf600b3aaadc5",
+                            "path": "lib/index.js",
+                            "content_sha256": "040f7d9f85cd0033fdca157c173790621be698d7e3273b0b7a7655e790176a46"
+                        },
+                        {
+                            "repository_url": "https://github.com/863683348/dsh-plugin-local-life",
+                            "commit": "c7abe0935ceab43d784019fb42caf600b3aaadc5",
+                            "path": "lib/local.js",
+                            "content_sha256": "25596c703d2a9768d253d994b3105bc9f3fadfd1952d2723223d2312d954f761"
+                        },
+                        {
+                            "repository_url": "https://github.com/863683348/dsh-plugin-local-life",
+                            "commit": "c7abe0935ceab43d784019fb42caf600b3aaadc5",
+                            "path": "test/local.test.mjs",
+                            "content_sha256": "31e040f16ea34efb8bdc4091e39a2f10fb2f2c24f16bc95c7ebf30195bc8db40"
+                        }
+                    ],
                     "revision": "c7abe0935ceab43d784019fb42caf600b3aaadc5",
-                    "captured_at": "2026-10-21T03:49:43.690Z",
-                    "summary": "核查 lib/index.js、lib/local.js；lib/index.js注册local_life按action调用local.js；代码做金额取整、单位因子换算、折扣规则、贷款表与静态出行清单，不做网络请求或账本持久化。",
-                    "artifact": "data/runs/2026-10-21-03/snapshots/863683348--dsh-plugin-local-life/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:45:56.335Z",
+                    "summary": "核查 README.zh.md、package.json、lib/index.js、lib/local.js、test/local.test.mjs；单一 local_life 工具按 action 分派纯 JS helper，另可加入本地生活提示词。详见[Q02](#research-q02)。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/863683348--dsh-plugin-local-life/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "固定提交内列明源码和作者材料的有界抽读，静态inventory为组件范围；没有安装、执行目标代码或测试、发起插件服务请求、真实宿主验收或独立采用核实。",
+                        "只读核固定提交 README、package、工具壳、纯函数及作者测试；未执行目标代码、宿主调用或真实财务验证；旧 META 仅复用。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +104,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "适合把已有购物、分账或账本数字交给确定函数处理；不是本地商家、实时价格或交通信息服务。",
+                    "text": "对话中快速生成可复算的个人算术草稿；需明确币种、单位和实际交易条款。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336663652-root-source"
+                        "2026-10-22-02-github-1336663652-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +115,16 @@
                             "fingerprint": "c7abe0935ceab43d784019fb42caf600b3aaadc5"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:43.690Z",
+                    "reviewed_at": "2026-10-22T05:45:56.335Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "lib/index.js注册local_life按action调用local.js；代码做金额取整、单位因子换算、折扣规则、贷款表与静态出行清单，不做网络请求或账本持久化。",
+                    "text": "单一 local_life 工具按 action 分派纯 JS helper，另可加入本地生活提示词。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336663652-root-source"
+                        "2026-10-22-02-github-1336663652-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +133,16 @@
                             "fingerprint": "c7abe0935ceab43d784019fb42caf600b3aaadc5"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:43.690Z",
+                    "reviewed_at": "2026-10-22T05:45:56.335Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "固定提交内列明源码和作者材料的有界抽读，静态inventory为组件范围；没有安装、执行目标代码或测试、发起插件服务请求、真实宿主验收或独立采用核实。",
+                    "text": "只读核固定提交 README、package、工具壳、纯函数及作者测试；未执行目标代码、宿主调用或真实财务验证；旧 META 仅复用。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336663652-root-source"
+                        "2026-10-22-02-github-1336663652-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +151,16 @@
                             "fingerprint": "c7abe0935ceab43d784019fb42caf600b3aaadc5"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:43.690Z",
+                    "reviewed_at": "2026-10-22T05:45:56.335Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "分发与依赖限定固定package.json、README及本轮META；仓库热度、包存在或结构校验不能证明运行可用。",
+                    "text": "包声明 0.3.2、MIT、Cordis/DSH 工具与系统提示依赖；实际发布和宿主兼容性未本轮验证。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336663652-root-source"
+                        "2026-10-22-02-github-1336663652-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +169,16 @@
                             "fingerprint": "c7abe0935ceab43d784019fb42caf600b3aaadc5"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:43.690Z",
+                    "reviewed_at": "2026-10-22T05:45:56.335Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "首次需确认币种、单位与折扣语义；无模块网络费，宿主模型token另计。人工要核取整、满减门槛和贷款口径，错误参数及一分钱差额都可能增加协调成本。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | DSH 环境，金额未知 | 安装、输入单位/税费/利率约定；耗时未知 | 宿主兼容未测 |\n| 持续使用 | 本地计算资源；数值未知 | 核输入与结果、更新清单；耗时未知 | 无外部实时价格 |\n| 失败恢复 | 误购/误算风险；损失未知 | 重输参数并与独立计算器/交易条款对照 | schema 和异单位缺口 |",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336663652-root-source"
+                        "2026-10-22-02-github-1336663652-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +187,16 @@
                             "fingerprint": "c7abe0935ceab43d784019fb42caf600b3aaadc5"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:43.690Z",
+                    "reviewed_at": "2026-10-22T05:45:56.335Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "适合日常计算草稿。先用已知答案核单位和取整，实际分账总和再加一遍；出行要求另查当前官方信息。",
+                    "text": "仅在低风险、同单位且人工复核的算术任务观察；跨单位比价和贷款勿直接用于资金决策。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336663652-root-source"
+                        "2026-10-22-02-github-1336663652-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +205,16 @@
                             "fingerprint": "c7abe0935ceab43d784019fb42caf600b3aaadc5"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:43.690Z",
+                    "reviewed_at": "2026-10-22T05:45:56.335Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "可减少重复输入计算器，但没有节时或账务准确率的独立对照。",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 日常算术 | 多种纯函数与模型工具路由 | 宿主实际调用和用户理解 |\n| 贷款 | 纯函数计算分期 | 工具 schema 缺关键参数 |\n| 比价 | 同单位数字比较 | 异单位转换缺失、真实交易口径 |",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336663652-root-source"
+                        "2026-10-22-02-github-1336663652-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +223,16 @@
                             "fingerprint": "c7abe0935ceab43d784019fb42caf600b3aaadc5"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:43.690Z",
+                    "reviewed_at": "2026-10-22T05:45:56.335Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "local纯函数集中并有部分输入约束，便于复用；单位归一化与因子表不一致、浮点尾差说明必须验证跨函数契约。无需文件副作用是轻量点，不能因此称计算全正确。",
+                    "text": "纯函数与薄壳分离、独立测试可借鉴；参数 schema 和单位契约需一同校验，不能只测纯函数。详见[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336663652-root-source"
+                        "2026-10-22-02-github-1336663652-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +241,16 @@
                             "fingerprint": "c7abe0935ceab43d784019fb42caf600b3aaadc5"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:43.690Z",
+                    "reviewed_at": "2026-10-22T05:45:56.335Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
                     "topic": "technical_innovation",
                     "basis": "interpretation",
-                    "text": "作者定位日常算术工具；实际增量是把常用生活计算封成统一DSH入口并返回文字/结构结果，减少模型自由心算。相比手工计算器，模型可整理输入；不是新的预算方法或自动记账平台。",
+                    "text": "把常见日常算术的确定性 helper 接入 Agent，减少口算并统一提示假设；增量主要在工具化和工作流组合，非新算法。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336663652-root-source"
+                        "2026-10-22-02-github-1336663652-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +259,16 @@
                             "fingerprint": "c7abe0935ceab43d784019fb42caf600b3aaadc5"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:43.690Z",
+                    "reviewed_at": "2026-10-22T05:45:56.335Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "unitConvert先将输入单位转小写，而UNIT_FACTORS.volume保存L大写键，导致L/升与ml等组合可能因l找不到而拒绝。splitBill仅在舍入差额绝对值>0.01时修正，账单10元三人各3.33的0.01差额可能保留，不能保证分摊和精确等于总额。出行清单是静态模板，不是现行规则核实。",
+                    "text": "loan 执行读取 schema 未声明的本金/利率/期限；compareUnitPrices 用数值数量直接比较 kg/g 等不同单位，可能错误标出最低价。详见[Q02](#research-q02)、[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336663652-root-source"
+                        "2026-10-22-02-github-1336663652-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +277,16 @@
                             "fingerprint": "c7abe0935ceab43d784019fb42caf600b3aaadc5"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:43.690Z",
+                    "reviewed_at": "2026-10-22T05:45:56.335Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
                     "topic": "technical_innovation",
                     "basis": "unverified",
-                    "text": "待验证假设：用规范化单位注册表与最小货币单位整数分配，可减少别名不一致和分账差额。对L/l/升别名、10元三人和带小费加权分账做守恒核对，再比较人工纠错；未验证，不将浮点计算称精确账务。",
+                    "text": "未验证方向是 action 判别式 schema 与维度单位契约，输出换算步骤和舍入差额，使用异单位、缺参数与负利率夹具做端到端对照。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336663652-root-source"
+                        "2026-10-22-02-github-1336663652-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +295,15 @@
                             "fingerprint": "c7abe0935ceab43d784019fb42caf600b3aaadc5"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:43.690Z",
+                    "reviewed_at": "2026-10-22T05:45:56.335Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T03:49:43.690Z",
+            "last_checked_at": "2026-10-22T05:45:56.335Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "c7abe0935ceab43d784019fb42caf600b3aaadc5",
-                "reviewed_at": "2026-10-21T03:49:43.690Z",
+                "reviewed_at": "2026-10-22T05:45:56.335Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -274,62 +314,62 @@
                 ],
                 "technical": {
                     "criteria": {
-                        "novelty": 0,
+                        "novelty": 9,
                         "mechanism": 8,
                         "transferability": 10,
-                        "simplification": 4
+                        "simplification": 8
                     },
-                    "rationale": "novelty=0：基础算术和单位转换是常规方法。 mechanism=8：有确定函数，别名和守恒存在缺口。 transferability=10：纯函数可复用前需补输入契约。 simplification=4：统一入口便利，错误需要复核。",
+                    "rationale": "novelty 是常规算术工具组合；mechanism 纯逻辑与薄壳但 schema/单位契约不完整；transferability 纯函数可移植；simplification 省心算但需复核。",
                     "basis": "interpretation",
-                    "score": 22,
+                    "score": 35,
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336663652-root-source"
+                        "2026-10-22-02-github-1336663652-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 9,
+                        "workflow": 18,
                         "delivery": 8,
                         "reach": 10,
-                        "economics": 4
+                        "economics": 0
                     },
-                    "rationale": "workflow=9：覆盖局部日常计算步骤。 delivery=8：可生成结果，尚非精确账务。 reach=10：一般用户适用，实际服务未接入。 economics=4：无节时或准确率对照。",
+                    "rationale": "workflow 跨多项个人日常任务；delivery 在关键贷款/跨单位比较受限；reach 有购物和生活规划面；未验证效率/金额收益。",
                     "basis": "interpretation",
-                    "score": 31,
+                    "score": 36,
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336663652-root-source"
+                        "2026-10-22-02-github-1336663652-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "observe",
-                "reason": "生活算术集成有潜力，但L单位小写错接和三人分10元少一分影响核心计算；先修单位和取整再用已知答案验。",
+                "reason": "适合低风险同单位算术草稿，贷款工具参数契约和异单位比价需修正后才可依赖。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "购物分账和数字整理任务具体。"
+                        "rationale": "日常预算、分摊和比价需求明确。"
                     },
                     "advantage": {
-                        "score": 6,
-                        "rationale": "统一工具少开计算器，当前算术边界问题削弱采用增益。"
+                        "score": 13,
+                        "rationale": "确定性 helper 可减少模型心算，但不是独有算法。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "unitConvert键大小写与splitBill严格大于0.01源码明确。"
+                        "rationale": "源码及作者纯函数测试可查，未做宿主端到端或独立财务对照。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "无专用网络费，但金额与单位错误增加实际协调复核负担。"
+                        "score": 5,
+                        "rationale": "无外部账号，但输入校对和资金误判恢复成本存在。"
                     }
                 },
-                "score": 52,
+                "score": 54,
                 "revision": "c7abe0935ceab43d784019fb42caf600b3aaadc5",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T05:45:56.335Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-03-github-1336663652-root-source"
+                    "2026-10-22-02-github-1336663652-root-source"
                 ],
                 "dependencies": [
                     {
@@ -354,27 +394,28 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T03:36:14Z",
-            "analysis_sha256": "aa24487a15f53c11fe10158b67fe2886aed261db3ce4ead69fe600733e098231"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "20a683838a7cf71bd968beb7a43eb5ea2bd0cf741afb8ad586eb1fc0adb08d34"
         },
         "publication.metadata": "data/plugins/863683348--dsh-plugin-local-life/META.json",
         "publication.summaries": {
-            "text": "提供预算、分账、单价、折扣、单位、账本和分期等日常计算辅助。",
+            "text": "提供本地生活算术工具，含预算、分摊、比价、折扣、换算、贷款与清单。",
             "revision": "c7abe0935ceab43d784019fb42caf600b3aaadc5",
             "source_url": "https://github.com/863683348/dsh-plugin-local-life/blob/c7abe0935ceab43d784019fb42caf600b3aaadc5/README.md"
         },
         "publication.capabilities": {
             "revision": "c7abe0935ceab43d784019fb42caf600b3aaadc5",
             "items": {
-                "模型工具": "local_life预算、分账、换算、账本汇总和分期辅助"
-            }
+                "模型工具": "local_life 十类生活算术与清单操作"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 本地算术 | 预算、分摊、折扣与换算 | 输入口径需明确，人工复核 |\n| 贷款 | 等额本息/本金草稿 | 工具 schema 缺本金等参数 |\n| 商品比价 | 按数量比较单价 | 不换算不同 unit，限同单位 |\n| 出行清单 | 生成静态场景事项 | 不是实时当地规则 |"
         },
         "publication.advice": {
             "revision": "c7abe0935ceab43d784019fb42caf600b3aaadc5",
-            "text": "适合日常计算草稿。先用已知答案核单位和取整，实际分账总和再加一遍；出行要求另查当前官方信息。"
+            "text": "仅在低风险、同单位且人工复核的算术任务观察；跨单位比价和贷款勿直接用于资金决策。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/863683348--dsh-plugin-local-life",
-        "reports": "# dsh-plugin-local-life\n\n> 提供预算、分账、单价、折扣、单位、账本和分期等日常计算辅助。\n\n## 使用建议\n\n适合日常计算草稿。先用已知答案核单位和取整，实际分账总和再加一遍；出行要求另查当前官方信息。\n\n**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。已有贡献由固定版本源码支持，实际运行与宿主效果未验证；未来设计假设均未验证。\n\n## 洞察短评\n\n- **用途**：适合把已有购物、分账或账本数字交给确定函数处理；不是本地商家、实时价格或交通信息服务。\n- **亮点**：作者定位日常算术工具；实际增量是把常用生活计算封成统一DSH入口并返回文字/结构结果，减少模型自由心算。相比手工计算器，模型可整理输入；不是新的预算方法或自动记账平台。\n- **思考**：unitConvert先将输入单位转小写，而UNIT_FACTORS.volume保存L大写键，导致L/升与ml等组合可能因l找不到而拒绝。splitBill仅在舍入差额绝对值>0.01时修正，账单10元三人各3.33的0.01差额可能保留，不能保证分摊和精确等于总额。出行清单是静态模板，不是现行规则核实。\n- **建议**：待验证假设：用规范化单位注册表与最小货币单位整数分配，可减少别名不一致和分账差额。对L/l/升别名、10元三人和带小费加权分账做守恒核对，再比较人工纠错；未验证，不将浮点计算称精确账务。\n\n## 当前插件分析\n\n### 场景与替代办法\n\n替代是计算器、电子表格和人工清单；项目提供对话工具入口，覆盖浅于专业账务或行程服务。\n\n### 能力、依赖与流程\n\nlib/index.js注册local_life按action调用local.js；代码做金额取整、单位因子换算、折扣规则、贷款表与静态出行清单，不做网络请求或账本持久化。\n\n- **模型工具**：local_life预算、分账、换算、账本汇总和分期辅助\n\n宿主tools/systemPrompt、Schemastery；数字、币种、单位和规则由调用者提供，不接银行、地图或商家数据库。\n\n整理用户数字和规则→调用action→确定计算或静态清单→人工核单位和合计→再实际支付/出行；插件不执行支付。\n\n### 成本与效果\n\n首次需确认币种、单位与折扣语义；无模块网络费，宿主模型token另计。人工要核取整、满减门槛和贷款口径，错误参数及一分钱差额都可能增加协调成本。\n\n可减少重复输入计算器，但没有节时或账务准确率的独立对照。\n\n### 工程亮点\n\nlocal纯函数集中并有部分输入约束，便于复用；单位归一化与因子表不一致、浮点尾差说明必须验证跨函数契约。无需文件副作用是轻量点，不能因此称计算全正确。\n\n源码依据：[lib/index.js](https://github.com/863683348/dsh-plugin-local-life/blob/c7abe0935ceab43d784019fb42caf600b3aaadc5/lib/index.js)、[lib/local.js](https://github.com/863683348/dsh-plugin-local-life/blob/c7abe0935ceab43d784019fb42caf600b3aaadc5/lib/local.js)。\n\n## 未来设计假设（未验证）\n\n待验证假设：用规范化单位注册表与最小货币单位整数分配，可减少别名不一致和分账差额。对L/l/升别名、10元三人和带小费加权分账做守恒核对，再比较人工纠错；未验证，不将浮点计算称精确账务。\n\n核对L/升/ml别名、分摊守恒、无效roundTo、负折扣和零利率分期，按真实规则复核清单；本轮未执行目标代码。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：cfd1c3b774e3cf07ac017068fa627cfc0cb9006e4edfe4c87340afe979de4eb0。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 554 | 497 | 35 | — |\n| .md | source | 4 | 160 | — | — | 1341 |\n| .mjs | test | 1 | 200 | 175 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[863683348/dsh-plugin-local-life](https://github.com/863683348/dsh-plugin-local-life)\n- **版本号**：0.3.2（[固定提交 c7abe093](https://github.com/863683348/dsh-plugin-local-life/tree/c7abe0935ceab43d784019fb42caf600b3aaadc5)）\n- **版本日期**：2026-09-11（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：lib/index.js、lib/local.js、作者README、package与固定范围inventory；源码抽读不等于完整审计。\n- 未验证：插件执行、测试、安装、真实宿主与独立采用。\n- 证据限制：固定提交内列明源码和作者材料的有界抽读，静态inventory为组件范围；没有安装、执行目标代码或测试、发起插件服务请求、真实宿主验收或独立采用核实。\n- 下一步：核对L/升/ml别名、分摊守恒、无效roundTo、负折扣和零利率分期，按真实规则复核清单；本轮未执行目标代码。\n",
+        "reports": "# dsh-plugin-local-life\n\n> 提供本地生活算术工具，含预算、分摊、比价、折扣、换算、贷款与清单。\n\n## 研究范围\n\n- **仓库**：[863683348/dsh-plugin-local-life](https://github.com/863683348/dsh-plugin-local-life)\n- **版本号**：0.3.2（[固定提交 c7abe0935ceab43d784019fb42caf600b3aaadc5](https://github.com/863683348/dsh-plugin-local-life/tree/c7abe0935ceab43d784019fb42caf600b3aaadc5)）\n- **版本日期**：2026-09-11（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定源码确认纯函数和工具注册；贷款参数 schema 缺失、跨单位比价未换算，关键财务正确性未得到宿主/独立算例验证。改进是假设。\n\n## 洞察短评\n\n- **用途**：对话中快速生成可复算的个人算术草稿；需明确币种、单位和实际交易条款。详见[Q01](#research-q01)。\n- **亮点**：把常见日常算术的确定性 helper 接入 Agent，减少口算并统一提示假设；增量主要在工具化和工作流组合，非新算法。详见[Q01](#research-q01)。\n- **思考**：loan 执行读取 schema 未声明的本金/利率/期限；compareUnitPrices 用数值数量直接比较 kg/g 等不同单位，可能错误标出最低价。详见[Q02](#research-q02)、[Q03](#research-q03)。\n- **建议**：未验证方向是 action 判别式 schema 与维度单位契约，输出换算步骤和舍入差额，使用异单位、缺参数与负利率夹具做端到端对照。详见[Q05](#research-q05)。\n\n采用建议：仅在低风险、同单位且人工复核的算术任务观察；跨单位比价和贷款勿直接用于资金决策。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n把常见日常算术的确定性 helper 接入 Agent，减少口算并统一提示假设；增量主要在工具化和工作流组合，非新算法。详见[Q01](#research-q01)。\n\n## 关键质疑\n\nloan 执行读取 schema 未声明的本金/利率/期限；compareUnitPrices 用数值数量直接比较 kg/g 等不同单位，可能错误标出最低价。详见[Q02](#research-q02)、[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n未验证方向是 action 判别式 schema 与维度单位契约，输出换算步骤和舍入差额，使用异单位、缺参数与负利率夹具做端到端对照。详见[Q05](#research-q05)。\n\n在隔离宿主对 loan/compare 做端到端参数检验，用 1kg/500g、负利率、分摊舍入与非法日期构成可复算反例，再与独立计算器对照。\n\n## 场景与替代办法\n\n对话中快速生成可复算的个人算术草稿；需明确币种、单位和实际交易条款。详见[Q01](#research-q01)。\n\n普通计算器/表格能完成同类算术；插件需证明工具参数完整、同口径正确且减少总复核成本。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| DSH tools/systemPrompt、Cordis | 必需 | 注册工具和指导 | 模型不能调用 |\n| 明确币种、单位和价格口径 | 正确计算必需 | 同条件算术 | 比价或财务值可能误导 |\n| 独立复核 | 资金任务必需 | 防止边界误算 | 不宜直接决策 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 准备 | 安装组合行并重启 DSH | local_life 可见 |\n| 输入 | 用户写清币种、单位、税费与条款 | 工具参数完整且可复算 |\n| 计算 | Agent 调用相应 action | 结果含明确假设 |\n| 核对 | 与独立计算器/交易文书比较 | 不把草稿作为最终资金决定 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | DSH 环境，金额未知 | 安装、输入单位/税费/利率约定；耗时未知 | 宿主兼容未测 |\n| 持续使用 | 本地计算资源；数值未知 | 核输入与结果、更新清单；耗时未知 | 无外部实时价格 |\n| 失败恢复 | 误购/误算风险；损失未知 | 重输参数并与独立计算器/交易条款对照 | schema 和异单位缺口 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 日常算术 | 多种纯函数与模型工具路由 | 宿主实际调用和用户理解 |\n| 贷款 | 纯函数计算分期 | 工具 schema 缺关键参数 |\n| 比价 | 同单位数字比较 | 异单位转换缺失、真实交易口径 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**本地生活算术工具是否把财务与购物计算可靠地交给模型使用，哪些接口/单位缺口会误导答案？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 主要用户任务、合格结果与相对普通计算器的增量是什么？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n用户在 DSH 对话中处理预算、分摊、单价、折扣、换算、流水、贷款、食谱与出行清单；合格结果应明确币种、计价单位、税/小费、还款利率与期限，数字可复算，且与真实交易条款一致。作者 README 称工具包做日常算术；固定源码确有一个 local_life 模型工具与 10 个 action、可选 systemPrompt 提示。增量主要是把确定性 JS helper 暴露给 Agent 并减少模型心算，算法本身是常规算术。没有外部价格、银行报价或持久记账接入，真实资金决策仍需人工对照。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.zh.md:1-37](https://github.com/863683348/dsh-plugin-local-life/blob/c7abe0935ceab43d784019fb42caf600b3aaadc5/README.zh.md#L1-L37)\n\n作者列出本地生活用途并声称纯确定性逻辑。\n\n<details>\n<summary>查看原文（37行）</summary>\n\n````text\n# dsh-plugin-local-life\n\n面向 [DeepSeek Harness](https://github.com/deepseek-ai/dsh) agent 的**本地生活工具包**：预算规划、账单分摊、单价换算、折扣计算、单位换算与出行清单。日常算术，交给插件。\n\n## 安装\n\n```bash\ndsh plugin --profile <profile> add dsh-plugin-local-life\n```\n\n重启 DSH 后，`local_life` 工具全局注册。\n\n## 工具\n\n| 动作 | 用途 |\n| --- | --- |\n| `budget` | 月度预算：收入按类别（金额或百分比）分配，含储蓄与结余 |\n| `split` | 账单分摊：均分或按权重，支持小费与取整 |\n| `price` | 单价换算（如每公斤 / 每 100 克多少钱） |\n| `discount` | 折扣计算：百分比折扣或满减（带门槛） |\n| `convert` | 单位换算 —— 重量（斤/公斤/磅）、长度（里/公里/尺/英里）、容量（升/加仑）、温度（°C/°F） |\n| `checklist` | 出行清单（city / airport / outdoor / self-drive） |\n| `ledger` | 记账流水汇总（分类/月度合计） |\n| `loan` | 贷款分期（等额本息/等额本金、月供与总利息）\n\n## 配置\n\n均为可选项，写在组合行的 `config` 里：\n\n| 键 | 默认值 | 含义 |\n| --- | --- | --- |\n| `personaSection` | `true` | 是否注册本地生活提示词段 |\n| `sectionOrder` | `6` | 提示词段顺序（persona 为 0，升序） |\n\n## 设计\n\n纯逻辑（`lib/local.js`）零 DSH/Cordis 依赖、可独立单测；`lib/index.js` 是薄 Cordis 壳。无文件系统访问，全部确定性、无副作用。\n````\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:43-60](https://github.com/863683348/dsh-plugin-local-life/blob/c7abe0935ceab43d784019fb42caf600b3aaadc5/lib/index.js#L43-L60)\n\n提示词与 10 个 action 注册。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\nconst SECTION_TEXT = [\n  \"Local-life guidance:\",\n  \"- Use the `local_life` tool for everyday arithmetic: `budget` for monthly plans, `split` for bill splitting (equal or weighted, with optional tip), `price` for unit-price comparison, `discount` for percent-off / amount-off math, `convert` for units (jin/kg, li/km, C/F, L/gallon...).\",\n  \"- For outings and trips, offer the relevant `checklist` (city / airport / outdoor / self-drive).\",\n  \"- Always state the assumptions (tax included? tip? currency) before quoting numbers.\",\n  \"- Track spending with `ledger` (category/month summaries) and evaluate loans with `loan` (equal-payment or equal-principal schedules).\",\n  \"- For shopping, run `compare` (spec-normalized unit prices + stacked discounts) and for cooking run `recipe_cost` (per-serving cost).\",\n].join(\"\\n\");\n\nfunction apply(ctx, config) {\n  ctx.tools.register(defineTool({\n    name: \"local_life\",\n    description: \"Local-life helper: `budget` (monthly budget plan from income and category amounts/percentages, with savings and leftover), `split` (split a bill equally or by weights, optional tip and rounding), `price` (unit-price comparison, e.g. price per kg), `discount` (percent-off or amount-off with threshold), `convert` (unit conversion: weight jin/kg/lb, length li/km/chi/mile, volume L/gallon, temperature C/F), `checklist` (trip/outing checklist by scenario: city/airport/outdoor/self-drive), `ledger` (expense ledger summary by category and month), `loan` (loan amortization: equal-payment or equal-principal schedules), `compare` (spec-normalized unit-price comparison and stacked discounts/thresholds), `recipe_cost` (ingredient list -> total and per-serving cost). Use it for everyday finance, shopping, cooking, and travel planning.\",\n    parameters: {\n      action: {\n        type: \"string\", required: true,\n        enum: [\"budget\", \"split\", \"price\", \"discount\", \"convert\", \"checklist\", \"ledger\", \"loan\", \"compare\", \"recipe_cost\"],\n        description: \"Which local-life helper to run.\",\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:107-180](https://github.com/863683348/dsh-plugin-local-life/blob/c7abe0935ceab43d784019fb42caf600b3aaadc5/lib/index.js#L107-L180)\n\n工具执行分支和提示词 section。\n\n<details>\n<summary>查看原文（74行）</summary>\n\n```text\n    execute: async (args) => {\n      const action = args.action;\n      let text = \"\";\n      let value;\n      let values;\n      switch (action) {\n        case \"budget\":\n          values = budgetPlan({ income: args.income, items: args.items, savingsPct: args.savingsPct });\n          text = values.text + (values.balanced ? \"\" : \"\\n\\nOver budget — reduce categories or increase income.\");\n          break;\n        case \"split\":\n          values = splitBill({ total: args.total, people: args.people, weights: args.weights, tipPct: args.tipPct, roundTo: args.roundTo });\n          text = values.text;\n          break;\n        case \"price\":\n          values = unitPrice({ price: args.price, amount: args.amount, amountUnit: args.amountUnit, compareUnit: args.compareUnit });\n          text = values.text;\n          break;\n        case \"discount\":\n          values = discount({ price: args.price, offPct: args.offPct, offAmount: args.offAmount, threshold: args.threshold });\n          text = values.text;\n          break;\n        case \"convert\":\n          values = unitConvert({ value: args.value, from: args.from, to: args.to });\n          value = values.value;\n          text = values.text;\n          break;\n        case \"checklist\":\n          text = tripChecklist({ scenario: args.scenario });\n          break;\n        case \"ledger\":\n          text = summarizeLedger({ entries: args.entries }).text;\n          break;\n        case \"loan\":\n          if (args.amortization === \"equal-principal\") {\n            text = amortizeEqualPrincipal({ principal: args.principal, annualRate: args.annualRate, years: args.years }).text;\n          } else {\n            text = amortize({ principal: args.principal, annualRate: args.annualRate, years: args.years }).text;\n          }\n          break;\n        case \"compare\":\n          if (args.products && args.products.length > 0) {\n            text = compareUnitPrices({ items: args.products, normalize: args.normalize, unit: args.unit }).text;\n            if (args.discounts && args.discounts.length > 0) {\n              text = text + \"\\n\\n\" + stackDiscounts({ price: args.basePrice, discounts: args.discounts }).text;\n            }\n          } else if (args.discounts && args.discounts.length > 0) {\n            text = stackDiscounts({ price: args.basePrice, discounts: args.discounts }).text;\n          } else {\n            throw new Error(\"local_life: compare needs products or discounts\");\n          }\n          break;\n        case \"recipe_cost\":\n          text = recipeCost({ name: args.topic, servings: args.servings, ingredients: args.ingredients }).text;\n          break;\n        default:\n          throw new Error(\"local_life: unknown action '\" + action + \"'\");\n      }\n      return { action, text, value, values };\n    },\n    presentCall: (args) => ({\n      card: \"generic\",\n      title: \"Local life: \" + args.action,\n      kind: \"other\",\n      rawInput: args,\n    }),\n  }));\n\n  if (config.personaSection) {\n    ctx.effect(() => ctx.systemPrompt.section({\n      name: \"local-life:instructions\",\n      order: config.sectionOrder,\n      text: SECTION_TEXT,\n    }), \"local-life.section()\");\n```\n\n</details>\n\n#### 缺口\n\n- 未对照真实交易规则、模型工具调用与宿主呈现\n  **影响：**不能确认数值被用户正确理解和采纳\n  **进一步探讨：**用匿名预算/购物/贷款案例核输入、工具调用、可复算输出和用户确认\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 动作参数与纯函数的接口是否完整，尤其贷款和比较单价？\n\n**研究主题：**功能与机制、缺陷与关键质疑\n\n#### 完整回答\n\n外壳使用 defineTool 注册 action enum，再分派给 lib/local.js 纯函数。预算、分摊、单价、折扣、换算等参数已在 schema 列出，但 loan 执行读取 args.principal、args.annualRate、args.years，而 parameters 中没有这三个字段；若宿主遵照工具 schema 生成/过滤参数，贷款只能收到 undefined，纯函数默认 principal=0 后抛错。compare 执行读 args.unit、recipe_cost 读 args.topic，schema 同样未声明。更严重的是 compareUnitPrices 仅按 price/quantity 计算，再乘 normalize；虽然每行记录 unit，但不做不同单位间转换，同表比较 1kg 与 500g 会给错误排序。README/description 的“spec-normalized”因此只在数量使用同一单位时成立。作者测试仅同为 kg 的比较，没有覆盖异单位或模型 schema 端到端。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:56-93](https://github.com/863683348/dsh-plugin-local-life/blob/c7abe0935ceab43d784019fb42caf600b3aaadc5/lib/index.js#L56-L93)\n\n工具参数列表缺 principal/annualRate/years、unit、topic。\n\n<details>\n<summary>查看原文（38行）</summary>\n\n```text\n    parameters: {\n      action: {\n        type: \"string\", required: true,\n        enum: [\"budget\", \"split\", \"price\", \"discount\", \"convert\", \"checklist\", \"ledger\", \"loan\", \"compare\", \"recipe_cost\"],\n        description: \"Which local-life helper to run.\",\n      },\n      income: { type: \"number\", description: \"Monthly income (budget).\" },\n      items: {\n        type: \"array\",\n        items: { type: \"object\", additionalProperties: false, properties: { name: { type: \"string\" }, amount: { type: \"number\" }, pct: { type: \"number\" } } },\n        description: \"Budget categories [{name, amount|pct}] (budget).\",\n      },\n      savingsPct: { type: \"number\", description: \"Savings percent of income (budget).\" },\n      total: { type: \"number\", description: \"Bill total (split).\" },\n      people: { type: \"integer\", description: \"Number of people (split).\" },\n      weights: { type: \"array\", items: { type: \"number\" }, description: \"Per-person weights (split).\" },\n      tipPct: { type: \"number\", description: \"Tip percent (split).\" },\n      roundTo: { type: \"number\", description: \"Round each share up to this multiple (split).\" },\n      price: { type: \"number\", description: \"Price paid (price/discount).\" },\n      amount: { type: \"number\", description: \"Amount bought (price).\" },\n      amountUnit: { type: \"string\", description: \"Amount unit, e.g. g/kg/斤 (price).\" },\n      compareUnit: { type: \"string\", description: \"Comparison unit, e.g. kg/100g (price).\" },\n      offPct: { type: \"number\", description: \"Percent off 0-100 (discount).\" },\n      offAmount: { type: \"number\", description: \"Fixed amount off (discount).\" },\n      threshold: { type: \"number\", description: \"Minimum spend for amount-off (discount).\" },\n      value: { type: \"number\", description: \"Value to convert (convert).\" },\n      from: { type: \"string\", description: \"Source unit (convert).\" },\n      to: { type: \"string\", description: \"Target unit (convert).\" },\n      scenario: { type: \"string\", description: \"city | airport | outdoor | self-drive (checklist).\" },\n      entries: { type: \"array\", items: { type: \"object\", additionalProperties: true }, description: \"Ledger entries [{date, category, amount, note}] (ledger).\" },\n      amortization: { type: \"string\", enum: [\"equal-payment\", \"equal-principal\"], description: \"Amortization method (loan).\" },\n      products: { type: \"array\", items: { type: \"object\", additionalProperties: true }, description: \"Products [{name, price, quantity, unit}] (compare unit prices).\" },\n      discounts: { type: \"array\", items: { type: \"object\", additionalProperties: true }, description: \"Discounts [{pct} | {amount} | {threshold, pct|amount}] (compare stacking).\" },\n      basePrice: { type: \"number\", description: \"Starting price for discount stacking (compare).\" },\n      normalize: { type: \"number\", description: \"Normalize unit prices to this quantity, default 1000 (compare).\" },\n      servings: { type: \"number\", description: \"How many servings the recipe yields (recipe_cost).\" },\n      ingredients: { type: \"array\", items: { type: \"object\", additionalProperties: true }, description: \"Ingredients [{name, quantity, unitPrice, unit}] (recipe_cost).\" },\n    },\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:140-160](https://github.com/863683348/dsh-plugin-local-life/blob/c7abe0935ceab43d784019fb42caf600b3aaadc5/lib/index.js#L140-L160)\n\n执行分支读取缺失的参数。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n        case \"loan\":\n          if (args.amortization === \"equal-principal\") {\n            text = amortizeEqualPrincipal({ principal: args.principal, annualRate: args.annualRate, years: args.years }).text;\n          } else {\n            text = amortize({ principal: args.principal, annualRate: args.annualRate, years: args.years }).text;\n          }\n          break;\n        case \"compare\":\n          if (args.products && args.products.length > 0) {\n            text = compareUnitPrices({ items: args.products, normalize: args.normalize, unit: args.unit }).text;\n            if (args.discounts && args.discounts.length > 0) {\n              text = text + \"\\n\\n\" + stackDiscounts({ price: args.basePrice, discounts: args.discounts }).text;\n            }\n          } else if (args.discounts && args.discounts.length > 0) {\n            text = stackDiscounts({ price: args.basePrice, discounts: args.discounts }).text;\n          } else {\n            throw new Error(\"local_life: compare needs products or discounts\");\n          }\n          break;\n        case \"recipe_cost\":\n          text = recipeCost({ name: args.topic, servings: args.servings, ingredients: args.ingredients }).text;\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/local.js:206-213](https://github.com/863683348/dsh-plugin-local-life/blob/c7abe0935ceab43d784019fb42caf600b3aaadc5/lib/local.js#L206-L213)\n\n本金默认 0 且需正值。\n\n```text\n/** Equal-payment (annuity) loan amortization schedule. */\nexport function amortize({ principal = 0, annualRate = 0, years = 0 } = {}) {\n  const p = Number(principal);\n  const r = Number(annualRate) / 100 / 12;\n  const n = Math.floor(Number(years) * 12);\n  if (!Number.isFinite(p) || p <= 0) throw new Error(\"local: principal must be a positive number\");\n  if (!Number.isFinite(n) || n <= 0) throw new Error(\"local: years must be positive\");\n  const payment = r > 0 ? (p * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1) : p / n;\n```\n\n**依据 4 · 源码核查**：[lib/local.js:266-299](https://github.com/863683348/dsh-plugin-local-life/blob/c7abe0935ceab43d784019fb42caf600b3aaadc5/lib/local.js#L266-L299)\n\n比较只用数字数量，未转换 unit。\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\n/** Compare unit prices across products (spec-normalized). */\nexport function compareUnitPrices({ items = [], normalize = 1000, unit = \"kg\" } = {}) {\n  const list = (Array.isArray(items) ? items : []).filter((x) => x && x.name);\n  if (list.length === 0) throw new Error(\"local: at least one item with a name is required\");\n  const norm = Number(normalize) > 0 ? Number(normalize) : 1000;\n  const rows = list.map((it) => {\n    const price = Number(it.price);\n    const qty = Number(it.quantity);\n    if (!Number.isFinite(price) || price < 0) throw new Error(\"local: item price must be a non-negative number\");\n    if (!Number.isFinite(qty) || qty <= 0) throw new Error(\"local: item quantity must be positive\");\n    const perUnit = price / qty;\n    return {\n      name: String(it.name),\n      price: round2(price),\n      quantity: qty,\n      unit: String(it.unit || unit),\n      unitPrice: round2(perUnit),\n      perNormalized: round2(perUnit * norm),\n    };\n  });\n  const best = rows.reduce((a, b) => (b.perNormalized < a.perNormalized ? b : a));\n  const worst = rows.reduce((a, b) => (b.perNormalized > a.perNormalized ? b : a));\n  const savings = round2(worst.perNormalized - best.perNormalized);\n  const savingsPct = worst.perNormalized > 0 ? round2((savings / worst.perNormalized) * 100) : 0;\n  const text = [\n    \"# Unit price comparison (per \" + norm + \" \" + unit + \")\",\n    \"\",\n    \"| Item | Price | Qty | Unit price | Per \" + norm + \" \" + unit + \" |\",\n    \"|------|-------|-----|-----------|-------------------|\",\n    ...rows.map((r) => \"| \" + r.name + (r.name === best.name ? \" (best)\" : \"\") + \" | \" + r.price + \" | \" + r.quantity + \" \" + r.unit + \" | \" + r.unitPrice + \" | \" + r.perNormalized + \" |\"),\n    \"\",\n    \"Best: \" + best.name + \" | worst: \" + worst.name + \" | save \" + savings + \" per \" + norm + \" \" + unit + \" (\" + savingsPct + \"%)\",\n  ].join(\"\\n\");\n  return { rows, best: best.name, worst: worst.name, savings, savingsPct, normalizedTo: norm, unit, text };\n```\n\n</details>\n\n**依据 5 · 源码核查**：[test/local.test.mjs:133-146](https://github.com/863683348/dsh-plugin-local-life/blob/c7abe0935ceab43d784019fb42caf600b3aaadc5/test/local.test.mjs#L133-L146)\n\n测试商品均为 kg。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\ntest(\"compareUnitPrices normalizes specs and finds the best deal\", () => {\n  const res = compareUnitPrices({\n    items: [\n      { name: \"A\", price: 12, quantity: 1, unit: \"kg\" },\n      { name: \"B\", price: 20, quantity: 2, unit: \"kg\" },\n      { name: \"C\", price: 8, quantity: 0.5, unit: \"kg\" },\n    ],\n    normalize: 1000,\n  });\n  assert.equal(res.best, \"B\", \"20/2 = 10 per kg is cheapest\");\n  assert.equal(res.worst, \"C\", \"8/0.5 = 16 per kg is dearest\");\n  assert.equal(res.rows[1].perNormalized, 10000);\n  assert.ok(res.savings > 0);\n  assert.ok(res.text.includes(\"# Unit price comparison\"));\n```\n\n</details>\n\n#### 缺口\n\n- 未实测宿主 defineTool 对未声明字段的实际透传/丢弃行为\n  **影响：**贷款动作真实失败率和错误表现仍需宿主核查\n  **进一步探讨：**在隔离宿主调用 loan/compare，覆盖未声明字段和 kg/g 混用\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 金额、贷款和表格边界哪些会造成静默误算？\n\n**研究主题：**缺陷与关键质疑、效果与总成本\n\n#### 完整回答\n\nsplitBill 的 roundTo 分支逐人向上取整，返回的 sharesSum 可超过 grandTotal，却只计算未输出 adjustment，用户须决定溢出金额归属。budgetPlan 接受 savingsPct 任意数，负数可能增加结余；贷款函数校验本金/年数但未校验 annualRate 非负或有限，负利率进入月供公式，结果可不符合普通贷款语义。compare 不做单位换算是最直接的误购风险。ledger 的月份只取 date 前 7 字符且输入类别/注释直接拼 Markdown 表格，无日期规范化/转义；不适合把外部不可信流水当作可审计账本。以上均为代码边界，不代表已在真实交易中发生损失。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/local.js:52-85](https://github.com/863683348/dsh-plugin-local-life/blob/c7abe0935ceab43d784019fb42caf600b3aaadc5/lib/local.js#L52-L85)\n\n账单向上取整与合计。\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\n/** Split a bill N ways with optional weights and tip. */\nexport function splitBill({ total = 0, people = 2, weights = [], tipPct = 0, roundTo } = {}) {\n  const t = Number(total);\n  const n = Math.max(1, Math.floor(people));\n  const tip = Number(tipPct || 0);\n  if (!Number.isFinite(t) || t < 0) throw new Error(\"local: total must be a non-negative number\");\n  if (tip < 0) throw new Error(\"local: tipPct must be non-negative\");\n  const grand = t * (1 + tip / 100);\n  let shares;\n  if (Array.isArray(weights) && weights.length === n && weights.every((w) => Number(w) > 0)) {\n    const sum = weights.reduce((a, w) => a + Number(w), 0);\n    shares = weights.map((w) => (grand * Number(w)) / sum);\n  } else {\n    shares = Array.from({ length: n }, () => grand / n);\n  }\n  const rounded = shares.map((s) => (roundTo == null ? round2(s) : Math.ceil((s - 1e-9) / roundTo) * roundTo));\n  const sum = rounded.reduce((a, b) => a + b, 0);\n  const adjustment = roundTo == null ? round2(sum - grand) : round2(grand - sum);\n  if (roundTo == null && Math.abs(adjustment) > 0.01) {\n    rounded[n - 1] = round2(rounded[n - 1] - adjustment);\n  }\n  return {\n    total: t,\n    tipPct: tip,\n    grandTotal: round2(grand),\n    people: n,\n    shares: rounded,\n    sharesSum: round2(rounded.reduce((a, b) => a + b, 0)),\n    text: [\n      \"Bill: \" + t + (tip > 0 ? \" + \" + tip + \"% tip\" : \"\") + \" = \" + round2(grand),\n      ...rounded.map((s, i) => \"- Person \" + (i + 1) + \": \" + s),\n      \"Sum: \" + round2(rounded.reduce((a, b) => a + b, 0)),\n    ].join(\"\\n\"),\n  };\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/local.js:13-49](https://github.com/863683348/dsh-plugin-local-life/blob/c7abe0935ceab43d784019fb42caf600b3aaadc5/lib/local.js#L13-L49)\n\n储蓄比例未做范围校验。\n\n<details>\n<summary>查看原文（37行）</summary>\n\n```text\n/** Monthly budget plan: allocate income across categories. */\nexport function budgetPlan({ income = 0, items = [], savingsPct = 0 } = {}) {\n  const inc = Number(income);\n  if (!Number.isFinite(inc) || inc < 0) throw new Error(\"local: income must be a non-negative number\");\n  const list = Array.isArray(items) ? items.filter((x) => x && x.name) : [];\n  const allocated = [];\n  let used = 0;\n  for (const it of list) {\n    let amount;\n    if (typeof it.amount === \"number\" && Number.isFinite(it.amount)) {\n      amount = it.amount;\n    } else if (typeof it.pct === \"number\" && Number.isFinite(it.pct)) {\n      amount = (inc * it.pct) / 100;\n    } else {\n      throw new Error(\"local: each budget item needs amount or pct\");\n    }\n    if (amount < 0) throw new Error(\"local: budget item amounts must be non-negative\");\n    allocated.push({ name: it.name, amount: round2(amount) });\n    used += amount;\n  }\n  const savings = (inc * Number(savingsPct || 0)) / 100;\n  const leftover = inc - used - savings;\n  return {\n    income: inc,\n    savings: round2(savings),\n    items: allocated,\n    allocatedTotal: round2(used),\n    leftover: round2(leftover),\n    balanced: leftover >= 0,\n    text: [\n      \"Income: \" + inc,\n      \"Savings target: \" + round2(savings),\n      ...allocated.map((a) => \"- \" + a.name + \": \" + a.amount),\n      \"Allocated total: \" + round2(used),\n      \"Leftover: \" + round2(leftover) + (leftover >= 0 ? \"\" : \" (over budget!)\"),\n    ].join(\"\\n\"),\n  };\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/local.js:169-203](https://github.com/863683348/dsh-plugin-local-life/blob/c7abe0935ceab43d784019fb42caf600b3aaadc5/lib/local.js#L169-L203)\n\n流水日期截取和 Markdown 拼接。\n\n<details>\n<summary>查看原文（35行）</summary>\n\n```text\n/** Summarize an expense ledger: category and month totals. */\nexport function summarizeLedger({ entries = [] } = {}) {\n  const list = Array.isArray(entries) ? entries.filter((e) => e) : [];\n  const rows = list.map((e, i) => {\n    const amount = Number(e.amount);\n    if (!Number.isFinite(amount)) throw new Error(\"local: ledger amount must be a number\");\n    return { date: String(e.date || \"\"), category: String(e.category || \"other\"), amount, note: String(e.note || \"\") };\n  });\n  const byCategory = {};\n  const byMonth = {};\n  for (const r of rows) {\n    byCategory[r.category] = (byCategory[r.category] || 0) + r.amount;\n    const month = r.date.slice(0, 7);\n    if (month) byMonth[month] = (byMonth[month] || 0) + r.amount;\n  }\n  const total = rows.reduce((s, r) => s + r.amount, 0);\n  const catRows = Object.entries(byCategory).sort((a, b) => b[1] - a[1]);\n  const monthRows = Object.entries(byMonth).sort((a, b) => (a[0] < b[0] ? -1 : 1));\n  const text = [\n    \"# Ledger summary\",\n    \"\",\n    \"Total: \" + round2(total) + \" (\" + rows.length + \" entries)\",\n    \"\",\n    \"## By category\",\n    \"| Category | Amount |\",\n    \"|----------|--------|\",\n    ...catRows.map(([k, v]) => \"| \" + k + \" | \" + round2(v) + \" |\"),\n    \"\",\n    \"## By month\",\n    \"| Month | Amount |\",\n    \"|-------|--------|\",\n    ...monthRows.map(([k, v]) => \"| \" + k + \" | \" + round2(v) + \" |\"),\n  ].join(\"\\n\");\n  const obj = (o) => Object.fromEntries(Object.entries(o).map(([k, v]) => [k, round2(v)]));\n  return { total: round2(total), count: rows.length, byCategory: obj(byCategory), byMonth: obj(byMonth), text };\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/local.js:206-264](https://github.com/863683348/dsh-plugin-local-life/blob/c7abe0935ceab43d784019fb42caf600b3aaadc5/lib/local.js#L206-L264)\n\n贷款利率未经有限/非负检查。\n\n<details>\n<summary>查看原文（59行）</summary>\n\n```text\n/** Equal-payment (annuity) loan amortization schedule. */\nexport function amortize({ principal = 0, annualRate = 0, years = 0 } = {}) {\n  const p = Number(principal);\n  const r = Number(annualRate) / 100 / 12;\n  const n = Math.floor(Number(years) * 12);\n  if (!Number.isFinite(p) || p <= 0) throw new Error(\"local: principal must be a positive number\");\n  if (!Number.isFinite(n) || n <= 0) throw new Error(\"local: years must be positive\");\n  const payment = r > 0 ? (p * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1) : p / n;\n  let balance = p;\n  const schedule = [];\n  for (let i = 1; i <= n; i++) {\n    const interest = balance * r;\n    const principalPart = payment - interest;\n    balance -= principalPart;\n    schedule.push({ no: i, payment: round2(payment), interest: round2(interest), principal: round2(principalPart), balance: round2(Math.max(0, balance)) });\n  }\n  const totalPayment = payment * n;\n  const totalInterest = totalPayment - p;\n  const text = [\n    \"# Loan schedule (equal payment)\",\n    \"\",\n    \"Principal: \" + round2(p) + \", annual rate: \" + Number(annualRate) + \"%, term: \" + years + \" year(s)\",\n    \"Monthly payment: \" + round2(payment) + \", total payment: \" + round2(totalPayment) + \", total interest: \" + round2(totalInterest),\n    \"\",\n    \"| # | Payment | Interest | Principal | Balance |\",\n    \"|---|---------|----------|-----------|---------|\",\n    ...schedule.map((s) => \"| \" + s.no + \" | \" + s.payment + \" | \" + s.interest + \" | \" + s.principal + \" | \" + s.balance + \" |\"),\n  ].join(\"\\n\");\n  return { monthly: round2(payment), totalPayment: round2(totalPayment), totalInterest: round2(totalInterest), schedule, text };\n}\n\n/** Equal-principal loan amortization schedule. */\nexport function amortizeEqualPrincipal({ principal = 0, annualRate = 0, years = 0 } = {}) {\n  const p = Number(principal);\n  const r = Number(annualRate) / 100 / 12;\n  const n = Math.floor(Number(years) * 12);\n  if (!Number.isFinite(p) || p <= 0) throw new Error(\"local: principal must be a positive number\");\n  if (!Number.isFinite(n) || n <= 0) throw new Error(\"local: years must be positive\");\n  const principalPart = p / n;\n  let balance = p;\n  const schedule = [];\n  for (let i = 1; i <= n; i++) {\n    const interest = balance * r;\n    const payment = principalPart + interest;\n    balance -= principalPart;\n    schedule.push({ no: i, payment: round2(payment), interest: round2(interest), principal: round2(principalPart), balance: round2(Math.max(0, balance)) });\n  }\n  const totalInterest = schedule.reduce((s, x) => s + x.interest, 0);\n  const text = [\n    \"# Loan schedule (equal principal)\",\n    \"\",\n    \"Principal: \" + round2(p) + \", annual rate: \" + Number(annualRate) + \"%, term: \" + years + \" year(s)\",\n    \"Monthly principal: \" + round2(principalPart) + \", total interest: \" + round2(totalInterest),\n    \"\",\n    \"| # | Payment | Interest | Principal | Balance |\",\n    \"|---|---------|----------|-----------|---------|\",\n    ...schedule.map((s) => \"| \" + s.no + \" | \" + s.payment + \" | \" + s.interest + \" | \" + s.principal + \" | \" + s.balance + \" |\"),\n  ].join(\"\\n\");\n  return { monthlyPrincipal: round2(principalPart), totalInterest: round2(totalInterest), schedule, text };\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/local.js:266-299](https://github.com/863683348/dsh-plugin-local-life/blob/c7abe0935ceab43d784019fb42caf600b3aaadc5/lib/local.js#L266-L299)\n\n异单位商品误比风险。\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\n/** Compare unit prices across products (spec-normalized). */\nexport function compareUnitPrices({ items = [], normalize = 1000, unit = \"kg\" } = {}) {\n  const list = (Array.isArray(items) ? items : []).filter((x) => x && x.name);\n  if (list.length === 0) throw new Error(\"local: at least one item with a name is required\");\n  const norm = Number(normalize) > 0 ? Number(normalize) : 1000;\n  const rows = list.map((it) => {\n    const price = Number(it.price);\n    const qty = Number(it.quantity);\n    if (!Number.isFinite(price) || price < 0) throw new Error(\"local: item price must be a non-negative number\");\n    if (!Number.isFinite(qty) || qty <= 0) throw new Error(\"local: item quantity must be positive\");\n    const perUnit = price / qty;\n    return {\n      name: String(it.name),\n      price: round2(price),\n      quantity: qty,\n      unit: String(it.unit || unit),\n      unitPrice: round2(perUnit),\n      perNormalized: round2(perUnit * norm),\n    };\n  });\n  const best = rows.reduce((a, b) => (b.perNormalized < a.perNormalized ? b : a));\n  const worst = rows.reduce((a, b) => (b.perNormalized > a.perNormalized ? b : a));\n  const savings = round2(worst.perNormalized - best.perNormalized);\n  const savingsPct = worst.perNormalized > 0 ? round2((savings / worst.perNormalized) * 100) : 0;\n  const text = [\n    \"# Unit price comparison (per \" + norm + \" \" + unit + \")\",\n    \"\",\n    \"| Item | Price | Qty | Unit price | Per \" + norm + \" \" + unit + \" |\",\n    \"|------|-------|-----|-----------|-------------------|\",\n    ...rows.map((r) => \"| \" + r.name + (r.name === best.name ? \" (best)\" : \"\") + \" | \" + r.price + \" | \" + r.quantity + \" \" + r.unit + \" | \" + r.unitPrice + \" | \" + r.perNormalized + \" |\"),\n    \"\",\n    \"Best: \" + best.name + \" | worst: \" + worst.name + \" | save \" + savings + \" per \" + norm + \" \" + unit + \" (\" + savingsPct + \"%)\",\n  ].join(\"\\n\");\n  return { rows, best: best.name, worst: worst.name, savings, savingsPct, normalizedTo: norm, unit, text };\n```\n\n</details>\n\n#### 缺口\n\n- 交易条款、舍入规则和真实数据分布未核\n  **影响：**不能量化误差发生率或资金损失\n  **进一步探讨：**用公开可复算案例覆盖极端比例、异单位、负利率、非法日期与舍入差额\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 首次/持续/恢复成本和工程复用条件是什么？\n\n**研究主题：**依赖、兼容与流程、工程质量与复用\n\n#### 完整回答\n\n首次需要 DSH 的 tools/systemPrompt 与 package peer 依赖，安装组合行后重启，选定币种/单位/税费口径；没有网络账号或文件存储依赖，纯计算模块可单测。持续成本主要是用户补足正确输入、人工复核结果、维护清单和业务单位，计算资源很低但具体时间未知。失败恢复需要识别缺参数抛错、不同单位误比或错误贷款假设，重新输入并用独立计算器/官方交易文书核对；不能把工具输出直接当财务建议。工程上纯 helper 与薄 Cordis 壳分离、已有独立单测是可复用设计，但测试没有贯通 schema 到模型调用。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:1-53](https://github.com/863683348/dsh-plugin-local-life/blob/c7abe0935ceab43d784019fb42caf600b3aaadc5/package.json#L1-L53)\n\n包版本、peer 依赖和测试脚本。\n\n<details>\n<summary>查看原文（53行）</summary>\n\n```text\n{\n  \"name\": \"dsh-plugin-local-life\",\n  \"version\": \"0.3.2\",\n  \"description\": \"Local-life toolkit for DeepSeek Harness agents: budgets, bill splitting, unit-price comparison with spec normalization, stacked discounts, unit conversions (jin/li/chi, C/F), expense-ledger summaries, loan amortization, recipe costing, and trip checklists\",\n  \"type\": \"module\",\n  \"main\": \"lib/index.js\",\n  \"exports\": {\n    \".\": \"./lib/index.js\",\n    \"./local\": \"./lib/local.js\",\n    \"./package.json\": \"./package.json\"\n  },\n  \"files\": [\n    \"lib\",\n    \"cordis.patch.yml\",\n    \"README.md\",\n    \"README.zh.md\"\n  ],\n  \"scripts\": {\n    \"test\": \"node --test test/\",\n    \"prepublishOnly\": \"node --test test/\"\n  },\n  \"keywords\": [\n    \"deepseek-harness\",\n    \"dsh\",\n    \"dsh-plugin\",\n    \"cordis\",\n    \"plugin\",\n    \"bundle\",\n    \"local\",\n    \"life\",\n    \"budget\",\n    \"split\",\n    \"convert\",\n    \"ledger\",\n    \"amortization\",\n    \"loan\",\n    \"shopping\",\n    \"recipe\",\n    \"discount\"\n  ],\n  \"license\": \"MIT\",\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    }\n  },\n  \"peerDependencies\": {\n    \"@deepseek-ai/cordis\": \"^4.0.1\",\n    \"@deepseek-ai/dsh-fs\": \"^0.1.0-rc.6\",\n    \"@deepseek-ai/dsh-system-prompt\": \"^0.1.0-rc.6\",\n    \"@deepseek-ai/dsh-tools\": \"^0.1.0-rc.6\",\n    \"@deepseek-ai/schemastery\": \"^3.18.1\"\n  },\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:29-41](https://github.com/863683348/dsh-plugin-local-life/blob/c7abe0935ceab43d784019fb42caf600b3aaadc5/lib/index.js#L29-L41)\n\n宿主注入与配置。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n/** Cordis plugin name (registered with the loader). */\nconst name = \"local-life\";\n\n/** Services this plugin must resolve before it applies. */\nconst inject = [\"tools\", \"systemPrompt\"];\n\n/** Composition-row configuration for the plugin entry. */\nconst Config = z.object({\n  /** Register the local-life prompt-guidance section. */\n  personaSection: z.boolean().default(true),\n  /** Order of the section (ascending; persona is 0). */\n  sectionOrder: z.number().default(6),\n});\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:52-55](https://github.com/863683348/dsh-plugin-local-life/blob/c7abe0935ceab43d784019fb42caf600b3aaadc5/lib/index.js#L52-L55)\n\n薄工具注册壳。\n\n```text\nfunction apply(ctx, config) {\n  ctx.tools.register(defineTool({\n    name: \"local_life\",\n    description: \"Local-life helper: `budget` (monthly budget plan from income and category amounts/percentages, with savings and leftover), `split` (split a bill equally or by weights, optional tip and rounding), `price` (unit-price comparison, e.g. price per kg), `discount` (percent-off or amount-off with threshold), `convert` (unit conversion: weight jin/kg/lb, length li/km/chi/mile, volume L/gallon, temperature C/F), `checklist` (trip/outing checklist by scenario: city/airport/outdoor/self-drive), `ledger` (expense ledger summary by category and month), `loan` (loan amortization: equal-payment or equal-principal schedules), `compare` (spec-normalized unit-price comparison and stacked discounts/thresholds), `recipe_cost` (ingredient list -> total and per-serving cost). Use it for everyday finance, shopping, cooking, and travel planning.\",\n```\n\n**依据 4 · 源码核查**：[test/local.test.mjs:1-16](https://github.com/863683348/dsh-plugin-local-life/blob/c7abe0935ceab43d784019fb42caf600b3aaadc5/test/local.test.mjs#L1-L16)\n\n作者测试导入纯函数，不经过模型工具。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\nimport { test } from \"node:test\";\nimport assert from \"node:assert/strict\";\nimport {\n  amortize,\n  compareUnitPrices,\n  recipeCost,\n  stackDiscounts,\n  amortizeEqualPrincipal,\n  budgetPlan,\n  summarizeLedger,\n  discount,\n  splitBill,\n  tripChecklist,\n  unitConvert,\n  unitPrice,\n} from \"../lib/local.js\";\n```\n\n</details>\n\n#### 缺口\n\n- 目标宿主兼容、实测处理时间和恢复代价未核\n  **影响：**不能报效率提升或采用总成本\n  **进一步探讨：**同任务对比插件、人工计算器和一次人工复核所需时间与错误数\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 如何补齐接口与单位契约，当前该怎样使用？\n\n**研究主题：**新假设与验证、采用判断\n\n#### 完整回答\n\n未验证改进是把各 action 做成独立判别式参数 schema，loan 明确本金/利率/期限及单位，compare 先将同类重量/容量/长度转成基准单位并拒绝跨维度或未知单位，输出每一步换算、舍入与来源口径；对资金相关计算加入边界/性质测试和宿主端到端工具调用。最小验证用 1kg 对 500g、贷款参数缺失、负利率、分摊舍入差和恶意流水文本，比较工具值与独立计算器。当前可在低风险、同单位、参数齐全的个人算术场景观察，预算或贷款只作草稿；对于跨单位商品比价与贷款不宜依赖。推荐 observe，待 schema 和单位转换修正且独立对照后再试用。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:56-93](https://github.com/863683348/dsh-plugin-local-life/blob/c7abe0935ceab43d784019fb42caf600b3aaadc5/lib/index.js#L56-L93)\n\n单一 schema 缺 action 特定必需参数。\n\n<details>\n<summary>查看原文（38行）</summary>\n\n```text\n    parameters: {\n      action: {\n        type: \"string\", required: true,\n        enum: [\"budget\", \"split\", \"price\", \"discount\", \"convert\", \"checklist\", \"ledger\", \"loan\", \"compare\", \"recipe_cost\"],\n        description: \"Which local-life helper to run.\",\n      },\n      income: { type: \"number\", description: \"Monthly income (budget).\" },\n      items: {\n        type: \"array\",\n        items: { type: \"object\", additionalProperties: false, properties: { name: { type: \"string\" }, amount: { type: \"number\" }, pct: { type: \"number\" } } },\n        description: \"Budget categories [{name, amount|pct}] (budget).\",\n      },\n      savingsPct: { type: \"number\", description: \"Savings percent of income (budget).\" },\n      total: { type: \"number\", description: \"Bill total (split).\" },\n      people: { type: \"integer\", description: \"Number of people (split).\" },\n      weights: { type: \"array\", items: { type: \"number\" }, description: \"Per-person weights (split).\" },\n      tipPct: { type: \"number\", description: \"Tip percent (split).\" },\n      roundTo: { type: \"number\", description: \"Round each share up to this multiple (split).\" },\n      price: { type: \"number\", description: \"Price paid (price/discount).\" },\n      amount: { type: \"number\", description: \"Amount bought (price).\" },\n      amountUnit: { type: \"string\", description: \"Amount unit, e.g. g/kg/斤 (price).\" },\n      compareUnit: { type: \"string\", description: \"Comparison unit, e.g. kg/100g (price).\" },\n      offPct: { type: \"number\", description: \"Percent off 0-100 (discount).\" },\n      offAmount: { type: \"number\", description: \"Fixed amount off (discount).\" },\n      threshold: { type: \"number\", description: \"Minimum spend for amount-off (discount).\" },\n      value: { type: \"number\", description: \"Value to convert (convert).\" },\n      from: { type: \"string\", description: \"Source unit (convert).\" },\n      to: { type: \"string\", description: \"Target unit (convert).\" },\n      scenario: { type: \"string\", description: \"city | airport | outdoor | self-drive (checklist).\" },\n      entries: { type: \"array\", items: { type: \"object\", additionalProperties: true }, description: \"Ledger entries [{date, category, amount, note}] (ledger).\" },\n      amortization: { type: \"string\", enum: [\"equal-payment\", \"equal-principal\"], description: \"Amortization method (loan).\" },\n      products: { type: \"array\", items: { type: \"object\", additionalProperties: true }, description: \"Products [{name, price, quantity, unit}] (compare unit prices).\" },\n      discounts: { type: \"array\", items: { type: \"object\", additionalProperties: true }, description: \"Discounts [{pct} | {amount} | {threshold, pct|amount}] (compare stacking).\" },\n      basePrice: { type: \"number\", description: \"Starting price for discount stacking (compare).\" },\n      normalize: { type: \"number\", description: \"Normalize unit prices to this quantity, default 1000 (compare).\" },\n      servings: { type: \"number\", description: \"How many servings the recipe yields (recipe_cost).\" },\n      ingredients: { type: \"array\", items: { type: \"object\", additionalProperties: true }, description: \"Ingredients [{name, quantity, unitPrice, unit}] (recipe_cost).\" },\n    },\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/local.js:88-103](https://github.com/863683348/dsh-plugin-local-life/blob/c7abe0935ceab43d784019fb42caf600b3aaadc5/lib/local.js#L88-L103)\n\n已有单位因子可供明确换算。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\nconst UNIT_FACTORS = {\n  weight: { g: 1, kg: 1000, 克: 1, 公斤: 1000, 千克: 1000, 斤: 500, 磅: 453.59237, oz: 28.349523 },\n  volume: { ml: 1, L: 1000, 升: 1000, 毫升: 1, 加仑: 3785.411784, gallon: 3785.411784, cup: 236.588 },\n  length: { m: 1, km: 1000, cm: 0.01, 米: 1, 公里: 1000, 千米: 1000, 里: 500, 尺: 0.333333, 英里: 1609.344, mile: 1609.344, ft: 0.3048 },\n};\n\n/** Unit price: normalize an amount to price-per-comparison-unit. */\nexport function unitPrice({ price = 0, amount = 0, amountUnit = \"g\", compareUnit = \"kg\" } = {}) {\n  const p = Number(price);\n  const a = Number(amount);\n  if (!Number.isFinite(p) || !Number.isFinite(a) || a <= 0) throw new Error(\"local: price and positive amount required\");\n  let factor = null;\n  for (const table of Object.values(UNIT_FACTORS)) {\n    if (amountUnit in table && compareUnit in table) {\n      factor = table[compareUnit] / table[amountUnit];\n      break;\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/local.js:266-299](https://github.com/863683348/dsh-plugin-local-life/blob/c7abe0935ceab43d784019fb42caf600b3aaadc5/lib/local.js#L266-L299)\n\n现有比较无单位转换。\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\n/** Compare unit prices across products (spec-normalized). */\nexport function compareUnitPrices({ items = [], normalize = 1000, unit = \"kg\" } = {}) {\n  const list = (Array.isArray(items) ? items : []).filter((x) => x && x.name);\n  if (list.length === 0) throw new Error(\"local: at least one item with a name is required\");\n  const norm = Number(normalize) > 0 ? Number(normalize) : 1000;\n  const rows = list.map((it) => {\n    const price = Number(it.price);\n    const qty = Number(it.quantity);\n    if (!Number.isFinite(price) || price < 0) throw new Error(\"local: item price must be a non-negative number\");\n    if (!Number.isFinite(qty) || qty <= 0) throw new Error(\"local: item quantity must be positive\");\n    const perUnit = price / qty;\n    return {\n      name: String(it.name),\n      price: round2(price),\n      quantity: qty,\n      unit: String(it.unit || unit),\n      unitPrice: round2(perUnit),\n      perNormalized: round2(perUnit * norm),\n    };\n  });\n  const best = rows.reduce((a, b) => (b.perNormalized < a.perNormalized ? b : a));\n  const worst = rows.reduce((a, b) => (b.perNormalized > a.perNormalized ? b : a));\n  const savings = round2(worst.perNormalized - best.perNormalized);\n  const savingsPct = worst.perNormalized > 0 ? round2((savings / worst.perNormalized) * 100) : 0;\n  const text = [\n    \"# Unit price comparison (per \" + norm + \" \" + unit + \")\",\n    \"\",\n    \"| Item | Price | Qty | Unit price | Per \" + norm + \" \" + unit + \" |\",\n    \"|------|-------|-----|-----------|-------------------|\",\n    ...rows.map((r) => \"| \" + r.name + (r.name === best.name ? \" (best)\" : \"\") + \" | \" + r.price + \" | \" + r.quantity + \" \" + r.unit + \" | \" + r.unitPrice + \" | \" + r.perNormalized + \" |\"),\n    \"\",\n    \"Best: \" + best.name + \" | worst: \" + worst.name + \" | save \" + savings + \" per \" + norm + \" \" + unit + \" (\" + savingsPct + \"%)\",\n  ].join(\"\\n\");\n  return { rows, best: best.name, worst: worst.name, savings, savingsPct, normalizedTo: norm, unit, text };\n```\n\n</details>\n\n**依据 4 · 源码核查**：[test/local.test.mjs:102-153](https://github.com/863683348/dsh-plugin-local-life/blob/c7abe0935ceab43d784019fb42caf600b3aaadc5/test/local.test.mjs#L102-L153)\n\n作者测试涵盖纯函数常规路径但未覆盖两项关键反例。\n\n<details>\n<summary>查看原文（52行）</summary>\n\n```text\ntest(\"amortize equal-payment schedule math\", () => {\n  const loan = amortize({ principal: 120000, annualRate: 6, years: 10 });\n  assert.equal(loan.schedule.length, 120);\n  assert.ok(loan.monthly > 1000 && loan.monthly < 1500, \"monthly around 1332\");\n  assert.ok(loan.totalInterest > 30000 && loan.totalInterest < 45000);\n  assert.ok(Math.abs(loan.schedule[119].balance) < 1, \"final balance ~0\");\n  const sumPrincipal = loan.schedule.reduce((s, x) => s + x.principal, 0);\n  assert.ok(Math.abs(sumPrincipal - 120000) < 5, \"principal sums to ~120000\");\n});\n\ntest(\"amortize zero-rate loan\", () => {\n  const loan = amortize({ principal: 12000, annualRate: 0, years: 1 });\n  assert.equal(loan.monthly, 1000);\n  assert.equal(loan.totalInterest, 0);\n});\n\ntest(\"amortizeEqualPrincipal decreasing payments\", () => {\n  const loan = amortizeEqualPrincipal({ principal: 12000, annualRate: 12, years: 1 });\n  assert.equal(loan.schedule.length, 12);\n  assert.equal(loan.monthlyPrincipal, 1000);\n  assert.ok(loan.schedule[0].payment > loan.schedule[11].payment, \"payment decreases\");\n  assert.ok(loan.totalInterest > 0);\n});\n\ntest(\"loan functions reject bad input\", () => {\n  assert.throws(() => amortize({ principal: 0, annualRate: 5, years: 1 }));\n  assert.throws(() => amortize({ principal: 1000, annualRate: 5, years: 0 }));\n  assert.throws(() => amortizeEqualPrincipal({ principal: -5, annualRate: 5, years: 1 }));\n});\n\n\ntest(\"compareUnitPrices normalizes specs and finds the best deal\", () => {\n  const res = compareUnitPrices({\n    items: [\n      { name: \"A\", price: 12, quantity: 1, unit: \"kg\" },\n      { name: \"B\", price: 20, quantity: 2, unit: \"kg\" },\n      { name: \"C\", price: 8, quantity: 0.5, unit: \"kg\" },\n    ],\n    normalize: 1000,\n  });\n  assert.equal(res.best, \"B\", \"20/2 = 10 per kg is cheapest\");\n  assert.equal(res.worst, \"C\", \"8/0.5 = 16 per kg is dearest\");\n  assert.equal(res.rows[1].perNormalized, 10000);\n  assert.ok(res.savings > 0);\n  assert.ok(res.text.includes(\"# Unit price comparison\"));\n});\n\ntest(\"compareUnitPrices validates items\", () => {\n  assert.throws(() => compareUnitPrices({ items: [] }));\n  assert.throws(() => compareUnitPrices({ items: [{ name: \"x\", price: 1, quantity: 0 }] }));\n  assert.throws(() => compareUnitPrices({ items: [{ name: \"x\", price: -1, quantity: 1 }] }));\n});\n```\n\n</details>\n\n#### 缺口\n\n- 判别式 schema、换算拒绝与端到端验证尚未实现\n  **影响：**不能把设想算作现有贡献\n  **进一步探讨：**实现最小原型，针对反例和真实宿主调用对照输出\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：cfd1c3b774e3cf07ac017068fa627cfc0cb9006e4edfe4c87340afe979de4eb0。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 554 | 497 | 35 | — |\n| .md | source | 4 | 160 | — | — | 1341 |\n| .mjs | test | 1 | 200 | 175 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 本地算术 | 预算、分摊、折扣与换算 | 输入口径需明确，人工复核 |\n| 贷款 | 等额本息/本金草稿 | 工具 schema 缺本金等参数 |\n| 商品比价 | 按数量比较单价 | 不换算不同 unit，限同单位 |\n| 出行清单 | 生成静态场景事项 | 不是实时当地规则 |\n\n## 工程亮点\n\n纯函数与薄壳分离、独立测试可借鉴；参数 schema 和单位契约需一同校验，不能只测纯函数。详见[Q04](#research-q04)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.zh.md、package.json、lib/index.js、lib/local.js、test/local.test.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：只读核固定提交 README、package、工具壳、纯函数及作者测试；未执行目标代码、宿主调用或真实财务验证；旧 META 仅复用。\n- 下一步：在隔离宿主对 loan/compare 做端到端参数检验，用 1kg/500g、负利率、分摊舍入与非法日期构成可复算反例，再与独立计算器对照。\n",
         "metadata": {
             "repository": "863683348/dsh-plugin-local-life",
             "repository_id": 1336663652,
@@ -443,14 +484,14 @@
             "repository": "863683348/dsh-plugin-local-life",
             "path": "",
             "revision": "c7abe0935ceab43d784019fb42caf600b3aaadc5",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "de94ba3182c1930ca13ed9503fa38ef69f14ea6ef30d7654dcadf56cd7a2bc51",
                 "code": "c7abe0935ceab43d784019fb42caf600b3aaadc5",
                 "maintenance": "80f3055d492084c5f25bd5cf3a0e9c0cff9da255ed2179b68903954c4e87ded2"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

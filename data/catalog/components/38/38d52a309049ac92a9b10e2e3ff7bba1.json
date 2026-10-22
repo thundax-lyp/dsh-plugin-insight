@@ -24,36 +24,82 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-20-07-github-1381725987-root-directory-0",
+                    "id": "2026-10-22-02-github-1381725987-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
-                    "retrieved_at": "2026-10-20T10:01:59.769Z",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-22T09:35:16.046Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-20-07-github-1381725987-root-author",
+                    "id": "2026-10-22-02-github-1381725987-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/173787247/dsh-wsl-search/blob/445b0fd89b128696f447f28ff6dd3b0c0964885e/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-search",
+                            "commit": "445b0fd89b128696f447f28ff6dd3b0c0964885e",
+                            "path": "README.md",
+                            "content_sha256": "60fb5988acda3f2cc36826ed3a0cbd37addf3cfbafad0298146e39835f4eb433"
+                        }
+                    ],
                     "revision": "445b0fd89b128696f447f28ff6dd3b0c0964885e",
-                    "captured_at": "2026-10-20T10:01:59.769Z",
-                    "summary": "在允许目录内用ripgrep、fd和ast-grep搜索文本、文件名与代码结构。",
-                    "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-search/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:35:16.046Z",
+                    "summary": "把ripgrep、fd与ast-grep接成DSH模型搜索工具，检查起始根白名单并限制返回条目和文本长度。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-search/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-20-07-github-1381725987-root-source",
+                    "id": "2026-10-22-02-github-1381725987-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/173787247/dsh-wsl-search/blob/445b0fd89b128696f447f28ff6dd3b0c0964885e/index.js",
+                    "url": "https://github.com/173787247/dsh-wsl-search/blob/445b0fd89b128696f447f28ff6dd3b0c0964885e/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-search",
+                            "commit": "445b0fd89b128696f447f28ff6dd3b0c0964885e",
+                            "path": "README.md",
+                            "content_sha256": "60fb5988acda3f2cc36826ed3a0cbd37addf3cfbafad0298146e39835f4eb433"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-search",
+                            "commit": "445b0fd89b128696f447f28ff6dd3b0c0964885e",
+                            "path": "package.json",
+                            "content_sha256": "49cbea28f0836a5eea07a9dc1b2b0cdbda1089edbc0631146c2118d2bd430614"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-search",
+                            "commit": "445b0fd89b128696f447f28ff6dd3b0c0964885e",
+                            "path": "cordis.patch.yml",
+                            "content_sha256": "5514eb4152a32e246258318c2f469bb0e45941876700a41a4144cc45d08bc6e4"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-search",
+                            "commit": "445b0fd89b128696f447f28ff6dd3b0c0964885e",
+                            "path": "index.js",
+                            "content_sha256": "7101e2b37f7af16cfc77ce12c30deed86af6f8155cd307475d41689c42be1c26"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-search",
+                            "commit": "445b0fd89b128696f447f28ff6dd3b0c0964885e",
+                            "path": "lib/search.js",
+                            "content_sha256": "5062ee77bb6aa83eb01eb03f713773906717f5e37a836133ac71203382e2fb99"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-search",
+                            "commit": "445b0fd89b128696f447f28ff6dd3b0c0964885e",
+                            "path": "test/search.test.js",
+                            "content_sha256": "0ab4889f2eb2d580f1c0e9b215d7a3e5f62a3ebb6ec691946dfb8654eeb4bdcb"
+                        }
+                    ],
                     "revision": "445b0fd89b128696f447f28ff6dd3b0c0964885e",
-                    "captured_at": "2026-10-20T10:01:59.769Z",
-                    "summary": "核查 index.js、lib/search.js；resolveRoot用realpath核对搜索根，分别启动rg/fd/ast-grep，解析匹配并限制返回数量、行长、超时及输出缓冲。",
-                    "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-search/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:35:16.046Z",
+                    "summary": "核查 README.md、package.json、cordis.patch.yml、index.js、lib/search.js、test/search.test.js；物理root白名单检查后查找CLI并spawn，收集stdout再解析截断，宿主工具回传路径/行/文本。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-search/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "检查四个工具注册、根解析、命令参数与输出处理；未搜索用户目录或运行目标工具。",
+                        "固定入口、完整search实现、README/patch和完整38行路径测试，只读。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +110,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "Agent在大型工作区定位代码时，需要比整文件读取更紧凑、可追溯的匹配结果。",
+                    "text": "可信WSL项目内由模型查文本、文件名及AST模式。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1381725987-root-source"
+                        "2026-10-22-02-github-1381725987-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +121,16 @@
                             "fingerprint": "445b0fd89b128696f447f28ff6dd3b0c0964885e"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:59.769Z",
+                    "reviewed_at": "2026-10-22T09:35:16.046Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "resolveRoot用realpath核对搜索根，分别启动rg/fd/ast-grep，解析匹配并限制返回数量、行长、超时及输出缓冲。",
+                    "text": "物理root白名单检查后查找CLI并spawn，收集stdout再解析截断，宿主工具回传路径/行/文本。",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1381725987-root-source"
+                        "2026-10-22-02-github-1381725987-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +139,16 @@
                             "fingerprint": "445b0fd89b128696f447f28ff6dd3b0c0964885e"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:59.769Z",
+                    "reviewed_at": "2026-10-22T09:35:16.046Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "检查四个工具注册、根解析、命令参数与输出处理；未搜索用户目录或运行目标工具。",
+                    "text": "固定入口、完整search实现、README/patch和完整38行路径测试，只读。",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1381725987-root-source"
+                        "2026-10-22-02-github-1381725987-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +157,16 @@
                             "fingerprint": "445b0fd89b128696f447f28ff6dd3b0c0964885e"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:59.769Z",
+                    "reviewed_at": "2026-10-22T09:35:16.046Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "固定版本包清单与作者说明已核对；依赖rg、fd/fdfind、ast-grep及可读目录；sg同名命令可能不是预期工具，应检查版本和实际调用。",
+                    "text": "0.3.0 MIT，Node>=18，bash及rg/fd/ast-grep独立安装。",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1381725987-root-source"
+                        "2026-10-22-02-github-1381725987-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +175,16 @@
                             "fingerprint": "445b0fd89b128696f447f28ff6dd3b0c0964885e"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:59.769Z",
+                    "reviewed_at": "2026-10-22T09:35:16.046Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "搜索I/O、子进程启动与返回token，预算裁剪不保证扫描成本同比下降；未做性能实验。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | Node/bash和搜索CLI | 固定版本/项目白名单 | 需固定CLI和项目根；安装/白名单核查工时未知 |\n| 持续使用 | 扫描CPU/IO及结果上下文 | 审阅命中、核对坐标与截断 | 插件无LLM调用；扫描规模/结果token/延迟未量化 |\n| 失败恢复 | 原CLI与更窄查询 | 查超限/解析/坐标，重搜 | 收窄重搜和坐标核对工时未知 |\n",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1381725987-root-source"
+                        "2026-10-22-02-github-1381725987-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +193,16 @@
                             "fingerprint": "445b0fd89b128696f447f28ff6dd3b0c0964885e"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:59.769Z",
+                    "reviewed_at": "2026-10-22T09:35:16.046Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "显式设定项目根而非整个home，以已知命中验证工具身份和结果截断。",
+                    "text": "可信单用户最小项目根可试用，结果只作线索。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1381725987-root-source"
+                        "2026-10-22-02-github-1381725987-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +211,16 @@
                             "fingerprint": "445b0fd89b128696f447f28ff6dd3b0c0964885e"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:59.769Z",
+                    "reviewed_at": "2026-10-22T09:35:16.046Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "把三种成熟搜索器接成统一工具，并给出根目录约束和模型可消费结果；搜索算法不是插件原创。 rg的max-count是每文件上限，且结果数在进程完成后再裁剪；ast-grep也主要事后裁剪，不能把返回条数上限等同实际工作量上限。默认允许home范围较宽，根路径检查不等于操作系统沙箱。",
+                    "text": "#### 效果\n\n| 目标 | 源码支持 | 边界 |\n| --- | --- | --- |\n| 少拼命令 | 四模型工具 | 仍需CLI |\n| 限根搜索 | 起始root realpath | 非OS沙箱 |\n| 缩短输出 | 返回数/文本切片 | 执行并非全局早停 |",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1381725987-root-source"
+                        "2026-10-22-02-github-1381725987-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +229,16 @@
                             "fingerprint": "445b0fd89b128696f447f28ff6dd3b0c0964885e"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:59.769Z",
+                    "reviewed_at": "2026-10-22T09:35:16.046Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "真实路径核对与参数数组执行可借鉴，但资源预算应与结果预算分别建模。",
+                    "text": "小型实现与realpath目录边界可借鉴，测试集中入口，需流式限额和明确回执。详见[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1381725987-root-source"
+                        "2026-10-22-02-github-1381725987-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,15 +247,69 @@
                             "fingerprint": "445b0fd89b128696f447f28ff6dd3b0c0964885e"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:59.769Z",
+                    "reviewed_at": "2026-10-22T09:35:16.046Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "统一现成搜索器、模型参数及根检查，减少手写shell。详见[Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1381725987-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381725987:root",
+                            "area": "code",
+                            "fingerprint": "445b0fd89b128696f447f28ff6dd3b0c0964885e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:35:16.046Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "supported",
+                    "text": "默认HOME范围宽，先缓冲后全局截断且无截断标志，AST坐标和长度与rg未统一。详见[Q03](#research-q03)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1381725987-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381725987:root",
+                            "area": "code",
+                            "fingerprint": "445b0fd89b128696f447f28ff6dd3b0c0964885e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:35:16.046Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "engineering",
+                    "basis": "unverified",
+                    "text": "研究流式全局停止、截断回执和统一坐标，将CLI查找/子进程纳入可取消限额，固定宿主沙箱root。当前未验证。详见[Q05](#research-q05)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1381725987-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381725987:root",
+                            "area": "code",
+                            "fingerprint": "445b0fd89b128696f447f28ff6dd3b0c0964885e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:35:16.046Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-20T10:01:59.769Z",
+            "last_checked_at": "2026-10-22T09:35:16.046Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "445b0fd89b128696f447f28ff6dd3b0c0964885e",
-                "reviewed_at": "2026-10-20T10:01:59.769Z",
+                "reviewed_at": "2026-10-22T09:35:16.046Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -223,59 +323,59 @@
                         "novelty": 9,
                         "mechanism": 8,
                         "transferability": 5,
-                        "simplification": 4
+                        "simplification": 8
                     },
-                    "rationale": "novelty为已有搜索器封装；mechanism为路径及返回约束的小幅增量；transferability可复用于文件工具但未测；simplification为统一输出。 固定版本源码支持接口和流程存在，未执行目标代码；分数表达相对文中基线的设计解释，不代表效果、采用或收益验证。",
+                    "rationale": "novelty小幅，复用现成搜索；mechanism小幅，路径检查加包装；transferability小幅，依赖WSL CLI约定；simplification实质，统一模型入口。",
                     "basis": "interpretation",
-                    "score": 26,
+                    "score": 30,
                     "evidence_ids": [
-                        "2026-10-20-07-github-1381725987-root-source"
+                        "2026-10-22-02-github-1381725987-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 9,
+                        "workflow": 18,
                         "delivery": 0,
                         "reach": 5,
-                        "economics": 0
+                        "economics": 4
                     },
-                    "rationale": "workflow降低CLI重复组织；delivery仍是匹配结果；reach向Agent开放结构搜索；economics未改变服务或资源组织方式。 固定版本源码支持接口和流程存在，未执行目标代码；分数表达相对文中基线的设计解释，不代表效果、采用或收益验证。",
+                    "rationale": "workflow实质，搜索定位进入模型流程；delivery无新方式；reach小幅，工具schema；economics小幅，省命令但返工与扫描未知。",
                     "basis": "interpretation",
-                    "score": 14,
+                    "score": 27,
                     "evidence_ids": [
-                        "2026-10-20-07-github-1381725987-root-source"
+                        "2026-10-22-02-github-1381725987-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "大型项目搜索者可先显式收窄根目录，核rg/fd/sg实际身份与已知命中，截断结果仍回读原文。",
+                "reason": "可信WSL项目定位可试用，必须收窄allowRoots并核对CLI；不用于强隔离、穷尽检索或可靠坐标审计。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "紧凑可追溯代码定位是反复发生的开发需求。"
+                        "rationale": "项目搜索场景明确。"
                     },
                     "advantage": {
-                        "score": 19,
-                        "rationale": "三类搜索器统一接口和realpath控制较散落CLI省组织。"
+                        "score": 13,
+                        "rationale": "统一工具方便，直接shell可替代。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "参数预算已查，结果上限多为事后裁剪且sg可能同名。"
+                        "rationale": "完整小型源码和根测试可查，输出/CLI关键契约欠缺。"
                     },
                     "cost": {
                         "score": 10,
-                        "rationale": "多二进制与扫描I/O需维护，默认home过宽应收窄。"
+                        "rationale": "外部CLI与截断误判需维护。"
                     }
                 },
-                "score": 65,
+                "score": 59,
                 "revision": "445b0fd89b128696f447f28ff6dd3b0c0964885e",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T09:35:16.046Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-20-07-github-1381725987-root-source"
+                    "2026-10-22-02-github-1381725987-root-source"
                 ],
                 "dependencies": [
                     {
@@ -300,32 +400,33 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-20T09:36:48.824Z",
-            "analysis_sha256": "a1856f20a3c7b0c58eb89d2ab9211299d9101adddebc0a31f1cda53a1bd05d00"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "a33b2beefe025ce10c1c4bb703af02491c4e4da45b03e5f75cb2e2744d470f75"
         },
         "publication.metadata": "data/plugins/173787247--dsh-wsl-search/META.json",
         "publication.summaries": {
-            "text": "在允许目录内用ripgrep、fd和ast-grep搜索文本、文件名与代码结构。",
+            "text": "把ripgrep、fd与ast-grep接成DSH模型搜索工具，检查起始根白名单并限制返回条目和文本长度。",
             "revision": "445b0fd89b128696f447f28ff6dd3b0c0964885e",
             "source_url": "https://github.com/173787247/dsh-wsl-search/blob/445b0fd89b128696f447f28ff6dd3b0c0964885e/README.md"
         },
         "publication.capabilities": {
             "revision": "445b0fd89b128696f447f28ff6dd3b0c0964885e",
             "items": {
-                "模型工具": "search_status、search_rg、search_fd、search_astgrep。"
-            }
+                "模型工具": "search_status/search_rg/search_fd/search_astgrep"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 文本/文件/AST | 模型定位 | 外部CLI |\n| 起始根检查 | 项目范围 | 默认HOME宽且非沙箱 |\n| 输出切片 | 少上下文 | 完整性无标志 |"
         },
         "publication.advice": {
             "revision": "445b0fd89b128696f447f28ff6dd3b0c0964885e",
-            "text": "显式设定项目根而非整个home，以已知命中验证工具身份和结果截断。"
+            "text": "可信单用户最小项目根可试用，结果只作线索。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/173787247--dsh-wsl-search",
-        "reports": "# dsh-wsl-search\n\n> 在允许目录内用ripgrep、fd和ast-grep搜索文本、文件名与代码结构。\n\n## 研究范围\n\n- **仓库**：[173787247/dsh-wsl-search](https://github.com/173787247/dsh-wsl-search)\n- **版本号**：0.3.0（[固定提交 445b0fd89b128696f447f28ff6dd3b0c0964885e](https://github.com/173787247/dsh-wsl-search/tree/445b0fd89b128696f447f28ff6dd3b0c0964885e)）\n- **版本日期**：2026-09-30（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已有贡献：把三种成熟搜索器接成统一工具，并给出根目录约束和模型可消费结果；搜索算法不是插件原创。\n\n结论边界：本次为固定版本源码核查，未执行目标代码或真实宿主验收，未核实独立使用效果。下文设计假设均未验证。\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：Agent在大型工作区定位代码时，需要比整文件读取更紧凑、可追溯的匹配结果。\n- **亮点**：把三种成熟搜索器接成统一工具，并给出根目录约束和模型可消费结果；搜索算法不是插件原创。\n- **思考**：rg的max-count是每文件上限，且结果数在进程完成后再裁剪；ast-grep也主要事后裁剪，不能把返回条数上限等同实际工作量上限。默认允许home范围较宽，根路径检查不等于操作系统沙箱。\n- **建议**：待验证假设：流式读取达到全局匹配预算即停止子进程，能减少宽目录搜索的等待和缓冲；提前停止也可能漏掉更相关文件。\n\n采用建议：显式设定项目根而非整个home，以已知命中验证工具身份和结果截断。\n\n## 核心贡献\n\n把三种成熟搜索器接成统一工具，并给出根目录约束和模型可消费结果；搜索算法不是插件原创。\n\n## 关键质疑\n\nrg的max-count是每文件上限，且结果数在进程完成后再裁剪；ast-grep也主要事后裁剪，不能把返回条数上限等同实际工作量上限。默认允许home范围较宽，根路径检查不等于操作系统沙箱。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n待验证假设：流式读取达到全局匹配预算即停止子进程，能减少宽目录搜索的等待和缓冲；提前停止也可能漏掉更相关文件。\n\n在相同多文件语料比较原实现与流式预算的首批延迟、总扫描量和命中召回，若漏项增加超过收益则否定；检查符号链接与根目录约束。\n\n## 场景与替代办法\n\nAgent在大型工作区定位代码时，需要比整文件读取更紧凑、可追溯的匹配结果。\n\n直接CLI搜索或宿主已有文件工具；插件提供统一参数和结果形状，不自动构成更高召回。\n\n## 依赖与流程\n\n依赖rg、fd/fdfind、ast-grep及可读目录；sg同名命令可能不是预期工具，应检查版本和实际调用。\n\n先search_status核对二进制，收窄allowRoots，文本搜索定位后再做结构搜索和原文复核。\n\n## 成本与效果\n\n搜索I/O、子进程启动与返回token，预算裁剪不保证扫描成本同比下降；未做性能实验。\n\n把三种成熟搜索器接成统一工具，并给出根目录约束和模型可消费结果；搜索算法不是插件原创。 rg的max-count是每文件上限，且结果数在进程完成后再裁剪；ast-grep也主要事后裁剪，不能把返回条数上限等同实际工作量上限。默认允许home范围较宽，根路径检查不等于操作系统沙箱。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：3c0f307e0b9c258dcb1ba42f3b57f5ae37fd0ecd0a17c41bdd10a3b020540479。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 129 | — | — | 529 |\n| .js | source | 2 | 313 | 293 | 2 | — |\n| .js | test | 1 | 38 | 35 | 1 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **模型工具**：search_status、search_rg、search_fd、search_astgrep。\n\n## 工程亮点\n\n真实路径核对与参数数组执行可借鉴，但资源预算应与结果预算分别建模。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 index.js、lib/search.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：检查四个工具注册、根解析、命令参数与输出处理；未搜索用户目录或运行目标工具。\n- 下一步：在相同多文件语料比较原实现与流式预算的首批延迟、总扫描量和命中召回，若漏项增加超过收益则否定；检查符号链接与根目录约束。\n",
+        "reports": "# dsh-wsl-search\n\n> 把ripgrep、fd与ast-grep接成DSH模型搜索工具，检查起始根白名单并限制返回条目和文本长度。\n\n## 研究范围\n\n- **仓库**：[173787247/dsh-wsl-search](https://github.com/173787247/dsh-wsl-search)\n- **版本号**：0.3.0（[固定提交 445b0fd89b128696f447f28ff6dd3b0c0964885e](https://github.com/173787247/dsh-wsl-search/tree/445b0fd89b128696f447f28ff6dd3b0c0964885e)）\n- **版本日期**：2026-09-30（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n四工具和realpath入口约束可查，默认HOME、输出完整性与执行限额不支持强沙箱/穷尽主张。\n\n## 洞察短评\n\n- **用途**：可信WSL项目内由模型查文本、文件名及AST模式。详见[Q01](#research-q01)。\n- **亮点**：统一现成搜索器、模型参数及根检查，减少手写shell。详见[Q01](#research-q01)。\n- **思考**：默认HOME范围宽，先缓冲后全局截断且无截断标志，AST坐标和长度与rg未统一。详见[Q03](#research-q03)。\n- **建议**：研究流式全局停止、截断回执和统一坐标，将CLI查找/子进程纳入可取消限额，固定宿主沙箱root。当前未验证。详见[Q05](#research-q05)。\n\n采用建议：可信单用户最小项目根可试用，结果只作线索。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n统一现成搜索器、模型参数及根检查，减少手写shell。详见[Q01](#research-q01)。\n\n## 关键质疑\n\n默认HOME范围宽，先缓冲后全局截断且无截断标志，AST坐标和长度与rg未统一。详见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n研究流式全局停止、截断回执和统一坐标，将CLI查找/子进程纳入可取消限额，固定宿主沙箱root。当前未验证。详见[Q05](#research-q05)。\n\n从多文件超限、坏JSON、AST坐标、stderr与root变化探讨流式回执。\n\n## 场景与替代办法\n\n可信WSL项目内由模型查文本、文件名及AST模式。详见[Q01](#research-q01)。\n\n模型直接调用rg/fd/ast-grep的shell流程，包装便利不等新算法或强沙箱。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 条件 | 用途 | 失效影响 |\n| --- | --- | --- |\n| Node>=18及宿主tools/systemPrompt | 注册 | ABI需匹配 |\n| bash/PATH | 查找二进制 | 查找未独立超时 |\n| rg/fd/ast-grep | 执行搜索 | sg身份/JSON版本需核 |\n| 项目allowRoots | 收窄访问 | 空值默认整个HOME |\n\n#### 启动步骤\n\n| 步骤 | 执行者 | 判断标准 |\n| --- | --- | --- |\n| 装CLI并核路径 | 用户 | 不只看status非空 |\n| 配项目白名单 | 用户 | 避免HOME秘密 |\n| 选择搜索模式 | 模型 | 文本/文件/AST匹配 |\n| 原工具核关键结果 | 用户 | 截断与坐标可解释 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | Node/bash和搜索CLI | 固定版本/项目白名单 | 需固定CLI和项目根；安装/白名单核查工时未知 |\n| 持续使用 | 扫描CPU/IO及结果上下文 | 审阅命中、核对坐标与截断 | 插件无LLM调用；扫描规模/结果token/延迟未量化 |\n| 失败恢复 | 原CLI与更窄查询 | 查超限/解析/坐标，重搜 | 收窄重搜和坐标核对工时未知 |\n\n\n#### 效果\n\n| 目标 | 源码支持 | 边界 |\n| --- | --- | --- |\n| 少拼命令 | 四模型工具 | 仍需CLI |\n| 限根搜索 | 起始root realpath | 非OS沙箱 |\n| 缩短输出 | 返回数/文本切片 | 执行并非全局早停 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**固定WSL搜索工具如何约束路径、执行和返回，是否足以支持可靠定位？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 为什么把命令行搜索做成模型工具？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n在WSL代码/资料目录中，模型可按内容、文件名或AST模式查询，返回有限条目与路径，避免每轮自行拼bash命令。search_status给出二进制位置，rg/fd/ast-grep分别承担文本、文件名、结构搜索。成功不仅是返回ok，还需能说明搜索根、结果坐标和结果是否完整。\n\n贡献是把已有搜索器接到DSH参数schema、root白名单与结果截断，不是新搜索算法。相比模型直接shell调用，它统一入口且把pattern作为argv值交给搜索器；但README的“沙箱”仅由本进程路径检查和外部CLI约定支持，不能当操作系统隔离。默认允许整个HOME，.dsh和im-workspace是其子集而不是额外收窄，敏感目录仍可能被搜到，必须显式配置项目根。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:5-23](https://github.com/173787247/dsh-wsl-search/blob/445b0fd89b128696f447f28ff6dd3b0c0964885e/README.md#L5-L23)\n\n作者的搜索工具定位。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n````text\nWSL 上给 dsh 用的沙箱 **ripgrep** / **fd** / **ast-grep**：`search_rg` / `search_fd` / `search_astgrep`。\n\n默认只允许在 `$HOME` 与 `~/.dsh` 下搜。\n\n## 最短上手\n\n```sh\nsudo apt install ripgrep fd-find   # 或等价包名\ndsh plugin --profile web add github:173787247/dsh-wsl-search\n```\n\n## 工具\n\n| 工具 | 作用 |\n|------|------|\n| `search_status` | rg/fd/ast-grep 是否可用 |\n| `search_rg` | 内容搜索（行数/行长有上限） |\n| `search_fd` | 按文件名查找 |\n| `search_astgrep` | 结构化模式搜索 |\n````\n\n</details>\n\n**依据 2 · 源码核查**：[lib/search.js:17-31](https://github.com/173787247/dsh-wsl-search/blob/445b0fd89b128696f447f28ff6dd3b0c0964885e/lib/search.js#L17-L31)\n\n默认HOME和物理root检查。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\nexport function defaultRoots() {\n  const home = homedir();\n  return [home, resolve(home, \".dsh\"), resolve(home, \".dsh\", \"im-workspace\")].filter((p) => existsSync(p));\n}\n\nexport function resolveRoot(root, allowRoots = []) {\n  const abs = resolve(String(root || \"\").trim() || \".\");\n  const real = existsSync(abs) ? realpathSync(abs) : abs;\n  const roots = (allowRoots.length ? allowRoots : defaultRoots()).map((r) => {\n    const a = resolve(r);\n    return existsSync(a) ? realpathSync(a) : a;\n  });\n  const ok = roots.some((r) => isUnderRoot(real, r));\n  if (!ok) throw new Error(`search root outside allowRoots: ${real}`);\n  return real;\n```\n\n</details>\n\n**依据 3 · 源码核查**：[index.js:17-35](https://github.com/173787247/dsh-wsl-search/blob/445b0fd89b128696f447f28ff6dd3b0c0964885e/index.js#L17-L35)\n\n提示与状态工具。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n  ctx.systemPrompt.section({\n    name: \"tool:search\",\n    order: 130,\n    text: \"dsh-wsl-search runs sandboxed ripgrep/fd/ast-grep under allowlisted roots (default: $HOME, ~/.dsh, and ~/.dsh/im-workspace). Do not search all of /mnt/c. Prefer search_rg for text, search_fd for filenames, search_astgrep for structural patterns.\",\n  });\n\n  const base = { allowRoots, timeoutMs, maxMatches, maxLineChars };\n\n  ctx.tools.register({\n    name: \"search_status\",\n    description: \"Whether rg/fd/ast-grep are on PATH.\",\n    parameters: { type: \"object\", additionalProperties: false, properties: {} },\n    output: { schema: { type: \"object\", additionalProperties: true }, render: (_a, v) => [{ type: \"text\", text: JSON.stringify(v) }] },\n    timeoutMs: 5_000,\n    isConcurrencySafe: () => true,\n    async execute() {\n      return searchStatus();\n    },\n    presentCall: () => ({ card: \"generic\", title: \"Search status\" }),\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 三条搜索链和依赖是什么？\n\n**研究主题：**功能与机制、依赖、兼容与流程\n\n#### 完整回答\n\n入口注册四个并发安全模型工具，宿主提供tools/systemPrompt；文本/文件/AST包装异常为ok:false。lib先resolve并对已存在根做realpath，再检查白名单目录边界；whichSimple经bash -lc command -v找rg/fd或fdfind、ast-grep或sg，spawn直接执行找到的路径。rg加--分隔pattern和目录，输出JSON逐行取match，截断行文本和全局返回数；fd限制max-results再切片；AST用run --pattern和json stream，语言名只留简单字符。\n\nNode声明>=18，无npm运行库依赖，实际需要bash和各外部CLI，WSL发行版应额外装AST工具；README的apt命令只装rg/fd。whichSimple没有timeout和spawn error处理，环境没有bash或登录初始化挂住时，外层搜索超时未覆盖查找阶段；search_status的宿主5秒期限不等它主动清理子进程。PATH上的sg还可能是其他程序，非空路径不证明语义兼容。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:1-35](https://github.com/173787247/dsh-wsl-search/blob/445b0fd89b128696f447f28ff6dd3b0c0964885e/index.js#L1-L35)\n\n宿主和配置。\n\n<details>\n<summary>查看原文（35行）</summary>\n\n```text\nimport { rgSearch, fdSearch, searchStatus, astGrepSearch } from \"./lib/search.js\";\n\nexport const name = \"dsh-wsl-search\";\nexport const inject = [\"tools\", \"systemPrompt\"];\n\nexport function apply(ctx, config = {}) {\n  if (config.enabled === false) {\n    console.log(\"[dsh-wsl-search] disabled\");\n    return;\n  }\n  const timeoutMs = positive(config.timeoutMs, 30_000);\n  const maxMatches = positive(config.maxMatches, 50);\n  const maxLineChars = positive(config.maxLineChars, 400);\n  const allowRoots = Array.isArray(config.allowRoots) ? config.allowRoots.map(String) : [];\n  console.log(`[dsh-wsl-search] maxMatches=${maxMatches}`);\n\n  ctx.systemPrompt.section({\n    name: \"tool:search\",\n    order: 130,\n    text: \"dsh-wsl-search runs sandboxed ripgrep/fd/ast-grep under allowlisted roots (default: $HOME, ~/.dsh, and ~/.dsh/im-workspace). Do not search all of /mnt/c. Prefer search_rg for text, search_fd for filenames, search_astgrep for structural patterns.\",\n  });\n\n  const base = { allowRoots, timeoutMs, maxMatches, maxLineChars };\n\n  ctx.tools.register({\n    name: \"search_status\",\n    description: \"Whether rg/fd/ast-grep are on PATH.\",\n    parameters: { type: \"object\", additionalProperties: false, properties: {} },\n    output: { schema: { type: \"object\", additionalProperties: true }, render: (_a, v) => [{ type: \"text\", text: JSON.stringify(v) }] },\n    timeoutMs: 5_000,\n    isConcurrencySafe: () => true,\n    async execute() {\n      return searchStatus();\n    },\n    presentCall: () => ({ card: \"generic\", title: \"Search status\" }),\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/search.js:6-14](https://github.com/173787247/dsh-wsl-search/blob/445b0fd89b128696f447f28ff6dd3b0c0964885e/lib/search.js#L6-L14)\n\nbash查找。\n\n```text\nexport function whichSimple(cmd) {\n  const safe = String(cmd || \"\").replace(/[^a-zA-Z0-9._+-]/g, \"\");\n  if (!safe) return Promise.resolve(\"\");\n  return new Promise((resolvePromise) => {\n    const child = spawn(\"bash\", [\"-lc\", `command -v ${safe}`], { stdio: [\"ignore\", \"pipe\", \"ignore\"] });\n    let out = \"\";\n    child.stdout.on(\"data\", (d) => (out += d));\n    child.on(\"close\", (c) => resolvePromise(c === 0 ? out.trim() : \"\"));\n  });\n```\n\n**依据 3 · 源码核查**：[lib/search.js:69-113](https://github.com/173787247/dsh-wsl-search/blob/445b0fd89b128696f447f28ff6dd3b0c0964885e/lib/search.js#L69-L113)\n\nrg/fd链。\n\n<details>\n<summary>查看原文（45行）</summary>\n\n```text\nexport async function rgSearch({ pattern, root, glob, maxMatches = 50, maxLineChars = 400, allowRoots, timeoutMs = 30_000 }) {\n  const dir = resolveRoot(root, allowRoots);\n  const pat = String(pattern || \"\").trim();\n  if (!pat) throw new Error(\"pattern required\");\n  if (pat.length > 500) throw new Error(\"pattern too long\");\n  const bin = (await whichSimple(\"rg\")) || \"rg\";\n  const args = [\"--json\", \"--max-count\", String(maxMatches), \"-n\", \"--no-heading\", \"--\", pat, dir];\n  if (glob) {\n    args.splice(4, 0, \"--glob\", String(glob));\n  }\n  const { code, stdout, stderr } = await run(bin, args, timeoutMs);\n  if (code !== 0 && code !== 1) throw new Error(`rg failed: ${stderr || code}`);\n  const matches = [];\n  for (const line of stdout.split(\"\\n\")) {\n    if (!line.trim()) continue;\n    try {\n      const ev = JSON.parse(line);\n      if (ev.type !== \"match\") continue;\n      matches.push({\n        path: ev.data?.path?.text,\n        line: ev.data?.line_number,\n        text: String(ev.data?.lines?.text || \"\").trimEnd().slice(0, maxLineChars),\n      });\n      if (matches.length >= maxMatches) break;\n    } catch {\n      /* ignore */\n    }\n  }\n  return { ok: true, root: dir, count: matches.length, matches };\n}\n\nexport async function fdSearch({ name, root, maxMatches = 50, allowRoots, timeoutMs = 30_000 }) {\n  const dir = resolveRoot(root, allowRoots);\n  const q = String(name || \"\").trim();\n  if (!q) throw new Error(\"name required\");\n  const bin = (await whichSimple(\"fd\")) || (await whichSimple(\"fdfind\")) || \"fd\";\n  const args = [\"--max-results\", String(maxMatches), \"--\", q, dir];\n  const { code, stdout, stderr } = await run(bin, args, timeoutMs);\n  if (code !== 0 && code !== 1) throw new Error(`fd failed: ${stderr || code}`);\n  const paths = stdout\n    .split(\"\\n\")\n    .map((s) => s.trim())\n    .filter(Boolean)\n    .slice(0, maxMatches);\n  return { ok: true, root: dir, count: paths.length, paths };\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/search.js:116-155](https://github.com/173787247/dsh-wsl-search/blob/445b0fd89b128696f447f28ff6dd3b0c0964885e/lib/search.js#L116-L155)\n\nstatus与AST链。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\nexport async function searchStatus() {\n  return {\n    ok: true,\n    rg: (await whichSimple(\"rg\")) || null,\n    fd: (await whichSimple(\"fd\")) || (await whichSimple(\"fdfind\")) || null,\n    astGrep: (await whichSimple(\"ast-grep\")) || (await whichSimple(\"sg\")) || null,\n  };\n}\n\nexport async function astGrepSearch({ pattern, root, lang, maxMatches = 50, allowRoots, timeoutMs = 30_000 }) {\n  const dir = resolveRoot(root, allowRoots);\n  const pat = String(pattern || \"\").trim();\n  if (!pat) throw new Error(\"pattern required\");\n  if (pat.length > 500) throw new Error(\"pattern too long\");\n  const bin = (await whichSimple(\"ast-grep\")) || (await whichSimple(\"sg\")) || \"ast-grep\";\n  const args = [\"run\", \"--pattern\", pat, \"--json=stream\", dir];\n  if (lang) {\n    const l = String(lang).replace(/[^a-zA-Z0-9_+-]/g, \"\");\n    if (l) args.splice(1, 0, \"--lang\", l);\n  }\n  const { code, stdout, stderr } = await run(bin, args, timeoutMs);\n  if (code !== 0 && code !== 1) throw new Error(`ast-grep failed: ${stderr || code}`);\n  const matches = [];\n  for (const line of stdout.split(\"\\n\")) {\n    if (!line.trim()) continue;\n    try {\n      const ev = JSON.parse(line);\n      const file = ev.file || ev.path || ev.paths?.[0];\n      const range = ev.range || ev.ranges?.[0];\n      matches.push({\n        path: file,\n        line: range?.start?.line ?? ev.line,\n        text: String(ev.text || ev.lines || \"\").trimEnd().slice(0, 400),\n      });\n      if (matches.length >= maxMatches) break;\n    } catch {\n      /* ignore */\n    }\n  }\n  return { ok: true, root: dir, count: matches.length, matches };\n```\n\n</details>\n\n**依据 5 · 源码核查**：[package.json:1-14](https://github.com/173787247/dsh-wsl-search/blob/445b0fd89b128696f447f28ff6dd3b0c0964885e/package.json#L1-L14)\n\nNode与分发。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n{\n  \"name\": \"dsh-wsl-search\",\n  \"version\": \"0.3.0\",\n  \"description\": \"DeepSeek Harness WSL plugin: sandboxed ripgrep/fd/ast-grep under allowlisted roots.\",\n  \"license\": \"MIT\",\n  \"repository\": { \"type\": \"git\", \"url\": \"https://github.com/173787247/dsh-wsl-search.git\" },\n  \"type\": \"module\",\n  \"main\": \"index.js\",\n  \"engines\": { \"node\": \">=18\" },\n  \"scripts\": { \"test\": \"node --test test/*.test.js\" },\n  \"files\": [\"index.js\", \"lib\", \"cordis.patch.yml\", \"README.md\", \"README.en.md\", \"README.zh.md\", \"LICENSE\", \"CHANGELOG.md\"],\n  \"keywords\": [\"dsh-plugin\", \"wsl\", \"ripgrep\", \"fd\", \"ast-grep\"],\n  \"dsh\": { \"bundle\": { \"patch\": \"./cordis.patch.yml\" } }\n}\n```\n\n</details>\n\n**依据 6 · 源码核查**：[README.md:9-14](https://github.com/173787247/dsh-wsl-search/blob/445b0fd89b128696f447f28ff6dd3b0c0964885e/README.md#L9-L14)\n\n安装示例。\n\n````text\n## 最短上手\n\n```sh\nsudo apt install ripgrep fd-find   # 或等价包名\ndsh plugin --profile web add github:173787247/dsh-wsl-search\n```\n````\n\n#### 缺口\n\n- 目标环境CLI版本及sg是否确为ast-grep未由查找函数验证\n  **影响：**status可用不等结构搜索JSON契约兼容\n  **进一步探讨：**核对绝对可执行路径、版本与固定样例输出\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 路径与输出限制能保证什么？\n\n**研究主题：**缺陷与关键质疑\n\n#### 完整回答\n\n对已存在root和allowRoots做realpath，比纯词法前缀能识别起始路径符号链接逃逸，目录边界检查也避免相邻同前缀目录误入。它没有在操作系统层限制子进程读取，启动后目录替换/挂载变化与工具自身配置仍不受持续约束；不存在root只做词法判断，后续创建也存在时间窗口。默认HOME范围尤其不能被解释为仅项目。所有进程继承宿主环境，搜索本地内容会经模型工具结果暴露给会话。\n\nrun累积stdout超过约200万字符才kill，stderr无限累积；close照常返回code和缓冲，没有独立truncated字段。rg --max-count限制每文件匹配，不能在整个执行阶段保证全局50条，只有收完再解析时全局截断。AST也先收全输出再切片；未解析JSON静默跳过仍ok:true，AST行号直接用上游range.start.line未+1，和rg一基行号未统一，maxLineChars设置只用于rg而AST硬编码400。fd用换行拆路径，带换行文件名会失真。读者不能把count当完整匹配数或统一坐标契约。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/search.js:22-42](https://github.com/173787247/dsh-wsl-search/blob/445b0fd89b128696f447f28ff6dd3b0c0964885e/lib/search.js#L22-L42)\n\nrealpath与边界。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\nexport function resolveRoot(root, allowRoots = []) {\n  const abs = resolve(String(root || \"\").trim() || \".\");\n  const real = existsSync(abs) ? realpathSync(abs) : abs;\n  const roots = (allowRoots.length ? allowRoots : defaultRoots()).map((r) => {\n    const a = resolve(r);\n    return existsSync(a) ? realpathSync(a) : a;\n  });\n  const ok = roots.some((r) => isUnderRoot(real, r));\n  if (!ok) throw new Error(`search root outside allowRoots: ${real}`);\n  return real;\n}\n\nfunction isUnderRoot(real, root) {\n  const r = root.replace(/[/\\\\]+$/, \"\");\n  if (process.platform === \"win32\") {\n    const a = real.toLowerCase();\n    const b = r.toLowerCase();\n    return a === b || a.startsWith(b + \"\\\\\") || a.startsWith(b + \"/\");\n  }\n  return real === r || real.startsWith(r + \"/\");\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/search.js:44-65](https://github.com/173787247/dsh-wsl-search/blob/445b0fd89b128696f447f28ff6dd3b0c0964885e/lib/search.js#L44-L65)\n\nstdout阈值和stderr。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\nexport function run(bin, args, timeoutMs) {\n  return new Promise((resolvePromise, reject) => {\n    const child = spawn(bin, args, { stdio: [\"ignore\", \"pipe\", \"pipe\"] });\n    let stdout = \"\";\n    let stderr = \"\";\n    const t = setTimeout(() => {\n      child.kill(\"SIGKILL\");\n      reject(new Error(\"search timeout\"));\n    }, timeoutMs);\n    child.stdout.on(\"data\", (d) => {\n      stdout += d;\n      if (stdout.length > 2_000_000) child.kill(\"SIGKILL\");\n    });\n    child.stderr.on(\"data\", (d) => (stderr += d));\n    child.on(\"close\", (code) => {\n      clearTimeout(t);\n      resolvePromise({ code, stdout, stderr });\n    });\n    child.on(\"error\", (e) => {\n      clearTimeout(t);\n      reject(e);\n    });\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/search.js:75-97](https://github.com/173787247/dsh-wsl-search/blob/445b0fd89b128696f447f28ff6dd3b0c0964885e/lib/search.js#L75-L97)\n\n先收集、静默解析和返回。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n  const args = [\"--json\", \"--max-count\", String(maxMatches), \"-n\", \"--no-heading\", \"--\", pat, dir];\n  if (glob) {\n    args.splice(4, 0, \"--glob\", String(glob));\n  }\n  const { code, stdout, stderr } = await run(bin, args, timeoutMs);\n  if (code !== 0 && code !== 1) throw new Error(`rg failed: ${stderr || code}`);\n  const matches = [];\n  for (const line of stdout.split(\"\\n\")) {\n    if (!line.trim()) continue;\n    try {\n      const ev = JSON.parse(line);\n      if (ev.type !== \"match\") continue;\n      matches.push({\n        path: ev.data?.path?.text,\n        line: ev.data?.line_number,\n        text: String(ev.data?.lines?.text || \"\").trimEnd().slice(0, maxLineChars),\n      });\n      if (matches.length >= maxMatches) break;\n    } catch {\n      /* ignore */\n    }\n  }\n  return { ok: true, root: dir, count: matches.length, matches };\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/search.js:105-113](https://github.com/173787247/dsh-wsl-search/blob/445b0fd89b128696f447f28ff6dd3b0c0964885e/lib/search.js#L105-L113)\n\nfd按行切分。\n\n```text\n  const args = [\"--max-results\", String(maxMatches), \"--\", q, dir];\n  const { code, stdout, stderr } = await run(bin, args, timeoutMs);\n  if (code !== 0 && code !== 1) throw new Error(`fd failed: ${stderr || code}`);\n  const paths = stdout\n    .split(\"\\n\")\n    .map((s) => s.trim())\n    .filter(Boolean)\n    .slice(0, maxMatches);\n  return { ok: true, root: dir, count: paths.length, paths };\n```\n\n**依据 5 · 源码核查**：[lib/search.js:138-155](https://github.com/173787247/dsh-wsl-search/blob/445b0fd89b128696f447f28ff6dd3b0c0964885e/lib/search.js#L138-L155)\n\nAST坐标与固定400。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n  const matches = [];\n  for (const line of stdout.split(\"\\n\")) {\n    if (!line.trim()) continue;\n    try {\n      const ev = JSON.parse(line);\n      const file = ev.file || ev.path || ev.paths?.[0];\n      const range = ev.range || ev.ranges?.[0];\n      matches.push({\n        path: file,\n        line: range?.start?.line ?? ev.line,\n        text: String(ev.text || ev.lines || \"\").trimEnd().slice(0, 400),\n      });\n      if (matches.length >= maxMatches) break;\n    } catch {\n      /* ignore */\n    }\n  }\n  return { ok: true, root: dir, count: matches.length, matches };\n```\n\n</details>\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 测试和成本支持怎样的判断？\n\n**研究主题：**工程质量与复用、效果与总成本\n\n#### 完整回答\n\n现有38行测试验证HOME允许、/etc拒绝和默认根结构，最后临时目录样例验证白名单子路径。没有覆盖真实搜索器、JSON解析、超限kill、符号链接或目录变化。测试声称im-workspace出现时必须列出，但条件成立才assert(true)，不能独立证明该分支；源码defaultRoots能直接核对。此次只检查测试，不执行目标代码。\n\n首次需装CLI并设最小项目白名单、核对bash初始化与工具版本。持续无插件侧LLM请求，但搜索结果会增加宿主模型上下文，成本随匹配数量/行长及任务轮数变化；大树扫描CPU/IO不被maxMatches全局早停，多个工具声明并发安全却没有总并发额度。失败恢复要区分不可执行、超时、输出太大和解析丢行，再缩根/缩pattern重查，当前结果没有清楚截断标识，可能增加误判断和返工。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[test/search.test.js:1-38](https://github.com/173787247/dsh-wsl-search/blob/445b0fd89b128696f447f28ff6dd3b0c0964885e/test/search.test.js#L1-L38)\n\n现有完整测试范围。\n\n<details>\n<summary>查看原文（38行）</summary>\n\n```text\nimport { describe, it } from \"node:test\";\nimport assert from \"node:assert/strict\";\nimport { mkdirSync, mkdtempSync, rmSync } from \"node:fs\";\nimport { join } from \"node:path\";\nimport { homedir, tmpdir } from \"node:os\";\nimport { defaultRoots, resolveRoot } from \"../lib/search.js\";\n\ndescribe(\"resolveRoot\", () => {\n  it(\"allows home\", () => {\n    const r = resolveRoot(homedir(), [homedir()]);\n    assert.ok(r);\n  });\n  it(\"rejects /etc\", () => {\n    assert.throws(() => resolveRoot(\"/etc\", [homedir()]), /outside/);\n  });\n});\n\ndescribe(\"defaultRoots\", () => {\n  it(\"lists home and .dsh paths; includes im-workspace when present\", () => {\n    const roots = defaultRoots();\n    assert.ok(Array.isArray(roots));\n    assert.ok(roots.length >= 1);\n    // When ~/.dsh/im-workspace exists it must appear in defaultRoots.\n    const imDefault = join(homedir(), \".dsh\", \"im-workspace\");\n    if (roots.some((r) => r === imDefault || r.endsWith(`${join(\".dsh\", \"im-workspace\")}`))) {\n      assert.ok(true);\n    }\n    const dir = mkdtempSync(join(tmpdir(), \"dsh-search-\"));\n    try {\n      const im = join(dir, \".dsh\", \"im-workspace\");\n      mkdirSync(im, { recursive: true });\n      const allowed = resolveRoot(im, [dir, join(dir, \".dsh\"), im]);\n      assert.equal(allowed, im);\n    } finally {\n      rmSync(dir, { recursive: true, force: true });\n    }\n  });\n});\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/search.js:44-65](https://github.com/173787247/dsh-wsl-search/blob/445b0fd89b128696f447f28ff6dd3b0c0964885e/lib/search.js#L44-L65)\n\n执行成本边界。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\nexport function run(bin, args, timeoutMs) {\n  return new Promise((resolvePromise, reject) => {\n    const child = spawn(bin, args, { stdio: [\"ignore\", \"pipe\", \"pipe\"] });\n    let stdout = \"\";\n    let stderr = \"\";\n    const t = setTimeout(() => {\n      child.kill(\"SIGKILL\");\n      reject(new Error(\"search timeout\"));\n    }, timeoutMs);\n    child.stdout.on(\"data\", (d) => {\n      stdout += d;\n      if (stdout.length > 2_000_000) child.kill(\"SIGKILL\");\n    });\n    child.stderr.on(\"data\", (d) => (stderr += d));\n    child.on(\"close\", (code) => {\n      clearTimeout(t);\n      resolvePromise({ code, stdout, stderr });\n    });\n    child.on(\"error\", (e) => {\n      clearTimeout(t);\n      reject(e);\n    });\n```\n\n</details>\n\n**依据 3 · 源码核查**：[index.js:65-76](https://github.com/173787247/dsh-wsl-search/blob/445b0fd89b128696f447f28ff6dd3b0c0964885e/index.js#L65-L76)\n\n并发安全与异常包装。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n    },\n    timeoutMs,\n    isConcurrencySafe: () => true,\n    async execute(args) {\n      try {\n        return await rgSearch({ ...base, ...args });\n      } catch (e) {\n        return { ok: false, error: e instanceof Error ? e.message : String(e) };\n      }\n    },\n    presentCall: () => ({ card: \"generic\", title: \"rg\" }),\n    presentResult: (_a, r) => ({ card: \"generic\", title: \"rg\", content: r.content }),\n```\n\n</details>\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 采用条件和进一步探讨方向是什么？\n\n**研究主题：**新假设与验证、采用判断\n\n#### 完整回答\n\n可信个人WSL、明确项目白名单、已核对CLI路径且结果只作定位线索时可试用；不要默认放开HOME来处理不可信搜索请求，也不要依赖其实现阻止读取宿主秘密。需要严格访问隔离、可靠穷尽性或审计坐标的业务应暂缓。看到ok但缺行/空结果、巨量输出超时或行号错位，应回原工具核对而不是认定文件不存在。\n\n可以研究流式解析并在达到全局限额时主动停止，返回truncated/reason与统一一基坐标；将查找执行也纳入可取消生命周期，限制stderr并验证CLI身份，在宿主沙箱中固定项目root。基线为当前先缓冲后切片、HOME默认根，反例包括多文件各50匹配、超长stderr、坏JSON、AST零基坐标、换行文件名、查找阶段挂起和root替换。比较结果漏报、峰值内存、首次定位时间和恢复工时，方向尚未验证。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/search.js:44-65](https://github.com/173787247/dsh-wsl-search/blob/445b0fd89b128696f447f28ff6dd3b0c0964885e/lib/search.js#L44-L65)\n\n当前缓冲执行基线。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\nexport function run(bin, args, timeoutMs) {\n  return new Promise((resolvePromise, reject) => {\n    const child = spawn(bin, args, { stdio: [\"ignore\", \"pipe\", \"pipe\"] });\n    let stdout = \"\";\n    let stderr = \"\";\n    const t = setTimeout(() => {\n      child.kill(\"SIGKILL\");\n      reject(new Error(\"search timeout\"));\n    }, timeoutMs);\n    child.stdout.on(\"data\", (d) => {\n      stdout += d;\n      if (stdout.length > 2_000_000) child.kill(\"SIGKILL\");\n    });\n    child.stderr.on(\"data\", (d) => (stderr += d));\n    child.on(\"close\", (code) => {\n      clearTimeout(t);\n      resolvePromise({ code, stdout, stderr });\n    });\n    child.on(\"error\", (e) => {\n      clearTimeout(t);\n      reject(e);\n    });\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/search.js:82-97](https://github.com/173787247/dsh-wsl-search/blob/445b0fd89b128696f447f28ff6dd3b0c0964885e/lib/search.js#L82-L97)\n\n当前截断契约。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n  for (const line of stdout.split(\"\\n\")) {\n    if (!line.trim()) continue;\n    try {\n      const ev = JSON.parse(line);\n      if (ev.type !== \"match\") continue;\n      matches.push({\n        path: ev.data?.path?.text,\n        line: ev.data?.line_number,\n        text: String(ev.data?.lines?.text || \"\").trimEnd().slice(0, maxLineChars),\n      });\n      if (matches.length >= maxMatches) break;\n    } catch {\n      /* ignore */\n    }\n  }\n  return { ok: true, root: dir, count: matches.length, matches };\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/search.js:138-155](https://github.com/173787247/dsh-wsl-search/blob/445b0fd89b128696f447f28ff6dd3b0c0964885e/lib/search.js#L138-L155)\n\nAST返回。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n  const matches = [];\n  for (const line of stdout.split(\"\\n\")) {\n    if (!line.trim()) continue;\n    try {\n      const ev = JSON.parse(line);\n      const file = ev.file || ev.path || ev.paths?.[0];\n      const range = ev.range || ev.ranges?.[0];\n      matches.push({\n        path: file,\n        line: range?.start?.line ?? ev.line,\n        text: String(ev.text || ev.lines || \"\").trimEnd().slice(0, 400),\n      });\n      if (matches.length >= maxMatches) break;\n    } catch {\n      /* ignore */\n    }\n  }\n  return { ok: true, root: dir, count: matches.length, matches };\n```\n\n</details>\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：3c0f307e0b9c258dcb1ba42f3b57f5ae37fd0ecd0a17c41bdd10a3b020540479。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 129 | — | — | 529 |\n| .js | source | 2 | 313 | 293 | 2 | — |\n| .js | test | 1 | 38 | 35 | 1 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 文本/文件/AST | 模型定位 | 外部CLI |\n| 起始根检查 | 项目范围 | 默认HOME宽且非沙箱 |\n| 输出切片 | 少上下文 | 完整性无标志 |\n\n## 工程亮点\n\n小型实现与realpath目录边界可借鉴，测试集中入口，需流式限额和明确回执。详见[Q04](#research-q04)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、cordis.patch.yml、index.js、lib/search.js、test/search.test.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定入口、完整search实现、README/patch和完整38行路径测试，只读。\n- 下一步：从多文件超限、坏JSON、AST坐标、stderr与root变化探讨流式回执。\n",
         "metadata": {
             "repository": "173787247/dsh-wsl-search",
             "repository_id": 1381725987,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T05:58:26.256Z",
+            "window_start": "2026-09-22T05:58:26.256Z",
             "stars": 1,
             "pushed_at": "2026-09-30T03:22:39Z",
             "issues": {
@@ -338,29 +439,21 @@
             "errors": [],
             "npm": {
                 "package_name": "dsh-wsl-search",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T05:58:34.501Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": null,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-wsl-search",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-wsl-search",
                 "error": "HTTP 404",
                 "publication": {
                     "first_published_at": null,
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T05:58:34.501Z",
                     "source_url": "https://registry.npmjs.org/dsh-wsl-search",
                     "error": "HTTP 404",
                     "latest_version": null,
                     "latest_published_at": null,
                     "latest_error": "HTTP 404"
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "445b0fd89b128696f447f28ff6dd3b0c0964885e",
-                "current_revision": "445b0fd89b128696f447f28ff6dd3b0c0964885e",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {
@@ -368,14 +461,14 @@
             "repository": "173787247/dsh-wsl-search",
             "path": "",
             "revision": "445b0fd89b128696f447f28ff6dd3b0c0964885e",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "244017b9e3cdcdaf3bf896371daae1f4c830cf9c97fbeca9f4a500a14e17fb46",
                 "code": "445b0fd89b128696f447f28ff6dd3b0c0964885e",
                 "maintenance": "981302944c0583487c7a08b1559cc2356cc6a48dbc8a5d6caf8de9b38aa1e87e"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

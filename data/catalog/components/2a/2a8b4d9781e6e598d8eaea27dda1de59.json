@@ -24,36 +24,88 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-04-github-1344714177-root-directory-0",
+                    "id": "2026-10-22-02-github-1344714177-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T04:18:48.022Z",
+                    "retrieved_at": "2026-10-22T05:16:54.755Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-04-github-1344714177-root-author",
+                    "id": "2026-10-22-02-github-1344714177-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/988hj7tczd-oss/dsh-pr-description/blob/7608cb9b7b61447a3aff14491537ba7ee8caad6b/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-pr-description",
+                            "commit": "7608cb9b7b61447a3aff14491537ba7ee8caad6b",
+                            "path": "README.md",
+                            "content_sha256": "213d18ebb5cd1464fc0ffef2e780bad5bc1b72d5c4c4f825cb4a4963c109ebd1"
+                        }
+                    ],
                     "revision": "7608cb9b7b61447a3aff14491537ba7ee8caad6b",
-                    "captured_at": "2026-10-21T04:18:48.022Z",
-                    "summary": "分析分支差异并生成PR标题和Markdown描述，可选确认及调用gh创建PR。",
-                    "artifact": "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--dsh-pr-description/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:16:54.755Z",
+                    "summary": "读取分支差异生成 PR 标题和五段描述，可选确认、保存与调用 gh 创建 PR。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/988hj7tczd-oss--dsh-pr-description/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-04-github-1344714177-root-source",
+                    "id": "2026-10-22-02-github-1344714177-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/988hj7tczd-oss/dsh-pr-description/blob/7608cb9b7b61447a3aff14491537ba7ee8caad6b/src/tools/pr-describe.ts",
+                    "url": "https://github.com/988hj7tczd-oss/dsh-pr-description/blob/7608cb9b7b61447a3aff14491537ba7ee8caad6b/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-pr-description",
+                            "commit": "7608cb9b7b61447a3aff14491537ba7ee8caad6b",
+                            "path": "README.md",
+                            "content_sha256": "213d18ebb5cd1464fc0ffef2e780bad5bc1b72d5c4c4f825cb4a4963c109ebd1"
+                        },
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-pr-description",
+                            "commit": "7608cb9b7b61447a3aff14491537ba7ee8caad6b",
+                            "path": "package.json",
+                            "content_sha256": "4b8f681f1861ca965e66a2a5966f4898c51bacb66c93465a095ab2d87a4d67d3"
+                        },
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-pr-description",
+                            "commit": "7608cb9b7b61447a3aff14491537ba7ee8caad6b",
+                            "path": "src/tools/pr-describe.ts",
+                            "content_sha256": "92894aa9cc21c57dee2c1490a6d605171623e3d0dc50dd18b72dcbc3dd1d59e9"
+                        },
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-pr-description",
+                            "commit": "7608cb9b7b61447a3aff14491537ba7ee8caad6b",
+                            "path": "src/diff-analysis.ts",
+                            "content_sha256": "7e9900c85acc4985c2dfa4c2ecaee00f3eaa659e949c2f2e3d7a104aca2a3c20"
+                        },
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-pr-description",
+                            "commit": "7608cb9b7b61447a3aff14491537ba7ee8caad6b",
+                            "path": "src/templates.ts",
+                            "content_sha256": "8b9fe1fa36b95a528eaa440f6feb3eff448559f50e04aa25641830bc09d05088"
+                        },
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-pr-description",
+                            "commit": "7608cb9b7b61447a3aff14491537ba7ee8caad6b",
+                            "path": "src/gh.ts",
+                            "content_sha256": "7c0306fd4cbe274123f5056285872befa698c45ba437677f5823398d8f755027"
+                        },
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-pr-description",
+                            "commit": "7608cb9b7b61447a3aff14491537ba7ee8caad6b",
+                            "path": "src/index.ts",
+                            "content_sha256": "ba7d676ae11ba26df516ee1e6abb24032ee35b586db870ad1e35c42fc5442b9c"
+                        }
+                    ],
                     "revision": "7608cb9b7b61447a3aff14491537ba7ee8caad6b",
-                    "captured_at": "2026-10-21T04:18:48.022Z",
-                    "summary": "核查 src/tools/pr-describe.ts、src/diff-analysis.ts、src/gh.ts、README.md；pr-describe.ts以宿主subprocess固定argv读取Git事实，diff-analysis.ts轻量解析文件/符号与breaking信号，templates填五段文本；可选userQuestions确认，随后Node fs写文件，openPr调用gh。",
-                    "artifact": "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--dsh-pr-description/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:16:54.755Z",
+                    "summary": "核查 README.md、package.json、src/tools/pr-describe.ts、src/diff-analysis.ts、src/templates.ts、src/gh.ts、src/index.ts；固定 argv 的 Git 采集交给轻量解析与模板，生成标题和五段文案；可选 userQuestions 后写文件，再按 openPr 调 gh。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/988hj7tczd-oss--dsh-pr-description/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "固定SHA内本组件列明文件及配置/作者资料的有界源码检查；组件inventory不包含外部官方底座原创量。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                        "检查固定提交 README、package、主流程、Git 解析、模板、gh 和测试意图；未运行目标工具或创建 PR。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +116,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "适合已有分支提交、想快速整理可复核PR草稿的开发者；动机和测试事实仍需作者补齐。",
+                    "text": "适合已有分支提交、需要快速整理可编辑 PR 草稿的开发者；合格结果须正确 base 和人工核事实。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344714177-root-source"
+                        "2026-10-22-02-github-1344714177-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +127,16 @@
                             "fingerprint": "7608cb9b7b61447a3aff14491537ba7ee8caad6b"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:18:48.022Z",
+                    "reviewed_at": "2026-10-22T05:16:54.755Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "pr-describe.ts以宿主subprocess固定argv读取Git事实，diff-analysis.ts轻量解析文件/符号与breaking信号，templates填五段文本；可选userQuestions确认，随后Node fs写文件，openPr调用gh。",
+                    "text": "固定 argv 的 Git 采集交给轻量解析与模板，生成标题和五段文案；可选 userQuestions 后写文件，再按 openPr 调 gh。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344714177-root-source"
+                        "2026-10-22-02-github-1344714177-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +145,16 @@
                             "fingerprint": "7608cb9b7b61447a3aff14491537ba7ee8caad6b"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:18:48.022Z",
+                    "reviewed_at": "2026-10-22T05:16:54.755Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "固定SHA内本组件列明文件及配置/作者资料的有界源码检查；组件inventory不包含外部官方底座原创量。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                    "text": "检查固定提交 README、package、主流程、Git 解析、模板、gh 和测试意图；未运行目标工具或创建 PR。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344714177-root-source"
+                        "2026-10-22-02-github-1344714177-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +163,16 @@
                             "fingerprint": "7608cb9b7b61447a3aff14491537ba7ee8caad6b"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:18:48.022Z",
+                    "reviewed_at": "2026-10-22T05:16:54.755Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "分发以本组件固定package.json、组合配置与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+                    "text": "版本 0.1.1、MIT、Node>=22.18；package 声明 DSH bundle，源码开发要求相邻 dsh-src，实际安装兼容未测。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344714177-root-source"
+                        "2026-10-22-02-github-1344714177-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +181,16 @@
                             "fingerprint": "7608cb9b7b61447a3aff14491537ba7ee8caad6b"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:18:48.022Z",
+                    "reviewed_at": "2026-10-22T05:16:54.755Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "首次确认Git基线、工作区、输出路径及gh认证；计算无模型额外调用但后续人工润色仍需时间。创建PR需要外部权限，文案错误会增加评审成本，无净工时数据。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | DSH、Git 与可选 gh 资源；金额未知 | 明确 base、workdir、输出路径和认证 | 源码开发另需相邻 dsh-src；安装耗时未知 |\n| 持续使用 | 本地 Git/模板计算，模型调用非本工具必需 | 复核动机、测试、breaking 和团队格式 | 人工改写分钟与错误率未知 |\n| 失败恢复 | 重跑/远端创建失败可能占用资源；金额未知 | 校正 base、diff、写入路径或 gh 状态 | PR 评审返工与恢复工时未知 |\n",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344714177-root-source"
+                        "2026-10-22-02-github-1344714177-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +199,16 @@
                             "fingerprint": "7608cb9b7b61447a3aff14491537ba7ee8caad6b"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:18:48.022Z",
+                    "reviewed_at": "2026-10-22T05:16:54.755Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "适合先生成本地草稿。明确base和输出路径，逐段核业务动机、breaking与已跑测试；只有确实要创建PR时才用openPr。",
+                    "text": "先显式给 base 和安全输出路径，生成本地草稿并核对动机、测试、breaking；只有明确要发 PR 时才启用 openPr。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344714177-root-source"
+                        "2026-10-22-02-github-1344714177-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +217,16 @@
                             "fingerprint": "7608cb9b7b61447a3aff14491537ba7ee8caad6b"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:18:48.022Z",
+                    "reviewed_at": "2026-10-22T05:16:54.755Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "可省统计与排版，未有PR审阅质量或编辑时间的独立对照。",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 统计和格式 | Git 差异汇总、五段模板与自审清单 | 净节时和团队接受率 |\n| 确认 | 取消可阻止本地写入 | 内容是否经充分审阅 |\n| 创建 PR | openPr 可调用 gh | 远端权限、成功率和文案质量 |\n\n固定源码只能证明路径存在，未执行目标工具或同条件 PR 评审。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344714177-root-source"
+                        "2026-10-22-02-github-1344714177-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +235,16 @@
                             "fingerprint": "7608cb9b7b61447a3aff14491537ba7ee8caad6b"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:18:48.022Z",
+                    "reviewed_at": "2026-10-22T05:16:54.755Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "Git命令走固定argv、禁用部分副作用环境、输出有界且对lossy有处理，分层解析易审阅；写文件却走Node fs，与受控命令边界不同，复用时应统一权限。",
+                    "text": "固定 argv 经 subprocess 执行、采集上限和 lossy 标识、纯解析层与可选确认使流程易审阅。Node fs 直接按 resolve(workdir,outputFile) 写入，和受控命令的权限边界不同；confirm 未展示全文，gh 失败只是保留草稿。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344714177-root-source"
+                        "2026-10-22-02-github-1344714177-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +253,16 @@
                             "fingerprint": "7608cb9b7b61447a3aff14491537ba7ee8caad6b"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:18:48.022Z",
+                    "reviewed_at": "2026-10-22T05:16:54.755Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
                     "topic": "technical_innovation",
                     "basis": "interpretation",
-                    "text": "作者主张PR描述自动生成；实际增量是将基线选择、差异统计、模板和可选gh动作连成DSH工具。相对手抄git diff可减少格式操作；README明确不调用LLM，确定模板不能理解业务动机，也不能凭文件变更证明测试通过。",
+                    "text": "将 Git 差异事实、有限符号与 breaking 规则、五段模板、可选确认和 gh 动作连接成 DSH 工具；减少统计排版，未实现模型理解业务动机。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344714177-root-source"
+                        "2026-10-22-02-github-1344714177-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +271,16 @@
                             "fingerprint": "7608cb9b7b61447a3aff14491537ba7ee8caad6b"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:18:48.022Z",
+                    "reviewed_at": "2026-10-22T05:16:54.755Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "正则提取最多16个符号，不能完整理解多语言、重命名和语义破坏；自动base选择可能和实际目标分支不同。输出路径resolve(workdir,outputFile)后直接Node mkdir/writeFile，无本工具ctx.fs containment，应核调用者允许写范围。confirm可选且只预览标题与路径，openPr是实际外部动作，不能把仅生成草稿和创建PR混同。",
+                    "text": "自动 base 可选错；正则符号与模板不知真实测试。输出经 Node fs 按用户路径直接写，未见本工具内 containment；confirm 只预览标题与路径，openPr 是实际远端创建。详见[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344714177-root-source"
+                        "2026-10-22-02-github-1344714177-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +289,16 @@
                             "fingerprint": "7608cb9b7b61447a3aff14491537ba7ee8caad6b"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:18:48.022Z",
+                    "reviewed_at": "2026-10-22T05:16:54.755Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
                     "topic": "technical_innovation",
                     "basis": "unverified",
-                    "text": "未验证假设：将每段描述绑定diff证据并把未知动机/未执行测试保留空项，可降低模板看似完整却陈述失真的情况。用仅重命名、多语言与未跑测试分支比较事实错误和人工改写时间；语义润色不得补造测试结果。",
+                    "text": "可让描述每段引用 diff 事实，无法由 diff 证明的动机与测试保留待填写，并用重命名、多语言和未跑测试样本比较错误与改写时间；未实现。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344714177-root-source"
+                        "2026-10-22-02-github-1344714177-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +307,15 @@
                             "fingerprint": "7608cb9b7b61447a3aff14491537ba7ee8caad6b"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:18:48.022Z",
+                    "reviewed_at": "2026-10-22T05:16:54.755Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T04:18:48.022Z",
+            "last_checked_at": "2026-10-22T05:16:54.755Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "7608cb9b7b61447a3aff14491537ba7ee8caad6b",
-                "reviewed_at": "2026-10-21T04:18:48.022Z",
+                "reviewed_at": "2026-10-22T05:16:54.755Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -275,61 +327,61 @@
                 "technical": {
                     "criteria": {
                         "novelty": 9,
-                        "mechanism": 15,
-                        "transferability": 10,
-                        "simplification": 8
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 4
                     },
-                    "rationale": "novelty=9：diff模板工具已有参照。 mechanism=15：基线解析和gh流程有实装。 transferability=10：纯解析可复用，宿主问答与权限另需。 simplification=8：可减少抄统计但语义仍人工。",
+                    "rationale": "novelty 是成熟 Git/gh 与模板的小幅接线；mechanism 有固定 argv、有界输出和取消分层，但语义有限；transferability 是纯解析与 runner seam 的有限复用；simplification 减少手抄统计但不替代审阅。未计新假设。",
                     "basis": "interpretation",
-                    "score": 42,
+                    "score": 26,
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344714177-root-source"
+                        "2026-10-22-02-github-1344714177-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
                         "workflow": 18,
                         "delivery": 8,
-                        "reach": 10,
-                        "economics": 4
+                        "reach": 5,
+                        "economics": 0
                     },
-                    "rationale": "workflow=18：Git事实到草稿流程明确。 delivery=8：模板可交付，语义与测试未验。 reach=10：分支开发者适用，需Git/gh。 economics=4：无编辑及评审工时对照。",
+                    "rationale": "workflow 将范围、统计、模板和可选提交连成步骤；delivery 是草稿的小幅增量，非已通过评审的 PR；reach 降低手工格式门槛；economics 无净节时或返工数据。",
                     "basis": "interpretation",
-                    "score": 40,
+                    "score": 31,
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344714177-root-source"
+                        "2026-10-22-02-github-1344714177-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "observe",
-                "reason": "PR作者可关注Git草稿生成，但应先核输出路径允许范围和可选确认；修复写入边界前不开放常规自动调用。",
+                "decision": "trial",
+                "reason": "适合明确 base、愿逐段复核的开发者先生成本地草稿；PR 创建和输出写入范围需单独控制。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "已有分支提交生成PR草稿的任务清晰。"
+                        "rationale": "重复的 PR 草稿场景和合格结果清楚，需求频率未测。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "确定性Git统计及五段模板省排版，不替代语义动机。"
+                        "rationale": "相对手抄统计和模板有流程便利，但不提供可靠语义动机。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "已核固定argv、正则与直接fs写入；实际权限和远端动作未验。"
+                        "rationale": "固定源码可核主链路，未运行目标工具或宿主，源码档封顶。"
                     },
                     "cost": {
-                        "score": 5,
-                        "rationale": "base、输出路径、gh认证及openPr副作用需额外控制，确认可选。"
+                        "score": 10,
+                        "rationale": "不用额外模型调用，仍需人工核事实、路径与 gh 权限。"
                     }
                 },
-                "score": 54,
+                "score": 59,
                 "revision": "7608cb9b7b61447a3aff14491537ba7ee8caad6b",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T05:16:54.755Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-04-github-1344714177-root-source"
+                    "2026-10-22-02-github-1344714177-root-source"
                 ],
                 "dependencies": [
                     {
@@ -354,88 +406,60 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T04:06:46Z",
-            "analysis_sha256": "0f13b7743d925a40e1d9ccf93c4cd0a9017f14735969f8fb058ae9b432a979ac"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "dec5374a158f3390d5230e017bf4a145c4804f6b83316fa842a36313cb1b49e2"
         },
         "publication.metadata": "data/plugins/988hj7tczd-oss--dsh-pr-description/META.json",
         "publication.summaries": {
-            "text": "分析分支差异并生成PR标题和Markdown描述，可选确认及调用gh创建PR。",
+            "text": "读取分支差异生成 PR 标题和五段描述，可选确认、保存与调用 gh 创建 PR。",
             "revision": "7608cb9b7b61447a3aff14491537ba7ee8caad6b",
             "source_url": "https://github.com/988hj7tczd-oss/dsh-pr-description/blob/7608cb9b7b61447a3aff14491537ba7ee8caad6b/README.md"
         },
         "publication.capabilities": {
             "revision": "7608cb9b7b61447a3aff14491537ba7ee8caad6b",
             "items": {
-                "模型工具": "pr_describe分支差异草稿、可选确认与创建PR"
-            }
+                "模型工具": "pr_describe 生成差异统计、PR 标题和五段草稿"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 差异草稿 | 从已提交分支生成标题、五段与自审清单 | 必须核对 base；规则与正则不理解业务动机 |\n| 写前确认 | 在落盘前让用户选择确认或取消 | 默认关闭，确认只显示标题和路径 |\n| 本地保存 | 输出 Markdown 文件 | output 可指定，写入范围受运行环境约束 |\n| 可选 PR 创建 | 调 gh pr create | 需 gh/认证/权限，不自动 push，失败保留草稿 |\n"
         },
         "publication.advice": {
             "revision": "7608cb9b7b61447a3aff14491537ba7ee8caad6b",
-            "text": "适合先生成本地草稿。明确base和输出路径，逐段核业务动机、breaking与已跑测试；只有确实要创建PR时才用openPr。"
+            "text": "先显式给 base 和安全输出路径，生成本地草稿并核对动机、测试、breaking；只有明确要发 PR 时才启用 openPr。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/988hj7tczd-oss--dsh-pr-description",
-        "reports": "# dsh-pr-description\n\n> 分析分支差异并生成PR标题和Markdown描述，可选确认及调用gh创建PR。\n\n## 使用建议\n\n适合先生成本地草稿。明确base和输出路径，逐段核业务动机、breaking与已跑测试；只有确实要创建PR时才用openPr。\n\n**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，外部语言服务或技能流程的实际运行尚未验证；未来假设未验证。\n\n## 洞察短评\n\n- **用途**：适合已有分支提交、想快速整理可复核PR草稿的开发者；动机和测试事实仍需作者补齐。\n- **亮点**：作者主张PR描述自动生成；实际增量是将基线选择、差异统计、模板和可选gh动作连成DSH工具。相对手抄git diff可减少格式操作；README明确不调用LLM，确定模板不能理解业务动机，也不能凭文件变更证明测试通过。\n- **思考**：正则提取最多16个符号，不能完整理解多语言、重命名和语义破坏；自动base选择可能和实际目标分支不同。输出路径resolve(workdir,outputFile)后直接Node mkdir/writeFile，无本工具ctx.fs containment，应核调用者允许写范围。confirm可选且只预览标题与路径，openPr是实际外部动作，不能把仅生成草稿和创建PR混同。\n- **建议**：未验证假设：将每段描述绑定diff证据并把未知动机/未执行测试保留空项，可降低模板看似完整却陈述失真的情况。用仅重命名、多语言与未跑测试分支比较事实错误和人工改写时间；语义润色不得补造测试结果。\n\n## 场景与替代办法\n\n替代是Git统计加PR模板或模型读diff；本项目提供确定工具流程，未实现语义撰写或代码评审。\n\n## 能力清单\n\n- **模型工具**：pr_describe分支差异草稿、可选确认与创建PR\n\n## 依赖与流程\n\npr-describe.ts以宿主subprocess固定argv读取Git事实，diff-analysis.ts轻量解析文件/符号与breaking信号，templates填五段文本；可选userQuestions确认，随后Node fs写文件，openPr调用gh。\n\n宿主tools/subprocess、Git、模板与Schemastery；confirm需userQuestions，openPr需gh及认证。README开发环境要求相邻dsh-src，实际包依赖另以固定package为准。\n\n选base→读取已提交分支diff→统计/符号/规则分类→模板草稿→可选确认→落盘→可选gh pr create；取消时不落盘，不自动push。\n\n## 成本与效果\n\n首次确认Git基线、工作区、输出路径及gh认证；计算无模型额外调用但后续人工润色仍需时间。创建PR需要外部权限，文案错误会增加评审成本，无净工时数据。\n\n可省统计与排版，未有PR审阅质量或编辑时间的独立对照。\n\n## 核心贡献\n\n作者主张PR描述自动生成；实际增量是将基线选择、差异统计、模板和可选gh动作连成DSH工具。相对手抄git diff可减少格式操作；README明确不调用LLM，确定模板不能理解业务动机，也不能凭文件变更证明测试通过。\n\n## 关键质疑\n\n正则提取最多16个符号，不能完整理解多语言、重命名和语义破坏；自动base选择可能和实际目标分支不同。输出路径resolve(workdir,outputFile)后直接Node mkdir/writeFile，无本工具ctx.fs containment，应核调用者允许写范围。confirm可选且只预览标题与路径，openPr是实际外部动作，不能把仅生成草稿和创建PR混同。\n\n## 工程亮点\n\nGit命令走固定argv、禁用部分副作用环境、输出有界且对lossy有处理，分层解析易审阅；写文件却走Node fs，与受控命令边界不同，复用时应统一权限。\n\n源码依据：[src/tools/pr-describe.ts](https://github.com/988hj7tczd-oss/dsh-pr-description/blob/7608cb9b7b61447a3aff14491537ba7ee8caad6b/src/tools/pr-describe.ts)、[src/diff-analysis.ts](https://github.com/988hj7tczd-oss/dsh-pr-description/blob/7608cb9b7b61447a3aff14491537ba7ee8caad6b/src/diff-analysis.ts)、[src/gh.ts](https://github.com/988hj7tczd-oss/dsh-pr-description/blob/7608cb9b7b61447a3aff14491537ba7ee8caad6b/src/gh.ts)、[README.md](https://github.com/988hj7tczd-oss/dsh-pr-description/blob/7608cb9b7b61447a3aff14491537ba7ee8caad6b/README.md)。\n\n## 未来设计假设（未验证）\n\n未验证假设：将每段描述绑定diff证据并把未知动机/未执行测试保留空项，可降低模板看似完整却陈述失真的情况。用仅重命名、多语言与未跑测试分支比较事实错误和人工改写时间；语义润色不得补造测试结果。\n\n核错误base、rename/二进制、大diff、取消、越界输出和gh失败，逐段比对事实；本轮不写目标PR或调用gh。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：7dec6e03bfa76edaff0509ae40857953fc02a570f8de54717f0a4455aaf3584f。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 3 | 262 | — | — | 3250 |\n| .mjs | source | 1 | 44 | 29 | 12 | — |\n| .ts | source | 6 | 1325 | 1029 | 203 | — |\n| .ts | test | 1 | 260 | 206 | 26 | — |\n| .mjs | test | 1 | 468 | 387 | 36 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[988hj7tczd-oss/dsh-pr-description](https://github.com/988hj7tczd-oss/dsh-pr-description)\n- **版本号**：0.1.1（[固定提交 7608cb9b](https://github.com/988hj7tczd-oss/dsh-pr-description/tree/7608cb9b7b61447a3aff14491537ba7ee8caad6b)）\n- **版本日期**：2026-08-24（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：src/tools/pr-describe.ts、src/diff-analysis.ts、src/gh.ts、README.md、作者README、package与固定范围inventory；源码抽读不等于完整审计。\n- 未验证：插件执行、测试、安装、真实宿主与独立采用。\n- 证据限制：固定SHA内本组件列明文件及配置/作者资料的有界源码检查；组件inventory不包含外部官方底座原创量。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。\n- 下一步：核错误base、rename/二进制、大diff、取消、越界输出和gh失败，逐段比对事实；本轮不写目标PR或调用gh。\n",
+        "reports": "# dsh-pr-description\n\n> 读取分支差异生成 PR 标题和五段描述，可选确认、保存与调用 gh 创建 PR。\n\n## 研究范围\n\n- **仓库**：[988hj7tczd-oss/dsh-pr-description](https://github.com/988hj7tczd-oss/dsh-pr-description)\n- **版本号**：0.1.1（[固定提交 7608cb9b7b61447a3aff14491537ba7ee8caad6b](https://github.com/988hj7tczd-oss/dsh-pr-description/tree/7608cb9b7b61447a3aff14491537ba7ee8caad6b)）\n- **版本日期**：2026-08-24（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n源码支持确定性草稿流程；文案语义和写入范围需人工/宿主核验；逐段证据绑定是未实现假设。\n\n## 洞察短评\n\n- **用途**：适合已有分支提交、需要快速整理可编辑 PR 草稿的开发者；合格结果须正确 base 和人工核事实。\n- **亮点**：将 Git 差异事实、有限符号与 breaking 规则、五段模板、可选确认和 gh 动作连接成 DSH 工具；减少统计排版，未实现模型理解业务动机。详见[Q02](#research-q02)。\n- **思考**：自动 base 可选错；正则符号与模板不知真实测试。输出经 Node fs 按用户路径直接写，未见本工具内 containment；confirm 只预览标题与路径，openPr 是实际远端创建。详见[Q03](#research-q03)。\n- **建议**：可让描述每段引用 diff 事实，无法由 diff 证明的动机与测试保留待填写，并用重命名、多语言和未跑测试样本比较错误与改写时间；未实现。详见[Q05](#research-q05)。\n\n采用建议：先显式给 base 和安全输出路径，生成本地草稿并核对动机、测试、breaking；只有明确要发 PR 时才启用 openPr。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n将 Git 差异事实、有限符号与 breaking 规则、五段模板、可选确认和 gh 动作连接成 DSH 工具；减少统计排版，未实现模型理解业务动机。详见[Q02](#research-q02)。\n\n## 关键质疑\n\n自动 base 可选错；正则符号与模板不知真实测试。输出经 Node fs 按用户路径直接写，未见本工具内 containment；confirm 只预览标题与路径，openPr 是实际远端创建。详见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可让描述每段引用 diff 事实，无法由 diff 证明的动机与测试保留待填写，并用重命名、多语言和未跑测试样本比较错误与改写时间；未实现。详见[Q05](#research-q05)。\n\n进一步探讨在隔离仓库做错误 base、rename/二进制、大 diff、取消、越界路径和 gh 失败样本，盲审草稿事实与人工改写时间；不发真实 PR。\n\n## 场景与替代办法\n\n适合已有分支提交、需要快速整理可编辑 PR 草稿的开发者；合格结果须正确 base 和人工核事实。\n\n替代是手动 Git diff 加团队 PR 模板或人工让模型解释差异；本工具选择确定性事实与模板，不等同代码评审。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| DSH tools/subprocess、Node>=22.18 | 加载必需 | 工具与受控 Git 进程 | 工具不能运行 |\n| Git 工作树、提交和正确 base | 每次生成必需 | 差异事实 | 无仓库/提交/base 时结构化失败 |\n| userQuestions | confirm 才必需 | 写前询问 | 缺失时 ASK_USER_UNAVAILABLE |\n| gh、认证和远端权限 | openPr 才必需 | 创建远端 PR | 不可用或失败时仅保留本地草稿 |\n| 可写输出路径 | 写入必需 | 保存 Markdown | Node fs 写失败；具体范围由运行环境决定 |\n\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 准备 | 开发者确认仓库、目标 base 和输出目录 | HEAD 与目标分支可比较 |\n| 生成 | 工具读取 Git 差异并渲染模板 | 检查统计、符号和 breaking，不当作语义审查 |\n| 审阅 | 人工补动机、实际测试和风险 | confirm 默认关闭，标题/路径确认不够全文审查 |\n| 落盘 | 工具写 PR_DESCRIPTION.md 或指定路径 | 保存失败应保留原草稿并修路径 |\n| 创建 | 仅显式 openPr 后调用 gh | 核远端 URL；失败时仍有本地描述 |\n\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | DSH、Git 与可选 gh 资源；金额未知 | 明确 base、workdir、输出路径和认证 | 源码开发另需相邻 dsh-src；安装耗时未知 |\n| 持续使用 | 本地 Git/模板计算，模型调用非本工具必需 | 复核动机、测试、breaking 和团队格式 | 人工改写分钟与错误率未知 |\n| 失败恢复 | 重跑/远端创建失败可能占用资源；金额未知 | 校正 base、diff、写入路径或 gh 状态 | PR 评审返工与恢复工时未知 |\n\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 统计和格式 | Git 差异汇总、五段模板与自审清单 | 净节时和团队接受率 |\n| 确认 | 取消可阻止本地写入 | 内容是否经充分审阅 |\n| 创建 PR | openPr 可调用 gh | 远端权限、成功率和文案质量 |\n\n固定源码只能证明路径存在，未执行目标工具或同条件 PR 评审。\n\n## 研究问题与完整回答\n\n**插件研究总目标：**判断确定性 PR 草稿工具的工作增量、写入边界与采用价值。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 什么开发任务需要 PR 描述草稿，怎样才算合格？\n\n**研究主题：**场景与需求\n\n#### 完整回答\n\n适合已提交分支改动、需要快速整理文件范围和可编辑 PR 草稿的开发者。合格交付是用正确 base 比较 HEAD，统计可追溯、五段文案不把猜测写成事实，作者补齐动机、测试结果和风险，然后人工决定是否提交 PR。工具的默认输出是本地 PR_DESCRIPTION.md；openPr 才会触发 gh 创建远端 PR，不能混作一个结果。替代流程是开发者手动查看 git diff、填写团队 PR 模板，或让模型总结 diff；本工具的确定性模板减少格式和统计劳动，但 README 明说当前未调用 LLM，也无法自行知道业务意图和已执行测试。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:12-28](https://github.com/988hj7tczd-oss/dsh-pr-description/blob/7608cb9b7b61447a3aff14491537ba7ee8caad6b/README.md#L12-L28)\n\n作者描述五段、可选确认与 gh，也明确无 LLM 语义填充。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\nDSH 原生工具：分析当前分支 diff，自动生成符合 **Conventional Commits** 的 PR 标题、动机/方案/影响/测试/风险五段描述与**自审清单**，输出 Markdown 到工作区并在会话内渲染；可选 `confirm` 交互确认与 `openPr` 直接调用 gh CLI 提 PR。\n\n> 项目定位（2026-08 调研）：DSH 社区已有大量「代码评审」，但「PR 描述自动生成」无人做。本插件只借鉴上游 `anthropics/claude-plugins-official` 评审类插件的**工作流顺序**（范围 → diff → 聚焦），文案与实现全部自写，License 为 MIT。\n\n## 功能\n\n- `pr_describe` 工具，流程对齐评审工作流：\n  1. **确定范围**：`git diff --name-status <base>...HEAD`；`base` 缺省自动探测（`origin/HEAD` → `origin/main` → `origin/master` → `main` → `master` → `develop` → `HEAD~1`），探测失败给出结构化错误提示显式指定；\n  2. **统计与归类**：新增/修改/删除文件数、`+/-` 行数；按 `docs / test / chore / feat / fix / refactor` 确定性归类（规则见下）；\n  3. **符号提取**：新增函数/类/导出（轻量正则，去重、上限 16）；\n  4. **生成 PR 文本**：`feat(scope): 动词短句` 标题 + 动机/方案（引用文件与符号）/影响范围/测试建议/风险与开放问题五段 + 自审清单（4 项）；\n  5. **confirm / openPr**：`confirm: true` 走 ask-user 交互确认，取消则不落盘；`openPr: true` 且 gh 可用时直接 `gh pr create --title --body-file`（不自动 push）。\n- 结果写入 `PR_DESCRIPTION.md`（默认，可经 `output` / 配置 `outputFile` 修改）+ 会话内 Markdown 渲染。\n- 解析失败（非 git 仓库 / 无提交 / 无差异 / base 不存在）返回带稳定 `code` 的结构化错误。\n- BREAKING CHANGE 标注**当且仅当**检测到破坏性信号：`BREAKING CHANGE:` 注解、`package.json` 主版本提升、删除公开导出且同文件无同名新增。\n\n> 说明：当前「动机/方案/影响/测试/风险」五段为**确定性模板拼装**（由 diff 统计、符号提取与破坏性信号直接填充文案），**未调用 LLM**；PROMPT §4.4 中「调用模型填充五段」尚未实现，如需语义润色请自行在生成后接入模型处理。\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/tools/pr-describe.ts:129-165](https://github.com/988hj7tczd-oss/dsh-pr-description/blob/7608cb9b7b61447a3aff14491537ba7ee8caad6b/src/tools/pr-describe.ts#L129-L165)\n\n单一工具的参数与默认输出。\n\n<details>\n<summary>查看原文（37行）</summary>\n\n```text\nexport function createPrDescribeTool(ctx: Context, config: PrDescribeToolConfig) {\n  return defineTool({\n    name: 'pr_describe',\n    description: '分析当前分支相对基线的 diff，生成符合 Conventional Commits 的 PR 标题、'\n      + '动机/方案/影响/测试/风险五段描述与自审清单，写入 PR_DESCRIPTION.md（默认）并在会话中渲染；'\n      + '可选交互确认（confirm）与直接调用 gh CLI 提 PR（openPr）。'\n      + '若当前目录不是 git 仓库、没有提交或没有可对比的差异，会给出结构化错误并提示先 commit 或显式指定 base。',\n    parameters: {\n      workdir: {\n        type: 'string',\n        description: 'git 仓库目录；缺省使用插件配置的 workdir 或当前进程工作目录。',\n      },\n      base: {\n        type: 'string',\n        description: '对比基线（如 main / origin/main / HEAD~1）；缺省自动探测远端默认分支，探测失败时回退 HEAD~1。',\n      },\n      titleStyle: {\n        type: 'string',\n        enum: ['conventional', 'plain'],\n        default: DEFAULTS.titleStyle,\n        description: '标题风格：conventional 输出 `feat(scope): add xxx`，plain 省略类型前缀。',\n      },\n      confirm: {\n        type: 'boolean',\n        default: false,\n        description: '生成前用 ask-user 交互确认；用户选择取消则不写入任何文件。',\n      },\n      openPr: {\n        type: 'boolean',\n        default: false,\n        description: 'gh CLI 可用时直接执行 `gh pr create --title --body-file`；不可用则跳过并在结果中说明（不自动 push）。',\n      },\n      output: {\n        type: 'string',\n        default: 'PR_DESCRIPTION.md',\n        description: '描述输出文件（相对 workdir）；默认 PR_DESCRIPTION.md。',\n      },\n```\n\n</details>\n\n**依据 3 · 源码核查**：[package.json:1-15](https://github.com/988hj7tczd-oss/dsh-pr-description/blob/7608cb9b7b61447a3aff14491537ba7ee8caad6b/package.json#L1-L15)\n\n包描述和导出入口。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n{\n  \"name\": \"dsh-pr-description\",\n  \"version\": \"0.1.1\",\n  \"description\": \"DSH native tool: analyze the current branch diff, generate a Conventional Commits PR title, motivation/scheme/testing/risk description and a self-review checklist, write PR_DESCRIPTION.md, and optionally open the PR via the gh CLI.\",\n  \"type\": \"module\",\n  \"main\": \"lib/index.js\",\n  \"types\": \"lib/types/index.d.ts\",\n  \"exports\": {\n    \".\": {\n      \"types\": \"./lib/types/index.d.ts\",\n      \"default\": \"./lib/index.js\"\n    },\n    \"./src/*\": \"./src/*\",\n    \"./cordis.yml\": \"./cordis.yml\",\n    \"./package.json\": \"./package.json\"\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · Git 事实如何变成文案，增量相对原有办法在哪里？\n\n**研究主题：**功能与机制、贡献与相对优势\n\n#### 完整回答\n\n主流程先判断 Git 工作树和提交，显式 base 优先，其次配置值，再自动探测；然后读取分支差异，按文件状态和增删行统计，正则提取最多 16 个新增符号，规则分类变更与 breaking 信号，最后模板生成标题、动机/方案/影响/测试/风险和自审清单。Git 命令通过 ctx.subprocess 的 argv 数组运行，输出有大小上限，lossy 情况向上层传递。可归于插件的增量是把 Git 事实采集、轻量分类、模板、可选确认及 gh 动作接成 DSH 工具；Git、gh 和 Conventional Commits 不是本插件发明。相对手工复制统计可减少重复格式工作，但正则符号与关键词不能判断变更真实目的、接口兼容或测试通过，文本中有事实的部分需要逐项核对。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/tools/pr-describe.ts:61-100](https://github.com/988hj7tczd-oss/dsh-pr-description/blob/7608cb9b7b61447a3aff14491537ba7ee8caad6b/src/tools/pr-describe.ts#L61-L100)\n\n固定 argv runner 与有界输出、lossy 标记。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n/** 用 ctx.subprocess 实现 GitRunner seam（collect 模式 + 固定 git 环境）。 */\nfunction createSubprocessRunner(ctx: Context, defaultCwd: string): GitRunner {\n  return {\n    async runGit(argv, opts) {\n      const cwd = opts?.cwd ?? defaultCwd\n      const signal = opts?.signal\n      const handle = ctx.subprocess.spawn({\n        argv: [...argv],\n        cwd,\n        stdio: {\n          stdin: 'ignore',\n          stdout: { maxBytes: MAX_STDOUT, spill: { maxBytes: 32 * 1024 * 1024 } },\n          stderr: { maxBytes: MAX_STDERR, spill: { maxBytes: 8 * 1024 * 1024 } },\n        },\n        graceMs: 5_000,\n        ...(signal !== undefined ? { signal } : {}),\n        env: { ...GIT_ENV },\n      })\n      let outcome\n      try {\n        outcome = await handle.done\n      } catch (error: unknown) {\n        return { code: -1, stdout: '', stderr: String(error) }\n      }\n      const stdoutRead = handle.collected.stdout?.readFrom(0) ?? { text: '', lossy: false, spillPath: undefined }\n      const stderr = handle.collected.stderr?.readFrom(0).text ?? ''\n      const base = {\n        code: outcome.exitCode ?? (outcome.signal !== null && outcome.signal !== undefined ? -1 : -2),\n        stdout: stdoutRead.text,\n        stderr,\n      }\n      if (stdoutRead.lossy === true) {\n        // C2/L1：超大输出（lossy）不再静默截断——把截断信息带给上层做 DIFF_TOO_LARGE 判定。\n        return stdoutRead.spillPath !== undefined\n          ? { ...base, truncated: true as const, spillPath: stdoutRead.spillPath }\n          : { ...base, truncated: true as const }\n      }\n      return base\n    },\n  }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/tools/pr-describe.ts:221-268](https://github.com/988hj7tczd-oss/dsh-pr-description/blob/7608cb9b7b61447a3aff14491537ba7ee8caad6b/src/tools/pr-describe.ts#L221-L268)\n\nbase、diff 事实、分类和模板生成顺序。\n\n<details>\n<summary>查看原文（48行）</summary>\n\n```text\n      /* 阶段 1：范围 */\n      throwIfAborted(signal)\n      const repo = await isGitRepo(runner, workdir, signal)\n      if (!repo) {\n        throw new CommandError('NOT_A_GIT_REPO', `\"${workdir}\" 不是 git 工作树；请先在 git 仓库内运行，或通过 workdir 参数指定仓库目录`)\n      }\n      throwIfAborted(signal)\n      const committed = await hasCommits(runner, workdir, signal)\n      if (!committed) {\n        throw new CommandError('EMPTY_REPO', '仓库还没有任何提交；请先 commit 一次，再生成 PR 描述')\n      }\n      throwIfAborted(signal)\n      const baseExplicit = args.base !== undefined && args.base.length > 0 ? args.base : config.defaultBase\n      const base = baseExplicit !== undefined && baseExplicit.length > 0 ? baseExplicit : await resolveBase(runner, workdir, signal)\n      if (base === null) {\n        throw new CommandError('BASE_DETECTION_FAILED', '无法自动探测默认分支（未找到 origin/HEAD、main/master/develop 与父提交）；请显式传入 base 参数')\n      }\n\n      /* 阶段 2-3：统计与符号 */\n      throwIfAborted(signal)\n      const facts = await loadDiffFacts(runner, workdir, base, signal)\n      const sections = facts.sections\n      const type = classifyChangeType(sections, facts.symbols)\n      const scope = deriveScope(facts.records)\n      const breaking = detectBreakingSignal(facts)\n\n      /* 阶段 4：生成 PR 文本 */\n      throwIfAborted(signal)\n      const titleParts = deriveTitleParts({ type, scope, symbols: facts.symbols, sections })\n      const title = renderTitle(titleParts, titleStyle)\n      const markdown = renderMarkdown({\n        title,\n        branch: facts.branch,\n        base: facts.base,\n        outputFile,\n        type,\n        scope,\n        filesAdded: facts.filesAdded,\n        filesModified: facts.filesModified,\n        filesDeleted: facts.filesDeleted,\n        binaryFiles: facts.binaryFiles,\n        linesAdded: facts.linesAdded,\n        linesDeleted: facts.linesDeleted,\n        symbols: facts.symbols,\n        sections,\n        records: facts.records,\n        breaking,\n      }, locale)\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/diff-analysis.ts:242-280](https://github.com/988hj7tczd-oss/dsh-pr-description/blob/7608cb9b7b61447a3aff14491537ba7ee8caad6b/src/diff-analysis.ts#L242-L280)\n\n有限符号正则和 16 个上限。\n\n<details>\n<summary>查看原文（39行）</summary>\n\n```text\n/** 单行声明正则表：命中即视为新增符号。 */\nconst SYMBOL_PATTERNS: Array<{ kind: SymbolHit['kind']; regex: RegExp }> = [\n  { kind: 'function', regex: /^(?:export\\s+)?(?:async\\s+)?function\\s+([A-Za-z_$][\\w$]*)/u },\n  { kind: 'function', regex: /^(?:export\\s+)?(?:async\\s+)?function\\s*\\*([A-Za-z_$][\\w$]*)/u },\n  { kind: 'class', regex: /^(?:export\\s+)?(?:abstract\\s+)?class\\s+([A-Za-z_$][\\w$]*)/u },\n  { kind: 'type', regex: /^(?:export\\s+)?(?:interface|type)\\s+([A-Za-z_$][\\w$]*)/u },\n  { kind: 'function', regex: /^(?:export\\s+)?(?:const|let|var)\\s+([A-Za-z_$][\\w$]*)\\s*=\\s*(?:async\\s*)?(?:\\(|=>|function\\b)/u },\n  { kind: 'export', regex: /^export\\s+default\\s+(?:function|class|type|interface)\\s+([A-Za-z_$][\\w$]*)/u },\n]\n\n/** 命名导出花括号：`export { a, b as c }` → a、c。 */\nconst NAMED_EXPORT_PATTERN = /^export\\s*\\{([^}]+)\\}/u\nconst NAMED_EXPORT_ITEM = /^([A-Za-z_$][\\w$]*)(?:\\s+as\\s+([A-Za-z_$][\\w$]*))?$/u\n\n/** 单次调用最多提取的符号数，避免超大 diff 拖垮输出。 */\nexport const MAX_SYMBOLS = 16\n\n/**\n * 从各文件分区提取新增符号并去重。\n * @param sections - `git diff --unified=1` 解析出的分区。\n * @returns 按出现顺序去重后的符号（上限 MAX_SYMBOLS）。\n */\nexport function extractSymbols(sections: DiffSection[]): SymbolHit[] {\n  const seen = new Set<string>()\n  const hits: SymbolHit[] = []\n  for (const section of sections) {\n    for (const line of section.added) {\n      for (const { kind, regex } of SYMBOL_PATTERNS) {\n        const match = regex.exec(line)\n        if (match === null || match[1] === undefined) continue\n        const name = match[1]\n        const key = `${kind}:${name}:${section.file}`\n        if (seen.has(key)) continue\n        seen.add(key)\n        hits.push({ kind, name, file: section.file })\n        if (hits.length >= MAX_SYMBOLS) return hits\n        break\n      }\n    }\n```\n\n</details>\n\n**依据 4 · 作者声明**：[README.md:18-28](https://github.com/988hj7tczd-oss/dsh-pr-description/blob/7608cb9b7b61447a3aff14491537ba7ee8caad6b/README.md#L18-L28)\n\n作者披露确定性规则与未实现模型填充。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n- `pr_describe` 工具，流程对齐评审工作流：\n  1. **确定范围**：`git diff --name-status <base>...HEAD`；`base` 缺省自动探测（`origin/HEAD` → `origin/main` → `origin/master` → `main` → `master` → `develop` → `HEAD~1`），探测失败给出结构化错误提示显式指定；\n  2. **统计与归类**：新增/修改/删除文件数、`+/-` 行数；按 `docs / test / chore / feat / fix / refactor` 确定性归类（规则见下）；\n  3. **符号提取**：新增函数/类/导出（轻量正则，去重、上限 16）；\n  4. **生成 PR 文本**：`feat(scope): 动词短句` 标题 + 动机/方案（引用文件与符号）/影响范围/测试建议/风险与开放问题五段 + 自审清单（4 项）；\n  5. **confirm / openPr**：`confirm: true` 走 ask-user 交互确认，取消则不落盘；`openPr: true` 且 gh 可用时直接 `gh pr create --title --body-file`（不自动 push）。\n- 结果写入 `PR_DESCRIPTION.md`（默认，可经 `output` / 配置 `outputFile` 修改）+ 会话内 Markdown 渲染。\n- 解析失败（非 git 仓库 / 无提交 / 无差异 / base 不存在）返回带稳定 `code` 的结构化错误。\n- BREAKING CHANGE 标注**当且仅当**检测到破坏性信号：`BREAKING CHANGE:` 注解、`package.json` 主版本提升、删除公开导出且同文件无同名新增。\n\n> 说明：当前「动机/方案/影响/测试/风险」五段为**确定性模板拼装**（由 diff 统计、符号提取与破坏性信号直接填充文案），**未调用 LLM**；PROMPT §4.4 中「调用模型填充五段」尚未实现，如需语义润色请自行在生成后接入模型处理。\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 输出路径、确认和外部 PR 动作的边界是什么？\n\n**研究主题：**缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\nconfirm 默认为 false；设为 true 时借 userQuestions 提问，取消在写入前返回。确认文本只展示标题和输出路径，不逐段展示五段正文；不能当成内容审阅。写入用 resolve(workdir,outputFile) 后直接 mkdir/writeFile，未见本工具内使用 ctx.fs containment 或对绝对/父级路径拒绝；因此可配置路径的写范围取决于调用者权限与运行环境，不能凭 package 的默认 writePaths 宣称只写工作区内 PR_DESCRIPTION.md。openPr 默认为 false；启用时检查 gh 是否存在，再执行 gh pr create，失败保留本地描述并返回跳过原因，不自动 push。固定 argv 和取消检查是值得复用的工程做法，但错误 base、rename 处理及启发式 breaking 仍可能产生有说服力而不准确的文案。本轮没有实际执行越界写、取消或远端创建，以上是源码边界分析。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/tools/pr-describe.ts:151-165](https://github.com/988hj7tczd-oss/dsh-pr-description/blob/7608cb9b7b61447a3aff14491537ba7ee8caad6b/src/tools/pr-describe.ts#L151-L165)\n\n确认与 openPr 默认均关闭，输出路径可输入。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n      confirm: {\n        type: 'boolean',\n        default: false,\n        description: '生成前用 ask-user 交互确认；用户选择取消则不写入任何文件。',\n      },\n      openPr: {\n        type: 'boolean',\n        default: false,\n        description: 'gh CLI 可用时直接执行 `gh pr create --title --body-file`；不可用则跳过并在结果中说明（不自动 push）。',\n      },\n      output: {\n        type: 'string',\n        default: 'PR_DESCRIPTION.md',\n        description: '描述输出文件（相对 workdir）；默认 PR_DESCRIPTION.md。',\n      },\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/tools/pr-describe.ts:270-333](https://github.com/988hj7tczd-oss/dsh-pr-description/blob/7608cb9b7b61447a3aff14491537ba7ee8caad6b/src/tools/pr-describe.ts#L270-L333)\n\n取消、Node fs 写入、gh 可选执行与失败反馈。\n\n<details>\n<summary>查看原文（64行）</summary>\n\n```text\n      /* 阶段 5：confirm → 落盘 → openPr */\n      let canceled = false\n      if (args.confirm === true) {\n        const userQuestions = ctx.get('userQuestions')\n        if (userQuestions === undefined) {\n          throw new CommandError('ASK_USER_UNAVAILABLE', '当前会话没有 userQuestions 服务，无法交互确认；请去掉 confirm 参数后重试')\n        }\n        const answer = await userQuestions.ask({\n          questions: [{\n            id: 'confirm-pr-describe',\n            header: 'PR 描述预览',\n            question: `确认生成 PR 描述并写入 ${outputFile} ？\\n\\n标题：${title}`,\n            options: [\n              { label: '确认生成', description: `将以下 PR 描述写入 ${outputFile}` },\n              { label: '取消', description: '不写入任何文件' },\n            ],\n          }],\n          ...(exec.agent !== undefined ? { agent: exec.agent } : {}),\n          signal,\n        })\n        const selected = answer.answers[0]?.selected ?? []\n        canceled = !selected.includes('确认生成')\n      }\n      if (canceled) {\n        return {\n          ok: false,\n          canceled: true,\n          title,\n          type,\n          scope: scope ?? '',\n          breaking: breaking.breaking,\n          breakingReasons: [...breaking.reasons],\n          file: '',\n          prCreated: false,\n          summary: summaryOf(facts),\n          markdown,\n        }\n      }\n\n      throwIfAborted(signal)\n      const absolutePath = resolve(workdir, outputFile)\n      try {\n        await mkdir(dirname(absolutePath), { recursive: true })\n        await writeFile(absolutePath, markdown, 'utf8')\n      } catch (error: unknown) {\n        throw new CommandError('OUTPUT_WRITE_FAILED', `写入 ${absolutePath} 失败：${(error as Error).message}`)\n      }\n\n      let prCreated = false\n      let prUrl: string | undefined\n      let prSkippedReason: string | undefined\n      if (args.openPr === true) {\n        throwIfAborted(signal)\n        const gh = await ghInstalled(runner, workdir, signal)\n        if (!gh) {\n          prSkippedReason = `未检测到 gh CLI（或不在 PATH），已跳过提 PR；描述已写入 ${outputFile}`\n        } else {\n          try {\n            prUrl = await createPullRequest(runner, { cwd: workdir, title, bodyFile: absolutePath, signal })\n            prCreated = true\n          } catch (error: unknown) {\n            prSkippedReason = `gh pr create 失败：${(error as Error).message}`\n          }\n        }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/gh.ts:12-42](https://github.com/988hj7tczd-oss/dsh-pr-description/blob/7608cb9b7b61447a3aff14491537ba7ee8caad6b/src/gh.ts#L12-L42)\n\ngh 探测和创建命令的实际参数。\n\n<details>\n<summary>查看原文（31行）</summary>\n\n```text\n/** `gh --version` 成功即认定 gh 可用（后续认证失败在 createPullRequest 时抛出）。 */\nexport async function ghInstalled(runner: GitRunner, cwd: string, signal?: AbortSignal): Promise<boolean> {\n  const result = await runner.runGit(['gh', '--version'], { cwd, signal })\n  return result.code === 0\n}\n\nexport interface CreatePullRequestOptions {\n  /** 当前工作目录（gh 从该目录推导 repo）。 */\n  cwd: string\n  title: string\n  /** PR body 文件路径（推荐直接传 PR_DESCRIPTION.md）。 */\n  bodyFile: string\n  signal?: AbortSignal\n}\n\n/**\n * `gh pr create --title <title> --body-file <bodyFile>`，返回 PR URL。\n * 失败时抛出带 GH_PR_CREATE_FAILED 说明的 Error（含 stderr）。\n */\nexport async function createPullRequest(runner: GitRunner, options: CreatePullRequestOptions): Promise<string> {\n  const result = await runner.runGit(\n    ['gh', 'pr', 'create', '--title', options.title, '--body-file', options.bodyFile],\n    { cwd: options.cwd, signal: options.signal },\n  )\n  if (result.code !== 0) {\n    throw new Error(\n      `GH_PR_CREATE_FAILED: gh pr create 失败（退出码 ${result.code}）\\n${result.stderr.trim() || result.stdout.trim()}`,\n    )\n  }\n  const firstLine = result.stdout.split('\\n').map((line) => line.trim()).find((line) => line.length > 0)\n  return firstLine ?? ''\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/diff-analysis.ts:49-50](https://github.com/988hj7tczd-oss/dsh-pr-description/blob/7608cb9b7b61447a3aff14491537ba7ee8caad6b/src/diff-analysis.ts#L49-L50)\n\n文件状态解析采用 --no-renames 的三态。\n\n```text\n/** 简单文件名状态（--no-renames 下 git 只会给出 A/M/D）。 */\nexport type FileStatus = 'A' | 'M' | 'D'\n```\n\n#### 缺口\n\n- 未在目标宿主复现绝对或父级 output 的有效写范围。\n  **影响：**无法把源码推断写成已发生的越界事故。\n  **进一步探讨：**在隔离目录用绝对路径和 ../ 输出试验并记录宿主权限限制。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 启动、持续使用和失败恢复需谁付出什么代价？\n\n**研究主题：**依赖、兼容与流程、效果与总成本\n\n#### 完整回答\n\n插件依赖 DSH tools/subprocess、Git 和可读取的已提交分支；开发源码形态还依赖相邻 dsh-src 检出，生产包能否直接加载须按实际包验证。confirm 需要 userQuestions 服务，openPr 另需 gh、认证及远端权限。首次使用要确认 base、workdir、输出路径和宿主权限；持续使用需人工核动机、测试事实、breaking 与团队模板；失败恢复要处理无仓库/无提交/无差异、过大 diff、错误 base、写入或 gh 失败。脚本自身未调用模型，不等于完整任务没有人工成本。现金与人工时间未知，没有同任务对照；创建 PR 涉及外部状态，不能拿本地草稿成功替代。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:3-9](https://github.com/988hj7tczd-oss/dsh-pr-description/blob/7608cb9b7b61447a3aff14491537ba7ee8caad6b/README.md#L3-L9)\n\n源码开发环境的相邻检出要求。\n\n```text\n> [!IMPORTANT]\n> **依赖前置：相邻 `dsh-src` 检出（`link:` 依赖）**\n> 本项目在开发形态下使用 `link:` 依赖指向相邻的 DeepSeek Harness 源码检出（`dsh-src`），\n> 与当前仓库保持同一父目录布局（`<parent>/dsh-src`）。克隆本仓库后：\n> 1. 先把官方 `deepseek-ai/deepseek-harness` 检出到与本仓库同级的 `dsh-src/` 目录，并执行其 `pnpm install && pnpm run build`；\n> 2. 再按下方「安装」一节执行本仓库的 `pnpm install --offline && pnpm build` 与测试。\n> 发布到 npm 的版本会尽量把 `link:` 依赖替换为 registry 真实版本；无法替换的内部包保持 `link:`，见各包 README 说明。\n```\n\n**依据 2 · 源码核查**：[package.json:25-80](https://github.com/988hj7tczd-oss/dsh-pr-description/blob/7608cb9b7b61447a3aff14491537ba7ee8caad6b/package.json#L25-L80)\n\n运行兼容、权限和依赖声明。\n\n<details>\n<summary>查看原文（56行）</summary>\n\n```text\n  \"license\": \"MIT\",\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.yml\"\n    },\n    \"compatibility\": {\n      \"node\": \">=22.18.0\",\n      \"dsh\": \">=0.1.0\"\n    },\n    \"permissions\": {\n      \"summary\": \"分析当前分支 diff（git）→ 生成 Conventional Commits PR 标题/描述/自审清单，写 PR_DESCRIPTION.md；可选 gh 提 PR。命令固定 argv 非 shell。\",\n      \"commands\": [\n        \"git diff --name-status <base>...HEAD\",\n        \"git diff --numstat <base>...HEAD\",\n        \"git diff --unified=1 <base>...HEAD\",\n        \"gh pr create (可选，用户确认)\"\n      ],\n      \"writePaths\": [\n        \"<workspace>/PR_DESCRIPTION.md\"\n      ],\n      \"externalServices\": [\n        \"（可选 gh 提 PR 时访问 github.com）\"\n      ],\n      \"failureBoundaries\": [\n        \"DIFF_TOO_LARGE 截断抛错（含 spillPath）\",\n        \"base 探测失败结构化错误\",\n        \"分类启发式收敛\"\n      ],\n      \"lifecycleEvidence\": [\n        \"offline 57 assertions\",\n        \"入口 import OK\"\n      ]\n    }\n  },\n  \"scripts\": {\n    \"build\": \"tsc -p tsconfig.json && node scripts/fix-dts-imports.mjs\",\n    \"test\": \"node tests/smoke.offline.mjs\",\n    \"test:e2e\": \"vitest run tests/smoke.e2e.ts\",\n    \"prepublishOnly\": \"npm run build\"\n  },\n  \"peerDependencies\": {\n    \"@deepseek-ai/cordis\": \"*\",\n    \"@deepseek-ai/dsh-tools\": \"*\",\n    \"@deepseek-ai/dsh-subprocess\": \"*\",\n    \"@deepseek-ai/schemastery\": \"*\"\n  },\n  \"devDependencies\": {\n    \"@types/node\": \"^26.0.0\",\n    \"typescript\": \"^5.5.0\",\n    \"vitest\": \"^4.1.0\"\n  },\n  \"dependencies\": {\n    \"@deepseek-ai/cordis\": \"^4.0.1\",\n    \"@deepseek-ai/dsh-tools\": \"0.1.1-rc.2\",\n    \"@deepseek-ai/dsh-subprocess\": \"0.1.1-rc.2\",\n    \"@deepseek-ai/schemastery\": \"^3.18.1\"\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/tools/pr-describe.ts:213-237](https://github.com/988hj7tczd-oss/dsh-pr-description/blob/7608cb9b7b61447a3aff14491537ba7ee8caad6b/src/tools/pr-describe.ts#L213-L237)\n\nGit/base 前置检查。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n    async execute(args, exec) {\n      const signal = exec.signal\n      const workdir = args.workdir !== undefined && args.workdir.length > 0 ? args.workdir : config.workdir ?? process.cwd()\n      const runner = createSubprocessRunner(ctx, workdir)\n      const locale: Locale = args.locale ?? config.locale\n      const titleStyle: TitleStyle = args.titleStyle ?? config.defaultTitleStyle\n      const outputFile = args.output !== undefined && args.output.length > 0 ? args.output : config.outputFile\n\n      /* 阶段 1：范围 */\n      throwIfAborted(signal)\n      const repo = await isGitRepo(runner, workdir, signal)\n      if (!repo) {\n        throw new CommandError('NOT_A_GIT_REPO', `\"${workdir}\" 不是 git 工作树；请先在 git 仓库内运行，或通过 workdir 参数指定仓库目录`)\n      }\n      throwIfAborted(signal)\n      const committed = await hasCommits(runner, workdir, signal)\n      if (!committed) {\n        throw new CommandError('EMPTY_REPO', '仓库还没有任何提交；请先 commit 一次，再生成 PR 描述')\n      }\n      throwIfAborted(signal)\n      const baseExplicit = args.base !== undefined && args.base.length > 0 ? args.base : config.defaultBase\n      const base = baseExplicit !== undefined && baseExplicit.length > 0 ? baseExplicit : await resolveBase(runner, workdir, signal)\n      if (base === null) {\n        throw new CommandError('BASE_DETECTION_FAILED', '无法自动探测默认分支（未找到 origin/HEAD、main/master/develop 与父提交）；请显式传入 base 参数')\n      }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/tools/pr-describe.ts:270-333](https://github.com/988hj7tczd-oss/dsh-pr-description/blob/7608cb9b7b61447a3aff14491537ba7ee8caad6b/src/tools/pr-describe.ts#L270-L333)\n\n可选 userQuestions 和 gh 依赖、失败分支。\n\n<details>\n<summary>查看原文（64行）</summary>\n\n```text\n      /* 阶段 5：confirm → 落盘 → openPr */\n      let canceled = false\n      if (args.confirm === true) {\n        const userQuestions = ctx.get('userQuestions')\n        if (userQuestions === undefined) {\n          throw new CommandError('ASK_USER_UNAVAILABLE', '当前会话没有 userQuestions 服务，无法交互确认；请去掉 confirm 参数后重试')\n        }\n        const answer = await userQuestions.ask({\n          questions: [{\n            id: 'confirm-pr-describe',\n            header: 'PR 描述预览',\n            question: `确认生成 PR 描述并写入 ${outputFile} ？\\n\\n标题：${title}`,\n            options: [\n              { label: '确认生成', description: `将以下 PR 描述写入 ${outputFile}` },\n              { label: '取消', description: '不写入任何文件' },\n            ],\n          }],\n          ...(exec.agent !== undefined ? { agent: exec.agent } : {}),\n          signal,\n        })\n        const selected = answer.answers[0]?.selected ?? []\n        canceled = !selected.includes('确认生成')\n      }\n      if (canceled) {\n        return {\n          ok: false,\n          canceled: true,\n          title,\n          type,\n          scope: scope ?? '',\n          breaking: breaking.breaking,\n          breakingReasons: [...breaking.reasons],\n          file: '',\n          prCreated: false,\n          summary: summaryOf(facts),\n          markdown,\n        }\n      }\n\n      throwIfAborted(signal)\n      const absolutePath = resolve(workdir, outputFile)\n      try {\n        await mkdir(dirname(absolutePath), { recursive: true })\n        await writeFile(absolutePath, markdown, 'utf8')\n      } catch (error: unknown) {\n        throw new CommandError('OUTPUT_WRITE_FAILED', `写入 ${absolutePath} 失败：${(error as Error).message}`)\n      }\n\n      let prCreated = false\n      let prUrl: string | undefined\n      let prSkippedReason: string | undefined\n      if (args.openPr === true) {\n        throwIfAborted(signal)\n        const gh = await ghInstalled(runner, workdir, signal)\n        if (!gh) {\n          prSkippedReason = `未检测到 gh CLI（或不在 PATH），已跳过提 PR；描述已写入 ${outputFile}`\n        } else {\n          try {\n            prUrl = await createPullRequest(runner, { cwd: workdir, title, bodyFile: absolutePath, signal })\n            prCreated = true\n          } catch (error: unknown) {\n            prSkippedReason = `gh pr create 失败：${(error as Error).message}`\n          }\n        }\n```\n\n</details>\n\n#### 缺口\n\n- 没有同任务草稿编辑时间、事实错误率及评审结果对照。\n  **影响：**无法估算净节时或审阅成本。\n  **进一步探讨：**用固定分支样本由人工填写和工具草稿各做一次，盲审事实错误、修改分钟和遗漏测试。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 适合如何采用，怎样检验更可信的草稿设计？\n\n**研究主题：**新假设与验证、采用判断\n\n#### 完整回答\n\n建议先把工具当本地草稿生成器，显式提供 base，核对统计、文件、breaking、动机与实际跑过的测试，再由人编辑；只有确认远端创建意图时才启用 openPr。输出路径应限制在预期目录，团队可在外层施加权限边界。若分支以重命名、多语言声明或难从 diff 推断业务动机为主，模板的便利下降。未验证设计是假设每段陈述关联具体 diff 证据，并将不能从 Git 推出的动机与测试结果留为待填写项，不用完整语气填补未知。用仅重命名、跨语言、未跑测试及真实 bugfix 分支对照现有模板，比较事实错误率、人工改写分钟和审阅者误信率；如果只是增加链接却不降低错误，应否定。该设计未实现，不计现有创新。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/tools/pr-describe.ts:239-268](https://github.com/988hj7tczd-oss/dsh-pr-description/blob/7608cb9b7b61447a3aff14491537ba7ee8caad6b/src/tools/pr-describe.ts#L239-L268)\n\n模板输入以统计、符号与 breaking 信号为主。\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\n      /* 阶段 2-3：统计与符号 */\n      throwIfAborted(signal)\n      const facts = await loadDiffFacts(runner, workdir, base, signal)\n      const sections = facts.sections\n      const type = classifyChangeType(sections, facts.symbols)\n      const scope = deriveScope(facts.records)\n      const breaking = detectBreakingSignal(facts)\n\n      /* 阶段 4：生成 PR 文本 */\n      throwIfAborted(signal)\n      const titleParts = deriveTitleParts({ type, scope, symbols: facts.symbols, sections })\n      const title = renderTitle(titleParts, titleStyle)\n      const markdown = renderMarkdown({\n        title,\n        branch: facts.branch,\n        base: facts.base,\n        outputFile,\n        type,\n        scope,\n        filesAdded: facts.filesAdded,\n        filesModified: facts.filesModified,\n        filesDeleted: facts.filesDeleted,\n        binaryFiles: facts.binaryFiles,\n        linesAdded: facts.linesAdded,\n        linesDeleted: facts.linesDeleted,\n        symbols: facts.symbols,\n        sections,\n        records: facts.records,\n        breaking,\n      }, locale)\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/diff-analysis.ts:242-280](https://github.com/988hj7tczd-oss/dsh-pr-description/blob/7608cb9b7b61447a3aff14491537ba7ee8caad6b/src/diff-analysis.ts#L242-L280)\n\n符号正则范围有限。\n\n<details>\n<summary>查看原文（39行）</summary>\n\n```text\n/** 单行声明正则表：命中即视为新增符号。 */\nconst SYMBOL_PATTERNS: Array<{ kind: SymbolHit['kind']; regex: RegExp }> = [\n  { kind: 'function', regex: /^(?:export\\s+)?(?:async\\s+)?function\\s+([A-Za-z_$][\\w$]*)/u },\n  { kind: 'function', regex: /^(?:export\\s+)?(?:async\\s+)?function\\s*\\*([A-Za-z_$][\\w$]*)/u },\n  { kind: 'class', regex: /^(?:export\\s+)?(?:abstract\\s+)?class\\s+([A-Za-z_$][\\w$]*)/u },\n  { kind: 'type', regex: /^(?:export\\s+)?(?:interface|type)\\s+([A-Za-z_$][\\w$]*)/u },\n  { kind: 'function', regex: /^(?:export\\s+)?(?:const|let|var)\\s+([A-Za-z_$][\\w$]*)\\s*=\\s*(?:async\\s*)?(?:\\(|=>|function\\b)/u },\n  { kind: 'export', regex: /^export\\s+default\\s+(?:function|class|type|interface)\\s+([A-Za-z_$][\\w$]*)/u },\n]\n\n/** 命名导出花括号：`export { a, b as c }` → a、c。 */\nconst NAMED_EXPORT_PATTERN = /^export\\s*\\{([^}]+)\\}/u\nconst NAMED_EXPORT_ITEM = /^([A-Za-z_$][\\w$]*)(?:\\s+as\\s+([A-Za-z_$][\\w$]*))?$/u\n\n/** 单次调用最多提取的符号数，避免超大 diff 拖垮输出。 */\nexport const MAX_SYMBOLS = 16\n\n/**\n * 从各文件分区提取新增符号并去重。\n * @param sections - `git diff --unified=1` 解析出的分区。\n * @returns 按出现顺序去重后的符号（上限 MAX_SYMBOLS）。\n */\nexport function extractSymbols(sections: DiffSection[]): SymbolHit[] {\n  const seen = new Set<string>()\n  const hits: SymbolHit[] = []\n  for (const section of sections) {\n    for (const line of section.added) {\n      for (const { kind, regex } of SYMBOL_PATTERNS) {\n        const match = regex.exec(line)\n        if (match === null || match[1] === undefined) continue\n        const name = match[1]\n        const key = `${kind}:${name}:${section.file}`\n        if (seen.has(key)) continue\n        seen.add(key)\n        hits.push({ kind, name, file: section.file })\n        if (hits.length >= MAX_SYMBOLS) return hits\n        break\n      }\n    }\n```\n\n</details>\n\n**依据 3 · 作者声明**：[README.md:26-28](https://github.com/988hj7tczd-oss/dsh-pr-description/blob/7608cb9b7b61447a3aff14491537ba7ee8caad6b/README.md#L26-L28)\n\n作者承认五段为确定性拼装、无模型语义。\n\n```text\n- BREAKING CHANGE 标注**当且仅当**检测到破坏性信号：`BREAKING CHANGE:` 注解、`package.json` 主版本提升、删除公开导出且同文件无同名新增。\n\n> 说明：当前「动机/方案/影响/测试/风险」五段为**确定性模板拼装**（由 diff 统计、符号提取与破坏性信号直接填充文案），**未调用 LLM**；PROMPT §4.4 中「调用模型填充五段」尚未实现，如需语义润色请自行在生成后接入模型处理。\n```\n\n**依据 4 · 源码核查**：[src/tools/pr-describe.ts:318-333](https://github.com/988hj7tczd-oss/dsh-pr-description/blob/7608cb9b7b61447a3aff14491537ba7ee8caad6b/src/tools/pr-describe.ts#L318-L333)\n\nopenPr 为单独可选外部动作。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n      let prCreated = false\n      let prUrl: string | undefined\n      let prSkippedReason: string | undefined\n      if (args.openPr === true) {\n        throwIfAborted(signal)\n        const gh = await ghInstalled(runner, workdir, signal)\n        if (!gh) {\n          prSkippedReason = `未检测到 gh CLI（或不在 PATH），已跳过提 PR；描述已写入 ${outputFile}`\n        } else {\n          try {\n            prUrl = await createPullRequest(runner, { cwd: workdir, title, bodyFile: absolutePath, signal })\n            prCreated = true\n          } catch (error: unknown) {\n            prSkippedReason = `gh pr create 失败：${(error as Error).message}`\n          }\n        }\n```\n\n</details>\n\n#### 缺口\n\n- 逐段证据绑定与未知项留空方案未实现或评测。\n  **影响：**不能把它算作当前文案可靠性改进。\n  **进一步探讨：**以固定分支和盲审者比较事实错误、修改时间与误信。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：7dec6e03bfa76edaff0509ae40857953fc02a570f8de54717f0a4455aaf3584f。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 3 | 262 | — | — | 3250 |\n| .mjs | source | 1 | 44 | 29 | 12 | — |\n| .ts | source | 6 | 1325 | 1029 | 203 | — |\n| .ts | test | 1 | 260 | 206 | 26 | — |\n| .mjs | test | 1 | 468 | 387 | 36 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 差异草稿 | 从已提交分支生成标题、五段与自审清单 | 必须核对 base；规则与正则不理解业务动机 |\n| 写前确认 | 在落盘前让用户选择确认或取消 | 默认关闭，确认只显示标题和路径 |\n| 本地保存 | 输出 Markdown 文件 | output 可指定，写入范围受运行环境约束 |\n| 可选 PR 创建 | 调 gh pr create | 需 gh/认证/权限，不自动 push，失败保留草稿 |\n\n\n## 工程亮点\n\n固定 argv 经 subprocess 执行、采集上限和 lossy 标识、纯解析层与可选确认使流程易审阅。Node fs 直接按 resolve(workdir,outputFile) 写入，和受控命令的权限边界不同；confirm 未展示全文，gh 失败只是保留草稿。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、src/tools/pr-describe.ts、src/diff-analysis.ts、src/templates.ts、src/gh.ts、src/index.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：检查固定提交 README、package、主流程、Git 解析、模板、gh 和测试意图；未运行目标工具或创建 PR。\n- 下一步：进一步探讨在隔离仓库做错误 base、rename/二进制、大 diff、取消、越界路径和 gh 失败样本，盲审草稿事实与人工改写时间；不发真实 PR。\n",
         "metadata": {
             "repository": "988hj7tczd-oss/dsh-pr-description",
             "repository_id": 1344714177,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T05:15:24.057Z",
+            "window_start": "2026-09-22T05:15:24.057Z",
             "stars": 0,
             "pushed_at": "2026-08-24T14:53:34Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-pr-description%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6410:3A339B:13D4A0:218249:6AD84B02 and timestamp 2026-10-21 05:17:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-pr-description%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640B:13810:14CDE1:229362:6AD84B02 and timestamp 2026-10-21 05:17:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-pr-description%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6406:157B26:151C59:22DE7B:6AD84B02 and timestamp 2026-10-21 05:17:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-pr-description%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6415:33975D:14AF1A:225711:6AD84B02 and timestamp 2026-10-21 05:17:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-pr-description%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C0:0BD3:A4CFA:110FCA:6AD84B02 and timestamp 2026-10-21 05:17:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "dsh-pr-description",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 385,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-pr-description",
+                "captured_at": "2026-10-22T05:15:37.404Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 368,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-pr-description",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-08-24T10:54:13.020Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T05:15:37.404Z",
                     "source_url": "https://registry.npmjs.org/dsh-pr-description",
                     "error": null,
                     "latest_version": "0.1.1",
                     "latest_published_at": "2026-08-24T13:25:15.031Z",
                     "latest_error": null
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "7608cb9b7b61447a3aff14491537ba7ee8caad6b",
-                "current_revision": "7608cb9b7b61447a3aff14491537ba7ee8caad6b",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {
@@ -443,14 +467,14 @@
             "repository": "988hj7tczd-oss/dsh-pr-description",
             "path": "",
             "revision": "7608cb9b7b61447a3aff14491537ba7ee8caad6b",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "be1db8077acab058a133577bb23b19ea97da9db23ef34eadc44588b3851d499b",
                 "code": "7608cb9b7b61447a3aff14491537ba7ee8caad6b",
                 "maintenance": "828f9d570ed411ddd00a3cf4151cb97b1038a032a31dca59fa4d487a94816810"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

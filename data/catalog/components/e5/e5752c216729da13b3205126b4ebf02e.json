@@ -24,36 +24,76 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-03-github-1344715270-root-directory-0",
+                    "id": "2026-10-22-02-github-1344715270-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T03:49:12.293Z",
+                    "retrieved_at": "2026-10-22T08:59:03.420Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-03-github-1344715270-root-author",
+                    "id": "2026-10-22-02-github-1344715270-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/988hj7tczd-oss/dsh-a11y-scan/blob/8515929d9e914cc0cadd60416676608ea1da03ae/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-a11y-scan",
+                            "commit": "8515929d9e914cc0cadd60416676608ea1da03ae",
+                            "path": "README.md",
+                            "content_sha256": "3449050a06886d4c0fd2b10dac154bc5b0027d6f1e91ff384c8d86da3da0668a"
+                        }
+                    ],
                     "revision": "8515929d9e914cc0cadd60416676608ea1da03ae",
-                    "captured_at": "2026-10-21T03:49:12.293Z",
-                    "summary": "调用axe扫描本地HTML、构建页面或显式确认的URL，输出无障碍问题与多格式报告。",
-                    "artifact": "data/runs/2026-10-21-03/snapshots/988hj7tczd-oss--dsh-a11y-scan/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T08:59:03.420Z",
+                    "summary": "在DSH中调用axe扫描本地HTML或确认URL，输出定位、修复线索、人工复核项和多格式报告。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/988hj7tczd-oss--dsh-a11y-scan/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-03-github-1344715270-root-source",
+                    "id": "2026-10-22-02-github-1344715270-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/988hj7tczd-oss/dsh-a11y-scan/blob/8515929d9e914cc0cadd60416676608ea1da03ae/src/runner.ts",
+                    "url": "https://github.com/988hj7tczd-oss/dsh-a11y-scan/blob/8515929d9e914cc0cadd60416676608ea1da03ae/src/index.ts",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-a11y-scan",
+                            "commit": "8515929d9e914cc0cadd60416676608ea1da03ae",
+                            "path": "src/index.ts",
+                            "content_sha256": "39975cee8cb5da7ca3c43e97a8e6d11d0e5a054ce326ed2683a80e58a6714320"
+                        },
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-a11y-scan",
+                            "commit": "8515929d9e914cc0cadd60416676608ea1da03ae",
+                            "path": "src/runner.ts",
+                            "content_sha256": "3376f345301c306960a7c54619e8ba027c2fcaa9269f6f2f4c6945022f1189bd"
+                        },
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-a11y-scan",
+                            "commit": "8515929d9e914cc0cadd60416676608ea1da03ae",
+                            "path": "README.md",
+                            "content_sha256": "3449050a06886d4c0fd2b10dac154bc5b0027d6f1e91ff384c8d86da3da0668a"
+                        },
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-a11y-scan",
+                            "commit": "8515929d9e914cc0cadd60416676608ea1da03ae",
+                            "path": "src/report.ts",
+                            "content_sha256": "900c40ce664c58672f4f633c76efe759a95000cfa06758286e627b7eb5b969b1"
+                        },
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-a11y-scan",
+                            "commit": "8515929d9e914cc0cadd60416676608ea1da03ae",
+                            "path": "package.json",
+                            "content_sha256": "e69e89fba2aaa005d7885cbb9597d9b7f8e759a162d91471b964309f49863714"
+                        }
+                    ],
                     "revision": "8515929d9e914cc0cadd60416676608ea1da03ae",
-                    "captured_at": "2026-10-21T03:49:12.293Z",
-                    "summary": "核查 src/runner.ts、src/report.ts、src/index.ts、src/tools/a11y-scan.ts、package.json；runner.ts解析文件/目录/URL，URL需confirmUrl才进入扫描；本地页面经回环静态服务交npx --no-install axe CLI，report.ts规范规则/impact/WCAG映射并生成MD/HTML/JSON。",
-                    "artifact": "data/runs/2026-10-21-03/snapshots/988hj7tczd-oss--dsh-a11y-scan/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T08:59:03.420Z",
+                    "summary": "核查 src/index.ts、src/runner.ts、README.md、src/report.ts、package.json；FsAdapter发现HTML，经本地静态服务和axe CLI逐页扫描，纯report标准化结果，显式reportFile才写报告。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/988hj7tczd-oss--dsh-a11y-scan/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+                        "固定工具、runner目标/CLI/静态服务/报告写及report人工清单和HTML嵌入；未执行引擎、页面或宿主，不认证WCAG全覆盖。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +104,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "前端开发者需要在交付前发现可自动检测的无障碍问题，合格结果是实际页面规则命中与人工复核项可追踪，而不是一份WCAG合规证书。",
+                    "text": "前端开发者把可访问性自动检查接入工具流程，仍需人工确认真实任务与规则覆盖。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1344715270-root-source"
+                        "2026-10-22-02-github-1344715270-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +115,16 @@
                             "fingerprint": "8515929d9e914cc0cadd60416676608ea1da03ae"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:12.293Z",
+                    "reviewed_at": "2026-10-22T08:59:03.420Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "runner.ts解析文件/目录/URL，URL需confirmUrl才进入扫描；本地页面经回环静态服务交npx --no-install axe CLI，report.ts规范规则/impact/WCAG映射并生成MD/HTML/JSON。",
+                    "text": "FsAdapter发现HTML，经本地静态服务和axe CLI逐页扫描，纯report标准化结果，显式reportFile才写报告。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1344715270-root-source"
+                        "2026-10-22-02-github-1344715270-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +133,16 @@
                             "fingerprint": "8515929d9e914cc0cadd60416676608ea1da03ae"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:12.293Z",
+                    "reviewed_at": "2026-10-22T08:59:03.420Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+                    "text": "固定工具、runner目标/CLI/静态服务/报告写及report人工清单和HTML嵌入；未执行引擎、页面或宿主，不认证WCAG全覆盖。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1344715270-root-source"
+                        "2026-10-22-02-github-1344715270-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +151,16 @@
                             "fingerprint": "8515929d9e914cc0cadd60416676608ea1da03ae"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:12.293Z",
+                    "reviewed_at": "2026-10-22T08:59:03.420Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "当前源码包main指向lib需构建，开发依赖相邻dsh-src的link；真实扫描另需目标项目可解析@axe-core/cli和Chrome，不能将可安装声明当已验证。",
+                    "text": "npm0.1.0、MIT，Node>=22.18及DSH内部registry依赖；axe CLI/浏览器需另安装，README旧link开发说明不能混用。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1344715270-root-source"
+                        "2026-10-22-02-github-1344715270-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +169,16 @@
                             "fingerprint": "8515929d9e914cc0cadd60416676608ea1da03ae"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:12.293Z",
+                    "reviewed_at": "2026-10-22T08:59:03.420Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "首次构建宿主依赖与浏览器后端，扫描逐页运行消耗CPU/时间，人工焦点和读屏复核仍必要；无成本或修复合格率实测。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | axe/浏览器下载与构建环境，金额未知 | 版本、目标、网络/文件权限核对 | 模拟fixture不代表真实引擎可用 |\n| 持续使用 | 逐页浏览器启动/扫描、HTML资源请求 | 排除误报、补人工复核与修复 | 最多50页/深度10，时长未测 |\n| 失败恢复 | 引擎/浏览器安装排错、重扫和报告重建 | 判断部分页面未完成与错误 | 错误不能被0违规掩盖 |\n",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1344715270-root-source"
+                        "2026-10-22-02-github-1344715270-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +187,16 @@
                             "fingerprint": "8515929d9e914cc0cadd60416676608ea1da03ae"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:12.293Z",
+                    "reviewed_at": "2026-10-22T08:59:03.420Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "适合已有axe后端的前端团队在本地构建产物先试用。先核对真实引擎运行与页面状态，再处理incomplete和人工清单；不要把报告无违规当完整WCAG认证。",
+                    "text": "可信无敏感页面可限范围试用作自动线索，先核实际网络/文件与规则覆盖，保留人工复核。详见[Q06](#research-q06)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1344715270-root-source"
+                        "2026-10-22-02-github-1344715270-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +205,16 @@
                             "fingerprint": "8515929d9e914cc0cadd60416676608ea1da03ae"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:12.293Z",
+                    "reviewed_at": "2026-10-22T08:59:03.420Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "可减少规则结果整理与定位工作，业务可访问性改善仍需用户流程和辅助技术测试。",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 自动定位 | axe命中映射为impact/selector/修复建议 | 固定真实引擎命中质量与覆盖 |\n| 人工衔接 | incomplete和固定复核清单单列 | 实际键盘/读屏任务是否合格 |\n| 可重复输出 | 同一report生成md/html/json | 不同页面状态和规则版本的可比性 |\n",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1344715270-root-source"
+                        "2026-10-22-02-github-1344715270-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +223,16 @@
                             "fingerprint": "8515929d9e914cc0cadd60416676608ea1da03ae"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:12.293Z",
+                    "reviewed_at": "2026-10-22T08:59:03.420Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "目标解析/引擎/报告纯逻辑分离，结构化错误与静态服务路径约束可借鉴。维护成本在浏览器环境、SPA状态与WCAG映射，上游检测归属应清楚；URL参数门槛不等于网络沙箱。 源码依据：[src/runner.ts](https://github.com/988hj7tczd-oss/dsh-a11y-scan/blob/8515929d9e914cc0cadd60416676608ea1da03ae/src/runner.ts)、[src/report.ts](https://github.com/988hj7tczd-oss/dsh-a11y-scan/blob/8515929d9e914cc0cadd60416676608ea1da03ae/src/report.ts)、[src/index.ts](https://github.com/988hj7tczd-oss/dsh-a11y-scan/blob/8515929d9e914cc0cadd60416676608ea1da03ae/src/index.ts)、[src/tools/a11y-scan.ts](https://github.com/988hj7tczd-oss/dsh-a11y-scan/blob/8515929d9e914cc0cadd60416676608ea1da03ae/src/tools/a11y-scan.ts)、[package.json](https://github.com/988hj7tczd-oss/dsh-a11y-scan/blob/8515929d9e914cc0cadd60416676608ea1da03ae/package.json)。",
+                    "text": "可复用的是FsAdapter/AxeEngine可注入seam、目标计划和报告纯函数分离、错误作为报告结构、URL闸门在引擎前以及finally关本地服务。HTML报告把嵌入JSON的<转义，防止元素HTML中的script结束标签破坏嵌入。模拟engine适合确定性编排测试，但不能代替真实浏览器规则验证。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1344715270-root-source"
+                        "2026-10-22-02-github-1344715270-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +241,16 @@
                             "fingerprint": "8515929d9e914cc0cadd60416676608ea1da03ae"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:12.293Z",
+                    "reviewed_at": "2026-10-22T08:59:03.420Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "interpretation",
-                    "text": "相对直接axe CLI输出，增量是把目标发现、DSH工具接线、中文错误和修复建议/人工清单组织为Agent可用报告。检测核心属于axe，不能把上游规则库算插件原创。",
+                    "text": "把目标发现、axe错误与命中、修复线索和人工复核接入结构化DSH工具，贡献在编排而非新检测算法。详见[Q01](#research-q01)与[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1344715270-root-source"
+                        "2026-10-22-02-github-1344715270-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +259,16 @@
                             "fingerprint": "8515929d9e914cc0cadd60416676608ea1da03ae"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:12.293Z",
+                    "reviewed_at": "2026-10-22T08:59:03.420Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "源码与录制结果测试能否证明真实页面覆盖？实际依赖axe CLI、浏览器与目标渲染，离线fixture/模拟engine只能证明管线，不证明目标站点JS状态或真实宿主。confirmUrl是调用布尔参数，不是独立认证的用户批准记录；扫描无违规也未覆盖焦点与阅读语义等人工项。",
+                    "text": "静态服务只作词法目录检查再原生读文件，未核物理路径；浏览器加载本地HTML仍可有网络/脚本副作用，confirmUrl不是授权收据。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1344715270-root-source"
+                        "2026-10-22-02-github-1344715270-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +277,16 @@
                             "fingerprint": "8515929d9e914cc0cadd60416676608ea1da03ae"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:12.293Z",
+                    "reviewed_at": "2026-10-22T08:59:03.420Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "unverified",
-                    "text": "由自动violations与incomplete并列推导，可为每次报告保存页面URL/DOM摘要、引擎版本与交互状态，将人工复核结果绑定同一版本，形成“已检测/未覆盖/人工确认”矩阵。未验证假设是减少零违规误当合规。对动态登录/弹窗/键盘任务比较报告，若漏覆盖仍不显式则否定。",
+                    "text": "可探讨扫描能力清单，绑定资源realpath、引擎/规则和网络源，静态服务只暴露计划文件；动态资源兼容成本未验证。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1344715270-root-source"
+                        "2026-10-22-02-github-1344715270-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +295,15 @@
                             "fingerprint": "8515929d9e914cc0cadd60416676608ea1da03ae"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:12.293Z",
+                    "reviewed_at": "2026-10-22T08:59:03.420Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T03:49:12.293Z",
+            "last_checked_at": "2026-10-22T08:59:03.420Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "8515929d9e914cc0cadd60416676608ea1da03ae",
-                "reviewed_at": "2026-10-21T03:49:12.293Z",
+                "reviewed_at": "2026-10-22T08:59:03.420Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -275,61 +315,61 @@
                 "technical": {
                     "criteria": {
                         "novelty": 9,
-                        "mechanism": 8,
+                        "mechanism": 15,
                         "transferability": 10,
                         "simplification": 8
                     },
-                    "rationale": "novelty是axe宿主适配小档；mechanism现成扫描编排小档；transferability报告/引擎分层半档；simplification结构化一体输出半档。",
+                    "rationale": "novelty成熟axe封装取小幅；mechanism发现/执行/报告分层取实质；transferability可注入seam和纯报告取实质；simplificationDSH结构化接线取实质，未计覆盖或安全改善。",
                     "basis": "interpretation",
-                    "score": 35,
+                    "score": 42,
                     "evidence_ids": [
-                        "2026-10-21-03-github-1344715270-root-source"
+                        "2026-10-22-02-github-1344715270-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 9,
-                        "delivery": 15,
+                        "workflow": 18,
+                        "delivery": 8,
                         "reach": 5,
                         "economics": 4
                     },
-                    "rationale": "workflow常规扫描入口小档；delivery定位+多格式+人工边界半档；reach Agent前端用户小档；economics整理便利未测小档。",
+                    "rationale": "workflow自动线索到人工复核取实质；delivery仍既有扫描报告取小幅；reach限已具引擎的开发者取小幅；economics无完整任务对照取小幅。",
                     "basis": "interpretation",
-                    "score": 33,
+                    "score": 35,
                     "evidence_ids": [
-                        "2026-10-21-03-github-1344715270-root-source"
+                        "2026-10-22-02-github-1344715270-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "已有axe后端前端团队可在本地构建产物试用；确认真实引擎和页面状态，incomplete与焦点读屏另验，零违规不证WCAG全合规。",
+                "reason": "扫描接线与错误/人工复核清楚，可限可信夹具试用；静态服务物理路径、浏览器网络及规则覆盖需先明确。详见[Q06](#research-q06)。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "交付前定位自动无障碍规则及人工项需求明确。"
+                        "rationale": "前端自动检查任务明确，实际收益未测。"
                     },
                     "advantage": {
-                        "score": 19,
-                        "rationale": "目标发现和中文报告建议比CLI裸输出更适合Agent修复。"
+                        "score": 13,
+                        "rationale": "DSH结构化编排/报告有增量，CLI可替代。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "axe --no-install及报告管线已查，fixture不证真实页面覆盖。"
+                        "rationale": "固定关键源码支持，不把模拟测试当真实引擎。"
                     },
                     "cost": {
                         "score": 10,
-                        "rationale": "需Chrome和axe构建，逐页CPU与人工辅助技术检查仍需投入。"
+                        "rationale": "需引擎/浏览器和人工复核，可信目标可限范围维护。"
                     }
                 },
-                "score": 65,
+                "score": 59,
                 "revision": "8515929d9e914cc0cadd60416676608ea1da03ae",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T08:59:03.420Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-03-github-1344715270-root-source"
+                    "2026-10-22-02-github-1344715270-root-source"
                 ],
                 "dependencies": [
                     {
@@ -354,88 +394,60 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T03:36:14Z",
-            "analysis_sha256": "717ddbbb2e3b128f708e1888262914b0e7fe75671ad942ffb188ff862d42a3fc"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "a0d2521869548198d5bc2a9bfc3fd796abc33ea796e7a2795ca54768c1038536"
         },
         "publication.metadata": "data/plugins/988hj7tczd-oss--dsh-a11y-scan/META.json",
         "publication.summaries": {
-            "text": "调用axe扫描本地HTML、构建页面或显式确认的URL，输出无障碍问题与多格式报告。",
+            "text": "在DSH中调用axe扫描本地HTML或确认URL，输出定位、修复线索、人工复核项和多格式报告。",
             "revision": "8515929d9e914cc0cadd60416676608ea1da03ae",
             "source_url": "https://github.com/988hj7tczd-oss/dsh-a11y-scan/blob/8515929d9e914cc0cadd60416676608ea1da03ae/README.md"
         },
         "publication.capabilities": {
             "revision": "8515929d9e914cc0cadd60416676608ea1da03ae",
             "items": {
-                "模型工具": "a11y_scan进行目标解析、扫描与报告生成。"
-            }
+                "模型工具": "a11y_scan"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| HTML发现 | 文件/目录页面选择 | 50页/深度10，非动态全站爬取 |\n| axe编排 | 浏览器规则命中 | 需另装引擎，不代表合规认证 |\n| 报告 | 定位/建议/人工复核 | 页面片段有留存责任 |\n| URL/输出 | 可选网络扫描/写报告 | 参数显式不等独立授权 |"
         },
         "publication.advice": {
             "revision": "8515929d9e914cc0cadd60416676608ea1da03ae",
-            "text": "适合已有axe后端的前端团队在本地构建产物先试用。先核对真实引擎运行与页面状态，再处理incomplete和人工清单；不要把报告无违规当完整WCAG认证。"
+            "text": "可信无敏感页面可限范围试用作自动线索，先核实际网络/文件与规则覆盖，保留人工复核。详见[Q06](#research-q06)。"
         },
         "registry": "data/plugins/988hj7tczd-oss--dsh-a11y-scan",
-        "reports": "# dsh-a11y-scan\n\n> 调用axe扫描本地HTML、构建页面或显式确认的URL，输出无障碍问题与多格式报告。\n\n## 使用建议\n\n适合已有axe后端的前端团队在本地构建产物先试用。先核对真实引擎运行与页面状态，再处理incomplete和人工清单；不要把报告无违规当完整WCAG认证。\n\n核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。\n\n源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。\n\n## 洞察短评\n\n- **用途**：前端开发者需要在交付前发现可自动检测的无障碍问题，合格结果是实际页面规则命中与人工复核项可追踪，而不是一份WCAG合规证书。\n- **亮点**：相对直接axe CLI输出，增量是把目标发现、DSH工具接线、中文错误和修复建议/人工清单组织为Agent可用报告。检测核心属于axe，不能把上游规则库算插件原创。\n- **思考**：源码与录制结果测试能否证明真实页面覆盖？实际依赖axe CLI、浏览器与目标渲染，离线fixture/模拟engine只能证明管线，不证明目标站点JS状态或真实宿主。confirmUrl是调用布尔参数，不是独立认证的用户批准记录；扫描无违规也未覆盖焦点与阅读语义等人工项。\n- **建议**：由自动violations与incomplete并列推导，可为每次报告保存页面URL/DOM摘要、引擎版本与交互状态，将人工复核结果绑定同一版本，形成“已检测/未覆盖/人工确认”矩阵。未验证假设是减少零违规误当合规。对动态登录/弹窗/键盘任务比较报告，若漏覆盖仍不显式则否定。\n\n## 场景与替代办法\n\n前端开发者需要在交付前发现可自动检测的无障碍问题，合格结果是实际页面规则命中与人工复核项可追踪，而不是一份WCAG合规证书。\n\n直接axe CLI/浏览器扩展可检测同一规则；插件提供Agent结构化调用和报告包装，不宣称超过axe覆盖率。\n\n## 能力清单\n\n- **模型工具**：a11y_scan进行目标解析、扫描与报告生成。\n\n## 依赖与流程\n\n必要为DSH tools/fs/subprocess，axe CLI与可用Chrome；URL需网络并可能执行页面JS，本地静态页面也受资源和渲染条件影响。\n\n选择目标/等级/输出，解析页面，按真实引擎逐页扫描，汇总violations/incomplete与人工清单；显式reportFile才写报告，修复后重新扫描并人工验收。\n\n## 成本与效果\n\n首次构建宿主依赖与浏览器后端，扫描逐页运行消耗CPU/时间，人工焦点和读屏复核仍必要；无成本或修复合格率实测。\n\n可减少规则结果整理与定位工作，业务可访问性改善仍需用户流程和辅助技术测试。\n\n## 核心贡献\n\n相对直接axe CLI输出，增量是把目标发现、DSH工具接线、中文错误和修复建议/人工清单组织为Agent可用报告。检测核心属于axe，不能把上游规则库算插件原创。\n\n## 关键质疑\n\n源码与录制结果测试能否证明真实页面覆盖？实际依赖axe CLI、浏览器与目标渲染，离线fixture/模拟engine只能证明管线，不证明目标站点JS状态或真实宿主。confirmUrl是调用布尔参数，不是独立认证的用户批准记录；扫描无违规也未覆盖焦点与阅读语义等人工项。\n\n\n## 工程亮点\n\n目标解析/引擎/报告纯逻辑分离，结构化错误与静态服务路径约束可借鉴。维护成本在浏览器环境、SPA状态与WCAG映射，上游检测归属应清楚；URL参数门槛不等于网络沙箱。 源码依据：[src/runner.ts](https://github.com/988hj7tczd-oss/dsh-a11y-scan/blob/8515929d9e914cc0cadd60416676608ea1da03ae/src/runner.ts)、[src/report.ts](https://github.com/988hj7tczd-oss/dsh-a11y-scan/blob/8515929d9e914cc0cadd60416676608ea1da03ae/src/report.ts)、[src/index.ts](https://github.com/988hj7tczd-oss/dsh-a11y-scan/blob/8515929d9e914cc0cadd60416676608ea1da03ae/src/index.ts)、[src/tools/a11y-scan.ts](https://github.com/988hj7tczd-oss/dsh-a11y-scan/blob/8515929d9e914cc0cadd60416676608ea1da03ae/src/tools/a11y-scan.ts)、[package.json](https://github.com/988hj7tczd-oss/dsh-a11y-scan/blob/8515929d9e914cc0cadd60416676608ea1da03ae/package.json)。\n\n## 未来设计假设（未验证）\n\n由自动violations与incomplete并列推导，可为每次报告保存页面URL/DOM摘要、引擎版本与交互状态，将人工复核结果绑定同一版本，形成“已检测/未覆盖/人工确认”矩阵。未验证假设是减少零违规误当合规。对动态登录/弹窗/键盘任务比较报告，若漏覆盖仍不显式则否定。\n\n在固定浏览器与axe版本对比直接CLI和插件的真实结果，覆盖动态页面、空页、缺依赖、未确认URL与报告转义；人工检查焦点和读屏流程。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：09a48d311993b149eb5eae954e78346ff99c7c61a8533f9e5338c4c2952e146a。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 3 | 237 | — | — | 2851 |\n| .ts | source | 4 | 1910 | 1538 | 251 | — |\n| .ts | test | 2 | 467 | 369 | 48 | — |\n\n排除 1 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[988hj7tczd-oss/dsh-a11y-scan](https://github.com/988hj7tczd-oss/dsh-a11y-scan)\n- **版本号**：0.1.0（[固定提交 8515929d](https://github.com/988hj7tczd-oss/dsh-a11y-scan/tree/8515929d9e914cc0cadd60416676608ea1da03ae)）\n- **版本日期**：2026-08-24（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：作者 README、包清单、源码路径 src/runner.ts、src/report.ts、src/index.ts、src/tools/a11y-scan.ts、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。\n- 下一步：在固定浏览器与axe版本对比直接CLI和插件的真实结果，覆盖动态页面、空页、缺依赖、未确认URL与报告转义；人工检查焦点和读屏流程。\n",
+        "reports": "# dsh-a11y-scan\n\n> 在DSH中调用axe扫描本地HTML或确认URL，输出定位、修复线索、人工复核项和多格式报告。\n\n## 研究范围\n\n- **仓库**：[988hj7tczd-oss/dsh-a11y-scan](https://github.com/988hj7tczd-oss/dsh-a11y-scan)\n- **版本号**：0.1.0（[固定提交 8515929d9e914cc0cadd60416676608ea1da03ae](https://github.com/988hj7tczd-oss/dsh-a11y-scan/tree/8515929d9e914cc0cadd60416676608ea1da03ae)）\n- **版本日期**：2026-08-24（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n源码支持HTML发现、axe扫描与结构报告集成；静态服务词法路径和资源范围未形成完整隔离，自动规则通过不证明全部无障碍。绑定文件/引擎/规则与网络源的扫描能力清单尚未验证。\n\n## 洞察短评\n\n- **用途**：前端开发者把可访问性自动检查接入工具流程，仍需人工确认真实任务与规则覆盖。\n- **亮点**：把目标发现、axe错误与命中、修复线索和人工复核接入结构化DSH工具，贡献在编排而非新检测算法。详见[Q01](#research-q01)与[Q02](#research-q02)。\n- **思考**：静态服务只作词法目录检查再原生读文件，未核物理路径；浏览器加载本地HTML仍可有网络/脚本副作用，confirmUrl不是授权收据。详见[Q02](#research-q02)。\n- **建议**：可探讨扫描能力清单，绑定资源realpath、引擎/规则和网络源，静态服务只暴露计划文件；动态资源兼容成本未验证。详见[Q05](#research-q05)。\n\n采用建议：可信无敏感页面可限范围试用作自动线索，先核实际网络/文件与规则覆盖，保留人工复核。详见[Q06](#research-q06)。\n\n## 核心贡献\n\n把目标发现、axe错误与命中、修复线索和人工复核接入结构化DSH工具，贡献在编排而非新检测算法。详见[Q01](#research-q01)与[Q02](#research-q02)。\n\n## 关键质疑\n\n静态服务只作词法目录检查再原生读文件，未核物理路径；浏览器加载本地HTML仍可有网络/脚本副作用，confirmUrl不是授权收据。详见[Q02](#research-q02)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可探讨扫描能力清单，绑定资源realpath、引擎/规则和网络源，静态服务只暴露计划文件；动态资源兼容成本未验证。详见[Q05](#research-q05)。\n\n进一步探讨可用链接/外链/重定向夹具和固定缺陷页面集核对资源边界、规则覆盖、命中与完整人时。\n\n## 场景与替代办法\n\n前端开发者把可访问性自动检查接入工具流程，仍需人工确认真实任务与规则覆盖。\n\n直接axe CLI加人工复核与报告可替代；DSH接线减少编排，但不减少真实浏览器和人工检查需求。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| Node>=22.18及DSH tools/fs/subprocess | 主链必需 | 工具注册、发现/读取和执行 | 当前package为registry版本，旧link说明需辨别 |\n| 用户安装axe CLI及Chrome/Puppeteer | 实际扫描必需 | 加载页面与规则引擎 | 不自动安装，缺失报prerequisite |\n| 可加载HTML/构建产物 | 本地目标必需 | 静态服务页面 | 纯源码目录可能无HTML，扫描不到不等无问题 |\n| URL确认参数与网络策略 | 远程目标必需 | 允许指定目标进入浏览器 | 参数不验证真实人类授权，也不限制子资源 |\n| 可写reportFile目标 | 保存报告时可选 | 输出md/html/json | 默认不写，显式参数可能覆盖文件 |\n\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 准备 | 维护者固定引擎/浏览器和DSH，选可信无敏感HTML | 明确JS/网络与静态服务目录范围 |\n| 加载 | 安装并挂载工具，单独准备axe CLI | 缺引擎不自动下载安装 |\n| 扫描 | 选择页面、tags和可选报告输出 | 区分错误、incomplete、命中与未覆盖 |\n| 退出 | 确认子进程和临时服务结束，治理报告 | 报告可能含页面HTML片段/路径 |\n\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | axe/浏览器下载与构建环境，金额未知 | 版本、目标、网络/文件权限核对 | 模拟fixture不代表真实引擎可用 |\n| 持续使用 | 逐页浏览器启动/扫描、HTML资源请求 | 排除误报、补人工复核与修复 | 最多50页/深度10，时长未测 |\n| 失败恢复 | 引擎/浏览器安装排错、重扫和报告重建 | 判断部分页面未完成与错误 | 错误不能被0违规掩盖 |\n\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 自动定位 | axe命中映射为impact/selector/修复建议 | 固定真实引擎命中质量与覆盖 |\n| 人工衔接 | incomplete和固定复核清单单列 | 实际键盘/读屏任务是否合格 |\n| 可重复输出 | 同一report生成md/html/json | 不同页面状态和规则版本的可比性 |\n\n\n## 研究问题与完整回答\n\n**插件研究总目标：**核查axe扫描编排、文件/网络边界与自动报告采用成本。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 业务场景和HTML到报告的主链是什么？\n\n**研究主题：**场景与需求、功能与机制\n\n#### 完整回答\n\n面向在DSH工作流核查前端HTML/构建产物的开发者，输入为本地文件/目录或明确选择的URL，输出axe命中、无法判断项和人工复核清单及可选报告。合格交付需目标、引擎/规则/页面覆盖明确，并把错误和未完成与0命中分开；报告不是全站可访问性或合规证书。\n\n工具注入tools/fs/subprocess，经FsAdapter发现最多50页/深度10，本地页启动127.0.0.1静态服务，逐页用npx --no-install axe CLI扫描并解析JSON。report纯函数标准化/排序、附常见建议，再渲染md/html/json。URL不带confirmUrl会在引擎前形成错误，reportFile才通过fs写入报告。实际规则tags按level和wcag21选择一个家族加best-practice，不应凭产品名推断全部规则均覆盖。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:23-30](https://github.com/988hj7tczd-oss/dsh-a11y-scan/blob/8515929d9e914cc0cadd60416676608ea1da03ae/src/index.ts#L23-L30)\n\n工具注册与注入。\n\n```text\n/**\n * Hard dependencies: `tools` (registration), `fs` (target resolution + reads\n * + the opt-in `reportFile` write), `subprocess` (the axe-CLI scan backend).\n */\nexport const inject = ['tools', 'fs', 'subprocess']\n\nexport function apply(ctx: Context): void {\n  ctx.tools.register(defineA11yScanTool(ctx))\n```\n\n**依据 2 · 源码核查**：[src/runner.ts:101-133](https://github.com/988hj7tczd-oss/dsh-a11y-scan/blob/8515929d9e914cc0cadd60416676608ea1da03ae/src/runner.ts#L101-L133)\n\n实际tags与扫描上限。\n\n<details>\n<summary>查看原文（33行）</summary>\n\n```text\nconst LEVEL_TAG_SUFFIXES: Readonly<Record<ScanLevel, string[]>> = {\n  A: ['a'],\n  AA: ['a', 'aa'],\n  AAA: ['a', 'aa', 'aaa'],\n}\n\n/**\n * The axe `runOnly.tags` set for a scan configuration. `wcag21: true` picks\n * the WCAG 2.1 tag family (`wcag21a/aa/aaa`), `false` the classic `wcag2a/\n * aa/aaa` family; `best-practice` is always included. Exported so tests can\n * assert that `level`/`wcag21` switches change the rule set (acceptance 3).\n */\nexport function runOnlyTags(level: ScanLevel, wcag21: boolean): string[] {\n  const base = wcag21 ? 'wcag21' : 'wcag2'\n  const tags = LEVEL_TAG_SUFFIXES[level].map((suffix) => `${base}${suffix}`)\n  tags.push('best-practice')\n  return tags\n}\n\nconst URL_PATTERN = /^https?:\\/\\//i\nconst HTML_EXT = /\\.(html?)$/i\n\nexport function isHttpUrl(path: string): boolean {\n  return URL_PATTERN.test(path)\n}\n\nconst SKIP_DIRECTORIES = new Set([\n  'node_modules', '.git', '.hg', '.svn', '.idea', '.vscode',\n  '__pycache__', '.venv', 'venv', '.cache', '.turbo', '.next/cache',\n])\n\nexport const MAX_PAGES = 50\nconst MAX_DEPTH = 10\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/runner.ts:419-438](https://github.com/988hj7tczd-oss/dsh-a11y-scan/blob/8515929d9e914cc0cadd60416676608ea1da03ae/src/runner.ts#L419-L438)\n\n逐页引擎和finally关服务。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\nexport function createAxeCliEngine(ctx: Context): AxeEngine {\n  const subprocess = ctx.subprocess\n  return {\n    async run(request) {\n      const server = request.rootDir !== null && request.pages.some((page) => !isHttpUrl(page.resource))\n        ? await startStaticServer(request.rootDir)\n        : null\n      const cwd = request.rootDir ?? process.cwd()\n      try {\n        const pageResults: AxePageResult[] = []\n        for (const page of request.pages) {\n          if (request.signal?.aborted === true) break\n          const url = isHttpUrl(page.resource)\n            ? page.resource\n            : (server as StaticServer).urlFor(page.resource)\n          pageResults.push(await runSinglePage(subprocess, { label: page.label, url }, request.tags, cwd, request.signal))\n        }\n        return { engine: 'axe-cli', pages: pageResults }\n      } finally {\n        if (server !== null) await server.close()\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/runner.ts:451-460](https://github.com/988hj7tczd-oss/dsh-a11y-scan/blob/8515929d9e914cc0cadd60416676608ea1da03ae/src/runner.ts#L451-L460)\n\n实际CLI参数。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n  const spec: SubprocessSpawnSpec = {\n    argv: ['npx', '--no-install', '@axe-core/cli', page.url, '--format', 'json', '--tags', tags.join(',')],\n    cwd,\n    stdio: {\n      stdin: 'ignore',\n      stdout: { maxBytes: AXE_CLI_OUTPUT_CAP, spill: { maxBytes: AXE_CLI_SPILL_CAP } },\n      stderr: { maxBytes: 2 * 1024 * 1024 },\n    },\n    graceMs: AXE_CLI_GRACE_MS,\n    signal,\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/runner.ts:561-573](https://github.com/988hj7tczd-oss/dsh-a11y-scan/blob/8515929d9e914cc0cadd60416676608ea1da03ae/src/runner.ts#L561-L573)\n\nURL参数闸门。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n  if (isHttpUrl(target)) {\n    kind = 'url'\n    if (args.confirmUrl !== true) {\n      errors.push({\n        kind: 'url-confirmation-required',\n        message:\n          'URL 扫描需要用户显式确认：请先确认目标 URL 的可信度与网络访问策略，'\n          + '再以 confirmUrl: true 重试。本地文件优先，避免对不可信站点发起浏览器扫描。',\n        retryable: true,\n      })\n    } else {\n      pagesToScan.push({ label: target, resource: target })\n    }\n```\n\n</details>\n\n**依据 6 · 源码核查**：[src/runner.ts:617-638](https://github.com/988hj7tczd-oss/dsh-a11y-scan/blob/8515929d9e914cc0cadd60416676608ea1da03ae/src/runner.ts#L617-L638)\n\n报告装配和显式输出。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n  const report = buildReport({\n    meta: { target, kind, level, wcag21, tags, engine: engineName !== '' ? engineName : 'not-run', timestamp },\n    pages,\n    errors,\n  })\n  let rendered = renderReport(report, out)\n\n  // Opt-in report write; the default remains strictly read-only.\n  let reportPath: string | null = null\n  if (args.reportFile !== undefined && args.reportFile !== '') {\n    try {\n      const target = await fs.resolve(args.reportFile)\n      await fs.writeText(target, rendered)\n      reportPath = target.displayPath\n    } catch (err) {\n      report.errors.push({\n        kind: 'fs',\n        message: `写入报告文件失败（${args.reportFile}）: ${String(err)}`,\n        retryable: true,\n      })\n      rendered = renderReport(report, out)\n    }\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 相对直接axe CLI贡献在哪，文件与网络边界是什么？\n\n**研究主题：**贡献与相对优势、缺陷与关键质疑\n\n#### 完整回答\n\n贡献是把目标发现、引擎前置错误、规则结果定位/建议、人工复核和多格式报告接入DSH结构化工具，降低脚本接线负担。规则检测来自axe，修复建议是规则级常见方法，不是自动修复正确性证据。人工清单清楚提醒自动扫描的限制，不能把固定清单当实际人工验证。\n\n重要边界是只读描述只说明默认不改目标代码，不等页面没有副作用。真实浏览器加载HTML/JS和资源，当前CLI参数没有显示网络拦截；本地HTML也可能引用远程脚本/图片。URL的confirmUrl是调用者布尔参数，不能证明人类确实批准，也没有绑定跳转/子资源范围。\n\n临时静态服务做normalize和字符串目录边界后直接node fsReadFile，未realpath核对符号链接，也绕开FsAdapter作为读取路径。目录内链接可能被本地服务读取到边界外文件，具体可达需页面/宿主环境；不是已复现外泄。服务暴露整个目标目录下可请求资源，而不只已选HTML。报告含页面元素HTML/路径亦需留存治理。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:13-17](https://github.com/988hj7tczd-oss/dsh-a11y-scan/blob/8515929d9e914cc0cadd60416676608ea1da03ae/README.md#L13-L17)\n\n作者只读与人工复核定位。\n\n```text\n\n- **只读扫描**：绝不自动修改代码或文件；写报告文件需显式 `reportFile` 参数。\n- **可编程独立工具**：调用即得结构化结果，可进 CI / Workflow / Agent 循环。\n- **自动化 + 人工复核并存**：axe 扫不到或无法判定的项（焦点顺序语义、键盘操作、朗读顺序等）输出为「需人工复核清单」与 `incomplete` 项。\n\n```\n\n**依据 2 · 源码核查**：[src/report.ts:482-507](https://github.com/988hj7tczd-oss/dsh-a11y-scan/blob/8515929d9e914cc0cadd60416676608ea1da03ae/src/report.ts#L482-L507)\n\n固定人工复核条目。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\nexport const MANUAL_REVIEW_CHECKLIST: ManualReviewItem[] = [\n  {\n    id: 'focus-order',\n    title: '焦点顺序是否与视觉顺序一致',\n    sc: '2.4.3',\n    detail: '用 Tab 走查：遮挡层、弹窗、动态插入内容后的焦点落点与恢复逻辑需人工确认，自动化只能测到 Tab 可达性。',\n  },\n  {\n    id: 'keyboard-trap',\n    title: '无键盘焦点陷阱',\n    sc: '2.1.2',\n    detail: 'Tab 应能离开所有组件；模态/抽屉开启时焦点应被正确圈定并在关闭后归还。',\n  },\n  {\n    id: 'reading-order',\n    title: '屏幕阅读器朗读顺序与标题层级语义',\n    sc: '1.3.2 / 2.4.6',\n    detail: '用 NVDA / VoiceOver 试听：DOM 顺序 ≠ 视觉顺序时确认朗读顺序可理解；h1–h6 层级表达真实内容结构。',\n  },\n  {\n    id: 'alt-quality',\n    title: '非文本内容的替代文本质量',\n    sc: '1.1.1',\n    detail: '自动化只验证 alt 存在；是否准确等价于图片传达的信息需人工判断（数据图、图表、截图类尤其重要）。',\n  },\n  {\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/runner.ts:344-366](https://github.com/988hj7tczd-oss/dsh-a11y-scan/blob/8515929d9e914cc0cadd60416676608ea1da03ae/src/runner.ts#L344-L366)\n\n词法路径检查后serveFile。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\nexport async function startStaticServer(rootDir: string): Promise<StaticServer> {\n  const server: Server = createServer((req: IncomingMessage, res: ServerResponse) => {\n    const requestUrl = req.url ?? '/'\n    // Malformed percent-encoding (e.g. `/%zz`) makes decodeURIComponent throw;\n    // never let a request crash the scan server (or the host process).\n    let pathname: string\n    try {\n      pathname = decodeURIComponent(requestUrl.split('?')[0] ?? '/')\n    } catch {\n      res.writeHead(400, { 'Content-Type': 'text/plain' })\n      res.end('bad request')\n      return\n    }\n    // `normalize` keeps a trailing separator; strip it so confinement checks\n    // and `root + sep` joins are exact.\n    const root = normalize(rootDir).replace(/[/\\\\]+$/, '')\n    const safe = normalize(join(root, pathname))\n    if (safe === root || !safe.startsWith(`${root}${sep}`)) {\n      res.writeHead(404, { 'Content-Type': 'text/plain' })\n      res.end('not found')\n      return\n    }\n    void serveFile(safe, res)\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/runner.ts:388-393](https://github.com/988hj7tczd-oss/dsh-a11y-scan/blob/8515929d9e914cc0cadd60416676608ea1da03ae/src/runner.ts#L388-L393)\n\n原生fsReadFile实际读取。\n\n```text\nfunction serveFile(absPath: string, res: ServerResponse): void {\n  void fsReadFile(absPath)\n    .then((content) => {\n      const ext = (pathBasename(absPath).match(/\\.[a-z0-9]+$/i)?.[0] ?? '').toLowerCase()\n      res.writeHead(200, { 'Content-Type': MIME[ext] ?? 'application/octet-stream' })\n      res.end(content)\n```\n\n**依据 5 · 源码核查**：[src/runner.ts:451-460](https://github.com/988hj7tczd-oss/dsh-a11y-scan/blob/8515929d9e914cc0cadd60416676608ea1da03ae/src/runner.ts#L451-L460)\n\n无所示网络限制的axe执行参数。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n  const spec: SubprocessSpawnSpec = {\n    argv: ['npx', '--no-install', '@axe-core/cli', page.url, '--format', 'json', '--tags', tags.join(',')],\n    cwd,\n    stdio: {\n      stdin: 'ignore',\n      stdout: { maxBytes: AXE_CLI_OUTPUT_CAP, spill: { maxBytes: AXE_CLI_SPILL_CAP } },\n      stderr: { maxBytes: 2 * 1024 * 1024 },\n    },\n    graceMs: AXE_CLI_GRACE_MS,\n    signal,\n```\n\n</details>\n\n**依据 6 · 源码核查**：[src/runner.ts:561-573](https://github.com/988hj7tczd-oss/dsh-a11y-scan/blob/8515929d9e914cc0cadd60416676608ea1da03ae/src/runner.ts#L561-L573)\n\nURL接受依赖布尔参数。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n  if (isHttpUrl(target)) {\n    kind = 'url'\n    if (args.confirmUrl !== true) {\n      errors.push({\n        kind: 'url-confirmation-required',\n        message:\n          'URL 扫描需要用户显式确认：请先确认目标 URL 的可信度与网络访问策略，'\n          + '再以 confirmUrl: true 重试。本地文件优先，避免对不可信站点发起浏览器扫描。',\n        retryable: true,\n      })\n    } else {\n      pagesToScan.push({ label: target, resource: target })\n    }\n```\n\n</details>\n\n#### 缺口\n\n- 实际浏览器网络、重定向、页面脚本和符号链接资源的可达性未复现。\n  **影响：**不能将本地只读扫描称为零网络或物理目录隔离。\n  **进一步探讨：**可先用假资源/无敏感目录夹具检查外部请求和链接解析，再按明确授权研究受限浏览器策略。\n- 固定axe版本下tags对应的规则全集与WCAG覆盖没有独立验证。\n  **影响：**不能把选择wcag21家族等同全部相关要求被检查。\n  **进一步探讨：**可固定axe规则元数据，对照实际tags和未选规则列表，说明漏检边界再评估报告。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 安装、引擎、输出与退出依赖什么？\n\n**研究主题：**依赖、兼容与流程\n\n#### 完整回答\n\n当前package声明registry版DSH内部依赖及Node>=22.18，README顶部仍强调相邻dsh-src/link开发布局，二者应区分，不把旧说明当当前包必然无法装。axe CLI/Chrome不随包提供，需用户预装且目标cwd能解析；工具不自动安装。FsAdapter负责报告输出，但静态服务另用原生fs，不能用适配器权限替它承诺所有读取受控。\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| Node>=22.18及DSH tools/fs/subprocess | 主链必需 | 工具注册、发现/读取和执行 | 当前package为registry版本，旧link说明需辨别 |\n| 用户安装axe CLI及Chrome/Puppeteer | 实际扫描必需 | 加载页面与规则引擎 | 不自动安装，缺失报prerequisite |\n| 可加载HTML/构建产物 | 本地目标必需 | 静态服务页面 | 纯源码目录可能无HTML，扫描不到不等无问题 |\n| URL确认参数与网络策略 | 远程目标必需 | 允许指定目标进入浏览器 | 参数不验证真实人类授权，也不限制子资源 |\n| 可写reportFile目标 | 保存报告时可选 | 输出md/html/json | 默认不写，显式参数可能覆盖文件 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 准备 | 维护者固定引擎/浏览器和DSH，选可信无敏感HTML | 明确JS/网络与静态服务目录范围 |\n| 加载 | 安装并挂载工具，单独准备axe CLI | 缺引擎不自动下载安装 |\n| 扫描 | 选择页面、tags和可选报告输出 | 区分错误、incomplete、命中与未覆盖 |\n| 退出 | 确认子进程和临时服务结束，治理报告 | 报告可能含页面HTML片段/路径 |\n\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:64-68](https://github.com/988hj7tczd-oss/dsh-a11y-scan/blob/8515929d9e914cc0cadd60416676608ea1da03ae/package.json#L64-L68)\n\n当前DSH registry依赖。\n\n```text\n  \"dependencies\": {\n    \"@deepseek-ai/cordis\": \"^4.0.1\",\n    \"@deepseek-ai/dsh-fs\": \"0.1.1-rc.2\",\n    \"@deepseek-ai/dsh-subprocess\": \"0.1.1-rc.2\",\n    \"@deepseek-ai/dsh-tools\": \"0.1.1-rc.2\"\n```\n\n**依据 2 · 源码核查**：[package.json:84-86](https://github.com/988hj7tczd-oss/dsh-a11y-scan/blob/8515929d9e914cc0cadd60416676608ea1da03ae/package.json#L84-L86)\n\nNode引擎。\n\n```text\n  \"engines\": {\n    \"node\": \">=22.18.0\"\n  }\n```\n\n**依据 3 · 作者声明**：[README.md:3-9](https://github.com/988hj7tczd-oss/dsh-a11y-scan/blob/8515929d9e914cc0cadd60416676608ea1da03ae/README.md#L3-L9)\n\n旧开发link前置说明。\n\n```text\n> [!IMPORTANT]\n> **依赖前置：相邻 `dsh-src` 检出（`link:` 依赖）**\n> 本项目在开发形态下使用 `link:` 依赖指向相邻的 DeepSeek Harness 源码检出（`dsh-src`），\n> 与当前仓库保持同一父目录布局（`<parent>/dsh-src`）。克隆本仓库后：\n> 1. 先把官方 `deepseek-ai/deepseek-harness` 检出到与本仓库同级的 `dsh-src/` 目录，并执行其 `pnpm install && pnpm run build`；\n> 2. 再按下方「安装」一节执行本仓库的 `pnpm install --offline && pnpm build` 与测试。\n> 发布到 npm 的版本会尽量把 `link:` 依赖替换为 registry 真实版本；无法替换的内部包保持 `link:`，见各包 README 说明。\n```\n\n**依据 4 · 源码核查**：[src/runner.ts:415-426](https://github.com/988hj7tczd-oss/dsh-a11y-scan/blob/8515929d9e914cc0cadd60416676608ea1da03ae/src/runner.ts#L415-L426)\n\n引擎预装与cwd。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n * Prerequisite (documented in README): `@axe-core/cli` resolves from the\n * target directory (`npm i -D @axe-core/cli`, which pulls puppeteer/Chrome).\n * The tool never installs it automatically — a clear error tells the user how.\n */\nexport function createAxeCliEngine(ctx: Context): AxeEngine {\n  const subprocess = ctx.subprocess\n  return {\n    async run(request) {\n      const server = request.rootDir !== null && request.pages.some((page) => !isHttpUrl(page.resource))\n        ? await startStaticServer(request.rootDir)\n        : null\n      const cwd = request.rootDir ?? process.cwd()\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/runner.ts:280-307](https://github.com/988hj7tczd-oss/dsh-a11y-scan/blob/8515929d9e914cc0cadd60416676608ea1da03ae/src/runner.ts#L280-L307)\n\nFsAdapter与报告写。\n\n<details>\n<summary>查看原文（28行）</summary>\n\n```text\n  }\n  return {\n    async resolve(path) {\n      const target = await ctx.fs.resolve(path)\n      return { handle: { target } satisfies CtxFsHandle, displayPath: target.displayPath }\n    },\n    async stat(target) {\n      const info = await ctx.fs.stat(toTarget(target))\n      if (info === undefined) return undefined\n      return { type: info.type, size: info.size }\n    },\n    async listDir(target) {\n      const entries = await ctx.fs.listDir(toTarget(target))\n      return entries.map((entry) => ({\n        name: entry.name,\n        type: entry.type,\n        target: {\n          handle: { target: entry.target } satisfies CtxFsHandle,\n          displayPath: entry.target.displayPath,\n        },\n      }))\n    },\n    async readText(target) {\n      return ctx.fs.readText(toTarget(target))\n    },\n    async writeText(target, content) {\n      await ctx.fs.writeText(toTarget(target), content)\n    },\n```\n\n</details>\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 三阶段成本和效果如何判断？\n\n**研究主题：**效果与总成本\n\n#### 完整回答\n\n共同任务应是同页面状态检出并人工确认/修复真实缺陷，而不是输出报告文件。扫描要浏览器、静态资源及逐页执行，最多50页与深度10是覆盖边界，不代表50页耗时固定；未发现HTML、引擎缺失或某页失败不能被解读为无障碍通过。\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | axe/浏览器下载与构建环境，金额未知 | 版本、目标、网络/文件权限核对 | 模拟fixture不代表真实引擎可用 |\n| 持续使用 | 逐页浏览器启动/扫描、HTML资源请求 | 排除误报、补人工复核与修复 | 最多50页/深度10，时长未测 |\n| 失败恢复 | 引擎/浏览器安装排错、重扫和报告重建 | 判断部分页面未完成与错误 | 错误不能被0违规掩盖 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 自动定位 | axe命中映射为impact/selector/修复建议 | 固定真实引擎命中质量与覆盖 |\n| 人工衔接 | incomplete和固定复核清单单列 | 实际键盘/读屏任务是否合格 |\n| 可重复输出 | 同一report生成md/html/json | 不同页面状态和规则版本的可比性 |\n\n与直接axe CLI加人工报告对照时，需计引擎部署、误报/漏检分析、键盘/读屏复核与重扫，不能按规则命中数推断生产率。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/runner.ts:132-133](https://github.com/988hj7tczd-oss/dsh-a11y-scan/blob/8515929d9e914cc0cadd60416676608ea1da03ae/src/runner.ts#L132-L133)\n\n页数和深度上限。\n\n```text\nexport const MAX_PAGES = 50\nconst MAX_DEPTH = 10\n```\n\n**依据 2 · 源码核查**：[src/runner.ts:199-205](https://github.com/988hj7tczd-oss/dsh-a11y-scan/blob/8515929d9e914cc0cadd60416676608ea1da03ae/src/runner.ts#L199-L205)\n\n无HTML明确错误。\n\n```text\n  const files = await collectHtmlFiles(fs, root, 0)\n  if (files.length === 0) {\n    throw new TargetError(\n      'no-html',\n      `在 ${root.displayPath} 未发现 HTML 文件（已扫描子目录，含 dist/out/build 构建产物）。`\n      + '如为纯 JS 前端项目，请先构建产生 HTML，或把 path 指向 vite/next 的构建输出目录。',\n      false,\n```\n\n**依据 3 · 源码核查**：[src/runner.ts:428-438](https://github.com/988hj7tczd-oss/dsh-a11y-scan/blob/8515929d9e914cc0cadd60416676608ea1da03ae/src/runner.ts#L428-L438)\n\n逐页执行及清理。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n        const pageResults: AxePageResult[] = []\n        for (const page of request.pages) {\n          if (request.signal?.aborted === true) break\n          const url = isHttpUrl(page.resource)\n            ? page.resource\n            : (server as StaticServer).urlFor(page.resource)\n          pageResults.push(await runSinglePage(subprocess, { label: page.label, url }, request.tags, cwd, request.signal))\n        }\n        return { engine: 'axe-cli', pages: pageResults }\n      } finally {\n        if (server !== null) await server.close()\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/report.ts:482-507](https://github.com/988hj7tczd-oss/dsh-a11y-scan/blob/8515929d9e914cc0cadd60416676608ea1da03ae/src/report.ts#L482-L507)\n\n人工复核保留。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\nexport const MANUAL_REVIEW_CHECKLIST: ManualReviewItem[] = [\n  {\n    id: 'focus-order',\n    title: '焦点顺序是否与视觉顺序一致',\n    sc: '2.4.3',\n    detail: '用 Tab 走查：遮挡层、弹窗、动态插入内容后的焦点落点与恢复逻辑需人工确认，自动化只能测到 Tab 可达性。',\n  },\n  {\n    id: 'keyboard-trap',\n    title: '无键盘焦点陷阱',\n    sc: '2.1.2',\n    detail: 'Tab 应能离开所有组件；模态/抽屉开启时焦点应被正确圈定并在关闭后归还。',\n  },\n  {\n    id: 'reading-order',\n    title: '屏幕阅读器朗读顺序与标题层级语义',\n    sc: '1.3.2 / 2.4.6',\n    detail: '用 NVDA / VoiceOver 试听：DOM 顺序 ≠ 视觉顺序时确认朗读顺序可理解；h1–h6 层级表达真实内容结构。',\n  },\n  {\n    id: 'alt-quality',\n    title: '非文本内容的替代文本质量',\n    sc: '1.1.1',\n    detail: '自动化只验证 alt 存在；是否准确等价于图片传达的信息需人工判断（数据图、图表、截图类尤其重要）。',\n  },\n  {\n```\n\n</details>\n\n#### 缺口\n\n- 没有同真实引擎/页面集的命中质量、时延、资源与人工修复对照。\n  **影响：**不能承诺合规、准确率或净节省。\n  **进一步探讨：**可先固定页面、规则版本及已知缺陷，对照CLI和人工复核记录漏检、误报、耗时与最终修复质量。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 可复用工程和能力清单假设怎样检验？\n\n**研究主题：**工程质量与复用、新假设与验证\n\n#### 完整回答\n\n可复用的是FsAdapter/AxeEngine可注入seam、目标计划和报告纯函数分离、错误作为报告结构、URL闸门在引擎前以及finally关本地服务。HTML报告把嵌入JSON的<转义，防止元素HTML中的script结束标签破坏嵌入。模拟engine适合确定性编排测试，但不能代替真实浏览器规则验证。\n\n由Q02可探讨未验证的“扫描能力清单”。执行前绑定选定HTML及资源realpath、规则/引擎版本、允许网络源和报告路径，静态服务只暴露计划文件，浏览器默认拦外部网络，新增资源或重定向需明确范围。相对当前目录级服务和confirmUrl布尔，它使扫描实际读取/访问可审阅。代价是动态前端资源发现、网络依赖与规则兼容。可用链接逃逸、HTML外链、重定向和缺资源夹具比较越界读取/网络与命中损失；若限制导致隐蔽漏扫或仍访问未列资源，应修正/否定。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/runner.ts:65-92](https://github.com/988hj7tczd-oss/dsh-a11y-scan/blob/8515929d9e914cc0cadd60416676608ea1da03ae/src/runner.ts#L65-L92)\n\n可注入engine/fs界面。\n\n<details>\n<summary>查看原文（28行）</summary>\n\n```text\nexport interface AxeEngine {\n  run(request: AxeRunRequest): Promise<AxeRunResult>\n}\n\n/** Minimal filesystem surface the scanner needs (subset of `ctx.fs`). */\nexport interface FsAdapterTarget {\n  /** Opaque backend identity. Real adapter stores the backend FsTarget. */\n  handle: unknown\n  /** Model/UI-facing path. */\n  displayPath: string\n}\n\nexport interface FsAdapterDirEntry {\n  name: string\n  type: 'file' | 'directory' | 'other'\n  target: FsAdapterTarget\n}\n\nexport interface FsAdapter {\n  resolve(path: string): Promise<FsAdapterTarget>\n  stat(target: FsAdapterTarget): Promise<{ type: 'file' | 'directory' | 'other'; size?: number } | undefined>\n  listDir(target: FsAdapterTarget): Promise<FsAdapterDirEntry[]>\n  readText(target: FsAdapterTarget): Promise<string>\n  /**\n   * Only used for the opt-in `reportFile` write; must be idempotent for the\n   * report content (the scanner's default is strictly read-only).\n   */\n  writeText(target: FsAdapterTarget, content: string): Promise<void>\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/runner.ts:419-438](https://github.com/988hj7tczd-oss/dsh-a11y-scan/blob/8515929d9e914cc0cadd60416676608ea1da03ae/src/runner.ts#L419-L438)\n\nfinally关闭服务。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\nexport function createAxeCliEngine(ctx: Context): AxeEngine {\n  const subprocess = ctx.subprocess\n  return {\n    async run(request) {\n      const server = request.rootDir !== null && request.pages.some((page) => !isHttpUrl(page.resource))\n        ? await startStaticServer(request.rootDir)\n        : null\n      const cwd = request.rootDir ?? process.cwd()\n      try {\n        const pageResults: AxePageResult[] = []\n        for (const page of request.pages) {\n          if (request.signal?.aborted === true) break\n          const url = isHttpUrl(page.resource)\n            ? page.resource\n            : (server as StaticServer).urlFor(page.resource)\n          pageResults.push(await runSinglePage(subprocess, { label: page.label, url }, request.tags, cwd, request.signal))\n        }\n        return { engine: 'axe-cli', pages: pageResults }\n      } finally {\n        if (server !== null) await server.close()\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/report.ts:682-690](https://github.com/988hj7tczd-oss/dsh-a11y-scan/blob/8515929d9e914cc0cadd60416676608ea1da03ae/src/report.ts#L682-L690)\n\nHTML JSON嵌入转义。\n\n```text\nexport function renderHtml(report: A11yReport, template: string = defaultTemplateHtml): string {\n  const json = JSON.stringify(buildHtmlProjection(report))\n    // Never let `</script>` inside element HTML break the embed.\n    .replace(/</g, '\\\\u003c')\n  if (!template.includes(TEMPLATE_DATA_MARKER)) {\n    throw new Error('report template is missing the data marker __A11Y_DATA_JSON__')\n  }\n  return template.replace(TEMPLATE_DATA_MARKER, json)\n}\n```\n\n**依据 4 · 源码核查**：[src/runner.ts:344-366](https://github.com/988hj7tczd-oss/dsh-a11y-scan/blob/8515929d9e914cc0cadd60416676608ea1da03ae/src/runner.ts#L344-L366)\n\n能力计划假设针对静态服务。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\nexport async function startStaticServer(rootDir: string): Promise<StaticServer> {\n  const server: Server = createServer((req: IncomingMessage, res: ServerResponse) => {\n    const requestUrl = req.url ?? '/'\n    // Malformed percent-encoding (e.g. `/%zz`) makes decodeURIComponent throw;\n    // never let a request crash the scan server (or the host process).\n    let pathname: string\n    try {\n      pathname = decodeURIComponent(requestUrl.split('?')[0] ?? '/')\n    } catch {\n      res.writeHead(400, { 'Content-Type': 'text/plain' })\n      res.end('bad request')\n      return\n    }\n    // `normalize` keeps a trailing separator; strip it so confinement checks\n    // and `root + sep` joins are exact.\n    const root = normalize(rootDir).replace(/[/\\\\]+$/, '')\n    const safe = normalize(join(root, pathname))\n    if (safe === root || !safe.startsWith(`${root}${sep}`)) {\n      res.writeHead(404, { 'Content-Type': 'text/plain' })\n      res.end('not found')\n      return\n    }\n    void serveFile(safe, res)\n```\n\n</details>\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 当前建议、继续研究入口和停止条件是什么？\n\n**研究主题：**采用判断\n\n#### 完整回答\n\n推荐trial，限可信无敏感HTML、明确网络边界且已固定axe/浏览器的开发者，作为自动检查线索。默认不修改代码和不自动安装引擎有实用价值，但本地HTML不是天然无网络，报告也不代表真实用户任务可访问。先保留人工复核，不把产品文字作为合规保证。\n\n继续探讨可先用无敏感夹具核对静态服务物理路径和浏览器请求，再固定实际tags覆盖与真实引擎输出。发现计划外资源/网络访问、引擎未运行却被当通过、报告输出路径不明或页面超过上限仍称全站完成，应停止并修正范围。Q02/Q04的隔离/覆盖与完整任务结果影响扩大采用，本轮未执行扫描。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/runner.ts:344-393](https://github.com/988hj7tczd-oss/dsh-a11y-scan/blob/8515929d9e914cc0cadd60416676608ea1da03ae/src/runner.ts#L344-L393)\n\n本地服务物理路径边界。\n\n<details>\n<summary>查看原文（50行）</summary>\n\n```text\nexport async function startStaticServer(rootDir: string): Promise<StaticServer> {\n  const server: Server = createServer((req: IncomingMessage, res: ServerResponse) => {\n    const requestUrl = req.url ?? '/'\n    // Malformed percent-encoding (e.g. `/%zz`) makes decodeURIComponent throw;\n    // never let a request crash the scan server (or the host process).\n    let pathname: string\n    try {\n      pathname = decodeURIComponent(requestUrl.split('?')[0] ?? '/')\n    } catch {\n      res.writeHead(400, { 'Content-Type': 'text/plain' })\n      res.end('bad request')\n      return\n    }\n    // `normalize` keeps a trailing separator; strip it so confinement checks\n    // and `root + sep` joins are exact.\n    const root = normalize(rootDir).replace(/[/\\\\]+$/, '')\n    const safe = normalize(join(root, pathname))\n    if (safe === root || !safe.startsWith(`${root}${sep}`)) {\n      res.writeHead(404, { 'Content-Type': 'text/plain' })\n      res.end('not found')\n      return\n    }\n    void serveFile(safe, res)\n  })\n  await new Promise<void>((resolveListen, rejectListen) => {\n    server.once('error', rejectListen)\n    server.listen(0, '127.0.0.1', () => resolveListen())\n  })\n  const address = server.address()\n  const port = address !== null && typeof address === 'object' ? address.port : 0\n  const origin = `http://127.0.0.1:${port}`\n  return {\n    origin,\n    urlFor(rel) {\n      return `${origin}/${rel.split(sep).join('/')}`\n    },\n    close() {\n      return new Promise<void>((resolveClose) => {\n        server.close(() => resolveClose())\n      })\n    },\n  }\n}\n\nfunction serveFile(absPath: string, res: ServerResponse): void {\n  void fsReadFile(absPath)\n    .then((content) => {\n      const ext = (pathBasename(absPath).match(/\\.[a-z0-9]+$/i)?.[0] ?? '').toLowerCase()\n      res.writeHead(200, { 'Content-Type': MIME[ext] ?? 'application/octet-stream' })\n      res.end(content)\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/runner.ts:561-573](https://github.com/988hj7tczd-oss/dsh-a11y-scan/blob/8515929d9e914cc0cadd60416676608ea1da03ae/src/runner.ts#L561-L573)\n\nURL闸门。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n  if (isHttpUrl(target)) {\n    kind = 'url'\n    if (args.confirmUrl !== true) {\n      errors.push({\n        kind: 'url-confirmation-required',\n        message:\n          'URL 扫描需要用户显式确认：请先确认目标 URL 的可信度与网络访问策略，'\n          + '再以 confirmUrl: true 重试。本地文件优先，避免对不可信站点发起浏览器扫描。',\n        retryable: true,\n      })\n    } else {\n      pagesToScan.push({ label: target, resource: target })\n    }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/report.ts:482-507](https://github.com/988hj7tczd-oss/dsh-a11y-scan/blob/8515929d9e914cc0cadd60416676608ea1da03ae/src/report.ts#L482-L507)\n\n人工复核必要性。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\nexport const MANUAL_REVIEW_CHECKLIST: ManualReviewItem[] = [\n  {\n    id: 'focus-order',\n    title: '焦点顺序是否与视觉顺序一致',\n    sc: '2.4.3',\n    detail: '用 Tab 走查：遮挡层、弹窗、动态插入内容后的焦点落点与恢复逻辑需人工确认，自动化只能测到 Tab 可达性。',\n  },\n  {\n    id: 'keyboard-trap',\n    title: '无键盘焦点陷阱',\n    sc: '2.1.2',\n    detail: 'Tab 应能离开所有组件；模态/抽屉开启时焦点应被正确圈定并在关闭后归还。',\n  },\n  {\n    id: 'reading-order',\n    title: '屏幕阅读器朗读顺序与标题层级语义',\n    sc: '1.3.2 / 2.4.6',\n    detail: '用 NVDA / VoiceOver 试听：DOM 顺序 ≠ 视觉顺序时确认朗读顺序可理解；h1–h6 层级表达真实内容结构。',\n  },\n  {\n    id: 'alt-quality',\n    title: '非文本内容的替代文本质量',\n    sc: '1.1.1',\n    detail: '自动化只验证 alt 存在；是否准确等价于图片传达的信息需人工判断（数据图、图表、截图类尤其重要）。',\n  },\n  {\n```\n\n</details>\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：09a48d311993b149eb5eae954e78346ff99c7c61a8533f9e5338c4c2952e146a。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 3 | 237 | — | — | 2851 |\n| .ts | source | 4 | 1910 | 1538 | 251 | — |\n| .ts | test | 2 | 467 | 369 | 48 | — |\n\n排除 1 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| HTML发现 | 文件/目录页面选择 | 50页/深度10，非动态全站爬取 |\n| axe编排 | 浏览器规则命中 | 需另装引擎，不代表合规认证 |\n| 报告 | 定位/建议/人工复核 | 页面片段有留存责任 |\n| URL/输出 | 可选网络扫描/写报告 | 参数显式不等独立授权 |\n\n## 工程亮点\n\n可复用的是FsAdapter/AxeEngine可注入seam、目标计划和报告纯函数分离、错误作为报告结构、URL闸门在引擎前以及finally关本地服务。HTML报告把嵌入JSON的<转义，防止元素HTML中的script结束标签破坏嵌入。模拟engine适合确定性编排测试，但不能代替真实浏览器规则验证。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 src/index.ts、src/runner.ts、README.md、src/report.ts、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定工具、runner目标/CLI/静态服务/报告写及report人工清单和HTML嵌入；未执行引擎、页面或宿主，不认证WCAG全覆盖。\n- 下一步：进一步探讨可用链接/外链/重定向夹具和固定缺陷页面集核对资源边界、规则覆盖、命中与完整人时。\n",
         "metadata": {
             "repository": "988hj7tczd-oss/dsh-a11y-scan",
             "repository_id": 1344715270,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T05:39:56.584Z",
+            "window_start": "2026-09-22T05:39:56.584Z",
             "stars": 0,
             "pushed_at": "2026-08-24T14:53:56Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-a11y-scan%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640E:3FDBB6:155500:230BA2:6AD84ABD and timestamp 2026-10-21 05:16:45 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-a11y-scan%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6417:90BBC:14D36A:2285FB:6AD84ABD and timestamp 2026-10-21 05:16:45 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-a11y-scan%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641B:E4386:154749:22F3D5:6AD84ABE and timestamp 2026-10-21 05:16:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-a11y-scan%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6407:1CA5E4:152156:22E185:6AD84ABE and timestamp 2026-10-21 05:16:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-a11y-scan%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641C:1CA4C8:14E0EC:22996F:6AD84ABE and timestamp 2026-10-21 05:16:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "dsh-a11y-scan",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 86,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-a11y-scan",
+                "captured_at": "2026-10-22T05:40:07.056Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 83,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-a11y-scan",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-08-24T10:55:13.372Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T05:40:07.056Z",
                     "source_url": "https://registry.npmjs.org/dsh-a11y-scan",
                     "error": null,
                     "latest_version": "0.1.0",
                     "latest_published_at": "2026-08-24T10:55:13.781Z",
                     "latest_error": null
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "8515929d9e914cc0cadd60416676608ea1da03ae",
-                "current_revision": "8515929d9e914cc0cadd60416676608ea1da03ae",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {
@@ -443,14 +455,14 @@
             "repository": "988hj7tczd-oss/dsh-a11y-scan",
             "path": "",
             "revision": "8515929d9e914cc0cadd60416676608ea1da03ae",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "95d23bc6396abada38caf729aa1fac5738cbc94350421d3b178aa5deb7346628",
                 "code": "8515929d9e914cc0cadd60416676608ea1da03ae",
                 "maintenance": "c13f06276cf398e226f2cce6d1adbac4ad994bf207438e4b8191835a5cc5debb"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

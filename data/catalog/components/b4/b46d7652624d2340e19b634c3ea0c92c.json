@@ -13,7 +13,7 @@
             "name": "dsh-tts-flash",
             "entry_type": "plugin",
             "technical_category": "interface-input",
-            "business_category": "personal-productivity",
+            "business_category": "infrastructure",
             "tags": [],
             "availability": "unknown",
             "research_depth": "source",
@@ -24,36 +24,88 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-20-08-github-1363291561-root-directory-0",
+                    "id": "2026-10-22-02-github-1363291561-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
-                    "retrieved_at": "2026-10-20T10:48:00.608Z",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-22T07:16:05.648Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-20-08-github-1363291561-root-author",
+                    "id": "2026-10-22-02-github-1363291561-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/2021Heei/dsh-tts-flash/blob/a23020b72a5c403e3dc50527b3ef43c6e55c739a/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/2021Heei/dsh-tts-flash",
+                            "commit": "a23020b72a5c403e3dc50527b3ef43c6e55c739a",
+                            "path": "README.md",
+                            "content_sha256": "2886bbc81e1ae5f86eb64287b2dd8273646bce8f77c62fcceee05cd4990b981b"
+                        }
+                    ],
                     "revision": "a23020b72a5c403e3dc50527b3ef43c6e55c739a",
-                    "captured_at": "2026-10-20T10:48:00.608Z",
-                    "summary": "为 DSH 流式回复提供语音朗读、字幕浮条及等待短语，支持 Edge 与 OpenAI 兼容语音服务。",
-                    "artifact": "data/runs/2026-10-20-08/snapshots/2021heei--dsh-tts-flash/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T07:16:05.648Z",
+                    "summary": "DSH 桌面端流式回复语音朗读与等待短语播放插件，支持 Edge 和云端 TTS。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/2021heei--dsh-tts-flash/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-20-08-github-1363291561-root-source",
+                    "id": "2026-10-22-02-github-1363291561-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/2021Heei/dsh-tts-flash/blob/a23020b72a5c403e3dc50527b3ef43c6e55c739a/src/index.ts",
+                    "url": "https://github.com/2021Heei/dsh-tts-flash/blob/a23020b72a5c403e3dc50527b3ef43c6e55c739a/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/2021Heei/dsh-tts-flash",
+                            "commit": "a23020b72a5c403e3dc50527b3ef43c6e55c739a",
+                            "path": "README.md",
+                            "content_sha256": "2886bbc81e1ae5f86eb64287b2dd8273646bce8f77c62fcceee05cd4990b981b"
+                        },
+                        {
+                            "repository_url": "https://github.com/2021Heei/dsh-tts-flash",
+                            "commit": "a23020b72a5c403e3dc50527b3ef43c6e55c739a",
+                            "path": "src/index.ts",
+                            "content_sha256": "21ed83db6ae70ca68bdfed9ff038403c36eaddd6bb2fb071772cd385c286f31e"
+                        },
+                        {
+                            "repository_url": "https://github.com/2021Heei/dsh-tts-flash",
+                            "commit": "a23020b72a5c403e3dc50527b3ef43c6e55c739a",
+                            "path": "src/speak-queue.ts",
+                            "content_sha256": "49e0ebb1f2205da562eb320db15aec18a998f003adff71aa63cef1ee6bfc338e"
+                        },
+                        {
+                            "repository_url": "https://github.com/2021Heei/dsh-tts-flash",
+                            "commit": "a23020b72a5c403e3dc50527b3ef43c6e55c739a",
+                            "path": "src/settings-store.ts",
+                            "content_sha256": "487f723d625c297f4edb45286b940682ae43d4a630bd7940fdc7cea48e127068"
+                        },
+                        {
+                            "repository_url": "https://github.com/2021Heei/dsh-tts-flash",
+                            "commit": "a23020b72a5c403e3dc50527b3ef43c6e55c739a",
+                            "path": "src/providers/openai-tts.provider.ts",
+                            "content_sha256": "c95660a5cc3d305f39c2375f1e205cdb36de22e69f77263c303e5410899406f7"
+                        },
+                        {
+                            "repository_url": "https://github.com/2021Heei/dsh-tts-flash",
+                            "commit": "a23020b72a5c403e3dc50527b3ef43c6e55c739a",
+                            "path": "src/segmenter.ts",
+                            "content_sha256": "c0e7bcb0efd985245b8d3ff0fcc461f0679db7167ec7f2516e7b84617cc68ce2"
+                        },
+                        {
+                            "repository_url": "https://github.com/2021Heei/dsh-tts-flash",
+                            "commit": "a23020b72a5c403e3dc50527b3ef43c6e55c739a",
+                            "path": "package.json",
+                            "content_sha256": "3756e2e581f08eef62b33611cb2b5bd842fbf94d800e563bfbd74b5dc35b6ee5"
+                        }
+                    ],
                     "revision": "a23020b72a5c403e3dc50527b3ef43c6e55c739a",
-                    "captured_at": "2026-10-20T10:48:00.608Z",
-                    "summary": "核查 src/index.ts、src/speak-queue.ts、src/segmenter.ts、src/providers/edge-tts.provider.ts；src/index.ts 在 llm/stream 旁路分句和短句合并，src/speak-queue.ts 按会话串行合成并经 SSE 发布；epoch 使取消前的在途音频失效，等待短语可直接使用缓存字节。",
-                    "artifact": "data/runs/2026-10-20-08/snapshots/2021heei--dsh-tts-flash/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T07:16:05.648Z",
+                    "summary": "核查 README.md、src/index.ts、src/speak-queue.ts、src/settings-store.ts、src/providers/openai-tts.provider.ts、src/segmenter.ts、package.json；旁路文本流分句入队，串行 TTS 转 base64 音频 SSE；epoch 取消与12句背压。详见[Q02](#research-q02)。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/2021heei--dsh-tts-flash/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "只核查固定版本的 host 管线、队列、分句和 Edge provider；未运行语音服务、未测浏览器自动播放、未独立复核延迟或语言质量。",
+                        "只读核固定提交 README.md、src/index.ts、src/speak-queue.ts、src/settings-store.ts、src/providers/openai-tts.provider.ts 等；未执行插件或目标宿主。旧 META 仅复用。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +116,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "适合希望边听边看长回复的桌面用户；交付物是与当前会话对应的可中止音频及字幕，而非离线音频档案。",
+                    "text": "桌面会话的听读辅助与等待反馈，适合可联网/可播放音频的本机环境。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1363291561-root-source"
+                        "2026-10-22-02-github-1363291561-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +127,16 @@
                             "fingerprint": "a23020b72a5c403e3dc50527b3ef43c6e55c739a"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:48:00.608Z",
+                    "reviewed_at": "2026-10-22T07:16:05.648Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "src/index.ts 在 llm/stream 旁路分句和短句合并，src/speak-queue.ts 按会话串行合成并经 SSE 发布；epoch 使取消前的在途音频失效，等待短语可直接使用缓存字节。",
+                    "text": "旁路文本流分句入队，串行 TTS 转 base64 音频 SSE；epoch 取消与12句背压。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1363291561-root-source"
+                        "2026-10-22-02-github-1363291561-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +145,16 @@
                             "fingerprint": "a23020b72a5c403e3dc50527b3ef43c6e55c739a"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:48:00.608Z",
+                    "reviewed_at": "2026-10-22T07:16:05.648Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "只核查固定版本的 host 管线、队列、分句和 Edge provider；未运行语音服务、未测浏览器自动播放、未独立复核延迟或语言质量。",
+                    "text": "只读核固定提交 README.md、src/index.ts、src/speak-queue.ts、src/settings-store.ts、src/providers/openai-tts.provider.ts 等；未执行插件或目标宿主。旧 META 仅复用。",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1363291561-root-source"
+                        "2026-10-22-02-github-1363291561-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +163,16 @@
                             "fingerprint": "a23020b72a5c403e3dc50527b3ef43c6e55c739a"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:48:00.608Z",
+                    "reviewed_at": "2026-10-22T07:16:05.648Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "package.json 声明 lib/index.js 与 lib/client.js，build.mjs 打包源码；依赖 msedge-tts，语音基础设施由第三方实现，不把演示视频作为独立验收。",
+                    "text": "作者给出构建并 npm pack 后通过 DSH 插件流程安装；本轮未实装。",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1363291561-root-source"
+                        "2026-10-22-02-github-1363291561-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +181,16 @@
                             "fingerprint": "a23020b72a5c403e3dc50527b3ef43c6e55c739a"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:48:00.608Z",
+                    "reviewed_at": "2026-10-22T07:16:05.648Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "默认 Edge 不需用户密钥，但联网和非公开服务可用性是持续成本；云端 TTS 按供应商计费，失败句和等待短语首次生成也可能消耗额度。首次配置音色/自动播放权限和日常核对漏句耗费人工，未测单位任务价格或耗时。",
+                    "text": "#### 成本\n\n| 阶段 | 资源成本 | 人工投入 | 边界 |\n| --- | --- | --- | --- |\n| 安装 | DSH 桌面/构建依赖 | 配浮条/音色 | 兼容未测 |\n| 合成 | Edge 网络或云端计费 | 调语速/音量 | 延时与金额未知 |\n| 恢复 | 重新选引擎/检查日志 | 检查权限与取消 | 后台请求仍可能完成 |",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1363291561-root-source"
+                        "2026-10-22-02-github-1363291561-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +199,16 @@
                             "fingerprint": "a23020b72a5c403e3dc50527b3ef43c6e55c739a"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:48:00.608Z",
+                    "reviewed_at": "2026-10-22T07:16:05.648Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "需要听当前回复的用户可先用非敏感短文试用，确认窗口切换、停止和自动播放正常；长回复必须对照文字检查是否跳句，不适合直接当完整有声文稿导出器。",
+                    "text": "先在隔离桌面试听 Edge，再用受控云密钥验证长回复、中断、权限与费用。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1363291561-root-source"
+                        "2026-10-22-02-github-1363291561-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +217,16 @@
                             "fingerprint": "a23020b72a5c403e3dc50527b3ef43c6e55c739a"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:48:00.608Z",
+                    "reviewed_at": "2026-10-22T07:16:05.648Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "把生成和收听重叠可能缩短开始收听的等待；上游合成慢时会转移为内容遗漏，收益取决于回复速度、音色合成速度和用户是否需要全文，尚无同条件节时数据。",
+                    "text": "#### 效果\n\n| 效果项 | 源码支持 | 未证实 |\n| --- | --- | --- |\n| 边输出边朗读 | tap+队列+SSE | 实际延时 |\n| 停止 | epoch 丢旧结果 | 请求/费用取消 |\n| 云端引擎 | 声明与双路径 | 所有服务兼容 |",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1363291561-root-source"
+                        "2026-10-22-02-github-1363291561-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +235,16 @@
                             "fingerprint": "a23020b72a5c403e3dc50527b3ef43c6e55c739a"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:48:00.608Z",
+                    "reviewed_at": "2026-10-22T07:16:05.648Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "值得借鉴的是 src/speak-queue.ts 的 epoch 取消：不必等外部合成真正取消，就能抑制过时结果；移植需补浏览器正在播放音频的停止契约。provider 在 pump 开始时取一次，热切换引擎与旧 provider 延迟 dispose 的交互需用长队列验证，不能把统一接口当作所有引擎行为完全相同。",
+                    "text": "分句与队列分层清楚，但音频背压有损且路由错误/凭据边界需收紧。详见[Q02](#research-q02)至[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1363291561-root-source"
+                        "2026-10-22-02-github-1363291561-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,15 +253,69 @@
                             "fingerprint": "a23020b72a5c403e3dc50527b3ef43c6e55c739a"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:48:00.608Z",
+                    "reviewed_at": "2026-10-22T07:16:05.648Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "把桌面浮条、等待语音和可替换 TTS 引擎接入 DSH 文本流。详见[Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1363291561-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1363291561:root",
+                            "area": "code",
+                            "fingerprint": "a23020b72a5c403e3dc50527b3ef43c6e55c739a"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T07:16:05.648Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "朗读音频不是完整覆盖；/engines 返回含 apiKey，探测把非401/403错误视可用，readJsonBody 异常分支引用未定义 res。详见[Q02](#research-q02)至[Q04](#research-q04)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1363291561-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1363291561:root",
+                            "area": "code",
+                            "fingerprint": "a23020b72a5c403e3dc50527b3ef43c6e55c739a"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T07:16:05.648Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "未验证改进为传播取消信号、引擎列表脱敏、成功码探测和统一同步/异步路由错误处理。详见[Q05](#research-q05)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1363291561-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1363291561:root",
+                            "area": "code",
+                            "fingerprint": "a23020b72a5c403e3dc50527b3ef43c6e55c739a"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T07:16:05.648Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-20T10:48:00.608Z",
+            "last_checked_at": "2026-10-22T07:16:05.648Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "a23020b72a5c403e3dc50527b3ef43c6e55c739a",
-                "reviewed_at": "2026-10-20T10:48:00.608Z",
+                "reviewed_at": "2026-10-22T07:16:05.648Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -221,61 +327,61 @@
                 "technical": {
                     "criteria": {
                         "novelty": 9,
-                        "mechanism": 8,
-                        "transferability": 10,
-                        "simplification": 4
+                        "mechanism": 23,
+                        "transferability": 15,
+                        "simplification": 8
                     },
-                    "rationale": "novelty：相对已归属 dsh-voice 是局部多引擎扩展；mechanism：epoch 沿用式取消与缓存直通为小幅组合；transferability：provider/队列职责有实质复用价值但未跨宿主验证；simplification：等待/正文共用管线小幅简化。",
+                    "rationale": "旁路流和可取消队列有工程价值，凭据和错误路径降低成熟度。",
                     "basis": "interpretation",
-                    "score": 31,
+                    "score": 55,
                     "evidence_ids": [
-                        "2026-10-20-08-github-1363291561-root-source"
+                        "2026-10-22-02-github-1363291561-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 9,
-                        "delivery": 8,
+                        "workflow": 26,
+                        "delivery": 15,
                         "reach": 10,
                         "economics": 4
                     },
-                    "rationale": "workflow：减少复制但不改变交付责任，小幅；delivery：音频与字幕是现有文本的有限增量；reach：对边听边看人群有实质入口拓展但未验证无障碍合格性；economics：缓存可少重复合成，小幅、无费用实测。",
+                    "rationale": "听读体验场景明确，真实延时/计费未量化。",
                     "basis": "interpretation",
-                    "score": 31,
+                    "score": 55,
                     "evidence_ids": [
-                        "2026-10-20-08-github-1363291561-root-source"
+                        "2026-10-22-02-github-1363291561-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "trial",
-                "reason": "需要边听边看者可用非敏感短文试用；确认停止、自动播放与窗口切换，长文须核对积压丢句。",
+                "decision": "observe",
+                "reason": "适合隔离桌面试用；云端凭据与路由权限、异常路径修复前谨慎扩用。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "当前会话长回复收听明确，不适合作完整音频档案。"
+                        "rationale": "桌面听读与等待反馈场景清晰。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "流式分句与SSE减少复制到TTS步骤，但非新合成能力。"
+                        "rationale": "边输出边读和多引擎有便利。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "队列epoch和MAX_PENDING=12已查，全文无损与节时未验。"
+                        "rationale": "源码可核，目标运行未验。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "Edge服务无SLA或另配付费TTS，漏句复核和密钥管理有负担。"
+                        "score": 5,
+                        "rationale": "云端费用、延时、隐私和失败恢复未知。"
                     }
                 },
-                "score": 59,
+                "score": 54,
                 "revision": "a23020b72a5c403e3dc50527b3ef43c6e55c739a",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T07:16:05.648Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-20-08-github-1363291561-root-source"
+                    "2026-10-22-02-github-1363291561-root-source"
                 ],
                 "dependencies": [
                     {
@@ -300,29 +406,31 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-20T10:40:14Z",
-            "analysis_sha256": "e9a1ca6d044260d1fb008b2351967ad10074af1872363b20e30440130f6a614a"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "45af58983f34ce004372b5f1efa4c306bba54198001d90b8b620a38637dd4978"
         },
         "publication.metadata": "data/plugins/2021heei--dsh-tts-flash/META.json",
         "publication.summaries": {
-            "text": "为 DSH 流式回复提供语音朗读、字幕浮条及等待短语，支持 Edge 与 OpenAI 兼容语音服务。",
+            "text": "DSH 桌面端流式回复语音朗读与等待短语播放插件，支持 Edge 和云端 TTS。",
             "revision": "a23020b72a5c403e3dc50527b3ef43c6e55c739a",
             "source_url": "https://github.com/2021Heei/dsh-tts-flash/blob/a23020b72a5c403e3dc50527b3ef43c6e55c739a/README.md"
         },
         "publication.capabilities": {
             "revision": "a23020b72a5c403e3dc50527b3ef43c6e55c739a",
             "items": {
-                "事件监听": "llm/stream旁路分句与正文入队",
-                "后台": "按会话串行合成、epoch取消及等待短语音频缓存",
-                "Host 路由": "语音配置、试听、取消与SSE音频推送"
-            }
+                "界面": "浏览器语音浮条与音频播放",
+                "Host 路由": "SSE 音频、配置与引擎管理",
+                "事件监听": "llm/stream 文本旁路",
+                "后台": "分句、合成队列与等待语音缓存"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 流式朗读 | 边生成边听 | 积压丢旧句 |\n| 随读随停 | 不播旧 epoch | 合成请求不一定取消 |\n| 云端配置 | 扩展音色 | 本机明文密钥与路由权限 |"
         },
         "publication.advice": {
             "revision": "a23020b72a5c403e3dc50527b3ef43c6e55c739a",
-            "text": "需要听当前回复的用户可先用非敏感短文试用，确认窗口切换、停止和自动播放正常；长回复必须对照文字检查是否跳句，不适合直接当完整有声文稿导出器。"
+            "text": "先在隔离桌面试听 Edge，再用受控云密钥验证长回复、中断、权限与费用。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/2021heei--dsh-tts-flash",
-        "reports": "# dsh-tts-flash\n\n> 为 DSH 流式回复提供语音朗读、字幕浮条及等待短语，支持 Edge 与 OpenAI 兼容语音服务。\n\n## 研究范围\n\n- **仓库**：[2021Heei/dsh-tts-flash](https://github.com/2021Heei/dsh-tts-flash)\n- **版本号**：0.1.0（[固定提交 a23020b7](https://github.com/2021Heei/dsh-tts-flash/tree/a23020b72a5c403e3dc50527b3ef43c6e55c739a)）\n- **版本日期**：2026-09-10（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n源码支持流式分句、队列取消和可替换语音引擎的集成贡献；朗读完整性和实时延迟尚无本次运行证据，下面的积压策略假设未实现、未验证。\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：适合希望边听边看长回复的桌面用户；交付物是与当前会话对应的可中止音频及字幕，而非离线音频档案。\n- **亮点**：作者强调边生成边朗读与多引擎；README 和 speak-queue.ts 明示分句及队列改编自 MIT 的 dsh-voice，因此不把继承的流式朗读认作原创。本项增量在统一 TtsProvider、引擎声明与缓存等待音频的衔接：等待反馈和正文共享播放通道，正文入队后停止等待循环，减少维护多套语音状态的负担。\n- **思考**：最关键的问题是追赶速度是否牺牲用户必须听到的内容。SpeakQueue 的 MAX_PENDING=12，积压时 pending.shift() 丢弃最旧句；这保护内存、贴近当前输出，却意味着 README 的“无损”只能理解为不阻断模型流，不能理解为全文朗读无遗漏。相反，短回复或快引擎可能从不触发丢句，因此不能据此否定日常可用性。\n- **建议**：需要听当前回复的用户可先用非敏感短文试用，确认窗口切换、停止和自动播放正常；长回复必须对照文字检查是否跳句，不适合直接当完整有声文稿导出器。\n\n采用建议：需要听当前回复的用户可先用非敏感短文试用，确认窗口切换、停止和自动播放正常；长回复必须对照文字检查是否跳句，不适合直接当完整有声文稿导出器。\n\n## 核心贡献\n\n作者强调边生成边朗读与多引擎；README 和 speak-queue.ts 明示分句及队列改编自 MIT 的 dsh-voice，因此不把继承的流式朗读认作原创。本项增量在统一 TtsProvider、引擎声明与缓存等待音频的衔接：等待反馈和正文共享播放通道，正文入队后停止等待循环，减少维护多套语音状态的负担。\n\n## 关键质疑\n\n最关键的问题是追赶速度是否牺牲用户必须听到的内容。SpeakQueue 的 MAX_PENDING=12，积压时 pending.shift() 丢弃最旧句；这保护内存、贴近当前输出，却意味着 README 的“无损”只能理解为不阻断模型流，不能理解为全文朗读无遗漏。相反，短回复或快引擎可能从不触发丢句，因此不能据此否定日常可用性。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n待验证假设：将“实时追赶”和“完整阅读”设为显式模式；前者展示跳过句数，后者缓存文本并允许稍后续读。推导依据是同一队列上限同时承担资源保护与内容选择，两种目标可以拆开；代价是本地文本保存和额外播放状态。\n\n用同一100句文本固定生成速度，对比快/慢合成器和12句以上积压，记录句序、缺失数、首音延迟及停止后残留时长；完整模式若不减少遗漏或显著增加人工整理，则否定其增量。\n\n## 场景与替代办法\n\n适合希望边听边看长回复的桌面用户；交付物是与当前会话对应的可中止音频及字幕，而非离线音频档案。\n\n参照手动复制回复到 TTS 和项目声明的 dsh-voice：省去复制及固定引擎限制，但继承的分句和串行队列不是新算法。\n\n## 依赖与流程\n\n必需 DSH 的 llm/stream、webServer 与浏览器 slots、React；默认 Edge 走微软网络服务且无公开 SLA，OpenAI 兼容服务需端点、模型和 API Key。引擎 JSON 含本地密钥，迁移不得作为普通设置公开分享。\n\n开启朗读并选择引擎→发送问题→旁路分句入队→后台合成→SSE 音频与浮条→用户停止或继续。合成单句失败记录警告并继续，不会补回该句；停止通过 epoch 丢弃旧合成结果。\n\n## 成本与效果\n\n默认 Edge 不需用户密钥，但联网和非公开服务可用性是持续成本；云端 TTS 按供应商计费，失败句和等待短语首次生成也可能消耗额度。首次配置音色/自动播放权限和日常核对漏句耗费人工，未测单位任务价格或耗时。\n\n把生成和收听重叠可能缩短开始收听的等待；上游合成慢时会转移为内容遗漏，收益取决于回复速度、音色合成速度和用户是否需要全文，尚无同条件节时数据。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：158ca10e7aab245881b35f991d91f02c5c88cae615345bf8a1b86b737eb2b86b。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .mjs | source | 1 | 88 | 65 | 15 | — |\n| .md | source | 1 | 138 | — | — | 1535 |\n| .ts | source | 9 | 2129 | 1602 | 385 | — |\n| .tsx | source | 2 | 1864 | 1609 | 179 | — |\n| .mjs | test | 3 | 250 | 190 | 34 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **事件监听**：llm/stream旁路分句与正文入队\n- **后台**：按会话串行合成、epoch取消及等待短语音频缓存\n- **Host 路由**：语音配置、试听、取消与SSE音频推送\n\n## 工程亮点\n\n值得借鉴的是 src/speak-queue.ts 的 epoch 取消：不必等外部合成真正取消，就能抑制过时结果；移植需补浏览器正在播放音频的停止契约。provider 在 pump 开始时取一次，热切换引擎与旧 provider 延迟 dispose 的交互需用长队列验证，不能把统一接口当作所有引擎行为完全相同。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 src/index.ts、src/speak-queue.ts、src/segmenter.ts、src/providers/edge-tts.provider.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：只核查固定版本的 host 管线、队列、分句和 Edge provider；未运行语音服务、未测浏览器自动播放、未独立复核延迟或语言质量。\n- 下一步：用同一100句文本固定生成速度，对比快/慢合成器和12句以上积压，记录句序、缺失数、首音延迟及停止后残留时长；完整模式若不减少遗漏或显著增加人工整理，则否定其增量。\n\n## 源码索引\n\n- [src/index.ts](https://github.com/2021Heei/dsh-tts-flash/blob/a23020b72a5c403e3dc50527b3ef43c6e55c739a/src/index.ts)\n- [src/speak-queue.ts](https://github.com/2021Heei/dsh-tts-flash/blob/a23020b72a5c403e3dc50527b3ef43c6e55c739a/src/speak-queue.ts)\n- [src/segmenter.ts](https://github.com/2021Heei/dsh-tts-flash/blob/a23020b72a5c403e3dc50527b3ef43c6e55c739a/src/segmenter.ts)\n- [src/providers/edge-tts.provider.ts](https://github.com/2021Heei/dsh-tts-flash/blob/a23020b72a5c403e3dc50527b3ef43c6e55c739a/src/providers/edge-tts.provider.ts)\n",
+        "reports": "# dsh-tts-flash\n\n> DSH 桌面端流式回复语音朗读与等待短语播放插件，支持 Edge 和云端 TTS。\n\n## 研究范围\n\n- **仓库**：[2021Heei/dsh-tts-flash](https://github.com/2021Heei/dsh-tts-flash)\n- **版本号**：0.1.0（[固定提交 a23020b72a5c403e3dc50527b3ef43c6e55c739a](https://github.com/2021Heei/dsh-tts-flash/tree/a23020b72a5c403e3dc50527b3ef43c6e55c739a)）\n- **版本日期**：2026-09-10（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定源码支持主要管线；语音队列丢旧句、取消不终止合成、云端密钥返回/保存与异常分支缺口；目标运行未核。\n\n## 洞察短评\n\n- **用途**：桌面会话的听读辅助与等待反馈，适合可联网/可播放音频的本机环境。详见[Q01](#research-q01)。\n- **亮点**：把桌面浮条、等待语音和可替换 TTS 引擎接入 DSH 文本流。详见[Q01](#research-q01)。\n- **思考**：朗读音频不是完整覆盖；/engines 返回含 apiKey，探测把非401/403错误视可用，readJsonBody 异常分支引用未定义 res。详见[Q02](#research-q02)至[Q04](#research-q04)。\n- **建议**：未验证改进为传播取消信号、引擎列表脱敏、成功码探测和统一同步/异步路由错误处理。详见[Q05](#research-q05)。\n\n采用建议：先在隔离桌面试听 Edge，再用受控云密钥验证长回复、中断、权限与费用。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n把桌面浮条、等待语音和可替换 TTS 引擎接入 DSH 文本流。详见[Q01](#research-q01)。\n\n## 关键质疑\n\n朗读音频不是完整覆盖；/engines 返回含 apiKey，探测把非401/403错误视可用，readJsonBody 异常分支引用未定义 res。详见[Q02](#research-q02)至[Q04](#research-q04)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n未验证改进为传播取消信号、引擎列表脱敏、成功码探测和统一同步/异步路由错误处理。详见[Q05](#research-q05)。\n\n目标桌面试长回复、短句、取消后网络请求、云端404/500探测、GET /engines 权限及路由异常。\n\n## 场景与替代办法\n\n桌面会话的听读辅助与等待反馈，适合可联网/可播放音频的本机环境。详见[Q01](#research-q01)。\n\n手工播放 TTS 或浏览器读屏可替代；插件优化流式交互但需承担音频追赶丢句。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖 | 必需 | 用途 | 缺失后果 |\n| --- | --- | --- | --- |\n| DSH webServer/llm stream | 必需 | 宿主流/路由 | 无朗读 |\n| Edge TTS 网络 | 默认必需 | 默认语音 | 失效则无默认音频 |\n| 云端 Key/余额 | 可选 | 替换引擎 | 云请求失败 |\n| 浏览器自动播放 | 必需 | 出声 | 可能被拦截 |\n\n#### 使用步骤\n\n| 步骤 | 动作 | 判据/恢复 |\n| --- | --- | --- |\n| 安装 | 构建/pack 到 DSH | 浮条和路由出现 |\n| 试听 | 用 Edge 文本长回复 | 音频/字幕同步 |\n| 中断 | 停止与再发问 | 旧句不播出 |\n| 云端 | 添加密钥/模型 | 权限和计费对账 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 资源成本 | 人工投入 | 边界 |\n| --- | --- | --- | --- |\n| 安装 | DSH 桌面/构建依赖 | 配浮条/音色 | 兼容未测 |\n| 合成 | Edge 网络或云端计费 | 调语速/音量 | 延时与金额未知 |\n| 恢复 | 重新选引擎/检查日志 | 检查权限与取消 | 后台请求仍可能完成 |\n\n#### 效果\n\n| 效果项 | 源码支持 | 未证实 |\n| --- | --- | --- |\n| 边输出边朗读 | tap+队列+SSE | 实际延时 |\n| 停止 | epoch 丢旧结果 | 请求/费用取消 |\n| 云端引擎 | 声明与双路径 | 所有服务兼容 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**桌面语音朗读在低延时、中断、云引擎凭据和异常路径上能否稳定交付？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 朗读插件给桌面 DSH 用户带来什么交付？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n插件旁路监听 llm/stream 的文本增量，分句/合并后串行合成音频，经本地 SSE 给浏览器浮条播放，等待模型输出时播报缓存短语。内置 Edge TTS，也支持配置 OpenAI 兼容云服务；适用桌面阅读辅助与听读，不等于离线或无成本。作者称流式朗读、随读随停；源码确实原样 yield 模型 chunk，但语音播报有独立积压/取消规则。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:7-25](https://github.com/2021Heei/dsh-tts-flash/blob/a23020b72a5c403e3dc50527b3ef43c6e55c739a/README.md#L7-L25)\n\n作者功能和适用场景\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n给 DeepSeek Harness（DSH）桌面端做的 **LLM 回复语音朗读插件**：AI 边流式输出，本地边把句子合成语音播放，随读随停；AI 思考等待期间还有\"文字+语音\"双通道的趣味短语反馈。\n\n- **零配置可用**：内置微软 edge-tts，能联网就能用（几十种音色）\n- **云端引擎即插即用**：任何 OpenAI 兼容 TTS 服务（OpenAI / 小米 MiMo / 硅基流动…）在设置面板里填 baseURL + API Key + 模型 id 即可添加，双协议自适应\n- **等待期语音**：模型思考时浮条轮换趣味短语并同步朗读（\"让子弹飞一会…\"），等待不再干瞪眼\n\n---\n\n## 功能总览\n\n| 模块 | 说明 |\n|---|---|\n| 无损流式朗读 | `llm/stream` 旁路 tap → 中英日分句 → 短句合并 → 串行合成 → SSE 推送；队列带背压上限，长回复自动追赶 |\n| 多引擎 | edge-tts（内置）+ OpenAI 兼容云端 TTS（双协议自适应：`/audio/speech` → `chat/completions`） |\n| 引擎即插即用 | 设置面板二级弹窗添加，或往 `~/.dsh/tts-flash/engines/` 放一个 JSON 声明自动出现 |\n| 等待期语音体系 | AI 思考时轮换 5 条内置趣味短语（**文字+语音同步**，host 统一驱动）；语音按「模型-音色」前缀缓存只生成一次；等待语音模型可独立选择（默认 Edge 小艺） |\n| 语音设置面板 | 朗读开关 / 语音模型 / 音量 / 语速 / 字幕流光与字号 / 云端引擎管理（二级弹窗）/ 试听区，全部实时生效 |\n| 朗读悬浮条 | 纯文字胶囊，可拖动、位置记忆（相对聊天输入框锚点，窗口缩放自动适应）、长句单程滚动字幕（滚动时长 = 真实音频时长） |\n| 持久化 | 运行时设置独立 JSON 文件，重启、重装插件均不丢失 |\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/index.ts:921-978](https://github.com/2021Heei/dsh-tts-flash/blob/a23020b72a5c403e3dc50527b3ef43c6e55c739a/src/index.ts#L921-L978)\n\n旁路文本流\n\n<details>\n<summary>查看原文（58行）</summary>\n\n```text\n  // ---- llm/stream lossless tap → segment → enqueue ----\n  const sessionSegmenters = new Map<string, SentenceSegmenter>()\n\n  ctx.on('llm/stream', (options: GenerateOptions, next: () => AsyncIterable<StreamChunk>) => {\n    const sessionId = options.sessionId\n    // Read the live setting so the panel's toggle takes effect immediately.\n    if (!settings.enabled || sessionId === undefined) return next()\n    // The model is chewing: start the voiced phrase loop (text + matching\n    // audio per switch) until the first real sentence takes the queue or the\n    // stream ends.\n    broadcast('status', { phase: 'thinking' })\n    startThinkingLoop(sessionId)\n    return tapStream(sessionId, next(), queue, sessionSegmenters, () => {\n      stopThinkingLoop(sessionId)\n      broadcast('status', { phase: 'idle' })\n    })\n  })\n}\n\nasync function* tapStream(\n  sessionId: string,\n  inner: AsyncIterable<StreamChunk>,\n  queue: SpeakQueue,\n  sessionSegmenters: Map<string, SentenceSegmenter>,\n  onDone: () => void,\n): AsyncIterable<StreamChunk> {\n  const segmenter = new SentenceSegmenter()\n  const grouper = new SentenceGrouper()\n  sessionSegmenters.set(sessionId, segmenter)\n  let flushed = false\n  let finishReason: unknown = null\n  const flushOnce = (): void => {\n    if (flushed) return\n    flushed = true\n    for (const s of segmenter.flush())\n      for (const g of grouper.push(s)) queue.enqueue(sessionId, g)\n    for (const g of grouper.flush()) queue.enqueue(sessionId, g)\n  }\n  try {\n    for await (const chunk of inner) {\n      if (chunk.type === 'text-delta' && chunk.text) {\n        for (const s of segmenter.feed(chunk.text))\n          for (const g of grouper.push(s)) queue.enqueue(sessionId, g)\n      }\n      if (chunk.type === 'finish') finishReason = chunk.reason\n      yield chunk\n    }\n  } finally {\n    // A user stop aborts the turn: the trailing half-sentence is exactly what\n    // the user interrupted, so it must not be spoken.\n    const aborted =\n      finishReason !== null &&\n      typeof finishReason === 'object' &&\n      (finishReason as { kind?: unknown }).kind === 'aborted'\n    if (!aborted) flushOnce()\n    sessionSegmenters.delete(sessionId)\n    onDone()\n  }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/speak-queue.ts:84-110](https://github.com/2021Heei/dsh-tts-flash/blob/a23020b72a5c403e3dc50527b3ef43c6e55c739a/src/speak-queue.ts#L84-L110)\n\n语音入队和背压\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\n  /** Enqueue one sentence for a session; starts the pump if idle. */\n  enqueue(sessionId: string, text: string): void {\n    let q = this.queues.get(sessionId)\n    if (!q) {\n      q = { pending: [], busy: false, seq: 0, epoch: 0 }\n      this.queues.set(sessionId, q)\n    }\n    // Back-pressure: cap the per-session queue so a very long reply cannot\n    // pile up unbounded; the oldest sentence is dropped and playback chases\n    // the live output.\n    while (q.pending.length >= MAX_PENDING) q.pending.shift()\n    q.pending.push({ text, epoch: q.epoch })\n    this.opts.onTextEnqueue?.(sessionId)\n    void this.pump(sessionId, q)\n  }\n\n  /** Enqueue one PRE-SYNTHESIZED sentence (thinking phrase from disk cache):\n   *  the pump broadcasts it as-is without calling the TTS engine. */\n  enqueueAudio(sessionId: string, text: string, audio: Buffer, mime: string): void {\n    let q = this.queues.get(sessionId)\n    if (!q) {\n      q = { pending: [], busy: false, seq: 0, epoch: 0 }\n      this.queues.set(sessionId, q)\n    }\n    while (q.pending.length >= MAX_PENDING) q.pending.shift()\n    q.pending.push({ text, epoch: q.epoch, audio, mime })\n    void this.pump(sessionId, q)\n```\n\n</details>\n\n#### 缺口\n\n- 目标桌面浏览器自动播放和 TTS 音质未测\n  **影响：**不能据源码断言朗读体验/时延\n  **进一步探讨：**目标桌面多语种长回复与中断试听\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 从文本流到可取消播放如何工作？\n\n**研究主题：**功能与机制、工程质量与复用\n\n#### 完整回答\n\n每会话 SentenceSegmenter/短句合并形成语句，再入 SpeakQueue；每会话队列上限12，满时丢最旧句，泵串行 await provider.synthesize 后把字节转 base64 帧广播。cancel 递增 epoch 清待播句，正在合成的结果完成后被丢弃，但并未将 AbortSignal 传给 TTS 请求，网络合成仍可能继续耗时/计费。故“无损”仅为原模型输出流，音频为追赶实时性的有损覆盖。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:99-126](https://github.com/2021Heei/dsh-tts-flash/blob/a23020b72a5c403e3dc50527b3ef43c6e55c739a/src/index.ts#L99-L126)\n\n合并门槛\n\n<details>\n<summary>查看原文（28行）</summary>\n\n```text\n// ---- short-sentence coalescing before synthesis ---------------------------\n// \"好。\" / \"明白。\" each triggering a full engine request is slow and choppy\n// on local engines. Strong terminal punctuation releases the buffer once it\n// holds a readable amount (>= STRONG_MIN); weak endings accumulate to\n// SOFT_LIMIT; anything reaches HARD_LIMIT. Stream end always flushes.\nconst STRONG_END = /[。！？!?…；;]$/\nconst HARD_LIMIT = 60\nconst STRONG_MIN = 12\nconst SOFT_LIMIT = 40\n\nclass SentenceGrouper {\n  private buf = ''\n  push(sentence: string): string[] {\n    this.buf += sentence\n    if (this.buf.length >= HARD_LIMIT) return this.take()\n    if (this.buf.length >= STRONG_MIN && STRONG_END.test(this.buf)) return this.take()\n    if (this.buf.length >= SOFT_LIMIT) return this.take()\n    return []\n  }\n  flush(): string[] {\n    return this.take()\n  }\n  private take(): string[] {\n    const out = this.buf ? [this.buf] : []\n    this.buf = ''\n    return out\n  }\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/index.ts:940-978](https://github.com/2021Heei/dsh-tts-flash/blob/a23020b72a5c403e3dc50527b3ef43c6e55c739a/src/index.ts#L940-L978)\n\n透传原 chunk\n\n<details>\n<summary>查看原文（39行）</summary>\n\n```text\nasync function* tapStream(\n  sessionId: string,\n  inner: AsyncIterable<StreamChunk>,\n  queue: SpeakQueue,\n  sessionSegmenters: Map<string, SentenceSegmenter>,\n  onDone: () => void,\n): AsyncIterable<StreamChunk> {\n  const segmenter = new SentenceSegmenter()\n  const grouper = new SentenceGrouper()\n  sessionSegmenters.set(sessionId, segmenter)\n  let flushed = false\n  let finishReason: unknown = null\n  const flushOnce = (): void => {\n    if (flushed) return\n    flushed = true\n    for (const s of segmenter.flush())\n      for (const g of grouper.push(s)) queue.enqueue(sessionId, g)\n    for (const g of grouper.flush()) queue.enqueue(sessionId, g)\n  }\n  try {\n    for await (const chunk of inner) {\n      if (chunk.type === 'text-delta' && chunk.text) {\n        for (const s of segmenter.feed(chunk.text))\n          for (const g of grouper.push(s)) queue.enqueue(sessionId, g)\n      }\n      if (chunk.type === 'finish') finishReason = chunk.reason\n      yield chunk\n    }\n  } finally {\n    // A user stop aborts the turn: the trailing half-sentence is exactly what\n    // the user interrupted, so it must not be spoken.\n    const aborted =\n      finishReason !== null &&\n      typeof finishReason === 'object' &&\n      (finishReason as { kind?: unknown }).kind === 'aborted'\n    if (!aborted) flushOnce()\n    sessionSegmenters.delete(sessionId)\n    onDone()\n  }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/speak-queue.ts:65-110](https://github.com/2021Heei/dsh-tts-flash/blob/a23020b72a5c403e3dc50527b3ef43c6e55c739a/src/speak-queue.ts#L65-L110)\n\n队列满丢旧句\n\n<details>\n<summary>查看原文（46行）</summary>\n\n```text\n/** Max queued sentences per session before the oldest is dropped. */\nconst MAX_PENDING = 12\n\nexport class SpeakQueue {\n  private readonly queues = new Map<string, SessionQueue>()\n  private readonly listeners = new Set<FrameListener>()\n  private readonly opts: SpeakQueueOptions\n\n  constructor(opts: SpeakQueueOptions) {\n    this.opts = opts\n  }\n\n  subscribe(listener: FrameListener): () => void {\n    this.listeners.add(listener)\n    return () => {\n      this.listeners.delete(listener)\n    }\n  }\n\n  /** Enqueue one sentence for a session; starts the pump if idle. */\n  enqueue(sessionId: string, text: string): void {\n    let q = this.queues.get(sessionId)\n    if (!q) {\n      q = { pending: [], busy: false, seq: 0, epoch: 0 }\n      this.queues.set(sessionId, q)\n    }\n    // Back-pressure: cap the per-session queue so a very long reply cannot\n    // pile up unbounded; the oldest sentence is dropped and playback chases\n    // the live output.\n    while (q.pending.length >= MAX_PENDING) q.pending.shift()\n    q.pending.push({ text, epoch: q.epoch })\n    this.opts.onTextEnqueue?.(sessionId)\n    void this.pump(sessionId, q)\n  }\n\n  /** Enqueue one PRE-SYNTHESIZED sentence (thinking phrase from disk cache):\n   *  the pump broadcasts it as-is without calling the TTS engine. */\n  enqueueAudio(sessionId: string, text: string, audio: Buffer, mime: string): void {\n    let q = this.queues.get(sessionId)\n    if (!q) {\n      q = { pending: [], busy: false, seq: 0, epoch: 0 }\n      this.queues.set(sessionId, q)\n    }\n    while (q.pending.length >= MAX_PENDING) q.pending.shift()\n    q.pending.push({ text, epoch: q.epoch, audio, mime })\n    void this.pump(sessionId, q)\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/speak-queue.ts:119-130](https://github.com/2021Heei/dsh-tts-flash/blob/a23020b72a5c403e3dc50527b3ef43c6e55c739a/src/speak-queue.ts#L119-L130)\n\nepoch 取消\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n  /**\n   * Drop all pending sentences and invalidate the in-flight synthesis for\n   * one session (stop / barge-in). Sentences enqueued after this call get\n   * the new epoch and play normally.\n   */\n  cancel(sessionId: string): void {\n    const q = this.queues.get(sessionId)\n    if (q) {\n      q.epoch++\n      q.pending.length = 0\n    }\n  }\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/speak-queue.ts:155-183](https://github.com/2021Heei/dsh-tts-flash/blob/a23020b72a5c403e3dc50527b3ef43c6e55c739a/src/speak-queue.ts#L155-L183)\n\n合成完丢失过期结果\n\n<details>\n<summary>查看原文（29行）</summary>\n\n```text\n  private async pump(sessionId: string, q: SessionQueue): Promise<void> {\n    if (q.busy) return\n    q.busy = true\n    try {\n      const provider = this.opts.resolveProvider()\n      while (q.pending.length > 0) {\n        const item = q.pending.shift()!\n        try {\n          const buf =\n            item.audio ?? (await provider.synthesize(item.text, this.synthOptions(this.opts.voice)))\n          // Barge-in happened while this sentence was synthesizing: drop it.\n          if (item.epoch !== q.epoch) continue\n          const frame: VoiceFrame = {\n            sessionId,\n            seq: q.seq++,\n            text: item.text,\n            audio: buf.toString('base64'),\n            mime: item.mime ?? provider.outputFormat,\n          }\n          for (const fn of this.listeners) {\n            try {\n              fn(frame)\n            } catch {\n              // listener errors must not kill the pump\n            }\n          }\n        } catch (e) {\n          // One failed sentence must not stop the queue; report and continue.\n          console.warn(`[tts-flash] synthesis failed: ${String(e)}`)\n```\n\n</details>\n\n#### 缺口\n\n- 目标 Provider 对中止/费用的行为未测\n  **影响：**停止后后台网络仍可能完成并产生成本\n  **进一步探讨：**长回复与中断观察实际请求/音频覆盖\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 云端引擎与自动探测的边界是什么？\n\n**研究主题：**缺陷与关键质疑、效果与总成本\n\n#### 完整回答\n\n添加引擎时把 baseUrl/API Key/model 写入 ~/.dsh/tts-flash/engines/*.json，未见文件权限硬化；GET /engines 原样返回 loadEngineDeclarations，包含 apiKey，依赖宿主 Web 路由访问控制，插件自身无鉴权。OpenAI provider 的 isAvailable 只要 /models 状态不是401/403就认为可用，404/500 也可能误判；合成时仅在 /audio/speech 返回404后切 chat/completions，并记住该路径。声音请求的 60/120 秒超时及失败重试成本需验证。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:39-57](https://github.com/2021Heei/dsh-tts-flash/blob/a23020b72a5c403e3dc50527b3ef43c6e55c739a/README.md#L39-L57)\n\n作者引擎配置/密钥存储\n\n<details>\n<summary>查看原文（19行）</summary>\n\n````text\n### 引擎\n\n- **Edge TTS（默认）**：零配置，音色几十种（晓晓/云希/小艺…），「语音模型」下拉选择即可\n- **添加云端引擎**：设置面板「云端引擎」按钮 → 弹窗填 baseURL、API Key、模型 id（别名可选，默认与模型 id 一致）→ 点「添加」。模型 id 必须与厂商文档完全一致（如 MiMo 全小写）\n- 也可以不经过面板：往 `~/.dsh/tts-flash/engines/` 放一个 JSON 声明：\n\n```json\n{\n  \"id\": \"my-engine\",\n  \"label\": \"我的引擎\",\n  \"kind\": \"openai\",\n  \"url\": \"https://api.example.com/v1\",\n  \"apiKey\": \"sk-...\",\n  \"model\": \"tts-model-id\",\n  \"stylePrompt\": \"可选：音色描述/风格指令（voicedesign 类模型需要）\"\n}\n```\n\n- API Key 保存在本机 `~/.dsh/tts-flash/engines/`（单用户本机场景）；请勿把该目录内容分享给他人\n````\n\n</details>\n\n**依据 2 · 源码核查**：[src/settings-store.ts:151-176](https://github.com/2021Heei/dsh-tts-flash/blob/a23020b72a5c403e3dc50527b3ef43c6e55c739a/src/settings-store.ts#L151-L176)\n\n加载完整声明含 apiKey\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\nexport function loadEngineDeclarations(): EngineDeclaration[] {\n  if (!existsSync(ENGINES_DIR)) return []\n  let files: string[] = []\n  try {\n    files = readdirSync(ENGINES_DIR).filter((f) => f.toLowerCase().endsWith('.json'))\n  } catch {\n    return []\n  }\n  const out: EngineDeclaration[] = []\n  for (const file of files) {\n    const raw = readJson(join(ENGINES_DIR, file)) as Partial<EngineDeclaration> | undefined\n    if (!raw || typeof raw.id !== 'string' || typeof raw.url !== 'string') {\n      console.warn(`[tts-flash] ignoring malformed engine file: ${file}`)\n      continue\n    }\n    const rawKind = raw.kind === 'openai' ? 'openai' : 'sidecar'\n    out.push({\n      id: raw.id,\n      label: typeof raw.label === 'string' && raw.label ? raw.label : raw.id,\n      url: raw.url,\n      kind: rawKind,\n      apiKey: typeof raw.apiKey === 'string' ? raw.apiKey : undefined,\n      model: typeof raw.model === 'string' ? raw.model : undefined,\n      voice: typeof raw.voice === 'string' ? raw.voice : undefined,\n      stylePrompt: typeof raw.stylePrompt === 'string' ? raw.stylePrompt : undefined,\n    })\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/settings-store.ts:193-204](https://github.com/2021Heei/dsh-tts-flash/blob/a23020b72a5c403e3dc50527b3ef43c6e55c739a/src/settings-store.ts#L193-L204)\n\n写 JSON 声明\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n/** Write/update one engine declaration (used by tests + future UI). */\nexport function saveEngineDeclaration(decl: EngineDeclaration): void {\n  try {\n    ensureDir(ENGINES_DIR)\n    writeFileSync(\n      join(ENGINES_DIR, `${decl.id.replace(/[^\\w.-]+/g, '_')}.json`),\n      `${JSON.stringify(decl, null, 2)}\\n`,\n      'utf8',\n    )\n  } catch (e) {\n    console.warn(`[tts-flash] could not write engine file: ${String(e)}`)\n  }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/index.ts:872-918](https://github.com/2021Heei/dsh-tts-flash/blob/a23020b72a5c403e3dc50527b3ef43c6e55c739a/src/index.ts#L872-L918)\n\nHTTP 增加/返回引擎\n\n<details>\n<summary>查看原文（47行）</summary>\n\n```text\n  ctx.effect(() =>\n    ctx.webServer.register({\n      kind: 'exact',\n      path: `${base}/engines`,\n      handler: (req: unknown, res: ServerResponse) => {\n        const method = (req as { method?: string }).method ?? 'GET'\n        if (method !== 'POST') {\n          sendJson(res, 200, { ok: true, engines: loadEngineDeclarations() })\n          return\n        }\n        readJsonBody(req, (body) => {\n          const alias = typeof body.alias === 'string' ? body.alias.trim() : ''\n          const baseUrl = typeof body.baseUrl === 'string' ? body.baseUrl.trim() : ''\n          const apiKey = typeof body.apiKey === 'string' ? body.apiKey.trim() : ''\n          const model = typeof body.model === 'string' ? body.model.trim() : ''\n          const voice = typeof body.voice === 'string' ? body.voice.trim() : ''\n          if (!baseUrl || !apiKey || !model) {\n            sendJson(res, 400, { ok: false, error: 'baseUrl / apiKey / model 必填' })\n            return\n          }\n          if (!/^https?:\\/\\//i.test(baseUrl)) {\n            sendJson(res, 400, { ok: false, error: 'baseUrl 必须以 http(s):// 开头' })\n            return\n          }\n          // Alias is optional: when empty the model id doubles as the display\n          // name (and the id source).\n          const label = alias || model\n          const id = label.toLowerCase().replace(/[^a-z0-9-]+/g, '-').replace(/^-+|-+$/g, '')\n          if (!id) {\n            sendJson(res, 400, { ok: false, error: '别名/模型 id 需包含字母或数字' })\n            return\n          }\n          saveEngineDeclaration({\n            id,\n            label,\n            url: baseUrl,\n            kind: 'openai',\n            apiKey,\n            model,\n            voice: voice || undefined,\n          })\n          refreshEngine()\n          enginesCache = null\n          sendJson(res, 200, { ok: true, id, label })\n        })\n      },\n    }),\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/providers/openai-tts.provider.ts:79-118](https://github.com/2021Heei/dsh-tts-flash/blob/a23020b72a5c403e3dc50527b3ef43c6e55c739a/src/providers/openai-tts.provider.ts#L79-L118)\n\n404 回退与语音请求\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n  async synthesize(text: string, opts?: SynthesizeOptions): Promise<Buffer> {\n    const voice = opts?.voice || this.defaultVoice\n    const rate = opts?.rate ?? 0\n    if (!this.chatStyle) {\n      try {\n        return await this.speechRequest(text, voice)\n      } catch (e) {\n        // 404 = the vendor has no /audio/speech endpoint (e.g. 小米 MiMo);\n        // fall back to the chat/completions protocol and remember it.\n        if (e instanceof SpeechHttpError && e.status === 404) {\n          this.chatStyle = true\n        } else {\n          throw e\n        }\n      }\n    }\n    return this.chatRequest(text, voice, rate)\n  }\n\n  /** OpenAI standard: POST /audio/speech → raw audio bytes. */\n  private async speechRequest(text: string, voice: string): Promise<Buffer> {\n    const res = await fetch(`${this.baseUrl}/audio/speech`, {\n      method: 'POST',\n      headers: {\n        'content-type': 'application/json',\n        authorization: `Bearer ${this.apiKey}`,\n      },\n      body: JSON.stringify({\n        model: this.model,\n        input: text,\n        voice: voice || 'alloy',\n        response_format: 'mp3',\n      }),\n      // A hung vendor must not hold the playback queue forever.\n      signal: AbortSignal.timeout(60_000),\n    })\n    if (!res.ok) throw new SpeechHttpError(res.status, (await res.text()).slice(0, 200))\n    const buf = Buffer.from(await res.arrayBuffer())\n    if (buf.length === 0) throw new Error('openai-tts returned empty audio')\n    return buf\n```\n\n</details>\n\n**依据 6 · 源码核查**：[src/providers/openai-tts.provider.ts:195-205](https://github.com/2021Heei/dsh-tts-flash/blob/a23020b72a5c403e3dc50527b3ef43c6e55c739a/src/providers/openai-tts.provider.ts#L195-L205)\n\n可用性探测\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n  async isAvailable(): Promise<boolean> {\n    try {\n      const res = await fetch(`${this.baseUrl}/models`, {\n        headers: { authorization: `Bearer ${this.apiKey}` },\n        signal: AbortSignal.timeout(3000),\n      })\n      return res.status !== 401 && res.status !== 403\n    } catch {\n      return false\n    }\n  }\n```\n\n</details>\n\n#### 缺口\n\n- 宿主路由访问控制与文件 ACL 未实测\n  **影响：**凭据暴露与可用性误报风险需按目标环境判定\n  **进一步探讨：**目标主机检查 GET 路由权限/文件权限及404/500探测\n\n<a id=\"research-q04\"></a>\n\n### Q04 · HTTP 路由的异常处理是否可靠？\n\n**研究主题：**缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\nreadJsonBody 把请求数据累加后调用 done(body)，同步异常分支试图使用标识符 res 设500，但该辅助函数参数只有 req/done，函数体内无 res 声明；若同步 done 抛错，响应尝试会触发 ReferenceError，继而被紧邻的内层 catch 吞掉，无法完成预期 500 回包；不能将此说成 ReferenceError 必然逃逸使宿主崩溃。另回调常是 async，外层同步 try/catch 不能捕捉其 Promise 拒绝。真实异常触发条件与宿主进程结果未跑；这是固定源码的失败路径缺口，不应把正常请求等同已故障。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:442-470](https://github.com/2021Heei/dsh-tts-flash/blob/a23020b72a5c403e3dc50527b3ef43c6e55c739a/src/index.ts#L442-L470)\n\nreadJsonBody 异常分支引用未定义 res\n\n<details>\n<summary>查看原文（29行）</summary>\n\n```text\n  const readJsonBody = (req: unknown, done: (body: Record<string, unknown>) => void): void => {\n    const chunks: Buffer[] = []\n    const r = req as {\n      on: (e: string, fn: ((c: Buffer) => void) | (() => void)) => void\n    }\n    r.on('data', (c: Buffer) => chunks.push(c))\n    r.on('end', () => {\n      let body: Record<string, unknown> = {}\n      try {\n        const parsed = JSON.parse(Buffer.concat(chunks).toString() || '{}') as unknown\n        if (parsed && typeof parsed === 'object') body = parsed as Record<string, unknown>\n      } catch {\n        // malformed body → treat as empty patch\n      }\n      // A handler bug here is a synchronous throw inside a stream 'end'\n      // handler — that crashes the whole host process. Contain it.\n      try {\n        done(body)\n      } catch (e) {\n        console.error('[tts-flash] route handler failed:', e)\n        try {\n          res.statusCode = 500\n          res.setHeader('content-type', 'application/json')\n          res.end(JSON.stringify({ ok: false, error: 'internal error' }))\n        } catch {\n          // response may already be gone\n        }\n      }\n    })\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/index.ts:557-569](https://github.com/2021Heei/dsh-tts-flash/blob/a23020b72a5c403e3dc50527b3ef43c6e55c739a/src/index.ts#L557-L569)\n\nasync config 回调作为 done\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n  ctx.effect(() =>\n    ctx.webServer.register({\n      kind: 'exact',\n      path: `${base}/config`,\n      // The host router matches on path only (no method field), so GET/POST\n      // share this route and branch on req.method.\n      handler: async (req: unknown, res: ServerResponse) => {\n        const method = (req as { method?: string }).method ?? 'GET'\n        if (method !== 'POST') {\n          sendJson(res, 200, await snapshot())\n          return\n        }\n        readJsonBody(req, async (body) => {\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/index.ts:872-882](https://github.com/2021Heei/dsh-tts-flash/blob/a23020b72a5c403e3dc50527b3ef43c6e55c739a/src/index.ts#L872-L882)\n\n引擎回调路径\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n  ctx.effect(() =>\n    ctx.webServer.register({\n      kind: 'exact',\n      path: `${base}/engines`,\n      handler: (req: unknown, res: ServerResponse) => {\n        const method = (req as { method?: string }).method ?? 'GET'\n        if (method !== 'POST') {\n          sendJson(res, 200, { ok: true, engines: loadEngineDeclarations() })\n          return\n        }\n        readJsonBody(req, (body) => {\n```\n\n</details>\n\n#### 缺口\n\n- 目标宿主异常注入未做\n  **影响：**路由错误时可能挂请求/未处理拒绝\n  **进一步探讨：**隔离 mock 请求让同步/异步 handler 失败核验\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 什么条件下可以小范围使用或复用？\n\n**研究主题：**采用判断、新假设与验证、依赖、兼容与流程\n\n#### 完整回答\n\n在桌面 DSH 隔离 profile 中先用内置 Edge TTS 验证 SSE/自动播放/中断，再用受控云端密钥测试兼容协议、超时及成本；仅向可信本机设置界面暴露 /engines，并对 engines 目录做最小权限。复用价值在旁路 tap、分句与 epoch 队列；接入关键是清楚说明“有损语音追赶”。可改进为取消向 provider 传信号、GET /engines 脱敏、探测只认成功码、修复异常处理；均未实现，需最小验证。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:27-35](https://github.com/2021Heei/dsh-tts-flash/blob/a23020b72a5c403e3dc50527b3ef43c6e55c739a/README.md#L27-L35)\n\n作者安装/构建\n\n````text\n## 安装\n\n```sh\nnpm install && node build.mjs && npm test   # 构建 + 单测\nnpm pack                                    # → dsh-tts-flash-0.1.0.tgz\n# 用 DSH 的插件安装流程注册该 tgz（cordis.patch.yml 会把 host 引擎 + 客户端浮条注入 profile）\n```\n\n日常迭代最快路径：把 `lib/*.js` 覆盖复制到 `~/.dsh/profiles/desktop/node_modules/dsh-tts-flash/lib/` 再重启应用。\n````\n\n**依据 2 · 作者声明**：[README.md:129-134](https://github.com/2021Heei/dsh-tts-flash/blob/a23020b72a5c403e3dc50527b3ef43c6e55c739a/README.md#L129-L134)\n\n作者已知限制\n\n```text\n## 已知限制\n\n- 未点开过页面前浏览器可能拦截有声自动播放（DSH 内发过一条消息后即解除）。\n- edge-tts 是微软未公开接口：无 SLA，断网即不可用；语速服务端封顶 +100%。\n- client 的 `BASE` 与 host `basePath` 默认值绑定（`/dsh-tts-flash`），改 host 配置需同步 client。\n- 桌面端 web server 只放行 DSH 渲染进程的请求（外部 curl 一律 forbidden，属正常）。\n```\n\n**依据 3 · 源码核查**：[src/index.ts:921-978](https://github.com/2021Heei/dsh-tts-flash/blob/a23020b72a5c403e3dc50527b3ef43c6e55c739a/src/index.ts#L921-L978)\n\n旁路流机制\n\n<details>\n<summary>查看原文（58行）</summary>\n\n```text\n  // ---- llm/stream lossless tap → segment → enqueue ----\n  const sessionSegmenters = new Map<string, SentenceSegmenter>()\n\n  ctx.on('llm/stream', (options: GenerateOptions, next: () => AsyncIterable<StreamChunk>) => {\n    const sessionId = options.sessionId\n    // Read the live setting so the panel's toggle takes effect immediately.\n    if (!settings.enabled || sessionId === undefined) return next()\n    // The model is chewing: start the voiced phrase loop (text + matching\n    // audio per switch) until the first real sentence takes the queue or the\n    // stream ends.\n    broadcast('status', { phase: 'thinking' })\n    startThinkingLoop(sessionId)\n    return tapStream(sessionId, next(), queue, sessionSegmenters, () => {\n      stopThinkingLoop(sessionId)\n      broadcast('status', { phase: 'idle' })\n    })\n  })\n}\n\nasync function* tapStream(\n  sessionId: string,\n  inner: AsyncIterable<StreamChunk>,\n  queue: SpeakQueue,\n  sessionSegmenters: Map<string, SentenceSegmenter>,\n  onDone: () => void,\n): AsyncIterable<StreamChunk> {\n  const segmenter = new SentenceSegmenter()\n  const grouper = new SentenceGrouper()\n  sessionSegmenters.set(sessionId, segmenter)\n  let flushed = false\n  let finishReason: unknown = null\n  const flushOnce = (): void => {\n    if (flushed) return\n    flushed = true\n    for (const s of segmenter.flush())\n      for (const g of grouper.push(s)) queue.enqueue(sessionId, g)\n    for (const g of grouper.flush()) queue.enqueue(sessionId, g)\n  }\n  try {\n    for await (const chunk of inner) {\n      if (chunk.type === 'text-delta' && chunk.text) {\n        for (const s of segmenter.feed(chunk.text))\n          for (const g of grouper.push(s)) queue.enqueue(sessionId, g)\n      }\n      if (chunk.type === 'finish') finishReason = chunk.reason\n      yield chunk\n    }\n  } finally {\n    // A user stop aborts the turn: the trailing half-sentence is exactly what\n    // the user interrupted, so it must not be spoken.\n    const aborted =\n      finishReason !== null &&\n      typeof finishReason === 'object' &&\n      (finishReason as { kind?: unknown }).kind === 'aborted'\n    if (!aborted) flushOnce()\n    sessionSegmenters.delete(sessionId)\n    onDone()\n  }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/speak-queue.ts:65-130](https://github.com/2021Heei/dsh-tts-flash/blob/a23020b72a5c403e3dc50527b3ef43c6e55c739a/src/speak-queue.ts#L65-L130)\n\n队列与取消边界\n\n<details>\n<summary>查看原文（66行）</summary>\n\n```text\n/** Max queued sentences per session before the oldest is dropped. */\nconst MAX_PENDING = 12\n\nexport class SpeakQueue {\n  private readonly queues = new Map<string, SessionQueue>()\n  private readonly listeners = new Set<FrameListener>()\n  private readonly opts: SpeakQueueOptions\n\n  constructor(opts: SpeakQueueOptions) {\n    this.opts = opts\n  }\n\n  subscribe(listener: FrameListener): () => void {\n    this.listeners.add(listener)\n    return () => {\n      this.listeners.delete(listener)\n    }\n  }\n\n  /** Enqueue one sentence for a session; starts the pump if idle. */\n  enqueue(sessionId: string, text: string): void {\n    let q = this.queues.get(sessionId)\n    if (!q) {\n      q = { pending: [], busy: false, seq: 0, epoch: 0 }\n      this.queues.set(sessionId, q)\n    }\n    // Back-pressure: cap the per-session queue so a very long reply cannot\n    // pile up unbounded; the oldest sentence is dropped and playback chases\n    // the live output.\n    while (q.pending.length >= MAX_PENDING) q.pending.shift()\n    q.pending.push({ text, epoch: q.epoch })\n    this.opts.onTextEnqueue?.(sessionId)\n    void this.pump(sessionId, q)\n  }\n\n  /** Enqueue one PRE-SYNTHESIZED sentence (thinking phrase from disk cache):\n   *  the pump broadcasts it as-is without calling the TTS engine. */\n  enqueueAudio(sessionId: string, text: string, audio: Buffer, mime: string): void {\n    let q = this.queues.get(sessionId)\n    if (!q) {\n      q = { pending: [], busy: false, seq: 0, epoch: 0 }\n      this.queues.set(sessionId, q)\n    }\n    while (q.pending.length >= MAX_PENDING) q.pending.shift()\n    q.pending.push({ text, epoch: q.epoch, audio, mime })\n    void this.pump(sessionId, q)\n  }\n\n  /** True when the session has nothing queued and no synthesis in flight. */\n  isIdle(sessionId: string): boolean {\n    const q = this.queues.get(sessionId)\n    return !q || (q.pending.length === 0 && !q.busy)\n  }\n\n  /**\n   * Drop all pending sentences and invalidate the in-flight synthesis for\n   * one session (stop / barge-in). Sentences enqueued after this call get\n   * the new epoch and play normally.\n   */\n  cancel(sessionId: string): void {\n    const q = this.queues.get(sessionId)\n    if (q) {\n      q.epoch++\n      q.pending.length = 0\n    }\n  }\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/index.ts:872-918](https://github.com/2021Heei/dsh-tts-flash/blob/a23020b72a5c403e3dc50527b3ef43c6e55c739a/src/index.ts#L872-L918)\n\n云引擎路由\n\n<details>\n<summary>查看原文（47行）</summary>\n\n```text\n  ctx.effect(() =>\n    ctx.webServer.register({\n      kind: 'exact',\n      path: `${base}/engines`,\n      handler: (req: unknown, res: ServerResponse) => {\n        const method = (req as { method?: string }).method ?? 'GET'\n        if (method !== 'POST') {\n          sendJson(res, 200, { ok: true, engines: loadEngineDeclarations() })\n          return\n        }\n        readJsonBody(req, (body) => {\n          const alias = typeof body.alias === 'string' ? body.alias.trim() : ''\n          const baseUrl = typeof body.baseUrl === 'string' ? body.baseUrl.trim() : ''\n          const apiKey = typeof body.apiKey === 'string' ? body.apiKey.trim() : ''\n          const model = typeof body.model === 'string' ? body.model.trim() : ''\n          const voice = typeof body.voice === 'string' ? body.voice.trim() : ''\n          if (!baseUrl || !apiKey || !model) {\n            sendJson(res, 400, { ok: false, error: 'baseUrl / apiKey / model 必填' })\n            return\n          }\n          if (!/^https?:\\/\\//i.test(baseUrl)) {\n            sendJson(res, 400, { ok: false, error: 'baseUrl 必须以 http(s):// 开头' })\n            return\n          }\n          // Alias is optional: when empty the model id doubles as the display\n          // name (and the id source).\n          const label = alias || model\n          const id = label.toLowerCase().replace(/[^a-z0-9-]+/g, '-').replace(/^-+|-+$/g, '')\n          if (!id) {\n            sendJson(res, 400, { ok: false, error: '别名/模型 id 需包含字母或数字' })\n            return\n          }\n          saveEngineDeclaration({\n            id,\n            label,\n            url: baseUrl,\n            kind: 'openai',\n            apiKey,\n            model,\n            voice: voice || undefined,\n          })\n          refreshEngine()\n          enginesCache = null\n          sendJson(res, 200, { ok: true, id, label })\n        })\n      },\n    }),\n```\n\n</details>\n\n#### 缺口\n\n- 目标宿主兼容、实际语音延迟/计费/权限未知\n  **影响：**不能直接承诺生产体验或凭据安全\n  **进一步探讨：**按长回复、取消、权限、计费矩阵验收\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：158ca10e7aab245881b35f991d91f02c5c88cae615345bf8a1b86b737eb2b86b。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .mjs | source | 1 | 88 | 65 | 15 | — |\n| .md | source | 1 | 138 | — | — | 1535 |\n| .ts | source | 9 | 2129 | 1602 | 385 | — |\n| .tsx | source | 2 | 1864 | 1609 | 179 | — |\n| .mjs | test | 3 | 250 | 190 | 34 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 流式朗读 | 边生成边听 | 积压丢旧句 |\n| 随读随停 | 不播旧 epoch | 合成请求不一定取消 |\n| 云端配置 | 扩展音色 | 本机明文密钥与路由权限 |\n\n## 工程亮点\n\n分句与队列分层清楚，但音频背压有损且路由错误/凭据边界需收紧。详见[Q02](#research-q02)至[Q04](#research-q04)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、src/index.ts、src/speak-queue.ts、src/settings-store.ts、src/providers/openai-tts.provider.ts、src/segmenter.ts、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：只读核固定提交 README.md、src/index.ts、src/speak-queue.ts、src/settings-store.ts、src/providers/openai-tts.provider.ts 等；未执行插件或目标宿主。旧 META 仅复用。\n- 下一步：目标桌面试长回复、短句、取消后网络请求、云端404/500探测、GET /engines 权限及路由异常。\n",
         "metadata": {
             "repository": "2021Heei/dsh-tts-flash",
             "repository_id": 1363291561,
@@ -391,14 +499,14 @@
             "repository": "2021Heei/dsh-tts-flash",
             "path": "",
             "revision": "a23020b72a5c403e3dc50527b3ef43c6e55c739a",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "3beb7dabd6629266c156ddccc08316e63f0c8aca1131c0f132b37e0433b880c5",
                 "code": "a23020b72a5c403e3dc50527b3ef43c6e55c739a",
                 "maintenance": "8395fae9625e34194b7815b4701f88f2ce255805d9f0372f87d3b5345115b7cf"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

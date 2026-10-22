@@ -24,36 +24,106 @@
             },
             "sources": [
                 {
-                    "id": "20261020-incremental40-r2-github-1364961230-root-directory-0",
+                    "id": "2026-10-22-02-github-1364961230-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
-                    "retrieved_at": "2026-10-20T04:31:53.465Z",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-22T10:49:08.077Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "20261020-incremental40-r2-github-1364961230-root-author",
+                    "id": "2026-10-22-02-github-1364961230-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/1569126506-sudo/dsh-team-cost/blob/72f371c7cf45578791739c06b1d949e2868536dd/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/1569126506-sudo/dsh-team-cost",
+                            "commit": "72f371c7cf45578791739c06b1d949e2868536dd",
+                            "path": "README.md",
+                            "content_sha256": "456df83734419abb380b2d92b76380a2ce1eb6958c9ab2968eafceaffdc798c5"
+                        }
+                    ],
                     "revision": "72f371c7cf45578791739c06b1d949e2868536dd",
-                    "captured_at": "2026-10-20T04:31:53.465Z",
-                    "summary": "按工作区归属成员统计模型用量，提供团队报表、预算告警和可选请求拦截。",
-                    "artifact": "data/runs/2026-10-20-04/snapshots/1569126506-sudo--dsh-team-cost/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T10:49:08.077Z",
+                    "summary": "从 DSH 会话事件记团队 token/成本，提供成员预算、告警和报表。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/1569126506-sudo--dsh-team-cost/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "20261020-incremental40-r2-github-1364961230-root-source",
+                    "id": "2026-10-22-02-github-1364961230-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/1569126506-sudo/dsh-team-cost/blob/72f371c7cf45578791739c06b1d949e2868536dd/src/index.ts",
+                    "url": "https://github.com/1569126506-sudo/dsh-team-cost/blob/72f371c7cf45578791739c06b1d949e2868536dd/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/1569126506-sudo/dsh-team-cost",
+                            "commit": "72f371c7cf45578791739c06b1d949e2868536dd",
+                            "path": "README.md",
+                            "content_sha256": "456df83734419abb380b2d92b76380a2ce1eb6958c9ab2968eafceaffdc798c5"
+                        },
+                        {
+                            "repository_url": "https://github.com/1569126506-sudo/dsh-team-cost",
+                            "commit": "72f371c7cf45578791739c06b1d949e2868536dd",
+                            "path": "package.json",
+                            "content_sha256": "a07a197c56a190172841fe98abce10cbf7210f433a50da5e0bda64b1051781a9"
+                        },
+                        {
+                            "repository_url": "https://github.com/1569126506-sudo/dsh-team-cost",
+                            "commit": "72f371c7cf45578791739c06b1d949e2868536dd",
+                            "path": "src/index.ts",
+                            "content_sha256": "168473047b9abcb0c78ce98ccc1e817ee81b16f0de49c9c47b28eeac89a11136"
+                        },
+                        {
+                            "repository_url": "https://github.com/1569126506-sudo/dsh-team-cost",
+                            "commit": "72f371c7cf45578791739c06b1d949e2868536dd",
+                            "path": "src/store.ts",
+                            "content_sha256": "d0908537a384b4c54a2e6f6df6adc05eb7c0c61008aa52f691114c5e7cb6eac4"
+                        },
+                        {
+                            "repository_url": "https://github.com/1569126506-sudo/dsh-team-cost",
+                            "commit": "72f371c7cf45578791739c06b1d949e2868536dd",
+                            "path": "src/pricing.ts",
+                            "content_sha256": "0ec38eb8d55e38a576df44989721785873afc88123e41adcbb8a31d0e8e3f071"
+                        },
+                        {
+                            "repository_url": "https://github.com/1569126506-sudo/dsh-team-cost",
+                            "commit": "72f371c7cf45578791739c06b1d949e2868536dd",
+                            "path": "src/attribution.ts",
+                            "content_sha256": "51662cdb246084c7ca0eb17e5a39c9b1203c2b07ce8f5c5e3956213502e3e31a"
+                        },
+                        {
+                            "repository_url": "https://github.com/1569126506-sudo/dsh-team-cost",
+                            "commit": "72f371c7cf45578791739c06b1d949e2868536dd",
+                            "path": "src/quota.ts",
+                            "content_sha256": "ed41f4c39e858c6de184c3bc43a539d27494fbaf414c804b55583aa933c693e7"
+                        },
+                        {
+                            "repository_url": "https://github.com/1569126506-sudo/dsh-team-cost",
+                            "commit": "72f371c7cf45578791739c06b1d949e2868536dd",
+                            "path": "src/report.ts",
+                            "content_sha256": "2de0e2887b75efff1a51f893d677a593a9842d171822ec6dc5e60c7f689bd00a"
+                        },
+                        {
+                            "repository_url": "https://github.com/1569126506-sudo/dsh-team-cost",
+                            "commit": "72f371c7cf45578791739c06b1d949e2868536dd",
+                            "path": "src/config.ts",
+                            "content_sha256": "ca27e6341745b4bbc856a61bf06a80abea118aa8c10c115409be2675fc4a8736"
+                        },
+                        {
+                            "repository_url": "https://github.com/1569126506-sudo/dsh-team-cost",
+                            "commit": "72f371c7cf45578791739c06b1d949e2868536dd",
+                            "path": "src/service.ts",
+                            "content_sha256": "b788e41249a6d7ab863c98dc8f3d16ae3bea14d7d01f8cfcf9fbd77501ee1472"
+                        }
+                    ],
                     "revision": "72f371c7cf45578791739c06b1d949e2868536dd",
-                    "captured_at": "2026-10-20T04:31:53.465Z",
-                    "summary": "核查 src/index.ts、src/attribution.ts、src/pricing.ts、src/quota.ts、src/store.ts；src/index.ts监听assistant/message用量，按cwd最长前缀归因，写JSONL及汇总；agent/request可按团队或成员预算拒绝新请求。",
-                    "artifact": "data/runs/2026-10-20-04/snapshots/1569126506-sudo--dsh-team-cost/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T10:49:08.077Z",
+                    "summary": "核查 README.md、package.json、src/index.ts、src/store.ts、src/pricing.ts、src/attribution.ts、src/quota.ts、src/report.ts、src/config.ts、src/service.ts；监听 assistant/message usage，按 cwd 文本前缀归因和内置/覆盖价计费，追加 JSONL、内存聚合、周期 rollup，提供工具/Web 看板与可选拦截。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/1569126506-sudo--dsh-team-cost/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "路径前缀不是登录身份认证，startsWith未检查目录边界；未知模型默认零价会低估金额，成员拦截依赖请求payload可解析。",
+                        "固定 SHA 静态审阅 README/package 与 src 计量、存储、价格、归因、配额；未运行目标宿主/测试/账单。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +134,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "共用宿主的团队需要把用量归到成员并管预算，验收应对齐账单与身份，不能只看报表有数字。",
+                    "text": "共用 DSH 主机的团队需看成员/模型消耗并控制预算。",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1364961230-root-source"
+                        "2026-10-22-02-github-1364961230-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +145,16 @@
                             "fingerprint": "72f371c7cf45578791739c06b1d949e2868536dd"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:31:53.465Z",
+                    "reviewed_at": "2026-10-22T10:49:08.077Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "src/index.ts监听assistant/message用量，按cwd最长前缀归因，写JSONL及汇总；agent/request可按团队或成员预算拒绝新请求。",
+                    "text": "监听 assistant/message usage，按 cwd 文本前缀归因和内置/覆盖价计费，追加 JSONL、内存聚合、周期 rollup，提供工具/Web 看板与可选拦截。",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1364961230-root-source"
+                        "2026-10-22-02-github-1364961230-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +163,16 @@
                             "fingerprint": "72f371c7cf45578791739c06b1d949e2868536dd"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:31:53.465Z",
+                    "reviewed_at": "2026-10-22T10:49:08.077Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "路径前缀不是登录身份认证，startsWith未检查目录边界；未知模型默认零价会低估金额，成员拦截依赖请求payload可解析。",
+                    "text": "固定 SHA 静态审阅 README/package 与 src 计量、存储、价格、归因、配额；未运行目标宿主/测试/账单。",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1364961230-root-source"
+                        "2026-10-22-02-github-1364961230-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +181,16 @@
                             "fingerprint": "72f371c7cf45578791739c06b1d949e2868536dd"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:31:53.465Z",
+                    "reviewed_at": "2026-10-22T10:49:08.077Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "0.2.1，Node>=22，发布入口dist/index.js，依赖zod及宿主session/request事件、Web RPC；作者说npm渠道尚待开放。",
+                    "text": "GitHub 包 dsh-team-cost 0.2.1，MIT；package main dist/index.js、prepack build，checkout tracked 文件未见 dist，GitHub/路径安装是否自动构建须验证；README 称 npm 发布待开放。",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1364961230-root-source"
+                        "2026-10-22-02-github-1364961230-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +199,16 @@
                             "fingerprint": "72f371c7cf45578791739c06b1d949e2868536dd"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:31:53.465Z",
+                    "reviewed_at": "2026-10-22T10:49:08.077Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "账本写入、轮询与Webhook有运维负担，价格维护和归属纠错占人工；没有实测漏计比例或账单精度。",
+                    "text": "| 阶段 | 现金/计算/外部资源 | 人工/时间 | 未知与失败恢复 |\n| --- | --- | --- | --- |\n| 首次 | Node/DSH、存储、可选 Webhook 服务，价格未知 | 配成员 cwd/模型价/预算与账单基准，工时未知 | npm 发布/构建、宿主事件兼容未知 |\n| 持续 | 每事件 JSONL/聚合、周期 rollup、Webhook/模型工具 token，金额未知；未知模型本地记0非免费 | 维护价目/成员规则、核对官方账单和拦截，工时未知 | 调用覆盖率、模型费与节省对账时间未知 |\n| 失败恢复 | 从 JSONL 纠正 rollup/重报与重复模型请求耗 IO/token，实际成本未知 | 排查少报/错归/重复与误拦，手工重建/仲裁时间未知 | 故障率、停工与错账损失未知 |",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1364961230-root-source"
+                        "2026-10-22-02-github-1364961230-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +217,16 @@
                             "fingerprint": "72f371c7cf45578791739c06b1d949e2868536dd"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:31:53.465Z",
+                    "reviewed_at": "2026-10-22T10:49:08.077Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "先只监测不拦截，对照实际账单和子代理用量，补全模型价格并检查相似工作区前缀；金额可信后再考虑预算阻断。",
+                    "text": "隔离 profile 先固定成员路径、模型价和真实账单对照，测试崩溃/事件 replay/相邻路径，再考虑 alert；不要以此版结算或启用强制拦截。详见[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1364961230-root-source"
+                        "2026-10-22-02-github-1364961230-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +235,16 @@
                             "fingerprint": "72f371c7cf45578791739c06b1d949e2868536dd"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:31:53.465Z",
+                    "reviewed_at": "2026-10-22T10:49:08.077Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "把团队汇总接到请求门禁有管理价值；若归属或单价缺失，报表精确显示也会掩盖错误。",
+                    "text": "| 已实现 | 预期价值 | 边界 |\n| --- | --- | --- |\n| 事件账本/预算 | 团队费用可视化 | 覆盖/价格未验 |\n| 报表/CSV | 汇总成本 | CSV 固定日维度 |\n| Webhook/拦截 | 提醒超支 | 汇总过期可能误拦/漏拦 |",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1364961230-root-source"
+                        "2026-10-22-02-github-1364961230-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +253,16 @@
                             "fingerprint": "72f371c7cf45578791739c06b1d949e2868536dd"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:31:53.465Z",
+                    "reviewed_at": "2026-10-22T10:49:08.077Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "归因、价格、quota与store分层便于替换；路径规范化无大小写平台区分，未知价回退与字符串前缀都需独立约束。",
+                    "text": "事件监听后异步 append JSONL 和更新 cells；每15秒写 rollup，启动只读缓存不重建；价格静态表及零价 fallback、cwd 前缀归因。\n\n即使价格正确、无崩溃且成员归因准确，计量仍发生在assistant/message已产生usage之后，store.record异步完成再evaluate。agent/request只检查现有汇总，没有为在途请求预留/锁定费用；并发请求可同时读到未超预算后放行，达到阈值后也只挡后续新请求，不停止已经发起的模型或提供全局费用硬顶。\n\nteam_cost_report.execute只接range/groupBy/csv，没有调用者或成员过滤；RPC getState返回已知及有计量记录的全部成员预算/费用和模型聚合。cwd只用来归因账目，不授权谁可读团队报表。本层是全团队管理视图，目标宿主的模型工具/Remote准入须把它限定给适当管理员；外围准入未核，不能把本地无过滤直接写成已发生跨成员泄露。",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1364961230-root-source"
+                        "2026-10-22-02-github-1364961230-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,40 +271,135 @@
                             "fingerprint": "72f371c7cf45578791739c06b1d949e2868536dd"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:31:53.465Z",
+                    "reviewed_at": "2026-10-22T10:49:08.077Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "把会话事件的 token 桶汇入成员/模型/天账本并连接预算通知、工具报告和看板；较单会话用量视图形成团队管理入口。详见[Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1364961230-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1364961230:root",
+                            "area": "code",
+                            "fingerprint": "72f371c7cf45578791739c06b1d949e2868536dd"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T10:49:08.077Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "rollup 不从 JSONL 重建，崩溃/缺缓存可少报；归因纯前缀可串成员，未知模型费用为 0，CSV 按天导出丢成员/模型。见[Q02](#research-q02)、[Q03](#research-q03)。 正确价/无崩溃也只是事后计量，无并发在途预留；团队全量报表访问依宿主外层授权。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1364961230-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1364961230:root",
+                            "area": "code",
+                            "fingerprint": "72f371c7cf45578791739c06b1d949e2868536dd"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T10:49:08.077Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "现版声明 JSONL 真相源却不重建/去重，未知价零与路径前缀错归；若按 sid+seq 重建、缺价标 unknown、身份/路径段归因，或可降漏计/误拦，但增启动/管理成本。故障、重复、相邻路径和未知模型对照事件/账单；若误差不降或成本超阈值即证伪。详见[Q05](#research-q05)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1364961230-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1364961230:root",
+                            "area": "code",
+                            "fingerprint": "72f371c7cf45578791739c06b1d949e2868536dd"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T10:49:08.077Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-20T04:31:53.465Z",
+            "last_checked_at": "2026-10-22T10:49:08.077Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "72f371c7cf45578791739c06b1d949e2868536dd",
+                "reviewed_at": "2026-10-22T10:49:08.077Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1364961230:root",
+                        "area": "code",
+                        "fingerprint": "72f371c7cf45578791739c06b1d949e2868536dd"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 4
+                    },
+                    "rationale": "novelty以既有usage账本/规则归因/配额仪表盘为参照，DSH事件到成员账本/请求钩子是有限框架组合9，团队产品定位本身不是新算法；mechanism以只看单次provider usage为参照，事件→JSONL/cells→成员预算检查/通知串成可查询控制回路，实质15，未解决重放重建、未知价或并发预留，不按功能层数取23；transferability以单会话计量为参照，本地账本/聚合和配置边界可迁其他团队工具10，仍依宿主事件/身份和价格版本；simplification以管理员手工合并usage为参照，统一报表/预算有小幅便利4，补价/归因/故障重建仍需维护。",
+                    "basis": "interpretation",
+                    "score": 38,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1364961230-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 26,
+                        "delivery": 15,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow以管理员手汇成员费用为参照，事件归因/汇总/预算通知改变持续记录与排障交接26，准确度未知；delivery以孤立会话usage或手工CSV为参照，交付保sid/seq/时间/成员/模型的本地账本及跨会话聚合视图，形成可追溯团队管理材料，实质15，CSV当前丢维/缓存缺重建所以不是权威账单或硬验收凭证，界面可见本身不算新产物；reach以需要每次人工收集各会话usage的共享主机管理员为参照，工具/RPC提供有限低收集门槛5，非开放给所有成员且跨主机未实现；economics以只事后看花费为参照，可配置预算通知和阈值后拦新请求是小幅资源控制机制4，不预留并发/不停止在途，净省费用与管理成本未知。",
+                    "basis": "interpretation",
+                    "score": 50,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1364961230-root-source"
+                    ]
+                }
+            },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "observe",
-                "reason": "团队成本管理有价值，但路径前缀误归属与未知价默认为零会影响核心金额，先修归因和缺价再评估预算阻断。",
+                "decision": "not_recommended",
+                "reason": "当前固定版本不宜作团队结算或强制预算依据；可在隔离环境验证报表/事件覆盖后仅作辅助观察。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "团队成员用量归因和预算管理需求明确。"
+                        "rationale": "团队归因/预算需求具体。"
                     },
                     "advantage": {
                         "score": 19,
-                        "rationale": "归因连到请求门禁较单人仪表有增量。"
+                        "rationale": "事件、账本、预算/看板一体。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "源码已确认startsWith无目录边界及未知价归零。"
+                        "rationale": "代码路径可见，精确性/账单未独立验。"
                     },
                     "cost": {
                         "score": 5,
-                        "rationale": "错误金额与身份会导致误拦或漏拦，价格和账本需专人维护。"
+                        "rationale": "持续对账与错拦/恢复成本。"
                     }
                 },
                 "score": 60,
                 "revision": "72f371c7cf45578791739c06b1d949e2868536dd",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T10:49:08.077Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "20261020-incremental40-r2-github-1364961230-root-source"
+                    "2026-10-22-02-github-1364961230-root-source"
                 ],
                 "dependencies": [
                     {
@@ -259,105 +424,60 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-20T04:25:27.514Z",
-            "analysis_sha256": "309f5d99e3b6a1311f9c51276d50b9a0a522591dc80084996623cb3b0e959089"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "50f458a6ddb8f2f2ca36a8520067cdaa01bf698f921e8fe03215c892bfddd00e"
         },
         "publication.metadata": "data/plugins/1569126506-sudo--dsh-team-cost/META.json",
         "publication.summaries": {
-            "text": "按工作区归属成员统计模型用量，提供团队报表、预算告警和可选请求拦截。",
+            "text": "从 DSH 会话事件记团队 token/成本，提供成员预算、告警和报表。",
             "revision": "72f371c7cf45578791739c06b1d949e2868536dd",
             "source_url": "https://github.com/1569126506-sudo/dsh-team-cost/blob/72f371c7cf45578791739c06b1d949e2868536dd/README.md"
         },
         "publication.capabilities": {
             "revision": "72f371c7cf45578791739c06b1d949e2868536dd",
             "items": {
-                "模型工具": "team_cost_report。",
-                "后台": "成员归因、用量账本、预算告警及请求拦截。",
-                "界面": "RPC团队成本看板。"
-            }
+                "模型工具": "team_cost_report聚合报表与CSV",
+                "界面": "团队成本/配额看板",
+                "事件监听": "session/event计量及可选agent/request拦截",
+                "后台": "rollup落盘/member热读定时器与异步通知"
+            },
+            "table": "| 能力 | 作用 | 边界 |\n| --- | --- | --- |\n| 计量 | 成员/模型 token 记录 | 事件覆盖/价格未验 |\n| 预算 | 阈值通知/可选拦截 | 默认 off，汇总可过期 |\n| 报告 | 文本/CSV/看板 | CSV 丢部分维度 |"
         },
         "publication.advice": {
             "revision": "72f371c7cf45578791739c06b1d949e2868536dd",
-            "text": "先只监测不拦截，对照实际账单和子代理用量，补全模型价格并检查相似工作区前缀；金额可信后再考虑预算阻断。"
+            "text": "隔离 profile 先固定成员路径、模型价和真实账单对照，测试崩溃/事件 replay/相邻路径，再考虑 alert；不要以此版结算或启用强制拦截。详见[Q04](#research-q04)。"
         },
         "registry": "data/plugins/1569126506-sudo--dsh-team-cost",
-        "reports": "# dsh-team-cost\n\n> 按工作区归属成员统计模型用量，提供团队报表、预算告警和可选请求拦截。\n\n## 固定范围与依据\n\n固定提交 [72f371c7cf45578791739c06b1d949e2868536dd](https://github.com/1569126506-sudo/dsh-team-cost/blob/72f371c7cf45578791739c06b1d949e2868536dd/src/index.ts)；组件路径：仓库根。核查时间 2026-10-20T04:31:53.465Z；本轮基准 2026-10-20T04:25:27.514Z。\n源码抽读路径：src/index.ts、src/attribution.ts、src/pricing.ts、src/quota.ts、src/store.ts。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：共用宿主的团队需要把用量归到成员并管预算，验收应对齐账单与身份，不能只看报表有数字。\n- **亮点**：src/index.ts监听assistant/message用量，按cwd最长前缀归因，写JSONL及汇总；agent/request可按团队或成员预算拒绝新请求。\n- **思考**：把团队汇总接到请求门禁有管理价值；若归属或单价缺失，报表精确显示也会掩盖错误。\n- **建议**：先只监测不拦截，对照实际账单和子代理用量，补全模型价格并检查相似工作区前缀；金额可信后再考虑预算阻断。\n\n## 场景与替代办法\n\n共用宿主的团队需要把用量归到成员并管预算，验收应对齐账单与身份，不能只看报表有数字。\n\n此前未入档；厂商账单与单人用量插件为对照。本项主要补团队归因，但没有独立证据支持README中的漏计倍数。\n\n## 依赖与流程\n\n需要完整usage事件、准确cwd、价格表与可写账本，Webhook另依赖外部接收方；没有归属时会落默认成员。\n\n配置成员路径和价格，积累报表，对账后设置告警；触发预算时核对请求身份，误拦先关闭enforce并修归属，不把缺价当免费。\n\n## 成本与效果\n\n账本写入、轮询与Webhook有运维负担，价格维护和归属纠错占人工；没有实测漏计比例或账单精度。\n\n把团队汇总接到请求门禁有管理价值；若归属或单价缺失，报表精确显示也会掩盖错误。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：b71cf60b1c62bf3cb41976228da5bd12ed5b18bd98fdeb110cef67c5a434a8f6。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 193 | 163 | 17 | — |\n| .md | source | 2 | 181 | — | — | 1918 |\n| .mjs | source | 2 | 128 | 98 | 18 | — |\n| .ts | source | 10 | 1038 | 795 | 156 | — |\n| .mjs | test | 1 | 93 | 78 | 7 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **模型工具**：team_cost_report。\n- **后台**：成员归因、用量账本、预算告警及请求拦截。\n- **界面**：RPC团队成本看板。\n\n## 工程亮点\n\n归因、价格、quota与store分层便于替换；路径规范化无大小写平台区分，未知价回退与字符串前缀都需独立约束。\n\n## 分发与兼容\n\n0.2.1，Node>=22，发布入口dist/index.js，依赖zod及宿主session/request事件、Web RPC；作者说npm渠道尚待开放。\n\n## 历史对照\n\n当前快照此前没有该稳定身份的研究档案。此前未入档；厂商账单与单人用量插件为对照。本项主要补团队归因，但没有独立证据支持README中的漏计倍数。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：路径前缀不是登录身份认证，startsWith未检查目录边界；未知模型默认零价会低估金额，成员拦截依赖请求payload可解析。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：以父子会话、相邻目录前缀、重放事件与未知模型对账，验证重启去重、预算边界及并发请求超额，记录差异金额。\n",
+        "reports": "# dsh-team-cost\n\n> 从 DSH 会话事件记团队 token/成本，提供成员预算、告警和报表。\n\n## 研究范围\n\n- **仓库**：[1569126506-sudo/dsh-team-cost](https://github.com/1569126506-sudo/dsh-team-cost)\n- **版本号**：0.2.1（[固定提交 72f371c7cf45578791739c06b1d949e2868536dd](https://github.com/1569126506-sudo/dsh-team-cost/tree/72f371c7cf45578791739c06b1d949e2868536dd)）\n- **版本日期**：2026-09-11（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n源码证实事件计量接线，但 JSONL/rollup 断层、未知模型零价和前缀错归使“精确账单/强配额”未成立；未与真实账单对照。\n\n## 洞察短评\n\n- **用途**：共用 DSH 主机的团队需看成员/模型消耗并控制预算。\n- **亮点**：把会话事件的 token 桶汇入成员/模型/天账本并连接预算通知、工具报告和看板；较单会话用量视图形成团队管理入口。详见[Q01](#research-q01)。\n- **思考**：rollup 不从 JSONL 重建，崩溃/缺缓存可少报；归因纯前缀可串成员，未知模型费用为 0，CSV 按天导出丢成员/模型。见[Q02](#research-q02)、[Q03](#research-q03)。 正确价/无崩溃也只是事后计量，无并发在途预留；团队全量报表访问依宿主外层授权。\n- **建议**：现版声明 JSONL 真相源却不重建/去重，未知价零与路径前缀错归；若按 sid+seq 重建、缺价标 unknown、身份/路径段归因，或可降漏计/误拦，但增启动/管理成本。故障、重复、相邻路径和未知模型对照事件/账单；若误差不降或成本超阈值即证伪。详见[Q05](#research-q05)。\n\n采用建议：隔离 profile 先固定成员路径、模型价和真实账单对照，测试崩溃/事件 replay/相邻路径，再考虑 alert；不要以此版结算或启用强制拦截。详见[Q04](#research-q04)。\n\n## 核心贡献\n\n把会话事件的 token 桶汇入成员/模型/天账本并连接预算通知、工具报告和看板；较单会话用量视图形成团队管理入口。详见[Q01](#research-q01)。\n\n## 关键质疑\n\nrollup 不从 JSONL 重建，崩溃/缺缓存可少报；归因纯前缀可串成员，未知模型费用为 0，CSV 按天导出丢成员/模型。见[Q02](#research-q02)、[Q03](#research-q03)。 正确价/无崩溃也只是事后计量，无并发在途预留；团队全量报表访问依宿主外层授权。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n现版声明 JSONL 真相源却不重建/去重，未知价零与路径前缀错归；若按 sid+seq 重建、缺价标 unknown、身份/路径段归因，或可降漏计/误拦，但增启动/管理成本。故障、重复、相邻路径和未知模型对照事件/账单；若误差不降或成本超阈值即证伪。详见[Q05](#research-q05)。\n\n固定多成员/子代理事件和真实账单，核原始 token 桶/计价、不同路径归因；崩溃于 flush 前、删除 rollup、重复事件、未知模型、CSV 按成员参数等对照。\n\n## 场景与替代办法\n\n共用 DSH 主机的团队需看成员/模型消耗并控制预算。\n\n单会话 provider 用量/手工 CSV 汇总也可统计；此项团队归因和预算集成有增量，但没有证明准确性或节时。\n\n## 依赖与流程\n\n| 类型 | 条件 | 边界 |\n| --- | --- | --- |\n| 必需 | DSH session/event/agent/request 与工具接口 | 宿主覆盖未实测 |\n| 配置 | cwd 归因/模型价格/成员预算 | 未知价格零、前缀串匹配 |\n| 可选 | Webhook/Typert 客户端 | 通知/看板依赖外部服务 |\n\n| 步骤 | 动作 | 合格核验 |\n| --- | --- | --- |\n| 配置 | 固定成员路径和价目、关闭强拦 | 路径/价目有来源 |\n| 记账 | 收集事件/JSONL、导出汇总 | 对账单与子代理清单 |\n| 故障 | 停机/replay/缺缓存重启 | JSONL/rollup/配额一致 |\n\n## 成本与效果\n\n| 阶段 | 现金/计算/外部资源 | 人工/时间 | 未知与失败恢复 |\n| --- | --- | --- | --- |\n| 首次 | Node/DSH、存储、可选 Webhook 服务，价格未知 | 配成员 cwd/模型价/预算与账单基准，工时未知 | npm 发布/构建、宿主事件兼容未知 |\n| 持续 | 每事件 JSONL/聚合、周期 rollup、Webhook/模型工具 token，金额未知；未知模型本地记0非免费 | 维护价目/成员规则、核对官方账单和拦截，工时未知 | 调用覆盖率、模型费与节省对账时间未知 |\n| 失败恢复 | 从 JSONL 纠正 rollup/重报与重复模型请求耗 IO/token，实际成本未知 | 排查少报/错归/重复与误拦，手工重建/仲裁时间未知 | 故障率、停工与错账损失未知 |\n\n| 已实现 | 预期价值 | 边界 |\n| --- | --- | --- |\n| 事件账本/预算 | 团队费用可视化 | 覆盖/价格未验 |\n| 报表/CSV | 汇总成本 | CSV 固定日维度 |\n| Webhook/拦截 | 提醒超支 | 汇总过期可能误拦/漏拦 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**核团队用量计量、归因与费用/预算真实性及失败恢复。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 团队成本管家实际计量什么并提供哪些交付入口？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\nHost 监听 session/event 中带 usage 的 assistant/message，取 session.cwd、provider/model 和 token 桶，按成员规则计价入本地 JSONL，再提供 team_cost_report/CSV、配额告警与 Web 看板；子代理若产生同类事件也会被处理。README “精确记录每一次模型调用”“子代理全部计入”和官方论坛 2.3× 是作者陈述，固定源码只能证明事件监听路径，不能证明宿主事件覆盖、无漏/重或与官方账单一致。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:5-23](https://github.com/1569126506-sudo/dsh-team-cost/blob/72f371c7cf45578791739c06b1d949e2868536dd/README.md#L5-L23)\n\n作者场景/全量声明。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n> DeepSeek Harness 团队级 AI 用量与成本计量插件：**按成员、按项目**精确记录每一次模型调用的 token 与费用（子代理一并计入），内置成员预算、阈值告警、Webhook 通知、可选超支拦截，以及一个可以随时向 AI 查询的报表工具。\n\nDeepSeek Harness (`dsh`) 正在被团队共用一台主机地使用，但生态里现存的 100+ 个用量插件几乎全是**单人自用仪表盘**：它们盯着自己会话的余额，回答不了团队最关心的问题——\n\n- 这个月**每个人**花了多少钱？\n- 子代理（subagent / Agent Teams 队友）的用量去哪了？（官方论坛已有团队反馈汇总口径少算 2.3×）\n- 谁超预算了？超了要不要拦？\n\n`dsh-team-cost` 只做这一件事，把它做完整。\n\n## 功能\n\n- **全量计量**：监听 `session/event`，从每条 `assistant/message` 读取官方 `TokenUsage`（未命中输入 / 输出 / 缓存命中 / 缓存写入 / 推理分列）。子代理会话照常上报，全部计入。\n- **成员归因**：按工作空间路径前缀规则把会话归属到成员（`members=workspace` 规则，最长前缀优先）；配 `dsh-login` 每用户工作空间时每人只需一行规则。未匹配的会话归入可配置的默认成员。\n- **计价**：内置 DeepSeek 2026-09 官方价目表（峰/谷价 × 人民币/美元），其他模型通过 `price-overrides.json` 配置；未配置的模型照常计 token，费用记 0。\n- **成员预算**：每个成员独立的日/月费用与 token 预算，编辑 `<dataDir>/members.json` 一分钟内生效，无需重启。\n- **告警**：越过 80%/100% 阈值时触发一次通知（去重），可推送 Webhook（企微/钉钉/飞书机器人直接可用）；同时派发 `dsh-team-cost/quota-exceeded` 事件给其他插件。\n- **超支拦截（可选）**：`enforce: 'total'` 超过团队日预算后拦截新模型请求；`enforce: 'members'` 尝试按成员拦截（尽力而为，见配置注释）。默认只监控不拦截。\n- **报表工具**：AI 工具 `team_cost_report`——问一句\"出一下本月团队成本报表\"即可按成员/模型/天分组统计，支持导出 CSV。\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/index.ts:84-115](https://github.com/1569126506-sudo/dsh-team-cost/blob/72f371c7cf45578791739c06b1d949e2868536dd/src/index.ts#L84-L115)\n\n事件计量接线。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\n  // Meter one usage-bearing assistant message. The firehose delivers every\n  // session — top-level or subagent — so team and teammate spend is counted\n  // in full instead of being lost to single-session dashboards.\n  ctx.on('session/event', (session, event) => {\n    if (event.type !== 'assistant/message') return\n    const usage = event.data.usage\n    if (!usage) return\n    const source = event.data.message.source\n    const header = session.header\n    const user = attribution.resolve(header.cwd)\n    const record: UsageRecord = {\n      t: new Date(event.time).toISOString(),\n      seq: event.seq,\n      sid: header.id,\n      ws: header.cwd ?? '',\n      user,\n      provider: source.provider,\n      model: source.model,\n      in: usage.inputTokens ?? 0,\n      out: usage.outputTokens ?? 0,\n      cr: usage.cacheReadTokens,\n      cw: usage.cacheWriteTokens,\n      rz: usage.reasoningTokens,\n      cost: Number(pricing.cost(source.model, usage).toFixed(6)),\n    }\n    void store\n      .record(record)\n      .then(() => quota.evaluate(user))\n      .then((status) => {\n        if (status.over) ctx.emit('dsh-team-cost/quota-exceeded', status)\n      })\n      .catch(onError)\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/index.ts:118-150](https://github.com/1569126506-sudo/dsh-team-cost/blob/72f371c7cf45578791739c06b1d949e2868536dd/src/index.ts#L118-L150)\n\n拦截/报告/看板注册。\n\n<details>\n<summary>查看原文（33行）</summary>\n\n```text\n  if (config.enforce !== 'off') {\n    ctx.on('agent/request', (payload, next) => {\n      if (config.enforce === 'total') {\n        if (config.totalDailyCost > 0) {\n          const totals = store.totalsFor('*')\n          if (totals.todayCost >= config.totalDailyCost) {\n            throw new Error(\n              `[dsh-team-cost] 团队今日费用已超预算 ${totals.todayCost.toFixed(2)}/${config.totalDailyCost} ${config.currency}，新请求已被拦截`,\n            )\n          }\n        }\n      } else if (config.enforce === 'members') {\n        // Best-effort member resolution from the agent's session header.\n        const agent = payload.agent as { session?: { header?: { cwd?: string } } } | undefined\n        const user = attribution.resolve(agent?.session?.header?.cwd)\n        if (quota.isBlocked(user)) {\n          throw new Error(\n            `[dsh-team-cost] 成员 ${user} 已超出预算，新请求已被拦截（调整 <dataDir>/members.json 后一分钟内生效）`,\n          )\n        }\n      }\n      return next()\n    })\n  }\n\n  ctx.tools.register(createReportTool({ store, currency: config.currency }))\n\n  // RPC 服务:Web 看板经 remote.teamCost.getState() 读取快照(./typert 清单由\n  // typert-loader 自动扫描注册)。\n  ctx.provide(\n    'teamCost',\n    createTeamCostService({ store, quota, currency: config.currency, enforce: config.enforce }),\n  )\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/report.ts:16-55](https://github.com/1569126506-sudo/dsh-team-cost/blob/72f371c7cf45578791739c06b1d949e2868536dd/src/report.ts#L16-L55)\n\n报告工具与 CSV 入口。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\nexport function createReportTool(deps: ReportDeps) {\n  return defineTool({\n    name: 'team_cost_report',\n    description:\n      '查询团队 AI 用量与成本报表（按成员/模型/天分组，支持 today/month/all 范围，可导出 CSV）。' +\n      'Query team AI usage and cost: group by member, model, or day; optionally export CSV.',\n    parameters: {\n      range: { type: 'string', description: '统计范围: today | month | all (默认 today)' },\n      groupBy: { type: 'string', description: '分组维度: member | model | day (默认 member)' },\n      csv: { type: 'string', description: '传 \"true\" 时同时导出 CSV 文件并返回路径' },\n    },\n    output: {\n      schema: { type: 'string' },\n      render: (_args, value) => [{ type: 'text', text: value }],\n    },\n    async execute(args: { range?: string; groupBy?: string; csv?: string }) {\n      const range = RANGES.has(args.range ?? '') ? (args.range as 'today' | 'month' | 'all') : 'today'\n      const groupBy = GROUPS.has(args.groupBy ?? '') ? (args.groupBy as 'member' | 'model' | 'day') : 'member'\n      const rows = deps.store.aggregate(range, groupBy)\n      const label = groupBy === 'member' ? '成员' : groupBy === 'model' ? '模型' : '日期'\n      const lines: string[] = [\n        `团队用量报表 (${range === 'today' ? '今天' : range === 'month' ? '本月' : '全部'}, 单位: ${deps.currency})`,\n        '',\n        `${label} | 调用次数 | 输入 tokens | 输出 tokens | 缓存命中 | 费用`,\n        '--- | --- | --- | --- | --- | ---',\n      ]\n      let totalCost = 0\n      for (const row of rows) {\n        totalCost += row.cost\n        lines.push(\n          `${groupBy === 'day' ? row.day : groupBy === 'member' ? row.user : row.model} | ${row.calls} | ${fmt(row.in + row.cw)} | ${fmt(row.out)} | ${fmt(row.cr)} | ${row.cost.toFixed(4)}`,\n        )\n      }\n      lines.push('', `合计费用: ${totalCost.toFixed(4)} ${deps.currency}`)\n\n      if (args.csv === 'true') {\n        const file = await deps.store.exportCsv(range)\n        lines.push('', `CSV 已导出: ${file}`)\n      }\n      return lines.join('\\n')\n```\n\n</details>\n\n#### 缺口\n\n- 未对照宿主真实用量与 provider 账单。\n  **影响：**覆盖率/精确性未知。\n  **进一步探讨：**固定会话与子代理样本对照事件、账本和账单。\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 成员归因、价格与预算怎样计算，哪些配置会导致低估或错归？\n\n**研究主题：**功能与机制、依赖、兼容与流程\n\n#### 完整回答\n\n成员归因按 cwd 最长文本前缀匹配，normalize 斜杠并小写；没有路径段边界，因此 /team/alice 会匹配 /team/alice2。未命中归默认成员。DeepSeek 名字按 startsWith/includes 匹配内置静态 2026-09 表，未知模型 fallback 0，虽计 token 却报费用 0；Peak 是静态开关而非实际时段自动识别。成员预算文件每分钟热读，拦截默认 off；members 请求钩子若取不到 agent session cwd 就落默认成员，不能当身份隔离。\n\n即使价格正确、无崩溃且成员归因准确，计量仍发生在assistant/message已产生usage之后，store.record异步完成再evaluate。agent/request只检查现有汇总，没有为在途请求预留/锁定费用；并发请求可同时读到未超预算后放行，达到阈值后也只挡后续新请求，不停止已经发起的模型或提供全局费用硬顶。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/attribution.ts:9-48](https://github.com/1569126506-sudo/dsh-team-cost/blob/72f371c7cf45578791739c06b1d949e2868536dd/src/attribution.ts#L9-L48)\n\n前缀解析和匹配。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n * Parse `memberName=workspacePathPrefix` rules. Longest prefixes win;\n * malformed entries (no '=') are ignored so a typo cannot take the\n * metering plugin down.\n */\nexport function parseRules(entries: readonly string[]): AttributionRule[] {\n  const rules: AttributionRule[] = []\n  for (const entry of entries) {\n    const eq = entry.indexOf('=')\n    if (eq <= 0 || eq === entry.length - 1) continue\n    const member = entry.slice(0, eq).trim()\n    const prefix = entry.slice(eq + 1).trim()\n    if (member && prefix) rules.push({ member, prefix })\n  }\n  rules.sort((a, b) => b.prefix.length - a.prefix.length)\n  return rules\n}\n\n/** Normalize a path for comparison: forward slashes, no trailing slash. */\nfunction normalizePath(p: string): string {\n  return p.replaceAll('\\\\', '/').replace(/\\/+$/, '').toLowerCase()\n}\n\nexport class Attribution {\n  private readonly rules: AttributionRule[]\n\n  constructor(\n    entries: readonly string[],\n    private readonly defaultMember: string,\n  ) {\n    this.rules = parseRules(entries)\n  }\n\n  /** Resolve the member for one session cwd (may be empty/unknown). */\n  resolve(cwd: string | undefined): string {\n    if (!cwd) return this.defaultMember\n    const norm = normalizePath(cwd)\n    for (const rule of this.rules) {\n      if (norm.startsWith(normalizePath(rule.prefix))) return rule.member\n    }\n    return this.defaultMember\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/pricing.ts:10-13](https://github.com/1569126506-sudo/dsh-team-cost/blob/72f371c7cf45578791739c06b1d949e2868536dd/src/pricing.ts#L10-L13)\n\n未知模型零价说明。\n\n```text\n * The builtin catalog ships DeepSeek's published 2026-09 pricing in both\n * CNY and USD, off-peak and peak. Unknown models are not guessed: they\n * meter tokens and price at `fallbackPrice` (default 0) until an override\n * is added to <dataDir>/price-overrides.json.\n```\n\n**依据 3 · 源码核查**：[src/pricing.ts:52-82](https://github.com/1569126506-sudo/dsh-team-cost/blob/72f371c7cf45578791739c06b1d949e2868536dd/src/pricing.ts#L52-L82)\n\n静态价格/匹配与公式。\n\n<details>\n<summary>查看原文（31行）</summary>\n\n```text\n  priceFor(model: string): { price: ModelPrice; source: 'override' | 'builtin' | 'fallback' } {\n    const override = this.overrides.get(model)\n    if (override) return { price: override, source: 'override' }\n    const cur = this.currency.toUpperCase() === 'USD' ? 'USD' : 'CNY'\n    const m = model.toLowerCase()\n    // DeepSeek route ids commonly look like deepseek-chat / deepseek-reasoner\n    // / deepseek-v4.x-flash; flash-family and legacy ids resolve separately.\n    if (m.startsWith('deepseek')) {\n      if (m.includes('flash') || m.includes('v4')) {\n        const tier = DEEPEEK_V4_FLASH[cur]\n        return { price: this.peak ? tier.peak : tier.offpeak, source: 'builtin' }\n      }\n      return { price: DEEPSEEK_LEGACY[cur], source: 'builtin' }\n    }\n    return { price: this.fallback, source: 'fallback' }\n  }\n\n  /** Cost in currency major units for one call. */\n  cost(\n    model: string,\n    usage: { inputTokens: number; outputTokens: number; cacheReadTokens?: number; cacheWriteTokens?: number },\n  ): number {\n    const { price } = this.priceFor(model)\n    const cr = usage.cacheReadTokens ?? 0\n    const cw = usage.cacheWriteTokens ?? 0\n    const m = 1e6\n    return (\n      (cr * price.cr) / m +\n      ((usage.inputTokens + cw) * price.in) / m +\n      (usage.outputTokens * price.out) / m\n    )\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/config.ts:14-25](https://github.com/1569126506-sudo/dsh-team-cost/blob/72f371c7cf45578791739c06b1d949e2868536dd/src/config.ts#L14-L25)\n\n拦截 best-effort 注释。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n  deepseekPeakPricing: boolean\n  /**\n   * Enforcement mode:\n   * - 'off' (default): meter and alert only, never block model requests.\n   * - 'total': block new model requests once the TOTAL daily cost budget is\n   *   exceeded (set `totalDailyCost` > 0 to arm).\n   * - 'members': additionally block a member's new requests once that member\n   *   is over any of their 100% budgets. Member resolution inside the request\n   *   hook is best-effort (workspace-based); sessions that cannot be resolved\n   *   are allowed. Requires a DSH version whose agent payload exposes the\n   *   session; when it does not, 'members' behaves like 'off' for unresolved\n   *   agents — which is why 'off' remains the default.\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/index.ts:118-140](https://github.com/1569126506-sudo/dsh-team-cost/blob/72f371c7cf45578791739c06b1d949e2868536dd/src/index.ts#L118-L140)\n\ntotal/members 拦截路径。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n  if (config.enforce !== 'off') {\n    ctx.on('agent/request', (payload, next) => {\n      if (config.enforce === 'total') {\n        if (config.totalDailyCost > 0) {\n          const totals = store.totalsFor('*')\n          if (totals.todayCost >= config.totalDailyCost) {\n            throw new Error(\n              `[dsh-team-cost] 团队今日费用已超预算 ${totals.todayCost.toFixed(2)}/${config.totalDailyCost} ${config.currency}，新请求已被拦截`,\n            )\n          }\n        }\n      } else if (config.enforce === 'members') {\n        // Best-effort member resolution from the agent's session header.\n        const agent = payload.agent as { session?: { header?: { cwd?: string } } } | undefined\n        const user = attribution.resolve(agent?.session?.header?.cwd)\n        if (quota.isBlocked(user)) {\n          throw new Error(\n            `[dsh-team-cost] 成员 ${user} 已超出预算，新请求已被拦截（调整 <dataDir>/members.json 后一分钟内生效）`,\n          )\n        }\n      }\n      return next()\n    })\n```\n\n</details>\n\n**依据 6 · 源码核查**：[src/index.ts:87-140](https://github.com/1569126506-sudo/dsh-team-cost/blob/72f371c7cf45578791739c06b1d949e2868536dd/src/index.ts#L87-L140)\n\n事后usage异步入账，再按已有汇总拦新请求，无并发预留。\n\n<details>\n<summary>查看原文（54行）</summary>\n\n```text\n  ctx.on('session/event', (session, event) => {\n    if (event.type !== 'assistant/message') return\n    const usage = event.data.usage\n    if (!usage) return\n    const source = event.data.message.source\n    const header = session.header\n    const user = attribution.resolve(header.cwd)\n    const record: UsageRecord = {\n      t: new Date(event.time).toISOString(),\n      seq: event.seq,\n      sid: header.id,\n      ws: header.cwd ?? '',\n      user,\n      provider: source.provider,\n      model: source.model,\n      in: usage.inputTokens ?? 0,\n      out: usage.outputTokens ?? 0,\n      cr: usage.cacheReadTokens,\n      cw: usage.cacheWriteTokens,\n      rz: usage.reasoningTokens,\n      cost: Number(pricing.cost(source.model, usage).toFixed(6)),\n    }\n    void store\n      .record(record)\n      .then(() => quota.evaluate(user))\n      .then((status) => {\n        if (status.over) ctx.emit('dsh-team-cost/quota-exceeded', status)\n      })\n      .catch(onError)\n  })\n\n  if (config.enforce !== 'off') {\n    ctx.on('agent/request', (payload, next) => {\n      if (config.enforce === 'total') {\n        if (config.totalDailyCost > 0) {\n          const totals = store.totalsFor('*')\n          if (totals.todayCost >= config.totalDailyCost) {\n            throw new Error(\n              `[dsh-team-cost] 团队今日费用已超预算 ${totals.todayCost.toFixed(2)}/${config.totalDailyCost} ${config.currency}，新请求已被拦截`,\n            )\n          }\n        }\n      } else if (config.enforce === 'members') {\n        // Best-effort member resolution from the agent's session header.\n        const agent = payload.agent as { session?: { header?: { cwd?: string } } } | undefined\n        const user = attribution.resolve(agent?.session?.header?.cwd)\n        if (quota.isBlocked(user)) {\n          throw new Error(\n            `[dsh-team-cost] 成员 ${user} 已超出预算，新请求已被拦截（调整 <dataDir>/members.json 后一分钟内生效）`,\n          )\n        }\n      }\n      return next()\n    })\n```\n\n</details>\n\n**依据 7 · 源码核查**：[src/store.ts:61-75](https://github.com/1569126506-sudo/dsh-team-cost/blob/72f371c7cf45578791739c06b1d949e2868536dd/src/store.ts#L61-L75)\n\nrecord追加完成后才更新cells。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n  async record(rec: UsageRecord): Promise<void> {\n    await appendFile(this.jsonlPath(rec.t), JSON.stringify(rec) + '\\n', 'utf8')\n    const key = `${dayKeyOf(rec.t)}\\u0000${rec.user}\\u0000${rec.model}`\n    let cell = this.cells.get(key)\n    if (!cell) {\n      cell = { day: dayKeyOf(rec.t), user: rec.user, model: rec.model, calls: 0, in: 0, out: 0, cr: 0, cw: 0, cost: 0 }\n      this.cells.set(key, cell)\n    }\n    cell.calls += 1\n    cell.in += rec.in\n    cell.out += rec.out\n    cell.cr += rec.cr ?? 0\n    cell.cw += rec.cw ?? 0\n    cell.cost += rec.cost\n  }\n```\n\n</details>\n\n#### 缺口\n\n- 未核当前官方价格和实际成员 cwd。\n  **影响：**费用及人员归属可能偏差。\n  **进一步探讨：**固定跨模型账单、相似路径与跨工作区会话对照。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 账本与 rollup、CSV 和配额能在崩溃后保持一致吗？\n\n**研究主题：**缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\nrecord 先 append JSONL 再更新内存 cells；rollups.json 定时约15秒写一次，启动只 loadRollups，不从 JSONL 重建，坏缓存还显式注释“rebuild lazily not implemented”。因此上次 flush 后至崩溃前已入 JSONL 的记录不会进入重启后的报表/预算；缺 rollups 时既有 JSONL 也不会装回。无 sid+seq 去重，重放事件可能重复记账。CSV export 固定 aggregate(range, day)，表头 member/model 实际为 *，所以“按成员分组导出”不会保留成员/模型。配额基于内存汇总，也会随缓存陈旧而误判。\n\nteam_cost_report.execute只接range/groupBy/csv，没有调用者或成员过滤；RPC getState返回已知及有计量记录的全部成员预算/费用和模型聚合。cwd只用来归因账目，不授权谁可读团队报表。本层是全团队管理视图，目标宿主的模型工具/Remote准入须把它限定给适当管理员；外围准入未核，不能把本地无过滤直接写成已发生跨成员泄露。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/store.ts:20-24](https://github.com/1569126506-sudo/dsh-team-cost/blob/72f371c7cf45578791739c06b1d949e2868536dd/src/store.ts#L20-L24)\n\nJSONL 真相源声明。\n\n```text\n/**\n * Append-only JSONL metering log plus an in-memory aggregate, flushed to a\n * small JSON file for fast startup. The JSONL file is the source of truth;\n * rollups.json is a cache and is rebuilt from it on demand.\n */\n```\n\n**依据 2 · 源码核查**：[src/store.ts:61-75](https://github.com/1569126506-sudo/dsh-team-cost/blob/72f371c7cf45578791739c06b1d949e2868536dd/src/store.ts#L61-L75)\n\n先 append 后内存更新。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n  async record(rec: UsageRecord): Promise<void> {\n    await appendFile(this.jsonlPath(rec.t), JSON.stringify(rec) + '\\n', 'utf8')\n    const key = `${dayKeyOf(rec.t)}\\u0000${rec.user}\\u0000${rec.model}`\n    let cell = this.cells.get(key)\n    if (!cell) {\n      cell = { day: dayKeyOf(rec.t), user: rec.user, model: rec.model, calls: 0, in: 0, out: 0, cr: 0, cw: 0, cost: 0 }\n      this.cells.set(key, cell)\n    }\n    cell.calls += 1\n    cell.in += rec.in\n    cell.out += rec.out\n    cell.cr += rec.cr ?? 0\n    cell.cw += rec.cw ?? 0\n    cell.cost += rec.cost\n  }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/store.ts:147-169](https://github.com/1569126506-sudo/dsh-team-cost/blob/72f371c7cf45578791739c06b1d949e2868536dd/src/store.ts#L147-L169)\n\n缓存定时写/启动不重建。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n  private async flush(): Promise<void> {\n    const payload = JSON.stringify({ version: 1, cells: this.cellList() })\n    const tmp = this.rollupsPath + '.tmp'\n    await writeFile(tmp, payload, 'utf8')\n    await rename(tmp, this.rollupsPath)\n  }\n\n  private async loadRollups(): Promise<void> {\n    if (!existsSync(this.rollupsPath)) return\n    try {\n      const parsed: unknown = JSON.parse(await readFile(this.rollupsPath, 'utf8'))\n      const cells = (parsed as { cells?: RollupCell[] }).cells\n      if (Array.isArray(cells)) {\n        for (const cell of cells) {\n          if (cell && typeof cell.day === 'string' && typeof cell.user === 'string' && typeof cell.model === 'string') {\n            this.cells.set(`${cell.day}\\u0000${cell.user}\\u0000${cell.model}`, cell)\n          }\n        }\n      }\n    } catch {\n      // Corrupt cache: rebuild lazily is not implemented in MVP; keep going\n      // with in-memory only aggregates — the JSONL log still has everything.\n    }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/store.ts:93-114](https://github.com/1569126506-sudo/dsh-team-cost/blob/72f371c7cf45578791739c06b1d949e2868536dd/src/store.ts#L93-L114)\n\n聚合会按维度丢其他维。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n  /** Aggregate rows over a range, grouped by 'member' | 'model' | 'day'. */\n  aggregate(range: 'today' | 'month' | 'all', groupBy: 'member' | 'model' | 'day'): RollupCell[] {\n    const today = this.todayKey()\n    const month = this.monthKey()\n    const acc = new Map<string, RollupCell>()\n    for (const cell of this.cellList()) {\n      if (range === 'today' && cell.day !== today) continue\n      if (range === 'month' && !cell.day.startsWith(month)) continue\n      const groupKey = groupBy === 'member' ? cell.user : groupBy === 'model' ? cell.model : cell.day\n      let row = acc.get(groupKey)\n      if (!row) {\n        row = { day: cell.day, user: groupBy === 'member' ? groupKey : '*', model: groupBy === 'model' ? groupKey : '*', calls: 0, in: 0, out: 0, cr: 0, cw: 0, cost: 0 }\n        acc.set(groupKey, row)\n      }\n      row.calls += cell.calls\n      row.in += cell.in\n      row.out += cell.out\n      row.cr += cell.cr\n      row.cw += cell.cw\n      row.cost += cell.cost\n    }\n    return [...acc.values()].sort((a, b) => b.cost - a.cost)\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/store.ts:137-145](https://github.com/1569126506-sudo/dsh-team-cost/blob/72f371c7cf45578791739c06b1d949e2868536dd/src/store.ts#L137-L145)\n\nCSV 固定按 day。\n\n```text\n  async exportCsv(range: 'today' | 'month' | 'all'): Promise<string> {\n    const rows = this.aggregate(range, 'day')\n    const header = 'day,member,model,calls,input_tokens,output_tokens,cache_read,cache_write,cost\\n'\n    const lines = rows.map((r) => `${r.day},${r.user},${r.model},${r.calls},${r.in},${r.out},${r.cr},${r.cw},${r.cost.toFixed(6)}`)\n    const csv = header + lines.join('\\n') + '\\n'\n    const file = join(this.dataDir, 'exports', `report-${range}-${Date.now()}.csv`)\n    await writeFile(file, csv, 'utf8')\n    return file\n  }\n```\n\n**依据 6 · 源码核查**：[src/report.ts:31-54](https://github.com/1569126506-sudo/dsh-team-cost/blob/72f371c7cf45578791739c06b1d949e2868536dd/src/report.ts#L31-L54)\n\n报告 groupBy 与 CSV 分叉。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n    async execute(args: { range?: string; groupBy?: string; csv?: string }) {\n      const range = RANGES.has(args.range ?? '') ? (args.range as 'today' | 'month' | 'all') : 'today'\n      const groupBy = GROUPS.has(args.groupBy ?? '') ? (args.groupBy as 'member' | 'model' | 'day') : 'member'\n      const rows = deps.store.aggregate(range, groupBy)\n      const label = groupBy === 'member' ? '成员' : groupBy === 'model' ? '模型' : '日期'\n      const lines: string[] = [\n        `团队用量报表 (${range === 'today' ? '今天' : range === 'month' ? '本月' : '全部'}, 单位: ${deps.currency})`,\n        '',\n        `${label} | 调用次数 | 输入 tokens | 输出 tokens | 缓存命中 | 费用`,\n        '--- | --- | --- | --- | --- | ---',\n      ]\n      let totalCost = 0\n      for (const row of rows) {\n        totalCost += row.cost\n        lines.push(\n          `${groupBy === 'day' ? row.day : groupBy === 'member' ? row.user : row.model} | ${row.calls} | ${fmt(row.in + row.cw)} | ${fmt(row.out)} | ${fmt(row.cr)} | ${row.cost.toFixed(4)}`,\n        )\n      }\n      lines.push('', `合计费用: ${totalCost.toFixed(4)} ${deps.currency}`)\n\n      if (args.csv === 'true') {\n        const file = await deps.store.exportCsv(range)\n        lines.push('', `CSV 已导出: ${file}`)\n      }\n```\n\n</details>\n\n**依据 7 · 源码核查**：[src/report.ts:31-55](https://github.com/1569126506-sudo/dsh-team-cost/blob/72f371c7cf45578791739c06b1d949e2868536dd/src/report.ts#L31-L55)\n\n模型报表无调用者过滤。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n    async execute(args: { range?: string; groupBy?: string; csv?: string }) {\n      const range = RANGES.has(args.range ?? '') ? (args.range as 'today' | 'month' | 'all') : 'today'\n      const groupBy = GROUPS.has(args.groupBy ?? '') ? (args.groupBy as 'member' | 'model' | 'day') : 'member'\n      const rows = deps.store.aggregate(range, groupBy)\n      const label = groupBy === 'member' ? '成员' : groupBy === 'model' ? '模型' : '日期'\n      const lines: string[] = [\n        `团队用量报表 (${range === 'today' ? '今天' : range === 'month' ? '本月' : '全部'}, 单位: ${deps.currency})`,\n        '',\n        `${label} | 调用次数 | 输入 tokens | 输出 tokens | 缓存命中 | 费用`,\n        '--- | --- | --- | --- | --- | ---',\n      ]\n      let totalCost = 0\n      for (const row of rows) {\n        totalCost += row.cost\n        lines.push(\n          `${groupBy === 'day' ? row.day : groupBy === 'member' ? row.user : row.model} | ${row.calls} | ${fmt(row.in + row.cw)} | ${fmt(row.out)} | ${fmt(row.cr)} | ${row.cost.toFixed(4)}`,\n        )\n      }\n      lines.push('', `合计费用: ${totalCost.toFixed(4)} ${deps.currency}`)\n\n      if (args.csv === 'true') {\n        const file = await deps.store.exportCsv(range)\n        lines.push('', `CSV 已导出: ${file}`)\n      }\n      return lines.join('\\n')\n```\n\n</details>\n\n**依据 8 · 源码核查**：[src/service.ts:19-79](https://github.com/1569126506-sudo/dsh-team-cost/blob/72f371c7cf45578791739c06b1d949e2868536dd/src/service.ts#L19-L79)\n\nRPC返回全团队members及模型聚合。\n\n<details>\n<summary>查看原文（61行）</summary>\n\n```text\n  const service = {\n    /** Full dashboard snapshot: member rows with budgets/totals, model rows. */\n    async getState(): Promise<TeamCostState> {\n      const memberRows: MemberRow[] = []\n      const knownMembers = quota.memberNames()\n      const seen = new Set<string>(knownMembers)\n      for (const name of knownMembers) {\n        const totals = store.totalsFor(name)\n        const status = await quota.evaluate(name)\n        const budgets = quota.budgetsFor(name)\n        memberRows.push({\n          name,\n          todayCost: totals.todayCost,\n          todayTokens: totals.todayTokens,\n          monthCost: totals.monthCost,\n          monthTokens: totals.monthTokens,\n          dailyCost: budgets.dailyCost,\n          monthlyCost: budgets.monthlyCost,\n          dailyTokens: budgets.dailyTokens,\n          monthlyTokens: budgets.monthlyTokens,\n          level: status.level,\n          over: status.over,\n        })\n      }\n      const fold = (rows: ReturnType<UsageStore['aggregate']>): GroupRow[] =>\n        rows.map((r) => ({\n          key: r.model !== '*' ? r.model : r.user,\n          calls: r.calls,\n          inTok: r.in + r.cw,\n          outTok: r.out,\n          cacheRead: r.cr,\n          cacheWrite: r.cw,\n          cost: r.cost,\n        }))\n      // Members that metered activity but have no budgets file entry.\n      for (const row of store.aggregate('month', 'member')) {\n        if (seen.has(row.user)) continue\n        seen.add(row.user)\n        const totals = store.totalsFor(row.user)\n        memberRows.push({\n          name: row.user,\n          todayCost: totals.todayCost,\n          todayTokens: totals.todayTokens,\n          monthCost: totals.monthCost,\n          monthTokens: totals.monthTokens,\n          level: 0,\n          over: false,\n        })\n      }\n      memberRows.sort((a, b) => b.monthCost - a.monthCost)\n      const now = new Date()\n      return {\n        currency,\n        enforce,\n        generatedAt: now.getTime(),\n        dayKey: store.todayKey(),\n        monthKey: store.monthKey(),\n        members: memberRows,\n        todayByModel: fold(store.aggregate('today', 'model')),\n        monthByModel: fold(store.aggregate('month', 'model')),\n      }\n```\n\n</details>\n\n#### 缺口\n\n- 未故障注入真实 DSH。\n  **影响：**丢汇总/重复事件的实际频率未知。\n  **进一步探讨：**崩溃前后和重复事件 replay 对比 JSONL/rollups/CSV。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 首次、持续和失败恢复各有哪些财务与人工成本？\n\n**研究主题：**效果与总成本、采用判断\n\n#### 完整回答\n\n首次需 Node/DSH、成员工作区规则、价格覆盖、预算、可选 Webhook，校现价/身份；包 MIT，npm 渠道文档称尚未开放，安装/配置工时未知。持续每次事件追加 JSONL、定时 rollup、Webhook 与报表读取，本地存储/IO、模型工具上下文与人工账单核对均有成本；第三方模型未知价在本地被计 0 不是免费。失败恢复要从 JSONL 重建未持久的 rollup、纠正错归/重复、回溯误拦截和通知，实际脚本未内建，人工成本和可能多发模型请求无法定量。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:19-36](https://github.com/1569126506-sudo/dsh-team-cost/blob/72f371c7cf45578791739c06b1d949e2868536dd/README.md#L19-L36)\n\n作者安装/配置声明。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n````text\n- **计价**：内置 DeepSeek 2026-09 官方价目表（峰/谷价 × 人民币/美元），其他模型通过 `price-overrides.json` 配置；未配置的模型照常计 token，费用记 0。\n- **成员预算**：每个成员独立的日/月费用与 token 预算，编辑 `<dataDir>/members.json` 一分钟内生效，无需重启。\n- **告警**：越过 80%/100% 阈值时触发一次通知（去重），可推送 Webhook（企微/钉钉/飞书机器人直接可用）；同时派发 `dsh-team-cost/quota-exceeded` 事件给其他插件。\n- **超支拦截（可选）**：`enforce: 'total'` 超过团队日预算后拦截新模型请求；`enforce: 'members'` 尝试按成员拦截（尽力而为，见配置注释）。默认只监控不拦截。\n- **报表工具**：AI 工具 `team_cost_report`——问一句\"出一下本月团队成本报表\"即可按成员/模型/天分组统计，支持导出 CSV。\n\n## 安装\n\n```sh\n# 从 GitHub 仓库安装\ndsh plugin --profile web add https://github.com/1569126506-sudo/dsh-team-cost\n\n# 或克隆到本地后从路径安装\ngit clone https://github.com/1569126506-sudo/dsh-team-cost.git\ndsh plugin --profile web add ./dsh-team-cost\n```\n\n> npm 渠道（`dsh plugin --profile web add dsh-team-cost`）待账号注册开放后启用。\n````\n\n</details>\n\n**依据 2 · 源码核查**：[src/pricing.ts:33-66](https://github.com/1569126506-sudo/dsh-team-cost/blob/72f371c7cf45578791739c06b1d949e2868536dd/src/pricing.ts#L33-L66)\n\n未知模型零价。\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\nexport class Pricing {\n  private readonly overrides = new Map<string, ModelPrice>()\n\n  constructor(\n    private readonly currency: string,\n    private readonly peak: boolean,\n    private readonly fallback: ModelPrice = { cr: 0, in: 0, out: 0 },\n  ) {}\n\n  /** Load user overrides (model name → price). Later calls win. */\n  setOverrides(entries: Record<string, ModelPrice>): void {\n    this.overrides.clear()\n    for (const [model, price] of Object.entries(entries)) {\n      if (price && typeof price.in === 'number' && typeof price.out === 'number') {\n        this.overrides.set(model, price)\n      }\n    }\n  }\n\n  priceFor(model: string): { price: ModelPrice; source: 'override' | 'builtin' | 'fallback' } {\n    const override = this.overrides.get(model)\n    if (override) return { price: override, source: 'override' }\n    const cur = this.currency.toUpperCase() === 'USD' ? 'USD' : 'CNY'\n    const m = model.toLowerCase()\n    // DeepSeek route ids commonly look like deepseek-chat / deepseek-reasoner\n    // / deepseek-v4.x-flash; flash-family and legacy ids resolve separately.\n    if (m.startsWith('deepseek')) {\n      if (m.includes('flash') || m.includes('v4')) {\n        const tier = DEEPEEK_V4_FLASH[cur]\n        return { price: this.peak ? tier.peak : tier.offpeak, source: 'builtin' }\n      }\n      return { price: DEEPSEEK_LEGACY[cur], source: 'builtin' }\n    }\n    return { price: this.fallback, source: 'fallback' }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/store.ts:34-50](https://github.com/1569126506-sudo/dsh-team-cost/blob/72f371c7cf45578791739c06b1d949e2868536dd/src/store.ts#L34-L50)\n\n初始化/flush。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n  async init(): Promise<void> {\n    await mkdir(this.dataDir, { recursive: true })\n    await mkdir(join(this.dataDir, 'exports'), { recursive: true })\n    await this.loadRollups()\n  }\n\n  startFlushing(onError?: (err: unknown) => void): void {\n    const sec = Math.max(5, this.flushIntervalSec)\n    this.flushTimer = setInterval(() => {\n      this.flush().catch((err) => onError?.(err))\n    }, sec * 1000)\n    this.flushTimer.unref?.()\n  }\n\n  async dispose(): Promise<void> {\n    if (this.flushTimer) clearInterval(this.flushTimer)\n    await this.flush()\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/store.ts:154-169](https://github.com/1569126506-sudo/dsh-team-cost/blob/72f371c7cf45578791739c06b1d949e2868536dd/src/store.ts#L154-L169)\n\n重建未实现。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n  private async loadRollups(): Promise<void> {\n    if (!existsSync(this.rollupsPath)) return\n    try {\n      const parsed: unknown = JSON.parse(await readFile(this.rollupsPath, 'utf8'))\n      const cells = (parsed as { cells?: RollupCell[] }).cells\n      if (Array.isArray(cells)) {\n        for (const cell of cells) {\n          if (cell && typeof cell.day === 'string' && typeof cell.user === 'string' && typeof cell.model === 'string') {\n            this.cells.set(`${cell.day}\\u0000${cell.user}\\u0000${cell.model}`, cell)\n          }\n        }\n      }\n    } catch {\n      // Corrupt cache: rebuild lazily is not implemented in MVP; keep going\n      // with in-memory only aggregates — the JSONL log still has everything.\n    }\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/quota.ts:125-145](https://github.com/1569126506-sudo/dsh-team-cost/blob/72f371c7cf45578791739c06b1d949e2868536dd/src/quota.ts#L125-L145)\n\n阈值 webhook。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n  private alertOnce(user: string, key: string, message: string): void {\n    const dedupe = `${user}:${new Date().toISOString().slice(0, 10)}:${key}`\n    if (this.alerted.has(dedupe)) return\n    this.alerted.add(dedupe)\n    const totals = this.store.totalsFor(user)\n    this.onError?.(new Error(`[dsh-team-cost] ${message}`))\n    if (this.webhook) {\n      const body = JSON.stringify({\n        plugin: 'dsh-team-cost',\n        user,\n        message,\n        todayCost: Number(totals.todayCost.toFixed(4)),\n        monthCost: Number(totals.monthCost.toFixed(4)),\n        time: new Date().toISOString(),\n      })\n      void fetch(this.webhook, {\n        method: 'POST',\n        headers: { 'content-type': 'application/json' },\n        body,\n      }).catch((err) => this.onError?.(err))\n    }\n```\n\n</details>\n\n#### 缺口\n\n- 无账单/人工工时或团队任务对照。\n  **影响：**总体拥有成本与节约未知。\n  **进一步探讨：**抽固定期间核本地/官方账单、人工对账和故障恢复耗时。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 怎样验证账本精确性并减少错误拦截？\n\n**研究主题：**新假设与验证、采用判断\n\n#### 完整回答\n\n现有事实：JSONL 是声明真相源却不重建 rollup，事件无 sid+seq 去重，未知模型价 0，cwd 纯前缀可错归；这些会在崩溃/重放/相邻成员路径下让报表和预算偏离。相对现版内存缓存，假设启动从 JSONL 按 sid+seq 去重重建 rollup、价格缺失显式 unknown 而非 0，并做路径段/身份归因，可降低报表误差与错误拦截。条件是事件身份稳定、日志可完整读取、价格版本/人工身份规则可管理；代价是启动 O(日志量)、索引/迁移、管理员补价与仲裁。最小对照：合成会话/子代理事件含重复与崩溃在 flush 前、/team/alice 与 alice2、未知模型；比较现版/改造版相对独立事件清单/官方账单的错归、漏/重计、预算误拦、启动时间；若准确性无改善或启动/管理成本超预注册阈值即证伪。现阶段不能用源码自报“精确”替代外部对账。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/store.ts:61-75](https://github.com/1569126506-sudo/dsh-team-cost/blob/72f371c7cf45578791739c06b1d949e2868536dd/src/store.ts#L61-L75)\n\n记账与内存聚合。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n  async record(rec: UsageRecord): Promise<void> {\n    await appendFile(this.jsonlPath(rec.t), JSON.stringify(rec) + '\\n', 'utf8')\n    const key = `${dayKeyOf(rec.t)}\\u0000${rec.user}\\u0000${rec.model}`\n    let cell = this.cells.get(key)\n    if (!cell) {\n      cell = { day: dayKeyOf(rec.t), user: rec.user, model: rec.model, calls: 0, in: 0, out: 0, cr: 0, cw: 0, cost: 0 }\n      this.cells.set(key, cell)\n    }\n    cell.calls += 1\n    cell.in += rec.in\n    cell.out += rec.out\n    cell.cr += rec.cr ?? 0\n    cell.cw += rec.cw ?? 0\n    cell.cost += rec.cost\n  }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/store.ts:147-169](https://github.com/1569126506-sudo/dsh-team-cost/blob/72f371c7cf45578791739c06b1d949e2868536dd/src/store.ts#L147-L169)\n\n缺 JSONL 重建。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n  private async flush(): Promise<void> {\n    const payload = JSON.stringify({ version: 1, cells: this.cellList() })\n    const tmp = this.rollupsPath + '.tmp'\n    await writeFile(tmp, payload, 'utf8')\n    await rename(tmp, this.rollupsPath)\n  }\n\n  private async loadRollups(): Promise<void> {\n    if (!existsSync(this.rollupsPath)) return\n    try {\n      const parsed: unknown = JSON.parse(await readFile(this.rollupsPath, 'utf8'))\n      const cells = (parsed as { cells?: RollupCell[] }).cells\n      if (Array.isArray(cells)) {\n        for (const cell of cells) {\n          if (cell && typeof cell.day === 'string' && typeof cell.user === 'string' && typeof cell.model === 'string') {\n            this.cells.set(`${cell.day}\\u0000${cell.user}\\u0000${cell.model}`, cell)\n          }\n        }\n      }\n    } catch {\n      // Corrupt cache: rebuild lazily is not implemented in MVP; keep going\n      // with in-memory only aggregates — the JSONL log still has everything.\n    }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/attribution.ts:26-48](https://github.com/1569126506-sudo/dsh-team-cost/blob/72f371c7cf45578791739c06b1d949e2868536dd/src/attribution.ts#L26-L48)\n\n纯前缀归因。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n/** Normalize a path for comparison: forward slashes, no trailing slash. */\nfunction normalizePath(p: string): string {\n  return p.replaceAll('\\\\', '/').replace(/\\/+$/, '').toLowerCase()\n}\n\nexport class Attribution {\n  private readonly rules: AttributionRule[]\n\n  constructor(\n    entries: readonly string[],\n    private readonly defaultMember: string,\n  ) {\n    this.rules = parseRules(entries)\n  }\n\n  /** Resolve the member for one session cwd (may be empty/unknown). */\n  resolve(cwd: string | undefined): string {\n    if (!cwd) return this.defaultMember\n    const norm = normalizePath(cwd)\n    for (const rule of this.rules) {\n      if (norm.startsWith(normalizePath(rule.prefix))) return rule.member\n    }\n    return this.defaultMember\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/pricing.ts:33-66](https://github.com/1569126506-sudo/dsh-team-cost/blob/72f371c7cf45578791739c06b1d949e2868536dd/src/pricing.ts#L33-L66)\n\n零价 fallback。\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\nexport class Pricing {\n  private readonly overrides = new Map<string, ModelPrice>()\n\n  constructor(\n    private readonly currency: string,\n    private readonly peak: boolean,\n    private readonly fallback: ModelPrice = { cr: 0, in: 0, out: 0 },\n  ) {}\n\n  /** Load user overrides (model name → price). Later calls win. */\n  setOverrides(entries: Record<string, ModelPrice>): void {\n    this.overrides.clear()\n    for (const [model, price] of Object.entries(entries)) {\n      if (price && typeof price.in === 'number' && typeof price.out === 'number') {\n        this.overrides.set(model, price)\n      }\n    }\n  }\n\n  priceFor(model: string): { price: ModelPrice; source: 'override' | 'builtin' | 'fallback' } {\n    const override = this.overrides.get(model)\n    if (override) return { price: override, source: 'override' }\n    const cur = this.currency.toUpperCase() === 'USD' ? 'USD' : 'CNY'\n    const m = model.toLowerCase()\n    // DeepSeek route ids commonly look like deepseek-chat / deepseek-reasoner\n    // / deepseek-v4.x-flash; flash-family and legacy ids resolve separately.\n    if (m.startsWith('deepseek')) {\n      if (m.includes('flash') || m.includes('v4')) {\n        const tier = DEEPEEK_V4_FLASH[cur]\n        return { price: this.peak ? tier.peak : tier.offpeak, source: 'builtin' }\n      }\n      return { price: DEEPSEEK_LEGACY[cur], source: 'builtin' }\n    }\n    return { price: this.fallback, source: 'fallback' }\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/index.ts:84-115](https://github.com/1569126506-sudo/dsh-team-cost/blob/72f371c7cf45578791739c06b1d949e2868536dd/src/index.ts#L84-L115)\n\n事件数据源。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\n  // Meter one usage-bearing assistant message. The firehose delivers every\n  // session — top-level or subagent — so team and teammate spend is counted\n  // in full instead of being lost to single-session dashboards.\n  ctx.on('session/event', (session, event) => {\n    if (event.type !== 'assistant/message') return\n    const usage = event.data.usage\n    if (!usage) return\n    const source = event.data.message.source\n    const header = session.header\n    const user = attribution.resolve(header.cwd)\n    const record: UsageRecord = {\n      t: new Date(event.time).toISOString(),\n      seq: event.seq,\n      sid: header.id,\n      ws: header.cwd ?? '',\n      user,\n      provider: source.provider,\n      model: source.model,\n      in: usage.inputTokens ?? 0,\n      out: usage.outputTokens ?? 0,\n      cr: usage.cacheReadTokens,\n      cw: usage.cacheWriteTokens,\n      rz: usage.reasoningTokens,\n      cost: Number(pricing.cost(source.model, usage).toFixed(6)),\n    }\n    void store\n      .record(record)\n      .then(() => quota.evaluate(user))\n      .then((status) => {\n        if (status.over) ctx.emit('dsh-team-cost/quota-exceeded', status)\n      })\n      .catch(onError)\n```\n\n</details>\n\n#### 缺口\n\n- 去重/重建/未知价设计未实现。\n  **影响：**假设收益及启动成本未知。\n  **进一步探讨：**预注册误差与延迟阈值后做故障/身份/账单对照。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：b71cf60b1c62bf3cb41976228da5bd12ed5b18bd98fdeb110cef67c5a434a8f6。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 193 | 163 | 17 | — |\n| .md | source | 2 | 181 | — | — | 1918 |\n| .mjs | source | 2 | 128 | 98 | 18 | — |\n| .ts | source | 10 | 1038 | 795 | 156 | — |\n| .mjs | test | 1 | 93 | 78 | 7 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 作用 | 边界 |\n| --- | --- | --- |\n| 计量 | 成员/模型 token 记录 | 事件覆盖/价格未验 |\n| 预算 | 阈值通知/可选拦截 | 默认 off，汇总可过期 |\n| 报告 | 文本/CSV/看板 | CSV 丢部分维度 |\n\n## 工程亮点\n\n事件监听后异步 append JSONL 和更新 cells；每15秒写 rollup，启动只读缓存不重建；价格静态表及零价 fallback、cwd 前缀归因。\n\n即使价格正确、无崩溃且成员归因准确，计量仍发生在assistant/message已产生usage之后，store.record异步完成再evaluate。agent/request只检查现有汇总，没有为在途请求预留/锁定费用；并发请求可同时读到未超预算后放行，达到阈值后也只挡后续新请求，不停止已经发起的模型或提供全局费用硬顶。\n\nteam_cost_report.execute只接range/groupBy/csv，没有调用者或成员过滤；RPC getState返回已知及有计量记录的全部成员预算/费用和模型聚合。cwd只用来归因账目，不授权谁可读团队报表。本层是全团队管理视图，目标宿主的模型工具/Remote准入须把它限定给适当管理员；外围准入未核，不能把本地无过滤直接写成已发生跨成员泄露。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、src/index.ts、src/store.ts、src/pricing.ts、src/attribution.ts、src/quota.ts、src/report.ts、src/config.ts、src/service.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定 SHA 静态审阅 README/package 与 src 计量、存储、价格、归因、配额；未运行目标宿主/测试/账单。\n- 下一步：固定多成员/子代理事件和真实账单，核原始 token 桶/计价、不同路径归因；崩溃于 flush 前、删除 rollup、重复事件、未知模型、CSV 按成员参数等对照。\n",
         "metadata": {
             "repository": "1569126506-sudo/dsh-team-cost",
             "repository_id": 1364961230,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T08:47:18.698Z",
+            "window_start": "2026-09-22T08:47:18.698Z",
             "stars": 2,
             "pushed_at": "2026-09-10T22:18:19Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1569126506-sudo%2Fdsh-team-cost%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6403:3FE872:13A5C7:211C7C:6AD84947 and timestamp 2026-10-21 05:10:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1569126506-sudo%2Fdsh-team-cost%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6415:DBD0:155DE7:22CC19:6AD84947 and timestamp 2026-10-21 05:10:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1569126506-sudo%2Fdsh-team-cost%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6416:1E49B1:145349:21C222:6AD84947 and timestamp 2026-10-21 05:10:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1569126506-sudo%2Fdsh-team-cost%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6417:2401FE:14AB68:22222F:6AD84947 and timestamp 2026-10-21 05:10:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1569126506-sudo%2Fdsh-team-cost%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641C:1CA4C8:149884:221B10:6AD84947 and timestamp 2026-10-21 05:10:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
-            "npm": {
-                "package_name": "dsh-team-cost",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": null,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-team-cost",
-                "error": "HTTP 404",
-                "publication": {
-                    "first_published_at": null,
-                    "captured_at": "2026-10-21T07:15:57.121Z",
-                    "source_url": "https://registry.npmjs.org/dsh-team-cost",
-                    "error": "HTTP 404",
-                    "latest_version": null,
-                    "latest_published_at": null,
-                    "latest_error": "HTTP 404"
-                }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "72f371c7cf45578791739c06b1d949e2868536dd",
-                "current_revision": "72f371c7cf45578791739c06b1d949e2868536dd",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
-            }
+            "errors": []
         },
         "discovery.plugins": {
             "id": "github:1364961230:root",
             "repository": "1569126506-sudo/dsh-team-cost",
             "path": "",
             "revision": "72f371c7cf45578791739c06b1d949e2868536dd",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "7535fe7f1b6735c96005fd439aec738c07b7b2cab74707dad71da422e6e01a41",
                 "code": "72f371c7cf45578791739c06b1d949e2868536dd",
                 "maintenance": "a976e1143a69db1e1958530eaf4ecb1ac54ded653da3e32d4555f1b98d68438d"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

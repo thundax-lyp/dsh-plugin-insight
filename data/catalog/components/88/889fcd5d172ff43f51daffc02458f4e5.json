@@ -13,7 +13,7 @@
             "name": "dsh-plugin-focus",
             "entry_type": "plugin",
             "technical_category": "memory-knowledge",
-            "business_category": "software-delivery",
+            "business_category": "personal-productivity",
             "tags": [],
             "availability": "unknown",
             "research_depth": "source",
@@ -24,36 +24,76 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-03-github-1336084195-root-directory-0",
+                    "id": "2026-10-22-02-github-1336084195-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T03:49:28.708Z",
+                    "retrieved_at": "2026-10-22T05:32:28.242Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-03-github-1336084195-root-author",
+                    "id": "2026-10-22-02-github-1336084195-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/863683348/dsh-plugin-focus/blob/6aabf70615a191a14c7a1e25141b4d15560f3a47/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/863683348/dsh-plugin-focus",
+                            "commit": "6aabf70615a191a14c7a1e25141b4d15560f3a47",
+                            "path": "README.md",
+                            "content_sha256": "fc9d0ae57cc75ab686fa1a9bff7435d255826fdaf3ab916524eb6214d12452d6"
+                        }
+                    ],
                     "revision": "6aabf70615a191a14c7a1e25141b4d15560f3a47",
-                    "captured_at": "2026-10-21T03:49:28.708Z",
-                    "summary": "将任务目标、约束与决策保存为工作区焦点板，并注入会话及展示面板。",
-                    "artifact": "data/runs/2026-10-21-03/snapshots/863683348--dsh-plugin-focus/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:32:28.242Z",
+                    "summary": "为DSH提供工作区内的持久焦点板，模型可记录目标、约束和决定，按标签汇总，并在每轮或内容变化时自动注入上下文。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/863683348--dsh-plugin-focus/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-03-github-1336084195-root-source",
+                    "id": "2026-10-22-02-github-1336084195-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/863683348/dsh-plugin-focus/blob/6aabf70615a191a14c7a1e25141b4d15560f3a47/lib/index.js",
+                    "url": "https://github.com/863683348/dsh-plugin-focus/blob/6aabf70615a191a14c7a1e25141b4d15560f3a47/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/863683348/dsh-plugin-focus",
+                            "commit": "6aabf70615a191a14c7a1e25141b4d15560f3a47",
+                            "path": "README.md",
+                            "content_sha256": "fc9d0ae57cc75ab686fa1a9bff7435d255826fdaf3ab916524eb6214d12452d6"
+                        },
+                        {
+                            "repository_url": "https://github.com/863683348/dsh-plugin-focus",
+                            "commit": "6aabf70615a191a14c7a1e25141b4d15560f3a47",
+                            "path": "package.json",
+                            "content_sha256": "922a88a353acefa1402e60e4052de42f296cc3f6045ece72b0ee7e40a63147bd"
+                        },
+                        {
+                            "repository_url": "https://github.com/863683348/dsh-plugin-focus",
+                            "commit": "6aabf70615a191a14c7a1e25141b4d15560f3a47",
+                            "path": "lib/index.js",
+                            "content_sha256": "1941230adde2bcdb749fb6f06f79e97dab66e971b58e3c4f3aa777f895f2c56f"
+                        },
+                        {
+                            "repository_url": "https://github.com/863683348/dsh-plugin-focus",
+                            "commit": "6aabf70615a191a14c7a1e25141b4d15560f3a47",
+                            "path": "lib/board.js",
+                            "content_sha256": "72718818f6359a04ceac5baba5495e4ecede0e0b6877ea12ff7192dbc059e660"
+                        },
+                        {
+                            "repository_url": "https://github.com/863683348/dsh-plugin-focus",
+                            "commit": "6aabf70615a191a14c7a1e25141b4d15560f3a47",
+                            "path": "lib/client.js",
+                            "content_sha256": "cb073eaf7abc3e6a2f27ff33d4ee8b871603f6ef9df90cc6771185fee8cb3cf3"
+                        }
+                    ],
                     "revision": "6aabf70615a191a14c7a1e25141b4d15560f3a47",
-                    "captured_at": "2026-10-21T03:49:28.708Z",
-                    "summary": "核查 lib/index.js、lib/board.js、skills/dsh-factory/SKILL.md；lib/index.js注册focus操作并经ctx.fs containment读写.dsh/focus.md；agent/pre-step读取并注入变更，focus/write投影供UI使用；board.js解析时间条目、标签和摘要。附带dsh-factory Skill是发布流程文档。 固定package.json的files仅包含lib、补丁及文档，未包含skills目录，也未声明Skill自动注册，故仓库中的dsh-factory不等于npm安装后可见。",
-                    "artifact": "data/runs/2026-10-21-03/snapshots/863683348--dsh-plugin-focus/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:32:28.242Z",
+                    "summary": "核查 README.md、package.json、lib/index.js、lib/board.js、lib/client.js；一个focus模型工具提供set/append/get/summary/clear。set与append在纯board逻辑中都追加时间条目，不真正替换旧目标；kind/status以笔记前缀保存，summary按标签计数和分组，completion只是open/done条目的比例，不是任务真实完成率。clear先追加旧板到archiveFile，再写空板。\n\n读写通过ctx.fs，默认.dsh/focus.md。成功写后向会话追加focus/write事件，sessionProjection显示最后板文本，turn/start清空投影。autoInject在pre-step调用后继，非reject/abort则读取磁盘，首step或文本变化时追加plugin snapshot与focus/write；WeakMap按Agent缓存上次注入文本。浏览器只读面板订阅focusBoard显示字符串，不直接读磁盘或编辑。\n\n贡献是将透明MD、模型维护、宿主工具/提示词/投影/自动注入连接起来。标签summary帮助人看重点，但autoInject调用的是renderBoard按新到旧输出，不是renderSummary或constraint优先排序；不能从工具描述“prioritise constraints”推断真正实现了约束优先。纯逻辑与宿主适配分开可借鉴，不是新长期记忆检索算法。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/863683348--dsh-plugin-focus/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "固定提交内列明源码和作者材料的有界抽读，静态inventory为组件范围；没有安装、执行目标代码或测试、发起插件服务请求、真实宿主验收或独立采用核实。",
+                        "固定lib的纯board、模型工具、fs路径、归档、投影与自动注入全链；未执行目标。仓库dsh-factory开发Skill未由本插件运行入口注册，不当focus能力或独立验证材料。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +104,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "适合长任务与压缩后容易忘记约束的开发者；焦点板固定目标而非替代待办清单。",
+                    "text": "面向在DSH里持续完成长任务、经历上下文压缩和跨会话交接的用户。普通todo记录下一步，focus板记录目标、硬约束和决定，以工作区内的MD让后续Agent能重新读取。它按工作区共享，不是每个会话私有或跨设备云记忆。\n\n合格结果应包括关键约束确实落盘、后续正确工作区读取、被重新注入可见上下文，以及Agent最终按约束完成任务。前面属于存储/接线，最后的遵循需要任务结果对照；插件并不判定笔记真实、陈旧或相互矛盾，也不保证模型看到后执行正确。\n\n基线是手工维护AGENTS/任务笔记并提醒模型读，或依赖宿主压缩摘要。插件减少手工找文件和每轮提醒的成本，适合小量短笔记。多人/多Agent同一工作区、长期超过条目上限和需要强可追溯约束变更时，应先理解共享、写入和截断边界。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336084195-root-source"
+                        "2026-10-22-02-github-1336084195-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +115,16 @@
                             "fingerprint": "6aabf70615a191a14c7a1e25141b4d15560f3a47"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:28.708Z",
+                    "reviewed_at": "2026-10-22T05:32:28.242Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "lib/index.js注册focus操作并经ctx.fs containment读写.dsh/focus.md；agent/pre-step读取并注入变更，focus/write投影供UI使用；board.js解析时间条目、标签和摘要。附带dsh-factory Skill是发布流程文档。 固定package.json的files仅包含lib、补丁及文档，未包含skills目录，也未声明Skill自动注册，故仓库中的dsh-factory不等于npm安装后可见。",
+                    "text": "一个focus模型工具提供set/append/get/summary/clear。set与append在纯board逻辑中都追加时间条目，不真正替换旧目标；kind/status以笔记前缀保存，summary按标签计数和分组，completion只是open/done条目的比例，不是任务真实完成率。clear先追加旧板到archiveFile，再写空板。\n\n读写通过ctx.fs，默认.dsh/focus.md。成功写后向会话追加focus/write事件，sessionProjection显示最后板文本，turn/start清空投影。autoInject在pre-step调用后继，非reject/abort则读取磁盘，首step或文本变化时追加plugin snapshot与focus/write；WeakMap按Agent缓存上次注入文本。浏览器只读面板订阅focusBoard显示字符串，不直接读磁盘或编辑。\n\n贡献是将透明MD、模型维护、宿主工具/提示词/投影/自动注入连接起来。标签summary帮助人看重点，但autoInject调用的是renderBoard按新到旧输出，不是renderSummary或constraint优先排序；不能从工具描述“prioritise constraints”推断真正实现了约束优先。纯逻辑与宿主适配分开可借鉴，不是新长期记忆检索算法。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336084195-root-source"
+                        "2026-10-22-02-github-1336084195-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +133,16 @@
                             "fingerprint": "6aabf70615a191a14c7a1e25141b4d15560f3a47"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:28.708Z",
+                    "reviewed_at": "2026-10-22T05:32:28.242Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "固定提交内列明源码和作者材料的有界抽读，静态inventory为组件范围；没有安装、执行目标代码或测试、发起插件服务请求、真实宿主验收或独立采用核实。",
+                    "text": "固定lib的纯board、模型工具、fs路径、归档、投影与自动注入全链；未执行目标。仓库dsh-factory开发Skill未由本插件运行入口注册，不当focus能力或独立验证材料。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336084195-root-source"
+                        "2026-10-22-02-github-1336084195-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +151,16 @@
                             "fingerprint": "6aabf70615a191a14c7a1e25141b4d15560f3a47"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:28.708Z",
+                    "reviewed_at": "2026-10-22T05:32:28.242Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "分发与依赖限定固定package.json、README及本轮META；仓库热度、包存在或结构校验不能证明运行可用。",
+                    "text": "v1.1.2 MIT，lib手写ESM与client loader，zod依赖及多项DSH peer；包未声明最低Node，Web面板作者标实验性。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336084195-root-source"
+                        "2026-10-22-02-github-1336084195-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +169,16 @@
                             "fingerprint": "6aabf70615a191a14c7a1e25141b4d15560f3a47"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:28.708Z",
+                    "reviewed_at": "2026-10-22T05:32:28.242Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "首次需整理焦点目标和约束，持续支付注入token与板清理人工；共用目录并发要协调。附带发布Skill另需凭据和外部发布成本，本轮没有调用其流程。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 插件/peer、板文件 | 整理短目标并核对cwd/宿主schema | 未测接入耗时 |\n| 持续使用 | 每step读文件、每turn/变化注入、归档增长 | 模型维护条目与人工清理冲突 | 默认8000字符不等于固定token费用 |\n| 失败恢复 | 文件备份与可能重写 | 查满额未落盘、并发覆盖、归档失败 | 无版本链，恢复工时未知 |\n\n",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336084195-root-source"
+                        "2026-10-22-02-github-1336084195-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +187,16 @@
                             "fingerprint": "6aabf70615a191a14c7a1e25141b4d15560f3a47"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:28.708Z",
+                    "reviewed_at": "2026-10-22T05:32:28.242Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "适合单任务工作区先试。重要约束保持简短并检查是否被条目上限裁掉，多会话共用目录时先明确所有权；不要自动执行附带发布Skill。",
+                    "text": "先观察。继续探讨从maxEntries=1的连续新增、同工作区交错写入和无cwd调用，再查投影代际；少量笔记也需读回确认，不把标签当任务事实。详见[Q06](#research-q06)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336084195-root-source"
+                        "2026-10-22-02-github-1336084195-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +205,16 @@
                             "fingerprint": "6aabf70615a191a14c7a1e25141b4d15560f3a47"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:28.708Z",
+                    "reviewed_at": "2026-10-22T05:32:28.242Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "可减少压缩后重复解释目标，但没有漂移率或长任务成功率对照。",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 持久记录 | MD读写与归档链 | 满额新增和并发不丢失，源码有缺口 |\n| 上下文恢复 | 首step/变化时snapshot | 是否减少目标漂移和返工 |\n| 标签视图 | kind/status分组计数 | 条目状态是否真实/陈旧 |\n| UI | 只读projection面板代码 | 当前宿主实际wire与slot兼容 |\n",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336084195-root-source"
+                        "2026-10-22-02-github-1336084195-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +223,16 @@
                             "fingerprint": "6aabf70615a191a14c7a1e25141b4d15560f3a47"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:28.708Z",
+                    "reviewed_at": "2026-10-22T05:32:28.242Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "board纯解析/渲染与宿主fs分开，包含关系检查、clear归档和lastInjected去重值得借鉴；trim和共享文件写入语义需要比UI更优先验证。",
+                    "text": "纯board模块没有宿主依赖，解析/序列化/归档/标签可独立理解，工具与pre-step共用loadBoard，归档先于clear避免先清空再备份。这些接线比较简单透明。但没有内容版本或事务，写工具日志和板文件也分两步；归档无限累积，maxEntries只约束当前条目数，不限制单条note长度或读取文件字节。\n\nrenderBoard按最新优先，某条过长时直接停止并报告遗漏，不部分截取，因此最大一条也可能让可用板只有标题和遗漏脚注。maxChars不是严格最终长度上限，附加标题/遗漏说明可超预算。每轮首步重新注入、变化时再注入，会增加token；本地网络请求为零不等于模型服务看不到板内容。读取失败被autoInject catch静默跳过，模型可能在未看到约束时继续。\n\n",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336084195-root-source"
+                        "2026-10-22-02-github-1336084195-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +241,16 @@
                             "fingerprint": "6aabf70615a191a14c7a1e25141b4d15560f3a47"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:28.708Z",
+                    "reviewed_at": "2026-10-22T05:32:28.242Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "interpretation",
-                    "text": "作者提出durable focus board；实际增量是把目标与硬约束变成工作区可读Markdown，并自动在回合/变更时补入模型上下文。相比纯todo，强调不该漂移的信息；持久化和注入有代码实现，附带制造Skill则仅指导模型使用外部命令，不是自动发布服务。",
+                    "text": "以透明MD和标签把工作区笔记接到focus工具、会话投影及pre-step快照，减少压缩后手工提醒；不提供真相判断或新检索算法。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336084195-root-source"
+                        "2026-10-22-02-github-1336084195-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +259,16 @@
                             "fingerprint": "6aabf70615a191a14c7a1e25141b4d15560f3a47"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:28.708Z",
+                    "reviewed_at": "2026-10-22T05:32:28.242Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
-                    "basis": "interpretation",
-                    "text": "同工作区会话共享同一个板文件，读改写缺少锁或版本冲突处理，并发会话可能互相覆盖。trimEntries只保留最近maxEntries，早期硬约束也会被裁掉，自动注入并不保证目标保留；set在board.js实际追加而非替换旧目标。附带dsh-factory含npm发布、topic和PR等高副作用流程，不能把加载Skill当发布已执行或授权。 固定npm files排除skills目录，因此附带Skill还存在源码可见与打包可见的差异。",
+                    "basis": "supported",
+                    "text": "新增后裁剪到同条数，changed=false便跳过保存，默认60条满额后新增不持久化；无版本写入、无cwd跳过contains也限制承诺，未运行复现。详见[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336084195-root-source"
+                        "2026-10-22-02-github-1336084195-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +277,16 @@
                             "fingerprint": "6aabf70615a191a14c7a1e25141b4d15560f3a47"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:28.708Z",
+                    "reviewed_at": "2026-10-22T05:32:28.242Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "unverified",
-                    "text": "待验证假设：将有效目标与硬约束作为稳定集合、普通发现作为有界日志，并以revision保护写入，可在不增加太多token下减少目标丢失。用超过60条记录、目标更新和双会话并发比较有效约束召回与覆盖冲突；若稳定集合积累过期约束，加入显式撤销状态。",
+                    "text": "可探索稳定item ID、supersedes/CAS和约束优先注入收据，比较保全、违约、token与维护开销；未实现。详见[Q06](#research-q06)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336084195-root-source"
+                        "2026-10-22-02-github-1336084195-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +295,15 @@
                             "fingerprint": "6aabf70615a191a14c7a1e25141b4d15560f3a47"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:49:28.708Z",
+                    "reviewed_at": "2026-10-22T05:32:28.242Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T03:49:28.708Z",
+            "last_checked_at": "2026-10-22T05:32:28.242Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "6aabf70615a191a14c7a1e25141b4d15560f3a47",
-                "reviewed_at": "2026-10-21T03:49:28.708Z",
+                "reviewed_at": "2026-10-22T05:32:28.242Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -279,57 +319,57 @@
                         "transferability": 10,
                         "simplification": 8
                     },
-                    "rationale": "novelty=9：持久任务笔记是既有模式。 mechanism=15：文件、注入和投影结合有具体机制。 transferability=10：Markdown与纯逻辑可迁移。 simplification=8：减少目标重复提供，但需清理板。",
+                    "rationale": "novelty为常见MD工作记忆的小幅组合；mechanism把fs/工具/投影/pre-step接到同板有实质组合，可靠性有限；transferability为纯board与宿主分层的实质迁移参考；simplification为自动重读/注入的实质操作简化，不计未来CAS/优先级。",
                     "basis": "interpretation",
                     "score": 42,
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336084195-root-source"
+                        "2026-10-22-02-github-1336084195-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
                         "workflow": 18,
-                        "delivery": 15,
+                        "delivery": 8,
                         "reach": 10,
                         "economics": 4
                     },
-                    "rationale": "workflow=18：跨回合目标保留流程明确。 delivery=15：可读文件和归档可交付，语义保留未证。 reach=10：长任务适用，同目录并发有边界。 economics=4：无漂移及人工时间对照。",
+                    "rationale": "workflow在压缩后恢复任务重点有实质衔接；delivery只辅助上下文，任务成功小幅间接增量；reach让同工作区跨会话重用有实质接入；economics仅省提醒潜力，token增加且无对照。",
                     "basis": "interpretation",
-                    "score": 47,
+                    "score": 40,
                     "evidence_ids": [
-                        "2026-10-21-03-github-1336084195-root-source"
+                        "2026-10-22-02-github-1336084195-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "trial",
-                "reason": "可明确单任务板所有权的工作区可试焦点注入；早期硬约束会被裁、set实际追加，需核保留范围；npm不含附带发布Skill。",
+                "decision": "observe",
+                "reason": "持久焦点板任务明确，但默认条目满额后新增不保存影响核心价值，共享并发与路径前提也待核，先观察。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "压缩后保留目标约束是具体长任务需求。"
+                        "rationale": "长任务约束/决定恢复场景明确，效果未测。"
                     },
                     "advantage": {
-                        "score": 19,
-                        "rationale": "可读Markdown及回合注入比临时todo更持久。"
+                        "score": 13,
+                        "rationale": "工具/标签/自动注入有差异，满额持久化缺陷限制。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "fs containment与注入可查，共享无锁、裁条目与打包排除Skill边界已知。"
+                        "rationale": "固定源码完整主链与边界，源码级50%档。"
                     },
                     "cost": {
                         "score": 10,
-                        "rationale": "注入token及板清理有持续成本，多会话须避免共享读改写冲突。"
+                        "rationale": "文件和单工具轻量，但token/陈旧状态/恢复仍需维护。"
                     }
                 },
-                "score": 65,
+                "score": 59,
                 "revision": "6aabf70615a191a14c7a1e25141b4d15560f3a47",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T05:32:28.242Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-03-github-1336084195-root-source"
+                    "2026-10-22-02-github-1336084195-root-source"
                 ],
                 "dependencies": [
                     {
@@ -354,90 +394,62 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T03:36:14Z",
-            "analysis_sha256": "343677d1d53925ddb449bf37d6850779e615b9875cbd8ce6e344a32d59739dbc"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "94b7a1fb37c027f5f17dcd95b8e4142f7b588e015db6f8b8607ba2d7c48179b7"
         },
         "publication.metadata": "data/plugins/863683348--dsh-plugin-focus/META.json",
         "publication.summaries": {
-            "text": "将任务目标、约束与决策保存为工作区焦点板，并注入会话及展示面板。",
+            "text": "为DSH提供工作区内的持久焦点板，模型可记录目标、约束和决定，按标签汇总，并在每轮或内容变化时自动注入上下文。",
             "revision": "6aabf70615a191a14c7a1e25141b4d15560f3a47",
             "source_url": "https://github.com/863683348/dsh-plugin-focus/blob/6aabf70615a191a14c7a1e25141b4d15560f3a47/README.md"
         },
         "publication.capabilities": {
             "revision": "6aabf70615a191a14c7a1e25141b4d15560f3a47",
             "items": {
-                "模型工具": "focus set/get/append/summary/clear",
-                "事件监听": "agent/pre-step自动焦点板注入及focus/write投影",
-                "界面": "只读焦点板面板"
-            }
+                "模型工具": "一个focus工具，set/append/get/summary/clear五动作",
+                "事件监听": "agent/pre-step注入与focus/write会话投影",
+                "界面": "实验性只读focusBoard面板"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 笔记写读 | 目标/约束/决定留工作区 | set也追加，满额新增不保存 |\n| 标签summary | kind/status计数分组 | 没有item状态更新，非业务完成率 |\n| 自动注入 | 每轮首步和内容变化时读板 | 新到旧，不是约束优先；读取错误静默跳过 |\n| clear归档 | 累加bak后清板 | 两次写入不事务，归档持续增长 |\n| 只读面板 | 显示投影当前板 | 旧投影字段与loader兼容待核 |\n"
         },
         "publication.advice": {
             "revision": "6aabf70615a191a14c7a1e25141b4d15560f3a47",
-            "text": "适合单任务工作区先试。重要约束保持简短并检查是否被条目上限裁掉，多会话共用目录时先明确所有权；不要自动执行附带发布Skill。"
+            "text": "先观察。继续探讨从maxEntries=1的连续新增、同工作区交错写入和无cwd调用，再查投影代际；少量笔记也需读回确认，不把标签当任务事实。详见[Q06](#research-q06)。"
         },
         "registry": "data/plugins/863683348--dsh-plugin-focus",
-        "reports": "# dsh-plugin-focus\n\n> 将任务目标、约束与决策保存为工作区焦点板，并注入会话及展示面板。\n\n## 使用建议\n\n适合单任务工作区先试。重要约束保持简短并检查是否被条目上限裁掉，多会话共用目录时先明确所有权；不要自动执行附带发布Skill。\n\n**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。已有贡献由固定版本源码支持，实际运行与宿主效果未验证；未来设计假设均未验证。\n\n## 洞察短评\n\n- **用途**：适合长任务与压缩后容易忘记约束的开发者；焦点板固定目标而非替代待办清单。\n- **亮点**：作者提出durable focus board；实际增量是把目标与硬约束变成工作区可读Markdown，并自动在回合/变更时补入模型上下文。相比纯todo，强调不该漂移的信息；持久化和注入有代码实现，附带制造Skill则仅指导模型使用外部命令，不是自动发布服务。\n- **思考**：同工作区会话共享同一个板文件，读改写缺少锁或版本冲突处理，并发会话可能互相覆盖。trimEntries只保留最近maxEntries，早期硬约束也会被裁掉，自动注入并不保证目标保留；set在board.js实际追加而非替换旧目标。附带dsh-factory含npm发布、topic和PR等高副作用流程，不能把加载Skill当发布已执行或授权。 固定npm files排除skills目录，因此附带Skill还存在源码可见与打包可见的差异。\n- **建议**：待验证假设：将有效目标与硬约束作为稳定集合、普通发现作为有界日志，并以revision保护写入，可在不增加太多token下减少目标丢失。用超过60条记录、目标更新和双会话并发比较有效约束召回与覆盖冲突；若稳定集合积累过期约束，加入显式撤销状态。\n\n## 当前插件分析\n\n### 场景与替代办法\n\n替代是手工FOCUS.md/AGENTS或todo；项目增加自动注入和投影，仍不能让提示内容变成硬执行约束。\n\n### 能力、依赖与流程\n\nlib/index.js注册focus操作并经ctx.fs containment读写.dsh/focus.md；agent/pre-step读取并注入变更，focus/write投影供UI使用；board.js解析时间条目、标签和摘要。附带dsh-factory Skill是发布流程文档。 固定package.json的files仅包含lib、补丁及文档，未包含skills目录，也未声明Skill自动注册，故仓库中的dsh-factory不等于npm安装后可见。\n\n- **模型工具**：focus set/get/append/summary/clear\n- **事件监听**：agent/pre-step自动焦点板注入及focus/write投影\n- **界面**：只读焦点板面板\n\n宿主tools/fs/systemPrompt/agents、Schemastery和zod，可选sessionProjections及客户端；板和备份位于会话工作区。dsh-factory另依赖外部发布工具与授权。\n\nset/append记录→写板并生成事件→每回合或变化时注入→summary回读→clear归档；发布Skill需另行明确调用与执行。\n\n### 成本与效果\n\n首次需整理焦点目标和约束，持续支付注入token与板清理人工；共用目录并发要协调。附带发布Skill另需凭据和外部发布成本，本轮没有调用其流程。\n\n可减少压缩后重复解释目标，但没有漂移率或长任务成功率对照。\n\n### 工程亮点\n\nboard纯解析/渲染与宿主fs分开，包含关系检查、clear归档和lastInjected去重值得借鉴；trim和共享文件写入语义需要比UI更优先验证。\n\n源码依据：[lib/index.js](https://github.com/863683348/dsh-plugin-focus/blob/6aabf70615a191a14c7a1e25141b4d15560f3a47/lib/index.js)、[lib/board.js](https://github.com/863683348/dsh-plugin-focus/blob/6aabf70615a191a14c7a1e25141b4d15560f3a47/lib/board.js)、[skills/dsh-factory/SKILL.md](https://github.com/863683348/dsh-plugin-focus/blob/6aabf70615a191a14c7a1e25141b4d15560f3a47/skills/dsh-factory/SKILL.md)。\n\n## 未来设计假设（未验证）\n\n待验证假设：将有效目标与硬约束作为稳定集合、普通发现作为有界日志，并以revision保护写入，可在不增加太多token下减少目标丢失。用超过60条记录、目标更新和双会话并发比较有效约束召回与覆盖冲突；若稳定集合积累过期约束，加入显式撤销状态。\n\n在复制工作区验证set重复、超60条重要约束、双会话写入、clear归档和压缩后注入；本轮不执行目标或附带Skill。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：f04eae1656a47abae750e0fd9f0bb71152942073ad935c1411c1f744ed7e282f。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 10 | 602 | — | — | 5337 |\n| .js | source | 4 | 665 | 462 | 163 | — |\n| .mjs | source | 1 | 30 | 18 | 6 | — |\n| .mjs | test | 1 | 247 | 223 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[863683348/dsh-plugin-focus](https://github.com/863683348/dsh-plugin-focus)\n- **版本号**：1.1.2（[固定提交 6aabf706](https://github.com/863683348/dsh-plugin-focus/tree/6aabf70615a191a14c7a1e25141b4d15560f3a47)）\n- **版本日期**：2026-09-11（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：lib/index.js、lib/board.js、skills/dsh-factory/SKILL.md、作者README、package与固定范围inventory；源码抽读不等于完整审计。\n- 未验证：插件执行、测试、安装、真实宿主与独立采用。\n- 证据限制：固定提交内列明源码和作者材料的有界抽读，静态inventory为组件范围；没有安装、执行目标代码或测试、发起插件服务请求、真实宿主验收或独立采用核实。\n- 下一步：在复制工作区验证set重复、超60条重要约束、双会话写入、clear归档和压缩后注入；本轮不执行目标或附带Skill。\n",
+        "reports": "# dsh-plugin-focus\n\n> 为DSH提供工作区内的持久焦点板，模型可记录目标、约束和决定，按标签汇总，并在每轮或内容变化时自动注入上下文。\n\n## 研究范围\n\n- **仓库**：[863683348/dsh-plugin-focus](https://github.com/863683348/dsh-plugin-focus)\n- **版本号**：1.1.2（[固定提交 6aabf70615a191a14c7a1e25141b4d15560f3a47](https://github.com/863683348/dsh-plugin-focus/tree/6aabf70615a191a14c7a1e25141b4d15560f3a47)）\n- **版本日期**：2026-09-11（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n源码支持文件板/工具/注入接线；满额后新增不落盘、共享并发和路径前提限制持久承诺，任务遵循改善未测。\n\n## 洞察短评\n\n- **用途**：面向在DSH里持续完成长任务、经历上下文压缩和跨会话交接的用户。普通todo记录下一步，focus板记录目标、硬约束和决定，以工作区内的MD让后续Agent能重新读取。它按工作区共享，不是每个会话私有或跨设备云记忆。\n\n合格结果应包括关键约束确实落盘、后续正确工作区读取、被重新注入可见上下文，以及Agent最终按约束完成任务。前面属于存储/接线，最后的遵循需要任务结果对照；插件并不判定笔记真实、陈旧或相互矛盾，也不保证模型看到后执行正确。\n\n基线是手工维护AGENTS/任务笔记并提醒模型读，或依赖宿主压缩摘要。插件减少手工找文件和每轮提醒的成本，适合小量短笔记。多人/多Agent同一工作区、长期超过条目上限和需要强可追溯约束变更时，应先理解共享、写入和截断边界。\n- **亮点**：以透明MD和标签把工作区笔记接到focus工具、会话投影及pre-step快照，减少压缩后手工提醒；不提供真相判断或新检索算法。详见[Q02](#research-q02)。\n- **思考**：新增后裁剪到同条数，changed=false便跳过保存，默认60条满额后新增不持久化；无版本写入、无cwd跳过contains也限制承诺，未运行复现。详见[Q03](#research-q03)。\n- **建议**：可探索稳定item ID、supersedes/CAS和约束优先注入收据，比较保全、违约、token与维护开销；未实现。详见[Q06](#research-q06)。\n\n采用建议：先观察。继续探讨从maxEntries=1的连续新增、同工作区交错写入和无cwd调用，再查投影代际；少量笔记也需读回确认，不把标签当任务事实。详见[Q06](#research-q06)。\n\n## 核心贡献\n\n以透明MD和标签把工作区笔记接到focus工具、会话投影及pre-step快照，减少压缩后手工提醒；不提供真相判断或新检索算法。详见[Q02](#research-q02)。\n\n## 关键质疑\n\n新增后裁剪到同条数，changed=false便跳过保存，默认60条满额后新增不持久化；无版本写入、无cwd跳过contains也限制承诺，未运行复现。详见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可探索稳定item ID、supersedes/CAS和约束优先注入收据，比较保全、违约、token与维护开销；未实现。详见[Q06](#research-q06)。\n\n进一步探讨可用满额连续新增、两个Agent交错和旧约束撤销的固定任务，比较磁盘保全、注入内容、违约与token。\n\n## 场景与替代办法\n\n面向在DSH里持续完成长任务、经历上下文压缩和跨会话交接的用户。普通todo记录下一步，focus板记录目标、硬约束和决定，以工作区内的MD让后续Agent能重新读取。它按工作区共享，不是每个会话私有或跨设备云记忆。\n\n合格结果应包括关键约束确实落盘、后续正确工作区读取、被重新注入可见上下文，以及Agent最终按约束完成任务。前面属于存储/接线，最后的遵循需要任务结果对照；插件并不判定笔记真实、陈旧或相互矛盾，也不保证模型看到后执行正确。\n\n基线是手工维护AGENTS/任务笔记并提醒模型读，或依赖宿主压缩摘要。插件减少手工找文件和每轮提醒的成本，适合小量短笔记。多人/多Agent同一工作区、长期超过条目上限和需要强可追溯约束变更时，应先理解共享、写入和截断边界。\n\n手动工作区笔记/AGENTS和宿主压缩摘要；增量是模型维护与每轮重注入，不是自动可靠的事实记忆。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| DSH/Cordis及tools/fs/systemPrompt/agents | host硬注入 | 工具、文件和自动上下文 | 仅MD文件不代表注入服务就绪 |\n| zod与宿主peer | 包声明 | 配置/投影schema | 具体版本按固定package核对 |\n| 正确session cwd与可写工作区 | 隔离/持久化前提 | 定位板和归档 | 无cwd退默认fs，跳过包围检查 |\n| sessionProjections | UI投影需要 | focus/write到浏览器 | 延迟注入，可选服务未到则无面板数据 |\n| Web runtime/locale/conversation及React | 只读UI需要 | loader与dock slot | optional peer不保证任何宿主代际可显示 |\n| 笔记短小且不含秘密 | 使用约束 | 每轮发给模型 | 文件本地不代表不外发 |\n\n\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 准备 | 固定包/宿主，备份focus和archive，明确共享工作区 | 多任务别误用同一焦点板 |\n| 安装 | 加bundle或复制独立preset挂载并重启 | 工具与fs服务正确接线 |\n| 写入 | 模型短写目标/约束与决定，读取确认 | 不把changed=false误当已记住新增 |\n| 使用 | get/summary检查陈旧项与注入上限 | 标签计数不等于业务完成 |\n| 结束 | 明确归档/clear影响共享工作区 | 失败先保留原板，核对两份写入 |\n\n包未声明最低Node，不硬填版本。README将只读Web面板标experimental，投影仍用旧schema/view字段，本轮不验证具体宿主UI兼容，也不执行普通冒烟。\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 插件/peer、板文件 | 整理短目标并核对cwd/宿主schema | 未测接入耗时 |\n| 持续使用 | 每step读文件、每turn/变化注入、归档增长 | 模型维护条目与人工清理冲突 | 默认8000字符不等于固定token费用 |\n| 失败恢复 | 文件备份与可能重写 | 查满额未落盘、并发覆盖、归档失败 | 无版本链，恢复工时未知 |\n\n\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 持久记录 | MD读写与归档链 | 满额新增和并发不丢失，源码有缺口 |\n| 上下文恢复 | 首step/变化时snapshot | 是否减少目标漂移和返工 |\n| 标签视图 | kind/status分组计数 | 条目状态是否真实/陈旧 |\n| UI | 只读projection面板代码 | 当前宿主实际wire与slot兼容 |\n\n\n## 研究问题与完整回答\n\n**插件研究总目标：**判断固定版本工作区焦点板的持久化和自动注入价值，重点核查满额、并发、路径及陈旧约束。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 焦点板解决什么问题，成功如何判断？\n\n**研究主题：**场景与需求\n\n#### 完整回答\n\n面向在DSH里持续完成长任务、经历上下文压缩和跨会话交接的用户。普通todo记录下一步，focus板记录目标、硬约束和决定，以工作区内的MD让后续Agent能重新读取。它按工作区共享，不是每个会话私有或跨设备云记忆。\n\n合格结果应包括关键约束确实落盘、后续正确工作区读取、被重新注入可见上下文，以及Agent最终按约束完成任务。前面属于存储/接线，最后的遵循需要任务结果对照；插件并不判定笔记真实、陈旧或相互矛盾，也不保证模型看到后执行正确。\n\n基线是手工维护AGENTS/任务笔记并提醒模型读，或依赖宿主压缩摘要。插件减少手工找文件和每轮提醒的成本，适合小量短笔记。多人/多Agent同一工作区、长期超过条目上限和需要强可追溯约束变更时，应先理解共享、写入和截断边界。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-3](https://github.com/863683348/dsh-plugin-focus/blob/6aabf70615a191a14c7a1e25141b4d15560f3a47/README.md#L1-L3)\n\n作者定位目标、约束、跨压缩及工作区共享。\n\n```text\n# dsh-plugin-focus — Focus Board for DeepSeek Harness agents\n\nA real, installable **DSH plugin** (DeepSeek Harness / Cordis profile bundle) that gives the agent a `focus` tool and a durable **focus board** — a small note file (default `.dsh/focus.md`) in the session workspace that pins **the objective, hard constraints, and decisions** across context compaction and across sessions on the same workspace. The todo list tracks *what to do next*; the focus board tracks *why we are doing it and what must not drift*.\n```\n\n**依据 2 · 源码核查**：[lib/index.js:58-58](https://github.com/863683348/dsh-plugin-focus/blob/6aabf70615a191a14c7a1e25141b4d15560f3a47/lib/index.js#L58-L58)\n\n提示词指引要求模型主动set/append/get，非自动真相判断。\n\n```text\nconst FOCUS_SECTION_TEXT = \"The `focus` tool maintains a durable focus board for the current task: a small note file (`.dsh/focus.md` by default) persisted in this session's workspace. Unlike the todo list (what to do next), the board pins what must NOT drift — the objective, hard constraints, and decisions.\\n\\nUse it deliberately:\\n- At task start, or whenever the objective changes, call `focus set` with the current objective and any hard constraints.\\n- While working, `focus append` decisions, reversals, and discoveries worth remembering.\\n- After an interruption, before switching subtasks, or when context was compacted, call `focus get` to re-read the board.\\n- When the task is done or the board is stale, `focus clear`.\\n\\nThe board is also injected into your context automatically at each turn start. Keep notes terse — a line or two. The board is working context, not documentation.\";\n```\n\n**依据 3 · 源码核查**：[lib/index.js:192-195](https://github.com/863683348/dsh-plugin-focus/blob/6aabf70615a191a14c7a1e25141b4d15560f3a47/lib/index.js#L192-L195)\n\n实际按Agent session cwd读共享文件。\n\n```text\n      const cwd = exec.agent?.session?.header?.cwd;\n      const board = await loadBoard(ctx, file, cwd, exec.signal);\n      const before = board.entries.length;\n      let updated = board;\n```\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 笔记、标签、投影和注入怎样连接？\n\n**研究主题：**功能与机制、贡献与相对优势\n\n#### 完整回答\n\n一个focus模型工具提供set/append/get/summary/clear。set与append在纯board逻辑中都追加时间条目，不真正替换旧目标；kind/status以笔记前缀保存，summary按标签计数和分组，completion只是open/done条目的比例，不是任务真实完成率。clear先追加旧板到archiveFile，再写空板。\n\n读写通过ctx.fs，默认.dsh/focus.md。成功写后向会话追加focus/write事件，sessionProjection显示最后板文本，turn/start清空投影。autoInject在pre-step调用后继，非reject/abort则读取磁盘，首step或文本变化时追加plugin snapshot与focus/write；WeakMap按Agent缓存上次注入文本。浏览器只读面板订阅focusBoard显示字符串，不直接读磁盘或编辑。\n\n贡献是将透明MD、模型维护、宿主工具/提示词/投影/自动注入连接起来。标签summary帮助人看重点，但autoInject调用的是renderBoard按新到旧输出，不是renderSummary或constraint优先排序；不能从工具描述“prioritise constraints”推断真正实现了约束优先。纯逻辑与宿主适配分开可借鉴，不是新长期记忆检索算法。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/board.js:109-117](https://github.com/863683348/dsh-plugin-focus/blob/6aabf70615a191a14c7a1e25141b4d15560f3a47/lib/board.js#L109-L117)\n\nset和append同为追加，clear清空。\n\n```text\nexport function applyAction(board, action, note, now, meta = {}) {\n  if (action === \"set\" || action === \"append\") {\n    if (typeof note !== \"string\" || note.trim().length === 0) {\n      throw new Error('focus: \"note\" is required for action \"' + action + '\"');\n    }\n    const composed = composeNote({ kind: meta.kind ?? null, status: meta.status ?? null, text: note });\n    return { entries: board.entries.concat([{ time: now, kind: action, note: composed }]) };\n  }\n  if (action === \"clear\") return emptyBoard();\n```\n\n**依据 2 · 源码核查**：[lib/board.js:162-192](https://github.com/863683348/dsh-plugin-focus/blob/6aabf70615a191a14c7a1e25141b4d15560f3a47/lib/board.js#L162-L192)\n\n统计标签和completion比例。\n\n<details>\n<summary>查看原文（31行）</summary>\n\n```text\n  const entries = tagEntries(board);\n  const byKind = { objective: 0, constraint: 0, decision: 0, note: 0, untagged: 0 };\n  let open = 0;\n  let done = 0;\n  for (const entry of entries) {\n    const key = entry.tagKind ?? \"untagged\";\n    byKind[key] = (byKind[key] || 0) + 1;\n    if (entry.status === \"open\") open += 1;\n    else if (entry.status === \"done\") done += 1;\n  }\n  const tracked = open + done;\n  return {\n    total: entries.length,\n    byKind,\n    open,\n    done,\n    completionRate: tracked > 0 ? Math.round((done / tracked) * 1000) / 10 : null,\n    entries,\n  };\n}\n\n/** Compact markdown summary: counts, open items, constraints and decisions. */\nexport function renderSummary(board, { maxItems = 8 } = {}) {\n  const stats = summarizeBoard(board);\n  const latest = (kind, status) => stats.entries\n    .filter((e) => (kind === undefined || e.tagKind === kind) && (status === undefined || e.status === status))\n    .slice(-Math.max(1, maxItems))\n    .reverse();\n  const lines = [\n    \"# Focus summary\",\n    \"\",\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:199-214](https://github.com/863683348/dsh-plugin-focus/blob/6aabf70615a191a14c7a1e25141b4d15560f3a47/lib/index.js#L199-L214)\n\n归档、写入和focus/write事件。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n        updated = trimEntries(applyAction(board, action, note, new Date().toISOString(), { kind: args.kind ?? null, status: args.status ?? null }), maxEntries);\n      } else if (action === \"clear\") {\n        if (config.archive && before > 0) {\n          const target = await appendArchive(ctx, config.archiveFile, buildArchiveText(board, new Date().toISOString()), cwd, exec.signal);\n          archived = true;\n          archivePath = ctx.fs.processPath(target);\n        }\n        updated = emptyBoard();\n      }\n\n      const changed = updated.entries.length !== before;\n      if (action !== \"get\" && changed) {\n        const target = await resolveTarget(ctx, file, cwd, exec.signal);\n        await ctx.fs.writeText(target, serializeBoard(updated), undefined, exec.signal);\n        if (exec.agent?.session) {\n          exec.agent.session.append(\"focus/write\", boardEvent(action, updated, renderBoard(updated, maxChars)));\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:244-263](https://github.com/863683348/dsh-plugin-focus/blob/6aabf70615a191a14c7a1e25141b4d15560f3a47/lib/index.js#L244-L263)\n\n投影事件与turn/start reset。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n  ctx.inject([\"sessionProjections\"], (projectionCtx) => {\n    projectionCtx.sessionProjections.register({\n      key: \"focusBoard\",\n      schema: zod.union([\n        zod.object({\n          board: zod.string(),\n          entries: zod.number(),\n          action: zod.string(),\n        }),\n        zod.null(),\n      ]),\n      init: () => null,\n      apply: (state, event) => {\n        if (event.type === \"focus/write\") return event.data;\n        if (event.type === \"turn/start\") return null;\n        return state;\n      },\n      view: (state) => state,\n      stateVersion: 1,\n    });\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/index.js:271-299](https://github.com/863683348/dsh-plugin-focus/blob/6aabf70615a191a14c7a1e25141b4d15560f3a47/lib/index.js#L271-L299)\n\n每Agent注入去重和snapshot。\n\n<details>\n<summary>查看原文（29行）</summary>\n\n```text\n    const lastInjected = new WeakMap();\n    ctx.on(\"agent/pre-step\", async ({ agent, turn, step, signal }, next) => {\n      const decision = await next();\n      if (decision.kind === \"reject\" || signal.aborted) return decision;\n      const cwd = agent.session?.header?.cwd;\n      let board;\n      try {\n        board = await loadBoard(ctx, file, cwd, signal);\n      } catch {\n        return decision;\n      }\n      if (board.entries.length === 0) return decision;\n      const text = renderBoard(board, maxChars);\n      const last = lastInjected.get(agent);\n      if (step !== 1 && last === text) return decision;\n      lastInjected.set(agent, text);\n      agent.session.append(\"focus/write\", boardEvent(\"auto\", board, text));\n      return {\n        kind: \"enter\",\n        messages: decision.messages.concat([createUserMessage({\n          content: [{ type: \"text\", text: \"Focus board (current):\\n\\n\" + text }],\n          source: {\n            kind: \"plugin\",\n            plugin: name,\n            form: \"snapshot\",\n            sections: [{ name: \"focus:board\", text }],\n          },\n        })]),\n      };\n```\n\n</details>\n\n**依据 6 · 源码核查**：[lib/client.js:34-61](https://github.com/863683348/dsh-plugin-focus/blob/6aabf70615a191a14c7a1e25141b4d15560f3a47/lib/client.js#L34-L61)\n\n只读面板订阅投影。\n\n<details>\n<summary>查看原文（28行）</summary>\n\n```text\n\n    /** Read-only dock entry: the session's current focus board text. */\n    function FocusPanel(props) {\n      var useProjection = props.useProjection;\n      var projection = useProjection(\"focusBoard\");\n      if (projection == null || projection.board.length === 0) {\n        return react.createElement(\n          \"div\",\n          { className: \"dshfp-dock\", \"data-focus-panel\": true },\n          react.createElement(\"div\", { className: \"dshfp-empty\" }, \"Focus board is empty — ask the agent to pin it with the focus tool.\")\n        );\n      }\n      return react.createElement(\n        \"div\",\n        { className: \"dshfp-dock\", \"data-focus-panel\": true },\n        react.createElement(\"div\", { className: \"dshfp-head\" }, \"Focus board (\" + projection.entries + \" entr\" + (projection.entries === 1 ? \"y\" : \"ies\") + \")\"),\n        react.createElement(\"pre\", { className: \"dshfp-body\" }, projection.board)\n      );\n    }\n\n    /** Browser plugin body: register the dock entry into the composer dock. */\n    function apply(ctx) {\n      ctx.slots.inject(\"conversation.input.dock\", function () {\n        return ctx.slots.register({\n          name: \"conversation.input.dock\",\n          id: \"focus-board\",\n          order: 20,\n        }, FocusPanel);\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 达到条目上限、并发和路径有什么限制？\n\n**研究主题：**缺陷与关键质疑\n\n#### 完整回答\n\n核心持久化判断有静态缺陷。set/append先追加再trimEntries(maxEntries)，changed仅比较updated.entries.length与before。默认60条时，第61条使裁剪后的长度仍60，changed=false，于是不writeText也不发focus/write；后续同样停在旧磁盘内容。工具回报unchanged，不会把新内容写进去。这个反例由两个函数直接组成，未执行目标测试或生产复现。\n\n即使未满，也是在loadBoard后无版本参数地writeText整板，两个Agent同工作区读同一旧值后各追加，后写可能覆盖另一新增。archive同样读再写，无锁；clear涉及先归档后清空两个写入，后一步失败可留旧板/重复归档。标签没有稳定item ID或update动作，写“done”新条目不会自动把先前open条目改状态，旧约束和新目标会并存，必须由模型自己解释撤销关系。\n\n路径检查仅在cwd!==undefined时resolve根并contains；没有Agent/session cwd时退fs默认，并不检查工作区包围。contains的真实物理路径/符号链接和policy语义取决于宿主fs，本轮没有读对应宿主实现，不能重复README/SECURITY“永不逃逸”的绝对保证。板是可手工编辑的文件，内容作为plugin snapshot进入模型，不自动区分可信硬约束和外来指令。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:192-214](https://github.com/863683348/dsh-plugin-focus/blob/6aabf70615a191a14c7a1e25141b4d15560f3a47/lib/index.js#L192-L214)\n\n长度判断使满额后的新增不持久化，writeText无版本参数。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n      const cwd = exec.agent?.session?.header?.cwd;\n      const board = await loadBoard(ctx, file, cwd, exec.signal);\n      const before = board.entries.length;\n      let updated = board;\n      let archived = false;\n      let archivePath;\n      if (action === \"set\" || action === \"append\") {\n        updated = trimEntries(applyAction(board, action, note, new Date().toISOString(), { kind: args.kind ?? null, status: args.status ?? null }), maxEntries);\n      } else if (action === \"clear\") {\n        if (config.archive && before > 0) {\n          const target = await appendArchive(ctx, config.archiveFile, buildArchiveText(board, new Date().toISOString()), cwd, exec.signal);\n          archived = true;\n          archivePath = ctx.fs.processPath(target);\n        }\n        updated = emptyBoard();\n      }\n\n      const changed = updated.entries.length !== before;\n      if (action !== \"get\" && changed) {\n        const target = await resolveTarget(ctx, file, cwd, exec.signal);\n        await ctx.fs.writeText(target, serializeBoard(updated), undefined, exec.signal);\n        if (exec.agent?.session) {\n          exec.agent.session.append(\"focus/write\", boardEvent(action, updated, renderBoard(updated, maxChars)));\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/board.js:93-95](https://github.com/863683348/dsh-plugin-focus/blob/6aabf70615a191a14c7a1e25141b4d15560f3a47/lib/board.js#L93-L95)\n\n裁剪保留maxEntries导致长度不变。\n\n```text\nexport function trimEntries(board, maxEntries) {\n  if (board.entries.length <= maxEntries) return board;\n  return { entries: board.entries.slice(-maxEntries) };\n```\n\n**依据 3 · 源码核查**：[lib/index.js:78-86](https://github.com/863683348/dsh-plugin-focus/blob/6aabf70615a191a14c7a1e25141b4d15560f3a47/lib/index.js#L78-L86)\n\n无cwd跳过contains。\n\n```text\nasync function resolveTarget(ctx, file, cwd, signal) {\n  const target = await ctx.fs.resolve(file, cwd !== undefined ? { cwd, signal } : { signal });\n  if (cwd !== undefined) {\n    const cwdTarget = await ctx.fs.resolve(\".\", { cwd, signal });\n    if (!ctx.fs.contains(cwdTarget, target)) {\n      throw new Error('focus: configured file \"' + file + '\" escapes the session workspace');\n    }\n  }\n  return target;\n```\n\n**依据 4 · 源码核查**：[lib/index.js:114-121](https://github.com/863683348/dsh-plugin-focus/blob/6aabf70615a191a14c7a1e25141b4d15560f3a47/lib/index.js#L114-L121)\n\narchive读后整体写，无CAS。\n\n```text\nasync function appendArchive(ctx, archiveFile, archiveText, cwd, signal) {\n  const target = await resolveTarget(ctx, archiveFile, cwd, signal);\n  const info = await ctx.fs.stat(target, signal);\n  const existing = info !== undefined ? await ctx.fs.readText(target, signal) : \"\";\n  const content = existing.length === 0 || existing.endsWith(\"\\n\")\n    ? existing + archiveText\n    : existing + \"\\n\" + archiveText;\n  await ctx.fs.writeText(target, content, undefined, signal);\n```\n\n**依据 5 · 源码核查**：[lib/board.js:109-117](https://github.com/863683348/dsh-plugin-focus/blob/6aabf70615a191a14c7a1e25141b4d15560f3a47/lib/board.js#L109-L117)\n\n没有按item更新状态，set也追加。\n\n```text\nexport function applyAction(board, action, note, now, meta = {}) {\n  if (action === \"set\" || action === \"append\") {\n    if (typeof note !== \"string\" || note.trim().length === 0) {\n      throw new Error('focus: \"note\" is required for action \"' + action + '\"');\n    }\n    const composed = composeNote({ kind: meta.kind ?? null, status: meta.status ?? null, text: note });\n    return { entries: board.entries.concat([{ time: now, kind: action, note: composed }]) };\n  }\n  if (action === \"clear\") return emptyBoard();\n```\n\n#### 缺口\n\n- 满额丢新增、并发覆盖和归档部分失败未执行复现。\n  **影响：**静态路径足以限制持久化承诺，但不推断所有已有笔记已丢失。\n  **进一步探讨：**从maxEntries=1的两次追加及两个同工作区Agent交错写入的固定序列检查磁盘收据。\n- 宿主fs.contains的真实路径、版本和权限契约未核查。\n  **影响：**不能给物理路径隔离或并发保存验收。\n  **进一步探讨：**沿固定宿主fs.resolve/contains/writeText实现核对symlink与CAS语义。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 安装和持续使用依赖什么？\n\n**研究主题：**依赖、兼容与流程\n\n#### 完整回答\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| DSH/Cordis及tools/fs/systemPrompt/agents | host硬注入 | 工具、文件和自动上下文 | 仅MD文件不代表注入服务就绪 |\n| zod与宿主peer | 包声明 | 配置/投影schema | 具体版本按固定package核对 |\n| 正确session cwd与可写工作区 | 隔离/持久化前提 | 定位板和归档 | 无cwd退默认fs，跳过包围检查 |\n| sessionProjections | UI投影需要 | focus/write到浏览器 | 延迟注入，可选服务未到则无面板数据 |\n| Web runtime/locale/conversation及React | 只读UI需要 | loader与dock slot | optional peer不保证任何宿主代际可显示 |\n| 笔记短小且不含秘密 | 使用约束 | 每轮发给模型 | 文件本地不代表不外发 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 准备 | 固定包/宿主，备份focus和archive，明确共享工作区 | 多任务别误用同一焦点板 |\n| 安装 | 加bundle或复制独立preset挂载并重启 | 工具与fs服务正确接线 |\n| 写入 | 模型短写目标/约束与决定，读取确认 | 不把changed=false误当已记住新增 |\n| 使用 | get/summary检查陈旧项与注入上限 | 标签计数不等于业务完成 |\n| 结束 | 明确归档/clear影响共享工作区 | 失败先保留原板，核对两份写入 |\n\n包未声明最低Node，不硬填版本。README将只读Web面板标experimental，投影仍用旧schema/view字段，本轮不验证具体宿主UI兼容，也不执行普通冒烟。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:38-69](https://github.com/863683348/dsh-plugin-focus/blob/6aabf70615a191a14c7a1e25141b4d15560f3a47/package.json#L38-L69)\n\nzod、client声明与宿主peer条件。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\n    \"zod\": \"^4.4.3\"\n  },\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    },\n    \"client\": {\n      \"inject\": [\n        \"@deepseek-ai/dsh-client-runtime\",\n        \"@deepseek-ai/dsh-client-locale\",\n        \"@deepseek-ai/dsh-client-ui-conversation\"\n      ],\n      \"platform\": \"web\"\n    }\n  },\n  \"peerDependencies\": {\n    \"@deepseek-ai/cordis\": \"^4.0.1\",\n    \"@deepseek-ai/dsh-agent\": \"^0.1.0-rc.6\",\n    \"@deepseek-ai/dsh-client-locale\": \"^0.1.0-rc.6\",\n    \"@deepseek-ai/dsh-client-runtime\": \"^0.1.0-rc.6\",\n    \"@deepseek-ai/dsh-client-ui-conversation\": \"^0.1.0-rc.6\",\n    \"@deepseek-ai/dsh-fs\": \"^0.1.0-rc.6\",\n    \"@deepseek-ai/dsh-llm\": \"^0.1.0-rc.6\",\n    \"@deepseek-ai/dsh-session\": \"^0.1.0-rc.6\",\n    \"@deepseek-ai/dsh-session-projection\": \"^0.1.0-rc.6\",\n    \"@deepseek-ai/dsh-system-prompt\": \"^0.1.0-rc.6\",\n    \"@deepseek-ai/dsh-tools\": \"^0.1.0-rc.6\",\n    \"@deepseek-ai/schemastery\": \"^3.18.1\",\n    \"react\": \"^18.2.0\"\n  },\n  \"peerDependenciesMeta\": {\n    \"@deepseek-ai/dsh-client-locale\": {\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:35-54](https://github.com/863683348/dsh-plugin-focus/blob/6aabf70615a191a14c7a1e25141b4d15560f3a47/lib/index.js#L35-L54)\n\n硬依赖与默认条目/字数设置。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\nconst inject = [\"tools\", \"fs\", \"systemPrompt\", \"agents\"];\n\n/** Composition-row configuration for the plugin entry. */\nconst Config = z.object({\n  /** Board file path, relative to the agent's session workspace. */\n  file: z.string().default(\".dsh/focus.md\"),\n  /** Archive file path (clear moves the old board here). */\n  archiveFile: z.string().default(\".dsh/focus.md.bak\"),\n  /** Keep an archive of the cleared board. */\n  archive: z.boolean().default(true),\n  /** Keep at most this many entries on disk (oldest dropped). */\n  maxEntries: z.number().default(60),\n  /** Render cap for the model-facing board text (get / injection). */\n  maxChars: z.number().default(8000),\n  /** Inject the board into the model context at turn start and on changes. */\n  autoInject: z.boolean().default(true),\n  /** Register the focus prompt-guidance section. */\n  personaSection: z.boolean().default(true),\n  /** Order of the focus prompt section (ascending; persona is 0). */\n  sectionOrder: z.number().default(5),\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:244-263](https://github.com/863683348/dsh-plugin-focus/blob/6aabf70615a191a14c7a1e25141b4d15560f3a47/lib/index.js#L244-L263)\n\n投影使用schema/view，未见wire块。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n  ctx.inject([\"sessionProjections\"], (projectionCtx) => {\n    projectionCtx.sessionProjections.register({\n      key: \"focusBoard\",\n      schema: zod.union([\n        zod.object({\n          board: zod.string(),\n          entries: zod.number(),\n          action: zod.string(),\n        }),\n        zod.null(),\n      ]),\n      init: () => null,\n      apply: (state, event) => {\n        if (event.type === \"focus/write\") return event.data;\n        if (event.type === \"turn/start\") return null;\n        return state;\n      },\n      view: (state) => state,\n      stateVersion: 1,\n    });\n```\n\n</details>\n\n**依据 4 · 作者声明**：[lib/client.js:1-10](https://github.com/863683348/dsh-plugin-focus/blob/6aabf70615a191a14c7a1e25141b4d15560f3a47/lib/client.js#L1-L10)\n\n作者明确浏览器模块实验性。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n/**\n * dsh-plugin-focus — browser face: a read-only focus-board panel docked above\n * the composer, rendered from the `focusBoard` session projection.\n *\n * EXPERIMENTAL: this hand-written module mirrors the loader format emitted by\n * the in-repo client bundles (window.__ModuleLoader__.load with a CommonJS\n * factory). It is served to the browser on demand via the client-modules\n * roster (/plugins/<id>/client.js) when this package's composition row is\n * mounted on a web profile. React is required through the app's module\n * table; no JSX, no bundler, no TS.\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/index.js:78-86](https://github.com/863683348/dsh-plugin-focus/blob/6aabf70615a191a14c7a1e25141b4d15560f3a47/lib/index.js#L78-L86)\n\ncwd条件。\n\n```text\nasync function resolveTarget(ctx, file, cwd, signal) {\n  const target = await ctx.fs.resolve(file, cwd !== undefined ? { cwd, signal } : { signal });\n  if (cwd !== undefined) {\n    const cwdTarget = await ctx.fs.resolve(\".\", { cwd, signal });\n    if (!ctx.fs.contains(cwdTarget, target)) {\n      throw new Error('focus: configured file \"' + file + '\" escapes the session workspace');\n    }\n  }\n  return target;\n```\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 工程恢复与资源成本是什么？\n\n**研究主题：**工程质量与复用、效果与总成本\n\n#### 完整回答\n\n纯board模块没有宿主依赖，解析/序列化/归档/标签可独立理解，工具与pre-step共用loadBoard，归档先于clear避免先清空再备份。这些接线比较简单透明。但没有内容版本或事务，写工具日志和板文件也分两步；归档无限累积，maxEntries只约束当前条目数，不限制单条note长度或读取文件字节。\n\nrenderBoard按最新优先，某条过长时直接停止并报告遗漏，不部分截取，因此最大一条也可能让可用板只有标题和遗漏脚注。maxChars不是严格最终长度上限，附加标题/遗漏说明可超预算。每轮首步重新注入、变化时再注入，会增加token；本地网络请求为零不等于模型服务看不到板内容。读取失败被autoInject catch静默跳过，模型可能在未看到约束时继续。\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 插件/peer、板文件 | 整理短目标并核对cwd/宿主schema | 未测接入耗时 |\n| 持续使用 | 每step读文件、每turn/变化注入、归档增长 | 模型维护条目与人工清理冲突 | 默认8000字符不等于固定token费用 |\n| 失败恢复 | 文件备份与可能重写 | 查满额未落盘、并发覆盖、归档失败 | 无版本链，恢复工时未知 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 持久记录 | MD读写与归档链 | 满额新增和并发不丢失，源码有缺口 |\n| 上下文恢复 | 首step/变化时snapshot | 是否减少目标漂移和返工 |\n| 标签视图 | kind/status分组计数 | 条目状态是否真实/陈旧 |\n| UI | 只读projection面板代码 | 当前宿主实际wire与slot兼容 |\n\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/board.js:213-244](https://github.com/863683348/dsh-plugin-focus/blob/6aabf70615a191a14c7a1e25141b4d15560f3a47/lib/board.js#L213-L244)\n\n新到旧渲染、整条超限停止与遗漏脚注。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\n * Render the board for the model: newest entry first, capped at `maxChars`.\n * Older entries are omitted from the view (never deleted from the file) with\n * a footer stating how many were omitted.\n * @param board - the board to render.\n * @param maxChars - maximum output characters.\n * @returns the rendered markdown text.\n */\nexport function renderBoard(board, maxChars = 8000) {\n  const entries = board.entries.slice().reverse(); // newest first\n  const blocks = [];\n  let total = HEADER.length;\n  let omitted = 0;\n  for (let i = 0; i < entries.length; i++) {\n    const tag = parseNoteTag(entries[i].note);\n    const mark = tag.status === \"done\" ? \" ✅\" : tag.status === \"open\" ? \" ⏳\" : \"\";\n    const shown = tag.kind ? \"[\" + tag.kind + \"]\" + mark + \" \" + tag.text : entries[i].note;\n    const block = \"## [\" + entries[i].time + \"] \" + entries[i].kind + \"\\n\" + shown;\n    const separator = blocks.length === 0 ? 1 : 2;\n    if (total + block.length + separator > maxChars) {\n      omitted = entries.length - i;\n      break;\n    }\n    blocks.push(block);\n    total += block.length + separator;\n  }\n  const lines = [HEADER];\n  for (const block of blocks) lines.push(\"\", block);\n  if (omitted > 0) {\n    lines.push(\"\", \"(... \" + omitted + \" older entr\" + (omitted === 1 ? \"y\" : \"ies\") + \" omitted from this view; the file on disk is complete)\");\n  }\n  return lines.join(\"\\n\");\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:274-287](https://github.com/863683348/dsh-plugin-focus/blob/6aabf70615a191a14c7a1e25141b4d15560f3a47/lib/index.js#L274-L287)\n\n每step读取，异常静默跳过与每turn重注入。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n      if (decision.kind === \"reject\" || signal.aborted) return decision;\n      const cwd = agent.session?.header?.cwd;\n      let board;\n      try {\n        board = await loadBoard(ctx, file, cwd, signal);\n      } catch {\n        return decision;\n      }\n      if (board.entries.length === 0) return decision;\n      const text = renderBoard(board, maxChars);\n      const last = lastInjected.get(agent);\n      if (step !== 1 && last === text) return decision;\n      lastInjected.set(agent, text);\n      agent.session.append(\"focus/write\", boardEvent(\"auto\", board, text));\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:114-121](https://github.com/863683348/dsh-plugin-focus/blob/6aabf70615a191a14c7a1e25141b4d15560f3a47/lib/index.js#L114-L121)\n\n归档读旧文件整体拼接，未做上限。\n\n```text\nasync function appendArchive(ctx, archiveFile, archiveText, cwd, signal) {\n  const target = await resolveTarget(ctx, archiveFile, cwd, signal);\n  const info = await ctx.fs.stat(target, signal);\n  const existing = info !== undefined ? await ctx.fs.readText(target, signal) : \"\";\n  const content = existing.length === 0 || existing.endsWith(\"\\n\")\n    ? existing + archiveText\n    : existing + \"\\n\" + archiveText;\n  await ctx.fs.writeText(target, content, undefined, signal);\n```\n\n**依据 4 · 源码核查**：[lib/index.js:199-214](https://github.com/863683348/dsh-plugin-focus/blob/6aabf70615a191a14c7a1e25141b4d15560f3a47/lib/index.js#L199-L214)\n\n文件先写再追加事件，未用版本。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n        updated = trimEntries(applyAction(board, action, note, new Date().toISOString(), { kind: args.kind ?? null, status: args.status ?? null }), maxEntries);\n      } else if (action === \"clear\") {\n        if (config.archive && before > 0) {\n          const target = await appendArchive(ctx, config.archiveFile, buildArchiveText(board, new Date().toISOString()), cwd, exec.signal);\n          archived = true;\n          archivePath = ctx.fs.processPath(target);\n        }\n        updated = emptyBoard();\n      }\n\n      const changed = updated.entries.length !== before;\n      if (action !== \"get\" && changed) {\n        const target = await resolveTarget(ctx, file, cwd, exec.signal);\n        await ctx.fs.writeText(target, serializeBoard(updated), undefined, exec.signal);\n        if (exec.agent?.session) {\n          exec.agent.session.append(\"focus/write\", boardEvent(action, updated, renderBoard(updated, maxChars)));\n```\n\n</details>\n\n#### 缺口\n\n- 没有相同压缩任务下的约束遵循率、返工时间和token对照。\n  **影响：**只能肯定注入接线，不能证明“减少漂移”净收益。\n  **进一步探讨：**固定目标/约束和压缩点，比较手工笔记、宿主摘要与focus的遗漏/违约和成本。\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 采用和未验证假设是什么？\n\n**研究主题：**采用判断、新假设与验证\n\n#### 完整回答\n\n建议观察。透明工作区笔记、模型工具与自动注入适合长任务，基础组件也便于理解；但达到默认条目上限后新内容不保存，直接影响核心“持久焦点”承诺。先核实长度变更判断和写入版本，再考虑少量非敏感笔记；不要把UI标签或changed回报当任务事实。\n\n继续探讨可从maxEntries=1两次追加的磁盘结果、同工作区两个Agent交错写入及无cwd调用入手，再检查新宿主投影wire兼容。普通宿主冒烟不属于本轮未知清单；本轮结论是已检查源码，未把测试目录存在说成测试通过。\n\n未验证假设是把笔记改为稳定item ID、显式supersedes/状态修订与文件CAS版本，持久化依据内容而非数量变化；注入按活跃约束和未完成项选取，并给省略/冲突收据。相较单纯append+新到旧，可能减少满额丢新增、并发覆盖和陈旧约束，但需要迁移和模型维护开销。最小对照固定两Agent、满额、撤销旧约束和压缩点，比较已确认写入保全、实际注入约束、任务违约率及token；若省略关键信息或状态维护更混乱，则不支持。未实现，不计既有创新。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:199-214](https://github.com/863683348/dsh-plugin-focus/blob/6aabf70615a191a14c7a1e25141b4d15560f3a47/lib/index.js#L199-L214)\n\n满额changed判断和无版本写入是设计起点。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n        updated = trimEntries(applyAction(board, action, note, new Date().toISOString(), { kind: args.kind ?? null, status: args.status ?? null }), maxEntries);\n      } else if (action === \"clear\") {\n        if (config.archive && before > 0) {\n          const target = await appendArchive(ctx, config.archiveFile, buildArchiveText(board, new Date().toISOString()), cwd, exec.signal);\n          archived = true;\n          archivePath = ctx.fs.processPath(target);\n        }\n        updated = emptyBoard();\n      }\n\n      const changed = updated.entries.length !== before;\n      if (action !== \"get\" && changed) {\n        const target = await resolveTarget(ctx, file, cwd, exec.signal);\n        await ctx.fs.writeText(target, serializeBoard(updated), undefined, exec.signal);\n        if (exec.agent?.session) {\n          exec.agent.session.append(\"focus/write\", boardEvent(action, updated, renderBoard(updated, maxChars)));\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/board.js:109-117](https://github.com/863683348/dsh-plugin-focus/blob/6aabf70615a191a14c7a1e25141b4d15560f3a47/lib/board.js#L109-L117)\n\nappend无稳定item更新语义。\n\n```text\nexport function applyAction(board, action, note, now, meta = {}) {\n  if (action === \"set\" || action === \"append\") {\n    if (typeof note !== \"string\" || note.trim().length === 0) {\n      throw new Error('focus: \"note\" is required for action \"' + action + '\"');\n    }\n    const composed = composeNote({ kind: meta.kind ?? null, status: meta.status ?? null, text: note });\n    return { entries: board.entries.concat([{ time: now, kind: action, note: composed }]) };\n  }\n  if (action === \"clear\") return emptyBoard();\n```\n\n**依据 3 · 源码核查**：[lib/board.js:213-244](https://github.com/863683348/dsh-plugin-focus/blob/6aabf70615a191a14c7a1e25141b4d15560f3a47/lib/board.js#L213-L244)\n\n仅新到旧、不做约束优先。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\n * Render the board for the model: newest entry first, capped at `maxChars`.\n * Older entries are omitted from the view (never deleted from the file) with\n * a footer stating how many were omitted.\n * @param board - the board to render.\n * @param maxChars - maximum output characters.\n * @returns the rendered markdown text.\n */\nexport function renderBoard(board, maxChars = 8000) {\n  const entries = board.entries.slice().reverse(); // newest first\n  const blocks = [];\n  let total = HEADER.length;\n  let omitted = 0;\n  for (let i = 0; i < entries.length; i++) {\n    const tag = parseNoteTag(entries[i].note);\n    const mark = tag.status === \"done\" ? \" ✅\" : tag.status === \"open\" ? \" ⏳\" : \"\";\n    const shown = tag.kind ? \"[\" + tag.kind + \"]\" + mark + \" \" + tag.text : entries[i].note;\n    const block = \"## [\" + entries[i].time + \"] \" + entries[i].kind + \"\\n\" + shown;\n    const separator = blocks.length === 0 ? 1 : 2;\n    if (total + block.length + separator > maxChars) {\n      omitted = entries.length - i;\n      break;\n    }\n    blocks.push(block);\n    total += block.length + separator;\n  }\n  const lines = [HEADER];\n  for (const block of blocks) lines.push(\"\", block);\n  if (omitted > 0) {\n    lines.push(\"\", \"(... \" + omitted + \" older entr\" + (omitted === 1 ? \"y\" : \"ies\") + \" omitted from this view; the file on disk is complete)\");\n  }\n  return lines.join(\"\\n\");\n}\n```\n\n</details>\n\n#### 缺口\n\n- 稳定ID/CAS与约束优先注入未实现或对照。\n  **影响：**只是可证伪设计，不提升当前可靠性。\n  **进一步探讨：**以满额、交错写入、旧约束撤销和固定压缩任务测保全/违约/token。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：f04eae1656a47abae750e0fd9f0bb71152942073ad935c1411c1f744ed7e282f。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 10 | 602 | — | — | 5337 |\n| .js | source | 4 | 665 | 462 | 163 | — |\n| .mjs | source | 1 | 30 | 18 | 6 | — |\n| .mjs | test | 1 | 247 | 223 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 笔记写读 | 目标/约束/决定留工作区 | set也追加，满额新增不保存 |\n| 标签summary | kind/status计数分组 | 没有item状态更新，非业务完成率 |\n| 自动注入 | 每轮首步和内容变化时读板 | 新到旧，不是约束优先；读取错误静默跳过 |\n| clear归档 | 累加bak后清板 | 两次写入不事务，归档持续增长 |\n| 只读面板 | 显示投影当前板 | 旧投影字段与loader兼容待核 |\n\n\n## 工程亮点\n\n纯board模块没有宿主依赖，解析/序列化/归档/标签可独立理解，工具与pre-step共用loadBoard，归档先于clear避免先清空再备份。这些接线比较简单透明。但没有内容版本或事务，写工具日志和板文件也分两步；归档无限累积，maxEntries只约束当前条目数，不限制单条note长度或读取文件字节。\n\nrenderBoard按最新优先，某条过长时直接停止并报告遗漏，不部分截取，因此最大一条也可能让可用板只有标题和遗漏脚注。maxChars不是严格最终长度上限，附加标题/遗漏说明可超预算。每轮首步重新注入、变化时再注入，会增加token；本地网络请求为零不等于模型服务看不到板内容。读取失败被autoInject catch静默跳过，模型可能在未看到约束时继续。\n\n\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、lib/board.js、lib/client.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定lib的纯board、模型工具、fs路径、归档、投影与自动注入全链；未执行目标。仓库dsh-factory开发Skill未由本插件运行入口注册，不当focus能力或独立验证材料。\n- 下一步：进一步探讨可用满额连续新增、两个Agent交错和旧约束撤销的固定任务，比较磁盘保全、注入内容、违约与token。\n",
         "metadata": {
             "repository": "863683348/dsh-plugin-focus",
             "repository_id": 1336084195,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T05:31:43.494Z",
+            "window_start": "2026-09-22T05:31:43.494Z",
             "stars": 1,
             "pushed_at": "2026-09-11T03:26:25Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 1,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-plugin-focus%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6419:D1FDD:14CB82:22920A:6AD84AC3 and timestamp 2026-10-21 05:16:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-plugin-focus%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641F:9F47E:15135F:22CDEF:6AD84AC4 and timestamp 2026-10-21 05:16:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-plugin-focus%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6407:1CA5E4:152297:22E39C:6AD84AC4 and timestamp 2026-10-21 05:16:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-plugin-focus%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641C:1CA4C8:14E228:229B8E:6AD84AC4 and timestamp 2026-10-21 05:16:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-plugin-focus%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6410:3A339B:13C7F7:216D2D:6AD84AC4 and timestamp 2026-10-21 05:16:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "dsh-plugin-focus",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 876,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-plugin-focus",
+                "captured_at": "2026-10-22T05:31:53.007Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 867,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-plugin-focus",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-08-16T17:06:13.612Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T05:31:53.007Z",
                     "source_url": "https://registry.npmjs.org/dsh-plugin-focus",
                     "error": null,
                     "latest_version": "1.1.1",
                     "latest_published_at": "2026-09-11T02:36:01.706Z",
                     "latest_error": null
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "6aabf70615a191a14c7a1e25141b4d15560f3a47",
-                "current_revision": "6aabf70615a191a14c7a1e25141b4d15560f3a47",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {
@@ -445,14 +457,14 @@
             "repository": "863683348/dsh-plugin-focus",
             "path": "",
             "revision": "6aabf70615a191a14c7a1e25141b4d15560f3a47",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "921b7f9ae72a96188fc11112e4df2318b04186206a1c2b66c7ba377c5f4fb395",
                 "code": "6aabf70615a191a14c7a1e25141b4d15560f3a47",
                 "maintenance": "92917ff7cdf58c6366ecdb0399bb6d60d55852a36d83499b1a3156d25fcfe483"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }
