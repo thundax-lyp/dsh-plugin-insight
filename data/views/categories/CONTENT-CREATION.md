@@ -10,17 +10,35 @@
 
 | 插件 | 主要用途 | 关键使用条件 |
 | --- | --- | --- |
+| [amoji-dsh-adapter](#plugin-1378933589-adapters-dsh) | 把 Amoji 不可变语义表情资产、市场和可靠投递接入 DSH。 | 保持观察；仅在匹配的 macOS/DSH 隔离环境检查共享服务生命周期、备份与未知结果恢复，不用于唯一资产库。 |
 | [dsh-douyin-publish](#plugin-1422396858-root) | 把本地视频交给抖音或B站投稿页并填字段，默认草稿停手，可选配乐和显式发布分支。 | 先观察，仅受控草稿核有效配置/账号与字段，补授权和受理收据后再评估采用。 |
+| [dsh-image2-plugin](#plugin-1422216012-root) | 通过 OpenAI 兼容中继生成或编辑图片，并把结果保存到会话。 | 可用公开图片和硬性单次预算试用；不要上传客户素材，先验证失败重试只计一次、文件落在会话目录且能完整删除。 |
 | [dsh-LorebookMD](#plugin-1334395883-root) | 将Tavern角色卡与世界书导入DSH，生成本地设定文档和世界书、创作提示词，并按关键词追加设定条目。 | 先观察。 |
+| [dsh-markdown-live](#plugin-1426477683-root) | 在 DSH 输入框实时着色/成形 Markdown，并让已发送用户文本复用宿主 Markdown 渲染器。 | 经常写 Markdown 且能接受表格/图片限制的 DSH Desktop 用户可在非关键草稿试用；先复制带中英混排、列表、链接和代码围栏的固定样本，校验发送前后字节与撤销。 |
 | [dsh-media-studio](#plugin-1399694663-root) | 在 DSH 中统一发起图像与视频生成任务，并通过作业、附件和界面展示结果。 | 适合已有受控媒体 API 账户、能定义尺寸/格式/内容验收并接受人工审核的团队先观察；涉及版权、品牌或高额视频生成时不应直接自动化。 |
 | [dsh-mimotts](#plugin-1397477851-root) | 为已定稿助手消息提供 MiMo TTS 朗读、播放器、配置卡和语音历史。 | 适合已接受 MiMo 数据处理、需要经常听取定稿回复且可控制历史留存的 DSH Web 用户小范围试用；敏感文本、离线要求或不兼容宿主不适用。 |
 | [dsh-plugin-translation](#plugin-1336663562-root) | 为模型翻译提供切段、术语抽取、规则质检、语体指引与工作区翻译/术语记忆。 | 建议单用户明确cwd、有词表备份的辅助试用；不自动放行高风险翻译，高分语义错、覆盖或路径不明时停写库。 |
+| [dsh-redstone-music](#plugin-1401037852-root) | 把 MIDI 与 SoundFont 渲染结果编排成 Minecraft 红石音乐数据包。 | 建议试用，但只限本地世界和测试服。 |
 | [dsh-sticker-pack](#plugin-1418769012-root) | 订阅远端表情包清单，镜像图片，向 agent 提供选图工具和 Web/微信渠道贴图提示。 | 仅可信图册试点，Web/微信均以收件端确认；限制等待时间并检查设置路由保护。 |
 | [dsh-video-pipeline](#plugin-1414936636-root) | 以 DSH skill provider 提供 19 个视频制作、核验和多平台发布技能与脚本。 | 先只启用无外部发布的生成/核验技能，用测试素材逐环节验证；不要把真实 ARK_API_KEY 注入技能正文。 |
 | [dsh-wsl-media](#plugin-1381725238-root) | 把ffprobe、ffmpeg、PDF文本、Whisper、Pandoc、OCR和ExifTool接为DSH本地文件工具，按允许目录读取或生成产物。 | 先观察，先显式窄roots和无敏感独立输出，核真实产物/覆盖/取消，避免唯一原件与批量并发。 |
 | [dsh-zh-ui](#plugin-1427300390-root) | 提供中文UI设计Skill、项目设计规范注入和静态zh_design_lint检查工具。 | 中文界面团队可在源码审查阶段试用，并以真实渲染和可访问性测试复核静态结果。 |
 | [gzhflow](#plugin-1339888505-root) | 把公众号素材、写作、去AI味、配图、排版、推草稿和复盘组织为随包Skill，提供七个DSH工具调用本地脚本。 | 先观察。 |
 | [no-ai-style](#plugin-1418493685-root) | 提供英中日写作审阅、润色和起草Skill，附DSH模式插入按钮与离线词法/锚点检查。 | 作者留原文并逐命题复核的可控范围试用，先audit再授权编辑。 |
+
+<a id="plugin-1378933589-adapters-dsh"></a>
+
+## [amoji-dsh-adapter](../../plugins/5101good--amoji--adapters-dsh/INSIGHT.md)
+
+
+
+> **用途**：适合需要人看图、模型只看稳定语义的表情资产创作、检索和投递；少量静态贴图用目录加说明更简单。 详见[Q01](#research-q01)。
+
+> **亮点**：把图像身份与模型语义解耦，版本归档和可重试投递适合协作；组件自身只有接线，核心能力主要在仓库其他共享运行时。 详见[Q03](#research-q03)。
+
+> **思考**：该组件锁定较旧 DSH/Node 组合且作者主要验证 macOS；共享数据库、浏览器 RPC 和未知结果协调增加故障面。 详见[Q04](#research-q04)。
+
+> **建议**：以 crash-after-accepted 故障注入证明相同 operation 可协调恢复，才足以支持“可靠投递”而非普通重试。 详见[Q08](#research-q08)。
 
 <a id="plugin-1422396858-root"></a>
 
@@ -36,6 +54,20 @@
 
 > **建议**：可探讨账号/素材/字段绑定和发布受理收据，逐次授权、页锁及unknown查询恢复，平台维护成本未验证。详见[Q05](#research-q05)。
 
+<a id="plugin-1422216012-root"></a>
+
+## [dsh-image2-plugin](../../plugins/544244857--dsh-image2-plugin/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/544244857/dsh-image2-plugin) [![npm 30d 582](https://img.shields.io/static/v1?label=npm+30d&message=582&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-image2-tool) [![最新发布 2026-10-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-19&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-image2-tool)
+
+> **用途**：适合从对话生成草图或编辑非敏感图片并直接预览；已有图像应用时可用其原生历史、费用和内容控制。 详见[Q01](#research-q01)。
+
+> **亮点**：工具、文件落盘和内联预览接通了会话交付；竞争力取决于中继模型/价格，而非协议兼容本身。 详见[Q03](#research-q03)。
+
+> **思考**：下载 URL 不带 API key 是好边界，但 read_image 检查与重试预算主要靠提示文字，非强制运行时策略；中继隐私与内容政策未知。 详见[Q04](#research-q04)。
+
+> **建议**：增加 per-request 预算、下载 allowlist 和结果 manifest（prompt、模型、费用、哈希），可把生成图从临时附件升级为可追溯产物。 详见[Q08](#research-q08)。
+
 <a id="plugin-1334395883-root"></a>
 
 ## [dsh-LorebookMD](../../plugins/609476965--dsh-lorebookmd/INSIGHT.md)
@@ -49,6 +81,20 @@
 > **思考**：实例共享active可影响其它会话；MD编辑不回流，全文与关键词状态可分叉。固定Git缺声明的host入口，发行包内容仍需核对，未做故障复现。详见[Q03](#research-q03)、[Q04](#research-q04)。
 
 > **建议**：可探索按会话绑定的版本化权威文档与预算注入收据，比较串用、遗漏、token和编辑传播；未实现。详见[Q06](#research-q06)。
+
+<a id="plugin-1426477683-root"></a>
+
+## [dsh-markdown-live](../../plugins/9426haruka--dsh-markdown-live/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/9426Haruka/dsh-markdown-live)
+
+> **用途**：经常在 DSH 输入长 Markdown 的作者希望发送前看到标题、列表、引用和行内格式，同时提交原始文本不变；基线是纯文本输入后再看消息渲染。合格结果是输入、粘贴、中文 IME、撤销、光标和发送字节均正确，长草稿不阻塞，禁用后格式与监听清理。 详见[Q01](#research-q01)。
+
+> **亮点**：相对纯文本 composer，它在不改变提交字符串的前提下提供接近 WYSIWYG 的输入反馈，并保留 mention/skill等非文本节点。贡献主要是 Lexical 适配与交互细节；表格、图片预览和代码语法高亮未覆盖，且依赖宿主内部节点结构。 详见[Q03](#research-q03)。
+
+> **思考**：关键质疑是“显示层不改文本”能否在所有编辑操作成立。节点切分、格式位、软换行归一、IME 与粘贴互相作用可能造成光标跳动、撤销历史异常或隐藏标记误导；覆盖宿主 text renderer 的 priority 约定升级后可能失效。长文暂停也造成体验不一致。 详见[Q04](#research-q04)。
+
+> **建议**：未验证假设是把“文本投影恒等”做成基于属性的编辑序列测试，可在宿主升级时自动发现光标/撤销/字节漂移。最小生成1000条含IME、粘贴、列表退格和围栏的操作序列，比较插件前后最终纯文本、selection与undo；任一字节差异即否定安全启用。 详见[Q08](#research-q08)。
 
 <a id="plugin-1399694663-root"></a>
 
@@ -91,6 +137,20 @@
 > **思考**：quality从表面规则扣分，严重语义错仍可能高分；无版本条件读改写和缺cwd跳过containment也限制共享记忆可靠性。详见[Q03](#research-q03)。
 
 > **建议**：可研究规则命中位置与独立语义验收分层，以及确认译对的来源/失效关系，以否定翻反等固定反例比较错误放行。当前未验证。详见[Q05](#research-q05)。
+
+<a id="plugin-1401037852-root"></a>
+
+## [dsh-redstone-music](../../plugins/19north--dsh-redstone-music/INSIGHT.md)
+
+
+
+> **用途**：面向把 MIDI/SoundFont 音乐移植进 Minecraft 的创作者。输入是 MIDI、SF2、速度、采样和世界参数；合格结果是 WAV、事件/车道计划与 mcfunction 数据包在 tick 和声部预算内完整播放。替代是手写命令或分别使用 DAW、脚本和 RCON。
+
+> **亮点**：它把成熟的 MIDI、SoundFont 与 Minecraft 命令收束成带陷阱提示和中间工件的 DSH 流水线。独立增量是领域约束编排，不是新合成器；相对手写命令减少音符到 tick、样本和 lane 的重复转换。 参见[Q03](#research-q03)。
+
+> **思考**：生成成功不等于听感正确：tick 量化、lane 和同 tick 命令预算会改变密集段，SoundFont onset 与游戏衰减会改变音色。RCON 又扩大为服务器写操作，reload 失败可能留下半部署。 参见[Q04](#research-q04)。
+
+> **建议**：增加听感预算门，计算 onset 偏差、丢弃音符、同 tick 峰值和声部覆盖，超阈值拒绝部署。若指标不能预测盲听缺陷则否定。 参见[Q08](#research-q08)。
 
 <a id="plugin-1418769012-root"></a>
 
@@ -178,4 +238,4 @@
 
 ## 更新时间
 
-2026-10-22
+2026-10-23
