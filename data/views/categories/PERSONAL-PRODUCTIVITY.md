@@ -21,7 +21,6 @@
 | [DPH 任务看板](#plugin-1336994666-root) | 把真实会话归入任务状态列，并保存备注和可供智能体读取的看板快照。 | 用可丢弃 profile 测试归档与恢复，先验证备份导入再放入重要任务。 |
 | [drag-and-drop（AKIRACOD fork）](#plugin-1333975935-root) | 将拖入的本地文件/目录定位为真实路径，以可删除芯片送入会话。 | 可作为同机本地文件输入方案候选；需跨会话频繁操作、远程Host或敏感目录访问控制的场景，先解决会话归属和搜索授权边界。 |
 | [draw-gacha](#plugin-1335791040-root) | 在发送区加入抽卡拉杆，按模型流中的文本信号播放娱乐演出。 | 只适合把等待过程当娱乐的用户；需要效率/可读性或质量监控时，不能用卡面代替真实任务状态与结果核查。 |
-| [dsh-about](#plugin-1354283280-root) | 在设置中显示当前 DSH 版本，并代理读取官方 GitHub 发布说明。 | 与实际 dsh --version 对照后使用，路径识别失败时保留未知而不据此判断升级成功。 |
 | [dsh-activity-heatmap](#plugin-1334318461-root) | 在 DSH 侧栏展示活动热力图、Token 用量、缓存命中和估算花费。 | 适合个人趋势观察；先与少量原始usage和实际账单核对，不用于财务结算或绩效评价。 |
 | [dsh-anchored-monitor](#plugin-1337467566-root) | 统计DSH推理文本的词汇指纹并展示波段，可选分级提示、取消当前回合与重设persona/工具。 | 建议先仅观测并称为词汇指纹，不据仪表断言模型能力。 |
 | [dsh-archived-conversations](#plugin-1335060115-root) | 在设置页列出归档会话并提供最小只读文本预览。 | 用于本机归档摘要；确认片段不足以替代全文证据，远程使用需另设计授权。 |
@@ -77,7 +76,6 @@
 | [dsh-session-path](#plugin-1412141303-root) | 定位 DSH 会话日志并导出可读 Markdown 或 JSONL 交接文件。 | 需要接续时优先检查Markdown导出及截断；JSONL预算语义与长日志内存问题确认前，不用作有界最新上下文保证。 |
 | [dsh-session-rename](#plugin-1368115538-root) | 给 DSH 模型提供 rename_session 工具，设置当前或已加载会话的显式标题。 | 先用当前会话改成简短需求ID；指定别的会话前确认目标已加载且确需修改，记住显式标题会取代自动生成。 |
 | [dsh-session-turn-eta](#plugin-1368581082-root) | 根据DSH会话的轮次与步骤历史估计当前轮剩余时间，并在输入框下显示进度。 | 适合把进度当粗略等待提示的用户先试用。 |
-| [dsh-settings-hub](#plugin-1347749203-root) | 把第三方插件设置按依赖归属分组，支持本地拖拽排序。 | 适合设置项较多的用户；先核当前profile、插件归属和原生设置操作可用。 |
 | [dsh-side-session](#plugin-1355639507-root) | 从命令菜单创建可继续的旁会话，并跳转到原生子会话聊天视图。 | 先测试主会话忙碌、双击和连续创建，确认旁会话可恢复且不会跳错子会话。 |
 | [dsh-soul](#plugin-1352089397-root) | 管理分层人设配置、提示词注入、变更历史及带确认的人设修改。 | 适合显式风格管理；先核作用域和实际注入，重要规则仍由宿主权限和验收保障。 |
 | [dsh-sound](#plugin-1335332435-root) | 在DSH网页中按任务完成、审批、提问、阻塞和失败事件播放可定制提示音。 | 适合多任务用户先以主Agent事件试用。 |
@@ -90,7 +88,6 @@
 | [dsh-text-inject](#plugin-1389458393-root) | 从独立Markdown文件加载系统提示和上下文块，提供设置页编辑、热加载与历史备份。 | 先用少量无冲突规则验证每轮实际上下文，并确认删除与恢复生效；需要关键词门控时先核实当前版本，不能仅照README。 |
 | [dsh-think-bounce-pet](#plugin-1343882273-root) | 在 DSH Web 显示常驻和随 reasoning 文本变化的弹球宠物，可调整物理效果。 | 喜欢界面装饰的人可先调低速度/大小；遇到遮挡或干扰关闭，不把思考球当可靠运行状态。 |
 | [dsh-thumb](#plugin-1341694685-root) | 为窄屏DSH提供覆盖式会话抽屉、单列设置与紧凑阅读样式。 | 手机用户可先核会话切换、设置和相邻trace视图；需要更大点击目标时调整密度。 |
-| [dsh-tokenrhythm-bill](#plugin-1351903192-root) | 集中展示基元律动等平台的余额、用量、模型与密钥，并提供账号切换和连通探测。 | 先只接入常用平台，对照控制台核验当前账号和限时额度，按需启用模型探测；敏感凭据留在受控宿主。 |
 | [dsh-tts-flash](#plugin-1363291561-root) | 为 DSH 流式回复提供语音朗读、字幕浮条及等待短语，支持 Edge 与 OpenAI 兼容语音服务。 | 需要听当前回复的用户可先用非敏感短文试用，确认窗口切换、停止和自动播放正常；长回复必须对照文字检查是否跳句，不适合直接当完整有声文稿导出器。 |
 | [dsh-turn-outline](#plugin-1356219122-root) | 把DSH会话事件折叠为轮次轨迹，并在better-sidebar侧栏定位回聊天或轨迹视图。 | 适合已用better-sidebar的长会话用户先试，核对压缩前历史和并行工具的定位；重大追溯仍查看完整日志。 |
 | [dsh-ui-enhancer](#plugin-1339034478-root) | 组合工作区文件引用、壁纸和可自定义形象的桌面宠物。 | 先核自己宿主的@引用、工作区范围和宠物隐私片段；不需要娱乐层时单独评估依赖面板。 |
@@ -110,7 +107,6 @@
 | [dsh-wsl-launch](#plugin-1350378498-root) | 从WSL启动允许列表中的Windows应用，并传递启动参数。 | 使用明确的应用路径和小范围允许列表，先验证含空格的文件参数。 |
 | [dsh-wsl-notify](#plugin-1350379268-root) | 从WSL向Windows显示消息框或托盘气泡通知。 | 优先短消息与低频提醒，确认锁屏和消息框超时表现，不发送秘密内容。 |
 | [dsh-wsl-open](#plugin-1347958944-root) | 把聊天中的Linux文件路径转为可从Windows打开的文件入口。 | 先用一个非敏感文件测试中文和空格路径，确认目标文件而非只看应用启动。 |
-| [dsh-wsl-path](#plugin-1350378631-root) | 转换Windows与WSL路径，附带挂载盘、换行和工作区位置提示。 | 单发行版先测试往返；多发行版必须核对distro，不直接使用转换出的同名Linux路径。 |
 | [dsh-wsl-picker](#plugin-1351853863-root) | 在DSH中浏览WSL目录与挂载盘，支持名称过滤和工作区快捷入口。 | 适合小中目录导航；先确认返回路径，敏感目录仍受进程权限而非插件白名单控制。 |
 | [dsh-wsl-shot](#plugin-1351854253-root) | 把Windows剪贴板中的图片保存为WSL文件供多模态聊天使用。 | 先用非敏感截图确认保存和模型读取链路；及时检查Windows临时文件残留。 |
 | [feiyu-memory](#plugin-1415822787-root) | 以分层日记、印象与检索记忆延续 DSH 对话中的角色体验。 | 仅面向愿意审阅记忆的小型娱乐对话；私密内容、工作事实和多用户隔离场景不依赖其正则保护与共享日记。 |
@@ -284,20 +280,6 @@
 > **思考**：演出是否会让用户把风格词当能力？verify/然而/步骤等词的出现不证明真实测试、自纠错或正确性，长度阈值又奖励冗长输出。作者明确娱乐免责声明是必要限制；即便不把原reasoning发到浏览器，聚合统计也只是风格代理量。client每140ms轮询及全屏动画开销未测，可能改变阅读体验。
 
 > **建议**：将卡面明确显示为“等待反馈”，并与实际任务产物/测试状态分离，可能保留娱乐感同时降低质量误读。盲测同正确率但不同风格长度的回答，比较用户质量判断偏差和等待满意度；若仍依稀有度高估正确性，则应移除能力暗示而非提高词频复杂度。
-
-<a id="plugin-1354283280-root"></a>
-
-## [dsh-about](../../plugins/1010n111--dsh-about/INSIGHT.md)
-
-[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/1010n111/dsh-about)
-
-> **用途**：需要确认实际运行版本及更新内容的用户不必另外打开终端和发布页。
-
-> **亮点**：宿主从 clientModules 路径反推包版本，注册只读 version/releases 路由，对 GitHub 响应缓存五分钟。
-
-> **思考**：能把当前版本与发布说明放在一起，但不会执行更新，也不证明新版本适合当前插件组合。
-
-> **建议**：与实际 dsh --version 对照后使用，路径识别失败时保留未知而不据此判断升级成功。
 
 <a id="plugin-1334318461-root"></a>
 
@@ -1069,20 +1051,6 @@
 
 > **建议**：由纯事件投影与现有区间输出推导，可按工具等待/模型生成等步骤类型分别估计，并在分布漂移时降低显示置信度或只显示区间。相对持续延长总时长，这可能降低过度确定感；未验证。用按时间留出的混合任务校准区间覆盖率与用户等待决策，若覆盖不改善则保留简单模型。
 
-<a id="plugin-1347749203-root"></a>
-
-## [dsh-settings-hub](../../plugins/amengclass--dsh-settings-hub/INSIGHT.md)
-
-[![npm 30d 952](https://img.shields.io/static/v1?label=npm+30d&message=952&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-settings-hub) [![最新发布 2026-08-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-29&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-settings-hub)
-
-> **用途**：装有许多插件时寻找设置入口，保留原生核心设置。
-
-> **亮点**：将安装依赖图用于设置导航归属，并将排序与配置值分离。本项组织入口而非改变业务交付、宿主配置权限或插件依赖解析算法。
-
-> **思考**：共享依赖只归第一个遍历到的父插件，依赖关系不等于产品设置所有权；扫描失败返回空映射，回退web可能对桌面显示错组。路由设置CORS *且无本项来源核查，依赖宿主外层访问控制。
-
-> **建议**：未验证假设：设置注册显式声明owner并把依赖图仅作后备，可减少多父共享依赖误分组。以共享依赖、软链、web/desktop和动态插件样例核归属与查找耗时；若需大量人工纠正则撤回自动归属。
-
 <a id="plugin-1355639507-root"></a>
 
 ## [dsh-side-session](../../plugins/123dbl--dsh-side-session/INSIGHT.md)
@@ -1250,20 +1218,6 @@
 > **思考**：定位依赖宿主内部语义类名，唯一匹配校验避免误写但不能保证升级兼容；紧凑按钮24px牺牲触达尺寸，更多正文空间不自动等于更好移动可用性。作者单设备测量不能外推所有手机。
 
 > **建议**：未验证假设：以官方布局槽位承载抽屉，并按触控目标与正文空间双预算调密度，可减少兼容修补和误触。用多个窄屏、trace/设置、触屏任务比较误触、阅读与切会话耗时；空间增益若伴误触上升则停止缩小按钮。
-
-<a id="plugin-1351903192-root"></a>
-
-## [dsh-tokenrhythm-bill](../../plugins/162568316--dsh-tokenrhythm-bill/INSIGHT.md)
-
-[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/162568316/dsh-tokenrhythm-bill) [![npm 30d 1,667](https://img.shields.io/static/v1?label=npm+30d&message=1%2C667&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-tokenrhythm-bill) [![最新发布 2026-10-09](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-09&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-tokenrhythm-bill)
-
-> **用途**：多个中转或套餐用户需要对齐账户额度与模型清单，验收是当前账号的真实数据和明确的有效期。
-
-> **亮点**：Host读取配置/凭据并代理平台账户接口，状态文件保存会话Cookie和账号信息；模型探测会发真实小请求，Client展示分平台面板。
-
-> **思考**：同屏对齐到期额度和用量减少切换；平台金额聚合只有在身份、币种和冻结/限时口径一致时才有意义。
-
-> **建议**：先只接入常用平台，对照控制台核验当前账号和限时额度，按需启用模型探测；敏感凭据留在受控宿主。
 
 <a id="plugin-1363291561-root"></a>
 
@@ -1530,20 +1484,6 @@
 > **思考**：客户端正则识别会跳过含空格等路径，服务端会拒绝不存在或范围外文件，因此识别失败主要影响可用性；openOnWindows把Explorer任意数字退出码当成功，是对Explorer复用窗口的宽松兼容，返回ok仍不能证明目标文件确实打开。
 
 > **建议**：待验证假设：将识别文本与已确认存在的产物分开显示，可减少自然语言中的伪路径被误点；需比较额外文件探测成本。
-
-<a id="plugin-1350378631-root"></a>
-
-## [dsh-wsl-path](../../plugins/173787247--dsh-wsl-path/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-path)
-
-> **用途**：用户在Windows界面与WSL工具之间交接路径时，避免把盘符直接交给Linux命令。
-
-> **亮点**：将路径语法转换与工作区提示组合，降低重复说明；映射规则不是新的文件系统访问机制。
-
-> **思考**：UNC解析可返回另一个发行版名称，但生成的Linux绝对路径本身不携带发行版身份；转换不代表当前发行版能读到同一文件。
-
-> **建议**：待验证假设：把发行版身份作为路径对象的一部分保留到消费端，可降低跨发行版错读；若用户仅单发行版则价值有限。
 
 <a id="plugin-1351853863-root"></a>
 

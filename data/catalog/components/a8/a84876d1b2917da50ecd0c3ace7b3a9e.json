@@ -24,36 +24,76 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-04-github-1344713526-dsh-lsp-ts-directory-0",
+                    "id": "2026-10-22-02-github-1344713526-dsh-lsp-ts-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T04:17:51.686Z",
+                    "retrieved_at": "2026-10-22T11:15:16.501Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-04-github-1344713526-dsh-lsp-ts-author",
+                    "id": "2026-10-22-02-github-1344713526-dsh-lsp-ts-author",
                     "kind": "author_claim",
                     "url": "https://github.com/988hj7tczd-oss/dsh-lsp-packs/blob/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-ts/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-lsp-packs",
+                            "commit": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+                            "path": "dsh-lsp-ts/README.md",
+                            "content_sha256": "4e8de9da281c2f3bfe87fca020c8beaf6b5e12d8c34f3199dad0723317deaf1b"
+                        }
+                    ],
                     "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
-                    "captured_at": "2026-10-21T04:17:51.686Z",
-                    "summary": "为DSH配置TypeScript/JavaScript语言服务及四类文件映射。",
-                    "artifact": "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--dsh-lsp-packs--dsh-lsp-ts/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T11:15:16.501Z",
+                    "summary": "以外部 TypeScript language server 为 TS/JS 文件提供四扩展路由的 DSH LSP 配置包。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/988hj7tczd-oss--dsh-lsp-packs--dsh-lsp-ts/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-04-github-1344713526-dsh-lsp-ts-source",
+                    "id": "2026-10-22-02-github-1344713526-dsh-lsp-ts-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/988hj7tczd-oss/dsh-lsp-packs/blob/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-ts/src/index.ts",
+                    "url": "https://github.com/988hj7tczd-oss/dsh-lsp-packs/blob/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-ts/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-lsp-packs",
+                            "commit": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+                            "path": "dsh-lsp-ts/README.md",
+                            "content_sha256": "4e8de9da281c2f3bfe87fca020c8beaf6b5e12d8c34f3199dad0723317deaf1b"
+                        },
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-lsp-packs",
+                            "commit": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+                            "path": "dsh-lsp-ts/package.json",
+                            "content_sha256": "990e4c9f4fca7eeb1c47431ebc3e8e076ef9a0784506970642559926ad97a711"
+                        },
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-lsp-packs",
+                            "commit": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+                            "path": "dsh-lsp-ts/src/index.ts",
+                            "content_sha256": "0ad6181ac65def8b8b2a4e4ce4d32f471782823f926f1625a79464ed18e158a0"
+                        },
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-lsp-packs",
+                            "commit": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+                            "path": "dsh-lsp-ts/tests/smoke.e2e.ts",
+                            "content_sha256": "854e837f3767685615bd630c6747078fef777c25facac91871451a5a53091260"
+                        },
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-lsp-packs",
+                            "commit": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+                            "path": "dsh-lsp-ts/cordis.yml",
+                            "content_sha256": "714a3155958b2a4aab4e4df27b1769b3f5f2cf1545cb78e284d85dfce23e6f49"
+                        }
+                    ],
                     "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
-                    "captured_at": "2026-10-21T04:17:51.686Z",
-                    "summary": "核查 dsh-lsp-ts/src/index.ts、dsh-lsp-ts/README.md、dsh-lsp-ts/cordis.yml、dsh-lsp-ts/tests/smoke.e2e.ts；ts入口默认typescript-language-server --stdio，provider ts将.ts/.tsx/.js/.jsx分别映射typescript/typescriptreact/javascript/javascriptreact，调用官方stdio底座。",
-                    "artifact": "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--dsh-lsp-packs--dsh-lsp-ts/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T11:15:16.501Z",
+                    "summary": "核查 dsh-lsp-ts/README.md、dsh-lsp-ts/package.json、dsh-lsp-ts/src/index.ts、dsh-lsp-ts/tests/smoke.e2e.ts、dsh-lsp-ts/cordis.yml；ts provider 默认启动 typescript-language-server --stdio，四扩展映射至相应 language id，复用 LspStdio。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/988hj7tczd-oss--dsh-lsp-packs--dsh-lsp-ts/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "固定SHA内本组件列明文件及配置/作者资料的有界源码检查；组件inventory不包含外部官方底座原创量。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                        "静态审阅固定提交的 dsh-lsp-ts 子组件；未运行语言服务器或插件。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +104,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "适合已有TypeScript/JavaScript工程、希望DSH查询普通源码与React文件的开发者。",
+                    "text": "在 DSH 中查询 TS、TSX、JS、JSX 文件的定义、引用、实现、hover。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344713526-dsh-lsp-ts-source"
+                        "2026-10-22-02-github-1344713526-dsh-lsp-ts-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +115,16 @@
                             "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:17:51.686Z",
+                    "reviewed_at": "2026-10-22T11:15:16.501Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "ts入口默认typescript-language-server --stdio，provider ts将.ts/.tsx/.js/.jsx分别映射typescript/typescriptreact/javascript/javascriptreact，调用官方stdio底座。",
+                    "text": "ts provider 默认启动 typescript-language-server --stdio，四扩展映射至相应 language id，复用 LspStdio。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344713526-dsh-lsp-ts-source"
+                        "2026-10-22-02-github-1344713526-dsh-lsp-ts-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +133,16 @@
                             "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:17:51.686Z",
+                    "reviewed_at": "2026-10-22T11:15:16.501Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "固定SHA内本组件列明文件及配置/作者资料的有界源码检查；组件inventory不包含外部官方底座原创量。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                    "text": "静态审阅固定提交的 dsh-lsp-ts 子组件；未运行语言服务器或插件。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344713526-dsh-lsp-ts-source"
+                        "2026-10-22-02-github-1344713526-dsh-lsp-ts-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +151,16 @@
                             "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:17:51.686Z",
+                    "reviewed_at": "2026-10-22T11:15:16.501Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "分发以本组件固定package.json、组合配置与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+                    "text": "包 MIT；typescript-language-server 与 TypeScript 另有许可，部署前另核。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344713526-dsh-lsp-ts-source"
+                        "2026-10-22-02-github-1344713526-dsh-lsp-ts-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +169,16 @@
                             "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:17:51.686Z",
+                    "reviewed_at": "2026-10-22T11:15:16.501Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "首次安装server与README推荐的TypeScript、底座和项目配置；持续tsserver索引及版本升级维护，现金无插件固定费证据，人工排查别名和模块边界。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 外部typescript-language-server/建议typescript与共享基座下载/磁盘，价格未知 | 核PATH、DSH执行世界、四language id和项目配置，工时未知 | 包不装server，单sample.ts无tsconfig不等所有项目适配 |\n| 持续使用 | 共享stdio按需起server，tsserver工作区索引/文档/内存，量未知 | 核TS/TSX/JS/JSX导航及tsconfig边界，工时未知 | 延迟启动/进程预算是基座职责；不推项目资源零成本 |\n| 失败恢复 | server重启/重索引或依赖重装资源，金额未知 | 区分缺命令、配置/注册故障，恢复自定义扩展路由，工时未知 | fallback保默认四扩展但丢自定义，真实恢复率未知 |",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344713526-dsh-lsp-ts-source"
+                        "2026-10-22-02-github-1344713526-dsh-lsp-ts-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +187,16 @@
                             "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:17:51.686Z",
+                    "reviewed_at": "2026-10-22T11:15:16.501Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "先在真实tsconfig项目核普通与React文件；需要新模块扩展时显式配置并测试失败回退，别只跑单文件样例。",
+                    "text": "先核主机 server、共享基座，再在真实 TS/TSX/JS/JSX 项目试四操作；详见[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344713526-dsh-lsp-ts-source"
+                        "2026-10-22-02-github-1344713526-dsh-lsp-ts-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +205,16 @@
                             "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:17:51.686Z",
+                    "reviewed_at": "2026-10-22T11:15:16.501Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "减少多扩展接线，无monorepo或JS/TS混合工程效果对照。",
+                    "text": "减少手工配置四种扩展；导航质量取决于外部服务器。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344713526-dsh-lsp-ts-source"
+                        "2026-10-22-02-github-1344713526-dsh-lsp-ts-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +223,16 @@
                             "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:17:51.686Z",
+                    "reviewed_at": "2026-10-22T11:15:16.501Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "显式语言ID映射比统一当typescript清楚，覆盖表合并可扩展；catch fallback未使用合并表是具体缺口。组件体量不包括tsserver或十二包共享协议。",
+                    "text": "配置覆盖合并；LspStdio 延迟启动；缺服异常由 fallback 返回 LSP_UNAVAILABLE。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344713526-dsh-lsp-ts-source"
+                        "2026-10-22-02-github-1344713526-dsh-lsp-ts-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +241,16 @@
                             "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:17:51.686Z",
+                    "reviewed_at": "2026-10-22T11:15:16.501Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
-                    "topic": "technical_innovation",
-                    "basis": "interpretation",
-                    "text": "把TS/JS及React语言ID的常见映射做成独立包，减少易错手配；分析来自typescript-language-server/tsserver，协议和lsp工具归官方底座。",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "减少 TS/JS LSP 命令和语言 id 装配；协议由共享基座实现，详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344713526-dsh-lsp-ts-source"
+                        "2026-10-22-02-github-1344713526-dsh-lsp-ts-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +259,16 @@
                             "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:17:51.686Z",
+                    "reviewed_at": "2026-10-22T11:15:16.501Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
-                    "basis": "interpretation",
-                    "text": "README单文件无需tsconfig的smoke不能代表monorepo、paths别名或JS配置解析。默认表未含.mts/.cts/.mjs/.cjs，用户可扩展但失败fallback只保留默认四类，覆盖后的故障路由会变。TS版本选择也需与工程匹配。",
+                    "basis": "supported",
+                    "text": "宽 catch 可能误判配置故障，fallback 丢失自定义扩展；详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344713526-dsh-lsp-ts-source"
+                        "2026-10-22-02-github-1344713526-dsh-lsp-ts-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +277,16 @@
                             "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:17:51.686Z",
+                    "reviewed_at": "2026-10-22T11:15:16.501Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
-                    "topic": "technical_innovation",
+                    "topic": "engineering",
                     "basis": "unverified",
-                    "text": "未验证假设：按项目配置和模块扩展预检路由，再保留覆盖后的fallback，可减少ESM/CJS与React文件漏路由。用四默认扩展和.mts/.mjs、别名monorepo比较路由及定义查询。",
+                    "text": "故障分类并让fallback保留合并映射，可证伪对照及代价见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344713526-dsh-lsp-ts-source"
+                        "2026-10-22-02-github-1344713526-dsh-lsp-ts-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +295,15 @@
                             "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:17:51.686Z",
+                    "reviewed_at": "2026-10-22T11:15:16.501Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T04:17:51.686Z",
+            "last_checked_at": "2026-10-22T11:15:16.501Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
-                "reviewed_at": "2026-10-21T04:17:51.686Z",
+                "reviewed_at": "2026-10-22T11:15:16.501Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -279,57 +319,57 @@
                         "transferability": 10,
                         "simplification": 8
                     },
-                    "rationale": "novelty=0：tsserver及协议为上游。 mechanism=8：四类ID与覆盖为实际配置。 transferability=10：薄接线可迁移，版本和工程另需。 simplification=8：减少多扩展重复配置。",
+                    "rationale": "novelty以手配相同TypeScript language server与共享LSP为参照，无新语言算法0（Q01）；mechanism以直接配置为参照，命令/四映射合并及fallback提供有限装配8，协议/索引归基座和server（Q01/Q02）；transferability以单机固定路径为参照，命令参数/env/预算覆盖支持安装差异10，仍绑定DSH接口（Q03）；simplification以手填四language id为参照，默认值减少配置8，但server安装和tsconfig排错仍在（Q04）。",
                     "basis": "interpretation",
                     "score": 26,
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344713526-dsh-lsp-ts-source"
+                        "2026-10-22-02-github-1344713526-dsh-lsp-ts-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 9,
-                        "delivery": 8,
-                        "reach": 10,
-                        "economics": 4
+                        "workflow": 18,
+                        "delivery": 0,
+                        "reach": 5,
+                        "economics": 0
                     },
-                    "rationale": "workflow=9：TS/JS导航入口明确。 delivery=8：模块别名及新扩展未验。 reach=10：前端用户适用，依赖项目配置。 economics=4：无真实工程工时对照。",
+                    "rationale": "workflow以手工给共享基座配命令/四扩展为参照，现成包减少配置交接18（Q01）；delivery以同一server的定义/引用/实现/hover为参照，未改变交付产物/验收单位0，安装封装不算新交付（Q01）；reach以需理解四扩展language id的DSH用户为参照，默认映射降低接入门槛5，不能因TS/JS受众广泛直接加触达分（Q01/Q03）；economics以手配同一基座/server为参照，本包未新增缓存/索引或共享资源组织0，延迟启动归基座，省配置计workflow且净收益未知（Q04）。",
                     "basis": "interpretation",
-                    "score": 31,
+                    "score": 23,
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344713526-dsh-lsp-ts-source"
+                        "2026-10-22-02-github-1344713526-dsh-lsp-ts-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "仅在DSH声明<0.2.0、Node>=22.18及官方底座匹配时，JS/TS开发者可在真实tsconfig项目试普通与React文件导航；核版本、paths和模块扩展，测试失败回退。",
+                "reason": "已有 DSH LSP 基座及 TypeScript language server 的 TS/JS 团队可隔离试用。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "JS/TS及React文件查询有稳定开发场景。"
+                        "rationale": "TS/JS 导航场景广泛。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "四类文件路由集中配置，省手写接线。"
+                        "rationale": "四扩展默认映射和降级。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "已核扩展表与fallback；单文件smoke不能支持monorepo收益。"
+                        "rationale": "源码与测试可查，真实项目未测。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "需server、TypeScript和项目配置，索引及版本维护仍在。 宿主声明限<0.2.0，需先核匹配。"
+                        "score": 5,
+                        "rationale": "需另装服务器及共享基座。"
                     }
                 },
-                "score": 59,
+                "score": 54,
                 "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T11:15:16.501Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-04-github-1344713526-dsh-lsp-ts-source"
+                    "2026-10-22-02-github-1344713526-dsh-lsp-ts-source"
                 ],
                 "dependencies": [
                     {
@@ -354,88 +394,60 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T04:06:46Z",
-            "analysis_sha256": "c6865c064ddab20638d136ab8399a817673b8eef591861f194c5d2f71b9c7335"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "c2bdb4a151678f2609b3b032d67340010d619861c76be363cd0b2b53cb741a73"
         },
         "publication.metadata": "data/plugins/988hj7tczd-oss--dsh-lsp-packs--dsh-lsp-ts/META.json",
         "publication.summaries": {
-            "text": "为DSH配置TypeScript/JavaScript语言服务及四类文件映射。",
+            "text": "以外部 TypeScript language server 为 TS/JS 文件提供四扩展路由的 DSH LSP 配置包。",
             "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
             "source_url": "https://github.com/988hj7tczd-oss/dsh-lsp-packs/blob/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-ts/README.md"
         },
         "publication.capabilities": {
             "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
             "items": {
-                "后台": "ts provider及TS/JS/React四种默认扩展路由"
-            }
+                "模型工具": "通过ts provider复用共享lsp四操作，本包无新模型工具定义"
+            },
+            "table": "| 能力 | 条件 | 边界 |\n| --- | --- | --- |\n| 四扩展 LSP 路由 | 外部 server 与共享基座 | 真实项目未验证 |\n| 缺服 fallback | 初始化异常 | 宽 catch 误归因及自定义路由丢失 |"
         },
         "publication.advice": {
             "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
-            "text": "先在真实tsconfig项目核普通与React文件；需要新模块扩展时显式配置并测试失败回退，别只跑单文件样例。"
+            "text": "先核主机 server、共享基座，再在真实 TS/TSX/JS/JSX 项目试四操作；详见[Q03](#research-q03)。"
         },
         "registry": "data/plugins/988hj7tczd-oss--dsh-lsp-packs--dsh-lsp-ts",
-        "reports": "# dsh-lsp-ts\n\n> 为DSH配置TypeScript/JavaScript语言服务及四类文件映射。\n\n## 使用建议\n\n先在真实tsconfig项目核普通与React文件；需要新模块扩展时显式配置并测试失败回退，别只跑单文件样例。\n\n**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，外部语言服务或技能流程的实际运行尚未验证；未来假设未验证。\n\n## 洞察短评\n\n- **用途**：适合已有TypeScript/JavaScript工程、希望DSH查询普通源码与React文件的开发者。\n- **亮点**：把TS/JS及React语言ID的常见映射做成独立包，减少易错手配；分析来自typescript-language-server/tsserver，协议和lsp工具归官方底座。\n- **思考**：README单文件无需tsconfig的smoke不能代表monorepo、paths别名或JS配置解析。默认表未含.mts/.cts/.mjs/.cjs，用户可扩展但失败fallback只保留默认四类，覆盖后的故障路由会变。TS版本选择也需与工程匹配。\n- **建议**：未验证假设：按项目配置和模块扩展预检路由，再保留覆盖后的fallback，可减少ESM/CJS与React文件漏路由。用四默认扩展和.mts/.mjs、别名monorepo比较路由及定义查询。\n\n## 场景与替代办法\n\n替代是编辑器tsserver或手写多个语言ID；本包增加标准配置而非新类型推理。\n\n## 能力清单\n\n- **后台**：ts provider及TS/JS/React四种默认扩展路由\n\n## 依赖与流程\n\nts入口默认typescript-language-server --stdio，provider ts将.ts/.tsx/.js/.jsx分别映射typescript/typescriptreact/javascript/javascriptreact，调用官方stdio底座。\n\nfs/lsp/subprocess及官方LSP底座，README要求typescript-language-server并推荐同装typescript；DSH<0.2.0、Node>=22.18声明。\n\n外部server安装→TS包注册四类扩展→查询懒启动→工程配置解析→导航；加载失败仅默认映射的占位provider。\n\n## 成本与效果\n\n首次安装server与README推荐的TypeScript、底座和项目配置；持续tsserver索引及版本升级维护，现金无插件固定费证据，人工排查别名和模块边界。\n\n减少多扩展接线，无monorepo或JS/TS混合工程效果对照。\n\n## 核心贡献\n\n把TS/JS及React语言ID的常见映射做成独立包，减少易错手配；分析来自typescript-language-server/tsserver，协议和lsp工具归官方底座。\n\n## 关键质疑\n\nREADME单文件无需tsconfig的smoke不能代表monorepo、paths别名或JS配置解析。默认表未含.mts/.cts/.mjs/.cjs，用户可扩展但失败fallback只保留默认四类，覆盖后的故障路由会变。TS版本选择也需与工程匹配。\n\n## 工程亮点\n\n显式语言ID映射比统一当typescript清楚，覆盖表合并可扩展；catch fallback未使用合并表是具体缺口。组件体量不包括tsserver或十二包共享协议。\n\n源码依据：[dsh-lsp-ts/src/index.ts](https://github.com/988hj7tczd-oss/dsh-lsp-packs/blob/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-ts/src/index.ts)、[dsh-lsp-ts/README.md](https://github.com/988hj7tczd-oss/dsh-lsp-packs/blob/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-ts/README.md)、[dsh-lsp-ts/cordis.yml](https://github.com/988hj7tczd-oss/dsh-lsp-packs/blob/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-ts/cordis.yml)、[dsh-lsp-ts/tests/smoke.e2e.ts](https://github.com/988hj7tczd-oss/dsh-lsp-packs/blob/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-ts/tests/smoke.e2e.ts)。\n\n## 未来设计假设（未验证）\n\n未验证假设：按项目配置和模块扩展预检路由，再保留覆盖后的fallback，可减少ESM/CJS与React文件漏路由。用四默认扩展和.mts/.mjs、别名monorepo比较路由及定义查询。\n\n验证React、paths别名、多包和ESM/CJS新增扩展及故障回退；本轮未启动语言服务。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：dsh-lsp-ts；内容摘要：0861cee7b50319bcdabf2578531986c1051e40b68f33e00185cddfb92da93376。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 2 | 127 | — | — | 947 |\n| .ts | source | 1 | 174 | 98 | 60 | — |\n| .ts | test | 1 | 175 | 126 | 25 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[988hj7tczd-oss/dsh-lsp-packs](https://github.com/988hj7tczd-oss/dsh-lsp-packs)\n- **版本号**：0.1.0（[固定提交 258bb640](https://github.com/988hj7tczd-oss/dsh-lsp-packs/tree/258bb6409c504fa1eed20b6f70d13009522ca0ce)）\n- **版本日期**：2026-09-01（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：dsh-lsp-ts/src/index.ts、dsh-lsp-ts/README.md、dsh-lsp-ts/cordis.yml、dsh-lsp-ts/tests/smoke.e2e.ts、作者README、package与固定范围inventory；源码抽读不等于完整审计。\n- 未验证：插件执行、测试、安装、真实宿主与独立采用。\n- 证据限制：固定SHA内本组件列明文件及配置/作者资料的有界源码检查；组件inventory不包含外部官方底座原创量。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。\n- 下一步：验证React、paths别名、多包和ESM/CJS新增扩展及故障回退；本轮未启动语言服务。\n",
+        "reports": "# dsh-lsp-ts\n\n> 以外部 TypeScript language server 为 TS/JS 文件提供四扩展路由的 DSH LSP 配置包。\n\n## 研究范围\n\n- **仓库**：[988hj7tczd-oss/dsh-lsp-packs](https://github.com/988hj7tczd-oss/dsh-lsp-packs)\n- **版本号**：0.1.0（[固定提交 258bb6409c504fa1eed20b6f70d13009522ca0ce](https://github.com/988hj7tczd-oss/dsh-lsp-packs/tree/258bb6409c504fa1eed20b6f70d13009522ca0ce)）\n- **版本日期**：2026-09-01（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n源码支持路由和缺服 fallback；真实服务及四扩展项目导航未验证。\n\n## 洞察短评\n\n- **用途**：在 DSH 中查询 TS、TSX、JS、JSX 文件的定义、引用、实现、hover。\n- **亮点**：减少 TS/JS LSP 命令和语言 id 装配；协议由共享基座实现，详见[Q01](#research-q01)。\n- **思考**：宽 catch 可能误判配置故障，fallback 丢失自定义扩展；详见[Q02](#research-q02)。\n- **建议**：故障分类并让fallback保留合并映射，可证伪对照及代价见[Q05](#research-q05)。\n\n采用建议：先核主机 server、共享基座，再在真实 TS/TSX/JS/JSX 项目试四操作；详见[Q03](#research-q03)。\n\n## 核心贡献\n\n减少 TS/JS LSP 命令和语言 id 装配；协议由共享基座实现，详见[Q01](#research-q01)。\n\n## 关键质疑\n\n宽 catch 可能误判配置故障，fallback 丢失自定义扩展；详见[Q02](#research-q02)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n故障分类并让fallback保留合并映射，可证伪对照及代价见[Q05](#research-q05)。\n\n测缺服/非法配置/自定义扩展，以及真实多文件 TS/JS 四操作。\n\n## 场景与替代办法\n\n在 DSH 中查询 TS、TSX、JS、JSX 文件的定义、引用、实现、hover。\n\n手工在共享 LSP 配置注册 typescript-language-server 和四扩展映射。\n\n## 依赖与流程\n\nDSH LSP service/tool、fs/subprocess、typescript-language-server 和建议的 TypeScript。\n\n安装服务器与 TypeScript→挂共享基座→安装包→测试四扩展导航。\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 外部typescript-language-server/建议typescript与共享基座下载/磁盘，价格未知 | 核PATH、DSH执行世界、四language id和项目配置，工时未知 | 包不装server，单sample.ts无tsconfig不等所有项目适配 |\n| 持续使用 | 共享stdio按需起server，tsserver工作区索引/文档/内存，量未知 | 核TS/TSX/JS/JSX导航及tsconfig边界，工时未知 | 延迟启动/进程预算是基座职责；不推项目资源零成本 |\n| 失败恢复 | server重启/重索引或依赖重装资源，金额未知 | 区分缺命令、配置/注册故障，恢复自定义扩展路由，工时未知 | fallback保默认四扩展但丢自定义，真实恢复率未知 |\n\n减少手工配置四种扩展；导航质量取决于外部服务器。\n\n## 研究问题与完整回答\n\n**插件研究总目标：**核实 TypeScript/JavaScript LSP 薄包的四扩展映射、外部服务器要求及缺服降级。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · TypeScript/JavaScript 导航由语言包还是共享基座提供？\n\n**研究主题：**场景与需求、贡献与相对优势、功能与机制\n\n#### 完整回答\n\n包仅把 .ts/.tsx/.js/.jsx 映射至四个 LSP language id，并以 typescript-language-server --stdio 注册 ts provider；协议、进程托管与模型侧 lsp 工具依赖共享基座。README 指引另行安装 typescript-language-server 和 typescript，包不下载服务器。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[dsh-lsp-ts/src/index.ts:21-49](https://github.com/988hj7tczd-oss/dsh-lsp-packs/blob/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-ts/src/index.ts#L21-L49)\n\n注入依赖、provider、命令、参数和四扩展映射。\n\n<details>\n<summary>查看原文（29行）</summary>\n\n```text\nimport type { Context } from '@deepseek-ai/cordis'\nimport z from '@deepseek-ai/schemastery'\nimport { LspError, LspProviderId } from '@deepseek-ai/dsh-lsp'\nimport type { LspProvider, LspProviderQuery, LspQueryResult } from '@deepseek-ai/dsh-lsp'\nimport * as LspStdio from '@deepseek-ai/dsh-lsp-stdio'\nimport type { LspLocalServerConfig } from '@deepseek-ai/dsh-lsp-stdio'\n\n/** Cordis plugin name for loader diagnostics. */\nexport const name = 'lsp-ts'\n\n/** Services required by the shared LSP base this pack assembles. */\nexport const inject = ['fs', 'lsp', 'subprocess']\n\n/** Stable provider id reserved on `ctx.lsp` by this pack. */\nexport const PROVIDER_ID = 'ts'\n\n/** Default server command (absolute path or PATH-resolved executable, no shell). */\nexport const DEFAULT_COMMAND = 'typescript-language-server'\n\n/** Default launch arguments. */\nexport const DEFAULT_ARGS: readonly string[] = [\"--stdio\"]\n\n/** Default lowercase leading-dot extension → LSP language id table. */\nexport const DEFAULT_EXTENSION_TO_LANGUAGE: Readonly<Record<string, string>> = {\n    \".ts\": \"typescript\",\n    \".tsx\": \"typescriptreact\",\n    \".js\": \"javascript\",\n    \".jsx\": \"javascriptreact\"\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[dsh-lsp-ts/src/index.ts:155-163](https://github.com/988hj7tczd-oss/dsh-lsp-packs/blob/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-ts/src/index.ts#L155-L163)\n\n把解析后的服务器配置交给共享 LspStdio。\n\n```text\nexport async function apply(ctx: Context, config: Config): Promise<void> {\n  const server = resolveServerConfig(config)\n  try {\n    // Resolve through lsp-stdio’s own Config schema so every documented default\n    // (timer budgets, byte caps, env, ...) is filled before apply() — calling the\n    // stdio apply directly bypasses the Cordis loader’s schema pass.\n    const stdioConfig = LspStdio.Config({ servers: { [PROVIDER_ID]: server } })\n    await LspStdio.apply(ctx, stdioConfig)\n    return\n```\n\n**依据 3 · 作者声明**：[dsh-lsp-ts/README.md:6-25](https://github.com/988hj7tczd-oss/dsh-lsp-packs/blob/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-ts/README.md#L6-L25)\n\n声明薄包和外部服务器安装前提。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n````text\nThis pack is one Cordis configuration plugin: it registers a configured\n`@deepseek-ai/dsh-lsp-stdio` instance on `ctx.lsp` with the server command, launch\narguments, and extension mapping for TypeScript / JavaScript. It implements **no LSP protocol** —\nthe shared base does: `@deepseek-ai/dsh-lsp` (the seam) + `@deepseek-ai/dsh-tool-lsp` (the\nmodel-facing `lsp` tool with `goToDefinition` / `findReferences` / `goToImplementation` /\n`hover`). Twelve packs reuse one unchanged base.\n\n## Installing the language server\n\n```bash\nnpm install -g typescript-language-server typescript\n# or: yarn global add typescript-language-server typescript\n# or: pnpm add -g typescript-language-server typescript\n```\n\nThe server embeds its own `tsserver`; installing `typescript` next to it is still recommended.\n\n> ⚠️ The plugin itself **never downloads or installs the server binary** — matching the\n> upstream anthropics LSP plugins, the server is an external prerequisite. The plugin only\n> resolves and launches it.\n````\n\n</details>\n\n#### 缺口\n\n- 未启动真实 TypeScript language server\n  **影响：**跨文件定义、引用与项目配置下表现未知\n  **进一步探讨：**在真实 TS/JS 项目试四操作和跨文件导航\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 缺服 fallback 是否覆盖自定义映射并能区分故障？\n\n**研究主题：**工程质量与复用、缺陷与关键质疑\n\n#### 完整回答\n\n正常配置合并自定义 extensionToLanguage；但 Config 和 apply 的全部异常被同一个 catch 归因为默认命令不可用，fallback 只用默认四扩展注册。若自定义 .xyz，降级时该路由丢失。resolveServerConfig 在 try 之前，也并非所有加载错误都可降级。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[dsh-lsp-ts/src/index.ts:105-120](https://github.com/988hj7tczd-oss/dsh-lsp-packs/blob/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-ts/src/index.ts#L105-L120)\n\n用户扩展覆盖合并与配置生成。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n/** Merge the pack defaults with the user overrides into one stdio server entry. */\nexport function resolveServerConfig(config: Config): ResolvedServerConfig {\n  const server: ResolvedServerConfig = {\n    command: config.command ?? DEFAULT_COMMAND,\n    args: config.args ?? [...DEFAULT_ARGS],\n    extensionToLanguage: { ...DEFAULT_EXTENSION_TO_LANGUAGE, ...(config.extensionToLanguage ?? {}) },\n  }\n  if (config.env !== undefined) server.env = config.env\n  if (config.initializationOptions !== undefined) server.initializationOptions = config.initializationOptions\n  if (config.configuration !== undefined) server.configuration = config.configuration\n  if (config.maxMessageBytes !== undefined) server.maxMessageBytes = config.maxMessageBytes\n  if (config.maxStderrBytes !== undefined) server.maxStderrBytes = config.maxStderrBytes\n  if (config.maxDocumentBytes !== undefined) server.maxDocumentBytes = config.maxDocumentBytes\n  if (config.shutdownTimeoutMs !== undefined) server.shutdownTimeoutMs = config.shutdownTimeoutMs\n  if (config.killGraceMs !== undefined) server.killGraceMs = config.killGraceMs\n  return server\n```\n\n</details>\n\n**依据 2 · 源码核查**：[dsh-lsp-ts/src/index.ts:123-173](https://github.com/988hj7tczd-oss/dsh-lsp-packs/blob/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-ts/src/index.ts#L123-L173)\n\nLSP_UNAVAILABLE fallback、宽 catch 与默认映射。\n\n<details>\n<summary>查看原文（51行）</summary>\n\n```text\n/** A provider that keeps extension routing alive while the server is missing. */\nclass UnavailableProvider implements LspProvider {\n  readonly id = LspProviderId(PROVIDER_ID)\n  readonly extensionToLanguage: Readonly<Record<string, string>>\n\n  constructor(extensions: Readonly<Record<string, string>>, private readonly reason: string) {\n    this.extensionToLanguage = { ...extensions }\n  }\n\n  query(_request: LspProviderQuery): Promise<LspQueryResult> {\n    const message =\n      'language server for ' + PROVIDER_ID + ' is unavailable: ' + this.reason + '. '\n      + 'Install the language server (see the pack README) and reload the profile or session.'\n    return Promise.reject(new LspError(message, 'LSP_UNAVAILABLE'))\n  }\n}\n\n/** Extract a stable message from an unknown load-time failure. */\nfunction failureMessage(error: unknown): string {\n  if (error instanceof Error) return error.message\n  return String(error)\n}\n\n/**\n * Register the configured stdio provider for the language, or a structured\n * no-server fallback when the executable cannot be resolved at load.\n *\n * The pack never crashes the session: an unresolvable server only disables\n * this language routing and surfaces `LSP_UNAVAILABLE` on queries.\n * @param ctx - the plugin context (must inject `fs`, `lsp`, `subprocess`).\n * @param config - the resolved pack configuration.\n */\nexport async function apply(ctx: Context, config: Config): Promise<void> {\n  const server = resolveServerConfig(config)\n  try {\n    // Resolve through lsp-stdio’s own Config schema so every documented default\n    // (timer budgets, byte caps, env, ...) is filled before apply() — calling the\n    // stdio apply directly bypasses the Cordis loader’s schema pass.\n    const stdioConfig = LspStdio.Config({ servers: { [PROVIDER_ID]: server } })\n    await LspStdio.apply(ctx, stdioConfig)\n    return\n  } catch (error) {\n    const reason = failureMessage(error)\n    console.warn('[' + name + '] ' + DEFAULT_COMMAND + ' unavailable at load: ' + reason)\n    ctx.effect(() => {\n      const dispose = ctx.lsp.registerProvider(\n        new UnavailableProvider(DEFAULT_EXTENSION_TO_LANGUAGE, reason),\n      )\n      return () => dispose()\n    }, name + '.unavailableFallback')\n  }\n```\n\n</details>\n\n**依据 3 · 作者声明**：[dsh-lsp-ts/README.md:34-58](https://github.com/988hj7tczd-oss/dsh-lsp-packs/blob/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-ts/README.md#L34-L58)\n\n声明 lazy start、缺服降级和自定义覆盖。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n````text\n## How the pack works\n\n- **Lazy start**: the server process is **not** started at load. `lsp-stdio` launches it\n  lazily on the first matching query and keeps one process per workspace.\n- **No-server fallback**: if the executable cannot be resolved, the pack still loads;\n  every `lsp` query for these extensions fails with a structured `LSP_UNAVAILABLE` error\n  naming the command — the rest of the session is unaffected.\n- **Config overrides**: every default below can be overridden from the composition row,\n  e.g. a server installed at a non-standard path:\n\n```yaml\n- id: lsp-ts\n  name: '@dsh-lsp-packs/dsh-lsp-ts'\n  config:\n    command: /absolute/path/to/typescript-language-server\n    args:\n      - --stdio\n    extensionToLanguage:\n      '.xyz': custom-language-id\n    maxDocumentBytes: 8000000\n```\n\nAll fields of the `servers` table documented in the `@deepseek-ai/dsh-lsp-stdio` README are\naccepted (`command`, `args`, `env`, `extensionToLanguage`, `initializationOptions`,\n`configuration`, byte/time bounds).\n````\n\n</details>\n\n#### 缺口\n\n- 未模拟配置/注册错误和自定义扩展缺服\n  **影响：**用户可见错误与路由范围需实测\n  **进一步探讨：**隔离分别测试缺 binary、配置异常和自定义扩展\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 采用前提和已有测试证据到哪里？\n\n**研究主题：**依赖、兼容与流程、采用判断\n\n#### 完整回答\n\n需 DSH LSP service/tool 与同执行世界的 fs/subprocess，主机需有 typescript-language-server（推荐另装 typescript）。源码包含默认值、缺服两条离线测试及有 server 才运行的四操作单文件 sample.ts 测试；存在测试代码不代表本研究运行通过，也未覆盖 TS/JS 多文件项目或四扩展各自行为。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[dsh-lsp-ts/README.md:13-25](https://github.com/988hj7tczd-oss/dsh-lsp-packs/blob/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-ts/README.md#L13-L25)\n\n外部安装及 TypeScript 依赖说明。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n````text\n## Installing the language server\n\n```bash\nnpm install -g typescript-language-server typescript\n# or: yarn global add typescript-language-server typescript\n# or: pnpm add -g typescript-language-server typescript\n```\n\nThe server embeds its own `tsserver`; installing `typescript` next to it is still recommended.\n\n> ⚠️ The plugin itself **never downloads or installs the server binary** — matching the\n> upstream anthropics LSP plugins, the server is an external prerequisite. The plugin only\n> resolves and launches it.\n````\n\n</details>\n\n**依据 2 · 作者声明**：[dsh-lsp-ts/README.md:60-92](https://github.com/988hj7tczd-oss/dsh-lsp-packs/blob/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-ts/README.md#L60-L92)\n\n共享基座挂载、测试 lane 和单文件范围。\n\n<details>\n<summary>查看原文（33行）</summary>\n\n````text\n## Mounting\n\n1. Mount the shared base **once** (the `lsp` service, the `lsp` tool, and a\n   filesystem/subprocess pair for the same execution world) — ready-made snippet in\n   `examples/base-composition.cordis.yml` of the dsh-lsp-packs repo.\n2. Install the pack (its `cordis.yml` is the `dsh.bundle.patch`, so the row inserts\n   itself):\n\n```bash\ndsh plugin add @dsh-lsp-packs/dsh-lsp-ts    # published name\ndsh plugin add /path/to/dsh-lsp-packs/dsh-lsp-ts  # or a local checkout\n```\n\nor compose the row directly (name resolved from the installed package):\n\n```yaml\n- insert:\n    - id: lsp-ts\n      name: '@dsh-lsp-packs/dsh-lsp-ts'\n```\n\n## Smoke test\n\n```bash\npnpm vitest run --dir dsh-lsp-ts   # or from the repo root: pnpm test\n```\n\n- Lane 1 (offline): asserts the defaults (command / args / extension table / provider id).\n- Lane 2 (offline): asserts the missing-server fallback returns `LSP_UNAVAILABLE`.\n- Lane 3 (needs the server): runs the four `lsp` operations against `sample.ts`;\n  it **auto-skips** when `typescript-language-server` is not on PATH.\n\nNo `tsconfig.json` is required for single-file queries; this mirrors the pinned upstream TS e2e.\n````\n\n</details>\n\n**依据 3 · 源码核查**：[dsh-lsp-ts/tests/smoke.e2e.ts:24-101](https://github.com/988hj7tczd-oss/dsh-lsp-packs/blob/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-ts/tests/smoke.e2e.ts#L24-L101)\n\nbinary 探测、离线默认和缺服测试、真实 lane 自动 skip。\n\n<details>\n<summary>查看原文（78行）</summary>\n\n```text\n/** Probe whether the language server binary truly runs. */\nfunction probeServer(command: string): boolean {\n  const probe = spawnSync(command, ['--version'], {\n    encoding: 'utf8',\n    timeout: 10_000,\n    shell: process.platform === 'win32',\n  })\n  // Spawn failure or timeout (ENOENT / killed) never counts as installed.\n  if (probe.error !== undefined || probe.status === null) return false\n  if (probe.status === 0) return true\n  // Some servers (e.g. sourcekit-lsp) reject `--version` with a usage error while\n  // running fine; only output saying the binary itself is missing skips the lane\n  // (this also skips a rustup shim whose component is not installed).\n  const output = String(probe.stdout ?? '') + String(probe.stderr ?? '')\n  return !/(no such file|not found|unknown binary|command not found|ENOENT)/i.test(output)\n}\n\nconst installed = probeServer('typescript-language-server')\n\nconst prebuild = null\n// `built` flips in beforeAll when a pack declares a prebuild (e.g. `swift build`);\n// build-dependent operations skip when it fails.\nlet built = prebuild === null\n\n// Lane 1: pack defaults ------------------------------------------------\ndescribe('dsh-lsp-ts pack defaults', () => {\n  it('declares the README-default command, args, provider id, and extension table', () => {\n    expect(Pack.name).toBe('lsp-ts')\n    expect(Pack.PROVIDER_ID).toBe('ts')\n    expect(Pack.inject).toEqual(['fs', 'lsp', 'subprocess'])\n    expect(Pack.DEFAULT_COMMAND).toBe('typescript-language-server')\n    expect([...Pack.DEFAULT_ARGS]).toEqual([\"--stdio\"])\n    expect({ ...Pack.DEFAULT_EXTENSION_TO_LANGUAGE }).toEqual({\".ts\":\"typescript\",\".tsx\":\"typescriptreact\",\".js\":\"javascript\",\".jsx\":\"javascriptreact\"})\n  })\n\n  it('keeps defaults when no override is given and merges user overrides on top', () => {\n    const defaults = Pack.resolveServerConfig({})\n    expect(defaults.command).toBe('typescript-language-server')\n    expect([...defaults.args]).toEqual([\"--stdio\"])\n    expect(defaults.extensionToLanguage).toEqual({\".ts\":\"typescript\",\".tsx\":\"typescriptreact\",\".js\":\"javascript\",\".jsx\":\"javascriptreact\"})\n    const overridden = Pack.resolveServerConfig({ command: '/custom/server', args: ['-x'] })\n    expect(overridden.command).toBe('/custom/server')\n    expect([...overridden.args]).toEqual(['-x'])\n    expect(overridden.extensionToLanguage).toEqual({\".ts\":\"typescript\",\".tsx\":\"typescriptreact\",\".js\":\"javascript\",\".jsx\":\"javascriptreact\"})\n  })\n})\n\n// Lane 2: missing-server fallback (offline) ---------------------------\ndescribe('dsh-lsp-ts missing-server fallback', () => {\n  let ctx: Context\n\n  beforeAll(async () => {\n    ctx = new Context()\n    await ctx.plugin(Lsp)\n    await ctx.plugin(LocalSubprocessRuntime)\n    await ctx.plugin(LocalFileSystem, { cwd: process.cwd() })\n    await ctx.plugin(Pack, { command: 'definitely-missing-ts-server-xyz' })\n  }, 20_000)\n\n  afterAll(async () => {\n    if (ctx) await ctx.fiber.dispose()\n  })\n\n  it('loads without throwing and fails queries with a structured LSP_UNAVAILABLE error', async () => {\n    const request: LspQueryRequest = {\n      operation: 'goToDefinition',\n      filePath: 'sample.ts',\n      position: { line: 0, character: 0 },\n      workspaceRoot: process.cwd(),\n    }\n    await expect(ctx.lsp.query(request)).rejects.toThrow(\n      expect.objectContaining({ code: 'LSP_UNAVAILABLE' }),\n    )\n  })\n})\n\n// Lane 3: real server (auto-skip when not installed) ------------------\ndescribe.skipIf(!installed)('dsh-lsp-ts real server (typescript-language-server)', () => {\n```\n\n</details>\n\n**依据 4 · 源码核查**：[dsh-lsp-ts/tests/smoke.e2e.ts:100-175](https://github.com/988hj7tczd-oss/dsh-lsp-packs/blob/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-ts/tests/smoke.e2e.ts#L100-L175)\n\n仅 sample.ts 的四操作测试。\n\n<details>\n<summary>查看原文（76行）</summary>\n\n```text\n// Lane 3: real server (auto-skip when not installed) ------------------\ndescribe.skipIf(!installed)('dsh-lsp-ts real server (typescript-language-server)', () => {\n  let ctx: Context\n  let ws: string\n  let root: string\n\n  beforeAll(async () => {\n    root = await realpath(await mkdtemp(join(tmpdir(), 'dsh-lsp-ts-')))\n    ws = join(root, 'proj')\n    await mkdir(ws)\n\n    await writeFile(join(ws, 'sample.ts'), [\n      'export function add(a: number, b: number): number {',\n      '  return a + b',\n      '}',\n      '',\n      'export const result = add(1, 2)',\n    ].join('\\n'))\n\n\n    ctx = new Context()\n    await ctx.plugin(Lsp)\n    await ctx.plugin(LocalSubprocessRuntime)\n    await ctx.plugin(LocalFileSystem, { cwd: process.cwd() })\n    await ctx.plugin(Pack)\n  }, 60_000)\n\n  afterAll(async () => {\n    if (ctx) await ctx.fiber.dispose()\n    if (root) await rm(root, { recursive: true, force: true })\n  })\n\n/** One-based helper mirroring the model contract; converted to zero-based positions here. */\n  function at(operation: LspQueryRequest['operation'], line1: number, char1: number, filePath = 'sample.ts'): LspQueryRequest {\n    return { operation, filePath, position: { line: line1 - 1, character: char1 - 1 }, workspaceRoot: ws }\n  }\n\n  it('goToDefinition resolves the definition at a call site', async () => {\n\n    // Line 5, col 23 is the symbol under test in sample.ts.\n    const result = await ctx.lsp.query(at('goToDefinition', 5, 23))\n    expect(result.kind).toBe('locations')\n    if (result.kind === 'locations') {\n      expect(result.locations.length).toBeGreaterThanOrEqual(1)\n    }\n  }, 60_000)\n\n  it('findReferences finds references to the symbol including its declaration', async () => {\n\n    // Line 1, col 17 is the symbol under test in sample.ts.\n    const result = await ctx.lsp.query(at('findReferences', 1, 17))\n    expect(result.kind).toBe('locations')\n    if (result.kind === 'locations') {\n      expect(result.locations.length).toBeGreaterThanOrEqual(1)\n    }\n  }, 60_000)\n\n  it('goToImplementation resolves the implementation of the symbol', async () => {\n\n    // Line 5, col 23 is the symbol under test in sample.ts.\n    const result = await ctx.lsp.query(at('goToImplementation', 5, 23))\n    expect(result.kind).toBe('locations')\n    if (result.kind === 'locations') {\n      expect(result.locations.length).toBeGreaterThanOrEqual(1)\n    }\n  }, 60_000)\n\n  it('returns hover information for a typed symbol', async () => {\n    // Hover on the declaring `add` name (line 1, col 17).\n    const result = await ctx.lsp.query(at('hover', 1, 17))\n    expect(result.kind).toBe('hover')\n    if (result.kind === 'hover') {\n      if (result.hover !== null) expect(result.hover.contents).toContain('number')\n    }\n  }, 60_000)\n})\n```\n\n</details>\n\n#### 缺口\n\n- 未运行真实服务器或 TS/JS 项目矩阵\n  **影响：**四扩展和项目索引的实际适配未知\n  **进一步探讨：**在 TS/TSX/JS/JSX 多文件项目与不同 tsconfig 下试用\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 首次、持续和失败恢复怎样核算成本与效果？\n\n**研究主题：**效果与总成本、采用判断\n\n#### 完整回答\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 外部typescript-language-server/建议typescript与共享基座下载/磁盘，价格未知 | 核PATH、DSH执行世界、四language id和项目配置，工时未知 | 包不装server，单sample.ts无tsconfig不等所有项目适配 |\n| 持续使用 | 共享stdio按需起server，tsserver工作区索引/文档/内存，量未知 | 核TS/TSX/JS/JSX导航及tsconfig边界，工时未知 | 延迟启动/进程预算是基座职责；不推项目资源零成本 |\n| 失败恢复 | server重启/重索引或依赖重装资源，金额未知 | 区分缺命令、配置/注册故障，恢复自定义扩展路由，工时未知 | fallback保默认四扩展但丢自定义，真实恢复率未知 |\n\n以同一多文件TS/JS项目可核对的四操作结果为验收单位，人工配置同一server作为基线。此包省命令/映射接线，不新增类型检查器或资源调度；项目索引资源、四扩展差异、安装和恢复工时未知。源码测试只设计sample.ts四操作，不能用其存在替代矩阵表现或推净省费。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[dsh-lsp-ts/src/index.ts:28-49](https://github.com/988hj7tczd-oss/dsh-lsp-packs/blob/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-ts/src/index.ts#L28-L49)\n\n命令和四扩展\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n/** Cordis plugin name for loader diagnostics. */\nexport const name = 'lsp-ts'\n\n/** Services required by the shared LSP base this pack assembles. */\nexport const inject = ['fs', 'lsp', 'subprocess']\n\n/** Stable provider id reserved on `ctx.lsp` by this pack. */\nexport const PROVIDER_ID = 'ts'\n\n/** Default server command (absolute path or PATH-resolved executable, no shell). */\nexport const DEFAULT_COMMAND = 'typescript-language-server'\n\n/** Default launch arguments. */\nexport const DEFAULT_ARGS: readonly string[] = [\"--stdio\"]\n\n/** Default lowercase leading-dot extension → LSP language id table. */\nexport const DEFAULT_EXTENSION_TO_LANGUAGE: Readonly<Record<string, string>> = {\n    \".ts\": \"typescript\",\n    \".tsx\": \"typescriptreact\",\n    \".js\": \"javascript\",\n    \".jsx\": \"javascriptreact\"\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[dsh-lsp-ts/src/index.ts:105-120](https://github.com/988hj7tczd-oss/dsh-lsp-packs/blob/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-ts/src/index.ts#L105-L120)\n\n预算/配置转交\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n/** Merge the pack defaults with the user overrides into one stdio server entry. */\nexport function resolveServerConfig(config: Config): ResolvedServerConfig {\n  const server: ResolvedServerConfig = {\n    command: config.command ?? DEFAULT_COMMAND,\n    args: config.args ?? [...DEFAULT_ARGS],\n    extensionToLanguage: { ...DEFAULT_EXTENSION_TO_LANGUAGE, ...(config.extensionToLanguage ?? {}) },\n  }\n  if (config.env !== undefined) server.env = config.env\n  if (config.initializationOptions !== undefined) server.initializationOptions = config.initializationOptions\n  if (config.configuration !== undefined) server.configuration = config.configuration\n  if (config.maxMessageBytes !== undefined) server.maxMessageBytes = config.maxMessageBytes\n  if (config.maxStderrBytes !== undefined) server.maxStderrBytes = config.maxStderrBytes\n  if (config.maxDocumentBytes !== undefined) server.maxDocumentBytes = config.maxDocumentBytes\n  if (config.shutdownTimeoutMs !== undefined) server.shutdownTimeoutMs = config.shutdownTimeoutMs\n  if (config.killGraceMs !== undefined) server.killGraceMs = config.killGraceMs\n  return server\n```\n\n</details>\n\n**依据 3 · 源码核查**：[dsh-lsp-ts/src/index.ts:155-173](https://github.com/988hj7tczd-oss/dsh-lsp-packs/blob/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-ts/src/index.ts#L155-L173)\n\nstdio调用与fallback\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\nexport async function apply(ctx: Context, config: Config): Promise<void> {\n  const server = resolveServerConfig(config)\n  try {\n    // Resolve through lsp-stdio’s own Config schema so every documented default\n    // (timer budgets, byte caps, env, ...) is filled before apply() — calling the\n    // stdio apply directly bypasses the Cordis loader’s schema pass.\n    const stdioConfig = LspStdio.Config({ servers: { [PROVIDER_ID]: server } })\n    await LspStdio.apply(ctx, stdioConfig)\n    return\n  } catch (error) {\n    const reason = failureMessage(error)\n    console.warn('[' + name + '] ' + DEFAULT_COMMAND + ' unavailable at load: ' + reason)\n    ctx.effect(() => {\n      const dispose = ctx.lsp.registerProvider(\n        new UnavailableProvider(DEFAULT_EXTENSION_TO_LANGUAGE, reason),\n      )\n      return () => dispose()\n    }, name + '.unavailableFallback')\n  }\n```\n\n</details>\n\n#### 缺口\n\n- 实际项目大小、tsconfig/混合JS配置和资源耗量未知\n  **影响：**无法给出项目级总拥有成本或导航收益幅度\n  **进一步探讨：**从相同项目人工配置与包配置的资源/正确结果记录入手\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 怎样证伪故障分层与保留映射能改善扩展恢复？\n\n**研究主题：**新假设与验证、工程质量与复用、采用判断\n\n#### 完整回答\n\n固定配置正常合并扩展但catch把Config/apply异常统一说成默认命令不可用，fallback回到默认四扩展，resolve仍在try外。相对当前统一fallback，设计假设是分开配置解析/命令定位/provider注册错误，并让降级路由复用已合并映射，能减少自定义.xyz路由丢失和错误归因。条件是共享基座提供可区分错误阶段、失败注册可清理；代价是错误契约、状态及兼容维护。最小对照在同一配置样本覆盖四默认扩展和.xyz、缺binary、非法配置、重复provider和正常注册，比较原版与隔离原型的路由、错误归因、其他语言可用性及恢复步骤。若扩展仍丢、配置失败仍称缺binary或残留注册阻断恢复，假设被证伪；即便分层正确也不代表真实TS/JS导航质量提高。方案未实现或执行，项目矩阵需独立核对。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[dsh-lsp-ts/src/index.ts:105-120](https://github.com/988hj7tczd-oss/dsh-lsp-packs/blob/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-ts/src/index.ts#L105-L120)\n\n合并扩展\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n/** Merge the pack defaults with the user overrides into one stdio server entry. */\nexport function resolveServerConfig(config: Config): ResolvedServerConfig {\n  const server: ResolvedServerConfig = {\n    command: config.command ?? DEFAULT_COMMAND,\n    args: config.args ?? [...DEFAULT_ARGS],\n    extensionToLanguage: { ...DEFAULT_EXTENSION_TO_LANGUAGE, ...(config.extensionToLanguage ?? {}) },\n  }\n  if (config.env !== undefined) server.env = config.env\n  if (config.initializationOptions !== undefined) server.initializationOptions = config.initializationOptions\n  if (config.configuration !== undefined) server.configuration = config.configuration\n  if (config.maxMessageBytes !== undefined) server.maxMessageBytes = config.maxMessageBytes\n  if (config.maxStderrBytes !== undefined) server.maxStderrBytes = config.maxStderrBytes\n  if (config.maxDocumentBytes !== undefined) server.maxDocumentBytes = config.maxDocumentBytes\n  if (config.shutdownTimeoutMs !== undefined) server.shutdownTimeoutMs = config.shutdownTimeoutMs\n  if (config.killGraceMs !== undefined) server.killGraceMs = config.killGraceMs\n  return server\n```\n\n</details>\n\n**依据 2 · 源码核查**：[dsh-lsp-ts/src/index.ts:123-173](https://github.com/988hj7tczd-oss/dsh-lsp-packs/blob/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-ts/src/index.ts#L123-L173)\n\nfallback与try边界\n\n<details>\n<summary>查看原文（51行）</summary>\n\n```text\n/** A provider that keeps extension routing alive while the server is missing. */\nclass UnavailableProvider implements LspProvider {\n  readonly id = LspProviderId(PROVIDER_ID)\n  readonly extensionToLanguage: Readonly<Record<string, string>>\n\n  constructor(extensions: Readonly<Record<string, string>>, private readonly reason: string) {\n    this.extensionToLanguage = { ...extensions }\n  }\n\n  query(_request: LspProviderQuery): Promise<LspQueryResult> {\n    const message =\n      'language server for ' + PROVIDER_ID + ' is unavailable: ' + this.reason + '. '\n      + 'Install the language server (see the pack README) and reload the profile or session.'\n    return Promise.reject(new LspError(message, 'LSP_UNAVAILABLE'))\n  }\n}\n\n/** Extract a stable message from an unknown load-time failure. */\nfunction failureMessage(error: unknown): string {\n  if (error instanceof Error) return error.message\n  return String(error)\n}\n\n/**\n * Register the configured stdio provider for the language, or a structured\n * no-server fallback when the executable cannot be resolved at load.\n *\n * The pack never crashes the session: an unresolvable server only disables\n * this language routing and surfaces `LSP_UNAVAILABLE` on queries.\n * @param ctx - the plugin context (must inject `fs`, `lsp`, `subprocess`).\n * @param config - the resolved pack configuration.\n */\nexport async function apply(ctx: Context, config: Config): Promise<void> {\n  const server = resolveServerConfig(config)\n  try {\n    // Resolve through lsp-stdio’s own Config schema so every documented default\n    // (timer budgets, byte caps, env, ...) is filled before apply() — calling the\n    // stdio apply directly bypasses the Cordis loader’s schema pass.\n    const stdioConfig = LspStdio.Config({ servers: { [PROVIDER_ID]: server } })\n    await LspStdio.apply(ctx, stdioConfig)\n    return\n  } catch (error) {\n    const reason = failureMessage(error)\n    console.warn('[' + name + '] ' + DEFAULT_COMMAND + ' unavailable at load: ' + reason)\n    ctx.effect(() => {\n      const dispose = ctx.lsp.registerProvider(\n        new UnavailableProvider(DEFAULT_EXTENSION_TO_LANGUAGE, reason),\n      )\n      return () => dispose()\n    }, name + '.unavailableFallback')\n  }\n```\n\n</details>\n\n#### 缺口\n\n- 共享基座的错误分类/失败清理契约未知，方案未实现\n  **影响：**不能声称所有初始化错误可安全降级\n  **进一步探讨：**从固定基座错误原文及隔离状态差异入手\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：dsh-lsp-ts；内容摘要：0861cee7b50319bcdabf2578531986c1051e40b68f33e00185cddfb92da93376。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 2 | 127 | — | — | 947 |\n| .ts | source | 1 | 174 | 98 | 60 | — |\n| .ts | test | 1 | 175 | 126 | 25 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 条件 | 边界 |\n| --- | --- | --- |\n| 四扩展 LSP 路由 | 外部 server 与共享基座 | 真实项目未验证 |\n| 缺服 fallback | 初始化异常 | 宽 catch 误归因及自定义路由丢失 |\n\n## 工程亮点\n\n配置覆盖合并；LspStdio 延迟启动；缺服异常由 fallback 返回 LSP_UNAVAILABLE。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 dsh-lsp-ts/README.md、dsh-lsp-ts/package.json、dsh-lsp-ts/src/index.ts、dsh-lsp-ts/tests/smoke.e2e.ts、dsh-lsp-ts/cordis.yml 及固定范围 inventory；组件：dsh-lsp-ts。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：静态审阅固定提交的 dsh-lsp-ts 子组件；未运行语言服务器或插件。\n- 下一步：测缺服/非法配置/自定义扩展，以及真实多文件 TS/JS 四操作。\n",
         "metadata": {
             "repository": "988hj7tczd-oss/dsh-lsp-packs",
             "repository_id": 1344713526,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T07:59:37.158Z",
+            "window_start": "2026-09-22T07:59:37.158Z",
             "stars": 3,
             "pushed_at": "2026-09-01T00:51:42Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 1,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-lsp-packs%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6405:2EA514:150881:22C58B:6AD84AFC and timestamp 2026-10-21 05:17:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-lsp-packs%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6406:157B26:151B03:22DC69:6AD84AFC and timestamp 2026-10-21 05:17:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-lsp-packs%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640D:11B6:14D5AF:229867:6AD84AFC and timestamp 2026-10-21 05:17:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-lsp-packs%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6416:D5CAC:14C848:22717B:6AD84AFC and timestamp 2026-10-21 05:17:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-lsp-packs%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6417:90BBC:14E1DC:229D5C:6AD84AFC and timestamp 2026-10-21 05:17:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "@dsh-lsp-packs/dsh-lsp-ts",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T07:59:47.810Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": null,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40dsh-lsp-packs%2Fdsh-lsp-ts",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/%40dsh-lsp-packs%2Fdsh-lsp-ts",
                 "error": "HTTP 404",
                 "publication": {
                     "first_published_at": null,
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T07:59:47.810Z",
                     "source_url": "https://registry.npmjs.org/%40dsh-lsp-packs%2Fdsh-lsp-ts",
                     "error": "HTTP 404",
                     "latest_version": null,
                     "latest_published_at": null,
                     "latest_error": "HTTP 404"
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
-                "current_revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {

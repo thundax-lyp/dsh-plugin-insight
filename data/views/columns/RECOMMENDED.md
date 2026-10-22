@@ -12,7 +12,6 @@
 
 | 插件 | 主要用途 | 为什么值得推荐 |
 | --- | --- | --- |
-| [dsh-session-diff](#plugin-1372976273-root) | 在 DSH 右侧栏显示当前会话修改文件的行级差异和变更列表。 | 适合快速查看当前会话常规write/edit的改动；先核对双会话同文件和shell改动的覆盖边界，完整审查仍以Git为准，尚未进行真实宿主验证。 |
 | [dsh-sidebar-git-graph](#plugin-1393980674-root) | 在DSH右侧栏显示当前会话仓库的分支提交图、工作树和暂存区差异。 | 适合在会话旁只读查看Git历史、工作树和暂存区；先确认仓库、扫描截断及刷新时点，不把图谱当CI或完整审查，尚未进行真实宿主验证。 |
 | [dsh-which](#plugin-1423215529-root) | 解释命令的 PATH 解析结果、被遮蔽副本及环境异常，可选探测版本。 | 适合排查PATH遮蔽与多版本命令冲突，先只查询并与当前shell对照；对可信二进制再启用版本探测，尚未进行真实宿主验证。 |
 | [URL 正文阅读器](#plugin-1335047324-root) | 读取网页、JSON 与订阅源，清理正文并提供分页续读和批量读取。 | 适合抓取结果噪声多、常需中文编码和续读的资料阅读，先与原生抓取对照；表格、动态页和关键事实回读原文，尚未进行真实宿主验证。 |
@@ -55,27 +54,14 @@
 | [KRouter](#plugin-1341648244-root) | 以本地 Markdown 知识库为多种 Agent 提供带出处的记忆查询、纠错与拒答机制。 | 愿维护决策库者可先只读试用有效页检索；核对拒答和来源，导入蒸馏及夜间写作另立流程。 |
 | [dsh-question-nav](#plugin-1341946801-root) | 以会话提问索引与圆点导航跳转历史用户提问。 | 长会话用户可限定普通单文本提问、保持同一会话试导航；已知仅索引首块会漏多块或首块图片提问，跳转时不核原session，不能当完整历史。 |
 | [dsh-plugin-nlbi](#plugin-1343622602-root) | 在 DSH 中用自然语言查询 MySQL，生成表格、图表与可保存报表。 | 有只读MySQL环境的分析者可用标准答案试SQL报表，先核业务口径与数据权限，重跑仍验Schema。 |
-| [dsh-dep-vuln-scan](#plugin-1344714002-root) | 读取依赖锁文件并查询 OSV，生成漏洞、严重度和修复建议报告。 | 有明确锁文件的团队可试已知漏洞初筛；核跳过包和生态版本排序，先读公告维护线再回归，勿直接执行最低fixed命令。 |
 | [dsh-invoice-tools](#plugin-1344714819-root) | 在本地解析电子发票字段，核对金额并汇总生成报销单资料。 | 个人可用脱敏XML或文本票试汇总草稿；逐张核票号金额与买卖方，显式会话，xlsx.b64解码后再交财务，不支持OCR真伪查验。 |
-| [dsh-a11y-scan](#plugin-1344715270-root) | 调用axe扫描本地HTML、构建页面或显式确认的URL，输出无障碍问题与多格式报告。 | 已有axe后端前端团队可在本地构建产物试用；确认真实引擎和页面状态，incomplete与焦点读屏另验，零违规不证WCAG全合规。 |
-| [SSH 只读日志工具](#plugin-1346017360-root) | 通过预配置 SSH 别名读取或搜索有界远端日志，作为 MCP 工具接入 DSH。 | 已有只读SSH账号者可在测试服务器试用有界日志工具；用服务端ACL隔离根，验证符号链接与无匹配结果后接生产日志。 |
 | [dsh-api-dashboard](#plugin-1346196699-root) | 在DSH输入框旁展示多平台API余额、会话与子代理估算消耗，并提供配置看板。 | 多供应商用户可限可查询平台试额度看板，先对账和核对币种，自更新单独验备份回滚。 |
 | [dsh-wsl-tray](#plugin-1351853903-root) | 为 WSL 内的 DSH Web 安装或报告 Windows 托盘与快捷方式启动入口。 | 已有dsh-wsl-kit者可显式kitPath试桌面恢复入口，先从快捷方式真实启动，核token去向与回退。 |
-| [dsh-tokenrhythm-bill](#plugin-1351903192-root) | 集中展示基元律动等平台的余额、用量、模型与密钥，并提供账号切换和连通探测。 | 多套餐用户可先接常用单平台对账，核账号和限时额度后按需探测模型，避免把探测当免费。 |
-
-<a id="plugin-1372976273-root"></a>
-
-## [dsh-session-diff](../../plugins/2002xiaoyu--dsh-session-diff/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/2002XiaoYu/dsh-session-diff)
-
-**主要用途：**在 DSH 右侧栏显示当前会话修改文件的行级差异和变更列表。
-
-**推荐理由：**适合快速查看当前会话常规write/edit的改动；先核对双会话同文件和shell改动的覆盖边界，完整审查仍以Git为准，尚未进行真实宿主验证。
-
-**使用条件：**适合快速检查当前会话的常规write/edit；跨会话、shell改动和大文件仍用Git或专门差异工具复核。
-
-[返回表格](#column-index)
+| [dsh-soul](#plugin-1352089397-root) | 管理分层人设配置、提示词注入、变更历史及带确认的人设修改。 | 需显式风格管理者可试全局/工作区/会话配置；核首轮实际注入与下一轮覆盖，审计回滚非全作用域事务。 |
+| [dsh-turn-outline](#plugin-1356219122-root) | 把DSH会话事件折叠为轮次轨迹，并在better-sidebar侧栏定位回聊天或轨迹视图。 | 已用better-sidebar的长会话用户可试轮次大纲；核压缩前历史和并行工具锚点，摘要预览不替代完整审计日志。 |
+| [dsh-harness-chat-control](#plugin-1357066651-root) | 为 DSH 会话提供引用、侧聊、会话编辑及侧聊模型与历史控制。 | 频繁引用局部问题侧聊者可试交互，先验编辑重载后的引用与模型输入一致，保留正式原记录。 |
+| [模型信息补全](#plugin-1358816037-root) | 从 models.dev 为自定义模型补齐缺失能力，并保留人工确认与未声明状态。 | 维护多模型者可备份后试单供应商填充，核对官方能力及同名端点，未匹配项保留人工确认。 |
+| [dsh-codevault](#plugin-1359423472-root) | 把源码阅读整理成可检索的仓库、文件和符号卡片，并关联本地知识库。 | 反复读同模块的开发者可试源码卡片，先检查代码变更后引用和旧结论更新。 |
 
 <a id="plugin-1393980674-root"></a>
 
@@ -665,20 +651,6 @@
 
 [返回表格](#column-index)
 
-<a id="plugin-1344714002-root"></a>
-
-## [dsh-dep-vuln-scan](../../plugins/988hj7tczd-oss--dsh-dep-vuln-scan/INSIGHT.md)
-
-[![npm 30d 106](https://img.shields.io/static/v1?label=npm+30d&message=106&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-dep-vuln-scan) [![最新发布 2026-08-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-24&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-dep-vuln-scan)
-
-**主要用途：**读取依赖锁文件并查询 OSV，生成漏洞、严重度和修复建议报告。
-
-**推荐理由：**有明确锁文件的团队可试已知漏洞初筛；核跳过包和生态版本排序，先读公告维护线再回归，勿直接执行最低fixed命令。
-
-**使用条件：**适合已知锁文件的初筛；检查跳过/错误及实际包清单，修复前核公告维护线并做项目回归，别直接执行生成命令。
-
-[返回表格](#column-index)
-
 <a id="plugin-1344714819-root"></a>
 
 ## [dsh-invoice-tools](../../plugins/988hj7tczd-oss--dsh-invoice-tools/INSIGHT.md)
@@ -690,34 +662,6 @@
 **推荐理由：**个人可用脱敏XML或文本票试汇总草稿；逐张核票号金额与买卖方，显式会话，xlsx.b64解码后再交财务，不支持OCR真伪查验。
 
 **使用条件：**先用脱敏且有XML/文本层的发票做汇总草稿；逐张核票号、买卖方与金额，确认缓存会话和.xlsx.b64解码后再交财务。
-
-[返回表格](#column-index)
-
-<a id="plugin-1344715270-root"></a>
-
-## [dsh-a11y-scan](../../plugins/988hj7tczd-oss--dsh-a11y-scan/INSIGHT.md)
-
-[![npm 30d 86](https://img.shields.io/static/v1?label=npm+30d&message=86&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-a11y-scan) [![最新发布 2026-08-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-24&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-a11y-scan)
-
-**主要用途：**调用axe扫描本地HTML、构建页面或显式确认的URL，输出无障碍问题与多格式报告。
-
-**推荐理由：**已有axe后端前端团队可在本地构建产物试用；确认真实引擎和页面状态，incomplete与焦点读屏另验，零违规不证WCAG全合规。
-
-**使用条件：**适合已有axe后端的前端团队在本地构建产物先试用。先核对真实引擎运行与页面状态，再处理incomplete和人工清单；不要把报告无违规当完整WCAG认证。
-
-[返回表格](#column-index)
-
-<a id="plugin-1346017360-root"></a>
-
-## [SSH 只读日志工具](../../plugins/452926826--dsh-ssh-logs/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/452926826/dsh-ssh-logs)
-
-**主要用途：**通过预配置 SSH 别名读取或搜索有界远端日志，作为 MCP 工具接入 DSH。
-
-**推荐理由：**已有只读SSH账号者可在测试服务器试用有界日志工具；用服务端ACL隔离根，验证符号链接与无匹配结果后接生产日志。
-
-**使用条件：**适合已建立只读SSH权限的团队先用测试服务器验证；根目录不能单靠字符串约束当隔离，生产环境以服务端账号权限兜底。
 
 [返回表格](#column-index)
 
@@ -749,17 +693,73 @@
 
 [返回表格](#column-index)
 
-<a id="plugin-1351903192-root"></a>
+<a id="plugin-1352089397-root"></a>
 
-## [dsh-tokenrhythm-bill](../../plugins/162568316--dsh-tokenrhythm-bill/INSIGHT.md)
+## [dsh-soul](../../plugins/aliuyanfeng--dsh-soul/INSIGHT.md)
 
-[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/162568316/dsh-tokenrhythm-bill) [![npm 30d 1,667](https://img.shields.io/static/v1?label=npm+30d&message=1%2C667&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-tokenrhythm-bill) [![最新发布 2026-10-09](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-09&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-tokenrhythm-bill)
+[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/Aliuyanfeng/dsh-soul) [![npm 30d 2,373](https://img.shields.io/static/v1?label=npm+30d&message=2%2C373&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-soul) [![最新发布 2026-10-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-19&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-soul)
 
-**主要用途：**集中展示基元律动等平台的余额、用量、模型与密钥，并提供账号切换和连通探测。
+**主要用途：**管理分层人设配置、提示词注入、变更历史及带确认的人设修改。
 
-**推荐理由：**多套餐用户可先接常用单平台对账，核账号和限时额度后按需探测模型，避免把探测当免费。
+**推荐理由：**需显式风格管理者可试全局/工作区/会话配置；核首轮实际注入与下一轮覆盖，审计回滚非全作用域事务。
 
-**使用条件：**先只接入常用平台，对照控制台核验当前账号和限时额度，按需启用模型探测；敏感凭据留在受控宿主。
+**使用条件：**适合显式风格管理；先核作用域和实际注入，重要规则仍由宿主权限和验收保障。
+
+[返回表格](#column-index)
+
+<a id="plugin-1356219122-root"></a>
+
+## [dsh-turn-outline](../../plugins/andor-z--dsh-turn-outline/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/Andor-Z/dsh-turn-outline) [![npm 30d 1,546](https://img.shields.io/static/v1?label=npm+30d&message=1%2C546&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-turn-outline) [![最新发布 2026-09-30](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-30&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-turn-outline)
+
+**主要用途：**把DSH会话事件折叠为轮次轨迹，并在better-sidebar侧栏定位回聊天或轨迹视图。
+
+**推荐理由：**已用better-sidebar的长会话用户可试轮次大纲；核压缩前历史和并行工具锚点，摘要预览不替代完整审计日志。
+
+**使用条件：**适合已用better-sidebar的长会话用户先试，核对压缩前历史和并行工具的定位；重大追溯仍查看完整日志。
+
+[返回表格](#column-index)
+
+<a id="plugin-1357066651-root"></a>
+
+## [dsh-harness-chat-control](../../plugins/1985899182--dsh-harness-chat-control/INSIGHT.md)
+
+[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=yellow&logo=github&style=flat)](https://github.com/1985899182/dsh-harness-chat-control)
+
+**主要用途：**为 DSH 会话提供引用、侧聊、会话编辑及侧聊模型与历史控制。
+
+**推荐理由：**频繁引用局部问题侧聊者可试交互，先验编辑重载后的引用与模型输入一致，保留正式原记录。
+
+**使用条件：**适合经常引用局部问题开侧聊的用户；先验证编辑与重载后的引用一致性，再将其纳入重要讨论记录。
+
+[返回表格](#column-index)
+
+<a id="plugin-1358816037-root"></a>
+
+## [模型信息补全](../../plugins/11zld22--dsh-model-info-fill/INSIGHT.md)
+
+[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=yellow&logo=github&style=flat)](https://github.com/11zld22/dsh-model-info-fill)
+
+**主要用途：**从 models.dev 为自定义模型补齐缺失能力，并保留人工确认与未声明状态。
+
+**推荐理由：**维护多模型者可备份后试单供应商填充，核对官方能力及同名端点，未匹配项保留人工确认。
+
+**使用条件：**先核对一个提供商的官方能力，备份配置再补齐，未匹配模型保持显式人工确认。
+
+[返回表格](#column-index)
+
+<a id="plugin-1359423472-root"></a>
+
+## [dsh-codevault](../../plugins/1014029855--dsh-codevault/INSIGHT.md)
+
+[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/1014029855/dsh-codevault)
+
+**主要用途：**把源码阅读整理成可检索的仓库、文件和符号卡片，并关联本地知识库。
+
+**推荐理由：**反复读同模块的开发者可试源码卡片，先检查代码变更后引用和旧结论更新。
+
+**使用条件：**先给一个常读模块建卡，代码更新后核对引用和过期结论，不把历史笔记直接当现状。
 
 [返回表格](#column-index)
 

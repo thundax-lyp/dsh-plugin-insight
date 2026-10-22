@@ -24,36 +24,94 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-04-github-1344714002-root-directory-0",
+                    "id": "2026-10-22-02-github-1344714002-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T04:14:36.982Z",
+                    "retrieved_at": "2026-10-22T05:56:38.464Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-04-github-1344714002-root-author",
+                    "id": "2026-10-22-02-github-1344714002-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan",
+                            "commit": "db879fc01cd02b9f0821a87ba728a310ae08d9ac",
+                            "path": "README.md",
+                            "content_sha256": "f284c433b77866cb10bdeb43de931564af9eaf6e39fc7b3fa987c3aa594a5045"
+                        }
+                    ],
                     "revision": "db879fc01cd02b9f0821a87ba728a310ae08d9ac",
-                    "captured_at": "2026-10-21T04:14:36.982Z",
-                    "summary": "读取依赖锁文件并查询 OSV，生成漏洞、严重度和修复建议报告。",
-                    "artifact": "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--dsh-dep-vuln-scan/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:56:38.464Z",
+                    "summary": "读取常见项目锁文件，向OSV批量查询依赖版本公告，展示漏洞、修复候选与命令建议，并保存可重放结构化报告。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/988hj7tczd-oss--dsh-dep-vuln-scan/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-04-github-1344714002-root-source",
+                    "id": "2026-10-22-02-github-1344714002-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/src/index.ts",
+                    "url": "https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan",
+                            "commit": "db879fc01cd02b9f0821a87ba728a310ae08d9ac",
+                            "path": "README.md",
+                            "content_sha256": "f284c433b77866cb10bdeb43de931564af9eaf6e39fc7b3fa987c3aa594a5045"
+                        },
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan",
+                            "commit": "db879fc01cd02b9f0821a87ba728a310ae08d9ac",
+                            "path": "package.json",
+                            "content_sha256": "feeb0512bc8d9e1514db7745b866c0407abf4e16751b50f0f9459182e8f6def0"
+                        },
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan",
+                            "commit": "db879fc01cd02b9f0821a87ba728a310ae08d9ac",
+                            "path": "src/index.ts",
+                            "content_sha256": "98539c46fce569db1696198eb2441c8ce1a3790ae2d0ef42fbabba91bd57afad"
+                        },
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan",
+                            "commit": "db879fc01cd02b9f0821a87ba728a310ae08d9ac",
+                            "path": "src/tools/dep-scan.ts",
+                            "content_sha256": "c49fb1a4bde8a61bc73ac3d97be69bee0d1e0281c6b92d4ac71a9654171ac86c"
+                        },
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan",
+                            "commit": "db879fc01cd02b9f0821a87ba728a310ae08d9ac",
+                            "path": "src/lockfile-parsers.ts",
+                            "content_sha256": "a41616ba1cf2781a044edd13600704bb715a93fffb547f82f423bde3525977bf"
+                        },
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan",
+                            "commit": "db879fc01cd02b9f0821a87ba728a310ae08d9ac",
+                            "path": "src/osv-client.ts",
+                            "content_sha256": "cbcbfd3cd9c4d09a64073139bb08286e83a4041b73b501921d8606b7abf810a3"
+                        },
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan",
+                            "commit": "db879fc01cd02b9f0821a87ba728a310ae08d9ac",
+                            "path": "src/report.ts",
+                            "content_sha256": "53abfe3b03e4fbfc700d3d10c76452642bf629375d3b2e5bad3730702d05fd7b"
+                        },
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan",
+                            "commit": "db879fc01cd02b9f0821a87ba728a310ae08d9ac",
+                            "path": "src/semver.ts",
+                            "content_sha256": "5743e8126005950a6206e8b671b03a7ac7738045ed46544d59e1a4df71256656"
+                        }
+                    ],
                     "revision": "db879fc01cd02b9f0821a87ba728a310ae08d9ac",
-                    "captured_at": "2026-10-21T04:14:36.982Z",
-                    "summary": "核查 src/index.ts、src/tools/dep-scan.ts、src/lockfile-parsers.ts、src/osv-client.ts、src/semver.ts、src/report.ts、package.json；dep-scan发现锁文件，lockfile-parsers提取精确包版本，osv-client分块querybatch和详情并本地复核范围，report生成表格/修复命令与presentationMeta。",
-                    "artifact": "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--dsh-dep-vuln-scan/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:56:38.464Z",
+                    "summary": "核查 README.md、package.json、src/index.ts、src/tools/dep-scan.ts、src/lockfile-parsers.ts、src/osv-client.ts、src/report.ts、src/semver.ts；工具通过FsAdapter/ctx.fs发现和读取锁文件，fast只根目录，full递归跳常见构建/VCS目录，解析为name/version/ecosystem，再过滤生态并按三元组去重查询。OSV两段路径先POST querybatch得到ID，再共享详情池GET漏洞对象，减少同公告重复取详情。fast/full分别并发4/16，详情/批次有超时、重试和结构化failure。\n\n报告把query结果组为Finding，显示包/当前版本/漏洞/严重性/修复版，full附依赖清单摘要；presentationMeta保存结构化报告供工具结果重放，不依赖浏览器再查OSV。入口还注入系统提示告诉模型何时扫描。贡献是多生态输入、两段OSV网络和可重放宿主报告的组合，不是新的漏洞数据库或代码可利用性分析。\n\n所有“confirmed”主要依OSV对确切版本query的匹配与本地解析准确；详情归一化没有重新把每个affected package和当前query逐一核对。运行默认fetch，不自动用recorded stub回退；录制响应属于测试注入transport，不能解释为离线仍能查到最新公告。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/988hj7tczd-oss--dsh-dep-vuln-scan/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "抽读index、扫描编排、parser、OSV归一/semver和report；未联网或复跑录制fixture。",
+                        "固定src读取fs适配/发现、主要锁格式边界、OSV两段与fixed/severity归一化、报告/修复；未审所有解析器语法或查实时公告，不构建运行目标。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +122,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "开发者快速盘点锁定依赖的已知公告风险，交付包版本与漏洞表供人工修复；不评估实际可利用性。",
+                    "text": "面向在DSH里维护多语言项目、希望先看到锁定依赖是否匹配已知OSV公告的开发者。输入是目录/单锁文件、生态过滤和fast/full，输出包版本、公告、修复建议与可重放报告。插件只建议命令，不运行安装或改锁文件。\n\n合格结果要明确哪些文件/包被解析、哪些未覆盖、网络和详情失败是否影响结论，公告与包/版本对应，修复版本确实适合当前生态/分支并能处理本包全部相关漏洞。扫描命中不是可利用性验证，零命中也不是代码安全证明，升级命令成功还需要兼容/回归检查。\n\n基线是各生态审计CLI或手工OSV查询。插件把常见锁文件和结构化报告放进一个宿主工具，省去逐生态命令切换；但最佳努力解析、版本简化和覆盖收据不足限制它替代成熟依赖治理流程。本轮不查实时漏洞，也不把录制fixture中的CVE/修复版当当前项目结论。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344714002-root-source"
+                        "2026-10-22-02-github-1344714002-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +133,16 @@
                             "fingerprint": "db879fc01cd02b9f0821a87ba728a310ae08d9ac"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:14:36.982Z",
+                    "reviewed_at": "2026-10-22T05:56:38.464Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "dep-scan发现锁文件，lockfile-parsers提取精确包版本，osv-client分块querybatch和详情并本地复核范围，report生成表格/修复命令与presentationMeta。",
+                    "text": "工具通过FsAdapter/ctx.fs发现和读取锁文件，fast只根目录，full递归跳常见构建/VCS目录，解析为name/version/ecosystem，再过滤生态并按三元组去重查询。OSV两段路径先POST querybatch得到ID，再共享详情池GET漏洞对象，减少同公告重复取详情。fast/full分别并发4/16，详情/批次有超时、重试和结构化failure。\n\n报告把query结果组为Finding，显示包/当前版本/漏洞/严重性/修复版，full附依赖清单摘要；presentationMeta保存结构化报告供工具结果重放，不依赖浏览器再查OSV。入口还注入系统提示告诉模型何时扫描。贡献是多生态输入、两段OSV网络和可重放宿主报告的组合，不是新的漏洞数据库或代码可利用性分析。\n\n所有“confirmed”主要依OSV对确切版本query的匹配与本地解析准确；详情归一化没有重新把每个affected package和当前query逐一核对。运行默认fetch，不自动用recorded stub回退；录制响应属于测试注入transport，不能解释为离线仍能查到最新公告。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344714002-root-source"
+                        "2026-10-22-02-github-1344714002-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +151,16 @@
                             "fingerprint": "db879fc01cd02b9f0821a87ba728a310ae08d9ac"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:14:36.982Z",
+                    "reviewed_at": "2026-10-22T05:56:38.464Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "抽读index、扫描编排、parser、OSV归一/semver和report；未联网或复跑录制fixture。",
+                    "text": "固定src读取fs适配/发现、主要锁格式边界、OSV两段与fixed/severity归一化、报告/修复；未审所有解析器语法或查实时公告，不构建运行目标。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344714002-root-source"
+                        "2026-10-22-02-github-1344714002-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +169,16 @@
                             "fingerprint": "db879fc01cd02b9f0821a87ba728a310ae08d9ac"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:14:36.982Z",
+                    "reviewed_at": "2026-10-22T05:56:38.464Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "TS需构建，源码link依赖相邻dsh-src，发布包是否已替换必须另核；OSV网络为必需。",
+                    "text": "v0.1.1 MIT，Node>=22.18，固定DSH运行包依赖；Git未跟踪lib且README要求构建，npm制品内容未检查，不把作者offline/live测试当本轮运行。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344714002-root-source"
+                        "2026-10-22-02-github-1344714002-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +187,16 @@
                             "fingerprint": "db879fc01cd02b9f0821a87ba728a310ae08d9ac"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:14:36.982Z",
+                    "reviewed_at": "2026-10-22T05:56:38.464Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "首次准备兼容宿主/依赖，持续网络与解析复核、升级回归测试；OSV作者称无需key，本轮不作商业/现价保证；人工修复成本未测。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 构建/宿主包、锁文件读取 | 校准期望文件/包和网络 | 未测安装与大锁峰值 |\n| 持续使用 | OSV批次+详情、并发4/16和模型报告上下文 | 读公告、核版本分支/来源与误报 | API无key不等于零网络/人工成本 |\n| 失败恢复 | 报告、重扫请求与固定依赖原件 | 查截断/空解析/网络失败及升级兼容 | 无自动改项目，升级回归另计 |\n\n",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344714002-root-source"
+                        "2026-10-22-02-github-1344714002-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +205,16 @@
                             "fingerprint": "db879fc01cd02b9f0821a87ba728a310ae08d9ac"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:14:36.982Z",
+                    "reviewed_at": "2026-10-22T05:56:38.464Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "适合已知锁文件的初筛；检查跳过/错误及实际包清单，修复前核公告维护线并做项目回归，别直接执行生成命令。",
+                    "text": "先观察。继续探讨用固定双锁/多公告/失败语料核覆盖、来源和全部修复约束，再按真实生态审升级兼容，避免把报告当安全验收。详见[Q06](#research-q06)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344714002-root-source"
+                        "2026-10-22-02-github-1344714002-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +223,16 @@
                             "fingerprint": "db879fc01cd02b9f0821a87ba728a310ae08d9ac"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:14:36.982Z",
+                    "reviewed_at": "2026-10-22T05:56:38.464Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "集中已知漏洞线索和依赖定位；不能证明无未知漏洞、无漏包或安全可升级。",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 跨生态输入 | 多种纯解析器与过滤 | 真实锁格式完整覆盖 |\n| OSV匹配 | 版本query和两段详情 | 可利用性、未公开漏洞或所有详情成功 |\n| 修复提示 | 生成fixed与命令 | 对应包/分支、消除全部漏洞 |\n| 报告复用 | 结构化报告/错误与重放 | 可靠clean/全量来源归属 |\n\n",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344714002-root-source"
+                        "2026-10-22-02-github-1344714002-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +241,16 @@
                             "fingerprint": "db879fc01cd02b9f0821a87ba728a310ae08d9ac"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:14:36.982Z",
+                    "reviewed_at": "2026-10-22T05:56:38.464Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "transport可注入、分块并发/重试与结构化errors便于复用；自写跨生态版本比较必须保守表达未知。",
+                    "text": "纯解析、传输和文件适配分离，transport可注入，批量去重与共享详情池、错误分类使失败可见，presentationMeta重放避免额外请求。这些是有意义的工程设计，但测试stub/作者live声明不是本轮执行结果，也不能从api.osv免费/无key推断数据不外发。\n\nPOST发送每包name、ecosystem、version，不发送整锁文件或项目源码；这些仍可能暴露私有包命名/依赖构成。fs适配没有取exec.agent.session.cwd，只ctx.fs.resolve(path)，默认根与实际会话世界是否一致依宿主默认契约。读/列操作也没传exec.signal；signal主要接网络与发现循环，单次大read不一定随取消停止。\n\n查询fetch合并timeout与caller signal，取消归非重试，但mergeSignals每次给caller增加once监听，只在abort触发移除，正常请求结束未见解除，长批次需注意监听累积。full SBOM只是依赖列表摘要，没有标准SBOM格式/许可证/可达性分析。所有文件读写边界依宿主fs，源代码本身没有写或安装路径；报告修复字符串也不等于shell安全引用或可直接执行。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344714002-root-source"
+                        "2026-10-22-02-github-1344714002-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +259,16 @@
                             "fingerprint": "db879fc01cd02b9f0821a87ba728a310ae08d9ac"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:14:36.982Z",
+                    "reviewed_at": "2026-10-22T05:56:38.464Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "interpretation",
-                    "text": "相对手动逐生态查公告，增量是将多锁文件解析、批量OSV查询及可回放报告集成到DSH；漏洞数据库与版本事实属于OSV，插件不创造新漏洞发现。",
+                    "text": "把多生态锁输入、批量ID/共享详情查询与宿主可重放报告统一，减少手工切换；只读建议，不是新漏洞情报或可利用性验证。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344714002-root-source"
+                        "2026-10-22-02-github-1344714002-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +277,16 @@
                             "fingerprint": "db879fc01cd02b9f0821a87ba728a310ae08d9ac"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:14:36.982Z",
+                    "reviewed_at": "2026-10-22T05:56:38.464Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
-                    "basis": "interpretation",
-                    "text": "“确认存在”是否覆盖所有依赖和生态版本？pnpm/yarn行解析、requirements仅==、Maven属性等会跳过；自写semver不等于PyPI/Go/Maven完整排序，无法解析introduce/fixed可能误归类。最低fixed也不一定是当前维护线可安全升级目标，公告命中更不证明代码路径可利用。",
+                    "basis": "supported",
+                    "text": "同生态多锁来源被最后路径覆盖，fixed未按包/区间完整约束且多漏洞仍取最小；扫描cap静默、错误时也可显示0受影响，不能据此clean，未运行真实公告对照。详见[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344714002-root-source"
+                        "2026-10-22-02-github-1344714002-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +295,16 @@
                             "fingerprint": "db879fc01cd02b9f0821a87ba728a310ae08d9ac"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:14:36.982Z",
+                    "reviewed_at": "2026-10-22T05:56:38.464Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "unverified",
-                    "text": "待验证假设：报告把解析覆盖/未知版本、生态专属比较和可利用性证据分层，可减少“零漏洞=安全”和跨版本线错误升级。由有限parser/semver推导，未实现完整分层。以预发布、非semver、peer后缀和多修复线对照官方锁解析/公告，测漏包与修复建议错误；未知不能按干净计。",
+                    "text": "可探索包occurrence来源与四段覆盖收据，并按生态/分支求所有公告修复约束，无法证明时给候选；比较错源/欠修复/假clean与成本，未实现。详见[Q06](#research-q06)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344714002-root-source"
+                        "2026-10-22-02-github-1344714002-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +313,15 @@
                             "fingerprint": "db879fc01cd02b9f0821a87ba728a310ae08d9ac"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:14:36.982Z",
+                    "reviewed_at": "2026-10-22T05:56:38.464Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T04:14:36.982Z",
+            "last_checked_at": "2026-10-22T05:56:38.464Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "db879fc01cd02b9f0821a87ba728a310ae08d9ac",
-                "reviewed_at": "2026-10-21T04:14:36.982Z",
+                "reviewed_at": "2026-10-22T05:56:38.464Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -275,61 +333,61 @@
                 "technical": {
                     "criteria": {
                         "novelty": 9,
-                        "mechanism": 8,
+                        "mechanism": 15,
                         "transferability": 10,
-                        "simplification": 8
+                        "simplification": 4
                     },
-                    "rationale": "novelty 小幅：OSV客户端与DSH适配；mechanism 小幅：批量/重试/范围核对常规；transferability 实质：注入transport与纯parser可复用；simplification 实质：多生态报告统一。",
+                    "rationale": "novelty为现有OSV/锁解析的小幅组合；mechanism在两阶段查询、共享池/可注入传输和报告重放有实质工程接线；transferability为fs/transport seam与错误分层实质参考；simplification仅小幅省生态CLI切换，版本/覆盖核对负担大，不计未来约束求交。",
                     "basis": "interpretation",
-                    "score": 35,
+                    "score": 38,
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344714002-root-source"
+                        "2026-10-22-02-github-1344714002-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 9,
-                        "delivery": 15,
+                        "workflow": 18,
+                        "delivery": 8,
                         "reach": 10,
                         "economics": 4
                     },
-                    "rationale": "workflow 小幅：辅助扫描不自动修复；delivery 实质：包/公告/修复表与回放；reach 实质：Agent无需逐站查询；economics 小幅：减少API重复，误建议修复成本未测。",
+                    "rationale": "workflow统一多生态初筛有实质变化；delivery仅公告初筛与候选建议，小幅交付增量；reach多语言锁可接入有实质扩展；economics只省初筛时间潜力，人工复核/网络无对照。",
                     "basis": "interpretation",
-                    "score": 38,
+                    "score": 40,
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344714002-root-source"
+                        "2026-10-22-02-github-1344714002-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "trial",
-                "reason": "有明确锁文件的团队可试已知漏洞初筛；核跳过包和生态版本排序，先读公告维护线再回归，勿直接执行最低fixed命令。",
+                "decision": "observe",
+                "reason": "跨生态只读初筛有价值，但覆盖、真实锁来源及修复约束不足影响可行动性，先观察，不把0命中当安全或直接执行最早fixed建议。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "锁定依赖公告盘点和包版本表交付清楚。"
+                        "rationale": "依赖公告初筛任务明确，实际收益未测。"
                     },
                     "advantage": {
-                        "score": 19,
-                        "rationale": "多锁文件批量OSV报告少逐生态查询。"
+                        "score": 13,
+                        "rationale": "单工具多生态/两段查询有差异，可靠报告限制。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "分块query与自写解析可查，requirements仅==及复杂版本排序可能漏误。"
+                        "rationale": "固定源码核主链/边界，源码级50%档。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "需OSV网络和构建依赖，范围核对及升级回归成本仍由项目承担。"
+                        "score": 5,
+                        "rationale": "源码构建/宿主依赖和覆盖/公告/版本人工核对较重。"
                     }
                 },
-                "score": 65,
+                "score": 54,
                 "revision": "db879fc01cd02b9f0821a87ba728a310ae08d9ac",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T05:56:38.464Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-04-github-1344714002-root-source"
+                    "2026-10-22-02-github-1344714002-root-source"
                 ],
                 "dependencies": [
                     {
@@ -354,88 +412,60 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T04:06:46Z",
-            "analysis_sha256": "15933c388f93ca396e7f5772bae991fc453c5833025bc04c52ad80ba08c3a8b7"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "c1c985338e6319e68c4e04bf6786725849f93029c5c7d2b2ee1147f6099092a1"
         },
         "publication.metadata": "data/plugins/988hj7tczd-oss--dsh-dep-vuln-scan/META.json",
         "publication.summaries": {
-            "text": "读取依赖锁文件并查询 OSV，生成漏洞、严重度和修复建议报告。",
+            "text": "读取常见项目锁文件，向OSV批量查询依赖版本公告，展示漏洞、修复候选与命令建议，并保存可重放结构化报告。",
             "revision": "db879fc01cd02b9f0821a87ba728a310ae08d9ac",
             "source_url": "https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/README.md"
         },
         "publication.capabilities": {
             "revision": "db879fc01cd02b9f0821a87ba728a310ae08d9ac",
             "items": {
-                "模型工具": "dep_vuln_scan只读查询及报告。"
-            }
+                "模型工具": "一个dep_vuln_scan，fast/full与生态过滤"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 锁发现 | 根级或递归多生态 | 深度8/200文件cap静默 |\n| 解析 | 精确包/版本清单 | 最佳努力，部分空解析不报错 |\n| OSV查询 | querybatch+共享详情 | 依网络，fixture仅测试 |\n| 报告重放 | 漏洞/错误/SBOM摘要 | 多锁来源丢失，SBOM非标准全量 |\n| 修复建议 | fixed和生态命令字符串 | 多分支/多漏洞约束不足，不执行 |\n"
         },
         "publication.advice": {
             "revision": "db879fc01cd02b9f0821a87ba728a310ae08d9ac",
-            "text": "适合已知锁文件的初筛；检查跳过/错误及实际包清单，修复前核公告维护线并做项目回归，别直接执行生成命令。"
+            "text": "先观察。继续探讨用固定双锁/多公告/失败语料核覆盖、来源和全部修复约束，再按真实生态审升级兼容，避免把报告当安全验收。详见[Q06](#research-q06)。"
         },
         "registry": "data/plugins/988hj7tczd-oss--dsh-dep-vuln-scan",
-        "reports": "# dsh-dep-vuln-scan\n\n> 读取依赖锁文件并查询 OSV，生成漏洞、严重度和修复建议报告。\n\n## 使用建议\n\n适合已知锁文件的初筛；检查跳过/错误及实际包清单，修复前核公告维护线并做项目回归，别直接执行生成命令。\n\n核查状态：源码支持只读扫描与结构化错误；未调用OSV或跑目标测试，真实解析覆盖和漏洞确认未验证。 本轮只检查源码，未安装、执行目标代码/测试或真实宿主验收。\n\n## 洞察短评\n\n- **用途**：开发者快速盘点锁定依赖的已知公告风险，交付包版本与漏洞表供人工修复；不评估实际可利用性。\n- **亮点**：相对手动逐生态查公告，增量是将多锁文件解析、批量OSV查询及可回放报告集成到DSH；漏洞数据库与版本事实属于OSV，插件不创造新漏洞发现。\n- **思考**：“确认存在”是否覆盖所有依赖和生态版本？pnpm/yarn行解析、requirements仅==、Maven属性等会跳过；自写semver不等于PyPI/Go/Maven完整排序，无法解析introduce/fixed可能误归类。最低fixed也不一定是当前维护线可安全升级目标，公告命中更不证明代码路径可利用。\n- **建议**：待验证假设：报告把解析覆盖/未知版本、生态专属比较和可利用性证据分层，可减少“零漏洞=安全”和跨版本线错误升级。由有限parser/semver推导，未实现完整分层。以预发布、非semver、peer后缀和多修复线对照官方锁解析/公告，测漏包与修复建议错误；未知不能按干净计。\n\n## 场景与替代办法\n\n开发者快速盘点锁定依赖的已知公告风险，交付包版本与漏洞表供人工修复；不评估实际可利用性。\n\n参照OSV扫描/各包管理器审计与手工公告核对；未作召回率比较。\n\n## 能力清单\n\n- **模型工具**：dep_vuln_scan只读查询及报告。\n\n## 依赖与流程\n\ndep-scan发现锁文件，lockfile-parsers提取精确包版本，osv-client分块querybatch和详情并本地复核范围，report生成表格/修复命令与presentationMeta。\n\nDSH tools/fs/systemPrompt、OSV API、锁文件精确版本和构建依赖。\n\n发现锁→提取/去重包→分批查OSV→详情与范围核对→表格/汇总→人工决定升级；不写项目。\n\nTS需构建，源码link依赖相邻dsh-src，发布包是否已替换必须另核；OSV网络为必需。\n\n## 成本与效果\n\n首次准备兼容宿主/依赖，持续网络与解析复核、升级回归测试；OSV作者称无需key，本轮不作商业/现价保证；人工修复成本未测。\n\n集中已知漏洞线索和依赖定位；不能证明无未知漏洞、无漏包或安全可升级。\n\n## 核心贡献\n\n相对手动逐生态查公告，增量是将多锁文件解析、批量OSV查询及可回放报告集成到DSH；漏洞数据库与版本事实属于OSV，插件不创造新漏洞发现。\n\n## 关键质疑\n\n“确认存在”是否覆盖所有依赖和生态版本？pnpm/yarn行解析、requirements仅==、Maven属性等会跳过；自写semver不等于PyPI/Go/Maven完整排序，无法解析introduce/fixed可能误归类。最低fixed也不一定是当前维护线可安全升级目标，公告命中更不证明代码路径可利用。\n\n## 工程亮点\n\ntransport可注入、分块并发/重试与结构化errors便于复用；自写跨生态版本比较必须保守表达未知。\n\n固定源码依据：[src/index.ts](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/src/index.ts)、[src/tools/dep-scan.ts](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/src/tools/dep-scan.ts)、[src/lockfile-parsers.ts](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/src/lockfile-parsers.ts)、[src/osv-client.ts](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/src/osv-client.ts)、[src/semver.ts](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/src/semver.ts)、[src/report.ts](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/src/report.ts)、[package.json](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/package.json)。\n\n## 未来设计假设（未验证）\n\n待验证假设：报告把解析覆盖/未知版本、生态专属比较和可利用性证据分层，可减少“零漏洞=安全”和跨版本线错误升级。由有限parser/semver推导，未实现完整分层。以预发布、非semver、peer后缀和多修复线对照官方锁解析/公告，测漏包与修复建议错误；未知不能按干净计。\n\n固定多生态fixture与官方解析比对，涵盖非semver/多修复线/网络失败，另测真实OSV；本轮均未执行。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：686fba1385e400e7a30eaf11e746fa78d146506589171ee0e96e18be55c89c52。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 3 | 220 | — | — | 2990 |\n| .ts | source | 6 | 2106 | 1586 | 384 | — |\n| .ts | test | 1 | 580 | 501 | 42 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n\n## 核查说明\n\n- 版本号：0.1.1；版本日期：2026-08-24（固定提交日期，北京时间，非包发布日期）。\n- 固定提交：[db879fc0](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/tree/db879fc01cd02b9f0821a87ba728a310ae08d9ac)；本轮基准：2026-10-21T04:06:46Z。\n- 已检查：上述源码路径、README、包清单及组件inventory。\n- 范围：抽读index、扫描编排、parser、OSV归一/semver和report；未联网或复跑录制fixture。\n- 未执行：目标安装、代码/测试、真实宿主和第三方服务。作者说明与源码不等于独立效果验证。\n",
+        "reports": "# dsh-dep-vuln-scan\n\n> 读取常见项目锁文件，向OSV批量查询依赖版本公告，展示漏洞、修复候选与命令建议，并保存可重放结构化报告。\n\n## 研究范围\n\n- **仓库**：[988hj7tczd-oss/dsh-dep-vuln-scan](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan)\n- **版本号**：0.1.1（[固定提交 db879fc01cd02b9f0821a87ba728a310ae08d9ac](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/tree/db879fc01cd02b9f0821a87ba728a310ae08d9ac)）\n- **版本日期**：2026-08-24（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n源码支持多生态解析和两段OSV/报告接线；静默覆盖cap、多锁来源与最早fixed不足使结果需人工核对，不当安全或升级保证。\n\n## 洞察短评\n\n- **用途**：面向在DSH里维护多语言项目、希望先看到锁定依赖是否匹配已知OSV公告的开发者。输入是目录/单锁文件、生态过滤和fast/full，输出包版本、公告、修复建议与可重放报告。插件只建议命令，不运行安装或改锁文件。\n\n合格结果要明确哪些文件/包被解析、哪些未覆盖、网络和详情失败是否影响结论，公告与包/版本对应，修复版本确实适合当前生态/分支并能处理本包全部相关漏洞。扫描命中不是可利用性验证，零命中也不是代码安全证明，升级命令成功还需要兼容/回归检查。\n\n基线是各生态审计CLI或手工OSV查询。插件把常见锁文件和结构化报告放进一个宿主工具，省去逐生态命令切换；但最佳努力解析、版本简化和覆盖收据不足限制它替代成熟依赖治理流程。本轮不查实时漏洞，也不把录制fixture中的CVE/修复版当当前项目结论。\n- **亮点**：把多生态锁输入、批量ID/共享详情查询与宿主可重放报告统一，减少手工切换；只读建议，不是新漏洞情报或可利用性验证。详见[Q02](#research-q02)。\n- **思考**：同生态多锁来源被最后路径覆盖，fixed未按包/区间完整约束且多漏洞仍取最小；扫描cap静默、错误时也可显示0受影响，不能据此clean，未运行真实公告对照。详见[Q03](#research-q03)。\n- **建议**：可探索包occurrence来源与四段覆盖收据，并按生态/分支求所有公告修复约束，无法证明时给候选；比较错源/欠修复/假clean与成本，未实现。详见[Q06](#research-q06)。\n\n采用建议：先观察。继续探讨用固定双锁/多公告/失败语料核覆盖、来源和全部修复约束，再按真实生态审升级兼容，避免把报告当安全验收。详见[Q06](#research-q06)。\n\n## 核心贡献\n\n把多生态锁输入、批量ID/共享详情查询与宿主可重放报告统一，减少手工切换；只读建议，不是新漏洞情报或可利用性验证。详见[Q02](#research-q02)。\n\n## 关键质疑\n\n同生态多锁来源被最后路径覆盖，fixed未按包/区间完整约束且多漏洞仍取最小；扫描cap静默、错误时也可显示0受影响，不能据此clean，未运行真实公告对照。详见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可探索包occurrence来源与四段覆盖收据，并按生态/分支求所有公告修复约束，无法证明时给候选；比较错源/欠修复/假clean与成本，未实现。详见[Q06](#research-q06)。\n\n进一步探讨从同生态双锁、跨package affected、多个修复分支及部分网络失败对照人工真值，比较覆盖/来源/欠修复和成本。\n\n## 场景与替代办法\n\n面向在DSH里维护多语言项目、希望先看到锁定依赖是否匹配已知OSV公告的开发者。输入是目录/单锁文件、生态过滤和fast/full，输出包版本、公告、修复建议与可重放报告。插件只建议命令，不运行安装或改锁文件。\n\n合格结果要明确哪些文件/包被解析、哪些未覆盖、网络和详情失败是否影响结论，公告与包/版本对应，修复版本确实适合当前生态/分支并能处理本包全部相关漏洞。扫描命中不是可利用性验证，零命中也不是代码安全证明，升级命令成功还需要兼容/回归检查。\n\n基线是各生态审计CLI或手工OSV查询。插件把常见锁文件和结构化报告放进一个宿主工具，省去逐生态命令切换；但最佳努力解析、版本简化和覆盖收据不足限制它替代成熟依赖治理流程。本轮不查实时漏洞，也不把录制fixture中的CVE/修复版当当前项目结论。\n\n原生态审计CLI/人工OSV查询，插件统一初筛但不替代锁格式全解析、真实利用性或升级回归。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| Node>=22.18与DSH tools/fs/systemPrompt | 包声明/硬注入 | 工具、文件适配和提示词 | 版本/接口需匹配 |\n| 固定DSH运行包依赖 | 包声明 | Cordis及0.1.1-rc.2服务 | 普通独立Node不具备宿主 |\n| TypeScript构建产物lib | Git源码安装需要 | main/exports/patch入口 | 固定Git未跟踪lib，README要求先build |\n| 可读锁文件/正确工作区根 | 扫描必需 | 包版本清单 | 默认fs.resolve('.')不显式传session cwd |\n| api.osv.dev网络 | 实时查询必需 | 批量与详情 | 网络错不自动装载测试fixture |\n| 公告/生态版本知识 | 升级采用条件 | 核对分支和兼容 | 不直接复制最早fixed命令 |\n\n\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 准备 | 固定包/宿主和项目，列期望锁文件/解析包 | 明确依赖名/版本将发OSV |\n| 安装 | 按源码构建lib再挂独立profile | 不把Git缺lib泛化为npm包损坏 |\n| 扫描 | 明确path和effort，先少量已知文件 | 核实际root/锁文件与packageCount |\n| 解读 | 联合errors、漏格式和cap判断 | 零命中不自动给clean |\n| 修复 | 读具体公告、所有漏洞和兼容分支，再决定升级 | 工具只建议，不改项目 |\n| 恢复 | 失败重扫前保留原报告/时间和依赖清单 | 不把旧fixture当当前数据 |\n\nREADME开头说相邻dsh-src link开发依赖，但固定package声明为发布依赖版本，安装材料也有不一致需核实际文件。只做源码检查，不构建、安装、查OSV或运行目标冒烟。\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 构建/宿主包、锁文件读取 | 校准期望文件/包和网络 | 未测安装与大锁峰值 |\n| 持续使用 | OSV批次+详情、并发4/16和模型报告上下文 | 读公告、核版本分支/来源与误报 | API无key不等于零网络/人工成本 |\n| 失败恢复 | 报告、重扫请求与固定依赖原件 | 查截断/空解析/网络失败及升级兼容 | 无自动改项目，升级回归另计 |\n\n\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 跨生态输入 | 多种纯解析器与过滤 | 真实锁格式完整覆盖 |\n| OSV匹配 | 版本query和两段详情 | 可利用性、未公开漏洞或所有详情成功 |\n| 修复提示 | 生成fixed与命令 | 对应包/分支、消除全部漏洞 |\n| 报告复用 | 结构化报告/错误与重放 | 可靠clean/全量来源归属 |\n\n\n\n## 研究问题与完整回答\n\n**插件研究总目标：**判断固定版本跨生态依赖公告查询的可行动性，重点核查覆盖、来源归属、修复版本与失败解释。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 谁需要扫描，什么是合格结果？\n\n**研究主题：**场景与需求\n\n#### 完整回答\n\n面向在DSH里维护多语言项目、希望先看到锁定依赖是否匹配已知OSV公告的开发者。输入是目录/单锁文件、生态过滤和fast/full，输出包版本、公告、修复建议与可重放报告。插件只建议命令，不运行安装或改锁文件。\n\n合格结果要明确哪些文件/包被解析、哪些未覆盖、网络和详情失败是否影响结论，公告与包/版本对应，修复版本确实适合当前生态/分支并能处理本包全部相关漏洞。扫描命中不是可利用性验证，零命中也不是代码安全证明，升级命令成功还需要兼容/回归检查。\n\n基线是各生态审计CLI或手工OSV查询。插件把常见锁文件和结构化报告放进一个宿主工具，省去逐生态命令切换；但最佳努力解析、版本简化和覆盖收据不足限制它替代成熟依赖治理流程。本轮不查实时漏洞，也不把录制fixture中的CVE/修复版当当前项目结论。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:16-43](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/README.md#L16-L43)\n\n作者定义只读扫描与参数。\n\n<details>\n<summary>查看原文（28行）</summary>\n\n````text\n## 功能一览\n\n| 能力 | 说明 |\n| --- | --- |\n| 生态支持 | npm（`package-lock.json`/`pnpm-lock.yaml`/`yarn.lock`）、PyPI（`requirements.txt`/`Pipfile.lock`/`poetry.lock`）、Go（`go.mod`）、crates.io（`Cargo.lock`）、Maven（`pom.xml`/`build.gradle*`）、NuGet（`packages.lock.json`）、RubyGems（`Gemfile.lock`） |\n| 数据源 | OSV `POST /v1/querybatch`，零配置、免费、商用友好 |\n| 确认口径 | 仅展示**确认存在**的漏洞：查询带 `version` 让 OSV 过滤 + 本地 `introduced ≤ version < fixed` 区间复核（verifier 口径） |\n| 修复信息 | 取 affected ranges 中**最早 fixed**；有修复版标 `√ 有修复版 <版本>`，否则「无修复版」 |\n| 严重度 | CVSSv3 数值（≥9 critical / ≥7 high / ≥4 medium / <4 low），无数值时用 OSV qualitative 关键词 |\n| effort | `fast`（默认）：只查根锁文件、并发 4、无 SBOM；`full`：递归子目录（跳过 `node_modules` 等）、并发 16、生成 SBOM 摘要 |\n| 健壮性 | 分块（250/批）批量查询、并发池、30s 超时、2 次重试退避、HTTP 429 按 `Retry-After` 等待；所有失败以结构化 `errors` 返回，不阻塞会话 |\n| 持久化 | `output.presentationMeta` 投影整个报告 → `tool/result.meta`，UI 卡片回放可复制 |\n\n## 安装与使用\n\n作为 DSH 插件 bundle 安装进 profile：\n\n```sh\n# 1. 构建（产出 lib/，bundle 行引用 dsh-dep-vuln-scan/lib/index.js）\npnpm install && pnpm build\n\n# 2. 加入 profile（声明了 dsh.bundle，dsh 会把本包作为配置层挂载）\ndsh plugin --profile demo add ./dsh-dep-vuln-scan\n\n# 3. 验证挂载\ndsh --profile demo --dump-config | grep -A2 dep-vuln-scan\n```\n\n````\n\n</details>\n\n**依据 2 · 源码核查**：[src/tools/dep-scan.ts:10-14](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/src/tools/dep-scan.ts#L10-L14)\n\n仅报告不安装/写入的代码职责。\n\n```text\n * Read-only by design: the scanner never writes, edits, or installs — it only\n * reports remediation commands for the user to run with confirmation\n * (PRIMARY spec: \"不写任何文件（只读分析）\").\n *\n * @module dsh-dep-vuln-scan/tools/dep-scan\n```\n\n**依据 3 · 源码核查**：[src/report.ts:244-258](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/src/report.ts#L244-L258)\n\n只生成命令字符串，非执行。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n/** Per-ecosystem remediation command for each confirmed (package, earliest fix). */\nexport function remediationCommands(findings: readonly Finding[]): string[] {\n  const commands: string[] = []\n  for (const finding of findings) {\n    const fixed = earliestFix(finding.vulns)\n    if (fixed === undefined) {\n      commands.push(`${finding.name}@{${finding.version}} 无修复版，需联系上游或制定缓解措施`)\n      continue\n    }\n    const command = remediationCommand(finding.ecosystem, finding.name, fixed)\n    commands.push(`${command}   # ${finding.name} ${finding.version} → ${fixed}`)\n  }\n  return commands\n}\n\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 锁文件到OSV报告如何连接？\n\n**研究主题：**功能与机制、贡献与相对优势\n\n#### 完整回答\n\n工具通过FsAdapter/ctx.fs发现和读取锁文件，fast只根目录，full递归跳常见构建/VCS目录，解析为name/version/ecosystem，再过滤生态并按三元组去重查询。OSV两段路径先POST querybatch得到ID，再共享详情池GET漏洞对象，减少同公告重复取详情。fast/full分别并发4/16，详情/批次有超时、重试和结构化failure。\n\n报告把query结果组为Finding，显示包/当前版本/漏洞/严重性/修复版，full附依赖清单摘要；presentationMeta保存结构化报告供工具结果重放，不依赖浏览器再查OSV。入口还注入系统提示告诉模型何时扫描。贡献是多生态输入、两段OSV网络和可重放宿主报告的组合，不是新的漏洞数据库或代码可利用性分析。\n\n所有“confirmed”主要依OSV对确切版本query的匹配与本地解析准确；详情归一化没有重新把每个affected package和当前query逐一核对。运行默认fetch，不自动用recorded stub回退；录制响应属于测试注入transport，不能解释为离线仍能查到最新公告。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/tools/dep-scan.ts:142-238](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/src/tools/dep-scan.ts#L142-L238)\n\n发现/解析/生态过滤到batch与报告。\n\n<details>\n<summary>查看原文（97行）</summary>\n\n```text\nexport async function runDepScan(args: DepScanArgs, options: RunDepScanOptions): Promise<ScanReport> {\n  const { fs, transport, signal } = options\n  const effort = args.effort ?? 'fast'\n  const rootPath = args.path ?? '.'\n  const root = await fs.resolve(rootPath)\n  const rootInfo = await fs.stat(root)\n  const errors: OsvFailure[] = []\n  const lockfiles: ScannedLockfile[] = []\n  const packageBuckets = new Map<string, PackageEntry[]>()\n\n  const collect = (parsed: ParsedLockfile, displayPath: string) => {\n    if (parsed.ecosystem === 'unknown') {\n      errors.push({\n        kind: 'parse',\n        message: `无法识别锁文件类型: ${parsed.fileName}`,\n        retryable: false,\n      })\n      return\n    }\n    if (parsed.parseError !== undefined) {\n      errors.push({\n        kind: 'parse',\n        message: `解析失败 ${parsed.fileName}: ${parsed.parseError}`,\n        retryable: false,\n      })\n    }\n    lockfiles.push({ ecosystem: parsed.ecosystem, path: displayPath, packageCount: parsed.entries.length })\n    const bucket = packageBuckets.get(parsed.ecosystem) ?? []\n    bucket.push(...parsed.entries)\n    packageBuckets.set(parsed.ecosystem, bucket)\n  }\n\n  if (rootInfo === undefined) {\n    errors.push({ kind: 'parse', message: `路径不存在: ${root.displayPath}`, retryable: false })\n    return buildReport({ effort, root: root.displayPath, lockfiles, queries: [], vulnsByQuery: [], errors })\n  }\n\n  if (rootInfo.type === 'file') {\n    const fileName = basename(root.displayPath)\n    const content = await fs.readText(root)\n    const parsed = parseLockfile(fileName, content)\n    collect(parsed, root.displayPath)\n  } else if (rootInfo.type === 'directory') {\n    const discovered = await discoverDirectory(fs, root, effort, 0, signal)\n    for (const file of discovered) {\n      const fileName = basename(file.target.displayPath)\n      const content = await fs.readText(file.target)\n      const parsed = parseLockfile(fileName, content)\n      collect(parsed, file.target.displayPath)\n    }\n  } else {\n    errors.push({\n      kind: 'parse',\n      message: `路径不是常规文件或目录: ${root.displayPath}`,\n      retryable: false,\n    })\n  }\n\n  // Ecosystem filter (normalise user-facing names).\n  const wanted = new Set((args.ecosystems ?? []).map((name) => ECOSYSTEM_ALIASES[name.toLowerCase()] ?? name))\n\n  const queries: OsvQueryPackage[] = []\n  for (const [ecosystem, entries] of packageBuckets) {\n    if (wanted.size > 0 && !wanted.has(ecosystem)) continue\n    for (const entry of entries) {\n      queries.push({ name: entry.name, ecosystem, version: entry.version })\n    }\n  }\n\n  const batch = await queryOsvBatch(queries, {\n    transport,\n    concurrency: concurrencyForEffort(effort),\n    signal,\n  })\n\n  for (const failed of batch.failures) {\n    const dedupeKey = `${failed.failure.kind}${failed.failure.status ?? ''}${failed.failure.message}`\n    if (!errors.some((e) => `${e.kind}${e.status ?? ''}${e.message}` === dedupeKey)) {\n      errors.push(failed.failure)\n    }\n  }\n\n  const vulnsByQuery = batch.vulnsByQuery\n  return buildReport({\n    effort,\n    root: root.displayPath,\n    lockfiles,\n    queries: batch.queries,\n    vulnsByQuery,\n    errors,\n  })\n}\n\n/**\n * Recursively list lockfile files under a directory. `fast` scans the root\n * level only; `full` walks subdirectories (skipping `node_modules`/VCS/build\n * dirs) down to {@link MAX_DISCOVERY_DEPTH} and up to {@link MAX_LOCKFILES}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/osv-client.ts:299-366](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/src/osv-client.ts#L299-L366)\n\n共享ID详情池和归一化。\n\n<details>\n<summary>查看原文（68行）</summary>\n\n```text\n  })\n\n  // 阶段 2：详情回查——真实 OSV 的 batch 只回 id；逐个 `GET /v1/vulns/{id}` 取\n  // 完整记录（aliases/affected/summary/severity），并发池 + 退避重试；单个详情\n  // 失败记入 failures 并跳过该条，绝不让一次详情抖动拖垮整次扫描。\n  const allIds: string[] = []\n  for (const list of rawByQuery) {\n    if (list === null) continue\n    for (const entry of list) {\n      if (!allIds.includes(entry.id)) allIds.push(entry.id)\n    }\n  }\n  const detailMap = new Map<string, OsvVulnerability>()\n  const detailIndexById = new Map<string, number>()\n  allIds.forEach((id, idx) => detailIndexById.set(id, idx))\n  await runPool(allIds, Math.max(2, concurrency), signal, async (id) => {\n    let lastFailure: OsvFailure | undefined\n    for (let attempt = 0; attempt < maxAttempts; attempt++) {\n      if (signal?.aborted) break\n      if (attempt > 0) await sleep(150 * attempt)\n      try {\n        const { bodyText, status } = await transport.getJson(\n          `${OSV_VULN_URL}/${encodeURIComponent(id)}`,\n          { signal, timeoutMs },\n        )\n        if (status === 200) {\n          detailMap.set(id, JSON.parse(bodyText) as OsvVulnerability)\n          return\n        }\n        if (status === 404) {\n          lastFailure = { kind: 'invalid-response', message: `OSV 详情 404：${id}`, retryable: false }\n          continue\n        }\n        if (status === 429 || status >= 500) {\n          lastFailure = { kind: status === 429 ? 'ratelimit' : 'http', message: `OSV 详情 HTTP ${status}：${id}`, retryable: true, status }\n          continue\n        }\n        lastFailure = { kind: 'http', message: `OSV 详情 HTTP ${status}：${id}`, retryable: false, status }\n        continue\n      } catch (error) {\n        const transportError = error as { failure?: OsvFailure }\n        lastFailure = transportError.failure ?? { kind: 'network', message: `OSV 详情失败：${id}`, retryable: true }\n        continue\n      }\n    }\n    // 详情重试用尽：记录失败（挂到该 id 对应的第一个查询上）并跳过该条。\n    if (lastFailure !== undefined) {\n      for (let qi = 0; qi < unique.length; qi++) {\n        const list = rawByQuery[qi]\n        if (list !== null && list.some((entry) => entry.id === id)) {\n          failures.push({ index: qi, query: unique[qi], failure: { ...lastFailure, message: `${lastFailure.message}` } })\n          break\n        }\n      }\n    }\n  })\n\n  const perQueryVulns: Array<NormalizedVuln[] | null> = new Array(unique.length).fill(null)\n  unique.forEach((query, index) => {\n    const raw = rawByQuery[index]\n    if (raw === null || raw === undefined) return\n    const vulns: NormalizedVuln[] = []\n    for (const entry of raw) {\n      const detail = detailMap.get(entry.id)\n      if (detail === undefined) continue // 详情失败已在 failures 记录\n      vulns.push(normalizeVulnerability(detail, query.version))\n    }\n    perQueryVulns[index] = vulns\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/report.ts:105-125](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/src/report.ts#L105-L125)\n\nquery到Finding结构。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n/** Convert per-query OSV results into `Finding` rows (only confirmed hits). */\nfunction composeFindings(\n  queries: OsvQueryPackage[],\n  vulnsByQuery: NormalizedVuln[][],\n  lockfiles: ScannedLockfile[],\n): Finding[] {\n  const ecosystemFor = new Map(lockfiles.map((lf) => [lf.ecosystem, lf.path]))\n  const findings: Finding[] = []\n  queries.forEach((query, index) => {\n    const vulns = vulnsByQuery[index] ?? []\n    if (vulns.length === 0) return\n    findings.push({\n      ecosystem: query.ecosystem,\n      lockfile: ecosystemFor.get(query.ecosystem) ?? 'unknown',\n      name: query.name,\n      version: query.version,\n      vulns,\n      hasFix: vulns.some((v) => v.hasFix),\n    })\n  })\n  return findings\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/index.ts:25-36](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/src/index.ts#L25-L36)\n\n一个工具与提示词接线。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\nexport function apply(ctx: Context): void {\n  ctx.systemPrompt.section({\n    name: 'tool:dep_vuln_scan',\n    order: 111,\n    text:\n      'Use the dep_vuln_scan tool to audit a project’s dependency lockfiles '\n      + '(npm/pnpm/yarn/pip/go/cargo/maven/gradle/nuget/rubygems) against the free OSV '\n      + 'vulnerability database. It returns confirmed findings with CVSS scores and fix '\n      + 'versions plus remediation commands — read-only, it never modifies lockfiles.',\n  })\n\n  ctx.tools.register(defineDepScanTool(ctx))\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/osv-client.ts:170-198](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/src/osv-client.ts#L170-L198)\n\n默认全局fetch POST与错误。\n\n<details>\n<summary>查看原文（29行）</summary>\n\n```text\n    const { signal, timeoutMs } = opts\n    const timeout = AbortSignal.timeout(timeoutMs ?? OSV_DEFAULT_TIMEOUT_MS)\n    const merged = mergeSignals(signal, timeout)\n    let response: Response\n    try {\n      response = await fetch(url, {\n        method: 'POST',\n        headers: { 'content-type': 'application/json' },\n        body: JSON.stringify(body),\n        signal: merged,\n      })\n    } catch (err) {\n      if (merged.aborted && signal?.aborted) {\n        throw new TransportError('扫描已取消', { kind: 'timeout', message: '扫描已取消', retryable: false })\n      }\n      if (merged.aborted) {\n        throw new TransportError('OSV 请求超时', {\n          kind: 'timeout',\n          message: 'OSV 请求超时，请检查网络或稍后重试',\n          retryable: true,\n        })\n      }\n      throw new TransportError('无法访问 OSV', {\n        kind: 'network',\n        message: '无法访问 OSV，检查网络或稍后重试',\n        retryable: true,\n      })\n    }\n    return { status: response.status, bodyText: await response.text() }\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 覆盖、修复版本和来源有哪些限制？\n\n**研究主题：**缺陷与关键质疑\n\n#### 完整回答\n\nfull最多深度8/200锁文件，discoverDirectory遇cap直接返回，没有truncated或跳过文件/目录计数回报告；解析器对pnpm/yarn/requirements/Maven最佳努力，部分不支持形态可空entries而非parseError。网络/详情失败被errors列出，但render在affectedPackages=0仍写“锁文件中的包均未发现已知漏洞”，容易把失败/零解析读成clean，必须连覆盖和errors一起看。\n\n同生态多锁文件在composeFindings用Map(ecosystem→path)，后一个文件覆盖前一个；包query已失原文件归属，所有该生态漏洞都指最后锁文件，不能准确修复monorepo来源。严重性只读database_specific数值/词和cvss_v3.baseScore，没有处理顶层severity向量，可能显示unknown，不代表低危。\n\n修复版遍历vuln全部affected且不按package/ecosystem筛，逐event把fixed和同event.introduced传versionInRange，而OSV事件常是独立introduced/fixed记录，未维护区间起点。无匹配时又取所有fixed最小。多漏洞remediation再取最早修复版，不能保证消除更高修复门槛的其余漏洞，甚至可给低于当前版建议。简化SemVer不等价PyPI/Maven/Go全部版本语义。因此建议命令需逐公告/分支人工复核，不自动执行。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/tools/dep-scan.ts:249-275](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/src/tools/dep-scan.ts#L249-L275)\n\n发现cap直接返回，无覆盖状态。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\n  const walk = async (dir: FsAdapterTarget, currentDepth: number): Promise<void> => {\n    if (signal?.aborted === true) return\n    if (currentDepth > MAX_DISCOVERY_DEPTH || files.length >= MAX_LOCKFILES) return\n    const entries = await fs.listDir(dir)\n    for (const entry of entries) {\n      if (files.length >= MAX_LOCKFILES) return\n      if (entry.type === 'directory') {\n        if (SKIP_DIRECTORIES.has(entry.name)) continue\n        if (effort === 'full') await walk(entry.target, currentDepth + 1)\n        continue\n      }\n      if (entry.type === 'file' && ecosystemForFile(entry.name) !== null) {\n        files.push(entry)\n      }\n    }\n  }\n  await walk(target, depth)\n  return files\n}\n\nfunction basename(path: string): string {\n  const normalized = path.replace(/\\\\/g, '/').replace(/\\/+$/, '')\n  const index = normalized.lastIndexOf('/')\n  return index >= 0 ? normalized.slice(index + 1) : normalized\n}\n\n// ---------------------------------------------------------------------------\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/lockfile-parsers.ts:194-221](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/src/lockfile-parsers.ts#L194-L221)\n\npnpm行级形态不匹配可静默跳过。\n\n<details>\n<summary>查看原文（28行）</summary>\n\n```text\nexport function parsePnpmLock(content: string): PackageEntry[] {\n  const lines = content.split(/\\r?\\n/)\n  const entries: PackageEntry[] = []\n  let inPackages = false\n\n  const header = /^\\s{0,2}packages\\s*:\\s*$/\n  const entry = /^\\s{2}\\/(?<name>@?[^@\\s/:]+(?:\\/[^@\\s/:]+)*)@(?<version>[^\\s():]+)(?:\\([^)]*\\))?\\s*:\\s*$/\n\n  for (const line of lines) {\n    if (inPackages) {\n      // A top-level key (no leading whitespace) ends the packages section.\n      if (!/^\\s/.test(line)) {\n        if (header.test(line)) continue // `packages:` can repeat across sections\n        inPackages = false\n        continue\n      }\n      const match = entry.exec(line)\n      if (match === null || match.groups === undefined) continue\n      const version = (match.groups.version ?? '').split('+')[0] ?? ''\n      if (version === '') continue\n      entries.push({ name: match.groups.name ?? '', version })\n    } else if (header.test(line)) {\n      inPackages = true\n    }\n  }\n  return entries\n}\n\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/report.ts:105-125](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/src/report.ts#L105-L125)\n\n同生态锁路径最后覆盖。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n/** Convert per-query OSV results into `Finding` rows (only confirmed hits). */\nfunction composeFindings(\n  queries: OsvQueryPackage[],\n  vulnsByQuery: NormalizedVuln[][],\n  lockfiles: ScannedLockfile[],\n): Finding[] {\n  const ecosystemFor = new Map(lockfiles.map((lf) => [lf.ecosystem, lf.path]))\n  const findings: Finding[] = []\n  queries.forEach((query, index) => {\n    const vulns = vulnsByQuery[index] ?? []\n    if (vulns.length === 0) return\n    findings.push({\n      ecosystem: query.ecosystem,\n      lockfile: ecosystemFor.get(query.ecosystem) ?? 'unknown',\n      name: query.name,\n      version: query.version,\n      vulns,\n      hasFix: vulns.some((v) => v.hasFix),\n    })\n  })\n  return findings\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/report.ts:190-200](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/src/report.ts#L190-L200)\n\nerrors与零受影响文案并存。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n  if (report.errors.length > 0) {\n    lines.push('> ⚠️ 扫描期间出现错误（以下查询可能不完整）：')\n    for (const error of report.errors) {\n      lines.push(`> - \\`${error.kind}\\`${error.status !== undefined ? ` (HTTP ${error.status})` : ''}: ${error.message}`)\n    }\n    lines.push('')\n  }\n\n  if (summary.affectedPackages === 0) {\n    lines.push('**0 受影响** — 锁文件中的包均未发现已知漏洞（OSV）。')\n    lines.push('')\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/osv-client.ts:551-611](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/src/osv-client.ts#L551-L611)\n\n跨affected固定版本、逐event与全局最小。\n\n<details>\n<summary>查看原文（61行）</summary>\n\n```text\nexport function normalizeVulnerability(vuln: OsvVulnerability, version: string): NormalizedVuln {\n  const aliases = vuln.aliases ?? []\n  const cve = aliases.find((alias) => alias.startsWith('CVE-'))\n  const ghsa = aliases.find((alias) => alias.startsWith('GHSA-'))\n  const displayId = cve ?? ghsa ?? vuln.id\n  const summary = truncate(vuln.summary ?? vuln.details ?? '', 120)\n\n  const { score, qualitative } = severityOf(vuln)\n  const covering = coveringFixedVersions(vuln, version)\n  const earliestCovering = minVersion(covering)\n  const fixedVersion = earliestCovering ?? earliestFixedGlobally(vuln)\n\n  return {\n    id: vuln.id,\n    aliases,\n    displayId,\n    cve,\n    ghsa,\n    summary,\n    cvss: score,\n    severity: qualitative,\n    fixedVersion,\n    hasFix: fixedVersion !== undefined,\n  }\n}\n\nfunction truncate(text: string, max: number): string {\n  const normalized = text.replace(/\\s+/g, ' ').trim()\n  return normalized.length > max ? `${normalized.slice(0, max - 1)}…` : normalized\n}\n\n/** The affected ranges whose `introduced ≤ version < fixed` hold. */\nfunction coveringFixeds(vuln: OsvVulnerability, version: string): string[] {\n  const fixed: string[] = []\n  for (const affected of vuln.affected ?? []) {\n    for (const range of affected.ranges ?? []) {\n      for (const event of range.events ?? []) {\n        if (event.fixed !== undefined && versionInRange(version, event.introduced, event.fixed)) {\n          fixed.push(event.fixed)\n        }\n      }\n    }\n  }\n  return fixed\n}\n\nfunction coveringFixedVersions(vuln: OsvVulnerability, version: string): string[] {\n  return coveringFixeds(vuln, version)\n}\n\nfunction earliestFixedGlobally(vuln: OsvVulnerability): string | undefined {\n  const allFixed: string[] = []\n  for (const affected of vuln.affected ?? []) {\n    for (const range of affected.ranges ?? []) {\n      for (const event of range.events ?? []) {\n        if (event.fixed !== undefined) allFixed.push(event.fixed)\n      }\n    }\n  }\n  return minVersion(allFixed)\n}\n```\n\n</details>\n\n**依据 6 · 源码核查**：[src/report.ts:285-298](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/src/report.ts#L285-L298)\n\n多漏洞仍取最早fixed。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n\nfunction earliestFix(vulns: readonly NormalizedVuln[]): string | undefined {\n  let best: string | undefined\n  for (const vuln of vulns) {\n    if (!vuln.hasFix || vuln.fixedVersion === undefined) continue\n    if (best === undefined) {\n      best = vuln.fixedVersion\n      continue\n    }\n    const cmp = compareVersions(vuln.fixedVersion, best)\n    if (cmp !== null && cmp < 0) best = vuln.fixedVersion\n  }\n  return best\n}\n```\n\n</details>\n\n**依据 7 · 源码核查**：[src/osv-client.ts:619-637](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/src/osv-client.ts#L619-L637)\n\nCVSS字段覆盖范围。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\nfunction severityOf(vuln: OsvVulnerability): { score: number | undefined; qualitative: Severity } {\n  const db = vuln.database_specific\n  const numeric = numericSeverity(db?.severity)\n  if (numeric !== undefined) return { score: numeric, qualitative: labelForScore(numeric) }\n  if (typeof db?.cvss_v3?.baseScore === 'number' && Number.isFinite(db.cvss_v3.baseScore)) {\n    const score = db.cvss_v3.baseScore\n    return { score, qualitative: labelForScore(score) }\n  }\n  for (const affected of vuln.affected ?? []) {\n    const perAffected = numericSeverity(affected.database_specific?.severity)\n    if (perAffected !== undefined) return { score: perAffected, qualitative: labelForScore(perAffected) }\n  }\n  const keyword = (db?.severity ?? '').toLowerCase()\n  if (keyword === 'critical') return { score: undefined, qualitative: 'critical' }\n  if (keyword === 'high') return { score: undefined, qualitative: 'high' }\n  if (keyword === 'medium' || keyword === 'moderate') return { score: undefined, qualitative: 'medium' }\n  if (keyword === 'low') return { score: undefined, qualitative: 'low' }\n  return { score: undefined, qualitative: 'unknown' }\n}\n```\n\n</details>\n\n#### 缺口\n\n- 不同真实锁格式、生态版本、多个修复分支与公告包范围没有本轮对照。\n  **影响：**不能承诺覆盖完整或推荐版消除全部漏洞，不量化真实漏报率。\n  **进一步探讨：**固定多锁/多包公告/introduced-fixed事件流语料，对照原生态解析器与人工预期，并给失败/截断专门状态。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 启动与使用依赖什么？\n\n**研究主题：**依赖、兼容与流程\n\n#### 完整回答\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| Node>=22.18与DSH tools/fs/systemPrompt | 包声明/硬注入 | 工具、文件适配和提示词 | 版本/接口需匹配 |\n| 固定DSH运行包依赖 | 包声明 | Cordis及0.1.1-rc.2服务 | 普通独立Node不具备宿主 |\n| TypeScript构建产物lib | Git源码安装需要 | main/exports/patch入口 | 固定Git未跟踪lib，README要求先build |\n| 可读锁文件/正确工作区根 | 扫描必需 | 包版本清单 | 默认fs.resolve('.')不显式传session cwd |\n| api.osv.dev网络 | 实时查询必需 | 批量与详情 | 网络错不自动装载测试fixture |\n| 公告/生态版本知识 | 升级采用条件 | 核对分支和兼容 | 不直接复制最早fixed命令 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 准备 | 固定包/宿主和项目，列期望锁文件/解析包 | 明确依赖名/版本将发OSV |\n| 安装 | 按源码构建lib再挂独立profile | 不把Git缺lib泛化为npm包损坏 |\n| 扫描 | 明确path和effort，先少量已知文件 | 核实际root/锁文件与packageCount |\n| 解读 | 联合errors、漏格式和cap判断 | 零命中不自动给clean |\n| 修复 | 读具体公告、所有漏洞和兼容分支，再决定升级 | 工具只建议，不改项目 |\n| 恢复 | 失败重扫前保留原报告/时间和依赖清单 | 不把旧fixture当当前数据 |\n\nREADME开头说相邻dsh-src link开发依赖，但固定package声明为发布依赖版本，安装材料也有不一致需核实际文件。只做源码检查，不构建、安装、查OSV或运行目标冒烟。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:57-73](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/package.json#L57-L73)\n\n构建与固定宿主依赖。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n  \"scripts\": {\n    \"build\": \"tsc -p tsconfig.build.json\",\n    \"typecheck\": \"tsc -p tsconfig.json --noEmit\",\n    \"test\": \"tsx --test tests/smoke.e2e.ts\",\n    \"test:live\": \"DSH_OSV_LIVE=1 tsx --test tests/smoke.e2e.ts\",\n    \"prepublishOnly\": \"npm run build\"\n  },\n  \"dependencies\": {\n    \"@deepseek-ai/cordis\": \"^4.0.1\",\n    \"@deepseek-ai/dsh-fs\": \"0.1.1-rc.2\",\n    \"@deepseek-ai/dsh-system-prompt\": \"0.1.1-rc.2\",\n    \"@deepseek-ai/dsh-tools\": \"0.1.1-rc.2\"\n  },\n  \"devDependencies\": {\n    \"@types/node\": \"^26.0.0\",\n    \"tsx\": \"^4.19.0\",\n    \"typescript\": \"^5.5.0\"\n```\n\n</details>\n\n**依据 2 · 源码核查**：[package.json:84-86](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/package.json#L84-L86)\n\nNode要求。\n\n```text\n  \"engines\": {\n    \"node\": \">=22.18.0\"\n  }\n```\n\n**依据 3 · 源码核查**：[src/index.ts:20-23](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/src/index.ts#L20-L23)\n\n硬注入。\n\n```text\nexport const name = 'dsh-dep-vuln-scan'\n\n/** Hard dependencies: tools (registration), fs (lockfile reads), systemPrompt (guidance). */\nexport const inject = ['tools', 'fs', 'systemPrompt']\n```\n\n**依据 4 · 源码核查**：[src/tools/dep-scan.ts:83-106](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/src/tools/dep-scan.ts#L83-L106)\n\nfs适配不传session cwd/signal。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n      const info = await ctx.fs.stat(toTarget(target))\n      if (info === undefined) return undefined\n      return { type: info.type }\n    },\n    async listDir(target) {\n      const entries = await ctx.fs.listDir(toTarget(target))\n      return entries.map((entry: FsDirEntry) => ({\n        name: entry.name,\n        type: entry.type,\n        target: { handle: { target: entry.target } satisfies CtxFsHandle, displayPath: entry.target.displayPath },\n      }))\n    },\n    async readText(target) {\n      return ctx.fs.readText(toTarget(target))\n    },\n  }\n}\n\n/** Accepted `dep_vuln_scan` arguments (mirrors the defineTool parameters). */\nexport interface DepScanArgs {\n  /** Project directory or lockfile path; defaults to the workspace root. */\n  path?: string\n  /** Ecosystem filter (user-facing names, case-insensitive). */\n  ecosystems?: string[]\n```\n\n</details>\n\n**依据 5 · 作者声明**：[README.md:3-10](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/README.md#L3-L10)\n\n相邻link是作者开发说明。\n\n```text\n> [!IMPORTANT]\n> **依赖前置：相邻 `dsh-src` 检出（`link:` 依赖）**\n> 本项目在开发形态下使用 `link:` 依赖指向相邻的 DeepSeek Harness 源码检出（`dsh-src`），\n> 与当前仓库保持同一父目录布局（`<parent>/dsh-src`）。克隆本仓库后：\n> 1. 先把官方 `deepseek-ai/deepseek-harness` 检出到与本仓库同级的 `dsh-src/` 目录，并执行其 `pnpm install && pnpm run build`；\n> 2. 再按下方「安装」一节执行本仓库的 `pnpm install --offline && pnpm build` 与测试。\n> 发布到 npm 的版本会尽量把 `link:` 依赖替换为 registry 真实版本；无法替换的内部包保持 `link:`，见各包 README 说明。\n\n```\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 工程、数据外发和取消如何？\n\n**研究主题：**工程质量与复用\n\n#### 完整回答\n\n纯解析、传输和文件适配分离，transport可注入，批量去重与共享详情池、错误分类使失败可见，presentationMeta重放避免额外请求。这些是有意义的工程设计，但测试stub/作者live声明不是本轮执行结果，也不能从api.osv免费/无key推断数据不外发。\n\nPOST发送每包name、ecosystem、version，不发送整锁文件或项目源码；这些仍可能暴露私有包命名/依赖构成。fs适配没有取exec.agent.session.cwd，只ctx.fs.resolve(path)，默认根与实际会话世界是否一致依宿主默认契约。读/列操作也没传exec.signal；signal主要接网络与发现循环，单次大read不一定随取消停止。\n\n查询fetch合并timeout与caller signal，取消归非重试，但mergeSignals每次给caller增加once监听，只在abort触发移除，正常请求结束未见解除，长批次需注意监听累积。full SBOM只是依赖列表摘要，没有标准SBOM格式/许可证/可达性分析。所有文件读写边界依宿主fs，源代码本身没有写或安装路径；报告修复字符串也不等于shell安全引用或可直接执行。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/osv-client.ts:170-210](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/src/osv-client.ts#L170-L210)\n\n网络signal/timeout与合并监听。\n\n<details>\n<summary>查看原文（41行）</summary>\n\n```text\n    const { signal, timeoutMs } = opts\n    const timeout = AbortSignal.timeout(timeoutMs ?? OSV_DEFAULT_TIMEOUT_MS)\n    const merged = mergeSignals(signal, timeout)\n    let response: Response\n    try {\n      response = await fetch(url, {\n        method: 'POST',\n        headers: { 'content-type': 'application/json' },\n        body: JSON.stringify(body),\n        signal: merged,\n      })\n    } catch (err) {\n      if (merged.aborted && signal?.aborted) {\n        throw new TransportError('扫描已取消', { kind: 'timeout', message: '扫描已取消', retryable: false })\n      }\n      if (merged.aborted) {\n        throw new TransportError('OSV 请求超时', {\n          kind: 'timeout',\n          message: 'OSV 请求超时，请检查网络或稍后重试',\n          retryable: true,\n        })\n      }\n      throw new TransportError('无法访问 OSV', {\n        kind: 'network',\n        message: '无法访问 OSV，检查网络或稍后重试',\n        retryable: true,\n      })\n    }\n    return { status: response.status, bodyText: await response.text() }\n  },\n}\n\n/** Combine an optional caller signal with the timeout signal. */\nexport function mergeSignals(a: AbortSignal | undefined, b: AbortSignal): AbortSignal {\n  if (a === undefined) return b\n  if (a.aborted) return a\n  const controller = new AbortController()\n  const onAbort = () => controller.abort()\n  a.addEventListener('abort', onAbort, { once: true })\n  b.addEventListener('abort', onAbort, { once: true })\n  return controller.signal\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/osv-client.ts:408-418](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/src/osv-client.ts#L408-L418)\n\nquerybatch只发包名/生态/版本。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n  opts: { timeoutMs: number; maxAttempts: number; signal?: AbortSignal },\n): Promise<{ vulns: Array<{ vulns?: OsvVulnerability[] } | null>; failed: Array<{ query: OsvQueryPackage; failure: OsvFailure }> }> {\n  const payload = {\n    queries: chunk.map((query) => ({\n      package: { name: query.name, ecosystem: query.ecosystem },\n      version: query.version,\n    })),\n  }\n\n  let lastFailure: OsvFailure | null = null\n  for (let attempt = 0; attempt < opts.maxAttempts; attempt++) {\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/tools/dep-scan.ts:83-106](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/src/tools/dep-scan.ts#L83-L106)\n\n文件适配缺cwd/signal显式上下文。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n      const info = await ctx.fs.stat(toTarget(target))\n      if (info === undefined) return undefined\n      return { type: info.type }\n    },\n    async listDir(target) {\n      const entries = await ctx.fs.listDir(toTarget(target))\n      return entries.map((entry: FsDirEntry) => ({\n        name: entry.name,\n        type: entry.type,\n        target: { handle: { target: entry.target } satisfies CtxFsHandle, displayPath: entry.target.displayPath },\n      }))\n    },\n    async readText(target) {\n      return ctx.fs.readText(toTarget(target))\n    },\n  }\n}\n\n/** Accepted `dep_vuln_scan` arguments (mirrors the defineTool parameters). */\nexport interface DepScanArgs {\n  /** Project directory or lockfile path; defaults to the workspace root. */\n  path?: string\n  /** Ecosystem filter (user-facing names, case-insensitive). */\n  ecosystems?: string[]\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/tools/dep-scan.ts:451-462](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/src/tools/dep-scan.ts#L451-L462)\n\n执行只给runDepScan signal，fs adapter仍独立。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n    async execute(args, exec) {\n      return runDepScan(args as DepScanArgs, {\n        fs: adaptCtxFs(ctx),\n        transport,\n        signal: exec.signal,\n      })\n    },\n  })\n}\n\n/** Re-export for tests / consumers. */\nexport type { NormalizedVuln, OsvFailure, OsvQueryPackage, ScanReport }\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/report.ts:128-147](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/src/report.ts#L128-L147)\n\nSBOM实际摘要结构。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\nfunction buildSbom(queries: OsvQueryPackage[]): SbomSummary {\n  const byEcosystem = new Map<string, Set<string>>()\n  const packages: Array<{ ecosystem: string; name: string; version: string }> = []\n  for (const query of queries) {\n    const bucket = byEcosystem.get(query.ecosystem) ?? new Set<string>()\n    const id = `${query.name}@${query.version}`\n    if (!bucket.has(id)) {\n      bucket.add(id)\n      packages.push({ ecosystem: query.ecosystem, name: query.name, version: query.version })\n    }\n    byEcosystem.set(query.ecosystem, bucket)\n  }\n  return {\n    ecosystems: [...byEcosystem.entries()]\n      .map(([ecosystem, set]) => ({ ecosystem, packageCount: set.size }))\n      .sort((a, b) => b.packageCount - a.packageCount),\n    packages: packages.sort((a, b) => a.ecosystem.localeCompare(b.ecosystem) || a.name.localeCompare(b.name)),\n  }\n}\n\n```\n\n</details>\n\n#### 缺口\n\n- 宿主默认fs根/权限、取消大文件与长批次监听行为未运行核查。\n  **影响：**不能保证同会话目录或取消即时停止全部IO。\n  **进一步探讨：**沿固定宿主fs契约核cwd，再用受控大文件与多批请求观察取消/监听释放，不查询真实敏感清单。\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 成本、采用与未来假设怎么判断？\n\n**研究主题：**效果与总成本、采用判断、新假设与验证\n\n#### 完整回答\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 构建/宿主包、锁文件读取 | 校准期望文件/包和网络 | 未测安装与大锁峰值 |\n| 持续使用 | OSV批次+详情、并发4/16和模型报告上下文 | 读公告、核版本分支/来源与误报 | API无key不等于零网络/人工成本 |\n| 失败恢复 | 报告、重扫请求与固定依赖原件 | 查截断/空解析/网络失败及升级兼容 | 无自动改项目，升级回归另计 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 跨生态输入 | 多种纯解析器与过滤 | 真实锁格式完整覆盖 |\n| OSV匹配 | 版本query和两段详情 | 可利用性、未公开漏洞或所有详情成功 |\n| 修复提示 | 生成fixed与命令 | 对应包/分支、消除全部漏洞 |\n| 报告复用 | 结构化报告/错误与重放 | 可靠clean/全量来源归属 |\n\n建议观察。跨生态只读扫描有明确开发价值，网络/报告分层也便于复用；但覆盖静默截断、多锁来源错误和最早fixed聚合影响结果可行动性。继续探讨可先核一份已知锁文件与多个公告分支的人工真值，再评估monorepo来源及失败状态，不把扫描清单当安全验收。\n\n未验证假设是保留package occurrence→锁文件来源，附解析/发现/查询/详情四段覆盖收据，修复采用按生态/包/分支的所有公告约束求交，并输出无法证明时的候选而非单最小版本。相比当前扁平query与最早fixed，可能减少错源/欠修复和假clean；代价是版本解析器与报告复杂度。最小对照用同生态双锁、多包affected公告、多个fixed分支和部分网络失败，比较来源/修复正确、漏警/误警、耗时和人工核对；若候选太多无法行动，需收窄范围。未实现，不计已有创新。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/report.ts:105-125](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/src/report.ts#L105-L125)\n\n来源映射粒度是假设起点。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n/** Convert per-query OSV results into `Finding` rows (only confirmed hits). */\nfunction composeFindings(\n  queries: OsvQueryPackage[],\n  vulnsByQuery: NormalizedVuln[][],\n  lockfiles: ScannedLockfile[],\n): Finding[] {\n  const ecosystemFor = new Map(lockfiles.map((lf) => [lf.ecosystem, lf.path]))\n  const findings: Finding[] = []\n  queries.forEach((query, index) => {\n    const vulns = vulnsByQuery[index] ?? []\n    if (vulns.length === 0) return\n    findings.push({\n      ecosystem: query.ecosystem,\n      lockfile: ecosystemFor.get(query.ecosystem) ?? 'unknown',\n      name: query.name,\n      version: query.version,\n      vulns,\n      hasFix: vulns.some((v) => v.hasFix),\n    })\n  })\n  return findings\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/osv-client.ts:551-611](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/src/osv-client.ts#L551-L611)\n\nfixed归一化不保持包/区间。\n\n<details>\n<summary>查看原文（61行）</summary>\n\n```text\nexport function normalizeVulnerability(vuln: OsvVulnerability, version: string): NormalizedVuln {\n  const aliases = vuln.aliases ?? []\n  const cve = aliases.find((alias) => alias.startsWith('CVE-'))\n  const ghsa = aliases.find((alias) => alias.startsWith('GHSA-'))\n  const displayId = cve ?? ghsa ?? vuln.id\n  const summary = truncate(vuln.summary ?? vuln.details ?? '', 120)\n\n  const { score, qualitative } = severityOf(vuln)\n  const covering = coveringFixedVersions(vuln, version)\n  const earliestCovering = minVersion(covering)\n  const fixedVersion = earliestCovering ?? earliestFixedGlobally(vuln)\n\n  return {\n    id: vuln.id,\n    aliases,\n    displayId,\n    cve,\n    ghsa,\n    summary,\n    cvss: score,\n    severity: qualitative,\n    fixedVersion,\n    hasFix: fixedVersion !== undefined,\n  }\n}\n\nfunction truncate(text: string, max: number): string {\n  const normalized = text.replace(/\\s+/g, ' ').trim()\n  return normalized.length > max ? `${normalized.slice(0, max - 1)}…` : normalized\n}\n\n/** The affected ranges whose `introduced ≤ version < fixed` hold. */\nfunction coveringFixeds(vuln: OsvVulnerability, version: string): string[] {\n  const fixed: string[] = []\n  for (const affected of vuln.affected ?? []) {\n    for (const range of affected.ranges ?? []) {\n      for (const event of range.events ?? []) {\n        if (event.fixed !== undefined && versionInRange(version, event.introduced, event.fixed)) {\n          fixed.push(event.fixed)\n        }\n      }\n    }\n  }\n  return fixed\n}\n\nfunction coveringFixedVersions(vuln: OsvVulnerability, version: string): string[] {\n  return coveringFixeds(vuln, version)\n}\n\nfunction earliestFixedGlobally(vuln: OsvVulnerability): string | undefined {\n  const allFixed: string[] = []\n  for (const affected of vuln.affected ?? []) {\n    for (const range of affected.ranges ?? []) {\n      for (const event of range.events ?? []) {\n        if (event.fixed !== undefined) allFixed.push(event.fixed)\n      }\n    }\n  }\n  return minVersion(allFixed)\n}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/report.ts:285-298](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/src/report.ts#L285-L298)\n\n多漏洞最早fixed。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n\nfunction earliestFix(vulns: readonly NormalizedVuln[]): string | undefined {\n  let best: string | undefined\n  for (const vuln of vulns) {\n    if (!vuln.hasFix || vuln.fixedVersion === undefined) continue\n    if (best === undefined) {\n      best = vuln.fixedVersion\n      continue\n    }\n    const cmp = compareVersions(vuln.fixedVersion, best)\n    if (cmp !== null && cmp < 0) best = vuln.fixedVersion\n  }\n  return best\n}\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/tools/dep-scan.ts:249-275](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/src/tools/dep-scan.ts#L249-L275)\n\n覆盖cap未出收据。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\n  const walk = async (dir: FsAdapterTarget, currentDepth: number): Promise<void> => {\n    if (signal?.aborted === true) return\n    if (currentDepth > MAX_DISCOVERY_DEPTH || files.length >= MAX_LOCKFILES) return\n    const entries = await fs.listDir(dir)\n    for (const entry of entries) {\n      if (files.length >= MAX_LOCKFILES) return\n      if (entry.type === 'directory') {\n        if (SKIP_DIRECTORIES.has(entry.name)) continue\n        if (effort === 'full') await walk(entry.target, currentDepth + 1)\n        continue\n      }\n      if (entry.type === 'file' && ecosystemForFile(entry.name) !== null) {\n        files.push(entry)\n      }\n    }\n  }\n  await walk(target, depth)\n  return files\n}\n\nfunction basename(path: string): string {\n  const normalized = path.replace(/\\\\/g, '/').replace(/\\/+$/, '')\n  const index = normalized.lastIndexOf('/')\n  return index >= 0 ? normalized.slice(index + 1) : normalized\n}\n\n// ---------------------------------------------------------------------------\n```\n\n</details>\n\n#### 缺口\n\n- 没有本轮与原生态审计工具/人工公告核对的质量和总成本比较。\n  **影响：**不能量化扫描收益、漏报或升级成功率。\n  **进一步探讨：**固定混合锁/公告语料与失败序列比较覆盖、来源、修复及人工耗时。\n- occurrence覆盖收据与版本约束求交未实现。\n  **影响：**不提升当前扫描完整性或修复保证。\n  **进一步探讨：**以上述多锁/多公告/失败样本核对错源、欠修复、假clean和维护成本。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：686fba1385e400e7a30eaf11e746fa78d146506589171ee0e96e18be55c89c52。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 3 | 220 | — | — | 2990 |\n| .ts | source | 6 | 2106 | 1586 | 384 | — |\n| .ts | test | 1 | 580 | 501 | 42 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 锁发现 | 根级或递归多生态 | 深度8/200文件cap静默 |\n| 解析 | 精确包/版本清单 | 最佳努力，部分空解析不报错 |\n| OSV查询 | querybatch+共享详情 | 依网络，fixture仅测试 |\n| 报告重放 | 漏洞/错误/SBOM摘要 | 多锁来源丢失，SBOM非标准全量 |\n| 修复建议 | fixed和生态命令字符串 | 多分支/多漏洞约束不足，不执行 |\n\n\n## 工程亮点\n\n纯解析、传输和文件适配分离，transport可注入，批量去重与共享详情池、错误分类使失败可见，presentationMeta重放避免额外请求。这些是有意义的工程设计，但测试stub/作者live声明不是本轮执行结果，也不能从api.osv免费/无key推断数据不外发。\n\nPOST发送每包name、ecosystem、version，不发送整锁文件或项目源码；这些仍可能暴露私有包命名/依赖构成。fs适配没有取exec.agent.session.cwd，只ctx.fs.resolve(path)，默认根与实际会话世界是否一致依宿主默认契约。读/列操作也没传exec.signal；signal主要接网络与发现循环，单次大read不一定随取消停止。\n\n查询fetch合并timeout与caller signal，取消归非重试，但mergeSignals每次给caller增加once监听，只在abort触发移除，正常请求结束未见解除，长批次需注意监听累积。full SBOM只是依赖列表摘要，没有标准SBOM格式/许可证/可达性分析。所有文件读写边界依宿主fs，源代码本身没有写或安装路径；报告修复字符串也不等于shell安全引用或可直接执行。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、src/index.ts、src/tools/dep-scan.ts、src/lockfile-parsers.ts、src/osv-client.ts、src/report.ts、src/semver.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定src读取fs适配/发现、主要锁格式边界、OSV两段与fixed/severity归一化、报告/修复；未审所有解析器语法或查实时公告，不构建运行目标。\n- 下一步：进一步探讨从同生态双锁、跨package affected、多个修复分支及部分网络失败对照人工真值，比较覆盖/来源/欠修复和成本。\n",
         "metadata": {
             "repository": "988hj7tczd-oss/dsh-dep-vuln-scan",
             "repository_id": 1344714002,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T05:55:43.091Z",
+            "window_start": "2026-09-22T05:55:43.091Z",
             "stars": 0,
             "pushed_at": "2026-08-24T14:53:31Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-dep-vuln-scan%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6401:1541C9:143D9A:21E8BD:6AD84ACA and timestamp 2026-10-21 05:16:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-dep-vuln-scan%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6407:1CA5E4:1523DE:22E5ED:6AD84ACA and timestamp 2026-10-21 05:16:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-dep-vuln-scan%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6410:3A339B:13C901:216F05:6AD84ACA and timestamp 2026-10-21 05:16:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-dep-vuln-scan%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641A:3A08F:14B4A4:227992:6AD84ACA and timestamp 2026-10-21 05:16:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-dep-vuln-scan%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641D:1F2B1B:14D1E0:227F6C:6AD84ACA and timestamp 2026-10-21 05:16:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "dsh-dep-vuln-scan",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 106,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-dep-vuln-scan",
+                "captured_at": "2026-10-22T05:55:53.504Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 103,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-dep-vuln-scan",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-08-24T10:54:01.168Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T05:55:53.504Z",
                     "source_url": "https://registry.npmjs.org/dsh-dep-vuln-scan",
                     "error": null,
                     "latest_version": "0.1.1",
                     "latest_published_at": "2026-08-24T13:25:19.914Z",
                     "latest_error": null
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "db879fc01cd02b9f0821a87ba728a310ae08d9ac",
-                "current_revision": "db879fc01cd02b9f0821a87ba728a310ae08d9ac",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {

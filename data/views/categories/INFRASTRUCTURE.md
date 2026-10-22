@@ -33,7 +33,6 @@
 | [dsh-need-finder](#plugin-1336571882-root) | 按中英文需求匹配精选插件，并生成预设环境配方的有序安装计划。 | 适合找候选和列清单。 |
 | [DSH-Official-WorkBuddy-Credit-Proxy](#plugin-1387227102-root) | 将本机 WorkBuddy、CodeBuddy 账号接入 DSH 模型池，并提供多协议代理与积分面板。 | 仅在本人账号和明确上游使用条件下隔离试用，先验证真实客户端工具闭环与协议降级；不要只凭响应200扩大使用。 |
 | [dsh-opencode-zen-plugin](#plugin-1402771540-root) | 把OpenCode Console模型目录与多种流式协议接入DSH模型选择和配置界面。 | 适合已有Console账号的用户先对固定模型验证文本、工具和usage。 |
-| [dsh-organism](#plugin-1366089972-workspace-plugins-dsh-organism) | 把插件组织为可观测器官，提供心跳、反射、自愈账本和工具schema按需门控。 | 适合愿意维护统一器官协议的实验环境；先只开启观测，再逐条批准恢复路径，验证重复故障不会重复副作用。 |
 | [dsh-permissions](#plugin-1335349535-root) | 为DSH工具调用配置hard、deny、ask、allow权限规则，提供工作区作用域和可视化编辑。 | 适合将它作为宿主沙箱之上的附加规则层先试用。 |
 | [dsh-plugin-adapter](#plugin-1374274469-root) | 把OpenCode Zen模型接入DSH模型目录，提供原生流式适配与可选网络路由管理。 | 适合非关键试验，先用原生adapter模式验证小任务，保留可用供应商回退；不要把免费通道当生产容量保证。 |
 | [dsh-plugin-audit](#plugin-1336223158-root) | 同步插件目录与元数据，生成健康评分、静态扫描报告和榜单。 | 适合作为候选体检面板。 |
@@ -41,7 +40,6 @@
 | [dsh-plugin-loopback-trust](#plugin-1394489199-root) | 为反向代理域名访问的DSH网页恢复宿主设置持久化。 | 仅适合已经配置访问控制的自管反代管理员核查后试用。 |
 | [dsh-plugin-mall](#plugin-1335098475-root) | 在 DSH 中搜索 GitHub 插件并提供安装、更新、冲突预检与启动恢复。 | 适合维护多个插件的DSH环境；先在隔离profile验证冲突提示和回滚，再用于日常安装，重要环境保留独立备份。 |
 | [dsh-plugin-manager](#plugin-1334267268-root) | 给 DSH 插件提供中文目录说明、启停、备注编辑及配置备份管理界面。 | 需要批量辨认和启停时先在独立profile试用，核对系统保护、表达式拒绝、备份恢复及实际fiber状态后扩用。 |
-| [dsh-plugin-market（99galaxy）](#plugin-1367597810-root) | 在 DSH 设置页浏览社区插件目录、查看安装版本并执行安装。 | 主要用web profile的人先浏览目录；点击前检查来源和版本，固定commit用户别直接更新，其他profile先核目标，安装后重启确认加载。 |
 | [dsh-plugin-proxy](#plugin-1374274543-root) | 通过运行时设置切换DSH全局fetch代理，支持直连、系统代理和手动HTTP或SOCKS代理。 | 先用可观察测试端点核验fetch与目标客户端，确认无代理或配置错误时的直连回退可接受，再切换真实任务。 |
 | [dsh-plugin-recommend](#plugin-1336684098-root) | 按需求、分类和标签搜索插件目录，提供相似项及在线目录刷新。 | 适合找候选和同类线索。 |
 | [dsh-reasoning-tiers](#plugin-1367305514-root) | 按规则补齐第三方模型推理档位，并在设置页编辑模型能力声明。 | 先备份 profile，对单个模型检查实际请求与撤销结果，再考虑批量补齐。 |
@@ -62,16 +60,12 @@
 | [dsh-web-url-view](#plugin-1366583376-root) | 显示当前 Web 地址，并提供转发到当前 DSH 实例的固定端口入口。 | 先保持回环绑定，测试重启后的令牌更新与拒绝外部 Origin，再考虑受控网络访问。 |
 | [dsh-wsl-clock](#plugin-1351854066-root) | 比较WSL与Windows时间，报告时钟偏差并给出休眠后TLS或令牌故障的排查建议。 | 先把它当粗粒度线索，临界偏差用系统命令复核；保存工作后再考虑关闭WSL或同步时间。 |
 | [dsh-wsl-defender](#plugin-1391141174-root) | 从WSL读取Windows Defender、防火墙、近期检测和排除项，形成安全状态摘要。 | 作为状态收集工具使用，对关键异常回到Windows安全中心核对；遇到unavailable先查权限和安全产品。 |
-| [dsh-wsl-distro](#plugin-1350379001-root) | 识别当前WSL发行版、Windows默认发行版与系统信息，并提示跨发行版路径差异。 | 适合多发行版开发者，先核对current/default与UNC路径，再在目标发行版确认文件存在。 |
-| [dsh-wsl-dns](#plugin-1351854118-root) | 比较WSL与Windows的IPv4解析结果，读取nameserver并提供DNS、VPN与网络排查提示。 | 只作为差异线索，先用稳定测试域名核对，再结合HTTPS与代理探针；企业分流DNS环境不要仅因不一致改配置。 |
 | [dsh-wsl-docker](#plugin-1351854301-root) | 检查WSL的Docker CLI、daemon与context，汇总疑似推理容器及本地API端口线索。 | 先用作收集context与容器信息，再用受控/v1/models和小请求验证API；不要因portHealth为ok就交付推理服务。 |
-| [dsh-wsl-encoding](#plugin-1351854402-root) | 检查WSL与Windows代码页、UTF-8设置及脚本中的CRLF换行。 | 先在小脚本上核对代码页和换行结果，大文件不要把采样字节数当作读取上限。 |
 | [dsh-wsl-env](#plugin-1338530482-root) | 向DSH系统提示词注入WSL发行版、路径规则、Shell及本地模型连接提示。 | 先检查新会话实际系统提示，核对用户路径；不要把提示中的网络建议当作已检测的网络配置。 |
 | [dsh-wsl-eventlog](#plugin-1391143266-root) | 从WSL读取Windows事件日志，支持日志名、级别、来源和时间条件。 | 先用一个已知事件核对查询结果；遇到空结果时放宽数量并用系统原生工具复查。 |
 | [dsh-wsl-expose](#plugin-1351853956-root) | 诊断WSL端口访问方式，提供端口转发建议并可添加或删除Windows portproxy。 | 先只看建议；确需局域网转发时限制监听地址，另查防火墙，完成后检查删除规则是否生效。 |
 | [dsh-wsl-gpu](#plugin-1350378777-root) | 汇总WSL中的GPU、显存压力及常见本地推理端口诊断信息。 | 把报告当排障起点，使用实际模型小任务核对显存余量，端口开放不当作GPU争用证据。 |
 | [dsh-wsl-hostsvc](#plugin-1351854010-root) | 从WSL探测Windows端本地模型服务，并生成连接与上下文配置建议。 | 优先核对apiReady而非仅TCP，再确认模型ID和真实上下文上限。 |
-| [dsh-wsl-jev](#plugin-1381389698-root) | 通过TypeSafe或OpenRouter的System One接口进行判断、检查和候选排序。 | 先用可独立核验的小问题试验，检查发送内容和截断；重要决策保留人工或确定性验收。 |
 | [dsh-wsl-llamacpp](#plugin-1381832318-root) | 查询llama.cpp等OpenAI兼容本地服务，并发起非流式聊天请求。 | 先确认模型和服务地址，测试prompt与messages两条输入路径，不把字符上限当完整上下文保证。 |
 | [dsh-wsl-mnt](#plugin-1351854159-root) | 检查当前工作目录是否位于Windows挂载盘，并给出WSL目录与Git使用建议。 | 先核对实际慢操作，再决定是否迁移；保留原目录并验证文件一致。 |
 | [dsh-wsl-ollama](#plugin-1381724774-root) | 访问本地Ollama，提供模型列表、聊天和嵌入工具。 | 显式配置服务地址和模型，分别核对聊天与嵌入结果，不把本地标签当无数据外发保证。 |
@@ -417,20 +411,6 @@
 
 > **建议**：由命名路由与回落推导，可为模型记录协议来源、元数据日期和最近能力探测状态，未知模型先标待确认。未验证；用新前缀/过期元数据/工具调用流测试，若仍把未验证项展示为完整支持则否定。
 
-<a id="plugin-1366089972-workspace-plugins-dsh-organism"></a>
-
-## [dsh-organism](../../plugins/1420079678-ctrl--agent-body--workspace-plugins-dsh-organism/INSIGHT.md)
-
-[![GitHub ★ 17](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=17&color=yellow&logo=github&style=flat)](https://github.com/1420079678-ctrl/agent-body)
-
-> **用途**：多插件组合维护者希望统一发现工具、跟踪故障和触发恢复，合格结果是可追踪的实际恢复而非状态计数增长。
-
-> **亮点**：组件src/index.ts连接tools与session事件、心跳和持久账本；按器官选择工具schema，反射可再次执行工具，带副作用处方要求人工裁决。
-
-> **思考**：统一事件与恢复账本有集成价值；把任意插件命名为器官不能自动消除兼容差异，也不能证明任务成功。
-
-> **建议**：适合愿意维护统一器官协议的实验环境；先只开启观测，再逐条批准恢复路径，验证重复故障不会重复副作用。
-
 <a id="plugin-1335349535-root"></a>
 
 ## [dsh-permissions](../../plugins/940842546--dsh-permissions/INSIGHT.md)
@@ -528,20 +508,6 @@
 > **思考**：写盘accepted是否代表插件已激活？setEnabled返回写入结果，实际热加载依赖宿主HMR与fiber状态；保留表达式和系统行限制是强支持，但Loader异步失败仍可能发生。目录说明数量也不等于插件可安装兼容。
 
 > **建议**：需要批量辨认和启停时先在独立profile试用，核对系统保护、表达式拒绝、备份恢复及实际fiber状态后扩用。
-
-<a id="plugin-1367597810-root"></a>
-
-## [dsh-plugin-market（99galaxy）](../../plugins/99galaxy--dsh-plugin-market/INSIGHT.md)
-
-[![npm 30d 1,454](https://img.shields.io/static/v1?label=npm+30d&message=1%2C454&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@99galaxy/dsh-plugin-market) [![最新发布 2026-09-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-23&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@99galaxy/dsh-plugin-market)
-
-> **用途**：用户在GUI查目录与已安装/可更新项，点击安装；交付profile依赖变化，仍须重启和核对插件加载。
-
-> **亮点**：相对逐条复制安装命令，增量是同屏目录/安装/更新比较、多源缓存与界面操作。目录与pnpm能力归上游，本插件提供接线与状态整理；目录收录/下载不等于质量或兼容。
-
-> **思考**：“装当前profile”与更新是否符合用户预期？index硬编码PROFILE=web，安装/清单都传web；放到其他profile不自动跟随。更新执行目录命令可能从固定Git commit转npm源；多来源回退没有内容同一性证明。pnpm exit0也只说明安装流程结束，不是插件加载或宿主业务验收。
-
-> **建议**：待验证假设：从宿主取得明确profile并让用户审核旧spec→新spec/版本摘要，目录回退绑定签名或摘要，可减少错profile与来源漂移。由硬编码web和目录命令驱动推导，未实现。对照desktop/custom profile、Git固定版转npm及镜像内容不同，测目标准确性和拒绝未知来源；更新保持人工确认。
 
 <a id="plugin-1374274543-root"></a>
 
@@ -823,34 +789,6 @@
 
 > **建议**：作为状态收集工具使用，对关键异常回到Windows安全中心核对；遇到unavailable先查权限和安全产品。
 
-<a id="plugin-1350379001-root"></a>
-
-## [dsh-wsl-distro](../../plugins/173787247--dsh-wsl-distro/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-distro)
-
-> **用途**：安装多个发行版的用户容易把Windows默认WSL与当前会话混淆，希望先确认目录属于哪一个系统。
-
-> **亮点**：lib/distro.js读取WSL_DISTRO_NAME和os-release，执行wsl.exe -l -v并解析表格，比较当前与默认发行版。
-
-> **思考**：提醒默认发行版不等于当前会话能避免路径误用；发行版名字本身不能证明用户、挂载和权限一致。
-
-> **建议**：适合多发行版开发者，先核对current/default与UNC路径，再在目标发行版确认文件存在。
-
-<a id="plugin-1351854118-root"></a>
-
-## [dsh-wsl-dns](../../plugins/173787247--dsh-wsl-dns/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-dns)
-
-> **用途**：WSL联网异常而Windows正常时，用户需要两端同域名解析证据，以缩小故障范围。
-
-> **亮点**：lib/dns.js读取resolv.conf，分别调用Node resolve4和Windows GetHostAddresses，去重排序后标记地址集合不一致。
-
-> **思考**：同屏比较便于发现单侧解析失败；地址不同只支持差异事实，不支持唯一故障原因。
-
-> **建议**：只作为差异线索，先用稳定测试域名核对，再结合HTTPS与代理探针；企业分流DNS环境不要仅因不一致改配置。
-
 <a id="plugin-1351854301-root"></a>
 
 ## [dsh-wsl-docker](../../plugins/173787247--dsh-wsl-docker/INSIGHT.md)
@@ -864,20 +802,6 @@
 > **思考**：能把CLI存在、daemon可达和候选推理容器分开；启发式绿色状态仍需应用层验收。
 
 > **建议**：先用作收集context与容器信息，再用受控/v1/models和小请求验证API；不要因portHealth为ok就交付推理服务。
-
-<a id="plugin-1351854402-root"></a>
-
-## [dsh-wsl-encoding](../../plugins/173787247--dsh-wsl-encoding/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-encoding)
-
-> **用途**：在WSL运行Windows目录中的脚本时，先识别编码和换行问题，避免反复猜测bash错误。
-
-> **亮点**：相对手动分别执行chcp和检查脚本，把跨系统编码信息与修复建议汇成一个诊断结果；贡献是诊断集成，未证明新的编码识别方法。
-
-> **思考**：sampleLineEndings先读取完整文件再切片，8192字节仅限制分析而不限制读取成本；采样未发现CRLF也不能排除文件后部的问题。
-
-> **建议**：本次未形成新的创新假设；优先验证有界读取与报告范围是否一致，再考虑跨文件诊断。
 
 <a id="plugin-1338530482-root"></a>
 
@@ -948,20 +872,6 @@
 > **思考**：models接口就绪不证明聊天、工具调用或目标上下文大小可用，自动生成配置仍需核对模型实际能力。
 
 > **建议**：待验证假设：将探测拆为TCP、模型列表、最小生成三层，可能减少配置看似正确但首个任务失败的情况；最后一层需单独执行授权。
-
-<a id="plugin-1381389698-root"></a>
-
-## [dsh-wsl-jev](../../plugins/173787247--dsh-wsl-jev/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-jev)
-
-> **用途**：已有Agent希望把有限判断交给专用决策服务，同时记录返回模型和耗时。
-
-> **亮点**：将Jev决策接口转换为宿主工具，支持选择、检查与排序的共同入口；判断能力归于外部模型，插件贡献是协议适配。
-
-> **思考**：截断state可能删去决定性证据，规则脱敏也不能识别全部敏感信息；服务返回answers并不证明判断准确或已校准。
-
-> **建议**：待验证假设：在发送前附带截断与证据覆盖标记，可能使调用方对信息不足的判断选择弃答；需与简单长度限制对照。
 
 <a id="plugin-1381832318-root"></a>
 

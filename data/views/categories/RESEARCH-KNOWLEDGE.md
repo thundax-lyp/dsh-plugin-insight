@@ -15,7 +15,6 @@
 | [dsh-butler-memory](#plugin-1335928912-root) | 通过MCP向DSH模型和用户面板接入Butler长期记忆、修订历史与候选接受/拒绝。 | 当前不建议直接用于重要记忆。 |
 | [dsh-codevault](#plugin-1359423472-root) | 把源码阅读整理成可检索的仓库、文件和符号卡片，并关联本地知识库。 | 先给一个常读模块建卡，代码更新后核对引用和过期结论，不把历史笔记直接当现状。 |
 | [dsh-cortex](#plugin-1366089972-workspace-plugins-dsh-cortex) | 按会话活动安排静默巩固，将工具经历归为持久记忆卡，并召回相关卡片与压低重复告警。 | 先少量召回并定期抽查卡片来源，重要故障保持外部告警；先验证重启后记忆仍可恢复再长期使用。 |
-| [dsh-evidence-gate](#plugin-1365519118-root) | 按工具活动索引检查结论自报依据，提供判定卡、会话开关与账本。 | 需要声明可追溯性的团队可评估其账本；不能将绿色VERIFIED作为测试通过、真实阅读或事实正确的唯一证据。 |
 | [dsh-fact-check](#plugin-1380181057-root) | 为 DSH 提供多源网页事实核查 Skill，含来源路由和可选 Jev 判据工具。 | 经常做资料核查的人可先用低风险题目检查来源和正文；保留未核实，遇到转载、封闭生态或无反证时别自动升置信，重要结论由人复核。 |
 | [dsh-inpage-translator](#plugin-1422488467-root) | 在DSH浏览器页面注入翻译按钮，用宿主模型分块翻译可见文本并支持还原。 | 适合普通公开网页阅读时先试用。 |
 | [dsh-ls125-uv-probe](#plugin-1381989584-root) | 为 LS125 UVALED-X3 紫外探头提供 UART 协议、抓取分析工具与 STM32F103 主机固件的技能包。 | 已有对应硬件的工程人员可把它当复核起点，先只读轮询并对照原表，核对电气连接、CRC与单位后再试清零；不直接将示例读数用于要求校准证明的交付。 |
@@ -122,20 +121,6 @@
 > **思考**：不让心跳和维护调用冒充会话活动能避免永不巩固；自动抽取的打法可能只记录偶然成功，需要真实任务对照。
 
 > **建议**：先少量召回并定期抽查卡片来源，重要故障保持外部告警；先验证重启后记忆仍可恢复再长期使用。
-
-<a id="plugin-1365519118-root"></a>
-
-## [dsh-evidence-gate](../../plugins/aaronandwork--dsh-evidence-gate/INSIGHT.md)
-
-[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=yellow&logo=github&style=flat)](https://github.com/AaronandWork/dsh-evidence-gate) [![npm 30d 888](https://img.shields.io/static/v1?label=npm+30d&message=888&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@aaronandwork/dsh-evidence-gate) [![最新发布 2026-09-12](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-12&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@aaronandwork/dsh-evidence-gate)
-
-> **用途**：用户希望区分Agent亲查、引用和假设，尤其审查“读过文件/测试通过”的承重结论；交付物是可查的声明与匹配记录，非事实真值。
-
-> **亮点**：比纯“不要猜测”的提示多了可追踪活动索引和显式声明判定，区分已引用/未核验以及弱采信计数。贡献是声明纪律与审查线索，而非独立证据验证器；工具日志来自宿主，事实正确性仍需人工或专门验证。
-
-> **思考**：VERIFIED是否超过机制能证明的范围？entryMatches可用basename与包含关系命中，且跨任意其他会话无父子关系限制；某路径存在就能weak却仍verdict=verified。它关联的是活动与文本而非claim语义，也不核工具是否成功或版本一致；模型可跳过工具直接回答，未见输出拦截器。因此“结构强制/实证”应降格为协作约束和启发式匹配。
-
-> **建议**：把活动回执绑定成功状态、内容摘要、当前版本与会话委派谱系，并将weak保持UNVERIFIED，可能降低假验证。用同basename异文件、失败read、旧版本测试及无关会话同路径反例，比较误VERIFIED率和真实证据召回；若误报下降代价是大量真实证据被拒，应展示置信分层而非二值真值。
 
 <a id="plugin-1380181057-root"></a>
 

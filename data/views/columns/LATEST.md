@@ -82,7 +82,7 @@
 | [dsh-api-dashboard](#plugin-1346196699-root) | 在DSH输入框旁展示多平台API余额、会话与子代理估算消耗，并提供配置看板。 | [![最新发布 2026-10-10](https://img.shields.io/static/v1?label=&message=2026-10-10&color=grey&style=flat)](https://www.npmjs.com/package/dsh-api-dashboard) |
 | [dsh-session-path](#plugin-1412141303-root) | 定位 DSH 会话日志并导出可读 Markdown 或 JSONL 交接文件。 | [![最新发布 2026-10-10](https://img.shields.io/static/v1?label=&message=2026-10-10&color=grey&style=flat)](https://www.npmjs.com/package/dsh-session-path) |
 | [dsh-verify](#plugin-1335843750-root) | 执行 JSON 浏览器步骤并生成断言、截图和视觉差异报告，提供 CLI、MCP 与 DSH 工具入口。 | [![最新发布 2026-10-09](https://img.shields.io/static/v1?label=&message=2026-10-09&color=grey&style=flat)](https://www.npmjs.com/package/dsh-verify) |
-| [dsh-tokenrhythm-bill](#plugin-1351903192-root) | 集中展示基元律动等平台的余额、用量、模型与密钥，并提供账号切换和连通探测。 | [![最新发布 2026-10-09](https://img.shields.io/static/v1?label=&message=2026-10-09&color=grey&style=flat)](https://www.npmjs.com/package/dsh-tokenrhythm-bill) |
+| [dsh-tokenrhythm-bill](#plugin-1351903192-root) | 在DSH侧栏集中查看基元及可选四平台的余额、模型价格和用量，管理多账号会话与平台密钥。 | [![最新发布 2026-10-09](https://img.shields.io/static/v1?label=&message=2026-10-09&color=grey&style=flat)](https://www.npmjs.com/package/dsh-tokenrhythm-bill) |
 | [滚动钢琴与消息小地图](#plugin-1412162067-root) | 在聊天区边缘按鼠标位置演奏钢琴音，并预览和跳转用户消息。 | [![最新发布 2026-10-09](https://img.shields.io/static/v1?label=&message=2026-10-09&color=grey&style=flat)](https://www.npmjs.com/package/dsh-scroll-piano) |
 | [dsh-piano](#plugin-1412161923-root) | 在 DSH 浮动面板中用 Web Audio 合成钢琴音并支持滑动刮奏。 | [![最新发布 2026-10-09](https://img.shields.io/static/v1?label=&message=2026-10-09&color=grey&style=flat)](https://www.npmjs.com/package/dsh-piano) |
 | [Forge 用量计费](#plugin-1363429979-plugin-usage-billing) | 从会话用量建立账本，以事件时刻价格计费并展示预算、趋势与未计价项目。 | [![最新发布 2026-10-08](https://img.shields.io/static/v1?label=&message=2026-10-08&color=grey&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-usage-billing) |
@@ -103,7 +103,7 @@
 | [dsh-github-router](#plugin-1339462797-root) | 提供PR、Issue、文件及API只读工具，通过API、gh、Git、HTML与可选镜像在宿主内降级取数。 | [![最新发布 2026-09-29](https://img.shields.io/static/v1?label=&message=2026-09-29&color=grey&style=flat)](https://www.npmjs.com/package/dsh-github-router) |
 | [dsh-speak](#plugin-1334493734-root) | 将助手回复与可选事件交给本机语音引擎播报，提供队列状态与重播。 | [![最新发布 2026-09-26](https://img.shields.io/static/v1?label=&message=2026-09-26&color=grey&style=flat)](https://www.npmjs.com/package/dsh-speak) |
 | [type-tune（DSH-Plugin_awl）](#plugin-1388463793-root) | 调节 DSH Web 字体、文字对比度、光晕与内容特效。 | [![最新发布 2026-09-26](https://img.shields.io/static/v1?label=&message=2026-09-26&color=grey&style=flat)](https://www.npmjs.com/package/dsh-type-tune) |
-| [dsh-plugin-market（99galaxy）](#plugin-1367597810-root) | 在 DSH 设置页浏览社区插件目录、查看安装版本并执行安装。 | [![最新发布 2026-09-23](https://img.shields.io/static/v1?label=&message=2026-09-23&color=grey&style=flat)](https://www.npmjs.com/package/@99galaxy/dsh-plugin-market) |
+| [dsh-plugin-market](#plugin-1367597810-root) | 在 DSH 设置页展示社区目录、已安装与可更新项，并触发插件安装。 | [![最新发布 2026-09-23](https://img.shields.io/static/v1?label=&message=2026-09-23&color=grey&style=flat)](https://www.npmjs.com/package/@99galaxy/dsh-plugin-market) |
 | [dock-images](#plugin-1340492378-root) | 通过受限文件读取在Dock缩放、旋转和拖动图片。 | [![最新发布 2026-09-23](https://img.shields.io/static/v1?label=&message=2026-09-23&color=grey&style=flat)](https://www.npmjs.com/package/dock-images) |
 
 <a id="plugin-1334304098-packages-helmd"></a>
@@ -1090,13 +1090,13 @@
 
 ## [dsh-tokenrhythm-bill](../../plugins/162568316--dsh-tokenrhythm-bill/INSIGHT.md)
 
-[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/162568316/dsh-tokenrhythm-bill) [![npm 30d 1,667](https://img.shields.io/static/v1?label=npm+30d&message=1%2C667&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-tokenrhythm-bill) [![最新发布 2026-10-09](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-09&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-tokenrhythm-bill)
+[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/162568316/dsh-tokenrhythm-bill) [![npm 30d 1,642](https://img.shields.io/static/v1?label=npm+30d&message=1%2C642&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-tokenrhythm-bill) [![最新发布 2026-10-09](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-09&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-tokenrhythm-bill)
 
-**主要用途：**集中展示基元律动等平台的余额、用量、模型与密钥，并提供账号切换和连通探测。
+**主要用途：**在DSH侧栏集中查看基元及可选四平台的余额、模型价格和用量，管理多账号会话与平台密钥。
 
 **最新发布：**[0.6.1 · 2026-10-09（北京时间）](https://www.npmjs.com/package/dsh-tokenrhythm-bill)。
 
-**使用条件：**先只接入常用平台，对照控制台核验当前账号和限时额度，按需启用模型探测；敏感凭据留在受控宿主。
+**使用条件：**先观察，先核宿主敏感路由访问边界、缓存身份与凭据写入并发，再考虑可信单人环境只读单平台评估。详见Q09(#research-q09)。
 
 [返回表格](#column-index)
 
@@ -1382,15 +1382,15 @@
 
 <a id="plugin-1367597810-root"></a>
 
-## [dsh-plugin-market（99galaxy）](../../plugins/99galaxy--dsh-plugin-market/INSIGHT.md)
+## [dsh-plugin-market](../../plugins/99galaxy--dsh-plugin-market/INSIGHT.md)
 
 [![npm 30d 1,454](https://img.shields.io/static/v1?label=npm+30d&message=1%2C454&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@99galaxy/dsh-plugin-market) [![最新发布 2026-09-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-23&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@99galaxy/dsh-plugin-market)
 
-**主要用途：**在 DSH 设置页浏览社区插件目录、查看安装版本并执行安装。
+**主要用途：**在 DSH 设置页展示社区目录、已安装与可更新项，并触发插件安装。
 
 **最新发布：**[1.1.1 · 2026-09-23（北京时间）](https://www.npmjs.com/package/@99galaxy/dsh-plugin-market)。
 
-**使用条件：**主要用web profile的人先浏览目录；点击前检查来源和版本，固定commit用户别直接更新，其他profile先核目标，安装后重启确认加载。
+**使用条件：**建议观察；web profile 中可浏览目录，但点击安装/更新前须核来源、版本、目标，完成后重启检加载。详见Q06(#research-q06)。
 
 [返回表格](#column-index)
 

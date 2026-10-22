@@ -24,36 +24,100 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-04-github-1344713683-root-directory-0",
+                    "id": "2026-10-22-02-github-1344713683-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T04:16:38.788Z",
+                    "retrieved_at": "2026-10-22T09:16:48.312Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-04-github-1344713683-root-author",
+                    "id": "2026-10-22-02-github-1344713683-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/988hj7tczd-oss/dsh-skill-creator/blob/f9ff56714decd8d604d97dced494206937c8f907/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-skill-creator",
+                            "commit": "f9ff56714decd8d604d97dced494206937c8f907",
+                            "path": "README.md",
+                            "content_sha256": "3c9767609a75635a9b8cb8627fcacff5f40f3d36b53fb0cefacc4a73c327f487"
+                        }
+                    ],
                     "revision": "f9ff56714decd8d604d97dced494206937c8f907",
-                    "captured_at": "2026-10-21T04:16:38.788Z",
-                    "summary": "为 DSH 创建、校验、打包 Skill，并提出或写入 description 改写。",
-                    "artifact": "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--dsh-skill-creator/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:16:48.312Z",
+                    "summary": "DSH 内四个模型工具，用确定性规则草拟、校验、打包和改写技能描述，可挂载输出目录。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/988hj7tczd-oss--dsh-skill-creator/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-04-github-1344713683-root-source",
+                    "id": "2026-10-22-02-github-1344713683-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/988hj7tczd-oss/dsh-skill-creator/blob/f9ff56714decd8d604d97dced494206937c8f907/src/index.ts",
+                    "url": "https://github.com/988hj7tczd-oss/dsh-skill-creator/blob/f9ff56714decd8d604d97dced494206937c8f907/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-skill-creator",
+                            "commit": "f9ff56714decd8d604d97dced494206937c8f907",
+                            "path": "README.md",
+                            "content_sha256": "3c9767609a75635a9b8cb8627fcacff5f40f3d36b53fb0cefacc4a73c327f487"
+                        },
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-skill-creator",
+                            "commit": "f9ff56714decd8d604d97dced494206937c8f907",
+                            "path": "package.json",
+                            "content_sha256": "d8d672d86b0796cc083bc013df4b261db1c6d292d03f42f4ce67a15c336204f4"
+                        },
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-skill-creator",
+                            "commit": "f9ff56714decd8d604d97dced494206937c8f907",
+                            "path": "src/index.ts",
+                            "content_sha256": "dccea5972b94a2549704d996d0f51624d1e342ff2f88d1864e9d52a7a065c7c1"
+                        },
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-skill-creator",
+                            "commit": "f9ff56714decd8d604d97dced494206937c8f907",
+                            "path": "src/tools/skill-new.ts",
+                            "content_sha256": "c3dc47989dd7862e597922d6938f3aeed155d17c15db23c4a3c85086db600606"
+                        },
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-skill-creator",
+                            "commit": "f9ff56714decd8d604d97dced494206937c8f907",
+                            "path": "src/lib/draft.ts",
+                            "content_sha256": "678de4a1ebc9cb6a908097fb99f48e9c8bc56e88b775b0fd90f0c39b74099a1e"
+                        },
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-skill-creator",
+                            "commit": "f9ff56714decd8d604d97dced494206937c8f907",
+                            "path": "src/lib/tool-env.ts",
+                            "content_sha256": "d21fcb0ec61b32bcc46baffcbd022d09d0bdf7178b576f11386c7807955abdc7"
+                        },
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-skill-creator",
+                            "commit": "f9ff56714decd8d604d97dced494206937c8f907",
+                            "path": "src/lib/fs-adapter.ts",
+                            "content_sha256": "528e7ca859e528ac0c0c7dfcabde00cd50efdeff158a5a5087171f1b67f090a4"
+                        },
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-skill-creator",
+                            "commit": "f9ff56714decd8d604d97dced494206937c8f907",
+                            "path": "src/lib/package-skill.ts",
+                            "content_sha256": "a99bd1aec1225652dc744f331dfc2cb0475b45796f275dbde422cd71fccd4483"
+                        },
+                        {
+                            "repository_url": "https://github.com/988hj7tczd-oss/dsh-skill-creator",
+                            "commit": "f9ff56714decd8d604d97dced494206937c8f907",
+                            "path": "src/lib/provider.ts",
+                            "content_sha256": "c5829aab49ac60adfd62525ace9ba320cef13de068c6bdf930e0edbf744e1889"
+                        }
+                    ],
                     "revision": "f9ff56714decd8d604d97dced494206937c8f907",
-                    "captured_at": "2026-10-21T04:16:38.788Z",
-                    "summary": "核查 src/index.ts、src/lib/draft.ts、src/lib/improve.ts、src/lib/frontmatter.ts、src/lib/validate-skill.ts、src/lib/provider.ts、src/lib/package-skill.ts、package.json；src/index注册四工具与输出目录provider；draft确定性抽意图，validate/frontmatter做YAML子集检查，package生成.skill ZIP，improve提取保留词后改description，可commit写回。",
-                    "artifact": "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--dsh-skill-creator/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:16:48.312Z",
+                    "summary": "核查 README.md、package.json、src/index.ts、src/tools/skill-new.ts、src/lib/draft.ts、src/lib/tool-env.ts、src/lib/fs-adapter.ts、src/lib/package-skill.ts、src/lib/provider.ts；skill_new 正则抽取 goal 后写 SKILL.md；validate 检 frontmatter；package 自制 ZIP；improve 规则改写；运行期 provider 读取输出目录。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/988hj7tczd-oss--dsh-skill-creator/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "抽读工具入口、draft/improve、frontmatter/validate、provider/package；未执行目标或真实触发测试。",
+                        "静态审阅固定提交的 README、四工具装配、草稿/环境/FS/打包源码；未运行目标插件或打包。 普通安装、宿主加载及目标测试属本轮范围边界，具体机制/效果未知仍在逐题缺口保留。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +128,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "Skill作者从任务意图生成目录草稿，校验和打包后交付可加载资源；语义质量仍需真实触发测试。",
+                    "text": "把已有工作流固化为 DSH SKILL.md 并在会话中分发或使用。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344713683-root-source"
+                        "2026-10-22-02-github-1344713683-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +139,16 @@
                             "fingerprint": "f9ff56714decd8d604d97dced494206937c8f907"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:16:38.788Z",
+                    "reviewed_at": "2026-10-22T09:16:48.312Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "src/index注册四工具与输出目录provider；draft确定性抽意图，validate/frontmatter做YAML子集检查，package生成.skill ZIP，improve提取保留词后改description，可commit写回。",
+                    "text": "skill_new 正则抽取 goal 后写 SKILL.md；validate 检 frontmatter；package 自制 ZIP；improve 规则改写；运行期 provider 读取输出目录。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344713683-root-source"
+                        "2026-10-22-02-github-1344713683-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +157,16 @@
                             "fingerprint": "f9ff56714decd8d604d97dced494206937c8f907"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:16:38.788Z",
+                    "reviewed_at": "2026-10-22T09:16:48.312Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "抽读工具入口、draft/improve、frontmatter/validate、provider/package；未执行目标或真实触发测试。",
+                    "text": "静态审阅固定提交的 README、四工具装配、草稿/环境/FS/打包源码；未运行目标插件或打包。 普通安装、宿主加载及目标测试属本轮范围边界，具体机制/效果未知仍在逐题缺口保留。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344713683-root-source"
+                        "2026-10-22-02-github-1344713683-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +175,16 @@
                             "fingerprint": "f9ff56714decd8d604d97dced494206937c8f907"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:16:38.788Z",
+                    "reviewed_at": "2026-10-22T09:16:48.312Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "TS需构建，开发link依赖相邻dsh-src；YAML子集与PyYAML边界需分开，输出provider custom rank300。",
+                    "text": "项目 MIT；README 声称参考 Proprietary 上游并独立重写，代码独立性未外部审查。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344713683-root-source"
+                        "2026-10-22-02-github-1344713683-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +193,16 @@
                             "fingerprint": "f9ff56714decd8d604d97dced494206937c8f907"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:16:38.788Z",
+                    "reviewed_at": "2026-10-22T09:16:48.312Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "首次匹配宿主/输出路径，持续测试触发、评估与维护；无LLM必需费用，人工用例和修订时间未测。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | DSH tools/skills 与可写 outputDir，宿主上下文与存储费用依使用量，未知 | 写清 goal、审 dry-run、选择隔离输出目录；耗时未知 | 会话尾巴不进入草稿，二进制打包不保真 |\n| 持续使用 | 工具本身为确定性生成/校验/改写/ZIP，占文件IO与存储；工具schema、参数和结果进入宿主模型上下文的费用另依使用量，金额/频率未知 | 人工校对步骤、frontmatter 与资源哈希；工时未知 | validate 只验证结构，非技能质量 |\n| 失败恢复 | 重新打包或恢复被 commit=true 改写的 SKILL.md 需存储/备份；费用未知 | 找出被跳过目录/损坏二进制，回滚文件并重审；耗时未知 | 无已验证打包保真率 |",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344713683-root-source"
+                        "2026-10-22-02-github-1344713683-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +211,16 @@
                             "fingerprint": "f9ff56714decd8d604d97dced494206937c8f907"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:16:38.788Z",
+                    "reviewed_at": "2026-10-22T09:16:48.312Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "Skill作者先生成草稿和包；保留原description，以真实正负用例确认后再commit，中文需求别依赖保词判定。",
+                    "text": "隔离 outputDir，先 dry-run 再人工核对 SKILL.md；文本技能再打包并解包核查文件，二进制资源不用当前打包路径。详见[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344713683-root-source"
+                        "2026-10-22-02-github-1344713683-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +229,16 @@
                             "fingerprint": "f9ff56714decd8d604d97dced494206937c8f907"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:16:38.788Z",
+                    "reviewed_at": "2026-10-22T09:16:48.312Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "减少格式/打包重复劳动；不能自动证明Skill有用、描述更准或生产可加载。",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 草稿生成 | 正则/固定正文 | 语义质量 |\n| fromSession | 只显示 note | 内容未利用 |\n| ZIP | 文本文件可写 | 二进制损坏 |",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344713683-root-source"
+                        "2026-10-22-02-github-1344713683-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +247,16 @@
                             "fingerprint": "f9ff56714decd8d604d97dced494206937c8f907"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:16:38.788Z",
+                    "reviewed_at": "2026-10-22T09:16:48.312Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "四核心操作分离、写前读和输出provider同源便于维护；明确YAML子集及Node写入边界比声称通用解析更可靠。",
+                    "text": "插件注入 tools，ctx.skills 可用时挂载目录；HostFs 优先服务但二进制与目录操作回退 Node。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344713683-root-source"
+                        "2026-10-22-02-github-1344713683-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +265,16 @@
                             "fingerprint": "f9ff56714decd8d604d97dced494206937c8f907"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:16:38.788Z",
+                    "reviewed_at": "2026-10-22T09:16:48.312Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
-                    "topic": "technical_innovation",
-                    "basis": "interpretation",
-                    "text": "相对手工复制Skill目录，增量是DSH工具化的完整素材生命周期和运行期输出provider。作者明确参考上游skill-creator形态，新增TS适配/ZIP/frontmatter实现；方法移植与格式工具不等于自动优化触发语义。",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "提供从工作流描述到 SKILL.md、校验、ZIP 分发和目录挂载的一站式入口；详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344713683-root-source"
+                        "2026-10-22-02-github-1344713683-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +283,16 @@
                             "fingerprint": "f9ff56714decd8d604d97dced494206937c8f907"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:16:38.788Z",
+                    "reviewed_at": "2026-10-22T09:16:48.312Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
-                    "basis": "interpretation",
-                    "text": "“保留场景覆盖”能否由关键词证明？improve tokenize只匹配ASCII单词、最多保留8词，中文场景及否定/条件关系无法用包含关系保证；commit只替换description也可能语义退化。Node二进制打包与文本fs回退有不同权限边界。",
+                    "basis": "supported",
+                    "text": "fromSession 只改变 sessionNote，不改变草稿；ZIP 对所有文件做 UTF-8 解码/重编码，二进制资源不保真。详见[Q02](#research-q02)、[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344713683-root-source"
+                        "2026-10-22-02-github-1344713683-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +301,16 @@
                             "fingerprint": "f9ff56714decd8d604d97dced494206937c8f907"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:16:38.788Z",
+                    "reviewed_at": "2026-10-22T09:16:48.312Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "unverified",
-                    "text": "待验证假设：以独立正负触发用例替代保词校验，并将候选description与测试结果绑定后再写回，可发现中文与否定边界退化。由ASCII/8词启发式推导，未实现。对中文、多条件、同词相反语义盲测召回/误触与维护时间；没有测试不能宣称提升。",
+                    "text": "让会话摘要显式进入 dry-run 审阅后再生成，并按原字节打包、校验哈希，可提高可信度；待验证。详见[Q02](#research-q02)、[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344713683-root-source"
+                        "2026-10-22-02-github-1344713683-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +319,15 @@
                             "fingerprint": "f9ff56714decd8d604d97dced494206937c8f907"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:16:38.788Z",
+                    "reviewed_at": "2026-10-22T09:16:48.312Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T04:16:38.788Z",
+            "last_checked_at": "2026-10-22T09:16:48.312Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "f9ff56714decd8d604d97dced494206937c8f907",
-                "reviewed_at": "2026-10-21T04:16:38.788Z",
+                "reviewed_at": "2026-10-22T09:16:48.312Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -275,61 +339,61 @@
                 "technical": {
                     "criteria": {
                         "novelty": 9,
-                        "mechanism": 8,
+                        "mechanism": 15,
                         "transferability": 10,
                         "simplification": 8
                     },
-                    "rationale": "novelty 小幅：既有Skill创作流程移植；mechanism 小幅：确定性草稿/关键词改写；transferability 实质：纯核心与provider可借鉴；simplification 实质：目录到产物统一。",
+                    "rationale": "novelty：参照手工写 SKILL.md，四工具与运行期 provider 串成流程（Q01）有小幅组合增量，novelty 9。\nmechanism：参照单提示生成，规则抽取、frontmatter 校验、ZIP 与描述改写已实现（Q01/Q03）；fromSession 与二进制边界限制，mechanism 15。\ntransferability：参照项目私有脚本，工具链可迁移到其他文本技能（Q01）；DSH fs/skills 契约与资源保真限制，transferability 10。\nsimplification：参照人工写/校验/压缩，dry-run 和一键工具减少步骤（Q01）；仍需审阅与解包比对，simplification 8。",
                     "basis": "interpretation",
-                    "score": 35,
+                    "score": 42,
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344713683-root-source"
+                        "2026-10-22-02-github-1344713683-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
                         "workflow": 18,
                         "delivery": 15,
-                        "reach": 5,
-                        "economics": 4
+                        "reach": 10,
+                        "economics": 0
                     },
-                    "rationale": "workflow 实质：创作/校验/分发连贯；delivery 实质：Skill目录与.skill包；reach 小幅：降低格式门槛非语义门槛；economics 小幅：少样板工作，测试工时未测。",
+                    "rationale": "workflow：参照手工固化流程，new→validate→package→improve 串联技能维护（Q01），但质量仍人工负责，workflow 18。\ndelivery：参照裸 Markdown，工具可形成 SKILL.md/ZIP 可交付文件（Q01/Q03）；二进制资源限制，delivery 15。\nreach：参照单团队 prompt，文本型工作流可复用至多任务（Q01）；依赖 DSH 挂载，reach 10。\neconomics：参照人工维护，没有任务完成时耗/缺陷对照（Q03），未识别可核经济增量，economics 0。",
                     "basis": "interpretation",
-                    "score": 42,
+                    "score": 43,
                     "evidence_ids": [
-                        "2026-10-21-04-github-1344713683-root-source"
+                        "2026-10-22-02-github-1344713683-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "Skill作者可试确定性草稿、校验和打包；先保留原description，用中文正负用例验证后再commit改写。",
+                "reason": "限文本型技能在隔离输出目录试用，人工审阅生成内容；包含会话/二进制资源的场景暂不依赖自动结果。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "Skill目录草稿与可交付包是明确作者需求。"
+                        "rationale": "技能创建/复用场景明确。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "四工具减少格式校验和ZIP打包重复劳动。"
+                        "rationale": "生成、校验、打包整合。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "入口和YAML子集已核，关键词保留不能证明语义与加载质量。"
+                        "rationale": "源码可核，目标会话未验。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "无必需LLM费，但触发测试、输出范围及description回退仍需人工。"
+                        "score": 5,
+                        "rationale": "人工审阅与路径/资源验证成本。"
                     }
                 },
-                "score": 59,
+                "score": 54,
                 "revision": "f9ff56714decd8d604d97dced494206937c8f907",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T09:16:48.312Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-04-github-1344713683-root-source"
+                    "2026-10-22-02-github-1344713683-root-source"
                 ],
                 "dependencies": [
                     {
@@ -354,89 +418,60 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T04:06:46Z",
-            "analysis_sha256": "f064b032c43ac2cba89be8800052b99f5313f3b2311ec5aff753f96a48310f0e"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "772698b2ff6852286b1445728b5d02a92415fd5ab28a32ddbf1082926d002740"
         },
         "publication.metadata": "data/plugins/988hj7tczd-oss--dsh-skill-creator/META.json",
         "publication.summaries": {
-            "text": "为 DSH 创建、校验、打包 Skill，并提出或写入 description 改写。",
+            "text": "DSH 内四个模型工具，用确定性规则草拟、校验、打包和改写技能描述，可挂载输出目录。",
             "revision": "f9ff56714decd8d604d97dced494206937c8f907",
             "source_url": "https://github.com/988hj7tczd-oss/dsh-skill-creator/blob/f9ff56714decd8d604d97dced494206937c8f907/README.md"
         },
         "publication.capabilities": {
             "revision": "f9ff56714decd8d604d97dced494206937c8f907",
             "items": {
-                "模型工具": "skill_new/validate/package/improve_description。",
-                "后台": "输出目录Skill provider。"
-            }
+                "模型工具": "skill_new、skill_validate、skill_package、skill_improve_description"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| skill_new | 由 goal 规则抽取并生成 SKILL.md；默认 dry-run | confirm=true 才写文件；fromSession 仅改变说明，不进入草稿 |\n| skill_validate | 检查既有技能的 frontmatter/结构 | 不验证语义质量或运行效果 |\n| skill_package | 把技能目录输出 ZIP | readText→TextEncoder 不保二进制，失败目录可能跳过 |\n| skill_improve_description | 按规则改写 description | commit=true 才写回 SKILL.md；需审变更 |\n| 运行期 provider | 从输出目录向 ctx.skills 提供技能 | 仅 ctx.skills 可用时挂载；不是第五个模型工具 |"
         },
         "publication.advice": {
             "revision": "f9ff56714decd8d604d97dced494206937c8f907",
-            "text": "Skill作者先生成草稿和包；保留原description，以真实正负用例确认后再commit，中文需求别依赖保词判定。"
+            "text": "隔离 outputDir，先 dry-run 再人工核对 SKILL.md；文本技能再打包并解包核查文件，二进制资源不用当前打包路径。详见[Q03](#research-q03)。"
         },
         "registry": "data/plugins/988hj7tczd-oss--dsh-skill-creator",
-        "reports": "# dsh-skill-creator\n\n> 为 DSH 创建、校验、打包 Skill，并提出或写入 description 改写。\n\n## 使用建议\n\nSkill作者先生成草稿和包；保留原description，以真实正负用例确认后再commit，中文需求别依赖保词判定。\n\n核查状态：源码确认创建/校验/打包流程；未执行生成或宿主挂载，不把格式检查当Skill效果验证。 本轮只检查源码，未安装、执行目标代码/测试或真实宿主验收。\n\n## 洞察短评\n\n- **用途**：Skill作者从任务意图生成目录草稿，校验和打包后交付可加载资源；语义质量仍需真实触发测试。\n- **亮点**：相对手工复制Skill目录，增量是DSH工具化的完整素材生命周期和运行期输出provider。作者明确参考上游skill-creator形态，新增TS适配/ZIP/frontmatter实现；方法移植与格式工具不等于自动优化触发语义。\n- **思考**：“保留场景覆盖”能否由关键词证明？improve tokenize只匹配ASCII单词、最多保留8词，中文场景及否定/条件关系无法用包含关系保证；commit只替换description也可能语义退化。Node二进制打包与文本fs回退有不同权限边界。\n- **建议**：待验证假设：以独立正负触发用例替代保词校验，并将候选description与测试结果绑定后再写回，可发现中文与否定边界退化。由ASCII/8词启发式推导，未实现。对中文、多条件、同词相反语义盲测召回/误触与维护时间；没有测试不能宣称提升。\n\n## 场景与替代办法\n\nSkill作者从任务意图生成目录草稿，校验和打包后交付可加载资源；语义质量仍需真实触发测试。\n\n参照上游Skill创作方法和手工目录管理；不把移植算原创语义优化。\n\n## 能力清单\n\n- **模型工具**：skill_new/validate/package/improve_description。\n- **后台**：输出目录Skill provider。\n\n## 依赖与流程\n\nsrc/index注册四工具与输出目录provider；draft确定性抽意图，validate/frontmatter做YAML子集检查，package生成.skill ZIP，improve提取保留词后改description，可commit写回。\n\nDSH tools/fs/skills、Node文件/ZIP能力、可选Python PyYAML；构建和输出路径策略需核查。\n\n目标→草稿/澄清→生成目录→校验→打包→provider发现；改写先提案再commit，语义测试由人补。\n\nTS需构建，开发link依赖相邻dsh-src；YAML子集与PyYAML边界需分开，输出provider custom rank300。\n\n## 成本与效果\n\n首次匹配宿主/输出路径，持续测试触发、评估与维护；无LLM必需费用，人工用例和修订时间未测。\n\n减少格式/打包重复劳动；不能自动证明Skill有用、描述更准或生产可加载。\n\n## 核心贡献\n\n相对手工复制Skill目录，增量是DSH工具化的完整素材生命周期和运行期输出provider。作者明确参考上游skill-creator形态，新增TS适配/ZIP/frontmatter实现；方法移植与格式工具不等于自动优化触发语义。\n\n## 关键质疑\n\n“保留场景覆盖”能否由关键词证明？improve tokenize只匹配ASCII单词、最多保留8词，中文场景及否定/条件关系无法用包含关系保证；commit只替换description也可能语义退化。Node二进制打包与文本fs回退有不同权限边界。\n\n## 工程亮点\n\n四核心操作分离、写前读和输出provider同源便于维护；明确YAML子集及Node写入边界比声称通用解析更可靠。\n\n固定源码依据：[src/index.ts](https://github.com/988hj7tczd-oss/dsh-skill-creator/blob/f9ff56714decd8d604d97dced494206937c8f907/src/index.ts)、[src/lib/draft.ts](https://github.com/988hj7tczd-oss/dsh-skill-creator/blob/f9ff56714decd8d604d97dced494206937c8f907/src/lib/draft.ts)、[src/lib/improve.ts](https://github.com/988hj7tczd-oss/dsh-skill-creator/blob/f9ff56714decd8d604d97dced494206937c8f907/src/lib/improve.ts)、[src/lib/frontmatter.ts](https://github.com/988hj7tczd-oss/dsh-skill-creator/blob/f9ff56714decd8d604d97dced494206937c8f907/src/lib/frontmatter.ts)、[src/lib/validate-skill.ts](https://github.com/988hj7tczd-oss/dsh-skill-creator/blob/f9ff56714decd8d604d97dced494206937c8f907/src/lib/validate-skill.ts)、[src/lib/provider.ts](https://github.com/988hj7tczd-oss/dsh-skill-creator/blob/f9ff56714decd8d604d97dced494206937c8f907/src/lib/provider.ts)、[src/lib/package-skill.ts](https://github.com/988hj7tczd-oss/dsh-skill-creator/blob/f9ff56714decd8d604d97dced494206937c8f907/src/lib/package-skill.ts)、[package.json](https://github.com/988hj7tczd-oss/dsh-skill-creator/blob/f9ff56714decd8d604d97dced494206937c8f907/package.json)。\n\n## 未来设计假设（未验证）\n\n待验证假设：以独立正负触发用例替代保词校验，并将候选description与测试结果绑定后再写回，可发现中文与否定边界退化。由ASCII/8词启发式推导，未实现。对中文、多条件、同词相反语义盲测召回/误触与维护时间；没有测试不能宣称提升。\n\n隔离输出验证中文/否定触发、复杂YAML、ZIP排除与安装发现；本轮不执行。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：18414ee85e4737639fee759d125737ffc99fe3230124809dbc70f070eca789b7。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 3 | 299 | — | — | 3753 |\n| .ts | source | 16 | 2129 | 1706 | 272 | — |\n| .ts | test | 1 | 212 | 158 | 29 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n\n## 核查说明\n\n- 版本号：0.1.0；版本日期：2026-08-24（固定提交日期，北京时间，非包发布日期）。\n- 固定提交：[f9ff5671](https://github.com/988hj7tczd-oss/dsh-skill-creator/tree/f9ff56714decd8d604d97dced494206937c8f907)；本轮基准：2026-10-21T04:06:46Z。\n- 已检查：上述源码路径、README、包清单及组件inventory。\n- 范围：抽读工具入口、draft/improve、frontmatter/validate、provider/package；未执行目标或真实触发测试。\n- 未执行：目标安装、代码/测试、真实宿主和第三方服务。作者说明与源码不等于独立效果验证。\n",
+        "reports": "# dsh-skill-creator\n\n> DSH 内四个模型工具，用确定性规则草拟、校验、打包和改写技能描述，可挂载输出目录。\n\n## 研究范围\n\n- **仓库**：[988hj7tczd-oss/dsh-skill-creator](https://github.com/988hj7tczd-oss/dsh-skill-creator)\n- **版本号**：0.1.0（[固定提交 f9ff56714decd8d604d97dced494206937c8f907](https://github.com/988hj7tczd-oss/dsh-skill-creator/tree/f9ff56714decd8d604d97dced494206937c8f907)）\n- **版本日期**：2026-08-24（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n四工具结构可核，但 fromSession 文本未进入生成、二进制资源打包可能损坏；真实会话效果未测。\n\n## 洞察短评\n\n- **用途**：把已有工作流固化为 DSH SKILL.md 并在会话中分发或使用。\n- **亮点**：提供从工作流描述到 SKILL.md、校验、ZIP 分发和目录挂载的一站式入口；详见[Q01](#research-q01)。\n- **思考**：fromSession 只改变 sessionNote，不改变草稿；ZIP 对所有文件做 UTF-8 解码/重编码，二进制资源不保真。详见[Q02](#research-q02)、[Q03](#research-q03)。\n- **建议**：让会话摘要显式进入 dry-run 审阅后再生成，并按原字节打包、校验哈希，可提高可信度；待验证。详见[Q02](#research-q02)、[Q03](#research-q03)。\n\n采用建议：隔离 outputDir，先 dry-run 再人工核对 SKILL.md；文本技能再打包并解包核查文件，二进制资源不用当前打包路径。详见[Q03](#research-q03)。\n\n## 核心贡献\n\n提供从工作流描述到 SKILL.md、校验、ZIP 分发和目录挂载的一站式入口；详见[Q01](#research-q01)。\n\n## 关键质疑\n\nfromSession 只改变 sessionNote，不改变草稿；ZIP 对所有文件做 UTF-8 解码/重编码，二进制资源不保真。详见[Q02](#research-q02)、[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n让会话摘要显式进入 dry-run 审阅后再生成，并按原字节打包、校验哈希，可提高可信度；待验证。详见[Q02](#research-q02)、[Q03](#research-q03)。\n\n同 goal 开关 fromSession 比较输出；含 PNG 的技能打包解包比哈希；隔离 DSH profile 核对 provider 挂载。\n\n## 场景与替代办法\n\n把已有工作流固化为 DSH SKILL.md 并在会话中分发或使用。\n\n人工写 SKILL.md 并手动校验/zip；插件将常见步骤合一。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| DSH tools 与可写 outputDir | 生成/校验/打包必需 | 四工具及文件输出 | 工具不可完成写入 |\n| ctx.skills | 仅运行期挂载需要 | 发布新 Skill provider | 工具返回 mountHint |\n| 二进制资源 | 可选输入 | 技能资产打包 | 当前文本 ZIP 不保真 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| dry-run | 查看抽取/缺口 | 意图正确 |\n| confirm | 写入隔离目录 | SKILL.md 可审 |\n| 打包 | 解包对比 | 内容逐字节完整 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | DSH tools/skills 与可写 outputDir，宿主上下文与存储费用依使用量，未知 | 写清 goal、审 dry-run、选择隔离输出目录；耗时未知 | 会话尾巴不进入草稿，二进制打包不保真 |\n| 持续使用 | 工具本身为确定性生成/校验/改写/ZIP，占文件IO与存储；工具schema、参数和结果进入宿主模型上下文的费用另依使用量，金额/频率未知 | 人工校对步骤、frontmatter 与资源哈希；工时未知 | validate 只验证结构，非技能质量 |\n| 失败恢复 | 重新打包或恢复被 commit=true 改写的 SKILL.md 需存储/备份；费用未知 | 找出被跳过目录/损坏二进制，回滚文件并重审；耗时未知 | 无已验证打包保真率 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 草稿生成 | 正则/固定正文 | 语义质量 |\n| fromSession | 只显示 note | 内容未利用 |\n| ZIP | 文本文件可写 | 二进制损坏 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**核实四工具技能创建链路、会话上下文实际使用与打包/文件写入完整性。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 四个工具实际生成什么？\n\n**研究主题：**场景与需求、贡献与相对优势、功能与机制\n\n#### 完整回答\n\n插件注册 skill_new、skill_validate、skill_package、skill_improve_description 四个模型工具，并可把输出目录作为运行期 skill provider。skill_new 默认 dry-run 抽取步骤/工具/格式/缺口与澄清问题，confirm=true 用确定性规则写 SKILL.md；description 改写同样是规则引擎，不调用模型。输出文本提供标准栏目，但抽取只识别编号/列表步骤、特定正则工具名和格式词，复杂散文流程会落入通用占位步骤。运行期 provider 在 ctx.skills 存在时挂载，实际加载效果未测。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:41-45](https://github.com/988hj7tczd-oss/dsh-skill-creator/blob/f9ff56714decd8d604d97dced494206937c8f907/README.md#L41-L45)\n\n作者列四工具与目录挂载。\n\n```text\n### 插件行为\n\n- **4 个模型工具**通过 `defineTool` 注册（`tools` 服务，effect 式注册，卸载自动清理）。\n- **自带\"输出目录挂载\"**：`apply` 时若 `skills` 注册表可用，将输出根（`outputDir` + `customSkillDirs`）注册为一个运行期 skill provider（`registerProvider`，rank 300 / source `custom`），因此 `skill_new` 写出的技能立即能被 `skill` 工具列出并加载，无需手工改配置。\n- 若注册表不可用（未安装 `@deepseek-ai/dsh-skill`），插件在日志与 `skill_new` 返回里给出 **mountHint**：在 profile 的 `skill-filesystem` 配置中增加 `customSkillDirs`。\n```\n\n**依据 2 · 源码核查**：[src/index.ts:52-116](https://github.com/988hj7tczd-oss/dsh-skill-creator/blob/f9ff56714decd8d604d97dced494206937c8f907/src/index.ts#L52-L116)\n\n四工具注册及 provider 挂载。\n\n<details>\n<summary>查看原文（65行）</summary>\n\n```text\nconst TOOL_SPECS: readonly ToolSpec[] = [\n  skillNewTool,\n  skillValidateTool,\n  skillPackageTool,\n  skillImproveDescriptionTool,\n]\n\nfunction defaultOutputRoot(): string {\n  const dshHome = process.env.DSH_HOME !== undefined && process.env.DSH_HOME.length > 0\n    ? process.env.DSH_HOME\n    : join(homedir(), '.dsh')\n  return join(dshHome, 'skills')\n}\n\nexport function apply(ctx: Context, rawConfig: Partial<Config> = {}): void {\n  const config: Config = { ...DEFAULTS, ...rawConfig }\n  const customSkillDirs = config.customSkillDirs ?? []\n  const outputDir = config.outputDir && config.outputDir.trim().length > 0\n    ? config.outputDir.trim()\n    : customSkillDirs.length > 0\n      ? customSkillDirs[0]!\n      : defaultOutputRoot()\n  const allRoots = [outputDir, ...customSkillDirs.filter((root) => root !== outputDir)]\n\n  // Tool context: expose plugin config through the same `get` surface.\n  const toolCtx: ToolRunContext = {\n    get(key: string): unknown {\n      if (key === 'skill-creator/config') {\n        return { outputDir, customSkillDirs: allRoots, mountRuntimeProvider: config.mountRuntimeProvider !== false }\n      }\n      return ctx.get(key)\n    },\n  }\n\n  for (const spec of TOOL_SPECS) {\n    ctx.tools.register(defineTool({\n      name: spec.name,\n      description: spec.description,\n      parameters: spec.parameters as never,\n      output: {\n        schema: spec.outputSchema as never,\n        render: (args, value) => spec.render(args as never, value) as never,\n        ...(spec.presentationMeta !== undefined\n          ? { presentationMeta: (args: never, value: never) => spec.presentationMeta!(args, value) as never }\n          : {}),\n      },\n      async execute(args, exec) {\n        return (await spec.run(toolCtx, args as never, exec.signal)) as never\n      },\n    }))\n  }\n\n  // Built-in output-directory mount (best effort).\n  if (config.mountRuntimeProvider !== false) {\n    const fs = makeHostFs(ctx)\n    const report = mountRuntimeProvider(ctx, fs, allRoots)\n    if (report.mounted) {\n      ctx.logger.info(`[skill-creator] runtime skill provider mounted on ${allRoots.join(', ')}`)\n    } else {\n      ctx.logger.warn(`[skill-creator] ${report.reason ?? 'runtime provider not mounted'}; fall back to customSkillDirs=${allRoots.join(', ')}`)\n    }\n  } else {\n    ctx.logger.info(`[skill-creator] runtime provider disabled; rely on skill-filesystem customSkillDirs (${allRoots.join(', ')})`)\n  }\n  ctx.logger.info(`[skill-creator] loaded: ${TOOL_SPECS.length} tools (${TOOL_SPECS.map((spec) => spec.name).join(', ')}); outputDir=${outputDir}`)\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/tools/skill-new.ts:61-105](https://github.com/988hj7tczd-oss/dsh-skill-creator/blob/f9ff56714decd8d604d97dced494206937c8f907/src/tools/skill-new.ts#L61-L105)\n\ndry-run 与 confirm 写入。\n\n<details>\n<summary>查看原文（45行）</summary>\n\n```text\n  async run(ctx: ToolRunContext, args: Record<string, unknown>, signal?: AbortSignal) {\n    const goal = typeof args.goal === 'string' ? args.goal.trim() : ''\n    if (goal.length === 0) return errorResult('goal is required')\n    const confirm = args.confirm === true\n    const fromSession = args.fromSession === true\n    const fs = makeHostFs(ctx, signal)\n\n    let sessionNote: string\n    if (fromSession) {\n      const tail = extractSessionTail(ctx.get('session'))\n      sessionNote = tail !== undefined\n        ? `已从会话历史抽取最近片段（约 ${tail.length} 字符）并入分析。`\n        : '当前上下文未提供会话历史（session 服务不可用），仅按 goal 抽取。'\n    } else {\n      sessionNote = '未请求会话历史（fromSession=false）。'\n    }\n\n    const extraction = extractIntent(goal)\n    if (!confirm) {\n      const questions = buildClarifyingQuestions(goal, extraction)\n      return {\n        status: 'needs-confirmation',\n        extraction,\n        questions,\n        sessionNote,\n        message: '请先确认意图：回答上方澄清问题（或直接补充 goal 后重试）；确认无误后以 confirm=true 重新调用以生成 SKILL.md。',\n      }\n    }\n\n    const outputRoot = resolveOutputRoot(ctx, optString(args, 'outputDir'))\n    const draft = buildSkillDraft(goal, {\n      name: optString(args, 'name'),\n      description: optString(args, 'description'),\n    })\n    const written = await writeSkillDraft(fs, outputRoot, draft)\n    return {\n      status: 'created',\n      skillName: draft.name,\n      dir: written.dir,\n      path: written.path,\n      extraction,\n      mountHint: mountHintYaml(written.dir, outputRoot),\n      message: 'SKILL.md 已写入。若启用 mountRuntimeProvider，该目录已由插件运行期注册到 ctx.skills；否则请按 mountHint 将输出根加入 skill-filesystem 的 customSkillDirs。',\n    }\n  },\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/lib/draft.ts:20-64](https://github.com/988hj7tczd-oss/dsh-skill-creator/blob/f9ff56714decd8d604d97dced494206937c8f907/src/lib/draft.ts#L20-L64)\n\n正则抽取范围。\n\n<details>\n<summary>查看原文（45行）</summary>\n\n```text\nconst STEP_LINE = /^\\s*(?:[-*•]|\\d+[.)])\\s+(.*)$/\nconst NUMBERED_STEP = /^\\d+[.、]\\s*(.*)$/\nconst TOOL_BACKTICK = /`([a-zA-Z][a-zA-Z0-9_.-]*)`/g\nconst TOOL_PHRASE = /(?:使用|用|调用|运行|跑)\\s*([a-zA-Z][a-zA-Z0-9_.-]*)/\nconst FORMAT_LINE = /(?:输入|输出|格式)[:：]?\\s*([^。;；,，\\n]+)/\nconst GAP_PATTERN = /TODO|待定|待补充|待确认|未知|\\?\\?\\?|FIXME|不确定|需要确认|请确认|需用户/\n\nfunction trimSentenceEnd(text: string): string {\n  return text.replace(/[。.；;，,、\\s]+$/, '')\n}\n\n/**\n * Lightweight intent extraction from a free-text workflow description.\n * Heuristic and deterministic (no model required); the model/user may refine\n * the result through the clarification questions.\n */\nexport function extractIntent(goal: string): IntentExtraction {\n  const lines = goal.split(/\\n+/).map((line) => line.trim()).filter((line) => line.length > 0)\n  const steps: string[] = []\n  const tools = new Set<string>()\n  const formats = new Set<string>()\n  const gaps = new Set<string>()\n\n  for (const line of lines) {\n    const step = STEP_LINE.exec(line) ?? NUMBERED_STEP.exec(line)\n    if (step !== null) steps.push(trimSentenceEnd(step[1]!))\n    for (const match of line.matchAll(TOOL_BACKTICK)) tools.add(match[1]!)\n    const toolPhrase = TOOL_PHRASE.exec(line)\n    if (toolPhrase !== null) {\n      tools.add(toolPhrase[1]!.replace(/(工具|命令|脚本)$/, '').trim())\n    }\n    if (/(输入|输出|格式|sample|example)/i.test(line)) {\n      const format = FORMAT_LINE.exec(line)\n      if (format !== null) formats.add(trimSentenceEnd(format[1]!))\n    }\n    if (GAP_PATTERN.test(line)) gaps.add(trimSentenceEnd(line))\n  }\n\n  return {\n    steps: unique(steps),\n    tools: [...tools],\n    formats: [...formats],\n    gaps: [...gaps],\n  }\n}\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/lib/draft.ts:111-187](https://github.com/988hj7tczd-oss/dsh-skill-creator/blob/f9ff56714decd8d604d97dced494206937c8f907/src/lib/draft.ts#L111-L187)\n\n生成 SKILL.md 并写盘。\n\n<details>\n<summary>查看原文（77行）</summary>\n\n```text\nfunction renderSkillMarkdown(draft: Omit<SkillDraft, 'content'>): string {\n  const { name, description, extraction } = draft\n  const sections: string[] = []\n  sections.push(`# ${name}`)\n  sections.push('')\n  sections.push(description)\n  sections.push('')\n  sections.push('## Workflow / 工作流')\n  sections.push('')\n  const steps = extraction.steps.length > 0 ? extraction.steps : []\n  if (steps.length === 0) {\n    sections.push('1. 明确任务输入（必要时向用户确认缺失信息）。')\n    sections.push('2. 按下方输入/输出约定执行核心处理。')\n    sections.push('3. 校验结果完整性并汇报产出。')\n  } else {\n    steps.forEach((step, index) => sections.push(`${index + 1}. ${step}`))\n  }\n  if (extraction.tools.length > 0) {\n    sections.push('')\n    sections.push(`**Tools**: ${extraction.tools.map((tool) => `\\`${tool}\\``).join(', ')}`)\n  }\n  sections.push('')\n  sections.push('## Inputs and outputs / 输入与输出')\n  sections.push('')\n  if (extraction.formats.length === 0) {\n    sections.push('- 输入 / 输出格式按实际任务确定；关键信息缺失时先向用户确认，不擅自假设。')\n  } else {\n    extraction.formats.forEach((format) => sections.push(`- ${format}`))\n  }\n  sections.push('')\n  sections.push('## Boundaries / 边界与排除')\n  sections.push('')\n  sections.push('- 只在本技能声明的范围内工作；超出范围时明确说明并停止。')\n  sections.push('- 不修改与任务无关的文件；改动任何文件前先读取目标内容。')\n  sections.push('- 涉及持久化产物时，写出目录/格式遵循用户或项目的既有约定。')\n  sections.push('')\n  sections.push('## Example / 示例')\n  sections.push('')\n  sections.push(`> 请用 \"${name}\" 技能处理：<输入样例>`)\n  sections.push('')\n  sections.push('按\"工作流\"逐步执行，并在过程中报告关键中间结果与最终产出。')\n  sections.push('')\n  return sections.join('\\n')\n}\n\n/**\n * Build a complete skill draft from a goal description plus optional explicit\n * name/description overrides.\n */\nexport function buildSkillDraft(\n  goal: string,\n  opts: { name?: string; description?: string } = {},\n): SkillDraft {\n  const extraction = extractIntent(goal)\n  let name: string\n  if (opts.name !== undefined && opts.name.length > 0) {\n    const slug = slugifySkillName(opts.name)\n    const candidate = slug.length > 0 ? slug : suggestSkillName(goal)\n    name = isSkillName(candidate) ? candidate : suggestSkillName(goal)\n  } else {\n    name = suggestSkillName(goal)\n  }\n  const description = opts.description !== undefined && opts.description.trim().length > 0\n    ? opts.description.trim()\n    : buildTriggerDescription(goal, extraction)\n  return { name, description, content: renderSkillMarkdown({ name, description, extraction }), extraction }\n}\n\n/** Write a draft as `<outputDir>/<name>/SKILL.md`; returns created paths. */\nexport async function writeSkillDraft(fs: HostFs, outputDir: string, draft: SkillDraft): Promise<{ dir: string; path: string }> {\n  const dir = join(outputDir, draft.name)\n  await fs.mkdirp(dir)\n  const path = join(dir, 'SKILL.md')\n  const file = formatFrontmatter({ name: draft.name, description: draft.description }) + draft.content\n  await fs.writeText(path, file)\n  return { dir, path }\n}\n```\n\n</details>\n\n#### 缺口\n\n- 生成技能与目标任务的契合程度及触发稳定性缺少对照。\n  **影响：**结构化草稿不代表技能合意或有效。\n  **进一步探讨：**对固定结构化/散文goal逐条审阅任务步骤，再区分发现、触发与任务质量。\n\n<a id=\"research-q02\"></a>\n\n### Q02 · fromSession 真正进入生成内容吗？\n\n**研究主题：**缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\nskill_new 在 fromSession=true 时调用 extractSessionTail，并把是否找到、长度写入 sessionNote；随后 extractIntent(goal) 和 buildSkillDraft(goal, ...) 仍只传 goal，既没有将 tail 注入抽取，也没有写入草稿。因此 README 所说从会话抽取并入分析在这个提交中与数据流不符：会话仅影响返回文案，不影响 SKILL.md。模型若在调用前自己改写 goal 可以间接带入会话，但那不是工具的 fromSession 能力。建议明确标为仅提示，或在用户许可下真正以可审阅的会话摘要参与草稿生成。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:60-73](https://github.com/988hj7tczd-oss/dsh-skill-creator/blob/f9ff56714decd8d604d97dced494206937c8f907/README.md#L60-L73)\n\n作者声称 fromSession 抽取上下文。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n### 2.1 `skill_new` — 捕获意图生成草稿\n\n| 参数 | 类型 | 说明 |\n| --- | --- | --- |\n| `goal` | string (必填) | 要固化成技能的工作流描述：步骤、工具、输入/输出格式、边界 |\n| `fromSession` | boolean | 尽力从当前会话历史抽取上下文（session 服务不可用时降级） |\n| `name` / `description` | string | 可选覆盖；默认由 goal 生成 |\n| `outputDir` | string | 输出根；默认 `插件 config.outputDir` → `customSkillDirs[0]` → `$DSH_HOME/skills` |\n| `confirm` | boolean | `false`（默认）= 干跑：返回意图抽取 + 澄清问题，不写盘；`true` = 写盘 |\n\n流程（对齐上游 Capture Intent 迭代闭环的第 1–2 步）：\n\n1. `confirm=false` 干跑 → 返回从 goal / 会话抽取的 `steps / tools / formats / gaps` 与**澄清问题**（缺口处让用户补）；\n2. 确认后 `confirm=true` → 生成 `SKILL.md`（frontmatter `name` + `description` + 正文结构：**Workflow / Inputs and outputs / Boundaries / Example**）并写入，同时返回挂载提示。\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/tools/skill-new.ts:68-95](https://github.com/988hj7tczd-oss/dsh-skill-creator/blob/f9ff56714decd8d604d97dced494206937c8f907/src/tools/skill-new.ts#L68-L95)\n\ntail 只用于 sessionNote，生成用 goal。\n\n<details>\n<summary>查看原文（28行）</summary>\n\n```text\n    let sessionNote: string\n    if (fromSession) {\n      const tail = extractSessionTail(ctx.get('session'))\n      sessionNote = tail !== undefined\n        ? `已从会话历史抽取最近片段（约 ${tail.length} 字符）并入分析。`\n        : '当前上下文未提供会话历史（session 服务不可用），仅按 goal 抽取。'\n    } else {\n      sessionNote = '未请求会话历史（fromSession=false）。'\n    }\n\n    const extraction = extractIntent(goal)\n    if (!confirm) {\n      const questions = buildClarifyingQuestions(goal, extraction)\n      return {\n        status: 'needs-confirmation',\n        extraction,\n        questions,\n        sessionNote,\n        message: '请先确认意图：回答上方澄清问题（或直接补充 goal 后重试）；确认无误后以 confirm=true 重新调用以生成 SKILL.md。',\n      }\n    }\n\n    const outputRoot = resolveOutputRoot(ctx, optString(args, 'outputDir'))\n    const draft = buildSkillDraft(goal, {\n      name: optString(args, 'name'),\n      description: optString(args, 'description'),\n    })\n    const written = await writeSkillDraft(fs, outputRoot, draft)\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/lib/tool-env.ts:58-82](https://github.com/988hj7tczd-oss/dsh-skill-creator/blob/f9ff56714decd8d604d97dced494206937c8f907/src/lib/tool-env.ts#L58-L82)\n\nextractSessionTail 返回文本。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n/** Best-effort recent-session tail extraction (session service duck typing). */\nexport function extractSessionTail(session: unknown): string | undefined {\n  if (typeof session !== 'object' || session === null) return undefined\n  const candidate = session as { messages?: unknown; history?: unknown; turns?: unknown }\n  const messages = Array.isArray(candidate.messages)\n    ? candidate.messages\n    : Array.isArray(candidate.history)\n      ? candidate.history\n      : Array.isArray(candidate.turns)\n        ? candidate.turns\n        : undefined\n  if (messages === undefined || messages.length === 0) return undefined\n  const tail: string[] = []\n  for (const message of messages.slice(-6)) {\n    const entry = message as { content?: unknown; text?: unknown }\n    const content = typeof entry.content === 'string'\n      ? entry.content\n      : typeof entry.text === 'string'\n        ? entry.text\n        : undefined\n    if (content !== undefined) tail.push(content)\n  }\n  const text = tail.join('\\n').trim()\n  return text.length > 0 ? text.slice(-3000) : undefined\n}\n```\n\n</details>\n\n#### 缺口\n\n- 未观察模型调用 skill_new 前是否自行将会话写进 goal。\n  **影响：**终端用户感知与实际内容差异待实测。\n  **进一步探讨：**同一 goal 分别以 fromSession false/true 生成并比较字节。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 文件安全和打包保真度怎样？\n\n**研究主题：**依赖、兼容与流程、效果与总成本、采用判断、新假设与验证\n\n#### 完整回答\n\n生成默认写 DSH_HOME/skills，也允许参数直接指定 outputDir；服务端文本写入会先读已有文件，但二进制 ZIP、mkdir/remove 走 Node fs，未见对 outputDir/outDir 的工作区边界限制。打包遍历文件时一律 fs.readText 再 TextEncoder 编入 ZIP，图片、PDF、可执行资源等二进制资产会被 UTF-8 损坏；read 失败的目录会被静默跳过，仍可能产出缺文件包。README 说可打包分发，实际适用于文本型技能，带资源技能需先验证文件清单与哈希。运行期写路径权限、第三方许可、同名覆盖也需按环境评估。\n\n成本分期：首次使用涉及DSH tools/skills 与可写 outputDir，宿主上下文与存储费用依使用量，未知，人工需写清 goal、审 dry-run、选择隔离输出目录；耗时未知；持续使用涉及工具本身为确定性生成/校验/改写/ZIP，占文件IO与存储；工具schema、参数和结果进入宿主模型上下文的费用另依使用量，金额/频率未知，人工需人工校对步骤、frontmatter 与资源哈希；工时未知；失败恢复涉及重新打包或恢复被 commit=true 改写的 SKILL.md 需存储/备份；费用未知，人工需找出被跳过目录/损坏二进制，回滚文件并重审；耗时未知。金额、频次、实际耗时均未有同条件证据，不能填0或推算单位收益。\n\n创新假设推导：Q02 中 fromSession 仅生成 sessionNote、草稿仍只用 goal，Q03 中 readText→TextEncoder 会损坏二进制；相对当前文本型生成/ZIP，若先向用户展示受控会话摘要并按原字节打包且做哈希对比，可扩大可分发资源的可信范围。条件是会话内容授权、字节级 fs 接口和文件清单维护，代价为额外审阅/校验。最小证伪：给同一 goal 两段不同授权摘要及含 PNG 的技能目录，比对草稿差异、ZIP 解包字节哈希；摘要不受控进入、图片哈希不等或静默漏文件即推翻。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/lib/tool-env.ts:26-43](https://github.com/988hj7tczd-oss/dsh-skill-creator/blob/f9ff56714decd8d604d97dced494206937c8f907/src/lib/tool-env.ts#L26-L43)\n\n输出路径优先级及显式任意路径。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n/** Default skill output root: `$DSH_HOME/skills` or `~/.dsh/skills`. */\nexport function defaultSkillsRoot(): string {\n  const dshHome = typeof process !== 'undefined' && process.env.DSH_HOME !== undefined && process.env.DSH_HOME.length > 0\n    ? process.env.DSH_HOME\n    : join(homedir(), '.dsh')\n  return join(dshHome, 'skills')\n}\n\n/** Resolve the skill output root: arg > config.outputDir > customSkillDirs[0] > default. */\nexport function resolveOutputRoot(ctx: ToolRunContext, explicit?: string): string {\n  if (explicit !== undefined && explicit.trim().length > 0) return explicit.trim()\n  const config = readCreatorConfig(ctx)\n  if (config.outputDir !== undefined && config.outputDir.trim().length > 0) return config.outputDir.trim()\n  if (config.customSkillDirs !== undefined && config.customSkillDirs.length > 0 && config.customSkillDirs[0]!.trim().length > 0) {\n    return config.customSkillDirs[0]!.trim()\n  }\n  return defaultSkillsRoot()\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/lib/fs-adapter.ts:99-143](https://github.com/988hj7tczd-oss/dsh-skill-creator/blob/f9ff56714decd8d604d97dced494206937c8f907/src/lib/fs-adapter.ts#L99-L143)\n\n服务写前读，二进制/目录走 Node。\n\n<details>\n<summary>查看原文（45行）</summary>\n\n```text\n/** Adapter over the fs service; mutations honour read-before-write. */\nexport function serviceHostFs(fs: FileSystemLike, signal?: AbortSignal): HostFs {\n  return {\n    async stat(path) {\n      abortIf(signal)\n      const target = await fs.resolve(path, { signal })\n      const info = await fs.stat(target, signal)\n      if (info === undefined) return undefined\n      const type: FsTargetType = info.type === 'file' ? 'file' : info.type === 'directory' ? 'dir' : 'other'\n      return { type, size: info.size ?? 0 }\n    },\n    async readText(path) {\n      abortIf(signal)\n      const target = await fs.resolve(path, { signal })\n      return await fs.readText(target, signal)\n    },\n    async writeText(path, content) {\n      abortIf(signal)\n      const target = await fs.resolve(path, { signal })\n      const existing = await fs.stat(target, signal)\n      if (existing !== undefined) {\n        // Observation policy: read the current content before overwriting it.\n        await fs.readText(target, signal)\n      }\n      await fs.writeText(target, content, undefined, signal)\n    },\n    async writeBin(path, data) {\n      // The fs service is text-only; binary artifacts are host-side.\n      abortIf(signal)\n      await mkdir(dirname(path), { recursive: true })\n      await writeFile(path, data)\n    },\n    async listDir(path) {\n      abortIf(signal)\n      const target = await fs.resolve(path, { signal })\n      const entries = await fs.listDir(target, signal)\n      return entries.map((entry) => entry.name)\n    },\n    async mkdirp(path) {\n      await mkdir(path, { recursive: true })\n    },\n    async remove(path) {\n      await rm(path, { recursive: true, force: true })\n    },\n  }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/lib/package-skill.ts:60-94](https://github.com/988hj7tczd-oss/dsh-skill-creator/blob/f9ff56714decd8d604d97dced494206937c8f907/src/lib/package-skill.ts#L60-L94)\n\n遍历读取失败跳过。\n\n<details>\n<summary>查看原文（35行）</summary>\n\n```text\n/** Recursively collect packageable files under a skill directory. */\nexport async function collectSkillFiles(fs: HostFs, skillDir: string): Promise<CollectedSkill> {\n  const name = basename(skillDir)\n  const files: CollectedFile[] = []\n  async function walk(current: string): Promise<void> {\n    let entries: string[]\n    try {\n      entries = await fs.listDir(current)\n    } catch {\n      return\n    }\n    for (const entry of entries) {\n      const abs = join(current, entry)\n      const rel = relative(skillDir, abs).split(sep).join('/')\n      let isDir = false\n      let isFile = false\n      try {\n        const info = await fs.stat(abs)\n        if (info === undefined) continue\n        isDir = info.type === 'dir'\n        isFile = info.type === 'file'\n      } catch {\n        // unreadable entry: skip\n      }\n      if (shouldExcludeSkillPath(rel, isDir)) continue\n      if (isDir) {\n        await walk(abs)\n      } else if (isFile) {\n        files.push({ abs, rel })\n      }\n    }\n  }\n  await walk(skillDir)\n  return { name, files }\n}\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/lib/package-skill.ts:108-129](https://github.com/988hj7tczd-oss/dsh-skill-creator/blob/f9ff56714decd8d604d97dced494206937c8f907/src/lib/package-skill.ts#L108-L129)\n\n打包一律 readText/TextEncoder。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\nexport async function packSkillDir(fs: HostFs, skillDir: string, outDir?: string): Promise<SkillPackageResult> {\n  const validation = await validateSkillDir(fs, skillDir)\n  if (!validation.ok) {\n    throw new Error(`packSkill: validation failed:\\n${formatChecks(validation.checks)}`)\n  }\n  const collected = await collectSkillFiles(fs, skillDir)\n  if (collected.files.length === 0) {\n    throw new Error('packSkill: no files to package')\n  }\n\n  const entries: ZipEntry[] = [{ name: `${collected.name}/`, data: new Uint8Array(0) }]\n  for (const file of collected.files) {\n    const content = await fs.readText(file.abs)\n    entries.push({ name: `${collected.name}/${file.rel}`, data: new TextEncoder().encode(content) })\n  }\n  const zipBytes = buildZip(entries)\n\n  const outPath = outDir !== undefined && outDir.length > 0\n    ? join(outDir, `${collected.name}.skill`)\n    : join(dirname(skillDir), `${collected.name}.skill`)\n  await fs.mkdirp(dirname(outPath))\n  await fs.writeBin(outPath, zipBytes)\n```\n\n</details>\n\n**依据 5 · 作者声明**：[README.md:90-96](https://github.com/988hj7tczd-oss/dsh-skill-creator/blob/f9ff56714decd8d604d97dced494206937c8f907/README.md#L90-L96)\n\n作者称打包 skill zip。\n\n```text\n### 2.3 `skill_package` — 打包 `.skill`（zip）\n\n参数：`path`（必填）、`outDir`（可选，默认技能目录的父目录）。**打包前先跑 `skill_validate`，校验失败拒绝打包。**\n\n排除规则（移植自上游 `package_skill.py`）：`__pycache__/`、`node_modules/`（任意深度）、`*.pyc`（任意深度）、`.DS_Store`（任意深度）、技能根级 `evals/`（仅根级；深层 `evals` 保留）。\n\n产物结构：`<skill-name>/ + 内容`，输出 `<outDir>/<skill-name>.skill`。zip 使用 store 方式（`src/lib/zip.ts` 内建最小 ZIP 读写，零依赖，便于离线测试与验证）。\n```\n\n#### 缺口\n\n- 文本化打包的资源受损范围、漏文件覆盖与目标环境路径权限缺少对照。\n  **影响：**源码已识别字节保真风险，不能据此界定所有资源和部署的实际损失范围。\n  **进一步探讨：**以合成二进制及目录清单做原/解包字节对照，并单独核路径策略与覆盖。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：18414ee85e4737639fee759d125737ffc99fe3230124809dbc70f070eca789b7。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 3 | 299 | — | — | 3753 |\n| .ts | source | 16 | 2129 | 1706 | 272 | — |\n| .ts | test | 1 | 212 | 158 | 29 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| skill_new | 由 goal 规则抽取并生成 SKILL.md；默认 dry-run | confirm=true 才写文件；fromSession 仅改变说明，不进入草稿 |\n| skill_validate | 检查既有技能的 frontmatter/结构 | 不验证语义质量或运行效果 |\n| skill_package | 把技能目录输出 ZIP | readText→TextEncoder 不保二进制，失败目录可能跳过 |\n| skill_improve_description | 按规则改写 description | commit=true 才写回 SKILL.md；需审变更 |\n| 运行期 provider | 从输出目录向 ctx.skills 提供技能 | 仅 ctx.skills 可用时挂载；不是第五个模型工具 |\n\n## 工程亮点\n\n插件注入 tools，ctx.skills 可用时挂载目录；HostFs 优先服务但二进制与目录操作回退 Node。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、src/index.ts、src/tools/skill-new.ts、src/lib/draft.ts、src/lib/tool-env.ts、src/lib/fs-adapter.ts、src/lib/package-skill.ts、src/lib/provider.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：静态审阅固定提交的 README、四工具装配、草稿/环境/FS/打包源码；未运行目标插件或打包。 普通安装、宿主加载及目标测试属本轮范围边界，具体机制/效果未知仍在逐题缺口保留。\n- 下一步：同 goal 开关 fromSession 比较输出；含 PNG 的技能打包解包比哈希；隔离 DSH profile 核对 provider 挂载。\n",
         "metadata": {
             "repository": "988hj7tczd-oss/dsh-skill-creator",
             "repository_id": 1344713683,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T06:39:39.587Z",
+            "window_start": "2026-09-22T06:39:39.587Z",
             "stars": 0,
             "pushed_at": "2026-08-24T14:53:25Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-skill-creator%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6419:D1FDD:14D095:229B77:6AD84AE3 and timestamp 2026-10-21 05:17:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-skill-creator%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641B:E4386:155123:2302F1:6AD84AE3 and timestamp 2026-10-21 05:17:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-skill-creator%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641C:1CA4C8:14E89B:22A642:6AD84AE3 and timestamp 2026-10-21 05:17:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-skill-creator%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6418:1DEEF7:14E7D3:22A4D9:6AD84AE3 and timestamp 2026-10-21 05:17:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-skill-creator%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641D:1F2B1B:14D82F:228922:6AD84AE4 and timestamp 2026-10-21 05:17:24 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "dsh-skill-creator",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 790,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-skill-creator",
+                "captured_at": "2026-10-22T06:39:48.075Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 762,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-skill-creator",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-08-18T02:46:00.214Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T06:39:48.075Z",
                     "source_url": "https://registry.npmjs.org/dsh-skill-creator",
                     "error": null,
                     "latest_version": "0.1.0",
                     "latest_published_at": "2026-08-18T02:46:00.421Z",
                     "latest_error": null
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "f9ff56714decd8d604d97dced494206937c8f907",
-                "current_revision": "f9ff56714decd8d604d97dced494206937c8f907",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {
