@@ -166,7 +166,7 @@
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标：**核实 Rust rust-analyzer 薄包的装配边界、工具链依赖与降级。
+**插件研究总目标**：核实 Rust rust-analyzer 薄包的装配边界、工具链依赖与降级。
 
 <a id="research-q01"></a>
 
@@ -174,7 +174,7 @@
 
 ### Q01 · Rust 导航功能由配置包还是 rust-analyzer/共享基座提供？
 
-**研究主题：**场景与需求、贡献与相对优势、功能与机制
+**研究主题**：场景与需求、贡献与相对优势、功能与机制
 
 #### 完整回答
 
@@ -266,8 +266,8 @@ export async function apply(ctx: Context, config: Config): Promise<void> {
 #### 缺口
 
 - Cargo workspace中的真实导航正确性与首次索引负担缺少对照。
-  **影响：**不能从rust-analyzer启动链推断宏或跨crate查询质量。
-  **进一步探讨：**以带已知定义位置的Cargo夹具比较四项导航和首次索引资源。
+  **影响**：不能从rust-analyzer启动链推断宏或跨crate查询质量。
+  **进一步探讨**：以带已知定义位置的Cargo夹具比较四项导航和首次索引资源。
 
 <a id="research-q02"></a>
 
@@ -275,7 +275,7 @@ export async function apply(ctx: Context, config: Config): Promise<void> {
 
 ### Q02 · 缺服降级是否保留自定义扩展并准确区分故障？
 
-**研究主题：**工程质量与复用、缺陷与关键质疑
+**研究主题**：工程质量与复用、缺陷与关键质疑
 
 #### 完整回答
 
@@ -413,8 +413,8 @@ accepted (`command`, `args`, `env`, `extensionToLanguage`, `initializationOption
 #### 缺口
 
 - 未构造配置错误或额外扩展故障
-  **影响：**用户可见错误类型待验证
-  **进一步探讨：**隔离测试命令缺失、非法配置、.xyz 路由
+  **影响**：用户可见错误类型待验证
+  **进一步探讨**：隔离测试命令缺失、非法配置、.xyz 路由
 
 <a id="research-q03"></a>
 
@@ -422,7 +422,7 @@ accepted (`command`, `args`, `env`, `extensionToLanguage`, `initializationOption
 
 ### Q03 · 在 Rust 工程采用的条件和证据范围是什么？
 
-**研究主题：**依赖、兼容与流程、效果与总成本、采用判断、新假设与验证
+**研究主题**：依赖、兼容与流程、效果与总成本、采用判断、新假设与验证
 
 #### 完整回答
 
@@ -634,7 +634,7 @@ describe.skipIf(!installed)('dsh-lsp-rust real server (rust-analyzer)', () => {
 #### 缺口
 
 - 宏、跨crate依赖和工程规模下的导航适用范围与资源曲线未知。
-  **影响：**不能承诺复杂工程的准确率和资源上限。
-  **进一步探讨：**固定工具链与服务版本，按宏/跨crate/规模分组比较查询位置、索引时间和内存。
+  **影响**：不能承诺复杂工程的准确率和资源上限。
+  **进一步探讨**：固定工具链与服务版本，按宏/跨crate/规模分组比较查询位置、索引时间和内存。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

@@ -165,7 +165,7 @@
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标：**核实 Pyright 包的双扩展路由、语言服务器前提及 fallback 的配置保真度。
+**插件研究总目标**：核实 Pyright 包的双扩展路由、语言服务器前提及 fallback 的配置保真度。
 
 <a id="research-q01"></a>
 
@@ -173,7 +173,7 @@
 
 ### Q01 · Python 导航和类型分析从哪里来？
 
-**研究主题：**场景与需求、贡献与相对优势、功能与机制
+**研究主题**：场景与需求、贡献与相对优势、功能与机制
 
 #### 完整回答
 
@@ -267,8 +267,8 @@ export async function apply(ctx: Context, config: Config): Promise<void> {
 #### 缺口
 
 - .py/.pyi及不同环境配置下四项导航和类型信息的实际适用范围缺少对照。
-  **影响：**不能从Pyright注册推断所有项目的导航或诊断能力。
-  **进一步探讨：**用含.py/.pyi与已知定义位置的项目区分导航结果和类型诊断。
+  **影响**：不能从Pyright注册推断所有项目的导航或诊断能力。
+  **进一步探讨**：用含.py/.pyi与已知定义位置的项目区分导航结果和类型诊断。
 
 <a id="research-q02"></a>
 
@@ -276,7 +276,7 @@ export async function apply(ctx: Context, config: Config): Promise<void> {
 
 ### Q02 · 缺少服务器和自定义扩展时会发生什么？
 
-**研究主题：**工程质量与复用、缺陷与关键质疑
+**研究主题**：工程质量与复用、缺陷与关键质疑
 
 #### 完整回答
 
@@ -413,8 +413,8 @@ export async function apply(ctx: Context, config: Config): Promise<void> {
 #### 缺口
 
 - 未在宿主构造配置失败或自定义扩展查询。
-  **影响：**错误分类和路由丢失的用户可见症状待验证。
-  **进一步探讨：**以无 server、非法配置和 .xyz 自定义扩展隔离加载对比。
+  **影响**：错误分类和路由丢失的用户可见症状待验证。
+  **进一步探讨**：以无 server、非法配置和 .xyz 自定义扩展隔离加载对比。
 
 <a id="research-q03"></a>
 
@@ -422,7 +422,7 @@ export async function apply(ctx: Context, config: Config): Promise<void> {
 
 ### Q03 · 测试和采用条件有哪些？
 
-**研究主题：**依赖、兼容与流程、效果与总成本、采用判断、新假设与验证
+**研究主题**：依赖、兼容与流程、效果与总成本、采用判断、新假设与验证
 
 #### 完整回答
 
@@ -590,7 +590,7 @@ describe.skipIf(!installed)('dsh-lsp-pyright real server (pyright-langserver)', 
 #### 缺口
 
 - venv和pyrightconfig差异、项目规模对资源与查询质量的影响未知。
-  **影响：**无法给出跨环境兼容与性能上限。
-  **进一步探讨：**固定配置与服务版本，分层比较索引资源和查询结果。
+  **影响**：无法给出跨环境兼容与性能上限。
+  **进一步探讨**：固定配置与服务版本，分层比较索引资源和查询结果。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

@@ -182,7 +182,7 @@
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标：**核查文本主模型视觉桥的请求、语义与隐私边界及采用成本。
+**插件研究总目标**：核查文本主模型视觉桥的请求、语义与隐私边界及采用成本。
 
 <a id="research-q01"></a>
 
@@ -190,7 +190,7 @@
 
 ### Q01 · 谁需要视觉桥，如何判断任务完成？
 
-**研究主题：**场景与需求
+**研究主题**：场景与需求
 
 #### 完整回答
 
@@ -260,7 +260,7 @@ function buildVisionPrompt(messages, attachmentRef, imageIndex, imageTotal, cfg)
 
 ### Q02 · 图片能力覆盖、附件读取和surface替换如何运行？
 
-**研究主题：**功能与机制
+**研究主题**：功能与机制
 
 #### 完整回答
 
@@ -454,7 +454,7 @@ async function performDescribeImage(ctx, apiKey, cfg, attachmentRef, prompt, sig
 
 ### Q03 · 相对手工视觉工具的增量和关键缺陷是什么？
 
-**研究主题：**贡献与相对优势、缺陷与关键质疑
+**研究主题**：贡献与相对优势、缺陷与关键质疑
 
 #### 完整回答
 
@@ -664,11 +664,11 @@ function buildVisionPrompt(messages, attachmentRef, imageIndex, imageTotal, cfg)
 #### 缺口
 
 - 图像文字、图表和空间关系的识别损失没有同任务对照。
-  **影响：**不能确认桥接答案接近原生视觉质量。
-  **进一步探讨：**可用已标注截图和图表比较视觉观察、主模型回答及原生视觉回答的关键事实错误。
+  **影响**：不能确认桥接答案接近原生视觉质量。
+  **进一步探讨**：可用已标注截图和图表比较视觉观察、主模型回答及原生视觉回答的关键事实错误。
 - 更改prompt/上下文后的旧观察复用与响应body慢读尚未复现。
-  **影响：**语义缓存可能不反映新意图，超时可能超过用户预期。
-  **进一步探讨：**可用相同message位置改变prompt、受控延迟body夹具核对缓存失效及总时限。
+  **影响**：语义缓存可能不反映新意图，超时可能超过用户预期。
+  **进一步探讨**：可用相同message位置改变prompt、受控延迟body夹具核对缓存失效及总时限。
 
 <a id="research-q04"></a>
 
@@ -676,7 +676,7 @@ function buildVisionPrompt(messages, attachmentRef, imageIndex, imageTotal, cfg)
 
 ### Q04 · 依赖、数据保留与退出流程是什么？
 
-**研究主题：**依赖、兼容与流程
+**研究主题**：依赖、兼容与流程
 
 #### 完整回答
 
@@ -820,7 +820,7 @@ function persistObservations(cfg, store) {
 
 ### Q05 · 首次、持续和失败恢复成本及效果如何计量？
 
-**研究主题：**效果与总成本
+**研究主题**：效果与总成本
 
 #### 完整回答
 
@@ -982,8 +982,8 @@ async function performDescribeImage(ctx, apiKey, cfg, attachmentRef, prompt, sig
 #### 缺口
 
 - 缺少同图片任务双模型桥接与原生视觉的完整费用、延迟及正确率对照。
-  **影响：**不能判断桥接总成本更低或质量相当。
-  **进一步探讨：**可固定图片和问题，分别记录视觉/主模型usage、失败、人工复核与最终事实正确率。
+  **影响**：不能判断桥接总成本更低或质量相当。
+  **进一步探讨**：可固定图片和问题，分别记录视觉/主模型usage、失败、人工复核与最终事实正确率。
 
 <a id="research-q06"></a>
 
@@ -991,7 +991,7 @@ async function performDescribeImage(ctx, apiKey, cfg, attachmentRef, prompt, sig
 
 ### Q06 · 工程设计可复用什么，溯源假设如何检验？
 
-**研究主题：**工程质量与复用、新假设与验证
+**研究主题**：工程质量与复用、新假设与验证
 
 #### 完整回答
 
@@ -1137,7 +1137,7 @@ function rememberObservation(store, key, text) {
 
 ### Q07 · 谁适合受控试用，何时应停止？
 
-**研究主题：**采用判断
+**研究主题**：采用判断
 
 #### 完整回答
 

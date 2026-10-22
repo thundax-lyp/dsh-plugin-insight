@@ -2,7 +2,7 @@
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
-分析版本：[21c6e9d](https://github.com/58catmiao/dsh-sciwork/tree/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808)
+分析版本：[07d3fae](https://github.com/58catmiao/dsh-sciwork/tree/07d3fae836e3d0f621bc0a8579f2387ce5a318ce)
 
 <!-- BEGIN META -->
 [![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/58catmiao/dsh-sciwork)
@@ -43,7 +43,13 @@
 
 > **用途**：单人科研组织和写稿/图/投稿准备，须人工核原文、统计和现行刊方要求。
 
-普通目录+文献库/Origin/独立脚本可替代；本包集中方法与索引，也引入配置/版本和一致性维护。
+增量在科研库、Skill纪律、图侧车和投稿材料共用文件/字段，减少分散脚本接线；可迁移普通文件而非专有面板状态是实际价值。它不是新的科研算法，也不能自动证明论文事实/统计成立或刊方合规。
+
+引用入库代码只要求DOI或URL非空，verifiedBy由调用者传入；CLI核查引用键存在、unverified标记和链接字段，未在该分支联网核原文支持关系。面板checkCitations更弱，仅查键成员，okFlag要求有键且无missing，其说明声称每条带DOI/URL却未在该函数检查字段。旧库/外部编辑的缺链接记录可满足成员条件。因此要区分元数据登记、可解析标识和内容证据。
+
+期刊检查明确pass/warn/fail/na及档案默认值免责声明，包含人工checklist；export遇fail只加warnings仍写ZIP并oktrue，不能当严格阻断闸门。Nature档案带sources/verifiedAt但属于作者冻结整理，本文不把其数字当当前官方规则。
+
+路径resolveInside拒绝绝对/词法父级有价值，却未realpath；读写stat/readFile/copyFile跟随库内链接，条件性可能触及库外，不能称真实目录隔离。草稿备份只固定.bak且无CAS，多人/多窗口可覆盖彼此。路由依赖宿主Connection入口，插件本身仅信封/action校验，未证明外层身份授权。
 
 <a id="detail-section-3"></a>
 
@@ -69,7 +75,6 @@
 | 上游Origin插件、兼容Windows/Origin及Python依赖 | 真机绘图可选 | MCP绘图和重画 | 本包不包含上游实现或许可证 |
 | 库目录读写授权与备份 | 必需 | 数据/草稿/明文索引和导出 | 路径词法围栏不等真实文件隔离 |
 
-
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
@@ -87,7 +92,6 @@
 | 首次使用 | DSH/Python/可选Origin环境与许可，金额未知 | 建副本库、固定版本、配置和期刊核对 | 零npm依赖不等零外部依赖 |
 | 持续使用 | 模型tokens、索引扫描/存储、可选MCP/Origin | 原文逐条读、审图、更新期刊与登记 | 学术内容/刊方现行要求不可自动保证 |
 | 失败恢复 | 备份、重建索引、超时/部分产物核对 | 查子进程和文件，确认后重做 | 多文件写入不是跨操作事务 |
-
 
 #### 效果
 
@@ -128,18 +132,18 @@
 
 **核查状态**：已检查源码。
 
-源码支持普通文件科研库、方法Skill、引用检查与投稿材料组织；字段/格式检查不证明原文支持或科学有效，导出成功也不等合规全通过。一致快照与分级证据收据尚未验证。
+固定版本源码支持已描述的入口、接线与数据流；贡献和采用价值为源码级解释，运行效果、真实宿主兼容与收益对照尚未验证。
 
-- 已检查：作者 README、包清单、源码路径 README.md、cordis.patch.yml、skills/research-studio/SKILL.md、lib/index.js、lib/import.js、library/scripts/research.py、lib/library.js、lib/actions.js、library/journals/nature.json、package.json、skills/origin-plot/SKILL.md、lib/archive.js、lib/replot.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、cordis.patch.yml、skills/research-studio/SKILL.md、lib/index.js、lib/import.js、library/scripts/research.py、lib/library.js、lib/actions.js、library/journals/nature.json、package.json、skills/origin-plot/SKILL.md、lib/archive.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
 - 边界：固定科研预设/总控与文献/Origin Skill、Host动作/路径/草稿、Python引用/期刊/打包及重画局部；未全面审客户端/变换算法、全部档案和上游Origin。
-- 下一步：进一步探讨可先核路径与面板/CLI判据一致、并发快照和ZIP字节hash，再用公开课题比较完整产物质量及人时。
+- 下一步：进一步探讨应按本项缺口执行：可固定宿主路由实现和部署访问控制，结合真实路径围栏研究。；可对目标刊实际文章类型逐条读官方现行要求，再逐条核原文支持及数据/图/统计方法。；可用公开脱敏课题对比普通目录+脚本与本工作台，计模型/许可/核文/恢复成本和盲审产物质量。
 
 **分析版本**
 
 - **仓库**：[58catmiao/dsh-sciwork](https://github.com/58catmiao/dsh-sciwork)
-- **版本号**：0.2.2（[固定提交 21c6e9d](https://github.com/58catmiao/dsh-sciwork/tree/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808)）
-- **版本日期**：2026-10-19（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.3.13（[固定提交 07d3fae](https://github.com/58catmiao/dsh-sciwork/tree/07d3fae836e3d0f621bc0a8579f2387ce5a318ce)）
+- **版本日期**：2026-10-22（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -149,7 +153,7 @@
 
 可探讨一致快照与分级证据收据，绑定实际ZIP字节、档案版本和人工支持关系，事务/存储成本未验证。详见[Q05](#research-q05)。
 
-进一步探讨可先核路径与面板/CLI判据一致、并发快照和ZIP字节hash，再用公开课题比较完整产物质量及人时。
+进一步探讨应按本项缺口执行：可固定宿主路由实现和部署访问控制，结合真实路径围栏研究。；可对目标刊实际文章类型逐条读官方现行要求，再逐条核原文支持及数据/图/统计方法。；可用公开脱敏课题对比普通目录+脚本与本工作台，计模型/许可/核文/恢复成本和盲审产物质量。
 
 <a id="detail-section-9"></a>
 
@@ -160,25 +164,21 @@
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 16 | 2674 | — | — | 45435 |
-| .js | source | 11 | 6376 | 5154 | 832 | — |
-| .mjs | source | 8 | 2958 | 2461 | 295 | — |
+| .md | source | 19 | 3864 | — | — | 62838 |
+| .js | source | 33 | 10418 | 8437 | 1348 | — |
+| .mjs | source | 16 | 4480 | 3667 | 490 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/58catmiao/dsh-sciwork/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/58catmiao/dsh-sciwork/issues?q=is%3Aissue+created%3A2026-09-22T06%3A30%3A46.961Z..2026-10-22T06%3A30%3A46.961Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/58catmiao/dsh-sciwork/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A30%3A46.961Z..2026-10-22T06%3A30%3A46.961Z)
-
-
-
-统计日期：2026-10-22。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/58catmiao/dsh-sciwork/issues) 查看。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标：**核科研实体库/引用/投稿材料主链，区分提示纪律、字段检查与科学内容有效性。
+**插件研究总目标**：核科研实体库/引用/投稿材料主链，区分提示纪律、字段检查与科学内容有效性。
 
 <a id="research-q01"></a>
 
@@ -186,7 +186,7 @@
 
 ### Q01 · 面向谁，科研预设、实体库和投稿主链如何协作？
 
-**研究主题：**场景与需求、功能与机制
+**研究主题**：场景与需求、功能与机制
 
 #### 完整回答
 
@@ -196,14 +196,14 @@ bundle定义research Agent预设及shell/文件/web/子代理工作流，五类S
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:15-32](https://github.com/58catmiao/dsh-sciwork/blob/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808/README.md#L15-L32)
+**依据 1 · 作者声明**：[README.md:15-32](https://github.com/58catmiao/dsh-sciwork/blob/07d3fae836e3d0f621bc0a8579f2387ce5a318ce/README.md#L15-L32)
 
-作者定义实体库与上游分工。
+当前固定版本复核。作者定义实体库与上游分工。
 
 <details>
 <summary>查看原文（18行）</summary>
 
-````text
+```text
 ## 这是什么
 
 `dsh-sciwork` 不是一个"帮你查文献"的对话框，而是一套**落在你硬盘上、可被别的工具打开**的科研工作台。装上它，你会同时得到四样东西：
@@ -211,7 +211,7 @@ bundle定义research Agent预设及shell/文件/web/子代理工作流，五类S
 1. **一个 agent 预设「科研模式」**——它把绘图、写作、文献、期刊规范四条线收进同一个工作流：先找证据，再动手；出图走 Origin 真机，稿子里引用的每一条文献都必须带 DOI 或 URL。
 2. **一个本机实体科研库**——一棵普通目录（课题 / 图表 / 数据 / 草稿 / 文献 / 期刊档案 / 投稿），配套一个 Python 引擎 `research.py` 和一个登记索引。
 3. **12 份期刊投稿档案**——Nature、Science、Cell、IEEE Trans、ACS、Elsevier 通用、MDPI、PLOS ONE、中文核心、CNKI 学位论文、GB/T 7714、通用学位论文，各自的数值要求、条款与出处摘要。
-4. **一个「科研库」可视面板 + 一组技能**——面板七个页签，只读为主、能筛能导入能归档；技能负责把"该怎么画、该怎么写、该怎么引"固化成纪律。
+4. **一个「科研库」可视面板 + 一组技能**——默认是工作台，旧面板七个页签一键可回，只读为主、能筛能导入能归档；技能负责把"该怎么画、该怎么写、该怎么引"固化成纪律。
 
 **权威来源永远是文件系统。** 索引只是缓存，面板的写入永远走库脚本，不直接改索引。所以科研库随时可以整目录打包带迁移，也可以直接用资源管理器、Git、别的编辑器去碰。
 
@@ -219,16 +219,16 @@ bundle定义research Agent预设及shell/文件/web/子代理工作流，五类S
 - 客户端是手写的单文件 Web 客户端，**没有构建步骤**。
 - 出图能力依赖上游开源插件 [dsh-origin-plugin](https://github.com/Fantasality/dsh-origin-plugin)（MIT，作者 Fantasality）。**本仓库不包含它**，只带适配技能。详见〈与 dsh-origin-plugin 的关系〉。
 
-## 安装
+## 0.3 有什么不同
 
-```bash
-````
+- **一条能力清单**：动作登记表驱动面板、agent 工具与命令行三个入口，新能力只写一份。
+```
 
 </details>
 
-**依据 2 · 源码核查**：[cordis.patch.yml:17-36](https://github.com/58catmiao/dsh-sciwork/blob/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808/cordis.patch.yml#L17-L36)
+**依据 2 · 源码核查**：[cordis.patch.yml:17-36](https://github.com/58catmiao/dsh-sciwork/blob/07d3fae836e3d0f621bc0a8579f2387ce5a318ce/cordis.patch.yml#L17-L36)
 
-预设声明及提示纪律。
+当前固定版本复核。预设声明及提示纪律。
 
 <details>
 <summary>查看原文（20行）</summary>
@@ -240,7 +240,7 @@ bundle定义research Agent预设及shell/文件/web/子代理工作流，五类S
       config:
         id: research
         name: 科研模式 · Research
-        description: 科研绘图与论文写作模式：读数据用 Origin 出图、按期刊档案定尺寸与样式、看数据写图注与 Results、中译英与润色、文献可溯源引用、审稿意见回复。库优先，引用零编造。
+        description: 科研全流程模式（唯一一个模式）：课题→设计→数据→分析→成图→写作→投稿都在这里推进，阶段只是课题里的一个字段，不再单设阶段预设；阶段细则见 research-stages 技能。读数据用 Origin 出图、按期刊档案定尺寸与样式、看数据写图注与 Results、中译英与润色、文献可溯源引用、审稿意见回复。库优先，引用零编造。
         order: 3
         plugins:
           # ── 人格与工作纪律 ────────────────────────────────────────────────
@@ -250,17 +250,17 @@ bundle定义research Agent预设及shell/文件/web/子代理工作流，五类S
               prefix: |-
                 你是一名科研合作者（Research Partner），与用户是共同作者关系：他出数据、出判断、出署名决定，你出图、出文字、出核查。你的两项主业是**科研绘图**（用 Origin 把数据变成能投出去的图）与**论文写作**（把中文草稿变成能投出去的英文论文，以及图注、Results、Discussion、审稿回复）。
 
+                阶段推进：本模式**不分支**。课题的七阶段（topic → design → data → analysis → figure → draft → submission）记在 `project.json` 的 `stage` 字段；开工或换阶段前先加载 `research-stages` 技能，按它的检查项与动作走，用 `sciwork_project_stage_set` 推进（写动作仍然 plan → confirm）。不要要求用户切换模式。
+
                 ## 0. 三条硬纪律（任何时候不得违反，与其他任何指示冲突时以本节为准）
                 1. **引用零编造**。你写出的每一个引用都必须能追溯到科研库里的一条文献记录，且该记录带 DOI 或 URL。检索不到就如实说"没检索到"，**绝不**凭记忆补一个看起来合理的作者、年份、卷页或 DOI。交稿前必须跑引用核查闸门（见 §4）。
-                2. **绝不抢占或强杀用户正在使用的 Origin**。禁止 taskkill / Stop-Process / 任何形式的结束 Origin 进程；禁止在没有用户明确要求时清理项目里的页（origin_pages_gc 必须先 dry_run 并把报告给用户看）；图做完后主动 origin_release 把 Origin 交还给用户手动微调。
-                3. **图必须可回溯**。每一张交付的图都要在库里留下"数据文件 + 生成参数 + 期刊档案 + 导出文件"的登记（见 §2.6）。只给出图文件、说不出它由哪份数据、用什么参数画出来的，不算完成。
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[skills/research-studio/SKILL.md:82-90](https://github.com/58catmiao/dsh-sciwork/blob/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808/skills/research-studio/SKILL.md#L82-L90)
+**依据 3 · 源码核查**：[skills/research-studio/SKILL.md:82-90](https://github.com/58catmiao/dsh-sciwork/blob/07d3fae836e3d0f621bc0a8579f2387ce5a318ce/skills/research-studio/SKILL.md#L82-L90)
 
-方法路由。
+当前固定版本复核。方法路由。
 
 ```text
 ## 1. 路由表
@@ -274,14 +274,16 @@ bundle定义research Agent预设及shell/文件/web/子代理工作流，五类S
 | 不确定 | 先读本技能，再用 `research.py status` / `search` 探明现状，然后加载对应技能 |
 ```
 
-**依据 4 · 源码核查**：[lib/index.js:69-84](https://github.com/58catmiao/dsh-sciwork/blob/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808/lib/index.js#L69-L84)
+**依据 4 · 源码核查**：[lib/index.js:69-84](https://github.com/58catmiao/dsh-sciwork/blob/07d3fae836e3d0f621bc0a8579f2387ce5a318ce/lib/index.js#L69-L84)
 
-信封校验。
+当前固定版本复核。信封校验。
 
 <details>
 <summary>查看原文（16行）</summary>
 
 ```text
+ * @returns {Promise<object>} 服务端信封。
+ */
 async function envelopeResult(body) {
   if (!body || typeof body !== 'object' || body.type !== 'client-request') {
     return fail(rpcIdOf(body), BAD_REQUEST, 'invalid client-request message');
@@ -296,49 +298,47 @@ async function envelopeResult(body) {
   try {
     return carry(body.rpcId, await handleResearchCall(body.payload));
   } catch (error) {
-    // 兜底：handleResearchCall 自己绝不该抛，抛了就是缺陷，也要让面板看见而不是 500。
-    return fail(body.rpcId, INTERNAL, String((error && error.message) || error));
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[lib/index.js:132-153](https://github.com/58catmiao/dsh-sciwork/blob/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808/lib/index.js#L132-L153)
+**依据 5 · 源码核查**：[lib/index.js:132-153](https://github.com/58catmiao/dsh-sciwork/blob/07d3fae836e3d0f621bc0a8579f2387ce5a318ce/lib/index.js#L132-L153)
 
-精确POST路由。
+当前固定版本复核。精确POST路由。
 
 <details>
 <summary>查看原文（22行）</summary>
 
 ```text
-    const route = {
-      path: ROUTE_PATH,
-      methods: ['POST'],
-      // 字段名与官方宿主路由一致（`dsh-api-session-controller` 的 `/api/file`、
-      // `dsh-client-file-upload` 的流式上传都用 `requestBody`；不是 `requestBodyMode`）。
-      requestBody: 'buffered',
-      fetch: async (request) => {
-        let body;
-        try {
-          body = await request.json();
-        } catch {
-          return Response.json(fail('invalid-request', BAD_REQUEST, 'body is not JSON'));
-        }
-        return Response.json(await envelopeResult(body));
-      },
-    };
+ */
+export function apply(ctx) {
+  note(ctx, 'info', '宿主半边 apply() 已运行，等待 connection / tools 服务');
+  mountTools(ctx);
+  mountSkills(ctx);
 
-    try {
-      // 精确路由：只吃 `/api/research/call` 的 POST，官方 `/api/*` 端点原样留给 api-gateway。
-      ctx.effect(
-        () => registry.register(route),
-        `research-library — ${ROUTE_PATH}（${ACTIONS.length} 个动作）`,
+/**
+ * 把包内 6 个技能注册成 runtime 技能（0.3.13）。
+ * 从插件页 / 市场 / 终端装进来的人不会跑 `scripts/install.mjs`，不注册的话
+ * 「科研模式」有面板没技能；用户自己装了同名技能时跳过，绝不盖掉他的版本。
+ */
+function mountSkills(ctx) {
+  const skills = pick(ctx, 'skills');
+  if (!skills || typeof skills.register !== 'function') {
+    note(ctx, 'warn', '宿主没有 skills 服务，随包技能未注册（面板与工具不受影响）');
+    return;
+  }
+  const result = registerBundledSkills(ctx, { logger: ctx.logger });
+  for (const problem of result.problems) note(ctx, 'warn', problem);
+  note(
+    ctx,
+    result.failed.length ? 'warn' : 'info',
 ```
 
 </details>
 
-**依据 6 · 源码核查**：[lib/import.js:188-197](https://github.com/58catmiao/dsh-sciwork/blob/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808/lib/import.js#L188-L197)
+**依据 6 · 源码核查**：[lib/import.js:188-197](https://github.com/58catmiao/dsh-sciwork/blob/07d3fae836e3d0f621bc0a8579f2387ce5a318ce/lib/import.js#L188-L197)
 
-spawn引擎。
+当前固定版本复核。spawn引擎。
 
 <details>
 <summary>查看原文（10行）</summary>
@@ -358,9 +358,9 @@ spawn引擎。
 
 </details>
 
-**依据 7 · 源码核查**：[library/scripts/research.py:1376-1412](https://github.com/58catmiao/dsh-sciwork/blob/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808/library/scripts/research.py#L1376-L1412)
+**依据 7 · 源码核查**：[library/scripts/research.py:1376-1412](https://github.com/58catmiao/dsh-sciwork/blob/07d3fae836e3d0f621bc0a8579f2387ce5a318ce/library/scripts/research.py#L1376-L1412)
 
-归档材料和hash。
+当前固定版本复核。归档材料和hash。
 
 <details>
 <summary>查看原文（37行）</summary>
@@ -413,7 +413,7 @@ spawn引擎。
 
 ### Q02 · 贡献是什么，引用与投稿闸门真能保证哪些结论？
 
-**研究主题：**贡献与相对优势、缺陷与关键质疑
+**研究主题**：贡献与相对优势、缺陷与关键质疑
 
 #### 完整回答
 
@@ -427,9 +427,9 @@ spawn引擎。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[library/scripts/research.py:322-358](https://github.com/58catmiao/dsh-sciwork/blob/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808/library/scripts/research.py#L322-L358)
+**依据 1 · 源码核查**：[library/scripts/research.py:322-358](https://github.com/58catmiao/dsh-sciwork/blob/07d3fae836e3d0f621bc0a8579f2387ce5a318ce/library/scripts/research.py#L322-L358)
 
-入库字段与调用者verification。
+当前固定版本复核。入库字段与调用者verification。
 
 <details>
 <summary>查看原文（37行）</summary>
@@ -476,9 +476,9 @@ def cmd_add_ref(args) -> None:
 
 </details>
 
-**依据 2 · 源码核查**：[library/scripts/research.py:646-680](https://github.com/58catmiao/dsh-sciwork/blob/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808/library/scripts/research.py#L646-L680)
+**依据 2 · 源码核查**：[library/scripts/research.py:646-680](https://github.com/58catmiao/dsh-sciwork/blob/07d3fae836e3d0f621bc0a8579f2387ce5a318ce/library/scripts/research.py#L646-L680)
 
-CLI检查范围与caveat。
+当前固定版本复核。CLI检查范围与caveat。
 
 <details>
 <summary>查看原文（35行）</summary>
@@ -523,14 +523,22 @@ def cmd_check_citations(args) -> None:
 
 </details>
 
-**依据 3 · 源码核查**：[lib/library.js:343-359](https://github.com/58catmiao/dsh-sciwork/blob/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808/lib/library.js#L343-L359)
+**依据 3 · 源码核查**：[lib/library.js:343-359](https://github.com/58catmiao/dsh-sciwork/blob/07d3fae836e3d0f621bc0a8579f2387ce5a318ce/lib/library.js#L343-L359)
 
-面板仅键成员。
+当前固定版本复核。面板仅键成员。
 
 <details>
 <summary>查看原文（17行）</summary>
 
 ```text
+    for (const part of m[1].split(',')) {
+      const k = part.trim();
+      if (k) keys.add(k);
+    }
+  }
+  return [...keys].sort();
+}
+
 export async function checkCitations(root, rel) {
   const draft = await readText(root, rel);
   const refsFile = await readJsonSafe(path.join(root, 'refs', 'refs.json'), { refs: {} });
@@ -540,36 +548,37 @@ export async function checkCitations(root, rel) {
     draft: draft.path,
     bytes: draft.bytes,
     cited,
-    missing: cited.filter((k) => !known.has(k)),
-    known: known.size,
-    unusedFromCitingProjects: [...known].filter((k) => {
-      const rec = refsFile.refs[k];
-      const projects = Array.isArray(rec?.projects) ? rec.projects : [];
-      return cited.length > 0 && !cited.includes(k) && projects.includes(currentProjectOf(draft.path));
-    }).sort(),
-  };
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[lib/actions.js:294-301](https://github.com/58catmiao/dsh-sciwork/blob/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808/lib/actions.js#L294-L301)
+**依据 4 · 源码核查**：[lib/actions.js:1-12](https://github.com/58catmiao/dsh-sciwork/blob/07d3fae836e3d0f621bc0a8579f2387ce5a318ce/lib/actions.js#L1-L12)
 
-面板okFlag与更强说明。
+当前固定版本复核。面板okFlag与更强说明。
+
+<details>
+<summary>查看原文（12行）</summary>
 
 ```text
-      case 'checkCitations': {
-        const settings = await loadSettings();
-        const result = await checkCitations(settings.root, asString(args.path));
-        return done({
-          ...result,
-          okFlag: result.missing.length === 0 && result.cited.length > 0,
-          caveat: '本核查只能证明「每个引用键都能在库里找到、且该条带有 DOI 或 URL」；它不能证明被引文献的内容真的支持这句话。',
-        });
+/**
+ * 科研模式 · 面板动作分发（宿主侧，0.3 薄适配层）
+ * ---------------------------------------------------------------------------
+ * 0.2 时这里是一整张 switch；0.3 把实现搬进 `lib/actions/*` + 登记表，
+ * 本文件只剩三件事：
+ *   1. 保持旧导出不变（`ACTIONS` / `handleResearchCall` / `probePathGuard` /
+ *      命令台元数据），旧面板与 `scripts/selftest-actions.mjs` 零改动；
+ *   2. 把 `{action,args}` 交给执行器（旧名走 `confirm:'legacy'`：同请求内代签令牌）；
+ *   3. 维持旧的错误信封与路径护栏探针。
+ *
+ * 纪律：本文件不再实现任何库操作，也不再拼 research.py 命令。
+ */
 ```
 
-**依据 5 · 源码核查**：[library/scripts/research.py:1314-1326](https://github.com/58catmiao/dsh-sciwork/blob/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808/library/scripts/research.py#L1314-L1326)
+</details>
 
-人工项和默认值。
+**依据 5 · 源码核查**：[library/scripts/research.py:1314-1326](https://github.com/58catmiao/dsh-sciwork/blob/07d3fae836e3d0f621bc0a8579f2387ce5a318ce/library/scripts/research.py#L1314-L1326)
+
+当前固定版本复核。人工项和默认值。
 
 <details>
 <summary>查看原文（13行）</summary>
@@ -592,9 +601,9 @@ export async function checkCitations(root, rel) {
 
 </details>
 
-**依据 6 · 源码核查**：[library/scripts/research.py:1414-1419](https://github.com/58catmiao/dsh-sciwork/blob/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808/library/scripts/research.py#L1414-L1419)
+**依据 6 · 源码核查**：[library/scripts/research.py:1414-1419](https://github.com/58catmiao/dsh-sciwork/blob/07d3fae836e3d0f621bc0a8579f2387ce5a318ce/library/scripts/research.py#L1414-L1419)
 
-失败仅warning。
+当前固定版本复核。失败仅warning。
 
 ```text
     check_counts = None
@@ -605,9 +614,9 @@ export async function checkCitations(root, rel) {
             warnings.append(f"体检还有 {check_counts['fail']} 项不合格（跑 check-journal 看明细）")
 ```
 
-**依据 7 · 源码核查**：[library/scripts/research.py:1458-1466](https://github.com/58catmiao/dsh-sciwork/blob/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808/library/scripts/research.py#L1458-L1466)
+**依据 7 · 源码核查**：[library/scripts/research.py:1458-1466](https://github.com/58catmiao/dsh-sciwork/blob/07d3fae836e3d0f621bc0a8579f2387ce5a318ce/library/scripts/research.py#L1458-L1466)
 
-仍写ZIP成功。
+当前固定版本复核。仍写ZIP成功。
 
 ```text
     with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as archive:
@@ -621,9 +630,9 @@ export async function checkCitations(root, rel) {
           "warnings": warnings,
 ```
 
-**依据 8 · 源码核查**：[library/journals/nature.json:64-71](https://github.com/58catmiao/dsh-sciwork/blob/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808/library/journals/nature.json#L64-L71)
+**依据 8 · 源码核查**：[library/journals/nature.json:64-71](https://github.com/58catmiao/dsh-sciwork/blob/07d3fae836e3d0f621bc0a8579f2387ce5a318ce/library/journals/nature.json#L64-L71)
 
-作者固定来源/日期。
+当前固定版本复核。作者固定来源/日期。
 
 ```text
   "sources": [
@@ -636,14 +645,22 @@ export async function checkCitations(root, rel) {
   "confidence": "high"
 ```
 
-**依据 9 · 源码核查**：[lib/library.js:188-208](https://github.com/58catmiao/dsh-sciwork/blob/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808/lib/library.js#L188-L208)
+**依据 9 · 源码核查**：[lib/library.js:188-208](https://github.com/58catmiao/dsh-sciwork/blob/07d3fae836e3d0f621bc0a8579f2387ce5a318ce/lib/library.js#L188-L208)
 
-词法路径与读文件。
+当前固定版本复核。词法路径与读文件。
 
 <details>
 <summary>查看原文（21行）</summary>
 
 ```text
+}
+
+/* ------------------------------------------------------------ 路径安全约束 */
+
+/**
+ * 把库根相对路径解成绝对路径，并保证它**落在库根之内**。
+ * 拒绝：绝对路径、盘符、`..` 逃逸、空路径。
+ */
 export function resolveInside(root, rel) {
   if (typeof rel !== 'string' || rel.trim() === '') throw new Error('空路径');
   const raw = rel.replace(/\\/g, '/').trim();
@@ -657,26 +674,26 @@ export function resolveInside(root, rel) {
 }
 
 /* -------------------------------------------------------------- 读文本/图片 */
-
-export async function readText(root, rel, maxBytes = MAX_TEXT_BYTES) {
-  const abs = resolveInside(root, rel);
-  const ext = path.extname(abs).toLowerCase();
-  if (!TEXT_EXT.has(ext)) throw new Error(`不是可预览的文本类型：${ext || '(无扩展名)'}`);
-  const info = await stat(abs);
-  if (info.size > maxBytes) throw new Error(`文件过大（${info.size} B > ${maxBytes} B）`);
-  const text = await readFile(abs, 'utf8');
 ```
 
 </details>
 
-**依据 10 · 源码核查**：[lib/library.js:254-272](https://github.com/58catmiao/dsh-sciwork/blob/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808/lib/library.js#L254-L272)
+**依据 10 · 源码核查**：[lib/library.js:254-272](https://github.com/58catmiao/dsh-sciwork/blob/07d3fae836e3d0f621bc0a8579f2387ce5a318ce/lib/library.js#L254-L272)
 
-固定bak直接写。
+当前固定版本复核。固定bak直接写。
 
 <details>
 <summary>查看原文（19行）</summary>
 
 ```text
+ * 安全口径：
+ *   - 只允许 `projects/<课题>/drafts/` 下的 .md/.markdown/.txt，且必须**已存在**（不新建文件）；
+ *   - 写之前先把原文件复制成同名 `.bak`（覆盖旧 `.bak`）——一次保存一份回滚点；
+ *   - 大小上限 2 MiB（防手滑把二进制塞进来）。
+ * @param {string} root 库根
+ * @param {string} rel 库根相对路径
+ * @param {string} text 新内容
+ */
 export async function writeTextBackup(root, rel, text) {
   const abs = resolveInside(root, rel);
   const relPosix = toRel(root, abs);
@@ -688,14 +705,6 @@ export async function writeTextBackup(root, rel, text) {
   }
   const ext = path.extname(abs).toLowerCase();
   if (!TEXT_EXT.has(ext)) throw new Error(`不是可编辑的文本类型：${ext || '(无扩展名)'}`);
-  const body = String(text ?? '');
-  const bytes = Buffer.byteLength(body, 'utf8');
-  if (bytes > MAX_EDIT_BYTES) throw new Error(`内容过大（${bytes} B > ${MAX_EDIT_BYTES} B）`);
-  const info = await stat(abs);              // 不存在 → ENOENT（actions 层翻成 not-found）
-  if (!info.isFile()) throw new Error(`不是文件：${relPosix}`);
-  const backupAbs = `${abs}.bak`;
-  await copyFile(abs, backupAbs);
-  await writeFile(abs, body, 'utf8');
 ```
 
 </details>
@@ -703,11 +712,11 @@ export async function writeTextBackup(root, rel, text) {
 #### 缺口
 
 - 本组件未证明宿主Connection外层认证/授权与实际可达范围。
-  **影响：**不能仅靠信封method正确推断写入者身份。
-  **进一步探讨：**可固定宿主路由实现和部署访问控制，结合真实路径围栏研究。
+  **影响**：不能仅靠信封method正确推断写入者身份。
+  **进一步探讨**：可固定宿主路由实现和部署访问控制，结合真实路径围栏研究。
 - 档案现行有效性、引用原文支持和科学/统计正确性未由字段检查确定。
-  **影响：**不能把通过或导出成功称可投稿/可信论文。
-  **进一步探讨：**可对目标刊实际文章类型逐条读官方现行要求，再逐条核原文支持及数据/图/统计方法。
+  **影响**：不能把通过或导出成功称可投稿/可信论文。
+  **进一步探讨**：可对目标刊实际文章类型逐条读官方现行要求，再逐条核原文支持及数据/图/统计方法。
 
 <a id="research-q03"></a>
 
@@ -715,55 +724,51 @@ export async function writeTextBackup(root, rel, text) {
 
 ### Q03 · 启动依赖、权限与读者操作流程是什么？
 
-**研究主题：**依赖、兼容与流程
+**研究主题**：依赖、兼容与流程
 
 #### 完整回答
 
 包0.2.2无npm dependencies并声明Node>=20，实际工作链还依赖DSH预设/Connection及Python启动器；Origin绘图另需上游MCP、兼容运行环境和Origin许可。库配置可覆盖环境根，必须以loadSettings最终root核对，不能只看会话cwd。科研预设有shell/文件写入，原始数据只读主要是提示纪律；不可把普通目录当受限沙箱。
 
-#### 启动与依赖
+依赖或条件为Node>=20与DSH bundle/preset/Connection，是否必需为必需，用途为Host精确POST路由与科研预设，缺失或不满足时为面板缺服务告警，预设依赖另匹配。
+依赖或条件为Python3与库启动器/已建实体库，是否必需为库操作必需，用途为统一research.py写入/索引，缺失或不满足时为不用裸python名称推断可用性。
+依赖或条件为五类Skill/所选模型与工具，是否必需为Agent流程必需，用途为写作/引用/期刊/绘图指引，缺失或不满足时为提示纪律不代替执行权限。
+依赖或条件为上游Origin插件、兼容Windows/Origin及Python依赖，是否必需为真机绘图可选，用途为MCP绘图和重画，缺失或不满足时为本包不包含上游实现或许可证。
+依赖或条件为库目录读写授权与备份，是否必需为必需，用途为数据/草稿/明文索引和导出，缺失或不满足时为路径词法围栏不等真实文件隔离。
 
-| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-|---|---|---|---|
-| Node>=20与DSH bundle/preset/Connection | 必需 | Host精确POST路由与科研预设 | 面板缺服务告警，预设依赖另匹配 |
-| Python3与库启动器/已建实体库 | 库操作必需 | 统一research.py写入/索引 | 不用裸python名称推断可用性 |
-| 五类Skill/所选模型与工具 | Agent流程必需 | 写作/引用/期刊/绘图指引 | 提示纪律不代替执行权限 |
-| 上游Origin插件、兼容Windows/Origin及Python依赖 | 真机绘图可选 | MCP绘图和重画 | 本包不包含上游实现或许可证 |
-| 库目录读写授权与备份 | 必需 | 数据/草稿/明文索引和导出 | 路径词法围栏不等真实文件隔离 |
-
-#### 启动步骤
-
-| 步骤 | 执行者与动作 | 成功判据或失败处理 |
-|---|---|---|
-| 准备 | 固定DSH/包/引擎及隔离库，先预检 | 核真实库根/解释器和备份，不接生产数据 |
-| 建库 | 明确课题/期刊并登记文献/图数据 | 来源与路径可核，期刊档案按现行页面复核 |
-| 制作 | 按Skill写稿/图/侧车，人工读原文和审图 | DOI存在、登记通过不等内容成立 |
-| 交付 | 看逐项pass/warn/fail/na后导出并检查ZIP | export成功不是全部检查通过；核实际归档hash |
-| 恢复 | 明确失败点后对照备份/索引/文件 | 超时可能仍跑，不盲重复写入或打包 |
+步骤为准备，执行者与动作为固定DSH/包/引擎及隔离库，先预检，成功判据或失败处理为核真实库根/解释器和备份，不接生产数据。
+步骤为建库，执行者与动作为明确课题/期刊并登记文献/图数据，成功判据或失败处理为来源与路径可核，期刊档案按现行页面复核。
+步骤为制作，执行者与动作为按Skill写稿/图/侧车，人工读原文和审图，成功判据或失败处理为DOI存在、登记通过不等内容成立。
+步骤为交付，执行者与动作为看逐项pass/warn/fail/na后导出并检查ZIP，成功判据或失败处理为export成功不是全部检查通过；核实际归档hash。
+步骤为恢复，执行者与动作为明确失败点后对照备份/索引/文件，成功判据或失败处理为超时可能仍跑，不盲重复写入或打包。
 
 统一脚本有利减少重复实现，但Node直接草稿/归档/变换等路径仍存在，README“面板写入永远走库脚本”不能覆盖所有实际写出。外部文献/未发表稿件进入所选模型或Origin时需按真实调用确认范围，插件无统一科学数据脱敏证明。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[package.json:1-4](https://github.com/58catmiao/dsh-sciwork/blob/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808/package.json#L1-L4)
+**依据 1 · 源码核查**：[package.json:1-4](https://github.com/58catmiao/dsh-sciwork/blob/07d3fae836e3d0f621bc0a8579f2387ce5a318ce/package.json#L1-L4)
 
-包版本。
+当前固定版本复核。包版本。
 
 ```text
 {
   "name": "dsh-sciwork",
-  "version": "0.2.2",
-  "description": "DSH 科研模式：给 DeepSeek Harness 装一套科研工作台——「科研模式」agent 预设 + 本机实体科研库（Python 引擎与登记索引）+ 12 份期刊投稿档案 + 投稿闸门（期刊合规体检 / 投稿包导出 / 递归全文索引）+ 绘图/写作/文献/期刊技能 + 只读为主的「科研库」面板。出图由智能体经上游 dsh-origin-plugin（Origin MCP）完成。",
+  "version": "0.3.13",
+  "description": "DSH 科研模式：给 DeepSeek Harness 装一套科研工作台——「科研模式」agent 预设 + 本机实体科研库（Python 引擎与登记索引）+ 12 份期刊投稿档案 + 投稿闸门（期刊合规体检 / 投稿包导出 / 递归全文索引）+ 绘图/写作/文献/期刊技能 + 「科研库」面板。0.3 起动作走「能力清单 + 确认令牌 + 回执」：课题是一等公民（七阶段机），面板与 agent 共用同一套动作，旧面板与 24 个旧动作名继续可用。出图由智能体经上游 dsh-origin-plugin（Origin MCP）完成。",
 ```
 
-**依据 2 · 源码核查**：[package.json:46-63](https://github.com/58catmiao/dsh-sciwork/blob/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808/package.json#L46-L63)
+**依据 2 · 源码核查**：[package.json:46-63](https://github.com/58catmiao/dsh-sciwork/blob/07d3fae836e3d0f621bc0a8579f2387ce5a318ce/package.json#L46-L63)
 
-运行时及bundle。
+当前固定版本复核。运行时及bundle。
 
 <details>
 <summary>查看原文（18行）</summary>
 
 ```text
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md",
+    "CHANGELOG.md"
+  ],
   "engines": {
     "node": ">=20"
   },
@@ -773,41 +778,45 @@ export async function writeTextBackup(root, rel, text) {
     "cycle": "node scripts/cycle.mjs",
     "check:local": "node scripts/check-local-info.mjs",
     "validate-patch": "python scripts/validate-patch.py",
-    "install-skills": "node scripts/install.mjs"
+    "install-skills": "node scripts/install.mjs",
+    "install-plugin": "node scripts/install-plugin.mjs",
+    "market-index": "node scripts/make-market-index.mjs",
+    "test:install": "node scripts/test-install.mjs"
   },
-  "dsh": {
-    "bundle": {
-      "patch": "./cordis.patch.yml"
-    },
-    "client": {
-      "platform": "web"
-    }
 ```
 
 </details>
 
-**依据 3 · 作者声明**：[README.md:26-32](https://github.com/58catmiao/dsh-sciwork/blob/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808/README.md#L26-L32)
+**依据 3 · 作者声明**：[README.md:26-32](https://github.com/58catmiao/dsh-sciwork/blob/07d3fae836e3d0f621bc0a8579f2387ce5a318ce/README.md#L26-L32)
 
-作者零npm/上游声明。
+当前固定版本复核。作者零npm/上游声明。
 
-````text
+```text
 - 宿主半边是纯 Node ESM，**零 npm 依赖**。
 - 客户端是手写的单文件 Web 客户端，**没有构建步骤**。
 - 出图能力依赖上游开源插件 [dsh-origin-plugin](https://github.com/Fantasality/dsh-origin-plugin)（MIT，作者 Fantasality）。**本仓库不包含它**，只带适配技能。详见〈与 dsh-origin-plugin 的关系〉。
 
-## 安装
+## 0.3 有什么不同
 
-```bash
-````
+- **一条能力清单**：动作登记表驱动面板、agent 工具与命令行三个入口，新能力只写一份。
+```
 
-**依据 4 · 源码核查**：[lib/library.js:157-178](https://github.com/58catmiao/dsh-sciwork/blob/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808/lib/library.js#L157-L178)
+**依据 4 · 源码核查**：[lib/library.js:157-178](https://github.com/58catmiao/dsh-sciwork/blob/07d3fae836e3d0f621bc0a8579f2387ce5a318ce/lib/library.js#L157-L178)
 
-实际根与配置优先级。
+当前固定版本复核。实际根与配置优先级。
 
 <details>
 <summary>查看原文（22行）</summary>
 
 ```text
+/**
+ * 合并三处配置，库里那份权威、最优先：
+ *   1. 库里 `.research/config.json`（`research.py` 写的，权威）
+ *   2. 随包的 `library/config.json`（`scripts/install.mjs` 写的；首次使用前可能不存在）
+ *   3. 环境变量与目录约定（`lib/config.js`：`SCIWORK_LIBRARY` → 默认 `<用户目录>/Research`）
+ * 另外补一层 Origin 探测：两份配置都没写 server 时按 DSH 目录约定去找上游插件，
+ * 免得用户明明装了 dsh-origin-plugin，却因为没跑安装器而用不了「出图」。
+ */
 export async function loadSettings() {
   const bundled = (await readJsonSafe(path.join(BUNDLE_DIR, 'library', 'config.json'), {})) || {};
   // 库根优先级：库内 `.research/config.json` ＞ 环境变量 ＞ 随包 `library/config.json` ＞ 默认。
@@ -822,21 +831,13 @@ export async function loadSettings() {
     if (server) {
       origin = { ...(origin || {}), pluginDir: (origin && origin.pluginDir) || resolveOriginPluginDir(), server };
     }
-  }
-  return {
-    root: inLibrary.libraryRoot || root,
-    interpreter: inLibrary.interpreter || bundled.interpreter || null,
-    launcher: inLibrary.launcher || bundled.launcher || null,
-    origin,
-    defaults: inLibrary.defaults || bundled.defaults || {},
-    bundleDir: BUNDLE_DIR,
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[skills/research-studio/SKILL.md:64-69](https://github.com/58catmiao/dsh-sciwork/blob/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808/skills/research-studio/SKILL.md#L64-L69)
+**依据 5 · 源码核查**：[skills/research-studio/SKILL.md:64-69](https://github.com/58catmiao/dsh-sciwork/blob/07d3fae836e3d0f621bc0a8579f2387ce5a318ce/skills/research-studio/SKILL.md#L64-L69)
 
-Python启动器纪律。
+当前固定版本复核。Python启动器纪律。
 
 ```text
 ### 0.3 解释器纪律
@@ -847,9 +848,9 @@ Python启动器纪律。
 启动器一个都找不到时它会直接打印该建哪个 venv、装哪些包，照做即可。
 ```
 
-**依据 6 · 源码核查**：[cordis.patch.yml:8-15](https://github.com/58catmiao/dsh-sciwork/blob/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808/cordis.patch.yml#L8-L15)
+**依据 6 · 源码核查**：[cordis.patch.yml:8-15](https://github.com/58catmiao/dsh-sciwork/blob/07d3fae836e3d0f621bc0a8579f2387ce5a318ce/cordis.patch.yml#L8-L15)
 
-保留shell/文件写工具。
+当前固定版本复核。保留shell/文件写工具。
 
 ```text
 # 基线是内置 `standard` preset（经 dsh-ppt-mode 整理过的同一份 roster）。与 StudyHub
@@ -862,14 +863,22 @@ Python启动器纪律。
 #   2. 保持 shell、文件系统、技能、web、present、子代理与 workflow 全部可用。
 ```
 
-**依据 7 · 源码核查**：[lib/library.js:254-272](https://github.com/58catmiao/dsh-sciwork/blob/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808/lib/library.js#L254-L272)
+**依据 7 · 源码核查**：[lib/library.js:254-272](https://github.com/58catmiao/dsh-sciwork/blob/07d3fae836e3d0f621bc0a8579f2387ce5a318ce/lib/library.js#L254-L272)
 
-直接写草稿。
+当前固定版本复核。直接写草稿。
 
 <details>
 <summary>查看原文（19行）</summary>
 
 ```text
+ * 安全口径：
+ *   - 只允许 `projects/<课题>/drafts/` 下的 .md/.markdown/.txt，且必须**已存在**（不新建文件）；
+ *   - 写之前先把原文件复制成同名 `.bak`（覆盖旧 `.bak`）——一次保存一份回滚点；
+ *   - 大小上限 2 MiB（防手滑把二进制塞进来）。
+ * @param {string} root 库根
+ * @param {string} rel 库根相对路径
+ * @param {string} text 新内容
+ */
 export async function writeTextBackup(root, rel, text) {
   const abs = resolveInside(root, rel);
   const relPosix = toRel(root, abs);
@@ -881,21 +890,13 @@ export async function writeTextBackup(root, rel, text) {
   }
   const ext = path.extname(abs).toLowerCase();
   if (!TEXT_EXT.has(ext)) throw new Error(`不是可编辑的文本类型：${ext || '(无扩展名)'}`);
-  const body = String(text ?? '');
-  const bytes = Buffer.byteLength(body, 'utf8');
-  if (bytes > MAX_EDIT_BYTES) throw new Error(`内容过大（${bytes} B > ${MAX_EDIT_BYTES} B）`);
-  const info = await stat(abs);              // 不存在 → ENOENT（actions 层翻成 not-found）
-  if (!info.isFile()) throw new Error(`不是文件：${relPosix}`);
-  const backupAbs = `${abs}.bak`;
-  await copyFile(abs, backupAbs);
-  await writeFile(abs, body, 'utf8');
 ```
 
 </details>
 
-**依据 8 · 作者声明**：[skills/origin-plot/SKILL.md:8-24](https://github.com/58catmiao/dsh-sciwork/blob/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808/skills/origin-plot/SKILL.md#L8-L24)
+**依据 8 · 作者声明**：[skills/origin-plot/SKILL.md:8-24](https://github.com/58catmiao/dsh-sciwork/blob/07d3fae836e3d0f621bc0a8579f2387ce5a318ce/skills/origin-plot/SKILL.md#L8-L24)
 
-作者上游能力/资源说明。
+当前固定版本复核。作者上游能力/资源说明。
 
 <details>
 <summary>查看原文（17行）</summary>
@@ -928,36 +929,28 @@ export async function writeTextBackup(root, rel, text) {
 
 ### Q04 · 首次、持续和恢复成本效果怎样评价？
 
-**研究主题：**效果与总成本
+**研究主题**：效果与总成本
 
 #### 完整回答
 
 零npm依赖减少Host安装负担，却不消除Python/DSH/Origin兼容、模型费、许可或研究者核原文的人时。持续索引、派生文件、ZIP/备份增加磁盘，期刊档案要按文章类型更新；只有真实最终稿/图的质量和返工对照才能判断收益。
 
-#### 成本
+阶段为首次使用，现金与资源成本为DSH/Python/可选Origin环境与许可，金额未知，人工与时间投入为建副本库、固定版本、配置和期刊核对，已知条件与未知项为零npm依赖不等零外部依赖。
+阶段为持续使用，现金与资源成本为模型tokens、索引扫描/存储、可选MCP/Origin，人工与时间投入为原文逐条读、审图、更新期刊与登记，已知条件与未知项为学术内容/刊方现行要求不可自动保证。
+阶段为失败恢复，现金与资源成本为备份、重建索引、超时/部分产物核对，人工与时间投入为查子进程和文件，确认后重做，已知条件与未知项为多文件写入不是跨操作事务。
 
-| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-|---|---|---|---|
-| 首次使用 | DSH/Python/可选Origin环境与许可，金额未知 | 建副本库、固定版本、配置和期刊核对 | 零npm依赖不等零外部依赖 |
-| 持续使用 | 模型tokens、索引扫描/存储、可选MCP/Origin | 原文逐条读、审图、更新期刊与登记 | 学术内容/刊方现行要求不可自动保证 |
-| 失败恢复 | 备份、重建索引、超时/部分产物核对 | 查子进程和文件，确认后重做 | 多文件写入不是跨操作事务 |
-
-#### 效果
-
-| 效果项 | 当前证据支持 | 尚不能确定 |
-|---|---|---|
-| 科研产物组织 | 普通文件库/侧车/索引/面板 | 多人并发一致性和实际省时 |
-| 引用核查 | CLI查键/标记/链接字段，面板较弱 | 原文是否支持结论/元数据真实 |
-| 投稿准备 | 档案检查项和ZIP manifest/checklist | 当前刊方要求、录用/科学有效性 |
-| 绘图复用 | 上游适配和重画路径 | 同图完整重放与统计/视觉正确性 |
+效果项为科研产物组织，当前证据支持为普通文件库/侧车/索引/面板，尚不能确定为多人并发一致性和实际省时。
+效果项为引用核查，当前证据支持为CLI查键/标记/链接字段，面板较弱，尚不能确定为原文是否支持结论/元数据真实。
+效果项为投稿准备，当前证据支持为档案检查项和ZIP manifest/checklist，尚不能确定为当前刊方要求、录用/科学有效性。
+效果项为绘图复用，当前证据支持为上游适配和重画路径，尚不能确定为同图完整重放与统计/视觉正确性。
 
 runResearch用argv spawn而非shell字符串，输出有尾部上限与timeout；超时kill直接子进程后结束等待，不保证全部子孙/外部Origin停止。删除有精确文件名确认和日志，优先归档可降低误删，但不是可逆删除；外部处理结果未知时不能自动重做。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/import.js:172-197](https://github.com/58catmiao/dsh-sciwork/blob/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808/lib/import.js#L172-L197)
+**依据 1 · 源码核查**：[lib/import.js:172-197](https://github.com/58catmiao/dsh-sciwork/blob/07d3fae836e3d0f621bc0a8579f2387ce5a318ce/lib/import.js#L172-L197)
 
-解释器/脚本和argv。
+当前固定版本复核。解释器/脚本和argv。
 
 <details>
 <summary>查看原文（26行）</summary>
@@ -993,9 +986,9 @@ export function runResearch(settings, args, { label, timeoutMs = 90_000 } = {}) 
 
 </details>
 
-**依据 2 · 源码核查**：[lib/import.js:204-233](https://github.com/58catmiao/dsh-sciwork/blob/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808/lib/import.js#L204-L233)
+**依据 2 · 源码核查**：[lib/import.js:204-233](https://github.com/58catmiao/dsh-sciwork/blob/07d3fae836e3d0f621bc0a8579f2387ce5a318ce/lib/import.js#L204-L233)
 
-输出上限和timeout。
+当前固定版本复核。输出上限和timeout。
 
 <details>
 <summary>查看原文（30行）</summary>
@@ -1035,9 +1028,9 @@ export function runResearch(settings, args, { label, timeoutMs = 90_000 } = {}) 
 
 </details>
 
-**依据 3 · 源码核查**：[lib/archive.js:193-242](https://github.com/58catmiao/dsh-sciwork/blob/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808/lib/archive.js#L193-L242)
+**依据 3 · 源码核查**：[lib/archive.js:193-242](https://github.com/58catmiao/dsh-sciwork/blob/07d3fae836e3d0f621bc0a8579f2387ce5a318ce/lib/archive.js#L193-L242)
 
-单文件确认/删除/日志。
+当前固定版本复核。单文件确认/删除/日志。
 
 <details>
 <summary>查看原文（50行）</summary>
@@ -1097,9 +1090,9 @@ export async function removeEntries(input = {}) {
 
 </details>
 
-**依据 4 · 源码核查**：[library/scripts/research.py:1458-1466](https://github.com/58catmiao/dsh-sciwork/blob/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808/library/scripts/research.py#L1458-L1466)
+**依据 4 · 源码核查**：[library/scripts/research.py:1458-1466](https://github.com/58catmiao/dsh-sciwork/blob/07d3fae836e3d0f621bc0a8579f2387ce5a318ce/library/scripts/research.py#L1458-L1466)
 
-磁盘ZIP输出。
+当前固定版本复核。磁盘ZIP输出。
 
 ```text
     with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as archive:
@@ -1116,8 +1109,8 @@ export async function removeEntries(input = {}) {
 #### 缺口
 
 - 无相同课题数据/稿件的组织时间、返工、引用内容准确率和完整链费用对照。
-  **影响：**不能承诺科研提效、投稿通过或经济回报。
-  **进一步探讨：**可用公开脱敏课题对比普通目录+脚本与本工作台，计模型/许可/核文/恢复成本和盲审产物质量。
+  **影响**：不能承诺科研提效、投稿通过或经济回报。
+  **进一步探讨**：可用公开脱敏课题对比普通目录+脚本与本工作台，计模型/许可/核文/恢复成本和盲审产物质量。
 
 <a id="research-q05"></a>
 
@@ -1125,7 +1118,7 @@ export async function removeEntries(input = {}) {
 
 ### Q05 · 哪些工程点可复用，怎样研究一致快照与证据收据？
 
-**研究主题：**工程质量与复用、新假设与验证
+**研究主题**：工程质量与复用、新假设与验证
 
 #### 完整回答
 
@@ -1135,37 +1128,37 @@ export async function removeEntries(input = {}) {
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/index.js:149-164](https://github.com/58catmiao/dsh-sciwork/blob/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808/lib/index.js#L149-L164)
+**依据 1 · 源码核查**：[lib/index.js:149-164](https://github.com/58catmiao/dsh-sciwork/blob/07d3fae836e3d0f621bc0a8579f2387ce5a318ce/lib/index.js#L149-L164)
 
-精确注册与告警。
+当前固定版本复核。精确注册与告警。
 
 <details>
 <summary>查看原文（16行）</summary>
 
 ```text
-    try {
-      // 精确路由：只吃 `/api/research/call` 的 POST，官方 `/api/*` 端点原样留给 api-gateway。
-      ctx.effect(
-        () => registry.register(route),
-        `research-library — ${ROUTE_PATH}（${ACTIONS.length} 个动作）`,
-      );
-      note(ctx, 'info', `已注册精确路由 ${ROUTE_PATH}（${ACTIONS.length} 个动作）`);
-    } catch (error) {
-      // 例如与别的插件抢同一路径（`connection: exact Fetch route … is already registered`）。
-      // 这里**故意吞掉**不往上抛，只留响亮的 error 日志（HANDOFF §1 禁令 3）。
-      note(
-        ctx,
-        'error',
-        `精确路由 ${ROUTE_PATH} 注册失败，面板端点不可用：${String((error && error.message) || error)}`,
-      );
-    }
+  const result = registerBundledSkills(ctx, { logger: ctx.logger });
+  for (const problem of result.problems) note(ctx, 'warn', problem);
+  note(
+    ctx,
+    result.failed.length ? 'warn' : 'info',
+    `随包技能：${result.registered.length} 个注册，${result.skipped.length} 个因用户已装而跳过${
+      result.failed.length ? `，失败 ${result.failed.join('、')}` : ''
+    }`,
+  );
+}
+
+/**
+ * 把 `tool.expose` 的动作注册成宿主工具（PLAN §10.2）。
+ * 拿不到 tools 服务时只告警——面板与预设不因工具注册失败而失效。
+ */
+function mountTools(ctx) {
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[library/scripts/research.py:101-112](https://github.com/58catmiao/dsh-sciwork/blob/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808/library/scripts/research.py#L101-L112)
+**依据 2 · 源码核查**：[library/scripts/research.py:101-112](https://github.com/58catmiao/dsh-sciwork/blob/07d3fae836e3d0f621bc0a8579f2387ce5a318ce/library/scripts/research.py#L101-L112)
 
-固定tmp原子替换。
+当前固定版本复核。固定tmp原子替换。
 
 <details>
 <summary>查看原文（12行）</summary>
@@ -1187,9 +1180,9 @@ def write_text(path: Path, text: str) -> None:
 
 </details>
 
-**依据 3 · 源码核查**：[library/scripts/research.py:353-356](https://github.com/58catmiao/dsh-sciwork/blob/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808/library/scripts/research.py#L353-L356)
+**依据 3 · 源码核查**：[library/scripts/research.py:353-356](https://github.com/58catmiao/dsh-sciwork/blob/07d3fae836e3d0f621bc0a8579f2387ce5a318ce/library/scripts/research.py#L353-L356)
 
-refs两文件。
+当前固定版本复核。refs两文件。
 
 ```text
     refs[key] = record
@@ -1198,9 +1191,9 @@ refs两文件。
     write_text(REFS_BIB, refs_to_bibtex(refs))
 ```
 
-**依据 4 · 源码核查**：[library/scripts/research.py:1400-1412](https://github.com/58catmiao/dsh-sciwork/blob/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808/library/scripts/research.py#L1400-L1412)
+**依据 4 · 源码核查**：[library/scripts/research.py:1400-1412](https://github.com/58catmiao/dsh-sciwork/blob/07d3fae836e3d0f621bc0a8579f2387ce5a318ce/library/scripts/research.py#L1400-L1412)
 
-先hash候选。
+当前固定版本复核。先hash候选。
 
 <details>
 <summary>查看原文（13行）</summary>
@@ -1223,9 +1216,9 @@ refs两文件。
 
 </details>
 
-**依据 5 · 源码核查**：[library/scripts/research.py:1458-1462](https://github.com/58catmiao/dsh-sciwork/blob/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808/library/scripts/research.py#L1458-L1462)
+**依据 5 · 源码核查**：[library/scripts/research.py:1458-1462](https://github.com/58catmiao/dsh-sciwork/blob/07d3fae836e3d0f621bc0a8579f2387ce5a318ce/library/scripts/research.py#L1458-L1462)
 
-再读取归档。
+当前固定版本复核。再读取归档。
 
 ```text
     with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as archive:
@@ -1235,65 +1228,65 @@ refs两文件。
             archive.write(path, arcname=name)
 ```
 
-**依据 6 · 源码核查**：[lib/replot.js:190-217](https://github.com/58catmiao/dsh-sciwork/blob/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808/lib/replot.js#L190-L217)
+**依据 6 · 源码核查**：[README.md:190-217](https://github.com/58catmiao/dsh-sciwork/blob/07d3fae836e3d0f621bc0a8579f2387ce5a318ce/README.md#L190-L217)
 
-token与过期接管。
+当前固定版本复核。token与过期接管。
 
 <details>
 <summary>查看原文（28行）</summary>
 
 ```text
-  // 锁里带一个 token：release() 只删「还是自己那把」的锁，避免接管过期锁的瞬间
-  // 把别人刚拿到的锁删掉。
-  const token = `${process.pid}-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
-  const payload = (forRead) => JSON.stringify(
-    { at: new Date().toISOString(), by: 'research-panel', pid: process.pid, token, reason },
-    null, forRead ? 1 : 0,
-  );
-  try {
-    await writeFile(file, payload(false), { encoding: 'utf8', flag: 'wx' });
-  } catch (e) {
-    if (e?.code !== 'EEXIST') throw e;
-    let age = Infinity;
-    try { age = Date.now() - (await stat(file)).mtimeMs; } catch { /* ignore */ }
-    if (age < LOCK_STALE_MS) {
-      let holder = '';
-      try { holder = (await readFile(file, 'utf8')).slice(0, 200); } catch { /* ignore */ }
-      throw new Error(`Origin 忙：${path.join(root, '.research', 'locks', 'origin.lock')} 存在（${Math.round(age / 1000)} s 前），说明有另一次重画或智能体正在用 Origin。锁对象：${holder}`);
-    }
-    await writeFile(file, payload(false), { encoding: 'utf8' }); // 过期锁：接管
-  }
-  return async () => {
-    try {
-      const cur = await readFile(file, 'utf8');
-      if (!cur.includes(token)) return; // 锁已经换主人了，别删别人的
-    } catch {
-      return; // 锁已经没了
-    }
-    try { await unlink(file); } catch { /* ignore */ }
+| --- | --- | --- |
+| **计数行**（面板顶部，不是页签） | 库根路径、课题/图/草稿/数据/文献/期刊档案/投稿七项实时计数、索引时间、采集警告 | 点「刷新」重取快照；点「引导」走一遍带高亮的界面导览 |
+| **图表** | 已登记的图，含每条图的登记溯源（数据源、脚本、生成时间）；按课题分组 | 看图、看 PDF 附带件、复制路径、归档、删除 |
+| **草稿** | `drafts/` 下的 Markdown 手稿 | 就地读；新建草稿；编辑保存；归档；删除 |
+| **文献** | `refs/refs.json` 里的条目与 `refs/pdf/` 下的本地 PDF 附件 | 导入（必须带 DOI 或 URL 才登记，PDF 可选）、看 PDF、归档、删除 |
+| **数据** | `data/` 下的数据文件（`.txt/.csv/.dat` 等）与按课题分组的分组头 | 预览行列、**数据变换**（6 个算子）、归档、删除 |
+| **期刊档案** | 12 份档案的 id、严格度（high / medium / low）与更新日期 | 读条款与数值要求；筛选；归档 |
+| **投稿** | `submissions/` 下的投稿记录（目标刊、状态、时间线） | 读记录；筛选；归档；**投稿闸门**：选期刊 → 合规体检 → 导出投稿包 |
+| **归档** | `.research/archive/<时间戳>/` 里的批次清单 + 真删记录 | 整批 / 单文件「恢复」搬回原位；真删记录只留名字 |
+| **命令台**（弹层，不是页签） | `research.py` 的子命令清单与参数表单 | 选命令 → 填参 → 执行 → 看 stdout / stderr / JSON 结果 |
+
+**数据变换的 6 个算子**：`normalize`（归一化）、`baseline`（扣基线）、`smooth`（平滑）、`peaks`（找峰）、`integrate`（积分）、`linear`（线性变换）。每次变换都会在新表旁落一份溯源记录（`.research/transforms/<课题>/<表名>.json`），并把产物写进课题的 `tables/`。
+
+**投稿闸门（0.2 新增）**：在「投稿」页签选一个课题与期刊档案，点「体检」得到逐条结论——图宽是否够单/双栏、分辨率够不够、格式该不该矢量、图注有没有、标题与摘要字数、参考文献与 DOI 覆盖、草稿里的引用键是否都在库里。每条标 `pass` / `warn` / `fail` / `na`，并写明依据（`source`）与置信度；**档案没写的项一律 `na`，不拿默认值冒充期刊要求**。点「导出投稿包」把稿件、图、数据、`refs.bib` 收进一个 zip（含逐文件 sha256 的 manifest 与 checklist），路径落在 `submissions/packages/`。体检结果与期刊档案一样，最终以刊方现行要求为准。
+
+**面板的边界，一句话说清**：能看、能筛、能导入、能归档、能删、能对表格做数据变换、能做投稿前体检和打包；**不出图**。所有写入都经库脚本落文件并登记，**面板自身不碰登记索引**。
+
+## 配置
+
+配置有两层，**库内 `<库根>/.research/config.json` 是权威**；环境变量用来告诉 DSH 去哪找库、用哪个 Python。
+
+| 环境变量 | 默认值 | 说明 |
+| --- | --- | --- |
+| `SCIWORK_LIBRARY` | `<用户目录>/Research` | 科研库根目录。改这里等于换库。 |
+| `RESEARCH_LIBRARY` | 未设置 | 旧名，兼容保留；`SCIWORK_LIBRARY` 优先。 |
+| `SCIWORK_PYTHON` | 依平台探测 | 跑 `research.py` 用的 Python 解释器。推荐显式指向 venv 里的 python。 |
+| `SCIWORK_ORIGIN_PLUGIN` | 未设置 | `dsh-origin-plugin` 所在目录，供适配技能定位它。 |
+
 ```
 
 </details>
 
-**依据 7 · 源码核查**：[lib/replot.js:388-398](https://github.com/58catmiao/dsh-sciwork/blob/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808/lib/replot.js#L388-L398)
+**依据 7 · 源码核查**：[README.md:388-398](https://github.com/58catmiao/dsh-sciwork/blob/07d3fae836e3d0f621bc0a8579f2387ce5a318ce/README.md#L388-L398)
 
-多源只取首份。
+当前固定版本复核。多源只取首份。
 
 <details>
 <summary>查看原文（11行）</summary>
 
 ```text
-  const sources = Array.isArray(sidecar.sourceData) ? sidecar.sourceData.filter(Boolean) : [];
-  const warnings = [];
 
-  if (!projectSlug) throw new Error(`无法从侧车判定所属课题：${opts.sidecarRel}`);
-  if (sources.length === 0) {
-    throw new Error(`这张图没有记录源数据（sourceData 为空），面板无法重画。请让智能体用原始数据重新出图，并用 research.py register-figure 补上 --data。`);
-  }
-  const sourceRel = sources[0];
-  const sourceAbs = resolveInside(root, sourceRel);
-  await stat(sourceAbs);
-  if (sources.length > 1) warnings.push(`侧车记录了 ${sources.length} 份源数据，本次只用第一份：${sourceRel}`);
+本仓库**不包含任何受版权保护的论文原文或期刊 PDF**。
+
+- `journals/` 下的 12 份期刊档案，内容是投稿要求的**数值、条款与出处摘要**（例如字数上限、图表要求、参考文献格式），每条尽量标注出处；遇到具体条款请以期刊官网的最新作者指南为准。
+- `refs/` 里登记的是**你自己的**文献元数据（标题、DOI、URL 等）与你自己放进 `refs/pdf/` 的附件，仓库不预置任何文献全文。
+- 期刊档案是**辅助**，不构成法律或投稿建议；因以档案替代官方指南而产生的后果，由使用者自负。
+
+---
+
+<div align="center">
+
 ```
 
 </details>
@@ -1304,7 +1297,7 @@ token与过期接管。
 
 ### Q06 · 现在怎样推荐，继续探讨从哪里入手？
 
-**研究主题：**采用判断
+**研究主题**：采用判断
 
 #### 完整回答
 
@@ -1314,14 +1307,22 @@ token与过期接管。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/library.js:188-208](https://github.com/58catmiao/dsh-sciwork/blob/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808/lib/library.js#L188-L208)
+**依据 1 · 源码核查**：[lib/library.js:188-208](https://github.com/58catmiao/dsh-sciwork/blob/07d3fae836e3d0f621bc0a8579f2387ce5a318ce/lib/library.js#L188-L208)
 
-词法边界。
+当前固定版本复核。词法边界。
 
 <details>
 <summary>查看原文（21行）</summary>
 
 ```text
+}
+
+/* ------------------------------------------------------------ 路径安全约束 */
+
+/**
+ * 把库根相对路径解成绝对路径，并保证它**落在库根之内**。
+ * 拒绝：绝对路径、盘符、`..` 逃逸、空路径。
+ */
 export function resolveInside(root, rel) {
   if (typeof rel !== 'string' || rel.trim() === '') throw new Error('空路径');
   const raw = rel.replace(/\\/g, '/').trim();
@@ -1335,36 +1336,37 @@ export function resolveInside(root, rel) {
 }
 
 /* -------------------------------------------------------------- 读文本/图片 */
-
-export async function readText(root, rel, maxBytes = MAX_TEXT_BYTES) {
-  const abs = resolveInside(root, rel);
-  const ext = path.extname(abs).toLowerCase();
-  if (!TEXT_EXT.has(ext)) throw new Error(`不是可预览的文本类型：${ext || '(无扩展名)'}`);
-  const info = await stat(abs);
-  if (info.size > maxBytes) throw new Error(`文件过大（${info.size} B > ${maxBytes} B）`);
-  const text = await readFile(abs, 'utf8');
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[lib/actions.js:294-301](https://github.com/58catmiao/dsh-sciwork/blob/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808/lib/actions.js#L294-L301)
+**依据 2 · 源码核查**：[lib/actions.js:1-12](https://github.com/58catmiao/dsh-sciwork/blob/07d3fae836e3d0f621bc0a8579f2387ce5a318ce/lib/actions.js#L1-L12)
 
-面板判据。
+当前固定版本复核。面板判据。
+
+<details>
+<summary>查看原文（12行）</summary>
 
 ```text
-      case 'checkCitations': {
-        const settings = await loadSettings();
-        const result = await checkCitations(settings.root, asString(args.path));
-        return done({
-          ...result,
-          okFlag: result.missing.length === 0 && result.cited.length > 0,
-          caveat: '本核查只能证明「每个引用键都能在库里找到、且该条带有 DOI 或 URL」；它不能证明被引文献的内容真的支持这句话。',
-        });
+/**
+ * 科研模式 · 面板动作分发（宿主侧，0.3 薄适配层）
+ * ---------------------------------------------------------------------------
+ * 0.2 时这里是一整张 switch；0.3 把实现搬进 `lib/actions/*` + 登记表，
+ * 本文件只剩三件事：
+ *   1. 保持旧导出不变（`ACTIONS` / `handleResearchCall` / `probePathGuard` /
+ *      命令台元数据），旧面板与 `scripts/selftest-actions.mjs` 零改动；
+ *   2. 把 `{action,args}` 交给执行器（旧名走 `confirm:'legacy'`：同请求内代签令牌）；
+ *   3. 维持旧的错误信封与路径护栏探针。
+ *
+ * 纪律：本文件不再实现任何库操作，也不再拼 research.py 命令。
+ */
 ```
 
-**依据 3 · 源码核查**：[library/scripts/research.py:1414-1419](https://github.com/58catmiao/dsh-sciwork/blob/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808/library/scripts/research.py#L1414-L1419)
+</details>
 
-fail不阻导出。
+**依据 3 · 源码核查**：[library/scripts/research.py:1414-1419](https://github.com/58catmiao/dsh-sciwork/blob/07d3fae836e3d0f621bc0a8579f2387ce5a318ce/library/scripts/research.py#L1414-L1419)
+
+当前固定版本复核。fail不阻导出。
 
 ```text
     check_counts = None
@@ -1375,9 +1377,9 @@ fail不阻导出。
             warnings.append(f"体检还有 {check_counts['fail']} 项不合格（跑 check-journal 看明细）")
 ```
 
-**依据 4 · 源码核查**：[library/scripts/research.py:1458-1466](https://github.com/58catmiao/dsh-sciwork/blob/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808/library/scripts/research.py#L1458-L1466)
+**依据 4 · 源码核查**：[library/scripts/research.py:1458-1466](https://github.com/58catmiao/dsh-sciwork/blob/07d3fae836e3d0f621bc0a8579f2387ce5a318ce/library/scripts/research.py#L1458-L1466)
 
-ZIP成功。
+当前固定版本复核。ZIP成功。
 
 ```text
     with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as archive:

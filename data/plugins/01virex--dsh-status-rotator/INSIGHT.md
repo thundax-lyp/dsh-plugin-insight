@@ -2,10 +2,10 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[bf980a6](https://github.com/01Virex/dsh-status-rotator/tree/bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1)
+分析版本：[3951350](https://github.com/01Virex/dsh-status-rotator/tree/39513500a34bea27da225f00e0ff76687989e779)
 
 <!-- BEGIN META -->
-[![GitHub ★ 197](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=197&color=yellow&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator) [![npm 30d 10,930](https://img.shields.io/static/v1?label=npm+30d&message=10%2C930&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-status-rotator) [![最新发布 2026-10-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-17&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-status-rotator)
+[![GitHub ★ 201](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=201&color=yellow&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator) [![npm 30d 10,930](https://img.shields.io/static/v1?label=npm+30d&message=10%2C930&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-status-rotator) [![最新发布 2026-10-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-17&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-status-rotator)
 <!-- END META -->
 
 > **实现功能**：DSH 运行状态文案、主题、弹幕与鲸尾动画插件，带持久配置与词库热更新。
@@ -42,7 +42,7 @@
 
 > **用途**：用户希望长任务的运行状态更有辨识度且保留宿主时钟/读屏。
 
-DSH 原生 Deep diving 状态行；插件增加可编辑短语和视觉层。
+Node half 将随包默认、包内旧配置、远端词库、旧宿主设置、$DSH_HOME 用户配置和外部词库分层合成；用户写入以 $DSH_HOME/status-rotator/config.json 为真相源，包内 config.json 仅兼容镜像。旧包目录手改内容通过指纹辨别并迁移，防升级覆盖；外部词库按文件变化热读。相对纯浏览器 localStorage，这提供跨升级和共享设置的持久路径。
 
 <a id="detail-section-3"></a>
 
@@ -58,11 +58,15 @@ DSH 原生 Deep diving 状态行；插件增加可编辑短语和视觉层。
 
 **流程与依赖**
 
+#### 启动与依赖
+
 | 条件 | 用途 | 失败时 |
 | --- | --- | --- |
 | DSH Web DOM | 状态接管 | 不显示或错位 |
 | webServer | 配置路由 | 文件回退 |
 | CDN | 自动词库 | 保留旧库 |
+
+#### 启动步骤
 
 | 步骤 | 动作 | 判据 |
 | --- | --- | --- |
@@ -72,11 +76,15 @@ DSH 原生 Deep diving 状态行；插件增加可编辑短语和视觉层。
 
 **效果与成本**
 
+#### 成本
+
 | 阶段 | 投入 | 未知 |
 | --- | --- | --- |
 | 安装 | Desktop/Web profile 重启 | 版本适配 |
 | 使用 | 动画/推送/远端拉取 | CPU/电耗 |
 | 维护 | 配置迁移/CSS 协作 | 宿主 DOM 漂移 |
+
+#### 效果
 
 | 结果 | 源码支持 | 未证实 |
 | --- | --- | --- |
@@ -114,18 +122,18 @@ Node half 分层配置与可选 If-Match，SSE 推送；客户端适配多代私
 
 **核查状态**：已检查源码。
 
-固定源码支持多版本适配及配置机制；视觉、性能与真实升级仍未验证，远端 main 默认自动更新。
+固定版本源码支持已描述的入口、接线与数据流；贡献和采用价值为源码级解释，运行效果、真实宿主兼容与收益对照尚未验证。
 
-- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、lib/client.js、SECURITY.md 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、lib/client.js、lib/index.js、SECURITY.md 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
 - 边界：固定提交 README、package、Node/客户端源码与安全说明；未运行目标插件或浏览器。
-- 下一步：隔离 profile 测多代宿主、读屏、双标签冲突和多页面 CPU/网络。
+- 下一步：进一步探讨应按本项缺口执行：隔离端口与反代环境验证。；低端设备/多标签页测 CPU 与网络。；测试 profile 上做键盘/读屏/CPU 对照。
 
 **分析版本**
 
 - **仓库**：[01Virex/dsh-status-rotator](https://github.com/01Virex/dsh-status-rotator)
-- **版本号**：0.37.0（[固定提交 bf980a6](https://github.com/01Virex/dsh-status-rotator/tree/bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1)）
-- **版本日期**：2026-10-19（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.37.0（[固定提交 3951350](https://github.com/01Virex/dsh-status-rotator/tree/39513500a34bea27da225f00e0ff76687989e779)）
+- **版本日期**：2026-10-22（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -135,7 +143,7 @@ Node half 分层配置与可选 If-Match，SSE 推送；客户端适配多代私
 
 宿主稳定状态槽位可减少 DOM 猜测与 CSS 协作负担，尚非本包能力。详见[Q05](#research-q05)。
 
-隔离 profile 测多代宿主、读屏、双标签冲突和多页面 CPU/网络。
+进一步探讨应按本项缺口执行：隔离端口与反代环境验证。；低端设备/多标签页测 CPU 与网络。；测试 profile 上做键盘/读屏/CPU 对照。
 
 <a id="detail-section-9"></a>
 
@@ -155,7 +163,7 @@ Node half 分层配置与可选 If-Match，SSE 推送；客户端适配多代私
 
 **活跃度**
 
-[![Issue 未关闭 1](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=grey&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 23](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=23&color=grey&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator/issues?q=is%3Aissue+created%3A2026-09-22T06%3A00%3A35.767Z..2026-10-22T06%3A00%3A35.767Z) [![近30天关闭 23](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=23&color=grey&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A00%3A35.767Z..2026-10-22T06%3A00%3A35.767Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 22](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=22&color=grey&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator/issues?q=is%3Aissue+created%3A2026-09-22T15%3A11%3A48.477Z..2026-10-22T15%3A11%3A48.477Z) [![近30天关闭 22](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=22&color=grey&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T15%3A11%3A48.477Z..2026-10-22T15%3A11%3A48.477Z)
 
 
 
@@ -165,7 +173,7 @@ Node half 分层配置与可选 If-Match，SSE 推送；客户端适配多代私
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标：**审查状态 UI、配置持久、远端词库和读屏兼容边界。
+**插件研究总目标**：审查状态 UI、配置持久、远端词库和读屏兼容边界。
 
 <a id="research-q01"></a>
 
@@ -173,7 +181,7 @@ Node half 分层配置与可选 If-Match，SSE 推送；客户端适配多代私
 
 ### Q01 · 状态文案轮换服务何种体验，保留什么宿主信息？
 
-**研究主题：**场景与需求
+**研究主题**：场景与需求
 
 #### 完整回答
 
@@ -181,9 +189,9 @@ Node half 分层配置与可选 If-Match，SSE 推送；客户端适配多代私
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:1-11](https://github.com/01Virex/dsh-status-rotator/blob/bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1/README.md#L1-L11)
+**依据 1 · 作者声明**：[README.md:1-11](https://github.com/01Virex/dsh-status-rotator/blob/39513500a34bea27da225f00e0ff76687989e779/README.md#L1-L11)
 
-定位与数量声称。
+当前固定版本复核。定位与数量声称。
 
 <details>
 <summary>查看原文（11行）</summary>
@@ -191,7 +199,7 @@ Node half 分层配置与可选 If-Match，SSE 推送；客户端适配多代私
 ```text
 # dsh-status-rotator
 
-> Give DSH's running status your own voice: **custom phrases, typewriter output, day/night gradients, danmaku and an optional animated whale tail**. Ships **1362 phrases, 14 theme packs**; choose which packs to enable.
+> Give DSH's running status your own voice: **custom phrases, typewriter output, day/night gradients, danmaku and an optional animated whale tail**. Ships **1379 phrases, 14 theme packs**; choose which packs to enable.
 
 **English** | [中文](./README_ZH.md) · [Effects](#effect-preview) · [Install](#installation) · [Reference](#feature-overview) · [Changelog](./CHANGELOG.md)
 
@@ -204,9 +212,9 @@ A [DeepSeek Harness (DSH)](https://github.com/deepseek-ai/deepseek-harness) clie
 
 </details>
 
-**依据 2 · 作者声明**：[README.md:127-142](https://github.com/01Virex/dsh-status-rotator/blob/bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1/README.md#L127-L142)
+**依据 2 · 作者声明**：[README.md:127-142](https://github.com/01Virex/dsh-status-rotator/blob/39513500a34bea27da225f00e0ff76687989e779/README.md#L127-L142)
 
-不同版本状态行说明。
+当前固定版本复核。不同版本状态行说明。
 
 <details>
 <summary>查看原文（16行）</summary>
@@ -214,7 +222,7 @@ A [DeepSeek Harness (DSH)](https://github.com/deepseek-ai/deepseek-harness) clie
 ```text
 ### First run
 
-On first start the plugin serves, in order: your **saved settings** (`$DSH_HOME/status-rotator/config.json`) → the package `config.json` → `config.example.json` (what an npm install has: all 1362 default phrases live inside it, see [Phrase Bank](#phrase-bank)). Two more layers join in: the **auto-updated bank** (every 6 hours, see [Auto-updating the bank](#auto-updating-the-bank)) and the optional **external bank** (`$DSH_HOME/status-rotator/phrases.json`, highest priority, see [Hot-reloadable external bank](#hot-reloadable-external-bank)). Edit files directly (hot-reloaded while a page is open) or use the Settings → Status Texts page of DSH.
+On first start the plugin serves, in order: your **saved settings** (`$DSH_HOME/status-rotator/config.json`) → the package `config.json` → `config.example.json` (what an npm install has: all 1379 default phrases live inside it, see [Phrase Bank](#phrase-bank)). Two more layers join in: the **auto-updated bank** (every 6 hours, see [Auto-updating the bank](#auto-updating-the-bank)) and the optional **external bank** (`$DSH_HOME/status-rotator/phrases.json`, highest priority, see [Hot-reloadable external bank](#hot-reloadable-external-bank)). Edit files directly (hot-reloaded while a page is open) or use the Settings → Status Texts page of DSH.
 
 <details>
 <summary>Host version details and isolated testing</summary>
@@ -232,9 +240,9 @@ On first start the plugin serves, in order: your **saved settings** (`$DSH_HOME/
 
 </details>
 
-**依据 3 · 源码核查**：[lib/client.js:1062-1080](https://github.com/01Virex/dsh-status-rotator/blob/bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1/lib/client.js#L1062-L1080)
+**依据 3 · 源码核查**：[lib/client.js:1062-1080](https://github.com/01Virex/dsh-status-rotator/blob/39513500a34bea27da225f00e0ff76687989e779/lib/client.js#L1062-L1080)
 
-空词库回退。
+当前固定版本复核。空词库回退。
 
 <details>
 <summary>查看原文（19行）</summary>
@@ -263,9 +271,9 @@ On first start the plugin serves, in order: your **saved settings** (`$DSH_HOME/
 
 </details>
 
-**依据 4 · 源码核查**：[lib/client.js:2989-3005](https://github.com/01Virex/dsh-status-rotator/blob/bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1/lib/client.js#L2989-L3005)
+**依据 4 · 源码核查**：[lib/client.js:2989-3005](https://github.com/01Virex/dsh-status-rotator/blob/39513500a34bea27da225f00e0ff76687989e779/lib/client.js#L2989-L3005)
 
-新版 DOM 标记与读屏节点。
+当前固定版本复核。新版 DOM 标记与读屏节点。
 
 <details>
 <summary>查看原文（17行）</summary>
@@ -295,8 +303,8 @@ On first start the plugin serves, in order: your **saved settings** (`$DSH_HOME/
 #### 缺口
 
 - 未运行真实 DSH 或视觉体验测试。
-  **影响：**宿主版本适配与动画效果未知。
-  **进一步探讨：**按 0.1.6/0.1.7/0.2.0 实机矩阵验证。
+  **影响**：宿主版本适配与动画效果未知。
+  **进一步探讨**：按 0.1.6/0.1.7/0.2.0 实机矩阵验证。
 
 <a id="research-q02"></a>
 
@@ -304,7 +312,7 @@ On first start the plugin serves, in order: your **saved settings** (`$DSH_HOME/
 
 ### Q02 · 词库层与配置持久化如何避免升级丢设置？
 
-**研究主题：**功能与机制、贡献与相对优势
+**研究主题**：功能与机制、贡献与相对优势
 
 #### 完整回答
 
@@ -312,9 +320,9 @@ Node half 将随包默认、包内旧配置、远端词库、旧宿主设置、$
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/index.js:1-45](https://github.com/01Virex/dsh-status-rotator/blob/bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1/lib/index.js#L1-L45)
+**依据 1 · 源码核查**：[lib/index.js:1-45](https://github.com/01Virex/dsh-status-rotator/blob/39513500a34bea27da225f00e0ff76687989e779/lib/index.js#L1-L45)
 
-层次与升级迁移设计。
+当前固定版本复核。层次与升级迁移设计。
 
 <details>
 <summary>查看原文（45行）</summary>
@@ -369,9 +377,9 @@ Node half 将随包默认、包内旧配置、远端词库、旧宿主设置、$
 
 </details>
 
-**依据 2 · 源码核查**：[lib/index.js:65-100](https://github.com/01Virex/dsh-status-rotator/blob/bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1/lib/index.js#L65-L100)
+**依据 2 · 源码核查**：[lib/index.js:65-100](https://github.com/01Virex/dsh-status-rotator/blob/39513500a34bea27da225f00e0ff76687989e779/lib/index.js#L65-L100)
 
-路径与远端词库参数。
+当前固定版本复核。路径与远端词库参数。
 
 <details>
 <summary>查看原文（36行）</summary>
@@ -417,9 +425,9 @@ const MAX_BODY_BYTES = 5 * 1024 * 1024;
 
 </details>
 
-**依据 3 · 源码核查**：[lib/index.js:1756-1765](https://github.com/01Virex/dsh-status-rotator/blob/bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1/lib/index.js#L1756-L1765)
+**依据 3 · 源码核查**：[lib/index.js:1756-1765](https://github.com/01Virex/dsh-status-rotator/blob/39513500a34bea27da225f00e0ff76687989e779/lib/index.js#L1756-L1765)
 
-写入顺序。
+当前固定版本复核。写入顺序。
 
 <details>
 <summary>查看原文（10行）</summary>
@@ -439,21 +447,21 @@ const MAX_BODY_BYTES = 5 * 1024 * 1024;
 
 </details>
 
-**依据 4 · 作者声明**：[README.md:127-129](https://github.com/01Virex/dsh-status-rotator/blob/bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1/README.md#L127-L129)
+**依据 4 · 作者声明**：[README.md:127-129](https://github.com/01Virex/dsh-status-rotator/blob/39513500a34bea27da225f00e0ff76687989e779/README.md#L127-L129)
 
-作者所述配置层次。
+当前固定版本复核。作者所述配置层次。
 
 ```text
 ### First run
 
-On first start the plugin serves, in order: your **saved settings** (`$DSH_HOME/status-rotator/config.json`) → the package `config.json` → `config.example.json` (what an npm install has: all 1362 default phrases live inside it, see [Phrase Bank](#phrase-bank)). Two more layers join in: the **auto-updated bank** (every 6 hours, see [Auto-updating the bank](#auto-updating-the-bank)) and the optional **external bank** (`$DSH_HOME/status-rotator/phrases.json`, highest priority, see [Hot-reloadable external bank](#hot-reloadable-external-bank)). Edit files directly (hot-reloaded while a page is open) or use the Settings → Status Texts page of DSH.
+On first start the plugin serves, in order: your **saved settings** (`$DSH_HOME/status-rotator/config.json`) → the package `config.json` → `config.example.json` (what an npm install has: all 1379 default phrases live inside it, see [Phrase Bank](#phrase-bank)). Two more layers join in: the **auto-updated bank** (every 6 hours, see [Auto-updating the bank](#auto-updating-the-bank)) and the optional **external bank** (`$DSH_HOME/status-rotator/phrases.json`, highest priority, see [Hot-reloadable external bank](#hot-reloadable-external-bank)). Edit files directly (hot-reloaded while a page is open) or use the Settings → Status Texts page of DSH.
 ```
 
 #### 缺口
 
 - 未模拟真实 npm 升级。
-  **影响：**迁移在复杂历史配置下的正确性未独立验证。
-  **进一步探讨：**用旧版配置样本离线迁移对照。
+  **影响**：迁移在复杂历史配置下的正确性未独立验证。
+  **进一步探讨**：用旧版配置样本离线迁移对照。
 
 <a id="research-q03"></a>
 
@@ -461,7 +469,7 @@ On first start the plugin serves, in order: your **saved settings** (`$DSH_HOME/
 
 ### Q03 · 并发保存与网页请求有哪些控制？
 
-**研究主题：**工程质量与复用、缺陷与关键质疑
+**研究主题**：工程质量与复用、缺陷与关键质疑
 
 #### 完整回答
 
@@ -469,9 +477,9 @@ GET 返回正文对应 ETag，设置页 PUT 带 If-Match，保存串行锁把检
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/index.js:296-329](https://github.com/01Virex/dsh-status-rotator/blob/bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1/lib/index.js#L296-L329)
+**依据 1 · 源码核查**：[lib/index.js:296-329](https://github.com/01Virex/dsh-status-rotator/blob/39513500a34bea27da225f00e0ff76687989e779/lib/index.js#L296-L329)
 
-服务端安全动机与限制值。
+当前固定版本复核。服务端安全动机与限制值。
 
 <details>
 <summary>查看原文（34行）</summary>
@@ -515,9 +523,9 @@ const CONFIG_LIMITS = {
 
 </details>
 
-**依据 2 · 源码核查**：[lib/index.js:1586-1613](https://github.com/01Virex/dsh-status-rotator/blob/bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1/lib/index.js#L1586-L1613)
+**依据 2 · 源码核查**：[lib/index.js:1586-1613](https://github.com/01Virex/dsh-status-rotator/blob/39513500a34bea27da225f00e0ff76687989e779/lib/index.js#L1586-L1613)
 
-ETag 与串行锁。
+当前固定版本复核。ETag 与串行锁。
 
 <details>
 <summary>查看原文（28行）</summary>
@@ -555,9 +563,9 @@ function withSaveLock(fn) {
 
 </details>
 
-**依据 3 · 源码核查**：[lib/index.js:1712-1753](https://github.com/01Virex/dsh-status-rotator/blob/bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1/lib/index.js#L1712-L1753)
+**依据 3 · 源码核查**：[lib/index.js:1712-1753](https://github.com/01Virex/dsh-status-rotator/blob/39513500a34bea27da225f00e0ff76687989e779/lib/index.js#L1712-L1753)
 
-读写路由。
+当前固定版本复核。读写路由。
 
 <details>
 <summary>查看原文（42行）</summary>
@@ -609,9 +617,9 @@ function createServeConfig(getSettingsApi) {
 
 </details>
 
-**依据 4 · 源码核查**：[lib/index.js:1785-1799](https://github.com/01Virex/dsh-status-rotator/blob/bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1/lib/index.js#L1785-L1799)
+**依据 4 · 源码核查**：[lib/index.js:1785-1799](https://github.com/01Virex/dsh-status-rotator/blob/39513500a34bea27da225f00e0ff76687989e779/lib/index.js#L1785-L1799)
 
-可选 If-Match。
+当前固定版本复核。可选 If-Match。
 
 <details>
 <summary>查看原文（15行）</summary>
@@ -636,9 +644,9 @@ function createServeConfig(getSettingsApi) {
 
 </details>
 
-**依据 5 · 作者声明**：[SECURITY.md:23-26](https://github.com/01Virex/dsh-status-rotator/blob/bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1/SECURITY.md#L23-L26)
+**依据 5 · 作者声明**：[SECURITY.md:23-26](https://github.com/01Virex/dsh-status-rotator/blob/39513500a34bea27da225f00e0ff76687989e779/SECURITY.md#L23-L26)
 
-作者安全边界。
+当前固定版本复核。作者安全边界。
 
 ```text
 ## What is in scope
@@ -650,8 +658,8 @@ function createServeConfig(getSettingsApi) {
 #### 缺口
 
 - 未检查宿主实际监听/反代配置。
-  **影响：**网络可达性与 DNS rebinding 风险取决于部署。
-  **进一步探讨：**隔离端口与反代环境验证。
+  **影响**：网络可达性与 DNS rebinding 风险取决于部署。
+  **进一步探讨**：隔离端口与反代环境验证。
 
 <a id="research-q04"></a>
 
@@ -659,7 +667,7 @@ function createServeConfig(getSettingsApi) {
 
 ### Q04 · 自动更新与动态 UI 的持续成本是什么？
 
-**研究主题：**依赖、兼容与流程、效果与总成本
+**研究主题**：依赖、兼容与流程、效果与总成本
 
 #### 完整回答
 
@@ -667,9 +675,9 @@ function createServeConfig(getSettingsApi) {
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/index.js:85-100](https://github.com/01Virex/dsh-status-rotator/blob/bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1/lib/index.js#L85-L100)
+**依据 1 · 源码核查**：[lib/index.js:85-100](https://github.com/01Virex/dsh-status-rotator/blob/39513500a34bea27da225f00e0ff76687989e779/lib/index.js#L85-L100)
 
-默认 URL/间隔/大小。
+当前固定版本复核。默认 URL/间隔/大小。
 
 <details>
 <summary>查看原文（16行）</summary>
@@ -695,9 +703,9 @@ const MAX_BODY_BYTES = 5 * 1024 * 1024;
 
 </details>
 
-**依据 2 · 源码核查**：[lib/index.js:856-939](https://github.com/01Virex/dsh-status-rotator/blob/bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1/lib/index.js#L856-L939)
+**依据 2 · 源码核查**：[lib/index.js:856-939](https://github.com/01Virex/dsh-status-rotator/blob/39513500a34bea27da225f00e0ff76687989e779/lib/index.js#L856-L939)
 
-拉取和失败回退。
+当前固定版本复核。拉取和失败回退。
 
 <details>
 <summary>查看原文（84行）</summary>
@@ -791,9 +799,9 @@ function startRemoteBankUpdater() {
 
 </details>
 
-**依据 3 · 源码核查**：[lib/index.js:1577-1584](https://github.com/01Virex/dsh-status-rotator/blob/bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1/lib/index.js#L1577-L1584)
+**依据 3 · 源码核查**：[lib/index.js:1577-1584](https://github.com/01Virex/dsh-status-rotator/blob/39513500a34bea27da225f00e0ff76687989e779/lib/index.js#L1577-L1584)
 
-推送和检测周期。
+当前固定版本复核。推送和检测周期。
 
 ```text
 /** ── 并发控制 ── 响应头名:GET 发它,PUT 用它做前提校验(If-Match) */
@@ -806,9 +814,9 @@ const CHANGE_TICK_MS = 2000;
 const SSE_HEARTBEAT_MS = 25000;
 ```
 
-**依据 4 · 源码核查**：[lib/index.js:1940-1999](https://github.com/01Virex/dsh-status-rotator/blob/bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1/lib/index.js#L1940-L1999)
+**依据 4 · 源码核查**：[lib/index.js:1940-1999](https://github.com/01Virex/dsh-status-rotator/blob/39513500a34bea27da225f00e0ff76687989e779/lib/index.js#L1940-L1999)
 
-生命周期与路由。
+当前固定版本复核。生命周期与路由。
 
 <details>
 <summary>查看原文（60行）</summary>
@@ -878,9 +886,9 @@ const SSE_HEARTBEAT_MS = 25000;
 
 </details>
 
-**依据 5 · 源码核查**：[lib/client.js:2965-2983](https://github.com/01Virex/dsh-status-rotator/blob/bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1/lib/client.js#L2965-L2983)
+**依据 5 · 源码核查**：[lib/client.js:2965-2983](https://github.com/01Virex/dsh-status-rotator/blob/39513500a34bea27da225f00e0ff76687989e779/lib/client.js#L2965-L2983)
 
-跨插件 CSS 协作边界。
+当前固定版本复核。跨插件 CSS 协作边界。
 
 <details>
 <summary>查看原文（19行）</summary>
@@ -912,8 +920,8 @@ const SSE_HEARTBEAT_MS = 25000;
 #### 缺口
 
 - 未测性能、电耗或远端内容变化。
-  **影响：**使用成本依设备和页面数不同。
-  **进一步探讨：**低端设备/多标签页测 CPU 与网络。
+  **影响**：使用成本依设备和页面数不同。
+  **进一步探讨**：低端设备/多标签页测 CPU 与网络。
 
 <a id="research-q05"></a>
 
@@ -921,7 +929,7 @@ const SSE_HEARTBEAT_MS = 25000;
 
 ### Q05 · 如何分阶段试用并验证可访问性？
 
-**研究主题：**新假设与验证、采用判断
+**研究主题**：新假设与验证、采用判断
 
 #### 完整回答
 
@@ -929,9 +937,9 @@ const SSE_HEARTBEAT_MS = 25000;
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:84-94](https://github.com/01Virex/dsh-status-rotator/blob/bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1/README.md#L84-L94)
+**依据 1 · 作者声明**：[README.md:84-94](https://github.com/01Virex/dsh-status-rotator/blob/39513500a34bea27da225f00e0ff76687989e779/README.md#L84-L94)
 
-安装与默认外观。
+当前固定版本复核。安装与默认外观。
 
 <details>
 <summary>查看原文（11行）</summary>
@@ -952,9 +960,9 @@ The whale tail and tail motion start off; enable them under **Appearance → Wha
 
 </details>
 
-**依据 2 · 源码核查**：[lib/client.js:1062-1080](https://github.com/01Virex/dsh-status-rotator/blob/bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1/lib/client.js#L1062-L1080)
+**依据 2 · 源码核查**：[lib/client.js:1062-1080](https://github.com/01Virex/dsh-status-rotator/blob/39513500a34bea27da225f00e0ff76687989e779/lib/client.js#L1062-L1080)
 
-回退规则。
+当前固定版本复核。回退规则。
 
 <details>
 <summary>查看原文（19行）</summary>
@@ -983,9 +991,9 @@ The whale tail and tail motion start off; enable them under **Appearance → Wha
 
 </details>
 
-**依据 3 · 源码核查**：[lib/client.js:2989-3005](https://github.com/01Virex/dsh-status-rotator/blob/bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1/lib/client.js#L2989-L3005)
+**依据 3 · 源码核查**：[lib/client.js:2989-3005](https://github.com/01Virex/dsh-status-rotator/blob/39513500a34bea27da225f00e0ff76687989e779/lib/client.js#L2989-L3005)
 
-运行行结构与读屏注释。
+当前固定版本复核。运行行结构与读屏注释。
 
 <details>
 <summary>查看原文（17行）</summary>
@@ -1012,9 +1020,9 @@ The whale tail and tail motion start off; enable them under **Appearance → Wha
 
 </details>
 
-**依据 4 · 源码核查**：[lib/index.js:1785-1799](https://github.com/01Virex/dsh-status-rotator/blob/bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1/lib/index.js#L1785-L1799)
+**依据 4 · 源码核查**：[lib/index.js:1785-1799](https://github.com/01Virex/dsh-status-rotator/blob/39513500a34bea27da225f00e0ff76687989e779/lib/index.js#L1785-L1799)
 
-并发写条件。
+当前固定版本复核。并发写条件。
 
 <details>
 <summary>查看原文（15行）</summary>

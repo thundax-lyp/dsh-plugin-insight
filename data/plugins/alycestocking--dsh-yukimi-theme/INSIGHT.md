@@ -173,7 +173,7 @@ Web 主题外观与 Windows desktop helper 分路径，Host 将根会话状态�
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标：**核实 Web 主题/Windows 桌宠双路径、通知桥接与素材/部署边界。
+**插件研究总目标**：核实 Web 主题/Windows 桌宠双路径、通知桥接与素材/部署边界。
 
 <a id="research-q01"></a>
 
@@ -181,7 +181,7 @@ Web 主题外观与 Windows desktop helper 分路径，Host 将根会话状态�
 
 ### Q01 · 主题与桌宠分别给用户什么？
 
-**研究主题：**场景与需求、贡献与相对优势
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
@@ -354,8 +354,8 @@ export function installDesktop(ctx, { startHelper = launchHelper, state = new De
 #### 缺口
 
 - 未运行 Web/Windows 桌宠。
-  **影响：**视觉、通知命中和多显示器行为未独立验证。
-  **进一步探讨：**目标宿主测 Web 视觉、审批等待和多显示器桌宠。
+  **影响**：视觉、通知命中和多显示器行为未独立验证。
+  **进一步探讨**：目标宿主测 Web 视觉、审批等待和多显示器桌宠。
 
 <a id="research-q02"></a>
 
@@ -363,7 +363,7 @@ export function installDesktop(ctx, { startHelper = launchHelper, state = new De
 
 ### Q02 · 桌面桥接和敏感内容范围如何控制？
 
-**研究主题：**功能与机制、工程质量与复用、缺陷与关键质疑
+**研究主题**：功能与机制、工程质量与复用、缺陷与关键质疑
 
 #### 完整回答
 
@@ -607,8 +607,8 @@ dsh plugin --profile web add github:AlyceStocking/dsh-yukimi-theme
 #### 缺口
 
 - 未对宿主会话标题和桌面预览做实际隐私复核。
-  **影响：**不能确认视觉泄露概率和焦点行为。
-  **进一步探讨：**在共享屏幕模拟敏感标题、审批等待与点击气泡，核是否只导航。
+  **影响**：不能确认视觉泄露概率和焦点行为。
+  **进一步探讨**：在共享屏幕模拟敏感标题、审批等待与点击气泡，核是否只导航。
 
 <a id="research-q03"></a>
 
@@ -616,7 +616,7 @@ dsh plugin --profile web add github:AlyceStocking/dsh-yukimi-theme
 
 ### Q03 · 部署与素材有哪些边界？
 
-**研究主题：**依赖、兼容与流程、效果与总成本、采用判断、新假设与验证
+**研究主题**：依赖、兼容与流程、效果与总成本、采用判断、新假设与验证
 
 #### 完整回答
 
@@ -768,7 +768,7 @@ export const ICONS = [
 #### 缺口
 
 - 未核实际外部图片可达性、授权及打包后的桌宠。
-  **影响：**体验与合规采用范围未知。
-  **进一步探讨：**逐图核授权/来源和可用性，在隔离 desktop profile 验证完整安装/回滚。
+  **影响**：体验与合规采用范围未知。
+  **进一步探讨**：逐图核授权/来源和可用性，在隔离 desktop profile 验证完整安装/回滚。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

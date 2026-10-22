@@ -174,7 +174,7 @@ workspace运行依赖未闭合，用量字段可能重复计量，结构扫描�
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标：**跨IDE本地事实和规则管理如何工作，计量/写入/分发的边界是什么？
+**插件研究总目标**：跨IDE本地事实和规则管理如何工作，计量/写入/分发的边界是什么？
 
 <a id="research-q01"></a>
 
@@ -182,7 +182,7 @@ workspace运行依赖未闭合，用量字段可能重复计量，结构扫描�
 
 ### Q01 · 统一IDE管理具体统一了什么？
 
-**研究主题：**场景与需求、贡献与相对优势
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
@@ -317,7 +317,7 @@ export function inventory(spec: IdeSpec): IdeInventory {
 
 ### Q02 · 本地读取、排序和安装依赖如何组成？
 
-**研究主题：**功能与机制、依赖、兼容与流程
+**研究主题**：功能与机制、依赖、兼容与流程
 
 #### 完整回答
 
@@ -609,8 +609,8 @@ dsh plugin --profile web add github:121212165/dsh-plugin-ide-hub
 #### 缺口
 
 - @dsh-family/kit在独立Git安装/发布包的实际解析来源未由固定仓库给出
-  **影响：**不能据README声称认定当前分发可独立构建和加载
-  **进一步探讨：**核对锁定分发包内容与运行依赖声明，保留宿主安装版本
+  **影响**：不能据README声称认定当前分发可独立构建和加载
+  **进一步探讨**：核对锁定分发包内容与运行依赖声明，保留宿主安装版本
 
 <a id="research-q03"></a>
 
@@ -618,7 +618,7 @@ dsh plugin --profile web add github:121212165/dsh-plugin-ide-hub
 
 ### Q03 · 用量与恢复命令有何语义风险？
 
-**研究主题：**缺陷与关键质疑
+**研究主题**：缺陷与关键质疑
 
 #### 完整回答
 
@@ -855,8 +855,8 @@ test('codex token_count event parses with reasoning folded into output', () => {
 #### 缺口
 
 - 对应版本转录中cache/reasoning是否包含在input/output及session ID字段的真实契约
-  **影响：**重复计量或unknown去重会影响用量和会话排序
-  **进一步探讨：**用版本化真实样例与原工具账目做字段对账，不把fixture自洽当准确度
+  **影响**：重复计量或unknown去重会影响用量和会话排序
+  **进一步探讨**：用版本化真实样例与原工具账目做字段对账，不把fixture自洽当准确度
 
 <a id="research-q04"></a>
 
@@ -864,7 +864,7 @@ test('codex token_count event parses with reasoning folded into output', () => {
 
 ### Q04 · 规则写入与导出是否安全且幂等？
 
-**研究主题：**缺陷与关键质疑
+**研究主题**：缺陷与关键质疑
 
 #### 完整回答
 
@@ -1120,7 +1120,7 @@ export function writeNotes(vaultDir: string, notes: ObsidianNote[]): { written: 
 
 ### Q05 · 工程证据和使用成本支持哪些结论？
 
-**研究主题：**工程质量与复用、效果与总成本
+**研究主题**：工程质量与复用、效果与总成本
 
 #### 完整回答
 
@@ -1357,7 +1357,7 @@ export function writeNotes(vaultDir: string, notes: ObsidianNote[]): { written: 
 
 ### Q06 · 推荐条件与进一步探讨方向是什么？
 
-**研究主题：**新假设与验证、采用判断
+**研究主题**：新假设与验证、采用判断
 
 #### 完整回答
 

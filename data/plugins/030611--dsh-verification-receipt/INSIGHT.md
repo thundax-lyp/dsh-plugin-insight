@@ -195,7 +195,7 @@ writer用Promise链顺序append，mkdir0700/append0600仅请求创建模式，�
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标：**核轮次/调用状态投影、验证信号语义、最小字段隐私与hash、队列/卸载/磁盘边界、兼容成本及采用。
+**插件研究总目标**：核轮次/调用状态投影、验证信号语义、最小字段隐私与hash、队列/卸载/磁盘边界、兼容成本及采用。
 
 <a id="research-q01"></a>
 
@@ -203,7 +203,7 @@ writer用Promise链顺序append，mkdir0700/append0600仅请求创建模式，�
 
 ### Q01 · 它解决什么核查问题，什么结果有意义？
 
-**研究主题：**场景与需求
+**研究主题**：场景与需求
 
 #### 完整回答
 
@@ -273,7 +273,7 @@ export interface VerificationReceipt {
 
 ### Q02 · 如何划轮次、配对调用并保护模型上下文？
 
-**研究主题：**功能与机制、贡献与相对优势
+**研究主题**：功能与机制、贡献与相对优势
 
 #### 完整回答
 
@@ -464,7 +464,7 @@ function summarizeTools(calls: readonly CallObservation[]): ToolSummary {
 
 ### Q03 · 验证信号能证明什么，哪些反例会误导？
 
-**研究主题：**缺陷与关键质疑
+**研究主题**：缺陷与关键质疑
 
 #### 完整回答
 
@@ -646,8 +646,8 @@ function toolResultBlock(message: unknown): Record<string, unknown> | undefined 
 #### 缺口
 
 - 在目标读者真实工具命名/命令语料中的误报漏报率没有标注对照。
-  **影响：**不量化发现质量或作为质量门禁。
-  **进一步探讨：**用去敏合成命令矩阵加人工已知执行结果，分开词法命中、调用成功、实际验证/断言结果。
+  **影响**：不量化发现质量或作为质量门禁。
+  **进一步探讨**：用去敏合成命令矩阵加人工已知执行结果，分开词法命中、调用成功、实际验证/断言结果。
 
 <a id="research-q04"></a>
 
@@ -655,7 +655,7 @@ function toolResultBlock(message: unknown): Record<string, unknown> | undefined 
 
 ### Q04 · 隐私、完整性与持久化有哪些真实保证？
 
-**研究主题：**缺陷与关键质疑、工程质量与复用
+**研究主题**：缺陷与关键质疑、工程质量与复用
 
 #### 完整回答
 
@@ -875,8 +875,8 @@ Directory/file creation modes are best-effort: existing permissions are unchange
 #### 缺口
 
 - 持续慢盘/满盘下队列峰值、丢行与恢复表现缺少资源曲线。
-  **影响：**不能承诺有界内存或完整无丢账。
-  **进一步探讨：**mock延迟/拒绝append，以合成高频turn测已接受/持久/丢弃计数和内存，勿用真实对话。
+  **影响**：不能承诺有界内存或完整无丢账。
+  **进一步探讨**：mock延迟/拒绝append，以合成高频turn测已接受/持久/丢弃计数和内存，勿用真实对话。
 
 <a id="research-q05"></a>
 
@@ -884,7 +884,7 @@ Directory/file creation modes are best-effort: existing permissions are unchange
 
 ### Q05 · 启动、维护与成本效果怎么判断？
 
-**研究主题：**依赖、兼容与流程、效果与总成本
+**研究主题**：依赖、兼容与流程、效果与总成本
 
 #### 完整回答
 
@@ -1040,8 +1040,8 @@ function resolveConfig(config: Config = {}): ResolvedConfig {
 #### 缺口
 
 - 固定版本长会话/大参数的snapshot与投影时延、长期JSONL增长未对照。
-  **影响：**不量化零成本或日常保留规模。
-  **进一步探讨：**合成多轮/不同事件大小，分别统计宿主snapshot、投影、队列和存储，无需模型调用。
+  **影响**：不量化零成本或日常保留规模。
+  **进一步探讨**：合成多轮/不同事件大小，分别统计宿主snapshot、投影、队列和存储，无需模型调用。
 
 <a id="research-q06"></a>
 
@@ -1049,7 +1049,7 @@ function resolveConfig(config: Config = {}): ResolvedConfig {
 
 ### Q06 · 推荐结论与可继续探讨方向是什么？
 
-**研究主题：**采用判断、新假设与验证
+**研究主题**：采用判断、新假设与验证
 
 #### 完整回答
 
@@ -1151,7 +1151,7 @@ function resolveConfig(config: Config = {}): ResolvedConfig {
 #### 缺口
 
 - 有界队列/丢失收据方案未实现。
-  **影响：**不计现有资源与耐久优势。
-  **进一步探讨：**合成延迟/失败/崩溃对照内存、延迟与丢失解释，不调用模型。
+  **影响**：不计现有资源与耐久优势。
+  **进一步探讨**：合成延迟/失败/崩溃对照内存、延迟与丢失解释，不调用模型。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

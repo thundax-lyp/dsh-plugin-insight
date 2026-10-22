@@ -193,7 +193,7 @@ assistant范围依chat-flow/markdown DOM而非role，无flow退document；解析
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标：**核视觉语义/内容真值区别、严格Text匹配/observer/卸载、assistant来源/转义边界、上下文与DOM成本。
+**插件研究总目标**：核视觉语义/内容真值区别、严格Text匹配/observer/卸载、assistant来源/转义边界、上下文与DOM成本。
 
 <a id="research-q01"></a>
 
@@ -201,7 +201,7 @@ assistant范围依chat-flow/markdown DOM而非role，无flow退document；解析
 
 ### Q01 · 适合什么阅读任务，卡片意味着什么？
 
-**研究主题：**场景与需求
+**研究主题**：场景与需求
 
 #### 完整回答
 
@@ -263,7 +263,7 @@ const ALERT_STRIP_RE = /^\s*\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\][ \t]*(?:\r
 
 ### Q02 · 标记匹配、流式更新与卸载如何实现？
 
-**研究主题：**功能与机制、贡献与相对优势
+**研究主题**：功能与机制、贡献与相对优势
 
 #### 完整回答
 
@@ -570,7 +570,7 @@ export function apply(ctx: Context): void {
 
 ### Q03 · 渲染范围/原文与状态边界有什么不足？
 
-**研究主题：**缺陷与关键质疑、工程质量与复用
+**研究主题**：缺陷与关键质疑、工程质量与复用
 
 #### 完整回答
 
@@ -722,8 +722,8 @@ function scheduleScan(): void {
 #### 缺口
 
 - 真实DSH流式/主题/会话切换、转义marker和屏幕阅读器的交互未独立核。
-  **影响：**不能承诺全版本无误判或所有读者可达。
-  **进一步探讨：**用无秘密固定Markdown/DOM及role/flow变更、仅type丢失/全clear/HMR/辅助技术检查，区分拒绝/恢复/呈现。
+  **影响**：不能承诺全版本无误判或所有读者可达。
+  **进一步探讨**：用无秘密固定Markdown/DOM及role/flow变更、仅type丢失/全clear/HMR/辅助技术检查，区分拒绝/恢复/呈现。
 
 <a id="research-q04"></a>
 
@@ -731,7 +731,7 @@ function scheduleScan(): void {
 
 ### Q04 · 启动步骤与三阶段成本效果是什么？
 
-**研究主题：**依赖、兼容与流程、效果与总成本
+**研究主题**：依赖、兼容与流程、效果与总成本
 
 #### 完整回答
 
@@ -877,8 +877,8 @@ test('state: the observer echo of our own strip keeps the card', () => {
 #### 缺口
 
 - 与普通blockquote/加粗的查找时间、误读率和大会话开销没有对照。
-  **影响：**不量化阅读效率或安全改善。
-  **进一步探讨：**固定等长无秘密回答，比较找结论/风险的时间与误读，并记录DOM扫描/状态回收开销。
+  **影响**：不量化阅读效率或安全改善。
+  **进一步探讨**：固定等长无秘密回答，比较找结论/风险的时间与误读，并记录DOM扫描/状态回收开销。
 
 <a id="research-q05"></a>
 
@@ -886,7 +886,7 @@ test('state: the observer echo of our own strip keeps the card', () => {
 
 ### Q05 · 推荐与继续探讨入口是什么？
 
-**研究主题：**采用判断、新假设与验证
+**研究主题**：采用判断、新假设与验证
 
 #### 完整回答
 
@@ -974,7 +974,7 @@ function handleMutations(records: MutationRecord[]): void {
 #### 缺口
 
 - 来源适配/AST或role约束与完整属性恢复方案未实现。
-  **影响：**不计现有来源保证/创新优势。
-  **进一步探讨：**固定DOM矩阵/状态转换模拟比较误改/漏标/回收，无真实对话材料。
+  **影响**：不计现有来源保证/创新优势。
+  **进一步探讨**：固定DOM矩阵/状态转换模拟比较误改/漏标/回收，无真实对话材料。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

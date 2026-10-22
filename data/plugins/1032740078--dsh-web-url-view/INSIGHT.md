@@ -169,7 +169,7 @@ Issue 活跃度数据暂未获取（查询日期：2026-10-20），可前往 [Gi
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标：**固定 Web 入口如何处理身份与跨设备访问，异常路径是否泄露/损坏会话？
+**插件研究总目标**：固定 Web 入口如何处理身份与跨设备访问，异常路径是否泄露/损坏会话？
 
 <a id="research-q01"></a>
 
@@ -177,7 +177,7 @@ Issue 活跃度数据暂未获取（查询日期：2026-10-20），可前往 [Gi
 
 ### Q01 · 固定 URL 实际提供什么便利，默认访问范围有多大？
 
-**研究主题：**场景与需求、贡献与相对优势
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
@@ -292,8 +292,8 @@ export async function apply(ctx: Context, config: Config | undefined): Promise<v
 #### 缺口
 
 - 目标网络/宿主权限未测
-  **影响：**默认可能扩大 GUI 控制面
-  **进一步探讨：**目标 LAN 设备验证并设防火墙
+  **影响**：默认可能扩大 GUI 控制面
+  **进一步探讨**：目标 LAN 设备验证并设防火墙
 
 <a id="research-q02"></a>
 
@@ -301,7 +301,7 @@ export async function apply(ctx: Context, config: Config | undefined): Promise<v
 
 ### Q02 · 固定入口怎样保持跨启动的身份连接？
 
-**研究主题：**功能与机制、工程质量与复用
+**研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
@@ -530,8 +530,8 @@ function stripHopHeaders(headers: IncomingHttpHeaders): IncomingHttpHeaders {
 #### 缺口
 
 - 目标重启和 WebSocket 未重放
-  **影响：**IP 变化/端口冲突时固定书签失效
-  **进一步探讨：**目标重启/换网/占端口矩阵
+  **影响**：IP 变化/端口冲突时固定书签失效
+  **进一步探讨**：目标重启/换网/占端口矩阵
 
 <a id="research-q03"></a>
 
@@ -539,7 +539,7 @@ function stripHopHeaders(headers: IncomingHttpHeaders): IncomingHttpHeaders {
 
 ### Q03 · 启动令牌真的不出现在日志或浏览器吗？
 
-**研究主题：**缺陷与关键质疑、效果与总成本
+**研究主题**：缺陷与关键质疑、效果与总成本
 
 #### 完整回答
 
@@ -660,8 +660,8 @@ function rawHeaderText(rawHeaders: readonly string[]): string {
 #### 缺口
 
 - 上游 101 是否含 Set-Cookie 未测
-  **影响：**故障日志可泄露启动令牌
-  **进一步探讨：**目标失败握手与 101 头验证
+  **影响**：故障日志可泄露启动令牌
+  **进一步探讨**：目标失败握手与 101 头验证
 
 <a id="research-q04"></a>
 
@@ -669,7 +669,7 @@ function rawHeaderText(rawHeaders: readonly string[]): string {
 
 ### Q04 · HTTP 401 自动重放是否适合有请求体的操作？
 
-**研究主题：**缺陷与关键质疑、依赖、兼容与流程
+**研究主题**：缺陷与关键质疑、依赖、兼容与流程
 
 #### 完整回答
 
@@ -766,8 +766,8 @@ dispatch 首次请求用 request.pipe(upstream) 消耗入站流。若上游 401�
 #### 缺口
 
 - 目标 Node stream 重放结果未测
-  **影响：**保存/提交可能失败或不可预测
-  **进一步探讨：**目标 cookie 过期时 POST 大小正文
+  **影响**：保存/提交可能失败或不可预测
+  **进一步探讨**：目标 cookie 过期时 POST 大小正文
 
 <a id="research-q05"></a>
 
@@ -775,7 +775,7 @@ dispatch 首次请求用 request.pipe(upstream) 消耗入站流。若上游 401�
 
 ### Q05 · 怎样部署才能控制暴露面并验证可用性？
 
-**研究主题：**采用判断、新假设与验证、效果与总成本
+**研究主题**：采用判断、新假设与验证、效果与总成本
 
 #### 完整回答
 
@@ -930,7 +930,7 @@ current 返回 token URL
 #### 缺口
 
 - 外层 TLS/身份控制未测
-  **影响：**局域网共享不等同本人访问
-  **进一步探讨：**目标网络权限与跨设备端到端验证
+  **影响**：局域网共享不等同本人访问
+  **进一步探讨**：目标网络权限与跨设备端到端验证
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

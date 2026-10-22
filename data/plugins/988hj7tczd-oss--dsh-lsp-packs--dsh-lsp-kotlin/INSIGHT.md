@@ -168,7 +168,7 @@ Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [Gi
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标：**Kotlin LSP 配置包在固定版本中实际负责什么、依赖什么，失败回退和脚本导航是否足以支撑采用？
+**插件研究总目标**：Kotlin LSP 配置包在固定版本中实际负责什么、依赖什么，失败回退和脚本导航是否足以支撑采用？
 
 <a id="research-q01"></a>
 
@@ -176,7 +176,7 @@ Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [Gi
 
 ### Q01 · 这个包解决了 Kotlin 开发者的哪段配置工作，贡献归谁？
 
-**研究主题：**场景与需求、贡献与相对优势
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
@@ -278,8 +278,8 @@ export const DEFAULT_EXTENSION_TO_LANGUAGE: Readonly<Record<string, string>> = {
 #### 缺口
 
 - 未取得目标 Kotlin 工程中的导航质量与原有 IDE/手工配置对照
-  **影响：**无法断言本包提升查询准确率或完成速度
-  **进一步探讨：**在相同 Gradle 工程记录四类查询的正确命中与首次可用时间，并对照 IDE 或手工底座
+  **影响**：无法断言本包提升查询准确率或完成速度
+  **进一步探讨**：在相同 Gradle 工程记录四类查询的正确命中与首次可用时间，并对照 IDE 或手工底座
 
 <a id="research-q02"></a>
 
@@ -287,7 +287,7 @@ export const DEFAULT_EXTENSION_TO_LANGUAGE: Readonly<Record<string, string>> = {
 
 ### Q02 · 配置如何注册 provider，失败时怎样表现？
 
-**研究主题：**功能与机制
+**研究主题**：功能与机制
 
 #### 完整回答
 
@@ -451,8 +451,8 @@ accepted (`command`, `args`, `env`, `extensionToLanguage`, `initializationOption
 #### 缺口
 
 - 未检查当前部署的共享 stdio 底座源码和真实 apply 异常分类
-  **影响：**不能保证所有异常均只影响 Kotlin，也不能确认实际懒启动时序
-  **进一步探讨：**固定底座版本，核对进程解析、启动、超时、provider 冲突与错误分类，并在隔离宿主观测
+  **影响**：不能保证所有异常均只影响 Kotlin，也不能确认实际懒启动时序
+  **进一步探讨**：固定底座版本，核对进程解析、启动、超时、provider 冲突与错误分类，并在隔离宿主观测
 
 <a id="research-q03"></a>
 
@@ -460,7 +460,7 @@ accepted (`command`, `args`, `env`, `extensionToLanguage`, `initializationOption
 
 ### Q03 · .kts 路由、服务器缺失回退与作者测试能证明哪些结果？
 
-**研究主题：**缺陷与关键质疑
+**研究主题**：缺陷与关键质疑
 
 #### 完整回答
 
@@ -604,8 +604,8 @@ describe.skipIf(!installed)('dsh-lsp-kotlin real server (kotlin-language-server)
 #### 缺口
 
 - 没有 .kt 与 .kts 的真实 Gradle 工程查询结果及故障注入记录
-  **影响：**不能估计脚本导航命中率、首次延迟与回退隔离程度
-  **进一步探讨：**用固定 JDK/Gradle/服务器版本对源文件和脚本分别测四操作，同时注入缺命令、错误配置与初始化异常
+  **影响**：不能估计脚本导航命中率、首次延迟与回退隔离程度
+  **进一步探讨**：用固定 JDK/Gradle/服务器版本对源文件和脚本分别测四操作，同时注入缺命令、错误配置与初始化异常
 
 <a id="research-q04"></a>
 
@@ -613,7 +613,7 @@ describe.skipIf(!installed)('dsh-lsp-kotlin real server (kotlin-language-server)
 
 ### Q04 · 安装、索引与失败恢复的真实责任在哪里？
 
-**研究主题：**依赖、兼容与流程、效果与总成本
+**研究主题**：依赖、兼容与流程、效果与总成本
 
 #### 完整回答
 
@@ -754,8 +754,8 @@ export const DEFAULT_COMMAND = 'kotlin-language-server'
 #### 缺口
 
 - 没有当下 npm 可取得性、宿主兼容和实际索引资源记录
-  **影响：**不能估算首次/持续成本，亦不能承诺包安装成功
-  **进一步探讨：**在目标日期核对 registry 与包名，在隔离配置中测首次索引、资源和错误恢复；现金/人工成本分开记录
+  **影响**：不能估算首次/持续成本，亦不能承诺包安装成功
+  **进一步探讨**：在目标日期核对 registry 与包名，在隔离配置中测首次索引、资源和错误恢复；现金/人工成本分开记录
 
 <a id="research-q05"></a>
 
@@ -763,7 +763,7 @@ export const DEFAULT_COMMAND = 'kotlin-language-server'
 
 ### Q05 · 配置包架构有哪些可复用之处与维护风险？
 
-**研究主题：**工程质量与复用
+**研究主题**：工程质量与复用
 
 #### 完整回答
 
@@ -1002,8 +1002,8 @@ describe.skipIf(!installed)('dsh-lsp-kotlin real server (kotlin-language-server)
 #### 缺口
 
 - 共享底座版本变化对配置契约与故障隔离的影响未跨版本核查
-  **影响：**不能称该配置方法已在声明范围内普遍可靠
-  **进一步探讨：**按声明上下界建立最小版本矩阵，比较 provider 注册和错误分类
+  **影响**：不能称该配置方法已在声明范围内普遍可靠
+  **进一步探讨**：按声明上下界建立最小版本矩阵，比较 provider 注册和错误分类
 
 <a id="research-q06"></a>
 
@@ -1011,7 +1011,7 @@ describe.skipIf(!installed)('dsh-lsp-kotlin real server (kotlin-language-server)
 
 ### Q06 · 如何从脚本路由与回退缺口提出可证伪的改进？
 
-**研究主题：**新假设与验证
+**研究主题**：新假设与验证
 
 #### 完整回答
 
@@ -1105,8 +1105,8 @@ kotlin-language-server prefers a Gradle project; single-file queries work after 
 #### 缺口
 
 - 诊断契约与继承覆盖映射的方案尚未实现和实验
-  **影响：**不能把更少排障或更高脚本命中率写作现有效果
-  **进一步探讨：**按预设故障矩阵制作最小原型，记录真实根因、错误标签与人工恢复时间
+  **影响**：不能把更少排障或更高脚本命中率写作现有效果
+  **进一步探讨**：按预设故障矩阵制作最小原型，记录真实根因、错误标签与人工恢复时间
 
 <a id="research-q07"></a>
 
@@ -1114,7 +1114,7 @@ kotlin-language-server prefers a Gradle project; single-file queries work after 
 
 ### Q07 · 当前适合观察、试用还是安装？
 
-**研究主题：**采用判断
+**研究主题**：采用判断
 
 #### 完整回答
 

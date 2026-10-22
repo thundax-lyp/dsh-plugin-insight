@@ -205,7 +205,7 @@ canonical过滤无效页，但ranked对旧页仅乘0.25仍可召回；metadata�
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标：**判断固定版本共享Markdown记忆路由的引用/拒答价值，区分DSH只读接头、ranked旧页权重和可选夜间写手边界。
+**插件研究总目标**：判断固定版本共享Markdown记忆路由的引用/拒答价值，区分DSH只读接头、ranked旧页权重和可选夜间写手边界。
 
 <a id="research-q01"></a>
 
@@ -213,7 +213,7 @@ canonical过滤无效页，但ranked对旧页仅乘0.25仍可召回；metadata�
 
 ### Q01 · 共享记忆适合谁，什么算合格？
 
-**研究主题：**场景与需求
+**研究主题**：场景与需求
 
 #### 完整回答
 
@@ -337,7 +337,7 @@ export function registerKrouterTools(ctx, config, defineTool) {
 
 ### Q02 · DSH路由、exact与ranked recall怎样连接？
 
-**研究主题：**功能与机制、贡献与相对优势
+**研究主题**：功能与机制、贡献与相对优势
 
 #### 完整回答
 
@@ -572,7 +572,7 @@ def log_query(route: str, query: str, status: str, top: str = "", confidence: st
 
 ### Q03 · 纠错与作者对照支持什么结论？
 
-**研究主题：**缺陷与关键质疑
+**研究主题**：缺陷与关键质疑
 
 #### 完整回答
 
@@ -825,8 +825,8 @@ def print_recall(res: dict, vault: Path, lines: int) -> None:
 #### 缺口
 
 - 符号链接、保留mtime/size编辑、不同库语言和新任务错误引用未独立验证。
-  **影响：**不能给物理路径保密、新鲜度或真实任务收益保证。
-  **进一步探讨：**固定可丢弃vault加外部链接/元数据保留改稿及人写问题，比较引用、拒答与覆盖。
+  **影响**：不能给物理路径保密、新鲜度或真实任务收益保证。
+  **进一步探讨**：固定可丢弃vault加外部链接/元数据保留改稿及人写问题，比较引用、拒答与覆盖。
 
 <a id="research-q04"></a>
 
@@ -834,7 +834,7 @@ def print_recall(res: dict, vault: Path, lines: int) -> None:
 
 ### Q04 · 可选写手与导入的安全边界是什么？
 
-**研究主题：**工程质量与复用
+**研究主题**：工程质量与复用
 
 #### 完整回答
 
@@ -1085,8 +1085,8 @@ the same keychain login and spends its single-use refresh token.
 #### 缺口
 
 - 固定版本第三方CLI工具白名单/沙箱实际执行与所有夜间写入范围未核查。
-  **影响：**代码参数不等于已验证隔离，不能声称写手只能看到所列片段。
-  **进一步探讨：**采用写手前可先读dry-run，分别用无敏感canary核对选定lane的读写边界和清理。
+  **影响**：代码参数不等于已验证隔离，不能声称写手只能看到所列片段。
+  **进一步探讨**：采用写手前可先读dry-run，分别用无敏感canary核对选定lane的读写边界和清理。
 
 <a id="research-q05"></a>
 
@@ -1094,7 +1094,7 @@ the same keychain login and spends its single-use refresh token.
 
 ### Q05 · 启动、维护和恢复依赖什么？
 
-**研究主题：**依赖、兼容与流程
+**研究主题**：依赖、兼容与流程
 
 #### 完整回答
 
@@ -1285,7 +1285,7 @@ def connect(db: Path) -> sqlite3.Connection:
 
 ### Q06 · 首次、持续和失败成本有哪些？
 
-**研究主题：**效果与总成本
+**研究主题**：效果与总成本
 
 #### 完整回答
 
@@ -1434,8 +1434,8 @@ def refresh(vault: Path, con: sqlite3.Connection) -> dict[str, int]:
 #### 缺口
 
 - 没有本轮真实任务的错误引用/拒答覆盖、人工核查和资源/写手费用比较。
-  **影响：**不能用作者延迟或synthetic数字给用户保证。
-  **进一步探讨：**固定人写双语问题与真实变更序列，比较BM25同规则基线、任务答案质量和总人工/token。
+  **影响**：不能用作者延迟或synthetic数字给用户保证。
+  **进一步探讨**：固定人写双语问题与真实变更序列，比较BM25同规则基线、任务答案质量和总人工/token。
 
 <a id="research-q07"></a>
 
@@ -1443,7 +1443,7 @@ def refresh(vault: Path, con: sqlite3.Connection) -> dict[str, int]:
 
 ### Q07 · 采用建议与未来假设如何证伪？
 
-**研究主题：**采用判断、新假设与验证
+**研究主题**：采用判断、新假设与验证
 
 #### 完整回答
 
@@ -1556,7 +1556,7 @@ def canonical_lookup(query: str, vault: Path, map_path: Path, route: str) -> boo
 #### 缺口
 
 - 适用域/证据级别锁定设计未实现或对照。
-  **影响：**不提升当前canonical正确率或隔离保证。
-  **进一步探讨：**以两个项目同名规则、纠错和双语近邻对照错引/覆盖/人工成本。
+  **影响**：不提升当前canonical正确率或隔离保证。
+  **进一步探讨**：以两个项目同名规则、纠错和双语近邻对照错引/覆盖/人工成本。
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)

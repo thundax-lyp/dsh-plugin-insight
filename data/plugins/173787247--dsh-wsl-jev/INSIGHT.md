@@ -164,7 +164,7 @@ mock 注入空证据/假密钥/异常返回；真实低敏有标签集对照直�
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标：**判断 System One typed 决策适配的增量、外发边界和证据可信度。
+**插件研究总目标**：判断 System One typed 决策适配的增量、外发边界和证据可信度。
 
 <a id="research-q01"></a>
 
@@ -172,7 +172,7 @@ mock 注入空证据/假密钥/异常返回；真实低敏有标签集对照直�
 
 ### Q01 · Jev typed 决策适合哪些任务，结果是否等于验证？
 
-**研究主题：**场景与需求
+**研究主题**：场景与需求
 
 #### 完整回答
 
@@ -384,8 +384,8 @@ export function buildCheckQuestions({ claim, evidence } = {}) {
 #### 缺口
 
 - 无真实决策样本评测。
-  **影响：**准确率、校准和增量价值未知。
-  **进一步探讨：**固定带答案的三类样本与原模型/规则对照。
+  **影响**：准确率、校准和增量价值未知。
+  **进一步探讨**：固定带答案的三类样本与原模型/规则对照。
 
 <a id="research-q02"></a>
 
@@ -393,7 +393,7 @@ export function buildCheckQuestions({ claim, evidence } = {}) {
 
 ### Q02 · 请求、代理、类型问题和结果怎样走通？
 
-**研究主题：**功能与机制、贡献与相对优势
+**研究主题**：功能与机制、贡献与相对优势
 
 #### 完整回答
 
@@ -865,7 +865,7 @@ export async function proxiedFetch(input, init = {}, env = process.env) {
 
 ### Q03 · 外发数据和“证据支持”有哪些可靠性边界？
 
-**研究主题：**缺陷与关键质疑、工程质量与复用
+**研究主题**：缺陷与关键质疑、工程质量与复用
 
 #### 完整回答
 
@@ -1047,8 +1047,8 @@ export function resolveRankPick(answers, candidates) {
 #### 缺口
 
 - 未对真实 provider 响应和含假密钥文本测试。
-  **影响：**实际泄漏或误判概率未知。
-  **进一步探讨：**隔离 mock 注入 canary、空证据、异常 key/响应，核外发和结果。
+  **影响**：实际泄漏或误判概率未知。
+  **进一步探讨**：隔离 mock 注入 canary、空证据、异常 key/响应，核外发和结果。
 
 <a id="research-q04"></a>
 
@@ -1056,7 +1056,7 @@ export function resolveRankPick(answers, candidates) {
 
 ### Q04 · 安装、网络和额度依赖是什么？
 
-**研究主题：**依赖、兼容与流程、效果与总成本
+**研究主题**：依赖、兼容与流程、效果与总成本
 
 #### 完整回答
 
@@ -1269,8 +1269,8 @@ async function defaultFetch(url, { method, headers, body, timeoutMs, env }) {
 #### 缺口
 
 - 未调用实际 API。
-  **影响：**可用性、价格、延迟和精度未知。
-  **进一步探讨：**固定样本记录请求次数、usage、延迟、错误和费用。
+  **影响**：可用性、价格、延迟和精度未知。
+  **进一步探讨**：固定样本记录请求次数、usage、延迟、错误和费用。
 
 <a id="research-q05"></a>
 
@@ -1278,7 +1278,7 @@ async function defaultFetch(url, { method, headers, body, timeoutMs, env }) {
 
 ### Q05 · 怎样以可核的方式评估 typed 决策净收益？
 
-**研究主题：**新假设与验证、采用判断
+**研究主题**：新假设与验证、采用判断
 
 #### 完整回答
 
@@ -1416,7 +1416,7 @@ export function resolveRankPick(answers, candidates) {
 #### 缺口
 
 - 强校验与白名单尚未实现。
-  **影响：**不可计入现有能力。
-  **进一步探讨：**先 mock 用例再 provider 灰度对照。
+  **影响**：不可计入现有能力。
+  **进一步探讨**：先 mock 用例再 provider 灰度对照。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

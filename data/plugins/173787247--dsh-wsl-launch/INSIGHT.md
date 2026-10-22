@@ -167,7 +167,7 @@ allowlist 只核 target 字符串，args 与最终应用行为未限，前缀通
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标：**核实 WSL Windows 启动工具的 allowlist 边界、脚本执行与运营成本。
+**插件研究总目标**：核实 WSL Windows 启动工具的 allowlist 边界、脚本执行与运营成本。
 
 <a id="research-q01"></a>
 
@@ -175,7 +175,7 @@ allowlist 只核 target 字符串，args 与最终应用行为未限，前缀通
 
 ### Q01 · win_launch 如何从 WSL 启动 Windows 应用？
 
-**研究主题：**场景与需求、贡献与相对优势、功能与机制
+**研究主题**：场景与需求、贡献与相对优势、功能与机制
 
 #### 完整回答
 
@@ -342,7 +342,7 @@ Extend via `config.allowlist` (exact name, path suffix, or `prefix*`).
 
 ### Q02 · allowlist 限制的是可执行文件还是启动行为？
 
-**研究主题：**工程质量与复用、缺陷与关键质疑
+**研究主题**：工程质量与复用、缺陷与关键质疑
 
 #### 完整回答
 
@@ -453,8 +453,8 @@ describe("win_launch allowlist", () => {
 #### 缺口
 
 - 未测不同目标应用对 args 的解析和 Windows PATH 劫持
-  **影响：**allowlist 不能证明启动后的动作受限
-  **进一步探讨：**按实际允许应用审参数与解析后的可执行文件路径
+  **影响**：allowlist 不能证明启动后的动作受限
+  **进一步探讨**：按实际允许应用审参数与解析后的可执行文件路径
 
 <a id="research-q03"></a>
 
@@ -462,7 +462,7 @@ describe("win_launch allowlist", () => {
 
 ### Q03 · 怎样采用并衡量启动可靠性与额外成本？
 
-**研究主题：**依赖、兼容与流程、效果与总成本、采用判断、新假设与验证
+**研究主题**：依赖、兼容与流程、效果与总成本、采用判断、新假设与验证
 
 #### 完整回答
 
@@ -666,7 +666,7 @@ export function buildLaunchScript(target, args) {
 #### 缺口
 
 - 无真实 WSL 启动与单位调用时耗/资源样本
-  **影响：**可靠性、资源与维护成本未知
-  **进一步探讨：**记录测试目标应用启动/失败和人工恢复时间
+  **影响**：可靠性、资源与维护成本未知
+  **进一步探讨**：记录测试目标应用启动/失败和人工恢复时间
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

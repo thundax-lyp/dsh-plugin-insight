@@ -177,7 +177,7 @@
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标：**核查模型档位/能力声明到settings写入与撤销的实际所有权及成本。
+**插件研究总目标**：核查模型档位/能力声明到settings写入与撤销的实际所有权及成本。
 
 <a id="research-q01"></a>
 
@@ -185,7 +185,7 @@
 
 ### Q01 · 适用什么场景，匹配到配置写入怎样运行？
 
-**研究主题：**场景与需求、功能与机制
+**研究主题**：场景与需求、功能与机制
 
 #### 完整回答
 
@@ -334,7 +334,7 @@ function draftOf(id: string, raw: Record<string, unknown>): ModelDraft {
 
 ### Q02 · 集成贡献和最关键恢复缺口是什么？
 
-**研究主题：**贡献与相对优势、缺陷与关键质疑
+**研究主题**：贡献与相对优势、缺陷与关键质疑
 
 #### 完整回答
 
@@ -500,11 +500,11 @@ export function mergeJournal(journal: Journal, writes: readonly WriteLike[]): Jo
 #### 缺口
 
 - 失败重试、journal写失败及revert拒绝未做实际故障注入。
-  **影响：**不能把有撤销功能称为所有失败下可恢复。
-  **进一步探讨：**可用settings/journal桩分别拒绝update/mutate/write，比较实际字段和保留写集，不改真实profile。
+  **影响**：不能把有撤销功能称为所有失败下可恢复。
+  **进一步探讨**：可用settings/journal桩分别拒绝update/mutate/write，比较实际字段和保留写集，不改真实profile。
 - 模型规则及能力声明与真实provider协议/限制未逐项验证。
-  **影响：**可选档位不等远端有效或任务更好。
-  **进一步探讨：**可从实际需要的单模型固定provider文档/协议和请求字段入手，区分声明、接受与任务效果。
+  **影响**：可选档位不等远端有效或任务更好。
+  **进一步探讨**：可从实际需要的单模型固定provider文档/协议和请求字段入手，区分声明、接受与任务效果。
 
 <a id="research-q03"></a>
 
@@ -512,7 +512,7 @@ export function mergeJournal(journal: Journal, writes: readonly WriteLike[]): Jo
 
 ### Q03 · 依赖、配置与退出条件是什么？
 
-**研究主题：**依赖、兼容与流程
+**研究主题**：依赖、兼容与流程
 
 #### 完整回答
 
@@ -636,7 +636,7 @@ export function journalPath(env: Record<string, string | undefined> = process.en
 
 ### Q04 · 首次、持续和失败恢复成本效果怎样判断？
 
-**研究主题：**效果与总成本
+**研究主题**：效果与总成本
 
 #### 完整回答
 
@@ -736,8 +736,8 @@ export async function readJournal(path: string): Promise<Journal> {
 #### 缺口
 
 - 没有同模型同任务真实请求接受、质量、耗时/tokens与手工配置对照。
-  **影响：**不能承诺推理能力/质量改善或省成本。
-  **进一步探讨：**可先核字段和provider接受，再按明确授权比较相同任务的effort输出及完整资源，不只看UI档位。
+  **影响**：不能承诺推理能力/质量改善或省成本。
+  **进一步探讨**：可先核字段和provider接受，再按明确授权比较相同任务的effort输出及完整资源，不只看UI档位。
 
 <a id="research-q05"></a>
 
@@ -745,7 +745,7 @@ export async function readJournal(path: string): Promise<Journal> {
 
 ### Q05 · 可复用机制与版本绑定写收据假设如何证伪？
 
-**研究主题：**工程质量与复用、新假设与验证
+**研究主题**：工程质量与复用、新假设与验证
 
 #### 完整回答
 
@@ -869,7 +869,7 @@ export function mergeJournal(journal: Journal, writes: readonly WriteLike[]): Jo
 
 ### Q06 · 当前建议和停止标准是什么？
 
-**研究主题：**采用判断
+**研究主题**：采用判断
 
 #### 完整回答
 

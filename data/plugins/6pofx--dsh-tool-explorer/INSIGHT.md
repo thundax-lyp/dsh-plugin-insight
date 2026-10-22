@@ -180,7 +180,7 @@
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标：**核控制台对技能/MCP持久管理的实际增量与来源、权限和恢复合同。
+**插件研究总目标**：核控制台对技能/MCP持久管理的实际增量与来源、权限和恢复合同。
 
 <a id="research-q01"></a>
 
@@ -188,7 +188,7 @@
 
 ### Q01 · 控制台为谁管理什么，真正交付增量是什么？
 
-**研究主题：**场景与需求、贡献与相对优势、功能与机制
+**研究主题**：场景与需求、贡献与相对优势、功能与机制
 
 #### 完整回答
 
@@ -350,7 +350,7 @@ export function apply(ctx: Context, config?: unknown): void {
 
 ### Q02 · 路由管理面与MCP测试的权限/秘密边界在哪里？
 
-**研究主题：**缺陷与关键质疑、依赖、兼容与流程
+**研究主题**：缺陷与关键质疑、依赖、兼容与流程
 
 #### 完整回答
 
@@ -592,8 +592,8 @@ export async function testConnection(spec: McpServerSpec): Promise<ProbeResult> 
 #### 缺口
 
 - 固定宿主webServer的访问身份、监听与敏感GET保护
-  **影响：**本插件不具独立管理员认证，无法保证共享/远程部署秘密不被读或配置不被改
-  **进一步探讨：**核宿主路由鉴权和部署入口，将命令/URL/导入秘密视受信管理操作，不拿Origin当身份
+  **影响**：本插件不具独立管理员认证，无法保证共享/远程部署秘密不被读或配置不被改
+  **进一步探讨**：核宿主路由鉴权和部署入口，将命令/URL/导入秘密视受信管理操作，不拿Origin当身份
 
 <a id="research-q03"></a>
 
@@ -601,7 +601,7 @@ export async function testConnection(spec: McpServerSpec): Promise<ProbeResult> 
 
 ### Q03 · MCP配置修改和状态展示有哪些真实保证？
 
-**研究主题：**工程质量与复用、功能与机制、缺陷与关键质疑
+**研究主题**：工程质量与复用、功能与机制、缺陷与关键质疑
 
 #### 完整回答
 
@@ -910,7 +910,7 @@ export async function testConnection(spec: McpServerSpec): Promise<ProbeResult> 
 
 ### Q04 · 技能编辑、改名和双调用开关能保留原技能吗？
 
-**研究主题：**工程质量与复用、缺陷与关键质疑
+**研究主题**：工程质量与复用、缺陷与关键质疑
 
 #### 完整回答
 
@@ -1200,7 +1200,7 @@ export function serializeSkillFile(frontmatter: SkillFrontmatter, body: string):
 
 ### Q05 · GitHub安装/升级是否固定来源与预览一致？
 
-**研究主题：**功能与机制、缺陷与关键质疑
+**研究主题**：功能与机制、缺陷与关键质疑
 
 #### 完整回答
 
@@ -1591,8 +1591,8 @@ export async function previewInstall(host: SkillsHost, input: string): Promise<I
 #### 缺口
 
 - tar依赖版本对符号链接/特殊entry的实际防护与宿主provider如何加载依赖目录
-  **影响：**不能把解压库默认行为当自身安全承诺，源目录和附属脚本需人工审查
-  **进一步探讨：**核固定依赖原文与允许包结构，以超大包、外链、预览后变更和root技能更新路径反例检验
+  **影响**：不能把解压库默认行为当自身安全承诺，源目录和附属脚本需人工审查
+  **进一步探讨**：核固定依赖原文与允许包结构，以超大包、外链、预览后变更和root技能更新路径反例检验
 
 <a id="research-q06"></a>
 
@@ -1600,7 +1600,7 @@ export async function previewInstall(host: SkillsHost, input: string): Promise<I
 
 ### Q06 · 回收站与持久化能恢复到删除前吗？
 
-**研究主题：**工程质量与复用、缺陷与关键质疑
+**研究主题**：工程质量与复用、缺陷与关键质疑
 
 #### 完整回答
 
@@ -1919,7 +1919,7 @@ export async function installCandidates(
 
 ### Q07 · 跨版本适配、自补丁与三阶段成本有哪些限制？
 
-**研究主题：**效果与总成本、依赖、兼容与流程、工程质量与复用
+**研究主题**：效果与总成本、依赖、兼容与流程、工程质量与复用
 
 #### 完整回答
 
@@ -2163,7 +2163,7 @@ process.exitCode = runPatches(MCP_CLIENT_PATCHES)
 
 ### Q08 · 采用判断和可证伪改进方向是什么？
 
-**研究主题：**采用判断、贡献与相对优势、新假设与验证
+**研究主题**：采用判断、贡献与相对优势、新假设与验证
 
 #### 完整回答
 

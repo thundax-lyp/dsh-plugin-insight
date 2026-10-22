@@ -2,10 +2,10 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[a889e8c](https://github.com/2JumpSinA/dsh-context-guard/tree/a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc)
+分析版本：[8c569d3](https://github.com/2JumpSinA/dsh-context-guard/tree/8c569d35efbaed63c69c2212500cd65757e53143)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/2JumpSinA/dsh-context-guard) [![npm 30d 1,388](https://img.shields.io/static/v1?label=npm+30d&message=1%2C388&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@2jumpsina/dsh-context-guard) [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-20&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@2jumpsina/dsh-context-guard)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/2JumpSinA/dsh-context-guard) [![npm 30d 1,388](https://img.shields.io/static/v1?label=npm+30d&message=1%2C388&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@2jumpsina/dsh-context-guard) [![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@2jumpsina/dsh-context-guard)
 <!-- END META -->
 
 > **实现功能**：基于DSH上下文占用投影显示提醒，生成机器事实交接草稿，并记录压缩前读数台账。
@@ -45,7 +45,9 @@
 
 > **用途**：帮助长会话用户决定收尾并保留交接线索，合格交接还需人工补充目标、约束和未决事项。
 
-原生token-meter和compaction提供计量与压缩，用户可手工记交接和决定换会话。本插件自动组织提示和机器事实，不迁移全部语义或代做交接验收。
+已有增量是把原生投影变成读者可操作的收尾界面和持久机器事实，在压缩后仍能看见之前记录的占用、费用与文件线索。原生压缩负责上下文处理，token-meter负责读数；本插件的贡献是阈值提示、草稿与台账组织，不能把上游计量或压缩机制算作原创。相对手工文档，它自动更新机器事实并保留人工区域，减少重复摘抄；人工结论、失败原因和未来计划仍须人或旧会话另写。
+
+无新增模型工具、prompt和请求支持“插件本身不增加模型上下文”这一狭义判断，不能支持总边际成本恰好为零。作者单机费用分析可能说明一个环境中的长会话形态，不是该插件降低总体花费和任务损失的因果证据。换会话会带来解释与重建成本，提醒阈值是否合适应按任务判断。
 
 <a id="detail-section-3"></a>
 
@@ -70,8 +72,6 @@
 | webServer和client挂载 | UI/手动动作必需 | 状态、徽标和draft路由 | host日志不等于用户见到提醒 |
 | 可写且知情选择的交接路径 | 写入必需 | 保存草稿与台账 | 错误只记状态，不保证已保存 |
 
-
-
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
@@ -90,8 +90,6 @@
 | 首次使用 | 宿主、包与路径资源，增量金额未知 | 版本/读数检查、配置阈值与敏感文件策略 | 没有部署耗时基准 |
 | 持续使用 | 内存状态、文件探测、草稿/台账写入 | 理解阈值、核对事实、补结论和新会话交接 | 模型上下文不增不代表总成本0 |
 | 失败恢复 | 重写与人工恢复文档、任务重建 | 排查丢块/权限/未知读数、还原人工区 | 未知恢复时间和任务遗漏代价 |
-
-
 
 #### 效果
 
@@ -133,18 +131,18 @@
 
 **核查状态**：已检查源码。
 
-已有贡献为源码支持的投影提醒与机器事实持久化集成；节费和迁移后效果未独立验证。交接完整性门槛是未验证新假设。
+固定版本源码支持已描述的入口、接线与数据流；贡献和采用价值为源码级解释，运行效果、真实宿主兼容与收益对照尚未验证。
 
-- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、lib/policy.mjs、lib/engine.mjs、lib/handover.mjs、test/concurrency.test.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、lib/policy.mjs、lib/index.js、lib/engine.mjs、lib/handover.mjs、package.json、test/concurrency.test.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
 - 边界：读取固定入口、共享策略/engine、文件写入及测试定义；未运行插件、目标测试或宿主冒烟，不将作者单机成本报告当独立效果。
-- 下一步：进一步探讨可从私有样本的草稿刷新、同前缀事件ID、跨进程写入和新会话约束保持入手，同时记录完整费用和人时。
+- 下一步：进一步探讨应按本项缺口执行：可用两个独立进程写同一文件，并构造相同前8字符的不同事件，核对完整行集合。；可比对固定宿主实际政策、输出预留与压缩事件，按来源标记估计误差。；可按相同任务记录完整账单、交接耗时、遗漏约束与重做次数。
 
 **分析版本**
 
 - **仓库**：[2JumpSinA/dsh-context-guard](https://github.com/2JumpSinA/dsh-context-guard)
-- **版本号**：0.7.5（[固定提交 a889e8c](https://github.com/2JumpSinA/dsh-context-guard/tree/a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc)）
-- **版本日期**：2026-10-20（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.7.6（[固定提交 8c569d3](https://github.com/2JumpSinA/dsh-context-guard/tree/8c569d35efbaed63c69c2212500cd65757e53143)）
+- **版本日期**：2026-10-22（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -154,7 +152,7 @@
 
 可探讨交接完整性门槛，把明确目标、未决约束和来源与新会话核对结合，检验是否减少遗漏；新增人时或模型调用，与当前零新增请求不同，尚未验证。详见[Q07](#research-q07)。
 
-进一步探讨可从私有样本的草稿刷新、同前缀事件ID、跨进程写入和新会话约束保持入手，同时记录完整费用和人时。
+进一步探讨应按本项缺口执行：可用两个独立进程写同一文件，并构造相同前8字符的不同事件，核对完整行集合。；可比对固定宿主实际政策、输出预留与压缩事件，按来源标记估计误差。；可按相同任务记录完整账单、交接耗时、遗漏约束与重做次数。
 
 <a id="detail-section-9"></a>
 
@@ -175,17 +173,13 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/2JumpSinA/dsh-context-guard/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/2JumpSinA/dsh-context-guard/issues?q=is%3Aissue+created%3A2026-09-22T04%3A50%3A20.785Z..2026-10-22T04%3A50%3A20.785Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/2JumpSinA/dsh-context-guard/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T04%3A50%3A20.785Z..2026-10-22T04%3A50%3A20.785Z)
-
-
-
-统计日期：2026-10-22。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/2JumpSinA/dsh-context-guard/issues) 查看。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标：**核查上下文提醒、机器事实交接与压缩台账的价值、来源和默认写盘边界。
+**插件研究总目标**：核查上下文提醒、机器事实交接与压缩台账的价值、来源和默认写盘边界。
 
 <a id="research-q01"></a>
 
@@ -193,7 +187,7 @@
 
 ### Q01 · 谁需要占用率提醒，交付怎样才合格？
 
-**研究主题：**场景与需求
+**研究主题**：场景与需求
 
 #### 完整回答
 
@@ -203,9 +197,9 @@
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:5-9](https://github.com/2JumpSinA/dsh-context-guard/blob/a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc/README.md#L5-L9)
+**依据 1 · 作者声明**：[README.md:5-9](https://github.com/2JumpSinA/dsh-context-guard/blob/8c569d35efbaed63c69c2212500cd65757e53143/README.md#L5-L9)
 
-作者定位为长会话提醒与机器事实交接。
+当前固定版本复核。作者定位为长会话提醒与机器事实交接。
 
 ```text
 A [DeepSeek Harness](https://deepseek-harness.github.io/deepseek-harness/guide/quickstart) plugin that **tells you to wrap up and start a new session before the session gets too long**.
@@ -215,9 +209,9 @@ It consumes the `contextPressure` projection that the official `dsh-token-meter`
 **Context tax = 0**: it registers no model-facing tool, injects no prompt section, and sends no extra request. The host does the arithmetic, the UI does the talking.
 ```
 
-**依据 2 · 作者声明**：[README.md:31-37](https://github.com/2JumpSinA/dsh-context-guard/blob/a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc/README.md#L31-L37)
+**依据 2 · 作者声明**：[README.md:31-37](https://github.com/2JumpSinA/dsh-context-guard/blob/8c569d35efbaed63c69c2212500cd65757e53143/README.md#L31-L37)
 
-作者列出写入内容及默认副作用。
+当前固定版本复核。作者列出写入内容及默认副作用。
 
 ```text
 ## ⚠️ It writes to your working directory (read this before installing)
@@ -229,9 +223,9 @@ It consumes the `contextPressure` projection that the official `dsh-token-meter`
 - Boundaries: a missing parent directory is refused; an existing target that is not a text file (`.json`/`.yml`/…) is refused; a **symlink** pointing elsewhere is refused; writes are atomic (temp file + rename) with tight permissions (`0o600`). Any failure is recorded as status only — it **never affects** the badge, the banner, or the push.
 ```
 
-**依据 3 · 源码核查**：[lib/policy.mjs:113-120](https://github.com/2JumpSinA/dsh-context-guard/blob/a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc/lib/policy.mjs#L113-L120)
+**依据 3 · 源码核查**：[lib/policy.mjs:113-120](https://github.com/2JumpSinA/dsh-context-guard/blob/8c569d35efbaed63c69c2212500cd65757e53143/lib/policy.mjs#L113-L120)
 
-默认交接开启，近期轮次和文件数量受限。
+当前固定版本复核。默认交接开启，近期轮次和文件数量受限。
 
 ```text
     // —— 自动交接草稿（2026-09-29 新增）。跨过 warnRatio 时由**宿主半边**零 LLM 起草一块机器事实
@@ -250,7 +244,7 @@ It consumes the `contextPressure` projection that the official `dsh-token-meter`
 
 ### Q02 · 投影到提醒、交接和压缩台账怎样接线？
 
-**研究主题：**功能与机制
+**研究主题**：功能与机制
 
 #### 完整回答
 
@@ -260,9 +254,9 @@ host半部软注入sessionProjections，接收contextPressure并按会话保存�
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/index.js:1295-1350](https://github.com/2JumpSinA/dsh-context-guard/blob/a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc/lib/index.js#L1295-L1350)
+**依据 1 · 源码核查**：[lib/index.js:1295-1350](https://github.com/2JumpSinA/dsh-context-guard/blob/8c569d35efbaed63c69c2212500cd65757e53143/lib/index.js#L1295-L1350)
 
-实际投影触发observe和草稿，说明时序边界。
+当前固定版本复核。实际投影触发observe和草稿，说明时序边界。
 
 <details>
 <summary>查看原文（56行）</summary>
@@ -328,9 +322,9 @@ host半部软注入sessionProjections，接收contextPressure并按会话保存�
 
 </details>
 
-**依据 2 · 源码核查**：[lib/engine.mjs:196-242](https://github.com/2JumpSinA/dsh-context-guard/blob/a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc/lib/engine.mjs#L196-L242)
+**依据 2 · 源码核查**：[lib/engine.mjs:196-242](https://github.com/2JumpSinA/dsh-context-guard/blob/8c569d35efbaed63c69c2212500cd65757e53143/lib/engine.mjs#L196-L242)
 
-未知读数不动状态，迟滞与档位更新。
+当前固定版本复核。未知读数不动状态，迟滞与档位更新。
 
 <details>
 <summary>查看原文（47行）</summary>
@@ -387,9 +381,9 @@ export function reduce(state, reading, options = {}) {
 
 </details>
 
-**依据 3 · 源码核查**：[lib/index.js:1394-1433](https://github.com/2JumpSinA/dsh-context-guard/blob/a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc/lib/index.js#L1394-L1433)
+**依据 3 · 源码核查**：[lib/index.js:1394-1433](https://github.com/2JumpSinA/dsh-context-guard/blob/8c569d35efbaed63c69c2212500cd65757e53143/lib/index.js#L1394-L1433)
 
-turn/end与compaction/end分派，失败不写台账。
+当前固定版本复核。turn/end与compaction/end分派，失败不写台账。
 
 <details>
 <summary>查看原文（40行）</summary>
@@ -439,9 +433,9 @@ turn/end与compaction/end分派，失败不写台账。
 
 </details>
 
-**依据 4 · 源码核查**：[lib/handover.mjs:708-755](https://github.com/2JumpSinA/dsh-context-guard/blob/a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc/lib/handover.mjs#L708-L755)
+**依据 4 · 源码核查**：[lib/handover.mjs:708-755](https://github.com/2JumpSinA/dsh-context-guard/blob/8c569d35efbaed63c69c2212500cd65757e53143/lib/handover.mjs#L708-L755)
 
-统一队列、结构检查与原子替换。
+当前固定版本复核。统一队列、结构检查与原子替换。
 
 <details>
 <summary>查看原文（48行）</summary>
@@ -505,7 +499,7 @@ async function updateHandoverFileOnce({ file, apply }) {
 
 ### Q03 · 相对原生压缩和手工交接，具体增加了什么？
 
-**研究主题：**贡献与相对优势
+**研究主题**：贡献与相对优势
 
 #### 完整回答
 
@@ -515,9 +509,9 @@ async function updateHandoverFileOnce({ file, apply }) {
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/policy.mjs:1-17](https://github.com/2JumpSinA/dsh-context-guard/blob/a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc/lib/policy.mjs#L1-L17)
+**依据 1 · 源码核查**：[lib/policy.mjs:1-17](https://github.com/2JumpSinA/dsh-context-guard/blob/8c569d35efbaed63c69c2212500cd65757e53143/lib/policy.mjs#L1-L17)
 
-纯策略从官方读数作决定，标明上游归属与共享来源。
+当前固定版本复核。纯策略从官方读数作决定，标明上游归属与共享来源。
 
 <details>
 <summary>查看原文（17行）</summary>
@@ -544,9 +538,9 @@ async function updateHandoverFileOnce({ file, apply }) {
 
 </details>
 
-**依据 2 · 源码核查**：[lib/handover.mjs:573-595](https://github.com/2JumpSinA/dsh-context-guard/blob/a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc/lib/handover.mjs#L573-L595)
+**依据 2 · 源码核查**：[lib/handover.mjs:573-595](https://github.com/2JumpSinA/dsh-context-guard/blob/8c569d35efbaed63c69c2212500cd65757e53143/lib/handover.mjs#L573-L595)
 
-人工区域检测与读取接口，支持机器/人工分工。
+当前固定版本复核。人工区域检测与读取接口，支持机器/人工分工。
 
 <details>
 <summary>查看原文（23行）</summary>
@@ -579,9 +573,9 @@ export async function readTodoFilled(file, sessionId) {
 
 </details>
 
-**依据 3 · 作者声明**：[README.md:45-64](https://github.com/2JumpSinA/dsh-context-guard/blob/a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc/README.md#L45-L64)
+**依据 3 · 作者声明**：[README.md:45-64](https://github.com/2JumpSinA/dsh-context-guard/blob/8c569d35efbaed63c69c2212500cd65757e53143/README.md#L45-L64)
 
-作者单机测量范围，不能替代独立对照。
+当前固定版本复核。作者单机测量范围，不能替代独立对照。
 
 <details>
 <summary>查看原文（20行）</summary>
@@ -614,8 +608,8 @@ no crash, no error message, just an invoice.
 #### 缺口
 
 - 没有同任务继续长会话、原生压缩和人工/插件交接的效果对照。
-  **影响：**不能证明提醒带来净节省或任务质量提升。
-  **进一步探讨：**可对相同任务记录总费用、交接人时、迁移后遗漏和合格交付率。
+  **影响**：不能证明提醒带来净节省或任务质量提升。
+  **进一步探讨**：可对相同任务记录总费用、交接人时、迁移后遗漏和合格交付率。
 
 <a id="research-q04"></a>
 
@@ -623,7 +617,7 @@ no crash, no error message, just an invoice.
 
 ### Q04 · 默认写盘与估计压缩点有哪些关键限制？
 
-**研究主题：**缺陷与关键质疑
+**研究主题**：缺陷与关键质疑
 
 #### 完整回答
 
@@ -633,9 +627,9 @@ no crash, no error message, just an invoice.
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/index.js:577-625](https://github.com/2JumpSinA/dsh-context-guard/blob/a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc/lib/index.js#L577-L625)
+**依据 1 · 源码核查**：[lib/index.js:577-625](https://github.com/2JumpSinA/dsh-context-guard/blob/8c569d35efbaed63c69c2212500cd65757e53143/lib/index.js#L577-L625)
 
-路由继承宿主访问控制且返回状态，未做独立认证。
+当前固定版本复核。路由继承宿主访问控制且返回状态，未做独立认证。
 
 <details>
 <summary>查看原文（49行）</summary>
@@ -694,9 +688,9 @@ no crash, no error message, just an invoice.
 
 </details>
 
-**依据 2 · 源码核查**：[lib/index.js:1394-1433](https://github.com/2JumpSinA/dsh-context-guard/blob/a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc/lib/index.js#L1394-L1433)
+**依据 2 · 源码核查**：[lib/index.js:1394-1433](https://github.com/2JumpSinA/dsh-context-guard/blob/8c569d35efbaed63c69c2212500cd65757e53143/lib/index.js#L1394-L1433)
 
-压缩台账与草稿开关没有同一门控。
+当前固定版本复核。压缩台账与草稿开关没有同一门控。
 
 <details>
 <summary>查看原文（40行）</summary>
@@ -746,9 +740,9 @@ no crash, no error message, just an invoice.
 
 </details>
 
-**依据 3 · 源码核查**：[lib/handover.mjs:623-632](https://github.com/2JumpSinA/dsh-context-guard/blob/a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc/lib/handover.mjs#L623-L632)
+**依据 3 · 源码核查**：[lib/handover.mjs:623-632](https://github.com/2JumpSinA/dsh-context-guard/blob/8c569d35efbaed63c69c2212500cd65757e53143/lib/handover.mjs#L623-L632)
 
-绝对/相对配置路径及文本扩展限制。
+当前固定版本复核。绝对/相对配置路径及文本扩展限制。
 
 <details>
 <summary>查看原文（10行）</summary>
@@ -768,9 +762,9 @@ const TEXT_EXT = new Set(['', '.md', '.markdown', '.mdx', '.txt', '.rst', '.adoc
 
 </details>
 
-**依据 4 · 源码核查**：[lib/handover.mjs:517-544](https://github.com/2JumpSinA/dsh-context-guard/blob/a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc/lib/handover.mjs#L517-L544)
+**依据 4 · 源码核查**：[lib/handover.mjs:517-544](https://github.com/2JumpSinA/dsh-context-guard/blob/8c569d35efbaed63c69c2212500cd65757e53143/lib/handover.mjs#L517-L544)
 
-短event/session键参与去重和淘汰。
+当前固定版本复核。短event/session键参与去重和淘汰。
 
 <details>
 <summary>查看原文（28行）</summary>
@@ -808,9 +802,9 @@ export function upsertLedgerRow(existingText, entry, { locale = 'zh' } = {}) {
 
 </details>
 
-**依据 5 · 源码核查**：[lib/engine.mjs:470-502](https://github.com/2JumpSinA/dsh-context-guard/blob/a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc/lib/engine.mjs#L470-L502)
+**依据 5 · 源码核查**：[lib/engine.mjs:470-502](https://github.com/2JumpSinA/dsh-context-guard/blob/8c569d35efbaed63c69c2212500cd65757e53143/lib/engine.mjs#L470-L502)
 
-参数来源和公式展示不能当精确预测。
+当前固定版本复核。参数来源和公式展示不能当精确预测。
 
 <details>
 <summary>查看原文（33行）</summary>
@@ -856,11 +850,11 @@ export function upsertLedgerRow(existingText, entry, { locale = 'zh' } = {}) {
 #### 缺口
 
 - 多进程同时写同一HANDOVER及同前缀事件ID的表现未复现。
-  **影响：**可能导致丢块或错误去重，不能作完整审计台账。
-  **进一步探讨：**可用两个独立进程写同一文件，并构造相同前8字符的不同事件，核对完整行集合。
+  **影响**：可能导致丢块或错误去重，不能作完整审计台账。
+  **进一步探讨**：可用两个独立进程写同一文件，并构造相同前8字符的不同事件，核对完整行集合。
 - 自定义压缩政策和宿主不可读配置下估计值偏差未知。
-  **影响：**提醒是否足够早不能只看展示数字。
-  **进一步探讨：**可比对固定宿主实际政策、输出预留与压缩事件，按来源标记估计误差。
+  **影响**：提醒是否足够早不能只看展示数字。
+  **进一步探讨**：可比对固定宿主实际政策、输出预留与压缩事件，按来源标记估计误差。
 
 <a id="research-q05"></a>
 
@@ -868,38 +862,30 @@ export function upsertLedgerRow(existingText, entry, { locale = 'zh' } = {}) {
 
 ### Q05 · 依赖与操作流程如何影响启动和恢复？
 
-**研究主题：**依赖、兼容与流程
+**研究主题**：依赖、兼容与流程
 
 #### 完整回答
 
 包0.7.5要求Node ^22.19.0或>=24、指定DSH版本区间和schemastery peer。入口采用软注入是为了让缺少投影/浏览器服务时不把插件纤维永远挂起，但“加载未失败”不等于提醒有效。token-meter投影、会话事件、webServer和client bundle分别决定计算、台账和UI，缺任一会退化。
 
-#### 启动与依赖
+依赖或条件为包声明的Node/DSH及schemastery，是否必需为启动必需，用途为配置、宿主和客户端契约，缺失或不满足时为不承诺版本外兼容。
+依赖或条件为sessionProjections/contextPressure，是否必需为读数必需，用途为占用率与机器事实来源，缺失或不满足时为未知读数不推进状态。
+依赖或条件为session/event与成功压缩事件，是否必需为台账必需，用途为轮计数及压缩记录，缺失或不满足时为事件缺失不能补造记录。
+依赖或条件为webServer和client挂载，是否必需为UI/手动动作必需，用途为状态、徽标和draft路由，缺失或不满足时为host日志不等于用户见到提醒。
+依赖或条件为可写且知情选择的交接路径，是否必需为写入必需，用途为保存草稿与台账，缺失或不满足时为错误只记状态，不保证已保存。
 
-| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-|---|---|---|---|
-| 包声明的Node/DSH及schemastery | 启动必需 | 配置、宿主和客户端契约 | 不承诺版本外兼容 |
-| sessionProjections/contextPressure | 读数必需 | 占用率与机器事实来源 | 未知读数不推进状态 |
-| session/event与成功压缩事件 | 台账必需 | 轮计数及压缩记录 | 事件缺失不能补造记录 |
-| webServer和client挂载 | UI/手动动作必需 | 状态、徽标和draft路由 | host日志不等于用户见到提醒 |
-| 可写且知情选择的交接路径 | 写入必需 | 保存草稿与台账 | 错误只记状态，不保证已保存 |
-
-#### 启动步骤
-
-| 步骤 | 执行者与动作 | 成功判据或失败处理 |
-|---|---|---|
-| 准备 | 维护者固定scope包名，明确路径、敏感性及Git忽略 | 不误装无scope同名包 |
-| 加载 | 安装后重启宿主并刷新客户端 | 实际读数和参数来源可见 |
-| 收尾 | 读者核对机器事实，补人工结论再迁移 | 新会话可按交接完成已知任务 |
-| 恢复/退出 | 查failed状态和完整文件，禁用后处理已有敏感文档 | 不把禁用草稿当停写台账，不自动删除人工信息 |
+步骤为准备，执行者与动作为维护者固定scope包名，明确路径、敏感性及Git忽略，成功判据或失败处理为不误装无scope同名包。
+步骤为加载，执行者与动作为安装后重启宿主并刷新客户端，成功判据或失败处理为实际读数和参数来源可见。
+步骤为收尾，执行者与动作为读者核对机器事实，补人工结论再迁移，成功判据或失败处理为新会话可按交接完成已知任务。
+步骤为恢复/退出，执行者与动作为查failed状态和完整文件，禁用后处理已有敏感文档，成功判据或失败处理为不把禁用草稿当停写台账，不自动删除人工信息。
 
 本轮没有安装或挂载操作。路径和数据分享范围应在采用前确定，不能让默认草稿意外进入提交。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[package.json:37-49](https://github.com/2JumpSinA/dsh-context-guard/blob/a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc/package.json#L37-L49)
+**依据 1 · 源码核查**：[package.json:37-49](https://github.com/2JumpSinA/dsh-context-guard/blob/8c569d35efbaed63c69c2212500cd65757e53143/package.json#L37-L49)
 
-client声明、peer与引擎版本。
+当前固定版本复核。client声明、peer与引擎版本。
 
 <details>
 <summary>查看原文（13行）</summary>
@@ -922,9 +908,9 @@ client声明、peer与引擎版本。
 
 </details>
 
-**依据 2 · 源码核查**：[lib/engine.mjs:196-201](https://github.com/2JumpSinA/dsh-context-guard/blob/a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc/lib/engine.mjs#L196-L201)
+**依据 2 · 源码核查**：[lib/engine.mjs:196-201](https://github.com/2JumpSinA/dsh-context-guard/blob/8c569d35efbaed63c69c2212500cd65757e53143/lib/engine.mjs#L196-L201)
 
-未知读数不推进状态。
+当前固定版本复核。未知读数不推进状态。
 
 ```text
 export function reduce(state, reading, options = {}) {
@@ -935,9 +921,9 @@ export function reduce(state, reading, options = {}) {
   }
 ```
 
-**依据 3 · 源码核查**：[lib/index.js:1057-1071](https://github.com/2JumpSinA/dsh-context-guard/blob/a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc/lib/index.js#L1057-L1071)
+**依据 3 · 源码核查**：[lib/index.js:1057-1071](https://github.com/2JumpSinA/dsh-context-guard/blob/8c569d35efbaed63c69c2212500cd65757e53143/lib/index.js#L1057-L1071)
 
-手动起草先加pending并finally释放。
+当前固定版本复核。手动起草先加pending并finally释放。
 
 <details>
 <summary>查看原文（15行）</summary>
@@ -962,9 +948,9 @@ export function reduce(state, reading, options = {}) {
 
 </details>
 
-**依据 4 · 作者声明**：[README.md:18-22](https://github.com/2JumpSinA/dsh-context-guard/blob/a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc/README.md#L18-L22)
+**依据 4 · 作者声明**：[README.md:18-22](https://github.com/2JumpSinA/dsh-context-guard/blob/8c569d35efbaed63c69c2212500cd65757e53143/README.md#L18-L22)
 
-作者强调scope包名区别。
+当前固定版本复核。作者强调scope包名区别。
 
 ```text
 
@@ -980,35 +966,27 @@ export function reduce(state, reading, options = {}) {
 
 ### Q06 · 按合格交接计量，成本与效果已知到哪里？
 
-**研究主题：**效果与总成本
+**研究主题**：效果与总成本
 
 #### 完整回答
 
 计量单位应是一次收尾迁移后继续正确交付的任务。插件不新增模型调用，但计算状态、聚合素材、读取文件存在性和写盘均使用资源；人工还需审查预览是否敏感、补结论、验证迁移后约束是否保持。把机器事实写出只是局部活动，不等于交接成功。
 
-#### 成本
+阶段为首次使用，现金与资源成本为宿主、包与路径资源，增量金额未知，人工与时间投入为版本/读数检查、配置阈值与敏感文件策略，已知条件与未知项为没有部署耗时基准。
+阶段为持续使用，现金与资源成本为内存状态、文件探测、草稿/台账写入，人工与时间投入为理解阈值、核对事实、补结论和新会话交接，已知条件与未知项为模型上下文不增不代表总成本0。
+阶段为失败恢复，现金与资源成本为重写与人工恢复文档、任务重建，人工与时间投入为排查丢块/权限/未知读数、还原人工区，已知条件与未知项为未知恢复时间和任务遗漏代价。
 
-| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-|---|---|---|---|
-| 首次使用 | 宿主、包与路径资源，增量金额未知 | 版本/读数检查、配置阈值与敏感文件策略 | 没有部署耗时基准 |
-| 持续使用 | 内存状态、文件探测、草稿/台账写入 | 理解阈值、核对事实、补结论和新会话交接 | 模型上下文不增不代表总成本0 |
-| 失败恢复 | 重写与人工恢复文档、任务重建 | 排查丢块/权限/未知读数、还原人工区 | 未知恢复时间和任务遗漏代价 |
-
-#### 效果
-
-| 效果项 | 当前证据支持 | 尚不能确定 |
-|---|---|---|
-| 提早收尾线索 | 已有阈值与展示/草稿链 | 阈值是否匹配具体任务 |
-| 保留机器事实 | 标记块与压缩台账实际实现 | 跨进程和完整历史保真 |
-| 降低长期费用 | 可促成更早迁移而不新增模型请求 | 净费用、人时和任务质量是否改善 |
+效果项为提早收尾线索，当前证据支持为已有阈值与展示/草稿链，尚不能确定为阈值是否匹配具体任务。
+效果项为保留机器事实，当前证据支持为标记块与压缩台账实际实现，尚不能确定为跨进程和完整历史保真。
+效果项为降低长期费用，当前证据支持为可促成更早迁移而不新增模型请求，尚不能确定为净费用、人时和任务质量是否改善。
 
 作者费用样本与价格表相关表述仅作作者报告，当前不额外采用时变价格推算收益。比较必须把重新解释上下文、误迁移和失败重做成本算进去。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/policy.mjs:95-120](https://github.com/2JumpSinA/dsh-context-guard/blob/a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc/lib/policy.mjs#L95-L120)
+**依据 1 · 源码核查**：[lib/policy.mjs:95-120](https://github.com/2JumpSinA/dsh-context-guard/blob/8c569d35efbaed63c69c2212500cd65757e53143/lib/policy.mjs#L95-L120)
 
-阈值、刷新步进和材料数量控制。
+当前固定版本复核。阈值、刷新步进和材料数量控制。
 
 <details>
 <summary>查看原文（26行）</summary>
@@ -1044,9 +1022,9 @@ export function defaultConfig(overrides = {}) {
 
 </details>
 
-**依据 2 · 源码核查**：[lib/handover.mjs:171-194](https://github.com/2JumpSinA/dsh-context-guard/blob/a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc/lib/handover.mjs#L171-L194)
+**依据 2 · 源码核查**：[lib/handover.mjs:171-194](https://github.com/2JumpSinA/dsh-context-guard/blob/8c569d35efbaed63c69c2212500cd65757e53143/lib/handover.mjs#L171-L194)
 
-文件探测有界且可能unverified。
+当前固定版本复核。文件探测有界且可能unverified。
 
 <details>
 <summary>查看原文（24行）</summary>
@@ -1080,9 +1058,9 @@ export async function probeFiles(paths, cwd, { limit = 12, timeoutMs = 150 } = {
 
 </details>
 
-**依据 3 · 源码核查**：[lib/handover.mjs:744-770](https://github.com/2JumpSinA/dsh-context-guard/blob/a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc/lib/handover.mjs#L744-L770)
+**依据 3 · 源码核查**：[lib/handover.mjs:744-770](https://github.com/2JumpSinA/dsh-context-guard/blob/8c569d35efbaed63c69c2212500cd65757e53143/lib/handover.mjs#L744-L770)
 
-写入和清理过程产生资源与失败恢复成本。
+当前固定版本复核。写入和清理过程产生资源与失败恢复成本。
 
 <details>
 <summary>查看原文（27行）</summary>
@@ -1122,8 +1100,8 @@ export async function probeFiles(paths, cwd, { limit = 12, timeoutMs = 150 } = {
 #### 缺口
 
 - 缺少继续长会话与迁移策略的完整费用、人时及正确交付对照。
-  **影响：**不能据无模型调用宣称采用总成本为零或必然节约。
-  **进一步探讨：**可按相同任务记录完整账单、交接耗时、遗漏约束与重做次数。
+  **影响**：不能据无模型调用宣称采用总成本为零或必然节约。
+  **进一步探讨**：可按相同任务记录完整账单、交接耗时、遗漏约束与重做次数。
 
 <a id="research-q07"></a>
 
@@ -1131,7 +1109,7 @@ export async function probeFiles(paths, cwd, { limit = 12, timeoutMs = 150 } = {
 
 ### Q07 · 哪些工程设计可复用，怎样检验新的交接方向？
 
-**研究主题：**工程质量与复用、新假设与验证
+**研究主题**：工程质量与复用、新假设与验证
 
 #### 完整回答
 
@@ -1141,9 +1119,9 @@ export async function probeFiles(paths, cwd, { limit = 12, timeoutMs = 150 } = {
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/policy.mjs:75-91](https://github.com/2JumpSinA/dsh-context-guard/blob/a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc/lib/policy.mjs#L75-L91)
+**依据 1 · 源码核查**：[lib/policy.mjs:75-91](https://github.com/2JumpSinA/dsh-context-guard/blob/8c569d35efbaed63c69c2212500cd65757e53143/lib/policy.mjs#L75-L91)
 
-volatile配置摊平。
+当前固定版本复核。volatile配置摊平。
 
 <details>
 <summary>查看原文（17行）</summary>
@@ -1170,9 +1148,9 @@ export function plainConfig(raw) {
 
 </details>
 
-**依据 2 · 源码核查**：[lib/handover.mjs:677-689](https://github.com/2JumpSinA/dsh-context-guard/blob/a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc/lib/handover.mjs#L677-L689)
+**依据 2 · 源码核查**：[lib/handover.mjs:677-689](https://github.com/2JumpSinA/dsh-context-guard/blob/8c569d35efbaed63c69c2212500cd65757e53143/lib/handover.mjs#L677-L689)
 
-进程内队列及失败后续执行。
+当前固定版本复核。进程内队列及失败后续执行。
 
 <details>
 <summary>查看原文（13行）</summary>
@@ -1195,9 +1173,9 @@ function enqueueFileWrite(file, task) {
 
 </details>
 
-**依据 3 · 源码核查**：[lib/handover.mjs:744-770](https://github.com/2JumpSinA/dsh-context-guard/blob/a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc/lib/handover.mjs#L744-L770)
+**依据 3 · 源码核查**：[lib/handover.mjs:744-770](https://github.com/2JumpSinA/dsh-context-guard/blob/8c569d35efbaed63c69c2212500cd65757e53143/lib/handover.mjs#L744-L770)
 
-破块拒写、原子替换与失败回收。
+当前固定版本复核。破块拒写、原子替换与失败回收。
 
 <details>
 <summary>查看原文（27行）</summary>
@@ -1234,9 +1212,9 @@ function enqueueFileWrite(file, task) {
 
 </details>
 
-**依据 4 · 源码核查**：[test/concurrency.test.mjs:22-55](https://github.com/2JumpSinA/dsh-context-guard/blob/a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc/test/concurrency.test.mjs#L22-L55)
+**依据 4 · 源码核查**：[test/concurrency.test.mjs:22-55](https://github.com/2JumpSinA/dsh-context-guard/blob/8c569d35efbaed63c69c2212500cd65757e53143/test/concurrency.test.mjs#L22-L55)
 
-作者并发/幂等静态测试。
+当前固定版本复核。作者并发/幂等静态测试。
 
 <details>
 <summary>查看原文（34行）</summary>
@@ -1286,7 +1264,7 @@ test('P1-3：同一会话重复写是幂等的（替换而非追加）', async (
 
 ### Q08 · 谁适合受控试用，停止标准是什么？
 
-**研究主题：**采用判断
+**研究主题**：采用判断
 
 #### 完整回答
 
@@ -1296,9 +1274,9 @@ test('P1-3：同一会话重复写是幂等的（替换而非追加）', async (
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:31-37](https://github.com/2JumpSinA/dsh-context-guard/blob/a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc/README.md#L31-L37)
+**依据 1 · 作者声明**：[README.md:31-37](https://github.com/2JumpSinA/dsh-context-guard/blob/8c569d35efbaed63c69c2212500cd65757e53143/README.md#L31-L37)
 
-默认写盘与敏感预览影响采用。
+当前固定版本复核。默认写盘与敏感预览影响采用。
 
 ```text
 ## ⚠️ It writes to your working directory (read this before installing)
@@ -1310,9 +1288,9 @@ test('P1-3：同一会话重复写是幂等的（替换而非追加）', async (
 - Boundaries: a missing parent directory is refused; an existing target that is not a text file (`.json`/`.yml`/…) is refused; a **symlink** pointing elsewhere is refused; writes are atomic (temp file + rename) with tight permissions (`0o600`). Any failure is recorded as status only — it **never affects** the badge, the banner, or the push.
 ```
 
-**依据 2 · 源码核查**：[lib/index.js:1394-1433](https://github.com/2JumpSinA/dsh-context-guard/blob/a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc/lib/index.js#L1394-L1433)
+**依据 2 · 源码核查**：[lib/index.js:1394-1433](https://github.com/2JumpSinA/dsh-context-guard/blob/8c569d35efbaed63c69c2212500cd65757e53143/lib/index.js#L1394-L1433)
 
-关闭草稿不取消成功压缩台账这一事实必须告知。
+当前固定版本复核。关闭草稿不取消成功压缩台账这一事实必须告知。
 
 <details>
 <summary>查看原文（40行）</summary>
@@ -1362,9 +1340,9 @@ test('P1-3：同一会话重复写是幂等的（替换而非追加）', async (
 
 </details>
 
-**依据 3 · 源码核查**：[lib/handover.mjs:517-544](https://github.com/2JumpSinA/dsh-context-guard/blob/a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc/lib/handover.mjs#L517-L544)
+**依据 3 · 源码核查**：[lib/handover.mjs:517-544](https://github.com/2JumpSinA/dsh-context-guard/blob/8c569d35efbaed63c69c2212500cd65757e53143/lib/handover.mjs#L517-L544)
 
-台账保留/去重边界影响审计用途。
+当前固定版本复核。台账保留/去重边界影响审计用途。
 
 <details>
 <summary>查看原文（28行）</summary>

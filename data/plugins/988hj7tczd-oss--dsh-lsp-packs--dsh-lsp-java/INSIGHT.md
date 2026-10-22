@@ -174,7 +174,7 @@ JDK、jdtls、项目 workspace 缺一都可能影响结果；源码 catch 所有
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标：**判断 Java 配置包的真实增量、启动边界及采用价值。
+**插件研究总目标**：判断 Java 配置包的真实增量、启动边界及采用价值。
 
 <a id="research-q01"></a>
 
@@ -182,7 +182,7 @@ JDK、jdtls、项目 workspace 缺一都可能影响结果；源码 catch 所有
 
 ### Q01 · 谁需要 Java LSP 包，合格的导航与替代办法是什么？
 
-**研究主题：**场景与需求
+**研究主题**：场景与需求
 
 #### 完整回答
 
@@ -284,7 +284,7 @@ export const DEFAULT_EXTENSION_TO_LANGUAGE: Readonly<Record<string, string>> = {
 
 ### Q02 · 组件怎样注册 Java provider，哪些能力属于本包？
 
-**研究主题：**功能与机制、贡献与相对优势、工程质量与复用
+**研究主题**：功能与机制、贡献与相对优势、工程质量与复用
 
 #### 完整回答
 
@@ -464,7 +464,7 @@ model-facing `lsp` tool with `goToDefinition` / `findReferences` / `goToImplemen
 
 ### Q03 · 启动到结果需要哪些条件、错误和成本在哪里？
 
-**研究主题：**依赖、兼容与流程、缺陷与关键质疑、效果与总成本
+**研究主题**：依赖、兼容与流程、缺陷与关键质疑、效果与总成本
 
 #### 完整回答
 
@@ -642,8 +642,8 @@ export async function apply(ctx: Context, config: Config): Promise<void> {
 #### 缺口
 
 - 没有固定项目中启动、索引和四项导航的时间与结果记录。
-  **影响：**无法估算稳定性、冷启动成本或恢复效率。
-  **进一步探讨：**用含多模块与依赖的固定 Java 项目记录启动、索引就绪和导航正确性。
+  **影响**：无法估算稳定性、冷启动成本或恢复效率。
+  **进一步探讨**：用含多模块与依赖的固定 Java 项目记录启动、索引就绪和导航正确性。
 
 <a id="research-q04"></a>
 
@@ -651,7 +651,7 @@ export async function apply(ctx: Context, config: Config): Promise<void> {
 
 ### Q04 · 谁适合试用，如何验证更可诊断的失败设计？
 
-**研究主题：**新假设与验证、采用判断
+**研究主题**：新假设与验证、采用判断
 
 #### 完整回答
 
@@ -801,7 +801,7 @@ function probeServer(command: string): boolean {
 #### 缺口
 
 - 细分诊断及保留自定义映射的设计未实现。
-  **影响：**不能声称当前故障恢复更快。
-  **进一步探讨：**以固定故障矩阵对照现有反馈和新设计反馈，记录定位与恢复时间。
+  **影响**：不能声称当前故障恢复更快。
+  **进一步探讨**：以固定故障矩阵对照现有反馈和新设计反馈，记录定位与恢复时间。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

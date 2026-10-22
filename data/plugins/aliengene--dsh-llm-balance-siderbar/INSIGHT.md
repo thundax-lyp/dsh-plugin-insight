@@ -176,7 +176,7 @@ provider和纯format/state分离、inFlight容错可借鉴；需账号cache、�
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标：**固定版本余额/订阅卡片如何选账号与缓存，OAuth写回/准入和使用成本如何影响采用？
+**插件研究总目标**：固定版本余额/订阅卡片如何选账号与缓存，OAuth写回/准入和使用成本如何影响采用？
 
 <a id="research-q01"></a>
 
@@ -184,7 +184,7 @@ provider和纯format/state分离、inFlight容错可借鉴；需账号cache、�
 
 ### Q01 · 余额卡片服务什么使用场景？
 
-**研究主题：**场景与需求、贡献与相对优势
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
@@ -289,7 +289,7 @@ auto与explicit sources。
 
 ### Q02 · route、凭据与缓存如何工作？
 
-**研究主题：**功能与机制、依赖、兼容与流程
+**研究主题**：功能与机制、依赖、兼容与流程
 
 #### 完整回答
 
@@ -550,7 +550,7 @@ export async function fetchJson(request: JsonRequest): Promise<unknown> {
 
 ### Q03 · 只读声明与身份/缓存有哪些边界？
 
-**研究主题：**缺陷与关键质疑
+**研究主题**：缺陷与关键质疑
 
 #### 完整回答
 
@@ -797,8 +797,8 @@ async function readErrorDetail(response: Response): Promise<string> {
 #### 缺口
 
 - 宿主对exact route的真实准入和多用户账号隔离未由目标组件闭合
-  **影响：**不能把同源cookie或只读看板解释为用户认证/账户隔离
-  **进一步探讨：**阅读部署宿主dispatch和credential作用域，先只用可信单用户环境
+  **影响**：不能把同源cookie或只读看板解释为用户认证/账户隔离
+  **进一步探讨**：阅读部署宿主dispatch和credential作用域，先只用可信单用户环境
 
 <a id="research-q04"></a>
 
@@ -806,7 +806,7 @@ async function readErrorDetail(response: Response): Promise<string> {
 
 ### Q04 · 容错、测试和运行成本有什么证据？
 
-**研究主题：**工程质量与复用、效果与总成本
+**研究主题**：工程质量与复用、效果与总成本
 
 #### 完整回答
 
@@ -981,7 +981,7 @@ load与interval生命周期。
 
 ### Q05 · 采用条件和继续探讨方向是什么？
 
-**研究主题：**新假设与验证、采用判断
+**研究主题**：新假设与验证、采用判断
 
 #### 完整回答
 
