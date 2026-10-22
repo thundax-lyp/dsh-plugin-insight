@@ -443,14 +443,14 @@
             "repository": "7gzgn/dsh-file-handover",
             "path": "",
             "revision": "e1c6158dbd4a4ec5c3057305d7d9c445edb9799f",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "977967b55df886f57debbd1a0fba50995c151c8f87b1d441b9e1a63ba21a9c74",
                 "code": "e1c6158dbd4a4ec5c3057305d7d9c445edb9799f",
                 "maintenance": "1501738525f78f042eebff42ae44cfc173a24f48415da0386e5b28ff09c3cbeb"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

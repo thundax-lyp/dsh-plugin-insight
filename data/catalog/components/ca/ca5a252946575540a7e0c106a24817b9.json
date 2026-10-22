@@ -327,14 +327,14 @@
             "repository": "173787247/dsh-wsl-editor",
             "path": "",
             "revision": "0bc7619da7b473a622ae9e498d19fd0360162261",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "0f6f34a1840e4ee980306eb7aa484594221c83e7605ca802a804f72a0a4cf0d8",
                 "code": "0bc7619da7b473a622ae9e498d19fd0360162261",
                 "maintenance": "0ca177752ea1d1876bf080b5dea0c372627e48845d20128bf6bf074610b8d143"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

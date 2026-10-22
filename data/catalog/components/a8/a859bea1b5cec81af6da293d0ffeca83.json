@@ -390,14 +390,14 @@
             "repository": "1e0zj/dsh-plugin-mall",
             "path": "",
             "revision": "d38485accdf8b29945c82311ce396ebef57058f1",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "4a4b150d2a528c9dd220cbc60cf6828b14f883bd789b08cfb629f0212d17ce76",
                 "code": "d38485accdf8b29945c82311ce396ebef57058f1",
                 "maintenance": "c2b8ed7dfbe21a7c17941c2bda53499cbdc84e2e0f178f658a496a395c447aaf"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

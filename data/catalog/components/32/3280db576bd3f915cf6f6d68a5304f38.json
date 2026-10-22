@@ -445,14 +445,14 @@
             "repository": "7gzgn/dsh-lighthouse",
             "path": "",
             "revision": "d72f8acf3009712bd1a9d536a4d2f9ccd13ac1cb",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "0c22f1ee4431e82ff854505083845071c3c21b3893ed392b376121046dd94482",
                 "code": "d72f8acf3009712bd1a9d536a4d2f9ccd13ac1cb",
                 "maintenance": "4d6d9351911a01a41467ec188dd5cf984116284f12165c03e48553ef8aac4ff9"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

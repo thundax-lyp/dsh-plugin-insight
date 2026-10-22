@@ -446,14 +446,14 @@
             "repository": "58catmiao/dsh-sciwork",
             "path": "",
             "revision": "21c6e9d5f8f48cd03363305d9fa3c641f8d0f808",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "66df9f880edff0523d975e9d294304203e7c86d420feefc487a4d7024a5e98b3",
                 "code": "21c6e9d5f8f48cd03363305d9fa3c641f8d0f808",
                 "maintenance": "d4dc1562434aa41d1f4862793f58e60d32d869b74e07c445bbb0ee45e35646d8"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

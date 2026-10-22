@@ -320,6 +320,25 @@
             "text": "需要结构化公开网页材料的用户可评估；版本、价格和API字段回读原文，登录态或交互站点另用浏览器，先核实账户计费口径。"
         },
         "registry": "data/plugins/439436269-ctrl--dsh-search",
+        "research_blocks": {
+            "plugin_id": "github:1423253220:root",
+            "revision": "24bc2e4b985559fe05497530b5c4484bc9168d71",
+            "reason_code": "refresh_validation_incomplete",
+            "reason": "本次核查未完成或修订尚未通过",
+            "details": {
+                "plugin_id": "github:1423253220:root",
+                "revision": "24bc2e4b985559fe05497530b5c4484bc9168d71",
+                "reason_code": "refresh_validation_incomplete",
+                "reason": "本次核查未完成或修订尚未通过",
+                "repository": "439436269-ctrl/dsh-search",
+                "component_path": "",
+                "analysis_complete": true,
+                "publication_policy": "保留上次已发布研究；本次草稿不作为已验收成果",
+                "resume_condition": "完成独立核查及必要修订，父级验收后发布"
+            },
+            "blocked_at": "2026-10-22T11:49:32.741Z",
+            "run_id": "2026-10-22-02"
+        },
         "reports": "# dsh-search\n\n> 把 DeepSeek Search/Fetch 接口接入 DSH，支持结构化搜索与正文抓取。\n\n## 使用建议\n\n需要结构化公开网页材料的用户可评估；版本、价格和API字段回读原文，登录态或交互站点另用浏览器，先核实账户计费口径。\n\n**核查状态**：已实现机制有源码支持；贡献价值为条件性解释，未来设计假设未验证。本轮仅作固定版本源码核查，未安装、运行目标代码或验收宿主。\n\n- **用途**：研究或开发用户先搜候选页面再读取正文，以原始URL为证据完成回答；交付应是可追溯原文依据。\n- **亮点**：相对内置搜索入口，提供显式条数、正文预算、查询操作符和搜索加抓取组合；错误与正文节选可直接交给模型复核。上游检索与rerank能力不应归为插件原创。\n- **思考**：rerank与authority字段不是事实正确性保证；research只保留开头节选，可能丢失限定条件。billedRequests按成功抓取计数，网络失败自动重试可能已被服务端执行，插件无法证明账单精确等于该字段。README费用和QPS是作者主张，本次未独立核价。\n- **建议**：需要结构化公开网页材料的用户可评估；版本、价格和API字段回读原文，登录态或交互站点另用浏览器，先核实账户计费口径。\n\n## 能力与限制\n\n参照内置web_search/web_fetch和手工API调用；没有上游同条件召回率实验。\n\n三个工具将query过滤、HTTP认证重试、结果归一化分离；research先搜索再顺序抓前N页，保留每页fetchError与正文节选。\n\n\nDeepSeek可用API key与网络端点、DSH工具注册；上游网页需可提取，无登录交互。\n\n构建query与过滤，调用搜索获取结构化候选，按top顺序抓取并截断，回传来源与逐页错误；模型再对关键事实fetch原文。\n\n现金为上游Search/Fetch请求费用，实际价格与结算需单独核实；人工包括原文核查、登录/SPA失败回退及结果反证，重试可能增加请求。\n\n减少搜索与抓取的工具编排步骤；多条摘要和高分不能替代关键事实查证。\n\n## 能力清单\n\n- **模型工具**：deepseek_search、deepseek_fetch、deepseek_research\n\n## 工程分析\n\nHTTP client独占key、超时、退避与状态错误翻译；工具独立文件，research逐页保留失败。可借鉴局部失败呈现，复用时不能把成功响应计数命名为确定账单。 源码依据：[lib/client.js](https://github.com/439436269-ctrl/dsh-search/blob/24bc2e4b985559fe05497530b5c4484bc9168d71/lib/client.js#L31)、[lib/tools/research.js](https://github.com/439436269-ctrl/dsh-search/blob/24bc2e4b985559fe05497530b5c4484bc9168d71/lib/tools/research.js#L17)、[lib/query.js](https://github.com/439436269-ctrl/dsh-search/blob/24bc2e4b985559fe05497530b5c4484bc9168d71/lib/query.js#L21)。\n\n## 未来设计假设（未验证）\n\n待验证假设：将请求尝试数、成功响应数与未知结算状态分开，并允许基于问题定位正文段落，可改善预算预估与证据完整性；由重试与截断边界推导，需额外数据并可能增加抓取调用。\n\n最小验证：代理注入服务端已完成但客户端超时的响应，比较尝试/成功/未知账单展示；另用关键限定在文末的页面测截断造成的事实遗漏，无法减少误判则否定。\n\n## 核查说明\n\n- **仓库**：[439436269-ctrl/dsh-search](https://github.com/439436269-ctrl/dsh-search)\n- **版本号**：0.1.0（[固定提交 24bc2e4](https://github.com/439436269-ctrl/dsh-search/tree/24bc2e4b985559fe05497530b5c4484bc9168d71)）\n- **版本日期**：2026-10-18（固定提交日期，北京时间；不是包发布日期）\n- **实际范围**：固定提交源码抽读与作者材料核查；没有执行目标代码、测试、安装或真实宿主验收，没有确认独立用户效果。\n- **来源**：作者README与上述固定版本源码；未确认独立采用效果，目录收录与下载统计不作效果证据。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：8cea62abce78e41e7b6a8ad7984aaaff91c6de222de1fe58a27a6da7cdcc7a33。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 3 | 157 | — | — | 1549 |\n| .js | source | 13 | 1001 | 622 | 312 | — |\n| .js | test | 2 | 307 | 232 | 46 | — |\n\n排除 1 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n",
         "metadata": {
             "repository": "439436269-ctrl/dsh-search",
@@ -389,14 +408,14 @@
             "repository": "439436269-ctrl/dsh-search",
             "path": "",
             "revision": "24bc2e4b985559fe05497530b5c4484bc9168d71",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "906d6f197bc17274dfb2bdc19e89691549686d654d95fed97f8cf95e4b53997c",
                 "code": "24bc2e4b985559fe05497530b5c4484bc9168d71",
                 "maintenance": "6ca93e3d0748966eb82be00e216b5b631b54a0a579a0a731bf4859a67eba8873"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

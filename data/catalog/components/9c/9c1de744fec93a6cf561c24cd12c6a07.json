@@ -443,14 +443,14 @@
             "repository": "863683348/dsh-plugin-finance-data",
             "path": "",
             "revision": "0a10267fa6f8f75da68005406b899894b60dd796",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "33411325a6b81a0cce5078cbdf8daa96e927a1e2a387ef9e9dde09e28c938082",
                 "code": "0a10267fa6f8f75da68005406b899894b60dd796",
                 "maintenance": "0b3ff18cd714c792478b766f84ddbe18645167fde8cc68740f62ab0ca7990ba4"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

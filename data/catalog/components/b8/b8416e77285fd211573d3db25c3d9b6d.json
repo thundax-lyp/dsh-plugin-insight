@@ -389,14 +389,14 @@
             "repository": "173787247/dsh-wsl-ssh-agent",
             "path": "",
             "revision": "99716388c9fa204b53bb6e931a239810d4524a0b",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "33336ef6f4a5ea9197e6f4322078e44cb9bfb57e57b450b12ec8a3ac9508ceaa",
                 "code": "99716388c9fa204b53bb6e931a239810d4524a0b",
                 "maintenance": "dabe9eef54fb2349b8386b3852df4b9a1dbc60ec0b2bb99392f0eda4922b2483"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

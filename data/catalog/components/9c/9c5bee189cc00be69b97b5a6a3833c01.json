@@ -391,14 +391,14 @@
             "repository": "452926826/dsh-feishu-bot",
             "path": "",
             "revision": "f4d521615a9ca7ff7cbe2953a2a84074a7768091",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "098f4a3b45260f6929f333a5a9732870622d2aae93c7c8b09d878aae6c144644",
                 "code": "f4d521615a9ca7ff7cbe2953a2a84074a7768091",
                 "maintenance": "175a582386ef3fb993062761320b16069f9d5a2e2a0a88db5a50cc2de7e77e2b"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

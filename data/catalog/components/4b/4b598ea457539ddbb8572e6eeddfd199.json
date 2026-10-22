@@ -421,14 +421,14 @@
             "repository": "Andersen216/dsh-whale-girl-live2d",
             "path": "",
             "revision": "f977bef508690e75ba6535cd8f4ce18e7f6ba9b0",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "1c85d4d6e72169a4609f4b78005e955b4b2b611ca729779619bca5cd455b9545",
                 "code": "f977bef508690e75ba6535cd8f4ce18e7f6ba9b0",
                 "maintenance": "ab9a839bc749a6661dd592a32a994883b97cb78a60f981cce37814e5fd6d7df6"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

@@ -283,6 +283,25 @@
             "text": "用可丢弃 profile 测试归档与恢复，先验证备份导入再放入重要任务。"
         },
         "registry": "data/plugins/1070296335-create--dph-taskboard",
+        "research_blocks": {
+            "plugin_id": "github:1336994666:root",
+            "revision": "ceda7a378b713afdfcae4d94b670b026f2e24100",
+            "reason_code": "refresh_validation_incomplete",
+            "reason": "本次核查未完成或修订尚未通过",
+            "details": {
+                "plugin_id": "github:1336994666:root",
+                "revision": "ceda7a378b713afdfcae4d94b670b026f2e24100",
+                "reason_code": "refresh_validation_incomplete",
+                "reason": "本次核查未完成或修订尚未通过",
+                "repository": "1070296335-create/dph-taskboard",
+                "component_path": "",
+                "analysis_complete": true,
+                "publication_policy": "保留上次已发布研究；本次草稿不作为已验收成果",
+                "resume_condition": "完成独立核查及必要修订，父级验收后发布"
+            },
+            "blocked_at": "2026-10-22T11:49:32.763Z",
+            "run_id": "2026-10-22-02"
+        },
         "reports": "# DPH 任务看板\n\n> 把真实会话归入任务状态列，并保存备注和可供智能体读取的看板快照。\n\n## 固定范围与依据\n\n固定提交 [ceda7a378b713afdfcae4d94b670b026f2e24100](https://github.com/1070296335-create/dph-taskboard/blob/ceda7a378b713afdfcae4d94b670b026f2e24100/lib/index.js)；组件路径：仓库根。核查时间 2026-10-20T03:11:17.313Z；本轮基准 2026-10-20T02:51:30Z。\n源码抽读路径：lib/index.js、src/client/index.js。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：同时推进多个会话的用户希望按待办、进行中、评审和完成整理任务。\n- **亮点**：浏览器以 localStorage 管理分类，宿主路由接收快照原子落盘，恢复归档优先走 workspaceRegistry。\n- **思考**：卡片直接对应会话可减少重复建账；浏览器状态与落盘镜像仍可能出现不同步。\n- **建议**：用可丢弃 profile 测试归档与恢复，先验证备份导入再放入重要任务。\n\n## 场景与替代办法\n\n同时推进多个会话的用户希望按待办、进行中、评审和完成整理任务。\n\n宿主会话分组更少维护；额外看板只有在工作量管理收益超过补丁成本时才值得保留。\n\n## 依赖与流程\n\n依赖 Web 会话服务、浏览器存储和 workspaceRegistry，缺服务时使用文件回退需重启。\n\n拖拽分类、添加备注并导出备份；恢复会话后检查目录和看板状态是否一致。\n\n## 成本与效果\n\n维护本地分类、备份和宿主补丁会增加升级成本，未测减少会话切换耗时。\n\n卡片直接对应会话可减少重复建账；浏览器状态与落盘镜像仍可能出现不同步。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：6dd5fc2425a46178cb172e3d90a7b6af9d6cc5517f82f418aee0d911c45c9d92。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 2 | 231 | — | — | 1675 |\n| .js | source | 2 | 1188 | 1076 | 105 | — |\n| .mjs | source | 4 | 396 | 303 | 56 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **界面**：会话任务看板。\n- **Host 路由**：看板快照与归档恢复。\n\n## 工程亮点\n\nregistry 写失败不回退文件避免状态反写值得借鉴；直接改 workspace 存储的兼容性成本较高。\n\n## 分发与兼容\n\n组件 @dph/taskboard 0.1.0，安装说明涉及宿主挂载补丁和手工路径，成熟度需审慎评估。\n\n## 历史对照\n\n前次代码指纹为 ceda7a378b713afdfcae4d94b670b026f2e24100；本轮固定为 ceda7a378b713afdfcae4d94b670b026f2e24100。宿主会话分组更少维护；额外看板只有在工作量管理收益超过补丁成本时才值得保留。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：状态列是人工组织而非完成证明；未验证并发浏览器同步和不同归档格式恢复。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：测试两个浏览器修改、归档恢复、导入覆盖、宿主升级和快照写失败。\n",
         "metadata": {
             "repository": "1070296335-create/dph-taskboard",
@@ -352,14 +371,14 @@
             "repository": "1070296335-create/dph-taskboard",
             "path": "",
             "revision": "ceda7a378b713afdfcae4d94b670b026f2e24100",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "a5c9face93f92e36fcf6937b10268c4e9a6a97c13b9fbaa48dea89829348e27d",
                 "code": "ceda7a378b713afdfcae4d94b670b026f2e24100",
                 "maintenance": "6a58431095addb8dd43d3ea639b738cab36b17ed70b923cc23ab755de78e6668"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

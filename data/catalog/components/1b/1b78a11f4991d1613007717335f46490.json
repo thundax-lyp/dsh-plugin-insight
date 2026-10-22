@@ -389,14 +389,14 @@
             "repository": "173787247/dsh-wsl-hostsvc",
             "path": "",
             "revision": "ef261f7a5d03f4beae08bd250f980941903e6304",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "fb467a3d47bc9c0c5e23be428681aab7a5ef2ad3edea94e0611a76489c94b499",
                 "code": "ef261f7a5d03f4beae08bd250f980941903e6304",
                 "maintenance": "6d5fe8f4eb67dfcfd9ebc3fd1b89dd80d947a4b36f0e5d040083b54317bac4fd"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

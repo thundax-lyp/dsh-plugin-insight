@@ -352,14 +352,14 @@
             "repository": "0xRabit/dsh-crypto-portfolio",
             "path": "",
             "revision": "c615eeb9e76d9a91bffb0171ef349532e794eb3c",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "3bc75acf175bf1b7e3628c03426b9a1491724922a570f15438bf78930ceb3235",
                 "code": "c615eeb9e76d9a91bffb0171ef349532e794eb3c",
                 "maintenance": "2973590e8ea11e3f21efb838541905f976e73dd47f84efd2301c34cb4642bd89"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

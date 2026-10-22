@@ -351,14 +351,14 @@
             "repository": "117BS/dsh-perlica-ding",
             "path": "",
             "revision": "f9db75c3cff13919659e81311a2b3d62f9af8aab",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "c14dca6f94dd575e6a16ff4821756c76be36d90a4e5f111c0568d2d78ca5b50d",
                 "code": "f9db75c3cff13919659e81311a2b3d62f9af8aab",
                 "maintenance": "35185edd72fec89a66b749f18f8c99dbb1cc9d09882e2d8592da285c4ac9dd41"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

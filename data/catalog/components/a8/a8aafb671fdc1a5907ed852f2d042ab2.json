@@ -288,6 +288,25 @@
             "text": "先选一个后端，用短文本和长文检查播放与取消，再引入本地音色服务；需要离线或隐私边界时逐条确认所选后端数据流。"
         },
         "registry": "data/plugins/1624318455--dsh-plugin-tts",
+        "research_blocks": {
+            "plugin_id": "github:1334773156:root",
+            "revision": "5b094011dfba35a1d30d44a18d2b411654e8fff8",
+            "reason_code": "refresh_validation_incomplete",
+            "reason": "本次核查未完成或修订尚未通过",
+            "details": {
+                "plugin_id": "github:1334773156:root",
+                "revision": "5b094011dfba35a1d30d44a18d2b411654e8fff8",
+                "reason_code": "refresh_validation_incomplete",
+                "reason": "本次核查未完成或修订尚未通过",
+                "repository": "1624318455/dsh-plugin-tts",
+                "component_path": "",
+                "analysis_complete": true,
+                "publication_policy": "保留上次已发布研究；本次草稿不作为已验收成果",
+                "resume_condition": "完成独立核查及必要修订，父级验收后发布"
+            },
+            "blocked_at": "2026-10-22T11:49:32.758Z",
+            "run_id": "2026-10-22-02"
+        },
         "reports": "# dsh-plugin-tts\n\n> 为DSH提供Edge、云端及本地语音后端，支持长文分块播放和自定义音色管理。\n\n## 固定范围与依据\n\n固定提交 [5b094011dfba35a1d30d44a18d2b411654e8fff8](https://github.com/1624318455/dsh-plugin-tts/blob/5b094011dfba35a1d30d44a18d2b411654e8fff8/lib/index.mjs)；组件路径：仓库根。核查时间 2026-10-20T04:34:36.810Z；本轮基准 2026-10-20T04:25:27.514Z。\n源码抽读路径：lib/index.mjs、lib/client.js、docs/USER-GUIDE.md。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：需要长文朗读或本地音色的用户希望在会话内播放，不想逐段复制到外部软件。\n- **亮点**：lib/index.mjs注册语音及音色包路由，Edge由Node子进程完成WebSocket合成，RVC等经本地HTTP服务处理，客户端分块播放。\n- **思考**：统一播放器与分块流程减少切换；免费在线朗读不等于离线，音色包校验也不证明效果或服务可信。\n- **建议**：先选一个后端，用短文本和长文检查播放与取消，再引入本地音色服务；需要离线或隐私边界时逐条确认所选后端数据流。\n\n## 场景与替代办法\n\n需要长文朗读或本地音色的用户希望在会话内播放，不想逐段复制到外部软件。\n\n此前未入档；系统TTS更轻，独立本地TTS更容易隔离资源。本项集成价值取决于会话朗读频率及音色需求。\n\n## 依赖与流程\n\n默认Edge需网络和兼容WebSocket协议，其他后端需key或本地推理服务、模型文件；宿主应保护语音和音色管理路由。\n\n选后端/音色，分块合成并播放，遇到错误查看具体后端；服务未启动先修服务，不反复下载或重复提交长文本。\n\n## 成本与效果\n\nEdge联网、Cloud请求以及本地模型算力各有成本；下载音色包、部署服务、长音频重试和人工试听均需计入。没有可比单位费用。\n\n统一播放器与分块流程减少切换；免费在线朗读不等于离线，音色包校验也不证明效果或服务可信。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：9520933e92e1ee480a695ceb40f4f22a3f393e9b59c2cd89f1f0aabf7de29454。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 18 | 3403 | — | — | 44199 |\n| .js | source | 1 | 7165 | 6548 | 659 | — |\n| .mjs | source | 3 | 3703 | 3154 | 479 | — |\n| .mjs | test | 9 | 2486 | 2043 | 360 | — |\n| .md | test | 1 | 45 | — | — | 626 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **Host 路由**：语音合成、音色服务和音色包管理接口。\n- **界面**：长文分块播放器与音色配置。\n\n## 工程亮点\n\n后端注册与故障分类、音色包sha256核验值得参考；主文件同时包含协议、下载与多路由，升级需避免跨后端回归。\n\n## 分发与兼容\n\n0.6.7，Node>=22，Host+Client；本地RVC、Index-TTS2、CosyVoice与付费Cloud需各自配置和运行时，不能按默认Edge的负担概括。\n\n## 历史对照\n\n当前快照此前没有该稳定身份的研究档案。此前未入档；系统TTS更轻，独立本地TTS更容易隔离资源。本项集成价值取决于会话朗读频率及音色需求。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：多后端不是单一安装条件；本地模型、显存和声音样本未核验，Edge非正式接入协议可能随上游变化。未执行任何后端。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：分别对每后端测试首段延迟、长文无缝、停止与重试，检查音色包损坏和服务离线；同时记录算力、费用与人工部署时间。\n",
         "metadata": {
             "repository": "1624318455/dsh-plugin-tts",
@@ -357,15 +376,15 @@
             "repository": "1624318455/dsh-plugin-tts",
             "path": "",
             "revision": "5b094011dfba35a1d30d44a18d2b411654e8fff8",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                "https://github.com/0xsline/awesome-deepseek-harness"
-            ],
             "fingerprints": {
                 "directory": "501664f9856f9f75ae5e954c9c9bf44d0bc3a62925e6c0f845d012d4b8366474",
                 "code": "5b094011dfba35a1d30d44a18d2b411654e8fff8",
                 "maintenance": "ec71209f2866ad0a1b5c5e5ed6f95b258a1dd7b4698ecf95656b000e9ef889b0"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ]
         }
     }
 }

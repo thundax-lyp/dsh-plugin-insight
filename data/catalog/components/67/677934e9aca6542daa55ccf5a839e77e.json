@@ -390,14 +390,14 @@
             "repository": "2026heshao/dsh-obsidian-board",
             "path": "",
             "revision": "072612e0245565cee12cbfd07a421f2029d35c4e",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "daca67a2d01f7b6302eaff6f4942884baa27772bfaeff3060c63421d7403cf6a",
                 "code": "072612e0245565cee12cbfd07a421f2029d35c4e",
                 "maintenance": "3dce70df9e35e48d94dd35a5457133415299bdb52f28a41a22e6471d9204750e"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

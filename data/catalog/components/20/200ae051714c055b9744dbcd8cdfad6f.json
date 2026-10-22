@@ -398,15 +398,15 @@
             "repository": "2768651338/dsh-effort-slider",
             "path": "",
             "revision": "97bf5c1e5881ea0fcfb543844346fe86b87ff620",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                "https://github.com/0xsline/awesome-deepseek-harness"
-            ],
             "fingerprints": {
                 "directory": "c46b972e439152e0a6332ef6f67b900b063c027dec668c512c8e4b7957f77f95",
                 "code": "97bf5c1e5881ea0fcfb543844346fe86b87ff620",
                 "maintenance": "46d4c096b55c82bc9119251e08c71d6cfbf47c3702af17da66ff5072522070df"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ]
         }
     }
 }

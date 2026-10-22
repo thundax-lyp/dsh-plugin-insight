@@ -443,14 +443,14 @@
             "repository": "452926826/dsh-ssh-logs",
             "path": "",
             "revision": "4dbc65c4bb250f72388edfd42b3d3e4d0103699c",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "038fbccbc5dfaf9f81e3af13236306799b472ddd3a462f564ff6ca53d8585904",
                 "code": "4dbc65c4bb250f72388edfd42b3d3e4d0103699c",
                 "maintenance": "266a1a20660c50cd36a2f9514126e94170f7cfe1f0da9e73621751415cd5c814"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

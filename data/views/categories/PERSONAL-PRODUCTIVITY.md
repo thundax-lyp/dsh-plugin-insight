@@ -60,7 +60,6 @@
 | [dsh-memory-setup](#plugin-1337350700-root) | 保存工作区偏好、约定与纠错教训，支持知识检索、快照和上下文注入。 | 适合在单个非敏感项目先试。 |
 | [dsh-mimotts](#plugin-1397477851-root) | 把定稿助手回复交给MiMo TTS合成语音，提供消息播放按钮、内联播放器与语音历史。 | 先用无敏感信息的短文本验证读音、取消和历史，再配置音色；听到语音不应代替核对原始技术结论。 |
 | [dsh-neo-skin](#plugin-1335557891-root) | 通过主题覆盖层为 DSH Web 提供新粗野主义配色和可切换外观方案。 | 先在测试配置中切换深浅主题、关闭插件并刷新，确认能完整恢复原生样式。 |
-| [dsh-openai-oauth](#plugin-1335992154-root) | 通过浏览器或设备码登录ChatGPT，将Codex模型作为DSH原生LLM适配器提供。 | 仅在本机临时profile核对工具和中断续聊语义；先确认账户授权条件和凭据清理方式，再替代现有模型连接。 |
 | [dsh-perlica-ding](#plugin-1335704653-root) | 根据计划、执行、等待回应和错误状态播放分级提示音，普通问答保持安静。 | 先用测试音和短任务核查四种状态，调整音量及去抖，不将完成音当验收。 |
 | [dsh-pet-live2d](#plugin-1378097401-dsh-live2d-pet) | 在DSH中显示可拖动Live2D宠物，并随会话状态切换动作、气泡与表情。 | 适合个人会话提示先试用。 |
 | [dsh-pinned-sessions](#plugin-1407379611-root) | 在侧栏集中展示跨工作区的置顶会话，提供搜索、状态与取消置顶操作。 | 已有跨工作区置顶需求时可试用；先验证搜索、归档过滤与取消置顶，宿主升级后检查入口是否仍在。 |
@@ -831,20 +830,6 @@
 > **思考**：叠加覆盖比替换原生主题更容易回退；个性化审美价值不能写成工作效率提升。
 
 > **建议**：先在测试配置中切换深浅主题、关闭插件并刷新，确认能完整恢复原生样式。
-
-<a id="plugin-1335992154-root"></a>
-
-## [dsh-openai-oauth](../../plugins/adonissheldon--dsh-openai-oauth/INSIGHT.md)
-
-[![GitHub ★ 9](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9&color=yellow&logo=github&style=flat)](https://github.com/AdonisSheldon/dsh-openai-oauth) [![npm 30d 814](https://img.shields.io/static/v1?label=npm+30d&message=814&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-openai-oauth) [![最新发布 2026-08-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-15&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-openai-oauth)
-
-> **用途**：有Codex访问资格的本机用户希望沿用DSH会话、工具和模型选择器。
-
-> **亮点**：相对启动独立Codex代理，增量是直接模型路由和DSH事件/工具语义适配。模型能力与账户配额归上游，OAuth标准不算原创。
-
-> **思考**：原生外观能否保证协议等价？适配器明确拒绝不支持的maxTokens等选项，重放、工具结果和流式停止原因仍需真实任务验收。凭据虽权限收紧仍明文，卸载保留，不能当作密钥保险库。
-
-> **建议**：由显式选项拒绝与replay转换推导，可提供模型能力协商及事件保真度收据，提前暴露不支持特性。未验证；同一含工具、图片、中断续聊任务对照事件序列和结果，静默降级应为0。
 
 <a id="plugin-1335704653-root"></a>
 
@@ -1828,4 +1813,4 @@
 
 ## 更新时间
 
-2026-10-21
+2026-10-22

@@ -495,14 +495,14 @@
             "repository": "Alnita-M/dsh-Almost_Full_Access",
             "path": "",
             "revision": "269ab865fd02a4dded171eaecc40b1255f5df227",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "bbd06b3c1f327b55cd69bf2bbe46dee62dcedbf3c7942567da6adffb3b075038",
                 "code": "269ab865fd02a4dded171eaecc40b1255f5df227",
                 "maintenance": "3943076d82f102182629ea05f02514d25efa780643993cadcf4ff1bf8127ebef"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

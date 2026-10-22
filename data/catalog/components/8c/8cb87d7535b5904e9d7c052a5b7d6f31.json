@@ -438,14 +438,14 @@
             "repository": "AdenXie/dsh-vercel",
             "path": "",
             "revision": "21b3c7372284ab53d10e61f2c717d44f752d9567",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "c980fe99ceecd31a43de570a76e4adf948122038597e7eb87912a157e3d17919",
                 "code": "21b3c7372284ab53d10e61f2c717d44f752d9567",
                 "maintenance": "38fbc99f61eb05c7f9ae6a91c0c772b76e2545078fb809ad0bf7b888a0b1efd6"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

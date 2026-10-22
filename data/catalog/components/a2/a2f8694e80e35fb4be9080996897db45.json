@@ -425,15 +425,15 @@
             "repository": "AKS1st/dsh-cyber-particle",
             "path": "",
             "revision": "e08111d59df009454d9de6b8384907f697e038f6",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                "https://github.com/0xsline/awesome-deepseek-harness"
-            ],
             "fingerprints": {
                 "directory": "c58d18cd5a83efbc520329d55a0c6d391ce842df08bfd839807b926b79223c18",
                 "code": "e08111d59df009454d9de6b8384907f697e038f6",
                 "maintenance": "b6e27c592c9754a69a07a2322d93ddc740dd9c9360e1176a8d8a31e8ba80b8e5"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ]
         }
     }
 }

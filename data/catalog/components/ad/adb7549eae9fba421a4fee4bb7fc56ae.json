@@ -417,14 +417,14 @@
             "repository": "AKS1st/ikun-theme-skin",
             "path": "",
             "revision": "c0e59e61332a5e3317365848f73240308d9d9345",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "45866ce7ca186d794842e2a11c77cfbf2b8afde9a1c178e51882dfd4b7af3b6d",
                 "code": "c0e59e61332a5e3317365848f73240308d9d9345",
                 "maintenance": "2d0d0cbd7f31aa78eb7abb697e4f1a690c298a9f453bf9a525c6bcf84f842dc1"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

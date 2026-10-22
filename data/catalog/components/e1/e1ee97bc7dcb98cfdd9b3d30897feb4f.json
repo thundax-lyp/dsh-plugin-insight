@@ -321,6 +321,25 @@
             "text": "适合已有 Minecraft 音乐环境的创作者；先用短片段验证采样、时序和世界备份恢复，再构建长曲。"
         },
         "registry": "data/plugins/19north--dsh-redstone-music",
+        "research_blocks": {
+            "plugin_id": "github:1401037852:root",
+            "revision": "7ab206d8b7befe321603cd8b046bdae5be5f66ef",
+            "reason_code": "refresh_validation_incomplete",
+            "reason": "本次核查未完成或修订尚未通过",
+            "details": {
+                "plugin_id": "github:1401037852:root",
+                "revision": "7ab206d8b7befe321603cd8b046bdae5be5f66ef",
+                "reason_code": "refresh_validation_incomplete",
+                "reason": "本次核查未完成或修订尚未通过",
+                "repository": "19north/dsh-redstone-music",
+                "component_path": "",
+                "analysis_complete": true,
+                "publication_policy": "保留上次已发布研究；本次草稿不作为已验收成果",
+                "resume_condition": "完成独立核查及必要修订，父级验收后发布"
+            },
+            "blocked_at": "2026-10-22T11:49:32.710Z",
+            "run_id": "2026-10-22-02"
+        },
         "reports": "# dsh-redstone-music\n\n> 在 DSH 中渲染音乐采样并生成、部署 Minecraft 红石音乐数据包。\n\n## 研究范围\n\n- **仓库**：[19north/dsh-redstone-music](https://github.com/19north/dsh-redstone-music)\n- **版本号**：0.1.0（[固定提交 7ab206d](https://github.com/19north/dsh-redstone-music/tree/7ab206d8b7befe321603cd8b046bdae5be5f66ef)）\n- **版本日期**：2026-10-02（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n贡献机制有固定源码支持；效果与采用收益为条件性解释，后续设计假设尚未验证。\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：Minecraft 音乐创作者需要把谱面和乐器配置转成可播放世界；验收是音高、起音和轨道时序正确的成品。\n- **亮点**：相对逐格 RCON 和手工调音，实际增量是采样起音对齐、显式 sample 音高与轨道延迟补偿组成生产管线；tool-render 的 RMS 判据使采样检查可重复。作者速度数字是自报，本次只确认分片和串行队列机制。\n- **思考**：文件级起音断言与生成命令不能保证游戏中的齐奏：模组 sound_event、服务器 tick 和区块加载会改变播放结果；rm_build 的几何延迟补偿需放到相同服务器负载下检验，不能将离线自验证等同于音乐成品验收。\n- **建议**：适合已有 Minecraft 音乐环境的创作者；先用短片段验证采样、时序和世界备份恢复，再构建长曲。\n\n采用建议：适合已有 Minecraft 音乐环境的创作者；先用短片段验证采样、时序和世界备份恢复，再构建长曲。\n\n## 核心贡献\n\n相对逐格 RCON 和手工调音，实际增量是采样起音对齐、显式 sample 音高与轨道延迟补偿组成生产管线；tool-render 的 RMS 判据使采样检查可重复。作者速度数字是自报，本次只确认分片和串行队列机制。\n\n## 关键质疑\n\n文件级起音断言与生成命令不能保证游戏中的齐奏：模组 sound_event、服务器 tick 和区块加载会改变播放结果；rm_build 的几何延迟补偿需放到相同服务器负载下检验，不能将离线自验证等同于音乐成品验收。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n待验证假设：将生成谱面的预期起音表与游戏回录波形对齐，能自动定位采样与红石传播中的误差来源。由渲染清单已有 sample 与时序补偿推导；需要可归属轨道的校准片段，不能只比较主观听感。\n\n用短音阶及齐奏片段，在同地图和负载对比逐格部署与数据包部署，记录总耗时、失败恢复和回录起音误差；若偏差主要由随机 tick 且不可校准，否定自动补偿收益。\n\n## 场景与替代办法\n\nMinecraft 音乐创作者需要把谱面和乐器配置转成可播放世界；验收是音高、起音和轨道时序正确的成品。\n\n参照人工采样调音、逐格 RCON 命令与普通 MIDI 转换；未比较其他完整红石音乐工具链。\n\n## 依赖与流程\n\n需要 DSH 工具服务、Minecraft 目标版本及相关音乐模组/资源包；render 模式依赖可选 js-synthesizer 与 SoundFont，align 可只用 WAV；部署需要数据包目录权限与 RCON 账号。\n\n准备谱面与槽表，渲染/对齐采样并读回检查；设置轨表及几何参数生成数据包，备份世界后选择部署/开建；连接或命令失败需检查已写入世界，不能盲目从头重放。\n\n## 成本与效果\n\n现金可能涉及游戏、服务器与采样许可；人工集中在音色配置、模组兼容、世界备份和听测。无相同成品下的总工时实测。\n\n贡献在缩短音色到世界建造的交接链；若模组或音色约定不匹配，批处理速度无法弥补音乐错误。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：7115be76eeb91760131440e0d86f85914ca9d845e342686560c3959f9e451837。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 11 | 1414 | — | — | 12580 |\n| .mjs | source | 4 | 470 | 367 | 75 | — |\n| .ts | source | 15 | 2853 | 2242 | 464 | — |\n| .ts | test | 6 | 583 | 505 | 18 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **模型工具**：rm_render、rm_build（源码注册）\n- **后台**：采样对齐、数据包生成与RCON部署\n\n## 工程亮点\n\nsrc/music/rcon.ts 用串行队列防止在途命令争抢，tool-build.ts 以 mcfunction 分片规避逐格网络往返，tool-render.ts 的输入归一化提供可定位错误。复用批处理设计需自行定义幂等与中断恢复边界。 源码：[src/tool-build.ts](https://github.com/19north/dsh-redstone-music/blob/7ab206d8b7befe321603cd8b046bdae5be5f66ef/src/tool-build.ts)、[src/tool-render.ts](https://github.com/19north/dsh-redstone-music/blob/7ab206d8b7befe321603cd8b046bdae5be5f66ef/src/tool-render.ts)、[src/music/rcon.ts](https://github.com/19north/dsh-redstone-music/blob/7ab206d8b7befe321603cd8b046bdae5be5f66ef/src/music/rcon.ts)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 src/tool-build.ts、src/tool-render.ts、src/music/rcon.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：核查固定提交的所列核心实现与作者材料；未运行插件、安装、测试或真实宿主验收，未确认独立用户效果。\n- 下一步：用短音阶及齐奏片段，在同地图和负载对比逐格部署与数据包部署，记录总耗时、失败恢复和回录起音误差；若偏差主要由随机 tick 且不可校准，否定自动补偿收益。\n",
         "metadata": {
             "repository": "19north/dsh-redstone-music",
@@ -390,14 +409,14 @@
             "repository": "19north/dsh-redstone-music",
             "path": "",
             "revision": "7ab206d8b7befe321603cd8b046bdae5be5f66ef",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "bbd83103cdc70d5de1619fa853e2c2b71aa08a66eed23b81ecc661313821e200",
                 "code": "7ab206d8b7befe321603cd8b046bdae5be5f66ef",
                 "maintenance": "45a7653848fdf1a9f494354bd3e6c14bda53602b62962a046b0c8a98180418db"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

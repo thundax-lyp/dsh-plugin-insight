@@ -438,14 +438,14 @@
             "repository": "Andrew111888/dsh-plugin-balance",
             "path": "",
             "revision": "96bb1592c949456aa37ccc3a296085f59df2ee9c",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "8db221627320843bdbda8a4d6a695307b66a544f87341dc690ee1312291428ab",
                 "code": "96bb1592c949456aa37ccc3a296085f59df2ee9c",
                 "maintenance": "c4ec0e89bdc89313edb345b1f20a0f7fc678bea90ed6c6b5e0e5a6431e5c2901"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

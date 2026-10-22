@@ -438,14 +438,14 @@
             "repository": "Aik358/dsh-cua-pre",
             "path": "",
             "revision": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "d0c7b6bbd52199346c8f9dabffea64eab81266744336f8ebfd43bfa7a1713f23",
                 "code": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb",
                 "maintenance": "f4c2f71e8314030babe6582480ddf2f8b1ad7455973d7a618490dbb8f62bacc1"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

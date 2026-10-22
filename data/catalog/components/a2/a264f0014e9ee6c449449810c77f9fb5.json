@@ -443,14 +443,14 @@
             "repository": "863683348/dsh-recipe",
             "path": "",
             "revision": "67f2d4c662954ccd25c771fa0e0a99433cf3b530",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "d6b826d0742598b0115909e5faba5ed8a21d392df4b45b8ae7136cbf4399b6f5",
                 "code": "67f2d4c662954ccd25c771fa0e0a99433cf3b530",
                 "maintenance": "e178587839b9b2faaef3323cf056475a9c78d77546abda3f2d68389108890d23"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

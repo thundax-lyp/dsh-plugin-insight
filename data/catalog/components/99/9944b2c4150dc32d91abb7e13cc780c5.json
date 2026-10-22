@@ -437,14 +437,14 @@
             "repository": "AKS1st/dsh-sysmon",
             "path": "",
             "revision": "4cb7a241f0228329d12010b4846c1bd508271ec0",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "4a588da2a05ef1eb030eb047538a8b2901809d4c26c1a8b062732bdc61bcd275",
                 "code": "4cb7a241f0228329d12010b4846c1bd508271ec0",
                 "maintenance": "eceace503180182cffd4526fa82e68d5e554a03c477108b70de2714dc350bd44"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

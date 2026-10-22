@@ -424,14 +424,14 @@
             "repository": "AikenFra/dsh-alive",
             "path": "",
             "revision": "d17acfa8689666d799c94e196020a3efed11ad0a",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "1901cf049b38fcfce53e3664c621ddd4b6451dc5a280bd5ca27353615ad6b3f3",
                 "code": "d17acfa8689666d799c94e196020a3efed11ad0a",
                 "maintenance": "e51e3946e31c2d016ea30954adfb9b9eaa476d7752977be9a3437f0ecc8df2d8"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

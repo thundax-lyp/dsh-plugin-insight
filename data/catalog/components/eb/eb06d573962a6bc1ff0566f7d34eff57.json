@@ -13,7 +13,7 @@
             "name": "dsh-mermaid",
             "entry_type": "plugin",
             "technical_category": "interface-input",
-            "business_category": "research-knowledge",
+            "business_category": "software-delivery",
             "tags": [],
             "availability": "unknown",
             "research_depth": "source",
@@ -24,43 +24,95 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-06-github-1334569498-root-directory-0",
+                    "id": "2026-10-22-02-github-1334569498-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T05:40:36.727Z",
+                    "retrieved_at": "2026-10-22T05:09:43.653Z",
                     "membership": "present"
                 },
                 {
-                    "id": "2026-10-21-06-github-1334569498-root-directory-1",
+                    "id": "2026-10-22-02-github-1334569498-root-directory-1",
                     "url": "https://github.com/0xsline/awesome-deepseek-harness",
                     "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
-                    "retrieved_at": "2026-10-21T05:40:36.727Z",
+                    "retrieved_at": "2026-10-22T05:09:43.653Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-06-github-1334569498-root-author",
+                    "id": "2026-10-22-02-github-1334569498-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/AKS1st/dsh-mermaid/blob/2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AKS1st/dsh-mermaid",
+                            "commit": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48",
+                            "path": "README.md",
+                            "content_sha256": "11c30cddcec15029ceb8a6ffa68bd6e826c0e5911521af0f7e1c1af3b5c34391"
+                        }
+                    ],
                     "revision": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48",
-                    "captured_at": "2026-10-21T05:40:36.727Z",
-                    "summary": "按视口延迟渲染已完成Mermaid代码块，并提供缩放与错误报告入口。",
-                    "artifact": "data/runs/2026-10-21-06/snapshots/aks1st--dsh-mermaid/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:09:43.653Z",
+                    "summary": "在DSH Web会话中把Mermaid代码围栏显示为SVG图，支持主题跟随、放大和错误查看。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/aks1st--dsh-mermaid/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-06-github-1334569498-root-source",
+                    "id": "2026-10-22-02-github-1334569498-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/AKS1st/dsh-mermaid/blob/2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48/src/index.ts",
+                    "url": "https://github.com/AKS1st/dsh-mermaid/blob/2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AKS1st/dsh-mermaid",
+                            "commit": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48",
+                            "path": "README.md",
+                            "content_sha256": "11c30cddcec15029ceb8a6ffa68bd6e826c0e5911521af0f7e1c1af3b5c34391"
+                        },
+                        {
+                            "repository_url": "https://github.com/AKS1st/dsh-mermaid",
+                            "commit": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48",
+                            "path": "package.json",
+                            "content_sha256": "dc54b597b07aa154708b8d3020b82d70ee0d63f16f33ab4980143f5addbff984"
+                        },
+                        {
+                            "repository_url": "https://github.com/AKS1st/dsh-mermaid",
+                            "commit": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48",
+                            "path": "src/index.ts",
+                            "content_sha256": "5ca9f9094d4a6e9e2f02d103671bf131c71c5f82f665b4d02e74941c30b1c902"
+                        },
+                        {
+                            "repository_url": "https://github.com/AKS1st/dsh-mermaid",
+                            "commit": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48",
+                            "path": "src/protocol.ts",
+                            "content_sha256": "9d8865c5d0132d2e4f2da9115c0b6717f780c9bad6b57573e8eba4cd726b1131"
+                        },
+                        {
+                            "repository_url": "https://github.com/AKS1st/dsh-mermaid",
+                            "commit": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48",
+                            "path": "src/client/index.ts",
+                            "content_sha256": "1bc35081ecbd26bdef2d9f4df7ec132d8c09abe5e02731ae32878d814903bf8d"
+                        },
+                        {
+                            "repository_url": "https://github.com/AKS1st/dsh-mermaid",
+                            "commit": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48",
+                            "path": "src/client/dom.ts",
+                            "content_sha256": "5372e747ee945f29fe3b268834fa89748d02606d976a6d99ceee8f2a2447cf93"
+                        },
+                        {
+                            "repository_url": "https://github.com/AKS1st/dsh-mermaid",
+                            "commit": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48",
+                            "path": "tests/client-dom.spec.ts",
+                            "content_sha256": "2d3b15c96446b19219b18a27317786825a8f436c882b277a3f79e10b1e1f6309"
+                        }
+                    ],
                     "revision": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48",
-                    "captured_at": "2026-10-21T05:40:36.727Z",
-                    "summary": "核查 src/index.ts、src/client/index.ts、src/client/dom.ts；主机提供本地UMD和配置，客户端监听稳定代码块DOM，以IntersectionObserver近视口入队串行渲染，strict配置且不调用bindFunctions；失败保留源码并显示操作。",
-                    "artifact": "data/runs/2026-10-21-06/snapshots/aks1st--dsh-mermaid/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:09:43.653Z",
+                    "summary": "核查 README.md、package.json、src/index.ts、src/protocol.ts、src/client/index.ts、src/client/dom.ts、tests/client-dom.spec.ts；host白名单提供本地Mermaid UMD和config，client扫描定格围栏，经视口串行队列生成SVG替换pre，失败保留源码和错误条。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/aks1st--dsh-mermaid/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                        "读取固定host/client/protocol及DOM测试定义；不加载目标脚本、浏览器或测试，性能与安全仅源码边界。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -71,9 +123,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "阅读模型生成的流程图、时序图，遇语法错误再主动请求模型修复。",
+                    "text": "帮助开发者/研究者就地阅读流程与架构图，保留源码核对，渲染不等业务逻辑正确。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1334569498-root-source"
+                        "2026-10-22-02-github-1334569498-root-source"
                     ],
                     "dependencies": [
                         {
@@ -82,16 +134,16 @@
                             "fingerprint": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:40:36.727Z",
+                    "reviewed_at": "2026-10-22T05:09:43.653Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "主机提供本地UMD和配置，客户端监听稳定代码块DOM，以IntersectionObserver近视口入队串行渲染，strict配置且不调用bindFunctions；失败保留源码并显示操作。",
+                    "text": "host白名单提供本地Mermaid UMD和config，client扫描定格围栏，经视口串行队列生成SVG替换pre，失败保留源码和错误条。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1334569498-root-source"
+                        "2026-10-22-02-github-1334569498-root-source"
                     ],
                     "dependencies": [
                         {
@@ -100,16 +152,16 @@
                             "fingerprint": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:40:36.727Z",
+                    "reviewed_at": "2026-10-22T05:09:43.653Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                    "text": "读取固定host/client/protocol及DOM测试定义；不加载目标脚本、浏览器或测试，性能与安全仅源码边界。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1334569498-root-source"
+                        "2026-10-22-02-github-1334569498-root-source"
                     ],
                     "dependencies": [
                         {
@@ -118,16 +170,16 @@
                             "fingerprint": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:40:36.727Z",
+                    "reviewed_at": "2026-10-22T05:09:43.653Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "分发以本插件固定package.json、运行依赖与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+                    "text": "固定包0.5.0与Mermaid ^11.16.0，Node范围明确；已跟踪lib产物，README所述prepare自动构建未在scripts声明中找到。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1334569498-root-source"
+                        "2026-10-22-02-github-1334569498-root-source"
                     ],
                     "dependencies": [
                         {
@@ -136,16 +188,16 @@
                             "fingerprint": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:40:36.727Z",
+                    "reviewed_at": "2026-10-22T05:09:43.653Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "本地脚本体积与浏览器布局成本，主动修复才产生模型token费用；DOM兼容维护是持续成本。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 安装Mermaid和首次UMD传输，金额未知 | 核对宿主DOM/配置及简单图 | 作者包体大小不是本轮网络测量 |\n| 持续使用 | 浏览器渲染、主题刷新、观察器与SVG内存 | 阅读、放大、回看源码 | 实际峰值内存/卡顿未知 |\n| 失败恢复 | 复制或可选模型修复及重复渲染 | 查语法、保护已有草稿并核对修改 | AI动作不保证真实发送成功 |\n\n",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1334569498-root-source"
+                        "2026-10-22-02-github-1334569498-root-source"
                     ],
                     "dependencies": [
                         {
@@ -154,16 +206,16 @@
                             "fingerprint": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:40:36.727Z",
+                    "reviewed_at": "2026-10-22T05:09:43.653Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "先核宿主代码块兼容；错误修复按钮会尝试发送消息，使用前保留已有草稿。",
+                    "text": "适合经常看Mermaid图的人先用小图试用，保留strict和合理限制，报错先复制后决定是否发AI；卡顿、异常交互或草稿覆盖就停相关路径。详见[Q06](#research-q06)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1334569498-root-source"
+                        "2026-10-22-02-github-1334569498-root-source"
                     ],
                     "dependencies": [
                         {
@@ -172,16 +224,16 @@
                             "fingerprint": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:40:36.727Z",
+                    "reviewed_at": "2026-10-22T05:09:43.653Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "改善图阅读可能性明确，未有渲染性能或修复成功率对照。",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 少切工具 | 就地SVG与放大存在 | 复杂图理解准确性与净节时 |\n| 延迟非视口工作 | 队列/IntersectionObserver存在 | 单图CPU卡顿与大批图尾延迟 |\n| 失败可恢复 | 原文保留和错误复制存在 | AI修复成功率与草稿覆盖影响 |\n\n费用未知不填零，性能判断需真实浏览器图集，不能从单线程队列推断页面永不卡顿。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1334569498-root-source"
+                        "2026-10-22-02-github-1334569498-root-source"
                     ],
                     "dependencies": [
                         {
@@ -190,16 +242,16 @@
                             "fingerprint": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:40:36.727Z",
+                    "reviewed_at": "2026-10-22T05:09:43.653Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "观察器共享、串行队列、释放清理与错误源码保留值得复用；发送成功标志不等于宿主接收确认。",
+                    "text": "可复用的是host/client共用协议和严格配置、固定文件白名单、source保存在WeakMap、第一次失败回原pre、串行队列与可见性调度，分别控制配置漂移、过宽静态路由、主题重渲染及批量负担。测试覆盖strict、失败fallback和never-settling Promise超时，但不能用mock的异步挂起证明同步病态CPU可中断，本轮未运行。\n\n",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1334569498-root-source"
+                        "2026-10-22-02-github-1334569498-root-source"
                     ],
                     "dependencies": [
                         {
@@ -208,16 +260,16 @@
                             "fingerprint": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:40:36.727Z",
+                    "reviewed_at": "2026-10-22T05:09:43.653Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "interpretation",
-                    "text": "将流式消息与图渲染时机分离，防半成品反复渲染，并串行处理近视口任务；图布局与净化来自Mermaid上游。",
+                    "text": "把成熟Mermaid布局接入DSH定格消息，补视口排队、主题、放大与源码回退，减少复制到外部站点；上游布局和消毒不属插件原创。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1334569498-root-source"
+                        "2026-10-22-02-github-1334569498-root-source"
                     ],
                     "dependencies": [
                         {
@@ -226,16 +278,16 @@
                             "fingerprint": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:40:36.727Z",
+                    "reviewed_at": "2026-10-22T05:09:43.653Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "sendToAI会覆盖现有textarea草稿，30ms后只检查非空就发Enter，不证明草稿等于报告或已真正提交；DOM与按键模拟绑定宿主约定。strict与文本/边数上限不能保证任意图渲染性能。",
+                    "text": "Promise超时不能中断主线程CPU，离视口只丢结果；发送AI修复会写全局首个输入框并模拟Enter，可能覆盖已有草稿，均为静态边界未复现。strict不能代替完整安全验收。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1334569498-root-source"
+                        "2026-10-22-02-github-1334569498-root-source"
                     ],
                     "dependencies": [
                         {
@@ -244,16 +296,16 @@
                             "fingerprint": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:40:36.727Z",
+                    "reviewed_at": "2026-10-22T05:09:43.653Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "unverified",
-                    "text": "未验证假设：改用宿主草稿事务并在已有草稿时追加/确认，可避免修复入口破坏草稿。以非空草稿、忙状态、不同发送键及快速会话切换核内容保留和实际发送状态。",
+                    "text": "可探讨可终止渲染隔离和绑定会话的可预览修复草稿，比较病态图响应及原草稿保留；受DOM依赖与通信开销约束，未验证。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1334569498-root-source"
+                        "2026-10-22-02-github-1334569498-root-source"
                     ],
                     "dependencies": [
                         {
@@ -262,15 +314,15 @@
                             "fingerprint": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:40:36.727Z",
+                    "reviewed_at": "2026-10-22T05:09:43.653Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T05:40:36.727Z",
+            "last_checked_at": "2026-10-22T05:09:43.653Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48",
-                "reviewed_at": "2026-10-21T05:40:36.727Z",
+                "reviewed_at": "2026-10-22T05:09:43.653Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -282,61 +334,61 @@
                 "technical": {
                     "criteria": {
                         "novelty": 9,
-                        "mechanism": 15,
+                        "mechanism": 8,
                         "transferability": 10,
-                        "simplification": 4
+                        "simplification": 8
                     },
-                    "rationale": "novelty=9：图渲染已有成熟库。 mechanism=15：流式与视口队列是实质接线。 transferability=10：可迁移但DOM协议耦合。 simplification=4：减少手动渲染而增加维护。",
+                    "rationale": "novelty为成熟渲染嵌入取小幅；mechanism视口队列和资源策略取小幅，单图不可中断；transferability就地惰性展示可迁移取实质；simplification同源无需外站取实质，不计上游算法。",
                     "basis": "interpretation",
-                    "score": 38,
+                    "score": 35,
                     "evidence_ids": [
-                        "2026-10-21-06-github-1334569498-root-source"
+                        "2026-10-22-02-github-1334569498-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
                         "workflow": 9,
                         "delivery": 8,
-                        "reach": 10,
-                        "economics": 0
+                        "reach": 5,
+                        "economics": 4
                     },
-                    "rationale": "workflow=9：阅读到用户修复路径。 delivery=8：发送确认与草稿保护不足。 reach=10：图文用户，受宿主限制。 economics=0：无性能和修复收益对照。 工作流仅取25%档：主要聚合既有个人操作，未证明改变任务组织、分工或交接责任。",
+                    "rationale": "workflow减少切换局部步骤取小幅；delivery已有Mermaid图在会话呈现取小幅；reach方便现有读者取小幅；economics潜在节时无实测取小幅。",
                     "basis": "interpretation",
-                    "score": 27,
+                    "score": 26,
                     "evidence_ids": [
-                        "2026-10-21-06-github-1334569498-root-source"
+                        "2026-10-22-02-github-1334569498-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "需读流程图者可先只用渲染；修复按钮已知会覆盖草稿并模拟Enter，未保留草稿时不要使用该按钮。",
+                "reason": "小图就地阅读有可回退价值，可strict限额试用并优先复制报错；主线程和发送修复边界不支持无条件安装。详见[Q06](#research-q06)。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "阅读模型流程图时序图任务清楚。"
+                        "rationale": "经常读流程图人群明确，使用频率未独立测。"
                     },
                     "advantage": {
-                        "score": 19,
-                        "rationale": "本地串行懒渲染和错误留源码增加直接可读性。"
+                        "score": 13,
+                        "rationale": "就地展示和主题/放大有增量，外部工具可替代。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "已核strict与队列，同时确认修复按钮草稿覆盖和发送边界。"
+                        "rationale": "固定源码与静态测试支撑机制，未运行浏览器。"
                     },
                     "cost": {
                         "score": 10,
-                        "rationale": "渲染无模型费，DOM维护和主动修复有成本，须限定只读入口。"
+                        "rationale": "默认无模型调用但有渲染资源和修复草稿副作用需管理。"
                     }
                 },
-                "score": 65,
+                "score": 59,
                 "revision": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T05:09:43.653Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-06-github-1334569498-root-source"
+                    "2026-10-22-02-github-1334569498-root-source"
                 ],
                 "dependencies": [
                     {
@@ -362,75 +414,55 @@
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T05:26:52Z",
-            "analysis_sha256": "e5cb9770157cb202c7007d9e46c75a7e4d8175c9ab50cf2185dc3585bde9ae1f"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "08ec4f23d6cdb1686e7852d82ad71ccdd3ce2a95bd545267d861a4722d0bfc88"
         },
         "publication.metadata": "data/plugins/aks1st--dsh-mermaid/META.json",
         "publication.summaries": {
-            "text": "按视口延迟渲染已完成Mermaid代码块，并提供缩放与错误报告入口。",
+            "text": "在DSH Web会话中把Mermaid代码围栏显示为SVG图，支持主题跟随、放大和错误查看。",
             "revision": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48",
             "source_url": "https://github.com/AKS1st/dsh-mermaid/blob/2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48/README.md"
         },
         "publication.capabilities": {
             "revision": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48",
             "items": {
-                "界面": "Mermaid图、缩放和错误修复按钮",
-                "Host 路由": "Mermaid本地分发和配置"
-            }
+                "界面": "会话Mermaid SVG、放大、主题同步和错误条",
+                "Host 路由": "本地UMD和配置路由"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| SVG就地渲染 | 阅读定格Mermaid围栏 | 依赖宿主DOM与Mermaid，业务正确性未验证 |\n| 视口队列/主题 | 推迟离屏工作并同步亮暗 | 不中断单图同步CPU |\n| 放大与复制 | 查看复杂图并保留源码 | 展示交互不是图内执行 |\n| 错误/修复入口 | 保留源码并复制或发AI | 发AI可能覆盖现有输入，需自行判断 |"
         },
         "publication.advice": {
             "revision": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48",
-            "text": "先核宿主代码块兼容；错误修复按钮会尝试发送消息，使用前保留已有草稿。"
+            "text": "适合经常看Mermaid图的人先用小图试用，保留strict和合理限制，报错先复制后决定是否发AI；卡顿、异常交互或草稿覆盖就停相关路径。详见[Q06](#research-q06)。"
         },
         "registry": "data/plugins/aks1st--dsh-mermaid",
-        "reports": "# dsh-mermaid\n\n> 按视口延迟渲染已完成Mermaid代码块，并提供缩放与错误报告入口。\n\n## 使用建议\n\n先核宿主代码块兼容；错误修复按钮会尝试发送消息，使用前保留已有草稿。\n\n**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，插件与依赖流程的实际运行尚未验证；未来假设未验证。\n\n## 洞察短评\n\n- **用途**：阅读模型生成的流程图、时序图，遇语法错误再主动请求模型修复。\n- **亮点**：将流式消息与图渲染时机分离，防半成品反复渲染，并串行处理近视口任务；图布局与净化来自Mermaid上游。\n- **思考**：sendToAI会覆盖现有textarea草稿，30ms后只检查非空就发Enter，不证明草稿等于报告或已真正提交；DOM与按键模拟绑定宿主约定。strict与文本/边数上限不能保证任意图渲染性能。\n- **建议**：未验证假设：改用宿主草稿事务并在已有草稿时追加/确认，可避免修复入口破坏草稿。以非空草稿、忙状态、不同发送键及快速会话切换核内容保留和实际发送状态。\n\n## 场景与替代办法\n\n参照Mermaid与宿主代码块；增量为DSH流式完成判定、懒渲染、主题刷新和修复入口。\n\n## 能力清单\n\n- **界面**：Mermaid图、缩放和错误修复按钮\n- **Host 路由**：Mermaid本地分发和配置\n\n## 依赖与流程\n\n主机提供本地UMD和配置，客户端监听稳定代码块DOM，以IntersectionObserver近视口入队串行渲染，strict配置且不调用bindFunctions；失败保留源码并显示操作。\n\nwebServer、客户端DOM hooks、Mermaid包与浏览器观察器；宿主代码块结构和composer键盘约定须匹配。\n\n代码块完成→近视口渲染→缩放或显示错误→用户点击发送AI修复→写textarea并模拟Enter；不是后台自动修复。\n\n## 成本与效果\n\n本地脚本体积与浏览器布局成本，主动修复才产生模型token费用；DOM兼容维护是持续成本。\n\n改善图阅读可能性明确，未有渲染性能或修复成功率对照。\n\n## 核心贡献\n\n将流式消息与图渲染时机分离，防半成品反复渲染，并串行处理近视口任务；图布局与净化来自Mermaid上游。\n\n## 关键质疑\n\nsendToAI会覆盖现有textarea草稿，30ms后只检查非空就发Enter，不证明草稿等于报告或已真正提交；DOM与按键模拟绑定宿主约定。strict与文本/边数上限不能保证任意图渲染性能。\n\n## 工程亮点\n\n观察器共享、串行队列、释放清理与错误源码保留值得复用；发送成功标志不等于宿主接收确认。\n\n源码依据：[src/index.ts](https://github.com/AKS1st/dsh-mermaid/blob/2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48/src/index.ts)、[src/client/index.ts](https://github.com/AKS1st/dsh-mermaid/blob/2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48/src/client/index.ts)、[src/client/dom.ts](https://github.com/AKS1st/dsh-mermaid/blob/2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48/src/client/dom.ts)。\n\n## 未来设计假设（未验证）\n\n未验证假设：改用宿主草稿事务并在已有草稿时追加/确认，可避免修复入口破坏草稿。以非空草稿、忙状态、不同发送键及快速会话切换核内容保留和实际发送状态。\n\n核半成品不渲染、离屏队列、主题变化、错误入口保留草稿和发送判定；本轮未发消息或渲染。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：f8442a03af0d0f4522a88120f79ee89158619fc6df70f08b765b318529fa41fc。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 9 | 2419 | 1723 | 712 | — |\n| .md | source | 3 | 204 | — | — | 1917 |\n| .mjs | source | 3 | 277 | 215 | 42 | — |\n| .ts | source | 6 | 1331 | 837 | 409 | — |\n| .ts | test | 4 | 1097 | 926 | 82 | — |\n\n排除 6 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[AKS1st/dsh-mermaid](https://github.com/AKS1st/dsh-mermaid)\n- **版本号**：0.5.0（[固定提交 2708cdf2](https://github.com/AKS1st/dsh-mermaid/tree/2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48)）\n- **版本日期**：2026-08-17（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：src/index.ts、src/client/index.ts、src/client/dom.ts、作者README、package与固定范围inventory；源码抽读不等于完整审计。\n- 未验证：插件执行、测试、安装、真实宿主与独立采用。\n- 证据限制：固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。\n- 下一步：核半成品不渲染、离屏队列、主题变化、错误入口保留草稿和发送判定；本轮未发消息或渲染。\n",
+        "reports": "# dsh-mermaid\n\n> 在DSH Web会话中把Mermaid代码围栏显示为SVG图，支持主题跟随、放大和错误查看。\n\n## 研究范围\n\n- **仓库**：[AKS1st/dsh-mermaid](https://github.com/AKS1st/dsh-mermaid)\n- **版本号**：0.5.0（[固定提交 2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48](https://github.com/AKS1st/dsh-mermaid/tree/2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48)）\n- **版本日期**：2026-08-17（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n源码支持就地惰性图表集成贡献；性能和SVG安全未独立运行验证。隔离渲染及安全修复草稿为未验证假设。\n\n## 洞察短评\n\n- **用途**：帮助开发者/研究者就地阅读流程与架构图，保留源码核对，渲染不等业务逻辑正确。\n- **亮点**：把成熟Mermaid布局接入DSH定格消息，补视口排队、主题、放大与源码回退，减少复制到外部站点；上游布局和消毒不属插件原创。详见[Q02](#research-q02)。\n- **思考**：Promise超时不能中断主线程CPU，离视口只丢结果；发送AI修复会写全局首个输入框并模拟Enter，可能覆盖已有草稿，均为静态边界未复现。strict不能代替完整安全验收。详见[Q02](#research-q02)。\n- **建议**：可探讨可终止渲染隔离和绑定会话的可预览修复草稿，比较病态图响应及原草稿保留；受DOM依赖与通信开销约束，未验证。详见[Q05](#research-q05)。\n\n采用建议：适合经常看Mermaid图的人先用小图试用，保留strict和合理限制，报错先复制后决定是否发AI；卡顿、异常交互或草稿覆盖就停相关路径。详见[Q06](#research-q06)。\n\n## 核心贡献\n\n把成熟Mermaid布局接入DSH定格消息，补视口排队、主题、放大与源码回退，减少复制到外部站点；上游布局和消毒不属插件原创。详见[Q02](#research-q02)。\n\n## 关键质疑\n\nPromise超时不能中断主线程CPU，离视口只丢结果；发送AI修复会写全局首个输入框并模拟Enter，可能覆盖已有草稿，均为静态边界未复现。strict不能代替完整安全验收。详见[Q02](#research-q02)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可探讨可终止渲染隔离和绑定会话的可预览修复草稿，比较病态图响应及原草稿保留；受DOM依赖与通信开销约束，未验证。详见[Q05](#research-q05)。\n\n进一步探讨可从正常/病态/错误图及非空草稿样本入手，核对可响应时间、取消后CPU、SVG行为和修复输入保持。\n\n## 场景与替代办法\n\n帮助开发者/研究者就地阅读流程与架构图，保留源码核对，渲染不等业务逻辑正确。\n\n可读Mermaid源码或复制到独立渲染器，插件把展示放进DSH消息；语法和业务正确性仍需读者核对。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| Node/DSH webServer与client加载 | 启动必需 | host route和DOM观察器 | 缺任一半部会加载/渲染失败 |\n| Mermaid依赖UMD | 渲染必需 | 布局和SVG生成 | 加载失败保留错误/源码；promise失败可能需刷新 |\n| DSH消息DOM选择器 | 识别必需 | 查定格围栏和输入 | 宿主DOM改变可能漏渲染或修复动作失配 |\n| IntersectionObserver | 性能可选 | 视口惰性调度 | 缺失回到较积极渲染 |\n| 模型会话 | 仅AI修复动作需要 | 发送源码与错误供模型修改 | 可能改草稿并产生模型调用，默认阅读不需要 |\n\n\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 准备 | 用户确认版本和适量大小限制 | 安装产物与依赖可解析 |\n| 加载 | 安装重启web并刷新浏览器 | 简单定格围栏变SVG，源码仍可复制 |\n| 阅读/恢复 | 放大或复制错误，在复杂图失败时回源码 | 优先复制后自行决定是否发给模型 |\n| 退出 | 禁用/卸载并刷新页面 | 路由和观察器卸载，原消息源码仍在宿主 |\n\nREADME称Git安装prepare自动构建，但package的scripts未见prepare；仓库已含lib，不能把该文案当安装生命周期保证。\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 安装Mermaid和首次UMD传输，金额未知 | 核对宿主DOM/配置及简单图 | 作者包体大小不是本轮网络测量 |\n| 持续使用 | 浏览器渲染、主题刷新、观察器与SVG内存 | 阅读、放大、回看源码 | 实际峰值内存/卡顿未知 |\n| 失败恢复 | 复制或可选模型修复及重复渲染 | 查语法、保护已有草稿并核对修改 | AI动作不保证真实发送成功 |\n\n\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 少切工具 | 就地SVG与放大存在 | 复杂图理解准确性与净节时 |\n| 延迟非视口工作 | 队列/IntersectionObserver存在 | 单图CPU卡顿与大批图尾延迟 |\n| 失败可恢复 | 原文保留和错误复制存在 | AI修复成功率与草稿覆盖影响 |\n\n费用未知不填零，性能判断需真实浏览器图集，不能从单线程队列推断页面永不卡顿。\n\n## 研究问题与完整回答\n\n**插件研究总目标：**核查DSH Mermaid就地渲染的阅读价值、资源/交互边界和采用条件。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 谁需要会话内图表，源码怎样成为SVG？\n\n**研究主题：**场景与需求、功能与机制\n\n#### 完整回答\n\n适合在DSH里读架构、流程和关系图的开发者与研究者，输入是消息中已定格且infostring恰为mermaid的围栏，交付是就地SVG、保留源码复制和可放大阅读。合格结果是图形与源码语义一致、失败保留原文、不会因输出仍在流式变化而频繁渲染。它不检查图中业务逻辑是否正确，也不替代独立图形编辑器。\n\nhost通过固定前缀提供自身mermaid依赖UMD和有效config，client按需插入同源script，DOM观察器扫描已定格围栏；视口观察器仅把附近图送入单图队列，每次渲染之间让出主线程。renderBlock应用strict/主题/大小参数，取得SVG后替换pre并保存源码，主题变化只更新相应图，首次失败恢复pre和错误条。放大浮层是展示交互，不是Mermaid图内点击功能。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:19-32](https://github.com/AKS1st/dsh-mermaid/blob/2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48/README.md#L19-L32)\n\n作者描述主链和阅读目标。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n## 工作方式\n\n- **Host 半部**（`src/index.ts`）：注册 `webServer` 前缀路由 `/mermaid-dist`，从插件自己的 `node_modules/mermaid` 惰性提供 UMD 构建，并提供固定的 `config.json` 端点。\n- **Client 半部**（`src/client/`）：监听会话 DOM，把 infostring 为 `mermaid` 的围栏渲染为 SVG：\n  1. 只处理**已定格**的围栏（流式输出期间不渲染）；\n  2. 首次遇到围栏才惰性加载 mermaid（浏览器缓存一次）；\n  3. **视口驱动渲染**：围栏进入视口（带 300px 预加载余量）才开始渲染，滚到哪渲染到哪；还在排队/加载中离开视口的图会停止渲染，回到视口再继续；\n  4. **异步队列渲染**：多图时逐个渲染并在渲染之间让出主线程，页面不卡顿；首次渲染期间围栏位置显示加载动画，渲染完成后替换为 SVG；\n  5. `mermaid.render()` 产出 SVG，替换围栏的 `<pre>` 主体，语言横幅与复制按钮保留（复制仍复制源码）；\n  6. `securityLevel` 恒为 `strict`，标签经 mermaid 内置 DOMPurify 消毒，且从不绑定点击处理；\n  7. 主题跟随 GUI：`theme: auto` 读取 `body[data-ds-dark-theme]`，属性翻转时自动重渲染**视口内**的既有图表（视口外的图在重新进入视口时更新）；\n  8. 横幅放大按钮打开**全屏浮层**：图表打开时自动适配屏幕（接近全屏、四周留白、垂直/水平居中），滚轮在此基础上缩放，**按住左键或中键拖动**可平移画面（不放大也能拖，边界自动限制不让图跑丢），背景点击或 Esc 关闭；\n  9. **渲染失败可见化**：首次渲染失败时保留源码块，并在图框下方显示错误摘要（超长自动截断、悬停查看全文），支持一键**复制报错**或**发送给 AI 修复**（自动把报错+源码填入输入框并发送，模拟用户将报错发给 AI）。\n\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/index.ts:86-107](https://github.com/AKS1st/dsh-mermaid/blob/2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48/src/index.ts#L86-L107)\n\nhost仅提供固定构建和配置路由。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\nexport function apply(ctx: MermaidHostContext, rawConfig: Record<string, unknown> | undefined): void {\n  const config: MermaidConfig = validateConfig(rawConfig)\n  const distRoot = resolveMermaidDist()\n  ctx.effect(() => ctx.webServer.register({\n    kind: 'prefix',\n    path: DIST_PREFIX,\n    handler: (req, res) => {\n      const pathname = decodeURIComponent(new URL(req.url ?? '/', 'http://x').pathname)\n      // The prefix route matches DIST_PREFIX and DIST_PREFIX/<anything>; serve\n      // the bare file name (strip the prefix, keep the leading slash).\n      const rel = pathname.startsWith(DIST_PREFIX) ? pathname.slice(DIST_PREFIX.length) : pathname\n      return serveDistFile(distRoot, rel, res)\n    },\n  }), 'dsh-mermaid: dist route')\n  ctx.effect(() => ctx.webServer.register({\n    kind: 'exact',\n    path: CONFIG_ROUTE,\n    handler: (_req, res) => {\n      res.writeHead(200, { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-cache' })\n      res.end(JSON.stringify(config))\n    },\n  }), 'dsh-mermaid: config route')\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/client/dom.ts:61-85](https://github.com/AKS1st/dsh-mermaid/blob/2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48/src/client/dom.ts#L61-L85)\n\n围栏判定和有效配置应用。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n/** Whether `block` is a mermaid fence (infostring text is exactly `mermaid`). */\nexport function isMermaidBlock(block: HTMLElement): boolean {\n  const info = block.querySelector<HTMLElement>(`[class*=\"${INFOSTRING_SEGMENT}\"]`)\n  return info?.textContent?.trim() === 'mermaid'\n}\n\n/** The fence source: the `<pre>` text minus the trailing newline CodeBlock trims on display. */\nexport function fenceSource(block: HTMLElement): string {\n  return block.querySelector('pre')?.textContent?.replace(/\\n$/, '') ?? ''\n}\n\n/** Resolve the mermaid theme from config + the GUI's dark-mode attribute. */\nexport function resolveTheme(config: MermaidConfig, dark: boolean): string {\n  if (config.theme !== 'auto') return config.theme\n  return dark ? 'dark' : 'default'\n}\n\n/** Apply the effective theme to the mermaid singleton before rendering. */\nexport function applyTheme(mermaid: MermaidApi, config: MermaidConfig, dark: boolean): void {\n  mermaid.initialize({\n    startOnLoad: false,\n    securityLevel: config.securityLevel,\n    theme: resolveTheme(config, dark),\n    maxTextSize: config.maxTextSize,\n    maxEdges: config.maxEdges,\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/client/dom.ts:206-225](https://github.com/AKS1st/dsh-mermaid/blob/2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48/src/client/dom.ts#L206-L225)\n\n视口和串行渲染队列。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\nasync function drainQueue(): Promise<void> {\n  if (queueRunning) return\n  queueRunning = true\n  try {\n    while (renderQueue.length > 0) {\n      const item = renderQueue.shift()\n      if (item === undefined) break\n      const { block, kind } = item\n      // Let the browser paint (loading placeholders) and give the observer a\n      // chance to deliver scroll-away entries before starting this render.\n      await yieldToMainThread()\n      if (!document.contains(block)) continue\n      if (block.hasAttribute(ERROR_ATTR)) continue\n      if (!isVisible(block)) continue\n      const source = kind === 'initial' ? pendingSources.get(block) : renderedSources.get(block)\n      if (source === undefined || source === '') continue\n      if (kind === 'initial' && block.hasAttribute(RENDERED_ATTR)) continue\n      if (activeEnv === undefined) continue\n      const ok = await renderBlock(block, source, activeEnv, { loading: kind === 'initial' })\n      if (ok && kind === 'refresh') needsRefresh.delete(block)\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/client/dom.ts:289-330](https://github.com/AKS1st/dsh-mermaid/blob/2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48/src/client/dom.ts#L289-L330)\n\nSVG替换与失败保留源码。\n\n<details>\n<summary>查看原文（42行）</summary>\n\n```text\nexport async function renderBlock(\n  block: HTMLElement,\n  source: string,\n  env: MermaidRenderEnv,\n  options: { loading?: boolean } = {},\n): Promise<boolean> {\n  if (block.hasAttribute(ERROR_ATTR)) return false\n  if (options.loading === true) showLoading(block)\n  try {\n    const mermaid = await env.loadMermaid()\n    applyTheme(mermaid, env.config, document.body.hasAttribute('data-ds-dark-theme'))\n    const { svg } = await withTimeout(mermaid.render(`dsh-mermaid-${++renderCounter}`, source), RENDER_TIMEOUT_MS)\n    // The block scrolled out of the preload margin while this render was in\n    // flight: drop the result and let the observer re-enqueue on re-entry.\n    if (options.loading === true && !isVisible(block)) return false\n    const host = document.createElement('div')\n    host.className = HOST_CLASS\n    host.innerHTML = svg\n    // Replace, in order: the loading placeholder, an existing SVG host\n    // (re-render), otherwise the `<pre>`.\n    const placeholder = block.querySelector(`.${HOST_CLASS}.${LOADING_CLASS}`)\n    const oldHost = block.querySelector(`.${HOST_CLASS}:not(.${LOADING_CLASS})`)\n    const pre = block.querySelector('pre')\n    if (placeholder !== null) placeholder.replaceWith(host)\n    else if (oldHost !== null) oldHost.replaceWith(host)\n    else if (pre !== null) pre.replaceWith(host)\n    renderedSources.set(block, source)\n    pendingSources.delete(block)\n    pendingPre.delete(block)\n    block.setAttribute(RENDERED_ATTR, '1')\n    ensureZoomButton(block)\n    return true\n  } catch (error) {\n    const hadSvg = block.querySelector(`.${HOST_CLASS} svg`) !== null\n    if (!hadSvg) {\n      // First render failed: restore the plain code block as the fallback\n      // (untrusted content must not render error HTML) and stop retrying,\n      // then surface an error summary below the block with copy / send-to-AI.\n      restorePre(block)\n      block.setAttribute(ERROR_ATTR, '1')\n      forgetBlock(block)\n      showErrorBar(block, source, error)\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 相对原始代码或外部渲染有什么增量，关键边界是什么？\n\n**研究主题：**贡献与相对优势、缺陷与关键质疑\n\n#### 完整回答\n\n已有贡献是将成熟Mermaid嵌进DSH消息阅读，补齐惰性同源加载、视口排队、主题同步、放大和可见错误，不需要用户复制到其他站点。Mermaid解析布局和消毒来自上游，不把其图形算法或DOMPurify归为本插件原创。strict配置被host/client契约固定，且不调用返回的bindFunctions，支持收窄图内交互面；不能据此宣布所有SVG安全已独立验证。\n\n关键性能边界是15秒Promise超时无法打断浏览器主线程同步CPU工作，只有事件循环可运行时timer才触发，队列也只在两图之间让出。因此一张病态图仍可能卡顿，离开视口只是丢弃完成结果，不是真正取消计算。maxTextSize/maxEdges交给上游执行，配置只检查正有限数没有合理上限，管理员可削弱资源保护。\n\n错误条“发送给AI修复”是实际写输入并模拟Enter，不是只复制。它选择全局首个textarea[data-phase]，未检查原有非空草稿或确认会话，成功只证明值非空和Enter事件发出，不能证明提交成功。点击可能覆盖读者草稿，静态路径未复现。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/protocol.ts:50-71](https://github.com/AKS1st/dsh-mermaid/blob/2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48/src/protocol.ts#L50-L71)\n\n安全级别固定，大小参数只有正数校验。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\nexport function validateConfig(raw: Record<string, unknown> | undefined): MermaidConfig {\n  const input = raw ?? {}\n  let theme: MermaidTheme\n  if (input['theme'] === undefined) {\n    theme = DEFAULT_CONFIG.theme\n  } else if (typeof input['theme'] === 'string' && THEMES.has(input['theme'])) {\n    theme = input['theme'] as MermaidTheme\n  } else {\n    throw new Error(`dsh-mermaid: invalid theme \"${String(input['theme'])}\" (expected one of ${[...THEMES].join(', ')})`)\n  }\n  const maxTextSize = input['maxTextSize'] === undefined ? DEFAULT_CONFIG.maxTextSize : Number(input['maxTextSize'])\n  if (!Number.isFinite(maxTextSize) || maxTextSize <= 0) {\n    throw new Error(`dsh-mermaid: invalid maxTextSize \"${String(input['maxTextSize'])}\" (expected a positive number)`)\n  }\n  const maxEdges = input['maxEdges'] === undefined ? DEFAULT_CONFIG.maxEdges : Number(input['maxEdges'])\n  if (!Number.isFinite(maxEdges) || maxEdges <= 0) {\n    throw new Error(`dsh-mermaid: invalid maxEdges \"${String(input['maxEdges'])}\" (expected a positive number)`)\n  }\n  if (input['securityLevel'] !== undefined && input['securityLevel'] !== 'strict') {\n    throw new Error(`dsh-mermaid: securityLevel \"${String(input['securityLevel'])}\" is not allowed (only \"strict\")`)\n  }\n  return { theme, maxTextSize, maxEdges, securityLevel: 'strict' }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/client/dom.ts:112-125](https://github.com/AKS1st/dsh-mermaid/blob/2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48/src/client/dom.ts#L112-L125)\n\nPromise timeout不提供CPU中断。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n/** Cap one mermaid.render call; a hostile or pathological diagram must never hang the queue. */\nconst RENDER_TIMEOUT_MS = 15000\n\n/** How far outside the viewport a block still counts as \"wanted\" (preload margin). */\nconst OBSERVER_MARGIN = '300px'\n\nfunction withTimeout<T>(promise: Promise<T>, ms: number): Promise<T> {\n  return new Promise<T>((resolve, reject) => {\n    const timer = window.setTimeout(() => reject(new Error(`dsh-mermaid: render timed out after ${ms}ms`)), ms)\n    promise.then(\n      value => { window.clearTimeout(timer); resolve(value) },\n      error => { window.clearTimeout(timer); reject(error) },\n    )\n  })\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/client/dom.ts:298-318](https://github.com/AKS1st/dsh-mermaid/blob/2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48/src/client/dom.ts#L298-L318)\n\n渲染后才检查视口，不调用bindFunctions。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n    const mermaid = await env.loadMermaid()\n    applyTheme(mermaid, env.config, document.body.hasAttribute('data-ds-dark-theme'))\n    const { svg } = await withTimeout(mermaid.render(`dsh-mermaid-${++renderCounter}`, source), RENDER_TIMEOUT_MS)\n    // The block scrolled out of the preload margin while this render was in\n    // flight: drop the result and let the observer re-enqueue on re-entry.\n    if (options.loading === true && !isVisible(block)) return false\n    const host = document.createElement('div')\n    host.className = HOST_CLASS\n    host.innerHTML = svg\n    // Replace, in order: the loading placeholder, an existing SVG host\n    // (re-render), otherwise the `<pre>`.\n    const placeholder = block.querySelector(`.${HOST_CLASS}.${LOADING_CLASS}`)\n    const oldHost = block.querySelector(`.${HOST_CLASS}:not(.${LOADING_CLASS})`)\n    const pre = block.querySelector('pre')\n    if (placeholder !== null) placeholder.replaceWith(host)\n    else if (oldHost !== null) oldHost.replaceWith(host)\n    else if (pre !== null) pre.replaceWith(host)\n    renderedSources.set(block, source)\n    pendingSources.delete(block)\n    pendingPre.delete(block)\n    block.setAttribute(RENDERED_ATTR, '1')\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/client/dom.ts:428-446](https://github.com/AKS1st/dsh-mermaid/blob/2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48/src/client/dom.ts#L428-L446)\n\n全局输入覆盖和Enter派发边界。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\nexport async function sendToAI(report: string): Promise<boolean> {\n  const textarea = document.querySelector<HTMLTextAreaElement>('textarea[data-phase]')\n  if (textarea === null || textarea.disabled || textarea.readOnly) {\n    await copyText(report)\n    return false\n  }\n  const setter = Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype, 'value')?.set\n  if (setter !== undefined) setter.call(textarea, report)\n  else textarea.value = report\n  textarea.dispatchEvent(new Event('input', { bubbles: true }))\n  // Let React/onChange flush the draft; if the machine rejected it (locked or\n  // busy), the controlled value snaps back empty — hand the user a copy.\n  await new Promise<void>(resolve => window.setTimeout(resolve, 30))\n  if (textarea.value === '') {\n    await copyText(report)\n    return false\n  }\n  textarea.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', code: 'Enter', bubbles: true, cancelable: true }))\n  return true\n```\n\n</details>\n\n#### 缺口\n\n- 真实浏览器病态图耗时及SVG安全未独立实测。\n  **影响：**不能承诺15秒内恢复响应或对所有不可信图无风险。\n  **进一步探讨：**可用受控大图/异常语法与安全夹具，记录主线程阻塞和SVG行为，并绑定Mermaid实际版本。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 启动依赖与退出、错误恢复流程是什么？\n\n**研究主题：**依赖、兼容与流程\n\n#### 完整回答\n\n包要求Node ^22.19或>=24，运行依赖mermaid ^11.16.0，host需webServer，client需浏览器DOM/React宿主模块加载能力。UMD来自本插件依赖目录并经同源路由提供，不依赖外部CDN；但复用既有window.mermaid时实际实例可能来自同页其他模块，版本共存需核对。\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| Node/DSH webServer与client加载 | 启动必需 | host route和DOM观察器 | 缺任一半部会加载/渲染失败 |\n| Mermaid依赖UMD | 渲染必需 | 布局和SVG生成 | 加载失败保留错误/源码；promise失败可能需刷新 |\n| DSH消息DOM选择器 | 识别必需 | 查定格围栏和输入 | 宿主DOM改变可能漏渲染或修复动作失配 |\n| IntersectionObserver | 性能可选 | 视口惰性调度 | 缺失回到较积极渲染 |\n| 模型会话 | 仅AI修复动作需要 | 发送源码与错误供模型修改 | 可能改草稿并产生模型调用，默认阅读不需要 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 准备 | 用户确认版本和适量大小限制 | 安装产物与依赖可解析 |\n| 加载 | 安装重启web并刷新浏览器 | 简单定格围栏变SVG，源码仍可复制 |\n| 阅读/恢复 | 放大或复制错误，在复杂图失败时回源码 | 优先复制后自行决定是否发给模型 |\n| 退出 | 禁用/卸载并刷新页面 | 路由和观察器卸载，原消息源码仍在宿主 |\n\nREADME称Git安装prepare自动构建，但package的scripts未见prepare；仓库已含lib，不能把该文案当安装生命周期保证。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:46-64](https://github.com/AKS1st/dsh-mermaid/blob/2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48/package.json#L46-L64)\n\n构建/依赖/引擎声明，未见prepare。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n  \"scripts\": {\n    \"build\": \"tsc -p tsconfig.json && tsdown -c tsdown.config.mjs\",\n    \"check\": \"tsc -p tsconfig.json --noEmit --pretty false\",\n    \"test\": \"vitest run\"\n  },\n  \"dependencies\": {\n    \"mermaid\": \"^11.16.0\"\n  },\n  \"devDependencies\": {\n    \"@types/node\": \"^22.0.0\",\n    \"jsdom\": \"^26.0.0\",\n    \"playwright\": \"^1.62.1\",\n    \"tsdown\": \"^0.22.14\",\n    \"typescript\": \"^6.0.3\",\n    \"vitest\": \"^3.2.4\"\n  },\n  \"engines\": {\n    \"node\": \"^22.19 || >=24\"\n  },\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/client/index.ts:51-69](https://github.com/AKS1st/dsh-mermaid/blob/2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48/src/client/index.ts#L51-L69)\n\n同源UMD与window.mermaid复用。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\nfunction loadMermaid(): Promise<MermaidApi> {\n  mermaidPromise ??= new Promise<MermaidApi>((resolveLoad, rejectLoad) => {\n    const existing = window.mermaid\n    if (existing !== undefined) {\n      resolveLoad(existing)\n      return\n    }\n    const script = document.createElement('script')\n    script.src = `${DIST_PREFIX}/${MERMAID_BUNDLE}`\n    script.async = true\n    script.onload = () => {\n      const api = window.mermaid\n      if (api === undefined) rejectLoad(new Error('dsh-mermaid: mermaid loaded but window.mermaid is missing'))\n      else resolveLoad(api)\n    }\n    script.onerror = () => rejectLoad(new Error('dsh-mermaid: failed to load mermaid bundle'))\n    document.head.append(script)\n  })\n  return mermaidPromise\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/client/index.ts:96-125](https://github.com/AKS1st/dsh-mermaid/blob/2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48/src/client/index.ts#L96-L125)\n\nDOM观察器和effect清理。\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\n  void loadConfig().then((config) => {\n    const env: MermaidRenderEnv = { loadMermaid, config }\n\n    // Initial pass covers already-settled messages (session replay, history).\n    scan(env)\n    // Clear any mermaid error-render artifacts older versions left stuck in\n    // the page body (the bottom-left \"Syntax error in text\" popup).\n    removeStrayErrorElements()\n\n    // Settled messages mount new DOM (or swap streaming → settled nodes), so\n    // watch the whole document for added nodes and re-scan.\n    const observer = new MutationObserver(() => scan(env))\n    observer.observe(document.body, { childList: true, subtree: true })\n\n    // Theme: re-render existing diagrams when light/dark flips.\n    const themeObserver = new MutationObserver(() => {\n      void loadMermaid().then((mermaid) => {\n        applyTheme(mermaid, config, document.body.hasAttribute('data-ds-dark-theme'))\n        reRenderAll(env)\n      })\n    })\n    themeObserver.observe(document.body, { attributes: true, attributeFilter: ['data-ds-dark-theme'] })\n\n    ctx.effect(() => () => {\n      observer.disconnect()\n      themeObserver.disconnect()\n      // Full module teardown: any open overlay, the lazy viewport observer,\n      // and the pending render queue.\n      dispose()\n    }, 'dsh-mermaid: fence observer + theme observer + dispose')\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/index.ts:42-62](https://github.com/AKS1st/dsh-mermaid/blob/2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48/src/index.ts#L42-L62)\n\nhost只允许UMD与map目标。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\nexport async function serveDistFile(distRoot: string, pathname: string, res: ServerResponse): Promise<void> {\n  const target = resolve(normalize(join(distRoot, pathname)))\n  // Traversal rejection: the target must stay under distRoot (sep, not '/':\n  // resolve() emits backslash paths on Windows).\n  if (target !== distRoot && !target.startsWith(distRoot + sep)) {\n    res.writeHead(403)\n    res.end()\n    return\n  }\n  if (pathname !== `/${MERMAID_BUNDLE}` && pathname !== `/${MERMAID_BUNDLE}.map`) {\n    res.writeHead(404)\n    res.end()\n    return\n  }\n  try {\n    const body = await readFile(target)\n    res.writeHead(200, {\n      'content-type': MIME[extname(target)] ?? 'application/octet-stream',\n      'cache-control': 'no-cache',\n    })\n    res.end(body)\n```\n\n</details>\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 首次、持续及失败恢复成本和效果如何判断？\n\n**研究主题：**效果与总成本\n\n#### 完整回答\n\n合格任务是读者正确理解一张图及其限制，不能把SVG生成视为业务完成。默认阅读不调用模型，但下载本地依赖、浏览器布局/内存、DOM扫描与主题重渲染都有资源成本；仅点击AI修复才追加模型/对话成本。\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 安装Mermaid和首次UMD传输，金额未知 | 核对宿主DOM/配置及简单图 | 作者包体大小不是本轮网络测量 |\n| 持续使用 | 浏览器渲染、主题刷新、观察器与SVG内存 | 阅读、放大、回看源码 | 实际峰值内存/卡顿未知 |\n| 失败恢复 | 复制或可选模型修复及重复渲染 | 查语法、保护已有草稿并核对修改 | AI动作不保证真实发送成功 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 少切工具 | 就地SVG与放大存在 | 复杂图理解准确性与净节时 |\n| 延迟非视口工作 | 队列/IntersectionObserver存在 | 单图CPU卡顿与大批图尾延迟 |\n| 失败可恢复 | 原文保留和错误复制存在 | AI修复成功率与草稿覆盖影响 |\n\n费用未知不填零，性能判断需真实浏览器图集，不能从单线程队列推断页面永不卡顿。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/client/dom.ts:206-225](https://github.com/AKS1st/dsh-mermaid/blob/2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48/src/client/dom.ts#L206-L225)\n\n图间让出而非图内中断。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\nasync function drainQueue(): Promise<void> {\n  if (queueRunning) return\n  queueRunning = true\n  try {\n    while (renderQueue.length > 0) {\n      const item = renderQueue.shift()\n      if (item === undefined) break\n      const { block, kind } = item\n      // Let the browser paint (loading placeholders) and give the observer a\n      // chance to deliver scroll-away entries before starting this render.\n      await yieldToMainThread()\n      if (!document.contains(block)) continue\n      if (block.hasAttribute(ERROR_ATTR)) continue\n      if (!isVisible(block)) continue\n      const source = kind === 'initial' ? pendingSources.get(block) : renderedSources.get(block)\n      if (source === undefined || source === '') continue\n      if (kind === 'initial' && block.hasAttribute(RENDERED_ATTR)) continue\n      if (activeEnv === undefined) continue\n      const ok = await renderBlock(block, source, activeEnv, { loading: kind === 'initial' })\n      if (ok && kind === 'refresh') needsRefresh.delete(block)\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/client/dom.ts:321-330](https://github.com/AKS1st/dsh-mermaid/blob/2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48/src/client/dom.ts#L321-L330)\n\n失败回原文和错误条。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n  } catch (error) {\n    const hadSvg = block.querySelector(`.${HOST_CLASS} svg`) !== null\n    if (!hadSvg) {\n      // First render failed: restore the plain code block as the fallback\n      // (untrusted content must not render error HTML) and stop retrying,\n      // then surface an error summary below the block with copy / send-to-AI.\n      restorePre(block)\n      block.setAttribute(ERROR_ATTR, '1')\n      forgetBlock(block)\n      showErrorBar(block, source, error)\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/client/dom.ts:379-389](https://github.com/AKS1st/dsh-mermaid/blob/2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48/src/client/dom.ts#L379-L389)\n\nAI修复报告内容包含完整源码。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n````text\nexport function buildErrorReport(source: string, message: string): string {\n  return [\n    'mermaid 渲染失败，请帮我修复。',\n    '',\n    '错误信息：',\n    message,\n    '',\n    '图表源码：',\n    '```mermaid',\n    source,\n    '```',\n````\n\n</details>\n\n#### 缺口\n\n- 没有同图集与外部渲染/原文阅读的理解正确率、耗时和资源对照。\n  **影响：**无法量化净收益或默认限制是否足够。\n  **进一步探讨：**可按简单/复杂/错误图分别记录阅读任务准确率、长任务时间、内存和修复人时。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 哪些设计可复用，真正可取消渲染假设怎样检验？\n\n**研究主题：**工程质量与复用、新假设与验证\n\n#### 完整回答\n\n可复用的是host/client共用协议和严格配置、固定文件白名单、source保存在WeakMap、第一次失败回原pre、串行队列与可见性调度，分别控制配置漂移、过宽静态路由、主题重渲染及批量负担。测试覆盖strict、失败fallback和never-settling Promise超时，但不能用mock的异步挂起证明同步病态CPU可中断，本轮未运行。\n\n新假设是“渲染隔离与安全修复草稿”。对资源重图探索可终止的独立渲染环境或更早复杂度拒绝，同时将修复动作先形成可预览草稿，绑定正确会话并保留现有文本。相对当前Promise timeout和全局textarea，增量是计算与用户输入所有权，不是额外按钮。隔离受Mermaid DOM依赖限制，也增加通信/布局成本。最小对照可比较正常/病态图和已有非空草稿场景，记录可响应时间、取消后的CPU、草稿保持和用户误发；若隔离不能中断或正常图开销过高，应否定收益。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/protocol.ts:8-15](https://github.com/AKS1st/dsh-mermaid/blob/2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48/src/protocol.ts#L8-L15)\n\n两半部共用固定路由。\n\n```text\n/** Host route prefix serving the mermaid UMD build. */\nexport const DIST_PREFIX = '/mermaid-dist'\n/** Fixed endpoint returning the effective client config as JSON. */\nexport const CONFIG_ROUTE = `${DIST_PREFIX}/config.json`\n/** The mermaid browser bundle file served under {@link DIST_PREFIX}. */\nexport const MERMAID_BUNDLE = 'mermaid.min.js'\n/** Full package path of the UMD build, for `require.resolve` inside the installed mermaid dependency. */\nexport const MERMAID_DIST_FILE = 'mermaid/dist/mermaid.min.js'\n```\n\n**依据 2 · 源码核查**：[src/client/dom.ts:112-125](https://github.com/AKS1st/dsh-mermaid/blob/2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48/src/client/dom.ts#L112-L125)\n\n当前timeout提供隔离需求起点。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n/** Cap one mermaid.render call; a hostile or pathological diagram must never hang the queue. */\nconst RENDER_TIMEOUT_MS = 15000\n\n/** How far outside the viewport a block still counts as \"wanted\" (preload margin). */\nconst OBSERVER_MARGIN = '300px'\n\nfunction withTimeout<T>(promise: Promise<T>, ms: number): Promise<T> {\n  return new Promise<T>((resolve, reject) => {\n    const timer = window.setTimeout(() => reject(new Error(`dsh-mermaid: render timed out after ${ms}ms`)), ms)\n    promise.then(\n      value => { window.clearTimeout(timer); resolve(value) },\n      error => { window.clearTimeout(timer); reject(error) },\n    )\n  })\n```\n\n</details>\n\n**依据 3 · 源码核查**：[tests/client-dom.spec.ts:208-251](https://github.com/AKS1st/dsh-mermaid/blob/2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48/tests/client-dom.spec.ts#L208-L251)\n\nstrict、错误与异步超时静态测试范围。\n\n<details>\n<summary>查看原文（44行）</summary>\n\n```text\n  it('replaces the pre with the SVG host and marks the block rendered', async () => {\n    const block = mermaidBlock('graph TD; A-->B')\n    await renderBlock(block, 'graph TD; A-->B', env())\n    expect(block.querySelector('pre')).toBeNull()\n    const host = block.querySelector(`.${HOST_CLASS}`)\n    expect(host).not.toBeNull()\n    expect(host!.innerHTML).toContain('<svg')\n    expect(block.hasAttribute(RENDERED_ATTR)).toBe(true)\n    expect(fakeMermaid.lastInit?.['securityLevel']).toBe('strict')\n    // mermaid must never render its built-in error diagram into the page.\n    expect(fakeMermaid.lastInit?.['suppressErrorRendering']).toBe(true)\n  })\n\n  it('keeps the plain text and marks an error when mermaid throws', async () => {\n    const block = mermaidBlock('this is not a diagram')\n    const throwing: MermaidApi = {\n      ...fakeMermaid,\n      async render(): Promise<{ svg: string }> { throw new Error('parse failed') },\n    }\n    const spy = vi.spyOn(console, 'error').mockImplementation(() => {})\n    try {\n      await renderBlock(block, 'this is not a diagram', env({ loadMermaid: async () => throwing }))\n      expect(block.querySelector('pre')).not.toBeNull()\n      expect(block.hasAttribute(ERROR_ATTR)).toBe(true)\n      expect(block.hasAttribute(RENDERED_ATTR)).toBe(false)\n      // An error summary bar appears below the block with the message + actions.\n      const bar = block.querySelector<HTMLElement>(`.${ERROR_BAR_CLASS}`)\n      expect(bar).not.toBeNull()\n      expect(bar!.textContent).toContain('parse failed')\n      expect(bar!.querySelector('button')?.textContent).toBe('复制报错')\n      expect([...(bar!.querySelectorAll('button') ?? [])].map(b => b.textContent)).toContain('发送给 AI 修复')\n    } finally {\n      spy.mockRestore()\n    }\n  })\n\n  it('marks an error when mermaid.render never settles (timeout guard)', async () => {\n    const block = mermaidBlock('graph TD; A-->B')\n    const hanging: MermaidApi = {\n      ...fakeMermaid,\n      render(): Promise<{ svg: string }> { return new Promise(() => { /* never settles */ }) },\n    }\n    const spy = vi.spyOn(console, 'error').mockImplementation(() => {})\n    try {\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/client/dom.ts:428-446](https://github.com/AKS1st/dsh-mermaid/blob/2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48/src/client/dom.ts#L428-L446)\n\n修复动作输入所有权不足。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\nexport async function sendToAI(report: string): Promise<boolean> {\n  const textarea = document.querySelector<HTMLTextAreaElement>('textarea[data-phase]')\n  if (textarea === null || textarea.disabled || textarea.readOnly) {\n    await copyText(report)\n    return false\n  }\n  const setter = Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype, 'value')?.set\n  if (setter !== undefined) setter.call(textarea, report)\n  else textarea.value = report\n  textarea.dispatchEvent(new Event('input', { bubbles: true }))\n  // Let React/onChange flush the draft; if the machine rejected it (locked or\n  // busy), the controlled value snaps back empty — hand the user a copy.\n  await new Promise<void>(resolve => window.setTimeout(resolve, 30))\n  if (textarea.value === '') {\n    await copyText(report)\n    return false\n  }\n  textarea.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', code: 'Enter', bubbles: true, cancelable: true }))\n  return true\n```\n\n</details>\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 谁适合受控试用，什么情况应停止？\n\n**研究主题：**采用判断\n\n#### 完整回答\n\n推荐trial。经常阅读Mermaid流程/架构图的DSH web用户可先用小图试用，保持strict和合理大小限制，优先复制错误报告而非直接发送给AI。已有源码保留、局部展示和同源加载形成明确可回退价值，但不宣称可安全承载任意不可信大型图。\n\n若出现明显主线程卡顿、SVG异常交互、主题切换重复失败或修复动作覆盖草稿，应停止相关操作并回到源代码或独立渲染工具。重要图形仍核对业务逻辑，不以渲染成功作为设计正确。没有本轮宿主和浏览器验收，不能升为install。限制回指Q02，退出与操作依据Q03。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/protocol.ts:34-38](https://github.com/AKS1st/dsh-mermaid/blob/2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48/src/protocol.ts#L34-L38)\n\n默认strict/大小限制。\n\n```text\nexport const DEFAULT_CONFIG: MermaidConfig = {\n  theme: 'auto',\n  maxTextSize: 50000,\n  maxEdges: 2000,\n  securityLevel: 'strict',\n```\n\n**依据 2 · 源码核查**：[src/client/dom.ts:321-330](https://github.com/AKS1st/dsh-mermaid/blob/2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48/src/client/dom.ts#L321-L330)\n\n失败回退路径。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n  } catch (error) {\n    const hadSvg = block.querySelector(`.${HOST_CLASS} svg`) !== null\n    if (!hadSvg) {\n      // First render failed: restore the plain code block as the fallback\n      // (untrusted content must not render error HTML) and stop retrying,\n      // then surface an error summary below the block with copy / send-to-AI.\n      restorePre(block)\n      block.setAttribute(ERROR_ATTR, '1')\n      forgetBlock(block)\n      showErrorBar(block, source, error)\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/client/dom.ts:428-446](https://github.com/AKS1st/dsh-mermaid/blob/2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48/src/client/dom.ts#L428-L446)\n\n修复按钮副作用需用户注意。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\nexport async function sendToAI(report: string): Promise<boolean> {\n  const textarea = document.querySelector<HTMLTextAreaElement>('textarea[data-phase]')\n  if (textarea === null || textarea.disabled || textarea.readOnly) {\n    await copyText(report)\n    return false\n  }\n  const setter = Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype, 'value')?.set\n  if (setter !== undefined) setter.call(textarea, report)\n  else textarea.value = report\n  textarea.dispatchEvent(new Event('input', { bubbles: true }))\n  // Let React/onChange flush the draft; if the machine rejected it (locked or\n  // busy), the controlled value snaps back empty — hand the user a copy.\n  await new Promise<void>(resolve => window.setTimeout(resolve, 30))\n  if (textarea.value === '') {\n    await copyText(report)\n    return false\n  }\n  textarea.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', code: 'Enter', bubbles: true, cancelable: true }))\n  return true\n```\n\n</details>\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：f8442a03af0d0f4522a88120f79ee89158619fc6df70f08b765b318529fa41fc。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 9 | 2419 | 1723 | 712 | — |\n| .md | source | 3 | 204 | — | — | 1917 |\n| .mjs | source | 3 | 277 | 215 | 42 | — |\n| .ts | source | 6 | 1331 | 837 | 409 | — |\n| .ts | test | 4 | 1097 | 926 | 82 | — |\n\n排除 6 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| SVG就地渲染 | 阅读定格Mermaid围栏 | 依赖宿主DOM与Mermaid，业务正确性未验证 |\n| 视口队列/主题 | 推迟离屏工作并同步亮暗 | 不中断单图同步CPU |\n| 放大与复制 | 查看复杂图并保留源码 | 展示交互不是图内执行 |\n| 错误/修复入口 | 保留源码并复制或发AI | 发AI可能覆盖现有输入，需自行判断 |\n\n## 工程亮点\n\n可复用的是host/client共用协议和严格配置、固定文件白名单、source保存在WeakMap、第一次失败回原pre、串行队列与可见性调度，分别控制配置漂移、过宽静态路由、主题重渲染及批量负担。测试覆盖strict、失败fallback和never-settling Promise超时，但不能用mock的异步挂起证明同步病态CPU可中断，本轮未运行。\n\n\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、src/index.ts、src/protocol.ts、src/client/index.ts、src/client/dom.ts、tests/client-dom.spec.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：读取固定host/client/protocol及DOM测试定义；不加载目标脚本、浏览器或测试，性能与安全仅源码边界。\n- 下一步：进一步探讨可从正常/病态/错误图及非空草稿样本入手，核对可响应时间、取消后CPU、SVG行为和修复输入保持。\n",
         "metadata": {
             "repository": "AKS1st/dsh-mermaid",
             "repository_id": 1334569498,
-            "captured_at": "2026-10-21T05:33:49.832Z",
-            "window_start": "2026-09-21T05:33:49.832Z",
+            "captured_at": "2026-10-22T05:07:35.249Z",
+            "window_start": "2026-09-22T05:07:35.249Z",
             "stars": 9,
             "pushed_at": "2026-08-18T03:58:23Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 1,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdsh-mermaid%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E610:272FB3:5282CE:588DEE:6AD84EBF and timestamp 2026-10-21 05:33:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdsh-mermaid%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E742:4F777:52BAF0:58C5DF:6AD84EC0 and timestamp 2026-10-21 05:33:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdsh-mermaid%20is%3Aissue%20created%3A2026-09-21T05%3A33%3A49.832Z..2026-10-21T05%3A33%3A49.832Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E85A:47E31:50AFC8:56BCAC:6AD84EC1 and timestamp 2026-10-21 05:33:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdsh-mermaid%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A33%3A49.832Z..2026-10-21T05%3A33%3A49.832Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E98E:1FE8E6:5B0B2F:61179B:6AD84EC1 and timestamp 2026-10-21 05:33:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdsh-mermaid%20is%3Aissue%20updated%3A2026-09-21T05%3A33%3A49.832Z..2026-10-21T05%3A33%3A49.832Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID EAE6:51118:4FA9FC:55B6D5:6AD84EC3 and timestamp 2026-10-21 05:33:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "dsh-mermaid",
-                "captured_at": "2026-10-21T05:33:55.261Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 4325,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-mermaid",
+                "captured_at": "2026-10-22T05:07:42.833Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 4196,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-mermaid",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-08-23T08:12:00.251Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T05:07:42.833Z",
                     "source_url": "https://registry.npmjs.org/dsh-mermaid",
                     "error": null,
                     "latest_version": "0.4.2",
@@ -444,15 +476,15 @@
             "repository": "AKS1st/dsh-mermaid",
             "path": "",
             "revision": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                "https://github.com/0xsline/awesome-deepseek-harness"
-            ],
             "fingerprints": {
                 "directory": "b139a9baf78efe6680a8213c3949f928311d0087ac8aec37e4067d11924832ad",
                 "code": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48",
                 "maintenance": "a864c310f36df7d756f71ad7e2b4bb01cadd639b6d35ca9bcfcee24051118f7b"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ]
         }
     }
 }

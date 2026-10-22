@@ -445,14 +445,14 @@
             "repository": "988hj7tczd-oss/dsh-im-qq",
             "path": "",
             "revision": "d1ae12486264359f9c516bb2cf0ed5e75e811d37",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "858d942a472f263f3779851be82f58538be71f531b43246e71d28d829a65aca8",
                 "code": "d1ae12486264359f9c516bb2cf0ed5e75e811d37",
                 "maintenance": "dc83cc7426dc18932a50753e55430b2ed74595a432c002a9ffcdd67822001b11"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

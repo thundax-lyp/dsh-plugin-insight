@@ -330,14 +330,14 @@
             "repository": "137/dsh-chatgpt-style",
             "path": "",
             "revision": "fe4f23bed4bec14ad01577050eaacdc0893f57d9",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "be68d2c1a8e2b09114d4ae1801cc2968a76abcfda49760cf9f529f080e4da3ec",
                 "code": "fe4f23bed4bec14ad01577050eaacdc0893f57d9",
                 "maintenance": "e004014c4d48ff2c8d5572504184707c66b9eed90aa24a0d7558ccdee2f06896"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

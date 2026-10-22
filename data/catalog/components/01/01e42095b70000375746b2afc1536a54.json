@@ -473,14 +473,14 @@
             "repository": "4444wjt/dsh-plugin-veriscope",
             "path": "",
             "revision": "5299b64087bbfa5beef6ae2e336045468f1af01d",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "2acaf32ff4e2af715e16b035c3b21e336d9a325f9a21b5ab7e17f13d860222a9",
                 "code": "5299b64087bbfa5beef6ae2e336045468f1af01d",
                 "maintenance": "70da063f885e3af3ca30e909d0f8dfc3efa0d8efb374fe3a54401f715231ddcc"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

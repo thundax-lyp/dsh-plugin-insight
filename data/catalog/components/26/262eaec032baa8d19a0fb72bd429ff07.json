@@ -426,14 +426,14 @@
             "repository": "988hj7tczd-oss/dsh-modernize-code",
             "path": "",
             "revision": "4d110103666fde9515b9a8077b7e0458d00023a8",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "a2bf434b4c01e42d6b8d6df47cad61fc4d0edae28add40d64aa50ee56b23a373",
                 "code": "4d110103666fde9515b9a8077b7e0458d00023a8",
                 "maintenance": "a5cd9cc729f4ca834009553115e180822f57c406adf47cdbc29be938ebe611ff"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

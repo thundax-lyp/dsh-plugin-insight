@@ -349,14 +349,14 @@
             "repository": "162568316/dsh-tokenrhythm-bill",
             "path": "",
             "revision": "df72615bc5c8f6ccfe287b8a3cfef627923b2f1f",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "03c5fad745edcb339d0ff14d698b30d34f6f8bd8cd38438b91886b8b479db171",
                 "code": "df72615bc5c8f6ccfe287b8a3cfef627923b2f1f",
                 "maintenance": "611bd07dbe94f80967fb9c29226990cf46aab1e816f719c04e18dde2c6ac56af"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

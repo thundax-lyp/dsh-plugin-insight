@@ -443,14 +443,14 @@
             "repository": "988hj7tczd-oss/dsh-lsp-packs",
             "path": "dsh-lsp-ts",
             "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "f03cc42086894d0c12229c8e00ed2b3033926d27d720a93e2434e7d8456ff98c",
                 "code": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
                 "maintenance": "c574dcf28e68df0fb97fbd81638d887e8e9b60b99dbcf2e34fc7481b1d25448e"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

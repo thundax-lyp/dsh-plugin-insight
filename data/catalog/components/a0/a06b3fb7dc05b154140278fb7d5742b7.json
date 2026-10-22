@@ -349,14 +349,14 @@
             "repository": "01NGVI-QINGYI/no-ai-style",
             "path": "",
             "revision": "a64e811bf0aa255189a0df2011a6a392c5d59966",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "dbd8219bb3eeca19ab2139da9731151fc719a10c0c497c70e7834cc6de5b170b",
                 "code": "a64e811bf0aa255189a0df2011a6a392c5d59966",
                 "maintenance": "99ea5d86578937e4dfaa82eec1b90689d128cc2250682884e443e4714f42dc08"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

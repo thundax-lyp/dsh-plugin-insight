@@ -349,14 +349,14 @@
             "repository": "1420079678-ctrl/agent-body",
             "path": "workspace/plugins/dsh-zero-residence",
             "revision": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "04cefc0adada04e2c432d162271b673809ac791b1f84f65c1942eb97dfba8416",
                 "code": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
                 "maintenance": "43f096365ebe99c29ae5999e57cb00a1b8b3292441388102d038dfe5b740737c"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

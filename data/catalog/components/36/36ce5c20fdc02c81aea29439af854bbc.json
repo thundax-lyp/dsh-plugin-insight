@@ -443,14 +443,14 @@
             "repository": "7gzgn/dsh-gui-guard",
             "path": "",
             "revision": "dd118dbc4a1839ebf2a5730eb0682a5fa1a93ffd",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "ea1d992f9af4518fcb4fd27364e8a68bd4fd6c153832a760672c42aa27b91d31",
                 "code": "dd118dbc4a1839ebf2a5730eb0682a5fa1a93ffd",
                 "maintenance": "1eb606dc7d1bd01181a6dd61dcb5b47ffbe384bfff085badee6cbf6208633740"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

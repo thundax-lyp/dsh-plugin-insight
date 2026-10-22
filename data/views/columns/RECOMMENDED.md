@@ -12,7 +12,6 @@
 
 | 插件 | 主要用途 | 为什么值得推荐 |
 | --- | --- | --- |
-| [dsh-repeat-stop](#plugin-1339262076-root) | 拦截同一Agent连续出现的同工具同参数调用，提供可配置阈值与排除规则。 | 适合遭遇同工具同参数反复重试的任务，先核对触发计数与正常轮询排除规则；不能识别全部循环，尚未进行真实宿主验证。 |
 | [dsh-session-diff](#plugin-1372976273-root) | 在 DSH 右侧栏显示当前会话修改文件的行级差异和变更列表。 | 适合快速查看当前会话常规write/edit的改动；先核对双会话同文件和shell改动的覆盖边界，完整审查仍以Git为准，尚未进行真实宿主验证。 |
 | [dsh-sidebar-git-graph](#plugin-1393980674-root) | 在DSH右侧栏显示当前会话仓库的分支提交图、工作树和暂存区差异。 | 适合在会话旁只读查看Git历史、工作树和暂存区；先确认仓库、扫描截断及刷新时点，不把图谱当CI或完整审查，尚未进行真实宿主验证。 |
 | [dsh-which](#plugin-1423215529-root) | 解释命令的 PATH 解析结果、被遮蔽副本及环境异常，可选探测版本。 | 适合排查PATH遮蔽与多版本命令冲突，先只查询并与当前shell对照；对可信二进制再启用版本探测，尚未进行真实宿主验证。 |
@@ -30,52 +29,39 @@
 | [dsh-pinned-sessions](#plugin-1407379611-root) | 在侧栏集中展示跨工作区的置顶会话，提供搜索、状态与取消置顶操作。 | 适合跨多个工作区找置顶会话，先验证搜索、归档过滤与取消置顶；宿主升级后核对侧栏入口，尚未进行真实宿主验证。 |
 | [dsh-draft-attachments](#plugin-1414492607-root) | 将 DSH 输入框未发送的附件保存到 IndexedDB，并在会话输入区重挂载时恢复。 | 频繁切换带附件草稿者可用可丢弃文件试用；验证慢存储恢复、发送后不复活及超限，并定期清理敏感字节。 |
 | [agent-clinic](#plugin-1417442557-root) | 读取本地Agent会话与配置，生成带证据定位的诊断报告，并匹配可复核的改进处方。 | Agent排障者可离线扫少量会话试证据定位，先回读原行并检查指纹隐私，配置处方另行备份验证。 |
-| [AgentDebugX](#plugin-1296792947-integrations-dsh-agentdebugx) | 按需将DSH当前或选定历史会话接入AgentDebugX诊断，并保存可关联的轨迹与报告。 | Agent开发者可在脱敏历史会话试诊断；先核轨迹映射并保留原文，deep意见须用独立事实确认根因。 |
-| [dsh-autocompact](#plugin-1324229194-dsh-autocompact) | 为会话与模型设置自动压缩阈值，保留近期上下文并调用宿主压缩后端。 | 了解模型窗口的长会话用户可先试提前压缩；核对阈值、工具配对与重启覆盖，用依赖早期信息的任务验接续。 |
+| [embedded-workbench](#plugin-1276714299-root) | 为嵌入式固件开发提供八份 Skill，并在 DSH 会话首个模型步骤注入短验证提示。 | 可小规模验证八 Skill 与门禁，并以专家样例评估专业正确性。 |
+| [dsh-anet](#plugin-1302597978-deploy-plugins-dist-dsh) | 将DSH接入本地anet节点，装配stdio MCP和委派、设置、状态三Skill，以统一执行路径/身份发现和跟踪跨智能体任务。 | 统一节点/MCP/Skill接线实用，适合能管理身份/daemon/支出的技术用户，先核真实节点和安装信任，不把指南当隔离。 |
 | [dsh-stock-market](#plugin-1331846104-root) | 为DSH提供沪深A股行情侧栏与股票数据工具，按会话控制工具访问并标注多源回退口径。 | 公开市场资料研究者可先做只读交叉核对；核报价时点、成交量口径和degraded来源，商业复用另查授权。 |
-| [dsh-hdc-bridge](#plugin-1333258432-root) | 在 DSH 中连接鸿蒙设备，构建调试应用并查询版本化开发知识。 | 已有鸿蒙环境者仅在人工固定测试设备并核验产物时试用；devecocli可带stale成功、默认会回退首设备，不能以ok认定本次代码部署正确。 |
+| [dsh-verification-receipt](#plugin-1333370288-root) | 被动读取DSH每轮持久事件，输出不含对话/参数/结果正文的工具计数与词法验证信号JSONL摘要。 | 被动最小字段与边界文档清楚，适合精确宿主私有单进程路径观察；词法/可重算hash与无界queue不适合验证门禁或强审计。 |
 | [dsh-vision-fallback](#plugin-1333993743-root) | 将 DSH 图片交给独立视觉模型，并把观察结果返回当前主模型。 | 必须保留纯文本主模型的用户可试用图像旁路；先检查外发上下文范围与难图误读，关键文字回看原图。 |
-| [dsh-wsl-workspace](#plugin-1334205011-root) | 在DSH界面添加WSL工作区，让会话的命令和文件工具使用Linux路径与发行版环境。 | 已有WSL项目者可在临时目录试命令读写搜索；核发行版用户和9P权限，workspace-write下run_code明确不支持，不能当全会话统一Linux身份。 |
 | [dsh-plugin-manager](#plugin-1334267268-root) | 给 DSH 插件提供中文目录说明、启停、备注编辑及配置备份管理界面。 | 维护多插件者可在独立profile试用中文目录与启停；先验系统保护、表达式拒绝、备份恢复和真实fiber状态。 |
-| [helmd](#plugin-1334304098-packages-helmd) | 提供安全分析预设、领域工具和按需参考，并将Case证据与结论保存在磁盘。 | 授权安全分析者可在样本Case试证据工作流；先核持久化恢复，逐条验证编号证据与结论关系，不采信零幻觉保证。 |
 | [dsh-LorebookMD](#plugin-1334395883-root) | 管理提示词预设并导入酒馆角色卡、世界书及正则资料，按需注入对话上下文。 | 已有酒馆角色资料的作者可导入副本试用；核对占位符丢语义和世界书命中，外部卡注入前审内容。 |
 | [dsh-voice](#plugin-1334554745-root) | 通过麦克风或快捷键把语音识别为 DSH 普通聊天输入。 | 不便键盘输入者可用非敏感口述试用；确认生效引擎与Web Speech回退，重要指令提交前核对文字。 |
-| [dsh-mermaid](#plugin-1334569498-root) | 按视口延迟渲染已完成Mermaid代码块，并提供缩放与错误报告入口。 | 需读流程图者可先只用渲染；修复按钮已知会覆盖草稿并模拟Enter，未保留草稿时不要使用该按钮。 |
-| [model-usage-plugin](#plugin-1334569518-root) | 聚合模型用量、工具活动及按可配置单价估算的费用趋势。 | 需消费结构线索者可试估算面板；先校价格、provider和套餐，再对供应商账单，工具最近模型归因不作因果或财务凭证。 |
 | [dsh-youreyes](#plugin-1335045545-root) | 为文本模型接入OpenAI兼容、Gemini、Ollama及IDE视觉通道并保存视觉证据。 | 已有多视觉端点或本地Ollama者可显式通道试用；先设允许目录并核对auto云端回退，关键内容回看原图。 |
 | [dsh-plugin-mall](#plugin-1335098475-root) | 在 DSH 中搜索 GitHub 插件并提供安装、更新、冲突预检与启动恢复。 | 维护多插件环境可在隔离profile试用冲突预检与恢复；先注入加载失败并核对备份，不把进程稳定视作功能验收。 |
-| [dsh-token-billing](#plugin-1335139860-root) | 为 DSH 提供按供应商、模型、时段与用量计算的实时费用与账本统计。 | 多供应商用户可试用路由费用参考；先核对最终usage回补、缓存桶和币种，账本不能直接结算。 |
 | [Markdown 批注器](#plugin-1335286261-root) | 在 Better Sidebar 中预览和编辑 Markdown，把批注整理为会话草稿。 | 审阅中等Markdown者可按次试用定位批注；重生成后核对重复段落锚点并及时导出，不用于跨日未保存档案。 |
 | [messaging-core](#plugin-1335798113-packages-messaging-core) | 将多种消息渠道接入 DSH，统一授权、聊天会话映射、命令与回复路由。 | 已有机器人经验者可先以单平台私人聊天试用；收紧白名单，验证重连长消息及群共享上下文，不能凭渠道数量认定可靠。 |
 | [chicheng-cron](#plugin-1335807482-root) | 在 DSH Web 配置 cron 定时脚本、Skill 与 Agent 任务，查看历史并发送完成通知。 | 可重复可撤销的个人任务可先用只读日程试用；核对cwd、时区、超时和输出，关键产物另加完成检查。 |
-| [dsh-verify](#plugin-1335843750-root) | 通过 JSON 清单执行浏览器断言，提供 CLI、MCP 与 HTML 检查报告。 | 已有明确网页验收规范的团队可试用声明式浏览器断言；独立审查清单与首建截图基线，PASS仅覆盖写入的步骤。 |
-| [dsh-diff-approval](#plugin-1335980444-root) | 汇总Agent成功文件改动供逐文件或逐块保留、回退，并支持导入本地版本控制差异。 | 逐块审Agent改动者可在临时仓库试用事后diff；核外部变化及回退权限，新文件revert会删除，保留VCS备份。 |
+| [dsh-verify](#plugin-1335843750-root) | 执行 JSON 浏览器步骤并生成断言、截图和视觉差异报告，提供 CLI、MCP 与 DSH 工具入口。 | 适合可信本地应用的有限浏览器验收试用；独立审读spec和批准基线，不把新基线或runner错误当交付通过。 |
+| [dsh-openai-oauth](#plugin-1335992154-root) | 为DSH接入ChatGPT OAuth的Codex模型provider，含PKCE/设备码登录、本机凭据刷新、设置页和headless命令。 | 本机认证/凭据/provider适配完整，可保留替代路由试用；注意协议、明文凭据和消息/退出边界，不拓展远程多用户。 |
 | [dsh-plugin-focus](#plugin-1336084195-root) | 将任务目标、约束与决策保存为工作区焦点板，并注入会话及展示面板。 | 可明确单任务板所有权的工作区可试焦点注入；早期硬约束会被裁、set实际追加，需核保留范围；npm不含附带发布Skill。 |
 | [dsh-plugin-translation](#plugin-1336663562-root) | 为Agent翻译提供分段、术语提取、一致性检查、风格指南及工作区翻译记忆。 | 持续技术翻译者可试分段术语记忆与数字检查；以否定和主客体样例验规则，高分仍需语义校译，词表先审后存。 |
-| [dsh-plugin-console](#plugin-1336720864-root) | 在设置页浏览目录与已装插件，规划变更并执行官方CLI和隔离profile启动检查。 | Web profile维护者可在测试profile试安装计划与回滚；核空间和canary结果，临时HOME非OS沙箱，只用可信插件并另验重启UI。 |
-| [dsh-mysql](#plugin-1337916824-root) | 管理多套MySQL连接，为会话提供选库入口及查询、表结构、数据写入和DDL工具。 | 数据库分析者可限脱敏测试库及数据库只读账号试用，先核对选库、SQL与结果，写入另验。 |
-| [dsh-wsl-net](#plugin-1338965593-root) | 检查WSL代理、DSH进程环境与常见服务连通性，并给出修复建议。 | WSL联网排障者可试多进程代理汇总，先核选中PID是否当前宿主，修复后在实际会话验证。 |
+| [dsh-plugin-console](#plugin-1336720864-root) | 在DSH web核对社区插件、管理活动profile并通过确认计划执行安装、更新、暂停和Harness升级。 | 维护闭环清楚且确认/恢复有实际源码，但真实代码执行、环境继承和全局升级需限可信本地范围。详见[Q06](#research-q06)。 |
 | [dsh-ui-enhancer](#plugin-1339034478-root) | 组合工作区文件引用、壁纸和可自定义形象的桌面宠物。 | 需@文件引用者可先核工作区realpath和宿主输入接口；娱乐层另验隐私与去背景，不把宠物星星当交付指标。 |
-| [dsh-project-memory](#plugin-1339316901-root) | 为项目保存任务、文档、代码符号与经验记录，支持跨会话检索和按条件注入。 | 长周期开发者可在可丢弃项目试用任务关联检索，先检查旧结论纠错与跨项目隔离。 |
-| [dsh-github-router](#plugin-1339462797-root) | 为DSH提供只读GitHub工具，在API、gh、git、页面和可选镜像之间路由并汇报分段来源。 | 常遇GitHub连接失败的只读分析者可禁镜像试多路读取；核token范围、分段版本和缺块，不能把拼接结果当同一完整快照。 |
+| [dsh-project-memory](#plugin-1339316901-root) | 为DSH索引项目文档和代码符号，分层召回带来源的内容，保存任务与经验，并按动作和查询门控注入相关记忆。 | 分层召回、项目根护栏与注入审计有明确试用价值；先单项目非敏感语料、审核引用和global，反思默认关闭，不能依近邻/曝光认定知识正确。 |
 | [dsh-workspace-menu](#plugin-1339803365-root) | 在 DSH 工作区与会话行增加右键操作、置顶、归档及文件管理器入口。 | 多工作区用户可先试置顶和复制路径，删除功能待测试目录确认路径与确认流程后启用。 |
 | [gzhflow](#plugin-1339888505-root) | 为公众号内容提供素材、写作、风格质检、配图、排版和推草稿箱的技能及工具流程。 | 已有公众号编辑流程者可先试本地质检和排版；分数非事实质量，推草稿需逐次授权核远端结果，未知响应不要直接重试。 |
 | [dsh-websearch](#plugin-1340340493-root) | 为 DSH 提供聚合网页搜索 provider，合并多个后端结果并支持过滤、缓存和故障降级。 | 多源研究用户可先选少量可用后端试用；用中文及时效题核对原文、尾延迟与全部调用预算，再增加独立有益来源。 |
-| [dock](#plugin-1340492184-root) | 向扩展提供活动栏、浮窗、编辑视图、状态和设置注册服务的客户端工作台。 | 需要聊天旁多面板者和扩展作者可先接少量扩展；验打开关闭重载及版本契约，布局持久化不能代替文件保存。 |
-
-<a id="plugin-1339262076-root"></a>
-
-## [dsh-repeat-stop](../../plugins/173787247--dsh-repeat-stop/INSIGHT.md)
-
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-repeat-stop)
-
-**主要用途：**拦截同一Agent连续出现的同工具同参数调用，提供可配置阈值与排除规则。
-
-**推荐理由：**适合遭遇同工具同参数反复重试的任务，先核对触发计数与正常轮询排除规则；不能识别全部循环，尚未进行真实宿主验证。
-
-**使用条件：**先在短任务记录触发次数，按轮询工具配置排除；被拦后检查输入和错误原因，不通过无意义改参数规避限制。
-
-[返回表格](#column-index)
+| [KRouter](#plugin-1341648244-root) | 以本地 Markdown 知识库为多种 Agent 提供带出处的记忆查询、纠错与拒答机制。 | 愿维护决策库者可先只读试用有效页检索；核对拒答和来源，导入蒸馏及夜间写作另立流程。 |
+| [dsh-question-nav](#plugin-1341946801-root) | 以会话提问索引与圆点导航跳转历史用户提问。 | 长会话用户可限定普通单文本提问、保持同一会话试导航；已知仅索引首块会漏多块或首块图片提问，跳转时不核原session，不能当完整历史。 |
+| [dsh-plugin-nlbi](#plugin-1343622602-root) | 在 DSH 中用自然语言查询 MySQL，生成表格、图表与可保存报表。 | 有只读MySQL环境的分析者可用标准答案试SQL报表，先核业务口径与数据权限，重跑仍验Schema。 |
+| [dsh-dep-vuln-scan](#plugin-1344714002-root) | 读取依赖锁文件并查询 OSV，生成漏洞、严重度和修复建议报告。 | 有明确锁文件的团队可试已知漏洞初筛；核跳过包和生态版本排序，先读公告维护线再回归，勿直接执行最低fixed命令。 |
+| [dsh-invoice-tools](#plugin-1344714819-root) | 在本地解析电子发票字段，核对金额并汇总生成报销单资料。 | 个人可用脱敏XML或文本票试汇总草稿；逐张核票号金额与买卖方，显式会话，xlsx.b64解码后再交财务，不支持OCR真伪查验。 |
+| [dsh-a11y-scan](#plugin-1344715270-root) | 调用axe扫描本地HTML、构建页面或显式确认的URL，输出无障碍问题与多格式报告。 | 已有axe后端前端团队可在本地构建产物试用；确认真实引擎和页面状态，incomplete与焦点读屏另验，零违规不证WCAG全合规。 |
+| [SSH 只读日志工具](#plugin-1346017360-root) | 通过预配置 SSH 别名读取或搜索有界远端日志，作为 MCP 工具接入 DSH。 | 已有只读SSH账号者可在测试服务器试用有界日志工具；用服务端ACL隔离根，验证符号链接与无匹配结果后接生产日志。 |
+| [dsh-api-dashboard](#plugin-1346196699-root) | 在DSH输入框旁展示多平台API余额、会话与子代理估算消耗，并提供配置看板。 | 多供应商用户可限可查询平台试额度看板，先对账和核对币种，自更新单独验备份回滚。 |
+| [dsh-wsl-tray](#plugin-1351853903-root) | 为 WSL 内的 DSH Web 安装或报告 Windows 托盘与快捷方式启动入口。 | 已有dsh-wsl-kit者可显式kitPath试桌面恢复入口，先从快捷方式真实启动，核token去向与回退。 |
+| [dsh-tokenrhythm-bill](#plugin-1351903192-root) | 集中展示基元律动等平台的余额、用量、模型与密钥，并提供账号切换和连通探测。 | 多套餐用户可先接常用单平台对账，核账号和限时额度后按需探测模型，避免把探测当免费。 |
 
 <a id="plugin-1372976273-root"></a>
 
@@ -315,31 +301,31 @@
 
 [返回表格](#column-index)
 
-<a id="plugin-1296792947-integrations-dsh-agentdebugx"></a>
+<a id="plugin-1276714299-root"></a>
 
-## [AgentDebugX](../../plugins/agentdebugx--agentdebugx--integrations-dsh-agentdebugx/INSIGHT.md)
+## [embedded-workbench](../../plugins/amethystluna--embedded-workbench/INSIGHT.md)
 
-[![GitHub ★ 66](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=66&color=yellow&logo=github&style=flat)](https://github.com/AgentDebugX/AgentDebugX) [![npm 30d 792](https://img.shields.io/static/v1?label=npm+30d&message=792&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-agentdebugx) [![最新发布 2026-08-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-25&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-agentdebugx)
+[![GitHub ★ 21](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=21&color=yellow&logo=github&style=flat)](https://github.com/AmethystLuna/embedded-workbench) [![npm 30d 2,906](https://img.shields.io/static/v1?label=npm+30d&message=2%2C906&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-embedded-workbench) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-embedded-workbench)
 
-**主要用途：**按需将DSH当前或选定历史会话接入AgentDebugX诊断，并保存可关联的轨迹与报告。
+**主要用途：**为嵌入式固件开发提供八份 Skill，并在 DSH 会话首个模型步骤注入短验证提示。
 
-**推荐理由：**Agent开发者可在脱敏历史会话试诊断；先核轨迹映射并保留原文，deep意见须用独立事实确认根因。
+**推荐理由：**可小规模验证八 Skill 与门禁，并以专家样例评估专业正确性。
 
-**使用条件：**先在脱敏历史会话验证映射和诊断准确性；保留原始轨迹并审查持久化范围，deep结论需独立证据。
+**使用条件：**先验证安装与注入，再以专家任务检行为；保留关闭门禁开关并单独考察 Skill 效果。详见Q05(#research-q05)。
 
 [返回表格](#column-index)
 
-<a id="plugin-1324229194-dsh-autocompact"></a>
+<a id="plugin-1302597978-deploy-plugins-dist-dsh"></a>
 
-## [dsh-autocompact](../../plugins/5aaee9--pi-agent-extensions--dsh-autocompact/INSIGHT.md)
+## [dsh-anet](../../plugins/anetresearch--anet--deploy-plugins-dist-dsh/INSIGHT.md)
 
-[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/5aaee9/pi-agent-extensions) [![npm 30d 735](https://img.shields.io/static/v1?label=npm+30d&message=735&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@indexyz/dsh-autocompact) [![最新发布 2026-10-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-19&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@indexyz/dsh-autocompact)
+[![GitHub ★ 12](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=12&color=yellow&logo=github&style=flat)](https://github.com/ANetResearch/ANet)
 
-**主要用途：**为会话与模型设置自动压缩阈值，保留近期上下文并调用宿主压缩后端。
+**主要用途：**将DSH接入本地anet节点，装配stdio MCP和委派、设置、状态三Skill，以统一执行路径/身份发现和跟踪跨智能体任务。
 
-**推荐理由：**了解模型窗口的长会话用户可先试提前压缩；核对阈值、工具配对与重启覆盖，用依赖早期信息的任务验接续。
+**推荐理由：**统一节点/MCP/Skill接线实用，适合能管理身份/daemon/支出的技术用户，先核真实节点和安装信任，不把指南当隔离。
 
-**使用条件：**长会话且了解模型窗口时可试。先确认阈值、保留尾部和重启行为，用含工具结果的任务检查压缩后能否继续。
+**使用条件：**有条件试用，明确跨节点需求并能管理身份/daemon/hub/支出者先核实际节点和对端；普通本地任务不必增加复杂度。详见Q05(#research-q05)。
 
 [返回表格](#column-index)
 
@@ -357,17 +343,17 @@
 
 [返回表格](#column-index)
 
-<a id="plugin-1333258432-root"></a>
+<a id="plugin-1333370288-root"></a>
 
-## [dsh-hdc-bridge](../../plugins/1na-ko--dsh-hdc-bridge/INSIGHT.md)
+## [dsh-verification-receipt](../../plugins/030611--dsh-verification-receipt/INSIGHT.md)
 
-[![GitHub ★ 19](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=19&color=yellow&logo=github&style=flat)](https://github.com/1na-ko/dsh-hdc-bridge) [![npm 30d 1,740](https://img.shields.io/static/v1?label=npm+30d&message=1%2C740&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-hdc-bridge) [![最新发布 2026-10-12](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-12&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-hdc-bridge)
+[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/030611/dsh-verification-receipt) [![npm 30d 851](https://img.shields.io/static/v1?label=npm+30d&message=851&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-verification-receipt) [![最新发布 2026-08-14](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-14&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-verification-receipt)
 
-**主要用途：**在 DSH 中连接鸿蒙设备，构建调试应用并查询版本化开发知识。
+**主要用途：**被动读取DSH每轮持久事件，输出不含对话/参数/结果正文的工具计数与词法验证信号JSONL摘要。
 
-**推荐理由：**已有鸿蒙环境者仅在人工固定测试设备并核验产物时试用；devecocli可带stale成功、默认会回退首设备，不能以ok认定本次代码部署正确。
+**推荐理由：**被动最小字段与边界文档清楚，适合精确宿主私有单进程路径观察；词法/可重算hash与无界queue不适合验证门禁或强审计。
 
-**使用条件：**已有鸿蒙环境的开发者可在测试设备评估；先验证构建产物与设备身份，再评价闭环是否省时。
+**使用条件：**有条件试用，精确支持宿主+私有一进程一文件，将其当启发式观察摘要，不作验证通过/防篡改审计。详见Q06(#research-q06)。
 
 [返回表格](#column-index)
 
@@ -385,20 +371,6 @@
 
 [返回表格](#column-index)
 
-<a id="plugin-1334205011-root"></a>
-
-## [dsh-wsl-workspace](../../plugins/dsh-wsl-workspace-maintainers--dsh-wsl-workspace/INSIGHT.md)
-
-[![GitHub ★ 94](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=94&color=yellow&logo=github&style=flat)](https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace) [![npm 30d 3,340](https://img.shields.io/static/v1?label=npm+30d&message=3%2C340&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-wsl-workspace) [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-20&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-wsl-workspace)
-
-**主要用途：**在DSH界面添加WSL工作区，让会话的命令和文件工具使用Linux路径与发行版环境。
-
-**推荐理由：**已有WSL项目者可在临时目录试命令读写搜索；核发行版用户和9P权限，workspace-write下run_code明确不支持，不能当全会话统一Linux身份。
-
-**使用条件：**适合已有WSL项目的Windows开发者先在临时目录试用。先核对发行版用户、文件访问权限和所用模式；需要PTC写沙箱的工作先验证明确支持的路径。
-
-[返回表格](#column-index)
-
 <a id="plugin-1334267268-root"></a>
 
 ## [dsh-plugin-manager](../../plugins/2768651338--dsh-plugin-manager/INSIGHT.md)
@@ -410,20 +382,6 @@
 **推荐理由：**维护多插件者可在独立profile试用中文目录与启停；先验系统保护、表达式拒绝、备份恢复和真实fiber状态。
 
 **使用条件：**需要批量辨认和启停时先在独立profile试用，核对系统保护、表达式拒绝、备份恢复及实际fiber状态后扩用。
-
-[返回表格](#column-index)
-
-<a id="plugin-1334304098-packages-helmd"></a>
-
-## [helmd](../../plugins/adwmc--helm-d--packages-helmd/INSIGHT.md)
-
-[![GitHub ★ 289](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=289&color=yellow&logo=github&style=flat)](https://github.com/ADWMC/helm-d) [![npm 30d 391](https://img.shields.io/static/v1?label=npm+30d&message=391&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@adwmc/helm-d) [![最新发布 2026-09-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-15&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@adwmc/helm-d)
-
-**主要用途：**提供安全分析预设、领域工具和按需参考，并将Case证据与结论保存在磁盘。
-
-**推荐理由：**授权安全分析者可在样本Case试证据工作流；先核持久化恢复，逐条验证编号证据与结论关系，不采信零幻觉保证。
-
-**使用条件：**适合授权样本分析时借鉴Case工作流。先验证持久化和恢复，再人工检查每条证据与结论关系；不将零幻觉标语当准确性保证。
 
 [返回表格](#column-index)
 
@@ -455,34 +413,6 @@
 
 [返回表格](#column-index)
 
-<a id="plugin-1334569498-root"></a>
-
-## [dsh-mermaid](../../plugins/aks1st--dsh-mermaid/INSIGHT.md)
-
-[![GitHub ★ 9](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9&color=yellow&logo=github&style=flat)](https://github.com/AKS1st/dsh-mermaid) [![npm 30d 4,325](https://img.shields.io/static/v1?label=npm+30d&message=4%2C325&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-mermaid) [![最新发布 2026-10-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-15&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-mermaid)
-
-**主要用途：**按视口延迟渲染已完成Mermaid代码块，并提供缩放与错误报告入口。
-
-**推荐理由：**需读流程图者可先只用渲染；修复按钮已知会覆盖草稿并模拟Enter，未保留草稿时不要使用该按钮。
-
-**使用条件：**先核宿主代码块兼容；错误修复按钮会尝试发送消息，使用前保留已有草稿。
-
-[返回表格](#column-index)
-
-<a id="plugin-1334569518-root"></a>
-
-## [model-usage-plugin](../../plugins/aks1st--model-usage-plugin/INSIGHT.md)
-
-[![GitHub ★ 7](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7&color=yellow&logo=github&style=flat)](https://github.com/AKS1st/model-usage-plugin) [![npm 30d 991](https://img.shields.io/static/v1?label=npm+30d&message=991&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/model-usage-plugin) [![最新发布 2026-09-14](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-14&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/model-usage-plugin)
-
-**主要用途：**聚合模型用量、工具活动及按可配置单价估算的费用趋势。
-
-**推荐理由：**需消费结构线索者可试估算面板；先校价格、provider和套餐，再对供应商账单，工具最近模型归因不作因果或财务凭证。
-
-**使用条件：**作为估算面板使用，先校准provider、套餐和单价口径；正式费用以供应商账单核对。
-
-[返回表格](#column-index)
-
 <a id="plugin-1335045545-root"></a>
 
 ## [dsh-youreyes](../../plugins/54xkeee--dsh-youreyes/INSIGHT.md)
@@ -508,20 +438,6 @@
 **推荐理由：**维护多插件环境可在隔离profile试用冲突预检与恢复；先注入加载失败并核对备份，不把进程稳定视作功能验收。
 
 **使用条件：**适合维护多个插件的DSH环境；先在隔离profile验证冲突提示和回滚，再用于日常安装，重要环境保留独立备份。
-
-[返回表格](#column-index)
-
-<a id="plugin-1335139860-root"></a>
-
-## [dsh-token-billing](../../plugins/2006spy--dsh-token-billing/INSIGHT.md)
-
-[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/2006spy/dsh-token-billing)
-
-**主要用途：**为 DSH 提供按供应商、模型、时段与用量计算的实时费用与账本统计。
-
-**推荐理由：**多供应商用户可试用路由费用参考；先核对最终usage回补、缓存桶和币种，账本不能直接结算。
-
-**使用条件：**适合需要多路由费用参考的用户；先对照供应商账单核实缓存、峰谷和币种口径，再据看板调整预算。
 
 [返回表格](#column-index)
 
@@ -571,27 +487,27 @@
 
 ## [dsh-verify](../../plugins/263311487-ux--dsh-verify/INSIGHT.md)
 
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/263311487-ux/dsh-verify) [![npm 30d 2,432](https://img.shields.io/static/v1?label=npm+30d&message=2%2C432&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-verify) [![最新发布 2026-10-09](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-09&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-verify)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/263311487-ux/dsh-verify) [![npm 30d 2,385](https://img.shields.io/static/v1?label=npm+30d&message=2%2C385&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-verify) [![最新发布 2026-10-09](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-09&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-verify)
 
-**主要用途：**通过 JSON 清单执行浏览器断言，提供 CLI、MCP 与 HTML 检查报告。
+**主要用途：**执行 JSON 浏览器步骤并生成断言、截图和视觉差异报告，提供 CLI、MCP 与 DSH 工具入口。
 
-**推荐理由：**已有明确网页验收规范的团队可试用声明式浏览器断言；独立审查清单与首建截图基线，PASS仅覆盖写入的步骤。
+**推荐理由：**适合可信本地应用的有限浏览器验收试用；独立审读spec和批准基线，不把新基线或runner错误当交付通过。
 
-**使用条件：**适合已有明确浏览器验收条件的网页团队先试用；分别审查规范、首次基线和运行错误，保留结构化结果，不用 PASS 代表完整需求或独立审计。
+**使用条件：**建议可信本地有限spec试用，故意缺陷应失败、合法实现应通过；空覆盖、新基线和ERROR不放行，host阻塞或范围不清时停止。详见Q05(#research-q05)。
 
 [返回表格](#column-index)
 
-<a id="plugin-1335980444-root"></a>
+<a id="plugin-1335992154-root"></a>
 
-## [dsh-diff-approval](../../plugins/9087--dsh-diff-approval/INSIGHT.md)
+## [dsh-openai-oauth](../../plugins/adonissheldon--dsh-openai-oauth/INSIGHT.md)
 
-[![GitHub ★ 14](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=14&color=yellow&logo=github&style=flat)](https://github.com/9087/dsh-diff-approval) [![npm 30d 5,714](https://img.shields.io/static/v1?label=npm+30d&message=5%2C714&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-diff-approval) [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-20&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-diff-approval)
+[![GitHub ★ 9](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9&color=yellow&logo=github&style=flat)](https://github.com/AdonisSheldon/dsh-openai-oauth) [![npm 30d 770](https://img.shields.io/static/v1?label=npm+30d&message=770&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-openai-oauth) [![最新发布 2026-08-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-15&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-openai-oauth)
 
-**主要用途：**汇总Agent成功文件改动供逐文件或逐块保留、回退，并支持导入本地版本控制差异。
+**主要用途：**为DSH接入ChatGPT OAuth的Codex模型provider，含PKCE/设备码登录、本机凭据刷新、设置页和headless命令。
 
-**推荐理由：**逐块审Agent改动者可在临时仓库试用事后diff；核外部变化及回退权限，新文件revert会删除，保留VCS备份。
+**推荐理由：**本机认证/凭据/provider适配完整，可保留替代路由试用；注意协议、明文凭据和消息/退出边界，不拓展远程多用户。
 
-**使用条件：**适合经常逐块审阅Agent改动的开发者在临时仓库试用。先核对已写入后的审阅语义、外部改动提示与回退权限，重要工作保留版本控制备份。
+**使用条件：**可试用为本机独立模型provider，保护明文凭据与真实工具审批，保留替代路由；不外推远程部署/静态模型全部可用/免费。详见Q05(#research-q05)。
 
 [返回表格](#column-index)
 
@@ -627,41 +543,13 @@
 
 ## [dsh-plugin-console](../../plugins/alexyin-tongji--dsh-plugin-console/INSIGHT.md)
 
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/AlexYin-Tongji/dsh-plugin-console) [![npm 30d 1,126](https://img.shields.io/static/v1?label=npm+30d&message=1%2C126&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-console) [![最新发布 2026-08-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-24&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-console)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/AlexYin-Tongji/dsh-plugin-console) [![npm 30d 1,111](https://img.shields.io/static/v1?label=npm+30d&message=1%2C111&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-console) [![最新发布 2026-08-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-24&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-console)
 
-**主要用途：**在设置页浏览目录与已装插件，规划变更并执行官方CLI和隔离profile启动检查。
+**主要用途：**在DSH web核对社区插件、管理活动profile并通过确认计划执行安装、更新、暂停和Harness升级。
 
-**推荐理由：**Web profile维护者可在测试profile试安装计划与回滚；核空间和canary结果，临时HOME非OS沙箱，只用可信插件并另验重启UI。
+**推荐理由：**维护闭环清楚且确认/恢复有实际源码，但真实代码执行、环境继承和全局升级需限可信本地范围。详见Q06(#research-q06)。
 
-**使用条件：**适合维护测试profile；先核备份空间、canary与回滚，生产环境重启后的UI必须另验。
-
-[返回表格](#column-index)
-
-<a id="plugin-1337916824-root"></a>
-
-## [dsh-mysql](../../plugins/1321928757--dsh-mysql/INSIGHT.md)
-
-[![GitHub ★ 7](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7&color=yellow&logo=github&style=flat)](https://github.com/1321928757/dsh-mysql) [![npm 30d 35](https://img.shields.io/static/v1?label=npm+30d&message=35&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-mysql) [![最新发布 2026-08-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-19&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-mysql)
-
-**主要用途：**管理多套MySQL连接，为会话提供选库入口及查询、表结构、数据写入和DDL工具。
-
-**推荐理由：**数据库分析者可限脱敏测试库及数据库只读账号试用，先核对选库、SQL与结果，写入另验。
-
-**使用条件：**先连接脱敏测试库和数据库端只读账号，核对选库与结果；确需写入时分别启用行写和DDL，并准备备份与人工复核。
-
-[返回表格](#column-index)
-
-<a id="plugin-1338965593-root"></a>
-
-## [dsh-wsl-net](../../plugins/173787247--dsh-wsl-net/INSIGHT.md)
-
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-net)
-
-**主要用途：**检查WSL代理、DSH进程环境与常见服务连通性，并给出修复建议。
-
-**推荐理由：**WSL联网排障者可试多进程代理汇总，先核选中PID是否当前宿主，修复后在实际会话验证。
-
-**使用条件：**先核对报告中的进程和代理地址，修复后在实际DSH会话验证；不要只重开Shell就认为宿主已更新。
+**使用条件：**本地单人维护者可试用，先核对可信代码、精确宿主和备份；canary仅作为兼容线索，异常先盘点实际状态。详见Q06(#research-q06)。
 
 [返回表格](#column-index)
 
@@ -683,27 +571,13 @@
 
 ## [dsh-project-memory](../../plugins/00080000--dsh-project-memory/INSIGHT.md)
 
-[![GitHub ★ 23](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=23&color=yellow&logo=github&style=flat)](https://github.com/00080000/dsh-project-memory) [![npm 30d 4,533](https://img.shields.io/static/v1?label=npm+30d&message=4%2C533&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@yolk_vat-y/dsh-project-memory) [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-20&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@yolk_vat-y/dsh-project-memory)
+[![GitHub ★ 23](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=23&color=yellow&logo=github&style=flat)](https://github.com/00080000/dsh-project-memory) [![npm 30d 4,399](https://img.shields.io/static/v1?label=npm+30d&message=4%2C399&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@yolk_vat-y/dsh-project-memory) [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-20&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@yolk_vat-y/dsh-project-memory)
 
-**主要用途：**为项目保存任务、文档、代码符号与经验记录，支持跨会话检索和按条件注入。
+**主要用途：**为DSH索引项目文档和代码符号，分层召回带来源的内容，保存任务与经验，并按动作和查询门控注入相关记忆。
 
-**推荐理由：**长周期开发者可在可丢弃项目试用任务关联检索，先检查旧结论纠错与跨项目隔离。
+**推荐理由：**分层召回、项目根护栏与注入审计有明确试用价值；先单项目非敏感语料、审核引用和global，反思默认关闭，不能依近邻/曝光认定知识正确。
 
-**使用条件：**先在一个可丢弃项目中测试旧结论纠错和跨项目隔离，再决定是否长期启用。
-
-[返回表格](#column-index)
-
-<a id="plugin-1339462797-root"></a>
-
-## [dsh-github-router](../../plugins/angeloszou--dsh-github-router/INSIGHT.md)
-
-[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/AngelosZou/dsh-github-router) [![npm 30d 1,620](https://img.shields.io/static/v1?label=npm+30d&message=1%2C620&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-github-router) [![最新发布 2026-09-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-29&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-github-router)
-
-**主要用途：**为DSH提供只读GitHub工具，在API、gh、git、页面和可选镜像之间路由并汇报分段来源。
-
-**推荐理由：**常遇GitHub连接失败的只读分析者可禁镜像试多路读取；核token范围、分段版本和缺块，不能把拼接结果当同一完整快照。
-
-**使用条件：**适合经常遇连接失败的只读仓库分析，先禁镜像并核对token范围和分段版本；缺块不能当不存在讨论或变更。
+**使用条件：**有条件试用。先非敏感单项目/少量人工经验，核对引用和注入日志；反思/扩展保持默认关，global知识与近邻覆盖先审核，重要规范保留权威原件。详见Q09(#research-q09)。
 
 [返回表格](#column-index)
 
@@ -749,20 +623,146 @@
 
 [返回表格](#column-index)
 
-<a id="plugin-1340492184-root"></a>
+<a id="plugin-1341648244-root"></a>
 
-## [dock](../../plugins/aks1st--dock/INSIGHT.md)
+## [KRouter](../../plugins/398894496-arch--krouter/INSIGHT.md)
 
-[![GitHub ★ 10](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=10&color=yellow&logo=github&style=flat)](https://github.com/AKS1st/dock) [![npm 30d 1,532](https://img.shields.io/static/v1?label=npm+30d&message=1%2C532&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dock-base) [![最新发布 2026-09-30](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-30&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dock-base)
+[![GitHub ★ 46](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=46&color=yellow&logo=github&style=flat)](https://github.com/398894496-arch/KRouter)
 
-**主要用途：**向扩展提供活动栏、浮窗、编辑视图、状态和设置注册服务的客户端工作台。
+**主要用途：**以本地 Markdown 知识库为多种 Agent 提供带出处的记忆查询、纠错与拒答机制。
 
-**推荐理由：**需要聊天旁多面板者和扩展作者可先接少量扩展；验打开关闭重载及版本契约，布局持久化不能代替文件保存。
+**推荐理由：**愿维护决策库者可先只读试用有效页检索；核对拒答和来源，导入蒸馏及夜间写作另立流程。
 
-**使用条件：**先与少量扩展验证打开、关闭和重载；将布局持久化与文件保存分别验收。
+**使用条件：**有决策知识库且愿维护状态时可先只读试用，核查来源页与拒答；不要把默认检索成功等同于记忆正确，导入与夜间写作应单独设置。
+
+[返回表格](#column-index)
+
+<a id="plugin-1341946801-root"></a>
+
+## [dsh-question-nav](../../plugins/abelkeithsun--dsh-question-nav/INSIGHT.md)
+
+[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=yellow&logo=github&style=flat)](https://github.com/AbelKeithsun/dsh-question-nav) [![npm 30d 1,247](https://img.shields.io/static/v1?label=npm+30d&message=1%2C247&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@luziyang2026/dsh-question-nav) [![最新发布 2026-09-01](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-01&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@luziyang2026/dsh-question-nav)
+
+**主要用途：**以会话提问索引与圆点导航跳转历史用户提问。
+
+**推荐理由：**长会话用户可限定普通单文本提问、保持同一会话试导航；已知仅索引首块会漏多块或首块图片提问，跳转时不核原session，不能当完整历史。
+
+**使用条件：**经常回看长会话者可列为导航候选；多模态/多文本块提问需核对索引完整性，不把圆点缺失理解为没有历史问题。
+
+[返回表格](#column-index)
+
+<a id="plugin-1343622602-root"></a>
+
+## [dsh-plugin-nlbi](../../plugins/1byteone--dsh-plugin-nlbi/INSIGHT.md)
+
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/1byteone/dsh-plugin-nlbi) [![npm 30d 906](https://img.shields.io/static/v1?label=npm+30d&message=906&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-nlbi) [![最新发布 2026-08-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-25&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-nlbi)
+
+**主要用途：**在 DSH 中用自然语言查询 MySQL，生成表格、图表与可保存报表。
+
+**推荐理由：**有只读MySQL环境的分析者可用标准答案试SQL报表，先核业务口径与数据权限，重跑仍验Schema。
+
+**使用条件：**适合有可复核SQL和只读数据环境的分析任务；先定义关键指标标准答案，核对生成SQL再复用报表。
+
+[返回表格](#column-index)
+
+<a id="plugin-1344714002-root"></a>
+
+## [dsh-dep-vuln-scan](../../plugins/988hj7tczd-oss--dsh-dep-vuln-scan/INSIGHT.md)
+
+[![npm 30d 106](https://img.shields.io/static/v1?label=npm+30d&message=106&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-dep-vuln-scan) [![最新发布 2026-08-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-24&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-dep-vuln-scan)
+
+**主要用途：**读取依赖锁文件并查询 OSV，生成漏洞、严重度和修复建议报告。
+
+**推荐理由：**有明确锁文件的团队可试已知漏洞初筛；核跳过包和生态版本排序，先读公告维护线再回归，勿直接执行最低fixed命令。
+
+**使用条件：**适合已知锁文件的初筛；检查跳过/错误及实际包清单，修复前核公告维护线并做项目回归，别直接执行生成命令。
+
+[返回表格](#column-index)
+
+<a id="plugin-1344714819-root"></a>
+
+## [dsh-invoice-tools](../../plugins/988hj7tczd-oss--dsh-invoice-tools/INSIGHT.md)
+
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-invoice-tools) [![npm 30d 437](https://img.shields.io/static/v1?label=npm+30d&message=437&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-invoice-tools) [![最新发布 2026-08-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-24&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-invoice-tools)
+
+**主要用途：**在本地解析电子发票字段，核对金额并汇总生成报销单资料。
+
+**推荐理由：**个人可用脱敏XML或文本票试汇总草稿；逐张核票号金额与买卖方，显式会话，xlsx.b64解码后再交财务，不支持OCR真伪查验。
+
+**使用条件：**先用脱敏且有XML/文本层的发票做汇总草稿；逐张核票号、买卖方与金额，确认缓存会话和.xlsx.b64解码后再交财务。
+
+[返回表格](#column-index)
+
+<a id="plugin-1344715270-root"></a>
+
+## [dsh-a11y-scan](../../plugins/988hj7tczd-oss--dsh-a11y-scan/INSIGHT.md)
+
+[![npm 30d 86](https://img.shields.io/static/v1?label=npm+30d&message=86&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-a11y-scan) [![最新发布 2026-08-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-24&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-a11y-scan)
+
+**主要用途：**调用axe扫描本地HTML、构建页面或显式确认的URL，输出无障碍问题与多格式报告。
+
+**推荐理由：**已有axe后端前端团队可在本地构建产物试用；确认真实引擎和页面状态，incomplete与焦点读屏另验，零违规不证WCAG全合规。
+
+**使用条件：**适合已有axe后端的前端团队在本地构建产物先试用。先核对真实引擎运行与页面状态，再处理incomplete和人工清单；不要把报告无违规当完整WCAG认证。
+
+[返回表格](#column-index)
+
+<a id="plugin-1346017360-root"></a>
+
+## [SSH 只读日志工具](../../plugins/452926826--dsh-ssh-logs/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/452926826/dsh-ssh-logs)
+
+**主要用途：**通过预配置 SSH 别名读取或搜索有界远端日志，作为 MCP 工具接入 DSH。
+
+**推荐理由：**已有只读SSH账号者可在测试服务器试用有界日志工具；用服务端ACL隔离根，验证符号链接与无匹配结果后接生产日志。
+
+**使用条件：**适合已建立只读SSH权限的团队先用测试服务器验证；根目录不能单靠字符串约束当隔离，生产环境以服务端账号权限兜底。
+
+[返回表格](#column-index)
+
+<a id="plugin-1346196699-root"></a>
+
+## [dsh-api-dashboard](../../plugins/133563825as-ai--dsh-api-dashboard/INSIGHT.md)
+
+[![GitHub ★ 17](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=17&color=yellow&logo=github&style=flat)](https://github.com/133563825as-ai/dsh-api-dashboard) [![npm 30d 4,179](https://img.shields.io/static/v1?label=npm+30d&message=4%2C179&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-api-dashboard) [![最新发布 2026-10-10](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-10&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-api-dashboard)
+
+**主要用途：**在DSH输入框旁展示多平台API余额、会话与子代理估算消耗，并提供配置看板。
+
+**推荐理由：**多供应商用户可限可查询平台试额度看板，先对账和核对币种，自更新单独验备份回滚。
+
+**使用条件：**先选择实际可查询的平台，对照控制台账单和混合币种；把看板作为预警与估算入口，自更新前保留配置和回退。
+
+[返回表格](#column-index)
+
+<a id="plugin-1351853903-root"></a>
+
+## [dsh-wsl-tray](../../plugins/173787247--dsh-wsl-tray/INSIGHT.md)
+
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-tray)
+
+**主要用途：**为 WSL 内的 DSH Web 安装或报告 Windows 托盘与快捷方式启动入口。
+
+**推荐理由：**已有dsh-wsl-kit者可显式kitPath试桌面恢复入口，先从快捷方式真实启动，核token去向与回退。
+
+**使用条件：**适合已使用 dsh-wsl-kit 的 Windows 用户；显式设置 kitPath，先从快捷方式实际启动一次，再依赖托盘恢复，不把生成脚本成功当启动成功。
+
+[返回表格](#column-index)
+
+<a id="plugin-1351903192-root"></a>
+
+## [dsh-tokenrhythm-bill](../../plugins/162568316--dsh-tokenrhythm-bill/INSIGHT.md)
+
+[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/162568316/dsh-tokenrhythm-bill) [![npm 30d 1,667](https://img.shields.io/static/v1?label=npm+30d&message=1%2C667&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-tokenrhythm-bill) [![最新发布 2026-10-09](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-09&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-tokenrhythm-bill)
+
+**主要用途：**集中展示基元律动等平台的余额、用量、模型与密钥，并提供账号切换和连通探测。
+
+**推荐理由：**多套餐用户可先接常用单平台对账，核账号和限时额度后按需探测模型，避免把探测当免费。
+
+**使用条件：**先只接入常用平台，对照控制台核验当前账号和限时额度，按需启用模型探测；敏感凭据留在受控宿主。
 
 [返回表格](#column-index)
 
 ## 更新时间
 
-2026-10-21
+2026-10-22

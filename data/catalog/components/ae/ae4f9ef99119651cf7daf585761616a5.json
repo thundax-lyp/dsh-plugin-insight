@@ -322,6 +322,25 @@
             "text": "只在备份过的可丢弃会话上先验证删除后刷新、重启和守卫结束状态；需要可恢复整理时优先归档。保留告警并核对工件清理，不把成功提示当数据全部擦除证明。"
         },
         "registry": "data/plugins/2026heshao--dsh-forget-session",
+        "research_blocks": {
+            "plugin_id": "github:1413882487:root",
+            "revision": "64796c9b1423972ae54d2cfa230acc6c4d546c0e",
+            "reason_code": "refresh_validation_incomplete",
+            "reason": "本次核查未完成或修订尚未通过",
+            "details": {
+                "plugin_id": "github:1413882487:root",
+                "revision": "64796c9b1423972ae54d2cfa230acc6c4d546c0e",
+                "reason_code": "refresh_validation_incomplete",
+                "reason": "本次核查未完成或修订尚未通过",
+                "repository": "2026heshao/dsh-forget-session",
+                "component_path": "",
+                "analysis_complete": true,
+                "publication_policy": "保留上次已发布研究；本次草稿不作为已验收成果",
+                "resume_condition": "完成独立核查及必要修订，父级验收后发布"
+            },
+            "blocked_at": "2026-10-22T11:49:32.717Z",
+            "run_id": "2026-10-22-02"
+        },
         "reports": "# dsh-forget-session\n\n> 在 DSH 会话菜单中遗忘会话，清理活动会话、日志目录与投影缓存并复查残留。\n\n## 研究范围\n\n- **仓库**：[2026heshao/dsh-forget-session](https://github.com/2026heshao/dsh-forget-session)\n- **版本号**：2.2.1（[固定提交 64796c9b](https://github.com/2026heshao/dsh-forget-session/tree/64796c9b1423972ae54d2cfa230acc6c4d546c0e)）\n- **版本日期**：2026-10-19（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n源码支持跨活体/持久层的清理编排；无法据此保证所有副本、并发写入或第三方记忆都被删除。删除对账假设未实现，未执行任何真实删除。\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：面向明确需要删除本地会话痕迹的用户；交付物是会话不再出现在列表且对应本地工件已清理的可核查结果。\n- **亮点**：相对归档仅改变可见性及手工删日志，贡献在把会话活体、工作区记账、日志和投影几个所有权串起来，先释放写句柄再删盘并观察迟到重建。该恢复编排适合解释“列表消失却重启复活”的问题，不是通用安全擦除。\n- **思考**：调用返回ok:true能否作为彻底遗忘证明？host多步骤失败收集warnings后继续，并在未来守卫中补删；投影总表采用读改写而非与宿主共用事务。支持正常占用恢复不代表每一步必成功，客户端摘要也只反映当前结果。验证需跨守卫窗口与重启，不能只看行消失。\n- **建议**：只在备份过的可丢弃会话上先验证删除后刷新、重启和守卫结束状态；需要可恢复整理时优先归档。保留告警并核对工件清理，不把成功提示当数据全部擦除证明。\n\n采用建议：只在备份过的可丢弃会话上先验证删除后刷新、重启和守卫结束状态；需要可恢复整理时优先归档。保留告警并核对工件清理，不把成功提示当数据全部擦除证明。\n\n## 核心贡献\n\n相对归档仅改变可见性及手工删日志，贡献在把会话活体、工作区记账、日志和投影几个所有权串起来，先释放写句柄再删盘并观察迟到重建。该恢复编排适合解释“列表消失却重启复活”的问题，不是通用安全擦除。\n\n## 关键质疑\n\n调用返回ok:true能否作为彻底遗忘证明？host多步骤失败收集warnings后继续，并在未来守卫中补删；投影总表采用读改写而非与宿主共用事务。支持正常占用恢复不代表每一步必成功，客户端摘要也只反映当前结果。验证需跨守卫窗口与重启，不能只看行消失。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n待验证假设：将“已请求/清理中/确认无残留/需人工处理”作为删除结果状态，并保存最小非内容审计记录，守卫完成后再给最终确认。来源是异步补删与同步ok之间的语义差；代价是删除任务自身的生命周期及审计保留策略。\n\n在隔离profile创建活动/归档/置顶/未知cwd会话，模拟文件占用和迟到写回，等守卫结束再重启检查列表、日志及投影；同时并发写其他会话防止总表丢更新。最终确认若仍漏报残留，否定状态对账假设。\n\n## 场景与替代办法\n\n面向明确需要删除本地会话痕迹的用户；交付物是会话不再出现在列表且对应本地工件已清理的可核查结果。\n\n参照宿主归档、手工rm目录和只移除UI行；本项解决多层残留和重建，不应与可恢复回滚或法规意义的数据销毁等同。\n\n## 依赖与流程\n\n依赖workspace registry、sessions、Typert和本机文件权限；日志路径编码复制宿主实现，Windows文件占用和服务dispose时序决定删除结果，未涉及外部账号。\n\n菜单第一次置待确认→第二次请求delete→停活动与摘索引→flush并detach→重试删盘→清投影→安排复查→client移除行/刷新并提示warning；失败步骤不统一回滚，用户须查看剩余告警。\n\n## 成本与效果\n\n常规操作两次点击，失败需要读警告并核对目录/缓存；守卫持续约130秒并重复文件系统检查。首次无外部服务费用，误删恢复成本高且无法从本插件保证恢复，未测大日志删除耗时。\n\n减少用户手动寻找日志与残影的负担，尤其针对占用和迟到写回；价值依赖宿主内部结构稳定，完整遗忘的责任仍包含备份、第三方记忆与文件清理复核。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：cb403d5b288ed276ac6f5dc1c87ab321a15f877c959a0831487948bdc1aae698。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 2 | 201 | — | — | 2514 |\n| .js | source | 2 | 737 | 512 | 179 | — |\n| .mjs | test | 1 | 117 | 82 | 19 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **Host 路由**：Typert delete会话遗忘与工件清理\n- **界面**：会话菜单两次确认并显示结果警告\n- **后台**：迟到写回有限窗口复查与占用重试\n\n## 工程亮点\n\n值得借鉴lib/index.js中先flush/detach后删除与验证性重试的顺序。风险在对宿主私有store、投影JSON布局耦合，cleanProjectionCache整表读改写可能与并发宿主写入竞争；这是需控制实验核实的并发风险，不推定已有数据损坏。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 lib/index.js、lib/client.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：静态核查host清理、路径编码、重试/守卫与client确认；未运行删除、未验证44.7兼容，第三方记忆和备份不在清理证明范围。\n- 下一步：在隔离profile创建活动/归档/置顶/未知cwd会话，模拟文件占用和迟到写回，等守卫结束再重启检查列表、日志及投影；同时并发写其他会话防止总表丢更新。最终确认若仍漏报残留，否定状态对账假设。\n\n## 源码索引\n\n- [lib/index.js](https://github.com/2026heshao/dsh-forget-session/blob/64796c9b1423972ae54d2cfa230acc6c4d546c0e/lib/index.js)\n- [lib/client.js](https://github.com/2026heshao/dsh-forget-session/blob/64796c9b1423972ae54d2cfa230acc6c4d546c0e/lib/client.js)\n",
         "metadata": {
             "repository": "2026heshao/dsh-forget-session",
@@ -391,14 +410,14 @@
             "repository": "2026heshao/dsh-forget-session",
             "path": "",
             "revision": "64796c9b1423972ae54d2cfa230acc6c4d546c0e",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "fa81d23c267783fe210f5d8e5f367c9198170151b41592adef736d5485807bce",
                 "code": "64796c9b1423972ae54d2cfa230acc6c4d546c0e",
                 "maintenance": "7e5883d7472031232a723e2e41114fb9470c5f0cd1635f0d9386b40e4ff95f2a"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

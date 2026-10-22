@@ -10,10 +10,10 @@
             "repository": "AKS1st/dock",
             "path": "",
             "aliases": [],
-            "name": "dock",
+            "name": "dock-base",
             "entry_type": "plugin",
             "technical_category": "interface-input",
-            "business_category": "infrastructure",
+            "business_category": "software-delivery",
             "tags": [],
             "availability": "unknown",
             "research_depth": "source",
@@ -24,36 +24,88 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-06-github-1340492184-root-directory-0",
+                    "id": "2026-10-22-02-github-1340492184-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T05:36:02.549Z",
+                    "retrieved_at": "2026-10-22T08:59:09.010Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-06-github-1340492184-root-author",
+                    "id": "2026-10-22-02-github-1340492184-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/AKS1st/dock/blob/8535f6e24670931d9e93fb087ab474e38aa01856/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AKS1st/dock",
+                            "commit": "8535f6e24670931d9e93fb087ab474e38aa01856",
+                            "path": "README.md",
+                            "content_sha256": "c5eb265cd9254f1d44f1e3d058d315e80b902835c0249d308e68dfee6ec5a58e"
+                        }
+                    ],
                     "revision": "8535f6e24670931d9e93fb087ab474e38aa01856",
-                    "captured_at": "2026-10-21T05:36:02.549Z",
-                    "summary": "向扩展提供活动栏、浮窗、编辑视图、状态和设置注册服务的客户端工作台。",
-                    "artifact": "data/runs/2026-10-21-06/snapshots/aks1st--dock/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T08:59:09.010Z",
+                    "summary": "为DSH web提供统一布局、视图实例、命令和设置注册服务，供功能插件按需组合。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/aks1st--dock/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-06-github-1340492184-root-source",
+                    "id": "2026-10-22-02-github-1340492184-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/AKS1st/dock/blob/8535f6e24670931d9e93fb087ab474e38aa01856/src/index.ts",
+                    "url": "https://github.com/AKS1st/dock/blob/8535f6e24670931d9e93fb087ab474e38aa01856/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AKS1st/dock",
+                            "commit": "8535f6e24670931d9e93fb087ab474e38aa01856",
+                            "path": "README.md",
+                            "content_sha256": "c5eb265cd9254f1d44f1e3d058d315e80b902835c0249d308e68dfee6ec5a58e"
+                        },
+                        {
+                            "repository_url": "https://github.com/AKS1st/dock",
+                            "commit": "8535f6e24670931d9e93fb087ab474e38aa01856",
+                            "path": "src/index.ts",
+                            "content_sha256": "0fa93c84a51590126b6473c2689dfdd4b5070a4777e6c8977f24aaabaaa99cd4"
+                        },
+                        {
+                            "repository_url": "https://github.com/AKS1st/dock",
+                            "commit": "8535f6e24670931d9e93fb087ab474e38aa01856",
+                            "path": "src/client/index.ts",
+                            "content_sha256": "d78c033650b8c7baa01d84379105347c5c8d6264b4323cda1b8ac3bfc46563f4"
+                        },
+                        {
+                            "repository_url": "https://github.com/AKS1st/dock",
+                            "commit": "8535f6e24670931d9e93fb087ab474e38aa01856",
+                            "path": "src/client/service.ts",
+                            "content_sha256": "896f25a9ba6fee1ec516395bde68072304b3ef645eff813238afe487a6c0bfcc"
+                        },
+                        {
+                            "repository_url": "https://github.com/AKS1st/dock",
+                            "commit": "8535f6e24670931d9e93fb087ab474e38aa01856",
+                            "path": "src/client/settings.ts",
+                            "content_sha256": "ee46b1d08fc495dd7d4788729630b4790517b65321b7b3413350f072d609aab5"
+                        },
+                        {
+                            "repository_url": "https://github.com/AKS1st/dock",
+                            "commit": "8535f6e24670931d9e93fb087ab474e38aa01856",
+                            "path": "package.json",
+                            "content_sha256": "dd8f000415415cd8128a392370408b6610ad039d1ac65ed037a375350fe158c7"
+                        },
+                        {
+                            "repository_url": "https://github.com/AKS1st/dock",
+                            "commit": "8535f6e24670931d9e93fb087ab474e38aa01856",
+                            "path": "src/client/layout.ts",
+                            "content_sha256": "f4f24e61420379e4ceb613701b5597be0a1121575ea2449835ca6053e3c24c26"
+                        }
+                    ],
                     "revision": "8535f6e24670931d9e93fb087ab474e38aa01856",
-                    "captured_at": "2026-10-21T05:36:02.549Z",
-                    "summary": "核查 src/index.ts、src/client/index.ts、src/client/contract.ts、src/client/service.ts；客户端先ctx.provide(workbench)，service管理插件、活动、面板、编辑、状态、命令和设置注册；layout/settings存储本地布局，Shell渲染各扩展。主机入口不实现业务路由。",
-                    "artifact": "data/runs/2026-10-21-06/snapshots/aks1st--dock/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T08:59:09.010Z",
+                    "summary": "核查 README.md、src/index.ts、src/client/index.ts、src/client/service.ts、src/client/settings.ts、package.json、src/client/layout.ts；uiSession就绪后先提供workbench服务，再挂单portal；功能方注册唯一ID/反注册，layout/settings本地持久。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/aks1st--dock/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                        "固定空Host、Client提供/挂载、注册服务、layout/settings与beforeClose关键链；未运行UI或审计功能插件。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +116,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "需要在DSH聊天旁组织多个文件/工具面板的用户与扩展作者。",
+                    "text": "多个功能面板需共享布局与实例/设置接线的开发者及组合使用者。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1340492184-root-source"
+                        "2026-10-22-02-github-1340492184-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +127,16 @@
                             "fingerprint": "8535f6e24670931d9e93fb087ab474e38aa01856"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:36:02.549Z",
+                    "reviewed_at": "2026-10-22T08:59:09.010Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "客户端先ctx.provide(workbench)，service管理插件、活动、面板、编辑、状态、命令和设置注册；layout/settings存储本地布局，Shell渲染各扩展。主机入口不实现业务路由。",
+                    "text": "uiSession就绪后先提供workbench服务，再挂单portal；功能方注册唯一ID/反注册，layout/settings本地持久。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1340492184-root-source"
+                        "2026-10-22-02-github-1340492184-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +145,16 @@
                             "fingerprint": "8535f6e24670931d9e93fb087ab474e38aa01856"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:36:02.549Z",
+                    "reviewed_at": "2026-10-22T08:59:09.010Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                    "text": "固定空Host、Client提供/挂载、注册服务、layout/settings与beforeClose关键链；未运行UI或审计功能插件。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1340492184-root-source"
+                        "2026-10-22-02-github-1340492184-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +163,16 @@
                             "fingerprint": "8535f6e24670931d9e93fb087ab474e38aa01856"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:36:02.549Z",
+                    "reviewed_at": "2026-10-22T08:59:09.010Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "分发以本插件固定package.json、运行依赖与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+                    "text": "npm dock-base0.2.4、MIT，Node>=20及DSH>=0.1.3-alpha.2，React/ReactDOM渲染依赖。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1340492184-root-source"
+                        "2026-10-22-02-github-1340492184-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +181,16 @@
                             "fingerprint": "8535f6e24670931d9e93fb087ab474e38aa01856"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:36:02.549Z",
+                    "reviewed_at": "2026-10-22T08:59:09.010Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "首次需迁移入口与扩展接线；持续承担工作台契约和布局兼容。无模型调用，界面与本地存储成本随窗口数增加。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 基座/功能插件与UI资源，金额未知 | 宿主兼容、插件组合和位置设置 | 无强制模型服务 |\n| 持续使用 | React渲染、布局/seed整体本地写入 | 管理视图、设置与上游更新 | 多实例/大seed的性能未测 |\n| 失败恢复 | 布局重置、注册方重载和版本回退 | 判断持久状态与未保存业务数据 | localStorage恢复不等编辑缓冲恢复 |\n",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1340492184-root-source"
+                        "2026-10-22-02-github-1340492184-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +199,16 @@
                             "fingerprint": "8535f6e24670931d9e93fb087ab474e38aa01856"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:36:02.549Z",
+                    "reviewed_at": "2026-10-22T08:59:09.010Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "先与少量扩展验证打开、关闭和重载；将布局持久化与文件保存分别验收。",
+                    "text": "有多视图组合需求可试用，先核对上下文与异步关闭；逐个研究功能插件而非默认全装。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1340492184-root-source"
+                        "2026-10-22-02-github-1340492184-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +217,16 @@
                             "fingerprint": "8535f6e24670931d9e93fb087ab474e38aa01856"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:36:02.549Z",
+                    "reviewed_at": "2026-10-22T08:59:09.010Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "统一交互有减少重复开发的潜力，没有扩展迁移工时或真实使用收益数据。",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 复用布局 | 统一视图/活动/命令/设置注册接口 | 接入插件实际维护人时 |\n| 连续工作 | 布局与设置可恢复，关闭有可选hook | 多步异步确认下内容保护 |\n| 工作台体验 | 浮窗/停靠和单portal结构 | 与独立面板在任务完成率/干扰上的差异 |\n",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1340492184-root-source"
+                        "2026-10-22-02-github-1340492184-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +235,16 @@
                             "fingerprint": "8535f6e24670931d9e93fb087ab474e38aa01856"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:36:02.549Z",
+                    "reviewed_at": "2026-10-22T08:59:09.010Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "注册器带disposer、重复ID检测及统一beforeClose是可借鉴机制；契约副本同步与本地布局迁移是后续维护条件。",
+                    "text": "可复用的是服务先提供、挂载失败也幂等清理、注册ID唯一与反注册、设置输入JSON-safe克隆/validate，以及布局/设置分离。设置排序按order再ID稳定，反注册保留值改善热更新体验。localStorage失败继续内存状态便于降级，但应让读者知道无法跨刷新恢复。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1340492184-root-source"
+                        "2026-10-22-02-github-1340492184-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +253,16 @@
                             "fingerprint": "8535f6e24670931d9e93fb087ab474e38aa01856"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:36:02.549Z",
+                    "reviewed_at": "2026-10-22T08:59:09.010Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "interpretation",
-                    "text": "以独立注册域、实例seed和关闭钩子减少每个扩展自建窗口的重复工作；注册ID冲突拒绝、释放时按定义身份清理，生命周期比单纯固定按钮更完整。没有实现新窗口协议或远程一致性。",
+                    "text": "统一多插件重复的布局、实例、命令与设置接线，具体文件/Git业务由扩展实现；未证明优于所有工作台。详见[Q01](#research-q01)与[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1340492184-root-source"
+                        "2026-10-22-02-github-1340492184-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +271,16 @@
                             "fingerprint": "8535f6e24670931d9e93fb087ab474e38aa01856"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:36:02.549Z",
+                    "reviewed_at": "2026-10-22T08:59:09.010Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "各扩展vendored类型契约只在编译时检查，真实ctx.workbench版本兼容仍需验收。localStorage是浏览器本地状态，不等于跨设备同步或可靠工作成果存储；异步关闭钩子正确性不代表业务保存已成功。",
+                    "text": "异步beforeClose允许结果未绑定内容版本且未见reject处理，无hook默认允许；seed/dirty持久不等业务缓冲恢复。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1340492184-root-source"
+                        "2026-10-22-02-github-1340492184-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +289,16 @@
                             "fingerprint": "8535f6e24670931d9e93fb087ab474e38aa01856"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:36:02.549Z",
+                    "reviewed_at": "2026-10-22T08:59:09.010Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "unverified",
-                    "text": "未验证假设：服务启动公开能力版本并让扩展按需求协商，可将方法缺失转为明确兼容提示。用旧新扩展、拒绝/异步关闭和卸载重载矩阵比较故障定位时间及状态丢失。",
+                    "text": "可探讨实例版本绑定关闭协议，旧确认不得作用于新内容并可见处理reject；增加状态与重入成本，未验证。详见[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1340492184-root-source"
+                        "2026-10-22-02-github-1340492184-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +307,15 @@
                             "fingerprint": "8535f6e24670931d9e93fb087ab474e38aa01856"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:36:02.549Z",
+                    "reviewed_at": "2026-10-22T08:59:09.010Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T05:36:02.549Z",
+            "last_checked_at": "2026-10-22T08:59:09.010Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "8535f6e24670931d9e93fb087ab474e38aa01856",
-                "reviewed_at": "2026-10-21T05:36:02.549Z",
+                "reviewed_at": "2026-10-22T08:59:09.010Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -276,60 +328,60 @@
                     "criteria": {
                         "novelty": 9,
                         "mechanism": 15,
-                        "transferability": 15,
-                        "simplification": 8
+                        "transferability": 10,
+                        "simplification": 11
                     },
-                    "rationale": "novelty=9：IDE式工作台已有先例。mechanism=15：注册、实例seed与关闭钩子形成可核查的机制组合，但未证实相对宿主侧栏突破关键限制。transferability=15：文件浏览与编辑扩展直接采用共同服务，迁移模式可见，跨宿主兼容未验。simplification=8：统一窗口减少重复接线，维护契约仍有成本。",
+                    "rationale": "novelty成熟IDE式壳取小幅；mechanism注册/实例/设置分层取实质；transferability服务/清理可迁移取实质；simplification减少重复面板接线取较强，未计未验证无损关闭。",
                     "basis": "interpretation",
-                    "score": 47,
+                    "score": 45,
                     "evidence_ids": [
-                        "2026-10-21-06-github-1340492184-root-source"
+                        "2026-10-22-02-github-1340492184-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
                         "workflow": 18,
-                        "delivery": 15,
-                        "reach": 10,
+                        "delivery": 8,
+                        "reach": 5,
                         "economics": 4
                     },
-                    "rationale": "workflow=18：扩展打开到关闭流程清晰。 delivery=15：兼容与持久化未在宿主验证。 reach=10：面向采用Dock的开发者用户。 economics=4：无开发工时对照。",
+                    "rationale": "workflow多面板统一取实质；delivery仍扩展工作台取小幅；reach限DSH web及开发者取小幅；economics没有开发人时对照取小幅。",
                     "basis": "interpretation",
-                    "score": 47,
+                    "score": 35,
                     "evidence_ids": [
-                        "2026-10-21-06-github-1340492184-root-source"
+                        "2026-10-22-02-github-1340492184-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "需要聊天旁多面板者和扩展作者可先接少量扩展；验打开关闭重载及版本契约，布局持久化不能代替文件保存。",
+                "reason": "基座职责和复用接口清楚，适合多视图组合；异步关闭/业务缓冲由功能方共同保证，仍需限范围核对。详见[Q05](#research-q05)。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "统一文件工具面板与扩展接线有明确用户。"
+                        "rationale": "多插件面板统一任务明确，需求强度未独立测。"
                     },
                     "advantage": {
-                        "score": 19,
-                        "rationale": "workbench服务集中活动、面板与命令，减少重复壳层。"
+                        "score": 13,
+                        "rationale": "复用布局/设置/实例有增量，原生slot也可实现。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "已核注册和localStorage，真实扩展迁移效果未验。"
+                        "rationale": "固定关键链源码支持，未宿主验证。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "无模型费但迁移入口、契约版本与多窗口内存需维护。"
+                        "score": 15,
+                        "rationale": "自身空Host、无强制模型，组合和恢复仍需维护。"
                     }
                 },
-                "score": 65,
+                "score": 64,
                 "revision": "8535f6e24670931d9e93fb087ab474e38aa01856",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T08:59:09.010Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-06-github-1340492184-root-source"
+                    "2026-10-22-02-github-1340492184-root-source"
                 ],
                 "dependencies": [
                     {
@@ -354,75 +406,55 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T05:26:52Z",
-            "analysis_sha256": "12d414ac90f5d072d4ccccea665c82791f9cf547a9e0c5eece250e07862487d5"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "9f8de4d742f53c2cf47fa38f70293f9460dcd7935566381fa24664904e8c53f3"
         },
         "publication.metadata": "data/plugins/aks1st--dock/META.json",
         "publication.summaries": {
-            "text": "向扩展提供活动栏、浮窗、编辑视图、状态和设置注册服务的客户端工作台。",
+            "text": "为DSH web提供统一布局、视图实例、命令和设置注册服务，供功能插件按需组合。",
             "revision": "8535f6e24670931d9e93fb087ab474e38aa01856",
             "source_url": "https://github.com/AKS1st/dock/blob/8535f6e24670931d9e93fb087ab474e38aa01856/README.md"
         },
         "publication.capabilities": {
             "revision": "8535f6e24670931d9e93fb087ab474e38aa01856",
             "items": {
-                "界面": "四边Dock、浮窗、设置与布局",
-                "后台": "客户端workbench扩展注册及视图生命周期服务"
-            }
+                "界面": "统一工作台壳与设置",
+                "用户命令": "workbench注册命令供客户端调用"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 布局与实例 | 停靠/浮窗/标签 | 不内置文件/Git业务 |\n| 注册服务 | 视图/活动/命令 | ID唯一、各方自己清理 |\n| beforeClose | 功能方阻止关闭 | 可选hook，异步内容版本待核 |\n| 本地恢复 | 布局/seed/设置 | 不等完整编辑缓冲持久化 |"
         },
         "publication.advice": {
             "revision": "8535f6e24670931d9e93fb087ab474e38aa01856",
-            "text": "先与少量扩展验证打开、关闭和重载；将布局持久化与文件保存分别验收。"
+            "text": "有多视图组合需求可试用，先核对上下文与异步关闭；逐个研究功能插件而非默认全装。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/aks1st--dock",
-        "reports": "# dock\n\n> 向扩展提供活动栏、浮窗、编辑视图、状态和设置注册服务的客户端工作台。\n\n## 使用建议\n\n先与少量扩展验证打开、关闭和重载；将布局持久化与文件保存分别验收。\n\n**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，插件与依赖流程的实际运行尚未验证；未来假设未验证。\n\n## 洞察短评\n\n- **用途**：需要在DSH聊天旁组织多个文件/工具面板的用户与扩展作者。\n- **亮点**：以独立注册域、实例seed和关闭钩子减少每个扩展自建窗口的重复工作；注册ID冲突拒绝、释放时按定义身份清理，生命周期比单纯固定按钮更完整。没有实现新窗口协议或远程一致性。\n- **思考**：各扩展vendored类型契约只在编译时检查，真实ctx.workbench版本兼容仍需验收。localStorage是浏览器本地状态，不等于跨设备同步或可靠工作成果存储；异步关闭钩子正确性不代表业务保存已成功。\n- **建议**：未验证假设：服务启动公开能力版本并让扩展按需求协商，可将方法缺失转为明确兼容提示。用旧新扩展、拒绝/异步关闭和卸载重载矩阵比较故障定位时间及状态丢失。\n\n## 场景与替代办法\n\n参照IDE工作台与宿主原有侧栏；本项贡献是DSH客户端的统一注册、布局和视图生命周期，文件读写并非基座自身能力。\n\n## 能力清单\n\n- **界面**：四边Dock、浮窗、设置与布局\n- **后台**：客户端workbench扩展注册及视图生命周期服务\n\n## 依赖与流程\n\n客户端先ctx.provide(workbench)，service管理插件、活动、面板、编辑、状态、命令和设置注册；layout/settings存储本地布局，Shell渲染各扩展。主机入口不实现业务路由。\n\n宿主uiSession、React客户端环境和扩展复制的WorkbenchService契约；文件、Git、预览等功能由另行安装的扩展提供。\n\n基座启动→扩展注册带disposer的定义→用户打开视图实例→更新布局→关闭/替换前运行beforeClose→本地保存布局。\n\n## 成本与效果\n\n首次需迁移入口与扩展接线；持续承担工作台契约和布局兼容。无模型调用，界面与本地存储成本随窗口数增加。\n\n统一交互有减少重复开发的潜力，没有扩展迁移工时或真实使用收益数据。\n\n## 核心贡献\n\n以独立注册域、实例seed和关闭钩子减少每个扩展自建窗口的重复工作；注册ID冲突拒绝、释放时按定义身份清理，生命周期比单纯固定按钮更完整。没有实现新窗口协议或远程一致性。\n\n## 关键质疑\n\n各扩展vendored类型契约只在编译时检查，真实ctx.workbench版本兼容仍需验收。localStorage是浏览器本地状态，不等于跨设备同步或可靠工作成果存储；异步关闭钩子正确性不代表业务保存已成功。\n\n## 工程亮点\n\n注册器带disposer、重复ID检测及统一beforeClose是可借鉴机制；契约副本同步与本地布局迁移是后续维护条件。\n\n源码依据：[src/index.ts](https://github.com/AKS1st/dock/blob/8535f6e24670931d9e93fb087ab474e38aa01856/src/index.ts)、[src/client/index.ts](https://github.com/AKS1st/dock/blob/8535f6e24670931d9e93fb087ab474e38aa01856/src/client/index.ts)、[src/client/contract.ts](https://github.com/AKS1st/dock/blob/8535f6e24670931d9e93fb087ab474e38aa01856/src/client/contract.ts)、[src/client/service.ts](https://github.com/AKS1st/dock/blob/8535f6e24670931d9e93fb087ab474e38aa01856/src/client/service.ts)。\n\n## 未来设计假设（未验证）\n\n未验证假设：服务启动公开能力版本并让扩展按需求协商，可将方法缺失转为明确兼容提示。用旧新扩展、拒绝/异步关闭和卸载重载矩阵比较故障定位时间及状态丢失。\n\n固定宿主核注册释放、异步拒绝关闭、扩展缺失恢复、localStorage异常与契约版本差异；本轮未启动。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：3bdaa863442cceb79cf27b16961389ebca0e4b541f955b77c445fc90de1f0203。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 2814 | 2500 | 313 | — |\n| .md | source | 2 | 248 | — | — | 3267 |\n| .tsx | source | 3 | 999 | 823 | 120 | — |\n| .ts | source | 12 | 2437 | 1826 | 472 | — |\n| .ts | test | 2 | 406 | 363 | 9 | — |\n| .mjs | source | 1 | 53 | 38 | 13 | — |\n\n排除 15 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[AKS1st/dock](https://github.com/AKS1st/dock)\n- **版本号**：0.2.4（[固定提交 8535f6e2](https://github.com/AKS1st/dock/tree/8535f6e24670931d9e93fb087ab474e38aa01856)）\n- **版本日期**：2026-09-30（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：src/index.ts、src/client/index.ts、src/client/contract.ts、src/client/service.ts、作者README、package与固定范围inventory；源码抽读不等于完整审计。\n- 未验证：插件执行、测试、安装、真实宿主与独立采用。\n- 证据限制：固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。\n- 下一步：固定宿主核注册释放、异步拒绝关闭、扩展缺失恢复、localStorage异常与契约版本差异；本轮未启动。\n",
+        "reports": "# dock-base\n\n> 为DSH web提供统一布局、视图实例、命令和设置注册服务，供功能插件按需组合。\n\n## 研究范围\n\n- **仓库**：[AKS1st/dock](https://github.com/AKS1st/dock)\n- **版本号**：0.2.4（[固定提交 8535f6e24670931d9e93fb087ab474e38aa01856](https://github.com/AKS1st/dock/tree/8535f6e24670931d9e93fb087ab474e38aa01856)）\n- **版本日期**：2026-09-30（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n源码支持workbench注册服务、布局和单portal工作台集成；延迟关闭确认缺实例版本绑定，旧确认可能作用新内容，dirty元数据不等草稿恢复。版本绑定关闭协议尚未验证。\n\n## 洞察短评\n\n- **用途**：多个功能面板需共享布局与实例/设置接线的开发者及组合使用者。\n- **亮点**：统一多插件重复的布局、实例、命令与设置接线，具体文件/Git业务由扩展实现；未证明优于所有工作台。详见[Q01](#research-q01)与[Q02](#research-q02)。\n- **思考**：异步beforeClose允许结果未绑定内容版本且未见reject处理，无hook默认允许；seed/dirty持久不等业务缓冲恢复。详见[Q02](#research-q02)。\n- **建议**：可探讨实例版本绑定关闭协议，旧确认不得作用于新内容并可见处理reject；增加状态与重入成本，未验证。详见[Q04](#research-q04)。\n\n采用建议：有多视图组合需求可试用，先核对上下文与异步关闭；逐个研究功能插件而非默认全装。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n统一多插件重复的布局、实例、命令与设置接线，具体文件/Git业务由扩展实现；未证明优于所有工作台。详见[Q01](#research-q01)与[Q02](#research-q02)。\n\n## 关键质疑\n\n异步beforeClose允许结果未绑定内容版本且未见reject处理，无hook默认允许；seed/dirty持久不等业务缓冲恢复。详见[Q02](#research-q02)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可探讨实例版本绑定关闭协议，旧确认不得作用于新内容并可见处理reject；增加状态与重入成本，未验证。详见[Q04](#research-q04)。\n\n进一步探讨可用无I/O异步view夹具检查pending改seed、重复关闭、注销与reject，比较旧确认和恢复完整性。\n\n## 场景与替代办法\n\n多个功能面板需共享布局与实例/设置接线的开发者及组合使用者。\n\n各插件独立面板或原生slot可替代；基座复用布局与状态管理，也增加共同版本与本地恢复维护。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| Node>=20、DSH>=0.1.3-alpha.2及Cordis | 基础必需 | Host/Client装载及uiSession | 不能用包能安装推断UI契约匹配 |\n| React/ReactDOM18、浏览器DOM | UI必需 | portal与组件渲染 | peer标optional不等UI无需React |\n| 功能插件注册workbench | 实际业务按需 | 文件/编辑/Git等 | 只装基座是空壳，不提供文件操作 |\n| localStorage | 刷新恢复必需 | 布局/seed/设置和几何 | 配额或禁用时仅本次内存有效 |\n\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 准备 | 维护者固定兼容宿主和dock-base | 明确只选真正需要的功能插件 |\n| 加载 | 安装到web profile并重启刷新 | uiSession就绪、workbench先提供再显示 |\n| 扩展 | 功能插件按effect注册并处理beforeClose | 标识唯一、实例上下文与关闭一致 |\n| 退出/恢复 | 停用各注册方和基座，单独处理localStorage | 清理UI不等保存未提交编辑内容 |\n\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 基座/功能插件与UI资源，金额未知 | 宿主兼容、插件组合和位置设置 | 无强制模型服务 |\n| 持续使用 | React渲染、布局/seed整体本地写入 | 管理视图、设置与上游更新 | 多实例/大seed的性能未测 |\n| 失败恢复 | 布局重置、注册方重载和版本回退 | 判断持久状态与未保存业务数据 | localStorage恢复不等编辑缓冲恢复 |\n\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 复用布局 | 统一视图/活动/命令/设置注册接口 | 接入插件实际维护人时 |\n| 连续工作 | 布局与设置可恢复，关闭有可选hook | 多步异步确认下内容保护 |\n| 工作台体验 | 浮窗/停靠和单portal结构 | 与独立面板在任务完成率/干扰上的差异 |\n\n\n## 研究问题与完整回答\n\n**插件研究总目标：**核查DSH工作台基座的注册/实例/持久化、关闭保护与组合成本。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 谁需要基座，注册到显示怎样运行？\n\n**研究主题：**场景与需求、功能与机制\n\n#### 完整回答\n\n面向给DSH web开发多面板扩展的作者，以及要组合多个功能视图的读者。输入是活动项、面板、编辑器、命令、设置注册与活动uiSession，输出是统一布局壳和实例显示。合格任务需各注册方正确取得会话、清理自己的资源并保持实例状态。仅装dock不会获得文件浏览、Git或编辑能力，作者README“最好”的话没有比较证据。\n\nHost目前为空，无文件/网络路由；Client等uiSession注入后创建layout/settings/service，先provide workbench，再在document.body挂单个React root。功能方按ID注册，重复ID抛错，反注册函数配合effect释放。openView生成或复用实例，保存seed；布局和设置各自使用localStorage。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:7-24](https://github.com/AKS1st/dock/blob/8535f6e24670931d9e93fb087ab474e38aa01856/README.md#L7-L24)\n\n作者基座分工与功能项。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\nDSH Web 工作台基础插件：提供 VSCode 风格布局外壳（活动栏 / 侧边栏 / 编辑器区 / 面板 / 状态栏），并通过注册表服务 `ctx.workbench` 让功能插件挂载面板、编辑器视图、活动项、状态项与命令。本插件是 **dock 系列**的基础：`dock-files`、`dock-editor`、`dock-images`、`dock-markdown`、`dock-git` 都依赖它提供的工作台外壳。\n\n## 功能\n\n- **活动栏**：左侧垂直条带，可注册图标项，点击切换侧边栏面板。\n- **侧边栏**：承载功能面板（文件浏览、Git 启动器等）。\n- **编辑器区**：多标签编辑器视图（文件查看器、Git 提交图等）。\n- **停靠模式**：整个工作台可停靠在屏幕四边，支持悬浮窗口（独立浮窗，可拖动/缩放）。\n- **状态栏**：底部状态项注册。\n- **命令系统**：`executeCommand` 命令注册与调用。\n- **布局持久化**：面板/悬浮窗口布局保存在 localStorage，刷新后恢复。\n- **设置窗口**：内置设置对话框展示各插件注册的设置项；支持校验、排序、键盘焦点管理与跨刷新持久化。\n- **开放注册表**：`registerActivityBarItem` / `registerPanel` / `registerEditorView` / `registerStatusBarItem` / `registerCommand` / `registerSetting`，全部返回反注册函数，配合 `ctx.effect` 使用可随插件停用自动清理。\n\n## 推荐搭配插件（可组合，按需安装）\n\ndock 基座只提供工作台外壳，不附带文件浏览、编辑等具体能力——这些交给功能插件。下面的推荐**一条一条列清楚：全部可选、可自由组合，完全按你的场景按需安装，不需要全部装齐**。\n\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/index.ts:1-14](https://github.com/AKS1st/dock/blob/8535f6e24670931d9e93fb087ab474e38aa01856/src/index.ts#L1-L14)\n\n空Host不提供业务路由。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n/**\n * Host half of dock — currently an empty shell.\n *\n * The base owns the *window* (client layout shell + registry service); all\n * feature domains (fs / git / terminal / ...) live in feature plugins with\n * their own host routes. Layout persistence happens on the client\n * (localStorage), so the host half has no routes yet.\n */\nexport const name = 'dock-base'\n\n/** No host-side services required yet. */\nexport function apply(): void {\n  // Intentionally empty: all behavior lives in the client half.\n}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/client/index.ts:18-32](https://github.com/AKS1st/dock/blob/8535f6e24670931d9e93fb087ab474e38aa01856/src/client/index.ts#L18-L32)\n\nuiSession与服务先provide。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n * The shell resolves the active Session from `uiSession`, whose scope adapter\n * is the view owner's selection source; waiting for it keeps every view's\n * sessionId correct on its first render instead of racing boot order.\n */\nexport const inject: string[] = ['uiSession']\n\n/** Client plugin body. */\nexport function apply(ctx: WorkbenchContext): void {\n  // Publish the registry BEFORE the shell mounts so feature plugins\n  // injecting 'workbench' are ready by the time the shell renders.\n  const store = createLayoutStore()\n  const settings = createSettingsStore()\n  const service = createWorkbenchService(store, settings)\n  ctx.provide('workbench', service)\n\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/client/index.ts:34-65](https://github.com/AKS1st/dock/blob/8535f6e24670931d9e93fb087ab474e38aa01856/src/client/index.ts#L34-L65)\n\n单portal与挂载失败清理。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\n    let root: Root | undefined\n    let host: HTMLDivElement | undefined\n    let unstyle: (() => void) | undefined\n    let cleaned = false\n    const cleanup = (): void => {\n      if (cleaned) return\n      cleaned = true\n      root?.unmount()\n      root = undefined\n      host?.remove()\n      host = undefined\n      unstyle?.()\n      unstyle = undefined\n      service.dispose()\n    }\n    try {\n      unstyle = mountStyles()\n      host = document.createElement('div')\n      host.setAttribute('data-dock', '')\n      document.body.appendChild(host)\n      root = createRoot(host)\n      root.render(createElement(WorkbenchRoot, { ctx, service, store }))\n      return cleanup\n    } catch (error) {\n      console.error('[dock] mount error:', error)\n      // The effect callback may never be disposed after a failed mount, so\n      // release every resource immediately as well as returning an idempotent\n      // disposer for Cordis.\n      cleanup()\n      return cleanup\n    }\n  }, 'dock: shell mount')\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/client/service.ts:174-210](https://github.com/AKS1st/dock/blob/8535f6e24670931d9e93fb087ab474e38aa01856/src/client/service.ts#L174-L210)\n\n视图/命令注册及唯一ID。\n\n<details>\n<summary>查看原文（37行）</summary>\n\n```text\n  const registerPanel = (def: ViewDefinition & { region: 'sideBar' }): (() => void) => {\n    if (panels.has(def.id)) throw new Error(`[dock] panel \"${def.id}\" already registered`)\n    panels.set(def.id, def)\n    notify()\n    return () => { if (panels.get(def.id) === def) { panels.delete(def.id); notify() } }\n  }\n\n  const registerEditorView = (def: ViewDefinition): (() => void) => {\n    if (editorViews.has(def.id)) throw new Error(`[dock] editor view \"${def.id}\" already registered`)\n    editorViews.set(def.id, def)\n    notify()\n    return () => { if (editorViews.get(def.id) === def) { editorViews.delete(def.id); notify() } }\n  }\n\n  const registerStatusBarItem = (def: StatusBarItemDefinition): (() => void) => {\n    if (statusItems.has(def.id)) throw new Error(`[dock] status item \"${def.id}\" already registered`)\n    statusItems.set(def.id, def)\n    notify()\n    return () => { if (statusItems.get(def.id) === def) { statusItems.delete(def.id); notify() } }\n  }\n\n  const registerCommand = (def: CommandDefinition): (() => void) => {\n    if (commands.has(def.id)) throw new Error(`[dock] command \"${def.id}\" already registered`)\n    commands.set(def.id, def)\n    notify()\n    return () => { if (commands.get(def.id) === def) { commands.delete(def.id); notify() } }\n  }\n\n  const executeCommand = async (id: string, ...args: unknown[]): Promise<unknown> => {\n    const command = commands.get(id)\n    if (command === undefined) {\n      console.warn(`[dock] unknown command \"${id}\"`)\n      return undefined\n    }\n    return command.run(...args)\n  }\n\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 增量贡献和关闭/恢复边界是什么？\n\n**研究主题：**贡献与相对优势、缺陷与关键质疑\n\n#### 完整回答\n\n贡献是把每个插件重复维护的布局、实例、设置与命令接线抽成workbench服务，并由基座统一持久偏好和浮窗位置；成熟IDE式布局是参照，不能称新布局算法。功能插件仍拥有真实业务I/O和权限，基座没有把它们变成隔离插件。\n\n最关键限制在异步beforeClose只是一次判定，没有实例内容版本绑定。evaluateBeforeClose对Promise resolve后直接执行回调，close再按instanceId移除当前实例，open复用也可在旧确认稍后返回时替换seed；未见拒绝Promise的catch或确认期间内容变动重检。故不能承诺任何异步交互下都不会丢未保存状态，这是一条静态失效假设而非已复现丢失。无hook的视图默认允许，实际保护依赖功能插件正确注册。\n\n布局会保存seed/meta，但保存dirty标志不等保存完整编辑缓冲；设置反注册还保留值以便HMR恢复，停用并不清浏览器数据。相同origin localStorage跨会话共享，不能当跨用户权限隔离。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/client/service.ts:225-243](https://github.com/AKS1st/dock/blob/8535f6e24670931d9e93fb087ab474e38aa01856/src/client/service.ts#L225-L243)\n\n异步gate只等结果，无拒绝/版本重检。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n   * Evaluate the instance's view-defined `beforeClose` gate. No hook → the\n   * gate is trivially allowed; a synchronous `false` cancels; a synchronous\n   * `true`/`undefined` allows; a promise defers the decision to its\n   * resolution (any non-`false` value allows). Shared by `closeViewInstance`\n   * and `openView` so replacing an instance's content (switching files) is\n   * gated exactly like closing it — a dirty editor must confirm before its\n   * content is discarded.\n   */\n  const evaluateBeforeClose = (entry: CloseRequest): BeforeCloseResult => {\n    const beforeClose = editorViews.get(entry.viewId)?.beforeClose\n    if (beforeClose === undefined) return { kind: 'allowed' }\n    const verdict = beforeClose(entry)\n    if (typeof verdict === 'object' && verdict !== null && typeof (verdict as Promise<boolean>).then === 'function') {\n      return {\n        kind: 'pending',\n        then(onAllow) {\n          void (verdict as Promise<boolean>).then((allow) => { if (allow !== false) onAllow() })\n        },\n      }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/client/service.ts:251-266](https://github.com/AKS1st/dock/blob/8535f6e24670931d9e93fb087ab474e38aa01856/src/client/service.ts#L251-L266)\n\n延迟确认后替换浮窗seed。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n      // One floating instance per view (Phase F1; multi-instance lands later).\n      const existingEntry = Object.entries(current.floatingWindows).find(([, win]) => win.viewId === viewId)\n      if (existingEntry !== undefined) {\n        const [instanceId, win] = existingEntry\n        if (seed !== undefined) {\n          // Reusing the window replaces the old content: switching files is\n          // like closing the old one, so a dirty instance must confirm first\n          // (the view's beforeClose gate). A cancelled gate keeps the old\n          // seed — no silent discard — and the open resolves to the existing\n          // window either way.\n          const gate = evaluateBeforeClose(win)\n          if (gate.kind === 'cancelled') return instanceId\n          if (gate.kind === 'pending') {\n            gate.then(() => replaceFloatingSeed(instanceId, seed))\n            return instanceId\n          }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/client/service.ts:338-372](https://github.com/AKS1st/dock/blob/8535f6e24670931d9e93fb087ab474e38aa01856/src/client/service.ts#L338-L372)\n\n延迟允许后按当前instanceId关闭。\n\n<details>\n<summary>查看原文（35行）</summary>\n\n```text\n\n  /**\n   * Close one view instance (tab or floating window). Before touching the\n   * layout the instance's view definition is consulted: a registered\n   * `beforeClose` hook receives `{ viewId, instanceId, seed }` and may\n   * cancel the close by returning `false` (or a promise resolving to\n   * `false`). The call is fire-and-forget — with an async hook the layout\n   * stays open until the verdict resolves, then the close is performed on\n   * approval. Unknown instance ids are a no-op.\n   */\n  const closeViewInstance = (instanceId: string): void => {\n    const current = store.getLayout()\n    // Resolve the instance (tab or floating window) and its view definition.\n    const tab = current.editorTabs.find((entry) => entry.instanceId === instanceId)\n    const win = current.floatingWindows[instanceId]\n    const entry = tab ?? win\n    if (entry === undefined) return\n    const gate = evaluateBeforeClose(entry)\n    if (gate.kind === 'cancelled') return\n    if (gate.kind === 'pending') { gate.then(() => performClose(instanceId)); return }\n    performClose(instanceId)\n  }\n\n  const performClose = (instanceId: string): void => {\n    const current = store.getLayout()\n    const editorTabs = current.editorTabs.filter((tab) => tab.instanceId !== instanceId)\n    let activeEditorTab = current.activeEditorTab\n    if (activeEditorTab === instanceId) {\n      activeEditorTab = editorTabs.length > 0 ? editorTabs[editorTabs.length - 1]!.instanceId : null\n    }\n    const floatingWindows = { ...current.floatingWindows }\n    delete floatingWindows[instanceId]\n    store.update({ editorTabs, activeEditorTab, floatingWindows })\n  }\n\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/client/service.ts:375-378](https://github.com/AKS1st/dock/blob/8535f6e24670931d9e93fb087ab474e38aa01856/src/client/service.ts#L375-L378)\n\nseed/meta持久说明。\n\n```text\n   * unknown ids are a no-op). `patch.meta` is shallow-merged into the\n   * instance's current meta when both are plain objects; other patch fields\n   * replace their seed counterparts wholesale. Persisted with the layout, so\n   * instance-level state (e.g. an editor's dirty flag) survives reloads.\n```\n\n**依据 5 · 源码核查**：[src/client/settings.ts:318-323](https://github.com/AKS1st/dock/blob/8535f6e24670931d9e93fb087ab474e38aa01856/src/client/settings.ts#L318-L323)\n\n反注册保留值。\n\n```text\n      return () => {\n        if (definitions.get(definition.id) !== typed) return\n        definitions.delete(definition.id)\n        // Keep the in-memory and persisted value so re-registration (including\n        // HMR) restores the user's choice instead of silently resetting it.\n        notify()\n```\n\n#### 缺口\n\n- 异步确认中实例内容变化、功能插件实际缓冲持久化与拒绝Promise行为未完成交互验证。\n  **影响：**不能把beforeClose接口称为完整数据无损保证。\n  **进一步探讨：**可用假的异步view，先pending再改seed/dirty并resolve/reject，检查是否错误关闭和有无未处理拒绝。\n- 组合功能插件的文件/Git权限与I/O未在本基座研究中审计。\n  **影响：**基座空Host不能保证扩展后的工作台没有外部副作用。\n  **进一步探讨：**可对每个拟装功能插件固定版本单独研究，并核对它们传入seed的数据类型。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 依赖、三阶段成本和效果怎样判断？\n\n**研究主题：**依赖、兼容与流程、效果与总成本\n\n#### 完整回答\n\n包dock-base0.2.4声明DSH>=0.1.3-alpha.2、Node>=20；React peers虽标可选，Client静态导入React/ReactDOM，渲染实际仍依赖。基座不要求模型，不应把功能插件潜在模型/外部服务费用算成基座固定成本，也不能忽略组合维护。\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| Node>=20、DSH>=0.1.3-alpha.2及Cordis | 基础必需 | Host/Client装载及uiSession | 不能用包能安装推断UI契约匹配 |\n| React/ReactDOM18、浏览器DOM | UI必需 | portal与组件渲染 | peer标optional不等UI无需React |\n| 功能插件注册workbench | 实际业务按需 | 文件/编辑/Git等 | 只装基座是空壳，不提供文件操作 |\n| localStorage | 刷新恢复必需 | 布局/seed/设置和几何 | 配额或禁用时仅本次内存有效 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 准备 | 维护者固定兼容宿主和dock-base | 明确只选真正需要的功能插件 |\n| 加载 | 安装到web profile并重启刷新 | uiSession就绪、workbench先提供再显示 |\n| 扩展 | 功能插件按effect注册并处理beforeClose | 标识唯一、实例上下文与关闭一致 |\n| 退出/恢复 | 停用各注册方和基座，单独处理localStorage | 清理UI不等保存未提交编辑内容 |\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 基座/功能插件与UI资源，金额未知 | 宿主兼容、插件组合和位置设置 | 无强制模型服务 |\n| 持续使用 | React渲染、布局/seed整体本地写入 | 管理视图、设置与上游更新 | 多实例/大seed的性能未测 |\n| 失败恢复 | 布局重置、注册方重载和版本回退 | 判断持久状态与未保存业务数据 | localStorage恢复不等编辑缓冲恢复 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 复用布局 | 统一视图/活动/命令/设置注册接口 | 接入插件实际维护人时 |\n| 连续工作 | 布局与设置可恢复，关闭有可选hook | 多步异步确认下内容保护 |\n| 工作台体验 | 浮窗/停靠和单portal结构 | 与独立面板在任务完成率/干扰上的差异 |\n\n比较应选同一组面板和完整任务，计接入、升级、恢复与人工操作，而不以注册API数判断收益。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:51-77](https://github.com/AKS1st/dock/blob/8535f6e24670931d9e93fb087ab474e38aa01856/package.json#L51-L77)\n\n版本/引擎与optional peer。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\n  \"engines\": {\n    \"node\": \">=20\",\n    \"dsh\": \">=0.1.3-alpha.2\"\n  },\n  \"peerDependencies\": {\n    \"cordis\": \"^4.0.0-rc.7\",\n    \"react\": \"^18.2.0\",\n    \"react-dom\": \"^18.2.0\"\n  },\n  \"peerDependenciesMeta\": {\n    \"react\": {\n      \"optional\": true\n    },\n    \"react-dom\": {\n      \"optional\": true\n    }\n  },\n  \"devDependencies\": {\n    \"@types/node\": \"^22.0.0\",\n    \"@types/react\": \"^18.2.0\",\n    \"@types/react-dom\": \"^18.2.0\",\n    \"cordis\": \"^4.0.0-rc.7\",\n    \"react\": \"^18.3.1\",\n    \"react-dom\": \"^18.3.1\",\n    \"tsdown\": \"^0.22.14\",\n    \"typescript\": \"^6.0.3\"\n  }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/client/index.ts:9-15](https://github.com/AKS1st/dock/blob/8535f6e24670931d9e93fb087ab474e38aa01856/src/client/index.ts#L9-L15)\n\n静态React依赖。\n\n```text\nimport { createRoot, type Root } from 'react-dom/client'\nimport type { WorkbenchContext } from './contract.ts'\nimport { createLayoutStore } from './layout.ts'\nimport { createSettingsStore } from './settings.ts'\nimport { createWorkbenchService } from './service.ts'\nimport { WorkbenchRoot } from './parts.tsx'\nimport { mountStyles } from './styles.ts'\n```\n\n**依据 3 · 源码核查**：[src/client/layout.ts:126-145](https://github.com/AKS1st/dock/blob/8535f6e24670931d9e93fb087ab474e38aa01856/src/client/layout.ts#L126-L145)\n\nlocalStorage恢复/保存失败回退。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\nexport function createLayoutStore(storage?: LayoutStorage): LayoutStore {\n  const backing: LayoutStorage = storage ?? (typeof window !== 'undefined' ? window.localStorage : memoryStorage())\n  const loaded = loadPersisted(backing)\n  if (loaded !== null) {\n    // Persist the normalized (migrated) form so legacy data upgrades once.\n    try { backing.setItem(STORAGE_KEY, JSON.stringify(loaded)) } catch { /* storage unavailable */ }\n  }\n  let layout: WorkbenchLayout = loaded ?? DEFAULT_LAYOUT\n  const listeners = new Set<() => void>()\n\n  return {\n    getLayout: () => layout,\n    update(patch) {\n      layout = { ...layout, ...patch }\n      try {\n        backing.setItem(STORAGE_KEY, JSON.stringify(layout))\n      } catch {\n        // Storage full / unavailable: the layout still applies for this session.\n      }\n      for (const listener of [...listeners]) listener()\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/client/settings.ts:342-359](https://github.com/AKS1st/dock/blob/8535f6e24670931d9e93fb087ab474e38aa01856/src/client/settings.ts#L342-L359)\n\n设置写入验证与持久化。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n    set<T = unknown>(id: string, value: T): void {\n      const definition = definitions.get(id)\n      if (definition === undefined) throw new Error(`[dock] unknown setting \"${id}\"`)\n      const safeValue = cloneJsonSafe(value)\n       const valid = definition.validate(safeValue)\n      \n      const next = valid ? safeValue : cloneJsonSafe(definition.defaultValue)\n      if (Object.is(values.get(id), next)) {\n        if (!valid) {\n          persisted[id] = next\n          persist()\n        }\n        return\n      }\n      values.set(id, next)\n      persisted[id] = next\n      persist()\n      notify()\n```\n\n</details>\n\n#### 缺口\n\n- 没有相同功能面板独立接线与基座方案的实现人时、渲染负担和恢复对照。\n  **影响：**不能量化减少开发/维护成本或更流畅。\n  **进一步探讨：**可固定面板数量、seed大小与任务，分别统计接入/升级人时、布局写频率、峰值内存和恢复完整性。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 哪些工程可复用，版本绑定关闭假设如何证伪？\n\n**研究主题：**工程质量与复用、新假设与验证\n\n#### 完整回答\n\n可复用的是服务先提供、挂载失败也幂等清理、注册ID唯一与反注册、设置输入JSON-safe克隆/validate，以及布局/设置分离。设置排序按order再ID稳定，反注册保留值改善热更新体验。localStorage失败继续内存状态便于降级，但应让读者知道无法跨刷新恢复。\n\n可探讨未验证的“实例版本绑定关闭协议”。每次seed/dirty变化增加版本，beforeClose返回与instanceId/版本绑定的结果，pending期间变化则拒绝旧结果或重新询问，Promise拒绝有可读错误并保持视图；功能方另负责真实缓冲持久化。相比现在延迟回调，目标是关闭决策只作用于读者确认过的内容。代价是状态/Promise生命周期与关闭重入处理。最小夹具包含pending后改内容、重复关闭、注销view及reject，比较错误关闭/悬挂与恢复复杂度；若仍可旧确认关闭新内容应否定当前方案。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/client/index.ts:34-65](https://github.com/AKS1st/dock/blob/8535f6e24670931d9e93fb087ab474e38aa01856/src/client/index.ts#L34-L65)\n\n幂等挂载清理。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\n    let root: Root | undefined\n    let host: HTMLDivElement | undefined\n    let unstyle: (() => void) | undefined\n    let cleaned = false\n    const cleanup = (): void => {\n      if (cleaned) return\n      cleaned = true\n      root?.unmount()\n      root = undefined\n      host?.remove()\n      host = undefined\n      unstyle?.()\n      unstyle = undefined\n      service.dispose()\n    }\n    try {\n      unstyle = mountStyles()\n      host = document.createElement('div')\n      host.setAttribute('data-dock', '')\n      document.body.appendChild(host)\n      root = createRoot(host)\n      root.render(createElement(WorkbenchRoot, { ctx, service, store }))\n      return cleanup\n    } catch (error) {\n      console.error('[dock] mount error:', error)\n      // The effect callback may never be disposed after a failed mount, so\n      // release every resource immediately as well as returning an idempotent\n      // disposer for Cordis.\n      cleanup()\n      return cleanup\n    }\n  }, 'dock: shell mount')\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/client/service.ts:174-210](https://github.com/AKS1st/dock/blob/8535f6e24670931d9e93fb087ab474e38aa01856/src/client/service.ts#L174-L210)\n\n唯一ID及反注册。\n\n<details>\n<summary>查看原文（37行）</summary>\n\n```text\n  const registerPanel = (def: ViewDefinition & { region: 'sideBar' }): (() => void) => {\n    if (panels.has(def.id)) throw new Error(`[dock] panel \"${def.id}\" already registered`)\n    panels.set(def.id, def)\n    notify()\n    return () => { if (panels.get(def.id) === def) { panels.delete(def.id); notify() } }\n  }\n\n  const registerEditorView = (def: ViewDefinition): (() => void) => {\n    if (editorViews.has(def.id)) throw new Error(`[dock] editor view \"${def.id}\" already registered`)\n    editorViews.set(def.id, def)\n    notify()\n    return () => { if (editorViews.get(def.id) === def) { editorViews.delete(def.id); notify() } }\n  }\n\n  const registerStatusBarItem = (def: StatusBarItemDefinition): (() => void) => {\n    if (statusItems.has(def.id)) throw new Error(`[dock] status item \"${def.id}\" already registered`)\n    statusItems.set(def.id, def)\n    notify()\n    return () => { if (statusItems.get(def.id) === def) { statusItems.delete(def.id); notify() } }\n  }\n\n  const registerCommand = (def: CommandDefinition): (() => void) => {\n    if (commands.has(def.id)) throw new Error(`[dock] command \"${def.id}\" already registered`)\n    commands.set(def.id, def)\n    notify()\n    return () => { if (commands.get(def.id) === def) { commands.delete(def.id); notify() } }\n  }\n\n  const executeCommand = async (id: string, ...args: unknown[]): Promise<unknown> => {\n    const command = commands.get(id)\n    if (command === undefined) {\n      console.warn(`[dock] unknown command \"${id}\"`)\n      return undefined\n    }\n    return command.run(...args)\n  }\n\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/client/settings.ts:295-323](https://github.com/AKS1st/dock/blob/8535f6e24670931d9e93fb087ab474e38aa01856/src/client/settings.ts#L295-L323)\n\n注册验证、克隆与HMR值保留。\n\n<details>\n<summary>查看原文（29行）</summary>\n\n```text\n  }\n  const cloneJsonSafe = <T>(value: T): T => {\n    assertJsonSafe(value)\n    return JSON.parse(JSON.stringify(value)) as T\n  }\n  const notify = (): void => { for (const listener of [...listeners]) listener() }\n\n  return {\n    register<T>(definition: SettingDefinition<T>): () => void {\n      if (definitions.has(definition.id)) throw new Error(`[dock] setting \"${definition.id}\" already registered`)\n      const defaultValue = cloneJsonSafe(definition.defaultValue)\n      if (!definition.validate(defaultValue)) throw new Error(`[dock] invalid default value for setting \"${definition.id}\"`)\n      const typed = definition as SettingDefinition<unknown>\n      definitions.set(definition.id, typed)\n      const candidate = persisted[definition.id]\n      const safeCandidate = candidate === undefined ? undefined : cloneJsonSafe(candidate)\n      const value = safeCandidate !== undefined && definition.validate(safeCandidate)\n        ? safeCandidate\n        : cloneJsonSafe(defaultValue)\n      values.set(definition.id, value)\n      persisted[definition.id] = cloneJsonSafe(value)\n      persist()\n      notify()\n      return () => {\n        if (definitions.get(definition.id) !== typed) return\n        definitions.delete(definition.id)\n        // Keep the in-memory and persisted value so re-registration (including\n        // HMR) restores the user's choice instead of silently resetting it.\n        notify()\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/client/settings.ts:335-359](https://github.com/AKS1st/dock/blob/8535f6e24670931d9e93fb087ab474e38aa01856/src/client/settings.ts#L335-L359)\n\n稳定排序/写前验证。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n    getDefinitions(pluginId?: string): readonly SettingDefinition<unknown>[] {\n      // Settings are ordered by `order`, then by id for a deterministic tie-break.\n      return [...definitions.values()].filter((definition) => pluginId === undefined || definition.pluginId === pluginId).sort((left, right) => {\n        const orderDifference = (left.order ?? 100) - (right.order ?? 100)\n        return orderDifference !== 0 ? orderDifference : left.id < right.id ? -1 : left.id > right.id ? 1 : 0\n      })\n    },\n    set<T = unknown>(id: string, value: T): void {\n      const definition = definitions.get(id)\n      if (definition === undefined) throw new Error(`[dock] unknown setting \"${id}\"`)\n      const safeValue = cloneJsonSafe(value)\n       const valid = definition.validate(safeValue)\n      \n      const next = valid ? safeValue : cloneJsonSafe(definition.defaultValue)\n      if (Object.is(values.get(id), next)) {\n        if (!valid) {\n          persisted[id] = next\n          persist()\n        }\n        return\n      }\n      values.set(id, next)\n      persisted[id] = next\n      persist()\n      notify()\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/client/service.ts:225-243](https://github.com/AKS1st/dock/blob/8535f6e24670931d9e93fb087ab474e38aa01856/src/client/service.ts#L225-L243)\n\n假设来自异步gate。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n   * Evaluate the instance's view-defined `beforeClose` gate. No hook → the\n   * gate is trivially allowed; a synchronous `false` cancels; a synchronous\n   * `true`/`undefined` allows; a promise defers the decision to its\n   * resolution (any non-`false` value allows). Shared by `closeViewInstance`\n   * and `openView` so replacing an instance's content (switching files) is\n   * gated exactly like closing it — a dirty editor must confirm before its\n   * content is discarded.\n   */\n  const evaluateBeforeClose = (entry: CloseRequest): BeforeCloseResult => {\n    const beforeClose = editorViews.get(entry.viewId)?.beforeClose\n    if (beforeClose === undefined) return { kind: 'allowed' }\n    const verdict = beforeClose(entry)\n    if (typeof verdict === 'object' && verdict !== null && typeof (verdict as Promise<boolean>).then === 'function') {\n      return {\n        kind: 'pending',\n        then(onAllow) {\n          void (verdict as Promise<boolean>).then((allow) => { if (allow !== false) onAllow() })\n        },\n      }\n```\n\n</details>\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 谁适合试用，什么情况停止？\n\n**研究主题：**采用判断\n\n#### 完整回答\n\n推荐trial，优先服务有多个DSH视图需要统一接线的开发者和明确组合需求的读者。只需一个简单面板时新增基座不一定有净收益。先装基座再按需单独核查功能插件，不沿README批量安装命令将全部组合当必需。\n\n继续探讨可先用无I/O注册view检查生命周期、session上下文与异步关闭，再选择一个可信功能插件。若上下文错位、旧确认关闭新内容、Promise拒绝未可见、停用残留或localStorage错误造成恢复预期落空，应停止扩展并保留原配置。Q02异步边界和Q03成本结果会影响扩大范围，本轮只检查源码。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:1-14](https://github.com/AKS1st/dock/blob/8535f6e24670931d9e93fb087ab474e38aa01856/src/index.ts#L1-L14)\n\n基座功能范围。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n/**\n * Host half of dock — currently an empty shell.\n *\n * The base owns the *window* (client layout shell + registry service); all\n * feature domains (fs / git / terminal / ...) live in feature plugins with\n * their own host routes. Layout persistence happens on the client\n * (localStorage), so the host half has no routes yet.\n */\nexport const name = 'dock-base'\n\n/** No host-side services required yet. */\nexport function apply(): void {\n  // Intentionally empty: all behavior lives in the client half.\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/client/service.ts:225-243](https://github.com/AKS1st/dock/blob/8535f6e24670931d9e93fb087ab474e38aa01856/src/client/service.ts#L225-L243)\n\n异步关闭限制。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n   * Evaluate the instance's view-defined `beforeClose` gate. No hook → the\n   * gate is trivially allowed; a synchronous `false` cancels; a synchronous\n   * `true`/`undefined` allows; a promise defers the decision to its\n   * resolution (any non-`false` value allows). Shared by `closeViewInstance`\n   * and `openView` so replacing an instance's content (switching files) is\n   * gated exactly like closing it — a dirty editor must confirm before its\n   * content is discarded.\n   */\n  const evaluateBeforeClose = (entry: CloseRequest): BeforeCloseResult => {\n    const beforeClose = editorViews.get(entry.viewId)?.beforeClose\n    if (beforeClose === undefined) return { kind: 'allowed' }\n    const verdict = beforeClose(entry)\n    if (typeof verdict === 'object' && verdict !== null && typeof (verdict as Promise<boolean>).then === 'function') {\n      return {\n        kind: 'pending',\n        then(onAllow) {\n          void (verdict as Promise<boolean>).then((allow) => { if (allow !== false) onAllow() })\n        },\n      }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/client/index.ts:18-32](https://github.com/AKS1st/dock/blob/8535f6e24670931d9e93fb087ab474e38aa01856/src/client/index.ts#L18-L32)\n\n活动会话契约与先provide。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n * The shell resolves the active Session from `uiSession`, whose scope adapter\n * is the view owner's selection source; waiting for it keeps every view's\n * sessionId correct on its first render instead of racing boot order.\n */\nexport const inject: string[] = ['uiSession']\n\n/** Client plugin body. */\nexport function apply(ctx: WorkbenchContext): void {\n  // Publish the registry BEFORE the shell mounts so feature plugins\n  // injecting 'workbench' are ready by the time the shell renders.\n  const store = createLayoutStore()\n  const settings = createSettingsStore()\n  const service = createWorkbenchService(store, settings)\n  ctx.provide('workbench', service)\n\n```\n\n</details>\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：3bdaa863442cceb79cf27b16961389ebca0e4b541f955b77c445fc90de1f0203。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 2814 | 2500 | 313 | — |\n| .md | source | 2 | 248 | — | — | 3267 |\n| .tsx | source | 3 | 999 | 823 | 120 | — |\n| .ts | source | 12 | 2437 | 1826 | 472 | — |\n| .ts | test | 2 | 406 | 363 | 9 | — |\n| .mjs | source | 1 | 53 | 38 | 13 | — |\n\n排除 15 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 布局与实例 | 停靠/浮窗/标签 | 不内置文件/Git业务 |\n| 注册服务 | 视图/活动/命令 | ID唯一、各方自己清理 |\n| beforeClose | 功能方阻止关闭 | 可选hook，异步内容版本待核 |\n| 本地恢复 | 布局/seed/设置 | 不等完整编辑缓冲持久化 |\n\n## 工程亮点\n\n可复用的是服务先提供、挂载失败也幂等清理、注册ID唯一与反注册、设置输入JSON-safe克隆/validate，以及布局/设置分离。设置排序按order再ID稳定，反注册保留值改善热更新体验。localStorage失败继续内存状态便于降级，但应让读者知道无法跨刷新恢复。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、src/index.ts、src/client/index.ts、src/client/service.ts、src/client/settings.ts、package.json、src/client/layout.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定空Host、Client提供/挂载、注册服务、layout/settings与beforeClose关键链；未运行UI或审计功能插件。\n- 下一步：进一步探讨可用无I/O异步view夹具检查pending改seed、重复关闭、注销与reject，比较旧确认和恢复完整性。\n",
         "metadata": {
             "repository": "AKS1st/dock",
             "repository_id": 1340492184,
-            "captured_at": "2026-10-21T05:33:42.766Z",
-            "window_start": "2026-09-21T05:33:42.766Z",
+            "captured_at": "2026-10-22T05:32:09.414Z",
+            "window_start": "2026-09-22T05:32:09.414Z",
             "stars": 10,
             "pushed_at": "2026-09-30T03:52:26Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 2,
+                "closed": 0,
+                "created_30d": 1,
+                "closed_30d": 0,
+                "updated_30d": 1
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DE1E:105D00:506489:566CB4:6AD84EB8 and timestamp 2026-10-21 05:33:44 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DF0E:103F14:505778:566258:6AD84EB9 and timestamp 2026-10-21 05:33:45 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock%20is%3Aissue%20created%3A2026-09-21T05%3A33%3A42.766Z..2026-10-21T05%3A33%3A42.766Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E020:4DAEE:50AA8C:56B688:6AD84EB9 and timestamp 2026-10-21 05:33:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A33%3A42.766Z..2026-10-21T05%3A33%3A42.766Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E112:27CB2C:55385E:5B42F3:6AD84EBA and timestamp 2026-10-21 05:33:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock%20is%3Aissue%20updated%3A2026-09-21T05%3A33%3A42.766Z..2026-10-21T05%3A33%3A42.766Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E254:4C3CE:516A4A:577820:6AD84EBB and timestamp 2026-10-21 05:33:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "dock-base",
-                "captured_at": "2026-10-21T05:33:48.134Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T05:32:18.291Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": 1532,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dock-base",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dock-base",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-08-25T06:42:32.569Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T05:32:18.291Z",
                     "source_url": "https://registry.npmjs.org/dock-base",
                     "error": null,
                     "latest_version": "0.2.4",
@@ -436,14 +468,14 @@
             "repository": "AKS1st/dock",
             "path": "",
             "revision": "8535f6e24670931d9e93fb087ab474e38aa01856",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "ab4faf55bad0b1e72d0a6bacd3b68154dd669ebfbaca83794358d732ed2bf154",
                 "code": "8535f6e24670931d9e93fb087ab474e38aa01856",
                 "maintenance": "bb1d6194e9367dcf3e971ff15f574dceaa46ff9ef310c9a7ccb7957231d00d25"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

@@ -389,14 +389,14 @@
             "repository": "173787247/dsh-wsl-terraform",
             "path": "",
             "revision": "549e4b82570a4a13ab900ac03c5593421a8c16e4",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "3b5cd5b40001f266d1ada6483a7318fddc5f648dba1e924f247e0bf372ca6538",
                 "code": "549e4b82570a4a13ab900ac03c5593421a8c16e4",
                 "maintenance": "05e49145da1b5a19583827a7f7df8efd60beb8ec0e67a407220bfa31557aa15a"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

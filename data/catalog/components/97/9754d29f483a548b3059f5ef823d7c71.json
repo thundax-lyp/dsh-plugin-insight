@@ -352,14 +352,14 @@
             "repository": "11111353535/dsh-which",
             "path": "",
             "revision": "7894da833582b46526b251348cd8993b70a5ce85",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "a29e45d95c451bbf016295148a78be78be9dcee387e4fe1e6403eeea2ad114ce",
                 "code": "7894da833582b46526b251348cd8993b70a5ce85",
                 "maintenance": "6d173e5198b04e94b82076911a25c232b885619114035778e3b32fc75a2077bc"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

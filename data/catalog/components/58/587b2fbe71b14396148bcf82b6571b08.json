@@ -24,36 +24,112 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-03-github-1335988605-root-directory-0",
+                    "id": "2026-10-22-02-github-1335988605-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T03:48:27.848Z",
+                    "retrieved_at": "2026-10-22T06:34:59.911Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-03-github-1335988605-root-author",
+                    "id": "2026-10-22-02-github-1335988605-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/82c86b8z86-stack/dsh-engineering-workflow/blob/3e251eb78002625bcc238a42d9926d87c3a38bfe/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/82c86b8z86-stack/dsh-engineering-workflow",
+                            "commit": "3e251eb78002625bcc238a42d9926d87c3a38bfe",
+                            "path": "README.md",
+                            "content_sha256": "9c4c36ef05de342565e8f7cc06f441bdbad264e304ad480cd7dc651f9c0a024a"
+                        }
+                    ],
                     "revision": "3e251eb78002625bcc238a42d9926d87c3a38bfe",
-                    "captured_at": "2026-10-21T03:48:27.848Z",
-                    "summary": "为 DSH 安装工程工作流预设及六个 Skill，覆盖需求、计划、TDD、子代理和验证。",
-                    "artifact": "data/runs/2026-10-21-03/snapshots/82c86b8z86-stack--dsh-engineering-workflow/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T06:34:59.911Z",
+                    "summary": "可选工程 preset 与六个方法 Skill，以五阶段文字门禁引导 DSH Agent；Host 自动同步本地预设并公告。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/82c86b8z86-stack--dsh-engineering-workflow/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-03-github-1335988605-root-source",
+                    "id": "2026-10-22-02-github-1335988605-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/82c86b8z86-stack/dsh-engineering-workflow/blob/3e251eb78002625bcc238a42d9926d87c3a38bfe/lib/index.js",
+                    "url": "https://github.com/82c86b8z86-stack/dsh-engineering-workflow/blob/3e251eb78002625bcc238a42d9926d87c3a38bfe/README.zh.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/82c86b8z86-stack/dsh-engineering-workflow",
+                            "commit": "3e251eb78002625bcc238a42d9926d87c3a38bfe",
+                            "path": "README.zh.md",
+                            "content_sha256": "b96d9172faa365e8ebe1b8ec4f64e382bd1040503109960d450c779152ddc815"
+                        },
+                        {
+                            "repository_url": "https://github.com/82c86b8z86-stack/dsh-engineering-workflow",
+                            "commit": "3e251eb78002625bcc238a42d9926d87c3a38bfe",
+                            "path": "package.json",
+                            "content_sha256": "a84fbfcf88d9cc5af8eec3e020580db1e00eb3bea944c94d3870b0f07c3fe34a"
+                        },
+                        {
+                            "repository_url": "https://github.com/82c86b8z86-stack/dsh-engineering-workflow",
+                            "commit": "3e251eb78002625bcc238a42d9926d87c3a38bfe",
+                            "path": "lib/index.js",
+                            "content_sha256": "bcf2f1224014c045f671452cd67a204c81591277be9753c80185caf60ed37c3d"
+                        },
+                        {
+                            "repository_url": "https://github.com/82c86b8z86-stack/dsh-engineering-workflow",
+                            "commit": "3e251eb78002625bcc238a42d9926d87c3a38bfe",
+                            "path": "presets/engineering-workflow/preset.yml",
+                            "content_sha256": "a261da67e23dfd59d6c5849856366d311de80dc60e6940a4b8de69d92b5f83cb"
+                        },
+                        {
+                            "repository_url": "https://github.com/82c86b8z86-stack/dsh-engineering-workflow",
+                            "commit": "3e251eb78002625bcc238a42d9926d87c3a38bfe",
+                            "path": "presets/engineering-workflow/agent.cordis.yml",
+                            "content_sha256": "86ed241cbaa2477fa45578905d0919b7649b83c3e1877fe47e858816b54f4fed"
+                        },
+                        {
+                            "repository_url": "https://github.com/82c86b8z86-stack/dsh-engineering-workflow",
+                            "commit": "3e251eb78002625bcc238a42d9926d87c3a38bfe",
+                            "path": "presets/engineering-workflow/skills/engineering-workflow/SKILL.md",
+                            "content_sha256": "026d96b58780d94301d54a863868f43f05be39fd24530f5a2ca462775f1708cd"
+                        },
+                        {
+                            "repository_url": "https://github.com/82c86b8z86-stack/dsh-engineering-workflow",
+                            "commit": "3e251eb78002625bcc238a42d9926d87c3a38bfe",
+                            "path": "presets/engineering-workflow/skills/workflow-requirements/SKILL.md",
+                            "content_sha256": "7cc03416396cf9b49322ecad3c1959370bb7c68dfd97ad4f4811d8c431265ff2"
+                        },
+                        {
+                            "repository_url": "https://github.com/82c86b8z86-stack/dsh-engineering-workflow",
+                            "commit": "3e251eb78002625bcc238a42d9926d87c3a38bfe",
+                            "path": "presets/engineering-workflow/skills/workflow-planning/SKILL.md",
+                            "content_sha256": "e7ea3bc33df9083ddfa220558c0da4140f35abf0a5c5faa0ac509dd28dda4f6e"
+                        },
+                        {
+                            "repository_url": "https://github.com/82c86b8z86-stack/dsh-engineering-workflow",
+                            "commit": "3e251eb78002625bcc238a42d9926d87c3a38bfe",
+                            "path": "presets/engineering-workflow/skills/workflow-tdd/SKILL.md",
+                            "content_sha256": "0575ccf3bfb3546b06c50587f562c5885d71624ca0fbe40e6a4cd6cb97d12221"
+                        },
+                        {
+                            "repository_url": "https://github.com/82c86b8z86-stack/dsh-engineering-workflow",
+                            "commit": "3e251eb78002625bcc238a42d9926d87c3a38bfe",
+                            "path": "presets/engineering-workflow/skills/workflow-subagents/SKILL.md",
+                            "content_sha256": "d240b65c8584547fbae79fc6bbc8332ef53cecfe828e18268c83bef040dac3c3"
+                        },
+                        {
+                            "repository_url": "https://github.com/82c86b8z86-stack/dsh-engineering-workflow",
+                            "commit": "3e251eb78002625bcc238a42d9926d87c3a38bfe",
+                            "path": "presets/engineering-workflow/skills/workflow-verification/SKILL.md",
+                            "content_sha256": "2b0e682caf9ddacd07e27a0e15b167ba81195c70178c8fda8576408483d5d0df"
+                        }
+                    ],
                     "revision": "3e251eb78002625bcc238a42d9926d87c3a38bfe",
-                    "captured_at": "2026-10-21T03:48:27.848Z",
-                    "summary": "核查 lib/index.js、presets/engineering-workflow/agent.cordis.yml、presets/engineering-workflow/skills/engineering-workflow/SKILL.md、presets/engineering-workflow/skills/workflow-tdd/SKILL.md、presets/engineering-workflow/skills/workflow-verification/SKILL.md、presets/engineering-workflow/NOTICE、package.json；lib/index.js启动时逐字节同步presets到DSH_HOME/.agent-presets并清理同名目录多余文件，注册工作流公告；agent.cordis组合宿主工具与filesystem skills，方法规则保存在六个Skill。",
-                    "artifact": "data/runs/2026-10-21-03/snapshots/82c86b8z86-stack--dsh-engineering-workflow/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T06:34:59.911Z",
+                    "summary": "核查 README.zh.md、package.json、lib/index.js、presets/engineering-workflow/preset.yml、presets/engineering-workflow/agent.cordis.yml、presets/engineering-workflow/skills/engineering-workflow/SKILL.md、presets/engineering-workflow/skills/workflow-requirements/SKILL.md、presets/engineering-workflow/skills/workflow-planning/SKILL.md、presets/engineering-workflow/skills/workflow-tdd/SKILL.md、presets/engineering-workflow/skills/workflow-subagents/SKILL.md、presets/engineering-workflow/skills/workflow-verification/SKILL.md；Host 将包内 preset/skills 逐字节同步到 DSH_HOME/.agent-presets 并注册 systemPrompt 公告；新建会话选择 preset 后加载组合。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/82c86b8z86-stack--dsh-engineering-workflow/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "抽读host同步、preset组合与总纲/阶段Skill；未执行同步、开发流程或目标测试，不把工具齐全当阶段保证。",
+                        "固定源码核查 Host、preset 与全部六个 Skill；这些文本仅作研究材料，未套用其指令或执行目标。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +140,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "希望在新开发会话采用统一工程纪律的团队，选择预设并按阶段Skill组织任务，交付设计、计划、测试和核验记录。",
+                    "text": "团队希望对复杂工程任务进行需求、计划、TDD、委派与验收约束。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1335988605-root-source"
+                        "2026-10-22-02-github-1335988605-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +151,16 @@
                             "fingerprint": "3e251eb78002625bcc238a42d9926d87c3a38bfe"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:48:27.848Z",
+                    "reviewed_at": "2026-10-22T06:34:59.911Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "lib/index.js启动时逐字节同步presets到DSH_HOME/.agent-presets并清理同名目录多余文件，注册工作流公告；agent.cordis组合宿主工具与filesystem skills，方法规则保存在六个Skill。",
+                    "text": "Host 将包内 preset/skills 逐字节同步到 DSH_HOME/.agent-presets 并注册 systemPrompt 公告；新建会话选择 preset 后加载组合。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1335988605-root-source"
+                        "2026-10-22-02-github-1335988605-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +169,16 @@
                             "fingerprint": "3e251eb78002625bcc238a42d9926d87c3a38bfe"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:48:27.848Z",
+                    "reviewed_at": "2026-10-22T06:34:59.911Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "抽读host同步、preset组合与总纲/阶段Skill；未执行同步、开发流程或目标测试，不把工具齐全当阶段保证。",
+                    "text": "固定源码核查 Host、preset 与全部六个 Skill；这些文本仅作研究材料，未套用其指令或执行目标。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1335988605-root-source"
+                        "2026-10-22-02-github-1335988605-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +187,16 @@
                             "fingerprint": "3e251eb78002625bcc238a42d9926d87c3a38bfe"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:48:27.848Z",
+                    "reviewed_at": "2026-10-22T06:34:59.911Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "host bundle无client，自同步同名preset；只有新会话用户选择才采用，已有/默认预设不自动切换；依赖宿主工具与schemastery。",
+                    "text": "MIT，方法与 composition 改编归属按包内 NOTICE/README；未核所有上游授权文本。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1335988605-root-source"
+                        "2026-10-22-02-github-1335988605-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +205,16 @@
                             "fingerprint": "3e251eb78002625bcc238a42d9926d87c3a38bfe"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:48:27.848Z",
+                    "reviewed_at": "2026-10-22T06:34:59.911Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "首次检查preset版本和工具可用性，迁移本地定制；持续承担多阶段批准、TDD、子代理审查与重新验证，模型调用和人工时间未测。",
+                    "text": "#### 成本\n\n| 阶段 | 已知投入 | 尚未知 |\n| --- | --- | --- |\n| 首次使用 | 备份同名 preset、核宿主工具与技能契约 | 兼容与配置工时 |\n| 持续使用 | 需求/计划批准、测试循环、子代理双审、简报/报告/账本 | 模型费用、等待与质量收益 |\n| 失败恢复 | 从账本/Git重建任务，恢复被同步覆盖的个人预设 | 重做与恢复时间，原件无备份时可能不可恢复 |",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1335988605-root-source"
+                        "2026-10-22-02-github-1335988605-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +223,16 @@
                             "fingerprint": "3e251eb78002625bcc238a42d9926d87c3a38bfe"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:48:27.848Z",
+                    "reviewed_at": "2026-10-22T06:34:59.911Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "对流程一致性有需求的团队先用非关键新会话试；备份同名预设定制，明确哪些步骤由宿主强制、哪些靠Skill遵循，再按任务复杂度使用。",
+                    "text": "备份 DSH_HOME/.agent-presets/engineering-workflow，再在新会话选择 preset 做对照试验；详见[Q02](#research-q02)、[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1335988605-root-source"
+                        "2026-10-22-02-github-1335988605-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +241,16 @@
                             "fingerprint": "3e251eb78002625bcc238a42d9926d87c3a38bfe"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:48:27.848Z",
+                    "reviewed_at": "2026-10-22T06:34:59.911Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "减少重复编写方法和阶段交接遗漏；不能由安装成功推导测试质量、代码可靠性或交付提速。",
+                    "text": "#### 效果\n\n| 项 | 源码支持 | 未知 |\n| --- | --- | --- |\n| 五阶段指引 | 六个 Skill 文本 | 模型遵循度 |\n| 自动安装 | 逐字节同步 | 自改覆写 |\n| 公告 | systemPrompt section | 默认会话干扰 |",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1335988605-root-source"
+                        "2026-10-22-02-github-1335988605-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +259,16 @@
                             "fingerprint": "3e251eb78002625bcc238a42d9926d87c3a38bfe"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:48:27.848Z",
+                    "reviewed_at": "2026-10-22T06:34:59.911Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "字节比较使同步可核对、preset自带skills路径与方法来源归属清楚；prune镜像同步有明确所有权代价，应为用户改动提供overlay/冲突处理。",
+                    "text": "宿主同步目录并加提示段；preset 指定工具组合和六个显式技能，硬门禁由文本驱动。 全部技能分工与矛盾见[Q04](#research-q04)，有界修复与新鲜证据的成本见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1335988605-root-source"
+                        "2026-10-22-02-github-1335988605-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +277,16 @@
                             "fingerprint": "3e251eb78002625bcc238a42d9926d87c3a38bfe"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:48:27.848Z",
+                    "reviewed_at": "2026-10-22T06:34:59.911Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
-                    "topic": "technical_innovation",
-                    "basis": "interpretation",
-                    "text": "相对每次手贴工程提示，贡献是将superpowers方法改写为DSH原生工具映射，随预设分发并同步六个Skill。README明确承认方法来自obra/superpowers、工具组合来自DSH cordis、同步模式来自dsh-liangshen；增量是DSH五阶段路由与打包协作，非全新开发方法。",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "打包五阶段工程方法与 DSH preset/Skill 工具组合，减少手工配置。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1335988605-root-source"
+                        "2026-10-22-02-github-1335988605-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +295,16 @@
                             "fingerprint": "3e251eb78002625bcc238a42d9926d87c3a38bfe"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:48:27.848Z",
+                    "reviewed_at": "2026-10-22T06:34:59.911Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
-                    "basis": "interpretation",
-                    "text": "“五阶段硬门禁”由什么强制？host只同步与公告，不监控测试先后或批准证据；Skill纪律依赖模型遵循，plan模式的宿主门禁只覆盖相应入口。syncOnePreset在源不同或有多余文件时prune/copy，会覆盖同名预设里的用户定制并删额外文件，自动更新不是无损合并。",
+                    "basis": "supported",
+                    "text": "自动同步同名 preset 目录时无备份覆写用户改动/删除附加文件；默认公告影响未选 preset 的新会话。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1335988605-root-source"
+                        "2026-10-22-02-github-1335988605-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +313,16 @@
                             "fingerprint": "3e251eb78002625bcc238a42d9926d87c3a38bfe"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:48:27.848Z",
+                    "reviewed_at": "2026-10-22T06:34:59.911Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "unverified",
-                    "text": "待验证假设：把每阶段产物/批准/测试输出变成可验证清单，并在同步预设时保留本地overlay与冲突报告，可同时提高流程可检查性和升级可维护性。由提示式门禁及镜像覆盖推导，未实现。用跳过RED、伪造测试声明、用户加本地Skill再升级三类对照，测漏检、误拦和定制保留；不能为了统一流程强制给低影响修改制造测试。",
+                    "text": "加入版本化/备份合并与轻量低风险路径、按选中 preset 公告，可降低采用摩擦；待验证。详见[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1335988605-root-source"
+                        "2026-10-22-02-github-1335988605-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +331,15 @@
                             "fingerprint": "3e251eb78002625bcc238a42d9926d87c3a38bfe"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:48:27.848Z",
+                    "reviewed_at": "2026-10-22T06:34:59.911Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T03:48:27.848Z",
+            "last_checked_at": "2026-10-22T06:34:59.911Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "3e251eb78002625bcc238a42d9926d87c3a38bfe",
-                "reviewed_at": "2026-10-21T03:48:27.848Z",
+                "reviewed_at": "2026-10-22T06:34:59.911Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -275,61 +351,61 @@
                 "technical": {
                     "criteria": {
                         "novelty": 9,
-                        "mechanism": 8,
+                        "mechanism": 15,
                         "transferability": 10,
-                        "simplification": 8
+                        "simplification": 4
                     },
-                    "rationale": "novelty 小幅：已有方法与预设同步适配；mechanism 小幅：提示Skill而非新强制引擎；transferability 实质：工具映射和阶段资源可借鉴；simplification 实质：一次安装带完整方法资料。",
+                    "rationale": "preset/Skill 与同步集成可迁移，但门禁为文字约束，覆写策略有缺口。",
                     "basis": "interpretation",
-                    "score": 35,
+                    "score": 38,
                     "evidence_ids": [
-                        "2026-10-21-03-github-1335988605-root-source"
+                        "2026-10-22-02-github-1335988605-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
                         "workflow": 18,
                         "delivery": 15,
-                        "reach": 5,
-                        "economics": 4
+                        "reach": 10,
+                        "economics": 0
                     },
-                    "rationale": "workflow 实质：五阶段交接与子任务审查；delivery 实质：设计/计划/账本/验证材料；reach 小幅：预设易选但需工程习惯；economics 小幅：可能少返工，流程负担未测。",
+                    "rationale": "严谨工程任务可用，轻量任务成本和实证收益未知。",
                     "basis": "interpretation",
-                    "score": 42,
+                    "score": 43,
                     "evidence_ids": [
-                        "2026-10-21-03-github-1335988605-root-source"
+                        "2026-10-22-02-github-1335988605-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "重视流程一致性的团队可用新非关键会话试预设；先备份同名定制，五阶段纪律由Skill遵循，不能当测试批准硬门禁。",
+                "reason": "备份同名 preset 后在新会话隔离试用，记录等待成本和质量；避免用户自改被覆盖。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "统一设计计划测试核验交接需求具体。"
+                        "rationale": "复杂工程审查场景明确。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "分发六Skill及原生工具映射省重复手贴，方法来自已有上游。"
+                        "rationale": "统一多阶段方法与工具组合。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "同步prune/copy和公告源码可见，会覆盖删除用户同名定制。"
+                        "rationale": "结构/同步源码可核，实效未独立测。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "多阶段批准审查调用和预设迁移需成本，复杂任务才可能摊平。"
+                        "score": 5,
+                        "rationale": "批准、TDD、账本与同步冲突成本。"
                     }
                 },
-                "score": 59,
+                "score": 54,
                 "revision": "3e251eb78002625bcc238a42d9926d87c3a38bfe",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T06:34:59.911Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-03-github-1335988605-root-source"
+                    "2026-10-22-02-github-1335988605-root-source"
                 ],
                 "dependencies": [
                     {
@@ -354,105 +430,58 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T03:36:14Z",
-            "analysis_sha256": "273716527ef0252b4a8f9a405cdd4d0f8674cce90c86c3ad45e43f23d62656c9"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "f8055b313411517ae8ac7fe07d1df8bfa4ae9448a19b68e4ccdb71761cf2752d"
         },
         "publication.metadata": "data/plugins/82c86b8z86-stack--dsh-engineering-workflow/META.json",
         "publication.summaries": {
-            "text": "为 DSH 安装工程工作流预设及六个 Skill，覆盖需求、计划、TDD、子代理和验证。",
+            "text": "可选工程 preset 与六个方法 Skill，以五阶段文字门禁引导 DSH Agent；Host 自动同步本地预设并公告。",
             "revision": "3e251eb78002625bcc238a42d9926d87c3a38bfe",
             "source_url": "https://github.com/82c86b8z86-stack/dsh-engineering-workflow/blob/3e251eb78002625bcc238a42d9926d87c3a38bfe/README.md"
         },
         "publication.capabilities": {
             "revision": "3e251eb78002625bcc238a42d9926d87c3a38bfe",
             "items": {
-                "Skill": "总纲及需求/计划/TDD/子代理/验证六个Skill。",
-                "Agent/Preset": "engineering-workflow工程预设与宿主工具组合。",
-                "后台": "预设字节同步和工作流公告。"
-            }
+                "Agent/Preset": "工程工作流组合",
+                "Skill": "总纲与五阶段技能"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| preset/Skill | 纪律工程流程 | 文字约束 |\n| 自动同步 | 更新安装 | 覆写自改 |\n| 公告 | 提醒新会话 | 默认会话也可能收到 |"
         },
         "publication.advice": {
             "revision": "3e251eb78002625bcc238a42d9926d87c3a38bfe",
-            "text": "对流程一致性有需求的团队先用非关键新会话试；备份同名预设定制，明确哪些步骤由宿主强制、哪些靠Skill遵循，再按任务复杂度使用。"
+            "text": "备份 DSH_HOME/.agent-presets/engineering-workflow，再在新会话选择 preset 做对照试验；详见[Q02](#research-q02)、[Q03](#research-q03)。"
         },
         "registry": "data/plugins/82c86b8z86-stack--dsh-engineering-workflow",
-        "reports": "# dsh-engineering-workflow\n\n> 为 DSH 安装工程工作流预设及六个 Skill，覆盖需求、计划、TDD、子代理和验证。\n\n## 使用建议\n\n对流程一致性有需求的团队先用非关键新会话试；备份同名预设定制，明确哪些步骤由宿主强制、哪些靠Skill遵循，再按任务复杂度使用。\n\n**核查状态**：已抽读固定版本源码，未安装、运行目标插件或真实宿主验收。源码确认预设/Skill分发与同步；未执行同步或真实开发任务，README硬门禁不等于插件独立执行前强制拦截。未来流程证据检查是假设。\n\n- **用途**：希望在新开发会话采用统一工程纪律的团队，选择预设并按阶段Skill组织任务，交付设计、计划、测试和核验记录。\n- **亮点**：相对每次手贴工程提示，贡献是将superpowers方法改写为DSH原生工具映射，随预设分发并同步六个Skill。README明确承认方法来自obra/superpowers、工具组合来自DSH cordis、同步模式来自dsh-liangshen；增量是DSH五阶段路由与打包协作，非全新开发方法。\n- **思考**：“五阶段硬门禁”由什么强制？host只同步与公告，不监控测试先后或批准证据；Skill纪律依赖模型遵循，plan模式的宿主门禁只覆盖相应入口。syncOnePreset在源不同或有多余文件时prune/copy，会覆盖同名预设里的用户定制并删额外文件，自动更新不是无损合并。\n- **建议**：待验证假设：把每阶段产物/批准/测试输出变成可验证清单，并在同步预设时保留本地overlay与冲突报告，可同时提高流程可检查性和升级可维护性。由提示式门禁及镜像覆盖推导，未实现。用跳过RED、伪造测试声明、用户加本地Skill再升级三类对照，测漏检、误拦和定制保留；不能为了统一流程强制给低影响修改制造测试。\n\n## 当前插件分析\n\n### 场景与替代办法\n\n希望在新开发会话采用统一工程纪律的团队，选择预设并按阶段Skill组织任务，交付设计、计划、测试和核验记录。\n\n参照superpowers方法、DSH cordis预设及dsh-liangshen同步模式；不对上游当前版本或项目效果作测量比较。\n\n### 能力、流程与依赖\n\nlib/index.js启动时逐字节同步presets到DSH_HOME/.agent-presets并清理同名目录多余文件，注册工作流公告；agent.cordis组合宿主工具与filesystem skills，方法规则保存在六个Skill。\n\n- **Skill**：总纲及需求/计划/TDD/子代理/验证六个Skill。\n- **Agent/Preset**：engineering-workflow工程预设与宿主工具组合。\n- **后台**：预设字节同步和工作流公告。\n\nDSH preset发现、systemPrompt、skills与预设内各工具（shell/plan/subagent/workflow等）；工具名和批准行为版本敏感。\n\nhost启动同步→新会话选工程预设→总纲路由→需求/计划批准→TDD/子任务→核验与分支收尾；Skill规则不自动生成真实验证证据。\n\nhost bundle无client，自同步同名preset；只有新会话用户选择才采用，已有/默认预设不自动切换；依赖宿主工具与schemastery。\n\n### 效果、成本与限制\n\n减少重复编写方法和阶段交接遗漏；不能由安装成功推导测试质量、代码可靠性或交付提速。\n\n首次检查preset版本和工具可用性，迁移本地定制；持续承担多阶段批准、TDD、子代理审查与重新验证，模型调用和人工时间未测。\n\n“五阶段硬门禁”由什么强制？host只同步与公告，不监控测试先后或批准证据；Skill纪律依赖模型遵循，plan模式的宿主门禁只覆盖相应入口。syncOnePreset在源不同或有多余文件时prune/copy，会覆盖同名预设里的用户定制并删额外文件，自动更新不是无损合并。\n\n### 核心贡献与工程亮点\n\n相对每次手贴工程提示，贡献是将superpowers方法改写为DSH原生工具映射，随预设分发并同步六个Skill。README明确承认方法来自obra/superpowers、工具组合来自DSH cordis、同步模式来自dsh-liangshen；增量是DSH五阶段路由与打包协作，非全新开发方法。\n\n字节比较使同步可核对、preset自带skills路径与方法来源归属清楚；prune镜像同步有明确所有权代价，应为用户改动提供overlay/冲突处理。\n\n源码依据：[lib/index.js](https://github.com/82c86b8z86-stack/dsh-engineering-workflow/blob/3e251eb78002625bcc238a42d9926d87c3a38bfe/lib/index.js)、[presets/engineering-workflow/agent.cordis.yml](https://github.com/82c86b8z86-stack/dsh-engineering-workflow/blob/3e251eb78002625bcc238a42d9926d87c3a38bfe/presets/engineering-workflow/agent.cordis.yml)、[presets/engineering-workflow/skills/engineering-workflow/SKILL.md](https://github.com/82c86b8z86-stack/dsh-engineering-workflow/blob/3e251eb78002625bcc238a42d9926d87c3a38bfe/presets/engineering-workflow/skills/engineering-workflow/SKILL.md)、[presets/engineering-workflow/skills/workflow-tdd/SKILL.md](https://github.com/82c86b8z86-stack/dsh-engineering-workflow/blob/3e251eb78002625bcc238a42d9926d87c3a38bfe/presets/engineering-workflow/skills/workflow-tdd/SKILL.md)、[presets/engineering-workflow/skills/workflow-verification/SKILL.md](https://github.com/82c86b8z86-stack/dsh-engineering-workflow/blob/3e251eb78002625bcc238a42d9926d87c3a38bfe/presets/engineering-workflow/skills/workflow-verification/SKILL.md)、[presets/engineering-workflow/NOTICE](https://github.com/82c86b8z86-stack/dsh-engineering-workflow/blob/3e251eb78002625bcc238a42d9926d87c3a38bfe/presets/engineering-workflow/NOTICE)、[package.json](https://github.com/82c86b8z86-stack/dsh-engineering-workflow/blob/3e251eb78002625bcc238a42d9926d87c3a38bfe/package.json)。\n\n## 未来设计假设（未验证）\n\n待验证假设：把每阶段产物/批准/测试输出变成可验证清单，并在同步预设时保留本地overlay与冲突报告，可同时提高流程可检查性和升级可维护性。由提示式门禁及镜像覆盖推导，未实现。用跳过RED、伪造测试声明、用户加本地Skill再升级三类对照，测漏检、误拦和定制保留；不能为了统一流程强制给低影响修改制造测试。\n\n隔离DSH_HOME验证同步覆盖/失败、工具目录、阶段跳过和实际批准/RED证据；用独立任务对照流程负担，本轮未执行。\n\n## 核查说明\n\n- 版本号：0.1.1；版本日期：2026-08-17（固定提交日期，北京时间；不是包发布日期）。\n- 固定版本：[3e251eb7](https://github.com/82c86b8z86-stack/dsh-engineering-workflow/tree/3e251eb78002625bcc238a42d9926d87c3a38bfe)；本次截止 2026-10-21T03:36:14Z。\n- 已检查：README、package与以上源码路径及固定组件统计。\n- 未执行：目标代码、目标测试、安装、真实宿主或第三方服务验证。\n- 范围限制：抽读host同步、preset组合与总纲/阶段Skill；未执行同步、开发流程或目标测试，不把工具齐全当阶段保证。\n- 证据边界：源码与作者说明不等于独立效果验证；GitHub/npm指标不证明采用或收益。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：07ee1a984953098b088afd8af526bf1c6e658e5c46f084a0deeadadfe9ef6246。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 9 | 807 | — | — | 10378 |\n| .js | source | 1 | 254 | 172 | 67 | — |\n| .mjs | source | 3 | 198 | 138 | 50 | — |\n| .mjs | test | 1 | 126 | 112 | 5 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n",
+        "reports": "# dsh-engineering-workflow\n\n> 可选工程 preset 与六个方法 Skill，以五阶段文字门禁引导 DSH Agent；Host 自动同步本地预设并公告。\n\n## 研究范围\n\n- **仓库**：[82c86b8z86-stack/dsh-engineering-workflow](https://github.com/82c86b8z86-stack/dsh-engineering-workflow)\n- **版本号**：0.1.1（[固定提交 3e251eb78002625bcc238a42d9926d87c3a38bfe](https://github.com/82c86b8z86-stack/dsh-engineering-workflow/tree/3e251eb78002625bcc238a42d9926d87c3a38bfe)）\n- **版本日期**：2026-08-17（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\npreset 与 Skill 结构可核；自动同步会覆盖同名自改并删除额外文件，文字门禁不等于执行强制；实际质量/效率未验。\n\n## 洞察短评\n\n- **用途**：团队希望对复杂工程任务进行需求、计划、TDD、委派与验收约束。\n- **亮点**：打包五阶段工程方法与 DSH preset/Skill 工具组合，减少手工配置。详见[Q01](#research-q01)。\n- **思考**：自动同步同名 preset 目录时无备份覆写用户改动/删除附加文件；默认公告影响未选 preset 的新会话。详见[Q02](#research-q02)。\n- **建议**：加入版本化/备份合并与轻量低风险路径、按选中 preset 公告，可降低采用摩擦；待验证。详见[Q03](#research-q03)。\n\n采用建议：备份 DSH_HOME/.agent-presets/engineering-workflow，再在新会话选择 preset 做对照试验；详见[Q02](#research-q02)、[Q03](#research-q03)。\n\n## 核心贡献\n\n打包五阶段工程方法与 DSH preset/Skill 工具组合，减少手工配置。详见[Q01](#research-q01)。\n\n## 关键质疑\n\n自动同步同名 preset 目录时无备份覆写用户改动/删除附加文件；默认公告影响未选 preset 的新会话。详见[Q02](#research-q02)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n加入版本化/备份合并与轻量低风险路径、按选中 preset 公告，可降低采用摩擦；待验证。详见[Q03](#research-q03)。\n\n隔离 DSH_HOME 同步自改/新增文件，比较默认/选中 preset 提示与同类工程任务耗时/质量。\n\n## 场景与替代办法\n\n团队希望对复杂工程任务进行需求、计划、TDD、委派与验收约束。\n\nDSH 内置 preset 与按需独立 Skill；本包强推五阶段纪律流程。\n\n## 依赖与流程\n\n#### 条件\n\n| 条件 | 用途 | 缺失时 |\n| --- | --- | --- |\n| DSH preset/skill 发现 | 新会话装载 | 不可用 |\n| 目标工具 | plan/subagent/TDD | 阶段无法照做 |\n| 同名目录备份 | 用户自改恢复 | 可能丢失 |\n\n#### 试用\n\n| 步骤 | 动作 | 判据 |\n| --- | --- | --- |\n| 备份 | 同名 preset 目录 | 可恢复 |\n| 对照 | 选/不选 preset | 提示边界清楚 |\n| 量测 | 完成任务 | 质量收益抵消等待 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 已知投入 | 尚未知 |\n| --- | --- | --- |\n| 首次使用 | 备份同名 preset、核宿主工具与技能契约 | 兼容与配置工时 |\n| 持续使用 | 需求/计划批准、测试循环、子代理双审、简报/报告/账本 | 模型费用、等待与质量收益 |\n| 失败恢复 | 从账本/Git重建任务，恢复被同步覆盖的个人预设 | 重做与恢复时间，原件无备份时可能不可恢复 |\n\n#### 效果\n\n| 项 | 源码支持 | 未知 |\n| --- | --- | --- |\n| 五阶段指引 | 六个 Skill 文本 | 模型遵循度 |\n| 自动安装 | 逐字节同步 | 自改覆写 |\n| 公告 | systemPrompt section | 默认会话干扰 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**核实 preset+六 Skill 的实际载入、五阶段约束与自动同步对用户预设的影响。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 安装后带来什么工作流？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n插件提供可选 engineering-workflow agent preset 与六个技能（总纲、需求、计划、TDD、子 Agent、验证），通过 preset 的工具组合和 Skill 文本指导 Agent 走五阶段门禁。Host 在挂载时同步 preset 目录，并可向 systemPrompt 注册公告；它本身没有浏览器面板、Host 路由或模型工具。只有新建会话明确选择该 preset 才加载完整技能/工具组合，公告却可进入宿主插件挂载后的新会话，即未选择 preset 的会话也会看到工作流推荐语。此为行为引导，不是硬性的执行引擎门禁。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.zh.md:1-63](https://github.com/82c86b8z86-stack/dsh-engineering-workflow/blob/3e251eb78002625bcc238a42d9926d87c3a38bfe/README.zh.md#L1-L63)\n\n作者列五阶段、六技能和 preset 安装范围。\n\n<details>\n<summary>查看原文（63行）</summary>\n\n````text\n# dsh-engineering-workflow（工程工作流）\n\n[![CI](https://github.com/82c86b8z86-stack/dsh-engineering-workflow/actions/workflows/ci.yml/badge.svg)](https://github.com/82c86b8z86-stack/dsh-engineering-workflow/actions/workflows/ci.yml)\n\n为 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)（dsh）叠加完整的工程化工作流层。一次安装即获得「**工程工作流**」agent preset——带五阶段硬门禁的纪律工程师模式——以及承载方法论的 6 个工作流技能。\n\n方法论改编自 [obra/superpowers](https://github.com/obra/superpowers)（MIT）的 brainstorming / writing-plans / TDD / subagent-driven-development / verification-before-completion，并针对 dsh 原生能力重写：plan mode + `exit_plan_mode`、后台 `subagent`/`subagent_fork`、`workflow` 编排、目标工具与 preset/skill 体系。\n\n## 五个阶段\n\n| 阶段 | 技能 | 门禁 | dsh 机制 |\n| --- | --- | --- | --- |\n| ① 需求澄清 | `workflow-requirements` | 意图获批后才动手 | `ask_user_question` 一次一问 |\n| ② 计划审批 | `workflow-planning` | 计划经 `exit_plan_mode` 获批 | plan mode，批准后 `todo_write` |\n| ③ TDD 实现 | `workflow-tdd` | 没有失败测试就没有生产代码 | `pwsh`/`bash` 跑测试 |\n| ④ 子 Agent 并行执行 | `workflow-subagents` | 逐任务审查 + 账本 | 后台 `subagent`、`send_message`、`list_agents` |\n| ⑤ 验证收尾 | `workflow-verification` | 证据先于断言 | 全量套件 + 分支收尾菜单 |\n\n总纲技能 `engineering-workflow` 把每个非平凡任务路由到对应阶段，并强制执行纪律规则（含合理化红线表）。\n\n## 安装\n\n```sh\ndsh plugin --profile <name> add github:82c86b8z86-stack/dsh-engineering-workflow\n```\n\n（或将本包安装进 profile 依赖，并把 `dsh-engineering-workflow` 加入 `dsh.profile.bundles`。）\n\n重启一次 dsh 让宿主插件挂载。启动时插件把 preset 同步到 `~/.dsh/.agent-presets/engineering-workflow`，之后新建会话的预设选择器中即可选「工程工作流」。同步幂等——升级插件会自动更新 preset 与技能。\n\n免重启的手动/开发回退：\n\n```sh\nnode scripts/sync-presets.mjs\n```\n\ndsh 每次读取 roster 都会重新发现预设，同步后立即可选。\n\n## 工作原理\n\n```\ndsh-engineering-workflow (bundle)\n├── cordis.patch.yml        insert 一行宿主插件\n└── lib/index.js            宿主插件：把 presets/ 同步进 ~/.dsh/.agent-presets，\n│                           并经 system-prompt section 向模型公告工作流\n└── presets/engineering-workflow/\n    ├── agent.cordis.yml    完整工具集 composition（改编自内置 cordis preset，MIT）：\n    │                       shell、文件、后台任务、目标、plan mode、压缩、委派\n    │                       （subagent/subagent_fork/workflow/ralph）、ask-user、todo、web、skills\n    ├── preset.yml          roster 元数据（名称/描述/排序）\n    ├── skills/             6 个工作流技能（每目录一个 SKILL.md）\n    └── NOTICE              署名声明\n```\n\npreset 通过 `@deepseek-ai/dsh-skill-filesystem` 的 `customSkillDirs`（以 preset 自身目录为根）接入技能——与内置 `cordis` preset 同款模式，技能目录随 preset 走到哪跟到哪。\n\n## 验证安装\n\n```sh\nnode scripts/verify-install.mjs\n# ✓ engineering-workflow: current (byte-identical)\n```\n\n````\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:1-44](https://github.com/82c86b8z86-stack/dsh-engineering-workflow/blob/3e251eb78002625bcc238a42d9926d87c3a38bfe/lib/index.js#L1-L44)\n\nHost 只同步预设并公告，无浏览器/路由/工具。\n\n<details>\n<summary>查看原文（44行）</summary>\n\n```text\n/**\n * dsh-engineering-workflow — engineering workflow layer for DeepSeek Harness.\n *\n * Host half only: on startup it syncs the bundled `presets/` tree into the\n * harness-home agent-presets root (`~/.dsh/.agent-presets`), making the\n * engineering-workflow preset (composition + skills) selectable for new\n * sessions without copying files by hand, and announces the workflow through\n * a system-prompt section. No browser half, no routes, no agent tools — the\n * preset itself provides the tools and the skills provide the methodology.\n *\n * The five workflow phases shipped as skills:\n *   engineering-workflow   — master skill, routes tasks to phases\n *   workflow-requirements  — requirements clarification (classify → questions → approval)\n *   workflow-planning      — plan writing and approval (plan mode + exit_plan_mode)\n *   workflow-tdd           — test-driven implementation (red-green-refactor)\n *   workflow-subagents     — parallel subagent execution (dispatch, ledger, review)\n *   workflow-verification  — verified finishing (evidence before claims, branch menu)\n *\n * The preset-sync pattern (per-directory idempotent copy with byte-compare\n * and pruning) follows the approach used by @linxin666/dsh-liangshen (MIT);\n * the workflow methodology is adapted from obra/superpowers (MIT).\n */\nimport { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, rmSync, statSync } from \"node:fs\";\nimport { homedir } from \"node:os\";\nimport { basename, dirname, join, relative } from \"node:path\";\nimport { fileURLToPath } from \"node:url\";\nimport z from \"schemastery\";\n\n/** Stable cordis plugin name. */\nexport const name = \"engineering-workflow\";\n\n/** Prompt assembly must exist before the announcement section can register. */\nexport const inject = [\"systemPrompt\"];\n\n/** Plugin config: both switches default on. */\nexport const Config = z.object({\n  enabled: z.boolean().default(true),\n  announceToAgent: z.boolean().default(true),\n});\n\n/** Order of the announcement section within the tool-guidance band. */\nconst SECTION_ORDER = 160;\n\n/**\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:234-254](https://github.com/82c86b8z86-stack/dsh-engineering-workflow/blob/3e251eb78002625bcc238a42d9926d87c3a38bfe/lib/index.js#L234-L254)\n\nenabled/announceToAgent 与 systemPrompt section。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n      ctx.logger?.warn?.(`dsh-engineering-workflow: preset sync failed: ${error instanceof Error ? error.message : String(error)}`);\n    }\n  };\n  let disposeSection;\n  const refresh = () => {\n    disposeSection?.();\n    disposeSection = void 0;\n    if (!resolve().enabled) return;\n    sync();\n    if (resolve().announceToAgent) disposeSection = ctx.systemPrompt.section({\n      name: \"plugin:dsh-engineering-workflow\",\n      order: SECTION_ORDER,\n      text: WORKFLOW_GUIDANCE,\n    });\n  };\n  refresh();\n  ctx.effect(() => () => {\n    disposeSection?.();\n    disposeSection = void 0;\n  }, \"dsh-engineering-workflow: announcement\");\n}\n```\n\n</details>\n\n**依据 4 · 源码核查**：[presets/engineering-workflow/skills/engineering-workflow/SKILL.md:1-38](https://github.com/82c86b8z86-stack/dsh-engineering-workflow/blob/3e251eb78002625bcc238a42d9926d87c3a38bfe/presets/engineering-workflow/skills/engineering-workflow/SKILL.md#L1-L38)\n\n总纲 Skill 的五阶段文字规则。\n\n<details>\n<summary>查看原文（38行）</summary>\n\n````text\n---\nname: engineering-workflow\ndescription: 工程化工作流总纲：五阶段硬门禁（需求澄清 → 计划审批 → TDD 实现 → 子 Agent 并行执行 → 验证收尾），任务路由、产物约定与纪律规则。Use when starting any non-trivial task — every feature, bugfix, refactor, or multi-step change must first be routed through this workflow.\n---\n\n# 工程化工作流总纲（Engineering Workflow Master）\n\n本技能是 dsh 纪律工程师工作流层的入口。任何非平凡任务（新功能、缺陷修复、重构、多步骤变更）在动手之前，先按本技能完成阶段路由；被路由到的阶段技能必须在对应阶段**开始前**通过 `skill` 工具加载并遵循。\n\n## 铁律\n\n```\n未经批准的意图 → 不写代码。\n未经批准的计划 → 不执行任务。\n没有失败测试 → 不写生产代码。\n未经核实的证据 → 不宣称完成。\n```\n\n违反任一条的铁律的字面，就是违反其精神。\n\n## 五个阶段与路由\n\n| 阶段 | 技能 | 门禁（gate） | 产物 |\n| --- | --- | --- | --- |\n| ① 需求澄清 | `workflow-requirements` | 意图获得用户明确批准后才可动手 | 设计文档（架构级）或聊天内短设计（有界级） |\n| ② 计划审批 | `workflow-planning` | 计划经 `exit_plan_mode` 呈现并获批准 | `docs/plans/YYYY-MM-DD-<feature>.md` |\n| ③ TDD 实现 | `workflow-tdd` | 每个行为先有失败测试 | 测试 + 最小实现，小步提交 |\n| ④ 子 Agent 并行执行 | `workflow-subagents` | 每任务审查通过，账本记录 | 账本 `.workflow/ledger.md`、审查报告 |\n| ⑤ 验证收尾 | `workflow-verification` | 全部验证命令重新运行并有输出证据 | 绿套件 + 分支收尾决策 |\n\n路由规则：\n\n- 「帮我做个 X / 加个功能 / 改一下行为」→ ① 需求澄清（若已有明确规格或设计文档则跳到 ②）。\n- 「修这个 bug」→ ① 轻量澄清 → ③ TDD（先写复现测试），不跳 ③。\n- 已有批准的设计文档 → ② 计划审批。\n- 已有批准的实施计划 → ③ 或 ④ 直接执行。\n- 多步骤任务执行中 → 阶段技能按序流转，回退需明确说出口。\n\n````\n\n</details>\n\n#### 缺口\n\n- 未在目标 DSH 会话选择 preset 并执行任务。\n  **影响：**模型是否遵循门禁和现有会话影响未知。\n  **进一步探讨：**在隔离 profile 比较默认/选中 preset 新会话的提示、工具与执行行为。\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 自动同步如何对待用户修改？\n\n**研究主题：**功能与机制、工程质量与复用、缺陷与关键质疑\n\n#### 完整回答\n\nsyncOnePreset 对同名目标目录做逐字节比较；只要有差异，就先 pruneExtras 删除源包没有的目标文件，再 cpSync 覆盖同名文件，随后再删多余文件。自动挂载时会对 DSH_HOME/.agent-presets/engineering-workflow 执行此同步，故用户若在这个 preset 目录手改 SKILL、agent.cordis.yml 或添加个人文件，下次启用/更新可能被无备份覆盖或删除。保护范围仅限同名目录，兄弟 preset 不触碰。README 用“幂等/升级自动更新”描述此行为，未提示同名目录自改会丢失；这是可从代码确定的持久化边界。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:72-120](https://github.com/82c86b8z86-stack/dsh-engineering-workflow/blob/3e251eb78002625bcc238a42d9926d87c3a38bfe/lib/index.js#L72-L120)\n\npruneExtras 删除多余文件、syncOnePreset 覆盖差异。\n\n<details>\n<summary>查看原文（49行）</summary>\n\n```text\n  const walk = (dir) => {\n    for (const entry of readdirSync(dir)) {\n      const path = join(dir, entry);\n      if (statSync(path).isDirectory()) walk(path);\n      else out.push(path);\n    }\n  };\n  walk(root);\n  return out;\n}\n\n/** Preset files are small; identity means identical bytes, not just size/mtime. */\nfunction sameFile(a, b) {\n  return readFileSync(a).equals(readFileSync(b));\n}\n\n/**\n * Remove files not in `keep` (relative paths), then remove only the\n * directories those removals left empty — still strictly inside `root`, so\n * sibling presets are never touched.\n */\nfunction pruneExtras(root, keep) {\n  const parents = new Set();\n  for (const file of filesUnder(root)) if (!keep.has(relative(root, file))) {\n    parents.add(dirname(file));\n    rmSync(file, { force: true });\n  }\n  for (const start of parents) {\n    let dir = start;\n    while (dir !== void 0 && relative(root, dir) !== \"\") if (existsSync(dir) && readdirSync(dir).length === 0) {\n      rmSync(dir, { recursive: true, force: true });\n      dir = dirname(dir);\n    } else dir = void 0;\n  }\n}\n\n/** Copy `sourceRoot/<id>` into `targetRoot/<id>`, idempotently. Returns \"synced\" or \"current\". */\nexport function syncOnePreset(sourceDir, targetDir) {\n  const sourceFiles = filesUnder(sourceDir);\n  const sourceSet = new Set(sourceFiles.map((file) => relative(sourceDir, file)));\n  if (existsSync(targetDir) && !statSync(targetDir).isDirectory()) rmSync(targetDir, { recursive: true, force: true });\n  if (!existsSync(targetDir)) {\n    cpSync(sourceDir, targetDir, { recursive: true, preserveTimestamps: true });\n    pruneExtras(targetDir, sourceSet);\n    return \"synced\";\n  }\n  let dirty = false;\n  for (const file of sourceFiles) {\n    const dest = join(targetDir, relative(sourceDir, file));\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:143-172](https://github.com/82c86b8z86-stack/dsh-engineering-workflow/blob/3e251eb78002625bcc238a42d9926d87c3a38bfe/lib/index.js#L143-L172)\n\n遍历包内 preset 并写到目标根。\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\n * untouched.\n *\n * @param sourceRoot - plugin-owned preset tree (bundled in the package).\n * @param targetRoot - dsh agent-presets discovery root (e.g. <home>/.dsh/.agent-presets).\n * @param retire - previously bundled preset ids to remove when absent from the source.\n * @returns { synced: string[], current: string[], failed: {id,error}[], retired: string[] }\n */\nexport function syncPresetTrees(sourceRoot, targetRoot, retire = []) {\n  const result = { synced: [], current: [], failed: [], retired: [] };\n  mkdirSync(targetRoot, { recursive: true });\n  if (existsSync(sourceRoot)) for (const entry of readdirSync(sourceRoot)) {\n    const source = join(sourceRoot, entry);\n    if (!statSync(source).isDirectory()) continue;\n    const id = basename(source);\n    try {\n      (syncOnePreset(source, join(targetRoot, id)) === \"synced\" ? result.synced : result.current).push(id);\n    } catch (error) {\n      result.failed.push({ id, error: error instanceof Error ? error.message : String(error) });\n    }\n  }\n  for (const id of retire) {\n    if (existsSync(join(sourceRoot, id))) continue;\n    const stale = join(targetRoot, id);\n    if (existsSync(stale) && statSync(stale).isDirectory()) {\n      rmSync(stale, { recursive: true, force: true });\n      result.retired.push(id);\n    }\n  }\n  return result;\n}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:230-247](https://github.com/82c86b8z86-stack/dsh-engineering-workflow/blob/3e251eb78002625bcc238a42d9926d87c3a38bfe/lib/index.js#L230-L247)\n\n挂载刷新时自动 sync。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n      for (const { id, error } of result.failed) ctx.logger?.warn?.(`dsh-engineering-workflow: preset ${id} sync failed: ${error}`);\n      if (result.synced.length > 0) ctx.logger?.info?.(`dsh-engineering-workflow: presets synced into ${targetRoot}: ${result.synced.join(\", \")}`);\n      if (result.retired.length > 0) ctx.logger?.info?.(`dsh-engineering-workflow: retired stale presets from ${targetRoot}: ${result.retired.join(\", \")}`);\n    } catch (error) {\n      ctx.logger?.warn?.(`dsh-engineering-workflow: preset sync failed: ${error instanceof Error ? error.message : String(error)}`);\n    }\n  };\n  let disposeSection;\n  const refresh = () => {\n    disposeSection?.();\n    disposeSection = void 0;\n    if (!resolve().enabled) return;\n    sync();\n    if (resolve().announceToAgent) disposeSection = ctx.systemPrompt.section({\n      name: \"plugin:dsh-engineering-workflow\",\n      order: SECTION_ORDER,\n      text: WORKFLOW_GUIDANCE,\n    });\n```\n\n</details>\n\n**依据 4 · 作者声明**：[README.zh.md:30-40](https://github.com/82c86b8z86-stack/dsh-engineering-workflow/blob/3e251eb78002625bcc238a42d9926d87c3a38bfe/README.zh.md#L30-L40)\n\n作者称自动同步且幂等。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n````text\n\n免重启的手动/开发回退：\n\n```sh\nnode scripts/sync-presets.mjs\n```\n\ndsh 每次读取 roster 都会重新发现预设，同步后立即可选。\n\n## 工作原理\n\n````\n\n</details>\n\n#### 缺口\n\n- 未在用户真实 DSH_HOME 运行同步。\n  **影响：**实际已有自改文件是否存在未知。\n  **进一步探讨：**隔离目录放同名自改/新增文件复核删除，改为告警或保留备份/版本化迁移。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 五阶段硬门禁怎样影响开发体验？\n\n**研究主题：**依赖、兼容与流程、效果与总成本、采用判断、新假设与验证\n\n#### 完整回答\n\n总纲要求非平凡任务先走需求意图批准、计划批准、TDD、逐任务子 Agent 审查和验证收尾；技能文本甚至强调简单任务也需批准。这可能适合高审查工程流程，却可能让小修复出现较多等待、文档/账本与测试提交成本。是否真能改善缺陷率取决于模型按文执行与项目约束，不因 Skill 文本即得到保证。采用时先复制/备份个人 preset，自行选择新会话试用并量测从需求到完成的等待时间、测试收益与审查工作量；用户已有明确授权时也应按其真实意图解释，而非机械重复批准。建议为低风险任务提供轻量路径并让默认公告只在选中 preset 时出现。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[presets/engineering-workflow/skills/engineering-workflow/SKILL.md:10-74](https://github.com/82c86b8z86-stack/dsh-engineering-workflow/blob/3e251eb78002625bcc238a42d9926d87c3a38bfe/presets/engineering-workflow/skills/engineering-workflow/SKILL.md#L10-L74)\n\n硬门禁、一次一问、计划/测试/委派等文字规则。\n\n<details>\n<summary>查看原文（65行）</summary>\n\n````text\n## 铁律\n\n```\n未经批准的意图 → 不写代码。\n未经批准的计划 → 不执行任务。\n没有失败测试 → 不写生产代码。\n未经核实的证据 → 不宣称完成。\n```\n\n违反任一条的铁律的字面，就是违反其精神。\n\n## 五个阶段与路由\n\n| 阶段 | 技能 | 门禁（gate） | 产物 |\n| --- | --- | --- | --- |\n| ① 需求澄清 | `workflow-requirements` | 意图获得用户明确批准后才可动手 | 设计文档（架构级）或聊天内短设计（有界级） |\n| ② 计划审批 | `workflow-planning` | 计划经 `exit_plan_mode` 呈现并获批准 | `docs/plans/YYYY-MM-DD-<feature>.md` |\n| ③ TDD 实现 | `workflow-tdd` | 每个行为先有失败测试 | 测试 + 最小实现，小步提交 |\n| ④ 子 Agent 并行执行 | `workflow-subagents` | 每任务审查通过，账本记录 | 账本 `.workflow/ledger.md`、审查报告 |\n| ⑤ 验证收尾 | `workflow-verification` | 全部验证命令重新运行并有输出证据 | 绿套件 + 分支收尾决策 |\n\n路由规则：\n\n- 「帮我做个 X / 加个功能 / 改一下行为」→ ① 需求澄清（若已有明确规格或设计文档则跳到 ②）。\n- 「修这个 bug」→ ① 轻量澄清 → ③ TDD（先写复现测试），不跳 ③。\n- 已有批准的设计文档 → ② 计划审批。\n- 已有批准的实施计划 → ③ 或 ④ 直接执行。\n- 多步骤任务执行中 → 阶段技能按序流转，回退需明确说出口。\n\n## 何时用哪个执行模式（④ 内部再路由）\n\n| 场景 | 模式 |\n| --- | --- |\n| 计划任务大部分互相独立、需要持续审查 | `workflow-subagents`（每任务一个后台 subagent + 审查） |\n| 2+ 个完全独立的调查/修复域，无共享状态 | `workflow-subagents` 的并行派发模式 |\n| 任务紧耦合、共享上下文过多 | 本会话内联执行（`workflow-tdd` + `todo_write` 跟踪） |\n| 大规模同构任务（几十个文件同类改动） | `workflow` 工具编排脚本 |\n\n## 通用纪律\n\n1. **先加载技能再行动**：进入某阶段前先 `skill(<阶段技能>)`，包括提澄清问题之前。宣布「Using <技能名> to <目的>」。\n2. **一次一个问题**：需求澄清用 `ask_user_question` 一次只问一个问题（见 `workflow-requirements`）。\n3. **计划即合同**：批准后的计划是执行依据；执行中偏离需记录「裁定（Ruling）」并继续，只有四类情况停下询问（不可逆/破坏性操作、安全敏感动作、工作区外的副作用、计划烂到每步都靠猜）。\n4. **账本胜过记忆**：多任务执行把进度写进账本文件（`.workflow/ledger.md`），因为会话压缩会丢失对话记忆。\n5. **小步提交**：每个任务的提交独立、可审查（TDD 节奏：RED 提交测试、GREEN 提交实现，或至少每任务一提交）。\n6. **YAGNI 无情**：任何设计/计划先砍掉不必要的功能。\n\n## 红线（Rationalization Red Flags）\n\n| 念头 | 事实 |\n| --- | --- |\n| 「这个太简单了，不用澄清」 | 简单意味着更短的设计，而不是没有设计；批准门禁从不随简单而消失。 |\n| 「我先看一下代码再决定」 | 技能检查先于探索。先路由，再按技能规定的方式探索。 |\n| 「计划我口头说一下就行」 | plan mode 下计划只通过 `exit_plan_mode` 呈现，口头同意不结束 plan mode。 |\n| 「这个测试先跳过，回头补」 | 跳过 TDD 的代码 = 重写。没有例外。 |\n| 「子 agent 说成功了」 | 独立核验 diff 与测试输出（见 `workflow-verification`）。 |\n| 「之前跑过测试了」 | 证据只在本次运行该命令后有效。重新跑，读输出。 |\n| 「我应该继续吗？」 | 已批准的计划不需要逐任务请示；按计划执行，只在四类停止条件停下。 |\n\n## 本工作流在 DSH 中的工具映射\n\n- 需求澄清：`ask_user_question`（一次一个问题，可带选项）。\n- 计划审批：plan mode + `exit_plan_mode`；批准后 `todo_write` 建任务清单。\n- TDD：`pwsh`（Windows）/ `bash` 运行测试，`read`/`grep`/`edit`/`write` 改代码。\n- 并行执行：`subagent`（默认 `run_in_background: true`）、`subagent_fork`、`send_message`、`list_agents`、`interrupt_agent`、`job_output`；大 fan-out 用 `workflow`。\n````\n\n</details>\n\n**依据 2 · 作者声明**：[README.zh.md:13-26](https://github.com/82c86b8z86-stack/dsh-engineering-workflow/blob/3e251eb78002625bcc238a42d9926d87c3a38bfe/README.zh.md#L13-L26)\n\n五阶段与 DSH 机制映射。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n````text\n| ① 需求澄清 | `workflow-requirements` | 意图获批后才动手 | `ask_user_question` 一次一问 |\n| ② 计划审批 | `workflow-planning` | 计划经 `exit_plan_mode` 获批 | plan mode，批准后 `todo_write` |\n| ③ TDD 实现 | `workflow-tdd` | 没有失败测试就没有生产代码 | `pwsh`/`bash` 跑测试 |\n| ④ 子 Agent 并行执行 | `workflow-subagents` | 逐任务审查 + 账本 | 后台 `subagent`、`send_message`、`list_agents` |\n| ⑤ 验证收尾 | `workflow-verification` | 证据先于断言 | 全量套件 + 分支收尾菜单 |\n\n总纲技能 `engineering-workflow` 把每个非平凡任务路由到对应阶段，并强制执行纪律规则（含合理化红线表）。\n\n## 安装\n\n```sh\ndsh plugin --profile <name> add github:82c86b8z86-stack/dsh-engineering-workflow\n```\n\n````\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:40-45](https://github.com/82c86b8z86-stack/dsh-engineering-workflow/blob/3e251eb78002625bcc238a42d9926d87c3a38bfe/lib/index.js#L40-L45)\n\n未选 preset 的新会话仍可能收到公告。\n\n```text\n\n/** Order of the announcement section within the tool-guidance band. */\nconst SECTION_ORDER = 160;\n\n/**\n * Model-facing announcement: plugin presence, the five workflow phases, and\n```\n\n#### 缺口\n\n- 未观察真实任务中延迟、质量和模型遵循度。\n  **影响：**效率与安全收益均无独立度量。\n  **进一步探讨：**在同一代码任务对照该 preset 与普通流程，记录用户等待、测试/缺陷和完成质量。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 六个技能如何分工，批准和执行规则是否一致？\n\n**研究主题：**功能与机制、缺陷与关键质疑\n\n#### 完整回答\n\n需求技能把试探、有界与架构任务分流，有界路径获设计批准后直接实现且不写计划文档，架构任务则规格自审后再交计划技能。因此总纲五阶段不是所有任务都实际经过的唯一控制流。计划技能要求实施代码、接口和测试细节完整，获批后支持内联或子代理；但开头称口头同意不批准任何东西，后文又允许非 plan mode 用 ask_user_question 明确批准，读者须结合运行模式辨认，不能把文本视为程序化状态机。TDD 强制先失败再最小实现，先写的生产代码要求删除重来，一次性原型、生成代码和纯配置也需用户同意才例外。这些是目标插件的规则内容，本研究没有执行它们。其严格门禁适合需要审查链的任务，已有测试、低风险配置或用户已经明确授权时仍可能增加等待和重复工作；没有同任务数据证明纪律收益超过仪式成本。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[presets/engineering-workflow/skills/workflow-requirements/SKILL.md:14-44](https://github.com/82c86b8z86-stack/dsh-engineering-workflow/blob/3e251eb78002625bcc238a42d9926d87c3a38bfe/presets/engineering-workflow/skills/workflow-requirements/SKILL.md#L14-L44)\n\n三类任务与有界直接实施、架构转计划\n\n<details>\n<summary>查看原文（31行）</summary>\n\n```text\n## 三步分类\n\n动手提问前，先大声说出分类（「这看起来是有界任务，我会在聊天里给出简短设计而不是写规格文档」），让用户可以推翻：\n\n- **试探（Spike）**——可行性问题（「能不能…」「可行吗…」），产物是答案而不是要保留的代码。用 2-3 句话说明要验证的问题和探法，得到点头后，用「正确性允许的最便宜方式」调查，产出建议；搭建的一切标记为一次性。\n- **有界（Bounded）**——对仓库中**已存在**的流程做边界清晰的改动。注意：理解这类应用不等于有界——有界意味着你要改的流程现在就躺在仓库里可读。没有现成流程可改 = 不是有界。提出关键澄清问题（一次一个），在聊天里给简短设计（几句话到几段），**停下**。用户明确说「是」之后才开始实现。\n- **架构级（Architectural）**——新项目、新子系统、改变组件间组合关系或他人依赖的接口。走完整流程：问题 → 2-3 个方案 → 分段设计 → 规格文档 → 自审 → 用户审阅 → 转交 `workflow-planning`。\n\n两档之间犹豫时取更重的一档。棘轮单向：中途发现隐藏复杂度就升级路径——停下、说明、升档；中途永不降档。\n\n## 流程\n\n### 有界路径\n\n1. 探索项目上下文（文件、文档、近期提交）——用 `read`/`grep`/`glob`。\n2. 用 `ask_user_question` **一次一个问题**地问关键澄清问题（优先带选项的多选题）。\n3. 在聊天里呈现简短设计：方案、涉及文件、测试方式。\n4. **拿到批准**——停下并等待明确的「是」；呈现设计和开始动手在同一口气里 = 跳过门禁。\n5. 实现——走正常开发流程（TDD 适用，见 `workflow-tdd`）；不写计划文档。\n\n### 架构级路径\n\n1. 探索项目上下文（同上）。\n2. 评估范围：若请求描述多个独立子系统，立刻指出——先把项目分解成子项目（独立件、相互关系、构建顺序），再逐个走设计流程。\n3. 用 `ask_user_question` 一次一个问题地澄清：目的、约束、成功标准。\n4. 提出 2-3 个方案，带权衡与你的推荐（推荐放在最前，说明理由）。\n5. 分段呈现设计，每段之后问是否对路。覆盖：架构、组件、数据流、错误处理、测试。\n6. 写设计文档到 `docs/specs/YYYY-MM-DD-<topic>-design.md` 并 git 提交。\n7. **规格自审**（自己查自己，不用派 subagent）：占位符扫描（TBD/TODO/含糊需求）→ 内部一致性 → 范围是否聚焦 → 歧义检查（一句两读就选一读并写明）。发现问题就地修正。\n8. **用户审阅门禁**：请用户审阅规格文件，等其回复；有改动就改并重跑自审，批准后才继续。\n9. 转交 `workflow-planning`（唯一后续技能）。\n```\n\n</details>\n\n**依据 2 · 源码核查**：[presets/engineering-workflow/skills/workflow-planning/SKILL.md:10-12](https://github.com/82c86b8z86-stack/dsh-engineering-workflow/blob/3e251eb78002625bcc238a42d9926d87c3a38bfe/presets/engineering-workflow/skills/workflow-planning/SKILL.md#L10-L12)\n\n批准方式强表述\n\n```text\n## 硬门禁\n\n> 计划必须通过 `exit_plan_mode` 呈现并获批。用户的口头同意——包括对你所问问题的确认回答——不批准任何东西，也不结束 plan mode；把确认后的决定折进计划，通过 `exit_plan_mode` 提交。批准之前不得修改文件、不得建立 todo 实施清单。\n```\n\n**依据 3 · 源码核查**：[presets/engineering-workflow/skills/workflow-planning/SKILL.md:98-117](https://github.com/82c86b8z86-stack/dsh-engineering-workflow/blob/3e251eb78002625bcc238a42d9926d87c3a38bfe/presets/engineering-workflow/skills/workflow-planning/SKILL.md#L98-L117)\n\n非plan方式、执行移交与内联\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n## 提交审批\n\n- 若在 plan mode 中：把完整计划 markdown 通过 `exit_plan_mode` 提交（该调用必须是那次响应的唯一且最后一个工具调用）。被驳回就吸收反馈重新提交；不可用则留在 plan mode 请用户手动切模式。\n- 若不在 plan mode（用户关闭了 plan mode 或会话不在该模式）：用 `ask_user_question` 请求明确批准，等用户答复。\n- 获批后：`todo_write` 为每个任务建一项（这跟踪的是批准后的实施，不属于 plan mode 的规划期）。\n\n## 执行移交（计划获批后）\n\n向用户给出两个选项：\n\n1. **子 Agent 驱动（推荐）**——每任务派发一个全新后台 subagent，任务间审查，快速迭代 → 加载 `workflow-subagents`。\n2. **内联执行**——本会话按任务顺序执行，批处理 + 检查点 → 继续用本技能的执行规则（见下）。\n\n## 内联执行规则（选择选项 2 时）\n\n1. 重读计划，批判性审查；有疑问先向用户提出，无问题才建 todo。\n2. 每任务：标记 in_progress → 严格按步骤执行（每步验证照跑）→ 标记 completed。\n3. 全部完成后转入 `workflow-verification` 收尾。\n4. **何时停下求助**：遇到阻塞（缺依赖、测试失败、指令不清）、计划存在致命缺口、验证反复失败——停下问，不要猜。\n5. 未经用户明确同意，不在 main/master 分支上开始实现。\n```\n\n</details>\n\n**依据 4 · 源码核查**：[presets/engineering-workflow/skills/workflow-tdd/SKILL.md:12-26](https://github.com/82c86b8z86-stack/dsh-engineering-workflow/blob/3e251eb78002625bcc238a42d9926d87c3a38bfe/presets/engineering-workflow/skills/workflow-tdd/SKILL.md#L12-L26)\n\n先测试和例外范围\n\n<details>\n<summary>查看原文（15行）</summary>\n\n````text\n## 铁律\n\n```\n没有先失败的测试，就没有生产代码。\n```\n\n在测试之前写了代码？删掉，从头再来。没有例外：不留作「参考」、不在写测试时「改巴改巴再用」、看都不要看。删就是删。\n\n## 何时使用\n\n**总是**：新功能、缺陷修复、重构、行为变更。\n\n**例外（须用户同意）**：一次性原型、生成的代码、纯配置文件。\n\n「这次跳过 TDD」的念头 = 合理化。停。\n````\n\n</details>\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 委派、复审和完成证据有哪些可复用方法及成本？\n\n**研究主题：**工程质量与复用、效果与总成本、新假设与验证\n\n#### 完整回答\n\n委派技能要求每任务全新实现者、独立审查者，以简报、报告、diff 文件及 Global Constraints 传递上下文，账本保存裁定；独立域并行，共享状态顺序执行。规格符合和质量双审是明确的职责划分。修复最多五轮，前三轮回原实现者，后两轮换人，封顶后必须逐条修复或记录裁定；全分支终审再限制一次修复派发。这是可借鉴的有界审查循环，但 parked 的真实问题仍可能留存，封顶不代表全部缺陷消除。验证技能要求读完整验证输出并逐项核需求，不能仅凭 agent 自报成功；同时要求本次消息新鲜验证，分支收尾呈现菜单，频繁重复验证的资源和等待成本未测。首次须配齐 shell、文件、计划、子代理和 skill 工具；持续产生多份任务简报、diff、报告、账本、测试与模型调用，失败恢复依赖账本与 Git 状态重建，没有执行器自动验收这些文件。可研究按风险裁剪批准/审查层级并缓存仍对应同一代码树的有效验证证据，比较缺陷、等待、模型调用及重做成本；这是本报告设计推演，不是现有实现。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[presets/engineering-workflow/skills/workflow-subagents/SKILL.md:36-59](https://github.com/82c86b8z86-stack/dsh-engineering-workflow/blob/3e251eb78002625bcc238a42d9926d87c3a38bfe/presets/engineering-workflow/skills/workflow-subagents/SKILL.md#L36-L59)\n\n并行边界、账本和简报\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n**并行派发模式**（独立调查/修复域）：2+ 个互不依赖、无共享状态的问题域——多个 `subagent` 调用放在**同一条消息**里 = 并行运行；一条消息一个 = 顺序执行。规则：\n- 一个 agent 一个问题域；提示要聚焦（具体文件/测试）、自包含（全部上下文）、明确输出（返回什么）。\n- 共享文件/共享状态 = 不并行；会互相踩的改动顺序做。\n- 返回后：逐个读摘要 → 检查冲突（是否改了同一代码）→ 跑全量套件 → 集成。\n\n## 主流程（每任务循环）\n\n### 0. 设置\n\n- 不在 main/master 上实现（除非用户明确同意）；建议分支或独立工作区。\n- 账本：`.workflow/ledger.md`，第一行 `# workflow ledger — plan: <plan path>`。**对话记忆活不过压缩；账本 + git log 才是恢复地图。**压缩后相信账本与 `git log`，别信回忆。\n- 读一遍计划，记下 Global Constraints；spec 是绑定权威，计划是其论证。\n- `todo_write` 每任务一项。\n- **预检扫描**：派发 Task 1 前扫一遍计划内冲突（任务互相矛盾/与 Global Constraints 矛盾/计划强制要求但审查标准视为缺陷的内容），写成表格写入账本，每条给出裁定（Ruling）或标注「干净」。\n\n### 1. 派发 implementer\n\n- 记录 `BASE`（`git rev-parse HEAD`）——审查包与修复轮 diff 需要它。\n- **任务简报文件**：用 `write` 把该任务全文提取到 `.workflow/task-N-brief.md`（唯一源需求文件）；派发提示包含：(1) 一行任务在项目中的位置；(2) 简报路径，注明「先读这个——它是你的需求，数值原文照抄」；(3) 之前任务的接口与裁定（简报里没有的）；(4) 你注意到的歧义的裁决；(5) 报告文件路径与报告契约。精确值（数字、魔法串、签名、用例）只出现在简报里。**永远不要让 subagent 读整份计划。**\n- **报告文件**：`.workflow/task-N-report.md`，implementer 写全量报告，只返回：状态、提交、一行测试摘要、顾虑。\n- 派发提示只描述一个任务，不贴会话历史，不带「前 N 个任务状态」。\n- **契约：implementer 不派发 subagent**——不派帮手，更不派审查者；审查只从你这里来。\n- 记录返回的 subagent_id（修复轮 1-3 用它）。\n- 同形小任务（同一类一行改动 × N 个文件）合并成**一批**一个派发，review 其 diff 作为一个单元。\n```\n\n</details>\n\n**依据 2 · 源码核查**：[presets/engineering-workflow/skills/workflow-subagents/SKILL.md:70-100](https://github.com/82c86b8z86-stack/dsh-engineering-workflow/blob/3e251eb78002625bcc238a42d9926d87c3a38bfe/presets/engineering-workflow/skills/workflow-subagents/SKILL.md#L70-L100)\n\n双审、五轮封顶与终审\n\n<details>\n<summary>查看原文（31行）</summary>\n\n```text\n### 3. 审查任务（逐任务门禁）\n\n- reviewer 输入三条路径：简报文件、报告文件、diff 文件 + Global Constraints（逐字复制，作为其注意力透镜）。不加大而无当的指示；不要求它重跑 implementer 已跑过的测试；**不预判发现**（提示里出现「不要标 X」「最多 Minor」= 你在预判，重写）。\n- 两个裁决缺一不可：**规格符合** 与 **质量**。implementer 自审不能替代任务审查。\n- reviewer 报「⚠️ 无法从 diff 验证」的项：你自己逐项解决（你有计划与跨任务上下文）；确认是真缺口 = 按审查失败处理，进入修复循环。\n- Minor 发现记入账本（`Task N: minor (deferred): <一句话>`），不进循环，留给终审分诊。\n\n### 4. 修复循环（每任务最多 5 轮）\n\n触发：规格 ❌、任何 Critical/Important 发现、或你确认的 ⚠️ 缺口。修复轮 = 一次修复派发 + 一次范围限定复审。\n\n- **轮 1-3：`send_message` 恢复原 implementer**，原文贴未决发现。若平台不支持给活 agent 发消息，用简报 + 报告 + 发现清单重新派发。\n- **轮 4-5：全新 implementer**（更清晰提示），带简报、报告文件、未决发现，并说明「前一位尝试了 N 次；现在你接手。读报告文件了解试过什么」。\n- 每轮：修复 → 重跑覆盖测试 → 把修复报告**追加**到同一报告文件 → 复审。确认报告含覆盖测试、命令、输出三者齐全后才派复审；修复消息中点名覆盖测试文件。\n- **复审是范围限定的**：`git diff -U10 FIX_BASE..HEAD`（FIX_BASE = 上一轮复审看到的 HEAD）。复审逐条裁决 ADDRESSED / NOT ADDRESSED，只标修复 diff 里的新破坏；范围外观测进账本，不延长循环。\n- 每轮后记账：`Task N: fix round R/5 (X addressed, Y open — <发现一句话>; commits a7..b7)`。\n- **绝不在主会话自己改代码**——控制器改动绕过审查、污染上下文。\n- **熔断（第 5 轮仍开）**：停止派发，逐条裁决：(a) 审查者错/可争 → 记 `parked — 裁定`；(b) 真实但下游不依赖 → 同样 park 并注明真实且延期；(c) 真实且承重（后续任务依赖/暴露计划缺陷）→ 裁最小解堵改动，记入账本并带入下一任务派发；只有每条路都靠猜时才停下问人。**只在封顶时裁决**；每次裁决必须入账本，静默丢弃禁止。\n\n### 5. 完成任务\n\n审查干净（或封顶后全部裁决）→ 同一消息里记账：\n- `Task N: complete (commits <base7>..<head7>, review clean)`\n- 或 `Task N: complete (commits <base7>..<head7>, K parked)`\n\n然后 todo 标记完成，继续下一任务。审查仍有未决 Critical/Important 且既未修复也未 park 时不得前进。\n\n## 终审\n\n- 全部任务完成后：`git diff -U10 $(git merge-base main HEAD)..HEAD > .workflow/final-diff.txt`，派发终审 reviewer（最强可用，全新 spawn），并把账本里的 deferred-minor 与 parked 行指给它分诊。\n- 终审有发现 → **一次**修复派发（全部发现清单，一个 fixer——每个发现一个 fixer 的代价曾超过全部任务之和）→ 一次范围限定复审 → 残余裁决同上。没有第二波修复；残余承重发现留给 `workflow-verification` 的收尾菜单呈现给用户。\n```\n\n</details>\n\n**依据 3 · 源码核查**：[presets/engineering-workflow/skills/workflow-verification/SKILL.md:16-44](https://github.com/82c86b8z86-stack/dsh-engineering-workflow/blob/3e251eb78002625bcc238a42d9926d87c3a38bfe/presets/engineering-workflow/skills/workflow-verification/SKILL.md#L16-L44)\n\n新鲜证据与需求核对\n\n<details>\n<summary>查看原文（29行）</summary>\n\n````text\n本次消息里没跑过那个验证命令，就不能声称它通过。\n\n## 门函数\n\n```\n宣称任何状态或表达满意之前：\n\n1. IDENTIFY：哪条命令能证明这个声明？\n2. RUN：完整运行该命令（新鲜的、完整的）\n3. READ：读全量输出、查退出码、数失败数\n4. VERIFY：输出证实了声明吗？\n   - 否 → 用证据陈述实际状态\n   - 是 → 带证据陈述声明\n5. ONLY THEN：才做声明\n\n跳过任何一步 = 撒谎，不是验证。\n```\n\n## 常见失败（claim 对照表）\n\n| 声明 | 需要 | 不够 |\n| --- | --- | --- |\n| 测试通过 | 测试命令输出：0 失败 | 上次跑过 / 「应该能过」 |\n| Lint 干净 | Lint 输出：0 错误 | 部分检查、外推 |\n| 构建成功 | 构建命令：退出码 0 | Lint 过了、日志看着还行 |\n| Bug 已修 | 原症状测试通过 | 代码改了、假定修好 |\n| 回归测试有效 | 红绿循环已验证（改回原实现必须失败） | 测试只通过一次 |\n| 子 agent 完成了 | VCS diff 显示改动 + 你的独立核验 | agent 报「成功」 |\n| 需求满足 | 逐行核对清单 | 测试通过 |\n````\n\n</details>\n\n**依据 4 · 源码核查**：[presets/engineering-workflow/skills/workflow-verification/SKILL.md:61-85](https://github.com/82c86b8z86-stack/dsh-engineering-workflow/blob/3e251eb78002625bcc238a42d9926d87c3a38bfe/presets/engineering-workflow/skills/workflow-verification/SKILL.md#L61-L85)\n\n全套验证与收尾\n\n<details>\n<summary>查看原文（25行）</summary>\n\n````text\n## 分支收尾（实现完成、全绿之后）\n\n宣布：「I'm using the workflow-verification skill to complete this work.」\n\n1. **验证测试**：跑项目完整套件（`npm test` / `pytest` / `go test ./...`，DSH 里用 `pwsh`/`bash`）。失败 → 报告失败并停下，菜单在绿套件之后。\n2. **检测环境**：普通仓库还是 worktree；确定 base 分支（不确定就问：从哪个分支分出来的——合错 base 的代价高昂）。\n3. **呈现菜单**（原文呈现，等用户选择）：\n\n```\nImplementation complete. What would you like to do?\n\n1. Merge back to <base-branch> locally\n2. Push and create a Pull Request\n3. Keep the branch as-is (I'll handle it later)\n\nWhich option?\n```\n\n4. **执行选择**：\n   - 合并：合并 → 在合并结果上重跑测试 → 绿了再清分支。\n   - PR：推送并创建 PR，报告 URL；工作区保留给反馈迭代。\n   - 保留：报告保留状态。\n   - 丢弃只发生在用户明确要求时；要求确认（`Type 'discard' to confirm.`），逐字确认后才删。\n5. **文档收尾**：按项目约定更新 CHANGELOG / 文档（无约定则不虚构）。\n6. **Rulings 汇总**：若本任务走过 `workflow-subagents`，把账本里全部 `Ruling:` 汇总进最终消息（按序、带错误代价）——那是你替用户做的决定的唯一出口。\n````\n\n</details>\n\n#### 缺口\n\n- 缺少同任务的分层流程与强制全流程对照。\n  **影响：**无法确定额外批准、模型与测试成本是否换得质量收益。\n  **进一步探讨：**固定代码任务对比逃逸缺陷、用户等待、模型调用及失败恢复工时。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：07ee1a984953098b088afd8af526bf1c6e658e5c46f084a0deeadadfe9ef6246。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 9 | 807 | — | — | 10378 |\n| .js | source | 1 | 254 | 172 | 67 | — |\n| .mjs | source | 3 | 198 | 138 | 50 | — |\n| .mjs | test | 1 | 126 | 112 | 5 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| preset/Skill | 纪律工程流程 | 文字约束 |\n| 自动同步 | 更新安装 | 覆写自改 |\n| 公告 | 提醒新会话 | 默认会话也可能收到 |\n\n## 工程亮点\n\n宿主同步目录并加提示段；preset 指定工具组合和六个显式技能，硬门禁由文本驱动。 全部技能分工与矛盾见[Q04](#research-q04)，有界修复与新鲜证据的成本见[Q05](#research-q05)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.zh.md、package.json、lib/index.js、presets/engineering-workflow/preset.yml、presets/engineering-workflow/agent.cordis.yml、presets/engineering-workflow/skills/engineering-workflow/SKILL.md、presets/engineering-workflow/skills/workflow-requirements/SKILL.md、presets/engineering-workflow/skills/workflow-planning/SKILL.md、presets/engineering-workflow/skills/workflow-tdd/SKILL.md、presets/engineering-workflow/skills/workflow-subagents/SKILL.md、presets/engineering-workflow/skills/workflow-verification/SKILL.md 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定源码核查 Host、preset 与全部六个 Skill；这些文本仅作研究材料，未套用其指令或执行目标。\n- 下一步：隔离 DSH_HOME 同步自改/新增文件，比较默认/选中 preset 提示与同类工程任务耗时/质量。\n",
         "metadata": {
             "repository": "82c86b8z86-stack/dsh-engineering-workflow",
             "repository_id": 1335988605,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T06:28:17.787Z",
+            "window_start": "2026-09-22T06:28:17.787Z",
             "stars": 5,
             "pushed_at": "2026-10-11T02:28:33Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A82c86b8z86-stack%2Fdsh-engineering-workflow%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6402:23DB53:159945:235298:6AD84AB0 and timestamp 2026-10-21 05:16:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A82c86b8z86-stack%2Fdsh-engineering-workflow%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640C:C23BB:147AAF:2235F5:6AD84AB0 and timestamp 2026-10-21 05:16:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A82c86b8z86-stack%2Fdsh-engineering-workflow%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6410:3A339B:13C481:2166DE:6AD84AB0 and timestamp 2026-10-21 05:16:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A82c86b8z86-stack%2Fdsh-engineering-workflow%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6416:D5CAC:14BAAF:225923:6AD84AB0 and timestamp 2026-10-21 05:16:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A82c86b8z86-stack%2Fdsh-engineering-workflow%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6419:D1FDD:14C826:228BEF:6AD84AB0 and timestamp 2026-10-21 05:16:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
-            "npm": {
-                "package_name": "dsh-engineering-workflow",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": null,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-engineering-workflow",
-                "error": "HTTP 404",
-                "publication": {
-                    "first_published_at": null,
-                    "captured_at": "2026-10-21T07:15:57.121Z",
-                    "source_url": "https://registry.npmjs.org/dsh-engineering-workflow",
-                    "error": "HTTP 404",
-                    "latest_version": null,
-                    "latest_published_at": null,
-                    "latest_error": "HTTP 404"
-                }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "3e251eb78002625bcc238a42d9926d87c3a38bfe",
-                "current_revision": "3e251eb78002625bcc238a42d9926d87c3a38bfe",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
-            }
+            "errors": []
         },
         "discovery.plugins": {
             "id": "github:1335988605:root",
             "repository": "82c86b8z86-stack/dsh-engineering-workflow",
             "path": "",
             "revision": "3e251eb78002625bcc238a42d9926d87c3a38bfe",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "b224c1f019ccc826544f8c5012b87263ae10e3b1a712a0f44c7f2dc4af8e4c88",
                 "code": "3e251eb78002625bcc238a42d9926d87c3a38bfe",
                 "maintenance": "f2ec2baf37d85082a5fb51fc407323d7d5cf92671dcd88ae9dce0c60733baaee"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

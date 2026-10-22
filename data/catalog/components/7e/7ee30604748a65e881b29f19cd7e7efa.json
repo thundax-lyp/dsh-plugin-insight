@@ -443,14 +443,14 @@
             "repository": "AFunDog/dsh-sidebar-git-graph",
             "path": "",
             "revision": "4dfefb3cc465be189fa1806f0bc9a33d30006a95",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "f9867833f39509aca5bde2c0539da5337ee0d67efcde1c95f204238e076a8794",
                 "code": "4dfefb3cc465be189fa1806f0bc9a33d30006a95",
                 "maintenance": "42322489590ed02385f3c402f4cbd45283f0ab5200d516de810c50c78c73c22d"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

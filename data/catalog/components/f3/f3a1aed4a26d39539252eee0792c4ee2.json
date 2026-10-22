@@ -423,14 +423,14 @@
             "repository": "3ChatAI-NCT/3chatai-deepseek-harness-plugin",
             "path": "",
             "revision": "d741956969f0adcd523c13d682e9ca8d7b313cb0",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "a23d39ffb07a8f2ac5f35904fafa2be507b7a32b4ec7689d2383350e2417ad92",
                 "code": "d741956969f0adcd523c13d682e9ca8d7b313cb0",
                 "maintenance": "0f555bc35f44fba60ea0de1d0989bf129ebb1d036fef4875b365fb2503ff4a29"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

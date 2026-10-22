@@ -422,14 +422,14 @@
             "repository": "AlexPeng07/dsh-custom-plugin",
             "path": "",
             "revision": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "8af455eacd6817c7a63836b1ab2650b6bfe5e2fb9a515cdd5ba253a852fc898d",
                 "code": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f",
                 "maintenance": "e5a361f62616d9eaf65515518a0c6140c7447dc8bdb4701b2874c50d64bfdfd9"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

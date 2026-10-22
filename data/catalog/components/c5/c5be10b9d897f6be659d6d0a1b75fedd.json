@@ -10,7 +10,7 @@
             "repository": "5aaee9/pi-agent-extensions",
             "path": "dsh-autocompact",
             "aliases": [],
-            "name": "dsh-autocompact",
+            "name": "@indexyz/dsh-autocompact",
             "entry_type": "plugin",
             "technical_category": "context-search",
             "business_category": "software-delivery",
@@ -24,36 +24,94 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-02-github-1324229194-dsh-autocompact-directory-0",
+                    "id": "2026-10-22-02-github-1324229194-dsh-autocompact-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T03:16:25.549Z",
+                    "retrieved_at": "2026-10-22T05:00:20.480Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-02-github-1324229194-dsh-autocompact-author",
+                    "id": "2026-10-22-02-github-1324229194-dsh-autocompact-author",
                     "kind": "author_claim",
                     "url": "https://github.com/5aaee9/pi-agent-extensions/blob/c80abc7c4904fee9206f8649214a211ef84961ff/dsh-autocompact/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/5aaee9/pi-agent-extensions",
+                            "commit": "c80abc7c4904fee9206f8649214a211ef84961ff",
+                            "path": "dsh-autocompact/README.md",
+                            "content_sha256": "d64e3df641261e142ba3c71e9ff285a7a872196b6b3b0c8f9c85f6131b120b2d"
+                        }
+                    ],
                     "revision": "c80abc7c4904fee9206f8649214a211ef84961ff",
-                    "captured_at": "2026-10-21T03:16:25.549Z",
-                    "summary": "为会话与模型设置自动压缩阈值，保留近期上下文并调用宿主压缩后端。",
-                    "artifact": "data/runs/2026-10-21-02/snapshots/5aaee9--pi-agent-extensions--dsh-autocompact/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:00:20.480Z",
+                    "summary": "为DSH按会话和模型设置提前自动压缩阈值，提供命令、全局默认设置页和状态入口。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/5aaee9--pi-agent-extensions--dsh-autocompact/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-02-github-1324229194-dsh-autocompact-source",
+                    "id": "2026-10-22-02-github-1324229194-dsh-autocompact-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/5aaee9/pi-agent-extensions/blob/c80abc7c4904fee9206f8649214a211ef84961ff/dsh-autocompact/index.ts",
+                    "url": "https://github.com/5aaee9/pi-agent-extensions/blob/c80abc7c4904fee9206f8649214a211ef84961ff/dsh-autocompact/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/5aaee9/pi-agent-extensions",
+                            "commit": "c80abc7c4904fee9206f8649214a211ef84961ff",
+                            "path": "dsh-autocompact/README.md",
+                            "content_sha256": "d64e3df641261e142ba3c71e9ff285a7a872196b6b3b0c8f9c85f6131b120b2d"
+                        },
+                        {
+                            "repository_url": "https://github.com/5aaee9/pi-agent-extensions",
+                            "commit": "c80abc7c4904fee9206f8649214a211ef84961ff",
+                            "path": "dsh-autocompact/package.json",
+                            "content_sha256": "7b90840a7b3e09323c182f646879ea5ddcdd0d31860c60fde60b8c63c2fb033b"
+                        },
+                        {
+                            "repository_url": "https://github.com/5aaee9/pi-agent-extensions",
+                            "commit": "c80abc7c4904fee9206f8649214a211ef84961ff",
+                            "path": "dsh-autocompact/index.ts",
+                            "content_sha256": "f2d40674037be970f04b405d46a6be714ea57eef3de501d24c99bb058515eff3"
+                        },
+                        {
+                            "repository_url": "https://github.com/5aaee9/pi-agent-extensions",
+                            "commit": "c80abc7c4904fee9206f8649214a211ef84961ff",
+                            "path": "dsh-autocompact/settings.ts",
+                            "content_sha256": "51d0d354ddca6cf9890e1311082b230d41b8b6732d5be275179d5422c279084e"
+                        },
+                        {
+                            "repository_url": "https://github.com/5aaee9/pi-agent-extensions",
+                            "commit": "c80abc7c4904fee9206f8649214a211ef84961ff",
+                            "path": "dsh-autocompact/compaction.ts",
+                            "content_sha256": "20e0f14866e88d2981f84613894e3cdb5768d9c47d784d5b79b5492d471913d3"
+                        },
+                        {
+                            "repository_url": "https://github.com/5aaee9/pi-agent-extensions",
+                            "commit": "c80abc7c4904fee9206f8649214a211ef84961ff",
+                            "path": "dsh-autocompact/src/client/page.tsx",
+                            "content_sha256": "959c82ef1a6db8d26b352baecb74e8769f825ad618c6997ce1b01b9c2356c09e"
+                        },
+                        {
+                            "repository_url": "https://github.com/5aaee9/pi-agent-extensions",
+                            "commit": "c80abc7c4904fee9206f8649214a211ef84961ff",
+                            "path": "dsh-autocompact/src/client/config-store.ts",
+                            "content_sha256": "56c69817fe0b47d5bc8ab72f53834eae6140503a14d31d9e4de0e391a63aaf46"
+                        },
+                        {
+                            "repository_url": "https://github.com/5aaee9/pi-agent-extensions",
+                            "commit": "c80abc7c4904fee9206f8649214a211ef84961ff",
+                            "path": "dsh-autocompact/test/compaction.test.ts",
+                            "content_sha256": "d433f5fba6fc4b72367502bf7ca65d7d994553723548b7bbcd17ef50bee14840"
+                        }
+                    ],
                     "revision": "c80abc7c4904fee9206f8649214a211ef84961ff",
-                    "captured_at": "2026-10-21T03:16:25.549Z",
-                    "summary": "核查 dsh-autocompact/index.ts、dsh-autocompact/compaction.ts；组件index.ts按会话与provider/model维护覆盖值并访问当前Agent的compaction服务；compaction.ts要求token测量与surface节点一致，保留系统头和预算尾部并检查工具调用配对。",
-                    "artifact": "data/runs/2026-10-21-02/snapshots/5aaee9--pi-agent-extensions--dsh-autocompact/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:00:20.480Z",
+                    "summary": "核查 dsh-autocompact/README.md、dsh-autocompact/package.json、dsh-autocompact/index.ts、dsh-autocompact/settings.ts、dsh-autocompact/compaction.ts、dsh-autocompact/src/client/page.tsx、dsh-autocompact/src/client/config-store.ts、dsh-autocompact/test/compaction.test.ts；Session WeakMap保存精确route覆盖，pre-step按继承层取阈值并测量，选择保留tail与tool配对的前缀后调用当前agent的原生compactRegion。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/5aaee9--pi-agent-extensions--dsh-autocompact/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "核查固定提交内列明入口、核心实现及相关配置/作者材料的源码子集；未执行插件、其测试、安装、付费请求或真实宿主验收，未核实独立用户采用。",
+                        "只读固定monorepo的dsh-autocompact组件入口、选择器、配置和客户端/测试定义；未执行构建、测试、模型压缩或宿主冒烟。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +122,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "适合模型上下文预算不同、希望比宿主默认更早压缩的长会话开发者。",
+                    "text": "给需要按模型控制长会话压缩时机的开发者提供阈值入口，交付需核对实际摘要与任务约束而非仅设置成功。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1324229194-dsh-autocompact-source"
+                        "2026-10-22-02-github-1324229194-dsh-autocompact-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +133,16 @@
                             "fingerprint": "c80abc7c4904fee9206f8649214a211ef84961ff"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:25.549Z",
+                    "reviewed_at": "2026-10-22T05:00:20.480Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "组件index.ts按会话与provider/model维护覆盖值并访问当前Agent的compaction服务；compaction.ts要求token测量与surface节点一致，保留系统头和预算尾部并检查工具调用配对。",
+                    "text": "Session WeakMap保存精确route覆盖，pre-step按继承层取阈值并测量，选择保留tail与tool配对的前缀后调用当前agent的原生compactRegion。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1324229194-dsh-autocompact-source"
+                        "2026-10-22-02-github-1324229194-dsh-autocompact-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +151,16 @@
                             "fingerprint": "c80abc7c4904fee9206f8649214a211ef84961ff"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:25.549Z",
+                    "reviewed_at": "2026-10-22T05:00:20.480Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "核查固定提交内列明入口、核心实现及相关配置/作者材料的源码子集；未执行插件、其测试、安装、付费请求或真实宿主验收，未核实独立用户采用。",
+                    "text": "只读固定monorepo的dsh-autocompact组件入口、选择器、配置和客户端/测试定义；未执行构建、测试、模型压缩或宿主冒烟。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1324229194-dsh-autocompact-source"
+                        "2026-10-22-02-github-1324229194-dsh-autocompact-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +169,16 @@
                             "fingerprint": "c80abc7c4904fee9206f8649214a211ef84961ff"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:25.549Z",
+                    "reviewed_at": "2026-10-22T05:00:20.480Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "发布与依赖以本项固定package.json、README和本轮META为界；npm或仓库统计不是采用证据。",
+                    "text": "组件包@indexyz/dsh-autocompact 0.2.0，源码安装需构建产物；Node及DSH engine范围明确，peer星号不代表全版本兼容。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1324229194-dsh-autocompact-source"
+                        "2026-10-22-02-github-1324229194-dsh-autocompact-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +187,16 @@
                             "fingerprint": "c80abc7c4904fee9206f8649214a211ef84961ff"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:25.549Z",
+                    "reviewed_at": "2026-10-22T05:00:20.480Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "首次核对宿主压缩接口与模型阈值；持续压缩增加摘要模型token和延迟，人工需检查关键事实是否丢失，迁移受DSH服务接口影响。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 包构建/宿主资源，金额未知 | 对齐版本、route、真实窗口与阈值 | 无部署耗时基准 |\n| 持续使用 | token测量与backend压缩模型/资源 | 观察摘要及任务约束，调整threshold | 模型价格、频率和净token差未测 |\n| 失败恢复 | 原生溢出恢复或重复压缩成本 | 查警告、回原生默认、重建被摘要遗漏事项 | warnOnce不是可靠恢复收据 |\n\n",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1324229194-dsh-autocompact-source"
+                        "2026-10-22-02-github-1324229194-dsh-autocompact-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +205,16 @@
                             "fingerprint": "c80abc7c4904fee9206f8649214a211ef84961ff"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:25.549Z",
+                    "reviewed_at": "2026-10-22T05:00:20.480Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "长会话且了解模型窗口时可试。先确认阈值、保留尾部和重启行为，用含工具结果的任务检查压缩后能否继续。",
+                    "text": "适合熟悉原生压缩的人先用单会话单route试用，保留原生对照并核对关键约束和总费用；失败警告、摘要丢约束或成本上升时回默认。详见[Q06](#research-q06)。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1324229194-dsh-autocompact-source"
+                        "2026-10-22-02-github-1324229194-dsh-autocompact-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +223,16 @@
                             "fingerprint": "c80abc7c4904fee9206f8649214a211ef84961ff"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:25.549Z",
+                    "reviewed_at": "2026-10-22T05:00:20.480Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "提前触发有避免溢出的机制价值，但没有整体任务成功率或token节省对照。",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 提前控制 | 精确route阈值在pre-step检查 | 净费用和总耗时是否下降 |\n| 保留结构 | system头、近期tail和tool配对保护 | 摘要后的语义正确与任务质量 |\n| 配置便利 | 命令和revision设置编辑 | 多任务中选阈值的人时与维护负担 |\n\n未知金额、节省比例和成功率不填0。对照应计入摘要请求、失败、人工复核和恢复任务。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1324229194-dsh-autocompact-source"
+                        "2026-10-22-02-github-1324229194-dsh-autocompact-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +241,16 @@
                             "fingerprint": "c80abc7c4904fee9206f8649214a211ef84961ff"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:25.549Z",
+                    "reviewed_at": "2026-10-22T05:00:20.480Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "显式surface一致性校验和toolPairingBalancedBefore比字符截断更稳；serviceForAgent处理预设隔离。可复用纯范围选择逻辑，必须保留宿主版本与配对不变量。",
+                    "text": "值得复用的是用真实Session对象作WeakMap所有者避免恢复/分叉继承暂态覆盖，用精确provider/model区分配置，pre-step调用当前agent对应backend，以及在压缩前验证token-meter surface与当前surface逐项一致。范围选择保留工具配对是正确性支持，测试以mock配对函数核对多个边界，本轮只读不称通过。客户端config-store共享describe请求和view，减少多个UI读配置时漂移；写入仍需要宿主revision保障。\n\n",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1324229194-dsh-autocompact-source"
+                        "2026-10-22-02-github-1324229194-dsh-autocompact-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +259,16 @@
                             "fingerprint": "c80abc7c4904fee9206f8649214a211ef84961ff"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:25.549Z",
+                    "reviewed_at": "2026-10-22T05:00:20.480Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "interpretation",
-                    "text": "作者明确这是pi-autocompact的DSH移植；可确认增量是适配DSH的surface位置和Agent平面后端，提供会话阈值而不伪改模型contextWindow。相对全局缩小模型窗口，保留真实元数据并减少跨会话副作用；压缩算法仍归宿主。",
+                    "text": "在不改真实模型窗口前提下加入会话/route/deployment三级阈值，配命令和设置，复用原生压缩并保护tail与配对；属于pi-autocompact的DSH适配，不把上游摘要算原创。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1324229194-dsh-autocompact-source"
+                        "2026-10-22-02-github-1324229194-dsh-autocompact-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +277,16 @@
                             "fingerprint": "c80abc7c4904fee9206f8649214a211ef84961ff"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:25.549Z",
+                    "reviewed_at": "2026-10-22T05:00:20.480Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "测量阈值只是压力信号，不保证压缩能保留任务语义；不可拆的大消息或配对范围使选区返回undefined，仍可能溢出。会话命令覆盖在内存里，重启不应被理解为持久配置；默认配置与临时覆盖须区分。",
+                    "text": "阈值只触发尝试而非硬上限，缺backend/容量、不可拆范围或失败会跳过并继续；更早压缩也可能增加摘要成本和语义丢失，未有同任务效果对照。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1324229194-dsh-autocompact-source"
+                        "2026-10-22-02-github-1324229194-dsh-autocompact-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +295,16 @@
                             "fingerprint": "c80abc7c4904fee9206f8649214a211ef84961ff"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:25.549Z",
+                    "reviewed_at": "2026-10-22T05:00:20.480Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "unverified",
-                    "text": "待验证假设：在保留token预算之外加入用户目标/未完成工具依赖的保护标签，可改善压缩后任务恢复。对含长工具结果的同一会话比较答案一致性、压缩次数与保留体积；不假设保留更多一定更好。",
+                    "text": "可探讨质量反馈阈值实验，绑定阈值、压缩成本与任务约束比较原生/多个提前值，检验净收益而非追求更低占用；额外检查有成本，未验证。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1324229194-dsh-autocompact-source"
+                        "2026-10-22-02-github-1324229194-dsh-autocompact-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +313,15 @@
                             "fingerprint": "c80abc7c4904fee9206f8649214a211ef84961ff"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:25.549Z",
+                    "reviewed_at": "2026-10-22T05:00:20.480Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T03:16:25.549Z",
+            "last_checked_at": "2026-10-22T05:00:20.480Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "c80abc7c4904fee9206f8649214a211ef84961ff",
-                "reviewed_at": "2026-10-21T03:16:25.549Z",
+                "reviewed_at": "2026-10-22T05:00:20.480Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -275,61 +333,61 @@
                 "technical": {
                     "criteria": {
                         "novelty": 9,
-                        "mechanism": 23,
-                        "transferability": 15,
+                        "mechanism": 15,
+                        "transferability": 10,
                         "simplification": 8
                     },
-                    "rationale": "novelty=9：明确移植pi-autocompact，原创量有限。 mechanism=23：surface对齐、工具配对与Agent后端处理较深入。 transferability=15：纯选区逻辑可复用，DSH接口耦合。 simplification=8：会话阈值避免伪改窗口，配置更直接。",
+                    "rationale": "novelty为上游移植和阈值适配取小幅；mechanism精确backend及平衡范围选择取实质；transferability配置层与纯选择器可移植取实质；simplification不伪造窗口取实质，摘要效果不计。",
                     "basis": "interpretation",
-                    "score": 55,
+                    "score": 42,
                     "evidence_ids": [
-                        "2026-10-21-02-github-1324229194-dsh-autocompact-source"
+                        "2026-10-22-02-github-1324229194-dsh-autocompact-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 18,
-                        "delivery": 15,
-                        "reach": 10,
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
                         "economics": 4
                     },
-                    "rationale": "workflow=18：把压缩触发细化到会话与模型。 delivery=15：平衡选区可交后端，但语义保持未验证。 reach=10：长会话模型用户适用，需特定后端接口。 economics=4：无token净节省对照，摘要增加费用。",
+                    "rationale": "workflow为既有会话加阈值控制取小幅；delivery仍是原生摘要取小幅；reach命令/页面降低配置门槛取小幅；economics有净成本优化路径但无实测取小幅。",
                     "basis": "interpretation",
-                    "score": 47,
+                    "score": 26,
                     "evidence_ids": [
-                        "2026-10-21-02-github-1324229194-dsh-autocompact-source"
+                        "2026-10-22-02-github-1324229194-dsh-autocompact-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "了解模型窗口的长会话用户可先试提前压缩；核对阈值、工具配对与重启覆盖，用依赖早期信息的任务验接续。",
+                "reason": "模型阈值需求明确且会话覆盖可回退，适合单route受控试用；语义和净成本未知阻止持续安装结论。详见[Q06](#research-q06)。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "各模型压缩阈值不同导致长会话溢出是明确问题。"
+                        "rationale": "长会话阈值调节任务明确，普遍需求未量化。"
                     },
                     "advantage": {
-                        "score": 19,
-                        "rationale": "按会话模型覆盖而不伪改contextWindow比全局缩窗更精细。"
+                        "score": 13,
+                        "rationale": "三级阈值及结构保护有具体增量，原生也能压缩。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "测量与surface一致和配对检查源码可见，巨大消息仍可能无选区。"
+                        "rationale": "固定源码与静态测试支持机制，未运行目标。"
                     },
                     "cost": {
                         "score": 10,
-                        "rationale": "摘要调用和事实复核增加费用延迟，依赖宿主压缩接口。"
+                        "rationale": "命令回退清楚但增加摘要/复核及阈值维护，收益未测。"
                     }
                 },
-                "score": 65,
+                "score": 59,
                 "revision": "c80abc7c4904fee9206f8649214a211ef84961ff",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T05:00:20.480Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-02-github-1324229194-dsh-autocompact-source"
+                    "2026-10-22-02-github-1324229194-dsh-autocompact-source"
                 ],
                 "dependencies": [
                     {
@@ -354,90 +412,62 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T03:00:27Z",
-            "analysis_sha256": "84df7d2495d7176f17fc34686c0ea8bdf804949400692c1834b9b519fcffb541"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "0bf269cc4d082464ff9d9955e78d049e6f9c8b22fccda65f44cec006d74bb194"
         },
         "publication.metadata": "data/plugins/5aaee9--pi-agent-extensions--dsh-autocompact/META.json",
         "publication.summaries": {
-            "text": "为会话与模型设置自动压缩阈值，保留近期上下文并调用宿主压缩后端。",
+            "text": "为DSH按会话和模型设置提前自动压缩阈值，提供命令、全局默认设置页和状态入口。",
             "revision": "c80abc7c4904fee9206f8649214a211ef84961ff",
             "source_url": "https://github.com/5aaee9/pi-agent-extensions/blob/c80abc7c4904fee9206f8649214a211ef84961ff/dsh-autocompact/README.md"
         },
         "publication.capabilities": {
             "revision": "c80abc7c4904fee9206f8649214a211ef84961ff",
             "items": {
-                "用户命令": "/autocompact会话模型阈值",
-                "事件监听": "请求前测量与平衡选区压缩",
-                "界面": "模型阈值设置"
-            }
+                "用户命令": "/autocompact数值、off、default与查询",
+                "界面": "阈值设置页与composer状态入口",
+                "事件监听": "agent/pre-step提前压力检查"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| /autocompact | 当前会话/精确模型覆盖 | 暂态，off不关闭原生压缩 |\n| 设置页 | 持久route与deployment默认 | revision与writable条件，影响范围更大 |\n| 提前区域压缩 | 保留近期tail与tool配对 | 需原生auto/compactRegion，阈值非硬上限 |\n| 状态入口 | 查看配置并跳设置 | 不是实际压缩成功收据 |"
         },
         "publication.advice": {
             "revision": "c80abc7c4904fee9206f8649214a211ef84961ff",
-            "text": "长会话且了解模型窗口时可试。先确认阈值、保留尾部和重启行为，用含工具结果的任务检查压缩后能否继续。"
+            "text": "适合熟悉原生压缩的人先用单会话单route试用，保留原生对照并核对关键约束和总费用；失败警告、摘要丢约束或成本上升时回默认。详见[Q06](#research-q06)。"
         },
         "registry": "data/plugins/5aaee9--pi-agent-extensions--dsh-autocompact",
-        "reports": "# dsh-autocompact\n\n> 为会话与模型设置自动压缩阈值，保留近期上下文并调用宿主压缩后端。\n\n## 使用建议\n\n长会话且了解模型窗口时可试。先确认阈值、保留尾部和重启行为，用含工具结果的任务检查压缩后能否继续。\n\n**核查状态**：已检查固定版本源码，未安装、执行目标插件或完成真实宿主验收。已有贡献仅由固定版本源码支持，实际宿主和任务效果尚未验证；未来设计假设保持未验证。\n\n## 洞察短评\n\n- **用途**：适合模型上下文预算不同、希望比宿主默认更早压缩的长会话开发者。\n- **亮点**：作者明确这是pi-autocompact的DSH移植；可确认增量是适配DSH的surface位置和Agent平面后端，提供会话阈值而不伪改模型contextWindow。相对全局缩小模型窗口，保留真实元数据并减少跨会话副作用；压缩算法仍归宿主。\n- **思考**：测量阈值只是压力信号，不保证压缩能保留任务语义；不可拆的大消息或配对范围使选区返回undefined，仍可能溢出。会话命令覆盖在内存里，重启不应被理解为持久配置；默认配置与临时覆盖须区分。\n- **建议**：待验证假设：在保留token预算之外加入用户目标/未完成工具依赖的保护标签，可改善压缩后任务恢复。对含长工具结果的同一会话比较答案一致性、压缩次数与保留体积；不假设保留更多一定更好。\n\n## 当前插件分析\n\n### 场景与替代办法\n\n替代是手工/compact或宿主默认压缩；项目新增细粒度触发策略，不提供独立摘要质量保证。\n\n### 能力、依赖与流程\n\n组件index.ts按会话与provider/model维护覆盖值并访问当前Agent的compaction服务；compaction.ts要求token测量与surface节点一致，保留系统头和预算尾部并检查工具调用配对。\n\n- **用户命令**：/autocompact会话模型阈值\n- **事件监听**：请求前测量与平衡选区压缩\n- **界面**：模型阈值设置\n\n依赖commands/tokenMeter/llm及当前Agent挂载的compaction；继承@indexyz/pi-autocompact思路，包组件路径限定dsh-autocompact。\n\n设置会话阈值或全局默认→下一请求测量→超阈值选平衡范围→调用当前后端压缩→继续请求；无合适选区让宿主处理。\n\n### 成本与效果\n\n首次核对宿主压缩接口与模型阈值；持续压缩增加摘要模型token和延迟，人工需检查关键事实是否丢失，迁移受DSH服务接口影响。\n\n提前触发有避免溢出的机制价值，但没有整体任务成功率或token节省对照。\n\n### 工程亮点\n\n显式surface一致性校验和toolPairingBalancedBefore比字符截断更稳；serviceForAgent处理预设隔离。可复用纯范围选择逻辑，必须保留宿主版本与配对不变量。\n\n源码依据：[dsh-autocompact/index.ts](https://github.com/5aaee9/pi-agent-extensions/blob/c80abc7c4904fee9206f8649214a211ef84961ff/dsh-autocompact/index.ts)、[dsh-autocompact/compaction.ts](https://github.com/5aaee9/pi-agent-extensions/blob/c80abc7c4904fee9206f8649214a211ef84961ff/dsh-autocompact/compaction.ts)。\n\n## 未来设计假设（未验证）\n\n待验证假设：在保留token预算之外加入用户目标/未完成工具依赖的保护标签，可改善压缩后任务恢复。对含长工具结果的同一会话比较答案一致性、压缩次数与保留体积；不假设保留更多一定更好。\n\n固定宿主验证surface漂移、超大单条、工具配对、不同模型阈值及重启覆盖丢失；本轮只阅读组件源码。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：dsh-autocompact；内容摘要：ec24357b1149c93ce16ad7d97590da225ddf609687dd0e5d4d701a5e96f3b54f。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 17 | 1360 | — | — | 17288 |\n| .ts | source | 12 | 1490 | 920 | 467 | — |\n| .tsx | source | 6 | 1009 | 770 | 184 | — |\n| .ts | test | 5 | 1610 | 1366 | 100 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[5aaee9/pi-agent-extensions](https://github.com/5aaee9/pi-agent-extensions)\n- **版本号**：0.2.0（[固定提交 c80abc7c](https://github.com/5aaee9/pi-agent-extensions/tree/c80abc7c4904fee9206f8649214a211ef84961ff)）\n- **版本日期**：2026-10-19（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：dsh-autocompact/index.ts、dsh-autocompact/compaction.ts、作者README与固定范围inventory；源码抽读不等于完整审计。\n- 未完成：目标插件执行、测试、安装、模型调用和真实宿主验收。\n- 证据限制：核查固定提交内列明入口、核心实现及相关配置/作者材料的源码子集；未执行插件、其测试、安装、付费请求或真实宿主验收，未核实独立用户采用。\n- 下一步：固定宿主验证surface漂移、超大单条、工具配对、不同模型阈值及重启覆盖丢失；本轮只阅读组件源码。\n",
+        "reports": "# @indexyz/dsh-autocompact\n\n> 为DSH按会话和模型设置提前自动压缩阈值，提供命令、全局默认设置页和状态入口。\n\n## 研究范围\n\n- **仓库**：[5aaee9/pi-agent-extensions](https://github.com/5aaee9/pi-agent-extensions)\n- **版本号**：0.2.0（[固定提交 c80abc7c4904fee9206f8649214a211ef84961ff](https://github.com/5aaee9/pi-agent-extensions/tree/c80abc7c4904fee9206f8649214a211ef84961ff)）\n- **版本日期**：2026-10-19（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n源码支持阈值层级与原生backend适配贡献，净节省和语义效果未验证；质量反馈阈值实验为未验证新假设。\n\n## 洞察短评\n\n- **用途**：给需要按模型控制长会话压缩时机的开发者提供阈值入口，交付需核对实际摘要与任务约束而非仅设置成功。\n- **亮点**：在不改真实模型窗口前提下加入会话/route/deployment三级阈值，配命令和设置，复用原生压缩并保护tail与配对；属于pi-autocompact的DSH适配，不把上游摘要算原创。详见[Q02](#research-q02)。\n- **思考**：阈值只触发尝试而非硬上限，缺backend/容量、不可拆范围或失败会跳过并继续；更早压缩也可能增加摘要成本和语义丢失，未有同任务效果对照。详见[Q02](#research-q02)。\n- **建议**：可探讨质量反馈阈值实验，绑定阈值、压缩成本与任务约束比较原生/多个提前值，检验净收益而非追求更低占用；额外检查有成本，未验证。详见[Q05](#research-q05)。\n\n采用建议：适合熟悉原生压缩的人先用单会话单route试用，保留原生对照并核对关键约束和总费用；失败警告、摘要丢约束或成本上升时回默认。详见[Q06](#research-q06)。\n\n## 核心贡献\n\n在不改真实模型窗口前提下加入会话/route/deployment三级阈值，配命令和设置，复用原生压缩并保护tail与配对；属于pi-autocompact的DSH适配，不把上游摘要算原创。详见[Q02](#research-q02)。\n\n## 关键质疑\n\n阈值只触发尝试而非硬上限，缺backend/容量、不可拆范围或失败会跳过并继续；更早压缩也可能增加摘要成本和语义丢失，未有同任务效果对照。详见[Q02](#research-q02)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可探讨质量反馈阈值实验，绑定阈值、压缩成本与任务约束比较原生/多个提前值，检验净收益而非追求更低占用；额外检查有成本，未验证。详见[Q05](#research-q05)。\n\n进一步探讨可从固定模型任务的原生默认与多个提前阈值比较入手，记录全部压缩调用、总tokens、人时及关键约束保持。\n\n## 场景与替代办法\n\n给需要按模型控制长会话压缩时机的开发者提供阈值入口，交付需核对实际摘要与任务约束而非仅设置成功。\n\n原生backend负责摘要、溢出恢复和留存策略；用户也可手工压缩。本插件提供更早、分route和分会话的触发控制，不替代摘要引擎。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| 声明Node/DSH与commands/tokenMeter/llm | 启动必需 | 注册命令并测量真实route | 不能承诺版本外兼容 |\n| native auto启用且支持compactRegion的backend | 提前压缩必需 | 执行平衡区域摘要 | 阈值无效或跳过，不等于原生压缩关闭 |\n| 正确contextWindow与retention policy | 判断必需 | 校验阈值和保留尾部 | 未知容量则警告，不编造 |\n| remote.settings及可写profile | 持久设置必需 | revision校验写defaults | 只读模式不能保存，可保留session命令 |\n\n\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 准备 | 用户确认版本、模型容量和backend | 阈值大于保留预算且小于真实窗口 |\n| 加载 | 安装构建好的包，检查命令和设置入口 | 本地源码安装须先构建，不执行当作已验证 |\n| 使用 | 先用会话命令设置一个route | 显示正确来源，压缩记录可查 |\n| 恢复/退出 | off回到原生，default回继承，另清理持久defaults | 不把off解释成停用原生压缩 |\n\n卸载不会撤销已发生的原生压缩记录，持久配置应按宿主设置管理。\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 包构建/宿主资源，金额未知 | 对齐版本、route、真实窗口与阈值 | 无部署耗时基准 |\n| 持续使用 | token测量与backend压缩模型/资源 | 观察摘要及任务约束，调整threshold | 模型价格、频率和净token差未测 |\n| 失败恢复 | 原生溢出恢复或重复压缩成本 | 查警告、回原生默认、重建被摘要遗漏事项 | warnOnce不是可靠恢复收据 |\n\n\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 提前控制 | 精确route阈值在pre-step检查 | 净费用和总耗时是否下降 |\n| 保留结构 | system头、近期tail和tool配对保护 | 摘要后的语义正确与任务质量 |\n| 配置便利 | 命令和revision设置编辑 | 多任务中选阈值的人时与维护负担 |\n\n未知金额、节省比例和成功率不填0。对照应计入摘要请求、失败、人工复核和恢复任务。\n\n## 研究问题与完整回答\n\n**插件研究总目标：**核查DSH提前压缩阈值的范围选择、配置层级、效果取舍和采用条件。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 谁需要提前阈值，命令到压缩怎样运行？\n\n**研究主题：**场景与需求、功能与机制\n\n#### 完整回答\n\n适合在DSH编码任务中希望较早压缩、又不想伪造模型contextWindow的用户。输入是当前会话精确provider/model及绝对token阈值，交付是下次步骤前按阈值触发已挂载backend的区域压缩，保留近期尾部和工具调用配对。合格结果需压缩实际发生、任务约束继续保持，并能区分会话覆盖和全局默认。\n\n/autocompact命令把覆盖保存在Session对象WeakMap内，模型切换按精确route区分；off抑制插件继承层而不关闭原生压缩，default删除覆盖。agent/pre-step读取当前覆盖、route默认或deployment默认，native auto关闭则不触发；token-meter总量严格大于阈值才选择surface前缀，保留按原生政策计算的尾部。选择器核对测量节点与当前surface一致，保护开头system并向前调整到工具配对平衡边界，再调用backend.compactRegion。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[dsh-autocompact/index.ts:173-198](https://github.com/5aaee9/pi-agent-extensions/blob/c80abc7c4904fee9206f8649214a211ef84961ff/dsh-autocompact/index.ts#L173-L198)\n\n会话WeakMap与默认层解析。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\nexport function apply(ctx: Context, config: AutocompactConfig = {}): void {\n  /** Current global defaults, re-read so a Settings write applies to the running plugin. */\n  const limitsNow = (): Map<string, number> =>\n    defaultLimits({ modelLimits: liveValue(config.modelLimits, {}) });\n  /**\n   * Current deployment-wide threshold, re-read like the defaults above.\n   * `undefined` means no default: uncovered models keep the backend's behavior.\n   */\n  const defaultLimitNow = (): number | undefined =>\n    validateDefaultLimit(liveValue<number | undefined>(config.defaultLimit, undefined));\n  const fallbackRetainTokens = liveValue(config.retainTokens, 20000);\n  // Validate the configured defaults at load, where a bad row fails loudly,\n  // instead of at the first measured step.\n  limitsNow();\n  defaultLimitNow();\n  // Session-only state, keyed by the live Session object so a new, resumed, or\n  // forked session starts clean and a detached session is collected.\n  const sessions = new WeakMap<Session, SessionState>();\n\n  const stateOf = (session: Session): SessionState => {\n    let state = sessions.get(session);\n    if (state === undefined) {\n      state = { overrides: new Map(), warned: new Set() };\n      sessions.set(session, state);\n    }\n    return state;\n```\n\n</details>\n\n**依据 2 · 源码核查**：[dsh-autocompact/index.ts:242-280](https://github.com/5aaee9/pi-agent-extensions/blob/c80abc7c4904fee9206f8649214a211ef84961ff/dsh-autocompact/index.ts#L242-L280)\n\npre-step阈值检查和backend调用。\n\n<details>\n<summary>查看原文（39行）</summary>\n\n```text\n  const checkPressure = async (agent: Agent, signal: AbortSignal): Promise<void> => {\n    if (!liveValue(config.enabled, true) || signal.aborted) return;\n    const target = targetOf(agent);\n    if (target === undefined) return;\n    const key = modelKey(target.provider, target.model);\n    const limit = resolveLimit(\n      stateOf(agent.session).overrides,\n      limitsNow(),\n      key,\n      defaultLimitNow(),\n    );\n    if (limit === undefined) return;\n    const backend = backendFor(ctx, agent);\n    if (backend === undefined || !nativeAutoEnabled(backend)) return;\n    const measurement = ctx.tokenMeter.measure(agent.session);\n    if (!needsCompaction(measurement, limit)) return;\n    if (!supportsRegions(backend)) {\n      warnOnce(\n        agent.session,\n        \"the mounted compaction backend does not support compactRegion; thresholds have no effect\",\n      );\n      return;\n    }\n    const route = await routeInfo(agent, backend, signal);\n    if (route === undefined || route.contextWindow === undefined) {\n      warnOnce(\n        agent.session,\n        `no context capacity for ${key}; configure contextWindow on that adapter model`,\n      );\n      return;\n    }\n    if (signal.aborted) return;\n    validateLimit(limit, route.contextWindow, route.retainTokens);\n    const range = selectCompactableRange(agent.session, measurement, route.retainTokens);\n    if (range === undefined) return;\n    ctx.logger.info(\n      `autocompact: compacting ${key} above ${limit.toLocaleString(\"en-US\")} tokens (${measurement.totalTokens.toLocaleString(\"en-US\")} measured)`,\n    );\n    await backend.compactRegion(range.start, range.end, agent, signal);\n```\n\n</details>\n\n**依据 3 · 源码核查**：[dsh-autocompact/index.ts:321-351](https://github.com/5aaee9/pi-agent-extensions/blob/c80abc7c4904fee9206f8649214a211ef84961ff/dsh-autocompact/index.ts#L321-L351)\n\noff/default语义与来源提示。\n\n<details>\n<summary>查看原文（31行）</summary>\n\n```text\n      const input = rawInput.trim().toLowerCase();\n      const state = stateOf(agent.session).overrides;\n      if (input === \"off\") state.set(key, null);\n      else if (input === \"default\") state.delete(key);\n      else if (input) {\n        const limit = parseLimit(input);\n        validateLimit(limit, route.contextWindow, route.retainTokens);\n        if (nativeOff) {\n          return {\n            kind: \"error\",\n            text: \"Automatic compaction is disabled by the compaction backend. Enable it before setting a threshold.\",\n          };\n        }\n        state.set(key, limit);\n      }\n      const defaults = limitsNow();\n      const limit = resolveLimit(state, defaults, key, defaultLimitNow());\n      // Name the layer the effective threshold came from: the session, an exact\n      // `provider/model` default, or the deployment-wide fallback.\n      const source = state.has(key)\n        ? \"session\"\n        : defaults.has(key)\n          ? \"global default\"\n          : \"deployment default\";\n      const threshold =\n        limit === undefined\n          ? \"backend default compaction (no plugin threshold)\"\n          : `autocompact above ${limit.toLocaleString(\"en-US\")} tokens (${source})`;\n      return {\n        kind: \"success\",\n        text: `${key}: ${threshold}. Native automatic compaction: ${nativeOff ? \"disabled\" : \"enabled\"}. No configuration written.`,\n```\n\n</details>\n\n**依据 4 · 源码核查**：[dsh-autocompact/compaction.ts:56-87](https://github.com/5aaee9/pi-agent-extensions/blob/c80abc7c4904fee9206f8649214a211ef84961ff/dsh-autocompact/compaction.ts#L56-L87)\n\n当前surface核对、尾部和工具配对范围。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\nexport function selectCompactableRange(\n  session: Session,\n  measurement: Pick<TokenMeasurement, \"nodes\">,\n  retainTokens: number,\n): CompactableRange | undefined {\n  const pricedNodes = measurement.nodes;\n  if (pricedNodes.length === 0) return undefined;\n  const surfaceNodes = session.surface.nodes;\n  if (\n    surfaceNodes.length !== pricedNodes.length ||\n    surfaceNodes.some((seq, index) => seq !== pricedNodes[index]?.seq)\n  ) {\n    throw new Error(\"autocompact: token-meter surface does not match the current session surface\");\n  }\n  const firstIdx = systemHead(session, surfaceNodes[0]) === undefined ? 0 : 1;\n  let accumulated = 0;\n  let keepFromIdx = pricedNodes.length;\n  for (let index = pricedNodes.length - 1; index >= 0; index -= 1) {\n    accumulated += pricedNodes[index].tokens;\n    keepFromIdx = index;\n    if (accumulated >= retainTokens) break;\n  }\n  if (keepFromIdx <= firstIdx) return undefined;\n  while (keepFromIdx > firstIdx) {\n    if (toolPairingBalancedBefore(session, surfaceNodes[keepFromIdx])) break;\n    keepFromIdx -= 1;\n  }\n  if (keepFromIdx <= firstIdx) return undefined;\n  return {\n    start: surfaceNodes[firstIdx],\n    end: surfaceNodes[keepFromIdx - 1],\n  };\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 相对原生压缩增加什么，关键边界是什么？\n\n**研究主题：**贡献与相对优势、缺陷与关键质疑\n\n#### 完整回答\n\n贡献是把提前压缩阈值拆成会话精确route覆盖、route持久默认与部署默认，提供命令及设置入口，仍使用原生backend和真实上下文元数据。源码明确为pi-autocompact移植，范围选择和宿主preset寻址是DSH适配增量，不把上游压缩摘要质量算本组件创新。\n\n关键边界是阈值只触发一次尝试，不是上下文硬上限。小surface、不可拆大消息、无backend/compactRegion、未知容量、native auto关闭或范围选择失败都可能不压缩；失败被捕获为warnOnce并继续next，保留原生恢复责任。阈值降低会增加摘要频率与信息损失，也可能减少后续重复上下文，哪个占优需任务对照。测量后异步resolveModelInfo期间surface若变化，选择器会抛并跳过，而非用旧范围强行压缩。无配置的模型维持原生行为，因此安装本身不必然改变每个会话。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[dsh-autocompact/index.ts:1-17](https://github.com/5aaee9/pi-agent-extensions/blob/c80abc7c4904fee9206f8649214a211ef84961ff/dsh-autocompact/index.ts#L1-L17)\n\n作者源码说明移植与preset backend寻址归属。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n/**\n * Session-only per-model automatic compaction thresholds for dsh.\n *\n * The dsh port of `@indexyz/pi-autocompact`. A `/autocompact 300k` threshold is\n * kept in memory for the current session and model only; when the measured\n * request pressure crosses it, the plugin compacts an explicit balanced surface\n * range through the session's mounted compaction backend before the next\n * request. Nothing is written to configuration, the session log carries only\n * the backend's ordinary compaction records, and the model's real context-window\n * metadata is never modified.\n *\n * `compaction` is not a Host-plane service: the shipped Web bundle disables the\n * root row and lets each Agent preset mount its own isolated instance. This\n * plugin therefore mounts on the Host plane (so one row serves every preset) and\n * addresses the backend of the exact Agent at event time through\n * {@link serviceForAgent}, falling back to the Host plane for compositions (the\n * headless, ACP, and SDK bundles) that do mount it there.\n```\n\n</details>\n\n**依据 2 · 源码核查**：[dsh-autocompact/index.ts:253-294](https://github.com/5aaee9/pi-agent-extensions/blob/c80abc7c4904fee9206f8649214a211ef84961ff/dsh-autocompact/index.ts#L253-L294)\n\n各跳过条件、错误包含和继续执行。\n\n<details>\n<summary>查看原文（42行）</summary>\n\n```text\n    if (limit === undefined) return;\n    const backend = backendFor(ctx, agent);\n    if (backend === undefined || !nativeAutoEnabled(backend)) return;\n    const measurement = ctx.tokenMeter.measure(agent.session);\n    if (!needsCompaction(measurement, limit)) return;\n    if (!supportsRegions(backend)) {\n      warnOnce(\n        agent.session,\n        \"the mounted compaction backend does not support compactRegion; thresholds have no effect\",\n      );\n      return;\n    }\n    const route = await routeInfo(agent, backend, signal);\n    if (route === undefined || route.contextWindow === undefined) {\n      warnOnce(\n        agent.session,\n        `no context capacity for ${key}; configure contextWindow on that adapter model`,\n      );\n      return;\n    }\n    if (signal.aborted) return;\n    validateLimit(limit, route.contextWindow, route.retainTokens);\n    const range = selectCompactableRange(agent.session, measurement, route.retainTokens);\n    if (range === undefined) return;\n    ctx.logger.info(\n      `autocompact: compacting ${key} above ${limit.toLocaleString(\"en-US\")} tokens (${measurement.totalTokens.toLocaleString(\"en-US\")} measured)`,\n    );\n    await backend.compactRegion(range.start, range.end, agent, signal);\n  };\n\n  ctx.on(\"agent/pre-step\", async ({ agent, signal }, next) => {\n    try {\n      await checkPressure(agent, signal);\n    } catch (error) {\n      if (!signal.aborted) {\n        warnOnce(\n          agent.session,\n          `compaction failed: ${error instanceof Error ? error.message : String(error)}`,\n        );\n      }\n    }\n    return next();\n```\n\n</details>\n\n**依据 3 · 源码核查**：[dsh-autocompact/compaction.ts:41-49](https://github.com/5aaee9/pi-agent-extensions/blob/c80abc7c4904fee9206f8649214a211ef84961ff/dsh-autocompact/compaction.ts#L41-L49)\n\n不可压缩范围明确交回原生恢复。\n\n```text\n/**\n * Resolve the next range starting at the first non-system surface node while\n * retaining a priced recent tail and never splitting an assistant\n * tool-call/result pair. A `system/message` at surface node 0 is never inside\n * the range; without one the range starts at node 0.\n *\n * Returns `undefined` when the surface is too small or one indivisible\n * oversized message cannot be compacted and still shrink, which leaves the\n * decision to the backend's own overflow or manual compaction.\n```\n\n**依据 4 · 源码核查**：[dsh-autocompact/settings.ts:93-108](https://github.com/5aaee9/pi-agent-extensions/blob/c80abc7c4904fee9206f8649214a211ef84961ff/dsh-autocompact/settings.ts#L93-L108)\n\n覆盖/default解析顺序。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n/**\n * Resolve the effective absolute threshold for one route.\n *\n * A session override always wins, including an explicit `null` that suppresses\n * every persisted layer. Below it an exact `provider/model` entry wins over the\n * deployment-wide default; with neither configured the route has no threshold\n * and autocompact stays off for it.\n */\nexport function resolveLimit(\n  overrides: ReadonlyMap<string, number | null>,\n  defaults: ReadonlyMap<string, number>,\n  key: string,\n  defaultLimit?: number,\n): number | undefined {\n  if (overrides.has(key)) return overrides.get(key) ?? undefined;\n  return defaults.get(key) ?? defaultLimit;\n```\n\n</details>\n\n#### 缺口\n\n- 没有同任务阈值策略对照的费用、摘要失真与完成率。\n  **影响：**不能判断较早压缩必然更便宜或更好。\n  **进一步探讨：**可用相同模型任务对照原生默认与多个阈值，记录完整压缩成本、约束保持和最终交付。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 部署、设置写入及退出分别依赖什么？\n\n**研究主题：**依赖、兼容与流程\n\n#### 完整回答\n\n包要求Node>=22.19与DSH >=0.2.0-rc.2 <0.3.0-0，多项peer宽泛为*不表示所有API版本兼容。核心需commands、tokenMeter、llm与能够compactRegion的会话backend；web设置还需remote.settings和客户端挂载。命令只写会话内存，但设置页通过revision保护的settings.mutate持久化modelLimits/defaultLimit，两者不能混为“所有操作都不写配置”。\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| 声明Node/DSH与commands/tokenMeter/llm | 启动必需 | 注册命令并测量真实route | 不能承诺版本外兼容 |\n| native auto启用且支持compactRegion的backend | 提前压缩必需 | 执行平衡区域摘要 | 阈值无效或跳过，不等于原生压缩关闭 |\n| 正确contextWindow与retention policy | 判断必需 | 校验阈值和保留尾部 | 未知容量则警告，不编造 |\n| remote.settings及可写profile | 持久设置必需 | revision校验写defaults | 只读模式不能保存，可保留session命令 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 准备 | 用户确认版本、模型容量和backend | 阈值大于保留预算且小于真实窗口 |\n| 加载 | 安装构建好的包，检查命令和设置入口 | 本地源码安装须先构建，不执行当作已验证 |\n| 使用 | 先用会话命令设置一个route | 显示正确来源，压缩记录可查 |\n| 恢复/退出 | off回到原生，default回继承，另清理持久defaults | 不把off解释成停用原生压缩 |\n\n卸载不会撤销已发生的原生压缩记录，持久配置应按宿主设置管理。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[dsh-autocompact/package.json:77-97](https://github.com/5aaee9/pi-agent-extensions/blob/c80abc7c4904fee9206f8649214a211ef84961ff/dsh-autocompact/package.json#L77-L97)\n\npeer与engine声明。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n  \"peerDependencies\": {\n    \"@deepseek-ai/cordis\": \"*\",\n    \"@deepseek-ai/dsh-agent\": \"*\",\n    \"@deepseek-ai/dsh-agent-preset-registry\": \"*\",\n    \"@deepseek-ai/dsh-commands\": \"*\",\n    \"@deepseek-ai/dsh-compaction\": \"*\",\n    \"@deepseek-ai/dsh-llm\": \"*\",\n    \"@deepseek-ai/dsh-session\": \"*\",\n    \"@deepseek-ai/dsh-token-meter\": \"*\",\n    \"@deepseek-ai/schemastery\": \"*\"\n  },\n  \"release\": {\n    \"smoke\": \"test/smoke-release.ts\"\n  },\n  \"engines\": {\n    \"dsh\": \">=0.2.0-rc.2 <0.3.0-0\",\n    \"node\": \">=22.19.0\"\n  },\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n```\n\n</details>\n\n**依据 2 · 源码核查**：[dsh-autocompact/index.ts:46-89](https://github.com/5aaee9/pi-agent-extensions/blob/c80abc7c4904fee9206f8649214a211ef84961ff/dsh-autocompact/index.ts#L46-L89)\n\n服务依赖与volatile配置。\n\n<details>\n<summary>查看原文（44行）</summary>\n\n```text\n/** Host-plane services this plugin needs before it can register its command and hook. */\nexport const inject = [\"commands\", \"tokenMeter\", \"llm\"];\n\n/** A `.volatile()` Config field: the Loader parses it into a stable reference read with `get()`. */\nexport interface VolatileField<T> {\n  get(): T | undefined;\n}\n\n/**\n * Row configuration as `apply` receives it.\n *\n * The two fields the Settings page writes are declared `.volatile()`, so the\n * Loader hands `apply` live references rather than plain values; a direct call\n * (tests, embedding) may still pass plain values.\n */\nexport interface AutocompactConfig {\n  /** Optional global default thresholds keyed by exact `provider/model`. Never written by the command. */\n  modelLimits?: Record<string, number> | VolatileField<Record<string, number>>;\n  /**\n   * Optional deployment-wide threshold applied to every model without its own\n   * entry. Absent means those models keep the backend's automatic compaction.\n   */\n  defaultLimit?: number | VolatileField<number | undefined>;\n  /** Recent-tail fallback budget used only when the backend publishes no retention policy. */\n  retainTokens?: number;\n  /** Master switch for the automatic pressure check. */\n  enabled?: boolean | VolatileField<boolean>;\n}\n\n/**\n * Validated row configuration; misconfiguration fails plugin load.\n *\n * `modelLimits`, `defaultLimit` and `enabled` are volatile because the Settings\n * page edits them through the Host settings service: that service only exposes\n * an entry whose schema declares a volatile field (`volatileForm`), and only\n * accepts writes to volatile paths. A volatile field is also what makes an edit\n * visible to the running plugin without a restart. `retainTokens` stays ordinary\n * configuration, editable from `cordis.patch.yml` only.\n */\nexport const Config = z.object({\n  modelLimits: z.dict(z.natural()).default({}).volatile(),\n  defaultLimit: z.natural().volatile(),\n  retainTokens: z.natural().default(20000),\n  enabled: z.boolean().default(true).volatile(),\n```\n\n</details>\n\n**依据 3 · 源码核查**：[dsh-autocompact/src/client/page.tsx:140-175](https://github.com/5aaee9/pi-agent-extensions/blob/c80abc7c4904fee9206f8649214a211ef84961ff/dsh-autocompact/src/client/page.tsx#L140-L175)\n\n设置mutation携带revision，和session命令不同。\n\n<details>\n<summary>查看原文（36行）</summary>\n\n```text\n  const save = React.useCallback(async () => {\n    const settings = settingsFace();\n    if (settings === undefined || state === null) return;\n    const ops: SettingsOp[] = [];\n    const trimmedDefault = defaultDraft.trim();\n    if (trimmedDefault === \"\") {\n      // Blank means \"no deployment default\"; only a stored value needs the unset.\n      if (state.defaultLimit !== undefined) ops.push({ op: \"unset\", path: [\"defaultLimit\"] });\n    } else {\n      const parsed = parseLimit(trimmedDefault);\n      if (parsed === undefined) {\n        setNotice({ kind: \"error\", text: t(\"invalid\") });\n        return;\n      }\n      if (parsed !== state.defaultLimit) {\n        ops.push({ op: \"set\", path: [\"defaultLimit\"], value: parsed });\n      }\n    }\n    for (const key of removed) ops.push({ op: \"unset\", path: [\"modelLimits\", key] });\n    for (const [key, raw] of Object.entries(draft)) {\n      const parsed = parseLimit(raw);\n      if (parsed === undefined) {\n        setNotice({ kind: \"error\", text: t(\"invalid\") });\n        return;\n      }\n      ops.push({ op: \"set\", path: [\"modelLimits\", key], value: parsed });\n    }\n    if (ops.length === 0) return;\n    setBusy(true);\n    setNotice(null);\n    try {\n      const response = await settings.mutate(state.ns, ops, state.revision);\n      if (response.ok) {\n        applyView(response.value, state.writable);\n        setNotice({ kind: \"success\", text: t(\"saved\") });\n        return;\n```\n\n</details>\n\n**依据 4 · 源码核查**：[dsh-autocompact/settings.ts:46-54](https://github.com/5aaee9/pi-agent-extensions/blob/c80abc7c4904fee9206f8649214a211ef84961ff/dsh-autocompact/settings.ts#L46-L54)\n\n阈值校验相对retention和真实窗口。\n\n```text\nexport function validateLimit(limit: number, contextWindow: number, retainTokens: number): void {\n  if (!Number.isSafeInteger(limit) || limit <= retainTokens) {\n    throw new Error(\n      `Threshold must be an integer greater than the retained token budget (${retainTokens})`,\n    );\n  }\n  if (!Number.isSafeInteger(contextWindow) || contextWindow <= 0 || limit >= contextWindow) {\n    throw new Error(`Threshold must be less than the model context window (${contextWindow})`);\n  }\n```\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 首次、持续与失败恢复成本和效果怎样计量？\n\n**研究主题：**效果与总成本\n\n#### 完整回答\n\n计量单位是保持任务关键约束并完成合格交付的一段会话，而非某次压缩返回。插件通过既有backend调用可能发模型摘要请求，不能从新增命令较轻推断没有额外模型费用。提前阈值可能降低后续上下文，也可能提高压缩频率并把人工修复摘要错误的负担前移。\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 包构建/宿主资源，金额未知 | 对齐版本、route、真实窗口与阈值 | 无部署耗时基准 |\n| 持续使用 | token测量与backend压缩模型/资源 | 观察摘要及任务约束，调整threshold | 模型价格、频率和净token差未测 |\n| 失败恢复 | 原生溢出恢复或重复压缩成本 | 查警告、回原生默认、重建被摘要遗漏事项 | warnOnce不是可靠恢复收据 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 提前控制 | 精确route阈值在pre-step检查 | 净费用和总耗时是否下降 |\n| 保留结构 | system头、近期tail和tool配对保护 | 摘要后的语义正确与任务质量 |\n| 配置便利 | 命令和revision设置编辑 | 多任务中选阈值的人时与维护负担 |\n\n未知金额、节省比例和成功率不填0。对照应计入摘要请求、失败、人工复核和恢复任务。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[dsh-autocompact/index.ts:256-280](https://github.com/5aaee9/pi-agent-extensions/blob/c80abc7c4904fee9206f8649214a211ef84961ff/dsh-autocompact/index.ts#L256-L280)\n\n测量和真正调用backend.compactRegion。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n    const measurement = ctx.tokenMeter.measure(agent.session);\n    if (!needsCompaction(measurement, limit)) return;\n    if (!supportsRegions(backend)) {\n      warnOnce(\n        agent.session,\n        \"the mounted compaction backend does not support compactRegion; thresholds have no effect\",\n      );\n      return;\n    }\n    const route = await routeInfo(agent, backend, signal);\n    if (route === undefined || route.contextWindow === undefined) {\n      warnOnce(\n        agent.session,\n        `no context capacity for ${key}; configure contextWindow on that adapter model`,\n      );\n      return;\n    }\n    if (signal.aborted) return;\n    validateLimit(limit, route.contextWindow, route.retainTokens);\n    const range = selectCompactableRange(agent.session, measurement, route.retainTokens);\n    if (range === undefined) return;\n    ctx.logger.info(\n      `autocompact: compacting ${key} above ${limit.toLocaleString(\"en-US\")} tokens (${measurement.totalTokens.toLocaleString(\"en-US\")} measured)`,\n    );\n    await backend.compactRegion(range.start, range.end, agent, signal);\n```\n\n</details>\n\n**依据 2 · 源码核查**：[dsh-autocompact/index.ts:283-294](https://github.com/5aaee9/pi-agent-extensions/blob/c80abc7c4904fee9206f8649214a211ef84961ff/dsh-autocompact/index.ts#L283-L294)\n\n失败警告并继续下一步。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n  ctx.on(\"agent/pre-step\", async ({ agent, signal }, next) => {\n    try {\n      await checkPressure(agent, signal);\n    } catch (error) {\n      if (!signal.aborted) {\n        warnOnce(\n          agent.session,\n          `compaction failed: ${error instanceof Error ? error.message : String(error)}`,\n        );\n      }\n    }\n    return next();\n```\n\n</details>\n\n**依据 3 · 源码核查**：[dsh-autocompact/compaction.ts:70-87](https://github.com/5aaee9/pi-agent-extensions/blob/c80abc7c4904fee9206f8649214a211ef84961ff/dsh-autocompact/compaction.ts#L70-L87)\n\n结构保护存在不等于语义保真。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n  const firstIdx = systemHead(session, surfaceNodes[0]) === undefined ? 0 : 1;\n  let accumulated = 0;\n  let keepFromIdx = pricedNodes.length;\n  for (let index = pricedNodes.length - 1; index >= 0; index -= 1) {\n    accumulated += pricedNodes[index].tokens;\n    keepFromIdx = index;\n    if (accumulated >= retainTokens) break;\n  }\n  if (keepFromIdx <= firstIdx) return undefined;\n  while (keepFromIdx > firstIdx) {\n    if (toolPairingBalancedBefore(session, surfaceNodes[keepFromIdx])) break;\n    keepFromIdx -= 1;\n  }\n  if (keepFromIdx <= firstIdx) return undefined;\n  return {\n    start: surfaceNodes[firstIdx],\n    end: surfaceNodes[keepFromIdx - 1],\n  };\n```\n\n</details>\n\n#### 缺口\n\n- 缺少同条件任务下压缩调用数量、token费用、人时和质量数据。\n  **影响：**不能给出净节省、最佳阈值或持续采用收益。\n  **进一步探讨：**可固定模型/任务/输入，比较原生和多个提前阈值的总请求预算及约束保持率。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 哪些设计值得复用，阈值反馈假设如何证伪？\n\n**研究主题：**工程质量与复用、新假设与验证\n\n#### 完整回答\n\n值得复用的是用真实Session对象作WeakMap所有者避免恢复/分叉继承暂态覆盖，用精确provider/model区分配置，pre-step调用当前agent对应backend，以及在压缩前验证token-meter surface与当前surface逐项一致。范围选择保留工具配对是正确性支持，测试以mock配对函数核对多个边界，本轮只读不称通过。客户端config-store共享describe请求和view，减少多个UI读配置时漂移；写入仍需要宿主revision保障。\n\n由Q02/Q04可提出未验证的“质量反馈阈值实验”假设。只在用户选择的任务集里记录阈值、压缩前后tokens、压缩请求成本和关键约束检查，比较多个阈值而非给所有模型固定绝对值。增量是把阈值从个人偏好变成可解释的任务取舍，不宣称自动调优必胜。需要可核对验收与任务隐私处理，可能增加模型/人工检查费用。最小对照为原生默认、一个保守提前值、一个更早值，若净成本不降或约束丢失增加，就应否定该阈值策略。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[dsh-autocompact/index.ts:188-198](https://github.com/5aaee9/pi-agent-extensions/blob/c80abc7c4904fee9206f8649214a211ef84961ff/dsh-autocompact/index.ts#L188-L198)\n\nSession对象所有权。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n  // Session-only state, keyed by the live Session object so a new, resumed, or\n  // forked session starts clean and a detached session is collected.\n  const sessions = new WeakMap<Session, SessionState>();\n\n  const stateOf = (session: Session): SessionState => {\n    let state = sessions.get(session);\n    if (state === undefined) {\n      state = { overrides: new Map(), warned: new Set() };\n      sessions.set(session, state);\n    }\n    return state;\n```\n\n</details>\n\n**依据 2 · 源码核查**：[dsh-autocompact/compaction.ts:61-87](https://github.com/5aaee9/pi-agent-extensions/blob/c80abc7c4904fee9206f8649214a211ef84961ff/dsh-autocompact/compaction.ts#L61-L87)\n\nsurface一致性与平衡边界。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\n  const pricedNodes = measurement.nodes;\n  if (pricedNodes.length === 0) return undefined;\n  const surfaceNodes = session.surface.nodes;\n  if (\n    surfaceNodes.length !== pricedNodes.length ||\n    surfaceNodes.some((seq, index) => seq !== pricedNodes[index]?.seq)\n  ) {\n    throw new Error(\"autocompact: token-meter surface does not match the current session surface\");\n  }\n  const firstIdx = systemHead(session, surfaceNodes[0]) === undefined ? 0 : 1;\n  let accumulated = 0;\n  let keepFromIdx = pricedNodes.length;\n  for (let index = pricedNodes.length - 1; index >= 0; index -= 1) {\n    accumulated += pricedNodes[index].tokens;\n    keepFromIdx = index;\n    if (accumulated >= retainTokens) break;\n  }\n  if (keepFromIdx <= firstIdx) return undefined;\n  while (keepFromIdx > firstIdx) {\n    if (toolPairingBalancedBefore(session, surfaceNodes[keepFromIdx])) break;\n    keepFromIdx -= 1;\n  }\n  if (keepFromIdx <= firstIdx) return undefined;\n  return {\n    start: surfaceNodes[firstIdx],\n    end: surfaceNodes[keepFromIdx - 1],\n  };\n```\n\n</details>\n\n**依据 3 · 源码核查**：[dsh-autocompact/test/compaction.test.ts:31-77](https://github.com/5aaee9/pi-agent-extensions/blob/c80abc7c4904fee9206f8649214a211ef84961ff/dsh-autocompact/test/compaction.test.ts#L31-L77)\n\n作者范围选择和配对mock静态测试。\n\n<details>\n<summary>查看原文（47行）</summary>\n\n```text\ndescribe(\"surface range selection\", () => {\n  it(\"retains the priced recent tail and summarizes only the prefix\", () => {\n    const target = session([0, 1, 2, 3]);\n    const range = selectCompactableRange(\n      target,\n      measurement([\n        [0, 10],\n        [1, 10],\n        [2, 100],\n        [3, 100],\n      ]),\n      150,\n    );\n    // Walking back from node 3 accumulates 100, then 200 >= 150 at node 2.\n    expect(range).toEqual({ start: 0, end: 1 });\n  });\n\n  it(\"never includes a leading system message in the range\", () => {\n    const target = session([0, 1, 2, 3], \"system\");\n    const range = selectCompactableRange(\n      target,\n      measurement([\n        [0, 10],\n        [1, 10],\n        [2, 100],\n        [3, 100],\n      ]),\n      150,\n    );\n    expect(range).toEqual({ start: 1, end: 1 });\n  });\n\n  it(\"retains more history until the kept edge is a balanced tool-call boundary\", () => {\n    vi.mocked(toolPairingBalancedBefore).mockImplementation((_target, seq) => seq !== 3);\n    const target = session([0, 1, 2, 3, 4]);\n    const range = selectCompactableRange(\n      target,\n      measurement([\n        [0, 10],\n        [1, 10],\n        [2, 10],\n        [3, 100],\n        [4, 100],\n      ]),\n      150,\n    );\n    expect(range).toEqual({ start: 0, end: 1 });\n```\n\n</details>\n\n**依据 4 · 源码核查**：[dsh-autocompact/src/client/config-store.ts:97-124](https://github.com/5aaee9/pi-agent-extensions/blob/c80abc7c4904fee9206f8649214a211ef84961ff/dsh-autocompact/src/client/config-store.ts#L97-L124)\n\n共享inFlight配置读取。\n\n<details>\n<summary>查看原文（28行）</summary>\n\n```text\n/**\n * Read the bundle row from the Host.\n *\n * Concurrent callers share one request, so a page open and several status lines\n * cost one round trip.\n */\nexport async function load(): Promise<void> {\n  if (inFlight !== undefined) return inFlight;\n  const settings = settingsFace();\n  if (settings === undefined) {\n    emit({ state: \"absent\" });\n    return;\n  }\n  inFlight = (async () => {\n    try {\n      const response = await settings.describe();\n      if (!response.ok) {\n        emit({ state: \"error\", message: response.error?.message ?? \"\" });\n        return;\n      }\n      publishView(pickNamespace(response.value), response.value.writable);\n    } catch (error) {\n      emit({ state: \"error\", message: messageOf(error) });\n    } finally {\n      inFlight = undefined;\n    }\n  })();\n  return inFlight;\n```\n\n</details>\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 适合谁受控试用，什么情况应停止？\n\n**研究主题：**采用判断\n\n#### 完整回答\n\n推荐trial。熟悉模型窗口和原生压缩、需要按route控制提前阈值的DSH开发者，可以先在单个非关键任务使用会话命令试用，保留原生默认做对照；不要先配置影响所有模型的deployment默认。试用要确认命令来源、真实压缩记录、关键约束和总成本，不能把状态pill当压缩成功证明。\n\n如果频繁警告不压缩、摘要后关键约束丢失、重复压缩使总费用升高，或用户把off误当完全关闭原生自动压缩，应回到原生策略并核对持久defaults。源码体现结构保护和可回退命令，但没有本轮安装/任务效果证据，不能升为install。限制见Q02，流程见Q03，成本见Q04。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[dsh-autocompact/index.ts:321-351](https://github.com/5aaee9/pi-agent-extensions/blob/c80abc7c4904fee9206f8649214a211ef84961ff/dsh-autocompact/index.ts#L321-L351)\n\noff/default与来源提示支持有边界回退。\n\n<details>\n<summary>查看原文（31行）</summary>\n\n```text\n      const input = rawInput.trim().toLowerCase();\n      const state = stateOf(agent.session).overrides;\n      if (input === \"off\") state.set(key, null);\n      else if (input === \"default\") state.delete(key);\n      else if (input) {\n        const limit = parseLimit(input);\n        validateLimit(limit, route.contextWindow, route.retainTokens);\n        if (nativeOff) {\n          return {\n            kind: \"error\",\n            text: \"Automatic compaction is disabled by the compaction backend. Enable it before setting a threshold.\",\n          };\n        }\n        state.set(key, limit);\n      }\n      const defaults = limitsNow();\n      const limit = resolveLimit(state, defaults, key, defaultLimitNow());\n      // Name the layer the effective threshold came from: the session, an exact\n      // `provider/model` default, or the deployment-wide fallback.\n      const source = state.has(key)\n        ? \"session\"\n        : defaults.has(key)\n          ? \"global default\"\n          : \"deployment default\";\n      const threshold =\n        limit === undefined\n          ? \"backend default compaction (no plugin threshold)\"\n          : `autocompact above ${limit.toLocaleString(\"en-US\")} tokens (${source})`;\n      return {\n        kind: \"success\",\n        text: `${key}: ${threshold}. Native automatic compaction: ${nativeOff ? \"disabled\" : \"enabled\"}. No configuration written.`,\n```\n\n</details>\n\n**依据 2 · 源码核查**：[dsh-autocompact/settings.ts:101-108](https://github.com/5aaee9/pi-agent-extensions/blob/c80abc7c4904fee9206f8649214a211ef84961ff/dsh-autocompact/settings.ts#L101-L108)\n\n继承顺序影响回退结果。\n\n```text\nexport function resolveLimit(\n  overrides: ReadonlyMap<string, number | null>,\n  defaults: ReadonlyMap<string, number>,\n  key: string,\n  defaultLimit?: number,\n): number | undefined {\n  if (overrides.has(key)) return overrides.get(key) ?? undefined;\n  return defaults.get(key) ?? defaultLimit;\n```\n\n**依据 3 · 源码核查**：[dsh-autocompact/index.ts:283-294](https://github.com/5aaee9/pi-agent-extensions/blob/c80abc7c4904fee9206f8649214a211ef84961ff/dsh-autocompact/index.ts#L283-L294)\n\n失败不中断但也未保证生效。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n  ctx.on(\"agent/pre-step\", async ({ agent, signal }, next) => {\n    try {\n      await checkPressure(agent, signal);\n    } catch (error) {\n      if (!signal.aborted) {\n        warnOnce(\n          agent.session,\n          `compaction failed: ${error instanceof Error ? error.message : String(error)}`,\n        );\n      }\n    }\n    return next();\n```\n\n</details>\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：dsh-autocompact；内容摘要：ec24357b1149c93ce16ad7d97590da225ddf609687dd0e5d4d701a5e96f3b54f。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 17 | 1360 | — | — | 17288 |\n| .ts | source | 12 | 1490 | 920 | 467 | — |\n| .tsx | source | 6 | 1009 | 770 | 184 | — |\n| .ts | test | 5 | 1610 | 1366 | 100 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| /autocompact | 当前会话/精确模型覆盖 | 暂态，off不关闭原生压缩 |\n| 设置页 | 持久route与deployment默认 | revision与writable条件，影响范围更大 |\n| 提前区域压缩 | 保留近期tail与tool配对 | 需原生auto/compactRegion，阈值非硬上限 |\n| 状态入口 | 查看配置并跳设置 | 不是实际压缩成功收据 |\n\n## 工程亮点\n\n值得复用的是用真实Session对象作WeakMap所有者避免恢复/分叉继承暂态覆盖，用精确provider/model区分配置，pre-step调用当前agent对应backend，以及在压缩前验证token-meter surface与当前surface逐项一致。范围选择保留工具配对是正确性支持，测试以mock配对函数核对多个边界，本轮只读不称通过。客户端config-store共享describe请求和view，减少多个UI读配置时漂移；写入仍需要宿主revision保障。\n\n\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 dsh-autocompact/README.md、dsh-autocompact/package.json、dsh-autocompact/index.ts、dsh-autocompact/settings.ts、dsh-autocompact/compaction.ts、dsh-autocompact/src/client/page.tsx、dsh-autocompact/src/client/config-store.ts、dsh-autocompact/test/compaction.test.ts 及固定范围 inventory；组件：dsh-autocompact。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：只读固定monorepo的dsh-autocompact组件入口、选择器、配置和客户端/测试定义；未执行构建、测试、模型压缩或宿主冒烟。\n- 下一步：进一步探讨可从固定模型任务的原生默认与多个提前阈值比较入手，记录全部压缩调用、总tokens、人时及关键约束保持。\n",
         "metadata": {
             "repository": "5aaee9/pi-agent-extensions",
             "repository_id": 1324229194,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T04:58:34.561Z",
+            "window_start": "2026-09-22T04:58:34.561Z",
             "stars": 3,
             "pushed_at": "2026-10-18T19:31:21Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A5aaee9%2Fpi-agent-extensions%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6415:136889:157F44:232303:6AD84A54 and timestamp 2026-10-21 05:15:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A5aaee9%2Fpi-agent-extensions%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6417:33975D:1487D2:22169A:6AD84A54 and timestamp 2026-10-21 05:15:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A5aaee9%2Fpi-agent-extensions%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6419:1D2F69:142665:21D49C:6AD84A54 and timestamp 2026-10-21 05:15:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A5aaee9%2Fpi-agent-extensions%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6407:30A0ED:1461D6:220142:6AD84A55 and timestamp 2026-10-21 05:15:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A5aaee9%2Fpi-agent-extensions%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640C:17E195:1408A9:21B51B:6AD84A55 and timestamp 2026-10-21 05:15:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "@indexyz/dsh-autocompact",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T04:58:43.659Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": 735,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40indexyz%2Fdsh-autocompact",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/%40indexyz%2Fdsh-autocompact",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-10-16T14:19:18.589Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T04:58:43.659Z",
                     "source_url": "https://registry.npmjs.org/%40indexyz%2Fdsh-autocompact",
                     "error": null,
                     "latest_version": "0.2.0",
                     "latest_published_at": "2026-10-18T18:34:26.247Z",
                     "latest_error": null
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "c80abc7c4904fee9206f8649214a211ef84961ff",
-                "current_revision": "c80abc7c4904fee9206f8649214a211ef84961ff",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {
@@ -445,14 +475,14 @@
             "repository": "5aaee9/pi-agent-extensions",
             "path": "dsh-autocompact",
             "revision": "c80abc7c4904fee9206f8649214a211ef84961ff",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "2201fb68e5f1ab19b28e25522216eb933fb704fc0e84c9bf98b790ebe564b86a",
                 "code": "c80abc7c4904fee9206f8649214a211ef84961ff",
                 "maintenance": "f108a6c4668b0f78e98eca5fb6fd0314746a08db196363cbdd48758d97a856d5"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

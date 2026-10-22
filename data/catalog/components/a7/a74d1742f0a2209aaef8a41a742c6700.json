@@ -436,14 +436,14 @@
             "repository": "AKS1st/dock-images",
             "path": "",
             "revision": "b98f3910c59af6f30c742b0ddc001315c2c176ee",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "8f24c7efc50a262e8a79b53909e71c3d51385434f6a8f7157a0a8faa722737a6",
                 "code": "b98f3910c59af6f30c742b0ddc001315c2c176ee",
                 "maintenance": "2c4c3091e0142dd918bd3e8605b62b3a3e5ba6bd78a814f9fd344e6753288006"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

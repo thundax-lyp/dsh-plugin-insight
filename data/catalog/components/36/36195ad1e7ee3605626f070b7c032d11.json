@@ -438,14 +438,14 @@
             "repository": "Aeroscis/dsh-temptask",
             "path": "",
             "revision": "1116ec7ff1af2dcf104dc34d883548c413064e25",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "44388494d0a859b4b26c0de227597ec177fc036767e384e272051010a82309a9",
                 "code": "1116ec7ff1af2dcf104dc34d883548c413064e25",
                 "maintenance": "716c34ec531ce016a422a52414eaf24ef10fb8737e210b087ec1ca616bcd107d"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

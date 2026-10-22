@@ -443,14 +443,14 @@
             "repository": "863683348/dsh-plugin-verify",
             "path": "",
             "revision": "5a70cbdc230ee19bb4578e52440e18cc93153ee8",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "a4a3a025c8c706087983bdbcf98cfb8b9a5a7358bf6fa69e5e48de2900602c1b",
                 "code": "5a70cbdc230ee19bb4578e52440e18cc93153ee8",
                 "maintenance": "eaa52852b4f0bfb4c2fb017ac64dda07b3eb666099123e3e700289493a5853a4"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

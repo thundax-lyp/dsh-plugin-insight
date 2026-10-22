@@ -417,14 +417,14 @@
             "repository": "AdilAlmahmoud/dsh-RTL-chat",
             "path": "",
             "revision": "cb47d8708ae0c95205926f03b6c7228c50de5e29",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "a6d1d5e33452defe5a1a87fb22ee9045a53d5c9894ee507f3c35bc9a3182e335",
                 "code": "cb47d8708ae0c95205926f03b6c7228c50de5e29",
                 "maintenance": "3e501864675af30e6bbadcd050c60983c06119ca4c7bb005d54a2cf91f4b3edb"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

@@ -390,14 +390,14 @@
             "repository": "439436269-ctrl/dsh-ai-arcade",
             "path": "",
             "revision": "877d80ccce081eb76343ddacfb591f6c404b8ddd",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "b0f68c9c65ec125d8dd92fe19ada8644354d4ed563f45de1c99890ff546eaa8d",
                 "code": "877d80ccce081eb76343ddacfb591f6c404b8ddd",
                 "maintenance": "8817222f71e1a1525ca0c44c956bdfb7e461299b50e4c6417652e91c94d64091"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

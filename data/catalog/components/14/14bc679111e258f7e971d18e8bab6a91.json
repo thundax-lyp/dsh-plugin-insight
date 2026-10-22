@@ -389,14 +389,14 @@
             "repository": "173787247/dsh-wsl-winshot",
             "path": "",
             "revision": "e7963e21a06611d7fdfb01e9d34c7a7f0d04d32b",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "fce40bef12f087b5ce0565c271c0091bd1ec5dfae1ff9f35397f9dd882da23fd",
                 "code": "e7963e21a06611d7fdfb01e9d34c7a7f0d04d32b",
                 "maintenance": "66b4fbf798d769eaf6a0da1bd100e9564559c851cdf49810f941edb1d91400e9"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

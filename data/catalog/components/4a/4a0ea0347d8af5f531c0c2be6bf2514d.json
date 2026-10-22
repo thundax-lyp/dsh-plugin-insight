@@ -444,14 +444,14 @@
             "repository": "AHIOSUZ/dsh-workspace-tools",
             "path": "",
             "revision": "d370852671425f09909862a7d220f7b0538f2f3c",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "43c35fa7f29424c78902b1f5aa6df7b8c7854671cd533598a67541fd0bd72d27",
                 "code": "d370852671425f09909862a7d220f7b0538f2f3c",
                 "maintenance": "5337bf62de72f8ca0680e3f5275df63772ad04d52e6227fde2691cf2d962c52b"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

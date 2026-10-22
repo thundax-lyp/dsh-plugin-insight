@@ -420,14 +420,14 @@
             "repository": "Aliww2468/dsh-client-ui-aqua-patched",
             "path": "",
             "revision": "e3d96e46e3ef0034b1304663ffcd70a87ff70982",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "01944eafed09934ca5eb8311181726472abd8febcafb7097ad1c31094b9bda10",
                 "code": "e3d96e46e3ef0034b1304663ffcd70a87ff70982",
                 "maintenance": "8a41ff5a14c4fbb5d3006b3e0fea57f7005c4a3b01b485cb57ae7b821343ed3f"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

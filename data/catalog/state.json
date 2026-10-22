@@ -1,10 +1,10 @@
 {
     "schema_version": 3,
-    "snapshot_digest": "5e9f56e9c2ca827048a695e8fde552314be0cc28da370c5a7fcf2c36a8a1f6c5",
-    "index_sha256": "040d9384a2c908898b7b015d54aea38be280015c38548fbaf538388cb7d1d567",
+    "snapshot_digest": "aee5d599ef27168c9f72d1a742b3f87ca57ced7fefae48b6b55035415c1b6c5e",
+    "index_sha256": "0087e30115d90516734308d84ecbc1bebbdcc49634bc2bc36a49bd2b79a1a05c",
     "head": {
         "schema_version": 1,
-        "checked_at": "2026-10-22T03:06:13.445Z",
+        "checked_at": "2026-10-22T04:36:02.544Z",
         "catalog": {
             "schema_version": 1,
             "plugins": [],
@@ -12,7 +12,7 @@
         },
         "publication": {
             "schema_version": 1,
-            "scope": "本轮所选 1，完成 1，受阻 0；已知同版本受阻跳过 0；当前发布 404",
+            "scope": "本次逐题研究已更新 40/336，保留其余有效研究",
             "catalog": "data/catalog/PLUGINS.json",
             "catalog_page": "data/views/categories/INDEX.md",
             "metadata": {},
@@ -20,7 +20,7 @@
             "capabilities": {},
             "advice": {},
             "records": [],
-            "checked_at": "2026-10-22T03:06:13.445Z"
+            "checked_at": "2026-10-22T04:36:02.544Z"
         },
         "registry": {},
         "discovery": {
@@ -32,7 +32,7 @@
                 },
                 {
                     "url": "https://github.com/0xsline/awesome-deepseek-harness",
-                    "revision": null,
+                    "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
                     "complete": false
                 }
             ],
@@ -52,8 +52,8 @@
             "首次迁移只知道当前研究档案，不拥有历史完整来源成员清单；未入档对象的历史变化为 unknown。"
         ],
         "transaction": {
-            "id": "2026-10-22-insight-comparison",
-            "work_digest": "d2a5e89543af9dcf22581e29605c78db2c01a8f31c47d6ad4510bf01e1fff6c9"
+            "id": "2026-10-22-02",
+            "work_digest": "66da0f22fc88b68e414c4d5c96db2ec502163c1a66ed12df83ab0c94b2d88543"
         },
         "research_blocks": {}
     },
@@ -2907,7 +2907,75 @@
             "github:1336693516:root",
             "github:1372623456:root",
             "github:1348239040:root",
-            "github:1333928744:root"
+            "github:1333928744:root",
+            "github:1335349535:root",
+            "github:1335664137:root",
+            "github:1336106328:root",
+            "github:1340492214:root",
+            "github:1342524723:root",
+            "github:1346064150:root",
+            "github:1356896576:dsh-capmap-viz",
+            "github:1376880747:root",
+            "github:1379204512:root",
+            "github:1381221232:root",
+            "github:1381726438:root",
+            "github:1390103795:root",
+            "github:1391142149:root",
+            "github:1399694663:root",
+            "github:1401037852:root",
+            "github:1406156934:dsh-task-monitor",
+            "github:1406500233:root",
+            "github:1406611614:root",
+            "github:1410395082:root",
+            "github:1412896722:root",
+            "github:1413052822:root",
+            "github:1413882487:root",
+            "github:1414577411:root",
+            "github:1415767842:root",
+            "github:1415863200:root",
+            "github:1416699252:root",
+            "github:1418842530:root",
+            "github:1421306160:root",
+            "github:1422176522:root",
+            "github:1422359117:root",
+            "github:1423488109:root",
+            "github:1424063534:plugins-dsh-domain-bridge",
+            "github:1425006726:root",
+            "github:1333716755:plugins-harness-memory",
+            "github:1333954586:root",
+            "github:1334255250:root",
+            "github:1334269686:root",
+            "github:1334493734:root",
+            "github:1335070045:packages-vision-route",
+            "github:1344713526:dsh-lsp-cpp",
+            "github:1397477851:root",
+            "github:1401618027:root",
+            "github:1412897663:root",
+            "github:1422216012:root",
+            "github:1423253220:root",
+            "github:1424433303:root",
+            "github:1424475406:root",
+            "github:1378933589:adapters-dsh",
+            "github:1333357514:root",
+            "github:1336870027:root",
+            "github:1350379388:root",
+            "github:1351853812:root",
+            "github:1358821276:root",
+            "github:1381860995:root",
+            "github:1391141174:root",
+            "github:1412162067:root",
+            "github:1335244607:root",
+            "github:1336092482:01-content",
+            "github:1352600211:root",
+            "github:1352959121:root",
+            "github:1334773156:root",
+            "github:1334862230:root",
+            "github:1335594781:root",
+            "github:1335843541:root",
+            "github:1336649545:root",
+            "github:1336994666:root",
+            "github:1337038478:root",
+            "github:1332642596:root"
         ],
         "reports": [
             "github:1335557891:root",
@@ -3722,414 +3790,415 @@
             "github:1335381015:root"
         ],
         "discovery.plugins": [
-            "github:1335843541:root",
-            "github:1339316901:root",
-            "github:1418493685:root",
-            "github:1333328839:root",
-            "github:1416699252:root",
-            "github:1334899834:root",
+            "github:1339262076:root",
+            "github:1372976273:root",
+            "github:1393980674:root",
+            "github:1423215529:root",
+            "github:1335047324:root",
+            "github:1350325873:root",
+            "github:1414323673:root",
             "github:1333368566:root",
-            "github:1333370288:root",
-            "github:1333357514:root",
-            "github:1342915339:root",
+            "github:1341694685:root",
+            "github:1347958944:root",
+            "github:1351854010:root",
+            "github:1356960582:root",
+            "github:1386463441:root",
+            "github:1396768359:root",
+            "github:1402940561:root",
+            "github:1407379611:root",
+            "github:1414492607:root",
+            "github:1417442557:root",
             "github:1343420855:root",
+            "github:1343702731:root",
+            "github:1351375738:root",
+            "github:1296792947:integrations-dsh-agentdebugx",
+            "github:1324229194:dsh-autocompact",
+            "github:1331846104:root",
+            "github:1333258432:root",
+            "github:1333993743:root",
+            "github:1334205011:root",
+            "github:1334267268:root",
+            "github:1334304098:packages-helmd",
+            "github:1334395883:root",
+            "github:1334554745:root",
+            "github:1334569498:root",
+            "github:1334569518:root",
+            "github:1335045545:root",
+            "github:1335098475:root",
+            "github:1335139860:root",
+            "github:1335286261:root",
+            "github:1335798113:packages-messaging-core",
+            "github:1335807482:root",
+            "github:1335843750:root",
+            "github:1335980444:root",
+            "github:1336084195:root",
+            "github:1336663562:root",
+            "github:1336720864:root",
+            "github:1337916824:root",
+            "github:1338965593:root",
+            "github:1339034478:root",
+            "github:1339316901:root",
+            "github:1339462797:root",
             "github:1339803365:root",
-            "github:1335557891:root",
-            "github:1335558973:root",
+            "github:1339888505:root",
+            "github:1340340493:root",
+            "github:1340492184:root",
+            "github:1341648244:root",
+            "github:1341946801:root",
+            "github:1343622602:root",
+            "github:1344714002:root",
+            "github:1344714819:root",
+            "github:1344715270:root",
+            "github:1346017360:root",
+            "github:1346196699:root",
+            "github:1351853903:root",
+            "github:1351903192:root",
+            "github:1352089397:root",
+            "github:1356219122:root",
+            "github:1357066651:root",
+            "github:1358816037:root",
+            "github:1359423472:root",
             "github:1363429979:plugin-daily-log",
             "github:1363429979:plugin-memory",
-            "github:1363429979:plugin-notes",
             "github:1363429979:plugin-usage-billing",
-            "github:1342742812:root",
-            "github:1333136466:root",
-            "github:1354283280:root",
-            "github:1359423472:root",
-            "github:1418691015:root",
-            "github:1366583376:root",
-            "github:1334504487:root",
-            "github:1367305514:root",
-            "github:1336994666:root",
-            "github:1423215448:root",
-            "github:1423215373:root",
-            "github:1423215529:root",
-            "github:1335060007:root",
-            "github:1335704653:root",
-            "github:1358816037:root",
-            "github:1397817235:root",
-            "github:1400927706:root",
-            "github:1399011094:root",
-            "github:1379204512:root",
-            "github:1355639507:root",
-            "github:1335559646:root",
-            "github:1409724830:src",
-            "github:1334850903:root",
-            "github:1334269686:root",
-            "github:1337916824:root",
-            "github:1336538202:root",
-            "github:1346196699:root",
-            "github:1401618027:root",
-            "github:1406611614:root",
-            "github:1425006726:root",
-            "github:1421963463:root",
-            "github:1366089972:workspace-plugins-dsh-anatomy-panel",
-            "github:1366089972:workspace-plugins-dsh-cortex",
-            "github:1366089972:workspace-plugins-dsh-organism",
             "github:1366089972:workspace-plugins-dsh-zero-residence",
-            "github:1399694663:root",
-            "github:1397477851:root",
-            "github:1389458393:root",
-            "github:1364961230:root",
-            "github:1374274469:root",
-            "github:1374274543:root",
-            "github:1334654243:root",
-            "github:1334773156:root",
-            "github:1351903192:root",
-            "github:1417442557:root",
-            "github:1384810806:root",
-            "github:1384810483:root",
-            "github:1384810201:root",
-            "github:1339262076:root",
-            "github:1350325873:root",
-            "github:1350379388:root",
-            "github:1381860995:root",
-            "github:1350378372:root",
-            "github:1351854066:root",
-            "github:1381842592:root",
-            "github:1350379113:root",
-            "github:1381859591:root",
-            "github:1391141174:root",
-            "github:1350379001:root",
-            "github:1351854118:root",
-            "github:1351854301:root",
-            "github:1351854499:root",
-            "github:1351854212:root",
-            "github:1351854402:root",
-            "github:1338530482:root",
-            "github:1391143266:root",
-            "github:1351853956:root",
-            "github:1362694736:root",
-            "github:1381833309:root",
-            "github:1350544211:root",
-            "github:1381859919:root",
-            "github:1350378777:root",
-            "github:1381843528:root",
-            "github:1351854010:root",
-            "github:1370460115:root",
-            "github:1381389698:root",
-            "github:1381726881:root",
-            "github:1350378498:root",
-            "github:1381832318:root",
-            "github:1381860693:root",
-            "github:1381725238:root",
-            "github:1351854159:root",
-            "github:1338965593:root",
-            "github:1350379268:root",
-            "github:1358313559:root",
-            "github:1380817560:root",
-            "github:1381724774:root",
-            "github:1347958944:root",
-            "github:1350378631:root",
-            "github:1391142601:root",
-            "github:1351853863:root",
-            "github:1381861315:root",
-            "github:1381860363:root",
-            "github:1350378913:root",
-            "github:1391140034:root",
-            "github:1381859181:root",
-            "github:1391142974:root",
-            "github:1381725987:root",
-            "github:1381733290:root",
-            "github:1391140376:root",
-            "github:1351854253:root",
-            "github:1351854356:root",
-            "github:1381832935:root",
-            "github:1381843201:root",
-            "github:1381843937:root",
-            "github:1381833652:root",
-            "github:1351853903:root",
-            "github:1391141792:root",
-            "github:1381726438:root",
-            "github:1381832640:root",
-            "github:1391143632:root",
-            "github:1391142149:root",
-            "github:1391140767:root",
-            "github:1351853812:root",
-            "github:1351854461:root",
-            "github:1356896576:dsh-capmap-viz",
-            "github:1412857520:root",
-            "github:1389061748:root",
-            "github:1357066651:root",
-            "github:1401037852:root",
-            "github:1334023305:root",
-            "github:1333993743:root",
-            "github:1424063534:plugins-dsh-domain-bridge",
-            "github:1343622602:root",
-            "github:1335098475:root",
-            "github:1381221232:root",
-            "github:1333258432:root",
-            "github:1372976273:root",
-            "github:1335139860:root",
-            "github:1334481905:plugin",
-            "github:1363291561:root",
-            "github:1413052822:root",
-            "github:1414492607:root",
-            "github:1413882487:root",
-            "github:1415116420:root",
-            "github:1418842530:root",
-            "github:1364766828:root",
-            "github:1381989584:root",
-            "github:1338526178:packages-bundle-rollback",
-            "github:1376777535:root",
-            "github:1340340493:root",
-            "github:1345209661:packages-dsh-tech-lead",
-            "github:1372993989:root",
-            "github:1335843750:root",
-            "github:1335047324:root",
-            "github:1335766616:root",
-            "github:1334267268:root",
-            "github:1415767842:root",
-            "github:1334318461:root",
-            "github:1387227102:root",
-            "github:1396768359:root",
-            "github:1335034901:root",
-            "github:1335070045:packages-vision-route",
-            "github:1335070045:packages-vision-tool",
-            "github:1334554745:root",
-            "github:1386463441:root",
-            "github:1335286261:root",
-            "github:1356960582:root",
-            "github:1334134226:root",
-            "github:1406156934:dsh-task-monitor",
-            "github:1358821276:root",
-            "github:1341648244:root",
+            "github:1366370702:root",
+            "github:1367305514:root",
             "github:1374055714:root",
-            "github:1424219088:root",
-            "github:1413897334:root",
-            "github:1417227361:root",
-            "github:1412161923:root",
-            "github:1407379611:root",
-            "github:1412162067:root",
-            "github:1423253220:root",
-            "github:1412141303:root",
-            "github:1414936636:root",
-            "github:1406500233:root",
-            "github:1409889533:root",
-            "github:1422943787:root",
-            "github:1346023186:root",
-            "github:1346023250:root",
-            "github:1346017360:root",
-            "github:1422328385:root",
-            "github:1378933589:adapters-dsh",
-            "github:1400385991:packages-dsh-weekly-panel",
-            "github:1335807482:root",
-            "github:1334862230:root",
-            "github:1336366824:root",
-            "github:1335382133:root",
-            "github:1337038478:root",
-            "github:1335725068:root",
-            "github:1335798113:packages-messaging-core",
-            "github:1423040689:root",
-            "github:1422216012:root",
-            "github:1335664137:root",
-            "github:1335045545:root",
-            "github:841979943:root",
-            "github:1409096911:root",
-            "github:1416950630:root",
-            "github:1424475406:root",
-            "github:1374149009:root",
-            "github:1418769012:root",
-            "github:1324229194:dsh-autocompact",
-            "github:1334395883:root",
-            "github:1391040578:root",
-            "github:1421306160:root",
-            "github:1425159954:root",
-            "github:1334205011:root",
-            "github:1394489199:root",
-            "github:1351594249:root",
-            "github:1339332869:root",
-            "github:1335594781:root",
-            "github:1368581082:root",
-            "github:1422240642:root",
-            "github:1336021761:root",
-            "github:1336870027:root",
-            "github:1422396858:root",
-            "github:1422380986:root",
-            "github:1422121370:root",
-            "github:1422488467:root",
-            "github:1422091204:root",
-            "github:1422364992:root",
-            "github:1422500224:root",
-            "github:1424433303:root",
-            "github:1422176522:root",
-            "github:1422359117:root",
+            "github:1374274543:root",
             "github:1380181057:root",
-            "github:1378138611:root",
-            "github:1394188597:root",
-            "github:1335988605:root",
-            "github:1336585522:root",
-            "github:1336647931:root",
-            "github:1336649545:root",
-            "github:1337350700:root",
+            "github:1381725238:root",
+            "github:1381725987:root",
+            "github:1381832935:root",
+            "github:1381843937:root",
+            "github:1390600932:root",
+            "github:1391040578:root",
+            "github:1391141792:root",
+            "github:1397817235:root",
+            "github:1399011094:root",
+            "github:1399279897:root",
+            "github:1400498179:root",
+            "github:1403959948:root",
+            "github:1404700411:root",
+            "github:1407166868:root",
+            "github:1412141303:root",
+            "github:1412857520:root",
+            "github:1415116420:root",
+            "github:1416950630:root",
+            "github:1421741516:root",
+            "github:1422380986:root",
+            "github:1422396858:root",
+            "github:1422488467:root",
+            "github:1422943787:root",
+            "github:1423215373:root",
+            "github:1423215448:root",
+            "github:1425044910:root",
+            "github:1333136466:root",
+            "github:1333370288:root",
+            "github:1334023305:root",
+            "github:1334318461:root",
+            "github:1334850903:root",
+            "github:1335060115:root",
+            "github:1335332435:root",
+            "github:1335704653:root",
+            "github:1335766616:root",
+            "github:1336366824:root",
             "github:1336571882:root",
-            "github:1336663456:root",
-            "github:1336223158:root",
-            "github:1336663611:root",
-            "github:1336663504:root",
-            "github:1336084195:root",
-            "github:1336663986:root",
-            "github:1336663652:root",
-            "github:1336684098:root",
-            "github:1336693516:root",
-            "github:1336663562:root",
-            "github:1336684054:root",
             "github:1336583700:root",
             "github:1336658798:root",
-            "github:1336582509:root",
-            "github:1425073734:root",
-            "github:1335980444:root",
-            "github:1335349535:root",
-            "github:1333954586:root",
-            "github:1404700411:root",
-            "github:1412896722:root",
-            "github:1344715270:root",
+            "github:1336663456:root",
+            "github:1336663611:root",
+            "github:1336684054:root",
+            "github:1336684098:root",
+            "github:1338530482:root",
+            "github:1340492378:root",
             "github:1344714509:root",
+            "github:1346023186:root",
+            "github:1350378372:root",
+            "github:1350378631:root",
+            "github:1350378777:root",
+            "github:1350378913:root",
+            "github:1350379001:root",
+            "github:1350379113:root",
+            "github:1350379268:root",
+            "github:1351854118:root",
+            "github:1351854212:root",
+            "github:1351854301:root",
+            "github:1351854356:root",
+            "github:1351854461:root",
+            "github:1355639507:root",
+            "github:1359145352:root",
+            "github:1368581082:root",
+            "github:1374149009:root",
+            "github:1374454334:root",
+            "github:1381833309:root",
+            "github:1381833652:root",
+            "github:1381843201:root",
+            "github:1381859919:root",
+            "github:1394188597:root",
+            "github:1400109121:root",
+            "github:1410794267:root",
+            "github:1418493685:root",
+            "github:1422091204:root",
+            "github:1422364992:root",
+            "github:1424219088:root",
+            "github:1334836615:root",
+            "github:1335387524:root",
+            "github:1422240642:root",
+            "github:1302597978:deploy-plugins-dist-dsh",
+            "github:1331586818:root",
+            "github:1333440937:root",
+            "github:1333800488:root",
+            "github:1333975935:root",
+            "github:1334119885:root",
+            "github:1334428397:root",
+            "github:1334504487:root",
+            "github:1335219884:root",
             "github:1335236592:root",
-            "github:1344714002:root",
+            "github:1335349535:root",
+            "github:1335382133:root",
+            "github:1335559646:root",
+            "github:1335664137:root",
             "github:1335806472:root",
-            "github:1344714819:root",
+            "github:1335992154:root",
+            "github:1336106328:root",
+            "github:1336647931:root",
+            "github:1337350700:root",
+            "github:1337487779:root",
+            "github:1338526178:packages-bundle-rollback",
+            "github:1340492214:root",
+            "github:1342524723:root",
+            "github:1346023250:root",
+            "github:1346064150:root",
+            "github:1346533795:root",
+            "github:1351594249:root",
+            "github:1356896576:dsh-capmap-viz",
+            "github:1364961230:root",
+            "github:1372993989:root",
+            "github:1376880747:root",
+            "github:1377159975:root",
+            "github:1378138611:root",
+            "github:1379204512:root",
+            "github:1381221232:root",
+            "github:1381726438:root",
+            "github:1390103795:root",
+            "github:1391142149:root",
+            "github:1399694663:root",
+            "github:1401037852:root",
+            "github:1406156934:dsh-task-monitor",
+            "github:1406500233:root",
+            "github:1406611614:root",
+            "github:1410395082:root",
+            "github:1412896722:root",
+            "github:1413052822:root",
+            "github:1413882487:root",
+            "github:1414577411:root",
+            "github:1415767842:root",
+            "github:1415863200:root",
+            "github:1416699252:root",
+            "github:1418842530:root",
+            "github:1421306160:root",
+            "github:1422176522:root",
+            "github:1422359117:root",
+            "github:1423488109:root",
+            "github:1424063534:plugins-dsh-domain-bridge",
+            "github:1425006726:root",
+            "github:1276714299:root",
+            "github:1333716755:plugins-harness-memory",
+            "github:1333954586:root",
+            "github:1334134226:root",
+            "github:1334255250:root",
+            "github:1334269686:root",
+            "github:1334481905:plugin",
+            "github:1334493734:root",
+            "github:1334654243:root",
+            "github:1334899834:root",
+            "github:1335070045:packages-vision-route",
+            "github:1335070045:packages-vision-tool",
+            "github:1335281982:root",
+            "github:1335558973:root",
+            "github:1335725068:root",
+            "github:1335988605:root",
+            "github:1336021761:root",
+            "github:1336223158:root",
+            "github:1336538202:root",
+            "github:1336582509:root",
+            "github:1336585522:root",
+            "github:1336663986:root",
+            "github:1340492424:root",
             "github:1344713526:dsh-lsp-cpp",
             "github:1344713526:dsh-lsp-csharp",
             "github:1344713526:dsh-lsp-go",
+            "github:1344713526:dsh-lsp-lua",
+            "github:1344713526:dsh-lsp-pyright",
+            "github:1344713526:dsh-lsp-rust",
+            "github:1344713526:dsh-lsp-ts",
+            "github:1344713683:root",
+            "github:1344714334:root",
+            "github:1344714964:root",
+            "github:1344715132:root",
+            "github:1347749203:root",
+            "github:1350378498:root",
+            "github:1350544211:root",
+            "github:1351853956:root",
+            "github:1351854253:root",
+            "github:1351854402:root",
+            "github:1351854499:root",
+            "github:1358313559:root",
+            "github:1362694736:root",
+            "github:1363291561:root",
+            "github:1363429979:plugin-notes",
+            "github:1363511446:root",
+            "github:1364766828:root",
+            "github:1366583376:root",
+            "github:1368192539:root",
+            "github:1381724774:root",
+            "github:1381832318:root",
+            "github:1381832640:root",
+            "github:1381842592:root",
+            "github:1381859181:root",
+            "github:1381859591:root",
+            "github:1381860693:root",
+            "github:1384810201:root",
+            "github:1389458393:root",
+            "github:1389469406:root",
+            "github:1391140034:root",
+            "github:1391140376:root",
+            "github:1391140767:root",
+            "github:1391142601:root",
+            "github:1391143266:root",
+            "github:1391143632:root",
+            "github:1397477851:root",
+            "github:1400927706:root",
+            "github:1401255267:root",
+            "github:1401618027:root",
+            "github:1402771540:root",
+            "github:1412623357:root",
+            "github:1412897663:root",
+            "github:1418691015:root",
+            "github:1422216012:root",
+            "github:1423253220:root",
+            "github:1423966960:root",
+            "github:1424433303:root",
+            "github:1424475406:root",
+            "github:1368115538:root",
+            "github:1378933589:adapters-dsh",
+            "github:1333357514:root",
+            "github:1335557891:root",
+            "github:1336870027:root",
+            "github:1350379388:root",
+            "github:1351853812:root",
+            "github:1351854066:root",
+            "github:1358821276:root",
+            "github:1381860995:root",
+            "github:1391141174:root",
+            "github:1412162067:root",
+            "github:1335244607:root",
+            "github:1336092482:01-content",
+            "github:1352600211:root",
+            "github:1352959121:root",
+            "github:1334773156:root",
+            "github:1334862230:root",
+            "github:1335594781:root",
+            "github:1335843541:root",
+            "github:1336649545:root",
+            "github:1336994666:root",
+            "github:1337038478:root",
+            "github:1340492335:root",
+            "github:1340492447:root",
+            "github:1342948215:root",
             "github:1344713526:dsh-lsp-java",
             "github:1344713526:dsh-lsp-kotlin",
-            "github:1344713526:dsh-lsp-lua",
             "github:1344713526:dsh-lsp-php",
-            "github:1344713526:dsh-lsp-pyright",
             "github:1344713526:dsh-lsp-ruby",
-            "github:1344713526:dsh-lsp-rust",
             "github:1344713526:dsh-lsp-swift",
-            "github:1344713526:dsh-lsp-ts",
-            "github:1344714964:root",
             "github:1344713826:root",
-            "github:1344714334:root",
             "github:1344714177:root",
             "github:1344714660:root",
-            "github:1344713683:root",
-            "github:1344715132:root",
-            "github:1333716755:plugins-harness-memory",
-            "github:1343702731:root",
-            "github:1399279897:root",
-            "github:1342524723:root",
-            "github:1367597810:root",
-            "github:1368115538:root",
-            "github:1343882273:root",
-            "github:1401255267:root",
-            "github:1335219884:root",
-            "github:1402771540:root",
-            "github:1378097401:dsh-live2d-pet",
-            "github:1425045401:root",
-            "github:1412897663:root",
-            "github:1412897932:root",
-            "github:1334304098:packages-helmd",
-            "github:1393980674:root",
-            "github:1363511446:root",
-            "github:1335332435:root",
-            "github:1414238544:root",
-            "github:1410395082:root",
-            "github:1372623456:root",
-            "github:1377159975:root",
-            "github:1423966960:root",
-            "github:1402940561:root",
-            "github:1402828137:root",
-            "github:1333975935:root",
-            "github:1340492335:root",
-            "github:1340492214:root",
-            "github:1340492447:root",
-            "github:1340492378:root",
-            "github:1340492424:root",
-            "github:1400109121:root",
-            "github:1340492184:root",
-            "github:1335060115:root",
-            "github:1334274281:root",
-            "github:1334569498:root",
-            "github:1336106328:root",
-            "github:1334434271:root",
-            "github:1335144603:root",
-            "github:1334569518:root",
-            "github:1347136944:root",
-            "github:1407166868:root",
-            "github:1404720276:root",
-            "github:1403959948:root",
-            "github:1302597978:deploy-plugins-dist-dsh",
-            "github:1388463793:root",
-            "github:1359145352:root",
-            "github:1359145374:root",
-            "github:1365519118:root",
-            "github:1335387524:root",
-            "github:1335244607:root",
-            "github:1341946801:root",
-            "github:1333440937:root",
-            "github:1334255288:root",
-            "github:1334255250:root",
-            "github:1425044910:root",
-            "github:1410794267:root",
-            "github:1335992154:root",
-            "github:1348239040:root",
-            "github:1390600932:root",
-            "github:1334428397:root",
-            "github:1296792947:integrations-dsh-agentdebugx",
-            "github:1414323673:root",
-            "github:1412623357:root",
-            "github:1389469406:root",
-            "github:1337467566:root",
-            "github:1352959121:root",
-            "github:1333928744:root",
-            "github:1346533795:root",
-            "github:1335791040:root",
-            "github:1351375738:root",
-            "github:1335661970:root",
-            "github:1415822787:root",
-            "github:1415863200:root",
-            "github:1334836615:root",
-            "github:1336092482:01-content",
-            "github:1340906871:dsh",
-            "github:1421741516:root",
-            "github:1334493734:root",
-            "github:1342948215:root",
-            "github:1336720864:root",
-            "github:1339034478:root",
-            "github:1341694685:root",
-            "github:1366370702:root",
-            "github:1352089397:root",
-            "github:1378742722:root",
-            "github:1352600211:root",
+            "github:1345209661:packages-dsh-tech-lead",
             "github:1353726715:root",
-            "github:1390103795:root",
-            "github:1336031182:root",
-            "github:1376880747:root",
-            "github:1414577411:root",
-            "github:1335281982:root",
-            "github:1374454334:root",
-            "github:1400498179:root",
-            "github:1335381015:root",
-            "github:1347749203:root",
-            "github:1368192539:root",
-            "github:1423488109:root",
-            "github:1276714299:root",
-            "github:1331586818:root",
-            "github:1332642596:root",
-            "github:1331846104:root",
-            "github:1387205322:root",
-            "github:1337487779:root",
-            "github:1339888505:root",
-            "github:1356219122:root",
-            "github:1340280087:root",
-            "github:1335928912:root",
+            "github:1365519118:root",
+            "github:1366089972:workspace-plugins-dsh-cortex",
+            "github:1366089972:workspace-plugins-dsh-organism",
+            "github:1367597810:root",
+            "github:1370460115:root",
+            "github:1374274469:root",
+            "github:1380817560:root",
+            "github:1381726881:root",
+            "github:1381733290:root",
+            "github:1381843528:root",
+            "github:1381860363:root",
+            "github:1381861315:root",
+            "github:1387227102:root",
+            "github:1388463793:root",
+            "github:1394489199:root",
+            "github:1404720276:root",
+            "github:1412161923:root",
+            "github:1412897932:root",
             "github:1414017637:root",
+            "github:1414936636:root",
+            "github:1415822787:root",
+            "github:1417227361:root",
+            "github:1422121370:root",
+            "github:1425045401:root",
+            "github:1425073734:root",
+            "github:841979943:root",
+            "github:1334434271:root",
+            "github:1336663652:root",
+            "github:1359145374:root",
+            "github:1381989584:root",
+            "github:1366089972:workspace-plugins-dsh-anatomy-panel",
+            "github:1378097401:dsh-live2d-pet",
+            "github:1381389698:root",
+            "github:1389061748:root",
+            "github:1414238544:root",
+            "github:1418769012:root",
+            "github:1421963463:root",
+            "github:1334255288:root",
+            "github:1335928912:root",
+            "github:1336031182:root",
+            "github:1339332869:root",
+            "github:1340280087:root",
+            "github:1343882273:root",
+            "github:1351854159:root",
+            "github:1354283280:root",
+            "github:1400385991:packages-dsh-weekly-panel",
+            "github:1402828137:root",
+            "github:1409889533:root",
+            "github:1423040689:root",
+            "github:1336663504:root",
+            "github:1340906871:dsh",
+            "github:1342742812:root",
+            "github:1347136944:root",
+            "github:1384810483:root",
+            "github:1384810806:root",
+            "github:1425159954:root",
+            "github:1376777535:root",
+            "github:1387205322:root",
+            "github:1391142974:root",
+            "github:1409096911:root",
+            "github:1422500224:root",
+            "github:1332642596:root",
+            "github:1333328839:root",
+            "github:1334274281:root",
+            "github:1335144603:root",
+            "github:1335661970:root",
+            "github:1335791040:root",
+            "github:1342915339:root",
             "github:1343679449:root",
-            "github:1339462797:root",
-            "github:1334119885:root",
-            "github:1346064150:root",
+            "github:1351853863:root",
+            "github:1378742722:root",
+            "github:1413897334:root",
+            "github:1422328385:root",
+            "github:1335381015:root",
+            "github:1337467566:root",
+            "github:1335060007:root",
+            "github:1409724830:src",
+            "github:1335034901:root",
+            "github:1336693516:root",
+            "github:1372623456:root",
+            "github:1348239040:root",
+            "github:1333928744:root",
             "github:1285824983:integrations-dsh",
             "github:1338230382:root",
             "github:1409845351:plugins-dsh-orchestrator2",
@@ -7098,7 +7167,6 @@
             "github:1421891345:root",
             "github:1338946084:root",
             "github:1335170419:root",
-            "github:1333800488:root",
             "github:1334075920:root",
             "github:1337943697:root",
             "github:1388366177:packages-dsh-ask-highlight",
@@ -11101,10 +11169,6 @@
         ]
     },
     "artifacts": {
-        "data/runs/2026-10-20-02/snapshots/00080000--dsh-project-memory/REVIEWED-SOURCE.json": {
-            "path": "evidence/2d/2dfb3ab587c3bbd27d1944ddea4751b04bb7f1f3432234f9cd1a3e13c909138a.json",
-            "sha256": "2dfb3ab587c3bbd27d1944ddea4751b04bb7f1f3432234f9cd1a3e13c909138a"
-        },
         "data/runs/2026-10-20-02/snapshots/01ngvi-qingyi--no-ai-style/REVIEWED-SOURCE.json": {
             "path": "evidence/fd/fddaaad956ab1299c2e698c21d8afa0c0e38d5b623af162cc703d7b416e60650.json",
             "sha256": "fddaaad956ab1299c2e698c21d8afa0c0e38d5b623af162cc703d7b416e60650"
@@ -11120,10 +11184,6 @@
         "data/runs/2026-10-20-02/snapshots/030611--dsh-telemetry-redactor/REVIEWED-SOURCE.json": {
             "path": "evidence/b5/b5a76ab9c4b9bcd123ae2e2f96009efa1fd58d7e74adcadf42ca6579e7895155.json",
             "sha256": "b5a76ab9c4b9bcd123ae2e2f96009efa1fd58d7e74adcadf42ca6579e7895155"
-        },
-        "data/runs/2026-10-20-02/snapshots/030611--dsh-verification-receipt/REVIEWED-SOURCE.json": {
-            "path": "evidence/ea/eaadf0b3af8a656b6ac036709253bb4f4db8e9f750014db3bcd21dd0432dcbb3.json",
-            "sha256": "eaadf0b3af8a656b6ac036709253bb4f4db8e9f750014db3bcd21dd0432dcbb3"
         },
         "data/runs/2026-10-20-02/snapshots/030611--qiushi-dsh-evidence-audit/REVIEWED-SOURCE.json": {
             "path": "evidence/c1/c1290d626cfe94a5e9ce42139559a2d347244e7e19d2fea9214e38e01471c11a.json",
@@ -11184,10 +11244,6 @@
         "data/runs/2026-10-20-02/snapshots/1032740078--dsh-web-url-view/REVIEWED-SOURCE.json": {
             "path": "evidence/ce/ceea0d7d244b3c24e29d9f29b2d4ba718cd82d6282bc5552dfc21068abe3044d.json",
             "sha256": "ceea0d7d244b3c24e29d9f29b2d4ba718cd82d6282bc5552dfc21068abe3044d"
-        },
-        "data/runs/2026-10-20-02/snapshots/1052326311--dsh-plan-lattice/REVIEWED-SOURCE.json": {
-            "path": "evidence/23/23dd66651cdf0d0af8ab12f837bec477e20d5e615f9f8b553885d60ee1cb0643.json",
-            "sha256": "23dd66651cdf0d0af8ab12f837bec477e20d5e615f9f8b553885d60ee1cb0643"
         },
         "data/runs/2026-10-20-02/snapshots/1069137617--dsh-reasoning-tiers/REVIEWED-SOURCE.json": {
             "path": "evidence/27/2786f7f59a88592561b5b6819e7d3a59eb9c26017423655e7b9c4f46dff90b25.json",
@@ -11256,10 +11312,6 @@
         "data/runs/2026-10-20-04/snapshots/131cda1--dsh-scrape-webpage/REVIEWED-SOURCE.json": {
             "path": "evidence/98/98fd0bf43144c8a12ccd8060f294f32a4ac2b579f59e66c0fe03f9a2ce12d3fd.json",
             "sha256": "98fd0bf43144c8a12ccd8060f294f32a4ac2b579f59e66c0fe03f9a2ce12d3fd"
-        },
-        "data/runs/2026-10-20-04/snapshots/1321928757--dsh-mysql/REVIEWED-SOURCE.json": {
-            "path": "evidence/9f/9fead8b17e51725a3bff107bfbaab8a3888cdae6a10c04d961a412e6ad00c984.json",
-            "sha256": "9fead8b17e51725a3bff107bfbaab8a3888cdae6a10c04d961a412e6ad00c984"
         },
         "data/runs/2026-10-20-04/snapshots/1321928757--dsh-prompt-polish/REVIEWED-SOURCE.json": {
             "path": "evidence/4d/4d5157a70efdd4889c444b635ba8dbc5e9d2f19b2d829561592b3954512120bf.json",
@@ -11345,10 +11397,6 @@
             "path": "evidence/79/7960634c725c504f8dec222a370b8e434abb275070535415b0305ef6ab9c8417.json",
             "sha256": "7960634c725c504f8dec222a370b8e434abb275070535415b0305ef6ab9c8417"
         },
-        "data/runs/2026-10-20-04/snapshots/173787247--dsh-repeat-stop/REVIEWED-SOURCE.json": {
-            "path": "evidence/e9/e94f1bacbabb09307548489a7d7d2b4eba4bc43c9b8d06f577bf5c75c3a44481.json",
-            "sha256": "e94f1bacbabb09307548489a7d7d2b4eba4bc43c9b8d06f577bf5c75c3a44481"
-        },
         "data/runs/2026-10-20-04/snapshots/173787247--dsh-tool-budget/REVIEWED-SOURCE.json": {
             "path": "evidence/1d/1d93fa44322610c56c8a04a6813b9e55a681665fd531576c92a4772f0c9ed23f.json",
             "sha256": "1d93fa44322610c56c8a04a6813b9e55a681665fd531576c92a4772f0c9ed23f"
@@ -11404,10 +11452,6 @@
         "data/runs/2026-10-20-04/snapshots/173787247--dsh-wsl-editor/REVIEWED-SOURCE.json": {
             "path": "evidence/4a/4ac5b50058120a54b40657505cbfd39f65b095a46deb2ca41d79a371783be8e1.json",
             "sha256": "4ac5b50058120a54b40657505cbfd39f65b095a46deb2ca41d79a371783be8e1"
-        },
-        "data/plugins/february2015--dsh-taskswarm/EVIDENCE.json": {
-            "path": "evidence/ea/ea6d7df4517bd6ae018589874f210e40067faaa207bed19dbb98ce95fad85556.json",
-            "sha256": "ea6d7df4517bd6ae018589874f210e40067faaa207bed19dbb98ce95fad85556"
         },
         "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-encoding/REVIEWED-SOURCE.json": {
             "path": "evidence/f5/f565ea36a3ba60e941c3940e2caa2fe26b5e4e74152b243039360b5278b947d6.json",
@@ -11484,10 +11528,6 @@
         "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-mnt/REVIEWED-SOURCE.json": {
             "path": "evidence/f2/f232ceeb1cd0a3b1fe9da658e1ffce7a5f14dde314eec89c1d9da4d55a2d7c1f.json",
             "sha256": "f232ceeb1cd0a3b1fe9da658e1ffce7a5f14dde314eec89c1d9da4d55a2d7c1f"
-        },
-        "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-net/REVIEWED-SOURCE.json": {
-            "path": "evidence/67/677f89e2cec03abee919cac3ce647b1cb5443670971615bdd6a040391c8f1f1f.json",
-            "sha256": "677f89e2cec03abee919cac3ce647b1cb5443670971615bdd6a040391c8f1f1f"
         },
         "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-notify/REVIEWED-SOURCE.json": {
             "path": "evidence/ab/ab99843438031b06978971700d7e6220e7f45a53f2b175424e394641c1a39107.json",
@@ -11681,14 +11721,6 @@
             "path": "evidence/83/8387742543f68a576893189d0fe97098c63d7d692759f5794060209f72cc6658.json",
             "sha256": "8387742543f68a576893189d0fe97098c63d7d692759f5794060209f72cc6658"
         },
-        "data/runs/2026-10-20-08/snapshots/2006spy--dsh-token-billing/REVIEWED-SOURCE.json": {
-            "path": "evidence/63/63832ddefa6f82a2ccffffade2188572879ad6b4cd251236a7435578773466bf.json",
-            "sha256": "63832ddefa6f82a2ccffffade2188572879ad6b4cd251236a7435578773466bf"
-        },
-        "data/runs/2026-10-20-08/snapshots/2008924--dsh-progress-viz--plugin/REVIEWED-SOURCE.json": {
-            "path": "evidence/6c/6cc216b448b8e59201d7db79dead8b4fb0cc555dabe3cba2cacfe3746416b55a.json",
-            "sha256": "6cc216b448b8e59201d7db79dead8b4fb0cc555dabe3cba2cacfe3746416b55a"
-        },
         "data/runs/2026-10-20-08/snapshots/2048lr--dsh-feishu/REVIEWED-SOURCE.json": {
             "path": "evidence/56/56d027bf31257ee24e07505c613f9c258ff55d779966922b82f9758439694ebd.json",
             "sha256": "56d027bf31257ee24e07505c613f9c258ff55d779966922b82f9758439694ebd"
@@ -11700,10 +11732,6 @@
         "data/runs/2026-10-20-08/snapshots/2333hutao--dsh-ls125-uv-probe/REVIEWED-SOURCE.json": {
             "path": "evidence/17/17f3ac57c4f0a125c259ee290b2aa3719a72b75f7f051dae6e94e68e34071a58.json",
             "sha256": "17f3ac57c4f0a125c259ee290b2aa3719a72b75f7f051dae6e94e68e34071a58"
-        },
-        "data/runs/2026-10-20-08/snapshots/23swccp--dsh-undo--packages-bundle-rollback/REVIEWED-SOURCE.json": {
-            "path": "evidence/74/74fef965ef40333e206dcb52759e1bdc43548f0ad09b0ac5ba0f1348e4ccb0a3.json",
-            "sha256": "74fef965ef40333e206dcb52759e1bdc43548f0ad09b0ac5ba0f1348e4ccb0a3"
         },
         "data/runs/2026-10-20-08/snapshots/2404723600--dsh-router-loomy/REVIEWED-SOURCE.json": {
             "path": "evidence/8c/8c235c057be528f2c668252c0d5ed64e8d7cae2e559d4d3981e543f46160d6d8.json",
@@ -11736,10 +11764,6 @@
         "data/runs/2026-10-21-01/snapshots/439436269-ctrl--dsh-session-path/REVIEWED-SOURCE.json": {
             "path": "evidence/19/193405d165f1c67f78ded64f80424bd213315ecc638de473f5c32a585a055183.json",
             "sha256": "193405d165f1c67f78ded64f80424bd213315ecc638de473f5c32a585a055183"
-        },
-        "data/runs/2026-10-21-01/snapshots/1na-ko--dsh-hdc-bridge/REVIEWED-SOURCE.json": {
-            "path": "evidence/8d/8db83c16f28df3314e5477538a46ae67ad4c6bb5c55671422bb7d6bd0e39008e.json",
-            "sha256": "8db83c16f28df3314e5477538a46ae67ad4c6bb5c55671422bb7d6bd0e39008e"
         },
         "data/runs/2026-10-21-01/snapshots/2507483326--dsh-eteams/REVIEWED-SOURCE.json": {
             "path": "evidence/ab/ab3638ad8b052e0c915448fc85d206db79957eb473005aa88a15fe9d3ddec886.json",
@@ -11933,10 +11957,6 @@
             "path": "evidence/0f/0fc1c4a51987b0b11417ed9a085a2370d534e995e55965a3ad288bc7c914d8e2.json",
             "sha256": "0fc1c4a51987b0b11417ed9a085a2370d534e995e55965a3ad288bc7c914d8e2"
         },
-        "data/runs/2026-10-21-02/snapshots/5aaee9--pi-agent-extensions--dsh-autocompact/REVIEWED-SOURCE.json": {
-            "path": "evidence/a1/a1dbd1b605e78a04d73131854a457d346d9045ee015edcf4a7e1e79cdc3c1a23.json",
-            "sha256": "a1dbd1b605e78a04d73131854a457d346d9045ee015edcf4a7e1e79cdc3c1a23"
-        },
         "data/runs/2026-10-21-02/snapshots/609476965--dsh-lorebookmd/REVIEWED-SOURCE.json": {
             "path": "evidence/02/0256d56252152e343090ac3d78516617d84f4cc14415e7cbf1a27e08ab620c5f.json",
             "sha256": "0256d56252152e343090ac3d78516617d84f4cc14415e7cbf1a27e08ab620c5f"
@@ -11952,10 +11972,6 @@
         "data/runs/2026-10-21-02/snapshots/66rapper--dsh-model-auto-enricher/REVIEWED-SOURCE.json": {
             "path": "evidence/90/903c6645ae6f8266358e326cf3fffd90213cacc8a0fa6851cdf0a91f1a8f7763.json",
             "sha256": "903c6645ae6f8266358e326cf3fffd90213cacc8a0fa6851cdf0a91f1a8f7763"
-        },
-        "data/runs/2026-10-21-02/snapshots/dsh-wsl-workspace-maintainers--dsh-wsl-workspace/REVIEWED-SOURCE.json": {
-            "path": "evidence/82/8240c8818fe2ed8f9432c9f8822923f4ae3988aa0b4d77d602651dcd97c33e41.json",
-            "sha256": "8240c8818fe2ed8f9432c9f8822923f4ae3988aa0b4d77d602651dcd97c33e41"
         },
         "data/runs/2026-10-21-02/snapshots/6mt--dsh-plugin-loopback-trust/REVIEWED-SOURCE.json": {
             "path": "evidence/65/6568eee43967059e682af808810d0bfeabc02e418cbd8a4ca9058762479ea145.json",
@@ -11980,10 +11996,6 @@
         "data/runs/2026-10-21-02/snapshots/7bder--dsh-plugin-orchd/REVIEWED-SOURCE.json": {
             "path": "evidence/fa/fae353b066a375131a68565e9554e15617b781436ba92d7567ba0dbb8f282d6c.json",
             "sha256": "fae353b066a375131a68565e9554e15617b781436ba92d7567ba0dbb8f282d6c"
-        },
-        "data/runs/2026-10-21-02/snapshots/7dgroup-ai--dsh-skill-7d-code-reviewer/REVIEWED-SOURCE.json": {
-            "path": "evidence/10/10604e35f0d730b5377e5d5360c0114675d992c3bc8f07590d1a68a6024e9118.json",
-            "sha256": "10604e35f0d730b5377e5d5360c0114675d992c3bc8f07590d1a68a6024e9118"
         },
         "data/runs/2026-10-21-02/snapshots/7dgroup-ai--dsh-skill-7d-git-commit/REVIEWED-SOURCE.json": {
             "path": "evidence/c2/c262bd53237f61b57419cfffcccf16e473dc35faca81d79886808d7419f52b56.json",
@@ -12061,10 +12073,6 @@
             "path": "evidence/14/145acf5399d0ef3a452c634572bba44e6aa11c287e4ce03a7af8458c74af60f7.json",
             "sha256": "145acf5399d0ef3a452c634572bba44e6aa11c287e4ce03a7af8458c74af60f7"
         },
-        "data/runs/2026-10-21-03/snapshots/9087--dsh-diff-approval/REVIEWED-SOURCE.json": {
-            "path": "evidence/d3/d3d3e948788e7e45ae98d2f7ba79d8a8675ce9236d8ebe866e4550acf6c074a6.json",
-            "sha256": "d3d3e948788e7e45ae98d2f7ba79d8a8675ce9236d8ebe866e4550acf6c074a6"
-        },
         "data/runs/2026-10-21-03/snapshots/940842546--dsh-permissions/REVIEWED-SOURCE.json": {
             "path": "evidence/fd/fd7ef00cdde9c89189cda52e23adf1c18333b533da9cbdcd48b8d8de5a22ed8b.json",
             "sha256": "fd7ef00cdde9c89189cda52e23adf1c18333b533da9cbdcd48b8d8de5a22ed8b"
@@ -12092,10 +12100,6 @@
         "data/runs/2026-10-21-03/snapshots/7vw58n3ftvq7cn89v--dsh-plugin-session-colors/REVIEWED-SOURCE.json": {
             "path": "evidence/21/21a3e27d99c656a55759b54db3f4ff6ce106de5bdc423f985d71a53f7b826ea8.json",
             "sha256": "21a3e27d99c656a55759b54db3f4ff6ce106de5bdc423f985d71a53f7b826ea8"
-        },
-        "data/runs/2026-10-21-03/snapshots/82c86b8z86-stack--dsh-engineering-workflow/REVIEWED-SOURCE.json": {
-            "path": "evidence/6a/6a938930956818d5af6492fcaf9782ceaa91c13709febca778fa3e1c8b112e4d.json",
-            "sha256": "6a938930956818d5af6492fcaf9782ceaa91c13709febca778fa3e1c8b112e4d"
         },
         "data/runs/2026-10-21-03/snapshots/863683348--dsh-insight/REVIEWED-SOURCE.json": {
             "path": "evidence/7b/7bae85c33fb953b57a9be88f5be69eef529bfb76397a6a40970aaadb269fa903.json",
@@ -12221,29 +12225,9 @@
             "path": "evidence/8f/8f89c0b84fd752749b7567a6ff6877415b88828056ba72d2d015d750d2d64dc7.json",
             "sha256": "8f89c0b84fd752749b7567a6ff6877415b88828056ba72d2d015d750d2d64dc7"
         },
-        "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--harness-github/REVIEWED-SOURCE.json": {
-            "path": "evidence/7e/7ef7e5723b03910ee908034a69cf90c0e9f8f529a5c57484c8f92aaad0fd9373.json",
-            "sha256": "7ef7e5723b03910ee908034a69cf90c0e9f8f529a5c57484c8f92aaad0fd9373"
-        },
-        "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--dsh-lsp-packs--dsh-lsp-csharp/REVIEWED-SOURCE.json": {
-            "path": "evidence/a2/a2fc7ff6cb1cbbf1141c23addc47779a841158518dec61d6567a205ba411788c.json",
-            "sha256": "a2fc7ff6cb1cbbf1141c23addc47779a841158518dec61d6567a205ba411788c"
-        },
-        "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--dsh-lsp-packs--dsh-lsp-go/REVIEWED-SOURCE.json": {
-            "path": "evidence/1c/1c34f5457e19b813e1a4bd36b51df25d74daee40ca5441d632f9adf950aae11a.json",
-            "sha256": "1c34f5457e19b813e1a4bd36b51df25d74daee40ca5441d632f9adf950aae11a"
-        },
-        "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--dsh-lsp-packs--dsh-lsp-kotlin/REVIEWED-SOURCE.json": {
-            "path": "evidence/8d/8d436af0ebf5975df5d01670da298c2d7e6ed45d168b86031a5f814202a486b4.json",
-            "sha256": "8d436af0ebf5975df5d01670da298c2d7e6ed45d168b86031a5f814202a486b4"
-        },
         "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--dsh-lsp-packs--dsh-lsp-lua/REVIEWED-SOURCE.json": {
             "path": "evidence/78/78251082bcad01e584d95c6be2863dff0c8db99690cb721b0b171ca6fa6b55e6.json",
             "sha256": "78251082bcad01e584d95c6be2863dff0c8db99690cb721b0b171ca6fa6b55e6"
-        },
-        "data/runs/2026-10-21-04/snapshots/adwmc--helm-d--packages-helmd/REVIEWED-SOURCE.json": {
-            "path": "evidence/04/04c80b30abf75e16dd74a86921a2c5ace67e5d0a6dfc0821551511a417c08e8b.json",
-            "sha256": "04c80b30abf75e16dd74a86921a2c5ace67e5d0a6dfc0821551511a417c08e8b"
         },
         "data/runs/2026-10-21-04/snapshots/afundog--dsh-sidebar-git-graph/REVIEWED-SOURCE.json": {
             "path": "evidence/09/09654d319989ef3241f47ddab047de8fc350397fe58c4dcc5ba1aa6113d82584.json",
@@ -12365,25 +12349,9 @@
             "path": "evidence/6f/6f2e008da85ba5beef211404c17f89eae81a47bae6d22cc886bc6d769cadfd1b.json",
             "sha256": "6f2e008da85ba5beef211404c17f89eae81a47bae6d22cc886bc6d769cadfd1b"
         },
-        "data/runs/2026-10-21-06/snapshots/aks1st--dock/REVIEWED-SOURCE.json": {
-            "path": "evidence/eb/eb2e76d81a7220a52672a4a36a2736510ad92bd1b61d52d0ad1c010361aa6e37.json",
-            "sha256": "eb2e76d81a7220a52672a4a36a2736510ad92bd1b61d52d0ad1c010361aa6e37"
-        },
         "data/runs/2026-10-21-06/snapshots/aks1st--dock-files/REVIEWED-SOURCE.json": {
             "path": "evidence/ed/ed358bd308dd72c4397842a05b79162ba85cb477b3d66c1235cf0ebb7f0c3102.json",
             "sha256": "ed358bd308dd72c4397842a05b79162ba85cb477b3d66c1235cf0ebb7f0c3102"
-        },
-        "data/runs/2026-10-21-06/snapshots/aks1st--dock-editor/REVIEWED-SOURCE.json": {
-            "path": "evidence/97/97dd0b0c9d8f235d21d0caa4e23a9b0df83afc706886ceabf7bf13e4252926f4.json",
-            "sha256": "97dd0b0c9d8f235d21d0caa4e23a9b0df83afc706886ceabf7bf13e4252926f4"
-        },
-        "data/runs/2026-10-21-06/snapshots/aks1st--dock-editor/PARENT-COMPARISON.json": {
-            "path": "evidence/9b/9be7e9d4b471db3cc1c38349b29771aefd2dbd5aeedb314c0893cdf5bd79b53f.json",
-            "sha256": "9be7e9d4b471db3cc1c38349b29771aefd2dbd5aeedb314c0893cdf5bd79b53f"
-        },
-        "data/runs/2026-10-21-06/snapshots/aks1st--dock-git/REVIEWED-SOURCE.json": {
-            "path": "evidence/ed/ed02e199ee5a466b9aa989604bc49084947d1c2cd73c4971be227f9fd42f0bc3.json",
-            "sha256": "ed02e199ee5a466b9aa989604bc49084947d1c2cd73c4971be227f9fd42f0bc3"
         },
         "data/runs/2026-10-21-06/snapshots/aks1st--dock-images/REVIEWED-SOURCE.json": {
             "path": "evidence/dd/dd25c8f20d18f5188e9d54bd1e89bda948f367a361fe9123826846a2a05d1078.json",
@@ -12413,10 +12381,6 @@
             "path": "evidence/f9/f99fb34f5ac25fed118d71fc94270413388e8b86e16d5c2477821dd88591a896.json",
             "sha256": "f99fb34f5ac25fed118d71fc94270413388e8b86e16d5c2477821dd88591a896"
         },
-        "data/runs/2026-10-21-06/snapshots/adonissheldon--dsh-openai-oauth/REVIEWED-SOURCE.json": {
-            "path": "evidence/1d/1d7f03e274de9961e5e4825ce48946d23bed0f77a2ac70b9547990cfe2927705.json",
-            "sha256": "1d7f03e274de9961e5e4825ce48946d23bed0f77a2ac70b9547990cfe2927705"
-        },
         "data/runs/2026-10-21-06/snapshots/aeroscis--dsh-temptask/REVIEWED-SOURCE.json": {
             "path": "evidence/da/da314edcdec991ae87d1eb5885078d4456f3ef8e847769d0b859cbf89a89f8c4.json",
             "sha256": "da314edcdec991ae87d1eb5885078d4456f3ef8e847769d0b859cbf89a89f8c4"
@@ -12424,10 +12388,6 @@
         "data/runs/2026-10-21-06/snapshots/agentconnect--dsh-awiki/REVIEWED-SOURCE.json": {
             "path": "evidence/34/34d33bf1f3e11f9858f01c732a24f8331a1a3d17d4d5a64d3aa4e1806bea3ad4.json",
             "sha256": "34d33bf1f3e11f9858f01c732a24f8331a1a3d17d4d5a64d3aa4e1806bea3ad4"
-        },
-        "data/runs/2026-10-21-06/snapshots/agentdebugx--agentdebugx--integrations-dsh-agentdebugx/REVIEWED-SOURCE.json": {
-            "path": "evidence/da/da8f39f5089ee09ccf4328e3e1d1fd4777060857a751dc0186736935a296c5a9.json",
-            "sha256": "da8f39f5089ee09ccf4328e3e1d1fd4777060857a751dc0186736935a296c5a9"
         },
         "data/runs/2026-10-21-06/snapshots/ahyi8--dsh-agent-recycle-guard/REVIEWED-SOURCE.json": {
             "path": "evidence/c0/c05038fc3b73317adc085ba7138fdd76ff889ea48d099bd5b3ac2d56d37ff89e.json",
@@ -12441,10 +12401,6 @@
             "path": "evidence/a3/a3f4f69066245f130d5a566b31cacb0185336442b6cba335885dd714a18ce00a.json",
             "sha256": "a3f4f69066245f130d5a566b31cacb0185336442b6cba335885dd714a18ce00a"
         },
-        "data/runs/2026-10-21-06/snapshots/aks1st--dsh-mermaid/REVIEWED-SOURCE.json": {
-            "path": "evidence/6c/6cc43fd1b95e63bae5aca2e56574bd83b177c4c4b563307f0bb066455aeca490.json",
-            "sha256": "6cc43fd1b95e63bae5aca2e56574bd83b177c4c4b563307f0bb066455aeca490"
-        },
         "data/runs/2026-10-21-06/snapshots/aks1st--dsh-skill-manager/REVIEWED-SOURCE.json": {
             "path": "evidence/b2/b2b3ccde20ac9b9e573f7f92a54f9444e994a70db8da66c1e8fdbe658efa5385.json",
             "sha256": "b2b3ccde20ac9b9e573f7f92a54f9444e994a70db8da66c1e8fdbe658efa5385"
@@ -12452,10 +12408,6 @@
         "data/runs/2026-10-21-06/snapshots/aks1st--ikun-theme-skin/REVIEWED-SOURCE.json": {
             "path": "evidence/ee/ee1baa1bc96e5cbfb4ce501cfc7abf373243731c6650d73db1f6878930b54f06.json",
             "sha256": "ee1baa1bc96e5cbfb4ce501cfc7abf373243731c6650d73db1f6878930b54f06"
-        },
-        "data/runs/2026-10-21-06/snapshots/aks1st--model-usage-plugin/REVIEWED-SOURCE.json": {
-            "path": "evidence/43/438e74a70d6c830a26ce2ce49e8fe6a06f54f9880f39aad73ce4495d0a49c477.json",
-            "sha256": "438e74a70d6c830a26ce2ce49e8fe6a06f54f9880f39aad73ce4495d0a49c477"
         },
         "data/runs/2026-10-21-06/snapshots/akush99--dsh-balance-chip/REVIEWED-SOURCE.json": {
             "path": "evidence/2c/2c91e5c664f74e5ee45012a99db73cff0e236be9d0cdb0fb695156cd501f04c6.json",
@@ -12472,10 +12424,6 @@
         "data/runs/2026-10-21-06/snapshots/alive114514awa--dsh-prompt-optimizer/REVIEWED-SOURCE.json": {
             "path": "evidence/4d/4d4cc9a382f65507af5848ddb6bb4f367f3413e2b4eb282bc34d2ea840282b91.json",
             "sha256": "4d4cc9a382f65507af5848ddb6bb4f367f3413e2b4eb282bc34d2ea840282b91"
-        },
-        "data/runs/2026-10-21-06/snapshots/anetresearch--anet--deploy-plugins-dist-dsh/REVIEWED-SOURCE.json": {
-            "path": "evidence/3b/3b88e9d3901d514f79d746fe20c91a1760bf507455ca6660581c156e410a8a31.json",
-            "sha256": "3b88e9d3901d514f79d746fe20c91a1760bf507455ca6660581c156e410a8a31"
         },
         "data/runs/2026-10-21-06/snapshots/awl-mc2--dsh-plugin_awl/REVIEWED-SOURCE.json": {
             "path": "evidence/33/33deec3704bda737acbb9ce6bf702c36b2577300bac662078a7af3f2d5b0267a.json",
@@ -12521,17 +12469,9 @@
             "path": "evidence/f3/f34c139cd68acc53fbcb82cb1b8972b621b7d068fa8bf2029a02dbf20ca273a7.json",
             "sha256": "f34c139cd68acc53fbcb82cb1b8972b621b7d068fa8bf2029a02dbf20ca273a7"
         },
-        "data/runs/2026-10-21-07/snapshots/1264459640--dsh-trellis/REVIEWED-SOURCE.json": {
-            "path": "evidence/b3/b3904486524aee7dcd9fe407328ad2d8dd94f0acd79945f37fabf12f923c5e6e.json",
-            "sha256": "b3904486524aee7dcd9fe407328ad2d8dd94f0acd79945f37fabf12f923c5e6e"
-        },
         "data/runs/2026-10-21-07/snapshots/1373700184--dsh-subagent/REVIEWED-SOURCE.json": {
             "path": "evidence/cd/cd413cbaa4753bc637d39bc4a8dbf9d40038eed6339e669ba2cace2f492d717b.json",
             "sha256": "cd413cbaa4753bc637d39bc4a8dbf9d40038eed6339e669ba2cace2f492d717b"
-        },
-        "data/runs/2026-10-21-07/snapshots/akimiya-z--codex-guard--dsh/REVIEWED-SOURCE.json": {
-            "path": "evidence/87/876ef7bb4dae521dfd56fa210c4a6c232a742527a8917c365a71e0e883e20338.json",
-            "sha256": "876ef7bb4dae521dfd56fa210c4a6c232a742527a8917c365a71e0e883e20338"
         },
         "data/runs/2026-10-21-07/snapshots/aliceljy--dsh-thumb/REVIEWED-SOURCE.json": {
             "path": "evidence/5d/5d8f6563305a0d3cc23791539338221eea2fad2ff6fe4890bba502696e677eb7.json",
@@ -12569,14 +12509,6 @@
             "path": "evidence/e8/e827b7b7b7aad0abad15c97c245b03ab99f89162064e1dd4d404c1a313dd6212.json",
             "sha256": "e827b7b7b7aad0abad15c97c245b03ab99f89162064e1dd4d404c1a313dd6212"
         },
-        "data/runs/2026-10-21-07/snapshots/amethystluna--embedded-workbench/REVIEWED-SOURCE.json": {
-            "path": "evidence/78/780a5ade7b3b2834fda88653ac8e625d8c9f52e5c01e073acfd3539d21f93ad3.json",
-            "sha256": "780a5ade7b3b2834fda88653ac8e625d8c9f52e5c01e073acfd3539d21f93ad3"
-        },
-        "data/runs/2026-10-21-07/snapshots/amethystluna--logicprobe/REVIEWED-SOURCE.json": {
-            "path": "evidence/49/49b0cd88aabe432924c2c3c247d6ad036b4fbcc7ecc189af23a91e75fe5a861f.json",
-            "sha256": "49b0cd88aabe432924c2c3c247d6ad036b4fbcc7ecc189af23a91e75fe5a861f"
-        },
         "data/runs/2026-10-21-07/snapshots/anacondakc--dsh-douyin/REVIEWED-SOURCE.json": {
             "path": "evidence/6e/6ec8d1787082b259be2799d98a23862461e06c0b1779d6be02ff079c992e48b5.json",
             "sha256": "6ec8d1787082b259be2799d98a23862461e06c0b1779d6be02ff079c992e48b5"
@@ -12613,10 +12545,6 @@
             "path": "evidence/ad/adf10422cf252eb84b67b0adedab3ff333d49678578e08980ade026486a54df3.json",
             "sha256": "adf10422cf252eb84b67b0adedab3ff333d49678578e08980ade026486a54df3"
         },
-        "data/runs/2026-10-21-07/snapshots/airmetro--dsh-update-checker/REVIEWED-SOURCE.json": {
-            "path": "evidence/18/180784cf5ae509f147cd2dfe6813fc0b60dcbf23ad79b9dce4fffd3e40d50386.json",
-            "sha256": "180784cf5ae509f147cd2dfe6813fc0b60dcbf23ad79b9dce4fffd3e40d50386"
-        },
         "data/runs/2026-10-21-07/snapshots/akiyuki1130--dsh-ark-coding-provider/REVIEWED-SOURCE.json": {
             "path": "evidence/06/0676146de78cf3b02b0735ba015e02dfcdf9c64c3405c66f3cb52bac8c176903.json",
             "sha256": "0676146de78cf3b02b0735ba015e02dfcdf9c64c3405c66f3cb52bac8c176903"
@@ -12628,10 +12556,6 @@
         "data/runs/2026-10-21-07/snapshots/allenwes365--dsh-local-memory/REVIEWED-SOURCE.json": {
             "path": "evidence/05/05725e58ba42aa87a1284e71cce1693ddcc3dcb58a1fe593bb2f2de649a5b440.json",
             "sha256": "05725e58ba42aa87a1284e71cce1693ddcc3dcb58a1fe593bb2f2de649a5b440"
-        },
-        "data/runs/2026-10-21-07/snapshots/alexyin-tongji--dsh-plugin-console/REVIEWED-SOURCE.json": {
-            "path": "evidence/e2/e25889080467501e64c4a4f325899c163caff15d690cbf7e5d8bef5cf1a8389c.json",
-            "sha256": "e25889080467501e64c4a4f325899c163caff15d690cbf7e5d8bef5cf1a8389c"
         },
         "data/runs/2026-10-21-07/snapshots/aliuyanfeng--dsh-soul/REVIEWED-SOURCE.json": {
             "path": "evidence/a8/a8e6de91b09b6b36952a84d86bddb55e1e6e40bf2891c94d056cd47da11a1af8.json",
@@ -12668,14 +12592,6 @@
         "data/runs/2026-10-21-07/snapshots/alycestocking--dsh-harness-switch/REVIEWED-SOURCE.json": {
             "path": "evidence/ab/ab57e151a5eb23f7dd25d92dc57bbb9a52453f77d639d88e9e72921eb3de45f9.json",
             "sha256": "ab57e151a5eb23f7dd25d92dc57bbb9a52453f77d639d88e9e72921eb3de45f9"
-        },
-        "data/runs/2026-10-21-07/snapshots/angeloszou--dsh-github-router/REVIEWED-SOURCE.json": {
-            "path": "evidence/3f/3fadb768fedce33c45b0db4fe98763d8598aaaa523ea0cb17f5c65fb0d45ca5d.json",
-            "sha256": "3fadb768fedce33c45b0db4fe98763d8598aaaa523ea0cb17f5c65fb0d45ca5d"
-        },
-        "data/runs/2026-10-21-07/snapshots/angeloszou--dsh-multi-folder/REVIEWED-SOURCE.json": {
-            "path": "evidence/53/538cd20d9d311c46107abbbbc5c22186703251c7238530cbae7a02d63b72fa41.json",
-            "sha256": "538cd20d9d311c46107abbbbc5c22186703251c7238530cbae7a02d63b72fa41"
         },
         "data/runs/2026-10-21-07/snapshots/angeloszou--dsh-pdf-reader/REVIEWED-SOURCE.json": {
             "path": "evidence/08/08ef6bf8b09f33e532e2a7ee500a41a8fb84d3a4e7cda61a339aa21157dcf09e.json",
@@ -12720,6 +12636,170 @@
         "data/runs/2026-10-22-insight-comparison/snapshots/angeloszou--dsh-python-env/REVIEWED-SOURCE.json": {
             "path": "evidence/64/649f652834e5b61a0681a719269dd74f9456d241155fa3b053898ae6a8cd790a.json",
             "sha256": "649f652834e5b61a0681a719269dd74f9456d241155fa3b053898ae6a8cd790a"
+        },
+        "data/runs/2026-10-22-02/snapshots/988hj7tczd-oss--harness-github/REVIEWED-SOURCE.json": {
+            "path": "evidence/ba/bac34bdf685bf3e204f82c8009e0b7fcc2e8aeddecb913caff7ff95190ddc5f7.json",
+            "sha256": "bac34bdf685bf3e204f82c8009e0b7fcc2e8aeddecb913caff7ff95190ddc5f7"
+        },
+        "data/runs/2026-10-22-02/snapshots/5aaee9--pi-agent-extensions--dsh-autocompact/REVIEWED-SOURCE.json": {
+            "path": "evidence/c0/c0380fb60b5e281ad5435f6cd58f25cf32009cdee65f722c791cf16265194316.json",
+            "sha256": "c0380fb60b5e281ad5435f6cd58f25cf32009cdee65f722c791cf16265194316"
+        },
+        "data/runs/2026-10-22-02/snapshots/adwmc--helm-d--packages-helmd/REVIEWED-SOURCE.json": {
+            "path": "evidence/09/093e4b41795754daf82d8de4c6072882e7d39d5dbf7bf2b531e29f08decc6935.json",
+            "sha256": "093e4b41795754daf82d8de4c6072882e7d39d5dbf7bf2b531e29f08decc6935"
+        },
+        "data/runs/2026-10-22-02/snapshots/aks1st--dsh-mermaid/REVIEWED-SOURCE.json": {
+            "path": "evidence/c7/c75140a03788a39d65875bae86f69d1cec272514a836c1756e0472e747905ae5.json",
+            "sha256": "c75140a03788a39d65875bae86f69d1cec272514a836c1756e0472e747905ae5"
+        },
+        "data/runs/2026-10-22-02/snapshots/aks1st--dock-git/REVIEWED-SOURCE.json": {
+            "path": "evidence/d1/d1fbe9e302c3e8d37632334224d5a42e3174f9418fde157564444cbbfb7ea3f4.json",
+            "sha256": "d1fbe9e302c3e8d37632334224d5a42e3174f9418fde157564444cbbfb7ea3f4"
+        },
+        "data/runs/2026-10-22-02/snapshots/dsh-wsl-workspace-maintainers--dsh-wsl-workspace/REVIEWED-SOURCE.json": {
+            "path": "evidence/bb/bb9e539f2b945871592100482a3a389ace62a02f351955628b04bfc1b1190643.json",
+            "sha256": "bb9e539f2b945871592100482a3a389ace62a02f351955628b04bfc1b1190643"
+        },
+        "data/runs/2026-10-22-02/snapshots/988hj7tczd-oss--dsh-lsp-packs--dsh-lsp-java/REVIEWED-SOURCE.json": {
+            "path": "evidence/62/62a19528c9e46b3efc36749510117dc874e32e0b012b64378a3ef15af10e1017.json",
+            "sha256": "62a19528c9e46b3efc36749510117dc874e32e0b012b64378a3ef15af10e1017"
+        },
+        "data/runs/2026-10-22-02/snapshots/988hj7tczd-oss--dsh-lsp-packs--dsh-lsp-kotlin/REVIEWED-SOURCE.json": {
+            "path": "evidence/60/604033a5ce5d494ff73e48f31485132edb40cddb9e2408ff79745f6f2cafde67.json",
+            "sha256": "604033a5ce5d494ff73e48f31485132edb40cddb9e2408ff79745f6f2cafde67"
+        },
+        "data/runs/2026-10-22-02/snapshots/aks1st--model-usage-plugin/REVIEWED-SOURCE.json": {
+            "path": "evidence/17/172ee325f83cdaf19ee29f9dd880b9963bf81b7caa75de02d27b9883d1ec41b3.json",
+            "sha256": "172ee325f83cdaf19ee29f9dd880b9963bf81b7caa75de02d27b9883d1ec41b3"
+        },
+        "data/runs/2026-10-22-02/snapshots/aks1st--dock-editor/REVIEWED-SOURCE.json": {
+            "path": "evidence/cf/cfa50c8975bf20f2cb7844de4900a798e60d0782ad2524c2663d3fb66f53c9ee.json",
+            "sha256": "cfa50c8975bf20f2cb7844de4900a798e60d0782ad2524c2663d3fb66f53c9ee"
+        },
+        "data/runs/2026-10-22-02/manual-finding-reviews/MULTI-SOURCE.json": {
+            "path": "evidence/f6/f6ee5f5240afdd122400b7ba29e077f483dfdce09052893a31215b042e474274.json",
+            "sha256": "f6ee5f5240afdd122400b7ba29e077f483dfdce09052893a31215b042e474274"
+        },
+        "data/runs/2026-10-22-02/snapshots/2006spy--dsh-token-billing/REVIEWED-SOURCE.json": {
+            "path": "evidence/22/2239533e55095f5cf3519c739adc4e1e4ba7d5090f7d9c4a62939e0109167d96.json",
+            "sha256": "2239533e55095f5cf3519c739adc4e1e4ba7d5090f7d9c4a62939e0109167d96"
+        },
+        "data/runs/2026-10-22-02/snapshots/1321928757--dsh-mysql/REVIEWED-SOURCE.json": {
+            "path": "evidence/66/66196cc46b3d55461b06415b1f4c2ff63ec1a4433a875e9fd00f0f627310433f.json",
+            "sha256": "66196cc46b3d55461b06415b1f4c2ff63ec1a4433a875e9fd00f0f627310433f"
+        },
+        "data/runs/2026-10-22-02/snapshots/00080000--dsh-project-memory/REVIEWED-SOURCE.json": {
+            "path": "evidence/e0/e0e3b169b5116797266be1e76d4b355113f8bdf59adc3ab212274cfdceec9237.json",
+            "sha256": "e0e3b169b5116797266be1e76d4b355113f8bdf59adc3ab212274cfdceec9237"
+        },
+        "data/runs/2026-10-22-02/snapshots/akimiya-z--codex-guard--dsh/REVIEWED-SOURCE.json": {
+            "path": "evidence/fa/fa09ee317afc2b21566bbe4868ab1a3ca9e34f0eb4a4de5ff4101a68475ab182.json",
+            "sha256": "fa09ee317afc2b21566bbe4868ab1a3ca9e34f0eb4a4de5ff4101a68475ab182"
+        },
+        "data/runs/2026-10-22-02/snapshots/82c86b8z86-stack--dsh-engineering-workflow/REVIEWED-SOURCE.json": {
+            "path": "evidence/f7/f762dd59688db262ec2ae22db2aad3a8884c9bb49127d60ddc21db697a3a27da.json",
+            "sha256": "f762dd59688db262ec2ae22db2aad3a8884c9bb49127d60ddc21db697a3a27da"
+        },
+        "data/runs/2026-10-22-02/snapshots/863683348--dsh-plugin-gate/REVIEWED-SOURCE.json": {
+            "path": "evidence/7f/7f8b97b42a95e1d8ca358892eb79297838b1b23f9804542f8114e7bc43d57e28.json",
+            "sha256": "7f8b97b42a95e1d8ca358892eb79297838b1b23f9804542f8114e7bc43d57e28"
+        },
+        "data/runs/2026-10-22-02/snapshots/030611--dsh-verification-receipt/REVIEWED-SOURCE.json": {
+            "path": "evidence/b7/b76f2af387b67349e470c45bdf9f16abcbd1ef01a7a412536bb2e003d5b8a599.json",
+            "sha256": "b76f2af387b67349e470c45bdf9f16abcbd1ef01a7a412536bb2e003d5b8a599"
+        },
+        "data/runs/2026-10-22-02/snapshots/9087--dsh-diff-approval/REVIEWED-SOURCE.json": {
+            "path": "evidence/8c/8c3fbc9cd965c228c115019c873cbc6f80ea9cfcb46b1e5a9d07bea543432c67.json",
+            "sha256": "8c3fbc9cd965c228c115019c873cbc6f80ea9cfcb46b1e5a9d07bea543432c67"
+        },
+        "data/runs/2026-10-22-02/snapshots/aks1st--dock/REVIEWED-SOURCE.json": {
+            "path": "evidence/75/755c6e8188916e3d435a8f8931dc5e8e1f664a748a91ff9630785d8ced874742.json",
+            "sha256": "755c6e8188916e3d435a8f8931dc5e8e1f664a748a91ff9630785d8ced874742"
+        },
+        "data/runs/2026-10-22-02/snapshots/alexyin-tongji--dsh-plugin-console/REVIEWED-SOURCE.json": {
+            "path": "evidence/aa/aa2709c993f3a0a9588daa6e43c64bfd30eb07145902601253491ad5c02242a2.json",
+            "sha256": "aa2709c993f3a0a9588daa6e43c64bfd30eb07145902601253491ad5c02242a2"
+        },
+        "data/runs/2026-10-22-02/snapshots/7dgroup-ai--dsh-skill-7d-code-reviewer/REVIEWED-SOURCE.json": {
+            "path": "evidence/4e/4ed1f07edacebd3d59aec09b2d385c7285823ce14c5fbd4961e46cae02239f43.json",
+            "sha256": "4ed1f07edacebd3d59aec09b2d385c7285823ce14c5fbd4961e46cae02239f43"
+        },
+        "data/runs/2026-10-22-02/snapshots/988hj7tczd-oss--dsh-lsp-packs--dsh-lsp-csharp/REVIEWED-SOURCE.json": {
+            "path": "evidence/90/905b6101350e2a82639276b40c30e832f63c0ead4e15182642a11d5ea85188cd.json",
+            "sha256": "905b6101350e2a82639276b40c30e832f63c0ead4e15182642a11d5ea85188cd"
+        },
+        "data/runs/2026-10-22-02/snapshots/988hj7tczd-oss--dsh-lsp-packs--dsh-lsp-go/REVIEWED-SOURCE.json": {
+            "path": "evidence/e2/e2936e28cbe3de0e937ef5ec9db792aef61cf2d32f6e80178156654c0878e2f9.json",
+            "sha256": "e2936e28cbe3de0e937ef5ec9db792aef61cf2d32f6e80178156654c0878e2f9"
+        },
+        "data/runs/2026-10-22-02/snapshots/173787247--dsh-repeat-stop/REVIEWED-SOURCE.json": {
+            "path": "evidence/48/4874ab1fd9f5645f53db3ecc9555c2973a9da044e7664da0cfdb726f845050fd.json",
+            "sha256": "4874ab1fd9f5645f53db3ecc9555c2973a9da044e7664da0cfdb726f845050fd"
+        },
+        "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-net/REVIEWED-SOURCE.json": {
+            "path": "evidence/cc/cc6d86da40fb47d679c349ebcf087ef68d428c9101101ab42c90dbc38f9dce70.json",
+            "sha256": "cc6d86da40fb47d679c349ebcf087ef68d428c9101101ab42c90dbc38f9dce70"
+        },
+        "data/runs/2026-10-22-02/snapshots/1na-ko--dsh-hdc-bridge/REVIEWED-SOURCE.json": {
+            "path": "evidence/1a/1a537a08921b5fc25aa7af14be67da914746e1928d65df1a20f580b30a7fb7c9.json",
+            "sha256": "1a537a08921b5fc25aa7af14be67da914746e1928d65df1a20f580b30a7fb7c9"
+        },
+        "data/runs/2026-10-22-02/snapshots/263311487-ux--dsh-verify/REVIEWED-SOURCE.json": {
+            "path": "evidence/aa/aa862f9ee41a2880dee04bc888824f216b47d5485173314b7ca6c2c973599c0e.json",
+            "sha256": "aa862f9ee41a2880dee04bc888824f216b47d5485173314b7ca6c2c973599c0e"
+        },
+        "data/runs/2026-10-22-02/snapshots/agentdebugx--agentdebugx--integrations-dsh-agentdebugx/REVIEWED-SOURCE.json": {
+            "path": "evidence/d8/d80e5522fecfec8ef1a4151d84c5f32f82cb88714a5ecd15e5dbcb55bb081953.json",
+            "sha256": "d80e5522fecfec8ef1a4151d84c5f32f82cb88714a5ecd15e5dbcb55bb081953"
+        },
+        "data/runs/2026-10-22-02/snapshots/angeloszou--dsh-github-router/REVIEWED-SOURCE.json": {
+            "path": "evidence/12/1248ae3333c5977686888c94fa865e6725e155a08209737a0efb98d04e061818.json",
+            "sha256": "1248ae3333c5977686888c94fa865e6725e155a08209737a0efb98d04e061818"
+        },
+        "data/runs/2026-10-22-02/snapshots/angeloszou--dsh-multi-folder/REVIEWED-SOURCE.json": {
+            "path": "evidence/f0/f090bf7fd46a0140ae75901097f0cb27165cdaf757eb0b04fd23d598e510c763.json",
+            "sha256": "f090bf7fd46a0140ae75901097f0cb27165cdaf757eb0b04fd23d598e510c763"
+        },
+        "data/runs/2026-10-22-02/snapshots/airmetro--dsh-update-checker/REVIEWED-SOURCE.json": {
+            "path": "evidence/3c/3c0aa6240a579b64bf78babf60543ba16866f14ee1978aeef3a274bcb7488f3b.json",
+            "sha256": "3c0aa6240a579b64bf78babf60543ba16866f14ee1978aeef3a274bcb7488f3b"
+        },
+        "data/runs/2026-10-22-02/snapshots/february2015--dsh-taskswarm/REVIEWED-SOURCE.json": {
+            "path": "evidence/aa/aa85b3baebb6bd546c07587bd265e1db870b6cf92deb226bcaf3b9669b06d035.json",
+            "sha256": "aa85b3baebb6bd546c07587bd265e1db870b6cf92deb226bcaf3b9669b06d035"
+        },
+        "data/runs/2026-10-22-02/snapshots/amethystluna--logicprobe/REVIEWED-SOURCE.json": {
+            "path": "evidence/35/3519953dba4c5ff0525c796416bd5b86d43772d592bce4a0b5c5fe122cc9a9e3.json",
+            "sha256": "3519953dba4c5ff0525c796416bd5b86d43772d592bce4a0b5c5fe122cc9a9e3"
+        },
+        "data/runs/2026-10-22-02/snapshots/1052326311--dsh-plan-lattice/REVIEWED-SOURCE.json": {
+            "path": "evidence/25/25b337e9450743374a959e7e62dcc04f0cc170f336132cfb36947deb3bb78bab.json",
+            "sha256": "25b337e9450743374a959e7e62dcc04f0cc170f336132cfb36947deb3bb78bab"
+        },
+        "data/runs/2026-10-22-02/snapshots/anetresearch--anet--deploy-plugins-dist-dsh/REVIEWED-SOURCE.json": {
+            "path": "evidence/6c/6cbc20114ab46906cc50347d249061710c25fef915ce6b858aeffc7a49366c51.json",
+            "sha256": "6cbc20114ab46906cc50347d249061710c25fef915ce6b858aeffc7a49366c51"
+        },
+        "data/runs/2026-10-22-02/snapshots/amethystluna--embedded-workbench/REVIEWED-SOURCE.json": {
+            "path": "evidence/cb/cbb92230482dc6525e869ead243a2acf0300f787812b15806ff63d7eadf186b4.json",
+            "sha256": "cbb92230482dc6525e869ead243a2acf0300f787812b15806ff63d7eadf186b4"
+        },
+        "data/runs/2026-10-22-02/snapshots/2008924--dsh-progress-viz--plugin/REVIEWED-SOURCE.json": {
+            "path": "evidence/ed/ed6268e8fec057172f482ce8d1e18f1cf4b4943df61aad47a7513fd2820086a7.json",
+            "sha256": "ed6268e8fec057172f482ce8d1e18f1cf4b4943df61aad47a7513fd2820086a7"
+        },
+        "data/runs/2026-10-22-02/snapshots/23swccp--dsh-undo--packages-bundle-rollback/REVIEWED-SOURCE.json": {
+            "path": "evidence/f8/f8783e4606a93358958a1e5c662d4d1c451cae22f8323651ad54fd42d64c4df6.json",
+            "sha256": "f8783e4606a93358958a1e5c662d4d1c451cae22f8323651ad54fd42d64c4df6"
+        },
+        "data/runs/2026-10-22-02/snapshots/1264459640--dsh-trellis/REVIEWED-SOURCE.json": {
+            "path": "evidence/8e/8e9a8630ca2001a589f1aca34912be9a5a29356d4e9fd7f7b9f7f48a1bc96b02.json",
+            "sha256": "8e9a8630ca2001a589f1aca34912be9a5a29356d4e9fd7f7b9f7f48a1bc96b02"
+        },
+        "data/runs/2026-10-22-02/snapshots/adonissheldon--dsh-openai-oauth/REVIEWED-SOURCE.json": {
+            "path": "evidence/2f/2f2fa789529e29513dc9d36b80a29c5ec16d8581fb3092b7828fe8ce7ca52076.json",
+            "sha256": "2f2fa789529e29513dc9d36b80a29c5ec16d8581fb3092b7828fe8ce7ca52076"
         }
     }
 }

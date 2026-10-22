@@ -368,14 +368,14 @@
             "repository": "173787247/dsh-wsl-power",
             "path": "",
             "revision": "7a37a8c91d47bf69e630ca59db4740a5d7451d77",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "d9a008c2724252de4d85bf079c51072a86823281a50cd3b655acc0fe2e8a1977",
                 "code": "7a37a8c91d47bf69e630ca59db4740a5d7451d77",
                 "maintenance": "afffefebdcef685e00ca3b7a1870c771bd73cceacd3b6aef17d9cb5411ba2eed"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

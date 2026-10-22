@@ -390,14 +390,14 @@
             "repository": "3361805598-gif/dsh-usage-analytics",
             "path": "",
             "revision": "6b44b372e475188acd71feef81e8451b70c05483",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "e1b9e9a17921db33f9a05234e44472c904a9f11bc4cb68accaa2ff76dfd89f9e",
                 "code": "6b44b372e475188acd71feef81e8451b70c05483",
                 "maintenance": "b6bcf7a01fc253ae169f13a939100b735e24d1458a73dadd8ccab9eb3e130dce"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

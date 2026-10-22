@@ -443,14 +443,14 @@
             "repository": "988hj7tczd-oss/dsh-lsp-packs",
             "path": "dsh-lsp-ruby",
             "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "e7464806cf1b19743b9214fcfbc76c2c8eafee23f749063c46c8711376bfa038",
                 "code": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
                 "maintenance": "c574dcf28e68df0fb97fbd81638d887e8e9b60b99dbcf2e34fc7481b1d25448e"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

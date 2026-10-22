@@ -389,14 +389,14 @@
             "repository": "173787247/dsh-wsl-struct",
             "path": "",
             "revision": "6133450a091e0fbb1f8d02a10f371e30e8d56f7b",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "775acb015b59d31b211ba41adadb8df2d1f4c611085036e98a9b65bdbb821e6a",
                 "code": "6133450a091e0fbb1f8d02a10f371e30e8d56f7b",
                 "maintenance": "2292b65a98e9c8827177d1795c792f1d7e452198aac1c16520da7a00982aa0c3"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

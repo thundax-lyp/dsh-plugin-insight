@@ -417,14 +417,14 @@
             "repository": "All3nCN/dsh-qa-suite-N23",
             "path": "",
             "revision": "8f473567166944bf9ea94afaad294ced49034691",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "07ef0535d86ed9577f4d87a2ea6734ceccb659d8b5a400628a50b2fc898dec2c",
                 "code": "8f473567166944bf9ea94afaad294ced49034691",
                 "maintenance": "a8dd90477953d24348f924fa053af288ce964905d2c44f1a165205b807928b1c"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

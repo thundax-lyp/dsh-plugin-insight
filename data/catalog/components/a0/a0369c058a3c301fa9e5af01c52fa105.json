@@ -444,14 +444,14 @@
             "repository": "7vw58n3ftvq7cn89v/dsh-plugin-session-colors",
             "path": "",
             "revision": "d0f51131aef40e6bc3f60b560342e22551a972cd",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "70fc39cb20a11a705a394d0da804dcbca8ff525c607d47866e389a8c3b6acc84",
                 "code": "d0f51131aef40e6bc3f60b560342e22551a972cd",
                 "maintenance": "3d03bc5d88445826cd1c618e6027fe4f3855895e8c00d066be10fe4d23f0ee22"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

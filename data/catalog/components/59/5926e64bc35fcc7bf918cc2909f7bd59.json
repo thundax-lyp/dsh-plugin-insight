@@ -390,14 +390,14 @@
             "repository": "18477514055/dsh-ledger-memory",
             "path": "",
             "revision": "7aa05c4557e010c8d6decb16e96b05de36e1196a",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "6e72169cad5036982e6ded0d6758dfa0f1902192692c08f399adc43b1685e15d",
                 "code": "7aa05c4557e010c8d6decb16e96b05de36e1196a",
                 "maintenance": "89cfbc5cec6ffd1d19407c48b8a1059ac5a955256394f79293e8b5b02cd15df7"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

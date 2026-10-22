@@ -443,14 +443,14 @@
             "repository": "863683348/dsh-starter-zh",
             "path": "",
             "revision": "d97e7f9d2a5d64ac8bbbb239e83e6a22070509fe",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "55b3888cfbc4ca8cc201bbd3786abaf92f2e975e795ac7255b2ea60a8247d4f1",
                 "code": "d97e7f9d2a5d64ac8bbbb239e83e6a22070509fe",
                 "maintenance": "b4a513d943a7716e10124164c97739c9773163484147788feadf3ae8db1e8c46"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

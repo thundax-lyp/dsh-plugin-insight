@@ -280,6 +280,25 @@
             "text": "先在完整副本执行dry-run，核对日志和backup类文件是否仍需保留，再启用自动清理并设置合适保留期。"
         },
         "registry": "data/plugins/1344738825--ai-residue-cleaner",
+        "research_blocks": {
+            "plugin_id": "github:1406611614:root",
+            "revision": "d1efd794049a2a26b8e75573b51df249bd72b62b",
+            "reason_code": "refresh_validation_incomplete",
+            "reason": "本次核查未完成或修订尚未通过",
+            "details": {
+                "plugin_id": "github:1406611614:root",
+                "revision": "d1efd794049a2a26b8e75573b51df249bd72b62b",
+                "reason_code": "refresh_validation_incomplete",
+                "reason": "本次核查未完成或修订尚未通过",
+                "repository": "1344738825/ai-residue-cleaner",
+                "component_path": "",
+                "analysis_complete": true,
+                "publication_policy": "保留上次已发布研究；本次草稿不作为已验收成果",
+                "resume_condition": "完成独立核查及必要修订，父级验收后发布"
+            },
+            "blocked_at": "2026-10-22T11:49:32.713Z",
+            "run_id": "2026-10-22-02"
+        },
         "reports": "# AI 残渣清运\n\n> 按规则把会话副产物移入可还原回收站，并提供项目结项归类、归档与清理清单。\n\n## 固定范围与依据\n\n固定提交 [d1efd794049a2a26b8e75573b51df249bd72b62b](https://github.com/1344738825/ai-residue-cleaner/blob/d1efd794049a2a26b8e75573b51df249bd72b62b/index.js)；组件路径：仓库根。核查时间 2026-10-20T04:30:04.148Z；本轮基准 2026-10-20T04:25:27.514Z。\n源码抽读路径：index.js、hooks/cleanup.py。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：AI生成的探测、草稿和缓存污染工作区，用户需要减少整理负担并能恢复误收文件。\n- **亮点**：Host在turn/end后台派生Python清运；cleanup.py按规则移动文件并写manifest，项目open时跳过自动清理，结项时分类与归档。\n- **思考**：可逆移动及清单降低首次误收损失；规则覆盖面广且会过期真删，不应替代项目引用和保留策略。\n- **建议**：先在完整副本执行dry-run，核对日志和backup类文件是否仍需保留，再启用自动清理并设置合适保留期。\n\n## 场景与替代办法\n\nAI生成的探测、草稿和缓存污染工作区，用户需要减少整理负担并能恢复误收文件。\n\n此前未入档；显式产出目录配合手工清理更透明，本项增量是自动回收、归档和还原入口。\n\n## 依赖与流程\n\n需要Python3、项目可写目录及可靠cwd；依赖项目状态和忽略规则质量，磁盘空间不足可能影响移动与记录。\n\n立项指定产出目录，工作期保留，结项先预览再归类清运；误收按manifest还原，保留期结束前人工确认重要原件。\n\n## 成本与效果\n\n首次定义忽略规则和产出目录需人工，持续扫描和回收占I/O及空间；误分类恢复与过期损失不能算零成本。\n\n可逆移动及清单降低首次误收损失；规则覆盖面广且会过期真删，不应替代项目引用和保留策略。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：e3f4ec6d817fb3296070b6386d7afe6418a520d25915276d7a8d2571878d43a7。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 196 | — | — | 2872 |\n| .js | source | 1 | 229 | 163 | 52 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **后台**：turn/end 调用Python清运及首条消息输出守则注入。\n- **用户命令**：dry-run、结项、回收清单与还原子命令。\n\n## 工程亮点\n\nsessionCwd拒绝宿主/依赖目录，扫描跳过符号链接和嵌套仓库；restore检查既存路径，仍需验证中断后manifest与移动是否一致。\n\n## 分发与兼容\n\n0.1.1 private包，提供GitHub bundle与ZCode hooks；Python3为实际清运硬依赖，JS提示注入可单独工作。JS入口未见斜杠命令注册，README所称跨端命令一致性尚待宿主核实。\n\n## 历史对照\n\n当前快照此前没有该稳定身份的研究档案。此前未入档；显式产出目录配合手工清理更透明，本项增量是自动回收、归档和还原入口。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：名称规则不能证明文件可删除；回收站过期会真删。Python不纳入本工程JS/TS LOC，但已抽读核心清运代码。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：在复制目录放入被引用图、符号链接、同名恢复目标与重要log，测试dry-run、结项、中断和恢复，再衡量人工检查时间。\n",
         "metadata": {
             "repository": "1344738825/ai-residue-cleaner",
@@ -331,14 +350,14 @@
             "repository": "1344738825/ai-residue-cleaner",
             "path": "",
             "revision": "d1efd794049a2a26b8e75573b51df249bd72b62b",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "fefd41388d1811dc51c64a840417ed6adbe4ea67c94d22e71ef828969de19333",
                 "code": "d1efd794049a2a26b8e75573b51df249bd72b62b",
                 "maintenance": "1c3fe9fdae91b31a868d0c512e38bd98d2d9db9d1fb8680efa6993817eba9b12"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

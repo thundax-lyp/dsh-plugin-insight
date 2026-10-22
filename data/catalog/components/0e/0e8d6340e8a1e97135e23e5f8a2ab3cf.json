@@ -434,14 +434,14 @@
             "repository": "AndyYang12345/dsh-butler-memory",
             "path": "",
             "revision": "0f64e0cf0420d0461fef2d49c2d6752faebc0562",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "d11d091df8ad0856d5c41224661de10cc29e9e20b8075bfa02dbce96b77c557f",
                 "code": "0f64e0cf0420d0461fef2d49c2d6752faebc0562",
                 "maintenance": "c413625688cc4bf246de3272a4862648c40f60eafda12e809a3fddfa21c8dc1d"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

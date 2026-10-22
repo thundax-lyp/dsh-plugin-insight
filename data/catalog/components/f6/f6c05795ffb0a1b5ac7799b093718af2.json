@@ -436,14 +436,14 @@
             "repository": "AlyceStocking/hover-glossary",
             "path": "",
             "revision": "620b85d4291e6983cc2d1205ff76f4833978f38b",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "0b02761cc9b36e7103051c390650f911f7e7eaf4c342aecaae28118ad203c69c",
                 "code": "620b85d4291e6983cc2d1205ff76f4833978f38b",
                 "maintenance": "8956b53400f3a188f5e051e5680f2b64697bf210bc3d2f3b9871d5bd84267c68"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

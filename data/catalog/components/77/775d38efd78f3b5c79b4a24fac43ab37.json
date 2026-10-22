@@ -443,14 +443,14 @@
             "repository": "863683348/dsh-plugin-education",
             "path": "",
             "revision": "2d880f86c9160652e27c1f4702265822e0e726e9",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "c53a5ccc7097575906558250c8ce759662bb8fe7782974148db154e3e14776a7",
                 "code": "2d880f86c9160652e27c1f4702265822e0e726e9",
                 "maintenance": "038ebaf1c8e02cbd8bf91c7d5ab3c75a518cb11ccf5af9ee6a27bfee87581888"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

@@ -330,14 +330,14 @@
             "repository": "0nt-one/dsh-neo-skin",
             "path": "",
             "revision": "fe5ef0e671fab5ab8c8700013f3966eb9642455f",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "c9194eef232706fb74654c8431e53f761565fcd987d53dcde01877f582165ae5",
                 "code": "fe5ef0e671fab5ab8c8700013f3966eb9642455f",
                 "maintenance": "0d9bdab0b1206da32a15144fa645ee73a9e9d897b2eb4d98ea9f7d7bf1a4975a"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

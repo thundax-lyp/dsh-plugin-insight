@@ -422,14 +422,14 @@
             "repository": "AAAlenwow/dsh-weknora-archive",
             "path": "",
             "revision": "46079ecb3554239797b1dcbe2e82f74a21adb9a1",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "c467d1ec39a19d32a1c88db1922ec01e6dd121768ab667d19ecc2c36c42f5485",
                 "code": "46079ecb3554239797b1dcbe2e82f74a21adb9a1",
                 "maintenance": "7f96bd4ba008a6b66b7d3ac9497ceb67f7f91f8ec294b920c1e9e697667d1283"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

@@ -448,14 +448,14 @@
             "repository": "534119219/dsh-messaging",
             "path": "packages/messaging-core",
             "revision": "f1c3399ef40e3f419161d153e997d6f30576a627",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "9bec3b5be9453e4fa48fbd42e4e36993802f7bc15a2f1a1e0d02eba93a02f06e",
                 "code": "f1c3399ef40e3f419161d153e997d6f30576a627",
                 "maintenance": "1226f769ca0536ef42ee03d1d60be2e9175463101b58f595e0bed5c088046948"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

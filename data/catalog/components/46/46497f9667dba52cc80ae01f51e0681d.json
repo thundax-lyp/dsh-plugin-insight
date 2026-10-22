@@ -444,14 +444,14 @@
             "repository": "566001/dsh-wrapup-guard",
             "path": "",
             "revision": "99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "aec96ead201ab506071707c6ea51367168705a8437e0924b2e642c9ef520b7e4",
                 "code": "99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2",
                 "maintenance": "e398ee4545dddcd815e7caf8d9c8c81909379a1db1a02a3cbca60e1e1e92338f"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

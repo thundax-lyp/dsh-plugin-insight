@@ -24,74 +24,165 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-06-github-1340492335-root-directory-0",
+                    "id": "2026-10-22-02-github-1340492335-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T05:36:01.315Z",
+                    "retrieved_at": "2026-10-22T05:22:33.725Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-06-github-1340492335-root-author",
+                    "id": "2026-10-22-02-github-1340492335-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/AKS1st/dock-editor/blob/f6e5e0845c42e2b09a7a8d671a66b331fe094634/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AKS1st/dock-editor",
+                            "commit": "f6e5e0845c42e2b09a7a8d671a66b331fe094634",
+                            "path": "README.md",
+                            "content_sha256": "21145f19d3da134b1ea40de4c2ee7a278de2ddc9b434e06a90b205a18baffb97"
+                        }
+                    ],
                     "revision": "f6e5e0845c42e2b09a7a8d671a66b331fe094634",
-                    "captured_at": "2026-10-21T05:36:01.315Z",
-                    "summary": "把受限文本读写与CodeMirror编辑接入Dock文件查看器。",
-                    "artifact": "data/runs/2026-10-21-06/snapshots/aks1st--dock-editor/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:22:33.725Z",
+                    "summary": "为 dock 文件域增加同工作台的文本查看、编辑、保存与关闭提醒。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/aks1st--dock-editor/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-06-github-1340492335-root-source",
+                    "id": "2026-10-22-02-github-1340492335-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/AKS1st/dock-editor/blob/f6e5e0845c42e2b09a7a8d671a66b331fe094634/src/index.ts",
+                    "url": "https://github.com/AKS1st/dock-editor/blob/f6e5e0845c42e2b09a7a8d671a66b331fe094634/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AKS1st/dock-editor",
+                            "commit": "f6e5e0845c42e2b09a7a8d671a66b331fe094634",
+                            "path": "README.md",
+                            "content_sha256": "21145f19d3da134b1ea40de4c2ee7a278de2ddc9b434e06a90b205a18baffb97"
+                        },
+                        {
+                            "repository_url": "https://github.com/AKS1st/dock-editor",
+                            "commit": "f6e5e0845c42e2b09a7a8d671a66b331fe094634",
+                            "path": "package.json",
+                            "content_sha256": "cdcb3acf1207cf00bf19e62cb258e90a347b752417d27719368723b3416da7ee"
+                        },
+                        {
+                            "repository_url": "https://github.com/AKS1st/dock-editor",
+                            "commit": "f6e5e0845c42e2b09a7a8d671a66b331fe094634",
+                            "path": "src/index.ts",
+                            "content_sha256": "3906b9b68ba058ea7e2e5f24732347147a31e2f222df7b729e8420d5029b8f77"
+                        },
+                        {
+                            "repository_url": "https://github.com/AKS1st/dock-editor",
+                            "commit": "f6e5e0845c42e2b09a7a8d671a66b331fe094634",
+                            "path": "src/client/index.ts",
+                            "content_sha256": "a58dd203692ed563a63d33381d5a9c05c6b151f640097b5aae2196486fe0b3de"
+                        },
+                        {
+                            "repository_url": "https://github.com/AKS1st/dock-editor",
+                            "commit": "f6e5e0845c42e2b09a7a8d671a66b331fe094634",
+                            "path": "src/client/EditorView.tsx",
+                            "content_sha256": "829caa8ee1f62f2fe005ea513402876414f45fa4540ac3d8eb6a7d731f26f9fb"
+                        },
+                        {
+                            "repository_url": "https://github.com/AKS1st/dock-editor",
+                            "commit": "f6e5e0845c42e2b09a7a8d671a66b331fe094634",
+                            "path": "src/client/CodeMirrorEditor.tsx",
+                            "content_sha256": "201e40086fb0e3607899abfc29970c6d3cb99e829a05a8d51a44252c608d4cc8"
+                        }
+                    ],
                     "revision": "f6e5e0845c42e2b09a7a8d671a66b331fe094634",
-                    "captured_at": "2026-10-21T05:36:01.315Z",
-                    "summary": "核查 src/index.ts、src/client/index.ts、src/client/EditorView.tsx、src/client/CodeMirrorEditor.tsx；服务端注册/desk-editor读写路由，客户端向files注册默认文本viewer、向workbench注册编辑视图；EditorView管理加载、dirty与保存，CodeMirror负责编辑器能力。",
-                    "artifact": "data/runs/2026-10-21-06/snapshots/aks1st--dock-editor/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:22:33.725Z",
+                    "summary": "核查 README.md、package.json、src/index.ts、src/client/index.ts、src/client/EditorView.tsx、src/client/CodeMirrorEditor.tsx；服务端 /desk-editor 提供有信任围栏的文本读写，客户端把 files 默认 viewer 接到 workbench editor view，CodeMirror 管理文本编辑与历史，EditorView 管理 dirty 和保存。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/aks1st--dock-editor/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                        "检查固定提交 README、package、服务端读写路由、客户端注册、编辑与搜索主路径及完整范围 inventory；未执行目标代码、测试或宿主。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-06-parent-dock-1340492184",
+                    "id": "2026-10-22-02-manual-cross-dock-editor-1340492184",
                     "kind": "source_inspection",
                     "url": "https://github.com/AKS1st/dock/blob/8535f6e24670931d9e93fb087ab474e38aa01856/src/client/service.ts",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AKS1st/dock",
+                            "commit": "8535f6e24670931d9e93fb087ab474e38aa01856",
+                            "path": "src/client/service.ts",
+                            "content_sha256": "896f25a9ba6fee1ec516395bde68072304b3ef645eff813238afe487a6c0bfcc"
+                        }
+                    ],
                     "revision": "8535f6e24670931d9e93fb087ab474e38aa01856",
-                    "captured_at": "2026-10-21T05:37:28.591Z",
-                    "summary": "父Agent对照AKS1st/dock/src/client/service.ts的注册、资源桥接或保存路径。",
-                    "artifact": "data/runs/2026-10-21-06/snapshots/aks1st--dock-editor/PARENT-COMPARISON.json",
+                    "captured_at": "2026-10-22T05:21:05.797033+00:00",
+                    "summary": "dock提供视图注册、实例seed、beforeClose和路径分派，不能据此推断文件保存并发保护。",
+                    "artifact": "data/runs/2026-10-22-02/manual-finding-reviews/MULTI-SOURCE.json",
                     "limitations": [
-                        "抽读所列固定源码，未安装/执行、未验证宿主或并发行为。"
+                        "本轮重新读取固定SHA源码；旧档案逐字比对仅用于版本一致性核对，不冒充本轮独立运行。",
+                        "只读有界跨仓源码核查，未运行目标、并发或宿主验证；未来资源句柄设计收益未验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-06-parent-dock-1340492214",
+                    "id": "2026-10-22-02-manual-cross-dock-editor-1340492214",
                     "kind": "source_inspection",
                     "url": "https://github.com/AKS1st/dock-files/blob/d24224beb8cf024a9c6e79fe97445001d73150b8/src/client/openBridge.ts",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AKS1st/dock-files",
+                            "commit": "d24224beb8cf024a9c6e79fe97445001d73150b8",
+                            "path": "src/client/openBridge.ts",
+                            "content_sha256": "aeedaebf5482108893f330a5b8cc03eb22dd05f3d4be3147ce1396473c9af0cd"
+                        },
+                        {
+                            "repository_url": "https://github.com/AKS1st/dock-files",
+                            "commit": "d24224beb8cf024a9c6e79fe97445001d73150b8",
+                            "path": "src/client/index.ts",
+                            "content_sha256": "3488f587b5103ed92a4b48f4af3c8b1cb1c752a164c2c567097c64cf460d56b9"
+                        }
+                    ],
                     "revision": "d24224beb8cf024a9c6e79fe97445001d73150b8",
-                    "captured_at": "2026-10-21T05:37:28.591Z",
-                    "summary": "父Agent对照AKS1st/dock-files/src/client/openBridge.ts的注册、资源桥接或保存路径。",
-                    "artifact": "data/runs/2026-10-21-06/snapshots/aks1st--dock-editor/PARENT-COMPARISON.json",
+                    "captured_at": "2026-10-22T05:21:05.797033+00:00",
+                    "summary": "dock-files以资源地址中的sessionId查cwd，随后只将解析出的path交workbench.openPath，原会话身份不再作为资源句柄显式传递。",
+                    "artifact": "data/runs/2026-10-22-02/manual-finding-reviews/MULTI-SOURCE.json",
                     "limitations": [
-                        "抽读所列固定源码，未安装/执行、未验证宿主或并发行为。"
+                        "本轮重新读取固定SHA源码；旧档案逐字比对仅用于版本一致性核对，不冒充本轮独立运行。",
+                        "只读有界跨仓源码核查，未运行目标、并发或宿主验证；未来资源句柄设计收益未验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-06-parent-dock-1340492335",
+                    "id": "2026-10-22-02-manual-cross-dock-editor-1340492335",
                     "kind": "source_inspection",
                     "url": "https://github.com/AKS1st/dock-editor/blob/f6e5e0845c42e2b09a7a8d671a66b331fe094634/src/index.ts",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AKS1st/dock-editor",
+                            "commit": "f6e5e0845c42e2b09a7a8d671a66b331fe094634",
+                            "path": "src/index.ts",
+                            "content_sha256": "3906b9b68ba058ea7e2e5f24732347147a31e2f222df7b729e8420d5029b8f77"
+                        },
+                        {
+                            "repository_url": "https://github.com/AKS1st/dock-editor",
+                            "commit": "f6e5e0845c42e2b09a7a8d671a66b331fe094634",
+                            "path": "src/client/index.ts",
+                            "content_sha256": "a58dd203692ed563a63d33381d5a9c05c6b151f640097b5aae2196486fe0b3de"
+                        },
+                        {
+                            "repository_url": "https://github.com/AKS1st/dock-editor",
+                            "commit": "f6e5e0845c42e2b09a7a8d671a66b331fe094634",
+                            "path": "src/client/EditorView.tsx",
+                            "content_sha256": "829caa8ee1f62f2fe005ea513402876414f45fa4540ac3d8eb6a7d731f26f9fb"
+                        }
+                    ],
                     "revision": "f6e5e0845c42e2b09a7a8d671a66b331fe094634",
-                    "captured_at": "2026-10-21T05:37:28.591Z",
-                    "summary": "父Agent对照AKS1st/dock-editor/src/index.ts的注册、资源桥接或保存路径。",
-                    "artifact": "data/runs/2026-10-21-06/snapshots/aks1st--dock-editor/PARENT-COMPARISON.json",
+                    "captured_at": "2026-10-22T05:21:05.797033+00:00",
+                    "summary": "dock-editor读取允许任意绝对路径，写入按session cwd规范化约束，尺寸检查后直接writeFile，未作读取版本/mtime/内容hash比较。",
+                    "artifact": "data/runs/2026-10-22-02/manual-finding-reviews/MULTI-SOURCE.json",
                     "limitations": [
-                        "抽读所列固定源码，未安装/执行、未验证宿主或并发行为。"
+                        "本轮重新读取固定SHA源码；旧档案逐字比对仅用于版本一致性核对，不冒充本轮独立运行。",
+                        "只读有界跨仓源码核查，未运行目标、并发或宿主验证；未来资源句柄设计收益未验证。"
                     ]
                 }
             ],
@@ -100,9 +191,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "在聊天旁查看和编辑会话工作区的小型文本文件，外部绝对路径只读。",
+                    "text": "适合在 DSH Web 中偶尔修改会话工作区的小型代码、配置和文档；合格结果是完整读取、编辑并核对目标文件保存。工作区外文件只读。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1340492335-root-source"
+                        "2026-10-22-02-github-1340492335-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +202,16 @@
                             "fingerprint": "f6e5e0845c42e2b09a7a8d671a66b331fe094634"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:36:01.315Z",
+                    "reviewed_at": "2026-10-22T05:22:33.725Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "服务端注册/desk-editor读写路由，客户端向files注册默认文本viewer、向workbench注册编辑视图；EditorView管理加载、dirty与保存，CodeMirror负责编辑器能力。",
+                    "text": "服务端 /desk-editor 提供有信任围栏的文本读写，客户端把 files 默认 viewer 接到 workbench editor view，CodeMirror 管理文本编辑与历史，EditorView 管理 dirty 和保存。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1340492335-root-source"
+                        "2026-10-22-02-github-1340492335-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +220,16 @@
                             "fingerprint": "f6e5e0845c42e2b09a7a8d671a66b331fe094634"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:36:01.315Z",
+                    "reviewed_at": "2026-10-22T05:22:33.725Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                    "text": "检查固定提交 README、package、服务端读写路由、客户端注册、编辑与搜索主路径及完整范围 inventory；未执行目标代码、测试或宿主。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1340492335-root-source"
+                        "2026-10-22-02-github-1340492335-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +238,16 @@
                             "fingerprint": "f6e5e0845c42e2b09a7a8d671a66b331fe094634"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:36:01.315Z",
+                    "reviewed_at": "2026-10-22T05:22:33.725Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "分发以本插件固定package.json、运行依赖与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+                    "text": "package 版本 0.2.2、MIT、Node >=20，发布入口在 lib，web 客户端使用 CodeMirror 构建产物；README 安装步骤与包发布内容未独立核验。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1340492335-root-source"
+                        "2026-10-22-02-github-1340492335-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +256,16 @@
                             "fingerprint": "f6e5e0845c42e2b09a7a8d671a66b331fe094634"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:36:01.315Z",
+                    "reviewed_at": "2026-10-22T05:22:33.725Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "需三个插件兼容与构建产物，日常维护编辑状态和API版本；无模型token调用，浏览器内存与文本限制约束大文件。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | dock 系列与浏览器资源；金额未知 | 确认 peer 版本、安装、加载和可写路径 | 无安装耗时或兼容实测 |\n| 持续使用 | CodeMirror 客户端体量和内存；实际消耗未知 | 核对保存目标、只读状态与外部变化 | 作者报告 bundle 体量，未测每任务资源 |\n| 失败恢复 | 可能需要外部版本库或备份；金额未知 | 比对外部修改与恢复内容 | 无冲突率和恢复工时 |\n",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1340492335-root-source"
+                        "2026-10-22-02-github-1340492335-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +274,16 @@
                             "fingerprint": "f6e5e0845c42e2b09a7a8d671a66b331fe094634"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:36:01.315Z",
+                    "reviewed_at": "2026-10-22T05:22:33.725Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "适合工作区小文本的辅助编辑；先验证保存冲突与关闭恢复，再处理重要文件。",
+                    "text": "可对非关键小文本进行受控试用，保存后回读目标并留版本库或备份；对并发编辑和重要配置沿用有冲突检测的工具。详见[Q06](#research-q06)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1340492335-root-source"
+                        "2026-10-22-02-github-1340492335-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +292,16 @@
                             "fingerprint": "f6e5e0845c42e2b09a7a8d671a66b331fe094634"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:36:01.315Z",
+                    "reviewed_at": "2026-10-22T05:22:33.725Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "减少小改动切换应用的步骤，未有耗时/丢失率对照或真实宿主验收。",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 小文本编辑 | 同工作台的默认 viewer、CodeMirror 和保存路由 | 相对外部编辑器的净节时 |\n| 防误写 | 外部路径只读、超限旧文件拒写 | 宿主环境与所有路径条件的实际表现 |\n| 关闭提醒 | dirty 同步到 beforeClose | 并发修改的检测与丢失率 |\n\n效果表描述实现机制，不代表本轮做过运行或用户对照。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1340492335-root-source"
+                        "2026-10-22-02-github-1340492335-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +310,16 @@
                             "fingerprint": "f6e5e0845c42e2b09a7a8d671a66b331fe094634"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:36:01.315Z",
+                    "reviewed_at": "2026-10-22T05:22:33.725Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "读写权限分层、服务端独立写约束、dirty同步到工作台关闭钩子可复用；生成bundle与CodeMirror体量不能当作本插件原创实现。",
+                    "text": "服务端独立检查工作区写入、超限文件拒写，客户端再用 writable/truncated 禁保存，职责分层清楚；dirty 同步到工作台关闭钩子可借鉴。读端任意绝对路径属于明确能力和权限边界，sessionId 缺失时的 cwd 回退增加对宿主关联的依赖。直接 writeFile 没有版本比较或冲突恢复，CodeMirror bundle 与第三方功能不能当本项目原创。\n\n### 跨插件资源契约\n\ndock基座提供视图注册、实例seed、beforeClose与openPath分派；dock-files用资源地址中的sessionId解析cwd和路径后，只把path交给workbench.openPath；dock-editor读取接受绝对路径，写入独立约束session工作区，尺寸检查后直接writeFile，没有读取版本或内容摘要比较。这些控制分别处理界面关闭、资源分派和写入范围，不能替代保存时并发版本检查。由此提出未验证假设，跨插件资源句柄统一携带原会话身份、读写能力和读取版本，保存时比较内容摘要，冲突保留双方内容。可用两个会话与外部改写交错打开/保存，对照现有路径传递，比较错误目标、静默覆盖、冲突处理和恢复工时；若覆盖或恢复成本无改善，则不支持该假设。固定源码支持前述结构和限制，未证明实际发生错误目标，也未验证未来设计的净收益。\n\n依据包括 [AKS1st/dock/src/client/service.ts](https://github.com/AKS1st/dock/blob/8535f6e24670931d9e93fb087ab474e38aa01856/src/client/service.ts#L210-L245)、[AKS1st/dock-files/src/client/openBridge.ts](https://github.com/AKS1st/dock-files/blob/d24224beb8cf024a9c6e79fe97445001d73150b8/src/client/openBridge.ts#L104-L130)、[AKS1st/dock-editor/src/index.ts](https://github.com/AKS1st/dock-editor/blob/f6e5e0845c42e2b09a7a8d671a66b331fe094634/src/index.ts#L79-L109)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1340492335-root-source"
+                        "2026-10-22-02-github-1340492335-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +328,16 @@
                             "fingerprint": "f6e5e0845c42e2b09a7a8d671a66b331fe094634"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:36:01.315Z",
+                    "reviewed_at": "2026-10-22T05:22:33.725Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
                     "topic": "technical_innovation",
                     "basis": "interpretation",
-                    "text": "将编辑权限和显示状态接起来：读取最多256KiB并识别NUL二进制，截断或外部只读文件禁保存，写端独立realpath约束会话工作区。核心编辑能力归CodeMirror，项目贡献在宿主接线和有限文本操作。",
+                    "text": "将文件域默认查看器、工作台视图、CodeMirror 状态和读写权限连接成小文本编辑流程；高亮和历史主要属于 CodeMirror，上游 dock 提供工作台，增量在集成及写入围栏。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1340492335-root-source"
+                        "2026-10-22-02-github-1340492335-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,16 +346,16 @@
                             "fingerprint": "f6e5e0845c42e2b09a7a8d671a66b331fe094634"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:36:01.315Z",
+                    "reviewed_at": "2026-10-22T05:22:33.725Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "fs.write最终直接writeFile且没有原内容/mtime版本比较；外部程序或另一视图修改后，保存可能覆盖新内容。关闭提示不能解决并发写；读取允许任意绝对路径，工作区约束只适用于写入，不能将其描述为完整读隔离。",
+                    "text": "服务端 fs.write 直接 writeFile，不比较读取版本；外部或另一视图读后改写可能被覆盖。读取绝对路径也不限工作区，不能称作完整读隔离。风险由源码推断，未复现。详见[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1340492335-root-source"
+                        "2026-10-22-02-github-1340492335-root-source"
                     ],
                     "dependencies": [
                         {
@@ -273,16 +364,16 @@
                             "fingerprint": "f6e5e0845c42e2b09a7a8d671a66b331fe094634"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:36:01.315Z",
+                    "reviewed_at": "2026-10-22T05:22:33.725Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
                     "topic": "technical_innovation",
                     "basis": "unverified",
-                    "text": "未验证假设：保存请求附读取时内容摘要并在冲突时提供重新载入/差异视图，可减少静默覆盖。以两个编辑者交错保存及外部修改样本比较覆盖率和恢复工时，冲突必须保留双方内容。",
+                    "text": "可在读取时产生版本摘要、保存时条件比较并保留冲突双方内容；以交错保存样本比较静默覆盖、误报与恢复工时。这是未实现设计，现有关闭提醒不能替代。详见[Q06](#research-q06)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1340492335-root-source"
+                        "2026-10-22-02-github-1340492335-root-source"
                     ],
                     "dependencies": [
                         {
@@ -291,18 +382,18 @@
                             "fingerprint": "f6e5e0845c42e2b09a7a8d671a66b331fe094634"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:36:01.315Z",
+                    "reviewed_at": "2026-10-22T05:22:33.725Z",
                     "status": "current"
                 },
                 {
                     "id": "cross-dock-resource-contract",
                     "topic": "technical_innovation",
                     "basis": "unverified",
-                    "text": "跨插件比较：dock基座提供视图注册、实例seed和beforeClose；dock-files把带session的资源地址解析成路径，再交workbench.openPath；dock-editor读端允许绝对路径、写端独立限制会话工作区，并直接writeFile。它们分别解决界面生命周期、资源分派和写入范围，关闭提示与路径围栏都不能替代保存时的版本比较。由此推导未验证假设：跨插件资源句柄统一携带原会话身份、读写能力及读取版本，保存时比较内容摘要，冲突保留两份内容。这可能降低Agent与人工编辑同一文件时的静默覆盖，也便于追踪资源归属。最小验证用两个会话和外部改写交错打开/保存，对照现有路径传递，测错误目标、覆盖率及恢复工时；若冲突率或恢复成本未改善则否定，不宣称当前组合已通过安全或并发验收。",
+                    "text": "dock基座提供视图注册、实例seed、beforeClose与openPath分派；dock-files用资源地址中的sessionId解析cwd和路径后，只把path交给workbench.openPath；dock-editor读取接受绝对路径，写入独立约束session工作区，尺寸检查后直接writeFile，没有读取版本或内容摘要比较。这些控制分别处理界面关闭、资源分派和写入范围，不能替代保存时并发版本检查。由此提出未验证假设，跨插件资源句柄统一携带原会话身份、读写能力和读取版本，保存时比较内容摘要，冲突保留双方内容。可用两个会话与外部改写交错打开/保存，对照现有路径传递，比较错误目标、静默覆盖、冲突处理和恢复工时；若覆盖或恢复成本无改善，则不支持该假设。固定源码支持前述结构和限制，未证明实际发生错误目标，也未验证未来设计的净收益。",
                     "evidence_ids": [
-                        "2026-10-21-06-parent-dock-1340492184",
-                        "2026-10-21-06-parent-dock-1340492214",
-                        "2026-10-21-06-parent-dock-1340492335"
+                        "2026-10-22-02-manual-cross-dock-editor-1340492184",
+                        "2026-10-22-02-manual-cross-dock-editor-1340492214",
+                        "2026-10-22-02-manual-cross-dock-editor-1340492335"
                     ],
                     "dependencies": [
                         {
@@ -321,15 +412,15 @@
                             "fingerprint": "f6e5e0845c42e2b09a7a8d671a66b331fe094634"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:37:28.591Z",
+                    "reviewed_at": "2026-10-22T05:21:05.797033+00:00",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T05:37:28.591Z",
+            "last_checked_at": "2026-10-22T05:22:33.725Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "f6e5e0845c42e2b09a7a8d671a66b331fe094634",
-                "reviewed_at": "2026-10-21T05:36:01.315Z",
+                "reviewed_at": "2026-10-22T05:22:33.725Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -341,62 +432,61 @@
                 "technical": {
                     "criteria": {
                         "novelty": 9,
-                        "mechanism": 15,
-                        "transferability": 10,
+                        "mechanism": 8,
+                        "transferability": 5,
                         "simplification": 4
                     },
-                    "rationale": "novelty=9：成熟编辑引擎的宿主集成。 mechanism=15：读写约束和脏状态有具体接线。 transferability=10：接口可复用但绑定Dock/files。 simplification=4：小文件便捷，兼容维护增加。",
+                    "rationale": "novelty 为现有文件查看与成熟编辑器的小幅集成；mechanism 将路径围栏与视图状态组合但未处理并发；transferability 的前后端分层约束可有限复用；simplification 在同工作台减少切换但依赖两个上游，未计入条件写假设。",
                     "basis": "interpretation",
-                    "score": 38,
+                    "score": 26,
                     "evidence_ids": [
-                        "2026-10-21-06-github-1340492335-root-source"
+                        "2026-10-22-02-github-1340492335-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 18,
-                        "delivery": 15,
-                        "reach": 10,
-                        "economics": 4
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 0
                     },
-                    "rationale": "workflow=18：打开编辑保存闭环明确。 delivery=15：并发版本保护缺失，交付需复核。 reach=10：适合Dock用户的小文本。 economics=4：无切换时间与维护收益对照。",
+                    "rationale": "workflow 为小改动省去外部编辑器切换；delivery 为可编辑而非只查看的小幅交付增量；reach 对已有 dock 用户有限降低门槛；economics 无实测成本结构变化，0 表示核查后未识别贡献。",
                     "basis": "interpretation",
-                    "score": 47,
+                    "score": 22,
                     "evidence_ids": [
-                        "2026-10-21-06-github-1340492335-root-source"
+                        "2026-10-22-02-github-1340492335-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "observe",
-                "reason": "工作区文本编辑者应先增加保存版本冲突校验；当前直接writeFile可能覆盖外部新内容，关闭提示不足以保护重要文件。",
+                "decision": "trial",
+                "reason": "适合已有 dock 环境且只改小型非关键工作区文本的用户试用；先核对依赖、保存目标和外部修改冲突。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "聊天旁小文本编辑是明确需求。"
+                        "rationale": "小型工作区文本编辑的用户和合格结果清楚，任务频率未知。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "CodeMirror与Dock/files结合减少应用切换。"
+                        "rationale": "同工作台编辑减少切换，但 CodeMirror 能力可由外部编辑器替代。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "已核dirty及保存路径，确认无mtime/内容版本比较。"
+                        "rationale": "固定版本源码可核查主链路，无同版本安装与宿主验收，按源码档封顶。"
                     },
                     "cost": {
-                        "score": 5,
-                        "rationale": "三插件契约及读绝对路径成本之外，并发覆盖阻碍可靠编辑。"
+                        "score": 10,
+                        "rationale": "需 dock 两个服务与 Web 环境，冲突恢复成本未知。"
                     }
                 },
-                "score": 54,
+                "score": 59,
                 "revision": "f6e5e0845c42e2b09a7a8d671a66b331fe094634",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T05:22:33.725Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-06-github-1340492335-root-source",
-                    "2026-10-21-06-parent-dock-1340492335"
+                    "2026-10-22-02-github-1340492335-root-source"
                 ],
                 "dependencies": [
                     {
@@ -421,71 +511,55 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T05:26:52Z",
-            "analysis_sha256": "43e1afb3f73157645cfc13366bc1d85098c7e63720a7f178648b0737cae0276e"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "d59951616d6da56406022d8e40ab4ae7b3d67c8180cf9c7fbd315fce2cd03d60"
         },
         "publication.metadata": "data/plugins/aks1st--dock-editor/META.json",
         "publication.summaries": {
-            "text": "把受限文本读写与CodeMirror编辑接入Dock文件查看器。",
+            "text": "为 dock 文件域增加同工作台的文本查看、编辑、保存与关闭提醒。",
             "revision": "f6e5e0845c42e2b09a7a8d671a66b331fe094634",
             "source_url": "https://github.com/AKS1st/dock-editor/blob/f6e5e0845c42e2b09a7a8d671a66b331fe094634/README.md"
         },
         "publication.capabilities": {
             "revision": "f6e5e0845c42e2b09a7a8d671a66b331fe094634",
             "items": {
-                "界面": "Dock文本编辑与默认文件viewer",
-                "Host 路由": "/desk-editor/fs.read和fs.write"
-            }
+                "界面": "dock 文件域默认文本 viewer 与工作台编辑视图",
+                "后台": "受信任 POST 的文本读取和工作区内保存"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 文本查看与编辑 | 在 dock 浮窗修改小型文本 | 依赖 workbench/files 和 Web；二进制或超限不保存 |\n| 搜索、高亮与历史 | 快速查找、编辑代码或普通文本 | 来自 CodeMirror；具体语言由扩展名决定 |\n| 保存与关闭提醒 | 写入工作区并提示未保存修改 | 工作区外只读，关闭提醒不检查并发版本 |\n| 窗口几何记忆 | 重开同一路径恢复位置大小 | 浏览器 localStorage 可用才持久 |\n"
         },
         "publication.advice": {
             "revision": "f6e5e0845c42e2b09a7a8d671a66b331fe094634",
-            "text": "适合工作区小文本的辅助编辑；先验证保存冲突与关闭恢复，再处理重要文件。"
+            "text": "可对非关键小文本进行受控试用，保存后回读目标并留版本库或备份；对并发编辑和重要配置沿用有冲突检测的工具。详见[Q06](#research-q06)。"
         },
         "registry": "data/plugins/aks1st--dock-editor",
-        "reports": "# dock-editor\n\n> 把受限文本读写与CodeMirror编辑接入Dock文件查看器。\n\n## 使用建议\n\n适合工作区小文本的辅助编辑；先验证保存冲突与关闭恢复，再处理重要文件。\n\n**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，插件与依赖流程的实际运行尚未验证；未来假设未验证。\n\n## 洞察短评\n\n- **用途**：在聊天旁查看和编辑会话工作区的小型文本文件，外部绝对路径只读。\n- **亮点**：将编辑权限和显示状态接起来：读取最多256KiB并识别NUL二进制，截断或外部只读文件禁保存，写端独立realpath约束会话工作区。核心编辑能力归CodeMirror，项目贡献在宿主接线和有限文本操作。\n- **思考**：fs.write最终直接writeFile且没有原内容/mtime版本比较；外部程序或另一视图修改后，保存可能覆盖新内容。关闭提示不能解决并发写；读取允许任意绝对路径，工作区约束只适用于写入，不能将其描述为完整读隔离。\n- **建议**：未验证假设：保存请求附读取时内容摘要并在冲突时提供重新载入/差异视图，可减少静默覆盖。以两个编辑者交错保存及外部修改样本比较覆盖率和恢复工时，冲突必须保留双方内容。\n\n## 场景与替代办法\n\n参照CodeMirror编辑器与外部IDE；增量是Dock资源分派、脏状态关闭保护和会话工作区写入约束，不是新编辑引擎。\n\n## 能力清单\n\n- **界面**：Dock文本编辑与默认文件viewer\n- **Host 路由**：/desk-editor/fs.read和fs.write\n\n## 依赖与流程\n\n服务端注册/desk-editor读写路由，客户端向files注册默认文本viewer、向workbench注册编辑视图；EditorView管理加载、dirty与保存，CodeMirror负责编辑器能力。\n\n依赖Dock的workbench、dock-files文件viewer服务及宿主webServer/sessions/webRuntime；CodeMirror随构建打包，服务契约副本须与运行版本一致。\n\n文件分派→fs.read返回内容、binary/truncated/writable→编辑→fs.write→更新dirty；关闭前用seed元数据提示未保存内容。\n\n## 成本与效果\n\n需三个插件兼容与构建产物，日常维护编辑状态和API版本；无模型token调用，浏览器内存与文本限制约束大文件。\n\n减少小改动切换应用的步骤，未有耗时/丢失率对照或真实宿主验收。\n\n## 核心贡献\n\n将编辑权限和显示状态接起来：读取最多256KiB并识别NUL二进制，截断或外部只读文件禁保存，写端独立realpath约束会话工作区。核心编辑能力归CodeMirror，项目贡献在宿主接线和有限文本操作。\n\n## 关键质疑\n\nfs.write最终直接writeFile且没有原内容/mtime版本比较；外部程序或另一视图修改后，保存可能覆盖新内容。关闭提示不能解决并发写；读取允许任意绝对路径，工作区约束只适用于写入，不能将其描述为完整读隔离。\n\n## 工程亮点\n\n读写权限分层、服务端独立写约束、dirty同步到工作台关闭钩子可复用；生成bundle与CodeMirror体量不能当作本插件原创实现。\n\n源码依据：[src/index.ts](https://github.com/AKS1st/dock-editor/blob/f6e5e0845c42e2b09a7a8d671a66b331fe094634/src/index.ts)、[src/client/index.ts](https://github.com/AKS1st/dock-editor/blob/f6e5e0845c42e2b09a7a8d671a66b331fe094634/src/client/index.ts)、[src/client/EditorView.tsx](https://github.com/AKS1st/dock-editor/blob/f6e5e0845c42e2b09a7a8d671a66b331fe094634/src/client/EditorView.tsx)、[src/client/CodeMirrorEditor.tsx](https://github.com/AKS1st/dock-editor/blob/f6e5e0845c42e2b09a7a8d671a66b331fe094634/src/client/CodeMirrorEditor.tsx)。\n\n跨插件比较：dock基座提供视图注册、实例seed和beforeClose；dock-files把带session的资源地址解析成路径，再交workbench.openPath；dock-editor读端允许绝对路径、写端独立限制会话工作区，并直接writeFile。它们分别解决界面生命周期、资源分派和写入范围，关闭提示与路径围栏都不能替代保存时的版本比较。由此推导未验证假设：跨插件资源句柄统一携带原会话身份、读写能力及读取版本，保存时比较内容摘要，冲突保留两份内容。这可能降低Agent与人工编辑同一文件时的静默覆盖，也便于追踪资源归属。最小验证用两个会话和外部改写交错打开/保存，对照现有路径传递，测错误目标、覆盖率及恢复工时；若冲突率或恢复成本未改善则否定，不宣称当前组合已通过安全或并发验收。\n\n对照源码：[AKS1st/dock/src/client/service.ts](https://github.com/AKS1st/dock/blob/8535f6e24670931d9e93fb087ab474e38aa01856/src/client/service.ts)、[AKS1st/dock-files/src/client/openBridge.ts](https://github.com/AKS1st/dock-files/blob/d24224beb8cf024a9c6e79fe97445001d73150b8/src/client/openBridge.ts)、[AKS1st/dock-editor/src/index.ts](https://github.com/AKS1st/dock-editor/blob/f6e5e0845c42e2b09a7a8d671a66b331fe094634/src/index.ts)。\n\n## 未来设计假设（未验证）\n\n未验证假设：保存请求附读取时内容摘要并在冲突时提供重新载入/差异视图，可减少静默覆盖。以两个编辑者交错保存及外部修改样本比较覆盖率和恢复工时，冲突必须保留双方内容。\n\n在隔离工作区检查同时保存、软链接外写拒绝、超限/二进制只读和取消关闭；本轮未执行。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：bae481108bb81042acec8ec2bfcf27c0fc4c4cd98b04cc50010fb0a621642608。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 30952 | 26213 | 5076 | — |\n| .md | source | 2 | 131 | — | — | 1838 |\n| .ts | source | 8 | 1310 | 872 | 348 | — |\n| .tsx | source | 3 | 808 | 625 | 129 | — |\n| .mjs | source | 1 | 52 | 38 | 12 | — |\n\n排除 11 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[AKS1st/dock-editor](https://github.com/AKS1st/dock-editor)\n- **版本号**：0.2.2（[固定提交 f6e5e084](https://github.com/AKS1st/dock-editor/tree/f6e5e0845c42e2b09a7a8d671a66b331fe094634)）\n- **版本日期**：2026-09-11（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：src/index.ts、src/client/index.ts、src/client/EditorView.tsx、src/client/CodeMirrorEditor.tsx、作者README、package与固定范围inventory；源码抽读不等于完整审计。\n- 未验证：插件执行、测试、安装、真实宿主与独立采用。\n- 证据限制：固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。\n- 下一步：在隔离工作区检查同时保存、软链接外写拒绝、超限/二进制只读和取消关闭；本轮未执行。\n",
+        "reports": "# dock-editor\n\n> 为 dock 文件域增加同工作台的文本查看、编辑、保存与关闭提醒。\n\n## 研究范围\n\n- **仓库**：[AKS1st/dock-editor](https://github.com/AKS1st/dock-editor)\n- **版本号**：0.2.2（[固定提交 f6e5e0845c42e2b09a7a8d671a66b331fe094634](https://github.com/AKS1st/dock-editor/tree/f6e5e0845c42e2b09a7a8d671a66b331fe094634)）\n- **版本日期**：2026-09-11（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n源码支持工作台内有限文本编辑及写入范围控制；并发保存与真实宿主表现未验证；条件写是未实现假设。\n\n## 洞察短评\n\n- **用途**：适合在 DSH Web 中偶尔修改会话工作区的小型代码、配置和文档；合格结果是完整读取、编辑并核对目标文件保存。工作区外文件只读。\n- **亮点**：将文件域默认查看器、工作台视图、CodeMirror 状态和读写权限连接成小文本编辑流程；高亮和历史主要属于 CodeMirror，上游 dock 提供工作台，增量在集成及写入围栏。详见[Q02](#research-q02)。\n- **思考**：服务端 fs.write 直接 writeFile，不比较读取版本；外部或另一视图读后改写可能被覆盖。读取绝对路径也不限工作区，不能称作完整读隔离。风险由源码推断，未复现。详见[Q03](#research-q03)。\n- **建议**：可在读取时产生版本摘要、保存时条件比较并保留冲突双方内容；以交错保存样本比较静默覆盖、误报与恢复工时。这是未实现设计，现有关闭提醒不能替代。详见[Q06](#research-q06)。\n\n采用建议：可对非关键小文本进行受控试用，保存后回读目标并留版本库或备份；对并发编辑和重要配置沿用有冲突检测的工具。详见[Q06](#research-q06)。\n\n## 核心贡献\n\n将文件域默认查看器、工作台视图、CodeMirror 状态和读写权限连接成小文本编辑流程；高亮和历史主要属于 CodeMirror，上游 dock 提供工作台，增量在集成及写入围栏。详见[Q02](#research-q02)。\n\n## 关键质疑\n\n服务端 fs.write 直接 writeFile，不比较读取版本；外部或另一视图读后改写可能被覆盖。读取绝对路径也不限工作区，不能称作完整读隔离。风险由源码推断，未复现。详见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可在读取时产生版本摘要、保存时条件比较并保留冲突双方内容；以交错保存样本比较静默覆盖、误报与恢复工时。这是未实现设计，现有关闭提醒不能替代。详见[Q06](#research-q06)。\n\n进一步探讨可在隔离工作区做外部改写与双窗口交错保存对照，再对固定 DSH/dock 版本检查路径、只读、关闭与停用；本轮不执行。\n\n## 场景与替代办法\n\n适合在 DSH Web 中偶尔修改会话工作区的小型代码、配置和文档；合格结果是完整读取、编辑并核对目标文件保存。工作区外文件只读。\n\n直接替代是 dock-files 只读查看加外部编辑器或终端修改；本插件在已有 dock 环境中增加有限内嵌编辑，完整 IDE 与并发保护不是其当前能力。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| DSH Web 与 Cordis | 服务端/客户端必需 | 加载路由与 UI | 入口不工作，具体兼容未测 |\n| dock-base、dock-files | UI 必需 | workbench 及文件域分派 | 双服务缺失则客户端不注册 |\n| React | 编辑视图必需 | 渲染 CodeMirror 包装层 | UI 不激活 |\n| CodeMirror 产物 | 构建客户端必需 | 文本编辑、历史和搜索 | 源码安装需完成构建，发布包状态未独立核验 |\n| 会话 cwd 与可写工作区 | 保存必需 | 写端路径围栏 | 路径越界拒写；会话信息缺失会回退进程 cwd |\n\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 准备 | 用户确认固定版本、dock 与 dock-files 兼容 | 不能把 optional peer 当可省略运行服务 |\n| 加载 | 按作者说明在 web profile 安装并检查 viewer | 文件域能分派 editor；本轮未执行 |\n| 编辑 | 用户打开小型文本并检查是否可写 | 二进制、超限或外部路径停止保存 |\n| 保存与验收 | 用户保存并回读目标文件 | 错误或外部改写时返回原工具核对 |\n| 退出 | 处理 dirty 提示并停用编辑器 | 重要文件先确认已落盘和可恢复 |\n\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | dock 系列与浏览器资源；金额未知 | 确认 peer 版本、安装、加载和可写路径 | 无安装耗时或兼容实测 |\n| 持续使用 | CodeMirror 客户端体量和内存；实际消耗未知 | 核对保存目标、只读状态与外部变化 | 作者报告 bundle 体量，未测每任务资源 |\n| 失败恢复 | 可能需要外部版本库或备份；金额未知 | 比对外部修改与恢复内容 | 无冲突率和恢复工时 |\n\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 小文本编辑 | 同工作台的默认 viewer、CodeMirror 和保存路由 | 相对外部编辑器的净节时 |\n| 防误写 | 外部路径只读、超限旧文件拒写 | 宿主环境与所有路径条件的实际表现 |\n| 关闭提醒 | dirty 同步到 beforeClose | 并发修改的检测与丢失率 |\n\n效果表描述实现机制，不代表本轮做过运行或用户对照。\n\n## 研究问题与完整回答\n\n**插件研究总目标：**在固定提交下判断 dock-editor 的真实增量、读写边界和适合采用的场景。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 谁需要在 DSH 中编辑文件，合格结果与原有办法是什么？\n\n**研究主题：**场景与需求\n\n#### 完整回答\n\n适用对象是已经用 dock 与 dock-files 浏览会话文件、需要顺手修改小型代码、配置或文档的 DSH Web 用户。合格任务包括找到目标、完整读取、完成编辑并明确保存到预期文件；若文件是二进制、超过 256 KiB 或位于工作区外，本插件只提供受限查看，不构成合格写入。原有办法是到外部编辑器或终端操作文件，或只用文件查看器阅读。作者把「最佳」当宣传，本次没有同条件用户评价，不能据此排序。README 的安装与功能说明给出使用设想，package 则限定 Web 客户端和 dock 生态；实际用户频率和任务分布未知。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:5-8](https://github.com/AKS1st/dock-editor/blob/f6e5e0845c42e2b09a7a8d671a66b331fe094634/README.md#L5-L8)\n\n作者定位为 dock 文件查看与编辑，最高级宣传未被独立验证。\n\n```text\n> **DSH 生态中最好的文本编辑插件 —— 没有之一。** 在 DSH 里看代码、改配置、写文档，dock-editor 就是那个默认答案：撤销重做、Ctrl+S 保存、未保存提醒、二进制检测、窗口几何记忆，一个不少。别的查看器只会展示，dock-editor 让你真正动手改。\n\ndock 系列的文件编辑器插件：注册 `editor` 文件查看器（默认查看器）与对应的编辑器区视图，通过自己的 `/desk-editor` 主机路由读写文件文本内容。\n\n```\n\n**依据 2 · 作者声明**：[README.md:13-23](https://github.com/AKS1st/dock-editor/blob/f6e5e0845c42e2b09a7a8d671a66b331fe094634/README.md#L13-L23)\n\n作者列编辑、上限、二进制与未保存提醒等场景条件。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n## 功能\n\n- **代码/配置文件高亮**：识别扩展名的代码文件（ts/js/json/yaml/toml/ini/css/html/xml/py/sh 等）用 **CodeMirror 6** 编辑——增量解析、原生撤销/重做、行号、括号匹配、实时代码高亮；主题随 DSH 的 `--dsw-alias-*` 变量走。\n- **普通文本同样可编辑**：所有文本文件都走 CodeMirror 编辑器（代码类有高亮，普通文本无高亮但在同一个编辑器里），撤销/重做、搜索、括号匹配等编辑能力全量可用。\n- **VSCode 风格右上角搜索（与 CM 面板解耦）**：`Ctrl+F` 打开编辑器内搜索浮窗（**右上角**）、`Ctrl+H` 带替换、`F3`/`Ctrl+G`（`Shift` 反向）跳转、`Esc` 关闭。搜索框是**独立浮层**（非 CM `showPanel`），不占编辑器布局——**没有**拖选自动滚动、匹配位置错乱、替换后面板折叠这些毛病。支持实时匹配高亮与 `current/total` 计数、`↑/↓` 上/下一个、`Enter` 下一个（`Shift+Enter` 上一个）；**替换默认折叠**（`⇄` 展开），主题随 DSH 变量走（深浅正常），在其上滚轮**滚动编辑区**而非整个网页。\n- **文本查看与编辑**：`Ctrl+S` 保存（视图内全局可用）；`Ctrl+Z` 撤销 / `Ctrl+Y`(或 `Ctrl+Shift+Z`) 重做、`Ctrl+C/V/X/A` 复制粘贴全选，均走编辑器原生键位；另支持 `Alt+↑/↓` 移动行、`Ctrl+/` 注释。\n- **自动换行**：工具条提供「换行」切换按钮，**默认开启**；关掉后长行回到水平滚动。\n- **未保存提示**：关闭带未保存修改的窗口前弹出确认（通过工作台 `beforeClose` 钩子与 seed dirty 标记）。\n- **二进制检测**：读取时探测 NUL 字节，二进制文件显示提示而非乱码。\n- **大小上限**：单文件读取上限 256 KiB；超过上限的文件只显示前 256 KiB、**禁用保存**，避免截断原文件（主机端同样校验并拒绝）。\n- **悬浮窗几何记忆**：每个文件记住上次悬浮窗口的位置与大小，重新打开时恢复。\n```\n\n</details>\n\n**依据 3 · 源码核查**：[package.json:20-26](https://github.com/AKS1st/dock-editor/blob/f6e5e0845c42e2b09a7a8d671a66b331fe094634/package.json#L20-L26)\n\n包声明客户端 Web 平台。\n\n```text\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    },\n    \"client\": {\n      \"platform\": \"web\"\n    }\n```\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 本插件怎样把文件域、宿主界面和编辑器接起来，相对简单替代增加什么？\n\n**研究主题：**功能与机制、贡献与相对优势\n\n#### 完整回答\n\n服务端注入 webServer、sessions 和 webRuntime，挂载 /desk-editor 的 fs.read/fs.write；客户端同时注入 workbench 与 files，注册 editor 为默认文件查看器和同 ID 的编辑区视图。视图以 seed 中的路径和 sessionId 请求文本，CodeMirror 管理编辑文档与历史，EditorView 把内容、dirty、保存和关闭元数据同步给工作台。扩展名到语言的高亮和搜索等编辑功能主要来自 CodeMirror，本插件贡献是将文件分派、视图生命周期、读写约束和编辑状态接成可用流程。相对只在 dock-files 中预览或把路径复制到外部编辑器，它增加同工作台内的有限文本改写；相对完整 IDE，它没有项目级重构、语言服务或并发保存保护。不能把第三方 CodeMirror 能力全记为本插件原创。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:260-294](https://github.com/AKS1st/dock-editor/blob/f6e5e0845c42e2b09a7a8d671a66b331fe094634/src/index.ts#L260-L294)\n\n服务端注册受信任 POST 路由与 fs.read。\n\n<details>\n<summary>查看原文（35行）</summary>\n\n```text\nexport function apply(ctx: WbContext): void {\n  ctx.effect(() => ctx.webServer.register({\n    kind: 'prefix',\n    path: '/desk-editor',\n    handler: async (req, res) => {\n      if (!isTrustedRequest(req, ctx.webRuntime.trustedHosts)) {\n        writeJson(res, 403, { ok: false, error: { code: 'forbidden', message: 'forbidden' } })\n        return\n      }\n      if (req.method !== 'POST') {\n        writeJson(res, 405, { ok: false, error: { code: 'bad-request', message: 'method not allowed' } })\n        return\n      }\n      const pathname = new URL(req.url ?? '/', 'http://dsh.internal').pathname\n      const method = pathname.startsWith('/desk-editor/') ? pathname.slice('/desk-editor/'.length) : undefined\n      if (method === undefined || method.includes('/')) {\n        writeError(res, new WbError('not-found', `unknown /desk-editor method \"${method}\"`, 404))\n        return\n      }\n      try {\n        const payload = await readJsonBody(req)\n        if (method === 'fs.read') {\n          const sessionId = stringOrUndefined(payload, 'sessionId')\n          const raw = stringOrUndefined(payload, 'path')\n          if (raw === undefined) {\n            writeError(res, new WbError('bad-request', 'fs.read requires a \"path\"', 400))\n            return\n          }\n          const cwd = sessionCwdOf(ctx, sessionId)\n          const path = resolveReadPath(raw)\n          const file = await readFileText(path, READ_LIMIT_BYTES)\n          // Outside-workspace files open read-only: saving stays confined to\n          // the session workspace (fs.write), so tell the client up front.\n          const writable = await isInsideWorkspace(cwd, path)\n          writeOk(res, { file, cwd, writable })\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/client/index.ts:45-68](https://github.com/AKS1st/dock-editor/blob/f6e5e0845c42e2b09a7a8d671a66b331fe094634/src/client/index.ts#L45-L68)\n\n客户端要求双服务并注册默认 viewer。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n/** Client plugin body. */\nexport function apply(ctx: WorkbenchContext): void {\n  const workbench = ctx.get<WorkbenchService>('workbench')\n  const files = ctx.get<FilesService>('files')\n  // inject guarantees both services are present when this applies; guard\n  // anyway so a broken runtime degrades instead of throwing.\n  if (workbench === undefined || files === undefined) return\n\n  ctx.effect(() => workbench.registerPlugin({\n    id: 'dock-editor',\n    title: 'Editor',\n    description: 'Text file viewer and editor for the dock file explorer: undo/redo, Ctrl+S save, and unsaved-change confirmation.',\n    hasEntry: false,\n  }), 'dock-editor: plugin metadata')\n\n  // Register as the file domain's default viewer (id matches the editor view),\n  // carrying the explorer's fallback icon for types with no registered icon\n  // and no built-in palette entry (neutral gray, same as the explorer's\n  // unclassified-file default).\n  ctx.effect(() => files.registerFileViewer({\n    id: 'editor',\n    default: true,\n    icon: { color: '#8b949e' },\n  }), 'dock-editor: file viewer')\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/client/index.ts:79-103](https://github.com/AKS1st/dock-editor/blob/f6e5e0845c42e2b09a7a8d671a66b331fe094634/src/client/index.ts#L79-L103)\n\n编辑视图和 beforeClose 读取 dirty 元数据。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n  // The view that receives open seeds ({ path, title }). It stays registered\n  // as an editor-area view because floating windows resolve their view\n  // through this registry; opening itself is always floating (dock-files\n  // dispatches { mode: 'floating' }), so no tab-open path remains. The\n  // beforeClose hook consumes the dirty flag the view syncs onto seed.meta\n  // (updateViewSeed) and confirms closing the window with unsaved edits.\n  ctx.effect(() => workbench.registerEditorView({\n    id: 'editor',\n    title: 'Editor',\n    order: 100,\n    component: EditorView,\n    beforeClose: (request: CloseRequest): boolean | Promise<boolean> => {\n      const meta = request.seed?.meta\n      if (meta !== null && typeof meta === 'object' && (meta as { dirty?: unknown }).dirty === true) {\n        // Themed in-app confirm (replaces the native window.confirm),\n        // localized to the active DSH locale (message + button labels).\n        const locale = detectLocale(ctx)\n        return confirmDialog(translate(locale, 'unsavedCloseConfirm'), {\n          ok: translate(locale, 'ok'),\n          cancel: translate(locale, 'cancel'),\n        })\n      }\n      return true\n    },\n  }), 'dock-editor: editor view')\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/client/EditorView.tsx:131-170](https://github.com/AKS1st/dock-editor/blob/f6e5e0845c42e2b09a7a8d671a66b331fe094634/src/client/EditorView.tsx#L131-L170)\n\n按 seed 路径加载并接收可写标记。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n  // Load the file when the seed path changes.\n  useEffect(() => {\n    if (path === undefined) return\n    let cancelled = false\n    lastDirtyRef.current = null\n    setContent(null)\n    setError(null)\n    setDirty(false)\n    setTruncated(false)\n    setWritable(true)\n    setSavedAt(null)\n    codeRef.current = null\n    setCanUndo(false)\n    setCanRedo(false)\n    void (async () => {\n      try {\n        const response = await fetch('/desk-editor/fs.read', {\n          method: 'POST',\n          headers: { 'content-type': 'application/json' },\n          body: JSON.stringify({ sessionId, path }),\n        })\n        const json = (await response.json()) as ReadResponse\n        if (json.ok !== true || json.value === undefined) {\n          throw new Error(json.error?.message ?? 'read failed')\n        }\n        if (cancelled) return\n        const file = json.value.file\n        contentRef.current = file.content\n        setContent(file.content)\n        setBinary(file.binary)\n        setTruncated(file.truncated)\n        setSize(file.size)\n        setWritable(json.value.writable !== false)\n      } catch (cause) {\n        if (cancelled) return\n        setError(cause instanceof Error ? cause.message : String(cause))\n      }\n    })()\n    return () => { cancelled = true }\n  }, [path, sessionId])\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/client/CodeMirrorEditor.tsx:204-245](https://github.com/AKS1st/dock-editor/blob/f6e5e0845c42e2b09a7a8d671a66b331fe094634/src/client/CodeMirrorEditor.tsx#L204-L245)\n\n编辑器扩展、历史、搜索、只读与更新回调。\n\n<details>\n<summary>查看原文（42行）</summary>\n\n```text\n  useEffect(() => {\n    const parent = containerRef.current\n    if (parent === null) return\n    const extensions: Extension[] = [\n      lineNumbers(),\n      highlightActiveLineGutter(),\n      highlightActiveLine(),\n      highlightSpecialChars(),\n      history(),\n      foldGutter(),\n      drawSelection(),\n      EditorState.allowMultipleSelections.of(true),\n      indentOnInput(),\n      bracketMatching(),\n      syntaxHighlighting(editorHighlightStyle),\n      editorTheme,\n      ...(language === null ? [] : [language]),\n      search(),\n      searchMatches,\n      readOnlyCompartment.current.of(EditorState.readOnly.of(readOnly)),\n      wrapCompartment.current.of(wrap ? EditorView.lineWrapping : []),\n      keymap.of([\n        { key: 'Mod-f', run: () => { try { openSearchRef.current('find'); return true } catch { return false } } },\n        { key: 'Mod-h', run: () => { try { openSearchRef.current('replace'); return true } catch { return false } } },\n        { key: 'F3', run: guardedFindNext, shift: guardedFindPrevious, preventDefault: true },\n        { key: 'Mod-g', run: guardedFindNext, shift: guardedFindPrevious, preventDefault: true },\n        { key: 'Escape', run: () => { try { closeSearchRef.current(); return true } catch { return false } }, preventDefault: true },\n        ...historyKeymap,\n        ...defaultKeymap,\n        ...EXTRA_KEYMAP,\n        indentWithTab,\n      ]),\n      EditorView.contentAttributes.of({ spellcheck: 'false' }),\n      EditorView.updateListener.of((update) => {\n        try {\n          if (update.docChanged) onDocChangedRef.current(update.state.doc.toString())\n          onHistoryChangedRef.current({ canUndo: undoDepth(update.state) > 0, canRedo: redoDepth(update.state) > 0 })\n          const plugin = update.view.plugin(searchMatches)\n          if (plugin !== null) onSearchRef.current({ count: plugin.count, current: plugin.current })\n        } catch { /* defensive */ }\n      }),\n    ]\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 读取、写入、未保存提示各自守住什么边界，关键缺口是什么？\n\n**研究主题：**缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\n请求要经过 host/trustedHosts 与同源检查，路由只接受 POST。fs.read 对绝对路径没有会话工作区限制，读取后另算 writable；它不是读隔离。fs.write 用 realpath 检查目标在会话工作区内，超过 256 KiB 的原文件拒写；客户端对外部路径和截断内容也禁保存。dirty 标记通过 updateViewSeed 交给 beforeClose，在关闭前询问。工程上可借鉴前后端双重写保护和与视图生命周期对齐的状态同步。关键缺口是服务端保存直接 writeFile，客户端只发送路径和文本，没有读取版本、mtime 或内容摘要比较。外部程序或另一窗口在读后修改同一文件时，后保存者可能覆盖先前变化；本轮没有执行交错保存，故这是源码推断风险而非已复现事故。sessionId 缺失或无对应 cwd 时会回退 process.cwd，故实际安全边界还依赖宿主会话关联与可信请求模型。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:95-109](https://github.com/AKS1st/dock-editor/blob/f6e5e0845c42e2b09a7a8d671a66b331fe094634/src/index.ts#L95-L109)\n\n写入路径按 realpath 相对工作区检查。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\nasync function resolveWorkspacePath(cwd: string, raw: string): Promise<string> {\n  const root = await realpath(cwd).catch(() => resolve(cwd))\n  requireAbsolute(raw)\n  let target: string\n  try {\n    target = await realpath(raw)\n  } catch {\n    const parent = await realpath(dirname(raw)).catch(() => dirname(raw))\n    target = join(parent, basename(raw))\n  }\n  const rel = relative(root, target)\n  if (rel === '' || (rel !== '..' && !rel.startsWith(`..${sep}`) && !isAbsolute(rel))) {\n    return target\n  }\n  throw new WbError('forbidden', `path is outside the session workspace: \"${raw}\"`, 403)\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/index.ts:217-231](https://github.com/AKS1st/dock-editor/blob/f6e5e0845c42e2b09a7a8d671a66b331fe094634/src/index.ts#L217-L231)\n\n请求信任围栏检查 Host、Fetch Site 与 Origin。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\nfunction isTrustedRequest(request: IncomingMessage, trustedHosts: readonly string[]): boolean {\n  const host = header(request.headers, 'host')\n  if (host === undefined) return false\n  const hostUrl = parseAuthority(host)\n  if (hostUrl === undefined) return false\n  if (!isLoopbackHostname(hostUrl.hostname) && !isTrustedAuthority(hostUrl, trustedHosts)) return false\n  if (header(request.headers, 'sec-fetch-site') === 'cross-site') return false\n  const origin = header(request.headers, 'origin')\n  if (origin === undefined) return true\n  try {\n    return new URL(origin).host === hostUrl.host\n  } catch {\n    return false\n  }\n}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/index.ts:252-258](https://github.com/AKS1st/dock-editor/blob/f6e5e0845c42e2b09a7a8d671a66b331fe094634/src/index.ts#L252-L258)\n\n会话 cwd 缺失时回退进程 cwd。\n\n```text\nfunction sessionCwdOf(ctx: WbContext, sessionId: string | undefined): string {\n  if (sessionId !== undefined) {\n    const cwd = ctx.sessions.get(sessionId)?.header.cwd\n    if (cwd !== undefined && cwd !== '') return cwd\n  }\n  return process.cwd()\n}\n```\n\n**依据 4 · 源码核查**：[src/index.ts:281-319](https://github.com/AKS1st/dock-editor/blob/f6e5e0845c42e2b09a7a8d671a66b331fe094634/src/index.ts#L281-L319)\n\n读取不限工作区、写入检查大小但直接 writeFile。\n\n<details>\n<summary>查看原文（39行）</summary>\n\n```text\n        if (method === 'fs.read') {\n          const sessionId = stringOrUndefined(payload, 'sessionId')\n          const raw = stringOrUndefined(payload, 'path')\n          if (raw === undefined) {\n            writeError(res, new WbError('bad-request', 'fs.read requires a \"path\"', 400))\n            return\n          }\n          const cwd = sessionCwdOf(ctx, sessionId)\n          const path = resolveReadPath(raw)\n          const file = await readFileText(path, READ_LIMIT_BYTES)\n          // Outside-workspace files open read-only: saving stays confined to\n          // the session workspace (fs.write), so tell the client up front.\n          const writable = await isInsideWorkspace(cwd, path)\n          writeOk(res, { file, cwd, writable })\n          return\n        }\n        if (method === 'fs.write') {\n          const raw = stringOrUndefined(payload, 'path')\n          const text = stringOrUndefined(payload, 'content')\n          if (raw === undefined || text === undefined) {\n            writeError(res, new WbError('bad-request', 'fs.write requires \"path\" and \"content\"', 400))\n            return\n          }\n          const cwd = sessionCwdOf(ctx, stringOrUndefined(payload, 'sessionId'))\n          const path = await resolveWorkspacePath(cwd, raw)\n          // Truncation guard: a file larger than the read cap can never be\n          // fully read by this editor, so writing the partial buffer back\n          // would silently destroy the rest of the file (C2). Reject the\n          // write before touching the target.\n          const info = await stat(path).catch(() => undefined)\n          if (info !== undefined && info.size > READ_LIMIT_BYTES) {\n            writeError(res, new WbError('fs-error',\n              `\"${raw}\" is ${info.size} bytes, over the ${READ_LIMIT_BYTES}-byte editor limit`, 413))\n            return\n          }\n          await writeFile(path, text, 'utf8').catch((error) => {\n            throw new WbError('fs-error', `cannot write \"${raw}\": ${messageOf(error)}`, 400)\n          })\n          writeOk(res, { saved: true, cwd })\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/client/EditorView.tsx:216-228](https://github.com/AKS1st/dock-editor/blob/f6e5e0845c42e2b09a7a8d671a66b331fe094634/src/client/EditorView.tsx#L216-L228)\n\ndirty 状态同步 seed。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n  /**\n   * Keep the instance seed's meta dirty flag in sync (updateViewSeed) so the\n   * beforeClose hook registered on the view definition can confirm closing\n   * the floating window with unsaved changes.\n   */\n  useEffect(() => {\n    if (workbench === undefined || path === undefined) return\n    const instanceId = ownInstance()\n    if (instanceId === undefined) return\n    if (lastDirtyRef.current === dirty) return\n    lastDirtyRef.current = dirty\n    workbench.updateViewSeed(instanceId, { meta: { dirty } })\n  }, [dirty, path, workbench, ownInstance])\n```\n\n</details>\n\n**依据 6 · 源码核查**：[src/client/EditorView.tsx:252-283](https://github.com/AKS1st/dock-editor/blob/f6e5e0845c42e2b09a7a8d671a66b331fe094634/src/client/EditorView.tsx#L252-L283)\n\n保存发送路径和全文，没有条件写版本令牌。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\n  const save = useCallback(async (): Promise<void> => {\n    if (path === undefined || contentRef.current === null || !dirty) return\n    if (!writable) {\n      // Outside-workspace files open read-only (host fs.write rejects them).\n      setError(t('readOnly'))\n      return\n    }\n    if (truncated) {\n      // The file is larger than the editor's read cap: the buffer in memory\n      // is only the first 256 KiB, so writing it back would silently\n      // truncate the file. Refuse up front (the host enforces this too).\n      setError(t('saveTooLarge'))\n      return\n    }\n    setSaving(true)\n    try {\n      const response = await fetch('/desk-editor/fs.write', {\n        method: 'POST',\n        headers: { 'content-type': 'application/json' },\n        body: JSON.stringify({ sessionId, path, content: contentRef.current }),\n      })\n      const json = (await response.json()) as { ok: boolean; error?: { message: string } }\n      if (json.ok !== true) throw new Error(json.error?.message ?? 'save failed')\n      setDirty(false)\n      setSavedAt(Date.now())\n      setSize(new TextEncoder().encode(contentRef.current).length)\n    } catch (cause) {\n      setError(cause instanceof Error ? cause.message : String(cause))\n    } finally {\n      setSaving(false)\n    }\n  }, [path, sessionId, dirty, truncated, writable, t])\n```\n\n</details>\n\n#### 缺口\n\n- 没有双窗口及外部改写交错保存记录。\n  **影响：**无法量化静默覆盖频率、恢复成本或确认真实宿主行为。\n  **进一步探讨：**在隔离工作区固定读后外部改写、两个窗口交错保存样本，核对旧内容是否覆盖并测恢复时间。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 安装、生效、日常操作和退出依赖什么？\n\n**研究主题：**依赖、兼容与流程\n\n#### 完整回答\n\n源码包声明 Node >=20、Cordis、dock-base、dock-files 与 React peer，客户端依赖 workbench 和 files 服务，服务端依赖 webServer、sessions、webRuntime；optional peer 是安装层标记，不能推断缺少 dock/file 服务仍能启用 UI。README 给出 web profile 下依次安装基座、文件域和编辑器的命令，但本轮未安装。日常流程是从文件域打开文本、编辑、保存、确认状态；超限和二进制只读，错误需回外部工具处理。退出可停用插件并改用外部编辑器，未保存窗口需确认，localStorage 中按路径保存的几何偏好属于额外浏览器状态。不同版本 dock 与 dock-files 是否兼容仍需宿主验收。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:47-65](https://github.com/AKS1st/dock-editor/blob/f6e5e0845c42e2b09a7a8d671a66b331fe094634/package.json#L47-L65)\n\nNode/peer/optional 的包声明。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n  \"engines\": {\n    \"node\": \">=20\"\n  },\n  \"peerDependencies\": {\n    \"cordis\": \"^4.0.0-rc.7\",\n    \"dock-base\": \">=0.2.0\",\n    \"dock-files\": \">=0.1.0\",\n    \"react\": \"^18.2.0\"\n  },\n  \"peerDependenciesMeta\": {\n    \"dock-base\": {\n      \"optional\": true\n    },\n    \"dock-files\": {\n      \"optional\": true\n    },\n    \"react\": {\n      \"optional\": true\n    }\n```\n\n</details>\n\n**依据 2 · 作者声明**：[README.md:27-58](https://github.com/AKS1st/dock-editor/blob/f6e5e0845c42e2b09a7a8d671a66b331fe094634/README.md#L27-L58)\n\n作者依赖与 web profile 安装顺序。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n````text\n## 依赖\n\n| 依赖 | 类型 | 说明 |\n| --- | --- | --- |\n| [dock](https://github.com/AKS1st/dock) >= 0.1.0 | peer（必需） | 工作台外壳：编辑器区视图、浮窗、`ctx.workbench` 由它提供 |\n| [dock-files](https://github.com/AKS1st/dock-files) >= 0.1.0 | peer（必需） | 文件域服务：dock-editor 作为其 `editor` 默认查看器被分发打开 |\n| DSH Web 环境 | 运行时 | 必需，客户端平台为 Web |\n| `cordis` ^4.0.0-rc.7 | peer | 插件框架（DSH 自带） |\n| `react` ^18.2.0 | peer（可选） | 客户端渲染需要；未提供时编辑器 UI 不激活 |\n| `@codemirror/*`、`@lezer/highlight` | dev（构建期） | CodeMirror 6 编辑器 + 语言文法，仅编译进 `lib/client.js`，发布后无需安装 |\n\n**可选搭档**：`dock-images`、`dock-markdown` 等更多查看器可与 dock-editor 共存，按扩展名各自接管对应文件类型（dock-editor 是 `default` 兜底查看器）。\n\n## 安装\n\n需要 `dock` 与 `dock-files`：\n\n推荐从 npm registry 安装：\n\n```sh\ndsh plugin --profile web add dock-base\ndsh plugin --profile web add dock-files\ndsh plugin --profile web add dock-editor\n```\n\n或通过 GitHub 安装（备选）：\n\n```sh\ndsh plugin --profile web add github:AKS1st/dock\ndsh plugin --profile web add github:AKS1st/dock-files\ndsh plugin --profile web add github:AKS1st/dock-editor\n```\n````\n\n</details>\n\n**依据 3 · 源码核查**：[src/client/index.ts:18-51](https://github.com/AKS1st/dock-editor/blob/f6e5e0845c42e2b09a7a8d671a66b331fe094634/src/client/index.ts#L18-L51)\n\n双客户端服务缺失时不注册 UI。\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\n/** Requires the workbench base (carrier) and the dock-files file domain. */\nexport const inject = ['workbench', 'files']\n\n/** Local structural face of ctx.files (avoid type dependency on dock-files). */\ninterface FilesService {\n  registerFileViewer(def: {\n    id: string\n    exts?: string[]\n    default?: boolean\n    icon?: { color?: string; path?: string; viewBox?: string }\n  }): () => void\n  registerFileIcon(def: {\n    exts: string[]\n    icon: { color?: string; path?: string; viewBox?: string }\n  }): () => void\n}\n\n/**\n * The code glyph dock-editor registers for source/config file types: a\n * `</>` mark (thick stroke quads, single evenodd path in a 16×16 viewBox),\n * tinted per family through the icon color.\n */\nconst CODE_ICON = {\n  viewBox: '0 0 16 16',\n  path: 'M4.42 8.40L6.72 5.40L5.68 4.60L3.38 7.60ZM3.38 8.40L5.68 11.40L6.72 10.60L4.42 7.60ZM6.58 5.41L8.48 11.01L9.72 10.59L7.82 4.99ZM12.99 7.57L10.39 4.57L9.41 5.43L12.01 8.43ZM12.01 7.57L9.41 10.57L10.39 11.43L12.99 8.43Z',\n}\n\n/** Client plugin body. */\nexport function apply(ctx: WorkbenchContext): void {\n  const workbench = ctx.get<WorkbenchService>('workbench')\n  const files = ctx.get<FilesService>('files')\n  // inject guarantees both services are present when this applies; guard\n  // anyway so a broken runtime degrades instead of throwing.\n  if (workbench === undefined || files === undefined) return\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/client/EditorView.tsx:29-55](https://github.com/AKS1st/dock-editor/blob/f6e5e0845c42e2b09a7a8d671a66b331fe094634/src/client/EditorView.tsx#L29-L55)\n\n浏览器 localStorage 中的几何持久化。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\n/** localStorage key remembering the floating-window geometry per file path. */\nconst geometryKey = (path: string): string => `dock-editor:geometry:${path}`\n\nfunction readGeometry(path: string): WindowGeometry | null {\n  try {\n    if (typeof localStorage === 'undefined') return null\n    const raw = localStorage.getItem(geometryKey(path))\n    if (raw === null) return null\n    const parsed = JSON.parse(raw) as Partial<WindowGeometry>\n    if (typeof parsed.x === 'number' && typeof parsed.y === 'number'\n      && typeof parsed.width === 'number' && typeof parsed.height === 'number') {\n      return { x: parsed.x, y: parsed.y, width: parsed.width, height: parsed.height }\n    }\n    return null\n  } catch {\n    return null\n  }\n}\n\nfunction writeGeometry(path: string, geometry: WindowGeometry): void {\n  try {\n    if (typeof localStorage === 'undefined') return\n    localStorage.setItem(geometryKey(path), JSON.stringify(geometry))\n  } catch {\n    // Storage unavailable: geometry is forgotten on close, editing still works.\n  }\n}\n```\n\n</details>\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 当前材料能证明哪些效果、资源和人工成本？\n\n**研究主题：**效果与总成本\n\n#### 完整回答\n\n源码足以确认小文本可经同工作台编辑并提交到写路由，256 KiB 读取截断、NUL 识别与写端大小检查为局部防护；不能由此推出真实用户节时、保存可靠率或净收益。CodeMirror 的语言包被构建进客户端资源，作者报告约 1.12 MB bundle 和 gzip 约 300 KB，本轮没有独立重新测量下载或内存。首次成本包括装配 dock/dock-files、确认版本与加载结果；持续成本包括浏览器资源、检查保存目标与人工处理冲突；失败恢复包括重新读取、比对和人工恢复，金额与耗时都未知。对重要文件，保存失败或覆盖的恢复成本可能抵消省去切换工具的便利。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:147-177](https://github.com/AKS1st/dock-editor/blob/f6e5e0845c42e2b09a7a8d671a66b331fe094634/src/index.ts#L147-L177)\n\n256 KiB 读取与 NUL 检测的具体实现。\n\n<details>\n<summary>查看原文（31行）</summary>\n\n```text\n/** Cap for a single text-file read (256 KiB keeps the editor snappy). */\nconst READ_LIMIT_BYTES = 1 << 18\n\n/** Text read of a file with a size cap; binary detection via NUL probe. */\nasync function readFileText(path: string, readLimit: number): Promise<{\n  content: string\n  truncated: boolean\n  binary: boolean\n  size: number\n}> {\n  const info = await stat(path).catch((error) => {\n    throw new WbError('fs-error', `cannot read \"${path}\": ${messageOf(error)}`, 400)\n  })\n  if (info.isDirectory()) {\n    throw new WbError('fs-error', `\"${path}\" is a directory`, 400)\n  }\n  const size = info.size\n  const truncated = size > readLimit\n  const handle = await open(path, 'r').catch((error) => {\n    throw new WbError('fs-error', `cannot read \"${path}\": ${messageOf(error)}`, 400)\n  })\n  try {\n    const buffer = Buffer.alloc(Math.min(size, readLimit))\n    const { bytesRead } = await handle.read(buffer, 0, buffer.length, 0)\n    const slice = buffer.subarray(0, bytesRead)\n    const binary = slice.includes(0)\n    return { content: binary ? '' : slice.toString('utf8'), truncated, binary, size }\n  } finally {\n    await handle.close()\n  }\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/index.ts:305-319](https://github.com/AKS1st/dock-editor/blob/f6e5e0845c42e2b09a7a8d671a66b331fe094634/src/index.ts#L305-L319)\n\n写端拒绝覆盖超限旧文件，直接写入文本。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n          const path = await resolveWorkspacePath(cwd, raw)\n          // Truncation guard: a file larger than the read cap can never be\n          // fully read by this editor, so writing the partial buffer back\n          // would silently destroy the rest of the file (C2). Reject the\n          // write before touching the target.\n          const info = await stat(path).catch(() => undefined)\n          if (info !== undefined && info.size > READ_LIMIT_BYTES) {\n            writeError(res, new WbError('fs-error',\n              `\"${raw}\" is ${info.size} bytes, over the ${READ_LIMIT_BYTES}-byte editor limit`, 413))\n            return\n          }\n          await writeFile(path, text, 'utf8').catch((error) => {\n            throw new WbError('fs-error', `cannot write \"${raw}\": ${messageOf(error)}`, 400)\n          })\n          writeOk(res, { saved: true, cwd })\n```\n\n</details>\n\n**依据 3 · 作者声明**：[README.md:20-25](https://github.com/AKS1st/dock-editor/blob/f6e5e0845c42e2b09a7a8d671a66b331fe094634/README.md#L20-L25)\n\n作者说明编辑功能与 bundle 体量，体量不是本轮实测。\n\n```text\n- **未保存提示**：关闭带未保存修改的窗口前弹出确认（通过工作台 `beforeClose` 钩子与 seed dirty 标记）。\n- **二进制检测**：读取时探测 NUL 字节，二进制文件显示提示而非乱码。\n- **大小上限**：单文件读取上限 256 KiB；超过上限的文件只显示前 256 KiB、**禁用保存**，避免截断原文件（主机端同样校验并拒绝）。\n- **悬浮窗几何记忆**：每个文件记住上次悬浮窗口的位置与大小，重新打开时恢复。\n\n> **代码编辑器开销**：`CodeMirror 6` 作为 **构建期 devDependency** 被打包进 `lib/client.js`（与 dock-markdown 打包 marked 同理，不进入 runtime 依赖）。客户端 bundle 约 1.12 MB（gzip 约 300 KB）——其中编辑器运行时（`@codemirror/view` 等）占大头，各语言文法合计仅约 68 KB（gzip）。\n```\n\n**依据 4 · 源码核查**：[package.json:67-85](https://github.com/AKS1st/dock-editor/blob/f6e5e0845c42e2b09a7a8d671a66b331fe094634/package.json#L67-L85)\n\nCodeMirror 等构建依赖。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n  \"devDependencies\": {\n    \"@codemirror/commands\": \"^6.0.0\",\n    \"@codemirror/lang-css\": \"^6.0.0\",\n    \"@codemirror/lang-html\": \"^6.0.0\",\n    \"@codemirror/lang-javascript\": \"^6.0.0\",\n    \"@codemirror/lang-json\": \"^6.0.0\",\n    \"@codemirror/lang-python\": \"^6.0.0\",\n    \"@codemirror/lang-yaml\": \"^6.0.0\",\n    \"@codemirror/language\": \"^6.0.0\",\n    \"@codemirror/legacy-modes\": \"^6.0.0\",\n    \"@codemirror/search\": \"^6.0.0\",\n    \"@codemirror/state\": \"^6.0.0\",\n    \"@codemirror/view\": \"^6.0.0\",\n    \"@lezer/highlight\": \"^1.0.0\",\n    \"@types/node\": \"^22.0.0\",\n    \"@types/react\": \"^18.2.0\",\n    \"@types/react-dom\": \"^18.2.0\",\n    \"tsdown\": \"^0.22.14\",\n    \"typescript\": \"^6.0.3\",\n```\n\n</details>\n\n#### 缺口\n\n- 没有同条件完成任务的时间、资源占用、冲突和丢失率测量。\n  **影响：**无法估算单位合格编辑任务成本和节省。\n  **进一步探讨：**在同一组小文件任务比较 dock-editor 与外部编辑器，记录成功保存、人工分钟、浏览器资源和恢复事件。\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 现阶段适合谁试用，下一步可验证的新设计是什么？\n\n**研究主题：**新假设与验证、采用判断\n\n#### 完整回答\n\n建议有 dock 文件域、只需改小型非关键工作区文本的用户做有限试用；先核对依赖、只读/超限边界和保存后的文件内容。重要配置、并发编辑或工作区外写入任务仍应使用有冲突检查与恢复能力的原工具。源码支持便利的界面整合，但保存覆盖风险和无宿主验收使「值得安装」结论缺依据。可提出未验证的条件写设计：读取时返回内容摘要和会话身份，保存时服务器再次比较，冲突时保留新旧两版并提供差异/重载。它比当前 dirty 关闭提示多处理读后外部变化，代价是版本令牌、原子性与冲突 UI。用两个窗口及外部改写的交错样本，对照现有保存，记录被阻止的静默覆盖、误报和恢复工时；若误报增加且恢复无改进，应否定设计收益。该假设没有实现，不计入现有贡献。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:297-319](https://github.com/AKS1st/dock-editor/blob/f6e5e0845c42e2b09a7a8d671a66b331fe094634/src/index.ts#L297-L319)\n\n当前保存没有预期版本参数与条件写。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n        if (method === 'fs.write') {\n          const raw = stringOrUndefined(payload, 'path')\n          const text = stringOrUndefined(payload, 'content')\n          if (raw === undefined || text === undefined) {\n            writeError(res, new WbError('bad-request', 'fs.write requires \"path\" and \"content\"', 400))\n            return\n          }\n          const cwd = sessionCwdOf(ctx, stringOrUndefined(payload, 'sessionId'))\n          const path = await resolveWorkspacePath(cwd, raw)\n          // Truncation guard: a file larger than the read cap can never be\n          // fully read by this editor, so writing the partial buffer back\n          // would silently destroy the rest of the file (C2). Reject the\n          // write before touching the target.\n          const info = await stat(path).catch(() => undefined)\n          if (info !== undefined && info.size > READ_LIMIT_BYTES) {\n            writeError(res, new WbError('fs-error',\n              `\"${raw}\" is ${info.size} bytes, over the ${READ_LIMIT_BYTES}-byte editor limit`, 413))\n            return\n          }\n          await writeFile(path, text, 'utf8').catch((error) => {\n            throw new WbError('fs-error', `cannot write \"${raw}\": ${messageOf(error)}`, 400)\n          })\n          writeOk(res, { saved: true, cwd })\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/client/index.ts:79-103](https://github.com/AKS1st/dock-editor/blob/f6e5e0845c42e2b09a7a8d671a66b331fe094634/src/client/index.ts#L79-L103)\n\n现有 beforeClose 只基于本地 dirty 标记。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n  // The view that receives open seeds ({ path, title }). It stays registered\n  // as an editor-area view because floating windows resolve their view\n  // through this registry; opening itself is always floating (dock-files\n  // dispatches { mode: 'floating' }), so no tab-open path remains. The\n  // beforeClose hook consumes the dirty flag the view syncs onto seed.meta\n  // (updateViewSeed) and confirms closing the window with unsaved edits.\n  ctx.effect(() => workbench.registerEditorView({\n    id: 'editor',\n    title: 'Editor',\n    order: 100,\n    component: EditorView,\n    beforeClose: (request: CloseRequest): boolean | Promise<boolean> => {\n      const meta = request.seed?.meta\n      if (meta !== null && typeof meta === 'object' && (meta as { dirty?: unknown }).dirty === true) {\n        // Themed in-app confirm (replaces the native window.confirm),\n        // localized to the active DSH locale (message + button labels).\n        const locale = detectLocale(ctx)\n        return confirmDialog(translate(locale, 'unsavedCloseConfirm'), {\n          ok: translate(locale, 'ok'),\n          cancel: translate(locale, 'cancel'),\n        })\n      }\n      return true\n    },\n  }), 'dock-editor: editor view')\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/client/EditorView.tsx:252-283](https://github.com/AKS1st/dock-editor/blob/f6e5e0845c42e2b09a7a8d671a66b331fe094634/src/client/EditorView.tsx#L252-L283)\n\n当前请求发送全文并在成功响应后清 dirty。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\n  const save = useCallback(async (): Promise<void> => {\n    if (path === undefined || contentRef.current === null || !dirty) return\n    if (!writable) {\n      // Outside-workspace files open read-only (host fs.write rejects them).\n      setError(t('readOnly'))\n      return\n    }\n    if (truncated) {\n      // The file is larger than the editor's read cap: the buffer in memory\n      // is only the first 256 KiB, so writing it back would silently\n      // truncate the file. Refuse up front (the host enforces this too).\n      setError(t('saveTooLarge'))\n      return\n    }\n    setSaving(true)\n    try {\n      const response = await fetch('/desk-editor/fs.write', {\n        method: 'POST',\n        headers: { 'content-type': 'application/json' },\n        body: JSON.stringify({ sessionId, path, content: contentRef.current }),\n      })\n      const json = (await response.json()) as { ok: boolean; error?: { message: string } }\n      if (json.ok !== true) throw new Error(json.error?.message ?? 'save failed')\n      setDirty(false)\n      setSavedAt(Date.now())\n      setSize(new TextEncoder().encode(contentRef.current).length)\n    } catch (cause) {\n      setError(cause instanceof Error ? cause.message : String(cause))\n    } finally {\n      setSaving(false)\n    }\n  }, [path, sessionId, dirty, truncated, writable, t])\n```\n\n</details>\n\n#### 缺口\n\n- 条件写与冲突 UI 尚未实现或测试。\n  **影响：**不能提升当前插件的安全结论或创新评分。\n  **进一步探讨：**先用交错保存样本比较静默覆盖和误报，再评估内容摘要与原子替换方案。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：bae481108bb81042acec8ec2bfcf27c0fc4c4cd98b04cc50010fb0a621642608。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 30952 | 26213 | 5076 | — |\n| .md | source | 2 | 131 | — | — | 1838 |\n| .ts | source | 8 | 1310 | 872 | 348 | — |\n| .tsx | source | 3 | 808 | 625 | 129 | — |\n| .mjs | source | 1 | 52 | 38 | 12 | — |\n\n排除 11 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 文本查看与编辑 | 在 dock 浮窗修改小型文本 | 依赖 workbench/files 和 Web；二进制或超限不保存 |\n| 搜索、高亮与历史 | 快速查找、编辑代码或普通文本 | 来自 CodeMirror；具体语言由扩展名决定 |\n| 保存与关闭提醒 | 写入工作区并提示未保存修改 | 工作区外只读，关闭提醒不检查并发版本 |\n| 窗口几何记忆 | 重开同一路径恢复位置大小 | 浏览器 localStorage 可用才持久 |\n\n\n## 工程亮点\n\n服务端独立检查工作区写入、超限文件拒写，客户端再用 writable/truncated 禁保存，职责分层清楚；dirty 同步到工作台关闭钩子可借鉴。读端任意绝对路径属于明确能力和权限边界，sessionId 缺失时的 cwd 回退增加对宿主关联的依赖。直接 writeFile 没有版本比较或冲突恢复，CodeMirror bundle 与第三方功能不能当本项目原创。\n\n### 跨插件资源契约\n\ndock基座提供视图注册、实例seed、beforeClose与openPath分派；dock-files用资源地址中的sessionId解析cwd和路径后，只把path交给workbench.openPath；dock-editor读取接受绝对路径，写入独立约束session工作区，尺寸检查后直接writeFile，没有读取版本或内容摘要比较。这些控制分别处理界面关闭、资源分派和写入范围，不能替代保存时并发版本检查。由此提出未验证假设，跨插件资源句柄统一携带原会话身份、读写能力和读取版本，保存时比较内容摘要，冲突保留双方内容。可用两个会话与外部改写交错打开/保存，对照现有路径传递，比较错误目标、静默覆盖、冲突处理和恢复工时；若覆盖或恢复成本无改善，则不支持该假设。固定源码支持前述结构和限制，未证明实际发生错误目标，也未验证未来设计的净收益。\n\n依据包括 [AKS1st/dock/src/client/service.ts](https://github.com/AKS1st/dock/blob/8535f6e24670931d9e93fb087ab474e38aa01856/src/client/service.ts#L210-L245)、[AKS1st/dock-files/src/client/openBridge.ts](https://github.com/AKS1st/dock-files/blob/d24224beb8cf024a9c6e79fe97445001d73150b8/src/client/openBridge.ts#L104-L130)、[AKS1st/dock-editor/src/index.ts](https://github.com/AKS1st/dock-editor/blob/f6e5e0845c42e2b09a7a8d671a66b331fe094634/src/index.ts#L79-L109)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、src/index.ts、src/client/index.ts、src/client/EditorView.tsx、src/client/CodeMirrorEditor.tsx 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：检查固定提交 README、package、服务端读写路由、客户端注册、编辑与搜索主路径及完整范围 inventory；未执行目标代码、测试或宿主。\n- 下一步：进一步探讨可在隔离工作区做外部改写与双窗口交错保存对照，再对固定 DSH/dock 版本检查路径、只读、关闭与停用；本轮不执行。\n",
         "metadata": {
             "repository": "AKS1st/dock-editor",
             "repository_id": 1340492335,
-            "captured_at": "2026-10-21T05:33:26.700Z",
-            "window_start": "2026-09-21T05:33:26.700Z",
+            "captured_at": "2026-10-22T05:09:34.160Z",
+            "window_start": "2026-09-22T05:09:34.160Z",
             "stars": 3,
             "pushed_at": "2026-09-11T08:05:39Z",
             "issues": {
                 "open": 0,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-editor%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CC1E:2723D0:511027:571769:6AD84EA9 and timestamp 2026-10-21 05:33:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-editor%20is%3Aissue%20created%3A2026-09-21T05%3A33%3A26.700Z..2026-10-21T05%3A33%3A26.700Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CD10:32D9F:516C2B:5774BC:6AD84EAA and timestamp 2026-10-21 05:33:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-editor%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A33%3A26.700Z..2026-10-21T05%3A33%3A26.700Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CECE:110389:553835:5B405B:6AD84EAB and timestamp 2026-10-21 05:33:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-editor%20is%3Aissue%20updated%3A2026-09-21T05%3A33%3A26.700Z..2026-10-21T05%3A33%3A26.700Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CFC6:4AA35:55BFBC:5BC8E5:6AD84EAC and timestamp 2026-10-21 05:33:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "dock-editor",
-                "captured_at": "2026-10-21T05:33:32.463Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 903,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dock-editor",
+                "captured_at": "2026-10-22T05:09:45.004Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 886,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dock-editor",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-08-23T06:01:16.552Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T05:09:45.004Z",
                     "source_url": "https://registry.npmjs.org/dock-editor",
                     "error": null,
                     "latest_version": "0.2.2",
@@ -499,14 +573,14 @@
             "repository": "AKS1st/dock-editor",
             "path": "",
             "revision": "f6e5e0845c42e2b09a7a8d671a66b331fe094634",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "4ae51b272dc85dae1f847ee4e1a73413d643dae2d4cf0529f0742a0ee8369635",
                 "code": "f6e5e0845c42e2b09a7a8d671a66b331fe094634",
                 "maintenance": "ec1fcb6a77d60b26f7afaace62498f4afd4fa60a4b20ee18c822a89c975be7e9"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

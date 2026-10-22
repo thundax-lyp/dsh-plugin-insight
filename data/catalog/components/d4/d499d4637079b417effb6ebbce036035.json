@@ -423,14 +423,14 @@
             "repository": "873360545/dsh-auto-shutdown",
             "path": "",
             "revision": "a2af408455e31a0acf4021e3383d1384dcb7aebc",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "d0a29937943ad4ec4efbcde7aa2b87cc73256d9fd0f163c02e238cdc176d2f77",
                 "code": "a2af408455e31a0acf4021e3383d1384dcb7aebc",
                 "maintenance": "cc6b6d089c71c1692d7834b0fd719db911c08159dbb74822ed4e1f83427c4001"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

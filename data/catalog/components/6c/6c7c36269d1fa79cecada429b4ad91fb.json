@@ -389,14 +389,14 @@
             "repository": "173787247/dsh-wsl-vllm",
             "path": "",
             "revision": "e42e1dc23a89ea7cc87474dcd5d8c610b37c651b",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "2ed721eb5796b3cac195f7fcd650a8aed30ada9257901f96fa39cbe8f70ecd5b",
                 "code": "e42e1dc23a89ea7cc87474dcd5d8c610b37c651b",
                 "maintenance": "8ff0b54a6084cb89e7c375e351fe9c1a21dcbc858bebed1ff0262d1a1d70aed5"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

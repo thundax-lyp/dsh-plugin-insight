@@ -451,15 +451,15 @@
             "repository": "A3Boy/dsh-web-tools",
             "path": "",
             "revision": "bb68082d1274dc0d28ed5921bb08c7b5070fae7f",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                "https://github.com/0xsline/awesome-deepseek-harness"
-            ],
             "fingerprints": {
                 "directory": "7e375fc7f0270b29582c8efe7201f709c851e3b8b897b324cde7d8619c6d83a9",
                 "code": "bb68082d1274dc0d28ed5921bb08c7b5070fae7f",
                 "maintenance": "a45557c4d859bf2f098fee47fb2ef28e8c8a79a135fbfa39abaa7eef534f7667"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ]
         }
     }
 }

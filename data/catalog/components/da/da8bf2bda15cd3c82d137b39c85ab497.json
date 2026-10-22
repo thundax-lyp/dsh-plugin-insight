@@ -390,14 +390,14 @@
             "repository": "1985899182/dsh-harness-chat-control",
             "path": "",
             "revision": "061e9a8563ffec3b2353d785e268b88984bd4890",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "f6ebd6d5cfe8b4dba59510203b98feeac4e12ec7e2b9f267702d05deb7dff8b6",
                 "code": "061e9a8563ffec3b2353d785e268b88984bd4890",
                 "maintenance": "e41b84b643d621384351bd9a1fc59ad63c70d11516821ed553a866a8079dac72"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

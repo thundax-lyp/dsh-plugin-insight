@@ -443,14 +443,14 @@
             "repository": "863683348/dsh-plugin-academic-writing",
             "path": "",
             "revision": "cbeb4db61d11cc327092f5e7f56d333693e52bde",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "8e8a6e9b73c5840cca000122ecd8e2b3fca0eda6030619a9ceccfe9e8e8be3ed",
                 "code": "cbeb4db61d11cc327092f5e7f56d333693e52bde",
                 "maintenance": "63be9c8516bd78f1a213d4cc9a02433425c454cbb9c0a4ef2119467b6034c687"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }

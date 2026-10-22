@@ -445,14 +445,14 @@
             "repository": "863683348/dsh-plugin-focus",
             "path": "",
             "revision": "6aabf70615a191a14c7a1e25141b4d15560f3a47",
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
             "fingerprints": {
                 "directory": "921b7f9ae72a96188fc11112e4df2318b04186206a1c2b66c7ba377c5f4fb395",
                 "code": "6aabf70615a191a14c7a1e25141b4d15560f3a47",
                 "maintenance": "92917ff7cdf58c6366ecdb0399bb6d60d55852a36d83499b1a3156d25fcfe483"
-            }
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ]
         }
     }
 }
