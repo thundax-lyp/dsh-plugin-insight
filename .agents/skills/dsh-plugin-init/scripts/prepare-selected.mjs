@@ -13,6 +13,14 @@ const execute = promisify(execFile);
 const run = async (command, args, options = {}) =>
     (await execute(command, args, { encoding: 'utf8', timeout: 180_000, maxBuffer: 32 * 1024 * 1024, ...options }))
         .stdout;
+const succeeds = async (command, args, options = {}) => {
+    try {
+        await run(command, args, options);
+        return true;
+    } catch {
+        return false;
+    }
+};
 const node = (script, args) => run(process.execPath, [resolve(ROOT, script), ...args]);
 const pool = async (items, fn) => {
     let cursor = 0;
@@ -22,6 +30,17 @@ const pool = async (items, fn) => {
         })
     );
 };
+export async function restoreEolOnlyCheckout(path) {
+    const status = (await run('git', ['-C', path, 'status', '--porcelain'])).trimEnd();
+    if (
+        !status ||
+        !status.split('\n').every((line) => line.startsWith(' M ')) ||
+        !(await succeeds('git', ['-C', path, 'diff', '--quiet', '--ignore-cr-at-eol', '--']))
+    )
+        return false;
+    await run('git', ['-C', path, 'restore', '--source', 'HEAD', '--worktree', '--', '.']);
+    return true;
+}
 export async function prepareSelected(workPath) {
     const work = readWork(resolve(workPath)),
         folder = resolve(workPath, '..');
@@ -53,7 +72,7 @@ export async function prepareSelected(workPath) {
             if (head !== item.revision) {
                 await run('git', ['-C', path, 'fetch', '--depth', '1', 'origin', item.revision]);
                 await run('git', ['-C', path, 'checkout', '--detach', item.revision]);
-            }
+            } else await restoreEolOnlyCheckout(path);
             if ((await run('git', ['-C', path, 'status', '--porcelain'])).trim()) throw Error('checkout is dirty');
         } catch (e) {
             errors.push({ repository: item.repository, phase: 'checkout', message: e.message });
