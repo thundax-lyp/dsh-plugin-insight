@@ -2,7 +2,7 @@
 import { readWork } from '../../_shared/scripts/work-storage.mjs';
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
-import { existsSync, mkdirSync, readFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { resolve, relative, basename } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
@@ -41,6 +41,11 @@ export async function prepareSelected(workPath) {
                 await run('git', ['init', path]);
                 await run('git', ['-C', path, 'remote', 'add', 'origin', `https://github.com/${item.repository}.git`]);
             }
+            // Material checkouts must expose the exact committed bytes. Repository attributes such as
+            // `text eol=crlf` can otherwise make a mixed-EOL blob dirty immediately after checkout.
+            mkdirSync(resolve(path, '.git/info'), { recursive: true });
+            writeFileSync(resolve(path, '.git/info/attributes'), '* -text\n');
+            await run('git', ['-C', path, 'config', 'core.autocrlf', 'false']);
             let head = '';
             try {
                 head = (await run('git', ['-C', path, 'rev-parse', 'HEAD'])).trim();
