@@ -720,22 +720,23 @@ export function forgetResearch(input, root = ROOT, apply = false) {
             throw Error('duplicate or unknown research identity');
         const directories = [...ids].map((id) => current.registry[id]).filter(Boolean);
         const removedFindings = [];
+        const unpublishedIds = new Set();
         next.catalog.plugins = next.catalog.plugins.filter((p) => !ids.has(p.id));
         for (const plugin of next.catalog.plugins) {
             plugin.findings = plugin.findings.filter((f) => {
                 if (!f.dependencies.some((d) => ids.has(d.plugin_id))) return true;
                 removedFindings.push({ plugin_id: plugin.id, finding_id: f.id });
+                unpublishedIds.add(plugin.id);
                 return false;
             });
         }
         for (const name of ['registry', 'reports', 'metadata', 'research_blocks'])
             for (const id of ids) delete next[name]?.[id];
-        next.publication.records = next.publication.records.filter((r) => !ids.has(r.id));
+        // The old report still contains the removed conclusions; require a fresh review before publishing it.
+        next.publication.records = next.publication.records.filter((r) => !ids.has(r.id) && !unpublishedIds.has(r.id));
         for (const name of ['metadata', 'summaries', 'capabilities', 'advice'])
             for (const id of ids) delete next.publication[name][id];
         delete next.publication.recommendations;
-        for (const record of next.publication.records)
-            record.analysis_sha256 = analysisDigest(next.catalog.plugins.find((p) => p.id === record.id));
         next.discovery.plugins = next.discovery.plugins.filter((p) => !ids.has(p.id));
         next.discovery.complete_baseline = false;
         const artifacts = new Set(
@@ -754,6 +755,7 @@ export function forgetResearch(input, root = ROOT, apply = false) {
             removed: ids.size,
             directories,
             removed_findings: removedFindings,
+            unpublished_ids: [...unpublishedIds],
             result_digest: digest(next)
         };
     } finally {
