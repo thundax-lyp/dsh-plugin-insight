@@ -187,3 +187,7 @@ Git 文件采用 evidence.git_refs 保存结构化定位，以[Git 引用 Schema
 ## 能力表格的展示绑定
 
 发布输入 capabilities 的 revision、items 继续保存同版本的正向能力摘要；可选 table 保存研究者据实际源码撰写的 Markdown 能力表。table 须与正式原稿“能力清单”唯一章节的正文一致，生成前核对，不能从摘要自动推导使用条件或边界。历史输入不含 table 时继续核对原列表；版式变更不刷新研究时间、证据层级或评分。展示列及编写要求由[输出标准](../../dsh-plugin-init/references/OUTPUT-STANDARD.md)维护。
+
+## 逐题缺口与范围说明
+
+逐题 unknowns 的可选 kind 按研究问题 Schema 区分实际研究缺口 research_gap 与本轮未安排的工作 scope_boundary，省略时视为 research_gap。分类由研究者给定，不改变 status 验收或证据层级；读者正文只列实际缺口，范围说明仍保存。呈现要求见输出标准，字段解释与填写流程见逐题研究规范。

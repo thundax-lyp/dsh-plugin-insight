@@ -90,16 +90,12 @@ export function validateResearchQuestions(value, { sourcePaths, readSource, repo
     if (missing.length) throw Error(`research question coverage missing: ${missing.join(', ')}`);
     return value;
 }
-const statusNames = {
-    answered: '已回答',
-    partial: '部分回答，仍有缺口',
-    unknown: '材料不足，尚不能判断',
-    not_applicable: '本题不适用，原因见回答'
-};
 function quoteSource(text) {
     const runs = [...text.matchAll(/`+/g)].map((m) => m[0].length);
     const fence = '`'.repeat(Math.max(3, ...runs.map((n) => n + 1)));
-    return `${fence}text\n${text}\n${fence}`;
+    const quoted = `${fence}text\n${text}\n${fence}`;
+    const lines = text.split('\n').length;
+    return lines >= 10 ? `<details>\n<summary>查看原文（${lines}行）</summary>\n\n${quoted}\n\n</details>` : quoted;
 }
 export function renderResearchQuestions(value, { repository, revision, readSource }) {
     const sections = value.questions.map((q) => {
@@ -117,14 +113,14 @@ export function renderResearchQuestions(value, { repository, revision, readSourc
                         line_end: e.line_end
                     });
                     const url = gitReferenceUrl(ref);
-                    return `**依据 ${i + 1} · ${e.kind === 'author_claim' ? '作者声明' : '源码核查'}**：[${e.source_path}:${e.line_start}-${e.line_end}](${url})\n\nGit 定位：仓库 \`${ref.repository_url}\` · 提交 \`${ref.commit}\` · 相对路径 \`${ref.path}\` · 行 ${ref.line_start}–${ref.line_end}。文件 SHA-256：\`${ref.content_sha256}\`。\n\n${e.observation}\n\n${quoteSource(excerpt)}`;
+                    return `**依据 ${i + 1} · ${e.kind === 'author_claim' ? '作者声明' : '源码核查'}**：[${e.source_path}:${e.line_start}-${e.line_end}](${url})\n\n${e.observation}\n\n${quoteSource(excerpt)}`;
                 })
-                .join('\n\n') || '本题未列出证据；回答状态与未知项见本题说明。';
-        const unknowns =
-            q.unknowns
-                .map((u) => `- **未知：**${u.issue}\n  **影响：**${u.impact}\n  **下一步：**${u.next_step}`)
-                .join('\n') || '本题未记录额外未知项。';
-        return `<a id="research-${q.id.toLowerCase()}"></a>\n\n### ${q.id} · ${q.question}\n\n**研究主题：**${q.topics.map((t) => researchTopics[t]).join('、')}\n\n**回答状态：**${statusNames[q.status]}\n\n#### 完整回答\n\n${q.answer}\n\n#### 证据与依据\n\n${evidence}\n\n#### 未知项\n\n${unknowns}`;
+                .join('\n\n') || '本题未列出证据，适用边界见完整回答。';
+        const unknowns = q.unknowns
+            .filter((u) => u.kind !== 'scope_boundary')
+            .map((u) => `- ${u.issue}\n  **影响：**${u.impact}\n  **进一步探讨：**${u.next_step}`)
+            .join('\n');
+        return `<a id="research-${q.id.toLowerCase()}"></a>\n\n### ${q.id} · ${q.question}\n\n**研究主题：**${q.topics.map((t) => researchTopics[t]).join('、')}\n\n#### 完整回答\n\n${q.answer}\n\n#### 证据与依据\n\n${evidence}${unknowns ? `\n\n#### 缺口\n\n${unknowns}` : ''}`;
     });
     return `## 研究问题与完整回答\n\n**插件研究总目标：**${value.goal}\n\n${sections.join('\n\n')}`;
 }

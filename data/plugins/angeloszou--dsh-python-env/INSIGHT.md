@@ -55,6 +55,10 @@
 
 简单替代是显式指定项目解释器执行venv/pip，再运行项目验收；本研究只比较实现和操作责任，没有执行同条件速度/效果对照，也未核查uv机制。
 
+**合格结果**：插件负责环境与依赖准备，不接管脚本执行。依赖应装入指定项目的正确环境，再用该环境解释器通过预定脚本或测试，并核对预期范围之外没有变化；仅收到安装成功文本还不够。
+
+**不适用场景**：不能仅靠该插件承担生产依赖升级、自动处理陌生仓库或不可信包构建的隔离任务。它的集成便利不等于系统级隔离，相关条件与证据见[Q01](#research-q01)。
+
 <a id="detail-section-3"></a>
 
 ### 能力、流程与成本
@@ -83,13 +87,7 @@
 | 可用包来源及必要的网络访问 | 下载依赖时必需 | 获取包及构建依赖 | 网络类失败可能触发镜像/代理回退；已有本地材料的离线安装另论，不把索引当所有操作的硬依赖 |
 | multiFolder 服务及额外根配置 | 可选 | 将额外工作目录纳入允许根 | 缺失、接口不兼容或查询异常时使用空额外根列表，主工作区仍可用 |
 
-上述版本来自作者和包声明，不代表本次已验证跨版本兼容。无需 uv/virtualenv；索引和代理的选择、物理路径与包参数限制仍需核对。表格提供操作入口，不能替代下面的流程和边界分析。
-
-启动需要 Node>=20、包的 Cordis ^4.0.1 peer、提供声明服务的 DSH profile，以及可用 Python>=3.8；无需 uv/virtualenv。代码还直接导入 @deepseek-ai/dsh-tools，而 package peer 只列 Cordis，因此安装可用性依赖宿主/组合环境能解析该模块，本次没有独立 npm 安装验证。不能据此直接宣布发布包必坏。
-
-持续生效依赖宿主服务契约、允许写的会话模式、目标环境可执行与可用索引/代理。sandboxPolicy 缺失会拒绝写操作，这是合理的失败关闭；subprocess 缺失则对应工具报错。multi-folder 是可选服务，缺失或异常降级为空列表，不使主工作区功能依赖另一个插件。
-
-用户先安装并重启后端，选择可信项目与目标环境，模型调用发现/创建/安装，用户仍需检查安装结果和解释器，再运行实际脚本。网络失败由插件分类重试，包不存在则停止；超时需人工决定拆包或调整索引，不存在事务回滚包安装或损坏环境的机制。删除环境仍需先确认目标与内容，不能把删除venv理解成撤销宿主代码可能造成的副作用。
+无需 uv/virtualenv。表中的版本是作者或包声明，不能当作本次跨版本兼容验证。
 
 **启动步骤**
 
@@ -101,12 +99,11 @@
 | 4. 处理失败或后台任务 | 插件区分网络与包解析错误，必要时尝试镜像/代理或交给 jobs；用户查看结果 | 超时或取消后核对退出状态与环境，再决定重试或拆包；不存在事务回滚保证 |
 | 5. 验收与使用 | 用户核对安装位置、包状态，用返回的解释器显式运行目标脚本 | 以正确环境完成实际任务为准；发现目标歧义或非允许写入时停止，删除 venv 不等于撤销全部宿主副作用 |
 
+注册链路：profile patch → lib/index.js 的 apply → 五个工具、动态 Skill 与系统提示。插件不接管脚本执行。
 
-包入口指向 lib/index.js，profile patch 插入插件行；apply 逐一注册五个模型工具、一个动态 Skill 和一个系统提示段。它不是注册 Agent/Preset，也没有自行提供执行 Python 脚本的工具。宿主需提供 tools、skills、subprocess、jobs、sandboxPolicy、systemPrompt 服务，声明存在不等于当前宿主能够挂载。
+目标选择只考虑带 pyvenv.cfg 标记的候选：未显式指定时，单个候选直接使用；多个候选优先第一个名为 .venv 的环境，否则要求指定。此规则不保证多根项目语义匹配。
 
-发现流程遍历主工作区与可选 secondary roots，按 pyvenv.cfg 或惯例名字识别候选，再报告 marker、解释器位置、版本和 pip 状态。真正选择写入目标时，仅 marker 候选参与；没有显式 venv 参数时从各允许根发现环境，单个直接用，多个则找第一个名字为 .venv 的候选，否则要求调用者指定。这个偏好并不等于项目语义匹配。
-
-install 先检查会话可写、取得额外根并准备缓存，再校验参数。没有环境才在主工作区创建 .venv；选中后找到环境解释器，运行 python -m pip --version，必要时 ensurepip 修复，然后调用 pip install。环境创建和包安装均通过宿主 subprocess 的 argv，而不是 shell 字符串。网络错误可以换镜像和尝试本地代理，后台分支交给 jobs，结果保留尝试路径。工具返回后模型还要显式用该解释器运行脚本；没有自动激活状态。
+安装前会探测 python -m pip --version，必要时用 ensurepip 修复。命令经宿主 subprocess 传 argv 数组，不经过 shell 字符串插值；这也不等于限制了 pip 自身可解析的选项。
 
 **效果与成本**
 
@@ -117,11 +114,9 @@ install 先检查会话可写、取得额外根并准备缓存，再校验参数
 | 失败恢复 | 额外网络尝试、模型调用及环境重建可能重复消耗资源；次数、金额未知 | 查看日志、确认超时后的环境状态，决定重试、拆包、换索引或重建；恢复耗时未知 | 无事务回滚保证；两分钟预算不代表任务能在两分钟内完成，后台不自动延长预算 |
 | 迁移或退出（适用时） | 缓存保留、迁移或重建所需存储和计算量未知 | 保留依赖版本、核对标准 venv/pip 环境及持久目录；清理和迁移耗时未知 | 删除环境不等于清理全部缓存或撤销宿主副作用；未测迁移成本 |
 
-计量单位应是一份指定项目依赖已装入正确环境、并用该解释器通过预定脚本或测试的交付；安装命令退出0仅是中间结果。源码没有计时或效果样本，不能报节省百分比、ROI或单位成本。
+计量单位是一份依赖装入正确环境、且用该解释器通过预定脚本或测试的合格交付；安装命令退出0只属于中间结果。
 
-现金方面，MIT代码没有声明插件订阅费用；下载流量、本地磁盘/计算和宿主所用模型调用由用户环境决定。首次人工投入包括装插件、重启后端、确认 Python/venv 可用、审核依赖及索引；日常投入仍有读取错误、明确解释器和验证交付。pip缓存与临时目录置于 .dsh-pyenv，会占项目磁盘，移除环境没有同时清理全部缓存的承诺。
-
-失败成本包括多次网络尝试、模型反复调用、人工排查以及半完成环境重建。两分钟预算是一种可解释的交互取舍，不是大型科学计算依赖在两分钟内必能安装；后台仍有同一上限，因此换后台不是延长任务预算的办法。若用户已有可靠脚本且网络正常，插件的注册与维护成本可能超过便利收益；真正受沙箱网络限制的用户才更可能得到额外价值。迁移离开时环境仍是标准venv/pip，但应保留需求版本和核对持久目录，不能声称自动清理。
+若已有可靠脚本且网络正常，插件的注册与维护负担可能超过便利收益；真正受 shell 网络或临时目录限制的用户才更可能得到额外价值。这是条件判断，未做同条件收益对照。
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
 |---|---|---|
@@ -130,7 +125,7 @@ install 先检查会话可写、取得额外根并准备缓存，再校验参数
 | 后台安装 | 实现 jobs 接线、日志与终止处理 | 实际交互改善、取消后的环境状态及恢复负担未验证 |
 | 人工效率与经济收益 | 可解释便利来自工具接线与故障反馈，属于机制判断 | 无同条件合格任务对照；节时、ROI、总费用与单位合格任务成本未知 |
 
-可确认价值是结构化管理和故障解释；尚无证据量化合格任务成功率、速度或人工节省。镜像重试与后台执行不会自动解决依赖冲突、包构建权限和最终脚本验收。
+表中机制不保证包构建权限受限，也不能替代最终脚本验收。
 
 - **思考**：最影响贡献成立的是：转为宿主执行后，工作区约束是否足够？词法路径守卫没有物理路径核对，发现逻辑允许符号链接，普通包规格可直接进入 pip argv，显式索引还接受 HTTP；这些限制使“仅工作区写入”不能被当作隔离保证。均为静态核查，未做越界复现。详见[Q04](#research-q04)。
 
@@ -219,8 +214,6 @@ install 先检查会话可写、取得额外根并准备缓存，再校验参数
 
 **研究主题：**场景与需求
 
-**回答状态：**部分回答，仍有缺口
-
 #### 完整回答
 
 它针对在 DSH 会话中维护 Python 项目、安装依赖却遇到 shell 网络或临时目录限制的开发者。作者把痛点解释为宿主 shell 沙箱限制；这属于作者对使用环境的陈述，本次没有在真实 DSH 中重现。合格结果应是指定项目的虚拟环境可识别、依赖装入目标环境、用该环境的解释器完成任务，并且预期范围以外没有变化；仅收到工具成功文本还不够。
@@ -233,9 +226,10 @@ install 先检查会话可写、取得额外根并准备缓存，再校验参数
 
 **依据 1 · 作者声明**：[README.md:13-27](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/README.md#L13-L27)
 
-Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d24039c579b644101577383ef5734fff78d43439` · 相对路径 `README.md` · 行 13–27。文件 SHA-256：`286a6abbb6b8a7ff576670d3c5b38adc35ef35bb14706f78739de676ca5b3b27`。
-
 作者列出用途、五工具、宿主通道及基础要求。
+
+<details>
+<summary>查看原文（15行）</summary>
 
 ```text
 A [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) plugin that gives one project (workspace) agent-facing Python virtual environment management:
@@ -255,9 +249,9 @@ A [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) plugin tha
 - Python >= 3.8 (on PATH, or passed explicitly) — only for the environments the plugin manages
 ```
 
-**依据 2 · 源码核查**：[lib/skill.js:31-35](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/lib/skill.js#L31-L35)
+</details>
 
-Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d24039c579b644101577383ef5734fff78d43439` · 相对路径 `lib/skill.js` · 行 31–35。文件 SHA-256：`c6bfa918d36aff59287e2d36bdacbe25c4d143f5354b59037fa19c24c320beb4`。
+**依据 2 · 源码核查**：[lib/skill.js:31-35](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/lib/skill.js#L31-L35)
 
 明确把执行代码留给普通shell，必须用返回解释器。
 
@@ -269,11 +263,11 @@ Use the interpreter path the tools report with your normal shell tools:
 Run tests and scripts with that interpreter so installed packages are importable. Creating/installing stays with the tools; running code stays in the shell.
 ```
 
-#### 未知项
+#### 缺口
 
-- **未知：**没有真实 DSH 任务或独立用户样本。
+- 没有真实 DSH 任务或独立用户样本。
   **影响：**需求频率与端到端改善未知。
-  **下一步：**收集同一宿主中 shell 失败的具体任务，并以同输入对照显式解释器流程。
+  **进一步探讨：**可从 shell 受限的具体任务与独立使用样本入手，对照同输入的显式解释器流程，判断需求频率与改善条件。
 
 <a id="research-q02"></a>
 
@@ -282,8 +276,6 @@ Run tests and scripts with that interpreter so installed packages are importable
 ### Q02 · 入口如何完成注册、发现、安装和代码执行的衔接？
 
 **研究主题：**功能与机制
-
-**回答状态：**部分回答，仍有缺口
 
 #### 完整回答
 
@@ -297,9 +289,10 @@ install 先检查会话可写、取得额外根并准备缓存，再校验参数
 
 **依据 1 · 源码核查**：[lib/index.js:46-65](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/lib/index.js#L46-L65)
 
-Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d24039c579b644101577383ef5734fff78d43439` · 相对路径 `lib/index.js` · 行 46–65。文件 SHA-256：`0012aed6b3f0021524d1b2b3b1c5c802cddf8e7f0ab8bf36478c1cd64b79183e`。
-
 入口注册及宿主依赖可直接核查。
+
+<details>
+<summary>查看原文（20行）</summary>
 
 ```text
 import { registerSkill } from './skill.js'
@@ -324,11 +317,14 @@ export function apply(ctx) {
 }
 ```
 
+</details>
+
 **依据 2 · 源码核查**：[lib/venv.js:43-74](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/lib/venv.js#L43-L74)
 
-Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d24039c579b644101577383ef5734fff78d43439` · 相对路径 `lib/venv.js` · 行 43–74。文件 SHA-256：`6b9ca9e90ac3b590b4c2e903315f7826a09df9cde227b74a45f8c6f13df2db64`。
-
 目标选择按marker与.venv偏好，没有项目归属判据。
+
+<details>
+<summary>查看原文（32行）</summary>
 
 ```text
 export async function resolveExistingVenv(ws, requested, extraRoots = []) {
@@ -365,11 +361,14 @@ export async function resolveExistingVenv(ws, requested, extraRoots = []) {
 }
 ```
 
+</details>
+
 **依据 3 · 源码核查**：[lib/tools/install.js:245-280](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/lib/tools/install.js#L245-L280)
 
-Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d24039c579b644101577383ef5734fff78d43439` · 相对路径 `lib/tools/install.js` · 行 245–280。文件 SHA-256：`5582df9738f3cf6450ded7a7cfcfc312c150b06f9aef47df3051b253a170eb2e`。
-
 安装使用选定解释器，ensurepip后构造调用选项。
+
+<details>
+<summary>查看原文（36行）</summary>
 
 ```text
                 throw new Error('auto venv creation failed\n' + (createResult.stderr.text + '\n' + createResult.stdout.text).slice(-2000))
@@ -410,11 +409,7 @@ Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d2
               const capTimer = setTimeout(() => {
 ```
 
-#### 未知项
-
-- **未知：**没有真实宿主加载和调用记录。
-  **影响：**工具Schema兼容、服务提供与后台生命周期未验收。
-  **下一步：**在固定DSH版本检查加载、五工具schema及前台/后台一条完整调用。
+</details>
 
 <a id="research-q03"></a>
 
@@ -423,8 +418,6 @@ Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d2
 ### Q03 · 相比显式 venv/pip 流程，它增加了什么，哪些能力归属上游？
 
 **研究主题：**贡献与相对优势
-
-**回答状态：**部分回答，仍有缺口
 
 #### 完整回答
 
@@ -437,8 +430,6 @@ Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d2
 #### 证据与依据
 
 **依据 1 · 作者声明**：[README.md:75-82](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/README.md#L75-L82)
-
-Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d24039c579b644101577383ef5734fff78d43439` · 相对路径 `README.md` · 行 75–82。文件 SHA-256：`286a6abbb6b8a7ff576670d3c5b38adc35ef35bb14706f78739de676ca5b3b27`。
 
 作者机制说明含标准库、宿主、镜像与提示的组合。
 
@@ -455,9 +446,10 @@ Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d2
 
 **依据 2 · 源码核查**：[lib/pip.js:135-155](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/lib/pip.js#L135-L155)
 
-Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d24039c579b644101577383ef5734fff78d43439` · 相对路径 `lib/pip.js` · 行 135–155。文件 SHA-256：`5b532a17253dacbbed3687811aa732205d0d14f14e9c8118af9ba267cd848087`。
-
 pip修复仍使用上游Python模块。
+
+<details>
+<summary>查看原文（21行）</summary>
 
 ```text
 export async function ensurePip(subprocess, venvPython, cwd, env, signal, onSpawn) {
@@ -483,11 +475,14 @@ export async function ensurePip(subprocess, venvPython, cwd, env, signal, onSpaw
   throw new Error('pip is missing from the virtual environment and could not be bootstrapped.' + hint + '\n' + stderr.slice(-2000))
 ```
 
+</details>
+
 **依据 3 · 源码核查**：[lib/guidance.js:11-25](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/lib/guidance.js#L11-L25)
 
-Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d24039c579b644101577383ef5734fff78d43439` · 相对路径 `lib/guidance.js` · 行 11–25。文件 SHA-256：`5da9ab1d25531074d0e6669986c77e85acb8b474f84e3c6a6f2452dc10d72a0a`。
-
 向模型注入工具优先及显式解释器指引。
+
+<details>
+<summary>查看原文（15行）</summary>
 
 ```text
 const GUIDANCE_TEXT =
@@ -507,11 +502,13 @@ export function registerGuidance(ctx) {
   })
 ```
 
-#### 未知项
+</details>
 
-- **未知：**没有固定宿主原生工具或同类插件的实现对照。
+#### 缺口
+
+- 没有固定宿主原生工具或同类插件的实现对照。
   **影响：**只能识别相对手工流程的集成增量，不能判断生态首创。
-  **下一步：**固定宿主版本与一个简单脚本基线，逐步比对任务成功率和人工介入。
+  **进一步探讨：**可从固定版本的宿主原生工具及简单脚本基线入手，比较任务成功率和人工介入，区分集成便利与独有贡献。
 
 <a id="research-q04"></a>
 
@@ -520,8 +517,6 @@ export function registerGuidance(ctx) {
 ### Q04 · 工作区约束和目标选择在哪些输入或状态下可能不成立？
 
 **研究主题：**缺陷与关键质疑
-
-**回答状态：**部分回答，仍有缺口
 
 #### 完整回答
 
@@ -537,8 +532,6 @@ export function registerGuidance(ctx) {
 
 **依据 1 · 源码核查**：[lib/guard.js:19-24](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/lib/guard.js#L19-L24)
 
-Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d24039c579b644101577383ef5734fff78d43439` · 相对路径 `lib/guard.js` · 行 19–24。文件 SHA-256：`e1660aaa9cae29529636dc3a054fc9205b54345427ae35aed06df1b29db98d0c`。
-
 isWithin仅比较相对路径。
 
 ```text
@@ -552,9 +545,10 @@ export function isWithin(root, target, platform = process.platform) {
 
 **依据 2 · 源码核查**：[lib/guard.js:45-66](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/lib/guard.js#L45-L66)
 
-Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d24039c579b644101577383ef5734fff78d43439` · 相对路径 `lib/guard.js` · 行 45–66。文件 SHA-256：`e1660aaa9cae29529636dc3a054fc9205b54345427ae35aed06df1b29db98d0c`。
-
 两个guard没有realpath或物理目录身份校验。
+
+<details>
+<summary>查看原文（22行）</summary>
 
 ```text
 export function guardWorkspacePath(requested, sessionRoot, label) {
@@ -581,9 +575,9 @@ export function guardAllowedPath(requested, sessionRoot, extraRoots, label) {
   throw new OutsideWorkspaceError(target, primary, label)
 ```
 
-**依据 3 · 源码核查**：[lib/layout.js:29-35](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/lib/layout.js#L29-L35)
+</details>
 
-Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d24039c579b644101577383ef5734fff78d43439` · 相对路径 `lib/layout.js` · 行 29–35。文件 SHA-256：`791da7e7ed454c942fa10734e3b32283859767c17239ce844224658350373f2f`。
+**依据 3 · 源码核查**：[lib/layout.js:29-35](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/lib/layout.js#L29-L35)
 
 发现逻辑包含目录符号链接。
 
@@ -599,9 +593,10 @@ export async function listSubdirs(dir) {
 
 **依据 4 · 源码核查**：[lib/tools/install.js:174-196](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/lib/tools/install.js#L174-L196)
 
-Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d24039c579b644101577383ef5734fff78d43439` · 相对路径 `lib/tools/install.js` · 行 174–196。文件 SHA-256：`5582df9738f3cf6450ded7a7cfcfc312c150b06f9aef47df3051b253a170eb2e`。
-
 普通spec并未排除任意pip选项。
+
+<details>
+<summary>查看原文（23行）</summary>
 
 ```text
           const specs = []
@@ -629,11 +624,14 @@ Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d2
           const normalizedSpecs = validateAndNormalizeSpecs(specs, ws, extraRoots)
 ```
 
+</details>
+
 **依据 5 · 源码核查**：[lib/pip.js:100-120](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/lib/pip.js#L100-L120)
 
-Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d24039c579b644101577383ef5734fff78d43439` · 相对路径 `lib/pip.js` · 行 100–120。文件 SHA-256：`5b532a17253dacbbed3687811aa732205d0d14f14e9c8118af9ba267cd848087`。
-
 spec逐项追加argv，不设置选项解析边界。
+
+<details>
+<summary>查看原文（21行）</summary>
 
 ```text
 /** Full `pip install` argv; index/proxy/upgrade are omitted when unset. */
@@ -659,9 +657,9 @@ export function buildInstallArgv({ venvPython, specs, requirementsPath, indexUrl
   return argv
 ```
 
-**依据 6 · 源码核查**：[lib/pip.js:61-67](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/lib/pip.js#L61-L67)
+</details>
 
-Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d24039c579b644101577383ef5734fff78d43439` · 相对路径 `lib/pip.js` · 行 61–67。文件 SHA-256：`5b532a17253dacbbed3687811aa732205d0d14f14e9c8118af9ba267cd848087`。
+**依据 6 · 源码核查**：[lib/pip.js:61-67](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/lib/pip.js#L61-L67)
 
 显式index接受HTTP和HTTPS。
 
@@ -677,9 +675,10 @@ export function normalizeIndexUrl(raw) {
 
 **依据 7 · 作者声明**：[SECURITY.md:85-94](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/SECURITY.md#L85-L94)
 
-Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d24039c579b644101577383ef5734fff78d43439` · 相对路径 `SECURITY.md` · 行 85–94。文件 SHA-256：`f1708917c9da9514ce5596992c0a026eae5365a8bd72d82bdd05e30a56d0dfe5`。
-
 仅HTTPS与每次写入工作区是作者安全宣称。
+
+<details>
+<summary>查看原文（10行）</summary>
 
 ```text
 - **Opt-in**: the plugin is installed per profile by the user; profiles
@@ -694,11 +693,14 @@ Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d2
   installation.
 ```
 
+</details>
+
 **依据 8 · 源码核查**：[lib/venv.js:76-94](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/lib/venv.js#L76-L94)
 
-Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d24039c579b644101577383ef5734fff78d43439` · 相对路径 `lib/venv.js` · 行 76–94。文件 SHA-256：`6b9ca9e90ac3b590b4c2e903315f7826a09df9cde227b74a45f8c6f13df2db64`。
-
 解释器存在性通过stat判断，并未解析环境目录物理归属。
+
+<details>
+<summary>查看原文（19行）</summary>
 
 ```text
 async function firstExisting(candidates) {
@@ -722,11 +724,13 @@ export function venvHasPip(venvDir, platform = process.platform) {
   return firstExisting(venvPipCandidates(venvDir, platform)).then((path) => path !== null)
 ```
 
-#### 未知项
+</details>
 
-- **未知：**未构造符号链接/参数改写/requirements间接引用的运行复现。
+#### 缺口
+
+- 未构造符号链接/参数改写/requirements间接引用的运行复现。
   **影响：**尚不能报告具体可利用影响或受影响平台范围。
-  **下一步：**在无凭据的丢弃容器，针对词法目录链接、--target与HTTP输入分别记录真实argv、拒绝结果及写入差异。
+  **进一步探讨：**可从目录外指链接、pip 目标改写参数和 requirements 间接引用等边界反例入手，结合隔离环境中的实际写入判断约束是否有效。
 
 <a id="research-q05"></a>
 
@@ -735,8 +739,6 @@ export function venvHasPip(venvDir, platform = process.platform) {
 ### Q05 · 启动、持续使用和失败恢复分别依赖什么？
 
 **研究主题：**依赖、兼容与流程
-
-**回答状态：**部分回答，仍有缺口
 
 #### 完整回答
 
@@ -752,7 +754,7 @@ export function venvHasPip(venvDir, platform = process.platform) {
 | 可用包来源及必要的网络访问 | 下载依赖时必需 | 获取包及构建依赖 | 网络类失败可能触发镜像/代理回退；已有本地材料的离线安装另论，不把索引当所有操作的硬依赖 |
 | multiFolder 服务及额外根配置 | 可选 | 将额外工作目录纳入允许根 | 缺失、接口不兼容或查询异常时使用空额外根列表，主工作区仍可用 |
 
-上述版本来自作者和包声明，不代表本次已验证跨版本兼容。无需 uv/virtualenv；索引和代理的选择、物理路径与包参数限制仍需核对。表格提供操作入口，不能替代下面的流程和边界分析。
+无需 uv/virtualenv。表中的版本是作者或包声明，不能当作本次跨版本兼容验证。
 
 **启动步骤**
 
@@ -764,20 +766,22 @@ export function venvHasPip(venvDir, platform = process.platform) {
 | 4. 处理失败或后台任务 | 插件区分网络与包解析错误，必要时尝试镜像/代理或交给 jobs；用户查看结果 | 超时或取消后核对退出状态与环境，再决定重试或拆包；不存在事务回滚保证 |
 | 5. 验收与使用 | 用户核对安装位置、包状态，用返回的解释器显式运行目标脚本 | 以正确环境完成实际任务为准；发现目标歧义或非允许写入时停止，删除 venv 不等于撤销全部宿主副作用 |
 
+注册链路：profile patch → lib/index.js 的 apply → 五个工具、动态 Skill 与系统提示。插件不接管脚本执行。
 
-启动需要 Node>=20、包的 Cordis ^4.0.1 peer、提供声明服务的 DSH profile，以及可用 Python>=3.8；无需 uv/virtualenv。代码还直接导入 @deepseek-ai/dsh-tools，而 package peer 只列 Cordis，因此安装可用性依赖宿主/组合环境能解析该模块，本次没有独立 npm 安装验证。不能据此直接宣布发布包必坏。
+目标选择只考虑带 pyvenv.cfg 标记的候选：未显式指定时，单个候选直接使用；多个候选优先第一个名为 .venv 的环境，否则要求指定。此规则不保证多根项目语义匹配。
 
-持续生效依赖宿主服务契约、允许写的会话模式、目标环境可执行与可用索引/代理。sandboxPolicy 缺失会拒绝写操作，这是合理的失败关闭；subprocess 缺失则对应工具报错。multi-folder 是可选服务，缺失或异常降级为空列表，不使主工作区功能依赖另一个插件。
+安装前会探测 python -m pip --version，必要时用 ensurepip 修复。命令经宿主 subprocess 传 argv 数组，不经过 shell 字符串插值；这也不等于限制了 pip 自身可解析的选项。
 
-用户先安装并重启后端，选择可信项目与目标环境，模型调用发现/创建/安装，用户仍需检查安装结果和解释器，再运行实际脚本。网络失败由插件分类重试，包不存在则停止；超时需人工决定拆包或调整索引，不存在事务回滚包安装或损坏环境的机制。删除环境仍需先确认目标与内容，不能把删除venv理解成撤销宿主代码可能造成的副作用。
+恢复边界：包解析失败不能靠反复网络重试解决；删除环境不等于撤销宿主代码的副作用。相关风险和反例见[Q04](#research-q04)。
 
 #### 证据与依据
 
 **依据 1 · 作者声明**：[package.json:35-48](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/package.json#L35-L48)
 
-Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d24039c579b644101577383ef5734fff78d43439` · 相对路径 `package.json` · 行 35–48。文件 SHA-256：`9039d68f9d01e1c76e714e7178d8ecfd2d7ce626360b7395eb52ed15873799cd`。
-
 运行与peer依赖声明。
+
+<details>
+<summary>查看原文（14行）</summary>
 
 ```text
   "dsh": {
@@ -796,11 +800,14 @@ Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d2
   },
 ```
 
+</details>
+
 **依据 2 · 源码核查**：[lib/policy.js:14-40](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/lib/policy.js#L14-L40)
 
-Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d24039c579b644101577383ef5734fff78d43439` · 相对路径 `lib/policy.js` · 行 14–40。文件 SHA-256：`773db36fe50e84beef6f9319f4e48511e3f5b76273b6d8fbef1178d5ee909548`。
-
 缺服务或非可写模式拒绝写入。
+
+<details>
+<summary>查看原文（27行）</summary>
 
 ```text
 /** The session's standing sandbox mode, or undefined when unmountable. */
@@ -832,11 +839,14 @@ export function assertWritableSession(ctx, exec, action) {
   return mode
 ```
 
+</details>
+
 **依据 3 · 源码核查**：[lib/secondary.js:25-35](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/lib/secondary.js#L25-L35)
 
-Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d24039c579b644101577383ef5734fff78d43439` · 相对路径 `lib/secondary.js` · 行 25–35。文件 SHA-256：`0b4588bfd166266e1b12980f6cb74a8698451e8f5b337e2da7af04c3260c5689`。
-
 可选多根服务异常时降级。
+
+<details>
+<summary>查看原文（11行）</summary>
 
 ```text
 export async function secondaryDirs(ctx, ws) {
@@ -852,11 +862,14 @@ export async function secondaryDirs(ctx, ws) {
   }
 ```
 
+</details>
+
 **依据 4 · 源码核查**：[lib/pip.js:205-232](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/lib/pip.js#L205-L232)
 
-Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d24039c579b644101577383ef5734fff78d43439` · 相对路径 `lib/pip.js` · 行 205–232。文件 SHA-256：`5b532a17253dacbbed3687811aa732205d0d14f14e9c8118af9ba267cd848087`。
-
 失败分类决定重试或停止。
+
+<details>
+<summary>查看原文（28行）</summary>
 
 ```text
   for (let i = 0; i < attempts.length; i += 1) {
@@ -889,11 +902,7 @@ Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d2
     break // non-network failure: surface immediately
 ```
 
-#### 未知项
-
-- **未知：**没有固定宿主版本的依赖安装和服务挂载验证。
-  **影响：**可安装性与可选多目录兼容仍未知。
-  **下一步：**使用锁定版本宿主做加载/只读/缺服务/多根异常矩阵，保存完整环境与日志。
+</details>
 
 <a id="research-q06"></a>
 
@@ -902,8 +911,6 @@ Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d2
 ### Q06 · 完成一个合格任务的现金与人工成本如何构成？
 
 **研究主题：**效果与总成本
-
-**回答状态：**部分回答，仍有缺口
 
 #### 完整回答
 
@@ -914,6 +921,10 @@ Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d2
 | 失败恢复 | 额外网络尝试、模型调用及环境重建可能重复消耗资源；次数、金额未知 | 查看日志、确认超时后的环境状态，决定重试、拆包、换索引或重建；恢复耗时未知 | 无事务回滚保证；两分钟预算不代表任务能在两分钟内完成，后台不自动延长预算 |
 | 迁移或退出（适用时） | 缓存保留、迁移或重建所需存储和计算量未知 | 保留依赖版本、核对标准 venv/pip 环境及持久目录；清理和迁移耗时未知 | 删除环境不等于清理全部缓存或撤销宿主副作用；未测迁移成本 |
 
+计量单位是一份依赖装入正确环境、且用该解释器通过预定脚本或测试的合格交付；安装命令退出0只属于中间结果。
+
+若已有可靠脚本且网络正常，插件的注册与维护负担可能超过便利收益；真正受 shell 网络或临时目录限制的用户才更可能得到额外价值。这是条件判断，未做同条件收益对照。
+
 | 效果项 | 当前证据支持 | 尚不能确定 |
 |---|---|---|
 | 环境管理与状态反馈 | 源码存在五个管理工具、解释器定位和结构化结果 | 真实宿主加载与端到端任务成功率未知 |
@@ -921,17 +932,11 @@ Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d2
 | 后台安装 | 实现 jobs 接线、日志与终止处理 | 实际交互改善、取消后的环境状态及恢复负担未验证 |
 | 人工效率与经济收益 | 可解释便利来自工具接线与故障反馈，属于机制判断 | 无同条件合格任务对照；节时、ROI、总费用与单位合格任务成本未知 |
 
-计量单位应是一份指定项目依赖已装入正确环境、并用该解释器通过预定脚本或测试的交付；安装命令退出0仅是中间结果。源码没有计时或效果样本，不能报节省百分比、ROI或单位成本。
-
-现金方面，MIT代码没有声明插件订阅费用；下载流量、本地磁盘/计算和宿主所用模型调用由用户环境决定。首次人工投入包括装插件、重启后端、确认 Python/venv 可用、审核依赖及索引；日常投入仍有读取错误、明确解释器和验证交付。pip缓存与临时目录置于 .dsh-pyenv，会占项目磁盘，移除环境没有同时清理全部缓存的承诺。
-
-失败成本包括多次网络尝试、模型反复调用、人工排查以及半完成环境重建。两分钟预算是一种可解释的交互取舍，不是大型科学计算依赖在两分钟内必能安装；后台仍有同一上限，因此换后台不是延长任务预算的办法。若用户已有可靠脚本且网络正常，插件的注册与维护成本可能超过便利收益；真正受沙箱网络限制的用户才更可能得到额外价值。迁移离开时环境仍是标准venv/pip，但应保留需求版本和核对持久目录，不能声称自动清理。
+表中机制不保证包构建权限受限，也不能替代最终脚本验收。
 
 #### 证据与依据
 
 **依据 1 · 作者声明**：[README.md:69-73](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/README.md#L69-L73)
-
-Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d24039c579b644101577383ef5734fff78d43439` · 相对路径 `README.md` · 行 69–73。文件 SHA-256：`286a6abbb6b8a7ff576670d3c5b38adc35ef35bb14706f78739de676ca5b3b27`。
 
 作者说明只读策略、操作方式及前后台预算。
 
@@ -945,9 +950,10 @@ Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d2
 
 **依据 2 · 源码核查**：[lib/envdir.js:14-35](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/lib/envdir.js#L14-L35)
 
-Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d24039c579b644101577383ef5734fff78d43439` · 相对路径 `lib/envdir.js` · 行 14–35。文件 SHA-256：`7b78ef23402ed187483abd96da447c1d59d5860b2e13426dd82ce8ca38c9ccd4`。
-
 缓存和临时目录持久存在于工作区。
+
+<details>
+<summary>查看原文（22行）</summary>
 
 ```text
 export function envRoot(ws) {
@@ -974,11 +980,14 @@ export async function ensureEnvDirs(ws) {
   }
 ```
 
+</details>
+
 **依据 3 · 源码核查**：[lib/constants.js:64-81](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/lib/constants.js#L64-L81)
 
-Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d24039c579b644101577383ef5734fff78d43439` · 相对路径 `lib/constants.js` · 行 64–81。文件 SHA-256：`035f3cee1d7669a6ed40907c157eee0c895d8a087db8de5a2d84b046acc44919`。
-
 两分钟预算和默认多个索引。
+
+<details>
+<summary>查看原文（18行）</summary>
 
 ```text
 /** Shared budget for the mutating tools (create / install / uninstall / remove). */
@@ -1001,11 +1010,13 @@ export const DEFAULT_INDEXES = [
   { id: 'ustc', indexUrl: 'https://mirrors.ustc.edu.cn/simple' },
 ```
 
-#### 未知项
+</details>
 
-- **未知：**没有任务时长、磁盘峰值、失败率或模型费用记录。
+#### 缺口
+
+- 没有任务时长、磁盘峰值、失败率或模型费用记录。
   **影响：**不能把集成便利换算成经济收益。
-  **下一步：**以固定依赖集记录完整试次现金、人工分钟、重试数与合格率，并与手工流程比较。
+  **进一步探讨：**可按固定依赖集记录完整试次的现金、人工时间、重试数和合格率，与手工流程作同条件比较。
 
 <a id="research-q07"></a>
 
@@ -1014,8 +1025,6 @@ export const DEFAULT_INDEXES = [
 ### Q07 · 实现哪些设计值得借鉴，可靠性尚缺什么？
 
 **研究主题：**工程质量与复用
-
-**回答状态：**部分回答，仍有缺口
 
 #### 完整回答
 
@@ -1031,9 +1040,10 @@ export const DEFAULT_INDEXES = [
 
 **依据 1 · 源码核查**：[lib/runner.js:29-67](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/lib/runner.js#L29-L67)
 
-Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d24039c579b644101577383ef5734fff78d43439` · 相对路径 `lib/runner.js` · 行 29–67。文件 SHA-256：`c5049aea393e162565e3bdf5f8f980dc7469d2c30aa185896a2282a5ffeec5ff`。
-
 统一进程结果和可终止deadline机制。
+
+<details>
+<summary>查看原文（39行）</summary>
 
 ```text
 /**
@@ -1077,11 +1087,14 @@ export function armDeadline(budgetMs, getHandle) {
   }
 ```
 
+</details>
+
 **依据 2 · 源码核查**：[lib/pip.js:24-51](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/lib/pip.js#L24-L51)
 
-Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d24039c579b644101577383ef5734fff78d43439` · 相对路径 `lib/pip.js` · 行 24–51。文件 SHA-256：`5b532a17253dacbbed3687811aa732205d0d14f14e9c8118af9ba267cd848087`。
-
 通用网络标记可与TLS组合文本冲突。
+
+<details>
+<summary>查看原文（28行）</summary>
 
 ```text
 const NETWORK_MARKERS = [
@@ -1114,9 +1127,9 @@ export function classifyNetworkFailure(stderrText) {
   return NETWORK_MARKERS.some((marker) => marker.test(text))
 ```
 
-**依据 3 · 源码核查**：[test/pip.test.js:28-33](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/test/pip.test.js#L28-L33)
+</details>
 
-Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d24039c579b644101577383ef5734fff78d43439` · 相对路径 `test/pip.test.js` · 行 28–33。文件 SHA-256：`a9273613fb2abbeb5cd146a0affda06dedbfe23f4564dc7e5a53d689118d9d13`。
+**依据 3 · 源码核查**：[test/pip.test.js:28-33](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/test/pip.test.js#L28-L33)
 
 测试仅给单独TLS错误字串。
 
@@ -1130,8 +1143,6 @@ test('classifyNetworkFailure: resolution and TLS errors are NOT retryable', () =
 ```
 
 **依据 4 · 源码核查**：[lib/python.js:32-38](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/lib/python.js#L32-L38)
-
-Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d24039c579b644101577383ef5734fff78d43439` · 相对路径 `lib/python.js` · 行 32–38。文件 SHA-256：`3ce0636adcb9977fc9ffd9c3bc366d37adbb6246695f6d3890a0fe95beb6352c`。
 
 显式命令按空白切分。
 
@@ -1147,9 +1158,10 @@ export function candidateList(requested, platform = process.platform) {
 
 **依据 5 · 作者声明**：[SECURITY.md:99-108](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/SECURITY.md#L99-L108)
 
-Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d24039c579b644101577383ef5734fff78d43439` · 相对路径 `SECURITY.md` · 行 99–108。文件 SHA-256：`f1708917c9da9514ce5596992c0a026eae5365a8bd72d82bdd05e30a56d0dfe5`。
-
 作者明确跨DSH进程不协调。
+
+<details>
+<summary>查看原文（10行）</summary>
 
 ```text
 ## Residual risks (accepted)
@@ -1164,9 +1176,9 @@ Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d2
   and its only execution surface is the five tools documented above.
 ```
 
-**依据 6 · 源码核查**：[lib/skill.js:8-15](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/lib/skill.js#L8-L15)
+</details>
 
-Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d24039c579b644101577383ef5734fff78d43439` · 相对路径 `lib/skill.js` · 行 8–15。文件 SHA-256：`c6bfa918d36aff59287e2d36bdacbe25c4d143f5354b59037fa19c24c320beb4`。
+**依据 6 · 源码核查**：[lib/skill.js:8-15](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/lib/skill.js#L8-L15)
 
 程序化Skill定义。
 
@@ -1181,11 +1193,11 @@ const SKILL = {
   invocation: { modelInvocable: true, userInvocable: true },
 ```
 
-#### 未知项
+#### 缺口
 
-- **未知：**未运行测试，未做多进程或平台矩阵。
-  **影响：**测试通过率、Windows路径行为与日志取消语义不可确认。
-  **下一步：**先扩展反例测试，再在三平台固定宿主中验证；分别记录源码定义与运行结果。
+- 不同进程能否协调同一环境，以及 Windows 路径与取消后日志行为是否符合预期，仍不明确。
+  **影响：**跨进程与跨平台条件下的可靠性边界尚不能确定。
+  **进一步探讨：**可从第二进程并发修改环境、Windows 路径处理及取消后的进程和日志状态入手，核对不同条件下的协调边界。
 
 <a id="research-q08"></a>
 
@@ -1194,8 +1206,6 @@ const SKILL = {
 ### Q08 · 由约束缺口能推导什么新设计，如何支持或推翻？
 
 **研究主题：**新假设与验证
-
-**回答状态：**部分回答，仍有缺口
 
 #### 完整回答
 
@@ -1209,9 +1219,10 @@ const SKILL = {
 
 **依据 1 · 源码核查**：[lib/venv.js:56-73](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/lib/venv.js#L56-L73)
 
-Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d24039c579b644101577383ef5734fff78d43439` · 相对路径 `lib/venv.js` · 行 56–73。文件 SHA-256：`6b9ca9e90ac3b590b4c2e903315f7826a09df9cde227b74a45f8c6f13df2db64`。
-
 跨根目标自动选择是计划显式化的推导起点。
+
+<details>
+<summary>查看原文（18行）</summary>
 
 ```text
   const candidates = []
@@ -1234,9 +1245,9 @@ Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d2
   )
 ```
 
-**依据 2 · 源码核查**：[lib/pip.js:115-120](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/lib/pip.js#L115-L120)
+</details>
 
-Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d24039c579b644101577383ef5734fff78d43439` · 相对路径 `lib/pip.js` · 行 115–120。文件 SHA-256：`5b532a17253dacbbed3687811aa732205d0d14f14e9c8118af9ba267cd848087`。
+**依据 2 · 源码核查**：[lib/pip.js:115-120](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/lib/pip.js#L115-L120)
 
 自由参数与实际执行参数衔接需要约束。
 
@@ -1251,8 +1262,6 @@ Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d2
 
 **依据 3 · 源码核查**：[lib/guard.js:59-66](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/lib/guard.js#L59-L66)
 
-Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d24039c579b644101577383ef5734fff78d43439` · 相对路径 `lib/guard.js` · 行 59–66。文件 SHA-256：`e1660aaa9cae29529636dc3a054fc9205b54345427ae35aed06df1b29db98d0c`。
-
 当前权限来源是路径集合，没有环境对象身份。
 
 ```text
@@ -1266,11 +1275,11 @@ export function guardAllowedPath(requested, sessionRoot, extraRoots, label) {
   throw new OutsideWorkspaceError(target, primary, label)
 ```
 
-#### 未知项
+#### 缺口
 
-- **未知：**设计未实现，隔离能力和用户确认负担未知。
+- 设计未实现，隔离能力和用户确认负担未知。
   **影响：**不能主张安全性或端到端效率已改善。
-  **下一步：**先实现仅可审阅计划的原型，在丢弃环境跑预设反例与手工基线。
+  **进一步探讨：**可从可审阅的操作计划原型入手，比较边界反例下的隔离效果、正常任务通过情况和额外确认负担。
 
 <a id="research-q09"></a>
 
@@ -1279,8 +1288,6 @@ export function guardAllowedPath(requested, sessionRoot, extraRoots, label) {
 ### Q09 · 现在适合谁试用，怎样验收并决定停止？
 
 **研究主题：**采用判断
-
-**回答状态：**部分回答，仍有缺口
 
 #### 完整回答
 
@@ -1294,9 +1301,10 @@ export function guardAllowedPath(requested, sessionRoot, extraRoots, label) {
 
 **依据 1 · 作者声明**：[README.md:23-43](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/README.md#L23-L43)
 
-Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d24039c579b644101577383ef5734fff78d43439` · 相对路径 `README.md` · 行 23–43。文件 SHA-256：`286a6abbb6b8a7ff576670d3c5b38adc35ef35bb14706f78739de676ca5b3b27`。
-
 安装前提与重启要求。
+
+<details>
+<summary>查看原文（21行）</summary>
 
 ````text
 ## Requirements
@@ -1322,11 +1330,14 @@ dsh plugin --profile web add link:<absolute-path-to-this-repo>
 Then **restart the DSH backend** — the host composition loads at process start. The tools appear in new sessions: `pyenv_discover`, `pyenv_create`, `pyenv_install`, `pyenv_uninstall`, `pyenv_remove`, plus the `python-env` skill.
 ````
 
+</details>
+
 **依据 2 · 源码核查**：[lib/policy.js:27-40](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/lib/policy.js#L27-L40)
 
-Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d24039c579b644101577383ef5734fff78d43439` · 相对路径 `lib/policy.js` · 行 27–40。文件 SHA-256：`773db36fe50e84beef6f9319f4e48511e3f5b76273b6d8fbef1178d5ee909548`。
-
 只读与缺策略的验收基准。
+
+<details>
+<summary>查看原文（14行）</summary>
 
 ```text
 export function assertWritableSession(ctx, exec, action) {
@@ -1345,11 +1356,14 @@ export function assertWritableSession(ctx, exec, action) {
   return mode
 ```
 
+</details>
+
 **依据 3 · 源码核查**：[lib/tools/install.js:174-196](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/lib/tools/install.js#L174-L196)
 
-Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d24039c579b644101577383ef5734fff78d43439` · 相对路径 `lib/tools/install.js` · 行 174–196。文件 SHA-256：`5582df9738f3cf6450ded7a7cfcfc312c150b06f9aef47df3051b253a170eb2e`。
-
 采用建议受参数边界缺口影响。
+
+<details>
+<summary>查看原文（23行）</summary>
 
 ```text
           const specs = []
@@ -1377,11 +1391,14 @@ Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d2
           const normalizedSpecs = validateAndNormalizeSpecs(specs, ws, extraRoots)
 ```
 
+</details>
+
 **依据 4 · 源码核查**：[lib/skill.js:31-43](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/lib/skill.js#L31-L43)
 
-Git 定位：仓库 `https://github.com/AngelosZou/dsh-python-env` · 提交 `d24039c579b644101577383ef5734fff78d43439` · 相对路径 `lib/skill.js` · 行 31–43。文件 SHA-256：`c6bfa918d36aff59287e2d36bdacbe25c4d143f5354b59037fa19c24c320beb4`。
-
 显式解释器与第三方代码风险需继续人工承担。
+
+<details>
+<summary>查看原文（13行）</summary>
 
 ```text
 ## Running code from an environment
@@ -1399,10 +1416,6 @@ Run tests and scripts with that interpreter so installed packages are importable
 - Installing packages executes third-party code — install only what the task needs, prefer pinned versions, and remember any environment is disposable with \`pyenv_remove\`.
 ```
 
-#### 未知项
-
-- **未知：**没有安装、真实宿主、核心任务及禁用/卸载验收。
-  **影响：**不足以建议持续安装或普通profile直接试用。
-  **下一步：**先修约束并保存同版本宿主验收，按目标选择、路径反例及完整任务结果重新评估。
+</details>
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
