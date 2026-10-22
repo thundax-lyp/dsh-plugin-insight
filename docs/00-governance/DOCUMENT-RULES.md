@@ -37,7 +37,8 @@ Convivium 的会议设计、运行时角色和专用工程门禁不构成本工�
 |---|---|
 | [DOCUMENT-RULES.md](DOCUMENT-RULES.md) | 文档职责、命名、读取、生命周期及同步规则 |
 | [DATA-CONTRACT.md](../../.agents/skills/_shared/references/DATA-CONTRACT.md) | 研究身份、字段语义、版本证据、关联依赖及增量不变量 |
-| [RESEARCH-STANDARD.md](../../.agents/skills/dsh-plugin-insight/references/RESEARCH-STANDARD.md) | 分类含义、研究维度、证据边界及判断方法 |
+| [RESEARCH-STANDARD.md](../../.agents/skills/dsh-plugin-insight/references/RESEARCH-STANDARD.md) | 分类含义、共同证据边界及研究问题方法路由 |
+| [SCORING-STANDARD.md](../../.agents/skills/dsh-plugin-insight/references/SCORING-STANDARD.md) | 创新分与采用推荐分的分项、证据门槛及判断方法 |
 | [OUTPUT-STANDARD.md](../../.agents/skills/dsh-plugin-init/references/OUTPUT-STANDARD.md) | 研究文件位置、命名、报告结构、统计及交付验收 |
 | [COMMIT-RULES.md](COMMIT-RULES.md) | 提交授权、范围、消息格式、验证及历史安全 |
 | [PR-RULES.md](PR-RULES.md) | 分支、PR、评审、CI 与合并边界 |

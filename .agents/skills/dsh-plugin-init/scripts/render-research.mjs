@@ -9,7 +9,7 @@ import addFormats from 'ajv-formats';
 import { ROOT, read, validate as validateCatalog } from '../../_shared/scripts/plugin-data.mjs';
 import { validateMetadata } from '../../dsh-plugin-insight/scripts/capture-plugin-meta.mjs';
 import { template } from './publication/template.mjs';
-import { renderDetailLayout } from './publication/detail-layout.mjs';
+import { renderDetailLayout, splitSections } from './publication/detail-layout.mjs';
 import {
     categoryGroups,
     renderCategoryIndex,
@@ -43,7 +43,34 @@ function local(root, path) {
     if (isAbsolute(path) || relative(root, full).startsWith('..')) throw Error('path must be inside project');
     return full;
 }
+function normalizeLegacyTrial(text) {
+    let questions = false,
+        fence = null;
+    return text
+        .split('\n')
+        .map((line) => {
+            const marker = line.match(/^ {0,3}(`{3,}|~{3,})(.*)$/);
+            if (marker) {
+                if (!fence) fence = marker[1];
+                else if (marker[1][0] === fence[0] && marker[1].length >= fence.length && !marker[2].trim())
+                    fence = null;
+            } else if (!fence && /^## /.test(line)) questions = line === '## 研究问题与完整回答';
+            return questions ? line : line.replaceAll('条件试用', '试用');
+        })
+        .join('\n');
+}
 export function renderDetailReport(report, item) {
+    const sections = splitSections(report);
+    const questions = sections.filter((part) => part.title === '研究问题与完整回答');
+    if (questions.length > 1) throw Error('duplicate complete research question section');
+    if (questions.length) {
+        const rest = sections
+            .filter((part) => part.title !== '研究问题与完整回答')
+            .map((part) => (part.title ? `## ${part.title}\n\n${part.body}` : part.body))
+            .join('\n\n');
+        return renderDetailReport(rest, item) + '\n\n## 研究问题与完整回答\n\n' + questions[0].body;
+    }
+
     const versionUrl = `https://github.com/${item.repository}/tree/${item.revision}${item.path ? `/${item.path}` : ''}`;
     const shortParagraphs = new Set(
         [...report.matchAll(/^- \*\*(?:用途|亮点|思考|关键质疑|建议)(?:：\*\*|\*\*：)(.+)$/gm)].map((match) =>
@@ -131,11 +158,18 @@ export function renderPublication(input, root = ROOT, context = null) {
             )
                 throw Error(`pinned author summary required: ${i.id}`);
             if (!report.includes(`> ${summary.text}`)) throw Error(`detail summary differs: ${i.id}`);
+            const summarySections = splitSections(report);
+            const summarySource = summarySections.some((part) => part.title === '研究问题与完整回答')
+                ? summarySections
+                      .filter((part) => part.title !== '研究问题与完整回答')
+                      .map((part) => (part.title ? `## ${part.title}\n\n${part.body}` : part.body))
+                      .join('\n\n')
+                : report;
             const labels = ['用途', '亮点', '思考', '建议'];
             const shortItems = labels.map((label) => {
                 const sourceLabel = label === '思考' ? '(?:思考|关键质疑)' : label;
                 const matches = [
-                    ...report.matchAll(new RegExp(`^- \\*\\*${sourceLabel}(?:：\\*\\*|\\*\\*：)(.+)$`, 'gm'))
+                    ...summarySource.matchAll(new RegExp(`^- \\*\\*${sourceLabel}(?:：\\*\\*|\\*\\*：)(.+)$`, 'gm'))
                 ];
                 if (matches.length !== 1) throw Error(`detail needs one ${label}: ${i.id}`);
                 return template('SHORT-ITEM', { label, text: matches[0][1] });
@@ -152,7 +186,7 @@ export function renderPublication(input, root = ROOT, context = null) {
             const advice = input.advice?.[i.id];
             if (advice && advice.revision !== i.revision) throw Error(`advice revision differs: ${i.id}`);
             if (advice && !report.includes(advice.text)) throw Error(`detail advice differs: ${i.id}`);
-            const usageConditions = advice?.text ?? report.match(/^- \*\*建议(?:：\*\*|\*\*：)(.+)$/m)[1].trim();
+            const usageConditions = advice?.text ?? summarySource.match(/^- \*\*建议(?:：\*\*|\*\*：)(.+)$/m)[1].trim();
             const anchor = `plugin-${plugin.repository_id}-${plugin.component_id}`;
             const path = input.metadata?.[i.id];
             let npmDownloads = null,
@@ -321,7 +355,7 @@ export function renderPublication(input, root = ROOT, context = null) {
             });
             return {
                 path: e.detailPath,
-                content: renderReadingNavigation(e.detail, navigation, e.longRead).replaceAll('条件试用', '试用')
+                content: normalizeLegacyTrial(renderReadingNavigation(e.detail, navigation, e.longRead))
             };
         }),
         registry

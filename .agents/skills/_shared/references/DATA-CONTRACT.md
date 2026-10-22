@@ -69,7 +69,7 @@
 
 ## 创新评分数据
 
-- 当前插件的 `innovation_scores` 保存唯一评分真相，结构见 catalog Schema；评分方法仅由洞察 Skill 的[研究规范](../../dsh-plugin-insight/references/RESEARCH-STANDARD.md#创新评分标准innovation-v1)维护，发布输入不复制评分。
+- 当前插件的 `innovation_scores` 保存唯一评分真相，结构见 catalog Schema；评分方法仅由洞察 Skill 的[研究规范](../../dsh-plugin-insight/references/SCORING-STANDARD.md#创新评分标准innovation-v1)维护，发布输入不复制评分。
 - 保存 `rubric`、固定源码 `revision`、`reviewed_at`、`status` 和 `dependencies`；technical／business 各含 criteria、score、rationale、basis、evidence_ids。分项缺失用null，任何分项为null时该轴score必须为null；其余情况下score必须等于分项和。
 - 数值必须符合对应权重的档位，理由非空，引用本插件已有证据；数值轴须有可核查证据及supported／interpretation判断性质，unverified不能携带数值轴总分。评分复核时间不得晚于插件检查时间。current评分须有对应revision的源码核查证据及自身code指纹依赖，引用的依赖必须可定位。
 - 评分进入分析摘要绑定；修改评分须同步当前记录的analysis摘要。新研究stage要求显式提交本轮两轴评分（允许null及缺口说明），版本必须匹配，复核时间不得早于会话截止时间。
@@ -82,7 +82,7 @@
 
 - `decision` 为 unassessed（未评估）、not_recommended（不推荐）、observe（观察）、trial（试用）、install（值得安装）。不在推荐页不等于不推荐；不可从旧名单缺席推断结论。
 - `reason` 用一行说明适合谁、推荐或不推荐的理由及关键条件。已评估项保存 adoption-v1 的四项 criteria（score、rationale）、总分 score、固定 revision、独立 reviewed_at、evaluator、evidence_ids 和 dependencies。推荐复核时间独立于源码检查时间，不借此刷新研究截止时间。
-- 未评估项 reason 说明缺口，score、criteria、revision、reviewed_at、evaluator 为 null，证据与依赖为空，status=current；null 不是0。已评估项必须有完整分项、数值总分和同版本源码证据。评分方法与结论含义见[研究规范](../../dsh-plugin-insight/references/RESEARCH-STANDARD.md#采用推荐评分adoption-v1)。
+- 未评估项 reason 说明缺口，score、criteria、revision、reviewed_at、evaluator 为 null，证据与依赖为空，status=current；null 不是0。已评估项必须有完整分项、数值总分和同版本源码证据。评分方法与结论含义见[研究规范](../../dsh-plugin-insight/references/SCORING-STANDARD.md#采用推荐评分adoption-v1)。
 - status=current／needs_review 表示结论有效性，不增加第六种推荐结论。当前推荐须匹配自身 code 指纹、固定分析版本与全部依赖；依赖变化保留原分和理由并置 needs_review，不自动升降级。脚本变化标记另由 META 控制暂停入榜。
 - install 的引用证据必须包含同版本、带 artifact 和 environment 的 host_acceptance；高分不能绕过验收。真实安装、核心功能与禁用／卸载内容仍须逐项审阅。
 - 新研究 stage 必须显式提交已评估的本轮结论、四项评分及理由，不接受 unassessed；总分由脚本求和，不能以创新分、Star、下载量或关键词推断。旧观察允许缺字段以供恢复；正式迁移逐项补 unassessed，只有已实际评估的项补分。
@@ -167,3 +167,9 @@
 - 已合并记录的后续变化通过新增量替换当前状态，旧状态可由 Git 查询；不要求重新创建旧轮次或保留所有本地原件。
 - 清理前检查当前引用、未合并状态与活动锁；当前仍引用的材料先迁入正式位置并校验，再清理过程副本。
 - 旧迁移记录及清理脚本仅适用于其原有归档格式。适配新模型前不得用旧工具扩大删除范围，也不得删除现有材料来绕过校验。更新规范本身不执行数据迁移。
+
+## 逐题研究材料与正式报告
+
+新单插件装配输入的 research_questions 由[问题交付 Schema](../schemas/research-questions.schema.json)约束，研究执行以[逐题流程](../../dsh-plugin-insight/references/QUESTION-WORKFLOW.md)为准。它是研究输入与过程结构，不新增 catalog 字段，不改既有分析摘要或身份。逐题完整回答、状态、固定版本证据定位与原文、未知项必须写入正式 reports；源材料仍通过 artifacts 保存。主题覆盖、文本、ID和源码位置可机械校验，论证充分性与结论真实性须逐题审阅。
+
+已合并的当前研究不能依赖 PLAN、逐题本地文件或 ANALYSIS 存在；清理过程副本前验证正式报告和必要证据足以独立回读。历史报告缺少逐题结构时保持原状态，不从旧摘要补造研究，不因展示重生成升级研究深度或验收状态。

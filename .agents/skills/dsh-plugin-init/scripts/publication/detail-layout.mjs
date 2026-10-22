@@ -75,6 +75,7 @@ export function renderDetailLayout(report, item, { meta, issues, advice, capabil
     const cost = take(/^成本与效果$/);
     const compatibility = take(/^分发与兼容$/);
     const capabilityBody = take(/^能力清单$/);
+    const questionAnswers = take(/^研究问题与完整回答$/);
     const contribution = take(/核心贡献/);
     const questions = take(/关键质疑/);
     const hypothesis = take(/创新推演|未来设计假设/);
@@ -163,5 +164,5 @@ export function renderDetailLayout(report, item, { meta, issues, advice, capabil
               technical: join([technical, questions, remainder]),
               checks: join([checks, supplemental])
           });
-    return shortLinks(output) + '\n';
+    return join([shortLinks(output), section('## 研究问题与完整回答', questionAnswers)]) + '\n';
 }

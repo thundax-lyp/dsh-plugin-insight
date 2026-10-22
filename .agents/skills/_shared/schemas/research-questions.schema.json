@@ -1,0 +1,136 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "goal",
+        "questions"
+    ],
+    "properties": {
+        "goal": {
+            "type": "string",
+            "minLength": 1
+        },
+        "questions": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                    "id",
+                    "topics",
+                    "question",
+                    "answer",
+                    "status",
+                    "evidence",
+                    "unknowns"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "pattern": "^Q[0-9]{2,}$"
+                    },
+                    "topics": {
+                        "type": "array",
+                        "minItems": 1,
+                        "uniqueItems": true,
+                        "items": {
+                            "enum": [
+                                "scenario",
+                                "mechanism",
+                                "contribution",
+                                "limitations",
+                                "dependencies",
+                                "cost",
+                                "engineering",
+                                "hypothesis",
+                                "adoption"
+                            ]
+                        }
+                    },
+                    "question": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "answer": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "status": {
+                        "enum": [
+                            "answered",
+                            "partial",
+                            "unknown",
+                            "not_applicable"
+                        ]
+                    },
+                    "evidence": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "required": [
+                                "kind",
+                                "source_path",
+                                "line_start",
+                                "line_end",
+                                "observation"
+                            ],
+                            "properties": {
+                                "kind": {
+                                    "enum": [
+                                        "author_claim",
+                                        "source_inspection"
+                                    ]
+                                },
+                                "source_path": {
+                                    "type": "string",
+                                    "minLength": 1
+                                },
+                                "line_start": {
+                                    "type": "integer",
+                                    "minimum": 1
+                                },
+                                "line_end": {
+                                    "type": "integer",
+                                    "minimum": 1
+                                },
+                                "observation": {
+                                    "type": "string",
+                                    "minLength": 1
+                                }
+                            }
+                        }
+                    },
+                    "unknowns": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "required": [
+                                "issue",
+                                "impact",
+                                "next_step"
+                            ],
+                            "properties": {
+                                "issue": {
+                                    "type": "string",
+                                    "minLength": 1
+                                },
+                                "impact": {
+                                    "type": "string",
+                                    "minLength": 1
+                                },
+                                "next_step": {
+                                    "type": "string",
+                                    "minLength": 1
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
