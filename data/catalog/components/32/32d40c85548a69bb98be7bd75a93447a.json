@@ -445,14 +445,14 @@
             "repository": "534119219/chicheng-peak",
             "path": "",
             "revision": "b89dc9a63eb270736fae63e43445b421477c02ab",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "d853de835f4aa1c6451145779723f6fe1d85b47722341d99f75c4cee0bbaa44f",
                 "code": "b89dc9a63eb270736fae63e43445b421477c02ab",
                 "maintenance": "f13afab74f3d6fbc99477910496df43d9edbfa520fdf0b41f01ab6969f7c1e86"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

@@ -7,14 +7,14 @@
             "id": "github:1404193210:dsh-plugin",
             "repository": "Ianzhyh/workbuddy-to-dsh",
             "path": "dsh-plugin",
-            "revision": "9f5dfbb0b07a8b19650cf6c29e160e8fe7b2d50c",
+            "revision": "00b59e851a41fd14e32208692d3977bd0dccbbee",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "f365f2921d737f762c1fd3f17dc54d47aacb73cfefaa1ee51f313ed266b4e05e",
-                "code": "9f5dfbb0b07a8b19650cf6c29e160e8fe7b2d50c",
-                "maintenance": "cbdac399f046253c92e278155d3a7a5888c86186b80fd89ea56375c2cbff97b6"
+                "code": "00b59e851a41fd14e32208692d3977bd0dccbbee",
+                "maintenance": "7b11d78cb21f87b173d9f8d713a2e07d516f687c5598c18ac08c2cba520a505e"
             }
         }
     }

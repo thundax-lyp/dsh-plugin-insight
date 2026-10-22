@@ -7,14 +7,14 @@
             "id": "github:1401876969:root",
             "repository": "BangBang-03/dsh-client-ui-quote",
             "path": "",
-            "revision": "3d0610a9d735945ddd58ff6ea23116bc7a3aab61",
+            "revision": "ad192f9511f8ab42c61c86bf53d07299fa8d175c",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "ee37e2dd54b5ba4ceb7d1d1f0f20bd027daff8dcce8e7683a09a9c61aa71ce0d",
-                "code": "3d0610a9d735945ddd58ff6ea23116bc7a3aab61",
-                "maintenance": "a737c8e659dae4f56c7ac794953a60a8603436fd05dd8d0f984de9a6ef1e03ca"
+                "code": "ad192f9511f8ab42c61c86bf53d07299fa8d175c",
+                "maintenance": "e3e26cb55d310ca2fbcbf7ff8d661a4ab334fe5dbc53fa262d29b6394ed44338"
             }
         }
     }

@@ -7,14 +7,14 @@
             "id": "github:1388380650:root",
             "repository": "kangtsang/dsh-worktree-space",
             "path": "",
-            "revision": "d03871af436d1703752f4aaf489ba71505491ee9",
+            "revision": "4a784dfd2f3216d0a3791713d411497300f898cc",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "a6c9e64adc82cbcf81fb3186a86f04838e2605618a5650b374a9e4c4c3018c92",
-                "code": "d03871af436d1703752f4aaf489ba71505491ee9",
-                "maintenance": "5015cfa53bcfa413b8496179ce9b7bc730c18304f30f20c16416b400ebeb62a1"
+                "code": "4a784dfd2f3216d0a3791713d411497300f898cc",
+                "maintenance": "c6eb745ac42405592b956a0f194a9e0dfeee2697be3851e19f3d6c0786d98b6e"
             }
         }
     }

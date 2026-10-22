@@ -7,14 +7,14 @@
             "id": "github:1365336780:plugins-mcwiki-search",
             "repository": "Yinxe/dshp",
             "path": "plugins/mcwiki-search",
-            "revision": "05138744877ff041210fa7e71e5c2446da017f14",
+            "revision": "19f0d18c41626896acc40e0510e9dc790c400fa6",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "a0da05f941295bbef33fe9713a6ac50ee4b5292d1876e2444e625399fa3448ba",
-                "code": "05138744877ff041210fa7e71e5c2446da017f14",
-                "maintenance": "9cf94ef1ccebddf1fd5f018f35276c1d0f1108cfe23d180768b06f734ba4b97a"
+                "code": "19f0d18c41626896acc40e0510e9dc790c400fa6",
+                "maintenance": "42981045ba57c24b2a2240272be2d3a8022ca948be21de99ca13d9005c076b16"
             }
         }
     }

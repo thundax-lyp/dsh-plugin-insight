@@ -7,14 +7,14 @@
             "id": "github:1410766419:root",
             "repository": "dsh-plugin-collection/dsh-group-status",
             "path": "",
-            "revision": "145ecf34ccb091cffa039fd7a0b219115cf1ce22",
+            "revision": "b1735eddd9a9043217f273bcf280240b79b5e9c1",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "d7d9b4b5d232658f2f23b42e952a1dc79ddf84080568b53cb85a605f6c6605a0",
-                "code": "145ecf34ccb091cffa039fd7a0b219115cf1ce22",
-                "maintenance": "26ecdabb7a026b77896faa37fc4f64f6db4b6796b5f20731389b0df575bc56f5"
+                "code": "b1735eddd9a9043217f273bcf280240b79b5e9c1",
+                "maintenance": "5a929ad54d83a5dbe52648582129c72cf45ff1679b2233c2a6c8b5b8fa8a26e8"
             }
         }
     }

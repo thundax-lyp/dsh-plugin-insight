@@ -7,14 +7,14 @@
             "id": "github:1335758340:root",
             "repository": "memorax-ai/dsh-webui-studio",
             "path": "",
-            "revision": "99fc12eab9185dabf0cac47f68f01efef75e96ca",
+            "revision": "11fdfed8d7be6d85fbfd5b68cdf56bbd4a675089",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "8f7755132ca4344d42891fca6ccc885675e24dcf04934d6f1c4c68f43d4b865a",
-                "code": "99fc12eab9185dabf0cac47f68f01efef75e96ca",
-                "maintenance": "e9b1b855f660d63c94e45544190ec1bd152a95280b6e8dee936ce7c407170432"
+                "code": "11fdfed8d7be6d85fbfd5b68cdf56bbd4a675089",
+                "maintenance": "3cb9766f0ee00674c8c8b5b00a57d80f5e0d842bc0ca80556dab6d909aef0244"
             }
         }
     }

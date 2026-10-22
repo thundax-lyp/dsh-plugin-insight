@@ -7,14 +7,14 @@
             "id": "github:1425388074:root",
             "repository": "wilsonchengassistant/dsh-quick-workspace",
             "path": "",
-            "revision": "86e506248e1d8360d8926ab3e224e07a5aac57aa",
+            "revision": "298d352677442a2a5be7897b2c2f1d5ca4d25b1e",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "da047bdab82f3bb5124c3d13602f152e4cdcfc13147b1578d9be19d92660661c",
-                "code": "86e506248e1d8360d8926ab3e224e07a5aac57aa",
-                "maintenance": "86c43b617dc09476e33f6cc71f70f6087bc1cbabc7c2ae7376e2dedbc4833eac"
+                "code": "298d352677442a2a5be7897b2c2f1d5ca4d25b1e",
+                "maintenance": "1a8b135efa25be2ae2a834d5219db66e8ada1ed6506268d002c1c31b194bc374"
             }
         }
     }

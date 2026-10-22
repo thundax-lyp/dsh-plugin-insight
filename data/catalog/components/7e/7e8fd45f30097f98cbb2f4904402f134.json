@@ -7,14 +7,14 @@
             "id": "github:1425756303:root",
             "repository": "lj100886/dsh-framework-doctor",
             "path": "",
-            "revision": "da76ea6d8f774f31823904a8668e56fdc9c24832",
+            "revision": "4846dfde79631c8eb119ef2b7cdc91bcf9b68b76",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "a6fdea2bb9d685337b23da173935ccb4704a4ba966d20968423307817a8b2f45",
-                "code": "da76ea6d8f774f31823904a8668e56fdc9c24832",
-                "maintenance": "80861cce709a383ef5150e347a4db0706eb5cf560627fe372527f446ba13b028"
+                "code": "4846dfde79631c8eb119ef2b7cdc91bcf9b68b76",
+                "maintenance": "d688d1b864dc21540ca10fa86661d32ff5aada7a314571481eb414dbe217c185"
             }
         }
     }

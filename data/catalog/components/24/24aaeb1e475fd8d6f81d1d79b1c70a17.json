@@ -7,14 +7,14 @@
             "id": "github:1375307195:root",
             "repository": "Jaylor-Wang/dsh-tool-antigravity",
             "path": "",
-            "revision": "c7563d1fe0dd85b2f315e240e236fc34e53b6331",
+            "revision": "cb83cf521e98b779f0d597b11fd764cd5c55f484",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "afd4c4d888aa98c893139c54e77a984d83ef42421bc6c79f01d24e9d25075033",
-                "code": "c7563d1fe0dd85b2f315e240e236fc34e53b6331",
-                "maintenance": "22acc3f4471989a9e586e3c6e81acab368407251e008b2baf09cce908c33de4c"
+                "code": "cb83cf521e98b779f0d597b11fd764cd5c55f484",
+                "maintenance": "202256e3b5e2315e6cb79853080623f99f8cf8ffd7baad105895ffff2a148222"
             }
         }
     }

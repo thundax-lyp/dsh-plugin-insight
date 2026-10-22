@@ -437,14 +437,14 @@
             "repository": "173787247/dsh-wsl-playwright",
             "path": "",
             "revision": "a451fefa0d3dc7454cc0c08c58110c392c64611a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "f73ea03e957507e4697c26d2063904a550c64b1be8690c174e35e99edd10d2c5",
                 "code": "a451fefa0d3dc7454cc0c08c58110c392c64611a",
                 "maintenance": "11535c94b4709a1a816b13c2a8a3e8c181d31c80e51b858b7a8edbdd40372053"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

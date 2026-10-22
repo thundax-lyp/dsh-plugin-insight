@@ -7,14 +7,14 @@
             "id": "github:1374007757:plugins-dsh-codex-auth-plugin",
             "repository": "FNOSP/fnos-dsh",
             "path": "plugins/dsh-codex-auth-plugin",
-            "revision": "414b19708e1de54b530bdfc4730f5c368b819759",
+            "revision": "c5e44aa23c6d316b30a25bdadc157068b1c829bf",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "a8173c4e4550fb9758d45ac9318b65bd5f75f762a074b5429323968114170cf0",
-                "code": "414b19708e1de54b530bdfc4730f5c368b819759",
-                "maintenance": "3334471516f7994da129dce4abfb26f8ba6b3daf2af2c352f73cec681a048c2b"
+                "code": "c5e44aa23c6d316b30a25bdadc157068b1c829bf",
+                "maintenance": "600255837c32faa89f4787173e8adb418023b8bf8e3cf684e1b097c9a2bcd2b1"
             }
         }
     }

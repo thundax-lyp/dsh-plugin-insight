@@ -7,15 +7,15 @@
             "id": "github:1153190876:plugins-dsh",
             "repository": "zilliztech/memsearch",
             "path": "plugins/dsh",
-            "revision": "00092f44d2809676fe959f278432bc07c7cb159a",
+            "revision": "98f0c141436cb8fc7d8203ab279e2e2825c54021",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "380268a8fe7494c8de6ca6e88354c9d5a0522db3e0caac838f7685f7b0d1ede0",
-                "code": "00092f44d2809676fe959f278432bc07c7cb159a",
-                "maintenance": "bce162e3e398c5d24e969602e8ef7a08bc8fff126cdb121d379ad07cf5a6d5b9"
+                "code": "98f0c141436cb8fc7d8203ab279e2e2825c54021",
+                "maintenance": "5c1bc13f6461b0cbd4f27a51a3826c75dc2d145bde973bb56ab8b701d0ea7132"
             }
         }
     }

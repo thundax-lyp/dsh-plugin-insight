@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f20c7fe5b9b73b8ad4c3c05f3f3ac4c7",
+    "identity": "github:1426477683:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1426477683:root",
+            "repository": "9426Haruka/dsh-markdown-live",
+            "path": "",
+            "revision": "1f47a60954fde04b71cf404e8e42124a5d07959e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "10c3a17dbe089b02940f75e16f8875eb2398d263e31e0f43c20710651b772f3d",
+                "code": "1f47a60954fde04b71cf404e8e42124a5d07959e",
+                "maintenance": "ee3b6841fbf57c9c2097fb77df5bf16f7302c223257b60c6c1368534db31801f"
+            }
+        }
+    }
+}

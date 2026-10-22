@@ -7,15 +7,15 @@
             "id": "github:1366664192:root",
             "repository": "lcestou/dsh-oh-my-claude",
             "path": "",
-            "revision": "cc7f3014016e5bc3cd7ce85050de04cf61069901",
+            "revision": "9c6993d67984a78bfb49e29b0006a0f60b1c59c7",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "535b30cb14af22f6f28b889923cac60918682271c2d322871fdb084df3b03d8c",
-                "code": "cc7f3014016e5bc3cd7ce85050de04cf61069901",
-                "maintenance": "884b1468cf43a2f5da6af93403d08115ddf057e17e0d736ed7016db97a179591"
+                "code": "9c6993d67984a78bfb49e29b0006a0f60b1c59c7",
+                "maintenance": "b2ba2e7722ecc846c2b2206733f03b5aee3931cf921479c4aaed8d887e5696d9"
             }
         }
     }

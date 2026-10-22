@@ -7,14 +7,14 @@
             "id": "github:1334025844:root",
             "repository": "Aa728848/dsh-chatgpt-subscription",
             "path": "",
-            "revision": "51fa9e64cad282718a5afc293eb7e6f719797f52",
+            "revision": "1593460606ec08b2566d9d972ff60a0674b5a97d",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "9b79c305e2c9462461b025481333609f7b368c80697f6eaf44c89c850f6fa6b0",
-                "code": "51fa9e64cad282718a5afc293eb7e6f719797f52",
-                "maintenance": "72694d2849ad37b0ea9928c74daef682ea64185b95c960da1c4c8f577192d61f"
+                "code": "1593460606ec08b2566d9d972ff60a0674b5a97d",
+                "maintenance": "8a249a84c31a428bc9c38e76bfa201771c30f888f9edd74661f1806469795d47"
             }
         }
     }

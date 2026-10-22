@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e6fed3173d55334492de14958e3bc69e",
+    "identity": "github:1426518564:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1426518564:root",
+            "repository": "Ledas-as/-deep-seek-harness",
+            "path": "",
+            "revision": "4259c21334004d27929309da1e65bd9aac321a4d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3557b56543f52152aa5813c61c654ebc07975332dee64d8d1ea36d1afaa94a7e",
+                "code": "4259c21334004d27929309da1e65bd9aac321a4d",
+                "maintenance": "da562d1c32c0c440160a30d4b5164dd4bc450cd6db5e1fc7fcee6a180b9420f4"
+            }
+        }
+    }
+}

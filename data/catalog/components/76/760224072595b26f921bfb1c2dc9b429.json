@@ -7,14 +7,14 @@
             "id": "github:1327124384:root",
             "repository": "cosyncing/cosyncing",
             "path": "",
-            "revision": "a4ed5b67cd84dd2c2e4cc7c31c735cb907f26abc",
+            "revision": "317f8374b379268310d3990afbfb0adae1d8e2ee",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "1b493624b4ad1f5243d341e2c2fc42552bb46295a6935bffba6e0dc7b9194d5e",
-                "code": "a4ed5b67cd84dd2c2e4cc7c31c735cb907f26abc",
-                "maintenance": "a25d6758eec0633cc8cbee2457d9bfa53c8e1b1527f40452f7ffbf6e453fb5da"
+                "code": "317f8374b379268310d3990afbfb0adae1d8e2ee",
+                "maintenance": "a30ad1551d1e5e4151effbdc34bd6640cfd1168ae02a7b126a7d946820525a54"
             }
         }
     }

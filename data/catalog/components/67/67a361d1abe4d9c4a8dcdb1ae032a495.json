@@ -7,14 +7,14 @@
             "id": "github:1424110269:root",
             "repository": "HeliosTangDev/dsh-ops-conventions",
             "path": "",
-            "revision": "e8d568fc1e6d56e4ba335f75bc74632b22d10f56",
+            "revision": "bacfa8325d4bc3b01d37ce2eb36fe718964acd82",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "73299a0fa6e6bf2817f9af7e1746c11b3fa6755ac71aa5670f5d123e48e7f721",
-                "code": "e8d568fc1e6d56e4ba335f75bc74632b22d10f56",
-                "maintenance": "d4040f47f809a64d996457a462954d3645ba0c10e4edaf9d7749c0e99ce73411"
+                "code": "bacfa8325d4bc3b01d37ce2eb36fe718964acd82",
+                "maintenance": "b4fa2987e1fd7df5dd371efbbbcf6ead68ff08f3c6dbefa5bfcec0357ebda4e3"
             }
         }
     }

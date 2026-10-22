@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f7bd7e9256e70cced812a80d5a582017",
+    "identity": "github:1427106881:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1427106881:root",
+            "repository": "EmptyVessel-000/dsh-file-history",
+            "path": "",
+            "revision": "e277a144691e1a0bbc281e61af0a2f1c371a8a35",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4a4af179c4213105cbd014a3021a72c4503d8c3bf89570b3871cee2549397b3d",
+                "code": "e277a144691e1a0bbc281e61af0a2f1c371a8a35",
+                "maintenance": "0f9ae539185382a9ba7342882021f4394f39fdd6f24cc2b679a10a69243ae345"
+            }
+        }
+    }
+}

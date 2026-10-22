@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a670eb88a82f6c735d01272ac54ac9bb",
+    "identity": "github:1426550681:packages-shield",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1426550681:packages-shield",
+            "repository": "Sacredbluedragon/dsh-memory-shield",
+            "path": "packages/shield",
+            "revision": "7618644a4240cb98ad75d6c7535b530e3c575016",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7ecf080bb7c912599e92bbb26551b6f3d7c5380a9208e6e1f4485a49c72e47a5",
+                "code": "7618644a4240cb98ad75d6c7535b530e3c575016",
+                "maintenance": "b54bd8ee0802a8522d2ccbc0dfd21ca45517655681b418c41311673b958de5f8"
+            }
+        }
+    }
+}

@@ -7,15 +7,15 @@
             "id": "github:1342131929:root",
             "repository": "IceApriler/dsh-remote-mobile",
             "path": "",
-            "revision": "9f03161c1865acb67729da0bcf67019e8ef97821",
+            "revision": "92934bfe715699bb41959ec10c988b3238b2a9b1",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "c7d56c3284512f4acdd40f063ac6690b12092f2ad2718c5000a0d2485f8013b3",
-                "code": "9f03161c1865acb67729da0bcf67019e8ef97821",
-                "maintenance": "f30657b0aadbf2f19a2c8cb33a20ee230ead7555a2b94e4b1150a987db1db228"
+                "code": "92934bfe715699bb41959ec10c988b3238b2a9b1",
+                "maintenance": "04f1aa7ff648c1f88fecc36ec6ea2bc8dbd4c12d076d6ac6ea3cea415fa86e12"
             }
         }
     }

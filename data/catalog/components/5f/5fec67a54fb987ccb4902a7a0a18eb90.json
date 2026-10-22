@@ -450,14 +450,14 @@
             "repository": "AI-Galaxy-GPU/dsh-sound",
             "path": "",
             "revision": "aa7be415ee34570bd1c834da9d8a500e85401583",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "e1ae4bf9a55eb1d6778a91ae81cb1fdf5acb0c45bcc765f04a460d87fd28d660",
                 "code": "aa7be415ee34570bd1c834da9d8a500e85401583",
                 "maintenance": "d29947e1d8c7e36d6126eb437ff4cf8e3c36a731d99254a49b19cc7f675e7863"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

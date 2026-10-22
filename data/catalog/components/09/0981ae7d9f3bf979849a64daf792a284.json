@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0981ae7d9f3bf979849a64daf792a284",
+    "identity": "github:1376880747:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1376880747:root",
+            "repository": "AloneFu/dsh-calendar-plugin",
+            "path": "",
+            "revision": "6ce4095ef800838f91abc162aa6d6646435f7605",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "259509aa18488920f48856af497b8942f2359b0a109d5e8e49327d4aed4fa9e2",
+                "code": "6ce4095ef800838f91abc162aa6d6646435f7605",
+                "maintenance": "a5586cf18f9644fedb0ea19ba40a11733a3fa675ff236950cf9479c45f6085dc"
+            }
+        }
+    }
+}

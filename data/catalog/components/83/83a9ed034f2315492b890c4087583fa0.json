@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "83a9ed034f2315492b890c4087583fa0",
+    "identity": "github:1334255250:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334255250:root",
+            "repository": "AcidGr/dsh-web-mobile-fix",
+            "path": "",
+            "revision": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8d870625bf344bde336f0472262bdcc667acdef3f0a53ba130f732dd4a636973",
+                "code": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7",
+                "maintenance": "1c1523f88a811e8b3a839f01aa4fd59519d8adbaab1fd531a7f394b4693603ee"
+            }
+        }
+    }
+}

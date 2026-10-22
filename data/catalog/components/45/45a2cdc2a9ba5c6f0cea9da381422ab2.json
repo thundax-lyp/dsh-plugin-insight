@@ -7,14 +7,14 @@
             "id": "github:1382064515:root",
             "repository": "drscrewdriver/dsh-browser-cdp",
             "path": "",
-            "revision": "0e2b7ac01b1e6d6a8f988ef756c205b8293fc84a",
+            "revision": "da9891b9c8ee64b6c4da16d3ae654d0f1166cccd",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "f2c9824f3816205e45d7dfdbf6dbb51a521d61a1ca22452ffe65ba33b79365a0",
-                "code": "0e2b7ac01b1e6d6a8f988ef756c205b8293fc84a",
-                "maintenance": "a0853d621debba38747db337d5e9b72bd07e277672a82de7c28f143903c525de"
+                "code": "da9891b9c8ee64b6c4da16d3ae654d0f1166cccd",
+                "maintenance": "41015814cd7cc6708ea4fbeafa4e3f60d80f02039c43c3f4f4f04d7d5de31f61"
             }
         }
     }

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "432695fc1433af83d18facc608b9e52c",
+    "identity": "github:1339783615:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339783615:root",
+            "repository": "FeatherHunter/dsh-chinese-skill-patch",
+            "path": "",
+            "revision": "a7c1a31aac599bbcf445d107ef8520bda227c591",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "27a5c828bb718c24458ef3c9d68df8c614769a8d8c1770c20681506513151d61",
+                "code": "a7c1a31aac599bbcf445d107ef8520bda227c591",
+                "maintenance": "f002ae1c2b2d17e3383cab2bbde88858e2b3b6e673a44a6315a066304d48cf22"
+            }
+        }
+    }
+}

@@ -7,14 +7,14 @@
             "id": "github:1335625892:root",
             "repository": "LaoYueHanNi/dsh-git-worktree",
             "path": "",
-            "revision": "7540c9a65943c59549aa3cddb492db624720a54d",
+            "revision": "f5717084581121ac551099eaa16d8231a13fcbec",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "5790ed6fcce82f89daa05866d26416148574c9d3735a251a7fffaee2c6531dbb",
-                "code": "7540c9a65943c59549aa3cddb492db624720a54d",
-                "maintenance": "20e05c79ea297531f4d3a3f1bc7d2938c219091ab41e153af1118efc7328aaf8"
+                "code": "f5717084581121ac551099eaa16d8231a13fcbec",
+                "maintenance": "a0be93e049cac67ba9ca5f4e9a0bc1e6a5bf9c41714814d48061022a339d316a"
             }
         }
     }

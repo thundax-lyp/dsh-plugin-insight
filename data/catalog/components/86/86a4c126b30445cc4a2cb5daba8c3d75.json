@@ -7,14 +7,14 @@
             "id": "github:1366449702:root",
             "repository": "huangziyuan-general/dsh-novel-forge",
             "path": "",
-            "revision": "1f1af8a60744d54e5d46f2a4d8ad730e727d296d",
+            "revision": "77294b94f03ec31e20e774b6c786b2f2fc8c4d70",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "528cfb97ef5c6a9ee9bb320a278fd8e9bb199b379e069ecf651dd7a88d245e73",
-                "code": "1f1af8a60744d54e5d46f2a4d8ad730e727d296d",
-                "maintenance": "64a62fc43beb4704b22e24abb06f81c74414680691502b32dd630aa7b869baf0"
+                "code": "77294b94f03ec31e20e774b6c786b2f2fc8c4d70",
+                "maintenance": "4aa446a1e963758f934d44273213eb2bd82a78b5f287403ec77464a56647faf7"
             }
         }
     }

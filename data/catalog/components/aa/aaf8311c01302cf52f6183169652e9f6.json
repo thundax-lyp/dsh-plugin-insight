@@ -7,14 +7,14 @@
             "id": "github:1404374196:root",
             "repository": "Sev7eEn7/dsh-sieve",
             "path": "",
-            "revision": "5b437749c3ef6617bc16008527cbb9e93ea1c4ec",
+            "revision": "d575077b237a6ac058152d2af5830e0a06618403",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "b930a77961f42ec9278bc05ad57d3460ec94555d7360ca6924a1e11b2eb86c12",
-                "code": "5b437749c3ef6617bc16008527cbb9e93ea1c4ec",
-                "maintenance": "a60e27ccab94b33056970f37ca581643592bc9f8e966cc8c6e52a8bcca9ba714"
+                "code": "d575077b237a6ac058152d2af5830e0a06618403",
+                "maintenance": "93c8c2d1cbbc36155ed8b86662752a8f31eab3a5bc4f6932e8b2590508e5a1ab"
             }
         }
     }

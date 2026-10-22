@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0537640dd2cfe28f39f9af271e7d672e",
+    "identity": "github:1335843541:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335843541:root",
+            "repository": "AngelosZou/dsh-python-env",
+            "path": "",
+            "revision": "d24039c579b644101577383ef5734fff78d43439",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2830629836dd359349952dddc0163dbbe8686a9d20c3ef36bb9a8a964381bdea",
+                "code": "d24039c579b644101577383ef5734fff78d43439",
+                "maintenance": "0cea2a48089529051748d1a79343a1bdfec16b55354944d11153ab38c811a2ad"
+            }
+        }
+    }
+}

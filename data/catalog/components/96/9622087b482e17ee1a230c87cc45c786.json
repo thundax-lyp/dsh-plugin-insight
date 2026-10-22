@@ -7,14 +7,14 @@
             "id": "github:1335302697:root",
             "repository": "STARDUSTLC666/dsh-ppt",
             "path": "",
-            "revision": "37f2d0bbbe6d3d33967e787edcbb428de69ca4a3",
+            "revision": "ed5445fa5ca41162dbdc5cfe4249648caf56c6c4",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "8dcff64adfa3681c78748631aa48fb8a8a76f6d9c748c25a251526045fefb28c",
-                "code": "37f2d0bbbe6d3d33967e787edcbb428de69ca4a3",
-                "maintenance": "1f3afdca3c3cf20edafe70ec457117b35875ea5a966c3270ed4e1078f55b6c29"
+                "code": "ed5445fa5ca41162dbdc5cfe4249648caf56c6c4",
+                "maintenance": "9642a40522dc3c23662ad8ba3a276a3f7fd05fd681dda824f0f012341ecd3202"
             }
         }
     }

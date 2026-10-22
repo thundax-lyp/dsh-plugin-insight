@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "67da94afc4a491065ff2be75205e56c2",
+    "identity": "github:1425848328:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425848328:root",
+            "repository": "ddy-007/dsh-client-resume-button",
+            "path": "",
+            "revision": "081009f1e81ffa1d26fc7e7f9890e29c3b7fdddd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6d5dd28e80efb0abb5bdef045533cb900cfe62a08afbe7be02a8a3be75129794",
+                "code": "081009f1e81ffa1d26fc7e7f9890e29c3b7fdddd",
+                "maintenance": "2a10001db8fc74c95d187655f2d99652010039e7c1765b1df7c633d8fe956070"
+            }
+        }
+    }
+}

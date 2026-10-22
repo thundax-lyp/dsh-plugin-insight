@@ -7,14 +7,14 @@
             "id": "github:1352220414:root",
             "repository": "GooDAnDReaDY/dsh-live-canvas",
             "path": "",
-            "revision": "2e5008bd0091158a37a1e3e0a561c8e072b7cd5c",
+            "revision": "4677c9d1f2fd492814ba9ef8e0b88b086e9eb612",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "b671399687381a5eafa30e2d43e47262241d2f2e1b3c01e5021f24fb56eaccf2",
-                "code": "2e5008bd0091158a37a1e3e0a561c8e072b7cd5c",
-                "maintenance": "aad55783f166aefcd6f85b47d39aca503f24dfee2e5c887594bcd0673271041e"
+                "code": "4677c9d1f2fd492814ba9ef8e0b88b086e9eb612",
+                "maintenance": "d6d36a3bfcc5dd715358dfa23c85900dace6be1482ab15c612c8226b18760a47"
             }
         }
     }

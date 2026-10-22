@@ -7,14 +7,14 @@
             "id": "github:1341764343:root",
             "repository": "GooDAnDReaDY/dsh-subscriptions",
             "path": "",
-            "revision": "54e6d563489266f7ab908e692c1296f2bcb0c912",
+            "revision": "80a60c051fdc276c5f91b08b529ae7100aee06be",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "e5e83cf06f8c2dd6a30e09419948825dca414bbceaf5ad545aeb66af43326bcb",
-                "code": "54e6d563489266f7ab908e692c1296f2bcb0c912",
-                "maintenance": "c7cab758e0ebad9fa997f785315f7c366a5d282825f54a9a5b379da20c76f25e"
+                "code": "80a60c051fdc276c5f91b08b529ae7100aee06be",
+                "maintenance": "42bfd83d8e123a23a61d740d412534edf0cb4aea9601f48c2eac6426fbca3ac3"
             }
         }
     }

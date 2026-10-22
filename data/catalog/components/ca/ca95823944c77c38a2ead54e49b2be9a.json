@@ -7,14 +7,14 @@
             "id": "github:1407572157:root",
             "repository": "lcy0121/dsh-plugin-compat-check",
             "path": "",
-            "revision": "a59328d55be6888848d2efa24500c772c61e10ee",
+            "revision": "b4d9f095a1f4a5edb65b38d0ec7e1553238aaf36",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "630667157b69d5db718947a5d2631458b990eb3523e42f33f4dd0f28114af018",
-                "code": "a59328d55be6888848d2efa24500c772c61e10ee",
-                "maintenance": "fa0c885333b2b0b48deb64d516d2cf5d427e8f7b9a75b5f2e240bfda8b082c92"
+                "code": "b4d9f095a1f4a5edb65b38d0ec7e1553238aaf36",
+                "maintenance": "77f55615db63e8351abd17f8dbb64db532e841391579a43b6275abacaffed979"
             }
         }
     }

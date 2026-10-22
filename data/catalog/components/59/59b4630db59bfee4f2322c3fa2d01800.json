@@ -461,14 +461,14 @@
             "repository": "598829314/oil-dsh-title",
             "path": "",
             "revision": "f384454dfbed3ac3f263e7f09e1bc0c210c1abc4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "d63869ed9cc001011d3f0d499096e121dcac3884d610050dd3b64adb8f6d750b",
                 "code": "f384454dfbed3ac3f263e7f09e1bc0c210c1abc4",
                 "maintenance": "e205e56a0ccc0650e40dd86674d8e96b4cfc7e627a9d10dac24c6f0140147a88"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

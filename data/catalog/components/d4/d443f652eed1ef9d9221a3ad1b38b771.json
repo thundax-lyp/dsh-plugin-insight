@@ -7,14 +7,14 @@
             "id": "github:1342024605:root",
             "repository": "BeforeWave/dsh-with-chatgpt",
             "path": "",
-            "revision": "1b84111009507823f43f66f411e3a3aa2b59abca",
+            "revision": "3171ebb29ec0664df0f8f0892c91834a0a99f6b1",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "ebe1cc89c3486110389426b4bd49869ae5b66bdbc805b311044f8e46fcb02c30",
-                "code": "1b84111009507823f43f66f411e3a3aa2b59abca",
-                "maintenance": "e50e8a7344cdea59b4aca0d5a909a17947bdda12767f66627d8008d34d70ed4e"
+                "code": "3171ebb29ec0664df0f8f0892c91834a0a99f6b1",
+                "maintenance": "b44a2091d307afcda1851eddb3d09132f448c333444ac78158ca122c29214aa6"
             }
         }
     }

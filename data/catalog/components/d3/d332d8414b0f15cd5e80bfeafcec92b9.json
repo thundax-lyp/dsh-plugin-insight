@@ -7,14 +7,14 @@
             "id": "github:1333579278:root",
             "repository": "ZASENJC/dsh-plugins-store",
             "path": "",
-            "revision": "39b7efe9317a51e02b4a7b9fa93bab775f39415a",
+            "revision": "6bd48a411321e5187160ebede5df556d0ebed628",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "a68cc7d5b44ff6a552c05503934aa16de9bd4266b44cc6dbd51731e06f3ec58d",
-                "code": "39b7efe9317a51e02b4a7b9fa93bab775f39415a",
-                "maintenance": "4536e3b042d073bdd03968bad2da2377ff60419978a346d580ac91530061bf5e"
+                "code": "6bd48a411321e5187160ebede5df556d0ebed628",
+                "maintenance": "806aaac2a4758963427f31ff11aca0e42807c279f54812d0a4276e0684908dd6"
             }
         }
     }

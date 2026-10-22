@@ -7,14 +7,14 @@
             "id": "github:1363713224:root",
             "repository": "SCP-CN-1059/dsh-zhouli",
             "path": "",
-            "revision": "51b277008d3eabb2af02751f135139ed32ee7dc3",
+            "revision": "8288c9347ae62efa658aa66479f7bb9e060d7bdd",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "e1aba0e3ec6e712fe996245953c7ab0ac72c97c29d611c374d6a463cd2ae62f4",
-                "code": "51b277008d3eabb2af02751f135139ed32ee7dc3",
-                "maintenance": "85b1b5d2fdb5e71e37878c8116d7834519d6d378a7f1cb4297651ce989404e82"
+                "code": "8288c9347ae62efa658aa66479f7bb9e060d7bdd",
+                "maintenance": "6d2996f11801446600949324a2add15b247c20c961fa90639ca8d754021745c5"
             }
         }
     }

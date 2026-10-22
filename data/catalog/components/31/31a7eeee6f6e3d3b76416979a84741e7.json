@@ -7,14 +7,14 @@
             "id": "github:1371788896:root",
             "repository": "fourzkw/dsh-drawai",
             "path": "",
-            "revision": "06ea502f369f5e8b3d8bb3ef36660d277aacb21c",
+            "revision": "485a19c7d20d537b5d93c2be651af288e58d8a9d",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "b7da6b5e8558ddcfaf8d5071b22b742912304a48c92d473a3547d4a70331c0aa",
-                "code": "06ea502f369f5e8b3d8bb3ef36660d277aacb21c",
-                "maintenance": "e9efd728e84d4a6452a478d46937119fe3e5ef7263c365920900d8ab6f030137"
+                "code": "485a19c7d20d537b5d93c2be651af288e58d8a9d",
+                "maintenance": "22a9ca0c3201c8ec9d89a8f581f26ac16cb3317b486186eb8c96fe88b2d7bfc8"
             }
         }
     }

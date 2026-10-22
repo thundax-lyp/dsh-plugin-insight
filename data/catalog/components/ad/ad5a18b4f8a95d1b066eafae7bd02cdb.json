@@ -7,14 +7,14 @@
             "id": "github:1389364177:root",
             "repository": "copylee711/dsh-free-search",
             "path": "",
-            "revision": "681272b17dca3930bf188e62950ac48dda76fb89",
+            "revision": "4bdf6eea6080a8510f1b3f9358105e961618ec01",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "efa3f002fe4201bfc8ec7d7961fa8cfa4daa62d15e3e1b1f227c3732d063c534",
-                "code": "681272b17dca3930bf188e62950ac48dda76fb89",
-                "maintenance": "085cba1a6aaef3fb9fed39a47efc484f97c881f0d66399d48a4adfc068780a03"
+                "code": "4bdf6eea6080a8510f1b3f9358105e961618ec01",
+                "maintenance": "9ad46d937dd5a4310ac295f5d616a8928310678c16c49ed82be6d56b2b81704c"
             }
         }
     }

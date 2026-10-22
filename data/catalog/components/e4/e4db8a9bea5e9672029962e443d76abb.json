@@ -480,14 +480,14 @@
             "repository": "863683348/dsh-memory-setup",
             "path": "",
             "revision": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "7e1b1aeac5596f5376f2aadc4cb56a7e611857341145438b0ba54e3b44608398",
                 "code": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43",
                 "maintenance": "8c47435f1e3bfb07eab201310eac88e82fac751f0554f4b1fa84ac9be86a1760"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

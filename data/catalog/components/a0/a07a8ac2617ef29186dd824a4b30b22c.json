@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a07a8ac2617ef29186dd824a4b30b22c",
+    "identity": "github:1356896576:dsh-capmap-viz",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1356896576:dsh-capmap-viz",
+            "repository": "1741505640/capmap-skills",
+            "path": "dsh-capmap-viz",
+            "revision": "49228e54a6a536ddbbb0adca85bd016334cbf4cc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b5d7bfdb1a08dfc63f59d2fbd959b8942cb8278d88dbe9bf71c4dba339b09e3d",
+                "code": "49228e54a6a536ddbbb0adca85bd016334cbf4cc",
+                "maintenance": "d255235e70751e9221d398baa4de646625300a79fd213f90b3621a2edf80c26b"
+            }
+        }
+    }
+}

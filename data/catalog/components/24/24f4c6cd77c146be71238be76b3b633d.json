@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "24f4c6cd77c146be71238be76b3b633d",
+    "identity": "github:1410395082:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1410395082:root",
+            "repository": "AIcivilization/dsh-model",
+            "path": "",
+            "revision": "1f81707469157449afc73b76fc281228e3641436",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8f33f4eb70e6eed3d1056dee2c3dfda1b9145839a39a35fab2e22eebb938fca0",
+                "code": "1f81707469157449afc73b76fc281228e3641436",
+                "maintenance": "a58f68dbed91ca2e31cdcde4024296a67622f444735243b3ac8211034b46d67a"
+            }
+        }
+    }
+}

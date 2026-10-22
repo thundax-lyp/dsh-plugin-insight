@@ -7,15 +7,15 @@
             "id": "github:1333685863:root",
             "repository": "Ychris12138/dsh-usage-stats",
             "path": "",
-            "revision": "faeb2af5ade773fe842724b6d14502b5e0ae4ce3",
+            "revision": "96ec808d92385a6e6abdc8ca3231cb89a9aeba94",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "355b38d4bad564f70ee5b5369172337fdcde025ba986865fb34fdf2355f33d00",
-                "code": "faeb2af5ade773fe842724b6d14502b5e0ae4ce3",
-                "maintenance": "eed10846af1f2cce0366c0c2ebd9628da16a25191255f094e085793ec8d12b89"
+                "code": "96ec808d92385a6e6abdc8ca3231cb89a9aeba94",
+                "maintenance": "84904caa7bf9b68681d9df16060871320ce139179484f81b57d15ffa9971028a"
             }
         }
     }

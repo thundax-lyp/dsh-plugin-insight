@@ -449,14 +449,14 @@
             "repository": "173787247/dsh-wsl-registry",
             "path": "",
             "revision": "ec36b50ceab4f15549c2b2ac7f97033084a3eb56",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "45e9081277b0ea219d757c798cce42dda7254e7b7b841ddf692cb2afe2d9afcf",
                 "code": "ec36b50ceab4f15549c2b2ac7f97033084a3eb56",
                 "maintenance": "c73133540fb0bf94168ab1dd149e641d946b6b25c4a1d001118e841d68c5cf1b"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

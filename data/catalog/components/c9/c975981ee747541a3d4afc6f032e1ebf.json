@@ -7,14 +7,14 @@
             "id": "github:1409970706:root",
             "repository": "peijiping/dsh-plugin-zotero",
             "path": "",
-            "revision": "d818687d7d4e919834c1c7a0a9e452cdca230303",
+            "revision": "4f6671331bd568369f3ff45b69f7c893251d00d5",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "5a6a0e384eb842c6522032222c0f10079e8d25b135d97120e95f08b3df30d682",
-                "code": "d818687d7d4e919834c1c7a0a9e452cdca230303",
-                "maintenance": "1177c45a4896e26d594be7e7c6f55cfbf3840b35d69c59d05a0c023879963432"
+                "code": "4f6671331bd568369f3ff45b69f7c893251d00d5",
+                "maintenance": "94a214f1d51af452a55aef8aa1e12239d3c6a54302af32cc77893bbf7a33a68f"
             }
         }
     }

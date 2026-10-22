@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d7ac0aeea7ea85f75dbfb14e6cf4ffad",
+    "identity": "github:1413052822:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1413052822:root",
+            "repository": "2026heshao/dsh-armory",
+            "path": "",
+            "revision": "122670a78a15c0df803094dbd0db2fa65d336435",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "33bae3478ea95a31feddf1e4b7597c7ee8af25021a50eed1d2bd08473eeda5a2",
+                "code": "122670a78a15c0df803094dbd0db2fa65d336435",
+                "maintenance": "ed0faf22f52ebe9cc8a1065e6275fb7f5567a1f49353df3c8ca3ee5951f664bf"
+            }
+        }
+    }
+}

@@ -7,15 +7,15 @@
             "id": "github:1333738786:root",
             "repository": "HsiangNianian/dsh-auto-continue",
             "path": "",
-            "revision": "549c027c03cd9b17c8109300658dd4dac4cf6c17",
+            "revision": "ad1939c11d7c02ae3b71607b3baf2f50dc8f896e",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "9c1d2e7e4c8b7bd86e55996fa3c1ad04e2cd0fac08e18c50c5d707e4431dd01f",
-                "code": "549c027c03cd9b17c8109300658dd4dac4cf6c17",
-                "maintenance": "413d9a88e46ecbf9fe24fe89c944344d066799bf3a7b730dd9498df4a0e8284c"
+                "code": "ad1939c11d7c02ae3b71607b3baf2f50dc8f896e",
+                "maintenance": "934eb8f1d7303656a7b0161c87611bc6e215abb0d9b8dcd7bcc0959c8a842ac5"
             }
         }
     }

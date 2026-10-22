@@ -461,14 +461,14 @@
             "repository": "173787247/dsh-wsl-encoding",
             "path": "",
             "revision": "029c5b6d2b99b78444084383686a4da8ed87be50",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "5984163e028913c2add5a90a2c2900befd6a143bd19edb0e688d8cc61313e6a7",
                 "code": "029c5b6d2b99b78444084383686a4da8ed87be50",
                 "maintenance": "da85f5f94147dd50320db0d67778eb5a884ccb42b3cea99457d7d7870c3ee657"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

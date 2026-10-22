@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d7a41634d2a3df865eb2f89f60ec35ce",
+    "identity": "github:1340961887:packages-dsh-mcp-console",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340961887:packages-dsh-mcp-console",
+            "repository": "moon16u/dsh-pouch",
+            "path": "packages/dsh-mcp-console",
+            "revision": "9e0dae4668cd0c64a41cbce2c04dc4424eb9409d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "27ccfb252a65fce0285b04b37be05f2e156a36819f6571ffff56ef23fc087fc7",
+                "code": "9e0dae4668cd0c64a41cbce2c04dc4424eb9409d",
+                "maintenance": "d872334759f077c9f5b03fa8ca780fed103756f871a680c97bad7254815c1afe"
+            }
+        }
+    }
+}

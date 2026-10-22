@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d75fc233bba797cdc6d99efa8678e15a",
+    "identity": "github:1427321079:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1427321079:root",
+            "repository": "REALOIYO/dsh-settings-button",
+            "path": "",
+            "revision": "a06cccb888e83af6ea433e96b389aaa912c91c83",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1170dcddcc36ee8c97655fa5c12ef8f3082d4a6b7233522739f1950095876b1c",
+                "code": "a06cccb888e83af6ea433e96b389aaa912c91c83",
+                "maintenance": "1d5e8f1730a66fe465fa215faf2642bf433f750aa5187f3a2fce5ef905f6fc7d"
+            }
+        }
+    }
+}

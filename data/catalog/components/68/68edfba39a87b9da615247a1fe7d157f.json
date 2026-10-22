@@ -7,15 +7,15 @@
             "id": "github:1334434081:root",
             "repository": "xiajiajun516/dsh-config-manager",
             "path": "",
-            "revision": "865c4efdd5c77b8a64f55d2af6cadf50d73e00d8",
+            "revision": "0603926bdac021e4ad475bf94a4af93d84b1baec",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "84490904e7c0851528d449787b61443c0088b40ac3cefbf55799fabbb819d735",
-                "code": "865c4efdd5c77b8a64f55d2af6cadf50d73e00d8",
-                "maintenance": "66e0b549d71f3f5b36dcd8339213bff1a34128515b8842a286638bd5605a69bf"
+                "code": "0603926bdac021e4ad475bf94a4af93d84b1baec",
+                "maintenance": "d62eaa08a058c8d2912ba640d3c09b9264db36c3f1e3159ff8284f12f85d1b8f"
             }
         }
     }

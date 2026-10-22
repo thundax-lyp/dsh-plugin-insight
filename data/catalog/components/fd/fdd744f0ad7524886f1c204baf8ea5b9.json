@@ -439,14 +439,14 @@
             "repository": "66rapper/dsh-model-auto-enricher",
             "path": "",
             "revision": "4c18dc2a231f336a31d49dccfff9606edc6456c9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "b8058357920d25467c707ada48efbff9f62639095dff681979568aa909444373",
                 "code": "4c18dc2a231f336a31d49dccfff9606edc6456c9",
                 "maintenance": "2dda41048ad6cc1b7d642c250a8cc65fbf9b8e7f3beb4328f0b698ba73b12c8e"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

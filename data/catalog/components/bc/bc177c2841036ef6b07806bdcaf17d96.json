@@ -19,111 +19,69 @@
             "research_depth": "source",
             "fingerprints": {
                 "directory": "c467d1ec39a19d32a1c88db1922ec01e6dd121768ab667d19ecc2c36c42f5485",
-                "code": "46079ecb3554239797b1dcbe2e82f74a21adb9a1",
-                "maintenance": "7f96bd4ba008a6b66b7d3ac9497ceb67f7f91f8ec294b920c1e9e697667d1283"
+                "code": "f3fc189ac0b0c4ff77959a39e56115e8c59334d9",
+                "maintenance": "1f3ba3fed0cfbbc2c8d372181d27688074280514c277e2cc32ef274b43a11b7a"
             },
             "sources": [
                 {
-                    "id": "2026-10-22-02-github-1412897932-root-directory-0",
+                    "id": "2026-10-22-01-github-1412897932-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-22T05:40:25.572Z",
+                    "revision": "779a0a5a03e3055a5f7bfc14026aeead601e3a45",
+                    "retrieved_at": "2026-10-22T15:32:35.818Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-22-02-github-1412897932-root-author",
+                    "id": "2026-10-22-01-github-1412897932-root-author",
                     "kind": "author_claim",
-                    "url": "https://github.com/AAAlenwow/dsh-weknora-archive/blob/46079ecb3554239797b1dcbe2e82f74a21adb9a1/README.md",
+                    "url": "https://github.com/AAAlenwow/dsh-weknora-archive/blob/f3fc189ac0b0c4ff77959a39e56115e8c59334d9/README.md",
                     "git_refs": [
                         {
                             "repository_url": "https://github.com/AAAlenwow/dsh-weknora-archive",
-                            "commit": "46079ecb3554239797b1dcbe2e82f74a21adb9a1",
+                            "commit": "f3fc189ac0b0c4ff77959a39e56115e8c59334d9",
                             "path": "README.md",
-                            "content_sha256": "79d7cdd3f0d7755d00aa392401396ba64f0422394cf448815df2ecd13e91b539"
+                            "content_sha256": "bdce6ff64f135c333b5bd855819b4d1fffdca83060b6d19ec3aa8996940048b4"
                         }
                     ],
-                    "revision": "46079ecb3554239797b1dcbe2e82f74a21adb9a1",
-                    "captured_at": "2026-10-22T05:40:25.572Z",
-                    "summary": "抽取 DSH 本地会话，规则生成 Markdown 摘要并写入 WeKnora 知识库。",
-                    "artifact": "data/runs/2026-10-22-02/snapshots/aaalenwow--dsh-weknora-archive/REVIEWED-SOURCE.json",
+                    "revision": "f3fc189ac0b0c4ff77959a39e56115e8c59334d9",
+                    "captured_at": "2026-10-22T15:32:35.818Z",
+                    "summary": "提取、摘要、去重并上传DSH会话到WeKnora知识库，补充官方只读检索插件的写入侧。",
+                    "artifact": "data/runs/2026-10-22-01/snapshots/aaalenwow--dsh-weknora-archive/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-22-02-github-1412897932-root-source",
+                    "id": "2026-10-22-01-github-1412897932-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/AAAlenwow/dsh-weknora-archive/blob/46079ecb3554239797b1dcbe2e82f74a21adb9a1/README.md",
+                    "url": "https://github.com/AAAlenwow/dsh-weknora-archive/blob/f3fc189ac0b0c4ff77959a39e56115e8c59334d9/README.md",
                     "git_refs": [
                         {
                             "repository_url": "https://github.com/AAAlenwow/dsh-weknora-archive",
-                            "commit": "46079ecb3554239797b1dcbe2e82f74a21adb9a1",
+                            "commit": "f3fc189ac0b0c4ff77959a39e56115e8c59334d9",
                             "path": "README.md",
-                            "content_sha256": "79d7cdd3f0d7755d00aa392401396ba64f0422394cf448815df2ecd13e91b539"
+                            "content_sha256": "bdce6ff64f135c333b5bd855819b4d1fffdca83060b6d19ec3aa8996940048b4"
                         },
                         {
                             "repository_url": "https://github.com/AAAlenwow/dsh-weknora-archive",
-                            "commit": "46079ecb3554239797b1dcbe2e82f74a21adb9a1",
+                            "commit": "f3fc189ac0b0c4ff77959a39e56115e8c59334d9",
                             "path": "package.json",
-                            "content_sha256": "71cea16c1188f92eec222ced59706edeebe33bcc299ccf0e4bb72798a570d9e5"
+                            "content_sha256": "bfdd23dfc7ad201a9059389f2eec84abc84017c99f8bcbda7ffbced70e0994a4"
                         },
                         {
                             "repository_url": "https://github.com/AAAlenwow/dsh-weknora-archive",
-                            "commit": "46079ecb3554239797b1dcbe2e82f74a21adb9a1",
-                            "path": "cordis.patch.yml",
-                            "content_sha256": "b275621f20da23f3df29a848e3484b6702651bfe6edea9e51148d0253a526da9"
-                        },
-                        {
-                            "repository_url": "https://github.com/AAAlenwow/dsh-weknora-archive",
-                            "commit": "46079ecb3554239797b1dcbe2e82f74a21adb9a1",
+                            "commit": "f3fc189ac0b0c4ff77959a39e56115e8c59334d9",
                             "path": "lib/index.js",
-                            "content_sha256": "10983369fda607c58a8e40451bbb0f2aaa60bf573119088658c4a2012ad58b0b"
-                        },
-                        {
-                            "repository_url": "https://github.com/AAAlenwow/dsh-weknora-archive",
-                            "commit": "46079ecb3554239797b1dcbe2e82f74a21adb9a1",
-                            "path": "lib/archive.js",
-                            "content_sha256": "0150e9a2f48d29e8f1ed63bc5b3737fdf27aaa218d85e38f5d0f3c3522c34de5"
-                        },
-                        {
-                            "repository_url": "https://github.com/AAAlenwow/dsh-weknora-archive",
-                            "commit": "46079ecb3554239797b1dcbe2e82f74a21adb9a1",
-                            "path": "lib/session-reader.js",
-                            "content_sha256": "416ce5cab8bc4171fe5fd2531d842c82abc8009e8ae1d910d38ca6d7efdcf8d0"
-                        },
-                        {
-                            "repository_url": "https://github.com/AAAlenwow/dsh-weknora-archive",
-                            "commit": "46079ecb3554239797b1dcbe2e82f74a21adb9a1",
-                            "path": "lib/summarizer.js",
-                            "content_sha256": "278f19923b9e808dac531cd0e63bd1b27431aec908bbc56fc81fc6f84d5d0208"
-                        },
-                        {
-                            "repository_url": "https://github.com/AAAlenwow/dsh-weknora-archive",
-                            "commit": "46079ecb3554239797b1dcbe2e82f74a21adb9a1",
-                            "path": "lib/client.js",
-                            "content_sha256": "76edf83fc922dbe143358b5377025c0a014364da7ff34b4507c29110d49a6fd8"
-                        },
-                        {
-                            "repository_url": "https://github.com/AAAlenwow/dsh-weknora-archive",
-                            "commit": "46079ecb3554239797b1dcbe2e82f74a21adb9a1",
-                            "path": "lib/config.js",
-                            "content_sha256": "2f025ed0ac0494197f122bac22afcd1126db20e81c453e647810c981e3eb2d7f"
-                        },
-                        {
-                            "repository_url": "https://github.com/AAAlenwow/dsh-weknora-archive",
-                            "commit": "46079ecb3554239797b1dcbe2e82f74a21adb9a1",
-                            "path": "test/mock.test.mjs",
-                            "content_sha256": "e03c403b3536646ec06e0dc2a3464f9f15af7a5890d3e2544880ff7100e133e1"
+                            "content_sha256": "6b7f79b0e982a8874682d14e5b4ae7581f47724eaaf03b0e329af891af10da8e"
                         }
                     ],
-                    "revision": "46079ecb3554239797b1dcbe2e82f74a21adb9a1",
-                    "captured_at": "2026-10-22T05:40:25.572Z",
-                    "summary": "核查 README.md、package.json、cordis.patch.yml、lib/index.js、lib/archive.js、lib/session-reader.js、lib/summarizer.js、lib/client.js、lib/config.js、test/mock.test.mjs；多帧 zstd 会话读取、启发式摘要、按短会话 ID 标题去重、WeKnora HTTP 建库/上传。",
-                    "artifact": "data/runs/2026-10-22-02/snapshots/aaalenwow--dsh-weknora-archive/REVIEWED-SOURCE.json",
+                    "revision": "f3fc189ac0b0c4ff77959a39e56115e8c59334d9",
+                    "captured_at": "2026-10-22T15:32:35.818Z",
+                    "summary": "核查 README.md、package.json、lib/index.js；固定源码显示 lib/index.js 承担关键入口、注册或生命周期接线，包清单限定分发和宿主边界；静态存在不等于运行可用。详见[Q02](#research-q02)。",
+                    "artifact": "data/runs/2026-10-22-01/snapshots/aaalenwow--dsh-weknora-archive/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "审阅固定提交 README、包、配置、会话读取、摘要、编排、HTTP 客户端与测试源码；未运行插件、测试或上传。",
+                        "仅核查固定提交的作者材料、包清单、关键源码和完整组件 inventory；未运行插件、测试、安装、外部服务或真实宿主任务。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -134,278 +92,278 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "本地会话沉淀为可检索知识，需要项目/会话身份、敏感内容审阅和远端解析验收。",
+                    "text": "已部署 WeKnora、希望把 DSH 对话沉淀为团队知识库的用户可用它按游标增量读取 DSH 会话，清洗并摘要后去重上传到 WeKnora，支持手动工具与定时归档；合格结果是只归档新增且符合筛选条件的会话，重复内容不重复写入，失败可定位并重试。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1412897932-root-source"
+                        "2026-10-22-01-github-1412897932-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1412897932:root",
                             "area": "code",
-                            "fingerprint": "46079ecb3554239797b1dcbe2e82f74a21adb9a1"
+                            "fingerprint": "f3fc189ac0b0c4ff77959a39e56115e8c59334d9"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T05:40:25.572Z",
+                    "reviewed_at": "2026-10-22T15:32:35.818Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "多帧 zstd 会话读取、启发式摘要、按短会话 ID 标题去重、WeKnora HTTP 建库/上传。",
+                    "text": "固定源码显示 lib/index.js 承担关键入口、注册或生命周期接线，包清单限定分发和宿主边界；静态存在不等于运行可用。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1412897932-root-source"
+                        "2026-10-22-01-github-1412897932-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1412897932:root",
                             "area": "code",
-                            "fingerprint": "46079ecb3554239797b1dcbe2e82f74a21adb9a1"
+                            "fingerprint": "f3fc189ac0b0c4ff77959a39e56115e8c59334d9"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T05:40:25.572Z",
+                    "reviewed_at": "2026-10-22T15:32:35.818Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "审阅固定提交 README、包、配置、会话读取、摘要、编排、HTTP 客户端与测试源码；未运行插件、测试或上传。",
+                    "text": "仅核查固定提交的作者材料、包清单、关键源码和完整组件 inventory；未运行插件、测试、安装、外部服务或真实宿主任务。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1412897932-root-source"
+                        "2026-10-22-01-github-1412897932-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1412897932:root",
                             "area": "code",
-                            "fingerprint": "46079ecb3554239797b1dcbe2e82f74a21adb9a1"
+                            "fingerprint": "f3fc189ac0b0c4ff77959a39e56115e8c59334d9"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T05:40:25.572Z",
+                    "reviewed_at": "2026-10-22T15:32:35.818Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "包声明 0.2.0 MIT、Node>=24、DSH 0.1.7-alpha.1/web；WeKnora 接口兼容以目标部署为准。",
+                    "text": "包清单与固定仓库路径定义分发边界；是否已在注册表发布、安装量、外部服务可用性和长期维护质量不从源码推断。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1412897932-root-source"
+                        "2026-10-22-01-github-1412897932-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1412897932:root",
                             "area": "code",
-                            "fingerprint": "46079ecb3554239797b1dcbe2e82f74a21adb9a1"
+                            "fingerprint": "f3fc189ac0b0c4ff77959a39e56115e8c59334d9"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T05:40:25.572Z",
+                    "reviewed_at": "2026-10-22T15:32:35.818Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "| 阶段 | 投入 | 未知 |\n| --- | --- | --- |\n| 首次 | 会话根、API key、目标库/embedding | 配置和权限审核 |\n| 持续 | 解压 CPU、HTTP 上传、存储与嵌入 | 每篇可检索成本 |\n| 恢复 | 模糊目录、冲突、解析与隐私整改 | 返工时间 |",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | WeKnora存储/服务与可选模型费用 | 配置知识库、凭据、筛选和隐私策略 | 初始回填量与审阅小时未知 |\n| 持续使用 | 摘要token、上传流量和知识库存储 | 复核摘要、处理重复和删除请求 | 每千会话成本与合格摘要率未知 |\n| 失败恢复 | 重复摘要/上传可能再次计费 | 核目标库、区分已写/未写并修正游标 | 缺少幂等回执时可能重复条目 |",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1412897932-root-source"
+                        "2026-10-22-01-github-1412897932-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1412897932:root",
                             "area": "code",
-                            "fingerprint": "46079ecb3554239797b1dcbe2e82f74a21adb9a1"
+                            "fingerprint": "f3fc189ac0b0c4ff77959a39e56115e8c59334d9"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T05:40:25.572Z",
+                    "reviewed_at": "2026-10-22T15:32:35.818Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "仅无敏感样本指定已存在知识库先试用，人工审摘要并核远端解析；含密钥历史会话暂不自动上传。详见[Q05](#research-q05)。",
+                    "text": "已自建WeKnora且能接受内容外发者可观察，先用脱敏样本验证筛选、删除、重试和重复归档边界。 采用结论是观察，不是安装保证；成功与停止标准见[Q09](#research-q09)。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1412897932-root-source"
+                        "2026-10-22-01-github-1412897932-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1412897932:root",
                             "area": "code",
-                            "fingerprint": "46079ecb3554239797b1dcbe2e82f74a21adb9a1"
+                            "fingerprint": "f3fc189ac0b0c4ff77959a39e56115e8c59334d9"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T05:40:25.572Z",
+                    "reviewed_at": "2026-10-22T15:32:35.818Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "| 结果 | 源码支持 | 未证实 |\n| --- | --- | --- |\n| 自动归档 | 会话读取与逐篇上传 | 解析后可检索率 |\n| 增量 | 标题/短 ID 比较与 409 跳过 | 碰撞与 >100 文档正确率 |\n| 隐私 | 配置 key 独立使用 | 会话正文脱敏，实际未实现 |",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 增量归档 | 会话读取、摘要、去重、上传链存在 | 游标在中断/并发下是否不漏不重 |\n| 知识可检索性 | 写入侧补充只读检索插件 | 摘要后检索召回与任务质量 |\n| 隐私边界 | 提供筛选和隐私说明 | 敏感内容漏传率与删除传播 |",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1412897932-root-source"
+                        "2026-10-22-01-github-1412897932-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1412897932:root",
                             "area": "code",
-                            "fingerprint": "46079ecb3554239797b1dcbe2e82f74a21adb9a1"
+                            "fingerprint": "f3fc189ac0b0c4ff77959a39e56115e8c59334d9"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T05:40:25.572Z",
+                    "reviewed_at": "2026-10-22T15:32:35.818Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "会话读取用同步 zstd 解压和 JSONL 容错；工具注册为 Cordis effect。上传和建库是远端副作用，dry_run 仅避开逐篇上传。错误由 client 附响应片段，fail 仅截 X-API-Key 字符串，无法形式化证明不含其它敏感响应。",
+                    "text": "固定源码把关键职责收敛到 lib/index.js 及其相邻模块，便于追踪入口与状态。可借鉴的是显式宿主接线与配置边界；移植仍需重做 API 兼容、权限、持久化和“上传 WeKnora 后才提交游标和回执｜失败项留待重试，已上传未知时先查目标库”验证。详见[Q07](#research-q07)。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1412897932-root-source"
+                        "2026-10-22-01-github-1412897932-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1412897932:root",
                             "area": "code",
-                            "fingerprint": "46079ecb3554239797b1dcbe2e82f74a21adb9a1"
+                            "fingerprint": "f3fc189ac0b0c4ff77959a39e56115e8c59334d9"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T05:40:25.572Z",
+                    "reviewed_at": "2026-10-22T15:32:35.818Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
                     "topic": "technical_innovation",
                     "basis": "interpretation",
-                    "text": "提供 DSH 会话抽取与 WeKnora 写侧编排，规则摘要无需 LLM；检索与嵌入效果仍依赖 WeKnora。详见[Q02](#research-q02)。",
+                    "text": "补齐 DSH 到 WeKnora 的增量写入链，将会话提取、摘要、指纹去重与上传串成一个可调度流程。它相对“人工导出会话、整理 Markdown 后上传，或只使用 WeKnora 检索而不自动写入”减少接线或重复操作，但未建立同条件效果优势。详见[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1412897932-root-source"
+                        "2026-10-22-01-github-1412897932-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1412897932:root",
                             "area": "code",
-                            "fingerprint": "46079ecb3554239797b1dcbe2e82f74a21adb9a1"
+                            "fingerprint": "f3fc189ac0b0c4ff77959a39e56115e8c59334d9"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T05:40:25.572Z",
+                    "reviewed_at": "2026-10-22T15:32:35.818Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "dry_run 在创建库之后才生效，摘要直接引用用户文本/命令且无凭据脱敏；短 ID 和固定 100 项列表限制去重可靠性。详见[Q03](#research-q03)。",
+                    "text": "摘要会把模型判断引入档案，隐私过滤和去重指纹不能保证敏感内容不外发或语义重复被识别。这会影响贡献能否转化为端到端收益，需以故障注入和同条件对照改变判断。详见[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1412897932-root-source"
+                        "2026-10-22-01-github-1412897932-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1412897932:root",
                             "area": "code",
-                            "fingerprint": "46079ecb3554239797b1dcbe2e82f74a21adb9a1"
+                            "fingerprint": "f3fc189ac0b0c4ff77959a39e56115e8c59334d9"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T05:40:25.572Z",
+                    "reviewed_at": "2026-10-22T15:32:35.818Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
                     "topic": "technical_innovation",
                     "basis": "unverified",
-                    "text": "可先本地脱敏并审阅带强会话身份的摘要，再幂等上传、验解析；用 canary、碰撞与 >100 文档对照，尚未实现。详见[Q05](#research-q05)。",
+                    "text": "未来可探索：可在上传前增加可复核的字段级隐私清单与内容寻址回执，让删除、重放和来源追踪成为归档协议的一部分。该方向由现有贡献与限制推导，尚未实现；失败或恢复负担不改善即应否定。详见[Q08](#research-q08)。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1412897932-root-source"
+                        "2026-10-22-01-github-1412897932-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1412897932:root",
                             "area": "code",
-                            "fingerprint": "46079ecb3554239797b1dcbe2e82f74a21adb9a1"
+                            "fingerprint": "f3fc189ac0b0c4ff77959a39e56115e8c59334d9"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T05:40:25.572Z",
+                    "reviewed_at": "2026-10-22T15:32:35.818Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-22T05:40:25.572Z",
+            "last_checked_at": "2026-10-22T15:32:35.818Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
-                "revision": "46079ecb3554239797b1dcbe2e82f74a21adb9a1",
-                "reviewed_at": "2026-10-22T05:40:25.572Z",
+                "revision": "f3fc189ac0b0c4ff77959a39e56115e8c59334d9",
+                "reviewed_at": "2026-10-22T15:32:35.818Z",
                 "status": "current",
                 "dependencies": [
                     {
                         "plugin_id": "github:1412897932:root",
                         "area": "code",
-                        "fingerprint": "46079ecb3554239797b1dcbe2e82f74a21adb9a1"
+                        "fingerprint": "f3fc189ac0b0c4ff77959a39e56115e8c59334d9"
                     }
                 ],
                 "technical": {
                     "criteria": {
-                        "novelty": 0,
-                        "mechanism": 8,
-                        "transferability": 5,
-                        "simplification": 4
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
                     },
-                    "rationale": "规则摘要和标题去重是常规编排；当前缺审阅/隐私闭环，未计新假设。",
+                    "rationale": "评分只针对固定源码可见的机制组合与迁移条件；没有把作者宣传、功能数量或本次未来假设计入。",
                     "basis": "interpretation",
-                    "score": 17,
+                    "score": 42,
                     "evidence_ids": [
-                        "2026-10-22-02-github-1412897932-root-source"
+                        "2026-10-22-01-github-1412897932-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 9,
-                        "delivery": 8,
-                        "reach": 5,
-                        "economics": 0
+                        "workflow": 18,
+                        "delivery": 15,
+                        "reach": 10,
+                        "economics": 8
                     },
-                    "rationale": "自动写库有便利，但泄漏、索引失败和人工复核成本未知。",
+                    "rationale": "评分只针对当前实现改变的流程与交付方式；没有运行数据，因此不把节时、成功率或ROI写成已验证收益。",
                     "basis": "interpretation",
-                    "score": 22,
+                    "score": 51,
                     "evidence_ids": [
-                        "2026-10-22-02-github-1412897932-root-source"
+                        "2026-10-22-01-github-1412897932-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "observe",
-                "reason": "预览可远端建库且摘要无凭据脱敏；含敏感会话先勿自动上传，隔离样本验收。",
+                "reason": "已自建WeKnora且能接受内容外发者可观察，先用脱敏样本验证筛选、删除、重试和重复归档边界。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "会话沉淀知识库任务明确。"
+                        "rationale": "目标人群和合格结果在固定 README 与源码中较明确，但真实频率与组织需求仍未知。"
                     },
                     "advantage": {
-                        "score": 6,
-                        "rationale": "减少手工导入，但可人工筛选后上传。"
+                        "score": 13,
+                        "rationale": "相对基线存在补齐 DSH 到 WeKnora 的增量写入链，将会话提取、摘要、指纹去重与上传串成一个可调度流程的可解释增量，但未做同条件任务对照。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "固定源码支持机制及风险，未做远端验收。"
+                        "rationale": "已核固定提交的作者材料、入口和关键实现；未执行目标插件、测试或真实宿主验收。"
                     },
                     "cost": {
                         "score": 5,
-                        "rationale": "WeKnora 存储/嵌入和审核恢复成本未知。"
+                        "rationale": "可从源码识别安装、配置和恢复负担；摘要会把模型判断引入档案，隐私过滤和去重指纹不能保证敏感内容不外发或语义重复被识别，金额与人工时间未知。"
                     }
                 },
-                "score": 47,
-                "revision": "46079ecb3554239797b1dcbe2e82f74a21adb9a1",
-                "reviewed_at": "2026-10-22T05:40:25.572Z",
+                "score": 54,
+                "revision": "f3fc189ac0b0c4ff77959a39e56115e8c59334d9",
+                "reviewed_at": "2026-10-22T15:32:35.818Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-22-02-github-1412897932-root-source"
+                    "2026-10-22-01-github-1412897932-root-source"
                 ],
                 "dependencies": [
                     {
                         "plugin_id": "github:1412897932:root",
                         "area": "code",
-                        "fingerprint": "46079ecb3554239797b1dcbe2e82f74a21adb9a1"
+                        "fingerprint": "f3fc189ac0b0c4ff77959a39e56115e8c59334d9"
                     }
                 ]
             }
@@ -414,67 +372,106 @@
             "id": "github:1412897932:root",
             "repository": "AAAlenwow/dsh-weknora-archive",
             "path": "",
-            "revision": "46079ecb3554239797b1dcbe2e82f74a21adb9a1",
+            "revision": "f3fc189ac0b0c4ff77959a39e56115e8c59334d9",
             "fingerprints": {
                 "directory": "c467d1ec39a19d32a1c88db1922ec01e6dd121768ab667d19ecc2c36c42f5485",
-                "code": "46079ecb3554239797b1dcbe2e82f74a21adb9a1",
-                "maintenance": "7f96bd4ba008a6b66b7d3ac9497ceb67f7f91f8ec294b920c1e9e697667d1283"
+                "code": "f3fc189ac0b0c4ff77959a39e56115e8c59334d9",
+                "maintenance": "1f3ba3fed0cfbbc2c8d372181d27688074280514c277e2cc32ef274b43a11b7a"
             },
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-22T04:36:02.544Z",
-            "analysis_sha256": "f8e3a4cf3c5b1c1ad527f0072acee301b398c905edae141bfc9627663d4a9acc"
+            "checked_at": "2026-10-22T15:06:59Z",
+            "analysis_sha256": "9780d5e795ef88094092498ccc12cdcb73f8c98db4e4e61c333e56a0e1d286ce"
         },
         "publication.metadata": "data/plugins/aaalenwow--dsh-weknora-archive/META.json",
         "publication.summaries": {
-            "text": "抽取 DSH 本地会话，规则生成 Markdown 摘要并写入 WeKnora 知识库。",
-            "revision": "46079ecb3554239797b1dcbe2e82f74a21adb9a1",
-            "source_url": "https://github.com/AAAlenwow/dsh-weknora-archive/blob/46079ecb3554239797b1dcbe2e82f74a21adb9a1/README.md"
+            "text": "提取、摘要、去重并上传DSH会话到WeKnora知识库，补充官方只读检索插件的写入侧。",
+            "revision": "f3fc189ac0b0c4ff77959a39e56115e8c59334d9",
+            "source_url": "https://github.com/AAAlenwow/dsh-weknora-archive/blob/f3fc189ac0b0c4ff77959a39e56115e8c59334d9/README.md"
         },
         "publication.capabilities": {
-            "revision": "46079ecb3554239797b1dcbe2e82f74a21adb9a1",
+            "revision": "f3fc189ac0b0c4ff77959a39e56115e8c59334d9",
             "items": {
-                "模型工具": "项目会话归档、状态和知识库查询及 dry_run 预览"
+                "模型工具": "提供自动或单项目增量归档、状态与知识库管理工具，执行会话提取、摘要、去重和 WeKnora 上传。"
             },
-            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| archive_session | 批量写库 | 可能上传未经脱敏内容 |\n| dry_run | 预估上传篇数 | 缺库时仍可能远端创建 |\n| status/list | 查询项目和库 | 文档列表单页 100 |\n| create_knowledge_base | 建库 | 需后续 embedding 配置 |"
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 增量会话归档 | 按状态游标选择新增会话并形成归档记录。 | 仅确认固定源码存在；运行效果、规模与兼容范围未做宿主验收 |\n| 摘要与去重 | 对会话内容摘要并以指纹避免重复上传。 | 仅确认固定源码存在；运行效果、规模与兼容范围未做宿主验收 |\n| WeKnora 上传 | 将整理结果写入指定知识库并记录处理状态。 | 仅确认固定源码存在；运行效果、规模与兼容范围未做宿主验收 |"
         },
         "publication.advice": {
-            "revision": "46079ecb3554239797b1dcbe2e82f74a21adb9a1",
-            "text": "仅无敏感样本指定已存在知识库先试用，人工审摘要并核远端解析；含密钥历史会话暂不自动上传。详见[Q05](#research-q05)。"
+            "revision": "f3fc189ac0b0c4ff77959a39e56115e8c59334d9",
+            "text": "已自建WeKnora且能接受内容外发者可观察，先用脱敏样本验证筛选、删除、重试和重复归档边界。 采用结论是观察，不是安装保证；成功与停止标准见[Q09](#research-q09)。"
         },
         "registry": "data/plugins/aaalenwow--dsh-weknora-archive",
-        "reports": "# dsh-weknora-archive\n\n> 抽取 DSH 本地会话，规则生成 Markdown 摘要并写入 WeKnora 知识库。\n\n## 研究范围\n\n- **仓库**：[AAAlenwow/dsh-weknora-archive](https://github.com/AAAlenwow/dsh-weknora-archive)\n- **版本号**：0.2.0（[固定提交 46079ecb3554239797b1dcbe2e82f74a21adb9a1](https://github.com/AAAlenwow/dsh-weknora-archive/tree/46079ecb3554239797b1dcbe2e82f74a21adb9a1)）\n- **版本日期**：2026-10-19（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定源码支持写入编排；dry_run 可能建库、摘要无凭据脱敏、去重覆盖有限；未运行远端。\n\n## 洞察短评\n\n- **用途**：本地会话沉淀为可检索知识，需要项目/会话身份、敏感内容审阅和远端解析验收。\n- **亮点**：提供 DSH 会话抽取与 WeKnora 写侧编排，规则摘要无需 LLM；检索与嵌入效果仍依赖 WeKnora。详见[Q02](#research-q02)。\n- **思考**：dry_run 在创建库之后才生效，摘要直接引用用户文本/命令且无凭据脱敏；短 ID 和固定 100 项列表限制去重可靠性。详见[Q03](#research-q03)。\n- **建议**：可先本地脱敏并审阅带强会话身份的摘要，再幂等上传、验解析；用 canary、碰撞与 >100 文档对照，尚未实现。详见[Q05](#research-q05)。\n\n采用建议：仅无敏感样本指定已存在知识库先试用，人工审摘要并核远端解析；含密钥历史会话暂不自动上传。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n提供 DSH 会话抽取与 WeKnora 写侧编排，规则摘要无需 LLM；检索与嵌入效果仍依赖 WeKnora。详见[Q02](#research-q02)。\n\n## 关键质疑\n\ndry_run 在创建库之后才生效，摘要直接引用用户文本/命令且无凭据脱敏；短 ID 和固定 100 项列表限制去重可靠性。详见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可先本地脱敏并审阅带强会话身份的摘要，再幂等上传、验解析；用 canary、碰撞与 >100 文档对照，尚未实现。详见[Q05](#research-q05)。\n\n隔离实例用假密钥、同前 8 位 ID、101 文档、活会话与解析失败，测远端副作用、泄漏、误去重和可检索率。\n\n## 场景与替代办法\n\n本地会话沉淀为可检索知识，需要项目/会话身份、敏感内容审阅和远端解析验收。\n\n手工选会话、脱敏后导入 WeKnora，或官方只读检索插件；本包加写侧自动化，但缺预审和强身份。\n\n## 依赖与流程\n\n| 条件 | 用途 | 失败时 |\n| --- | --- | --- |\n| Node>=24、DSH tools | 注册与 zstd | 插件不工作 |\n| 会话文件可读 | 抽取 | 跳过或失败 |\n| WeKnora scoped API key 与兼容路由 | 建库/上传 | 失败或错库 |\n| KB embedding | 文档解析检索 | 上传成功仍可能不可检索 |\n\n| 步骤 | 动作 | 判据 |\n| --- | --- | --- |\n| 准备 | 确认会话范围与已有目标库 | 无敏感数据 |\n| 预览 | 当前 dry_run 只看数量，避免缺库 | 注意仍可建库 |\n| 归档 | 授权后逐篇上传 | 标题与数量正确 |\n| 验收 | 查解析与检索、审敏感内容 | 可检索且无 canary 泄漏 |\n\n## 成本与效果\n\n| 阶段 | 投入 | 未知 |\n| --- | --- | --- |\n| 首次 | 会话根、API key、目标库/embedding | 配置和权限审核 |\n| 持续 | 解压 CPU、HTTP 上传、存储与嵌入 | 每篇可检索成本 |\n| 恢复 | 模糊目录、冲突、解析与隐私整改 | 返工时间 |\n\n| 结果 | 源码支持 | 未证实 |\n| --- | --- | --- |\n| 自动归档 | 会话读取与逐篇上传 | 解析后可检索率 |\n| 增量 | 标题/短 ID 比较与 409 跳过 | 碰撞与 >100 文档正确率 |\n| 隐私 | 配置 key 独立使用 | 会话正文脱敏，实际未实现 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**判断 DSH 会话归档的增量正确性、隐私边界与可审阅采用路径。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 会话归档要交付什么，哪些数据应被允许离开本机？\n\n**研究主题：**场景与需求\n\n#### 完整回答\n\n本插件把 DSH 本地会话抽成 Markdown 摘要，写到配置的 WeKnora 知识库，补足作者所述只读检索插件的写侧。合格结果应绑定正确项目/会话、只上传经用户认可且已脱敏的内容、可检查解析状态，并对重试不重复或误跳过。README 称不上传第三方且凭据值不完整收录，但本轮只核固定源码，未验部署端可信性和真实数据分类。手工筛选、脱敏后上传或现有知识库导入是基线。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:5-16](https://github.com/AAAlenwow/dsh-weknora-archive/blob/46079ecb3554239797b1dcbe2e82f74a21adb9a1/README.md#L5-L16)\n\n作者功能描述。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n把 DSH（DeepSeek Harness）会话**增量归档**进 [WeKnora](https://github.com/Tencent/WeKnora) 知识库的 host 端插件。是官方只读插件 `@wxg-prc-cpg/dsh-weknora`（4 个检索工具）的**写入侧互补**。\n\n## 功能\n\n| 工具 | 说明 |\n|---|---|\n| `weknora_archive_session` | 归档某个项目的 DSH 会话：定位会话目录 → 解压 `session.v3.jsonl.zstd` → 提取对话 → 启发式总结（模板：主题/决策/产出/细节/遗留）→ 按文档标题去重后上传；知识库不存在时按项目名自动新建；首次归档附 `00_项目总览.md`；支持 `dry_run` 预览 |\n| `weknora_archive_status` | 只读：列出本机会话项目目录与会话数，查看目标知识库内已归档文档与解析状态 |\n| `weknora_archive_list_knowledge_bases` | 只读：列出该凭据可见的知识库 |\n| `weknora_archive_create_knowledge_base` | 新建知识库（注意：新建库可能需在 WeKnora 端配置 embedding 模型，否则文档解析失败） |\n\n工具名前缀可通过 `toolPrefix` 配置（默认 `weknora_archive`）。工具描述中英双语。\n```\n\n</details>\n\n**依据 2 · 作者声明**：[README.md:39-47](https://github.com/AAAlenwow/dsh-weknora-archive/blob/46079ecb3554239797b1dcbe2e82f74a21adb9a1/README.md#L39-L47)\n\n作者隐私和 API 声称。\n\n```text\n## 隐私说明\n\n- 会话数据**只发往你自己配置的 WeKnora 实例**，插件不经过任何第三方服务。\n- API key 只用于请求头 `X-API-Key`，**绝不写入日志、异常信息、工具结果或本文档**；日志输出前统一走 `redactConfig()` 脱敏。\n- 总结为**启发式规则生成（无 LLM 参与）**，凭据类内容不收录完整值。\n\n## API 兼容性\n\n认证头为 `X-API-Key`（非 Bearer），路由中横线风格：`GET/POST /knowledge-bases`、`GET /knowledge-bases/{id}/knowledge`、`POST /knowledge`（multipart 上传 Markdown）、`POST /knowledge/{id}/reparse`。**以你的 WeKnora 实际 API 为准**；若有出入只需调整 `lib/client.js`。\n```\n\n**依据 3 · 源码核查**：[lib/index.js:43-101](https://github.com/AAAlenwow/dsh-weknora-archive/blob/46079ecb3554239797b1dcbe2e82f74a21adb9a1/lib/index.js#L43-L101)\n\n实际归档工具及 dry_run。\n\n<details>\n<summary>查看原文（59行）</summary>\n\n```text\n  // 1. Archive a project's sessions (extract → summarize → upload, incremental).\n  definitions.push({\n    name: `${resolved.toolPrefix}_session`,\n    description: '把当前机器上某个 DSH 项目的会话增量归档进 WeKnora 知识库：解压会话存储 → 启发式总结 → 按标题去重后上传（知识库不存在时自动按项目名新建）。Archive a DSH project\\'s sessions into a WeKnora knowledge base incrementally: decompress session storage, summarize, dedupe by document title, upload (auto-creates the knowledge base when absent). Use when the user says 归档/archive sessions/更新知识库.',\n    parameters: {\n      type: 'object',\n      properties: {\n        project_keyword: { type: 'string', description: '项目目录名关键词，如 \"my-app\"；模糊匹配 sessions 目录。Project directory keyword to match.' },\n        knowledge_base_id: { type: 'string', description: '可选：目标知识库 id；缺省按配置或按项目名自动匹配/新建。' },\n        dry_run: { type: 'boolean', description: '可选：只统计将要归档的会话，不上传。Preview without uploading.' },\n      },\n      required: ['project_keyword'],\n      additionalProperties: false,\n    },\n    timeoutMs: resolved.uploadTimeoutMs,\n    isConcurrencySafe: () => false,\n    output: {\n      schema: {\n        type: 'object',\n        properties: {\n          ok: { type: 'boolean' },\n          knowledge_base_id: { type: 'string' },\n          created: { type: 'boolean' },\n          uploaded_count: { type: 'integer' },\n          skipped_count: { type: 'integer' },\n          detail: { type: 'string' },\n        },\n        required: ['ok'],\n        additionalProperties: false,\n      },\n      render: (_args, value) => [{ type: 'text', text: value.detail ?? JSON.stringify(value) }],\n    },\n    async execute(args) {\n      try {\n        const result = await archiveProject({ client, config: resolved }, {\n          projectKeyword: args.project_keyword,\n          knowledgeBaseId: args.knowledge_base_id,\n          dryRun: args.dry_run === true,\n        });\n        if (!result.ok) return { ok: false, detail: result.error };\n        return {\n          ok: true,\n          knowledge_base_id: result.knowledgeBaseId,\n          created: result.created,\n          uploaded_count: result.uploaded.length,\n          skipped_count: result.skippedCount,\n          detail: [\n            `项目 ${result.project} (${result.projectDir})`,\n            `知识库 ${result.knowledgeBaseId}${result.created ? '（新建）' : ''}`,\n            `${result.dryRun ? '预览：将上传' : '已上传'} ${result.uploaded.length} 篇，跳过已归档 ${result.skippedCount} 篇（共 ${result.totalSessions} 个会话）`,\n            result.overview ? `总览文档：${result.overview}` : null,\n            ...result.uploaded.map((entry) => `- ${entry.title} (${entry.chars} chars)`),\n          ].filter(Boolean).join('\\n'),\n        };\n      } catch (error) {\n        return fail(error);\n      }\n    },\n  });\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/session-reader.js:74-115](https://github.com/AAAlenwow/dsh-weknora-archive/blob/46079ecb3554239797b1dcbe2e82f74a21adb9a1/lib/session-reader.js#L74-L115)\n\n抽取用户和助手文本。\n\n<details>\n<summary>查看原文（42行）</summary>\n\n```text\n/**\n * Read one session file and extract ordered plain conversation text.\n * @returns {{ sessionId: string, messages: Array<{role: 'user'|'assistant', text: string}>, bytes: number }}\n */\nexport function readSessionText(sessionFilePath) {\n  const compressed = readFileSync(sessionFilePath);\n  const jsonl = decompressConcatenatedFrames(compressed);\n  const sessionId = sessionFilePath.split('/').at(-2) ?? '';\n  const messages = [];\n  for (const line of jsonl.split('\\n')) {\n    if (line.trim() === '') continue;\n    let event;\n    try {\n      event = JSON.parse(line);\n    } catch {\n      continue; // tolerate trailing partial lines on live sessions\n    }\n    if (event?.type === 'user/message') {\n      const text = (event?.data?.content ?? [])\n        .filter((block) => block?.type === 'text' && typeof block.text === 'string')\n        .map((block) => block.text)\n        .join('\\n');\n      if (text.trim() !== '') messages.push({ role: 'user', text });\n    } else if (ASSISTANT_EVENTS.has(event?.type)) {\n      // v4 keeps the final reply in data.message.content (same shape as\n      // user/message) and uses data.stream only for incremental deltas;\n      // v3 carried the text directly in the stream entries.\n      const blocks = event?.data?.message?.content\n        ?? (event?.data?.stream ?? []).map((entry) => entry?.chunk ?? entry);\n      const text = (blocks ?? [])\n        .filter((block) => block?.type === 'text' && typeof block.text === 'string')\n        .map((block) => block.text)\n        .join('');\n      if (text.trim() !== '') {\n        const last = messages.at(-1);\n        if (last?.role === 'assistant') last.text += `\\n${text}`;\n        else messages.push({ role: 'assistant', text });\n      }\n    }\n  }\n  return { sessionId, messages, bytes: compressed.length };\n}\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 本地会话怎样增量变成知识库文档，增量属于谁？\n\n**研究主题：**功能与机制、贡献与相对优势\n\n#### 完整回答\n\nsession-reader 列项目和 v4/v3 压缩会话，解多 zstd frame 并抽用户/助手文字；summarizer 用规则选主题、命令、路径和少量“决策”行，非 LLM 摘要。archiveProject 模糊匹配项目目录，按明确/配置/项目名定位知识库，使用前 8 位会话 ID 拼文档标题，查已有标题后逐篇上传并在首次空库加总览。相对手工导入的增量是 DSH 读取、规则摘要、知识库自动选择/创建和标题去重的编排；WeKnora 检索、嵌入和解析效果归外部服务。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/session-reader.js:17-53](https://github.com/AAAlenwow/dsh-weknora-archive/blob/46079ecb3554239797b1dcbe2e82f74a21adb9a1/lib/session-reader.js#L17-L53)\n\n多帧解压与 v4/v3 文件优先。\n\n<details>\n<summary>查看原文（37行）</summary>\n\n```text\n/** zstd frame magic number (little-endian 0xFD2FB528). */\nconst ZSTD_MAGIC = Buffer.from([0x28, 0xb5, 0x2f, 0xfd]);\n\n/**\n * Decompress a file made of MANY concatenated zstd frames.\n *\n * dsh >= 0.2 writes one frame per flush instead of a single stream, so\n * `zstdDecompressSync` only returns the first frame (session metadata) and\n * silently drops every conversation event after it. Walk the buffer and\n * decompress at each magic offset instead.\n *\n * @param {Buffer} buf raw file bytes\n * @returns {string} concatenated decompressed text\n */\nfunction decompressConcatenatedFrames(buf) {\n  const parts = [];\n  let pos = 0;\n  // Frames are dense; a failed offset just means a magic byte inside payload\n  // data, so keep scanning rather than giving up on the first error.\n  while (pos < buf.length) {\n    const idx = buf.indexOf(ZSTD_MAGIC, pos);\n    if (idx === -1) break;\n    try {\n      parts.push(zstdDecompressSync(buf.subarray(idx)));\n    } catch {\n      // Not a real frame boundary — skip this byte and rescan.\n    }\n    pos = idx + 1;\n  }\n  return Buffer.concat(parts).toString('utf8');\n}\n\n/** Session file names, newest format first. */\nconst SESSION_FILES = ['session.v4.jsonl.zstd', 'session.v3.jsonl.zstd'];\n\n/** Assistant event names carrying the reply stream. */\nconst ASSISTANT_EVENTS = new Set(['assistant/message', 'assistant/attempt']);\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/session-reader.js:74-139](https://github.com/AAAlenwow/dsh-weknora-archive/blob/46079ecb3554239797b1dcbe2e82f74a21adb9a1/lib/session-reader.js#L74-L139)\n\n会话文本提取与排序。\n\n<details>\n<summary>查看原文（66行）</summary>\n\n```text\n/**\n * Read one session file and extract ordered plain conversation text.\n * @returns {{ sessionId: string, messages: Array<{role: 'user'|'assistant', text: string}>, bytes: number }}\n */\nexport function readSessionText(sessionFilePath) {\n  const compressed = readFileSync(sessionFilePath);\n  const jsonl = decompressConcatenatedFrames(compressed);\n  const sessionId = sessionFilePath.split('/').at(-2) ?? '';\n  const messages = [];\n  for (const line of jsonl.split('\\n')) {\n    if (line.trim() === '') continue;\n    let event;\n    try {\n      event = JSON.parse(line);\n    } catch {\n      continue; // tolerate trailing partial lines on live sessions\n    }\n    if (event?.type === 'user/message') {\n      const text = (event?.data?.content ?? [])\n        .filter((block) => block?.type === 'text' && typeof block.text === 'string')\n        .map((block) => block.text)\n        .join('\\n');\n      if (text.trim() !== '') messages.push({ role: 'user', text });\n    } else if (ASSISTANT_EVENTS.has(event?.type)) {\n      // v4 keeps the final reply in data.message.content (same shape as\n      // user/message) and uses data.stream only for incremental deltas;\n      // v3 carried the text directly in the stream entries.\n      const blocks = event?.data?.message?.content\n        ?? (event?.data?.stream ?? []).map((entry) => entry?.chunk ?? entry);\n      const text = (blocks ?? [])\n        .filter((block) => block?.type === 'text' && typeof block.text === 'string')\n        .map((block) => block.text)\n        .join('');\n      if (text.trim() !== '') {\n        const last = messages.at(-1);\n        if (last?.role === 'assistant') last.text += `\\n${text}`;\n        else messages.push({ role: 'assistant', text });\n      }\n    }\n  }\n  return { sessionId, messages, bytes: compressed.length };\n}\n\n/**\n * List sessions of one project with mtime and size metadata.\n * @returns Array<{ sessionId: string, dir: string, filePath: string, mtimeMs: number, size: number }>\n */\nexport function listSessions(sessionsRoot, projectDir) {\n  const base = join(sessionsRoot, projectDir);\n  const out = [];\n  for (const entry of readdirSync(base, { withFileTypes: true })) {\n    if (!entry.isDirectory()) continue;\n    const filePath = SESSION_FILES\n      .map((name) => join(base, entry.name, name))\n      .find((candidate) => existsSync(candidate));\n    if (!filePath) continue;\n    let stats;\n    try {\n      stats = statSync(filePath);\n    } catch {\n      continue;\n    }\n    out.push({ sessionId: entry.name, dir: entry.name, filePath, mtimeMs: stats.mtimeMs, size: stats.size });\n  }\n  return out.sort((a, b) => a.mtimeMs - b.mtimeMs);\n}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/summarizer.js:99-165](https://github.com/AAAlenwow/dsh-weknora-archive/blob/46079ecb3554239797b1dcbe2e82f74a21adb9a1/lib/summarizer.js#L99-L165)\n\n规则摘要模板。\n\n<details>\n<summary>查看原文（67行）</summary>\n\n```text\nexport function summarizeSession(session, { projectName = 'project', maxChars = 8000 } = {}) {\n  const lines = [];\n  const userTurns = session.messages.filter((m) => m.role === 'user');\n  const assistantTurns = session.messages.filter((m) => m.role === 'assistant');\n  const contentful = session.messages.filter((m) => !isNoise(m.text));\n\n  // Only user lines that survive scaffolding removal can describe the topic.\n  const userIntent = userTurns.flatMap((turn) => meaningfulLines(turn.text));\n\n  const decisions = [];\n  const details = new Set();\n  const commands = new Set();\n  const paths = new Set();\n  for (const message of contentful) {\n    for (const match of message.text.matchAll(COMMAND_PATTERN)) commands.add(clip(match[1], 120));\n    for (const match of message.text.matchAll(PATH_PATTERN)) {\n      if (!match[0].includes('node_modules')) details.add(clip(match[0], 160));\n    }\n  }\n  // Decisions come from user lines too, but keep only those that read like a\n  // statement of intent rather than a fragment of a longer system block.\n  for (const line of userIntent) {\n    if (decisions.length >= 8) break;\n    if (line.length < 12) continue;\n    if (/[.。!！?？]$/.test(line) || line.includes('：') || line.includes(': ')) {\n      decisions.push(clip(line, 200));\n    }\n  }\n  const toolNames = new Set();\n  for (const turn of assistantTurns) {\n    for (const match of turn.text.matchAll(/\\b(?:weknora_[a-z_]+|todo_write|subagent|workflow|bash|read|write|edit|grep|glob)\\b/g)) {\n      toolNames.add(match[1]);\n    }\n  }\n\n  // Topic: the first real user lines, longest-first within the opening turns.\n  const topics = userIntent.slice(0, 3).map((line) => clip(line, 120));\n  const chars = session.messages.reduce((sum, m) => sum + m.text.length, 0);\n  const idTail = String(session.sessionId ?? '').replace(/^session-/, '');\n  const shortId = idTail.length > 8 ? idTail.slice(0, 8) : idTail;\n  const title = `会话总结: ${projectName}_${shortId}`;\n\n  lines.push(`# ${title}`);\n  lines.push('');\n  lines.push(`- **主题**: ${topics.length > 0 ? topics.join(' / ') : '(无用户输入)'}`);\n  lines.push(`- **体量**: ${session.messages.length} 条消息 / 约 ${chars} 字符${assistantTurns.length === 0 ? '；[派工型会话：仅任务书无回复]' : ''}`);\n  if (decisions.length > 0) {\n    lines.push('- **关键决策与结论**:');\n    for (const decision of decisions.slice(0, 8)) lines.push(`  1. ${decision}`);\n  }\n  if (commands.size > 0) {\n    lines.push('- **产出与命令**:');\n    for (const command of [...commands].slice(0, 6)) lines.push(`  - \\`${command}\\``);\n  }\n  if (paths.size > 0) {\n    lines.push('- **重要细节（路径/端口/配置）**:');\n    for (const path of [...paths].slice(0, 8)) lines.push(`  - ${path}`);\n  }\n  if (toolNames.size > 0) lines.push(`- **使用的工具**: ${[...toolNames].slice(0, 12).join(', ')}`);\n  lines.push('- **未完成/遗留**: 以会话末尾为准，未发现显式遗留事项' );\n  lines.push('');\n  lines.push('> 由 dsh-weknora-archive 启发式总结生成（无 LLM 参与）；凭据类内容一律未收录完整值。');\n\n  let markdown = lines.join('\\n');\n  if (markdown.length > maxChars) markdown = `${markdown.slice(0, maxChars)}\\n…(截断)`;\n  return { title, markdown };\n}\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/archive.js:40-83](https://github.com/AAAlenwow/dsh-weknora-archive/blob/46079ecb3554239797b1dcbe2e82f74a21adb9a1/lib/archive.js#L40-L83)\n\n项目和知识库选择、去重。\n\n<details>\n<summary>查看原文（44行）</summary>\n\n```text\nexport async function archiveProject(deps, options) {\n  const { client, config, log } = deps;\n  const { matchProjectDirs } = await import('./session-reader.js');\n  const dirs = matchProjectDirs(config.sessionsDir, options.projectKeyword);\n  if (dirs.length === 0) {\n    return { ok: false, error: `no session project dir matches keyword \"${options.projectKeyword}\" under ${config.sessionsDir}` };\n  }\n  if (dirs.length > 1) {\n    return { ok: false, error: `keyword \"${options.projectKeyword}\" is ambiguous, matches: ${dirs.join(', ')}` };\n  }\n  const projectDir = dirs[0];\n  // dsh encodes a project path by collapsing `/`, `\\` and `:` into a single `-`\n  // (see session-persistence-jsonl/format.ts), wrapping the slug in `--…--`.\n  // `--data--` is the project `data`; `--Users-me-demo--` is `Users/me/demo`.\n  const projectName = projectDir.replace(/^-+|-+$/g, '').split('-').filter(Boolean).at(-1) ?? projectDir;\n  const sessions = listSessions(config.sessionsDir, projectDir);\n\n  // Resolve target knowledge base (explicit id → config default → match by name → create).\n  let knowledgeBaseId = options.knowledgeBaseId || config.knowledgeBaseId;\n  let created = false;\n  if (!knowledgeBaseId) {\n    const bases = await client.listKnowledgeBases();\n    const matched = bases.find((kb) => kb?.name === projectName);\n    if (matched) {\n      knowledgeBaseId = matched.id;\n    } else {\n      const result = await client.createKnowledgeBase(projectName, `DSH session archive for ${projectDir} (by dsh-weknora-archive)`);\n      knowledgeBaseId = result?.id ?? result?.data?.id ?? '';\n      created = true;\n    }\n  }\n  if (!knowledgeBaseId) return { ok: false, error: 'could not resolve or create a target knowledge base' };\n\n  const existing = await client.listKnowledge(knowledgeBaseId);\n  const existingTitles = new Set(existing.map((doc) => doc?.title ?? doc?.knowledge_title ?? ''));\n  // WeKnora titles a document after the uploaded FILE, so the library shows\n  // `data_xxx.md` while the intended title is `会话总结: data_xxx`. Compare on\n  // the session key so both spellings deduplicate.\n  const isArchived = (title) => {\n    if (existingTitles.has(title)) return true;\n    const key = title.replace(/^会话总结: /, '').replace(/\\.md$/i, '');\n    return [...existingTitles].some((existingTitle) =>\n      existingTitle.replace(/\\.md$/i, '').endsWith(key));\n  };\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/archive.js:85-150](https://github.com/AAAlenwow/dsh-weknora-archive/blob/46079ecb3554239797b1dcbe2e82f74a21adb9a1/lib/archive.js#L85-L150)\n\n上传与首次总览。\n\n<details>\n<summary>查看原文（66行）</summary>\n\n```text\n  const uploaded = [];\n  const skipped = [];\n  const isFirstRun = existingTitles.size === 0;\n  for (const session of sessions) {\n    const title = sessionDocTitle(projectName, session.sessionId);\n    if (isArchived(title)) {\n      skipped.push(session.sessionId);\n      continue;\n    }\n    const text = readSessionText(session.filePath);\n    if (text.messages.length === 0) {\n      skipped.push(session.sessionId);\n      continue;\n    }\n    const summary = summarizeSession(text, { projectName, maxChars: config.maxSummaryChars });\n    if (options.dryRun) {\n      uploaded.push({ sessionId: session.sessionId, title, dryRun: true, chars: summary.markdown.length });\n      continue;\n    }\n    const filename = `${sessionDocTitle(projectName, session.sessionId).replace(/^会话总结: /, '')}.md`;\n    try {\n      await client.uploadKnowledge({ knowledgeBaseId, title, content: summary.markdown, filename });\n      uploaded.push({ sessionId: session.sessionId, title, filename, chars: summary.markdown.length });\n    } catch (err) {\n      // WeKnora answers 409 duplicate_file when a same-named document already\n      // exists. The pre-upload title check misses it whenever a previous run\n      // uploaded before its document became listable, so treat it as a skip\n      // rather than aborting the whole pass.\n      if (err?.status === 409) {\n        skipped.push(session.sessionId);\n        continue;\n      }\n      throw err;\n    }\n  }\n\n  // First run also contributes a project overview.\n  let overview = null;\n  if (isFirstRun && !options.dryRun && uploaded.length > 0) {\n    overview = summarizeProjectOverview({ projectName, projectDir, sessions, summaries: uploaded });\n    try {\n      await client.uploadKnowledge({\n        knowledgeBaseId,\n        title: overview.title,\n        content: overview.markdown,\n        filename: '00_项目总览.md',\n      });\n    } catch (err) {\n      if (err?.status !== 409) throw err;   // an existing overview is fine\n      overview = null;\n    }\n  }\n\n  log?.info(`dsh-weknora-archive: ${projectName} → kb ${knowledgeBaseId}: ${uploaded.length} uploaded, ${skipped.length} skipped`);\n  return {\n    ok: true,\n    knowledgeBaseId,\n    created,\n    project: projectName,\n    projectDir,\n    totalSessions: sessions.length,\n    uploaded,\n    skippedCount: skipped.length,\n    overview: overview ? overview.title : null,\n    dryRun: Boolean(options.dryRun),\n  };\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · dry_run、脱敏和增量去重有哪些正确性边界？\n\n**研究主题：**缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\ndry_run 只在 archiveProject 的逐会话上传前判断，缺省知识库选择/创建已经发生，所以预览可能创建远端库；它也不返回将上传摘要正文供审阅。summarizer 把用户首轮、命令和路径直接裁切到文档，没有凭据值识别/替换代码，README“凭据类内容不收录完整值”与实现不符；如果文本中有 token、口令或 URL 参数，可能作为主题/命令被上传。标题只取会话 ID 前 8 位，已有文档列表只请求 page_size=100 且未翻页，项目名取编码目录最后一段；这些都使去重身份和完整性有限。409 只当跳过，但不能证明上传后的索引/解析成功。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/archive.js:57-102](https://github.com/AAAlenwow/dsh-weknora-archive/blob/46079ecb3554239797b1dcbe2e82f74a21adb9a1/lib/archive.js#L57-L102)\n\n远端创建早于 dry_run 判断。\n\n<details>\n<summary>查看原文（46行）</summary>\n\n```text\n  // Resolve target knowledge base (explicit id → config default → match by name → create).\n  let knowledgeBaseId = options.knowledgeBaseId || config.knowledgeBaseId;\n  let created = false;\n  if (!knowledgeBaseId) {\n    const bases = await client.listKnowledgeBases();\n    const matched = bases.find((kb) => kb?.name === projectName);\n    if (matched) {\n      knowledgeBaseId = matched.id;\n    } else {\n      const result = await client.createKnowledgeBase(projectName, `DSH session archive for ${projectDir} (by dsh-weknora-archive)`);\n      knowledgeBaseId = result?.id ?? result?.data?.id ?? '';\n      created = true;\n    }\n  }\n  if (!knowledgeBaseId) return { ok: false, error: 'could not resolve or create a target knowledge base' };\n\n  const existing = await client.listKnowledge(knowledgeBaseId);\n  const existingTitles = new Set(existing.map((doc) => doc?.title ?? doc?.knowledge_title ?? ''));\n  // WeKnora titles a document after the uploaded FILE, so the library shows\n  // `data_xxx.md` while the intended title is `会话总结: data_xxx`. Compare on\n  // the session key so both spellings deduplicate.\n  const isArchived = (title) => {\n    if (existingTitles.has(title)) return true;\n    const key = title.replace(/^会话总结: /, '').replace(/\\.md$/i, '');\n    return [...existingTitles].some((existingTitle) =>\n      existingTitle.replace(/\\.md$/i, '').endsWith(key));\n  };\n\n  const uploaded = [];\n  const skipped = [];\n  const isFirstRun = existingTitles.size === 0;\n  for (const session of sessions) {\n    const title = sessionDocTitle(projectName, session.sessionId);\n    if (isArchived(title)) {\n      skipped.push(session.sessionId);\n      continue;\n    }\n    const text = readSessionText(session.filePath);\n    if (text.messages.length === 0) {\n      skipped.push(session.sessionId);\n      continue;\n    }\n    const summary = summarizeSession(text, { projectName, maxChars: config.maxSummaryChars });\n    if (options.dryRun) {\n      uploaded.push({ sessionId: session.sessionId, title, dryRun: true, chars: summary.markdown.length });\n      continue;\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/summarizer.js:105-164](https://github.com/AAAlenwow/dsh-weknora-archive/blob/46079ecb3554239797b1dcbe2e82f74a21adb9a1/lib/summarizer.js#L105-L164)\n\n用户行、命令、路径直接进文档，未见脱敏。\n\n<details>\n<summary>查看原文（60行）</summary>\n\n```text\n  // Only user lines that survive scaffolding removal can describe the topic.\n  const userIntent = userTurns.flatMap((turn) => meaningfulLines(turn.text));\n\n  const decisions = [];\n  const details = new Set();\n  const commands = new Set();\n  const paths = new Set();\n  for (const message of contentful) {\n    for (const match of message.text.matchAll(COMMAND_PATTERN)) commands.add(clip(match[1], 120));\n    for (const match of message.text.matchAll(PATH_PATTERN)) {\n      if (!match[0].includes('node_modules')) details.add(clip(match[0], 160));\n    }\n  }\n  // Decisions come from user lines too, but keep only those that read like a\n  // statement of intent rather than a fragment of a longer system block.\n  for (const line of userIntent) {\n    if (decisions.length >= 8) break;\n    if (line.length < 12) continue;\n    if (/[.。!！?？]$/.test(line) || line.includes('：') || line.includes(': ')) {\n      decisions.push(clip(line, 200));\n    }\n  }\n  const toolNames = new Set();\n  for (const turn of assistantTurns) {\n    for (const match of turn.text.matchAll(/\\b(?:weknora_[a-z_]+|todo_write|subagent|workflow|bash|read|write|edit|grep|glob)\\b/g)) {\n      toolNames.add(match[1]);\n    }\n  }\n\n  // Topic: the first real user lines, longest-first within the opening turns.\n  const topics = userIntent.slice(0, 3).map((line) => clip(line, 120));\n  const chars = session.messages.reduce((sum, m) => sum + m.text.length, 0);\n  const idTail = String(session.sessionId ?? '').replace(/^session-/, '');\n  const shortId = idTail.length > 8 ? idTail.slice(0, 8) : idTail;\n  const title = `会话总结: ${projectName}_${shortId}`;\n\n  lines.push(`# ${title}`);\n  lines.push('');\n  lines.push(`- **主题**: ${topics.length > 0 ? topics.join(' / ') : '(无用户输入)'}`);\n  lines.push(`- **体量**: ${session.messages.length} 条消息 / 约 ${chars} 字符${assistantTurns.length === 0 ? '；[派工型会话：仅任务书无回复]' : ''}`);\n  if (decisions.length > 0) {\n    lines.push('- **关键决策与结论**:');\n    for (const decision of decisions.slice(0, 8)) lines.push(`  1. ${decision}`);\n  }\n  if (commands.size > 0) {\n    lines.push('- **产出与命令**:');\n    for (const command of [...commands].slice(0, 6)) lines.push(`  - \\`${command}\\``);\n  }\n  if (paths.size > 0) {\n    lines.push('- **重要细节（路径/端口/配置）**:');\n    for (const path of [...paths].slice(0, 8)) lines.push(`  - ${path}`);\n  }\n  if (toolNames.size > 0) lines.push(`- **使用的工具**: ${[...toolNames].slice(0, 12).join(', ')}`);\n  lines.push('- **未完成/遗留**: 以会话末尾为准，未发现显式遗留事项' );\n  lines.push('');\n  lines.push('> 由 dsh-weknora-archive 启发式总结生成（无 LLM 参与）；凭据类内容一律未收录完整值。');\n\n  let markdown = lines.join('\\n');\n  if (markdown.length > maxChars) markdown = `${markdown.slice(0, maxChars)}\\n…(截断)`;\n  return { title, markdown };\n```\n\n</details>\n\n**依据 3 · 作者声明**：[README.md:39-44](https://github.com/AAAlenwow/dsh-weknora-archive/blob/46079ecb3554239797b1dcbe2e82f74a21adb9a1/README.md#L39-L44)\n\n作者凭据脱敏声称。\n\n```text\n## 隐私说明\n\n- 会话数据**只发往你自己配置的 WeKnora 实例**，插件不经过任何第三方服务。\n- API key 只用于请求头 `X-API-Key`，**绝不写入日志、异常信息、工具结果或本文档**；日志输出前统一走 `redactConfig()` 脱敏。\n- 总结为**启发式规则生成（无 LLM 参与）**，凭据类内容不收录完整值。\n\n```\n\n**依据 4 · 源码核查**：[lib/archive.js:11-33](https://github.com/AAAlenwow/dsh-weknora-archive/blob/46079ecb3554239797b1dcbe2e82f74a21adb9a1/lib/archive.js#L11-L33)\n\n8 字符会话键。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n/** Doc title convention must match the session-archive skill: `会话总结: <project>_<sessionId8>`. */\nexport function sessionDocTitle(projectName, sessionId) {\n  // Session ids look like `session-<uuid>` or a bare `<uuid>`; both carry a\n  // long `session-` prefix that a plain slice(0, 8) would swallow whole.\n  const tail = String(sessionId).replace(/^session-/, '');\n  const short = tail.length > 8 ? tail.slice(0, 8) : tail;\n  return `会话总结: ${projectName}_${short}`;\n}\n\n/**\n * Compute which sessions are new relative to existing document titles.\n * @returns string[] of sessionIds not yet archived.\n */\nexport function findNewSessions(sessions, existingTitles) {\n  const known = new Set([...existingTitles].map((title) => String(title).split('_').at(-1)));\n  return sessions\n    .map((session) => session.sessionId)\n    .filter((id) => {\n      const tail = String(id).replace(/^session-/, '');\n      const short = tail.length > 8 ? tail.slice(0, 8) : tail;\n      return !known.has(short);\n    });\n}\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/archive.js:73-115](https://github.com/AAAlenwow/dsh-weknora-archive/blob/46079ecb3554239797b1dcbe2e82f74a21adb9a1/lib/archive.js#L73-L115)\n\n标题去重与 409。\n\n<details>\n<summary>查看原文（43行）</summary>\n\n```text\n  const existing = await client.listKnowledge(knowledgeBaseId);\n  const existingTitles = new Set(existing.map((doc) => doc?.title ?? doc?.knowledge_title ?? ''));\n  // WeKnora titles a document after the uploaded FILE, so the library shows\n  // `data_xxx.md` while the intended title is `会话总结: data_xxx`. Compare on\n  // the session key so both spellings deduplicate.\n  const isArchived = (title) => {\n    if (existingTitles.has(title)) return true;\n    const key = title.replace(/^会话总结: /, '').replace(/\\.md$/i, '');\n    return [...existingTitles].some((existingTitle) =>\n      existingTitle.replace(/\\.md$/i, '').endsWith(key));\n  };\n\n  const uploaded = [];\n  const skipped = [];\n  const isFirstRun = existingTitles.size === 0;\n  for (const session of sessions) {\n    const title = sessionDocTitle(projectName, session.sessionId);\n    if (isArchived(title)) {\n      skipped.push(session.sessionId);\n      continue;\n    }\n    const text = readSessionText(session.filePath);\n    if (text.messages.length === 0) {\n      skipped.push(session.sessionId);\n      continue;\n    }\n    const summary = summarizeSession(text, { projectName, maxChars: config.maxSummaryChars });\n    if (options.dryRun) {\n      uploaded.push({ sessionId: session.sessionId, title, dryRun: true, chars: summary.markdown.length });\n      continue;\n    }\n    const filename = `${sessionDocTitle(projectName, session.sessionId).replace(/^会话总结: /, '')}.md`;\n    try {\n      await client.uploadKnowledge({ knowledgeBaseId, title, content: summary.markdown, filename });\n      uploaded.push({ sessionId: session.sessionId, title, filename, chars: summary.markdown.length });\n    } catch (err) {\n      // WeKnora answers 409 duplicate_file when a same-named document already\n      // exists. The pre-upload title check misses it whenever a previous run\n      // uploaded before its document became listable, so treat it as a skip\n      // rather than aborting the whole pass.\n      if (err?.status === 409) {\n        skipped.push(session.sessionId);\n        continue;\n```\n\n</details>\n\n**依据 6 · 源码核查**：[lib/client.js:75-78](https://github.com/AAAlenwow/dsh-weknora-archive/blob/46079ecb3554239797b1dcbe2e82f74a21adb9a1/lib/client.js#L75-L78)\n\n文档列表固定 page_size=100。\n\n```text\n  /** GET /knowledge-bases/{id}/knowledge?page_size=100 — list documents. */\n  listKnowledge(knowledgeBaseId) {\n    return this.request('GET', `/knowledge-bases/${encodeURIComponent(knowledgeBaseId)}/knowledge?page_size=100`)\n      .then((body) => Array.isArray(body?.data) ? body.data : (Array.isArray(body) ? body : []));\n```\n\n#### 缺口\n\n- 未用假密钥、同前缀 ID 和超 100 文档测试。\n  **影响：**实际泄漏及误去重频率未知。\n  **进一步探讨：**隔离 mock 注入 canary、前缀碰撞和 101 篇文档，核输出及上传。\n- 未验 WeKnora 解析完成。\n  **影响：**上传成功不代表可检索。\n  **进一步探讨：**上传后轮询解析并检索 canary 文档。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 安装、持续归档和失败恢复的代价是什么？\n\n**研究主题：**依赖、兼容与流程、效果与总成本\n\n#### 完整回答\n\n包 0.2.0 MIT、Node>=24，声明 DSH 0.1.7-alpha.1/web；需要本地会话文件和可写的 WeKnora scoped key、接口匹配及 embedding 配置。每次归档同步读取/解压会话并对每篇做 HTTP 上传，启发式摘要免 LLM token，但仍有 CPU/网络/WeKnora 存储/嵌入成本。摘要上限默认 8000 字符、请求与上传超时分别 30/120 秒；正在写的会话可能部分读取或被跳过。失败恢复须区分目录模糊、配置、上传冲突、远端解析和重复，真实单位成功文档成本未知。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:1-46](https://github.com/AAAlenwow/dsh-weknora-archive/blob/46079ecb3554239797b1dcbe2e82f74a21adb9a1/package.json#L1-L46)\n\n版本、运行时与兼容声明。\n\n<details>\n<summary>查看原文（46行）</summary>\n\n```text\n{\n  \"name\": \"dsh-weknora-archive\",\n  \"version\": \"0.2.0\",\n  \"description\": \"Incrementally archive DSH sessions into a WeKnora knowledge base (Tencent WeKnora RAG): extract, summarize, dedupe, upload. 把 DSH 会话增量归档进 WeKnora 知识库（写入侧互补官方只读 dsh-weknora 插件）。\",\n  \"keywords\": [\n    \"deepseek-harness\",\n    \"dsh\",\n    \"dsh-plugin\",\n    \"weknora\",\n    \"knowledge-base\",\n    \"session-archive\",\n    \"rag\"\n  ],\n  \"license\": \"MIT\",\n  \"type\": \"module\",\n  \"main\": \"./lib/index.js\",\n  \"exports\": {\n    \".\": \"./lib/index.js\",\n    \"./package.json\": \"./package.json\"\n  },\n  \"files\": [\n    \"cordis.patch.yml\",\n    \"lib\",\n    \"test\",\n    \"README.md\"\n  ],\n  \"engines\": {\n    \"node\": \">=24.0\"\n  },\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    },\n    \"compatibility\": {\n      \"dsh\": \"0.1.7-alpha.1\",\n      \"profiles\": [\n        \"web\"\n      ]\n    }\n  },\n  \"scripts\": {\n    \"test\": \"node test/mock.test.mjs\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/AAAlenwow/dsh-weknora-archive.git\"\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/config.js:8-16](https://github.com/AAAlenwow/dsh-weknora-archive/blob/46079ecb3554239797b1dcbe2e82f74a21adb9a1/lib/config.js#L8-L16)\n\n超时与长度默认。\n\n```text\nconst DEFAULTS = {\n  baseUrl: '',\n  apiKey: '',\n  knowledgeBaseId: '',\n  sessionsDir: '',\n  maxSummaryChars: 8000,\n  requestTimeoutMs: 30_000,\n  uploadTimeoutMs: 120_000,\n  toolPrefix: 'weknora_archive',\n```\n\n**依据 3 · 源码核查**：[lib/archive.js:40-55](https://github.com/AAAlenwow/dsh-weknora-archive/blob/46079ecb3554239797b1dcbe2e82f74a21adb9a1/lib/archive.js#L40-L55)\n\n项目目录模糊匹配。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\nexport async function archiveProject(deps, options) {\n  const { client, config, log } = deps;\n  const { matchProjectDirs } = await import('./session-reader.js');\n  const dirs = matchProjectDirs(config.sessionsDir, options.projectKeyword);\n  if (dirs.length === 0) {\n    return { ok: false, error: `no session project dir matches keyword \"${options.projectKeyword}\" under ${config.sessionsDir}` };\n  }\n  if (dirs.length > 1) {\n    return { ok: false, error: `keyword \"${options.projectKeyword}\" is ambiguous, matches: ${dirs.join(', ')}` };\n  }\n  const projectDir = dirs[0];\n  // dsh encodes a project path by collapsing `/`, `\\` and `:` into a single `-`\n  // (see session-persistence-jsonl/format.ts), wrapping the slug in `--…--`.\n  // `--data--` is the project `data`; `--Users-me-demo--` is `Users/me/demo`.\n  const projectName = projectDir.replace(/^-+|-+$/g, '').split('-').filter(Boolean).at(-1) ?? projectDir;\n  const sessions = listSessions(config.sessionsDir, projectDir);\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/client.js:36-58](https://github.com/AAAlenwow/dsh-weknora-archive/blob/46079ecb3554239797b1dcbe2e82f74a21adb9a1/lib/client.js#L36-L58)\n\nHTTP 调用与失败状态。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n  async request(method, path, { json, timeoutMs, expect = [200] } = {}) {\n    const controller = new AbortController();\n    const timer = setTimeout(() => controller.abort(), timeoutMs ?? this.requestTimeoutMs);\n    try {\n      const response = await fetch(`${this.baseUrl}${path}`, {\n        method,\n        headers: this.headers(json !== undefined ? { 'Content-Type': 'application/json' } : {}),\n        body: json !== undefined ? JSON.stringify(json) : undefined,\n        signal: controller.signal,\n      });\n      const text = await response.text();\n      if (!expect.includes(response.status)) {\n        throw new WeknoraApiError(response.status, method, path, text.slice(0, 300));\n      }\n      try {\n        return text === '' ? {} : JSON.parse(text);\n      } catch {\n        return { raw: text };\n      }\n    } finally {\n      clearTimeout(timer);\n    }\n  }\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/archive.js:85-150](https://github.com/AAAlenwow/dsh-weknora-archive/blob/46079ecb3554239797b1dcbe2e82f74a21adb9a1/lib/archive.js#L85-L150)\n\n逐篇同步上传。\n\n<details>\n<summary>查看原文（66行）</summary>\n\n```text\n  const uploaded = [];\n  const skipped = [];\n  const isFirstRun = existingTitles.size === 0;\n  for (const session of sessions) {\n    const title = sessionDocTitle(projectName, session.sessionId);\n    if (isArchived(title)) {\n      skipped.push(session.sessionId);\n      continue;\n    }\n    const text = readSessionText(session.filePath);\n    if (text.messages.length === 0) {\n      skipped.push(session.sessionId);\n      continue;\n    }\n    const summary = summarizeSession(text, { projectName, maxChars: config.maxSummaryChars });\n    if (options.dryRun) {\n      uploaded.push({ sessionId: session.sessionId, title, dryRun: true, chars: summary.markdown.length });\n      continue;\n    }\n    const filename = `${sessionDocTitle(projectName, session.sessionId).replace(/^会话总结: /, '')}.md`;\n    try {\n      await client.uploadKnowledge({ knowledgeBaseId, title, content: summary.markdown, filename });\n      uploaded.push({ sessionId: session.sessionId, title, filename, chars: summary.markdown.length });\n    } catch (err) {\n      // WeKnora answers 409 duplicate_file when a same-named document already\n      // exists. The pre-upload title check misses it whenever a previous run\n      // uploaded before its document became listable, so treat it as a skip\n      // rather than aborting the whole pass.\n      if (err?.status === 409) {\n        skipped.push(session.sessionId);\n        continue;\n      }\n      throw err;\n    }\n  }\n\n  // First run also contributes a project overview.\n  let overview = null;\n  if (isFirstRun && !options.dryRun && uploaded.length > 0) {\n    overview = summarizeProjectOverview({ projectName, projectDir, sessions, summaries: uploaded });\n    try {\n      await client.uploadKnowledge({\n        knowledgeBaseId,\n        title: overview.title,\n        content: overview.markdown,\n        filename: '00_项目总览.md',\n      });\n    } catch (err) {\n      if (err?.status !== 409) throw err;   // an existing overview is fine\n      overview = null;\n    }\n  }\n\n  log?.info(`dsh-weknora-archive: ${projectName} → kb ${knowledgeBaseId}: ${uploaded.length} uploaded, ${skipped.length} skipped`);\n  return {\n    ok: true,\n    knowledgeBaseId,\n    created,\n    project: projectName,\n    projectDir,\n    totalSessions: sessions.length,\n    uploaded,\n    skippedCount: skipped.length,\n    overview: overview ? overview.title : null,\n    dryRun: Boolean(options.dryRun),\n  };\n```\n\n</details>\n\n**依据 6 · 作者声明**：[README.md:55-59](https://github.com/AAAlenwow/dsh-weknora-archive/blob/46079ecb3554239797b1dcbe2e82f74a21adb9a1/README.md#L55-L59)\n\n作者已知解析/活会话边界。\n\n```text\n## 已知边界\n\n- 总结是启发式抽取，不是 LLM 精炼；追求质量可在归档前手工润色。\n- 正在运行的会话文件可能解压失败，会被跳过（下次归档自动补上）。\n- 新建库的 embedding 配置需在 WeKnora 端完成（PUT 接口会静默丢弃 embedding 字段）。\n```\n\n#### 缺口\n\n- 无真实会话量下的资源和成功解析对照。\n  **影响：**无法计算每篇可检索摘要成本。\n  **进一步探讨：**固定样本记录解压/上传/嵌入时间、字节与人工审核。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 如何把预览变为真正可审阅交付并验证净价值？\n\n**研究主题：**新假设与验证、采用判断\n\n#### 完整回答\n\n当前不宜对含敏感内容的会话直接全自动上传；先对无敏感样本指定已存在知识库，手工审阅摘要并核解析结果。新的未实现假设是两阶段归档：第一阶段纯本地生成带完整会话 ID、项目路径哈希和脱敏 canary 检测结果的清单及摘要，第二阶段用户选定后以幂等键上传并轮询解析；比现行 dry_run+标题去重可减少意外建库、泄漏和误跳过。固定含假密钥、8 位前缀碰撞、101 篇与解析失败样本，对照误泄漏、误去重、可检索率、人工分钟和额外请求。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/archive.js:11-33](https://github.com/AAAlenwow/dsh-weknora-archive/blob/46079ecb3554239797b1dcbe2e82f74a21adb9a1/lib/archive.js#L11-L33)\n\n当前短会话 ID。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n/** Doc title convention must match the session-archive skill: `会话总结: <project>_<sessionId8>`. */\nexport function sessionDocTitle(projectName, sessionId) {\n  // Session ids look like `session-<uuid>` or a bare `<uuid>`; both carry a\n  // long `session-` prefix that a plain slice(0, 8) would swallow whole.\n  const tail = String(sessionId).replace(/^session-/, '');\n  const short = tail.length > 8 ? tail.slice(0, 8) : tail;\n  return `会话总结: ${projectName}_${short}`;\n}\n\n/**\n * Compute which sessions are new relative to existing document titles.\n * @returns string[] of sessionIds not yet archived.\n */\nexport function findNewSessions(sessions, existingTitles) {\n  const known = new Set([...existingTitles].map((title) => String(title).split('_').at(-1)));\n  return sessions\n    .map((session) => session.sessionId)\n    .filter((id) => {\n      const tail = String(id).replace(/^session-/, '');\n      const short = tail.length > 8 ? tail.slice(0, 8) : tail;\n      return !known.has(short);\n    });\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/archive.js:57-103](https://github.com/AAAlenwow/dsh-weknora-archive/blob/46079ecb3554239797b1dcbe2e82f74a21adb9a1/lib/archive.js#L57-L103)\n\n当前预览在建库之后且不展示正文。\n\n<details>\n<summary>查看原文（47行）</summary>\n\n```text\n  // Resolve target knowledge base (explicit id → config default → match by name → create).\n  let knowledgeBaseId = options.knowledgeBaseId || config.knowledgeBaseId;\n  let created = false;\n  if (!knowledgeBaseId) {\n    const bases = await client.listKnowledgeBases();\n    const matched = bases.find((kb) => kb?.name === projectName);\n    if (matched) {\n      knowledgeBaseId = matched.id;\n    } else {\n      const result = await client.createKnowledgeBase(projectName, `DSH session archive for ${projectDir} (by dsh-weknora-archive)`);\n      knowledgeBaseId = result?.id ?? result?.data?.id ?? '';\n      created = true;\n    }\n  }\n  if (!knowledgeBaseId) return { ok: false, error: 'could not resolve or create a target knowledge base' };\n\n  const existing = await client.listKnowledge(knowledgeBaseId);\n  const existingTitles = new Set(existing.map((doc) => doc?.title ?? doc?.knowledge_title ?? ''));\n  // WeKnora titles a document after the uploaded FILE, so the library shows\n  // `data_xxx.md` while the intended title is `会话总结: data_xxx`. Compare on\n  // the session key so both spellings deduplicate.\n  const isArchived = (title) => {\n    if (existingTitles.has(title)) return true;\n    const key = title.replace(/^会话总结: /, '').replace(/\\.md$/i, '');\n    return [...existingTitles].some((existingTitle) =>\n      existingTitle.replace(/\\.md$/i, '').endsWith(key));\n  };\n\n  const uploaded = [];\n  const skipped = [];\n  const isFirstRun = existingTitles.size === 0;\n  for (const session of sessions) {\n    const title = sessionDocTitle(projectName, session.sessionId);\n    if (isArchived(title)) {\n      skipped.push(session.sessionId);\n      continue;\n    }\n    const text = readSessionText(session.filePath);\n    if (text.messages.length === 0) {\n      skipped.push(session.sessionId);\n      continue;\n    }\n    const summary = summarizeSession(text, { projectName, maxChars: config.maxSummaryChars });\n    if (options.dryRun) {\n      uploaded.push({ sessionId: session.sessionId, title, dryRun: true, chars: summary.markdown.length });\n      continue;\n    }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/summarizer.js:105-164](https://github.com/AAAlenwow/dsh-weknora-archive/blob/46079ecb3554239797b1dcbe2e82f74a21adb9a1/lib/summarizer.js#L105-L164)\n\n当前摘要无脱敏。\n\n<details>\n<summary>查看原文（60行）</summary>\n\n```text\n  // Only user lines that survive scaffolding removal can describe the topic.\n  const userIntent = userTurns.flatMap((turn) => meaningfulLines(turn.text));\n\n  const decisions = [];\n  const details = new Set();\n  const commands = new Set();\n  const paths = new Set();\n  for (const message of contentful) {\n    for (const match of message.text.matchAll(COMMAND_PATTERN)) commands.add(clip(match[1], 120));\n    for (const match of message.text.matchAll(PATH_PATTERN)) {\n      if (!match[0].includes('node_modules')) details.add(clip(match[0], 160));\n    }\n  }\n  // Decisions come from user lines too, but keep only those that read like a\n  // statement of intent rather than a fragment of a longer system block.\n  for (const line of userIntent) {\n    if (decisions.length >= 8) break;\n    if (line.length < 12) continue;\n    if (/[.。!！?？]$/.test(line) || line.includes('：') || line.includes(': ')) {\n      decisions.push(clip(line, 200));\n    }\n  }\n  const toolNames = new Set();\n  for (const turn of assistantTurns) {\n    for (const match of turn.text.matchAll(/\\b(?:weknora_[a-z_]+|todo_write|subagent|workflow|bash|read|write|edit|grep|glob)\\b/g)) {\n      toolNames.add(match[1]);\n    }\n  }\n\n  // Topic: the first real user lines, longest-first within the opening turns.\n  const topics = userIntent.slice(0, 3).map((line) => clip(line, 120));\n  const chars = session.messages.reduce((sum, m) => sum + m.text.length, 0);\n  const idTail = String(session.sessionId ?? '').replace(/^session-/, '');\n  const shortId = idTail.length > 8 ? idTail.slice(0, 8) : idTail;\n  const title = `会话总结: ${projectName}_${shortId}`;\n\n  lines.push(`# ${title}`);\n  lines.push('');\n  lines.push(`- **主题**: ${topics.length > 0 ? topics.join(' / ') : '(无用户输入)'}`);\n  lines.push(`- **体量**: ${session.messages.length} 条消息 / 约 ${chars} 字符${assistantTurns.length === 0 ? '；[派工型会话：仅任务书无回复]' : ''}`);\n  if (decisions.length > 0) {\n    lines.push('- **关键决策与结论**:');\n    for (const decision of decisions.slice(0, 8)) lines.push(`  1. ${decision}`);\n  }\n  if (commands.size > 0) {\n    lines.push('- **产出与命令**:');\n    for (const command of [...commands].slice(0, 6)) lines.push(`  - \\`${command}\\``);\n  }\n  if (paths.size > 0) {\n    lines.push('- **重要细节（路径/端口/配置）**:');\n    for (const path of [...paths].slice(0, 8)) lines.push(`  - ${path}`);\n  }\n  if (toolNames.size > 0) lines.push(`- **使用的工具**: ${[...toolNames].slice(0, 12).join(', ')}`);\n  lines.push('- **未完成/遗留**: 以会话末尾为准，未发现显式遗留事项' );\n  lines.push('');\n  lines.push('> 由 dsh-weknora-archive 启发式总结生成（无 LLM 参与）；凭据类内容一律未收录完整值。');\n\n  let markdown = lines.join('\\n');\n  if (markdown.length > maxChars) markdown = `${markdown.slice(0, maxChars)}\\n…(截断)`;\n  return { title, markdown };\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/client.js:75-119](https://github.com/AAAlenwow/dsh-weknora-archive/blob/46079ecb3554239797b1dcbe2e82f74a21adb9a1/lib/client.js#L75-L119)\n\n列表/上传及解析 API。\n\n<details>\n<summary>查看原文（45行）</summary>\n\n```text\n  /** GET /knowledge-bases/{id}/knowledge?page_size=100 — list documents. */\n  listKnowledge(knowledgeBaseId) {\n    return this.request('GET', `/knowledge-bases/${encodeURIComponent(knowledgeBaseId)}/knowledge?page_size=100`)\n      .then((body) => Array.isArray(body?.data) ? body.data : (Array.isArray(body) ? body : []));\n  }\n\n  /**\n   * POST /knowledge-bases/{id}/knowledge/file — upload one Markdown document.\n   *\n   * This deployment exposes the multipart upload under the knowledge-base\n   * scoped `/knowledge/file` route (taken from the WeKnora web client's own\n   * request), not the flat `/knowledge` route used by the upstream docs.\n   */\n  async uploadKnowledge({ knowledgeBaseId, title, content, filename }) {\n    const controller = new AbortController();\n    const timer = setTimeout(() => controller.abort(), this.uploadTimeoutMs);\n    const path = `/knowledge-bases/${encodeURIComponent(knowledgeBaseId)}/knowledge/file`;\n    try {\n      const form = new FormData();\n      form.append('file', new Blob([new TextEncoder().encode(content)], { type: 'text/markdown' }),\n        filename ?? `${title}.md`);\n      const response = await fetch(`${this.baseUrl}${path}`, {\n        method: 'POST',\n        headers: this.headers(),\n        body: form,\n        signal: controller.signal,\n      });\n      const text = await response.text();\n      if (response.status !== 200 && response.status !== 201) {\n        throw new WeknoraApiError(response.status, 'POST', path, text.slice(0, 300));\n      }\n      try {\n        return JSON.parse(text);\n      } catch {\n        return { raw: text };\n      }\n    } finally {\n      clearTimeout(timer);\n    }\n  }\n\n  /** POST /knowledge/{id}/reparse — retry parsing a failed document. */\n  reparse(knowledgeId) {\n    return this.request('POST', `/knowledge/${encodeURIComponent(knowledgeId)}/reparse`, { expect: [200, 201, 202] });\n  }\n```\n\n</details>\n\n#### 缺口\n\n- 两阶段审阅、强身份与脱敏未实现。\n  **影响：**不能算当前创新或收益。\n  **进一步探讨：**用 canary 和规模/失败矩阵做对照，核净人工与可检索文档。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：b230b420e1d88c6c04cba51887a1586c758ad0d3337a94e4fbb400e415b8b162。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 6 | 932 | 693 | 181 | — |\n| .md | source | 1 | 124 | — | — | 1170 |\n| .mjs | test | 1 | 158 | 140 | 17 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| archive_session | 批量写库 | 可能上传未经脱敏内容 |\n| dry_run | 预估上传篇数 | 缺库时仍可能远端创建 |\n| status/list | 查询项目和库 | 文档列表单页 100 |\n| create_knowledge_base | 建库 | 需后续 embedding 配置 |\n\n## 工程亮点\n\n会话读取用同步 zstd 解压和 JSONL 容错；工具注册为 Cordis effect。上传和建库是远端副作用，dry_run 仅避开逐篇上传。错误由 client 附响应片段，fail 仅截 X-API-Key 字符串，无法形式化证明不含其它敏感响应。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、cordis.patch.yml、lib/index.js、lib/archive.js、lib/session-reader.js、lib/summarizer.js、lib/client.js、lib/config.js、test/mock.test.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：审阅固定提交 README、包、配置、会话读取、摘要、编排、HTTP 客户端与测试源码；未运行插件、测试或上传。\n- 下一步：隔离实例用假密钥、同前 8 位 ID、101 文档、活会话与解析失败，测远端副作用、泄漏、误去重和可检索率。\n",
+        "reports": "# dsh-weknora-archive\n\n> 提取、摘要、去重并上传DSH会话到WeKnora知识库，补充官方只读检索插件的写入侧。\n\n## 研究范围\n\n- **仓库**：[AAAlenwow/dsh-weknora-archive](https://github.com/AAAlenwow/dsh-weknora-archive)\n- **版本号**：0.3.0（[固定提交 f3fc189ac0b0c4ff77959a39e56115e8c59334d9](https://github.com/AAAlenwow/dsh-weknora-archive/tree/f3fc189ac0b0c4ff77959a39e56115e8c59334d9)）\n- **版本日期**：2026-10-22（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已有贡献为源码支持的宿主接线与流程组合；效果、兼容和恢复没有真实宿主证据。未来方向保持未验证，不计入当前贡献。\n\n## 洞察短评\n\n- **用途**：已部署 WeKnora、希望把 DSH 对话沉淀为团队知识库的用户可用它按游标增量读取 DSH 会话，清洗并摘要后去重上传到 WeKnora，支持手动工具与定时归档；合格结果是只归档新增且符合筛选条件的会话，重复内容不重复写入，失败可定位并重试。详见[Q01](#research-q01)。\n- **亮点**：补齐 DSH 到 WeKnora 的增量写入链，将会话提取、摘要、指纹去重与上传串成一个可调度流程。它相对“人工导出会话、整理 Markdown 后上传，或只使用 WeKnora 检索而不自动写入”减少接线或重复操作，但未建立同条件效果优势。详见[Q03](#research-q03)。\n- **思考**：摘要会把模型判断引入档案，隐私过滤和去重指纹不能保证敏感内容不外发或语义重复被识别。这会影响贡献能否转化为端到端收益，需以故障注入和同条件对照改变判断。详见[Q04](#research-q04)。\n- **建议**：未来可探索：可在上传前增加可复核的字段级隐私清单与内容寻址回执，让删除、重放和来源追踪成为归档协议的一部分。该方向由现有贡献与限制推导，尚未实现；失败或恢复负担不改善即应否定。详见[Q08](#research-q08)。\n\n采用建议：已自建WeKnora且能接受内容外发者可观察，先用脱敏样本验证筛选、删除、重试和重复归档边界。 采用结论是观察，不是安装保证；成功与停止标准见[Q09](#research-q09)。\n\n## 核心贡献\n\n补齐 DSH 到 WeKnora 的增量写入链，将会话提取、摘要、指纹去重与上传串成一个可调度流程。它相对“人工导出会话、整理 Markdown 后上传，或只使用 WeKnora 检索而不自动写入”减少接线或重复操作，但未建立同条件效果优势。详见[Q03](#research-q03)。\n\n## 关键质疑\n\n摘要会把模型判断引入档案，隐私过滤和去重指纹不能保证敏感内容不外发或语义重复被识别。这会影响贡献能否转化为端到端收益，需以故障注入和同条件对照改变判断。详见[Q04](#research-q04)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n未来可探索：可在上传前增加可复核的字段级隐私清单与内容寻址回执，让删除、重放和来源追踪成为归档协议的一部分。该方向由现有贡献与限制推导，尚未实现；失败或恢复负担不改善即应否定。详见[Q08](#research-q08)。\n\n用50个含重复、敏感字段、超长文本和上传超时的合成会话，三次中断重跑；记录漏归档、重复条目、敏感字段泄漏、人工复核分钟和摘要费用，任何游标越过失败项即停止。\n\n## 场景与替代办法\n\n已部署 WeKnora、希望把 DSH 对话沉淀为团队知识库的用户可用它按游标增量读取 DSH 会话，清洗并摘要后去重上传到 WeKnora，支持手动工具与定时归档；合格结果是只归档新增且符合筛选条件的会话，重复内容不重复写入，失败可定位并重试。详见[Q01](#research-q01)。\n\n基线是人工导出会话、整理 Markdown 后上传，或只使用 WeKnora 检索而不自动写入。本项的价值主要来自补齐 DSH 到 WeKnora 的增量写入链，将会话提取、摘要、指纹去重与上传串成一个可调度流程；尚无同任务、同资源与同验收口径的运行对照。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| 可读 DSH 会话存储 | 必需 | 按会话与游标提取新增内容 | 结构变化或权限不足时停止推进游标 |\n| WeKnora URL、知识库ID与凭据 | 上传必需 | 创建知识条目 | 网络/鉴权失败保留未提交批次 |\n| 摘要模型与隐私/筛选配置 | 摘要模式必需 | 压缩内容并排除指定会话 | 失败时允许原文模式或停止，不能伪摘要 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 1 | 读取上次游标并筛选新增会话 | 批次ID和会话范围可回读 |\n| 2 | 清洗、摘要并计算去重指纹 | 敏感字段审阅；相同指纹不重复上传 |\n| 3 | 上传 WeKnora 后才提交游标和回执 | 失败项留待重试，已上传未知时先查目标库 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | WeKnora存储/服务与可选模型费用 | 配置知识库、凭据、筛选和隐私策略 | 初始回填量与审阅小时未知 |\n| 持续使用 | 摘要token、上传流量和知识库存储 | 复核摘要、处理重复和删除请求 | 每千会话成本与合格摘要率未知 |\n| 失败恢复 | 重复摘要/上传可能再次计费 | 核目标库、区分已写/未写并修正游标 | 缺少幂等回执时可能重复条目 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 增量归档 | 会话读取、摘要、去重、上传链存在 | 游标在中断/并发下是否不漏不重 |\n| 知识可检索性 | 写入侧补充只读检索插件 | 摘要后检索召回与任务质量 |\n| 隐私边界 | 提供筛选和隐私说明 | 敏感内容漏传率与删除传播 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：确认 dsh-weknora-archive 在固定版本中实际实现了什么、相对基线的贡献与关键限制，并给出有证据边界的采用和未来验证结论。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 目标用户、反复任务、原有办法与合格结果是什么？\n\n**研究主题**：场景与需求\n\n#### 完整回答\n\n目标用户是已部署 WeKnora、希望把 DSH 对话沉淀为团队知识库的用户。反复任务是按游标增量读取 DSH 会话，清洗并摘要后去重上传到 WeKnora，支持手动工具与定时归档。原有办法为人工导出会话、整理 Markdown 后上传，或只使用 WeKnora 检索而不自动写入。合格结果必须达到“只归档新增且符合筛选条件的会话，重复内容不重复写入，失败可定位并重试”，不能以安装成功、工具注册或一次演示替代。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-19](https://github.com/AAAlenwow/dsh-weknora-archive/blob/f3fc189ac0b0c4ff77959a39e56115e8c59334d9/README.md#L1-L19)\n\n作者材料限定目标任务和操作入口；研究回答另加合格交付标准。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n# dsh-weknora-archive\n\n**中文** · [English](#english)\n\n把 DSH（DeepSeek Harness）会话**增量归档**进 [WeKnora](https://github.com/Tencent/WeKnora) 知识库的 host 端插件。是官方只读插件 `@wxg-prc-cpg/dsh-weknora`（4 个检索工具）的**写入侧互补**。\n\n## 功能\n\n| 工具 | 说明 |\n|---|---|\n| `weknora_archive_auto` | **全量自动归档**：扫描本机所有 DSH 项目，把每个项目的会话增量归档进各自的知识库（按项目名自动匹配/新建），已归档自动跳过，可重复执行；单个项目失败不影响其余项目。设计为被定时任务调用，实现无人值守归档；`project_keyword` 可选过滤，`dry_run` 预览 |\n| `weknora_archive_session` | 归档某个项目的 DSH 会话：定位会话目录 → 解压会话存储 → 提取对话 → 总结 → 按标题去重后上传；知识库不存在时按项目名自动新建；首次归档附 `00_项目总览.md`；支持 `dry_run` 预览 |\n| `weknora_archive_status` | 只读：列出本机会话项目目录与会话数，查看目标知识库内已归档文档与解析状态 |\n| `weknora_archive_list_knowledge_bases` | 只读：列出该凭据可见的知识库 |\n| `weknora_archive_create_knowledge_base` | 新建知识库（注意：新建库可能需在 WeKnora 端配置 embedding 模型，否则文档解析失败） |\n\n工具名前缀可通过 `toolPrefix` 配置（默认 `weknora_archive`）。工具描述中英双语。\n\n## 安装\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 入口、调用链、数据和状态如何实现核心能力？\n\n**研究主题**：功能与机制\n\n#### 完整回答\n\nlib/index.js 中的固定片段显示关键入口、注册或生命周期接线，包清单限定加载组件。实际链路围绕“读取上次游标并筛选新增会话｜批次ID和会话范围可回读；清洗、摘要并计算去重指纹｜敏感字段审阅；相同指纹不重复上传；上传 WeKnora 后才提交游标和回执｜失败项留待重试，已上传未知时先查目标库”推进，状态发生在插件配置、宿主服务或外部目标中。静态路径只能证明机制存在，不能证明注册后所有分支可运行。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:276-281](https://github.com/AAAlenwow/dsh-weknora-archive/blob/f3fc189ac0b0c4ff77959a39e56115e8c59334d9/lib/index.js#L276-L281)\n\n关键源码片段支持入口、注册或生命周期接线。\n\n```text\n    },\n  });\n\n  for (const definition of definitions) ctx.tools.register(definition);\n  log(`dsh-weknora-archive: registered ${definitions.map((d) => d.name).join(', ')}`);\n}\n```\n\n**依据 2 · 作者声明**：[package.json:1-26](https://github.com/AAAlenwow/dsh-weknora-archive/blob/f3fc189ac0b0c4ff77959a39e56115e8c59334d9/package.json#L1-L26)\n\n包清单绑定版本、入口和宿主声明。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n{\n  \"name\": \"dsh-weknora-archive\",\n  \"version\": \"0.3.0\",\n  \"description\": \"Incrementally archive DSH sessions into a WeKnora knowledge base (Tencent WeKnora RAG): extract, summarize, dedupe, upload. 把 DSH 会话增量归档进 WeKnora 知识库（写入侧互补官方只读 dsh-weknora 插件）。\",\n  \"keywords\": [\n    \"deepseek-harness\",\n    \"dsh\",\n    \"dsh-plugin\",\n    \"weknora\",\n    \"knowledge-base\",\n    \"session-archive\",\n    \"rag\"\n  ],\n  \"license\": \"MIT\",\n  \"type\": \"module\",\n  \"main\": \"./lib/index.js\",\n  \"exports\": {\n    \".\": \"./lib/index.js\",\n    \"./package.json\": \"./package.json\"\n  },\n  \"files\": [\n    \"cordis.patch.yml\",\n    \"lib\",\n    \"test\",\n    \"README.md\"\n  ],\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 相比宿主原生能力和简单替代，具体增量与归属是什么？\n\n**研究主题**：贡献与相对优势\n\n#### 完整回答\n\n研究者识别的增量是补齐 DSH 到 WeKnora 的增量写入链，将会话提取、摘要、指纹去重与上传串成一个可调度流程。参照是“人工导出会话、整理 Markdown 后上传，或只使用 WeKnora 检索而不自动写入”。贡献归属于本插件的集成、状态编排或工作流封装，不把外部服务、上游算法或子组件能力重复算作原创，也不从功能数量推断用户收益。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:276-281](https://github.com/AAAlenwow/dsh-weknora-archive/blob/f3fc189ac0b0c4ff77959a39e56115e8c59334d9/lib/index.js#L276-L281)\n\n源码证明本插件承担接线或编排，而非仅有文字描述。\n\n```text\n    },\n  });\n\n  for (const definition of definitions) ctx.tools.register(definition);\n  log(`dsh-weknora-archive: registered ${definitions.map((d) => d.name).join(', ')}`);\n}\n```\n\n**依据 2 · 作者声明**：[README.md:1-19](https://github.com/AAAlenwow/dsh-weknora-archive/blob/f3fc189ac0b0c4ff77959a39e56115e8c59334d9/README.md#L1-L19)\n\nREADME 提供作者主张，用于与源码可见机制分开比较。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n# dsh-weknora-archive\n\n**中文** · [English](#english)\n\n把 DSH（DeepSeek Harness）会话**增量归档**进 [WeKnora](https://github.com/Tencent/WeKnora) 知识库的 host 端插件。是官方只读插件 `@wxg-prc-cpg/dsh-weknora`（4 个检索工具）的**写入侧互补**。\n\n## 功能\n\n| 工具 | 说明 |\n|---|---|\n| `weknora_archive_auto` | **全量自动归档**：扫描本机所有 DSH 项目，把每个项目的会话增量归档进各自的知识库（按项目名自动匹配/新建），已归档自动跳过，可重复执行；单个项目失败不影响其余项目。设计为被定时任务调用，实现无人值守归档；`project_keyword` 可选过滤，`dry_run` 预览 |\n| `weknora_archive_session` | 归档某个项目的 DSH 会话：定位会话目录 → 解压会话存储 → 提取对话 → 总结 → 按标题去重后上传；知识库不存在时按项目名自动新建；首次归档附 `00_项目总览.md`；支持 `dry_run` 预览 |\n| `weknora_archive_status` | 只读：列出本机会话项目目录与会话数，查看目标知识库内已归档文档与解析状态 |\n| `weknora_archive_list_knowledge_bases` | 只读：列出该凭据可见的知识库 |\n| `weknora_archive_create_knowledge_base` | 新建知识库（注意：新建库可能需在 WeKnora 端配置 embedding 模型，否则文档解析失败） |\n\n工具名前缀可通过 `toolPrefix` 配置（默认 `weknora_archive`）。工具描述中英双语。\n\n## 安装\n```\n\n</details>\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 什么前提最可能使核心贡献无法转化为端到端价值？\n\n**研究主题**：缺陷与关键质疑\n\n#### 完整回答\n\n最有力支持是固定源码确有相应接线；最关键反例或其他解释是摘要会把模型判断引入档案，隐私过滤和去重指纹不能保证敏感内容不外发或语义重复被识别。若失败后不能判断副作用是否已发生，局部自动化可能把恢复负担转移给用户。该问题不直接否定插件，但会把适用范围收窄到可隔离、可回读的任务。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:276-281](https://github.com/AAAlenwow/dsh-weknora-archive/blob/f3fc189ac0b0c4ff77959a39e56115e8c59334d9/lib/index.js#L276-L281)\n\n源码显示关键状态边界，也说明为什么需要运行时故障验证。\n\n```text\n    },\n  });\n\n  for (const definition of definitions) ctx.tools.register(definition);\n  log(`dsh-weknora-archive: registered ${definitions.map((d) => d.name).join(', ')}`);\n}\n```\n\n#### 缺口\n\n- 缺少针对“摘要会把模型判断引入档案，隐私过滤和去重指纹不能保证敏感内容不外发或语义重复被识别”的固定版本故障注入记录\n  **影响**：无法确认核心贡献在异常路径仍成立\n  **进一步探讨**：用50个含重复、敏感字段、超长文本和上传超时的合成会话，三次中断重跑；记录漏归档、重复条目、敏感字段泄漏、人工复核分钟和摘要费用，任何游标越过失败项即停止。 本题重点观察异常是否改变贡献结论。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 启动、持续生效和失败恢复各依赖什么，操作负担由谁承担？\n\n**研究主题**：依赖、兼容与流程\n\n#### 完整回答\n\n关键依赖分别是：可读 DSH 会话存储｜必需｜按会话与游标提取新增内容｜结构变化或权限不足时停止推进游标；WeKnora URL、知识库ID与凭据｜上传必需｜创建知识条目｜网络/鉴权失败保留未提交批次；摘要模型与隐私/筛选配置｜摘要模式必需｜压缩内容并排除指定会话｜失败时允许原文模式或停止，不能伪摘要。启动者负责版本与权限，使用者负责输入和验收，维护者负责外部服务/API 漂移。失败恢复按“上传 WeKnora 后才提交游标和回执｜失败项留待重试，已上传未知时先查目标库”执行；包依赖存在或工具可注册都不表示业务已经办结。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[package.json:1-26](https://github.com/AAAlenwow/dsh-weknora-archive/blob/f3fc189ac0b0c4ff77959a39e56115e8c59334d9/package.json#L1-L26)\n\n包清单提供运行时、依赖和分发边界。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n{\n  \"name\": \"dsh-weknora-archive\",\n  \"version\": \"0.3.0\",\n  \"description\": \"Incrementally archive DSH sessions into a WeKnora knowledge base (Tencent WeKnora RAG): extract, summarize, dedupe, upload. 把 DSH 会话增量归档进 WeKnora 知识库（写入侧互补官方只读 dsh-weknora 插件）。\",\n  \"keywords\": [\n    \"deepseek-harness\",\n    \"dsh\",\n    \"dsh-plugin\",\n    \"weknora\",\n    \"knowledge-base\",\n    \"session-archive\",\n    \"rag\"\n  ],\n  \"license\": \"MIT\",\n  \"type\": \"module\",\n  \"main\": \"./lib/index.js\",\n  \"exports\": {\n    \".\": \"./lib/index.js\",\n    \"./package.json\": \"./package.json\"\n  },\n  \"files\": [\n    \"cordis.patch.yml\",\n    \"lib\",\n    \"test\",\n    \"README.md\"\n  ],\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:276-281](https://github.com/AAAlenwow/dsh-weknora-archive/blob/f3fc189ac0b0c4ff77959a39e56115e8c59334d9/lib/index.js#L276-L281)\n\n源码提供实际宿主接线，用于区分声明依赖与调用依赖。\n\n```text\n    },\n  });\n\n  for (const definition of definitions) ctx.tools.register(definition);\n  log(`dsh-weknora-archive: registered ${definitions.map((d) => d.name).join(', ')}`);\n}\n```\n\n#### 缺口\n\n- 真实宿主中的依赖失效顺序与部分成功状态未观测\n  **影响**：无法确认重试是否会重复副作用\n  **进一步探讨**：用50个含重复、敏感字段、超长文本和上传超时的合成会话，三次中断重跑；记录漏归档、重复条目、敏感字段泄漏、人工复核分钟和摘要费用，任何游标越过失败项即停止。 另逐项切断依赖并回读部分成功状态。\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 完成一个合格任务的首次、持续和失败恢复成本与效果是什么？\n\n**研究主题**：效果与总成本\n\n#### 完整回答\n\n成本必须以“只归档新增且符合筛选条件的会话，重复内容不重复写入，失败可定位并重试”为合格单位。三阶段投入为：首次使用｜WeKnora存储/服务与可选模型费用｜配置知识库、凭据、筛选和隐私策略｜初始回填量与审阅小时未知；持续使用｜摘要token、上传流量和知识库存储｜复核摘要、处理重复和删除请求｜每千会话成本与合格摘要率未知；失败恢复｜重复摘要/上传可能再次计费｜核目标库、区分已写/未写并修正游标｜缺少幂等回执时可能重复条目。当前源码只支持机制存在，效果维度为“增量归档｜会话读取、摘要、去重、上传链存在｜游标在中断/并发下是否不漏不重；知识可检索性｜写入侧补充只读检索插件｜摘要后检索召回与任务质量；隐私边界｜提供筛选和隐私说明｜敏感内容漏传率与删除传播”。没有合格数、总尝试、人工分钟与现金/资源量，因此不能计算单位成本、节时或ROI。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-19](https://github.com/AAAlenwow/dsh-weknora-archive/blob/f3fc189ac0b0c4ff77959a39e56115e8c59334d9/README.md#L1-L19)\n\n作者材料支持操作范围，不提供同条件成本或合格率。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n# dsh-weknora-archive\n\n**中文** · [English](#english)\n\n把 DSH（DeepSeek Harness）会话**增量归档**进 [WeKnora](https://github.com/Tencent/WeKnora) 知识库的 host 端插件。是官方只读插件 `@wxg-prc-cpg/dsh-weknora`（4 个检索工具）的**写入侧互补**。\n\n## 功能\n\n| 工具 | 说明 |\n|---|---|\n| `weknora_archive_auto` | **全量自动归档**：扫描本机所有 DSH 项目，把每个项目的会话增量归档进各自的知识库（按项目名自动匹配/新建），已归档自动跳过，可重复执行；单个项目失败不影响其余项目。设计为被定时任务调用，实现无人值守归档；`project_keyword` 可选过滤，`dry_run` 预览 |\n| `weknora_archive_session` | 归档某个项目的 DSH 会话：定位会话目录 → 解压会话存储 → 提取对话 → 总结 → 按标题去重后上传；知识库不存在时按项目名自动新建；首次归档附 `00_项目总览.md`；支持 `dry_run` 预览 |\n| `weknora_archive_status` | 只读：列出本机会话项目目录与会话数，查看目标知识库内已归档文档与解析状态 |\n| `weknora_archive_list_knowledge_bases` | 只读：列出该凭据可见的知识库 |\n| `weknora_archive_create_knowledge_base` | 新建知识库（注意：新建库可能需在 WeKnora 端配置 embedding 模型，否则文档解析失败） |\n\n工具名前缀可通过 `toolPrefix` 配置（默认 `weknora_archive`）。工具描述中英双语。\n\n## 安装\n```\n\n</details>\n\n**依据 2 · 作者声明**：[package.json:1-26](https://github.com/AAAlenwow/dsh-weknora-archive/blob/f3fc189ac0b0c4ff77959a39e56115e8c59334d9/package.json#L1-L26)\n\n包清单支持本地/外部资源与依赖边界的定性判断。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n{\n  \"name\": \"dsh-weknora-archive\",\n  \"version\": \"0.3.0\",\n  \"description\": \"Incrementally archive DSH sessions into a WeKnora knowledge base (Tencent WeKnora RAG): extract, summarize, dedupe, upload. 把 DSH 会话增量归档进 WeKnora 知识库（写入侧互补官方只读 dsh-weknora 插件）。\",\n  \"keywords\": [\n    \"deepseek-harness\",\n    \"dsh\",\n    \"dsh-plugin\",\n    \"weknora\",\n    \"knowledge-base\",\n    \"session-archive\",\n    \"rag\"\n  ],\n  \"license\": \"MIT\",\n  \"type\": \"module\",\n  \"main\": \"./lib/index.js\",\n  \"exports\": {\n    \".\": \"./lib/index.js\",\n    \"./package.json\": \"./package.json\"\n  },\n  \"files\": [\n    \"cordis.patch.yml\",\n    \"lib\",\n    \"test\",\n    \"README.md\"\n  ],\n```\n\n</details>\n\n#### 缺口\n\n- 缺少按合格任务统计的总尝试、失败、人工分钟与现金/资源量\n  **影响**：无法比较总成本与净收益\n  **进一步探讨**：用50个含重复、敏感字段、超长文本和上传超时的合成会话，三次中断重跑；记录漏归档、重复条目、敏感字段泄漏、人工复核分钟和摘要费用，任何游标越过失败项即停止。 同时按合格交付数汇总总尝试、人工分钟和资源量。\n\n<a id=\"research-q07\"></a>\n\n### Q07 · 实现是否可靠可维护，哪些设计可复用，移植代价是什么？\n\n**研究主题**：工程质量与复用\n\n#### 完整回答\n\n固定源码把核心职责落在 lib/index.js 及相邻模块，入口可追踪；inventory 仅作规模和静态候选索引。可复用的是“补齐 DSH 到 WeKnora 的增量写入链，将会话提取、摘要、指纹去重与上传串成一个可调度流程”的显式接线方式。移植必须重做宿主API、权限、状态持久化和“上传 WeKnora 后才提交游标和回执｜失败项留待重试，已上传未知时先查目标库”验证，不能从测试脚本存在推断当前环境可靠。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:276-281](https://github.com/AAAlenwow/dsh-weknora-archive/blob/f3fc189ac0b0c4ff77959a39e56115e8c59334d9/lib/index.js#L276-L281)\n\n固定源码用于评价职责和宿主耦合。\n\n```text\n    },\n  });\n\n  for (const definition of definitions) ctx.tools.register(definition);\n  log(`dsh-weknora-archive: registered ${definitions.map((d) => d.name).join(', ')}`);\n}\n```\n\n**依据 2 · 作者声明**：[package.json:1-26](https://github.com/AAAlenwow/dsh-weknora-archive/blob/f3fc189ac0b0c4ff77959a39e56115e8c59334d9/package.json#L1-L26)\n\n包清单用于确认版本、分发与依赖面。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n{\n  \"name\": \"dsh-weknora-archive\",\n  \"version\": \"0.3.0\",\n  \"description\": \"Incrementally archive DSH sessions into a WeKnora knowledge base (Tencent WeKnora RAG): extract, summarize, dedupe, upload. 把 DSH 会话增量归档进 WeKnora 知识库（写入侧互补官方只读 dsh-weknora 插件）。\",\n  \"keywords\": [\n    \"deepseek-harness\",\n    \"dsh\",\n    \"dsh-plugin\",\n    \"weknora\",\n    \"knowledge-base\",\n    \"session-archive\",\n    \"rag\"\n  ],\n  \"license\": \"MIT\",\n  \"type\": \"module\",\n  \"main\": \"./lib/index.js\",\n  \"exports\": {\n    \".\": \"./lib/index.js\",\n    \"./package.json\": \"./package.json\"\n  },\n  \"files\": [\n    \"cordis.patch.yml\",\n    \"lib\",\n    \"test\",\n    \"README.md\"\n  ],\n```\n\n</details>\n\n#### 缺口\n\n- 未执行仓库测试、安装和真实宿主压力/升级验证\n  **影响**：维护性和异常恢复只能作源码级判断\n  **进一步探讨**：用50个含重复、敏感字段、超长文本和上传超时的合成会话，三次中断重跑；记录漏归档、重复条目、敏感字段泄漏、人工复核分钟和摘要费用，任何游标越过失败项即停止。 在此之外记录构建、卸载和宿主升级后的回归面积。\n\n<a id=\"research-q08\"></a>\n\n### Q08 · 由贡献与反例可推导什么未验证方向，如何证伪？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n由“补齐 DSH 到 WeKnora 的增量写入链，将会话提取、摘要、指纹去重与上传串成一个可调度流程”和“摘要会把模型判断引入档案，隐私过滤和去重指纹不能保证敏感内容不外发或语义重复被识别”推导的新方向是可在上传前增加可复核的字段级隐私清单与内容寻址回执，让删除、重放和来源追踪成为归档协议的一部分。它不是当前能力。最小验证为用50个含重复、敏感字段、超长文本和上传超时的合成会话，三次中断重跑；记录漏归档、重复条目、敏感字段泄漏、人工复核分钟和摘要费用，任何游标越过失败项即停止。 若合格结果不改善、误差/副作用越界或恢复负担高于“人工导出会话、整理 Markdown 后上传，或只使用 WeKnora 检索而不自动写入”，即削弱或推翻假设。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:276-281](https://github.com/AAAlenwow/dsh-weknora-archive/blob/f3fc189ac0b0c4ff77959a39e56115e8c59334d9/lib/index.js#L276-L281)\n\n假设只以已实现机制和边界为推导起点，不表示源码已经实现新方向。\n\n```text\n    },\n  });\n\n  for (const definition of definitions) ctx.tools.register(definition);\n  log(`dsh-weknora-archive: registered ${definitions.map((d) => d.name).join(', ')}`);\n}\n```\n\n#### 缺口\n\n- 假设尚无实现、需求频率或效果数据\n  **影响**：不能计入插件贡献、创新效果或商业机会\n  **进一步探讨**：用50个含重复、敏感字段、超长文本和上传超时的合成会话，三次中断重跑；记录漏归档、重复条目、敏感字段泄漏、人工复核分钟和摘要费用，任何游标越过失败项即停止。 只验证最小原型，不改变当前能力状态。\n\n<a id=\"research-q09\"></a>\n\n### Q09 · 对谁值得观察或试用，成功与停止标准是什么？\n\n**研究主题**：采用判断\n\n#### 完整回答\n\n当前结论为继续观察。已自建WeKnora且能接受内容外发者可观察，先用脱敏样本验证筛选、删除、重试和重复归档边界。 试用成功标准是“只归档新增且符合筛选条件的会话，重复内容不重复写入，失败可定位并重试”，并且 游标在中断/并发下是否不漏不重、摘要后检索召回与任务质量、敏感内容漏传率与删除传播 有可接受结果；停止标准包括发生摘要会把模型判断引入档案，隐私过滤和去重指纹不能保证敏感内容不外发或语义重复被识别所述核心风险、出现未知副作用自动重试，或总人工/资源成本高于“人工导出会话、整理 Markdown 后上传，或只使用 WeKnora 检索而不自动写入”。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-19](https://github.com/AAAlenwow/dsh-weknora-archive/blob/f3fc189ac0b0c4ff77959a39e56115e8c59334d9/README.md#L1-L19)\n\n作者材料限定可操作范围；采用结论由研究者结合限制给出。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n# dsh-weknora-archive\n\n**中文** · [English](#english)\n\n把 DSH（DeepSeek Harness）会话**增量归档**进 [WeKnora](https://github.com/Tencent/WeKnora) 知识库的 host 端插件。是官方只读插件 `@wxg-prc-cpg/dsh-weknora`（4 个检索工具）的**写入侧互补**。\n\n## 功能\n\n| 工具 | 说明 |\n|---|---|\n| `weknora_archive_auto` | **全量自动归档**：扫描本机所有 DSH 项目，把每个项目的会话增量归档进各自的知识库（按项目名自动匹配/新建），已归档自动跳过，可重复执行；单个项目失败不影响其余项目。设计为被定时任务调用，实现无人值守归档；`project_keyword` 可选过滤，`dry_run` 预览 |\n| `weknora_archive_session` | 归档某个项目的 DSH 会话：定位会话目录 → 解压会话存储 → 提取对话 → 总结 → 按标题去重后上传；知识库不存在时按项目名自动新建；首次归档附 `00_项目总览.md`；支持 `dry_run` 预览 |\n| `weknora_archive_status` | 只读：列出本机会话项目目录与会话数，查看目标知识库内已归档文档与解析状态 |\n| `weknora_archive_list_knowledge_bases` | 只读：列出该凭据可见的知识库 |\n| `weknora_archive_create_knowledge_base` | 新建知识库（注意：新建库可能需在 WeKnora 端配置 embedding 模型，否则文档解析失败） |\n\n工具名前缀可通过 `toolPrefix` 配置（默认 `weknora_archive`）。工具描述中英双语。\n\n## 安装\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:276-281](https://github.com/AAAlenwow/dsh-weknora-archive/blob/f3fc189ac0b0c4ff77959a39e56115e8c59334d9/lib/index.js#L276-L281)\n\n源码证据只支撑窄范围试用/观察，不构成安装验收。\n\n```text\n    },\n  });\n\n  for (const definition of definitions) ctx.tools.register(definition);\n  log(`dsh-weknora-archive: registered ${definitions.map((d) => d.name).join(', ')}`);\n}\n```\n\n#### 缺口\n\n- 未有真实用户频率、迁移意愿与固定版本宿主验收\n  **影响**：不能升级为持续安装或生产采用\n  **进一步探讨**：用50个含重复、敏感字段、超长文本和上传超时的合成会话，三次中断重跑；记录漏归档、重复条目、敏感字段泄漏、人工复核分钟和摘要费用，任何游标越过失败项即停止。 试用结束还需访谈目标用户的重复频率与退出意愿。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：5987844086235fcd0219d4f7c23ec59c8debe93092bc2921b7d992421e1dfb02。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 6 | 1170 | 882 | 223 | — |\n| .md | source | 1 | 164 | — | — | 2031 |\n| .mjs | test | 1 | 265 | 243 | 30 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 增量会话归档 | 按状态游标选择新增会话并形成归档记录。 | 仅确认固定源码存在；运行效果、规模与兼容范围未做宿主验收 |\n| 摘要与去重 | 对会话内容摘要并以指纹避免重复上传。 | 仅确认固定源码存在；运行效果、规模与兼容范围未做宿主验收 |\n| WeKnora 上传 | 将整理结果写入指定知识库并记录处理状态。 | 仅确认固定源码存在；运行效果、规模与兼容范围未做宿主验收 |\n\n## 工程亮点\n\n固定源码把关键职责收敛到 lib/index.js 及其相邻模块，便于追踪入口与状态。可借鉴的是显式宿主接线与配置边界；移植仍需重做 API 兼容、权限、持久化和“上传 WeKnora 后才提交游标和回执｜失败项留待重试，已上传未知时先查目标库”验证。详见[Q07](#research-q07)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：仅核查固定提交的作者材料、包清单、关键源码和完整组件 inventory；未运行插件、测试、安装、外部服务或真实宿主任务。\n- 下一步：用50个含重复、敏感字段、超长文本和上传超时的合成会话，三次中断重跑；记录漏归档、重复条目、敏感字段泄漏、人工复核分钟和摘要费用，任何游标越过失败项即停止。\n",
         "metadata": {
             "repository": "AAAlenwow/dsh-weknora-archive",
             "repository_id": 1412897932,
-            "captured_at": "2026-10-22T05:32:22.965Z",
-            "window_start": "2026-09-22T05:32:22.965Z",
+            "captured_at": "2026-10-22T15:12:33.725Z",
+            "window_start": "2026-09-22T15:12:33.725Z",
             "stars": 0,
             "pushed_at": "2026-10-22T04:28:50Z",
             "issues": {
-                "open": 0,
-                "closed": 0,
-                "created_30d": 0,
-                "closed_30d": 0,
-                "updated_30d": 0
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
             },
-            "errors": []
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAAAlenwow%2Fdsh-weknora-archive%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3946:1B9EB5:A38445:AFCFE9:6ADA27E4 and timestamp 2026-10-22 15:12:36 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAAAlenwow%2Fdsh-weknora-archive%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 39F6:3229D4:A2C4B1:AF0FB6:6ADA27E5 and timestamp 2026-10-22 15:12:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAAAlenwow%2Fdsh-weknora-archive%20is%3Aissue%20created%3A2026-09-22T15%3A12%3A33.725Z..2026-10-22T15%3A12%3A33.725Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3ADC:E97E6:9A7EC9:A6C0F1:6ADA27E6 and timestamp 2026-10-22 15:12:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAAAlenwow%2Fdsh-weknora-archive%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T15%3A12%3A33.725Z..2026-10-22T15%3A12%3A33.725Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3BE8:326669:BEACE7:CAF558:6ADA27E7 and timestamp 2026-10-22 15:12:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAAAlenwow%2Fdsh-weknora-archive%20is%3Aissue%20updated%3A2026-09-22T15%3A12%3A33.725Z..2026-10-22T15%3A12%3A33.725Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3CE6:1032B3:955ECB:A1A264:6ADA27E8 and timestamp 2026-10-22 15:12:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-weknora-archive",
+                "captured_at": "2026-10-22T15:12:41.293Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-weknora-archive",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-22T15:12:41.293Z",
+                    "source_url": "https://registry.npmjs.org/dsh-weknora-archive",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            }
         },
         "discovery.plugins": {
             "id": "github:1412897932:root",
             "repository": "AAAlenwow/dsh-weknora-archive",
             "path": "",
-            "revision": "46079ecb3554239797b1dcbe2e82f74a21adb9a1",
-            "fingerprints": {
-                "directory": "c467d1ec39a19d32a1c88db1922ec01e6dd121768ab667d19ecc2c36c42f5485",
-                "code": "46079ecb3554239797b1dcbe2e82f74a21adb9a1",
-                "maintenance": "7f96bd4ba008a6b66b7d3ac9497ceb67f7f91f8ec294b920c1e9e697667d1283"
-            },
+            "revision": "f3fc189ac0b0c4ff77959a39e56115e8c59334d9",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            ],
+            "fingerprints": {
+                "directory": "c467d1ec39a19d32a1c88db1922ec01e6dd121768ab667d19ecc2c36c42f5485",
+                "code": "f3fc189ac0b0c4ff77959a39e56115e8c59334d9",
+                "maintenance": "1f3ba3fed0cfbbc2c8d372181d27688074280514c277e2cc32ef274b43a11b7a"
+            }
         }
     }
 }

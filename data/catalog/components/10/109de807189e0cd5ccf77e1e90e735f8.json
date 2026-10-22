@@ -7,14 +7,14 @@
             "id": "github:1374075274:root",
             "repository": "peng456/dsh-plugin-mesh",
             "path": "",
-            "revision": "90e49bb87b3c6fcef4365c817e1efb145a55ca23",
+            "revision": "2863364cef24938b91d7fb2c97c17526a56220c8",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "90d4544b46e2ab632c0d80aa0ed0f40fc57e2d9342ba204850c6c56d8a42259c",
-                "code": "90e49bb87b3c6fcef4365c817e1efb145a55ca23",
-                "maintenance": "300b73d6825f92be09080e8717e7f3ca3e27b6c5ac9f97c9b3bbb3d64451fa3c"
+                "code": "2863364cef24938b91d7fb2c97c17526a56220c8",
+                "maintenance": "8b2051467adaf8348fc2a2d35d0c4bff300c474ee174adbc0d66e37651aadf1f"
             }
         }
     }

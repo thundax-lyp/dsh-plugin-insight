@@ -7,15 +7,15 @@
             "id": "github:1335813480:root",
             "repository": "MichengAI/dsh-automation",
             "path": "",
-            "revision": "c6d3e74d777d4e6bba320159acbe9b87bdafa4cf",
+            "revision": "3234e0d34cc1f313f1c70c003aebcd093a8c1eb2",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "adc3835a11ac238a42d5e863f511401e8679420506d123d36cd101a286ead78e",
-                "code": "c6d3e74d777d4e6bba320159acbe9b87bdafa4cf",
-                "maintenance": "f1987de914c70748d74b0536234ec041c1c5ba6a841a3bc588194eb691c2005a"
+                "code": "3234e0d34cc1f313f1c70c003aebcd093a8c1eb2",
+                "maintenance": "6ac41f7ae7e8a33d9b430a967ce7814b2b933b14747c32804379da3c21fd5079"
             }
         }
     }

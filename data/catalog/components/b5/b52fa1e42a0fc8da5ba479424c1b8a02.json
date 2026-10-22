@@ -7,15 +7,15 @@
             "id": "github:1334384058:root",
             "repository": "DDDMUC/dsh-free-search",
             "path": "",
-            "revision": "ae2b01d140529e4421ecd8ffccdc9c659731a720",
+            "revision": "70e534a2eb9b9f73b379d46e975ed469be9b3a6d",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "34d05697481c28bb2f617545f0f2d3cd0a2806e712e69a8ed07b853a4b12cbf4",
-                "code": "ae2b01d140529e4421ecd8ffccdc9c659731a720",
-                "maintenance": "3b1441ba3136b9926daa60fa608f6641a84318ebe828eb1529da0d84de0818e7"
+                "code": "70e534a2eb9b9f73b379d46e975ed469be9b3a6d",
+                "maintenance": "ab6c588c37c9c7b1ac84dd299fa708902ffbbb51524d8eb95e1feeba3fa0cf51"
             }
         }
     }

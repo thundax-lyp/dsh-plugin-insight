@@ -7,14 +7,14 @@
             "id": "github:1335944000:root",
             "repository": "flizzywine/dsh-tavern",
             "path": "",
-            "revision": "2ae9ed4889074050dfc0a7eb2dc9c3b785f758b4",
+            "revision": "c36f550fec02932c6e0cd4bf91eade7525622d8d",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "d94576903d77578a3af501edb1f587d6f6101bac17733c1c4ca37a8b1582e6a4",
-                "code": "2ae9ed4889074050dfc0a7eb2dc9c3b785f758b4",
-                "maintenance": "31ff8cbe52b66e795eeedac93228b2d57c473bf06ea4f13183b0519c56dcf4cd"
+                "code": "c36f550fec02932c6e0cd4bf91eade7525622d8d",
+                "maintenance": "d71f5f4420b76c95c4784f0f046a53349a17cb6432324f5a44620bba6a29329c"
             }
         }
     }

@@ -7,14 +7,14 @@
             "id": "github:1364715873:root",
             "repository": "GooDAnDReaDY/dsh-remote-workspace",
             "path": "",
-            "revision": "ef8228030cfe6d3db2df759572d142d65b0f99e9",
+            "revision": "04b10d4b50da42eb22a6d58e65990ba4b7f397aa",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "96b28472308183d99a4e3a8983769651f83e70747838d3b83143caa0a67ad845",
-                "code": "ef8228030cfe6d3db2df759572d142d65b0f99e9",
-                "maintenance": "efa7e57baed8564f9a8e37f1a609ce0e7c966aa55ea6e791472c314316ff9fb1"
+                "code": "04b10d4b50da42eb22a6d58e65990ba4b7f397aa",
+                "maintenance": "2b1bced72a15e4afce4558c3770f8317f6167787f0f3bdd98101f64983e5491e"
             }
         }
     }

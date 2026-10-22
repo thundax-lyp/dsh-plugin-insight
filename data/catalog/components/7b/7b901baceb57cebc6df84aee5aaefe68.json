@@ -7,14 +7,14 @@
             "id": "github:1158472225:root",
             "repository": "edison7009/EchoBird",
             "path": "",
-            "revision": "5948cd393b18f8dbc569f6e1a882714825d62e88",
+            "revision": "bf777a72016456f4ed8e8d28c655eac7b5b1b8a4",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "c09786ca796ac4a281acc1926f7edbeecfef68f64dedb7556bc48eae21019042",
-                "code": "5948cd393b18f8dbc569f6e1a882714825d62e88",
-                "maintenance": "ea2a1950616a6b94f0f912b66708c4b0a449f0a5a9a826f8fdef6733923c44be"
+                "code": "bf777a72016456f4ed8e8d28c655eac7b5b1b8a4",
+                "maintenance": "2fabddd10fd3b48a21278c117be53f2fe7cbeb0591b41387e9ce0cc4f0b0cf28"
             }
         }
     }

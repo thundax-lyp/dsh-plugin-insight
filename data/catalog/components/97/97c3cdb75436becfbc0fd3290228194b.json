@@ -469,14 +469,14 @@
             "repository": "3403473060/dsh-inline-images",
             "path": "",
             "revision": "79f8ba778441c86738dedba574f5911fd2b5b2be",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "8ea12e425b8c2822933da38aa2b1ab760905e4743e8728dd17351111fec762b9",
                 "code": "79f8ba778441c86738dedba574f5911fd2b5b2be",
                 "maintenance": "7548a89e59b27a18df123631d1250894bda151d0d6a6755ee77e2f0a2d1ef365"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

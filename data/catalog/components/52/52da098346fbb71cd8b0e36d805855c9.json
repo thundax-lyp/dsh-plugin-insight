@@ -7,15 +7,15 @@
             "id": "github:1355547930:root",
             "repository": "PerryLink/dsh-cert-mcp",
             "path": "",
-            "revision": "43a49b8436c56d14f3e9341c32d18c62f1999b1d",
+            "revision": "ff91108b60f0ba75d6c4f6d4cbd5068d65876e3e",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "50a545d339045a2256e3910b7bdb957632e76b7e2a17d642ecff93e0376f9943",
-                "code": "43a49b8436c56d14f3e9341c32d18c62f1999b1d",
-                "maintenance": "f427666524810d6559424245b31ac7f4cfe9819026e0533e268138892dd862d9"
+                "code": "ff91108b60f0ba75d6c4f6d4cbd5068d65876e3e",
+                "maintenance": "c8d7d49c6ad9e034b156f65b8668aa3c09cac394f01fd206a5efe963bb3b1a71"
             }
         }
     }

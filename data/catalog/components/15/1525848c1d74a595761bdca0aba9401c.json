@@ -7,14 +7,14 @@
             "id": "github:1424405853:root",
             "repository": "it-glen/dsh-mcp-manager",
             "path": "",
-            "revision": "76ec409496f0b0815b5aee58bd8ef35db2e4aa6d",
+            "revision": "e5cd6e1165dbc7321d799e7d416aaceb0576fc1a",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
-                "directory": "c79c16743f0ae8eb96a749169b8674ad538e0f7a681197b3f4fde635cc96eecc",
-                "code": "76ec409496f0b0815b5aee58bd8ef35db2e4aa6d",
-                "maintenance": "cf2f46f00f75751744c2b5d06075a32901b1f920041c7b2b279bbcaf03156a81"
+                "directory": "f5399dd6ec630c44c7ac6ba9a1fd4079a2244bb2e98719f3cb66256366c09e4d",
+                "code": "e5cd6e1165dbc7321d799e7d416aaceb0576fc1a",
+                "maintenance": "bf080643dc2ac60e463a51c9553a9022bc7b304968b7905d6f749e2c061eaa7d"
             }
         }
     }

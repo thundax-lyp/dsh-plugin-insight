@@ -7,14 +7,14 @@
             "id": "github:1410353082:root",
             "repository": "tcgbp/dsh-flash",
             "path": "",
-            "revision": "b5ac73608588574742fb669cd0ccccfde057d267",
+            "revision": "717a3deec2feaef431cd570cf56ed143fa03251b",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "816d70b14d03a134ae1f2264b096f4b3b0017517984b38d335330462f4eacca2",
-                "code": "b5ac73608588574742fb669cd0ccccfde057d267",
-                "maintenance": "6f080c8a94c968df6ba7200963c4023f0f413f23a7dd253b17ea095a84b0882a"
+                "code": "717a3deec2feaef431cd570cf56ed143fa03251b",
+                "maintenance": "07c14a94e6eabed6999749bd4e005fc3646bfe61a0506194ec6dfae9f44c7620"
             }
         }
     }

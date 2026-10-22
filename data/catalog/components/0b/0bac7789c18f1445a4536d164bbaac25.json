@@ -7,14 +7,14 @@
             "id": "github:1343697879:root",
             "repository": "shyuan-hub/dsh-compact-button",
             "path": "",
-            "revision": "ed698aade97b6b8ec546a5b89c9a973e14824b86",
+            "revision": "bfd1e784d795fa16ef17b006cf15bb0467d66c4b",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "6108e39c56a2adee36e2a8c2c87c75bfd0e3c42f29d34aeb5b780e8d0f23c2fb",
-                "code": "ed698aade97b6b8ec546a5b89c9a973e14824b86",
-                "maintenance": "484a81b9265ffbce36671e27f2d226486808f40ec49910b9a7a500b84a7773e8"
+                "code": "bfd1e784d795fa16ef17b006cf15bb0467d66c4b",
+                "maintenance": "8068de231af35087572c9a65c6aa9bcc42bad4f7273ca99347a1113a501298e6"
             }
         }
     }

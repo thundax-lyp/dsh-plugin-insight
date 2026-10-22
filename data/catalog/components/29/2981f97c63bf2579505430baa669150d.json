@@ -7,14 +7,14 @@
             "id": "github:1409893258:root",
             "repository": "T-Auto/dsh-ops",
             "path": "",
-            "revision": "ef7f8d63a7e469ccf680592e11ef9baa999eabb4",
+            "revision": "b963fb29e03ad21ebe76d6f552c70f0544ca92b9",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "b6b1f024987d4907d13a0d45aa24ea35669fedfc9418b19c1c5315d974e8de8f",
-                "code": "ef7f8d63a7e469ccf680592e11ef9baa999eabb4",
-                "maintenance": "da0560d0175809ff44a705f28f6ea23e78c30434849f37238262b56d7b2baaef"
+                "code": "b963fb29e03ad21ebe76d6f552c70f0544ca92b9",
+                "maintenance": "3ad1e7a94f94826c8a8d92987440d53fdbf660d36aeb4942b832c14988878703"
             }
         }
     }

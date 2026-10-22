@@ -7,14 +7,14 @@
             "id": "github:1223170290:root",
             "repository": "nexu-io/open-design",
             "path": "",
-            "revision": "3b0df90f305c8279e748c292accf336d02b924ef",
+            "revision": "e03d5c23f308c39f4de7c057568df66c29a84385",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "0dfe1a8e8c780ac38ad66036797fe323f9c8372d29946931efa9ac371d78f3e5",
-                "code": "3b0df90f305c8279e748c292accf336d02b924ef",
-                "maintenance": "aad7d3e92b3a8368ce9976aea8ae631e037dd39147325a1deaadd22115ee1948"
+                "code": "e03d5c23f308c39f4de7c057568df66c29a84385",
+                "maintenance": "22a840e68fe84675d27251cbda3f168090519af5f3f7e647c1c4049dfe63b843"
             }
         }
     }

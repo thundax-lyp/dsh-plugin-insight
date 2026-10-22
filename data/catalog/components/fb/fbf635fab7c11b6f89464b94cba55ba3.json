@@ -7,15 +7,15 @@
             "id": "github:1378092688:root",
             "repository": "Awoodwhale/dsh-agent-persona",
             "path": "",
-            "revision": "9fc2b85518c3a670608ef5e969c77688919578f5",
+            "revision": "8cf6f97a42281b90550e9ba22565c1545926b2d1",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "e7988c45b115375c84e6d9f7b973cb3a426d596edaf5b2c89c7d2654ee272955",
-                "code": "9fc2b85518c3a670608ef5e969c77688919578f5",
-                "maintenance": "f218b90fd19f6ba858c59c5504b5b44ef910e9a0db4b40ed4c0b7d1f50a91265"
+                "code": "8cf6f97a42281b90550e9ba22565c1545926b2d1",
+                "maintenance": "e53fe98c57f4dfabc661be50d808f2e750793b8756604c78fed644a08489fa82"
             }
         }
     }

@@ -7,14 +7,14 @@
             "id": "github:1333868738:root",
             "repository": "Axiaohungry/dsh-llm-workbuddy",
             "path": "",
-            "revision": "d03e09d24981bc90e7fce943cff3c6562af455d1",
+            "revision": "8f72e885b21ff39868d0c7d0eaf68aa277ca154c",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "65721b02c551dc6f20bd32bd0ddb20b778359042b6fd7ea6c9fdb6b8a42cb4ef",
-                "code": "d03e09d24981bc90e7fce943cff3c6562af455d1",
-                "maintenance": "12959f4a353f1d17faeaf94b758ffe9847454ee3dc9f63709746660149185c8a"
+                "code": "8f72e885b21ff39868d0c7d0eaf68aa277ca154c",
+                "maintenance": "e74330c9ea9ddad0d566cbb532170d5c0e8806b5a011283ba8750e4c6ce91e9d"
             }
         }
     }

@@ -452,14 +452,14 @@
             "repository": "A42Null/dsh-opencode-zen-plugin",
             "path": "",
             "revision": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "8e54fb5a7a6c7f1e9136995200ff36878bcf92f45cd2e930813b225000a2cc2b",
                 "code": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29",
                 "maintenance": "e248d056b853456ca3a1ee09ca4e0ae66fbb47e238487d9de1599ca0bb8d7bad"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

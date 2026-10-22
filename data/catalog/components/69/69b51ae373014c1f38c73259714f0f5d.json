@@ -1,0 +1,472 @@
+{
+    "schema_version": 3,
+    "id": "69b51ae373014c1f38c73259714f0f5d",
+    "identity": "github:1426892789:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1426892789:root",
+            "repository_id": 1426892789,
+            "component_id": "root",
+            "repository": "16601134718/dsh-codex-cua",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-codex-cua",
+            "entry_type": "plugin",
+            "technical_category": "tools-integration",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "eeae5abb7f9174cb4761cbbb27fbf1bdc08db1f29f5c3be22873c79be5a66ebc",
+                "code": "45f14f45dbb1b0c964a34cb2ab1088f6515e445d",
+                "maintenance": "abab942aefa07fab2bf3fd90b579d21e115fa46f775d359fbb8d631ea5d2a4ce"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-22-01-github-1426892789-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "779a0a5a03e3055a5f7bfc14026aeead601e3a45",
+                    "retrieved_at": "2026-10-22T15:30:09.027Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-22-01-github-1426892789-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/16601134718/dsh-codex-cua/blob/45f14f45dbb1b0c964a34cb2ab1088f6515e445d/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/16601134718/dsh-codex-cua",
+                            "commit": "45f14f45dbb1b0c964a34cb2ab1088f6515e445d",
+                            "path": "README.md",
+                            "content_sha256": "c4abd0dab039de4b956e20f10249f03d5169ab0d1d077f5d1036d63a386ec8db"
+                        }
+                    ],
+                    "revision": "45f14f45dbb1b0c964a34cb2ab1088f6515e445d",
+                    "captured_at": "2026-10-22T15:30:09.027Z",
+                    "summary": "把 Codex 桌面端的本地 computer-use 运行时以 DSH Skill 形式安装并复用。",
+                    "artifact": "data/runs/2026-10-22-01/snapshots/16601134718--dsh-codex-cua/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-22-01-github-1426892789-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/16601134718/dsh-codex-cua/blob/45f14f45dbb1b0c964a34cb2ab1088f6515e445d/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/16601134718/dsh-codex-cua",
+                            "commit": "45f14f45dbb1b0c964a34cb2ab1088f6515e445d",
+                            "path": "README.md",
+                            "content_sha256": "c4abd0dab039de4b956e20f10249f03d5169ab0d1d077f5d1036d63a386ec8db"
+                        },
+                        {
+                            "repository_url": "https://github.com/16601134718/dsh-codex-cua",
+                            "commit": "45f14f45dbb1b0c964a34cb2ab1088f6515e445d",
+                            "path": "lib/index.js",
+                            "content_sha256": "6015194a8c168f195337fcd9f4ebb16b941f70eb4bac7964cab86eac94894959"
+                        }
+                    ],
+                    "revision": "45f14f45dbb1b0c964a34cb2ab1088f6515e445d",
+                    "captured_at": "2026-10-22T15:30:09.027Z",
+                    "summary": "核查 README.md、lib/index.js；插件挂载时幂等复制 SKILL、Python 客户端与文档到 DSH_HOME；客户端通过 JSONL 请求常驻 cua-repl，持久 JS 上下文连接 Chrome 扩展和 Sky。",
+                    "artifact": "data/runs/2026-10-22-01/snapshots/16601134718--dsh-codex-cua/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "仅检查固定提交的作者材料、入口和关键实现；未运行插件、测试、外部服务或真实宿主，也未核验独立用户反馈。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "面向 macOS 上需要从 DSH 操作 Chrome 或原生应用的用户，复用已有 Codex CUA 环境完成浏览器与 AX 自动化。 [Q01](#research-q01)",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1426892789-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1426892789:root",
+                            "area": "code",
+                            "fingerprint": "45f14f45dbb1b0c964a34cb2ab1088f6515e445d"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:09.027Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "插件挂载时幂等复制 SKILL、Python 客户端与文档到 DSH_HOME；客户端通过 JSONL 请求常驻 cua-repl，持久 JS 上下文连接 Chrome 扩展和 Sky。",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1426892789-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1426892789:root",
+                            "area": "code",
+                            "fingerprint": "45f14f45dbb1b0c964a34cb2ab1088f6515e445d"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:09.027Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "仅检查固定提交的作者材料、入口和关键实现；未运行插件、测试、外部服务或真实宿主，也未核验独立用户反馈。",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1426892789-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1426892789:root",
+                            "area": "code",
+                            "fingerprint": "45f14f45dbb1b0c964a34cb2ab1088f6515e445d"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:09.027Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "分发与包信息按固定 package.json 和 META 保存；热度不用于贡献或采用判断。",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1426892789-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1426892789:root",
+                            "area": "code",
+                            "fingerprint": "45f14f45dbb1b0c964a34cb2ab1088f6515e445d"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:09.027Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 桌面运行时、扩展、Python 与常驻进程 | 授权 AX、运行 doctor、校准环境 | 权限配置分钟未知 |\n| 持续使用 | cua-repl 内存、JSONL、Chrome/Sky 进程 | 观察—操作—再观察 | 当前 p50/p95 延迟未测 |\n| 失败恢复 | daemon 重启和重放只限当次请求 | unknown 后人工核对、卸载时删 Skill | 重复写概率与日志增长未知 |",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1426892789-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1426892789:root",
+                            "area": "code",
+                            "fingerprint": "45f14f45dbb1b0c964a34cb2ab1088f6515e445d"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:09.027Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "仅适合已经配置并信任 Codex CUA、Chrome 扩展和 macOS AX 权限的技术用户观察；不应把它用于不可逆提交、付款或敏感应用。若只读任务热调用显著优于每次新建、超时后重观察不重复写且卸载残留可接受，再考虑受限试用；出现结果 unknown 后重复副作用或跨应用权限超范围即停用。 [Q09](#research-q09)",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1426892789-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1426892789:root",
+                            "area": "code",
+                            "fingerprint": "45f14f45dbb1b0c964a34cb2ab1088f6515e445d"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:09.027Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 热会话 | daemon 与持久 JS 上下文设计存在 | README 延迟是否可复现 |\n| 双表面控制 | Chrome 与 macOS AX 调用规范存在 | 当前运行时/扩展协议兼容 |\n| 写安全 | 文档要求 unknown 后不重发 | 机制是否强制防止重复副作用 |",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1426892789-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1426892789:root",
+                            "area": "code",
+                            "fingerprint": "45f14f45dbb1b0c964a34cb2ab1088f6515e445d"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:09.027Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "内容相同跳过写入且挂载失败不破坏 profile，安装器较克制；真正复杂性在随包复制的 Python daemon 和外部运行时，本轮没有执行验证。",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1426892789-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1426892789:root",
+                            "area": "code",
+                            "fingerprint": "45f14f45dbb1b0c964a34cb2ab1088f6515e445d"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:09.027Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "相对每次启动 CUA 进程，它用常驻会话显著减少握手并保留变量，同时把操作规范随 Skill 分发；增量集中在运行时桥接与安装封装。 [Q03](#research-q03)",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1426892789-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1426892789:root",
+                            "area": "code",
+                            "fingerprint": "45f14f45dbb1b0c964a34cb2ab1088f6515e445d"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:09.027Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "它依赖未随插件交付的桌面运行时、Chrome 扩展和 macOS AX 权限，且卸载不移除写入的 Skill；本轮未验证这些外部组件的当前协议和安全边界。 [Q04](#research-q04)",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1426892789-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1426892789:root",
+                            "area": "code",
+                            "fingerprint": "45f14f45dbb1b0c964a34cb2ab1088f6515e445d"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:09.027Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "可为写操作增加请求级幂等键和观察前置条件，让超时后的“结果未知”自动转为只读复核，减少重复点击或重复提交。 [Q08](#research-q08)",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1426892789-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1426892789:root",
+                            "area": "code",
+                            "fingerprint": "45f14f45dbb1b0c964a34cb2ab1088f6515e445d"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:09.027Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-22T15:30:09.027Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "45f14f45dbb1b0c964a34cb2ab1088f6515e445d",
+                "reviewed_at": "2026-10-22T15:30:09.027Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1426892789:root",
+                        "area": "code",
+                        "fingerprint": "45f14f45dbb1b0c964a34cb2ab1088f6515e445d"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 4
+                    },
+                    "rationale": "相对明确基线存在具体集成和机制增量；它依赖未随插件交付的桌面运行时、Chrome 扩展和 macOS AX 权限，且卸载不移除写入的 Skill；本轮未验证这些外部组件的当前协议和安全边界。 未运行，效果只作解释性判断。",
+                    "basis": "interpretation",
+                    "score": 38,
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1426892789-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "工作流接线有所改变，但交付收益、覆盖人群和成本改善缺少实测；面向 macOS 上需要从 DSH 操作 Chrome 或原生应用的用户，复用已有 Codex CUA 环境完成浏览器与 AX 自动化。",
+                    "basis": "interpretation",
+                    "score": 35,
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1426892789-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "已有本地 CUA 环境的 macOS 技术用户可观察；在故障注入证明无重复写前不要用于不可逆操作。",
+                "criteria": {
+                    "scenario": {
+                        "score": 15,
+                        "rationale": "浏览器与原生自动化场景明确，但仅限已配置特定本地运行时的人群。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "持久会话和 Skill 分发相对每次启动有具体便利。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "安装与协议源码可见；未运行 CUA、Chrome 或 AX。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "外部运行时、宽权限、常驻进程和卸载残留负担较高。"
+                    }
+                },
+                "score": 52,
+                "revision": "45f14f45dbb1b0c964a34cb2ab1088f6515e445d",
+                "reviewed_at": "2026-10-22T15:30:09.027Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-22-01-github-1426892789-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1426892789:root",
+                        "area": "code",
+                        "fingerprint": "45f14f45dbb1b0c964a34cb2ab1088f6515e445d"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1426892789:root",
+            "repository": "16601134718/dsh-codex-cua",
+            "path": "",
+            "revision": "45f14f45dbb1b0c964a34cb2ab1088f6515e445d",
+            "fingerprints": {
+                "directory": "eeae5abb7f9174cb4761cbbb27fbf1bdc08db1f29f5c3be22873c79be5a66ebc",
+                "code": "45f14f45dbb1b0c964a34cb2ab1088f6515e445d",
+                "maintenance": "abab942aefa07fab2bf3fd90b579d21e115fa46f775d359fbb8d631ea5d2a4ce"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-22T15:06:59Z",
+            "analysis_sha256": "25138215afd68197efe49ae2e2b930056bdfa31cbb7717312849a6ccf3b3c298"
+        },
+        "publication.metadata": "data/plugins/16601134718--dsh-codex-cua/META.json",
+        "publication.summaries": {
+            "text": "把 Codex 桌面端的本地 computer-use 运行时以 DSH Skill 形式安装并复用。",
+            "revision": "45f14f45dbb1b0c964a34cb2ab1088f6515e445d",
+            "source_url": "https://github.com/16601134718/dsh-codex-cua/blob/45f14f45dbb1b0c964a34cb2ab1088f6515e445d/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "45f14f45dbb1b0c964a34cb2ab1088f6515e445d",
+            "items": {
+                "Skill": "幂等安装 codex-cua Skill、Python 客户端和操作规范文档到 DSH_HOME。",
+                "后台": "Skill 客户端通过 JSONL 驱动常驻 cua-repl 会话，连接 Chrome 扩展与 macOS AX 运行时。"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| Skill 安装 | 幂等部署 CUA Skill、客户端与文档。 | 仅由固定版本源码确认；运行效果未验证 |\n| 浏览器控制 | 通过持久会话驱动 Chrome 标签页。 | 仅由固定版本源码确认；运行效果未验证 |\n| 原生应用控制 | 通过 Sky 辅助功能接口操作 macOS 应用。 | 仅由固定版本源码确认；运行效果未验证 |"
+        },
+        "publication.advice": {
+            "revision": "45f14f45dbb1b0c964a34cb2ab1088f6515e445d",
+            "text": "仅适合已经配置并信任 Codex CUA、Chrome 扩展和 macOS AX 权限的技术用户观察；不应把它用于不可逆提交、付款或敏感应用。若只读任务热调用显著优于每次新建、超时后重观察不重复写且卸载残留可接受，再考虑受限试用；出现结果 unknown 后重复副作用或跨应用权限超范围即停用。 [Q09](#research-q09)"
+        },
+        "registry": "data/plugins/16601134718--dsh-codex-cua",
+        "reports": "# dsh-codex-cua\n\n> 把 Codex 桌面端的本地 computer-use 运行时以 DSH Skill 形式安装并复用。\n\n## 研究范围\n\n- **仓库**：[16601134718/dsh-codex-cua](https://github.com/16601134718/dsh-codex-cua)\n- **版本号**：0.1.0（[固定提交 45f14f45dbb1b0c964a34cb2ab1088f6515e445d](https://github.com/16601134718/dsh-codex-cua/tree/45f14f45dbb1b0c964a34cb2ab1088f6515e445d)）\n- **版本日期**：2026-10-21（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已有贡献为固定版本源码支持的实现与集成增量；效果和真实宿主可用性未验证。未来设计假设保持未验证，不计入插件现有能力。\n\n## 洞察短评\n\n- **用途**：面向 macOS 上需要从 DSH 操作 Chrome 或原生应用的用户，复用已有 Codex CUA 环境完成浏览器与 AX 自动化。 [Q01](#research-q01)\n- **亮点**：相对每次启动 CUA 进程，它用常驻会话显著减少握手并保留变量，同时把操作规范随 Skill 分发；增量集中在运行时桥接与安装封装。 [Q03](#research-q03)\n- **思考**：它依赖未随插件交付的桌面运行时、Chrome 扩展和 macOS AX 权限，且卸载不移除写入的 Skill；本轮未验证这些外部组件的当前协议和安全边界。 [Q04](#research-q04)\n- **建议**：可为写操作增加请求级幂等键和观察前置条件，让超时后的“结果未知”自动转为只读复核，减少重复点击或重复提交。 [Q08](#research-q08)\n\n采用建议：仅适合已经配置并信任 Codex CUA、Chrome 扩展和 macOS AX 权限的技术用户观察；不应把它用于不可逆提交、付款或敏感应用。若只读任务热调用显著优于每次新建、超时后重观察不重复写且卸载残留可接受，再考虑受限试用；出现结果 unknown 后重复副作用或跨应用权限超范围即停用。 [Q09](#research-q09)\n\n## 核心贡献\n\n相对每次启动 CUA 进程，它用常驻会话显著减少握手并保留变量，同时把操作规范随 Skill 分发；增量集中在运行时桥接与安装封装。 [Q03](#research-q03)\n\n## 关键质疑\n\n它依赖未随插件交付的桌面运行时、Chrome 扩展和 macOS AX 权限，且卸载不移除写入的 Skill；本轮未验证这些外部组件的当前协议和安全边界。 [Q04](#research-q04)\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可为写操作增加请求级幂等键和观察前置条件，让超时后的“结果未知”自动转为只读复核，减少重复点击或重复提交。 [Q08](#research-q08)\n\n在隔离 macOS 测试账户运行 doctor，然后重复只读标题、Finder AX 和可撤销表单写入各多次；记录首次/热 p50/p95、unknown、daemon 重启、JSONL 增长，并在写后故意超时，只重观察最终提交次数。任何重复写或权限越界即否定写操作采用。\n\n## 场景与替代办法\n\n面向 macOS 上需要从 DSH 操作 Chrome 或原生应用的用户，复用已有 Codex CUA 环境完成浏览器与 AX 自动化。 [Q01](#research-q01)\n\n基线是直接运行 cua-repl 或手工操作；插件降低启动与使用规范成本，但引入常驻进程、跨应用权限和残留文件管理。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| macOS、Python 3.9+ | 必需 | 运行 cuad.py 与原生 AX | doctor 报缺失，能力不可用 |\n| Codex/ChatGPT CUA 运行时与 Chrome 扩展 | 必需 | 提供 cua-repl、浏览器宿主与 MCP | 插件只复制 Skill，不能补齐运行时 |\n| Sky/辅助功能权限 | 原生应用必需 | 读取和操作 AX | 原生控制失败或权限过宽 |\n| DSH_HOME 写权限与清理责任 | 安装必需 | 持久写入 Skill 文件 | 挂载失败仅警告；卸载不会自动删除 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|---|\n| 安装/doctor | 插件复制 Skill，用户执行 doctor | 四个资产存在且运行时/扩展/AX 就绪 |\n| 观察 | Agent 获取 tab 或 app 状态 | 先识别确定目标，不合并未知后续动作 |\n| 操作 | cuad 发送单次确定性代码到常驻会话 | 结果与目标状态一致 |\n| 超时恢复 | 返回 unknown 时只重新观察 | 禁止重发写操作；daemon 下次调用可重启 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 桌面运行时、扩展、Python 与常驻进程 | 授权 AX、运行 doctor、校准环境 | 权限配置分钟未知 |\n| 持续使用 | cua-repl 内存、JSONL、Chrome/Sky 进程 | 观察—操作—再观察 | 当前 p50/p95 延迟未测 |\n| 失败恢复 | daemon 重启和重放只限当次请求 | unknown 后人工核对、卸载时删 Skill | 重复写概率与日志增长未知 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 热会话 | daemon 与持久 JS 上下文设计存在 | README 延迟是否可复现 |\n| 双表面控制 | Chrome 与 macOS AX 调用规范存在 | 当前运行时/扩展协议兼容 |\n| 写安全 | 文档要求 unknown 后不重发 | 机制是否强制防止重复副作用 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：研究 dsh-codex-cua 在固定版本中的实现贡献、成立条件、关键限制、采用价值与可证伪的新设计方向。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 谁在何种任务中使用，原有办法和合格结果是什么？\n\n**研究主题**：场景与需求\n\n#### 完整回答\n\n面向 macOS 上需要从 DSH 操作 Chrome 或原生应用的用户，复用已有 Codex CUA 环境完成浏览器与 AX 自动化。 合格结果不是“工具被调用”，而是用户能在既定边界内得到可复核产物。基线是直接运行 cua-repl 或手工操作；插件降低启动与使用规范成本，但引入常驻进程、跨应用权限和残留文件管理。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-20](https://github.com/16601134718/dsh-codex-cua/blob/45f14f45dbb1b0c964a34cb2ab1088f6515e445d/README.md#L1-L20)\n\n作者材料说明目标用户、安装方式、主要能力和已知边界。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n# dsh-codex-cua\n\n在 DeepSeek Harness 里直接使用 Codex 的 computer use 能力。\n\n装一个插件，DSH 的 agent 就能操作 Chrome 和任意 macOS 原生应用 ——\n走的是 ChatGPT / Codex 桌面端自带的运行时（`cua-repl` + Chrome 扩展 + Sky 原生 AX），\n不需要启动 ChatGPT 应用，也不向 OpenAI 发送请求（`cua-repl` 为本地进程）。\n\n---\n\n## 为什么是「无缝」\n\n装好之后**没有额外步骤**：\n\n| 你做的 | 实际发生的 |\n| --- | --- |\n| 插件市场点安装，或 `dsh plugin add dsh-codex-cua` | 插件把 `codex-cua` 技能写入 `~/.dsh/skills/codex-cua/` |\n| 开新会话，让 agent 操作网页或应用 | agent 加载该技能，直接调 `cuad.py` |\n\n`SKILL.md` 里已经写好调用规范、踩坑清单和延迟基线，\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 能力如何从入口、注册、调用到状态变化实现？\n\n**研究主题**：功能与机制\n\n#### 完整回答\n\n插件挂载时幂等复制 SKILL、Python 客户端与文档到 DSH_HOME；客户端通过 JSONL 请求常驻 cua-repl，持久 JS 上下文连接 Chrome 扩展和 Sky。 源码可以确认注册和数据流存在，但不能据此推断宿主加载、外部服务或最终效果已经通过。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:1-40](https://github.com/16601134718/dsh-codex-cua/blob/45f14f45dbb1b0c964a34cb2ab1088f6515e445d/lib/index.js#L1-L40)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n/**\n * dsh-codex-cua — bring Codex computer use into DeepSeek Harness.\n *\n * On mount, this plugin installs the `codex-cua` skill into the active DSH\n * home (~/.dsh/skills/codex-cua) together with its runtime client and docs.\n * From then on the agent can load the skill and drive Chrome and native macOS\n * apps through the Codex computer-use runtime.\n *\n * Design notes:\n *  - Never throw out of apply(); a failure must not break profile composition.\n *  - The skill is written idempotently and only replaced when its content\n *    actually changes, so re-mounts are cheap and do not churn mtimes.\n *  - Removal of the plugin does not delete the skill: the files are useful on\n *    their own, and deleting user data on uninstall is surprising.\n */\nimport { mkdirSync, writeFileSync, readFileSync, existsSync, copyFileSync } from 'node:fs'\nimport { homedir } from 'node:os'\nimport { dirname, join, resolve } from 'node:path'\nimport { fileURLToPath } from 'node:url'\n\nexport const name = 'dsh-codex-cua'\n\nconst HERE = dirname(fileURLToPath(import.meta.url))\nconst PKG_ROOT = resolve(HERE, '..')\nconst ASSETS = join(PKG_ROOT, 'assets')\n\n/** DSH home: honours DSH_HOME, otherwise ~/.dsh. */\nfunction dshHome() {\n  const explicit = process.env.DSH_HOME\n  if (explicit && explicit.trim()) return explicit\n  return join(homedir(), '.dsh')\n}\n\nconst FILES = [\n  ['SKILL.md', 'SKILL.md'],\n  ['cuad.py', 'cuad.py'],\n  ['docs/pitfalls.md', 'docs/pitfalls.md'],\n  ['docs/protocol.md', 'docs/protocol.md'],\n]\n\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 相对原生能力或简单替代，固定版本增加了什么？\n\n**研究主题**：贡献与相对优势\n\n#### 完整回答\n\n相对每次启动 CUA 进程，它用常驻会话显著减少握手并保留变量，同时把操作规范随 Skill 分发；增量集中在运行时桥接与安装封装。 参照是宿主原生工具、直接脚本或手工流程，现有证据支持实现增量，不支持全球首创或收益排名。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:1-40](https://github.com/16601134718/dsh-codex-cua/blob/45f14f45dbb1b0c964a34cb2ab1088f6515e445d/lib/index.js#L1-L40)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n/**\n * dsh-codex-cua — bring Codex computer use into DeepSeek Harness.\n *\n * On mount, this plugin installs the `codex-cua` skill into the active DSH\n * home (~/.dsh/skills/codex-cua) together with its runtime client and docs.\n * From then on the agent can load the skill and drive Chrome and native macOS\n * apps through the Codex computer-use runtime.\n *\n * Design notes:\n *  - Never throw out of apply(); a failure must not break profile composition.\n *  - The skill is written idempotently and only replaced when its content\n *    actually changes, so re-mounts are cheap and do not churn mtimes.\n *  - Removal of the plugin does not delete the skill: the files are useful on\n *    their own, and deleting user data on uninstall is surprising.\n */\nimport { mkdirSync, writeFileSync, readFileSync, existsSync, copyFileSync } from 'node:fs'\nimport { homedir } from 'node:os'\nimport { dirname, join, resolve } from 'node:path'\nimport { fileURLToPath } from 'node:url'\n\nexport const name = 'dsh-codex-cua'\n\nconst HERE = dirname(fileURLToPath(import.meta.url))\nconst PKG_ROOT = resolve(HERE, '..')\nconst ASSETS = join(PKG_ROOT, 'assets')\n\n/** DSH home: honours DSH_HOME, otherwise ~/.dsh. */\nfunction dshHome() {\n  const explicit = process.env.DSH_HOME\n  if (explicit && explicit.trim()) return explicit\n  return join(homedir(), '.dsh')\n}\n\nconst FILES = [\n  ['SKILL.md', 'SKILL.md'],\n  ['cuad.py', 'cuad.py'],\n  ['docs/pitfalls.md', 'docs/pitfalls.md'],\n  ['docs/protocol.md', 'docs/protocol.md'],\n]\n\n```\n\n</details>\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 什么前提最可能使核心价值不成立？\n\n**研究主题**：缺陷与关键质疑\n\n#### 完整回答\n\n最强支持是固定版本实现确有完整入口和防御分支。最关键限制是：它依赖未随插件交付的桌面运行时、Chrome 扩展和 macOS AX 权限，且卸载不移除写入的 Skill；本轮未验证这些外部组件的当前协议和安全边界。 这会直接收窄采用范围，而不是否定所有能力。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:1-40](https://github.com/16601134718/dsh-codex-cua/blob/45f14f45dbb1b0c964a34cb2ab1088f6515e445d/lib/index.js#L1-L40)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n/**\n * dsh-codex-cua — bring Codex computer use into DeepSeek Harness.\n *\n * On mount, this plugin installs the `codex-cua` skill into the active DSH\n * home (~/.dsh/skills/codex-cua) together with its runtime client and docs.\n * From then on the agent can load the skill and drive Chrome and native macOS\n * apps through the Codex computer-use runtime.\n *\n * Design notes:\n *  - Never throw out of apply(); a failure must not break profile composition.\n *  - The skill is written idempotently and only replaced when its content\n *    actually changes, so re-mounts are cheap and do not churn mtimes.\n *  - Removal of the plugin does not delete the skill: the files are useful on\n *    their own, and deleting user data on uninstall is surprising.\n */\nimport { mkdirSync, writeFileSync, readFileSync, existsSync, copyFileSync } from 'node:fs'\nimport { homedir } from 'node:os'\nimport { dirname, join, resolve } from 'node:path'\nimport { fileURLToPath } from 'node:url'\n\nexport const name = 'dsh-codex-cua'\n\nconst HERE = dirname(fileURLToPath(import.meta.url))\nconst PKG_ROOT = resolve(HERE, '..')\nconst ASSETS = join(PKG_ROOT, 'assets')\n\n/** DSH home: honours DSH_HOME, otherwise ~/.dsh. */\nfunction dshHome() {\n  const explicit = process.env.DSH_HOME\n  if (explicit && explicit.trim()) return explicit\n  return join(homedir(), '.dsh')\n}\n\nconst FILES = [\n  ['SKILL.md', 'SKILL.md'],\n  ['cuad.py', 'cuad.py'],\n  ['docs/pitfalls.md', 'docs/pitfalls.md'],\n  ['docs/protocol.md', 'docs/protocol.md'],\n]\n\n```\n\n</details>\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 启动、持续生效和失败恢复分别依赖什么？\n\n**研究主题**：依赖、兼容与流程\n\n#### 完整回答\n\n仅适用于 macOS，需要 ChatGPT/Codex 桌面运行时、Chrome 扩展、Sky/AX 权限和 Python 3.9+；还会在 DSH_HOME 写入长期 Skill 文件。 启动成功、持续有用和失败恢复是三类不同条件；缺少依赖时不能把“已注册”当作任务已办结。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:1-40](https://github.com/16601134718/dsh-codex-cua/blob/45f14f45dbb1b0c964a34cb2ab1088f6515e445d/lib/index.js#L1-L40)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n/**\n * dsh-codex-cua — bring Codex computer use into DeepSeek Harness.\n *\n * On mount, this plugin installs the `codex-cua` skill into the active DSH\n * home (~/.dsh/skills/codex-cua) together with its runtime client and docs.\n * From then on the agent can load the skill and drive Chrome and native macOS\n * apps through the Codex computer-use runtime.\n *\n * Design notes:\n *  - Never throw out of apply(); a failure must not break profile composition.\n *  - The skill is written idempotently and only replaced when its content\n *    actually changes, so re-mounts are cheap and do not churn mtimes.\n *  - Removal of the plugin does not delete the skill: the files are useful on\n *    their own, and deleting user data on uninstall is surprising.\n */\nimport { mkdirSync, writeFileSync, readFileSync, existsSync, copyFileSync } from 'node:fs'\nimport { homedir } from 'node:os'\nimport { dirname, join, resolve } from 'node:path'\nimport { fileURLToPath } from 'node:url'\n\nexport const name = 'dsh-codex-cua'\n\nconst HERE = dirname(fileURLToPath(import.meta.url))\nconst PKG_ROOT = resolve(HERE, '..')\nconst ASSETS = join(PKG_ROOT, 'assets')\n\n/** DSH home: honours DSH_HOME, otherwise ~/.dsh. */\nfunction dshHome() {\n  const explicit = process.env.DSH_HOME\n  if (explicit && explicit.trim()) return explicit\n  return join(homedir(), '.dsh')\n}\n\nconst FILES = [\n  ['SKILL.md', 'SKILL.md'],\n  ['cuad.py', 'cuad.py'],\n  ['docs/pitfalls.md', 'docs/pitfalls.md'],\n  ['docs/protocol.md', 'docs/protocol.md'],\n]\n\n```\n\n</details>\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 首次、持续与失败恢复成本及效果证据如何？\n\n**研究主题**：效果与总成本\n\n#### 完整回答\n\n首次成本是安装 Codex/ChatGPT 桌面运行时、Chrome 扩展、Sky/AX 权限与 Python 3.9，并允许插件向 DSH_HOME 写 Skill；持续成本是常驻 cua-repl 进程、JSONL 请求/响应日志和浏览器/AX 操作等待；失败恢复包括 daemon 重启、超时结果 unknown 后只读复核，以及手工清理卸载残留 Skill。合格单位是一项浏览器或原生应用操作只执行一次且最终状态可观察。当前缺首次握手分布、热调用延迟、超时率、重复写概率和权限审计。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:1-40](https://github.com/16601134718/dsh-codex-cua/blob/45f14f45dbb1b0c964a34cb2ab1088f6515e445d/lib/index.js#L1-L40)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n/**\n * dsh-codex-cua — bring Codex computer use into DeepSeek Harness.\n *\n * On mount, this plugin installs the `codex-cua` skill into the active DSH\n * home (~/.dsh/skills/codex-cua) together with its runtime client and docs.\n * From then on the agent can load the skill and drive Chrome and native macOS\n * apps through the Codex computer-use runtime.\n *\n * Design notes:\n *  - Never throw out of apply(); a failure must not break profile composition.\n *  - The skill is written idempotently and only replaced when its content\n *    actually changes, so re-mounts are cheap and do not churn mtimes.\n *  - Removal of the plugin does not delete the skill: the files are useful on\n *    their own, and deleting user data on uninstall is surprising.\n */\nimport { mkdirSync, writeFileSync, readFileSync, existsSync, copyFileSync } from 'node:fs'\nimport { homedir } from 'node:os'\nimport { dirname, join, resolve } from 'node:path'\nimport { fileURLToPath } from 'node:url'\n\nexport const name = 'dsh-codex-cua'\n\nconst HERE = dirname(fileURLToPath(import.meta.url))\nconst PKG_ROOT = resolve(HERE, '..')\nconst ASSETS = join(PKG_ROOT, 'assets')\n\n/** DSH home: honours DSH_HOME, otherwise ~/.dsh. */\nfunction dshHome() {\n  const explicit = process.env.DSH_HOME\n  if (explicit && explicit.trim()) return explicit\n  return join(homedir(), '.dsh')\n}\n\nconst FILES = [\n  ['SKILL.md', 'SKILL.md'],\n  ['cuad.py', 'cuad.py'],\n  ['docs/pitfalls.md', 'docs/pitfalls.md'],\n  ['docs/protocol.md', 'docs/protocol.md'],\n]\n\n```\n\n</details>\n\n#### 缺口\n\n- 缺少当前桌面运行时版本上的首次/热调用延迟、unknown 比例、daemon 重启次数、日志增长和重复写副作用。\n  **影响**：无法验证 README 延迟数字仍适用，也不能判断持久会话是否安全降低总负担。\n  **进一步探讨**：在隔离 macOS 用户中执行只读、单次写入和故障注入任务，记录 p50/p95 延迟、unknown、重观察结果、JSONL 字节和重复动作。\n\n<a id=\"research-q07\"></a>\n\n### Q07 · 实现有哪些可靠性取舍和可复用设计？\n\n**研究主题**：工程质量与复用\n\n#### 完整回答\n\n内容相同跳过写入且挂载失败不破坏 profile，安装器较克制；真正复杂性在随包复制的 Python daemon 和外部运行时，本轮没有执行验证。 这些判断来自结构与错误路径抽读，不等于完整安全审计或生产可靠性证明。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:1-40](https://github.com/16601134718/dsh-codex-cua/blob/45f14f45dbb1b0c964a34cb2ab1088f6515e445d/lib/index.js#L1-L40)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n/**\n * dsh-codex-cua — bring Codex computer use into DeepSeek Harness.\n *\n * On mount, this plugin installs the `codex-cua` skill into the active DSH\n * home (~/.dsh/skills/codex-cua) together with its runtime client and docs.\n * From then on the agent can load the skill and drive Chrome and native macOS\n * apps through the Codex computer-use runtime.\n *\n * Design notes:\n *  - Never throw out of apply(); a failure must not break profile composition.\n *  - The skill is written idempotently and only replaced when its content\n *    actually changes, so re-mounts are cheap and do not churn mtimes.\n *  - Removal of the plugin does not delete the skill: the files are useful on\n *    their own, and deleting user data on uninstall is surprising.\n */\nimport { mkdirSync, writeFileSync, readFileSync, existsSync, copyFileSync } from 'node:fs'\nimport { homedir } from 'node:os'\nimport { dirname, join, resolve } from 'node:path'\nimport { fileURLToPath } from 'node:url'\n\nexport const name = 'dsh-codex-cua'\n\nconst HERE = dirname(fileURLToPath(import.meta.url))\nconst PKG_ROOT = resolve(HERE, '..')\nconst ASSETS = join(PKG_ROOT, 'assets')\n\n/** DSH home: honours DSH_HOME, otherwise ~/.dsh. */\nfunction dshHome() {\n  const explicit = process.env.DSH_HOME\n  if (explicit && explicit.trim()) return explicit\n  return join(homedir(), '.dsh')\n}\n\nconst FILES = [\n  ['SKILL.md', 'SKILL.md'],\n  ['cuad.py', 'cuad.py'],\n  ['docs/pitfalls.md', 'docs/pitfalls.md'],\n  ['docs/protocol.md', 'docs/protocol.md'],\n]\n\n```\n\n</details>\n\n<a id=\"research-q08\"></a>\n\n### Q08 · 由贡献和限制能推导什么未验证方向？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n从已确认机制与关键限制可推导：可为写操作增加请求级幂等键和观察前置条件，让超时后的“结果未知”自动转为只读复核，减少重复点击或重复提交。 最小验证应与现有简单流程在相同任务、模型、预算和验收标准下比较，并在人工投入或失败率上升时否定该方向。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:1-40](https://github.com/16601134718/dsh-codex-cua/blob/45f14f45dbb1b0c964a34cb2ab1088f6515e445d/lib/index.js#L1-L40)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n/**\n * dsh-codex-cua — bring Codex computer use into DeepSeek Harness.\n *\n * On mount, this plugin installs the `codex-cua` skill into the active DSH\n * home (~/.dsh/skills/codex-cua) together with its runtime client and docs.\n * From then on the agent can load the skill and drive Chrome and native macOS\n * apps through the Codex computer-use runtime.\n *\n * Design notes:\n *  - Never throw out of apply(); a failure must not break profile composition.\n *  - The skill is written idempotently and only replaced when its content\n *    actually changes, so re-mounts are cheap and do not churn mtimes.\n *  - Removal of the plugin does not delete the skill: the files are useful on\n *    their own, and deleting user data on uninstall is surprising.\n */\nimport { mkdirSync, writeFileSync, readFileSync, existsSync, copyFileSync } from 'node:fs'\nimport { homedir } from 'node:os'\nimport { dirname, join, resolve } from 'node:path'\nimport { fileURLToPath } from 'node:url'\n\nexport const name = 'dsh-codex-cua'\n\nconst HERE = dirname(fileURLToPath(import.meta.url))\nconst PKG_ROOT = resolve(HERE, '..')\nconst ASSETS = join(PKG_ROOT, 'assets')\n\n/** DSH home: honours DSH_HOME, otherwise ~/.dsh. */\nfunction dshHome() {\n  const explicit = process.env.DSH_HOME\n  if (explicit && explicit.trim()) return explicit\n  return join(homedir(), '.dsh')\n}\n\nconst FILES = [\n  ['SKILL.md', 'SKILL.md'],\n  ['cuad.py', 'cuad.py'],\n  ['docs/pitfalls.md', 'docs/pitfalls.md'],\n  ['docs/protocol.md', 'docs/protocol.md'],\n]\n\n```\n\n</details>\n\n<a id=\"research-q09\"></a>\n\n### Q09 · 对什么人值得观察或试用，成功与停止条件是什么？\n\n**研究主题**：采用判断\n\n#### 完整回答\n\n仅适合已经配置并信任 Codex CUA、Chrome 扩展和 macOS AX 权限的技术用户观察；不应把它用于不可逆提交、付款或敏感应用。若只读任务热调用显著优于每次新建、超时后重观察不重复写且卸载残留可接受，再考虑受限试用；出现结果 unknown 后重复副作用或跨应用权限超范围即停用。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:1-40](https://github.com/16601134718/dsh-codex-cua/blob/45f14f45dbb1b0c964a34cb2ab1088f6515e445d/lib/index.js#L1-L40)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n/**\n * dsh-codex-cua — bring Codex computer use into DeepSeek Harness.\n *\n * On mount, this plugin installs the `codex-cua` skill into the active DSH\n * home (~/.dsh/skills/codex-cua) together with its runtime client and docs.\n * From then on the agent can load the skill and drive Chrome and native macOS\n * apps through the Codex computer-use runtime.\n *\n * Design notes:\n *  - Never throw out of apply(); a failure must not break profile composition.\n *  - The skill is written idempotently and only replaced when its content\n *    actually changes, so re-mounts are cheap and do not churn mtimes.\n *  - Removal of the plugin does not delete the skill: the files are useful on\n *    their own, and deleting user data on uninstall is surprising.\n */\nimport { mkdirSync, writeFileSync, readFileSync, existsSync, copyFileSync } from 'node:fs'\nimport { homedir } from 'node:os'\nimport { dirname, join, resolve } from 'node:path'\nimport { fileURLToPath } from 'node:url'\n\nexport const name = 'dsh-codex-cua'\n\nconst HERE = dirname(fileURLToPath(import.meta.url))\nconst PKG_ROOT = resolve(HERE, '..')\nconst ASSETS = join(PKG_ROOT, 'assets')\n\n/** DSH home: honours DSH_HOME, otherwise ~/.dsh. */\nfunction dshHome() {\n  const explicit = process.env.DSH_HOME\n  if (explicit && explicit.trim()) return explicit\n  return join(homedir(), '.dsh')\n}\n\nconst FILES = [\n  ['SKILL.md', 'SKILL.md'],\n  ['cuad.py', 'cuad.py'],\n  ['docs/pitfalls.md', 'docs/pitfalls.md'],\n  ['docs/protocol.md', 'docs/protocol.md'],\n]\n\n```\n\n</details>\n\n#### 缺口\n\n- 未在当前 Codex 桌面运行时验证协议、权限范围、超时和卸载残留。\n  **影响**：computer-use 写操作可能产生外部副作用，源码安装器并不能证明运行安全。\n  **进一步探讨**：在测试账户执行可撤销表单写入，注入 daemon 崩溃与超时，只允许重观察，核对最终提交次数和 AX/Chrome 权限。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：863975d8f82ba550b1bf0294977c7efc3cb128fdbb68c94884fb24d779e7af13。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 778 | — | — | 5071 |\n| .js | source | 1 | 96 | 64 | 25 | — |\n| .mjs | source | 1 | 77 | 55 | 14 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| Skill 安装 | 幂等部署 CUA Skill、客户端与文档。 | 仅由固定版本源码确认；运行效果未验证 |\n| 浏览器控制 | 通过持久会话驱动 Chrome 标签页。 | 仅由固定版本源码确认；运行效果未验证 |\n| 原生应用控制 | 通过 Sky 辅助功能接口操作 macOS 应用。 | 仅由固定版本源码确认；运行效果未验证 |\n\n## 工程亮点\n\n内容相同跳过写入且挂载失败不破坏 profile，安装器较克制；真正复杂性在随包复制的 Python daemon 和外部运行时，本轮没有执行验证。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、lib/index.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：仅检查固定提交的作者材料、入口和关键实现；未运行插件、测试、外部服务或真实宿主，也未核验独立用户反馈。\n- 下一步：在隔离 macOS 测试账户运行 doctor，然后重复只读标题、Finder AX 和可撤销表单写入各多次；记录首次/热 p50/p95、unknown、daemon 重启、JSONL 增长，并在写后故意超时，只重观察最终提交次数。任何重复写或权限越界即否定写操作采用。\n",
+        "metadata": {
+            "repository": "16601134718/dsh-codex-cua",
+            "repository_id": 1426892789,
+            "captured_at": "2026-10-22T15:13:24.473Z",
+            "window_start": "2026-09-22T15:13:24.473Z",
+            "stars": 0,
+            "pushed_at": "2026-10-20T20:04:51Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A16601134718%2Fdsh-codex-cua%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5C6A:FDBD3:965A6D:A2A111:6ADA2816 and timestamp 2026-10-22 15:13:27 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A16601134718%2Fdsh-codex-cua%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5DA6:1026BA:9C1D51:A86AA8:6ADA2818 and timestamp 2026-10-22 15:13:28 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A16601134718%2Fdsh-codex-cua%20is%3Aissue%20created%3A2026-09-22T15%3A13%3A24.473Z..2026-10-22T15%3A13%3A24.473Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5EE0:1009D0:9CEAA7:A93509:6ADA2819 and timestamp 2026-10-22 15:13:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A16601134718%2Fdsh-codex-cua%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T15%3A13%3A24.473Z..2026-10-22T15%3A13%3A24.473Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6010:19AC95:99806F:A5D0AB:6ADA281A and timestamp 2026-10-22 15:13:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A16601134718%2Fdsh-codex-cua%20is%3Aissue%20updated%3A2026-09-22T15%3A13%3A24.473Z..2026-10-22T15%3A13%3A24.473Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 610E:325E8B:9437C9:A08249:6ADA281B and timestamp 2026-10-22 15:13:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-codex-cua",
+                "captured_at": "2026-10-22T15:13:31.713Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-codex-cua",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-22T15:13:31.713Z",
+                    "source_url": "https://registry.npmjs.org/dsh-codex-cua",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1426892789:root",
+            "repository": "16601134718/dsh-codex-cua",
+            "path": "",
+            "revision": "45f14f45dbb1b0c964a34cb2ab1088f6515e445d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "eeae5abb7f9174cb4761cbbb27fbf1bdc08db1f29f5c3be22873c79be5a66ebc",
+                "code": "45f14f45dbb1b0c964a34cb2ab1088f6515e445d",
+                "maintenance": "abab942aefa07fab2bf3fd90b579d21e115fa46f775d359fbb8d631ea5d2a4ce"
+            }
+        }
+    }
+}

@@ -7,15 +7,15 @@
             "id": "github:1334817483:root",
             "repository": "saya-ch/dsh-mobile",
             "path": "",
-            "revision": "206f17b068bb297b222f816f2fb1399878a6f243",
+            "revision": "26872ce350c7d211cd3759d5c5beb6d6f5f3a857",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "6bcfca5f5b131e9453bf4438e138e671dad66d36c3f229ab4775389d7c92b76c",
-                "code": "206f17b068bb297b222f816f2fb1399878a6f243",
-                "maintenance": "d7f1ad241bb49d5ad2f966cb2b17a599b0c4b06a41666afc5ba09147460cafed"
+                "code": "26872ce350c7d211cd3759d5c5beb6d6f5f3a857",
+                "maintenance": "7ad1e950a6e43ea8090b1d6bb078156865e6c1afb371bcb4401ac9b553cba56b"
             }
         }
     }

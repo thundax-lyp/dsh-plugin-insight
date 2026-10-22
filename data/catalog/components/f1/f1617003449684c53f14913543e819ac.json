@@ -7,14 +7,14 @@
             "id": "github:1335163418:root",
             "repository": "godchen520/dsh-web-remote",
             "path": "",
-            "revision": "b72343bd80282745fca7c0eee069186e4f79946b",
+            "revision": "f91f8cb132d0e7db41438a0255f180e94bf008e6",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "c47dc5c233d991aefb83ca31c34f130c0d94f5d6d326aa165935dfe815bd9dc3",
-                "code": "b72343bd80282745fca7c0eee069186e4f79946b",
-                "maintenance": "7e675f132aa61bc3f3f6c109c6649923a218c8a2fe3e16b2be6dd1609e27c0c7"
+                "code": "f91f8cb132d0e7db41438a0255f180e94bf008e6",
+                "maintenance": "6dde52ccff88b6957646bd15a411f8b2f688afb536ea4d88c3ab19c811248d9f"
             }
         }
     }

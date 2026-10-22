@@ -7,14 +7,14 @@
             "id": "github:124882400:root",
             "repository": "platonai/Browser4",
             "path": "",
-            "revision": "82e432a229008c950e5a0714b6acee8642031054",
+            "revision": "e755a456a618253a90afbbb381cf9927efdfe897",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "b8f7aed088e2455d373d06b9c6eeca114f52f8c55c2efe8999298516693b9a54",
-                "code": "82e432a229008c950e5a0714b6acee8642031054",
-                "maintenance": "e92761161d45f6930b6584ae7a924066abb2280a6b022147632e1fdee89d4900"
+                "code": "e755a456a618253a90afbbb381cf9927efdfe897",
+                "maintenance": "980c1132d1923e308b606d50976ff46ccb59da2f8b4aba9eb040a3c56613349c"
             }
         }
     }

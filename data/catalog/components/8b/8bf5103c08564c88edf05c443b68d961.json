@@ -7,14 +7,14 @@
             "id": "github:1421920915:root",
             "repository": "Moowningstar/gitnexus-plus",
             "path": "",
-            "revision": "65d61da04363a01913452f6a07202c9c06e38951",
+            "revision": "108b53f6ab8b0e43fee30cd5b85fd74255f5cecf",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "c78389cfb304818f41ebbaef1a5ce761794715586a5bb69931c6d711224f546f",
-                "code": "65d61da04363a01913452f6a07202c9c06e38951",
-                "maintenance": "5efb20762a7446cdb5534831c6d296f2c9114854f3ba78644d514429b3e626ae"
+                "code": "108b53f6ab8b0e43fee30cd5b85fd74255f5cecf",
+                "maintenance": "189436378087cf386468ef7a77feda0f2c859297f93260874b3e22a05e38e4a2"
             }
         }
     }

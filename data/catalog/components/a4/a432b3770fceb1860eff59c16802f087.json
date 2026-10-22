@@ -7,14 +7,14 @@
             "id": "github:1351039708:root",
             "repository": "wjf1/dsh-commandcode",
             "path": "",
-            "revision": "a3cb0fe563a6515b827a7b9e4073e8d2cc0b8a64",
+            "revision": "e6a5b954016406ea2d4d6a9ea3bd167eaf10893b",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "b7d188123148c70e5f62fb51b05c958453864256b463db75b6379481c60a3fb7",
-                "code": "a3cb0fe563a6515b827a7b9e4073e8d2cc0b8a64",
-                "maintenance": "d083e68f2762776b5c3589842a8645d06ac42025cc0694f1771c8f04f47ca862"
+                "code": "e6a5b954016406ea2d4d6a9ea3bd167eaf10893b",
+                "maintenance": "3471a1678e99b8bc7619c02aaf351a2977cd209bcd3eba01d7fde498b5432016"
             }
         }
     }

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "19ddd9067d42e0c9ebfa7473018f85f4",
+    "identity": "github:1427089201:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1427089201:root",
+            "repository": "AlannerFranklin/dsh-cutout-pet",
+            "path": "",
+            "revision": "98b2d7626406230ee9bd01aad029351e693078ed",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "046eed6ece19a16824d96cb69815ca851dd46468b0cac46608e45cc570387fec",
+                "code": "98b2d7626406230ee9bd01aad029351e693078ed",
+                "maintenance": "9030eec258416221357685e1b2f3a573b7b118a44a31601b656e3b2e739611f0"
+            }
+        }
+    }
+}

@@ -7,14 +7,14 @@
             "id": "github:1346274602:root",
             "repository": "YZDame/dsh-suhuang-scroll",
             "path": "",
-            "revision": "97b0531f1beba47681443590764812eca363667a",
+            "revision": "cd3e3529b1274655d757e294a1bc32c848eb9c1b",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "7986bbf6d4ec14b79e665415bc753fead529c0a6bb1d86cbc4b8d1650c5028fb",
-                "code": "97b0531f1beba47681443590764812eca363667a",
-                "maintenance": "9103dce7de0f78ed29204bd8ebc84cc9e8824a2c565746e040c1602eb6addd08"
+                "code": "cd3e3529b1274655d757e294a1bc32c848eb9c1b",
+                "maintenance": "384f3b94b5e8f4c1c9d236627a3491e69f4d73909f36c4f160dc543b6b3eb188"
             }
         }
     }

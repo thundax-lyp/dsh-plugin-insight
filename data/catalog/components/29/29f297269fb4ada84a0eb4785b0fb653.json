@@ -7,14 +7,14 @@
             "id": "github:1399099937:root",
             "repository": "IKEASven69/dsh-takeover",
             "path": "",
-            "revision": "e3f307435336cd6491f8228ffe90b48f303d7dce",
+            "revision": "0bba0fee54d6c59dbad1f714adb96452b772fb53",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "a6e0f040bcfe35396e33060ac822722eadf9a9d4dba73b0272ba52626199c029",
-                "code": "e3f307435336cd6491f8228ffe90b48f303d7dce",
-                "maintenance": "c0656880979f6a369872922801b8087b54d1477bf2524a31ee0fe35891da19b7"
+                "code": "0bba0fee54d6c59dbad1f714adb96452b772fb53",
+                "maintenance": "3c0bd40994c63b154f2ecda42f899e256fd52883f13844dc404e8833197eb7e4"
             }
         }
     }

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6ac9b95dfbc27c26070d50f2b0c55d9e",
+    "identity": "github:1424514390:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424514390:root",
+            "repository": "lilcandi/dsh-music-on",
+            "path": "",
+            "revision": "e2a4a66e54e20e4e71c457bf3eff6e2806d2bdb9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3e2b099a4a18bf3f3cc232134a58c5549d85c26e728c04888f1dba8853895ddd",
+                "code": "e2a4a66e54e20e4e71c457bf3eff6e2806d2bdb9",
+                "maintenance": "e61da4e47ec0a2bbeec45ec4d379d38e326863050efc3593dfa4653bad7b56f6"
+            }
+        }
+    }
+}

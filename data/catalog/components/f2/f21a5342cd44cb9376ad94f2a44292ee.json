@@ -7,14 +7,14 @@
             "id": "github:1397098386:root",
             "repository": "KouzakiUmi/dsh-subusage",
             "path": "",
-            "revision": "f0efbde75778697999bb6a2a62a75dd3fb049b30",
+            "revision": "a83c0d3f080916bc3fe58c72ed6e4bfcfcbd63f9",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "fbe827548d3c0b417e684eb854d5a94d2be170e3fb640d49c74f50014bad4674",
-                "code": "f0efbde75778697999bb6a2a62a75dd3fb049b30",
-                "maintenance": "eea06f5685a00b8ccefba1dfac95a7eae4b394013e66dde4df9b01e2b2964b08"
+                "code": "a83c0d3f080916bc3fe58c72ed6e4bfcfcbd63f9",
+                "maintenance": "75600b1251568a3d66ce8cabe1b810dab99106493a0bbe5702919c442bce9b39"
             }
         }
     }

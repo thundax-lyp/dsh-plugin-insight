@@ -7,14 +7,14 @@
             "id": "github:1347927204:root",
             "repository": "lemoncat7/dsh-partner",
             "path": "",
-            "revision": "1c2a4a78d47e108b3f1fad9c9a175b47cab49565",
+            "revision": "868421bc0844bfd05e7058b8e0fb2e2fc0974cb6",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "73971d2df22a4936a7778f4022f382c26e40effb329781a203acdd8ea6c0e6de",
-                "code": "1c2a4a78d47e108b3f1fad9c9a175b47cab49565",
-                "maintenance": "0b699ed7af6a82430db9cb9d8fb56f2186bec1e3cc1fde53dbf9ecdb715956be"
+                "code": "868421bc0844bfd05e7058b8e0fb2e2fc0974cb6",
+                "maintenance": "be298016ce1f876601dcd50e226cf2391d8ec742a384691a46ce88d4bf17ea5a"
             }
         }
     }

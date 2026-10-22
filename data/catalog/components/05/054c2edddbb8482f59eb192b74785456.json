@@ -7,14 +7,14 @@
             "id": "github:1175716983:root",
             "repository": "AtlasCloudAI/atlas-cloud-skills",
             "path": "",
-            "revision": "c911c1fdc4d338d5892dc0180a847be2ca732631",
+            "revision": "715c1ffb75bc789e56e8619a72036bb44a936342",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "c7de9cc97ccac06aefff9bf9d8ddf1cf3942c3e7562e0cce19d2efa44be40e39",
-                "code": "c911c1fdc4d338d5892dc0180a847be2ca732631",
-                "maintenance": "aebcd603cf7c24ea40406a614f33ff78add8c473689ae51f741a98e3f1926b81"
+                "code": "715c1ffb75bc789e56e8619a72036bb44a936342",
+                "maintenance": "dd278a06f9934778f024cea62b353fa71d65bc713b58236d24c542523cf0a7bb"
             }
         }
     }

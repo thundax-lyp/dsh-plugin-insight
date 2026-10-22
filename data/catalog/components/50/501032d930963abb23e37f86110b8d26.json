@@ -7,14 +7,14 @@
             "id": "github:1413143090:root",
             "repository": "loyalchiiina/dsh-archive-favorites-forge",
             "path": "",
-            "revision": "722eaf8436d5748e1e26f5de64a45c5f2c9ce668",
+            "revision": "1c49ff60d1c65269b97a2b2e2c6796de5d18891a",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "44c8d993d664fba195c94d47776bf16555e6e9a5794bf08b926e9b662dcaf6bb",
-                "code": "722eaf8436d5748e1e26f5de64a45c5f2c9ce668",
-                "maintenance": "48727e1ccb6588f62d79f791c9708878655cfdb9e9a35cc4b96148aa15bf699d"
+                "code": "1c49ff60d1c65269b97a2b2e2c6796de5d18891a",
+                "maintenance": "26186fc2759fa48f6075a7e976563a3e0ce8f66bfbb251322f0a1843d8f6c7e2"
             }
         }
     }

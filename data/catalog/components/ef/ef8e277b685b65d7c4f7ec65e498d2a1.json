@@ -7,14 +7,14 @@
             "id": "github:1352340144:root",
             "repository": "shenhuanageshei/dsh-thincoder-suite",
             "path": "",
-            "revision": "a1f2287151d456a849906050a91b04aec9d82e94",
+            "revision": "af29ecba04f2c7c6181e473e820fa361b47054c3",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "7a6048d72d5350dd22cf24e613830d7b61687836c8e0a582e3d2cfda82a33ac9",
-                "code": "a1f2287151d456a849906050a91b04aec9d82e94",
-                "maintenance": "e085e8461a9980c0cb060143859e544e0f66e196103706b8c32f8e86c241916c"
+                "code": "af29ecba04f2c7c6181e473e820fa361b47054c3",
+                "maintenance": "fa774ca863d1c0aac4469c605c3bbd9e6f338be0311f9ff75cc97df5447e2476"
             }
         }
     }

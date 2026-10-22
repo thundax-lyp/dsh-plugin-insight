@@ -452,14 +452,14 @@
             "repository": "534119219/chicheng-cron",
             "path": "",
             "revision": "99a223edfa090afa2f1f05c77526a53a0f277961",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "0089ac61ccb84ac2bd278a0cd734f7a7b4dbbfdcbd82e2b74de0135675ebfb17",
                 "code": "99a223edfa090afa2f1f05c77526a53a0f277961",
                 "maintenance": "85f6153f3bc737df0da2def276161c9f48903779eb09289687453ce43c53a96a"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

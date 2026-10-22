@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8a6deb683d8ba2226cd8437f4d3918cf",
+    "identity": "github:1422176522:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1422176522:root",
+            "repository": "7gzgn/dsh-restart-planner",
+            "path": "",
+            "revision": "31562ec5555d6e93a81c251b39d173b5d80c03c6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "709d91813df18267cd1154eafdd8bf7acbc44d908e8057c8c6e25cb773ffa7d3",
+                "code": "31562ec5555d6e93a81c251b39d173b5d80c03c6",
+                "maintenance": "c74ea1aa7f772c596d76279021273ef5f1f08237bad41e3e84531a1fab95da0b"
+            }
+        }
+    }
+}

@@ -7,14 +7,14 @@
             "id": "github:849121458:root",
             "repository": "agentscope-ai/ReMe",
             "path": "",
-            "revision": "bfc05bf3b79976c52439008f2b6dd5c4c5a53b0e",
+            "revision": "ff2956a41f5e6e9db16cf41598f1ca4bf1777eb5",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "af32b679a7a54f29ec83bf5e62bd03b14ccd8e36f81c98fea374abc3f6e80764",
-                "code": "bfc05bf3b79976c52439008f2b6dd5c4c5a53b0e",
-                "maintenance": "6ecd48984332d3870f753d91c6a97a5a2bc0b6d6b6122c974e76227567659cec"
+                "code": "ff2956a41f5e6e9db16cf41598f1ca4bf1777eb5",
+                "maintenance": "cda4c402157987bb12351aa33dc30680234408ffb918844a1bb4c1c80172a210"
             }
         }
     }

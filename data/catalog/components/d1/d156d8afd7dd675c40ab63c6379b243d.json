@@ -7,14 +7,14 @@
             "id": "github:1336096331:root",
             "repository": "cyjyyd/dsh-ssh-tui",
             "path": "",
-            "revision": "83a8c7e827c4458ace3fdb4aa6de42c01e4c7921",
+            "revision": "2345f810ff9dc0a52c8993893e61f3486aecd00d",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "4df5464d41d82fe9f72ce115580f50e537637398a4b3d9f22c924e54125fc488",
-                "code": "83a8c7e827c4458ace3fdb4aa6de42c01e4c7921",
-                "maintenance": "6803db29ba3162f85f41cec4e22dd91c471b42e57bc876239b476b11c64cddce"
+                "code": "2345f810ff9dc0a52c8993893e61f3486aecd00d",
+                "maintenance": "d625e76ba6b02c67e4b51fb32e38967c81cc1242ec8840b002d56170e0c615b7"
             }
         }
     }

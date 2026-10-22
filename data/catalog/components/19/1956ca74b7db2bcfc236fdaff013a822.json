@@ -456,14 +456,14 @@
             "repository": "Amengclass/dsh-settings-hub",
             "path": "",
             "revision": "2c89559685a14375dcc6cc318ffc1c7c728a14c6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "1e85f6244f75d9cbe58d52724fc8bb9e5a4a2285f2b80a5547dac7d6ef03914d",
                 "code": "2c89559685a14375dcc6cc318ffc1c7c728a14c6",
                 "maintenance": "f2e51703fd946d983b4fa65e67008f4b312ce11e5b43d666f136e0456477e349"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

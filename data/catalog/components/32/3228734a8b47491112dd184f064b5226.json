@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3228734a8b47491112dd184f064b5226",
+    "identity": "github:1332642596:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1332642596:root",
+            "repository": "AnacondaKC/dsh-douyin",
+            "path": "",
+            "revision": "2f28338b29503f20d159b1f0123a985530134b6a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0e2b5e6863c37156df403e924d07d0ee70d840c8a6fef810c8226e436b849be1",
+                "code": "2f28338b29503f20d159b1f0123a985530134b6a",
+                "maintenance": "a67c951ab30052fe182d38d66f974c544716d47fad68ed9b7acc039d34f60da2"
+            }
+        }
+    }
+}

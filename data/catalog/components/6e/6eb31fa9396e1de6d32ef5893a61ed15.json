@@ -7,14 +7,14 @@
             "id": "github:1335658348:root",
             "repository": "TikaFlow/dsh-model-fix",
             "path": "",
-            "revision": "24729839bc457d9a1ff3ea35835dbc6a987f5fcb",
+            "revision": "98a452dce9a8ff3c35d4632466456cc853c49250",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "93ccfff688d8290f47bcfb29151f99ce37c6265148dfed0509f57797e8f910bc",
-                "code": "24729839bc457d9a1ff3ea35835dbc6a987f5fcb",
-                "maintenance": "868a09ec6c9802a7315ce15a641f264767b44afc0e8e9b9d1c435017301aa8bb"
+                "code": "98a452dce9a8ff3c35d4632466456cc853c49250",
+                "maintenance": "c81ced713c8e65f5b474838bd70e8352ffad83e50366b543fa0b280034380826"
             }
         }
     }

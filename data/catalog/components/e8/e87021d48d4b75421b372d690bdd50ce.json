@@ -481,14 +481,14 @@
             "repository": "863683348/dsh-plugin-audit",
             "path": "",
             "revision": "e5c9c5df08a56a23e37966640390d07052fcc9a6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "31757138971be268567faf04e7bdf64277552b8829c47db0736480e22d6d881f",
                 "code": "e5c9c5df08a56a23e37966640390d07052fcc9a6",
                 "maintenance": "3f807bcba491c3879b4f57be8804d72326023852dfd4732e38dd0c0130f771b0"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

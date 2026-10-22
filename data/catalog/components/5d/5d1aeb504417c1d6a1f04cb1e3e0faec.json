@@ -7,14 +7,14 @@
             "id": "github:1345830205:root",
             "repository": "MaRi23333/dsh-serverchan-watchdog",
             "path": "",
-            "revision": "2ec87263804b4b144876f02e689d7c4928dafe6f",
+            "revision": "9e9b9d1dadeea1f835066643e04c3ec39e037c13",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "0e9f5159113a4bc92b43143986a7e282cd1c568640411067b562cde193d41465",
-                "code": "2ec87263804b4b144876f02e689d7c4928dafe6f",
-                "maintenance": "ee8be044b656249d49c580e5e1468e77c6a399b1ca983213ac624a83a52a373c"
+                "code": "9e9b9d1dadeea1f835066643e04c3ec39e037c13",
+                "maintenance": "5f1631d3c2b57d43aa6a38b43f873037ab763be45b667093fbc25bb001d754eb"
             }
         }
     }

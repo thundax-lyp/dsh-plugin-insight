@@ -7,14 +7,14 @@
             "id": "github:1343028017:root",
             "repository": "ZSeven-W/dsh-harbor",
             "path": "",
-            "revision": "fe3e1347f5a9ce9de90e54760fb875b6555336b4",
+            "revision": "6299c65fc9767a27cf12b336e7c745c982f9e5f3",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "e174ee3951ef480682a640d70fd0179ced296b20b7f268b9230e98dd8b6d4d32",
-                "code": "fe3e1347f5a9ce9de90e54760fb875b6555336b4",
-                "maintenance": "7d494075e9e0c627b71fbebdeee432db8ce1a41de4dd1f0fcec849d0c8207ff9"
+                "code": "6299c65fc9767a27cf12b336e7c745c982f9e5f3",
+                "maintenance": "d511ca37cc9cf0c1549520f53846f8d48fc66f49469f27f14d29379d059eb03a"
             }
         }
     }

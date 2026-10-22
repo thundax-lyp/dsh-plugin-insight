@@ -7,14 +7,14 @@
             "id": "github:1396449521:root",
             "repository": "loyalchiiina/dsh-deepseek-web-free",
             "path": "",
-            "revision": "3a2593e06572e9194c7af23485361ebde38b59ab",
+            "revision": "d2509b2afb9bac536a700bde8b4228d2ee073297",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "ba5fb755ea138336897ccef75b44f2e090ab18593b8d123f2dd3b1443525204b",
-                "code": "3a2593e06572e9194c7af23485361ebde38b59ab",
-                "maintenance": "2a27d45dc28916a8cddcdec615b2df30b35a1bb4685fde253276baf866b643d4"
+                "code": "d2509b2afb9bac536a700bde8b4228d2ee073297",
+                "maintenance": "53d4d6aa2af7f6132b5824a70bc49e1b4de2e234c0ed99c4c4f91b343fbdbb96"
             }
         }
     }

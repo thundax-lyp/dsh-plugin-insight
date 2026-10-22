@@ -7,14 +7,14 @@
             "id": "github:1351013443:root",
             "repository": "IKEASven69/dsh-opencli",
             "path": "",
-            "revision": "308a89fe19193f8a27768f05131701541ac749dd",
+            "revision": "9177ceff6249f74df45ecf72fe0fcf275016f34e",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "6f7435625408859f3ea16cd7a05ef4b098a4d3fe655e8da6cab70abf393f2f83",
-                "code": "308a89fe19193f8a27768f05131701541ac749dd",
-                "maintenance": "2fe596586065c0d0840ccf6c5620cc672250a97f63433c6fe2b06a71e26137ac"
+                "code": "9177ceff6249f74df45ecf72fe0fcf275016f34e",
+                "maintenance": "dfaf14962089c137cd0892cf630e1e0633877705ba0dc9a0f91d34ba9d8bb319"
             }
         }
     }

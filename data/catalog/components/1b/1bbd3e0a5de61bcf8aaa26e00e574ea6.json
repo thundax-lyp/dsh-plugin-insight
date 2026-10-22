@@ -7,14 +7,14 @@
             "id": "github:1323129961:packages-plugin-console",
             "repository": "vlln/plugin-registry",
             "path": "packages/plugin/console",
-            "revision": "7309b958980dc66e671ecad5374b8d1469b494d9",
+            "revision": "c7e59ba2dcc0576815a19e72250608683f6f2f1a",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "1d7569396ef960bc89754e9edcc962338819e0800cb4dc69e756ffd9aaa90abd",
-                "code": "7309b958980dc66e671ecad5374b8d1469b494d9",
-                "maintenance": "037e9a160a3f6097507cdfe51c543c961b7b2b1436ca6f2e4b83e793c015f601"
+                "code": "c7e59ba2dcc0576815a19e72250608683f6f2f1a",
+                "maintenance": "e6196e4e9e9103f17c18740203168d2609b9ae9043eacbae03c590632e0df755"
             }
         }
     }

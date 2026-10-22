@@ -7,14 +7,14 @@
             "id": "github:988892963:dsh-plugin",
             "repository": "TencentCloudBase/CloudBase-AI-Toolkit",
             "path": "dsh-plugin",
-            "revision": "074a97d32eb45f511bcc2c9f8af2facfa2321e63",
+            "revision": "5a1c4275c3ac7c6253548428c362fb2c1c834aff",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "43ea1aefc359d5da1bbf38b326a3621f26f84316b5b18d4b56dbb324c4e5cc53",
-                "code": "074a97d32eb45f511bcc2c9f8af2facfa2321e63",
-                "maintenance": "86d4f1b8148044f18573ee1edd7fc7fffa0c155a2196b5abd7114392a63ed108"
+                "code": "5a1c4275c3ac7c6253548428c362fb2c1c834aff",
+                "maintenance": "a1a04daabf0bb91ca494d1192eee9e0f6708300375c337d245d814c3fa8bb1b8"
             }
         }
     }

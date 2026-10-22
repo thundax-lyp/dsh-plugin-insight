@@ -7,14 +7,14 @@
             "id": "github:1418431492:root",
             "repository": "imMamdouhaboammar/get-fable",
             "path": "",
-            "revision": "6aa6daac1accebe6124b34eed124526a494ac82b",
+            "revision": "fb0b98143b1cb0c34df6b77d3b948204488fc87d",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "4eeaed62421092a3e7532061b75fd550521aa1b2228228a3f0178226d142521b",
-                "code": "6aa6daac1accebe6124b34eed124526a494ac82b",
-                "maintenance": "cc29daabc1f0c1b7b019e1088ca3e84a04aca08b049839665cfab15cfb17aa39"
+                "code": "fb0b98143b1cb0c34df6b77d3b948204488fc87d",
+                "maintenance": "a6ab935e7faf02a6dbe17315ea82c0905ddaedc50e37d1f5db07fc7501c2796c"
             }
         }
     }

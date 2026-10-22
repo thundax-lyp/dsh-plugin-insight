@@ -7,14 +7,14 @@
             "id": "github:1396728367:root",
             "repository": "copylee711/dsh-better-display",
             "path": "",
-            "revision": "6fb3ab8bdf5ed51ff8f1b50eb3dc7c92217bb78d",
+            "revision": "e19b61fbb6133ca8124950179ff3254b2ccb81b1",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "d75a97e0082ee49892e14868064503fbff29626b6b6e8b04545bb9d7f76fe92c",
-                "code": "6fb3ab8bdf5ed51ff8f1b50eb3dc7c92217bb78d",
-                "maintenance": "c2304fca8138ae7f87b510130bb515b2fdfaea64eaf723ff078715ad6dbe39ee"
+                "code": "e19b61fbb6133ca8124950179ff3254b2ccb81b1",
+                "maintenance": "8c675768e084111f5feeccc769873f2528529cde522964f799c4c854167d5e99"
             }
         }
     }

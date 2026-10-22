@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4feeb6039cf92f2a6ad48a7b453117fe",
+    "identity": "github:1381627110:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1381627110:root",
+            "repository": "Leawind/dsh-rice-on-a-stick",
+            "path": "",
+            "revision": "abb7a7144baf272504f091b8d89e22e7ac61d5fc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f59a185029746ae5adf919eb1a142bd5ad6f00beede814a89f514b00e32c9e1f",
+                "code": "abb7a7144baf272504f091b8d89e22e7ac61d5fc",
+                "maintenance": "69484397a660434e905a4f0cf652d92b4f8d9f334fd3113410c9cf06e120c51c"
+            }
+        }
+    }
+}

@@ -7,14 +7,14 @@
             "id": "github:1396925462:root",
             "repository": "xrn1997/dsh-session-delete",
             "path": "",
-            "revision": "e42a4c8bf8d5f4a06aad8404b072230b98d8e727",
+            "revision": "f21799425a06e14b18dc579898507e7469c8fae6",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "c3f62406a436f9d9cb628b50b7f3fc9f740450be86def5a5d05b5ad8c8e80a3e",
-                "code": "e42a4c8bf8d5f4a06aad8404b072230b98d8e727",
-                "maintenance": "92495e3191d28ec551271a20992fc5391ac3eedb0c9ec412d9688867e446fcc0"
+                "code": "f21799425a06e14b18dc579898507e7469c8fae6",
+                "maintenance": "16f464173d73e821099200557cf610940c6da43e66552a9cd6dfcedcaec39f9c"
             }
         }
     }

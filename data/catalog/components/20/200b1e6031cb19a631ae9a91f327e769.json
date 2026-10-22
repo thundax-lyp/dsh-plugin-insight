@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "200b1e6031cb19a631ae9a91f327e769",
+    "identity": "github:1427065727:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1427065727:root",
+            "repository": "FuriousKinght/dsh-fk-rollback",
+            "path": "",
+            "revision": "2d1acc65f3e4912507d66eb0b7f54c86290ecb10",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fc53a04b6cc9e4032117993892b6f60d2f6149016eec9e9210c25b569635beb1",
+                "code": "2d1acc65f3e4912507d66eb0b7f54c86290ecb10",
+                "maintenance": "4478d1d14907650b5a0b44c44787939567b4ca1104a963484a29e258848f2cf5"
+            }
+        }
+    }
+}

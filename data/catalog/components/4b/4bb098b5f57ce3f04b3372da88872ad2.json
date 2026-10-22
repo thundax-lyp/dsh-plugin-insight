@@ -7,14 +7,14 @@
             "id": "github:1425210765:root",
             "repository": "wilsonchengassistant/dsh-mobile-sidebar",
             "path": "",
-            "revision": "3589834000cc51903306d0587dda97bd67a577db",
+            "revision": "2bc5050a257d2cbdd7e3be647f238da40f8f88fd",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "ecb4ba781a31ca1b3ffff93693834779f8e7ca077e9162b67763ac466730edbc",
-                "code": "3589834000cc51903306d0587dda97bd67a577db",
-                "maintenance": "298b8e3353ac0ddc797e5890a5ba57f49003e6931a31e9686f59ff90df6259e9"
+                "code": "2bc5050a257d2cbdd7e3be647f238da40f8f88fd",
+                "maintenance": "e425d05c880cd55a5b0739e887f732fe1309ab76d5052045d848d0906b2dfca8"
             }
         }
     }

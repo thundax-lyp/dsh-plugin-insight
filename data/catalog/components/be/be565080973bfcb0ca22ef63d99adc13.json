@@ -7,14 +7,14 @@
             "id": "github:1422466924:root",
             "repository": "haihaiaicode/dsh-cutesnowgirl-background",
             "path": "",
-            "revision": "2a66059ac03937d4e2947a0a4acad8d0da4fbf88",
+            "revision": "f38db13e89d0ad0e153a70a2e6b5ba22d224c352",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "f1623db140a9b13d5ebbfe9a59e3312ca715172eea5c777cde3ba50e87b4fdee",
-                "code": "2a66059ac03937d4e2947a0a4acad8d0da4fbf88",
-                "maintenance": "1d6d0741f24d3bdb8eac1af1dd8d601a5eb830af05a4e1a09699dd664d251b47"
+                "code": "f38db13e89d0ad0e153a70a2e6b5ba22d224c352",
+                "maintenance": "aabaec63a16e80a70a9c691460b38998050ea4a9d1d0d981e2ed1188e3995c4a"
             }
         }
     }

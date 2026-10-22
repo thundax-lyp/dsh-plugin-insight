@@ -5,16 +5,16 @@
     "data": {
         "discovery.plugins": {
             "id": "github:1420437928:root",
-            "repository": "wasteoneslife/dsh-skill-creator",
+            "repository": "wasteoneslife/scenes-skill-creator",
             "path": "",
-            "revision": "50552cda94b853f4dcca752eb20fe6ed2c8b9757",
+            "revision": "7a406fec069a20cfa183a1b3f3ba4970055fa79a",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "0a57ece2a675393c9addf3409988da7e05d9a62794c5187ade1ebe19ddd270f1",
-                "code": "50552cda94b853f4dcca752eb20fe6ed2c8b9757",
-                "maintenance": "fb029adff32d26ba3a6d0e02c989b24e5eb3d5692b6c9bbad27f1d899dcf0824"
+                "code": "7a406fec069a20cfa183a1b3f3ba4970055fa79a",
+                "maintenance": "c1f90fe4b8dc442450afde33bc12f28952eff888417f840c521017265c23c4a6"
             }
         }
     }

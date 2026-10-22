@@ -7,14 +7,14 @@
             "id": "github:1145914675:integrations-dsh",
             "repository": "first-fluke/oh-my-agent",
             "path": "integrations/dsh",
-            "revision": "4e3404082adcb951ecb8f38e426ddfbdcaba6e05",
+            "revision": "9f6b908e49205c25cdfdd40ffc69ba9a64a58a8e",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "dae49257d3a3d855813513b5f23dda300e087ae3c78b274f5d0459ab6d4ee01f",
-                "code": "4e3404082adcb951ecb8f38e426ddfbdcaba6e05",
-                "maintenance": "1869a0f960a73280ec4404e54354825744b8768d08119c8e4a9025e025989585"
+                "code": "9f6b908e49205c25cdfdd40ffc69ba9a64a58a8e",
+                "maintenance": "475e249a7bb4efb402dfeeb931136122167e9effbf5b5eddcd957edce186bc34"
             }
         }
     }

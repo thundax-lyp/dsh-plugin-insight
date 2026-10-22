@@ -7,15 +7,15 @@
             "id": "github:1333482618:root",
             "repository": "PerryLink/dsh-auto-review",
             "path": "",
-            "revision": "af42ac66e705b4d08eca5bcf938b970e5d87cf83",
+            "revision": "eda595c0e23c4f7b19da511b3a8df24c6ba8b620",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "bd2a49b1d0c395daf5b6e449aca8ab9d24d7a8895fe1b58844b9edbe3086d5ad",
-                "code": "af42ac66e705b4d08eca5bcf938b970e5d87cf83",
-                "maintenance": "af9c1b8d704268a98d86d85f1342ca20d0e1194352930f92b0415a181d0d2485"
+                "code": "eda595c0e23c4f7b19da511b3a8df24c6ba8b620",
+                "maintenance": "d7cf98fd5107537ff66c2d24bf40a727afb56a8d384b8c1cbc0f941d3796a130"
             }
         }
     }

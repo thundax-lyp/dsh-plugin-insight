@@ -480,14 +480,14 @@
             "repository": "283Gawin/dsh-heatmap",
             "path": "",
             "revision": "4ba131df0980c8c8af72901ca9fa0f31accb9a6d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "4e867d2797d5fdf181f3a90a48f23198015959eba64d57c291043fb31328d2e6",
                 "code": "4ba131df0980c8c8af72901ca9fa0f31accb9a6d",
                 "maintenance": "979a733be342a317b8efb8c7ec428809f10573c29969be25373619212444e25d"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

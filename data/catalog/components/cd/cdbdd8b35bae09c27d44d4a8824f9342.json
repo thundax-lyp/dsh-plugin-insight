@@ -7,14 +7,14 @@
             "id": "github:1340497731:root",
             "repository": "ppy-web/dsh-plugin-xiaomi-mimo-tts",
             "path": "",
-            "revision": "6bee1963ec65e506abc7b27d5f7e28eca1c1ecf1",
+            "revision": "958ef696989754da17fb83ce3e34d174cf8773c1",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "fbc0c05683f699bdce9fff0515275a38758d3d5b31c96a5322b9cd59293d04e6",
-                "code": "6bee1963ec65e506abc7b27d5f7e28eca1c1ecf1",
-                "maintenance": "bdcba1957955922828c3941cef64c2ac0c52aafbbceb490717be20dff974a872"
+                "code": "958ef696989754da17fb83ce3e34d174cf8773c1",
+                "maintenance": "40d541dbe00080af41ea5fe5e838ba7845cc237e453e7a2f91cacd8608be6a22"
             }
         }
     }

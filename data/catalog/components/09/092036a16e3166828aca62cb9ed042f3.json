@@ -7,14 +7,14 @@
             "id": "github:1174622182:packages-dsh",
             "repository": "btspoony/mstar-harness",
             "path": "packages/dsh",
-            "revision": "ee185357f4f339a049e21f7004c242aca13262fa",
+            "revision": "eb47e8f38d148d7000a4c563d81710951a195987",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "2dd7404bcf9f567994fe927c412ce03154accff9a14329d50c611bfb4e5def49",
-                "code": "ee185357f4f339a049e21f7004c242aca13262fa",
-                "maintenance": "516c4cf4af237af046854cbc2f632f5d039acb94d95452edb3dc1955645cb30a"
+                "code": "eb47e8f38d148d7000a4c563d81710951a195987",
+                "maintenance": "12b57426d2248b1bf2a4ee28f8680f46aa802a38909eda5cf9a4744a95b8e50d"
             }
         }
     }

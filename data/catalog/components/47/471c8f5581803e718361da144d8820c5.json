@@ -7,14 +7,14 @@
             "id": "github:1424284772:root",
             "repository": "ChenJun25/dsh-console-plugin",
             "path": "",
-            "revision": "7f3bc236ce7c9908bee9c01544144682bf53c717",
+            "revision": "7b073db1cb91ffa5a0564fc52c317ac07e298269",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "b110dbca6145f0aad8a1638078a63dd4a339a31eb84345b42b6cb2a2364c3c35",
-                "code": "7f3bc236ce7c9908bee9c01544144682bf53c717",
-                "maintenance": "eda0d33089dede263d75adba1a3d2c9ed43999db3f2a5dd021f52c3f06bda0c7"
+                "code": "7b073db1cb91ffa5a0564fc52c317ac07e298269",
+                "maintenance": "4ae06abdc1eb83eab4509adebac5f107f599bc2031411d10a21a569da8e27dc2"
             }
         }
     }

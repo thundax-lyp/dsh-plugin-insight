@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "def064a8cba2c8748975498e955a7dfe",
+    "identity": "github:1426619074:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1426619074:root",
+            "repository": "Akiccat/dsh-edit-question",
+            "path": "",
+            "revision": "c0705c19a881e9f5d606d9f67d20cd537469db88",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6279978f44404a838771278c8c09b8d90a22835f20548805e76cda31fd0dccac",
+                "code": "c0705c19a881e9f5d606d9f67d20cd537469db88",
+                "maintenance": "f2ee31176926e131154e440748ef5552f2d95599882171c16b864a0f698ffb89"
+            }
+        }
+    }
+}

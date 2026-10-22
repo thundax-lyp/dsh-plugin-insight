@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7976c534dab00c223434e821f488e65d",
+    "identity": "github:1425753830:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425753830:root",
+            "repository": "RestRegular/dsh-pocket",
+            "path": "",
+            "revision": "87a39cd88e3205ac4d4c0b31ed6b3154ba7bb675",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "47a19c2cf0fdf1ebf8b65ede5a194f7782d81debeb80dfce55ba7c6a79db568d",
+                "code": "87a39cd88e3205ac4d4c0b31ed6b3154ba7bb675",
+                "maintenance": "d4360ff575fa05ce8a5d118d5470874d139de5545f2159844686f56bac3e4701"
+            }
+        }
+    }
+}

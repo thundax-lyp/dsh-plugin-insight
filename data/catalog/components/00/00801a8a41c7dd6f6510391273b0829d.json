@@ -7,14 +7,14 @@
             "id": "github:1425291372:plugins-cds-theme",
             "repository": "HwFee/HwFee-dsh",
             "path": "plugins/cds-theme",
-            "revision": "c005bcfb1bb59490335db2cc6733bb41e0afddb9",
+            "revision": "5fbb1ea4ed8a3684d7285e7da619a7fe0b4a8bce",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "62ab704d175fadf3abed3cd0dcdf957c20d00b1bf210fc1dfed14c9f11744179",
-                "code": "c005bcfb1bb59490335db2cc6733bb41e0afddb9",
-                "maintenance": "0296699179363e0c52d39955fa2ee4e22fd48d35a76fde7f44bb2dcc4019d9e4"
+                "code": "5fbb1ea4ed8a3684d7285e7da619a7fe0b4a8bce",
+                "maintenance": "14d48da1a00d0360203f6302bf1187a0270ae5af62b767cd7059fe0958c8f9b0"
             }
         }
     }

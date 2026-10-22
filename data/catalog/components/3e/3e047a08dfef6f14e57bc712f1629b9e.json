@@ -468,14 +468,14 @@
             "repository": "Andor-Z/dsh-turn-outline",
             "path": "",
             "revision": "64fad2e2ecb71af1b78031989ff01d20ad25807b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "ee914df13be53be679606d57d3e192c7382c5289093f9eeb5306e5e83e57c559",
                 "code": "64fad2e2ecb71af1b78031989ff01d20ad25807b",
                 "maintenance": "ffcbd40a2a7cf3344b11b2ec3975147191b076dde606a5be85b9d7af33f158d9"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

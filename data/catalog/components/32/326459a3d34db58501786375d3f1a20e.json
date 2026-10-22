@@ -7,14 +7,14 @@
             "id": "github:1423939389:root",
             "repository": "M1r0er/dsh-workspace-gate",
             "path": "",
-            "revision": "8e44b13e390a7f07a3d08a18655564c25d593bcf",
+            "revision": "0b5b2a203f06ed80d52e5cb8dd7eacd55704b377",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "ccdb2e1fc6b795fc6c8ae1807c6b5444fef88fe062e8122b42c9e2fd846181b5",
-                "code": "8e44b13e390a7f07a3d08a18655564c25d593bcf",
-                "maintenance": "6a368b98de05a64a682b333f27d35333dc4c7ff4ac469f08a96b5e82c2c647f6"
+                "code": "0b5b2a203f06ed80d52e5cb8dd7eacd55704b377",
+                "maintenance": "153538d819eadd645eddbece88fda06b5c38b18d10fa91ac4b9e8baa9874b9d2"
             }
         }
     }

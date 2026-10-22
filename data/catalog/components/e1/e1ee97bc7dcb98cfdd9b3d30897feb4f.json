@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e1ee97bc7dcb98cfdd9b3d30897feb4f",
+    "identity": "github:1401037852:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1401037852:root",
+            "repository": "19north/dsh-redstone-music",
+            "path": "",
+            "revision": "7ab206d8b7befe321603cd8b046bdae5be5f66ef",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "bbd83103cdc70d5de1619fa853e2c2b71aa08a66eed23b81ecc661313821e200",
+                "code": "7ab206d8b7befe321603cd8b046bdae5be5f66ef",
+                "maintenance": "45a7653848fdf1a9f494354bd3e6c14bda53602b62962a046b0c8a98180418db"
+            }
+        }
+    }
+}

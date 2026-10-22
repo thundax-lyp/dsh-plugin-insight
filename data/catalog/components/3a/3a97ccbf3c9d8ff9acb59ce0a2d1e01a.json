@@ -7,14 +7,14 @@
             "id": "github:1365548964:root",
             "repository": "latte03/dsh-select-quote",
             "path": "",
-            "revision": "304e4ade2f0224a1164228d161a2eaea0b3a3f3d",
+            "revision": "f1c3153f387997db75e5051d29166cb6eb441956",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "22c9c81e4939d8f9883d776008d6f11d3ead823c6ad9331fc98334b4aca235ef",
-                "code": "304e4ade2f0224a1164228d161a2eaea0b3a3f3d",
-                "maintenance": "b1d399ca62b984b926c6dfca5c41927d98a7f094bb17f8e44b72a40946223059"
+                "code": "f1c3153f387997db75e5051d29166cb6eb441956",
+                "maintenance": "9309b4f1de2adc37b45cf3e8723438af5a3d47d5283756d9842515900a183c80"
             }
         }
     }

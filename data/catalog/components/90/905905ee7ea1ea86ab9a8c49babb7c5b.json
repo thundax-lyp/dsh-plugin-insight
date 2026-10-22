@@ -7,14 +7,14 @@
             "id": "github:1336096921:root",
             "repository": "zqh260619/dsh-dupguard",
             "path": "",
-            "revision": "7aa5ec828bafb1b41a733ca4817c26b8383cf0e1",
+            "revision": "b88b4a7f678fc2cf0ddcbbe6150c8e763b23688e",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "4199dec2bb36da9c1e4db956f1bb251e5eef3735486721dd477fcf2090a1bda2",
-                "code": "7aa5ec828bafb1b41a733ca4817c26b8383cf0e1",
-                "maintenance": "a881316f90035b7f7a43b8b376c48c5a0a6133c63894cccb954bee8a5b9a4277"
+                "code": "b88b4a7f678fc2cf0ddcbbe6150c8e763b23688e",
+                "maintenance": "0b948d793fb6241818829e27655d639aaf17af1406e6c49d38ccd167946d1cf6"
             }
         }
     }

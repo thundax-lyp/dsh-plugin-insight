@@ -7,15 +7,15 @@
             "id": "github:1332073142:root",
             "repository": "NanmiCoder/dsh-agent-teams",
             "path": "",
-            "revision": "f270723da75075258bc964c166bbec87289d4861",
+            "revision": "230958db812ed34bcf2d1168e8157bbf5af04055",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "de01f940a23e726142e376458936b7af90b775fe8e67520d037bf541c5fbb86d",
-                "code": "f270723da75075258bc964c166bbec87289d4861",
-                "maintenance": "0abb765c6d0465fe8813a62ae1bac91a64b70db247a2e36445a13f7be674df50"
+                "code": "230958db812ed34bcf2d1168e8157bbf5af04055",
+                "maintenance": "d96cd9f8f6c608676110d330352cd846cb399303be4da05c28d95d0d9fb4f993"
             }
         }
     }

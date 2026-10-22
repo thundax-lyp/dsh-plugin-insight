@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2ac4a4bfa9fdbbd8538b9e6514011efa",
+    "identity": "github:1340492214:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340492214:root",
+            "repository": "AKS1st/dock-files",
+            "path": "",
+            "revision": "d24224beb8cf024a9c6e79fe97445001d73150b8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "983fcdf396ccc238853c54eba420139aa7d6b1312fc1023e569f2561b7161e56",
+                "code": "d24224beb8cf024a9c6e79fe97445001d73150b8",
+                "maintenance": "99d184e2cbeea68029862dea12ec2ff34a236aeeca6a440cad47a68a50155f77"
+            }
+        }
+    }
+}

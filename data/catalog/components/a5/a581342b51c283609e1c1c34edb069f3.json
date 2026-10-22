@@ -7,14 +7,14 @@
             "id": "github:1425051006:root",
             "repository": "wilsonchengassistant/dsh-media-web-preview",
             "path": "",
-            "revision": "04de2d3e8bf70e7a1b85ebfe7992c50ae02a5e30",
+            "revision": "8f7d0dcce0a34d22407d1a306ee8254b3cf63c67",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "5120939e8db32e832b862213cb8da2eefd960c0a896135833ccf500da15ff456",
-                "code": "04de2d3e8bf70e7a1b85ebfe7992c50ae02a5e30",
-                "maintenance": "792a5cffbae8b48a1c8435fdaff56350ed546dfd5051c9934db955a1d667e234"
+                "code": "8f7d0dcce0a34d22407d1a306ee8254b3cf63c67",
+                "maintenance": "e30eb6fb3f815ed87c0101aae857ff39e18de2256e11bce6c074361a36abc74a"
             }
         }
     }

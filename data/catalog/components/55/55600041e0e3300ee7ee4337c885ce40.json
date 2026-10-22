@@ -7,14 +7,14 @@
             "id": "github:1260933502:plugins-forge-dsh",
             "repository": "MjxUpUp/Forge",
             "path": "plugins/forge-dsh",
-            "revision": "8ba9107320f5b8abdf03d6c52ef732bd5bfedff6",
+            "revision": "c7bad7f1332a31d31b3169588b0969e9911f2f3f",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "79a95dc8135829303f77fb9b5f255ffbb577ae328fec19bb62179f67a53583cd",
-                "code": "8ba9107320f5b8abdf03d6c52ef732bd5bfedff6",
-                "maintenance": "0a00ddb5e2b0f3f5f87b1857ba1aaa80dc7b0d2755cafdcd33abd1adba5fcafb"
+                "code": "c7bad7f1332a31d31b3169588b0969e9911f2f3f",
+                "maintenance": "bd70920ad1a0fc07a2277117f3f6ad7bfb15c580a41be7cf8fee1e73e261febd"
             }
         }
     }

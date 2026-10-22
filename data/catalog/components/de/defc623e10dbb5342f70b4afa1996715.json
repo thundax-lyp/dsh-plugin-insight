@@ -7,14 +7,14 @@
             "id": "github:1418848134:packages-bundle-agent-collaboration",
             "repository": "Leo-sail/dsh-plugin-agent-collaboration",
             "path": "packages/bundle/agent-collaboration",
-            "revision": "4c146dac05555ceef584f5389c1389cc89c2d411",
+            "revision": "226b99d7d4b6a59026a14c2db17f406bdd6bf2d4",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "0b04e7f04e49ded593b8ec55486d1397bfe843f73928d4d5f91e1c2672275fec",
-                "code": "4c146dac05555ceef584f5389c1389cc89c2d411",
-                "maintenance": "29425b9d7ef7802e233b6013e84ac5d631916a689c88e04b525bb5ec725cdc3e"
+                "code": "226b99d7d4b6a59026a14c2db17f406bdd6bf2d4",
+                "maintenance": "92df845bf1cc34cf74a1c61ab3a13fc431ede73432d42f7c444d8bdc929dcbbd"
             }
         }
     }

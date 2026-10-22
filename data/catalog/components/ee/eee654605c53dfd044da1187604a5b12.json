@@ -543,14 +543,14 @@
             "repository": "AKS1st/dock-editor",
             "path": "",
             "revision": "f6e5e0845c42e2b09a7a8d671a66b331fe094634",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "4ae51b272dc85dae1f847ee4e1a73413d643dae2d4cf0529f0742a0ee8369635",
                 "code": "f6e5e0845c42e2b09a7a8d671a66b331fe094634",
                 "maintenance": "ec1fcb6a77d60b26f7afaace62498f4afd4fa60a4b20ee18c822a89c975be7e9"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

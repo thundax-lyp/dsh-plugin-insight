@@ -472,14 +472,14 @@
             "repository": "1052326311/dsh-plan-lattice",
             "path": "",
             "revision": "ea4d4f7d726681466e86d11f93e4cc38a6c0d3f3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "22361395f77bc831523107a180c153081f5fdc0bfca9c0ffc5d5c92bfdc05e8f",
                 "code": "ea4d4f7d726681466e86d11f93e4cc38a6c0d3f3",
                 "maintenance": "4e8411228b94b1319fce61b2d923d9d799ba9b637240578aaa410f2b72048866"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

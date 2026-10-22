@@ -7,14 +7,14 @@
             "id": "github:1335735813:root",
             "repository": "FeatherHunter/dsh-prompt",
             "path": "",
-            "revision": "542afe2e9eba6854a2a2d44a0e42b2059d020109",
+            "revision": "cca94167e03b68039bd6b25280bec0b57591eed8",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
-                "directory": "ae849c8790a52e5fcea6ef7d71d0e0414a4386d2d679b10d1b54e8673e88f6e7",
-                "code": "542afe2e9eba6854a2a2d44a0e42b2059d020109",
-                "maintenance": "6288eff6efefabdaf0d42b68941583e80c3f47ea7272d4235ee2390e05f3e589"
+                "directory": "c6f861d09c95b7b196ead2cc76d76dd4a674a36414934dbc9a4ccc09e723602b",
+                "code": "cca94167e03b68039bd6b25280bec0b57591eed8",
+                "maintenance": "155c74d1a41adfd12a0732d551ee1601534ce12edc7252e9fc34fe7a6996302d"
             }
         }
     }

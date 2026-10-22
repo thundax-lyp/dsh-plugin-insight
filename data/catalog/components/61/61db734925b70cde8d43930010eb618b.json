@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "61db734925b70cde8d43930010eb618b",
+    "identity": "github:1426724857:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1426724857:root",
+            "repository": "xt765/dsh-doubao-image",
+            "path": "",
+            "revision": "4b263db7d8f6717fa6c60bbf74a2ab3b951e2720",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5c4763ab2df8b68fd5e5b9f0073ec69d9ddc7935bd3ed850f6c1758eceb404fc",
+                "code": "4b263db7d8f6717fa6c60bbf74a2ab3b951e2720",
+                "maintenance": "4dae05daed0f2dc1595592df541bbe868e108fc8b6416bcc4ad0ecba9dba3092"
+            }
+        }
+    }
+}

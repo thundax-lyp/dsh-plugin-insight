@@ -7,14 +7,14 @@
             "id": "github:1423345763:root",
             "repository": "EasonMWS/dsh-plugin-health",
             "path": "",
-            "revision": "d2535a0bc5cbdfdda27ee4eb61a5b87e8f77df06",
+            "revision": "26823b56d7e2f6ba78d9f175d69d03db06435103",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "30a981ab5d140c2925a93baae4a78ff155ed22381d9a3adf005ceb2d605fa3d5",
-                "code": "d2535a0bc5cbdfdda27ee4eb61a5b87e8f77df06",
-                "maintenance": "5d3b1df8f5cdfe731a7a983337c2f1eedd64f4f29fe2635b7f4970a1852b8db1"
+                "code": "26823b56d7e2f6ba78d9f175d69d03db06435103",
+                "maintenance": "a0943dd35103a6b5bda1f005dd8fd483073a7031dc5953d5b46df09c0a38da26"
             }
         }
     }

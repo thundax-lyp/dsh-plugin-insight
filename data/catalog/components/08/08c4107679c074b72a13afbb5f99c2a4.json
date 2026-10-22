@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "08c4107679c074b72a13afbb5f99c2a4",
+    "identity": "github:1426976113:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1426976113:root",
+            "repository": "Kadima-code/dsh-subagent-fold",
+            "path": "",
+            "revision": "762ab2a7ebc2d5643696ae5011ecf194243303b7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1e6ead35fea4368252a32b7e1a898d5f78259fe98052560592adf156c59d5a5f",
+                "code": "762ab2a7ebc2d5643696ae5011ecf194243303b7",
+                "maintenance": "98a99f3dd70ef114d7ed2db4fb839640c421558af917834e555eb69fee093a55"
+            }
+        }
+    }
+}

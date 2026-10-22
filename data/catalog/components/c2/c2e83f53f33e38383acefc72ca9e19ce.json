@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c2e83f53f33e38383acefc72ca9e19ce",
+    "identity": "github:1426420964:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1426420964:root",
+            "repository": "Justin-Mai/dsh-role-prompts",
+            "path": "",
+            "revision": "a965f5940a7e248a5768a661a41854caef458bd5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fa8b4a89008bfbf2ed0c2301d5ba0b0292b335963092003b01e644a5a32bcb0c",
+                "code": "a965f5940a7e248a5768a661a41854caef458bd5",
+                "maintenance": "20027e971e96a1acaddecc1f729d31676131b97e530ce1bb4e53d147a148e59c"
+            }
+        }
+    }
+}

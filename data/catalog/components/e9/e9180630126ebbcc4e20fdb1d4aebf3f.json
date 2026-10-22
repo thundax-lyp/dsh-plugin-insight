@@ -7,14 +7,14 @@
             "id": "github:1371232031:root",
             "repository": "MAOLEIJIN/dsh-mattpocock-skills",
             "path": "",
-            "revision": "5c246582d59c2a40f04df625da316f6f86ea5c6c",
+            "revision": "87d66eceec4e22886f3c3f162549c062a8e68320",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "5f49e5c3be8465cc9a2e68bf1e3287c67570217d892571b202272a20e575a1db",
-                "code": "5c246582d59c2a40f04df625da316f6f86ea5c6c",
-                "maintenance": "7767c9bae4209e362488ebae385d9a24193cb974ced38c7abc6f8178ebb16351"
+                "code": "87d66eceec4e22886f3c3f162549c062a8e68320",
+                "maintenance": "df941ab0e58701dfe86d68cf2460e753f4c0db1700c5359ec1ce6f8f23f8de95"
             }
         }
     }

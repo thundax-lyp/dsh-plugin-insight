@@ -7,15 +7,15 @@
             "id": "github:1335569052:root",
             "repository": "MichengAI/dsh-archive-manager",
             "path": "",
-            "revision": "ba4c99e7388e61c13ec2c5733225357e1c199c0f",
+            "revision": "bbf6442e35b1db3c44058b0fc606ce43e1a4001b",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "7f392f96e1ac84ed062f6560dbfd0fca329518cab60781da0a759cd7698437b6",
-                "code": "ba4c99e7388e61c13ec2c5733225357e1c199c0f",
-                "maintenance": "0e9e3554da03efa1aaf82e2f1063b19cd3a70e2c34aec95a9a65fc6ef0cc54a0"
+                "code": "bbf6442e35b1db3c44058b0fc606ce43e1a4001b",
+                "maintenance": "bbc87a89a81ad19c00ef058ae2dace8271c0b0daa0e290e77e363a31c6eaf640"
             }
         }
     }

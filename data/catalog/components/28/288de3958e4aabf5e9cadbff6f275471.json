@@ -461,14 +461,14 @@
             "repository": "240xu/verdict-engine",
             "path": "packages/dsh-tech-lead",
             "revision": "c7e23f9e131694af6dbd9f3ed11301602a514864",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "96cc1a5138aadcc7a9fd1d41606050585e8c44ad8cc3e4c606c269f778476089",
                 "code": "c7e23f9e131694af6dbd9f3ed11301602a514864",
                 "maintenance": "de05162b4a408e6ecbb9af824df2df62f3ad71dc79f8626d698feb4e1239d402"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

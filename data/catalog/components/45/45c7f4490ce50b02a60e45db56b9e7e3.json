@@ -7,14 +7,14 @@
             "id": "github:1416482333:root",
             "repository": "wjh-ux/dsh-wechat-media",
             "path": "",
-            "revision": "03d0481828b0565e4eb54e3020e9c560b1d27a7d",
+            "revision": "5e1c29c1538119dac611ba4cc9ff530140240e5e",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "f1a29dcd25ffe2439ebabdab65f07987830616a5450f1715af31979dc3d1ccc4",
-                "code": "03d0481828b0565e4eb54e3020e9c560b1d27a7d",
-                "maintenance": "2863fb9533a4f84c03f05a6e1ea11041419ea460fa6579d0d54f9b277351724b"
+                "code": "5e1c29c1538119dac611ba4cc9ff530140240e5e",
+                "maintenance": "f215ae2dac1c4b3309e426273289769c1894074f8ab67f727e63abe8634d3f05"
             }
         }
     }

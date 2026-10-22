@@ -7,14 +7,14 @@
             "id": "github:1273149259:root",
             "repository": "KongFangXun/sofagent",
             "path": "",
-            "revision": "0e55dc463eb3cb75a161a8088282fd410df248d4",
+            "revision": "8feed97e6dceffb87b4c3c51e62cf3075d4beffc",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "dcbd40f4913ac98ecde10e6ca161e69f526bee0e1d7ade4e1b2daf38bc583005",
-                "code": "0e55dc463eb3cb75a161a8088282fd410df248d4",
-                "maintenance": "733ed13e244b46dfd30340276a29bd1bdcac18f4a2cdbd12e8511392c0621d91"
+                "code": "8feed97e6dceffb87b4c3c51e62cf3075d4beffc",
+                "maintenance": "9229bdea721e5ee4dc19c6962971582840bbd8f4cb987ed53fb3029822b5174b"
             }
         }
     }

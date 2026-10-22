@@ -444,14 +444,14 @@
             "repository": "571242/dsh-armor-switch",
             "path": "",
             "revision": "24966edef55f27e795b095e94f5b61508a125e3f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "62083b4c9e6183d8d27c0cda411bc7100776db0aaa16cf3a4e535644d31cca4a",
                 "code": "24966edef55f27e795b095e94f5b61508a125e3f",
                 "maintenance": "f20a0e19c2b21e27eb1c932f5f614049ace03b73716573a4a3451cdf55c85c6c"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

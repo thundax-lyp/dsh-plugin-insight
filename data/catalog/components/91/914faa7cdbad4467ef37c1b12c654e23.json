@@ -7,14 +7,14 @@
             "id": "github:1401334465:root",
             "repository": "copylee711/dsh-computer-use",
             "path": "",
-            "revision": "ff333a603defd1af8bbfaa469b78f0c06f23ce70",
+            "revision": "e6272a61a7a03d2d3e6e1a1c384d20f30a23ffbc",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "42a7e0a2eb31daaab4103c7ae179781bc1c6ffe3a14f0ce1459a247700c30c63",
-                "code": "ff333a603defd1af8bbfaa469b78f0c06f23ce70",
-                "maintenance": "c7edb195cd884133c212457f1471767b4fef588aaff52f322eb2f93edc2a859f"
+                "code": "e6272a61a7a03d2d3e6e1a1c384d20f30a23ffbc",
+                "maintenance": "44f6af82c25ef204d6f6f7f3845291faef72aca1ada7987e2e98cceb42412a95"
             }
         }
     }

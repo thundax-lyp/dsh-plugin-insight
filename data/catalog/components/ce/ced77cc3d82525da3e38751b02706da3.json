@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ced77cc3d82525da3e38751b02706da3",
+    "identity": "github:1398550204:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1398550204:root",
+            "repository": "AsterionZephyr/dsh-desktop-hand",
+            "path": "",
+            "revision": "2ee21b2bc6688f2f53278c08a3f3d39b46cc0a41",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d91725bc7f034e1062626c0f7c07c3b012677a65eb3e1c49975dd03881f8e3e7",
+                "code": "2ee21b2bc6688f2f53278c08a3f3d39b46cc0a41",
+                "maintenance": "dec8cea848e824e9d2cb6d63f30c1f90e93f171595909dd40e53e26ba7bf707b"
+            }
+        }
+    }
+}

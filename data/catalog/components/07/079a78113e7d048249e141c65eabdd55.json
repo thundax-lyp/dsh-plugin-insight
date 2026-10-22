@@ -474,14 +474,14 @@
             "repository": "452926826/dsh-at-skill",
             "path": "",
             "revision": "7502c9bce1a65597188c12d4ab1e33e9365e3a22",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "674c71f790a2ad95e72a951fcaa5899ec410e4dd546db1aa6895beed3769a909",
                 "code": "7502c9bce1a65597188c12d4ab1e33e9365e3a22",
                 "maintenance": "12c727f5aebdc7b0b60a9701a6c798195e2b96b75ec854362f8eba9479df1c4f"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

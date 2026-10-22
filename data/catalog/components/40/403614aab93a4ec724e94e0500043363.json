@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "403614aab93a4ec724e94e0500043363",
+    "identity": "github:1340961887:packages-dsh-hooks",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340961887:packages-dsh-hooks",
+            "repository": "moon16u/dsh-pouch",
+            "path": "packages/dsh-hooks",
+            "revision": "9e0dae4668cd0c64a41cbce2c04dc4424eb9409d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "260dbb258fdbf4602a2066e9b330f1259ce6480d4454c106f3e484803cc2ee41",
+                "code": "9e0dae4668cd0c64a41cbce2c04dc4424eb9409d",
+                "maintenance": "d872334759f077c9f5b03fa8ca780fed103756f871a680c97bad7254815c1afe"
+            }
+        }
+    }
+}

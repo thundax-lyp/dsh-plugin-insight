@@ -7,14 +7,14 @@
             "id": "github:1348305123:plugins-dsh-cortexm",
             "repository": "ssmurfgg04-gif/context-m",
             "path": "plugins/dsh-cortexm",
-            "revision": "6a1c8126765d0ce385b9f29aa8216ec818246279",
+            "revision": "d633e614cfff0a35a63fe4948c592f974b8c967b",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "b32280fa027ea0475b10418c07cc336f21344d59f81f5b15715aba16d1c286c0",
-                "code": "6a1c8126765d0ce385b9f29aa8216ec818246279",
-                "maintenance": "944414799e14838c4c851b385bd28530dd2ad62e182e2698e49de1c25230fb30"
+                "code": "d633e614cfff0a35a63fe4948c592f974b8c967b",
+                "maintenance": "2a44647e2b4197e32f2e77f06d84b11e55d3b23064735984ce8adaa924389d0b"
             }
         }
     }

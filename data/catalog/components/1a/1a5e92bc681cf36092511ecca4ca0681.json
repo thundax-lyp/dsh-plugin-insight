@@ -7,14 +7,14 @@
             "id": "github:1269228279:root",
             "repository": "834063245-creator/LantaiAgent",
             "path": "",
-            "revision": "4f6914ee0e9f15a5ba30b90bbddfd8378d05338d",
+            "revision": "5ed9b0307908d882920eaf0d2bb734ee8a06063e",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "cd4b46dc4d4baf4041ca10096295e7d77e1ebf1d96ded54aac6a7cc7952bed59",
-                "code": "4f6914ee0e9f15a5ba30b90bbddfd8378d05338d",
-                "maintenance": "441378c882edd762e49d4d6a8785084d9fdc885cceabceec1463e5eedd537cd8"
+                "code": "5ed9b0307908d882920eaf0d2bb734ee8a06063e",
+                "maintenance": "48833b839c718e897e9b8cf859303c6ee0660a682473716e0df5f3aa5e304850"
             }
         }
     }

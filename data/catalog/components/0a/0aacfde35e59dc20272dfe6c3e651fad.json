@@ -481,14 +481,14 @@
             "repository": "AbcdefgXW/dsh-msg-hub",
             "path": "",
             "revision": "0fd11c38fa21d5639ea53f067a221d8ff7d8675c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "41f6c9401b40b0255e6172eb6f98257b22fedc45fae67562380f355e77a487c4",
                 "code": "0fd11c38fa21d5639ea53f067a221d8ff7d8675c",
                 "maintenance": "a10cd61ca6106cfcc5848c1781511f357b00b3f7b488fd9de494036dcdb18e3a"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

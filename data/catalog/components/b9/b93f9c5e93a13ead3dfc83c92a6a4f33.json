@@ -7,14 +7,14 @@
             "id": "github:1424521091:root",
             "repository": "ShanJun-pro-max/dsh-novel-workbench",
             "path": "",
-            "revision": "b41c440af490fc25995adb88e2bd9a2dcf291406",
+            "revision": "4c4869be7adb611fe4a52646e68defe2f2e815db",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "bf11a5eddab63d36eb1acd5cfbf53ed89c2e8134bf6165c63d4d53ac98d26836",
-                "code": "b41c440af490fc25995adb88e2bd9a2dcf291406",
-                "maintenance": "b0e1cca678c0a8bacffc4fcd0346aae4e45f4d278b5f6ae3c521f7c2255481b9"
+                "code": "4c4869be7adb611fe4a52646e68defe2f2e815db",
+                "maintenance": "41eef1739dafc9289a1bafed52c25209f82c8f1d38b0a13ddfbfb99ae1e74745"
             }
         }
     }

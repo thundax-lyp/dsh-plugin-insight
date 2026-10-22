@@ -7,14 +7,14 @@
             "id": "github:1377965652:root",
             "repository": "wangcangxing/ai-eight-honors-eight-shames",
             "path": "",
-            "revision": "08f35255c5e1724af8e65572859c2e9df805a716",
+            "revision": "79703ff36da1d1894dc887d3c010d9ffffeefa42",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "29354d5e99ca26bc006281ff28fa585e4ac0482891ed0aebe0cc8a5a63a917b7",
-                "code": "08f35255c5e1724af8e65572859c2e9df805a716",
-                "maintenance": "423ad0211a1390cf20a59a6fdb6dcf239ab7fbd7f0006cf47ac611c461a4970d"
+                "code": "79703ff36da1d1894dc887d3c010d9ffffeefa42",
+                "maintenance": "fccfa5d6a15145b06c5e784495c5501216cf5f453cb0cba2cc4c3a1e71b6ac61"
             }
         }
     }

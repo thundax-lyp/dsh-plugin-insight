@@ -7,14 +7,14 @@
             "id": "github:1273950731:dsh-aginxbrowser",
             "repository": "yinnho/aginxbrowser",
             "path": "dsh-aginxbrowser",
-            "revision": "5cd5743bc468b74abda8d95f92c8cf6accffc718",
+            "revision": "af5239136f7ed43dae553f49df9c51b1075beae5",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "49a4cc0ea2ec655c2da8b3447c0b9514c8e93761995c8e778925f50464fa3b03",
-                "code": "5cd5743bc468b74abda8d95f92c8cf6accffc718",
-                "maintenance": "30e613765dce0b68421d614e46f09bb91d2b288f0aaa7826f2c2c24c9c26966a"
+                "code": "af5239136f7ed43dae553f49df9c51b1075beae5",
+                "maintenance": "b394b71ac1e85513a85021a292458a25e2eef721d67b841d98ce6e427395dda6"
             }
         }
     }

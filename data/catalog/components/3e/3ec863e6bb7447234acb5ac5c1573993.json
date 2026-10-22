@@ -7,15 +7,15 @@
             "id": "github:1326938666:root",
             "repository": "omdsh-dev/dsh-advisor",
             "path": "",
-            "revision": "de9b312a138c8fd00ccfe7cfaef0e249361918b2",
+            "revision": "4c4b6d5fb04eefb58475c078da00c79371b28c89",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "9258eb3729b089f44f4aa71f0f5cca97de31042e5093ad858f51ec0d3416757a",
-                "code": "de9b312a138c8fd00ccfe7cfaef0e249361918b2",
-                "maintenance": "77cfd01ec0c0bdc7eec540d12e5e73cc8e8a01de31ae47bb40825385c4cb98af"
+                "code": "4c4b6d5fb04eefb58475c078da00c79371b28c89",
+                "maintenance": "2088d4ebeda224cc92e816e4ef826b3589cfc3a45883094e4a8ce822aa1212fc"
             }
         }
     }

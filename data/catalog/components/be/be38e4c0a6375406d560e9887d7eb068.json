@@ -7,14 +7,14 @@
             "id": "github:1336044501:packages-dsh-mcp-manager",
             "repository": "wingsky-1/dsh-plugin-hub",
             "path": "packages/dsh-mcp-manager",
-            "revision": "887d3b3ab83a8104fb9bb147bc6e4d9af2718d29",
+            "revision": "5a9c12aa33dc9853b1610f3295d26a5fc112ce1f",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "f77aae9dd42ccaecfafdf2ad2294e1c827d746113e93e0e8a80a6e89b4271dfa",
-                "code": "887d3b3ab83a8104fb9bb147bc6e4d9af2718d29",
-                "maintenance": "244b6709d224f2f41c21823880dfe4fcde29ad5089d98328b2a3cabd1c16a29c"
+                "code": "5a9c12aa33dc9853b1610f3295d26a5fc112ce1f",
+                "maintenance": "33a90736a01b25ceb9c9d08014abad8398e8f8dcc6351a89011392798757f7e9"
             }
         }
     }

@@ -7,14 +7,14 @@
             "id": "github:1424091016:root",
             "repository": "FormalistBlue/dsh-everforest",
             "path": "",
-            "revision": "6987ae32a02e25625b518edf36f043821afa2313",
+            "revision": "e036d62bfca9a315369643c92a316b459d9029ad",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "7b12730bf5dab4b7b65254e56de2ce36c8be3ea40cb7e6afcbb79154a300c71b",
-                "code": "6987ae32a02e25625b518edf36f043821afa2313",
-                "maintenance": "c7f6fe1813a5c8afd19ce7414b72635912a6b11cb22168a0108d907b54956b2f"
+                "code": "e036d62bfca9a315369643c92a316b459d9029ad",
+                "maintenance": "bafbbc18b5339c85e130a3169c5e4546fa7591eb6e1ac83acb908f2ce041153b"
             }
         }
     }

@@ -7,14 +7,14 @@
             "id": "github:1387722715:root",
             "repository": "eghrhegpe/dsh-connect-qoder",
             "path": "",
-            "revision": "664871728302ccb50ff44c49a3a01515ed6d4e4a",
+            "revision": "fbed0bba1cc467c8f2d669ff0cfdb8388f2aa44f",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "ec695dbbc32017fc30a12c0a8df2816b5da139c6882c75d5af668e82a0da4341",
-                "code": "664871728302ccb50ff44c49a3a01515ed6d4e4a",
-                "maintenance": "86529419b9c41be4ed11bf3a412cf81edb3ce5d92bba23e926cd4e8b87e38db0"
+                "code": "fbed0bba1cc467c8f2d669ff0cfdb8388f2aa44f",
+                "maintenance": "a13f2702d3ed865ec43bd25dae5cd7c32074ae66a62301d720661b82a6525a10"
             }
         }
     }

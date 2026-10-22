@@ -7,14 +7,14 @@
             "id": "github:1378413092:plugins-deepseek-harness",
             "repository": "patrykorwat/open-dream-rsi",
             "path": "plugins/deepseek_harness",
-            "revision": "1b9a50c8b13d4e0815f9dcb3cc35f470f4857e43",
+            "revision": "ef02bb60f897afa4589f872bc053c8a24cbf45ae",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "c4c6ecf7c751b8f1b9405e3a1bcacdc43e850d7427a7ccec67f4fe0edb9de37e",
-                "code": "1b9a50c8b13d4e0815f9dcb3cc35f470f4857e43",
-                "maintenance": "cd743dd0a7f9d41b81204df1b325f400e4b3d3796a02d1979a74b58b052aa191"
+                "code": "ef02bb60f897afa4589f872bc053c8a24cbf45ae",
+                "maintenance": "5f589659e1b9e5e1e977891ed522f3b9596826db1ea42d43e741b6ceda1e545a"
             }
         }
     }

@@ -7,15 +7,15 @@
             "id": "github:1335109271:root",
             "repository": "FeatherHunter/dsh-opencode-palette",
             "path": "",
-            "revision": "780868d2feb225e08460487df1467f340f43695e",
+            "revision": "7b418d3ee21c671e092c94185cb0b86158475c96",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
-                "directory": "428d9f3a608c147b73ee14984505c25d326e8d69bec63c4ec89ff69409e1d9b9",
-                "code": "780868d2feb225e08460487df1467f340f43695e",
-                "maintenance": "557180decd82a41dddd821c02f607027fc7a682e12149b021443a155a48b7750"
+                "directory": "1270d3c1c2d42c41377a977d41985573c278de01577256f151500f30b5ad4c64",
+                "code": "7b418d3ee21c671e092c94185cb0b86158475c96",
+                "maintenance": "b1344dd76e12e1a3f4ed764799441d274c5ad15ac0265c164185760965016cfc"
             }
         }
     }

@@ -7,14 +7,14 @@
             "id": "github:1335331816:root",
             "repository": "JularDepick/dsh-wakatime-plugin",
             "path": "",
-            "revision": "897b83a0a66872b3bc5009f15c48253437e25937",
+            "revision": "0774b6d4b153bd743023a5ae756cbced0d027ec3",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "c6980cbf7c5f9d4dfa6058e4075ad411ef28fef0818cfd5ded20dbbd36d16929",
-                "code": "897b83a0a66872b3bc5009f15c48253437e25937",
-                "maintenance": "64b0d5f601c0814a007b44a827fdfe7a559668bc5d7879acfcf1d897c595bf29"
+                "code": "0774b6d4b153bd743023a5ae756cbced0d027ec3",
+                "maintenance": "7273deede58305fda86e9ed59895bdf778938f58a3ed210fb9a232456b2d30aa"
             }
         }
     }

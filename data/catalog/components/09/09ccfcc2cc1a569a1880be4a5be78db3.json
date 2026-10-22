@@ -470,14 +470,14 @@
             "repository": "2006spy/dsh-token-billing",
             "path": "",
             "revision": "098b9e8164bd66a6f2bdbc204ece186c6ca52060",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "ecf4ad191a240c6a29a5356f20a2361f86f0db3e01594639ad30ec743f87b764",
                 "code": "098b9e8164bd66a6f2bdbc204ece186c6ca52060",
                 "maintenance": "de6296c503628eb6d18bb71776b08e41939029fd4921e62f8f10778374335f3d"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

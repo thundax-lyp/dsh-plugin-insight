@@ -445,14 +445,14 @@
             "repository": "AaronandWork/dsh-evidence-gate",
             "path": "",
             "revision": "845ddf415e045eb6b2a014bca97a9c63aee1befa",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "5cfe1ddaf3e5e3cbfa45eb3bcf976ae7ad28cfb7f44ea21dbf5d167219bddc03",
                 "code": "845ddf415e045eb6b2a014bca97a9c63aee1befa",
                 "maintenance": "cb7f4d82d16ed4e47fbac44cbbe33fa1055fbe41d2a1fb4eb519c5f7e7a8e36d"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

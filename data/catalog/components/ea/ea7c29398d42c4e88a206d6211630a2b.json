@@ -7,14 +7,14 @@
             "id": "github:1392930116:packages-core",
             "repository": "irisblackwood/focus-guard",
             "path": "packages/core",
-            "revision": "6879bfd93f47c4c027b8e1dd99de9aa7f15a8857",
+            "revision": "d8bc16d973cbcfa1168735b3c9c56a3836ff8e13",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "a2f6833bbe5b8ab61283f3bd65d8207bddc872a3aab5df15599661f5b5efa10c",
-                "code": "6879bfd93f47c4c027b8e1dd99de9aa7f15a8857",
-                "maintenance": "704b68146a9f5041ddf3b5eae20ab1952d27f99c62653400900a81a763164ab8"
+                "code": "d8bc16d973cbcfa1168735b3c9c56a3836ff8e13",
+                "maintenance": "0e37c25ed1722a41ed00a2bf5d48cf80d6a1012389194e06707feb2e0dd31bf8"
             }
         }
     }

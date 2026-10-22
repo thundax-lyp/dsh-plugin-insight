@@ -7,14 +7,14 @@
             "id": "github:1412070170:dsh-opencode2api",
             "repository": "zhiqiangme/dsh-plugins",
             "path": "dsh-opencode2api",
-            "revision": "01d0c8b2fdf3cb99ad4b1febfcc6a5b04716bb42",
+            "revision": "0f4a76ca0516de7282c36b57b639d20d7216fe0c",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "4e76bb7c0a4e666474676a7c9b517b994e7e5c467481ee84f77b9fbf1dcf7f32",
-                "code": "01d0c8b2fdf3cb99ad4b1febfcc6a5b04716bb42",
-                "maintenance": "e467b2ea7791b7dba75d4ea7d3bd2bd60c372b114f097535b0ca93fa5b2e20f9"
+                "code": "0f4a76ca0516de7282c36b57b639d20d7216fe0c",
+                "maintenance": "1039dafb61d558efa66c4b97a6c289dc0a2eef24536e073d139bdfd9b57b0773"
             }
         }
     }

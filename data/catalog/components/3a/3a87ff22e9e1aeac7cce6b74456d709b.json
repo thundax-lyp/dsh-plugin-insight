@@ -7,15 +7,15 @@
             "id": "github:1185828998:dsh-plugin",
             "repository": "orziz/odai",
             "path": "dsh/plugin",
-            "revision": "e4b6f41ab3b5d350828d004b4384c582ed8f817e",
+            "revision": "f212808acac068e11b96aa4415b77b73e165930e",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "254577e69e42c032fc3d940b40cd9fa560195d243de52e0aae42fe636e450301",
-                "code": "e4b6f41ab3b5d350828d004b4384c582ed8f817e",
-                "maintenance": "6062d591d9149f0e238dadd807193c3d99d4c4e2709e45592eaac3b0cf74193b"
+                "code": "f212808acac068e11b96aa4415b77b73e165930e",
+                "maintenance": "9ff1793ecc1420d3c87d7cba793d1ef0228c3b4cf865e879b5238d7b4a1cfff0"
             }
         }
     }

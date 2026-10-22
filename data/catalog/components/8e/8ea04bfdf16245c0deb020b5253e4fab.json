@@ -7,14 +7,14 @@
             "id": "github:1422219599:root",
             "repository": "wxzjss/dsh-whale-loli",
             "path": "",
-            "revision": "4ebee26b2073c2fdf92f6c6f525954220a5961b0",
+            "revision": "3c081d68ed44cef23329c2a53c98dd89465ad62b",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "09529fee1245656bd8275eb2746ac15f1a132dcf5df0a5a37626952de2a68af2",
-                "code": "4ebee26b2073c2fdf92f6c6f525954220a5961b0",
-                "maintenance": "5166a993a7b16de7dd90184a5c3cdec5c486fa21c2341793f391ced322784a62"
+                "code": "3c081d68ed44cef23329c2a53c98dd89465ad62b",
+                "maintenance": "cebcb664e586ceaba04ec1b6dd979c838325c098f5af5837c358d871371aae9d"
             }
         }
     }

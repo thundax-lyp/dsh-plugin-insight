@@ -7,14 +7,14 @@
             "id": "github:1397289333:root",
             "repository": "elegant01/dsh-codearts",
             "path": "",
-            "revision": "c2dfa48d4546468930e98d792535069c09af2ecf",
+            "revision": "3dee999d12243d0c70b2b43dea69c2f6ef511df4",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "bbc97f65653aca56520cb74cfaf7101ae6093ed9fa2f244cdc01d89c73f21d15",
-                "code": "c2dfa48d4546468930e98d792535069c09af2ecf",
-                "maintenance": "acd2fd5040f00b6dfbcbeb5304fbcc0f073d0820f5e79b0e1ff79bfc8b4d780c"
+                "code": "3dee999d12243d0c70b2b43dea69c2f6ef511df4",
+                "maintenance": "cf1068aafb4e81909d75d109476c40539c91c482ec982298a7dba26181bacd0a"
             }
         }
     }

@@ -7,14 +7,14 @@
             "id": "github:1331085134:root",
             "repository": "TT-Wang/dsh-slice-agent-loop",
             "path": "",
-            "revision": "70e6e55c255549346b8171c3f1de6bd8d4a44b8f",
+            "revision": "b985abb523e027f6ab031df85892e77d8a1405b2",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "69bc19fc1960fa0895531422a0439cc7f6c2c76d1893a6416ea546eb7e4af52b",
-                "code": "70e6e55c255549346b8171c3f1de6bd8d4a44b8f",
-                "maintenance": "1f5c2b829e75222aed7e1d4015c102a94e72d5b40bf30be2c78fa8f175b76073"
+                "code": "b985abb523e027f6ab031df85892e77d8a1405b2",
+                "maintenance": "a663bd4c8678d02af645567cee6c19e6cca17e0fad8559c7d552c9f937cc2ea1"
             }
         }
     }

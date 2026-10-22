@@ -7,14 +7,14 @@
             "id": "github:1333000741:root",
             "repository": "vibeinging/dsh-desktop",
             "path": "",
-            "revision": "792e1fd0f474f2440f4fc4e616aaa27fbfb3f849",
+            "revision": "cea789eb6933a47e56767a42c52fed7e96a076ff",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "ffe88741821176bfe0dbf299fbe81f9a14b1b7e550c29b38e6f153af2bc75da0",
-                "code": "792e1fd0f474f2440f4fc4e616aaa27fbfb3f849",
-                "maintenance": "0715df6da7ff6a46a8beb5127a38666efeff596b0963f66eb903656fc0d281d9"
+                "code": "cea789eb6933a47e56767a42c52fed7e96a076ff",
+                "maintenance": "f2cd71b03b4629583738a4c7e7af2bbcd26e80bebd910c00ea5c794130487342"
             }
         }
     }

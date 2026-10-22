@@ -7,14 +7,14 @@
             "id": "github:1421963075:root",
             "repository": "RestRegular/dsh-skill-center",
             "path": "",
-            "revision": "a5c39eebffb9ab5d4bf2874729578db99355aa22",
+            "revision": "93ef4cced94605abecdfc4b017cf62ad442a3e5c",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "17c4b96944a9821186d4ae423a7decafc4e8b446e9f03dd26918f90c03106b5f",
-                "code": "a5c39eebffb9ab5d4bf2874729578db99355aa22",
-                "maintenance": "0377adff5018049274f46f48a353339d9d06eabc310d7c27c11bdc2f3e95b763"
+                "code": "93ef4cced94605abecdfc4b017cf62ad442a3e5c",
+                "maintenance": "fe39af0b7001dc899d2666308ea0e33ddddb8c5d73b5178a77e822714f586aab"
             }
         }
     }

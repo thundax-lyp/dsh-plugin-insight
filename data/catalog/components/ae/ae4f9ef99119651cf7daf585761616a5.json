@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ae4f9ef99119651cf7daf585761616a5",
+    "identity": "github:1413882487:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1413882487:root",
+            "repository": "2026heshao/dsh-forget-session",
+            "path": "",
+            "revision": "64796c9b1423972ae54d2cfa230acc6c4d546c0e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fa81d23c267783fe210f5d8e5f367c9198170151b41592adef736d5485807bce",
+                "code": "64796c9b1423972ae54d2cfa230acc6c4d546c0e",
+                "maintenance": "7e5883d7472031232a723e2e41114fb9470c5f0cd1635f0d9386b40e4ff95f2a"
+            }
+        }
+    }
+}

@@ -7,14 +7,14 @@
             "id": "github:1413949479:root",
             "repository": "dingminhua/dsh-connect-qoder",
             "path": "",
-            "revision": "c668a31882d6317bf261fd971d1a8fee383d95a4",
+            "revision": "51c142ff5b05a0e2d0d5b0bb93180ded5365586a",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "2f1a3b7906b5718c2b1e4e71b8f3ef129ba442752f10689bc39c87f643ad751a",
-                "code": "c668a31882d6317bf261fd971d1a8fee383d95a4",
-                "maintenance": "15b81e285af174da235e588bb5cca23bd79185bac8e7a52bb164e6310933f978"
+                "code": "51c142ff5b05a0e2d0d5b0bb93180ded5365586a",
+                "maintenance": "d7b8c7a2929b68ba0b2158ef28a8133a59e02d8934a040735925dbe4305b1e55"
             }
         }
     }

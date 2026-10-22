@@ -7,14 +7,14 @@
             "id": "github:1128123594:root",
             "repository": "volcengine/OpenViking",
             "path": "",
-            "revision": "401c1f7ef1e42388c4326a293081b786db4cc162",
+            "revision": "824e9c7ff5e7cebbc36f55257c39f8bbe75d5a24",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "5e7e655df3d7502393c31b4e7541d6b6e29f1ea82a33df5f81667b6b3625340d",
-                "code": "401c1f7ef1e42388c4326a293081b786db4cc162",
-                "maintenance": "55d40e85ab24572cddaf5f6575de79e838047c80fa1ed34136897b194469278d"
+                "code": "824e9c7ff5e7cebbc36f55257c39f8bbe75d5a24",
+                "maintenance": "becd87134ec816f7f601c9e9b398ce978bc44dd1d1be23233ed3ba5b1979654e"
             }
         }
     }

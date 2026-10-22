@@ -7,14 +7,14 @@
             "id": "github:1281865940:root",
             "repository": "drewnekota/cetus",
             "path": "",
-            "revision": "31a6f13bdd56c57939e2dbea5e67d5e9292bf739",
+            "revision": "ff8b64b487c32f69edb48c393e5781b840e7817f",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "78b851c56af55b2391d0db3c4386d28a4a883cbc64cb0a5392ef246f7e0d1e47",
-                "code": "31a6f13bdd56c57939e2dbea5e67d5e9292bf739",
-                "maintenance": "f0e46729e664f8bead7f5ec561c41fb411ae6e391c22626408340bac0086877c"
+                "code": "ff8b64b487c32f69edb48c393e5781b840e7817f",
+                "maintenance": "149c93d1af4e571abdf15cbb2ac68527414bda38540077ad3d603585009f1b97"
             }
         }
     }

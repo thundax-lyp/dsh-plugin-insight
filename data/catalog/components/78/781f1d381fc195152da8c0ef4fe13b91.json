@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "781f1d381fc195152da8c0ef4fe13b91",
+    "identity": "github:1424433303:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424433303:root",
+            "repository": "7gzgn/dsh-restart-dock",
+            "path": "",
+            "revision": "bb74ab5d5eafdd97cec75a0be759346fdcacece7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4e1de0d3bc79ea288a39fa425927dd24eb77f51047211a7853599a408d9cb6ed",
+                "code": "bb74ab5d5eafdd97cec75a0be759346fdcacece7",
+                "maintenance": "16854253c41c3fe6675a4f3ed45b14922ae6206b3b3b026e544251df71923aa3"
+            }
+        }
+    }
+}

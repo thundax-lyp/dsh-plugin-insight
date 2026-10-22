@@ -34,15 +34,15 @@
             "id": "github:1333928744:root",
             "repository": "Aik358/dsh-auto-memory",
             "path": "",
-            "revision": "550a87713562a4a09d249ada074d2a17954b794e",
+            "revision": "4a0d621f3e8f7dadf7d2de6649b4f6db891d065f",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "d7c33ef3ddcb21fc12ab32b7342c20ab19cbab42d3ec7d73f9f315188e40a46d",
-                "code": "550a87713562a4a09d249ada074d2a17954b794e",
-                "maintenance": "9c046c6d7e03f5eaa3d06bfc0fdcd0dbc618aa47f466bf7ea1677ade5efc2468"
+                "code": "4a0d621f3e8f7dadf7d2de6649b4f6db891d065f",
+                "maintenance": "02ee48e9ff96bcf2597773247fef6f5631bcd8ebdceb70c7dc7a38db3f1a66ac"
             }
         }
     }

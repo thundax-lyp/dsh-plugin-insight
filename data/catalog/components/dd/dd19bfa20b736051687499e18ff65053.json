@@ -7,14 +7,14 @@
             "id": "github:1422216485:root",
             "repository": "XiaoOu2024/dsh-root-planner-preset",
             "path": "",
-            "revision": "808a11b1dbb6e0e89f25cf7ff621f69daa31d8e3",
+            "revision": "0ea2ff01526c16010c9c694e2e36510626f8ffe5",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "190855a64740eda3228557c087e9d31207d121f14a0d7c1f6a13faa16b89b53f",
-                "code": "808a11b1dbb6e0e89f25cf7ff621f69daa31d8e3",
-                "maintenance": "f7f24bdafc0898f2836c4838b52d3d553adf4bfe353929feacea876ab66d94b6"
+                "code": "0ea2ff01526c16010c9c694e2e36510626f8ffe5",
+                "maintenance": "d88cde44f0784079c64d0c51abb4123c5b8d5c55be821c45a8c9d4c31301e05e"
             }
         }
     }

@@ -7,14 +7,14 @@
             "id": "github:1302496224:root",
             "repository": "MemTensor/memmy-agent",
             "path": "",
-            "revision": "8cd095c7f67300b6582a912bdd7fd33163d5e5b4",
+            "revision": "134033a1c285c8f0324d719f80bdf41de422d754",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "a8410514bcfaaa69102d282beba36573f38e6846d7ac4d5d21b880e49eb13a7f",
-                "code": "8cd095c7f67300b6582a912bdd7fd33163d5e5b4",
-                "maintenance": "563331e6c8524d3f651580d2b595bef926bbcbda357bccadd0553d32ef80708b"
+                "code": "134033a1c285c8f0324d719f80bdf41de422d754",
+                "maintenance": "f6364406064f14650329762c86284879abec085cb00c05257b0877c2e1ace6ad"
             }
         }
     }

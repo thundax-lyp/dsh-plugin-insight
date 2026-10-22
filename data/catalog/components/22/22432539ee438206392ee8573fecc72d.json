@@ -5,16 +5,16 @@
     "data": {
         "discovery.plugins": {
             "id": "github:1333860715:root",
-            "repository": "jiangnanquan/dsh-ux",
+            "repository": "jiangnanquan/dsh-uxexo",
             "path": "",
-            "revision": "36f04afa2c3ebecd6a2cc967ac2ca2ae278b092f",
+            "revision": "048c34cf5a778f2f095fb6076a6e12b256ddd390",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "d77bcf89f5381070809937cf773faac981c075a0aaea943d3cbe93755c9562d8",
-                "code": "36f04afa2c3ebecd6a2cc967ac2ca2ae278b092f",
-                "maintenance": "ca276e6dea19929159c2e614ad4b78ed162b16c04d980d3032210fdb291aae02"
+                "code": "048c34cf5a778f2f095fb6076a6e12b256ddd390",
+                "maintenance": "44e7a576ffd2e2ec9980418c360018e55703fa58e85cf2ad1cadb99870a74458"
             }
         }
     }

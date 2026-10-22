@@ -7,14 +7,14 @@
             "id": "github:1333856567:root",
             "repository": "acefun29/dsh-file-mount",
             "path": "",
-            "revision": "667fa7062a08ec30b6e3a195a68845953436908d",
+            "revision": "41ff3c8a98bc02fddb17b2703094d6158d882fd9",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "4b89bf925a4ef8c57cde3a82f9bc2efd1a0874defd534970b48879fb6b765db2",
-                "code": "667fa7062a08ec30b6e3a195a68845953436908d",
-                "maintenance": "7eede7160c426f0e2485fea306716862d23d0d3b6b159b089f18bc32e9e728c8"
+                "code": "41ff3c8a98bc02fddb17b2703094d6158d882fd9",
+                "maintenance": "2c61acd7eaa150d5cfcf32d4c19e45c6b03459f2a408391012520b711018d7a4"
             }
         }
     }

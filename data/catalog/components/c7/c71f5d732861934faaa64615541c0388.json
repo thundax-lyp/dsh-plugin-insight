@@ -7,14 +7,14 @@
             "id": "github:1361444540:root",
             "repository": "chromoany/dsh-notify-me",
             "path": "",
-            "revision": "2266662f9c0711c0c8f9ac4fdcf55c25eef5c85e",
+            "revision": "abe8ea3b92a2b1f014b26efc063de03b1d33f130",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "b0b7f4fc60a19748b0730d0c07b7eb673be17dbaf74d7872b565b08772e9feae",
-                "code": "2266662f9c0711c0c8f9ac4fdcf55c25eef5c85e",
-                "maintenance": "8e09708b6b59e38979136ba0fdb9ff01a93a35c1ac6f11c24d8807c9e31f6949"
+                "code": "abe8ea3b92a2b1f014b26efc063de03b1d33f130",
+                "maintenance": "48ca74f307dbc9fb7fdbe53146b457fb18e00a58e1ac88a994082589b7086ba9"
             }
         }
     }

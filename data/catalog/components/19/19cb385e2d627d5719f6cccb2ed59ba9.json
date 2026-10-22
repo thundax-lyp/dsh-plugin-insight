@@ -7,14 +7,14 @@
             "id": "github:1335850687:root",
             "repository": "MaRi23333/dsh-fish-tts",
             "path": "",
-            "revision": "15be628f33d0ea14ad433a888e1b3529794c2f9c",
+            "revision": "10ae270a453f9ad6207b7ff644bd8a706030601b",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "1e1f6155efb52b35ab8e354f870f62f1a10cf5444629e30dbfe8cf256fa03411",
-                "code": "15be628f33d0ea14ad433a888e1b3529794c2f9c",
-                "maintenance": "1aabc9e67d72f1203aedcbf58a066c2f9aeb0ad6d1c5aa2b12ab14eaec2980e7"
+                "code": "10ae270a453f9ad6207b7ff644bd8a706030601b",
+                "maintenance": "0112cb6696f3da5dd8c4ac42ea24dbd7d6154dd05056f12c2f48689bc1271c47"
             }
         }
     }

@@ -7,14 +7,14 @@
             "id": "github:1335758624:root",
             "repository": "MichengAI/dsh-im-connect",
             "path": "",
-            "revision": "6beacabbe024db0391c6b97c691de4e4bb0d3519",
+            "revision": "f8da6af91c7e97e226d9a8e87827cf79698d6335",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "5e815499d6ef682ff02763bc0d4f5b0eb9d28f10ee69fa2e7b69a9c716420273",
-                "code": "6beacabbe024db0391c6b97c691de4e4bb0d3519",
-                "maintenance": "d429cc48d276eae9c2cf3fe9e0b9c109cc108b15873ef9347d52f3bf2f379010"
+                "code": "f8da6af91c7e97e226d9a8e87827cf79698d6335",
+                "maintenance": "827891de0f15130a337535b8c49da119ac361ccabf1c5171280ddad1363d010d"
             }
         }
     }

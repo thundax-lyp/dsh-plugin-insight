@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ba343e59d89f6ff33deed7aa494c9e55",
+    "identity": "github:1346064150:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346064150:root",
+            "repository": "AngelosZou/dsh-pdf-reader",
+            "path": "",
+            "revision": "ffecd361b7f2803fdccd1cf92149aad3e11a3271",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ceda4a380d50aa7f9db31f634c0cb2c4ec524edc0a106cbf118bb9ad9eefe946",
+                "code": "ffecd361b7f2803fdccd1cf92149aad3e11a3271",
+                "maintenance": "8541bd5ef6415df50405468142e2110d108731d29013136cd7cd3429252b9ee0"
+            }
+        }
+    }
+}

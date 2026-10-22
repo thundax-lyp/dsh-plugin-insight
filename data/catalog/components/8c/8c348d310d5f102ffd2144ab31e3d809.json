@@ -449,14 +449,14 @@
             "repository": "173787247/dsh-wsl-jev",
             "path": "",
             "revision": "9f56c8231b4a226ad1b396c38b6375fbdf3d83fb",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "ca75788052ee654ae6ce940e06091cd8f7d4d39ea66d008ea4c97c600b093a5f",
                 "code": "9f56c8231b4a226ad1b396c38b6375fbdf3d83fb",
                 "maintenance": "81fb2c9068956435e5f09d60e59db0fe041b4d25069e80345ee20bf64ce0e269"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

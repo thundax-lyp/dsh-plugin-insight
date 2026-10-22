@@ -470,14 +470,14 @@
             "repository": "1321928757/dsh-mysql",
             "path": "",
             "revision": "7848bba53cccfe9e365a8fd46baa6d6883a29b78",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "8b45e04b0159f5c1fc2c140278d276e173d4a788d0cf68072a33d9ffa94999c0",
                 "code": "7848bba53cccfe9e365a8fd46baa6d6883a29b78",
                 "maintenance": "9f0bc993a5814bdbf62fd2f88dec78467c014b1e7eb7c1cf39ed17a0f63b3af8"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

@@ -7,14 +7,14 @@
             "id": "github:1335054027:root",
             "repository": "haoku123/dsh-voice",
             "path": "",
-            "revision": "e1ed20add8dfe4c272c42571d5ba5e4b5e393920",
+            "revision": "16563368cb2755f221039d0d0555cd8ba5cf1e32",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "5e9c1817ac793e0fb532f7856a07c5d6f5e5673b486eb27945550cf4f721dbcd",
-                "code": "e1ed20add8dfe4c272c42571d5ba5e4b5e393920",
-                "maintenance": "d749267793d4105bdc4de7dd46c15abbc69d80362c749ed7a2b23e097fb22485"
+                "code": "16563368cb2755f221039d0d0555cd8ba5cf1e32",
+                "maintenance": "fff921ee59c26e3a962435554ff090e5b65f552abfd8548133651dd7b11740cc"
             }
         }
     }

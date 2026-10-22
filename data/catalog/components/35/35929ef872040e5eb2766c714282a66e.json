@@ -7,14 +7,14 @@
             "id": "github:1351908966:root",
             "repository": "EternalNight996/memory-eternal",
             "path": "",
-            "revision": "4b9b01dbc93111b71a24a10ec45cb3c506263ae4",
+            "revision": "4f65a92e7219ad41807ab826cd0c5c8dd6fe6235",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "17727960fb9a2fa73c88744b6804d284f3a501457bb0df9decd8b5c1c568bc92",
-                "code": "4b9b01dbc93111b71a24a10ec45cb3c506263ae4",
-                "maintenance": "55b623fdda43058809f6ec00cb621facf716f4fecf77295bff9174d954556367"
+                "code": "4f65a92e7219ad41807ab826cd0c5c8dd6fe6235",
+                "maintenance": "02fb2c3afdba28cc657e84ff653fab4e80cab0973193b728371db0bdaf7c252b"
             }
         }
     }

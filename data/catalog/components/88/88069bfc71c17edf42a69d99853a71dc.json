@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "88069bfc71c17edf42a69d99853a71dc",
+    "identity": "github:1426588053:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1426588053:root",
+            "repository": "flyneth/dotnet-skills",
+            "path": "",
+            "revision": "267e23e4f9854d6987cfd24f2ced9c62550c96e8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "bf3f64346b8b268d463e97065d00815d671a2008308d83d9ac567a413be99fa6",
+                "code": "267e23e4f9854d6987cfd24f2ced9c62550c96e8",
+                "maintenance": "ffaa74d6a18da8ab1cd3c1af26e0eda66312d7ed7f3f914a52aa1663f561d77f"
+            }
+        }
+    }
+}

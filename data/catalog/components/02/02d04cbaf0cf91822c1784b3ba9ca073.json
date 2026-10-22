@@ -7,14 +7,14 @@
             "id": "github:1371644959:root",
             "repository": "Duskriver/dsh-opencode-go",
             "path": "",
-            "revision": "af2050699a26cacdcc7bfce9f8b854994e06c03c",
+            "revision": "2f7c403c90456f39126a3233d554c4bb221ba9f7",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "4291d99a44d14ab64beb8332c296355b1f8a0d885104a2b670a4d387797f72d2",
-                "code": "af2050699a26cacdcc7bfce9f8b854994e06c03c",
-                "maintenance": "c0151a0e6370b60db1ade2547e1d4bf0f8350103dfc528674cbe454687de291b"
+                "code": "2f7c403c90456f39126a3233d554c4bb221ba9f7",
+                "maintenance": "ee854e2598b3104fa94c4ae1d9fba9fea92b9fc86151ef9cd207be11ebf55b22"
             }
         }
     }

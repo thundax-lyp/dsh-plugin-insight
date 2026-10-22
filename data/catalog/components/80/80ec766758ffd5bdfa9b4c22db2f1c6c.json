@@ -7,14 +7,14 @@
             "id": "github:1344585544:root",
             "repository": "MaRi23333/dsh-grok-kit",
             "path": "",
-            "revision": "06f1f15c9e12f1dabd81083bf1e8e571c300013a",
+            "revision": "d01a95ee24c49ec403f3b9ee87426a9d52f77457",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "75696158dc388565ced30f2dd91d99ca788a8b5db2e4ae9bca902ba7138ea4bc",
-                "code": "06f1f15c9e12f1dabd81083bf1e8e571c300013a",
-                "maintenance": "35dd858ad139d02a1ac8fb10db48bc82d9ffdd1760a77de9b42c6ec56128ca71"
+                "code": "d01a95ee24c49ec403f3b9ee87426a9d52f77457",
+                "maintenance": "665c78aa56a39077f30e19c97e00cde951501ae8c12a844e4704a530b9b68f2c"
             }
         }
     }

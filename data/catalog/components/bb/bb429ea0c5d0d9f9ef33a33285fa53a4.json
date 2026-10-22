@@ -7,14 +7,14 @@
             "id": "github:1069943001:root",
             "repository": "voyager-crew/voyager",
             "path": "",
-            "revision": "e12dfb52421a85c3ec22ead7470e07146b4d905c",
+            "revision": "dc0e073d8415509dedcab70682818d5c8069543e",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "19676ed624f0eec03fd27820dc7cee3a9b4406d3bf64e9c834c6a84640c7d856",
-                "code": "e12dfb52421a85c3ec22ead7470e07146b4d905c",
-                "maintenance": "a423222a6dc13dc52ce6f1c0e6717281871db2d468bde996c535b0709f70e909"
+                "code": "dc0e073d8415509dedcab70682818d5c8069543e",
+                "maintenance": "a443084135be3827a823dde342cbb44e4798467ba6e07360c1f28094635b5d4c"
             }
         }
     }

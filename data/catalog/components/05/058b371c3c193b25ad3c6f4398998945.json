@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "058b371c3c193b25ad3c6f4398998945",
+    "identity": "github:1415017376:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1415017376:root",
+            "repository": "badai147/dsh-leafy-skin",
+            "path": "",
+            "revision": "bb1581d2cc074bef0e69a68968fdb5335876e64a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e54751057a5a16b8263487ea22dc72063170ebcf81859d8cb1798d27c1bf9272",
+                "code": "bb1581d2cc074bef0e69a68968fdb5335876e64a",
+                "maintenance": "c1eda17d49408d894c5bcfa59563243229117220112f4be9fe512a0325458c3f"
+            }
+        }
+    }
+}

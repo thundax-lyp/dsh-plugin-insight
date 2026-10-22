@@ -499,15 +499,15 @@
             "repository": "988hj7tczd-oss/dsh-computer-use",
             "path": "",
             "revision": "3cf9bd8ae60271512f263bfa75485cb242ca0892",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
             "fingerprints": {
                 "directory": "4dc636f4c8ac9e595dced67f1284a8d7e2c53c75b56bc8c1b3595aec8a257efc",
                 "code": "3cf9bd8ae60271512f263bfa75485cb242ca0892",
                 "maintenance": "524e927f3fbe04d4577abe54f306da671b52768fb89904c82d64ec3c560006ba"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                "https://github.com/0xsline/awesome-deepseek-harness"
-            ]
+            }
         }
     }
 }

@@ -7,14 +7,14 @@
             "id": "github:1334381750:root",
             "repository": "pan17/dsh-wechat",
             "path": "",
-            "revision": "600fbeeaa4566a435cfde9281b90a2a792ca8359",
+            "revision": "0135e28f2f6279dc344a24a564da9e8fd0b71cf6",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "13c294eb7374148529ee692a9a053fd72e51ab41c5b667370da67082d5315ac6",
-                "code": "600fbeeaa4566a435cfde9281b90a2a792ca8359",
-                "maintenance": "1b09b0536c6adcfae0b57d890ae93a131a0ebbcea5f5a868e983b64c3f0a9281"
+                "code": "0135e28f2f6279dc344a24a564da9e8fd0b71cf6",
+                "maintenance": "8cab08620a7a9f1f509f6110435c5955deb5453b99c54553de16d4a5670e8cfa"
             }
         }
     }

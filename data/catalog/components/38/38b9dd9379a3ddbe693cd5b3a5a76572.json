@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "38b9dd9379a3ddbe693cd5b3a5a76572",
+    "identity": "github:1340961887:packages-dsh-restart",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340961887:packages-dsh-restart",
+            "repository": "moon16u/dsh-pouch",
+            "path": "packages/dsh-restart",
+            "revision": "9e0dae4668cd0c64a41cbce2c04dc4424eb9409d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6ca52e130ad6cce197854daa4b64578288b9c7e49e81a0322718e504db5c604c",
+                "code": "9e0dae4668cd0c64a41cbce2c04dc4424eb9409d",
+                "maintenance": "d872334759f077c9f5b03fa8ca780fed103756f871a680c97bad7254815c1afe"
+            }
+        }
+    }
+}

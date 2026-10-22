@@ -7,15 +7,15 @@
             "id": "github:1346575962:root",
             "repository": "LucienLL/dsh-session-status",
             "path": "",
-            "revision": "dc7138ff0024be3dd2a0b5d774da7c63b0c65e11",
+            "revision": "d829359c6058c38de7db80387853c6ced48d13c7",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "113592cd458f70e73d387c03ef27ccfaa4a469ce59e6f5d565cd2b8c6241cad7",
-                "code": "dc7138ff0024be3dd2a0b5d774da7c63b0c65e11",
-                "maintenance": "ec20b43c1df54988f5bb2ab31584dfb4f41b1c504d8262755b073ed8e2887a91"
+                "code": "d829359c6058c38de7db80387853c6ced48d13c7",
+                "maintenance": "76d9c69ebddb8e8cfc3424728035b4f3718e3b033c7a1b711a2f1d60974535c3"
             }
         }
     }

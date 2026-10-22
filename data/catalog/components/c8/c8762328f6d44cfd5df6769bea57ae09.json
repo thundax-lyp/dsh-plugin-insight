@@ -7,14 +7,14 @@
             "id": "github:1357415648:root",
             "repository": "JanEickholt/dsh-asc",
             "path": "",
-            "revision": "fb41126e981258f77ef26391ccdf1a7bb42d889a",
+            "revision": "87962e6e85979cddc66f78f60085e2dbb29a930f",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "6dd606f3c8cc00c3da623607ad5257ea1f7041ef5242fd97fbe153e8bdebe38e",
-                "code": "fb41126e981258f77ef26391ccdf1a7bb42d889a",
-                "maintenance": "ef3870d649732090249668e1890b1010319a269e59829b6145e9202b15bc6f6f"
+                "code": "87962e6e85979cddc66f78f60085e2dbb29a930f",
+                "maintenance": "a213010d4964bb15f3aec602f7feecb8b641ace96a40d92b3ee763ac82327cfc"
             }
         }
     }

@@ -7,14 +7,14 @@
             "id": "github:1410012734:root",
             "repository": "plyflai/dsh-ux-plus",
             "path": "",
-            "revision": "a72afa113e1fe6bf86bea64980daf3aaef63a0d7",
+            "revision": "7f35d2b4449fec4ac1239319924a00a83848c2b5",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "04044b9cad15669bc6d09a19439556a5935fdefe860589b3a0b6e77b60096774",
-                "code": "a72afa113e1fe6bf86bea64980daf3aaef63a0d7",
-                "maintenance": "d32a339c43bbccea6ca4882199a1d356e9ca86f8a22d8b93954ea3928d676744"
+                "code": "7f35d2b4449fec4ac1239319924a00a83848c2b5",
+                "maintenance": "378e65f3262963ed3d25c38e448be9dd1643b0c0fb1f99f9c489c45d4f78d845"
             }
         }
     }

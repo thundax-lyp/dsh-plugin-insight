@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d049ca00693ca9a078423affb0b083a6",
+    "identity": "github:1426652844:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1426652844:root",
+            "repository": "Sakana07X/dsh-plugin-team-subagent-control",
+            "path": "",
+            "revision": "34adba7982f766d4d7bcd2a4b323d23431cd7c09",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "06b92bd3cd85b04729ec19cf1a4a848a5ba2fed729c0d5c345fee89fda1dc537",
+                "code": "34adba7982f766d4d7bcd2a4b323d23431cd7c09",
+                "maintenance": "a5b93143c71dea6c61f007f1ed6bcfd57608f578abbb1b0ab7c17e71fd9f48b7"
+            }
+        }
+    }
+}

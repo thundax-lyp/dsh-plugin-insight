@@ -7,14 +7,14 @@
             "id": "github:1357677916:root",
             "repository": "GooDAnDReaDY/dsh-clinebot",
             "path": "",
-            "revision": "380cce27daee3066b7f090dd1cf82d6d9aec2513",
+            "revision": "a426591945b30250ba6398734c9e5407c90ae803",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "2b3e4b820224aab2ea449ef4fc629e2ddf1b384c0d2c2c2c45f7a2bb06a564a7",
-                "code": "380cce27daee3066b7f090dd1cf82d6d9aec2513",
-                "maintenance": "6a4ea06324f25839f80dd2d838e27f2f1d997c8252df1d147e6e97548ba0f62f"
+                "code": "a426591945b30250ba6398734c9e5407c90ae803",
+                "maintenance": "dd318562eb448a124472a3c8a32379e2df7b77af7da3f50d0a2077f883b52bdc"
             }
         }
     }

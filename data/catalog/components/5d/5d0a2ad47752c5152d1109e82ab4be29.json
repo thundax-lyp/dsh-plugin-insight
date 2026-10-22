@@ -7,14 +7,14 @@
             "id": "github:1338398749:root",
             "repository": "Clarklevis1995/dsh-plugin-mobile-gateway",
             "path": "",
-            "revision": "286dd72859a08aa4fa10eb54d6c3edc716721d6c",
+            "revision": "6036e2849b21dc8be3372d2120d32b9cf90a6d2d",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "58345bee3244188b525cf04bc1cfd67bd36c23edd1b2507034394b2ebc6a55ac",
-                "code": "286dd72859a08aa4fa10eb54d6c3edc716721d6c",
-                "maintenance": "8ac4116b571b736382f02468f1c5b2982d400cce902c0831667095a73292ddd7"
+                "code": "6036e2849b21dc8be3372d2120d32b9cf90a6d2d",
+                "maintenance": "a6538772e20f45a28739d58c6d47fab4878950fa26a68f01f6acb4fa2019e4c2"
             }
         }
     }

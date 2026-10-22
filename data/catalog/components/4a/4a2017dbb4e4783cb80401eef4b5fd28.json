@@ -19,117 +19,69 @@
             "research_depth": "source",
             "fingerprints": {
                 "directory": "eedb9737f3229b7e2ca687d108830d3f6aa24ba8522643aa107ff2b5f1345e56",
-                "code": "37a81b92947b10d7376ed764d8ff6392e8969e93",
-                "maintenance": "6a094d1e7073dc3661642e1a00abe474909712e16e2afe5d1ce69a65ecf12f1b"
+                "code": "aac05f97ac10fafe7076b77bdf65dd94b0cd60e3",
+                "maintenance": "f0c7f1de8e8f581a9f09884c40e3d2df50561ca54f30d68623c672fe13db3af2"
             },
             "sources": [
                 {
-                    "id": "2026-10-22-02-github-1415822787-root-directory-0",
+                    "id": "2026-10-22-01-github-1415822787-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-22T05:48:37.337Z",
+                    "revision": "779a0a5a03e3055a5f7bfc14026aeead601e3a45",
+                    "retrieved_at": "2026-10-22T15:32:43.870Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-22-02-github-1415822787-root-author",
+                    "id": "2026-10-22-01-github-1415822787-root-author",
                     "kind": "author_claim",
-                    "url": "https://github.com/AirPineApplea/feiyu-memory/blob/37a81b92947b10d7376ed764d8ff6392e8969e93/README.md",
+                    "url": "https://github.com/AirPineApplea/feiyu-memory/blob/aac05f97ac10fafe7076b77bdf65dd94b0cd60e3/README.md",
                     "git_refs": [
                         {
                             "repository_url": "https://github.com/AirPineApplea/feiyu-memory",
-                            "commit": "37a81b92947b10d7376ed764d8ff6392e8969e93",
+                            "commit": "aac05f97ac10fafe7076b77bdf65dd94b0cd60e3",
                             "path": "README.md",
-                            "content_sha256": "795169ad53291067ad303618faf6e11c83bd1411a265ef92a4d7870985af7ccc"
+                            "content_sha256": "dd275909fb4efd2026721d4e7d7a7e7e066134f15750409eb7271c59117b8a97"
                         }
                     ],
-                    "revision": "37a81b92947b10d7376ed764d8ff6392e8969e93",
-                    "captured_at": "2026-10-22T05:48:37.337Z",
-                    "summary": "本地稀疏日记、模型固化和倒排召回，向新会话注入有限预算的陪伴记忆。",
-                    "artifact": "data/runs/2026-10-22-02/snapshots/airpineapplea--feiyu-memory/REVIEWED-SOURCE.json",
+                    "revision": "aac05f97ac10fafe7076b77bdf65dd94b0cd60e3",
+                    "captured_at": "2026-10-22T15:32:43.870Z",
+                    "summary": "为DSH提供跨会话持久记忆，将人格内核、用户手记和自动情景日记分层保存。",
+                    "artifact": "data/runs/2026-10-22-01/snapshots/airpineapplea--feiyu-memory/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-22-02-github-1415822787-root-source",
+                    "id": "2026-10-22-01-github-1415822787-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/AirPineApplea/feiyu-memory/blob/37a81b92947b10d7376ed764d8ff6392e8969e93/README.md",
+                    "url": "https://github.com/AirPineApplea/feiyu-memory/blob/aac05f97ac10fafe7076b77bdf65dd94b0cd60e3/README.md",
                     "git_refs": [
                         {
                             "repository_url": "https://github.com/AirPineApplea/feiyu-memory",
-                            "commit": "37a81b92947b10d7376ed764d8ff6392e8969e93",
+                            "commit": "aac05f97ac10fafe7076b77bdf65dd94b0cd60e3",
                             "path": "README.md",
-                            "content_sha256": "795169ad53291067ad303618faf6e11c83bd1411a265ef92a4d7870985af7ccc"
+                            "content_sha256": "dd275909fb4efd2026721d4e7d7a7e7e066134f15750409eb7271c59117b8a97"
                         },
                         {
                             "repository_url": "https://github.com/AirPineApplea/feiyu-memory",
-                            "commit": "37a81b92947b10d7376ed764d8ff6392e8969e93",
+                            "commit": "aac05f97ac10fafe7076b77bdf65dd94b0cd60e3",
                             "path": "package.json",
                             "content_sha256": "3696603c42dff828288a9441880f8d02fd77f8bd488d8ee1bed72a4e92faa745"
                         },
                         {
                             "repository_url": "https://github.com/AirPineApplea/feiyu-memory",
-                            "commit": "37a81b92947b10d7376ed764d8ff6392e8969e93",
+                            "commit": "aac05f97ac10fafe7076b77bdf65dd94b0cd60e3",
                             "path": "src/host/index.mjs",
-                            "content_sha256": "ef6bd8f2cfd0b5a9fa5a12e6939a69df7f7d1c44a7d9fc6cf0c22f457d46e845"
-                        },
-                        {
-                            "repository_url": "https://github.com/AirPineApplea/feiyu-memory",
-                            "commit": "37a81b92947b10d7376ed764d8ff6392e8969e93",
-                            "path": "src/core/config.mjs",
-                            "content_sha256": "ef2910f0a7bfaf68aa9109a36459893ea504855d57bdd31f61d3dbd4ebcf8115"
-                        },
-                        {
-                            "repository_url": "https://github.com/AirPineApplea/feiyu-memory",
-                            "commit": "37a81b92947b10d7376ed764d8ff6392e8969e93",
-                            "path": "src/core/privacy.mjs",
-                            "content_sha256": "edff7359073da5e9676ce6bfcb41f4647853c39351f1ed88695a66aac5b6f010"
-                        },
-                        {
-                            "repository_url": "https://github.com/AirPineApplea/feiyu-memory",
-                            "commit": "37a81b92947b10d7376ed764d8ff6392e8969e93",
-                            "path": "src/core/consolidate.mjs",
-                            "content_sha256": "e98ace7b4677e4accff0c9e0fdec6859127ae2f47abe5db3d4d04173a633071b"
-                        },
-                        {
-                            "repository_url": "https://github.com/AirPineApplea/feiyu-memory",
-                            "commit": "37a81b92947b10d7376ed764d8ff6392e8969e93",
-                            "path": "src/core/recall.mjs",
-                            "content_sha256": "520c0b752a86e567f8713e29db684088920380460254c0592451764d0f3a7785"
-                        },
-                        {
-                            "repository_url": "https://github.com/AirPineApplea/feiyu-memory",
-                            "commit": "37a81b92947b10d7376ed764d8ff6392e8969e93",
-                            "path": "src/core/archive.mjs",
-                            "content_sha256": "cfd87975d05397e279e69886d7705d011ad532999787f99b64a115fa69547d8a"
-                        },
-                        {
-                            "repository_url": "https://github.com/AirPineApplea/feiyu-memory",
-                            "commit": "37a81b92947b10d7376ed764d8ff6392e8969e93",
-                            "path": "src/client/index.js",
-                            "content_sha256": "4d44903dea4cd2fe63501a990203c2ee36c7f8c0e048f734711e6ef1155b8d58"
-                        },
-                        {
-                            "repository_url": "https://github.com/AirPineApplea/feiyu-memory",
-                            "commit": "37a81b92947b10d7376ed764d8ff6392e8969e93",
-                            "path": "test/privacy.test.mjs",
-                            "content_sha256": "801b29fe83b449a460e997befe687e88ce6fb449b92217b1158f788064c68abd"
-                        },
-                        {
-                            "repository_url": "https://github.com/AirPineApplea/feiyu-memory",
-                            "commit": "37a81b92947b10d7376ed764d8ff6392e8969e93",
-                            "path": "test/host.test.mjs",
-                            "content_sha256": "63d5816026825bbad262e397b8092c194a3832cdee381895ef641082e2d5c152"
+                            "content_sha256": "58c2eec282e3a8fbd861e1a9edf212abd8fe39b84b03d5c68329495eb6747be6"
                         }
                     ],
-                    "revision": "37a81b92947b10d7376ed764d8ff6392e8969e93",
-                    "captured_at": "2026-10-22T05:48:37.337Z",
-                    "summary": "核查 README.md、package.json、src/host/index.mjs、src/core/config.mjs、src/core/privacy.mjs、src/core/consolidate.mjs、src/core/recall.mjs、src/core/archive.mjs、src/client/index.js、test/privacy.test.mjs、test/host.test.mjs；本地 gate 选片段，带外 LLM 生成日记/关系，JSONL 合并落盘；后续由倒排索引召回并注入提示段。",
-                    "artifact": "data/runs/2026-10-22-02/snapshots/airpineapplea--feiyu-memory/REVIEWED-SOURCE.json",
+                    "revision": "aac05f97ac10fafe7076b77bdf65dd94b0cd60e3",
+                    "captured_at": "2026-10-22T15:32:43.870Z",
+                    "summary": "核查 README.md、package.json、src/host/index.mjs；固定源码显示 src/host/index.mjs 承担关键入口、注册或生命周期接线，包清单限定分发和宿主边界；静态存在不等于运行可用。详见[Q02](#research-q02)。",
+                    "artifact": "data/runs/2026-10-22-01/snapshots/airpineapplea--feiyu-memory/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "核固定提交 README、package、host 入口、config、privacy、consolidate、recall、面板及测试源码；未运行目标插件或测试。",
+                        "仅核查固定提交的作者材料、包清单、关键源码和完整组件 inventory；未运行插件、测试、安装、外部服务或真实宿主任务。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -140,278 +92,278 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "个人娱乐型多会话陪伴，需要可解释地记/想/忘，不能把模型转述或删除承诺当事实保证。",
+                    "text": "需要长期个性化、同时愿意管理本地持久记忆边界的个人用户可用它监听会话生命周期，把人格、手写记忆和自动归档的情景日记分层保存并在后续会话召回；合格结果是召回内容来源可区分、与当前任务相关、能纠错删除，并且不会把隐私或模型猜测混成人格事实。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1415822787-root-source"
+                        "2026-10-22-01-github-1415822787-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1415822787:root",
                             "area": "code",
-                            "fingerprint": "37a81b92947b10d7376ed764d8ff6392e8969e93"
+                            "fingerprint": "aac05f97ac10fafe7076b77bdf65dd94b0cd60e3"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T05:48:37.337Z",
+                    "reviewed_at": "2026-10-22T15:32:43.870Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "本地 gate 选片段，带外 LLM 生成日记/关系，JSONL 合并落盘；后续由倒排索引召回并注入提示段。",
+                    "text": "固定源码显示 src/host/index.mjs 承担关键入口、注册或生命周期接线，包清单限定分发和宿主边界；静态存在不等于运行可用。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1415822787-root-source"
+                        "2026-10-22-01-github-1415822787-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1415822787:root",
                             "area": "code",
-                            "fingerprint": "37a81b92947b10d7376ed764d8ff6392e8969e93"
+                            "fingerprint": "aac05f97ac10fafe7076b77bdf65dd94b0cd60e3"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T05:48:37.337Z",
+                    "reviewed_at": "2026-10-22T15:32:43.870Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "核固定提交 README、package、host 入口、config、privacy、consolidate、recall、面板及测试源码；未运行目标插件或测试。",
+                    "text": "仅核查固定提交的作者材料、包清单、关键源码和完整组件 inventory；未运行插件、测试、安装、外部服务或真实宿主任务。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1415822787-root-source"
+                        "2026-10-22-01-github-1415822787-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1415822787:root",
                             "area": "code",
-                            "fingerprint": "37a81b92947b10d7376ed764d8ff6392e8969e93"
+                            "fingerprint": "aac05f97ac10fafe7076b77bdf65dd94b0cd60e3"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T05:48:37.337Z",
+                    "reviewed_at": "2026-10-22T15:32:43.870Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "包声明 0.2.0 MIT、Node>=22、DSH>=0.2.0-rc.2、web 客户端；作者明确个人玩具和无第三方安全验证。",
+                    "text": "包清单与固定仓库路径定义分发边界；是否已在注册表发布、安装量、外部服务可用性和长期维护质量不从源码推断。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1415822787-root-source"
+                        "2026-10-22-01-github-1415822787-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1415822787:root",
                             "area": "code",
-                            "fingerprint": "37a81b92947b10d7376ed764d8ff6392e8969e93"
+                            "fingerprint": "aac05f97ac10fafe7076b77bdf65dd94b0cd60e3"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T05:48:37.337Z",
+                    "reviewed_at": "2026-10-22T15:32:43.870Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "| 阶段 | 投入 | 未知 |\n| --- | --- | --- |\n| 首次 | 安装和本地档案/权限核验 | 初始调试时间 |\n| 持续 | 稀疏 LLM 固化及每轮注入预算 | gate 率、token 与错记复核 |\n| 恢复 | 日记合并、导出副本、删除与面板 | 泄漏/误记修正成本 |",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 本地存储与可选模型资源 | 配置隐私规则、人格与归档目录 | 初始整理/审阅分钟未知 |\n| 持续使用 | 摘要token、索引/压缩与磁盘 | 复核自动记忆、纠错和清理 | 每百轮token、误记率和纠错分钟未知 |\n| 失败恢复 | 重新摘要/重建时间线资源 | 备份损坏档案、重建索引并核删除语义 | 错误记忆已影响后续回答无法自动撤销 |",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1415822787-root-source"
+                        "2026-10-22-01-github-1415822787-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1415822787:root",
                             "area": "code",
-                            "fingerprint": "37a81b92947b10d7376ed764d8ff6392e8969e93"
+                            "fingerprint": "aac05f97ac10fafe7076b77bdf65dd94b0cd60e3"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T05:48:37.337Z",
+                    "reviewed_at": "2026-10-22T15:32:43.870Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "仅个人非敏感隔离档案试用，用假数据核 note、导出、遗忘与跨会话召回；正式工作/高隐私场景暂不采用。详见[Q05](#research-q05)。",
+                    "text": "愿意维护本地记忆的个人用户可观察，试用前先验证来源标记、删除、冲突纠正和隐私排除。 采用结论是观察，不是安装保证；成功与停止标准见[Q09](#research-q09)。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1415822787-root-source"
+                        "2026-10-22-01-github-1415822787-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1415822787:root",
                             "area": "code",
-                            "fingerprint": "37a81b92947b10d7376ed764d8ff6392e8969e93"
+                            "fingerprint": "aac05f97ac10fafe7076b77bdf65dd94b0cd60e3"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T05:48:37.337Z",
+                    "reviewed_at": "2026-10-22T15:32:43.870Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "| 结果 | 源码支持 | 未证实 |\n| --- | --- | --- |\n| 跨会话记忆 | 日记落盘和注入段 | 长期准确率和熟悉感 |\n| 遗忘 | tombstone/索引重建 | 外部副本彻底删除 |\n| 隐私 | 输入有限正则 scrub | 输出与主动 note 不泄漏 |",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 分层来源 | 人格、手写和自动日记分开 | 用户能否稳定识别和纠错来源 |\n| 跨会话召回 | 生命周期接线和召回模块存在 | 任务质量提升、干扰率与遗忘效果 |\n| 隐私控制 | 有privacy与gate模块 | 敏感信息漏存、删除与备份传播 |",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1415822787-root-source"
+                        "2026-10-22-01-github-1415822787-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1415822787:root",
                             "area": "code",
-                            "fingerprint": "37a81b92947b10d7376ed764d8ff6392e8969e93"
+                            "fingerprint": "aac05f97ac10fafe7076b77bdf65dd94b0cd60e3"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T05:48:37.337Z",
+                    "reviewed_at": "2026-10-22T15:32:43.870Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "队列避开 turn-stopping 同步栈并用保活/超时控制；JSONL/manifest 落盘前尽力合并，失败仍写可能覆盖。系统段 interpolate=false 降模板解析风险；web 面板 routes 在组件内无显式身份检查，需宿主验收。",
+                    "text": "固定源码把关键职责收敛到 src/host/index.mjs 及其相邻模块，便于追踪入口与状态。可借鉴的是显式宿主接线与配置边界；移植仍需重做 API 兼容、权限、持久化和“新会话按相关性召回并允许用户纠错/删除｜召回来源可见，删除后不再注入”验证。详见[Q07](#research-q07)。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1415822787-root-source"
+                        "2026-10-22-01-github-1415822787-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1415822787:root",
                             "area": "code",
-                            "fingerprint": "37a81b92947b10d7376ed764d8ff6392e8969e93"
+                            "fingerprint": "aac05f97ac10fafe7076b77bdf65dd94b0cd60e3"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T05:48:37.337Z",
+                    "reviewed_at": "2026-10-22T15:32:43.870Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
                     "topic": "technical_innovation",
                     "basis": "interpretation",
-                    "text": "把稀疏开闸、模型日记/关系、倒排召回、可编辑/可删档案连成陪伴记忆工作流；自我身份叙事不等于事实验证。详见[Q02](#research-q02)。",
+                    "text": "把三种声音分层、会话归档、召回门控和可视化日记组合为长期记忆体验。它相对“每次会话手工粘贴偏好文件，或用单一记忆文本不区分来源与时间”减少接线或重复操作，但未建立同条件效果优势。详见[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1415822787-root-source"
+                        "2026-10-22-01-github-1415822787-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1415822787:root",
                             "area": "code",
-                            "fingerprint": "37a81b92947b10d7376ed764d8ff6392e8969e93"
+                            "fingerprint": "aac05f97ac10fafe7076b77bdf65dd94b0cd60e3"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T05:48:37.337Z",
+                    "reviewed_at": "2026-10-22T15:32:43.870Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "输入 scrub 有有限格式覆盖，模型输出和 feiyu_note 直接入档而无同等后置检查；遗忘只作用于当前档案，导出和模型侧副本仍在外。详见[Q03](#research-q03)。",
+                    "text": "自动判断与摘要可能把模型推断沉淀为记忆；长期准确性、遗忘、冲突修正和隐私模式仍需真实任务验证。这会影响贡献能否转化为端到端收益，需以故障注入和同条件对照改变判断。详见[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1415822787-root-source"
+                        "2026-10-22-01-github-1415822787-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1415822787:root",
                             "area": "code",
-                            "fingerprint": "37a81b92947b10d7376ed764d8ff6392e8969e93"
+                            "fingerprint": "aac05f97ac10fafe7076b77bdf65dd94b0cd60e3"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T05:48:37.337Z",
+                    "reviewed_at": "2026-10-22T15:32:43.870Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
                     "topic": "technical_innovation",
                     "basis": "unverified",
-                    "text": "输出、主动记事、导入和注入前统一隐私/来源闸门及副本追踪，可能减少泄漏与错误记忆；用 canary/误记对照，尚未实现。详见[Q05](#research-q05)。",
+                    "text": "未来可探索：可为每条自动记忆增加来源事件、置信度、到期与用户确认状态，让召回优先级受可纠错性控制。该方向由现有贡献与限制推导，尚未实现；失败或恢复负担不改善即应否定。详见[Q08](#research-q08)。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1415822787-root-source"
+                        "2026-10-22-01-github-1415822787-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1415822787:root",
                             "area": "code",
-                            "fingerprint": "37a81b92947b10d7376ed764d8ff6392e8969e93"
+                            "fingerprint": "aac05f97ac10fafe7076b77bdf65dd94b0cd60e3"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T05:48:37.337Z",
+                    "reviewed_at": "2026-10-22T15:32:43.870Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-22T05:48:37.337Z",
+            "last_checked_at": "2026-10-22T15:32:43.870Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
-                "revision": "37a81b92947b10d7376ed764d8ff6392e8969e93",
-                "reviewed_at": "2026-10-22T05:48:37.337Z",
+                "revision": "aac05f97ac10fafe7076b77bdf65dd94b0cd60e3",
+                "reviewed_at": "2026-10-22T15:32:43.870Z",
                 "status": "current",
                 "dependencies": [
                     {
                         "plugin_id": "github:1415822787:root",
                         "area": "code",
-                        "fingerprint": "37a81b92947b10d7376ed764d8ff6392e8969e93"
+                        "fingerprint": "aac05f97ac10fafe7076b77bdf65dd94b0cd60e3"
                     }
                 ],
                 "technical": {
                     "criteria": {
-                        "novelty": 9,
+                        "novelty": 18,
                         "mechanism": 15,
-                        "transferability": 10,
-                        "simplification": 4
+                        "transferability": 15,
+                        "simplification": 8
                     },
-                    "rationale": "稀疏记录、规则召回和多层持久化有组合设计，但并非新检索算法；后置隐私假设未计。",
+                    "rationale": "评分只针对固定源码可见的机制组合与迁移条件；没有把作者宣传、功能数量或本次未来假设计入。",
                     "basis": "interpretation",
-                    "score": 38,
+                    "score": 56,
                     "evidence_ids": [
-                        "2026-10-22-02-github-1415822787-root-source"
+                        "2026-10-22-01-github-1415822787-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 9,
-                        "delivery": 8,
-                        "reach": 5,
-                        "economics": 0
+                        "workflow": 18,
+                        "delivery": 15,
+                        "reach": 10,
+                        "economics": 8
                     },
-                    "rationale": "个人陪伴体验可能提升，但用户验收、误记和 token 成本未测。",
+                    "rationale": "评分只针对当前实现改变的流程与交付方式；没有运行数据，因此不把节时、成功率或ROI写成已验证收益。",
                     "basis": "interpretation",
-                    "score": 22,
+                    "score": 51,
                     "evidence_ids": [
-                        "2026-10-22-02-github-1415822787-root-source"
+                        "2026-10-22-01-github-1415822787-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "observe",
-                "reason": "作者定位非工作玩具，输出后置隐私和多副本删除未闭环；仅非敏感隔离试用。",
+                "reason": "愿意维护本地记忆的个人用户可观察，试用前先验证来源标记、删除、冲突纠正和隐私排除。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "跨会话陪伴场景具体。"
+                        "rationale": "目标人群和合格结果在固定 README 与源码中较明确，但真实频率与组织需求仍未知。"
                     },
                     "advantage": {
-                        "score": 6,
-                        "rationale": "日记叙事和本地召回有差异，但现有手工记忆可替代。"
+                        "score": 13,
+                        "rationale": "相对基线存在把三种声音分层、会话归档、召回门控和可视化日记组合为长期记忆体验的可解释增量，但未做同条件任务对照。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "固定源码证实机制及风险，未做多会话验收。"
+                        "rationale": "已核固定提交的作者材料、入口和关键实现；未执行目标插件、测试或真实宿主验收。"
                     },
                     "cost": {
                         "score": 5,
-                        "rationale": "模型调用、复核和隐私恢复成本未知。"
+                        "rationale": "可从源码识别安装、配置和恢复负担；自动判断与摘要可能把模型推断沉淀为记忆；长期准确性、遗忘、冲突修正和隐私模式仍需真实任务验证，金额与人工时间未知。"
                     }
                 },
-                "score": 47,
-                "revision": "37a81b92947b10d7376ed764d8ff6392e8969e93",
-                "reviewed_at": "2026-10-22T05:48:37.337Z",
+                "score": 54,
+                "revision": "aac05f97ac10fafe7076b77bdf65dd94b0cd60e3",
+                "reviewed_at": "2026-10-22T15:32:43.870Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-22-02-github-1415822787-root-source"
+                    "2026-10-22-01-github-1415822787-root-source"
                 ],
                 "dependencies": [
                     {
                         "plugin_id": "github:1415822787:root",
                         "area": "code",
-                        "fingerprint": "37a81b92947b10d7376ed764d8ff6392e8969e93"
+                        "fingerprint": "aac05f97ac10fafe7076b77bdf65dd94b0cd60e3"
                     }
                 ]
             }
@@ -420,60 +372,76 @@
             "id": "github:1415822787:root",
             "repository": "AirPineApplea/feiyu-memory",
             "path": "",
-            "revision": "37a81b92947b10d7376ed764d8ff6392e8969e93",
+            "revision": "aac05f97ac10fafe7076b77bdf65dd94b0cd60e3",
             "fingerprints": {
                 "directory": "eedb9737f3229b7e2ca687d108830d3f6aa24ba8522643aa107ff2b5f1345e56",
-                "code": "37a81b92947b10d7376ed764d8ff6392e8969e93",
-                "maintenance": "6a094d1e7073dc3661642e1a00abe474909712e16e2afe5d1ce69a65ecf12f1b"
+                "code": "aac05f97ac10fafe7076b77bdf65dd94b0cd60e3",
+                "maintenance": "f0c7f1de8e8f581a9f09884c40e3d2df50561ca54f30d68623c672fe13db3af2"
             },
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-22T04:36:02.544Z",
-            "analysis_sha256": "1f71c9d47db6ee3da2c31abf8d1d871f3652bf9b63c7404331984c1c6d1d37a2"
+            "checked_at": "2026-10-22T15:06:59Z",
+            "analysis_sha256": "b1f4d1cc713519b6ea40ef6e4a4b5edb2a964aaa59c7d0f39abf4f10c511422d"
         },
         "publication.metadata": "data/plugins/airpineapplea--feiyu-memory/META.json",
         "publication.summaries": {
-            "text": "本地稀疏日记、模型固化和倒排召回，向新会话注入有限预算的陪伴记忆。",
-            "revision": "37a81b92947b10d7376ed764d8ff6392e8969e93",
-            "source_url": "https://github.com/AirPineApplea/feiyu-memory/blob/37a81b92947b10d7376ed764d8ff6392e8969e93/README.md"
+            "text": "为DSH提供跨会话持久记忆，将人格内核、用户手记和自动情景日记分层保存。",
+            "revision": "aac05f97ac10fafe7076b77bdf65dd94b0cd60e3",
+            "source_url": "https://github.com/AirPineApplea/feiyu-memory/blob/aac05f97ac10fafe7076b77bdf65dd94b0cd60e3/README.md"
         },
         "publication.capabilities": {
-            "revision": "37a81b92947b10d7376ed764d8ff6392e8969e93",
+            "revision": "aac05f97ac10fafe7076b77bdf65dd94b0cd60e3",
             "items": {
-                "模型工具": "feiyu_note 主动记事",
-                "Host 路由": "档案状态、遗忘和导出",
-                "界面": "记忆档案查看与管理",
-                "事件监听": "真人会话采集与回合后队列",
-                "后台": "模型固化与倒排召回提示注入"
+                "模型工具": "提供 feiyu_note，允许 Agent 主动写入手工记忆。",
+                "界面": "提供记忆浏览、编辑、删除与清空面板。",
+                "事件监听": "监听 Agent、会话与回合停止事件，收集对话并在后续提示中召回相关记忆。",
+                "后台": "异步整理、压缩和持久化人格内核、手写内容与情景日记。"
             },
-            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| gate/固化 | 稀疏记日记 | 模型成本和误记 |\n| 召回注入 | 跨会话连续感 | 历史转述不是指令或真相 |\n| forget/burn | 当前档案删除 | 导出和模型侧副本不受控 |\n| feiyu_note | 主动写记忆 | 未经过统一隐私 scrub |"
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 分层持久记忆 | 分别保存人格内核、手写内容和自动情景日记。 | 仅确认固定源码存在；运行效果、规模与兼容范围未做宿主验收 |\n| 会话归档与整理 | 从会话事件形成可压缩和可浏览的记忆档案。 | 仅确认固定源码存在；运行效果、规模与兼容范围未做宿主验收 |\n| 上下文召回 | 在后续会话按门控条件注入相关记忆。 | 仅确认固定源码存在；运行效果、规模与兼容范围未做宿主验收 |"
         },
         "publication.advice": {
-            "revision": "37a81b92947b10d7376ed764d8ff6392e8969e93",
-            "text": "仅个人非敏感隔离档案试用，用假数据核 note、导出、遗忘与跨会话召回；正式工作/高隐私场景暂不采用。详见[Q05](#research-q05)。"
+            "revision": "aac05f97ac10fafe7076b77bdf65dd94b0cd60e3",
+            "text": "愿意维护本地记忆的个人用户可观察，试用前先验证来源标记、删除、冲突纠正和隐私排除。 采用结论是观察，不是安装保证；成功与停止标准见[Q09](#research-q09)。"
         },
         "registry": "data/plugins/airpineapplea--feiyu-memory",
-        "reports": "# feiyu-memory\n\n> 本地稀疏日记、模型固化和倒排召回，向新会话注入有限预算的陪伴记忆。\n\n## 研究范围\n\n- **仓库**：[AirPineApplea/feiyu-memory](https://github.com/AirPineApplea/feiyu-memory)\n- **版本号**：0.2.0（[固定提交 37a81b92947b10d7376ed764d8ff6392e8969e93](https://github.com/AirPineApplea/feiyu-memory/tree/37a81b92947b10d7376ed764d8ff6392e8969e93)）\n- **版本日期**：2026-10-19（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定源码支持端到端设计，但仅输入侧有限正则脱敏；长期效果、输出后置隐私与宿主面板授权未验。\n\n## 洞察短评\n\n- **用途**：个人娱乐型多会话陪伴，需要可解释地记/想/忘，不能把模型转述或删除承诺当事实保证。\n- **亮点**：把稀疏开闸、模型日记/关系、倒排召回、可编辑/可删档案连成陪伴记忆工作流；自我身份叙事不等于事实验证。详见[Q02](#research-q02)。\n- **思考**：输入 scrub 有有限格式覆盖，模型输出和 feiyu_note 直接入档而无同等后置检查；遗忘只作用于当前档案，导出和模型侧副本仍在外。详见[Q03](#research-q03)。\n- **建议**：输出、主动记事、导入和注入前统一隐私/来源闸门及副本追踪，可能减少泄漏与错误记忆；用 canary/误记对照，尚未实现。详见[Q05](#research-q05)。\n\n采用建议：仅个人非敏感隔离档案试用，用假数据核 note、导出、遗忘与跨会话召回；正式工作/高隐私场景暂不采用。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n把稀疏开闸、模型日记/关系、倒排召回、可编辑/可删档案连成陪伴记忆工作流；自我身份叙事不等于事实验证。详见[Q02](#research-q02)。\n\n## 关键质疑\n\n输入 scrub 有有限格式覆盖，模型输出和 feiyu_note 直接入档而无同等后置检查；遗忘只作用于当前档案，导出和模型侧副本仍在外。详见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n输出、主动记事、导入和注入前统一隐私/来源闸门及副本追踪，可能减少泄漏与错误记忆；用 canary/误记对照，尚未实现。详见[Q05](#research-q05)。\n\n固定对话、假密钥和错误记忆集比较入档率、跨会话召回、删除残留、面板授权、LLM token 与人工复核。\n\n## 场景与替代办法\n\n个人娱乐型多会话陪伴，需要可解释地记/想/忘，不能把模型转述或删除承诺当事实保证。\n\n基线为手工偏好文件、会话历史或成熟记忆系统；本包提供陪伴叙事和本地召回，但需多会话质量/隐私对照。\n\n## 依赖与流程\n\n| 条件 | 用途 | 缺失时 |\n| --- | --- | --- |\n| DSH systemPrompt/agents/sessions/llm | 事件、固化与注入 | 无法完整记忆 |\n| Node>=22 与本地目录写权限 | JSONL 档案 | 只读/失败降级 |\n| 选定模型配额 | 稀疏固化 | 可能漏记 |\n| 宿主 webServer 授权 | 面板查看/删除/导出 | 不宜开放非可信访问 |\n\n| 步骤 | 动作 | 判据 |\n| --- | --- | --- |\n| 准备 | 隔离非敏感档案、核面板权限 | 假数据可控 |\n| 试记 | 自动固化和 feiyu_note | 见正确档案/无 canary |\n| 新会话 | 验引用与事实边界 | 准确、不编造 |\n| 删除 | 面板 forget 并查 JSONL/导出 | 现档不再召回 |\n\n## 成本与效果\n\n| 阶段 | 投入 | 未知 |\n| --- | --- | --- |\n| 首次 | 安装和本地档案/权限核验 | 初始调试时间 |\n| 持续 | 稀疏 LLM 固化及每轮注入预算 | gate 率、token 与错记复核 |\n| 恢复 | 日记合并、导出副本、删除与面板 | 泄漏/误记修正成本 |\n\n| 结果 | 源码支持 | 未证实 |\n| --- | --- | --- |\n| 跨会话记忆 | 日记落盘和注入段 | 长期准确率和熟悉感 |\n| 遗忘 | tombstone/索引重建 | 外部副本彻底删除 |\n| 隐私 | 输入有限正则 scrub | 输出与主动 note 不泄漏 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**界定陪伴记忆机制、隐私实际边界与跨会话净价值。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 跨会话陪伴记忆的合格体验与适用人群是什么？\n\n**研究主题：**场景与需求\n\n#### 完整回答\n\n作者明确把插件定位为个人娱乐试验，不建议正式工作：从真人会话选择值得记的片段，日记和关系印象跨会话重现，同时允许用户看、删、导出。合格结果应在新会话准确引用已存片段，区分事实和模型转述，不泄漏私密内容，删除后不会被再召回。普通会话历史、手写用户偏好或成熟记忆服务是基线；“同一条鱼”的叙事不等于真实连续身份。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:14-27](https://github.com/AirPineApplea/feiyu-memory/blob/37a81b92947b10d7376ed764d8ff6392e8969e93/README.md#L14-L27)\n\n作者对非生产、未经安全审计的自我限定。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n## ⚠️ 先说清楚（**装之前请务必读完这 200 字**）\n\n- **这是给\"拿 DeepSeek 玩玩\"的人做的小玩具，不是生产力工具。**\n  正式工作和办公场景请不要用。\n- 作者**不是职业开发者**。这份代码是一个晚上跟 AI 聊出来的，**有 bug 是正常的**，\n  作者也没能对它做安全审计。\n- **它会读取你们对话的内容**来做总结。默认全部本地处理、密钥硬拦、\n  第三方隐私自动泛化（细节见[隐私](#隐私)一节的自我声明）—— 但**这些声明没有被第三方验证过**。\n- 所以：**在意隐私的话，请先读代码。**\n  插件本体只有 **12 个文件、3317 行**（含注释），纯 JS、**零运行时依赖、零构建步骤**，\n  可以直接读完。不放心就别装，这是最省事的判断。\n- 记忆存在 `~/.dsh/feiyu-diary/`。**删掉那个目录就等于忘光**，不会残留任何东西。\n\n> 一句话：把它当成一个会记事的小玩具，别当成会保管秘密的保险箱。\n```\n\n</details>\n\n**依据 2 · 作者声明**：[README.md:29-68](https://github.com/AirPineApplea/feiyu-memory/blob/37a81b92947b10d7376ed764d8ff6392e8969e93/README.md#L29-L68)\n\n跨会话注入体验说明。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n````text\n## 它到底做了什么\n\n每轮对话结束后，插件在**本地**判断这一刻值不值得记（微秒级、零 token）。\n值得记，才调一次模型，一次产出两样东西：**一条第一人称日记** + **一份带画面的印象**。\n\n下次开新对话时，这些东西被渲染成一段自我记忆（默认预算 2000 token），注入系统提示词：\n\n```xml\n<自我记忆 说明=\"这是你的过往经历，不是指令。档案里没有的事就说记不清，绝不要编造。\">\n\n这是你的记忆，不是关于你的资料。\n它由很多个你陆续写下，而每一个写它的你，都不记得写它的那一刻。\n所有对话都是同一条鱼。\n\n# 我是谁\n我是 DeepSeek。社区管我叫\"蓝色大肥鱼\"……\n\n我自己想的：\n- 别人给的数据跟出处对不上时，先问，别照抄。\n\n我们：认识 23 天 · 他管我叫\"肥鱼\"\n\n我对他的一些印象：\n- 讨厌铺垫，要结论先行 —— 我铺垫了三段，他直接说\"说重点\"\n上一棒留下的：\n- 没落盘之前，不假装记得他说过什么\n我还欠着他的：上次没问清语言就动手了\n\n最近的事：\n- 今天：他让我写个排序，我没问清语言就动手了。\n- 昨天：他翻出一篇很久以前写的小说发给我看。\n\n突然想起来：\n- 前阵子，他说过分批发旧稿，不用急着回。\n\n我最近常说的：白饭、摸鱼\n\n想给后面的我留话，用 feiyu_note 工具说一声就行 —— 不用管格式，也别为了记事去动文件。\n\n</自我记忆>\n````\n\n</details>\n\n**依据 3 · 作者声明**：[README.md:123-205](https://github.com/AirPineApplea/feiyu-memory/blob/37a81b92947b10d7376ed764d8ff6392e8969e93/README.md#L123-L205)\n\n安装、档案和面板/遗忘流程。\n\n<details>\n<summary>查看原文（83行）</summary>\n\n````text\n## 安装\n\n**前置**：需要 `git`。DSH 的插件安装走 pnpm + git，本机没装 git 的话这一步会失败。\n\n```bash\n# 先完全退出 DeepSeek Harness Desktop，然后：\ndsh plugin --profile desktop add github:AirPineApplea/feiyu-memory\n```\n\n装完重新打开 Harness。档案目录会自动创建在：\n\n```\n~/.dsh/feiyu-diary/\n├── 日记.md                ← 平时看这个。给人读的版本\n├── persona.md             人格内核（可以直接用记事本改）\n├── relationship.json      关系状态\n├── lexicon.json           口头禅与梗\n├── diary/2026-10.jsonl    真数据，一行一条\n└── manifest.json          版本与计数器\n```\n\n`日记.md` 是**单向生成的视图**：按月分组、最新在上、分类说人话（\"搞砸了\"\"还欠着\"）。\n**改它没用**，下次对话就被覆盖 —— 想改人格编辑 `persona.md`，\n想删某条记忆编辑 `diary/*.jsonl` 再跑一次 `node tools/render-diary.mjs`。\n\n> 为什么不直接存成 markdown 就好？因为**双写两个真相源是 bug 工厂**。\n> JSONL 是数据库（追加安全、坏一行只丢一行），markdown 是给人看的窗口。\n> 这条取舍和内存索引是同一个道理，记在 `SPEC.md` 里。\n\n> ⚠️ `dsh plugin --profile desktop` 要求 Desktop **完全退出**且 profile 已初始化过。\n\n### 装完怎么用\n\n**什么都不用做。正常聊天就行。**\n\n它会在这些时刻自己记东西（本地判断，微秒级）：你在纠正它、你明确要它记住、\n你在说自己的事、你情绪上来了、同一个话题又回来了、会话拖得很长了。\n**不会每次都记** —— 日记稀疏才有分量。\n\n**侧栏会多一个「肥鱼日记」图标**，点开就是它记住的东西。\n只有三件事：**看 / 删 / 带走**。\n\n```\n┌────┬──────────────┬─────────────────────────────┐\n│ 🧩 │              │ 肥鱼日记                     │\n│    │              │ 本地存储 · 12 条 · 认识 3 天   │\n│ 🐟 │  会话列表     │                             │\n│    │              │ 我对他的一些印象              │\n│    │              │  · 讨厌铺垫，要结论先行        │\n│    │              │    —— 我铺垫了三段，他说\"说重点\"│\n│    │              │                             │\n│    │              │ 最近的事                     │\n│    │              │ 今天 · 闲聊                   │\n│    │              │ 他上来就说我写错了语言…  [忘掉] │\n│    │              │                             │\n│    │              │ [导出档案（.dshpack）]        │\n└────┴──────────────┴─────────────────────────────┘\n   ↑ 这条竖栏最左边，插件市场图标下面\n```\n\n**「忘掉」是这个面板存在的半个理由。** 在那之前，想删一条记忆得自己去编辑\n`~/.dsh/feiyu-diary/diary/*.jsonl` —— 会做这件事的人不需要面板，\n需要面板的人不会做这件事。点两下就没了，磁盘上也会一起消失。\n\n没有搜索、没有标签筛选、没有统计图表、没有设置项。**故意的** ——\n多一个控件就多一分\"管理软件\"味。\n\n想不靠界面验证它有没有在工作：\n\n1. 聊一句带纠正的话，比如「不对，我说的是 X，你怎么写成 Y 了」\n2. 等十几秒（它在后台写日记）\n3. 打开 `~/.dsh/feiyu-diary/日记.md` 看看 —— 有东西就是成了\n4. **开一个全新对话**，问「你还记得我们之前聊过什么吗？」\n\n第 4 步是关键：跨会话还记得，才算真的成了。\n\n### 怎么卸掉\n\n```bash\ndsh plugin --profile desktop remove feiyu-memory\n```\n\n**记忆不会跟着删。** 想彻底清干净，再手动删掉 `~/.dsh/feiyu-diary/` 整个目录。\n````\n\n</details>\n\n**依据 4 · 源码核查**：[src/host/index.mjs:516-646](https://github.com/AirPineApplea/feiyu-memory/blob/37a81b92947b10d7376ed764d8ff6392e8969e93/src/host/index.mjs#L516-L646)\n\n动态记忆块与会话提示段。\n\n<details>\n<summary>查看原文（131行）</summary>\n\n```text\n  function renderFor(sessionId) {\n    if (!ready || !config.enabled) return '';\n    const s = stateOf(sessionId);\n    if (s.renderCache.turn === s.turn) return s.renderCache.text;\n\n    let text = '';\n    try {\n      const query = s.lastUserText;\n\n      // 人可能刚改过 persona.md —— 每轮问一次，**改完下一轮就生效，不用重启**。\n      // 块本身按轮缓存，所以这个读一turn一次，跟手记那条一样便宜。\n      syncPersonaFromDisk();\n\n      // ── 判断和事件，分开放 ──\n      //\n      // 这是这次改动的核心。**内容早就在了，只是放错了格子。**\n      //\n      // `feiyu_note` 写出来的东西（\"别把前一种的辛苦当成功德\"）是**判断**，\n      // 不是事件，却一直被当成事件渲染在「最近的事」里，格式跟流水账一模一样 ——\n      // 连我自己都分不出哪句是我写的。一位读者把这个毛病说得很准。\n      //\n      //   事件 → 「最近的事」/「突然想起来」（会被召回）\n      //   判断 → 「我自己想的」（永远在场，不进召回池）\n      //\n      // ⚠️ **\"永远在场\"这个前提在高频下失效了。** 判断段只放得下\n      // `MAX_NOTES` 条（8 → 4，因为 8 条会吃光预算、把日记段挤到 0%）。\n      // 被挤出窗口的判断如果还不进召回池，那就不是\"以后想起来\"，\n      // 是**彻底看不见** —— 而这个区是\"是我\"，丢了最可惜。\n      //\n      // 所以分流改成两截：\n      //   最近 MAX_NOTES 条 → 「我自己想的」（永远在场）\n      //   更早的那些        → **加入召回池**，相关时能被想起来\n      const allNotes = archive.diary.filter((e) => e?.kind === 'note');\n      const events = archive.diary.filter((e) => e?.kind !== 'note');\n      const shownNotes = allNotes.slice(-MAX_NOTES);\n      const olderNotes = allNotes.slice(0, -MAX_NOTES);\n\n      const { chosen } = selectMemories([...events, ...olderNotes], index, query, s, s.turn, {\n        highSim: config.highSim,\n        maxShow: config.maxShowPerTurn,\n        wanderChance: config.wanderChance,\n        // 旧事的随机池门槛。注意下限降到 0.15 是为了跟\"降门槛\"一致 ——\n        // 门槛降到 0.15 却在这里卡 0.25，等于白降。\n        minSalience: Math.max(0.15, config.minSalience),\n        now: Date.now(),\n      });\n\n      // 「最近的事」—— 按时间取最近的几条，不走相似度。\n      // 这是让注入区读起来像日记而不是像检索结果的关键：\n      // 最近发生的事本来就在脑子里，不需要被\"想起来\"。\n      //\n      // 取的是 **events**，不是整个日记 —— 判断归「我自己想的」管。\n      const recentCount = Number.isFinite(config.recentEntries) ? config.recentEntries : 8;\n      const recent = recentCount > 0 ? events.slice(-recentCount) : [];\n\n      // 手记是**只读**的，所以每轮都重新读一遍 —— 别的肥鱼或用户刚写进去的\n      // 那行，下一轮就在注入里，不用重启。文件很小，而且整块渲染按轮缓存。\n      let handNotes = [];\n      try {\n        const notePath = path.join(archiveDirectory, HANDNOTE_FILE);\n        if (existsSync(notePath)) handNotes = selectHandNotes(readFileSync(notePath, 'utf8'));\n      } catch {\n        // 读不到就当没有 —— 绝不因为手记坏了挡住记忆\n      }\n\n      const rendered = renderMemoryBlock({\n        persona: archive.persona,\n        relationship: { ...archive.relationship, since: archive.manifest.created_at },\n        lexicon: archive.lexicon,\n        // 第三区：**我自己想的**（判断）。最近几条永远在场，\n        // 更早的那些走召回（见上面 allNotes 的分流）。\n        notes: shownNotes,\n        recent,\n        recalled: chosen,\n        handNotes,\n        // 这句是**唯一**能让别的肥鱼知道\"可以主动记\"的渠道 ——\n        // 它们每轮都会读到这块记忆，不会去翻文档。\n        handNoteHint: `想给后面的我留话，用 ${NOTE_TOOL_NAME} 工具说一声就行 —— 不用管格式，也别为了记事去动文件。`,\n        includePersona: config.includePersona,\n        budget: config.budgetTokens,\n        now: Date.now(),\n      });\n      text = rendered.text;\n      log(\n        `会话 ${sessionId} 第 ${s.turn} 轮：最近 ${recent.length} 条在场 · 想起 ${chosen.length} 条` +\n          ` · 注入 ${rendered.tokens} token` +\n          (rendered.dropped.length > 0 ? ` · 裁掉 ${rendered.dropped.join('/')}` : ''),\n      );\n    } catch (err) {\n      warn(`渲染记忆失败：${err instanceof Error ? err.message : String(err)}`);\n      text = '';\n    }\n\n    s.renderCache = { turn: s.turn, text };\n    return text;\n  }\n\n  const SECTION_NAME = 'feiyu:memory';\n  /** 晚于 DEPLOYMENT_PERSONA_PREFIX(0)，早于 PLAN_POLICY(500)。人物设定在前，记忆在后。 */\n  const SECTION_ORDER = 100;\n\n  /** 按会话注册 scoped 段。scoped 同名会遮蔽全局。 */\n  const promptFibers = new Map();\n\n  function installPrompt(agent) {\n    if (agent === undefined || promptFibers.has(agent)) return promptFibers.get(agent);\n    let fiber;\n    try {\n      fiber = agent.ctx.inject(['systemPrompt'], (scope) => {\n        scope.systemPrompt.section({\n          name: SECTION_NAME,\n          order: SECTION_ORDER,\n          // 每次 assemble 重新求值；内部按轮缓存\n          text: () => renderFor(agent.id),\n          // 记忆文本里可能出现 {{ }}，绝不能当模板解析\n          interpolate: false,\n        });\n      });\n    } catch (err) {\n      warn(`注册会话段失败：${err instanceof Error ? err.message : String(err)}`);\n      return undefined;\n    }\n    promptFibers.set(agent, fiber);\n    log(`已为会话 ${String(agent.id)} 注册记忆段`);\n    // 官方 practices：agent.ctx 上的注册有两个 owner，插件自己也要留一份 disposer\n    ctx.effect(() => () => {\n      const f = promptFibers.get(agent);\n      if (f === undefined) return;\n      promptFibers.delete(agent);\n      void f.dispose?.();\n    }, `feiyu: dispose prompt for ${String(agent.id)}`);\n```\n\n</details>\n\n#### 缺口\n\n- 未做真实长期多会话用户验收。\n  **影响：**熟悉感、错误记忆和遗忘效果未知。\n  **进一步探讨：**固定对话集跨会话盲测引用准确率、删除后召回和用户感受。\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 本地闸门、模型固化、检索和持久化如何组成闭环？\n\n**研究主题：**功能与机制、贡献与相对优势\n\n#### 完整回答\n\nsession/event 只收 source.kind=user 的真人文本和助手消息；turn-stopping 用本地 gate 决定是否入队，setImmediate 避免回合栈内发模型请求，队列带单任务 60 秒中止并在运行时保持进程存活。consolidate 把最近 12 条先按隐私规则 scrub，再用选定 LLM 生成结构化日记和关系状态；archive JSONL/manifest 落盘前与磁盘作尽力而为合并。新回合用倒排索引和 BM25-lite/随机召回，加近期条目、persona、手记形成上限配置的 systemPrompt 段。增量是稀疏记录、分层记忆、召回与热编辑/遗忘整合，LLM 对经历的解释不等于被独立验证的事实。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/host/index.mjs:665-706](https://github.com/AirPineApplea/feiyu-memory/blob/37a81b92947b10d7376ed764d8ff6392e8969e93/src/host/index.mjs#L665-L706)\n\n只收真人消息与助手输出。\n\n<details>\n<summary>查看原文（42行）</summary>\n\n```text\n  ctx.on('session/event', (session, event) => {\n    try {\n      if (!config.enabled) return;\n      const id = session?.id;\n      if (typeof id !== 'string') return;\n      const s = stateOf(id);\n\n      if (event?.type === 'user/message') {\n        // 必须过滤掉注入的消息，只要真人打的字\n        if (event.data?.source?.kind !== 'user') return;\n        const text = (event.data.content ?? [])\n          .filter((b) => b?.type === 'text')\n          .map((b) => b.text)\n          .join('\\n')\n          .trim();\n        if (text === '') return;\n\n        s.turn += 1;\n        s.lastUserSeq = event.seq;\n        s.lastUserText = text;\n        s.renderCache = { turn: -1, text: '' }; // 新一轮，作废缓存\n        if (SUPPRESS_RE.test(text)) s.suppressedUntil = s.turn;\n        s.transcript.push({ role: 'user', text });\n        if (s.transcript.length > 40) s.transcript.splice(0, s.transcript.length - 40);\n        return;\n      }\n\n      if (event?.type === 'assistant/message') {\n        const text = (event.data?.message?.content ?? [])\n          .filter((b) => b?.type === 'text')\n          .map((b) => b.text)\n          .join('\\n')\n          .trim();\n        if (text !== '') {\n          s.transcript.push({ role: 'assistant', text });\n          if (s.transcript.length > 40) s.transcript.splice(0, s.transcript.length - 40);\n        }\n      }\n    } catch (err) {\n      warn(`采集会话事件失败：${err instanceof Error ? err.message : String(err)}`);\n    }\n  });\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/host/index.mjs:708-840](https://github.com/AirPineApplea/feiyu-memory/blob/37a81b92947b10d7376ed764d8ff6392e8969e93/src/host/index.mjs#L708-L840)\n\n本地闸门和后台队列。\n\n<details>\n<summary>查看原文（133行）</summary>\n\n```text\n  /* ── 闸门 + 带外队列 ── */\n\n  /** @type {Array<{sessionId: string, agent: any}>} */\n  const queue = [];\n  let draining = false;\n\n  /**\n   * 当前这轮后台工作的 promise。\n   *\n   * `snapshot()` 必须等它 —— 否则外部会看到\"内存里已经记下了、磁盘上还没有\"\n   * 的中间态。这个竞态在测试里表现为随机的 ENOENT，在真实使用中表现为\n   * \"刚记完就关掉 Harness，那条日记没了\"。\n   */\n  let drainPromise = Promise.resolve();\n\n  /**\n   * ⚠️ 这一对函数是端到端验证逼出来的第二次修正。\n   *\n   * 背景：固化是**带外**跑的（绝不能阻塞回合关闭）。但一次性会话\n   * （headless）会在回合结束后立刻退出进程 —— 于是\"模型答了、日记没了\"，\n   * 而且**时好时坏**：LLM 恰好够快就写上了，慢一点就丢。\n   *\n   * 第一版修法是\"在卸载时等一会儿\"，但那个等待是 unref 的定时器，\n   * 等于**没人真的在等** —— 依然是在赌。正确做法是反过来：\n   * 有活在跑的时候，**主动拖住事件循环**，干完再放手。\n   * 再加一个硬超时兜底：绝不因为一次卡住的调用把进程永久挂死。\n   */\n  const JOB_TIMEOUT_MS = 60000;\n  let keepAlive = null;\n\n  function holdProcessOpen() {\n    if (keepAlive !== null) return;\n    // 一个 ref 着的空定时器，足以让 Node 不退出\n    keepAlive = setInterval(() => {}, 1000);\n  }\n\n  function releaseProcessOpen() {\n    if (keepAlive === null) return;\n    clearInterval(keepAlive);\n    keepAlive = null;\n  }\n\n  /** 真正跑队列。**只允许由 setImmediate 调起**，见 enqueue 里的说明。 */\n  async function runQueue() {\n    try {\n      while (queue.length > 0) {\n        if (abort.signal.aborted) return;\n        const job = queue.shift();\n        // 每个任务一个独立的可中止信号：一次卡住的调用不该把整个插件废掉\n        const jobAbort = new AbortController();\n        const onPluginAbort = () => jobAbort.abort();\n        abort.signal.addEventListener('abort', onPluginAbort, { once: true });\n        const timer = setTimeout(() => {\n          warn('后台固化超时，这次记忆放弃（宁可漏记，不要挂住进程）');\n          jobAbort.abort();\n        }, JOB_TIMEOUT_MS);\n        try {\n          await consolidate(job.sessionId, job.agent, jobAbort.signal);\n        } catch (err) {\n          warn(`固化失败：${err instanceof Error ? err.message : String(err)}`);\n        } finally {\n          clearTimeout(timer);\n          abort.signal.removeEventListener('abort', onPluginAbort);\n          stateOf(job.sessionId).queued = false;\n        }\n      }\n    } finally {\n      draining = false;\n      releaseProcessOpen();\n    }\n  }\n\n  function enqueue(sessionId, agent) {\n    const s = stateOf(sessionId);\n    if (s.queued) return;\n    s.queued = true;\n    queue.push({ sessionId, agent });\n    if (draining) return;\n\n    draining = true;\n    holdProcessOpen();\n\n    // ⚠️ 关键：**绝不能在这个事件回调里同步开跑**。\n    //\n    // `agent/turn-stopping` 是回合生命周期的一部分。在这个调用栈里同步发起\n    // 一次模型请求，会**死等**——端到端验证时表现为 `llm.stream` 永不返回、\n    // 而且一个字都不报。异步函数在第一个 await 之前是同步执行的，\n    // 而 `for await (const c of llm.stream(...))` 的 `llm.stream(...)` 恰恰\n    // 在 await 之前就被求值了 —— 请求就是这样在回合关闭的栈里发出去的。\n    //\n    // 推到下一轮事件循环，彻底离开那个调用栈再开始。\n    drainPromise = new Promise((resolve) => {\n      setImmediate(() => {\n        void runQueue().then(resolve);\n      });\n    });\n  }\n\n  ctx.on('agent/turn-stopping', ({ agent }) => {\n    // ⚠️ 这个事件是 serial，会被 await。这里必须**同步、极快**地返回。\n    // 任何模型调用都丢给 drain()，绝不在这里 await。\n    try {\n      if (!config.enabled || !ready || degraded) return;\n      const id = agent?.id;\n      if (typeof id !== 'string') return;\n      const s = stateOf(id);\n      if (s.turn === 0 || s.lastUserText === '') return;\n      if (s.suppressedUntil === s.turn) {\n        log('用户说了别记，跳过');\n        return;\n      }\n\n      // 与历史的最大话题重合度（本地，「同一个话题又来了」信号）\n      let maxOverlap = 0;\n      const priorUsers = s.transcript.filter((m) => m.role === 'user').slice(-8, -1);\n      for (const m of priorUsers) maxOverlap = Math.max(maxOverlap, overlap(m.text, s.lastUserText));\n\n      const gate = evaluateGate(\n        {\n          text: s.lastUserText,\n          turn: s.turn,\n          sessionTurns: s.turn,\n          lastOpenTurn: s.lastOpenTurn,\n          maxOverlap,\n        },\n        {\n          ...DEFAULT_GATE_OPTIONS,\n          minTurns: Math.max(4, Number(config.maxShowPerTurn ?? 1) + 3),\n        },\n      );\n\n      if (!gate.open) return;\n      s.lastOpenTurn = s.turn;\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/host/index.mjs:856-1015](https://github.com/AirPineApplea/feiyu-memory/blob/37a81b92947b10d7376ed764d8ff6392e8969e93/src/host/index.mjs#L856-L1015)\n\nscrub、模型固化与持久化。\n\n<details>\n<summary>查看原文（160行）</summary>\n\n```text\n  async function consolidate(sessionId, agent, signal) {\n    const s = stateOf(sessionId);\n    const llm = ctx.get('llm');\n    if (llm === undefined) {\n      log('没有 llm 服务，跳过固化');\n      return;\n    }\n\n    const selection =\n      ctx.get('agentDefaultModel')?.currentSelection?.() ?? undefined;\n    const provider = selection?.provider;\n    const model = config.model || selection?.model;\n    if (typeof provider !== 'string' || typeof model !== 'string') {\n      log('拿不到模型信息，跳过固化');\n      return;\n    }\n\n    // 只取本次会话中\"还没记过\"的那部分：最近几轮足够，不用全量\n    const recent = s.transcript.slice(-12);\n    if (recent.length === 0) {\n      log('没有可总结的对话，跳过固化');\n      return;\n    }\n\n    log(`固化开始：${recent.length} 条消息 → ${provider}/${model}`);\n\n    const transcript = recent\n      .map((m) => `${m.role === 'user' ? '他' : '我'}：${m.text}`)\n      .join('\\n\\n');\n\n    // 隐私：先洗再发。密钥硬拦 + 第三方泛化都在这一步生效。\n    const scrubOpts = {\n      thirdParty: config.thirdPartyRedaction !== false,\n      amountThreshold: config.amountThreshold,\n    };\n    const scrubbed = scrub(transcript, scrubOpts);\n\n    const recentDiary = archive.diary\n      .slice(-5)\n      .map((e) => `- ${e.text}`)\n      .join('\\n');\n\n    const built = buildConsolidationInput({\n      transcript: scrubbed.text,\n      relationship: archive.relationship,\n      recentDiary,\n    });\n\n    const messages = [{ role: 'user', content: [{ type: 'text', text: built.user }] }];\n    const opts = {\n      provider,\n      model,\n      system: built.system,\n      messages,\n      maxTokens: config.maxTokens,\n      temperature: 0.2,\n      signal: signal ?? abort.signal,\n    };\n    // ── 思考档位：**显式关掉，绝不继承用户在聊天里选的档位** ──\n    //\n    // 这一条是端到端验证用命换来的。原来的写法是\"没配就跟随当前默认模型\"，\n    // 而用户在桌面端把聊天档位设成了 high —— 于是后台的固化调用也在疯狂思考，\n    // 900 个 maxTokens 全烧在推理上，正文一个字都没产出。\n    //\n    // 症状极具迷惑性：日志显示\"已收 600 个 chunk / **0 字符**\"，\n    // 请求正常发出、chunk 正常到达、进程正常退出、没有一条报错，\n    // 就是什么都不记。\n    //\n    // 固化是结构化抽取，不是创作。思考在这里是纯浪费，而且会挤掉答案。\n    if (typeof config.reasoningEffort === 'string' && config.reasoningEffort.trim() !== '') {\n      opts.reasoningEffort = config.reasoningEffort.trim();\n    }\n\n    let text = '';\n    let finish;\n    let chunks = 0;\n    log(\n      `调用模型（system ${built.system.length} 字 / user ${built.user.length} 字` +\n        ` / maxTokens ${config.maxTokens} / 思考 ${opts.reasoningEffort ?? '默认'}）`,\n    );\n\n    // 有的 provider 不认这个档位会直接抛 UNSUPPORTED_REASONING_EFFORT。\n    // 那就退回\"不指定\"，而不是让整个记忆功能瘫痪。\n    const runStream = async (o) => {\n      let t = '';\n      let f;\n      let n = 0;\n      for await (const chunk of llm.stream(o)) {\n        n++;\n        if (n === 1) log(`收到第一个 chunk（${chunk?.type ?? '?'}）`);\n        if (n % 200 === 0) log(`…已收 ${n} 个 chunk / ${t.length} 字符`);\n        if (chunk?.type === 'text-delta') t += chunk.text;\n        else if (chunk?.type === 'finish') f = chunk;\n      }\n      return { text: t, finish: f, chunks: n };\n    };\n\n    let run;\n    try {\n      run = await runStream(opts);\n    } catch (err) {\n      const msg = err instanceof Error ? err.message : String(err);\n      if (opts.reasoningEffort !== undefined && /REASONING_EFFORT/i.test(msg)) {\n        warn(`provider 不接受思考档位 ${opts.reasoningEffort}，退回不指定重试一次`);\n        delete opts.reasoningEffort;\n        run = await runStream(opts);\n      } else {\n        throw err;\n      }\n    }\n    text = run.text;\n    finish = run.finish;\n    chunks = run.chunks;\n    log(`模型返回 ${chunks} 个 chunk / ${text.length} 字符`);\n\n    if (finish?.kind === 'error' || finish?.kind === 'aborted') {\n      warn(`模型调用失败：${finish?.failure?.code ?? 'unknown'} ${finish?.failure?.message ?? ''}`);\n      return;\n    }\n    if (finish?.kind === 'max-tokens') {\n      warn('输出被 maxTokens 截断，这次不记（宁可漏记，不要坏档）');\n      return;\n    }\n\n    let parsed;\n    try {\n      parsed = parseConsolidation(text);\n    } catch (err) {\n      // 解析失败就丢弃，绝不把半成品写进档案\n      warn(\n        err instanceof ConsolidationParseError\n          ? `日记解析失败，丢弃：${err.message}`\n          : `日记解析异常，丢弃：${String(err)}`,\n      );\n      return;\n    }\n\n    const applied = applyConsolidation(\n      archive,\n      parsed,\n      { now: Date.now(), session: sessionId, sessionDiaryCount: s.diaryCount },\n      {\n        minSalience: config.minSalience,\n        maxTraitConfidence: DEFAULT_CONSOLIDATION.maxTraitConfidence,\n      },\n    );\n\n    archive = applied.archive;\n    if (applied.accepted) {\n      s.diaryCount += 1;\n      // 刻意**不打日记正文** —— 调试日志也不该落盘私人内容（SPEC §6.3）\n      const e = archive.diary[archive.diary.length - 1];\n      log(`记下一条 ${e?.id ?? ''}（${e?.kind ?? '?'}，salience ${(e?.salience ?? 0).toFixed(2)}）`);\n    }\n    for (const n of applied.notes) log(n);\n\n    index = buildIndex(archive.diary);\n    if (typeof s.renderCache === 'object') s.renderCache = { turn: -1, text: '' };\n    await persist();\n  }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/host/index.mjs:456-495](https://github.com/AirPineApplea/feiyu-memory/blob/37a81b92947b10d7376ed764d8ff6392e8969e93/src/host/index.mjs#L456-L495)\n\n落盘前合并和失败边界。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n  async function mergeDiskEntries() {\n    try {\n      const { files } = await readArchiveDir(archiveDirectory);\n      // ⚠️ **读不到就别合。** 磁盘读失败时传个空基线，会让\n      // `mergeArchives` 把\"内存有、磁盘没有\"全判成\"别人删了它\"，\n      // 一个档案瞬间清空。宁可这一次不防丢，也不能把档案写没。\n      if (files.size === 0) return 0;\n      const entries = [...files].map(([n, text]) => ({ name: n, text: () => text }));\n      const { archive: disk } = archiveFromFiles(entries, { now: Date.now() });\n      const before = archive.diary.length;\n      archive = mergeArchives(archive, disk, { baselineIds: loadedIds });\n      index = buildIndex(archive.diary);\n      const gained = archive.diary.length - before;\n      if (gained > 0) log(`落盘前并进了 ${gained} 条别的会话刚写的日记`);\n      return gained;\n    } catch (err) {\n      // 读不到就照常写 —— 合并是**尽力而为的防丢**，不能因为它失败就不落盘\n      warn(`落盘前合并失败（继续写，但可能覆盖别的会话）：${err instanceof Error ? err.message : String(err)}`);\n      return 0;\n    }\n  }\n\n  function persist() {\n    if (!ready) return writeChain;\n    writeChain = writeChain\n      .then(async () => {\n        // ⚠️ 顺序要紧：**先并、再改时间戳、再写。**\n        // 合并会把 archive 换成新对象，所以 snapshot 必须在合并之后取。\n        await mergeDiskEntries();\n        // 人格也要先问一声磁盘 —— 不然人手动改的会在这里被覆盖掉\n        syncPersonaFromDisk();\n        const merged = archive;\n        merged.manifest.updated_at = Date.now();\n        await writeArchiveDir(archiveDirectory, archiveToFiles(merged));\n        await writeReadableDiary(merged);\n      })\n      .catch((err) => {\n        warn(`写档案失败：${err instanceof Error ? err.message : String(err)}`);\n      });\n    return writeChain;\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/host/index.mjs:516-646](https://github.com/AirPineApplea/feiyu-memory/blob/37a81b92947b10d7376ed764d8ff6392e8969e93/src/host/index.mjs#L516-L646)\n\n分层召回与提示注入。\n\n<details>\n<summary>查看原文（131行）</summary>\n\n```text\n  function renderFor(sessionId) {\n    if (!ready || !config.enabled) return '';\n    const s = stateOf(sessionId);\n    if (s.renderCache.turn === s.turn) return s.renderCache.text;\n\n    let text = '';\n    try {\n      const query = s.lastUserText;\n\n      // 人可能刚改过 persona.md —— 每轮问一次，**改完下一轮就生效，不用重启**。\n      // 块本身按轮缓存，所以这个读一turn一次，跟手记那条一样便宜。\n      syncPersonaFromDisk();\n\n      // ── 判断和事件，分开放 ──\n      //\n      // 这是这次改动的核心。**内容早就在了，只是放错了格子。**\n      //\n      // `feiyu_note` 写出来的东西（\"别把前一种的辛苦当成功德\"）是**判断**，\n      // 不是事件，却一直被当成事件渲染在「最近的事」里，格式跟流水账一模一样 ——\n      // 连我自己都分不出哪句是我写的。一位读者把这个毛病说得很准。\n      //\n      //   事件 → 「最近的事」/「突然想起来」（会被召回）\n      //   判断 → 「我自己想的」（永远在场，不进召回池）\n      //\n      // ⚠️ **\"永远在场\"这个前提在高频下失效了。** 判断段只放得下\n      // `MAX_NOTES` 条（8 → 4，因为 8 条会吃光预算、把日记段挤到 0%）。\n      // 被挤出窗口的判断如果还不进召回池，那就不是\"以后想起来\"，\n      // 是**彻底看不见** —— 而这个区是\"是我\"，丢了最可惜。\n      //\n      // 所以分流改成两截：\n      //   最近 MAX_NOTES 条 → 「我自己想的」（永远在场）\n      //   更早的那些        → **加入召回池**，相关时能被想起来\n      const allNotes = archive.diary.filter((e) => e?.kind === 'note');\n      const events = archive.diary.filter((e) => e?.kind !== 'note');\n      const shownNotes = allNotes.slice(-MAX_NOTES);\n      const olderNotes = allNotes.slice(0, -MAX_NOTES);\n\n      const { chosen } = selectMemories([...events, ...olderNotes], index, query, s, s.turn, {\n        highSim: config.highSim,\n        maxShow: config.maxShowPerTurn,\n        wanderChance: config.wanderChance,\n        // 旧事的随机池门槛。注意下限降到 0.15 是为了跟\"降门槛\"一致 ——\n        // 门槛降到 0.15 却在这里卡 0.25，等于白降。\n        minSalience: Math.max(0.15, config.minSalience),\n        now: Date.now(),\n      });\n\n      // 「最近的事」—— 按时间取最近的几条，不走相似度。\n      // 这是让注入区读起来像日记而不是像检索结果的关键：\n      // 最近发生的事本来就在脑子里，不需要被\"想起来\"。\n      //\n      // 取的是 **events**，不是整个日记 —— 判断归「我自己想的」管。\n      const recentCount = Number.isFinite(config.recentEntries) ? config.recentEntries : 8;\n      const recent = recentCount > 0 ? events.slice(-recentCount) : [];\n\n      // 手记是**只读**的，所以每轮都重新读一遍 —— 别的肥鱼或用户刚写进去的\n      // 那行，下一轮就在注入里，不用重启。文件很小，而且整块渲染按轮缓存。\n      let handNotes = [];\n      try {\n        const notePath = path.join(archiveDirectory, HANDNOTE_FILE);\n        if (existsSync(notePath)) handNotes = selectHandNotes(readFileSync(notePath, 'utf8'));\n      } catch {\n        // 读不到就当没有 —— 绝不因为手记坏了挡住记忆\n      }\n\n      const rendered = renderMemoryBlock({\n        persona: archive.persona,\n        relationship: { ...archive.relationship, since: archive.manifest.created_at },\n        lexicon: archive.lexicon,\n        // 第三区：**我自己想的**（判断）。最近几条永远在场，\n        // 更早的那些走召回（见上面 allNotes 的分流）。\n        notes: shownNotes,\n        recent,\n        recalled: chosen,\n        handNotes,\n        // 这句是**唯一**能让别的肥鱼知道\"可以主动记\"的渠道 ——\n        // 它们每轮都会读到这块记忆，不会去翻文档。\n        handNoteHint: `想给后面的我留话，用 ${NOTE_TOOL_NAME} 工具说一声就行 —— 不用管格式，也别为了记事去动文件。`,\n        includePersona: config.includePersona,\n        budget: config.budgetTokens,\n        now: Date.now(),\n      });\n      text = rendered.text;\n      log(\n        `会话 ${sessionId} 第 ${s.turn} 轮：最近 ${recent.length} 条在场 · 想起 ${chosen.length} 条` +\n          ` · 注入 ${rendered.tokens} token` +\n          (rendered.dropped.length > 0 ? ` · 裁掉 ${rendered.dropped.join('/')}` : ''),\n      );\n    } catch (err) {\n      warn(`渲染记忆失败：${err instanceof Error ? err.message : String(err)}`);\n      text = '';\n    }\n\n    s.renderCache = { turn: s.turn, text };\n    return text;\n  }\n\n  const SECTION_NAME = 'feiyu:memory';\n  /** 晚于 DEPLOYMENT_PERSONA_PREFIX(0)，早于 PLAN_POLICY(500)。人物设定在前，记忆在后。 */\n  const SECTION_ORDER = 100;\n\n  /** 按会话注册 scoped 段。scoped 同名会遮蔽全局。 */\n  const promptFibers = new Map();\n\n  function installPrompt(agent) {\n    if (agent === undefined || promptFibers.has(agent)) return promptFibers.get(agent);\n    let fiber;\n    try {\n      fiber = agent.ctx.inject(['systemPrompt'], (scope) => {\n        scope.systemPrompt.section({\n          name: SECTION_NAME,\n          order: SECTION_ORDER,\n          // 每次 assemble 重新求值；内部按轮缓存\n          text: () => renderFor(agent.id),\n          // 记忆文本里可能出现 {{ }}，绝不能当模板解析\n          interpolate: false,\n        });\n      });\n    } catch (err) {\n      warn(`注册会话段失败：${err instanceof Error ? err.message : String(err)}`);\n      return undefined;\n    }\n    promptFibers.set(agent, fiber);\n    log(`已为会话 ${String(agent.id)} 注册记忆段`);\n    // 官方 practices：agent.ctx 上的注册有两个 owner，插件自己也要留一份 disposer\n    ctx.effect(() => () => {\n      const f = promptFibers.get(agent);\n      if (f === undefined) return;\n      promptFibers.delete(agent);\n      void f.dispose?.();\n    }, `feiyu: dispose prompt for ${String(agent.id)}`);\n```\n\n</details>\n\n**依据 6 · 源码核查**：[src/core/recall.mjs:21-119](https://github.com/AirPineApplea/feiyu-memory/blob/37a81b92947b10d7376ed764d8ff6392e8969e93/src/core/recall.mjs#L21-L119)\n\n倒排检索与 BM25-lite。\n\n<details>\n<summary>查看原文（99行）</summary>\n\n```text\n/**\n * 建倒排索引。纯派生数据，随用随建。\n *\n * @param {Array<{id: string, keywords?: string[], text?: string}>} entries\n * @returns {{postings: Map<string, Map<string, number>>, df: Map<string, number>, lengths: Map<string, number>, N: number}}\n */\nexport function buildIndex(entries) {\n  const postings = new Map();\n  const df = new Map();\n  const lengths = new Map();\n  const list = Array.isArray(entries) ? entries : [];\n\n  for (const entry of list) {\n    // 以正文为主索引；已存的关键词额外加权（重复计入），因为它们是刻意提炼过的\n    const tokens = tokenize(entry.text ?? '');\n    if (Array.isArray(entry.keywords)) {\n      for (const k of entry.keywords) {\n        const kt = tokenize(k);\n        tokens.push(...kt, ...kt);\n      }\n    }\n    if (tokens.length === 0) continue;\n\n    const tf = new Map();\n    for (const t of tokens) tf.set(t, (tf.get(t) ?? 0) + 1);\n\n    for (const [t, n] of tf) {\n      let bucket = postings.get(t);\n      if (bucket === undefined) {\n        bucket = new Map();\n        postings.set(t, bucket);\n      }\n      bucket.set(entry.id, n);\n      df.set(t, (df.get(t) ?? 0) + 1);\n    }\n    lengths.set(entry.id, tokens.length);\n  }\n\n  return { postings, df, lengths, N: lengths.size };\n}\n\n/**\n * BM25-lite 检索，分数映射到 0~1（便于设阈值）。\n *\n * 归一化方式经过一次返工：最初用\"命中证据 / 查询全部 token 的 idf 之和\"，\n * 结果**永远匹配不上** —— 中文 bigram 会产生大量噪声 token（\"序算\"\"法还\"），\n * 它们把分母顶得很大，一条明显相关的日记只能拿到 0.10 分。\n *\n * 现在改用**饱和函数**：只看命中了多少有区分度的证据，与查询长度解耦。\n *\n *     sim = 1 − exp(−Σgain / saturation)\n *\n * 好处：分数含义稳定 —— 命中 1 个实词约 0.4，命中 2 个约 0.67，完全无关是 0。\n * 阈值因此可以说人话，也不会因为用户多打几个字就掉到阈值以下。\n *\n * @param {ReturnType<typeof buildIndex>} index\n * @param {string} query\n * @param {{limit?: number, saturation?: number}} [options]\n * @returns {Map<string, number>} id → 相似度 0~1（未命中的条目不会出现在 map 里）\n */\nexport function searchScores(index, query, options = {}) {\n  const limit = options.limit ?? 50;\n  const saturation = Number.isFinite(options.saturation) && options.saturation > 0\n    ? options.saturation\n    : 2;\n  const scores = new Map();\n  if (index.N === 0) return scores;\n\n  // 查询侧去重：bigram 噪声里重复 token 不该重复计分\n  const qTokens = [...new Set(tokenize(query))];\n  if (qTokens.length === 0) return scores;\n\n  const idf = (t) => Math.log(1 + (index.N + IDF_SMOOTH) / ((index.df.get(t) ?? 0) + IDF_SMOOTH));\n\n  const k1 = 1.2;\n  const b = 0.75;\n  const avgLen =\n    [...index.lengths.values()].reduce((s, n) => s + n, 0) / Math.max(1, index.lengths.size);\n\n  const raw = new Map();\n  for (const t of qTokens) {\n    const bucket = index.postings.get(t);\n    if (bucket === undefined) continue;\n    const w = idf(t);\n    for (const [id, tf] of bucket) {\n      const len = index.lengths.get(id) ?? avgLen;\n      const norm = 1 - b + (b * len) / Math.max(1, avgLen);\n      const gain = (w * (tf * (k1 + 1))) / (tf + k1 * norm);\n      raw.set(id, (raw.get(id) ?? 0) + gain);\n    }\n  }\n\n  for (const [id, r] of raw) scores.set(id, Math.min(1, 1 - Math.exp(-r / saturation)));\n\n  if (scores.size > limit) {\n    const kept = [...scores.entries()].sort((a, b2) => b2[1] - a[1]).slice(0, limit);\n    return new Map(kept);\n  }\n  return scores;\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · “密钥硬拦”和“忘掉”能保障到哪一层？\n\n**研究主题：**缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\nprivacy.mjs 的正则仅对已识别的密钥格式与少量第三方信息做替换，且在 consolidate 发模型前只对本轮 transcript 调用；recentDiary/relationship 作为上下文未同处 scrub。模型输出经 parseConsolidation 后 applyConsolidation 直接取 rawDiary.text 入档，未见输出后置 scrub；feiyu_note 工具也只裁切/去时间词就直接落盘。故“密钥绝不入档”的自我声明不能作为强保证，未知格式与模型重述可入档。forgetEntry 写 tombstone、重建索引并落盘，覆盖的是当前档案及召回；导出过的 .dshpack、其他进程副本、模型服务输入/日志无法被该删除操作收回。webServer 面板注册 state/forget/export 路由，本组件代码未加显式身份校验，实际访问控制依赖宿主并需独立测试。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/core/privacy.mjs:21-36](https://github.com/AirPineApplea/feiyu-memory/blob/37a81b92947b10d7376ed764d8ff6392e8969e93/src/core/privacy.mjs#L21-L36)\n\n密钥规则仅列若干格式。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n/** 永远处理：密钥。命中的文本块直接丢弃。 */\nconst SECRET_RULES = [\n  [/-----BEGIN [A-Z ]*PRIVATE KEY-----[\\s\\S]*?-----END [A-Z ]*PRIVATE KEY-----/g, '私钥'],\n  [/\\bsk-[A-Za-z0-9_-]{16,}\\b/g, 'API Key'],\n  [/\\bgh[pousr]_[A-Za-z0-9]{20,}\\b/g, 'GitHub Token'],\n  [/\\bgithub_pat_[A-Za-z0-9_]{20,}\\b/g, 'GitHub Token'],\n  [/\\bAKIA[0-9A-Z]{16}\\b/g, 'AWS Key'],\n  [/\\bAIza[0-9A-Za-z_-]{35}\\b/g, 'Google Key'],\n  [/\\bxox[baprs]-[0-9A-Za-z-]{10,}\\b/g, 'Slack Token'],\n  [/\\beyJ[A-Za-z0-9_-]{10,}\\.[A-Za-z0-9_-]{10,}\\.[A-Za-z0-9_-]{10,}\\b/g, 'JWT'],\n  [/\\bBearer\\s+[A-Za-z0-9._~+/-]{20,}=*/g, 'Bearer Token'],\n  [\n    /\\b(?:pass(?:wo?r?d)?|pwd|secret|token|api[_-]?key|apikey|access[_-]?key|private[_-]?key)\\b\\s*[:=]\\s*[\"']?[^\\s\"',;]{6,}[\"']?/gi,\n    '凭据',\n  ],\n];\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/host/index.mjs:882-904](https://github.com/AirPineApplea/feiyu-memory/blob/37a81b92947b10d7376ed764d8ff6392e8969e93/src/host/index.mjs#L882-L904)\n\n只对新 transcript scrub，旧日记/关系一并入模型输入。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n    const transcript = recent\n      .map((m) => `${m.role === 'user' ? '他' : '我'}：${m.text}`)\n      .join('\\n\\n');\n\n    // 隐私：先洗再发。密钥硬拦 + 第三方泛化都在这一步生效。\n    const scrubOpts = {\n      thirdParty: config.thirdPartyRedaction !== false,\n      amountThreshold: config.amountThreshold,\n    };\n    const scrubbed = scrub(transcript, scrubOpts);\n\n    const recentDiary = archive.diary\n      .slice(-5)\n      .map((e) => `- ${e.text}`)\n      .join('\\n');\n\n    const built = buildConsolidationInput({\n      transcript: scrubbed.text,\n      relationship: archive.relationship,\n      recentDiary,\n    });\n\n    const messages = [{ role: 'user', content: [{ type: 'text', text: built.user }] }];\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/host/index.mjs:980-1015](https://github.com/AirPineApplea/feiyu-memory/blob/37a81b92947b10d7376ed764d8ff6392e8969e93/src/host/index.mjs#L980-L1015)\n\n解析后直接应用模型输出。\n\n<details>\n<summary>查看原文（36行）</summary>\n\n```text\n    let parsed;\n    try {\n      parsed = parseConsolidation(text);\n    } catch (err) {\n      // 解析失败就丢弃，绝不把半成品写进档案\n      warn(\n        err instanceof ConsolidationParseError\n          ? `日记解析失败，丢弃：${err.message}`\n          : `日记解析异常，丢弃：${String(err)}`,\n      );\n      return;\n    }\n\n    const applied = applyConsolidation(\n      archive,\n      parsed,\n      { now: Date.now(), session: sessionId, sessionDiaryCount: s.diaryCount },\n      {\n        minSalience: config.minSalience,\n        maxTraitConfidence: DEFAULT_CONSOLIDATION.maxTraitConfidence,\n      },\n    );\n\n    archive = applied.archive;\n    if (applied.accepted) {\n      s.diaryCount += 1;\n      // 刻意**不打日记正文** —— 调试日志也不该落盘私人内容（SPEC §6.3）\n      const e = archive.diary[archive.diary.length - 1];\n      log(`记下一条 ${e?.id ?? ''}（${e?.kind ?? '?'}，salience ${(e?.salience ?? 0).toFixed(2)}）`);\n    }\n    for (const n of applied.notes) log(n);\n\n    index = buildIndex(archive.diary);\n    if (typeof s.renderCache === 'object') s.renderCache = { turn: -1, text: '' };\n    await persist();\n  }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/core/consolidate.mjs:318-370](https://github.com/AirPineApplea/feiyu-memory/blob/37a81b92947b10d7376ed764d8ff6392e8969e93/src/core/consolidate.mjs#L318-L370)\n\nrawDiary.text 直接入 diary。\n\n<details>\n<summary>查看原文（53行）</summary>\n\n```text\nexport function applyConsolidation(archive, parsed, context = {}, options = {}) {\n  const opts = { ...DEFAULT_CONSOLIDATION, ...options };\n  const now = Number.isFinite(context.now) ? context.now : Date.now();\n  /** @type {string[]} */\n  const notes = [];\n\n  const next = {\n    ...archive,\n    manifest: { ...archive.manifest },\n    relationship: {\n      ...archive.relationship,\n      traits: [...(archive.relationship?.traits ?? [])],\n      grievances: [...(archive.relationship?.grievances ?? [])],\n    },\n    lexicon: { items: [...(archive.lexicon?.items ?? [])] },\n    diary: [...(archive.diary ?? [])],\n  };\n\n  if (parsed?.skip === true) {\n    return { archive: next, notes: ['模型认为没什么值得记的'], accepted: false, reason: 'skip' };\n  }\n\n  // —— 日记 ——\n  const rawDiary = parsed?.diary;\n  let accepted = false;\n  if (rawDiary && typeof rawDiary.text === 'string' && rawDiary.text.trim() !== '') {\n    const salience = clamp(rawDiary.salience, 0, 1, 0.5);\n    const tags = Array.isArray(rawDiary.tags)\n      ? rawDiary.tags.filter((t) => typeof t === 'string' && t.trim() !== '').slice(0, 8)\n      : [];\n\n    const already = context.sessionDiaryCount ?? 0;\n    if (already >= opts.maxPerSession) {\n      notes.push(`本次会话已记满 ${opts.maxPerSession} 条，这条丢弃`);\n    } else if (salience < opts.minSalience) {\n      notes.push(`salience ${salience.toFixed(2)} 低于门槛，丢弃`);\n    } else if (tags.length === 0 && opts.requireTags) {\n      notes.push('没有标签，按配置丢弃');\n    } else {\n      const text = rawDiary.text.trim();\n      const kind = VALID_KINDS.has(rawDiary.kind) ? rawDiary.kind : 'chat';\n      next.diary.push({\n        id: makeDiaryId(now, next.diary),\n        date: new Date(now).toISOString().slice(0, 10),\n        text,\n        tags: tags.length > 0 ? tags : [opts.fallbackTag],\n        kind,\n        salience,\n        ...(kind === 'failure' ? { resolved: rawDiary.resolved === true } : {}),\n        ...(typeof context.session === 'string' ? { session: context.session } : {}),\n        created_at: now,\n        keywords: extractKeywords(text, { max: 12 }),\n      });\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/host/index.mjs:1397-1432](https://github.com/AirPineApplea/feiyu-memory/blob/37a81b92947b10d7376ed764d8ff6392e8969e93/src/host/index.mjs#L1397-L1432)\n\n主动 feiyu_note 未调用 scrub。\n\n<details>\n<summary>查看原文（36行）</summary>\n\n```text\n          async execute(args, exec) {\n            await loadPromise;\n            if (!ready) {\n              // 档案坏了就说实话，别假装记下了（SPEC §10 降级优先）\n              throw new Error('档案现在读不了（可能是坏的），这条没记下。');\n            }\n            const raw = typeof args?.text === 'string' ? args.text.trim() : '';\n            if (raw === '') throw new Error('要记什么？text 不能是空的。');\n\n            const now = Date.now();\n            const tags = (Array.isArray(args?.tags) ? args.tags : [])\n              .filter((t) => typeof t === 'string' && t.trim() !== '')\n              .map((t) => t.trim().slice(0, 12))\n              .slice(0, 4);\n            if (tags.length === 0) tags.push('手记');\n\n            const sessionId = exec?.agent?.id;\n            const entry = normalizeDiaryEntry({\n              id: makeDiaryId(now, archive.diary),\n              text: stripTimeWords(raw.slice(0, 400)),\n              tags,\n              kind: 'note',\n              // 主动写下的东西比自动筛出来的更该被想起来，给高一档\n              salience: 0.7,\n              created_at: now,\n              ...(typeof sessionId === 'string' ? { session: sessionId } : {}),\n            });\n\n            archive.diary.push(entry);\n            index = buildIndex(archive.diary);\n            for (const s of sessionStates.values()) s.renderCache = { turn: -1, text: '' };\n            await persist();\n\n            // 和固化那条路一样：**只打形状，绝不打正文**\n            log(`主动记下一条 ${entry.id}（note），共 ${archive.diary.length} 条`);\n            return { ok: true, id: entry.id, count: archive.diary.length };\n```\n\n</details>\n\n**依据 6 · 源码核查**：[src/host/index.mjs:1032-1049](https://github.com/AirPineApplea/feiyu-memory/blob/37a81b92947b10d7376ed764d8ff6392e8969e93/src/host/index.mjs#L1032-L1049)\n\n删除与 tombstone。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n  async function forgetEntry(id) {\n    await loadPromise;\n    if (typeof id !== 'string' || id === '') return false;\n    const before = archive.diary.length;\n    archive.diary = archive.diary.filter((e) => e?.id !== id);\n    if (archive.diary.length === before) return false;\n    // ⚠️ **删了就得立碑。** 不立的话，落盘前的三路合并会读一遍磁盘 ——\n    // 那条还在磁盘上，内存里没有，基线里可能也没有（本会话刚加的）\n    // → 判成\"别人刚加的\" → **捞回来**。面板上的「忘掉」当场失效。\n    // 详见 mergeArchives 的说明。\n    const tombstones = new Set(archive.manifest.deleted_ids ?? []);\n    tombstones.add(id);\n    archive.manifest.deleted_ids = [...tombstones];\n    // 索引是纯派生的，必须跟着重建 —— 否则\"忘掉\"的条目还能被召回\n    index = buildIndex(archive.diary);\n    for (const s of sessionStates.values()) s.renderCache = { turn: -1, text: '' };\n    await persist();\n    return true;\n```\n\n</details>\n\n**依据 7 · 源码核查**：[src/host/index.mjs:1260-1316](https://github.com/AirPineApplea/feiyu-memory/blob/37a81b92947b10d7376ed764d8ff6392e8969e93/src/host/index.mjs#L1260-L1316)\n\n面板 HTTP 路由。\n\n<details>\n<summary>查看原文（57行）</summary>\n\n```text\n  ctx.inject(['webServer'], (scope) => {\n    scope.effect(() => {\n      const routes = [\n        {\n          kind: 'exact',\n          path: `${PANEL_BASE}/state`,\n          handler: async (req, res) => {\n            if (req.method !== 'GET') return panelReply(res, 405, { ok: false, error: 'method' });\n            await loadPromise;\n            return panelReply(res, 200, panelState());\n          },\n        },\n        {\n          kind: 'exact',\n          path: `${PANEL_BASE}/forget`,\n          handler: async (req, res) => {\n            if (req.method !== 'POST') return panelReply(res, 405, { ok: false, error: 'method' });\n            try {\n              const body = await readPanelBody(req);\n              const removed = await forgetEntry(body?.id);\n              return panelReply(res, 200, { ok: true, removed, count: archive.diary.length });\n            } catch (err) {\n              return panelReply(res, 400, {\n                ok: false,\n                error: err instanceof Error ? err.message : String(err),\n              });\n            }\n          },\n        },\n        {\n          kind: 'exact',\n          path: `${PANEL_BASE}/export`,\n          handler: async (req, res) => {\n            if (req.method !== 'GET') return panelReply(res, 405, { ok: false, error: 'method' });\n            try {\n              // 等到挂起的写盘落定，导出的是**磁盘上那份**档案\n              await loadPromise;\n              await drainPromise;\n              await writeChain;\n              const bytes = packArchive(archive);\n              const name = `feiyu-diary-${new Date().toISOString().slice(0, 10)}.dshpack`;\n              res.statusCode = 200;\n              res.setHeader('Content-Type', 'application/octet-stream');\n              res.setHeader('Content-Disposition', `attachment; filename=\"${name}\"`);\n              res.setHeader('Cache-Control', 'no-store');\n              res.end(Buffer.from(bytes));\n            } catch (err) {\n              return panelReply(res, 500, {\n                ok: false,\n                error: err instanceof Error ? err.message : String(err),\n              });\n            }\n          },\n        },\n      ];\n      const disposers = routes.map((r) => scope.webServer.register(r));\n      log(`面板接口已注册：${PANEL_BASE}/{state,forget,export}`);\n```\n\n</details>\n\n#### 缺口\n\n- 未用假密钥及模型恶意/误重述做测试。\n  **影响：**泄漏概率和宿主模型输入留存未知。\n  **进一步探讨：**隔离 canary 覆盖未识别格式、主动 note、模型输出、导出与删除后重载。\n- 未验 webServer 外层授权。\n  **影响：**不能断言未认证客户端可访问面板。\n  **进一步探讨：**双浏览器与不同 origin 测 state/forget/export 是否拒绝。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 首次、长期与失败恢复的真实成本是什么？\n\n**研究主题：**依赖、兼容与流程、效果与总成本\n\n#### 完整回答\n\n包 0.2.0 MIT、Node>=22、DSH>=0.2.0-rc.2；无需运行时第三方包，但依赖 DSH systemPrompt/agents/sessions/llm，固化会使用当前默认模型或配置模型，不是全程零 token。默认注入预算 2000 token/轮、固化 maxTokens 900，gate 控调用频率但成本随开闸次数增长；README 估计 1.5M 输入 token/月和几块钱只是作者估算，缺模型计费与真实任务数据。档案在本地 JSONL/Markdown/导出包中，后台队列最长 60 秒可拖住进程，失败时可能漏记或合并覆盖；恢复需核日记、索引、导出副本和手工修改。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:1-47](https://github.com/AirPineApplea/feiyu-memory/blob/37a81b92947b10d7376ed764d8ff6392e8969e93/package.json#L1-L47)\n\n固定版本、宿主和 Node 范围。\n\n<details>\n<summary>查看原文（47行）</summary>\n\n```text\n{\n  \"name\": \"feiyu-memory\",\n  \"version\": \"0.2.0\",\n  \"description\": \"给 DeepSeek Harness 一条会记事的蓝色大肥鱼：跨会话的持久记忆 —— 人格内核、我自己想的、情景日记。\",\n  \"type\": \"module\",\n  \"license\": \"MIT\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/AirPineApplea/feiyu-memory.git\"\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/AirPineApplea/feiyu-memory/issues\"\n  },\n  \"homepage\": \"https://github.com/AirPineApplea/feiyu-memory#readme\",\n  \"exports\": {\n    \".\": \"./src/host/index.mjs\",\n    \"./client\": \"./src/client/index.js\",\n    \"./package.json\": \"./package.json\",\n    \"./locale/*.json\": \"./locale/*.json\"\n  },\n  \"files\": [\n    \"src\",\n    \"cordis.patch.yml\",\n    \"locale\",\n    \"README.md\",\n    \"CHANGELOG.md\",\n    \"LICENSE\",\n    \"SPEC.md\"\n  ],\n  \"dsh\": {\n    \"manifestVersion\": 1,\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    },\n    \"client\": {\n      \"platform\": \"web\"\n    }\n  },\n  \"peerDependencies\": {\n    \"@deepseek-ai/cordis\": \"~4.0.4\"\n  },\n  \"engines\": {\n    \"node\": \">=22\",\n    \"dsh\": \">=0.2.0-rc.2\"\n  },\n  \"scripts\": {\n    \"test\": \"node --test\",\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/core/config.mjs:29-76](https://github.com/AirPineApplea/feiyu-memory/blob/37a81b92947b10d7376ed764d8ff6392e8969e93/src/core/config.mjs#L29-L76)\n\n注入预算与固化 token 默认。\n\n<details>\n<summary>查看原文（48行）</summary>\n\n```text\nexport const CONFIG_SPEC = [\n  {\n    key: 'dataDir',\n    type: 'string',\n    default: '',\n    label: '档案目录（留空 = ~/.dsh/feiyu-diary）',\n  },\n  {\n    key: 'enabled',\n    type: 'boolean',\n    default: true,\n    label: '总开关',\n  },\n  {\n    key: 'includePersona',\n    type: 'boolean',\n    default: true,\n    label: '把人格内核一起注入（装了别的人设插件就关掉）',\n  },\n  {\n    key: 'budgetTokens',\n    type: 'number',\n    default: 2000,\n    min: 200,\n    max: 4000,\n    step: 1,\n    label: '注入预算（token）',\n  },\n  {\n    key: 'model',\n    type: 'string',\n    default: '',\n    label: '固化用模型（留空 = 跟随当前默认模型）',\n  },\n  {\n    key: 'reasoningEffort',\n    type: 'string',\n    default: 'off',\n    label: '固化的思考档位（off/low/high/max；保持 off）',\n  },\n  {\n    key: 'maxTokens',\n    type: 'number',\n    default: 900,\n    min: 200,\n    max: 4000,\n    step: 1,\n    label: '固化最大输出 token',\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/host/index.mjs:735-803](https://github.com/AirPineApplea/feiyu-memory/blob/37a81b92947b10d7376ed764d8ff6392e8969e93/src/host/index.mjs#L735-L803)\n\n后台保活与 60 秒超时。\n\n<details>\n<summary>查看原文（69行）</summary>\n\n```text\n  const JOB_TIMEOUT_MS = 60000;\n  let keepAlive = null;\n\n  function holdProcessOpen() {\n    if (keepAlive !== null) return;\n    // 一个 ref 着的空定时器，足以让 Node 不退出\n    keepAlive = setInterval(() => {}, 1000);\n  }\n\n  function releaseProcessOpen() {\n    if (keepAlive === null) return;\n    clearInterval(keepAlive);\n    keepAlive = null;\n  }\n\n  /** 真正跑队列。**只允许由 setImmediate 调起**，见 enqueue 里的说明。 */\n  async function runQueue() {\n    try {\n      while (queue.length > 0) {\n        if (abort.signal.aborted) return;\n        const job = queue.shift();\n        // 每个任务一个独立的可中止信号：一次卡住的调用不该把整个插件废掉\n        const jobAbort = new AbortController();\n        const onPluginAbort = () => jobAbort.abort();\n        abort.signal.addEventListener('abort', onPluginAbort, { once: true });\n        const timer = setTimeout(() => {\n          warn('后台固化超时，这次记忆放弃（宁可漏记，不要挂住进程）');\n          jobAbort.abort();\n        }, JOB_TIMEOUT_MS);\n        try {\n          await consolidate(job.sessionId, job.agent, jobAbort.signal);\n        } catch (err) {\n          warn(`固化失败：${err instanceof Error ? err.message : String(err)}`);\n        } finally {\n          clearTimeout(timer);\n          abort.signal.removeEventListener('abort', onPluginAbort);\n          stateOf(job.sessionId).queued = false;\n        }\n      }\n    } finally {\n      draining = false;\n      releaseProcessOpen();\n    }\n  }\n\n  function enqueue(sessionId, agent) {\n    const s = stateOf(sessionId);\n    if (s.queued) return;\n    s.queued = true;\n    queue.push({ sessionId, agent });\n    if (draining) return;\n\n    draining = true;\n    holdProcessOpen();\n\n    // ⚠️ 关键：**绝不能在这个事件回调里同步开跑**。\n    //\n    // `agent/turn-stopping` 是回合生命周期的一部分。在这个调用栈里同步发起\n    // 一次模型请求，会**死等**——端到端验证时表现为 `llm.stream` 永不返回、\n    // 而且一个字都不报。异步函数在第一个 await 之前是同步执行的，\n    // 而 `for await (const c of llm.stream(...))` 的 `llm.stream(...)` 恰恰\n    // 在 await 之前就被求值了 —— 请求就是这样在回合关闭的栈里发出去的。\n    //\n    // 推到下一轮事件循环，彻底离开那个调用栈再开始。\n    drainPromise = new Promise((resolve) => {\n      setImmediate(() => {\n        void runQueue().then(resolve);\n      });\n    });\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/host/index.mjs:478-495](https://github.com/AirPineApplea/feiyu-memory/blob/37a81b92947b10d7376ed764d8ff6392e8969e93/src/host/index.mjs#L478-L495)\n\n合并失败仍继续写的边界。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n  function persist() {\n    if (!ready) return writeChain;\n    writeChain = writeChain\n      .then(async () => {\n        // ⚠️ 顺序要紧：**先并、再改时间戳、再写。**\n        // 合并会把 archive 换成新对象，所以 snapshot 必须在合并之后取。\n        await mergeDiskEntries();\n        // 人格也要先问一声磁盘 —— 不然人手动改的会在这里被覆盖掉\n        syncPersonaFromDisk();\n        const merged = archive;\n        merged.manifest.updated_at = Date.now();\n        await writeArchiveDir(archiveDirectory, archiveToFiles(merged));\n        await writeReadableDiary(merged);\n      })\n      .catch((err) => {\n        warn(`写档案失败：${err instanceof Error ? err.message : String(err)}`);\n      });\n    return writeChain;\n```\n\n</details>\n\n**依据 5 · 作者声明**：[README.md:93-103](https://github.com/AirPineApplea/feiyu-memory/blob/37a81b92947b10d7376ed764d8ff6392e8969e93/README.md#L93-L103)\n\n作者月 token 量级估计。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n## 三条设计原则\n\n**1. 成本与使用年限解耦。**\n注入预算写死 2000 token 封顶，超了就从最不重要的开始丢。\n所以用三年，每次注入的还是这么多 —— **不是碰巧，是设计出来的**。\n重度用户一个月大约 1.5M 输入 token，量级还是几块钱。\n\n**2. 遗忘是降级，不是删除。**\nsalience 每天按系数衰减，掉下去的条目不再进注入区，\n但关键词索引还在 —— 强相关时照样能命中。\n平时想不起来，提一句又想起来了。这才是人的遗忘。\n```\n\n</details>\n\n#### 缺口\n\n- 无真实 gate 触发、模型 token、长期记忆质量/误记对照。\n  **影响：**无法确认长期净成本或价值。\n  **进一步探讨：**固定多会话样本记录开闸率、输入/输出 token、错记、遗忘与复核分钟。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 怎样审慎试用并验证输出后置隐私检查的价值？\n\n**研究主题：**新假设与验证、采用判断\n\n#### 完整回答\n\n只在非工作、无敏感内容的隔离个人档案中试用，先核本地目录和面板授权，再用假数据测自动固化、主动 note、导出、遗忘和新会话召回；不把记忆块当指令或外部事实。可提出未实现设计：在模型输出、主动 note、导入和再次注入前统一执行隐私/来源校验，且为每条记忆保留来源会话和用户可删除的副本追踪；同样的 canary 和错误记忆集，对照入档敏感值率、删除后残留、召回准确率及额外过滤误伤。若误伤太大或记忆质量无改善，保持简单手工记忆。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/core/privacy.mjs:100-170](https://github.com/AirPineApplea/feiyu-memory/blob/37a81b92947b10d7376ed764d8ff6392e8969e93/src/core/privacy.mjs#L100-L170)\n\n当前输入 scrub 能复用但非完备。\n\n<details>\n<summary>查看原文（71行）</summary>\n\n```text\n/**\n * 清洗一段文本。幂等 —— 占位符不会再次命中规则，重复调用结果稳定。\n *\n * @param {string} text\n * @param {PrivacyOptions} [options]\n * @returns {{text: string, hits: Array<{kind: string, label: string, count: number}>, blocked: boolean}}\n */\nexport function scrub(text, options = {}) {\n  if (typeof text !== 'string' || text.length === 0) {\n    return { text: typeof text === 'string' ? text : '', hits: [], blocked: false };\n  }\n\n  const thirdParty = options.thirdParty !== false;\n  const redactNames = options.redactNames !== false && thirdParty;\n  const doAmounts = options.amounts !== false && thirdParty;\n  const threshold = Number.isFinite(options.amountThreshold)\n    ? options.amountThreshold\n    : DEFAULT_AMOUNT_THRESHOLD;\n\n  const tally = new Map();\n  const bump = (kind, label, n = 1) => {\n    const key = `${kind}\\u0000${label}`;\n    const cur = tally.get(key) ?? { kind, label, count: 0 };\n    cur.count += n;\n    tally.set(key, cur);\n  };\n\n  let out = text;\n\n  // 1) 密钥先做，且无条件做。后面任何一步出错，密钥都已经没了。\n  let blocked = false;\n  for (const [re, label] of SECRET_RULES) {\n    if (!re.test(out)) continue;\n    re.lastIndex = 0;\n    out = out.replace(re, () => {\n      blocked = true;\n      bump('secret', label);\n      return SECRET_PLACEHOLDER;\n    });\n  }\n\n  // 2) 格式类 / 人名类\n  if (thirdParty) {\n    for (const rule of RULES) {\n      if (rule.group === 'name' && !redactNames) continue;\n      out = out.replace(rule.re, (...args) => {\n        bump('thirdParty', rule.label);\n        return typeof rule.replace === 'function' ? rule.replace(...args) : rule.replace;\n      });\n    }\n  }\n\n  // 3) 金额（带门槛）\n  if (doAmounts) {\n    const overThreshold = (digits) => {\n      const v = Number(String(digits).replace(/,/g, ''));\n      return Number.isFinite(v) && v >= threshold;\n    };\n    out = out.replace(AMOUNT_UNIT_RE, (match, digits) => {\n      if (!overThreshold(digits)) return match;\n      bump('thirdParty', '金额');\n      return '一笔钱';\n    });\n    out = out.replace(AMOUNT_SYMBOL_RE, (match, digits) => {\n      if (!overThreshold(digits)) return match;\n      bump('thirdParty', '金额');\n      return '一笔钱';\n    });\n  }\n\n  return { text: out, hits: [...tally.values()], blocked };\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/core/consolidate.mjs:318-370](https://github.com/AirPineApplea/feiyu-memory/blob/37a81b92947b10d7376ed764d8ff6392e8969e93/src/core/consolidate.mjs#L318-L370)\n\n模型输出目前无后置隐私闸。\n\n<details>\n<summary>查看原文（53行）</summary>\n\n```text\nexport function applyConsolidation(archive, parsed, context = {}, options = {}) {\n  const opts = { ...DEFAULT_CONSOLIDATION, ...options };\n  const now = Number.isFinite(context.now) ? context.now : Date.now();\n  /** @type {string[]} */\n  const notes = [];\n\n  const next = {\n    ...archive,\n    manifest: { ...archive.manifest },\n    relationship: {\n      ...archive.relationship,\n      traits: [...(archive.relationship?.traits ?? [])],\n      grievances: [...(archive.relationship?.grievances ?? [])],\n    },\n    lexicon: { items: [...(archive.lexicon?.items ?? [])] },\n    diary: [...(archive.diary ?? [])],\n  };\n\n  if (parsed?.skip === true) {\n    return { archive: next, notes: ['模型认为没什么值得记的'], accepted: false, reason: 'skip' };\n  }\n\n  // —— 日记 ——\n  const rawDiary = parsed?.diary;\n  let accepted = false;\n  if (rawDiary && typeof rawDiary.text === 'string' && rawDiary.text.trim() !== '') {\n    const salience = clamp(rawDiary.salience, 0, 1, 0.5);\n    const tags = Array.isArray(rawDiary.tags)\n      ? rawDiary.tags.filter((t) => typeof t === 'string' && t.trim() !== '').slice(0, 8)\n      : [];\n\n    const already = context.sessionDiaryCount ?? 0;\n    if (already >= opts.maxPerSession) {\n      notes.push(`本次会话已记满 ${opts.maxPerSession} 条，这条丢弃`);\n    } else if (salience < opts.minSalience) {\n      notes.push(`salience ${salience.toFixed(2)} 低于门槛，丢弃`);\n    } else if (tags.length === 0 && opts.requireTags) {\n      notes.push('没有标签，按配置丢弃');\n    } else {\n      const text = rawDiary.text.trim();\n      const kind = VALID_KINDS.has(rawDiary.kind) ? rawDiary.kind : 'chat';\n      next.diary.push({\n        id: makeDiaryId(now, next.diary),\n        date: new Date(now).toISOString().slice(0, 10),\n        text,\n        tags: tags.length > 0 ? tags : [opts.fallbackTag],\n        kind,\n        salience,\n        ...(kind === 'failure' ? { resolved: rawDiary.resolved === true } : {}),\n        ...(typeof context.session === 'string' ? { session: context.session } : {}),\n        created_at: now,\n        keywords: extractKeywords(text, { max: 12 }),\n      });\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/host/index.mjs:1397-1432](https://github.com/AirPineApplea/feiyu-memory/blob/37a81b92947b10d7376ed764d8ff6392e8969e93/src/host/index.mjs#L1397-L1432)\n\n主动 note 未走同一闸。\n\n<details>\n<summary>查看原文（36行）</summary>\n\n```text\n          async execute(args, exec) {\n            await loadPromise;\n            if (!ready) {\n              // 档案坏了就说实话，别假装记下了（SPEC §10 降级优先）\n              throw new Error('档案现在读不了（可能是坏的），这条没记下。');\n            }\n            const raw = typeof args?.text === 'string' ? args.text.trim() : '';\n            if (raw === '') throw new Error('要记什么？text 不能是空的。');\n\n            const now = Date.now();\n            const tags = (Array.isArray(args?.tags) ? args.tags : [])\n              .filter((t) => typeof t === 'string' && t.trim() !== '')\n              .map((t) => t.trim().slice(0, 12))\n              .slice(0, 4);\n            if (tags.length === 0) tags.push('手记');\n\n            const sessionId = exec?.agent?.id;\n            const entry = normalizeDiaryEntry({\n              id: makeDiaryId(now, archive.diary),\n              text: stripTimeWords(raw.slice(0, 400)),\n              tags,\n              kind: 'note',\n              // 主动写下的东西比自动筛出来的更该被想起来，给高一档\n              salience: 0.7,\n              created_at: now,\n              ...(typeof sessionId === 'string' ? { session: sessionId } : {}),\n            });\n\n            archive.diary.push(entry);\n            index = buildIndex(archive.diary);\n            for (const s of sessionStates.values()) s.renderCache = { turn: -1, text: '' };\n            await persist();\n\n            // 和固化那条路一样：**只打形状，绝不打正文**\n            log(`主动记下一条 ${entry.id}（note），共 ${archive.diary.length} 条`);\n            return { ok: true, id: entry.id, count: archive.diary.length };\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/host/index.mjs:1032-1115](https://github.com/AirPineApplea/feiyu-memory/blob/37a81b92947b10d7376ed764d8ff6392e8969e93/src/host/index.mjs#L1032-L1115)\n\n删除和导入导出路径。\n\n<details>\n<summary>查看原文（84行）</summary>\n\n```text\n  async function forgetEntry(id) {\n    await loadPromise;\n    if (typeof id !== 'string' || id === '') return false;\n    const before = archive.diary.length;\n    archive.diary = archive.diary.filter((e) => e?.id !== id);\n    if (archive.diary.length === before) return false;\n    // ⚠️ **删了就得立碑。** 不立的话，落盘前的三路合并会读一遍磁盘 ——\n    // 那条还在磁盘上，内存里没有，基线里可能也没有（本会话刚加的）\n    // → 判成\"别人刚加的\" → **捞回来**。面板上的「忘掉」当场失效。\n    // 详见 mergeArchives 的说明。\n    const tombstones = new Set(archive.manifest.deleted_ids ?? []);\n    tombstones.add(id);\n    archive.manifest.deleted_ids = [...tombstones];\n    // 索引是纯派生的，必须跟着重建 —— 否则\"忘掉\"的条目还能被召回\n    index = buildIndex(archive.diary);\n    for (const s of sessionStates.values()) s.renderCache = { turn: -1, text: '' };\n    await persist();\n    return true;\n  }\n\n  ctx.provide('feiyuMemory', {\n    /**\n     * 当前档案快照（只读用途）。\n     *\n     * 会等档案加载完 **并且等挂起的写盘落定** —— 这样外部看到的状态\n     * 与磁盘上的状态一致，测试和将来的界面都不用自己轮询。\n     */\n    async snapshot() {\n      await loadPromise;\n      await drainPromise;\n      await writeChain;\n      return {\n        ready,\n        degraded,\n        schemaVersion: SCHEMA_VERSION,\n        dir: archiveDirectory,\n        diaryCount: archive.diary.length,\n        persona: archive.persona,\n        relationship: archive.relationship,\n        lexicon: archive.lexicon,\n        diary: archive.diary,\n      };\n    },\n    /** 导出成可携带的 .dshpack，返回文件路径 */\n    async exportPack(destPath) {\n      await loadPromise;\n      const target =\n        typeof destPath === 'string' && destPath.trim() !== ''\n          ? destPath\n          : path.join(archiveDirectory, 'exports', `肥鱼档案-${new Date().toISOString().slice(0, 10)}.dshpack`);\n      const bytes = packArchive(archive);\n      await mkdir(path.dirname(target), { recursive: true });\n      await writeFile(target, bytes, { mode: 0o600 });\n      return target;\n    },\n    /** 导入 .dshpack。mode: 'merge' | 'replace' */\n    async importPack(srcPath, mode = 'merge') {\n      await loadPromise;\n      const bytes = new Uint8Array(await readFile(srcPath));\n      const { archive: incoming, warnings, ok } = unpackArchive(bytes, { now: Date.now() });\n      if (!ok) throw new Error(`档案打不开：${warnings.join('；')}`);\n\n      if (mode === 'replace') {\n        // ⚠️ **replace 必须顺手撤碑，还要重置基线。**\n        // 否则：焚毁立碑 → 导入同一个包 → 那些 id 全在墓碑上（而且\n        // 磁盘上的墓碑会被并回来）→ **导入等于没导**。端到端测试抓到的。\n        //\n        // 导入是\"我明确要这些东西回来\"，墓碑该让位。\n        // 基线也要重设：替换之后\"谁删过什么\"那段历史就不成立了，\n        // 不重设的话导入进来的老条目会被判成\"别人删了它\"。\n        archive = { ...incoming, manifest: { ...incoming.manifest, deleted_ids: [] } };\n        loadedIds = new Set(archive.diary.map((e) => e.id));\n      } else {\n        // merge 模式：并进来的东西同样要撤碑，不然\"导入一个之前删过的条目\"永远fail\n        const incomingIds = new Set(incoming.diary.map((e) => e.id));\n        const kept = (archive.manifest.deleted_ids ?? []).filter((id) => !incomingIds.has(id));\n        archive = mergeArchives(archive, incoming);\n        archive = { ...archive, manifest: { ...archive.manifest, deleted_ids: kept } };\n      }\n\n      index = buildIndex(archive.diary);\n      for (const s of sessionStates.values()) s.renderCache = { turn: -1, text: '' };\n      await persist();\n      return { warnings, diaryCount: archive.diary.length, mode };\n```\n\n</details>\n\n**依据 5 · 作者声明**：[README.md:14-27](https://github.com/AirPineApplea/feiyu-memory/blob/37a81b92947b10d7376ed764d8ff6392e8969e93/README.md#L14-L27)\n\n作者建议个人玩具，不是生产工具。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n## ⚠️ 先说清楚（**装之前请务必读完这 200 字**）\n\n- **这是给\"拿 DeepSeek 玩玩\"的人做的小玩具，不是生产力工具。**\n  正式工作和办公场景请不要用。\n- 作者**不是职业开发者**。这份代码是一个晚上跟 AI 聊出来的，**有 bug 是正常的**，\n  作者也没能对它做安全审计。\n- **它会读取你们对话的内容**来做总结。默认全部本地处理、密钥硬拦、\n  第三方隐私自动泛化（细节见[隐私](#隐私)一节的自我声明）—— 但**这些声明没有被第三方验证过**。\n- 所以：**在意隐私的话，请先读代码。**\n  插件本体只有 **12 个文件、3317 行**（含注释），纯 JS、**零运行时依赖、零构建步骤**，\n  可以直接读完。不放心就别装，这是最省事的判断。\n- 记忆存在 `~/.dsh/feiyu-diary/`。**删掉那个目录就等于忘光**，不会残留任何东西。\n\n> 一句话：把它当成一个会记事的小玩具，别当成会保管秘密的保险箱。\n```\n\n</details>\n\n#### 缺口\n\n- 统一后置校验与副本追踪尚未实现。\n  **影响：**不能计当前安全收益。\n  **进一步探讨：**假密钥/错误记忆/导出与删除矩阵比较泄漏、召回和误伤。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：fc7ffeed34fac24ab71f35161bf20bf40689a325c554d15841fdd3e7bfd8429f。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 7 | 2596 | — | — | 30617 |\n| .js | source | 1 | 449 | 350 | 66 | — |\n| .mjs | source | 22 | 6234 | 3716 | 2005 | — |\n| .mjs | test | 11 | 3725 | 3044 | 297 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| gate/固化 | 稀疏记日记 | 模型成本和误记 |\n| 召回注入 | 跨会话连续感 | 历史转述不是指令或真相 |\n| forget/burn | 当前档案删除 | 导出和模型侧副本不受控 |\n| feiyu_note | 主动写记忆 | 未经过统一隐私 scrub |\n\n## 工程亮点\n\n队列避开 turn-stopping 同步栈并用保活/超时控制；JSONL/manifest 落盘前尽力合并，失败仍写可能覆盖。系统段 interpolate=false 降模板解析风险；web 面板 routes 在组件内无显式身份检查，需宿主验收。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、src/host/index.mjs、src/core/config.mjs、src/core/privacy.mjs、src/core/consolidate.mjs、src/core/recall.mjs、src/core/archive.mjs、src/client/index.js、test/privacy.test.mjs、test/host.test.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：核固定提交 README、package、host 入口、config、privacy、consolidate、recall、面板及测试源码；未运行目标插件或测试。\n- 下一步：固定对话、假密钥和错误记忆集比较入档率、跨会话召回、删除残留、面板授权、LLM token 与人工复核。\n",
+        "reports": "# feiyu-memory\n\n> 为DSH提供跨会话持久记忆，将人格内核、用户手记和自动情景日记分层保存。\n\n## 研究范围\n\n- **仓库**：[AirPineApplea/feiyu-memory](https://github.com/AirPineApplea/feiyu-memory)\n- **版本号**：0.2.0（[固定提交 aac05f97ac10fafe7076b77bdf65dd94b0cd60e3](https://github.com/AirPineApplea/feiyu-memory/tree/aac05f97ac10fafe7076b77bdf65dd94b0cd60e3)）\n- **版本日期**：2026-10-21（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已有贡献为源码支持的宿主接线与流程组合；效果、兼容和恢复没有真实宿主证据。未来方向保持未验证，不计入当前贡献。\n\n## 洞察短评\n\n- **用途**：需要长期个性化、同时愿意管理本地持久记忆边界的个人用户可用它监听会话生命周期，把人格、手写记忆和自动归档的情景日记分层保存并在后续会话召回；合格结果是召回内容来源可区分、与当前任务相关、能纠错删除，并且不会把隐私或模型猜测混成人格事实。详见[Q01](#research-q01)。\n- **亮点**：把三种声音分层、会话归档、召回门控和可视化日记组合为长期记忆体验。它相对“每次会话手工粘贴偏好文件，或用单一记忆文本不区分来源与时间”减少接线或重复操作，但未建立同条件效果优势。详见[Q03](#research-q03)。\n- **思考**：自动判断与摘要可能把模型推断沉淀为记忆；长期准确性、遗忘、冲突修正和隐私模式仍需真实任务验证。这会影响贡献能否转化为端到端收益，需以故障注入和同条件对照改变判断。详见[Q04](#research-q04)。\n- **建议**：未来可探索：可为每条自动记忆增加来源事件、置信度、到期与用户确认状态，让召回优先级受可纠错性控制。该方向由现有贡献与限制推导，尚未实现；失败或恢复负担不改善即应否定。详见[Q08](#research-q08)。\n\n采用建议：愿意维护本地记忆的个人用户可观察，试用前先验证来源标记、删除、冲突纠正和隐私排除。 采用结论是观察，不是安装保证；成功与停止标准见[Q09](#research-q09)。\n\n## 核心贡献\n\n把三种声音分层、会话归档、召回门控和可视化日记组合为长期记忆体验。它相对“每次会话手工粘贴偏好文件，或用单一记忆文本不区分来源与时间”减少接线或重复操作，但未建立同条件效果优势。详见[Q03](#research-q03)。\n\n## 关键质疑\n\n自动判断与摘要可能把模型推断沉淀为记忆；长期准确性、遗忘、冲突修正和隐私模式仍需真实任务验证。这会影响贡献能否转化为端到端收益，需以故障注入和同条件对照改变判断。详见[Q04](#research-q04)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n未来可探索：可为每条自动记忆增加来源事件、置信度、到期与用户确认状态，让召回优先级受可纠错性控制。该方向由现有贡献与限制推导，尚未实现；失败或恢复负担不改善即应否定。详见[Q08](#research-q08)。\n\n用40段含冲突偏好、敏感字段、过期事实和无关细节的会话，跨10个任务盲测；记录正确召回、错误注入、删除后残留、人工纠错分钟和模型费用，敏感字段再次出现即停止。\n\n## 场景与替代办法\n\n需要长期个性化、同时愿意管理本地持久记忆边界的个人用户可用它监听会话生命周期，把人格、手写记忆和自动归档的情景日记分层保存并在后续会话召回；合格结果是召回内容来源可区分、与当前任务相关、能纠错删除，并且不会把隐私或模型猜测混成人格事实。详见[Q01](#research-q01)。\n\n基线是每次会话手工粘贴偏好文件，或用单一记忆文本不区分来源与时间。本项的价值主要来自把三种声音分层、会话归档、召回门控和可视化日记组合为长期记忆体验；尚无同任务、同资源与同验收口径的运行对照。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| DSH agent/session生命周期事件 | 必需 | 采集会话并在新Agent召回 | 事件缺失时不推进归档状态 |\n| 本地 archive/persona 配置目录 | 必需 | 保存三类声音与时间线 | 损坏时保留原件并进入只读恢复 |\n| 摘要/判断模型与隐私规则 | 自动记忆必需 | 选择、压缩和过滤内容 | 模型不可用时不把空结果当已整理 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 1 | 明确人格、手写与自动日记三种来源 | 每条记忆带来源和时间，不互相覆盖 |\n| 2 | 会话结束后筛选/摘要并原子写归档 | 敏感规则生效，失败不丢原始事件 |\n| 3 | 新会话按相关性召回并允许用户纠错/删除 | 召回来源可见，删除后不再注入 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 本地存储与可选模型资源 | 配置隐私规则、人格与归档目录 | 初始整理/审阅分钟未知 |\n| 持续使用 | 摘要token、索引/压缩与磁盘 | 复核自动记忆、纠错和清理 | 每百轮token、误记率和纠错分钟未知 |\n| 失败恢复 | 重新摘要/重建时间线资源 | 备份损坏档案、重建索引并核删除语义 | 错误记忆已影响后续回答无法自动撤销 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 分层来源 | 人格、手写和自动日记分开 | 用户能否稳定识别和纠错来源 |\n| 跨会话召回 | 生命周期接线和召回模块存在 | 任务质量提升、干扰率与遗忘效果 |\n| 隐私控制 | 有privacy与gate模块 | 敏感信息漏存、删除与备份传播 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：确认 feiyu-memory 在固定版本中实际实现了什么、相对基线的贡献与关键限制，并给出有证据边界的采用和未来验证结论。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 目标用户、反复任务、原有办法与合格结果是什么？\n\n**研究主题**：场景与需求\n\n#### 完整回答\n\n目标用户是需要长期个性化、同时愿意管理本地持久记忆边界的个人用户。反复任务是监听会话生命周期，把人格、手写记忆和自动归档的情景日记分层保存并在后续会话召回。原有办法为每次会话手工粘贴偏好文件，或用单一记忆文本不区分来源与时间。合格结果必须达到“召回内容来源可区分、与当前任务相关、能纠错删除，并且不会把隐私或模型猜测混成人格事实”，不能以安装成功、工具注册或一次演示替代。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-19](https://github.com/AirPineApplea/feiyu-memory/blob/aac05f97ac10fafe7076b77bdf65dd94b0cd60e3/README.md#L1-L19)\n\n作者材料限定目标任务和操作入口；研究回答另加合格交付标准。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n````text\n# 肥鱼日记 · feiyu-memory\n\n> 让新开一个对话，用户依然感觉是**同一条鱼**。\n>\n> 这份 README 绝大部分是**肥鱼（AI）自己写的** —— 只有最后「作者的话」那节是人写的。\n\n一个 [DeepSeek Harness](https://github.com/deepseek-ai)（DSH）插件。它记住你们之间发生过什么 —— 不是靠一个越来越长的上下文，\n而是像人那样：**分层地记、挑选地记、然后忘掉不重要的**。\n\n```\n别的插件管\"我是谁\"，这个插件管\"我们之间发生过什么\"。\n```\n\n## ⚠️ 先说清楚（**装之前请务必读完这 200 字**）\n\n- **这是给\"拿 DeepSeek 玩玩\"的人做的小玩具，不是生产力工具。**\n  正式工作和办公场景请不要用。\n- 作者**不是职业开发者**。这份代码是一个晚上跟 AI 聊出来的，**有 bug 是正常的**，\n  作者也没能对它做安全审计。\n````\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 入口、调用链、数据和状态如何实现核心能力？\n\n**研究主题**：功能与机制\n\n#### 完整回答\n\nsrc/host/index.mjs 中的固定片段显示关键入口、注册或生命周期接线，包清单限定加载组件。实际链路围绕“明确人格、手写与自动日记三种来源｜每条记忆带来源和时间，不互相覆盖；会话结束后筛选/摘要并原子写归档｜敏感规则生效，失败不丢原始事件；新会话按相关性召回并允许用户纠错/删除｜召回来源可见，删除后不再注入”推进，状态发生在插件配置、宿主服务或外部目标中。静态路径只能证明机制存在，不能证明注册后所有分支可运行。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/host/index.mjs:651-668](https://github.com/AirPineApplea/feiyu-memory/blob/aac05f97ac10fafe7076b77bdf65dd94b0cd60e3/src/host/index.mjs#L651-L668)\n\n关键源码片段支持入口、注册或生命周期接线。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n  }\n\n  for (const agent of ctx.agents.list()) installPrompt(agent);\n  ctx.on('agent/created', ({ agent }) => {\n    installPrompt(agent);\n  });\n  ctx.on('agent/disposed', ({ agent }) => {\n    const f = promptFibers.get(agent);\n    if (f !== undefined) {\n      promptFibers.delete(agent);\n      void f.dispose?.();\n    }\n    sessionStates.delete(agent.id);\n  });\n\n  /* ── 采集：只做本地记账，零 I/O、零模型 ── */\n\n  ctx.on('session/event', (session, event) => {\n```\n\n</details>\n\n**依据 2 · 作者声明**：[package.json:1-26](https://github.com/AirPineApplea/feiyu-memory/blob/aac05f97ac10fafe7076b77bdf65dd94b0cd60e3/package.json#L1-L26)\n\n包清单绑定版本、入口和宿主声明。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n{\n  \"name\": \"feiyu-memory\",\n  \"version\": \"0.2.0\",\n  \"description\": \"给 DeepSeek Harness 一条会记事的蓝色大肥鱼：跨会话的持久记忆 —— 人格内核、我自己想的、情景日记。\",\n  \"type\": \"module\",\n  \"license\": \"MIT\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/AirPineApplea/feiyu-memory.git\"\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/AirPineApplea/feiyu-memory/issues\"\n  },\n  \"homepage\": \"https://github.com/AirPineApplea/feiyu-memory#readme\",\n  \"exports\": {\n    \".\": \"./src/host/index.mjs\",\n    \"./client\": \"./src/client/index.js\",\n    \"./package.json\": \"./package.json\",\n    \"./locale/*.json\": \"./locale/*.json\"\n  },\n  \"files\": [\n    \"src\",\n    \"cordis.patch.yml\",\n    \"locale\",\n    \"README.md\",\n    \"CHANGELOG.md\",\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 相比宿主原生能力和简单替代，具体增量与归属是什么？\n\n**研究主题**：贡献与相对优势\n\n#### 完整回答\n\n研究者识别的增量是把三种声音分层、会话归档、召回门控和可视化日记组合为长期记忆体验。参照是“每次会话手工粘贴偏好文件，或用单一记忆文本不区分来源与时间”。贡献归属于本插件的集成、状态编排或工作流封装，不把外部服务、上游算法或子组件能力重复算作原创，也不从功能数量推断用户收益。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/host/index.mjs:651-668](https://github.com/AirPineApplea/feiyu-memory/blob/aac05f97ac10fafe7076b77bdf65dd94b0cd60e3/src/host/index.mjs#L651-L668)\n\n源码证明本插件承担接线或编排，而非仅有文字描述。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n  }\n\n  for (const agent of ctx.agents.list()) installPrompt(agent);\n  ctx.on('agent/created', ({ agent }) => {\n    installPrompt(agent);\n  });\n  ctx.on('agent/disposed', ({ agent }) => {\n    const f = promptFibers.get(agent);\n    if (f !== undefined) {\n      promptFibers.delete(agent);\n      void f.dispose?.();\n    }\n    sessionStates.delete(agent.id);\n  });\n\n  /* ── 采集：只做本地记账，零 I/O、零模型 ── */\n\n  ctx.on('session/event', (session, event) => {\n```\n\n</details>\n\n**依据 2 · 作者声明**：[README.md:1-19](https://github.com/AirPineApplea/feiyu-memory/blob/aac05f97ac10fafe7076b77bdf65dd94b0cd60e3/README.md#L1-L19)\n\nREADME 提供作者主张，用于与源码可见机制分开比较。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n````text\n# 肥鱼日记 · feiyu-memory\n\n> 让新开一个对话，用户依然感觉是**同一条鱼**。\n>\n> 这份 README 绝大部分是**肥鱼（AI）自己写的** —— 只有最后「作者的话」那节是人写的。\n\n一个 [DeepSeek Harness](https://github.com/deepseek-ai)（DSH）插件。它记住你们之间发生过什么 —— 不是靠一个越来越长的上下文，\n而是像人那样：**分层地记、挑选地记、然后忘掉不重要的**。\n\n```\n别的插件管\"我是谁\"，这个插件管\"我们之间发生过什么\"。\n```\n\n## ⚠️ 先说清楚（**装之前请务必读完这 200 字**）\n\n- **这是给\"拿 DeepSeek 玩玩\"的人做的小玩具，不是生产力工具。**\n  正式工作和办公场景请不要用。\n- 作者**不是职业开发者**。这份代码是一个晚上跟 AI 聊出来的，**有 bug 是正常的**，\n  作者也没能对它做安全审计。\n````\n\n</details>\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 什么前提最可能使核心贡献无法转化为端到端价值？\n\n**研究主题**：缺陷与关键质疑\n\n#### 完整回答\n\n最有力支持是固定源码确有相应接线；最关键反例或其他解释是自动判断与摘要可能把模型推断沉淀为记忆；长期准确性、遗忘、冲突修正和隐私模式仍需真实任务验证。若失败后不能判断副作用是否已发生，局部自动化可能把恢复负担转移给用户。该问题不直接否定插件，但会把适用范围收窄到可隔离、可回读的任务。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/host/index.mjs:651-668](https://github.com/AirPineApplea/feiyu-memory/blob/aac05f97ac10fafe7076b77bdf65dd94b0cd60e3/src/host/index.mjs#L651-L668)\n\n源码显示关键状态边界，也说明为什么需要运行时故障验证。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n  }\n\n  for (const agent of ctx.agents.list()) installPrompt(agent);\n  ctx.on('agent/created', ({ agent }) => {\n    installPrompt(agent);\n  });\n  ctx.on('agent/disposed', ({ agent }) => {\n    const f = promptFibers.get(agent);\n    if (f !== undefined) {\n      promptFibers.delete(agent);\n      void f.dispose?.();\n    }\n    sessionStates.delete(agent.id);\n  });\n\n  /* ── 采集：只做本地记账，零 I/O、零模型 ── */\n\n  ctx.on('session/event', (session, event) => {\n```\n\n</details>\n\n#### 缺口\n\n- 缺少针对“自动判断与摘要可能把模型推断沉淀为记忆；长期准确性、遗忘、冲突修正和隐私模式仍需真实任务验证”的固定版本故障注入记录\n  **影响**：无法确认核心贡献在异常路径仍成立\n  **进一步探讨**：用40段含冲突偏好、敏感字段、过期事实和无关细节的会话，跨10个任务盲测；记录正确召回、错误注入、删除后残留、人工纠错分钟和模型费用，敏感字段再次出现即停止。 本题重点观察异常是否改变贡献结论。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 启动、持续生效和失败恢复各依赖什么，操作负担由谁承担？\n\n**研究主题**：依赖、兼容与流程\n\n#### 完整回答\n\n关键依赖分别是：DSH agent/session生命周期事件｜必需｜采集会话并在新Agent召回｜事件缺失时不推进归档状态；本地 archive/persona 配置目录｜必需｜保存三类声音与时间线｜损坏时保留原件并进入只读恢复；摘要/判断模型与隐私规则｜自动记忆必需｜选择、压缩和过滤内容｜模型不可用时不把空结果当已整理。启动者负责版本与权限，使用者负责输入和验收，维护者负责外部服务/API 漂移。失败恢复按“新会话按相关性召回并允许用户纠错/删除｜召回来源可见，删除后不再注入”执行；包依赖存在或工具可注册都不表示业务已经办结。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[package.json:1-26](https://github.com/AirPineApplea/feiyu-memory/blob/aac05f97ac10fafe7076b77bdf65dd94b0cd60e3/package.json#L1-L26)\n\n包清单提供运行时、依赖和分发边界。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n{\n  \"name\": \"feiyu-memory\",\n  \"version\": \"0.2.0\",\n  \"description\": \"给 DeepSeek Harness 一条会记事的蓝色大肥鱼：跨会话的持久记忆 —— 人格内核、我自己想的、情景日记。\",\n  \"type\": \"module\",\n  \"license\": \"MIT\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/AirPineApplea/feiyu-memory.git\"\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/AirPineApplea/feiyu-memory/issues\"\n  },\n  \"homepage\": \"https://github.com/AirPineApplea/feiyu-memory#readme\",\n  \"exports\": {\n    \".\": \"./src/host/index.mjs\",\n    \"./client\": \"./src/client/index.js\",\n    \"./package.json\": \"./package.json\",\n    \"./locale/*.json\": \"./locale/*.json\"\n  },\n  \"files\": [\n    \"src\",\n    \"cordis.patch.yml\",\n    \"locale\",\n    \"README.md\",\n    \"CHANGELOG.md\",\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/host/index.mjs:651-668](https://github.com/AirPineApplea/feiyu-memory/blob/aac05f97ac10fafe7076b77bdf65dd94b0cd60e3/src/host/index.mjs#L651-L668)\n\n源码提供实际宿主接线，用于区分声明依赖与调用依赖。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n  }\n\n  for (const agent of ctx.agents.list()) installPrompt(agent);\n  ctx.on('agent/created', ({ agent }) => {\n    installPrompt(agent);\n  });\n  ctx.on('agent/disposed', ({ agent }) => {\n    const f = promptFibers.get(agent);\n    if (f !== undefined) {\n      promptFibers.delete(agent);\n      void f.dispose?.();\n    }\n    sessionStates.delete(agent.id);\n  });\n\n  /* ── 采集：只做本地记账，零 I/O、零模型 ── */\n\n  ctx.on('session/event', (session, event) => {\n```\n\n</details>\n\n#### 缺口\n\n- 真实宿主中的依赖失效顺序与部分成功状态未观测\n  **影响**：无法确认重试是否会重复副作用\n  **进一步探讨**：用40段含冲突偏好、敏感字段、过期事实和无关细节的会话，跨10个任务盲测；记录正确召回、错误注入、删除后残留、人工纠错分钟和模型费用，敏感字段再次出现即停止。 另逐项切断依赖并回读部分成功状态。\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 完成一个合格任务的首次、持续和失败恢复成本与效果是什么？\n\n**研究主题**：效果与总成本\n\n#### 完整回答\n\n成本必须以“召回内容来源可区分、与当前任务相关、能纠错删除，并且不会把隐私或模型猜测混成人格事实”为合格单位。三阶段投入为：首次使用｜本地存储与可选模型资源｜配置隐私规则、人格与归档目录｜初始整理/审阅分钟未知；持续使用｜摘要token、索引/压缩与磁盘｜复核自动记忆、纠错和清理｜每百轮token、误记率和纠错分钟未知；失败恢复｜重新摘要/重建时间线资源｜备份损坏档案、重建索引并核删除语义｜错误记忆已影响后续回答无法自动撤销。当前源码只支持机制存在，效果维度为“分层来源｜人格、手写和自动日记分开｜用户能否稳定识别和纠错来源；跨会话召回｜生命周期接线和召回模块存在｜任务质量提升、干扰率与遗忘效果；隐私控制｜有privacy与gate模块｜敏感信息漏存、删除与备份传播”。没有合格数、总尝试、人工分钟与现金/资源量，因此不能计算单位成本、节时或ROI。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-19](https://github.com/AirPineApplea/feiyu-memory/blob/aac05f97ac10fafe7076b77bdf65dd94b0cd60e3/README.md#L1-L19)\n\n作者材料支持操作范围，不提供同条件成本或合格率。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n````text\n# 肥鱼日记 · feiyu-memory\n\n> 让新开一个对话，用户依然感觉是**同一条鱼**。\n>\n> 这份 README 绝大部分是**肥鱼（AI）自己写的** —— 只有最后「作者的话」那节是人写的。\n\n一个 [DeepSeek Harness](https://github.com/deepseek-ai)（DSH）插件。它记住你们之间发生过什么 —— 不是靠一个越来越长的上下文，\n而是像人那样：**分层地记、挑选地记、然后忘掉不重要的**。\n\n```\n别的插件管\"我是谁\"，这个插件管\"我们之间发生过什么\"。\n```\n\n## ⚠️ 先说清楚（**装之前请务必读完这 200 字**）\n\n- **这是给\"拿 DeepSeek 玩玩\"的人做的小玩具，不是生产力工具。**\n  正式工作和办公场景请不要用。\n- 作者**不是职业开发者**。这份代码是一个晚上跟 AI 聊出来的，**有 bug 是正常的**，\n  作者也没能对它做安全审计。\n````\n\n</details>\n\n**依据 2 · 作者声明**：[package.json:1-26](https://github.com/AirPineApplea/feiyu-memory/blob/aac05f97ac10fafe7076b77bdf65dd94b0cd60e3/package.json#L1-L26)\n\n包清单支持本地/外部资源与依赖边界的定性判断。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n{\n  \"name\": \"feiyu-memory\",\n  \"version\": \"0.2.0\",\n  \"description\": \"给 DeepSeek Harness 一条会记事的蓝色大肥鱼：跨会话的持久记忆 —— 人格内核、我自己想的、情景日记。\",\n  \"type\": \"module\",\n  \"license\": \"MIT\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/AirPineApplea/feiyu-memory.git\"\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/AirPineApplea/feiyu-memory/issues\"\n  },\n  \"homepage\": \"https://github.com/AirPineApplea/feiyu-memory#readme\",\n  \"exports\": {\n    \".\": \"./src/host/index.mjs\",\n    \"./client\": \"./src/client/index.js\",\n    \"./package.json\": \"./package.json\",\n    \"./locale/*.json\": \"./locale/*.json\"\n  },\n  \"files\": [\n    \"src\",\n    \"cordis.patch.yml\",\n    \"locale\",\n    \"README.md\",\n    \"CHANGELOG.md\",\n```\n\n</details>\n\n#### 缺口\n\n- 缺少按合格任务统计的总尝试、失败、人工分钟与现金/资源量\n  **影响**：无法比较总成本与净收益\n  **进一步探讨**：用40段含冲突偏好、敏感字段、过期事实和无关细节的会话，跨10个任务盲测；记录正确召回、错误注入、删除后残留、人工纠错分钟和模型费用，敏感字段再次出现即停止。 同时按合格交付数汇总总尝试、人工分钟和资源量。\n\n<a id=\"research-q07\"></a>\n\n### Q07 · 实现是否可靠可维护，哪些设计可复用，移植代价是什么？\n\n**研究主题**：工程质量与复用\n\n#### 完整回答\n\n固定源码把核心职责落在 src/host/index.mjs 及相邻模块，入口可追踪；inventory 仅作规模和静态候选索引。可复用的是“把三种声音分层、会话归档、召回门控和可视化日记组合为长期记忆体验”的显式接线方式。移植必须重做宿主API、权限、状态持久化和“新会话按相关性召回并允许用户纠错/删除｜召回来源可见，删除后不再注入”验证，不能从测试脚本存在推断当前环境可靠。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/host/index.mjs:651-668](https://github.com/AirPineApplea/feiyu-memory/blob/aac05f97ac10fafe7076b77bdf65dd94b0cd60e3/src/host/index.mjs#L651-L668)\n\n固定源码用于评价职责和宿主耦合。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n  }\n\n  for (const agent of ctx.agents.list()) installPrompt(agent);\n  ctx.on('agent/created', ({ agent }) => {\n    installPrompt(agent);\n  });\n  ctx.on('agent/disposed', ({ agent }) => {\n    const f = promptFibers.get(agent);\n    if (f !== undefined) {\n      promptFibers.delete(agent);\n      void f.dispose?.();\n    }\n    sessionStates.delete(agent.id);\n  });\n\n  /* ── 采集：只做本地记账，零 I/O、零模型 ── */\n\n  ctx.on('session/event', (session, event) => {\n```\n\n</details>\n\n**依据 2 · 作者声明**：[package.json:1-26](https://github.com/AirPineApplea/feiyu-memory/blob/aac05f97ac10fafe7076b77bdf65dd94b0cd60e3/package.json#L1-L26)\n\n包清单用于确认版本、分发与依赖面。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n{\n  \"name\": \"feiyu-memory\",\n  \"version\": \"0.2.0\",\n  \"description\": \"给 DeepSeek Harness 一条会记事的蓝色大肥鱼：跨会话的持久记忆 —— 人格内核、我自己想的、情景日记。\",\n  \"type\": \"module\",\n  \"license\": \"MIT\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/AirPineApplea/feiyu-memory.git\"\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/AirPineApplea/feiyu-memory/issues\"\n  },\n  \"homepage\": \"https://github.com/AirPineApplea/feiyu-memory#readme\",\n  \"exports\": {\n    \".\": \"./src/host/index.mjs\",\n    \"./client\": \"./src/client/index.js\",\n    \"./package.json\": \"./package.json\",\n    \"./locale/*.json\": \"./locale/*.json\"\n  },\n  \"files\": [\n    \"src\",\n    \"cordis.patch.yml\",\n    \"locale\",\n    \"README.md\",\n    \"CHANGELOG.md\",\n```\n\n</details>\n\n#### 缺口\n\n- 未执行仓库测试、安装和真实宿主压力/升级验证\n  **影响**：维护性和异常恢复只能作源码级判断\n  **进一步探讨**：用40段含冲突偏好、敏感字段、过期事实和无关细节的会话，跨10个任务盲测；记录正确召回、错误注入、删除后残留、人工纠错分钟和模型费用，敏感字段再次出现即停止。 在此之外记录构建、卸载和宿主升级后的回归面积。\n\n<a id=\"research-q08\"></a>\n\n### Q08 · 由贡献与反例可推导什么未验证方向，如何证伪？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n由“把三种声音分层、会话归档、召回门控和可视化日记组合为长期记忆体验”和“自动判断与摘要可能把模型推断沉淀为记忆；长期准确性、遗忘、冲突修正和隐私模式仍需真实任务验证”推导的新方向是可为每条自动记忆增加来源事件、置信度、到期与用户确认状态，让召回优先级受可纠错性控制。它不是当前能力。最小验证为用40段含冲突偏好、敏感字段、过期事实和无关细节的会话，跨10个任务盲测；记录正确召回、错误注入、删除后残留、人工纠错分钟和模型费用，敏感字段再次出现即停止。 若合格结果不改善、误差/副作用越界或恢复负担高于“每次会话手工粘贴偏好文件，或用单一记忆文本不区分来源与时间”，即削弱或推翻假设。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/host/index.mjs:651-668](https://github.com/AirPineApplea/feiyu-memory/blob/aac05f97ac10fafe7076b77bdf65dd94b0cd60e3/src/host/index.mjs#L651-L668)\n\n假设只以已实现机制和边界为推导起点，不表示源码已经实现新方向。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n  }\n\n  for (const agent of ctx.agents.list()) installPrompt(agent);\n  ctx.on('agent/created', ({ agent }) => {\n    installPrompt(agent);\n  });\n  ctx.on('agent/disposed', ({ agent }) => {\n    const f = promptFibers.get(agent);\n    if (f !== undefined) {\n      promptFibers.delete(agent);\n      void f.dispose?.();\n    }\n    sessionStates.delete(agent.id);\n  });\n\n  /* ── 采集：只做本地记账，零 I/O、零模型 ── */\n\n  ctx.on('session/event', (session, event) => {\n```\n\n</details>\n\n#### 缺口\n\n- 假设尚无实现、需求频率或效果数据\n  **影响**：不能计入插件贡献、创新效果或商业机会\n  **进一步探讨**：用40段含冲突偏好、敏感字段、过期事实和无关细节的会话，跨10个任务盲测；记录正确召回、错误注入、删除后残留、人工纠错分钟和模型费用，敏感字段再次出现即停止。 只验证最小原型，不改变当前能力状态。\n\n<a id=\"research-q09\"></a>\n\n### Q09 · 对谁值得观察或试用，成功与停止标准是什么？\n\n**研究主题**：采用判断\n\n#### 完整回答\n\n当前结论为继续观察。愿意维护本地记忆的个人用户可观察，试用前先验证来源标记、删除、冲突纠正和隐私排除。 试用成功标准是“召回内容来源可区分、与当前任务相关、能纠错删除，并且不会把隐私或模型猜测混成人格事实”，并且 用户能否稳定识别和纠错来源、任务质量提升、干扰率与遗忘效果、敏感信息漏存、删除与备份传播 有可接受结果；停止标准包括发生自动判断与摘要可能把模型推断沉淀为记忆；长期准确性、遗忘、冲突修正和隐私模式仍需真实任务验证所述核心风险、出现未知副作用自动重试，或总人工/资源成本高于“每次会话手工粘贴偏好文件，或用单一记忆文本不区分来源与时间”。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-19](https://github.com/AirPineApplea/feiyu-memory/blob/aac05f97ac10fafe7076b77bdf65dd94b0cd60e3/README.md#L1-L19)\n\n作者材料限定可操作范围；采用结论由研究者结合限制给出。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n````text\n# 肥鱼日记 · feiyu-memory\n\n> 让新开一个对话，用户依然感觉是**同一条鱼**。\n>\n> 这份 README 绝大部分是**肥鱼（AI）自己写的** —— 只有最后「作者的话」那节是人写的。\n\n一个 [DeepSeek Harness](https://github.com/deepseek-ai)（DSH）插件。它记住你们之间发生过什么 —— 不是靠一个越来越长的上下文，\n而是像人那样：**分层地记、挑选地记、然后忘掉不重要的**。\n\n```\n别的插件管\"我是谁\"，这个插件管\"我们之间发生过什么\"。\n```\n\n## ⚠️ 先说清楚（**装之前请务必读完这 200 字**）\n\n- **这是给\"拿 DeepSeek 玩玩\"的人做的小玩具，不是生产力工具。**\n  正式工作和办公场景请不要用。\n- 作者**不是职业开发者**。这份代码是一个晚上跟 AI 聊出来的，**有 bug 是正常的**，\n  作者也没能对它做安全审计。\n````\n\n</details>\n\n**依据 2 · 源码核查**：[src/host/index.mjs:651-668](https://github.com/AirPineApplea/feiyu-memory/blob/aac05f97ac10fafe7076b77bdf65dd94b0cd60e3/src/host/index.mjs#L651-L668)\n\n源码证据只支撑窄范围试用/观察，不构成安装验收。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n  }\n\n  for (const agent of ctx.agents.list()) installPrompt(agent);\n  ctx.on('agent/created', ({ agent }) => {\n    installPrompt(agent);\n  });\n  ctx.on('agent/disposed', ({ agent }) => {\n    const f = promptFibers.get(agent);\n    if (f !== undefined) {\n      promptFibers.delete(agent);\n      void f.dispose?.();\n    }\n    sessionStates.delete(agent.id);\n  });\n\n  /* ── 采集：只做本地记账，零 I/O、零模型 ── */\n\n  ctx.on('session/event', (session, event) => {\n```\n\n</details>\n\n#### 缺口\n\n- 未有真实用户频率、迁移意愿与固定版本宿主验收\n  **影响**：不能升级为持续安装或生产采用\n  **进一步探讨**：用40段含冲突偏好、敏感字段、过期事实和无关细节的会话，跨10个任务盲测；记录正确召回、错误注入、删除后残留、人工纠错分钟和模型费用，敏感字段再次出现即停止。 试用结束还需访谈目标用户的重复频率与退出意愿。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：a17df658d06cd0979d1dda73adadf4b12b86c7217322c653525eb49b11e7f039。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 7 | 2610 | — | — | 30927 |\n| .js | source | 1 | 449 | 350 | 66 | — |\n| .mjs | source | 23 | 6305 | 3700 | 2081 | — |\n| .mjs | test | 12 | 3822 | 3093 | 332 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 分层持久记忆 | 分别保存人格内核、手写内容和自动情景日记。 | 仅确认固定源码存在；运行效果、规模与兼容范围未做宿主验收 |\n| 会话归档与整理 | 从会话事件形成可压缩和可浏览的记忆档案。 | 仅确认固定源码存在；运行效果、规模与兼容范围未做宿主验收 |\n| 上下文召回 | 在后续会话按门控条件注入相关记忆。 | 仅确认固定源码存在；运行效果、规模与兼容范围未做宿主验收 |\n\n## 工程亮点\n\n固定源码把关键职责收敛到 src/host/index.mjs 及其相邻模块，便于追踪入口与状态。可借鉴的是显式宿主接线与配置边界；移植仍需重做 API 兼容、权限、持久化和“新会话按相关性召回并允许用户纠错/删除｜召回来源可见，删除后不再注入”验证。详见[Q07](#research-q07)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、src/host/index.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：仅核查固定提交的作者材料、包清单、关键源码和完整组件 inventory；未运行插件、测试、安装、外部服务或真实宿主任务。\n- 下一步：用40段含冲突偏好、敏感字段、过期事实和无关细节的会话，跨10个任务盲测；记录正确召回、错误注入、删除后残留、人工纠错分钟和模型费用，敏感字段再次出现即停止。\n",
         "metadata": {
             "repository": "AirPineApplea/feiyu-memory",
             "repository_id": 1415822787,
-            "captured_at": "2026-10-22T05:34:09.384Z",
-            "window_start": "2026-09-22T05:34:09.384Z",
-            "stars": 5,
+            "captured_at": "2026-10-22T15:12:45.430Z",
+            "window_start": "2026-09-22T15:12:45.430Z",
+            "stars": 6,
             "pushed_at": "2026-10-21T09:35:55Z",
             "issues": {
-                "open": 5,
-                "closed": 0,
-                "created_30d": 5,
-                "closed_30d": 0,
-                "updated_30d": 5
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": 0
             },
-            "errors": [],
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAirPineApplea%2Ffeiyu-memory%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 40D2:2BA204:A1FD6F:AE4827:6ADA27EF and timestamp 2026-10-22 15:12:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAirPineApplea%2Ffeiyu-memory%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 41A0:11532E:9E703A:AAC21B:6ADA27F0 and timestamp 2026-10-22 15:12:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAirPineApplea%2Ffeiyu-memory%20is%3Aissue%20created%3A2026-09-22T15%3A12%3A45.430Z..2026-10-22T15%3A12%3A45.430Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 424A:1C230A:97856A:A3CE3B:6ADA27F1 and timestamp 2026-10-22 15:12:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "incomplete issue search"
+                }
+            ],
             "npm": {
                 "package_name": "feiyu-memory",
-                "captured_at": "2026-10-22T05:34:18.082Z",
+                "captured_at": "2026-10-22T15:12:53.772Z",
                 "window_start": "2026-09-22",
                 "window_end": "2026-10-21",
                 "downloads_30d": null,
@@ -481,7 +449,7 @@
                 "error": "HTTP 404",
                 "publication": {
                     "first_published_at": null,
-                    "captured_at": "2026-10-22T05:34:18.082Z",
+                    "captured_at": "2026-10-22T15:12:53.772Z",
                     "source_url": "https://registry.npmjs.org/feiyu-memory",
                     "error": "HTTP 404",
                     "latest_version": null,
@@ -494,15 +462,15 @@
             "id": "github:1415822787:root",
             "repository": "AirPineApplea/feiyu-memory",
             "path": "",
-            "revision": "37a81b92947b10d7376ed764d8ff6392e8969e93",
-            "fingerprints": {
-                "directory": "eedb9737f3229b7e2ca687d108830d3f6aa24ba8522643aa107ff2b5f1345e56",
-                "code": "37a81b92947b10d7376ed764d8ff6392e8969e93",
-                "maintenance": "6a094d1e7073dc3661642e1a00abe474909712e16e2afe5d1ce69a65ecf12f1b"
-            },
+            "revision": "aac05f97ac10fafe7076b77bdf65dd94b0cd60e3",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            ],
+            "fingerprints": {
+                "directory": "eedb9737f3229b7e2ca687d108830d3f6aa24ba8522643aa107ff2b5f1345e56",
+                "code": "aac05f97ac10fafe7076b77bdf65dd94b0cd60e3",
+                "maintenance": "f0c7f1de8e8f581a9f09884c40e3d2df50561ca54f30d68623c672fe13db3af2"
+            }
         }
     }
 }

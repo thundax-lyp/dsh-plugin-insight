@@ -7,14 +7,14 @@
             "id": "github:1340266494:root",
             "repository": "Lenonss/DSH_VsCodeMode",
             "path": "",
-            "revision": "c87d9873fdf299dc25735c76829139186fd72fc7",
+            "revision": "2dc66198823da0c006ad145b1ff24566b40debb3",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "46f870a09fc0600071cf56b0e6b6e0b7dbed3723580f52543efab047006cacff",
-                "code": "c87d9873fdf299dc25735c76829139186fd72fc7",
-                "maintenance": "27c3749747875b7ae4a46614397e4c5e204a50a9de3c1db3b514eebb638d17ba"
+                "code": "2dc66198823da0c006ad145b1ff24566b40debb3",
+                "maintenance": "2cbd343f38848ac45480102f517670246e9a839352c469f80a223f5b13f5ca34"
             }
         }
     }

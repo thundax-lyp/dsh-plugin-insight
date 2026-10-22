@@ -7,14 +7,14 @@
             "id": "github:1411545351:root",
             "repository": "loyalchiiina/dsh-lit-fetch",
             "path": "",
-            "revision": "20adf9f1b04b1b7b37fa6654801f69acaa327505",
+            "revision": "073c7b25b7eab302f21b93ea93a9378cd89b6510",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "6b008a42431f37478655ecad7265b3071f64a13724eec4f9ac7690195743ddde",
-                "code": "20adf9f1b04b1b7b37fa6654801f69acaa327505",
-                "maintenance": "07de0b51e8d68f3713900f5d6497f6ba2f5b39113aef7637d0ba61e17487787e"
+                "code": "073c7b25b7eab302f21b93ea93a9378cd89b6510",
+                "maintenance": "df97308a39e548f1da5009411ee84f7e52b9b9a56aeaa45fd8a707baba986726"
             }
         }
     }

@@ -7,14 +7,14 @@
             "id": "github:1347757232:root",
             "repository": "XINY11451/dsh-wsl",
             "path": "",
-            "revision": "38ccc3f4de1e0f9823b1391a37c4f9d5b766c29e",
+            "revision": "4296d701071cda1c91807ba8621cd24cd4c5f7b6",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "a359f182ec77fd5964026c33fcee7f17b6187853872d65ef6840c942e024c95c",
-                "code": "38ccc3f4de1e0f9823b1391a37c4f9d5b766c29e",
-                "maintenance": "60fbc4aab32760653695ca07286a3516ee4925d6ed3f22f8f0e09be2be5ab06d"
+                "code": "4296d701071cda1c91807ba8621cd24cd4c5f7b6",
+                "maintenance": "48148547f68d752cc31b24fabed4330bad01dc5470b6d7629cbd5c24f6ae048f"
             }
         }
     }

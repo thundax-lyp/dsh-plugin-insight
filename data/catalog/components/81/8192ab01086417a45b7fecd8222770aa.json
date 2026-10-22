@@ -7,14 +7,14 @@
             "id": "github:1408887892:root",
             "repository": "lzqzm/dsh-project-panel",
             "path": "",
-            "revision": "29af108fd2f807995dae03f3ad2dbc2fb57b9197",
+            "revision": "e235d263df6f11d92011edb5120608408da0288e",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "84354594720a1ebef64ba0b824d2c5e476f87d8b5a1b81c2318a3b6cf72af153",
-                "code": "29af108fd2f807995dae03f3ad2dbc2fb57b9197",
-                "maintenance": "7cb8be25429af6ed728f9a1255767853e0a88bf0ab09d2dba3047381ba4602ff"
+                "code": "e235d263df6f11d92011edb5120608408da0288e",
+                "maintenance": "6a353928ae1c80b900b9aa8283cd8b15c4f79495015f7fa9ea9e1148297827f7"
             }
         }
     }

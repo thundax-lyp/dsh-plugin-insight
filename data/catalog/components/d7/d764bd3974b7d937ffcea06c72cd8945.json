@@ -450,14 +450,14 @@
             "repository": "1HelloMan1/dsh-vision-fallback",
             "path": "",
             "revision": "e94fffbfd1297881e80a1a02304e116541d01368",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "a7ccdc332988c8004230bdf13c0c8215f63e09065caaed68a9e6663a81b398b1",
                 "code": "e94fffbfd1297881e80a1a02304e116541d01368",
                 "maintenance": "a8167022270a379ac002267ddcdbdff7d238d38bc07401da0ac1f4dbc8907248"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

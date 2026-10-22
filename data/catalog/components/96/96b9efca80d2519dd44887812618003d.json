@@ -7,14 +7,14 @@
             "id": "github:1391571622:root",
             "repository": "HERO476/dsh-sidecard-ask",
             "path": "",
-            "revision": "2ea4cdfcdbdcdc07d99d5c1ad7af8d896f8c0d9d",
+            "revision": "162c69c9069bf0fa19085f9792bf14b7f30cf10c",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "c6c37ab319b308a8f60396f21fad704c138acc538628c09bbc8f7bc7caf417f4",
-                "code": "2ea4cdfcdbdcdc07d99d5c1ad7af8d896f8c0d9d",
-                "maintenance": "1361d6e34b66b491db6d94434dccab7873f8e1b4e0c65c13411cb849a5412cc3"
+                "code": "162c69c9069bf0fa19085f9792bf14b7f30cf10c",
+                "maintenance": "012b84fe595e1c433974dcd567f59f5ef3c1763fa14afe7d0e37644d2926c369"
             }
         }
     }

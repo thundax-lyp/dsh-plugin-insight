@@ -7,14 +7,14 @@
             "id": "github:1396794788:root",
             "repository": "verneuil/dsh-opencode-go-usage",
             "path": "",
-            "revision": "532d33c160c8c1b0fed39ada822428ae8fc1c1c7",
+            "revision": "607ef329d64d82f899b6ef8e45845b4dc3098991",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "bef765b67d6b5706b41640bf1b6369c5a1bbe884bdf9731d2bcf52c6400d8de4",
-                "code": "532d33c160c8c1b0fed39ada822428ae8fc1c1c7",
-                "maintenance": "3dad65c065e7ffa9b6806579e34d3536a55cd9e4d0017842aa6b0fa803cde6e2"
+                "code": "607ef329d64d82f899b6ef8e45845b4dc3098991",
+                "maintenance": "a15cf66e40090fa8c090552586b21c369c9598273d05e29e62a9fb5426747d55"
             }
         }
     }

@@ -7,14 +7,14 @@
             "id": "github:1425385228:root",
             "repository": "Toximiner/dsh-tokmeter",
             "path": "",
-            "revision": "484eaa1cabaa7238221b43a0bf125019e3b38239",
+            "revision": "554927097c1951bc0309632822430cedaeccf8da",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "b5dae6a1d38c6f38fb0da211a8f34e97798e51be20d515664646374109dc5aad",
-                "code": "484eaa1cabaa7238221b43a0bf125019e3b38239",
-                "maintenance": "4e60c1b8563c54e8d82d7164028bc99d311faabb1b9ba1dc312d690b4be5bc4f"
+                "code": "554927097c1951bc0309632822430cedaeccf8da",
+                "maintenance": "c648dc490db231c2e103e8a6d82ef81da30f421eb8982b20c274f39fb9108643"
             }
         }
     }

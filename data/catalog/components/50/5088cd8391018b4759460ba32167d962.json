@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5088cd8391018b4759460ba32167d962",
+    "identity": "github:1427080924:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1427080924:root",
+            "repository": "SakuraYH1080/dsh-quick-restart",
+            "path": "",
+            "revision": "96d8847d18bc016645b0c5cc8f3360d0f60564f1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b3ff50bf2faf75853206bec1386bcdaed605aa6b8871b3824c2f9a0de740fbab",
+                "code": "96d8847d18bc016645b0c5cc8f3360d0f60564f1",
+                "maintenance": "2cef78dbacc255d2b0371afcae7572bdd8cc6c835ad4ba5d3cc9e5763a2d3db1"
+            }
+        }
+    }
+}

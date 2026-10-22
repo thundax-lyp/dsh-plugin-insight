@@ -7,14 +7,14 @@
             "id": "github:1376942127:root",
             "repository": "HerTa-st/Herta-dsh",
             "path": "",
-            "revision": "672b8739e1fdffa8e674fccf4fd15c579055b90f",
+            "revision": "bab72f739855206e84cb967cef98e810cba1c733",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "6a89d53f6910bbee4593d6bc11019524595e232b3e04a65b78549c415c655ad5",
-                "code": "672b8739e1fdffa8e674fccf4fd15c579055b90f",
-                "maintenance": "8c752b3be33d4297826914accb11cebebb06881901428337b11dee71415ee848"
+                "code": "bab72f739855206e84cb967cef98e810cba1c733",
+                "maintenance": "007ad51285cdecf3faa55bc19fdbf728d685458f6697c820c1e8a939c0d36d1a"
             }
         }
     }

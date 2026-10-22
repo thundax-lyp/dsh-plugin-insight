@@ -7,14 +7,14 @@
             "id": "github:1345900075:root",
             "repository": "DM010727/dsh-cline",
             "path": "",
-            "revision": "8660303df31ff31c4c84badebf9346c54b8b35e4",
+            "revision": "85cf3fdf1bcbc7b9cf87c6b7e3a682e24e8b69c0",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "234777572fce675bfb82aecc2ed741b485b8850184ab9d581637ea5aa4040a23",
-                "code": "8660303df31ff31c4c84badebf9346c54b8b35e4",
-                "maintenance": "658b245aa43170df884d2fd7d95ab2d42af12c544db4984620a36afd2ebae1fc"
+                "code": "85cf3fdf1bcbc7b9cf87c6b7e3a682e24e8b69c0",
+                "maintenance": "02cafcf011e39246a7cbf5f9bbc76b7520a08d72ae2fd19fc02a2bdd63b44aea"
             }
         }
     }

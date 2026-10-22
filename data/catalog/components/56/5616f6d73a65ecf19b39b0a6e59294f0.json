@@ -7,14 +7,14 @@
             "id": "github:1417647242:root",
             "repository": "swyaoguai/dsh-taptap-maker-dev",
             "path": "",
-            "revision": "f640a8394eff4f3606fb71dfcec294fcf954dfd9",
+            "revision": "7fd25091597267b901ff56d50be6d08600149e27",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "5bc585629a8a376043b360ce83f78ca5017ce9d9d267dcc924c20bc65f8bcc66",
-                "code": "f640a8394eff4f3606fb71dfcec294fcf954dfd9",
-                "maintenance": "77c3903f3619cc97adc2218f1ccffc639c5ccc181804bb06e9180f4bebb5b638"
+                "code": "7fd25091597267b901ff56d50be6d08600149e27",
+                "maintenance": "2c388495538bcef51413c1894f2216e1639280e3a277aef76ecb62e8c3b80463"
             }
         }
     }

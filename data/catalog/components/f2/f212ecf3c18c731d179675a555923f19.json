@@ -7,14 +7,14 @@
             "id": "github:1350342847:root",
             "repository": "rongxingda/dsh-prompt-enhance",
             "path": "",
-            "revision": "c48b771d875d99b9a81ab140ed7c6452feab3362",
+            "revision": "989770f59d421e0bceff43a69c168689d3d36e6d",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "1398cf2c788dc2d806ddbc8caf57f68963eb002e5ce9e14a26a438a4b3f47c7e",
-                "code": "c48b771d875d99b9a81ab140ed7c6452feab3362",
-                "maintenance": "38e764cb62fd5458bee87b6fd5aee4f9809995dc9195b1ced53271265e2d21e2"
+                "code": "989770f59d421e0bceff43a69c168689d3d36e6d",
+                "maintenance": "5077f0f30d5d3622cc817187b888338df2b00e70f4908311d5fb9aa133ae53a3"
             }
         }
     }

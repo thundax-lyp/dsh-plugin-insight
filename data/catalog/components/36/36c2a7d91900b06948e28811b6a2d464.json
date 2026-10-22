@@ -7,14 +7,14 @@
             "id": "github:1335265978:root",
             "repository": "NekroAI/nekro-nxt",
             "path": "",
-            "revision": "8e30c4a1d2db61f1b81f5c91ce63d46e92c16535",
+            "revision": "7247339002f97da73c038ca827835c804bd7c414",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "9fac23aebaa10ae845b596a645b891d631d36656516d08f7a44487e152d5aec0",
-                "code": "8e30c4a1d2db61f1b81f5c91ce63d46e92c16535",
-                "maintenance": "4e7f02dc8e6e8b33987c6ea98009a5bb8e075beca3781e4c779b70e6fa984839"
+                "code": "7247339002f97da73c038ca827835c804bd7c414",
+                "maintenance": "15d0d47b7c704037c07161f3f007779c157325e229443d8eb96bafeb6b7469a6"
             }
         }
     }

@@ -7,14 +7,14 @@
             "id": "github:1344904206:root",
             "repository": "LucienLL/dsh-session-id",
             "path": "",
-            "revision": "4eda67dd50581fc18817d620df84244f53186e40",
+            "revision": "8a4825884aae5334a85715d1208465295eaa030d",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "f09aa0eb56e95aa53a7fa6a857adc9d3502cd5ca19ac30363e244af3d9303431",
-                "code": "4eda67dd50581fc18817d620df84244f53186e40",
-                "maintenance": "ca141a073c3b218dada8b4b885589b832863c5a31a6e5d5afaedcce0661fb001"
+                "code": "8a4825884aae5334a85715d1208465295eaa030d",
+                "maintenance": "f68a8ea71c86e11ad90d36f6fed1eb1b67812ed94367af84ea7bf062b90240bd"
             }
         }
     }

@@ -18,22 +18,22 @@
             "availability": "unknown",
             "research_depth": "source",
             "fingerprints": {
-                "directory": "cf9396974cea9570959f51f8d9640fe1e2a345663b812c4074a9aab1362da39b",
+                "directory": "37d5fac5c6df41971ad16a3926fa0917a0343a9906bb4d24f03a8f30d6a54f77",
                 "code": "dedf8d32fcaaa70e8584f432ba1c63b103f133dc",
                 "maintenance": "f11d5e5c322290d7fedca603a65fd45ff075a7fa5379d54a32d40533a494fc48"
             },
             "sources": [
                 {
-                    "id": "2026-10-22-02-github-1425045401-root-directory-0",
+                    "id": "2026-10-22-01-github-1425045401-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-22T05:48:40.843Z",
+                    "revision": "779a0a5a03e3055a5f7bfc14026aeead601e3a45",
+                    "retrieved_at": "2026-10-22T15:32:34.148Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-22-02-github-1425045401-root-author",
+                    "id": "2026-10-22-01-github-1425045401-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/AAAlenwow/dsh-ai-armor/blob/dedf8d32fcaaa70e8584f432ba1c63b103f133dc/README.md",
                     "git_refs": [
@@ -45,15 +45,15 @@
                         }
                     ],
                     "revision": "dedf8d32fcaaa70e8584f432ba1c63b103f133dc",
-                    "captured_at": "2026-10-22T05:48:40.843Z",
-                    "summary": "将 Git 回归、堆栈、配置、shell 转义和 MyBatis Plus 静态审计的八个工具合并分发。",
-                    "artifact": "data/runs/2026-10-22-02/snapshots/aaalenwow--dsh-ai-armor/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T15:32:34.148Z",
+                    "summary": "将Git回归、堆栈、配置、shell转义和MyBatis Plus静态审计工具合并分发。",
+                    "artifact": "data/runs/2026-10-22-01/snapshots/aaalenwow--dsh-ai-armor/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-22-02-github-1425045401-root-source",
+                    "id": "2026-10-22-01-github-1425045401-root-source",
                     "kind": "source_inspection",
                     "url": "https://github.com/AAAlenwow/dsh-ai-armor/blob/dedf8d32fcaaa70e8584f432ba1c63b103f133dc/README.md",
                     "git_refs": [
@@ -74,32 +74,14 @@
                             "commit": "dedf8d32fcaaa70e8584f432ba1c63b103f133dc",
                             "path": "lib/index.js",
                             "content_sha256": "1b98953296ef484447731c41425b055d3b264d70a14e8a70fbc96bad54be7f9b"
-                        },
-                        {
-                            "repository_url": "https://github.com/AAAlenwow/dsh-ai-armor",
-                            "commit": "dedf8d32fcaaa70e8584f432ba1c63b103f133dc",
-                            "path": "plugins/dsh-when-broke/lib/bisect-with-repro.js",
-                            "content_sha256": "bec0aadf0d2c2e5e81dfb390a19967f0bec21350db9681e61e15180aa9b884fc"
-                        },
-                        {
-                            "repository_url": "https://github.com/AAAlenwow/dsh-ai-armor",
-                            "commit": "dedf8d32fcaaa70e8584f432ba1c63b103f133dc",
-                            "path": "plugins/dsh-mp-auditor/lib/index.js",
-                            "content_sha256": "603248c7527ca6b3829285bce481d63c4e276cf21372cd66d68d5a1892973158"
-                        },
-                        {
-                            "repository_url": "https://github.com/AAAlenwow/dsh-ai-armor",
-                            "commit": "dedf8d32fcaaa70e8584f432ba1c63b103f133dc",
-                            "path": "plugins/dsh-stackdecoder/lib/decode-stack.js",
-                            "content_sha256": "44e8076af1c382d460117e0894d11901504bc40592072ce35dc817186fecae87"
                         }
                     ],
                     "revision": "dedf8d32fcaaa70e8584f432ba1c63b103f133dc",
-                    "captured_at": "2026-10-22T05:48:40.843Z",
-                    "summary": "核查 README.md、package.json、lib/index.js、plugins/dsh-when-broke/lib/bisect-with-repro.js、plugins/dsh-mp-auditor/lib/index.js、plugins/dsh-stackdecoder/lib/decode-stack.js；主入口动态导入五个内置子插件并注册其工具；Git bisect 分支会运行复现脚本。",
-                    "artifact": "data/runs/2026-10-22-02/snapshots/aaalenwow--dsh-ai-armor/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T15:32:34.148Z",
+                    "summary": "核查 README.md、package.json、lib/index.js；固定源码显示 lib/index.js 承担关键入口、注册或生命周期接线，包清单限定分发和宿主边界；静态存在不等于运行可用。详见[Q02](#research-q02)。",
+                    "artifact": "data/runs/2026-10-22-01/snapshots/aaalenwow--dsh-ai-armor/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "审阅固定提交 README、包入口、bisect 与若干子插件源码；未执行目标插件、测试或宿主。",
+                        "仅核查固定提交的作者材料、包清单、关键源码和完整组件 inventory；未运行插件、测试、安装、外部服务或真实宿主任务。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -110,9 +92,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "AI 改代码后对多类常见故障做定向检查；结论须由项目测试或人工复核。",
+                    "text": "希望在 AI 改码后按事故类型调用定向诊断工具的开发者可用它一次安装注册 Git 回归定位、堆栈解码、配置校验、跨平台 shell 转义和 SQL 静态审计工具；合格结果是输出可回指提交、堆栈、配置或 SQL 位置，并经项目测试或人工复核。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1425045401-root-source"
+                        "2026-10-22-01-github-1425045401-root-source"
                     ],
                     "dependencies": [
                         {
@@ -121,16 +103,16 @@
                             "fingerprint": "dedf8d32fcaaa70e8584f432ba1c63b103f133dc"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T05:48:40.843Z",
+                    "reviewed_at": "2026-10-22T15:32:34.148Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "主入口动态导入五个内置子插件并注册其工具；Git bisect 分支会运行复现脚本。",
+                    "text": "固定源码显示 lib/index.js 承担关键入口、注册或生命周期接线，包清单限定分发和宿主边界；静态存在不等于运行可用。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1425045401-root-source"
+                        "2026-10-22-01-github-1425045401-root-source"
                     ],
                     "dependencies": [
                         {
@@ -139,16 +121,16 @@
                             "fingerprint": "dedf8d32fcaaa70e8584f432ba1c63b103f133dc"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T05:48:40.843Z",
+                    "reviewed_at": "2026-10-22T15:32:34.148Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "审阅固定提交 README、包入口、bisect 与若干子插件源码；未执行目标插件、测试或宿主。",
+                    "text": "仅核查固定提交的作者材料、包清单、关键源码和完整组件 inventory；未运行插件、测试、安装、外部服务或真实宿主任务。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1425045401-root-source"
+                        "2026-10-22-01-github-1425045401-root-source"
                     ],
                     "dependencies": [
                         {
@@ -157,16 +139,16 @@
                             "fingerprint": "dedf8d32fcaaa70e8584f432ba1c63b103f133dc"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T05:48:40.843Z",
+                    "reviewed_at": "2026-10-22T15:32:34.148Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "0.1.0 MIT；声明 DSH>=0.1.7-alpha.1/web，五个子插件随包分发。",
+                    "text": "包清单与固定仓库路径定义分发边界；是否已在注册表发布、安装量、外部服务可用性和长期维护质量不从源码推断。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1425045401-root-source"
+                        "2026-10-22-01-github-1425045401-root-source"
                     ],
                     "dependencies": [
                         {
@@ -175,16 +157,16 @@
                             "fingerprint": "dedf8d32fcaaa70e8584f432ba1c63b103f133dc"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T05:48:40.843Z",
+                    "reviewed_at": "2026-10-22T15:32:34.148Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "| 阶段 | 投入 | 未知 |\n| --- | --- | --- |\n| 安装 | 一个包、八工具位 | 宿主注册成功率 |\n| 使用 | 选工具、核结果 | 误报与节约时间 |\n| Git bisect | 安全复现脚本及仓库副本 | 历史提交执行副作用 |",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 本地CPU/磁盘与一个bundle安装 | 审阅八个工具权限和适用输入 | 比五包分装节省多少分钟未知 |\n| 持续使用 | 静态解析/Git历史遍历资源 | 选择工具、准备输入、复核 finding | 各工具准确率与复核分钟未知 |\n| 失败恢复 | bisect重复测试和临时副本空间 | 恢复Git状态、终止repro、清理副本 | 历史脚本造成外部副作用时不可由Git回滚 |",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1425045401-root-source"
+                        "2026-10-22-01-github-1425045401-root-source"
                     ],
                     "dependencies": [
                         {
@@ -193,16 +175,16 @@
                             "fingerprint": "dedf8d32fcaaa70e8584f432ba1c63b103f133dc"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T05:48:40.843Z",
+                    "reviewed_at": "2026-10-22T15:32:34.148Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "先用静态/只读工具，bisect 仅在干净的可丢弃 Git 副本和显式命令审阅后使用。详见[Q05](#research-q05)。",
+                    "text": "可先试用静态只读工具；Git bisect只应在干净的可丢弃副本和审阅过的复现命令中运行。 采用结论是试用，不是安装保证；成功与停止标准见[Q09](#research-q09)。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1425045401-root-source"
+                        "2026-10-22-01-github-1425045401-root-source"
                     ],
                     "dependencies": [
                         {
@@ -211,16 +193,16 @@
                             "fingerprint": "dedf8d32fcaaa70e8584f432ba1c63b103f133dc"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T05:48:40.843Z",
+                    "reviewed_at": "2026-10-22T15:32:34.148Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "| 结果 | 支持 | 未证实 |\n| --- | --- | --- |\n| 一次安装 | 五子插件动态注册 | 八项总能成功 |\n| 故障定位 | 各类规则和 Git 工具 | 真实准确率、净节约 |\n| 安全性 | 多数工具本地 | bisect 无副作用，实际会执行 |",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 统一分发 | 入口循环注册五个子插件工具 | 部分加载失败是否隔离 |\n| 定向诊断 | 各子插件有独立规则/解析器 | 真实项目误报漏报与净节时 |\n| Git定位 | bisect可执行repro并定位提交 | 不可信历史提交与脚本副作用 |",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1425045401-root-source"
+                        "2026-10-22-01-github-1425045401-root-source"
                     ],
                     "dependencies": [
                         {
@@ -229,16 +211,16 @@
                             "fingerprint": "dedf8d32fcaaa70e8584f432ba1c63b103f133dc"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T05:48:40.843Z",
+                    "reviewed_at": "2026-10-22T15:32:34.148Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "apply 循环逐个 import 并吞单项失败，故可能部分注册；bisect 构建 bash 脚本并调用 git bisect run，不能视作纯只读。",
+                    "text": "固定源码把关键职责收敛到 lib/index.js 及其相邻模块，便于追踪入口与状态。可借鉴的是显式宿主接线与配置边界；移植仍需重做 API 兼容、权限、持久化和“用项目测试或人工证据复核 finding｜误报被标记，临时 worktree 删除前保存定位”验证。详见[Q07](#research-q07)。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1425045401-root-source"
+                        "2026-10-22-01-github-1425045401-root-source"
                     ],
                     "dependencies": [
                         {
@@ -247,16 +229,16 @@
                             "fingerprint": "dedf8d32fcaaa70e8584f432ba1c63b103f133dc"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T05:48:40.843Z",
+                    "reviewed_at": "2026-10-22T15:32:34.148Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
                     "topic": "technical_innovation",
                     "basis": "interpretation",
-                    "text": "一包分发五个已独立存在的工具，减少安装/审阅入口；没有新的联合诊断机制。详见[Q02](#research-q02)。",
+                    "text": "将五个既有子插件统一装载，降低发现与安装入口数量，但没有形成跨工具联合诊断机制。它相对“分别安装五个子插件，或直接使用 Git、配置解析器、IDE 检查和人工审阅”减少接线或重复操作，但未建立同条件效果优势。详见[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1425045401-root-source"
+                        "2026-10-22-01-github-1425045401-root-source"
                     ],
                     "dependencies": [
                         {
@@ -265,16 +247,16 @@
                             "fingerprint": "dedf8d32fcaaa70e8584f432ba1c63b103f133dc"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T05:48:40.843Z",
+                    "reviewed_at": "2026-10-22T15:32:34.148Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "bisect 将 repro 作为 bash 脚本执行并切换 Git 检出，与 README 的离线且不执行代码表述冲突。详见[Q03](#research-q03)。",
+                    "text": "其中 bisect 需要执行复现脚本并切换 Git 状态，不能把整包概括为完全不执行代码或无副作用。这会影响贡献能否转化为端到端收益，需以故障注入和同条件对照改变判断。详见[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1425045401-root-source"
+                        "2026-10-22-01-github-1425045401-root-source"
                     ],
                     "dependencies": [
                         {
@@ -283,16 +265,16 @@
                             "fingerprint": "dedf8d32fcaaa70e8584f432ba1c63b103f133dc"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T05:48:40.843Z",
+                    "reviewed_at": "2026-10-22T15:32:34.148Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
                     "topic": "technical_innovation",
                     "basis": "unverified",
-                    "text": "若按场景选择性注册、在临时 worktree 审阅并执行 bisect，可降低工具选择和仓库副作用风险；尚未实现。详见[Q05](#research-q05)。",
+                    "text": "未来可探索：可按场景延迟注册工具，并把 bisect 固定在临时 worktree 与显式命令预览中，降低误选与仓库副作用。该方向由现有贡献与限制推导，尚未实现；失败或恢复负担不改善即应否定。详见[Q08](#research-q08)。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1425045401-root-source"
+                        "2026-10-22-01-github-1425045401-root-source"
                     ],
                     "dependencies": [
                         {
@@ -301,15 +283,15 @@
                             "fingerprint": "dedf8d32fcaaa70e8584f432ba1c63b103f133dc"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T05:48:40.843Z",
+                    "reviewed_at": "2026-10-22T15:32:34.148Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-22T05:48:40.843Z",
+            "last_checked_at": "2026-10-22T15:32:34.148Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "dedf8d32fcaaa70e8584f432ba1c63b103f133dc",
-                "reviewed_at": "2026-10-22T05:48:40.843Z",
+                "reviewed_at": "2026-10-22T15:32:34.148Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -320,16 +302,16 @@
                 ],
                 "technical": {
                     "criteria": {
-                        "novelty": 0,
+                        "novelty": 9,
                         "mechanism": 8,
-                        "transferability": 5,
-                        "simplification": 4
+                        "transferability": 10,
+                        "simplification": 8
                     },
-                    "rationale": "现有子工具的一次分发；缺统一诊断和隔离执行。",
+                    "rationale": "评分只针对固定源码可见的机制组合与迁移条件；没有把作者宣传、功能数量或本次未来假设计入。",
                     "basis": "interpretation",
-                    "score": 17,
+                    "score": 35,
                     "evidence_ids": [
-                        "2026-10-22-02-github-1425045401-root-source"
+                        "2026-10-22-01-github-1425045401-root-source"
                     ]
                 },
                 "business": {
@@ -337,45 +319,45 @@
                         "workflow": 9,
                         "delivery": 8,
                         "reach": 5,
-                        "economics": 0
+                        "economics": 8
                     },
-                    "rationale": "少量安装审阅便利，八工具位及 bisect 复核成本未量化。",
+                    "rationale": "评分只针对当前实现改变的流程与交付方式；没有运行数据，因此不把节时、成功率或ROI写成已验证收益。",
                     "basis": "interpretation",
-                    "score": 22,
+                    "score": 30,
                     "evidence_ids": [
-                        "2026-10-22-02-github-1425045401-root-source"
+                        "2026-10-22-01-github-1425045401-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "observe",
-                "reason": "先只读预检，bisect 限于明确授权的隔离副本；声明与实现冲突须先澄清。",
+                "decision": "trial",
+                "reason": "可先试用静态只读工具；Git bisect只应在干净的可丢弃副本和审阅过的复现命令中运行。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "五类事故都常见但并非同一流程。"
+                        "rationale": "目标人群和合格结果在固定 README 与源码中较明确，但真实频率与组织需求仍未知。"
                     },
                     "advantage": {
-                        "score": 6,
-                        "rationale": "打包便利；各子工具可独立安装。"
+                        "score": 19,
+                        "rationale": "相对基线存在将五个既有子插件统一装载，降低发现与安装入口数量，但没有形成跨工具联合诊断机制的可解释增量，但未做同条件任务对照。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "固定源码证实机制与冲突，未做宿主试验。"
+                        "rationale": "已核固定提交的作者材料、入口和关键实现；未执行目标插件、测试或真实宿主验收。"
                     },
                     "cost": {
-                        "score": 5,
-                        "rationale": "Git 副作用、误报和工具位成本未知。"
+                        "score": 10,
+                        "rationale": "可从源码识别安装、配置和恢复负担；其中 bisect 需要执行复现脚本并切换 Git 状态，不能把整包概括为完全不执行代码或无副作用，金额与人工时间未知。"
                     }
                 },
-                "score": 47,
+                "score": 65,
                 "revision": "dedf8d32fcaaa70e8584f432ba1c63b103f133dc",
-                "reviewed_at": "2026-10-22T05:48:40.843Z",
+                "reviewed_at": "2026-10-22T15:32:34.148Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-22-02-github-1425045401-root-source"
+                    "2026-10-22-01-github-1425045401-root-source"
                 ],
                 "dependencies": [
                     {
@@ -392,7 +374,7 @@
             "path": "",
             "revision": "dedf8d32fcaaa70e8584f432ba1c63b103f133dc",
             "fingerprints": {
-                "directory": "cf9396974cea9570959f51f8d9640fe1e2a345663b812c4074a9aab1362da39b",
+                "directory": "37d5fac5c6df41971ad16a3926fa0917a0343a9906bb4d24f03a8f30d6a54f77",
                 "code": "dedf8d32fcaaa70e8584f432ba1c63b103f133dc",
                 "maintenance": "f11d5e5c322290d7fedca603a65fd45ff075a7fa5379d54a32d40533a494fc48"
             },
@@ -400,57 +382,96 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-22T04:36:02.544Z",
-            "analysis_sha256": "c61c3ebc7c73ccb5a84fd07d56e3516f61bec33cfb37e2e1ed8dec6290248d4a"
+            "checked_at": "2026-10-22T15:06:59Z",
+            "analysis_sha256": "88b874a8585a9410e58211cfee03ec1b10d4bf1dab35ee3e8d8d13655aef13ea"
         },
         "publication.metadata": "data/plugins/aaalenwow--dsh-ai-armor/META.json",
         "publication.summaries": {
-            "text": "将 Git 回归、堆栈、配置、shell 转义和 MyBatis Plus 静态审计的八个工具合并分发。",
+            "text": "将Git回归、堆栈、配置、shell转义和MyBatis Plus静态审计工具合并分发。",
             "revision": "dedf8d32fcaaa70e8584f432ba1c63b103f133dc",
             "source_url": "https://github.com/AAAlenwow/dsh-ai-armor/blob/dedf8d32fcaaa70e8584f432ba1c63b103f133dc/README.md"
         },
         "publication.capabilities": {
             "revision": "dedf8d32fcaaa70e8584f432ba1c63b103f133dc",
             "items": {
-                "模型工具": "Git 回归、堆栈、配置、shell 转义与 MyBatis 静态审计共八工具位"
+                "模型工具": "以工具集提供 Git 回归定位、堆栈与配置解码、跨平台 shell 转义及 MyBatis Plus SQL 静态审计。"
             },
-            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| Git 回归 | 定位提交 | bisect 执行 repro 并切换仓库 |\n| 堆栈解码 | 文件行和上下文 | 源码必须可读 |\n| 配置/SQL | 规则候选 | 非完整语义验证 |\n| shell 构造 | 提供引用字符串 | 非执行安全证明 |"
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| Git 回归定位 | 提供最近变更、blame、introducer 与可复现 bisect。 | 仅确认固定源码存在；运行效果、规模与兼容范围未做宿主验收 |\n| 故障材料解码 | 解析堆栈和配置问题并输出定位。 | 仅确认固定源码存在；运行效果、规模与兼容范围未做宿主验收 |\n| 命令与SQL审计 | 提供跨平台 shell 转义和 MyBatis Plus 静态检查。 | 仅确认固定源码存在；运行效果、规模与兼容范围未做宿主验收 |"
         },
         "publication.advice": {
             "revision": "dedf8d32fcaaa70e8584f432ba1c63b103f133dc",
-            "text": "先用静态/只读工具，bisect 仅在干净的可丢弃 Git 副本和显式命令审阅后使用。详见[Q05](#research-q05)。"
+            "text": "可先试用静态只读工具；Git bisect只应在干净的可丢弃副本和审阅过的复现命令中运行。 采用结论是试用，不是安装保证；成功与停止标准见[Q09](#research-q09)。"
         },
         "registry": "data/plugins/aaalenwow--dsh-ai-armor",
-        "reports": "# dsh-ai-armor\n\n> 将 Git 回归、堆栈、配置、shell 转义和 MyBatis Plus 静态审计的八个工具合并分发。\n\n## 研究范围\n\n- **仓库**：[AAAlenwow/dsh-ai-armor](https://github.com/AAAlenwow/dsh-ai-armor)\n- **版本号**：0.1.0（[固定提交 dedf8d32fcaaa70e8584f432ba1c63b103f133dc](https://github.com/AAAlenwow/dsh-ai-armor/tree/dedf8d32fcaaa70e8584f432ba1c63b103f133dc)）\n- **版本日期**：2026-10-21（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定源码支持工具合包，但不支持 README“完全不执行代码”的声明；未运行宿主或准确性测试。\n\n## 洞察短评\n\n- **用途**：AI 改代码后对多类常见故障做定向检查；结论须由项目测试或人工复核。\n- **亮点**：一包分发五个已独立存在的工具，减少安装/审阅入口；没有新的联合诊断机制。详见[Q02](#research-q02)。\n- **思考**：bisect 将 repro 作为 bash 脚本执行并切换 Git 检出，与 README 的离线且不执行代码表述冲突。详见[Q03](#research-q03)。\n- **建议**：若按场景选择性注册、在临时 worktree 审阅并执行 bisect，可降低工具选择和仓库副作用风险；尚未实现。详见[Q05](#research-q05)。\n\n采用建议：先用静态/只读工具，bisect 仅在干净的可丢弃 Git 副本和显式命令审阅后使用。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n一包分发五个已独立存在的工具，减少安装/审阅入口；没有新的联合诊断机制。详见[Q02](#research-q02)。\n\n## 关键质疑\n\nbisect 将 repro 作为 bash 脚本执行并切换 Git 检出，与 README 的离线且不执行代码表述冲突。详见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n若按场景选择性注册、在临时 worktree 审阅并执行 bisect，可降低工具选择和仓库副作用风险；尚未实现。详见[Q05](#research-q05)。\n\n在隔离宿主和可丢弃 Git 工程逐工具核注册及输出；用含误报样本对照独立插件，记录 Git 工作树和 shell 副作用。\n\n## 场景与替代办法\n\nAI 改代码后对多类常见故障做定向检查；结论须由项目测试或人工复核。\n\n五个独立插件或 Git/IDE/配置验证等现成工具；Bundle 主要减少安装步骤。\n\n## 依赖与流程\n\n| 条件 | 用途 | 失败时 |\n| --- | --- | --- |\n| DSH tools/Web | 工具注册 | 无入口 |\n| 本地源码与 Git | 定位/审计 | 上下文缺失 |\n| bash 与可重复 repro | bisect | 结果失真或副作用 |\n\n| 步骤 | 动作 | 判据 |\n| --- | --- | --- |\n| 选型 | 按事故选单工具 | 输入适配 |\n| 运行 | 只读预检或隔离 bisect | 记录工具和版本 |\n| 验收 | 人工/测试复核 finding | 缺陷真实且无残留 |\n\n## 成本与效果\n\n| 阶段 | 投入 | 未知 |\n| --- | --- | --- |\n| 安装 | 一个包、八工具位 | 宿主注册成功率 |\n| 使用 | 选工具、核结果 | 误报与节约时间 |\n| Git bisect | 安全复现脚本及仓库副本 | 历史提交执行副作用 |\n\n| 结果 | 支持 | 未证实 |\n| --- | --- | --- |\n| 一次安装 | 五子插件动态注册 | 八项总能成功 |\n| 故障定位 | 各类规则和 Git 工具 | 真实准确率、净节约 |\n| 安全性 | 多数工具本地 | bisect 无副作用，实际会执行 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**厘清五工具 Bundle 的实际增量、声明冲突和安全采用边界。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 五类事故的共同触发是什么，合格结果怎样判断？\n\n**研究主题：**场景与需求\n\n#### 完整回答\n\n作者把 Git 回归、堆栈、配置、shell 转义、MyBatis Plus SQL 扫描放在“AI 写完代码后”同一入口，合计 8 个工具位。实际使用要按事故类型选工具；合格结果是来源定位、可读上下文或审计候选经人工/测试复核，不能把静态提示当成生产安全证明。基线是分别使用 Git、配置解析器、IDE 静态分析和人工复查。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:3-13](https://github.com/AAAlenwow/dsh-ai-armor/blob/dedf8d32fcaaa70e8584f432ba1c63b103f133dc/README.md#L3-L13)\n\n作者场景和八工具清单。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n> **AI 写代码后,一次性定位 5 类常见生产事故的\"护甲\"。** 一次安装,5 个工具,8 个 tool slot,都是给\"AI 写完代码\"那一刻准备的——stack trace 来了、解码;git 出 bug 了、二分定位;config 改坏了、校验;shell 命令拼错了、跨平台转义;MyBatis Plus SQL 写糙了、静态审计。\n\n## 这个 bundle 里有什么\n\n| 子插件 | 工具 | 解决的生产问题 |\n|--------|------|----------------|\n| **[dsh-when-broke](./plugins/dsh-when-broke/README.md)** | `when_broke_find_introducer`<br>`when_broke_recent_changes`<br>`when_broke_bisect_with_repro`<br>`when_broke_blame_age` | 这段代码从哪个 commit 来的?最近谁动过这个文件?线上 bug 是哪个 commit 引入的?这行代码新写的还是老的? |\n| **[dsh-stackdecoder](./plugins/dsh-stackdecoder/README.md)** | `decode_stack` | AI 拿到一段堆栈文本,1 次调用解析出每帧 file:line + 上下文代码片段,不用逐帧 read_file 来回问 |\n| **[dsh-config-guard](./plugins/dsh-config-guard/README.md)** | `validate_config` | AI 改完 application.yml / .env / .properties 后,验证有没有重复键、tab 缩进、键名打错、缺必需字段 |\n| **[dsh-cmd-shield](./plugins/dsh-cmd-shield/README.md)** | `build_shell_invocation` | AI 拼 shell 命令经常被引号/`$`/CJK/路径空格搞坏(尤其 Windows),这个工具替 agent 做转义,POSIX/PowerShell/cmd 各家规则都对齐 |\n| **[dsh-mp-auditor](./plugins/dsh-mp-auditor/README.md)** | `audit_mp_code` | 扫 MyBatis Plus 项目,挑出 N+1 / 漏 `@Transactional` / `LIKE '%xxx%'` / `SELECT *` / 缺 WHERE 的 UPDATE/DELETE |\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:20-45](https://github.com/AAAlenwow/dsh-ai-armor/blob/dedf8d32fcaaa70e8584f432ba1c63b103f133dc/lib/index.js#L20-L45)\n\n打包加载并注册各工具。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n// Sub-plugins (relative path → expected tool count)\nconst subPlugins = [\n  { name: \"dsh-when-broke\", path: join(pluginsRoot, \"dsh-when-broke\", \"lib\", \"index.js\") },\n  { name: \"dsh-stackdecoder\", path: join(pluginsRoot, \"dsh-stackdecoder\", \"lib\", \"index.js\") },\n  { name: \"dsh-config-guard\", path: join(pluginsRoot, \"dsh-config-guard\", \"lib\", \"index.js\") },\n  { name: \"dsh-cmd-shield\", path: join(pluginsRoot, \"dsh-cmd-shield\", \"lib\", \"index.js\") },\n  { name: \"dsh-mp-auditor\", path: join(pluginsRoot, \"dsh-mp-auditor\", \"lib\", \"index.js\") },\n];\n\nexport const name = \"dsh-ai-armor\";\nexport const inject = [\"tools\"];\n\nexport async function apply(ctx) {\n  for (const sp of subPlugins) {\n    try {\n      const mod = await import(sp.path);\n      const tools = mod.tools || [];\n      for (const t of tools) ctx.tools.register(t);\n      ctx.logger?.info?.(\n        `dsh-ai-armor: registered ${tools.length} tools from ${sp.name} (${tools.map((t) => t.name).join(\", \")})`\n      );\n    } catch (e) {\n      ctx.logger?.error?.(`dsh-ai-armor: failed to load ${sp.name}: ${e.message}`);\n    }\n  }\n}\n```\n\n</details>\n\n**依据 3 · 作者声明**：[README.md:66-71](https://github.com/AAAlenwow/dsh-ai-armor/blob/dedf8d32fcaaa70e8584f432ba1c63b103f133dc/README.md#L66-L71)\n\n作者声称仅建议不自动修复。\n\n```text\n## 不在范围内\n\n- **不执行任何代码 / 不发起网络请求** — 全部离线运行,适合企业内网\n- **不依赖任何 npm 包** — 装上就能用,版本兼容问题为零\n- **不替你\"自动 fix\"** — 给出 finding + suggestion,具体修改由人或 AI agent 自己来\n- **不替代 IDE 静态分析** — IDE 看的是开发时实时反馈,这些工具是\"AI 写完那一刻的最后一公里\"\n```\n\n#### 缺口\n\n- 没有用户工作流对照。\n  **影响：**节省时间和缺陷拦截率未知。\n  **进一步探讨：**固定五类样例与现有工具逐类比较。\n\n<a id=\"research-q02\"></a>\n\n### Q02 · Bundle 实际如何集成五个子插件，额外带来什么？\n\n**研究主题：**功能与机制、贡献与相对优势\n\n#### 完整回答\n\n主入口在 apply 中逐个动态 import 五个内置子插件，枚举各自 tools 并注册；单个导入失败只记录错误并继续。它提供一次安装的分发与工具汇聚，不新增跨工具编排、共用诊断状态或统一结论。子插件保留独立入口，若 Bundle 和独立包同装会发生工具 ID 冲突，README 也明确提示。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:20-45](https://github.com/AAAlenwow/dsh-ai-armor/blob/dedf8d32fcaaa70e8584f432ba1c63b103f133dc/lib/index.js#L20-L45)\n\n逐个加载、注册、捕获失败。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n// Sub-plugins (relative path → expected tool count)\nconst subPlugins = [\n  { name: \"dsh-when-broke\", path: join(pluginsRoot, \"dsh-when-broke\", \"lib\", \"index.js\") },\n  { name: \"dsh-stackdecoder\", path: join(pluginsRoot, \"dsh-stackdecoder\", \"lib\", \"index.js\") },\n  { name: \"dsh-config-guard\", path: join(pluginsRoot, \"dsh-config-guard\", \"lib\", \"index.js\") },\n  { name: \"dsh-cmd-shield\", path: join(pluginsRoot, \"dsh-cmd-shield\", \"lib\", \"index.js\") },\n  { name: \"dsh-mp-auditor\", path: join(pluginsRoot, \"dsh-mp-auditor\", \"lib\", \"index.js\") },\n];\n\nexport const name = \"dsh-ai-armor\";\nexport const inject = [\"tools\"];\n\nexport async function apply(ctx) {\n  for (const sp of subPlugins) {\n    try {\n      const mod = await import(sp.path);\n      const tools = mod.tools || [];\n      for (const t of tools) ctx.tools.register(t);\n      ctx.logger?.info?.(\n        `dsh-ai-armor: registered ${tools.length} tools from ${sp.name} (${tools.map((t) => t.name).join(\", \")})`\n      );\n    } catch (e) {\n      ctx.logger?.error?.(`dsh-ai-armor: failed to load ${sp.name}: ${e.message}`);\n    }\n  }\n}\n```\n\n</details>\n\n**依据 2 · 作者声明**：[README.md:29-49](https://github.com/AAAlenwow/dsh-ai-armor/blob/dedf8d32fcaaa70e8584f432ba1c63b103f133dc/README.md#L29-L49)\n\n单独安装与捆绑价值说法。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n````text\n每个子插件都可以**单独安装**(如果你只需要其中一个):\n\n```bash\ndsh plugin add AAAlenwow/dsh-when-broke    # 4 个工具\ndsh plugin add AAAlenwow/dsh-stackdecoder  # 1 个工具\ndsh plugin add AAAlenwow/dsh-config-guard  # 1 个工具\ndsh plugin add AAAlenwow/dsh-cmd-shield    # 1 个工具\ndsh plugin add AAAlenwow/dsh-mp-auditor    # 1 个工具\n```\n\n## 为什么打包\n\n这 5 个工具解决的问题有一个共同特征:**都是 AI 写完代码后那一刻最容易爆雷的地方**。\n\n- 堆栈一贴,AI 不会自动定位本地代码 → `decode_stack`\n- `git blame` / `git bisect` 在 shell 里跑可以但需要 AI 拼命令和解析输出 → `when_broke_*`\n- YAML/ENV 写错一个 tab 或一个重复键,服务启动失败 → `validate_config`\n- Windows PowerShell 跟 bash 转义规则不一样,AI 经常写错 → `build_shell_invocation`\n- MyBatis Plus N+1 不会报错但会拖慢数据库,AI 自己看不到 → `audit_mp_code`\n\n**一个 bundle,一个 PR,一个 review,搞定 8 个 tool slot。**比 5 次单独发布少 4 轮审核往返,普通用户一次安装全有。\n````\n\n</details>\n\n**依据 3 · 作者声明**：[README.md:94-106](https://github.com/AAAlenwow/dsh-ai-armor/blob/dedf8d32fcaaa70e8584f432ba1c63b103f133dc/README.md#L94-L106)\n\n独立包及 ID 冲突提示。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n## Standalone sub-plugins\n\nEvery tool in this bundle is also published as a standalone installable plugin:\n\n| Repo | Tools |\n|---|---|\n| [dsh-when-broke](https://github.com/AAAlenwow/dsh-when-broke) | 4 — when_broke_find_introducer / when_broke_recent_changes / when_broke_bisect_with_repro / when_broke_blame_age |\n| [dsh-stackdecoder](https://github.com/AAAlenwow/dsh-stackdecoder) | 1 — decode_stack |\n| [dsh-config-guard](https://github.com/AAAlenwow/dsh-config-guard) | 1 — validate_config |\n| [dsh-cmd-shield](https://github.com/AAAlenwow/dsh-cmd-shield) | 1 — build_shell_invocation |\n| [dsh-mp-auditor](https://github.com/AAAlenwow/dsh-mp-auditor) | 1 — audit_mp_code |\n\nInstall either the bundle or the standalone packages, not both (tool ids would collide).\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · “不执行任何代码”和生产级保障的声明有何边界？\n\n**研究主题：**缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\nREADME 的“不执行任何代码”与 when_broke_bisect_with_repro 源码冲突：该工具将用户给的单行 repro 写入 bash 脚本，以 git bisect run 在一系列历史提交上运行，且调用前先 bisect reset。即使每次 finally 试图 reset，也会改动仓库检出状态并执行任意复现命令。只有单行校验，无命令白名单或隔离。主 Bundle 对导入失败仅记日志，不保证八项全注册。MyBatis 扫描是规则/候选而非运行时 SQL 证据；README 性能数为作者报告，未复测。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:51-69](https://github.com/AAAlenwow/dsh-ai-armor/blob/dedf8d32fcaaa70e8584f432ba1c63b103f133dc/README.md#L51-L69)\n\n作者性能和“不执行代码”声明。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n## 性能(全本地,无外部依赖)\n\n每个工具都是**纯本地、无网络调用、无第三方依赖**(只用 Node.js 内置 `fs`/`path`/`child_process`/`crypto`)。所有测试跑在普通 MacBook M1 上:\n\n| 工具 | 典型 latency | 输出大小 | 适用场景 |\n|------|-------------|---------|---------|\n| `when_broke_find_introducer` | 15-300ms | ~1-2KB | 出 bug 后,反查可疑代码的来源 |\n| `when_broke_recent_changes` | 5-30ms | ~1-2KB | 出 bug 后,看最近谁改过这个文件 |\n| `when_broke_bisect_with_repro` | 1-60s(取决于 repro) | ~2-3KB | 出 bug 后,二分定位第一个坏 commit |\n| `when_broke_blame_age` | <10ms | ~150 字节 | 一行代码是不是新写的 |\n| `decode_stack` | <1ms/帧 | ~2-5KB(10 帧) | 拿到堆栈,定位到本地代码 |\n| `validate_config` | <1ms | ~500-700 字节 | CI 前置检查、agent 自检 |\n| `build_shell_invocation` | <2ms | ~120-380 字节 | AI 拼 shell 命令前先转义 |\n| `audit_mp_code` | <10ms/1000 文件 | ~1-2KB | 写完 MyBatis Plus 代码后扫描 |\n\n## 不在范围内\n\n- **不执行任何代码 / 不发起网络请求** — 全部离线运行,适合企业内网\n- **不依赖任何 npm 包** — 装上就能用,版本兼容问题为零\n```\n\n</details>\n\n**依据 2 · 源码核查**：[plugins/dsh-when-broke/lib/bisect-with-repro.js:29-68](https://github.com/AAAlenwow/dsh-ai-armor/blob/dedf8d32fcaaa70e8584f432ba1c63b103f133dc/plugins/dsh-when-broke/lib/bisect-with-repro.js#L29-L68)\n\nrepro 写入 shell，bisect run 执行。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\nexport async function bisectWithRepro({ good, bad, repro, cwd, timeoutMs = 60_000 } = {}) {\n  if (!isGitRepo(cwd)) {\n    return { ok: false, error: \"当前目录不在 git 仓库内。\" };\n  }\n  if (!good || !bad || !repro) {\n    return { ok: false, error: \"需要 good(已知好 commit)、bad(已知坏 commit)、repro(复现命令)三个参数\" };\n  }\n  if (typeof repro !== \"string\" || repro.includes(\"\\n\")) {\n    return { ok: false, error: \"repro 必须是单行命令(不能含换行;若需多步请包成 shell 脚本)\" };\n  }\n\n  const t0 = Date.now();\n  let tmpDir = null;\n  const log = [];\n\n  // Always reset first in case a previous bisect was interrupted\n  try { git([\"bisect\", \"reset\"], { cwd, allowFailure: true }); } catch {}\n\n  // Wrap the repro in a small shell script so `git bisect run` can call it.\n  // The script must exit 0 = good, 1 = bad, 125 = skip-this-commit.\n  tmpDir = mkdtempSync(join(tmpdir(), \"dsh-when-broke-\"));\n  const reproScript = join(tmpDir, \"repro.sh\");\n  writeFileSync(reproScript, `#!/usr/bin/env bash\\nset -e\\ncd \"${cwd}\"\\n${repro}\\n`, { mode: 0o755 });\n\n  try {\n    git([\"bisect\", \"start\"], { cwd });\n    log.push(\"bisect start\");\n    git([\"bisect\", \"bad\", bad], { cwd });\n    log.push(`bisect bad ${bad.slice(0, 7)}`);\n    git([\"bisect\", \"good\", good], { cwd });\n    log.push(`bisect good ${good.slice(0, 7)}`);\n\n    // Tell git to skip commits that can't be tested (e.g. build failure).\n    // The script exits 125 if repro can't run; git bisect treats that as skip.\n    const r = spawnSync(\"git\", [\n      \"bisect\", \"run\",\n      // Lower default term-quiet to false so we see git's own step output.\n      // We capture stdout/stderr into log below.\n      reproScript,\n    ], { cwd, encoding: \"utf8\", timeout: timeoutMs });\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:32-45](https://github.com/AAAlenwow/dsh-ai-armor/blob/dedf8d32fcaaa70e8584f432ba1c63b103f133dc/lib/index.js#L32-L45)\n\n动态注册失败继续。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\nexport async function apply(ctx) {\n  for (const sp of subPlugins) {\n    try {\n      const mod = await import(sp.path);\n      const tools = mod.tools || [];\n      for (const t of tools) ctx.tools.register(t);\n      ctx.logger?.info?.(\n        `dsh-ai-armor: registered ${tools.length} tools from ${sp.name} (${tools.map((t) => t.name).join(\", \")})`\n      );\n    } catch (e) {\n      ctx.logger?.error?.(`dsh-ai-armor: failed to load ${sp.name}: ${e.message}`);\n    }\n  }\n}\n```\n\n</details>\n\n**依据 4 · 源码核查**：[plugins/dsh-mp-auditor/lib/index.js:8-16](https://github.com/AAAlenwow/dsh-ai-armor/blob/dedf8d32fcaaa70e8584f432ba1c63b103f133dc/plugins/dsh-mp-auditor/lib/index.js#L8-L16)\n\n规则扫描声称。\n\n```text\nconst TOOL_DESCRIPTION = [\n  '静态扫描 MyBatis Plus 项目源码,挑出常见的 SQL/事务性能与安全问题。',\n  '检查项:',\n  '- SELECT * (应改用显式列名)',\n  '- UPDATE/DELETE 缺 WHERE (会全表更新/删除!)',\n  '- LIKE \\'%xxx\\' (前导 %,B-tree 索引失效)',\n  '- Service 方法 ≥2 处写操作但缺 @Transactional (部分失败数据不一致)',\n  '- 循环里调 mapper.find*/list* (疑似 N+1)',\n  '返回 ok / summary / findings[]。'\n```\n\n#### 缺口\n\n- 未运行目标插件或测试。\n  **影响：**复现命令副作用、全工具注册和准确率未独立验证。\n  **进一步探讨：**在可丢弃 Git 副本与带误报样本的固定工程隔离试验。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 安装与持续使用的真实边界是什么？\n\n**研究主题：**依赖、兼容与流程、效果与总成本\n\n#### 完整回答\n\n固定包版本 0.1.0、MIT，兼容声明 DSH>=0.1.7-alpha.1/web；五个子插件随包发布，没有 npm 依赖。运行却需要 Node 内置 fs/path/child_process、Git 和可访问源码，bisect 还需要 bash 与可安全重复运行的 repro。八工具位增加选择负担。作者给出毫秒级性能表和“零版本兼容”说法，但本轮未复测；源码并不能证明宿主接口兼容或所有平台的转义正确。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:1-44](https://github.com/AAAlenwow/dsh-ai-armor/blob/dedf8d32fcaaa70e8584f432ba1c63b103f133dc/package.json#L1-L44)\n\n包和兼容声明。\n\n<details>\n<summary>查看原文（44行）</summary>\n\n```text\n{\n  \"name\": \"dsh-ai-armor\",\n  \"version\": \"0.1.0\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/AAAlenwow/dsh-ai-armor.git\"\n  },\n  \"description\": \"Five production-grade DSH tools (when-broke, stackdecoder, config-guard, cmd-shield, mp-auditor) bundled into one plugin: git regression finder, stack-trace decoder, config-file validator, cross-platform shell escape, MyBatis Plus SQL auditor. 五个生产级 DSH 工具合一：git 回归定位、堆栈解码、配置校验、跨平台 shell 转义、MyBatis Plus SQL 审计。\",\n  \"keywords\": [\n    \"deepseek-harness\",\n    \"dsh\",\n    \"dsh-plugin\",\n    \"git\",\n    \"stack-trace\",\n    \"config\",\n    \"shell\",\n    \"mybatis-plus\",\n    \"sql-audit\",\n    \"ai-safety\"\n  ],\n  \"license\": \"MIT\",\n  \"main\": \"./lib/index.js\",\n  \"exports\": {\n    \".\": \"./lib/index.js\",\n    \"./package.json\": \"./package.json\"\n  },\n  \"files\": [\n    \"cordis.patch.yml\",\n    \"lib\",\n    \"plugins\",\n    \"README.md\"\n  ],\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    },\n    \"compatibility\": {\n      \"dsh\": \">=0.1.7-alpha.1\",\n      \"profiles\": [\n        \"web\"\n      ]\n    }\n  },\n  \"type\": \"module\"\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:20-45](https://github.com/AAAlenwow/dsh-ai-armor/blob/dedf8d32fcaaa70e8584f432ba1c63b103f133dc/lib/index.js#L20-L45)\n\n打包和注册路径。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n// Sub-plugins (relative path → expected tool count)\nconst subPlugins = [\n  { name: \"dsh-when-broke\", path: join(pluginsRoot, \"dsh-when-broke\", \"lib\", \"index.js\") },\n  { name: \"dsh-stackdecoder\", path: join(pluginsRoot, \"dsh-stackdecoder\", \"lib\", \"index.js\") },\n  { name: \"dsh-config-guard\", path: join(pluginsRoot, \"dsh-config-guard\", \"lib\", \"index.js\") },\n  { name: \"dsh-cmd-shield\", path: join(pluginsRoot, \"dsh-cmd-shield\", \"lib\", \"index.js\") },\n  { name: \"dsh-mp-auditor\", path: join(pluginsRoot, \"dsh-mp-auditor\", \"lib\", \"index.js\") },\n];\n\nexport const name = \"dsh-ai-armor\";\nexport const inject = [\"tools\"];\n\nexport async function apply(ctx) {\n  for (const sp of subPlugins) {\n    try {\n      const mod = await import(sp.path);\n      const tools = mod.tools || [];\n      for (const t of tools) ctx.tools.register(t);\n      ctx.logger?.info?.(\n        `dsh-ai-armor: registered ${tools.length} tools from ${sp.name} (${tools.map((t) => t.name).join(\", \")})`\n      );\n    } catch (e) {\n      ctx.logger?.error?.(`dsh-ai-armor: failed to load ${sp.name}: ${e.message}`);\n    }\n  }\n}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[plugins/dsh-when-broke/lib/bisect-with-repro.js:47-68](https://github.com/AAAlenwow/dsh-ai-armor/blob/dedf8d32fcaaa70e8584f432ba1c63b103f133dc/plugins/dsh-when-broke/lib/bisect-with-repro.js#L47-L68)\n\nbash 和 git bisect 依赖。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n  // Wrap the repro in a small shell script so `git bisect run` can call it.\n  // The script must exit 0 = good, 1 = bad, 125 = skip-this-commit.\n  tmpDir = mkdtempSync(join(tmpdir(), \"dsh-when-broke-\"));\n  const reproScript = join(tmpDir, \"repro.sh\");\n  writeFileSync(reproScript, `#!/usr/bin/env bash\\nset -e\\ncd \"${cwd}\"\\n${repro}\\n`, { mode: 0o755 });\n\n  try {\n    git([\"bisect\", \"start\"], { cwd });\n    log.push(\"bisect start\");\n    git([\"bisect\", \"bad\", bad], { cwd });\n    log.push(`bisect bad ${bad.slice(0, 7)}`);\n    git([\"bisect\", \"good\", good], { cwd });\n    log.push(`bisect good ${good.slice(0, 7)}`);\n\n    // Tell git to skip commits that can't be tested (e.g. build failure).\n    // The script exits 125 if repro can't run; git bisect treats that as skip.\n    const r = spawnSync(\"git\", [\n      \"bisect\", \"run\",\n      // Lower default term-quiet to false so we see git's own step output.\n      // We capture stdout/stderr into log below.\n      reproScript,\n    ], { cwd, encoding: \"utf8\", timeout: timeoutMs });\n```\n\n</details>\n\n**依据 4 · 作者声明**：[README.md:51-64](https://github.com/AAAlenwow/dsh-ai-armor/blob/dedf8d32fcaaa70e8584f432ba1c63b103f133dc/README.md#L51-L64)\n\n作者时延表。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n## 性能(全本地,无外部依赖)\n\n每个工具都是**纯本地、无网络调用、无第三方依赖**(只用 Node.js 内置 `fs`/`path`/`child_process`/`crypto`)。所有测试跑在普通 MacBook M1 上:\n\n| 工具 | 典型 latency | 输出大小 | 适用场景 |\n|------|-------------|---------|---------|\n| `when_broke_find_introducer` | 15-300ms | ~1-2KB | 出 bug 后,反查可疑代码的来源 |\n| `when_broke_recent_changes` | 5-30ms | ~1-2KB | 出 bug 后,看最近谁改过这个文件 |\n| `when_broke_bisect_with_repro` | 1-60s(取决于 repro) | ~2-3KB | 出 bug 后,二分定位第一个坏 commit |\n| `when_broke_blame_age` | <10ms | ~150 字节 | 一行代码是不是新写的 |\n| `decode_stack` | <1ms/帧 | ~2-5KB(10 帧) | 拿到堆栈,定位到本地代码 |\n| `validate_config` | <1ms | ~500-700 字节 | CI 前置检查、agent 自检 |\n| `build_shell_invocation` | <2ms | ~120-380 字节 | AI 拼 shell 命令前先转义 |\n| `audit_mp_code` | <10ms/1000 文件 | ~1-2KB | 写完 MyBatis Plus 代码后扫描 |\n```\n\n</details>\n\n#### 缺口\n\n- 没有宿主兼容/跨平台运行记录。\n  **影响：**安装成功率与单次诊断成本未知。\n  **进一步探讨：**隔离 DSH 主机按五类输入核注册、调用、时延与副作用。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 应如何采用及验证一包八工具的净价值？\n\n**研究主题：**新假设与验证、采用判断\n\n#### 完整回答\n\n可先把配置、堆栈和静态审计用于只读预检，将 Git bisect 作为显式授权、干净工作树和可丢弃副本中的专门动作。新增但未实现的假设：按场景选择性注册工具，并给 bisect 加运行前差异预览、临时 worktree、命令审阅及终态复核，可保留一包安装便利又减少误调用风险。对照五个独立插件测安装/审核次数、工具选择错误、真实缺陷检出、误报、运行时与工作树残留。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:20-45](https://github.com/AAAlenwow/dsh-ai-armor/blob/dedf8d32fcaaa70e8584f432ba1c63b103f133dc/lib/index.js#L20-L45)\n\n当前全量注册且失败部分继续。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n// Sub-plugins (relative path → expected tool count)\nconst subPlugins = [\n  { name: \"dsh-when-broke\", path: join(pluginsRoot, \"dsh-when-broke\", \"lib\", \"index.js\") },\n  { name: \"dsh-stackdecoder\", path: join(pluginsRoot, \"dsh-stackdecoder\", \"lib\", \"index.js\") },\n  { name: \"dsh-config-guard\", path: join(pluginsRoot, \"dsh-config-guard\", \"lib\", \"index.js\") },\n  { name: \"dsh-cmd-shield\", path: join(pluginsRoot, \"dsh-cmd-shield\", \"lib\", \"index.js\") },\n  { name: \"dsh-mp-auditor\", path: join(pluginsRoot, \"dsh-mp-auditor\", \"lib\", \"index.js\") },\n];\n\nexport const name = \"dsh-ai-armor\";\nexport const inject = [\"tools\"];\n\nexport async function apply(ctx) {\n  for (const sp of subPlugins) {\n    try {\n      const mod = await import(sp.path);\n      const tools = mod.tools || [];\n      for (const t of tools) ctx.tools.register(t);\n      ctx.logger?.info?.(\n        `dsh-ai-armor: registered ${tools.length} tools from ${sp.name} (${tools.map((t) => t.name).join(\", \")})`\n      );\n    } catch (e) {\n      ctx.logger?.error?.(`dsh-ai-armor: failed to load ${sp.name}: ${e.message}`);\n    }\n  }\n}\n```\n\n</details>\n\n**依据 2 · 作者声明**：[README.md:39-49](https://github.com/AAAlenwow/dsh-ai-armor/blob/dedf8d32fcaaa70e8584f432ba1c63b103f133dc/README.md#L39-L49)\n\n作者称一次安装审阅。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n## 为什么打包\n\n这 5 个工具解决的问题有一个共同特征:**都是 AI 写完代码后那一刻最容易爆雷的地方**。\n\n- 堆栈一贴,AI 不会自动定位本地代码 → `decode_stack`\n- `git blame` / `git bisect` 在 shell 里跑可以但需要 AI 拼命令和解析输出 → `when_broke_*`\n- YAML/ENV 写错一个 tab 或一个重复键,服务启动失败 → `validate_config`\n- Windows PowerShell 跟 bash 转义规则不一样,AI 经常写错 → `build_shell_invocation`\n- MyBatis Plus N+1 不会报错但会拖慢数据库,AI 自己看不到 → `audit_mp_code`\n\n**一个 bundle,一个 PR,一个 review,搞定 8 个 tool slot。**比 5 次单独发布少 4 轮审核往返,普通用户一次安装全有。\n```\n\n</details>\n\n**依据 3 · 源码核查**：[plugins/dsh-when-broke/lib/bisect-with-repro.js:44-68](https://github.com/AAAlenwow/dsh-ai-armor/blob/dedf8d32fcaaa70e8584f432ba1c63b103f133dc/plugins/dsh-when-broke/lib/bisect-with-repro.js#L44-L68)\n\n现行 bisect 有副作用。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n  // Always reset first in case a previous bisect was interrupted\n  try { git([\"bisect\", \"reset\"], { cwd, allowFailure: true }); } catch {}\n\n  // Wrap the repro in a small shell script so `git bisect run` can call it.\n  // The script must exit 0 = good, 1 = bad, 125 = skip-this-commit.\n  tmpDir = mkdtempSync(join(tmpdir(), \"dsh-when-broke-\"));\n  const reproScript = join(tmpDir, \"repro.sh\");\n  writeFileSync(reproScript, `#!/usr/bin/env bash\\nset -e\\ncd \"${cwd}\"\\n${repro}\\n`, { mode: 0o755 });\n\n  try {\n    git([\"bisect\", \"start\"], { cwd });\n    log.push(\"bisect start\");\n    git([\"bisect\", \"bad\", bad], { cwd });\n    log.push(`bisect bad ${bad.slice(0, 7)}`);\n    git([\"bisect\", \"good\", good], { cwd });\n    log.push(`bisect good ${good.slice(0, 7)}`);\n\n    // Tell git to skip commits that can't be tested (e.g. build failure).\n    // The script exits 125 if repro can't run; git bisect treats that as skip.\n    const r = spawnSync(\"git\", [\n      \"bisect\", \"run\",\n      // Lower default term-quiet to false so we see git's own step output.\n      // We capture stdout/stderr into log below.\n      reproScript,\n    ], { cwd, encoding: \"utf8\", timeout: timeoutMs });\n```\n\n</details>\n\n**依据 4 · 作者声明**：[README.md:94-106](https://github.com/AAAlenwow/dsh-ai-armor/blob/dedf8d32fcaaa70e8584f432ba1c63b103f133dc/README.md#L94-L106)\n\n独立插件基线。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n## Standalone sub-plugins\n\nEvery tool in this bundle is also published as a standalone installable plugin:\n\n| Repo | Tools |\n|---|---|\n| [dsh-when-broke](https://github.com/AAAlenwow/dsh-when-broke) | 4 — when_broke_find_introducer / when_broke_recent_changes / when_broke_bisect_with_repro / when_broke_blame_age |\n| [dsh-stackdecoder](https://github.com/AAAlenwow/dsh-stackdecoder) | 1 — decode_stack |\n| [dsh-config-guard](https://github.com/AAAlenwow/dsh-config-guard) | 1 — validate_config |\n| [dsh-cmd-shield](https://github.com/AAAlenwow/dsh-cmd-shield) | 1 — build_shell_invocation |\n| [dsh-mp-auditor](https://github.com/AAAlenwow/dsh-mp-auditor) | 1 — audit_mp_code |\n\nInstall either the bundle or the standalone packages, not both (tool ids would collide).\n```\n\n</details>\n\n#### 缺口\n\n- 选择性注册与隔离 bisect 尚未实现。\n  **影响：**不能当作当前贡献。\n  **进一步探讨：**用沙盒副本与五类固定事故进行对照。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：2ca1801e9aa866d89f8a03693c7aba217991c1b3df1f1b36ee72d4d980dfa2dc。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 18 | 2260 | 1756 | 355 | — |\n| .md | source | 8 | 531 | — | — | 3479 |\n| .mjs | test | 11 | 1133 | 929 | 110 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| Git 回归 | 定位提交 | bisect 执行 repro 并切换仓库 |\n| 堆栈解码 | 文件行和上下文 | 源码必须可读 |\n| 配置/SQL | 规则候选 | 非完整语义验证 |\n| shell 构造 | 提供引用字符串 | 非执行安全证明 |\n\n## 工程亮点\n\napply 循环逐个 import 并吞单项失败，故可能部分注册；bisect 构建 bash 脚本并调用 git bisect run，不能视作纯只读。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、plugins/dsh-when-broke/lib/bisect-with-repro.js、plugins/dsh-mp-auditor/lib/index.js、plugins/dsh-stackdecoder/lib/decode-stack.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：审阅固定提交 README、包入口、bisect 与若干子插件源码；未执行目标插件、测试或宿主。\n- 下一步：在隔离宿主和可丢弃 Git 工程逐工具核注册及输出；用含误报样本对照独立插件，记录 Git 工作树和 shell 副作用。\n",
+        "reports": "# dsh-ai-armor\n\n> 将Git回归、堆栈、配置、shell转义和MyBatis Plus静态审计工具合并分发。\n\n## 研究范围\n\n- **仓库**：[AAAlenwow/dsh-ai-armor](https://github.com/AAAlenwow/dsh-ai-armor)\n- **版本号**：0.1.0（[固定提交 dedf8d32fcaaa70e8584f432ba1c63b103f133dc](https://github.com/AAAlenwow/dsh-ai-armor/tree/dedf8d32fcaaa70e8584f432ba1c63b103f133dc)）\n- **版本日期**：2026-10-21（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已有贡献为源码支持的宿主接线与流程组合；效果、兼容和恢复没有真实宿主证据。未来方向保持未验证，不计入当前贡献。\n\n## 洞察短评\n\n- **用途**：希望在 AI 改码后按事故类型调用定向诊断工具的开发者可用它一次安装注册 Git 回归定位、堆栈解码、配置校验、跨平台 shell 转义和 SQL 静态审计工具；合格结果是输出可回指提交、堆栈、配置或 SQL 位置，并经项目测试或人工复核。详见[Q01](#research-q01)。\n- **亮点**：将五个既有子插件统一装载，降低发现与安装入口数量，但没有形成跨工具联合诊断机制。它相对“分别安装五个子插件，或直接使用 Git、配置解析器、IDE 检查和人工审阅”减少接线或重复操作，但未建立同条件效果优势。详见[Q03](#research-q03)。\n- **思考**：其中 bisect 需要执行复现脚本并切换 Git 状态，不能把整包概括为完全不执行代码或无副作用。这会影响贡献能否转化为端到端收益，需以故障注入和同条件对照改变判断。详见[Q04](#research-q04)。\n- **建议**：未来可探索：可按场景延迟注册工具，并把 bisect 固定在临时 worktree 与显式命令预览中，降低误选与仓库副作用。该方向由现有贡献与限制推导，尚未实现；失败或恢复负担不改善即应否定。详见[Q08](#research-q08)。\n\n采用建议：可先试用静态只读工具；Git bisect只应在干净的可丢弃副本和审阅过的复现命令中运行。 采用结论是试用，不是安装保证；成功与停止标准见[Q09](#research-q09)。\n\n## 核心贡献\n\n将五个既有子插件统一装载，降低发现与安装入口数量，但没有形成跨工具联合诊断机制。它相对“分别安装五个子插件，或直接使用 Git、配置解析器、IDE 检查和人工审阅”减少接线或重复操作，但未建立同条件效果优势。详见[Q03](#research-q03)。\n\n## 关键质疑\n\n其中 bisect 需要执行复现脚本并切换 Git 状态，不能把整包概括为完全不执行代码或无副作用。这会影响贡献能否转化为端到端收益，需以故障注入和同条件对照改变判断。详见[Q04](#research-q04)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n未来可探索：可按场景延迟注册工具，并把 bisect 固定在临时 worktree 与显式命令预览中，降低误选与仓库副作用。该方向由现有贡献与限制推导，尚未实现；失败或恢复负担不改善即应否定。详见[Q08](#research-q08)。\n\n选取每类10个已知真值样本，对照原生命令/独立工具，记录正确finding数、误报、人工复核分钟；bisect只在临时worktree运行并监控网络/文件副作用，主工作树变化即否定安全采用。\n\n## 场景与替代办法\n\n希望在 AI 改码后按事故类型调用定向诊断工具的开发者可用它一次安装注册 Git 回归定位、堆栈解码、配置校验、跨平台 shell 转义和 SQL 静态审计工具；合格结果是输出可回指提交、堆栈、配置或 SQL 位置，并经项目测试或人工复核。详见[Q01](#research-q01)。\n\n基线是分别安装五个子插件，或直接使用 Git、配置解析器、IDE 检查和人工审阅。本项的价值主要来自将五个既有子插件统一装载，降低发现与安装入口数量，但没有形成跨工具联合诊断机制；尚无同任务、同资源与同验收口径的运行对照。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| DSH tools/Web 与 bundle patch | 必需 | 动态加载五个子插件工具定义 | 任一子插件加载失败需列出缺失工具 |\n| Git仓库与可重复 repro shell | 仅 bisect 必需 | 切换历史提交并执行复现脚本 | 脏工作树或不可审阅命令时禁用 |\n| 待分析源码/堆栈/配置/MyBatis代码 | 按工具必需 | 提供具体诊断输入 | 输入类型不匹配时不得给通用结论 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 1 | 按事故类型选择一个工具而非整包盲跑 | 输入和预期 finding 明确 |\n| 2 | 静态工具直接分析；bisect 先复制到临时 worktree 并展示 repro | 主工作树不被切换 |\n| 3 | 用项目测试或人工证据复核 finding | 误报被标记，临时 worktree 删除前保存定位 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 本地CPU/磁盘与一个bundle安装 | 审阅八个工具权限和适用输入 | 比五包分装节省多少分钟未知 |\n| 持续使用 | 静态解析/Git历史遍历资源 | 选择工具、准备输入、复核 finding | 各工具准确率与复核分钟未知 |\n| 失败恢复 | bisect重复测试和临时副本空间 | 恢复Git状态、终止repro、清理副本 | 历史脚本造成外部副作用时不可由Git回滚 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 统一分发 | 入口循环注册五个子插件工具 | 部分加载失败是否隔离 |\n| 定向诊断 | 各子插件有独立规则/解析器 | 真实项目误报漏报与净节时 |\n| Git定位 | bisect可执行repro并定位提交 | 不可信历史提交与脚本副作用 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：确认 dsh-ai-armor 在固定版本中实际实现了什么、相对基线的贡献与关键限制，并给出有证据边界的采用和未来验证结论。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 目标用户、反复任务、原有办法与合格结果是什么？\n\n**研究主题**：场景与需求\n\n#### 完整回答\n\n目标用户是希望在 AI 改码后按事故类型调用定向诊断工具的开发者。反复任务是一次安装注册 Git 回归定位、堆栈解码、配置校验、跨平台 shell 转义和 SQL 静态审计工具。原有办法为分别安装五个子插件，或直接使用 Git、配置解析器、IDE 检查和人工审阅。合格结果必须达到“输出可回指提交、堆栈、配置或 SQL 位置，并经项目测试或人工复核”，不能以安装成功、工具注册或一次演示替代。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-19](https://github.com/AAAlenwow/dsh-ai-armor/blob/dedf8d32fcaaa70e8584f432ba1c63b103f133dc/README.md#L1-L19)\n\n作者材料限定目标任务和操作入口；研究回答另加合格交付标准。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n````text\n# dsh-ai-armor\n\n> **AI 写代码后,一次性定位 5 类常见生产事故的\"护甲\"。** 一次安装,5 个工具,8 个 tool slot,都是给\"AI 写完代码\"那一刻准备的——stack trace 来了、解码;git 出 bug 了、二分定位;config 改坏了、校验;shell 命令拼错了、跨平台转义;MyBatis Plus SQL 写糙了、静态审计。\n\n## 这个 bundle 里有什么\n\n| 子插件 | 工具 | 解决的生产问题 |\n|--------|------|----------------|\n| **[dsh-when-broke](./plugins/dsh-when-broke/README.md)** | `when_broke_find_introducer`<br>`when_broke_recent_changes`<br>`when_broke_bisect_with_repro`<br>`when_broke_blame_age` | 这段代码从哪个 commit 来的?最近谁动过这个文件?线上 bug 是哪个 commit 引入的?这行代码新写的还是老的? |\n| **[dsh-stackdecoder](./plugins/dsh-stackdecoder/README.md)** | `decode_stack` | AI 拿到一段堆栈文本,1 次调用解析出每帧 file:line + 上下文代码片段,不用逐帧 read_file 来回问 |\n| **[dsh-config-guard](./plugins/dsh-config-guard/README.md)** | `validate_config` | AI 改完 application.yml / .env / .properties 后,验证有没有重复键、tab 缩进、键名打错、缺必需字段 |\n| **[dsh-cmd-shield](./plugins/dsh-cmd-shield/README.md)** | `build_shell_invocation` | AI 拼 shell 命令经常被引号/`$`/CJK/路径空格搞坏(尤其 Windows),这个工具替 agent 做转义,POSIX/PowerShell/cmd 各家规则都对齐 |\n| **[dsh-mp-auditor](./plugins/dsh-mp-auditor/README.md)** | `audit_mp_code` | 扫 MyBatis Plus 项目,挑出 N+1 / 漏 `@Transactional` / `LIKE '%xxx%'` / `SELECT *` / 缺 WHERE 的 UPDATE/DELETE |\n\n## 安装\n\n```bash\ndsh plugin add AAAlenwow/dsh-ai-armor\n```\n````\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 入口、调用链、数据和状态如何实现核心能力？\n\n**研究主题**：功能与机制\n\n#### 完整回答\n\nlib/index.js 中的固定片段显示关键入口、注册或生命周期接线，包清单限定加载组件。实际链路围绕“按事故类型选择一个工具而非整包盲跑｜输入和预期 finding 明确；静态工具直接分析；bisect 先复制到临时 worktree 并展示 repro｜主工作树不被切换；用项目测试或人工证据复核 finding｜误报被标记，临时 worktree 删除前保存定位”推进，状态发生在插件配置、宿主服务或外部目标中。静态路径只能证明机制存在，不能证明注册后所有分支可运行。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:29-45](https://github.com/AAAlenwow/dsh-ai-armor/blob/dedf8d32fcaaa70e8584f432ba1c63b103f133dc/lib/index.js#L29-L45)\n\n关键源码片段支持入口、注册或生命周期接线。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\nexport const name = \"dsh-ai-armor\";\nexport const inject = [\"tools\"];\n\nexport async function apply(ctx) {\n  for (const sp of subPlugins) {\n    try {\n      const mod = await import(sp.path);\n      const tools = mod.tools || [];\n      for (const t of tools) ctx.tools.register(t);\n      ctx.logger?.info?.(\n        `dsh-ai-armor: registered ${tools.length} tools from ${sp.name} (${tools.map((t) => t.name).join(\", \")})`\n      );\n    } catch (e) {\n      ctx.logger?.error?.(`dsh-ai-armor: failed to load ${sp.name}: ${e.message}`);\n    }\n  }\n}\n```\n\n</details>\n\n**依据 2 · 作者声明**：[package.json:1-26](https://github.com/AAAlenwow/dsh-ai-armor/blob/dedf8d32fcaaa70e8584f432ba1c63b103f133dc/package.json#L1-L26)\n\n包清单绑定版本、入口和宿主声明。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n{\n  \"name\": \"dsh-ai-armor\",\n  \"version\": \"0.1.0\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/AAAlenwow/dsh-ai-armor.git\"\n  },\n  \"description\": \"Five production-grade DSH tools (when-broke, stackdecoder, config-guard, cmd-shield, mp-auditor) bundled into one plugin: git regression finder, stack-trace decoder, config-file validator, cross-platform shell escape, MyBatis Plus SQL auditor. 五个生产级 DSH 工具合一：git 回归定位、堆栈解码、配置校验、跨平台 shell 转义、MyBatis Plus SQL 审计。\",\n  \"keywords\": [\n    \"deepseek-harness\",\n    \"dsh\",\n    \"dsh-plugin\",\n    \"git\",\n    \"stack-trace\",\n    \"config\",\n    \"shell\",\n    \"mybatis-plus\",\n    \"sql-audit\",\n    \"ai-safety\"\n  ],\n  \"license\": \"MIT\",\n  \"main\": \"./lib/index.js\",\n  \"exports\": {\n    \".\": \"./lib/index.js\",\n    \"./package.json\": \"./package.json\"\n  },\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 相比宿主原生能力和简单替代，具体增量与归属是什么？\n\n**研究主题**：贡献与相对优势\n\n#### 完整回答\n\n研究者识别的增量是将五个既有子插件统一装载，降低发现与安装入口数量，但没有形成跨工具联合诊断机制。参照是“分别安装五个子插件，或直接使用 Git、配置解析器、IDE 检查和人工审阅”。贡献归属于本插件的集成、状态编排或工作流封装，不把外部服务、上游算法或子组件能力重复算作原创，也不从功能数量推断用户收益。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:29-45](https://github.com/AAAlenwow/dsh-ai-armor/blob/dedf8d32fcaaa70e8584f432ba1c63b103f133dc/lib/index.js#L29-L45)\n\n源码证明本插件承担接线或编排，而非仅有文字描述。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\nexport const name = \"dsh-ai-armor\";\nexport const inject = [\"tools\"];\n\nexport async function apply(ctx) {\n  for (const sp of subPlugins) {\n    try {\n      const mod = await import(sp.path);\n      const tools = mod.tools || [];\n      for (const t of tools) ctx.tools.register(t);\n      ctx.logger?.info?.(\n        `dsh-ai-armor: registered ${tools.length} tools from ${sp.name} (${tools.map((t) => t.name).join(\", \")})`\n      );\n    } catch (e) {\n      ctx.logger?.error?.(`dsh-ai-armor: failed to load ${sp.name}: ${e.message}`);\n    }\n  }\n}\n```\n\n</details>\n\n**依据 2 · 作者声明**：[README.md:1-19](https://github.com/AAAlenwow/dsh-ai-armor/blob/dedf8d32fcaaa70e8584f432ba1c63b103f133dc/README.md#L1-L19)\n\nREADME 提供作者主张，用于与源码可见机制分开比较。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n````text\n# dsh-ai-armor\n\n> **AI 写代码后,一次性定位 5 类常见生产事故的\"护甲\"。** 一次安装,5 个工具,8 个 tool slot,都是给\"AI 写完代码\"那一刻准备的——stack trace 来了、解码;git 出 bug 了、二分定位;config 改坏了、校验;shell 命令拼错了、跨平台转义;MyBatis Plus SQL 写糙了、静态审计。\n\n## 这个 bundle 里有什么\n\n| 子插件 | 工具 | 解决的生产问题 |\n|--------|------|----------------|\n| **[dsh-when-broke](./plugins/dsh-when-broke/README.md)** | `when_broke_find_introducer`<br>`when_broke_recent_changes`<br>`when_broke_bisect_with_repro`<br>`when_broke_blame_age` | 这段代码从哪个 commit 来的?最近谁动过这个文件?线上 bug 是哪个 commit 引入的?这行代码新写的还是老的? |\n| **[dsh-stackdecoder](./plugins/dsh-stackdecoder/README.md)** | `decode_stack` | AI 拿到一段堆栈文本,1 次调用解析出每帧 file:line + 上下文代码片段,不用逐帧 read_file 来回问 |\n| **[dsh-config-guard](./plugins/dsh-config-guard/README.md)** | `validate_config` | AI 改完 application.yml / .env / .properties 后,验证有没有重复键、tab 缩进、键名打错、缺必需字段 |\n| **[dsh-cmd-shield](./plugins/dsh-cmd-shield/README.md)** | `build_shell_invocation` | AI 拼 shell 命令经常被引号/`$`/CJK/路径空格搞坏(尤其 Windows),这个工具替 agent 做转义,POSIX/PowerShell/cmd 各家规则都对齐 |\n| **[dsh-mp-auditor](./plugins/dsh-mp-auditor/README.md)** | `audit_mp_code` | 扫 MyBatis Plus 项目,挑出 N+1 / 漏 `@Transactional` / `LIKE '%xxx%'` / `SELECT *` / 缺 WHERE 的 UPDATE/DELETE |\n\n## 安装\n\n```bash\ndsh plugin add AAAlenwow/dsh-ai-armor\n```\n````\n\n</details>\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 什么前提最可能使核心贡献无法转化为端到端价值？\n\n**研究主题**：缺陷与关键质疑\n\n#### 完整回答\n\n最有力支持是固定源码确有相应接线；最关键反例或其他解释是其中 bisect 需要执行复现脚本并切换 Git 状态，不能把整包概括为完全不执行代码或无副作用。若失败后不能判断副作用是否已发生，局部自动化可能把恢复负担转移给用户。该问题不直接否定插件，但会把适用范围收窄到可隔离、可回读的任务。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:29-45](https://github.com/AAAlenwow/dsh-ai-armor/blob/dedf8d32fcaaa70e8584f432ba1c63b103f133dc/lib/index.js#L29-L45)\n\n源码显示关键状态边界，也说明为什么需要运行时故障验证。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\nexport const name = \"dsh-ai-armor\";\nexport const inject = [\"tools\"];\n\nexport async function apply(ctx) {\n  for (const sp of subPlugins) {\n    try {\n      const mod = await import(sp.path);\n      const tools = mod.tools || [];\n      for (const t of tools) ctx.tools.register(t);\n      ctx.logger?.info?.(\n        `dsh-ai-armor: registered ${tools.length} tools from ${sp.name} (${tools.map((t) => t.name).join(\", \")})`\n      );\n    } catch (e) {\n      ctx.logger?.error?.(`dsh-ai-armor: failed to load ${sp.name}: ${e.message}`);\n    }\n  }\n}\n```\n\n</details>\n\n#### 缺口\n\n- 缺少针对“其中 bisect 需要执行复现脚本并切换 Git 状态，不能把整包概括为完全不执行代码或无副作用”的固定版本故障注入记录\n  **影响**：无法确认核心贡献在异常路径仍成立\n  **进一步探讨**：选取每类10个已知真值样本，对照原生命令/独立工具，记录正确finding数、误报、人工复核分钟；bisect只在临时worktree运行并监控网络/文件副作用，主工作树变化即否定安全采用。 本题重点观察异常是否改变贡献结论。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 启动、持续生效和失败恢复各依赖什么，操作负担由谁承担？\n\n**研究主题**：依赖、兼容与流程\n\n#### 完整回答\n\n关键依赖分别是：DSH tools/Web 与 bundle patch｜必需｜动态加载五个子插件工具定义｜任一子插件加载失败需列出缺失工具；Git仓库与可重复 repro shell｜仅 bisect 必需｜切换历史提交并执行复现脚本｜脏工作树或不可审阅命令时禁用；待分析源码/堆栈/配置/MyBatis代码｜按工具必需｜提供具体诊断输入｜输入类型不匹配时不得给通用结论。启动者负责版本与权限，使用者负责输入和验收，维护者负责外部服务/API 漂移。失败恢复按“用项目测试或人工证据复核 finding｜误报被标记，临时 worktree 删除前保存定位”执行；包依赖存在或工具可注册都不表示业务已经办结。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[package.json:1-26](https://github.com/AAAlenwow/dsh-ai-armor/blob/dedf8d32fcaaa70e8584f432ba1c63b103f133dc/package.json#L1-L26)\n\n包清单提供运行时、依赖和分发边界。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n{\n  \"name\": \"dsh-ai-armor\",\n  \"version\": \"0.1.0\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/AAAlenwow/dsh-ai-armor.git\"\n  },\n  \"description\": \"Five production-grade DSH tools (when-broke, stackdecoder, config-guard, cmd-shield, mp-auditor) bundled into one plugin: git regression finder, stack-trace decoder, config-file validator, cross-platform shell escape, MyBatis Plus SQL auditor. 五个生产级 DSH 工具合一：git 回归定位、堆栈解码、配置校验、跨平台 shell 转义、MyBatis Plus SQL 审计。\",\n  \"keywords\": [\n    \"deepseek-harness\",\n    \"dsh\",\n    \"dsh-plugin\",\n    \"git\",\n    \"stack-trace\",\n    \"config\",\n    \"shell\",\n    \"mybatis-plus\",\n    \"sql-audit\",\n    \"ai-safety\"\n  ],\n  \"license\": \"MIT\",\n  \"main\": \"./lib/index.js\",\n  \"exports\": {\n    \".\": \"./lib/index.js\",\n    \"./package.json\": \"./package.json\"\n  },\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:29-45](https://github.com/AAAlenwow/dsh-ai-armor/blob/dedf8d32fcaaa70e8584f432ba1c63b103f133dc/lib/index.js#L29-L45)\n\n源码提供实际宿主接线，用于区分声明依赖与调用依赖。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\nexport const name = \"dsh-ai-armor\";\nexport const inject = [\"tools\"];\n\nexport async function apply(ctx) {\n  for (const sp of subPlugins) {\n    try {\n      const mod = await import(sp.path);\n      const tools = mod.tools || [];\n      for (const t of tools) ctx.tools.register(t);\n      ctx.logger?.info?.(\n        `dsh-ai-armor: registered ${tools.length} tools from ${sp.name} (${tools.map((t) => t.name).join(\", \")})`\n      );\n    } catch (e) {\n      ctx.logger?.error?.(`dsh-ai-armor: failed to load ${sp.name}: ${e.message}`);\n    }\n  }\n}\n```\n\n</details>\n\n#### 缺口\n\n- 真实宿主中的依赖失效顺序与部分成功状态未观测\n  **影响**：无法确认重试是否会重复副作用\n  **进一步探讨**：选取每类10个已知真值样本，对照原生命令/独立工具，记录正确finding数、误报、人工复核分钟；bisect只在临时worktree运行并监控网络/文件副作用，主工作树变化即否定安全采用。 另逐项切断依赖并回读部分成功状态。\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 完成一个合格任务的首次、持续和失败恢复成本与效果是什么？\n\n**研究主题**：效果与总成本\n\n#### 完整回答\n\n成本必须以“输出可回指提交、堆栈、配置或 SQL 位置，并经项目测试或人工复核”为合格单位。三阶段投入为：首次使用｜本地CPU/磁盘与一个bundle安装｜审阅八个工具权限和适用输入｜比五包分装节省多少分钟未知；持续使用｜静态解析/Git历史遍历资源｜选择工具、准备输入、复核 finding｜各工具准确率与复核分钟未知；失败恢复｜bisect重复测试和临时副本空间｜恢复Git状态、终止repro、清理副本｜历史脚本造成外部副作用时不可由Git回滚。当前源码只支持机制存在，效果维度为“统一分发｜入口循环注册五个子插件工具｜部分加载失败是否隔离；定向诊断｜各子插件有独立规则/解析器｜真实项目误报漏报与净节时；Git定位｜bisect可执行repro并定位提交｜不可信历史提交与脚本副作用”。没有合格数、总尝试、人工分钟与现金/资源量，因此不能计算单位成本、节时或ROI。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-19](https://github.com/AAAlenwow/dsh-ai-armor/blob/dedf8d32fcaaa70e8584f432ba1c63b103f133dc/README.md#L1-L19)\n\n作者材料支持操作范围，不提供同条件成本或合格率。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n````text\n# dsh-ai-armor\n\n> **AI 写代码后,一次性定位 5 类常见生产事故的\"护甲\"。** 一次安装,5 个工具,8 个 tool slot,都是给\"AI 写完代码\"那一刻准备的——stack trace 来了、解码;git 出 bug 了、二分定位;config 改坏了、校验;shell 命令拼错了、跨平台转义;MyBatis Plus SQL 写糙了、静态审计。\n\n## 这个 bundle 里有什么\n\n| 子插件 | 工具 | 解决的生产问题 |\n|--------|------|----------------|\n| **[dsh-when-broke](./plugins/dsh-when-broke/README.md)** | `when_broke_find_introducer`<br>`when_broke_recent_changes`<br>`when_broke_bisect_with_repro`<br>`when_broke_blame_age` | 这段代码从哪个 commit 来的?最近谁动过这个文件?线上 bug 是哪个 commit 引入的?这行代码新写的还是老的? |\n| **[dsh-stackdecoder](./plugins/dsh-stackdecoder/README.md)** | `decode_stack` | AI 拿到一段堆栈文本,1 次调用解析出每帧 file:line + 上下文代码片段,不用逐帧 read_file 来回问 |\n| **[dsh-config-guard](./plugins/dsh-config-guard/README.md)** | `validate_config` | AI 改完 application.yml / .env / .properties 后,验证有没有重复键、tab 缩进、键名打错、缺必需字段 |\n| **[dsh-cmd-shield](./plugins/dsh-cmd-shield/README.md)** | `build_shell_invocation` | AI 拼 shell 命令经常被引号/`$`/CJK/路径空格搞坏(尤其 Windows),这个工具替 agent 做转义,POSIX/PowerShell/cmd 各家规则都对齐 |\n| **[dsh-mp-auditor](./plugins/dsh-mp-auditor/README.md)** | `audit_mp_code` | 扫 MyBatis Plus 项目,挑出 N+1 / 漏 `@Transactional` / `LIKE '%xxx%'` / `SELECT *` / 缺 WHERE 的 UPDATE/DELETE |\n\n## 安装\n\n```bash\ndsh plugin add AAAlenwow/dsh-ai-armor\n```\n````\n\n</details>\n\n**依据 2 · 作者声明**：[package.json:1-26](https://github.com/AAAlenwow/dsh-ai-armor/blob/dedf8d32fcaaa70e8584f432ba1c63b103f133dc/package.json#L1-L26)\n\n包清单支持本地/外部资源与依赖边界的定性判断。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n{\n  \"name\": \"dsh-ai-armor\",\n  \"version\": \"0.1.0\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/AAAlenwow/dsh-ai-armor.git\"\n  },\n  \"description\": \"Five production-grade DSH tools (when-broke, stackdecoder, config-guard, cmd-shield, mp-auditor) bundled into one plugin: git regression finder, stack-trace decoder, config-file validator, cross-platform shell escape, MyBatis Plus SQL auditor. 五个生产级 DSH 工具合一：git 回归定位、堆栈解码、配置校验、跨平台 shell 转义、MyBatis Plus SQL 审计。\",\n  \"keywords\": [\n    \"deepseek-harness\",\n    \"dsh\",\n    \"dsh-plugin\",\n    \"git\",\n    \"stack-trace\",\n    \"config\",\n    \"shell\",\n    \"mybatis-plus\",\n    \"sql-audit\",\n    \"ai-safety\"\n  ],\n  \"license\": \"MIT\",\n  \"main\": \"./lib/index.js\",\n  \"exports\": {\n    \".\": \"./lib/index.js\",\n    \"./package.json\": \"./package.json\"\n  },\n```\n\n</details>\n\n#### 缺口\n\n- 缺少按合格任务统计的总尝试、失败、人工分钟与现金/资源量\n  **影响**：无法比较总成本与净收益\n  **进一步探讨**：选取每类10个已知真值样本，对照原生命令/独立工具，记录正确finding数、误报、人工复核分钟；bisect只在临时worktree运行并监控网络/文件副作用，主工作树变化即否定安全采用。 同时按合格交付数汇总总尝试、人工分钟和资源量。\n\n<a id=\"research-q07\"></a>\n\n### Q07 · 实现是否可靠可维护，哪些设计可复用，移植代价是什么？\n\n**研究主题**：工程质量与复用\n\n#### 完整回答\n\n固定源码把核心职责落在 lib/index.js 及相邻模块，入口可追踪；inventory 仅作规模和静态候选索引。可复用的是“将五个既有子插件统一装载，降低发现与安装入口数量，但没有形成跨工具联合诊断机制”的显式接线方式。移植必须重做宿主API、权限、状态持久化和“用项目测试或人工证据复核 finding｜误报被标记，临时 worktree 删除前保存定位”验证，不能从测试脚本存在推断当前环境可靠。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:29-45](https://github.com/AAAlenwow/dsh-ai-armor/blob/dedf8d32fcaaa70e8584f432ba1c63b103f133dc/lib/index.js#L29-L45)\n\n固定源码用于评价职责和宿主耦合。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\nexport const name = \"dsh-ai-armor\";\nexport const inject = [\"tools\"];\n\nexport async function apply(ctx) {\n  for (const sp of subPlugins) {\n    try {\n      const mod = await import(sp.path);\n      const tools = mod.tools || [];\n      for (const t of tools) ctx.tools.register(t);\n      ctx.logger?.info?.(\n        `dsh-ai-armor: registered ${tools.length} tools from ${sp.name} (${tools.map((t) => t.name).join(\", \")})`\n      );\n    } catch (e) {\n      ctx.logger?.error?.(`dsh-ai-armor: failed to load ${sp.name}: ${e.message}`);\n    }\n  }\n}\n```\n\n</details>\n\n**依据 2 · 作者声明**：[package.json:1-26](https://github.com/AAAlenwow/dsh-ai-armor/blob/dedf8d32fcaaa70e8584f432ba1c63b103f133dc/package.json#L1-L26)\n\n包清单用于确认版本、分发与依赖面。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n{\n  \"name\": \"dsh-ai-armor\",\n  \"version\": \"0.1.0\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/AAAlenwow/dsh-ai-armor.git\"\n  },\n  \"description\": \"Five production-grade DSH tools (when-broke, stackdecoder, config-guard, cmd-shield, mp-auditor) bundled into one plugin: git regression finder, stack-trace decoder, config-file validator, cross-platform shell escape, MyBatis Plus SQL auditor. 五个生产级 DSH 工具合一：git 回归定位、堆栈解码、配置校验、跨平台 shell 转义、MyBatis Plus SQL 审计。\",\n  \"keywords\": [\n    \"deepseek-harness\",\n    \"dsh\",\n    \"dsh-plugin\",\n    \"git\",\n    \"stack-trace\",\n    \"config\",\n    \"shell\",\n    \"mybatis-plus\",\n    \"sql-audit\",\n    \"ai-safety\"\n  ],\n  \"license\": \"MIT\",\n  \"main\": \"./lib/index.js\",\n  \"exports\": {\n    \".\": \"./lib/index.js\",\n    \"./package.json\": \"./package.json\"\n  },\n```\n\n</details>\n\n#### 缺口\n\n- 未执行仓库测试、安装和真实宿主压力/升级验证\n  **影响**：维护性和异常恢复只能作源码级判断\n  **进一步探讨**：选取每类10个已知真值样本，对照原生命令/独立工具，记录正确finding数、误报、人工复核分钟；bisect只在临时worktree运行并监控网络/文件副作用，主工作树变化即否定安全采用。 在此之外记录构建、卸载和宿主升级后的回归面积。\n\n<a id=\"research-q08\"></a>\n\n### Q08 · 由贡献与反例可推导什么未验证方向，如何证伪？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n由“将五个既有子插件统一装载，降低发现与安装入口数量，但没有形成跨工具联合诊断机制”和“其中 bisect 需要执行复现脚本并切换 Git 状态，不能把整包概括为完全不执行代码或无副作用”推导的新方向是可按场景延迟注册工具，并把 bisect 固定在临时 worktree 与显式命令预览中，降低误选与仓库副作用。它不是当前能力。最小验证为选取每类10个已知真值样本，对照原生命令/独立工具，记录正确finding数、误报、人工复核分钟；bisect只在临时worktree运行并监控网络/文件副作用，主工作树变化即否定安全采用。 若合格结果不改善、误差/副作用越界或恢复负担高于“分别安装五个子插件，或直接使用 Git、配置解析器、IDE 检查和人工审阅”，即削弱或推翻假设。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:29-45](https://github.com/AAAlenwow/dsh-ai-armor/blob/dedf8d32fcaaa70e8584f432ba1c63b103f133dc/lib/index.js#L29-L45)\n\n假设只以已实现机制和边界为推导起点，不表示源码已经实现新方向。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\nexport const name = \"dsh-ai-armor\";\nexport const inject = [\"tools\"];\n\nexport async function apply(ctx) {\n  for (const sp of subPlugins) {\n    try {\n      const mod = await import(sp.path);\n      const tools = mod.tools || [];\n      for (const t of tools) ctx.tools.register(t);\n      ctx.logger?.info?.(\n        `dsh-ai-armor: registered ${tools.length} tools from ${sp.name} (${tools.map((t) => t.name).join(\", \")})`\n      );\n    } catch (e) {\n      ctx.logger?.error?.(`dsh-ai-armor: failed to load ${sp.name}: ${e.message}`);\n    }\n  }\n}\n```\n\n</details>\n\n#### 缺口\n\n- 假设尚无实现、需求频率或效果数据\n  **影响**：不能计入插件贡献、创新效果或商业机会\n  **进一步探讨**：选取每类10个已知真值样本，对照原生命令/独立工具，记录正确finding数、误报、人工复核分钟；bisect只在临时worktree运行并监控网络/文件副作用，主工作树变化即否定安全采用。 只验证最小原型，不改变当前能力状态。\n\n<a id=\"research-q09\"></a>\n\n### Q09 · 对谁值得观察或试用，成功与停止标准是什么？\n\n**研究主题**：采用判断\n\n#### 完整回答\n\n当前结论为小范围试用。可先试用静态只读工具；Git bisect只应在干净的可丢弃副本和审阅过的复现命令中运行。 试用成功标准是“输出可回指提交、堆栈、配置或 SQL 位置，并经项目测试或人工复核”，并且 部分加载失败是否隔离、真实项目误报漏报与净节时、不可信历史提交与脚本副作用 有可接受结果；停止标准包括发生其中 bisect 需要执行复现脚本并切换 Git 状态，不能把整包概括为完全不执行代码或无副作用所述核心风险、出现未知副作用自动重试，或总人工/资源成本高于“分别安装五个子插件，或直接使用 Git、配置解析器、IDE 检查和人工审阅”。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-19](https://github.com/AAAlenwow/dsh-ai-armor/blob/dedf8d32fcaaa70e8584f432ba1c63b103f133dc/README.md#L1-L19)\n\n作者材料限定可操作范围；采用结论由研究者结合限制给出。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n````text\n# dsh-ai-armor\n\n> **AI 写代码后,一次性定位 5 类常见生产事故的\"护甲\"。** 一次安装,5 个工具,8 个 tool slot,都是给\"AI 写完代码\"那一刻准备的——stack trace 来了、解码;git 出 bug 了、二分定位;config 改坏了、校验;shell 命令拼错了、跨平台转义;MyBatis Plus SQL 写糙了、静态审计。\n\n## 这个 bundle 里有什么\n\n| 子插件 | 工具 | 解决的生产问题 |\n|--------|------|----------------|\n| **[dsh-when-broke](./plugins/dsh-when-broke/README.md)** | `when_broke_find_introducer`<br>`when_broke_recent_changes`<br>`when_broke_bisect_with_repro`<br>`when_broke_blame_age` | 这段代码从哪个 commit 来的?最近谁动过这个文件?线上 bug 是哪个 commit 引入的?这行代码新写的还是老的? |\n| **[dsh-stackdecoder](./plugins/dsh-stackdecoder/README.md)** | `decode_stack` | AI 拿到一段堆栈文本,1 次调用解析出每帧 file:line + 上下文代码片段,不用逐帧 read_file 来回问 |\n| **[dsh-config-guard](./plugins/dsh-config-guard/README.md)** | `validate_config` | AI 改完 application.yml / .env / .properties 后,验证有没有重复键、tab 缩进、键名打错、缺必需字段 |\n| **[dsh-cmd-shield](./plugins/dsh-cmd-shield/README.md)** | `build_shell_invocation` | AI 拼 shell 命令经常被引号/`$`/CJK/路径空格搞坏(尤其 Windows),这个工具替 agent 做转义,POSIX/PowerShell/cmd 各家规则都对齐 |\n| **[dsh-mp-auditor](./plugins/dsh-mp-auditor/README.md)** | `audit_mp_code` | 扫 MyBatis Plus 项目,挑出 N+1 / 漏 `@Transactional` / `LIKE '%xxx%'` / `SELECT *` / 缺 WHERE 的 UPDATE/DELETE |\n\n## 安装\n\n```bash\ndsh plugin add AAAlenwow/dsh-ai-armor\n```\n````\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:29-45](https://github.com/AAAlenwow/dsh-ai-armor/blob/dedf8d32fcaaa70e8584f432ba1c63b103f133dc/lib/index.js#L29-L45)\n\n源码证据只支撑窄范围试用/观察，不构成安装验收。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\nexport const name = \"dsh-ai-armor\";\nexport const inject = [\"tools\"];\n\nexport async function apply(ctx) {\n  for (const sp of subPlugins) {\n    try {\n      const mod = await import(sp.path);\n      const tools = mod.tools || [];\n      for (const t of tools) ctx.tools.register(t);\n      ctx.logger?.info?.(\n        `dsh-ai-armor: registered ${tools.length} tools from ${sp.name} (${tools.map((t) => t.name).join(\", \")})`\n      );\n    } catch (e) {\n      ctx.logger?.error?.(`dsh-ai-armor: failed to load ${sp.name}: ${e.message}`);\n    }\n  }\n}\n```\n\n</details>\n\n#### 缺口\n\n- 未有真实用户频率、迁移意愿与固定版本宿主验收\n  **影响**：不能升级为持续安装或生产采用\n  **进一步探讨**：选取每类10个已知真值样本，对照原生命令/独立工具，记录正确finding数、误报、人工复核分钟；bisect只在临时worktree运行并监控网络/文件副作用，主工作树变化即否定安全采用。 试用结束还需访谈目标用户的重复频率与退出意愿。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：2ca1801e9aa866d89f8a03693c7aba217991c1b3df1f1b36ee72d4d980dfa2dc。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 18 | 2260 | 1756 | 355 | — |\n| .md | source | 8 | 531 | — | — | 3479 |\n| .mjs | test | 11 | 1133 | 929 | 110 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| Git 回归定位 | 提供最近变更、blame、introducer 与可复现 bisect。 | 仅确认固定源码存在；运行效果、规模与兼容范围未做宿主验收 |\n| 故障材料解码 | 解析堆栈和配置问题并输出定位。 | 仅确认固定源码存在；运行效果、规模与兼容范围未做宿主验收 |\n| 命令与SQL审计 | 提供跨平台 shell 转义和 MyBatis Plus 静态检查。 | 仅确认固定源码存在；运行效果、规模与兼容范围未做宿主验收 |\n\n## 工程亮点\n\n固定源码把关键职责收敛到 lib/index.js 及其相邻模块，便于追踪入口与状态。可借鉴的是显式宿主接线与配置边界；移植仍需重做 API 兼容、权限、持久化和“用项目测试或人工证据复核 finding｜误报被标记，临时 worktree 删除前保存定位”验证。详见[Q07](#research-q07)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：仅核查固定提交的作者材料、包清单、关键源码和完整组件 inventory；未运行插件、测试、安装、外部服务或真实宿主任务。\n- 下一步：选取每类10个已知真值样本，对照原生命令/独立工具，记录正确finding数、误报、人工复核分钟；bisect只在临时worktree运行并监控网络/文件副作用，主工作树变化即否定安全采用。\n",
         "metadata": {
             "repository": "AAAlenwow/dsh-ai-armor",
             "repository_id": 1425045401,
-            "captured_at": "2026-10-22T05:36:48.408Z",
-            "window_start": "2026-09-22T05:36:48.408Z",
+            "captured_at": "2026-10-22T15:12:24.716Z",
+            "window_start": "2026-09-22T15:12:24.716Z",
             "stars": 0,
             "pushed_at": "2026-10-21T04:18:44Z",
             "issues": {
-                "open": 0,
-                "closed": 0,
-                "created_30d": 0,
-                "closed_30d": 0,
-                "updated_30d": 0
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
             },
-            "errors": []
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAAAlenwow%2Fdsh-ai-armor%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3308:320EB6:9C1FF5:A85B86:6ADA27DB and timestamp 2026-10-22 15:12:27 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAAAlenwow%2Fdsh-ai-armor%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 33F0:325E8B:940A2C:A050C2:6ADA27DC and timestamp 2026-10-22 15:12:28 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAAAlenwow%2Fdsh-ai-armor%20is%3Aissue%20created%3A2026-09-22T15%3A12%3A24.716Z..2026-10-22T15%3A12%3A24.716Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 34B2:1BA224:9A1D6E:A66233:6ADA27DD and timestamp 2026-10-22 15:12:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAAAlenwow%2Fdsh-ai-armor%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T15%3A12%3A24.716Z..2026-10-22T15%3A12%3A24.716Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 358E:26EE76:9A77F8:A6C087:6ADA27DE and timestamp 2026-10-22 15:12:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAAAlenwow%2Fdsh-ai-armor%20is%3Aissue%20updated%3A2026-09-22T15%3A12%3A24.716Z..2026-10-22T15%3A12%3A24.716Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3672:1BC665:9A0D7E:A655B3:6ADA27DF and timestamp 2026-10-22 15:12:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-ai-armor",
+                "captured_at": "2026-10-22T15:12:32.041Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-ai-armor",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-22T15:12:32.041Z",
+                    "source_url": "https://registry.npmjs.org/dsh-ai-armor",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            }
         },
         "discovery.plugins": {
             "id": "github:1425045401:root",
             "repository": "AAAlenwow/dsh-ai-armor",
             "path": "",
             "revision": "dedf8d32fcaaa70e8584f432ba1c63b103f133dc",
-            "fingerprints": {
-                "directory": "cf9396974cea9570959f51f8d9640fe1e2a345663b812c4074a9aab1362da39b",
-                "code": "dedf8d32fcaaa70e8584f432ba1c63b103f133dc",
-                "maintenance": "f11d5e5c322290d7fedca603a65fd45ff075a7fa5379d54a32d40533a494fc48"
-            },
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            ],
+            "fingerprints": {
+                "directory": "37d5fac5c6df41971ad16a3926fa0917a0343a9906bb4d24f03a8f30d6a54f77",
+                "code": "dedf8d32fcaaa70e8584f432ba1c63b103f133dc",
+                "maintenance": "f11d5e5c322290d7fedca603a65fd45ff075a7fa5379d54a32d40533a494fc48"
+            }
         }
     }
 }

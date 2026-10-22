@@ -7,14 +7,14 @@
             "id": "github:1424247508:root",
             "repository": "LoveDoLove/dsh-token-saver",
             "path": "",
-            "revision": "2de24768529988cb25c06e613e20c4b005be9a4a",
+            "revision": "1c67975c8e8a3e99e736e9cbec5de50c4f607f27",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "6073d0fed7738fb586a6d0eddc4aba38911a9b16fe205613b8f552d74a43e6a1",
-                "code": "2de24768529988cb25c06e613e20c4b005be9a4a",
-                "maintenance": "c281adccb20971b71c63616965c77d7569bf840667f26682c98ca3f535454296"
+                "code": "1c67975c8e8a3e99e736e9cbec5de50c4f607f27",
+                "maintenance": "55c6627575f6b4c49be8410f20a50cb16cc688f85e1041e420d9d9b87ddba571"
             }
         }
     }

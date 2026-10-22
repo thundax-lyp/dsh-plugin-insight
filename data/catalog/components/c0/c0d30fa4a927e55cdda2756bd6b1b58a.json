@@ -7,14 +7,14 @@
             "id": "github:1416899194:root",
             "repository": "Audrey-cn/dsh-bot-codex-ui",
             "path": "",
-            "revision": "aae58eb99544694731a326f0881c84dfb028e934",
+            "revision": "956763a4b0f2326e20ae8d2fba4fe99333ab05ee",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "c23a1eea1aeda7be6042e37050196227df92b839bce9af4407250d53ba5d2114",
-                "code": "aae58eb99544694731a326f0881c84dfb028e934",
-                "maintenance": "6d533b4e064dc5c1d88e43f5340d7be259c68a12242f61c513ff6a4cc1bd3d4e"
+                "code": "956763a4b0f2326e20ae8d2fba4fe99333ab05ee",
+                "maintenance": "3517a75f9436bbafe164b7d33f7e5171ceba2bca64380f8e72bf377cf7efbf11"
             }
         }
     }

@@ -7,14 +7,14 @@
             "id": "github:1339715284:root",
             "repository": "GooDAnDReaDY/dsh-voice",
             "path": "",
-            "revision": "0f480cb7355feb3abb982dd5950a43ab7dad8be2",
+            "revision": "247b193b0eab8ec2e9453114aaf3c0e32d1922a3",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "f8bbce748beea55d078c8c6295d112e3c2567f023d48ad0b9ea5e638ae81a0d2",
-                "code": "0f480cb7355feb3abb982dd5950a43ab7dad8be2",
-                "maintenance": "f796dd54d2af66e06d0bc2fc7d2212f10f658f369f2fc79581360a5cf5853243"
+                "code": "247b193b0eab8ec2e9453114aaf3c0e32d1922a3",
+                "maintenance": "1c72cda2a1ae65ebc8314c5e726f94d53dbcd8f1862f2d4086f3a9f95b91b96e"
             }
         }
     }

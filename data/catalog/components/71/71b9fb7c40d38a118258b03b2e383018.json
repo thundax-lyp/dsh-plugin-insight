@@ -7,14 +7,14 @@
             "id": "github:1343938294:root",
             "repository": "xfqz86/dsh-usage-stats",
             "path": "",
-            "revision": "6bd877f054d1ab94ce6dd8a2815f490f19e31636",
+            "revision": "90f483d8d74e87f5938c800920b5438cb0d54784",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "d4d87911f1f0fdf68bcca63cee6242b051a61c067c24b89dc814641f181e0895",
-                "code": "6bd877f054d1ab94ce6dd8a2815f490f19e31636",
-                "maintenance": "62fdde15da5524f96ed83d72bb29fd1c13ca9cb5601897850ea992c4470bdff4"
+                "code": "90f483d8d74e87f5938c800920b5438cb0d54784",
+                "maintenance": "7afff9894f696573edde8a92562d149e19f83dda41396ba1cc98de2ac21769b3"
             }
         }
     }

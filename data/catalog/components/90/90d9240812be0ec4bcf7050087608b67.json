@@ -7,14 +7,14 @@
             "id": "github:1424209369:root",
             "repository": "yuezhiye/dsh-closet",
             "path": "",
-            "revision": "189bbd02f88f4a9b1d0262e3712f00868a143e74",
+            "revision": "40ff00adfd40f376f16150daa09837c70b5786bb",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "d1c0550cedcf90069c5e10d7a5603fbd591e8c79e8dd675c307caad188366a00",
-                "code": "189bbd02f88f4a9b1d0262e3712f00868a143e74",
-                "maintenance": "7f0b59eb5a67e1984ff6fc47f48c247ee63902ffe3d4caacde9415232f5e8d89"
+                "code": "40ff00adfd40f376f16150daa09837c70b5786bb",
+                "maintenance": "c4f94e273cc3f6d8580cf061be7d59bcb75ebcbe18acb14914566e56c2ff4c7e"
             }
         }
     }

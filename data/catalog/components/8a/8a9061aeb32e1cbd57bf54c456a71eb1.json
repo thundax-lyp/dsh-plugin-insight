@@ -7,14 +7,14 @@
             "id": "github:1388197150:root",
             "repository": "NamesMT/dsh-home-hosted",
             "path": "",
-            "revision": "d492eefd6a7fe1982011288bd8d2139613ec02fa",
+            "revision": "50af257c8f0103a15a92b74184908b418f521236",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "bb4063fc21435dcbce149cb3aefd6648fc41c3b1c25bd4d0dd4753f8f2958bb9",
-                "code": "d492eefd6a7fe1982011288bd8d2139613ec02fa",
-                "maintenance": "f50b51c4e5752963154e97cc28d243913698d0b63d84e33392ebb25260e6c3ba"
+                "code": "50af257c8f0103a15a92b74184908b418f521236",
+                "maintenance": "7751498f18468d53709723221ae00085b45a4b013d5dba289bf70a32cc8ba6b0"
             }
         }
     }

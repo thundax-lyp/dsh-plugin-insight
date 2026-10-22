@@ -7,14 +7,14 @@
             "id": "github:1338279399:root",
             "repository": "ateen18/dsh-plugin-security-review",
             "path": "",
-            "revision": "3cfa3062c488a047b1f3125a98281a6f45a2f166",
+            "revision": "e0cf1aecc158a9023b88947c19555f9a880e60d0",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "1f9ab10e42ec5b05d1a5d8e03978a374819cfc0b86eb2dd4a035a6ab5a84c503",
-                "code": "3cfa3062c488a047b1f3125a98281a6f45a2f166",
-                "maintenance": "f5a48b264768a86933ee746963a63fec673a6cefaf7701aadbfe1c0a017c79f9"
+                "code": "e0cf1aecc158a9023b88947c19555f9a880e60d0",
+                "maintenance": "beb8a00dd4a82b761198a59c6e8ac94db6f8adcfe1367421ad090976c1ea4a4d"
             }
         }
     }

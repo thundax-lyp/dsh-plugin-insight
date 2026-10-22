@@ -7,14 +7,14 @@
             "id": "github:1422133477:root",
             "repository": "kingcharleslzy-ai/dsh-qwen-studio",
             "path": "",
-            "revision": "1abd62b88b13ca13e679af8c8660c6573f77114d",
+            "revision": "0791bfe5dd2196e4963d77a83df770e4f26d14d8",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "89e8e593fb892dd8e4e76948902c06ba6d2675b09e68460699aa7504ceb18be9",
-                "code": "1abd62b88b13ca13e679af8c8660c6573f77114d",
-                "maintenance": "37bc3d7f85fa334dd6d67f4bf520fb0427e93280f1af6ced4b5a115032192a81"
+                "code": "0791bfe5dd2196e4963d77a83df770e4f26d14d8",
+                "maintenance": "963aa369ef6a4fd1a480f9e3a33098c99700280c18c2ff6293ff558ad258005d"
             }
         }
     }

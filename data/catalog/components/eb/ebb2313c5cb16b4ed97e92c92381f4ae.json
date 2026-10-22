@@ -7,14 +7,14 @@
             "id": "github:1338157210:root",
             "repository": "qjf44/dsh-plugin-thinking-api",
             "path": "",
-            "revision": "d43e02d154630a49afc60bba0c03de6a6e503ed7",
+            "revision": "f6565cad66929157775fca3b650e4f11184edb4e",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "f14484e91e9e8434ab0f5f44ef4f71ece631853cd43741b5ba01ea14b28e4a7b",
-                "code": "d43e02d154630a49afc60bba0c03de6a6e503ed7",
-                "maintenance": "70cd1239dd3111e83c6e89f1e16f0a2cea2e5cccd3697a07509ca48f56828839"
+                "code": "f6565cad66929157775fca3b650e4f11184edb4e",
+                "maintenance": "4e062e045761e0c840c91afefa6a4cc797186beb87cb543cce39c46fd8f2a643"
             }
         }
     }

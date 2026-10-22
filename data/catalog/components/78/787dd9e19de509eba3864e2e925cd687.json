@@ -7,14 +7,14 @@
             "id": "github:1357256243:root",
             "repository": "GooDAnDReaDY/dsh-moa",
             "path": "",
-            "revision": "bfabeed1714254a71faca95d4db698598fa2a15e",
+            "revision": "6a51554c83aab52a8516fea9e3b50b3ede23e0a7",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "9785c4332766a67b7201816279cbd621660d93212f71ec71eb0bae25743c64fe",
-                "code": "bfabeed1714254a71faca95d4db698598fa2a15e",
-                "maintenance": "5dc8d4f882c2c0a5cc5a647f452b7f3d68a45c02af18da2eec7c4fb35aa06a98"
+                "code": "6a51554c83aab52a8516fea9e3b50b3ede23e0a7",
+                "maintenance": "3cc4eb7b264c3dccc00d653cf96ed184cf387c17c8cf3fa4bd3b0bcc4c1a4930"
             }
         }
     }

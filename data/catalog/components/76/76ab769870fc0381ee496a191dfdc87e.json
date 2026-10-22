@@ -450,14 +450,14 @@
             "repository": "AliceLJY/dsh-thumb",
             "path": "",
             "revision": "cde135922e5fdd8729b163c634dd811294555d36",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "781d0c581dc5de0fda468e08f4df167729b05f8253ca14bfc8af12fa6742a90e",
                 "code": "cde135922e5fdd8729b163c634dd811294555d36",
                 "maintenance": "3768b9507875bdc0f788f1448b6e20ec3d29b0f82167413b25d730d43b181844"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

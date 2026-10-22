@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d9bcccb3918e66b282c4b9d380798e90",
+    "identity": "github:1426710693:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1426710693:root",
+            "repository": "leo666-cloud/dsh-miniprogram-helper",
+            "path": "",
+            "revision": "c41f5bb80b86bd52802d9a86396406dd71f91d1c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e704018bc5738f1214d2c5d94073b8562ce532d38a27722c9487a52338c4efa6",
+                "code": "c41f5bb80b86bd52802d9a86396406dd71f91d1c",
+                "maintenance": "c542e8b4d46733711849bcfc3a3cb1aa5064c697796853a210b5e7ae48082256"
+            }
+        }
+    }
+}

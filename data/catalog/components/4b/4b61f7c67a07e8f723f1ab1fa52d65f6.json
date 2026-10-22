@@ -7,14 +7,14 @@
             "id": "github:1290565606:apps-bcs-crates-plugins-deepseek-harness-channel-bcn",
             "repository": "inclusionAI/Avernet",
             "path": "apps/bcs/crates/plugins/deepseek-harness-channel-bcn",
-            "revision": "d163eb905f23de6fd7672162da9d9a5690f74fee",
+            "revision": "eb2d3c55928bcea6931e1b6db1bc2e6c1c298c30",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "31337307526a11d9116edf0b80a9e64d87b03d09d779ef8b140a3320424b3838",
-                "code": "d163eb905f23de6fd7672162da9d9a5690f74fee",
-                "maintenance": "2a8fb9fdcbfae362abc935e9414d280f74f182cc7c4ad6a6ad553b729186136c"
+                "code": "eb2d3c55928bcea6931e1b6db1bc2e6c1c298c30",
+                "maintenance": "9ae99a2059202a456b1f3253e3468afa373f88648e0c7f1e667e138386274017"
             }
         }
     }

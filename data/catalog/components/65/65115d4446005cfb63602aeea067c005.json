@@ -7,14 +7,14 @@
             "id": "github:1333183810:root",
             "repository": "walkinglabs/awesome-deepseek-harness-plugins",
             "path": "",
-            "revision": "e43cbc6d0d1c35323a8a04be0e5056e95fa1f60f",
+            "revision": "abe4e495296eda3486ca5d28975168e5addbc369",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "838bddef9eeae48a681747230dfe4df4b3e1603bd71319d6a5ecbac4a55bd389",
-                "code": "e43cbc6d0d1c35323a8a04be0e5056e95fa1f60f",
-                "maintenance": "17e5b105363405ab2f0d1aa97cd92fa72a0bbba60b6ec2bec3a055d8f78ddcbf"
+                "code": "abe4e495296eda3486ca5d28975168e5addbc369",
+                "maintenance": "48549fbad33a9d900c70cd7e5d34f960a99d37e55fecfa72396827bc6ccdc908"
             }
         }
     }

@@ -7,14 +7,14 @@
             "id": "github:1407572157:plugin",
             "repository": "lcy0121/dsh-plugin-compat-check",
             "path": "plugin",
-            "revision": "a59328d55be6888848d2efa24500c772c61e10ee",
+            "revision": "b4d9f095a1f4a5edb65b38d0ec7e1553238aaf36",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "c49fbc6eeb4a4428efac26f63e50ef94b83b1b2710387120082efbfbe707f4f1",
-                "code": "a59328d55be6888848d2efa24500c772c61e10ee",
-                "maintenance": "fa0c885333b2b0b48deb64d516d2cf5d427e8f7b9a75b5f2e240bfda8b082c92"
+                "code": "b4d9f095a1f4a5edb65b38d0ec7e1553238aaf36",
+                "maintenance": "77f55615db63e8351abd17f8dbb64db532e841391579a43b6275abacaffed979"
             }
         }
     }

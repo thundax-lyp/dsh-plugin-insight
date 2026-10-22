@@ -7,14 +7,14 @@
             "id": "github:1343016152:root",
             "repository": "guhanfei-ai/dsh-mindmap",
             "path": "",
-            "revision": "7bd818b3405e8f405bffedb4bfd4df15b4e64455",
+            "revision": "cd8122b838b423b6c144aa4e4cc961f0aaded8c5",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "7b7bd789a2d32b34ea43049bc0ff317d65e6f3eea482adf1ebe258748beb6a4f",
-                "code": "7bd818b3405e8f405bffedb4bfd4df15b4e64455",
-                "maintenance": "3a28ad677408a0a67a14b3954a9a163445977d5589c7a00c1ca5c3b47c0c98bd"
+                "code": "cd8122b838b423b6c144aa4e4cc961f0aaded8c5",
+                "maintenance": "c730dfdb55ce3e6165fc42b9c2a3831a8234a0967c9ebb2a174e1ae901d0871d"
             }
         }
     }

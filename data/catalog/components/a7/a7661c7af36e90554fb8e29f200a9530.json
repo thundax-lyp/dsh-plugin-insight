@@ -7,14 +7,14 @@
             "id": "github:1338203634:packages-dsh-punky-swarm",
             "repository": "Punky971210/dsh-punky-swarm",
             "path": "packages/dsh-punky-swarm",
-            "revision": "c17c5e1db6d96a1164f30f6788b7599f029ad95d",
+            "revision": "294b4f9e4f9f65c2f6c798ebea3b6b321abbd14c",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "b598b29dda9456e74a75999046a137f8fe10b57a79b97ac949c1e8f796a5bb5c",
-                "code": "c17c5e1db6d96a1164f30f6788b7599f029ad95d",
-                "maintenance": "186fd09b28eb8ca750880ad2c355d49bc3236bc473c41b4fea82c27f47ad9bc0"
+                "code": "294b4f9e4f9f65c2f6c798ebea3b6b321abbd14c",
+                "maintenance": "1aa7fba57e1f5bfc81bdfb6f70a3910e7c57aac0c391e48e934fb56a8e00fe77"
             }
         }
     }

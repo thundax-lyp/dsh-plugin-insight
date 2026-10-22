@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b7c33e8f8a22526f028f4f4da1e47770",
+    "identity": "github:1406156934:dsh-task-monitor",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1406156934:dsh-task-monitor",
+            "repository": "3450892121/dsh-task-monitor",
+            "path": "dsh-task-monitor",
+            "revision": "e628e3ea76cf0f7f0a3489b93c9f00271daeb791",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9b5faff67bc017f2aaf30ac7ed29f601905af1595f81164ed6b6f6ce87bc3d73",
+                "code": "e628e3ea76cf0f7f0a3489b93c9f00271daeb791",
+                "maintenance": "f0705d4cad6674f376f1bb22a5365713d552e66326fd99d0ec86836b9522e166"
+            }
+        }
+    }
+}

@@ -7,14 +7,14 @@
             "id": "github:1417162408:root",
             "repository": "SheepofSheep/dsh-doyourweb",
             "path": "",
-            "revision": "91fa744511788246228da779776fa1675cc562a3",
+            "revision": "c64713ea2cdebd28cdefc3ded27a94f45ba35d38",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "c7e9a58ce64ae53cb08936b6161670262746577f751b33e4484c5a95e71275fe",
-                "code": "91fa744511788246228da779776fa1675cc562a3",
-                "maintenance": "c56c9f07a8563c327d5e19064dff9ff578a59f540da7262c42d2ac38df88bccf"
+                "code": "c64713ea2cdebd28cdefc3ded27a94f45ba35d38",
+                "maintenance": "57e28a960ae6bccc31b66ea8ad26a4e378f3072651e4412dc24c41db8514bf53"
             }
         }
     }

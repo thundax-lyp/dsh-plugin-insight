@@ -7,14 +7,14 @@
             "id": "github:1335896405:root",
             "repository": "ChengxiuCDP/dsh-plugin-advisor",
             "path": "",
-            "revision": "54e436eae703006cb9fdfc0e1f1e074b30a289e9",
+            "revision": "e8993fe609a4b881ce287167f6eb475ede06c7b6",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "683e9895d6420de42d45b72762f18cd6dd5c8b0ed32b0565e4f2b92f8b6d1246",
-                "code": "54e436eae703006cb9fdfc0e1f1e074b30a289e9",
-                "maintenance": "1a5efda6ca194a65bc856e27242aa636cd2090bd0779622890bc1836b46f60cf"
+                "code": "e8993fe609a4b881ce287167f6eb475ede06c7b6",
+                "maintenance": "6b4740ceb6c86528bbc7a6982fabffa0a8abfbd884abc4d528c241d47ea1dbb3"
             }
         }
     }

@@ -7,14 +7,14 @@
             "id": "github:1343815757:root",
             "repository": "ninipa/oh-my-dsh-slim",
             "path": "",
-            "revision": "2d00a2b08536bd2622ab058e75b4c24efbe94255",
+            "revision": "be5b2238fb8786190acffb45340ddefa064cc9c0",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "0783478cf03483487503915ead0c397a29f30d0fe1829e00701263ddc1c354ce",
-                "code": "2d00a2b08536bd2622ab058e75b4c24efbe94255",
-                "maintenance": "137cb97d33d88adfbeb0f8208ff7eded2c061e91e821309de3455146ece56aba"
+                "code": "be5b2238fb8786190acffb45340ddefa064cc9c0",
+                "maintenance": "0e559ebd5716b917afa163b4532929631027e629401e2627f3406936acd4951d"
             }
         }
     }

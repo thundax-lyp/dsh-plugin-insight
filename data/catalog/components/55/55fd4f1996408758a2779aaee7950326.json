@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "55fd4f1996408758a2779aaee7950326",
+    "identity": "github:1344600075:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1344600075:root",
+            "repository": "ShallBay/dsh-token-stats",
+            "path": "",
+            "revision": "e809bc80f40f5c736ddc72ff5938a90312290830",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c668a89baca5a032382b2af8471397edf0f5e20aa88bdd341377590184086028",
+                "code": "e809bc80f40f5c736ddc72ff5938a90312290830",
+                "maintenance": "ea3acead376f4ca9afd841448c1cd466c1b744703237cd0d636125ae7c1ea891"
+            }
+        }
+    }
+}

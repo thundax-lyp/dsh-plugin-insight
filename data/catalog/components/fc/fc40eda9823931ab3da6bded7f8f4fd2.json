@@ -7,14 +7,14 @@
             "id": "github:1425872016:root",
             "repository": "wjf1/dsh-prompt-enhance",
             "path": "",
-            "revision": "b355d816ccbc6af1d18242717da7385dde666aaa",
+            "revision": "a3f0118573ca96c3c3ed7ba193bacd708f29206d",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "f6acbd5c31e5c8a23963281d6acd9ecdd4ed8b19f1969be5fe251b5d0680ce38",
-                "code": "b355d816ccbc6af1d18242717da7385dde666aaa",
-                "maintenance": "228b1e44645a56033e690c78a80ff5d2191e88ad511af9dc947ce41716a56263"
+                "code": "a3f0118573ca96c3c3ed7ba193bacd708f29206d",
+                "maintenance": "d4c5cdcc958ca2c63497a9812f6b588eb24df941c34056601d384472fb897de5"
             }
         }
     }

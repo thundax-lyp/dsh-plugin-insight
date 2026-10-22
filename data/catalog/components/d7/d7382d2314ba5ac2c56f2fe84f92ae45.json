@@ -7,14 +7,14 @@
             "id": "github:1335734923:root",
             "repository": "v587d/capital-generation",
             "path": "",
-            "revision": "17d005cca439b49349e996409c29a57e291902c1",
+            "revision": "8f75733c7d3451baa763fd775076be3fa1667a19",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "784b3997f7db8b23aefa1ac854926a8d85c76b2a42abb6d8f593399c58efb745",
-                "code": "17d005cca439b49349e996409c29a57e291902c1",
-                "maintenance": "c917ab98f3604066a42554416bd5bfe2e71832d388b412bc36e4a56567497cb4"
+                "code": "8f75733c7d3451baa763fd775076be3fa1667a19",
+                "maintenance": "135b7a1d97a0d2e2f895517a7dcb19920af168137366d9ddc1dcf6dcf4573769"
             }
         }
     }

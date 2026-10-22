@@ -7,14 +7,14 @@
             "id": "github:1287261026:root",
             "repository": "zsxh1990/pr-genius",
             "path": "",
-            "revision": "00a716c8be0bfb448666b67809846cd3a08c3c0f",
+            "revision": "65d0b0ffd65e6ea3b36d125fef97e8681768337a",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "cac377b81fcf8d6d3def7f21ca18793d9f5f52fd55cb7cb0be51a0d545122e6e",
-                "code": "00a716c8be0bfb448666b67809846cd3a08c3c0f",
-                "maintenance": "fff5ae30fbb25791bf69c514433085809cd1a16f183d937a61e890f198480a90"
+                "code": "65d0b0ffd65e6ea3b36d125fef97e8681768337a",
+                "maintenance": "5c5e6daf1cd5ab9a8f03ae717bcfb8ca9b98f9af9a48260cbe1677764ced1e37"
             }
         }
     }

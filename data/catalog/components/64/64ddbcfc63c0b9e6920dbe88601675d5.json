@@ -7,14 +7,14 @@
             "id": "github:1240554500:root",
             "repository": "KCNyu/clawock",
             "path": "",
-            "revision": "15734def87f1882c4467ef919b503ce08a961d33",
+            "revision": "17a885657e12d67de227db00684685c584624312",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "3449a5c86b332c99f2a13162af8f8725161bb1b53232d016ebca5955b7337a87",
-                "code": "15734def87f1882c4467ef919b503ce08a961d33",
-                "maintenance": "59616f4af32f977eb7c4adf6f870c9e1fc7b24dda6d8931ec472a8f3812b9365"
+                "code": "17a885657e12d67de227db00684685c584624312",
+                "maintenance": "a21b3885dda09b3cb81a39737041469abed8eea9cae887bc62863f409f955c29"
             }
         }
     }

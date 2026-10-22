@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1bdca94887bc50294cc5a26cb4f183df",
+    "identity": "github:1426944737:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1426944737:root",
+            "repository": "lumine-423/dsh-session-popout",
+            "path": "",
+            "revision": "83ba051a3e449e9ecdfa1e93c0cb3d58de27157e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4b72c71b5d77789b35a86d3ccb4eb91b3f930df364029c78f783463aab6097f0",
+                "code": "83ba051a3e449e9ecdfa1e93c0cb3d58de27157e",
+                "maintenance": "62dbde34514b48a30450221dc948b1be54667b712d1b458451a77f7e7980ac2e"
+            }
+        }
+    }
+}

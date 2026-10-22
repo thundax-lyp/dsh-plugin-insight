@@ -7,14 +7,14 @@
             "id": "github:1180401969:root",
             "repository": "Sikao-Engine/KimiX",
             "path": "",
-            "revision": "a0149553383a2573cd784192c9e9462b3e60ad9a",
+            "revision": "d8f50c7e3cecee0bbcff6f3e7a5a705325b9b9ea",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "d73be63071c44f7ae3692234f3c0c4cae23458a8d3736a2079467ecddd9ef127",
-                "code": "a0149553383a2573cd784192c9e9462b3e60ad9a",
-                "maintenance": "9ccea99ec43dfc416e67fdeb0400be10c5993980266644a9ec8caa43c0661b80"
+                "code": "d8f50c7e3cecee0bbcff6f3e7a5a705325b9b9ea",
+                "maintenance": "c51049f620c10708ef303d09005f4a84ec3d335fc508317e42f266d072778256"
             }
         }
     }

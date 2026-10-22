@@ -7,14 +7,14 @@
             "id": "github:1360268085:plugin",
             "repository": "Tripo-Developer/Tripo3D-Plugin-dsh",
             "path": "plugin",
-            "revision": "11aad8654ae3b80a29e5cc9d0f463828a17c95ac",
+            "revision": "c7d7ff32e186811c180377618a5f1d16f0f5f387",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "c59bfb07d2effe22192bac5a7093c05bf86d1bf395d1b8021a3414d393f7e22e",
-                "code": "11aad8654ae3b80a29e5cc9d0f463828a17c95ac",
-                "maintenance": "70fa4bc32b10fca25acbd37b5eec431c6f7ed24a95223e5a7718d4764a7bc5c8"
+                "code": "c7d7ff32e186811c180377618a5f1d16f0f5f387",
+                "maintenance": "8cea3d104c8dbda82a7ea9b4061e73dfe7b628a7e1676aa14b05e6c8392c0a75"
             }
         }
     }

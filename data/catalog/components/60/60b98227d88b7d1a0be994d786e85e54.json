@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "60b98227d88b7d1a0be994d786e85e54",
+    "identity": "github:1426759138:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1426759138:root",
+            "repository": "klT45/dsh-config-vault",
+            "path": "",
+            "revision": "9e41b2913bea451c09296cb50987ae0aa6e5b460",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "32bfb856d3f444211136fd46c9689e2287d9d35af938a972b089dce9aa27e32d",
+                "code": "9e41b2913bea451c09296cb50987ae0aa6e5b460",
+                "maintenance": "b3e2fc174ae2e60cff8e45c8acdd8bdfc3a5e64212b28c1b0dfb7a21434e70cb"
+            }
+        }
+    }
+}

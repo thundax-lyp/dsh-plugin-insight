@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "8fae0b2048566003d4270721aaeb2f28",
+    "identity": "github:1335594781:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335594781:root",
+            "repository": "777-Zen/dsh-capability-index",
+            "path": "",
+            "revision": "c1803133660c6bc30dbc2d3eda493724b801aad0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "822ea78dc4a80090ecca039b90fddf51725bde8cc35d9cbda7b76216865c3944",
+                "code": "c1803133660c6bc30dbc2d3eda493724b801aad0",
+                "maintenance": "1c81dcf37f7ae1be74f65c2cfaddfc3cd14888af5ea132c317cd8c385ad31fd0"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d845c976d773ad5be136f70449ce76ec",
+    "identity": "github:1426591125:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1426591125:root",
+            "repository": "ygunoil/dsh-va-studio",
+            "path": "",
+            "revision": "5e7c0837c8ef3e5b9aad80fba28c5344d95fe652",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e1f0d25c6ef757dcb6509ec17e0a2bcadb2b7d269b7b320a4deef4728574cf88",
+                "code": "5e7c0837c8ef3e5b9aad80fba28c5344d95fe652",
+                "maintenance": "c47f2df37131b0f139b414f85fed4f003ca462f7ba401692547ff2442c40623d"
+            }
+        }
+    }
+}

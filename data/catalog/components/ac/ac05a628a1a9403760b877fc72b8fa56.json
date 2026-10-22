@@ -7,15 +7,15 @@
             "id": "github:1330041547:root",
             "repository": "vlln/dsh-loop",
             "path": "",
-            "revision": "3ff5068b91da5f0a64985e54c061184abbd52633",
+            "revision": "b3bed0baf819c661815638cc60d511e31261beb5",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "0c71a8e96d6a84fa4f39d9b7d3b03375637681fead7dccce34aedc22ed32b041",
-                "code": "3ff5068b91da5f0a64985e54c061184abbd52633",
-                "maintenance": "38ede3f30f13069f655de198a5b92c519149d62d459d07faf857075ca97eb81a"
+                "code": "b3bed0baf819c661815638cc60d511e31261beb5",
+                "maintenance": "2b035ebc1270244623a74cb4360a95e5fe96938c5d5e891d65336fe360881371"
             }
         }
     }

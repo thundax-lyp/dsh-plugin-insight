@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8ee8c197c45035440d10fe0b586fb7a7",
+    "identity": "github:1424460660:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424460660:root",
+            "repository": "zoe1nan/dsh-cockpit",
+            "path": "",
+            "revision": "b353ca50fe88f70fbde1fd3a8e9a9aa2bf96c934",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1d1360aa660378053cf4ac8ca6930636595e810b72084f1665de850ee3264b5d",
+                "code": "b353ca50fe88f70fbde1fd3a8e9a9aa2bf96c934",
+                "maintenance": "da19e329ddc694fafe5d9fb9a2454efabaa51d0cbec26511636ad9eee07c7445"
+            }
+        }
+    }
+}

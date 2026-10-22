@@ -461,14 +461,14 @@
             "repository": "1420079678-ctrl/agent-body",
             "path": "workspace/plugins/dsh-anatomy-panel",
             "revision": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "a3a50898cb799df5090a0d9f2a50b0b5dea3f73df94f01fcfb6cd57b289820cf",
                 "code": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
                 "maintenance": "43f096365ebe99c29ae5999e57cb00a1b8b3292441388102d038dfe5b740737c"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

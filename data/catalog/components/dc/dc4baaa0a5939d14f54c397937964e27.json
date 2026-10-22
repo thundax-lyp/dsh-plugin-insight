@@ -7,14 +7,14 @@
             "id": "github:1425171875:packages-dsh-harness-os",
             "repository": "TinyNian/dsh-harness-os",
             "path": "packages/dsh-harness-os",
-            "revision": "53cfba1b4848f01ad93794b89761f0b015ab1118",
+            "revision": "89639768a83028119b999931a71bd2b37c88a340",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "98acc2c2660e7c422ce32f40ab58cab0395ed918eefe4eb7119f4b6cc3baa7a4",
-                "code": "53cfba1b4848f01ad93794b89761f0b015ab1118",
-                "maintenance": "ceb58ce4f0f892abfd0f2955b4df0e2584d137310257b580719f3a48174e85d6"
+                "code": "89639768a83028119b999931a71bd2b37c88a340",
+                "maintenance": "ca6ac820412d9e8334f79a70d69eafb173ba1521f728f6ef28074bbe093a1b6c"
             }
         }
     }

@@ -7,14 +7,14 @@
             "id": "github:1421740459:root",
             "repository": "chzisnull/dsh-file-finder",
             "path": "",
-            "revision": "b6e369bcd5e4014e445319a5719bf11a8930c87a",
+            "revision": "14c991dc18e8e25c1b4e97cfdfa6c5de5d2f99a8",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "918d2e5aff73bc93afbbc57bbec253bf807668906f7c8438f7761d4f7a255667",
-                "code": "b6e369bcd5e4014e445319a5719bf11a8930c87a",
-                "maintenance": "df9a5797a92be49267067f6f1e16c57631c96d286a13a6b999d46f8563a7f2b3"
+                "code": "14c991dc18e8e25c1b4e97cfdfa6c5de5d2f99a8",
+                "maintenance": "a422e7e9fc3f2e9ba2e8706dd0b3122f17680dcba18bde2ba3a197f1455ebfc3"
             }
         }
     }

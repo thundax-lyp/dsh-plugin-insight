@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "51eaebbd5afb9e285a7991a748ca3d66",
+    "identity": "github:1426815423:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1426815423:root",
+            "repository": "hZsFN/dsh-default-model-lock",
+            "path": "",
+            "revision": "63cb290ca0e70149def27b94ee51a510a05d245d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7495cbfd41217b6b2b60c03410346463f4c01fed3e9baa16493083ebbaf101c3",
+                "code": "63cb290ca0e70149def27b94ee51a510a05d245d",
+                "maintenance": "c09effd9074d1c026b7db5946431ff59bdbccd223cac2196b49004fb20f7e7d8"
+            }
+        }
+    }
+}

@@ -470,14 +470,14 @@
             "repository": "Amer-CN/zcode-usage-stats",
             "path": "",
             "revision": "9a4381658e754515dac50611da461970462032ec",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "c7632ea61cf5d6858da5b12c8277220953e2f11c2e331ce3a24ddade07a1a3df",
                 "code": "9a4381658e754515dac50611da461970462032ec",
                 "maintenance": "2ab301dcea39e5bf7fe3563c038371e100458d981258dac690c8b2b3f8bfb882"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

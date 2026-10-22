@@ -7,14 +7,14 @@
             "id": "github:1333141598:root",
             "repository": "ChisaAlter/WhaleIsle",
             "path": "",
-            "revision": "458fa79b101213128ace98cef2bc5bf4edac4bc9",
+            "revision": "46c1bea59f8300a93331a82d2b4813ba47b28491",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "d31df781323a177d8d28583273ecd190bb47a5af7243b35429a93d2768226896",
-                "code": "458fa79b101213128ace98cef2bc5bf4edac4bc9",
-                "maintenance": "50dae0b624d4d1f448f4c1ffea3df17430760b6f4026e166004cafa8adc47d0a"
+                "code": "46c1bea59f8300a93331a82d2b4813ba47b28491",
+                "maintenance": "c1e5be37a466225ed0eb2a0335398ba5ba6d116f88b2810356ba9c1f755adc13"
             }
         }
     }

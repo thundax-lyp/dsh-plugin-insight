@@ -7,14 +7,14 @@
             "id": "github:1333652151:dsh-pet",
             "repository": "PC2005-cloud/dsh-pet",
             "path": "dsh-pet",
-            "revision": "d296dbe51a7540641273de6d245461fe30b8e278",
+            "revision": "c696095c5786e0eeb25fec0f37a9cdcf30059151",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "89b1def1a60869cfda0d62ce40f09feffb51ec9fabbced9d848aa953bc8f30d0",
-                "code": "d296dbe51a7540641273de6d245461fe30b8e278",
-                "maintenance": "b92715916e66e467d73d7adbd52095e6a9544372b3061ffa0b324ed05bc01e6f"
+                "code": "c696095c5786e0eeb25fec0f37a9cdcf30059151",
+                "maintenance": "5414b0e51246640a31f9b033e59ca264d1e0383863948a1bd29d79e9b3f2e8ae"
             }
         }
     }

@@ -7,14 +7,14 @@
             "id": "github:1386538234:root",
             "repository": "jingyi0605/Codingns4DSH",
             "path": "",
-            "revision": "713dfc1beec2a046c0cb17bb715eb5e557b68f3b",
+            "revision": "afc7bd66b4077bd421ac17e1bb9fb4de91f742b0",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "8828e72e501a20bdcff8ac6a08809348e658123e22af66e6f7f9a637822f6e33",
-                "code": "713dfc1beec2a046c0cb17bb715eb5e557b68f3b",
-                "maintenance": "b495148f6ce8512f06554439976b7b28be18e9cf10b433d40785908084cc84d5"
+                "code": "afc7bd66b4077bd421ac17e1bb9fb4de91f742b0",
+                "maintenance": "34153b8be8477aee0f8f12ceeef9bf76ae9bd71b64ca66e1b1ea51bb565d3569"
             }
         }
     }

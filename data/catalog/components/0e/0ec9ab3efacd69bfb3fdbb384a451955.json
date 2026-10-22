@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0ec9ab3efacd69bfb3fdbb384a451955",
+    "identity": "github:1426399215:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1426399215:root",
+            "repository": "kingofpowers/dsh-context-archive",
+            "path": "",
+            "revision": "47c1b421ed37f6bb5914f75289373c54eba9b0ed",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0c889d422d452e1854dd6c493aaf26580824bfd88b2e077a20111665a9b1d030",
+                "code": "47c1b421ed37f6bb5914f75289373c54eba9b0ed",
+                "maintenance": "0b6924c81243ce66dd7966f12284229f1ca30398c5ad6b1283c8031b0a8a0616"
+            }
+        }
+    }
+}

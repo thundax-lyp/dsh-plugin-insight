@@ -463,14 +463,14 @@
             "repository": "133563825as-ai/dsh-api-dashboard",
             "path": "",
             "revision": "b57f9535c55aa39026931813e09834fa9f4f4d82",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "6cd20535c1bb7f181d1ad33ee41187c52beec825d47101dff81cdfe1122af46d",
                 "code": "b57f9535c55aa39026931813e09834fa9f4f4d82",
                 "maintenance": "0b55ded12af442285c224598012da1dd7daa7c69a493adb3a615bb429e1ffefa"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

@@ -7,14 +7,14 @@
             "id": "github:1338017483:root",
             "repository": "Diluka/dsh-agent-plugin-market",
             "path": "",
-            "revision": "123937fd67a616b439fff98e67f31f809de3f20d",
+            "revision": "852d9180c18e7740c9ddc746eec7fb9e9114405f",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "2a1720025cb7facb21d355a0e5cc397839460fba7692a1c2a3c1b7c81072ecb2",
-                "code": "123937fd67a616b439fff98e67f31f809de3f20d",
-                "maintenance": "c8bcce5df5445cd79d8781788b96a4f53f631fb89fe91c6285144e9dab785d1f"
+                "code": "852d9180c18e7740c9ddc746eec7fb9e9114405f",
+                "maintenance": "eff8029ad7eccdcfccd5c9f5cef7b16a3c3b2acfb4fc0f6d913de95e1ad79b6c"
             }
         }
     }

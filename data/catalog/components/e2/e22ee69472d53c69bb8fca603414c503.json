@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e22ee69472d53c69bb8fca603414c503",
+    "identity": "github:1406500233:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1406500233:root",
+            "repository": "439436269-ctrl/dsh-zspace",
+            "path": "",
+            "revision": "70743909450191c09f3dcef15d46d8d0119200a9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a82fdbccd2f85d5f2aba1bf402cacc5098963b9a215f4725432b1a334fb9c83e",
+                "code": "70743909450191c09f3dcef15d46d8d0119200a9",
+                "maintenance": "227976950230fda47035dc977a3a2723b75ab89534908af1e59472bdf8ac5982"
+            }
+        }
+    }
+}

@@ -7,15 +7,15 @@
             "id": "github:1333451113:root",
             "repository": "Max-Samson/dsh-usage-chart",
             "path": "",
-            "revision": "b19a8513dac993a66b170123137b7f6e138b4755",
+            "revision": "744a5663e2f27e38d669664fcf3066cb25648bd3",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "6d2527c04d35f94c981b335d5aa28a5a79adfc8b80361c7c28d1f93d704dbc3d",
-                "code": "b19a8513dac993a66b170123137b7f6e138b4755",
-                "maintenance": "0f459c3dc576289d9eebde2ddf53d2f2a82e971b46088ec4c57bc05f64d84c94"
+                "code": "744a5663e2f27e38d669664fcf3066cb25648bd3",
+                "maintenance": "abfefd0a4963cba2869950d0ca93a2a8bc0f639549e2cc0da5d562b0185b2d2c"
             }
         }
     }

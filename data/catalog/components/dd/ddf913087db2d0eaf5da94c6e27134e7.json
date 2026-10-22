@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ddf913087db2d0eaf5da94c6e27134e7",
+    "identity": "github:1427170176:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1427170176:root",
+            "repository": "zirscard/dsh-workpaper-gate",
+            "path": "",
+            "revision": "202d620ccb7beeb73ba93c9be4e4ed16c5ae9c9b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2e1364317488ba4469185a520c0f04ab3d2cfdc9f1effa658f1b0d876bdefc70",
+                "code": "202d620ccb7beeb73ba93c9be4e4ed16c5ae9c9b",
+                "maintenance": "e257eca4aa841ddfa2b33a3fa98112e0dad4a347ff5ffb259e19e8d509c9da8b"
+            }
+        }
+    }
+}

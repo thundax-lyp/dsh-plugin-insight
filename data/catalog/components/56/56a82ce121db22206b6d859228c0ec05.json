@@ -7,14 +7,14 @@
             "id": "github:1337347330:root",
             "repository": "Clarklevis1995/dsh-mobile",
             "path": "",
-            "revision": "48d5403dd5786b523a0133a993f88a53898da65e",
+            "revision": "c062106254f56a94b4ec077879f4fd60e2e8a6a9",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "74277e3b411cad4548cca7fb6bc790d14ac91766613ec200759e53876e29012e",
-                "code": "48d5403dd5786b523a0133a993f88a53898da65e",
-                "maintenance": "fd0b9af80ae5d17b94ed75d2c07dfcf93a649638c06b48df28751bd12964237a"
+                "code": "c062106254f56a94b4ec077879f4fd60e2e8a6a9",
+                "maintenance": "92d25fdaafd80b608d971fa43343e21b0d0f3dbc64ab437d8b3423a3a7dec075"
             }
         }
     }

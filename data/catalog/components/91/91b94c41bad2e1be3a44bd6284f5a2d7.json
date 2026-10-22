@@ -478,14 +478,14 @@
             "repository": "1069137617/dsh-reasoning-tiers",
             "path": "",
             "revision": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "5bc7230f875765ea3eb08f6b4e85cc237d9401bc9670e9e7e5b955bc62c370a0",
                 "code": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b",
                 "maintenance": "578ceb2b77e3cc5c9671ad1be42bbaaf0f67d43bee453d9a668a9f446b1cc54e"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

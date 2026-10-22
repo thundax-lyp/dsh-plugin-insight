@@ -7,14 +7,14 @@
             "id": "github:1190568968:root",
             "repository": "upstash/skills",
             "path": "",
-            "revision": "3f5e1dd5ef9919ec30b4fcaff25963a8dcffb0db",
+            "revision": "a5da15b5bdc221a87203c87587c63ee727682a9a",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "9aee5ab73476cc49a5e475a717e19333593d05f940c457dd8ea2ff5cdf5a47f1",
-                "code": "3f5e1dd5ef9919ec30b4fcaff25963a8dcffb0db",
-                "maintenance": "c8723fd3b92bdd55dd9d4e7214a8cb03f7275b763b37e67e36c6ba77dfd2eb78"
+                "code": "a5da15b5bdc221a87203c87587c63ee727682a9a",
+                "maintenance": "d1c5360c097d8860130548e8ed44db7da271a47241ff760f2cdec9a841f0ce7f"
             }
         }
     }

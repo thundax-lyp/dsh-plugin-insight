@@ -7,14 +7,14 @@
             "id": "github:1406669197:root",
             "repository": "comer2031/dsh-desktop-auto-restart",
             "path": "",
-            "revision": "54fe2bd42c992f4795923ce57dccffe504c6f415",
+            "revision": "6de82a8284ce44e684280bed531d0ae1865e58ba",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "800e51b387cdf21f55533b1f5f5a1f3c0feaae197ba6220c33aee378ffc7927c",
-                "code": "54fe2bd42c992f4795923ce57dccffe504c6f415",
-                "maintenance": "2ebc5bfe841e5d4836bf1f3dcae98f45df291f6298db1586dffc7d6a79b38eff"
+                "code": "6de82a8284ce44e684280bed531d0ae1865e58ba",
+                "maintenance": "8f075167aa0bfc80fb00d4296d0d40af88b0d08edfdda4348dbe1ad148ec4de3"
             }
         }
     }

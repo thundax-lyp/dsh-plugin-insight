@@ -7,14 +7,14 @@
             "id": "github:1206555053:root",
             "repository": "openma-ai/open-managed-agents",
             "path": "",
-            "revision": "40964dbacbf900a169e5f08c054fd4062604fe90",
+            "revision": "b28417dcd6e96bfdfeebf1814feeff77e9c59681",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "7e1979415ed3af21aa2cf57270730164a924ed2b29429661f741a19d7dfe4f7d",
-                "code": "40964dbacbf900a169e5f08c054fd4062604fe90",
-                "maintenance": "3589b9b37fd5ad07034f3a2554c0a08149b3f70acc4f3def9d8d1d7d237e9c4a"
+                "code": "b28417dcd6e96bfdfeebf1814feeff77e9c59681",
+                "maintenance": "06786218fb9d9ed066041708e5c0779a3db96b77c6a7b9e69feae7c9d693a2b5"
             }
         }
     }

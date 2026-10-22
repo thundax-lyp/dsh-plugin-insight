@@ -7,14 +7,14 @@
             "id": "github:1334296085:root",
             "repository": "Nyasers/DSHana",
             "path": "",
-            "revision": "eb9da83265f7c6aae1ef5fb24e175e27e95d9f27",
+            "revision": "832e034e36a985d4576c26126fb0ad65b48bbfdb",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "ecf751c9f86f6cb0aee487cb57e7b4295a71bb9d97b29e4d1e35a2e117fa1080",
-                "code": "eb9da83265f7c6aae1ef5fb24e175e27e95d9f27",
-                "maintenance": "5416f670d28439e6a62d7177caba2171c79d4e043159ca45674d7ca9cfcf9cf6"
+                "code": "832e034e36a985d4576c26126fb0ad65b48bbfdb",
+                "maintenance": "8b9f4425981f6872472b6c8cac34e214d7eb7fab1d5352da7fcab32125c97c46"
             }
         }
     }
