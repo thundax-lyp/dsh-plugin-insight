@@ -128,9 +128,9 @@ export function renderResearchQuestions(value, { repository, revision, readSourc
                 .join('\n\n') || '本题未列出证据，适用边界见完整回答。';
         const unknowns = q.unknowns
             .filter((u) => u.kind !== 'scope_boundary')
-            .map((u) => `- ${u.issue}\n  **影响：**${u.impact}\n  **进一步探讨：**${u.next_step}`)
+            .map((u) => `- ${u.issue}\n  **影响**：${u.impact}\n  **进一步探讨**：${u.next_step}`)
             .join('\n');
-        return `<a id="research-${q.id.toLowerCase()}"></a>\n\n### ${q.id} · ${q.question}\n\n**研究主题：**${q.topics.map((t) => researchTopics[t]).join('、')}\n\n#### 完整回答\n\n${q.answer}\n\n#### 证据与依据\n\n${evidence}${unknowns ? `\n\n#### 缺口\n\n${unknowns}` : ''}`;
+        return `<a id="research-${q.id.toLowerCase()}"></a>\n\n### ${q.id} · ${q.question}\n\n**研究主题**：${q.topics.map((t) => researchTopics[t]).join('、')}\n\n#### 完整回答\n\n${q.answer}\n\n#### 证据与依据\n\n${evidence}${unknowns ? `\n\n#### 缺口\n\n${unknowns}` : ''}`;
     });
-    return `## 研究问题与完整回答\n\n**插件研究总目标：**${value.goal}\n\n${sections.join('\n\n')}`;
+    return `## 研究问题与完整回答\n\n**插件研究总目标**：${value.goal}\n\n${sections.join('\n\n')}`;
 }
