@@ -12,7 +12,7 @@
             "aliases": [],
             "name": "dsh-plugin-manager",
             "entry_type": "plugin",
-            "technical_category": "tools-integration",
+            "technical_category": "runtime-deployment",
             "business_category": "infrastructure",
             "tags": [],
             "availability": "unknown",
@@ -24,36 +24,94 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-01-github-1334267268-root-directory-0",
+                    "id": "2026-10-22-02-github-1334267268-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T02:09:34.439Z",
+                    "retrieved_at": "2026-10-22T09:35:33.089Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-01-github-1334267268-root-author",
+                    "id": "2026-10-22-02-github-1334267268-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/2768651338/dsh-plugin-manager/blob/df0a23258ed3761bcce12ad20958ba2c2a647a4c/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/2768651338/dsh-plugin-manager",
+                            "commit": "df0a23258ed3761bcce12ad20958ba2c2a647a4c",
+                            "path": "README.md",
+                            "content_sha256": "d6089e37faa454a0975ab70be16cc9fb883cc4a1772f6060e1ffb4f0b86b5e28"
+                        }
+                    ],
                     "revision": "df0a23258ed3761bcce12ad20958ba2c2a647a4c",
-                    "captured_at": "2026-10-21T02:09:34.439Z",
-                    "summary": "给 DSH 插件提供中文目录说明、启停、备注编辑及配置备份管理界面。",
-                    "artifact": "data/runs/2026-10-21-01/snapshots/2768651338--dsh-plugin-manager/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:35:33.089Z",
+                    "summary": "在 DSH 设置中展示插件中文用途与备注，并提供启停、目录覆盖及配置备份导入导出。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/2768651338--dsh-plugin-manager/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-01-github-1334267268-root-source",
+                    "id": "2026-10-22-02-github-1334267268-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/2768651338/dsh-plugin-manager/blob/df0a23258ed3761bcce12ad20958ba2c2a647a4c/src/patch-file.ts",
+                    "url": "https://github.com/2768651338/dsh-plugin-manager/blob/df0a23258ed3761bcce12ad20958ba2c2a647a4c/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/2768651338/dsh-plugin-manager",
+                            "commit": "df0a23258ed3761bcce12ad20958ba2c2a647a4c",
+                            "path": "README.md",
+                            "content_sha256": "d6089e37faa454a0975ab70be16cc9fb883cc4a1772f6060e1ffb4f0b86b5e28"
+                        },
+                        {
+                            "repository_url": "https://github.com/2768651338/dsh-plugin-manager",
+                            "commit": "df0a23258ed3761bcce12ad20958ba2c2a647a4c",
+                            "path": "package.json",
+                            "content_sha256": "4e0d4484c48c495281592d1439abd7c19a2f2b9b75255e0eb29d8c26cb81ed25"
+                        },
+                        {
+                            "repository_url": "https://github.com/2768651338/dsh-plugin-manager",
+                            "commit": "df0a23258ed3761bcce12ad20958ba2c2a647a4c",
+                            "path": "src/index.ts",
+                            "content_sha256": "da9c869e189d19b360a16d78d6ded535c1596cb4dbfb0aa2ae798b3f71ea9c5b"
+                        },
+                        {
+                            "repository_url": "https://github.com/2768651338/dsh-plugin-manager",
+                            "commit": "df0a23258ed3761bcce12ad20958ba2c2a647a4c",
+                            "path": "src/client/index.ts",
+                            "content_sha256": "3bb8bcf37791df1e44ec603b73d5e17c85eee5e23095c52f6468c9630047d068"
+                        },
+                        {
+                            "repository_url": "https://github.com/2768651338/dsh-plugin-manager",
+                            "commit": "df0a23258ed3761bcce12ad20958ba2c2a647a4c",
+                            "path": "src/fs-safe.ts",
+                            "content_sha256": "a7d603e60d0696637acea39be193e4fa9db3cd8aa71e0af249f96942f514f58f"
+                        },
+                        {
+                            "repository_url": "https://github.com/2768651338/dsh-plugin-manager",
+                            "commit": "df0a23258ed3761bcce12ad20958ba2c2a647a4c",
+                            "path": "src/patch-file.ts",
+                            "content_sha256": "4447888d3d00cccd6d98faac0c0014cabc0f56fb3dfff1a1ba4e7e9a0e9c42ed"
+                        },
+                        {
+                            "repository_url": "https://github.com/2768651338/dsh-plugin-manager",
+                            "commit": "df0a23258ed3761bcce12ad20958ba2c2a647a4c",
+                            "path": "src/origin.ts",
+                            "content_sha256": "f3d703c1a99189b8fafffc92ed08c53a9c14069da27d8c2bbce565b2a26da783"
+                        },
+                        {
+                            "repository_url": "https://github.com/2768651338/dsh-plugin-manager",
+                            "commit": "df0a23258ed3761bcce12ad20958ba2c2a647a4c",
+                            "path": "tests/fs-safe.smoke.mjs",
+                            "content_sha256": "4ed599510c5cae210b18ea786b9422a8e1eb663e5da1faafde207f729d0d7843"
+                        }
+                    ],
                     "revision": "df0a23258ed3761bcce12ad20958ba2c2a647a4c",
-                    "captured_at": "2026-10-21T02:09:34.439Z",
-                    "summary": "核查 src/patch-file.ts、src/index.ts、src/typert-host.ts；PluginManagerGateway投影loader状态与中文目录，写操作共用恢复型串行队列；patch-file.ts只编辑目标行disabled，拒绝表达式和未识别行，避免重写整份YAML。",
-                    "artifact": "data/runs/2026-10-21-01/snapshots/2768651338--dsh-plugin-manager/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:35:33.089Z",
+                    "summary": "核查 README.md、package.json、src/index.ts、src/client/index.ts、src/fs-safe.ts、src/patch-file.ts、src/origin.ts、tests/fs-safe.smoke.mjs；独立dshPluginManager Remote连接设置页，启停经guard和局部patch编辑、重读、队列和写入，备注保存独立overrides，热生效依宿主。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/2768651338--dsh-plugin-manager/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "抽读指定核心源码与作者说明；未执行目标插件或测试、未安装或做真实宿主验收，未核实独立用户收益。",
+                        "固定提交关键Gateway、客户端Remote、局部编辑、文件写及普通smoke材料；未完整审计全部导入/目录源和宿主权限，不作生产恢复保证。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +122,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "维护多个DSH插件但不熟悉模块名的用户，需要辨认当前Loader行并安全启停，保留已有手写补丁。",
+                    "text": "多插件用户需要识别用途并正确启停，合格结果包括只改预期配置且宿主实际生效；目录备注不是能力证明。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1334267268-root-source"
+                        "2026-10-22-02-github-1334267268-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +133,16 @@
                             "fingerprint": "df0a23258ed3761bcce12ad20958ba2c2a647a4c"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:09:34.439Z",
+                    "reviewed_at": "2026-10-22T09:35:33.089Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "PluginManagerGateway投影loader状态与中文目录，写操作共用恢复型串行队列；patch-file.ts只编辑目标行disabled，拒绝表达式和未识别行，避免重写整份YAML。",
+                    "text": "独立dshPluginManager Remote连接设置页，启停经guard和局部patch编辑、重读、队列和写入，备注保存独立overrides，热生效依宿主。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1334267268-root-source"
+                        "2026-10-22-02-github-1334267268-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +151,16 @@
                             "fingerprint": "df0a23258ed3761bcce12ad20958ba2c2a647a4c"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:09:34.439Z",
+                    "reviewed_at": "2026-10-22T09:35:33.089Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "抽读指定核心源码与作者说明；未执行目标插件或测试、未安装或做真实宿主验收，未核实独立用户收益。",
+                    "text": "固定提交关键Gateway、客户端Remote、局部编辑、文件写及普通smoke材料；未完整审计全部导入/目录源和宿主权限，不作生产恢复保证。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1334267268-root-source"
+                        "2026-10-22-02-github-1334267268-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +169,16 @@
                             "fingerprint": "df0a23258ed3761bcce12ad20958ba2c2a647a4c"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:09:34.439Z",
+                    "reviewed_at": "2026-10-22T09:35:33.089Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "固定源码及包清单界定本次组件与分发；作者兼容和效果说明不等于本轮实际执行证据。",
+                    "text": "@txc2768651338/dsh-plugin-manager 0.9.0、MIT；构建产物随包，目标宿主及owner访问依其Remote/loader契约。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1334267268-root-source"
+                        "2026-10-22-02-github-1334267268-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +187,16 @@
                             "fingerprint": "df0a23258ed3761bcce12ad20958ba2c2a647a4c"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:09:34.439Z",
+                    "reviewed_at": "2026-10-22T09:35:33.089Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "首次安装并整理目录备注；持续目录维护、备份保留和宿主兼容验证的人力，无必要额外模型费用。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 本地宿主与配置副本 | 安装、目录与备份核对 | 先核目录与原配置副本；安装工时未知 |\n| 持续使用 | 状态读取、写盘、可选HTTPS目录 | 理解模块并检查启停，节省未测 | 读写/可选HTTPS资源未计量；理解模块和启停节时未知 |\n| 失败恢复 | 多份配置回读与宿主重载 | 恢复patch/备注/manifest，核对部分完成 | 多文件部分完成需逐份核；恢复时间未知 |\n",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1334267268-root-source"
+                        "2026-10-22-02-github-1334267268-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +205,16 @@
                             "fingerprint": "df0a23258ed3761bcce12ad20958ba2c2a647a4c"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:09:34.439Z",
+                    "reviewed_at": "2026-10-22T09:35:33.089Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "需要批量辨认和启停时先在独立profile试用，核对系统保护、表达式拒绝、备份恢复及实际fiber状态后扩用。",
+                    "text": "建议观察，在副本先核对owner权限、全局影响和锁占用/中断恢复，确认后再定义小范围试用；关键配置保留独立备份。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1334267268-root-source"
+                        "2026-10-22-02-github-1334267268-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +223,16 @@
                             "fingerprint": "df0a23258ed3761bcce12ad20958ba2c2a647a4c"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:09:34.439Z",
+                    "reviewed_at": "2026-10-22T09:35:33.089Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "中文说明与局部编辑降低误改负担有机制依据；用户错误率与维护时间收益未实测。",
+                    "text": "#### 效果\n\n| 目标 | 源码支持 | 边界 |\n| --- | --- | --- |\n| 易读插件用途 | 目录与用户备注 | 可能过期，不证明能力 |\n| 少手工YAML | 局部行编辑和拒绝表达式 | 只覆盖可识别格式 |\n| 配置恢复 | 尽力备份与文件写入 | 原子降级、多文件非事务 |",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1334267268-root-source"
+                        "2026-10-22-02-github-1334267268-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +241,16 @@
                             "fingerprint": "df0a23258ed3761bcce12ad20958ba2c2a647a4c"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:09:34.439Z",
+                    "reviewed_at": "2026-10-22T09:35:33.089Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "写队列then(run,run)并恢复tail避免一次失败毒化后续操作；parsePatchFile保留原文，但只支持明确的顶层id行形态并主动拒绝其他形式。 [固定源码](https://github.com/2768651338/dsh-plugin-manager/blob/df0a23258ed3761bcce12ad20958ba2c2a647a4c/src/patch-file.ts#L1)。",
+                    "text": "局部编辑保留注释、写前校验和结构化拒绝值得借鉴；原子fallback与跨进程冲突需明确，类型/单测不能替代实际热生效。详见[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1334267268-root-source"
+                        "2026-10-22-02-github-1334267268-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,15 +259,69 @@
                             "fingerprint": "df0a23258ed3761bcce12ad20958ba2c2a647a4c"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:09:34.439Z",
+                    "reviewed_at": "2026-10-22T09:35:33.089Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "将用途说明、备注和局部启停编辑整合进设置，保留原生包管理并区分来源与用户安装；增量是维护流程便利而非新包管理能力。详见[Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1334267268-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334267268:root",
+                            "area": "code",
+                            "fingerprint": "df0a23258ed3761bcce12ad20958ba2c2a647a4c"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:35:33.089Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "supported",
+                    "text": "写入安全不能只看函数名，rename受阻后直接覆盖、备份失败仍继续，队列也非跨进程锁；全局patch与多文件导入可能部分完成。静态风险尚未故障注入。详见[Q03](#research-q03)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1334267268-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334267268:root",
+                            "area": "code",
+                            "fingerprint": "df0a23258ed3761bcce12ad20958ba2c2a647a4c"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:35:33.089Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "engineering",
+                    "basis": "unverified",
+                    "text": "可研究预览diff、基线摘要、写后读回和宿主生效回执，配合导入恢复清单，以并发/锁占用/中断反例验证配置保留。当前未验证。详见[Q05](#research-q05)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1334267268-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334267268:root",
+                            "area": "code",
+                            "fingerprint": "df0a23258ed3761bcce12ad20958ba2c2a647a4c"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:35:33.089Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T02:09:34.439Z",
+            "last_checked_at": "2026-10-22T09:35:33.089Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "df0a23258ed3761bcce12ad20958ba2c2a647a4c",
-                "reviewed_at": "2026-10-21T02:09:34.439Z",
+                "reviewed_at": "2026-10-22T09:35:33.089Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -221,61 +333,61 @@
                 "technical": {
                     "criteria": {
                         "novelty": 9,
-                        "mechanism": 15,
+                        "mechanism": 8,
                         "transferability": 10,
                         "simplification": 8
                     },
-                    "rationale": "novelty：目录与局部编辑组合小幅；mechanism：保原文且拒绝不安全形态实质；transferability：配置边界策略实质可借鉴；simplification：统一写队列和局部修改实质。",
+                    "rationale": "novelty小幅，管理UI与文本编辑组合；mechanism小幅，重读队列降低但未消除冲突；transferability实质，局部配置编辑和拒绝未知格式可复用；simplification实质，减少手改YAML，fallback限制安全收益。",
                     "basis": "interpretation",
-                    "score": 42,
+                    "score": 35,
                     "evidence_ids": [
-                        "2026-10-21-01-github-1334267268-root-source"
+                        "2026-10-22-02-github-1334267268-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 9,
-                        "delivery": 8,
-                        "reach": 10,
+                        "workflow": 18,
+                        "delivery": 0,
+                        "reach": 5,
                         "economics": 4
                     },
-                    "rationale": "workflow：管理入口小幅；delivery：配置交付小幅；reach：中文说明使非熟悉模块用户可达实质；economics：减少手工维护小幅，收益未测。",
+                    "rationale": "workflow实质，将找说明、备注与启停集中；delivery未识别新的业务成果单元；reach小幅，中文解释降低识别门槛但目录可能过期；economics小幅，少手工编辑机制尚无净时间验证。",
                     "basis": "interpretation",
-                    "score": 31,
+                    "score": 27,
                     "evidence_ids": [
-                        "2026-10-21-01-github-1334267268-root-source"
+                        "2026-10-22-02-github-1334267268-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "trial",
-                "reason": "维护多插件者可在独立profile试用中文目录与启停；先验系统保护、表达式拒绝、备份恢复和真实fiber状态。",
+                "decision": "observe",
+                "reason": "适合插件维护者观察；先在profile副本核对全局写入、权限和失败恢复，避免把一键启停当原子安全保证。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "不熟模块名的维护者需要辨认Loader行及安全启停。"
+                        "rationale": "多插件识别与维护任务明确。"
                     },
                     "advantage": {
-                        "score": 19,
-                        "rationale": "局部disabled编辑保留手写YAML，较手改降低变更面积。"
+                        "score": 13,
+                        "rationale": "说明备注和局部编辑便利，官方已有管理能力。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "串行写队列和保守解析已查，accepted与实际热加载有时间差。"
+                        "rationale": "固定源码与smoke条件已读，没有本轮执行。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "需可写DSH_HOME和HMR，目录备注与备份兼容仍需维护。"
+                        "score": 5,
+                        "rationale": "全局配置写入及多文件导入恢复责任高，需独立备份。"
                     }
                 },
-                "score": 65,
+                "score": 54,
                 "revision": "df0a23258ed3761bcce12ad20958ba2c2a647a4c",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T09:35:33.089Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-01-github-1334267268-root-source"
+                    "2026-10-22-02-github-1334267268-root-source"
                 ],
                 "dependencies": [
                     {
@@ -300,89 +412,61 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T01:54:44Z",
-            "analysis_sha256": "1481c89ab25bfeb1ec60d74cfcf3784616854456e2a04fa33c3225ce1a768633"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "a3a799367d11ebb715fc4c4f093ed2e706a9cc513f6510da9a394f4788146b4b"
         },
         "publication.metadata": "data/plugins/2768651338--dsh-plugin-manager/META.json",
         "publication.summaries": {
-            "text": "给 DSH 插件提供中文目录说明、启停、备注编辑及配置备份管理界面。",
+            "text": "在 DSH 设置中展示插件中文用途与备注，并提供启停、目录覆盖及配置备份导入导出。",
             "revision": "df0a23258ed3761bcce12ad20958ba2c2a647a4c",
             "source_url": "https://github.com/2768651338/dsh-plugin-manager/blob/df0a23258ed3761bcce12ad20958ba2c2a647a4c/README.md"
         },
         "publication.capabilities": {
             "revision": "df0a23258ed3761bcce12ad20958ba2c2a647a4c",
             "items": {
-                "界面": "插件中文目录、备注与启停设置",
-                "后台": "目标行补丁编辑、共享写队列与备份"
-            }
+                "界面": "设置插件管家页，用途、备注、启停与备份导入导出",
+                "Host 路由": "dshPluginManager Remote服务提供列表、启停、备注及备份操作"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 目录与备注 | 理解插件 | 用户覆盖/目录可能过期 |\n| UI启停 | 局部修改disabled | 全局配置且有格式限制 |\n| 备份导入导出 | 迁移维护配置 | 多文件部分成功需核对 |"
         },
         "publication.advice": {
             "revision": "df0a23258ed3761bcce12ad20958ba2c2a647a4c",
-            "text": "需要批量辨认和启停时先在独立profile试用，核对系统保护、表达式拒绝、备份恢复及实际fiber状态后扩用。"
+            "text": "建议观察，在副本先核对owner权限、全局影响和锁占用/中断恢复，确认后再定义小范围试用；关键配置保留独立备份。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/2768651338--dsh-plugin-manager",
-        "reports": "# dsh-plugin-manager\n\n> 给 DSH 插件提供中文目录说明、启停、备注编辑及配置备份管理界面。\n\n## 研究范围\n\n- **仓库**：[2768651338/dsh-plugin-manager](https://github.com/2768651338/dsh-plugin-manager)\n- **版本号**：0.9.0（[固定提交 df0a2325](https://github.com/2768651338/dsh-plugin-manager/tree/df0a23258ed3761bcce12ad20958ba2c2a647a4c)）\n- **版本日期**：2026-10-20（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已实现机制由固定源码支持；效果未独立实测，未来假设未验证。\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：维护多个DSH插件但不熟悉模块名的用户，需要辨认当前Loader行并安全启停，保留已有手写补丁。\n- **亮点**：相对官方安装卸载服务，明确增量是可解释目录、行级启停与可编辑备注；独立命名空间保留官方服务。保留注释和表达式的局部编辑比普通解析再序列化更适合既有手写配置，但非通用YAML编辑器。\n- **思考**：写盘accepted是否代表插件已激活？setEnabled返回写入结果，实际热加载依赖宿主HMR与fiber状态；保留表达式和系统行限制是强支持，但Loader异步失败仍可能发生。目录说明数量也不等于插件可安装兼容。\n- **建议**：需要批量辨认和启停时先在独立profile试用，核对系统保护、表达式拒绝、备份恢复及实际fiber状态后扩用。\n\n采用建议：需要批量辨认和启停时先在独立profile试用，核对系统保护、表达式拒绝、备份恢复及实际fiber状态后扩用。\n\n## 核心贡献\n\n相对官方安装卸载服务，明确增量是可解释目录、行级启停与可编辑备注；独立命名空间保留官方服务。保留注释和表达式的局部编辑比普通解析再序列化更适合既有手写配置，但非通用YAML编辑器。\n\n## 关键质疑\n\n[核查分支](https://github.com/2768651338/dsh-plugin-manager/blob/df0a23258ed3761bcce12ad20958ba2c2a647a4c/src/index.ts#L532)。\n\n写盘accepted是否代表插件已激活？setEnabled返回写入结果，实际热加载依赖宿主HMR与fiber状态；保留表达式和系统行限制是强支持，但Loader异步失败仍可能发生。目录说明数量也不等于插件可安装兼容。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n待验证假设：启停结果绑定配置版本并等待目标fiber代次状态，能把已写入与已生效分开；新增负担为超时、重载竞态和可撤销操作状态。\n\n连续对同一行启停并注入加载失败，检查界面是否区分文件已写与fiber失败；若旧代次成功仍误报当前成功则否定假设。\n\n## 场景与替代办法\n\n维护多个DSH插件但不熟悉模块名的用户，需要辨认当前Loader行并安全启停，保留已有手写补丁。\n\n参照官方插件管理与手改disabled；本项目是说明和配置维护增强，官方安装卸载仍为另一责任层。\n\n## 依赖与流程\n\n需要宿主loader、Typert与Web客户端、可写DSH_HOME以及热加载支持；备份导入还依赖当前profile路径。\n\n读取loader和目录→展示分类说明→预检系统/表达式→串行写补丁和备份→宿主异步重载→界面再读状态。\n\n## 成本与效果\n\n首次安装并整理目录备注；持续目录维护、备份保留和宿主兼容验证的人力，无必要额外模型费用。\n\n中文说明与局部编辑降低误改负担有机制依据；用户错误率与维护时间收益未实测。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：4c0eaaddde06ec32d58645057d123cd94a84f5eaac9748accfa4f42afb6185ab。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 10 | 2398 | — | — | 31250 |\n| .js | source | 4 | 16781 | 15927 | 1500 | — |\n| .ts | source | 17 | 3405 | 2667 | 513 | — |\n| .mjs | source | 1 | 23 | 21 | 1 | — |\n| .tsx | source | 1 | 973 | 886 | 49 | — |\n| .mjs | test | 14 | 1514 | 1270 | 125 | — |\n\n排除 1 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **界面**：插件中文目录、备注与启停设置\n- **后台**：目标行补丁编辑、共享写队列与备份\n\n## 工程亮点\n\n写队列then(run,run)并恢复tail避免一次失败毒化后续操作；parsePatchFile保留原文，但只支持明确的顶层id行形态并主动拒绝其他形式。 [固定源码](https://github.com/2768651338/dsh-plugin-manager/blob/df0a23258ed3761bcce12ad20958ba2c2a647a4c/src/patch-file.ts#L1)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 src/patch-file.ts、src/index.ts、src/typert-host.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读指定核心源码与作者说明；未执行目标插件或测试、未安装或做真实宿主验收，未核实独立用户收益。\n- 下一步：连续对同一行启停并注入加载失败，检查界面是否区分文件已写与fiber失败；若旧代次成功仍误报当前成功则否定假设。\n",
+        "reports": "# dsh-plugin-manager\n\n> 在 DSH 设置中展示插件中文用途与备注，并提供启停、目录覆盖及配置备份导入导出。\n\n## 研究范围\n\n- **仓库**：[2768651338/dsh-plugin-manager](https://github.com/2768651338/dsh-plugin-manager)\n- **版本号**：0.9.0（[固定提交 df0a23258ed3761bcce12ad20958ba2c2a647a4c](https://github.com/2768651338/dsh-plugin-manager/tree/df0a23258ed3761bcce12ad20958ba2c2a647a4c)）\n- **版本日期**：2026-10-20（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n目录增强和局部编辑流程有源码支持；原子写降级、备份失败及跨文件恢复限制采用。基线/生效回执为未验证方向。\n\n## 洞察短评\n\n- **用途**：多插件用户需要识别用途并正确启停，合格结果包括只改预期配置且宿主实际生效；目录备注不是能力证明。详见[Q01](#research-q01)。\n- **亮点**：将用途说明、备注和局部启停编辑整合进设置，保留原生包管理并区分来源与用户安装；增量是维护流程便利而非新包管理能力。详见[Q01](#research-q01)。\n- **思考**：写入安全不能只看函数名，rename受阻后直接覆盖、备份失败仍继续，队列也非跨进程锁；全局patch与多文件导入可能部分完成。静态风险尚未故障注入。详见[Q03](#research-q03)。\n- **建议**：可研究预览diff、基线摘要、写后读回和宿主生效回执，配合导入恢复清单，以并发/锁占用/中断反例验证配置保留。当前未验证。详见[Q05](#research-q05)。\n\n采用建议：建议观察，在副本先核对owner权限、全局影响和锁占用/中断恢复，确认后再定义小范围试用；关键配置保留独立备份。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n将用途说明、备注和局部启停编辑整合进设置，保留原生包管理并区分来源与用户安装；增量是维护流程便利而非新包管理能力。详见[Q01](#research-q01)。\n\n## 关键质疑\n\n写入安全不能只看函数名，rename受阻后直接覆盖、备份失败仍继续，队列也非跨进程锁；全局patch与多文件导入可能部分完成。静态风险尚未故障注入。详见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可研究预览diff、基线摘要、写后读回和宿主生效回执，配合导入恢复清单，以并发/锁占用/中断反例验证配置保留。当前未验证。详见[Q05](#research-q05)。\n\n进一步探讨可从文件占用、外部并发编辑、导入中断和宿主热重载失败四组反例入手，比较配置保留、恢复完整性与维护时间。\n\n## 场景与替代办法\n\n多插件用户需要识别用途并正确启停，合格结果包括只改预期配置且宿主实际生效；目录备注不是能力证明。详见[Q01](#research-q01)。\n\n读README并手工编辑patch，或用官方管理器；本插件增强说明/备注和局部编辑，不替代包安装卸载真相。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 条件 | 用途 | 失效影响 |\n| --- | --- | --- |\n| DSH loader/typert/gateway | 条目与Remote授权 | 不匹配影响可达/权限 |\n| React及settings slot | 管理页面 | 未加载无UI |\n| 全局patch/overrides可写 | 启停与备注 | 写失败或降级需恢复 |\n| 宿主watch/HMR | 实际热生效 | 文件成功不等运行成功 |\n\n#### 启动步骤\n\n| 步骤 | 执行者 | 判断标准 |\n| --- | --- | --- |\n| 安装并备份独立副本 | 维护者 | 命名空间不冲突 |\n| 核对模块用途/来源 | 用户 | 不只信目录描述 |\n| 副本启停后看实际状态 | 维护者 | 配置diff与loader一致 |\n| 失败核对部分完成 | 维护者 | 所有文件可恢复 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 本地宿主与配置副本 | 安装、目录与备份核对 | 先核目录与原配置副本；安装工时未知 |\n| 持续使用 | 状态读取、写盘、可选HTTPS目录 | 理解模块并检查启停，节省未测 | 读写/可选HTTPS资源未计量；理解模块和启停节时未知 |\n| 失败恢复 | 多份配置回读与宿主重载 | 恢复patch/备注/manifest，核对部分完成 | 多文件部分完成需逐份核；恢复时间未知 |\n\n\n#### 效果\n\n| 目标 | 源码支持 | 边界 |\n| --- | --- | --- |\n| 易读插件用途 | 目录与用户备注 | 可能过期，不证明能力 |\n| 少手工YAML | 局部行编辑和拒绝表达式 | 只覆盖可识别格式 |\n| 配置恢复 | 尽力备份与文件写入 | 原子降级、多文件非事务 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**固定版本如何以说明目录和UI启停改善插件维护，其全局配置写入与恢复边界是否可控？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 官方已有管理器时增加什么？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n面向安装较多插件、难以从模块名判断用途的DSH用户。主要任务是用中文名称、用途、分类和自定义备注理解插件，并通过界面启停；合格结果是选中正确模块、只改预期配置、宿主实际按预期启用或停用，备注不冒充能力事实。官方插件管理仍处理安装卸载等能力，本插件采用独立dshPluginManager命名空间共存，不应被描述为替代官方包管理。\n\n简单替代是读各项目README并手工编辑全局cordis.patch.yml。新增价值是把说明目录、用户备注和局部行编辑整合到设置页，并锁定系统行、拒绝表达式控制行。origin按官方scope粗分类，用户主动安装则看profile依赖，避免“官方来源就不是用户安装”的混淆；来源徽标不是可靠性或安全认证。说明目录可能滞后，仍需具体插件文档核查。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:67-81](https://github.com/2768651338/dsh-plugin-manager/blob/df0a23258ed3761bcce12ad20958ba2c2a647a4c/README.md#L67-L81)\n\n作者问题与前后流程。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n| Toggling is manual | Hand-edit `cordis.patch.yml` (easy to break) | One-click switch, surgical line-level edits, hot-reloaded in ~1s |\n| Unknown plugins stay mysterious | Fallback text only | Add your own notes directly in the UI |\n| Nothing is safe from fat fingers | Any row can be disabled | System rows locked, `!!js`-controlled rows labeled |\n\n## Compatibility\n\n| Item | Value |\n|------|-------|\n| DSH version | **0.2.1-rc.2**, with regression coverage for **0.2.0-rc.2** and **0.1.5-rc.3** |\n| Verification | **2026-10-20**, Windows / Node 24: isolated SDK builds and tests, strict Host RPC and actual browser SlotRegistry lifecycle. This does not replace a Desktop acceptance check. |\n| Install mechanism | `dsh plugin --profile web add` (bundle patch + dual-face row) |\n| Depends on | typert-loader / api-gateway / client-modules rows shipped in `dsh-base` + `dsh-web-app` |\n\n> The official launcher boots via tsx from source; this plugin's strict `./typert` registration is specifically designed to work under both plain-node and tsx source launch (covered by `tests/claims.e2e.mjs`). If you run a different DSH version, re-run the test suite before reporting issues.\n>\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/origin.ts:7-21](https://github.com/2768651338/dsh-plugin-manager/blob/df0a23258ed3761bcce12ad20958ba2c2a647a4c/src/origin.ts#L7-L21)\n\n官方分类与用户安装信号分离。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n/**\n * 官方 scope 清单：只用于官方/社区粗分（来源徽标与「官方内置」筛选），\n * 不参与「是否用户安装」的判断——后者以 profile 依赖表为准（issue #1 的建议）。\n * @cordis 一并算官方：框架自带行，绝不可能是社区插件。\n */\nconst OFFICIAL_SCOPES: readonly string[] = ['@deepseek-ai/', '@cordis/']\n\n/** 是否官方 scope 模块（非字符串输入一律按非官方兜底，不抛错）。 */\nexport function isOfficialModule(moduleName: unknown): boolean {\n  return typeof moduleName === 'string' && OFFICIAL_SCOPES.some(scope => moduleName.startsWith(scope))\n}\n\n/** 模块名是否出现在 profile 依赖表里（用户主动安装信号，含 file: 等非常规 spec）。 */\nexport function isDeclaredDependency(dependencies: Readonly<Record<string, string>>, moduleName: unknown): boolean {\n  return typeof moduleName === 'string' && Object.hasOwn(dependencies, moduleName)\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/client/index.ts:50-65](https://github.com/2768651338/dsh-plugin-manager/blob/df0a23258ed3761bcce12ad20958ba2c2a647a4c/src/client/index.ts#L50-L65)\n\n独立Remote命名空间及调用结果。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n  type PluginManagerRemote = TypertRemoteNamespaceMap['dshPluginManager']\n  const namespace = (): PluginManagerRemote => ctx.get('remote.dshPluginManager') as PluginManagerRemote\n\n  const list: PluginManagerTabInjected['list'] = async () => {\n    const result: RemoteResult<PluginManagerSnapshot> = await namespace().list()\n    if (!result.ok) {\n      throw new Error(`dshPluginManager.list failed: ${result.error.code}: ${result.error.message}`)\n    }\n    return result.value\n  }\n  const setEnabled: PluginManagerTabInjected['setEnabled'] = async (entryId, enabled) => {\n    const result: RemoteResult<SetEnabledResult> = await namespace().setEnabled(entryId, enabled)\n    if (!result.ok) {\n      throw new Error(`dshPluginManager.setEnabled failed: ${result.error.code}: ${result.error.message}`)\n    }\n    return result.value\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 列表、备注和启停怎样读写？\n\n**研究主题：**功能与机制、依赖、兼容与流程\n\n#### 完整回答\n\nhost以Typert Remote service提供list、setEnabled、备注和备份接口，客户端mount remote后获取命名空间，Remote传输失败抛给界面，业务accepted=false保留原因。启停先找实际loader entry并通过toggleGuard，再把entry映射到patchId，读全局patch后调用setRowDisabled；不能识别或!!js表达式控制就拒绝，避免追加重复行。变更前再读一次外部文件，在新内容上重新合并。\n\n写操作放实例内Promise队列串行，writePatchFile先YAML校验、按天尽力备份再写。备注写独立overrides JSON，不编辑上游插件README。运行依赖宿主loader条目、typert/gateway、React与设置slot，热生效还靠宿主监视全局补丁。写accepted仅说明文件流程被接受，不能证明插件运行正常或依赖图完整。官方管理器和本命名空间隔离有助于避免服务冲突，但具体owner访问控制仍由目标宿主契约决定。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:531-580](https://github.com/2768651338/dsh-plugin-manager/blob/df0a23258ed3761bcce12ad20958ba2c2a647a4c/src/index.ts#L531-L580)\n\n启停查找、guard、编辑、重读与队列。\n\n<details>\n<summary>查看原文（50行）</summary>\n\n```text\n  @Remote('setEnabled')\n  setEnabled(entryId: string, enabled: boolean): Promise<SetEnabledResult> {\n    const entry = this.findEntry(entryId)\n    if (entry === undefined) {\n      return Promise.resolve({ accepted: false, reason: 'not-found', message: `插件行不存在：${entryId}` })\n    }\n    const guarded = this.toggleGuard(entryId, entry.options.name)\n    if (guarded !== undefined) return Promise.resolve(guarded)\n\n    const patchId = this.patchIdOf(entryId)\n    /** 无法识别行的拒绝结果（评估 P0-2：防静默追加重复行）。 */\n    const unrecognized = (): SetEnabledResult => ({\n      accepted: false,\n      reason: 'unrecognized',\n      message: '补丁文件里已存在该插件行，但行格式无法识别（行块首键必须是 id）；为避免写入重复行已拒绝本次操作，请手工检查 cordis.patch.yml',\n    })\n    const run = async (): Promise<SetEnabledResult> => {\n      const path = globalPatchPath()\n      try {\n        const content = tryRead(path) ?? initialPatchFile()\n        let edited = setRowDisabled(content, patchId, enabled)\n        if (edited.blocked === 'expression') {\n          return { accepted: false, reason: 'expression', message: '该插件由 !!js 表达式控制启停，请直接编辑配置文件' }\n        }\n        if (edited.blocked === 'unrecognized') return unrecognized()\n        if (edited.changed) {\n          // 写前重读一次：外部手工编辑与我们并发时，在最新内容上重做合并，避免丢更新。\n          const current = tryRead(path)\n          if (current !== undefined && current !== content) {\n            edited = setRowDisabled(current, patchId, enabled)\n            if (edited.blocked === 'expression') {\n              return { accepted: false, reason: 'expression', message: '该插件由 !!js 表达式控制启停，请直接编辑配置文件' }\n            }\n            if (edited.blocked === 'unrecognized') return unrecognized()\n          }\n          this.writePatchFile(path, edited.content)\n        }\n        return { accepted: true }\n      } catch (error) {\n        return {\n          accepted: false,\n          reason: 'io-error',\n          message: error instanceof Error ? error.message : String(error),\n        }\n      }\n    }\n\n    const queued = this.writeQueue.then(run, run)\n    this.writeQueue = queued.then(() => {}, () => {})\n    return queued\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/index.ts:297-309](https://github.com/2768651338/dsh-plugin-manager/blob/df0a23258ed3761bcce12ad20958ba2c2a647a4c/src/index.ts#L297-L309)\n\n校验、每日备份及写入。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n  private writePatchFile(path: string, content: string): void {\n    assertWritablePatchYaml(content)\n    const day = localDayKey(new Date())\n    if (this.patchBackupDay !== day) {\n      try {\n        createTimestampedBackup(path, new Date())\n        pruneBackups(path, PATCH_BACKUP_KEEP)\n        this.patchBackupDay = day\n      } catch {\n        // 备份失败不阻断写盘；保持未备份状态，下次写前重试。\n      }\n    }\n    writeFileAtomic(path, content)\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/client/index.ts:46-79](https://github.com/2768651338/dsh-plugin-manager/blob/df0a23258ed3761bcce12ad20958ba2c2a647a4c/src/client/index.ts#L46-L79)\n\nRemote错误解包与业务值返回。\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\n  // 2) 注入面：解包 RemoteResult，抛错给界面层处理。\n  // 不能把 remote.dshPluginManager 写进 inject（挂载发生在 apply 内，注入会让自身 fiber 永久 pending），\n  // 也不能做 ctx.remote.dshPluginManager 属性访问（cordis 要求注入）；\n  // 用免注入通道 ctx.get() 在挂载完成后取命名空间服务。\n  type PluginManagerRemote = TypertRemoteNamespaceMap['dshPluginManager']\n  const namespace = (): PluginManagerRemote => ctx.get('remote.dshPluginManager') as PluginManagerRemote\n\n  const list: PluginManagerTabInjected['list'] = async () => {\n    const result: RemoteResult<PluginManagerSnapshot> = await namespace().list()\n    if (!result.ok) {\n      throw new Error(`dshPluginManager.list failed: ${result.error.code}: ${result.error.message}`)\n    }\n    return result.value\n  }\n  const setEnabled: PluginManagerTabInjected['setEnabled'] = async (entryId, enabled) => {\n    const result: RemoteResult<SetEnabledResult> = await namespace().setEnabled(entryId, enabled)\n    if (!result.ok) {\n      throw new Error(`dshPluginManager.setEnabled failed: ${result.error.code}: ${result.error.message}`)\n    }\n    return result.value\n  }\n  const setOverride: PluginManagerTabInjected['setOverride'] = async (moduleName, name, desc) => {\n    const result: RemoteResult<CatalogEditResult> = await namespace().setOverride(moduleName, name, desc)\n    if (!result.ok) {\n      throw new Error(`dshPluginManager.setOverride failed: ${result.error.code}: ${result.error.message}`)\n    }\n    return result.value\n  }\n  const removeOverride: PluginManagerTabInjected['removeOverride'] = async (moduleName) => {\n    const result: RemoteResult<CatalogEditResult> = await namespace().removeOverride(moduleName)\n    if (!result.ok) {\n      throw new Error(`dshPluginManager.removeOverride failed: ${result.error.code}: ${result.error.message}`)\n    }\n    return result.value\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 原子写、备份和热生效有何限制？\n\n**研究主题：**缺陷与关键质疑\n\n#### 完整回答\n\n文件写入不是无条件原子。fs-safe先同目录临时文件、fsync、rename重试，但EPERM/EBUSY/EACCES后会直接覆盖原文件；此分支若进程中断可失去原子替换保证。writePatchFile备份失败不阻断写入，且每日只尝试保留一个时点，不能据函数名或README承诺每次操作都可回退。\n\n实例内队列和写前重读降低冲突，却不是跨进程锁或带摘要的compare-and-swap。另一个编辑者在重读与最终写入之间改变文件仍可能丢更新。全局patch修改还可能影响多个profile/会话，UI的一次启停不只改变当前页。备份导入依次写overrides、profile manifest和patch，所读路径不是一项跨文件事务，失败恢复需核对部分完成，不能称全有或全无。以上为静态条件风险，本轮未故障注入。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/fs-safe.ts:36-66](https://github.com/2768651338/dsh-plugin-manager/blob/df0a23258ed3761bcce12ad20958ba2c2a647a4c/src/fs-safe.ts#L36-L66)\n\nrename失败后直接覆盖的明确降级。\n\n<details>\n<summary>查看原文（31行）</summary>\n\n```text\n/**\n * 原子替换写：先写同目录临时文件并 fsync 落盘，再 rename 到目标。\n * Windows 上目标被编辑器/杀毒软件占用（EPERM/EBUSY/EACCES）时重试数次，\n * 仍失败则降级为直接覆盖写（等价旧行为，不让启停整体失败）。\n */\nexport function writeFileAtomic(targetPath: string, data: string): void {\n  const temp = join(\n    dirname(targetPath),\n    `${basename(targetPath)}.${process.pid}.${Date.now()}.${tempSeq++}.tmp`,\n  )\n  try {\n    writeFileSync(temp, data, 'utf8')\n    const fd = openSync(temp, 'r+')\n    try {\n      fsyncSync(fd)\n    } finally {\n      closeSync(fd)\n    }\n    renameWithRetry(temp, targetPath)\n  } catch (error) {\n    try {\n      if (existsSync(temp)) unlinkSync(temp)\n    } catch {\n      // 清理失败不掩盖原始错误。\n    }\n    if (renameBlocked(error)) {\n      // 降级：目标被长期占用时直接覆盖写（与旧版行为一致）。\n      writeFileSync(targetPath, data, 'utf8')\n      return\n    }\n    throw error\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/index.ts:297-309](https://github.com/2768651338/dsh-plugin-manager/blob/df0a23258ed3761bcce12ad20958ba2c2a647a4c/src/index.ts#L297-L309)\n\n备份错误吞下且不阻断。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n  private writePatchFile(path: string, content: string): void {\n    assertWritablePatchYaml(content)\n    const day = localDayKey(new Date())\n    if (this.patchBackupDay !== day) {\n      try {\n        createTimestampedBackup(path, new Date())\n        pruneBackups(path, PATCH_BACKUP_KEEP)\n        this.patchBackupDay = day\n      } catch {\n        // 备份失败不阻断写盘；保持未备份状态，下次写前重试。\n      }\n    }\n    writeFileAtomic(path, content)\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/index.ts:547-580](https://github.com/2768651338/dsh-plugin-manager/blob/df0a23258ed3761bcce12ad20958ba2c2a647a4c/src/index.ts#L547-L580)\n\n重读和实例队列之间仍无跨进程CAS。\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\n    const run = async (): Promise<SetEnabledResult> => {\n      const path = globalPatchPath()\n      try {\n        const content = tryRead(path) ?? initialPatchFile()\n        let edited = setRowDisabled(content, patchId, enabled)\n        if (edited.blocked === 'expression') {\n          return { accepted: false, reason: 'expression', message: '该插件由 !!js 表达式控制启停，请直接编辑配置文件' }\n        }\n        if (edited.blocked === 'unrecognized') return unrecognized()\n        if (edited.changed) {\n          // 写前重读一次：外部手工编辑与我们并发时，在最新内容上重做合并，避免丢更新。\n          const current = tryRead(path)\n          if (current !== undefined && current !== content) {\n            edited = setRowDisabled(current, patchId, enabled)\n            if (edited.blocked === 'expression') {\n              return { accepted: false, reason: 'expression', message: '该插件由 !!js 表达式控制启停，请直接编辑配置文件' }\n            }\n            if (edited.blocked === 'unrecognized') return unrecognized()\n          }\n          this.writePatchFile(path, edited.content)\n        }\n        return { accepted: true }\n      } catch (error) {\n        return {\n          accepted: false,\n          reason: 'io-error',\n          message: error instanceof Error ? error.message : String(error),\n        }\n      }\n    }\n\n    const queued = this.writeQueue.then(run, run)\n    this.writeQueue = queued.then(() => {}, () => {})\n    return queued\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/index.ts:659-724](https://github.com/2768651338/dsh-plugin-manager/blob/df0a23258ed3761bcce12ad20958ba2c2a647a4c/src/index.ts#L659-L724)\n\n导入依次写多份状态。\n\n<details>\n<summary>查看原文（66行）</summary>\n\n```text\n    const run = async (): Promise<BackupImportResult> => {\n      try {\n        if (typeof json !== 'string' || json.length === 0) {\n          return { accepted: false, reason: 'invalid-format', message: '备份内容为空' }\n        }\n        if (json.length > MAX_IMPORT_JSON_CHARS) {\n          return { accepted: false, reason: 'too-large', message: '备份文件过大（上限 2MB）' }\n        }\n        let parsed: unknown\n        try {\n          parsed = JSON.parse(json)\n        } catch {\n          return { accepted: false, reason: 'invalid-format', message: '备份文件不是合法的 JSON' }\n        }\n        const validation = validateBackupDocument(parsed)\n        if (!validation.ok) {\n          return { accepted: false, reason: 'invalid-format', message: validation.reason }\n        }\n        const doc = validation.document\n\n        const profileDir = this.profileDir()\n        if (profileDir === undefined) {\n          return { accepted: false, reason: 'profile-not-found', message: '无法定位当前 profile 目录（缺少 package.json）' }\n        }\n\n        // 依赖安全审计：非常规 spec 必须经用户逐项确认（或确认后跳过），绝不静默合并。\n        const audit = auditDependencySpecs(doc.dependencies, allowNonRegistrySpecs)\n        if (allowNonRegistrySpecs === null && audit.pending.length > 0) {\n          return {\n            accepted: false,\n            reason: 'confirmation-required',\n            message: `备份包含 ${audit.pending.length} 个非常规依赖来源（本地路径 / 外部仓库等），安装时会执行其携带的代码，需逐项确认后才会写入`,\n            pendingNonRegistrySpecs: audit.pending,\n          }\n        }\n\n        // 1) 备注覆盖\n        const overrides = readOverrides().overrides\n        const overMerged = mergeOverrides(overrides, doc.overrides)\n        this.writeOverrides(overMerged.merged)\n\n        // 2) profile 清单：依赖（仅 registry 风格 + 已确认条目）+ bundles\n        const manifestPath = join(profileDir, 'package.json')\n        const manifest = readProfileManifest(manifestPath)\n        const depsMerged = mergeDependencies(manifest.dependencies ?? {}, audit.writable)\n        const bundlesMerged = mergeBundles(manifest.dsh?.profile?.bundles ?? [], doc.bundles)\n        writeProfileManifest(manifestPath, {\n          ...manifest,\n          dependencies: depsMerged.merged,\n          dsh: {\n            ...manifest.dsh,\n            profile: {\n              ...manifest.dsh?.profile,\n              bundles: bundlesMerged.merged,\n            },\n          },\n        })\n\n        // 3) 全局启停补丁（合并：按行应用备份里的启停状态，保留当前其余行；\n        //    与 previewBackup 共用 mergePatchRows，保证预览与实际写入一致）\n        let patchRowsRestored = 0\n        if (doc.patchFile !== undefined) {\n          const patchPath = globalPatchPath()\n          const merged = mergePatchRows(tryRead(patchPath) ?? initialPatchFile(), doc.patchFile)\n          patchRowsRestored = merged.rows.length\n          if (patchRowsRestored > 0) this.writePatchFile(patchPath, merged.content)\n```\n\n</details>\n\n#### 缺口\n\n- 多个宿主进程/外部编辑者与导入中断的恢复状态尚未建立完整证明。\n  **影响：**阻碍对关键全局配置给出稳定回滚保证。\n  **进一步探讨：**在隔离profile副本上设计并发修改、文件占用和各写入点中断，回读所有文件及宿主生效状态。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 三阶段成本和工程可借鉴点是什么？\n\n**研究主题：**效果与总成本、工程质量与复用\n\n#### 完整回答\n\n局部文本编辑保留注释与!!js，比全量YAML序列化更尊重手工配置；解析器明确只识别顶层-id行，对不能安全理解的行拒绝，这种范围收缩值得借鉴。写前YAML回读、结构化拒绝原因和scope/安装信号分离也有维护价值。代价是格式适配、源码/构建产物及手写typert描述形状需要同步，不能从类型通过推出真实loader热重载正确。\n\n首次投入是安装、核查模块说明和全局patch备份；持续不新增模型调用，但有读取目录、状态刷新、可能的自定义HTTPS目录源和磁盘配置写入。手工改YAML次数可能减少，实际节省和错误率未测。失败恢复需要从.bak或明确副本核对恢复全局patch、备注和manifest，再看loader是否重新加载；直接写fallback或部分导入会增加人工。smoke源码覆盖普通创建/覆盖和临时残留，却不等于Windows锁占用fallback或真实中断通过，本轮测试均只读。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/patch-file.ts:1-5](https://github.com/2768651338/dsh-plugin-manager/blob/df0a23258ed3761bcce12ad20958ba2c2a647a4c/src/patch-file.ts#L1-L5)\n\n局部编辑保留文本而非全量重序列化。\n\n```text\n/**\n * 启停补丁文件（cordis.patch.yml）的手术式编辑：只增删目标行的 disabled 字段，\n * 保留文件里的其它行、注释与 !!js 表达式原样不动。不依赖 YAML 库——\n * 按“列 0 的 - ”切行块，行内匹配 id / disabled 键。\n * 写盘前的 YAML 回读校验在 patch-yaml 模块（编辑器本身保持零依赖）。\n```\n\n**依据 2 · 源码核查**：[src/patch-file.ts:55-84](https://github.com/2768651338/dsh-plugin-manager/blob/df0a23258ed3761bcce12ad20958ba2c2a647a4c/src/patch-file.ts#L55-L84)\n\n有限格式识别范围。\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\n/** 把文件内容解析为顶层行块序列（忽略注释与空行，保留原文文本）。 */\nexport function parsePatchFile(content: string): PatchRowBlock[] {\n  const lines = content.split(/\\r?\\n/)\n  const blocks: PatchRowBlock[] = []\n  let index = 0\n  while (index < lines.length) {\n    const line = lines[index] ?? ''\n    if (!/^- /.test(line)) {\n      index += 1\n      continue\n    }\n    const start = index\n    index += 1\n    while (index < lines.length && !/^- /.test(lines[index] ?? '')) index += 1\n    const blockLines = lines.slice(start, index)\n    let id: string | null = null\n    let disabledIndex = -1\n    let disabledValue: string | null = null\n    for (let at = 0; at < blockLines.length; at += 1) {\n      const text = blockLines[at] ?? ''\n      // 用 match 而非 exec：语义一致（非全局正则），且不触发安全扫描的命令执行误报。\n      const idMatch = text.match(/^- id:\\s*(.*)$/)\n      if (idMatch) id = unquote(stripInlineComment(idMatch[1] ?? ''))\n      const disabledMatch = text.match(/^(\\s*)disabled:\\s*(.*)$/)\n      if (disabledMatch && disabledIndex < 0) {\n        disabledIndex = at\n        disabledValue = stripInlineComment(disabledMatch[2] ?? '')\n      }\n    }\n    blocks.push({ lines: blockLines, start, end: index, id, disabledIndex, disabledValue })\n```\n\n</details>\n\n**依据 3 · 源码核查**：[tests/fs-safe.smoke.mjs:12-29](https://github.com/2768651338/dsh-plugin-manager/blob/df0a23258ed3761bcce12ad20958ba2c2a647a4c/tests/fs-safe.smoke.mjs#L12-L29)\n\n普通原子写和备份内容的测试条件。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n  // 1) writeFileAtomic：创建 + 覆盖 + 无临时文件残留\n  {\n    const target = join(dir, 'a.yml')\n    writeFileAtomic(target, 'first\\n')\n    assert.strictEqual(readFileSync(target, 'utf8'), 'first\\n')\n    writeFileAtomic(target, 'second\\n')\n    assert.strictEqual(readFileSync(target, 'utf8'), 'second\\n')\n    assert.ok(!readdirSync(dir).some(name => name.endsWith('.tmp')), 'no temp leftovers')\n    pass += 1\n  }\n\n  // 2) createTimestampedBackup：源缺失返回 undefined；存在时备份内容一致\n  {\n    const target = join(dir, 'b.yml')\n    assert.strictEqual(createTimestampedBackup(target, new Date()), undefined)\n    writeFileSync(target, 'payload\\n', 'utf8')\n    const backup = createTimestampedBackup(target, new Date(2026, 0, 2, 3, 4, 5))\n    assert.ok(backup !== undefined && backup.endsWith('.20260102-030405.bak'), 'timestamped name: ' + String(backup))\n```\n\n</details>\n\n#### 缺口\n\n- 缺少代表性复杂patch和真实宿主热生效的错误率/恢复成本。\n  **影响：**无法判定“一键”是否减少端到端维护负担。\n  **进一步探讨：**固定带注释、表达式及不同格式patch，与人工编辑对照正确变更、实际生效和恢复时间。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 可提出何种验证/采用方向？\n\n**研究主题：**新假设与验证、采用判断\n\n#### 完整回答\n\n未验证方向是把启停变为预览diff、绑定基线摘要、写入后读回和宿主状态回执；原子替换不可用时返回明确失败，避免降级写被UI当安全成功。跨文件导入可用小型恢复清单记录已完成步骤。推导来自现有重读/备份意图与文件锁降级、部分导入的缺口。最小验证比较当前流程和候选流程在外部编辑、锁占用、中断及热重载失败下的原配置保留和读者判断；若回执没有绑定真实loader状态，不能称问题解决。\n\n本轮建议观察，适合愿意管理profile副本的插件维护者继续核对。对关键全局配置，先保留独立备份、确认目标宿主owner边界，并在副本上核对启停和恢复再决定小范围试用。不能因为系统行锁定就让普通用户拥有修改全局运行状态的权限，也不以目录中文描述替代上游事实。当前没有同版本安装、核心启停/恢复及卸载验收，不给值得安装。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:547-580](https://github.com/2768651338/dsh-plugin-manager/blob/df0a23258ed3761bcce12ad20958ba2c2a647a4c/src/index.ts#L547-L580)\n\n基线重读已有起点但缺最终状态回执。\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\n    const run = async (): Promise<SetEnabledResult> => {\n      const path = globalPatchPath()\n      try {\n        const content = tryRead(path) ?? initialPatchFile()\n        let edited = setRowDisabled(content, patchId, enabled)\n        if (edited.blocked === 'expression') {\n          return { accepted: false, reason: 'expression', message: '该插件由 !!js 表达式控制启停，请直接编辑配置文件' }\n        }\n        if (edited.blocked === 'unrecognized') return unrecognized()\n        if (edited.changed) {\n          // 写前重读一次：外部手工编辑与我们并发时，在最新内容上重做合并，避免丢更新。\n          const current = tryRead(path)\n          if (current !== undefined && current !== content) {\n            edited = setRowDisabled(current, patchId, enabled)\n            if (edited.blocked === 'expression') {\n              return { accepted: false, reason: 'expression', message: '该插件由 !!js 表达式控制启停，请直接编辑配置文件' }\n            }\n            if (edited.blocked === 'unrecognized') return unrecognized()\n          }\n          this.writePatchFile(path, edited.content)\n        }\n        return { accepted: true }\n      } catch (error) {\n        return {\n          accepted: false,\n          reason: 'io-error',\n          message: error instanceof Error ? error.message : String(error),\n        }\n      }\n    }\n\n    const queued = this.writeQueue.then(run, run)\n    this.writeQueue = queued.then(() => {}, () => {})\n    return queued\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/fs-safe.ts:54-66](https://github.com/2768651338/dsh-plugin-manager/blob/df0a23258ed3761bcce12ad20958ba2c2a647a4c/src/fs-safe.ts#L54-L66)\n\n原子失败后的降级是改进触发。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n    renameWithRetry(temp, targetPath)\n  } catch (error) {\n    try {\n      if (existsSync(temp)) unlinkSync(temp)\n    } catch {\n      // 清理失败不掩盖原始错误。\n    }\n    if (renameBlocked(error)) {\n      // 降级：目标被长期占用时直接覆盖写（与旧版行为一致）。\n      writeFileSync(targetPath, data, 'utf8')\n      return\n    }\n    throw error\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/index.ts:659-724](https://github.com/2768651338/dsh-plugin-manager/blob/df0a23258ed3761bcce12ad20958ba2c2a647a4c/src/index.ts#L659-L724)\n\n多文件导入需要恢复语义。\n\n<details>\n<summary>查看原文（66行）</summary>\n\n```text\n    const run = async (): Promise<BackupImportResult> => {\n      try {\n        if (typeof json !== 'string' || json.length === 0) {\n          return { accepted: false, reason: 'invalid-format', message: '备份内容为空' }\n        }\n        if (json.length > MAX_IMPORT_JSON_CHARS) {\n          return { accepted: false, reason: 'too-large', message: '备份文件过大（上限 2MB）' }\n        }\n        let parsed: unknown\n        try {\n          parsed = JSON.parse(json)\n        } catch {\n          return { accepted: false, reason: 'invalid-format', message: '备份文件不是合法的 JSON' }\n        }\n        const validation = validateBackupDocument(parsed)\n        if (!validation.ok) {\n          return { accepted: false, reason: 'invalid-format', message: validation.reason }\n        }\n        const doc = validation.document\n\n        const profileDir = this.profileDir()\n        if (profileDir === undefined) {\n          return { accepted: false, reason: 'profile-not-found', message: '无法定位当前 profile 目录（缺少 package.json）' }\n        }\n\n        // 依赖安全审计：非常规 spec 必须经用户逐项确认（或确认后跳过），绝不静默合并。\n        const audit = auditDependencySpecs(doc.dependencies, allowNonRegistrySpecs)\n        if (allowNonRegistrySpecs === null && audit.pending.length > 0) {\n          return {\n            accepted: false,\n            reason: 'confirmation-required',\n            message: `备份包含 ${audit.pending.length} 个非常规依赖来源（本地路径 / 外部仓库等），安装时会执行其携带的代码，需逐项确认后才会写入`,\n            pendingNonRegistrySpecs: audit.pending,\n          }\n        }\n\n        // 1) 备注覆盖\n        const overrides = readOverrides().overrides\n        const overMerged = mergeOverrides(overrides, doc.overrides)\n        this.writeOverrides(overMerged.merged)\n\n        // 2) profile 清单：依赖（仅 registry 风格 + 已确认条目）+ bundles\n        const manifestPath = join(profileDir, 'package.json')\n        const manifest = readProfileManifest(manifestPath)\n        const depsMerged = mergeDependencies(manifest.dependencies ?? {}, audit.writable)\n        const bundlesMerged = mergeBundles(manifest.dsh?.profile?.bundles ?? [], doc.bundles)\n        writeProfileManifest(manifestPath, {\n          ...manifest,\n          dependencies: depsMerged.merged,\n          dsh: {\n            ...manifest.dsh,\n            profile: {\n              ...manifest.dsh?.profile,\n              bundles: bundlesMerged.merged,\n            },\n          },\n        })\n\n        // 3) 全局启停补丁（合并：按行应用备份里的启停状态，保留当前其余行；\n        //    与 previewBackup 共用 mergePatchRows，保证预览与实际写入一致）\n        let patchRowsRestored = 0\n        if (doc.patchFile !== undefined) {\n          const patchPath = globalPatchPath()\n          const merged = mergePatchRows(tryRead(patchPath) ?? initialPatchFile(), doc.patchFile)\n          patchRowsRestored = merged.rows.length\n          if (patchRowsRestored > 0) this.writePatchFile(patchPath, merged.content)\n```\n\n</details>\n\n#### 缺口\n\n- 目标宿主owner权限和故障恢复闭包未完整核查。\n  **影响：**阻碍常规关键配置试用。\n  **进一步探讨：**固定宿主版本，先验证权限与隔离副本的失败恢复，再比较净便利。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：4c0eaaddde06ec32d58645057d123cd94a84f5eaac9748accfa4f42afb6185ab。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 10 | 2398 | — | — | 31250 |\n| .js | source | 4 | 16781 | 15927 | 1500 | — |\n| .ts | source | 17 | 3405 | 2667 | 513 | — |\n| .mjs | source | 1 | 23 | 21 | 1 | — |\n| .tsx | source | 1 | 973 | 886 | 49 | — |\n| .mjs | test | 14 | 1514 | 1270 | 125 | — |\n\n排除 1 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 目录与备注 | 理解插件 | 用户覆盖/目录可能过期 |\n| UI启停 | 局部修改disabled | 全局配置且有格式限制 |\n| 备份导入导出 | 迁移维护配置 | 多文件部分成功需核对 |\n\n## 工程亮点\n\n局部编辑保留注释、写前校验和结构化拒绝值得借鉴；原子fallback与跨进程冲突需明确，类型/单测不能替代实际热生效。详见[Q04](#research-q04)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、src/index.ts、src/client/index.ts、src/fs-safe.ts、src/patch-file.ts、src/origin.ts、tests/fs-safe.smoke.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定提交关键Gateway、客户端Remote、局部编辑、文件写及普通smoke材料；未完整审计全部导入/目录源和宿主权限，不作生产恢复保证。\n- 下一步：进一步探讨可从文件占用、外部并发编辑、导入中断和宿主热重载失败四组反例入手，比较配置保留、恢复完整性与维护时间。\n",
         "metadata": {
             "repository": "2768651338/dsh-plugin-manager",
             "repository_id": 1334267268,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T05:03:50.312Z",
+            "window_start": "2026-09-22T05:03:50.312Z",
             "stars": 9,
             "pushed_at": "2026-10-20T13:00:07Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 2,
+                "closed": 1,
+                "created_30d": 1,
+                "closed_30d": 1,
+                "updated_30d": 3
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A2768651338%2Fdsh-plugin-manager%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C0:3E0DB6:1428A1:21C7CA:6AD84A0D and timestamp 2026-10-21 05:13:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A2768651338%2Fdsh-plugin-manager%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640D:12770C:151620:22AF55:6AD84A0D and timestamp 2026-10-21 05:13:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A2768651338%2Fdsh-plugin-manager%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6416:12AB5A:13BABF:2154FB:6AD84A0D and timestamp 2026-10-21 05:13:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A2768651338%2Fdsh-plugin-manager%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641C:64E75:1411CE:21B283:6AD84A0D and timestamp 2026-10-21 05:13:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A2768651338%2Fdsh-plugin-manager%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641D:F50F:14B9E7:224E5B:6AD84A0D and timestamp 2026-10-21 05:13:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "@txc2768651338/dsh-plugin-manager",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T05:03:59.075Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": 923,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40txc2768651338%2Fdsh-plugin-manager",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/%40txc2768651338%2Fdsh-plugin-manager",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-10-01T08:43:04.858Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T05:03:59.075Z",
                     "source_url": "https://registry.npmjs.org/%40txc2768651338%2Fdsh-plugin-manager",
                     "error": null,
                     "latest_version": "0.7.0",
                     "latest_published_at": "2026-10-01T08:43:05.284Z",
                     "latest_error": null
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "df0a23258ed3761bcce12ad20958ba2c2a647a4c",
-                "current_revision": "df0a23258ed3761bcce12ad20958ba2c2a647a4c",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {

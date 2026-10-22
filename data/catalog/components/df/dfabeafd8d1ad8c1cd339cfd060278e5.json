@@ -24,36 +24,70 @@
             },
             "sources": [
                 {
-                    "id": "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-anatomy-panel-directory-0",
+                    "id": "2026-10-22-02-github-1366089972-workspace-plugins-dsh-anatomy-panel-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
-                    "retrieved_at": "2026-10-20T04:31:45.447Z",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-22T05:45:58.329Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-anatomy-panel-author",
+                    "id": "2026-10-22-02-github-1366089972-workspace-plugins-dsh-anatomy-panel-author",
                     "kind": "author_claim",
                     "url": "https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-anatomy-panel/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/1420079678-ctrl/agent-body",
+                            "commit": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
+                            "path": "workspace/plugins/dsh-anatomy-panel/README.md",
+                            "content_sha256": "1dab6f5369c6177deeca343c4d0b57d76c54ea5a306f34b89470d5ee7b419104"
+                        }
+                    ],
                     "revision": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
-                    "captured_at": "2026-10-20T04:31:45.447Z",
-                    "summary": "读取Agent-Body运行时文件，在宿主HTTP路由展示器官体征、心跳、愈合账本与脉冲。",
-                    "artifact": "data/runs/2026-10-20-04/snapshots/1420079678-ctrl--agent-body--workspace-plugins-dsh-anatomy-panel/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:45:58.329Z",
+                    "summary": "从 Agent-Body 运行时文件实时展示器官体征、心跳和脉冲的宿主网页。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/1420079678-ctrl--agent-body--workspace-plugins-dsh-anatomy-panel/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-anatomy-panel-source",
+                    "id": "2026-10-22-02-github-1366089972-workspace-plugins-dsh-anatomy-panel-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-anatomy-panel/lib/index.js",
+                    "url": "https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-anatomy-panel/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/1420079678-ctrl/agent-body",
+                            "commit": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
+                            "path": "workspace/plugins/dsh-anatomy-panel/README.md",
+                            "content_sha256": "1dab6f5369c6177deeca343c4d0b57d76c54ea5a306f34b89470d5ee7b419104"
+                        },
+                        {
+                            "repository_url": "https://github.com/1420079678-ctrl/agent-body",
+                            "commit": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
+                            "path": "workspace/plugins/dsh-anatomy-panel/package.json",
+                            "content_sha256": "be9bd08c4b57e8fdacd7a30a11f5a4dcef0039cb34d85e2e2f29023fb043009f"
+                        },
+                        {
+                            "repository_url": "https://github.com/1420079678-ctrl/agent-body",
+                            "commit": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
+                            "path": "workspace/plugins/dsh-anatomy-panel/lib/index.js",
+                            "content_sha256": "25a3f88cf0ce30476378b05c21ba34678945f3fbc144964921f6665d7b4bd5a1"
+                        },
+                        {
+                            "repository_url": "https://github.com/1420079678-ctrl/agent-body",
+                            "commit": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
+                            "path": "workspace/plugins/dsh-anatomy-panel/cordis.patch.yml",
+                            "content_sha256": "2264ab8e0e9df14ea69405a6234fb365983bc458a48451368f4d9a8ccf315504"
+                        }
+                    ],
                     "revision": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
-                    "captured_at": "2026-10-20T04:31:45.447Z",
-                    "summary": "核查 workspace/plugins/dsh-anatomy-panel/lib/index.js；组件lib/index.js注册/anatomy与数据路由，每次请求重读organism文件，脉冲只读尾部256KB，页面约每三秒轮询。",
-                    "artifact": "data/runs/2026-10-20-04/snapshots/1420079678-ctrl--agent-body--workspace-plugins-dsh-anatomy-panel/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:45:58.329Z",
+                    "summary": "核查 workspace/plugins/dsh-anatomy-panel/README.md、workspace/plugins/dsh-anatomy-panel/package.json、workspace/plugins/dsh-anatomy-panel/lib/index.js、workspace/plugins/dsh-anatomy-panel/cordis.patch.yml；webServer 注册 /anatomy 与 data.json，按请求读运行时 JSON 和脉冲尾部，浏览器每 3 秒更新。详见[Q02](#research-q02)。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/1420079678-ctrl--agent-body--workspace-plugins-dsh-anatomy-panel/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "体征是该框架自定义指标，不是任务正确率；脉冲文案进入innerHTML，未验证不可信日志文本的HTML处理。",
+                        "只读核固定提交组件 README/package/Host 源码；未执行目标代码、对照上游文件、宿主身份策略或恶意输入；旧 META 仅复用。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +98,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "维护Agent-Body部署的人需要查看后台状态，合格交付是实际文件异常能被看到，而非仅有漂亮仪表盘。",
+                    "text": "供已安装 dsh-organism 的本地开发者观察体征与调用，需对照原始事件和来源状态。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-anatomy-panel-source"
+                        "2026-10-22-02-github-1366089972-workspace-plugins-dsh-anatomy-panel-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +109,16 @@
                             "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:31:45.447Z",
+                    "reviewed_at": "2026-10-22T05:45:58.329Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "组件lib/index.js注册/anatomy与数据路由，每次请求重读organism文件，脉冲只读尾部256KB，页面约每三秒轮询。",
+                    "text": "webServer 注册 /anatomy 与 data.json，按请求读运行时 JSON 和脉冲尾部，浏览器每 3 秒更新。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-anatomy-panel-source"
+                        "2026-10-22-02-github-1366089972-workspace-plugins-dsh-anatomy-panel-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +127,16 @@
                             "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:31:45.447Z",
+                    "reviewed_at": "2026-10-22T05:45:58.329Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "体征是该框架自定义指标，不是任务正确率；脉冲文案进入innerHTML，未验证不可信日志文本的HTML处理。",
+                    "text": "只读核固定提交组件 README/package/Host 源码；未执行目标代码、对照上游文件、宿主身份策略或恶意输入；旧 META 仅复用。",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-anatomy-panel-source"
+                        "2026-10-22-02-github-1366089972-workspace-plugins-dsh-anatomy-panel-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +145,16 @@
                             "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:31:45.447Z",
+                    "reviewed_at": "2026-10-22T05:45:58.329Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "0.1.0 private Host-only组件，无客户端构建；依赖已有organism运行文件与宿主webServer，不能单装后期待完整数据。",
+                    "text": "workspace/plugins 内 private 0.1.0 包，作者标为开发期注入；未证实公开发布。",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-anatomy-panel-source"
+                        "2026-10-22-02-github-1366089972-workspace-plugins-dsh-anatomy-panel-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +163,16 @@
                             "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:31:45.447Z",
+                    "reviewed_at": "2026-10-22T05:45:58.329Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "无新增推理调用；轮询、文件读取和脉冲积累产生I/O，安装、权限配置和解释指标占人工时间，未做负载测量。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | DSH 与 organism 本机文件，金额未知 | dev 注入或 profile 注册；耗时未知 | 私有包、宿主兼容未测 |\n| 持续使用 | 3 秒轮询与 JSON/256KiB 尾读；负载未知 | 对照源文件与异常状态；耗时未知 | 多标签页性能未测 |\n| 失败恢复 | 误诊/暴露风险，金额未知 | 查损坏文件、权限和路由；耗时未知 | 部分坏源静默回退 |",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-anatomy-panel-source"
+                        "2026-10-22-02-github-1366089972-workspace-plugins-dsh-anatomy-panel-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +181,16 @@
                             "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:31:45.447Z",
+                    "reviewed_at": "2026-10-22T05:45:58.329Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "先限制在本地受控宿主使用，检查缺失数据能否报503，并核对脉冲文本的展示边界后再接入多人环境。",
+                    "text": "限隔离本机开发 Host 观察，不能作为独立健康判据；共享可达环境应先核认证、渲染和来源状态。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-anatomy-panel-source"
+                        "2026-10-22-02-github-1366089972-workspace-plugins-dsh-anatomy-panel-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +199,16 @@
                             "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:31:45.447Z",
+                    "reviewed_at": "2026-10-22T05:45:58.329Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "直接从运行文件投影避免另建采集服务；仪表盘显示已愈合不能证明业务故障真正恢复。",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 汇总体征 | 多文件投影和页面轮询源码 | 与真实 Agent 状态一致性 |\n| 故障提示 | bloodstream 缺失返回 503 | 其余源损坏仍可能 200/空值 |\n| 数据安全 | 无外部请求调用 | Host 绑定/认证和 DOM 注入可达性 |",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-anatomy-panel-source"
+                        "2026-10-22-02-github-1366089972-workspace-plugins-dsh-anatomy-panel-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +217,16 @@
                             "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:31:45.447Z",
+                    "reviewed_at": "2026-10-22T05:45:58.329Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "尾部限量读取与缺失目录显式503可复用；路由依赖宿主访问控制，动态文案拼接HTML需要额外核验。",
+                    "text": "单文件宿主路由与 bounded tail 易于试验；需把数据源 freshness、失败与安全渲染纳入观察契约。详见[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-anatomy-panel-source"
+                        "2026-10-22-02-github-1366089972-workspace-plugins-dsh-anatomy-panel-source"
                     ],
                     "dependencies": [
                         {
@@ -201,40 +235,135 @@
                             "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:31:45.447Z",
+                    "reviewed_at": "2026-10-22T05:45:58.329Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "把 dsh-organism 的分散文件映射成同源可视化页面，使开发期观察更直观；体征生成与事件采集不是本组件贡献。详见[Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1366089972-workspace-plugins-dsh-anatomy-panel-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1366089972:workspace-plugins-dsh-anatomy-panel",
+                            "area": "code",
+                            "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T05:45:58.329Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "脉冲和器官等运行时字段进入 innerHTML 未转义；部分文件损坏仍返回 200 且面板可显示零/空。真实风险取决于上游字段可控性和宿主访问控制。详见[Q02](#research-q02)、[Q03](#research-q03)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1366089972-workspace-plugins-dsh-anatomy-panel-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1366089972:workspace-plugins-dsh-anatomy-panel",
+                            "area": "code",
+                            "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T05:45:58.329Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "未验证方向是逐源 freshness/解析状态、文本安全渲染及明确路由认证边界，用恶意字段、丢源和多标签页夹具核结果与性能。详见[Q05](#research-q05)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1366089972-workspace-plugins-dsh-anatomy-panel-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1366089972:workspace-plugins-dsh-anatomy-panel",
+                            "area": "code",
+                            "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T05:45:58.329Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-20T04:31:45.447Z",
+            "last_checked_at": "2026-10-22T05:45:58.329Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
+                "reviewed_at": "2026-10-22T05:45:58.329Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1366089972:workspace-plugins-dsh-anatomy-panel",
+                        "area": "code",
+                        "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 5,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty 是宿主路由投影而非新观测源；mechanism 有尾部限流和多文件组合但渲染/错误边界不足；transferability 依赖 dsh-organism 文件格式；simplification 免手工读 JSON。",
+                    "basis": "interpretation",
+                    "score": 37,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1366089972-workspace-plugins-dsh-anatomy-panel-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 0
+                    },
+                    "rationale": "workflow 服务开发排障；delivery 可见但无法确认字段可信度；reach 限特定器官生态；经济价值未测。",
+                    "basis": "interpretation",
+                    "score": 22,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1366089972-workspace-plugins-dsh-anatomy-panel-source"
+                    ]
+                }
+            },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "observe",
-                "reason": "已有Agent-Body者可关注状态面板，但脉冲直入innerHTML，先核对不可信文案处理和路由访问再启用。",
+                "reason": "可作本机开发可视化原型；源码层数据标识与 DOM 安全缺口应先修正并核宿主访问边界。",
                 "criteria": {
                     "scenario": {
                         "score": 15,
-                        "rationale": "维护既有框架文件状态的人群窄而明确。"
+                        "rationale": "特定 Agent-Body 开发排障场景明确但受众窄。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "多运行文件实时投影减少人工对齐。"
+                        "rationale": "比手工查多个文件更快但依赖上游完整性。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "路由尾读与503可查，HTML展示边界是具体未解风险。"
+                        "rationale": "固定源码支持机制与风险推导，未做宿主或恶意输入测试。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "无推理费，依赖organism文件与三秒轮询且需保护路由。"
+                        "score": 5,
+                        "rationale": "无需客户端构建，但轮询和误诊/安全处置成本存在。"
                     }
                 },
-                "score": 51,
+                "score": 46,
                 "revision": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T05:45:58.329Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-anatomy-panel-source"
+                    "2026-10-22-02-github-1366089972-workspace-plugins-dsh-anatomy-panel-source"
                 ],
                 "dependencies": [
                     {
@@ -259,28 +388,29 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-20T04:25:27.514Z",
-            "analysis_sha256": "eef3fbb046c2228a9256c94a28654bed8982ae8156b6834c99d7c78aa4b488c1"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "8c7f53b2e158a528b0507d2d0f66ee3e3985308c0fe379fb3009bb0dfa5b77e2"
         },
         "publication.metadata": "data/plugins/1420079678-ctrl--agent-body--workspace-plugins-dsh-anatomy-panel/META.json",
         "publication.summaries": {
-            "text": "读取Agent-Body运行时文件，在宿主HTTP路由展示器官体征、心跳、愈合账本与脉冲。",
+            "text": "从 Agent-Body 运行时文件实时展示器官体征、心跳和脉冲的宿主网页。",
             "revision": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
             "source_url": "https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-anatomy-panel/README.md"
         },
         "publication.capabilities": {
             "revision": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
             "items": {
-                "Host 路由": "/anatomy和/anatomy/data.json。",
-                "界面": "自包含体征面板及周期刷新。"
-            }
+                "Host 路由": "器官状态 JSON 与面板网页",
+                "界面": "体征、器官和脉冲轮询展示"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 体征页 | 汇总上游状态 | 依赖 organism 文件，坏源可静默空 |\n| 脉冲流 | 查看最近事件 | 最后 256KiB，首行可能截断 |\n| 同源 JSON | 页面数据来源 | 访问控制依赖 Host，字段需安全渲染 |"
         },
         "publication.advice": {
             "revision": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
-            "text": "先限制在本地受控宿主使用，检查缺失数据能否报503，并核对脉冲文本的展示边界后再接入多人环境。"
+            "text": "限隔离本机开发 Host 观察，不能作为独立健康判据；共享可达环境应先核认证、渲染和来源状态。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/1420079678-ctrl--agent-body--workspace-plugins-dsh-anatomy-panel",
-        "reports": "# dsh-anatomy-panel\n\n> 读取Agent-Body运行时文件，在宿主HTTP路由展示器官体征、心跳、愈合账本与脉冲。\n\n## 固定范围与依据\n\n固定提交 [9403444d87d5e962f9a4f0c4c10fdb48f37f7d66](https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-anatomy-panel/lib/index.js)；组件路径：workspace/plugins/dsh-anatomy-panel。核查时间 2026-10-20T04:31:45.447Z；本轮基准 2026-10-20T04:25:27.514Z。\n源码抽读路径：workspace/plugins/dsh-anatomy-panel/lib/index.js。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：维护Agent-Body部署的人需要查看后台状态，合格交付是实际文件异常能被看到，而非仅有漂亮仪表盘。\n- **亮点**：组件lib/index.js注册/anatomy与数据路由，每次请求重读organism文件，脉冲只读尾部256KB，页面约每三秒轮询。\n- **思考**：直接从运行文件投影避免另建采集服务；仪表盘显示已愈合不能证明业务故障真正恢复。\n- **建议**：先限制在本地受控宿主使用，检查缺失数据能否报503，并核对脉冲文本的展示边界后再接入多人环境。\n\n## 场景与替代办法\n\n维护Agent-Body部署的人需要查看后台状态，合格交付是实际文件异常能被看到，而非仅有漂亮仪表盘。\n\n此前未入档；直接查看JSON和日志更低维护，本项减少人工对齐多个文件的步骤。\n\n## 依赖与流程\n\n需要organism的bloodstream、vitals、reflexes与pulse文件，宿主必须保护同源路由；文件损坏时页面读不到不应显示正常。\n\n启动已有organism后访问面板，对照状态与日志，异常时回到原始账本核实；目录缺失先修部署而非把空面板当零异常。\n\n## 成本与效果\n\n无新增推理调用；轮询、文件读取和脉冲积累产生I/O，安装、权限配置和解释指标占人工时间，未做负载测量。\n\n直接从运行文件投影避免另建采集服务；仪表盘显示已愈合不能证明业务故障真正恢复。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：workspace/plugins/dsh-anatomy-panel；内容摘要：ee7f42af2aea42cb5ab91612aad137a28a840f183118360a69b29ceeca284c7d。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 1 | 253 | 212 | 23 | — |\n| .md | source | 1 | 55 | — | — | 630 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **Host 路由**：/anatomy和/anatomy/data.json。\n- **界面**：自包含体征面板及周期刷新。\n\n## 工程亮点\n\n尾部限量读取与缺失目录显式503可复用；路由依赖宿主访问控制，动态文案拼接HTML需要额外核验。\n\n## 分发与兼容\n\n0.1.0 private Host-only组件，无客户端构建；依赖已有organism运行文件与宿主webServer，不能单装后期待完整数据。\n\n## 历史对照\n\n当前快照此前没有该稳定身份的研究档案。此前未入档；直接查看JSON和日志更低维护，本项减少人工对齐多个文件的步骤。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：体征是该框架自定义指标，不是任务正确率；脉冲文案进入innerHTML，未验证不可信日志文本的HTML处理。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：用缺失、损坏和包含HTML符号的脉冲样本核对状态码与显示，比较面板和原件一致性，并测大日志轮询开销。\n",
+        "reports": "# dsh-anatomy-panel\n\n> 从 Agent-Body 运行时文件实时展示器官体征、心跳和脉冲的宿主网页。\n\n## 研究范围\n\n- **仓库**：[1420079678-ctrl/agent-body](https://github.com/1420079678-ctrl/agent-body)\n- **版本号**：0.1.0（[固定提交 9403444d87d5e962f9a4f0c4c10fdb48f37f7d66](https://github.com/1420079678-ctrl/agent-body/tree/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66)）\n- **版本日期**：2026-09-30（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定源码确认只读投影和轮询；数据完整性及访问控制依赖上游/宿主，DOM 直接插入未转义字段有注入路径，未做真实宿主复现。改进仍是假设。\n\n## 洞察短评\n\n- **用途**：供已安装 dsh-organism 的本地开发者观察体征与调用，需对照原始事件和来源状态。详见[Q01](#research-q01)。\n- **亮点**：把 dsh-organism 的分散文件映射成同源可视化页面，使开发期观察更直观；体征生成与事件采集不是本组件贡献。详见[Q01](#research-q01)。\n- **思考**：脉冲和器官等运行时字段进入 innerHTML 未转义；部分文件损坏仍返回 200 且面板可显示零/空。真实风险取决于上游字段可控性和宿主访问控制。详见[Q02](#research-q02)、[Q03](#research-q03)。\n- **建议**：未验证方向是逐源 freshness/解析状态、文本安全渲染及明确路由认证边界，用恶意字段、丢源和多标签页夹具核结果与性能。详见[Q05](#research-q05)。\n\n采用建议：限隔离本机开发 Host 观察，不能作为独立健康判据；共享可达环境应先核认证、渲染和来源状态。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n把 dsh-organism 的分散文件映射成同源可视化页面，使开发期观察更直观；体征生成与事件采集不是本组件贡献。详见[Q01](#research-q01)。\n\n## 关键质疑\n\n脉冲和器官等运行时字段进入 innerHTML 未转义；部分文件损坏仍返回 200 且面板可显示零/空。真实风险取决于上游字段可控性和宿主访问控制。详见[Q02](#research-q02)、[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n未验证方向是逐源 freshness/解析状态、文本安全渲染及明确路由认证边界，用恶意字段、丢源和多标签页夹具核结果与性能。详见[Q05](#research-q05)。\n\n在隔离宿主构造正常/缺失/损坏/恶意字段及多标签页访问，对照 API/DOM、来源新鲜度、认证和响应耗时。\n\n## 场景与替代办法\n\n供已安装 dsh-organism 的本地开发者观察体征与调用，需对照原始事件和来源状态。详见[Q01](#research-q01)。\n\n手动检查上游 JSON/JSONL 能直接看到原始状态；面板若要胜出需证明观察更快且不掩盖损坏或引入页面注入。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| DSH webServer | 必需 | 挂两个同源路由 | 加载失败 |\n| dsh-organism 运行时文件 | 体征必需 | JSON 和脉冲来源 | 缺 bloodstream 时 503，其他缺源可空 |\n| 宿主访问控制 | 保护数据必需 | 限制页面/API | 路由自身无认证检查 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 准备 | 在隔离 DSH 安装上游 organism 并核文件 | 数据格式与路径正确 |\n| 注入 | 用开发注入或 profile bundle 加载面板 | 两路由可达 |\n| 观察 | 打开 /anatomy，对照 data.json 和源文件 | 时间、脉冲和器官一致 |\n| 异常 | 缺源或 HTML 内容时暂停依赖面板 | 查源文件、宿主权限和页面安全 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | DSH 与 organism 本机文件，金额未知 | dev 注入或 profile 注册；耗时未知 | 私有包、宿主兼容未测 |\n| 持续使用 | 3 秒轮询与 JSON/256KiB 尾读；负载未知 | 对照源文件与异常状态；耗时未知 | 多标签页性能未测 |\n| 失败恢复 | 误诊/暴露风险，金额未知 | 查损坏文件、权限和路由；耗时未知 | 部分坏源静默回退 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 汇总体征 | 多文件投影和页面轮询源码 | 与真实 Agent 状态一致性 |\n| 故障提示 | bloodstream 缺失返回 503 | 其余源损坏仍可能 200/空值 |\n| 数据安全 | 无外部请求调用 | Host 绑定/认证和 DOM 注入可达性 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**Agent-Body 解剖面板能否可信地展示实时运行体征，宿主同源页面暴露了哪些数据与渲染风险？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 面板解决谁的什么观察任务，增量归属在哪里？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n面向已安装 dsh-organism 的本机 DSH 开发者/运维，需看心跳、器官调用、反射、愈合和脉冲以排查运行状态。合格结果是数据能对应实际事件、刷新状态可解释、异常不伪装成正常，且未授权者不能获取敏感脉冲。相对手动打开 bloodstream/vitals/reflexes/pulse 文件，本组件把多份运行时文件投影为宿主 /anatomy 页面和 /anatomy/data.json，每 3 秒拉取；新增的是展示和组合，体征采集属于 dsh-organism 上游。包私有、README 标注开发期注入，不是可证实的公开即装组件。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[workspace/plugins/dsh-anatomy-panel/README.md:1-30](https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-anatomy-panel/README.md#L1-L30)\n\n作者介绍体征页面、运行时文件和宿主路由。\n\n<details>\n<summary>查看原文（30行）</summary>\n\n````text\n# dsh-anatomy-panel — 解剖与体征面板（宿主半）\n\n把 Agent-Body 的活体体征挂进 harness 自己的 HTTP 端点，浏览器打开 `http://127.0.0.1:<port>/anatomy` 即可看到：\n\n- **心跳 / 血压 / 器官 / 伤口 / 愈合率 / 自训练**（突触 · 反射 · 技能 · 信任度）\n- **器官**：按累计调用量排序，脉冲打到哪个器官那一格会亮一下\n- **本体感觉**：真实脉冲流（心跳、肺循环、反射开火、器官调用）\n\n数据**每次请求现读**运行时文件，不是快照：\n\n```\n$DSH_HOME/plugins/dsh-organism/\n  ├─ bloodstream.json   心跳 / 血压 / 愈合账本 / 学习计数\n  ├─ vitals.json        器官体征（[id, 统计] 对）\n  ├─ reflexes.json      持久化反射弧\n  └─ pulse.jsonl        真实脉冲流（只读尾部 256KB，避免大文件拖慢）\n```\n\n## 为什么是宿主半，不是客户端 slot\n\n客户端 slot 的槽位是对的（`sidebar.panellist` + `main` 那一对），但客户端半必须是**模块加载器包裹的打包产物**\n（`window.__ModuleLoader__.load({id, factory})`），需要 tsdown/vite 构建链。而体征数据本来就在宿主侧文件里，\n用 `ctx.webServer.register` 挂两个路由就能拿到一个**不需要构建、可热注入、可随时卸载**的活体面板。\n\n## 路由\n\n| 路由 | 内容 |\n| --- | --- |\n| `GET /anatomy` | 自包含 HTML（原生 JS，每 3 秒拉一次 JSON，无外部依赖） |\n| `GET /anatomy/data.json` | 上面那些文件的实时投影（器官 / 心跳 / 账本 / 脉冲） |\n````\n\n</details>\n\n**依据 2 · 源码核查**：[workspace/plugins/dsh-anatomy-panel/lib/index.js:32-38](https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-anatomy-panel/lib/index.js#L32-L38)\n\n固定路由与依赖目录。\n\n```text\nconst PANEL_PATH = '/anatomy'\nconst DATA_PATH = '/anatomy/data.json'\n\nfunction organismDir() {\n  const home = process.env.DSH_HOME || join(homedir(), '.dsh')\n  return join(home, 'plugins', 'dsh-organism')\n}\n```\n\n**依据 3 · 源码核查**：[workspace/plugins/dsh-anatomy-panel/lib/index.js:216-252](https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-anatomy-panel/lib/index.js#L216-L252)\n\nHost 注册 HTML 与 JSON 路由。\n\n<details>\n<summary>查看原文（37行）</summary>\n\n```text\nexport function apply(ctx) {\n  const send = (res, code, type, body) => {\n    res.writeHead(code, { 'content-type': type, 'cache-control': 'no-store' })\n    res.end(body)\n  }\n\n  ctx.effect(() =>\n    ctx.webServer.register({\n      kind: 'exact',\n      path: PANEL_PATH,\n      handler: async (req, res) => {\n        send(res, 200, 'text/html; charset=utf-8', panelHtml())\n      },\n    }),\n  )\n\n  ctx.effect(() =>\n    ctx.webServer.register({\n      kind: 'exact',\n      path: DATA_PATH,\n      handler: async (req, res) => {\n        try {\n          const snap = await buildSnapshot(120)\n          if (!snap.available) {\n            send(res, 503, 'application/json; charset=utf-8',\n              JSON.stringify({ error: 'organism runtime files not found', dir: snap.dir }))\n            return\n          }\n          send(res, 200, 'application/json; charset=utf-8', JSON.stringify(snap))\n        } catch (error) {\n          send(res, 500, 'application/json; charset=utf-8', JSON.stringify({ error: String(error) }))\n        }\n      },\n    }),\n  )\n\n  ctx.logger?.info?.(`anatomy panel at ${PANEL_PATH} (data ${DATA_PATH})`)\n```\n\n</details>\n\n**依据 4 · 源码核查**：[workspace/plugins/dsh-anatomy-panel/package.json:1-22](https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-anatomy-panel/package.json#L1-L22)\n\n私有宿主包声明。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n{\n  \"name\": \"@dsh-external/dsh-anatomy-panel\",\n  \"version\": \"0.1.0\",\n  \"private\": true,\n  \"type\": \"module\",\n  \"description\": \"Anatomy panel for the Agent-Body organs: serves a live vitals dashboard (organs, heartbeat, healing ledger, learning counters, real pulse stream) straight from the runtime files, at /anatomy inside the harness itself. Host-only: no client bundle, no build step.\",\n  \"main\": \"lib/index.js\",\n  \"exports\": {\n    \".\": \"./lib/index.js\",\n    \"./package.json\": \"./package.json\"\n  },\n  \"files\": [\n    \"lib\",\n    \"cordis.patch.yml\",\n    \"README.md\"\n  ],\n  \"license\": \"MIT\",\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    }\n  }\n```\n\n</details>\n\n#### 缺口\n\n- 未对照 dsh-organism 的实际事件生成和宿主状态\n  **影响：**不能证明面板数字反映真实健康或具有诊断效度\n  **进一步探讨：**固定上游状态样本并在目标宿主对照文件、JSON 和页面\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 数据读取、降级及刷新究竟如何工作？\n\n**研究主题：**功能与机制、依赖、兼容与流程\n\n#### 完整回答\n\n每次 data.json 请求同步读三份 JSON（错误默默转 undefined），读取 pulse.jsonl 最后最多 256KiB，按 kind 过滤并截 note 170 字符，回传 up to 120 条及 DSH_HOME 数据路径。页面以 3 秒 interval fetch JSON 并重建统计和脉冲 DOM；缺 bloodstream.json 才返回 503，其余单文件坏/丢会以空对象、空器官或空脉冲显示且仍 200。故“器官未安装有 503”只对该标志文件成立，部分坏数据会显示为零/横杠。尾文件 start 从任意字节切入，第一行 JSON 可截断而被跳过；这是 bounded tail 的可预期边界。组件不写上游文件，依赖 webServer 路由和上游文件布局。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[workspace/plugins/dsh-anatomy-panel/lib/index.js:40-65](https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-anatomy-panel/lib/index.js#L40-L65)\n\n同步 JSON 读取与 256KiB 脉冲尾读。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\nfunction readJson(file) {\n  try {\n    return JSON.parse(readFileSync(file, 'utf8'))\n  } catch {\n    return undefined\n  }\n}\n\n/** 读 pulse.jsonl 的尾部若干行（文件可能很大，只读最后 256KB）。 */\nasync function readTailLines(file, maxBytes, maxLines) {\n  try {\n    const size = statSync(file).size\n    const start = Math.max(0, size - maxBytes)\n    const stream = createReadStream(file, { start, end: size - 1, encoding: 'utf8' })\n    const rl = createInterface({ input: stream, crlfDelay: Infinity })\n    const lines = []\n    for await (const line of rl) {\n      if (line.trim()) lines.push(line)\n      if (lines.length > maxLines * 2) lines.splice(0, lines.length - maxLines * 2)\n    }\n    stream.close()\n    return lines.slice(-maxLines)\n  } catch {\n    return []\n  }\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[workspace/plugins/dsh-anatomy-panel/lib/index.js:67-131](https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-anatomy-panel/lib/index.js#L67-L131)\n\n状态投影、available 判据和脉冲过滤。\n\n<details>\n<summary>查看原文（65行）</summary>\n\n```text\nconst KEEP_KINDS = new Set(['heart', 'reflex', 'alert', 'discover', 'law', 'obey', 'organ', 'call'])\n\nasync function buildSnapshot(pulseLimit) {\n  const dir = organismDir()\n  const blood = readJson(join(dir, 'bloodstream.json')) ?? {}\n  const vitals = readJson(join(dir, 'vitals.json')) ?? {}\n  const reflexes = readJson(join(dir, 'reflexes.json')) ?? []\n\n  const organs = []\n  for (const item of vitals.organs ?? []) {\n    if (!Array.isArray(item) || item.length < 2 || typeof item[1] !== 'object') continue\n    const st = item[1] ?? {}\n    organs.push({\n      id: String(item[0]),\n      calls: Number(st.calls ?? 0),\n      ok: Number(st.ok ?? 0),\n      fail: Number(st.fail ?? 0),\n      fatigue: Number(st.fatigue ?? 0),\n    })\n  }\n  organs.sort((a, b) => b.calls - a.calls)\n\n  const raw = await readTailLines(join(dir, 'pulse.jsonl'), 262144, pulseLimit * 3)\n  const pulses = []\n  for (const line of raw) {\n    try {\n      const j = JSON.parse(line)\n      if (!KEEP_KINDS.has(j.kind)) continue\n      pulses.push({\n        t: j.t ?? 0,\n        k: j.kind ?? '',\n        o: j.organ ?? '',\n        tool: j.tool ?? '',\n        n: String(j.note ?? '').slice(0, 170),\n      })\n    } catch {\n      // 单行坏数据不该让整面板失败：跳过，继续读下一行\n    }\n  }\n\n  const healing = blood.healing ?? {}\n  const learning = blood.learning ?? {}\n  const pressure = blood.pressure ?? {}\n\n  return {\n    at: Date.now(),\n    available: existsSync(join(dir, 'bloodstream.json')),\n    dir,\n    beat: blood.beat ?? null,\n    rhythm: blood.rhythm ?? null,\n    heartRate: blood.heartRate ?? null,\n    systolic: pressure.systolic ?? null,\n    diastolic: pressure.diastolic ?? null,\n    healed: healing.healed ?? null,\n    open: healing.open ?? null,\n    chronic: healing.chronic ?? null,\n    healRate: healing.rate == null ? null : Math.round(Number(healing.rate) * 1000) / 10,\n    synapses: learning.synapses ?? null,\n    reflexesLearned: learning.reflexes ?? null,\n    skills: learning.skills ?? null,\n    trust: learning.trust ?? null,\n    reflexesPersisted: Array.isArray(reflexes) ? reflexes.length : 0,\n    organs,\n    pulses: pulses.slice(-pulseLimit),\n  }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[workspace/plugins/dsh-anatomy-panel/lib/index.js:183-213](https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-anatomy-panel/lib/index.js#L183-L213)\n\n页面 3 秒轮询和 DOM 展示。\n\n<details>\n<summary>查看原文（31行）</summary>\n\n```text\nasync function tick(){\n  try{\n    const r = await fetch('/anatomy/data.json', { cache: 'no-store' });\n    if(!r.ok){ $('meta').innerHTML = '<span class=\"stale\">数据不可用（HTTP ' + r.status + '）—— 器官可能未安装</span>'; return; }\n    const d = await r.json();\n    $('stats').innerHTML = [\n      ['心跳', d.beat != null ? '#' + d.beat : '—', (d.heartRate != null ? d.heartRate + '/分 · ' : '') + (d.rhythm || '')],\n      ['血压', d.systolic != null ? d.systolic + '/' + d.diastolic : '—', '收缩压=活跃告警'],\n      ['器官', d.organs.length, '有体征记录的'],\n      ['伤口', d.healed != null ? d.healed + ' 已愈' : '—', (d.open ?? '—') + ' 未愈 · ' + (d.chronic ?? '—') + ' 慢性'],\n      ['愈合率', d.healRate != null ? d.healRate + '%' : '—', '复检通过才闭合'],\n      ['自训练', (d.synapses ?? 0) + ' 突触 · ' + (d.reflexesLearned ?? 0) + ' 反射', (d.skills ?? 0) + ' 技能 · 信任度 ' + (d.trust ?? '—')],\n    ].map(([k,v,s]) => '<div class=\"card\"><div class=\"k\">' + k + '</div><div class=\"v\">' + v + (s ? ' <small>' + s + '</small>' : '') + '</div></div>').join('');\n    if ($('body').childElementCount !== d.organs.length || bodyCount !== d.organs.length) {\n      $('body').innerHTML = d.organs.map(o => '<span class=\"organ\" data-id=\"' + o.id + '\" title=\"调用 ' + o.calls + ' · 成功 ' + o.ok + ' · 失败 ' + o.fail + '\">' + o.id + '<small>' + o.calls + '</small></span>').join('');\n      bodyCount = d.organs.length;\n    }\n    const tail = d.pulses.slice(-18).reverse();\n    $('stream').innerHTML = tail.map(p => '<div class=\"' + (cls[p.k] || 'hm') + '\">' + pulseText(p) + '</div>').join('');\n    const newest = tail.length ? tail[0] : null;\n    if (newest && newest.t > lastSeen) {\n      lastSeen = newest.t;\n      if (newest.o) { const t = document.querySelector('.organ[data-id=\"' + newest.o + '\"]'); if (t) { t.classList.add('hit'); setTimeout(() => t.classList.remove('hit'), 900); } }\n    }\n    $('meta').textContent = '采样 ' + new Date(d.at).toLocaleTimeString() + ' · 数据目录 ' + d.dir + ' · 本机数据，不上传';\n  } catch(e){\n    $('meta').innerHTML = '<span class=\"stale\">读取失败：' + e + '</span>';\n  }\n}\ntick(); setInterval(tick, 3000);\n</script></body></html>`\n```\n\n</details>\n\n**依据 4 · 源码核查**：[workspace/plugins/dsh-anatomy-panel/lib/index.js:232-249](https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-anatomy-panel/lib/index.js#L232-L249)\n\n仅 bloodstream 不存在时返回 503。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n  ctx.effect(() =>\n    ctx.webServer.register({\n      kind: 'exact',\n      path: DATA_PATH,\n      handler: async (req, res) => {\n        try {\n          const snap = await buildSnapshot(120)\n          if (!snap.available) {\n            send(res, 503, 'application/json; charset=utf-8',\n              JSON.stringify({ error: 'organism runtime files not found', dir: snap.dir }))\n            return\n          }\n          send(res, 200, 'application/json; charset=utf-8', JSON.stringify(snap))\n        } catch (error) {\n          send(res, 500, 'application/json; charset=utf-8', JSON.stringify({ error: String(error) }))\n        }\n      },\n    }),\n```\n\n</details>\n\n#### 缺口\n\n- 实际文件规模、并发轮询量和部分损坏频率未知\n  **影响：**不能量化 Host 响应阻塞与误诊概率\n  **进一步探讨：**构造缺失/损坏/并发文件样本，观察 API 状态和读取耗时\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 同源面板的数据访问与 DOM 渲染安全吗？\n\n**研究主题：**缺陷与关键质疑\n\n#### 完整回答\n\nREADME 称依赖 Harness 自身访问控制，但本组件路由 handler 自身不检查身份或 Origin，真实可见范围取决于外部 webServer；API 回传绝对本机数据目录及脉冲 note/tool/organ。页面把 d.beat/rhythm、organ id、pulseText(note/tool/organ) 等来自运行时文件的值直接拼入 innerHTML，未做 HTML 转义；若脉冲或器官字段可由工具或外部数据影响，可能形成宿主同源脚本注入，进而读取同源受保护资源。代码没有跨域或远传调用，但“只在本机流转”还取决于 Host 绑定地址和身份验证。以上是静态危险路径，尚未执行恶意输入/宿主安全测试。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[workspace/plugins/dsh-anatomy-panel/README.md:42-46](https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-anatomy-panel/README.md#L42-L46)\n\n作者对只读、本机和宿主访问控制的主张。\n\n```text\n## 边界\n\n- 只读：不写任何文件，不改变器官行为。\n- 数据只在本机流转；`/anatomy/data.json` 与其他 harness 路由同源，靠 harness 自身的访问控制保护。\n- 器官未安装时 `/anatomy` 仍然可开，数据接口返回 503 并说明缺哪个目录（不静默显示空面板）。\n```\n\n**依据 2 · 源码核查**：[workspace/plugins/dsh-anatomy-panel/lib/index.js:89-130](https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-anatomy-panel/lib/index.js#L89-L130)\n\n脉冲文本与绝对目录进入 JSON。\n\n<details>\n<summary>查看原文（42行）</summary>\n\n```text\n  const raw = await readTailLines(join(dir, 'pulse.jsonl'), 262144, pulseLimit * 3)\n  const pulses = []\n  for (const line of raw) {\n    try {\n      const j = JSON.parse(line)\n      if (!KEEP_KINDS.has(j.kind)) continue\n      pulses.push({\n        t: j.t ?? 0,\n        k: j.kind ?? '',\n        o: j.organ ?? '',\n        tool: j.tool ?? '',\n        n: String(j.note ?? '').slice(0, 170),\n      })\n    } catch {\n      // 单行坏数据不该让整面板失败：跳过，继续读下一行\n    }\n  }\n\n  const healing = blood.healing ?? {}\n  const learning = blood.learning ?? {}\n  const pressure = blood.pressure ?? {}\n\n  return {\n    at: Date.now(),\n    available: existsSync(join(dir, 'bloodstream.json')),\n    dir,\n    beat: blood.beat ?? null,\n    rhythm: blood.rhythm ?? null,\n    heartRate: blood.heartRate ?? null,\n    systolic: pressure.systolic ?? null,\n    diastolic: pressure.diastolic ?? null,\n    healed: healing.healed ?? null,\n    open: healing.open ?? null,\n    chronic: healing.chronic ?? null,\n    healRate: healing.rate == null ? null : Math.round(Number(healing.rate) * 1000) / 10,\n    synapses: learning.synapses ?? null,\n    reflexesLearned: learning.reflexes ?? null,\n    skills: learning.skills ?? null,\n    trust: learning.trust ?? null,\n    reflexesPersisted: Array.isArray(reflexes) ? reflexes.length : 0,\n    organs,\n    pulses: pulses.slice(-pulseLimit),\n```\n\n</details>\n\n**依据 3 · 源码核查**：[workspace/plugins/dsh-anatomy-panel/lib/index.js:183-209](https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-anatomy-panel/lib/index.js#L183-L209)\n\n数据值直接拼到 innerHTML。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\nasync function tick(){\n  try{\n    const r = await fetch('/anatomy/data.json', { cache: 'no-store' });\n    if(!r.ok){ $('meta').innerHTML = '<span class=\"stale\">数据不可用（HTTP ' + r.status + '）—— 器官可能未安装</span>'; return; }\n    const d = await r.json();\n    $('stats').innerHTML = [\n      ['心跳', d.beat != null ? '#' + d.beat : '—', (d.heartRate != null ? d.heartRate + '/分 · ' : '') + (d.rhythm || '')],\n      ['血压', d.systolic != null ? d.systolic + '/' + d.diastolic : '—', '收缩压=活跃告警'],\n      ['器官', d.organs.length, '有体征记录的'],\n      ['伤口', d.healed != null ? d.healed + ' 已愈' : '—', (d.open ?? '—') + ' 未愈 · ' + (d.chronic ?? '—') + ' 慢性'],\n      ['愈合率', d.healRate != null ? d.healRate + '%' : '—', '复检通过才闭合'],\n      ['自训练', (d.synapses ?? 0) + ' 突触 · ' + (d.reflexesLearned ?? 0) + ' 反射', (d.skills ?? 0) + ' 技能 · 信任度 ' + (d.trust ?? '—')],\n    ].map(([k,v,s]) => '<div class=\"card\"><div class=\"k\">' + k + '</div><div class=\"v\">' + v + (s ? ' <small>' + s + '</small>' : '') + '</div></div>').join('');\n    if ($('body').childElementCount !== d.organs.length || bodyCount !== d.organs.length) {\n      $('body').innerHTML = d.organs.map(o => '<span class=\"organ\" data-id=\"' + o.id + '\" title=\"调用 ' + o.calls + ' · 成功 ' + o.ok + ' · 失败 ' + o.fail + '\">' + o.id + '<small>' + o.calls + '</small></span>').join('');\n      bodyCount = d.organs.length;\n    }\n    const tail = d.pulses.slice(-18).reverse();\n    $('stream').innerHTML = tail.map(p => '<div class=\"' + (cls[p.k] || 'hm') + '\">' + pulseText(p) + '</div>').join('');\n    const newest = tail.length ? tail[0] : null;\n    if (newest && newest.t > lastSeen) {\n      lastSeen = newest.t;\n      if (newest.o) { const t = document.querySelector('.organ[data-id=\"' + newest.o + '\"]'); if (t) { t.classList.add('hit'); setTimeout(() => t.classList.remove('hit'), 900); } }\n    }\n    $('meta').textContent = '采样 ' + new Date(d.at).toLocaleTimeString() + ' · 数据目录 ' + d.dir + ' · 本机数据，不上传';\n  } catch(e){\n    $('meta').innerHTML = '<span class=\"stale\">读取失败：' + e + '</span>';\n```\n\n</details>\n\n**依据 4 · 源码核查**：[workspace/plugins/dsh-anatomy-panel/lib/index.js:216-250](https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-anatomy-panel/lib/index.js#L216-L250)\n\n路由层无独立身份检查。\n\n<details>\n<summary>查看原文（35行）</summary>\n\n```text\nexport function apply(ctx) {\n  const send = (res, code, type, body) => {\n    res.writeHead(code, { 'content-type': type, 'cache-control': 'no-store' })\n    res.end(body)\n  }\n\n  ctx.effect(() =>\n    ctx.webServer.register({\n      kind: 'exact',\n      path: PANEL_PATH,\n      handler: async (req, res) => {\n        send(res, 200, 'text/html; charset=utf-8', panelHtml())\n      },\n    }),\n  )\n\n  ctx.effect(() =>\n    ctx.webServer.register({\n      kind: 'exact',\n      path: DATA_PATH,\n      handler: async (req, res) => {\n        try {\n          const snap = await buildSnapshot(120)\n          if (!snap.available) {\n            send(res, 503, 'application/json; charset=utf-8',\n              JSON.stringify({ error: 'organism runtime files not found', dir: snap.dir }))\n            return\n          }\n          send(res, 200, 'application/json; charset=utf-8', JSON.stringify(snap))\n        } catch (error) {\n          send(res, 500, 'application/json; charset=utf-8', JSON.stringify({ error: String(error) }))\n        }\n      },\n    }),\n  )\n```\n\n</details>\n\n#### 缺口\n\n- 上游字段可控性、Host 访问控制与 CSP 未核\n  **影响：**不能判定真实 XSS 可达性或外部访问面\n  **进一步探讨：**在隔离 Host 注入含 HTML 标记脉冲，核 DOM/CSP/路由认证和端口绑定\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 开发期部署的首次、持续与失败恢复成本是什么？\n\n**研究主题：**效果与总成本、工程质量与复用\n\n#### 完整回答\n\n首次需已有 dsh-organism 数据文件和 DSH webServer，按 README 用 dev_inject_plugin 注入或手工登记 profile bundle；包 private 且无客户端构建。持续使用每打开一个页面每 3 秒会请求一次 JSON，Host 同步读多个 JSON 并读取 up to 256KiB 的尾文件；高并发开页可能造成主线程阻塞，具体耗时未测。失败恢复需辨认上游文件缺失、单文件解析失败但 API 仍 200、脉冲尾截断和宿主路由异常；手工对照源文件与最后写入时间。将数据投影与页面打包为宿主侧单文件、对 pulse 尾部限读取量可借鉴，但同步读与静默 fallback 削弱观察可信度。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[workspace/plugins/dsh-anatomy-panel/README.md:19-40](https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-anatomy-panel/README.md#L19-L40)\n\n开发期安装和无客户端构建说明。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n````text\n## 为什么是宿主半，不是客户端 slot\n\n客户端 slot 的槽位是对的（`sidebar.panellist` + `main` 那一对），但客户端半必须是**模块加载器包裹的打包产物**\n（`window.__ModuleLoader__.load({id, factory})`），需要 tsdown/vite 构建链。而体征数据本来就在宿主侧文件里，\n用 `ctx.webServer.register` 挂两个路由就能拿到一个**不需要构建、可热注入、可随时卸载**的活体面板。\n\n## 路由\n\n| 路由 | 内容 |\n| --- | --- |\n| `GET /anatomy` | 自包含 HTML（原生 JS，每 3 秒拉一次 JSON，无外部依赖） |\n| `GET /anatomy/data.json` | 上面那些文件的实时投影（器官 / 心跳 / 账本 / 脉冲） |\n\n## 安装（开发期）\n\n```\ndev_inject_plugin D:\\DeepSeekHarness\\workspace\\dsh-anatomy-panel\n```\n\n卸载：`dev_uninject_plugin @dsh-external/dsh-anatomy-panel`。\n若要长期生效，把包注册进 profile 的 `dsh.profile.bundles` 并在改动后跑\n`node bin/launch.mjs --check-startup` 验证桌面启动链路。\n````\n\n</details>\n\n**依据 2 · 源码核查**：[workspace/plugins/dsh-anatomy-panel/package.json:1-22](https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-anatomy-panel/package.json#L1-L22)\n\n私有包和 patch 注册。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n{\n  \"name\": \"@dsh-external/dsh-anatomy-panel\",\n  \"version\": \"0.1.0\",\n  \"private\": true,\n  \"type\": \"module\",\n  \"description\": \"Anatomy panel for the Agent-Body organs: serves a live vitals dashboard (organs, heartbeat, healing ledger, learning counters, real pulse stream) straight from the runtime files, at /anatomy inside the harness itself. Host-only: no client bundle, no build step.\",\n  \"main\": \"lib/index.js\",\n  \"exports\": {\n    \".\": \"./lib/index.js\",\n    \"./package.json\": \"./package.json\"\n  },\n  \"files\": [\n    \"lib\",\n    \"cordis.patch.yml\",\n    \"README.md\"\n  ],\n  \"license\": \"MIT\",\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    }\n  }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[workspace/plugins/dsh-anatomy-panel/lib/index.js:40-65](https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-anatomy-panel/lib/index.js#L40-L65)\n\n同步读与 bounded tail。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\nfunction readJson(file) {\n  try {\n    return JSON.parse(readFileSync(file, 'utf8'))\n  } catch {\n    return undefined\n  }\n}\n\n/** 读 pulse.jsonl 的尾部若干行（文件可能很大，只读最后 256KB）。 */\nasync function readTailLines(file, maxBytes, maxLines) {\n  try {\n    const size = statSync(file).size\n    const start = Math.max(0, size - maxBytes)\n    const stream = createReadStream(file, { start, end: size - 1, encoding: 'utf8' })\n    const rl = createInterface({ input: stream, crlfDelay: Infinity })\n    const lines = []\n    for await (const line of rl) {\n      if (line.trim()) lines.push(line)\n      if (lines.length > maxLines * 2) lines.splice(0, lines.length - maxLines * 2)\n    }\n    stream.close()\n    return lines.slice(-maxLines)\n  } catch {\n    return []\n  }\n}\n```\n\n</details>\n\n**依据 4 · 源码核查**：[workspace/plugins/dsh-anatomy-panel/lib/index.js:183-213](https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-anatomy-panel/lib/index.js#L183-L213)\n\n3 秒拉取。\n\n<details>\n<summary>查看原文（31行）</summary>\n\n```text\nasync function tick(){\n  try{\n    const r = await fetch('/anatomy/data.json', { cache: 'no-store' });\n    if(!r.ok){ $('meta').innerHTML = '<span class=\"stale\">数据不可用（HTTP ' + r.status + '）—— 器官可能未安装</span>'; return; }\n    const d = await r.json();\n    $('stats').innerHTML = [\n      ['心跳', d.beat != null ? '#' + d.beat : '—', (d.heartRate != null ? d.heartRate + '/分 · ' : '') + (d.rhythm || '')],\n      ['血压', d.systolic != null ? d.systolic + '/' + d.diastolic : '—', '收缩压=活跃告警'],\n      ['器官', d.organs.length, '有体征记录的'],\n      ['伤口', d.healed != null ? d.healed + ' 已愈' : '—', (d.open ?? '—') + ' 未愈 · ' + (d.chronic ?? '—') + ' 慢性'],\n      ['愈合率', d.healRate != null ? d.healRate + '%' : '—', '复检通过才闭合'],\n      ['自训练', (d.synapses ?? 0) + ' 突触 · ' + (d.reflexesLearned ?? 0) + ' 反射', (d.skills ?? 0) + ' 技能 · 信任度 ' + (d.trust ?? '—')],\n    ].map(([k,v,s]) => '<div class=\"card\"><div class=\"k\">' + k + '</div><div class=\"v\">' + v + (s ? ' <small>' + s + '</small>' : '') + '</div></div>').join('');\n    if ($('body').childElementCount !== d.organs.length || bodyCount !== d.organs.length) {\n      $('body').innerHTML = d.organs.map(o => '<span class=\"organ\" data-id=\"' + o.id + '\" title=\"调用 ' + o.calls + ' · 成功 ' + o.ok + ' · 失败 ' + o.fail + '\">' + o.id + '<small>' + o.calls + '</small></span>').join('');\n      bodyCount = d.organs.length;\n    }\n    const tail = d.pulses.slice(-18).reverse();\n    $('stream').innerHTML = tail.map(p => '<div class=\"' + (cls[p.k] || 'hm') + '\">' + pulseText(p) + '</div>').join('');\n    const newest = tail.length ? tail[0] : null;\n    if (newest && newest.t > lastSeen) {\n      lastSeen = newest.t;\n      if (newest.o) { const t = document.querySelector('.organ[data-id=\"' + newest.o + '\"]'); if (t) { t.classList.add('hit'); setTimeout(() => t.classList.remove('hit'), 900); } }\n    }\n    $('meta').textContent = '采样 ' + new Date(d.at).toLocaleTimeString() + ' · 数据目录 ' + d.dir + ' · 本机数据，不上传';\n  } catch(e){\n    $('meta').innerHTML = '<span class=\"stale\">读取失败：' + e + '</span>';\n  }\n}\ntick(); setInterval(tick, 3000);\n</script></body></html>`\n```\n\n</details>\n\n#### 缺口\n\n- 宿主版本、读耗时、故障恢复时间未测\n  **影响：**不能估算运维成本或高并发可用性\n  **进一步探讨：**模拟多标签页和损坏文件，量测响应延迟并核提示质量\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 怎样让体征面板可被信任，当前可在何范围观察？\n\n**研究主题：**新假设与验证、采用判断\n\n#### 完整回答\n\n未验证设计是假设面板应把每份数据源的 freshness、解析状态与最后采样时间作为独立字段返回，字段用 textContent/DOM API 渲染，脉冲标注来源并由 Host 明确认证/绑定策略；再考虑异步或缓存读以降低多标签页负担。最小验证以正常/缺失/损坏/恶意 HTML 的 bloodstream、vitals、pulse 文件组合，检查 API 状态、DOM 安全和来源对齐，并在 Host 暴露地址下测试未授权访问。当前仅可在隔离的本地开发 Host 中观察器官状态；安全面和数据准确性未证实时不建议在共享或公网可达 Host 上开此路由。推荐 observe，不能将可视化仪表盘当作独立健康诊断。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[workspace/plugins/dsh-anatomy-panel/lib/index.js:40-45](https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-anatomy-panel/lib/index.js#L40-L45)\n\n解析错误被吞掉。\n\n```text\nfunction readJson(file) {\n  try {\n    return JSON.parse(readFileSync(file, 'utf8'))\n  } catch {\n    return undefined\n  }\n```\n\n**依据 2 · 源码核查**：[workspace/plugins/dsh-anatomy-panel/lib/index.js:183-209](https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-anatomy-panel/lib/index.js#L183-L209)\n\ninnerHTML、刷新和错误提示。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\nasync function tick(){\n  try{\n    const r = await fetch('/anatomy/data.json', { cache: 'no-store' });\n    if(!r.ok){ $('meta').innerHTML = '<span class=\"stale\">数据不可用（HTTP ' + r.status + '）—— 器官可能未安装</span>'; return; }\n    const d = await r.json();\n    $('stats').innerHTML = [\n      ['心跳', d.beat != null ? '#' + d.beat : '—', (d.heartRate != null ? d.heartRate + '/分 · ' : '') + (d.rhythm || '')],\n      ['血压', d.systolic != null ? d.systolic + '/' + d.diastolic : '—', '收缩压=活跃告警'],\n      ['器官', d.organs.length, '有体征记录的'],\n      ['伤口', d.healed != null ? d.healed + ' 已愈' : '—', (d.open ?? '—') + ' 未愈 · ' + (d.chronic ?? '—') + ' 慢性'],\n      ['愈合率', d.healRate != null ? d.healRate + '%' : '—', '复检通过才闭合'],\n      ['自训练', (d.synapses ?? 0) + ' 突触 · ' + (d.reflexesLearned ?? 0) + ' 反射', (d.skills ?? 0) + ' 技能 · 信任度 ' + (d.trust ?? '—')],\n    ].map(([k,v,s]) => '<div class=\"card\"><div class=\"k\">' + k + '</div><div class=\"v\">' + v + (s ? ' <small>' + s + '</small>' : '') + '</div></div>').join('');\n    if ($('body').childElementCount !== d.organs.length || bodyCount !== d.organs.length) {\n      $('body').innerHTML = d.organs.map(o => '<span class=\"organ\" data-id=\"' + o.id + '\" title=\"调用 ' + o.calls + ' · 成功 ' + o.ok + ' · 失败 ' + o.fail + '\">' + o.id + '<small>' + o.calls + '</small></span>').join('');\n      bodyCount = d.organs.length;\n    }\n    const tail = d.pulses.slice(-18).reverse();\n    $('stream').innerHTML = tail.map(p => '<div class=\"' + (cls[p.k] || 'hm') + '\">' + pulseText(p) + '</div>').join('');\n    const newest = tail.length ? tail[0] : null;\n    if (newest && newest.t > lastSeen) {\n      lastSeen = newest.t;\n      if (newest.o) { const t = document.querySelector('.organ[data-id=\"' + newest.o + '\"]'); if (t) { t.classList.add('hit'); setTimeout(() => t.classList.remove('hit'), 900); } }\n    }\n    $('meta').textContent = '采样 ' + new Date(d.at).toLocaleTimeString() + ' · 数据目录 ' + d.dir + ' · 本机数据，不上传';\n  } catch(e){\n    $('meta').innerHTML = '<span class=\"stale\">读取失败：' + e + '</span>';\n```\n\n</details>\n\n**依据 3 · 源码核查**：[workspace/plugins/dsh-anatomy-panel/lib/index.js:232-249](https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-anatomy-panel/lib/index.js#L232-L249)\n\n状态返回逻辑。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n  ctx.effect(() =>\n    ctx.webServer.register({\n      kind: 'exact',\n      path: DATA_PATH,\n      handler: async (req, res) => {\n        try {\n          const snap = await buildSnapshot(120)\n          if (!snap.available) {\n            send(res, 503, 'application/json; charset=utf-8',\n              JSON.stringify({ error: 'organism runtime files not found', dir: snap.dir }))\n            return\n          }\n          send(res, 200, 'application/json; charset=utf-8', JSON.stringify(snap))\n        } catch (error) {\n          send(res, 500, 'application/json; charset=utf-8', JSON.stringify({ error: String(error) }))\n        }\n      },\n    }),\n```\n\n</details>\n\n#### 缺口\n\n- 安全渲染和多源 freshness 契约未实现/测试\n  **影响：**不能算作现有可信观察能力\n  **进一步探讨：**构建小型夹具对照渲染注入、丢源提示和访问控制\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：workspace/plugins/dsh-anatomy-panel；内容摘要：ee7f42af2aea42cb5ab91612aad137a28a840f183118360a69b29ceeca284c7d。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 1 | 253 | 212 | 23 | — |\n| .md | source | 1 | 55 | — | — | 630 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 体征页 | 汇总上游状态 | 依赖 organism 文件，坏源可静默空 |\n| 脉冲流 | 查看最近事件 | 最后 256KiB，首行可能截断 |\n| 同源 JSON | 页面数据来源 | 访问控制依赖 Host，字段需安全渲染 |\n\n## 工程亮点\n\n单文件宿主路由与 bounded tail 易于试验；需把数据源 freshness、失败与安全渲染纳入观察契约。详见[Q04](#research-q04)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 workspace/plugins/dsh-anatomy-panel/README.md、workspace/plugins/dsh-anatomy-panel/package.json、workspace/plugins/dsh-anatomy-panel/lib/index.js、workspace/plugins/dsh-anatomy-panel/cordis.patch.yml 及固定范围 inventory；组件：workspace/plugins/dsh-anatomy-panel。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：只读核固定提交组件 README/package/Host 源码；未执行目标代码、对照上游文件、宿主身份策略或恶意输入；旧 META 仅复用。\n- 下一步：在隔离宿主构造正常/缺失/损坏/恶意字段及多标签页访问，对照 API/DOM、来源新鲜度、认证和响应耗时。\n",
         "metadata": {
             "repository": "1420079678-ctrl/agent-body",
             "repository_id": 1366089972,

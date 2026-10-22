@@ -24,36 +24,88 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-20-08-github-1376777535-root-directory-0",
+                    "id": "2026-10-22-02-github-1376777535-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
-                    "retrieved_at": "2026-10-20T10:53:39.340Z",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-22T06:00:10.806Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-20-08-github-1376777535-root-author",
+                    "id": "2026-10-22-02-github-1376777535-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/2404723600/dsh-router-loomy/blob/ccabca348ca2194287f0770ce348283fdb8bf3d8/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/2404723600/dsh-router-loomy",
+                            "commit": "ccabca348ca2194287f0770ce348283fdb8bf3d8",
+                            "path": "README.md",
+                            "content_sha256": "cc5abaa341f5072997af5eb72e6c4d41f1f71c4203fe10d22015b731306d1a87"
+                        }
+                    ],
                     "revision": "ccabca348ca2194287f0770ce348283fdb8bf3d8",
-                    "captured_at": "2026-10-20T10:53:39.340Z",
-                    "summary": "将本机 Loomy 登录态与云端模型通道接入 dsh-router，提供模型目录和客户端状态页。",
-                    "artifact": "data/runs/2026-10-20-08/snapshots/2404723600--dsh-router-loomy/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T06:00:10.806Z",
+                    "summary": "将 Loomy 云端 Chat Completions 通道接入 dsh-router，自动读本机客户端登录态。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/2404723600--dsh-router-loomy/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-20-08-github-1376777535-root-source",
+                    "id": "2026-10-22-02-github-1376777535-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/2404723600/dsh-router-loomy/blob/ccabca348ca2194287f0770ce348283fdb8bf3d8/src/index.ts",
+                    "url": "https://github.com/2404723600/dsh-router-loomy/blob/ccabca348ca2194287f0770ce348283fdb8bf3d8/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/2404723600/dsh-router-loomy",
+                            "commit": "ccabca348ca2194287f0770ce348283fdb8bf3d8",
+                            "path": "README.md",
+                            "content_sha256": "cc5abaa341f5072997af5eb72e6c4d41f1f71c4203fe10d22015b731306d1a87"
+                        },
+                        {
+                            "repository_url": "https://github.com/2404723600/dsh-router-loomy",
+                            "commit": "ccabca348ca2194287f0770ce348283fdb8bf3d8",
+                            "path": "package.json",
+                            "content_sha256": "9c0c940bcabecb529babc59e3bc7a1e2bc57e213e9a4beb5e0f3fcc79aefc957"
+                        },
+                        {
+                            "repository_url": "https://github.com/2404723600/dsh-router-loomy",
+                            "commit": "ccabca348ca2194287f0770ce348283fdb8bf3d8",
+                            "path": "src/index.ts",
+                            "content_sha256": "b8dfdfe559e0d3e5e30f5b576e2957f11c9ee8f2536e7d91640133d13861cf57"
+                        },
+                        {
+                            "repository_url": "https://github.com/2404723600/dsh-router-loomy",
+                            "commit": "ccabca348ca2194287f0770ce348283fdb8bf3d8",
+                            "path": "src/accounts.ts",
+                            "content_sha256": "538b00a84d59d399e7434e2c7eb7014534fe9b497e8c990a7da4c19bb5f3fa7b"
+                        },
+                        {
+                            "repository_url": "https://github.com/2404723600/dsh-router-loomy",
+                            "commit": "ccabca348ca2194287f0770ce348283fdb8bf3d8",
+                            "path": "src/provider.ts",
+                            "content_sha256": "a8e4ce71c505514d57e56d1268dedc5e5701555a183583c068ce104038b3e336"
+                        },
+                        {
+                            "repository_url": "https://github.com/2404723600/dsh-router-loomy",
+                            "commit": "ccabca348ca2194287f0770ce348283fdb8bf3d8",
+                            "path": "src/client-page.ts",
+                            "content_sha256": "555f6b137c3e0925dc654d446babd39c4d2c8d0b801197eb1720b567a0ba9591"
+                        },
+                        {
+                            "repository_url": "https://github.com/2404723600/dsh-router-loomy",
+                            "commit": "ccabca348ca2194287f0770ce348283fdb8bf3d8",
+                            "path": "src/api/sse.ts",
+                            "content_sha256": "613b32f82aaa0c7a37c23a2c71fc2aa976c3d2bf50d694a1f63caa64fa9a9ab1"
+                        }
+                    ],
                     "revision": "ccabca348ca2194287f0770ce348283fdb8bf3d8",
-                    "captured_at": "2026-10-20T10:53:39.340Z",
-                    "summary": "核查 src/index.ts、src/accounts.ts、src/provider.ts、src/api/sse.ts；src/index.ts向router.suppliers追加工厂；accounts.ts扫描本机auth-session.json并TTL缓存，provider.ts处理通道差异；api/sse.ts透传字节同时检查finish_reason/usage和迟到错误，通用选号交给router核心。",
-                    "artifact": "data/runs/2026-10-20-08/snapshots/2404723600--dsh-router-loomy/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T06:00:10.806Z",
+                    "summary": "核查 README.md、package.json、src/index.ts、src/accounts.ts、src/provider.ts、src/client-page.ts、src/api/sse.ts；router.suppliers 工厂、登录文件/凭证库账号、模型目录与 SSE 收尾守卫。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/2404723600--dsh-router-loomy/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "抽读供应商注册、账号文件读取、provider编排与SSE判据；未访问实际auth-session、未运行上游smoke，未证明当前所有Loomy版本契约相同。",
+                        "审阅固定提交的 README、package、核心 TypeScript；未运行 Loomy、dsh-router 或目标测试。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +116,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "面向已登录Loomy且使用dsh-router的用户，想在DSH中使用同一模型通道；成功标准是请求用预期账号完成、异常流可被识别且凭证不误暴露。",
+                    "text": "已使用 dsh-router 的用户希望调用 Loomy 模型；需要有效客户端会话和上游可用。",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1376777535-root-source"
+                        "2026-10-22-02-github-1376777535-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +127,16 @@
                             "fingerprint": "ccabca348ca2194287f0770ce348283fdb8bf3d8"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:53:39.340Z",
+                    "reviewed_at": "2026-10-22T06:00:10.806Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "src/index.ts向router.suppliers追加工厂；accounts.ts扫描本机auth-session.json并TTL缓存，provider.ts处理通道差异；api/sse.ts透传字节同时检查finish_reason/usage和迟到错误，通用选号交给router核心。",
+                    "text": "router.suppliers 工厂、登录文件/凭证库账号、模型目录与 SSE 收尾守卫。",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1376777535-root-source"
+                        "2026-10-22-02-github-1376777535-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +145,16 @@
                             "fingerprint": "ccabca348ca2194287f0770ce348283fdb8bf3d8"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:53:39.340Z",
+                    "reviewed_at": "2026-10-22T06:00:10.806Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "抽读供应商注册、账号文件读取、provider编排与SSE判据；未访问实际auth-session、未运行上游smoke，未证明当前所有Loomy版本契约相同。",
+                    "text": "审阅固定提交的 README、package、核心 TypeScript；未运行 Loomy、dsh-router 或目标测试。",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1376777535-root-source"
+                        "2026-10-22-02-github-1376777535-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +163,16 @@
                             "fingerprint": "ccabca348ca2194287f0770ce348283fdb8bf3d8"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:53:39.340Z",
+                    "reviewed_at": "2026-10-22T06:00:10.806Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "以router供应商工厂接入而非另注册完整llm系统，结构镜像contract减少构建对宿主包依赖，但运行契约漂移仍需适配；Windows客户端探测路径占主要说明。",
+                    "text": "0.2.0 MIT；Node>=20；peer @deepseek-ai/cordis 与 cordis；npm 包构建产物。",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1376777535-root-source"
+                        "2026-10-22-02-github-1376777535-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +181,16 @@
                             "fingerprint": "ccabca348ca2194287f0770ce348283fdb8bf3d8"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:53:39.340Z",
+                    "reviewed_at": "2026-10-22T06:00:10.806Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "首次需要Loomy登录、router核心与profile装配；持续消耗上游额度、客户端维护、失效会话和断流重试人工，价格/收益未核算。自动读取避免复制密钥但增加本机客户端状态依赖。",
+                    "text": "| 阶段 | 投入 | 未知 |\n| --- | --- | --- |\n| 安装 | 宿主 bundle/客户端登录 | 核心契约版本 |\n| 使用 | 上游积分和重试 | 误判率 |\n| 治理 | 会话、手机号、页面权限 | 外层鉴权 |",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1376777535-root-source"
+                        "2026-10-22-02-github-1376777535-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +199,16 @@
                             "fingerprint": "ccabca348ca2194287f0770ce348283fdb8bf3d8"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:53:39.340Z",
+                    "reviewed_at": "2026-10-22T06:00:10.806Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "已有Loomy账号和router环境时先用非敏感只读问题验证当前模型、账号与完整收尾，再测会话刷新和中断；频繁断流时核对是否重复调用，勿直接用于要求一次副作用的任务。",
+                    "text": "隔离 profile/模拟上游完成协议和脱敏验证，再以授权账户小流量试用。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1376777535-root-source"
+                        "2026-10-22-02-github-1376777535-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +217,16 @@
                             "fingerprint": "ccabca348ca2194287f0770ce348283fdb8bf3d8"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:53:39.340Z",
+                    "reviewed_at": "2026-10-22T06:00:10.806Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "减少手动粘贴会话与通道差异维护，把共同路由逻辑留给核心；可靠性收益取决于非公开客户端存储和上游SSE稳定，未有同条件合格率对照。",
+                    "text": "| 结果 | 源码支持 | 未证实 |\n| --- | --- | --- |\n| 自动账号 | 读客户端文件 | 真实文件格式 |\n| 流式完整性 | DONE 守卫 | 上游异常分布 |\n| 积分 | 显示最近使用量 | 独立计费对账 |",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1376777535-root-source"
+                        "2026-10-22-02-github-1376777535-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +235,16 @@
                             "fingerprint": "ccabca348ca2194287f0770ce348283fdb8bf3d8"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:53:39.340Z",
+                    "reviewed_at": "2026-10-22T06:00:10.806Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "api/sse.ts在原始流透传旁嗅探错误并扣住不完整[DONE]，将字节保真和成功语义分开，值得借鉴；accounts.ts读取文件失败可回退上次成功缓存，这利于短暂写入但可能继续使用旧身份。移植要定义缓存有效性和核心重试契约。",
+                    "text": "文件缓存读错时回退旧 session；缺尾判截断诱导核心重试，进程内次数限制；状态页 token 仅防 CSRF，号码未代码脱敏。",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1376777535-root-source"
+                        "2026-10-22-02-github-1376777535-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,15 +253,69 @@
                             "fingerprint": "ccabca348ca2194287f0770ce348283fdb8bf3d8"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:53:39.340Z",
+                    "reviewed_at": "2026-10-22T06:00:10.806Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "将客户端会话/追踪头和流式截断判据封装成 router 供应商。详见[Q02](#research-q02)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1376777535-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1376777535:root",
+                            "area": "code",
+                            "fingerprint": "ccabca348ca2194287f0770ce348283fdb8bf3d8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T06:00:10.806Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "截断触发整段重试会消耗积分，且状态昵称原样带 phone，README 脱敏示例与代码不一致。详见[Q03](#research-q03)、[Q04](#research-q04)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1376777535-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1376777535:root",
+                            "area": "code",
+                            "fingerprint": "ccabca348ca2194287f0770ce348283fdb8bf3d8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T06:00:10.806Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "持久重试预算和敏感字段统一脱敏可降低积分与展示风险；尚未实现。详见[Q05](#research-q05)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1376777535-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1376777535:root",
+                            "area": "code",
+                            "fingerprint": "ccabca348ca2194287f0770ce348283fdb8bf3d8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T06:00:10.806Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-20T10:53:39.340Z",
+            "last_checked_at": "2026-10-22T06:00:10.806Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "ccabca348ca2194287f0770ce348283fdb8bf3d8",
-                "reviewed_at": "2026-10-20T10:53:39.340Z",
+                "reviewed_at": "2026-10-22T06:00:10.806Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -222,60 +328,60 @@
                     "criteria": {
                         "novelty": 9,
                         "mechanism": 15,
-                        "transferability": 10,
-                        "simplification": 4
+                        "transferability": 5,
+                        "simplification": 8
                     },
-                    "rationale": "novelty：已有router范式的供应商适配，小幅；mechanism：区分带DONE截断与上限为实质机制增量，局限于观测契约；transferability：流成功语义守卫可迁移，实质；simplification：复用核心只留差异，小幅。",
+                    "rationale": "供应商适配及 SSE 守卫有明确机制，依赖特定上游尾帧语义。",
                     "basis": "interpretation",
-                    "score": 38,
+                    "score": 37,
                     "evidence_ids": [
-                        "2026-10-20-08-github-1376777535-root-source"
+                        "2026-10-22-02-github-1376777535-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 9,
-                        "delivery": 8,
+                        "workflow": 18,
+                        "delivery": 15,
                         "reach": 5,
                         "economics": 4
                     },
-                    "rationale": "workflow：自动读登录态减少粘贴，小幅；delivery：提供同类模型答案而非新业务成果，小幅；reach：已有Loomy用户接入DSH，小幅；economics：少手动维护但重复流成本未知，小幅机制依据。",
+                    "rationale": "自动取登录态便利；Windows 客户端/Router 核心及积分成本限制推广。",
                     "basis": "interpretation",
-                    "score": 26,
+                    "score": 42,
                     "evidence_ids": [
-                        "2026-10-20-08-github-1376777535-root-source"
+                        "2026-10-22-02-github-1376777535-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "trial",
-                "reason": "已有Loomy和router环境者可用非敏感只读问题试用；验证账号、流收尾和重登，断流时核查重复请求。",
+                "decision": "observe",
+                "reason": "先核脱敏、外层鉴权与流式重试成本，再考虑受控试用。",
                 "criteria": {
                     "scenario": {
                         "score": 15,
-                        "rationale": "既有Loomy用户复用模型通道明确，通用用户无需新依赖。"
+                        "rationale": "现有 Loomy 与 dsh-router 用户场景明确。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "自动读取会话并适配SSE省复制，核心路由仍归router。"
+                        "rationale": "自动登录态与流守卫优于手工调用。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "账户TTL与finish_reason守卫已查，合法格式变化可能误判。"
+                        "rationale": "固定源码和作者上游记录，未独立运行。"
                     },
                     "cost": {
                         "score": 5,
-                        "rationale": "依赖非公开客户端状态与上游额度，失效登录及重试有持续负担。"
+                        "rationale": "客户端、宿主匹配和积分重试有负担。"
                     }
                 },
                 "score": 46,
                 "revision": "ccabca348ca2194287f0770ce348283fdb8bf3d8",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T06:00:10.806Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-20-08-github-1376777535-root-source"
+                    "2026-10-22-02-github-1376777535-root-source"
                 ],
                 "dependencies": [
                     {
@@ -300,90 +406,44 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-20T10:40:14Z",
-            "analysis_sha256": "5f643846bcdb57d8e4bc50c974cbecef6b7cc62630db58c69dc32e9c82d34dfb"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "080531c6f1f2da103563d71ac79b682400fd54a3589dddad2ae437378120c921"
         },
         "publication.metadata": "data/plugins/2404723600--dsh-router-loomy/META.json",
         "publication.summaries": {
-            "text": "将本机 Loomy 登录态与云端模型通道接入 dsh-router，提供模型目录和客户端状态页。",
+            "text": "将 Loomy 云端 Chat Completions 通道接入 dsh-router，自动读本机客户端登录态。",
             "revision": "ccabca348ca2194287f0770ce348283fdb8bf3d8",
             "source_url": "https://github.com/2404723600/dsh-router-loomy/blob/ccabca348ca2194287f0770ce348283fdb8bf3d8/README.md"
         },
         "publication.capabilities": {
             "revision": "ccabca348ca2194287f0770ce348283fdb8bf3d8",
             "items": {
-                "后台": "router.suppliers的Loomy工厂、本机登录态读取及SSE收尾守卫",
-                "Host 路由": "Loomy客户端状态与登录操作页面路由"
-            }
+                "后台": "Loomy 账号与 Chat Completions supplier 适配",
+                "Host 路由": "客户端状态与登录管理页面"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| session | Bearer 上游 | 文件/缓存 |\n| stream | SSE 透传/守卫 | 重试积分 |\n| client page | 状态/启动/手填 | 外层鉴权 |"
         },
         "publication.advice": {
             "revision": "ccabca348ca2194287f0770ce348283fdb8bf3d8",
-            "text": "已有Loomy账号和router环境时先用非敏感只读问题验证当前模型、账号与完整收尾，再测会话刷新和中断；频繁断流时核对是否重复调用，勿直接用于要求一次副作用的任务。"
+            "text": "隔离 profile/模拟上游完成协议和脱敏验证，再以授权账户小流量试用。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/2404723600--dsh-router-loomy",
-        "reports": "# dsh-router-loomy\n\n> 将本机 Loomy 登录态与云端模型通道接入 dsh-router，提供模型目录和客户端状态页。\n\n## 研究范围\n\n- **仓库**：[2404723600/dsh-router-loomy](https://github.com/2404723600/dsh-router-loomy)\n- **版本号**：0.2.0（[固定提交 ccabca34](https://github.com/2404723600/dsh-router-loomy/tree/ccabca348ca2194287f0770ce348283fdb8bf3d8)）\n- **版本日期**：2026-10-16（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已确认本地登录态适配与SSE完整性守卫，作者自称OpenAI兼容不等于官方通道稳定承诺；未打开客户端、未读用户凭证或调用Loomy，截断判据迁移未验证。\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：面向已登录Loomy且使用dsh-router的用户，想在DSH中使用同一模型通道；成功标准是请求用预期账号完成、异常流可被识别且凭证不误暴露。\n- **亮点**：作者明确参照dsh-router-traework同构范式，不能把核心选号、冷却和换号算插件原创。本项增量是Loomy本地会话发现、追踪头与“有[DONE]却无finish_reason”流的区分，处理常规兼容转发容易把半回答当成功的边界。\n- **思考**：缺finish_reason是否总能判断坏流并安全重试？sse.ts用completion_tokens>=maxTokens区分撞上限，否则判截断，只有推理无正文也判失败；这匹配作者观测，但合法上游格式变化或usage漏报可能误判。强制核心重试还会增加费用，已产生工具副作用的流需格外核对，不能把重试等同无损补齐。\n- **建议**：已有Loomy账号和router环境时先用非敏感只读问题验证当前模型、账号与完整收尾，再测会话刷新和中断；频繁断流时核对是否重复调用，勿直接用于要求一次副作用的任务。\n\n采用建议：已有Loomy账号和router环境时先用非敏感只读问题验证当前模型、账号与完整收尾，再测会话刷新和中断；频繁断流时核对是否重复调用，勿直接用于要求一次副作用的任务。\n\n## 核心贡献\n\n作者明确参照dsh-router-traework同构范式，不能把核心选号、冷却和换号算插件原创。本项增量是Loomy本地会话发现、追踪头与“有[DONE]却无finish_reason”流的区分，处理常规兼容转发容易把半回答当成功的边界。\n\n## 关键质疑\n\n缺finish_reason是否总能判断坏流并安全重试？sse.ts用completion_tokens>=maxTokens区分撞上限，否则判截断，只有推理无正文也判失败；这匹配作者观测，但合法上游格式变化或usage漏报可能误判。强制核心重试还会增加费用，已产生工具副作用的流需格外核对，不能把重试等同无损补齐。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n待验证假设：把流完整性判据按上游版本存为兼容档，并向核心同时上报原始收尾事实与判定置信度，允许“结果未知”而非立即重试。来自当前硬编码判据和会话TTL读取；代价是核心契约扩展及版本样本维护。\n\n保留脱敏正常/截断/撞上限/纯推理/迟到错误SSE样本，固定核心版本比较误判率、重复请求与最终完整回答；再换客户端版本验证会话更新。兼容档若不能降低误重试或增加过多未知结果，则否定假设。\n\n## 场景与替代办法\n\n面向已登录Loomy且使用dsh-router的用户，想在DSH中使用同一模型通道；成功标准是请求用预期账号完成、异常流可被识别且凭证不误暴露。\n\n参照手工OpenAI兼容端点和traework适配器；本项是供应商差异适配，核心路由贡献不重复归属，也不把客户端账号可读当官方授权稳定性证据。\n\n## 依赖与流程\n\n必需dsh-router核心、供应商契约及Loomy有效登录态/网络；本机自动读取依赖安装目录布局，可手填会话作为降级，仍需保护credential store。状态页需webServer，变更操作含进程级CSRF令牌。\n\n已登录客户端→注册供应商→扫描/缓存会话→核心选号→插件加追踪头发请求→透传/聚合响应→守卫判断收尾并报告迟到错误→核心决定重试/冷却。登录失效需客户端重登或替换Key。\n\n## 成本与效果\n\n首次需要Loomy登录、router核心与profile装配；持续消耗上游额度、客户端维护、失效会话和断流重试人工，价格/收益未核算。自动读取避免复制密钥但增加本机客户端状态依赖。\n\n减少手动粘贴会话与通道差异维护，把共同路由逻辑留给核心；可靠性收益取决于非公开客户端存储和上游SSE稳定，未有同条件合格率对照。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：3ba40aa237d7de3df8a5c39c89e9d507f8cb59cfb060c8feb6c8bde7f06306cd。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 2 | 321 | — | — | 3040 |\n| .mjs | source | 1 | 109 | 87 | 14 | — |\n| .ts | source | 16 | 3185 | 2180 | 779 | — |\n| .ts | test | 6 | 771 | 618 | 85 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **后台**：router.suppliers的Loomy工厂、本机登录态读取及SSE收尾守卫\n- **Host 路由**：Loomy客户端状态与登录操作页面路由\n\n## 工程亮点\n\napi/sse.ts在原始流透传旁嗅探错误并扣住不完整[DONE]，将字节保真和成功语义分开，值得借鉴；accounts.ts读取文件失败可回退上次成功缓存，这利于短暂写入但可能继续使用旧身份。移植要定义缓存有效性和核心重试契约。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 src/index.ts、src/accounts.ts、src/provider.ts、src/api/sse.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读供应商注册、账号文件读取、provider编排与SSE判据；未访问实际auth-session、未运行上游smoke，未证明当前所有Loomy版本契约相同。\n- 下一步：保留脱敏正常/截断/撞上限/纯推理/迟到错误SSE样本，固定核心版本比较误判率、重复请求与最终完整回答；再换客户端版本验证会话更新。兼容档若不能降低误重试或增加过多未知结果，则否定假设。\n\n## 源码索引\n\n- [src/index.ts](https://github.com/2404723600/dsh-router-loomy/blob/ccabca348ca2194287f0770ce348283fdb8bf3d8/src/index.ts)\n- [src/accounts.ts](https://github.com/2404723600/dsh-router-loomy/blob/ccabca348ca2194287f0770ce348283fdb8bf3d8/src/accounts.ts)\n- [src/provider.ts](https://github.com/2404723600/dsh-router-loomy/blob/ccabca348ca2194287f0770ce348283fdb8bf3d8/src/provider.ts)\n- [src/api/sse.ts](https://github.com/2404723600/dsh-router-loomy/blob/ccabca348ca2194287f0770ce348283fdb8bf3d8/src/api/sse.ts)\n",
+        "reports": "# dsh-router-loomy\n\n> 将 Loomy 云端 Chat Completions 通道接入 dsh-router，自动读本机客户端登录态。\n\n## 研究范围\n\n- **仓库**：[2404723600/dsh-router-loomy](https://github.com/2404723600/dsh-router-loomy)\n- **版本号**：0.2.0（[固定提交 ccabca348ca2194287f0770ce348283fdb8bf3d8](https://github.com/2404723600/dsh-router-loomy/tree/ccabca348ca2194287f0770ce348283fdb8bf3d8)）\n- **版本日期**：2026-10-16（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n源码可确认注册与请求流程；上游兼容性和积分成本仍属作者记录，状态昵称存在未脱敏 phone 风险。\n\n## 洞察短评\n\n- **用途**：已使用 dsh-router 的用户希望调用 Loomy 模型；需要有效客户端会话和上游可用。\n- **亮点**：将客户端会话/追踪头和流式截断判据封装成 router 供应商。详见[Q02](#research-q02)。\n- **思考**：截断触发整段重试会消耗积分，且状态昵称原样带 phone，README 脱敏示例与代码不一致。详见[Q03](#research-q03)、[Q04](#research-q04)。\n- **建议**：持久重试预算和敏感字段统一脱敏可降低积分与展示风险；尚未实现。详见[Q05](#research-q05)。\n\n采用建议：隔离 profile/模拟上游完成协议和脱敏验证，再以授权账户小流量试用。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n将客户端会话/追踪头和流式截断判据封装成 router 供应商。详见[Q02](#research-q02)。\n\n## 关键质疑\n\n截断触发整段重试会消耗积分，且状态昵称原样带 phone，README 脱敏示例与代码不一致。详见[Q03](#research-q03)、[Q04](#research-q04)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n持久重试预算和敏感字段统一脱敏可降低积分与展示风险；尚未实现。详见[Q05](#research-q05)。\n\n模拟登录文件和上游响应；记录正常/截断/封顶的 retry、积分与状态页敏感字段。\n\n## 场景与替代办法\n\n已使用 dsh-router 的用户希望调用 Loomy 模型；需要有效客户端会话和上游可用。\n\n手工管理 session 并直接调用兼容 API；本包增加 router 账号和流尾处理。\n\n## 依赖与流程\n\n| 条件 | 用途 | 失败时 |\n| --- | --- | --- |\n| dsh-router/cordis | 装配和轮转 | 无供应商 |\n| Loomy 客户端文件 | 自动会话 | 手填或不可用 |\n| 上游 Chat API | 模型/对话 | 错误或积分损失 |\n\n| 步骤 | 动作 | 判据 |\n| --- | --- | --- |\n| 装配 | 固定包与核心 | suppliers 注册 |\n| 模拟 | 错误/流尾矩阵 | 无误判重试 |\n| 试用 | 授权账户计费对账 | 可控积分 |\n\n## 成本与效果\n\n| 阶段 | 投入 | 未知 |\n| --- | --- | --- |\n| 安装 | 宿主 bundle/客户端登录 | 核心契约版本 |\n| 使用 | 上游积分和重试 | 误判率 |\n| 治理 | 会话、手机号、页面权限 | 外层鉴权 |\n\n| 结果 | 源码支持 | 未证实 |\n| --- | --- | --- |\n| 自动账号 | 读客户端文件 | 真实文件格式 |\n| 流式完整性 | DONE 守卫 | 上游异常分布 |\n| 积分 | 显示最近使用量 | 独立计费对账 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**审查 Loomy 供应商的登录态、流式完整性、成本及状态页边界。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · Loomy 供应商解决何种路由接入，达成条件是什么？\n\n**研究主题：**场景与需求\n\n#### 完整回答\n\n插件把 Loomy 客户端会话用作 Bearer 令牌，将 Chat Completions 通道挂到 dsh-router 的 suppliers 聚合表；本机登录文件或面板手填 session 形成账号，核心承担选号/冷却。成功需宿主核心契约匹配、客户端有效登录态、上游协议/账户可用，不能把 README 的完全兼容和实测记录当本轮独立验证。相对于手工调用上游 API，其增量是路由器内的账号、模型和流式错误适配。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:7-15](https://github.com/2404723600/dsh-router-loomy/blob/ccabca348ca2194287f0770ce348283fdb8bf3d8/README.md#L7-L15)\n\n作者描述定位。\n\n```text\n把 **Loomy（讯飞 Loomy 办公助手云端通道）** 作为供应商接入 [dsh-router](https://www.npmjs.com/package/dsh-router-core)，\n供 dsh 使用的插件。参照 `dsh-router-traework` 的同构范式编写。\n\n- 上游通道对 OpenAI **Chat Completions 完全兼容**（单一端点 `POST {baseUrl}/chat/completions`，SSE 流式）；\n- 鉴权为 `Authorization: Bearer <session>`，session **自动取自本机 Loomy 客户端**登录后落盘的\n  `userData/auth-session.json`，无需手动粘贴；\n- 插件只暴露差异化逻辑（`status` / `listModels` / `chatOnce` / `dispose` /\n  `generateLoginUrl` / `pollLogin` / `completeLogin` / `removeLink`），\n  选号、冷却、换号、别名、模型启用状态、积分缓存等通用能力全部由 dsh-router 核心统一管理。\n```\n\n**依据 2 · 源码核查**：[src/index.ts:65-79](https://github.com/2404723600/dsh-router-loomy/blob/ccabca348ca2194287f0770ce348283fdb8bf3d8/src/index.ts#L65-L79)\n\n注册 suppliers 工厂。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\nexport function apply(ctx: ContextLike): void {\n  // 等核心把聚合表 provide 出来后再追加（顺序无关：inject 延迟到服务可用才触发）。\n  ctx.inject(['router.suppliers'], (sctx) => {\n    const c = sctx as ContextLike & { router?: { suppliers?: RouterSuppliersService } }\n    const suppliers = (c.get?.('router.suppliers') ?? c.router?.suppliers) as RouterSuppliersService | undefined\n    if (!suppliers) return undefined\n    if (!suppliers.loomy) {\n      suppliers.loomy = factory\n      ctx.emit('internal/service', 'router.suppliers', suppliers)\n      log(ctx, '[dsh-router-loomy] registered router.suppliers: loomy')\n    }\n    return () => {\n      delete suppliers.loomy\n    }\n  })\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/provider.ts:355-396](https://github.com/2404723600/dsh-router-loomy/blob/ccabca348ca2194287f0770ce348283fdb8bf3d8/src/provider.ts#L355-L396)\n\n单账号调用。\n\n<details>\n<summary>查看原文（42行）</summary>\n\n```text\n  async chatOnce(uid: string, lv: string, req: ChatRequest): Promise<ChatOnceResult> {\n    const accountUid = uid === '' ? '' : uid\n    const modelId = this.resolveModelId(req.model)\n    if (modelId === undefined) {\n      // 不是本供应商的模型：交给下一个供应商（绝不能记在账号头上）\n      return { ok: false, state: 'no_such_model', message: `unknown model ${JSON.stringify(req.model)}` }\n    }\n    if (this.store().disabled.includes(modelId)) {\n      return { ok: false, state: 'no_such_model', message: `model ${JSON.stringify(modelId)} is disabled` }\n    }\n\n    const resolved = this.registry.resolve(accountUid)\n    if (resolved === undefined) {\n      const message =\n        accountUid === '' || accountUid === AUTO_UID\n          ? `未找到 Loomy 登录态（期望 ${this.cfg.publicDir}\\\\<安装ID>\\\\userData\\\\${AUTH_SESSION_FILE}）—— 在面板点「添加链接」打开客户端登录，或访问客户端页手动填入会话串`\n          : `unknown account ${JSON.stringify(accountUid)}`\n      const state: AccountState = accountUid === '' || accountUid === AUTO_UID ? 'session_dead' : 'no_such_model'\n      this.setHealth(accountUid, state, message)\n      return { ok: false, state, message }\n    }\n\n    const bodyObj = this.prepareBody(req, modelId, lv)\n    const body = JSON.stringify(bodyObj)\n    const maxTokens = typeof bodyObj.max_tokens === 'number' ? bodyObj.max_tokens : undefined\n    const headers = this.buildHeaders(resolved.session)\n    const url = `${this.cfg.baseUrl.replace(/\\/+$/, '')}/chat/completions`\n\n    let response: Response\n    try {\n      response = await sendRequest({\n        url,\n        method: 'POST',\n        headers,\n        body,\n        headerTimeoutMs: this.cfg.timeoutMs,\n      })\n      await assertResponseOk(response)\n    } catch (err) {\n      const { state, message } = toStateAndMessage(err)\n      this.setHealth(resolved.uid, state, message)\n      return { ok: false, state, message }\n```\n\n</details>\n\n#### 缺口\n\n- 未接目标宿主或上游。\n  **影响：**真实可用性与兼容范围未知。\n  **进一步探讨：**隔离环境用模拟上游及受控账户验证。\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 本机登录态、模型与上游请求如何接合？\n\n**研究主题：**功能与机制、贡献与相对优势\n\n#### 完整回答\n\nAccountRegistry 扫公共目录按 auth-session.json mtime 选文件，读 session 并缓存；另有宿主凭证库 Key 账号。provider 从核心模型名解析上游 id，附 Bearer 及追踪头，填缺省 max_tokens，按流式或非流式处理响应。/models 探测有 TTL，状态余额固定 -1 代表未知。文件 JSON 读取异常时回退上次成功缓存，故轮换/损坏期间可继续用旧 token，直到上游否决。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/accounts.ts:58-112](https://github.com/2404723600/dsh-router-loomy/blob/ccabca348ca2194287f0770ce348283fdb8bf3d8/src/accounts.ts#L58-L112)\n\n文件定位、TTL 和故障回退。\n\n<details>\n<summary>查看原文（55行）</summary>\n\n```text\n  /** 本机登录态文件路径（找不到返回 undefined）。 */\n  locateSessionFile(): string | undefined {\n    if (this.userDataDir !== undefined) {\n      const candidate = join(this.userDataDir, AUTH_SESSION_FILE)\n      try {\n        if (statSync(candidate).isFile()) return candidate\n      } catch {\n        this.userDataDir = undefined\n      }\n    }\n    let entries: string[]\n    try {\n      entries = readdirSync(this.opts.publicDir)\n    } catch {\n      return undefined\n    }\n    const found: Array<{ dir: string; path: string; time: number }> = []\n    for (const entry of entries) {\n      const dir = join(this.opts.publicDir, entry, 'userData')\n      const path = join(dir, AUTH_SESSION_FILE)\n      try {\n        const st = statSync(path)\n        if (!st.isFile()) continue\n        found.push({ dir, path, time: st.mtimeMs })\n      } catch {\n        // 该安装目录没有登录态文件\n      }\n    }\n    found.sort((a, b) => b.time - a.time)\n    const best = found[0]\n    if (best === undefined) return undefined\n    this.userDataDir = best.dir\n    return best.path\n  }\n\n  /** 读取本机登录态（带 TTL 缓存；文件读坏时返回上一次成功值）。 */\n  readSessionFile(force = false): { path: string; data: LoomySessionFile } | undefined {\n    const now = Date.now()\n    if (!force && this.fileCache !== undefined && now - this.fileCache.at <= this.opts.sessionTtlMs) {\n      return { path: this.fileCache.path, data: this.fileCache.data }\n    }\n    const path = this.locateSessionFile()\n    if (path === undefined) return undefined\n    try {\n      const parsed = JSON.parse(readFileSync(path, 'utf-8')) as LoomySessionFile\n      if (typeof parsed.session !== 'string' || parsed.session.trim() === '') {\n        this.opts.log(`loomy: 登录态文件缺少 session 字段：${path}`)\n        return undefined\n      }\n      this.fileCache = { path, data: parsed, at: now }\n      return { path, data: parsed }\n    } catch (err) {\n      this.opts.log(`loomy: 登录态文件读取失败（${path}）：${(err as Error).message}`)\n      return this.fileCache === undefined ? undefined : { path: this.fileCache.path, data: this.fileCache.data }\n    }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/accounts.ts:121-165](https://github.com/2404723600/dsh-router-loomy/blob/ccabca348ca2194287f0770ce348283fdb8bf3d8/src/accounts.ts#L121-L165)\n\n多账号来源。\n\n<details>\n<summary>查看原文（45行）</summary>\n\n```text\n  /** 面板添加的 Key 账号（按 uid 排序，保证面板顺序稳定）。 */\n  keyEntries(): Array<{ uid: string; blob: LoomyKeyAccount }> {\n    const out: Array<{ uid: string; blob: LoomyKeyAccount }> = []\n    for (const uid of this.opts.credentials.list(this.opts.supplierId)) {\n      if (!uid.startsWith(KEY_UID_PREFIX)) continue\n      const blob = this.opts.credentials.get<LoomyKeyAccount>(this.opts.supplierId, uid)\n      if (blob === undefined || typeof blob.apiKey !== 'string' || blob.apiKey.trim() === '') continue\n      out.push({ uid, blob })\n    }\n    out.sort((a, b) => a.uid.localeCompare(b.uid, undefined, { numeric: true }))\n    return out\n  }\n\n  /** 账号列表：本机登录态在前，其后是面板 Key。 */\n  list(): AccountEntry[] {\n    const out: AccountEntry[] = []\n    const file = this.readSessionFile()\n    if (file !== undefined) {\n      out.push({ uid: AUTO_UID, nickname: this.localNickname(file.data), source: 'file', file: file.path })\n    }\n    for (const { uid, blob } of this.keyEntries()) {\n      out.push({ uid, nickname: blob.name !== '' ? blob.name : `Loomy Key ${uid.slice(KEY_UID_PREFIX.length)}`, source: 'key' })\n    }\n    return out\n  }\n\n  /** 解析某个 uid 对应的会话串。 */\n  resolve(uid: string): ResolvedSession | undefined {\n    if (uid === '' || uid === AUTO_UID) {\n      const file = this.readSessionFile()\n      if (file === undefined) return undefined\n      return {\n        session: file.data.session.trim(),\n        uid: AUTO_UID,\n        nickname: this.localNickname(file.data),\n        source: 'file',\n        file: file.path,\n      }\n    }\n    const blob = this.opts.credentials.get<LoomyKeyAccount>(this.opts.supplierId, uid)\n    if (blob === undefined || typeof blob.apiKey !== 'string' || blob.apiKey.trim() === '') return undefined\n    return {\n      session: blob.apiKey.trim(),\n      uid,\n      nickname: blob.name !== '' ? blob.name : `Loomy Key ${uid.slice(KEY_UID_PREFIX.length)}`,\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/provider.ts:199-231](https://github.com/2404723600/dsh-router-loomy/blob/ccabca348ca2194287f0770ce348283fdb8bf3d8/src/provider.ts#L199-L231)\n\n状态/未知积分。\n\n<details>\n<summary>查看原文（33行）</summary>\n\n```text\n  status(): SupplierStatusNow {\n    this.touchProbe()\n    const accounts = this.registry.list().map((entry) => {\n      const h = this.health.get(entry.uid)\n      const resolved = this.registry.resolve(entry.uid)\n      const bits: string[] = []\n      if (resolved !== undefined) {\n        bits.push(`会话 ${maskSession(resolved.session)}`)\n        if (entry.source === 'file' && entry.file !== undefined) bits.push(entry.file)\n        else bits.push('面板添加')\n      } else {\n        bits.push('会话缺失')\n      }\n      if (entry.uid === '' || entry.source === 'file') {\n        // 本机登录态账号：把「客户端在不在跑」一并报出来 —— 这是用户最关心的\n        // 「是否已加载」信号（登录态文件在、但客户端没开 = 会话可能已过期）。\n        const running = this.client.runningNow()\n        bits.push(running === true ? '客户端运行中' : running === false ? '客户端未运行' : '客户端状态未知')\n        if (this.lastUsage !== undefined) {\n          bits.push(`最近一次调用消耗 ${this.lastUsage.points} 积分（${this.lastUsage.model}）`)\n        }\n      }\n      return {\n        uid: entry.uid,\n        nickname: entry.nickname,\n        // Loomy 无公开的积分查询端点：**报 -1（未知）**，不能报 0——\n        // 0 是真值「用完了」，核心会把它当成一次有效读数写进缓存。\n        credits: -1,\n        state: h?.state ?? ('ok' as AccountState),\n        message: h?.message !== undefined ? `${h.message}（${bits.join(' · ')}）` : bits.join(' · '),\n      }\n    })\n    return { id: this.id, name: this.name, accounts }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/provider.ts:484-541](https://github.com/2404723600/dsh-router-loomy/blob/ccabca348ca2194287f0770ce348283fdb8bf3d8/src/provider.ts#L484-L541)\n\n请求体与认证头。\n\n<details>\n<summary>查看原文（58行）</summary>\n\n```text\n  /**\n   * 请求体改写：只动插件必须动的字段，其余原样透传（含 messages / tools / 采样参数）。\n   *\n   *   - `model` 换成本供应商解析出的上游 id\n   *   - `max_tokens` 缺省时补默认值（客户端实测为 32000）\n   *   - 非流式路径强制 `stream:false` 并去掉 `stream_options`（否则拿不到单体 JSON）\n   *   - `lv` 有具体档位且模型声明支持时写入 `reasoning_effort`\n   *\n   * 返回**对象**而不是字符串：调用方要用 `max_tokens` 去区分「上游截断」与\n   * 「撞上上限」（见 guardUpstreamStream）。\n   */\n  private prepareBody(req: ChatRequest, modelId: string, lv: string): Record<string, unknown> {\n    let obj: Record<string, unknown>\n    try {\n      const parsed: unknown = JSON.parse(req.rawBody)\n      obj = parsed !== null && typeof parsed === 'object' ? (parsed as Record<string, unknown>) : {}\n    } catch {\n      obj = {}\n    }\n    obj.model = modelId\n    if (typeof obj.max_tokens !== 'number') obj.max_tokens = this.cfg.defaultMaxTokens\n    if (req.stream) {\n      obj.stream = true\n      if (typeof obj.stream_options !== 'object' || obj.stream_options === null) {\n        obj.stream_options = { include_usage: true }\n      }\n    } else {\n      obj.stream = false\n      delete obj.stream_options\n    }\n    const catalog = this.catalog.snapshot()\n    const info = catalog?.models.find((m) => m.id === modelId)\n    const lvNormalized = lv.trim().toLowerCase()\n    if (lvNormalized !== '' && lvNormalized !== 'auto' && lvNormalized !== 'off' && lvNormalized !== 'none') {\n      if (info?.reasoning_efforts?.includes(lvNormalized) === true) obj.reasoning_effort = lvNormalized\n      // 模型未声明 reasoning_efforts 时不硬塞：上游对未知参数可能直接 400\n    } else {\n      delete obj.reasoning_effort\n    }\n    return obj\n  }\n\n  /**\n   * 构造请求头：鉴权 + 四个必带追踪头。\n   * `traceparent` 缺失会让上游连接挂死（实测结论），故每次请求都新生成。\n   */\n  private buildHeaders(session: string): Record<string, string> {\n    return {\n      authorization: `Bearer ${session}`,\n      'content-type': 'application/json',\n      accept: 'text/event-stream, application/json, */*',\n      'user-agent': USER_AGENT,\n      ...buildTracingHeaders({\n        version: this.cfg.loomyVersion,\n        invokeOrigin: this.cfg.invokeOrigin,\n        sessionAffinity: this.cfg.sessionAffinity,\n      }),\n    }\n```\n\n</details>\n\n#### 缺口\n\n- 未验证上游必要追踪头与模型目录。\n  **影响：**参数兼容只是作者实测与源码实现。\n  **进一步探讨：**模拟上游覆盖不同协议返回。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 流尾守卫与重试如何处理截断和成本？\n\n**研究主题：**缺陷与关键质疑、工程质量与复用、效果与总成本\n\n#### 完整回答\n\n流式分支用 guardUpstreamStream 统计 finish_reason、正文、推理与 usage。缺 finish_reason 且未撞 max_tokens 判截断，扣住 [DONE] 诱导核心按 TRANSPORT 重试；同一账号模型连续达到上限后改补 length，避免持续重发整个上下文。对上游中途错误另上报 late failure。该判据依赖作者对上游尾帧和核心重试语义的记录；误判可导致重复积分、重复工具动作或错误结束，且计数只是进程内 Map，重启清零。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/api/sse.ts:124-155](https://github.com/2404723600/dsh-router-loomy/blob/ccabca348ca2194287f0770ce348283fdb8bf3d8/src/api/sse.ts#L124-L155)\n\n截断判据。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\n/**\n * 判定收尾形态。\n *\n * 判据来自实测（2026-10-16）：\n *   - 正常完成**一定**带 `finish_reason`（`stop` / `tool_calls`）；\n *   - 上游截断时仍会发 `data: [DONE]`，**只是不给 `finish_reason`**；\n *   - 撞 max_tokens 时同样不给 `finish_reason`，末帧是 `choices:[] + usage`，\n *     故用 `completion_tokens >= maxTokens` 把「撞上限」摘出来单独处置。\n *\n * 另补一条：给了 `finish_reason` 但**只有推理、没有正文也没有工具调用**，\n * 对 agent 来说同样是「没产出可用回答」，归入截断。\n */\nexport function verdictOf(stats: StreamStats): StreamVerdict {\n  if (!stats.sawFinishReason) {\n    const capped =\n      stats.maxTokens !== undefined &&\n      stats.maxTokens > 0 &&\n      stats.completionTokens !== undefined &&\n      stats.completionTokens >= stats.maxTokens\n    return capped ? 'capped' : 'truncated'\n  }\n  if (stats.contentChars === 0 && !stats.sawToolCall && stats.reasoningChars > 0) return 'truncated'\n  return 'ok'\n}\n\n/** 补齐 length 终止标记的合成帧（核心 mapFinishReason('length') → max-tokens）。 */\nconst LENGTH_FRAME = new TextEncoder().encode(\n  `data: ${JSON.stringify({ choices: [{ index: 0, delta: {}, finish_reason: 'length' }] })}\\n\\n`,\n)\nconst DONE_FRAME = new TextEncoder().encode('data: [DONE]')\n/** 输出侧保留的尾部字节数：够覆盖 `data: [DONE]` 被切在两个 chunk 之间的情形。 */\nconst OUT_CARRY = 32\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/api/sse.ts:177-192](https://github.com/2404723600/dsh-router-loomy/blob/ccabca348ca2194287f0770ce348283fdb8bf3d8/src/api/sse.ts#L177-L192)\n\n扣住 DONE 机制与作者解释。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n/**\n * 流式透传 + 迟到失败嗅探 + **收尾完整性守卫**。\n *\n * 为什么需要收尾校验：上游（讯飞网关）会在生成没结束时就发 `[DONE]`，\n * 只是不给 `finish_reason`。core 的适配器在 `[DONE]` 处若没见到\n * `finish_reason` 就默认按 `stop` 收尾，于是**截断被当成正常完成**——\n * 表现是「助手说要做却什么都没做，本轮就结束了」，且不报任何错。\n * 唯一能发现这件事的地方就是这里（插件是唯一和上游对话的一方）。\n *\n * 处置手段是**扣住 `[DONE]` 不放**：core 见流结束却没有 `[DONE]`，会抛\n * `SSE payload stream ended without [DONE]`（码 `TRANSPORT`），而 TRANSPORT\n * 在 dsh-llm 的可重试白名单里，于是这一轮被自动重试而不是静默截断。\n *\n * 正常路径**字节级原样透传**（仅尾部保留 ≤32 字节再吐，用于识别跨 chunk 的\n * `[DONE]`）；只有判定异常时才会改写收尾。\n */\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/provider.ts:130-140](https://github.com/2404723600/dsh-router-loomy/blob/ccabca348ca2194287f0770ce348283fdb8bf3d8/src/provider.ts#L130-L140)\n\n重发成本与 Map。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n  /**\n   * 「同一 (账号, 模型) 连续被上游截断」的计数。\n   *\n   * 截断时我们会扣住 `[DONE]` 逼核心按 TRANSPORT 重试，而重试会重发整段上下文\n   * （实测动辄 10 万 prompt token，按积分计费）。所以连续截断到上限后就**不再逼\n   * 重试**，改成补一个 `length` 收尾标记放行，让这一轮以「被长度截断」结束——\n   * 至少界面能看出来，而不是无限烧积分。任一正常收尾都会把计数清零。\n   */\n  private readonly truncations = new Map<string, number>()\n  /** 最近一次上游 usage（面板展示 points_consumed，上游按积分计费）。 */\n  private lastUsage: { points: number; model: string; at: number } | undefined\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/provider.ts:403-437](https://github.com/2404723600/dsh-router-loomy/blob/ccabca348ca2194287f0770ce348283fdb8bf3d8/src/provider.ts#L403-L437)\n\n守卫决策与计数。\n\n<details>\n<summary>查看原文（35行）</summary>\n\n```text\n    if (requestedStream(req) && isEventStream(response)) {\n      if (response.body === null) {\n        return { ok: false, state: 'transport', message: 'loomy upstream: empty stream body' }\n      }\n      const key = `${resolved.uid}|${modelId}`\n      const stream = guardUpstreamStream(response.body, {\n        maxTokens,\n        onLateFailure: (state, message) => {\n          this.setHealth(resolved.uid, state, message)\n          this.reportLateFailure(resolved.uid, modelId, state, message)\n        },\n        decide: (verdict: StreamVerdict): GuardAction => {\n          if (verdict === 'ok') return 'pass'\n          if (verdict === 'capped') return 'mark-length'\n          // 截断：默认扣住 [DONE] 逼核心重试；连续截断到上限后改为标记放行\n          return (this.truncations.get(key) ?? 0) >= MAX_TRUNCATION_RETRIES ? 'mark-length' : 'fail'\n        },\n        onVerdict: (verdict: StreamVerdict, stats: StreamStats): void => {\n          if (verdict === 'ok') {\n            this.truncations.delete(key)\n            return\n          }\n          if (verdict === 'truncated') {\n            const n = (this.truncations.get(key) ?? 0) + 1\n            this.truncations.set(key, n)\n            this.log(\n              `loomy: 上游收尾异常（${verdict}，连续第 ${n} 次）${describeStreamStats(stats)}` +\n                (n >= MAX_TRUNCATION_RETRIES ? ' —— 已达重试上限，本次不再触发重试' : ' —— 已扣住 [DONE]，交给核心重试'),\n            )\n            return\n          }\n          this.log(`loomy: 上游撞上 max_tokens 上限${describeStreamStats(stats)}`)\n        },\n      })\n      return { ok: true, stream }\n```\n\n</details>\n\n#### 缺口\n\n- 未运行真实上游或核心重试。\n  **影响：**误判率、积分成本与工具调用副作用未知。\n  **进一步探讨：**用中途断流/长度耗尽/推理-only 流做对照。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 状态页与账户展示有什么边界？\n\n**研究主题：**缺陷与关键质疑、依赖、兼容与流程\n\n#### 完整回答\n\n客户端状态页自带进程级随机 token，open/session 变更检查 token；然而源代码注释说明 /router/api/* 同源无鉴权，页面 GET 展示客户端路径、登录时间与脱敏 session。更具体的显示风险：README 示例手机号已脱敏，但 localNickname 直接拼接 auth-session.json 的 phone 字段，status 把 nickname 原样返回。若该字段是完整号码且 Web 面板可被非授权主体访问，将泄露完整号码；实际字段格式和外层鉴权须核。服务的 CSRF token 不等于访问控制。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/client-page.ts:13-31](https://github.com/2404723600/dsh-router-loomy/blob/ccabca348ca2194287f0770ce348283fdb8bf3d8/src/client-page.ts#L13-L31)\n\n页面作者标注无鉴权并设随机 token。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n * 安全：`/router/api/*` 是**同源无鉴权**的（core 的约定），所以任何网页都能\n * 发 GET/POST 过来。查看页面本身无所谓，但「启动进程」「写入凭证」必须防 CSRF ——\n * 用每次进程启动时随机生成的令牌：令牌只出现在页面 HTML 里，跨源读不到，\n * 于是第三方页面无法构造合法请求。\n */\nimport { randomBytes } from 'node:crypto'\nimport type { IncomingMessage, ServerResponse } from 'node:http'\nimport { CLIENT_PAGE_PATH } from './api/constants.ts'\nimport type { LoomySupplier } from './provider.ts'\nimport type { LoomyClientSnapshot } from './types.ts'\n\nexport interface ClientPageDeps {\n  /** 取当前供应商实例（核心尚未构造时 undefined）。 */\n  supplier: () => LoomySupplier | undefined\n  log: (msg: string) => void\n}\n\n/** 进程级 CSRF 令牌（重启即换）。 */\nconst TOKEN = randomBytes(16).toString('hex')\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/client-page.ts:214-273](https://github.com/2404723600/dsh-router-loomy/blob/ccabca348ca2194287f0770ce348283fdb8bf3d8/src/client-page.ts#L214-L273)\n\n动作检查。\n\n<details>\n<summary>查看原文（60行）</summary>\n\n```text\n/** 路由处理器（宿主半注册；见 src/index.ts）。 */\nexport async function handleClientPage(\n  req: IncomingMessage,\n  res: ServerResponse,\n  deps: ClientPageDeps,\n): Promise<void> {\n  try {\n    const url = new URL(req.url ?? CLIENT_PAGE_PATH, 'http://127.0.0.1')\n    let action = url.searchParams.get('action') ?? ''\n    let token = url.searchParams.get('t') ?? ''\n    let session = ''\n    let name = ''\n\n    if (req.method === 'POST') {\n      const body = new URLSearchParams(await readBody(req))\n      action = body.get('action') ?? action\n      token = body.get('t') ?? token\n      session = body.get('session') ?? ''\n      name = body.get('name') ?? ''\n    }\n\n    const supplier = deps.supplier()\n    let notice: Notice | undefined\n    let error = ''\n\n    // 变更类动作（启动进程 / 写凭证）必须带对令牌\n    if (action !== '' && token !== TOKEN) {\n      notice = { kind: 'bad', text: '操作令牌不匹配（页面可能已过期，请刷新后重试）' }\n    } else if (action === 'open') {\n      if (supplier === undefined) {\n        notice = { kind: 'warn', text: '供应商尚未加载，无法启动客户端' }\n      } else {\n        const result = await supplier.openClient()\n        notice = result.ok\n          ? {\n              kind: 'ok',\n              text: result.already === true ? '客户端已经在运行' : `已启动客户端：${result.exe ?? ''}`,\n            }\n          : { kind: 'bad', text: result.error ?? '启动失败' }\n      }\n    } else if (action === 'session') {\n      if (supplier === undefined) {\n        notice = { kind: 'warn', text: '供应商尚未加载，无法保存会话串' }\n      } else {\n        try {\n          const account = await supplier.adoptSession({ name, session })\n          notice = { kind: 'ok', text: `已保存账号 ${account.nickname}（${account.uid}）` }\n        } catch (err) {\n          error = (err as Error).message\n        }\n      }\n    }\n\n    let snapshot: LoomyClientSnapshot | undefined\n    if (supplier === undefined) {\n      deps.log('loomy: 客户端状态页被访问，但供应商实例尚未构造')\n    } else {\n      snapshot = await supplier.refreshClientSnapshot()\n    }\n    sendHtml(res, 200, renderPage(snapshot, notice, error))\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/accounts.ts:115-119](https://github.com/2404723600/dsh-router-loomy/blob/ccabca348ca2194287f0770ce348283fdb8bf3d8/src/accounts.ts#L115-L119)\n\nphone 原样入昵称。\n\n```text\n  /** 本机登录态账号的展示名（含脱敏手机号，便于多账号辨认）。 */\n  localNickname(data: LoomySessionFile): string {\n    const phone = typeof data.phone === 'string' && data.phone !== '' ? data.phone : ''\n    return phone !== '' ? `本机客户端 · ${phone}` : '本机客户端'\n  }\n```\n\n**依据 4 · 源码核查**：[src/provider.ts:199-229](https://github.com/2404723600/dsh-router-loomy/blob/ccabca348ca2194287f0770ce348283fdb8bf3d8/src/provider.ts#L199-L229)\n\n昵称进入状态。\n\n<details>\n<summary>查看原文（31行）</summary>\n\n```text\n  status(): SupplierStatusNow {\n    this.touchProbe()\n    const accounts = this.registry.list().map((entry) => {\n      const h = this.health.get(entry.uid)\n      const resolved = this.registry.resolve(entry.uid)\n      const bits: string[] = []\n      if (resolved !== undefined) {\n        bits.push(`会话 ${maskSession(resolved.session)}`)\n        if (entry.source === 'file' && entry.file !== undefined) bits.push(entry.file)\n        else bits.push('面板添加')\n      } else {\n        bits.push('会话缺失')\n      }\n      if (entry.uid === '' || entry.source === 'file') {\n        // 本机登录态账号：把「客户端在不在跑」一并报出来 —— 这是用户最关心的\n        // 「是否已加载」信号（登录态文件在、但客户端没开 = 会话可能已过期）。\n        const running = this.client.runningNow()\n        bits.push(running === true ? '客户端运行中' : running === false ? '客户端未运行' : '客户端状态未知')\n        if (this.lastUsage !== undefined) {\n          bits.push(`最近一次调用消耗 ${this.lastUsage.points} 积分（${this.lastUsage.model}）`)\n        }\n      }\n      return {\n        uid: entry.uid,\n        nickname: entry.nickname,\n        // Loomy 无公开的积分查询端点：**报 -1（未知）**，不能报 0——\n        // 0 是真值「用完了」，核心会把它当成一次有效读数写进缓存。\n        credits: -1,\n        state: h?.state ?? ('ok' as AccountState),\n        message: h?.message !== undefined ? `${h.message}（${bits.join(' · ')}）` : bits.join(' · '),\n      }\n```\n\n</details>\n\n**依据 5 · 作者声明**：[README.md:84-96](https://github.com/2404723600/dsh-router-loomy/blob/ccabca348ca2194287f0770ce348283fdb8bf3d8/README.md#L84-L96)\n\nREADME 脱敏展示及 CSRF 声明。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n平时（客户端已登录过）**不需要任何操作**：插件每次读状态时都会自动扫描登录态文件，\n面板上会直接出现账号 `本机客户端 · 132****3519`，状态列还会带出「客户端运行中 / 未运行」。\n\n### 客户端状态页\n\n`http://127.0.0.1:<面板端口>/router/api/loomy/client`\n\n显示客户端可执行文件路径、是否在运行、登录态是否已加载、脱敏会话串与登录时间，\n并提供「打开客户端」按钮。自动识别不可用时（客户端装在探测不到的位置），\n也可以在这个页面手动填入会话串作为兜底。\n\n> 该页面由 host half 注册，需要 `webServer` 服务（正常 dsh 环境都有）。\n> 变更类操作带进程级 CSRF 令牌，第三方网页无法构造合法请求。\n```\n\n</details>\n\n#### 缺口\n\n- 未见真实登录文件和宿主外层鉴权。\n  **影响：**号码泄露可达性尚未验证。\n  **进一步探讨：**用脱敏测试号码检查 API/页面响应和反代权限。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 应如何做小范围采用试验？\n\n**研究主题：**采用判断、新假设与验证\n\n#### 完整回答\n\n先在隔离 profile 加载固定版 dsh-router core 与本包，使用模拟上游验证模型发现、401/429、正常/缺尾/撞 token 上限流和会话轮换；再用授权测试账户观察积分与重试。上线前遮盖 localNickname 中 phone、明确状态页外层鉴权，避免将 CSRF 当登录。未来可把重试限制持久化并为含工具调用的流保守处理，但这是假设，不是现有能力。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:65-106](https://github.com/2404723600/dsh-router-loomy/blob/ccabca348ca2194287f0770ce348283fdb8bf3d8/src/index.ts#L65-L106)\n\n核心与页面注册。\n\n<details>\n<summary>查看原文（42行）</summary>\n\n```text\nexport function apply(ctx: ContextLike): void {\n  // 等核心把聚合表 provide 出来后再追加（顺序无关：inject 延迟到服务可用才触发）。\n  ctx.inject(['router.suppliers'], (sctx) => {\n    const c = sctx as ContextLike & { router?: { suppliers?: RouterSuppliersService } }\n    const suppliers = (c.get?.('router.suppliers') ?? c.router?.suppliers) as RouterSuppliersService | undefined\n    if (!suppliers) return undefined\n    if (!suppliers.loomy) {\n      suppliers.loomy = factory\n      ctx.emit('internal/service', 'router.suppliers', suppliers)\n      log(ctx, '[dsh-router-loomy] registered router.suppliers: loomy')\n    }\n    return () => {\n      delete suppliers.loomy\n    }\n  })\n\n  // 客户端状态页：拿不到 webServer 就静默跳过（只影响这个页面，不影响供应商本身；\n  // generateLoginUrl 返回的链接此时会 404，但「打开客户端」已经直接执行过了）。\n  ctx.inject(['webServer'], (sctx) => {\n    // 注入回调里**绝不能让异常逃出去**：cordis 的加载期异常会升级成\n    // fatal load failure 打挂整个 dsh（本工程在 http.ts 上已经踩过一次）。\n    try {\n      const c = sctx as ContextLike\n      const server = (c.get?.('webServer') ?? c.webServer) as WebServerLike | undefined\n      if (server === undefined || typeof server.register !== 'function') {\n        log(ctx, '[dsh-router-loomy] 未取得 webServer 服务，跳过客户端状态页注册')\n        return undefined\n      }\n      const off = server.register({\n        kind: 'exact',\n        path: CLIENT_PAGE_PATH,\n        handler: (req, res) => handleClientPage(req, res, { supplier: currentSupplier, log: (msg) => log(ctx, msg) }),\n      })\n      log(ctx, `[dsh-router-loomy] 已注册客户端状态页 ${CLIENT_PAGE_PATH}`)\n      return () => {\n        off()\n      }\n    } catch (err) {\n      log(ctx, `[dsh-router-loomy] 注册客户端状态页失败（不影响供应商本身）：${(err as Error).message}`)\n      return undefined\n    }\n  })\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/accounts.ts:93-119](https://github.com/2404723600/dsh-router-loomy/blob/ccabca348ca2194287f0770ce348283fdb8bf3d8/src/accounts.ts#L93-L119)\n\n缓存/号码字段。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\n  /** 读取本机登录态（带 TTL 缓存；文件读坏时返回上一次成功值）。 */\n  readSessionFile(force = false): { path: string; data: LoomySessionFile } | undefined {\n    const now = Date.now()\n    if (!force && this.fileCache !== undefined && now - this.fileCache.at <= this.opts.sessionTtlMs) {\n      return { path: this.fileCache.path, data: this.fileCache.data }\n    }\n    const path = this.locateSessionFile()\n    if (path === undefined) return undefined\n    try {\n      const parsed = JSON.parse(readFileSync(path, 'utf-8')) as LoomySessionFile\n      if (typeof parsed.session !== 'string' || parsed.session.trim() === '') {\n        this.opts.log(`loomy: 登录态文件缺少 session 字段：${path}`)\n        return undefined\n      }\n      this.fileCache = { path, data: parsed, at: now }\n      return { path, data: parsed }\n    } catch (err) {\n      this.opts.log(`loomy: 登录态文件读取失败（${path}）：${(err as Error).message}`)\n      return this.fileCache === undefined ? undefined : { path: this.fileCache.path, data: this.fileCache.data }\n    }\n  }\n\n  /** 本机登录态账号的展示名（含脱敏手机号，便于多账号辨认）。 */\n  localNickname(data: LoomySessionFile): string {\n    const phone = typeof data.phone === 'string' && data.phone !== '' ? data.phone : ''\n    return phone !== '' ? `本机客户端 · ${phone}` : '本机客户端'\n  }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/provider.ts:403-437](https://github.com/2404723600/dsh-router-loomy/blob/ccabca348ca2194287f0770ce348283fdb8bf3d8/src/provider.ts#L403-L437)\n\n流式决策。\n\n<details>\n<summary>查看原文（35行）</summary>\n\n```text\n    if (requestedStream(req) && isEventStream(response)) {\n      if (response.body === null) {\n        return { ok: false, state: 'transport', message: 'loomy upstream: empty stream body' }\n      }\n      const key = `${resolved.uid}|${modelId}`\n      const stream = guardUpstreamStream(response.body, {\n        maxTokens,\n        onLateFailure: (state, message) => {\n          this.setHealth(resolved.uid, state, message)\n          this.reportLateFailure(resolved.uid, modelId, state, message)\n        },\n        decide: (verdict: StreamVerdict): GuardAction => {\n          if (verdict === 'ok') return 'pass'\n          if (verdict === 'capped') return 'mark-length'\n          // 截断：默认扣住 [DONE] 逼核心重试；连续截断到上限后改为标记放行\n          return (this.truncations.get(key) ?? 0) >= MAX_TRUNCATION_RETRIES ? 'mark-length' : 'fail'\n        },\n        onVerdict: (verdict: StreamVerdict, stats: StreamStats): void => {\n          if (verdict === 'ok') {\n            this.truncations.delete(key)\n            return\n          }\n          if (verdict === 'truncated') {\n            const n = (this.truncations.get(key) ?? 0) + 1\n            this.truncations.set(key, n)\n            this.log(\n              `loomy: 上游收尾异常（${verdict}，连续第 ${n} 次）${describeStreamStats(stats)}` +\n                (n >= MAX_TRUNCATION_RETRIES ? ' —— 已达重试上限，本次不再触发重试' : ' —— 已扣住 [DONE]，交给核心重试'),\n            )\n            return\n          }\n          this.log(`loomy: 上游撞上 max_tokens 上限${describeStreamStats(stats)}`)\n        },\n      })\n      return { ok: true, stream }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/client-page.ts:239-265](https://github.com/2404723600/dsh-router-loomy/blob/ccabca348ca2194287f0770ce348283fdb8bf3d8/src/client-page.ts#L239-L265)\n\n动作 token 检查。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\n    // 变更类动作（启动进程 / 写凭证）必须带对令牌\n    if (action !== '' && token !== TOKEN) {\n      notice = { kind: 'bad', text: '操作令牌不匹配（页面可能已过期，请刷新后重试）' }\n    } else if (action === 'open') {\n      if (supplier === undefined) {\n        notice = { kind: 'warn', text: '供应商尚未加载，无法启动客户端' }\n      } else {\n        const result = await supplier.openClient()\n        notice = result.ok\n          ? {\n              kind: 'ok',\n              text: result.already === true ? '客户端已经在运行' : `已启动客户端：${result.exe ?? ''}`,\n            }\n          : { kind: 'bad', text: result.error ?? '启动失败' }\n      }\n    } else if (action === 'session') {\n      if (supplier === undefined) {\n        notice = { kind: 'warn', text: '供应商尚未加载，无法保存会话串' }\n      } else {\n        try {\n          const account = await supplier.adoptSession({ name, session })\n          notice = { kind: 'ok', text: `已保存账号 ${account.nickname}（${account.uid}）` }\n        } catch (err) {\n          error = (err as Error).message\n        }\n      }\n    }\n```\n\n</details>\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：3ba40aa237d7de3df8a5c39c89e9d507f8cb59cfb060c8feb6c8bde7f06306cd。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 2 | 321 | — | — | 3040 |\n| .mjs | source | 1 | 109 | 87 | 14 | — |\n| .ts | source | 16 | 3185 | 2180 | 779 | — |\n| .ts | test | 6 | 771 | 618 | 85 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| session | Bearer 上游 | 文件/缓存 |\n| stream | SSE 透传/守卫 | 重试积分 |\n| client page | 状态/启动/手填 | 外层鉴权 |\n\n## 工程亮点\n\n文件缓存读错时回退旧 session；缺尾判截断诱导核心重试，进程内次数限制；状态页 token 仅防 CSRF，号码未代码脱敏。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、src/index.ts、src/accounts.ts、src/provider.ts、src/client-page.ts、src/api/sse.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：审阅固定提交的 README、package、核心 TypeScript；未运行 Loomy、dsh-router 或目标测试。\n- 下一步：模拟登录文件和上游响应；记录正常/截断/封顶的 retry、积分与状态页敏感字段。\n",
         "metadata": {
             "repository": "2404723600/dsh-router-loomy",
             "repository_id": 1376777535,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T05:56:33.145Z",
+            "window_start": "2026-09-22T05:56:33.145Z",
             "stars": 0,
             "pushed_at": "2026-10-16T03:11:52Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A2404723600%2Fdsh-router-loomy%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6403:B3C47:14698C:2215D9:6AD849EF and timestamp 2026-10-21 05:13:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A2404723600%2Fdsh-router-loomy%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6407:30A0ED:144D7D:21DE97:6AD849F0 and timestamp 2026-10-21 05:13:20 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A2404723600%2Fdsh-router-loomy%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640E:1DEEF7:14AD95:22479A:6AD849F0 and timestamp 2026-10-21 05:13:20 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A2404723600%2Fdsh-router-loomy%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6405:E4386:151BBE:22AA6F:6AD849F0 and timestamp 2026-10-21 05:13:20 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A2404723600%2Fdsh-router-loomy%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640F:1EF33:13DF42:2176CD:6AD849F0 and timestamp 2026-10-21 05:13:20 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
-            "npm": {
-                "package_name": "dsh-router-loomy",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 1685,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-router-loomy",
-                "error": null,
-                "publication": {
-                    "first_published_at": "2026-09-19T08:14:06.400Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
-                    "source_url": "https://registry.npmjs.org/dsh-router-loomy",
-                    "error": null,
-                    "latest_version": "0.2.0",
-                    "latest_published_at": "2026-10-16T03:28:43.789Z",
-                    "latest_error": null
-                }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "ccabca348ca2194287f0770ce348283fdb8bf3d8",
-                "current_revision": "ccabca348ca2194287f0770ce348283fdb8bf3d8",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
-            }
+            "errors": []
         },
         "discovery.plugins": {
             "id": "github:1376777535:root",

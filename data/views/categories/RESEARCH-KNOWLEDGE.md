@@ -42,7 +42,6 @@
 | [dsh-web-tools](#plugin-1335219884-root) | 为DSH统一搜索与抓取接口适配多Provider、自定义JSON源及X/小红书原生浏览器检索。 | 可信本机公开任务试用并核原始来源/预算，严格隔离/全量内容要求先核具体缺口。 |
 | [dsh-weekly-panel](#plugin-1400385991-packages-dsh-weekly-panel) | 将外部 DSH 插件周榜代理到 Web 主面板，展示排行、模型与推荐位并复制安装命令。 | 仅作非关键周榜浏览观察；复制安装命令及赞助内容前核原始仓库和数据，关键决策待修正新鲜度提示。 |
 | [dsh-weknora-archive](#plugin-1412897932-root) | 抽取 DSH 本地会话，规则生成 Markdown 摘要并写入 WeKnora 知识库。 | 仅无敏感样本指定已存在知识库先试用，人工审摘要并核远端解析；含密钥历史会话暂不自动上传。 |
-| [dsh-wsl-fetch](#plugin-1362694736-root) | 为DSH网页抓取注册代理感知的HTTP提供者，限制重定向、响应大小与返回文本。 | 先用公开小页面确认代理生效，保留抓取截断标志；不要把URL过滤当作完整网络访问隔离。 |
 | [dsh-wsl-obscura](#plugin-1358313559-root) | 从 WSL 调用 Obscura 无头浏览器的 status/fetch 工具，并提供 MCP 接线提示。 | 先 status 后公开 URL 样本 fetch，私网防线按 Obscura 版本独立验；交互用 MCP。 |
 | [dsh-wsl-obsidian](#plugin-1380817560-root) | 给 WSL 中的 DSH Agent 提供 Windows Obsidian 笔记库的状态、检索、读写和桌面打开工具。 | 建议观察，在测试 vault/备份副本先核 status、读写新文件和 Windows 显示；重要共享库暂不自动覆盖。 |
 | [dsh-wsl-playwright](#plugin-1381860363-root) | 在 WSL 经 npx 启动无头 Chromium，读取 URL 标题、状态或正文。 | 观察。 |
@@ -497,20 +496,6 @@
 > **思考**：dry_run 在创建库之后才生效，摘要直接引用用户文本/命令且无凭据脱敏；短 ID 和固定 100 项列表限制去重可靠性。详见[Q03](#research-q03)。
 
 > **建议**：可先本地脱敏并审阅带强会话身份的摘要，再幂等上传、验解析；用 canary、碰撞与 >100 文档对照，尚未实现。详见[Q05](#research-q05)。
-
-<a id="plugin-1362694736-root"></a>
-
-## [dsh-wsl-fetch](../../plugins/173787247--dsh-wsl-fetch/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-fetch)
-
-> **用途**：WSL内直接访问公开网页失败而Windows代理可用时，让现有web_fetch使用代理通路。
-
-> **亮点**：在宿主原抓取接口下替换传输路径，而不是让用户另学一套工具；有内容上限和取消信号，贡献是代理与宿主的受限集成。
-
-> **思考**：私网检查主要基于URL字面主机名，源码未在该路径固定域名解析结果；因此拦截私有IP字面量不能证明域名最终不会访问私网。
-
-> **建议**：待验证假设：代理侧统一检查解析目的地与重定向，可能比插件内重复维护IP规则更一致；需要明确代理与宿主的职责边界。
 
 <a id="plugin-1358313559-root"></a>
 

@@ -121,20 +121,6 @@
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
-                },
-                {
-                    "id": "2026-10-21-03-github-1336663986-root-source",
-                    "kind": "source_inspection",
-                    "url": "https://github.com/863683348/dsh-plugin-gate/blob/b75c3a1b768448ee84a6fa07735206e6f8945411/lib/index.js",
-                    "revision": "b75c3a1b768448ee84a6fa07735206e6f8945411",
-                    "captured_at": "2026-10-21T03:48:09.582Z",
-                    "summary": "核查 lib/index.js、lib/scan.js、lib/protect.js；lib/index.js注册gate_scan/guard/diff/report和提示section；scan.js只读遍历目录或内存tar包并跑签名，protect.js按命令模式和字符串路径返回BLOCK/WARN/PASS，未在入口注册tools/pre-execute钩子。",
-                    "artifact": "data/runs/2026-10-21-03/snapshots/863683348--dsh-plugin-gate/REVIEWED-SOURCE.json",
-                    "limitations": [
-                        "固定提交内列明源码和作者材料的有界抽读，静态inventory为组件范围；没有安装、执行目标代码或测试、发起插件服务请求、真实宿主验收或独立采用核实。",
-                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
-                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
-                    ]
                 }
             ],
             "findings": [

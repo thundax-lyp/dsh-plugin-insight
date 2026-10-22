@@ -12,8 +12,8 @@
             "aliases": [],
             "name": "dsh-wsl-picker",
             "entry_type": "plugin",
-            "technical_category": "interface-input",
-            "business_category": "personal-productivity",
+            "technical_category": "tools-integration",
+            "business_category": "infrastructure",
             "tags": [],
             "availability": "unknown",
             "research_depth": "source",
@@ -24,36 +24,76 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-20-07-github-1351853863-root-directory-0",
+                    "id": "2026-10-22-02-github-1351853863-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
-                    "retrieved_at": "2026-10-20T10:01:56.576Z",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-22T06:59:29.146Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-20-07-github-1351853863-root-author",
+                    "id": "2026-10-22-02-github-1351853863-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/173787247/dsh-wsl-picker/blob/0cd8861e4240635693cf152c9c7635433e5980c9/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-picker",
+                            "commit": "0cd8861e4240635693cf152c9c7635433e5980c9",
+                            "path": "README.md",
+                            "content_sha256": "5a2f5b1581a7945eb97edd7f7d32109844f35de6bc3f524875991a7a2755d524"
+                        }
+                    ],
                     "revision": "0cd8861e4240635693cf152c9c7635433e5980c9",
-                    "captured_at": "2026-10-20T10:01:56.576Z",
-                    "summary": "在DSH中浏览WSL目录与挂载盘，支持名称过滤和工作区快捷入口。",
-                    "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-picker/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T06:59:29.146Z",
+                    "summary": "给 DSH Agent 浏览 WSL 与 Windows 挂载盘目录名称的只读工具。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-picker/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-20-07-github-1351853863-root-source",
+                    "id": "2026-10-22-02-github-1351853863-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/173787247/dsh-wsl-picker/blob/0cd8861e4240635693cf152c9c7635433e5980c9/index.js",
+                    "url": "https://github.com/173787247/dsh-wsl-picker/blob/0cd8861e4240635693cf152c9c7635433e5980c9/README.zh.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-picker",
+                            "commit": "0cd8861e4240635693cf152c9c7635433e5980c9",
+                            "path": "README.zh.md",
+                            "content_sha256": "caa13d04405820a2e11b2e0ab878521574a5c93854c2af027ebf3cd3c6dc89d8"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-picker",
+                            "commit": "0cd8861e4240635693cf152c9c7635433e5980c9",
+                            "path": "index.js",
+                            "content_sha256": "3360dc4f5764104e4c65d618c33f3a777a9ada24a1fe228ac28a44fb2fa15dee"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-picker",
+                            "commit": "0cd8861e4240635693cf152c9c7635433e5980c9",
+                            "path": "lib/picker.js",
+                            "content_sha256": "c407a5b4117f8047a38d69e5f373851f4faae4056f7be1d2398b2c6fedb3ea9d"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-picker",
+                            "commit": "0cd8861e4240635693cf152c9c7635433e5980c9",
+                            "path": "lib/wsl-host.js",
+                            "content_sha256": "c3213de3af83f68b4b12fe977890b170958229db6278b39115e8fb097d9d8801"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-picker",
+                            "commit": "0cd8861e4240635693cf152c9c7635433e5980c9",
+                            "path": "package.json",
+                            "content_sha256": "948cf7fc50d0496c21b48c70abae55e727910dcfbf82f4f81e822d816dfc5c4f"
+                        }
+                    ],
                     "revision": "0cd8861e4240635693cf152c9c7635433e5980c9",
-                    "captured_at": "2026-10-20T10:01:56.576Z",
-                    "summary": "核查 index.js、lib/picker.js；wsl_picker按start/path解析绝对目录，同步读取、名称排序、过滤并截断；im入口定位~/.dsh/im-workspace。",
-                    "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-picker/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T06:59:29.146Z",
+                    "summary": "核查 README.zh.md、index.js、lib/picker.js、lib/wsl-host.js、package.json；注册 wsl_picker 工具，解析 start/path，检查 WSL 后同步读目录、过滤/排序/截断并输出路径。详见[Q02](#research-q02)。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-picker/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "检查入口与目录解析实现，未浏览用户目录或验证界面交互。",
+                        "只读核固定提交 README.zh.md、index.js、lib/picker.js 和 lib/wsl-host.js；未运行目标 WSL/插件。旧 META 仅复用。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +104,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "用户需要向Agent提供WSL或Windows挂载目录，减少反复复制目录列表。",
+                    "text": "WSL 用户在 /、/mnt 和 IM 工作区快捷入口中定位目录；并不登记工作区。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1351853863-root-source"
+                        "2026-10-22-02-github-1351853863-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +115,16 @@
                             "fingerprint": "0cd8861e4240635693cf152c9c7635433e5980c9"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:56.576Z",
+                    "reviewed_at": "2026-10-22T06:59:29.146Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "wsl_picker按start/path解析绝对目录，同步读取、名称排序、过滤并截断；im入口定位~/.dsh/im-workspace。",
+                    "text": "注册 wsl_picker 工具，解析 start/path，检查 WSL 后同步读目录、过滤/排序/截断并输出路径。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1351853863-root-source"
+                        "2026-10-22-02-github-1351853863-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +133,16 @@
                             "fingerprint": "0cd8861e4240635693cf152c9c7635433e5980c9"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:56.576Z",
+                    "reviewed_at": "2026-10-22T06:59:29.146Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "检查入口与目录解析实现，未浏览用户目录或验证界面交互。",
+                    "text": "只读核固定提交 README.zh.md、index.js、lib/picker.js 和 lib/wsl-host.js；未运行目标 WSL/插件。旧 META 仅复用。",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1351853863-root-source"
+                        "2026-10-22-02-github-1351853863-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +151,16 @@
                             "fingerprint": "0cd8861e4240635693cf152c9c7635433e5980c9"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:56.576Z",
+                    "reviewed_at": "2026-10-22T06:59:29.146Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "固定版本包清单与作者说明已核对；依赖WSL检测与Node文件系统权限；im工作区为可选，不存在时返回空列表和提示。",
+                    "text": "作者给 github:173787247/dsh-wsl-picker 的 DSH Web profile 安装命令；实时可用性未核。",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1351853863-root-source"
+                        "2026-10-22-02-github-1351853863-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +169,16 @@
                             "fingerprint": "0cd8861e4240635693cf152c9c7635433e5980c9"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:56.576Z",
+                    "reviewed_at": "2026-10-22T06:59:29.146Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "输出上限降低上下文体积，但同步枚举及逐项stat仍有I/O与事件循环成本，未测性能。",
+                    "text": "#### 成本\n\n| 阶段 | 资源成本 | 人工投入 | 边界 |\n| --- | --- | --- | --- |\n| 安装 | DSH Web/WSL，金额未知 | 安装/重启/新会话 | 版本兼容未测 |\n| 浏览 | 同步目录读/逐项 stat | 过滤并核路径 | 网络盘/大目录延迟未知 |\n| 风险 | 路径元数据进入 Agent | 敏感目录授权/复核 | 宿主权限策略未知 |",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1351853863-root-source"
+                        "2026-10-22-02-github-1351853863-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +187,16 @@
                             "fingerprint": "0cd8861e4240635693cf152c9c7635433e5980c9"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:56.576Z",
+                    "reviewed_at": "2026-10-22T06:59:29.146Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "适合小中目录导航；先确认返回路径，敏感目录仍受进程权限而非插件白名单控制。",
+                    "text": "个人 WSL 路径定位观察；敏感机器先核工具授权和目录暴露边界，大目录须确认截断。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1351853863-root-source"
+                        "2026-10-22-02-github-1351853863-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +205,16 @@
                             "fingerprint": "0cd8861e4240635693cf152c9c7635433e5980c9"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:56.576Z",
+                    "reviewed_at": "2026-10-22T06:59:29.146Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "把目录浏览和套件工作区入口组合成可消费结果；相对ls主要增量是结构化导航，不是图形文件选择器或访问隔离。 maxEntries只限制输出，readdirSync仍读取整个目录且stat跟随符号链接；无根目录白名单，不能把快捷入口理解为受限工作区。",
+                    "text": "#### 效果\n\n| 效果项 | 源码支持 | 未证实 |\n| --- | --- | --- |\n| 快捷浏览 | /、/mnt、im chips | 目标挂载存在性 |\n| 过滤定位 | 子串过滤/隐藏项开关 | 大目录完整性与延迟 |\n| 只读 | 无写文件路径 | 宿主权限隔离 |",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1351853863-root-source"
+                        "2026-10-22-02-github-1351853863-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +223,16 @@
                             "fingerprint": "0cd8861e4240635693cf152c9c7635433e5980c9"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:56.576Z",
+                    "reviewed_at": "2026-10-22T06:59:29.146Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "解析、格式与执行在单模块内清楚分离；同步I/O与全量枚举限制规模，truncated是输出提示不是分页能力。",
+                    "text": "参数优先级、错误结构和截断标志明确；同步枚举及无根限制是部署边界。详见[Q02](#research-q02)至[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1351853863-root-source"
+                        "2026-10-22-02-github-1351853863-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,15 +241,69 @@
                             "fingerprint": "0cd8861e4240635693cf152c9c7635433e5980c9"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:56.576Z",
+                    "reviewed_at": "2026-10-22T06:59:29.146Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "将 WSL/Windows 路径浏览和 IM 快捷入口暴露给 Agent，结果结构含 parent/chips/truncated。详见[Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1351853863-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351853863:root",
+                            "area": "code",
+                            "fingerprint": "0cd8861e4240635693cf152c9c7635433e5980c9"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T06:59:29.146Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "任意绝对路径和软链接可遍历目录名称；15 秒工具超时对同步文件系统调用的约束未经验证。详见[Q03](#research-q03)与[Q04](#research-q04)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1351853863-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351853863:root",
+                            "area": "code",
+                            "fingerprint": "0cd8861e4240635693cf152c9c7635433e5980c9"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T06:59:29.146Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "未验证方向为可配置浏览根、敏感路径策略、分页与异步限时枚举；先测大目录和宿主权限。详见[Q05](#research-q05)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1351853863-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351853863:root",
+                            "area": "code",
+                            "fingerprint": "0cd8861e4240635693cf152c9c7635433e5980c9"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T06:59:29.146Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-20T10:01:56.576Z",
+            "last_checked_at": "2026-10-22T06:59:29.146Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "0cd8861e4240635693cf152c9c7635433e5980c9",
-                "reviewed_at": "2026-10-20T10:01:56.576Z",
+                "reviewed_at": "2026-10-22T06:59:29.146Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -221,61 +315,61 @@
                 "technical": {
                     "criteria": {
                         "novelty": 9,
-                        "mechanism": 0,
-                        "transferability": 5,
-                        "simplification": 4
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
                     },
-                    "rationale": "novelty=9：目录浏览接入DSH并加入im入口，属于局部适配；mechanism=0：仍为同步目录枚举与stat，未识别突破目录规模约束的机制；transferability=5：路径解析与输出格式可复用于其他文件导航；simplification=4：快捷入口与过滤减少重复输入，属于小幅组合。依据固定版本入口与核心源码，未执行目标代码；不将上游机制或未来假设计入。",
+                    "rationale": "简洁参数解析与结构化输出可复用，目录枚举常规；同步 IO/无根限制降低工程成熟度。",
                     "basis": "interpretation",
-                    "score": 18,
+                    "score": 42,
                     "evidence_ids": [
-                        "2026-10-20-07-github-1351853863-root-source"
+                        "2026-10-22-02-github-1351853863-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 9,
-                        "delivery": 0,
+                        "workflow": 18,
+                        "delivery": 8,
                         "reach": 5,
-                        "economics": null
+                        "economics": 0
                     },
-                    "rationale": "workflow=9：结构化导航减少人工复制路径，改变局部交接；delivery=0：交付仍为目录列表，不设置工作区或产出新验收单元；reach=5：给聊天用户提供WSL目录入口，降低路径知识门槛但未验证采用；economics=null：缺少同条件任务成本、失败重试与持续维护对照，无法判断成本结构增量，不能用零代表缺证据。无运行和独立采用验证，前三项仅解释源码可见流程。",
+                    "rationale": "减少 WSL 路径定位步骤，安装简单但 WSL 特定、无经济收益证据。",
                     "basis": "interpretation",
-                    "score": null,
+                    "score": 31,
                     "evidence_ids": [
-                        "2026-10-20-07-github-1351853863-root-source"
+                        "2026-10-22-02-github-1351853863-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "trial",
-                "reason": "小中目录导航者可试结构化列表，先核路径权限，收窄使用目录，不把maxEntries当扫描或访问限制。",
+                "decision": "observe",
+                "reason": "个人目录导航可试；组织环境先核路径授权和大目录响应。",
                 "criteria": {
                     "scenario": {
                         "score": 15,
-                        "rationale": "减少目录列表搬运的需求清楚但简单。"
+                        "rationale": "WSL 工作区导航有明确场景，但范围较窄。"
                     },
                     "advantage": {
                         "score": 6,
-                        "rationale": "结构化导航较ls略便利，不是GUI选择器或cwd设置。"
+                        "rationale": "IM 快捷入口与 Agent 结构化输出，替代 shell 可行。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "同步枚举和stat可查，全读及符号链接不提供隔离。"
+                        "rationale": "固定源码可核，宿主及目标 WSL 未测。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "全目录同步IO会阻塞，敏感目录限制靠进程权限。"
+                        "score": 5,
+                        "rationale": "现金成本未知，同步 IO 和路径暴露需评估。"
                     }
                 },
-                "score": 44,
+                "score": 39,
                 "revision": "0cd8861e4240635693cf152c9c7635433e5980c9",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T06:59:29.146Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-20-07-github-1351853863-root-source"
+                    "2026-10-22-02-github-1351853863-root-source"
                 ],
                 "dependencies": [
                     {
@@ -300,27 +394,28 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-20T09:36:48.824Z",
-            "analysis_sha256": "95e479248985a3f3c90b2b1e1606398fe3458aacea0712c4e5168300ed88b0e6"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "e25819de74bbf0820cec9f29172f5daa2f167a25a69dd468e05875a5cc68489b"
         },
         "publication.metadata": "data/plugins/173787247--dsh-wsl-picker/META.json",
         "publication.summaries": {
-            "text": "在DSH中浏览WSL目录与挂载盘，支持名称过滤和工作区快捷入口。",
+            "text": "给 DSH Agent 浏览 WSL 与 Windows 挂载盘目录名称的只读工具。",
             "revision": "0cd8861e4240635693cf152c9c7635433e5980c9",
             "source_url": "https://github.com/173787247/dsh-wsl-picker/blob/0cd8861e4240635693cf152c9c7635433e5980c9/README.md"
         },
         "publication.capabilities": {
             "revision": "0cd8861e4240635693cf152c9c7635433e5980c9",
             "items": {
-                "模型工具": "wsl_picker：目录列举、过滤与im快捷入口。"
-            }
+                "模型工具": "wsl_picker 目录元数据浏览、过滤与快捷路径"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| WSL 目录浏览 | 选工作区路径 | 非 WSL 失败 |\n| 过滤/截断 | 缩小列表 | 先全量读再截断 |\n| 只读路径输出 | Agent 导航 | 元数据可暴露 |"
         },
         "publication.advice": {
             "revision": "0cd8861e4240635693cf152c9c7635433e5980c9",
-            "text": "适合小中目录导航；先确认返回路径，敏感目录仍受进程权限而非插件白名单控制。"
+            "text": "个人 WSL 路径定位观察；敏感机器先核工具授权和目录暴露边界，大目录须确认截断。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/173787247--dsh-wsl-picker",
-        "reports": "# dsh-wsl-picker\n\n> 在DSH中浏览WSL目录与挂载盘，支持名称过滤和工作区快捷入口。\n\n## 研究范围\n\n- **仓库**：[173787247/dsh-wsl-picker](https://github.com/173787247/dsh-wsl-picker)\n- **版本号**：0.1.1（[固定提交 0cd8861e4240635693cf152c9c7635433e5980c9](https://github.com/173787247/dsh-wsl-picker/tree/0cd8861e4240635693cf152c9c7635433e5980c9)）\n- **版本日期**：2026-09-29（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已有贡献：把目录浏览和套件工作区入口组合成可消费结果；相对ls主要增量是结构化导航，不是图形文件选择器或访问隔离。\n\n结论边界：本次为固定版本源码核查，未执行目标代码或真实宿主验收，未核实独立使用效果。下文设计假设均未验证。\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：用户需要向Agent提供WSL或Windows挂载目录，减少反复复制目录列表。\n- **亮点**：把目录浏览和套件工作区入口组合成可消费结果；相对ls主要增量是结构化导航，不是图形文件选择器或访问隔离。\n- **思考**：maxEntries只限制输出，readdirSync仍读取整个目录且stat跟随符号链接；无根目录白名单，不能把快捷入口理解为受限工作区。\n- **建议**：本次未形成新创新假设；优先验证大目录延迟和路径边界，再决定是否需要分页或根范围约束。\n\n采用建议：适合小中目录导航；先确认返回路径，敏感目录仍受进程权限而非插件白名单控制。\n\n## 核心贡献\n\n把目录浏览和套件工作区入口组合成可消费结果；相对ls主要增量是结构化导航，不是图形文件选择器或访问隔离。\n\n## 关键质疑\n\nmaxEntries只限制输出，readdirSync仍读取整个目录且stat跟随符号链接；无根目录白名单，不能把快捷入口理解为受限工作区。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n本次未形成新创新假设；优先验证大目录延迟和路径边界，再决定是否需要分页或根范围约束。\n\n覆盖大目录、无权限目录、符号链接、隐藏项与过滤；比较ls和工具结果的一致性及宿主响应延迟。\n\n## 场景与替代办法\n\n用户需要向Agent提供WSL或Windows挂载目录，减少反复复制目录列表。\n\nls/find和人工复制路径。\n\n## 依赖与流程\n\n依赖WSL检测与Node文件系统权限；im工作区为可选，不存在时返回空列表和提示。\n\n选择目录或im入口，过滤并查看返回条目，再交由后续工具使用；不会设置宿主cwd。\n\n## 成本与效果\n\n输出上限降低上下文体积，但同步枚举及逐项stat仍有I/O与事件循环成本，未测性能。\n\n把目录浏览和套件工作区入口组合成可消费结果；相对ls主要增量是结构化导航，不是图形文件选择器或访问隔离。 maxEntries只限制输出，readdirSync仍读取整个目录且stat跟随符号链接；无根目录白名单，不能把快捷入口理解为受限工作区。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：0f5aa390626d4c540db432cb370f337322b9ca3d53f8bf378a0a05deef1d3500。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 127 | — | — | 741 |\n| .js | source | 3 | 274 | 199 | 56 | — |\n| .js | test | 1 | 27 | 23 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **模型工具**：wsl_picker：目录列举、过滤与im快捷入口。\n\n## 工程亮点\n\n解析、格式与执行在单模块内清楚分离；同步I/O与全量枚举限制规模，truncated是输出提示不是分页能力。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 index.js、lib/picker.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：检查入口与目录解析实现，未浏览用户目录或验证界面交互。\n- 下一步：覆盖大目录、无权限目录、符号链接、隐藏项与过滤；比较ls和工具结果的一致性及宿主响应延迟。\n",
+        "reports": "# dsh-wsl-picker\n\n> 给 DSH Agent 浏览 WSL 与 Windows 挂载盘目录名称的只读工具。\n\n## 研究范围\n\n- **仓库**：[173787247/dsh-wsl-picker](https://github.com/173787247/dsh-wsl-picker)\n- **版本号**：0.1.1（[固定提交 0cd8861e4240635693cf152c9c7635433e5980c9](https://github.com/173787247/dsh-wsl-picker/tree/0cd8861e4240635693cf152c9c7635433e5980c9)）\n- **版本日期**：2026-09-29（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n源码可核目录枚举和 WSL 门控；路径无工作区根限制，读取是同步且截断发生在全目录读取/排序之后；目标环境未测。\n\n## 洞察短评\n\n- **用途**：WSL 用户在 /、/mnt 和 IM 工作区快捷入口中定位目录；并不登记工作区。详见[Q01](#research-q01)。\n- **亮点**：将 WSL/Windows 路径浏览和 IM 快捷入口暴露给 Agent，结果结构含 parent/chips/truncated。详见[Q01](#research-q01)。\n- **思考**：任意绝对路径和软链接可遍历目录名称；15 秒工具超时对同步文件系统调用的约束未经验证。详见[Q03](#research-q03)与[Q04](#research-q04)。\n- **建议**：未验证方向为可配置浏览根、敏感路径策略、分页与异步限时枚举；先测大目录和宿主权限。详见[Q05](#research-q05)。\n\n采用建议：个人 WSL 路径定位观察；敏感机器先核工具授权和目录暴露边界，大目录须确认截断。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n将 WSL/Windows 路径浏览和 IM 快捷入口暴露给 Agent，结果结构含 parent/chips/truncated。详见[Q01](#research-q01)。\n\n## 关键质疑\n\n任意绝对路径和软链接可遍历目录名称；15 秒工具超时对同步文件系统调用的约束未经验证。详见[Q03](#research-q03)与[Q04](#research-q04)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n未验证方向为可配置浏览根、敏感路径策略、分页与异步限时枚举；先测大目录和宿主权限。详见[Q05](#research-q05)。\n\n目标 WSL 测非 WSL 门控、挂载盘权限、软链接、敏感目录授权、大目录延迟/截断和新会话安装。\n\n## 场景与替代办法\n\nWSL 用户在 /、/mnt 和 IM 工作区快捷入口中定位目录；并不登记工作区。详见[Q01](#research-q01)。\n\n直接 shell ls/find 可定位目录；Agent 工具减少手工命令但增加路径暴露和权限核查。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖 | 必需 | 用途 | 缺失后果 |\n| --- | --- | --- | --- |\n| DSH tools/systemPrompt | 必需 | 注册与提示 | Agent 无工具 |\n| WSL 环境 | 必需 | Linux/Windows 挂载目录 | 返回 not WSL |\n| 文件系统权限 | 必需 | readdir/stat | 路径错误或失败 |\n\n#### 使用步骤\n\n| 步骤 | 动作 | 判据/恢复 |\n| --- | --- | --- |\n| 安装 | profile add、重启 Web、新会话 | wsl_picker 可见 |\n| 导航 | start=im 或 path=/mnt | 返回 entries/chips/parent |\n| 缩窄 | filter/showHidden | 核 truncated 与 path |\n| 后续 | 人工确认目标目录 | 再交其他工具处理 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 资源成本 | 人工投入 | 边界 |\n| --- | --- | --- | --- |\n| 安装 | DSH Web/WSL，金额未知 | 安装/重启/新会话 | 版本兼容未测 |\n| 浏览 | 同步目录读/逐项 stat | 过滤并核路径 | 网络盘/大目录延迟未知 |\n| 风险 | 路径元数据进入 Agent | 敏感目录授权/复核 | 宿主权限策略未知 |\n\n#### 效果\n\n| 效果项 | 源码支持 | 未证实 |\n| --- | --- | --- |\n| 快捷浏览 | /、/mnt、im chips | 目标挂载存在性 |\n| 过滤定位 | 子串过滤/隐藏项开关 | 大目录完整性与延迟 |\n| 只读 | 无写文件路径 | 宿主权限隔离 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**WSL 目录选择工具的只读范围、路径暴露和大目录成本是否可控？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 这个工具在 WSL 工作区选择链中承担什么？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\nwsl_picker 是提供给 DSH Agent 的只读目录名称浏览工具，默认列 /，可经 /mnt 浏览 Windows 挂载盘，并有 ~/.dsh/im-workspace 快捷入口。它不登记、创建或选择 IM 工作区，也不读文件内容；适合让用户/Agent 找到目录路径，之后仍需其他工具实际进入或配置工作区。README 的套件关系和最低版本为作者声明，目标 WSL 未运行。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.zh.md:5-20](https://github.com/173787247/dsh-wsl-picker/blob/0cd8861e4240635693cf152c9c7635433e5980c9/README.zh.md#L5-L20)\n\n作者限定浏览与不登记工作区\n\n<details>\n<summary>查看原文（16行）</summary>\n\n````text\nDeepSeek Harness 插件：从 / 与 /mnt Windows 盘符浏览 WSL 目录，便于选择工作区。\n\n配套 **[dsh-wsl-kit](https://github.com/173787247/dsh-wsl-kit)**。\n\n[English → README.md](./README.md)\n\n## 在套件里的位置\n\n列出 / 和 /mnt 下的目录，方便选工作区。不负责登记 IM 工作区。\n\n```mermaid\nflowchart LR\n  agent[\"dsh agent\"] --> tool[\"wsl_picker\"] --> fs[\"/ 与 /mnt 目录列表\"]\n```\n\n整套关系图和版本快照：[dsh-wsl-kit 中文说明](https://github.com/173787247/dsh-wsl-kit/blob/master/README.zh.md)。本插件是 **0.1.0**（full）。不要把那份总表抄进本 README。\n````\n\n</details>\n\n**依据 2 · 源码核查**：[index.js:11-31](https://github.com/173787247/dsh-wsl-picker/blob/0cd8861e4240635693cf152c9c7635433e5980c9/index.js#L11-L31)\n\n注册系统提示与工具\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n  ctx.systemPrompt.section({\n    name: \"tool:wsl_picker\",\n    order: 111,\n    text: \"Use wsl_picker to browse WSL dirs (/ and /mnt). Pass start=im (or empty start) for ~/.dsh/im-workspace quick entries; optional filter substring.\",\n  });\n\n  ctx.tools.register({\n    name: \"wsl_picker\",\n    description: \"Browse WSL directories (/ and /mnt). start=im or empty start lists ~/.dsh/im-workspace; optional filter.\",\n    parameters: core.parameters(config),\n    output: {\n      schema: core.outputSchema(),\n      render: (_args, value) => [{ type: \"text\", text: core.format(value) }],\n    },\n    timeoutMs,\n    isConcurrencySafe: () => true,\n    async execute(args) {\n      if (!wsl) return core.notWsl ? core.notWsl() : { ok: false, error: \"not running in WSL\" };\n      return core.execute(args, config);\n    },\n    presentCall: () => ({ card: \"generic\", title: \"wsl_picker\" }),\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/picker.js:110-174](https://github.com/173787247/dsh-wsl-picker/blob/0cd8861e4240635693cf152c9c7635433e5980c9/lib/picker.js#L110-L174)\n\n只列目录项名称/类型/路径\n\n<details>\n<summary>查看原文（65行）</summary>\n\n```text\nexport async function execute(args, config = {}) {\n  const maxEntries = Number(config.maxEntries) > 0 ? Number(config.maxEntries) : 200;\n  const showHidden = args?.showHidden === true;\n  const filterRaw = typeof args?.filter === \"string\" ? args.filter.trim() : \"\";\n  const filterLc = filterRaw ? filterRaw.toLowerCase() : \"\";\n  const { abs, quick } = resolveStart(args);\n  const chips = buildChips();\n\n  if (!abs.startsWith(\"/\")) return { ok: false, path: abs, entries: [], chips, error: \"absolute path required\" };\n  if (!existsSync(abs)) {\n    if (quick === \"im\") {\n      return {\n        ok: true,\n        path: abs,\n        parent: resolve(abs, \"..\"),\n        chips,\n        entries: [],\n        truncated: false,\n        filter: filterRaw || undefined,\n        hint: \"im-workspace not created yet; install/start dsh-wsl-im or mkdir ~/.dsh/im-workspace\",\n      };\n    }\n    return { ok: false, path: abs, entries: [], chips, error: \"path not found\" };\n  }\n  let st;\n  try {\n    st = statSync(abs);\n  } catch (err) {\n    return { ok: false, path: abs, entries: [], chips, error: err.message };\n  }\n  if (!st.isDirectory()) return { ok: false, path: abs, entries: [], chips, error: \"not a directory\" };\n  let names = [];\n  try {\n    names = readdirSync(abs);\n  } catch (err) {\n    return { ok: false, path: abs, entries: [], chips, error: err.message };\n  }\n  if (!showHidden) names = names.filter((n) => !n.startsWith(\".\"));\n  if (filterLc) names = names.filter((n) => n.toLowerCase().includes(filterLc));\n  names.sort((a, b) => a.localeCompare(b));\n  const truncated = names.length > maxEntries;\n  names = names.slice(0, maxEntries);\n  const entries = [];\n  for (const name of names) {\n    const p = join(abs, name);\n    let type = \"file\";\n    try {\n      type = statSync(p).isDirectory() ? \"dir\" : \"file\";\n    } catch {\n      type = \"other\";\n    }\n    entries.push({ name, path: p, type });\n  }\n  const parent = abs === \"/\" ? \"/\" : resolve(abs, \"..\");\n  return {\n    ok: true,\n    path: abs,\n    parent,\n    chips,\n    entries,\n    truncated,\n    filter: filterRaw || undefined,\n    quick: quick || undefined,\n  };\n}\n```\n\n</details>\n\n#### 缺口\n\n- 与其他套件插件的完整交接未检查\n  **影响：**不能把目录列表等同工作区注册或内容读取\n  **进一步探讨：**目标 WSL 试用并核上游使用路径\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 路径解析、过滤和结果大小如何工作？\n\n**研究主题：**功能与机制、工程质量与复用\n\n#### 完整回答\n\n参数允许 start 优先于 path；空 start 或 im 指向用户家目录下的 .dsh/im-workspace，缺省 /；相对路径被拼到根目录再 resolve，~/ 展开。执行时检查存在与目录、读名称，先去隐藏项/做大小写不敏感子串过滤、排序、按 maxEntries 截断，然后对每项 stat 区分目录/文件，返回 parent、chips、truncated。输出文本给出完整绝对路径。maxEntries 默认 200，但配置任意正数可放大；未实现分页游标。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/picker.js:9-28](https://github.com/173787247/dsh-wsl-picker/blob/0cd8861e4240635693cf152c9c7635433e5980c9/lib/picker.js#L9-L28)\n\n输入参数\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\nexport function parameters(config = {}) {\n  return {\n    type: \"object\",\n    additionalProperties: false,\n    properties: {\n      path: {\n        type: \"string\",\n        description: \"Directory to list (default /). Quick chips: /, /home, /mnt, /mnt/c, /mnt/d, im.\",\n      },\n      start: {\n        type: \"string\",\n        description: \"Starting directory (preferred over path). Empty or 'im' lists ~/.dsh/im-workspace/* quick entries.\",\n      },\n      filter: {\n        type: \"string\",\n        description: \"Case-insensitive substring filter on entry names.\",\n      },\n      showHidden: { type: \"boolean\", description: \"Include dotfiles (default false).\" },\n    },\n  };\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/picker.js:68-108](https://github.com/173787247/dsh-wsl-picker/blob/0cd8861e4240635693cf152c9c7635433e5980c9/lib/picker.js#L68-L108)\n\n快捷入口与路径解析\n\n<details>\n<summary>查看原文（41行）</summary>\n\n```text\nconst CHIPS = [\"/\", \"/home\", \"/mnt\", \"/mnt/c\", \"/mnt/d\", \"/mnt/e\", \"im\"];\n\nexport function imWorkspaceRoot() {\n  return join(homedir(), \".dsh\", \"im-workspace\");\n}\n\n/** Resolve list root from start/path. Empty start or 'im' → ~/.dsh/im-workspace. */\nexport function resolveStart(args = {}) {\n  const hasStart = typeof args.start === \"string\";\n  const startRaw = hasStart ? args.start.trim() : null;\n  const pathRaw = typeof args.path === \"string\" && args.path.trim() ? args.path.trim() : null;\n\n  if (hasStart && (startRaw === \"\" || startRaw.toLowerCase() === \"im\")) {\n    return { abs: imWorkspaceRoot(), quick: \"im\" };\n  }\n  if (startRaw) {\n    if (startRaw.toLowerCase() === \"im\") return { abs: imWorkspaceRoot(), quick: \"im\" };\n    const abs = resolveAbs(startRaw);\n    return { abs, quick: null };\n  }\n  if (pathRaw) {\n    if (pathRaw.toLowerCase() === \"im\") return { abs: imWorkspaceRoot(), quick: \"im\" };\n    return { abs: resolveAbs(pathRaw), quick: null };\n  }\n  return { abs: \"/\", quick: null };\n}\n\nfunction resolveAbs(raw) {\n  if (raw.startsWith(\"~/\")) return `${homedir()}${raw.slice(1)}`;\n  if (raw.startsWith(\"/\")) return resolve(raw);\n  return resolve(`/${raw}`);\n}\n\nfunction buildChips() {\n  const im = imWorkspaceRoot();\n  const chips = CHIPS.filter((c) => {\n    if (c === \"im\") return existsSync(im);\n    return existsSync(c) || c === \"/\";\n  });\n  return chips;\n}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/picker.js:110-174](https://github.com/173787247/dsh-wsl-picker/blob/0cd8861e4240635693cf152c9c7635433e5980c9/lib/picker.js#L110-L174)\n\n列表/过滤/排序/截断与类型\n\n<details>\n<summary>查看原文（65行）</summary>\n\n```text\nexport async function execute(args, config = {}) {\n  const maxEntries = Number(config.maxEntries) > 0 ? Number(config.maxEntries) : 200;\n  const showHidden = args?.showHidden === true;\n  const filterRaw = typeof args?.filter === \"string\" ? args.filter.trim() : \"\";\n  const filterLc = filterRaw ? filterRaw.toLowerCase() : \"\";\n  const { abs, quick } = resolveStart(args);\n  const chips = buildChips();\n\n  if (!abs.startsWith(\"/\")) return { ok: false, path: abs, entries: [], chips, error: \"absolute path required\" };\n  if (!existsSync(abs)) {\n    if (quick === \"im\") {\n      return {\n        ok: true,\n        path: abs,\n        parent: resolve(abs, \"..\"),\n        chips,\n        entries: [],\n        truncated: false,\n        filter: filterRaw || undefined,\n        hint: \"im-workspace not created yet; install/start dsh-wsl-im or mkdir ~/.dsh/im-workspace\",\n      };\n    }\n    return { ok: false, path: abs, entries: [], chips, error: \"path not found\" };\n  }\n  let st;\n  try {\n    st = statSync(abs);\n  } catch (err) {\n    return { ok: false, path: abs, entries: [], chips, error: err.message };\n  }\n  if (!st.isDirectory()) return { ok: false, path: abs, entries: [], chips, error: \"not a directory\" };\n  let names = [];\n  try {\n    names = readdirSync(abs);\n  } catch (err) {\n    return { ok: false, path: abs, entries: [], chips, error: err.message };\n  }\n  if (!showHidden) names = names.filter((n) => !n.startsWith(\".\"));\n  if (filterLc) names = names.filter((n) => n.toLowerCase().includes(filterLc));\n  names.sort((a, b) => a.localeCompare(b));\n  const truncated = names.length > maxEntries;\n  names = names.slice(0, maxEntries);\n  const entries = [];\n  for (const name of names) {\n    const p = join(abs, name);\n    let type = \"file\";\n    try {\n      type = statSync(p).isDirectory() ? \"dir\" : \"file\";\n    } catch {\n      type = \"other\";\n    }\n    entries.push({ name, path: p, type });\n  }\n  const parent = abs === \"/\" ? \"/\" : resolve(abs, \"..\");\n  return {\n    ok: true,\n    path: abs,\n    parent,\n    chips,\n    entries,\n    truncated,\n    filter: filterRaw || undefined,\n    quick: quick || undefined,\n  };\n}\n```\n\n</details>\n\n#### 缺口\n\n- 很大目录下的同步 readdir/stat 时延未测\n  **影响：**不能承诺固定延迟或大目录完整浏览\n  **进一步探讨：**大目录/权限错误/隐藏项/分页边界验证\n\n<a id=\"research-q03\"></a>\n\n### Q03 · WSL 门控和文件系统访问边界是什么？\n\n**研究主题：**缺陷与关键质疑、依赖、兼容与流程\n\n#### 完整回答\n\nindex.js 在 apply 时探测 WSL 环境，非 WSL 执行仅返回错误。WSL 上输入可解析到任意绝对目录，代码没有 / 与 /mnt 的根限制、路径许可表或敏感目录排除；软链接由 statSync 跟随，目录名称可暴露给有权调用该工具的 Agent/对话。它是只读枚举，不读文件内容，但仍涉及路径元数据；真实权限边界受宿主运行身份与工具授权控制，本仓库片段未证实授权行为。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/wsl-host.js:21-27](https://github.com/173787247/dsh-wsl-picker/blob/0cd8861e4240635693cf152c9c7635433e5980c9/lib/wsl-host.js#L21-L27)\n\nWSL 检测规则\n\n```text\nexport function detectWsl({ env = process.env, readRelease = readOsRelease } = {}) {\n  if (env.WSL_DISTRO_NAME || env.WSL_INTEROP) return true;\n  try {\n    return /microsoft/i.test(readRelease());\n  } catch {\n    return false;\n  }\n```\n\n**依据 2 · 源码核查**：[index.js:7-29](https://github.com/173787247/dsh-wsl-picker/blob/0cd8861e4240635693cf152c9c7635433e5980c9/index.js#L7-L29)\n\n非 WSL 门控及工具注册\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\nexport function apply(ctx, config = {}) {\n  const timeoutMs = positive(config.timeoutMs, 15_000);\n  const wsl = detectWsl();\n\n  ctx.systemPrompt.section({\n    name: \"tool:wsl_picker\",\n    order: 111,\n    text: \"Use wsl_picker to browse WSL dirs (/ and /mnt). Pass start=im (or empty start) for ~/.dsh/im-workspace quick entries; optional filter substring.\",\n  });\n\n  ctx.tools.register({\n    name: \"wsl_picker\",\n    description: \"Browse WSL directories (/ and /mnt). start=im or empty start lists ~/.dsh/im-workspace; optional filter.\",\n    parameters: core.parameters(config),\n    output: {\n      schema: core.outputSchema(),\n      render: (_args, value) => [{ type: \"text\", text: core.format(value) }],\n    },\n    timeoutMs,\n    isConcurrencySafe: () => true,\n    async execute(args) {\n      if (!wsl) return core.notWsl ? core.notWsl() : { ok: false, error: \"not running in WSL\" };\n      return core.execute(args, config);\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/picker.js:95-99](https://github.com/173787247/dsh-wsl-picker/blob/0cd8861e4240635693cf152c9c7635433e5980c9/lib/picker.js#L95-L99)\n\n绝对路径可任意解析\n\n```text\nfunction resolveAbs(raw) {\n  if (raw.startsWith(\"~/\")) return `${homedir()}${raw.slice(1)}`;\n  if (raw.startsWith(\"/\")) return resolve(raw);\n  return resolve(`/${raw}`);\n}\n```\n\n**依据 4 · 源码核查**：[lib/picker.js:118-161](https://github.com/173787247/dsh-wsl-picker/blob/0cd8861e4240635693cf152c9c7635433e5980c9/lib/picker.js#L118-L161)\n\n任意目录读取与 stat 跟随\n\n<details>\n<summary>查看原文（44行）</summary>\n\n```text\n  if (!abs.startsWith(\"/\")) return { ok: false, path: abs, entries: [], chips, error: \"absolute path required\" };\n  if (!existsSync(abs)) {\n    if (quick === \"im\") {\n      return {\n        ok: true,\n        path: abs,\n        parent: resolve(abs, \"..\"),\n        chips,\n        entries: [],\n        truncated: false,\n        filter: filterRaw || undefined,\n        hint: \"im-workspace not created yet; install/start dsh-wsl-im or mkdir ~/.dsh/im-workspace\",\n      };\n    }\n    return { ok: false, path: abs, entries: [], chips, error: \"path not found\" };\n  }\n  let st;\n  try {\n    st = statSync(abs);\n  } catch (err) {\n    return { ok: false, path: abs, entries: [], chips, error: err.message };\n  }\n  if (!st.isDirectory()) return { ok: false, path: abs, entries: [], chips, error: \"not a directory\" };\n  let names = [];\n  try {\n    names = readdirSync(abs);\n  } catch (err) {\n    return { ok: false, path: abs, entries: [], chips, error: err.message };\n  }\n  if (!showHidden) names = names.filter((n) => !n.startsWith(\".\"));\n  if (filterLc) names = names.filter((n) => n.toLowerCase().includes(filterLc));\n  names.sort((a, b) => a.localeCompare(b));\n  const truncated = names.length > maxEntries;\n  names = names.slice(0, maxEntries);\n  const entries = [];\n  for (const name of names) {\n    const p = join(abs, name);\n    let type = \"file\";\n    try {\n      type = statSync(p).isDirectory() ? \"dir\" : \"file\";\n    } catch {\n      type = \"other\";\n    }\n    entries.push({ name, path: p, type });\n```\n\n</details>\n\n#### 缺口\n\n- 宿主工具权限/用户确认策略未核\n  **影响：**路径名可能泄露，不宜称限定在工作区\n  **进一步探讨：**目标 DSH 授权检查与敏感路径策略审计\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 超时与并发声明能否约束目录读取？\n\n**研究主题：**缺陷与关键质疑、效果与总成本\n\n#### 完整回答\n\n工具注册设置 15 秒默认 timeoutMs、声明 isConcurrencySafe=true，但核心 execute 内使用同步 existsSync/statSync/readdirSync 和逐项 statSync；同步文件系统操作会占用执行线程，外层超时能否及时中断这些调用需依宿主实现，源码不能证明。maxEntries 在读完整目录并排序后才截断，配置可放大。对慢网络挂载盘或海量目录，资源和响应成本不明。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:7-29](https://github.com/173787247/dsh-wsl-picker/blob/0cd8861e4240635693cf152c9c7635433e5980c9/index.js#L7-L29)\n\n超时与并发设置\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\nexport function apply(ctx, config = {}) {\n  const timeoutMs = positive(config.timeoutMs, 15_000);\n  const wsl = detectWsl();\n\n  ctx.systemPrompt.section({\n    name: \"tool:wsl_picker\",\n    order: 111,\n    text: \"Use wsl_picker to browse WSL dirs (/ and /mnt). Pass start=im (or empty start) for ~/.dsh/im-workspace quick entries; optional filter substring.\",\n  });\n\n  ctx.tools.register({\n    name: \"wsl_picker\",\n    description: \"Browse WSL directories (/ and /mnt). start=im or empty start lists ~/.dsh/im-workspace; optional filter.\",\n    parameters: core.parameters(config),\n    output: {\n      schema: core.outputSchema(),\n      render: (_args, value) => [{ type: \"text\", text: core.format(value) }],\n    },\n    timeoutMs,\n    isConcurrencySafe: () => true,\n    async execute(args) {\n      if (!wsl) return core.notWsl ? core.notWsl() : { ok: false, error: \"not running in WSL\" };\n      return core.execute(args, config);\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/picker.js:110-161](https://github.com/173787247/dsh-wsl-picker/blob/0cd8861e4240635693cf152c9c7635433e5980c9/lib/picker.js#L110-L161)\n\n同步读目录与截断时序\n\n<details>\n<summary>查看原文（52行）</summary>\n\n```text\nexport async function execute(args, config = {}) {\n  const maxEntries = Number(config.maxEntries) > 0 ? Number(config.maxEntries) : 200;\n  const showHidden = args?.showHidden === true;\n  const filterRaw = typeof args?.filter === \"string\" ? args.filter.trim() : \"\";\n  const filterLc = filterRaw ? filterRaw.toLowerCase() : \"\";\n  const { abs, quick } = resolveStart(args);\n  const chips = buildChips();\n\n  if (!abs.startsWith(\"/\")) return { ok: false, path: abs, entries: [], chips, error: \"absolute path required\" };\n  if (!existsSync(abs)) {\n    if (quick === \"im\") {\n      return {\n        ok: true,\n        path: abs,\n        parent: resolve(abs, \"..\"),\n        chips,\n        entries: [],\n        truncated: false,\n        filter: filterRaw || undefined,\n        hint: \"im-workspace not created yet; install/start dsh-wsl-im or mkdir ~/.dsh/im-workspace\",\n      };\n    }\n    return { ok: false, path: abs, entries: [], chips, error: \"path not found\" };\n  }\n  let st;\n  try {\n    st = statSync(abs);\n  } catch (err) {\n    return { ok: false, path: abs, entries: [], chips, error: err.message };\n  }\n  if (!st.isDirectory()) return { ok: false, path: abs, entries: [], chips, error: \"not a directory\" };\n  let names = [];\n  try {\n    names = readdirSync(abs);\n  } catch (err) {\n    return { ok: false, path: abs, entries: [], chips, error: err.message };\n  }\n  if (!showHidden) names = names.filter((n) => !n.startsWith(\".\"));\n  if (filterLc) names = names.filter((n) => n.toLowerCase().includes(filterLc));\n  names.sort((a, b) => a.localeCompare(b));\n  const truncated = names.length > maxEntries;\n  names = names.slice(0, maxEntries);\n  const entries = [];\n  for (const name of names) {\n    const p = join(abs, name);\n    let type = \"file\";\n    try {\n      type = statSync(p).isDirectory() ? \"dir\" : \"file\";\n    } catch {\n      type = \"other\";\n    }\n    entries.push({ name, path: p, type });\n```\n\n</details>\n\n#### 缺口\n\n- 宿主运行时调度、网络盘性能未测\n  **影响：**不能把配置超时视为硬资源上限\n  **进一步探讨：**在慢挂载/大目录测事件循环延迟和并发调用\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 采用时应如何验证可用性并降低误选风险？\n\n**研究主题：**采用判断、新假设与验证、效果与总成本\n\n#### 完整回答\n\n个人 WSL 目录定位可试用：按 README 安装后重启 DSH Web、开新会话，先从 /、/mnt、im 快捷入口探路，再确认返回 path、parent、truncated。输出名称按 localeCompare 排序且只给首 maxEntries，筛选可能遗漏目标，Agent 应把路径交给用户核对，不应直接据此执行后续变更。可改进限定可列根目录/敏感路径策略、分页和异步或限时枚举；这些均是建议，未实现。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.zh.md:36-42](https://github.com/173787247/dsh-wsl-picker/blob/0cd8861e4240635693cf152c9c7635433e5980c9/README.zh.md#L36-L42)\n\n作者安装/新会话指引\n\n````text\n## 安装\n\n```sh\ndsh plugin --profile web add github:173787247/dsh-wsl-picker\n```\n\n重启 `dsh web` 并开**新**会话。工具名：`wsl_picker`。\n````\n\n**依据 2 · 源码核查**：[lib/picker.js:57-65](https://github.com/173787247/dsh-wsl-picker/blob/0cd8861e4240635693cf152c9c7635433e5980c9/lib/picker.js#L57-L65)\n\n文本结果形式\n\n```text\nexport function format(v) {\n  const lines = [`wsl_picker path=${v.path || \"?\"} ok=${v.ok}`];\n  if (v.chips) lines.push(`chips: ${v.chips.join(\" \")}`);\n  if (v.parent) lines.push(`parent: ${v.parent}`);\n  if (v.filter) lines.push(`filter: ${v.filter}`);\n  for (const e of v.entries || []) lines.push(`${e.type === \"dir\" ? \"[dir]\" : \"[file]\"} ${e.path}`);\n  if (v.truncated) lines.push(\"(truncated)\");\n  if (v.error) lines.push(`error: ${v.error}`);\n  return lines.join(\"\\n\");\n```\n\n**依据 3 · 源码核查**：[lib/picker.js:147-174](https://github.com/173787247/dsh-wsl-picker/blob/0cd8861e4240635693cf152c9c7635433e5980c9/lib/picker.js#L147-L174)\n\n排序、截断与返回结构\n\n<details>\n<summary>查看原文（28行）</summary>\n\n```text\n  if (!showHidden) names = names.filter((n) => !n.startsWith(\".\"));\n  if (filterLc) names = names.filter((n) => n.toLowerCase().includes(filterLc));\n  names.sort((a, b) => a.localeCompare(b));\n  const truncated = names.length > maxEntries;\n  names = names.slice(0, maxEntries);\n  const entries = [];\n  for (const name of names) {\n    const p = join(abs, name);\n    let type = \"file\";\n    try {\n      type = statSync(p).isDirectory() ? \"dir\" : \"file\";\n    } catch {\n      type = \"other\";\n    }\n    entries.push({ name, path: p, type });\n  }\n  const parent = abs === \"/\" ? \"/\" : resolve(abs, \"..\");\n  return {\n    ok: true,\n    path: abs,\n    parent,\n    chips,\n    entries,\n    truncated,\n    filter: filterRaw || undefined,\n    quick: quick || undefined,\n  };\n}\n```\n\n</details>\n\n#### 缺口\n\n- 安装成功率、路径误选率和改进效果未测\n  **影响：**不能宣称安全或完整列举所有路径\n  **进一步探讨：**目标 WSL 上测安装、目录规模和选择正确率\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：0f5aa390626d4c540db432cb370f337322b9ca3d53f8bf378a0a05deef1d3500。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 127 | — | — | 741 |\n| .js | source | 3 | 274 | 199 | 56 | — |\n| .js | test | 1 | 27 | 23 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| WSL 目录浏览 | 选工作区路径 | 非 WSL 失败 |\n| 过滤/截断 | 缩小列表 | 先全量读再截断 |\n| 只读路径输出 | Agent 导航 | 元数据可暴露 |\n\n## 工程亮点\n\n参数优先级、错误结构和截断标志明确；同步枚举及无根限制是部署边界。详见[Q02](#research-q02)至[Q04](#research-q04)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.zh.md、index.js、lib/picker.js、lib/wsl-host.js、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：只读核固定提交 README.zh.md、index.js、lib/picker.js 和 lib/wsl-host.js；未运行目标 WSL/插件。旧 META 仅复用。\n- 下一步：目标 WSL 测非 WSL 门控、挂载盘权限、软链接、敏感目录授权、大目录延迟/截断和新会话安装。\n",
         "metadata": {
             "repository": "173787247/dsh-wsl-picker",
             "repository_id": 1351853863,

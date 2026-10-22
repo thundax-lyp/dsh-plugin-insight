@@ -13,7 +13,7 @@
             "name": "zcode-usage-stats",
             "entry_type": "plugin",
             "technical_category": "observability-cost",
-            "business_category": "personal-productivity",
+            "business_category": "infrastructure",
             "tags": [],
             "availability": "unknown",
             "research_depth": "source",
@@ -24,36 +24,76 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-07-github-1368192539-root-directory-0",
+                    "id": "2026-10-22-02-github-1368192539-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T08:03:05.843Z",
+                    "retrieved_at": "2026-10-22T06:32:26.041Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-07-github-1368192539-root-author",
+                    "id": "2026-10-22-02-github-1368192539-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/Amer-CN/zcode-usage-stats/blob/9a4381658e754515dac50611da461970462032ec/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/Amer-CN/zcode-usage-stats",
+                            "commit": "9a4381658e754515dac50611da461970462032ec",
+                            "path": "README.md",
+                            "content_sha256": "04daa7056f4c47d63ea049e69004b15c42f2c8aac47b38721d053684cf7db613"
+                        }
+                    ],
                     "revision": "9a4381658e754515dac50611da461970462032ec",
-                    "captured_at": "2026-10-21T08:03:05.843Z",
-                    "summary": "扫描历史会话用量并在设置页展示趋势、模型分布与活跃热力图。",
-                    "artifact": "data/runs/2026-10-21-07/snapshots/amer-cn--zcode-usage-stats/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T06:32:26.041Z",
+                    "summary": "在 DSH 设置页展示全历史会话 Token 用量与模型/日期趋势的本地统计面板。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/amer-cn--zcode-usage-stats/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-07-github-1368192539-root-source",
+                    "id": "2026-10-22-02-github-1368192539-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/Amer-CN/zcode-usage-stats/blob/9a4381658e754515dac50611da461970462032ec/lib/index.mjs",
+                    "url": "https://github.com/Amer-CN/zcode-usage-stats/blob/9a4381658e754515dac50611da461970462032ec/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/Amer-CN/zcode-usage-stats",
+                            "commit": "9a4381658e754515dac50611da461970462032ec",
+                            "path": "README.md",
+                            "content_sha256": "04daa7056f4c47d63ea049e69004b15c42f2c8aac47b38721d053684cf7db613"
+                        },
+                        {
+                            "repository_url": "https://github.com/Amer-CN/zcode-usage-stats",
+                            "commit": "9a4381658e754515dac50611da461970462032ec",
+                            "path": "lib/index.mjs",
+                            "content_sha256": "372df1fa4c642a172f96b705ff6e0d5e1d17bd12584eb67fef65930c78d33096"
+                        },
+                        {
+                            "repository_url": "https://github.com/Amer-CN/zcode-usage-stats",
+                            "commit": "9a4381658e754515dac50611da461970462032ec",
+                            "path": "build/body.js",
+                            "content_sha256": "48569a1e5a0be95af17af733d67d51ea48ef43be9115110769e2ad83063cbda8"
+                        },
+                        {
+                            "repository_url": "https://github.com/Amer-CN/zcode-usage-stats",
+                            "commit": "9a4381658e754515dac50611da461970462032ec",
+                            "path": "lib/client.js",
+                            "content_sha256": "3451ceccdaaedea6c69f038b5e0e3274eeace1ad9de185662f9315f7cd126c99"
+                        },
+                        {
+                            "repository_url": "https://github.com/Amer-CN/zcode-usage-stats",
+                            "commit": "9a4381658e754515dac50611da461970462032ec",
+                            "path": "package.json",
+                            "content_sha256": "c6d50272aa7f7f559104faf37efd6ff78d4df6c7e8a161f4325b4e95629a631b"
+                        }
+                    ],
                     "revision": "9a4381658e754515dac50611da461970462032ec",
-                    "captured_at": "2026-10-21T08:03:05.843Z",
-                    "summary": "核查 lib/index.mjs、build/body.js；sessionPersistence全量枚举/逐日志读事件，assistant/message usage按turn:step去重，模型回退request/context；内存/磁盘缓存SWR，精确GET路由显式调用connection.requestRejection。",
-                    "artifact": "data/runs/2026-10-21-07/snapshots/amer-cn--zcode-usage-stats/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T06:32:26.041Z",
+                    "summary": "核查 README.md、lib/index.mjs、build/body.js、lib/client.js、package.json；回放 sessionPersistence 事件，按 turn:step 去重聚合 usage；内存/磁盘缓存经鉴权 API 给前端 SVG 面板。详见[Q02](#research-q02)和[Q04](#research-q04)。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/amer-cn--zcode-usage-stats/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                        "只读核固定提交 README.md、lib/index.mjs、build/body.js、包声明和生成的 client 入口；未运行插件/测试/目标 DSH，旧 META 仅复用。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +104,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "本地回顾各模型token使用与活跃天数，不用于核账或产出质量评价。",
+                    "text": "个人/团队操作者查看模型消耗与活跃日，发现高用量时期；非账单结算。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1368192539-root-source"
+                        "2026-10-22-02-github-1368192539-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +115,16 @@
                             "fingerprint": "9a4381658e754515dac50611da461970462032ec"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:03:05.843Z",
+                    "reviewed_at": "2026-10-22T06:32:26.041Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "sessionPersistence全量枚举/逐日志读事件，assistant/message usage按turn:step去重，模型回退request/context；内存/磁盘缓存SWR，精确GET路由显式调用connection.requestRejection。",
+                    "text": "回放 sessionPersistence 事件，按 turn:step 去重聚合 usage；内存/磁盘缓存经鉴权 API 给前端 SVG 面板。详见[Q02](#research-q02)和[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1368192539-root-source"
+                        "2026-10-22-02-github-1368192539-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +133,16 @@
                             "fingerprint": "9a4381658e754515dac50611da461970462032ec"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:03:05.843Z",
+                    "reviewed_at": "2026-10-22T06:32:26.041Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                    "text": "只读核固定提交 README.md、lib/index.mjs、build/body.js、包声明和生成的 client 入口；未运行插件/测试/目标 DSH，旧 META 仅复用。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1368192539-root-source"
+                        "2026-10-22-02-github-1368192539-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +151,16 @@
                             "fingerprint": "9a4381658e754515dac50611da461970462032ec"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:03:05.843Z",
+                    "reviewed_at": "2026-10-22T06:32:26.041Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "分发以本插件固定package.json、运行依赖与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+                    "text": "作者给 zcode-usage-stats 与 github:Amer-CN/zcode-usage-stats 安装方式，称 DSH >=0.1.0-rc.5；实时可用性未核。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1368192539-root-source"
+                        "2026-10-22-02-github-1368192539-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +169,16 @@
                             "fingerprint": "9a4381658e754515dac50611da461970462032ec"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:03:05.843Z",
+                    "reviewed_at": "2026-10-22T06:32:26.041Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "历史规模决定磁盘读取和内存，20秒deadline主要控制调度不取消已开始读取；无模型/API费，需维护事件兼容与缓存迁移。",
+                    "text": "#### 成本\n\n| 阶段 | 资源成本 | 人工投入 | 边界 |\n| --- | --- | --- | --- |\n| 安装 | DSH Web，价格未知 | 装插件/重启 | 版本兼容未测 |\n| 扫描 | 最多8并发回放全历史、缓存磁盘 | 观察 warnings/刷新 | 20秒非硬上限 |\n| 对账 | 聚合数据与本地缓存 | 核 usage 口径 | 非账单真相源 |",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1368192539-root-source"
+                        "2026-10-22-02-github-1368192539-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +187,16 @@
                             "fingerprint": "9a4381658e754515dac50611da461970462032ec"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:03:05.843Z",
+                    "reviewed_at": "2026-10-22T06:32:26.041Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "适合本地用量回顾；先核事件口径、缓存新鲜度和扫描warning，勿把token活动当生产成果。",
+                    "text": "可作为本地趋势观察，财务或预算决策前必须核源事件、完整率和账单口径。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1368192539-root-source"
+                        "2026-10-22-02-github-1368192539-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +205,16 @@
                             "fingerprint": "9a4381658e754515dac50611da461970462032ec"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:03:05.843Z",
+                    "reviewed_at": "2026-10-22T06:32:26.041Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "提供历史可见性，无账单对账、节约金额或效率收益验证。",
+                    "text": "#### 效果\n\n| 效果项 | 源码支持 | 未证实 |\n| --- | --- | --- |\n| 历史图表 | 日期/小时/模型聚合 | 真实视觉与决策收益 |\n| 本地缓存 | SWR 与磁盘恢复 | 当前会话实时准确 |\n| 安全 API | requestRejection 调用 | 宿主鉴权细节 |",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1368192539-root-source"
+                        "2026-10-22-02-github-1368192539-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +223,16 @@
                             "fingerprint": "9a4381658e754515dac50611da461970462032ec"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:03:05.843Z",
+                    "reviewed_at": "2026-10-22T06:32:26.041Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "宿主信任栅栏缺失时拒绝、日志handle finally关闭、inflight合并扫描、同step去重值得复用；生成bundle重复代码不算原创统计。",
+                    "text": "事件聚合、SWR 和显式信任栅栏可参考；部分结果的 ok 状态与超时语义需修。详见[Q02](#research-q02)至[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1368192539-root-source"
+                        "2026-10-22-02-github-1368192539-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +241,16 @@
                             "fingerprint": "9a4381658e754515dac50611da461970462032ec"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:03:05.843Z",
+                    "reviewed_at": "2026-10-22T06:32:26.041Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
                     "topic": "technical_innovation",
                     "basis": "interpretation",
-                    "text": "把已有持久化事件变成多粒度可读视图，并用SWR缓解重复扫描等待。视觉与本地聚合为主要增量，模型用量语义归宿主。",
+                    "text": "把历史 Token 分布按时间和模型本地可视化，并对路由显式调用宿主信任栅栏。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1368192539-root-source"
+                        "2026-10-22-02-github-1368192539-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +259,16 @@
                             "fingerprint": "9a4381658e754515dac50611da461970462032ec"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:03:05.843Z",
+                    "reviewed_at": "2026-10-22T06:32:26.041Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "去重只在turn/step都是数字时成立，同一步若多条usage不同将取首条；完整性依赖宿主事件契约。磁盘缓存固定web目录可能跨profile复用错误历史，空/部分扫描与真实低用量需看warnings。",
+                    "text": "“全历史”扫描遇 deadline 可能只包含部分会话且仍 ok:true，总 sessionCount 未区分已处理数；费用与字段相加口径需核。详见[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1368192539-root-source"
+                        "2026-10-22-02-github-1368192539-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +277,16 @@
                             "fingerprint": "9a4381658e754515dac50611da461970462032ec"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:03:05.843Z",
+                    "reviewed_at": "2026-10-22T06:32:26.041Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
                     "topic": "technical_innovation",
                     "basis": "unverified",
-                    "text": "未验证假设：缓存键绑定profile/事件契约并输出扫描覆盖与usage去重依据，可避免错范围趋势。用两profile、重复/修正usage、失败日志及大历史对比总量与coverage；不能对齐原事件则不作预算依据。",
+                    "text": "未验证改进是部分统计显著标记、扫描完成数/中止、缓存 schema 指纹和账单对照。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1368192539-root-source"
+                        "2026-10-22-02-github-1368192539-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +295,15 @@
                             "fingerprint": "9a4381658e754515dac50611da461970462032ec"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:03:05.843Z",
+                    "reviewed_at": "2026-10-22T06:32:26.041Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T08:03:05.843Z",
+            "last_checked_at": "2026-10-22T06:32:26.041Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "9a4381658e754515dac50611da461970462032ec",
-                "reviewed_at": "2026-10-21T08:03:05.843Z",
+                "reviewed_at": "2026-10-22T06:32:26.041Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -275,61 +315,61 @@
                 "technical": {
                     "criteria": {
                         "novelty": 9,
-                        "mechanism": 8,
-                        "transferability": 5,
-                        "simplification": 4
+                        "mechanism": 23,
+                        "transferability": 10,
+                        "simplification": 8
                     },
-                    "rationale": "novelty=9：常规历史可视化。 mechanism=8：缓存与去重有限机制。 transferability=5：宿主事件/缓存路径耦合。 simplification=4：少重复扫描但全量成本仍在。",
+                    "rationale": "历史回放、缓存与手写 SVG 组合可借鉴，但部分统计状态和口径验证不足。",
                     "basis": "interpretation",
-                    "score": 26,
+                    "score": 50,
                     "evidence_ids": [
-                        "2026-10-21-07-github-1368192539-root-source"
+                        "2026-10-22-02-github-1368192539-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 9,
-                        "delivery": 0,
+                        "workflow": 18,
+                        "delivery": 15,
                         "reach": 5,
                         "economics": 0
                     },
-                    "rationale": "workflow=9：观察入口非任务组织。 delivery=0：活动记录不是业务成果。 reach=5：DSH历史用户有限便利。 economics=0：不直接改变消费结构。",
+                    "rationale": "省手工统计时间，决策收益和实际节费未证，场景限 DSH。",
                     "basis": "interpretation",
-                    "score": 14,
+                    "score": 38,
                     "evidence_ids": [
-                        "2026-10-21-07-github-1368192539-root-source"
+                        "2026-10-22-02-github-1368192539-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "trial",
-                "reason": "本地用量回顾者可用单web profile试历史统计；核warning和缓存新鲜度，跨profile固定缓存及usage取首条可能失真。",
+                "decision": "observe",
+                "reason": "适合趋势参考；先对账源事件并显示扫描完整率再用于预算。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "按模型token与活跃天回看历史的任务明确。"
+                        "rationale": "Token 用量观察有明确场景。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "全量折叠和SWR缓存省手动读日志。"
+                        "rationale": "本地可视化与缓存便利，官方账单可替代结算。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "已核去重、requestRejection和调度deadline，账单一致性未验。"
+                        "rationale": "固定源码可核，目标数据/界面未测。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "大历史IO内存、事件兼容及部分扫描解释仍需人工。"
+                        "score": 5,
+                        "rationale": "扫描与对账成本未知，部分统计可能误导。"
                     }
                 },
-                "score": 59,
+                "score": 54,
                 "revision": "9a4381658e754515dac50611da461970462032ec",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T06:32:26.041Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-07-github-1368192539-root-source"
+                    "2026-10-22-02-github-1368192539-root-source"
                 ],
                 "dependencies": [
                     {
@@ -354,29 +394,30 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T07:52:12Z",
-            "analysis_sha256": "d24e5d9fd59240d708bd7c353417c05d9e4a8c24492f782b9392dbdb45992a05"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "8ab52e41f1a4dbe44ead43d9c706ac4f1e3b6f9f3edf69dd8cf261b6e6c3064f"
         },
         "publication.metadata": "data/plugins/amer-cn--zcode-usage-stats/META.json",
         "publication.summaries": {
-            "text": "扫描历史会话用量并在设置页展示趋势、模型分布与活跃热力图。",
+            "text": "在 DSH 设置页展示全历史会话 Token 用量与模型/日期趋势的本地统计面板。",
             "revision": "9a4381658e754515dac50611da461970462032ec",
             "source_url": "https://github.com/Amer-CN/zcode-usage-stats/blob/9a4381658e754515dac50611da461970462032ec/README.md"
         },
         "publication.capabilities": {
             "revision": "9a4381658e754515dac50611da461970462032ec",
             "items": {
-                "后台": "历史用量扫描与SWR缓存",
-                "Host 路由": "/api/usage-stats",
-                "界面": "用量趋势、模型分布与活跃统计"
-            }
+                "界面": "设置页 Token 图表/时间范围",
+                "Host 路由": "/api/usage-stats 鉴权聚合",
+                "后台": "历史扫描与内存/磁盘缓存"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 历史 Token 汇总 | 用量趋势 | usage 口径需对账 |\n| 本地缓存/SWR | 首屏速度 | 陈旧/部分数据 |\n| 图表交互 | 模型/日期探索 | 目标 UI 未验证 |"
         },
         "publication.advice": {
             "revision": "9a4381658e754515dac50611da461970462032ec",
-            "text": "适合本地用量回顾；先核事件口径、缓存新鲜度和扫描warning，勿把token活动当生产成果。"
+            "text": "可作为本地趋势观察，财务或预算决策前必须核源事件、完整率和账单口径。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/amer-cn--zcode-usage-stats",
-        "reports": "# zcode-usage-stats\n\n> 扫描历史会话用量并在设置页展示趋势、模型分布与活跃热力图。\n\n## 使用建议\n\n适合本地用量回顾；先核事件口径、缓存新鲜度和扫描warning，勿把token活动当生产成果。\n\n**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，插件与依赖流程的实际运行尚未验证；未来假设未验证。\n\n## 洞察短评\n\n- **用途**：本地回顾各模型token使用与活跃天数，不用于核账或产出质量评价。\n- **亮点**：把已有持久化事件变成多粒度可读视图，并用SWR缓解重复扫描等待。视觉与本地聚合为主要增量，模型用量语义归宿主。\n- **思考**：去重只在turn/step都是数字时成立，同一步若多条usage不同将取首条；完整性依赖宿主事件契约。磁盘缓存固定web目录可能跨profile复用错误历史，空/部分扫描与真实低用量需看warnings。\n- **建议**：未验证假设：缓存键绑定profile/事件契约并输出扫描覆盖与usage去重依据，可避免错范围趋势。用两profile、重复/修正usage、失败日志及大历史对比总量与coverage；不能对齐原事件则不作预算依据。\n\n## 场景与替代办法\n\n参照宿主历史usage与手工聚合；增量是历史扫描、缓存和SVG可视化，不实现费用计价。\n\n## 能力清单\n\n- **后台**：历史用量扫描与SWR缓存\n- **Host 路由**：/api/usage-stats\n- **界面**：用量趋势、模型分布与活跃统计\n\n## 依赖与流程\n\nsessionPersistence全量枚举/逐日志读事件，assistant/message usage按turn:step去重，模型回退request/context；内存/磁盘缓存SWR，精确GET路由显式调用connection.requestRejection。\n\n宿主sessionPersistence、webServer、connection及settings slot；缓存路径固定~/.dsh/profiles/web，桌面/自定义DSH_HOME需核。\n\n首次或刷新扫描→日/小时/模型聚合→写JSON缓存→客户端筛时间窗画SVG；过期先返旧缓存后台刷新，warning保存部分读取失败。\n\n## 成本与效果\n\n历史规模决定磁盘读取和内存，20秒deadline主要控制调度不取消已开始读取；无模型/API费，需维护事件兼容与缓存迁移。\n\n提供历史可见性，无账单对账、节约金额或效率收益验证。\n\n## 核心贡献\n\n把已有持久化事件变成多粒度可读视图，并用SWR缓解重复扫描等待。视觉与本地聚合为主要增量，模型用量语义归宿主。\n\n## 关键质疑\n\n去重只在turn/step都是数字时成立，同一步若多条usage不同将取首条；完整性依赖宿主事件契约。磁盘缓存固定web目录可能跨profile复用错误历史，空/部分扫描与真实低用量需看warnings。\n\n## 工程亮点\n\n宿主信任栅栏缺失时拒绝、日志handle finally关闭、inflight合并扫描、同step去重值得复用；生成bundle重复代码不算原创统计。\n\n源码依据：[lib/index.mjs](https://github.com/Amer-CN/zcode-usage-stats/blob/9a4381658e754515dac50611da461970462032ec/lib/index.mjs)、[build/body.js](https://github.com/Amer-CN/zcode-usage-stats/blob/9a4381658e754515dac50611da461970462032ec/build/body.js)。\n\n## 未来设计假设（未验证）\n\n未验证假设：缓存键绑定profile/事件契约并输出扫描覆盖与usage去重依据，可避免错范围趋势。用两profile、重复/修正usage、失败日志及大历史对比总量与coverage；不能对齐原事件则不作预算依据。\n\n未来合成历史核重复事件、失败读取、deadline、缓存profile及本地日期边界；本轮未扫真实会话。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：d0c3e491db87780d4bb08804f33a1a4086ea0981b0bc0ce9aa9857afe3e12755。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 1 | 1124 | 965 | 88 | — |\n| .mjs | source | 1 | 416 | 351 | 58 | — |\n| .md | source | 1 | 176 | — | — | 1859 |\n| .cjs | test | 4 | 530 | 467 | 50 | — |\n\n排除 3 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[Amer-CN/zcode-usage-stats](https://github.com/Amer-CN/zcode-usage-stats)\n- **版本号**：0.1.0（[固定提交 9a438165](https://github.com/Amer-CN/zcode-usage-stats/tree/9a4381658e754515dac50611da461970462032ec)）\n- **版本日期**：2026-09-13（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：lib/index.mjs、build/body.js、作者README、package与固定范围inventory；源码抽读不等于完整审计。\n- 未验证：插件执行、测试、安装、真实宿主与独立采用。\n- 证据限制：固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。\n- 下一步：未来合成历史核重复事件、失败读取、deadline、缓存profile及本地日期边界；本轮未扫真实会话。\n",
+        "reports": "# zcode-usage-stats\n\n> 在 DSH 设置页展示全历史会话 Token 用量与模型/日期趋势的本地统计面板。\n\n## 研究范围\n\n- **仓库**：[Amer-CN/zcode-usage-stats](https://github.com/Amer-CN/zcode-usage-stats)\n- **版本号**：0.1.0（[固定提交 9a4381658e754515dac50611da461970462032ec](https://github.com/Amer-CN/zcode-usage-stats/tree/9a4381658e754515dac50611da461970462032ec)）\n- **版本日期**：2026-09-13（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n源码可核统计/缓存/鉴权调用；20秒只阻止新任务，超时可返回 ok:true 的部分汇总，真实 usage 字段口径未独立核对。\n\n## 洞察短评\n\n- **用途**：个人/团队操作者查看模型消耗与活跃日，发现高用量时期；非账单结算。详见[Q01](#research-q01)。\n- **亮点**：把历史 Token 分布按时间和模型本地可视化，并对路由显式调用宿主信任栅栏。详见[Q01](#research-q01)。\n- **思考**：“全历史”扫描遇 deadline 可能只包含部分会话且仍 ok:true，总 sessionCount 未区分已处理数；费用与字段相加口径需核。详见[Q03](#research-q03)。\n- **建议**：未验证改进是部分统计显著标记、扫描完成数/中止、缓存 schema 指纹和账单对照。详见[Q05](#research-q05)。\n\n采用建议：可作为本地趋势观察，财务或预算决策前必须核源事件、完整率和账单口径。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n把历史 Token 分布按时间和模型本地可视化，并对路由显式调用宿主信任栅栏。详见[Q01](#research-q01)。\n\n## 关键质疑\n\n“全历史”扫描遇 deadline 可能只包含部分会话且仍 ok:true，总 sessionCount 未区分已处理数；费用与字段相加口径需核。详见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n未验证改进是部分统计显著标记、扫描完成数/中止、缓存 schema 指纹和账单对照。详见[Q05](#research-q05)。\n\n目标 DSH 抽样源事件/账单，测试部分超时、坏会话/大历史、缓存复启、鉴权和两主题/减动效 UI。\n\n## 场景与替代办法\n\n个人/团队操作者查看模型消耗与活跃日，发现高用量时期；非账单结算。详见[Q01](#research-q01)。\n\n手动查询会话或官方用量账单可追踪成本；面板省聚合步骤但不能替代账单。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖 | 必需 | 用途 | 缺失后果 |\n| --- | --- | --- | --- |\n| sessionPersistence | 必需 | 全历史回放 | 无统计 |\n| webServer/connection | 必需 | 受栅栏 API | 无数据/拒绝 |\n| DSH Web 客户端 slots | 必需 | 设置页与 SVG | 无面板 |\n\n#### 使用步骤\n\n| 步骤 | 动作 | 判据/恢复 |\n| --- | --- | --- |\n| 安装 | profile 加包、重启 | 设置页出现 |\n| 浏览 | 切日期/模型图表 | 查 warnings 与 generatedAt |\n| 刷新 | 点击刷新强制扫描 | 核响应完成与延迟 |\n| 对账 | 抽样源事件 | 再作预算判断 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 资源成本 | 人工投入 | 边界 |\n| --- | --- | --- | --- |\n| 安装 | DSH Web，价格未知 | 装插件/重启 | 版本兼容未测 |\n| 扫描 | 最多8并发回放全历史、缓存磁盘 | 观察 warnings/刷新 | 20秒非硬上限 |\n| 对账 | 聚合数据与本地缓存 | 核 usage 口径 | 非账单真相源 |\n\n#### 效果\n\n| 效果项 | 源码支持 | 未证实 |\n| --- | --- | --- |\n| 历史图表 | 日期/小时/模型聚合 | 真实视觉与决策收益 |\n| 本地缓存 | SWR 与磁盘恢复 | 当前会话实时准确 |\n| 安全 API | requestRejection 调用 | 宿主鉴权细节 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**本地 Token 统计是否完整、及时、可追溯，并能避免部分扫描误导？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 统计面板给谁看，覆盖哪些可决策信息？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n插件面向想在 DSH 内了解历史 Token 消耗的个人/团队操作者，设置页显示总量、峰值、连续活跃天数、趋势、模型分布与日历热力图，支持今天/近 7 日/全部/自定义时段。它可帮助找高用量模型和异常日，但不提供账单价格、预算阈值或成本因果分析。README 的截图、WCAG AA 和“纯本地/无需依赖”是作者展示/声明，本轮只核固定源码与资产，未复现界面或独立测对比度。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:20-39](https://github.com/Amer-CN/zcode-usage-stats/blob/9a4381658e754515dac50611da461970462032ec/README.md#L20-L39)\n\n作者功能/可视化声明\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n一个装进 DSH 设置页的「Token 记账本」。扫描 `~/.dsh` 下的全历史会话，把每一枚 token 按天、按小时、按模型算清楚：今天写了多少、哪个模型最费、哪天是巅峰。**纯本地扫描、本地聚合、本地渲染**——数据不出本机。\n\n> ⚠️ 非官方社区插件，与 DeepSeek / ZCode 无关联。\"zcode\" 仅为致敬对象与包名沿用。\n\n## 📸 界面预览\n\n| ☀️ 浅色主题 | 🌙 深色主题 |\n|:---:|:---:|\n| <img src=\"assets/usage-stats.png\" width=\"400\" alt=\"浅色主题\"> | <img src=\"assets/usage-stats2.png\" width=\"400\" alt=\"深色主题\"> |\n\n## ✨ 功能特性\n\n| 模块 | 说明 |\n|------|------|\n| 📅 **时间范围** | 今天 / 昨天 / 近 7 天 / 近 30 天 / 本月 / 上月 / 全部 / 自定义区间（起止自动校验防倒序） |\n| 🔥 **活跃分布** | 日历点阵热力图：一格一天，点面积 = 当日 Token（sqrt 换算）；每日 / 每周 / 累计三档分桶；峰值日虚线圈标注 |\n| 📈 **用量趋势** | 一条线一个模型，圆点 = 当期用量，峰值直接标数；悬停看各模型分项，图例可点击显隐 |\n| 🍩 **模型用量** | 刻度环仪表盘：100 刻 = 100%，每 10 刻一枚锚点；扇形命中区悬停查看模型明细；模型超过 6 个自动并「其他」防撞色 |\n| 🧮 **顶部指标** | 累计 Token / 单日峰值 / 最长会话时长 / 当前连续天数 / 最长连续天数 |\n| ♿ **无障碍与体验** | WCAG AA 对比度（明暗双主题逐项核算）、`prefers-reduced-motion` 降级、透明命中层让小点也轻松悬停、深浅主题跟随 DSH |\n```\n\n</details>\n\n**依据 2 · 作者声明**：[README.md:74-92](https://github.com/Amer-CN/zcode-usage-stats/blob/9a4381658e754515dac50611da461970462032ec/README.md#L74-L92)\n\n作者设计与数据口径声明\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n## 🎨 设计与实现\n\n| 设计点 | 说明 |\n|--------|------|\n| **图表** | 手写 SVG（日历点阵 / 发丝折线 / 刻度环），零运行时图表库依赖 |\n| **配色** | 自研双轨色板：类目色 6 个跨色相承载模型身份，序数色单色相明度阶承载用量大小；两套主题均满足 WCAG AA，类目色两两色距核算保证一眼可分 |\n| **排版** | 固定 px 字阶 + 4 的倍数间距阶梯；图表按 ResizeObserver 实测容器宽度 1:1 出图，不做等比缩放，字号真实可读 |\n| **命中区** | 视觉元素不绑事件：热力图逐格透明矩形、刻度环整圈扇形 path，悬停不闪烁 |\n| **服务端** | 复用宿主 `sessionPersistence` 聚合；内存 + 磁盘双层缓存，SWR 过期后台刷新，首屏不因全量扫描卡顿 |\n| **安全** | `/api/usage-stats` 自行通过宿主 `connection.requestRejection` 信任栅栏鉴权 |\n\n## 🔢 数据口径\n\n| 指标 | 口径 |\n|------|------|\n| Token 用量 | 以 `assistant/message` 事件携带的全量 `usage` 为准（input + output + cacheRead + cacheWrite），按 `turn:step` 去重防重复计数 |\n| Turns | 以 `step/end` 事件按新 turn 计数（覆盖 completed / failed / cancelled） |\n| 模型归属 | 优先取消息自身 `model`，回退 `request/context` 当前模型，再回退归并为 `other` |\n| 活跃日 | 当天有 ≥1 条 usage 事件；连续天数按活跃日相邻日推算 |\n```\n\n</details>\n\n**依据 3 · 源码核查**：[build/body.js:105-125](https://github.com/Amer-CN/zcode-usage-stats/blob/9a4381658e754515dac50611da461970462032ec/build/body.js#L105-L125)\n\n多时间范围计算\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n\t\t\t{ id: \"today\", label: \"今天\", build: (now) => [rangeKeyOf(now.getFullYear(), now.getMonth() + 1, now.getDate())] },\n\t\t\t{ id: \"yesterday\", label: \"昨天\", build: (now) => { const d = new Date(now); d.setDate(now.getDate() - 1); return [rangeKeyOf(d.getFullYear(), d.getMonth() + 1, d.getDate())]; } },\n\t\t\t{ id: \"last7\", label: \"近 7 天\", build: (now) => { const a = []; for (let i = 6; i >= 0; i--) { const d = new Date(now); d.setDate(now.getDate() - i); a.push(rangeKeyOf(d.getFullYear(), d.getMonth() + 1, d.getDate())); } return a; } },\n\t\t\t{ id: \"last30\", label: \"近 30 天\", build: (now) => { const a = []; for (let i = 29; i >= 0; i--) { const d = new Date(now); d.setDate(now.getDate() - i); a.push(rangeKeyOf(d.getFullYear(), d.getMonth() + 1, d.getDate())); } return a; } },\n\t\t\t{ id: \"month\", label: \"本月\", build: (now) => { const y = now.getFullYear(), m = now.getMonth() + 1; const last = new Date(y, m, 0).getDate(); const to = Math.min(last, now.getDate()); const a = []; for (let i = 1; i <= to; i++) a.push(rangeKeyOf(y, m, i)); return a; } },\n\t\t\t{ id: \"prevMonth\", label: \"上月\", build: (now) => { const p = new Date(now.getFullYear(), now.getMonth() - 1, 1); const y = p.getFullYear(), m = p.getMonth() + 1; const last = new Date(y, m, 0).getDate(); const a = []; for (let i = 1; i <= last; i++) a.push(rangeKeyOf(y, m, i)); return a; } },\n\t\t\t{ id: \"all\", label: \"全部\", build: () => [] },\n\t\t];\n\n\t\tfunction customKeys(from, to) {\n\t\t\tconst a = [];\n\t\t\tif (!from || !to || from > to) return a;\n\t\t\tlet k = from, guard = 0;\n\t\t\twhile (k <= to && guard < 3660) { a.push(k); k = addDays(k, 1); guard++; }\n\t\t\treturn a;\n\t\t}\n\t\tfunction resolveWindow(range, now = new Date()) {\n\t\t\tconst r = typeof range === \"string\" ? { id: range } : (range || {});\n\t\t\tif (r.id === \"custom\") {\n\t\t\t\tconst dateKeys = customKeys(r.from, r.to);\n\t\t\t\treturn { id: \"custom\", label: r.from || r.to ? (r.from + \" 至 \" + r.to) : \"自定义\", dateKeys };\n```\n\n</details>\n\n**依据 4 · 源码核查**：[build/body.js:710-810](https://github.com/Amer-CN/zcode-usage-stats/blob/9a4381658e754515dac50611da461970462032ec/build/body.js#L710-L810)\n\n设置页数据/图表与警告\n\n<details>\n<summary>查看原文（101行）</summary>\n\n```text\n\t\t\tconst [range, setRange] = react.useState({ id: \"last30\" });\n\t\t\tconst [showCustom, setShowCustom] = react.useState(false);\n\t\t\tconst [from, setFrom] = react.useState(\"\");\n\t\t\tconst [to, setTo] = react.useState(\"\");\n\n\t\t\tconst load = react.useCallback(async (force) => {\n\t\t\t\tsetLoading(true);\n\t\t\t\ttry {\n\t\t\t\t\tconst res = await fetch(\"/api/usage-stats\" + (force ? \"?refresh=1\" : \"\"), { credentials: \"same-origin\" });\n\t\t\t\t\tif (!res.ok) throw new Error(\"HTTP \" + res.status);\n\t\t\t\t\tconst json = await res.json();\n\t\t\t\t\tif (!json || json.ok === false) throw new Error((json && json.error) || \"响应异常\");\n\t\t\t\t\tsetData(json);\n\t\t\t\t\tsetError(null);\n\t\t\t\t} catch (e) {\n\t\t\t\t\tsetError(String((e && e.message) || e));\n\t\t\t\t}\n\t\t\t\tsetLoading(false);\n\t\t\t}, []);\n\n\t\t\treact.useEffect(() => { load(false); }, [load]);\n\n\t\t\tconst days = (data && data.days) || [];\n\t\t\tconst hasData = days.length > 0;\n\t\t\tconst wnd = react.useMemo(() => {\n\t\t\t\tif ((typeof range === \"string\" ? range : range.id) === \"all\") {\n\t\t\t\t\treturn { id: \"all\", label: \"全部\", dateKeys: days.map((d) => d.date).sort() };\n\t\t\t\t}\n\t\t\t\treturn resolveWindow(range);\n\t\t\t}, [range, days]);\n\n\t\t\tif (loading && !data) {\n\t\t\t\treturn element(\"div\", { className: \"ust-root\" },\n\t\t\t\t\telement(\"div\", { className: \"ust-skeleton\", style: { width: \"40%\" } }),\n\t\t\t\t\telement(\"div\", { className: \"ust-skeleton\", style: { width: \"100%\", height: 96 } }),\n\t\t\t\t\telement(\"div\", { className: \"ust-placeholder\" }, \"统计加载中\"),\n\t\t\t\t);\n\t\t\t}\n\t\t\tif (error && !data) {\n\t\t\t\treturn element(\"div\", { className: \"ust-root\" },\n\t\t\t\t\telement(\"div\", { className: \"ust-warn\" }, \"加载失败：\" + error),\n\t\t\t\t\telement(\"div\", { className: \"ust-actions\", style: { marginTop: 16 } },\n\t\t\t\t\t\telement(\"button\", { className: \"ust-btn\", onClick: () => load(true) }, \"重试\")),\n\t\t\t\t);\n\t\t\t}\n\n\t\t\tconst stats = calcStats(days, wnd);\n\t\t\tconst winList = modelTotalsIn(days, wnd);\n\t\t\tconst winTop = winList.length ? [...winList].sort((a, b) => b.total - a.total)[0] : null;\n\t\t\tconst topName = winTop ? winTop.model : ((data.topModel && data.topModel.name) || \"无\");\n\t\t\tconst topSub = winTop && stats.total > 0\n\t\t\t\t? \"占本窗口 \" + Math.round((winTop.total / stats.total) * 100) + \"%\"\n\t\t\t\t: \"\";\n\t\t\tconst avgPerActive = stats.activeDays > 0 ? stats.total / stats.activeDays : 0;\n\t\t\tconst invalid = !!(from && to && from > to);\n\n\t\t\treturn element(\"div\", { className: \"ust-root\" },\n\t\t\t\telement(SummaryMetrics, { summary: data.summary }),\n\t\t\t\telement(\"div\", { className: \"ust-header\" },\n\t\t\t\t\telement(\"h1\", { className: \"ust-page-title\" }, \"使用统计\"),\n\t\t\t\t\telement(\"div\", { className: \"ust-rangebox\" },\n\t\t\t\t\t\telement(\"div\", { className: \"ust-tabs\", role: \"tablist\" },\n\t\t\t\t\t\t\tRANGES.map((r) => element(\"span\", {\n\t\t\t\t\t\t\t\tkey: r.id, role: \"tab\", \"aria-selected\": range.id === r.id,\n\t\t\t\t\t\t\t\tclassName: \"ust-tab\" + (range.id === r.id ? \" active\" : \"\"),\n\t\t\t\t\t\t\t\tonClick: () => { setRange({ id: r.id }); setShowCustom(false); },\n\t\t\t\t\t\t\t}, r.label)),\n\t\t\t\t\t\t\telement(\"span\", {\n\t\t\t\t\t\t\t\trole: \"tab\", \"aria-selected\": range.id === \"custom\",\n\t\t\t\t\t\t\t\tclassName: \"ust-tab\" + (range.id === \"custom\" ? \" active\" : \"\"),\n\t\t\t\t\t\t\t\tonClick: () => setShowCustom((v) => !v),\n\t\t\t\t\t\t\t}, \"自定义\"),\n\t\t\t\t\t\t),\n\t\t\t\t\t\tshowCustom ? element(\"div\", { className: \"ust-custom\" },\n\t\t\t\t\t\t\telement(\"div\", { className: \"ust-custom-row\" },\n\t\t\t\t\t\t\t\telement(\"input\", { className: \"ust-date\", type: \"date\", value: from, max: to || undefined, \"aria-label\": \"开始日期\", onChange: (e) => setFrom(e.target.value) }),\n\t\t\t\t\t\t\t\telement(\"span\", { className: \"ust-custom-sep\" }, \"至\"),\n\t\t\t\t\t\t\t\telement(\"input\", { className: \"ust-date\", type: \"date\", value: to, min: from || undefined, \"aria-label\": \"结束日期\", onChange: (e) => setTo(e.target.value) }),\n\t\t\t\t\t\t\t),\n\t\t\t\t\t\t\tinvalid ? element(\"div\", { className: \"ust-warn\" }, \"结束日期不能早于开始日期\") : null,\n\t\t\t\t\t\t\telement(\"div\", { className: \"ust-custom-actions\" },\n\t\t\t\t\t\t\t\telement(\"button\", { className: \"ust-btn ust-btn--ghost\", onClick: () => { setShowCustom(false); setFrom(\"\"); setTo(\"\"); } }, \"取消\"),\n\t\t\t\t\t\t\t\telement(\"button\", {\n\t\t\t\t\t\t\t\t\tclassName: \"ust-btn ust-btn--primary\",\n\t\t\t\t\t\t\t\t\tdisabled: !(from && to) || invalid,\n\t\t\t\t\t\t\t\t\tonClick: () => { setRange({ id: \"custom\", from, to }); setShowCustom(false); },\n\t\t\t\t\t\t\t\t}, \"应用\"),\n\t\t\t\t\t\t\t),\n\t\t\t\t\t\t) : null,\n\t\t\t\t\t),\n\t\t\t\t),\n\t\t\t\telement(\"div\", { className: \"ust-metrics\" },\n\t\t\t\t\telement(Metric, { icon: element(IconToken), label: \"窗口 Token\", value: fmtLarge(stats.total), sub: fmtFull(stats.total) }),\n\t\t\t\t\telement(Metric, { icon: element(IconCalendar), label: \"活跃天数\", value: String(stats.activeDays) + \" 天\", sub: \"有用量的天\" }),\n\t\t\t\t\telement(Metric, { icon: element(IconTrend), label: \"日均\", value: fmtLarge(avgPerActive), sub: \"按活跃天平均\" }),\n\t\t\t\t\telement(Metric, { icon: element(IconChat), label: \"会话累计\", value: fmtFull((data && data.sessionCount) || 0), sub: \"全部历史\" }),\n\t\t\t\t\telement(Metric, { icon: element(IconMail), label: \"消息累计\", value: fmtFull((data && data.messageCount) || 0), sub: \"全部历史\" }),\n\t\t\t\t\telement(Metric, { icon: element(IconBolt), label: \"最常用模型\", value: topName, sub: topSub, text: true }),\n\t\t\t\t),\n\t\t\t\twnd.dateKeys.length === 0 ? element(\"div\", { className: \"ust-warn\" }, \"当前时间范围没有数据\") : null,\n\t\t\t\tdata.warnings && data.warnings.length > 0 ? element(\"div\", { className: \"ust-warn\" }, data.warnings.join(\"；\")) : null,\n```\n\n</details>\n\n#### 缺口\n\n- 目标用户是否据此减少消耗、图表无障碍未测\n  **影响：**不能把显示统计直接等同节费收益\n  **进一步探讨：**目标数据和两主题 UI 可用性/决策试验\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 历史事件如何转成日、小时、模型数据？\n\n**研究主题：**功能与机制、工程质量与复用\n\n#### 完整回答\n\nHost 从 sessionPersistence.list 枚举历史会话，再以 readFrom 或 open/read 回放；每会话跟踪 request/context 的模型，在 assistant/message 的 usage 上按 turn:step 去重，并按本地日/小时聚合 input/output/cacheRead/cacheWrite；step/end 按新 turn 计数。无 usage 的消息不进 Token，模型缺失归 other，活跃天按有 usage 的消息计算。输出还带失败/超时 warnings，客户端仅读聚合 API，不直接访问原始会话。真实 DSH usage 是否各字段互斥、历史迁移是否完整未核。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.mjs:84-103](https://github.com/Amer-CN/zcode-usage-stats/blob/9a4381658e754515dac50611da461970462032ec/lib/index.mjs#L84-L103)\n\n指标字段累加\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\nfunction emptyMetrics() {\n  return { input: 0, output: 0, cacheRead: 0, cacheWrite: 0, total: 0 };\n}\n\nfunction addMetrics(target, usage) {\n  const input = typeof usage?.inputTokens === \"number\" ? usage.inputTokens : 0;\n  const output = typeof usage?.outputTokens === \"number\" ? usage.outputTokens : 0;\n  const cacheRead = typeof usage?.cacheReadTokens === \"number\" ? usage.cacheReadTokens : 0;\n  const cacheWrite = typeof usage?.cacheWriteTokens === \"number\" ? usage.cacheWriteTokens : 0;\n  target.input += input;\n  target.output += output;\n  target.cacheRead += cacheRead;\n  target.cacheWrite += cacheWrite;\n  target.total += input + output + cacheRead + cacheWrite;\n}\n\nfunction usageTotal(usage) {\n  if (!usage) return 0;\n  return (usage.inputTokens ?? 0) + (usage.outputTokens ?? 0) + (usage.cacheReadTokens ?? 0) + (usage.cacheWriteTokens ?? 0);\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.mjs:167-249](https://github.com/Amer-CN/zcode-usage-stats/blob/9a4381658e754515dac50611da461970462032ec/lib/index.mjs#L167-L249)\n\n历史读取/事件处理/去重\n\n<details>\n<summary>查看原文（83行）</summary>\n\n```text\n  let sessions;\n  let messageCount = 0;\n  try {\n    sessions = sessionPersistence.list ? await sessionPersistence.list() : [];\n  } catch (e) {\n    sessions = [];\n    warnings.push(\"无法枚举会话：\" + (e && e.message ? e.message : e));\n  }\n\n  const scanOne = async (snapshot) => {\n    // list() 项可能是 { header, ... } 快照,也可能直接就是 header(版本差异),两种都兼容\n    const header = snapshot && typeof snapshot === \"object\" && snapshot.header ? snapshot.header : snapshot;\n    let events;\n    try {\n      if (typeof sessionPersistence.readFrom === \"function\") {\n        // 旧接口(0.1.0-rc.5 时代):service 级 readFrom\n        ({ events } = await sessionPersistence.readFrom(header.id, 0));\n      } else {\n        // 0.1.5-rc.1:handle 式接口(官方 dsh-message-feedback 同一用法)\n        const handle = await sessionPersistence.open(header.id, \"read\");\n        try {\n          ({ events } = await handle.read(0));\n        } finally {\n          await handle.close();\n        }\n      }\n    } catch (e) {\n      warnings.push(\"会话读取失败 \" + (header.id ?? \"?\") + \"：\" + (e && e.message ? e.message : e));\n      return;\n    }\n    // currentModel 缺失时归一为 \"other\"(杂项),避免 unknown 散落为独立饼块(规范 H6)\n    let currentModel = \"other\";\n    let lastTurn = null;\n    let lastTime = null; // 会话内最后事件 time(毫秒)\n    const seenSteps = new Set();\n    const accountOnce = (model, ev, usage) => {\n      const turn = ev.data?.turn;\n      const step = ev.data?.step;\n      if (typeof turn === \"number\" && typeof step === \"number\") {\n        const stepKey = `${turn}:${step}`;\n        if (seenSteps.has(stepKey)) return;\n        seenSteps.add(stepKey);\n      }\n      account(dateKey(ev.time), hourOf(ev.time), model, usage);\n    };\n    for (const ev of events || []) {\n      if (!ev || typeof ev !== \"object\") continue;\n      if (typeof ev.time === \"number\") lastTime = ev.time;\n      switch (ev.type) {\n        case \"request/context\":\n          currentModel = ev.data && typeof ev.data.model === \"string\" ? ev.data.model : currentModel;\n          break;\n        case \"step/end\":\n          // turns 官方口径:一个新 turn 记 1 次。以 step/end 为权威——每个 step 必然发出,\n          // 覆盖 completed/failed/cancelled/max-tokens;而 assistant/message 会漏 cancelled、多算 max-tokens。\n          if (typeof ev.data.turn === \"number\" && ev.data.turn !== lastTurn) {\n            lastTurn = ev.data.turn;\n            const key = dateKey(ev.time);\n            if (key) ensureDay(key).turns += 1;\n          }\n          break;\n        case \"assistant/message\":\n          messageCount += 1;\n          // usage 只在每步一次的全量 assistant/message 上取;assistant/chunk 的 usage 是同一步的相同全量值,再计会重复,故不再消费\n          if (ev.data && ev.data.usage !== undefined) {\n            const activeKey = dateKey(ev.time);\n            if (activeKey) usageDays.add(activeKey);\n            // 优先从消息自身识别模型(兜底 currentModel / other)\n            const m = ev.data && typeof ev.data.model === \"string\" ? ev.data.model : currentModel;\n            accountOnce(m, ev, ev.data.usage);\n          }\n          break;\n        default:\n          break;\n      }\n    }\n    // 最长聊天时长:会话内最后事件 time − 会话 createdAt(异常/倒挂的会话不计)\n    const createdAt = header && typeof header.createdAt === \"number\" ? header.createdAt : null;\n    if (typeof lastTime === \"number\" && createdAt !== null && lastTime > createdAt) {\n      const dur = lastTime - createdAt;\n      if (dur > longestSessionMs) longestSessionMs = dur;\n    }\n  };\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.mjs:251-275](https://github.com/Amer-CN/zcode-usage-stats/blob/9a4381658e754515dac50611da461970462032ec/lib/index.mjs#L251-L275)\n\n并发扫描与摘要\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n  // 有限并发读取会话(规范 H4);越期自动停止(规范 H5 超时保护)\n  await mapLimit(sessions || [], 8, deadline, scanOne);\n  if (Date.now() > deadline) warnings.push(\"扫描超时，返回部分统计结果\");\n\n  // 计算当前连续活跃天数\n  let currentStreak = 0;\n  const sortedDates = [...days.keys()].sort();\n  if (sortedDates.length > 0) {\n    const todayKey = dateKey(Date.now());\n    const lastActive = sortedDates[sortedDates.length - 1];\n    if (lastActive === todayKey) {\n      currentStreak = 1;\n      const d = new Date();\n      while (true) {\n        d.setDate(d.getDate() - 1);\n        if (days.has(dateKey(d.getTime()))) {\n          currentStreak += 1;\n        } else {\n          break;\n        }\n      }\n    }\n  }\n\n  return { days, hourly, modelTotals, sessionCount: sessions.length, messageCount, currentStreak, streaks: computeStreaks(usageDays), longestSessionMs, warnings };\n```\n\n</details>\n\n**依据 4 · 作者声明**：[README.md:85-92](https://github.com/Amer-CN/zcode-usage-stats/blob/9a4381658e754515dac50611da461970462032ec/README.md#L85-L92)\n\n作者口径说明\n\n```text\n## 🔢 数据口径\n\n| 指标 | 口径 |\n|------|------|\n| Token 用量 | 以 `assistant/message` 事件携带的全量 `usage` 为准（input + output + cacheRead + cacheWrite），按 `turn:step` 去重防重复计数 |\n| Turns | 以 `step/end` 事件按新 turn 计数（覆盖 completed / failed / cancelled） |\n| 模型归属 | 优先取消息自身 `model`，回退 `request/context` 当前模型，再回退归并为 `other` |\n| 活跃日 | 当天有 ≥1 条 usage 事件；连续天数按活跃日相邻日推算 |\n```\n\n#### 缺口\n\n- 目标 usage schema 与实际会话样本未审\n  **影响：**不能称精确账单或独立审计值\n  **进一步探讨：**抽历史会话人工对照 usage 与供应商账单\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 20 秒扫描超时是否意味着统计完整或严格限时？\n\n**研究主题：**缺陷与关键质疑、效果与总成本\n\n#### 完整回答\n\nmapLimit 在派发下一会话前检查 deadline，但已启动的最多8个读取任务会 await 完成，没有 abort；读完后若过期仅在 warnings 写“扫描超时，返回部分统计结果”。因此 20 秒不是硬超时，而且结果仍标 ok:true、sessionCount 为 list 的总数，即使只处理部分会话。前端显示 warnings，但顶部数字和图表仍以部分结果呈现，若忽略警告容易误判总体用量。初始无缓存时要等待扫描完成。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.mjs:105-119](https://github.com/Amer-CN/zcode-usage-stats/blob/9a4381658e754515dac50611da461970462032ec/lib/index.mjs#L105-L119)\n\n超时只阻止未派发任务\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n// 有限并发池:最多并发 limit 个任务;超过 deadline(ms) 提前返回部分结果(已处理的计入)\nasync function mapLimit(items, limit, deadline, fn) {\n  const out = new Array(items.length);\n  let i = 0;\n  const run = async () => {\n    while (i < items.length) {\n      if (Date.now() > deadline) return; // 超时:跳过未处理项,保留已处理结果(部分结果)\n      const cur = i++;\n      out[cur] = await fn(items[cur], cur);\n    }\n  };\n  const n = Math.max(1, Math.min(limit || 8, items.length) || 1);\n  await Promise.all(Array.from({ length: n }, run));\n  return out;\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.mjs:251-275](https://github.com/Amer-CN/zcode-usage-stats/blob/9a4381658e754515dac50611da461970462032ec/lib/index.mjs#L251-L275)\n\n部分结果 warning 仍返回总会话数\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n  // 有限并发读取会话(规范 H4);越期自动停止(规范 H5 超时保护)\n  await mapLimit(sessions || [], 8, deadline, scanOne);\n  if (Date.now() > deadline) warnings.push(\"扫描超时，返回部分统计结果\");\n\n  // 计算当前连续活跃天数\n  let currentStreak = 0;\n  const sortedDates = [...days.keys()].sort();\n  if (sortedDates.length > 0) {\n    const todayKey = dateKey(Date.now());\n    const lastActive = sortedDates[sortedDates.length - 1];\n    if (lastActive === todayKey) {\n      currentStreak = 1;\n      const d = new Date();\n      while (true) {\n        d.setDate(d.getDate() - 1);\n        if (days.has(dateKey(d.getTime()))) {\n          currentStreak += 1;\n        } else {\n          break;\n        }\n      }\n    }\n  }\n\n  return { days, hourly, modelTotals, sessionCount: sessions.length, messageCount, currentStreak, streaks: computeStreaks(usageDays), longestSessionMs, warnings };\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.mjs:341-362](https://github.com/Amer-CN/zcode-usage-stats/blob/9a4381658e754515dac50611da461970462032ec/lib/index.mjs#L341-L362)\n\n构建 ok:true 摘要\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n  const peakDayTokens = dayList.reduce((mx, d) => Math.max(mx, d.total), 0);\n  const summary = {\n    totalTokens: grandTotal, // 累计 Token 数\n    peakDayTokens, // 峰值 Token 数(历史单日最大)\n    longestSessionMs: s.longestSessionMs || 0, // 最长聊天时长\n    currentStreak: s.streaks ? s.streaks.current : 0, // 当前连续天数\n    longestStreak: s.streaks ? s.streaks.longest : 0, // 最长连续天数\n  };\n  return {\n    ok: true,\n    generatedAt: Date.now(),\n    sessionCount: s.sessionCount,\n    messageCount: s.messageCount,\n    dayCount: dayList.length,\n    currentStreak: s.currentStreak,\n    summary,\n    grandTotal,\n    topModel,\n    totals,\n    days: dayList,\n    warnings: s.warnings, // 失败/降级提示(规范 H5)\n  };\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.mjs:402-414](https://github.com/Amer-CN/zcode-usage-stats/blob/9a4381658e754515dac50611da461970462032ec/lib/index.mjs#L402-L414)\n\n无缓存同步扫描\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n      const url = new URL(req.url, \"http://x\");\n      const refresh = url.searchParams.get(\"refresh\") === \"1\";\n      if (!cache || refresh) {\n        // 无缓存:必须同步扫描首屏等待;或强制刷新:等待新结果\n        await ensureScan();\n      } else {\n        // 有缓存:立即返回;若过期则后台异步刷新,不阻塞本次响应(SWR)\n        const stale = Date.now() - (cache.generatedAt || 0) > CACHE_TTL;\n        if (stale) ensureScan();\n      }\n      res.writeHead(cache && cache.ok ? 200 : 500, { \"Content-Type\": \"application/json\" });\n      res.end(JSON.stringify(cache));\n    },\n```\n\n</details>\n\n**依据 5 · 源码核查**：[build/body.js:810-810](https://github.com/Amer-CN/zcode-usage-stats/blob/9a4381658e754515dac50611da461970462032ec/build/body.js#L810-L810)\n\n前端警告显示\n\n```text\n\t\t\t\tdata.warnings && data.warnings.length > 0 ? element(\"div\", { className: \"ust-warn\" }, data.warnings.join(\"；\")) : null,\n```\n\n#### 缺口\n\n- 目标海量/坏会话耗时及用户感知未测\n  **影响：**不能把部分结果当“全历史”确定总数\n  **进一步探讨：**大历史夹慢会话测进度/完整率并显著标记 partial\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 本地缓存和 API 的新鲜度、安全边界是什么？\n\n**研究主题：**缺陷与关键质疑、依赖、兼容与流程\n\n#### 完整回答\n\n内存缓存 60 秒后先返回旧值、后台刷新，启动可读 ~/.dsh/profiles/web/usage-stats-cache.json；refresh=1 强制等待重扫，磁盘写 tmp 后 rename 失败降级覆盖。API 路由手动调用 connection.requestRejection，缺连接服务时拒绝；Host/Origin/cookie 的具体检查由宿主服务承担，本轮未核。旧缓存没有固定版本/会话增量指纹校验，生成时间仅决定刷新；落盘缓存含按日/模型聚合而非原文，但仍会暴露使用习惯给能读该文件或通过授权 API 的主体。\n\n磁盘路径固定 HOME 下 web profile，模块级 cache/inflight 也不按当前 sessionPersistence 分区；若同进程加载不同持久源或多个 profile 共用 HOME，缓存可能混用范围。这是条件性范围问题，不能据此推断匿名读取，入口仍有失败关闭的 requestRejection。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.mjs:278-310](https://github.com/Amer-CN/zcode-usage-stats/blob/9a4381658e754515dac50611da461970462032ec/lib/index.mjs#L278-L310)\n\nSWR/磁盘路径与写法\n\n<details>\n<summary>查看原文（33行）</summary>\n\n```text\n// ---------- 缓存 ----------\n// 内存 + 磁盘双层缓存;SWR:过期后先返回旧数据、后台异步刷新,首屏不因全量扫描阻塞。\nlet cache = null;\nlet cacheAt = 0;\nconst CACHE_TTL = 60_000; // 60s 后触发后台刷新(SWR)\nlet inflight = null; // 并发重扫互斥:并发期间共享同一份扫描结果(规范 H3)\n\nfunction cacheFilePath() {\n  return join(homedir(), \".dsh\", \"profiles\", \"web\", \"usage-stats-cache.json\");\n}\n\nasync function loadDiskCache() {\n  try {\n    const s = await readFile(cacheFilePath(), \"utf8\");\n    const j = JSON.parse(s);\n    if (j && typeof j === \"object\" && (j.ok || j.error)) return j;\n    return null;\n  } catch {\n    return null;\n  }\n}\n\nasync function persistDiskCache(data) {\n  const p = cacheFilePath();\n  const tmp = p + \".tmp\";\n  try {\n    await mkdir(dirname(p), { recursive: true });\n    await writeFile(tmp, JSON.stringify(data), \"utf8\");\n    await rename(tmp, p).catch(() => writeFile(p, JSON.stringify(data), \"utf8\"));\n  } catch {\n    // 写盘失败不影响主流程(下次启动退化回全量扫描)\n  }\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.mjs:365-415](https://github.com/Amer-CN/zcode-usage-stats/blob/9a4381658e754515dac50611da461970462032ec/lib/index.mjs#L365-L415)\n\n缓存/路由/信任栅栏\n\n<details>\n<summary>查看原文（51行）</summary>\n\n```text\nexport function apply(ctx) {\n  const { sessionPersistence, webServer, connection } = ctx;\n  if (!webServer) return;\n\n  // 启动时异步加载磁盘缓存,回填内存(不阻塞 apply)\n  loadDiskCache().then((c) => { if (c && c.ok && !cache) { cache = c; cacheAt = c.generatedAt || 0; } });\n\n  const ensureScan = () => {\n    if (!inflight) {\n      inflight = (async () => {\n        const s = await scanSessions(sessionPersistence, { timeoutMs: 20000 });\n        const built = buildCache(s);\n        cache = built;\n        cacheAt = built.generatedAt;\n        try { await persistDiskCache(built); } catch { /* 忽略写盘失败 */ }\n      })().catch((e) => {\n        cache = { ok: false, error: String(e && e.message ? e.message : e), generatedAt: Date.now() };\n        cacheAt = Date.now();\n      }).finally(() => { inflight = null; });\n    }\n    return inflight;\n  };\n\n  webServer.register({\n    kind: \"exact\",\n    path: \"/api/usage-stats\",\n    handler: async (req, res) => {\n      // 本路由是 /api 下的 exact 路由,优先级高于 dsh-client-connection 挂在 /api prefix 上的\n      // 信任栅栏(Host/Origin + 浏览器认证 cookie),必须自己过栅栏(官方 dsh-host-open-in-app 同一做法)。\n      const rejection = connection && typeof connection.requestRejection === \"function\"\n        ? connection.requestRejection(req)\n        : 503; // 拿不到栅栏服务时拒绝服务,而不是放行\n      if (rejection !== undefined) {\n        res.statusCode = rejection;\n        res.end(rejection === 401 ? \"unauthorized\" : rejection === 403 ? \"forbidden\" : \"service unavailable\");\n        return;\n      }\n      const url = new URL(req.url, \"http://x\");\n      const refresh = url.searchParams.get(\"refresh\") === \"1\";\n      if (!cache || refresh) {\n        // 无缓存:必须同步扫描首屏等待;或强制刷新:等待新结果\n        await ensureScan();\n      } else {\n        // 有缓存:立即返回;若过期则后台异步刷新,不阻塞本次响应(SWR)\n        const stale = Date.now() - (cache.generatedAt || 0) > CACHE_TTL;\n        if (stale) ensureScan();\n      }\n      res.writeHead(cache && cache.ok ? 200 : 500, { \"Content-Type\": \"application/json\" });\n      res.end(JSON.stringify(cache));\n    },\n  });\n```\n\n</details>\n\n**依据 3 · 作者声明**：[README.md:59-83](https://github.com/Amer-CN/zcode-usage-stats/blob/9a4381658e754515dac50611da461970462032ec/README.md#L59-L83)\n\n作者本地/鉴权声明\n\n<details>\n<summary>查看原文（25行）</summary>\n\n````text\n## ⚙️ 工作原理\n\n```\n~/.dsh 会话文件\n        │\n        ▼  sessionPersistence 全量枚举 + 回放事件\n按天 / 按小时 / 按模型聚合 ──► 内存 + 磁盘双层缓存（SWR）\n        │\n        ▼\nGET /api/usage-stats（过宿主信任栅栏：Host/Origin + cookie）\n        │\n        ▼\n设置页前端：手写 SVG 按实测容器宽度 1:1 出图\n```\n\n## 🎨 设计与实现\n\n| 设计点 | 说明 |\n|--------|------|\n| **图表** | 手写 SVG（日历点阵 / 发丝折线 / 刻度环），零运行时图表库依赖 |\n| **配色** | 自研双轨色板：类目色 6 个跨色相承载模型身份，序数色单色相明度阶承载用量大小；两套主题均满足 WCAG AA，类目色两两色距核算保证一眼可分 |\n| **排版** | 固定 px 字阶 + 4 的倍数间距阶梯；图表按 ResizeObserver 实测容器宽度 1:1 出图，不做等比缩放，字号真实可读 |\n| **命中区** | 视觉元素不绑事件：热力图逐格透明矩形、刻度环整圈扇形 path，悬停不闪烁 |\n| **服务端** | 复用宿主 `sessionPersistence` 聚合；内存 + 磁盘双层缓存，SWR 过期后台刷新，首屏不因全量扫描卡顿 |\n| **安全** | `/api/usage-stats` 自行通过宿主 `connection.requestRejection` 信任栅栏鉴权 |\n````\n\n</details>\n\n#### 缺口\n\n- 目标宿主栅栏行为、缓存文件权限与恢复一致性未测\n  **影响：**不能以“本地”推导无隐私或实时性风险\n  **进一步探讨：**目标宿主鉴权、缓存权限和强刷/重启一致性验证\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 何时可用作资源管理，哪些数据必须复核？\n\n**研究主题：**采用判断、新假设与验证、效果与总成本\n\n#### 完整回答\n\n适合本机粗看模型和时间段的 Token 趋势。部署后应先取小样会话逐条对账，验证四项 usage 字段是否可相加、turn:step 是否稳定；再在大量会话下观察 warnings、扫描耗时、SWR 陈旧展示和手动刷新。改进方向是明确 partial/扫描完成数、可中止扫描、缓存版本与口径迁移、费用单价来源；均未实现。README 自述验收脚本不等于独立宿主复核，本轮也没有运行插件/测试。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:41-57](https://github.com/Amer-CN/zcode-usage-stats/blob/9a4381658e754515dac50611da461970462032ec/README.md#L41-L57)\n\n作者安装/刷新指引\n\n<details>\n<summary>查看原文（17行）</summary>\n\n````text\n## 📦 安装\n\n前置：已安装 `@deepseek-ai/dsh`（及 DSH 插件命令依赖的 `pnpm`）。\n\n```bash\ndsh plugin --profile web add zcode-usage-stats\n```\n\n> 或从 GitHub 源安装：`dsh plugin --profile web add github:Amer-CN/zcode-usage-stats`。\n\n安装后重启 DSH 进程，打开 **设置 → 使用统计** 即可看到统计页面。\n\n## 🚀 使用\n\n- 顶部切换时间范围；**「全部」**显示自使用以来的所有数据。\n- 趋势图悬停查看各模型分项，点击图例显隐对应模型。\n- **「刷新」**强制重新扫描全部会话。\n````\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.mjs:201-237](https://github.com/Amer-CN/zcode-usage-stats/blob/9a4381658e754515dac50611da461970462032ec/lib/index.mjs#L201-L237)\n\nusage 去重条件\n\n<details>\n<summary>查看原文（37行）</summary>\n\n```text\n    const seenSteps = new Set();\n    const accountOnce = (model, ev, usage) => {\n      const turn = ev.data?.turn;\n      const step = ev.data?.step;\n      if (typeof turn === \"number\" && typeof step === \"number\") {\n        const stepKey = `${turn}:${step}`;\n        if (seenSteps.has(stepKey)) return;\n        seenSteps.add(stepKey);\n      }\n      account(dateKey(ev.time), hourOf(ev.time), model, usage);\n    };\n    for (const ev of events || []) {\n      if (!ev || typeof ev !== \"object\") continue;\n      if (typeof ev.time === \"number\") lastTime = ev.time;\n      switch (ev.type) {\n        case \"request/context\":\n          currentModel = ev.data && typeof ev.data.model === \"string\" ? ev.data.model : currentModel;\n          break;\n        case \"step/end\":\n          // turns 官方口径:一个新 turn 记 1 次。以 step/end 为权威——每个 step 必然发出,\n          // 覆盖 completed/failed/cancelled/max-tokens;而 assistant/message 会漏 cancelled、多算 max-tokens。\n          if (typeof ev.data.turn === \"number\" && ev.data.turn !== lastTurn) {\n            lastTurn = ev.data.turn;\n            const key = dateKey(ev.time);\n            if (key) ensureDay(key).turns += 1;\n          }\n          break;\n        case \"assistant/message\":\n          messageCount += 1;\n          // usage 只在每步一次的全量 assistant/message 上取;assistant/chunk 的 usage 是同一步的相同全量值,再计会重复,故不再消费\n          if (ev.data && ev.data.usage !== undefined) {\n            const activeKey = dateKey(ev.time);\n            if (activeKey) usageDays.add(activeKey);\n            // 优先从消息自身识别模型(兜底 currentModel / other)\n            const m = ev.data && typeof ev.data.model === \"string\" ? ev.data.model : currentModel;\n            accountOnce(m, ev, ev.data.usage);\n          }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.mjs:278-310](https://github.com/Amer-CN/zcode-usage-stats/blob/9a4381658e754515dac50611da461970462032ec/lib/index.mjs#L278-L310)\n\n缓存\n\n<details>\n<summary>查看原文（33行）</summary>\n\n```text\n// ---------- 缓存 ----------\n// 内存 + 磁盘双层缓存;SWR:过期后先返回旧数据、后台异步刷新,首屏不因全量扫描阻塞。\nlet cache = null;\nlet cacheAt = 0;\nconst CACHE_TTL = 60_000; // 60s 后触发后台刷新(SWR)\nlet inflight = null; // 并发重扫互斥:并发期间共享同一份扫描结果(规范 H3)\n\nfunction cacheFilePath() {\n  return join(homedir(), \".dsh\", \"profiles\", \"web\", \"usage-stats-cache.json\");\n}\n\nasync function loadDiskCache() {\n  try {\n    const s = await readFile(cacheFilePath(), \"utf8\");\n    const j = JSON.parse(s);\n    if (j && typeof j === \"object\" && (j.ok || j.error)) return j;\n    return null;\n  } catch {\n    return null;\n  }\n}\n\nasync function persistDiskCache(data) {\n  const p = cacheFilePath();\n  const tmp = p + \".tmp\";\n  try {\n    await mkdir(dirname(p), { recursive: true });\n    await writeFile(tmp, JSON.stringify(data), \"utf8\");\n    await rename(tmp, p).catch(() => writeFile(p, JSON.stringify(data), \"utf8\"));\n  } catch {\n    // 写盘失败不影响主流程(下次启动退化回全量扫描)\n  }\n}\n```\n\n</details>\n\n**依据 4 · 作者声明**：[README.md:131-149](https://github.com/Amer-CN/zcode-usage-stats/blob/9a4381658e754515dac50611da461970462032ec/README.md#L131-L149)\n\n作者测试流程声明\n\n<details>\n<summary>查看原文（19行）</summary>\n\n````text\n## 🛠️ 从源码构建\n\n`lib/client.js` 是合成产物，**请勿直接编辑**。前端真源在 `build/`：\n\n```bash\n# 1. 编辑 build/body.js（界面 + 图表）与 build/panel.css（样式 + 配色变量）\n# 2. 合成\nnode build/assemble.cjs\n\n# 3. 用合成结果覆盖部署文件\ncp build/client.new.js lib/client.js\n\n# 4. 验收（15 项必须全过）\nbash tests/acceptance.sh\n```\n\n验收脚本会按真实面板宽度渲染出预览 HTML（`tests/preview-*.html`）并跑几何断言、WCAG 对比度与色板合规检查。默认读取本机 `~/.dsh` 下的用量缓存；可用 `USAGE_CACHE=/path/to/cache.json bash tests/acceptance.sh` 指定其它缓存，缓存不可用时自动改用内置合成数据。\n\n> 提 PR 请改 `build/` 下的源文件，并在描述里附上 `bash tests/acceptance.sh` 的输出。\n````\n\n</details>\n\n#### 缺口\n\n- 真实账单对照、效能收益和数据迁移未测\n  **影响：**不宜当财务结算真相源\n  **进一步探讨：**源事件抽样/账单对比/大历史性能验收\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：d0c3e491db87780d4bb08804f33a1a4086ea0981b0bc0ce9aa9857afe3e12755。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 1 | 1124 | 965 | 88 | — |\n| .mjs | source | 1 | 416 | 351 | 58 | — |\n| .md | source | 1 | 176 | — | — | 1859 |\n| .cjs | test | 4 | 530 | 467 | 50 | — |\n\n排除 3 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 历史 Token 汇总 | 用量趋势 | usage 口径需对账 |\n| 本地缓存/SWR | 首屏速度 | 陈旧/部分数据 |\n| 图表交互 | 模型/日期探索 | 目标 UI 未验证 |\n\n## 工程亮点\n\n事件聚合、SWR 和显式信任栅栏可参考；部分结果的 ok 状态与超时语义需修。详见[Q02](#research-q02)至[Q04](#research-q04)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、lib/index.mjs、build/body.js、lib/client.js、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：只读核固定提交 README.md、lib/index.mjs、build/body.js、包声明和生成的 client 入口；未运行插件/测试/目标 DSH，旧 META 仅复用。\n- 下一步：目标 DSH 抽样源事件/账单，测试部分超时、坏会话/大历史、缓存复启、鉴权和两主题/减动效 UI。\n",
         "metadata": {
             "repository": "Amer-CN/zcode-usage-stats",
             "repository_id": 1368192539,
