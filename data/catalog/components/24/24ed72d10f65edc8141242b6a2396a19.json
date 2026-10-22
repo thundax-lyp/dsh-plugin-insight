@@ -10,7 +10,7 @@
             "repository": "0x7A7A6572/dsh-forge-studio",
             "path": "packages/plugin-memory",
             "aliases": [],
-            "name": "Forge 记忆",
+            "name": "@zzerx/dsh-plugin-memory",
             "entry_type": "plugin",
             "technical_category": "memory-knowledge",
             "business_category": "research-knowledge",
@@ -27,36 +27,112 @@
             },
             "sources": [
                 {
-                    "id": "20261020-research40-github-1363429979-plugin-memory-directory-0",
+                    "id": "2026-10-22-02-github-1363429979-plugin-memory-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
-                    "retrieved_at": "2026-10-20T03:05:42.733Z",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-22T09:34:47.863Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "20261020-research40-github-1363429979-plugin-memory-author",
+                    "id": "2026-10-22-02-github-1363429979-plugin-memory-author",
                     "kind": "author_claim",
                     "url": "https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/0x7A7A6572/dsh-forge-studio",
+                            "commit": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+                            "path": "packages/plugin-memory/README.md",
+                            "content_sha256": "d5acc64c6e72dd8ee6117ef27575f21d36d7f3e1318d8afb021515ed62c5a7b9"
+                        }
+                    ],
                     "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
-                    "captured_at": "2026-10-20T03:05:42.733Z",
-                    "summary": "为 DSH 保存偏好、项目决策与关系化记忆，支持检索和跨会话使用。",
-                    "artifact": "data/runs/2026-10-20-02/snapshots/0x7a7a6572--dsh-forge-studio--plugin-memory/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:34:47.863Z",
+                    "summary": "提供全局/项目记忆库、九工具、自动提炼与注入、原文审计、实体关系及可视化管理。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/0x7a7a6572--dsh-forge-studio--plugin-memory/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "20261020-research40-github-1363429979-plugin-memory-source",
+                    "id": "2026-10-22-02-github-1363429979-plugin-memory-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/index.ts",
+                    "url": "https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/0x7A7A6572/dsh-forge-studio",
+                            "commit": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+                            "path": "packages/plugin-memory/README.md",
+                            "content_sha256": "d5acc64c6e72dd8ee6117ef27575f21d36d7f3e1318d8afb021515ed62c5a7b9"
+                        },
+                        {
+                            "repository_url": "https://github.com/0x7A7A6572/dsh-forge-studio",
+                            "commit": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+                            "path": "packages/plugin-memory/package.json",
+                            "content_sha256": "9df9bec83ecc19c7872f5f4a24f60caf80742f49d8f38aaec634ffb9ddb08321"
+                        },
+                        {
+                            "repository_url": "https://github.com/0x7A7A6572/dsh-forge-studio",
+                            "commit": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+                            "path": "packages/plugin-memory/src/index.ts",
+                            "content_sha256": "ec4fa428b297c4b02b1ecc59ff2732333b79fd2ec38c95dba498bc7d2456179e"
+                        },
+                        {
+                            "repository_url": "https://github.com/0x7A7A6572/dsh-forge-studio",
+                            "commit": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+                            "path": "packages/plugin-memory/src/domain.ts",
+                            "content_sha256": "d94a9d7138f332bcbd40ed8be08b71c8e55668d3b9507d52671a3624ddcc759c"
+                        },
+                        {
+                            "repository_url": "https://github.com/0x7A7A6572/dsh-forge-studio",
+                            "commit": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+                            "path": "packages/plugin-memory/src/conflicts.ts",
+                            "content_sha256": "8d0d8af1b29f9128a36237ca5034733e2db0343068aec58bee89a5793e46bc2f"
+                        },
+                        {
+                            "repository_url": "https://github.com/0x7A7A6572/dsh-forge-studio",
+                            "commit": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+                            "path": "packages/plugin-memory/src/service.ts",
+                            "content_sha256": "48c5721949adf505b4ee36dff91a02e2dd552e529287ff46411b078b1c11564e"
+                        },
+                        {
+                            "repository_url": "https://github.com/0x7A7A6572/dsh-forge-studio",
+                            "commit": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+                            "path": "packages/plugin-memory/src/settings.ts",
+                            "content_sha256": "7fadd927bae673927033346eb71eff4ad35c431cc68e01812a816df29570c6d6"
+                        },
+                        {
+                            "repository_url": "https://github.com/0x7A7A6572/dsh-forge-studio",
+                            "commit": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+                            "path": "packages/plugin-memory/src/agent/prompt.ts",
+                            "content_sha256": "bd330a6d36075453e2b20c7fcb75c0277e125ea96ef32021f2071557ff3247aa"
+                        },
+                        {
+                            "repository_url": "https://github.com/0x7A7A6572/dsh-forge-studio",
+                            "commit": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+                            "path": "packages/plugin-memory/src/agent/capture.ts",
+                            "content_sha256": "0e3471bb47c2d41159476750017cd4fdf27308b5e35116f824a62edfa70e2ade"
+                        },
+                        {
+                            "repository_url": "https://github.com/0x7A7A6572/dsh-forge-studio",
+                            "commit": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+                            "path": "packages/plugin-memory/src/agent/judge.ts",
+                            "content_sha256": "3b1d84e676da55f1c7c7e9830d906513160d0254333064e01d1550551b596989"
+                        },
+                        {
+                            "repository_url": "https://github.com/0x7A7A6572/dsh-forge-studio",
+                            "commit": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+                            "path": "packages/plugin-memory/src/agent/tools.ts",
+                            "content_sha256": "91c604d5be5b91f5ae7df6b059eb9cd597ef7f60539d648db94c5c1908ad9add"
+                        }
+                    ],
                     "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
-                    "captured_at": "2026-10-20T03:05:42.733Z",
-                    "summary": "核查 packages/plugin-memory/src/index.ts、packages/plugin-memory/src/service.ts、packages/plugin-memory/src/bundle.ts；storage-domain 支撑实体、关系和审计记录，服务统一管理写入、查询与导入校验。",
-                    "artifact": "data/runs/2026-10-20-02/snapshots/0x7a7a6572--dsh-forge-studio--plugin-memory/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:34:47.863Z",
+                    "summary": "核查 packages/plugin-memory/README.md、packages/plugin-memory/package.json、packages/plugin-memory/src/index.ts、packages/plugin-memory/src/domain.ts、packages/plugin-memory/src/conflicts.ts、packages/plugin-memory/src/service.ts、packages/plugin-memory/src/settings.ts、packages/plugin-memory/src/agent/prompt.ts、packages/plugin-memory/src/agent/capture.ts、packages/plugin-memory/src/agent/judge.ts、packages/plugin-memory/src/agent/tools.ts；storage-domain多表服务，turn/end截取转录经LLM提炼/判重后保存，动态context按global+目录阈值召回，GUI和工具管理。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/0x7a7a6572--dsh-forge-studio--plugin-memory/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "抽读存储服务与接线，未评测记忆命中率、冲突解决或跨项目泄漏。",
+                        "固定monorepo packages/plugin-memory入口、存储schema、服务关键合并/删除/项目/注入、agent捕获/判定/工具桥与设置；未穷尽GUI或宿主，未执行目标。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -67,9 +143,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "反复在项目间切换的使用者需要可管理的长期偏好和决策，而非无差别保存聊天。",
+                    "text": "DSH用户希望跨会话复用偏好和项目约定，并可人工修订与回看来源。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "20261020-research40-github-1363429979-plugin-memory-source"
+                        "2026-10-22-02-github-1363429979-plugin-memory-source"
                     ],
                     "dependencies": [
                         {
@@ -78,16 +154,16 @@
                             "fingerprint": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:05:42.733Z",
+                    "reviewed_at": "2026-10-22T09:34:47.863Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "storage-domain 支撑实体、关系和审计记录，服务统一管理写入、查询与导入校验。",
+                    "text": "storage-domain多表服务，turn/end截取转录经LLM提炼/判重后保存，动态context按global+目录阈值召回，GUI和工具管理。",
                     "evidence_ids": [
-                        "20261020-research40-github-1363429979-plugin-memory-source"
+                        "2026-10-22-02-github-1363429979-plugin-memory-source"
                     ],
                     "dependencies": [
                         {
@@ -96,16 +172,16 @@
                             "fingerprint": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:05:42.733Z",
+                    "reviewed_at": "2026-10-22T09:34:47.863Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "结构化存储比散落提示词更可管理；错误或跨范围记忆可能持续影响后续决策。",
+                    "text": "#### 效果\n\n| 目标 | 源码支持 | 边界 |\n| --- | --- | --- |\n| 少重复说明 | 阈值scope召回 | 不等正确/相关 |\n| 形成记忆 | LLM提炼/判重 | 外发/误global/费用 |\n| 管理关系 | 原文/审计/实体边 | 多副本与跨表恢复 |",
                     "evidence_ids": [
-                        "20261020-research40-github-1363429979-plugin-memory-source"
+                        "2026-10-22-02-github-1363429979-plugin-memory-source"
                     ],
                     "dependencies": [
                         {
@@ -114,16 +190,16 @@
                             "fingerprint": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:05:42.733Z",
+                    "reviewed_at": "2026-10-22T09:34:47.863Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "记忆抽取、注入和纠错有模型及人工开销；没有测量净节省 token 或重复任务收益。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 独立profile/模型路线 | scope、隐私、冲突核对 | 提炼/判重需既有模型路线；初始化金额和工时未知 |\n| 持续使用 | 额外提炼/判重与注入token | 纠错、去重和冲突复核 | 捕获/判定token上限不是总费用预算；净收益未知 |\n| 失败恢复 | 导出/原文/审计备份 | 全副本遗忘和部分写修复 | raw/audit可能保留旧内容；全副本遗忘与修复工时未知 |\n",
                     "evidence_ids": [
-                        "20261020-research40-github-1363429979-plugin-memory-source"
+                        "2026-10-22-02-github-1363429979-plugin-memory-source"
                     ],
                     "dependencies": [
                         {
@@ -132,16 +208,16 @@
                             "fingerprint": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:05:42.733Z",
+                    "reviewed_at": "2026-10-22T09:34:47.863Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "持久化成功后再更新可见状态及集中 bundle 校验可借鉴，迁移需带上领域数据和关系。",
+                    "text": "域schema、晚挂可选桥及错误审计可借鉴；需并发版本、项目身份和确认/遗忘契约。详见[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "20261020-research40-github-1363429979-plugin-memory-source"
+                        "2026-10-22-02-github-1363429979-plugin-memory-source"
                     ],
                     "dependencies": [
                         {
@@ -150,16 +226,16 @@
                             "fingerprint": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:05:42.733Z",
+                    "reviewed_at": "2026-10-22T09:34:47.863Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "先记录少量明确偏好，测试修改和删除后是否停止影响回答，再扩展自动积累。",
+                    "text": "先观察；无敏感库关autoCapture/autoInject，手工条目与独立profile对照，重要约定保留原始指引。详见[Q06](#research-q06)。",
                     "evidence_ids": [
-                        "20261020-research40-github-1363429979-plugin-memory-source"
+                        "2026-10-22-02-github-1363429979-plugin-memory-source"
                     ],
                     "dependencies": [
                         {
@@ -168,16 +244,16 @@
                             "fingerprint": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:05:42.733Z",
+                    "reviewed_at": "2026-10-22T09:34:47.863Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "抽读存储服务与接线，未评测记忆命中率、冲突解决或跨项目泄漏。",
+                    "text": "固定monorepo packages/plugin-memory入口、存储schema、服务关键合并/删除/项目/注入、agent捕获/判定/工具桥与设置；未穷尽GUI或宿主，未执行目标。",
                     "evidence_ids": [
-                        "20261020-research40-github-1363429979-plugin-memory-source"
+                        "2026-10-22-02-github-1363429979-plugin-memory-source"
                     ],
                     "dependencies": [
                         {
@@ -186,16 +262,16 @@
                             "fingerprint": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:05:42.733Z",
+                    "reviewed_at": "2026-10-22T09:34:47.863Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "组件 @zzerx/dsh-plugin-memory 0.4.3，依赖 storageDomain、systemPrompt 与工具服务。",
+                    "text": "组件0.4.3、MIT，依赖匹配storage-domain/llm/tools/Typert与0.2.0-rc.1宿主构建线；lib为构建产物。",
                     "evidence_ids": [
-                        "20261020-research40-github-1363429979-plugin-memory-source"
+                        "2026-10-22-02-github-1363429979-plugin-memory-source"
                     ],
                     "dependencies": [
                         {
@@ -204,40 +280,135 @@
                             "fingerprint": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:05:42.733Z",
+                    "reviewed_at": "2026-10-22T09:34:47.863Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "将原文、后台提炼/判定、记忆工具与scope注入/图谱管理接为跨会话流程。详见[Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1363429979-plugin-memory-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1363429979:plugin-memory",
+                            "area": "code",
+                            "fingerprint": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:34:47.863Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "supported",
+                    "text": "本地存储不等离线提炼，项目全小写可串目录，模型scope默认global，合并/遗忘多副本非事务。详见[Q03](#research-q03)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1363429979-plugin-memory-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1363429979:plugin-memory",
+                            "area": "code",
+                            "fingerprint": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:34:47.863Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "engineering",
+                    "basis": "unverified",
+                    "text": "可研究待确认候选、身份/来源版本合并及全副本遗忘收据，以串项目和并发反例比较错召回与恢复。当前未验证。详见[Q06](#research-q06)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1363429979-plugin-memory-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1363429979:plugin-memory",
+                            "area": "code",
+                            "fingerprint": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:34:47.863Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-20T03:05:42.733Z",
+            "last_checked_at": "2026-10-22T09:34:47.863Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+                "reviewed_at": "2026-10-22T09:34:47.863Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1363429979:plugin-memory",
+                        "area": "code",
+                        "fingerprint": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty小幅，提炼/关键词/关系图已有；mechanism实质，原文/审计/注入链；transferability实质，分层桥和schema可借鉴；simplification实质，集中记忆维护。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1363429979-plugin-memory-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow实质，轮末到后续召回；delivery小幅，记忆/关系管理交付；reach小幅，GUI与工具可用；economics小幅，少重复说明机制未测且新增LLM费。",
+                    "basis": "interpretation",
+                    "score": 35,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1363429979-plugin-memory-source"
+                    ]
+                }
+            },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "trial",
-                "reason": "跨项目用户可从少量明确偏好试用记忆，先测试修改删除后的注入与范围隔离。",
+                "decision": "observe",
+                "reason": "先观察，自动外发/留存、目录串用和并发合并可能跨会话放大错记；独立无敏感库关自动能力可继续对照。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "长期偏好和项目决策管理有重复使用场景。"
+                        "rationale": "跨会话偏好/项目复用明确。"
                     },
                     "advantage": {
-                        "score": 19,
-                        "rationale": "实体关系及审计较散落提示词可管理，仍可能保存错误。"
+                        "score": 13,
+                        "rationale": "原文/图谱/工具一体便利，Markdown/项目指引有替代。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "存储接线与导入校验有依据，冲突和泄漏未评测。"
+                        "rationale": "固定关键源码可查，召回真值和任务收益未知。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "抽取注入消耗模型，关系迁移和纠错需持续人工。"
+                        "score": 5,
+                        "rationale": "额外LLM、隐私副本与清错/合并恢复负担。"
                     }
                 },
-                "score": 65,
+                "score": 54,
                 "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T09:34:47.863Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "20261020-research40-github-1363429979-plugin-memory-source"
+                    "2026-10-22-02-github-1363429979-plugin-memory-source"
                 ],
                 "dependencies": [
                     {
@@ -262,67 +433,63 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-20T02:51:30Z",
-            "analysis_sha256": "ae3f54d47d0b179d51c29bd189fa486825479704dd41e9bfc1213ef1b72ec4b7"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "585d5b3f603cb7a68cf0d6899502edf41e6c75b8c08d98ecf485dd2cd1d5e502"
         },
         "publication.metadata": "data/plugins/0x7a7a6572--dsh-forge-studio--plugin-memory/META.json",
         "publication.summaries": {
-            "text": "为 DSH 保存偏好、项目决策与关系化记忆，支持检索和跨会话使用。",
+            "text": "提供全局/项目记忆库、九工具、自动提炼与注入、原文审计、实体关系及可视化管理。",
             "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
             "source_url": "https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/README.md"
         },
         "publication.capabilities": {
             "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
             "items": {
-                "模型工具": "记忆查询和维护工具由组件接线提供。"
-            }
+                "模型工具": "九个memory_*存取/实体/连边工具",
+                "后台": "storage-domain记忆/原文/审计、LLM提炼判重与提示召回",
+                "事件监听": "turn/end自动提炼",
+                "界面": "记忆管理/图谱/后台模型配置"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 多表记忆/图谱 | 偏好项目复用 | 关系不等真值 |\n| 提炼与判重 | 自动减少重复录入 | 模型外发/错记 |\n| scope注入 | 后续对话带背景 | 目录身份和阈值需核 |"
         },
         "publication.advice": {
             "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
-            "text": "先记录少量明确偏好，测试修改和删除后是否停止影响回答，再扩展自动积累。"
+            "text": "先观察；无敏感库关autoCapture/autoInject，手工条目与独立profile对照，重要约定保留原始指引。详见[Q06](#research-q06)。"
         },
         "registry": "data/plugins/0x7a7a6572--dsh-forge-studio--plugin-memory",
-        "reports": "# Forge 记忆\n\n> 为 DSH 保存偏好、项目决策与关系化记忆，支持检索和跨会话使用。\n\n## 固定范围与依据\n\n固定提交 [acb136c0dbbf8e984bdffea9de48b6ed73d0103e](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/index.ts)；组件路径：packages/plugin-memory。核查时间 2026-10-20T03:05:42.733Z；本轮基准 2026-10-20T02:51:30Z。\n源码抽读路径：packages/plugin-memory/src/index.ts、packages/plugin-memory/src/service.ts、packages/plugin-memory/src/bundle.ts。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：反复在项目间切换的使用者需要可管理的长期偏好和决策，而非无差别保存聊天。\n- **亮点**：storage-domain 支撑实体、关系和审计记录，服务统一管理写入、查询与导入校验。\n- **思考**：结构化存储比散落提示词更可管理；错误或跨范围记忆可能持续影响后续决策。\n- **建议**：先记录少量明确偏好，测试修改和删除后是否停止影响回答，再扩展自动积累。\n\n## 场景与替代办法\n\n反复在项目间切换的使用者需要可管理的长期偏好和决策，而非无差别保存聊天。\n\n项目说明和人工摘要仍是更透明的低复杂度替代；本轮只确认机制，不宣布优于其他记忆插件。\n\n## 依赖与流程\n\n需要相应宿主存储和注入服务；有效性依赖记忆质量、作用域和所用模型。\n\n保存偏好和决策后检索使用，发现冲突时修改或删除；迁移前导出并核对关系与审计范围。\n\n## 成本与效果\n\n记忆抽取、注入和纠错有模型及人工开销；没有测量净节省 token 或重复任务收益。\n\n结构化存储比散落提示词更可管理；错误或跨范围记忆可能持续影响后续决策。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：packages/plugin-memory；内容摘要：f207e6802abddb05860d5f4996fe3ae286fe60cb82a4c10c884374146423127f。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 1 | 67 | — | — | 1250 |\n| .mjs | source | 1 | 31 | 16 | 10 | — |\n| .ts | source | 25 | 6528 | 5384 | 651 | — |\n| .tsx | source | 10 | 1596 | 1436 | 107 | — |\n\n排除 1 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **模型工具**：记忆查询和维护工具由组件接线提供。\n\n## 工程亮点\n\n持久化成功后再更新可见状态及集中 bundle 校验可借鉴，迁移需带上领域数据和关系。\n\n## 分发与兼容\n\n组件 @zzerx/dsh-plugin-memory 0.4.3，依赖 storageDomain、systemPrompt 与工具服务。\n\n## 历史对照\n\n前次代码指纹为 acb136c0dbbf8e984bdffea9de48b6ed73d0103e；本轮固定为 acb136c0dbbf8e984bdffea9de48b6ed73d0103e。项目说明和人工摘要仍是更透明的低复杂度替代；本轮只确认机制，不宣布优于其他记忆插件。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读存储服务与接线，未评测记忆命中率、冲突解决或跨项目泄漏。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：用两项目相反偏好和一次纠错任务，核对召回、隔离、删除效果与额外调用。\n",
+        "reports": "# @zzerx/dsh-plugin-memory\n\n> 提供全局/项目记忆库、九工具、自动提炼与注入、原文审计、实体关系及可视化管理。\n\n## 研究范围\n\n- **仓库**：[0x7A7A6572/dsh-forge-studio](https://github.com/0x7A7A6572/dsh-forge-studio)\n- **版本号**：0.4.3（[固定提交 acb136c0dbbf8e984bdffea9de48b6ed73d0103e](https://github.com/0x7A7A6572/dsh-forge-studio/tree/acb136c0dbbf8e984bdffea9de48b6ed73d0103e)）\n- **版本日期**：2026-10-16（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n存储/提炼/召回联结可查；模型外发与原文副本、目录身份和并发/跨表限制需管理，确认版记忆为未验证方向。\n\n## 洞察短评\n\n- **用途**：DSH用户希望跨会话复用偏好和项目约定，并可人工修订与回看来源。详见[Q01](#research-q01)。\n- **亮点**：将原文、后台提炼/判定、记忆工具与scope注入/图谱管理接为跨会话流程。详见[Q01](#research-q01)。\n- **思考**：本地存储不等离线提炼，项目全小写可串目录，模型scope默认global，合并/遗忘多副本非事务。详见[Q03](#research-q03)。\n- **建议**：可研究待确认候选、身份/来源版本合并及全副本遗忘收据，以串项目和并发反例比较错召回与恢复。当前未验证。详见[Q06](#research-q06)。\n\n采用建议：先观察；无敏感库关autoCapture/autoInject，手工条目与独立profile对照，重要约定保留原始指引。详见[Q06](#research-q06)。\n\n## 核心贡献\n\n将原文、后台提炼/判定、记忆工具与scope注入/图谱管理接为跨会话流程。详见[Q01](#research-q01)。\n\n## 关键质疑\n\n本地存储不等离线提炼，项目全小写可串目录，模型scope默认global，合并/遗忘多副本非事务。详见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可研究待确认候选、身份/来源版本合并及全副本遗忘收据，以串项目和并发反例比较错召回与恢复。当前未验证。详见[Q06](#research-q06)。\n\n进一步从大小写项目、矛盾同题、并发合并、错误global、原文再提炼和跨表半失败探讨候选确认与遗忘收据。\n\n## 场景与替代办法\n\nDSH用户希望跨会话复用偏好和项目约定，并可人工修订与回看来源。详见[Q01](#research-q01)。\n\n手工Markdown记忆与项目指引加关键词检索是替代，自动提炼增加便利和模型/清错成本。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 条件 | 用途 | 失效影响 |\n| --- | --- | --- |\n| storageDomain | 多表持久 | 原子/授权依宿主 |\n| tools/systemPrompt可选 | 存取和召回 | 缺桥仅核心管理 |\n| 可路由LLM | 提炼和判重 | 外发/额度/失败退化 |\n| Typert/GUI/canvas | 管理图谱 | 非全环境保证 |\n\n#### 启动步骤\n\n| 步骤 | 执行者 | 判断标准 |\n| --- | --- | --- |\n| 建无敏感库关自动 | 用户 | 接收方/留存明确 |\n| 手工保存scope条目 | 用户/Agent | 原约定可核 |\n| 对照召回和合并 | 用户 | 不串项目/限定不丢 |\n| 导出并核全副本 | 用户 | raw/audit遗忘可解释 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 独立profile/模型路线 | scope、隐私、冲突核对 | 提炼/判重需既有模型路线；初始化金额和工时未知 |\n| 持续使用 | 额外提炼/判重与注入token | 纠错、去重和冲突复核 | 捕获/判定token上限不是总费用预算；净收益未知 |\n| 失败恢复 | 导出/原文/审计备份 | 全副本遗忘和部分写修复 | raw/audit可能保留旧内容；全副本遗忘与修复工时未知 |\n\n\n#### 效果\n\n| 目标 | 源码支持 | 边界 |\n| --- | --- | --- |\n| 少重复说明 | 阈值scope召回 | 不等正确/相关 |\n| 形成记忆 | LLM提炼/判重 | 外发/误global/费用 |\n| 管理关系 | 原文/审计/实体边 | 多副本与跨表恢复 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**固定组件跨会话记忆链如何工作，模型外发/项目身份/合并和遗忘成本如何影响采用？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 跨会话记忆带来什么实际工作流？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n面向希望DSH跨会话保留偏好与项目约定的单用户，提供全局/目录项目记忆、原文留档、模型提炼、搜索、实体和边、GUI管理及导入导出。合格结果是经用户认可的长期信息能在相同项目召回，错误/过时可修正，不是自动越聊越准确。简单替代是手工项目指引、Markdown记忆和关键词搜索。\n\n贡献是宿主storage-domain、九工具、动态提示注入和turn/end后台提炼/判重/审计的联结，不是向量索引、新LLM记忆算法或事实校验器。源码list用子串匹配；图谱连边表达已有关系，不提供独立真实性证据。同类插件重名检测保护注册，但不能检查所有隐形提示注入，因此“互斥”只在可探测工具冲突范围成立。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/plugin-memory/src/index.ts:49-70](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/index.ts#L49-L70)\n\n存储/服务/桥/设置装配。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\nexport async function apply(ctx: Context, config: Config): Promise<void> {\n  // storageDomain 已在静态 inject 声明，apply 时已就绪，无需再包一层 ctx.inject。\n  const domain = await ctx.storageDomain.open(memoryDomain)\n  try {\n    // 域由本 fiber 负责 close。\n    ctx.effect(() => () => { void domain.close() })\n    const settings = installMemorySettings(ctx, config)\n    // 用 new（而非 ctx.plugin）：把 memory 服务 provide 在本 apply 的 fiber 上，\n    // 后续 ctx.inject(['tools'], ...) 子 fiber 才能沿祖先链读到 ctx.memory。\n    const service = new MemoryService(ctx, {\n      domain,\n      settings,\n      knownWorkspaces: () => readKnownWorkspaces(ctx),\n    })\n    // 写入判定（方案 C）：路由与 llm 都在调用时才取，所以这里装配不影响启动顺序。\n    // 后台模型走面板配置（设置里的 llmProvider / llmModel，空 = 跟随默认）。\n    service.setJudge(createMemoryJudge(ctx, { route: () => configuredRoute(settings.get()) }))\n    // 面板「后台模型」下拉的候选：dsh 已配置且可路由的模型目录（读取失败退化成空目录）。\n    service.setModelCatalog(() => listModelGroups(ctx))\n    installMemoryAgentBridgeWhenReady(ctx, service, settings)\n    // 本插件自带设置页面（settings.section），关掉宿主按 schema 自建页面的策略。\n    configureMemorySettingsPage(ctx)\n```\n\n</details>\n\n**依据 2 · 源码核查**：[packages/plugin-memory/src/service.ts:493-512](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/service.ts#L493-L512)\n\n子串字段检索。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n  async list(query: MemoryQuery): Promise<MemoryRecord[]> {\n    const keyword = query.keyword?.trim().toLowerCase()\n    const pathKey = query.projectPath !== undefined ? normalizeProjectKey(query.projectPath) : undefined\n    const out = this.collect().filter((record) => {\n      if (query.includeArchived !== true && record.archived) return false\n      if (query.scope !== undefined && record.scope !== query.scope) return false\n      if (query.kind !== undefined && record.kind !== query.kind) return false\n      if (pathKey !== undefined) {\n        if (record.scope !== 'project') return false\n        if (normalizeProjectKey(record.projectPath) !== pathKey) return false\n      }\n      if (keyword !== undefined && keyword !== '') {\n        const hay = (record.title + '\\n' + record.summary + '\\n' + record.content\n          + '\\n' + record.aliases.join(' ') + '\\n' + record.tags.join(' ')).toLowerCase()\n        if (!hay.includes(keyword)) return false\n      }\n      return true\n    })\n    out.sort(compareMemories)\n    return query.limit !== undefined && query.limit > 0 ? out.slice(0, query.limit) : out\n```\n\n</details>\n\n**依据 3 · 源码核查**：[packages/plugin-memory/src/conflicts.ts:1-12](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/conflicts.ts#L1-L12)\n\n重名探测边界。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n/**\n * 与其它记忆插件的冲突探测。\n *\n * 为什么必须有：tools 服务在同一层重名注册会**直接抛错**。装了 mneme 之后再装本\n * 插件，7 个 memory_* 里有 6 个重名，第一个 register 就会抛，整条 tools 桥被打崩，\n * 用户只看到「工具莫名其妙没了」。所以注册前先探测、跳过、上报。\n *\n * 能力边界（诚实说明）：\n * - 能探测**重名工具**——两个记忆插件都要给模型 memory_save 时，这是唯一会真正\n *   打架的地方，也是 100% 可靠的信号。\n * - 探测不到「只注入提示词、不注册工具」的记忆插件，也探测不到别人的面板分区\n *   （settings.section 是纯 client 侧注册，host 看不到）。\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 存储、提炼和注入如何流动？\n\n**研究主题：**功能与机制、依赖、兼容与流程\n\n#### 完整回答\n\n入口硬依赖storageDomain，打开memory域后提供MemoryService，settings读volatile，tools/systemPrompt晚就绪时分别挂桥。域按memories、raw_documents、audits、entities、edges记录和schema，持久化具体原子性/权限由宿主storage-domain负责。每轮结束按频率开关触发，单session inFlight避免同时提炼，读取最近有限轮/字符真人消息及可选assistant，先存原文，再调用配置或会话模型得到最多三条200字候选，逐条保存、关联原文并记usage/失败审计。\n\n注入从global+归一目录精确相等project中筛未归档、置顶或重要性阈值条目，排序取maxItems，render加背景/当前指令优先说明并转义{{}}；配置控制是否注入，静态usage指导仍告诉模型如何使用工具。它是每次context装配读取，不只新会话开场。工具可显式project_path，目录是选择键而非授权围栏；依赖0.2.0-rc.1宿主相关包及匹配llm/tools/settings/Typert客户端，缺桥不等全部能力可用。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/plugin-memory/src/index.ts:25-28](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/index.ts#L25-L28)\n\n域依赖。\n\n```text\nexport const name = '@zzerx/dsh-plugin-memory'\nexport const inject = ['storageDomain']\n/** 插件配置 schema（settings 分区的命名空间就是本条目 id，见 settings.ts）。 */\nexport { Config } from './settings.ts'\n```\n\n**依据 2 · 源码核查**：[packages/plugin-memory/src/index.ts:81-112](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/index.ts#L81-L112)\n\n晚挂桥和失败降级。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\nexport function installMemoryAgentBridgeWhenReady(\n  ctx: Context,\n  service: MemoryService,\n  settings: ReturnType<typeof installMemorySettings>,\n): void {\n  void ctx.inject(['tools'], (toolsCtx) => {\n    try {\n      installMemoryTools(toolsCtx, {\n        onConflicts: (conflicts) => {\n          service.setConflicts(conflicts)\n          if (conflicts.length === 0) return\n          toolsCtx.logger.warn('[plugin-memory] ' + describeConflicts(conflicts))\n        },\n      })\n    } catch (error) {\n      toolsCtx.logger.error('[plugin-memory] agent tools install failed — memory_* unavailable to sessions:', error)\n    }\n  })\n  void ctx.inject(['systemPrompt'], (promptCtx) => {\n    try {\n      installMemoryPrompt(promptCtx, service, settings)\n    } catch (error) {\n      promptCtx.logger.warn('[plugin-memory] prompt injection disabled:', error)\n    }\n  })\n  // 自动提炼不依赖 ctx.llm 的就绪时机（调用时才取），但整体包一层保险。\n  try {\n    const dispose = installMemoryCapture(ctx, service, settings)\n    ctx.effect(() => () => { dispose() })\n  } catch (error) {\n    ctx.logger.warn('[plugin-memory] conversation capture disabled:', error)\n  }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[packages/plugin-memory/src/agent/capture.ts:449-476](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/agent/capture.ts#L449-L476)\n\n频率/inFlight与后台。\n\n<details>\n<summary>查看原文（28行）</summary>\n\n```text\nexport function installMemoryCapture(\n  ctx: Context,\n  service: MemoryService,\n  settings: MemorySettingsAccess,\n): () => void {\n  const inFlight = new Set<string>()\n  const disposer = ctx.on('session/event', (session: unknown, event: unknown) => {\n    try {\n      const record = asRecord(event)\n      if (record?.type !== 'turn/end') return\n      const config = settings.get()\n      if (!config.autoCapture) return\n      if (service.isLocked()) return\n      const turnValue = asRecord(record.data)?.turn\n      const turn = typeof turnValue === 'number' ? turnValue : undefined\n      if (!shouldCaptureNow(turn, config.captureEveryTurns)) return\n      const id = (session as { id?: unknown } | undefined)?.id\n      if (typeof id !== 'string' || id === '' || inFlight.has(id)) return\n      inFlight.add(id)\n      const route = configuredRoute(config)\n      void captureOne(ctx, service, session, {\n        maxTurns: config.captureMaxTurns,\n        maxChars: config.captureMaxChars,\n        includeAssistant: config.captureIncludeAssistant,\n        ...(route !== undefined ? { route } : {}),\n      })\n        .catch((error: unknown) => { ctx.logger?.warn?.('[plugin-memory] capture failed: ' + String(error)) })\n        .finally(() => { inFlight.delete(id) })\n```\n\n</details>\n\n**依据 4 · 源码核查**：[packages/plugin-memory/src/agent/capture.ts:289-326](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/agent/capture.ts#L289-L326)\n\n原文先落/缺路由审计。\n\n<details>\n<summary>查看原文（38行）</summary>\n\n```text\n  let rawId: MemoryRawId | undefined\n  try {\n    const raw = await service.storeRawDocument({\n      text: transcript,\n      origin: 'capture',\n      scope: cwd === undefined ? 'global' : 'project',\n      ...(cwd !== undefined ? { projectPath: cwd } : {}),\n      ...(sessionId !== undefined ? { sessionId } : {}),\n      note: 'turn/end 对话转录',\n    })\n    rawId = raw.id\n  } catch (error) {\n    ctx.logger?.warn?.('[plugin-memory] capture archive skipped: ' + errorText(error))\n  }\n\n  const route = resolveRoute(ctx, session, options.route)\n  const llm = serviceOf<{ stream?: (options: unknown) => AsyncIterable<unknown> }>(ctx, 'llm')\n  if (route === undefined || llm?.stream === undefined) {\n    const reason = route === undefined ? '拿不到模型路由，本次未提炼' : 'llm 服务不可用，本次未提炼'\n    ctx.logger?.warn?.('[plugin-memory] capture skipped: ' + reason)\n    try {\n      await service.recordAudit({\n        kind: 'capture',\n        provider: route?.provider ?? 'unknown',\n        model: route?.model ?? 'unknown',\n        ok: false,\n        durationMs: 0,\n        inputChars: transcript.length,\n        outputChars: 0,\n        recordIds: [],\n        ...(rawId !== undefined ? { rawId } : {}),\n        ...(sessionId !== undefined ? { sessionId } : {}),\n        error: reason,\n      })\n    } catch (error) {\n      ctx.logger?.warn?.('[plugin-memory] capture audit skipped: ' + errorText(error))\n    }\n    return\n```\n\n</details>\n\n**依据 5 · 源码核查**：[packages/plugin-memory/src/agent/capture.ts:350-364](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/agent/capture.ts#L350-L364)\n\n真实模型输入。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n    const stream = llm.stream({\n      provider: route.provider,\n      model: route.model,\n      // 自定义 purpose 越界（封闭联合），提示词只能走 system 槽。\n      system: systemText,\n      maxTokens: 2048,\n      signal: controller.signal,\n      messages: [\n        {\n          role: 'user',\n          content: [{ type: 'text', text: transcript }],\n          source: { kind: 'plugin', plugin: '@zzerx/dsh-plugin-memory' },\n        },\n      ],\n    })\n```\n\n</details>\n\n**依据 6 · 源码核查**：[packages/plugin-memory/src/service.ts:679-691](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/service.ts#L679-L691)\n\nscope与阈值取候选。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n  injectCandidates(sessionCwd: string | undefined, options: { maxItems: number; threshold: number }): MemoryRecord[] {\n    // 被锁时一条都不注入。\n    if (this.isLocked()) return []\n    const cwdKey = sessionCwd === undefined ? undefined : normalizeProjectKey(sessionCwd)\n    const live = this.collect().filter((record) => !record.archived)\n    const scoped = live.filter((record) => {\n      if (record.scope === 'global') return true\n      if (cwdKey === undefined) return false\n      return normalizeProjectKey(record.projectPath) === cwdKey\n    })\n    const eligible = scoped.filter((record) => record.pinned || record.importance >= options.threshold)\n    eligible.sort(compareMemories)\n    return eligible.slice(0, Math.max(1, options.maxItems))\n```\n\n</details>\n\n**依据 7 · 源码核查**：[packages/plugin-memory/src/agent/prompt.ts:98-120](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/agent/prompt.ts#L98-L120)\n\n动态context。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\nexport function installMemoryPrompt(ctx: Context, service: MemoryService, settings: MemorySettingsAccess): void {\n  ctx.systemPrompt.section({\n    name: MEMORY_USAGE_SECTION,\n    order: 2940,\n    text: MEMORY_USAGE_TEXT,\n  })\n  ctx.systemPrompt.context({\n    name: MEMORY_RECALL_CONTEXT,\n    order: 95,\n    text: (renderCtx: unknown) => {\n      try {\n        const config = settings.get()\n        if (!config.autoInject) return ''\n        const cwd = sessionCwdOf(renderCtx)\n        const records = service.injectCandidates(cwd, {\n          maxItems: config.maxInjected,\n          threshold: config.importanceThreshold,\n        })\n        return renderMemoryBlock(records, cwd)\n      } catch {\n        return ''\n      }\n    },\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 本地记忆和项目分区为何仍需隐私核对？\n\n**研究主题：**缺陷与关键质疑\n\n#### 完整回答\n\nREADME“只存在本地”适合描述存储位置，不能理解提炼与判重完全离线。capture将原始最近对话作为llm.stream user输入；judge将待写内容和附近候选送给所配模型，路由若远程即对该模型服务披露。提示“不要记密钥”只约束输出意图，不在发送前脱敏，原文先存包含敏感对话仍可能留本地；归档/删除单条memory不同时删除raw原文或audit关联，删除结果不是全副本遗忘。\n\n项目key无条件小写、去尾分隔，Linux区分大小写目录可被合并，未realpath的别名/重命名又可能拆成不同项目，不能称严格项目身份隔离。parseCapturedItems非法scope默认global，模型错选可能把项目事实全局注入；importance3也只是保存默认而非用户确认。跨作用域的显式工具/GUI管理要由宿主授权，当前过滤是选择功能，未证明多用户隔离。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/plugin-memory/src/agent/capture.ts:350-362](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/agent/capture.ts#L350-L362)\n\n原文发模型。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n    const stream = llm.stream({\n      provider: route.provider,\n      model: route.model,\n      // 自定义 purpose 越界（封闭联合），提示词只能走 system 槽。\n      system: systemText,\n      maxTokens: 2048,\n      signal: controller.signal,\n      messages: [\n        {\n          role: 'user',\n          content: [{ type: 'text', text: transcript }],\n          source: { kind: 'plugin', plugin: '@zzerx/dsh-plugin-memory' },\n        },\n```\n\n</details>\n\n**依据 2 · 源码核查**：[packages/plugin-memory/src/agent/judge.ts:134-157](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/agent/judge.ts#L134-L157)\n\n候选送模型判定。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n    const route = resolveRoute(ctx, undefined, preferred)\n    const llm = serviceOf<{ stream?: (options: unknown) => AsyncIterable<unknown> }>(ctx, 'llm')\n    if (route === undefined || llm?.stream === undefined) return undefined\n    const payload = renderJudgeInput(request)\n    const controller = new AbortController()\n    const started = Date.now()\n    let text = ''\n    let failure: string | undefined\n    let tokensIn: number | undefined\n    let tokensOut: number | undefined\n    const run = (async (): Promise<MemoryJudgeVerdict> => {\n      try {\n        const stream = llm.stream!({\n          provider: route.provider,\n          model: route.model,\n          system: JUDGE_PROMPT,\n          maxTokens: JUDGE_MAX_TOKENS,\n          signal: controller.signal,\n          messages: [\n            {\n              role: 'user',\n              content: [{ type: 'text', text: payload }],\n              source: { kind: 'plugin', plugin: '@zzerx/dsh-plugin-memory' },\n            },\n```\n\n</details>\n\n**依据 3 · 源码核查**：[packages/plugin-memory/src/agent/capture.ts:190-196](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/agent/capture.ts#L190-L196)\n\n错误scope落global。\n\n```text\n    if (isStatusSnapshot(content)) {\n      dropped.push({ title, reason: 'status-snapshot' })\n      continue\n    }\n    const kind = MEMORY_KINDS.includes(record.kind as MemoryKind) ? (record.kind as MemoryKind) : 'fact'\n    const scope: MemoryScope = record.scope === 'project' ? 'project' : 'global'\n    items.push({ title, content, kind, scope })\n```\n\n**依据 4 · 源码核查**：[packages/plugin-memory/src/service.ts:47-48](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/service.ts#L47-L48)\n\n目录全小写。\n\n```text\nexport function normalizeProjectKey(path: string): string {\n  return path.trim().replace(/[\\\\/]+$/, '').replace(/\\\\/g, '/').toLowerCase()\n```\n\n**依据 5 · 源码核查**：[packages/plugin-memory/src/service.ts:1454-1459](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/service.ts#L1454-L1459)\n\n单memory删除仅清边。\n\n```text\n  async removeMemory(id: MemoryId): Promise<boolean> {\n    const current = await this.memories.get(id)\n    if (current === undefined) return false\n    await this.memories.delete(id)\n    await this.removeEdgesFor({ kind: 'memory', id })\n    return true\n```\n\n**依据 6 · 源码核查**：[packages/plugin-memory/src/service.ts:849-859](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/service.ts#L849-L859)\n\nraw另行删除/裁剪。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n  async removeRawDocument(rawId: MemoryRawId): Promise<boolean> {\n    const current = await this.rawDocs.get(rawId)\n    if (current === undefined) return false\n    await this.rawDocs.delete(rawId)\n    return true\n  }\n\n  async pruneRawDocuments(limit: number): Promise<number> {\n    const ids = prunableRawIds(this.collectRaw(), limit)\n    for (const id of ids) await this.rawDocs.delete(id)\n    return ids.length\n```\n\n</details>\n\n#### 缺口\n\n- 匹配宿主模型服务的远程数据政策和storage-domain/Typert主体授权未由组件闭合\n  **影响：**不能保证敏感数据全本机或多用户项目隔离\n  **进一步探讨：**按实际模型路线/宿主存储与remote访问契约核对，先关闭自动提炼并用无敏感库\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 合并和后台失败怎样影响事实可靠性？\n\n**研究主题：**工程质量与复用\n\n#### 完整回答\n\nsave按同scope/kind/title或alias先合，再Dice重合，低相似近邻可交judge判add/update/skip；judge失败默认新建避免丢输入，但不保证不重，语义错误也不会因入库而校正。标题合并/重合合并可能把矛盾观点串接，合并总长320超限直接失败；judge-update分支超限才降级新建，和直接title/overlap路径不同。并发save读候选后await模型/存储，代码未见服务级互斥或版本比较，可能同题新建两条或后写覆盖合并。\n\nMemory put、挂实体、syncAutoEdges是多次await，失败可留下条目已写而关系未补的部分状态；delete/reset也多表顺序，宿主单table持久不等跨表事务。capture解析输出非法JSON会得到items空、failure仍undefined，审计ok可为true但未产条目，不能看ok判语义提炼成功。capture定时60秒只abort信号，忽略信号的模型stream仍可能不结束，卸载只去事件listener不取消已开任务。原文按session覆盖最近转录，不是永久保留所有历史片段。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/plugin-memory/src/service.ts:1301-1368](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/service.ts#L1301-L1368)\n\n标题/重合/模型判定路径。\n\n<details>\n<summary>查看原文（68行）</summary>\n\n```text\n  async saveWithOutcome(input: MemorySaveInput): Promise<MemorySaveOutcome> {\n    const title = input.title.trim()\n    if (title === '') throw new Error('memory title is required')\n    const content = input.content.trim()\n    if (content === '') throw new Error('memory content is required')\n    const scope: MemoryScope = input.scope ?? 'global'\n    const projectPath = scope === 'project' ? (input.projectPath ?? '').trim() : ''\n    if (scope === 'project' && projectPath === '') {\n      throw new Error('project-scoped memory requires a project path (workspace directory)')\n    }\n    const kind: MemoryKind = input.kind ?? 'fact'\n    assertContentWithinLimit(content)\n    const summary = input.summary?.trim() ?? ''\n    const mergeInput = {\n      title,\n      content,\n      ...(summary !== '' ? { summary } : {}),\n      ...(input.aliases !== undefined ? { aliases: input.aliases } : {}),\n      ...(input.importance !== undefined ? { importance: input.importance } : {}),\n      ...(input.tags !== undefined ? { tags: input.tags } : {}),\n      ...(input.pinned !== undefined ? { pinned: input.pinned } : {}),\n    }\n    const existing = this.findByTitle(title, scope, projectPath, kind)\n    if (existing !== undefined) {\n      const record = await this.mergeRecord(existing, mergeInput)\n      await this.attachEntities(record, input.entities)\n      await this.syncAutoEdges()\n      return { record, created: false, mergedBy: 'title' }\n    }\n    const overlapped = this.findOverlap({ title, content }, scope, projectPath)\n    if (overlapped !== undefined) {\n      const record = await this.mergeRecord(overlapped, mergeInput)\n      await this.attachEntities(record, input.entities)\n      await this.syncAutoEdges()\n      return { record, created: false, mergedBy: 'overlap' }\n    }\n    const near = this.findNearest({ title, content }, scope, projectPath, MEMORY_JUDGE_FLOOR)\n    let judged: MemorySaveOutcome['judged']\n    // source=import 不判定：批量导入会放大调用次数。\n    const judgeAllowed = (input.source ?? 'agent') !== 'import'\n    if (judgeAllowed && near !== undefined && this.judgeReady()) {\n      const verdict = await this.runJudge({\n        title, content, summary, scope, projectPath, candidates: near.candidates,\n      })\n      if (verdict !== undefined) {\n        judged = {\n          decision: verdict.decision,\n          ...(verdict.targetId !== undefined ? { targetId: verdict.targetId } : {}),\n          ...(verdict.reason !== undefined ? { reason: verdict.reason } : {}),\n        }\n        await this.recordJudgeAudit(verdict, input.sessionId)\n        const target = verdict.targetId !== undefined\n          ? this.findInScope(verdict.targetId, scope, projectPath)\n          : undefined\n        if (verdict.decision === 'update' && target !== undefined) {\n          try {\n            const record = await this.mergeRecord(target, mergeInput)\n            await this.attachEntities(record, input.entities)\n            await this.syncAutoEdges()\n            return { record, created: false, mergedBy: 'judge', judged }\n          } catch {\n            // 合并撞上限就退化成新建，不丢掉这次写入。\n          }\n        }\n        if (verdict.decision === 'skip' && target !== undefined) {\n          // 不写入，record 回已有那条。\n          return { record: target, created: false, mergedBy: 'judge', skipped: true, judged }\n        }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[packages/plugin-memory/src/service.ts:1272-1298](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/service.ts#L1272-L1298)\n\n合并长度及put。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\n  private async mergeRecord(\n    existing: MemoryRecord,\n    incoming: {\n      title?: string\n      content: string\n      summary?: string\n      aliases?: readonly string[]\n      importance?: number\n      tags?: readonly string[]\n      pinned?: boolean\n    },\n  ): Promise<MemoryRecord> {\n    const mergedContent = mergeContent(existing.content, incoming.content)\n    assertContentWithinLimit(mergedContent)\n    const merged: MemoryRecord = {\n      ...existing,\n      content: mergedContent,\n      summary: existing.summary !== '' ? existing.summary : (incoming.summary?.trim() ?? ''),\n      aliases: mergeAliases(existing, incoming.title, incoming.aliases),\n      importance: Math.max(existing.importance, clampImportance(incoming.importance)),\n      tags: normalizeTags([...existing.tags, ...(incoming.tags ?? [])]),\n      pinned: incoming.pinned ?? existing.pinned,\n      archived: false,\n      updatedAt: Date.now(),\n    }\n    await this.memories.put(merged.id, merged)\n    return merged\n```\n\n</details>\n\n**依据 3 · 源码核查**：[packages/plugin-memory/src/service.ts:1395-1399](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/service.ts#L1395-L1399)\n\n多步骤持久。\n\n```text\n    await this.memories.put(record.id, record)\n    // 先挂显式实体再重算自动边，共现边才算得上这条。\n    await this.attachEntities(record, input.entities)\n    await this.syncAutoEdges()\n    // 判定跑过就带回结论，调用方能区分「模型看过」与「附近没有像的」。\n```\n\n**依据 4 · 源码核查**：[packages/plugin-memory/src/agent/capture.ts:157-168](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/agent/capture.ts#L157-L168)\n\n非法JSON变空。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\nexport function parseCapturedItems(text: string): CaptureParseResult {\n  const trimmed = text.trim()\n  if (trimmed === '') return { items: [], dropped: [] }\n  const start = trimmed.indexOf('[')\n  const end = trimmed.lastIndexOf(']')\n  if (start === -1 || end === -1 || end <= start) return { items: [], dropped: [] }\n  let parsed: unknown\n  try {\n    parsed = JSON.parse(trimmed.slice(start, end + 1))\n  } catch {\n    return { items: [], dropped: [] }\n  }\n```\n\n</details>\n\n**依据 5 · 源码核查**：[packages/plugin-memory/src/agent/capture.ts:342-385](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/agent/capture.ts#L342-L385)\n\n60秒协作abort。\n\n<details>\n<summary>查看原文（44行）</summary>\n\n```text\n  const startedAt = Date.now()\n  const controller = new AbortController()\n  const timer = setTimeout(() => { controller.abort() }, 60_000)\n  let text = ''\n  let failure: string | undefined\n  let tokensIn: number | undefined\n  let tokensOut: number | undefined\n  try {\n    const stream = llm.stream({\n      provider: route.provider,\n      model: route.model,\n      // 自定义 purpose 越界（封闭联合），提示词只能走 system 槽。\n      system: systemText,\n      maxTokens: 2048,\n      signal: controller.signal,\n      messages: [\n        {\n          role: 'user',\n          content: [{ type: 'text', text: transcript }],\n          source: { kind: 'plugin', plugin: '@zzerx/dsh-plugin-memory' },\n        },\n      ],\n    })\n    for await (const raw of stream) {\n      const chunk = asRecord(raw)\n      if (chunk === undefined) continue\n      if (chunk.type === 'text-delta' && typeof chunk.text === 'string') text += chunk.text\n      const usage = readUsage(chunk)\n      if (usage.inputTokens !== undefined) tokensIn = usage.inputTokens\n      if (usage.outputTokens !== undefined) tokensOut = usage.outputTokens\n      if (chunk.type === 'finish') {\n        const reason = asRecord(chunk.reason)\n        const kind = reason?.kind ?? chunk.kind\n        if (kind === 'error' || kind === 'aborted') failure = 'stream ' + String(kind)\n      }\n    }\n  } catch (error) {\n    failure = errorText(error)\n  } finally {\n    clearTimeout(timer)\n  }\n\n  const parsed: CaptureParseResult = failure === undefined\n    ? parseCapturedItems(text)\n```\n\n</details>\n\n**依据 6 · 源码核查**：[packages/plugin-memory/src/agent/capture.ts:420-435](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/agent/capture.ts#L420-L435)\n\n审计ok仅failure标记。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n  try {\n    await service.recordAudit({\n      kind: 'capture',\n      provider: route.provider,\n      model: route.model,\n      ok: failure === undefined,\n      durationMs: Date.now() - startedAt,\n      inputChars: transcript.length,\n      outputChars: text.length,\n      ...(tokensIn !== undefined ? { tokensIn } : {}),\n      ...(tokensOut !== undefined ? { tokensOut } : {}),\n      recordIds,\n      ...(rawId !== undefined ? { rawId } : {}),\n      ...(sessionId !== undefined ? { sessionId } : {}),\n      ...(failure !== undefined ? { error: failure } : {}),\n      ...(dropped.length > 0 ? { dropped } : {}),\n```\n\n</details>\n\n**依据 7 · 源码核查**：[packages/plugin-memory/src/service.ts:785-799](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/service.ts#L785-L799)\n\n同session原文替换。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n    // 转录按会话归并，后一轮覆盖前一轮（转录本身是累积的）。\n    if (input.origin === 'capture' && input.sessionId !== undefined) {\n      const existing = this.collectRaw().find((doc) =>\n        doc.origin === 'capture' && doc.sessionId === input.sessionId)\n      if (existing !== undefined) {\n        const merged: MemoryRawDocument = {\n          ...existing,\n          title,\n          text: input.text,\n          textLength: input.text.length,\n          updatedAt: now,\n          ...(input.note !== undefined ? { note: input.note } : {}),\n        }\n        await this.rawDocs.put(merged.id, merged)\n        return merged\n```\n\n</details>\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 首次、持续与失败恢复分别付出什么？\n\n**研究主题：**效果与总成本\n\n#### 完整回答\n\n首次要建立无敏感试验库、核对global/project归属、选择自动提炼/注入和后台模型，确认与现有memory工具不冲突；core数据/GUI可本地但提炼和判重增加LLM调用。持续每次捕获最多2048输出token，判定最多256，查询片段与候选还占输入，注入条目增加每次上下文；原文200/审计500上限约束条数，不是字节或费用总预算。实际调用量随轮频、近邻判定和模型费变化，不能写免费记忆。\n\n恢复需用户纠正错误global、错误合并、归档/删除和导出备份，核查raw/audit是否仍保留旧内容；判定故障退新建提高不丢率也增加清重工时。每轮syncAutoEdges扫描/重建涉及库规模，大小库的耗时与任务改善未知。组件未发现对应独立测试文件，仓库其他测试未穷尽，因此只报告源码和配置约束，不把monorepo总体检查当该组件效果验收。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/plugin-memory/src/agent/capture.ts:350-356](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/agent/capture.ts#L350-L356)\n\ncapture输出预算。\n\n```text\n    const stream = llm.stream({\n      provider: route.provider,\n      model: route.model,\n      // 自定义 purpose 越界（封闭联合），提示词只能走 system 槽。\n      system: systemText,\n      maxTokens: 2048,\n      signal: controller.signal,\n```\n\n**依据 2 · 源码核查**：[packages/plugin-memory/src/agent/judge.ts:30-35](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/agent/judge.ts#L30-L35)\n\njudge预算/候选限制。\n\n```text\n/** 输出上限：一行 JSON，给足余量即可。 */\nexport const JUDGE_MAX_TOKENS = 256\n/** 单次判定超时：超了就退化成「新建」，不能拖住写入。 */\nexport const JUDGE_TIMEOUT_MS = 15000\n/** 候选正文截断长度（判定看语义，不需要全文）。 */\nexport const JUDGE_MAX_CANDIDATE_CHARS = 200\n```\n\n**依据 3 · 源码核查**：[packages/plugin-memory/src/service.ts:29-41](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/service.ts#L29-L41)\n\n条数/正文/相似阈值。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\nexport const MEMORY_RAW_LIMIT = 200\nexport const MEMORY_AUDIT_LIMIT = 500\nexport const MEMORY_CONTENT_LIMIT = 320\nexport const IMPORT_IMPORTANCE = 4\n/** 正文 Dice 达到此值即视为同一条。 */\nexport const MEMORY_OVERLAP_CONTENT = 0.7\n/** 标题 Dice 达到此值即视为同一条。 */\nexport const MEMORY_OVERLAP_TITLE = 0.9\n/** 「疑似同一条」提示的下限。 */\nexport const MEMORY_NEAR_FLOOR = 0.4\n/** 交给模型判定的相似度下限。 */\nexport const MEMORY_JUDGE_FLOOR = 0.2\nexport const MEMORY_JUDGE_MAX_CANDIDATES = 3\n```\n\n</details>\n\n**依据 4 · 源码核查**：[packages/plugin-memory/src/service.ts:1323-1368](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/service.ts#L1323-L1368)\n\n合并与失败默认策略。\n\n<details>\n<summary>查看原文（46行）</summary>\n\n```text\n    const existing = this.findByTitle(title, scope, projectPath, kind)\n    if (existing !== undefined) {\n      const record = await this.mergeRecord(existing, mergeInput)\n      await this.attachEntities(record, input.entities)\n      await this.syncAutoEdges()\n      return { record, created: false, mergedBy: 'title' }\n    }\n    const overlapped = this.findOverlap({ title, content }, scope, projectPath)\n    if (overlapped !== undefined) {\n      const record = await this.mergeRecord(overlapped, mergeInput)\n      await this.attachEntities(record, input.entities)\n      await this.syncAutoEdges()\n      return { record, created: false, mergedBy: 'overlap' }\n    }\n    const near = this.findNearest({ title, content }, scope, projectPath, MEMORY_JUDGE_FLOOR)\n    let judged: MemorySaveOutcome['judged']\n    // source=import 不判定：批量导入会放大调用次数。\n    const judgeAllowed = (input.source ?? 'agent') !== 'import'\n    if (judgeAllowed && near !== undefined && this.judgeReady()) {\n      const verdict = await this.runJudge({\n        title, content, summary, scope, projectPath, candidates: near.candidates,\n      })\n      if (verdict !== undefined) {\n        judged = {\n          decision: verdict.decision,\n          ...(verdict.targetId !== undefined ? { targetId: verdict.targetId } : {}),\n          ...(verdict.reason !== undefined ? { reason: verdict.reason } : {}),\n        }\n        await this.recordJudgeAudit(verdict, input.sessionId)\n        const target = verdict.targetId !== undefined\n          ? this.findInScope(verdict.targetId, scope, projectPath)\n          : undefined\n        if (verdict.decision === 'update' && target !== undefined) {\n          try {\n            const record = await this.mergeRecord(target, mergeInput)\n            await this.attachEntities(record, input.entities)\n            await this.syncAutoEdges()\n            return { record, created: false, mergedBy: 'judge', judged }\n          } catch {\n            // 合并撞上限就退化成新建，不丢掉这次写入。\n          }\n        }\n        if (verdict.decision === 'skip' && target !== undefined) {\n          // 不写入，record 回已有那条。\n          return { record: target, created: false, mergedBy: 'judge', skipped: true, judged }\n        }\n```\n\n</details>\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 当前采用建议和继续探讨方向是什么？\n\n**研究主题：**新假设与验证、采用判断\n\n#### 完整回答\n\n先观察。机制完整但自动提炼的对话外发与原文留存、目录小写冲突、未经用户确认的global归属、并发合并和跨表部分写使错误可能跨会话放大。维护者可关闭autoCapture/autoInject，用无敏感手工条目和独立profile对照工具/图谱，不宜直接把唯一重要项目约定交自动进化。停止条件包括项目串库、错误global反复召回、合并丢关键限定、删除后仍被raw再提炼或后台费用超预期。\n\n可继续探讨带来源/确认状态的候选记忆与版本合并，自动提炼先进入待确认，scope与源会话/目录身份绑定；遗忘计划统一列出memory/raw/audit/edges，提交前比较版本，失败保留可恢复收据。基线为当前直接写入、阈值合并和人工Markdown，反例含大小写目录、同题矛盾、并发写、模型返回global、删除后重提炼和存储半失败。比较错召回/跨项目误用、重复与总成本，假设未验证，不把现有图谱等同知识正确。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/plugin-memory/src/service.ts:47-48](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/service.ts#L47-L48)\n\n项目身份现状。\n\n```text\nexport function normalizeProjectKey(path: string): string {\n  return path.trim().replace(/[\\\\/]+$/, '').replace(/\\\\/g, '/').toLowerCase()\n```\n\n**依据 2 · 源码核查**：[packages/plugin-memory/src/agent/capture.ts:194-196](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/agent/capture.ts#L194-L196)\n\nscope现状。\n\n```text\n    const kind = MEMORY_KINDS.includes(record.kind as MemoryKind) ? (record.kind as MemoryKind) : 'fact'\n    const scope: MemoryScope = record.scope === 'project' ? 'project' : 'global'\n    items.push({ title, content, kind, scope })\n```\n\n**依据 3 · 源码核查**：[packages/plugin-memory/src/service.ts:1301-1368](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/service.ts#L1301-L1368)\n\n直接合并现状。\n\n<details>\n<summary>查看原文（68行）</summary>\n\n```text\n  async saveWithOutcome(input: MemorySaveInput): Promise<MemorySaveOutcome> {\n    const title = input.title.trim()\n    if (title === '') throw new Error('memory title is required')\n    const content = input.content.trim()\n    if (content === '') throw new Error('memory content is required')\n    const scope: MemoryScope = input.scope ?? 'global'\n    const projectPath = scope === 'project' ? (input.projectPath ?? '').trim() : ''\n    if (scope === 'project' && projectPath === '') {\n      throw new Error('project-scoped memory requires a project path (workspace directory)')\n    }\n    const kind: MemoryKind = input.kind ?? 'fact'\n    assertContentWithinLimit(content)\n    const summary = input.summary?.trim() ?? ''\n    const mergeInput = {\n      title,\n      content,\n      ...(summary !== '' ? { summary } : {}),\n      ...(input.aliases !== undefined ? { aliases: input.aliases } : {}),\n      ...(input.importance !== undefined ? { importance: input.importance } : {}),\n      ...(input.tags !== undefined ? { tags: input.tags } : {}),\n      ...(input.pinned !== undefined ? { pinned: input.pinned } : {}),\n    }\n    const existing = this.findByTitle(title, scope, projectPath, kind)\n    if (existing !== undefined) {\n      const record = await this.mergeRecord(existing, mergeInput)\n      await this.attachEntities(record, input.entities)\n      await this.syncAutoEdges()\n      return { record, created: false, mergedBy: 'title' }\n    }\n    const overlapped = this.findOverlap({ title, content }, scope, projectPath)\n    if (overlapped !== undefined) {\n      const record = await this.mergeRecord(overlapped, mergeInput)\n      await this.attachEntities(record, input.entities)\n      await this.syncAutoEdges()\n      return { record, created: false, mergedBy: 'overlap' }\n    }\n    const near = this.findNearest({ title, content }, scope, projectPath, MEMORY_JUDGE_FLOOR)\n    let judged: MemorySaveOutcome['judged']\n    // source=import 不判定：批量导入会放大调用次数。\n    const judgeAllowed = (input.source ?? 'agent') !== 'import'\n    if (judgeAllowed && near !== undefined && this.judgeReady()) {\n      const verdict = await this.runJudge({\n        title, content, summary, scope, projectPath, candidates: near.candidates,\n      })\n      if (verdict !== undefined) {\n        judged = {\n          decision: verdict.decision,\n          ...(verdict.targetId !== undefined ? { targetId: verdict.targetId } : {}),\n          ...(verdict.reason !== undefined ? { reason: verdict.reason } : {}),\n        }\n        await this.recordJudgeAudit(verdict, input.sessionId)\n        const target = verdict.targetId !== undefined\n          ? this.findInScope(verdict.targetId, scope, projectPath)\n          : undefined\n        if (verdict.decision === 'update' && target !== undefined) {\n          try {\n            const record = await this.mergeRecord(target, mergeInput)\n            await this.attachEntities(record, input.entities)\n            await this.syncAutoEdges()\n            return { record, created: false, mergedBy: 'judge', judged }\n          } catch {\n            // 合并撞上限就退化成新建，不丢掉这次写入。\n          }\n        }\n        if (verdict.decision === 'skip' && target !== undefined) {\n          // 不写入，record 回已有那条。\n          return { record: target, created: false, mergedBy: 'judge', skipped: true, judged }\n        }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[packages/plugin-memory/src/service.ts:1454-1478](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/service.ts#L1454-L1478)\n\n删除/重置不同副本范围。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n  async removeMemory(id: MemoryId): Promise<boolean> {\n    const current = await this.memories.get(id)\n    if (current === undefined) return false\n    await this.memories.delete(id)\n    await this.removeEdgesFor({ kind: 'memory', id })\n    return true\n  }\n\n  async reset(scope: MemoryScope, projectPath?: string): Promise<number> {\n    const pathKey = normalizeProjectKey(projectPath ?? '')\n    const targets = this.collect().filter((record) => {\n      if (record.scope !== scope) return false\n      if (scope === 'global') return true\n      return normalizeProjectKey(record.projectPath) === pathKey\n    })\n    for (const record of targets) {\n      await this.memories.delete(record.id)\n      await this.removeEdgesFor({ kind: 'memory', id: record.id })\n    }\n    // 同作用域的留档一起清，否则留下孤儿原文。\n    for (const doc of this.collectRaw()) {\n      if (doc.scope !== scope) continue\n      if (scope === 'project' && normalizeProjectKey(doc.projectPath) !== pathKey) continue\n      await this.rawDocs.delete(doc.id)\n    }\n```\n\n</details>\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：packages/plugin-memory；内容摘要：f207e6802abddb05860d5f4996fe3ae286fe60cb82a4c10c884374146423127f。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 1 | 67 | — | — | 1250 |\n| .mjs | source | 1 | 31 | 16 | 10 | — |\n| .ts | source | 25 | 6528 | 5384 | 651 | — |\n| .tsx | source | 10 | 1596 | 1436 | 107 | — |\n\n排除 1 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 多表记忆/图谱 | 偏好项目复用 | 关系不等真值 |\n| 提炼与判重 | 自动减少重复录入 | 模型外发/错记 |\n| scope注入 | 后续对话带背景 | 目录身份和阈值需核 |\n\n## 工程亮点\n\n域schema、晚挂可选桥及错误审计可借鉴；需并发版本、项目身份和确认/遗忘契约。详见[Q04](#research-q04)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 packages/plugin-memory/README.md、packages/plugin-memory/package.json、packages/plugin-memory/src/index.ts、packages/plugin-memory/src/domain.ts、packages/plugin-memory/src/conflicts.ts、packages/plugin-memory/src/service.ts、packages/plugin-memory/src/settings.ts、packages/plugin-memory/src/agent/prompt.ts、packages/plugin-memory/src/agent/capture.ts、packages/plugin-memory/src/agent/judge.ts、packages/plugin-memory/src/agent/tools.ts 及固定范围 inventory；组件：packages/plugin-memory。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定monorepo packages/plugin-memory入口、存储schema、服务关键合并/删除/项目/注入、agent捕获/判定/工具桥与设置；未穷尽GUI或宿主，未执行目标。\n- 下一步：进一步从大小写项目、矛盾同题、并发合并、错误global、原文再提炼和跨表半失败探讨候选确认与遗忘收据。\n",
         "metadata": {
             "repository": "0x7A7A6572/dsh-forge-studio",
             "repository_id": 1363429979,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T05:47:20.466Z",
+            "window_start": "2026-09-22T05:47:20.466Z",
             "stars": 9,
             "pushed_at": "2026-10-16T03:38:35Z",
             "issues": {
-                "open": 0,
-                "closed": 0,
-                "created_30d": 0,
-                "closed_30d": 0,
-                "updated_30d": 0
+                "open": 1,
+                "closed": 3,
+                "created_30d": 4,
+                "closed_30d": 3,
+                "updated_30d": 4
             },
             "errors": [],
             "npm": {
                 "package_name": "@zzerx/dsh-plugin-memory",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 2385,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40zzerx%2Fdsh-plugin-memory",
+                "captured_at": "2026-10-22T05:47:29.428Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 2223,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/%40zzerx%2Fdsh-plugin-memory",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-09-15T02:00:42.760Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T05:47:29.428Z",
                     "source_url": "https://registry.npmjs.org/%40zzerx%2Fdsh-plugin-memory",
                     "error": null,
                     "latest_version": "0.4.3",
                     "latest_published_at": "2026-10-08T05:54:25.571Z",
                     "latest_error": null
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
-                "current_revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {

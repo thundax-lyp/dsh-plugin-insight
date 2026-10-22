@@ -28,36 +28,88 @@
             },
             "sources": [
                 {
-                    "id": "20261020-research40-github-1359423472-root-directory-0",
+                    "id": "2026-10-22-02-github-1359423472-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
-                    "retrieved_at": "2026-10-20T03:10:28.172Z",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-22T08:58:21.038Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "20261020-research40-github-1359423472-root-author",
+                    "id": "2026-10-22-02-github-1359423472-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/1014029855/dsh-codevault/blob/14dcb88d65f7d9fcf30b3e6adac5764f705ffae9/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/1014029855/dsh-codevault",
+                            "commit": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9",
+                            "path": "README.md",
+                            "content_sha256": "c0f9695f55c2063e43aa4a1c5d031b64294656ed6dbed77ab2762257b91d719d"
+                        }
+                    ],
                     "revision": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9",
-                    "captured_at": "2026-10-20T03:10:28.172Z",
-                    "summary": "把源码阅读整理成可检索的仓库、文件和符号卡片，并关联本地知识库。",
-                    "artifact": "data/runs/2026-10-20-02/snapshots/1014029855--dsh-codevault/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T08:58:21.038Z",
+                    "summary": "把源码阅读认识按仓库/文件/符号合并为Markdown对象卡，以JSONL保存条目并可选关联本地vault。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/1014029855--dsh-codevault/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "20261020-research40-github-1359423472-root-source",
+                    "id": "2026-10-22-02-github-1359423472-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/1014029855/dsh-codevault/blob/14dcb88d65f7d9fcf30b3e6adac5764f705ffae9/src/index.ts",
+                    "url": "https://github.com/1014029855/dsh-codevault/blob/14dcb88d65f7d9fcf30b3e6adac5764f705ffae9/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/1014029855/dsh-codevault",
+                            "commit": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9",
+                            "path": "README.md",
+                            "content_sha256": "c0f9695f55c2063e43aa4a1c5d031b64294656ed6dbed77ab2762257b91d719d"
+                        },
+                        {
+                            "repository_url": "https://github.com/1014029855/dsh-codevault",
+                            "commit": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9",
+                            "path": "src/index.ts",
+                            "content_sha256": "2c43d3c73dcb3513e8e52d3e3c3b6c3ab026c5597bf5de8d78e4aecbc8d8afb1"
+                        },
+                        {
+                            "repository_url": "https://github.com/1014029855/dsh-codevault",
+                            "commit": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9",
+                            "path": "src/domain.ts",
+                            "content_sha256": "3b238ac56622ffde79aaea5613108397612551cd4f9563cddada786a216ed75e"
+                        },
+                        {
+                            "repository_url": "https://github.com/1014029855/dsh-codevault",
+                            "commit": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9",
+                            "path": "src/store.ts",
+                            "content_sha256": "6d75cb05858fd7f9cbb41b4a152807a390a6bd3d4c7f7e34b34172a4bd41af00"
+                        },
+                        {
+                            "repository_url": "https://github.com/1014029855/dsh-codevault",
+                            "commit": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9",
+                            "path": "src/vault.ts",
+                            "content_sha256": "1047a220e2d0089805e55ad8d87dde464780497315d63f453a9bf41dcebf9437"
+                        },
+                        {
+                            "repository_url": "https://github.com/1014029855/dsh-codevault",
+                            "commit": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9",
+                            "path": "package.json",
+                            "content_sha256": "6825722a48534a039c2a739c0deb8c2dd59e768903e1b734bd5087f8a22b6a2f"
+                        },
+                        {
+                            "repository_url": "https://github.com/1014029855/dsh-codevault",
+                            "commit": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9",
+                            "path": "src/tools.ts",
+                            "content_sha256": "f16386a2aaac35c6f09489ba780dd05062bf68c7719a557e4d3b5bff86573604"
+                        }
+                    ],
                     "revision": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9",
-                    "captured_at": "2026-10-20T03:10:28.172Z",
-                    "summary": "核查 src/index.ts、src/store.ts、src/tools.ts；入口注册 code-reading Skill、read/vault 工具及 /codevault，配置档案目录与可选只读 vault。",
-                    "artifact": "data/runs/2026-10-20-02/snapshots/1014029855--dsh-codevault/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T08:58:21.038Z",
+                    "summary": "核查 README.md、src/index.ts、src/domain.ts、src/store.ts、src/vault.ts、package.json、src/tools.ts；工具/Skill填充subject与笔记，JSONL整体原子替换后重建卡/hub/MOC；可选vault搜索原生读笔记。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/1014029855--dsh-codevault/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "未验证笔记语义正确性、旧卡片过时识别或复杂仓库的检索召回。",
+                        "固定index/domain/store关键捕获/展开/删除和vault搜索/读取、删除工具门槛；不运行迁移/工具，不读取真实vault，不全面审计全部Markdown渲染。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -68,9 +120,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "反复阅读相同代码的人需要保留带对象身份的笔记，减少重复整理。",
+                    "text": "读者保存源码认识并重复回访，要求对象/版本坐标、真实依据和档案恢复可解释。",
                     "evidence_ids": [
-                        "20261020-research40-github-1359423472-root-source"
+                        "2026-10-22-02-github-1359423472-root-source"
                     ],
                     "dependencies": [
                         {
@@ -79,16 +131,16 @@
                             "fingerprint": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:10:28.172Z",
+                    "reviewed_at": "2026-10-22T08:58:21.038Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "入口注册 code-reading Skill、read/vault 工具及 /codevault，配置档案目录与可选只读 vault。",
+                    "text": "工具/Skill填充subject与笔记，JSONL整体原子替换后重建卡/hub/MOC；可选vault搜索原生读笔记。",
                     "evidence_ids": [
-                        "20261020-research40-github-1359423472-root-source"
+                        "2026-10-22-02-github-1359423472-root-source"
                     ],
                     "dependencies": [
                         {
@@ -97,16 +149,16 @@
                             "fingerprint": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:10:28.172Z",
+                    "reviewed_at": "2026-10-22T08:58:21.038Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "对象卡片比聊天时间线容易复用；写得整齐不等于理解准确或跟上代码变更。",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 知识归并 | 同repo/path/symbol汇总为卡片 | 长期记忆/检索实际改善 |\n| 回放 | 从保留事件子集重建 | expand/delete前认识能否保留 |\n| 旧笔记关联 | 本地搜索/推荐/链接工具 | 相关性、隐私边界与大vault负担 |\n",
                     "evidence_ids": [
-                        "20261020-research40-github-1359423472-root-source"
+                        "2026-10-22-02-github-1359423472-root-source"
                     ],
                     "dependencies": [
                         {
@@ -115,16 +167,16 @@
                             "fingerprint": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:10:28.172Z",
+                    "reviewed_at": "2026-10-22T08:58:21.038Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "生成和维护卡片需要模型与人工审阅；只有重复使用时才可能抵消整理成本。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | Node/DSH和档案空间，金额未知 | 定目录、备份、对象命名/词表与迁移 | Obsidian可选 |\n| 持续使用 | 全JSONL读改写、多Markdown重建及可选全vault同步扫描 | 审核模型认识、标签与链接 | 返回截断不等读取量有上限 |\n| 失败恢复 | JSONL/派生卡重建与备份恢复 | 判断已提交条目和卡片/Hubs部分完成 | 多进程最后写者赢，坏行跳过有丢记录风险 |\n",
                     "evidence_ids": [
-                        "20261020-research40-github-1359423472-root-source"
+                        "2026-10-22-02-github-1359423472-root-source"
                     ],
                     "dependencies": [
                         {
@@ -133,16 +185,16 @@
                             "fingerprint": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:10:28.172Z",
+                    "reviewed_at": "2026-10-22T08:58:21.038Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "档案根与只读 vault 分开配置有利于职责清晰；跨工具迁移需核对链接与对象身份。",
+                    "text": "可复用的是subject归一化/稳定对象key、固定卡名、原始条目与派生卡分层、UUID暂存加rename和以现存条目纯重建视图。ref不进key让对象随版本成长，也意味着需在每条认识保留版本；模块级配置根在同一进程多上下文时共享，应视为部署约束而非天然profile隔离。删除confirm布尔是调用约定，不能独立证明读者已同意。",
                     "evidence_ids": [
-                        "20261020-research40-github-1359423472-root-source"
+                        "2026-10-22-02-github-1359423472-root-source"
                     ],
                     "dependencies": [
                         {
@@ -151,16 +203,16 @@
                             "fingerprint": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:10:28.172Z",
+                    "reviewed_at": "2026-10-22T08:58:21.038Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "先给一个常读模块建卡，代码更新后核对引用和过期结论，不把历史笔记直接当现状。",
+                    "text": "单人单写者独立备份档案可试用，vaultDir先不配置；广泛vault读取前优先修边界。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "20261020-research40-github-1359423472-root-source"
+                        "2026-10-22-02-github-1359423472-root-source"
                     ],
                     "dependencies": [
                         {
@@ -169,16 +221,16 @@
                             "fingerprint": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:10:28.172Z",
+                    "reviewed_at": "2026-10-22T08:58:21.038Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "未验证笔记语义正确性、旧卡片过时识别或复杂仓库的检索召回。",
+                    "text": "固定index/domain/store关键捕获/展开/删除和vault搜索/读取、删除工具门槛；不运行迁移/工具，不读取真实vault，不全面审计全部Markdown渲染。",
                     "evidence_ids": [
-                        "20261020-research40-github-1359423472-root-source"
+                        "2026-10-22-02-github-1359423472-root-source"
                     ],
                     "dependencies": [
                         {
@@ -187,16 +239,16 @@
                             "fingerprint": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:10:28.172Z",
+                    "reviewed_at": "2026-10-22T08:58:21.038Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "包版本 0.3.0，Markdown 与 JSONL 档案在本地管理，接入依赖 DSH tools、commands、skills。",
+                    "text": "npm0.3.0、MIT、Node>=22及DSH内部peer，Obsidian可选。",
                     "evidence_ids": [
-                        "20261020-research40-github-1359423472-root-source"
+                        "2026-10-22-02-github-1359423472-root-source"
                     ],
                     "dependencies": [
                         {
@@ -205,40 +257,135 @@
                             "fingerprint": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:10:28.172Z",
+                    "reviewed_at": "2026-10-22T08:58:21.038Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "mechanism",
+                    "basis": "interpretation",
+                    "text": "稳定对象卡、快记展开与回访/历史接线使记录可积累，标准文本易迁移；内容依据仍由读者核查。详见[Q01](#research-q01)与[Q02](#research-q02)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1359423472-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1359423472:root",
+                            "area": "code",
+                            "fingerprint": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T08:58:21.038Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "vault仅词法守卫且stat递归跟链接、全文读后裁剪；expand/delete改旧行限制历史，整体JSONL与多派生文件非事务。详见[Q02](#research-q02)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1359423472-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1359423472:root",
+                            "area": "code",
+                            "fingerprint": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T08:58:21.038Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "mechanism",
+                    "basis": "unverified",
+                    "text": "可探讨修订/tombstone日志与最小vault入口，固定source ref并加realpath/扫描预算；涉及迁移、擦除与日志增长取舍，未验证。详见[Q04](#research-q04)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1359423472-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1359423472:root",
+                            "area": "code",
+                            "fingerprint": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T08:58:21.038Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-20T03:10:28.172Z",
+            "last_checked_at": "2026-10-22T08:58:21.038Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9",
+                "reviewed_at": "2026-10-22T08:58:21.038Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1359423472:root",
+                        "area": "code",
+                        "fingerprint": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty成熟对象笔记/投影取小幅；mechanism对象卡与日志重建取实质；transferability稳定key/文本格式可迁移取实质；simplification统一工具接线取实质，未计学习效果。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1359423472-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 15,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow阅读到回访取实质；delivery持续对象卡取实质；reach限DSH源码读者取小幅；economics无记忆/人时对照取小幅。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1359423472-root-source"
+                    ]
+                }
+            },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "反复读同模块的开发者可试源码卡片，先检查代码变更后引用和旧结论更新。",
+                "reason": "独立对象档案实用且文本可迁移，限单写者备份目录；可选vault先关闭，历史不当不可变审计日志。详见[Q05](#research-q05)。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "跨会话复用代码阅读笔记的需求明确。"
+                        "rationale": "源码阅读回访任务明确，长期收益未知。"
                     },
                     "advantage": {
-                        "score": 19,
-                        "rationale": "带对象身份的检索和vault关联胜于聊天时间线。"
+                        "score": 13,
+                        "rationale": "对象归并/回放有接线增量，普通笔记可替代。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "工具和本地档案机制可查，语义正确与过时识别未测。"
+                        "rationale": "固定关键链源码支持，未真实写入。"
                     },
                     "cost": {
                         "score": 10,
-                        "rationale": "模型制卡和人工维护仅在重复使用时可能摊薄。"
+                        "rationale": "独立档案可维护，模型核查与可选vault/并发边界有责任。"
                     }
                 },
-                "score": 65,
+                "score": 59,
                 "revision": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T08:58:21.038Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "20261020-research40-github-1359423472-root-source"
+                    "2026-10-22-02-github-1359423472-root-source"
                 ],
                 "dependencies": [
                     {
@@ -263,90 +410,62 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-20T02:51:30Z",
-            "analysis_sha256": "d1f395e206ad4780e1d5120c67827605485d7a0bd7aa62fd90accbda9f1adcd9"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "36277da6e8af7244880f3cae50adc2142293a479fda7534246033cf5f9b4c2f9"
         },
         "publication.metadata": "data/plugins/1014029855--dsh-codevault/META.json",
         "publication.summaries": {
-            "text": "把源码阅读整理成可检索的仓库、文件和符号卡片，并关联本地知识库。",
+            "text": "把源码阅读认识按仓库/文件/符号合并为Markdown对象卡，以JSONL保存条目并可选关联本地vault。",
             "revision": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9",
             "source_url": "https://github.com/1014029855/dsh-codevault/blob/14dcb88d65f7d9fcf30b3e6adac5764f705ffae9/README.md"
         },
         "publication.capabilities": {
             "revision": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9",
             "items": {
-                "模型工具": "源码卡片和 vault 查询维护。",
-                "Skill": "code-reading 阅读框架。",
-                "用户命令": "/codevault 档案入口。"
-            }
+                "模型工具": "read_*与vault_*工具",
+                "Skill": "code-reading框架",
+                "用户命令": "/codevault"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 对象卡 | 合并重复阅读认识 | subject坐标/依据需核，ref可选 |\n| 历史/展开 | 回放与升级快记 | 改旧行/删除不可还原原认识 |\n| vault检索 | 关联旧笔记 | 默认关闭，词法边界不挡链接 |\n| 标准档案 | JSONL/Markdown可迁移 | 单写者、备份与多视图一致性责任 |"
         },
         "publication.advice": {
             "revision": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9",
-            "text": "先给一个常读模块建卡，代码更新后核对引用和过期结论，不把历史笔记直接当现状。"
+            "text": "单人单写者独立备份档案可试用，vaultDir先不配置；广泛vault读取前优先修边界。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/1014029855--dsh-codevault",
-        "reports": "# dsh-codevault\n\n> 把源码阅读整理成可检索的仓库、文件和符号卡片，并关联本地知识库。\n\n## 固定范围与依据\n\n固定提交 [14dcb88d65f7d9fcf30b3e6adac5764f705ffae9](https://github.com/1014029855/dsh-codevault/blob/14dcb88d65f7d9fcf30b3e6adac5764f705ffae9/src/index.ts)；组件路径：仓库根。核查时间 2026-10-20T03:10:28.172Z；本轮基准 2026-10-20T02:51:30Z。\n源码抽读路径：src/index.ts、src/store.ts、src/tools.ts。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：反复阅读相同代码的人需要保留带对象身份的笔记，减少重复整理。\n- **亮点**：入口注册 code-reading Skill、read/vault 工具及 /codevault，配置档案目录与可选只读 vault。\n- **思考**：对象卡片比聊天时间线容易复用；写得整齐不等于理解准确或跟上代码变更。\n- **建议**：先给一个常读模块建卡，代码更新后核对引用和过期结论，不把历史笔记直接当现状。\n\n## 场景与替代办法\n\n反复阅读相同代码的人需要保留带对象身份的笔记，减少重复整理。\n\nMarkdown 阅读笔记最易迁移；插件额外价值在结构化工具和检索，不是自动保证理解。\n\n## 依赖与流程\n\n依赖本地文件和宿主工具注册，关联 Obsidian 是可选配置；效果依赖笔记质量。\n\n阅读后保存卡片、检索关联知识，再展开原文件核对；失效时更新或删除卡片。\n\n## 成本与效果\n\n生成和维护卡片需要模型与人工审阅；只有重复使用时才可能抵消整理成本。\n\n对象卡片比聊天时间线容易复用；写得整齐不等于理解准确或跟上代码变更。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：8ec2a3fcb0cd930465b5988484856c0713c74edf82b52bb54cae9ef7ade8b172。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 631 | — | — | 9752 |\n| .js | source | 7 | 2634 | 2320 | 316 | — |\n| .mjs | source | 1 | 390 | 335 | 27 | — |\n| .ts | source | 7 | 3048 | 2463 | 394 | — |\n\n排除 7 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **模型工具**：源码卡片和 vault 查询维护。\n- **Skill**：code-reading 阅读框架。\n- **用户命令**：/codevault 档案入口。\n\n## 工程亮点\n\n档案根与只读 vault 分开配置有利于职责清晰；跨工具迁移需核对链接与对象身份。\n\n## 分发与兼容\n\n包版本 0.3.0，Markdown 与 JSONL 档案在本地管理，接入依赖 DSH tools、commands、skills。\n\n## 历史对照\n\n前次代码指纹为 14dcb88d65f7d9fcf30b3e6adac5764f705ffae9；本轮固定为 14dcb88d65f7d9fcf30b3e6adac5764f705ffae9。Markdown 阅读笔记最易迁移；插件额外价值在结构化工具和检索，不是自动保证理解。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：未验证笔记语义正确性、旧卡片过时识别或复杂仓库的检索召回。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：用重命名、源码变更、重复对象和删除恢复样本检查档案一致性与引用可追溯。\n",
+        "reports": "# dsh-codevault\n\n> 把源码阅读认识按仓库/文件/符号合并为Markdown对象卡，以JSONL保存条目并可选关联本地vault。\n\n## 研究范围\n\n- **仓库**：[1014029855/dsh-codevault](https://github.com/1014029855/dsh-codevault)\n- **版本号**：0.3.0（[固定提交 14dcb88d65f7d9fcf30b3e6adac5764f705ffae9](https://github.com/1014029855/dsh-codevault/tree/14dcb88d65f7d9fcf30b3e6adac5764f705ffae9)）\n- **版本日期**：2026-09-16（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n源码支持结构笔记、派生卡片/索引和可选vault检索的组织贡献；整文件重写不等不可变历史，vault扫描未有完整物理路径与资源围栏。修订日志和最小vault能力入口尚未验证。\n\n## 洞察短评\n\n- **用途**：读者保存源码认识并重复回访，要求对象/版本坐标、真实依据和档案恢复可解释。\n- **亮点**：稳定对象卡、快记展开与回访/历史接线使记录可积累，标准文本易迁移；内容依据仍由读者核查。详见[Q01](#research-q01)与[Q02](#research-q02)。\n- **思考**：vault仅词法守卫且stat递归跟链接、全文读后裁剪；expand/delete改旧行限制历史，整体JSONL与多派生文件非事务。详见[Q02](#research-q02)。\n- **建议**：可探讨修订/tombstone日志与最小vault入口，固定source ref并加realpath/扫描预算；涉及迁移、擦除与日志增长取舍，未验证。详见[Q04](#research-q04)。\n\n采用建议：单人单写者独立备份档案可试用，vaultDir先不配置；广泛vault读取前优先修边界。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n稳定对象卡、快记展开与回访/历史接线使记录可积累，标准文本易迁移；内容依据仍由读者核查。详见[Q01](#research-q01)与[Q02](#research-q02)。\n\n## 关键质疑\n\nvault仅词法守卫且stat递归跟链接、全文读后裁剪；expand/delete改旧行限制历史，整体JSONL与多派生文件非事务。详见[Q02](#research-q02)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可探讨修订/tombstone日志与最小vault入口，固定source ref并加realpath/扫描预算；涉及迁移、擦除与日志增长取舍，未验证。详见[Q04](#research-q04)。\n\n进一步探讨可用假档案研究展开/删除回放、坏行、同写、链接环和巨型笔记，比较可恢复性与检索质量。\n\n## 场景与替代办法\n\n读者保存源码认识并重复回访，要求对象/版本坐标、真实依据和档案恢复可解释。\n\n普通Markdown/Obsidian加人工索引可替代；对象卡接线减少归并但增模型审查、重建和隐私管理。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| Node>=22、DSH tools/commands/skills及peer | 主链必需 | 工具/命令/技能接线 | 不等普通Obsidian插件 |\n| 可写dataDir | 归档必需 | JSONL及派生Markdown | 启动还有迁移，需备份与单写者 |\n| Obsidian软件 | 可选 | 打开标准Markdown/JSONL | 未装也能归档 |\n| vaultDir | 旧笔记检索可选 | 让模型读本地笔记片段 | 不配置即不开放，配置前排除敏感/链接 |\n| 模型与源码材料 | 自动撰写时 | 填充阅读认识 | 插件存储不自动验证内容正确 |\n\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 准备 | 维护者固定包，备份独占dataDir | 一个进程写，默认不配置整vault |\n| 加载 | 安装web profile并核对目录/迁移日志 | 已加载不等历史/投影无损 |\n| 记录 | 读者核对repo/ref/path/symbol和内容再保存 | 卡片和JSONL条目对应，模型说法有依据 |\n| 退出/恢复 | 停用包，单独备份/清理档案与vault授权 | 卸载不删除数据，卡片从保留条目重建 |\n\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | Node/DSH和档案空间，金额未知 | 定目录、备份、对象命名/词表与迁移 | Obsidian可选 |\n| 持续使用 | 全JSONL读改写、多Markdown重建及可选全vault同步扫描 | 审核模型认识、标签与链接 | 返回截断不等读取量有上限 |\n| 失败恢复 | JSONL/派生卡重建与备份恢复 | 判断已提交条目和卡片/Hubs部分完成 | 多进程最后写者赢，坏行跳过有丢记录风险 |\n\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 知识归并 | 同repo/path/symbol汇总为卡片 | 长期记忆/检索实际改善 |\n| 回放 | 从保留事件子集重建 | expand/delete前认识能否保留 |\n| 旧笔记关联 | 本地搜索/推荐/链接工具 | 相关性、隐私边界与大vault负担 |\n\n\n## 研究问题与完整回答\n\n**插件研究总目标：**核查源码阅读对象归档、历史修订/持久化与可选vault访问边界。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 适用什么阅读任务，事件怎样变成对象卡？\n\n**研究主题：**场景与需求、功能与机制\n\n#### 完整回答\n\n适合读源码后希望按仓库/文件/符号保存认识、回访问题和旧笔记关联的人。输入是读者/模型提交的subject、认识与正文，输出JSONL条目及合并Markdown卡、仓库hub和总索引，可用Obsidian打开。合格交付既要归属/版本坐标正确，也要认识受源码支持；插件是知识记录工具，不会自动读取并证明所有笔记结论。\n\nHost配置dataDir/vaultDir后ensureStore并迁移旧文件，注册工具、code-reading Skill和/codevault命令。domain以repo/path/symbol最深坐标组成对象key，ref是可选证据元数据且不分组。commit读取所有条目后原子替换JSONL，再重建对象卡/hub/MOC，查询/历史从条目重放；旧笔记访问仅在vaultDir配置后启用。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:7-9](https://github.com/1014029855/dsh-codevault/blob/14dcb88d65f7d9fcf30b3e6adac5764f705ffae9/README.md#L7-L9)\n\n作者问题与对象卡目标。\n\n```text\n读开源代码的时候，我们经常\"这次懂了，下次又忘了\"。这个插件干的事很简单：在读懂的那一刻记一笔，按仓库、文件、符号归档，以后想回看随时能翻出来。\n\n档案就是 Markdown + JSONL 文件，可以直接用 Obsidian 打开。同一个对象（比如 `plugin.ts` 的 `apply` 机制）读多少次都记在同一张卡上，卡片会随着你的阅读长起来，不是一条条碎片流水账。\n```\n\n**依据 2 · 源码核查**：[src/index.ts:62-78](https://github.com/1014029855/dsh-codevault/blob/14dcb88d65f7d9fcf30b3e6adac5764f705ffae9/src/index.ts#L62-L78)\n\n配置/迁移/注册。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n  const root = dataRoot()\n  // Vault access is read-only; archive root feeds in-archive separation.\n  configureVaultRoot(config.vaultDir, root)\n  ensureStore()\n  // One-time migration of pre-title archives (idempotent; 0 when nothing to do).\n  const migrated = migrateLegacyNoteFiles()\n  for (const tool of TOOLS) {\n    ctx.tools.register(tool)\n  }\n  ctx.skills.register(CODE_READING_SKILL)\n  registerCodevaultCommand(ctx)\n  console.log(\n    `[${name}] loaded: skill=code-reading tools=${TOOLS.map((t) => t.name).join(',')} command=/codevault dataDir=${root}` +\n      (vaultRoot() ? ` vaultDir=${vaultRoot()}` : ' (vault 检索未启用)') +\n      (migrated > 0 ? ` migratedCards=${migrated}` : ''),\n  )\n}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/domain.ts:18-26](https://github.com/1014029855/dsh-codevault/blob/14dcb88d65f7d9fcf30b3e6adac5764f705ffae9/src/domain.ts#L18-L26)\n\n坐标含可选ref。\n\n```text\nexport interface ReadingSubject {\n  /** owner/name (e.g. deepseek-ai/deepseek-harness) or a local folder name. */\n  readonly repo: string\n  /** Optional version / commit / branch the read happened against. */\n  readonly ref?: string\n  /** Optional file path relative to the repo root. */\n  readonly path?: string\n  /** Optional function/class/module/symbol that was read. */\n  readonly symbol?: string\n```\n\n**依据 4 · 源码核查**：[src/domain.ts:220-232](https://github.com/1014029855/dsh-codevault/blob/14dcb88d65f7d9fcf30b3e6adac5764f705ffae9/src/domain.ts#L220-L232)\n\n对象key不含版本。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n * Canonical grouping key of a reading OBJECT — the deepest coordinate given:\n * `symbol` (repo+path+symbol) > `path` (repo+path) > `repo`. Events that share\n * the same key are the same object and project onto ONE card (object card).\n * The key is derived ONLY from the deepest granularity actually provided, so\n * \"same file re-read\" and \"same symbol re-read\" each stay one card.\n */\nexport function objectKey(s: ReadingSubject): string {\n  const repo = normalizeRepo(s.repo)\n  const path = s.path?.trim()\n  const symbol = s.symbol?.trim()\n  if (symbol) return `S\\u0000${repo}\\u0000${path ?? ''}\\u0000${symbol}`\n  if (path) return `P\\u0000${repo}\\u0000${path}`\n  return `R\\u0000${repo}`\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/store.ts:163-174](https://github.com/1014029855/dsh-codevault/blob/14dcb88d65f7d9fcf30b3e6adac5764f705ffae9/src/store.ts#L163-L174)\n\n写JSONL后派生卡。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\nexport function commitEntry(entry: ReadingEntry): { notePath: string; hubPath: string; mocPath: string } {\n  const root = ensureStore()\n  const rows = readEntries()\n  const key = entryObjectKey(entry)\n  const siblings = rows.filter((e) => entryObjectKey(e) === key)\n  const noteFile = objectFileName([...siblings, entry], rows)\n  const stored: ReadingEntry = { ...entry, noteFile }\n  atomicWrite(libraryFile(root), [...rows, stored].map((e) => JSON.stringify(e)).join('\\n') + '\\n')\n  const notePath = writeObjectCard(key)\n  const hubPath = refreshHub(stored.subject.repo)\n  const mocPath = refreshMOC()\n  return { notePath, hubPath, mocPath }\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 相对普通笔记增量与历史/隐私边界是什么？\n\n**研究主题：**贡献与相对优势、缺陷与关键质疑\n\n#### 完整回答\n\n增量是稳定对象卡、重复阅读累计、快记展开、回访问题与可重放派生视图，让模型记笔记能按源码坐标组织。Markdown/JSONL与本地检索都易迁移，但不自动保证source ref不可变、原材料保留或结论正确，同卡跨版本更需要读者识别演变。\n\n关键限制是vault所谓path-confined仅resolve加字符串前缀，递归stat会跟随符号链接，没有realpath/visited集合或深度/扫描上限。目录内链接可通到root外笔记，循环链接也可导致扫描失控；readVaultNote原生读全文后才裁剪返回，不能把8000字符输出上限理解为I/O/内存上限。纯本地只读也不等笔记不会进入模型上下文/对话记录。\n\n历史也不是不可变事件账本。新增会整体读改写JSONL，expand原地改旧行，delete物理移除行；之后历史只能回放仍保留的数据，不能恢复被覆盖/删除的认识。单文件tmp+rename后再写多份派生视图不是跨文件事务，坏行读取被跳过，跨进程last-writer-wins是作者明确边界。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/vault.ts:63-96](https://github.com/1014029855/dsh-codevault/blob/14dcb88d65f7d9fcf30b3e6adac5764f705ffae9/src/vault.ts#L63-L96)\n\n跟随stat递归与词法边界。\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\n/** Recursively collect .md paths under root (relative), sorted for determinism. */\nfunction collectMarkdown(root: string, dir: string, out: string[]): void {\n  for (const name of readdirSync(dir)) {\n    if (isIgnoredDir(name)) continue\n    const full = join(dir, name)\n    let stat: ReturnType<typeof statSync>\n    try {\n      stat = statSync(full)\n    } catch {\n      continue // broken symlink / permission race\n    }\n    if (stat.isDirectory()) collectMarkdown(root, full, out)\n    else if (stat.isFile() && isMarkdown(name)) out.push(relative(root, full))\n  }\n}\n\n/** All markdown note paths under the vault (relative). */\nexport function listNotes(): string[] {\n  if (!configuredVault) return []\n  if (!existsSync(configuredVault)) return []\n  const out: string[] = []\n  collectMarkdown(configuredVault, configuredVault, out)\n  return out.sort()\n}\n\n/** Safely resolve a vault-relative path to absolute; throws when escaping. */\nexport function resolveVaultPath(relPath: string): string {\n  if (!configuredVault) throw new Error('vaultDir 未配置：请先在 cordis.patch.yml 里给 dsh-codevault 设置 vaultDir')\n  const target = resolve(configuredVault, relPath)\n  const rootPrefix = configuredVault.endsWith(sep) ? configuredVault : configuredVault + sep\n  if (target !== configuredVault && !target.startsWith(rootPrefix)) {\n    throw new Error(`路径越界：${relPath} 不在 vault 目录 ${configuredVault} 内`)\n  }\n  return target\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/vault.ts:215-225](https://github.com/1014029855/dsh-codevault/blob/14dcb88d65f7d9fcf30b3e6adac5764f705ffae9/src/vault.ts#L215-L225)\n\n全文读取后裁剪。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n/** Read a vault note by relative path (clipped). Throws outside vault / missing. */\nexport function readVaultNote(relPath: string, maxChars = 8000): { path: string; content: string } {\n  const rel = relPath.trim().replace(/^[/\\\\]+/u, '')\n  const full = resolveVaultPath(rel)\n  if (!existsSync(full) || !statSync(full).isFile()) throw new Error(`vault 里没有这个笔记：${rel}`)\n  const text = readFileSync(full, 'utf8')\n  const chars = [...text]\n  return {\n    path: rel,\n    content: chars.length <= maxChars ? text : `${chars.slice(0, maxChars).join('')}\\n…（已截断，全文 ${chars.length} 字符）`,\n  }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/store.ts:24-25](https://github.com/1014029855/dsh-codevault/blob/14dcb88d65f7d9fcf30b3e6adac5764f705ffae9/src/store.ts#L24-L25)\n\n跨进程最后写者赢。\n\n```text\n * Concurrency (V1 note still holds): all I/O synchronous, atomic tmp+rename;\n * cross-process writers: last writer wins (documented, accepted).\n```\n\n**依据 4 · 源码核查**：[src/store.ts:100-110](https://github.com/1014029855/dsh-codevault/blob/14dcb88d65f7d9fcf30b3e6adac5764f705ffae9/src/store.ts#L100-L110)\n\n坏行容错读取。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n/** Read every event row on disk (tolerant of missing/corrupt lines). */\nexport function readEntries(): ReadingEntry[] {\n  const file = libraryFile(dataRoot())\n  if (!existsSync(file)) return []\n  const raw = readFileSync(file, 'utf8')\n  const entries: ReadingEntry[] = []\n  for (const line of raw.split(/\\r?\\n/u)) {\n    const trimmed = line.trim()\n    if (!trimmed) continue\n    try {\n      const parsed = JSON.parse(trimmed) as ReadingEntry\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/store.ts:163-174](https://github.com/1014029855/dsh-codevault/blob/14dcb88d65f7d9fcf30b3e6adac5764f705ffae9/src/store.ts#L163-L174)\n\n整体替换后派生重建。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\nexport function commitEntry(entry: ReadingEntry): { notePath: string; hubPath: string; mocPath: string } {\n  const root = ensureStore()\n  const rows = readEntries()\n  const key = entryObjectKey(entry)\n  const siblings = rows.filter((e) => entryObjectKey(e) === key)\n  const noteFile = objectFileName([...siblings, entry], rows)\n  const stored: ReadingEntry = { ...entry, noteFile }\n  atomicWrite(libraryFile(root), [...rows, stored].map((e) => JSON.stringify(e)).join('\\n') + '\\n')\n  const notePath = writeObjectCard(key)\n  const hubPath = refreshHub(stored.subject.repo)\n  const mocPath = refreshMOC()\n  return { notePath, hubPath, mocPath }\n```\n\n</details>\n\n**依据 6 · 源码核查**：[src/store.ts:198-225](https://github.com/1014029855/dsh-codevault/blob/14dcb88d65f7d9fcf30b3e6adac5764f705ffae9/src/store.ts#L198-L225)\n\nexpand更新旧条目。\n\n<details>\n<summary>查看原文（28行）</summary>\n\n```text\nexport function expandEntry(\n  id: string,\n  patch: { context?: string; bodyMarkdown: string; takeaway: readonly string[]; revisit?: readonly unknown[] },\n): ReadingEntry {\n  const root = ensureStore()\n  const file = libraryFile(root)\n  if (!existsSync(file)) throw new Error('档案为空，找不到要升级的记录')\n  const rows = readEntries()\n  const target = rows.find((e) => e.id === id)\n  if (!target) throw new Error(`档案里没有 id=${id} 的记录`)\n  if (target.bodyMarkdown) throw new Error(`id=${id} 已经是深读笔记（有正文），如需改写请删后重建`)\n\n  const body = patch.bodyMarkdown.trim()\n  if ([...body].length < MIN_NOTE_BODY) {\n    throw new Error(`bodyMarkdown 需至少 ${MIN_NOTE_BODY} 字（当前 ${[...body].length}）——请按阅读框架写足再升级`)\n  }\n  const takeaway = patch.takeaway.map((t) => String(t).trim()).filter((t) => t.length > 0)\n  if (takeaway.length === 0) throw new Error('升级为深读笔记至少要有 1 条 takeaway')\n\n  const context = patch.context?.trim() || target.context\n  const updated: ReadingEntry = {\n    ...target,\n    kind: 'note',\n    ...(context ? { context } : {}),\n    bodyMarkdown: body,\n    takeaway,\n    revisit: patch.revisit !== undefined ? normalizeRevisit(patch.revisit) : (target.revisit ?? []),\n    updatedAt: new Date().toISOString(),\n```\n\n</details>\n\n**依据 7 · 源码核查**：[src/store.ts:259-278](https://github.com/1014029855/dsh-codevault/blob/14dcb88d65f7d9fcf30b3e6adac5764f705ffae9/src/store.ts#L259-L278)\n\n物理删除行与卡片。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\nexport function deleteEntry(id: string): boolean {\n  const root = dataRoot()\n  const file = libraryFile(root)\n  if (!existsSync(file)) return false\n  const before = readEntries()\n  const removed = before.find((e) => e.id === id)\n  if (!removed) return false\n  const after = before.filter((e) => e.id !== id)\n  atomicWrite(file, after.map((e) => JSON.stringify(e)).join('\\n') + (after.length > 0 ? '\\n' : ''))\n  const key = entryObjectKey(removed)\n  const survivors = after.filter((e) => entryObjectKey(e) === key)\n  const noteFile = removed.noteFile\n  if (survivors.length > 0) {\n    writeObjectCard(key)\n  } else if (noteFile) {\n    const card = join(root, 'notes', `${noteFile}.md`)\n    if (existsSync(card)) rmSync(card, { force: true })\n  }\n  refreshHub(removed.subject.repo)\n  refreshMOC()\n```\n\n</details>\n\n#### 缺口\n\n- 链接逃逸/循环、巨型vault及多实例同写未做运行复现。\n  **影响：**不能把词法守卫/原子rename称物理隔离或并发无损。\n  **进一步探讨：**可先用假笔记、链接环和独占临时目录夹具核查，不接触真实vault；对同写和坏行保留恢复副本。\n- 源码ref与笔记依据没有自动固定/校验完整链。\n  **影响：**同卡可汇总不同版本认识，不能把历史卡片当同一版本事实。\n  **进一步探讨：**可核对每条subject.ref和引用原材料，优先固定commit与路径再解释认识变化。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 依赖、退出和三阶段成本效果怎么判断？\n\n**研究主题：**依赖、兼容与流程、效果与总成本\n\n#### 完整回答\n\npackage0.3.0要求Node>=22及DSH内部peer；直接使用源码或安装只改变包，不改变数据授权。dataDir默认DSH_HOME下路径、可改Obsidian子目录，vaultDir另行可选，宜把单独归档与广泛旧笔记访问分开。启动可能迁移卡片，先备份而非认为启动完全只读。\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| Node>=22、DSH tools/commands/skills及peer | 主链必需 | 工具/命令/技能接线 | 不等普通Obsidian插件 |\n| 可写dataDir | 归档必需 | JSONL及派生Markdown | 启动还有迁移，需备份与单写者 |\n| Obsidian软件 | 可选 | 打开标准Markdown/JSONL | 未装也能归档 |\n| vaultDir | 旧笔记检索可选 | 让模型读本地笔记片段 | 不配置即不开放，配置前排除敏感/链接 |\n| 模型与源码材料 | 自动撰写时 | 填充阅读认识 | 插件存储不自动验证内容正确 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 准备 | 维护者固定包，备份独占dataDir | 一个进程写，默认不配置整vault |\n| 加载 | 安装web profile并核对目录/迁移日志 | 已加载不等历史/投影无损 |\n| 记录 | 读者核对repo/ref/path/symbol和内容再保存 | 卡片和JSONL条目对应，模型说法有依据 |\n| 退出/恢复 | 停用包，单独备份/清理档案与vault授权 | 卸载不删除数据，卡片从保留条目重建 |\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | Node/DSH和档案空间，金额未知 | 定目录、备份、对象命名/词表与迁移 | Obsidian可选 |\n| 持续使用 | 全JSONL读改写、多Markdown重建及可选全vault同步扫描 | 审核模型认识、标签与链接 | 返回截断不等读取量有上限 |\n| 失败恢复 | JSONL/派生卡重建与备份恢复 | 判断已提交条目和卡片/Hubs部分完成 | 多进程最后写者赢，坏行跳过有丢记录风险 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 知识归并 | 同repo/path/symbol汇总为卡片 | 长期记忆/检索实际改善 |\n| 回放 | 从保留事件子集重建 | expand/delete前认识能否保留 |\n| 旧笔记关联 | 本地搜索/推荐/链接工具 | 相关性、隐私边界与大vault负担 |\n\n比较应是同一阅读对象、过一段时间正确找到并解释认识的任务，计模型撰写/审查、检索和故障恢复，不按卡片数承诺学会。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:50-74](https://github.com/1014029855/dsh-codevault/blob/14dcb88d65f7d9fcf30b3e6adac5764f705ffae9/package.json#L50-L74)\n\n引擎与DSH peer。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n    \"node\": \">=22.0.0\"\n  },\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    }\n  },\n  \"peerDependencies\": {\n    \"@deepseek-ai/cordis\": \"^4.0.2\",\n    \"@deepseek-ai/dsh-commands\": \"^0.1.2-rc.1\",\n    \"@deepseek-ai/dsh-home-paths\": \"^0.1.2-rc.1\",\n    \"@deepseek-ai/dsh-skill\": \"^0.1.2-rc.1\",\n    \"@deepseek-ai/dsh-tools\": \"^0.1.2-rc.1\",\n    \"@deepseek-ai/schemastery\": \"^3.18.2\"\n  },\n  \"devDependencies\": {\n    \"@deepseek-ai/cordis\": \"4.0.2\",\n    \"@deepseek-ai/dsh-commands\": \"0.1.2-rc.1\",\n    \"@deepseek-ai/dsh-home-paths\": \"0.1.2-rc.1\",\n    \"@deepseek-ai/dsh-skill\": \"0.1.2-rc.1\",\n    \"@deepseek-ai/dsh-tools\": \"0.1.2-rc.1\",\n    \"@deepseek-ai/schemastery\": \"3.18.2\",\n    \"@types/node\": \"^22.10.0\",\n    \"typescript\": \"^5.6.3\"\n  }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/index.ts:62-78](https://github.com/1014029855/dsh-codevault/blob/14dcb88d65f7d9fcf30b3e6adac5764f705ffae9/src/index.ts#L62-L78)\n\n目录配置与启动迁移。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n  const root = dataRoot()\n  // Vault access is read-only; archive root feeds in-archive separation.\n  configureVaultRoot(config.vaultDir, root)\n  ensureStore()\n  // One-time migration of pre-title archives (idempotent; 0 when nothing to do).\n  const migrated = migrateLegacyNoteFiles()\n  for (const tool of TOOLS) {\n    ctx.tools.register(tool)\n  }\n  ctx.skills.register(CODE_READING_SKILL)\n  registerCodevaultCommand(ctx)\n  console.log(\n    `[${name}] loaded: skill=code-reading tools=${TOOLS.map((t) => t.name).join(',')} command=/codevault dataDir=${root}` +\n      (vaultRoot() ? ` vaultDir=${vaultRoot()}` : ' (vault 检索未启用)') +\n      (migrated > 0 ? ` migratedCards=${migrated}` : ''),\n  )\n}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/vault.ts:176-190](https://github.com/1014029855/dsh-codevault/blob/14dcb88d65f7d9fcf30b3e6adac5764f705ffae9/src/vault.ts#L176-L190)\n\n搜索逐笔记原生全文读取。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n  const scope = params.scope ?? 'user'\n  const hits: VaultNoteHit[] = []\n  for (const rel of listNotes()) {\n    if (folderNeedle && !rel.startsWith(folderNeedle.replace(/\\\\/g, '/')) && !rel.startsWith(folderNeedle)) continue\n    const inArchive = isArchiveNote(rel)\n    if (scope === 'user' && inArchive) continue\n    if (scope === 'archive' && !inArchive) continue\n    const full = resolveVaultPath(rel)\n    let text: string\n    try {\n      text = readFileSync(full, 'utf8')\n    } catch {\n      continue\n    }\n    const { fm, body } = parseFrontMatter(text)\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/store.ts:163-174](https://github.com/1014029855/dsh-codevault/blob/14dcb88d65f7d9fcf30b3e6adac5764f705ffae9/src/store.ts#L163-L174)\n\n全量读改写与派生多文件成本。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\nexport function commitEntry(entry: ReadingEntry): { notePath: string; hubPath: string; mocPath: string } {\n  const root = ensureStore()\n  const rows = readEntries()\n  const key = entryObjectKey(entry)\n  const siblings = rows.filter((e) => entryObjectKey(e) === key)\n  const noteFile = objectFileName([...siblings, entry], rows)\n  const stored: ReadingEntry = { ...entry, noteFile }\n  atomicWrite(libraryFile(root), [...rows, stored].map((e) => JSON.stringify(e)).join('\\n') + '\\n')\n  const notePath = writeObjectCard(key)\n  const hubPath = refreshHub(stored.subject.repo)\n  const mocPath = refreshMOC()\n  return { notePath, hubPath, mocPath }\n```\n\n</details>\n\n#### 缺口\n\n- 没有长期回访、查找正确率、大档案/大vault资源及恢复人时对照。\n  **影响：**不能量化提高记忆或降低阅读总成本。\n  **进一步探讨：**可对同对象笔记比较普通Markdown与对象卡方案，统计隔周回忆/检索、错误认识修订和完整维护人时。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 哪些工程可复用，可追溯修订假设如何验证？\n\n**研究主题：**工程质量与复用、新假设与验证\n\n#### 完整回答\n\n可复用的是subject归一化/稳定对象key、固定卡名、原始条目与派生卡分层、UUID暂存加rename和以现存条目纯重建视图。ref不进key让对象随版本成长，也意味着需在每条认识保留版本；模块级配置根在同一进程多上下文时共享，应视为部署约束而非天然profile隔离。删除confirm布尔是调用约定，不能独立证明读者已同意。\n\n可探讨未验证的“可追溯修订日志与最小vault入口”。expand/link/delete写新修订或tombstone而不物理改旧行，记录固定source ref/文件与变化理由；vault访问realpath并拒链接逃逸/循环、设扫描预算，必要时只索引明确选定文件。相对当前物理改行与广泛同步扫描，目标是可解释历史变化并限制私有内容。代价是旧格式迁移、日志增长、擦除需求与检索索引维护。可用修订/删除后回放、坏行、并发写、链接环及大笔记夹具，比较历史完整性、越界读取和恢复人时；若不能同时满足删除隐私与审计需求，应明确取舍而非宣称永远append-only。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/domain.ts:220-232](https://github.com/1014029855/dsh-codevault/blob/14dcb88d65f7d9fcf30b3e6adac5764f705ffae9/src/domain.ts#L220-L232)\n\n稳定对象key。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n * Canonical grouping key of a reading OBJECT — the deepest coordinate given:\n * `symbol` (repo+path+symbol) > `path` (repo+path) > `repo`. Events that share\n * the same key are the same object and project onto ONE card (object card).\n * The key is derived ONLY from the deepest granularity actually provided, so\n * \"same file re-read\" and \"same symbol re-read\" each stay one card.\n */\nexport function objectKey(s: ReadingSubject): string {\n  const repo = normalizeRepo(s.repo)\n  const path = s.path?.trim()\n  const symbol = s.symbol?.trim()\n  if (symbol) return `S\\u0000${repo}\\u0000${path ?? ''}\\u0000${symbol}`\n  if (path) return `P\\u0000${repo}\\u0000${path}`\n  return `R\\u0000${repo}`\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/store.ts:89-97](https://github.com/1014029855/dsh-codevault/blob/14dcb88d65f7d9fcf30b3e6adac5764f705ffae9/src/store.ts#L89-L97)\n\nUUID暂存rename。\n\n```text\n/** Atomically replace `file` with `content` (same-dir temp + rename). */\nfunction atomicWrite(file: string, content: string): void {\n  const tmp = `${file}.tmp-${randomUUID()}`\n  try {\n    writeFileSync(tmp, content, 'utf8')\n    renameSync(tmp, file)\n  } finally {\n    if (existsSync(tmp)) rmSync(tmp, { force: true })\n  }\n```\n\n**依据 3 · 源码核查**：[src/vault.ts:21-36](https://github.com/1014029855/dsh-codevault/blob/14dcb88d65f7d9fcf30b3e6adac5764f705ffae9/src/vault.ts#L21-L36)\n\n模块级root配置。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n/** Vault root configured by the plugin Config (`vaultDir`). Empty = unset. */\nlet configuredVault: string | undefined\n/**\n * Archive root (the plugin's own dataDir). When it lives INSIDE the vault,\n * notes under it are \"the archive\" (plugin-written cards/hub/MOC) and are\n * separated from the user's own notes in search results.\n */\nlet configuredArchive: string | undefined\n\n/**\n * Apply the plugin Config's vaultDir (+ the archive dataDir for separation).\n * Either root may be empty to disable the respective feature.\n */\nexport function configureVaultRoot(vaultDir: string | undefined, archiveRoot?: string): void {\n  configuredVault = vaultDir?.trim() ? resolve(vaultDir.trim()) : undefined\n  configuredArchive = archiveRoot?.trim() ? resolve(archiveRoot.trim()) : undefined\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/tools.ts:1107-1114](https://github.com/1014029855/dsh-codevault/blob/14dcb88d65f7d9fcf30b3e6adac5764f705ffae9/src/tools.ts#L1107-L1114)\n\n删除依赖confirm参数。\n\n```text\n    if (args.confirm !== true) {\n      throw new Error('删除不可恢复：请先向用户确认，再以 confirm=true 调用')\n    }\n    const before = readEntries().find((e) => e.id === args.id)\n    if (!before) throw new Error(`档案里没有 id=${args.id} 的记录`)\n    const key = entryObjectKey(before)\n    const cardPath = noteFilePath(before)\n    const removed = deleteEntry(args.id)\n```\n\n**依据 5 · 源码核查**：[src/store.ts:259-278](https://github.com/1014029855/dsh-codevault/blob/14dcb88d65f7d9fcf30b3e6adac5764f705ffae9/src/store.ts#L259-L278)\n\n修订假设的物理删除起点。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\nexport function deleteEntry(id: string): boolean {\n  const root = dataRoot()\n  const file = libraryFile(root)\n  if (!existsSync(file)) return false\n  const before = readEntries()\n  const removed = before.find((e) => e.id === id)\n  if (!removed) return false\n  const after = before.filter((e) => e.id !== id)\n  atomicWrite(file, after.map((e) => JSON.stringify(e)).join('\\n') + (after.length > 0 ? '\\n' : ''))\n  const key = entryObjectKey(removed)\n  const survivors = after.filter((e) => entryObjectKey(e) === key)\n  const noteFile = removed.noteFile\n  if (survivors.length > 0) {\n    writeObjectCard(key)\n  } else if (noteFile) {\n    const card = join(root, 'notes', `${noteFile}.md`)\n    if (existsSync(card)) rmSync(card, { force: true })\n  }\n  refreshHub(removed.subject.repo)\n  refreshMOC()\n```\n\n</details>\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 谁适合采用，什么情况停止？\n\n**研究主题：**采用判断\n\n#### 完整回答\n\n推荐trial，限单人单进程、已备份的独立dataDir，先保持vaultDir未配置。对象归档和标准文本格式有实用价值，重点在读者自己理解与后续回访，不把模型生成笔记当审过源码的事实。广泛接入真实Obsidian vault应先修物理路径/扫描边界，再研究是否值得启用。\n\n继续探讨可先用假笔记查看捕获、展开、删除后的JSONL/卡片和历史，核对版本坐标，再研究链接/循环及多文件失败。遇到未预期vault内容被读取、版本认识混淆、坏行被静默遗漏、多个写者覆盖或派生视图与事件不一致，应停止写入并先保存备份盘点。Q02历史边界与Q03完整任务效果影响扩大采用，本轮不写真实档案。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/vault.ts:34-36](https://github.com/1014029855/dsh-codevault/blob/14dcb88d65f7d9fcf30b3e6adac5764f705ffae9/src/vault.ts#L34-L36)\n\nvault可保持未配置。\n\n```text\nexport function configureVaultRoot(vaultDir: string | undefined, archiveRoot?: string): void {\n  configuredVault = vaultDir?.trim() ? resolve(vaultDir.trim()) : undefined\n  configuredArchive = archiveRoot?.trim() ? resolve(archiveRoot.trim()) : undefined\n```\n\n**依据 2 · 源码核查**：[src/store.ts:24-25](https://github.com/1014029855/dsh-codevault/blob/14dcb88d65f7d9fcf30b3e6adac5764f705ffae9/src/store.ts#L24-L25)\n\n单写者约束。\n\n```text\n * Concurrency (V1 note still holds): all I/O synchronous, atomic tmp+rename;\n * cross-process writers: last writer wins (documented, accepted).\n```\n\n**依据 3 · 源码核查**：[src/store.ts:163-174](https://github.com/1014029855/dsh-codevault/blob/14dcb88d65f7d9fcf30b3e6adac5764f705ffae9/src/store.ts#L163-L174)\n\n多文件更新链。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\nexport function commitEntry(entry: ReadingEntry): { notePath: string; hubPath: string; mocPath: string } {\n  const root = ensureStore()\n  const rows = readEntries()\n  const key = entryObjectKey(entry)\n  const siblings = rows.filter((e) => entryObjectKey(e) === key)\n  const noteFile = objectFileName([...siblings, entry], rows)\n  const stored: ReadingEntry = { ...entry, noteFile }\n  atomicWrite(libraryFile(root), [...rows, stored].map((e) => JSON.stringify(e)).join('\\n') + '\\n')\n  const notePath = writeObjectCard(key)\n  const hubPath = refreshHub(stored.subject.repo)\n  const mocPath = refreshMOC()\n  return { notePath, hubPath, mocPath }\n```\n\n</details>\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：8ec2a3fcb0cd930465b5988484856c0713c74edf82b52bb54cae9ef7ade8b172。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 631 | — | — | 9752 |\n| .js | source | 7 | 2634 | 2320 | 316 | — |\n| .mjs | source | 1 | 390 | 335 | 27 | — |\n| .ts | source | 7 | 3048 | 2463 | 394 | — |\n\n排除 7 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 对象卡 | 合并重复阅读认识 | subject坐标/依据需核，ref可选 |\n| 历史/展开 | 回放与升级快记 | 改旧行/删除不可还原原认识 |\n| vault检索 | 关联旧笔记 | 默认关闭，词法边界不挡链接 |\n| 标准档案 | JSONL/Markdown可迁移 | 单写者、备份与多视图一致性责任 |\n\n## 工程亮点\n\n可复用的是subject归一化/稳定对象key、固定卡名、原始条目与派生卡分层、UUID暂存加rename和以现存条目纯重建视图。ref不进key让对象随版本成长，也意味着需在每条认识保留版本；模块级配置根在同一进程多上下文时共享，应视为部署约束而非天然profile隔离。删除confirm布尔是调用约定，不能独立证明读者已同意。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、src/index.ts、src/domain.ts、src/store.ts、src/vault.ts、package.json、src/tools.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定index/domain/store关键捕获/展开/删除和vault搜索/读取、删除工具门槛；不运行迁移/工具，不读取真实vault，不全面审计全部Markdown渲染。\n- 下一步：进一步探讨可用假档案研究展开/删除回放、坏行、同写、链接环和巨型笔记，比较可恢复性与检索质量。\n",
         "metadata": {
             "repository": "1014029855/dsh-codevault",
             "repository_id": 1359423472,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T05:49:06.961Z",
+            "window_start": "2026-09-22T05:49:06.961Z",
             "stars": 3,
             "pushed_at": "2026-09-16T05:38:49Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1014029855%2Fdsh-codevault%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640E:3FDBB6:14F36B:226988:6AD848FF and timestamp 2026-10-21 05:09:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1014029855%2Fdsh-codevault%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641B:E4386:14E4E0:225142:6AD848FF and timestamp 2026-10-21 05:09:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1014029855%2Fdsh-codevault%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641C:1CA4C8:148B9E:2203E0:6AD848FF and timestamp 2026-10-21 05:09:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1014029855%2Fdsh-codevault%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6418:1DEEF7:1483F3:21FB3C:6AD848FF and timestamp 2026-10-21 05:09:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1014029855%2Fdsh-codevault%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641D:1F2B1B:1469BF:21D5C1:6AD848FF and timestamp 2026-10-21 05:09:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "dsh-codevault",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T05:49:18.236Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": null,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-codevault",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-codevault",
                 "error": "HTTP 404",
                 "publication": {
                     "first_published_at": null,
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T05:49:18.236Z",
                     "source_url": "https://registry.npmjs.org/dsh-codevault",
                     "error": "HTTP 404",
                     "latest_version": null,
                     "latest_published_at": null,
                     "latest_error": "HTTP 404"
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9",
-                "current_revision": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {

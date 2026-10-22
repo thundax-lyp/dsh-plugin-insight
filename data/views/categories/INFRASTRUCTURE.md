@@ -21,7 +21,6 @@
 | [dsh-armory](#plugin-1413052822-root) | 在 DSH 中管理 MCP、技能、专家、插件市场及工具账本，支持项目作用域与授权引导。 | 已有多个MCP时在独立项目试用导入和作用域隔离，核对实际工具与来源登记；OAuth与市场安装新增路径需单独验收，不依据零调用账本批量停用工具。 |
 | [dsh-capability-index](#plugin-1335594781-root) | 扫描已启用工具，结合规则与语义召回向Agent上下文提示可能适用的插件能力。 | 更适合作为工具发现设计样本阅读。 |
 | [dsh-compaction-route](#plugin-1391040578-root) | 为会话压缩请求指定主模型和备用模型，在失败时切换摘要路由。 | 已遇到压缩路由失败时可试。 |
-| [dsh-feed](#plugin-1336585522-root) | 聚合GitHub topic与npm插件条目为本地JSON索引，提供搜索、统计、CLI和实验性MCP。 | 适合把它作为候选索引接口试用。 |
 | [dsh-gov](#plugin-1336647931-root) | 提供工具调用策略、JSONL审计及按Agent记录的token配额提示。 | 可在独立Profile试验工具deny/ask与审计。 |
 | [dsh-insight](#plugin-1336649545-root) | 整合插件需求匹配、环境配方、健康评分、静态扫描与安装结论工具。 | 当前只适合作为离线目录与扫描线索。 |
 | [dsh-mcp-tunnel](#plugin-1344713826-root) | 生成并管理MCP代理与Cloudflare隧道容器栈，输出待确认的客户端配置片段。 | 只在隔离示例端点试。 |
@@ -33,7 +32,6 @@
 | [dsh-opencode-zen-plugin](#plugin-1402771540-root) | 把OpenCode Console模型目录与多种流式协议接入DSH模型选择和配置界面。 | 适合已有Console账号的用户先对固定模型验证文本、工具和usage。 |
 | [dsh-permissions](#plugin-1335349535-root) | 为DSH工具调用配置hard、deny、ask、allow权限规则，提供工作区作用域和可视化编辑。 | 适合将它作为宿主沙箱之上的附加规则层先试用。 |
 | [dsh-plugin-adapter](#plugin-1374274469-root) | 把OpenCode Zen模型接入DSH模型目录，提供原生流式适配与可选网络路由管理。 | 适合非关键试验，先用原生adapter模式验证小任务，保留可用供应商回退；不要把免费通道当生产容量保证。 |
-| [dsh-plugin-audit](#plugin-1336223158-root) | 同步插件目录与元数据，生成健康评分、静态扫描报告和榜单。 | 适合作为候选体检面板。 |
 | [dsh-plugin-balance](#plugin-1340280087-root) | 在DSH输入框附近显示多供应商余额/套餐用量，并持久统计会话token及估算费用。 | 先使用固定可信端点，并核对自定义目标与凭据绑定。 |
 | [dsh-plugin-loopback-trust](#plugin-1394489199-root) | 为反向代理域名访问的DSH网页恢复宿主设置持久化。 | 仅适合已经配置访问控制的自管反代管理员核查后试用。 |
 | [dsh-plugin-mall](#plugin-1335098475-root) | 在 DSH 中搜索 GitHub 插件并提供安装、更新、冲突预检与启动恢复。 | 适合维护多个插件的DSH环境；先在隔离profile验证冲突提示和回滚，再用于日常安装，重要环境保留独立备份。 |
@@ -241,20 +239,6 @@
 
 > **建议**：待验证假设：主备选择同时核对请求估算与目标模型窗口，可降低盲目重试。用不同窗口和限流故障矩阵比较有效摘要率、请求次数与费用；若估算不准导致误跳过健康路由，则保持显式选择。
 
-<a id="plugin-1336585522-root"></a>
-
-## [dsh-feed](../../plugins/863683348--dsh-feed/INSIGHT.md)
-
-[![npm 30d 97](https://img.shields.io/static/v1?label=npm+30d&message=97&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-feed) [![最新发布 2026-08-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-17&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-feed)
-
-> **用途**：适合要在DSH之外复用插件发现数据的工具开发者；交付物是可检查的本地JSON索引。
-
-> **亮点**：作者定位开放聚合底座；实际增量是在宿主工具、CLI与极简MCP之间共享同一JSON索引和纯查询逻辑，降低下游重复抓取成本。相对人工浏览两个目录，能复用归一化数据；这是数据接入与接口整合，不是全生态语义理解或插件可用性验证。
-
-> **思考**：默认GitHub只读两页、npm只取100项，npm失败被catch为[]；合并键使用GitHub owner/repo与npm包名，通常不是同一身份，无法保证跨源去重。结果count和sources只表示此次得到条目，不能当完整生态覆盖或可安装数量。npm缺Star还被置0，混淆未知与真实0。
-
-> **建议**：待验证假设：为每源加入覆盖范围、失败状态及仓库数字ID—包名映射，可让下游区分完整索引与局部结果。用同仓库不同包名、超过两页和npm失效输入，比较重复率与缺失报告；若身份来源不足，应保留未关联而不猜。
-
 <a id="plugin-1336647931-root"></a>
 
 ## [dsh-gov](../../plugins/863683348--dsh-gov/INSIGHT.md)
@@ -408,20 +392,6 @@
 > **思考**：原生适配减少单独进程与UI切换；上游匿名接口变化可能让全部便利失效，需与直接使用原CLI比较维护负担。
 
 > **建议**：适合非关键试验，先用原生adapter模式验证小任务，保留可用供应商回退；不要把免费通道当生产容量保证。
-
-<a id="plugin-1336223158-root"></a>
-
-## [dsh-plugin-audit](../../plugins/863683348--dsh-plugin-audit/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/863683348/dsh-plugin-audit) [![npm 30d 821](https://img.shields.io/static/v1?label=npm+30d&message=821&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-audit) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-audit)
-
-> **用途**：适合生态维护者筛选需深入检查的仓库，交付物是本地目录和带信号的初筛报告。
-
-> **亮点**：作者提出生态体检及高危否决；实际增量是把有界同步、历史Star信号、静态发现和本地榜单连起来，便于维护者优先排查。相对只看Star，增加安全线索；高分仍主要是维护和包装代理信号，不是插件运行质量。
-
-> **思考**：guessPackageName按仓库短名探测npm，可能把同名其他作者包绑定给仓库。scanner读取HEAD树后再取contents默认分支，没有固定commit绑定，多请求间可能混版本；有限入口抽样不能代表全仓库。评分中的README长度/推送/Star不能证明安全或采用，扫描失败为空材料不能等同零问题。
-
-> **建议**：待验证假设：先核实包仓身份并把所有被扫文件固定到同一SHA，再让报告显式显示未覆盖项，可减少误归因和虚假安全感。用同名异仓npm、移动HEAD和隐藏深层脚本样本比较误关联与漏报；无完整覆盖时只输出初筛状态。
 
 <a id="plugin-1340280087-root"></a>
 

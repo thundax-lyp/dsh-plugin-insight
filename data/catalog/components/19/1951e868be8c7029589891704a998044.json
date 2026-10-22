@@ -24,36 +24,76 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-20-07-github-1358313559-root-directory-0",
+                    "id": "2026-10-22-02-github-1358313559-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
-                    "retrieved_at": "2026-10-20T10:01:53.795Z",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-22T09:41:04.224Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-20-07-github-1358313559-root-author",
+                    "id": "2026-10-22-02-github-1358313559-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/173787247/dsh-wsl-obscura/blob/f1dfad47dd78722babc61633805caade6557dc68/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-obscura",
+                            "commit": "f1dfad47dd78722babc61633805caade6557dc68",
+                            "path": "README.md",
+                            "content_sha256": "3c7fc111b985b33b9b6d5a258613d5b364bf73bdb289c6c47790fca439894836"
+                        }
+                    ],
                     "revision": "f1dfad47dd78722babc61633805caade6557dc68",
-                    "captured_at": "2026-10-20T10:01:53.795Z",
-                    "summary": "封装Obscura浏览器CLI，提供状态、网页抓取与MCP接入提示。",
-                    "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-obscura/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:41:04.224Z",
+                    "summary": "从 WSL 调用 Obscura 无头浏览器的 status/fetch 工具，并提供 MCP 接线提示。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-obscura/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-20-07-github-1358313559-root-source",
+                    "id": "2026-10-22-02-github-1358313559-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/173787247/dsh-wsl-obscura/blob/f1dfad47dd78722babc61633805caade6557dc68/index.js",
+                    "url": "https://github.com/173787247/dsh-wsl-obscura/blob/f1dfad47dd78722babc61633805caade6557dc68/README.zh.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-obscura",
+                            "commit": "f1dfad47dd78722babc61633805caade6557dc68",
+                            "path": "README.zh.md",
+                            "content_sha256": "73de7524e34d892fa4e57761d073edc26a2f36390d12df170e2d9c4c0b94fa6f"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-obscura",
+                            "commit": "f1dfad47dd78722babc61633805caade6557dc68",
+                            "path": "index.js",
+                            "content_sha256": "1af6ff2ba3136691141e640a01e4a63a01e170ca4fc57561b878194eb7b30276"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-obscura",
+                            "commit": "f1dfad47dd78722babc61633805caade6557dc68",
+                            "path": "lib/obscura.js",
+                            "content_sha256": "fe4dd59cd17409dbf609de555b8719146bfdfadb94b4c8ce16674624a498a9cc"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-obscura",
+                            "commit": "f1dfad47dd78722babc61633805caade6557dc68",
+                            "path": "lib/wsl-host.js",
+                            "content_sha256": "c3213de3af83f68b4b12fe977890b170958229db6278b39115e8fb097d9d8801"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-obscura",
+                            "commit": "f1dfad47dd78722babc61633805caade6557dc68",
+                            "path": "package.json",
+                            "content_sha256": "c89dd9f2565e677ad2dc5050c5328ff9c206ad63fe33db6cb16b499738e2ffa4"
+                        }
+                    ],
                     "revision": "f1dfad47dd78722babc61633805caade6557dc68",
-                    "captured_at": "2026-10-20T10:01:53.795Z",
-                    "summary": "核查 index.js、lib/obscura.js；入口定位Linux或Windows二进制，构造fetch参数，可配置dump、eval、截图及私网开关，执行后截断输出。",
-                    "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-obscura/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:41:04.224Z",
+                    "summary": "核查 README.zh.md、index.js、lib/obscura.js、lib/wsl-host.js、package.json；解析本地二进制路径，校验 http(s) 与 dump 参数，execFile 运行 fetch 后截断结果。详见[Q02](#research-q02)。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-obscura/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "抽读入口和Obscura参数执行，未启动浏览器或核实外部二进制实现。 固定checkout的注册候选与关键主张定向抽读；未逐行完整审阅全部源码、测试、依赖及外部参照，未运行目标代码。评分仅针对文中明确的CLI/API/人工流程参照；跨场景迁移为解释性判断。",
+                        "只读核固定提交 README.zh.md、index.js、lib/obscura.js、lib/wsl-host.js；不运行目标插件或 Obscura。旧 META 复用。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +104,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "网页需要浏览器处理而普通HTTP抓取不足时，在DSH中调用已有Obscura。",
+                    "text": "WSL 环境下定点抓取或渲染网页正文，复杂交互转原生 MCP。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1358313559-root-source"
+                        "2026-10-22-02-github-1358313559-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +115,16 @@
                             "fingerprint": "f1dfad47dd78722babc61633805caade6557dc68"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:53.795Z",
+                    "reviewed_at": "2026-10-22T09:41:04.224Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "入口定位Linux或Windows二进制，构造fetch参数，可配置dump、eval、截图及私网开关，执行后截断输出。",
+                    "text": "解析本地二进制路径，校验 http(s) 与 dump 参数，execFile 运行 fetch 后截断结果。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1358313559-root-source"
+                        "2026-10-22-02-github-1358313559-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +133,16 @@
                             "fingerprint": "f1dfad47dd78722babc61633805caade6557dc68"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:53.795Z",
+                    "reviewed_at": "2026-10-22T09:41:04.224Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "抽读入口和Obscura参数执行，未启动浏览器或核实外部二进制实现。 固定checkout的注册候选与关键主张定向抽读；未逐行完整审阅全部源码、测试、依赖及外部参照，未运行目标代码。评分仅针对文中明确的CLI/API/人工流程参照；跨场景迁移为解释性判断。",
+                    "text": "只读核固定提交 README.zh.md、index.js、lib/obscura.js、lib/wsl-host.js；不运行目标插件或 Obscura。旧 META 复用。",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1358313559-root-source"
+                        "2026-10-22-02-github-1358313559-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +151,16 @@
                             "fingerprint": "f1dfad47dd78722babc61633805caade6557dc68"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:53.795Z",
+                    "reviewed_at": "2026-10-22T09:41:04.224Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "固定版本包清单与作者说明已核对；需要Obscura二进制及浏览器运行环境，跨系统路径和网络策略影响执行。",
+                    "text": "套件可选项，不在 daily 默认 install.sh；作者提供 dsh plugin 安装指引，目标分发未核。",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1358313559-root-source"
+                        "2026-10-22-02-github-1358313559-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +169,16 @@
                             "fingerprint": "f1dfad47dd78722babc61633805caade6557dc68"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:53.795Z",
+                    "reviewed_at": "2026-10-22T09:41:04.224Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "浏览器启动、渲染与截图存储成本，失败重试及页面核对人工另计，无效能实测。",
+                    "text": "#### 成本\n\n| 阶段 | 本插件动作 | 现金/资源 | 人工/时间 | 未知与失败恢复 |\n| --- | --- | --- | --- | --- |\n| 首次 | 在 WSL 准备 Obscura 可执行文件及浏览器依赖，设 binaryPath | 构建/下载磁盘与 CPU；许可/网络现金成本未知 | 架构/interop/版本校验工时未知 | status 失败需重建或修路径 |\n| 持续 | 每次启动 CLI 浏览器、页面加载、dump/eval | CPU/内存/站点带宽；每次费用未知 | 核抓取结果与许可、处理超时，工时未知 | 站点成功率和启动耗时未知 |\n| 失败恢复 | 处理私网策略漂移、大输出 maxBuffer/导航超时 | 重抓与浏览器进程资源，金额未知 | 锁定/回退二进制、审请求目的地、改采集流程，工时未知 | DNS/重定向防线依外部版本 |",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1358313559-root-source"
+                        "2026-10-22-02-github-1358313559-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +187,16 @@
                             "fingerprint": "f1dfad47dd78722babc61633805caade6557dc68"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:53.795Z",
+                    "reviewed_at": "2026-10-22T09:41:04.224Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "从无eval、无私网访问的小页面开始，核对正文和截断，不把MCP提示当已接通服务。",
+                    "text": "先 status 后公开 URL 样本 fetch，私网防线按 Obscura 版本独立验；交互用 MCP。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1358313559-root-source"
+                        "2026-10-22-02-github-1358313559-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +205,16 @@
                             "fingerprint": "f1dfad47dd78722babc61633805caade6557dc68"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:53.795Z",
+                    "reviewed_at": "2026-10-22T09:41:04.224Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "把浏览器CLI与WSL路径接通，降低二进制查找和输出处理负担；浏览器能力来自Obscura。 允许eval、截图和私网开关时副作用与数据范围扩大；CLI存在不证明浏览器依赖安装齐全，抓到文本也不等于正文完整。",
+                    "text": "#### 效果\n\n| 效果项 | 源码支持 | 未证实 |\n| --- | --- | --- |\n| 抓取 | CLI dump/eval | 站点成功率 |\n| 安全 | http(s) 过滤 | DNS/重定向私网保护 |\n| 交互 | MCP 接线提示 | MCP 实际连接 |",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1358313559-root-source"
+                        "2026-10-22-02-github-1358313559-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +223,16 @@
                             "fingerprint": "f1dfad47dd78722babc61633805caade6557dc68"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:53.795Z",
+                    "reviewed_at": "2026-10-22T09:41:04.224Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "二进制定位、参数构造与执行分层有复用价值，特殊选项需要独立解释权限。",
+                    "text": "argv 运行避免 shell 拼接、双层超时与输出限制；安全和可用性仍依赖外部二进制。详见[Q02](#research-q02)至[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1358313559-root-source"
+                        "2026-10-22-02-github-1358313559-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,15 +241,69 @@
                             "fingerprint": "f1dfad47dd78722babc61633805caade6557dc68"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:53.795Z",
+                    "reviewed_at": "2026-10-22T09:41:04.224Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "将无头抓取接到 DSH Agent 工具面并明确 MCP/CDP 升级路径。详见[Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1358313559-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1358313559:root",
+                            "area": "code",
+                            "fingerprint": "f1dfad47dd78722babc61633805caade6557dc68"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:41:04.224Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "isSafeHttpUrl 仅限协议，不能证明 SSRF 阻断；CLI 与外层超时/缓冲区可能影响结果。详见[Q03](#research-q03)和[Q04](#research-q04)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1358313559-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1358313559:root",
+                            "area": "code",
+                            "fingerprint": "f1dfad47dd78722babc61633805caade6557dc68"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:41:04.224Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "未验证改进为固定二进制版本的私网回归矩阵、显式默认 stealth 与输出流式处理。详见[Q05](#research-q05)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1358313559-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1358313559:root",
+                            "area": "code",
+                            "fingerprint": "f1dfad47dd78722babc61633805caade6557dc68"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:41:04.224Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-20T10:01:53.795Z",
+            "last_checked_at": "2026-10-22T09:41:04.224Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "f1dfad47dd78722babc61633805caade6557dc68",
-                "reviewed_at": "2026-10-20T10:01:53.795Z",
+                "reviewed_at": "2026-10-22T09:41:04.224Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -222,60 +316,60 @@
                     "criteria": {
                         "novelty": 9,
                         "mechanism": 8,
-                        "transferability": 5,
-                        "simplification": 4
+                        "transferability": 10,
+                        "simplification": 8
                     },
-                    "rationale": "novelty：Obscura CLI能力归上游，插件为WSL接线；mechanism：定位/参数/执行分层是常规包装；transferability：二进制定位层可复用；simplification：统一浏览器抓取入口，安装依赖仍在外部。",
+                    "rationale": "novelty 9：相对手工 Obscura CLI/MCP，DSH Agent 三工具接线是使用增量，不是新浏览器引擎（Q01）。mechanism 8：路径解析、argv 调 CLI、超时/缓冲限制属于常规包装，私网保护委托外部二进制（Q02/Q03）。transferability 10：CLI 包装模式可用于其它命令行浏览器，但当前依 WSL/Obscura 与专门参数（Q01/Q02）。simplification 8：省每次手拼命令，status/hint 提供引导；仍需构建、配置与版本回归（Q04/Q05）。",
                     "basis": "interpretation",
-                    "score": 26,
+                    "score": 35,
                     "evidence_ids": [
-                        "2026-10-20-07-github-1358313559-root-source"
+                        "2026-10-22-02-github-1358313559-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 9,
-                        "delivery": 0,
+                        "workflow": 18,
+                        "delivery": 8,
                         "reach": 5,
-                        "economics": null
+                        "economics": 4
                     },
-                    "rationale": "workflow：减少调用CLI搬运；delivery：抓取/截图能力来自既有工具，未改验收单元；reach：DSH可调用外部浏览器CLI；economics：缺启动、重试与正文核对的成本比较。",
+                    "rationale": "workflow 18：相对在 WSL 手调用 CLI，模型可定点抓取公开页；复杂交互仍转 MCP（Q01）。delivery以手动运行抓取CLI并复制结果为参照，将网页观察和状态交为Agent可消费的工具回执，新增小幅结构化交接形式，取8（Q01/Q02）；网页内容仍来自原引擎，MCP提示文本不是实际MCP服务或新验收产物。\nreach 5：局限 WSL+Obscura 的用户，不覆盖一般 DSH Web 或 GUI（Q01）。economics 4：省命令接线时间，但浏览器启动/构建/安全回归成本未知，净收益未测（Q04/Q05）。",
                     "basis": "interpretation",
-                    "score": null,
+                    "score": 35,
                     "evidence_ids": [
-                        "2026-10-20-07-github-1358313559-root-source"
+                        "2026-10-22-02-github-1358313559-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "trial",
-                "reason": "已有Obscura者可先无eval无私网抓公开小页，核二进制与正文截断，再逐项考虑截图选项。",
+                "decision": "observe",
+                "reason": "在固定 Obscura 版本与隔离公开页试用，先验证私网保护和运行稳定性。",
                 "criteria": {
                     "scenario": {
-                        "score": 23,
-                        "rationale": "普通HTTP不足时借已有浏览器取文的任务明确。"
+                        "score": 15,
+                        "rationale": "无头抓取场景清楚。"
                     },
                     "advantage": {
-                        "score": 13,
-                        "rationale": "WSL二进制定位与整形省接线，浏览器能力来自外部。"
+                        "score": 6,
+                        "rationale": "原生 CLI/MCP 可替代。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "参数构造可查，外部二进制和依赖实现未核实。"
+                        "rationale": "包装源码可核，外部引擎未测。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "浏览器启动截图与页面复核有成本，特权选项需限制。"
+                        "score": 5,
+                        "rationale": "构建与兼容性负担未知。"
                     }
                 },
-                "score": 59,
+                "score": 39,
                 "revision": "f1dfad47dd78722babc61633805caade6557dc68",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T09:41:04.224Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-20-07-github-1358313559-root-source"
+                    "2026-10-22-02-github-1358313559-root-source"
                 ],
                 "dependencies": [
                     {
@@ -300,32 +394,33 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-20T09:36:48.824Z",
-            "analysis_sha256": "0249f7d043c59c0ef25b80812e5a4331f325624ab6f5d9744d4ac89c639a7711"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "97d68608d206215ac90e5530fd4def2722486342086a9263ae4a10e8b42c2400"
         },
         "publication.metadata": "data/plugins/173787247--dsh-wsl-obscura/META.json",
         "publication.summaries": {
-            "text": "封装Obscura浏览器CLI，提供状态、网页抓取与MCP接入提示。",
+            "text": "从 WSL 调用 Obscura 无头浏览器的 status/fetch 工具，并提供 MCP 接线提示。",
             "revision": "f1dfad47dd78722babc61633805caade6557dc68",
             "source_url": "https://github.com/173787247/dsh-wsl-obscura/blob/f1dfad47dd78722babc61633805caade6557dc68/README.md"
         },
         "publication.capabilities": {
             "revision": "f1dfad47dd78722babc61633805caade6557dc68",
             "items": {
-                "模型工具": "obscura_status、obscura_fetch和obscura_mcp_hint。"
-            }
+                "模型工具": "obscura_status、obscura_fetch、obscura_mcp_hint"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| status | 验 CLI | 需 WSL |\n| fetch | 定点抓取 | 外部引擎安全 |\n| hint | 接 MCP | 不启动服务 |"
         },
         "publication.advice": {
             "revision": "f1dfad47dd78722babc61633805caade6557dc68",
-            "text": "从无eval、无私网访问的小页面开始，核对正文和截断，不把MCP提示当已接通服务。"
+            "text": "先 status 后公开 URL 样本 fetch，私网防线按 Obscura 版本独立验；交互用 MCP。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/173787247--dsh-wsl-obscura",
-        "reports": "# dsh-wsl-obscura\n\n> 封装Obscura浏览器CLI，提供状态、网页抓取与MCP接入提示。\n\n## 研究范围\n\n- **仓库**：[173787247/dsh-wsl-obscura](https://github.com/173787247/dsh-wsl-obscura)\n- **版本号**：0.1.0（[固定提交 f1dfad47dd78722babc61633805caade6557dc68](https://github.com/173787247/dsh-wsl-obscura/tree/f1dfad47dd78722babc61633805caade6557dc68)）\n- **版本日期**：2026-10-02（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已有贡献：把浏览器CLI与WSL路径接通，降低二进制查找和输出处理负担；浏览器能力来自Obscura。\n\n结论边界：本次为固定版本源码核查，未执行目标代码或真实宿主验收，未核实独立使用效果。下文设计假设均未验证。\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：网页需要浏览器处理而普通HTTP抓取不足时，在DSH中调用已有Obscura。\n- **亮点**：把浏览器CLI与WSL路径接通，降低二进制查找和输出处理负担；浏览器能力来自Obscura。\n- **思考**：允许eval、截图和私网开关时副作用与数据范围扩大；CLI存在不证明浏览器依赖安装齐全，抓到文本也不等于正文完整。\n- **建议**：本次未形成新的创新假设；先为普通抓取与额外权限建立可见的调用边界，再衡量与直接CLI的差异。\n\n采用建议：从无eval、无私网访问的小页面开始，核对正文和截断，不把MCP提示当已接通服务。\n\n## 核心贡献\n\n把浏览器CLI与WSL路径接通，降低二进制查找和输出处理负担；浏览器能力来自Obscura。\n\n## 关键质疑\n\n允许eval、截图和私网开关时副作用与数据范围扩大；CLI存在不证明浏览器依赖安装齐全，抓到文本也不等于正文完整。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n本次未形成新的创新假设；先为普通抓取与额外权限建立可见的调用边界，再衡量与直接CLI的差异。\n\n用动态页面、重定向和受限测试站点核对内容、截图路径及私网开关，禁用高权限选项时不得静默启用。\n\n## 场景与替代办法\n\n网页需要浏览器处理而普通HTTP抓取不足时，在DSH中调用已有Obscura。\n\n直接Obscura CLI或宿主浏览器；插件主要接线与整形。\n\n## 依赖与流程\n\n需要Obscura二进制及浏览器运行环境，跨系统路径和网络策略影响执行。\n\n先查status，确认二进制，再对公开页执行最小抓取；需要eval或截图时逐项核对参数。\n\n## 成本与效果\n\n浏览器启动、渲染与截图存储成本，失败重试及页面核对人工另计，无效能实测。\n\n把浏览器CLI与WSL路径接通，降低二进制查找和输出处理负担；浏览器能力来自Obscura。 允许eval、截图和私网开关时副作用与数据范围扩大；CLI存在不证明浏览器依赖安装齐全，抓到文本也不等于正文完整。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：b97043b2da12188929cfb4714b7ca7e38172600be83334827d90f1e5866285b9。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 206 | — | — | 1095 |\n| .js | source | 3 | 517 | 467 | 19 | — |\n| .js | test | 1 | 89 | 82 | 5 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **模型工具**：obscura_status、obscura_fetch和obscura_mcp_hint。\n\n## 工程亮点\n\n二进制定位、参数构造与执行分层有复用价值，特殊选项需要独立解释权限。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 index.js、lib/obscura.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读入口和Obscura参数执行，未启动浏览器或核实外部二进制实现。 固定checkout的注册候选与关键主张定向抽读；未逐行完整审阅全部源码、测试、依赖及外部参照，未运行目标代码。评分仅针对文中明确的CLI/API/人工流程参照；跨场景迁移为解释性判断。\n- 下一步：用动态页面、重定向和受限测试站点核对内容、截图路径及私网开关，禁用高权限选项时不得静默启用。\n",
+        "reports": "# dsh-wsl-obscura\n\n> 从 WSL 调用 Obscura 无头浏览器的 status/fetch 工具，并提供 MCP 接线提示。\n\n## 研究范围\n\n- **仓库**：[173787247/dsh-wsl-obscura](https://github.com/173787247/dsh-wsl-obscura)\n- **版本号**：0.1.0（[固定提交 f1dfad47dd78722babc61633805caade6557dc68](https://github.com/173787247/dsh-wsl-obscura/tree/f1dfad47dd78722babc61633805caade6557dc68)）\n- **版本日期**：2026-10-02（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定源码可核三工具和 CLI 包装；私网防线委托外部二进制，默认 stealth 实为 false；目标 WSL/Obscura 未测。\n\n## 洞察短评\n\n- **用途**：WSL 环境下定点抓取或渲染网页正文，复杂交互转原生 MCP。详见[Q01](#research-q01)。\n- **亮点**：将无头抓取接到 DSH Agent 工具面并明确 MCP/CDP 升级路径。详见[Q01](#research-q01)。\n- **思考**：isSafeHttpUrl 仅限协议，不能证明 SSRF 阻断；CLI 与外层超时/缓冲区可能影响结果。详见[Q03](#research-q03)和[Q04](#research-q04)。\n- **建议**：未验证改进为固定二进制版本的私网回归矩阵、显式默认 stealth 与输出流式处理。详见[Q05](#research-q05)。\n\n采用建议：先 status 后公开 URL 样本 fetch，私网防线按 Obscura 版本独立验；交互用 MCP。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n将无头抓取接到 DSH Agent 工具面并明确 MCP/CDP 升级路径。详见[Q01](#research-q01)。\n\n## 关键质疑\n\nisSafeHttpUrl 仅限协议，不能证明 SSRF 阻断；CLI 与外层超时/缓冲区可能影响结果。详见[Q03](#research-q03)和[Q04](#research-q04)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n未验证改进为固定二进制版本的私网回归矩阵、显式默认 stealth 与输出流式处理。详见[Q05](#research-q05)。\n\n目标 WSL 中核 exe/native 版本、私网/DNS/重定向、stealth 默认、超大输出和超时。\n\n## 场景与替代办法\n\nWSL 环境下定点抓取或渲染网页正文，复杂交互转原生 MCP。详见[Q01](#research-q01)。\n\n原生 Obscura CLI/MCP 可直接使用；插件主要省 DSH Agent 与 CLI 之间的接线。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖 | 必需 | 用途 | 缺失后果 |\n| --- | --- | --- | --- |\n| WSL | 必需 | 插件运行 | 返回错误 |\n| Obscura 构建 | 必需 | 网页渲染 | status 失败 |\n| Windows interop/本机 Linux binary | 二选一 | 执行 CLI | 无法抓取 |\n\n#### 使用步骤\n\n| 步骤 | 动作 | 判据/恢复 |\n| --- | --- | --- |\n| 定位 | 配 binaryPath | status --version |\n| 试取 | 公开页面 fetch | 核 stdout/stderr |\n| 扩展 | MCP hint | 另配服务 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 本插件动作 | 现金/资源 | 人工/时间 | 未知与失败恢复 |\n| --- | --- | --- | --- | --- |\n| 首次 | 在 WSL 准备 Obscura 可执行文件及浏览器依赖，设 binaryPath | 构建/下载磁盘与 CPU；许可/网络现金成本未知 | 架构/interop/版本校验工时未知 | status 失败需重建或修路径 |\n| 持续 | 每次启动 CLI 浏览器、页面加载、dump/eval | CPU/内存/站点带宽；每次费用未知 | 核抓取结果与许可、处理超时，工时未知 | 站点成功率和启动耗时未知 |\n| 失败恢复 | 处理私网策略漂移、大输出 maxBuffer/导航超时 | 重抓与浏览器进程资源，金额未知 | 锁定/回退二进制、审请求目的地、改采集流程，工时未知 | DNS/重定向防线依外部版本 |\n\n#### 效果\n\n| 效果项 | 源码支持 | 未证实 |\n| --- | --- | --- |\n| 抓取 | CLI dump/eval | 站点成功率 |\n| 安全 | http(s) 过滤 | DNS/重定向私网保护 |\n| 交互 | MCP 接线提示 | MCP 实际连接 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**WSL 到 Obscura 的浏览器抓取桥有哪些真实能力与安全依赖？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 与 GUI 浏览器或完整 MCP 工具有何区别？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\nobscura_status 检二进制/版本，obscura_fetch 经 CLI 抓页并支持 dump/eval/stealth，obscura_mcp_hint 仅输出 MCP/CDP 接线文字，不启动服务。它是一次性无头抓取桥，不提供导航、点击、截图交互工具；README 把高级交互交给原生 MCP。适合 WSL 有 Obscura 构建的定点抓取，不应误当 GUI 或完整浏览器代理。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.zh.md:4-12](https://github.com/173787247/dsh-wsl-obscura/blob/f1dfad47dd78722babc61633805caade6557dc68/README.zh.md#L4-L12)\n\n作者三工具描述\n\n```text\nDeepSeek Harness 工具：从 **WSL** 调用 **[Obscura](https://github.com/h4ckf0r0day/obscura)**（Rust 无头浏览器）：\n\n| 工具 | 作用 |\n|------|------|\n| `obscura_status` | 解析二进制并跑 `--version` |\n| `obscura_fetch` | `obscura fetch`（dump / eval / stealth） |\n| `obscura_mcp_hint` | MCP / CDP 接线说明（不启动服务） |\n\n**不是** [`dsh-wsl-browser`](https://github.com/173787247/dsh-wsl-browser)（`win_open_url` 只打开 Windows **默认 GUI** 浏览器）。\n```\n\n**依据 2 · 作者声明**：[README.zh.md:42-46](https://github.com/173787247/dsh-wsl-obscura/blob/f1dfad47dd78722babc61633805caade6557dc68/README.zh.md#L42-L46)\n\nGUI/MCP 边界\n\n```text\n## 为什么需要\n\n要抓正文、跑页面 JS、或 stealth 抓取时，应用无头引擎。本机 Windows 已可编出 `obscura.exe`；插件经 WSL interop（`/mnt/c/.../obscura.exe`）调用。\n\n更完整的 Agent 工具面（导航 / 点击 / 截图 MCP）优先用 **Obscura MCP**（`obscura mcp`），见 `obscura_mcp_hint`。\n```\n\n**依据 3 · 源码核查**：[index.js:38-64](https://github.com/173787247/dsh-wsl-obscura/blob/f1dfad47dd78722babc61633805caade6557dc68/index.js#L38-L64)\n\nstatus 注册\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\n  ctx.tools.register({\n    name: \"obscura_status\",\n    description: \"Resolve the Obscura binary and report --version (WSL → Windows .exe via interop).\",\n    parameters: {\n      type: \"object\",\n      additionalProperties: false,\n      properties: {},\n    },\n    output: {\n      schema: {\n        type: \"object\",\n        additionalProperties: false,\n        properties: {\n          ok: { type: \"boolean\" },\n          bin: { type: \"string\" },\n          winPath: { type: \"string\" },\n          version: { type: \"string\" },\n          error: { type: \"string\" },\n          tried: { type: \"array\", items: { type: \"string\" } },\n          note: { type: \"string\" },\n        },\n      },\n      render: (_args, value) => [{ type: \"text\", text: formatStatusResult(value) }],\n    },\n    timeoutMs: Math.min(timeoutMs, 20_000),\n    isConcurrencySafe: () => true,\n    async execute() {\n```\n\n</details>\n\n**依据 4 · 源码核查**：[index.js:93-143](https://github.com/173787247/dsh-wsl-obscura/blob/f1dfad47dd78722babc61633805caade6557dc68/index.js#L93-L143)\n\nfetch 注册\n\n<details>\n<summary>查看原文（51行）</summary>\n\n```text\n  ctx.tools.register({\n    name: \"obscura_fetch\",\n    description:\n      \"Fetch/render a page with Obscura (optional --dump / --eval / --stealth). Not for opening the GUI browser.\",\n    parameters: {\n      type: \"object\",\n      additionalProperties: false,\n      required: [\"url\"],\n      properties: {\n        url: { type: \"string\", description: \"http or https URL.\" },\n        dump: {\n          type: \"string\",\n          description: \"html | text | links | markdown | assets | original\",\n        },\n        eval: {\n          type: \"string\",\n          description: \"JavaScript expression to evaluate on the page.\",\n        },\n        stealth: {\n          type: \"boolean\",\n          description: \"Enable Obscura stealth transport/fingerprint (requires stealth-built binary).\",\n        },\n        timeoutSec: {\n          type: \"number\",\n          description: \"Navigation timeout in seconds (passed to obscura --timeout).\",\n        },\n        allowPrivateNetwork: {\n          type: \"boolean\",\n          description: \"Allow private/LAN hosts (SSRF guard off). Default false.\",\n        },\n      },\n    },\n    output: {\n      schema: {\n        type: \"object\",\n        additionalProperties: false,\n        properties: {\n          ok: { type: \"boolean\" },\n          href: { type: \"string\" },\n          bin: { type: \"string\" },\n          stdout: { type: \"string\" },\n          stderr: { type: \"string\" },\n          truncated: { type: \"boolean\" },\n          error: { type: \"string\" },\n        },\n      },\n      render: (_args, value) => [{ type: \"text\", text: formatFetchResult(value) }],\n    },\n    timeoutMs,\n    isConcurrencySafe: () => false,\n    async execute(args) {\n```\n\n</details>\n\n**依据 5 · 源码核查**：[index.js:192-220](https://github.com/173787247/dsh-wsl-obscura/blob/f1dfad47dd78722babc61633805caade6557dc68/index.js#L192-L220)\n\nhint 不启动\n\n<details>\n<summary>查看原文（29行）</summary>\n\n```text\n  ctx.tools.register({\n    name: \"obscura_mcp_hint\",\n    description: \"Print how to wire Obscura MCP / CDP for DSH (does not start a server).\",\n    parameters: {\n      type: \"object\",\n      additionalProperties: false,\n      properties: {},\n    },\n    output: {\n      schema: {\n        type: \"object\",\n        additionalProperties: false,\n        properties: {\n          ok: { type: \"boolean\" },\n          bin: { type: \"string\" },\n          winPath: { type: \"string\" },\n          hint: { type: \"string\" },\n          note: { type: \"string\" },\n          error: { type: \"string\" },\n        },\n      },\n      render: (_args, value) => [{ type: \"text\", text: value.hint || formatMcpHint(value) }],\n    },\n    timeoutMs: 10_000,\n    isConcurrencySafe: () => true,\n    async execute() {\n      if (!wsl) return { ok: false, error: \"not running in WSL\", hint: formatMcpHint({}) };\n      const resolved = resolveObscuraBin({ binaryPath, candidates });\n      const payload = {\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 二进制与 fetch 参数如何组装？\n\n**研究主题：**功能与机制、工程质量与复用\n\n#### 完整回答\n\n仅 WSL 运行；路径优先 config.binaryPath、OBSCURA_BIN/OBSCURA_PATH、候选本机构建，需文件存在，没有实际 PATH 查找。Windows C:\\ 路径映射成 /mnt/c。URL 检查只限制 http(s)，dump 值白名单；eval 文本作为 execFile 数组参数传递而非 shell 拼接。CLI 执行有 timeout/maxBuffer 16MiB，返回 stdout 截断 maxOutputChars，错误还保留 stderr。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:17-26](https://github.com/173787247/dsh-wsl-obscura/blob/f1dfad47dd78722babc61633805caade6557dc68/index.js#L17-L26)\n\n初始化与 WSL 判定\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\nexport function apply(ctx, config = {}) {\n  const timeoutMs = positive(config.timeoutMs, 60_000);\n  const maxOutputChars = positive(config.maxOutputChars, 32_000);\n  const candidates = Array.isArray(config.candidates) && config.candidates.length\n    ? config.candidates.map(String)\n    : DEFAULT_CANDIDATES;\n  const binaryPath = config.binaryPath ? String(config.binaryPath) : \"\";\n  const defaultStealth = Boolean(config.defaultStealth);\n  const wsl = detectWsl();\n  console.log(`[dsh-wsl-obscura] loaded wsl=${wsl} defaultStealth=${defaultStealth}`);\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/obscura.js:67-99](https://github.com/173787247/dsh-wsl-obscura/blob/f1dfad47dd78722babc61633805caade6557dc68/lib/obscura.js#L67-L99)\n\n路径决议\n\n<details>\n<summary>查看原文（33行）</summary>\n\n```text\n/**\n * Resolve obscura binary for WSL interop or native Linux.\n * Priority: config.binaryPath → OBSCURA_BIN → candidates → `obscura` on PATH (checked as file only if absolute).\n */\nexport function resolveObscuraBin({\n  binaryPath,\n  candidates = DEFAULT_CANDIDATES,\n  env = process.env,\n  exists = existsSync,\n} = {}) {\n  const list = [\n    binaryPath,\n    env.OBSCURA_BIN,\n    env.OBSCURA_PATH,\n    ...(Array.isArray(candidates) ? candidates : []),\n  ]\n    .map((p) => (p == null ? \"\" : String(p).trim()))\n    .filter(Boolean)\n    .map(toWslPath);\n\n  const seen = new Set();\n  for (const p of list) {\n    if (seen.has(p)) continue;\n    seen.add(p);\n    if (exists(p)) return { ok: true, bin: p, winPath: toWinPath(p) };\n  }\n  return {\n    ok: false,\n    error:\n      \"obscura binary not found; set config.binaryPath or OBSCURA_BIN to the WSL path of obscura.exe (or a Linux build)\",\n    tried: [...seen],\n  };\n}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/obscura.js:101-132](https://github.com/173787247/dsh-wsl-obscura/blob/f1dfad47dd78722babc61633805caade6557dc68/lib/obscura.js#L101-L132)\n\n参数构造\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\nexport function buildFetchArgs({\n  url,\n  dump,\n  evalExpr,\n  stealth,\n  timeoutSec,\n  allowPrivateNetwork,\n  screenshot,\n} = {}) {\n  const args = [];\n  if (stealth) args.push(\"--stealth\");\n  if (allowPrivateNetwork) args.push(\"--allow-private-network\");\n  args.push(\"fetch\", url);\n\n  if (dump != null && dump !== \"\") {\n    const d = String(dump).toLowerCase();\n    if (!ALLOWED_DUMPS.has(d)) {\n      return { ok: false, error: `invalid dump (allowed: ${[...ALLOWED_DUMPS].join(\", \")})` };\n    }\n    args.push(\"--dump\", d);\n  }\n  if (evalExpr != null && String(evalExpr).trim()) {\n    args.push(\"--eval\", String(evalExpr));\n  }\n  if (timeoutSec != null && Number(timeoutSec) > 0) {\n    args.push(\"--timeout\", String(Math.floor(Number(timeoutSec))));\n  }\n  if (screenshot != null && String(screenshot).trim()) {\n    args.push(\"--screenshot\", String(screenshot));\n  }\n  return { ok: true, args };\n}\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/obscura.js:143-167](https://github.com/173787247/dsh-wsl-obscura/blob/f1dfad47dd78722babc61633805caade6557dc68/lib/obscura.js#L143-L167)\n\nexecFile 限制\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\nexport async function runObscura(bin, args, { timeoutMs = 60_000, exec = execFileAsync } = {}) {\n  try {\n    const { stdout, stderr } = await exec(bin, args, {\n      timeout: timeoutMs,\n      encoding: \"utf8\",\n      maxBuffer: 16 * 1024 * 1024,\n      windowsHide: true,\n    });\n    return {\n      ok: true,\n      stdout: String(stdout ?? \"\"),\n      stderr: String(stderr ?? \"\"),\n    };\n  } catch (err) {\n    const e = err instanceof Error ? err : new Error(String(err));\n    const stdout = String(e.stdout ?? \"\");\n    const stderr = String(e.stderr ?? e.message ?? \"\");\n    return {\n      ok: false,\n      stdout,\n      stderr,\n      error: e.message || String(err),\n      code: e.code,\n    };\n  }\n```\n\n</details>\n\n#### 缺口\n\n- 目标 Windows interop 与二进制架构未验\n  **影响：**配置存在不代表可执行\n  **进一步探讨：**WSL 内对 native/.exe 各验 --version 与 fetch\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 私网访问防线是否由插件实现？\n\n**研究主题：**缺陷与关键质疑、依赖、兼容与流程\n\n#### 完整回答\n\n工具描述称 allowPrivateNetwork 默认 false 可保护 SSRF，但插件的 isSafeHttpUrl 仅校验 URL 语法与 http(s)，没有解析 DNS、主机 IP 或重定向；allowPrivateNetwork=true 只是增加 Obscura 的 --allow-private-network。默认私网拦截完全依赖外部 Obscura 二进制的版本与行为，插件源码本身不能证明阻断内网或重定向。eval 执行页面 JS，需视目标网页为不可信。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:115-122](https://github.com/173787247/dsh-wsl-obscura/blob/f1dfad47dd78722babc61633805caade6557dc68/index.js#L115-L122)\n\n参数宣称 SSRF guard\n\n```text\n        timeoutSec: {\n          type: \"number\",\n          description: \"Navigation timeout in seconds (passed to obscura --timeout).\",\n        },\n        allowPrivateNetwork: {\n          type: \"boolean\",\n          description: \"Allow private/LAN hosts (SSRF guard off). Default false.\",\n        },\n```\n\n**依据 2 · 源码核查**：[lib/obscura.js:31-42](https://github.com/173787247/dsh-wsl-obscura/blob/f1dfad47dd78722babc61633805caade6557dc68/lib/obscura.js#L31-L42)\n\n实际只检协议\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\nexport function isSafeHttpUrl(raw) {\n  let u;\n  try {\n    u = new URL(String(raw ?? \"\").trim());\n  } catch {\n    return { ok: false, error: \"invalid URL\" };\n  }\n  if (u.protocol !== \"http:\" && u.protocol !== \"https:\") {\n    return { ok: false, error: \"only http/https allowed\" };\n  }\n  return { ok: true, href: u.href };\n}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/obscura.js:101-114](https://github.com/173787247/dsh-wsl-obscura/blob/f1dfad47dd78722babc61633805caade6557dc68/lib/obscura.js#L101-L114)\n\n私网开关委托 CLI\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\nexport function buildFetchArgs({\n  url,\n  dump,\n  evalExpr,\n  stealth,\n  timeoutSec,\n  allowPrivateNetwork,\n  screenshot,\n} = {}) {\n  const args = [];\n  if (stealth) args.push(\"--stealth\");\n  if (allowPrivateNetwork) args.push(\"--allow-private-network\");\n  args.push(\"fetch\", url);\n\n```\n\n</details>\n\n**依据 4 · 源码核查**：[index.js:143-163](https://github.com/173787247/dsh-wsl-obscura/blob/f1dfad47dd78722babc61633805caade6557dc68/index.js#L143-L163)\n\nfetch 真正调用\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n    async execute(args) {\n      if (!wsl) return { ok: false, error: \"not running in WSL\" };\n      const checked = isSafeHttpUrl(args?.url);\n      if (!checked.ok) return checked;\n\n      const resolved = resolveObscuraBin({ binaryPath, candidates });\n      if (!resolved.ok) return { ok: false, error: resolved.error, href: checked.href };\n\n      const stealth = args?.stealth == null ? defaultStealth : Boolean(args.stealth);\n      const built = buildFetchArgs({\n        url: checked.href,\n        dump: args?.dump,\n        evalExpr: args?.eval,\n        stealth,\n        timeoutSec: args?.timeoutSec,\n        allowPrivateNetwork: Boolean(args?.allowPrivateNetwork),\n      });\n      if (!built.ok) return { ok: false, error: built.error, href: checked.href };\n\n      const run = await runObscura(resolved.bin, built.args, { timeoutMs });\n      const out = truncateOutput(run.stdout, maxOutputChars);\n```\n\n</details>\n\n#### 缺口\n\n- Obscura 私网/DNS/重定向规则未核\n  **影响：**不能把插件 URL 过滤当完整 SSRF 保护\n  **进一步探讨：**固定 Obscura 版本测 localhost、LAN、DNS/重定向\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 默认 stealth、超时和输出有何容易误解处？\n\n**研究主题：**缺陷与关键质疑、效果与总成本\n\n#### 完整回答\n\nREADME 示例把 defaultStealth 设 true，但插件无 schema 默认值，Boolean(config.defaultStealth) 在未配置时为 false；仅显式配置才默认开启。timeoutSec 是 CLI 导航参数，可超过或不同于外层 timeoutMs；execFile 的 16MiB maxBuffer 先于 maxOutputChars 截断，超大输出可能报错而不是成功截断。status 最大 20 秒、fetch 默认 60 秒，性能取决于浏览器启动与站点。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.zh.md:73-83](https://github.com/173787247/dsh-wsl-obscura/blob/f1dfad47dd78722babc61633805caade6557dc68/README.zh.md#L73-L83)\n\n示例 defaultStealth true\n\n<details>\n<summary>查看原文（11行）</summary>\n\n````text\n## 配置\n\n```yaml\n- id: dsh-wsl-obscura\n  name: dsh-wsl-obscura\n  config:\n    timeoutMs: 60000\n    maxOutputChars: 32000\n    defaultStealth: true\n    binaryPath: <obscura-checkout>/target/release/obscura.exe\n```\n````\n\n</details>\n\n**依据 2 · 源码核查**：[index.js:17-25](https://github.com/173787247/dsh-wsl-obscura/blob/f1dfad47dd78722babc61633805caade6557dc68/index.js#L17-L25)\n\n缺省 defaultStealth false\n\n```text\nexport function apply(ctx, config = {}) {\n  const timeoutMs = positive(config.timeoutMs, 60_000);\n  const maxOutputChars = positive(config.maxOutputChars, 32_000);\n  const candidates = Array.isArray(config.candidates) && config.candidates.length\n    ? config.candidates.map(String)\n    : DEFAULT_CANDIDATES;\n  const binaryPath = config.binaryPath ? String(config.binaryPath) : \"\";\n  const defaultStealth = Boolean(config.defaultStealth);\n  const wsl = detectWsl();\n```\n\n**依据 3 · 源码核查**：[index.js:141-163](https://github.com/173787247/dsh-wsl-obscura/blob/f1dfad47dd78722babc61633805caade6557dc68/index.js#L141-L163)\n\n外层 timeout 与输出截断\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n    timeoutMs,\n    isConcurrencySafe: () => false,\n    async execute(args) {\n      if (!wsl) return { ok: false, error: \"not running in WSL\" };\n      const checked = isSafeHttpUrl(args?.url);\n      if (!checked.ok) return checked;\n\n      const resolved = resolveObscuraBin({ binaryPath, candidates });\n      if (!resolved.ok) return { ok: false, error: resolved.error, href: checked.href };\n\n      const stealth = args?.stealth == null ? defaultStealth : Boolean(args.stealth);\n      const built = buildFetchArgs({\n        url: checked.href,\n        dump: args?.dump,\n        evalExpr: args?.eval,\n        stealth,\n        timeoutSec: args?.timeoutSec,\n        allowPrivateNetwork: Boolean(args?.allowPrivateNetwork),\n      });\n      if (!built.ok) return { ok: false, error: built.error, href: checked.href };\n\n      const run = await runObscura(resolved.bin, built.args, { timeoutMs });\n      const out = truncateOutput(run.stdout, maxOutputChars);\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/obscura.js:123-149](https://github.com/173787247/dsh-wsl-obscura/blob/f1dfad47dd78722babc61633805caade6557dc68/lib/obscura.js#L123-L149)\n\nCLI timeout 与 maxBuffer\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\n    args.push(\"--eval\", String(evalExpr));\n  }\n  if (timeoutSec != null && Number(timeoutSec) > 0) {\n    args.push(\"--timeout\", String(Math.floor(Number(timeoutSec))));\n  }\n  if (screenshot != null && String(screenshot).trim()) {\n    args.push(\"--screenshot\", String(screenshot));\n  }\n  return { ok: true, args };\n}\n\nexport function truncateOutput(text, maxChars = 32_000) {\n  const s = String(text ?? \"\");\n  if (s.length <= maxChars) return { text: s, truncated: false };\n  return {\n    text: `${s.slice(0, maxChars)}\\n…[truncated ${s.length - maxChars} chars]`,\n    truncated: true,\n  };\n}\n\nexport async function runObscura(bin, args, { timeoutMs = 60_000, exec = execFileAsync } = {}) {\n  try {\n    const { stdout, stderr } = await exec(bin, args, {\n      timeout: timeoutMs,\n      encoding: \"utf8\",\n      maxBuffer: 16 * 1024 * 1024,\n      windowsHide: true,\n```\n\n</details>\n\n#### 缺口\n\n- 目标网页耗时/大输出未测\n  **影响：**预期 stealth 或截断与实际不同\n  **进一步探讨：**目标大小页/超时矩阵\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 怎样试用和评估可迁移价值？\n\n**研究主题：**采用判断、新假设与验证、效果与总成本\n\n#### 完整回答\n\n先在 WSL 用 status 验真实二进制，再只对许可的公开 URL 做 fetch，核 dump/eval 输出与截断；私网访问必须在 Obscura 版本层独立验证，必要时禁止 allowPrivateNetwork。复杂导航转原生 MCP。插件设计可迁移的是安全的 argv 执行和双层超时，但本仓库没有独立站点成功率基准；部署需 Windows/WSL 构建、interop 和可能的浏览器依赖，成本未知。 假设推导：插件本身只校验 http(s)，私网/DNS/重定向限制完全委托二进制，且 16MiB maxBuffer 可能在文本截断前失败。相对固定版，若在插件层对初始和每跳重定向做 DNS/IP 私网拒绝并把 fetch 输出流式限额，同时把依赖版本写入可复核矩阵，理论上能减少外部二进制版本变化导致的安全漂移和大页失败。条件是插件能观测浏览器实际连接地址及全部跳转，DNS 重绑定需要在连接时复核；代价是额外解析/代理、延迟及与 CLI 行为重复。以固定 Obscura 版本和 localhost、LAN、域名映射、301/302 跳私网、超大公开页样本对照固定版/原型，记录是否触达私网、失败类型、截断标志和耗时。若重定向仍触达私网或大页仍在预设输出限制前抛错，该假设被证伪；若无法观测实际连接，只能收窄为版本级回归测试，不宣称插件已具独立 SSRF 防线。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.zh.md:48-71](https://github.com/173787247/dsh-wsl-obscura/blob/f1dfad47dd78722babc61633805caade6557dc68/README.zh.md#L48-L71)\n\n前置安装\n\n<details>\n<summary>查看原文（24行）</summary>\n\n````text\n## 前置\n\n1. Windows 上编好 Obscura（`render,stealth`）。\n2. 指定二进制路径（任选）：\n   - cordis `config.binaryPath`\n   - 环境变量 `OBSCURA_BIN` / `OBSCURA_PATH`\n   - 默认候选（本机脚手架路径）：  \n     `<obscura-checkout>/target/release/obscura.exe`\n\n## 安装\n\n本地仓（未发 GitHub 时）：\n\n```sh\ndsh plugin --profile web add /path/to/dsh-wsl-obscura\n```\n\n发布后：\n\n```sh\ndsh plugin --profile web add github:173787247/dsh-wsl-obscura\n```\n\n装完重启 dsh web（kit：`scripts/restart-dsh-web.sh`）。\n````\n\n</details>\n\n**依据 2 · 源码核查**：[index.js:64-83](https://github.com/173787247/dsh-wsl-obscura/blob/f1dfad47dd78722babc61633805caade6557dc68/index.js#L64-L83)\n\nstatus 能力\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n    async execute() {\n      if (!wsl) return { ok: false, error: \"not running in WSL (plugin targets WSL → Windows Obscura)\" };\n      const resolved = resolveObscuraBin({ binaryPath, candidates });\n      if (!resolved.ok) return resolved;\n      const run = await runObscura(resolved.bin, [\"--version\"], { timeoutMs: 15_000 });\n      if (!run.ok) {\n        return {\n          ok: false,\n          bin: resolved.bin,\n          winPath: resolved.winPath,\n          error: run.error || run.stderr || \"version failed\",\n        };\n      }\n      return {\n        ok: true,\n        bin: resolved.bin,\n        winPath: resolved.winPath,\n        version: (run.stdout || run.stderr || \"\").trim().split(/\\r?\\n/)[0] || \"\",\n        note: \"CLI ready; for agent tools prefer MCP (obscura_mcp_hint) when available.\",\n      };\n```\n\n</details>\n\n**依据 3 · 源码核查**：[index.js:143-183](https://github.com/173787247/dsh-wsl-obscura/blob/f1dfad47dd78722babc61633805caade6557dc68/index.js#L143-L183)\n\nfetch 行为\n\n<details>\n<summary>查看原文（41行）</summary>\n\n```text\n    async execute(args) {\n      if (!wsl) return { ok: false, error: \"not running in WSL\" };\n      const checked = isSafeHttpUrl(args?.url);\n      if (!checked.ok) return checked;\n\n      const resolved = resolveObscuraBin({ binaryPath, candidates });\n      if (!resolved.ok) return { ok: false, error: resolved.error, href: checked.href };\n\n      const stealth = args?.stealth == null ? defaultStealth : Boolean(args.stealth);\n      const built = buildFetchArgs({\n        url: checked.href,\n        dump: args?.dump,\n        evalExpr: args?.eval,\n        stealth,\n        timeoutSec: args?.timeoutSec,\n        allowPrivateNetwork: Boolean(args?.allowPrivateNetwork),\n      });\n      if (!built.ok) return { ok: false, error: built.error, href: checked.href };\n\n      const run = await runObscura(resolved.bin, built.args, { timeoutMs });\n      const out = truncateOutput(run.stdout, maxOutputChars);\n      if (!run.ok) {\n        return {\n          ok: false,\n          href: checked.href,\n          bin: resolved.bin,\n          stdout: out.text,\n          stderr: run.stderr,\n          truncated: out.truncated,\n          error: run.error || \"fetch failed\",\n        };\n      }\n      return {\n        ok: true,\n        href: checked.href,\n        bin: resolved.bin,\n        stdout: out.text,\n        stderr: run.stderr,\n        truncated: out.truncated,\n      };\n    },\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/obscura.js:143-167](https://github.com/173787247/dsh-wsl-obscura/blob/f1dfad47dd78722babc61633805caade6557dc68/lib/obscura.js#L143-L167)\n\n执行边界\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\nexport async function runObscura(bin, args, { timeoutMs = 60_000, exec = execFileAsync } = {}) {\n  try {\n    const { stdout, stderr } = await exec(bin, args, {\n      timeout: timeoutMs,\n      encoding: \"utf8\",\n      maxBuffer: 16 * 1024 * 1024,\n      windowsHide: true,\n    });\n    return {\n      ok: true,\n      stdout: String(stdout ?? \"\"),\n      stderr: String(stderr ?? \"\"),\n    };\n  } catch (err) {\n    const e = err instanceof Error ? err : new Error(String(err));\n    const stdout = String(e.stdout ?? \"\");\n    const stderr = String(e.stderr ?? e.message ?? \"\");\n    return {\n      ok: false,\n      stdout,\n      stderr,\n      error: e.message || String(err),\n      code: e.code,\n    };\n  }\n```\n\n</details>\n\n#### 缺口\n\n- 站点兼容与维护成本未知\n  **影响：**不能仅凭静态代码投入批量网页工作流\n  **进一步探讨：**许可站点样本集与二进制矩阵\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：b97043b2da12188929cfb4714b7ca7e38172600be83334827d90f1e5866285b9。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 206 | — | — | 1095 |\n| .js | source | 3 | 517 | 467 | 19 | — |\n| .js | test | 1 | 89 | 82 | 5 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| status | 验 CLI | 需 WSL |\n| fetch | 定点抓取 | 外部引擎安全 |\n| hint | 接 MCP | 不启动服务 |\n\n## 工程亮点\n\nargv 运行避免 shell 拼接、双层超时与输出限制；安全和可用性仍依赖外部二进制。详见[Q02](#research-q02)至[Q04](#research-q04)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.zh.md、index.js、lib/obscura.js、lib/wsl-host.js、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：只读核固定提交 README.zh.md、index.js、lib/obscura.js、lib/wsl-host.js；不运行目标插件或 Obscura。旧 META 复用。\n- 下一步：目标 WSL 中核 exe/native 版本、私网/DNS/重定向、stealth 默认、超大输出和超时。\n",
         "metadata": {
             "repository": "173787247/dsh-wsl-obscura",
             "repository_id": 1358313559,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-20T09:41:59.610Z",
+            "window_start": "2026-09-20T09:41:59.610Z",
             "stars": 1,
             "pushed_at": "2026-10-01T16:35:57Z",
             "issues": {
@@ -338,50 +433,39 @@
             "errors": [
                 {
                     "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-obscura%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640B:D1FDD:148D31:22285D:6AD84993 and timestamp 2026-10-21 05:11:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-obscura%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID BCBE:1F64B3:25E170:28CE81:6AD73769 and timestamp 2026-10-20 09:42:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-obscura%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640E:1DEEF7:149D81:222A59:6AD84994 and timestamp 2026-10-21 05:11:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-obscura%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID BDAC:3D1BFB:239092:267E83:6AD7376A and timestamp 2026-10-20 09:42:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-obscura%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6413:3B024B:142434:21AD0D:6AD84994 and timestamp 2026-10-21 05:11:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-obscura%20is%3Aissue%20created%3A2026-09-20T09%3A41%3A59.610Z..2026-10-20T09%3A41%3A59.610Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID BEDC:1FBD9F:257769:28637D:6AD7376B and timestamp 2026-10-20 09:42:03 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-obscura%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641A:AF775:142B24:21A841:6AD84994 and timestamp 2026-10-21 05:11:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-obscura%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T09%3A41%3A59.610Z..2026-10-20T09%3A41%3A59.610Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C01A:3D4C55:257F8B:286B6A:6AD7376C and timestamp 2026-10-20 09:42:04 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-obscura%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C5:160D08:145086:21CB44:6AD84994 and timestamp 2026-10-21 05:11:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-obscura%20is%3Aissue%20updated%3A2026-09-20T09%3A41%3A59.610Z..2026-10-20T09%3A41%3A59.610Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C13C:945AB:2414F3:27026B:6AD7376D and timestamp 2026-10-20 09:42:05 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 }
             ],
             "npm": {
                 "package_name": "dsh-wsl-obscura",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-20T09:42:05.701Z",
+                "window_start": "2026-09-20",
+                "window_end": "2026-10-19",
                 "downloads_30d": null,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-wsl-obscura",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-20:2026-10-19/dsh-wsl-obscura",
                 "error": "HTTP 404",
                 "publication": {
                     "first_published_at": null,
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-20T09:42:05.701Z",
                     "source_url": "https://registry.npmjs.org/dsh-wsl-obscura",
-                    "error": "HTTP 404",
-                    "latest_version": null,
-                    "latest_published_at": null,
-                    "latest_error": "HTTP 404"
+                    "error": "HTTP 404"
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "f1dfad47dd78722babc61633805caade6557dc68",
-                "current_revision": "f1dfad47dd78722babc61633805caade6557dc68",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {

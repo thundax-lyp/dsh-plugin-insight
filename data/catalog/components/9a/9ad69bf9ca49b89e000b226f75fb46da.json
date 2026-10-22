@@ -12,7 +12,7 @@
             "aliases": [],
             "name": "dsh-weekly-panel",
             "entry_type": "plugin",
-            "technical_category": "interface-input",
+            "technical_category": "tools-integration",
             "business_category": "research-knowledge",
             "tags": [],
             "availability": "unknown",
@@ -24,36 +24,70 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-02-github-1400385991-packages-dsh-weekly-panel-directory-0",
+                    "id": "2026-10-22-02-github-1400385991-packages-dsh-weekly-panel-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T03:10:46.568Z",
+                    "retrieved_at": "2026-10-22T05:52:37.650Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-02-github-1400385991-packages-dsh-weekly-panel-author",
+                    "id": "2026-10-22-02-github-1400385991-packages-dsh-weekly-panel-author",
                     "kind": "author_claim",
                     "url": "https://github.com/514006234/dsh-weekly-check/blob/5ee6b1d8aa90a1dab83c30db96838482331db304/packages/dsh-weekly-panel/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/514006234/dsh-weekly-check",
+                            "commit": "5ee6b1d8aa90a1dab83c30db96838482331db304",
+                            "path": "packages/dsh-weekly-panel/README.md",
+                            "content_sha256": "d59c231bbcc83ecbbfa22bf8908b951ea37464bf4b825d98fc3cf56a93dad597"
+                        }
+                    ],
                     "revision": "5ee6b1d8aa90a1dab83c30db96838482331db304",
-                    "captured_at": "2026-10-21T03:10:46.568Z",
-                    "summary": "在 DSH 侧栏展示插件周榜、免费模型状态和标明来源性质的推荐位。",
-                    "artifact": "data/runs/2026-10-21-02/snapshots/514006234--dsh-weekly-check--packages-dsh-weekly-panel/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:52:37.650Z",
+                    "summary": "将外部 DSH 插件周榜代理到 Web 主面板，展示排行、模型与推荐位并复制安装命令。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/514006234--dsh-weekly-check--packages-dsh-weekly-panel/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-02-github-1400385991-packages-dsh-weekly-panel-source",
+                    "id": "2026-10-22-02-github-1400385991-packages-dsh-weekly-panel-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/514006234/dsh-weekly-check/blob/5ee6b1d8aa90a1dab83c30db96838482331db304/packages/dsh-weekly-panel/lib/index.js",
+                    "url": "https://github.com/514006234/dsh-weekly-check/blob/5ee6b1d8aa90a1dab83c30db96838482331db304/packages/dsh-weekly-panel/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/514006234/dsh-weekly-check",
+                            "commit": "5ee6b1d8aa90a1dab83c30db96838482331db304",
+                            "path": "packages/dsh-weekly-panel/README.md",
+                            "content_sha256": "d59c231bbcc83ecbbfa22bf8908b951ea37464bf4b825d98fc3cf56a93dad597"
+                        },
+                        {
+                            "repository_url": "https://github.com/514006234/dsh-weekly-check",
+                            "commit": "5ee6b1d8aa90a1dab83c30db96838482331db304",
+                            "path": "packages/dsh-weekly-panel/package.json",
+                            "content_sha256": "e1a8189c077226a9991537eeaa47d910bdfee0da03b76fb843371bb5a9afb5ed"
+                        },
+                        {
+                            "repository_url": "https://github.com/514006234/dsh-weekly-check",
+                            "commit": "5ee6b1d8aa90a1dab83c30db96838482331db304",
+                            "path": "packages/dsh-weekly-panel/lib/index.js",
+                            "content_sha256": "5d8709279c068f98418d7c3f03f2c31b73726471ff218a01699a3ed42cd7bbcf"
+                        },
+                        {
+                            "repository_url": "https://github.com/514006234/dsh-weekly-check",
+                            "commit": "5ee6b1d8aa90a1dab83c30db96838482331db304",
+                            "path": "packages/dsh-weekly-panel/lib/client.js",
+                            "content_sha256": "710cd9273041ec4c820568bde3f7f88850b37b45906d41653b40c05e5fc757ac"
+                        }
+                    ],
                     "revision": "5ee6b1d8aa90a1dab83c30db96838482331db304",
-                    "captured_at": "2026-10-21T03:10:46.568Z",
-                    "summary": "核查 packages/dsh-weekly-panel/lib/index.js、packages/dsh-weekly-panel/lib/client.js、packages/dsh-weekly-panel/tools/gate.mjs、packages/dsh-weekly-panel/package.json、packages/dsh-weekly-panel/README.md；packages/dsh-weekly-panel/lib/index.js通过唯一HTTPS上游、10秒超时、30分钟内存缓存和singleflight提供GET数据；client注册main与sidebar.panellist槽位，渲染榜单并复制命令。",
-                    "artifact": "data/runs/2026-10-21-02/snapshots/514006234--dsh-weekly-check--packages-dsh-weekly-panel/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:52:37.650Z",
+                    "summary": "核查 packages/dsh-weekly-panel/README.md、packages/dsh-weekly-panel/package.json、packages/dsh-weekly-panel/lib/index.js、packages/dsh-weekly-panel/lib/client.js；宿主守卫本地只读路由并代理固定 JSON，30 分钟缓存加旧值回退；客户端另缓存 5 分钟，主面板/侧栏渲染。详见[Q02](#research-q02)。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/514006234--dsh-weekly-check--packages-dsh-weekly-panel/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "只检查packages/dsh-weekly-panel的host/client/manifest与自检源码；上游榜单生成、免费模型探测与外部服务未执行。",
+                        "只读核固定提交子包 README、manifest、Host/Client；未执行目标代码、作者测试、宿主或远端实时数据；META 为旧基线。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +98,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "希望在DSH内浏览中文插件榜的用户，读取TOP10和免费模型摘要，并复制原生bundle安装命令；判断选型仍需回到项目与核查材料。",
+                    "text": "DSH Web 内查看插件周榜与免费模型状态，减少切换页面；安装与效率待核。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1400385991-packages-dsh-weekly-panel-source"
+                        "2026-10-22-02-github-1400385991-packages-dsh-weekly-panel-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +109,16 @@
                             "fingerprint": "5ee6b1d8aa90a1dab83c30db96838482331db304"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:10:46.568Z",
+                    "reviewed_at": "2026-10-22T05:52:37.650Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "packages/dsh-weekly-panel/lib/index.js通过唯一HTTPS上游、10秒超时、30分钟内存缓存和singleflight提供GET数据；client注册main与sidebar.panellist槽位，渲染榜单并复制命令。",
+                    "text": "宿主守卫本地只读路由并代理固定 JSON，30 分钟缓存加旧值回退；客户端另缓存 5 分钟，主面板/侧栏渲染。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1400385991-packages-dsh-weekly-panel-source"
+                        "2026-10-22-02-github-1400385991-packages-dsh-weekly-panel-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +127,16 @@
                             "fingerprint": "5ee6b1d8aa90a1dab83c30db96838482331db304"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:10:46.568Z",
+                    "reviewed_at": "2026-10-22T05:52:37.650Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "只检查packages/dsh-weekly-panel的host/client/manifest与自检源码；上游榜单生成、免费模型探测与外部服务未执行。",
+                    "text": "只读核固定提交子包 README、manifest、Host/Client；未执行目标代码、作者测试、宿主或远端实时数据；META 为旧基线。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1400385991-packages-dsh-weekly-panel-source"
+                        "2026-10-22-02-github-1400385991-packages-dsh-weekly-panel-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +145,16 @@
                             "fingerprint": "5ee6b1d8aa90a1dab83c30db96838482331db304"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:10:46.568Z",
+                    "reviewed_at": "2026-10-22T05:52:37.650Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "子包bundle与client双入口，依赖DSH webServer和main/sidebar槽位；README的桌面部署工具是仓库级额外步骤，不能把根仓库直接安装当作本组件安装。",
+                    "text": "package 0.6.0、private:true、MIT；作者称注册表申请中和手动 profile 部署，实际可达性未本轮核。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1400385991-packages-dsh-weekly-panel-source"
+                        "2026-10-22-02-github-1400385991-packages-dsh-weekly-panel-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +163,16 @@
                             "fingerprint": "5ee6b1d8aa90a1dab83c30db96838482331db304"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:10:46.568Z",
+                    "reviewed_at": "2026-10-22T05:52:37.650Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "首次确定子包安装方式并重启宿主；持续依赖公开Pages数据与接口，故障时人工确认缓存日期。无独立订阅成本证据，节省阅读时间未测。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | DSH Web 与上游网络，金额未知 | 安装、重启；耗时未知 | 注册表收录未核 |\n| 持续使用 | 上游 GitHub Pages、两级内存缓存 | 判断数据年龄、核对命令 | stale 未向 UI 传达 |\n| 失败恢复 | 可显示缓存或错误，损失未知 | 重试、转完整榜单、检查上游 | 重试不能穿透 30 分钟宿主缓存 |",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1400385991-packages-dsh-weekly-panel-source"
+                        "2026-10-22-02-github-1400385991-packages-dsh-weekly-panel-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +181,16 @@
                             "fingerprint": "5ee6b1d8aa90a1dab83c30db96838482331db304"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:10:46.568Z",
+                    "reviewed_at": "2026-10-22T05:52:37.650Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "想在DSH里查看中文榜单可先试只读面板；看清数据日期与赞助/互推标识，复制安装命令后仍要检查插件自身要求。",
+                    "text": "仅作非关键周榜浏览观察；复制安装命令及赞助内容前核原始仓库和数据，关键决策待修正新鲜度提示。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1400385991-packages-dsh-weekly-panel-source"
+                        "2026-10-22-02-github-1400385991-packages-dsh-weekly-panel-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +199,16 @@
                             "fingerprint": "5ee6b1d8aa90a1dab83c30db96838482331db304"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:10:46.568Z",
+                    "reviewed_at": "2026-10-22T05:52:37.650Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "减少寻找榜单与拼接命令的操作；不替代源码评估、安全核查或本机模型测试。",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 榜单内嵌 | 主面板和侧栏代码 | 目标宿主真实布局 |\n| 缓存降级 | 宿主 stale 返回 | 用户能否认出旧数据：当前不能 |\n| 安装引导 | 复制命令 | repo 输入安全和安装成功率 |",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1400385991-packages-dsh-weekly-panel-source"
+                        "2026-10-22-02-github-1400385991-packages-dsh-weekly-panel-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +217,16 @@
                             "fingerprint": "5ee6b1d8aa90a1dab83c30db96838482331db304"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:10:46.568Z",
+                    "reviewed_at": "2026-10-22T05:52:37.650Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "createStore注入fetch与时钟便于隔离验证，inflight合并并发、失败保留旧缓存并标stale；出站地址常量化且不转发凭据可借鉴。大小限制在res.text后检查，不等于下载阶段硬内存上限。",
+                    "text": "本地同源防护、单飞和旧缓存可借鉴；需打通缓存元数据与 UI，并校验远端 repo/kind。详见[Q02](#research-q02)及[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1400385991-packages-dsh-weekly-panel-source"
+                        "2026-10-22-02-github-1400385991-packages-dsh-weekly-panel-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +235,16 @@
                             "fingerprint": "5ee6b1d8aa90a1dab83c30db96838482331db304"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:10:46.568Z",
+                    "reviewed_at": "2026-10-22T05:52:37.650Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
                     "topic": "technical_innovation",
                     "basis": "interpretation",
-                    "text": "相对打开外部周报页面，本组件把中文榜单与安装命令复制放入DSH流内面板，并对上游不可用保留带stale标记的缓存。loopback防护与槽位写法作者归于dsh-workbench-lite，周报的策展与模型探测属于仓库其他工具；本组件增量是单上游数据桥、面板展示与降级。",
+                    "text": "把外部榜单接入 DSH Web 槽位，提供可复制安装命令和只读数据代理；不是榜单生产者。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1400385991-packages-dsh-weekly-panel-source"
+                        "2026-10-22-02-github-1400385991-packages-dsh-weekly-panel-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +253,16 @@
                             "fingerprint": "5ee6b1d8aa90a1dab83c30db96838482331db304"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:10:46.568Z",
+                    "reviewed_at": "2026-10-22T05:52:37.650Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "“免费模型可用”和“值得装”是否会被读者理解为本机可用与质量保证？面板只消费latest.json，不执行本地模型或插件验收；缓存30分钟叠加周报更新周期，会使成功读取仍展示旧状态。star排序、赞助位与模型极短补全都不证明本地长期可靠，复制命令也不是已安装。",
+                    "text": "重试无法强制上游刷新且宿主旧值回退被客户端当正常新数据；未经校验 repo 进入粘贴命令、非 reciprocal 一律标赞助。详见[Q03](#research-q03)与[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1400385991-packages-dsh-weekly-panel-source"
+                        "2026-10-22-02-github-1400385991-packages-dsh-weekly-panel-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +271,16 @@
                             "fingerprint": "5ee6b1d8aa90a1dab83c30db96838482331db304"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:10:46.568Z",
+                    "reviewed_at": "2026-10-22T05:52:37.650Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
                     "topic": "technical_innovation",
                     "basis": "unverified",
-                    "text": "待验证假设：每个条目附固定版本、探测出口地区和数据年龄的小型证据卡，可降低从榜单热度直接推导本机可用的误判。当前只有摘要与stale信息，新增卡片未实现。用同一榜单让用户判断安装前置条件，对照有无卡片的误判率与阅读耗时；若字段缺失导致卡片装饰化，则先要求上游提供可追溯探测记录。",
+                    "text": "未验证方向是将数据年龄和 stale 显示到面板、明确刷新语义，并限制 repo 与赞助分类输入，以契约矩阵和目标宿主体验验收。详见[Q06](#research-q06)。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1400385991-packages-dsh-weekly-panel-source"
+                        "2026-10-22-02-github-1400385991-packages-dsh-weekly-panel-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +289,15 @@
                             "fingerprint": "5ee6b1d8aa90a1dab83c30db96838482331db304"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:10:46.568Z",
+                    "reviewed_at": "2026-10-22T05:52:37.650Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T03:10:46.568Z",
+            "last_checked_at": "2026-10-22T05:52:37.650Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "5ee6b1d8aa90a1dab83c30db96838482331db304",
-                "reviewed_at": "2026-10-21T03:10:46.568Z",
+                "reviewed_at": "2026-10-22T05:52:37.650Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -275,61 +309,61 @@
                 "technical": {
                     "criteria": {
                         "novelty": 9,
-                        "mechanism": 8,
-                        "transferability": 5,
-                        "simplification": 4
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
                     },
-                    "rationale": "novelty 小幅：已有周报的DSH适配；mechanism 小幅：常规缓存/singleflight；transferability 小幅：单源面板可复用但未形成新机制；simplification 小幅：减少外部页面切换。",
+                    "rationale": "外部榜单嵌入与双层缓存是常见模式；防护/单飞可借鉴，但当前刷新/旧值语义有断层。",
                     "basis": "interpretation",
-                    "score": 26,
+                    "score": 42,
                     "evidence_ids": [
-                        "2026-10-21-02-github-1400385991-packages-dsh-weekly-panel-source"
+                        "2026-10-22-02-github-1400385991-packages-dsh-weekly-panel-source"
                     ]
                 },
                 "business": {
                     "criteria": {
                         "workflow": 9,
                         "delivery": 8,
-                        "reach": 10,
+                        "reach": 5,
                         "economics": 0
                     },
-                    "rationale": "workflow 小幅：浏览复制入口改善，未重组任务；delivery 小幅：榜单摘要而非新验收产物；reach 实质：中文DSH内直接访问；economics 未识别：无改变定价或资源组织的证据。",
+                    "rationale": "减少切页的流程价值待量化；界面可读源码但分发未证，受 DSH Web 与上游约束，无经济证据。",
                     "basis": "interpretation",
-                    "score": 27,
+                    "score": 22,
                     "evidence_ids": [
-                        "2026-10-21-02-github-1400385991-packages-dsh-weekly-panel-source"
+                        "2026-10-22-02-github-1400385991-packages-dsh-weekly-panel-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "trial",
-                "reason": "想在DSH浏览中文周报者可试只读榜单；核对数据日期和赞助位，复制命令后仍查项目要求和本地兼容。",
+                "decision": "observe",
+                "reason": "可试作非关键榜单入口；缓存新鲜度、安装命令和赞助标记需要核验后才用于决策。",
                 "criteria": {
                     "scenario": {
                         "score": 15,
-                        "rationale": "内嵌榜单和安装命令便利明确，需求较轻。"
+                        "rationale": "插件发现是实际场景，但依赖外部榜单。"
                     },
                     "advantage": {
                         "score": 6,
-                        "rationale": "省开外部页面与拼命令，选型质量仍由上游研究决定。"
+                        "rationale": "界面内集成便利，机制易替代且存在语义落差。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "单上游10秒超时及stale缓存有源码，不做本机模型验收。"
+                        "rationale": "固定源码可核；未运行目标宿主、门禁或用户测试。"
                     },
                     "cost": {
-                        "score": 15,
-                        "rationale": "无必要订阅，需子包安装和上游接口、数据日期维护。"
+                        "score": 5,
+                        "rationale": "无已知订阅费，安装重启、上游和核对成本未量化。"
                     }
                 },
-                "score": 49,
+                "score": 39,
                 "revision": "5ee6b1d8aa90a1dab83c30db96838482331db304",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T05:52:37.650Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-02-github-1400385991-packages-dsh-weekly-panel-source"
+                    "2026-10-22-02-github-1400385991-packages-dsh-weekly-panel-source"
                 ],
                 "dependencies": [
                     {
@@ -354,28 +388,29 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T03:00:27Z",
-            "analysis_sha256": "140a579342fe313e9d2c13b7361cecc1c21d4f1340f50b5558777c553fef2a54"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "99da24fe69b3d027015000f195ac4b007077085221f5e85bbe991ad7eb348e45"
         },
         "publication.metadata": "data/plugins/514006234--dsh-weekly-check--packages-dsh-weekly-panel/META.json",
         "publication.summaries": {
-            "text": "在 DSH 侧栏展示插件周榜、免费模型状态和标明来源性质的推荐位。",
+            "text": "将外部 DSH 插件周榜代理到 Web 主面板，展示排行、模型与推荐位并复制安装命令。",
             "revision": "5ee6b1d8aa90a1dab83c30db96838482331db304",
             "source_url": "https://github.com/514006234/dsh-weekly-check/blob/5ee6b1d8aa90a1dab83c30db96838482331db304/packages/dsh-weekly-panel/README.md"
         },
         "publication.capabilities": {
             "revision": "5ee6b1d8aa90a1dab83c30db96838482331db304",
             "items": {
-                "Host 路由": "GET周榜数据及上游缓存降级。",
-                "界面": "main面板、侧栏入口和原生bundle命令复制。"
-            }
+                "界面": "主面板周榜和原生 bundle 安装命令复制",
+                "Host 路由": "固定上游数据代理与三十分钟缓存"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| TOP10/免费模型 | 查看周榜 | 上游数据与缓存年龄需核 |\n| 重试 | 绕过前端 TTL | 不能强制宿主上游刷新 |\n| 安装复制 | 生成命令文本 | 未校验 repo，用户须先核对 |\n| 推荐位 | 展示合作条目 | 缺失 kind 默认标赞助 |"
         },
         "publication.advice": {
             "revision": "5ee6b1d8aa90a1dab83c30db96838482331db304",
-            "text": "想在DSH里查看中文榜单可先试只读面板；看清数据日期与赞助/互推标识，复制安装命令后仍要检查插件自身要求。"
+            "text": "仅作非关键周榜浏览观察；复制安装命令及赞助内容前核原始仓库和数据，关键决策待修正新鲜度提示。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/514006234--dsh-weekly-check--packages-dsh-weekly-panel",
-        "reports": "# dsh-weekly-panel\n\n> 在 DSH 侧栏展示插件周榜、免费模型状态和标明来源性质的推荐位。\n\n## 使用建议\n\n想在DSH里查看中文榜单可先试只读面板；看清数据日期与赞助/互推标识，复制安装命令后仍要检查插件自身要求。\n\n**核查状态**：已抽读固定版本源码，未安装、运行目标插件或真实宿主验收。源码支持只读数据面板与缓存降级；榜单上游模型测试和作者宿主验证没有在本轮复现，未来证据卡是假设。\n\n- **用途**：希望在DSH内浏览中文插件榜的用户，读取TOP10和免费模型摘要，并复制原生bundle安装命令；判断选型仍需回到项目与核查材料。\n- **亮点**：相对打开外部周报页面，本组件把中文榜单与安装命令复制放入DSH流内面板，并对上游不可用保留带stale标记的缓存。loopback防护与槽位写法作者归于dsh-workbench-lite，周报的策展与模型探测属于仓库其他工具；本组件增量是单上游数据桥、面板展示与降级。\n- **思考**：“免费模型可用”和“值得装”是否会被读者理解为本机可用与质量保证？面板只消费latest.json，不执行本地模型或插件验收；缓存30分钟叠加周报更新周期，会使成功读取仍展示旧状态。star排序、赞助位与模型极短补全都不证明本地长期可靠，复制命令也不是已安装。\n- **建议**：待验证假设：每个条目附固定版本、探测出口地区和数据年龄的小型证据卡，可降低从榜单热度直接推导本机可用的误判。当前只有摘要与stale信息，新增卡片未实现。用同一榜单让用户判断安装前置条件，对照有无卡片的误判率与阅读耗时；若字段缺失导致卡片装饰化，则先要求上游提供可追溯探测记录。\n\n## 当前插件分析\n\n### 场景与替代办法\n\n希望在DSH内浏览中文插件榜的用户，读取TOP10和免费模型摘要，并复制原生bundle安装命令；判断选型仍需回到项目与核查材料。\n\n参照浏览器周报、通用侧栏数据面板；原始策展及模型探测不计入组件的原创贡献。\n\n### 能力、流程与依赖\n\npackages/dsh-weekly-panel/lib/index.js通过唯一HTTPS上游、10秒超时、30分钟内存缓存和singleflight提供GET数据；client注册main与sidebar.panellist槽位，渲染榜单并复制命令。\n\n- **Host 路由**：GET周榜数据及上游缓存降级。\n- **界面**：main面板、侧栏入口和原生bundle命令复制。\n\nDSH webServer及客户端槽位、公开latest.json结构与GitHub Pages可达性；无本地数据写入链路。\n\n点击周榜→同源GET→缓存或上游读取→摘要/TOP10/模型与推荐位→复制命令或打开原文；上游失败显示旧值/原因与重试。\n\n子包bundle与client双入口，依赖DSH webServer和main/sidebar槽位；README的桌面部署工具是仓库级额外步骤，不能把根仓库直接安装当作本组件安装。\n\n### 效果、成本与限制\n\n减少寻找榜单与拼接命令的操作；不替代源码评估、安全核查或本机模型测试。\n\n首次确定子包安装方式并重启宿主；持续依赖公开Pages数据与接口，故障时人工确认缓存日期。无独立订阅成本证据，节省阅读时间未测。\n\n“免费模型可用”和“值得装”是否会被读者理解为本机可用与质量保证？面板只消费latest.json，不执行本地模型或插件验收；缓存30分钟叠加周报更新周期，会使成功读取仍展示旧状态。star排序、赞助位与模型极短补全都不证明本地长期可靠，复制命令也不是已安装。\n\n### 核心贡献与工程亮点\n\n相对打开外部周报页面，本组件把中文榜单与安装命令复制放入DSH流内面板，并对上游不可用保留带stale标记的缓存。loopback防护与槽位写法作者归于dsh-workbench-lite，周报的策展与模型探测属于仓库其他工具；本组件增量是单上游数据桥、面板展示与降级。\n\ncreateStore注入fetch与时钟便于隔离验证，inflight合并并发、失败保留旧缓存并标stale；出站地址常量化且不转发凭据可借鉴。大小限制在res.text后检查，不等于下载阶段硬内存上限。\n\n源码依据：[packages/dsh-weekly-panel/lib/index.js](https://github.com/514006234/dsh-weekly-check/blob/5ee6b1d8aa90a1dab83c30db96838482331db304/packages/dsh-weekly-panel/lib/index.js)、[packages/dsh-weekly-panel/lib/client.js](https://github.com/514006234/dsh-weekly-check/blob/5ee6b1d8aa90a1dab83c30db96838482331db304/packages/dsh-weekly-panel/lib/client.js)、[packages/dsh-weekly-panel/tools/gate.mjs](https://github.com/514006234/dsh-weekly-check/blob/5ee6b1d8aa90a1dab83c30db96838482331db304/packages/dsh-weekly-panel/tools/gate.mjs)、[packages/dsh-weekly-panel/package.json](https://github.com/514006234/dsh-weekly-check/blob/5ee6b1d8aa90a1dab83c30db96838482331db304/packages/dsh-weekly-panel/package.json)、[packages/dsh-weekly-panel/README.md](https://github.com/514006234/dsh-weekly-check/blob/5ee6b1d8aa90a1dab83c30db96838482331db304/packages/dsh-weekly-panel/README.md)。\n\n## 未来设计假设（未验证）\n\n待验证假设：每个条目附固定版本、探测出口地区和数据年龄的小型证据卡，可降低从榜单热度直接推导本机可用的误判。当前只有摘要与stale信息，新增卡片未实现。用同一榜单让用户判断安装前置条件，对照有无卡片的误判率与阅读耗时；若字段缺失导致卡片装饰化，则先要求上游提供可追溯探测记录。\n\n隔离宿主检查缓存过期+上游失败时日期/标识、畸形字段降级、窄屏与剪贴板失败，以及子包安装后槽位存在；未执行目标自检。\n\n## 核查说明\n\n- 版本号：0.6.0；版本日期：2026-10-19（固定提交日期，北京时间；不是包发布日期）。\n- 固定版本：[5ee6b1d8](https://github.com/514006234/dsh-weekly-check/tree/5ee6b1d8aa90a1dab83c30db96838482331db304)；本次截止 2026-10-21T03:00:27Z。\n- 已检查：README、package与以上源码路径及固定组件统计。\n- 未执行：目标代码、目标测试、安装、真实宿主或第三方服务验证。\n- 范围限制：只检查packages/dsh-weekly-panel的host/client/manifest与自检源码；上游榜单生成、免费模型探测与外部服务未执行。\n- 证据边界：源码与作者说明不等于独立效果验证；GitHub/npm指标不证明采用或收益。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：packages/dsh-weekly-panel；内容摘要：2eb366af15e4bcd05aa833a47a2c3719450eabb50dc82e6d49c134ac3ccd095c。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 863 | 647 | 168 | — |\n| .md | source | 1 | 95 | — | — | 1643 |\n| .mjs | source | 3 | 1017 | 849 | 86 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n",
+        "reports": "# dsh-weekly-panel\n\n> 将外部 DSH 插件周榜代理到 Web 主面板，展示排行、模型与推荐位并复制安装命令。\n\n## 研究范围\n\n- **仓库**：[514006234/dsh-weekly-check](https://github.com/514006234/dsh-weekly-check)\n- **版本号**：0.6.0（[固定提交 5ee6b1d8aa90a1dab83c30db96838482331db304](https://github.com/514006234/dsh-weekly-check/tree/5ee6b1d8aa90a1dab83c30db96838482331db304)）\n- **版本日期**：2026-10-19（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定源码支持面板、代理和缓存机制；“强制重取”仅越过前端缓存，stale 旧数据不提示，远端 repo 与赞助 kind 缺校验；目标宿主未运行。\n\n## 洞察短评\n\n- **用途**：DSH Web 内查看插件周榜与免费模型状态，减少切换页面；安装与效率待核。详见[Q01](#research-q01)。\n- **亮点**：把外部榜单接入 DSH Web 槽位，提供可复制安装命令和只读数据代理；不是榜单生产者。详见[Q01](#research-q01)。\n- **思考**：重试无法强制上游刷新且宿主旧值回退被客户端当正常新数据；未经校验 repo 进入粘贴命令、非 reciprocal 一律标赞助。详见[Q03](#research-q03)与[Q04](#research-q04)。\n- **建议**：未验证方向是将数据年龄和 stale 显示到面板、明确刷新语义，并限制 repo 与赞助分类输入，以契约矩阵和目标宿主体验验收。详见[Q06](#research-q06)。\n\n采用建议：仅作非关键周榜浏览观察；复制安装命令及赞助内容前核原始仓库和数据，关键决策待修正新鲜度提示。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n把外部榜单接入 DSH Web 槽位，提供可复制安装命令和只读数据代理；不是榜单生产者。详见[Q01](#research-q01)。\n\n## 关键质疑\n\n重试无法强制上游刷新且宿主旧值回退被客户端当正常新数据；未经校验 repo 进入粘贴命令、非 reciprocal 一律标赞助。详见[Q03](#research-q03)与[Q04](#research-q04)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n未验证方向是将数据年龄和 stale 显示到面板、明确刷新语义，并限制 repo 与赞助分类输入，以契约矩阵和目标宿主体验验收。详见[Q06](#research-q06)。\n\n目标宿主测部署/重启和槽位，缓存 5/30 分钟与上游失败、stale 可见性、repo 特殊字符、赞助 kind 缺失、外链/剪贴板降级。\n\n## 场景与替代办法\n\nDSH Web 内查看插件周榜与免费模型状态，减少切换页面；安装与效率待核。详见[Q01](#research-q01)。\n\n网页原榜单已存在；本项需证明内嵌便捷性大于缓存不透明与输入核对成本。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| DSH Web webServer/slots | 必需 | 路由与面板 | 无法接入 |\n| GitHub Pages latest.json | 当前数据必需 | 榜单来源 | 旧缓存或失败态 |\n| 浏览器 fetch/clipboard | 体验必需 | 取数据/复制 | 数据失败或 prompt 降级 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 部署 | 安装包或 profile 拷贝并重启 | 主面板/侧栏入口出现 |\n| 查榜 | 打开侧栏周榜 | 查看时间、TOP10、免费模型 |\n| 复制 | 对原生bundle 点“装” | 先核 owner/repo 后粘贴 |\n| 故障 | 重试或打开完整榜单 | 注意宿主缓存可能仍为旧值 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | DSH Web 与上游网络，金额未知 | 安装、重启；耗时未知 | 注册表收录未核 |\n| 持续使用 | 上游 GitHub Pages、两级内存缓存 | 判断数据年龄、核对命令 | stale 未向 UI 传达 |\n| 失败恢复 | 可显示缓存或错误，损失未知 | 重试、转完整榜单、检查上游 | 重试不能穿透 30 分钟宿主缓存 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 榜单内嵌 | 主面板和侧栏代码 | 目标宿主真实布局 |\n| 缓存降级 | 宿主 stale 返回 | 用户能否认出旧数据：当前不能 |\n| 安装引导 | 复制命令 | repo 输入安全和安装成功率 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**周榜集成是否在可控数据边界内提供可信、可恢复的插件发现体验？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 周榜插件服务什么用户任务，实际交付到哪里？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n它把外部周榜的 TOP10、免费模型统计和推荐位放进 DSH Web 主面板，侧栏图标负责切换，适合已在 DSH 中查找插件的用户。它不是榜单数据生产者；宿主只代理固定 latest.json，客户端只读展示。价值是减少离开 DSH 查榜单的切换，实际节省时间及榜单质量未测。README 称“真实可安装”，但 package private:true，注册表收录仍是申请状态，实际分发可达性须分开验证。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[packages/dsh-weekly-panel/README.md:1-28](https://github.com/514006234/dsh-weekly-check/blob/5ee6b1d8aa90a1dab83c30db96838482331db304/packages/dsh-weekly-panel/README.md#L1-L28)\n\n作者列面板、TOP10、一键复制、免费模型和赞助功能\n\n<details>\n<summary>查看原文（28行）</summary>\n\n````text\n# dsh-weekly-panel\n\n把《DSH 插件周榜》搬进 DSH 侧边栏的**真实可安装 DSH 插件**（本仓库 `packages/` 下的子包）。\n\n在线周报：https://514006234.github.io/dsh-weekly-check/\n\n## 它长什么样\n\n两扇门，都是框架里的**流内布局**——整份 CSS **零处 `position:fixed`**（`tools/gate.mjs` 会逐字核对），所以它不会遮挡对话区：\n\n- **侧边栏图标行**里的 `📊 周榜`（`sidebar.panellist`，`order 15`）——点一下把中间整列切成本面板；图标自带 `active` 高亮\n- **中间整列面板**（`main` 槽，`key = dsh-weekly`）\n\n面板内容：\n\n- 摘要：收录项目数 + 更新时间\n- **TOP 10**：中文名、`owner/repo`、实时星数（≥1000 显示 `1.2k`）、较上期涨星（涨绿跌橙；**没数据就不显示，而不是显示 0**）\n- **一键安装**：形态为 `原生bundle` 的条目带一个「装」按钮，点击把 `dsh plugin add <repo>` 复制进剪贴板；剪贴板不可用时降级为弹窗让你手动复制（不抛异常、不白屏）\n- **免费模型**：可用 `x/y`、已下线数、地区墙数（有限流 / 上游波动时一并列出）\n- **本期推荐**：仅当 `latest.json` 里有非空 `sponsors` 数组时显示。**付了钱的标「赞助」，免费互推的标「互推」**——没付钱的不写成赞助\n- 两个外链：**打开完整榜单**、**商务合作**\n\n拿不到数据时显示中文失败提示（含具体原因）+「重试」按钮，外链按钮仍然保留——**不白屏**。\n\n## 组成\n\n```\npackage.json          dsh.bundle.patch + dsh.client（可安装的关键）\n````\n\n</details>\n\n**依据 2 · 源码核查**：[packages/dsh-weekly-panel/package.json:1-21](https://github.com/514006234/dsh-weekly-check/blob/5ee6b1d8aa90a1dab83c30db96838482331db304/packages/dsh-weekly-panel/package.json#L1-L21)\n\n私有包与 Web client manifest\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n{\n  \"name\": \"dsh-weekly-panel\",\n  \"version\": \"0.6.0\",\n  \"private\": true,\n  \"description\": \"把《DSH 插件周榜》搬进侧边栏：只读的周报抽屉（TOP10 / 免费模型可用性 / 赞助位）\",\n  \"license\": \"MIT\",\n  \"type\": \"module\",\n  \"main\": \"./lib/index.js\",\n  \"exports\": {\n    \".\": \"./lib/index.js\",\n    \"./client\": \"./lib/client.js\",\n    \"./cordis.patch.yml\": \"./cordis.patch.yml\",\n    \"./package.json\": \"./package.json\"\n  },\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    },\n    \"client\": {\n      \"platform\": \"web\",\n      \"inject\": [\"slots\"]\n```\n\n</details>\n\n**依据 3 · 源码核查**：[packages/dsh-weekly-panel/lib/client.js:452-513](https://github.com/514006234/dsh-weekly-check/blob/5ee6b1d8aa90a1dab83c30db96838482331db304/packages/dsh-weekly-panel/lib/client.js#L452-L513)\n\n客户端从数据渲染排行、模型和推荐位\n\n<details>\n<summary>查看原文（62行）</summary>\n\n```text\n      var data = isObject(CACHE.data) ? CACHE.data : null;\n      var phase = CACHE.phase;\n      var plugins = asList(data && data.plugins);\n      var sorted = plugins.slice().sort(function (a, b) { return (numOf(b && b.stars) || 0) - (numOf(a && a.stars) || 0); });\n      var top = sorted.slice(0, TOP_N);\n      var stat = isObject(data && data.stat) ? data.stat : null;\n      var sponsors = asList(data && data.sponsors);\n\n      var body = [];\n      if (data === null) {\n        if (phase === 'error') {\n          body.push(h('div', { className: 'dwp-empty', key: 'fail' },\n            h('div', { className: 'dwp-empty-title' }, '暂时拿不到周报数据'),\n            CACHE.reason === '' ? null : h('div', { className: 'dwp-empty-reason' }, CACHE.reason),\n            h('button', { type: 'button', className: 'dwp-retry', onClick: retry }, '重试'),\n          ));\n        } else {\n          body.push(h('div', { className: 'dwp-empty', key: 'loading' }, '正在读取周报…'));\n        }\n      } else {\n        body.push(h('div', { className: 'dwp-summary', key: 'summary' },\n          h('b', null, plugins.length + ' 个插件'),\n          h('span', null, '更新 ' + dateOf(data)),\n          h('span', null, '·'),\n          h('span', null, '只读数据'),\n        ));\n        if (phase === 'error') {\n          body.push(h('div', { className: 'dwp-warn', key: 'warn' },\n            '刷新失败，先显示上次数据' + (CACHE.reason === '' ? '' : '（' + CACHE.reason + '）')));\n        }\n        body.push(h('div', { className: 'dwp-section', key: 'top' },\n          h('div', { className: 'dwp-section-title' }, '插件 TOP ' + TOP_N),\n          top.length === 0\n            ? h('div', { className: 'dwp-empty' }, '本期还没有插件数据')\n            : top.map(function (row, index) {\n                return h(TopRow, { key: repoOf(row) || nameOf(row), index: index, row: row });\n              }),\n        ));\n        body.push(h('div', { className: 'dwp-section', key: 'models' },\n          h('div', { className: 'dwp-section-title' }, '免费模型'),\n          stat === null\n            ? h('div', { className: 'dwp-empty' }, '免费模型数据暂缺')\n            : h('div', { className: 'dwp-models' },\n                h('span', { className: 'dwp-chip is-ok' }, '可用 ', h('b', null, (numOf(stat.ok) || 0) + '/' + (numOf(stat.total) || 0))),\n                h('span', { className: 'dwp-chip is-warn' }, '已下线 ', h('b', null, String(numOf(stat.gone) || 0))),\n                h('span', { className: 'dwp-chip is-warn' }, '地区墙 ', h('b', null, String(numOf(stat.region) || 0))),\n                (numOf(stat.limited) || 0) > 0\n                  ? h('span', { className: 'dwp-chip' }, '限流 ', h('b', null, String(numOf(stat.limited) || 0)))\n                  : null,\n                (numOf(stat.flaky) || 0) > 0\n                  ? h('span', { className: 'dwp-chip' }, '上游波动 ', h('b', null, String(numOf(stat.flaky) || 0)))\n                  : null,\n              ),\n        ));\n        if (sponsors.length > 0) {\n          body.push(h('div', { className: 'dwp-section dwp-section-sponsor', key: 'sponsors' },\n            h('div', { className: 'dwp-section-title' }, '本期推荐（付费标「赞助」，免费互推标「互推」）'),\n            sponsors.map(function (s) {\n              return h(SponsorCard, { key: repoOf(s) || nameOf(s), sponsor: s });\n            }),\n          ));\n        }\n```\n\n</details>\n\n#### 缺口\n\n- 目标 DSH 安装和真实用户查找效率未测\n  **影响：**不能证明安装普适可用或效率收益\n  **进一步探讨：**目标宿主安装并比较从周榜查到目标插件的操作时长\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 请求边界与缓存降级如何工作？\n\n**研究主题：**功能与机制、工程质量与复用\n\n#### 完整回答\n\n宿主注册 GET /weekly-panel/data，仅接收 loopback 与同源请求；上游固定为一个 GitHub Pages JSON URL。30 分钟内存缓存、并发单飞、10 秒超时、约 4 MiB 文本上限；失败时若有旧缓存返回 stale:true，没缓存返回 ok:false。客户端另有 5 分钟内存 TTL，复用数据。代码机制可核，但本轮未执行作者门禁或目标宿主，不能把门禁说明当独立验证。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/dsh-weekly-panel/lib/index.js:26-67](https://github.com/514006234/dsh-weekly-check/blob/5ee6b1d8aa90a1dab83c30db96838482331db304/packages/dsh-weekly-panel/lib/index.js#L26-L67)\n\n固定上游、loopback/同源与方法防护\n\n<details>\n<summary>查看原文（42行）</summary>\n\n```text\n/** 唯一允许的出站地址（静态门禁 tools/gate.mjs 会逐字核对）。 */\nexport const UPSTREAM_URL = 'https://514006234.github.io/dsh-weekly-check/latest.json'\n/** 内存缓存时长：30 分钟。 */\nexport const CACHE_TTL_MS = 30 * 60 * 1000\n/** 单次上游请求的超时（毫秒）。 */\nexport const FETCH_TIMEOUT_MS = 10000\n/** 本插件唯一的路由。 */\nexport const ROUTE_DATA = '/weekly-panel/data'\n\nconst MAX_BYTES_HINT = 4 * 1024 * 1024\n\n/** 仅 loopback + 同源；否则拒绝（DNS rebinding 防护）。 */\nfunction isLoopbackRequest(req, requireOrigin = false) {\n  const addr = req.socket && req.socket.remoteAddress\n  if (addr !== '127.0.0.1' && addr !== '::1' && addr !== '::ffff:127.0.0.1') return false\n  const host = req.headers && req.headers.host\n  if (typeof host !== 'string') return false\n  let hostUrl\n  try { hostUrl = new URL('http://' + host) } catch { return false }\n  if (hostUrl.hostname !== '127.0.0.1' && hostUrl.hostname !== 'localhost' && hostUrl.hostname !== '[::1]') return false\n  if (req.headers['sec-fetch-site'] === 'cross-site') return false\n  const origin = req.headers.origin\n  if (origin === undefined) return !requireOrigin\n  try { return new URL(origin).host === hostUrl.host } catch { return false }\n}\n\nfunction json(res, status, body) {\n  res.writeHead(status, { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' })\n  res.end(JSON.stringify(body))\n}\n\nfunction guard(req, res, method) {\n  if (!isLoopbackRequest(req)) {\n    json(res, 403, { ok: false, code: 'forbidden' })\n    return false\n  }\n  if (req.method !== method) {\n    json(res, 405, { ok: false, code: 'method-not-allowed' })\n    return false\n  }\n  return true\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[packages/dsh-weekly-panel/lib/index.js:85-139](https://github.com/514006234/dsh-weekly-check/blob/5ee6b1d8aa90a1dab83c30db96838482331db304/packages/dsh-weekly-panel/lib/index.js#L85-L139)\n\n缓存、单飞、超时和过大响应处理\n\n<details>\n<summary>查看原文（55行）</summary>\n\n```text\nexport function createStore(options = {}) {\n  const fetchImpl = options.fetchImpl || ((url, init) => fetch(url, init))\n  const now = options.now || (() => Date.now())\n  const ttlMs = typeof options.ttlMs === 'number' ? options.ttlMs : CACHE_TTL_MS\n\n  let cache = { data: null, at: 0 }\n  let inflight = null\n\n  /**\n   * 取数据。永不抛异常，返回值描述结果：\n   *   { data, cached, stale, ageMs }          —— 成功（可能来自缓存）\n   *   { data:null, reason }                   —— 既没有缓存也拿不到\n   */\n  async function load(force = false) {\n    const age = now() - cache.at\n    if (!force && cache.data !== null && age < ttlMs) {\n      return { data: cache.data, cached: true, stale: false, ageMs: age }\n    }\n    if (inflight) return inflight\n\n    const task = (async () => {\n      let timer = null\n      try {\n        const controller = typeof AbortController === 'function' ? new AbortController() : null\n        if (controller) timer = setTimeout(() => { try { controller.abort() } catch { /* 忽略 */ } }, FETCH_TIMEOUT_MS)\n        const res = await fetchImpl(UPSTREAM_URL, {\n          method: 'GET',\n          headers: { accept: 'application/json' },\n          signal: controller ? controller.signal : undefined,\n        })\n        if (!res || res.ok !== true) throw new Error('上游 HTTP ' + (res && res.status ? res.status : '?'))\n        const text = typeof res.text === 'function' ? await res.text() : null\n        if (text !== null && text.length > MAX_BYTES_HINT) throw new Error('上游响应过大')\n        const body = text !== null ? JSON.parse(text) : await res.json()\n        if (!body || typeof body !== 'object' || Array.isArray(body)) throw new Error('上游返回的不是 JSON 对象')\n        cache = { data: body, at: now() }\n        return { data: body, cached: false, stale: false, ageMs: 0 }\n      } catch (err) {\n        // 失败时优先继续用旧缓存（明确标 stale），实在没有才如实报错\n        if (cache.data !== null) {\n          return { data: cache.data, cached: true, stale: true, ageMs: now() - cache.at, reason: errorText(err) }\n        }\n        return { data: null, cached: false, stale: false, reason: errorText(err) }\n      } finally {\n        if (timer) clearTimeout(timer)\n      }\n    })()\n\n    inflight = task\n    try {\n      return await task\n    } finally {\n      if (inflight === task) inflight = null\n    }\n  }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[packages/dsh-weekly-panel/lib/index.js:146-165](https://github.com/514006234/dsh-weekly-check/blob/5ee6b1d8aa90a1dab83c30db96838482331db304/packages/dsh-weekly-panel/lib/index.js#L146-L165)\n\nHTTP 代理与 stale 回退\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n  async function handleData(request, response) {\n    if (!guard(request, response, 'GET')) return\n    let result\n    try {\n      result = await load(false)\n    } catch (err) {\n      // 双保险：load 内部已经吞过异常，这里再兜一层，确保不会有异常逃到 HTTP 栈\n      result = { data: null, reason: errorText(err) }\n    }\n    if (!result || !result.data) {\n      json(response, 200, { ok: false, reason: (result && result.reason) || '上游暂时不可用' })\n      return\n    }\n    json(response, 200, {\n      ok: true,\n      cached: result.cached === true,\n      stale: result.stale === true,\n      ageMs: typeof result.ageMs === 'number' ? result.ageMs : 0,\n      data: result.data,\n    })\n```\n\n</details>\n\n**依据 4 · 源码核查**：[packages/dsh-weekly-panel/lib/client.js:220-265](https://github.com/514006234/dsh-weekly-check/blob/5ee6b1d8aa90a1dab83c30db96838482331db304/packages/dsh-weekly-panel/lib/client.js#L220-L265)\n\n客户端缓存及请求\n\n<details>\n<summary>查看原文（46行）</summary>\n\n```text\n    function requestData(done, opts) {\n      var force = !!(opts && opts.force);\n      if (typeof fetch !== 'function') {\n        CACHE = { phase: 'error', data: CACHE.data, reason: '当前环境不支持 fetch', at: CACHE.at };\n        if (typeof done === 'function') done();\n        return;\n      }\n      if (INFLIGHT) return;\n      if (!force && CACHE.phase === 'ok' && (Date.now() - CACHE.at) < CLIENT_TTL_MS) return;\n\n      INFLIGHT = true;\n      CACHE = { phase: 'loading', data: CACHE.data, reason: '', at: CACHE.at };\n\n      var finish = function () {\n        INFLIGHT = false;\n        if (typeof done === 'function') done();\n      };\n\n      try {\n        fetch(DATA_ROUTE, { credentials: 'same-origin', headers: { accept: 'application/json' } })\n          .then(function (res) {\n            if (!res || res.ok !== true || typeof res.json !== 'function') {\n              throw new Error('宿主半返回 HTTP ' + (res && res.status ? res.status : '?'));\n            }\n            return res.json();\n          })\n          .then(function (body) {\n            if (body && body.ok === true && isObject(body.data)) {\n              CACHE = { phase: 'ok', data: body.data, reason: '', at: Date.now() };\n              return;\n            }\n            CACHE = { phase: 'error', data: CACHE.data, reason: textOf2(body && body.reason, '宿主半没有返回可用数据'), at: CACHE.at };\n          })\n          .catch(function (err) {\n            CACHE = {\n              phase: 'error',\n              data: CACHE.data,\n              reason: err && err.message ? String(err.message) : '请求失败',\n              at: CACHE.at,\n            };\n          })\n          .then(finish, finish);\n      } catch (err) {\n        CACHE = { phase: 'error', data: CACHE.data, reason: err && err.message ? String(err.message) : '请求失败', at: CACHE.at };\n        finish();\n      }\n```\n\n</details>\n\n**依据 5 · 作者声明**：[packages/dsh-weekly-panel/README.md:51-63](https://github.com/514006234/dsh-weekly-check/blob/5ee6b1d8aa90a1dab83c30db96838482331db304/packages/dsh-weekly-panel/README.md#L51-L63)\n\n作者说明数据链路与边界\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n- **唯一出站地址**就是 `UPSTREAM_URL` 这一个 https 常量（门禁会把文件里所有 URL 字面量列出来比对），不转发任何请求参数或请求头\n- 不写任何文件、不读任何本地文件、不读环境变量、不接触任何凭据\n- 上游失败时：有旧缓存就继续返回旧数据并标 `stale:true`；连旧缓存都没有才返回 `{ok:false, reason}`\n- `handleData` 吞掉所有异常：任何情况下都以 JSON 答复，**绝不把异常抛进 HTTP 栈**\n\n## 装法（两种，如实说明）\n\n1. **从插件注册表装**（推荐）：本项目已向上游 `awesome-dsh-plugin` 提交收录申请，\n   收录后可以在 DSH 界面内的插件市场里搜索安装。\n2. **手动部署本机 profile**：`node tools/deploy-panel.mjs --pkg dsh-weekly-panel`\n   （备份 → 拷贝真实目录 → 追加 `dsh.profile.bundles` → 校验 JSON 无 BOM → 出错自动回滚；\n   撤销用 `--uninstall`）。\n\n```\n\n</details>\n\n#### 缺口\n\n- 目标宿主防护、重绑边界和网络故障未实测\n  **影响：**只能确认源码意图，不能承诺生产安全\n  **进一步探讨：**在隔离目标宿主测 Host/Origin/方法矩阵、超时及缓存\n\n<a id=\"research-q03\"></a>\n\n### Q03 · “重试强制重取”和旧数据提示是否兑现？\n\n**研究主题：**缺陷与关键质疑、效果与总成本\n\n#### 完整回答\n\n两处契约有落差。重试只把客户端 requestData 的 force 设为 true，使其绕过 5 分钟前端缓存；宿主 handleData 固定调用 load(false)，30 分钟内仍直接给宿主缓存，所以不能保证强制重取上游。宿主 stale:true 传给客户端后，客户端只查 ok 与 data，直接将 phase 置 ok；其“刷新失败、先显示上次数据”警告只在客户端请求本身失败时出现，上游失败而宿主给旧值时不会出现。用户可能误把旧周榜当新数据。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[packages/dsh-weekly-panel/README.md:73-77](https://github.com/514006234/dsh-weekly-check/blob/5ee6b1d8aa90a1dab83c30db96838482331db304/packages/dsh-weekly-panel/README.md#L73-L77)\n\n作者写重试可强制重取\n\n````text\n\n## 测试\n\n```bash\nnode tools/gate.mjs          # 静态门禁 28 项 + 宿主半运行时契约（零网络，假 fetch/假 req/res）\n````\n\n**依据 2 · 源码核查**：[packages/dsh-weekly-panel/lib/client.js:220-249](https://github.com/514006234/dsh-weekly-check/blob/5ee6b1d8aa90a1dab83c30db96838482331db304/packages/dsh-weekly-panel/lib/client.js#L220-L249)\n\nforce 仅绕过客户端缓存且丢弃 stale\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\n    function requestData(done, opts) {\n      var force = !!(opts && opts.force);\n      if (typeof fetch !== 'function') {\n        CACHE = { phase: 'error', data: CACHE.data, reason: '当前环境不支持 fetch', at: CACHE.at };\n        if (typeof done === 'function') done();\n        return;\n      }\n      if (INFLIGHT) return;\n      if (!force && CACHE.phase === 'ok' && (Date.now() - CACHE.at) < CLIENT_TTL_MS) return;\n\n      INFLIGHT = true;\n      CACHE = { phase: 'loading', data: CACHE.data, reason: '', at: CACHE.at };\n\n      var finish = function () {\n        INFLIGHT = false;\n        if (typeof done === 'function') done();\n      };\n\n      try {\n        fetch(DATA_ROUTE, { credentials: 'same-origin', headers: { accept: 'application/json' } })\n          .then(function (res) {\n            if (!res || res.ok !== true || typeof res.json !== 'function') {\n              throw new Error('宿主半返回 HTTP ' + (res && res.status ? res.status : '?'));\n            }\n            return res.json();\n          })\n          .then(function (body) {\n            if (body && body.ok === true && isObject(body.data)) {\n              CACHE = { phase: 'ok', data: body.data, reason: '', at: Date.now() };\n              return;\n```\n\n</details>\n\n**依据 3 · 源码核查**：[packages/dsh-weekly-panel/lib/client.js:442-450](https://github.com/514006234/dsh-weekly-check/blob/5ee6b1d8aa90a1dab83c30db96838482331db304/packages/dsh-weekly-panel/lib/client.js#L442-L450)\n\n重试按钮传前端 force\n\n```text\n      /** 按 TTL 校验一次：没过期就不发请求（反复挂载不会反复打宿主半路由）。 */\n      function refresh() {\n        requestData(afterLoad);\n      }\n\n      /** 强制重取：只给「重试」按钮用。 */\n      function retry() {\n        requestData(afterLoad, { force: true });\n      }\n```\n\n**依据 4 · 源码核查**：[packages/dsh-weekly-panel/lib/index.js:102-107](https://github.com/514006234/dsh-weekly-check/blob/5ee6b1d8aa90a1dab83c30db96838482331db304/packages/dsh-weekly-panel/lib/index.js#L102-L107)\n\n宿主缓存命中直接返回\n\n```text\n    }\n    if (inflight) return inflight\n\n    const task = (async () => {\n      let timer = null\n      try {\n```\n\n**依据 5 · 源码核查**：[packages/dsh-weekly-panel/lib/index.js:146-165](https://github.com/514006234/dsh-weekly-check/blob/5ee6b1d8aa90a1dab83c30db96838482331db304/packages/dsh-weekly-panel/lib/index.js#L146-L165)\n\nhandleData 固定 load(false) 且返回 stale\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n  async function handleData(request, response) {\n    if (!guard(request, response, 'GET')) return\n    let result\n    try {\n      result = await load(false)\n    } catch (err) {\n      // 双保险：load 内部已经吞过异常，这里再兜一层，确保不会有异常逃到 HTTP 栈\n      result = { data: null, reason: errorText(err) }\n    }\n    if (!result || !result.data) {\n      json(response, 200, { ok: false, reason: (result && result.reason) || '上游暂时不可用' })\n      return\n    }\n    json(response, 200, {\n      ok: true,\n      cached: result.cached === true,\n      stale: result.stale === true,\n      ageMs: typeof result.ageMs === 'number' ? result.ageMs : 0,\n      data: result.data,\n    })\n```\n\n</details>\n\n**依据 6 · 源码核查**：[packages/dsh-weekly-panel/lib/client.js:471-481](https://github.com/514006234/dsh-weekly-check/blob/5ee6b1d8aa90a1dab83c30db96838482331db304/packages/dsh-weekly-panel/lib/client.js#L471-L481)\n\n警告只认本地 phase error\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n      } else {\n        body.push(h('div', { className: 'dwp-summary', key: 'summary' },\n          h('b', null, plugins.length + ' 个插件'),\n          h('span', null, '更新 ' + dateOf(data)),\n          h('span', null, '·'),\n          h('span', null, '只读数据'),\n        ));\n        if (phase === 'error') {\n          body.push(h('div', { className: 'dwp-warn', key: 'warn' },\n            '刷新失败，先显示上次数据' + (CACHE.reason === '' ? '' : '（' + CACHE.reason + '）')));\n        }\n```\n\n</details>\n\n#### 缺口\n\n- 未实测用户误判频率与周榜更新窗口\n  **影响：**不能量化错误决策成本\n  **进一步探讨：**用假时钟和目标 UI 验证 5/30 分钟及 stale 可见性\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 远端数据怎样影响安装命令与赞助标识？\n\n**研究主题：**缺陷与关键质疑、依赖、兼容与流程\n\n#### 完整回答\n\n上游 JSON 是可变的外部输入。TopRow 仅要求 repo 非空且 kind 为原生bundle，就把未经 owner/repo 格式校验的 repo 串拼到 dsh plugin add 命令并复制/提示用户粘贴终端；没有自动执行，但若上游字段含 shell 特殊字符，粘贴命令可产生意外效果，故应验证格式并做命令安全呈现。SponsorCard 仅将 kind===reciprocal 标互推，其余任何值含缺失都标赞助；“没付钱不写成赞助”依赖上游数据正确并未被客户端校验。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/dsh-weekly-panel/lib/client.js:277-315](https://github.com/514006234/dsh-weekly-check/blob/5ee6b1d8aa90a1dab83c30db96838482331db304/packages/dsh-weekly-panel/lib/client.js#L277-L315)\n\n原样拼接并复制安装命令，无自动执行\n\n<details>\n<summary>查看原文（39行）</summary>\n\n```text\n    function copyInstall(repo, ev) {\n      var cmd = 'dsh plugin add ' + repo;\n      var btn = ev && ev.currentTarget ? ev.currentTarget : null;\n      function done() {\n        if (!btn) return;\n        var old = btn.textContent;\n        btn.textContent = '已复制';\n        btn.classList.add('is-done');\n        setTimeout(function () {\n          btn.textContent = old;\n          btn.classList.remove('is-done');\n        }, 1500);\n      }\n      function fallback() {\n        try { window.prompt('复制下面的命令，粘到终端执行：', cmd); } catch (err) { /* 连 prompt 都没有就算了 */ }\n      }\n      try {\n        if (typeof navigator !== 'undefined' && navigator.clipboard && navigator.clipboard.writeText) {\n          navigator.clipboard.writeText(cmd).then(done, fallback);\n          return;\n        }\n        if (document.queryCommandSupported && document.queryCommandSupported('copy')) {\n          var ta = document.createElement('textarea');\n          ta.value = cmd;\n          ta.setAttribute('readonly', '');\n          ta.style.width = '1px';\n          ta.style.height = '1px';\n          ta.style.opacity = '0';\n          ta.style.border = '0';\n          document.body.appendChild(ta);\n          ta.select();\n          document.execCommand('copy');\n          document.body.removeChild(ta);\n          done();\n          return;\n        }\n        fallback();\n      } catch (err) { fallback(); }\n    }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[packages/dsh-weekly-panel/lib/client.js:317-346](https://github.com/514006234/dsh-weekly-check/blob/5ee6b1d8aa90a1dab83c30db96838482331db304/packages/dsh-weekly-panel/lib/client.js#L317-L346)\n\nrepo 非空与原生bundle 即给安装按钮\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\n    function TopRow(props) {\n      var row = props.row;\n      var repo = repoOf(row);\n      var delta = deltaOf(row);\n      var installable = repo !== '' && textOf2(row && row.kind, '') === '原生bundle';\n      return h('div', { className: 'dwp-row' },\n        h('span', { className: 'dwp-rank' }, String(props.index + 1)),\n        h('span', { className: 'dwp-row-main' },\n          h('span', { className: 'dwp-name', title: nameOf(row) }, nameOf(row)),\n          repo === ''\n            ? null\n            : h('a', {\n                className: 'dwp-repo',\n                href: githubUrl(repo),\n                target: '_blank',\n                rel: 'noopener noreferrer',\n                title: githubUrl(repo),\n              }, repo),\n        ),\n        h('span', { className: 'dwp-row-side' },\n          h('span', { className: 'dwp-star' }, starText(row && row.stars)),\n          delta === null || delta === 0 ? null : h('span', { className: deltaClass(delta) }, deltaText(delta)),\n        ),\n        installable\n          ? h('button', {\n              type: 'button',\n              className: 'dwp-install',\n              title: '复制安装命令：dsh plugin add ' + repo,\n              onClick: function (ev) { copyInstall(repo, ev); },\n            }, '装')\n```\n\n</details>\n\n**依据 3 · 源码核查**：[packages/dsh-weekly-panel/lib/client.js:351-365](https://github.com/514006234/dsh-weekly-check/blob/5ee6b1d8aa90a1dab83c30db96838482331db304/packages/dsh-weekly-panel/lib/client.js#L351-L365)\n\n非 reciprocal 统一标赞助\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n    function SponsorCard(props) {\n      var s = props.sponsor;\n      var repo = repoOf(s);\n      var cn = textOf2(s && s.cn, '');\n      var tier = textOf2(s && s.tier, '');\n      // 付费的写「赞助」，免费互推的写「互推」——商务页上公开承诺过「没付钱就不会写成赞助」。\n      // 这跟榜单排序一样属于对外承诺，不是排版细节。\n      var recip = textOf2(s && s.kind, '') === 'reciprocal';\n      return h('div', { className: 'dwp-sponsor' },\n        h('div', { className: 'dwp-sponsor-top' },\n          h('span', { className: 'dwp-sponsor-badge' + (recip ? ' is-recip' : '') }, recip ? '互推' : '赞助'),\n          h('span', { className: 'dwp-sponsor-name' }, nameOf(s)),\n          repo === ''\n            ? null\n            : h('a', { className: 'dwp-repo', href: githubUrl(repo), target: '_blank', rel: 'noopener noreferrer', title: githubUrl(repo) }, repo),\n```\n\n</details>\n\n**依据 4 · 作者声明**：[packages/dsh-weekly-panel/README.md:16-22](https://github.com/514006234/dsh-weekly-check/blob/5ee6b1d8aa90a1dab83c30db96838482331db304/packages/dsh-weekly-panel/README.md#L16-L22)\n\n作者给出安装和赞助承诺\n\n```text\n- 摘要：收录项目数 + 更新时间\n- **TOP 10**：中文名、`owner/repo`、实时星数（≥1000 显示 `1.2k`）、较上期涨星（涨绿跌橙；**没数据就不显示，而不是显示 0**）\n- **一键安装**：形态为 `原生bundle` 的条目带一个「装」按钮，点击把 `dsh plugin add <repo>` 复制进剪贴板；剪贴板不可用时降级为弹窗让你手动复制（不抛异常、不白屏）\n- **免费模型**：可用 `x/y`、已下线数、地区墙数（有限流 / 上游波动时一并列出）\n- **本期推荐**：仅当 `latest.json` 里有非空 `sponsors` 数组时显示。**付了钱的标「赞助」，免费互推的标「互推」**——没付钱的不写成赞助\n- 两个外链：**打开完整榜单**、**商务合作**\n\n```\n\n#### 缺口\n\n- 当前 latest.json 的治理与恶意输入防护未查\n  **影响：**不能声称已出现攻击或错误赞助\n  **进一步探讨：**用负例测试 repo 字符与 kind 缺失并加 allowlist/schema\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 部署、维护与恢复的资源投入是什么？\n\n**研究主题：**依赖、兼容与流程、效果与总成本、采用判断\n\n#### 完整回答\n\n运行依赖 DSH Web 的 webServer、slots 和浏览器 fetch；上游 GitHub Pages 是持续可用性依赖。README 给注册表安装愿景和本机 profile 拷贝部署路径，并明确需重启 DSH；插件 package 标 private，市场可达性尚未证实。现金价格不明；主要成本是部署/升级、外部数据不可用时检查缓存年龄以及错误命令/赞助数据的人工核对。故目前适合非关键的榜单浏览试用，榜单决策或复制命令前应核官方仓库。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/dsh-weekly-panel/package.json:1-28](https://github.com/514006234/dsh-weekly-check/blob/5ee6b1d8aa90a1dab83c30db96838482331db304/packages/dsh-weekly-panel/package.json#L1-L28)\n\nprivate 包、Web 注入和测试脚本\n\n<details>\n<summary>查看原文（28行）</summary>\n\n```text\n{\n  \"name\": \"dsh-weekly-panel\",\n  \"version\": \"0.6.0\",\n  \"private\": true,\n  \"description\": \"把《DSH 插件周榜》搬进侧边栏：只读的周报抽屉（TOP10 / 免费模型可用性 / 赞助位）\",\n  \"license\": \"MIT\",\n  \"type\": \"module\",\n  \"main\": \"./lib/index.js\",\n  \"exports\": {\n    \".\": \"./lib/index.js\",\n    \"./client\": \"./lib/client.js\",\n    \"./cordis.patch.yml\": \"./cordis.patch.yml\",\n    \"./package.json\": \"./package.json\"\n  },\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    },\n    \"client\": {\n      \"platform\": \"web\",\n      \"inject\": [\"slots\"]\n    }\n  },\n  \"scripts\": {\n    \"gate\": \"node tools/gate.mjs\",\n    \"render-test\": \"node tools/render-test.mjs\",\n    \"readme-check\": \"node tools/readme-check.mjs\",\n    \"test\": \"node tools/gate.mjs && node tools/render-test.mjs\",\n```\n\n</details>\n\n**依据 2 · 作者声明**：[packages/dsh-weekly-panel/README.md:65-83](https://github.com/514006234/dsh-weekly-check/blob/5ee6b1d8aa90a1dab83c30db96838482331db304/packages/dsh-weekly-panel/README.md#L65-L83)\n\n作者描述注册表申请、手动部署、重启和限制\n\n<details>\n<summary>查看原文（19行）</summary>\n\n````text\n\n**任何界面改动都必须完全重启 DSH**——客户端 bundle 是在启动时快照的，不重启就一定看不到。\n\n已知限制：\n\n- 面板只读：不写文件、不读本地文件；数据是 30 分钟粒度的（上游周报每周一更新），面板不做实时刷新，点「重试」可强制重取\n- 外链用 `<a target=\"_blank\">`，能否新开标签取决于宿主 webview 的弹窗策略；被挡住时链接地址也写在 `title` 里可复制\n- 一键安装只对 `原生bundle` 形态显示——外部应用 / Skill 给了命令也跑不通，所以不给\n\n## 测试\n\n```bash\nnode tools/gate.mjs          # 静态门禁 28 项 + 宿主半运行时契约（零网络，假 fetch/假 req/res）\nnode tools/render-test.mjs   # 客户端 UI 自检 78 项（假 react + 假 ctx，模拟点击/剪贴板/降级）\nnpm test                     # 两个都跑\nnpm run check                # 语法检查\n```\n\n两个脚本**全绿退出 0，有失败退出非 0**。\n````\n\n</details>\n\n**依据 3 · 源码核查**：[packages/dsh-weekly-panel/lib/index.js:173-222](https://github.com/514006234/dsh-weekly-check/blob/5ee6b1d8aa90a1dab83c30db96838482331db304/packages/dsh-weekly-panel/lib/index.js#L173-L222)\n\nwebServer 注册与注入兜底\n\n<details>\n<summary>查看原文（50行）</summary>\n\n```text\n  }\n}\n\nconst defaultStore = createStore()\n\n/** 默认实例的 HTTP 入口（供测试与 apply 复用）。 */\nexport const handleData = defaultStore.handleData\n/** 看默认实例的缓存内容（测试用）。 */\nexport const peekCache = defaultStore.peekCache\n/** 清默认实例的缓存（测试用）。 */\nexport const clearCache = defaultStore.clearCache\n\nfunction warn(ctx, err) {\n  const logger = ctx && ctx.logger\n  const sink = (logger && (logger.warn || logger.info)) || (typeof console !== 'undefined' ? console.warn : null)\n  if (!sink) return\n  try { sink.call(logger || console, '[dsh-weekly-panel] ' + errorText(err)) } catch { /* 日志失败也不能影响加载 */ }\n}\n\n/**\n * 注册路由。优先直接用已在位的 webServer；不在位则用 ctx.inject 等它出现。\n * 注册失败不抛异常——插件加载不能因为一个只读面板而中断。\n */\nexport function apply(ctx) {\n  const store = createStore()\n  const route = {\n    kind: 'exact',\n    path: ROUTE_DATA,\n    handler: (req, res) => { store.handleData(req, res) },\n  }\n\n  let server = null\n  try { server = ctx && ctx.webServer ? ctx.webServer : null } catch { server = null }\n\n  if (server && typeof server.register === 'function') {\n    try {\n      if (typeof ctx.effect === 'function') {\n        ctx.effect(() => {\n          const dispose = server.register(route)\n          return () => { try { if (typeof dispose === 'function') dispose() } catch { /* 忽略 */ } }\n        }, 'dsh-weekly-panel: GET ' + ROUTE_DATA)\n      } else {\n        server.register(route)\n      }\n      return\n    } catch (err) {\n      warn(ctx, err)\n    }\n  }\n\n```\n\n</details>\n\n**依据 4 · 源码核查**：[packages/dsh-weekly-panel/lib/client.js:238-265](https://github.com/514006234/dsh-weekly-check/blob/5ee6b1d8aa90a1dab83c30db96838482331db304/packages/dsh-weekly-panel/lib/client.js#L238-L265)\n\n前端依赖代理路由\n\n<details>\n<summary>查看原文（28行）</summary>\n\n```text\n      try {\n        fetch(DATA_ROUTE, { credentials: 'same-origin', headers: { accept: 'application/json' } })\n          .then(function (res) {\n            if (!res || res.ok !== true || typeof res.json !== 'function') {\n              throw new Error('宿主半返回 HTTP ' + (res && res.status ? res.status : '?'));\n            }\n            return res.json();\n          })\n          .then(function (body) {\n            if (body && body.ok === true && isObject(body.data)) {\n              CACHE = { phase: 'ok', data: body.data, reason: '', at: Date.now() };\n              return;\n            }\n            CACHE = { phase: 'error', data: CACHE.data, reason: textOf2(body && body.reason, '宿主半没有返回可用数据'), at: CACHE.at };\n          })\n          .catch(function (err) {\n            CACHE = {\n              phase: 'error',\n              data: CACHE.data,\n              reason: err && err.message ? String(err.message) : '请求失败',\n              at: CACHE.at,\n            };\n          })\n          .then(finish, finish);\n      } catch (err) {\n        CACHE = { phase: 'error', data: CACHE.data, reason: err && err.message ? String(err.message) : '请求失败', at: CACHE.at };\n        finish();\n      }\n```\n\n</details>\n\n#### 缺口\n\n- 当前注册表收录、价格和宿主兼容性未核\n  **影响：**不能给安装承诺或实际维护时长\n  **进一步探讨：**在目标 DSH 与注册表核安装、升级/卸载及断网恢复\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 如何让榜单的“新鲜度”和复制动作可被可靠判断？\n\n**研究主题：**新假设与验证、采用判断\n\n#### 完整回答\n\n改进假设是把宿主 cached/stale/ageMs 贯通到面板，显示实际数据年龄和上游失败原因；“重试”需把经过防护的显式刷新信号传宿主或清楚改名为“重读本地缓存”。对 repo 先限制 owner/repo 字符集，命令用显式引用并让用户确认；推荐位的 kind 缺失要显示未分类而非赞助。以缓存时钟矩阵、恶意 repo 样例、缺失 kind 样例、真实宿主安装与用户可理解性作为验收。以上是未实现设想，不计入当前功能。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/dsh-weekly-panel/lib/index.js:146-165](https://github.com/514006234/dsh-weekly-check/blob/5ee6b1d8aa90a1dab83c30db96838482331db304/packages/dsh-weekly-panel/lib/index.js#L146-L165)\n\n已有 stale/ageMs 响应字段\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n  async function handleData(request, response) {\n    if (!guard(request, response, 'GET')) return\n    let result\n    try {\n      result = await load(false)\n    } catch (err) {\n      // 双保险：load 内部已经吞过异常，这里再兜一层，确保不会有异常逃到 HTTP 栈\n      result = { data: null, reason: errorText(err) }\n    }\n    if (!result || !result.data) {\n      json(response, 200, { ok: false, reason: (result && result.reason) || '上游暂时不可用' })\n      return\n    }\n    json(response, 200, {\n      ok: true,\n      cached: result.cached === true,\n      stale: result.stale === true,\n      ageMs: typeof result.ageMs === 'number' ? result.ageMs : 0,\n      data: result.data,\n    })\n```\n\n</details>\n\n**依据 2 · 源码核查**：[packages/dsh-weekly-panel/lib/client.js:246-249](https://github.com/514006234/dsh-weekly-check/blob/5ee6b1d8aa90a1dab83c30db96838482331db304/packages/dsh-weekly-panel/lib/client.js#L246-L249)\n\n前端当前丢弃 stale/ageMs\n\n```text\n          .then(function (body) {\n            if (body && body.ok === true && isObject(body.data)) {\n              CACHE = { phase: 'ok', data: body.data, reason: '', at: Date.now() };\n              return;\n```\n\n**依据 3 · 源码核查**：[packages/dsh-weekly-panel/lib/client.js:277-279](https://github.com/514006234/dsh-weekly-check/blob/5ee6b1d8aa90a1dab83c30db96838482331db304/packages/dsh-weekly-panel/lib/client.js#L277-L279)\n\n命令拼接点\n\n```text\n    function copyInstall(repo, ev) {\n      var cmd = 'dsh plugin add ' + repo;\n      var btn = ev && ev.currentTarget ? ev.currentTarget : null;\n```\n\n**依据 4 · 源码核查**：[packages/dsh-weekly-panel/lib/client.js:358-362](https://github.com/514006234/dsh-weekly-check/blob/5ee6b1d8aa90a1dab83c30db96838482331db304/packages/dsh-weekly-panel/lib/client.js#L358-L362)\n\n赞助默认分支\n\n```text\n      var recip = textOf2(s && s.kind, '') === 'reciprocal';\n      return h('div', { className: 'dwp-sponsor' },\n        h('div', { className: 'dwp-sponsor-top' },\n          h('span', { className: 'dwp-sponsor-badge' + (recip ? ' is-recip' : '') }, recip ? '互推' : '赞助'),\n          h('span', { className: 'dwp-sponsor-name' }, nameOf(s)),\n```\n\n#### 缺口\n\n- 替代设计未实现或测试\n  **影响：**不能据此提高当前评分\n  **进一步探讨：**小范围原型及契约测试后复评\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：packages/dsh-weekly-panel；内容摘要：2eb366af15e4bcd05aa833a47a2c3719450eabb50dc82e6d49c134ac3ccd095c。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 863 | 647 | 168 | — |\n| .md | source | 1 | 95 | — | — | 1643 |\n| .mjs | source | 3 | 1017 | 849 | 86 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| TOP10/免费模型 | 查看周榜 | 上游数据与缓存年龄需核 |\n| 重试 | 绕过前端 TTL | 不能强制宿主上游刷新 |\n| 安装复制 | 生成命令文本 | 未校验 repo，用户须先核对 |\n| 推荐位 | 展示合作条目 | 缺失 kind 默认标赞助 |\n\n## 工程亮点\n\n本地同源防护、单飞和旧缓存可借鉴；需打通缓存元数据与 UI，并校验远端 repo/kind。详见[Q02](#research-q02)及[Q04](#research-q04)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 packages/dsh-weekly-panel/README.md、packages/dsh-weekly-panel/package.json、packages/dsh-weekly-panel/lib/index.js、packages/dsh-weekly-panel/lib/client.js 及固定范围 inventory；组件：packages/dsh-weekly-panel。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：只读核固定提交子包 README、manifest、Host/Client；未执行目标代码、作者测试、宿主或远端实时数据；META 为旧基线。\n- 下一步：目标宿主测部署/重启和槽位，缓存 5/30 分钟与上游失败、stale 可见性、repo 特殊字符、赞助 kind 缺失、外链/剪贴板降级。\n",
         "metadata": {
             "repository": "514006234/dsh-weekly-check",
             "repository_id": 1400385991,

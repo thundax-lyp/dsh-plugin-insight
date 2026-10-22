@@ -1,7 +1,7 @@
 {
     "schema_version": 3,
-    "snapshot_digest": "65dd31d94c8a4a21996132e04de0a0e909419da6a2828c95cd35bcc56ef05526",
-    "index_sha256": "081895f83eab6748c4c6a2bc1c0210db2d5e02e35dbcfa7db6232de97c65dde0",
+    "snapshot_digest": "df01962dcb6d43a3aae398792ecf3a09e0f2e83a1b10daac44e9e5c75f6e2806",
+    "index_sha256": "b28c7da607091719fb5a94768c07313be2b035a70c3b2b7145ca7ee172357c53",
     "head": {
         "schema_version": 1,
         "checked_at": "2026-10-22T04:36:02.544Z",
@@ -12,7 +12,7 @@
         },
         "publication": {
             "schema_version": 1,
-            "scope": "本次逐题研究已更新 98/336，保留其余有效研究",
+            "scope": "本次逐题研究已更新 127/336，保留其余有效研究",
             "catalog": "data/catalog/PLUGINS.json",
             "catalog_page": "data/views/categories/INDEX.md",
             "metadata": {},
@@ -11213,10 +11213,6 @@
             "path": "evidence/ff/ff01ff43d159f3addb9294ea08aec641c9bd0030bf78e560c040fa8e35e8255a.json",
             "sha256": "ff01ff43d159f3addb9294ea08aec641c9bd0030bf78e560c040fa8e35e8255a"
         },
-        "data/runs/2026-10-20-02/snapshots/0x7a7a6572--dsh-forge-studio--plugin-memory/REVIEWED-SOURCE.json": {
-            "path": "evidence/23/239cc5e6b3cb964fed18740938f1191fb99fa87223fbb6b5d9c6b97e3f9c9b91.json",
-            "sha256": "239cc5e6b3cb964fed18740938f1191fb99fa87223fbb6b5d9c6b97e3f9c9b91"
-        },
         "data/runs/2026-10-20-02/snapshots/0x7a7a6572--dsh-forge-studio--plugin-notes/REVIEWED-SOURCE.json": {
             "path": "evidence/b8/b894da0112350a27664a195496bd06027f63565488bdba9e2875147ff2be9dce.json",
             "sha256": "b894da0112350a27664a195496bd06027f63565488bdba9e2875147ff2be9dce"
@@ -11232,10 +11228,6 @@
         "data/runs/2026-10-20-02/snapshots/0xsline--dsh-spotlight/REVIEWED-SOURCE.json": {
             "path": "evidence/ea/eae18481b757dec631dacb0019045dbd637e99cc3d9d12462ead724568af2327.json",
             "sha256": "eae18481b757dec631dacb0019045dbd637e99cc3d9d12462ead724568af2327"
-        },
-        "data/runs/2026-10-20-02/snapshots/1014029855--dsh-codevault/REVIEWED-SOURCE.json": {
-            "path": "evidence/81/815356c248dcfee68036a039b5e1ca305187fb923e26c17b391aaa3b7ea57678.json",
-            "sha256": "815356c248dcfee68036a039b5e1ca305187fb923e26c17b391aaa3b7ea57678"
         },
         "data/runs/2026-10-20-02/snapshots/1032740078--dsh-web-url-view/REVIEWED-SOURCE.json": {
             "path": "evidence/ce/ceea0d7d244b3c24e29d9f29b2d4ba718cd82d6282bc5552dfc21068abe3044d.json",
@@ -11336,10 +11328,6 @@
         "data/runs/2026-10-20-04/snapshots/1624318455--dsh-plugin-proxy/REVIEWED-SOURCE.json": {
             "path": "evidence/77/77c6330acb64b1d49cd74abd870a708373d6621fb0c97b93f938bbf87604667e.json",
             "sha256": "77c6330acb64b1d49cd74abd870a708373d6621fb0c97b93f938bbf87604667e"
-        },
-        "data/runs/2026-10-20-04/snapshots/1624318455--dsh-plugin-tavily/REVIEWED-SOURCE.json": {
-            "path": "evidence/50/50dc1cc4ae1e2634b36254d1d2160f4d02b28105f56c49442a1aa5eb3d57d7b6.json",
-            "sha256": "50dc1cc4ae1e2634b36254d1d2160f4d02b28105f56c49442a1aa5eb3d57d7b6"
         },
         "data/runs/2026-10-20-04/snapshots/1624318455--dsh-plugin-tts/REVIEWED-SOURCE.json": {
             "path": "evidence/9b/9b026253756d1bb2028a3ad98fb27a85e2f88ec21b688e0fd51a42ad21e64df3.json",
@@ -11457,14 +11445,6 @@
             "path": "evidence/ab/ab99843438031b06978971700d7e6220e7f45a53f2b175424e394641c1a39107.json",
             "sha256": "ab99843438031b06978971700d7e6220e7f45a53f2b175424e394641c1a39107"
         },
-        "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-obscura/REVIEWED-SOURCE.json": {
-            "path": "evidence/c1/c1f50f11a0fcadb8cde9c3466f74f92330fb45616c09baf77418dccd85b4d405.json",
-            "sha256": "c1f50f11a0fcadb8cde9c3466f74f92330fb45616c09baf77418dccd85b4d405"
-        },
-        "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-obsidian/REVIEWED-SOURCE.json": {
-            "path": "evidence/ae/ae5fd9edbaba6cd6822bdaf97812fbeaeb65538bd7a2b6315783dddf1ed51671.json",
-            "sha256": "ae5fd9edbaba6cd6822bdaf97812fbeaeb65538bd7a2b6315783dddf1ed51671"
-        },
         "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-ollama/REVIEWED-SOURCE.json": {
             "path": "evidence/bc/bca7e63b30ebb87a91c9ba23bd16926f052b4cbd177b38c237168dcc5eb0aba2.json",
             "sha256": "bca7e63b30ebb87a91c9ba23bd16926f052b4cbd177b38c237168dcc5eb0aba2"
@@ -11480,10 +11460,6 @@
         "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-picker/REVIEWED-SOURCE.json": {
             "path": "evidence/94/948975f28691a23782049c1e618bcdd3f6e0ca1860c9a5b035d653aea86c2721.json",
             "sha256": "948975f28691a23782049c1e618bcdd3f6e0ca1860c9a5b035d653aea86c2721"
-        },
-        "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-playwright/REVIEWED-SOURCE.json": {
-            "path": "evidence/1e/1ec0efcd469519c59316b0126ec1be90ef958eef8e60c76077fa497016d84c38.json",
-            "sha256": "1ec0efcd469519c59316b0126ec1be90ef958eef8e60c76077fa497016d84c38"
         },
         "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-port/REVIEWED-SOURCE.json": {
             "path": "evidence/07/07a8a26f789f78c133a5bb2553c7d08acc2ccc1bb2e94ec2c0c639539ce7325b.json",
@@ -11581,14 +11557,6 @@
             "path": "evidence/c3/c36805a1a3b6f6b0eedf1604b69aafd0ed942b2130930605a8b54d815d427f2f.json",
             "sha256": "c36805a1a3b6f6b0eedf1604b69aafd0ed942b2130930605a8b54d815d427f2f"
         },
-        "data/runs/2026-10-20-08/snapshots/2026heshao--dsh-obsidian-board/REVIEWED-SOURCE.json": {
-            "path": "evidence/15/15613d1815ea29c9657cf4ec5504dc6d1b1e94c2d67304cdf5cadf45fe8871f4.json",
-            "sha256": "15613d1815ea29c9657cf4ec5504dc6d1b1e94c2d67304cdf5cadf45fe8871f4"
-        },
-        "data/runs/2026-10-20-08/snapshots/18477514055--dsh-ledger-memory/REVIEWED-SOURCE.json": {
-            "path": "evidence/fe/febec1e1f87087c55f5885c2eea32e292e33dcfbd3d610d7b5cf640dc58e8fcf.json",
-            "sha256": "febec1e1f87087c55f5885c2eea32e292e33dcfbd3d610d7b5cf640dc58e8fcf"
-        },
         "data/runs/2026-10-20-08/snapshots/18569663yz-web--dsh-plugin-crypto-ticker/REVIEWED-SOURCE.json": {
             "path": "evidence/df/dfa9f29656ea871fe6b80762951c1e3609c19bc4b3b924c154f65f2635fee2e5.json",
             "sha256": "dfa9f29656ea871fe6b80762951c1e3609c19bc4b3b924c154f65f2635fee2e5"
@@ -11629,17 +11597,9 @@
             "path": "evidence/35/35861cef58e6db9fc19861c8ffa78a2eee456bba8e1bc0d4421a168d0242e37f.json",
             "sha256": "35861cef58e6db9fc19861c8ffa78a2eee456bba8e1bc0d4421a168d0242e37f"
         },
-        "data/runs/2026-10-20-08/snapshots/2333hutao--dsh-ls125-uv-probe/REVIEWED-SOURCE.json": {
-            "path": "evidence/17/17f3ac57c4f0a125c259ee290b2aa3719a72b75f7f051dae6e94e68e34071a58.json",
-            "sha256": "17f3ac57c4f0a125c259ee290b2aa3719a72b75f7f051dae6e94e68e34071a58"
-        },
         "data/runs/2026-10-20-08/snapshots/2404723600--dsh-router-loomy/REVIEWED-SOURCE.json": {
             "path": "evidence/8c/8c235c057be528f2c668252c0d5ed64e8d7cae2e559d4d3981e543f46160d6d8.json",
             "sha256": "8c235c057be528f2c668252c0d5ed64e8d7cae2e559d4d3981e543f46160d6d8"
-        },
-        "data/runs/2026-10-20-08/snapshots/240xu--dsh-websearch/REVIEWED-SOURCE.json": {
-            "path": "evidence/11/1183e38744d3e4a8bebe0a387e0417ad2329d791b2e41ee70c51ef0b07312793.json",
-            "sha256": "1183e38744d3e4a8bebe0a387e0417ad2329d791b2e41ee70c51ef0b07312793"
         },
         "data/runs/2026-10-21-01/snapshots/3403473060--dsh-inline-images/REVIEWED-SOURCE.json": {
             "path": "evidence/42/423e618365e7fa238430c8b718b8a3cfe898e5416552862c8a8d088ed0cda268.json",
@@ -11709,10 +11669,6 @@
             "path": "evidence/cf/cfdfdc155f0c10fa2fc28a458aeb464829a8df6e839f19f50f31ecb686fe6cbc.json",
             "sha256": "cfdfdc155f0c10fa2fc28a458aeb464829a8df6e839f19f50f31ecb686fe6cbc"
         },
-        "data/runs/2026-10-21-01/snapshots/398894496-arch--krouter/REVIEWED-SOURCE.json": {
-            "path": "evidence/c1/c1693b6a0c29bbdb8a3c762e789cc9ec95296682a5e36a1b7c8e29c280d11fd8.json",
-            "sha256": "c1693b6a0c29bbdb8a3c762e789cc9ec95296682a5e36a1b7c8e29c280d11fd8"
-        },
         "data/runs/2026-10-21-01/snapshots/439436269-ctrl--dsh-ai-arcade/REVIEWED-SOURCE.json": {
             "path": "evidence/06/06050f590ae53a70264581529a846859b86eade7180ee12c84e10286cdbda902.json",
             "sha256": "06050f590ae53a70264581529a846859b86eade7180ee12c84e10286cdbda902"
@@ -11724,10 +11680,6 @@
         "data/runs/2026-10-21-01/snapshots/452926826--dsh-feishu-bot/REVIEWED-SOURCE.json": {
             "path": "evidence/d9/d9aaee52d9b27d27a09cfef02db504bb3147181e0174507f839a9c32d484e7b0.json",
             "sha256": "d9aaee52d9b27d27a09cfef02db504bb3147181e0174507f839a9c32d484e7b0"
-        },
-        "data/runs/2026-10-21-01/snapshots/2672243194--dsh-read-url/REVIEWED-SOURCE.json": {
-            "path": "evidence/fd/fd1264a8bf0d6ef0c56c3536f1d5caa2e15d3bc660fc4f4e9f9145ff1ee1f580.json",
-            "sha256": "fd1264a8bf0d6ef0c56c3536f1d5caa2e15d3bc660fc4f4e9f9145ff1ee1f580"
         },
         "data/runs/2026-10-21-01/snapshots/27painter--dsh-moli/REVIEWED-SOURCE.json": {
             "path": "evidence/9a/9a4701c5465e12ca298efaaf7d80679df1e5116f79bafa31ca4eb1b770160d66.json",
@@ -11764,10 +11716,6 @@
         "data/runs/2026-10-21-01/snapshots/439436269-ctrl--dsh-video-pipeline/REVIEWED-SOURCE.json": {
             "path": "evidence/ec/ec925e866000629d2f3977973750c28792864e8aad639bb47c021963a0594d6f.json",
             "sha256": "ec925e866000629d2f3977973750c28792864e8aad639bb47c021963a0594d6f"
-        },
-        "data/runs/2026-10-21-02/snapshots/514006234--dsh-weekly-check--packages-dsh-weekly-panel/REVIEWED-SOURCE.json": {
-            "path": "evidence/cf/cf9195f73b36caca0b522d44094de4901d3fa236ed85a2b74f1da3e653c78ba4.json",
-            "sha256": "cf9195f73b36caca0b522d44094de4901d3fa236ed85a2b74f1da3e653c78ba4"
         },
         "data/runs/2026-10-21-02/snapshots/534119219--chicheng-cron/REVIEWED-SOURCE.json": {
             "path": "evidence/ab/ab2621c9de5b059f807a1b50d5b796b5e5ae82d04a19fabcd742d9e1dd888141.json",
@@ -11820,10 +11768,6 @@
         "data/runs/2026-10-21-02/snapshots/571242--dsh-armor-switch/REVIEWED-SOURCE.json": {
             "path": "evidence/1b/1b451646e0fa89c82653ba3688a140b6a2cbebf0ee3b8b4e82273898ff861a53.json",
             "sha256": "1b451646e0fa89c82653ba3688a140b6a2cbebf0ee3b8b4e82273898ff861a53"
-        },
-        "data/runs/2026-10-21-02/snapshots/58catmiao--dsh-sciwork/REVIEWED-SOURCE.json": {
-            "path": "evidence/ff/ffb8a9f0316fa8253ca2d48a87925ba3cc38200d18119f39089c8a2e0024cac6.json",
-            "sha256": "ffb8a9f0316fa8253ca2d48a87925ba3cc38200d18119f39089c8a2e0024cac6"
         },
         "data/runs/2026-10-21-02/snapshots/598829314--oil-dsh-title/REVIEWED-SOURCE.json": {
             "path": "evidence/0f/0fc1c4a51987b0b11417ed9a085a2370d534e995e55965a3ad288bc7c914d8e2.json",
@@ -11901,10 +11845,6 @@
             "path": "evidence/94/9448228bf28ac4884bd866885e713790f1807ba531dd4faff05421647ed73b29.json",
             "sha256": "9448228bf28ac4884bd866885e713790f1807ba531dd4faff05421647ed73b29"
         },
-        "data/runs/2026-10-21-03/snapshots/863683348--dsh-plugin-verify/REVIEWED-SOURCE.json": {
-            "path": "evidence/84/846ee7b877d9ddc31b646dccdf3dedf53159489c73f1f7c184952b1defab4547.json",
-            "sha256": "846ee7b877d9ddc31b646dccdf3dedf53159489c73f1f7c184952b1defab4547"
-        },
         "data/runs/2026-10-21-03/snapshots/863683348--dsh-recipe/REVIEWED-SOURCE.json": {
             "path": "evidence/29/2996b164e55c65875cb5eb3b6713f3d2cc419870f2e50ca092cddc2c8e4c201c.json",
             "sha256": "2996b164e55c65875cb5eb3b6713f3d2cc419870f2e50ca092cddc2c8e4c201c"
@@ -11912,10 +11852,6 @@
         "data/runs/2026-10-21-03/snapshots/863683348--dsh-starter-zh/REVIEWED-SOURCE.json": {
             "path": "evidence/cc/ccb2f92c7fed0739d776f6e9b4386af83b7737d475c1539cae20b2feceeb70ac.json",
             "sha256": "ccb2f92c7fed0739d776f6e9b4386af83b7737d475c1539cae20b2feceeb70ac"
-        },
-        "data/runs/2026-10-21-03/snapshots/863683348--dsh-trend-radar/REVIEWED-SOURCE.json": {
-            "path": "evidence/18/18e45c18e1e9f0618f57a65481b64c97392189619cfe997f1459ce8964b1f474.json",
-            "sha256": "18e45c18e1e9f0618f57a65481b64c97392189619cfe997f1459ce8964b1f474"
         },
         "data/runs/2026-10-21-03/snapshots/873360545--dsh-auto-shutdown/REVIEWED-SOURCE.json": {
             "path": "evidence/d9/d9bfd20bb28470ae7bd9a6d7a744d44ae1f7c4524f924c0b2ae1fb8b8a5313e7.json",
@@ -11949,10 +11885,6 @@
             "path": "evidence/f8/f8024289b3bbe155ad86205d4157307aabcff65a9f99553fc44b41b8954af705.json",
             "sha256": "f8024289b3bbe155ad86205d4157307aabcff65a9f99553fc44b41b8954af705"
         },
-        "data/runs/2026-10-21-03/snapshots/7starsseeker--dsh-fact-check/REVIEWED-SOURCE.json": {
-            "path": "evidence/df/df58ffa8ff0fe7fa44f2a59b7ae09e39b742305e04ed14007d3fbb43aa404f45.json",
-            "sha256": "df58ffa8ff0fe7fa44f2a59b7ae09e39b742305e04ed14007d3fbb43aa404f45"
-        },
         "data/runs/2026-10-21-03/snapshots/7starsseeker--dsh-jev-guard/REVIEWED-SOURCE.json": {
             "path": "evidence/a6/a61065455c05ad8c2d479e245349edbbe0c9b4a0452c139fd1561016e0b4ae9f.json",
             "sha256": "a61065455c05ad8c2d479e245349edbbe0c9b4a0452c139fd1561016e0b4ae9f"
@@ -11969,21 +11901,9 @@
             "path": "evidence/db/dbed0d959f516d14b291fceb92e75142c60b0eafb66cd11a69a07a45d70507f8.json",
             "sha256": "dbed0d959f516d14b291fceb92e75142c60b0eafb66cd11a69a07a45d70507f8"
         },
-        "data/runs/2026-10-21-03/snapshots/863683348--dsh-feed/REVIEWED-SOURCE.json": {
-            "path": "evidence/63/6328193cbaa4db120315df8982ff61ec73b60977548cd3ce5593e2cb3d7f367e.json",
-            "sha256": "6328193cbaa4db120315df8982ff61ec73b60977548cd3ce5593e2cb3d7f367e"
-        },
         "data/runs/2026-10-21-03/snapshots/863683348--dsh-need-finder/REVIEWED-SOURCE.json": {
             "path": "evidence/a9/a99f1d79b8f4af53684db2cf5ee124d9c9fc1ba5e038c15d87a188a2935883f2.json",
             "sha256": "a99f1d79b8f4af53684db2cf5ee124d9c9fc1ba5e038c15d87a188a2935883f2"
-        },
-        "data/runs/2026-10-21-03/snapshots/863683348--dsh-plugin-academic-writing/REVIEWED-SOURCE.json": {
-            "path": "evidence/ea/ea128520a1121285d0ed7e5489af70dd42d68ce77b25ffec3c63d5421fac3185.json",
-            "sha256": "ea128520a1121285d0ed7e5489af70dd42d68ce77b25ffec3c63d5421fac3185"
-        },
-        "data/runs/2026-10-21-03/snapshots/863683348--dsh-plugin-audit/REVIEWED-SOURCE.json": {
-            "path": "evidence/09/096b7ac9e481ec6faa64d2168824269de158b48c0751c91deb36a500e408de64.json",
-            "sha256": "096b7ac9e481ec6faa64d2168824269de158b48c0751c91deb36a500e408de64"
         },
         "data/runs/2026-10-21-03/snapshots/985451842--dsh-snapshot-manager/REVIEWED-SOURCE.json": {
             "path": "evidence/dd/dd695e69b9b45a839a1cbe5daf774a0e70181656132ea567ed2b4d57a52d1c34.json",
@@ -11992,10 +11912,6 @@
         "data/runs/2026-10-21-03/snapshots/863683348--dsh-plugin-education/REVIEWED-SOURCE.json": {
             "path": "evidence/b1/b1db931a65554474ce43b17eab3d38218f0a282865c975dd58f3c6f715b0e2a3.json",
             "sha256": "b1db931a65554474ce43b17eab3d38218f0a282865c975dd58f3c6f715b0e2a3"
-        },
-        "data/runs/2026-10-21-03/snapshots/863683348--dsh-plugin-finance-data/REVIEWED-SOURCE.json": {
-            "path": "evidence/9c/9c3fc86c498e4d8f09ce421e954fca0811592798410b37562da467613568429a.json",
-            "sha256": "9c3fc86c498e4d8f09ce421e954fca0811592798410b37562da467613568429a"
         },
         "data/runs/2026-10-21-03/snapshots/863683348--dsh-plugin-focus/REVIEWED-SOURCE.json": {
             "path": "evidence/a9/a9c8786024206409b1c8dedd42561b2807d5aabf3979b727fa2c056996ceb4f8.json",
@@ -12029,10 +11945,6 @@
             "path": "evidence/8a/8a3ef25a5f4edbcd5e2c8334ad61bb4e1a33d5eb288ac1a35cd16ce799602689.json",
             "sha256": "8a3ef25a5f4edbcd5e2c8334ad61bb4e1a33d5eb288ac1a35cd16ce799602689"
         },
-        "data/runs/2026-10-21-04/snapshots/a3boy--dsh-web-tools/REVIEWED-SOURCE.json": {
-            "path": "evidence/e8/e8c5e179218b803af330ab0f18f4c42ab0a36a689f04f2e1e80b814a66cf5cda.json",
-            "sha256": "e8c5e179218b803af330ab0f18f4c42ab0a36a689f04f2e1e80b814a66cf5cda"
-        },
         "data/runs/2026-10-21-04/snapshots/a42null--dsh-opencode-zen-plugin/REVIEWED-SOURCE.json": {
             "path": "evidence/a4/a4fcbf2b5daf666a78b925f854be9144e3f8f1f70a2404be724257c08ad8c2f2.json",
             "sha256": "a4fcbf2b5daf666a78b925f854be9144e3f8f1f70a2404be724257c08ad8c2f2"
@@ -12044,10 +11956,6 @@
         "data/runs/2026-10-21-04/snapshots/aaalenwow--dsh-spring-admin-kit/REVIEWED-SOURCE.json": {
             "path": "evidence/d1/d140c891751cdda61e7cf600371548d8efab79bd73d653368bd95b81b9d56d30.json",
             "sha256": "d140c891751cdda61e7cf600371548d8efab79bd73d653368bd95b81b9d56d30"
-        },
-        "data/runs/2026-10-21-04/snapshots/aaalenwow--dsh-weknora-archive/REVIEWED-SOURCE.json": {
-            "path": "evidence/25/258636dd585f5750fde60fe3c7d88af8fe4fe9cd7c8af9ea193355a76efb04cb.json",
-            "sha256": "258636dd585f5750fde60fe3c7d88af8fe4fe9cd7c8af9ea193355a76efb04cb"
         },
         "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--dsh-lsp-packs--dsh-lsp-java/REVIEWED-SOURCE.json": {
             "path": "evidence/3a/3a745b3357ef8514f39881ce6c8dd7d52620c70bd8a3f2afd4c6defedb2bf0c4.json",
@@ -12065,10 +11973,6 @@
             "path": "evidence/d2/d2d04d60059cc0761d46d87d136380f41b2474de5b034b9e12cab106f53908a1.json",
             "sha256": "d2d04d60059cc0761d46d87d136380f41b2474de5b034b9e12cab106f53908a1"
         },
-        "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--dsh-math-olympiad/REVIEWED-SOURCE.json": {
-            "path": "evidence/29/2905c4ba21197d523182c01e3be1dec6257c0a3d34fddc11080d9309ca7b31d1.json",
-            "sha256": "2905c4ba21197d523182c01e3be1dec6257c0a3d34fddc11080d9309ca7b31d1"
-        },
         "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--dsh-mcp-tunnel/REVIEWED-SOURCE.json": {
             "path": "evidence/3a/3a684e23a717172a8e193d1e76d3a106cfeb32058b610a334516822caf9084b6.json",
             "sha256": "3a684e23a717172a8e193d1e76d3a106cfeb32058b610a334516822caf9084b6"
@@ -12076,10 +11980,6 @@
         "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--dsh-receipts/REVIEWED-SOURCE.json": {
             "path": "evidence/f5/f55e3021cafe374fb1334b0a7a8c7f4170bff5ad0508adc214245f55f30c860d.json",
             "sha256": "f55e3021cafe374fb1334b0a7a8c7f4170bff5ad0508adc214245f55f30c860d"
-        },
-        "data/runs/2026-10-21-04/snapshots/9931666--dsh-plugin-crossfire/REVIEWED-SOURCE.json": {
-            "path": "evidence/d1/d1a0e5d820cd74262e93f4fab3db0ee1c032f68a653f293e3f366684b36bd7d7.json",
-            "sha256": "d1a0e5d820cd74262e93f4fab3db0ee1c032f68a653f293e3f366684b36bd7d7"
         },
         "data/runs/2026-10-21-04/snapshots/9931666--dsh-plugin-roundtable/REVIEWED-SOURCE.json": {
             "path": "evidence/0a/0ad1d9581c5f91a981e79d0a7892831a6e7cdc647d8714768575e20a28793239.json",
@@ -12217,10 +12117,6 @@
             "path": "evidence/ec/ec9fb37b8dead10a12d9538b893fa7b0551ed6a582a7e3451d49e6e37f61e4c3.json",
             "sha256": "ec9fb37b8dead10a12d9538b893fa7b0551ed6a582a7e3451d49e6e37f61e4c3"
         },
-        "data/runs/2026-10-21-06/snapshots/aik358--dsh-anchored-monitor/REVIEWED-SOURCE.json": {
-            "path": "evidence/60/6088a6a7b661ebba06591904c0cbf4e4449beb1fe75526de7968e0f9d0d52ddb.json",
-            "sha256": "6088a6a7b661ebba06591904c0cbf4e4449beb1fe75526de7968e0f9d0d52ddb"
-        },
         "data/runs/2026-10-21-06/snapshots/aik358--dsh-ark9canvas/REVIEWED-SOURCE.json": {
             "path": "evidence/41/41032ef3006c68803f68a55df0d74ec11fce3922f9ce075b9efd49eb1d6c0d36.json",
             "sha256": "41032ef3006c68803f68a55df0d74ec11fce3922f9ce075b9efd49eb1d6c0d36"
@@ -12281,17 +12177,9 @@
             "path": "evidence/6e/6ec8d1787082b259be2799d98a23862461e06c0b1779d6be02ff079c992e48b5.json",
             "sha256": "6ec8d1787082b259be2799d98a23862461e06c0b1779d6be02ff079c992e48b5"
         },
-        "data/runs/2026-10-21-07/snapshots/anacondakc--dsh-stock-market/REVIEWED-SOURCE.json": {
-            "path": "evidence/92/92bf61bf8bbc956cec398984e9445290edee2b785f1353d4628b2e3236c3a622.json",
-            "sha256": "92bf61bf8bbc956cec398984e9445290edee2b785f1353d4628b2e3236c3a622"
-        },
         "data/runs/2026-10-21-07/snapshots/andersen216--dsh-whale-girl-live2d/REVIEWED-SOURCE.json": {
             "path": "evidence/dd/dd4d30493d60f2180bfa387352880a14b5c35b7506f2970926c808aabd684d5c.json",
             "sha256": "dd4d30493d60f2180bfa387352880a14b5c35b7506f2970926c808aabd684d5c"
-        },
-        "data/runs/2026-10-21-07/snapshots/andiii208--dsh-ultramath/REVIEWED-SOURCE.json": {
-            "path": "evidence/c0/c082c0b1116e2f0dbf0141c214d1da9c565f915ffd43a49c5fa875706ff338cb.json",
-            "sha256": "c082c0b1116e2f0dbf0141c214d1da9c565f915ffd43a49c5fa875706ff338cb"
         },
         "data/runs/2026-10-21-07/snapshots/andiii208--gzhflow/REVIEWED-SOURCE.json": {
             "path": "evidence/06/06741407a8dd8e9f81fe00f053363e12d645adf3396da3042f4317367934f6ae.json",
@@ -12300,10 +12188,6 @@
         "data/runs/2026-10-21-07/snapshots/andor-z--dsh-turn-outline/REVIEWED-SOURCE.json": {
             "path": "evidence/8b/8b00c36cc087fed38007785e6a07eba1cfa4b82830adb6641cf0b15089454058.json",
             "sha256": "8b00c36cc087fed38007785e6a07eba1cfa4b82830adb6641cf0b15089454058"
-        },
-        "data/runs/2026-10-21-07/snapshots/aik358--dsh-literature/REVIEWED-SOURCE.json": {
-            "path": "evidence/c0/c05a84b5bf26953a74cbcd85864a638b6a40ae5f137a7a6008653e19e23429a5.json",
-            "sha256": "c05a84b5bf26953a74cbcd85864a638b6a40ae5f137a7a6008653e19e23429a5"
         },
         "data/runs/2026-10-21-07/snapshots/airpineapplea--feiyu-memory/REVIEWED-SOURCE.json": {
             "path": "evidence/87/8706e08adaa59a8582595261accb6f22558dcc548defadeeeee44075d1d8d516.json",
@@ -12409,6 +12293,10 @@
             "path": "evidence/0b/0b2a396a5024e148b0592601cff09603c8286f89d53dd69f3720b14541fedf8e.json",
             "sha256": "0b2a396a5024e148b0592601cff09603c8286f89d53dd69f3720b14541fedf8e"
         },
+        "data/runs/2026-10-22-02/snapshots/2672243194--dsh-read-url/REVIEWED-SOURCE.json": {
+            "path": "evidence/f6/f6245e0125b9017cbc0ee63c3824288c4848c8cb294515a36a425d2acb143bd3.json",
+            "sha256": "f6245e0125b9017cbc0ee63c3824288c4848c8cb294515a36a425d2acb143bd3"
+        },
         "data/runs/2026-10-22-02/snapshots/988hj7tczd-oss--harness-github/REVIEWED-SOURCE.json": {
             "path": "evidence/ba/bac34bdf685bf3e204f82c8009e0b7fcc2e8aeddecb913caff7ff95190ddc5f7.json",
             "sha256": "bac34bdf685bf3e204f82c8009e0b7fcc2e8aeddecb913caff7ff95190ddc5f7"
@@ -12416,6 +12304,14 @@
         "data/runs/2026-10-22-02/snapshots/5aaee9--pi-agent-extensions--dsh-autocompact/REVIEWED-SOURCE.json": {
             "path": "evidence/c0/c0380fb60b5e281ad5435f6cd58f25cf32009cdee65f722c791cf16265194316.json",
             "sha256": "c0380fb60b5e281ad5435f6cd58f25cf32009cdee65f722c791cf16265194316"
+        },
+        "data/runs/2026-10-22-02/snapshots/aik358--dsh-literature/REVIEWED-SOURCE.json": {
+            "path": "evidence/34/34130692961e962856d7e652a5b8c89c2b2d6146be7c2a2f03e54b88159b700c.json",
+            "sha256": "34130692961e962856d7e652a5b8c89c2b2d6146be7c2a2f03e54b88159b700c"
+        },
+        "data/runs/2026-10-22-02/snapshots/anacondakc--dsh-stock-market/REVIEWED-SOURCE.json": {
+            "path": "evidence/b1/b1978511cce7c23d16aa6501b99004836c62f96389853cfbaa7d3cf14cc14e6a.json",
+            "sha256": "b1978511cce7c23d16aa6501b99004836c62f96389853cfbaa7d3cf14cc14e6a"
         },
         "data/runs/2026-10-22-02/snapshots/adwmc--helm-d--packages-helmd/REVIEWED-SOURCE.json": {
             "path": "evidence/09/093e4b41795754daf82d8de4c6072882e7d39d5dbf7bf2b531e29f08decc6935.json",
@@ -12477,6 +12373,10 @@
             "path": "evidence/90/908cbc8a57e572807b9ce562b4d9de3fe32ee4278f54b0862cf5f95ff8f0d555.json",
             "sha256": "908cbc8a57e572807b9ce562b4d9de3fe32ee4278f54b0862cf5f95ff8f0d555"
         },
+        "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-obsidian/REVIEWED-SOURCE.json": {
+            "path": "evidence/8d/8d6a50c6c96fb0c7dbeb847fd7d9760803a5682950c7eee28a2aaecabe310a93.json",
+            "sha256": "8d6a50c6c96fb0c7dbeb847fd7d9760803a5682950c7eee28a2aaecabe310a93"
+        },
         "data/runs/2026-10-22-02/snapshots/1420079678-ctrl--agent-body--workspace-plugins-dsh-organism/REVIEWED-SOURCE.json": {
             "path": "evidence/f4/f48bfce75f2598d046a58915436eff1ade112807dd50ff2976ccdcd1993ac054.json",
             "sha256": "f48bfce75f2598d046a58915436eff1ade112807dd50ff2976ccdcd1993ac054"
@@ -12497,6 +12397,10 @@
             "path": "evidence/b6/b6a6069af7db491a57ec73f39696dcf29040f7ffa84bdabd9b306efd7d07bd52.json",
             "sha256": "b6a6069af7db491a57ec73f39696dcf29040f7ffa84bdabd9b306efd7d07bd52"
         },
+        "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-playwright/REVIEWED-SOURCE.json": {
+            "path": "evidence/f2/f2be5ccdcbf6d0a2dca9018f5cbd8a067c92547ba543ea46448133c6c1133d00.json",
+            "sha256": "f2be5ccdcbf6d0a2dca9018f5cbd8a067c92547ba543ea46448133c6c1133d00"
+        },
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-pkg/REVIEWED-SOURCE.json": {
             "path": "evidence/ca/caf201c70f568e3c349e838be3bc7a0ff984408aabc2f9b20bf6b46b153fbdc2.json",
             "sha256": "caf201c70f568e3c349e838be3bc7a0ff984408aabc2f9b20bf6b46b153fbdc2"
@@ -12504,6 +12408,10 @@
         "data/runs/2026-10-22-02/snapshots/1321928757--dsh-mysql/REVIEWED-SOURCE.json": {
             "path": "evidence/66/66196cc46b3d55461b06415b1f4c2ff63ec1a4433a875e9fd00f0f627310433f.json",
             "sha256": "66196cc46b3d55461b06415b1f4c2ff63ec1a4433a875e9fd00f0f627310433f"
+        },
+        "data/runs/2026-10-22-02/snapshots/aaalenwow--dsh-weknora-archive/REVIEWED-SOURCE.json": {
+            "path": "evidence/9b/9b9cdc9ab4897f0d2de6218c96e6c0e89220fee8cde568b5478cc8b307d9acd3.json",
+            "sha256": "9b9cdc9ab4897f0d2de6218c96e6c0e89220fee8cde568b5478cc8b307d9acd3"
         },
         "data/runs/2026-10-22-02/snapshots/00080000--dsh-project-memory/REVIEWED-SOURCE.json": {
             "path": "evidence/e0/e0e3b169b5116797266be1e76d4b355113f8bdf59adc3ab212274cfdceec9237.json",
@@ -12517,13 +12425,25 @@
             "path": "evidence/3d/3d14da406a0e560225e16f9ed2119606919b1cb9212587fcb3b40e871d07028e.json",
             "sha256": "3d14da406a0e560225e16f9ed2119606919b1cb9212587fcb3b40e871d07028e"
         },
+        "data/runs/2026-10-22-02/snapshots/2333hutao--dsh-ls125-uv-probe/REVIEWED-SOURCE.json": {
+            "path": "evidence/81/81739091e6964e244a75622b9de190919d7375d332a9cebbf3f158bc24dbcd79.json",
+            "sha256": "81739091e6964e244a75622b9de190919d7375d332a9cebbf3f158bc24dbcd79"
+        },
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-jev/REVIEWED-SOURCE.json": {
             "path": "evidence/92/92c17d92fd111da50a6b0887828d15993a608e2c432b64501bbc4b2dbd30d4a6.json",
             "sha256": "92c17d92fd111da50a6b0887828d15993a608e2c432b64501bbc4b2dbd30d4a6"
         },
+        "data/runs/2026-10-22-02/snapshots/398894496-arch--krouter/REVIEWED-SOURCE.json": {
+            "path": "evidence/e1/e17c38e9e372d0fb44f5c2bcf5b0dcdacff480a15bb62c889e3484778e6aca31.json",
+            "sha256": "e17c38e9e372d0fb44f5c2bcf5b0dcdacff480a15bb62c889e3484778e6aca31"
+        },
         "data/runs/2026-10-22-02/snapshots/1010n111--dsh-about/REVIEWED-SOURCE.json": {
             "path": "evidence/29/299ac32ca42c986682e74ac5334f77df0775dfcbdb8d4e7fdf6ef443d6be802a.json",
             "sha256": "299ac32ca42c986682e74ac5334f77df0775dfcbdb8d4e7fdf6ef443d6be802a"
+        },
+        "data/runs/2026-10-22-02/snapshots/514006234--dsh-weekly-check--packages-dsh-weekly-panel/REVIEWED-SOURCE.json": {
+            "path": "evidence/65/657d258ba1abfd63d6b88a3eb00b313108372f45cb3d1992adf274ad87695138.json",
+            "sha256": "657d258ba1abfd63d6b88a3eb00b313108372f45cb3d1992adf274ad87695138"
         },
         "data/runs/2026-10-22-02/snapshots/akimiya-z--codex-guard--dsh/REVIEWED-SOURCE.json": {
             "path": "evidence/fa/fa09ee317afc2b21566bbe4868ab1a3ca9e34f0eb4a4de5ff4101a68475ab182.json",
@@ -12536,6 +12456,14 @@
         "data/runs/2026-10-22-02/snapshots/452926826--dsh-ssh-logs/REVIEWED-SOURCE.json": {
             "path": "evidence/c4/c403db82ffca065f4d2640d8f1c5f114f07682ad0fc406b7b96088ac0f583845.json",
             "sha256": "c403db82ffca065f4d2640d8f1c5f114f07682ad0fc406b7b96088ac0f583845"
+        },
+        "data/runs/2026-10-22-02/snapshots/863683348--dsh-plugin-finance-data/REVIEWED-SOURCE.json": {
+            "path": "evidence/65/650208903a60df507a8747363e13b7eab7ecb22d16be01d8a6bf049e16ce0c78.json",
+            "sha256": "650208903a60df507a8747363e13b7eab7ecb22d16be01d8a6bf049e16ce0c78"
+        },
+        "data/runs/2026-10-22-02/snapshots/aik358--dsh-anchored-monitor/REVIEWED-SOURCE.json": {
+            "path": "evidence/8e/8ef27c8c08b9af00f12f0338fbbc0f56aadc60f7b177688c50864a31eccc287e.json",
+            "sha256": "8ef27c8c08b9af00f12f0338fbbc0f56aadc60f7b177688c50864a31eccc287e"
         },
         "data/runs/2026-10-22-02/snapshots/82c86b8z86-stack--dsh-engineering-workflow/REVIEWED-SOURCE.json": {
             "path": "evidence/f7/f762dd59688db262ec2ae22db2aad3a8884c9bb49127d60ddc21db697a3a27da.json",
@@ -12553,6 +12481,14 @@
             "path": "evidence/b7/b76f2af387b67349e470c45bdf9f16abcbd1ef01a7a412536bb2e003d5b8a599.json",
             "sha256": "b76f2af387b67349e470c45bdf9f16abcbd1ef01a7a412536bb2e003d5b8a599"
         },
+        "data/runs/2026-10-22-02/snapshots/1014029855--dsh-codevault/REVIEWED-SOURCE.json": {
+            "path": "evidence/69/69c2670ad935b6ec79b69a540c457e8dc40a8161734e1086f21dccc0fc3f0a4c.json",
+            "sha256": "69c2670ad935b6ec79b69a540c457e8dc40a8161734e1086f21dccc0fc3f0a4c"
+        },
+        "data/runs/2026-10-22-02/snapshots/7starsseeker--dsh-fact-check/REVIEWED-SOURCE.json": {
+            "path": "evidence/e1/e1c4fa53f3c851bb22db6cc52a6028ee03dc80a023819c4ec36afc79a822735f.json",
+            "sha256": "e1c4fa53f3c851bb22db6cc52a6028ee03dc80a023819c4ec36afc79a822735f"
+        },
         "data/runs/2026-10-22-02/snapshots/162568316--dsh-tokenrhythm-bill/REVIEWED-SOURCE.json": {
             "path": "evidence/a0/a048ba7420c3f96128b5eb0c88359491e98b7b752761289e6054fa9653471b10.json",
             "sha256": "a048ba7420c3f96128b5eb0c88359491e98b7b752761289e6054fa9653471b10"
@@ -12565,13 +12501,25 @@
             "path": "evidence/fe/fede494a091650e09ec83db1d6c24657db74f01f0531cde6d55c7cfeea4d22b5.json",
             "sha256": "fede494a091650e09ec83db1d6c24657db74f01f0531cde6d55c7cfeea4d22b5"
         },
+        "data/runs/2026-10-22-02/snapshots/58catmiao--dsh-sciwork/REVIEWED-SOURCE.json": {
+            "path": "evidence/09/093f3cd4fe1ffb42c0fd3ae47eeae97ba2e1984f1bccf9879d7a755d6020b0bb.json",
+            "sha256": "093f3cd4fe1ffb42c0fd3ae47eeae97ba2e1984f1bccf9879d7a755d6020b0bb"
+        },
         "data/runs/2026-10-22-02/snapshots/11111353535--dsh-reaper/REVIEWED-SOURCE.json": {
             "path": "evidence/ba/ba328107df3fc0bc45d543c59ea1e3269ad234405e7c242de090dd0be086dfdd.json",
             "sha256": "ba328107df3fc0bc45d543c59ea1e3269ad234405e7c242de090dd0be086dfdd"
         },
+        "data/runs/2026-10-22-02/snapshots/9931666--dsh-plugin-crossfire/REVIEWED-SOURCE.json": {
+            "path": "evidence/4e/4eede3de0702e170fcfb554fcf29f16dd218c210d298c41f3323d5300b3f7f98.json",
+            "sha256": "4eede3de0702e170fcfb554fcf29f16dd218c210d298c41f3323d5300b3f7f98"
+        },
         "data/runs/2026-10-22-02/snapshots/962599627--agent-development-constraints/REVIEWED-SOURCE.json": {
             "path": "evidence/37/3768d82704124d13daf2a9a183167ef2f29fdff416675f4b240e79a4822f2115.json",
             "sha256": "3768d82704124d13daf2a9a183167ef2f29fdff416675f4b240e79a4822f2115"
+        },
+        "data/runs/2026-10-22-02/snapshots/863683348--dsh-plugin-verify/REVIEWED-SOURCE.json": {
+            "path": "evidence/74/7403dc321b42bc5a5b2bfe679815a43b94714f3ac7c8c491bef97ef38ef270ce.json",
+            "sha256": "7403dc321b42bc5a5b2bfe679815a43b94714f3ac7c8c491bef97ef38ef270ce"
         },
         "data/runs/2026-10-22-02/snapshots/9087--dsh-diff-approval/REVIEWED-SOURCE.json": {
             "path": "evidence/8c/8c3fbc9cd965c228c115019c873cbc6f80ea9cfcb46b1e5a9d07bea543432c67.json",
@@ -12589,6 +12537,10 @@
             "path": "evidence/aa/aa2709c993f3a0a9588daa6e43c64bfd30eb07145902601253491ad5c02242a2.json",
             "sha256": "aa2709c993f3a0a9588daa6e43c64bfd30eb07145902601253491ad5c02242a2"
         },
+        "data/runs/2026-10-22-02/snapshots/0x7a7a6572--dsh-forge-studio--plugin-memory/REVIEWED-SOURCE.json": {
+            "path": "evidence/bd/bd90947b14f7236b703762024c27c8b272afbf31eb2476070265929212f66b66.json",
+            "sha256": "bd90947b14f7236b703762024c27c8b272afbf31eb2476070265929212f66b66"
+        },
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-search/REVIEWED-SOURCE.json": {
             "path": "evidence/2c/2cb8c96c4d9c7712dfb9da4c5898b75ecdb3b22e8f330609e42ca126e5053633.json",
             "sha256": "2cb8c96c4d9c7712dfb9da4c5898b75ecdb3b22e8f330609e42ca126e5053633"
@@ -12596,6 +12548,10 @@
         "data/runs/2026-10-22-02/snapshots/121212165--dsh-plugin-ide-hub/REVIEWED-SOURCE.json": {
             "path": "evidence/4e/4e653cfc4894a71e8b04c04dd7227d9eb59fe3a7585b59ae5b4988894ae93342.json",
             "sha256": "4e653cfc4894a71e8b04c04dd7227d9eb59fe3a7585b59ae5b4988894ae93342"
+        },
+        "data/runs/2026-10-22-02/snapshots/2026heshao--dsh-obsidian-board/REVIEWED-SOURCE.json": {
+            "path": "evidence/85/85c7a1f2230342296d558466bfcaee405a39e9a60bc5d51320fd7f5fe472d66d.json",
+            "sha256": "85c7a1f2230342296d558466bfcaee405a39e9a60bc5d51320fd7f5fe472d66d"
         },
         "data/runs/2026-10-22-02/snapshots/4444wjt--dsh-plugin-veriscope/REVIEWED-SOURCE.json": {
             "path": "evidence/91/91f0a98b641ddf284b506036e8aa5ba0823af12586f94bfce3613d6e6da37615.json",
@@ -12617,13 +12573,25 @@
             "path": "evidence/23/23c326da0a980e635304310aabc645184fcd7bca80afc1e2b7230c7932b1dcdb.json",
             "sha256": "23c326da0a980e635304310aabc645184fcd7bca80afc1e2b7230c7932b1dcdb"
         },
+        "data/runs/2026-10-22-02/extra-worker-5-refill-01/revision-batch-01-adjudicated/revised/snapshots/863683348--dsh-trend-radar/REVIEWED-SOURCE.json": {
+            "path": "evidence/1f/1f5ffbf423e07de56383028bbe078f4564ad7a1725ad5c8dd3b67338d4870bd5.json",
+            "sha256": "1f5ffbf423e07de56383028bbe078f4564ad7a1725ad5c8dd3b67338d4870bd5"
+        },
         "data/runs/2026-10-22-02/extra-worker-5-refill-01/revision-batch-01/revised/snapshots/988hj7tczd-oss--dsh-modernize-code/REVIEWED-SOURCE.json": {
             "path": "evidence/71/71cb1b8191891d8109b0dbb9f487dd0e7d45f0f7de3566d555949dedfaa63c96.json",
             "sha256": "71cb1b8191891d8109b0dbb9f487dd0e7d45f0f7de3566d555949dedfaa63c96"
         },
+        "data/runs/2026-10-22-02/snapshots/18477514055--dsh-ledger-memory/REVIEWED-SOURCE.json": {
+            "path": "evidence/48/4851e88ad4005678b16bebac203eeae1d7aab9f5fe90c436bca760dcfec1b1e3.json",
+            "sha256": "4851e88ad4005678b16bebac203eeae1d7aab9f5fe90c436bca760dcfec1b1e3"
+        },
         "data/runs/2026-10-22-02/snapshots/akiyuki1130--dsh-ark-coding-provider/REVIEWED-SOURCE.json": {
             "path": "evidence/57/57fa8495dcd9b476f900fba4ba66065b144ea71e086d6813059a587bb503de5c.json",
             "sha256": "57fa8495dcd9b476f900fba4ba66065b144ea71e086d6813059a587bb503de5c"
+        },
+        "data/runs/2026-10-22-02/snapshots/1624318455--dsh-plugin-tavily/REVIEWED-SOURCE.json": {
+            "path": "evidence/b3/b3f53ca662e9a0b526514789e245ec5f506140c5750bdff44d52f1a77a4875ae.json",
+            "sha256": "b3f53ca662e9a0b526514789e245ec5f506140c5750bdff44d52f1a77a4875ae"
         },
         "data/runs/2026-10-22-02/snapshots/7dgroup-ai--dsh-skill-7d-code-reviewer/REVIEWED-SOURCE.json": {
             "path": "evidence/4e/4ed1f07edacebd3d59aec09b2d385c7285823ce14c5fbd4961e46cae02239f43.json",
@@ -12681,6 +12649,10 @@
             "path": "evidence/1a/1a537a08921b5fc25aa7af14be67da914746e1928d65df1a20f580b30a7fb7c9.json",
             "sha256": "1a537a08921b5fc25aa7af14be67da914746e1928d65df1a20f580b30a7fb7c9"
         },
+        "data/runs/2026-10-22-02/snapshots/240xu--dsh-websearch/REVIEWED-SOURCE.json": {
+            "path": "evidence/9b/9b8e1d0c92c19308df306aabf6cef1eb6b8d9840f36835124a15d94057342c28.json",
+            "sha256": "9b8e1d0c92c19308df306aabf6cef1eb6b8d9840f36835124a15d94057342c28"
+        },
         "data/runs/2026-10-22-02/snapshots/263311487-ux--dsh-verify/REVIEWED-SOURCE.json": {
             "path": "evidence/aa/aa862f9ee41a2880dee04bc888824f216b47d5485173314b7ca6c2c973599c0e.json",
             "sha256": "aa862f9ee41a2880dee04bc888824f216b47d5485173314b7ca6c2c973599c0e"
@@ -12701,6 +12673,10 @@
             "path": "evidence/12/1248ae3333c5977686888c94fa865e6725e155a08209737a0efb98d04e061818.json",
             "sha256": "1248ae3333c5977686888c94fa865e6725e155a08209737a0efb98d04e061818"
         },
+        "data/runs/2026-10-22-02/snapshots/863683348--dsh-plugin-academic-writing/REVIEWED-SOURCE.json": {
+            "path": "evidence/8e/8ef100c74b5549099c5336d1aa957896036efc27dc48e126304a9a5f9dd75b1f.json",
+            "sha256": "8ef100c74b5549099c5336d1aa957896036efc27dc48e126304a9a5f9dd75b1f"
+        },
         "data/runs/2026-10-22-02/snapshots/988hj7tczd-oss--dsh-asciinema/REVIEWED-SOURCE.json": {
             "path": "evidence/b1/b1434e12a40ce1367639f213c88e0048aa7c8a758dd72eb10b4bc1ed75a7a76d.json",
             "sha256": "b1434e12a40ce1367639f213c88e0048aa7c8a758dd72eb10b4bc1ed75a7a76d"
@@ -12708,6 +12684,10 @@
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-path/REVIEWED-SOURCE.json": {
             "path": "evidence/8f/8fb7b2d914b58b9b78a97f0f8c8dad1f61a4f2eb1aecea3d6c175df512ecae9a.json",
             "sha256": "8fb7b2d914b58b9b78a97f0f8c8dad1f61a4f2eb1aecea3d6c175df512ecae9a"
+        },
+        "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-obscura/REVIEWED-SOURCE.json": {
+            "path": "evidence/05/05aa66eeecaad29099c20c13447b0b7d6dfc7c8264296b0ca4901613da0f4bfc.json",
+            "sha256": "05aa66eeecaad29099c20c13447b0b7d6dfc7c8264296b0ca4901613da0f4bfc"
         },
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-distro/REVIEWED-SOURCE.json": {
             "path": "evidence/9c/9caf4b24de161e37f64b04d27e6fa09ffe65e0417dbb7f01e2feb6ee560d1ba8.json",
@@ -12741,6 +12721,10 @@
             "path": "evidence/52/520216de62047f6bf96085d30870890e340b8b982dcba236ccfc3adca8f5d9bc.json",
             "sha256": "520216de62047f6bf96085d30870890e340b8b982dcba236ccfc3adca8f5d9bc"
         },
+        "data/runs/2026-10-22-02/snapshots/a3boy--dsh-web-tools/REVIEWED-SOURCE.json": {
+            "path": "evidence/f9/f9f4f3cc68d0dffdecd34b1dd07aae915da6710ada9703dfe44b5858c126f0ae.json",
+            "sha256": "f9f4f3cc68d0dffdecd34b1dd07aae915da6710ada9703dfe44b5858c126f0ae"
+        },
         "data/runs/2026-10-22-02/snapshots/february2015--dsh-taskswarm/REVIEWED-SOURCE.json": {
             "path": "evidence/aa/aa85b3baebb6bd546c07587bd265e1db870b6cf92deb226bcaf3b9669b06d035.json",
             "sha256": "aa85b3baebb6bd546c07587bd265e1db870b6cf92deb226bcaf3b9669b06d035"
@@ -12757,6 +12741,10 @@
             "path": "evidence/6c/6cbc20114ab46906cc50347d249061710c25fef915ce6b858aeffc7a49366c51.json",
             "sha256": "6cbc20114ab46906cc50347d249061710c25fef915ce6b858aeffc7a49366c51"
         },
+        "data/runs/2026-10-22-02/snapshots/andiii208--dsh-ultramath/REVIEWED-SOURCE.json": {
+            "path": "evidence/7d/7d83c9b50224356e50b9f089441143fdfa177ed546689a67aec971048c1c2756.json",
+            "sha256": "7d83c9b50224356e50b9f089441143fdfa177ed546689a67aec971048c1c2756"
+        },
         "data/runs/2026-10-22-02/snapshots/amethystluna--embedded-workbench/REVIEWED-SOURCE.json": {
             "path": "evidence/cb/cbb92230482dc6525e869ead243a2acf0300f787812b15806ff63d7eadf186b4.json",
             "sha256": "cbb92230482dc6525e869ead243a2acf0300f787812b15806ff63d7eadf186b4"
@@ -12764,6 +12752,14 @@
         "data/runs/2026-10-22-02/snapshots/2008924--dsh-progress-viz--plugin/REVIEWED-SOURCE.json": {
             "path": "evidence/ed/ed6268e8fec057172f482ce8d1e18f1cf4b4943df61aad47a7513fd2820086a7.json",
             "sha256": "ed6268e8fec057172f482ce8d1e18f1cf4b4943df61aad47a7513fd2820086a7"
+        },
+        "data/runs/2026-10-22-02/snapshots/863683348--dsh-plugin-audit/REVIEWED-SOURCE.json": {
+            "path": "evidence/56/5664b2eafdb1028c5dd51f39274793ffab99155ea1c85a8e8eb99453b1fc6315.json",
+            "sha256": "5664b2eafdb1028c5dd51f39274793ffab99155ea1c85a8e8eb99453b1fc6315"
+        },
+        "data/runs/2026-10-22-02/snapshots/863683348--dsh-feed/REVIEWED-SOURCE.json": {
+            "path": "evidence/9c/9c4640f74f6d643c49f3a26b062e3cd45ca5e72ee9ac7b82810a3b09dde48c15.json",
+            "sha256": "9c4640f74f6d643c49f3a26b062e3cd45ca5e72ee9ac7b82810a3b09dde48c15"
         },
         "data/runs/2026-10-22-02/snapshots/988hj7tczd-oss--dsh-lsp-packs--dsh-lsp-lua/REVIEWED-SOURCE.json": {
             "path": "evidence/8e/8eb0e5ef0aa6fe5bd036562ed2518c5c7a137b433a0d2f451ee8148e9b74216f.json",
@@ -12780,6 +12776,10 @@
         "data/runs/2026-10-22-02/snapshots/988hj7tczd-oss--dsh-lsp-packs--dsh-lsp-ts/REVIEWED-SOURCE.json": {
             "path": "evidence/85/85bc569ac56d1182aa9df465c57de41e98425aff13fc59482be69b2fb82ea745.json",
             "sha256": "85bc569ac56d1182aa9df465c57de41e98425aff13fc59482be69b2fb82ea745"
+        },
+        "data/runs/2026-10-22-02/snapshots/988hj7tczd-oss--dsh-math-olympiad/REVIEWED-SOURCE.json": {
+            "path": "evidence/81/816eab947e62bef64b08da717cca46e592c9594d8036503cbec376340f0f746d.json",
+            "sha256": "816eab947e62bef64b08da717cca46e592c9594d8036503cbec376340f0f746d"
         },
         "data/runs/2026-10-22-02/snapshots/988hj7tczd-oss--dsh-workflow-templates/REVIEWED-SOURCE.json": {
             "path": "evidence/bf/bf3869426d7554bd99c2af1664c9aeab08b2f83f12d6981bd526921fb4d55067.json",

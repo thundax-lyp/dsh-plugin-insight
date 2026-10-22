@@ -22,7 +22,6 @@
 | [drag-and-drop（AKIRACOD fork）](#plugin-1333975935-root) | 将拖入的本地文件/目录定位为真实路径，以可删除芯片送入会话。 | 可作为同机本地文件输入方案候选；需跨会话频繁操作、远程Host或敏感目录访问控制的场景，先解决会话归属和搜索授权边界。 |
 | [draw-gacha](#plugin-1335791040-root) | 在发送区加入抽卡拉杆，按模型流中的文本信号播放娱乐演出。 | 只适合把等待过程当娱乐的用户；需要效率/可读性或质量监控时，不能用卡面代替真实任务状态与结果核查。 |
 | [dsh-activity-heatmap](#plugin-1334318461-root) | 在 DSH 侧栏展示活动热力图、Token 用量、缓存命中和估算花费。 | 适合个人趋势观察；先与少量原始usage和实际账单核对，不用于财务结算或绩效评价。 |
-| [dsh-anchored-monitor](#plugin-1337467566-root) | 统计DSH推理文本的词汇指纹并展示波段，可选分级提示、取消当前回合与重设persona/工具。 | 建议先仅观测并称为词汇指纹，不据仪表断言模型能力。 |
 | [dsh-archived-conversations](#plugin-1335060115-root) | 在设置页列出归档会话并提供最小只读文本预览。 | 用于本机归档摘要；确认片段不足以替代全文证据，远程使用需另设计授权。 |
 | [dsh-at-skill](#plugin-1346023186-root) | 为 DSH 增加 @name 技能候选和发送前确定性技能加载。 | Skill命名清晰的用户可评估；与插件或子代理重名时谨慎使用，发送前确认文本，加载不代表任务执行验收。 |
 | [dsh-auto-shutdown](#plugin-1425073734-root) | 在Windows设置中启用一次性触发，在根会话轮次结束后安排关机并提供取消倒计时。 | 先用作者提供的dryrun路径在临时环境检查事件和复位，不直接在有未保存任务的主机启用。 |
@@ -294,20 +293,6 @@
 > **思考**：README仍称90天，但stats-service的WINDOW_DAYS为365，实际范围需以源码为准；模型定价和usage字段口径决定估算准确性，最近模型名归因与缺失字段补0不能证明财务完整。提交量也不能代表交付价值。 pricing.ts对未知模型使用DEFAULT_PRICE而非未知值，因此新模型也会显示貌似精确的估算。
 
 > **建议**：适合个人趋势观察；先与少量原始usage和实际账单核对，不用于财务结算或绩效评价。
-
-<a id="plugin-1337467566-root"></a>
-
-## [dsh-anchored-monitor](../../plugins/aik358--dsh-anchored-monitor/INSIGHT.md)
-
-[![GitHub ★ 13](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=13&color=yellow&logo=github&style=flat)](https://github.com/Aik358/dsh-anchored-monitor) [![npm 30d 987](https://img.shields.io/static/v1?label=npm+30d&message=987&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@a9i5k4/dsh-anchored-monitor) [![最新发布 2026-09-05](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-05&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@a9i5k4/dsh-anchored-monitor)
-
-> **用途**：作者针对特定DeepSeek模型的锚定风格观察实验；合格指标需预测任务正确性，不能把词频直接当模型能力。
-
-> **亮点**：将词汇代理指标、趋势与干预接进实时宿主闭环，工程增量是可配置观测/干预和实验日志；锚定假说、Minimal persona及上游模型能力不归插件原创。
-
-> **思考**：词风变化是否因果代表能力退化？换语言、引用或遵循措辞可能改变分数而不改正确性，干预也可能只优化指标。源码L2替换persona和工具目录，并非清空所有历史；作者Project2分数与能力强度宣称未获独立核实。
-
-> **建议**：由可配置指标与分级动作推导，应先将词频设为候选预警，与盲评任务正确率和工具失败率联合校准，再随机化开启干预。未验证；若控任务难度/语言后词频不预测失败，或干预只改措辞而不改成功率，应否定能力仪表解释。
 
 <a id="plugin-1335060115-root"></a>
 

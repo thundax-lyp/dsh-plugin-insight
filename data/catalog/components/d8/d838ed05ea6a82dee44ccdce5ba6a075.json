@@ -12,7 +12,7 @@
             "aliases": [],
             "name": "dsh-wsl-obsidian",
             "entry_type": "plugin",
-            "technical_category": "memory-knowledge",
+            "technical_category": "tools-integration",
             "business_category": "research-knowledge",
             "tags": [],
             "availability": "unknown",
@@ -24,36 +24,76 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-20-07-github-1380817560-root-directory-0",
+                    "id": "2026-10-22-02-github-1380817560-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
-                    "retrieved_at": "2026-10-20T10:01:54.286Z",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-22T05:23:49.870Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-20-07-github-1380817560-root-author",
+                    "id": "2026-10-22-02-github-1380817560-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/173787247/dsh-wsl-obsidian/blob/0d37b05d030b265559238e740ea92ba6baf2adff/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-obsidian",
+                            "commit": "0d37b05d030b265559238e740ea92ba6baf2adff",
+                            "path": "README.md",
+                            "content_sha256": "c8e3a44d0e04a11b7c978c97e2b9e832cf67621f9e13482f66c65b1910842140"
+                        }
+                    ],
                     "revision": "0d37b05d030b265559238e740ea92ba6baf2adff",
-                    "captured_at": "2026-10-20T10:01:54.286Z",
-                    "summary": "连接Windows或WSL的Obsidian笔记库，提供搜索、读取、写入与打开笔记。",
-                    "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-obsidian/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:23:49.870Z",
+                    "summary": "给 WSL 中的 DSH Agent 提供 Windows Obsidian 笔记库的状态、检索、读写和桌面打开工具。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-obsidian/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-20-07-github-1380817560-root-source",
+                    "id": "2026-10-22-02-github-1380817560-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/173787247/dsh-wsl-obsidian/blob/0d37b05d030b265559238e740ea92ba6baf2adff/index.js",
+                    "url": "https://github.com/173787247/dsh-wsl-obsidian/blob/0d37b05d030b265559238e740ea92ba6baf2adff/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-obsidian",
+                            "commit": "0d37b05d030b265559238e740ea92ba6baf2adff",
+                            "path": "README.md",
+                            "content_sha256": "c8e3a44d0e04a11b7c978c97e2b9e832cf67621f9e13482f66c65b1910842140"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-obsidian",
+                            "commit": "0d37b05d030b265559238e740ea92ba6baf2adff",
+                            "path": "package.json",
+                            "content_sha256": "a324485a0b016e3286cfb53f455851638b0e0b82c25a06073d5dffaca1b31144"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-obsidian",
+                            "commit": "0d37b05d030b265559238e740ea92ba6baf2adff",
+                            "path": "index.js",
+                            "content_sha256": "e28c9e0ad4fb224a0f1cc9cd56ba7b0d1f715b47b0f88e022874231f33b88d43"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-obsidian",
+                            "commit": "0d37b05d030b265559238e740ea92ba6baf2adff",
+                            "path": "lib/vault.js",
+                            "content_sha256": "f152032526c1f61565a5010400ce0371a97c25d24e7655f5360b6ff543c4c613"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-obsidian",
+                            "commit": "0d37b05d030b265559238e740ea92ba6baf2adff",
+                            "path": "lib/open.js",
+                            "content_sha256": "0d70360f4a0210d5d99a1fe21d963ccbd906fa43e457c473469488a6a39f7d1c"
+                        }
+                    ],
                     "revision": "0d37b05d030b265559238e740ea92ba6baf2adff",
-                    "captured_at": "2026-10-20T10:01:54.286Z",
-                    "summary": "核查 index.js、lib/vault.js、lib/path.js、lib/open.js；入口解析显式vault或obsidian.json，vault.js检查相对路径并读写Markdown，open.js生成桌面打开URI。",
-                    "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-obsidian/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:23:49.870Z",
+                    "summary": "核查 README.md、package.json、index.js、lib/vault.js、lib/open.js；显式配置或读取 obsidian.json 选 vault，文件工具经相对路径检查后直接读写 .md，打开通过 URI/Windows 桥接。详见[Q02](#research-q02)。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-obsidian/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "抽读vault发现、路径与读写实现；未访问用户笔记或执行写入。 固定checkout的注册候选与关键主张定向抽读；未逐行完整审阅全部源码、测试、依赖及外部参照，未运行目标代码。评分仅针对文中明确的CLI/API/人工流程参照；跨场景迁移为解释性判断。",
+                        "只读核固定提交 README、package、index.js、lib/vault.js、lib/open.js；未访问用户 vault、执行目标代码/测试或真实宿主；旧 META 仅复用。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +104,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "Agent需要在既有Obsidian知识库中整理结果，而不重复复制到独立记忆系统。",
+                    "text": "用于对既有 Windows Obsidian 库进行 Agent 辅助整理；知识正确性、同步和覆盖风险仍需人核。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1380817560-root-source"
+                        "2026-10-22-02-github-1380817560-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +115,16 @@
                             "fingerprint": "0d37b05d030b265559238e740ea92ba6baf2adff"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:54.286Z",
+                    "reviewed_at": "2026-10-22T05:23:49.870Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "入口解析显式vault或obsidian.json，vault.js检查相对路径并读写Markdown，open.js生成桌面打开URI。",
+                    "text": "显式配置或读取 obsidian.json 选 vault，文件工具经相对路径检查后直接读写 .md，打开通过 URI/Windows 桥接。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1380817560-root-source"
+                        "2026-10-22-02-github-1380817560-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +133,16 @@
                             "fingerprint": "0d37b05d030b265559238e740ea92ba6baf2adff"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:54.286Z",
+                    "reviewed_at": "2026-10-22T05:23:49.870Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "抽读vault发现、路径与读写实现；未访问用户笔记或执行写入。 固定checkout的注册候选与关键主张定向抽读；未逐行完整审阅全部源码、测试、依赖及外部参照，未运行目标代码。评分仅针对文中明确的CLI/API/人工流程参照；跨场景迁移为解释性判断。",
+                    "text": "只读核固定提交 README、package、index.js、lib/vault.js、lib/open.js；未访问用户 vault、执行目标代码/测试或真实宿主；旧 META 仅复用。",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1380817560-root-source"
+                        "2026-10-22-02-github-1380817560-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +151,16 @@
                             "fingerprint": "0d37b05d030b265559238e740ea92ba6baf2adff"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:54.286Z",
+                    "reviewed_at": "2026-10-22T05:23:49.870Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "固定版本包清单与作者说明已核对；需要可读取的笔记库、明确vault配置与写权限；桌面打开需要Windows Obsidian。",
+                    "text": "包声明 0.2.1、MIT、Node >=18；作者说明最低 DSH 0.1.2，实际兼容未在本轮运行验证。",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1380817560-root-source"
+                        "2026-10-22-02-github-1380817560-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +169,16 @@
                             "fingerprint": "0d37b05d030b265559238e740ea92ba6baf2adff"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:54.286Z",
+                    "reviewed_at": "2026-10-22T05:23:49.870Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "扫描与正文token、备份和冲突处理为主，未证明整理质量提高。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | Windows Obsidian、WSL/DSH、NTFS vault；金额未知 | 配路径、安装重启、确认库；耗时未知 | 多库自动发现需核 |\n| 持续使用 | 文件扫描/模型上下文；资源未知 | 备份、审阅写入及同步；频率未知 | 搜索最多先列 5000 篇 |\n| 失败恢复 | 备份或同步历史；金额未知 | 恢复覆盖、去重追加、解决冲突；耗时未知 | 无内建版本/原子写入 |",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1380817560-root-source"
+                        "2026-10-22-02-github-1380817560-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +187,16 @@
                             "fingerprint": "0d37b05d030b265559238e740ea92ba6baf2adff"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:54.286Z",
+                    "reviewed_at": "2026-10-22T05:23:49.870Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "明确指定测试vault并备份，避免在正在编辑的重要笔记上直接写入；检查符号链接。",
+                    "text": "建议观察，在测试 vault/备份副本先核 status、读写新文件和 Windows 显示；重要共享库暂不自动覆盖。详见[Q06](#research-q06)。",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1380817560-root-source"
+                        "2026-10-22-02-github-1380817560-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +205,16 @@
                             "fingerprint": "0d37b05d030b265559238e740ea92ba6baf2adff"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:54.286Z",
+                    "reviewed_at": "2026-10-22T05:23:49.870Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "把已有笔记文件变为Agent可调用的读写接口，保留Obsidian工作方式；知识正确性和同步语义不由文件桥接自动解决。 safeJoinVault做词法路径包含检查，没有在该函数中解析符号链接；并发编辑与直接writeFileSync也未构成版本冲突保护。",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| vault 定位与检索 | 显式/配置发现、列表/搜索/读取 | 大库完整率、真实定位节时 |\n| 笔记写入 | confirm 参数与文件写入链 | 外部并发/同步下内容保全 |\n| 桌面打开 | obsidian:// 和 Windows 桥接 | 真正打开、文件监视与同步成功 |",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1380817560-root-source"
+                        "2026-10-22-02-github-1380817560-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +223,16 @@
                             "fingerprint": "0d37b05d030b265559238e740ea92ba6baf2adff"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:54.286Z",
+                    "reviewed_at": "2026-10-22T05:23:49.870Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "发现配置、路径与内容操作分层可复用，但自动选最近vault应被用户核对。",
+                    "text": "vault 发现、路径转换和内容操作分层有复用价值；词法路径检查与无版本覆盖限制了可靠写入。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1380817560-root-source"
+                        "2026-10-22-02-github-1380817560-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,15 +241,69 @@
                             "fingerprint": "0d37b05d030b265559238e740ea92ba6baf2adff"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:54.286Z",
+                    "reviewed_at": "2026-10-22T05:23:49.870Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "让已有 Obsidian 库可被 Agent 以专用工具操作，并保留原有文件和双链工作方式；相比通用文件工具增加 vault 发现/路径规则，但不解决内容正确性、同步或冲突。详见[Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1380817560-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1380817560:root",
+                            "area": "code",
+                            "fingerprint": "0d37b05d030b265559238e740ea92ba6baf2adff"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T05:23:49.870Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "safeJoinVault 只验证词法路径，没有 realpath；writeFileSync/appendFileSync 无预期版本或恢复机制。confirm=true 与工具串行声明不足以保护库外 symlink 和 Obsidian 外部编辑。详见[Q03](#research-q03)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1380817560-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1380817560:root",
+                            "area": "code",
+                            "fingerprint": "0d37b05d030b265559238e740ea92ba6baf2adff"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T05:23:49.870Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "未验证方向是以 realpath 约束目标，写入携带已读内容哈希并进行比较、备份和原子替换；用 symlink/双端竞争/中断夹具比较丢失与误拒绝。详见[Q05](#research-q05)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1380817560-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1380817560:root",
+                            "area": "code",
+                            "fingerprint": "0d37b05d030b265559238e740ea92ba6baf2adff"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T05:23:49.870Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-20T10:01:54.286Z",
+            "last_checked_at": "2026-10-22T05:23:49.870Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "0d37b05d030b265559238e740ea92ba6baf2adff",
-                "reviewed_at": "2026-10-20T10:01:54.286Z",
+                "reviewed_at": "2026-10-22T05:23:49.870Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -221,61 +315,61 @@
                 "technical": {
                     "criteria": {
                         "novelty": 9,
-                        "mechanism": 8,
+                        "mechanism": 15,
                         "transferability": 10,
                         "simplification": 4
                     },
-                    "rationale": "novelty：既有Markdown库读写适配；mechanism：vault发现与词法路径校验为常规文件桥，未提供并发版本保护；transferability：文件库桥接分层可迁移；simplification：保留现有笔记工作方式，小幅便利，冲突负担外置。",
+                    "rationale": "novelty 是既有文件库与 Agent 接线；mechanism 有路径、发现、双链和多工具，但写入安全缺口明显；transferability 可迁移文件型知识库；simplification 减少定位步骤却添冲突责任。",
                     "basis": "interpretation",
-                    "score": 31,
+                    "score": 38,
                     "evidence_ids": [
-                        "2026-10-20-07-github-1380817560-root-source"
+                        "2026-10-22-02-github-1380817560-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
                         "workflow": 18,
-                        "delivery": 8,
-                        "reach": 5,
-                        "economics": null
+                        "delivery": 15,
+                        "reach": 10,
+                        "economics": 4
                     },
-                    "rationale": "workflow：Agent直接衔接已有笔记库，减少复制为实质档；delivery：结果直接落到现有笔记载体，小幅改进，知识正确性未保证；reach：已有Obsidian用户可沿用库；economics：缺备份/同步/冲突恢复与人工搬运比较。",
+                    "rationale": "workflow 让 Agent 在既有笔记库直接工作；delivery 有工具链但缺同步验收；reach 限 Windows/WSL/Obsidian；economics 无节时与恢复成本数据。",
                     "basis": "interpretation",
-                    "score": null,
+                    "score": 47,
                     "evidence_ids": [
-                        "2026-10-20-07-github-1380817560-root-source"
+                        "2026-10-22-02-github-1380817560-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "observe",
-                "reason": "Obsidian文件桥接有用，但词法范围不解析链接且直接写入无版本保护，先补路径和并发冲突边界再接重要vault。",
+                "reason": "可在明确测试 vault 的备份副本观察读写，生产库写入需先验证 symlink 与并发恢复。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "已有笔记库内整理结果的工作流明确。"
+                        "rationale": "既有 Obsidian 库整理场景清楚。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "保留原Obsidian工作方式省复制，文件工具已有替代。"
+                        "rationale": "专用工具简化定位和双链操作，效果未量化。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "已查safeJoinVault与writeFileSync，符号链接和并发缺口具体。"
+                        "rationale": "源码与作者说明可查，未运行目标/宿主。"
                     },
                     "cost": {
                         "score": 5,
-                        "rationale": "备份同步及误写冲突恢复负担高，自动选库还需核对。"
+                        "rationale": "外部同步、备份与覆盖恢复责任较大。"
                     }
                 },
                 "score": 54,
                 "revision": "0d37b05d030b265559238e740ea92ba6baf2adff",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T05:23:49.870Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-20-07-github-1380817560-root-source"
+                    "2026-10-22-02-github-1380817560-root-source"
                 ],
                 "dependencies": [
                     {
@@ -300,27 +394,29 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-20T09:36:48.824Z",
-            "analysis_sha256": "1f84d7a936b81ef80ee83c8e5bed91ccfd626c6cbb0ca53ee1fad49aa6ca894f"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "74b9a1d6c619bc6b45c375dcf270265373d22b6ee51f34903e9536f21a5b8371"
         },
         "publication.metadata": "data/plugins/173787247--dsh-wsl-obsidian/META.json",
         "publication.summaries": {
-            "text": "连接Windows或WSL的Obsidian笔记库，提供搜索、读取、写入与打开笔记。",
+            "text": "给 WSL 中的 DSH Agent 提供 Windows Obsidian 笔记库的状态、检索、读写和桌面打开工具。",
             "revision": "0d37b05d030b265559238e740ea92ba6baf2adff",
             "source_url": "https://github.com/173787247/dsh-wsl-obsidian/blob/0d37b05d030b265559238e740ea92ba6baf2adff/README.md"
         },
         "publication.capabilities": {
             "revision": "0d37b05d030b265559238e740ea92ba6baf2adff",
             "items": {
-                "模型工具": "笔记库状态、列表、搜索、读取、双链解析、写入、追加与打开。"
-            }
+                "模型工具": "状态、列表、搜索、读取、双链、写入、追加与打开",
+                "后台": "Windows/WSL vault 路径发现和转换"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| vault 发现 | 从配置或 Obsidian 文件识别库 | 多库时需用户确认目标 |\n| 笔记检索/读取 | 查 .md 正文和双链 | 大库/大文件有数量限制，内容可敏感 |\n| 写入/追加 | 更新 vault Markdown | confirm 参数非版本锁，需备份和外部冲突处理 |\n| 桌面打开 | 用 URI 唤起 Windows Obsidian | 需 Windows 桌面与 WSL 桥接 |"
         },
         "publication.advice": {
             "revision": "0d37b05d030b265559238e740ea92ba6baf2adff",
-            "text": "明确指定测试vault并备份，避免在正在编辑的重要笔记上直接写入；检查符号链接。"
+            "text": "建议观察，在测试 vault/备份副本先核 status、读写新文件和 Windows 显示；重要共享库暂不自动覆盖。详见[Q06](#research-q06)。"
         },
         "registry": "data/plugins/173787247--dsh-wsl-obsidian",
-        "reports": "# dsh-wsl-obsidian\n\n> 连接Windows或WSL的Obsidian笔记库，提供搜索、读取、写入与打开笔记。\n\n## 研究范围\n\n- **仓库**：[173787247/dsh-wsl-obsidian](https://github.com/173787247/dsh-wsl-obsidian)\n- **版本号**：0.2.1（[固定提交 0d37b05d030b265559238e740ea92ba6baf2adff](https://github.com/173787247/dsh-wsl-obsidian/tree/0d37b05d030b265559238e740ea92ba6baf2adff)）\n- **版本日期**：2026-10-01（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已有贡献：把已有笔记文件变为Agent可调用的读写接口，保留Obsidian工作方式；知识正确性和同步语义不由文件桥接自动解决。\n\n结论边界：本次为固定版本源码核查，未执行目标代码或真实宿主验收，未核实独立使用效果。下文设计假设均未验证。\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：Agent需要在既有Obsidian知识库中整理结果，而不重复复制到独立记忆系统。\n- **亮点**：把已有笔记文件变为Agent可调用的读写接口，保留Obsidian工作方式；知识正确性和同步语义不由文件桥接自动解决。\n- **思考**：safeJoinVault做词法路径包含检查，没有在该函数中解析符号链接；并发编辑与直接writeFileSync也未构成版本冲突保护。\n- **建议**：待验证假设：写入要求预期内容摘要并原子替换，可减少Agent覆盖用户同时编辑；需与直接备份策略比较恢复成本。\n\n采用建议：明确指定测试vault并备份，避免在正在编辑的重要笔记上直接写入；检查符号链接。\n\n## 核心贡献\n\n把已有笔记文件变为Agent可调用的读写接口，保留Obsidian工作方式；知识正确性和同步语义不由文件桥接自动解决。\n\n## 关键质疑\n\nsafeJoinVault做词法路径包含检查，没有在该函数中解析符号链接；并发编辑与直接writeFileSync也未构成版本冲突保护。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n待验证假设：写入要求预期内容摘要并原子替换，可减少Agent覆盖用户同时编辑；需与直接备份策略比较恢复成本。\n\n用库内指向库外的符号链接和双端并发编辑核对边界与覆盖；未知版本应拒绝覆盖，失败后原件可恢复。\n\n## 场景与替代办法\n\nAgent需要在既有Obsidian知识库中整理结果，而不重复复制到独立记忆系统。\n\n直接文件工具或Obsidian界面；插件提供专用入口，不能代替同步和备份。\n\n## 依赖与流程\n\n需要可读取的笔记库、明确vault配置与写权限；桌面打开需要Windows Obsidian。\n\n先核对识别到的vault，读一篇测试笔记再写入副本，最后检查Obsidian显示及同步。\n\n## 成本与效果\n\n扫描与正文token、备份和冲突处理为主，未证明整理质量提高。\n\n把已有笔记文件变为Agent可调用的读写接口，保留Obsidian工作方式；知识正确性和同步语义不由文件桥接自动解决。 safeJoinVault做词法路径包含检查，没有在该函数中解析符号链接；并发编辑与直接writeFileSync也未构成版本冲突保护。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：ca450b79e9c6cde9ce708155e480ae50ffe1509baf3c26373a26b5eade5ebb58。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 187 | — | — | 955 |\n| .js | source | 5 | 875 | 788 | 28 | — |\n| .mjs | source | 1 | 104 | 89 | 5 | — |\n| .md | example | 2 | 12 | — | — | 12 |\n| .js | test | 1 | 164 | 145 | 1 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **模型工具**：笔记库状态、列表、搜索、读取、双链解析、写入、追加与打开。\n\n## 工程亮点\n\n发现配置、路径与内容操作分层可复用，但自动选最近vault应被用户核对。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 index.js、lib/vault.js、lib/path.js、lib/open.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读vault发现、路径与读写实现；未访问用户笔记或执行写入。 固定checkout的注册候选与关键主张定向抽读；未逐行完整审阅全部源码、测试、依赖及外部参照，未运行目标代码。评分仅针对文中明确的CLI/API/人工流程参照；跨场景迁移为解释性判断。\n- 下一步：用库内指向库外的符号链接和双端并发编辑核对边界与覆盖；未知版本应拒绝覆盖，失败后原件可恢复。\n",
+        "reports": "# dsh-wsl-obsidian\n\n> 给 WSL 中的 DSH Agent 提供 Windows Obsidian 笔记库的状态、检索、读写和桌面打开工具。\n\n## 研究范围\n\n- **仓库**：[173787247/dsh-wsl-obsidian](https://github.com/173787247/dsh-wsl-obsidian)\n- **版本号**：0.2.1（[固定提交 0d37b05d030b265559238e740ea92ba6baf2adff](https://github.com/173787247/dsh-wsl-obsidian/tree/0d37b05d030b265559238e740ea92ba6baf2adff)）\n- **版本日期**：2026-10-01（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定源码支撑 vault 发现、文件工具和词法路径检查；符号链接与外部并发风险是源码推导，未在真实宿主复现；改进假设未实现。\n\n## 洞察短评\n\n- **用途**：用于对既有 Windows Obsidian 库进行 Agent 辅助整理；知识正确性、同步和覆盖风险仍需人核。详见[Q01](#research-q01)。\n- **亮点**：让已有 Obsidian 库可被 Agent 以专用工具操作，并保留原有文件和双链工作方式；相比通用文件工具增加 vault 发现/路径规则，但不解决内容正确性、同步或冲突。详见[Q01](#research-q01)。\n- **思考**：safeJoinVault 只验证词法路径，没有 realpath；writeFileSync/appendFileSync 无预期版本或恢复机制。confirm=true 与工具串行声明不足以保护库外 symlink 和 Obsidian 外部编辑。详见[Q03](#research-q03)。\n- **建议**：未验证方向是以 realpath 约束目标，写入携带已读内容哈希并进行比较、备份和原子替换；用 symlink/双端竞争/中断夹具比较丢失与误拒绝。详见[Q05](#research-q05)。\n\n采用建议：建议观察，在测试 vault/备份副本先核 status、读写新文件和 Windows 显示；重要共享库暂不自动覆盖。详见[Q06](#research-q06)。\n\n## 核心贡献\n\n让已有 Obsidian 库可被 Agent 以专用工具操作，并保留原有文件和双链工作方式；相比通用文件工具增加 vault 发现/路径规则，但不解决内容正确性、同步或冲突。详见[Q01](#research-q01)。\n\n## 关键质疑\n\nsafeJoinVault 只验证词法路径，没有 realpath；writeFileSync/appendFileSync 无预期版本或恢复机制。confirm=true 与工具串行声明不足以保护库外 symlink 和 Obsidian 外部编辑。详见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n未验证方向是以 realpath 约束目标，写入携带已读内容哈希并进行比较、备份和原子替换；用 symlink/双端竞争/中断夹具比较丢失与误拒绝。详见[Q05](#research-q05)。\n\n隔离库内 symlink 指向库外、双端编辑、同步改写、超过 5000 篇、大文件及打开 URI；核越界、漏检、覆盖、恢复耗时与用户操作量。\n\n## 场景与替代办法\n\n用于对既有 Windows Obsidian 库进行 Agent 辅助整理；知识正确性、同步和覆盖风险仍需人核。详见[Q01](#research-q01)。\n\n通用文件工具或人工 Obsidian 编辑也能操作 Markdown；插件提供专用路径和双链入口，但没有解决文件并发和知识质量。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| DSH/Node 与 WSL 文件访问 | 必需 | Agent 工具与 NTFS 路径 | 无法桥接 |\n| 明确 vaultPath 或可读 obsidian.json | 必需 | 选择目标库 | 自动选库可能错误 |\n| Windows Obsidian/URI | 桌面打开需要 | 从 Agent 打开笔记 | 文件操作仍可能可用 |\n| 备份和人工确认 | 重要写入需要 | 避免覆盖难恢复 | 冲突可能静默丢失 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 准备 | 用户备份并明确测试 vault 的 NTFS 路径 | status 显示预期库 |\n| 读取 | Agent 列/搜/读测试笔记 | 与 Windows 原件一致且明白截断边界 |\n| 写入 | 用户核内容，Agent 写新文件 | Obsidian 显示及同步无冲突 |\n| 恢复 | 若覆盖/同步异常，从备份回滚 | 原件可恢复并记录原因 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | Windows Obsidian、WSL/DSH、NTFS vault；金额未知 | 配路径、安装重启、确认库；耗时未知 | 多库自动发现需核 |\n| 持续使用 | 文件扫描/模型上下文；资源未知 | 备份、审阅写入及同步；频率未知 | 搜索最多先列 5000 篇 |\n| 失败恢复 | 备份或同步历史；金额未知 | 恢复覆盖、去重追加、解决冲突；耗时未知 | 无内建版本/原子写入 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| vault 定位与检索 | 显式/配置发现、列表/搜索/读取 | 大库完整率、真实定位节时 |\n| 笔记写入 | confirm 参数与文件写入链 | 外部并发/同步下内容保全 |\n| 桌面打开 | obsidian:// 和 Windows 桥接 | 真正打开、文件监视与同步成功 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**dsh-wsl-obsidian 如何桥接 WSL Agent 与 Windows Obsidian vault，写入的范围和并发安全边界是什么？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 现有 Obsidian 库接入 Agent 的具体任务和相对替代方案是什么？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n目标是让 WSL 中的 DSH Agent 在已有 Windows Obsidian vault 中列出、搜索、读取、写入、追加笔记，并可通过 URI 让桌面端打开。合格交付应是对明确 vault 的正确笔记完成操作、无越界读取/覆盖，且 Windows 端能看到和同步；源文件桥接不能证明笔记知识准确或同步成功。相对直接给 Agent 通用文件工具或人工在 Obsidian 复制粘贴，专用工具提供 vault 发现、相对路径与 Markdown/双链语义，降低定位步骤；并未新增检索算法或同步机制。作者称它是 dsh-wsl-kit 可选 companion，不在 daily 集合。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-20](https://github.com/173787247/dsh-wsl-obsidian/blob/0d37b05d030b265559238e740ea92ba6baf2adff/README.md#L1-L20)\n\n作者定义 WSL 到 Windows vault 的可选桥接。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n````text\n# dsh-wsl-obsidian\n> **Install set:** optional companion to [dsh-wsl-kit](https://github.com/173787247/dsh-wsl-kit). Not in `KIT_SET=daily`. Fault tree: [TROUBLESHOOTING.md](https://github.com/173787247/dsh-wsl-kit/blob/master/docs/TROUBLESHOOTING.md).\n\nDeepSeek Harness plugin: **WSL agent ↔ Windows Obsidian vault** — `obsidian_status` / `open` / `list` / `search` / `read` / `write` / `append`.\n\nStandalone MIT plugin under **[dsh-wsl-kit](https://github.com/173787247/dsh-wsl-kit)** (optional; not shipped in `install.sh` by default).\n\n[中文说明 → README.zh.md](./README.zh.md)\n\n## Where it sits\n\n```mermaid\nflowchart LR\n  agent[\"dsh agent in WSL\"] --> tools[\"obsidian_*\"]\n  tools --> ntfs[\"Vault on NTFS /mnt/c|d/...\"]\n  tools --> uri[\"obsidian:// → Windows Obsidian\"]\n```\n\nKeep the vault on **Windows NTFS**. Opening a vault from `\\\\wsl$\\…` breaks Obsidian’s file watcher.\n\n````\n\n</details>\n\n**依据 2 · 作者声明**：[README.md:31-43](https://github.com/173787247/dsh-wsl-obsidian/blob/0d37b05d030b265559238e740ea92ba6baf2adff/README.md#L31-L43)\n\n工具清单和 vault 相对路径规则。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n## Tools\n\n| Tool | Role |\n|------|------|\n| `obsidian_status` | Resolve vault (`vaultPath` or `%APPDATA%\\obsidian\\obsidian.json`), path kind, `Obsidian.exe` |\n| `obsidian_list` | List `.md` notes |\n| `obsidian_search` | Case-insensitive substring search |\n| `obsidian_read` | Read note |\n| `obsidian_write` | Create / overwrite note |\n| `obsidian_append` | Append to note |\n| `obsidian_open` | `obsidian://open?vault=…&file=…` via PowerShell (WSL only) |\n\nPaths are **vault-relative** (`Inbox/Note.md`). Absolute / `../` paths are rejected.\n```\n\n</details>\n\n**依据 3 · 源码核查**：[index.js:20-39](https://github.com/173787247/dsh-wsl-obsidian/blob/0d37b05d030b265559238e740ea92ba6baf2adff/index.js#L20-L39)\n\n插件注册提示与 vault 配置接线。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\nexport function apply(ctx, config = {}) {\n  const timeoutMs = positive(config.timeoutMs, 20_000);\n  const excludeDirs = Array.isArray(config.excludeDirs) && config.excludeDirs.length\n    ? config.excludeDirs.map(String)\n    : DEFAULT_EXCLUDE;\n  const wsl = detectWsl();\n\n  ctx.systemPrompt.section({\n    name: \"tool:obsidian\",\n    order: 119,\n    text: [\n      \"Use obsidian_* tools for the local Obsidian vault on Windows NTFS (prefer /mnt/<drive>/… paths).\",\n      \"Keep the vault on Windows filesystem, not under the Linux home disk, so the Windows Obsidian app can watch files.\",\n      \"obsidian_open launches the Windows Obsidian UI via obsidian:// — Obsidian must be installed on Windows.\",\n      \"obsidian_write / obsidian_append require confirm=true. Use obsidian_wikilinks or read with resolveLinks to follow [[links]].\",\n      \"Do not invent vault paths; call obsidian_status first if unsure.\",\n    ].join(\" \"),\n  });\n\n  const vaultDeps = () => resolveVaultConfig(config);\n```\n\n</details>\n\n#### 缺口\n\n- 未用真实 Obsidian vault 与用户任务评估\n  **影响：**不能证明整理效率、知识质量或同步效果\n  **进一步探讨：**在测试 vault 对比通用文件工具和人工操作，记录定位与纠错成本\n\n<a id=\"research-q02\"></a>\n\n### Q02 · vault 如何确定，列举、搜索、读取与打开经过哪些边界？\n\n**研究主题：**功能与机制\n\n#### 完整回答\n\n优先接受显式 vaultPath；否则从 Windows Obsidian 配置中选 open 标记的库或首库，再换算 WSL 路径。status 显示来源、路径类型和存在性；列表按目录递归仅取 .md 并排除设定目录，默认最多 200；全文搜索先列最多 5000 篇，再按大小上限和大小写不敏感子串读取、提取片段。read 以 vault 相对路径读取，双链解析可选；open 由 obsidian:// URI 和 PowerShell/Windows 桥接实现。自动选择首库有误写目标风险，status 的存在标记也非用户确认。搜索超过 5000 篇或文件大小限制会漏结果，因此无命中不等于库中不存在。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/vault.js:55-133](https://github.com/173787247/dsh-wsl-obsidian/blob/0d37b05d030b265559238e740ea92ba6baf2adff/lib/vault.js#L55-L133)\n\n自动发现和显式配置优先级。\n\n<details>\n<summary>查看原文（79行）</summary>\n\n```text\nexport function discoverVaultFromObsidianJson({ env = process.env, exists = existsSync, read = readFileSync } = {}) {\n  for (const p of candidateObsidianJsonPaths({ env, exists })) {\n    if (!exists(p)) continue;\n    let raw;\n    try {\n      raw = read(p, \"utf8\");\n    } catch {\n      continue;\n    }\n    const vaults = parseObsidianJson(raw);\n    if (!vaults.length) continue;\n    const chosen = vaults.find((v) => v.open) || vaults[0];\n    const linux = toLinuxPath(chosen.path);\n    if (!linux.ok) continue;\n    return {\n      ok: true,\n      vaultPath: linux.linux,\n      vaultWindowsPath: chosen.path,\n      vaultName: basenamePath(chosen.path),\n      source: p,\n      kind: linux.kind,\n    };\n  }\n  return { ok: false, error: \"obsidian.json not found or has no vaults\" };\n}\n\nexport function resolveVaultConfig(config = {}, deps = {}) {\n  const { exists = existsSync } = deps;\n  const explicit = String(config.vaultPath || \"\").trim();\n  if (explicit) {\n    // Prefer a path that exists on this runtime (native Windows tests vs WSL /mnt).\n    if (exists(explicit)) {\n      const asWin = /^[a-zA-Z]:[\\\\/]/.test(explicit) || explicit.startsWith(\"\\\\\\\\\");\n      const win = asWin ? explicit.replace(/\\//g, \"\\\\\") : (toWindowsPath(explicit).windows || explicit);\n      const kind = explicit.replace(/\\\\/g, \"/\").startsWith(\"/mnt/\") || asWin\n        ? \"drvfs\"\n        : explicit.startsWith(\"/\")\n          ? \"linux\"\n          : \"drvfs\";\n      return {\n        ok: true,\n        vaultPath: explicit,\n        vaultWindowsPath: win,\n        vaultName: String(config.vaultName || basenamePath(explicit)),\n        source: \"config\",\n        kind,\n      };\n    }\n    const n = normalizeVaultRoot(explicit);\n    if (!n.ok) return n;\n    if (exists(n.linux)) {\n      const win = n.windows || toWindowsPath(n.linux);\n      return {\n        ok: true,\n        vaultPath: n.linux,\n        vaultWindowsPath: typeof win === \"string\" ? win : win.windows,\n        vaultName: String(config.vaultName || basenamePath(n.linux)),\n        source: \"config\",\n        kind: n.kind,\n      };\n    }\n    const win = n.windows || toWindowsPath(n.linux);\n    return {\n      ok: true,\n      vaultPath: n.linux,\n      vaultWindowsPath: typeof win === \"string\" ? win : win.windows,\n      vaultName: String(config.vaultName || basenamePath(n.linux)),\n      source: \"config\",\n      kind: n.kind,\n    };\n  }\n  const discovered = discoverVaultFromObsidianJson(deps);\n  if (!discovered.ok) return discovered;\n  // If discovered Linux mount does not exist (running outside WSL), try Windows path.\n  if (discovered.vaultWindowsPath && !exists(discovered.vaultPath) && exists(discovered.vaultWindowsPath)) {\n    discovered.vaultPath = discovered.vaultWindowsPath;\n  }\n  if (config.vaultName) discovered.vaultName = String(config.vaultName);\n  return discovered;\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/vault.js:181-240](https://github.com/173787247/dsh-wsl-obsidian/blob/0d37b05d030b265559238e740ea92ba6baf2adff/lib/vault.js#L181-L240)\n\n列表与搜索的数量、大小和子串限制。\n\n<details>\n<summary>查看原文（60行）</summary>\n\n```text\nexport function listNotes(vaultRoot, { prefix = \"\", excludeDirs = DEFAULT_EXCLUDE, limit = 200 } = {}) {\n  const root = resolve(vaultRoot);\n  if (!existsSync(root)) return { ok: false, error: `vault not found: ${vaultRoot}` };\n  const exclude = new Set((excludeDirs || DEFAULT_EXCLUDE).map(String));\n  const out = [];\n  const start = prefix ? safeJoinVault(root, prefix) : { ok: true, absolute: root, relative: \"\" };\n  if (!start.ok) return start;\n\n  function walk(dir, relBase) {\n    if (out.length >= limit) return;\n    let entries;\n    try {\n      entries = readdirSync(dir, { withFileTypes: true });\n    } catch (err) {\n      return;\n    }\n    for (const ent of entries) {\n      if (out.length >= limit) break;\n      if (exclude.has(ent.name)) continue;\n      const rel = relBase ? `${relBase}/${ent.name}` : ent.name;\n      const abs = join(dir, ent.name);\n      if (ent.isDirectory()) {\n        walk(abs, rel);\n      } else if (ent.isFile() && /\\.md$/i.test(ent.name)) {\n        out.push(rel.replace(/\\\\/g, \"/\"));\n      }\n    }\n  }\n\n  walk(start.absolute, start.relative);\n  out.sort((a, b) => a.localeCompare(b));\n  return { ok: true, notes: out, truncated: out.length >= limit };\n}\n\nexport function searchNotes(vaultRoot, query, { excludeDirs = DEFAULT_EXCLUDE, limit = 50, maxBytes = 512_000 } = {}) {\n  const q = String(query || \"\").trim();\n  if (!q) return { ok: false, error: \"empty query\" };\n  const listed = listNotes(vaultRoot, { excludeDirs, limit: 5000 });\n  if (!listed.ok) return listed;\n  const needle = q.toLowerCase();\n  const hits = [];\n  for (const rel of listed.notes) {\n    if (hits.length >= limit) break;\n    const abs = join(vaultRoot, rel);\n    let text;\n    try {\n      const st = statSync(abs);\n      if (st.size > maxBytes) continue;\n      text = readFileSync(abs, \"utf8\");\n    } catch {\n      continue;\n    }\n    const idx = text.toLowerCase().indexOf(needle);\n    if (idx < 0 && !rel.toLowerCase().includes(needle)) continue;\n    const lineStart = text.lastIndexOf(\"\\n\", Math.max(0, idx)) + 1;\n    const lineEnd = text.indexOf(\"\\n\", idx);\n    const snippet = text.slice(lineStart, lineEnd < 0 ? lineStart + 160 : lineEnd).trim().slice(0, 160);\n    hits.push({ path: rel, snippet: snippet || `(filename match: ${rel})` });\n  }\n  return { ok: true, query: q, hits, truncated: hits.length >= limit };\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/vault.js:243-257](https://github.com/173787247/dsh-wsl-obsidian/blob/0d37b05d030b265559238e740ea92ba6baf2adff/lib/vault.js#L243-L257)\n\n读取与可选双链解析。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\nexport function readNote(vaultRoot, relPath, { resolveLinks = false, excludeDirs = DEFAULT_EXCLUDE } = {}) {\n  const rel = ensureMarkdownRel(relPath);\n  const joined = safeJoinVault(vaultRoot, rel);\n  if (!joined.ok) return joined;\n  if (!existsSync(joined.absolute)) return { ok: false, error: `not found: ${joined.relative}` };\n  try {\n    const content = readFileSync(joined.absolute, \"utf8\");\n    const out = { ok: true, path: joined.relative, content, bytes: Buffer.byteLength(content, \"utf8\") };\n    if (resolveLinks) {\n      out.links = resolveWikilinks(vaultRoot, content, { excludeDirs });\n    }\n    return out;\n  } catch (err) {\n    return { ok: false, error: err instanceof Error ? err.message : String(err) };\n  }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/open.js:4-14](https://github.com/173787247/dsh-wsl-obsidian/blob/0d37b05d030b265559238e740ea92ba6baf2adff/lib/open.js#L4-L14)\n\n桌面 URI 的构造。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n/** Build obsidian://open URI. file is vault-relative (with or without .md). */\nexport function buildOpenUri({ vaultName, file } = {}) {\n  const vault = String(vaultName || \"\").trim();\n  if (!vault) return { ok: false, error: \"missing vaultName\" };\n  const params = new URLSearchParams();\n  params.set(\"vault\", vault);\n  const f = String(file || \"\").trim().replace(/\\\\/g, \"/\").replace(/^\\/+/, \"\");\n  if (f) params.set(\"file\", f.replace(/\\.md$/i, \"\"));\n  return { ok: true, uri: `obsidian://open?${params.toString()}` };\n}\n\n```\n\n</details>\n\n#### 缺口\n\n- 未在含大库、非典型路径与 Windows 桌面环境验证\n  **影响：**无法给搜索完整率和打开成功率\n  **进一步探讨：**用多库、大文件、超过 5000 篇及 WSL 路径夹具核对\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 路径约束、confirm 参数和写入机制能否保护库外文件与并发编辑？\n\n**研究主题：**缺陷与关键质疑\n\n#### 完整回答\n\nsafeJoinVault 拒绝绝对路径和词法逃逸，保护了 ../ 等直接越界；但仅使用 resolve/relative 字符串，没有解析最终路径的符号链接。read/write/append 均把该结果交给 Node 文件 API，若库内路径穿过指向库外的符号链接，静态数据流存在库外读写可能。write 工具需要 confirm=true、声明 isConcurrencySafe=false，可降低模型并发工具调用；然而 confirm 是调用参数，不能证明用户逐笔授权，也不处理 Obsidian 或同步进程的外部编辑。writeFileSync 直接覆盖，无预期版本、备份或原子替换；append 也无冲突/重复检测。上述为源码边界，未在隔离环境实测具体 symlink 与竞争结果。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/vault.js:146-171](https://github.com/173787247/dsh-wsl-obsidian/blob/0d37b05d030b265559238e740ea92ba6baf2adff/lib/vault.js#L146-L171)\n\n词法路径包含检查，没有 realpath。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\nexport function safeJoinVault(vaultRoot, relPath) {\n  const root = resolve(String(vaultRoot));\n  const raw = String(relPath ?? \"\");\n  if (raw.includes(\"\\0\")) return { ok: false, error: \"invalid path\" };\n  const rel = raw.replace(/\\\\/g, \"/\");\n  if (!rel) return { ok: false, error: \"empty relative path\" };\n  // Absolute paths are rejected rather than re-rooted inside the vault. A caller\n  // that passes one is working from the wrong contract, and silently rewriting\n  // \"/etc/passwd\" to \"etc/passwd.md\" reports \"not found\" for what is really a\n  // misuse. The check runs after backslash normalization, so it covers POSIX\n  // (\"/x\"), Windows drive (\"C:/x\") and UNC (\"//server/share\") forms alike.\n  if (rel.startsWith(\"/\") || /^[a-zA-Z]:\\//.test(rel)) {\n    return { ok: false, error: \"absolute paths not allowed\" };\n  }\n  const abs = resolve(root, rel);\n  const relCheck = relative(root, abs);\n  if (relCheck.startsWith(\"..\") || relCheck === \"..\" || abs === root && rel.includes(\"..\")) {\n    return { ok: false, error: \"path escapes vault\" };\n  }\n  if (!abs.startsWith(root + sep) && abs !== root) {\n    // On Windows resolve may change casing; compare lowercase\n    if (abs.toLowerCase() !== root.toLowerCase() && !abs.toLowerCase().startsWith(root.toLowerCase() + sep)) {\n      return { ok: false, error: \"path escapes vault\" };\n    }\n  }\n  return { ok: true, absolute: abs, relative: relCheck.replace(/\\\\/g, \"/\") || rel };\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/vault.js:243-257](https://github.com/173787247/dsh-wsl-obsidian/blob/0d37b05d030b265559238e740ea92ba6baf2adff/lib/vault.js#L243-L257)\n\n读取直接使用检查后的路径。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\nexport function readNote(vaultRoot, relPath, { resolveLinks = false, excludeDirs = DEFAULT_EXCLUDE } = {}) {\n  const rel = ensureMarkdownRel(relPath);\n  const joined = safeJoinVault(vaultRoot, rel);\n  if (!joined.ok) return joined;\n  if (!existsSync(joined.absolute)) return { ok: false, error: `not found: ${joined.relative}` };\n  try {\n    const content = readFileSync(joined.absolute, \"utf8\");\n    const out = { ok: true, path: joined.relative, content, bytes: Buffer.byteLength(content, \"utf8\") };\n    if (resolveLinks) {\n      out.links = resolveWikilinks(vaultRoot, content, { excludeDirs });\n    }\n    return out;\n  } catch (err) {\n    return { ok: false, error: err instanceof Error ? err.message : String(err) };\n  }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/vault.js:300-325](https://github.com/173787247/dsh-wsl-obsidian/blob/0d37b05d030b265559238e740ea92ba6baf2adff/lib/vault.js#L300-L325)\n\n写入和追加直接操作检查后的路径。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\nexport function writeNote(vaultRoot, relPath, content, { createDirs = true } = {}) {\n  const rel = ensureMarkdownRel(relPath);\n  const joined = safeJoinVault(vaultRoot, rel);\n  if (!joined.ok) return joined;\n  try {\n    if (createDirs) mkdirSync(dirname(joined.absolute), { recursive: true });\n    writeFileSync(joined.absolute, String(content ?? \"\"), \"utf8\");\n    return { ok: true, path: joined.relative, bytes: Buffer.byteLength(String(content ?? \"\"), \"utf8\") };\n  } catch (err) {\n    return { ok: false, error: err instanceof Error ? err.message : String(err) };\n  }\n}\n\nexport function appendNote(vaultRoot, relPath, content) {\n  const rel = ensureMarkdownRel(relPath);\n  const joined = safeJoinVault(vaultRoot, rel);\n  if (!joined.ok) return joined;\n  try {\n    mkdirSync(dirname(joined.absolute), { recursive: true });\n    const chunk = String(content ?? \"\");\n    appendFileSync(joined.absolute, chunk, \"utf8\");\n    return { ok: true, path: joined.relative, appended: Buffer.byteLength(chunk, \"utf8\") };\n  } catch (err) {\n    return { ok: false, error: err instanceof Error ? err.message : String(err) };\n  }\n}\n```\n\n</details>\n\n**依据 4 · 源码核查**：[index.js:199-255](https://github.com/173787247/dsh-wsl-obsidian/blob/0d37b05d030b265559238e740ea92ba6baf2adff/index.js#L199-L255)\n\nconfirm=true 与 isConcurrencySafe=false 的工具端门槛。\n\n<details>\n<summary>查看原文（57行）</summary>\n\n```text\n  ctx.tools.register({\n    name: \"obsidian_write\",\n    description: \"Create or overwrite a Markdown note (vault-relative path). Requires confirm=true.\",\n    parameters: {\n      type: \"object\",\n      additionalProperties: false,\n      required: [\"path\", \"content\", \"confirm\"],\n      properties: {\n        path: { type: \"string\" },\n        content: { type: \"string\" },\n        confirm: { type: \"boolean\", description: \"Must be true to write.\" },\n      },\n    },\n    output: {\n      schema: { type: \"object\", additionalProperties: true },\n      render: (_a, v) => [{ type: \"text\", text: formatWrite(v) }],\n    },\n    timeoutMs,\n    isConcurrencySafe: () => false,\n    async execute(args) {\n      if (args?.confirm !== true) {\n        return { ok: false, error: \"obsidian_write refused: pass confirm=true\" };\n      }\n      const vault = vaultDeps();\n      if (!vault.ok) return vault;\n      return writeNote(vault.vaultPath, args?.path, args?.content);\n    },\n    presentCall: () => ({ card: \"generic\", title: \"Obsidian write\" }),\n    presentResult: (_a, r) => ({ card: \"generic\", title: \"Obsidian write\", content: r.content }),\n  });\n\n  ctx.tools.register({\n    name: \"obsidian_append\",\n    description: \"Append text to a Markdown note (creates parent dirs / file if needed). Requires confirm=true.\",\n    parameters: {\n      type: \"object\",\n      additionalProperties: false,\n      required: [\"path\", \"content\", \"confirm\"],\n      properties: {\n        path: { type: \"string\" },\n        content: { type: \"string\" },\n        confirm: { type: \"boolean\", description: \"Must be true to append.\" },\n      },\n    },\n    output: {\n      schema: { type: \"object\", additionalProperties: true },\n      render: (_a, v) => [{ type: \"text\", text: formatAppend(v) }],\n    },\n    timeoutMs,\n    isConcurrencySafe: () => false,\n    async execute(args) {\n      if (args?.confirm !== true) {\n        return { ok: false, error: \"obsidian_append refused: pass confirm=true\" };\n      }\n      const vault = vaultDeps();\n      if (!vault.ok) return vault;\n      return appendNote(vault.vaultPath, args?.path, args?.content);\n```\n\n</details>\n\n#### 缺口\n\n- 未用符号链接与双端并发编辑复现\n  **影响：**不能量化越界或覆盖影响，也不能宣称宿主串行锁可覆盖外部编辑\n  **进一步探讨：**在复制 vault 中构造库内指向库外链接、外部同步并发与断电失败夹具\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 启动、持续与失败恢复分别需承担什么成本？\n\n**研究主题：**依赖、兼容与流程、效果与总成本\n\n#### 完整回答\n\n首次需 Windows Obsidian、NTFS vault、WSL/DSH 环境、明确 vaultPath 或能读取 obsidian.json，安装后重启并新建会话；Node >=18，README 声称 DSH >=0.1.2。笔记数据留在本地路径，但 Agent 读取正文会消耗模型上下文和隐私审阅；扫描要遍历文件，全文搜索最多尝试 5000 篇，库规模越大 IO/人工核查越重。持续写入须备份、处理 Obsidian 同步和外部并发；失败时要从历史/备份恢复覆盖内容，重复追加也要人工去重。源码没有自动备份和冲突恢复，金额、扫描时长、token 与人工修复成本未测。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:21-29](https://github.com/173787247/dsh-wsl-obsidian/blob/0d37b05d030b265559238e740ea92ba6baf2adff/README.md#L21-L29)\n\n作者列出的版本与 Windows 桌面前提。\n\n```text\n## Compatibility\n\n| Field | Value |\n|-------|-------|\n| **Plugin** | `dsh-wsl-obsidian` **0.2.1** |\n| **Minimum dsh** | ≥ **0.1.2** |\n| **Latest verified** | See [dsh-wsl-kit Compatibility](https://github.com/173787247/dsh-wsl-kit#compatibility-2026-09) (currently **`0.2.0-rc.2`**) — single source of truth for the suite |\n| **Kit set** | optional (not in `daily`) |\n| **Obsidian** | Windows desktop app (install from [obsidian.md](https://obsidian.md)) |\n```\n\n**依据 2 · 作者声明**：[README.md:45-71](https://github.com/173787247/dsh-wsl-obsidian/blob/0d37b05d030b265559238e740ea92ba6baf2adff/README.md#L45-L71)\n\nvault 配置、安装/重启和 NTFS 建议。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n````text\n## Config\n\n```yaml\n- id: dsh-wsl-obsidian\n  name: dsh-wsl-obsidian\n  config:\n    enabled: true\n    vaultPath: \"/mnt/d/Notes/MyVault\"   # preferred\n    vaultName: \"MyVault\"                # for obsidian://\n    timeoutMs: 20000\n```\n\nIf `vaultPath` is omitted, the plugin reads Windows `obsidian.json` through `/mnt/c/Users/…/AppData/Roaming/obsidian/`.\n\n## Install\n\n```sh\ndsh plugin --profile web add github:173787247/dsh-wsl-obsidian\n```\n\nRestart `dsh web`, open a **new** session, run `obsidian_status`.\n\n## Layout recommendation\n\n1. Install Obsidian on **Windows**.\n2. Create/open the vault under `C:\\` or `D:\\` (not inside the Linux distro disk).\n3. From WSL use `/mnt/c/...` or `/mnt/d/...` as `vaultPath`.\n````\n\n</details>\n\n**依据 3 · 源码核查**：[package.json:14-30](https://github.com/173787247/dsh-wsl-obsidian/blob/0d37b05d030b265559238e740ea92ba6baf2adff/package.json#L14-L30)\n\nNode、bundle 与打包声明。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n  \"type\": \"module\",\n  \"main\": \"index.js\",\n  \"engines\": { \"node\": \">=18\" },\n  \"scripts\": { \"test\": \"node --test test/*.test.js\" },\n  \"files\": [\n    \"index.js\",\n    \"lib\",\n    \"cordis.patch.yml\",\n    \"README.md\",\n    \"README.zh.md\",\n    \"LICENSE\",\n    \"CHANGELOG.md\",\n    \"CONTRIBUTING.md\",\n    \"SECURITY.md\"\n  ],\n  \"keywords\": [\"dsh-plugin\", \"deepseek-harness\", \"wsl\", \"obsidian\"],\n  \"dsh\": { \"bundle\": { \"patch\": \"./cordis.patch.yml\" } }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/vault.js:181-240](https://github.com/173787247/dsh-wsl-obsidian/blob/0d37b05d030b265559238e740ea92ba6baf2adff/lib/vault.js#L181-L240)\n\n扫描限制与正文读取。\n\n<details>\n<summary>查看原文（60行）</summary>\n\n```text\nexport function listNotes(vaultRoot, { prefix = \"\", excludeDirs = DEFAULT_EXCLUDE, limit = 200 } = {}) {\n  const root = resolve(vaultRoot);\n  if (!existsSync(root)) return { ok: false, error: `vault not found: ${vaultRoot}` };\n  const exclude = new Set((excludeDirs || DEFAULT_EXCLUDE).map(String));\n  const out = [];\n  const start = prefix ? safeJoinVault(root, prefix) : { ok: true, absolute: root, relative: \"\" };\n  if (!start.ok) return start;\n\n  function walk(dir, relBase) {\n    if (out.length >= limit) return;\n    let entries;\n    try {\n      entries = readdirSync(dir, { withFileTypes: true });\n    } catch (err) {\n      return;\n    }\n    for (const ent of entries) {\n      if (out.length >= limit) break;\n      if (exclude.has(ent.name)) continue;\n      const rel = relBase ? `${relBase}/${ent.name}` : ent.name;\n      const abs = join(dir, ent.name);\n      if (ent.isDirectory()) {\n        walk(abs, rel);\n      } else if (ent.isFile() && /\\.md$/i.test(ent.name)) {\n        out.push(rel.replace(/\\\\/g, \"/\"));\n      }\n    }\n  }\n\n  walk(start.absolute, start.relative);\n  out.sort((a, b) => a.localeCompare(b));\n  return { ok: true, notes: out, truncated: out.length >= limit };\n}\n\nexport function searchNotes(vaultRoot, query, { excludeDirs = DEFAULT_EXCLUDE, limit = 50, maxBytes = 512_000 } = {}) {\n  const q = String(query || \"\").trim();\n  if (!q) return { ok: false, error: \"empty query\" };\n  const listed = listNotes(vaultRoot, { excludeDirs, limit: 5000 });\n  if (!listed.ok) return listed;\n  const needle = q.toLowerCase();\n  const hits = [];\n  for (const rel of listed.notes) {\n    if (hits.length >= limit) break;\n    const abs = join(vaultRoot, rel);\n    let text;\n    try {\n      const st = statSync(abs);\n      if (st.size > maxBytes) continue;\n      text = readFileSync(abs, \"utf8\");\n    } catch {\n      continue;\n    }\n    const idx = text.toLowerCase().indexOf(needle);\n    if (idx < 0 && !rel.toLowerCase().includes(needle)) continue;\n    const lineStart = text.lastIndexOf(\"\\n\", Math.max(0, idx)) + 1;\n    const lineEnd = text.indexOf(\"\\n\", idx);\n    const snippet = text.slice(lineStart, lineEnd < 0 ? lineStart + 160 : lineEnd).trim().slice(0, 160);\n    hits.push({ path: rel, snippet: snippet || `(filename match: ${rel})` });\n  }\n  return { ok: true, query: q, hits, truncated: hits.length >= limit };\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/vault.js:300-325](https://github.com/173787247/dsh-wsl-obsidian/blob/0d37b05d030b265559238e740ea92ba6baf2adff/lib/vault.js#L300-L325)\n\n写入无版本/备份。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\nexport function writeNote(vaultRoot, relPath, content, { createDirs = true } = {}) {\n  const rel = ensureMarkdownRel(relPath);\n  const joined = safeJoinVault(vaultRoot, rel);\n  if (!joined.ok) return joined;\n  try {\n    if (createDirs) mkdirSync(dirname(joined.absolute), { recursive: true });\n    writeFileSync(joined.absolute, String(content ?? \"\"), \"utf8\");\n    return { ok: true, path: joined.relative, bytes: Buffer.byteLength(String(content ?? \"\"), \"utf8\") };\n  } catch (err) {\n    return { ok: false, error: err instanceof Error ? err.message : String(err) };\n  }\n}\n\nexport function appendNote(vaultRoot, relPath, content) {\n  const rel = ensureMarkdownRel(relPath);\n  const joined = safeJoinVault(vaultRoot, rel);\n  if (!joined.ok) return joined;\n  try {\n    mkdirSync(dirname(joined.absolute), { recursive: true });\n    const chunk = String(content ?? \"\");\n    appendFileSync(joined.absolute, chunk, \"utf8\");\n    return { ok: true, path: joined.relative, appended: Buffer.byteLength(chunk, \"utf8\") };\n  } catch (err) {\n    return { ok: false, error: err instanceof Error ? err.message : String(err) };\n  }\n}\n```\n\n</details>\n\n#### 缺口\n\n- 未测真实库规模、模型 token 与冲突恢复\n  **影响：**无法计算每次合格整理的总成本\n  **进一步探讨：**用复制库计时/计 IO 与 token，并模拟同步冲突后恢复\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 在保留文件桥接便利性的同时，如何验证更可靠的写入语义？\n\n**研究主题：**工程质量与复用、新假设与验证\n\n#### 完整回答\n\n路径发现、相对路径校验和读写工具分层是可借鉴的接线，但路径授权应基于 realpath/父目录实际路径并明确符号链接政策。未验证的改进是假设写入必须携带上次读取的内容哈希/版本，在提交时比较并以临时文件原子替换，同时保留可恢复备份；外部编辑冲突则拒绝覆盖，交给用户合并。与直接备份后覆盖相比，它可能降低静默丢失，但也会增加冲突提示和重试。最小验证对库外 symlink、用户与 Agent 同时编辑、同步客户端改写、写入中断及重复追加逐一比较越界率、丢字节、恢复耗时与误拒绝。该方案没有在当前插件实现。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/vault.js:146-171](https://github.com/173787247/dsh-wsl-obsidian/blob/0d37b05d030b265559238e740ea92ba6baf2adff/lib/vault.js#L146-L171)\n\n路径授权目前只做词法比较。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\nexport function safeJoinVault(vaultRoot, relPath) {\n  const root = resolve(String(vaultRoot));\n  const raw = String(relPath ?? \"\");\n  if (raw.includes(\"\\0\")) return { ok: false, error: \"invalid path\" };\n  const rel = raw.replace(/\\\\/g, \"/\");\n  if (!rel) return { ok: false, error: \"empty relative path\" };\n  // Absolute paths are rejected rather than re-rooted inside the vault. A caller\n  // that passes one is working from the wrong contract, and silently rewriting\n  // \"/etc/passwd\" to \"etc/passwd.md\" reports \"not found\" for what is really a\n  // misuse. The check runs after backslash normalization, so it covers POSIX\n  // (\"/x\"), Windows drive (\"C:/x\") and UNC (\"//server/share\") forms alike.\n  if (rel.startsWith(\"/\") || /^[a-zA-Z]:\\//.test(rel)) {\n    return { ok: false, error: \"absolute paths not allowed\" };\n  }\n  const abs = resolve(root, rel);\n  const relCheck = relative(root, abs);\n  if (relCheck.startsWith(\"..\") || relCheck === \"..\" || abs === root && rel.includes(\"..\")) {\n    return { ok: false, error: \"path escapes vault\" };\n  }\n  if (!abs.startsWith(root + sep) && abs !== root) {\n    // On Windows resolve may change casing; compare lowercase\n    if (abs.toLowerCase() !== root.toLowerCase() && !abs.toLowerCase().startsWith(root.toLowerCase() + sep)) {\n      return { ok: false, error: \"path escapes vault\" };\n    }\n  }\n  return { ok: true, absolute: abs, relative: relCheck.replace(/\\\\/g, \"/\") || rel };\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/vault.js:300-325](https://github.com/173787247/dsh-wsl-obsidian/blob/0d37b05d030b265559238e740ea92ba6baf2adff/lib/vault.js#L300-L325)\n\n当前写入无预期版本或原子步骤。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\nexport function writeNote(vaultRoot, relPath, content, { createDirs = true } = {}) {\n  const rel = ensureMarkdownRel(relPath);\n  const joined = safeJoinVault(vaultRoot, rel);\n  if (!joined.ok) return joined;\n  try {\n    if (createDirs) mkdirSync(dirname(joined.absolute), { recursive: true });\n    writeFileSync(joined.absolute, String(content ?? \"\"), \"utf8\");\n    return { ok: true, path: joined.relative, bytes: Buffer.byteLength(String(content ?? \"\"), \"utf8\") };\n  } catch (err) {\n    return { ok: false, error: err instanceof Error ? err.message : String(err) };\n  }\n}\n\nexport function appendNote(vaultRoot, relPath, content) {\n  const rel = ensureMarkdownRel(relPath);\n  const joined = safeJoinVault(vaultRoot, rel);\n  if (!joined.ok) return joined;\n  try {\n    mkdirSync(dirname(joined.absolute), { recursive: true });\n    const chunk = String(content ?? \"\");\n    appendFileSync(joined.absolute, chunk, \"utf8\");\n    return { ok: true, path: joined.relative, appended: Buffer.byteLength(chunk, \"utf8\") };\n  } catch (err) {\n    return { ok: false, error: err instanceof Error ? err.message : String(err) };\n  }\n}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[index.js:199-255](https://github.com/173787247/dsh-wsl-obsidian/blob/0d37b05d030b265559238e740ea92ba6baf2adff/index.js#L199-L255)\n\n工具确认参数及串行声明。\n\n<details>\n<summary>查看原文（57行）</summary>\n\n```text\n  ctx.tools.register({\n    name: \"obsidian_write\",\n    description: \"Create or overwrite a Markdown note (vault-relative path). Requires confirm=true.\",\n    parameters: {\n      type: \"object\",\n      additionalProperties: false,\n      required: [\"path\", \"content\", \"confirm\"],\n      properties: {\n        path: { type: \"string\" },\n        content: { type: \"string\" },\n        confirm: { type: \"boolean\", description: \"Must be true to write.\" },\n      },\n    },\n    output: {\n      schema: { type: \"object\", additionalProperties: true },\n      render: (_a, v) => [{ type: \"text\", text: formatWrite(v) }],\n    },\n    timeoutMs,\n    isConcurrencySafe: () => false,\n    async execute(args) {\n      if (args?.confirm !== true) {\n        return { ok: false, error: \"obsidian_write refused: pass confirm=true\" };\n      }\n      const vault = vaultDeps();\n      if (!vault.ok) return vault;\n      return writeNote(vault.vaultPath, args?.path, args?.content);\n    },\n    presentCall: () => ({ card: \"generic\", title: \"Obsidian write\" }),\n    presentResult: (_a, r) => ({ card: \"generic\", title: \"Obsidian write\", content: r.content }),\n  });\n\n  ctx.tools.register({\n    name: \"obsidian_append\",\n    description: \"Append text to a Markdown note (creates parent dirs / file if needed). Requires confirm=true.\",\n    parameters: {\n      type: \"object\",\n      additionalProperties: false,\n      required: [\"path\", \"content\", \"confirm\"],\n      properties: {\n        path: { type: \"string\" },\n        content: { type: \"string\" },\n        confirm: { type: \"boolean\", description: \"Must be true to append.\" },\n      },\n    },\n    output: {\n      schema: { type: \"object\", additionalProperties: true },\n      render: (_a, v) => [{ type: \"text\", text: formatAppend(v) }],\n    },\n    timeoutMs,\n    isConcurrencySafe: () => false,\n    async execute(args) {\n      if (args?.confirm !== true) {\n        return { ok: false, error: \"obsidian_append refused: pass confirm=true\" };\n      }\n      const vault = vaultDeps();\n      if (!vault.ok) return vault;\n      return appendNote(vault.vaultPath, args?.path, args?.content);\n```\n\n</details>\n\n#### 缺口\n\n- 哈希/原子替换及备份方案未实现或比较\n  **影响：**不能记作现有安全性或低成本收益\n  **进一步探讨：**隔离原型用固定竞争夹具比较丢失、误拒绝和恢复时间\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 当前版本适合怎样试用，哪些用途应避免直接采用？\n\n**研究主题：**采用判断\n\n#### 完整回答\n\n建议仅在明确指定的测试 vault 或备份副本中试用：先用 status 确认路径和库名，读一篇测试笔记，向新文件写入，再从 Windows Obsidian 确认显示与同步。重要共享库或正被同步/编辑的笔记不宜让 Agent 直接覆盖；写入前人工确认目标、备份和内容，检查库内符号链接。没有真实宿主/目标测试运行证据，不能把源码中 confirm 与路径检查等同于安全完成。采用结论为 observe，待 symlink 边界和并发覆盖夹具通过，再考虑更广试用。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/vault.js:146-171](https://github.com/173787247/dsh-wsl-obsidian/blob/0d37b05d030b265559238e740ea92ba6baf2adff/lib/vault.js#L146-L171)\n\n路径检查边界。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\nexport function safeJoinVault(vaultRoot, relPath) {\n  const root = resolve(String(vaultRoot));\n  const raw = String(relPath ?? \"\");\n  if (raw.includes(\"\\0\")) return { ok: false, error: \"invalid path\" };\n  const rel = raw.replace(/\\\\/g, \"/\");\n  if (!rel) return { ok: false, error: \"empty relative path\" };\n  // Absolute paths are rejected rather than re-rooted inside the vault. A caller\n  // that passes one is working from the wrong contract, and silently rewriting\n  // \"/etc/passwd\" to \"etc/passwd.md\" reports \"not found\" for what is really a\n  // misuse. The check runs after backslash normalization, so it covers POSIX\n  // (\"/x\"), Windows drive (\"C:/x\") and UNC (\"//server/share\") forms alike.\n  if (rel.startsWith(\"/\") || /^[a-zA-Z]:\\//.test(rel)) {\n    return { ok: false, error: \"absolute paths not allowed\" };\n  }\n  const abs = resolve(root, rel);\n  const relCheck = relative(root, abs);\n  if (relCheck.startsWith(\"..\") || relCheck === \"..\" || abs === root && rel.includes(\"..\")) {\n    return { ok: false, error: \"path escapes vault\" };\n  }\n  if (!abs.startsWith(root + sep) && abs !== root) {\n    // On Windows resolve may change casing; compare lowercase\n    if (abs.toLowerCase() !== root.toLowerCase() && !abs.toLowerCase().startsWith(root.toLowerCase() + sep)) {\n      return { ok: false, error: \"path escapes vault\" };\n    }\n  }\n  return { ok: true, absolute: abs, relative: relCheck.replace(/\\\\/g, \"/\") || rel };\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/vault.js:300-325](https://github.com/173787247/dsh-wsl-obsidian/blob/0d37b05d030b265559238e740ea92ba6baf2adff/lib/vault.js#L300-L325)\n\n覆盖/追加无冲突保护。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\nexport function writeNote(vaultRoot, relPath, content, { createDirs = true } = {}) {\n  const rel = ensureMarkdownRel(relPath);\n  const joined = safeJoinVault(vaultRoot, rel);\n  if (!joined.ok) return joined;\n  try {\n    if (createDirs) mkdirSync(dirname(joined.absolute), { recursive: true });\n    writeFileSync(joined.absolute, String(content ?? \"\"), \"utf8\");\n    return { ok: true, path: joined.relative, bytes: Buffer.byteLength(String(content ?? \"\"), \"utf8\") };\n  } catch (err) {\n    return { ok: false, error: err instanceof Error ? err.message : String(err) };\n  }\n}\n\nexport function appendNote(vaultRoot, relPath, content) {\n  const rel = ensureMarkdownRel(relPath);\n  const joined = safeJoinVault(vaultRoot, rel);\n  if (!joined.ok) return joined;\n  try {\n    mkdirSync(dirname(joined.absolute), { recursive: true });\n    const chunk = String(content ?? \"\");\n    appendFileSync(joined.absolute, chunk, \"utf8\");\n    return { ok: true, path: joined.relative, appended: Buffer.byteLength(chunk, \"utf8\") };\n  } catch (err) {\n    return { ok: false, error: err instanceof Error ? err.message : String(err) };\n  }\n}\n```\n\n</details>\n\n**依据 3 · 作者声明**：[README.md:59-71](https://github.com/173787247/dsh-wsl-obsidian/blob/0d37b05d030b265559238e740ea92ba6baf2adff/README.md#L59-L71)\n\n作者的安装和 NTFS vault 步骤。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n````text\n## Install\n\n```sh\ndsh plugin --profile web add github:173787247/dsh-wsl-obsidian\n```\n\nRestart `dsh web`, open a **new** session, run `obsidian_status`.\n\n## Layout recommendation\n\n1. Install Obsidian on **Windows**.\n2. Create/open the vault under `C:\\` or `D:\\` (not inside the Linux distro disk).\n3. From WSL use `/mnt/c/...` or `/mnt/d/...` as `vaultPath`.\n````\n\n</details>\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：ca450b79e9c6cde9ce708155e480ae50ffe1509baf3c26373a26b5eade5ebb58。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 187 | — | — | 955 |\n| .js | source | 5 | 875 | 788 | 28 | — |\n| .mjs | source | 1 | 104 | 89 | 5 | — |\n| .md | example | 2 | 12 | — | — | 12 |\n| .js | test | 1 | 164 | 145 | 1 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| vault 发现 | 从配置或 Obsidian 文件识别库 | 多库时需用户确认目标 |\n| 笔记检索/读取 | 查 .md 正文和双链 | 大库/大文件有数量限制，内容可敏感 |\n| 写入/追加 | 更新 vault Markdown | confirm 参数非版本锁，需备份和外部冲突处理 |\n| 桌面打开 | 用 URI 唤起 Windows Obsidian | 需 Windows 桌面与 WSL 桥接 |\n\n## 工程亮点\n\nvault 发现、路径转换和内容操作分层有复用价值；词法路径检查与无版本覆盖限制了可靠写入。详见[Q05](#research-q05)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、index.js、lib/vault.js、lib/open.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：只读核固定提交 README、package、index.js、lib/vault.js、lib/open.js；未访问用户 vault、执行目标代码/测试或真实宿主；旧 META 仅复用。\n- 下一步：隔离库内 symlink 指向库外、双端编辑、同步改写、超过 5000 篇、大文件及打开 URI；核越界、漏检、覆盖、恢复耗时与用户操作量。\n",
         "metadata": {
             "repository": "173787247/dsh-wsl-obsidian",
             "repository_id": 1380817560,

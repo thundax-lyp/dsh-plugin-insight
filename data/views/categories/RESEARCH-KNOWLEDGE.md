@@ -10,46 +10,94 @@
 
 | 插件 | 主要用途 | 关键使用条件 |
 | --- | --- | --- |
+| [@240xu/dsh-websearch](#plugin-1340340493-root) | 为DSH注册unified搜索服务，聚合11后端，支持并发容错、去重、可选重排、多查询及缓存历史。 | 非敏感公开查询小集合试用，先关多查询/深覆盖，严格流程关缓存并清历史，审阅备用实例。 |
+| [@y9931666/dsh-plugin-crossfire](#plugin-1399279897-root) | 把待核成果按维度交给只读工具受限的红队子agent，收集候选缺陷，由读者逐条认定或驳回，并保存定稿与旧缺陷复审历史。 | 有条件试用，须真实connection认证栅栏、可信同信任用户、单进程状态与人工核证据；先小规模匿名成果。 |
+| [@zzerx/dsh-plugin-memory](#plugin-1363429979-plugin-memory) | 提供全局/项目记忆库、九工具、自动提炼与注入、原文审计、实体关系及可视化管理。 | 先观察；无敏感库关autoCapture/autoInject，手工条目与独立profile对照，重要约定保留原始指引。 |
 | [dock-markdown](#plugin-1340492424-root) | 将Markdown净化渲染、目录与本地资源解析接入Dock。 | 适合有限Markdown阅读；先确认editor依赖、资源来源与截断提示。 |
-| [DSH Literature](#plugin-1351375738-root) | 在 DSH 侧窗识别文献、抓取元数据、下载阅读 PDF 并管理本地文献库。 | 需要会话旁阅读/归档可评估其设计；先修复并核对下载候选变量，再考虑核心全文流程，不依据作者一键/全文宣称直接采用。 |
+| [dsh-anchored-monitor](#plugin-1337467566-root) | 对 DSH reasoning 流做词形波段监控，独立进程可自动中断并重置会话。 | 仅隔离 profile 显式关闭干预，先回放验证代理指标；真实使用前需默认只读、身份鉴权及人审。 |
 | [dsh-butler-memory](#plugin-1335928912-root) | 通过MCP向DSH模型和用户面板接入Butler长期记忆、修订历史与候选接受/拒绝。 | 当前不建议直接用于重要记忆。 |
-| [dsh-codevault](#plugin-1359423472-root) | 把源码阅读整理成可检索的仓库、文件和符号卡片，并关联本地知识库。 | 先给一个常读模块建卡，代码更新后核对引用和过期结论，不把历史笔记直接当现状。 |
+| [dsh-codevault](#plugin-1359423472-root) | 把源码阅读认识按仓库/文件/符号合并为Markdown对象卡，以JSONL保存条目并可选关联本地vault。 | 单人单写者独立备份档案可试用，vaultDir先不配置；广泛vault读取前优先修边界。 |
 | [dsh-cortex](#plugin-1366089972-workspace-plugins-dsh-cortex) | 按会话活动安排静默巩固，将工具经历归为持久记忆卡，并召回相关卡片与压低重复告警。 | 先少量召回并定期抽查卡片来源，重要故障保持外部告警；先验证重启后记忆仍可恢复再长期使用。 |
-| [dsh-fact-check](#plugin-1380181057-root) | 为 DSH 提供多源网页事实核查 Skill，含来源路由和可选 Jev 判据工具。 | 经常做资料核查的人可先用低风险题目检查来源和正文；保留未核实，遇到转载、封闭生态或无反证时别自动升置信，重要结论由人复核。 |
+| [dsh-fact-check](#plugin-1380181057-root) | 提供多源公开事实核查方法、确定性来源路由和可选Jev降档判据，要求结论附可追溯原文。 | 已有可信搜索/正文环境可试用公开事实研究，Jev按隐私选装，结论依证据并独立复核。 |
+| [dsh-feed](#plugin-1336585522-root) | 聚合 GitHub dsh-plugin topic 与 npm keyword 的本地 JSON 索引，供工具、CLI、MCP 查询。 | 隔离工作区试同步，审阅来源与错漏；search 只做候选检索，详见[Q03](#research-q03)。 |
 | [dsh-inpage-translator](#plugin-1422488467-root) | 在DSH浏览器页面注入翻译按钮，用宿主模型分块翻译可见文本并支持还原。 | 适合普通公开网页阅读时先试用。 |
-| [dsh-ls125-uv-probe](#plugin-1381989584-root) | 为 LS125 UVALED-X3 紫外探头提供 UART 协议、抓取分析工具与 STM32F103 主机固件的技能包。 | 已有对应硬件的工程人员可把它当复核起点，先只读轮询并对照原表，核对电气连接、CRC与单位后再试清零；不直接将示例读数用于要求校准证明的交付。 |
-| [dsh-math-olympiad](#plugin-1344714964-root) | 提供竞赛数学求解、独立验证及信心/弃权输出的技能流程，可选编译PDF。 | 适合学习和初步证明检查。 |
-| [dsh-obsidian-board](#plugin-1415116420-root) | 将本地 Obsidian 笔记库接入 DSH 三栏问答面板，提供本地关键词检索和可点击引用。 | 已有结构清楚的Markdown笔记库可先用已知答案测试原词、同义改写和外部资料问题，逐条点引用核对；涉及敏感笔记时先确认所选模型通道允许发送检索片段。 |
+| [dsh-ledger-memory](#plugin-1412857520-root) | 为DSH项目维护台账、决策目标经验卡和活动日志，自动注入记忆、压缩前后提供胶囊与seq回读，并支持跨会话交接和项目锁定。 | 先观察，无敏感项目副本中核授权目标/内容、压缩旁路、回读cap、日志披露与Git index变化，再考虑重要记忆。 |
+| [dsh-literature](#plugin-1351375738-root) | 在DSH侧窗识别学术文献、获取元数据和全文，提供PDF阅读、引用、笔记及本地库和目录保存。 | 先观察。 |
+| [dsh-ls125-uv-probe](#plugin-1381989584-root) | 把 LS125/UVALED-X3 私有 UART 读取协议、抓取分析工具及 F103 参考固件注册成 DSH 技能。 | 只读轮询与离线抓取先行，清零单独审批；在独立仪表/标准光源下复核后才上生产设备。 |
+| [dsh-math-olympiad](#plugin-1344714964-root) | 挂载竞赛数学解题 Skill，要求独立验证证明、诚实弃权，并可选编译 PDF。 | 已有可信 subagent 与 DSH base 的团队可隔离试题，逐题核验证器入参、标准解与弃权；详见[Q03](#research-q03)。 |
+| [dsh-obsidian-board](#plugin-1415116420-root) | 在DSH三栏面板以本地BM25检索Obsidian笔记，复用宿主模型流式回答、点引用读源并保存回答。 | 先观察，非敏感可信个人库和限定模型通道对照。 |
 | [dsh-openviking-enhance](#plugin-1401255267-root) | 在DSH显示OpenViking Studio、会话记忆提交状态及按会话查询的召回内容。 | 适合已有OpenViking的本机用户先观察。 |
 | [dsh-pdf-reader](#plugin-1346064150-root) | 用PyMuPDF分析PDF页面内容，按文本、全页预览和高分辨率局部图像组合供视觉模型阅读。 | 适合含图表论文的只读研究，先用标注页面检查漏区与权限边界；关键信息对照原PDF并明确引用页/区域。 |
-| [dsh-plugin-academic-writing](#plugin-1336663456-root) | 提供论文结构、标题、摘要、引文格式和措辞检查等确定性写作辅助。 | 适合用来起草骨架和初筛格式。 |
+| [dsh-plugin-academic-writing](#plugin-1336663456-root) | 为DSH提供论文骨架、题目摘要模板、引用和LaTeX片段，以及词法表达、Markdown结构、术语和投稿清单辅助。 | 观察，先修计数/无作者引用/TeX列等基础分支，只当草稿工具，不作学术或投稿验收。 |
+| [dsh-plugin-audit](#plugin-1336223158-root) | 同步 GitHub topic/npm 元数据并评分排行，按需对单插件做有限静态安全扫描。 | 只把分数作线索，确认扫描文件覆盖/错误状态后再读固定 SHA 源码、验证安装；详见[Q03](#research-q03)。 |
 | [dsh-plugin-education](#plugin-1336663611-root) | 提供教案、测验结构校验、量规、学习卡片、可读性及成绩统计辅助。 | 适合生成初稿和整理已有成绩。 |
+| [dsh-plugin-finance-data](#plugin-1336663504-root) | DSH Agent 的确定性金融算术工具，但比率文本、跨年定投和组合再平衡路径存在可核不一致。 | 修复关键路径前不用于真实决策；以 10/100 比率、2 年月投和组合偏离样本验每个 action。 |
 | [dsh-plugin-roundtable 圆桌会议](#plugin-1342524723-root) | 在 DSH 以拓扑视图组织多角色专家协作、讨论、汇聚与用户决策。 | 有明确讨论目标的人先用少数专家；定预算并读原文分歧，核对真实状态和消息路径，再扩大阵容，别让会议代替最终验收。 |
-| [dsh-plugin-tavily](#plugin-1334654243-root) | 把Tavily搜索与页面提取接入宿主web服务，提供参数设置、额度状态与引擎切换。 | 先确认安装后的默认引擎和查询数据去向，用少量已知问题核对来源；额度错误时处理key，不期待自动换引擎掩盖失败。 |
-| [dsh-plugin-verify](#plugin-1336684054-root) | 提供工作区关键词证据检索、配置检查及URL、npm和GitHub只读探测。 | 适合把它当检索和体检辅助。 |
-| [dsh-sciwork](#plugin-1416950630-root) | 提供科研模式预设、本地科研库面板、文献和数据管理及投稿前检查流程。 | 适合愿意使用目录式科研库的用户。 |
+| [dsh-plugin-tavily](#plugin-1334654243-root) | 接管 DSH web_search 的 Tavily provider，并提供可选提取服务、设置卡和主机探测路由。 | 待修复缓存与 keyless；需用真实凭据在受控 Profile 验证搜索/提取/回退及 API 权限；详见[Q03](#research-q03)。 |
+| [dsh-plugin-verify](#plugin-1336684054-root) | 通过关键词行号、JSON/YAML检查、URL/npm/GitHub探测及有界批量输出，提供核查线索和元数据。 | 先观察，作线索而非证实/安全通行证，先修证据语义/覆盖与网络范围再评估。 |
+| [dsh-read-url](#plugin-1335047324-root) | 读取网页、JSON和RSS等内容，提取正文并输出紧凑文本或Markdown，支持批量读取与站点爬取。 | 适合用公开网页查资料并愿意核对原来源的人在独立profile试用，先明确提供方缺失时的网络回退权限，默认不加直连例外；缺页、政策误绕过或预算失控时停用。 |
+| [dsh-sciwork](#plugin-1416950630-root) | 把科研Agent预设、普通文件库、文献与期刊档案、绘图指引和投稿材料面板接到同一工作流。 | 先观察，在无敏感单人副本核引用/路径/快照/恢复；档案检查和导出不等投稿合规。 |
 | [dsh-scrape-webpage](#plugin-1334269686-root) | 抓取网页正文、结构、链接与关键词，可选下载内容图片并交给扩展分析器。 | 已有用户可保留正文抓取用途，先在公开测试页核对重定向、动态内容与超时；非 Windows 环境先验证 shell 回退，限制敏感网络目标。 |
 | [dsh-search](#plugin-1423253220-root) | 把 DeepSeek Search/Fetch 接口接入 DSH，支持结构化搜索与正文抓取。 | 需要结构化公开网页材料的用户可评估；版本、价格和API字段回读原文，登录态或交互站点另用浏览器，先核实账户计费口径。 |
-| [dsh-stock-market](#plugin-1331846104-root) | 为DSH提供沪深A股行情侧栏与股票数据工具，按会话控制工具访问并标注多源回退口径。 | 适合只读资料研究，先交叉核对报价时点和来源，降级结果分开用。 |
+| [dsh-stock-market](#plugin-1331846104-root) | 在DSH侧栏显示行情，并提供沪深A股快照、走势、排行、资金流、基本面、事件、研报和资讯工具。 | 资料查阅者可先限定小样本受控试用，与原来源核对时间和口径，检查会话关闭；降级无法解释或旧数据误导时停止依赖，不作为交易依据。 |
 | [dsh-study-coach](#plugin-1400498179-root) | 用学习教练预设、知识图谱和证据账本组织个人学习，面板与专属工具共享学习档案。 | 有长期证据整理需求时可评估；先把档位用于复习安排，升学或资格判断仍需独立测评，不能用计数代替正确性核验。 |
-| [dsh-trend-radar](#plugin-1336582509-root) | 采集插件目录与GitHub主题快照，分析新增、Star变化和分类分布，并输出趋势面板。 | 适合对限定样本做探索性观察。 |
-| [dsh-ultramath](#plugin-1337487779-root) | 向DSH同步数学建模竞赛预设、模型库和论文模板，组织推导、编码、验算及评审流程。 | 适合学习或可控建模试验，先用已知解小题验证数据→代码→论文链。 |
+| [dsh-trend-radar](#plugin-1336582509-root) | 按需采集 GitHub dsh-plugin topic/awesome 快照并生成趋势报告、关键词雷达和实验性 Web 面板。 | 先隔离建立空目录并复核首轮成功，再核查报告采样分母与类别映射；勿把 top100 榜当全生态。 |
+| [dsh-ultramath](#plugin-1337487779-root) | 同步数模竞赛主控/角色预设、模型库与论文模板。 | 只在备份同名 DSH 目录的隔离 profile 试点；按题目核数据、模型、数值和论文，不以提示门禁代替独立验收。 |
 | [dsh-vision](#plugin-1335664137-root) | 为纯文本模型接入多通道识图，提供图片面板、视觉工具和会话证据记忆。 | 已有可用视觉通道且愿意核对原图时可试。 |
-| [dsh-web-tools](#plugin-1335219884-root) | 将多个Web搜索和提取服务以及社交平台接到DSH标准搜索接口，提供路由和故障切换。 | 适合已有多搜索服务的用户先用固定研究问题对照。 |
-| [dsh-websearch](#plugin-1340340493-root) | 为 DSH 提供聚合网页搜索 provider，合并多个后端结果并支持过滤、缓存和故障降级。 | 先选少量可访问后端，用常见中文与时效问题核对出处、耗时和全部调用预算；逐步增加有独立增益的服务。 |
-| [dsh-weekly-panel](#plugin-1400385991-packages-dsh-weekly-panel) | 在 DSH 侧栏展示插件周榜、免费模型状态和标明来源性质的推荐位。 | 想在DSH里查看中文榜单可先试只读面板；看清数据日期与赞助/互推标识，复制安装命令后仍要检查插件自身要求。 |
-| [dsh-weknora-archive](#plugin-1412897932-root) | 提取DSH会话并生成启发式总结，增量上传到用户配置的WeKnora知识库。 | 先审阅脱敏摘要并在测试WeKnora使用固定库ID。 |
+| [dsh-web-tools](#plugin-1335219884-root) | 为DSH统一搜索与抓取接口适配多Provider、自定义JSON源及X/小红书原生浏览器检索。 | 可信本机公开任务试用并核原始来源/预算，严格隔离/全量内容要求先核具体缺口。 |
+| [dsh-weekly-panel](#plugin-1400385991-packages-dsh-weekly-panel) | 将外部 DSH 插件周榜代理到 Web 主面板，展示排行、模型与推荐位并复制安装命令。 | 仅作非关键周榜浏览观察；复制安装命令及赞助内容前核原始仓库和数据，关键决策待修正新鲜度提示。 |
+| [dsh-weknora-archive](#plugin-1412897932-root) | 抽取 DSH 本地会话，规则生成 Markdown 摘要并写入 WeKnora 知识库。 | 仅无敏感样本指定已存在知识库先试用，人工审摘要并核远端解析；含密钥历史会话暂不自动上传。 |
 | [dsh-wsl-fetch](#plugin-1362694736-root) | 为DSH网页抓取注册代理感知的HTTP提供者，限制重定向、响应大小与返回文本。 | 先用公开小页面确认代理生效，保留抓取截断标志；不要把URL过滤当作完整网络访问隔离。 |
-| [dsh-wsl-obscura](#plugin-1358313559-root) | 封装Obscura浏览器CLI，提供状态、网页抓取与MCP接入提示。 | 从无eval、无私网访问的小页面开始，核对正文和截断，不把MCP提示当已接通服务。 |
-| [dsh-wsl-obsidian](#plugin-1380817560-root) | 连接Windows或WSL的Obsidian笔记库，提供搜索、读取、写入与打开笔记。 | 明确指定测试vault并备份，避免在正在编辑的重要笔记上直接写入；检查符号链接。 |
-| [dsh-wsl-playwright](#plugin-1381860363-root) | 在WSL中通过无头Chromium读取网页标题、状态与正文。 | 先在干净WSL完成小页面验证；有登录态、复杂交互或完整取证需求时不要只依赖body文本。 |
+| [dsh-wsl-obscura](#plugin-1358313559-root) | 从 WSL 调用 Obscura 无头浏览器的 status/fetch 工具，并提供 MCP 接线提示。 | 先 status 后公开 URL 样本 fetch，私网防线按 Obscura 版本独立验；交互用 MCP。 |
+| [dsh-wsl-obsidian](#plugin-1380817560-root) | 给 WSL 中的 DSH Agent 提供 Windows Obsidian 笔记库的状态、检索、读写和桌面打开工具。 | 建议观察，在测试 vault/备份副本先核 status、读写新文件和 Windows 显示；重要共享库暂不自动覆盖。 |
+| [dsh-wsl-playwright](#plugin-1381860363-root) | 在 WSL 经 npx 启动无头 Chromium，读取 URL 标题、状态或正文。 | 观察。 |
 | [dsh-wsl-vecmem](#plugin-1381726438-root) | 使用 Ollama 嵌入在本地存储短文本，并按工作区进行语义检索。 | 适合可丢弃的项目碎片试用；保留独立原始笔记和双文件备份，固定嵌入模型，不按 strong 自动采信，不用作唯一记录。 |
 | [dsh-youreyes](#plugin-1335045545-root) | 为文本模型接入OpenAI兼容、Gemini、Ollama及IDE视觉通道并保存视觉证据。 | 需要多端点或本地视觉的用户可先在隔离会话试用；显式设置通道与允许目录，别只凭图片输入开关判断模型已经支持原图推理。 |
-| [Forge 记忆](#plugin-1363429979-plugin-memory) | 为 DSH 保存偏好、项目决策与关系化记忆，支持检索和跨会话使用。 | 先记录少量明确偏好，测试修改和删除后是否停止影响回答，再扩展自动积累。 |
 | [GLM 图片视觉工具](#plugin-1335070045-packages-vision-tool) | 将本地单张图片发送至智谱 GLM，返回图片问答或 OCR 中文文本。 | 适合允许图片出网且缺原生视觉的场景做非敏感样本验证；财务、身份或关键数字需人工回读，不将OCR文本当真值。 |
-| [KRouter](#plugin-1341648244-root) | 以本地 Markdown 知识库为多种 Agent 提供带出处的记忆查询、纠错与拒答机制。 | 有决策知识库且愿维护状态时可先只读试用，核查来源页与拒答；不要把默认检索成功等同于记忆正确，导入与夜间写作应单独设置。 |
+| [KRouter](#plugin-1341648244-root) | 让多个编程Agent共享Markdown记忆，通过DSH七个查询工具提供canonical路由、分层全文召回、弱匹配拒答和来源收据。 | 有条件试用lookup-only。 |
 | [Moli 浏览器工具](#plugin-1415767842-root) | 通过本地 Moli 引擎渲染页面，读取选区并生成截图或 PDF。 | 确需JS渲染时可在隔离环境先验证引擎；确认TLS策略和安装来源后再接真实账号，普通文章优先比较轻量HTTP路径。 |
-| [URL 正文阅读器](#plugin-1335047324-root) | 读取网页、JSON 与订阅源，清理正文并提供分页续读和批量读取。 | 适合已有抓取结果噪声多、常需中文编码和续读的场景先对照使用；答案依赖表格或动态页面时核对原文与截断标记。 |
+
+<a id="plugin-1340340493-root"></a>
+
+## [@240xu/dsh-websearch](../../plugins/240xu--dsh-websearch/INSIGHT.md)
+
+[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=yellow&logo=github&style=flat)](https://github.com/240xu/dsh-websearch) [![npm 30d 4,731](https://img.shields.io/static/v1?label=npm+30d&message=4%2C731&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@240xu/dsh-websearch) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@240xu/dsh-websearch)
+
+> **用途**：公开资料检索希望减少后端切换并对单服务失败软降级。详见[Q01](#research-q01)。
+
+> **亮点**：将多搜索服务、查询/结果策略与故障遥测接入一个宿主provider，减少使用者切换接线。详见[Q01](#research-q01)。
+
+> **思考**：缓存不含多项策略及端点，URL全小写去重可能误合并，历史留原始查询；备用实例还接收同一可选密钥。详见[Q04](#research-q04)。
+
+> **建议**：可研究完整策略指纹、合并来源链及总预算约束扇出，用固定反例比较误合并、召回与总成本。当前未验证。详见[Q07](#research-q07)。
+
+<a id="plugin-1399279897-root"></a>
+
+## [@y9931666/dsh-plugin-crossfire](../../plugins/9931666--dsh-plugin-crossfire/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/9931666/dsh-plugin-crossfire) [![npm 30d 669](https://img.shields.io/static/v1?label=npm+30d&message=669&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@y9931666/dsh-plugin-crossfire) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@y9931666/dsh-plugin-crossfire)
+
+> **用途**：面向已形成方案、代码解释或其他待核成果的人。开评审明确subject/立场/维度，红队专家挑缺陷，收集成逐条pending，由读者认定/驳回并写理由，定稿保历史；复审只核上一轮认定项。目标是让缺陷与个人裁决可见，而不是让多个模型投票自动证真。
+
+> **亮点**：将只读工具受限专家、真实persona/发言、pending缺陷与人工理由/历史复审接为一套可追踪流程，不让专家自动作最终真值。详见[Q02](#research-q02)。
+
+> **思考**：Web缺connection时放行，actor和preferredRoot来自body非强授权；锁仅进程内，report发言/预算非事务，RPC collect没透传坏行数。endorsed/settled仍是人的状态而非独立复现。详见[Q03](#research-q03)、[Q04](#research-q04)。
+
+> **建议**：可探索认证actor/允许根与record版本绑定、缺陷证据版本收据和可恢复发言/预算事件，比较未授权接受/缺口/复核成本；未实现。详见[Q07](#research-q07)。
+
+<a id="plugin-1363429979-plugin-memory"></a>
+
+## [@zzerx/dsh-plugin-memory](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-memory/INSIGHT.md)
+
+[![GitHub ★ 9](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9&color=yellow&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) [![npm 30d 2,223](https://img.shields.io/static/v1?label=npm+30d&message=2%2C223&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-memory) [![最新发布 2026-10-08](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-08&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-memory)
+
+> **用途**：DSH用户希望跨会话复用偏好和项目约定，并可人工修订与回看来源。详见[Q01](#research-q01)。
+
+> **亮点**：将原文、后台提炼/判定、记忆工具与scope注入/图谱管理接为跨会话流程。详见[Q01](#research-q01)。
+
+> **思考**：本地存储不等离线提炼，项目全小写可串目录，模型scope默认global，合并/遗忘多副本非事务。详见[Q03](#research-q03)。
+
+> **建议**：可研究待确认候选、身份/来源版本合并及全副本遗忘收据，以串项目和并发反例比较错召回与恢复。当前未验证。详见[Q06](#research-q06)。
 
 <a id="plugin-1340492424-root"></a>
 
@@ -65,19 +113,19 @@
 
 > **建议**：未验证假设：为每个资源展示最终来源根并对缺依赖/截断显式告警，可减少错误阅读。用同名资源多根、缺editor、大文档和失效链接核定位正确率及用户误读。
 
-<a id="plugin-1351375738-root"></a>
+<a id="plugin-1337467566-root"></a>
 
-## [DSH Literature](../../plugins/aik358--dsh-literature/INSIGHT.md)
+## [dsh-anchored-monitor](../../plugins/aik358--dsh-anchored-monitor/INSIGHT.md)
 
-[![GitHub ★ 8](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8&color=yellow&logo=github&style=flat)](https://github.com/Aik358/dsh-literature) [![npm 30d 1,971](https://img.shields.io/static/v1?label=npm+30d&message=1%2C971&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@a9i5k4/dsh-literature) [![最新发布 2026-09-08](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-08&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@a9i5k4/dsh-literature)
+[![GitHub ★ 13](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=13&color=yellow&logo=github&style=flat)](https://github.com/Aik358/dsh-anchored-monitor) [![npm 30d 973](https://img.shields.io/static/v1?label=npm+30d&message=973&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@a9i5k4/dsh-anchored-monitor) [![最新发布 2026-09-05](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-05&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@a9i5k4/dsh-anchored-monitor)
 
-> **用途**：研究者把对话中的标识符/标题转成可阅读归档条目，并将阅读问题送回当前会话；合格交付是标识、全文与引用对应正确。
+> **用途**：研究某模型推理表达轨迹并可视化；自动干预需极严格验证。
 
-> **亮点**：将文献发现、元数据、阅读与引用集中在会话旁，并把文献状态与Zotero内部schema隔离；工具按意图/面板启用减少无关上下文负担。增量是研究资料交接与本地库集成，不是文献正确性或AI阅读算法创新。
+> **亮点**：将流式推理指纹、窗口和实验日志做成实时仪表与可配置状态机。详见[Q02](#research-q02)。
 
-> **思考**：一键落入全文库的核心路径是否成立？src/node/fetch/pdf.js的push闭包读取未声明trusted，且提交lib/index.js同样存在Boolean(trusted)；遇到非空候选URL时有ReferenceError风险，不能以源码/构建目录区别回避。即使修复，AI全文只截前60000字符且页码由模型概括，不能当完整论文核读；“本地”指转发/存储，不代表外部元数据与模型调用不联网。
+> **思考**：默认启用会话打断/自动续跑，README 却称默认仅监测；HTTP CORS:* 无鉴权且配置可改 monitorUrl。详见[Q03](#research-q03)、[Q04](#research-q04)。
 
-> **建议**：把每条资料的标识、下载来源、PDF摘要和覆盖页段绑定到引用/问答输出，可减少“元数据正确但全文错误/未读全”的误归属。先以已知PDF和错误候选测试下载链，再对超长论文尾部问题要求明确未覆盖；若仍生成未见页码或引用错误，则不成立。
+> **建议**：默认只读、受保护的统计摘要和人工批准干预能降低误打断；尚未实现。详见[Q05](#research-q05)。
 
 <a id="plugin-1335928912-root"></a>
 
@@ -99,13 +147,13 @@
 
 [![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/1014029855/dsh-codevault)
 
-> **用途**：反复阅读相同代码的人需要保留带对象身份的笔记，减少重复整理。
+> **用途**：读者保存源码认识并重复回访，要求对象/版本坐标、真实依据和档案恢复可解释。
 
-> **亮点**：入口注册 code-reading Skill、read/vault 工具及 /codevault，配置档案目录与可选只读 vault。
+> **亮点**：稳定对象卡、快记展开与回访/历史接线使记录可积累，标准文本易迁移；内容依据仍由读者核查。详见[Q01](#research-q01)与[Q02](#research-q02)。
 
-> **思考**：对象卡片比聊天时间线容易复用；写得整齐不等于理解准确或跟上代码变更。
+> **思考**：vault仅词法守卫且stat递归跟链接、全文读后裁剪；expand/delete改旧行限制历史，整体JSONL与多派生文件非事务。详见[Q02](#research-q02)。
 
-> **建议**：先给一个常读模块建卡，代码更新后核对引用和过期结论，不把历史笔记直接当现状。
+> **建议**：可探讨修订/tombstone日志与最小vault入口，固定source ref并加realpath/扫描预算；涉及迁移、擦除与日志增长取舍，未验证。详见[Q04](#research-q04)。
 
 <a id="plugin-1366089972-workspace-plugins-dsh-cortex"></a>
 
@@ -125,15 +173,29 @@
 
 ## [dsh-fact-check](../../plugins/7starsseeker--dsh-fact-check/INSIGHT.md)
 
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/7starsseeker/dsh-fact-check) [![npm 30d 1,495](https://img.shields.io/static/v1?label=npm+30d&message=1%2C495&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-fact-check) [![最新发布 2026-10-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-17&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-fact-check)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/7starsseeker/dsh-fact-check) [![npm 30d 1,388](https://img.shields.io/static/v1?label=npm+30d&message=1%2C388&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-fact-check) [![最新发布 2026-10-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-17&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-fact-check)
 
-> **用途**：研究者把传闻或数字拆成可核实事实点，抓原文交叉与反向搜索，交付结论、缺口及可追溯来源。
+> **用途**：读者核实公开主张/数字，需真实正文、独立来源与反证，而非模型记忆。
 
-> **亮点**：相对直接问模型凭记忆回答，贡献是把原文、来源独立性、反证和未核实状态写成可复用流程，并以确定性路由和可选判据辅助；DSH增量是Skill provider、同名优先级与编辑失效。搜索服务和Jev判断为外部能力，实际报告质量依执行者，非插件自动保证。
+> **亮点**：将来源独立、反证、未知分级和可选降档判据组织为可复用流程，取证/判断仍由执行者承担。详见[Q01](#research-q01)与[Q02](#research-q02)。
 
-> **思考**：两三来源和“没搜到反证”是否足以高置信？转载可共用单源，检索无反证也可能是覆盖不足；SKILL的要求不是机械验证。作者MEASUREMENTS的小型自建集只测局部判据，sufficient表现不足且工具明确不据此停止搜索，不能把support命中率外推整份事实报告可靠性。
+> **思考**：提示规则不自动保证正文/引用真实或来源独立，小语料判据也不等泛化准确；URL无版本快照影响长期复核。详见[Q02](#research-q02)。
 
-> **建议**：待验证假设：把每条事实的原始发布链与检索覆盖保存为证据图，并让结论门槛依事实类型和时效变化，可减少重复转载计独立及来源数够但要素缺失。依据是当前来源独立规范与局部判据不足，未实现图校验。用同源多转载、单一权威原件和新事件无反证三组盲审，对照独立性误判、未核实标注与时间成本；必须由独立标注者核对，模型自评不作真值。
+> **建议**：可探讨逐主张证据账本，绑定源头/固定原文/位置/矛盾和判据版本再装配报告；有隐私/存储和维护成本，未验证。详见[Q05](#research-q05)。
+
+<a id="plugin-1336585522-root"></a>
+
+## [dsh-feed](../../plugins/863683348--dsh-feed/INSIGHT.md)
+
+[![npm 30d 92](https://img.shields.io/static/v1?label=npm+30d&message=92&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-feed) [![最新发布 2026-08-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-17&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-feed)
+
+> **用途**：查询 DSH 插件候选并向其他界面复用机器可读索引。
+
+> **亮点**：模型工具、CLI 和实验性 MCP 共用可 diff JSON 索引，详见[Q03](#research-q03)。
+
+> **思考**：默认覆盖有限、同插件跨源可能双计，网络部分失败仍更新时间；路径约束仅词法检查，详见[Q01](#research-q01)、[Q02](#research-q02)。
+
+> **建议**：以仓库/包关联身份与显式分页/失败状态减少双计和假新鲜，反证及代价见[Q05](#research-q05)；真实路径写入仍需独立约束。
 
 <a id="plugin-1422488467-root"></a>
 
@@ -149,47 +211,75 @@
 
 > **建议**：由部分覆盖和可还原标记推导，可将翻译结果作为带DOM文本摘要与版本的旁路层：回填前核对节点原文未变，失败/跳过区域可见标记，并保留原文可一键比较。未验证假设是提高覆盖可信度且减少动态页面错位。对实时更新与嵌套标签页测试，若错配或阅读负担不降则否定。
 
+<a id="plugin-1412857520-root"></a>
+
+## [dsh-ledger-memory](../../plugins/18477514055--dsh-ledger-memory/INSIGHT.md)
+
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/18477514055/dsh-ledger-memory) [![npm 30d 3,016](https://img.shields.io/static/v1?label=npm+30d&message=3%2C016&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-ledger-memory) [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-20&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-ledger-memory)
+
+> **用途**：面向跨很多轮/会话推进同一项目的DSH用户。活跃台账承接现状，决策/目标/经验卡存长期资产，活动日志保事件，压缩前后胶囊和seq索引帮助找回原话，handoff让新会话继续。它管理的是人和模型维护的项目记忆，不是自动证明项目事实的数据库。
+
+> **亮点**：将项目文件/卡片、每轮记忆接线、被压seq索引和先index后点读组合，settings缺认证拒绝、原则用真实卡片grant，减少纯摘要盲回读。详见[Q02](#research-q02)、[Q04](#research-q04)。
+
+> **思考**：原则grant按sid未绑定root/正文/版本；全量落盘有manual/紧急旁路；超cap单事件按事件边界无法回读，文本不是原始事件全结构。记忆写可自动git add，多资产非事务。详见[Q03](#research-q03)、[Q05](#research-q05)、[Q07](#research-q07)。
+
+> **建议**：可探索项目/材料/省略收据、原则内容与版本授权、压缩对象hash/超大事件分块及独立Git偏好，比较污染/恢复和总成本；未实现。详见[Q09](#research-q09)。
+
+<a id="plugin-1351375738-root"></a>
+
+## [dsh-literature](../../plugins/aik358--dsh-literature/INSIGHT.md)
+
+[![GitHub ★ 8](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8&color=yellow&logo=github&style=flat)](https://github.com/Aik358/dsh-literature) [![npm 30d 1,892](https://img.shields.io/static/v1?label=npm+30d&message=1%2C892&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@a9i5k4/dsh-literature) [![最新发布 2026-09-08](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-08&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@a9i5k4/dsh-literature)
+
+> **用途**：在DSH中研究写作的人将文献标识归为可复读资产；合格结果需身份、版本、全文与保存目标一致，不能仅依赖saved标签。
+
+> **亮点**：把标识识别、元数据、PDF阅读、引用与多目标归档接成会话内状态机，并用阶段错误和同key下载去重组织恢复；底层学术API和PDF.js归属上游，当前下载缺陷限制兑现。详见[Q02](#research-q02)。
+
+> **思考**：全文候选push读取未声明trusted，源码与lib产物相同，静态可见会在候选构造触发错误；启动还会尝试无关Doctor detached supervisor。均未运行复现，不能当作已验收闭环。详见[Q03](#research-q03)。
+
+> **建议**：可探索分开“文件已存”与“文献身份已确认”的归档收据，用标识/版本、PDF哈希及用户核对减少同名和预印本错归档；尚未实现和验证。详见[Q06](#research-q06)。
+
 <a id="plugin-1381989584-root"></a>
 
 ## [dsh-ls125-uv-probe](../../plugins/2333hutao--dsh-ls125-uv-probe/INSIGHT.md)
 
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/2333hutao/dsh-ls125-uv-probe)
 
-> **用途**：面向已有LS125/UVALED-X3硬件、想用自有MCU读取紫外测量的嵌入式研究者；合格结果须帧校验正确、量纲匹配并与原仪表对照。
+> **用途**：工程师需脱离原装仪表用自制 MCU 读取紫外探头，并复核字段、单位与清零操作。
 
-> **亮点**：相比仅给AI一段设备说明，本项把反向协议、否定实验陷阱、示例捕获和MCU实现一起作为资源分发，使Agent能追溯字段和采样方法。CRC/UART均为成熟技术，具体贡献在该探头的协议知识与从仪表脱离的实现材料，不宣称通用仪器协议创新。
+> **亮点**：针对单一探头整理命令、字段、CRC、参考固件和抓取路线，比通用串口教程更具可操作性。详见[Q02](#research-q02)。
 
-> **思考**：样本设备实验能否支持该型号所有探头？PROTOCOL有字段对照、清零和排除实验，提供比单段演示更强的作者证据；但文中“完整原始证据”指向另一技能的case文件，当前分发未含全部原始轮次，偏移16–17含义也未知。21帧正确不能覆盖批次、固件、漂移和长时间计时溢出。
+> **思考**：“完全逆向/全部测量证据”范围超出本包可见材料：原始案例在另仓，列出的三份样本只见一份，部分字节和命令仍未定。详见[Q03](#research-q03)。
 
-> **建议**：已有对应硬件的工程人员可把它当复核起点，先只读轮询并对照原表，核对电气连接、CRC与单位后再试清零；不直接将示例读数用于要求校准证明的交付。
+> **建议**：逐项结论绑定可重放采样偏移与硬件版本，清零加单独确认/前后快照，可降低工程误用；尚未实现。详见[Q05](#research-q05)。
 
 <a id="plugin-1344714964-root"></a>
 
 ## [dsh-math-olympiad](../../plugins/988hj7tczd-oss--dsh-math-olympiad/INSIGHT.md)
 
-[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-math-olympiad) [![npm 30d 108](https://img.shields.io/static/v1?label=npm+30d&message=108&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-math-olympiad) [![最新发布 2026-08-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-24&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-math-olympiad)
+[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-math-olympiad) [![npm 30d 104](https://img.shields.io/static/v1?label=npm+30d&message=104&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-math-olympiad) [![最新发布 2026-08-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-24&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-math-olympiad)
 
-> **用途**：适合希望把竞赛题求解与证明质疑分开的学习者；输出是证明、验证结论和有边界的信心。
+> **用途**：辅助 IMO/Putnam 等竞赛题解题、证明校验和讲解输出。
 
-> **亮点**：作者强调对抗验证与诚实弃权；本项贡献是将Pólya启发、具体失败模式、最多两轮修正和弃权写成可执行提示流程，另有可靠路径挂载。不是形式化证明器，也没有代码强制保证验证器隔离或验证结果正确；数学方法归公开参照，非本项目新定理。
+> **亮点**：把求解、对抗验证、最多两轮修复和弃权写成可加载流程；详见[Q01](#research-q01)。
 
-> **思考**：high由模型验证器零缺口决定，并没有校准数据，故不能把标签称统计校准的正确概率。隔离与只传证明是Skill纪律，locator没有调度器 enforcing；smoke的stub传参结构不证明真实宿主不共享历史。用开放问题特化作红旗有启发价值，不能替代逐步证明检查。
+> **思考**：验证器隔离只由 Skill 文本纪律和模拟测试示例体现，生产期未见执行性保证；详见[Q02](#research-q02)。
 
-> **建议**：未验证假设：将求解者/验证者输入和具体缺口保存为可审阅记录，并用已知真伪题评估high标签，可减少错而自信。对正确证明、隐含条件错误和无解题比较错误接受率、弃权率及额外模型费用；若高信心未改善，取消校准表述。
+> **建议**：若真实独立验证器仅接证明正文，错误证明通过率或可下降；需盲测并核入参，详见[Q03](#research-q03)。
 
 <a id="plugin-1415116420-root"></a>
 
 ## [dsh-obsidian-board](../../plugins/2026heshao--dsh-obsidian-board/INSIGHT.md)
 
-[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/2026heshao/dsh-obsidian-board) [![npm 30d 133](https://img.shields.io/static/v1?label=npm+30d&message=133&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-obsidian-board) [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-20&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-obsidian-board)
+[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/2026heshao/dsh-obsidian-board) [![npm 30d 133](https://img.shields.io/static/v1?label=npm+30d&message=133&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-obsidian-board) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-obsidian-board)
 
-> **用途**：适合已有Markdown笔记库、希望边问边查出处的知识工作者；合格答案应引用实际支持结论的笔记，而不是仅能打开一个文件。
+> **用途**：个人笔记库问答、找原文并回存知识。详见[Q01](#research-q01)。
 
-> **亮点**：相对在Obsidian关键词搜索后复制到聊天，插件把查找、回答和原文核对放在三栏；BM25和中文bigram是成熟方法，具体增量是笔记标题/标签/别名、收集语料降权以及attempt切换时重置输出偏移，减少来源库与模型回退造成的使用断点。不能将算法名称或作者万条笔记耗时认作本次实测。
+> **亮点**：把搜索、来源阅读、流式问答与保存放进同页闭环。详见[Q01](#research-q01)。
 
-> **思考**：最影响价值的是引用能否覆盖真正支持结论的笔记。BM25更适合词面匹配，固定0.45收集语料降权能让自有笔记优先，却可能压低用户此刻正要找的外部材料。可点击[n]只证明可回看，不证明检索召回或引用蕴含关系；同义改写与外部资料问题是最强反例。
+> **思考**：索引直接读可含外链md而读源另有realpath，自动回退可能更换资料接收者，同名保存非独占。详见[Q03](#research-q03)、[Q04](#research-q04)。
 
-> **建议**：已有结构清楚的Markdown笔记库可先用已知答案测试原词、同义改写和外部资料问题，逐条点引用核对；涉及敏感笔记时先确认所选模型通道允许发送检索片段。
+> **建议**：研究统一索引/读源物理限额、取消预算与provider白名单、独占保存和历史CAS，比较召回/停止/恢复。当前未验证。详见[Q06](#research-q06)。
 
 <a id="plugin-1401255267-root"></a>
 
@@ -223,15 +313,29 @@
 
 ## [dsh-plugin-academic-writing](../../plugins/863683348--dsh-plugin-academic-writing/INSIGHT.md)
 
-[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/863683348/dsh-plugin-academic-writing) [![npm 30d 1,803](https://img.shields.io/static/v1?label=npm+30d&message=1%2C803&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-academic-writing) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-academic-writing)
+[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/863683348/dsh-plugin-academic-writing) [![npm 30d 1,733](https://img.shields.io/static/v1?label=npm+30d&message=1%2C733&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-academic-writing) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-academic-writing)
 
-> **用途**：适合研究者快速准备稿件骨架和检查明显格式问题；研究事实与论证仍需作者确认。
+> **用途**：服务已经有真实研究材料、需要论文骨架/引用初稿/格式片段和机械文本检查的DSH用户。单工具十种action提供outline/title/abstract/citation/check/checklist/references/latex/structure/glossary；模型或作者写正文，插件不检索文献、不核事实/引用真伪，也不生成真实研究结果。
 
-> **亮点**：作者明确模型负责行文、插件负责结构；可确认增量是将常见论文模板和格式操作封成可重复工具，减少模型临时编造格式。相对纯提示生成，更可预测；这不是自动研究、引用真实性验证或投稿规范完整实现。
+> **亮点**：用一个模型工具提供可重复模板/格式和机械检查，纯逻辑不另发网络或写文件，帮助起草而非学术验收。详见[Q02](#research-q02)。
 
-> **思考**：formatCitation按提供字段拼接，不能验证文献存在，也未覆盖不同姓名文化与所有样式细节。academicCheck的PASSIVE/FIRST_PERSON/HEDGING非全局正则，因此match计数最多1，与出现次数不同；把谨慎措辞或第一人称标出也不表示文风错误。LaTeX转义仅覆盖部分字符，不能承诺片段任意输入可编译。
+> **思考**：非global捕获regex的match.length不是出现次数；缺作者APA类型分支、引用去重/style覆盖、LaTeX列数/转义有缺口，passed/清单不证明质量。详见[Q03](#research-q03)、[Q04](#research-q04)。
 
-> **建议**：待验证假设：把格式规则与目标期刊配置及真实引用元数据对齐，可降低一刀切文风误报。用已人工校对的多语引文和不同期刊段落比较格式错误、误报及编辑时间；若规则不能跨语适用，应明确支持子集。
+> **建议**：可探索带位置/范围/未知的规则收据和有版本规范样例/格式前置校验，比较错误与人工纠错；未实现。详见[Q06](#research-q06)。
+
+<a id="plugin-1336223158-root"></a>
+
+## [dsh-plugin-audit](../../plugins/863683348--dsh-plugin-audit/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/863683348/dsh-plugin-audit) [![npm 30d 817](https://img.shields.io/static/v1?label=npm+30d&message=817&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-audit) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-audit)
+
+> **用途**：在 DSH 生态选择待评估插件并跟踪仓库健康度。
+
+> **亮点**：提供可解释的元数据分数与按需安全线索，详见[Q01](#research-q01)。
+
+> **思考**：深扫失败被落成空扫描并在工具输出中表现为 clean，可能覆盖既有证据；详见[Q02](#research-q02)。
+
+> **建议**：区分抓取失败与有效扫描，保留旧结果并展示覆盖范围；反证条件及代价见[Q05](#research-q05)。
 
 <a id="plugin-1336663611-root"></a>
 
@@ -246,6 +350,20 @@
 > **思考**：validateQuiz只检查结构和答案索引范围，合法索引也可能指向错误答案。readability把Flesch启发式分数映射A1-A2至C2，没有语言测评校准；中文只看句长。index参数对象重复定义items，后定义的grade通用对象覆盖quiz详细schema，削弱工具层字段约束。
 
 > **建议**：待验证假设：让工具输出结构有效、答案已核、教学适配三种独立状态，可减少valid被误读为题目正确。用格式合法但答案错误、文化背景依赖和多语阅读样本，比较教师漏检与改稿时间；不把可读性分数当能力认证。
+
+<a id="plugin-1336663504-root"></a>
+
+## [dsh-plugin-finance-data](../../plugins/863683348--dsh-plugin-finance-data/INSIGHT.md)
+
+[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=yellow&logo=github&style=flat)](https://github.com/863683348/dsh-plugin-finance-data)
+
+> **用途**：Agent 在有已核来源/口径的数字上做格式化、收益与风险计算。
+
+> **亮点**：将常见财务算术从模型口算转为确定性工具，并提示数据来源/口径。详见[Q01](#research-q01)。
+
+> **思考**：四类财务比率在计算层和展示层各乘 100；多年 plan 默认只算 12 期，portfolio 未返回再平衡单。详见[Q02](#research-q02)、[Q03](#research-q03)。
+
+> **建议**：统一单位契约并分离最终计算与表格采样，配黄金样本可提高可靠性；修复效果尚未验。详见[Q04](#research-q04)。
 
 <a id="plugin-1342524723-root"></a>
 
@@ -267,27 +385,41 @@
 
 [![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=yellow&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-tavily)
 
-> **用途**：经常做联网研究的用户希望统一搜索参数并取回来源，合格结果是相关且可追溯的证据，不只是搜索成功。
+> **用途**：在 DSH 中用 Tavily 网页检索并可配置页面提取与费用控制。
 
-> **亮点**：src/provider.ts实现web.search与fetch提供者，按请求解析密钥环，支持缓存与受限重试；可显式切换或在特定故障时回退DeepSeek。
+> **亮点**：整合搜索、提取、参数配置、多键轮换与回退，详见[Q01](#research-q01)。
 
-> **思考**：统一设置和明确回退类型有利于诊断；丰富参数并不能代替同问题的检索质量比较。
+> **思考**：无 key search 在 HTTP 前抛缺凭据；符合持久缓存写入条件时原始 API key 会作为 JSON 键落盘；详见[Q02](#research-q02)。
 
-> **建议**：先确认安装后的默认引擎和查询数据去向，用少量已知问题核对来源；额度错误时处理key，不期待自动换引擎掩盖失败。
+> **建议**：对缓存 key 使用不可逆标识、明确无 key 搜索路径并以正式扩展机制显示 GUI，可改善可用性和凭据边界；待验证，详见[Q02](#research-q02)。
 
 <a id="plugin-1336684054-root"></a>
 
 ## [dsh-plugin-verify](../../plugins/863683348--dsh-plugin-verify/INSIGHT.md)
 
-[![npm 30d 839](https://img.shields.io/static/v1?label=npm+30d&message=839&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-verify) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-verify)
+[![npm 30d 831](https://img.shields.io/static/v1?label=npm+30d&message=831&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-verify) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-verify)
 
-> **用途**：Agent研究或插件提交前需要把主张定位到文件与外部元数据；合格交付应是证据与主张逻辑关系清楚，访问成功并不等于主张成立。
+> **用途**：主张下结论/配置或插件元数据检查前定位材料，仍需读原文/标准解析和真实验收。
 
-> **亮点**：相对模型无依据口述，增量是统一文件行号引用和常见只读探测，把原始线索带回研究过程。它实现的是证据发现与结构体检，不是语义事实验证引擎。
+> **亮点**：统一文本定位和多类元数据入口并保留单项行号，非语义事实证明或安全审计。详见[Q01](#research-q01)与[Q02](#research-q02)。
 
-> **思考**：verified与high confidence标签是否过强？scoreClaim仅60%关键词命中即verified，batch的high可由至少两条命中触发；否定、主体归属与相反陈述都可能共享关键词。YAML又只是结构烟检。因此引用可追溯是支持，但不能从覆盖率推出事实正确性或置信概率。
+> **思考**：60%关键词就verified/high未校准，batch丢证据/静默截断，YAML仅词法且rawfetch缺Host网络围栏。详见[Q02](#research-q02)。
 
-> **建议**：由行级证据与过强判定推导，可将verdict改为“检索覆盖”并附待验证关系，增加相反证据和数字条件核对，再由人或独立验证器形成结论。未验证假设是减少引用正确但结论错误。用相同关键词正反命题盲测，若误verified不降则否定。
+> **建议**：可探讨分级检查/覆盖收据，batch保完整来源/反证，语法/Schema/加载分开并核网络策略，资源/人工成本未验证。详见[Q05](#research-q05)。
+
+<a id="plugin-1335047324-root"></a>
+
+## [dsh-read-url](../../plugins/2672243194--dsh-read-url/INSIGHT.md)
+
+[![GitHub ★ 22](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=22&color=yellow&logo=github&style=flat)](https://github.com/2672243194/dsh-read-url) [![npm 30d 2,587](https://img.shields.io/static/v1?label=npm+30d&message=2%2C587&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-read-url) [![最新发布 2026-10-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-19&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-read-url)
+
+> **用途**：研究者与开发者需要从公开来源获得可核对的紧凑正文，交付以关键事实和出处为准，不以HTTP成功或字符变少为准。
+
+> **亮点**：把多格式解码、正文提取、分页续读、缓存及并发工具接入DSH，减少模型手工组织抓取；成熟网络与提取机制的组合不等于原创引擎，作者效果对照未独立验证。详见[Q03](#research-q03)。
+
+> **思考**：成功返回的紧凑文本不证明完整覆盖，启发式提取和分页失败会留下遗漏；提供方缺失回退与显式直连例外还改变网络信任边界。源码支持这些条件判断，未作运行复现。详见[Q04](#research-q04)。
+
+> **建议**：可探索可核对压缩阅读收据，将每页来源、通道、原文哈希和停止原因附在提取结果中，检验是否减少遗漏误判；新增存储与token负担，尚未验证。详见[Q08](#research-q08)。
 
 <a id="plugin-1416950630-root"></a>
 
@@ -295,13 +427,13 @@
 
 [![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/58catmiao/dsh-sciwork)
 
-> **用途**：适合已有本地数据与文献、需要组织图表和稿件的科研者；交付物是可迁移的文件库与投稿包。
+> **用途**：单人科研组织和写稿/图/投稿准备，须人工核原文、统计和现行刊方要求。
 
-> **亮点**：作者定位为科研工作台；实际增量是把文件系统作为真相源，面板与CLI共用写入路径，将数据、引用、期刊检查和包清单连接起来。相对散落文件与人工清单，增加登记及溯源；Origin绘图来自外部Fantasality插件，不属于本项目实现。
+> **亮点**：普通文件科研库把方法指引、登记、引用与投稿材料接线集中，便于迁移和复用，非新科学方法。详见[Q01](#research-q01)与[Q02](#research-q02)。
 
-> **思考**：期刊规则档案的机器检查只能覆盖编码条款，不能替代现行刊方要求或科学正确性。README称面板只读为主，但actions明确包含remove、writeText、runCli等写操作；采用前须按实际动作评估路径和备份，而不能按只读描述判断。
+> **思考**：字段/引用键检查不证明原文支持；面板检查较CLI弱，fail仍可导出；词法路径和并发快照不构成真实隔离/一致收据。详见[Q02](#research-q02)。
 
-> **建议**：待验证假设：让投稿检查每条结论绑定期刊来源日期及输入文件摘要，可在规则或稿件变化后只重验失效条目。用一组稿件修改和规则变化比较遗漏率与人工核对时间；未验证，不能宣称自动合规。
+> **建议**：可探讨一致快照与分级证据收据，绑定实际ZIP字节、档案版本和人工支持关系，事务/存储成本未验证。详见[Q05](#research-q05)。
 
 <a id="plugin-1334269686-root"></a>
 
@@ -337,13 +469,13 @@
 
 [![GitHub ★ 19](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=19&color=yellow&logo=github&style=flat)](https://github.com/AnacondaKC/dsh-stock-market)
 
-> **用途**：研究者查询公开市场资料，需要来源、时点和指标口径可追溯；行情数据不是交易建议或成交能力。
+> **用途**：个人用户在DSH内获取公开证券资料并核对来源、时点和口径；不以插件查询成功替代交易或投资判断。
 
-> **亮点**：相对任意网页抓取或57端点直接暴露，增量是业务动作收敛、来源差异显式化与会话级真实执行拒绝；数据内容来自公开财经站点，不归插件。
+> **亮点**：把底层公开源收敛成9个业务工具，保留来源/回退/降级原因，并把会话工具目录限制与最终拒绝结合，减少任意URL拼接和只隐藏按钮的漏洞面。详见[Q02](#research-q02)。
 
-> **思考**：自动换源能否维持同一数据语义？源码已标成交额缺失、成交量和排行范围差异，说明成功响应未必可直接横比。免费/免登录可调用不代表授权商业复用或稳定SLA，本轮未接入验证实时性。
+> **思考**：回退成功不是多源核验，fetched_at不是行情时间，degraded也不证明口径可比；会话guard依赖真实Agent和宿主契约，公开源无稳定服务保证。详见[Q03](#research-q03)。
 
-> **建议**：由degraded元数据推导，可对每种研究任务声明所需字段/时效/口径契约，回退不满足时拒绝产出可比指标而保留原始差异。未验证；故障换源时比较结论一致性、错误混算和人工复核时间。
+> **建议**：可探索按原问题时效/口径需求生成数据适用性收据，以固定陈旧、缺时间及跨复权样本比较误用与解释成本；未实现。详见[Q06](#research-q06)。
 
 <a id="plugin-1400498179-root"></a>
 
@@ -363,29 +495,29 @@
 
 ## [dsh-trend-radar](../../plugins/863683348--dsh-trend-radar/INSIGHT.md)
 
-[![npm 30d 117](https://img.shields.io/static/v1?label=npm+30d&message=117&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-trend-radar) [![最新发布 2026-08-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-17&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-trend-radar)
+[![npm 30d 111](https://img.shields.io/static/v1?label=npm+30d&message=111&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-trend-radar) [![最新发布 2026-08-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-17&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-trend-radar)
 
-> **用途**：生态研究者想追踪插件供给变化，合格结果须有稳定样本范围和时间基线，不能把被搜索返回的条目数当完整生态规模。
+> **用途**：想观察 DSH 插件新增、stars 变化和 awesome 收录趋势。
 
-> **亮点**：相对单次静态目录，增量是本地时间序列与可追溯差分，把新增和关注变化变成重复分析流程；不是完整生态监测，也不是用户需求测量。
+> **亮点**：把 GitHub/awesome 快照历史转成可查询趋势与 session 面板起点。详见[Q01](#research-q01)。
 
-> **思考**：“新增/移除/热度”是否可由这套快照推断？搜索限前100且按updated滚动，排名退出可能被当移除，新进入可能早已存在；awesome tree也未证明完整无截断。README开头说每小时但FAQ与源码为按工具触发，无后台timer，不能承诺连续观测。Star增速不等于采用增长。
+> **思考**：数据目录不存在且首次直接 collect 时，先读后建目录可使快照受 ENOENT 阻断；top100 更新排序不是全生态，详见[Q02](#research-q02)、[Q03](#research-q03)。
 
-> **建议**：由滚动样本与时间差分推导，可保存total_count、incomplete/truncated状态和稳定repo ID，只对完整已覆盖样本判移除，新增区分首次发现与首次发布。未验证假设是显著减少伪趋势。用固定集合交换搜索顺序的样本检验，若新增/移除仍随排序变化则否定。
+> **建议**：修复空目录初始化、稳定 cohort/分页及类别映射和 watch 游标，才能形成可靠趋势雷达；待验证。详见[Q02](#research-q02)、[Q03](#research-q03)。
 
 <a id="plugin-1337487779-root"></a>
 
 ## [dsh-ultramath](../../plugins/andiii208--dsh-ultramath/INSIGHT.md)
 
-[![GitHub ★ 35](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=35&color=yellow&logo=github&style=flat)](https://github.com/Andiii208/dsh-ultramath) [![npm 30d 1,512](https://img.shields.io/static/v1?label=npm+30d&message=1%2C512&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-ultramath) [![最新发布 2026-08-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-24&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-ultramath)
+[![GitHub ★ 36](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=36&color=yellow&logo=github&style=flat)](https://github.com/Andiii208/dsh-ultramath)
 
-> **用途**：竞赛/学习团队需要从题目到可复算论文的产物链，合格交付须数据、代码、数值与论文一致且遵守赛事规则。
+> **用途**：数学建模竞赛团队需从读题、求解、验证到论文审稿的组织模板。
 
-> **亮点**：增量是产物目录、阶段责任、独立验算和数字冻结组织成可复用工作流；模型库/LaTeX与宿主delegation由既有工具提供，不据“首个/获奖级”宣称创新。
+> **亮点**：把分阶段数模资产、五角色预设、模型库、模板和审稿脚本打包为可发现入口，降低流程搭建成本；核心流程执行依赖模型与上游工具。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-> **思考**：门禁是否强制保证正确和诚信？多数B1-B9、独立盲评和数字冻结是persona/技能纪律，lib主要同步/公告，未见中央产物状态机硬执行；同模型评委不等于独立专家。启动同步还可能覆盖目标自定义内容并清退旧预设。
+> **思考**：“全自动/独立验算/盲评”多为提示文本，不能保证模型正确或真正独立；同步还会清理同名目标目录额外文件，安装前须核所有权和备份。详见[Q03](#research-q03)。
 
-> **建议**：由目录产物与数字冻结推导，可把各阶段收据绑定脚本/数据hash，独立验算只读输入与结果，验收通过才提升论文引用版本。未验证；改CSV或代码后应使引用失效，并用异方法核算检验错误传播。
+> **建议**：从已有阶段提示/同模型评审出发，若每席受强制异方法和可重放数字证据约束，可能降低相关错误漏检；需等预算公开题目对照漏检率与总成本，若无改善或成本超预注册阈值即证伪。条件、代价与比较详见[Q05](#research-q05)。
 
 <a id="plugin-1335664137-root"></a>
 
@@ -405,29 +537,15 @@
 
 ## [dsh-web-tools](../../plugins/a3boy--dsh-web-tools/INSIGHT.md)
 
-[![GitHub ★ 38](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=38&color=yellow&logo=github&style=flat)](https://github.com/A3Boy/dsh-web-tools)
+[![GitHub ★ 41](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=41&color=yellow&logo=github&style=flat)](https://github.com/A3Boy/dsh-web-tools)
 
-> **用途**：研究Agent单一搜索配额或服务失败时需继续检索，合格结果还要遵守日期、域名等条件，不能仅以有返回值验收。
+> **用途**：需要多源可用性和社媒详情的研究任务，必须区分发现片段/原生详情与完整范围。详见[Q01](#research-q01)。
 
-> **亮点**：相对最低公分母代理，增量是区分显式硬过滤与软偏好，并在统一接口下编译原生参数与故障链。搜索内容与原生抓取能力属于外部供应商，插件贡献在约束适配和可用性组织。
+> **亮点**：在标准Web接口下保留服务商特性、健康容灾、自定义协议与原生平台接线，减少逐接口维护。详见[Q01](#research-q01)。
 
-> **思考**：故障切换后语义是否仍等价？不同provider日期/域名/内容提取接口能力不齐，确定性hint不保证用户自然语言约束完全识别；社交路径还依赖登录浏览器和页面。可用性提高不等于召回正确或证据独立性增加。
+> **思考**：统一外包装丢截断/最终URL/检索方式，off仅限制两Web工具、required失败完成也放行；通用页DNS预检未绑定最终socket。详见[Q04](#research-q04)。
 
-> **建议**：由硬软条件和异构后端推导，可在路由前比较每个后端的能力矩阵，不支持硬约束则明确拒绝/标注，返回实际应用条件。未验证；用相同日期和域名任务注入429后比较切换前后的违规结果，若仍静默放宽则否定。
-
-<a id="plugin-1340340493-root"></a>
-
-## [dsh-websearch](../../plugins/240xu--dsh-websearch/INSIGHT.md)
-
-[![GitHub ★ 7](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7&color=yellow&logo=github&style=flat)](https://github.com/240xu/dsh-websearch) [![npm 30d 4,802](https://img.shields.io/static/v1?label=npm+30d&message=4%2C802&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@240xu/dsh-websearch) [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-20&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@240xu/dsh-websearch)
-
-> **用途**：面向研究/开发问答中需要多个网络来源的DSH用户；合格检索是相关、可访问且支持任务的结果，而非返回链接数量多。
-
-> **亮点**：相对宿主选择单provider或逐后端手搜，本项在一个provider后并发多种来源，避免配置多个provider造成歧义，并把失败原因/冷却状态收敛。RRF源码归因Cormack及RAG-Fusion，不计为原创算法；具体增量是DSH服务接线和失败/取消/结果融合组合。
-
-> **思考**：多后端与RRF是否真正提升证据而非放大共同转载？多个结果列表可能来自相同索引和镜像，RRF积累重复URL排名能提高共识，却不提供独立来源鉴别。并发还会等待失败尾部并增加API预算；部分成功只证明有结果，不能证明覆盖用户问题。
-
-> **建议**：先选少量可访问后端，用常见中文与时效问题核对出处、耗时和全部调用预算；逐步增加有独立增益的服务。重要研究仍应打开原文核查，不能把聚合排序当事实验证。
+> **建议**：从源到工具贯穿策略/完整性/成本收据，并给page fetch预检IP绑定；按裁剪/降级/DNS/模式与预算反例比较误用，未验证。详见[Q09](#research-q09)。
 
 <a id="plugin-1400385991-packages-dsh-weekly-panel"></a>
 
@@ -435,13 +553,13 @@
 
 
 
-> **用途**：希望在DSH内浏览中文插件榜的用户，读取TOP10和免费模型摘要，并复制原生bundle安装命令；判断选型仍需回到项目与核查材料。
+> **用途**：DSH Web 内查看插件周榜与免费模型状态，减少切换页面；安装与效率待核。详见[Q01](#research-q01)。
 
-> **亮点**：相对打开外部周报页面，本组件把中文榜单与安装命令复制放入DSH流内面板，并对上游不可用保留带stale标记的缓存。loopback防护与槽位写法作者归于dsh-workbench-lite，周报的策展与模型探测属于仓库其他工具；本组件增量是单上游数据桥、面板展示与降级。
+> **亮点**：把外部榜单接入 DSH Web 槽位，提供可复制安装命令和只读数据代理；不是榜单生产者。详见[Q01](#research-q01)。
 
-> **思考**：“免费模型可用”和“值得装”是否会被读者理解为本机可用与质量保证？面板只消费latest.json，不执行本地模型或插件验收；缓存30分钟叠加周报更新周期，会使成功读取仍展示旧状态。star排序、赞助位与模型极短补全都不证明本地长期可靠，复制命令也不是已安装。
+> **思考**：重试无法强制上游刷新且宿主旧值回退被客户端当正常新数据；未经校验 repo 进入粘贴命令、非 reciprocal 一律标赞助。详见[Q03](#research-q03)与[Q04](#research-q04)。
 
-> **建议**：待验证假设：每个条目附固定版本、探测出口地区和数据年龄的小型证据卡，可降低从榜单热度直接推导本机可用的误判。当前只有摘要与stale信息，新增卡片未实现。用同一榜单让用户判断安装前置条件，对照有无卡片的误判率与阅读耗时；若字段缺失导致卡片装饰化，则先要求上游提供可追溯探测记录。
+> **建议**：未验证方向是将数据年龄和 stale 显示到面板、明确刷新语义，并限制 repo 与赞助分类输入，以契约矩阵和目标宿主体验验收。详见[Q06](#research-q06)。
 
 <a id="plugin-1412897932-root"></a>
 
@@ -449,13 +567,13 @@
 
 
 
-> **用途**：团队想将完成会话变成可检索知识，需要避免重复、保留更新且明确上传范围；合格归档还要确认远端解析成功与敏感信息处理。
+> **用途**：本地会话沉淀为可检索知识，需要项目/会话身份、敏感内容审阅和远端解析验收。
 
-> **亮点**：相对手动复制聊天到知识库，增量是把会话发现、去重与结构化总结接到写入端；检索与embedding来自WeKnora，不由本插件提供。
+> **亮点**：提供 DSH 会话抽取与 WeKnora 写侧编排，规则摘要无需 LLM；检索与嵌入效果仍依赖 WeKnora。详见[Q02](#research-q02)。
 
-> **思考**：dry_run是否真无外部写入？目标库解析在dryRun分支前，找不到库就调用createKnowledgeBase，因此预览也可能新建库。标题短ID去重还会把已归档但继续增长的会话当跳过，增量是新会话而非内容更新；上传成功也不证明解析成功。
+> **思考**：dry_run 在创建库之后才生效，摘要直接引用用户文本/命令且无凭据脱敏；短 ID 和固定 100 项列表限制去重可靠性。详见[Q03](#research-q03)。
 
-> **建议**：由预览提前建库与标题去重推导，可先构造纯只读计划，确认后以完整session ID+内容摘要幂等写入，新增解析状态验收。未验证；空库dry-run和同会话追加消息对照，若仍写库/漏更新则否定。
+> **建议**：可先本地脱敏并审阅带强会话身份的摘要，再幂等上传、验解析；用 canary、碰撞与 >100 文档对照，尚未实现。详见[Q05](#research-q05)。
 
 <a id="plugin-1362694736-root"></a>
 
@@ -477,13 +595,13 @@
 
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-obscura)
 
-> **用途**：网页需要浏览器处理而普通HTTP抓取不足时，在DSH中调用已有Obscura。
+> **用途**：WSL 环境下定点抓取或渲染网页正文，复杂交互转原生 MCP。详见[Q01](#research-q01)。
 
-> **亮点**：把浏览器CLI与WSL路径接通，降低二进制查找和输出处理负担；浏览器能力来自Obscura。
+> **亮点**：将无头抓取接到 DSH Agent 工具面并明确 MCP/CDP 升级路径。详见[Q01](#research-q01)。
 
-> **思考**：允许eval、截图和私网开关时副作用与数据范围扩大；CLI存在不证明浏览器依赖安装齐全，抓到文本也不等于正文完整。
+> **思考**：isSafeHttpUrl 仅限协议，不能证明 SSRF 阻断；CLI 与外层超时/缓冲区可能影响结果。详见[Q03](#research-q03)和[Q04](#research-q04)。
 
-> **建议**：本次未形成新的创新假设；先为普通抓取与额外权限建立可见的调用边界，再衡量与直接CLI的差异。
+> **建议**：未验证改进为固定二进制版本的私网回归矩阵、显式默认 stealth 与输出流式处理。详见[Q05](#research-q05)。
 
 <a id="plugin-1380817560-root"></a>
 
@@ -491,13 +609,13 @@
 
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-obsidian)
 
-> **用途**：Agent需要在既有Obsidian知识库中整理结果，而不重复复制到独立记忆系统。
+> **用途**：用于对既有 Windows Obsidian 库进行 Agent 辅助整理；知识正确性、同步和覆盖风险仍需人核。详见[Q01](#research-q01)。
 
-> **亮点**：把已有笔记文件变为Agent可调用的读写接口，保留Obsidian工作方式；知识正确性和同步语义不由文件桥接自动解决。
+> **亮点**：让已有 Obsidian 库可被 Agent 以专用工具操作，并保留原有文件和双链工作方式；相比通用文件工具增加 vault 发现/路径规则，但不解决内容正确性、同步或冲突。详见[Q01](#research-q01)。
 
-> **思考**：safeJoinVault做词法路径包含检查，没有在该函数中解析符号链接；并发编辑与直接writeFileSync也未构成版本冲突保护。
+> **思考**：safeJoinVault 只验证词法路径，没有 realpath；writeFileSync/appendFileSync 无预期版本或恢复机制。confirm=true 与工具串行声明不足以保护库外 symlink 和 Obsidian 外部编辑。详见[Q03](#research-q03)。
 
-> **建议**：待验证假设：写入要求预期内容摘要并原子替换，可减少Agent覆盖用户同时编辑；需与直接备份策略比较恢复成本。
+> **建议**：未验证方向是以 realpath 约束目标，写入携带已读内容哈希并进行比较、备份和原子替换；用 symlink/双端竞争/中断夹具比较丢失与误拒绝。详见[Q05](#research-q05)。
 
 <a id="plugin-1381860363-root"></a>
 
@@ -505,13 +623,13 @@
 
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-playwright)
 
-> **用途**：普通HTTP抓取不足时，Agent需要浏览器渲染后的页面文字，无需操作Windows交互浏览器。
+> **用途**：DSH 用户需要读取公开、可能经 JavaScript 渲染的网页内容。
 
-> **亮点**：把Playwright读网页流程封装成限定工具；浏览器能力来自上游，增量是DSH接线与结果裁剪，不包含通用交互自动化。
+> **亮点**：把无头网页标题/正文读取接入模型工具，减少手工复制，并为 JS 渲染页面提供潜在增量。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-> **思考**：npx未锁包版本，临时脚本能否解析到临时包和浏览器是否已安装未经验证；domcontentloaded与body取文不能保证动态内容完整，取文异常还可能返回空正文成功。
+> **思考**：临时目录 ESM 导入与 npx 包解析关系未验证，现有单测不覆盖启动；URL 无内网/重定向边界，fetch 不呈现最终 URL/HTTP 状态。详见[Q03](#research-q03)。
 
-> **建议**：待验证假设：锁版本并报告页面就绪条件、取文失败和截断，可提升抓取结果可复核性；收益尚未验证。
+> **建议**：固定可解析的 Playwright 环境并添加目标地址门控、最终 URL/状态审计；在隔离站点矩阵比较成功率/延迟/误访问后再采用，本版未实现。详见[Q04](#research-q04)。
 
 <a id="plugin-1381726438-root"></a>
 
@@ -541,20 +659,6 @@
 
 > **建议**：待验证假设：给每条视觉证据附加不可变通道与外传策略，并在回退前检查策略，可减少本地隐私预期错配。以本地失效和云端可用的组合验证是否阻止未授权回退，同时测可用性损失。
 
-<a id="plugin-1363429979-plugin-memory"></a>
-
-## [Forge 记忆](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-memory/INSIGHT.md)
-
-[![GitHub ★ 9](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9&color=yellow&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) [![npm 30d 2,385](https://img.shields.io/static/v1?label=npm+30d&message=2%2C385&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-memory) [![最新发布 2026-10-08](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-08&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-memory)
-
-> **用途**：反复在项目间切换的使用者需要可管理的长期偏好和决策，而非无差别保存聊天。
-
-> **亮点**：storage-domain 支撑实体、关系和审计记录，服务统一管理写入、查询与导入校验。
-
-> **思考**：结构化存储比散落提示词更可管理；错误或跨范围记忆可能持续影响后续决策。
-
-> **建议**：先记录少量明确偏好，测试修改和删除后是否停止影响回答，再扩展自动积累。
-
 <a id="plugin-1335070045-packages-vision-tool"></a>
 
 ## [GLM 图片视觉工具](../../plugins/314857493--dsh-vision--packages-vision-tool/INSIGHT.md)
@@ -575,13 +679,13 @@
 
 [![GitHub ★ 46](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=46&color=yellow&logo=github&style=flat)](https://github.com/398894496-arch/KRouter)
 
-> **用途**：跨Claude Code、Codex、Cursor和DSH维护决策的用户，需优先引用仍有效页面，未知时不硬凑相近答案。
+> **用途**：面向跨Claude Code/Codex/Cursor/DSH工作的个人开发者，希望同一份Markdown记住决定与更改，不用每次重复说明。DSH包只提供七个查询工具接头，完整产品还含可选导入、夜间整理和备份，不会因dsh plugin add自动启动计时器。Obsidian是可选编辑/查看器，不是运行必须的服务。
 
-> **亮点**：相对普通全文检索，实质贡献是默认启用过期页排除和低置信拒答、带出处收据的组合；作者README承认匹配同样规则的全文基线无显著差异，因此不归因为新检索算法。跨Agent共享可编辑Markdown是明确流程增量。
+> **亮点**：将canonical有效状态、ranked分层权重、弱近邻拒绝与来源hash设为默认，跨Agent共用可编辑Markdown；相同两规则BM25基线并未被证明显著超越。详见[Q02](#research-q02)、[Q03](#research-q03)。
 
-> **思考**：作者基准改善是否说明算法领先？作者报告200题及错误引用率，但同规则BM25差异区间跨零；默认策略、拒答覆盖率和数据构造均可解释部分差异。源码阈值可见，真实知识库写作质量和纠错标注决定有效性，未独立复跑。
+> **思考**：canonical过滤无效页，但ranked对旧页仅乘0.25仍可召回；metadata缓存与followlinks不构成新鲜度/物理沙箱。DSH同步执行和可选writer lane权限需分开，未做越界复现。详见[Q03](#research-q03)、[Q04](#research-q04)。
 
-> **建议**：有决策知识库且愿维护状态时可先只读试用，核查来源页与拒答；不要把默认检索成功等同于记忆正确，导入与夜间写作应单独设置。
+> **建议**：可探索来源版本/适用域/证据级别与冲突收据，区分词面lock和人工确认，比较跨项目错引、覆盖与维护开销；未实现。详见[Q07](#research-q07)。
 
 <a id="plugin-1415767842-root"></a>
 
@@ -596,20 +700,6 @@
 > **思考**：能调用浏览器不证明网页可信或默认安全。index.js 默认 insecureTls=true；引擎独立下载，安装器默认没有预期校验和，记录其SHA只证明执行了哪些字节。作者选择器字符缩减示例不是同质量跨站收益验证。
 
 > **建议**：确需JS渲染时可在隔离环境先验证引擎；确认TLS策略和安装来源后再接真实账号，普通文章优先比较轻量HTTP路径。
-
-<a id="plugin-1335047324-root"></a>
-
-## [URL 正文阅读器](../../plugins/2672243194--dsh-read-url/INSIGHT.md)
-
-[![GitHub ★ 22](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=22&color=yellow&logo=github&style=flat)](https://github.com/2672243194/dsh-read-url) [![npm 30d 2,642](https://img.shields.io/static/v1?label=npm+30d&message=2%2C642&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-read-url) [![最新发布 2026-10-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-19&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-read-url)
-
-> **用途**：研究者和开发者从文档、文章或 API 提取适量内容，交付保留来源及续读位置的正文；已能返回完整正文的宿主 web_fetch 是首选对照。
-
-> **亮点**：相对直接把整页传给模型，增量是内容类型归一、正文清理、按段落截断和可续读的组合。index.js:358-409 保留 provider 的 HTTP/策略错误，减少降级路径绕过上游规则；这比仅比较输出字符数更值得复用。
-
-> **思考**：压缩输出可能把关键表格行、导航或分页上下文一起丢掉。作者旧版竞品表明确不适用于新 DeepSeek Fetch provider，不能据其推出当前优势；缓存、清理和额外分页也会影响新鲜度与耗时。
-
-> **建议**：适合已有抓取结果噪声多、常需中文编码和续读的场景先对照使用；答案依赖表格或动态页面时核对原文与截断标记。
 
 ## 更新时间
 
