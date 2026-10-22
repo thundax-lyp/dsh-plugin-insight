@@ -60,7 +60,7 @@
 | [dsh-plugin-orchd](#plugin-1422240642-root) | 在DSH右侧栏只读展示当前项目的orchd任务、依赖图、想法和审查时间线。 | 适合已有orchd项目先在副本试用。 |
 | [dsh-pr-description](#plugin-1344714177-root) | 分析分支差异并生成PR标题和Markdown描述，可选确认及调用gh创建PR。 | 适合先生成本地草稿。 |
 | [dsh-project-memory](#plugin-1339316901-root) | 为项目保存任务、文档、代码符号与经验记录，支持跨会话检索和按条件注入。 | 先在一个可丢弃项目中测试旧结论纠错和跨项目隔离，再决定是否长期启用。 |
-| [dsh-python-env](#plugin-1335843541-root) | 为DSH提供工作区Python虚拟环境发现、创建、安装、卸包和删除工具，并处理镜像/代理回退。 | 适合可信项目依赖的环境管理，先核对允许根、包规格和索引。 |
+| [dsh-python-env](#plugin-1335843541-root) | 为 DSH 提供 Python 虚拟环境发现、创建、装包、卸包与删除工具，并支持镜像和代理重试。 | 先观察，暂不直接给日常profile启用。 |
 | [dsh-qa-suite-N23](#plugin-1353726715-root) | 组合后台TypeScript诊断工具与提示驱动的本地多镜头代码审查命令。 | 先核多项目下诊断归属；审查命令是提示流程，重要问题须代码复现，置信度不是准确率。 |
 | [dsh-reaper](#plugin-1423215373-root) | 盘点端口占用与进程归属，先预览再按显式参数清理可归属的进程树。 | 先仅用扫描与预览，对照系统工具确认归属；实际清理只在可丢弃开发进程上验收。 |
 | [dsh-repeat-stop](#plugin-1339262076-root) | 拦截同一Agent连续出现的同工具同参数调用，提供可配置阈值与排除规则。 | 先在短任务记录触发次数，按轮询工具配置排除；被拦后检查输入和错误原因，不通过无意义改参数规避限制。 |
@@ -669,10 +669,10 @@
 
 [![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/AngelosZou/dsh-python-env) [![npm 30d 1,346](https://img.shields.io/static/v1?label=npm+30d&message=1%2C346&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-python-env) [![最新发布 2026-09-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-21&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-python-env)
 
-- **用途**：项目Python依赖因Shell网络/临时目录限制安装失败，需要可追踪环境和明确写权限。
-- **亮点**：相对手写Shell pip，增量是环境发现、权限模式核对、依赖故障分类与安装过程收据；venv/pip和软件供给来自上游，不是新的隔离机制。
-- **思考**：“工作区内”是否真的限制所有写入？路径guard是词法resolve/relative，未核realpath；packages普通字符串直接入pip argv，除editable外未拒绝--target等选项，包构建代码亦可在host权限执行。检查mode防只读，不等于OS沙箱或保证全局环境绝不受影响。
-- **建议**：由host执行补偿控制推导，可将包规格收窄为解析过的依赖表达式，禁止路径/全局改写选项，realpath核对并在受限执行环境装包。未验证；symlink、恶意requirements选项和构建脚本越界样本应被阻止，正常包安装成功率/维护成本另测。
+- **用途**：适合在 DSH 中为可信 Python 项目准备依赖、需要避开 shell 网络或临时目录限制的开发者；代码运行仍需显式使用工具返回的解释器。
+- **亮点**：贡献是把标准 venv/pip 接到 DSH 的结构化工具、模式检查、错误收据和模型指引中，减少每次手写命令的接线负担；不是新的隔离技术。参照为显式解释器的手工流程，尚无同条件效果对照。详见[Q03](#research-q03)。
+- **思考**：最影响贡献成立的是：转为宿主执行后，工作区约束是否足够？词法路径守卫没有物理路径核对，发现逻辑允许符号链接，普通包规格可直接进入 pip argv，显式索引还接受 HTTP；这些限制使“仅工作区写入”不能被当作隔离保证。均为静态核查，未做越界复现。详见[Q04](#research-q04)。
+- **建议**：未验证假设：由宿主签发明确目标环境、依赖与网络路由的可审阅操作计划，结合参数约束和真正受限的构建执行环境，可能保留便利并减少目标歧义。它增加确认、隔离维护和跨进程协调负担，需用正常任务与链接外指、参数改写等反例同时检验，不计为插件已有贡献。详见[Q08](#research-q08)。
 
 <a id="plugin-1353726715-root"></a>
 

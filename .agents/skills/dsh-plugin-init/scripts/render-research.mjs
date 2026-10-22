@@ -180,9 +180,19 @@ export function renderPublication(input, root = ROOT, context = null) {
             const capabilities = input.capabilities?.[i.id];
             if (!capabilities || capabilities.revision !== i.revision)
                 throw Error(`pinned capability inventory required: ${i.id}`);
-            for (const [name, value] of Object.entries(capabilities.items))
-                if (!report.includes(`- **${name}**：${value}`))
-                    throw Error(`detail capability differs: ${i.id}/${name}`);
+            if (capabilities.table !== undefined) {
+                const sections = splitSections(report).filter((part) => part.title === '能力清单');
+                if (
+                    !capabilities.table.trim() ||
+                    sections.length !== 1 ||
+                    sections[0].body !== capabilities.table.trim()
+                )
+                    throw Error(`detail capability table differs: ${i.id}`);
+            } else {
+                for (const [name, value] of Object.entries(capabilities.items))
+                    if (!report.includes(`- **${name}**：${value}`))
+                        throw Error(`detail capability differs: ${i.id}/${name}`);
+            }
             const advice = input.advice?.[i.id];
             if (advice && advice.revision !== i.revision) throw Error(`advice revision differs: ${i.id}`);
             if (advice && !report.includes(advice.text)) throw Error(`detail advice differs: ${i.id}`);

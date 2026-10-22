@@ -1,10 +1,10 @@
 {
     "schema_version": 3,
-    "snapshot_digest": "588412e0cf5253b68b7a8553462bd5338ab678b6530676fe7e044e951df94bc8",
-    "index_sha256": "85fa87d4ee23c2e843ad2f6c93b361e64bbde38fb3de50025063cb3e34e93970",
+    "snapshot_digest": "540e56f23a399a723a138b308154f28088a3bdbb00b7ae9e1c5ad7c49a3e8107",
+    "index_sha256": "5646816b5fea599381f1cfa72b5d25a580d41ed18ab0994e7be63fdff8c8e6e4",
     "head": {
         "schema_version": 1,
-        "checked_at": "2026-10-21T07:52:12Z",
+        "checked_at": "2026-10-22T03:06:13.445Z",
         "catalog": {
             "schema_version": 1,
             "plugins": [],
@@ -12,7 +12,7 @@
         },
         "publication": {
             "schema_version": 1,
-            "scope": "本轮所选 50，完成 50，受阻 0；已知同版本受阻跳过 5；当前发布 404",
+            "scope": "本轮所选 1，完成 1，受阻 0；已知同版本受阻跳过 0；当前发布 404",
             "catalog": "data/catalog/PLUGINS.json",
             "catalog_page": "data/views/categories/INDEX.md",
             "metadata": {},
@@ -20,7 +20,7 @@
             "capabilities": {},
             "advice": {},
             "records": [],
-            "checked_at": "2026-10-21T07:52:12Z"
+            "checked_at": "2026-10-22T03:06:13.445Z"
         },
         "registry": {},
         "discovery": {
@@ -32,7 +32,7 @@
                 },
                 {
                     "url": "https://github.com/0xsline/awesome-deepseek-harness",
-                    "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
+                    "revision": null,
                     "complete": false
                 }
             ],
@@ -52,8 +52,8 @@
             "首次迁移只知道当前研究档案，不拥有历史完整来源成员清单；未入档对象的历史变化为 unknown。"
         ],
         "transaction": {
-            "id": "2026-10-21-07",
-            "work_digest": "72598e07d55515b1cde3ad35e2f2b3ffd91393679eaa3917c0e15dc6af3ab498"
+            "id": "2026-10-22-insight-comparison",
+            "work_digest": "1dfbeaf4b257b413155f615ee61a4294c6c0bca75d7c68c6d4e636cd1304042c"
         },
         "research_blocks": {}
     },
@@ -3722,6 +3722,7 @@
             "github:1335381015:root"
         ],
         "discovery.plugins": [
+            "github:1335843541:root",
             "github:1339316901:root",
             "github:1418493685:root",
             "github:1333328839:root",
@@ -4129,7 +4130,6 @@
             "github:1339462797:root",
             "github:1334119885:root",
             "github:1346064150:root",
-            "github:1335843541:root",
             "github:1285824983:integrations-dsh",
             "github:1338230382:root",
             "github:1409845351:plugins-dsh-orchestrator2",
@@ -12681,10 +12681,6 @@
             "path": "evidence/08/08ef6bf8b09f33e532e2a7ee500a41a8fb84d3a4e7cda61a339aa21157dcf09e.json",
             "sha256": "08ef6bf8b09f33e532e2a7ee500a41a8fb84d3a4e7cda61a339aa21157dcf09e"
         },
-        "data/runs/2026-10-21-07/snapshots/angeloszou--dsh-python-env/REVIEWED-SOURCE.json": {
-            "path": "evidence/0e/0e650e63d120b4a36e1e010cc5bc1b4a85266236dc5a75252f3ae2233c7ede83.json",
-            "sha256": "0e650e63d120b4a36e1e010cc5bc1b4a85266236dc5a75252f3ae2233c7ede83"
-        },
         "data/runs/2026-10-21-07/snapshots/aisland-sjl--dsh-worktable--01-content/REVIEWED-SOURCE.json": {
             "path": "evidence/fe/fe80df8fd68928fdb7414b86f8b55e083e490147d8ef0fc9e39d95aa4f7994bd.json",
             "sha256": "fe80df8fd68928fdb7414b86f8b55e083e490147d8ef0fc9e39d95aa4f7994bd"
@@ -12720,6 +12716,10 @@
         "data/runs/2026-10-21-07/snapshots/amekrance--anan-thermal-monitor/REVIEWED-SOURCE.json": {
             "path": "evidence/8c/8c7259255f6492881c284d7af02951c24088419e03aaf9d29b0d348fcfecdc60.json",
             "sha256": "8c7259255f6492881c284d7af02951c24088419e03aaf9d29b0d348fcfecdc60"
+        },
+        "data/runs/2026-10-22-insight-comparison/snapshots/angeloszou--dsh-python-env/REVIEWED-SOURCE.json": {
+            "path": "evidence/e4/e41bc1a273ec224d887a22ea224a463069d26b9d686fc4a9a722aa0bfc79bc2e.json",
+            "sha256": "e41bc1a273ec224d887a22ea224a463069d26b9d686fc4a9a722aa0bfc79bc2e"
         }
     }
 }

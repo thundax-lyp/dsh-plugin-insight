@@ -159,6 +159,10 @@
                 "pattern": "^[^\\r\\n]+$"
               }
             }
+          },
+          "table": {
+            "type": "string",
+            "minLength": 1
           }
         }
       }
